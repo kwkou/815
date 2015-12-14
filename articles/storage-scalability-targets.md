@@ -8,8 +8,8 @@
 	editor="na" />
 <tags 
 	ms.service="storage"
-   ms.date="09/27/2015"
-	wacn.date="11/27/2015" />
+	ms.date="09/27/2015"
+	wacn.date="12/11/2015" />
 
 # Azure 存储空间可伸缩性和性能目标
 
@@ -25,7 +25,7 @@
 
 如果你的应用程序的需求超过了单个存储帐户的可伸缩性目标值，您可以创建应用程序以使用多个存储帐户，并将数据对象分布到这些存储帐户中。请参阅[存储定价详细信息](/home/features/storage/#price)，了解有关批量定价的信息。
 
-## 标准存储帐户的可伸缩性目标
+##<a id="scalability-targets-for-standard-storage-accounts"></a> 标准存储帐户的可伸缩性目标
 
 [AZURE.INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 

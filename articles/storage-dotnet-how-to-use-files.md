@@ -9,7 +9,7 @@
 
 <tags ms.service="storage"
       ms.date="09/28/2015"
-      wacn.date="11/12/2015" />
+      wacn.date="12/11/2015" />
 
 # 如何通过 Windows 使用 Azure 文件存储
 
@@ -62,7 +62,7 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 ### 为 Azure 存储空间安装 PowerShell cmdlet
 
-若要准备使用 PowerShell，请下载并安装 Azure PowerShell cmdlet。有关安装点和安装说明，请参阅[如何安装和配置 Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell)。
+若要准备使用 PowerShell，请下载并安装 Azure PowerShell cmdlet。有关安装点和安装说明，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 > [AZURE.NOTE]建议你下载并安装最新的 Azure PowerShell 模块或升级到最新模块。
 
@@ -141,7 +141,7 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 为了演示如何装载 Azure 文件共享，现在我们将创建一个运行 Windows 的 Azure 虚拟机，并远程登录到它内部以装载共享。
 
-1. 首先，按照[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial)中的说明创建一个新的 Azure 虚拟机。
+1. 首先，按照[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)中的说明创建一个新的 Azure 虚拟机。
 2. 然后，按照[如何登录到运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-log-on-windows-server)中的说明远程登录到该虚拟机内部。
 3. 在该虚拟机上打开 PowerShell 窗口。
 
@@ -158,14 +158,14 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 建立与虚拟机的远程连接后，便可以使用以下语法运行 `net use` 命令来装载文件共享了。请将 `<storage-account-name>` 替换为你的存储帐户名称，将 `<share-name>` 替换为你的文件存储共享名称。
 
-    net use <drive-letter>: \<storage-account-name>.file.core.chinacloudapi.cn<share-name>
+    net use <drive-letter>: \\<storage-account-name>.file.core.chinacloudapi.cn\<share-name>
 
 	example :
 	net use z: \\samples.file.core.chinacloudapi.cn\logs
 
 由于你已在上一步中保存了存储帐户凭据，因此你无需随 `net use` 命令提供这些凭据。如果你尚未保存凭据，请作为传递给 `net use` 命令的参数提供凭据，如以下示例所示。
 
-    net use <drive-letter>: \<storage-account-name>.file.core.chinacloudapi.cn<share-name> /u:<storage-account-name> <storage-account-key>
+    net use <drive-letter>: \\<storage-account-name>.file.core.chinacloudapi.cn\<share-name> /u:<storage-account-name> <storage-account-key>
 
 	example :
 	net use z: \\samples.file.core.chinacloudapi.cn\logs /u:samples <storage-account-key>
@@ -533,8 +533,8 @@ Azure 存储服务分析现在支持用于文件存储的指标。使用指标�
 
 - [Azure 文件存储现已正式发布](/zh-cn/blog)
 - [深入了解 Azure 文件存储](/home/features/storage) 
-- [Windows Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
-- [将连接保存到 Windows Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
+<!--- [Windows Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
+- [将连接保存到 Windows Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)-->
  
 
 <!---HONumber=79-->

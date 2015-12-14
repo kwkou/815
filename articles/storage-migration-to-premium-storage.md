@@ -11,7 +11,7 @@
 <tags 
     ms.service="storage" 
     ms.date="09/23/2015"
-    wacn.date="11/02/2015"/>
+    wacn.date="12/14/2015"/>
 
 
 # 迁移到 Azure 高级存储
@@ -28,12 +28,12 @@
 
 根据你的方案，执行相关部分中指定的步骤。
 
-## 从 Azure 外部将 VM 迁移到 Azure 高级存储
+##<a id="migrating-vms-from-outside-azure-to-azure-premium-storage"></a> 从 Azure 外部将 VM 迁移到 Azure 高级存储
 
 ### 先决条件
 - 你将需要 Azure 订阅。如果你没有，则可以创建一个月的[试用](/pricing/1rmb-trial/)订阅或访问 [Azure 定价](/pricing/)以获得更多选项。
 - 若要执行 PowerShell cmdlet，你将需要 Windows Azure PowerShell 模块。若要下载该模块，请参阅 [Azure 下载](/downloads/)。
-- 当你计划使用在高级存储上运行的 Azure VM 时，你需要使用 DS 系列或 GS 系列 VM。你可以将标准和高级存储磁盘用于 DS 系列 VM。在将来更多 VM 类型将提供高级存储磁盘。有关所有可用 Azure VM 磁盘类型和大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小](https://msdn.microsoft.com/zh-CN/library/azure/dn197896.aspx)。
+- 当你计划使用在高级存储上运行的 Azure VM 时，你需要使用 DS 系列或 GS 系列 VM。你可以将标准和高级存储磁盘用于 DS 系列 VM。在将来更多 VM 类型将提供高级存储磁盘。有关所有可用 Azure VM 磁盘类型和大小的详细信息，请参阅 Azure 的[虚拟机](/documentation/articles/virtual-machines-size-specs)和[云服务大小](/documentation/articles/cloud-services-sizes-specs)。
 
 ### 注意事项 
 
@@ -167,7 +167,7 @@
 
 如果你要从本地环境迁移 VHD，则将需要 VHD 的存储位置的完整源路径。这可以是服务器位置或文件共享。
 
-### 使用 AzCopy 复制 VHD
+###<a id="copy-a-vhd-with-azcopy"></a> 使用 AzCopy 复制 VHD
 
 使用 AzCopy 可轻松通过 Internet 上载 VHD。根据 VHD 的大小，这可能需要时间。请记住，在使用此选项时，检查存储帐户传入/传出限制。有关详细信息，请参阅 [Azure 存储可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
 
@@ -188,7 +188,7 @@
    
 有关使用 AzCopy 工具的详细信息，请参阅 [AzCopy 命令行实用工具入门](/documentation/articles/storage-use-azcopy)。
 
-### 使用 PowerShell 复制 VHD
+###<a id="copy-a-vhd-with-powershell"></a> 使用 PowerShell 复制 VHD
 还可以使用 PowerShell cmdlet Start-AzureStorageBlobCopy 复制 VHD 文件。在 Azure PowerShell 上使用以下命令复制 VHD。将 <> 中的值替换为你的源和目标存储帐户中的相应值。若要使用此命令，必须在目标存储帐户中有名为 vhds 的容器。如果该容器不存在，则应在运行此命令之前创建一个。
 
     $sourceBlobUri = "https://sourceaccount.blob.core.chinacloudapi.cn/vhds/myvhd.vhd"
@@ -299,7 +299,7 @@
 
 >[AZURE.NOTE]本指南可能未涵盖支持你的应用程序所要执行的其他步骤。
 
-## 将现有 Azure VM 迁移到 Azure 高级存储
+##<a id="migrating-existing-azure-vms-to-azure-premium-storage"></a> 将现有 Azure VM 迁移到 Azure 高级存储
 
 如果你当前有使用标准存储磁盘的 Azure VM，请按照下述过程将该 Azure VM 迁移到高级存储。概括来讲，迁移涉及两个阶段：
 - 将磁盘从标准存储帐户迁移到高级存储帐户 

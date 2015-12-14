@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage" 
 	ms.date="10/08/2015" 
-	wacn.date="11/02/2015"/>
+	wacn.date="12/11/2015"/>
 
 
 
@@ -221,7 +221,8 @@ Name|SAS 部分|说明
     string storageConnectionString =
        "DefaultEndpointsProtocol=https;" +
        "AccountName=myaccount;" +
-       "AccountKey=<account-key>";
+       "AccountKey=<account-key>;" +
+		"EndpointSuffix=core.chinacloudapi.cn";
     
     // As an alternative, you can retrieve storage account information from an app.config file. 
     // This is one way to store and retrieve a connection string if you are 

@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage" 
 	ms.date="10/07/2015" 
-	wacn.date="11/02/2015"/>
+	wacn.date="12/11/2015"/>
 
 # Windows Azure 存储服务简介
 
@@ -153,7 +153,7 @@ Azure 文件存储提供了基于云的 SMB 文件共享，这样你可以将依
 
 存储容量指的是存储帐户中用来存储数据的配额。对数据进行简单存储时，其成本取决于存储的数据量和数据复制方式。针对 Azure 存储服务的每个读取和写入操作还将针对服务发出一个请求。数据流出量是指从某个 Windows Azure 区域传出的数据。当不在同一区域中的应用程序访问你的存储帐户中的数据时，无论该应用程序是云服务还是某个其他类型的应用程序，都将会针对数据流出量向你收费。（对于 Windows Azure 服务，你可以采取措施将数据和服务通过分组分到相同的数据中心内，从而降低或避免进程和数据流出量费用。） 
 
-[存储定价详细信息](/home/features/storage/#price)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/zh-cn/pricing/details/data-transfers)提供了针对数据流出量的详细定价信息。你可以使用 [Azure 存储服务定价计算器](/zh-cn/pricing/calculator/?scenario=data-management)来帮助估算成本。
+[存储定价详细信息](/home/features/storage/#price)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/zh-cn/pricing/details/data-transfer)提供了针对数据流出量的详细定价信息。你可以使用 [Azure 存储服务定价计算器](/zh-cn/pricing/calculator/?scenario=data-management)来帮助估算成本。
 
 ## 针对存储进行开发
 

@@ -8,7 +8,7 @@
 	editor=""/>
 <tags ms.service="storage"
     ms.date="03/06/2015"
-    wacn.date="04/15/2015"
+    wacn.date="12/14/2015"
     />
 
 
@@ -53,7 +53,7 @@
 
 `Get-AzureStorageServiceMetricsProperty -MetricsType Hour -ServiceType Blob`
 
-有关如何配置 Azure PowerShell cmdlet 以使用 Azure 订阅以及如何选择要使用的默认存储帐户的信息，请参阅：[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。
+有关如何配置 Azure PowerShell cmdlet 以使用 Azure 订阅以及如何选择要使用的默认存储帐户的信息，请参阅：[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 ## 如何以编程方式启用存储度量值
 

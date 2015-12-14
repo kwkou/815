@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage" 
 	ms.date="09/28/2015" 
-	wacn.date="11/12/2015"/>
+	wacn.date="12/11/2015"/>
 
 # 五分钟内开始使用 Azure 存储空间 
 
@@ -32,7 +32,7 @@
 可在 [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/) 中获得最新版的 Azure 存储空间客户端库二进制文件 。
 
 
-## 使用 Azure 存储模拟器在本地运行你的第一个 Azure 存储空间应用程序
+##<a id="run-your-first-azure-storage-application-locally-against-the-azure-storage-emulator"></a> 使用 Azure 存储模拟器在本地运行你的第一个 Azure 存储空间应用程序
 
 在开发使用 Azure 存储空间的应用程序时，你可以使用 [Azure 存储模拟器](/documentation/articles/storage-use-emulator) 运行该应用程序。存储模拟器提供了一个针对开发目的模拟 Azure Blob、队列和表服务的本地环境。你可以使用存储模拟器在本地测试你的应用程序，而无需创建 Azure 订阅或存储帐户，并且不会产生任何费用。
 
@@ -55,7 +55,7 @@
 2.	在 Visual Studio 中，单击“生成”菜单上的“生成解决方案”。 
 3.	在“调试”**菜单**上，按 **F11** 逐步运行该解决方案，或按 **F5** 从头到尾运行该解决方案。
 
-## 使用 Azure 存储模拟器在云中运行你的第一个 Azure 存储空间应用程序
+##<a id="run-your-first-azure-storage-application-against-azure-storage-in-the-cloud"></a> 使用 Azure 存储模拟器在云中运行你的第一个 Azure 存储空间应用程序
 
 若要使用 Azure 存储空间在云中运行，你需要 Azure 订阅和存储帐户，如果你尚未拥有的话：
 
@@ -81,14 +81,14 @@
 
 2.	取消 Azure 存储服务的连接字符串的注释，并在 App.config 文件中提供存储帐户名称和访问密钥：`<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey];EndpointSuffix=core.Chinacloudapi.cn"`
 
-	若要查找存储帐户名称和访问密钥，请参阅[什么是存储帐户](/documentation/articles/storage-whatis-account)。 
+	若要查找存储帐户名称和访问密钥，请参阅[什么是存储帐户](/documentation/articles/storage-create-storage-account)。 
 
 3.	在 App.config 文件中提供存储帐户名称和访问密钥后,在“文件” 菜单中，单击“全部保存”以保存所有项目文件。
 4.	在“生成”菜单中，单击“生成解决方案”。
 5.	在“调试”菜单中，按 **F11** 逐步运行该解决方案，或按 **F5** 运行该解决方案。
 
 
-## 后续步骤
+##<a id="next-steps"></a> 后续步骤
 
 若要了解有关 Azure 存储空间的详细信息，请参阅以下资源：
 

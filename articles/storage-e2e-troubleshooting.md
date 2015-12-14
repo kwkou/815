@@ -7,7 +7,7 @@
 	manager="adinah"/>
 <tags ms.service="storage"
     ms.date="04/10/2015"
-    wacn.date="04/15/2015"
+    wacn.date="12/14/2015"
     />
 
 
@@ -103,7 +103,7 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 **通过 PowerShell**
 
-若要开始使用 PowerShell for Azure，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。
+若要开始使用 PowerShell for Azure，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 1. 使用 [Add-AzureAccount](http://msdn.microsoft.com/zh-cn/library/azure/dn722528.aspx) cmdlet 将 Azure 用户帐户添加到 PowerShell 窗口中：
 

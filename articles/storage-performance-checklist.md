@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="Windows Azure 存储性能和可伸缩性清单"
 	description="在开发使用 Azure 存储的高性能应用程序时，一个经过验证的检查表。"
 	services="storage"
@@ -10,7 +10,7 @@
 <tags
 	ms.service="storage"
 	ms.date="09/03/2015" 
-	wacn.date="11/27/2015"/>
+	wacn.date="12/11/2015"/>
 
 # Windows Azure 存储性能和可伸缩性清单
 
@@ -92,7 +92,7 @@ The Azure Files service is currently in Preview, and we will add proven practice
 <!--
 At the time of writing, the bandwidth targets in the China for a geo-redundant storage (GRS) account are 10 gigabits per second (Gbps) for ingress (data sent to the storage account) and 20 Gbps for egress (data sent from the storage account). For a locally redundant storage (LRS) account, the limits are higher - 20 Gbps for ingress and 30 Gbps for egress.  
 -->
-国际带宽限制可能会较低，详情请参阅我们的[可伸缩性目标页](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)。  
+国际带宽限制可能会较低，详情请参阅我们的[可伸缩性目标页](/documentation/articles/storage-scalability-targets)。  
 有关存储冗余选项的详细信息，请参阅下面[有用的资源](#sub1useful)中的链接。  
 
 ####接近可伸缩性目标时应怎么办

@@ -9,7 +9,7 @@
 <tags
     ms.service="storage"
     ms.date="09/28/2015"
-    wacn.date="11/02/2015"/>
+    wacn.date="12/11/2015"/>
 
 # 使用 Azure CLI 管理 Azure 存储服务
 
@@ -89,7 +89,7 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
 ### 连接到你的 Azure 订阅
 
-大多数存储命令没有 Azure 订阅也可以使用，不过我们仍建议你通过 Azure CLI 连接到你的订阅。若要配置 Azure CLI 以使用你的订阅，请遵循[如何连接到 Azure 订阅](/documentation/articles/xplat-cli-install#how-to-connect-to-your-azure-subscription)中的步骤。
+大多数存储命令没有 Azure 订阅也可以使用，不过我们仍建议你通过 Azure CLI 连接到你的订阅。若要配置 Azure CLI 以使用你的订阅，请遵循[如何连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)中的步骤。
 
 ### 新建存储帐户
 
@@ -162,7 +162,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。有关详细信息，请参阅[了
 
         azure storage blob delete mycontainer myBlockBlob2
 
-## 创建和管理文件共享
+##<a id="create-and-manage-file-shares"></a> 创建和管理文件共享
 
 Azure 文件存储使用标准 SMB 协议为应用程序提供共享存储。Windows Azure 虚拟机和云服务以及本地应用程序可以通过装载的共享来共享文件数据。你可以通过 Azure CLI 管理文件共享和文件数据。有关 Azure 文件存储的详细信息，请参阅[如何通过 Windows 使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)或[如何通过 Linux 使用 Azure 文件存储](/documentation/articles/storage-how-to-use-files-linux)。
 
