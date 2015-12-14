@@ -101,6 +101,6 @@ Enabled |用户已加入多重认证。|否。它们将继续工作，直到注�
 		Your Administrator
 
 ## 后续步骤
-在云中设置多重认证后，接下来可以转到[配置 Azure Multi-Factor Authentication](/documentation/articles/multi-factor-authentication-whats-next) 以继续执行后续步骤。
+在云中设置多重认证后，接下来可以转到[配置多重认证](/documentation/articles/multi-factor-authentication-whats-next) 以继续执行后续步骤。
 
 <!---HONumber=69-->
