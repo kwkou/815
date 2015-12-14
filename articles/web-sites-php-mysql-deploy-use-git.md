@@ -99,15 +99,15 @@
 
 1. 使用之前检索的 `Data Source`、`User Id`、`Password` 和 `Database` 的值，连接到远程 MySQL 服务器：
 
-		mysql -h{Data Source] -u[User Id] -p[Password] -D[Database]
+	<pre><code class="prettyprint">mysql -h{Data Source] -u[User Id] -p[Password] -D[Database]</code></pre>
 
 2. 此时将出现 MySQL 命令提示符：
 
-		mysql>
+	<pre><code class="prettyprint">mysql></code></pre>
 
 3. 粘贴以下 `CREATE TABLE` 命令以在你的数据库中创建 `registration_tbl` 表：
 
-		mysql> CREATE TABLE registration_tbl(id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(30), email VARCHAR(30), date DATE);
+	<pre><code class="prettyprint">mysql> CREATE TABLE registration_tbl(id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(30), email VARCHAR(30), date DATE);</code></pre>
 
 4. 在 Web 服务器的根目录中，创建一个名为 `registration` 的文件夹并在该文件夹中创建一个名为 `index.php` 的文件。
 
@@ -260,7 +260,7 @@
 [running-app]: ./media/web-sites-php-mysql-deploy-use-git/running_app_2.png
 [new-Website]: /media/web-sites-php-mysql-deploy-use-git/new_website.jpg
 [custom-create]: ./media/web-sites-php-mysql-deploy-use-git/custom_create.png
-[Website-details]: ./media/web-sites-php-mysql-deploy-use-git/Website_details.jpg
+[Website-details]: ./media/web-sites-php-mysql-deploy-use-git/website_details.jpg
 [new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-git/new_mysql_db.jpg
 [go-to-dashboard]: ./media/web-sites-php-mysql-deploy-use-git/go_to_dashboard.png
 [setup-git-publishing]: ./media/web-sites-php-mysql-deploy-use-git/setup_git_publishing.png

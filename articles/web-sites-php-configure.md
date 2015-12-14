@@ -58,8 +58,8 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 
 ### 更改 PHP_INI_SYSTEM 配置设置
 
-1. 使用密钥 `PHP_INI_SCAN_DIR` 和值 `d:\home\site\ini` 将应用设置添加到你的网站
-2. 使用 Kudu 控制台 (http://&lt;site-name&gt;.scm.azurewebsite.net) 在 `d:\home\site\ini` 目录中创建 `settings.ini` 文件。
+1. 使用密钥 `PHP_INI_SCAN_DIR` 和值 <code class="prettyprint">d:\home\site\ini</code> 将应用设置添加到你的网站
+2. 使用 Kudu 控制台 (http://&lt;site-name&gt;.scm.azurewebsite.net) 在 <code class="prettyprint">d:\home\site\ini</code> 目录中创建 `settings.ini` 文件。
 3. 使用你将在 php.ini 文件中使用的语法，将配置设置添加到 `settings.ini` 文件。例如，如果你希望将 `curl.cainfo` 设置指向 `*.crt` 文件并将“wincache.maxfilesize”设置为 512K，则 `settings.ini` 文件将包含此文本：
 
 		; Example Settings
@@ -72,10 +72,10 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 
 ### 通过 ini 设置进行配置
 
-1. 将 `ext` 目录添加到 `d:\home\site` 目录。
+1. 将 `ext` 目录添加到 <code class="prettyprint">d:\home\site</code> 目录。
 2. 将 `.dll` 扩展文件置于 `ext` 目录中（例如 <code class="prettyprint">php_mongo.dll</code> 和 <code class="prettyprint">php_xdebug.dll</code>）。确保扩展与默认版本的 PHP（撰写本文时为 PHP 5.4）兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
 3. 使用密钥 `PHP_INI_SCAN_DIR` 和值 <code class="prettyprint">d:\home\site\ini</code> 将应用设置添加到你的网站
-4. 在 <code class="prettyprint">d:\home\site\ini</code> 中创建名为 `extensions.ini` 的 `ini` 文件。
+4. 在 <code class="prettyprint">d:\home\site\ini</code> 中创建名为 `extensions.ini` 的 <code class="prettyprint">ini</code> 文件。
 5. 使用你将在 php.ini 文件中使用的语法，将配置设置添加到 `extensions.ini` 文件。例如，如果你想要启用 MongoDB 和 XDebug 扩展，则 `extensions.ini` 文件将包含此文本：
 
 		; Enable Extensions
