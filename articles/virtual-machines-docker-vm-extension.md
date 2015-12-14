@@ -29,6 +29,7 @@
 
 若要了解有关该扩展及其工作原理的详细信息，请参阅 [Docker 扩展用户指南](https://github.com/Azure/azure-docker-extension/blob/master/README.md)。
 
+<a id="Docker-and-Linux-Containers"></a>
 ## Docker 和 Linux 容器
 [Docker](https://www.docker.com/) 是最流行的虚拟化技术之一，它使用 [Linux 容器](http://wikipedia.org/wiki/LXC)而不是虚拟机作为在共享资源上隔离数据和执行计算的方法，并提供其他服务使你可以快速构建或汇编应用程序，然后在其他 Docker 容器之间分发应用程序。
 
@@ -49,6 +50,7 @@ Docker 及其他*容器*技术使用 Linux 内核的进程和文件系统隔离�
 
 有关 Docker 的定义及其实际工作原理的详细信息，请参阅[什么是 Docker？](https://www.docker.com/whatisdocker/)
 
+<a id="How-to-use-the-Docker-VM-Extension-with-Azure"></a>
 #### Docker 和 Linux 容器的安全最佳实践
 
 因为容器对主计算机内核进行共享访问，因此，如果恶意代码可以获取 root 权限，则也可以获取对其他容器的访问权限，而不仅仅是主机。为了以强于默认配置的力度保护容器系统，[Docker 建议](https://docs.docker.com/articles/security/)同时使用附加的组原则或[基于角色的安全性](http://wikipedia.org/wiki/Role-based_access_control)（例如 [SELinux](http://selinuxproject.org/page/Main_Page) 或 [AppArmor](http://wiki.apparmor.net/index.php/Main_Page)），并尽可能减少授予容器的内核功能。除此之外，Internet 上也提供了其他许多介绍如何使用 Docker 等容器实现安全性的文档。
@@ -64,7 +66,8 @@ Docker VM 扩展是在你创建的 VM 实例中安装的组件，它会自行安
 + [如何从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展]
 <!-- + [如何在 Azure 门户中使用 Docker VM 扩展] -->
 
-## <a id="Virtual Machine Extensions for Linux and Windows">适用于 Linux 和 Windows 的虚拟机扩展</a>
+<a id="Virtual Machine Extensions for Linux and Windows"></a>
+## 适用于 Linux 和 Windows 的虚拟机扩展
 [Azure 的 Docker VM 扩展](https://github.com/Azure/azure-docker-extension/blob/master/README.md)只是提供特殊行为的众多 VM 扩展之一，还有许多正在开发中。例如，许多 [Linux VM 代理扩展](/documentation/articles/virtual-machines-linux-agent-user-guide/)功能可让你修改和管理虚拟机，包括安全功能、内核和网络功能，等等。例如，VMAccess 扩展可让你重置管理员密码或 SSH 密钥。
 
 有关完整列表，请参阅 [Azure VM 扩展](http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)。
