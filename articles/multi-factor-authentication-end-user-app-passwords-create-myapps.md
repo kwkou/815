@@ -21,7 +21,7 @@
 ## 在没有 Office 365 或 Azure 订阅的情况下创建应用密码
 --------------------------------------------------------------------------------
 <ol>
-<li>登录到 [https://myapps.microsoft.com] (https://myapps.microsoft.com)</li>
+<li>登录到 [https://myapps.microsoft.com](https://myapps.microsoft.com)</li>
 <li>在顶部选择配置文件。</li>
 
 <center>![Cloud](./media/multi-factor-authentication-end-user-app-passwords-create-myapps/myapp.png)</center>
