@@ -1,6 +1,9 @@
 <properties pageTitle="指定 Node.js 版本" description="了解如何指定 Azure 网站和云服务使用的 Node.js 版本" services="" documentationCenter="nodejs" authors="MikeWasson" manager="wpickett" editor="mollybos"/>
 
-<tags ms.service="multiple"  ms.date="08/31/2015" wa.date="11/12/2015"/>
+<tags
+	ms.service="multiple"
+	ms.date="08/31/2015"
+	wacn.date="11/12/2015"/>
 
 
 

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="事件中心编程指南"
+   pageTitle="事件中心编程指南 | Windows Azure"
    description="介绍如何使用 Azure.NET SDK 进行 Azure 事件中心编程。"
    services="event-hubs"
    documentationCenter="na"
@@ -8,8 +8,8 @@
    editor="" />
 <tags 
    ms.service="event-hubs"
-   ms.date="07/10/2015"
-   wacn.date="08/14/2015" />
+   ms.date="09/30/2015"
+   wacn.date="10/22/2015" />
 
 # 事件中心编程指南
 

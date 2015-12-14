@@ -1,4 +1,4 @@
-<properties title="Prepare an Oracle Linux Virtual Machine for Azure" pageTitle="为 Azure 准备 Oracle Linux 虚拟机" description="逐步完成在 Microsoft Azure 中配置运行 Linux 的 Oracle 虚拟机。" services="virtual-machines" authors="bbenz" documentationCenter=""/>
+<properties title="Prepare an Oracle Linux Virtual Machine for Azure" pageTitle="为 Azure 准备 Oracle Linux 虚拟机" description="逐步完成在 Windows Azure 中配置运行 Linux 的 Oracle 虚拟机。" services="virtual-machines" authors="bbenz" documentationCenter=""/>
 <tags ms.service="virtual-machines" ms.date="06/22/2015" wacn.date="09/18/2015" />
 #为 Azure 准备 Oracle Linux 虚拟机
 -   [为 Azure 准备 Oracle Linux 6.4+ 虚拟机](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)

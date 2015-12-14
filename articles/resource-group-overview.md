@@ -8,7 +8,7 @@
    editor=""/>
 
 <tags
-   ms.service="azure-resource-manager"
+   ms.service="virtual-machines"
    ms.date="10/02/2015"
    wacn.date="11/27/2015"/>
 

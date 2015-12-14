@@ -159,7 +159,7 @@ Azure PowerShell 中的 PowerShell cmdlet 尚不支持管理 Azure 通知中心�
 [购买选项]: http://www.windowsazure.cn/pricing/overview/
 [成员优惠]: http://azure.microsoft.com/pricing/member-offers/
 [免费试用]: /pricing/1rmb-trial/
-[安装和配置 Azure PowerShell]: /documentation/articles/install-configure-powershell
+[安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure
 [服务总线的 .NET API]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx
 [New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx

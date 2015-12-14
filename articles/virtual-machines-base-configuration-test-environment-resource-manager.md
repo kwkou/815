@@ -55,7 +55,7 @@
 
 ## 阶段 1：创建虚拟网络
 
-首先，如果需要，请按[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell) 中的说明在本地计算机上安装 Azure PowerShell。打开 Azure PowerShell 提示符。
+首先，如果需要，请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明在本地计算机上安装 Azure PowerShell。打开 Azure PowerShell 提示符。
 
 接下来，使用以下命令选择相应的 Azure 订阅。将引号内的所有内容（包括 < and > 字符）替换为相应的名称。
 

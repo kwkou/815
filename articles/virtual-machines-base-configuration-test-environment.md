@@ -1,6 +1,6 @@
 <properties
 	pageTitle="基本配置测试环境"
-	description="了解如何在 Microsoft Azure 中创建模拟简化 Intranet 的简单开发/测试环境。"
+	description="了解如何在 Windows Azure 中创建模拟简化 Intranet 的简单开发/测试环境。"
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -67,7 +67,7 @@
 7.	在 Corpnet 子网的**“CIDR (地址计数)”**列中，单击**“/24 (256)”**。
 8.	单击“完成”图标。请等到虚拟网络创建完以后再继续。
 
-接下来，请按[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell) 中的说明在本地计算机上安装 Azure PowerShell。打开 Azure PowerShell 命令提示符。
+接下来，请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明在本地计算机上安装 Azure PowerShell。打开 Azure PowerShell 命令提示符。
 
 首先，使用以下命令选择相应的 Azure 订阅。将引号内的所有内容（包括 < and > 字符）替换为相应的名称。
 

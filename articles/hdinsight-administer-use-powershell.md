@@ -284,7 +284,7 @@ HDInsight 群集分发附带称作 *hivesampletable* 的示例 Hive 表。你可
 
 [hdinsight-powershell-reference]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
 
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell/
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png
 

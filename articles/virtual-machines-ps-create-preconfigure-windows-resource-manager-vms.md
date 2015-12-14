@@ -35,15 +35,15 @@
 	-------
 	1.0.0
 
-如果你尚未安装 1.0.0 或更高版本，必须使用控件面板中的“程序和功能”删除 Azure PowerShell，然后安装最新的版本。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+如果你尚未安装 1.0.0 或更高版本，必须使用控件面板中的“程序和功能”删除 Azure PowerShell，然后安装最新的版本。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)和[Azure Powershell Preview 1.0](https://azure.microsoft.com/en-us/blog/azps-1-0-pre/)
 
 ## 步骤 2：设置订阅
 
 首先，请启动 Azure PowerShell 提示符。
 
 登录到你的帐户。
-	
-	Login-AzureRmAccount
+
+	Login-AzureRmAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
 
 使用以下命令获取你的订阅名称。
 
@@ -65,17 +65,17 @@
 使用资源管理器部署模型创建的 VM 需要一个资源组。如果需要，请为新虚拟机创建新资源组。将引号内的所有内容（包括 < and > 字符）替换为相应的名称。
 
 	$rgName="<resource group name>"
-	$locName="<location name, such as West US>"
+	$locName="<location name, such as China North>"
 	New-AzureRmResourceGroup -Name $rgName -Location $locName
 
 可以使用此命令列出现有的资源组。
 
 	Get-AzureRmResourceGroup | Sort ResourceGroupName | Select ResourceGroupName
 
-查看可在其中创建基于资源管理器的虚拟机的 Azure 位置。
+<!-- 查看可在其中创建基于资源管理器的虚拟机的 Azure 位置。
 
 	$loc=Get-AzureRmLocation | where { $_.Name –eq "Microsoft.Compute/virtualMachines" }
-	$loc.Locations
+	$loc.Locations -->
 
 ### 存储帐户
 
@@ -83,7 +83,7 @@
 使用资源管理器部署模型创建的 VM 需要基于资源管理器的存储帐户。如果需要，请使用这些命令创建新虚拟机的新存储帐户。
 
 	$rgName="<resource group name>"
-	$locName="<location name, such as West US>"
+	$locName="<location name, such as China North>"
 	$saName="<storage account name>"
 	$saType="<storage account type, specify one: Standard_LRS, Standard_GRS, Standard_RAGRS, or Premium_LRS>"
 	New-AzureRmStorageAccount -Name $saName -ResourceGroupName $rgName –Type $saType -Location $locName
@@ -383,6 +383,6 @@ $nicName 字符串必须是资源组中唯一的字符串。最佳实践是将�
 
 [使用资源管理器模板和 PowerShell 创建 Windows 虚拟机](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template-simple)
 
-[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
+[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 
 <!---HONumber=82-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="如何使用 Microsoft Azure 在 Linux 虚拟机上设置 Tomcat7" 
-	description="了解如何在 Microsoft Azure 中使用运行 Linux 的 Azure 虚拟机 (VM) 设置 Tomcat7。" 
+	pageTitle="如何使用 Windows Azure 在 Linux 虚拟机上设置 Tomcat7" 
+	description="了解如何在 Windows Azure 中使用运行 Linux 的 Azure 虚拟机 (VM) 设置 Tomcat7。" 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="NingKuang" 

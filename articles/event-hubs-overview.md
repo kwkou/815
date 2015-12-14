@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="事件中心概述"
+   pageTitle="事件中心概述 | Windows Azure"
    description="Azure 事件中心的简介和概述。"
    services="event-hubs"
    documentationCenter="na"
@@ -8,8 +8,8 @@
    editor="" />
 <tags 
    ms.service="event-hubs"
-   ms.date="06/09/2015"
-   wacn.date="08/14/2015" />
+   ms.date="09/30/2015"
+   wacn.date="10/22/2015" />
 
 # Azure 事件中心概述
 

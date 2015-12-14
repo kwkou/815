@@ -184,7 +184,7 @@ wc.cs 文件中的化简器代码使用 [StreamReader][streamreader] 对象从 c
 [console-writeline]: http://msdn.microsoft.com/zh-cn/library/system.console.writeline
 [stdin-stdout-stderr]: http://msdn.microsoft.com/zh-cn/library/3x292kth(v=vs.110).aspx
 
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell/
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
 

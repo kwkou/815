@@ -1,5 +1,5 @@
 <properties
-	pageTitle="多租户网站模式 | Microsoft Azure"
+	pageTitle="多租户网站模式 | Windows Azure"
 	description="查找介绍如何在 Azure 中实现多租户网站的体系结构概述和设计模式。"
 	services=""
 	documentationCenter=".net"

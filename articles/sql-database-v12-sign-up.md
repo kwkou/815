@@ -1,6 +1,6 @@
 <properties
 	pageTitle="演练：激活最新的 SQL 数据库更新版 V12"
-	description="介绍使用新的 Microsoft Azure 门户 UI 试用 Azure SQL 数据库版本 V12 的步骤。"
+	description="介绍使用新的 Windows Azure 门户 UI 试用 Azure SQL 数据库版本 V12 的步骤。"
 	services="sql-database"
 	documentationCenter=""
 	authors="MightyPen"
@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="04/28/2015"
-	wacn.date=""/>
+	wacn.date="09/15/2015"/>
 
 
 # 演练：激活最新的 SQL 数据库更新版 V12

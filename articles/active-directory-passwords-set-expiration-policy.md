@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="09/10/2015"
-	ms.author="curtand"/>
+	wacn.date="11/12/2015"/>
 
 
 # 在 Azure Active Directory 中设置密码过期策略

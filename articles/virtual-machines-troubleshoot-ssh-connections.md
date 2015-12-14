@@ -17,8 +17,6 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
-
-
 有许多原因可能会导致基于 Linux 的 Azure 虚拟机 SSH 失败。本文将帮助你找出原因并予以更正。
 
 > [AZURE.NOTE]本文仅适用于运行 Linux 的 Azure 虚拟机。有关对运行 Windows 的 Azure 虚拟机的连接进行故障排除，请参阅[此文](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)。
@@ -27,7 +25,7 @@
 
 如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和 CSDN 论坛](/support/forums/)上的 Azure 专家。
 
-或者，你也可以发起 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Microsoft Azure 支持常见问题](/support/faq/)。
+或者，你也可以发起 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Windows Azure 支持常见问题](/support/faq/)。
 
 
 ## 基本步骤 - 经典部署模型

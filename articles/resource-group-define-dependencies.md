@@ -10,7 +10,7 @@
 <tags
    ms.service="azure-resource-manager"
    ms.date="07/15/2015"
-   wa.date="10/3/2015"/>
+   wacn.date="10/03/2015"/>
 
 # 在 Azure 资源管理器模板中定义依赖关系
 

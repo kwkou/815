@@ -1,5 +1,5 @@
 <properties
-	pageTitle="VM 任务的等效 Azure CLI 命令 | Microsoft Azure"
+	pageTitle="VM 任务的等效 Azure CLI 命令 | Windows Azure"
 	description="用于在 Azure 资源管理器和 Azure 服务管理模式下创建和管理 Azure VM 的等效 Azure CLI 命令"
 	services="virtual-machines"
 	documentationCenter=""

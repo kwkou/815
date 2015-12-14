@@ -23,12 +23,12 @@ Azure SDK for .NET 将安装以下产品：
 
 - [Visual Studio Express for Web](#vwd)
 - [Microsoft ASP.NET 和 Web Tools for Visual Studio](#wte)
-- [Microsoft Azure Tools for Microsoft Visual Studio](#tools)
-- [Microsoft Azure 创作工具](#auth)
-- [Microsoft Azure 模拟器](#emulator)
-- [Microsoft Azure 存储模拟器](#stgemulator)
-- [Microsoft Azure 存储工具](#stgtools)
-- [用于 .NET 的 Microsoft Azure 库](#libraries)
+- [Windows Azure Tools for Microsoft Visual Studio](#tools)
+- [Windows Azure 创作工具](#auth)
+- [Windows Azure 模拟器](#emulator)
+- [Windows Azure 存储模拟器](#stgemulator)
+- [Windows Azure 存储工具](#stgtools)
+- [用于 .NET 的 Windows Azure 库](#libraries)
 - [用于 Visual Studio 的 LightSwitch Azure Publishing 外接程序](#ls)
 
 ###Visual Studio Express for Web
@@ -48,7 +48,7 @@ Azure SDK for .NET 将安装以下产品：
 
 >[WACOM.NOTE]无需安装 Azure SDK for .NET 即可使用这些功能；它们还包括在 Visual Studio 更新中。
 
-###Microsoft Azure Tools for Microsoft Visual Studio
+###Windows Azure Tools for Microsoft Visual Studio
 
 这使你可以使用 Azure 云服务和虚拟机：
 
@@ -60,7 +60,7 @@ Azure SDK for .NET 将安装以下产品：
 * 在服务器资源管理器中查看和管理 云服务、虚拟机 和 Service Bus。 
 * 针对云服务和虚拟机在调试模式下远程运行。
 
-###Microsoft Azure 创作工具
+###Windows Azure 创作工具
 
 其中包括：
 
@@ -68,19 +68,19 @@ Azure SDK for .NET 将安装以下产品：
 * CSEncrypt 命令行工具，用于加密密码，以便使用密码通过远程桌面连接访问云服务角色实例。
 * 运行时二进制文件，云服务项目需要使用该文件与运行时环境通信以及进行诊断。这些二进制文件在 NuGet 包中不提供。
 
-###Microsoft Azure 模拟器
+###Windows Azure 模拟器
 
 Azure 模拟器模拟云服务环境，这样你就可以先在本地计算机上测试云服务项目，然后再将其部署到 Azure。
 
-###Microsoft Azure 存储模拟器
+###Windows Azure 存储模拟器
 
 Azure 存储模拟器使用 SQL Server 实例和本地文件系统来模拟 Azure 存储空间（队列、表、Blob），以便在本地进行测试。
 
-###Microsoft Azure 存储工具
+###Windows Azure 存储工具
 
 这将安装命令行工具 AzCopy，以便将数据传入和传出 Azure 存储帐户。
 
-###用于 .NET 的 Microsoft Azure 库
+###用于 .NET 的 Windows Azure 库
 
 其中包括：
 
@@ -103,7 +103,7 @@ Azure 存储模拟器使用 SQL Server 实例和本地文件系统来模拟 Azur
 
 	**包括客户端库的项目模板。** 只有 [Azure 云服务](/zh-cn/documentation/articles/cloud-services-dotnet-get-started/)和 [Azure 移动服务](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)项目模板会自动包含一些客户端库。对于其他库或其他模板，安装你所需的[客户端库 NuGet 包](http://go.microsoft.com/fwlink/?LinkId=510472)。
 
-* [Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/)
+* [Azure PowerShell](/zh-cn/documentation/articles/powershell-install-configure/)
 
 	使用 Azure PowerShell，你可以自动化 Azure 环境的创建和部署。
 
@@ -137,7 +137,7 @@ Azure 存储模拟器使用 SQL Server 实例和本地文件系统来模拟 Azur
 
 ###Azure SDK for .NET 版本的生命周期策略是什么？
 
-请参阅 Microsoft Azure 云服务支持生命周期策略。
+请参阅 Windows Azure 云服务支持生命周期策略。
 
 ###哪些来宾操作系统版本是 Azure SDK for .NET 兼容的？
 

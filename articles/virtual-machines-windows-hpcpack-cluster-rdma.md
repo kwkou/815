@@ -1,5 +1,5 @@
 <properties
- pageTitle="设置 Windows RDMA 群集以运行 MPI 应用程序 | Microsoft Azure"
+ pageTitle="设置 Windows RDMA 群集以运行 MPI 应用程序 | Windows Azure"
  description="了解如何创建包含 A8 或 A9 VM 的 Windows HPC Pack 群集，以使用 RDMA 网络来运行 MPI 应用。"
  services="virtual-machines"
  documentationCenter=""

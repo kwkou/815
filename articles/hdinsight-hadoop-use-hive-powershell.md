@@ -26,7 +26,7 @@
 若要完成本文中的步骤，你将需要：
 
 * Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Windows）
-* <a href="/documentation/articles/install-configure-powershell/" target="_blank">Azure PowerShell</a>
+* <a href="/documentation/articles/powershell-install-configure/" target="_blank">Azure PowerShell</a>
 
 
 

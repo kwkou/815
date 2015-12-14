@@ -7,9 +7,9 @@
    manager="carolz"
    editor="tysonn" />
 <tags 
-   ms.service="virtual-network"
+   ms.service="virtual-machines"
    ms.date="09/18/2015"
-   wan.date="10/17/2015" />
+   wacn.date="10/17/2015" />
 
 # 将经典 VNet 连接到新 VNet
 

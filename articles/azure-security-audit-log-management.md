@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Microsoft Azure 安全和审核日志管理 | Microsoft Azure"
+   pageTitle="Windows Azure 安全和审核日志管理 | Windows Azure"
    description="文章提供了从托管在 Azure 上的服务生成、收集和分析安全日志的介绍。它面向每天要进行信息资产管理的 IT 专业人员和安全分析人员（包括负责其组织安全和合规性工作的人员）。"
    services="virtual-machines, cloud-services, storage"
    documentationCenter="na"
@@ -10,9 +10,9 @@
 <tags
    ms.service="azure-security"
    ms.date="08/13/2015"
-   wa.date="10/3/2015"/>
+   wacn.date="10/03/2015"/>
 
-# Microsoft Azure 安全和审核日志管理
+# Windows Azure 安全和审核日志管理
 
 Azure 使客户能够在其订阅中执行从 Azure 服务架构 (IaaS) 和平台即服务 (PaaS) 角色到中央存储的安全事件生成和收集。然后，客户就可以使用 [HDInsight](http://www.windowsazure.cn/documentation/services/hdinsight/) 来聚合和分析所收集的事件。此外，这些收集的事件可以导出到本地安全信息和事件管理 (SIEM) 系统以便进行持续监视。
 
@@ -566,17 +566,17 @@ Azure Active Directory (Azure AD) 包括一组安全、使用情况和审核日�
 | 基于清单的 ETW | 由任何进程生成的 Windows 事件的事件跟踪 |
 
 ## 其他资源
-以下资源提供有关 Microsoft Azure 和相关的 Microsoft 服务的常规信息：
+以下资源提供有关 Windows Azure 和相关的 Microsoft 服务的常规信息：
 
-- [Microsoft Azure 信任中心](/support/trust-center/)
+- [Windows Azure 信任中心](/support/trust-center/)
 
     有关如何为 Azure 开发嵌入安全和隐私的信息以及 Azure 如何满足广泛的国际和特定于行业的合规性标准的信息
 
-- [Microsoft Azure 主页](http://www.windowsazure.cn)
+- [Windows Azure 主页](http://www.windowsazure.cn)
 
-    有关 Microsoft Azure 常规信息和链接
+    有关 Windows Azure 常规信息和链接
 
-- [Microsoft Azure 文档中心](/documentation)
+- [Windows Azure 文档中心](/documentation)
 
     Azure 服务和自动化脚本指南
 
@@ -586,7 +586,7 @@ Azure Active Directory (Azure AD) 包括一组安全、使用情况和审核日�
 
 - [Microsoft 安全响应中心电子邮件](mailto:secure@microsoft.com)
 
-    通过电子邮件报告 Microsoft 安全漏洞，包括 Microsoft Azure
+    通过电子邮件报告 Microsoft 安全漏洞，包括 Windows Azure
 
 <!--Image references-->
 [1]: ./media/azure-security-audit-log-management/sec-security-data-collection-flow.png

@@ -15,7 +15,7 @@
 
 # 有关服务管理中虚拟机的文章
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]。
 
 
 ## 入门
@@ -35,8 +35,6 @@
 [使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
 [使用 Azure PowerShell 创建和管理基于 Windows 的虚拟机](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)
-
-[使用 Azure 命令行界面 (Azure CLI) 创建运行 Linux 的自定义 VM](/documentation/articles/virtual-machines-xplat-getting-started)
 
 [使用 Azure CLI 创建多 VM 部署](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli)
 
@@ -77,10 +75,6 @@
 [如何将虚拟机连接到虚拟网络或云服务](/documentation/articles/cloud-services-connect-virtual-machine)
 
 [如何为虚拟机配置可用性集](/documentation/articles/virtual-machines-how-to-configure-availability)
-
-<!--[-->开始配置内部负载平衡器<!--](/documentation/articles/load-balancer-internal-getstarted)-->
-
-<!--[-->开始配置面向 Internet 的负载平衡器<!--](/documentation/articles/load-balancer-internet-getstarted)-->
 
 [如何设置虚拟机的终结点](/documentation/articles/virtual-machines-set-up-endpoints)
 

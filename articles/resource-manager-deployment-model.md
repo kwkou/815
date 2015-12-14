@@ -46,10 +46,6 @@
 
             azure config mode arm
 
-- 资源类型的名称中不包括 **(经典)**。下图显示了**存储帐户**类型。
-
-    ![网站](./media/resource-manager-deployment-model/resource-manager-type.png)
-
 ## 经典部署的特性
 
 在经典部署模型中创建的资源具有以下共同特性：
@@ -66,9 +62,6 @@
 
   - 适用于 REST 操作的[服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)。
   - Azure CLI 命令在 **asm** 或默认模式下运行。
-- 资源类型的名称中包括 **(经典)**。下图显示了**存储帐户 (经典)** 类型。
-
-    ![经典类型](./media/resource-manager-deployment-model/classic-type.png)
 
 您仍可以使用预览门户来管理通过经典部署创建的资源。
 
