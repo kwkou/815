@@ -8,7 +8,7 @@
 	editor="jimbe"/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="virtual-machines"
 	ms.date="08/10/2015"
 	wacn.date="12/03/2015"/>
 
