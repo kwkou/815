@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage"
 	ms.date="08/06/2015"
-	wacn.date="12/11/2015"/>
+	wacn.date="12/14/2015"/>
 
 
 # 高级存储：适用于 Azure 虚拟机工作负荷的高性能存储
@@ -325,7 +325,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 1. 根据[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell) 中提供的步骤设置 PowerShell 环境。
 2. 启动 PowerShell 控制台，连接到订阅，并在控制台窗口中运行以下 PowerShell cmdlet。如此 PowerShell 语句中所示，当你创建高级存储帐户时，必须将 **Type** 参数指定为 **Premium_LRS**。
 
-		New-AzureStorageAccount -StorageAccountName "yourpremiumaccount" -Location "China North" -Type "Premium_LRS"
+		New-AzureStorageAccount -StorageAccountName "yourpremiumaccount" -Location "China East" -Type "Premium_LRS"
 
 3. 接下来，请创建新的 DS 系列 VM，并在控制台窗口中运行以下 PowerShell cmdlet 以指定你要使用高级存储。可以使用相同的步骤创建 GS 系列 VM。在命令中指定适当的 VM 大小。例如，Standard_GS2：
 
@@ -333,7 +333,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
     	$adminName = "youradmin"
     	$adminPassword = "yourpassword"
     	$vmName ="yourVM"
-    	$location = "China North"
+    	$location = "China East"
     	$imageName = "a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201409.01-en.us-127GB.vhd"
     	$vmSize ="Standard_DS2"
     	$OSDiskPath = "https://" + $storageAccount + ".blob.core.chinacloudapi.cn/vhds/" + $vmName + "_OS_PIO.vhd"
@@ -357,12 +357,12 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 
 #### 创建高级存储帐户
 
-	azure storage account create "premiumtestaccount" -l "china north" --type PLRS
+	azure storage account create "premiumtestaccount" -l "china east" --type PLRS
 
 
 #### 创建 DS 系列虚拟机
 
-	azure vm create -z "Standard_DS2" -l "china north" -e 22 "premium-test-vm"
+	azure vm create -z "Standard_DS2" -l "china east" -e 22 "premium-test-vm"
 		"b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-zh-CN-30GB" -u "myusername" -p "passwd@123"
 
 #### 显示有关虚拟机的信息
