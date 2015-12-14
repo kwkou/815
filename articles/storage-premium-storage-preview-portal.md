@@ -334,7 +334,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
     	$adminPassword = "yourpassword"
     	$vmName ="yourVM"
     	$location = "China East"
-    	$imageName = "a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201409.01-en.us-127GB.vhd"
+    	$imageName = "55bc2b193643443bb879a78bda516fc8__Windows-Server-2012-R2-20150726-en.us-127GB.vhd"
     	$vmSize ="Standard_DS2"
     	$OSDiskPath = "https://" + $storageAccount + ".blob.core.chinacloudapi.cn/vhds/" + $vmName + "_OS_PIO.vhd"
     	$vm = New-AzureVMConfig -Name $vmName -ImageName $imageName -InstanceSize $vmSize -MediaLocation $OSDiskPath
