@@ -194,7 +194,7 @@
 	
 	[网站定价详细信息](/home/features/web-site/#price)
 	
-	[网站定价详细信息 - SSL 连接](/zh-cn/home/features/web-site/#website-SSL_connection)。
+	[网站定价详细信息 - SSL 连接](/zh-cn/home/features/web-site/#price)。
 
 <!-- LINKS -->
 [vmsizes]: http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx
@@ -203,7 +203,7 @@
 [portal]: https://manage.windowsazure.cn/
 
 <!-- IMAGES -->
-[Select Website]: ./media/web-sites-scale/01SelectWebsite.png
+[Select Website]: ./media/web-sites-scale/01SelectWebSite.png
 [SelectScaleTab]: ./media/web-sites-scale/02SelectScaleTab.png
 
 [ChooseWHP]: ./media/web-sites-scale/03aChooseWHP.png
