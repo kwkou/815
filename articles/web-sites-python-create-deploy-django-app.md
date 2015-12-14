@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="08/30/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/14/2015"/>
 
 
 # 在 Azure 中使用 Django 创建网站
@@ -30,7 +30,7 @@
   + [Windows - Python Tools for Visual Studio](#website-development-windows-ptvs)
   + [Windows - 命令行](#website-development-windows-command-line)
   + [Mac/Linux - 命令行](#website-development-mac-linux-command-line)
-+ [故障排除 - 部署](#troubleshooting-deployment)
++ [部署](#troubleshooting-deployment)
 + [故障排除 - 软件包安装](#troubleshooting-package-installation)
 + [故障排除 - 虚拟环境](#troubleshooting-virtual-environment)
 + [疑难解答 — 静态文件](#troubleshooting-static-files)
@@ -411,6 +411,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
     git commit -m "Added azure package"
 
 ### 部署到 Azure
+<a name="troubleshooting-deployment"></a>
 
 要触发部署，请将更改推送到 Azure：
 

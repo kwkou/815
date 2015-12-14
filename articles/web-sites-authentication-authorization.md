@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="09/29/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/14/2015"/>
 
 # 使用 Active Directory 在 Azure 网站中进行身份验证 #
 
@@ -18,7 +18,7 @@
 
 ## 零摩擦身份验证和授权 ##
 
-单击几下按钮，就可以为网站启用身份验证和授权。每个 Azure 网站中的复选框样式配置都提供了业务线网站的基本访问控制。它在授予用户对网站内容的访问权限之前，会强制对所选的 Azure AD 租户进行 HTTPS 通信和身份验证。有关详细信息，请参阅 [网站身份验证/授权](http://azure.microsoft.com/blog/2014/11/13/azure-websites-authentication-authorization/)。
+单击几下按钮，就可以为网站启用身份验证和授权。每个 Azure 网站中的复选框样式配置都提供了业务线网站的基本访问控制。它在授予用户对网站内容的访问权限之前，会强制对所选的 Azure AD 租户进行 HTTPS 通信和身份验证。有关详细信息，请参阅 [网站身份验证/授权](http://azure.microsoft.com/zh-cn/blog/2014/11/13/azure-websites-authentication-authorization/)。
 
 >[AZURE.NOTE]此功能目前处于预览状态。
 

@@ -9,7 +9,7 @@
 <tags
 	ms.service="automation"
 	ms.date="10/01/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/14/2015"/>
 
 # 学习 Windows PowerShell 工作流
 
@@ -21,11 +21,7 @@ Azure Automation 中的 Runbook 作为 Windows PowerShell 工作流实现。Wind
 
 ## Runbook 类型
 
-Azure 自动化中有两种类型的 Runbook，“文本”和“图形”。您在创建 Runbook 时定义其类型，并且一旦创建之后，不能将 Runbook 转换为另一种类型。
-
-文本 Runbook 适用于愿意使用 Azure 自动化中的文本编辑器或脱机编辑器（如 PowerShell ISE）直接处理 PowerShell 工作流代码的用户。如果您要创建文本 Runbook，则应了解本文中的信息。
-
-图形 Runbook 允许您图形界面创建使用相同活动和 cmdlet 的 Runbook，图形界面隐藏了底层 PowerShell 工作流的复杂性。本文中的一些概念（如检查点和并行执行）仍适用于图形 Runbook，但您无需关心详细的语法。
+Windows Azure 中国目前仅支持文本 Runbook。
 
 ## 工作流的基本结构
 
@@ -94,6 +90,7 @@ Azure 自动化中有两种类型的 Runbook，“文本”和“图形”。您
 
 
 ## InlineScript
+<a name="inlinescript"></a>
 
 当您需要将一个或多个命令作为传统的 PowerShell 脚本而不是 PowerShell 工作流运行时，**InlineScript** 活动非常有用。尽管工作流中的命令将发送到 Windows Workflow Foundation 进行处理，但 InlineScript 块中的命令将由 Windows PowerShell 处理。
 
@@ -144,6 +141,7 @@ InlineScript 使用如下所示的语法。
 
 
 ## 并行处理
+<a name="parallel-execution"></a>
 
 Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行而不是按顺序执行一组命令。
 
@@ -206,6 +204,7 @@ Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行�
 
 
 ## 检查点
+<a name="Checkpoints"></a>
 
 “检查点”是工作流变量的当前状态的快照，包括变量的当前值以及到该点为止生成的任何输出。如果工作流以错误结束或挂起，则其下次运行时将从其上一个检查点开始，而不是从工作流的起点开始。您可以使用 **Checkpoint-Workflow** 活动在工作流中设置一个检查点。
 

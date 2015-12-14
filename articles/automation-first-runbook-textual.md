@@ -122,8 +122,7 @@
 11.  关闭“测试”窗格。
 12.  单击“发布”以发布 Runbook 的新版本。
 13.  停止在上一步中启动的虚拟机。
-13.  单击“启动”以启动 Runbook。键入要启动的虚拟机的 **VMName** 和 **VMServiceName**。<br>
-
+13.  单击“启动”以启动 Runbook。键入要启动的虚拟机的 **VMName** 和 **VMServiceName**。
 14.  一旦 Runbook 完成后，检查已启动的虚拟机。
 
 <!---HONumber=82-->

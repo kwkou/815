@@ -8,7 +8,7 @@
 	New-AzureStorageContext
 	Set-AzureSubscription
 	Show-AzurePortal
-例如，`Add-AzureAccount -Credential $Cred -ErrorAction Stop` 应变为 `Add-AzureAccount -Credential $Cred -ErrorAction Stop -Environment AzureChinaCloud`
+>例如，`Add-AzureAccount -Credential $Cred -ErrorAction Stop` 应变为 `Add-AzureAccount -Credential $Cred -ErrorAction Stop -Environment AzureChinaCloud`
 > 
 
 <!---HONumber=79-->

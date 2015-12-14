@@ -1,7 +1,7 @@
 
-你可以借助使用安全套接字层 (SSL) 加密的 HTTPS 来保护网站与浏览器之间的通信。这是保护通过 Internet 发送的数据安全的最常用方法，并且可确保对访问者而言，他们与你的应用之间处理的事务是安全的。本文介绍如何在 Azure App Service 中配置网站的 HTTPS。
+你可以借助使用安全套接字层 (SSL) 加密的 HTTPS 来保护网站与浏览器之间的通信。这是保护通过 Internet 发送的数据安全的最常用方法，并且可确保对访问者而言，他们与你的应用之间处理的事务是安全的。本文介绍如何在 Azure 网站中配置网站的 HTTPS。
 
-> [AZURE.NOTE]快速入门 - 使用全新的 Azure [操作实例指南](http://support.microsoft.com/kb/2990804)！ 它可使自定义域名快速地与 Azure 云服务或 [App Service](/documentation/services/web-sites/) 相关联，并确保通信安全 (SSL)。
+> [AZURE.NOTE]快速入门 - 使用全新的 Azure [操作实例指南](http://support.microsoft.com/kb/2990804)！ 它可使自定义域名快速地与 Azure 云服务或 [Azure 网站](/documentation/services/web-sites/)相关联，并确保通信安全 (SSL)。
 
 
 ##<a name="bkmk_azurewebsites"></a>*.chinacloudsites.cn 域的 HTTPS
@@ -30,7 +30,7 @@
 * 该证书应使用至少 2048 位加密。
 *  从专用 CA 服务器颁发的证书不受 Azure 网站支持。
 
-若要获取可用于 Azure App Service 的 SSL 证书，你可以将证书签名请求 (CSR) 提交到证书颁发机构，然后基于收到的证书生成 .pfx 文件。可以使用所选的工具来执行此操作。以下是获取证书的一些常见方式：
+若要获取可用于 Azure 网站的 SSL 证书，你可以将证书签名请求 (CSR) 提交到证书颁发机构，然后基于收到的证书生成 .pfx 文件。可以使用所选的工具来执行此操作。以下是获取证书的一些常见方式：
 
 - [使用 Certreq.exe 获取证书](#bkmk_certreq)
 - [使用 IIS 管理器获取证书](#bkmk_iismgr)
@@ -40,7 +40,7 @@
 
 > [AZURE.NOTE]在遵循步骤时，系统将提示你输入**公用名**，例如 `www.contoso.com`。对于通配符证书，此值应为 *.domainname（例如，*.contoso.com）。如果需要同时支持通配符名称（如 *.contoso.com）和根域名（如 contoso.com），可以使用通配符 subjectAltName 证书。
 >
-> Azure App Service 支持椭圆曲线加密 (ECC) 证书；不过，它们相对较新，你应该在具体步骤中使用 CA 来创建 CSR。
+> Azure 网站支持椭圆曲线加密 (ECC) 证书；不过，它们相对较新，你应该在具体步骤中使用 CA 来创建 CSR。
 
 你可能还需要获取**[中间证书](http://en.wikipedia.org/wiki/Intermediate_certificate_authorities)**（也称为链式证书），前提是这些证书由你的 CA 使用。与“非链式证书”相比，使用中间证书被认为更安全，因此 CA 通常使用这些证书。中间证书通常作为从 CA 网站的单独下载提供。本文中的步骤提供了有关如何确保任何中间证书与上载到 Azure 网站的证书合并的步骤。
 
@@ -176,11 +176,11 @@ Certreq.exe 是用于创建证书请求的 Windows 实用程序。它已成为�
 	openssl pkcs12 -chain -export -out myserver.pfx -inkey myserver.key -in myserver.crt -certfile intermediate-cets.pem
 	`````
 
-	运行此命令后，你应该具有适用于 Azure App Service 的 **myserver.pfx** 文件。
+	运行此命令后，你应该具有适用于 Azure 网站的 **myserver.pfx** 文件。
 
 ###<a name="bkmk_iismgr"></a>使用 IIS 管理器获取证书
 
-如果你熟悉 IIS 管理器，则可以用它来生成可与 Azure App Service 一起使用的证书。
+如果你熟悉 IIS 管理器，则可以用它来生成可与 Azure 网站一起使用的证书。
 
 1. 使用 IIS 管理器生成要发送给证书颁发机构的 CSR。有关生成 CSR 的详细信息，请参阅 [请求 Internet 服务器证书 (IIS 7)][iiscsr]。
 
@@ -280,7 +280,7 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 
 	保存文件。
 
-5. 从命令行、Bash 或终端会话中，使用以下命令将 **myserver.key** 和 **myserver.crt** 转换为 **myserver.pfx**，这是 Azure App Service 所要求的格式：
+5. 从命令行、Bash 或终端会话中，使用以下命令将 **myserver.key** 和 **myserver.crt** 转换为 **myserver.pfx**，这是 Azure 网站所要求的格式：
 
 		openssl pkcs12 -export -out myserver.pfx -inkey myserver.key -in myserver.crt
 
@@ -295,7 +295,7 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 	openssl pkcs12 -chain -export -out myserver.pfx -inkey myserver.key -in myserver.crt -certfile intermediate-cets.pem
 	`````
 
-	运行此命令后，你应该具有适用于 Azure App Service 的 **myserver.pfx** 文件。
+	运行此命令后，你应该具有适用于 Azure 网站的 **myserver.pfx** 文件。
 
 
 ###<a name="bkmk_selfsigned"></a>生成自签名证书（仅用于测试）
@@ -388,21 +388,19 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 
 > [AZURE.NOTE]将网站从**免费**模式切换到**标准**模式之前，你应该删除网站订阅已有的支出上限，否则如果你在计费周期结束之前达到你的上限，可能会出现你的站点变得不可用的风险。有关共享和**标准**模式定价的详细信息，请参阅 [定价详细信息][pricing]。
 
-1. 在浏览器中，打开 [管理门户][portal]。
-
-2. 在“网站”选项卡中，单击你的网站的名称。
-
-	![选择网站][website]
-
-3. 单击“缩放”选项卡。
+1.	在浏览器中，打开 [Azure 门户](http://manage.windowsazure.cn)。
+2.	单击页面左侧的“浏览”选项。
+3.	单击“Web Apps”边栏选项卡。
+4.	单击 Web 应用的名称。
+5.	在“基本功能”页中，单击“设置”。
+6.	单击“缩放”。
 
 	![缩放选项卡][scale]
 
-4. 在“常规”部分中，通过单击“标准”设置 Web 托管计划模式。
+7.	在“缩放”部分中，单击“选择”设置 App Service 计划模式。
 
-	![选定的标准模式][standard]
+	![定价层][sslreserved]
 
-5. 单击“保存”。在系统提示后，单击“是”。
 	> [AZURE.NOTE]如果出现“为网站‘&lt;应用名称&gt;’配置缩放失败”错误，你可以使用详细信息按钮来了解详细信息。可能会出现“可用的标准实例服务器不足，无法满足此请求。”错误。如果收到此错误，请联系 [Azure 支持人员](/support/options/)。
 
 
@@ -410,15 +408,18 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 
 在执行本部分中的这些步骤之前，必须将你的自定义域名与你的网站相关联。有关详细信息，请参阅 [为网站配置自定义域名][customdomain]。
 
-1.	在浏览器中，打开 [Azure 管理门户][portal]。
+1.	在你的浏览器中，打开 [Azure 管理门户](http://manage.windowsazure.cn)。
+3.	单击 “Web 应用”，选择网站的名称。
+5.	单击“配置”选项卡。	
 
-2. 在“网站”选项卡中，单击站点名称，然后选择“配置”选项卡。
+	![配置选项卡][sslconfig]
 
-3. 在“证书”部分中，单击“上载证书”
+7.	在“证书”部分中，单击“上载”
+8.	通过使用“上载证书”对话框，选择以前使用 IIS 管理器或 OpenSSL 创建的 .pfx 证书文件。如果有，指定用于保护 .pfx 文件的密码。最后，单击“保存”以上载证书。
 
-4. 通过使用“上载证书”对话框，选择以前使用 IIS 管理器或 OpenSSL 创建的 .pfx 证书文件。如果有，指定用于保护 .pfx 文件的密码。最后，单击**复选标记**以上载证书。
+	![ssl 上载][ssluploadcert]
 
-5. 在“配置”选项卡的“ssl 绑定”部分中，使用下拉菜单选择要使用 SSL 保护的域名，然后选择要使用的证书。你还可以选择是使用 [服务器名称指示][sni](SNI) 还是基于 IP 的 SSL。
+9. 在“ssl 绑定”部分中，使用下拉菜单选择要使用 SSL 保护的域名，然后选择要使用的证书。你还可以选择是使用 [服务器名称指示][sni](SNI) 还是基于 IP 的 SSL。
 	
 	* 基于 IP 的 SSL 通过将服务器的专用公共 IP 地址映射到域名，将证书与域名相关联。这要求与您的服务相关联的每个域名（contoso.com、fabricam.com 等）都具有专用的 IP 地址。这是将 SSL 证书与某一 Web 服务器相关联的传统方法。
 
@@ -441,7 +442,7 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 
 ##<a name="bkmk_enforce"></a>在网站上强制实施 HTTPS
 
-Azure App Service *不*强制实施 HTTPS。访问者可能仍使用 HTTP 访问网站，这可能危及网站的安全。如果你想要为网站强制实施 HTTPS，可以使用 **URL 重写**模块。Azure App Service 随附了 URL 重写模块，此模块可让你定义传入请求在送达应用程序之前要应用的规则。**该模块可用于以 Azure 支持的任何编程语言编写的应用程序。**
+Azure 网站*不*强制实施 HTTPS。访问者可能仍使用 HTTP 访问网站，这可能危及网站的安全。如果你想要为网站强制实施 HTTPS，可以使用 **URL 重写**模块。Azure 网站随附了 URL 重写模块，此模块可让你定义传入请求在送达应用程序之前要应用的规则。**该模块可用于以 Azure 支持的任何编程语言编写的应用程序。**
 
 > [AZURE.NOTE].NET MVC 应用程序应使用 [RequireHttps](http://msdn.microsoft.com/zh-cn/library/system.web.mvc.requirehttpsattribute.aspx) 筛选器而不是 URL 重写。有关使用 RequireHttps 的详细信息，请参阅[将安全的 ASP.NET MVC 5 应用部署到网站](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
 > 
@@ -470,7 +471,7 @@ Azure App Service *不*强制实施 HTTPS。访问者可能仍使用 HTTP 访问
 
 此规则的工作方式是当用户使用 HTTP 请求某个页面时，返回 HTTP 状态码 301（永久重定向）。301 将请求重定向到访问者请求的同一个 URL，但使用 HTTPS 来替换请求的 HTTP 部分。例如，HTTP://contoso.com 将重定向到 HTTPS://contoso.com。
 
-> [AZURE.NOTE]如果应用程序是以 **Node.js**、**PHP**、**Python Django** 或 **Java** 编写的，则它可能不包含 web.config 文件。但是，托管在 Azure App Service 中时，**Node.js**、**Python Django** 和 **Java** 都确实会使用 web.config - Azure 在部署期间自动创建此文件，因此你永远看不到此文件。如果在应用程序中添加一个 web.config 文件，则它将覆盖 Azure 自动生成的文件。
+> [AZURE.NOTE]如果应用程序是以 **Node.js**、**PHP**、**Python Django** 或 **Java** 编写的，则它可能不包含 web.config 文件。但是，托管在 Azure 网站中时，**Node.js**、**Python Django** 和 **Java** 都确实会使用 web.config - Azure 在部署期间自动创建此文件，因此你永远看不到此文件。如果在应用程序中添加一个 web.config 文件，则它将覆盖 Azure 自动生成的文件。
 
 ###.NET
 
@@ -537,5 +538,7 @@ Azure App Service *不*强制实施 HTTPS。访问者可能仍使用 HTTP 访问
 [certwiz2]: ./media/configure-ssl-web-site/waws-certwiz2.png
 [certwiz3]: ./media/configure-ssl-web-site/waws-certwiz3.png
 [certwiz4]: ./media/configure-ssl-web-site/waws-certwiz4.png
-
+[sslreserved]: ./media/configure-ssl-web-site/sslreserved.png
+[sslconfig]: ./media/configure-ssl-web-site/sslconfig.png
+[ssluploadcert]: ./media/configure-ssl-web-site/ssluploadcert.png
 <!---HONumber=76-->

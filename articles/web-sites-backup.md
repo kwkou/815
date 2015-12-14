@@ -10,7 +10,7 @@
 <tags 
 	ms.service="app-service-web" 
 	ms.date="09/16/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="12/14/2015"/>
 
 # Azure 网站备份
 
@@ -21,7 +21,6 @@
 
 ## 本文内容
 
-- [自动轻松备份（视频）](#video)
 - [备份的内容](#whatsbackedup)
 - [要求和限制](#requirements)
 - [创建手动备份](#manualbackup)

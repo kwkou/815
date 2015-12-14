@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="10/09/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/14/2015"/>
 
 # 在 Azure 网站中创建 .NET Web 作业
 
@@ -789,6 +789,7 @@ HttpPost `Edit` 方法的代码和它类似，不同之处在于如果用户选�
 > * 为方便起见，`ConvertImageToThumbnailJPG` 方法中的代码（未显示）使用 `System.Drawing` 命名空间中的类。但是，此命名空间中的类已设计用于 Windows 窗体。不支持在 Windows 或 ASP.NET 服务中使用。有关图像处理选项的详细信息，请参阅[动态图像生成](http://www.hanselman.com/blog/BackToBasicsDynamicImageGenerationASPNETControllersRoutingIHttpHandlersAndRunAllManagedModulesForAllRequests.aspx)和[深入学习图像大小调整](http://www.hanselminutes.com/313/deep-inside-image-resizing-and-scaling-with-aspnet-and-iis-with-imageresizingnet-author-na)。
 
 ## 后续步骤
+<a name="next-steps"></a>
 
 在本教程中，你已了解了一个使用 WebJobs SDK 进行后端处理的简单多层应用程序。本部分提供有关进一步了解 ASP.NET 多层应用程序和 Web 作业的一些建议。
 

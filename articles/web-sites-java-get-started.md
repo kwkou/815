@@ -9,7 +9,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="08/31/2015"
-	wacn.date="10/22/2015"/>
+	wacn.date="12/14/2015"/>
 
 # Azure 网站和 Java 入门
 
@@ -31,7 +31,7 @@
 
 此信息讲解如何使用 Azure 配置 UI 为你的网站选择 Java 应用程序容器（Apache Tomcat 或 Jetty）。
 
-1. 登录到 Windows Azure 管理门户。
+1. 登录到 Windows Azure [管理门户](https://manage.windowsazure.cn/)。
 2. 依次单击“新建”、“计算”、“网站”和“快速创建”。
 3. 指定 URL 名称。
 4. 选择区域。例如“中国东部”。

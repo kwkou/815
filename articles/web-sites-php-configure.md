@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="09/16/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/14/2015"/>
 #在 Azure 网站中配置 PHP
 
 ##目录
@@ -73,9 +73,9 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 ### 通过 ini 设置进行配置
 
 1. 将 `ext` 目录添加到 `d:\home\site` 目录。
-2. 将 `.dll` 扩展文件置于 `ext` 目录中（例如 `php_mongo.dll` 和 `php_xdebug.dll`）。确保扩展与默认版本的 PHP（撰写本文时为 PHP 5.4）兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
-3. 使用密钥 `PHP_INI_SCAN_DIR` 和值 `d:\home\site\ini` 将应用设置添加到你的网站
-4. 在 `d:\home\site\ini` 中创建名为 `extensions.ini` 的 `ini` 文件。
+2. 将 `.dll` 扩展文件置于 `ext` 目录中（例如 <code class="prettyprint">php_mongo.dll</code> 和 <code class="prettyprint">php_xdebug.dll</code>）。确保扩展与默认版本的 PHP（撰写本文时为 PHP 5.4）兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
+3. 使用密钥 `PHP_INI_SCAN_DIR` 和值 <code class="prettyprint">d:\home\site\ini</code> 将应用设置添加到你的网站
+4. 在 <code class="prettyprint">d:\home\site\ini</code> 中创建名为 `extensions.ini` 的 `ini` 文件。
 5. 使用你将在 php.ini 文件中使用的语法，将配置设置添加到 `extensions.ini` 文件。例如，如果你想要启用 MongoDB 和 XDebug 扩展，则 `extensions.ini` 文件将包含此文本：
 
 		; Enable Extensions
@@ -85,7 +85,7 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 
 ### 通过应用设置进行配置
 1. 将 `bin` 目录添加到根目录。
-2. 将 `.dll` 扩展文件置于 `bin` 目录中（例如 `php_mongo.dll`）。确保扩展与默认版本的 PHP（撰写本文时为 PHP 5.4）兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
+2. 将 `.dll` 扩展文件置于 `bin` 目录中（例如 <code class="prettyprint">php_mongo.dll</code>）。确保扩展与默认版本的 PHP（撰写本文时为 PHP 5.4）兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
 3. 部署你的网站。
 1. 导航到 Azure 门户中网站的仪表板，然后单击“配置”。
 
@@ -102,18 +102,18 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 
 
 ## 如何：使用自定义 PHP 运行时
-Azure 网站可以使用提供的 PHP 运行时（而非默认 PHP 运行时）来执行 PHP 脚本。提供的运行时可由提供的 `php.ini` 文件配置。若要在 Azure 网站中使用自定义 PHP 运行时，请执行下列步骤。
+Azure 网站可以使用提供的 PHP 运行时（而非默认 PHP 运行时）来执行 PHP 脚本。提供的运行时可由提供的 <code class="prettyprint">php.ini</code> 文件配置。若要在 Azure 网站中使用自定义 PHP 运行时，请执行下列步骤。
 
 1. 获取非线程安全、VC9 兼容版本的 PHP for Windows。可在此处找到 PHP for Windows 最新版本：[http://windows.php.net/download/]。可在此处的存档中找到旧版本：[http://windows.php.net/downloads/releases/archives/]。
-1. 修改运行时的 `php.ini` 文件。请注意，Azure 网站将忽略作为任何仅在系统级别使用的指令的配置设置。（有关仅在系统级别使用的指令的信息，请参阅 [php.ini 指令的列表]。）
-1. （可选）将扩展添加到 PHP 运行时并在 `php.ini` 文件中启用这些扩展。
+1. 修改运行时的 <code class="prettyprint">php.ini</code> 文件。请注意，Azure 网站将忽略作为任何仅在系统级别使用的指令的配置设置。（有关仅在系统级别使用的指令的信息，请参阅 [php.ini 指令的列表]。）
+1. （可选）将扩展添加到 PHP 运行时并在 <code class="prettyprint">php.ini</code> 文件中启用这些扩展。
 1. 将 `bin` 目录添加到根目录，并将包含 PHP 运行时的目录置于根目录中（例如 `bin\php`）。
 1. 部署应用程序。
 1. 导航到 Azure 门户中网站的仪表板，然后单击“配置”。
 
 	![网站仪表板上的“配置”选项卡][configure]
 
-1. 在“处理程序映射”部分，将 `*.php` 添加到 EXTENSION，并添加指向 `php-cgi.exe` 可执行文件的路径。如果你将 PHP 运行时放在应用程序的根目录中的 `bin` 目录下，路径将为 `D:\home\site\wwwroot\bin\php\php-cgi.exe`。
+1. 在“处理程序映射”部分，将 `*.php` 添加到 EXTENSION，并添加指向 <code class="prettyprint">php-cgi.exe</code> 可执行文件的路径。如果你将 PHP 运行时放在应用程序的根目录中的 `bin` 目录下，路径将为 `D:\home\site\wwwroot\bin\php\php-cgi.exe`。
 
 	![指定处理程序映射中的处理程序][handler-mappings]
 

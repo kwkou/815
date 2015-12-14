@@ -10,12 +10,12 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="09/16/2015"
-	wacn.date="10/22/2015"/>
+	wacn.date="12/14/2015"/>
 # 为 Azure 网站配置自定义域名
 
 > [AZURE.SELECTOR]
-- [网站with External Domains](/documentation/articles/web-sites-custom-domain-name/)
-- [网站with Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name/)
+- [使用外部域名的网站](/documentation/articles/web-sites-custom-domain-name/)
+- [使用流量管理器的网站](/documentation/articles/web-sites-traffic-manager-custom-domain-name/)
 
 [WACOM.INCLUDE [websites-cloud-services-css-guided-walkthrough](../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
@@ -34,6 +34,7 @@
 -   [在网站上启用域名]
 
 ## 概述
+<a href="overview"></a>
 
 如果你已有域名，或想要保留来自其他域注册机构的域，以下是为网站引入自定义域的常规步骤：
 
@@ -51,6 +52,7 @@
 
 
 ## DNS 记录类型
+<a href="dns-record-types"></a>
 
 域名系统 (DNS) 使用数据记录将域名映射到 IP 地址。有几种类型的 DNS 记录。对于网站，将创建 *A* 记录或 *CNAME* 记录。
 
@@ -63,6 +65,7 @@
 
 
 ## 查找虚拟 IP 地址 
+<a href="find-the-virtual-ip-address"></a>
 
 如果你要创建 CNAME 记录，可跳过此步骤。若要创建 A 记录，你需要网站的虚拟 IP 地址。获取该 IP 地址：
 
@@ -77,6 +80,7 @@
 	![](./media/web-sites-custom-domain-name/ipaddress.png)
 
 ## 创建 DNS 记录
+<a href="create-the-dns-records"></a>
 
 登录域注册机构，并使用他们的工具添加 A 记录或 CNAME 记录。每个注册机构的网站都会稍有不同，但以下是一些通用准则。
 
@@ -113,8 +117,8 @@
 - **www.contoso.com** 映射到 **contoso.chinacloudsites.cn**。
 
 
-<a name="awverify" /></a>
 ## 创建 awverify 记录（仅 A 记录）
+<a name="awverify" /></a>
 
 如果创建 A 记录，网站还需要特殊的 CNAME 记录，用于验证你是否拥有尝试要使用的域。此 CNAME 记录必须采用以下形式。
 
@@ -124,6 +128,7 @@
 你的网站的访客不会看到 awverify 子域；这只供 Azure 验证域使用。
 
 ## 在网站上启用域名
+<a name="enable-the-domain-name-on-your-website" /></a>
 
 [WACOM.INCLUDE [模式](../includes/custom-dns-web-site-enable-on-web-site.md)]
 

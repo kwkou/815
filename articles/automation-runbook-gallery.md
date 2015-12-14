@@ -9,7 +9,7 @@
 <tags
 	ms.service="automation"
 	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/14/2015"/>
 
 
 # Azure 自动化的 Runbook 和模块库
@@ -37,6 +37,7 @@
 
 
 ### 将 Runbook 添加到 Runbook 库
+<a name="AddRunbook"></a>
 
 Microsoft 建议你将 Runbook 添加到你认为对其他客户有用的 Runbook 库中。你可以通过连同以下详细信息[将 Runbook 上载到脚本中心](http://gallery.technet.microsoft.com/site/upload)，来添加 Runbook。
 
