@@ -10,7 +10,7 @@
 <tags
 	ms.service="automation"
 	ms.date="09/17/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/14/2015"/>
 
 # 什么是 Azure Automation？
 
@@ -34,12 +34,12 @@ Runbook 是 Azure 自动化中执行某些自动化过程的一组任务。它�
 
 ## 从哪里获得 Runbook?
 
-[Runbook 库](http://msdn.microsoft.com/zh-cn/library/azure/dn781422.aspx)包含来自 Microsoft 和社区的 Runbook，既可以在您的环境中使用未经修改的 Runbook，也可以根据自己的目的对其进行自定义。您还可以将它们作为学习如何创建自己的 Runbook 的参考。您甚至可以将您认为对其他用户有用的自己的 Runbook 分享到库中。
+[Runbook 库](/documentation/articles/automation-runbook-gallery)包含来自 Microsoft 和社区的 Runbook，既可以在您的环境中使用未经修改的 Runbook，也可以根据自己的目的对其进行自定义。您还可以将它们作为学习如何创建自己的 Runbook 的参考。您甚至可以将您认为对其他用户有用的自己的 Runbook 分享到库中。
 
 
 ## 如何创建我自己的 Runbook？
 
-您可以从头开始[创建您自己的 Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx)，根据您自己的要求修改[Runbook 库](http://msdn.microsoft.com/zh-cn/library/azure/dn781422.aspx)中的 Runbook。如果您愿意直接处理 PowerShell 代码，可以在 Azure 门户中[使用文本编辑器编辑 Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn879137.aspx) 或脱机编辑。
+您可以从头开始[创建您自己的 Runbook](/documentation/articles/automation-creating-importing-runbook)，根据您自己的要求修改[Runbook 库](/documentation/articles/automation-runbook-gallery)中的 Runbook。如果您愿意直接处理 PowerShell 代码，可以在 Azure 门户中[使用文本编辑器编辑 Runbook](/documentation/articles/automation-edit-textual-runbook) 或脱机编辑。
 
 
 ## Azure 自动化如何与其他自动化工具关联？
@@ -54,7 +54,7 @@ Runbook 是 Azure 自动化中执行某些自动化过程的一组任务。它�
 
 - “Azure 自动化库”就是您当前正在查看的资源。该库中的文章提供了有关配置和管理 Azure 自动化以及创作自己的 Runbook 的完整文档。
 - [Azure PowerShell cmdlet](http://msdn.microsoft.com/zh-cn/library/jj156055.aspx) 提供了有关使用 Windows PowerShell 自动完成 Azure 操作的信息。Runbook 使用这些 cmdlet 来处理 Azure 资源。
-- [Azure 自动化博客](http://azure.microsoft.com/blog/tag/azure-automation)提供了有关来自 Microsoft 的 Azure 自动化的最新信息。欢迎订阅 Azure 自动化博客，随时了解 Azure 自动化团队提供的最新信息。
+- [Azure 自动化博客](/blog/)提供了有关来自 Microsoft 的 Azure 自动化的最新信息。欢迎订阅 Azure 自动化博客，随时了解 Azure 自动化团队提供的最新信息。
 - [自动化论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=azureautomation)允许您提出有关 Azure 自动化的问题，并将由 Microsoft 和自动化社区提供解答。
 
 ## 我是否可以提供反馈？

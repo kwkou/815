@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="08/03/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="12/14/2015"/>
 
 #创建 PHP-MySQL Azure 网站并使用 Git 进行部署
 
@@ -258,9 +258,9 @@
 
 [pdo-mysql]: http://www.php.net/manual/en/ref.pdo-mysql.php
 [running-app]: ./media/web-sites-php-mysql-deploy-use-git/running_app_2.png
-[new- Website]: ./media/web-sites-php-mysql-deploy-use-git/new_Website.jpg
+[new-Website]: /media/web-sites-php-mysql-deploy-use-git/new_website.jpg
 [custom-create]: ./media/web-sites-php-mysql-deploy-use-git/custom_create.png
-[ Website-details]: ./media/web-sites-php-mysql-deploy-use-git/Website_details.jpg
+[Website-details]: ./media/web-sites-php-mysql-deploy-use-git/Website_details.jpg
 [new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-git/new_mysql_db.jpg
 [go-to-dashboard]: ./media/web-sites-php-mysql-deploy-use-git/go_to_dashboard.png
 [setup-git-publishing]: ./media/web-sites-php-mysql-deploy-use-git/setup_git_publishing.png

@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="09/16/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/14/2015"/>
 
 
 #保护 Azure 网站中的网站
@@ -63,20 +63,18 @@ Azure 网站允许你将配置信息作为“应用设置”和“连接字符�
 Azure 通过 **FTPS** 提供对您网站文件系统的安全 FTP 访问。这样一来，您可以安全地访问网站上的应用程序代码以及诊断日志。按照以下步骤操作，可以找到网站的 FTPS 链接：
 
 1. 打开 [Azure 门户](https://manage.windowsazure.cn)。
-2. 单击“浏览所有”。
-3. 在“浏览”边栏选项卡中，选择“网站”。
-4. 在“网站”边栏选项卡中，选择所需的网站。
-5. 在网站的边栏选项卡中，选择“所有设置”。
-6. 在“设置”边栏选项卡中，选择“属性”。
-7. “设置”边栏选项卡上显示了 FTP 和 FTPS 链接。 
+2. 单击“Web 应用”，选择所需的网站。
+5. 在网站中，选择“仪表板”。
+7. 在右边“速览”下，可以找到 FTP 和 FTPS 链接。 
 
 有关 FTPS 的更多信息，请参阅[文件传输协议](http://zh.wikipedia.org/wiki/File_Transfer_Protocol)。
 
 ## 后续步骤
+<a name="next"></a>
 
 若要详细了解 Azure 平台安全、如何举报**安全事件或滥用行为**，或者如何通知 Microsoft 你将对网站执行**渗透测试**，请参阅 [Windows Azure 信任中心](/support/trust-center/security/)的安全部分。
 
-有关网站中 **web.config** 或 **applicationhost.config** 文件的更多信息，请参阅 [Azure 网站中解锁的配置选项](http://azure.microsoft.com/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)。
+有关网站中 **web.config** 或 **applicationhost.config** 文件的更多信息，请参阅 [Azure 网站中解锁的配置选项](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)。
 
 若要了解网站的日志记录（可能在检测攻击时很有用），请参阅[启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)。
  

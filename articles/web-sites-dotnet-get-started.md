@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="08/10/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="12/14/2015"/>
 
 # 在 Azure 网站中创建 ASP.NET网站
 
@@ -27,7 +27,7 @@
 * 如何对 Web 项目进行更改并重新部署应用程序。
 * 如何使用 Azure 管理门户监视和管理网站。
 
-##<a name="video"></a>注册 Mirosoft Azure
+##<a name="video"></a>注册 Windows Azure
 
 完成本教程需要有一个 Azure 帐户：
 
@@ -39,7 +39,7 @@
 
 ### 教程章节
 
-* [注册 Windows Azure（视频）](#video)
+* [注册 Windows Azure](#video)
 * [设置开发环境](#set-up-the-development-environment)
 * [在 Visual Studio 中创建 ASP.NET网站](#create-an-aspnet-web-application)
 * [将应用程序部署到 Azure](#deploy-the-application-to-azure)
@@ -47,10 +47,11 @@
 * [在管理门户中监视和管理站点](#monitor-and-manage-the-site-in-the-management-portal)
 * [后续步骤](#next-steps)
 
-
+<a name="set-up-the-development-environment"></a>
 [AZURE.INCLUDE [install-sdk-2015-2013](../includes/install-sdk-2015-2013.md)]
 
 ## 创建 ASP.NET网站
+<a name="create-an-aspnet-web-application"></a>
 
 第一步是在 Visual Studio 中创建一个 Web 项目，并在 Azure 网站中创建一个网站。完成时，将项目部署到网站，以使其在 Internet 上可用。
 
@@ -78,49 +79,11 @@
 
 	[MVC](http://www.asp.net/mvc) 是用于开发网站的 ASP.NET 框架。
 
-7. 单击“更改身份验证”。
-
-	![“新建 ASP.NET 项目”对话框](./media/web-sites-dotnet-get-started/GS13changeauth.png)
-
-6. 在“更改身份验证”对话框中，单击“无身份验证”，然后单击“确定”。
-
-	![无身份验证](./media/web-sites-dotnet-get-started/GS13noauth.png)
-
-	你要创建的示例应用程序将没有需要用户登录的功能。[后续步骤](#next-steps)部分链接到了有关实现身份验证和授权的教程。
-
-5. 在“新建 ASP.NET 项目”对话框中，保留“Azure”下的设置不变，然后单击“确定”。
+5. 在“新建 ASP.NET 项目”对话框中，确保不要勾选“在云中的托管”，然后单击“确定”。
 
 	![“新建 ASP.NET 项目”对话框](./media/web-sites-dotnet-get-started/GS13newaspnetprojdb.png)
 
-	默认设置指定 Visual Studio 将为你的 Web 项目创建 Azure 网站。在本教程的下一部分中，你要将 Web 项目部署到新创建的网站。
-
-5. 如果你尚未登录到 Azure，Visual Studio 将提示你登录。使用你用来管理 Azure 订阅的帐户的 ID 和密码登录。
-
-	如果你已登录，“配置 Windows Azure 网站设置”对话框将询问你要创建哪些资源。
-
-	![已登录到 Azure](./media/web-sites-dotnet-get-started/configuresitesettings.png)
-
-6. 在“登录到 Azure”对话框中，输入用于管理 Azure 订阅的帐户的 ID 和密码。
-	
-	如果你已登录，“配置 Azure 站点设置”对话框将询问你要创建哪些资源。
-
-	![已登录到 Azure](./media/web-sites-dotnet-get-started/configuresitesettings.png)
-
-3. Visual Studio 提供了默认的“站点名称”，Azure 将它用作应用程序 URL 的前缀。如果需要，请输入不同的站点名称。
-
-	完整的 URL 将包含你在此处输入的内容和 *chinacloudsites.cn*（如“站点名称”文本框的旁边所示）。例如，如果站点名称是 `MyExample6442`，则 URL 将是 `MyExample6442.chinacloudsites.cn`。该 URL 必须是唯一的。如果其他人已经使用你输入的 URL，你将看到右边是一个红色感叹号而不是绿色复选标记，你需要输入不同的站点名称。
-
-5. 在“区域”下拉列表中，选择离你最近的位置。
-
-	此设置指定你的网站将在哪个 Azure 数据中心运行。对于本教程，你做的选择不会带来明显的差异；但是，对于生产网站，你希望 Web 服务器和存储帐户处于同一区域，以最大程度地减少[延迟](http://www.bing.com/search?q=web%20latency%20introduction&qs=n&form=QBRE&pq=web%20latency%20introduction&sc=1-24&sp=-1&sk=&cvid=eefff99dfc864d25a75a83740f1e0090)。
-
-5. 将数据库字段保持原样。
-
-	在本教程中，你将不使用数据库。[后续步骤](#next-steps)部分链接到了说明如何使用数据库的教程。
-
-6. 单击**“确定”**。
-
-	![](./media/web-sites-dotnet-get-started/configuresitesettings2.png)
+	Windows Azure 中国暂时还不支持在 Visual Studio 中直接创建云中的网站，所以用户需要在“[管理门户](https://manage.windowsazure.cn/)”中新建 Azure 网站。
 
 	几秒钟后，Visual Studio 将在指定的文件夹中创建 Web 项目，并在指定的 Azure 区域中创建网站。
 
@@ -128,23 +91,20 @@
 
 	![解决方案资源管理器](./media/web-sites-dotnet-get-started/solutionexplorer.png)
 
-	“Azure 网站活动”窗口将显示已创建的网站。
-
-	![已创建网站](./media/web-sites-dotnet-get-started/GS13sitecreated1.png)
-
-	你可以在“服务器资源管理器”中查看网站。
-
-	![已创建网站](./media/web-sites-dotnet-get-started/siteinse.png)
-
 ## 将应用程序部署到 Azure
+<a name="deploy-the-application-to-azure"></a>
 
-7. 在“Web 发布活动”窗口中，单击“立即将 MyExample 发布到此站点”。
+1. 在“[管理门户](https://manage.windowsazure.cn/)”中新建 Azure 网站。
 
-	![已创建网站](./media/web-sites-dotnet-get-started/GS13sitecreated.png)
+2. 点击新建网站的“仪表盘”，在“速览”里下载发布配置文件
+
+7. 在 Visual Studio 中右键点击你的项目，点击“发布”。
+
+	![选择“发布”](./media/web-sites-dotnet-get-started/choosepublish.png)
 
 	几秒钟后，将显示“发布 Web”向导。
 
-	Visual Studio 将项目部署到 Azure 所需的设置已保存在*发布配置文件*中。使用该向导可以查看和更改这些设置。
+4. 在“配置文件”，点击“导入”，并选择刚刚下载的发布配置文件。
 
 8. 在“发布 Web”向导的“连接”选项卡中，单击“验证连接”，以确保 Visual Studio 可以连接到 Azure 来部署 Web 项目。
 
@@ -172,9 +132,7 @@
 
 	Visual Studio 开始执行将文件复制到 Azure 服务器的过程。
 
-	“输出”和“Web 发布活动”窗口将显示已执行的部署操作并报告已成功完成部署。
-
-	![报告部署成功的输出窗口](./media/web-sites-dotnet-get-started/PublishOutput.png)
+	“输出”窗口将显示已执行的部署操作并报告已成功完成部署。
 
 	成功完成部署后，默认浏览器将自动打开指向已部署网站的 URL。你创建的应用程序现在运行于云中。浏览器地址栏中的 URL 显示正在从 Internet 加载该网站。
 
@@ -183,6 +141,7 @@
 13. 关闭浏览器。
 
 ## 更改和重新部署
+<a name="make-a-change-and-redeploy"></a>
 
 本教程的此部分是可选的。要执行的操作包括更改主页的 **h1** 标题，在开发计算机上本地运行项目以验证更改，然后将更改部署到 Azure。
 
@@ -219,6 +178,7 @@
 ![Web 单键发布工具栏](./media/web-sites-dotnet-get-started/weboneclickpublish.png)
 
 ## 在管理门户中监视和管理网站
+<a name="monitor-and-manage-the-site-in-the-management-portal"></a>
 
 [Azure 管理门户](http://manage.windowsazure.cn)是一个 Web 界面，可让你管理和监视 Azure 服务，例如，刚刚创建的网站。在本教程的本部分，你将了解可在该门户中执行的某些操作。
 
@@ -256,6 +216,7 @@
 
 
 ## 后续步骤
+<a name="next-steps"></a>
 
 在本教程中，你已了解如何创建简单的网站并将其部署到 Azure 网站。你可以通过以下相关主题和资源来了解有关 Azure 网站中网站的详细信息。
 

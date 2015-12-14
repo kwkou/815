@@ -9,7 +9,7 @@
 <tags
    ms.service="automation"
    ms.date="07/10/2015"
-   wacn.date="09/15/2015" />
+   wacn.date="12/14/2015" />
 
 # 配置 Azure 自动化
 
@@ -25,8 +25,9 @@
 
 
 ## 配置对 Azure 资源的身份验证
+<a id="configuring-authentication-to-azure-resources"></a>
 
-使用 [Azure cmdlet](https://msdn.microsoft.com/zh-CN/library/azure/jj554330.aspx) 访问 Azure 资源时，需要针对你的 Azure 订阅提供身份验证。在 Azure 自动化中，这是使用你在 Azure Active Directory 中配置为订阅管理员的组织帐户完成的。然后，可以为此用户帐户创建[凭据](https://msdn.microsoft.com/zh-CN/library/dn940015.aspx)，并将它与 Runbook 中的 [Add-AzureAccount](https://msdn.microsoft.com/zh-CN/library/azure/dn722528.aspx) 结合使用。
+使用 [Azure cmdlet](https://msdn.microsoft.com/zh-CN/library/azure/jj554330.aspx) 访问 Azure 资源时，需要针对你的 Azure 订阅提供身份验证。在 Azure 自动化中，这是使用你在 Azure Active Directory 中配置为订阅管理员的组织帐户完成的。然后，可以为此用户帐户创建[凭据](/documentation/articles/automation-credentials)，并将它与 Runbook 中的 [Add-AzureAccount](https://msdn.microsoft.com/zh-CN/library/azure/dn722528.aspx) 结合使用。
 
 >[AZURE.NOTE]Microsoft 帐户（以前称为 LiveID）不能用于 Azure 自动化。
 
@@ -41,12 +42,12 @@
 8. 键入你创建的用户的完整用户名。
 9. 选择你希望该用户管理的订阅。
 10. 从 Azure 注销，然后使用你刚创建的帐户重新登录。系统将提示你更改用户密码。
-11. 为创建的用户帐户创建新的 [Azure 自动化凭据资产](https://msdn.microsoft.com/zh-CN/library/dn940015.aspx)。“凭据类型”应该是“Windows PowerShell 凭据”。
+11. 为创建的用户帐户创建新的 [Azure 自动化凭据资产](/documentation/articles/automation-credentials)。“凭据类型”应该是“Windows PowerShell 凭据”。
 
 
 ## 在 Runbook 中使用凭据
 
-可以使用 [Get-AutomationPSCredential](https://msdn.microsoft.com/zh-CN/library/dn940015.aspx) 活动检索 Runbook 中的凭据，然后将它与 [Add-AzureAccount](https://msdn.microsoft.com/zh-CN/library/azure/dn722528.aspx) 结合使用以连接到你的 Azure 订阅。如果该凭据是多个 Azure 订阅的管理员，则你还应使用 [Select-AzureSubscription](https://msdn.microsoft.com/zh-CN/library/dn495203.aspx) 来指定正确的订阅。下面所示的 Windows PowerShell 通常出现在大多数 Azure 自动化 Runbook 的顶部。
+可以使用 [Get-AutomationPSCredential](/documentation/articles/automation-credentials/) 活动检索 Runbook 中的凭据，然后将它与 [Add-AzureAccount](https://msdn.microsoft.com/zh-CN/library/azure/dn722528.aspx) 结合使用以连接到你的 Azure 订阅。如果该凭据是多个 Azure 订阅的管理员，则你还应使用 [Select-AzureSubscription](https://msdn.microsoft.com/zh-CN/library/dn495203.aspx) 来指定正确的订阅。下面所示的 Windows PowerShell 通常出现在大多数 Azure 自动化 Runbook 的顶部。
 
     $cred = Get-AutomationPSCredential –Name "myuseraccount.partner.onmschina.cn"
 	Add-AzureAccount -Environment AzureChinaCloud –Credential $cred
@@ -55,7 +56,7 @@
 应该在 Runbook 中任何[检查点](/documentation/articles/automation-runbook-execution#checkpoints)的后面重复这些行。如果 Runbook 已挂起，然后在另一个工作线程上恢复，则它需要再次执行身份验证。
 
 ## 相关文章
-- [Azure 自动化：使用 Azure Active Directory 向 Azure 进行身份验证](http://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/)
+- [Azure 自动化：使用 Azure Active Directory 向 Azure 进行身份验证](http://azure.microsoft.com/zh-cn/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/)
  
 
 <!---HONumber=69-->

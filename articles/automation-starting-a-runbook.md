@@ -9,7 +9,7 @@
 <tags
 	ms.service="automation"
 	ms.date="09/28/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/14/2015"/>
 
 # 在 Azure 自动化中启动 Runbook
 
@@ -92,6 +92,7 @@
 
 
 ## 使用 Windows PowerShell 启动 Runbook
+<a name="starting-a-runbook-with-windows-powershell"></a>
 
 可以在 Windows PowerShell 中使用 [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690259.aspx) 启动 Runbook。以下示例代码将启动名为 Test-Runbook 的 Runbook。
 
@@ -202,7 +203,7 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 假设凭据中的用户名为 *jsmith*，则会导致生成以下输出。
 
-	jsmith
+<code>jsmith</code>
 
 ## 相关文章
 

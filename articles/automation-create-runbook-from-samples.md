@@ -10,7 +10,7 @@
 <tags 
 	ms.service="automation" 
 	ms.date="09/08/2015"
-	wacn.date="10/17/2015"/>
+	wacn.date="12/14/2015"/>
 
 
 # Azure 自动化入门
@@ -123,22 +123,12 @@ Runbook 最初是以草稿模式导入的。这意味着，在授权它可作为
 
 - [Azure 自动化库](https://msdn.microsoft.com/zh-cn/library/azure/dn643629.aspx)提供了有关配置和管理 Azure 自动化以及创作自己的 Runbook 的完整文档。 
 - [Azure PowerShell cmdlet](http://msdn.microsoft.com/zh-cn/library/jj156055.aspx) 提供了有关使用 Windows PowerShell 自动完成 Azure 操作的信息。Runbook 使用这些 cmdlet 来处理 Azure 资源。
-- [Azure 自动化博客](http://azure.microsoft.com/blog/tag/azure-automation)提供了有关来自 Microsoft 的 Azure 自动化的最新信息。
-
-<!--
-- [Automation Forum](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=azureautomation) allows you to post questions about Azure Automation to be addressed by Microsoft and the Automation community.
--->
+- [Azure 自动化博客](/blog/)提供了有关来自 Microsoft 的 Azure 自动化的最新信息。
 
 
 ## 示例和实用 Runbook
 
 Microsoft 和 Azure 自动化社区提供了示例 Runbook，可帮助你开始创建自己的解决方案和实用 Runbook，可用作更大自动化任务的构建基块。可以从[脚本中心](http://go.microsoft.com/fwlink/p/?LinkId=393029)下载这些示例 Runbook，或者使用 [Runbook 库](https://msdn.microsoft.com/zh-cn/library/azure/dn781422.aspx)直接将其导入 Azure 自动化。
   
-
-<!--
-## Feedback
-
-<strong>Give us feedback!</strong>  If you are looking for an Azure Automation runbook solution or an integration module, post a Script Request on Script Center. If you have feedback or feature requests for Azure Automation, post them on [User Voice](http://feedback.windowsazure.cn/forums/34192--general-feedback). Thanks!
--->
 
 <!---HONumber=74-->

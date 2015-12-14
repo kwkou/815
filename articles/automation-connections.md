@@ -9,7 +9,7 @@
 <tags
    ms.service="automation"
    ms.date="08/18/2015"
-   wacn.date="09/15/2015" />
+   wacn.date="12/14/2015" />
 
 # Azure 自动化中的连接资产
 
@@ -50,16 +50,6 @@
 2. 在“连接类型”下拉列表中，选择您想要创建连接的类型。向导将显示该特定类型的属性。
 1. 完成该向导并单击该复选框以保存新连接。
 
-<!--
-### 使用 Azure 预览门户创建新连接
-
-1. 在您的自动化帐户中，单击“资产”部分打开“资产”边栏选项卡。
-1. 单击“连接”部分以打开“连接”边栏选项卡。
-1. 单击边栏选项卡顶部的“添加连接”。
-2. 在“类型”下拉列表中，选择您想要创建连接的类型。表单将显示该特定类型的属性。
-1. 完成该表单，然后单击“创建”以保存新连接。
--->
-
 
 ### 使用 Windows PowerShell 创建新连接
 
@@ -92,28 +82,7 @@
 
 	#Send text with connection properties.
 	Send-TwilioSMS -AccountSid $Con.AccountSid -AuthToken $Con.AuthToken $Con -From $NumFrom -To $NumTo -Body $Body
-<!--
-### 图形 Runbook 示例
 
-通过在图形编辑器的“库”窗格中右键单击连接，并选择“添加到画布”，将 **Get-AutomationConnection** 活动添加到图形 Runbook。
-
-![](./media/automation-connections/connection-add-canvas.png)
-
-下图显示了在图形 Runbook 中使用连接的示例。该示例与上面显示的从文本 runbook 中使用 Twilio 发送短信的示例为同一个示例。此示例将对使用连接对象向服务进行身份验证的 **Send-TwilioSMS** 活动使用 **UseConnectionObject** 参数集。此处使用了一个[管道链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)，因为预期的连接参数是单个对象。
-
-将 PowerShell 表达式而不是常量值用作 **To** 参数中的值，是因为此参数要求一个字符串数组值类型，以便您可以将其发送到多个号码。PowerShell 表达式允许您提供单个值或一个数组。
-
-![](./media/automation-connections/get-connection-object.png)
-
-下图显示的示例与上面显示的示例为同一个示例，但使用**SpecifyConnectionFields** 参数集，要求单独指定 AccountSid 和 AuthToken 参数，而不使用连接对象进行身份验证。在这种情况下，指定的是连接的字段，而不是连接本身。
-
-![](./media/automation-connections/get-connection-properties.png)
-
-
-
-## 相关文章
-
-- [图形创作中的链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)-->
  
 
 <!---HONumber=69-->

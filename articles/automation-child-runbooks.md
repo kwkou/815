@@ -9,7 +9,7 @@
 <tags 
    ms.service="automation"
    ms.date="09/17/2015"
-   wacn.date="10/17/2015" />
+   wacn.date="12/14/2015" />
 
 # Azure 自动化中的子 Runbook
 
@@ -17,6 +17,7 @@
 在 Azure 自动化中，最佳实践之一是编写可重用、模块化且提供可由其他 Runbook 使用的离散功能的 Runbook。父 Runbook 通常会调用一个或多个子 Runbook 来执行所需的功能。可通过两种方法调用子 Runbook，每种方法都有明显不同的差异，你应该了解这些差异，以确定哪种方法最适合你的方案。
 
 ##  使用内联执行调用子 Runbook
+<a name="InlineExecution"></a>
 
 若要从另一个 Runbook 调用某个内嵌 Runbook，请使用被调用 Runbook 的名称并提供其参数值，就像使用活动或 cmdlet 时一样。同一自动化帐户中的所有 Runbook 可按此方式相互使用。父 Runbook 将等待子 Runbook 完成，然后转移到下一行，并直接向父级返回任何输出。
 
