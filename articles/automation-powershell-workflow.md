@@ -70,7 +70,7 @@ Windows Azure 中国目前仅支持文本 Runbook。
 
 如果您尝试在工作流中运行该代码，将看到错误消息，指明“在 Windows PowerShell 工作流中不支持方法调用”。
 
-一种选择是将这两行代码包括在 [InlineScript](#InlineScript) 代码块中，在这种情况下，$Service 是该代码块中的服务对象。
+一种选择是将这两行代码包括在 [InlineScript](#inlinescript) 代码块中，在这种情况下，$Service 是该代码块中的服务对象。
 
 	Workflow Stop-Service
 	{
