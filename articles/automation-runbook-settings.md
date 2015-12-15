@@ -23,11 +23,11 @@ Azure Automation 中的每个 Runbook 都提供了多个设置用于帮助标识
 
 ### 标记
 
-使用标记可以指定不同的单词和短语用于帮助标识 Runbook。例如，在向 [Runbook 库](https://msdn.microsoft.com/zh-CN/library/dn781422.aspx)提交 Runbook 时，可以指定特定的标记来标识应将该 Runbook 列入的类别。可为一个 Runbook 指定多个标记并用逗号分隔各个标记。
+使用标记可以指定不同的单词和短语用于帮助标识 Runbook。例如，在向 [Runbook 库](/documentation/articles/automation-runbook-gallery)提交 Runbook 时，可以指定特定的标记来标识应将该 Runbook 列入的类别。可为一个 Runbook 指定多个标记并用逗号分隔各个标记。
 
 ### 日志记录
 
-默认情况下，“详细”和“进度”记录不会写入作业历史记录。你可以更改特定 Runbook 的设置以记录这些记录。有关这些记录的详细信息，请参阅 [Runbook 输出和消息](https://msdn.microsoft.com/zh-CN/library/dn879148.aspx)。
+默认情况下，“详细”和“进度”记录不会写入作业历史记录。你可以更改特定 Runbook 的设置以记录这些记录。有关这些记录的详细信息，请参阅 [Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages)。
 
 ## 更改 Runbook 设置
 
@@ -54,6 +54,6 @@ Azure Automation 中的每个 Runbook 都提供了多个设置用于帮助标识
 
 ## 相关文章
 - [Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages)
-- [创建或导入 Runbook](https://msdn.microsoft.com/zh-CN/library/dn643637.aspx)
+- [创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook)
 
 <!---HONumber=69-->
