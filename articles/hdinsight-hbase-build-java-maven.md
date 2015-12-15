@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="使用 Maven 构建 HBase 应用程序 | Azure"
 	description="了解如何使用 Apache Maven 构建基于 Java 的 Apache HBase 应用程序，然后将其部署到 Azure HDInsight"
 	services="hdinsight"
@@ -25,7 +25,7 @@
 
 * [Maven](http://maven.apache.org/)
 
-* [安装有 HBase 的 Azure HDInsight 群集](/documentation/articles/hdinsight-hbase-get-started#create-hbase-cluster)
+* [安装有 HBase 的 Azure HDInsight 群集](/documentation/articles/hdinsight-hbase-tutorial-get-started#create-hbase-cluster)
 
 ##创建项目
 

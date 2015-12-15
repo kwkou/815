@@ -40,6 +40,7 @@
 
 
 ##在虚拟网络中设置 HBase 群集 
+<a name="provision-an-hbase-cluster-into-a-virtual-network"></a>
 
 应用程序通常由许多组件构成。在本教程中，你需要...
 
@@ -158,7 +159,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 	> [AZURE.NOTE]此页可用于在安装过程中自定义群集。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster)。
 	
-要开始处理新 HBase 群集，可以按照[开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-get-started)中的步骤操作。
+要开始处理新 HBase 群集，可以按照[开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started)中的步骤操作。
 
 ##通过使用 HBase Java RPC API 连接到虚拟网络中设置的 HBase 群集
 
@@ -308,6 +309,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 > [AZURE.NOTE]有关 Azure 虚拟网络中的名称解析的详细信息，包括如何使用自己的 DNS 服务器，请参阅[名称解析 (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances)。
 
 ##通过使用 Azure PowerShell 设置 HBase 群集
+<a name="powershell"></a>
 
 **通过使用 Azure PowerShell 设置 HBase 群集**
 
@@ -351,10 +353,10 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 在本教程中，你已学习了如何设置 HBase 群集。若要了解更多信息，请参阅以下文章：
 
-- [开始使用 HDInsight](/documentation/articles/hdinsight-get-started)
+- [开始使用 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows)
 - [在 HDInsight 中配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication) 
 - [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters) 
-- [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-get-started)
+- [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started)
 - [虚拟网络概述][vnet-overview]
 
 
@@ -362,9 +364,9 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [2]: http://technet.microsoft.com/zh-cn/library/ee176961.aspx
 [3]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
-[hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started
 [hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-twitter-sentiment
-[vnet-overview]: http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx
+[vnet-overview]: /documentation/articles/virtual-networks-overview
 [vm-create]: /documentation/articles/virtual-machines-windows-tutorial
 [azure-portal]: https://manage.windowsazure.cn
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
@@ -384,7 +386,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [powershell-install]: /documentation/articles/powershell-install-configure
 [hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
 [hdinsight-storage-powershell]: /documentation/articles/hdinsight-use-blob-storage#powershell
 [hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage

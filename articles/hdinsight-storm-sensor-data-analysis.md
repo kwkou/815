@@ -20,7 +20,7 @@
 
 * Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 
-* 一个 [Apache Storm on HDInsight 群集](/documentation/articles/hdinsight-storm-getting-started)
+* 一个 [Apache Storm on HDInsight 群集](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
 
 * [Node.js](http://nodejs.org/)：用于 Web 仪表板，以及将传感器数据发送到事件中心。
 

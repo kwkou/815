@@ -58,19 +58,19 @@ Name | 脚本
 
 	![Use Script Action to customize a cluster](./media/hdinsight-hadoop-customize-cluster/HDI.CustomProvision.Page6.png "Use Script Action to customize a cluster")
 	
-	<table border='1'>
-	<tr><th>属性</th><th>值</th></tr>
-	<tr><td>Name</td>
-		<td>指定脚本操作的名称。</td></tr>
-	<tr><td>脚本 URI</td>
-		<td>指定要调用来自定义群集的脚本的 URI。</td></tr>
-	<tr><td>节点类型</td>
-		<td>指定在其上运行自定义脚本的节点。你可以选择“所有节点”、“仅限头节点”或“仅限从节点”<b></b><b></b><b></b>。
-	<tr><td>Parameters</td>
-		<td>根据脚本的需要，指定参数。</td></tr>
-	</table>
+<table border='1'>
+<tr><th>属性</th><th>值</th></tr>
+<tr><td>Name</td>
+	<td>指定脚本操作的名称。</td></tr>
+<tr><td>脚本 URI</td>
+	<td>指定要调用来自定义群集的脚本的 URI。</td></tr>
+<tr><td>节点类型</td>
+	<td>指定在其上运行自定义脚本的节点。你可以选择“所有节点”、“仅限头节点”或“仅限从节点”<b></b><b></b><b></b>。
+<tr><td>Parameters</td>
+	<td>根据脚本的需要，指定参数。</td></tr>
+</table>
 
-	你可以添加多个脚本操作，以在群集上安装多个组件。
+你可以添加多个脚本操作，以在群集上安装多个组件。
 
 3. 单击“选择”可保存脚本操作配置并继续执行群集创建。
 

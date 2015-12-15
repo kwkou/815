@@ -44,7 +44,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 在前面的示例中，日志级别为 ERROR。
 
-> [AZURE.NOTE]你也可以使用 [Apache Log4j](http://en.wikipedia.org/wiki/Log4j) 日志记录工具生成 log4j 文件，然后将该文件上载到 Blob 容器。请参阅[将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data) 以获取相关说明。有关如何将 Azure Blob 存储与 HDInsight 配合使用的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage)。
+> [AZURE.NOTE]你也可以使用 [Apache Log4j](http://zh.wikipedia.org/wiki/Log4j) 日志记录工具生成 log4j 文件，然后将该文件上载到 Blob 容器。请参阅[将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data) 以获取相关说明。有关如何将 Azure Blob 存储与 HDInsight 配合使用的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。
 
 示例数据存储在 HDInsight 用作默认文件系统的 Azure Blob 存储中。HDInsight 可以使用 **wasb** 前缀来访问存储在 Blob 中的文件。例如，若要访问 sample.log 文件，可使用以下语法：
 
@@ -150,7 +150,7 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 
 [apache-tez]: http://tez.apache.org
 [apache-hive]: http://hive.apache.org/
-[apache-log4j]: http://en.wikipedia.org/wiki/Log4j
+[apache-log4j]: http://zh.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 [hivetask]: http://msdn.microsoft.com/zh-cn/library/mt146771(v=sql.120).aspx
@@ -163,7 +163,7 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
 
 
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically

@@ -18,10 +18,6 @@
 
 为了帮助你了解并开始使用 Windows 上的 HDInsight，本教程说明了如何对 Hadoop 群集中的非结构化数据运行 Hive 查询，然后在 Microsoft Excel 中分析结果。
 
-[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
-
-* [在 Windows 上开始使用 HDInsight 中的 Hadoop](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows)
-
 ## 本 Hadoop 教程的目标是什么？
 
 假设你具有一个大型非结构化数据集，想要对其运行 Hive 查询以提取一些有意义的信息。这正是我们在本教程中将要实现的目标。下面说明了如何实现此目标：
@@ -182,7 +178,7 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 	![为 Azure HDInsight 打开的 Excel PowerQuery 导入菜单。][image-hdi-gettingstarted-powerquery-importdata]
 
-3. 输入与你的群集关联的 Azure Blob 存储帐户的“帐户名称”，然后单击“确定”。（这是先前在教程中创建的存储帐户。）
+3. 输入与你的群集关联的 Azure Blob 存储帐户的“帐户名称”，然后单击“确定”。（这是先前在教程中创建的存储帐户，在 Windows Azure 中国，“账户名称”必须填完整的 url，例如：https://<your account name\>.blob.core.chinacloudapi.cn/）
 4. 输入 Azure Blob 存储帐户的“帐户密钥”，然后单击“保存”。
 5. 在右窗格中，双击 Blob 名称。默认情况下，该 Blob 名称与群集名称相同。
 

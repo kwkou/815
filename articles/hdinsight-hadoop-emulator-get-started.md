@@ -179,7 +179,7 @@ Microsoft HDInsight Emulator 可通过 Microsoft Web 平台安装程序进行安
 
 HDInsight Emulator 安装提供了一些示例，以便用户能够在 Windows 上开始学习基于 Apache Hadoop 的服务。这些示例涉及在处理大型数据集时通常需要的一些任务。这些示例是根据上述 MapReduce 教程制作的，可帮助你熟悉与 MapReduce 编程模型及其生态系统。
 
-示例数据是围绕处理 IIS 万维网联盟 (W3C) 日志数据进行组织的。提供数据生成工具以便创建不同大小的数据集并将这些数据集导入到 HDFS 或 Azure Blob 存储中。（有关详细信息，请参阅[将 Azure Blob 存储用于 HDInsight](/documentation/articles/hdinsight-use-blob-storage)）。然后，可以在 Azure PowerShell 脚本生成的数据页上运行 MapReduce、Pig 或 Hive 作业。使用的 Pig 和 Hive 脚本是基于 MapReduce 的抽象层，最终都会编译成 MapReduce 程序。你可以运行一系列作业，以便观察使用这些不同技术的影响以及数据大小对执行这些处理任务的影响。
+示例数据是围绕处理 IIS 万维网联盟 (W3C) 日志数据进行组织的。提供数据生成工具以便创建不同大小的数据集并将这些数据集导入到 HDFS 或 Azure Blob 存储中。（有关详细信息，请参阅[将 Azure Blob 存储用于 HDInsight](/documentation/articles/hdinsight-hadoop-use-blob-storage)）。然后，可以在 Azure PowerShell 脚本生成的数据页上运行 MapReduce、Pig 或 Hive 作业。使用的 Pig 和 Hive 脚本是基于 MapReduce 的抽象层，最终都会编译成 MapReduce 程序。你可以运行一系列作业，以便观察使用这些不同技术的影响以及数据大小对执行这些处理任务的影响。
 
 ### 本节内容
 
@@ -188,7 +188,6 @@ HDInsight Emulator 安装提供了一些示例，以便用户能够在 Windows �
 - [运行 Java MapReduce 作业](#javamapreduce)
 - [运行 Hive 作业](#hive)
 - [运行 Pig 作业](#pig)
-- [重新生成示例](#rebuild)
 
 ###<a name="scenarios"></a>IIS W3C 日志数据方案
 
@@ -396,7 +395,7 @@ The samples currently contain all the required binaries, so building is not requ
 ##<a name="blobstorage"></a>连接到 Azure Blob 存储
 HDInsight Emulator 使用 HDFS 作为默认文件系统。但是，Azure HDInsight 使用 Azure Blob 存储作为默认文件系统。可以将 HDInsight Emulator 配置为使用 Azure Blob 存储而不是本地存储。遵照以下说明在 Azure 中创建存储容器，然后将它连接到 HDInsight Emulator。
 
->[AZURE.NOTE]有关 HDInsight 如何使用 Azure Blob 存储的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage)。
+>[AZURE.NOTE]有关 HDInsight 如何使用 Azure Blob 存储的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。
 
 在开始遵照下面的说明之前，你必须创建存储帐户。有关说明，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account)。
 
@@ -467,11 +466,11 @@ HDInsight Emulator 也支持某些 Azure PowerShell cmdlet。这些 cmdlet 包�
 ##<a name="nextsteps"></a>后续步骤
 在本 MapReduce 教程中，你安装了 HDInsight Emulator - 一个 Hadoop 沙盒 - 并运行了一些 Hadoop 作业。若要了解更多信息，请参阅下列文章：
 
-- [Azure HDInsight 入门](/documentation/articles/hdinsight-get-started)
+- [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows)
 - [为 HDInsight 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
 - [为 HDInsight 开发 C# Hadoop 流式处理 MapReduce 程序](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs)
 - [HDInsight Emulator 发行说明](/documentation/articles/hdinsight-emulator-release-notes)
-- [讨论 HDInsight 的 MSDN 论坛](http://social.msdn.microsoft.com/Forums/hdinsight)
+- [讨论 HDInsight 的 MSDN 论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home)
 
 
 
@@ -483,7 +482,7 @@ HDInsight Emulator 也支持某些 Azure PowerShell cmdlet。这些 cmdlet 包�
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
 [hdinsight-emulator-install]: http://www.microsoft.com/web/gallery/install.aspx?appid=HDINSIGHT
 [hdinsight-emulator-release-notes]: /documentation/articles/hdinsight-emulator-release-notes
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-powershell-reference]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started

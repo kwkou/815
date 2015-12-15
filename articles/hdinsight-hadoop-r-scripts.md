@@ -165,15 +165,18 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 以下各部分说明如何执行这些过程。
 
 **安装 HDInsight .NET SDK**
+<a name="installSDK"></a>
 
 可以从 [NuGet](http://nuget.codeplex.com/wikipage?title=Getting%20Started) 安装该 SDK 的最新发行版。下一过程中将显示说明。
 
 **创建自签名证书**
+<a name="createCert"></a>
 
 创建自签名证书，将其安装到工作站上，然后将其上传到你的 Azure 订阅。有关说明，请参阅[创建自签名证书](/documentation/articles/hdinsight-administer-use-management-portal-v1#cert)。
 
 
 **在 Visual Studio 中创建 .NET 应用程序**
+<a name="createApp"></a>
 
 1. 打开 Visual Studio 2013。
 
@@ -270,6 +273,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 11. 将更改保存到应用程序并构建解决方案。
 
 **运行应用程序**
+<a name="runApp"></a>
 
 打开 Azure PowerShell 控制台，导航到项目保存到的位置，导航到项目中的 \\bin\\debug 目录，然后运行以下命令：
 
