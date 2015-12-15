@@ -10,7 +10,7 @@
 <tags
 	ms.service="site-recovery"
 	ms.date="10/07/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/15/2015"/>
 
 #  使用 PowerShell 部署 Azure Site Recovery
 Windows PowerShell® 是一种基于任务的命令行 shell 和脚本语言，专门用于系统管理。支持在 VMM 管理的 Hyper-V 站点与 Azure 之间为 Azure Site Recovery 使用 PowerShell cmdlet。
@@ -32,7 +32,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 ### Azure 先决条件
 
 - 需要一个 [Windows Azure](http://www.windowsazure.cn) 帐户。如果没有，请先使用[试用帐户](/pricing/1rmb-trial)。此外，你可以阅读 [Azure Site Recovery Manager 定价](/home/features/site-recovery/#price)。
-- 你将需要一个 Azure 存储帐户来存储复制到 Azure 的数据。需要为帐户启用地域复制。该帐户应位于 Azure Site Recovery 服务所在的同一区域，并与同一订阅相关联。若要了解有关设置 Azure 存储的更多信息，请参阅 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction)。
+- 你将需要一个 Azure 存储帐户来存储复制到 Azure 的数据。需要为帐户启用地域复制。该帐户应位于 Azure Site Recovery 服务所在的同一区域，并与同一订阅相关联。若要了解有关设置 Azure 存储的更多信息，请参阅 [Windows Azure 存储空间简介](/documentation/articles/storage-introduction)。
 - 你将需要确保你要保护的虚拟机符合 Azure 要求。有关详细信息，请参阅[虚拟机支持](/documentation/articles/site-recovery-best-practices)。
 
 ### VMM 先决条件

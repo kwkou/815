@@ -10,16 +10,16 @@
 <tags
 	ms.service="site-recovery"
 	ms.date="05/08/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="12/15/2015"/>
 
 # Site Recovery 部署最佳实践
 
 
-<a id="overview" name="overview" href="#overview">
 
-## 关于本文
 
-本文包括你部署 Azure Site Recovery 之前应阅读并实施的最佳实践。如果你正在寻找 Site Recovery 和相关部署方案的简介，请阅读 [Site Recovery 概述](/documentation/articles/hyper-v-recovery-manager-overview)。
+##<a id="overview"></a> 关于本文
+
+本文包括你部署 Azure Site Recovery 之前应阅读并实施的最佳实践。如果你正在寻找 Site Recovery 和相关部署方案的简介，请阅读 [Site Recovery 概述](/documentation/articles/site-recovery-overview)。
 
 如果在阅读本文后有任何问题，请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)上发布你的问题。
 
@@ -30,7 +30,7 @@
 - 阅读 Site Recovery 服务的[定价](/home/features/site-recovery/#price)。
 - **Azure 存储空间**：如果通过复制到 Azure 的方式部署 Site Recovery，则你需要一个 Azure 存储帐户。你可以在部署期间设置该帐户，也可以在开始之前准备该帐户。该帐户应已启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。请阅读 [Windows Azure 存储空间简介](/documentation/articles/storage-introduction)。
 
-## 虚拟机
+##<a id="virtual-machines"></a> 虚拟机
 
 如果你要复制到 Azure 存储空间，请注意以下问题：
 
@@ -76,7 +76,6 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 
 
 - [VMM 2012 和云](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html)。
-- [配置 VMM 云结构](https://msdn.microsoft.com/zh-cn/library/azure/dn469075.aspx#BKMK_Fabric)
 - [在 VMM 中创建私有云](https://technet.microsoft.com/zh-cn/library/jj860425.aspx)
 - [演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)
 
@@ -100,9 +99,9 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 	- 允许这些 URL 通过防火墙：
 		- hypervrecoverymanager.windowsazure.cn
 		- *.accesscontrol.chinacloudapi.cn
-- *.backup.windowsazure.cn
-- *.blob.core.chinacloudapi.cn
-- *.store.core.chinacloudapi.cn
+		- *.backup.windowsazure.cn
+		- *.blob.core.chinacloudapi.cn
+		- *.store.core.chinacloudapi.cn
 
 	- 如果你要部署包含 VMM 的 Site Recovery 并使用自定义代理，系统会使用你在 Site Recovery 门户的自定义代理设置中指定的代理凭据自动创建一个 VMM RunAs 帐户 (DRAProxyAccount)。你需要设置代理服务器，以便此帐户能够成功完成身份验证。
 
@@ -147,7 +146,7 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 	- 在 VMM 中正确配置逻辑和 VM 网络。阅读有关[逻辑网络](http://blogs.technet.com/b/scvmm/archive/2013/02/14/networking-in-vmm-2012-sp1-logical-networks-part-i.aspx)和 [VM 网络](https://technet.microsoft.com/zh-cn/library/jj721575.aspx)的信息。
 	- 确保源 VMM 服务器上的所有虚拟机已连接到 VM 网络。
 	- 检查 VM 网络是否已链接到与云相关联的逻辑网络。
-	- 如果要复制到 Azure，请在 Azure 中创建虚拟网络。注意，可以将多个 VM 网络映射到单个 Azure 网络。阅读[虚拟网络配置任务](/documentation/articles/vpn-gateway-site-to-site-create)。
+	- 如果要复制到 Azure，请在 Azure 中创建虚拟网络。注意，可以将多个 VM 网络映射到单个 Azure 网络。<!--阅读[虚拟网络配置任务](/documentation/articles/vpn-gateway-site-to-site-create)。-->
 
 ## 优化性能
 

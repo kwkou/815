@@ -10,7 +10,7 @@
 <tags
 	ms.service="site-recovery"
 	ms.date="10/12/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/15/2015"/>
 
 
 # 在本地 Hyper-V 站点与 Azure 之间设置保护
