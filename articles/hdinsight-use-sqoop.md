@@ -28,6 +28,7 @@
 有关 HDInsight 群集上支持的 Sqoop 版本，请参阅 [HDInsight 提供的群集版本有哪些新功能？][hdinsight-versions]。
 
 ##先决条件
+<a name="prerequisites"></a>
 
 在开始阅读本教程前，你必须具有：
 
@@ -347,8 +348,8 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 在本节中，你将使用 Azure PowerShell 来运行 Sqoop 导出命令，以将一个 Hive 表和一个数据文件都导出到 Azure SQL 数据库或 SQL Server。下一节会提供一个 HDInsight .NET 示例。
 
 > [AZURE.NOTE]除了连接字符串信息，此节中的步骤还应适用于 Azure SQL 数据库或 SQL Server。这些步骤已使用以下配置测试过：
->
-> * **Azure 虚拟网络点到站点配置**：虚拟网络已将 HDInsight 群集连接到专用数据中心的 SQL Server。有关详细信息，请参阅[在管理门户中配置点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create)。
+> 
+> * **Azure 虚拟网络点到站点配置**：虚拟网络已将 HDInsight 群集连接到专用数据中心的 SQL Server。
 > * **Azure HDInsight 3.1**：有关在虚拟网络上创建群集的信息，请参阅[在 HDInsight 中使用自定义选项预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)。
 > * **SQL Server 2014**：已配置为允许身份验证和运行 VPN 客户端配置包，可以安全地连接到虚拟网络。
 
@@ -586,15 +587,15 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 
 [sqldatabase-get-started]: /documentation/articles/sql-database-get-started
-[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
+[sqldatabase-create-configue]: /documentation/articles/sql-database-get-started
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-install]: /documentation/articles/powershell-install-configure

@@ -52,7 +52,7 @@ Microsoft 大数据解决方案的一个关键功能是，将 Microsoft 商业�
 
 	**注意：**Power Query 还允许你通过单击“从其他源”从 HDFS 中导入数据。
 
-3. 对于“帐户名称”，请输入与你的群集相关联的 Azure Blob 存储帐户的名称，然后单击“确定”。
+3. 对于“帐户名称”，请输入与你的群集相关联的 Azure Blob 存储帐户的名称，然后单击“确定”。(在 Windows Azure 中国，“账户名称”必须填完整的 url，例如：https://<your account name\>.blob.core.chinacloudapi.cn/)
 
 4. 对于“帐户密钥”，请输入 Blob 存储帐户的密钥，然后单击“保存”。（你仅需要在首次访问该存储时执行此操作。）
 
@@ -74,7 +74,7 @@ Microsoft 大数据解决方案的一个关键功能是，将 Microsoft 商业�
 * [将数据上载到 HDInsight][hdinsight-upload-data]
 
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [image-hdi-powerquery-hdi-source]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.SelectHdiSource.png
 [image-hdi-powerquery-importdata]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.ImportData.png

@@ -14,10 +14,6 @@
 
 # 使用脚本操作自定义 HDInsight 群集
 
-[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
-
-* [使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster)
-
 HDInsight 提供了一个称为**脚本操作**的配置选项，该脚本操作可调用自定义脚本，以定义设置过程中要在群集上执行自定义。这些脚本可用于在群集上安装额外的软件或更改群集上的应用程序配置。
 
 
@@ -133,7 +129,7 @@ HDInsight 服务中有两种类型的开放源代码组件：
 
 完全支持内置组件，Microsoft 支持部门将帮助你找出并解决与这些组件相关的问题。
 
-自定义组件可获得合理范围的支持，以帮助你进一步排查问题。这可能导致问题解决，或要求你参与可用的开放源代码技术渠道，在该处可找到该技术的深入专业知识。有许多可以使用的社区站点，例如：<a href ="https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight" target="_blank">HDInsight 的 MSDN 论坛</a>和<a href="http://stackoverflow.com" target="_blank">堆栈溢出</a>。此外，Apache 项目在 <a href="http://apache.org" target="_blank">Apache.org</a> 上提供了项目站点，例如 <a href="http://hadoop.apache.org/" target="_blank">Hadoop</a>。
+自定义组件可获得合理范围的支持，以帮助你进一步排查问题。这可能导致问题解决，或要求你参与可用的开放源代码技术渠道，在该处可找到该技术的深入专业知识。有许多可以使用的社区站点，例如：<a href ="https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hdinsight" target="_blank">HDInsight 的 MSDN 论坛</a>和<a href="http://stackoverflow.com" target="_blank">堆栈溢出</a>。此外，Apache 项目在 <a href="http://apache.org" target="_blank">Apache.org</a> 上提供了项目站点，例如 <a href="http://hadoop.apache.org/" target="_blank">Hadoop</a>。
 
 HDInsight 服务提供多种方式来使用自定义组件。不论在群集上使用组件或安装组件的方式为何，均适用相同级别的支持。以下是可以在 HDInsight 群集上使用的自定义组件最常见方式的列表：
 

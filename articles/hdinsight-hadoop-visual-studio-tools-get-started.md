@@ -40,6 +40,7 @@
 
 
 ## 安装 HDInsight Tools for Visual Studio
+<a name="installation" id="install-hdinsight-tools-for-visual-studio"></a>
 
 适用于 Visual Studio 的 HDInsight 工具和 Microsoft Hive ODBC Driver 是随同 Windows Azure SDK for .NET 2.5.1 或更高版本一起打包的。你可以使用 [Web 平台安装程序](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe)安装它。你必须选择与你的 Visual Studio 版本匹配的版本。如果你尚未安装 Visual Studio，则可使用 [Web 平台安装程序](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe)或以下链接安装最新 Visual Studio Community 和 Azure SDK：
 
@@ -53,7 +54,7 @@
 ## 连接到 Azure 订阅
 适用于 Visual Studio 的 HDInsight 工具允许你连接到 HDInsight 群集，执行一些基本的管理操作，并运行 Hive 查询。
 
->[AZURE.NOTE]有关如何连接到 HDInsight 模拟器的信息，请参阅 [HDInsight 模拟器入门](/documentation/articles/hdinsight-get-started-emulator#vstools)。
+>[AZURE.NOTE]有关如何连接到 HDInsight 模拟器的信息，请参阅 [HDInsight 模拟器入门](/documentation/articles/hdinsight-hadoop-emulator-get-started#vstools)。
 
 >[AZURE.NOTE]有关连接到常规 Hadoop 群集（预览版）的信息，请参阅[使用 Visual Studio 编写和提交 Hive 查询](http://blogs.msdn.com/b/xiaoyong/archive/2015/05/04/how-to-write-and-submit-hive-queries-using-visual-studio.aspx)。
 
@@ -225,7 +226,7 @@ HDInsight Tools for Visual Studio 支持创建 Pig 脚本并将其提交到 HDIn
 <!--Link references-->
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight.introduction]: /documentation/articles/hdinsight-introduction/
-[hdinsight.get.started]: /documentation/articles/hdinsight-get-started/
+[hdinsight.get.started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
 [hdinsight.hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 

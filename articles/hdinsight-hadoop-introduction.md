@@ -33,7 +33,7 @@ Azure HDInsight 在云中部署并设置 Apache Hadoop 群集，从而为旨在�
 
 ## <a name="overview"></a>HDInsight 中的 Hadoop 生态系统概述
 
-HDInsight 是在 Windows Azure 上快速扩展 Apache Hadoop 技术堆栈（作为大数据分析的首选解决方案）的云实现。它包括 Storm、HBase、Pig、Hive、Sqoop、Oozie、Ambari 等的实现。HDInsight 还可集成商业智能 (BI) 工具，例如 Excel、SQL Server Analysis Services 和 SQL Server Reporting Services。
+HDInsight 是在 Windows Azure 上快速扩展 Apache Hadoop 技术堆栈（作为大数据分析的首选解决方案）的云实现。它包括 Storm、HBase、Pig、Hive、Sqoop、Oozie 等的实现。HDInsight 还可集成商业智能 (BI) 工具，例如 Excel、SQL Server Analysis Services 和 SQL Server Reporting Services。
 
 ### Windows 群集
 
@@ -65,8 +65,6 @@ HDInsight 为 Hadoop、HBase、Storm 提供了群集配置。或者，你可以<
 
 除了以前的整体配置，HDInsight 群集还包括下列各个组件。
 
-* **[Ambari](#ambari)**：群集预配、管理和监视。
-
 * **[Avro](#avro)** (Microsoft .NET Library for Avro)：Microsoft .NET 环境的数据序列化。
 
 * **[Hive 和 HCatalog](#hive)**：与结构化查询语言 (SQL) 类似的查询，以及表和存储管理层。
@@ -94,7 +92,7 @@ HDInsight 为 Hadoop、HBase、Storm 提供了群集配置。或者，你可以<
 Microsoft .NET Library for Avro 针对 Microsoft.NET 环境序列化实现了 Apache Avro 紧凑的二进制数据交换格式。它使用 <a target="_blank" href="http://www.json.org/">JavaScript 对象表示法 (JSON)</a> 定义与语言无关的架构，以支持语言互操作性，这意味着以一种语言序列化的数据可以用另一种语言读取。有关格式的详细信息可以在 <a target=_"blank" href="http://avro.apache.org/docs/current/spec.html">Apache Avro 规范</a>中找到。Avro 文件格式支持分布式 MapReduce 编程模型。文件是“可拆分的”，也就是说，你可以在文件中任意设置一个点，然后即可从某一特定块开始读取。若要了解相关方法，请参阅[使用 Microsoft .NET Library for Avro 序列化数据](/documentation/articles/hdinsight-dotnet-avro-serialization)。
 
 
-### <a name="hdfs"></a>HDFS
+### <a name="HDFS"></a>HDFS
 
 Hadoop 分布式文件系统 (HDFS) 是一种分布式文件系统，采用 MapReduce 和 YARN，是 Hadoop 生态系统的核心。HDFS 是 HDInsight 上 Hadoop 群集的标准文件系统。
 
@@ -144,7 +142,7 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 * 群集具有高可用性和可靠性。有关详细信息，请参阅 [HDInsight 中的 Hadoop 群集的可用性和可靠性](/documentation/articles/hdinsight-high-availability)。
 
-* 使用 Azure Blob 存储（一种与 Hadoop 兼容的选项），数据存储高效又经济。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-use-blob-storage)。
+* 使用 Azure Blob 存储（一种与 Hadoop 兼容的选项），数据存储高效又经济。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。
 
 * 与其他 Azure 服务集成，包括[网站](/documentation/services/web-sites/)和 [SQL 数据库](/documentation/services/sql-databases/)。
 
@@ -161,10 +159,8 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 ### Windows 上的 HDInsight
 
 * [HDInsight 文档](/documentation/services/hdinsight/) - Azure HDInsight 的文档页，包含指向文章、视频及更多资源的链接。
-	
-* [HDInsight 学习路线图](/documentation/articles/hdinsight-learn-map) - HDInsight 的 Hadoop 文档导航。
 
-* [Azure HDInsight 入门](/documentation/articles/hdinsight-get-started) - 关于使用 HDInsight 中的 Hadoop 的快速入门教程。
+* [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows) - 关于使用 HDInsight 中的 Hadoop 的快速入门教程。
 
 * [运行 HDInsight 示例](/documentation/articles/hdinsight-run-samples) - 有关如何运行随 HDInsight 提供的示例的教程。
 	
@@ -181,9 +177,9 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 ### Azure 上的 SQL 数据库	
 		
-* [Azure SQL 数据库](https://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx) - 有关 SQL 数据库的 MSDN 文档。
+* [Azure SQL 数据库](/documentation/articles/sql-database-technical-overview) - 有关 SQL 数据库的 MSDN 文档。
 	
-* [SQL 数据库的管理门户](https://msdn.microsoft.com/zh-cn/library/azure/dn771027.aspx) - 一种轻量版易用型数据库管理工具，用于在云中管理 SQL 数据库。
+* [SQL 数据库的管理门户](/documentation/articles/sql-database-manage-portal) - 一种轻量版易用型数据库管理工具，用于在云中管理 SQL 数据库。
 	
 * [Adventure Works for SQL 数据库](http://msftdbprodsamples.codeplex.com/releases/view/37304) - SQL 数据库示例数据库的下载页。
 
@@ -197,9 +193,9 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 * [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 Hadoop](/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver) - 了解如何使用 Microsoft Hive ODBC 驱动程序从 HDInsight 导入数据。
 			
-* [Microsoft 云平台](http://www.microsoft.com/zh-cn/server-cloud/solutions/business-intelligence/default.aspx) -了解有关 Power BI for Office 365、下载 SQL Server 试用版，以及设置 SharePoint Server 2013 和 SQL Server BI 的信息。
+* [Microsoft 云平台](https://www.microsoft.com/zh-cn/server-cloud/) -了解有关 Power BI for Office 365、下载 SQL Server 试用版，以及设置 SharePoint Server 2013 和 SQL Server BI 的信息。
 
-* <a target="\_blank" https://msdn.microsoft.com/zh-cn/library/hh231701.aspx">详细了解 SQL Server Analysis Services</a>。
+* <a target="_blank" href="https://msdn.microsoft.com/zh-cn/library/hh231701.aspx">详细了解 SQL Server Analysis Services</a>。
 
 * <a target="_blank" href="http://msdn.microsoft.com/zh-cn/library/ms159106.aspx">了解 SQL Server Reporting Services</a>。
 

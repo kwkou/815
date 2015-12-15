@@ -26,7 +26,7 @@ Azure 事件中心可让你处理网站、应用程序和设备中的大量数�
 
     > [AZURE.NOTE]两种群集类型之间的唯一差别是，是要使用 SSH 将拓扑提交到群集还是 Web 窗体。
 
-* 一个 [Azure 事件中心](/documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted)
+* 一个 [Azure 事件中心](/documentation/articles/event-hubs-csharp-ephcs-getstarted)
 
 * [Oracle Java Developer Kit (JDK) 版本 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 或同等版本，例如 [OpenJDK](http://openjdk.java.net/)
 

@@ -22,10 +22,8 @@
 	- Windows Azure 存储分析
 - 包含示例数据的解决方案
 	- 传感器数据分析
-	<!--- Twitter trend analysis-->- 网站日志分析
+	- 网站日志分析
 	- Mahout 电影推荐
-
-* [使用 HDInsight 入门库了解 Hadoop](/documentation/articles/hdinsight-learn-hadoop-use-sample-gallery-v1)
 
 ![包括示例数据的 HDInsight Hadoop、Storm 和 HBase 入门库解决方案。][hdinsight.sample.gallery]
 
@@ -42,7 +40,6 @@
 ## 后续步骤
 了解 HDInsight 的其他方法包括：
 
-- [HDInsight 学习路线图][hdinsight.learn.map]
 - [HDInsight 信息图][hdinsight.infographic]
 
 <!--Image references-->

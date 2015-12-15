@@ -16,8 +16,6 @@
 
 使用 [Azure 门户](https://manage.windowsazure.cn)，可以预配 Azure HDInsight 中的 Hadoop 群集、更改 Hadoop 用户密码，以及启用远程桌面协议 (RDP) 以便访问群集上的 Hadoop 命令控制台。
 
-[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
-
 ## 其他用于管理 HDInsight 的工具
 除了 Azure 门户外，还有其他可用于管理 HDInsight 的工具。
 
@@ -76,6 +74,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在
 
 
 ##使用 RDP 连接到 HDInsight 群集
+<a id="connect-to-hdinsight-clusters-by-using-rdp" name="rdp"></a>
 
 通过你在创建群集时提供的凭据，可以访问群集上的服务，但无法通过远程桌面访问群集本身。远程桌面访问默认情况下处于关闭状态，因此，使用它来直接访问群集时，要求一些其他的创建后配置。
 
@@ -106,6 +105,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在
 5. 单击“连接”，然后按照说明进行操作。
 
 ##创建自签名证书
+<a name="cert"></a>
 
 如果你要使用 .NET SDK 在群集上执行任何操作，必须在工作站上创建自签名证书，并将该证书上载到你的 Azure 订阅。这是一次性的任务。只要证书有效，你就可以将它安装在其他计算机上。
 

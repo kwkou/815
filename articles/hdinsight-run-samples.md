@@ -72,7 +72,7 @@ HDInsight 随附了以下示例：
 
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
 
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples
 [hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort

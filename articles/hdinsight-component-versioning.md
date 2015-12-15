@@ -38,7 +38,7 @@ Azure HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版�
 
 **获取当前组件版本信息**
 
-与 HDInsight 群集版本关联的组件版本可能在将来的 HDInsight 更新中更改。确定可用组件并验证正在使用哪些群集版本的一种方法是使用 Ambari REST API。**GetComponentInformation** 命令可用于检索有关服务组件的信息。有关详细信息，请参阅 [Ambari 文档][ambari-docs]。获取此信息的另一个方法是使用远程桌面登录到群集并直接检查“C:\\apps\\dist”目录的内容。
+与 HDInsight 群集版本关联的组件版本可能在将来的 HDInsight 更新中更改。
 
 
 **发行说明**
@@ -76,7 +76,7 @@ HDInsight 平台的一些突出功能包括：
 
 - **Hive 性能** - 使用**优化行纵栏表** (ORC) 格式对 Hive 查询响应时间（最多 40 倍）和数据压缩（最多 80%）的数量级改善。
 
-- **Pig、Sqoop、Oozie、Ambari** - 对 HDInsight 群集版本 3.0 (HDP 2.0/Hadoop 2.2) 进行组件版本升级，以提供 HDInsight 群集版本 2.1 (HDP 1.3/Hadoop 1.2) 的奇偶校验。有关具体细节，请参阅下面的版本表。
+- **Pig、Sqoop、Oozie** - 对 HDInsight 群集版本 3.0 (HDP 2.0/Hadoop 2.2) 进行组件版本升级，以提供 HDInsight 群集版本 2.1 (HDP 1.3/Hadoop 1.2) 的奇偶校验。有关具体细节，请参阅下面的版本表。
 
 - **Mahout** - 这个可缩放的机器学习算法库已预装在 HDInsight 3.1（和更高版本）的 Hadoop 群集上。因此，你无需进行其他任何群集配置，就能运行 Mahout 作业。
 
@@ -108,7 +108,7 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 
 * HDInsight 群集版本 3.2 使用基于 [Hortonworks 数据平台 2.2][hdp-2-2] 的 Hadoop 分发版。
 
-	* 特定 Apache 组件的发行说明 - [Hive 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310843&version=12326450)、[Pig 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310730&version=12326954)、[HBase 0.98.4](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310753&version=12326810)、[Phoenix 4.2.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12315120&version=12327581)、[M/R 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310941&version=12327180)、[HDFS 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310942&version=12327181)、[YARN 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12313722&version=12327197)、[Common](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310240&version=12327179)、[Tez 0.5.2](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314426&version=12328742)、[Ambari 2.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12312020&version=12327486)、[Storm 0.9.3](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314820&version=12327112)、[Oozie 4.1.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12324960&projectId=12311620)。
+	* 特定 Apache 组件的发行说明 - [Hive 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310843&version=12326450)、[Pig 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310730&version=12326954)、[HBase 0.98.4](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310753&version=12326810)、[Phoenix 4.2.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12315120&version=12327581)、[M/R 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310941&version=12327180)、[HDFS 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310942&version=12327181)、[YARN 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12313722&version=12327197)、[Common](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310240&version=12327179)、[Tez 0.5.2](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314426&version=12328742)、[Storm 0.9.3](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314820&version=12327112)、[Oozie 4.1.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12324960&projectId=12311620)。
 
 
 * HDInsight 群集版本 3.1 使用基于 [Hortonworks 数据平台 2.1.7][hdp-2-1-7] 的 Hadoop 分发版。这是使用 11/7/2014 之后的门户时创建的**默认** Hadoop 群集。创建于 11/7/2014 之前的 HDInsight 3.1 群集基于[ Hortonworks 数据平台 2.1.1][hdp-2-1-1]。
@@ -137,8 +137,6 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 [hdp-1-3-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-1.3.0/bk_releasenotes_hdp_1.x/content/ch_relnotes-hdp1.3.0_1.html
 
 [hdp-1-1-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-Win-1.1/bk_releasenotes_HDP-Win/content/ch_relnotes-hdp-win-1.1.0_1.html
-
-[ambari-docs]: https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md
 
 [zookeeper]: http://zookeeper.apache.org/
 

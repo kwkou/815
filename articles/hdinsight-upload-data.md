@@ -62,7 +62,7 @@ Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下
 
 2. 打开命令提示符、bash 或其他 shell，然后使用以下方法对 Azure 订阅进行身份验证。
 
-		azure login
+		azure login -e AzureChinaCloud
 
 	出现提示时，输入订阅的用户名和密码。
 
@@ -250,9 +250,9 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
 
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
 
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
