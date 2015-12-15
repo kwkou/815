@@ -33,7 +33,7 @@ HBase 以集成到 Azure 环境中的托管群集形式提供。这些群集配�
 - 装有 Visual Studio 2013 的**工作站**：有关说明，请参阅[安装 Visual Studio](http://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx)。
 
 ## 设置 HBase 群集
-
+<a name="create-hbase-cluster"></a>
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
 **通过使用 Azure 门户设置 HBase 群集**
