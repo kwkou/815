@@ -101,7 +101,7 @@
 
     如果你要在注册期间收集和存储其他信息，应该在此处执行相应的操作。
 
-2. 在移动服务后端项目中，右键单击“控制器”，单击“添加”和“控制器”，创建名为 `CustomRegistrationController` 的新“Microsoft Azure 移动服务自定义控制器”，然后添加以下 `using` 语句：
+2. 在移动服务后端项目中，右键单击“控制器”，单击“添加”和“控制器”，创建名为 `CustomRegistrationController` 的新“Windows Azure 移动服务自定义控制器”，然后添加以下 `using` 语句：
 
 		using Microsoft.WindowsAzure.Mobile.Service.Security;
 		using System.Text.RegularExpressions;
@@ -275,7 +275,7 @@
 
 	此类表示使用用户 ID 和身份验证令牌成功完成的登录。请注意，此类和客户端的 MobileServiceUser 类具有相同形式，因此，使用此类可以轻松地将登录响应传递给强类型化客户端。
 
-3. 右键单击“控制器”，单击“添加”和“控制器”，创建名为 `CustomLoginController` 的新“Microsoft Azure 移动服务自定义控制器”，然后添加以下 `using` 语句：
+3. 右键单击“控制器”，单击“添加”和“控制器”，创建名为 `CustomLoginController` 的新“Windows Azure 移动服务自定义控制器”，然后添加以下 `using` 语句：
 
 		using Microsoft.WindowsAzure.Mobile.Service.Security;
 		using System.Security.Claims;
