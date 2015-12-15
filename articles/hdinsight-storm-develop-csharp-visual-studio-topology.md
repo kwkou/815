@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/15/2015"/>
 
 # 使用 Hadoop Tools for Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑
 

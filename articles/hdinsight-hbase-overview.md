@@ -12,7 +12,7 @@
 <tags 
 	ms.service="hdinsight" 
 	ms.date="09/17/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/15/2015"/>
 
 
 

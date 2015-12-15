@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/02/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/15/2015"/>
 
 #将 Sqoop 与 HDInsight 中的 Hadoop 配合使用 (Windows)
 

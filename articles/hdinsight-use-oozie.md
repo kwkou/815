@@ -11,7 +11,7 @@
 <tags 
 	ms.service="hdinsight" 
 	ms.date="07/28/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="12/15/2015"/>
 
 
 # 在 HDInsight 中将 Oozie 与 Hadoop 配合使用以定义和运行工作流

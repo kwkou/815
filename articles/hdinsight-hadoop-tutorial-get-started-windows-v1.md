@@ -11,7 +11,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="08/07/2015"
-   wacn.date="10/03/2015"/>
+   wacn.date="12/15/2015"/>
 
 
 # Hadoop 教程：在 Windows 上的 HDInsight 中开始将 Hadoop 与 Hive 查询配合使用
