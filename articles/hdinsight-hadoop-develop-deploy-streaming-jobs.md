@@ -523,7 +523,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 ##后续步骤
 在本教程中，你已学习如何执行以下操作：开发 Hadoop 流式处理 MapReduce 作业、在 HDInsight Emulator 中测试应用程序、编写 Azure PowerShell 脚本以设置 HDInsight 群集以及在群集上运行 MapReduce 作业。若要了解更多信息，请参阅下列文章：
 
-- [Azure HDInsight 入门](/documentation/articles/hdinsight-get-started)
+- [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows)
 - [HDInsight Emulator 入门][hdinsight-get-started-emulator]
 - [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
 - [将 Azure Blob 存储与 HDInsight 配合使用][hdinsight-storage]
@@ -537,10 +537,10 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator
-[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-get-started-emulator#blobstorage
+[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started
+[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-hadoop-emulator-get-started#blobstorage
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig

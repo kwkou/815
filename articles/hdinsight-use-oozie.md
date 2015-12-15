@@ -54,6 +54,7 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。它与 Had
 
 
 ##先决条件
+<a name="prerequisites"></a>
 
 在开始阅读本教程前，你必须具有：
 
@@ -568,8 +569,8 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 
 [hdinsight-oozie-coordinator-time]: /documentation/articles/hdinsight-use-oozie-coordinator-time/
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
 
 
@@ -580,13 +581,13 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
-[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started/
 
 [hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce/
 
-[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure/
+[sqldatabase-create-configue]: /documentation/articles/sql-database-get-started/
 [sqldatabase-get-started]: /documentation/articles/sql-database-get-started/
 
 [azure-management-portal]: https://manage.windowsazure.cn/
@@ -598,9 +599,9 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 
 [powershell-download]: http://www.windowsazure.cn/zh-cn/downloads/#cmd-line-tools
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
-[powershell-install-configure]: /documentation/articles/install-and-configure-powershell
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
+[powershell-script]: https://technet.microsoft.com/library/dn425048.aspx
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 

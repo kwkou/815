@@ -96,6 +96,7 @@ Name | 脚本
 
 
 ## 自定义脚本的帮助器方法
+<a name="helper-methods-for-custom-scripts"></a>
 
 脚本操作帮助器方法是可以在编写自定义脚本时使用的实用工具。这些方法在 [https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1](https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1) 中定义，可以使用以下语法包括在你的脚本中：
 
@@ -167,7 +168,7 @@ Name | 脚本
 
 	HDInsight 具有实现高可用性的主-被体系结构，在该结构中，一个头节点处于主动模式（HDInsight 服务正在运行），而另一头节点处于备用模式（HDInsight 服务未在运行）。如果 HDInsight 服务中断，则节点会在主动和被动模式之间切换。如果使用脚本操作在两个头节点上安装服务以实现高可用性，请注意，HDInsight 故障转移机制无法对这些用户安装的服务执行自动故障转移。因此，用户在 HDInsight 头节点上安装的服务如果预期具有高可用性，则必须具有自己的故障转移机制，无论是在主-被模式还是在主-主模式下。
 
-	如果将头节点角色指定为 *ClusterRoleCollection* 参数（记录在下面的[如何运行脚本操作](#runScriptAction)部分中）中的值，则 HDInsight 脚本操作命令会在两个头节点上运行。因此，设计自定义脚本时，请确保你的脚本知道此设置。如果在两个头节点上安装并启动相同服务，并且这两个服务以相互争用结束，则你不会遇到问题。另请注意，数据将在重新制作映像期间丢失，因此，通过脚本操作安装的软件必须能够灵活应对此类事件。应用程序应设计使用分布在很多节点上的高可用数据。请注意，有 1/5 之多的群集节点可以同时重新制作映像。
+	如果将头节点角色指定为 *ClusterRoleCollection* 参数中的值，则 HDInsight 脚本操作命令会在两个头节点上运行。因此，设计自定义脚本时，请确保你的脚本知道此设置。如果在两个头节点上安装并启动相同服务，并且这两个服务以相互争用结束，则你不会遇到问题。另请注意，数据将在重新制作映像期间丢失，因此，通过脚本操作安装的软件必须能够灵活应对此类事件。应用程序应设计使用分布在很多节点上的高可用数据。请注意，有 1/5 之多的群集节点可以同时重新制作映像。
 
 
 - 配置自定义组件以使用 Azure Blob 存储
@@ -247,7 +248,7 @@ Name | 脚本
 
 本部分概述在本地使用 HDInsight 模拟器进行测试的过程，但是使用 VM 的过程类似。
 
-**安装 HDInsight 模拟器** - 若要在本地运行脚本操作，你必须安装有 HDInsight 模拟器。有关如何安装该模拟器的说明，请参阅 [HDInsight 模拟器入门](/documentation/articles/hdinsight-get-started-emulator/)。
+**安装 HDInsight 模拟器** - 若要在本地运行脚本操作，你必须安装有 HDInsight 模拟器。有关如何安装该模拟器的说明，请参阅 [HDInsight 模拟器入门](/documentation/articles/hdinsight-hadoop-emulator-get-started/)。
 
 **设置 Azure PowerShell 的执行策略** - 打开 Azure PowerShell 并运行（以管理员身份）以下命令，以将执行策略设置为 *LocalMachine* 和 *Unrestricted*：
  

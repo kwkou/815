@@ -24,9 +24,9 @@ Azure 事件中心可让你处理网站、应用程序和设备中的大量数�
 
 ##先决条件
 
-* 一个 <a href="/documentation/articles/hdinsight-storm-getting-started/" target="_blank">Apache Storm on HDInsight 群集</a>
+* 一个 <a href="/documentation/articles/hdinsight-apache-storm-tutorial-get-started/" target="_blank">Apache Storm on HDInsight 群集</a>
 
-* 一个 <a href="/documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted/" target="_blank">Azure 事件中心</a>
+* 一个 <a href="/documentation/articles/event-hubs-csharp-ephcs-getstarted/" target="_blank">Azure 事件中心</a>
 
 * <a href="/downloads" target="_blank">Azure .NET SDK</a>
 

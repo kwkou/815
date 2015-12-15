@@ -112,6 +112,7 @@ Azure Blob 存储语法为：
 
 
 ##设置 HDInsight 群集和运行 Hive/Sqoop 作业
+<a name="runjob"></a>
 
 Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的方法是设置作业的群集，并在作业完成之后删除作业。以下脚本覆盖了整个过程。有关预配 HDInsight 群集和运行 Hive 作业的详细信息，请参阅[在 HDInsight 中预配 Hadoop 群集][hdinsight-provision]和[将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]。
 
@@ -857,9 +858,9 @@ HiveQL 脚本将执行以下操作：
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs

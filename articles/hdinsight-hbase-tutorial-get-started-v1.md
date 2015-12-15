@@ -19,17 +19,7 @@
 
 了解如何使用 Hive 在 HDInsight 中预配 HBase 群集、创建 HBase 表和查询表。有关 HBase 的一般信息，请参阅 [HDInsight HBase 概述][hdinsight-hbase-overview]。
 
-[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
-
-* [HBase 教程：开始在 HDInsight 中将 Apache HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started)
- 
 > [AZURE.NOTE]HBase（版本 0.98.0）只能用于 HDInsight 上的 HDInsight 3.1 群集（基于 Apache Hadoop 和 YARN 2.4.0）。有关版本信息，请参阅 [HDInsight 提供的 Hadoop 群集版本有哪些新功能？][hdinsight-versions]
-
-以下视频演示了相同的内容：
-
-> [AZURE.VIDEO get-started-with-hbase-in-hdinsight]
-
-
 
 
 **先决条件**

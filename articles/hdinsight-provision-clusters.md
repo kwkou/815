@@ -19,8 +19,6 @@
 
 [AZURE.INCLUDE [选择器](../includes/hdinsight-portal-management-selector.md)]
 
-* [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)
-
 **先决条件：**
 
 在开始按照本文中的说明操作之前，你必须具有以下内容：
@@ -135,7 +133,7 @@
 
 	>[AZURE.WARNING]不要对多个群集共享一个 Blob 存储容器。此操作不受支持。
 
-	有关使用辅助 Blob 存储的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage)。
+	有关使用辅助 Blob 存储的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。
 
 - **Hive/Oozie 元存储**
 
@@ -234,7 +232,7 @@
 <a id="portal"></a>
 ## 使用管理门户创建
 
-HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。创建 HDInsight 群集前，需要具有位于同一数据中心的 Azure 存储帐户。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage)。有关创建 Azure 存储帐户的详细信息，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account)。
+HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。创建 HDInsight 群集前，需要具有位于同一数据中心的 Azure 存储帐户。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。有关创建 Azure 存储帐户的详细信息，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account)。
 
 
 > [AZURE.NOTE]目前，只有**中国北部**和**中国东部**区域才能托管 HDInsight 群集。
@@ -435,6 +433,8 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
 	![HDI.CLI.Provision](./media/hdinsight-provision-clusters/HDI.ps.provision.png)
 
 ## 使用 HDInsight .NET SDK 创建
+<a name="sdk"></a>
+
 HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使用 HDInsight 的操作。请遵照以下说明创建一个 Visual Studio 控制台应用程序，并粘贴用于创建群集的代码。
 
 **创建 Visual Studio 控制台应用程序**
@@ -563,7 +563,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 ##<a id="nextsteps"></a>后续步骤
 在本文中，你已经学习了几种创建 HDInsight 群集的方法。若要了解更多信息，请参阅下列文章：
 
-* [Azure HDInsight 入门](/documentation/articles/hdinsight-get-started) - 了解如何开始使用你的 HDInsight 群集
+* [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows) - 了解如何开始使用你的 HDInsight 群集
 * [将 Sqoop 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-sqoop) - 了解如何在 HDInsight 和 SQL 数据库或 SQL Server 之间复制数据
 * [使用 PowerShell 管理 HDInsight](/documentation/articles/hdinsight-administer-use-powershell) - 了解如何通过 Azure PowerShell 使用 HDInsight
 * [以编程方式提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically) - 了解如何以编程方式将作业提交到 HDInsight

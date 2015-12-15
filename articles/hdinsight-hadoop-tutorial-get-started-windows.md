@@ -149,7 +149,7 @@
 
 	![为 Azure HDInsight 打开的 Excel PowerQuery 导入菜单。][image-hdi-gettingstarted-powerquery-importdata]
 
-3. 输入与你的群集关联的 Azure Blob 存储帐户的“帐户名称”，然后单击“确定”。（这是先前在教程中创建的存储帐户。）
+3. 输入与你的群集关联的 Azure Blob 存储帐户的“帐户名称”，然后单击“确定”。（这是先前在教程中创建的存储帐户，在 Windows Azure 中国，“账户名称”必须填完整的 url，例如：https://<your account name\>.blob.core.chinacloudapi.cn/）
 4. 输入 Azure Blob 存储帐户的“帐户密钥”，然后单击“保存”。
 5. 在右窗格中，双击 Blob 名称。默认情况下，该 Blob 名称与群集名称相同。
 

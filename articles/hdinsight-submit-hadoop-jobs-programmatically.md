@@ -369,6 +369,7 @@ HDInsight 群集附带了一个用 C# 开发的单词计数 Hadoop 流程序。�
 有关开发和部署 Hadoop 流作业的详细信息，请参阅[为 HDInsight 开发 C# Hadoop 流程序][hdinsight-develop-streaming-jobs]。
 
 **提交 WordCount MapReduce 作业**
+<a name="mapreduce-sdk"></a>
 
 1. 在 Visual Studio 包管理器控制台中，运行以下 Nuget 命令将包导入。
 
@@ -559,8 +560,8 @@ HDInsight 群集提供了一个名为 *hivesampletable* 的示例 Hive 表。在
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 

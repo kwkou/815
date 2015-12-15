@@ -74,7 +74,7 @@ HTTP 路径|将此字段留空。
 默认字符串列长度、二进制列长度、十进制列小数位数|数据类型长度和精度可能会影响返回数据的方式。由于精度损失和/或截断，可能会返回不正确的信息。
 
 
-	![Advanced options][img-HiveOdbc-DataSource-AdvancedOptions]
+![Advanced options][img-HiveOdbc-DataSource-AdvancedOptions]
 
 6. 单击“测试”以测试数据源。正确配置数据源时，将显示“测试成功完成!”。
 7. 单击“确定”关闭“测试”对话框。现在，新的数据源应该在“ODBC 数据源管理器”中列出。

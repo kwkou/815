@@ -21,7 +21,7 @@ HDInsight Tools 中的 Storm 仪表板和 Storm 功能依赖于 Storm REST API�
 
 ##先决条件
 
-* **Apache Storm on HDInsight** - 参阅 <a href="/documentation/articles/hdinsight-storm-getting-started" target="_blank">Apache Storm on HDInsight 入门</a>获取群集创建步骤
+* **Apache Storm on HDInsight** - 参阅 <a href="/documentation/articles/hdinsight-apache-storm-tutorial-get-started" target="_blank">Apache Storm on HDInsight 入门</a>获取群集创建步骤
 
 * **对于 Storm 仪表板**：支持 HTML5 的现代 Web 浏览器
 
