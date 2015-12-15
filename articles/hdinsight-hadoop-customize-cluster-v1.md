@@ -10,7 +10,7 @@
 <tags 
 	ms.service="hdinsight" 
 	ms.date="08/07/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="12/15/2015"/>
 
 # 使用脚本操作自定义 HDInsight 群集
 

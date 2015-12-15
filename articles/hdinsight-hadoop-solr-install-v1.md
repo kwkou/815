@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/02/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/15/2015"/>
 
 # 在 HDInsight Hadoop 群集上安装并使用 Solr
 

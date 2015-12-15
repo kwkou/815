@@ -10,7 +10,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="07/08/2015"
-   wacn.date="10/03/2015"/>
+   wacn.date="12/15/2015"/>
 
 # 在 HDInsight 中配置 HBase 地域复制
 

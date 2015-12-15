@@ -11,7 +11,7 @@
 <tags
    ms.service="hdinsight" 
    ms.date="09/03/2015"
-   wacn.date="10/22/2015"/>
+   wacn.date="12/15/2015"/>
 
 
 # HDInsight 中的 Hadoop 简介：云中的大数据分析和处理

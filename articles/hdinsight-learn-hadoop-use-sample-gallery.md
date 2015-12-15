@@ -11,7 +11,7 @@
 <tags 
    ms.service="hdinsight" 
    ms.date="07/09/2015"
-   wacn.date="10/03/2015"/>
+   wacn.date="12/15/2015"/>
 
 # 使用 HDInsight 入门库了解 Hadoop
 

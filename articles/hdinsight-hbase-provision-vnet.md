@@ -11,7 +11,7 @@
 <tags
    ms.service="hdinsight" 
    ms.date="08/12/2015"
-   wacn.date="10/03/2015"/>
+   wacn.date="12/15/2015"/>
 
 # 在 Azure 虚拟网络上设置 HBase 群集
 

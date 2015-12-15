@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	wacn.date="10/22/2015"
+	wacn.date="12/15/2015"
 	ms.date="08/07/2015"/>
 
 # 使用 HDInsight Emulator（一个 Hadoop 沙盒）开始了解 Hadoop 生态系统

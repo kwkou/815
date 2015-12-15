@@ -10,7 +10,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="07/29/2015"
-   wacn.date="10/03/2015"/>
+   wacn.date="12/15/2015"/>
 
 # 将 Apache Phoenix 和 SQuirreL 与 HDinsight 中的 HBase 配合使用  
 
