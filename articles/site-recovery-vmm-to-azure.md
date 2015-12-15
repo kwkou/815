@@ -6,7 +6,7 @@
 	authors="raynew" 
 	manager="jwhit" 
 	editor="tysonn"/>
-<tags ms.service="site-recovery" ms.date="10/12/2015" wacn.date="11/27/2015"/>
+<tags ms.service="site-recovery" ms.date="10/12/2015" wacn.date="12/15/2015"/>
 
 
 # 设置本地 VMM 站点与 Azure 之间的保护
@@ -80,7 +80,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 4. 在“名称”中，输入一个友好名称以标识此保管库。
 
-5. 在“区域”中，为保管库选择地理区域。<b></b>可用的地理区域包括“东亚”、“西欧”、“华北”、“美国东部”、“北欧”、“东南亚”。
+5. 在“区域”中，为保管库选择地理区域。<b></b>可用的地理区域包括“China East”、“China Nort”。
 6. 单击“创建保管库”。<b></b> 
 
 	![新保管库](./media/site-recovery-vmm-to-azure/ASRE2AVMM_HvVault.png)
@@ -241,7 +241,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 请注意，如果目标网络具有多个子网，并且其中一个子网与源虚拟机所在的子网同名，则在故障转移后副本虚拟机将连接到该目标子网。如果没有具有匹配名称的目标子网，则虚拟机将连接到网络中的第一个子网。 
 
-## 步骤 8：为虚拟机启用保护
+##<a id="step-8-enable-protection-for-virtual-machines"></a> 步骤 8：为虚拟机启用保护
 
 在正确配置服务器、云和网络后，可以在云中为虚拟机启用保护。注意以下事项：
 
@@ -312,7 +312,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 - 没有 Azure 网络的测试故障转移-此类型的测试故障转移检查虚拟机是否可以正常在 Azure 中运行。在故障转移后，虚拟机不会连接到任何 Azure 网络。
 - 具有 Azure 网络的测试故障转移-此类型的故障转移检查整个复制环境是否可以按预期运行，并且在故障转移后，虚拟机将连接到指定的目标 Azure 网络。对于测试故障转移的子网处理，将根据副本虚拟机的子网确定测试虚拟机的子网。这不同于常规复制，在常规复制中，副本虚拟机的子网是根据源虚拟机的子网确定的。
 
-如果你希望在不指定 Azure 目标网络的情况下为启用了保护的虚拟机运行到 Azure 的测试故障转移，则不需要做任何准备。若要运行具有目标 Azure 网络的测试性故障转移，你将需要创建一个与你的 Azure 生产网络相隔离的新 Azure 网络（你在 Azure 中新建网络时的默认行为）。看看如何[运行测试性故障转移](/documenatation/articles/site-recovery-failover#run-a-test-failover)，以获取更多详细信息。
+如果你希望在不指定 Azure 目标网络的情况下为启用了保护的虚拟机运行到 Azure 的测试故障转移，则不需要做任何准备。若要运行具有目标 Azure 网络的测试性故障转移，你将需要创建一个与你的 Azure 生产网络相隔离的新 Azure 网络（你在 Azure 中新建网络时的默认行为）。看看如何[运行测试性故障转移](/documentation/articles/site-recovery-failover#run-a-test-failover)，以获取更多详细信息。
 
 
 你还需要设置已复制虚拟机的基础结构，使之能够正常工作。使用，可以使用 Azure Site Recovery 将包含域控制器和 DNS 的虚拟机复制到 Azure，并可以使用测试故障故障转移在测试网络中创建此类虚拟机。如需更多详细信息，请参阅 [Active Directory 的测试性故障转移注意事项](/documentation/articles/site-recovery-active-directory#considerations-for-test-failover)部分。

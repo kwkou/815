@@ -9,7 +9,7 @@
 <tags 
 	ms.service="storage"
 	ms.date="09/27/2015"
-	wacn.date="12/11/2015" />
+	wacn.date="12/15/2015" />
 
 # Azure 存储空间可伸缩性和性能目标
 
@@ -29,7 +29,7 @@
 
 [AZURE.INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 
-## 高级存储帐户的可伸缩性目标
+##<a id="scalability-targets-for-premium-storage-accounts"></a> 高级存储帐户的可伸缩性目标
 
 [AZURE.INCLUDE [azure-storage-limits-premium-storage](../includes/azure-storage-limits-premium-storage.md)]
 

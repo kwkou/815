@@ -10,7 +10,7 @@
 <tags 
 	ms.service="site-recovery"
 	ms.date="10/12/2015" 
-	wacn.date="11/13/2015"/>
+	wacn.date="12/15/2015"/>
 
 #使用 ASR 的自动化 DR 解决方案，适用于 Active Directory 和 DNS
 
@@ -69,7 +69,7 @@ Azure Site Recovery 是一项基于 Azure 的服务，可提供灾难恢复功�
   
 ![Azure 网络](./media/site-recovery-active-directory/azure-network.png)
 
-##测试性故障转移注意事项
+##<a id="considerations-for-test-failover"></a>测试性故障转移注意事项
 测试性故障转移是在独立于生产网络的网络中完成的，因此对生产工作负荷没有影响。大多数应用程序还需要存在域控制器和 DNS 服务器才能运行。因此，在对应用程序进行故障转移之前，还需在用于测试性故障转移的独立网络中创建域控制器。这样做最简单的方法是，首先使用 ASR 在域控制器/DNS 虚拟机上启用保护，然后在触发对应用程序的恢复计划进行的测试性故障转移之前，触发对域控制器虚拟机进行的测试性故障转移。以下是执行测试性故障转移的分步指南：
 
 1. 在域控制器/DNS 虚拟机上启用保护，就像对任何其他虚拟机启用保护一样。

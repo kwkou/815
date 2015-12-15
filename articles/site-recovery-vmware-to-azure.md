@@ -10,7 +10,7 @@
 <tags
 	ms.service="site-recovery"
 	ms.date="10/07/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/15/2015"/>
 
 
 # 在本地 VMware 虚拟机或物理服务器与 Azure 之间设置保护
@@ -41,7 +41,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 - 提供自动发现 VMware 虚拟机的过程。
 
 
-## 我需要做好哪些准备？
+##<a id="what-do-i-need"></a> 我需要做好哪些准备？
 
 此图显示了部署组件。
 
@@ -61,7 +61,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 可以在[站点恢复组件](/documentation/articles/site-recovery-components)中深入了解站点恢复组件、提供程序和代理。
 
-## 容量规划
+##<a id="capacity-planning"></a> 容量规划
 
 考虑的主要方面为：
 
@@ -153,7 +153,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 - 所需的存储帐户数 = 源 IOPS 总计/10000。
 
 
-## 开始之前
+##<a id="before-you-start"></a> 开始之前
 
 **组件** | **要求** | **详细信息**
 --- | --- | --- 
@@ -189,7 +189,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 ![部署示意图 - VPN](./media/site-recovery-vmware-to-azure/ASRVmware_deploymentVPN.png)
 
 
-## 步骤 1：创建保管库
+##<a id="step-1-create-a-vault"></a> 步骤 1：创建保管库
 
 1. 登录到[管理门户](https://manage.windowsazure.cn)。
 
@@ -209,7 +209,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 检查状态栏以确认保管库已成功创建。保管库将以**"活动"**状态列在主要的**"恢复服务"**页上。
 
-## 步骤 2：部署配置服务器
+##<a id="step-2-deploy-a-configuration-server"></a> 步骤 2：部署配置服务器
 
 ### 配置服务器设置
 
@@ -247,7 +247,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
     >[AZURE.WARNING]请勿删除在配置服务器部署期间创建的任何终结点的公用或专用端口号。
 
-配置服务器使用保留的 IP 地址部署在自动创建的 Azure 云服务中。需要使用保留的地址确保云服务上的虚拟机（包括配置服务器）在重新启动后，配置服务器云服务 IP 地址仍然相同。在停用配置服务器后，必须手动将保留的公共 IP 地址取消保留，否则会继续保留。每个订阅保留的公共 IP 地址数默认限制为 20 个。[详细了解](/documentation/articles/virtual-network/virtual-networks-reserved-private-ip)有关保留 IP 地址的信息。
+配置服务器使用保留的 IP 地址部署在自动创建的 Azure 云服务中。需要使用保留的地址确保云服务上的虚拟机（包括配置服务器）在重新启动后，配置服务器云服务 IP 地址仍然相同。在停用配置服务器后，必须手动将保留的公共 IP 地址取消保留，否则会继续保留。每个订阅保留的公共 IP 地址数默认限制为 20 个。[详细了解](/documentation/articles/virtual-networks-reserved-private-ip)有关保留 IP 地址的信息。
 
 ### 在保管库中注册配置服务器
 
@@ -271,10 +271,10 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 	- 如果你确实使用自定义代理，或者你的默认代理要求进行身份验证，则需要输入代理详细信息，包括地址、端口和凭据。
 	- 应可通过代理访问以下 URL：
 		- **.hypervrecoverymanager.windowsazure.cn
-- **.accesscontrol.chinacloudapi.cn
-- **.backup.windowsazure.cn
-- **.blob.core.chinacloudapi.cn
-- **.store.core.chinacloudapi.cn
+		- **.accesscontrol.chinacloudapi.cn
+		- **.backup.windowsazure.cn
+		- **.blob.core.chinacloudapi.cn
+		- **.store.core.chinacloudapi.cn
 - 如果你采用了基于 IP 地址的防火墙规则，请确保这些规则设置为允许配置服务器与 [Azure 数据中心 IP 范围](https://msdn.microsoft.com/zh-CN/library/azure/dn175718.aspx)和 HTTPS (443) 协议中所述的 IP 地址通信。必须将你打算使用的 Azure 区域以及美国西部的 IP 范围加入允许列表。
 
 	![代理注册](./media/site-recovery-vmware-to-azure/ASRVMWare_RegistrationProxy.png)
@@ -334,7 +334,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 - 确定是要从本地服务器通过 VPN 连接还是 Internet 连接到 Azure 中运行的各种组件服务器（配置服务器、主目标服务器，以访问控制和复制数据），这项决定是最终性的。以后无法更改此设置。如果这样做，将需要重新部署方案并重新保护计算机。  
 
 
-## 步骤 5：部署主目标服务器
+##<a id="step-3-deploy-the-master-target-server"></a> 步骤 3：部署主目标服务器
 
 1. 在“准备目标(Azure)资源”中，单击“部署主目标服务器”。
 2. 指定主目标服务器的详细信息和凭据。该服务器将部署在注册到的配置服务器所在的 Azure 网络中。在单击完成时，将使用 Windows 或 Linux 库映像创建 Azure 虚拟机。
@@ -389,7 +389,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 >[AZURE.NOTE]请注意，在注册完成之后，最多需要 15 分钟，配置服务器下才会列出主目标服务器。若要立即更新，请单击配置服务器页面底部的刷新按钮以刷新配置服务器。
 
-## 步骤 4：部署本地进程服务器
+##<a id="step-4-deploy-the-on-premises-process-server"></a> 步骤 4：部署本地进程服务器
 
 >[AZURE.NOTE]建议在进程服务器上配置静态 IP 地址，以保证在重新启动后可持续使用相同的地址。
 
@@ -453,7 +453,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 2. 重新启动 InMage PushInstall 服务。
 
 
-## 步骤 7：安装最新更新
+##<a id="step-5-install-latest-updates"></a> 步骤 5：安装最新更新
 
 继续之前，请确保你已安装最新更新。请记得按以下顺序安装更新：
 
@@ -503,7 +503,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 
 
-## 步骤 7：创建保护组
+##<a id="step-7-create-a-protection-group"></a> 步骤 7：创建保护组
 
 1. 打开“受保护的项”>“保护组”，然后单击添加一个保护组。
 
@@ -525,14 +525,14 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 你可以监视保护组，因为它们是在“受保护的项”页上创建的。
 
-## 步骤 8：设置想要保护的计算机
+##<a id="step-8-set-up-machines-you-want-to-protect"></a> 步骤 8：设置想要保护的计算机
 
 需在要保护的虚拟机和物理服务器上安装移动服务。可通过两种方式实现此目的：
 
 - 从进程服务器自动推送并在每台计算机上安装该服务。
 - 手动安装该服务。 
 
-### 自动安装移动服务
+###<a id="install-the-mobility-service-automatically"></a> 自动安装移动服务
 
 在向保护组添加计算机时，进程服务器将自动推送移动服务，并将其安装在每个计算机上。
 
@@ -633,7 +633,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 >[AZURE.NOTE]如果将计算机添加到已运行适当版本移动服务的保护组，则会跳过推送安装。
 
 
-## 步骤 9：启用保护
+##<a id="step-9-enable-protection"></a> 步骤 9：启用保护
 
 若要启用保护，请将虚拟机和物理服务器添加到保护组。开始之前，请注意：
 
@@ -757,7 +757,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 4. 在“更改进程服务器”对话框中，在“目标进程服务器”中选择新服务器，然后选择要复制到新服务器的虚拟机。若要获取相关信息，包括可用空间、已用内存，请单击服务器名称旁边的信息图标。随后会显示将每个所选虚拟机复制到新进程服务器所需的平均空间，以帮助你做出负载决策。![更改进程服务器 2](./media/site-recovery-vmware-to-azure/ASRVMware_ChangePS2.png)
 5. 单击复选标记以开始复制到新的进程服务器。如果你从某个重要的进程服务器中删除所有虚拟机，仪表板中应该不再会显示关键警告。
 
-## 第三方软件通知和信息
+##<a id="third-party"></a> 第三方软件通知和信息
 
 请勿翻译或本地化
 

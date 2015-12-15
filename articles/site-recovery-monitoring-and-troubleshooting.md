@@ -10,7 +10,7 @@
 <tags 
 	ms.service="site-recovery" 
 	ms.date="07/20/2015" 
-	wacn.date="10/03/2015"/>
+	wacn.date="12/15/2015"/>
 	
 # 监视 VMware、VMM、Hyper-V 和物理站点的保护以及对其进行故障排除
 
@@ -61,7 +61,7 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
 
 ![监视配置、保护和恢复操作](./media/site-recovery-monitoring-and-troubleshooting/image7.png)
 
-## 监视虚拟机的复制运行状况
+##<a id="monitor-replication-health-for-virtual-machine"></a> 监视虚拟机的复制运行状况
 
 可以通过 Azure 门户针对每个受保护实体进行 ASR 提供者中心监视和远程监视。在选择“VMM 云”或“保护组”之后，导航到“受保护的项”。“VMM 云”选项卡只适用于基于 VMM 的部署，以及在“保护组”选项卡下具有受保护实体的所有其他案例。
 
@@ -119,7 +119,7 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
 ![了解 Hyper-V 虚拟机保护和恢复生命周期](./media/site-recovery-monitoring-and-troubleshooting/image17.png)
 
 
-## 联系 Microsoft 技术
+##<a id="reaching-out-for-microsoft-support"></a> 联系 Microsoft 技术
 
 ### 日志收集
 
@@ -137,24 +137,19 @@ SDP 工具将在本地收集日志文件，您也可以在“%LocalAppData%\\Ele
 
 ## 知识库文章
 
--   [如何为已故障转移或迁移到 Azure 的
-    > 受保护虚拟机保留驱动器号](http://support.microsoft.com/kb/3031135)
+-   [如何为已故障转移或迁移到 Azure 的受保护虚拟机保留驱动器号](http://support.microsoft.com/kb/3031135)
 
--   [如何排查 Azure 恢复服务
-    > 问题](http://support.microsoft.com/kb/3005185)
+-   [如何排查 Azure 恢复服务问题](http://support.microsoft.com/kb/3005185)
 
--   [如何在 Hyper-V 站点保护中为 Azure 站点恢复启用调试
-    > 日志记录](http://support.microsoft.com/kb/3033922)
+-   [如何在 Hyper-V 站点保护中为 Azure 站点恢复启用调试日志记录](http://support.microsoft.com/kb/3033922)
 
--   [ASR：尝试为虚拟机启用保护时发生
-    > “找不到群集资源”错误](http://support.microsoft.com/kb/3010979)
+-   [ASR：尝试为虚拟机启用保护时发生“找不到群集资源”错误](http://support.microsoft.com/kb/3010979)
     
--   [了解 Hyper-V 副本及其故障排除
-    > 指南](http://www.microsoft.com/en-in/download/details.aspx?id=29016)
+-   [了解 Hyper-V 副本及其故障排除指南](http://www.microsoft.com/en-in/download/details.aspx?id=29016)
 	
 	
 	
-## 常见 ASR 错误及其解决方法
+##<a id="common-asr-errors-and-their-resolutions"></a> 常见 ASR 错误及其解决方法
 
 以下是您可能遇到的常见错误及其解决方法。每个错误记录在单独的 WIKI 网页中。
 

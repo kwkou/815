@@ -10,7 +10,7 @@
 <tags 
 	ms.service="site-recovery" 
 	ms.date="10/07/2015" 
-	wacn.date="11/27/2015"/>
+	wacn.date="12/15/2015"/>
 
 
 # 设置本地 VMware 站点之间的保护
@@ -81,7 +81,7 @@ Azure Site Recovery 中的 InMage Scout 在本地 VMware 站点之间提供实�
 	- [快速安装指南](http://download.microsoft.com/download/6/8/5/685E761C-8493-42EB-854F-FE24B5A6D74B/InMage_Scout_Standard_Quick_Install_Guide.pdf)
 
 
-## 更新
+##<a id="updates"></a> 更新
 
 ### ASR Scout 8.0.1 Update 1
 
