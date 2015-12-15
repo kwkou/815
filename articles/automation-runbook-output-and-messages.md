@@ -102,7 +102,7 @@ Runbook 作业的详细流将是：
 
 详细消息流用于传递有关 Runbook 操作的一般信息。由于[调试流](#Debug)在 Runbook 中不可用，因此，应该为调试信息使用详细消息。默认情况下，来自已发布 Runbook 的详细消息不会存储在作业历史记录中。若要存储详细消息，请在 Azure 管理门户中 Runbook 的“配置”选项卡上，将已发布 Runbook 配置为“记录详细记录”。在大多数情况下，出于性能方面的原因，你应该保留默认设置，即，不记录详细记录。启用此选项的目的只是为了排查 Runbook 的问题或对它进行调试。
 
-在[测试 Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn879147.aspx) 时，将不会显示详细消息，即使已将该 Runbook 配置为记录详细记录，也是如此。若要在[测试 Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn879147.aspx) 时显示详细消息，必须将 $VerbosePreference 变量设置为 Continue。设置该变量后，Azure 管理门户的测试输出窗格中会显示详细消息。
+在[测试 Runbook](/documentation/articles/automation-testing-runbook) 时，将不会显示详细消息，即使已将该 Runbook 配置为记录详细记录，也是如此。若要在[测试 Runbook](/documentation/articles/automation-testing-runbook) 时显示详细消息，必须将 $VerbosePreference 变量设置为 Continue。设置该变量后，Azure 管理门户的测试输出窗格中会显示详细消息。
 
 使用 [Write-Verbose](http://technet.microsoft.com/zh-cn/library/hh849951.aspx) cmdlet 创建详细消息。
 
@@ -169,6 +169,6 @@ Windows PowerShell 使用 [preference 变量](http://technet.microsoft.com/zh-cn
 ## 相关文章
 
 - [跟踪 Runbook 作业](/documentation/articles/automation-runbook-execution)
-- [子 Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn857355.aspx)
+- [子 Runbook](/documentation/articles/automation-child-runbooks)
 
 <!---HONumber=69-->
