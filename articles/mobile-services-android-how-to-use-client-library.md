@@ -654,7 +654,7 @@
 
 ##<a name="authentication"></a>如何对用户进行身份验证
 
-移动服务支持使用各种外部标识提供者对应用程序用户进行身份验证和授权，这些提供者包括：Facebook、Google、Microsoft 帐户、Twitter 和 Active Directory。你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。你还可以在后端中使用已经过身份验证的用户的标识来实施授权规则。有关详细信息，请参阅[身份验证入门](/documentation/articles/mobile-services-android-get-started-users/)。
+移动服务支持使用各种外部标识提供者对应用程序用户进行身份验证和授权，这些提供者包括：Microsoft 帐户和 Active Directory。你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。你还可以在后端中使用已经过身份验证的用户的标识来实施授权规则。有关详细信息，请参阅[身份验证入门](/documentation/articles/mobile-services-android-get-started-users/)。
 
 支持两种身份验证流: *服务器*流和*客户端*流。服务器流依赖于提供者的 Web 身份验证界面，因此可提供最简便的身份验证体验。客户端流依赖于提供者和设备特定的 SDK，因此允许与设备特定的功能（例如单一登录）进行更深入的集成。
 
@@ -668,9 +668,6 @@
 移动服务支持使用以下现有标识提供者对用户进行身份验证：
 
 - Microsoft 帐户
-- Facebook
-- Twitter
-- Google 
 - Azure Active Directory
 
 你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。还可以使用已经过身份验证的用户的 ID 来修改请求。
@@ -713,7 +710,7 @@
 
     此代码将使用 Google 登录对用户进行身份验证。此时将出现一个对话框，其中显示了已经过身份验证的用户的 ID。如果未正常完成身份验证，你将无法继续操作。
 
-    > [AZURE.NOTE]如果使用的标识提供程序不是 Google，请将传递给上述 **login** 方法的值更改为下列其中一项：_MicrosoftAccount_、_Facebook_、_Twitter_ 或 _WindowsAzureActiveDirectory_。
+    > [AZURE.NOTE]如果使用的标识提供程序不是 Google，请将传递给上述 **login** 方法的值更改为下列其中一项：_MicrosoftAccount_或 _WindowsAzureActiveDirectory_。
 
 
 3. 运行应用程序时，请使用选择的标识提供者登录。
