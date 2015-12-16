@@ -11,7 +11,7 @@
 <tags 
 	ms.service="hdinsight" 
 	ms.date="09/15/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/16/2015"/>
 
 
 # Azure HDInsight 上的 Hadoop 组件发行说明
@@ -617,7 +617,7 @@
 
 <tr>
 <td>Storm 正式发布</td>
-<td>Apache Storm 已推出正式版。有关详细信息，请参阅 <a href="/documentation/articles/hdinsight-storm-getting-started/" target="_blank">HDInsight 中的 Storm 入门</a>。</td>
+<td>Apache Storm 已推出正式版。有关详细信息，请参阅 <a href="/documentation/articles/hdinsight-apache-storm-tutorial-get-started/" target="_blank">HDInsight 中的 Storm 入门</a>。</td>
 <td>服务</td>
 <td>Storm</td>
 <td>不适用</td>

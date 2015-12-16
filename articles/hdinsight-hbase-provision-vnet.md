@@ -11,7 +11,7 @@
 <tags
    ms.service="hdinsight" 
    ms.date="08/12/2015"
-   wacn.date="12/15/2015"/>
+   wacn.date="12/16/2015"/>
 
 # 在 Azure 虚拟网络上设置 HBase 群集
 
@@ -367,7 +367,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started
 [hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-twitter-sentiment
 [vnet-overview]: /documentation/articles/virtual-networks-overview
-[vm-create]: /documentation/articles/virtual-machines-windows-tutorial
+[vm-create]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 [azure-portal]: https://manage.windowsazure.cn
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/

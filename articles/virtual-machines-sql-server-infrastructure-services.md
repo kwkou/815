@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/01/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/16/2015"/>
 
 # Azure 虚拟机中的 SQL Server 概述
 
@@ -42,7 +42,7 @@
 
 >[AZURE.NOTE]用于数据仓库和事务工作负荷的虚拟机库映像（未显示在上面）已弃用并且将很快从库中删除。<!--请使用上表中的标准映像，并按照 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-sql-server-performance-best-practices)中的建议优化特定工作负荷的性能。-->
 
-除了这些预配置的映像外，你还可以[创建不预装 SQL Server 的 Azure 虚拟机](/documentation/articles/virtual-machines-windows-tutorial)。可以安装你有许可证的 SQL Server 的任何实例。可使用 [Azure 上通过软件保障实现的许可移动性](/pricing/license-mobility/)将许可证迁移到 Azure，以便在 Azure 虚拟机中运行 SQL Server。在这种情况下，你只需为与虚拟机关联的 Azure 计算和存储[成本](/pricing/details/virtual-machines)付费。
+除了这些预配置的映像外，你还可以[创建不预装 SQL Server 的 Azure 虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。可以安装你有许可证的 SQL Server 的任何实例。可使用 [Azure 上通过软件保障实现的许可移动性](/pricing/license-mobility/)将许可证迁移到 Azure，以便在 Azure 虚拟机中运行 SQL Server。在这种情况下，你只需为与虚拟机关联的 Azure 计算和存储[成本](/pricing/details/virtual-machines)付费。
 
 在这些早期预配和配置阶段，常见的任务包括：
 

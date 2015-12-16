@@ -11,7 +11,7 @@
 <tags
    ms.service="virtual-machines"
    ms.date="09/22/2015"
-   wacn.date="11/12/2015"/>
+   wacn.date="12/16/2015"/>
 
 # 如何将 docker-machine 与 Azure 一起使用
 
@@ -206,7 +206,7 @@
 [uploaditem]: ./media/virtual-machines-docker-machine/uploaditem.png
 
 <!--Link references-->
-[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
+[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 [Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
 [Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
  

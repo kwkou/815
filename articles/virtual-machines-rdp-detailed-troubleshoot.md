@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/16/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/16/2015"/>
 
 # 对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行详细故障排除
 
@@ -86,7 +86,7 @@
 
 ![](./media/virtual-machines-rdp-detailed-troubleshoot/tshootrdp_2.png)
 
-如果没有直接连接到 Internet 的计算机，可以轻松地在其自己的资源组或云服务中创建新的 Azure 虚拟机，然后进行使用。有关详细信息，请参阅[在 Azure 中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial)。测试完成后，请删除资源组或虚拟机以及云服务。
+如果没有直接连接到 Internet 的计算机，可以轻松地在其自己的资源组或云服务中创建新的 Azure 虚拟机，然后进行使用。有关详细信息，请参阅[在 Azure 中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。测试完成后，请删除资源组或虚拟机以及云服务。
 
 如果你可以创建与直接连接到 Internet 的计算机的远程桌面连接，请检查你组织的 Intranet 边缘设备中是否有以下项：
 
