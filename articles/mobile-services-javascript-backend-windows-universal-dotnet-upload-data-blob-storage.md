@@ -44,10 +44,6 @@
 
 现在，你已能够通过将移动服务与 Blob 服务集成安全地上载图片，请查看一些其他的后端服务和集成主题：
 
-+ [在移动服务中计划后端作业]
-
-  	了解如何使用移动服务作业计划程序功能，定义按你定义的计划执行的服务器脚本代码。
-
 + [移动服务服务器脚本参考]
 
     参考使用服务器脚本执行服务器端任务，并与其他 Azure 组件和外部资源集成的主题。
@@ -71,7 +67,7 @@
 
 <!-- URLs. -->
 [Send email from Mobile Services with SendGrid]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts
-[在移动服务中计划后端作业]: /documentation/articles/mobile-services-schedule-recurring-tasks
+
 [Send push notifications to Windows Store apps using Service Bus from a .NET back-end]: http://go.microsoft.com/fwlink/?LinkId=277073&clcid=0x409
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [完成移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started

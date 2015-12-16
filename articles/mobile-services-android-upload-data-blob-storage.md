@@ -380,10 +380,6 @@
  
 	了解如何使用 SendGrid 电子邮件服务为你的移动服务添加电子邮件功能。本主题演示如何添加服务器端脚本，以使用 SendGrid 发送电子邮件。
 
-+ [在移动服务中计划后端作业]
-
-	了解如何使用移动服务作业计划程序功能，定义按你定义的计划执行的服务器脚本代码。
-
 + [移动服务服务器脚本参考]
 
 	参考使用服务器脚本执行服务器端任务，并与其他 Azure 组件和外部资源集成的主题。
@@ -407,7 +403,7 @@
 
 <!-- URLs. -->
 [使用 SendGrid 从移动服务发送电子邮件]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts
-[在移动服务中计划后端作业]: /documentation/articles/mobile-services-schedule-recurring-tasks
+
 [Send push notifications to Windows Store apps using Service Bus from a .NET back-end]: http://go.microsoft.com/fwlink/?LinkId=277073&clcid=0x409
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started

@@ -92,6 +92,6 @@
 [Get started with authentication]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
 [Get started with push notifications]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure 门户]: https://manage.windowsazure.cn/
 
 <!---HONumber=74-->

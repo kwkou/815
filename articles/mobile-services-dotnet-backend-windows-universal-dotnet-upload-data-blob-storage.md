@@ -41,10 +41,6 @@
 
 现在，你已能够通过将移动服务与 Blob 服务集成安全地上载图片，请查看一些其他的后端服务和集成主题：
 
-+ [在移动服务中计划后端作业](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
-
-     了解如何使用移动服务作业计划程序功能，定义按你定义的计划执行的服务器脚本代码。
-
 + [移动服务 .NET 操作方法概念性参考](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
 
      了解有关如何将移动服务与 .NET 一起使用的详细信息
