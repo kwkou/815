@@ -12,13 +12,18 @@
 	ms.date="07/02/2015" 
 	wacn.date="09/15/2015"/>
 
-# 管理云中 Azure 多重认证的用户设置
+# 管理云中 Azure Multi-Factor Authentication 的用户设置
 
 作为管理员，你可以管理以下用户和设备设置。
 
 - [要求选定的用户再次提供联系方法](#require-selected-users-to-provide-contact-methods-again)
 - [删除用户现有的应用密码](#delete-users-existing-app-passwords)
 - [还原用户所有已暂停设备上的 MFA（公共预览版）](#restore-mfa-on-all-suspended-devices-for-a-user)
+
+
+
+
+
 
 如果计算机或设备丢失、被盗或你需要删除用户访问权限，则此项设置将很有用。
 
@@ -65,7 +70,7 @@
 </ol>
 ## <a name="restore-mfa-on-all-suspended-devices-for-a-user"></a>还原用户所有已暂停设备上的 MFA
 
-管理员可以重置用户设备和浏览器上的多重认证。这可以通过还原用户设备和浏览器的多重认证来实现。这样做会取消用户所有设备和浏览器的暂停状态。
+管理员可以重置用户设备和浏览器上的 Multi-Factor Authentication。这可以通过还原用户设备和浏览器的 Multi-Factor Authentication 来实现。这样做会取消用户所有设备和浏览器的暂停状态。
 
 ### 如何还原用户所有已暂停设备上的 MFA
 

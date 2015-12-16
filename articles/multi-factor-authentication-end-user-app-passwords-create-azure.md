@@ -12,9 +12,9 @@
 	ms.date="06/02/2015" 
 	wacn.date="09/15/2015"/>
 
-# 在 Azure 门户中为多重认证创建应用密码
+# 在 Azure 门户中为 Azure Multi-Factor Authentication 创建应用密码
 
-如果你在 Azure 上使用多重认证，则需要通过 Azure 门户创建应用密码。
+如果你在 Azure 上使用 Multi-Factor Authentication，则需要通过 Azure 门户创建应用密码。
 
 ## 在 Azure 门户中创建应用密码
 

@@ -12,13 +12,13 @@
 	ms.date="10/15/2015" 
 	wacn.date="12/10/2015"/>
 
-# Azure 多重认证的登录体验
-> [AZURE.NOTE]本页提供的文档演示了一个典型的登录体验。有关登录的帮助，请参阅[使用 Azure 多重认证时遇到问题](multi-factor-authentication-end-user-manage-settings.md)
+# Azure Multi-Factor Authentication 的登录体验
+> [AZURE.NOTE]本页提供的文档演示了一个典型的登录体验。有关登录的帮助，请参阅[使用 Azure Multi-Factor Authentication 时遇到问题](multi-factor-authentication-end-user-manage-settings.md)
 
 
 
 ## 你的登录体验是怎样的？
-根据具体的登录方式和多重认证的使用方式，你的体验将有所不同。本部分将提供有关预期登录体验的信息。请选择最适当地描述了你的活动的一项：
+根据具体的登录方式和 Multi-Factor Authentication 的使用方式，你的体验将有所不同。本部分将提供有关预期登录体验的信息。请选择最适当地描述了你的活动的一项：
 
 
 你在做什么？|说明
@@ -30,7 +30,7 @@
 
 ## 使用手机或办公电话登录
 
-以下信息介绍在使用手机或办公电话执行多重认证时的体验。
+以下信息介绍在使用手机或办公电话执行 Multi-Factor Authentication 时的体验。
 
 ### 使用办公电话或手机呼叫登录
 
@@ -47,7 +47,7 @@
 
 ## 在移动应用中使用通知登录
 
-以下信息介绍在系统向你发送通知后，你在移动应用上使用多重认证的体验。
+以下信息介绍在系统向你发送通知后，你在移动应用上使用 Multi-Factor Authentication 的体验。
 
 ### 使用发送到移动应用的通知登录
 
@@ -67,7 +67,7 @@
 
 ## 在移动应用中使用验证码登录
 
-以下信息介绍当你使用验证码执行身份验证时，在移动应用上使用多重认证的体验。
+以下信息介绍当你使用验证码执行身份验证时，在移动应用上使用 Multi-Factor Authentication 的体验。
 
 ### 使用移动应用中的验证码登录
 
