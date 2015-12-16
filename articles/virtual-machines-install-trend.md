@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/14/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/16/2015"/>
 
 
 # 如何在 Windows VM 上安装和配置 Trend Micro Deep Security 即服务
@@ -29,7 +29,7 @@
 
 使用“从库中”选项创建虚拟机时，[Azure 门户](http://manage.windowsazure.cn)允许安装 VM 代理和 Trend Micro 安全扩展插件。如果要创建的是单个虚拟机，那么可以使用这种方法轻松地添加来自 Trend Micro 的保护。
 
-此**“从库中”**选项会打开帮助你设置虚拟机的向导。该向导的最后一页用于安装 VM 代理和 Trend Micro 安全扩展插件。有关常规说明，请参阅[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial)。进入向导的最后一页时，请执行以下操作：
+此**“从库中”**选项会打开帮助你设置虚拟机的向导。该向导的最后一页用于安装 VM 代理和 Trend Micro 安全扩展插件。有关常规说明，请参阅[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。进入向导的最后一页时，请执行以下操作：
 
 1.	在“VM 代理”下，选中“安装 VM 代理”。
 

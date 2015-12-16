@@ -1,7 +1,7 @@
 <properties linkid="dev-net-Service-bus" urlDisplayName="Windows Azure 服务总线" pageTitle="服务总线 - Azure 微软云" metaKeywords="服务总线,Service Bus,云消息,消息交换,松散耦合,扇出,扇入,中继,混合云, AMQP 1.0" description="在云中进行灵活的消息传送。服务总线 是一个云消息平台。它位于您的应用程序组件之间（无论这些组件是在云中还是在本地），提供松散耦合消息交换以扩大规模并提高恢复能力。" metaCanonical="" services="服务总线" documentationCenter="Services" title="Learn about flexible messaging in the cloud" authors="" solutions="" manager="" editor="" />
 <tags ms.service="服务总线"
     ms.date=""
-    wacn.date="07/23/2015"
+    wacn.date="12/16/2015"
     />
 
 #服务总线
@@ -33,7 +33,7 @@
         
 ###构建
 
-####[事件中心入门](/documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted)
+####[事件中心入门](/documentation/articles/event-hubs-csharp-ephcs-getstarted)
       
 ####[使用事件中心的高分辨率遥测摄取应用程序](http://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097)
 此示例演示事件中心的基本功能，如创建事件中心、将事件发送到事件中心、使用 EventProcessor 处理事件。

@@ -9,7 +9,7 @@
 <tags 
    ms.service="event-hubs"
    ms.date="09/30/2015"
-   wacn.date="10/22/2015" />
+   wacn.date="12/16/2015" />
 
 # Azure 事件中心概述
 
@@ -158,7 +158,7 @@ Azure 事件中心提供缩放性超高的事件与遥测处理服务，可用�
 - [使用事件中心的完整示例应用程序]。
 - 使用服务总线队列的[队列消息解决方案]。
 
-[事件中心教程]: /documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted
+[事件中心教程]: /documentation/articles/event-hubs-csharp-ephcs-getstarted
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [队列消息解决方案]: /documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues
 <!---HONumber=66-->

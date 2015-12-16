@@ -64,6 +64,6 @@ Mac/Linux 用户：如果您没有 Windows 计算机的访问权限，请参阅[
 我们建议您删除站点上的现有虚拟环境，从而防止在自动管理虚拟环境时出现剩余文件。
 
 
-[创建运行 Windows 的虚拟机]: /documentation/articles/virtual-machines-windows-tutorial/
+[创建运行 Windows 的虚拟机]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal/
 [Microsoft Visual C++ Compiler for Python 2.7]: http://aka.ms/vcpython27
 [Microsoft Visual C++ 2010 Express]: http://go.microsoft.com/?linkid=9709949

@@ -1,7 +1,7 @@
 <properties linkid="dev-net-sql-database" urlDisplayName="Windows Azure SQL数据库" pageTitle="SQL数据库 - Azure 微软云" metaKeywords="SQL数据库,SQL 数据库,Azure SQL 数据库,配置,监视,缩放,同步,Elastic Scale,Spring Framework,迁移" description="在 Azure 中配置、监视和缩放 SQL数据库。将 SQL数据库 用于业务应用程序、复杂的基于云的服务或混合解决方案。在 SQL 数据库之间或者在 SQL Server 的本地实例和 Azure SQL 数据库之间共享数据。" metaCanonical="" services="SQL数据库" documentationCenter="Services" title="Configure, monitor, and scale your SQL数据库s in Azure" authors="" solutions="" manager="" editor="" />
 <tags ms.service="SQL数据库"
     ms.date=""
-    wacn.date="07/23/2015"
+    wacn.date="12/16/2015"
     />
 
 
@@ -87,7 +87,7 @@ Azure SQL数据库 Elastic Scale（预览版）使数据级别的应用程序可
 
 ###部署
 
-####[创建和配置 SQL数据库](/documentation/articles/sql-database-create-configure)
+####[创建和配置 SQL数据库](/documentation/articles/sql-database-get-started)
 
 在本教程中，您将使用管理门户创建逻辑服务器和配置防火墙。
 

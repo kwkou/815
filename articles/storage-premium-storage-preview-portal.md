@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage"
 	ms.date="08/06/2015"
-	wacn.date="12/14/2015"/>
+	wacn.date="12/16/2015"/>
 
 
 # 高级存储：适用于 Azure 虚拟机工作负荷的高性能存储
@@ -381,7 +381,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 
 [对 Azure 高级存储使用 Blob 服务操作](https://msdn.microsoft.com/zh-cn/library/dn889922.aspx)
 
-[创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial)
+[创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 
 [Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)
 

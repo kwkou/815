@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/05/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/16/2015"/>
 
 
 # Azure 虚拟机上的 SharePoint 2010 部署
@@ -55,7 +55,7 @@ Azure 虚拟机使开发人员能够灵活选取其所需的语言或运行时�
 
 ## 设置过程
 
-Azure 中的映像库提供了可用预配置虚拟机的列表。用户可将 SharePoint Server、SQL Server、Windows Server 和其他 ISO/VHD 发布到映像库。若要简化虚拟机的创建，可创建基本映像并将这些映像发布到该库。授权用户可使用这些映像来生成所需的虚拟机。有关详细信息，请转到[在 Azure 预览门户中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial)。图 1 演示了使用 Azure 门户创建虚拟机的基本步骤。
+Azure 中的映像库提供了可用预配置虚拟机的列表。用户可将 SharePoint Server、SQL Server、Windows Server 和其他 ISO/VHD 发布到映像库。若要简化虚拟机的创建，可创建基本映像并将这些映像发布到该库。授权用户可使用这些映像来生成所需的虚拟机。有关详细信息，请转到[在 Azure 预览门户中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。图 1 演示了使用 Azure 门户创建虚拟机的基本步骤。
 
 ![azure-sharepoint-wp-13](./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-2.png)
 

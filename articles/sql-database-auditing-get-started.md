@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database" 
 	ms.date="10/08/2015" 
-	wacn.date="11/12/2015"/>
+	wacn.date="12/16/2015"/>
  
 # SQL 数据库审核入门 
 <p>Azure SQL 数据库审核可以跟踪数据库事件，并将审核的事件写入 Azure 存储帐户中的审核日志。一般而言，可以在基本、标准和高级服务层中使用审核功能。
@@ -138,7 +138,7 @@ SQL 数据库审核可让你：
 
 
 <!--Link references-->
-[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
+[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 [Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
 [Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
 

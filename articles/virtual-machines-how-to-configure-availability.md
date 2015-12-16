@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="08/10/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/16/2015"/>
 
 # 如何在经典部署模型中为虚拟机配置可用性集
 
@@ -103,7 +103,7 @@
 
 [Azure 基础结构服务的负载平衡]: /documentation/articles/virtual-machines-load-balance
 [管理虚拟机的可用性]: /documentation/articles/virtual-machines-manage-availability
-[创建运行 Windows 的虚拟机]: /documentation/articles/virtual-machines-windows-tutorial
+[创建运行 Windows 的虚拟机]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 [虚拟网络概述]: /documentation/articles/virtual-networks-overview
 [有关服务管理中虚拟机的文章]: /documentation/articles/virtual-machines-service-management-articles
 

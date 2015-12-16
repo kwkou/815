@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="09/28/2015"
-	wacn.date="12/15/2015"/>
+	wacn.date="12/16/2015"/>
 
 
 
@@ -258,7 +258,7 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 
-[sqldatabase-create-configure]: /documentation/articles/sql-database-create-configure
+[sqldatabase-create-configure]: /documentation/articles/sql-database-get-started
 
 [apache-sqoop-guide]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
