@@ -211,7 +211,10 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 **-n, --vm-name** 指定虚拟机的名称。默认情况下，此参数采用托管服务名称。如果未指定 -vmname，将生成 &lt;service-name>&lt;id> 形式的新虚拟机名称，其中 &lt;id> 是服务中现有虚拟机的数量加上 1。例如，如果你使用此命令向拥有一个现有虚拟机的托管服务 MyService 中添加新虚拟机，则会将新虚拟机命名为 MyService2。<br /> 
 **-u, --blob-url** 指定从中创建虚拟机系统磁盘的目标 Blob 存储 URL。<br /> 
 **-z, --vm-size** 指定虚拟机的大小。有效值为：
-“ExtraSmall”、“Small”、“Medium”、“Large”、“ExtraLarge”、“A5”、“A6”、“A7”、“A8”、“A9”、“A10”、“A11”、“Basic\_A0”、“Basic\_A1”、“Basic\_A2”、“Basic\_A3”、“Basic\_A4”、“Standard\_D1”、“Standard\_D2”、“Standard\_D3”、“Standard\_D4”、“Standard\_D11”、“Standard\_D12”、“Standard\_D13”、“Standard\_D14”、“Standard\_DS1”、“Standard\_DS2”、“Standard\_DS3”、“Standard\_DS4”、“Standard\_DS11”、“Standard\_DS12”、“Standard\_DS13”、“Standard\_DS14”、“Standard\_G1”、“Standard\_G2”、“Standard\_G3”、“Standard\_G4”、“Standard_G55”。默认值为“Small”。<br /> 
+“ExtraSmall”、“Small”、“Medium”、“Large”、“ExtraLarge”、“A5”、“A6”、“A7”、“A8”、“A9”、“A10”、“A11”、“Basic\_A0”、“Basic\_A1”、“Basic\_A2”、  
+“Basic\_A3”、“Basic\_A4”、“Standard\_D1”、“Standard\_D2”、“Standard\_D3”、“Standard\_D4”、“Standard\_D11”、“Standard\_D12”、“Standard\_D13”、  
+“Standard\_D14”、“Standard\_DS1”、“Standard\_DS2”、“Standard\_DS3”、“Standard\_DS4”、“Standard\_DS11”、“Standard\_DS12”、“Standard\_DS13”、  
+“Standard\_DS14”、“Standard\_G1”、“Standard\_G2”、“Standard\_G3”、“Standard\_G4”、“Standard_G55”。默认值为“Small”。<br /> 
 **-r** 添加到 Windows 虚拟机的 RDP 连接。<br />
 **-e, --ssh** 添加到 Windows 虚拟机的 SSH 连接。<br /> 
 **-t, --ssh-cert** 指定 SSH 证书。<br /> 
