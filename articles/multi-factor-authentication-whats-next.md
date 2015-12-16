@@ -12,14 +12,14 @@
 	ms.date="07/02/2015" 
 	wacn.date="09/15/2015"/>
 
-# 配置 Azure 多重认证
+# 配置 Azure 多重身份验证
 
-在启动并运行 Azure 多重认证后，可以参考以下文章来对其进行管理。该文章涵盖各种主题，可让你充分利用 Azure 多重认证。请注意，并非所有版本的 Azure 多重认证都提供这些功能。
+在启动并运行 Azure 多重身份验证后，可以参考以下文章来对其进行管理。该文章涵盖各种主题，可让你充分利用 Azure 多重身份验证。请注意，并非所有版本的 Azure 多重身份验证都提供这些功能。
 
 功能| 说明| 涵盖的内容
 :------------- | :------------- | :------------- | 
-[应用密码](#app-passwords)|应用密码允许非多重认证感知应用程序跳过多重认证并继续工作。|有关应用密码的信息。
-[暂停记住的设备和浏览器的多重认证（公共预览版）](#suspend-multi-factor-authentication-for-remembered-devices-and-browsers-public-preview)|可让你在用户使用多重认证成功登录后的设置天数内暂停多重认证。|有关启用此功能和设置天数的信息。
+[应用密码](#app-passwords)|应用密码允许非多重身份验证感知应用程序跳过多重身份验证并继续工作。|有关应用密码的信息。
+[暂停记住的设备和浏览器的多重身份验证（公共预览版）](#suspend-multi-factor-authentication-for-remembered-devices-and-browsers-public-preview)|可让你在用户使用多重身份验证成功登录后的设置天数内暂停多重身份验证。|有关启用此功能和设置天数的信息。
 <table class="table table-bordered table-striped table-condensed">
    <tr>
       <th>功能</th>
@@ -28,11 +28,11 @@
    </tr>
    <tr>
       <td><a href="#app-passwords">应用密码</a></td>
-      <td>应用密码允许非 MFA 感知应用程序跳过多重认证并继续工作</td>
+      <td>应用密码允许非 MFA 感知应用程序跳过多重身份验证并继续工作</td>
       <td>有关应用密码的信息 </td>
    </tr>
    <tr>
-      <td><a href="#suspend-multi-factor-authentication-for-remembered-devices-and-browsers-public-preview">暂停记住的设备和浏览器的多重认证（公共预览版）</a></td>
+      <td><a href="#suspend-multi-factor-authentication-for-remembered-devices-and-browsers-public-preview">暂停记住的设备和浏览器的多重身份验证（公共预览版）</a></td>
       <td>可让你在用户使用 MFA 成功登录后的设置天数内暂停 MFA</td>
       <td>有关启用此功能和设置天数的信息</td>
    </tr>
@@ -41,11 +41,11 @@
 
 ## <a name="app-passwords"></a>应用密码
 
-在 Office 2010 或更低版本和 Apple Mail 等某些应用中，无法使用多重认证。若要使用这些应用，你需要使用“应用密码”来替换传统密码。应用密码可让应用程序跳过多重认证并继续工作。
+在 Office 2010 或更低版本和 Apple Mail 等某些应用中，无法使用多重身份验证。若要使用这些应用，你需要使用“应用密码”来替换传统密码。应用密码可让应用程序跳过多重身份验证并继续工作。
 
 >[AZURE.NOTE]适用于 Office 2013 客户端的现代身份验证
 >
-> Office 2013 客户端（包括 Outlook）现在支持新的身份验证协议，并且可以启用对多重认证的支持。这意味着一旦启用后，就不需要对 Office 2013 客户端使用应用密码。有关详细信息，请参阅 [Office 2013 现代身份验证公共预览版发布声明](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/)。
+> Office 2013 客户端（包括 Outlook）现在支持新的身份验证协议，并且可以启用对多重身份验证的支持。这意味着一旦启用后，就不需要对 Office 2013 客户端使用应用密码。有关详细信息，请参阅 [Office 2013 现代身份验证公共预览版发布声明](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/)。
 
 ### 有关应用密码的重要事项
 
@@ -69,21 +69,21 @@
 
 
 ### 联合 (SSO) 应用密码
-Azure AD 支持与本地 Windows Server Active Directory 域服务 (AD DS) 联合。如果你的组织与 Azure AD 联合 (SSO) 并且你要使用 Azure 多重认证，则以下是你在使用应用密码时应了解的重要信息。这仅适用于联合 (SSO) 客户。
+Azure AD 支持与本地 Windows Server Active Directory 域服务 (AD DS) 联合。如果你的组织与 Azure AD 联合 (SSO) 并且你要使用 Azure 多重身份验证，则以下是你在使用应用密码时应了解的重要信息。这仅适用于联合 (SSO) 客户。
 
 - 应用密码由 Azure AD 进行验证，从而绕过了联合。仅在设置应用密码时，才会主动使用联合。
 - 与被动流程不同，对于联合 (SSO) 用户，我们从不转到标识提供者 (IdP)。密码将存储在组织 ID 中。如果用户离开公司，则该信息必须通过 DirSync 实时流到组织 ID 中。帐户禁用/删除可能需要长达 3 小时才能同步，从而延迟了 Azure AD 中应用密码的禁用/删除。
 - 应用密码不遵循“本地客户端访问控制”设置
 - 本地身份验证日志记录/审核功能不可用于应用密码
 - 对于 Microsoft Lync 2013 客户端，更多最终用户培训是必需的。有关必需的步骤，请参阅如何将电子邮件中的密码更改为应用密码。
-- 在对客户端使用多重认证时，某些先进的体系结构设计可能需要将组织用户名和密码与应用密码结合使用，具体取决于进行身份验证的位置。对于针对本地基础结构进行身份验证的客户端，你会使用组织用户名和密码。对于针对 Azure AD 进行身份验证的客户端，你会使用应用密码。
+- 在对客户端使用多重身份验证时，某些先进的体系结构设计可能需要将组织用户名和密码与应用密码结合使用，具体取决于进行身份验证的位置。对于针对本地基础结构进行身份验证的客户端，你会使用组织用户名和密码。对于针对 Azure AD 进行身份验证的客户端，你会使用应用密码。
 
 例如，假设你有一个由下列内容组成的体系结构：
 
 - 你要将 Active Directory 的本地实例与 Azure AD 联合
 - 你要使用 Exchange Online
 - 你要使用本地专用的 Lync
-- 你要使用 Azure 多重认证
+- 你要使用 Azure 多重身份验证
 
 
 <center>![Proofup](./media/multi-factor-authentication-whats-next/federated.png)</center>
@@ -104,7 +104,7 @@ Azure AD 支持与本地 Windows Server Active Directory 域服务 (AD DS) 联�
 2. 在左侧单击“Active Directory”。
 3. 在“目录”下单击要为其启用此功能的用户的目录。
 4. 在顶部单击“用户”。
-5. 在页面底部，单击“管理多重认证”。此时将打开“Multi-Factor Authentication”页。
+5. 在页面底部，单击“管理多重身份验证”。此时将打开“Multi-Factor Authentication”页。
 6. 在“Multi-Factor Authentication”页的顶部，单击“服务设置”。
 7. 确保选中了“允许用户创建用于登录到非浏览器应用程序的应用密码”旁边的单选按钮。
 
@@ -155,11 +155,11 @@ Azure AD 支持与本地 Windows Server Active Directory 域服务 (AD DS) 联�
 
 <center>![Cloud](./media/multi-factor-authentication-whats-next/myapp.png)</center>
 
-## <a name="suspend-multi-factor-authentication-for-remembered-devices-and-browsers-public-preview"></a>暂停记住的设备和浏览器的多重认证（公共预览版）
+## <a name="suspend-multi-factor-authentication-for-remembered-devices-and-browsers-public-preview"></a>暂停记住的设备和浏览器的多重身份验证（公共预览版）
 
-使用暂停记住的设备和浏览器的多重认证功能，管理员能够为用户提供相关选项，使其在成功执行 MFA 后，将 MFA 暂停一定的天数。这是面向所有 MFA 用户的免费功能，可以帮助用户提高可用性。但是，由于允许用户暂停 MFA，此功能可能会降低帐户安全性。
+使用暂停记住的设备和浏览器的多重身份验证功能，管理员能够为用户提供相关选项，使其在成功执行 MFA 后，将 MFA 暂停一定的天数。这是面向所有 MFA 用户的免费功能，可以帮助用户提高可用性。但是，由于允许用户暂停 MFA，此功能可能会降低帐户安全性。
 
-若要确保用户帐户受到保护，用户应还原你的设备的多重认证，以防发生以下两种情况之一：
+若要确保用户帐户受到保护，用户应还原你的设备的多重身份验证，以防发生以下两种情况之一：
 
 - 如果你的公司帐户受到安全威胁
 - 如果记住的设备丢失或被盗
@@ -171,10 +171,10 @@ Azure AD 支持与本地 Windows Server Active Directory 域服务 (AD DS) 联�
 <ol>
 <li>登录到 Azure 管理门户。</li>
 <li>在左侧单击“Active Directory”。</li>
-<li>在 Active Directory 下，单击你要设置记住的设备的多重认证的目录。</li>
+<li>在 Active Directory 下，单击你要设置记住的设备的多重身份验证的目录。</li>
 <li>在选择的目录上，单击“配置”。</li>
-<li>在“多重认证”部分中，单击“管理服务设置”。</li>
-<li>在“服务设置”页上的“管理用户设备设置”下，选择/取消选择“允许用户通过记住其设备暂停多重认证”选项。</li>
+<li>在“多重身份验证”部分中，单击“管理服务设置”。</li>
+<li>在“服务设置”页上的“管理用户设备设置”下，选择/取消选择“允许用户通过记住其设备暂停多重身份验证”选项。</li>
 ![暂停设备](./media/multi-factor-authentication-manage-users-and-devices/suspend.png)
 <li>设置你希望允许暂停的天数。默认值为 14 天。</li>
 <li>单击“保存”。</li>

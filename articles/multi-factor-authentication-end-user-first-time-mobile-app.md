@@ -12,9 +12,9 @@
 	ms.date="07/21/2015" 
 	wacn.date="09/15/2015"/>
 
-# 在 Azure 多重认证中使用移动应用作为联系方法
+# 在 Azure 多重身份验证中使用移动应用作为联系方法
 
-如果要使用移动应用作为主要联系方法，你可以参考本文。本文将会引导你设置多重认证，以使用移动应用作为主要联系方法。
+如果要使用移动应用作为主要联系方法，你可以参考本文。本文将会引导你设置多重身份验证，以使用移动应用作为主要联系方法。
 
 Azure 验证器应用可用于 [Windows Phone](http://www.windowsphone.com/zh-cn/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50)、[Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) 和 [iOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458)。
 
@@ -66,7 +66,7 @@ Azure 验证器应用可用于 [Windows Phone](http://www.windowsphone.com/zh-cn
 
 ![设置](./media/multi-factor-authentication-end-user-first-time-mobile-app/add3rdparty.png)
 
->[AZURE.NOTE]如果你看到“添加工作帐户”，请注意该选项适用于“工作区加入”，而不适用于多重认证。你可以忽略此选项。
+>[AZURE.NOTE]如果你看到“添加工作帐户”，请注意该选项适用于“工作区加入”，而不适用于多重身份验证。你可以忽略此选项。
  
 
 <!---HONumber=69-->
