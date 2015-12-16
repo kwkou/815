@@ -38,10 +38,12 @@
 <li>找到要管理的用户，并勾选其名称旁边的框。你可能需要在顶部切换视图。</li>
 <li>此时会在右侧显示“管理用户设置”链接。单击此链接。</li>
 <li>勾选“要求选定的用户再次提供联系方法”。</li>
-<center> <image src="./media/multi-factor-authentication-manage-users-and-devices/reproofup.png" /></center>
+
+![提供联系方法](./media/multi-factor-authentication-manage-users-and-devices/reproofup.png)
+
 <li>单击“保存”。</li>
 <li>单击“关闭”</li>
-
+</ol>
 ## <a name="delete-users-existing-app-passwords"></a>删除用户现有的应用密码
 
 这会删除用户创建的所有应用密码。与这些应用密码关联的非浏览器应用将会停止工作，直到创建新应用密码为止。
@@ -57,15 +59,15 @@
 <li>找到要管理的用户，并勾选其名称旁边的框。你可能需要在顶部切换视图。</li>
 <li>此时会在右侧显示“管理用户设置”链接。单击此链接。</li>
 <li>勾选“删除选定用户生成的所有现有应用密码”。</li>
-<center> <image src="./media/multi-factor-authentication-manage-users-and-devices/deleteapppasswords.png" /></center>
+![删除应用密码](./media/multi-factor-authentication-manage-users-and-devices/deleteapppasswords.png)
 <li>单击“保存”。</li>
 <li>单击“关闭”。</li>
 </ol>
-## <a name="restore-mfa-on-all-suspended-devices-for-a-user"></a>还原用户所有已暂停设备上的多重认证
+## <a name="restore-mfa-on-all-suspended-devices-for-a-user"></a>还原用户所有已暂停设备上的 MFA
 
 管理员可以重置用户设备和浏览器上的多重认证。这可以通过还原用户设备和浏览器的多重认证来实现。这样做会取消用户所有设备和浏览器的暂停状态。
 
-### 如何还原用户所有已暂停设备上的多重认证
+### 如何还原用户所有已暂停设备上的 MFA
 
 <ol>
 <li>登录到 Azure 管理门户。</li>
@@ -76,7 +78,7 @@
 <li>找到要管理的用户，并勾选其名称旁边的框。你可能需要在顶部切换视图。</li>
 <li>此时会在右侧显示“管理用户设置”链接。单击此链接。</li>
 <li>勾选“还原所有已暂停设备上的 Multi-Factor Authentication”。</li>
-<center> <image src="./media/multi-factor-authentication-manage-users-and-devices/rememberdevices.png" /></center>
+![删除应用密码](./media/multi-factor-authentication-manage-users-and-devices/rememberdevices.png)
 <li>单击“保存”。</li>
 <li>单击“关闭”。</li>
 </ol>
