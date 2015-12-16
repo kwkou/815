@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="08/12/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/16/2015"/>
 
 # 创建 Linux 虚拟机的不同方式
 
@@ -69,7 +69,7 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 <!-- LINKS -->
 [概述]: /documentation/articles/resource-group-overview
 
-[Create a Virtual Machine Running Windows]: /documentation/articles/virtual-machines-windows-tutorial
+[Create a Virtual Machine Running Windows]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 [Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-tutorial
 
 [适合使用针对 Mac、Linux 和 Windows 的 Azure CLI 进行 VM 操作的等效资源管理器和服务管理命令]: /documentation/articles/xplat-cli-azure-manage-vm-asm-arm

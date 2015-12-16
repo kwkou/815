@@ -1,7 +1,7 @@
 <properties linkid="dev-net-HDInsight" urlDisplayName="Windows Azure HDInsight" pageTitle="HDInsight - Azure 微软云" metaKeywords="HDInsight,大数据,Big Data,Hadoop,Storm,HBase,学习路线图,Apache,群集, HDInsight Emulator,MapReduce,Maven,Pig,Python,Hive,Sqoop,Mahout,Power Query,Ambari API" description="了解如何使用云中的 Hadoop 从大数据挖掘有用信息。此处提供的文档和视频帮助你开始通过 HDInsight 在云中使用 Hadoop。按照教程可在几分钟内生成和运行 Hadoop 群集、处理大数据以及使用 Excel 分析结果。" metaCanonical="" services="HDInsight" documentationCenter="Services" title="Learn how to get insights from big data using Hadoop in the cloud" authors="" solutions="" manager="" editor="Haifeng Liu" />
 <tags ms.service="HDInsight"
     ms.date=""
-    wacn.date="07/23/2015"
+    wacn.date="12/16/2015"
     />
 
 
@@ -20,7 +20,7 @@
 ####特色
 
 -   [从这里开始：遵循 HDInsight 学习路线图](/documentation/articles/hdinsight-learn-map)
--   [Storm 上的单词计数拓扑入门](/documentation/articles/hdinsight-storm-getting-started)
+-   [Storm 上的单词计数拓扑入门](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
 
 ##教程和指南
 
@@ -46,7 +46,7 @@
 
 了解 HBase，这是基于 Hadoop 构建的 NoSQL 数据库，并设计用于大量数据。HDInsight 上的 HBase 群集配置为直接在 Azure Blob 存储中存储数据，在性能对成本方面可以降低延迟并增加弹性。
 
-####[在 HDInsight 中将 HBase 与 Hadoop 配合使用入门](/documentation/articles/hdinsight-hbase-get-started)
+####[在 HDInsight 中将 HBase 与 Hadoop 配合使用入门](/documentation/articles/hdinsight-hbase-tutorial-get-started)
 
 Apache HBase 是开源分布式大规模数据存储，可实现随机读写的低延迟。在本教程中，你将了解如何利用 HDInsight 创建和查询 HBase 表。
 
@@ -54,7 +54,7 @@ Apache HBase 是开源分布式大规模数据存储，可实现随机读写的�
 
 HDInsight 中的 Storm 让您能实时处理流数据。作为一个集成到 Azure 生态系统中的托管集群，Storm 可以配置为与其他 Azure 服务一起工作，成为一个完整的实时数据处理和分析解决方案。
 
-####[在 HDInsight 的 Storm 上的单词计数拓扑入门](/documentation/articles/hdinsight-storm-getting-started)
+####[在 HDInsight 的 Storm 上的单词计数拓扑入门](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
 
 了解如何在 HDInsight 中的 Storm 上设置并运行一个单词计数拓扑。本教程将指导您设置一个 Storm 集群，然后运行、监视并停止 Storm 拓扑。
 

@@ -11,7 +11,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="08/07/2015"
-   wacn.date="10/03/2015"/>
+   wacn.date="12/16/2015"/>
 
 # 在 Azure 虚拟网络上设置 HBase 群集
 
@@ -183,11 +183,11 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 	> [AZURE.NOTE]此页可用于在安装过程中自定义群集。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster)。
 
-要开始处理新 HBase 群集，可以按照[开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-get-started)中的步骤操作。
+要开始处理新 HBase 群集，可以按照[开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started)中的步骤操作。
 
 ##通过使用 HBase Java RPC API 连接到虚拟网络中设置的 HBase 群集
 
-1.	将基础结构即服务 (IaaS) 虚拟机设置到相同的 Azure 虚拟网络和子网中。因此，虚拟机和 HBase 群集使用相同的内部 DNS 服务器来解析主机名。为此，你必须选择“从库中”选项，然后选择虚拟网络而不是数据中心。有关说明，请参阅[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial)。具有小型虚拟机的标准 Windows Server 2012 映像已足够。
+1.	将基础结构即服务 (IaaS) 虚拟机设置到相同的 Azure 虚拟网络和子网中。因此，虚拟机和 HBase 群集使用相同的内部 DNS 服务器来解析主机名。为此，你必须选择“从库中”选项，然后选择虚拟网络而不是数据中心。有关说明，请参阅[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。具有小型虚拟机的标准 Windows Server 2012 映像已足够。
 
 2.	使用 Java 应用程序远程连接到 HBase 时，必须使用完全限定域名 (FQDN)。若要确定这一点，你必须获取 HBase 群集的连接特定的 DNS 后缀。为此，请使用 Curl 查询 Ambari，或使用远程桌面来连接到群集。
 
@@ -378,7 +378,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 - [开始使用 HDInsight](/documentation/articles/hdinsight-get-started)
 - [在 HDInsight 中配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication)
 - [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)
-- [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-get-started)
+- [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started)
 - [虚拟网络概述][vnet-overview]
 
 
@@ -386,9 +386,9 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [2]: http://technet.microsoft.com/zh-cn/library/ee176961.aspx
 [3]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
-[hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started
 [vnet-overview]: http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx
-[vm-create]: /documentation/articles/virtual-machines-windows-tutorial
+[vm-create]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 [azure-portal]: https://manage.windowsazure.cn
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/

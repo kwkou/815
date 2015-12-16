@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="07/23/2015"
-	wacn.date="09/18/2015"/>
+	wacn.date="12/16/2015"/>
 
 
 # Azure 虚拟机的计划内维护
@@ -83,6 +83,6 @@ Azure 会提前发送电子邮件通信，提醒你即将执行计划内维护�
 
 
 <!--Link references-->
-[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-tutorial
+[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 [了解计划内与计划外维护]: /documentation/articles/virtual-machines-manage-availability#Understand-planned-versus-unplanned-maintenance
 <!---HONumber=70-->

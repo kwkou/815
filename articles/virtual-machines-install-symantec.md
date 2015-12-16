@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/14/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/16/2015"/>
 
 # 如何在 Windows VM 上安装和配置 Symantec Endpoint Protection
 
@@ -84,7 +84,7 @@
 
 [Portal]: http://manage.windowsazure.cn
 
-[Create]: /documentation/articles/virtual-machines-windows-tutorial
+[Create]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 
 [PS]: /documentation/articles/powershell-install-configure
 
