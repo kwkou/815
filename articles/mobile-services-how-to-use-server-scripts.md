@@ -454,8 +454,6 @@ HTTP GET 请求可按如下所示调用上述自定义 API 示例中的两个路
 
 	![3][3]
 
-	有关如何执行此操作的详细信息，请参阅[在移动服务中计划后端作业]。
-
 + 使用 Azure 命令行工具中的命令提示符。有关详细信息，请参阅[使用命令行工具]。
 
 >[AZURE.NOTE]启用源代码管理后，你可以直接在 git 存储库的 .\\service\\scheduler 子文件夹中编辑计划的作业脚本文件。有关详细信息，请参阅 [如何：使用源代码管理来共享代码]。
@@ -585,8 +583,7 @@ Helper 函数也可以只定义一次，然后在服务器脚本之间共享。�
 		var accessToken= config.appSettings.TWITTER_ACCESS_TOKEN,
 		    accessTokenSecret = config.appSettings.TWITTER_ACCESS_TOKEN_SECRET;
 
-请注意，此代码还会检索门户的“标识”选项卡中存储的 Twitter 使用者密钥值。由于 **config 对象**在表操作和计划的作业脚本中不可用，因此你必须要求配置模块访问应用程序设置。有关完整示例，请参阅[在移动服务中计划后端作业]。
-
+请注意，此代码还会检索门户的“标识”选项卡中存储的 Twitter 使用者密钥值。由于 **config 对象**在表操作和计划的作业脚本中不可用，因此你必须要求配置模块访问应用程序设置。
 <h2><a name="command-prompt"></a>使用命令行工具</h2>
 
 在移动服务中，你可以使用 Azure 命令行工具创建、修改和删除服务器脚本。上载脚本之前，请确保使用的是以下目录结构：
@@ -1010,7 +1007,7 @@ Helper 函数也可以只定义一次，然后在服务器脚本之间共享。�
 
 <!-- URLs. -->
 [移动服务服务器脚本参考]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554226.aspx
-[在移动服务中计划后端作业]: /zh-cn/documentation/articles/mobile-services-schedule-recurring-tasks/
+
 [request object]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554218.aspx
 [request 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554218.aspx
 [response object]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn303373.aspx

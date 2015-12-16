@@ -49,7 +49,7 @@
 
   	![][7]
 
-3. 在本地计算机或虚拟机上下载并安装 [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=257546)（如果尚未这么做）。
+3. 在本地计算机或虚拟机上下载并安装 [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=257546)（如果尚未这样做）。
 
 4. 下载并安装 [Xamarin Studio] 或 Xamarin for Visual Studio（如果尚未这样做）。
 
