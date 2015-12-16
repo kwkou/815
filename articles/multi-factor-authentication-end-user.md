@@ -14,7 +14,7 @@
 
 
 
-# Azure 多重身份验证对我而言有什么用途？
+# Azure 多重认证对我而言有什么用途？
 
 假设 IT 部门的某位同事或者你的老板向你发送了一封电子邮件，指出他们已对你的帐户添加了附加的安全验证。那么，这是什么意思呢？
 
@@ -37,7 +37,7 @@
 
 主题|说明
 :------------- | :------------- | 
-[设置体验](/documentation/articles/multi-factor-authentication-end-user-first-time)| 介绍第一次设置多重身份验证的过程。
+[设置体验](/documentation/articles/multi-factor-authentication-end-user-first-time)| 介绍第一次设置多重认证的过程。
 [登录体验](/documentation/articles/multi-factor-authentication-end-user-signin)|说明使用各种方法（例如电话或应用）登录时预期会发生的情况。
 [更改设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings)|说明如何更改你的设置，例如电话号码或首选的注册方法。
 [有关应用密码的帮助](/documentation/articles/multi-factor-authentication-end-user-app-passwords)| 查找有关创建和使用应用密码的信息。
