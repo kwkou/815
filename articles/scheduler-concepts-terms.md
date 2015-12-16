@@ -125,7 +125,7 @@
 
 “startTime”是开始时间，允许调用方以 [ISO-8601 格式](http://zh.wikipedia.org/wiki/ISO_8601)在线指定时区偏移量。
 
-## action 和 errorAction
+##<a id="action-and-erroraction"></a> action 和 errorAction
 
 “action”是每次执行时调用的操作，并且描述服务调用的类型。操作是将按提供的计划执行的内容。计划程序支持 HTTP 和存储队列操作。
 
@@ -175,7 +175,7 @@
 
 作业状态包含前一个执行的时间（如果有）、下一个计划执行的时间（对于正在进行中的作业）以及作业的执行计数。
 
-## retryPolicy
+##<a id="retrypolicy"></a> retryPolicy
 
 如果计划程序作业失败，可以指定重试策略来确定是否以及如何重试该操作。这由 **retryType** 对象确定 - 如果没有重试策略，它将设为 **none**，如上面所示。如果有重试策略，请将其设为 **fixed**。
 
