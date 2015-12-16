@@ -148,7 +148,7 @@
 
 **Main** 函数调用将在本部分中进一步定义的方法。
 
-    class Program
+    claclass Program
     {
         // Read values from the App.config file.
         private static readonly string _mediaServicesAccountName =
