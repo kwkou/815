@@ -81,7 +81,7 @@ VNet 为部署到它们的 IaaS VM 和 PaaS 角色的角色实例提供以下服
 
 ## 后续步骤
 
-- [创建 VNet](/documentation/articles/virtual-networks-create-a-vnet) 和子网。
+- [创建 VNet](/documentation/articles/virtual-networks-create-vnet-classic-portal) 和子网。
 - [在 VNet 中创建 VM](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。
 - 了解 [NSG](/documentation/articles/virtual-networks-nsg)。
 <!--- 了解[负载平衡器](/documentation/articles/load-balancer-overview)。-->
