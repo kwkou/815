@@ -8,9 +8,9 @@
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="web-sites" 
 	ms.date="09/16/2015" 
-	wacn.date="12/11/2015"/>
+	wacn.date="12/17/2015"/>
 	
 # 如何配置网站 #
 在 Azure 管理门户中，你可以更改网站的配置选项并链接到其他 Azure 资源，如数据库。

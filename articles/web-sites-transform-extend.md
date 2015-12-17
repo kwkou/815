@@ -1,8 +1,8 @@
 <properties linkid="dev-net-transform-extend-site" urlDisplayName="Service Bus Topics" pageTitle="转换和扩展站点" metaKeywords="none" description="TBD" metaCanonical="" disqusComments="1" umbracoNaviHide="0" authors="timamm" writer="timamm" editor="mollybos" manager="paulettm" title="Transform and extend your site"/>
 <tags
-	ms.service="app-service-web"
+	ms.service="web-sites"
 	ms.date="09/16/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/17/2015"/>
 
 # Azure 网站高级配置和扩展
 

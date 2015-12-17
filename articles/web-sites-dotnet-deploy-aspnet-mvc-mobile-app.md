@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="web-sites" 
 	ms.date="09/16/2015" 
-	wacn.date="12/11/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 # 在 Azure 网站上部署 ASP.NET MVC 5 移动网站

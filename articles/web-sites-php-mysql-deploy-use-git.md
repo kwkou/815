@@ -9,9 +9,9 @@
 	tags="mysql"/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="web-sites"
 	ms.date="08/03/2015"
-	wacn.date="12/14/2015"/>
+	wacn.date="12/17/2015"/>
 
 #创建 PHP-MySQL Azure 网站并使用 Git 进行部署
 

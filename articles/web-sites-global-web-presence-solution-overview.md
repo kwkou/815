@@ -8,9 +8,9 @@
 	documentationCenter=""/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="web-sites"
 	ms.date="09/29/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 # 在 Azure 网站上打造全球网络影响力

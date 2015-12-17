@@ -8,9 +8,9 @@
 	editor="mollybos"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="web-sites" 
 	ms.date="08/03/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="12/17/2015"/>
 
 #如何将 io.js 与 Azure 网站配合使用
 

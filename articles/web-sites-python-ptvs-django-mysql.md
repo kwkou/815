@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="web-sites" 
 	ms.date="08/30/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/17/2015"/>
 # 具有 Python Tools 2.2 for Visual Studio 的 Azure 上的 Django 和 MySQL 
 
 > [AZURE.SELECTOR]

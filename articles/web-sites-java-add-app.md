@@ -8,9 +8,9 @@
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="web-sites" 
 	ms.date="08/31/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 将 Java 应用程序添加到 Azure 网站
 

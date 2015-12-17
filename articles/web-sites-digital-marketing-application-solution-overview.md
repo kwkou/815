@@ -8,9 +8,9 @@
 	documentationCenter=""/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="web-sites"
 	ms.date="09/29/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 在 Azure 网站上创建数字市场营销活动
 [Azure 网站](/documentation/services/web-sites/)网站是数字市场营销活动的极佳选择。数字市场营销活动的持续时间通常较短，旨在促成短期市场营销目标。有两个要考虑的主要方案。在第一个方案中，第三方市场营销公司为其客户为促销期间创建并管理市场营销活动。第二个方案涉及市场营销公司创建数字市场营销活动资源，然后将资源的所有权转移给其客户。客户然后自己运行和管理数字市场营销活动。Azure 网站非常适合于这两种方案。

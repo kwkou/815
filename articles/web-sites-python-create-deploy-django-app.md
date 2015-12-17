@@ -9,9 +9,9 @@
 	editor=""/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="web-sites"
 	ms.date="08/30/2015"
-	wacn.date="12/14/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 # 在 Azure 中使用 Django 创建网站

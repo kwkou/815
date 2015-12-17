@@ -8,9 +8,9 @@
    editor="jimbe"/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="web-sites"
 	ms.date="10/12/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 在 Visual Studio Code 中创建 ASP.NET 5网站
 

@@ -9,9 +9,9 @@
 	editor="mollybos"/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="web-sites"
 	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="12/17/2015"/>
 
 #如何在 Azure 网站中调试 Node.js 应用程序
 

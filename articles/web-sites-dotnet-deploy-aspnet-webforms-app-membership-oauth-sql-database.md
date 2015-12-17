@@ -8,9 +8,9 @@
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="web-sites" 
 	ms.date="08/06/2015" 
-	wacn.date="10/03/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 # 创建包含成员资格、OAuth 和 SQL 数据库的安全 ASP.NET Web 窗体应用并部署到 Azure 网站

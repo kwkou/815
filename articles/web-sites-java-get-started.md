@@ -7,9 +7,9 @@
 	manager="wpickett"
 	editor="jimbe"/>
 <tags
-	ms.service="app-service-web"
+	ms.service="web-sites"
 	ms.date="08/31/2015"
-	wacn.date="12/14/2015"/>
+	wacn.date="12/17/2015"/>
 
 # Azure 网站和 Java 入门
 

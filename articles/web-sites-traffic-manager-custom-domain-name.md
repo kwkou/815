@@ -1,9 +1,9 @@
 <properties title="Learn how to configure an Azure  Website that uses Traffic Manager to use a custom domain name" pageTitle="为使用流量管理器的 Azure 网站配置自定义域名" metaKeywords="Windows Azure, Windows Azure  Websites, domain name" description="" services="web-sites" documentationCenter="" authors="larryfr, jroth" />
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="web-sites" 
 	ms.date="08/18/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="12/17/2015"/>
 #为使用流量管理器的 Azure 网站配置自定义域名
 
 [AZURE.INCLUDE [web-selector](../includes/websites-custom-domain-selector.md)]
