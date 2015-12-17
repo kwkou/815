@@ -8,9 +8,9 @@
 	editor="mollybos"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="web-sites" 
 	ms.date="08/03/2015" 
-	wacn.date="10/03/2015"/>
+	wacn.date="12/17/2015"/>
 
 #使用 SQL 数据库创建 PHP 网站并使用 Git 进行部署
 

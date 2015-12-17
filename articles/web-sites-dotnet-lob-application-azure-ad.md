@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="web-sites"
 	ms.date="10/14/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 在 Azure 网站中创建使用 Azure Active Directory 身份验证的 .NET MVC网站#
 

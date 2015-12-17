@@ -8,7 +8,7 @@
    editor="v-lincan"/>
 
 <tags
-   ms.service="cache"
+   ms.service="redis-cache"
    ms.date="08/26/2015"
    wacn.date="10/22/2015"/>
 

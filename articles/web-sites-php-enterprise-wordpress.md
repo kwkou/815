@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="web-sites"
 	ms.date="08/03/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="12/17/2015"/>
 
 #Azure 网站上的企业级 WordPress
 

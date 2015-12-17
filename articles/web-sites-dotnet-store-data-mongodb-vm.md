@@ -9,9 +9,9 @@
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="web-sites" 
 	ms.date="08/11/2015" 
-	wacn.date="10/03/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 # 在 Azure 中创建连接到虚拟机上运行的 MongoDB 的网站

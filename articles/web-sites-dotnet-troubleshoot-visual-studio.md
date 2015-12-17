@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="web-sites" 
 	ms.date="09/16/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 使用 Visual Studio 对 Azure 网站进行故障排除
 

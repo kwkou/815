@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="web-sites"
 	ms.date="09/16/2015"
-	wacn.date="12/14/2015"/>
+	wacn.date="12/17/2015"/>
 # 为 Azure 网站配置自定义域名
 
 > [AZURE.SELECTOR]

@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="web-sites" 
 	ms.date="07/07/2015" 
-	wacn.date="08/29/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 # 适用于 Azure 网站的学习路线图

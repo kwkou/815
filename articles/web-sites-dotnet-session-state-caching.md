@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="web-sites" 
 	ms.date="09/16/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 # 将 Azure 网站中的 Azure Redis 缓存用于会话状态

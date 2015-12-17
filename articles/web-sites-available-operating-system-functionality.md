@@ -8,9 +8,9 @@
 	editor="mollybos"/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="web-sites"
 	ms.date="09/29/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/17/2015"/>
 
 # Azure 网站上的操作系统功能 #
 

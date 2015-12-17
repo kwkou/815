@@ -8,9 +8,9 @@
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="web-sites" 
 	ms.date="08/31/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 将自定义 Java网站上载到 Azure
 

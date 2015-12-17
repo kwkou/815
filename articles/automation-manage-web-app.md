@@ -8,13 +8,13 @@
 	editor=""/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="web-sites"
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="04/13/2015"
-	wacn.date="05/15/2015"
+	wacn.date="12/17/2015"
 	ms.author="csand"/>
 
 

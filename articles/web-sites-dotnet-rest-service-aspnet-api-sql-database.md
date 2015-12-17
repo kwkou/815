@@ -9,9 +9,9 @@
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="web-sites" 
 	ms.date="08/31/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 在 Azure 网站中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务
 
