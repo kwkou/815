@@ -55,7 +55,9 @@
 4. **确定要使用的负载平衡方法**。有三种不同的负载平衡方法。请花一些时间了解哪种方法最适合你的要求。如果你以后需要更改方法，随时可以更改。另请注意，每种方法都需要稍微不同的配置步骤。有关负载平衡方法的信息，请参阅[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)。
 5. **创建配置文件并配置设置**。可以使用 REST API、Windows PowerShell 或管理门户来创建流量管理器配置文件并配置设置。有关详细信息，请参阅[如何配置流量管理器设置](#how-to-configure-traffic-manager-settings)。以下步骤假定你将使用管理门户中的“快速创建”。 
    - **创建流量管理器配置文件** - 若要使用管理门户中的“快速创建”创建配置文件，请参阅[管理流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles)。
-   - **配置负载平衡方法设置** – 在“快速创建”期间，你必须为配置文件选择负载平衡方法。在完成“快速创建”步骤之后，可以随时更改此设置。有关配置步骤，请参阅与负载负载平衡对应的主题：[配置“性能”负载平衡](/documentation/articles/traffic-manager-configure-performance-load-balancing)、[配置“故障转移”负载平衡](/documentation/articles/traffic-manager-configure-failover-load-balancing)、[配置“轮循机制”负载平衡](/documentation/articles/traffic-manager-configure-round-robin-load-balancing)。>[AZURE.NOTE]“轮循机制”负载平衡方法现在支持将网络流量进行加权分布。但是，目前必须使用 REST API 或 Windows PowerShell 配置权重。有关详细信息和示例配置，请参阅 Azure 博客中的 [Azure 流量管理器外部终结点与通过 PowerShell 实施的加权轮循机制](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/)。
+   - **配置负载平衡方法设置** – 在“快速创建”期间，你必须为配置文件选择负载平衡方法。在完成“快速创建”步骤之后，可以随时更改此设置。有关配置步骤，请参阅与负载负载平衡对应的主题：[配置“性能”负载平衡](/documentation/articles/traffic-manager-configure-performance-load-balancing)、[配置“故障转移”负载平衡](/documentation/articles/traffic-manager-configure-failover-load-balancing)、[配置“轮循机制”负载平衡](/documentation/articles/traffic-manager-configure-round-robin-load-balancing)。
+   
+		>[AZURE.NOTE]“轮循机制”负载平衡方法现在支持将网络流量进行加权分布。但是，目前必须使用 REST API 或 Windows PowerShell 配置权重。有关详细信息和示例配置，请参阅 Azure 博客中的 [Azure 流量管理器外部终结点与通过 PowerShell 实施的加权轮循机制](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/)。
 
    - **配置终结点** – 在“快速创建”期间无法配置终结点。在创建配置文件并指定负载平衡方法后，必须让流量管理器知道相应的终结点。有关配置终结点的步骤，请参阅[在流量管理器中管理终结点](/documentation/articles/traffic-manager-endpoints)
 
@@ -66,6 +68,7 @@
 使用图 1 中的示例，更改服务器上的 DNS 资源记录使其包含以下行，以便将公司域名指向流量管理器域名：www.contoso.com IN CNAME contoso.trafficmanager.cn
 
 ## 如何配置流量管理器设置
+<a name="how-to-configure-traffic-manager-settings"></a>
 
 可以使用管理门户、REST API 和 Windows PowerShell cmdlet 来配置流量管理器设置。
 
@@ -103,6 +106,7 @@
 可以通过使用 Windows PowerShell 创建和配置流量管理器配置文件。有关详细信息，请参阅 [Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-CN/library/dn690250.aspx)。
 
 ## 最佳实践
+<a name="best-practices"></a>
 
 - **使前缀唯一并易于理解** – 流量管理器配置文件的 DNS 名称必须唯一。你只能控制 DNS 名称的第一部分。流量管理器域名仅用于标识及定向客户端请求。客户端计算机将永远不会向最终用户显示这些名称。但是，配置文件由此域名予以标识，因此，你必须能够快速地将此域名与管理门户中列出的其他域名区分开来。
 - **使用点号来增强唯一性或使域名易读** – 也可以使用句点来分隔域名前缀部分。如果计划在流量管理器中创建多个策略，请使用一致的层次结构来区分服务。例如，Contoso 拥有针对 Web、计费和实用工具管理的全局服务。这三个策略应为 *web.contoso.trafficmanager.cn*、*bill.contoso.trafficmanager.cn* 和 *util.contoso.trafficmanager.cn*。设置云服务或网站时，请使用包含位置的名称。例如，*web-us-contoso.chinacloudapp.cn* 和 *web-asia-contoso.chinacloudapp.cn*。你将受限于 DNS 施加的各种限制。假定一个域名是一个点号分隔的标签序列（“标签.标签.标签.标签.等等”）。截至本文档撰写时，流量管理器中对域名的限制如下：
@@ -121,6 +125,7 @@
 - **SQL Azure** – 与存储设计类似，当你将终结点扩展到多个地理区域时，它可以分析应用程序状态和数据要求。
 
 ## 嵌套的配置文件
+<a name="nested-profiles"></a>
 
 你可以将另一个流量管理器配置文件的名称指定为终结点，此做法称为嵌套的配置文件。流量管理器配置文件名称是其 DNS 名称，如 contoso-europe.trafficmanager.cn。
 
