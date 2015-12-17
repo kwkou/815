@@ -7,7 +7,7 @@
 	manager="timlt"/>
 
 <tags 
-	ms.service="multiple"  
+	ms.service="cloud-services" 
 	ms.date="09/01/2015" 
 	wacn.date="01/21/2016"/>
 
