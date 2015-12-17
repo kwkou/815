@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="10/07/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/17/2015"/>
 
 #使用 AES-128 动态加密和密钥传送服务
 

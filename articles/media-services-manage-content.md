@@ -10,7 +10,7 @@
 <tags 
 	ms.service="media-services" 
 	ms.date="09/07/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 # 使用 Azure 管理门户管理 Azure 媒体服务的内容

@@ -9,7 +9,7 @@
 <tags 
    ms.service="traffic-manager"
    ms.date="08/19/2015"
-   wacn.date="10/03/2015" />
+   wacn.date="12/17/2015" />
 
 # 流量管理器路由方法
 
