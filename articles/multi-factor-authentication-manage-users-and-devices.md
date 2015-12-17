@@ -61,11 +61,11 @@
 <li>单击“保存”。</li>
 <li>单击“关闭”。</li>
 </ol>
-## <a name="restore-mfa-on-all-suspended-devices-for-a-user"></a>还原用户所有已暂停设备上的多重身份验证
+## <a name="restore-mfa-on-all-suspended-devices-for-a-user"></a>还原用户所有已暂停设备上的MFA(多重身份验证)
 
 管理员可以重置用户设备和浏览器上的多重身份验证。这可以通过还原用户设备和浏览器的多重身份验证来实现。这样做会取消用户所有设备和浏览器的暂停状态。
 
-### 如何还原用户所有已暂停设备上的多重身份验证
+### 如何还原用户所有已暂停设备上的MFA(多重身份验证)
 
 <ol>
 <li>登录到 Azure 管理门户。</li>

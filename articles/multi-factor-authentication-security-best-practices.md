@@ -113,7 +113,7 @@ Azure 多重身份验证服务器可用于保护 Azure AD 帐户所访问的云�
 
 
 ## 其他资源
-尽管本文重点介绍了 Azure 多重身份验证的一些最佳实践，但其他一些资源也可以帮助你规划多重身份验证的部署。以下列表提供了在此过程中也许能够帮到你的一些重要文章：
+尽管本文重点介绍了 Azure MFA(多重身份验证)的一些最佳实践，但其他一些资源也可以帮助你规划MFA(多重身份验证)的部署。以下列表提供了在此过程中也许能够帮到你的一些重要文章：
 
 - [Azure 多重身份验证中的报告](/documentation/articles/multi-factor-authentication-manage-reports)
 - [Azure 多重身份验证的设置体验](/documentation/articles/multi-factor-authentication-end-user-first-time)

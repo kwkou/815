@@ -18,7 +18,7 @@
 
 功能| 说明| 涵盖的内容
 :------------- | :------------- | :------------- | 
-[应用密码](#app-passwords)|应用密码允许非多重身份验证感知应用程序跳过多重身份验证并继续工作。|有关应用密码的信息。
+[应用密码](#app-passwords)|应用密码允许非MFA(多重身份验证)感知应用程序跳过多重身份验证并继续工作。|有关应用密码的信息。
 [暂停记住的设备和浏览器的多重身份验证（公共预览版）](#suspend-multi-factor-authentication-for-remembered-devices-and-browsers-public-preview)|可让你在用户使用多重身份验证成功登录后的设置天数内暂停多重身份验证。|有关启用此功能和设置天数的信息。
 <table class="table table-bordered table-striped table-condensed">
    <tr>
