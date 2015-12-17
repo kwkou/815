@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="10/15/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/17/2015"/>
 
 #如何使用本地编码器进行实时编码
 

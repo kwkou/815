@@ -9,7 +9,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="09/22/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 什么是网络安全组 (NSG)？
 

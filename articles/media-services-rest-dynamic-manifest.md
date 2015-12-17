@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="10/18/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/17/2015"/>
 
 #使用媒体服务 REST API 创建筛选器
 

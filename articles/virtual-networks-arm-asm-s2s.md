@@ -9,7 +9,7 @@
 <tags 
    ms.service="virtual-network"
    ms.date="09/18/2015"
-   wacn.date="10/17/2015" />
+   wacn.date="12/17/2015" />
 
 # 将经典 VNet 连接到新 VNet
 

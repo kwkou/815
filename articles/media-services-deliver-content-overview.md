@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="09/27/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 #将内容传送到客户概述

@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="10/15/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 #使用 PlayReady 和/或 Widevine DRM 动态通用加密
