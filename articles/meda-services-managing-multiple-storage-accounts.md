@@ -31,7 +31,7 @@
 
 其他注意事项：
 
-构建流内容的 URL 时，媒体服务会使用 **IAssetFile.Name** 属性的值（如 http://{WAMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于这个原因，不允许使用百分号编码。Name 属性的值不能含有任何以下保留的[百分号编码字符](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
+构建流内容的 URL 时，媒体服务会使用 **IAssetFile.Name** 属性的值（如 http://{WAMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于这个原因，不允许使用百分号编码。Name 属性的值不能含有任何以下保留的[百分号编码字符](http://zh.wikipedia.org/wiki/百分号编码#.E4.BF.9D.E7.95.99.E5.AD.97.E7.AC.A6.E7.9A.84.E7.99.BE.E5.88.86.E5.8F.B7.E7.BC.96.E7.A0.81)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
 
 ##使用 Azure 服务管理 REST API 附加存储帐户
 
@@ -70,6 +70,12 @@
 		        private static readonly string MediaServicesAccountKey = 
 		            ConfigurationManager.AppSettings["MediaServicesAccountKey"];
 		
+				private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+				// Azure China uses a different API server and a different ACS Base Address from the Global.
+				private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+				private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
+
 		        private static CloudMediaContext _context;
 		        private static MediaServicesCredentials _cachedCredentials = null;
 	
@@ -79,9 +85,15 @@
 		            // Create and cache the Media Services credentials in a static class variable.
 		            _cachedCredentials = new MediaServicesCredentials(
 		                            MediaServicesAccountName,
-		                            MediaServicesAccountKey);
+		                            MediaServicesAccountKey,
+									_defaultScope,
+									_chinaAcsBaseAddressUrl);
+
+					// Create the API server Uri
+					_apiServer = new Uri(_chinaApiServerUrl);
+
 		            // Used the cached credentials to create CloudMediaContext.
-		            _context = new CloudMediaContext(_cachedCredentials);
+		            _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 	
 		
 		            // Display the storage accounts associated with 
