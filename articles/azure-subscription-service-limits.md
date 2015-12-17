@@ -10,7 +10,7 @@
 <tags
 	ms.service="multiple"
 	ms.date="08/09/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="12/17/2015"/>
 
 # Azure 订阅和服务限制、配额和约束
 

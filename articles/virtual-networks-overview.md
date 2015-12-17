@@ -9,7 +9,7 @@
 <tags
    ms.service="virtual-network"
    ms.date="09/14/2015"
-   wacn.date="12/16/2015" />
+   wacn.date="12/17/2015" />
 
 # 虚拟网络概述
 

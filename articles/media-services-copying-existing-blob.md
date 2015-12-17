@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="10/05/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/17/2015"/>
 
 #将现有 Blob 复制到媒体服务资产中
 
