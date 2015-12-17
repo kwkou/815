@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="10/05/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 # 使用 .NET SDK 开始传送点播内容

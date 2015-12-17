@@ -11,7 +11,7 @@
 <tags 
 	ms.service="media-services" 
 	ms.date="09/07/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 #<a id="managemediaservicesorigins"></a>如何在媒体服务帐户中管理流式处理终结点
