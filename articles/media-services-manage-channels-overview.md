@@ -30,7 +30,6 @@
 - [常见实时流式处理方案](/documentation/articles/media-services-manage-channels-overview#scenario)
 - [频道及其相关组件的说明](/documentation/articles/media-services-manage-channels-overview#channel)
 - [注意事项](/documentation/articles/media-services-manage-channels-overview#considerations)
-- [与实时流式处理相关的任务](/documentation/articles/media-services-manage-channels-overview#tasks)
 
 ##<a id="scenario"></a>常见实时流式处理方案
 以下步骤介绍创建常见的实时流式处理应用程序时涉及的任务。
@@ -60,7 +59,6 @@
 1. 在要停止对事件进行流式传输和存档时，停止节目。
 1. 删除节目（并选择性地删除资产）。     
 
-[实时流式处理任务](/documentation/articles/media-services-manage-channels-overview#tasks)部分将链接到演示如何完成上述任务的主题。
 
 ##<a id="channel"></a>通道及其相关组件的说明
 
@@ -205,6 +203,7 @@
 已停止|已停止|否
 
 ###隐藏字幕和广告插入 
+<a name="closed-captioning-and-ad-insertion"></a>
 
 下表展示了支持的隐藏字幕和广告插入标准。
 
@@ -215,7 +214,7 @@ ismt 内的 TTML（Smooth Streaming 文本轨道）|媒体服务动态打包功�
 SCTE-35|用来提示广告插入的数字信号系统。下游接收器使用该信号来将广告接合到流中并使其占用规定的时间。SCTE-35 必须在输入流中作为稀疏轨道发送。<p><p>请注意，当前唯一受支持的可以携带广告信号的输入流格式是分片 MP4 (Smooth Streaming)。唯一受支持的输出格式也是 Smooth Streaming.
 
 
-##<a id="Considerations"></a>注意事项
+##<a id="considerations"></a>注意事项
 
 当使用本地实时编码器将多比特率流发送到一个频道时，以下限制将适用：
 
@@ -236,7 +235,7 @@ SCTE-35|用来提示广告插入的数字信号系统。下游接收器使用该
 
 ##如何创建从本地编码器接收多比特率实时流的频道
 
-有关本地实时编码器的更多信息，请参阅[将第三方实时编码器与 Azure 媒体服务结合使用](https://msdn.microsoft.com/zh-cn/library/azure/dn783464.aspx)。
+有关本地实时编码器的更多信息，请参阅[将第三方实时编码器与 Azure 媒体服务结合使用](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/)。
 
 选择**“门户”**、**.NET**、**REST API** 以了解如何创建和管理频道和节目。
 

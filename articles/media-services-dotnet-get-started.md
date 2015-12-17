@@ -138,6 +138,8 @@
 		using Microsoft.WindowsAzure.MediaServices.Client;
 		using Microsoft.WindowsAzure.MediaServices.Client.DynamicEncryption;
 
+	>[AZURE.NOTE] 如果 System.Configuration 没有默认被引用，请首先把它添加到引用。
+
 6. 在 projects 目录下创建新的文件夹，然后复制你要编码和流处理或渐进式下载的 .mp4 或 .wmv 文件。在此示例中，我们使用了“C:\\VideoFiles”路径。
 
 ##连接到媒体服务帐户
@@ -156,20 +158,34 @@
         private static readonly string _mediaServicesAccountKey =
             ConfigurationManager.AppSettings["MediaServicesAccountKey"];
 
+		private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+		// Azure China uses a different API server and a different ACS Base Address from the Global.
+		private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+		private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
+
         // Field for service context.
         private static CloudMediaContext _context = null;
-        private static MediaServicesCredentials _cachedCredentials = null;
+		private static MediaServicesCredentials _cachedCredentials = null;
+		private static Uri _apiServer = null;
+		
 
         static void Main(string[] args)
         {
             try
             {
-                // Create and cache the Media Services credentials in a static class variable.
+				// Create and cache the Media Services credentials in a static class variable.
                 _cachedCredentials = new MediaServicesCredentials(
                                 _mediaServicesAccountName,
-                                _mediaServicesAccountKey);
+                                _mediaServicesAccountKey,
+								_defaultScope,
+								_chinaAcsBaseAddressUrl);
+
+				// Create the API server Uri
+				_apiServer = new Uri(_chinaApiServerUrl);
+
                 // Used the chached credentials to create CloudMediaContext.
-                _context = new CloudMediaContext(_cachedCredentials);
+                _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 
                 // Add calls to methods defined in this section.
 

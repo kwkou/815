@@ -46,7 +46,7 @@
 
 默认情况下可以具有最多两个流式处理终结点。如果需要请求更多，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations)。
 
-##<a id="scale_streaming_endpoints"></a>缩放流式处理终结点
+##<a name="scale_streaming_endpoints"></a>缩放流式处理终结点
 
 流式处理单元为你提供了可按照 200 Mbps 的增量购买的专用出口容量和其他功能（当前包括[动态打包功能](/documentation/articles/media-services-dynamic-packaging-overview)）。默认情况下，流式处理在共享实例模型中配置，该模型的服务器资源（例如计算机、出口容量等）与所有其他用户共享。若要增加流式处理吞吐量，建议购买流式处理单元。
 
@@ -67,7 +67,7 @@
 
 	>[AZURE.NOTE]为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅[媒体服务定价详细信息](/home/features/media-services/#price)。
 	
-##<a id="configure_streaming_endpoints"></a>配置流式处理终结点
+##<a name="configure_streaming_endpoints"></a>配置流式处理终结点
 
 当你拥有至少 1 个缩放单位时，通过流式处理终结点可以配置以下属性：
 
@@ -128,7 +128,7 @@
 - 对于新的流式处理终结点，只需通过创建新的终结点即可启用 CDN；对于现有流式处理终结点，则需要首先停止该终结点，然后再启用 CDN。
  
 
-有关详细信息，请参阅[通过 Azure CDN（内容传送网络）宣布 Azure 媒体服务集成](http://azure.microsoft.com/blog/2015/03/17/announcing-azure-media-services-integration-with-azure-cdn-content-delivery-network/)。
+有关详细信息，请参阅[通过 Azure CDN（内容传送网络）宣布 Azure 媒体服务集成](http://azure.microsoft.com/zh-cn/blog/2015/03/17/announcing-azure-media-services-integration-with-azure-cdn-content-delivery-network/)。
 
 
 [streaming-endpoint-enable-cdn]: ./media/media-services-manage-origins/media-services-origins-enable-cdn.png

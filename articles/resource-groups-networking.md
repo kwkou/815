@@ -91,7 +91,7 @@ Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结
 - **GET** - 用于检索设置的资源的信息。
 - **DELETE** - 用于删除现有资源。
 
-请求和响应都符合 JSON 负载格式。有关详细信息，请参阅 [Azure 资源管理 API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)。
+请求和响应都符合 JSON 负载格式。
 
 ### ARM 模板语言
 除了强制性管理资源（通过 API 或 SDK）以外，还可以使用 ARM 模板语言以声明性编程方式构建和管理网络资源。
@@ -248,7 +248,6 @@ Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结
 
 ## 另请参阅
 
-[Azure 网络 API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)
 
 [用于联网的 Azure PowerShell 参考](https://msdn.microsoft.com/zh-cn/library/azure/mt163510.aspx)
 
