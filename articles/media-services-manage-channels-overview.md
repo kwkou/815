@@ -203,6 +203,7 @@
 已停止|已停止|否
 
 ###隐藏字幕和广告插入 
+<a name="closed-captioning-and-ad-insertion"></a>
 
 下表展示了支持的隐藏字幕和广告插入标准。
 
