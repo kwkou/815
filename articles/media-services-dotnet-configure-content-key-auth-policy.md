@@ -230,6 +230,7 @@
 
 
 ##PlayReady 动态加密 
+<a name="playready-dynamic-encryption"></a>
 
 媒体服务允许你配置相应的权限和限制，以便在用户尝试播放受保护的内容时，PlayReady DRM 运行时会强制实施这些权限和限制。
 

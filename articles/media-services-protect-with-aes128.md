@@ -58,31 +58,31 @@
 
 如果你添加或更新资产的传送策略，则必须删除现有定位符（如果有）并创建新定位符。
 
-##<a id="create_asset"></a>创建资产并将文件上载到资产
+##<a name="create_asset"></a>创建资产并将文件上载到资产
 
 为了对视频进行管理、编码和流式处理，必须首先将内容上载到 Windows Azure 媒体服务中。上载完成后，相关内容即安全地存储在云中供后续处理和流式处理。
 
 有关详细信息，请参阅[将文件上载到媒体服务帐户](/documentation/articles/media-services-dotnet-upload-files)。
 
-##<a id="encode_asset"></a>将包含文件的资产编码为自适应比特率 MP4 集
+##<a name="encode_asset"></a>将包含文件的资产编码为自适应比特率 MP4 集
 
 使用动态加密时，你只需创建包含一组多码率 MP4 文件或多码率平滑流源文件的资产。然后，点播流服务器会确保你以选定的协议按清单或分段请求中的指定格式接收流。因此，你只需以单一存储格式存储文件并为其付费，然后媒体服务服务就会基于客户端的请求构建并提供相应响应。有关详细信息，请参阅[动态打包概述](/documentation/articles/media-services-dynamic-packaging-overview)主题。
 
 有关如何编码的说明，请参阅[如何使用媒体编码器标准版对资产进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard)。
 
-##<a id="create_contentkey"></a>创建内容密钥并将其与编码资产相关联
+##<a name="create_contentkey"></a>创建内容密钥并将其与编码资产相关联
 
 在媒体服务中，内容密钥包含用于加密资产的密钥。
 
 有关详细信息，请参阅[创建内容密钥](/documentation/articles/media-services-dotnet-create-contentkey)。
 
-##<a id="configure_key_auth_policy"></a>配置内容密钥授权策略
+##<a name="configure_key_auth_policy"></a>配置内容密钥授权策略
 
 媒体服务支持通过多种方式对发出密钥请求的用户进行身份验证。你必须配置内容密钥授权策略，客户端（播放器）必须遵守该策略，才能将密钥传送到客户端。内容密钥授权策略可能受到一种或多种授权限制：开放、令牌限制或 IP 限制。
 
 有关详细信息，请参阅[配置内容密钥授权策略](/documentation/articles/media-services-dotnet-configure-content-key-auth-policy)。
 
-##<a id="configure_asset_delivery_policy"></a>配置资产传送策略 
+##<a name="configure_asset_delivery_policy"></a>配置资产传送策略 
 
 为资产配置传送策略。资产传送策略配置包括：
 
@@ -93,7 +93,7 @@
 
 有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy)。
 
-##<a id="create_locator"></a>创建 OnDemand 流定位符以获取流 URL
+##<a name="create_locator"></a>创建 OnDemand 流定位符以获取流 URL
 
 需要为用户提供平滑流、DASH 或 HLS 的流 URL。
 
@@ -118,7 +118,7 @@
 
 你可以使用 [AMS Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) 来测试你的流。
 
-##<a id="client_request"></a>你的客户端如何从密钥传送服务请求密钥？
+##<a name="client_request"></a>你的客户端如何从密钥传送服务请求密钥？
 
 在上一步骤中，你构造了指向清单文件的 URL。你的客户端需要从流清单文件提取必要的信息，以便向密钥传送服务发出请求。
 
@@ -209,7 +209,7 @@
 	    return key;
 	}
 	
-##<a id="example"></a>示例
+##<a name="example"></a>示例
 
 1. 创建新的控制台项目。
 1. 使用 NuGet 安装和添加 Azure 媒体服务 .NET SDK Extensions。安装此包也会安装媒体服务 .NET SDK 并添加所有其他必需的依赖项。
@@ -262,6 +262,12 @@
 		        private static readonly string _mediaServicesAccountKey =
 		            ConfigurationManager.AppSettings["MediaServicesAccountKey"];
 		
+				private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+				// Azure China uses a different API server and a different ACS Base Address from the Global.
+				private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+				private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
+
 		        // A Uri describing the issuer of the token.  
 		        // Must match the value in the token for the token to be considered valid.
 		        private static readonly Uri _sampleIssuer =
@@ -287,9 +293,15 @@
 		            // Create and cache the Media Services credentials in a static class variable.
 		            _cachedCredentials = new MediaServicesCredentials(
 		                            _mediaServicesAccountName,
-		                            _mediaServicesAccountKey);
+		                            _mediaServicesAccountKey,
+									_defaultScope,
+									_chinaAcsBaseAddressUrl);
+
+					// Create the API server Uri
+					_apiServer = new Uri(_chinaApiServerUrl);
+
 		            // Used the chached credentials to create CloudMediaContext.
-		            _context = new CloudMediaContext(_cachedCredentials);
+		            _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 		
 		            bool tokenRestriction = false;
 		            string tokenTemplateString = null;

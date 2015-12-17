@@ -37,6 +37,7 @@ Media Services 所提供的动态打包可让你以 Media Services 支持的流�
 请注意，默认情况下每个媒体服务帐户同时只能有一个活动的编码任务。你可以保留编码单元，使用它们可以同时运行多个编码任务，你购买的每个编码保留单位对应一个任务。有关信息，请参阅[缩放编码单元](/documentation/articles/media-services-portal-encoding-units)。
 
 ##媒体编码器标准版
+<a name="media_encoder_standard"></a>
 
 ###概述
 
@@ -160,7 +161,7 @@ MPEG-1 |是|是|是
 Windows Media 视频/VC-1 |是|是|是
 Canopus HQ/HQX |否|是|否
 Mpeg-4 第 2 部分 |是|否|否
-[Theora](https://en.wikipedia.org/wiki/Theora) |是|否|否
+[Theora](https://zh.wikipedia.org/wiki/Theora) |是|否|否
 
 ###输入音频编解码器
 
@@ -175,8 +176,8 @@ MPEG Layer 2|是|是|是
 MP3 (MPEG-1 Audio Layer 3)|是|是|是
 Windows Media 音频|是|是|是
 WAV/PCM|是|是|是
-[FLAC](https://en.wikipedia.org/wiki/FLAC)</a>|是|否|否
-[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format)) |是|否|否
+[FLAC](https://zh.wikipedia.org/wiki/FLAC)</a>|是|否|否
+[Opus](https://zh.wikipedia.org/wiki/Opus_codec) |是|否|否
 [Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a>|是|否|否
 
 
@@ -218,13 +219,6 @@ MPEG Layer 2|否|否|是
 MP3 (MPEG-1 Audio Layer 3)|否|否|是
 Windows Media 音频|否|是|是
 
-
-##媒体服务学习路径
-
-你可以在此处查看 AMS 学习路径：
-
-- [AMS 实时流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS 按需流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
 ##相关文章
 
