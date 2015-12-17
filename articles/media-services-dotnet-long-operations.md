@@ -48,6 +48,12 @@ Windows Azure 媒体服务提供了相应的 API 用来请求媒体服务启动�
 	    private static readonly string _mediaServicesAccountKey =
 	        ConfigurationManager.AppSettings["MediaServicesAccountKey"];
 	
+		private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+		// Azure China uses a different API server and a different ACS Base Address from the Global.
+		private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+		private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
+
 	    // Field for service context.
 	    private static CloudMediaContext _context = null;
 	    private static MediaServicesCredentials _cachedCredentials = null;
@@ -55,9 +61,12 @@ Windows Azure 媒体服务提供了相应的 API 用来请求媒体服务启动�
 	    public ChannelOperations()
 	    {
 	            _cachedCredentials = new MediaServicesCredentials(_mediaServicesAccountName,
-	                _mediaServicesAccountKey);
+	                _mediaServicesAccountKey, _defaultScope, _chinaAcsBaseAddressUrl);
 	
-	            _context = new CloudMediaContext(_cachedCredentials);    }
+				// Create the API server Uri
+				_apiServer = new Uri(_chinaApiServerUrl);
+
+	            _context = new CloudMediaContext(_apiServer, _cachedCredentials);    }
 	
 	    /// <summary>  
 	    /// Initiates the creation of a new channel.  
