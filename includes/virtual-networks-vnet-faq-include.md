@@ -118,7 +118,7 @@ Azure 会保留每个子网中的某些 IP 地址。子网的第一个和最后�
 
 ### 是否可以将 VNet 连接到 Azure 中的另一个 VNet？
 
-是的。可以使用 REST API 或 Windows PowerShell 创建 VNet 到 VNet 通信。请参阅[配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)。
+是的。可以使用 REST API 或 Windows PowerShell 创建 VNet 到 VNet 通信。
 
 ## 名称解析 (DNS)
 
