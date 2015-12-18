@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="10/16/2015"
+	wacn.date=""/>
 
 #在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用
 
@@ -50,7 +50,8 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 3. **AS** 子句描述从 **streaming.py** 返回的字段
 
-<a name="streamingpy"></a>下面是该 HiveQL 示例使用的 **streaming.py** 文件。
+<a name="streamingpy"></a>
+下面是该 HiveQL 示例使用的 **streaming.py** 文件。
 
 	#!/usr/bin/env python
 
@@ -72,7 +73,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 1. 从 STDIN 中读取数据。在本示例中，这是使用 `sys.stdin.readline()` 来完成的。
 
-2. 尾随的换行符是使用 `string.strip(line, "\n ")` 删除的，因为我们只需要文本数据，而不需要行指示器的末尾。
+2. 已使用 `string.strip(line, "\n ")` 删除尾部的换行符，因为我们只需要文本数据，而不需要行尾指示符。
 
 2. 执行流式处理时，一个行就包含了所有值，每两个值之间有一个制表符。因此，`string.split(line, "\t")` 可用于在每个制表符处拆分输入，并只返回字段。
 
@@ -106,7 +107,8 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 5. 最后，使用 **DUMP** 命令将输出转储到 STDOUT。这只是为了在完成操作后立即显示结果；在实际脚本中，你通常会使用 **STORE** 将数据存储到新文件中。
 
-<a name="jythonpy"></a>下面是该 Pig 示例使用的 **jython.py** 文件：
+<a name="jythonpy"></a>
+下面是该 Pig 示例使用的 **jython.py** 文件：
 
 	@outputSchema("log: {(date:chararray, time:chararray, classname:chararray, level:chararray, detail:chararray)}")
 	def create_structure(input):
@@ -129,11 +131,11 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 3. 示例数据 **sample.log** 基本上符合我们要返回的日期、时间、类名、级别和详细信息架构。但是，它还包含了一些以字符串“*java.lang.Exception*”开头的行，我们需要修改这些行，使之与架构匹配。**if** 语句将检查这些行，然后调整输入数据以将“*java.lang.Exception*”字符串移到末尾，使数据与预期的输出架构相一致。
 
-4. 接下来，使用 **split** 命令在前四个空白字符处拆分数据。这将生成五个值，它们分配到“日期”、“时间”、“类名”、“级别”和“详细信息”。
+4. 接下来，使用 **split** 命令在前四个空格字符处拆分数据。这将生成五个值，它们将分配到“日期”、“时间”、“类名”、“级别”和“详细信息”。
 
 5. 最后，将值返回到 Pig。
 
-当数据返回到 Pig 时，其架构与 **@outputSchema** 语句中的定义一致。
+当数据返回到 Pig 时，其架构将与 **@outputSchema** 语句中的定义一致。
 
 ##<a name="running"></a>运行示例
 
@@ -162,7 +164,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 ####Pig
 
-1. 使用 `pig` 命令来启动该 shell。在 shell 加载后，你应会看到 `grunt>` 提示符。
+1. 使用 `pig` 命令来启动 shell。在 shell 加载后，你应会看到 `grunt>` 提示符。
 
 2. 在 `grunt>` 提示符下输入以下语句。
 
@@ -182,36 +184,69 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 ###PowerShell
 
-这些步骤使用 Azure PowerShell。如果尚未在开发计算机上安装并配置 Azure PowerShell，请在使用以下步骤之前，参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+这些步骤使用 Azure PowerShell。如果尚未在开发计算机上安装并配置 Azure PowerShell，请在使用以下步骤之前，参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。
 
 1. 使用 Python 示例 [streaming.py](#streamingpy) 和 [jython.py](#jythonpy) 创建开发计算机上的文件的本地副本。
 
-2. 使用以下 PowerShell 脚本将 **streaming.py** 和 **jython.py** 文件上载到服务器。更改 Azure HDInsight 群集的名称，并在脚本的前三行中更改 **streaming.py** 和 **jython.py** 文件的路径。
+2. 使用以下 PowerShell 脚本将 **streaming.py** 和 **jython.py** 文件上载到服务器。在脚本的前三行中替换为你的 Azure HDInsight 群集的名称，并替换为 **streaming.py** 和 **jython.py** 文件的路径。
 
 		$clusterName = YourHDIClusterName
 		$pathToStreamingFile = "C:\path\to\streaming.py"
 		$pathToJythonFile = "C:\path\to\jython.py"
 
-		$hdiStore = get-azurehdinsightcluster -name $clusterName
-		$storageAccountName = $hdiStore.DefaultStorageAccount.StorageAccountName.Split(".",2)[0]
-		$storageAccountKey = $hdiStore.defaultstorageaccount.storageaccountkey
-		$defaultContainer = $hdiStore.DefaultStorageAccount.StorageContainerName
+		$clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+        $resourceGroup = $clusterInfo.ResourceGroup
+        $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+        $container=$clusterInfo.DefaultStorageContainer
+        $storageAccountKey=Get-AzureRmStorageAccountKey `
+            -Name $storageAccountName `
+            -ResourceGroupName $resourceGroup `
+            | %{ $_.Key1 }
 
-		$destContext = new-azurestoragecontext -storageaccountname $storageAccountName -storageaccountkey $storageAccountKey
-		set-azurestorageblobcontent -file $pathToStreamingFile -Container $defaultContainer -Blob "streaming.py" -context $destContext
-		set-azurestorageblobcontent -file $pathToJythonFile -Container $defaultContainer -Blob "jython.py" -context $destContext
+		#Create a storage content and upload the file
+        $context = New-AzureStorageContext `
+            -StorageAccountName $storageAccountName `
+            -StorageAccountKey $storageAccountKey
+        
+        Set-AzureStorageBlobContent `
+            -File $pathToStreamingFile `
+            -Blob "streaming.py" `
+            -Container $container `
+            -Context $context
+		
+        Set-AzureStorageBlobContent `
+            -File $pathToJythonFile `
+            -Blob "jython.py" `
+            -Container $container `
+            -Context $context
 
 	此脚本将检索 HDInsight 群集的信息，然后提取默认存储帐户的名称和密钥，并将文件上载到容器的根目录。
 
-	> [AZURE.NOTE][在 HDInsight 中上载 Hadoop 作业的数据文档](/documentation/articles/hdinsight-upload-data)中介绍了上载脚本的其他方法。
+	> [AZURE.NOTE][在 HDInsight 中上载 Hadoop 作业的数据](/documentation/articles/hdinsight-upload-data)文档中介绍了上载脚本的其他方法。
 
 上载文件后，使用以下 PowerShell 脚本启动作业。在完成作业时，会将输出写入到 PowerShell 控制台。
 
 ####Hive
 
+以下脚本将运行 __streaming.py__ 脚本。在运行前，它将提示你输入 HDInsight 群集的 HTTPs/Admin 帐户信息。
+
     # Replace 'YourHDIClusterName' with the name of your cluster
 	$clusterName = YourHDIClusterName
-
+    $creds=Get-Credential
+    #Get the cluster info so we can get the resource group, storage, etc.
+    $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+    $resourceGroup = $clusterInfo.ResourceGroup
+    $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+    $container=$clusterInfo.DefaultStorageContainer
+    $storageAccountKey=Get-AzureRmStorageAccountKey `
+        -Name $storageAccountName `
+        -ResourceGroupName $resourceGroup `
+        | %{ $_.Key1 }
+    #Create a storage content and upload the file
+    $context = New-AzureStorageContext `
+        -StorageAccountName $storageAccountName `
+        -StorageAccountKey $storageAccountKey
+            
 	$HiveQuery = "add file wasb:///streaming.py;" +
 	             "SELECT TRANSFORM (clientid, devicemake, devicemodel) " +
 	               "USING 'D:\Python27\python.exe streaming.py' AS " +
@@ -219,15 +254,35 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 	             "FROM hivesampletable " +
 	             "ORDER BY clientid LIMIT 50;"
 
-	$jobDefinition = New-AzureHDInsightHiveJobDefinition -Query $HiveQuery -StatusFolder '/hivepython'
+	$jobDefinition = New-AzureRmHDInsightHiveJobDefinition `
+        -Query $HiveQuery
 
-	$job = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $jobDefinition
+	$job = Start-AzureRmHDInsightJob `
+        -ClusterName $clusterName `
+        -JobDefinition $jobDefinition `
+        -HttpCredential $creds
 	Write-Host "Wait for the Hive job to complete ..." -ForegroundColor Green
-	Wait-AzureHDInsightJob -Job $job
+	Wait-AzureRmHDInsightJob `
+        -JobId $job.JobId `
+        -ClusterName $clusterName `
+        -HttpCredential $creds
     # Uncomment the following to see stderr output
-    # Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
+    # Get-AzureRmHDInsightJobOutput `
+        -Clustername $clusterName `
+        -JobId $job.JobId `
+        -DefaultContainer $container `
+        -DefaultStorageAccountName $storageAccountName `
+        -DefaultStorageAccountKey $storageAccountKey `
+        -HttpCredential $creds `
+        -DisplayOutputType StandardError
 	Write-Host "Display the standard output ..." -ForegroundColor Green
-	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardOutput
+	Get-AzureRmHDInsightJobOutput `
+        -Clustername $clusterName `
+        -JobId $job.JobId `
+        -DefaultContainer $container `
+        -DefaultStorageAccountName $storageAccountName `
+        -DefaultStorageAccountKey $storageAccountKey `
+        -HttpCredential $creds
 
 **Hive** 作业的输出应该如下所示：
 
@@ -239,24 +294,62 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 ####Pig
 
+下面将使用 __jython.py__ 脚本。在运行前，它将提示你输入 HDInsight 群集的 HTTPs/Admin 信息。
+
 	# Replace 'YourHDIClusterName' with the name of your cluster
 	$clusterName = YourHDIClusterName
 
+    $creds = Get-Credential
+    #Get the cluster info so we can get the resource group, storage, etc.
+    $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+    $resourceGroup = $clusterInfo.ResourceGroup
+    $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+    $container=$clusterInfo.DefaultStorageContainer
+    $storageAccountKey=Get-AzureRmStorageAccountKey `
+        -Name $storageAccountName `
+        -ResourceGroupName $resourceGroup `
+        | %{ $_.Key1 }
+    
+    #Create a storage content and upload the file
+    $context = New-AzureStorageContext `
+        -StorageAccountName $storageAccountName `
+        -StorageAccountKey $storageAccountKey
+            
 	$PigQuery = "Register wasb:///jython.py using jython as myfuncs;" +
 	            "LOGS = LOAD 'wasb:///example/data/sample.log' as (LINE:chararray);" +
 	            "LOG = FILTER LOGS by LINE is not null;" +
 	            "DETAILS = foreach LOG generate myfuncs.create_structure(LINE);" +
 	            "DUMP DETAILS;"
 
-	$jobDefinition = New-AzureHDInsightPigJobDefinition -Query $PigQuery -StatusFolder '/pigpython'
+	$jobDefinition = New-AzureRmHDInsightPigJobDefinition -Query $PigQuery
 
-	$job = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $jobDefinition
+	$job = Start-AzureRmHDInsightJob `
+        -ClusterName $clusterName `
+        -JobDefinition $jobDefinition `
+        -HttpCredential $creds
+        
 	Write-Host "Wait for the Pig job to complete ..." -ForegroundColor Green
-	Wait-AzureHDInsightJob -Job $job
+	Wait-AzureRmHDInsightJob `
+        -Job $job.JobId `
+        -ClusterName $clusterName `
+        -HttpCredential $creds
     # Uncomment the following to see stderr output
-    # Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
+    # Get-AzureRmHDInsightJobOutput `
+        -Clustername $clusterName `
+        -JobId $job.JobId `
+        -DefaultContainer $container `
+        -DefaultStorageAccountName $storageAccountName `
+        -DefaultStorageAccountKey $storageAccountKey `
+        -HttpCredential $creds `
+        -DisplayOutputType StandardError
 	Write-Host "Display the standard output ..." -ForegroundColor Green
-	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardOutput
+	Get-AzureRmHDInsightJobOutput `
+        -Clustername $clusterName `
+        -JobId $job.JobId `
+        -DefaultContainer $container `
+        -DefaultStorageAccountName $storageAccountName `
+        -DefaultStorageAccountKey $storageAccountKey `
+        -HttpCredential $creds
 
 **Pig** 作业的输出应该如下所示：
 
@@ -270,7 +363,14 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 用于运行示例的两个示例 PowerShell 脚本都包含一个带注释的行，该行将显示作业的错误输出。如果你未看到作业的预期输出，请取消注释以下行，并查看错误信息中是否指明了问题。
 
-	# Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
+	# Get-AzureRmHDInsightJobOutput `
+            -Clustername $clusterName `
+            -JobId $job.JobId `
+            -DefaultContainer $container `
+            -DefaultStorageAccountName $storageAccountName `
+            -DefaultStorageAccountKey $storageAccountKey `
+            -HttpCredential $creds `
+            -DisplayOutputType StandardError
 
 错误信息 (STDERR) 和作业的结果 (STDOUT) 还会记录到群集默认 Blob 容器中的以下位置。
 
@@ -281,7 +381,7 @@ Pig|/PigPython/stderr<p>/PigPython/stdout
 
 ##<a name="next"></a>后续步骤
 
-如果需要加载未按默认提供的 Python 模块，请参阅[如何将模块部署到 Azure HDInsight](http://blogs.msdn.com/b/benjguin/archive/2014/03/03/how-to-deploy-a-python-module-to-windows-azure-hdinsight.aspx)，以获取有关此操作的示例。
+如果需要加载默认情况下未提供的 Python 模块，请参阅[如何将模块部署到 Azure HDInsight](http://blogs.msdn.com/b/benjguin/archive/2014/03/03/how-to-deploy-a-python-module-to-windows-azure-hdinsight.aspx)，以获取有关如何执行此操作的示例。
 
 若要了解使用 Pig、Hive 的其他方式以及如何使用 MapReduce，请参阅以下内容。
 
@@ -291,4 +391,4 @@ Pig|/PigPython/stderr<p>/PigPython/stdout
 
 * [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1207_2015-->

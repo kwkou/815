@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="10/28/2015"
+	wacn.date=""/>
 
 
 #使用 Azure 虚拟网络扩展 HDInsight 功能
@@ -165,4 +165,4 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 若要了解有关 Azure 虚拟网络的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview)。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

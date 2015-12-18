@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
-	wacn.date="12/15/2015"/>
+	ms.date="11/06/2015"
+	wacn.date=""/>
 
 # 将 Pig 与 HDInsight 上的 Hadoop 配合使用
 
@@ -39,19 +39,21 @@ Pig Latin 还支持使用用户定义函数 (UDF) 来调用外部组件，以便
 
 如需通过 Pig 使用 UDF 的示例，请参阅以下文档：
 
-* [在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-python)
+* [在 HDInsight 中通过 Pig 使用 DataFu](/documentation/articles/hdinsight-hadoop-use-pig-datafu-udf) - DataFu 是由 Apache 维护的有用 UDF 的集合
+
+* [在 HDInsight 中将 Python 与 Pig 和 Hive 配合使用](/documentation/articles/hdinsight-python)
 
 * [在 HDInsight 中将 C# 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-hadoop-hive-pig-udf-dotnet-csharp)
 
 ##<a id="data"></a>关于示例数据
 
-本示例使用 *log4j* 示例文件，该文件存储在 Blob 存储容器的 **/example/data/sample.log** 中。文件内的每个日志具有包含 `[LOG LEVEL]` 字段的一行字段以显示类型和严重级别，例如：
+本示例使用 *log4j* 示例文件，该文件存储在 Blob 存储容器的 **/example/data/sample.log** 中。该文件中的每个日志都包含一行字段，其中包含一个 `[LOG LEVEL]` 字段，用于显示类型和严重性，例如：
 
 	2012-02-03 20:26:41 SampleClass3 [ERROR] verbose detail for id 1527353937
 
 在前面的示例中，日志级别为 ERROR。
 
-> [AZURE.NOTE]你还可以使用 [Apache Log4j](http://zh.wikipedia.org/wiki/Log4j) 日志记录工具来生成 log4j 文件，然后将该文件上载到 Blob。请参阅[将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data) 以获取相关说明。有关如何将 Azure 存储空间中的 Blob 用于 HDInsight 的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。
+> [AZURE.NOTE]你还可以使用 [Apache Log4j](http://en.wikipedia.org/wiki/Log4j) 日志记录工具来生成 log4j 文件，然后将该文件上载到 Blob。请参阅[将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data) 以获取相关说明。有关如何将 Azure 存储空间中的 Blob 用于 HDInsight 的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage)。
 
 示例数据存储在 Azure Blob 存储中，HDInsight 可以将该存储用作 Hadoop 群集的默认文件系统。HDInsight 可以使用 **wasb** 前缀来访问存储在 Blob 中的文件。例如，若要访问 sample.log 文件，可使用以下语法：
 
@@ -59,7 +61,7 @@ Pig Latin 还支持使用用户定义函数 (UDF) 来调用外部组件，以便
 
 由于 WASB 是 HDInsight 的默认存储，你也可以使用 Pig Latin 中的 **/example/data/sample.log** 来访问该文件。
 
-> [AZURE.NOTE]语法 **wasb:///** 用于访问存储在 HDInsight 群集的默认存储容器中的文件。如果你在预配群集时指定了其他存储帐户，并且你想要访问存储在这些帐户中的文件，则可以通过指定容器名称和存储帐户地址来访问这些数据，例如：**wasb://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log**。
+> [AZURE.NOTE]语法 ****wasb:///** 用于访问存储在 HDInsight 群集的默认存储容器中的文件。如果你在预配群集时指定了其他存储帐户，并且你想要访问存储在这些帐户中的文件，则可以通过指定容器名称和存储帐户地址来访问这些数据，例如：****wasb://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log**。
 
 
 ##<a id="job"></a>关于示例作业
@@ -139,4 +141,4 @@ HDInsight 可以使用各种方法来运行 Pig Latin 作业。使用下表来�
 [image-hdi-pig-powershell]: ./media/hdinsight-use-pig/hdi.pig.powershell.png
 [image-hdi-pig-architecture]: ./media/hdinsight-use-pig/HDI.Pig.Architecture.png
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1207_2015-->
