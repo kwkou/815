@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="11/03/2015"
-	wacn.date=""/>
+	wacn.date="12/17/2015"/>
 
 #将 Apache Mahout 与 HDInsight 中的 Hadoop 配合使用以生成电影推荐
 
@@ -514,7 +514,7 @@ Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些�
 [aps]: /documentation/articles/powershell-install-configure
 [movielens]: http://grouplens.org/datasets/movielens/
 [100k]: http://files.grouplens.org/datasets/movielens/ml-100k.zip
-[getstarted]: /documentation/articles/hdinsight-get-started
+[getstarted]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
 [upload]: /documentation/articles/hdinsight-upload-data
 [ml]: http://en.wikipedia.org/wiki/Machine_learning
 [forest]: http://en.wikipedia.org/wiki/Random_forest

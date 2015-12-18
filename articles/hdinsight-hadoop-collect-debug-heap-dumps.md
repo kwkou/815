@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/29/2015"
-	wacn.date=""/>
+	wacn.date="12/17/2015"/>
 
 
 # 将堆转储收集在 Blob 存储中，以便调试和分析 Hadoop 服务

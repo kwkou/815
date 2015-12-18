@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="11/03/2015"
-	wacn.date=""/>
+	wacn.date="12/17/2015"/>
 
 # 在 HDInsight 中安装和使用 Giraph
 

@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="11/06/2015"
-	wacn.date=""/>
+	wacn.date="12/17/2015"/>
 
 #使用 Curl 配合 HDInsight 上的 Hadoop 运行 Pig 作业
 
