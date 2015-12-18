@@ -5,12 +5,13 @@
  documentationCenter=""
  authors="Blackmist"
  manager="paulettm"
- editor="cgronlun"/>
+ editor="cgronlun"
+ tags="azure-portal"/>
 
 <tags
- ms.service="hdinsight"
- ms.date="09/02/2015"
- wacn.date="11/02/2015"/>
+	ms.service="hdinsight"
+	ms.date="10/30/2015"
+	wacn.date=""/>
 
 # 使用 HDInsight 上的 Storm 和 HBase 按时间对事件进行关联
 
@@ -20,7 +21,7 @@
 
 ## 先决条件
 
--	HDInsight Tools for Visual Studio：有关安装方面的信息，请参阅 [HDInsight Tools for Visual Studio 入门](/documentation/articles//hdinsight-hadoop-visual-studio-tools-get-started)。
+-	HDInsight Tools for Visual Studio：有关安装方面的信息，请参阅 [HDInsight Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)。
 
 -	Apache Storm on HDInsight 群集
 
@@ -193,4 +194,4 @@
 如需更多 Storm 示例，请参阅[Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology)。
  
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_1207_2015-->

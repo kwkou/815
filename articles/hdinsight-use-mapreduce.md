@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="11/06/2015"
+	wacn.date=""/>
 
 # 在 HDInsight 上的 Hadoop 中使用 MapReduce
 
@@ -62,13 +62,13 @@ Hadoop 流式处理通过 STDIN 和 STDOUT 与映射器和化简器通信 - 映�
 
 由于 Azure Blob 存储是 HDInsight 的默认存储，因此你也可以使用 **/example/data/gutenberg/davinci.txt** 访问该文件。
 
-> [AZURE.NOTE]在上述语法中，**wasb:///** 可用来访问 HDInsight 群集的默认存储容器所存储的文件。如果你在设置群集时指定了其他存储帐户，并想要访问这些帐户中存储的文件，你可以指定容器名称和存储帐户地址来访问数据。例如 **wasb://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/gutenberg/davinci.txt**。
+> [AZURE.NOTE]在上述语法中，****wasb:///** 用于访问 HDInsight 群集的默认存储容器中存储的文件。如果你在设置群集时指定了其他存储帐户，并想要访问这些帐户中存储的文件，你可以指定容器名称和存储帐户地址来访问数据。例如 ****wasb://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/gutenberg/davinci.txt**。
 
 ##<a id="job"></a>关于示例 MapReduce
 
-本示例中使用的 MapReduce 作业位于 HDInsight 群集随附的 **wasb://example/jars/hadoop-mapreduce-examples.jar** 中。其中包含一个你要针对 **davinci.txt** 运行的单词计数示例。
+本示例中使用的 MapReduce 作业位于 HDInsight 群集随附的 ****wasb://example/jars/hadoop-mapreduce-examples.jar** 中。其中包含一个你要针对 **davinci.txt** 运行的单词计数示例。
 
-> [AZURE.NOTE]在 HDInsight 2.1 群集上，该文件位于 **wasb:///example/jars/hadoop-examples.jar** 中。
+> [AZURE.NOTE]在 HDInsight 2.1 群集上，该文件位置为 ****wasb:///example/jars/hadoop-examples.jar**。
 
 下面提供了单词计数 MapReduce 作业的 Java 代码供你参考：
 
@@ -180,4 +180,4 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 
 [image-hdi-wordcountdiagram]: ./media/hdinsight-use-mapreduce/HDI.WordCountDiagram.gif
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1207_2015-->
