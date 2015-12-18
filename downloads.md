@@ -1,7 +1,7 @@
 <properties linkid="downloads" urlDisplayName="下载和安装 Azure SDK工具" pageTitle="Windows Azure 服务管理" metaKeywords="下载和安装 Azure SDK工具" description="下载和安装 Azure SDK、Azure PowerShell 和用于管理和部署的命令行工具" metaCanonical="" services="downloads" documentationCenter="downloads" title="下载和安装 Azure SDK工具" authors="ACom" solutions="" manager="" editor="Eric Chen" />
 <tags ms.service="downloads"
     ms.date=""
-    wacn.date="10/12/2015"
+    wacn.date="12/18/2015"
     />
 
 
@@ -19,7 +19,7 @@
     <ul>
       <li><a href="http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x804">VS 2015 安装</a></li>
       <li><a href="http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x804">VS 2013 安装</a></li>
-      <li><a href="http://go.microsoft.com/fwlink/p/?linkid=323511&clcid=0x804">VS 2012 安装</a></li>
+      <li><a href="https://www.nuget.org/packages?q=Author%3AMicrosoft%20Tags%3Adotnetcore">.NET Core</a></li>
       <li><a href="http://go.microsoft.com/fwlink/?linkid=234674&clcid=0x804">客户端库</a></li>
       <li><a href="/develop/net/">文档</a></li>
       <!--li><a href="http://azure.microsoft.com/zh-cn/downloads/archive-net-downloads/">以前的版本</a></li-->
@@ -103,9 +103,10 @@
   <div>
     <h4>Windows PowerShell</h4>
     <ul>
-      <li><a href="http://go.microsoft.com/?linkid=9811175&clcid=0x804">安装</a></li>
+      <li><a href="http://aka.ms/webpi-azps">安装</a></li>
+	  <li><a href="http://go.microsoft.com/?linkid=9811175&clcid=0x804">安装旧版</a></li>
       <li><a href="/documentation/articles/install-configure-powershell/">文档</a></li>
-      <!--li><a href="https://technet.microsoft.com/zh-cn/scriptcenter/bb410849.aspx">浏览脚本中心</a></li-->
+      <li><a href="https://technet.microsoft.com/zh-cn/scriptcenter/bb410849.aspx">浏览脚本中心</a></li>
     </ul>
   </div>
   <div>
@@ -120,9 +121,15 @@
   <div>
     <h4>适用于 Azure 存储的命令行工具</h4>
     <ul>
-      <li><a href="http://aka.ms/downloadazcopypr">安装预览版</a></li>
       <li><a href="http://aka.ms/downloadazcopy">安装发行版</a></li>
       <li><a href="http://aka.ms/azcopy">文档</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Azure 存储模拟器</h4>
+    <ul>
+      <li><a href="http://go.microsoft.com/fwlink/?linkid=717179&clcid=0x804">安装</a></li>
+      <li><a href="/documentation/articles/storage-use-emulator/">文档</a></li>
     </ul>
   </div>
 </div>
@@ -141,8 +148,19 @@
   <div>
     <h3>Azure Websites Migration Assistant</h3>
     <ul>
-      <!--li><a href="http://go.microsoft.com/?linkid=9863189&clcid=0x804">安装</a></li-->
+      <li><a href="http://go.microsoft.com/?linkid=9863189&clcid=0x804">安装</a></li>
       <li><a href="/downloads/migration-assistant/">文档</a></li>
     </ul>
   </div>
 </div>
+<div>
+  <h2>独立工具</h2>
+  <p>从你选择的平台管理你的 Azure 资源。</p>
+</div>
+<div>
+    <h3>存储资源管理器</h3>
+    <ul>
+      <li><a href="http://go.microsoft.com/fwlink/?linkid=698844&clcid=0x804">Windows 安装</a></li>
+      <li><a href="http://go.microsoft.com/fwlink/?linkid=698845&clcid=0x804">Mac 安装</a></li>
+    </ul>
+  </div>
