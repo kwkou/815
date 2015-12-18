@@ -55,7 +55,7 @@
 
     $hint = Get-AzureRMSqlServerUpgradeHint -ResourceGroupName “resourcegroup1” -ServerName “server1” 
 
-有关详细信息，请参阅 [Azure SQL 数据库弹性数据库池建议](/documentation/articles/sql-database-elastic-pool-portal/#elastic-database-pool-pricing-tier-recommendations)和 [Azure SQL 数据库定价层建议](/documentation/articles/sql-database-service-tier-advisor)。
+有关详细信息，请参阅 [Azure SQL 数据库弹性数据库池建议](/documentation/articles/sql-database-elastic-pool-portal/#elastic-database-pool-pricing-tier-recommendations)。
 
 
 
