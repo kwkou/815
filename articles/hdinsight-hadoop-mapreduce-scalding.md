@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/15/2015"
-	wacn.date=""/>
+	wacn.date="12/17/2015"/>
 
 # 使用 Apache Hadoop on HDInsight 开发 Scalding MapReduce 作业
 

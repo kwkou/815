@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="11/04/2015"
-	wacn.date=""/>
+	wacn.date="12/17/2015"/>
 
 # 使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集
 
@@ -28,14 +28,14 @@
 在开始阅读本文前，你必须具有：
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-- **Azure 存储帐户** - HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。有关 Azure Blob 存储如何提供与 HDInsight 群集的无缝体验的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage)。有关创建 Azure 存储帐户的详细信息，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account)。
+- **Azure 存储帐户** - HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。有关 Azure Blob 存储如何提供与 HDInsight 群集的无缝体验的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。有关创建 Azure 存储帐户的详细信息，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account)。
 
 
 ##设置 HDInsight 群集
 
 你可以在 Azure 管理门户中使用“快速创建”或“自定义创建”选项预配 HDInsight 群集。有关说明，请参阅以下链接：
 
-- [使用“快速创建”设置群集](/documentation/articles/hdinsight-get-started#provision)
+- [使用“快速创建”设置群集](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows#provision)
 - [使用“自定义创建”设置群集](/documentation/articles/hdinsight-provision-clusters#portal)
 
 [AZURE.INCLUDE [数据中心列表](../includes/hdinsight-pricing-data-centers-clusters.md)]
@@ -183,7 +183,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 * [使用 Azure CLI 管理 HDInsight](/documentation/articles/hdinsight-administer-use-command-line)
 * [设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)
 * [以编程方式提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)
-* [Azure HDInsight 入门](/documentation/articles/hdinsight-get-started)
+* [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows)
 * [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles/hdinsight-component-versioning)
 
 [image-cluster-quickcreate]: ./media/hdinsight-administer-use-management-portal-v1/HDI.QuickCreateCluster.png
