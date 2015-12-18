@@ -132,16 +132,11 @@
 
 ## 其他资源
 
-* <!--[-->Azure 资源管理器概述<!--][]-->
-* <!--[-->使用标记组织 Azure 资源<!--][]-->
-* <!--[-->了解 Azure 帐单<!--][]-->
-* <!--[-->深入了解 Windows Azure 资源消耗<!--][]-->
-
-
+* [Azure 资源管理器概述][]
+* [使用标记组织 Azure 资源][]
 
 [将 PowerShell 环境用于 Azure 资源管理器]: /documentation/articles/powershell-azure-resource-manager
 [Azure 资源 Cmdlet]: https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx
-[Azure CLI 环境]: /documentation/articles/xplat-cli-azure-resource-manager
 [Azure 资源管理器概述]: /documentation/articles/resource-group-overview
 [使用标记组织 Azure 资源]: /documentation/articles/resource-group-using-tags
 [了解 Azure 帐单]: /documentation/articles/billing-understand-your-bill

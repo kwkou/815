@@ -70,11 +70,12 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 [概述]: /documentation/articles/resource-group-overview
 
 [Create a Virtual Machine Running Windows]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
-[Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-tutorial
+[Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm
 
 [适合使用针对 Mac、Linux 和 Windows 的 Azure CLI 进行 VM 操作的等效资源管理器和服务管理命令]: /documentation/articles/xplat-cli-azure-manage-vm-asm-arm
-[使用 Azure 资源管理器模板与 Azure CLI 来部署和管理虚拟机]: /documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli
+
 [使用 Azure 资源管理器模板与 PowerShell 来部署和管理虚拟机]: /documentation/articles/virtual-machines-deploy-rmtemplates-powershell
+
 [使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机]: /documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms
 
 [如何在 Azure 中创建运行 Linux 的自定义虚拟机]: /documentation/articles/virtual-machines-linux-create-custom

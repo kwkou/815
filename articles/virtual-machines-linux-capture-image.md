@@ -90,6 +90,6 @@ Azure 将此模板视为一个映像并将其存储在“映像”下。这也�
 [关于 Azure 中的虚拟机映像]: http://msdn.microsoft.com/zh-cn/library/azure/dn790290.aspx
 [如何创建自定义虚拟机]: /documentation/articles/virtual-machines-create-custom
 [How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/storage-windows-attach-disk
-[如何创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-tutorial
+[如何创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm
 
 <!---HONumber=79-->
