@@ -21,11 +21,11 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用服务管理器上载 VHD。
 
-Azure 中的虚拟机所运行的操作系统基于你在创建虚拟机时选择的映像。你的映像以 VHD 格式和 .vhd 文件的形式存储在存储帐户中。有关详细信息，请参阅[关于 Azure 中的磁盘和映像](https://msdn.microsoft.com/library/azure/jj672979.aspx)。
+Azure 中的虚拟机所运行的操作系统基于你在创建虚拟机时选择的映像。你的映像以 VHD 格式和 .vhd 文件的形式存储在存储帐户中。有关详细信息，请参阅[关于 Azure 中的磁盘和映像](https://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx)。
 
 当你创建虚拟机时，你可以自定义部分操作系统设置，使之适合于要运行的应用程序。有关说明，请参阅[如何创建自定义虚拟机](/documentation/articles/virtual-machines-create-custom)。
 
-**重要说明**：只有在使用某个认可的分发的时候也使用 [Azure上的 Linux 认可的分发](/documentation/articles/linux-endorsed-distributions)中“支持的版本”下指定的配置详细信息时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。Azure 映像库中的所有 Linux 分发都是具有所需配置的认可的分发。
+**重要说明**：只有在使用某个认可的分发的时候也使用 [Azure上的 Linux 认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distributions)中“支持的版本”下指定的配置详细信息时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。Azure 映像库中的所有 Linux 分发都是具有所需配置的认可的分发。
 
 
 ##先决条件##
@@ -33,11 +33,11 @@ Azure 中的虚拟机所运行的操作系统基于你在创建虚拟机时选�
 
 - **管理证书** - 你已为要为其上载 VHD 的订阅创建一个管理证书，并且已将该证书导出到 .cer 文件。有关创建证书的详细信息，请参阅[为 Azure 创建和上载管理证书](/documentation/articles/cloud-services-certs-create/)（可能为英文页面）。
 
-- **安装在 .vhd 文件中的 Linux 操作系统** - 你已将受支持的 Linux 操作系统安装到虚拟硬盘。存在多种工具可创建 .vhd 文件，例如，可以使用虚拟化解决方案（例如 Hyper-V）创建 .vhd 文件并安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/library/hh846766.aspx)。
+- **安装在 .vhd 文件中的 Linux 操作系统** - 你已将受支持的 Linux 操作系统安装到虚拟硬盘。存在多种工具可创建 .vhd 文件，例如，可以使用虚拟化解决方案（例如 Hyper-V）创建 .vhd 文件并安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。
 
 	**重要说明**：Azure 不支持更新的 VHDX 格式。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。
 
-	有关认可分发的列表，请参阅 [Azure 认可的分发中的 Linux](/documentation/articles/linux-endorsed-distributions)。或者，请参阅本文最后一节中的[非认可分发的信息](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic)。
+	有关认可分发的列表，请参阅 [Azure 认可的分发中的 Linux](/documentation/articles/virtual-machines-linux-endorsed-distributions)。或者，请参阅本文最后一节中的[非认可分发的信息](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic)。
 
 - **Azure 命令行界面** - 如果你使用 Linux 操作系统来创建映像，则使用 [Azure 命令行界面](/documentation/articles/virtual-machines-command-line-tools)来上载 VHD。
 
@@ -45,7 +45,7 @@ Azure 中的虚拟机所运行的操作系统基于你在创建虚拟机时选�
 
 ## <a id="prepimage"> </a>步骤 1：准备要上载的映像 ##
 
-Windows Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentation/articles/linux-endorsed-distributions)）。以下文章将指导你完成如何准备 Azure 上支持的各种 Linux 分发：
+Windows Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distributions)）。以下文章将指导你完成如何准备 Azure 上支持的各种 Linux 分发：
 
 - **[基于 CentOS 的分发](/documentation/articles/virtual-machines-linux-create-upload-vhd-centos)**
 - **[Oracle Linux](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)**
@@ -65,15 +65,19 @@ Windows Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentat
 
 ### 如果使用 Azure CLI
 
+最新版的Azure CLI默认为资源管理模式，所以需要执行以下命令来确保您处于服务管理模式
+
+	`azure config mode asm`
+
+之后您可以使用以下登录方式中一种连接到您的Azure订阅。  
+
 使用 Azure AD 方法登录：
 
 1. 打开 Azure CLI 窗口
 
-2. 键入：
+2. 键入一下命令，并将其中的<username>和<password>分别替换为您的用户名和密码：
 
-	`azure login`
-
-	出现提示时，键入你的用户名和密码。
+	`azure login -e AzureChinaCloud -u <username> -p <password>`
 
 **或者**，改用 PublishSettings 文件：
 
@@ -81,7 +85,7 @@ Windows Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentat
 
 2. 键入：
 
-	`azure account download`
+	`azure account download -e AzureChinaCloud`
 
 	此命令将打开浏览器窗口，并自动下载包含信息的 .publishsettings 文件和 Azure 订阅的证书。
 
@@ -136,7 +140,7 @@ Windows Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentat
 
 使用 Azure CLI 上载映像。可使用以下命令上载映像：
 
-		azure vm image create <image-name> --location <location-of-the-data-center> --os Linux <source-path-to the vhd>
+	azure vm image create <image-name> --location <location-of-the-data-center> --os Linux <source-path-to the vhd>
 
 ### 如果使用 PowerShell
 
@@ -146,9 +150,9 @@ Windows Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentat
 
 从你在上一步中使用的 Azure PowerShell 窗口中，键入：
 
-		Add-AzureVhd -Destination <BlobStorageURL>/<YourImagesFolder>/<VHDName> -LocalFilePath <PathToVHDFile>
+	Add-AzureVhd -Destination <BlobStorageURL>/<YourImagesFolder>/<VHDName> -LocalFilePath <PathToVHDFile>
 
-	For more information, see [Add-AzureVhd](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn205185.aspx).
+For more information, see [Add-AzureVhd](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn205185.aspx).
 
 
 
