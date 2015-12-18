@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="11/06/2015"
+	wacn.date="12/17/2015"/>
 
 #使用 Apache Storm on HDInsight 处理 Azure 事件中心的车辆传感器数据
 
@@ -54,4 +54,4 @@ GitHub 上的 <a href="https://github.com/hdinsight/hdinsight-storm-examples" ta
 
 如需更多 Storm 拓扑示例，请参阅 [Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology)。
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1207_2015-->

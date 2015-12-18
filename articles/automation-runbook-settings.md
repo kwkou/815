@@ -6,10 +6,10 @@
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags 
-   ms.service="automation"
-   ms.date="07/22/2015"
-   wacn.date="09/15/2015" />
+<tags
+	ms.service="automation"
+	ms.date="10/22/2015"
+	wacn.date="12/17/2015"/>
 
 # Runbook 设置
 
@@ -42,7 +42,7 @@ Azure Automation 中的每个 Runbook 都提供了多个设置用于帮助标识
 
 ### 使用 Windows PowerShell 更改 Runbook 设置
 
-可以使用 [Set-AzureAutomationRunbook](https://msdn.microsoft.com/zh-CN/library/dn690275.aspx) cmdlet 更改 Runbook 的设置。如果想要指定多个标记，可以向 Tags 参数提供一个数组，或者一个包含逗号分隔值的字符串。可以使用 [Get-AzureAutomationRunbook](https://msdn.microsoft.com/zh-CN/library/dn690278.aspx) 获取当前标记。
+可以使用 [Set-AzureAutomationRunbook](https://msdn.microsoft.com/zh-cn/library/dn690275.aspx) cmdlet 更改 Runbook 的设置。如果想要指定多个标记，可以向 Tags 参数提供一个数组，或者一个包含逗号分隔值的字符串。可以使用 [Get-AzureAutomationRunbook](https://msdn.microsoft.com/zh-cn/library/dn690278.aspx) 获取当前标记。
 
 以下示例命令演示了如何设置 Runbook 的属性。此示例向现有标记添加了三个标记，并指定应该记录详细记录。
 
@@ -53,7 +53,7 @@ Azure Automation 中的每个 Runbook 都提供了多个设置用于帮助标识
 	Set-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName -LogVerbose $true -Tags $tags
 
 ## 相关文章
-- [Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages)
-- [创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook)
+- [Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages) 
+- [创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook) 
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1207_2015-->

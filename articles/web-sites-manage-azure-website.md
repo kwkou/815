@@ -7,29 +7,30 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
+<tags
 	ms.service="web-sites" 
-	ms.date="07/31/2015" 
+	ms.date="10/28/2015"
 	wacn.date="12/17/2015"/>
 
 # 管理 Azure 网站中的网站
 
-本主题包含用于管理 [Azure 网站](/documentation/services/web-sites/) 中网站的资源链接。管理包括维持网站平稳运行的所有任务。
+本主题包含用于管理 [Azure 网站](/documentation/services/web-sites/)中网站的资源链接。管理包括维持网站平稳运行的所有任务。
 
 在整个网站使用期内，您将执行各种管理任务，从初始部署到正常操作、维护与更新。
 
-许多网站管理任务都可在 Azure 门户中执行。
+许多网站管理任务都可在 Azure 管理门户中执行。
 
 ## 将网站部署到生产之前
 
 ### 选择层级
 
-- [Azure 网站计划](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview)支持您在同一层对多个网站进行分组。
+提供四个级别的 Azure 网站：免费、共享、基本和标准。有关各级别的特性与定价的信息，请参阅[定价详情](/home/features/web-site/#price)。
+
 - 您可以在创建网站之后经常[切换层](/documentation/articles/web-sites-scale)。
 
 ### 配置
 
-使用 [Azure 门户](https://manage.windowsazure.cn)设置各种配置选项。有关详细信息，请参阅 [Azure 网站中的 /documentation/articles/Configure网站](/documentation/articles/web-sites-configure)。下面是快速核对清单：
+使用 [Azure 管理门户](https://manage.windowsazure.cn/)设置各种配置选项。有关详细信息，请参阅[在 Azure 网站中配置网站](/documentation/articles/web-sites-configure)。下面是快速核对清单：
 
 - 如有需要，请选择针对 .NET、PHP、Java 或 Python 的**运行时版本**。
 - 如果您的网站使用 WebSocket 协议，请启用 **WebSocket**。（这包括使用 [ASP.NET SignalR](http://www.asp.net/signalr) 或 [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio) 的应用。）
@@ -44,7 +45,7 @@
 特定于语言的配置：
 
 - **PHP**：[在 Azure 网站中配置 PHP](/documentation/articles/web-sites-php-configure)。
-- **Python**：[使用 Azure 网站配置 Python](/documentation/articles/web-sites-python-configure)。
+- **Python**：[配置 Azure 网站的 Python](/documentation/articles/web-sites-python-configure)
 
 
 ##网站运行期间
@@ -53,20 +54,19 @@
 
 ### 监视
 
-- 通过 Azure 预览门户，您可以[添加性能度量值](/documentation/articles/web-sites-monitor)（如 CPU 使用率和客户端请求数）。
-- 如欲获取更加深入的洞察，请使用 New Relic 监视和管理性能。请参阅[在 Azure 网站中的 .NET网站上使用 New Relic 应用程序性能管理](/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management)。
+- 通过 Azure 管理门户，你可以[添加性能度量值](/documentation/articles/web-sites-monitor)（如 CPU 使用率和客户端请求数）。
 - [缩放您的网站](/documentation/articles/web-sites-scale)以响应流量。您可以根据不同的层缩放虚拟机数量和/或虚拟机实例的大小。在标准层和高级层中，您还可以设置自动缩放，那么您的网站将能够根据固定计划，或以负载为依据进行自动缩放。  
  
 ### 备份
 
 - 设置网站的[自动备份](/documentation/articles/web-sites-backup)。
-- 了解 Azure SQL 数据库的[数据库恢复](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)选项。
+- 了解 Azure SQL 数据库的[数据库恢复](/documentation/articles/sql-database-business-continuity/)选项。
 
 ### 故障排除
 
 - 如果出现问题，您可以使用云中的诊断日志和实时调试[在 Visual Studio 中排除故障](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#remotedebug)。 
 - 在 Visual Studio 之外还提供了不同的诊断日志收集方法。请参阅[在 Azure 网站中启用网站的诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)。
-- 关于 Node.js 应用程序，请参阅[如何在 Azure 网站中调试 Node.js网站](/documentation/articles/web-sites-nodejs-debug)。
+- 关于 Node.js 应用程序，请参阅[如何在 Azure 网站中调试 Node.js 网站](/documentation/articles/web-sites-nodejs-debug)。
 
 ### 还原数据
 
@@ -79,13 +79,6 @@
 
 请考虑使用[分阶段部署](/documentation/articles/web-sites-staged-publishing)。该选项可支持您向与生产部署并排运行的分阶段部署发布更新。
 
-如果使用 Visual Studio Online，您可以通过源控件设置持续部署：
-
-- [使用 Team Foundation 版本控制 (TFVC)](/documentation/articles/cloud-services-continuous-delivery-use-vso) 
-- [使用 Git](/documentation/articles/cloud-services-continuous-delivery-use-vso-git)
- 
-
- 
 <!-- Anchors. -->
 
 
@@ -95,4 +88,4 @@
 
   
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_1207_2015-->

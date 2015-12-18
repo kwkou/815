@@ -6,11 +6,11 @@
  authors="Blackmist"
  manager="paulettm"
  editor="cgronlun"
- tags="azure-portal"/>
+	tags="azure-portal"/>
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="10/15/2015"
+	wacn.date="12/17/2015"/>
 
 # 使用 Apache Hadoop on HDInsight 开发 Scalding MapReduce 作业
 
@@ -21,7 +21,7 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 ## 先决条件
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-* **HDInsight 群集上的基于 Windows 的 Hadoop**。有关详细信息，请参阅[在 HDInsight 上预配基于 Windows 的 Hadoop](/documentation/articles/hdinsight-provision-clusters)。
+* **HDInsight 群集上基于 Windows 的 Hadoop**。有关详细信息，请参阅[在 HDInsight 上预配基于 Windows 的 Hadoop](/documentation/articles/hdinsight-provision-clusters)。
 
 * **[Maven](http://maven.apache.org/)**
 
@@ -228,10 +228,6 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
         wrotefootnote   1
         wrought 7
 
-7. 如果输出为空或该文件不存在，则你可以使用以下命令来查看运行该作业时发生的任何错误：
-
-        Get-AzureHdinsightJobOutput -cluster $clusterName -jobId $job.JobId -standarderror
-
 ## 后续步骤
 
 现在，你已学习如何使用 Scalding 来创建适用于 HDInsight 的 MapRedcue 作业，接下来请使用以下链接学习 Azure HDInsight 的其他用法。
@@ -242,4 +238,4 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
 * [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

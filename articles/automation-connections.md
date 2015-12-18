@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Azure 自动化中的连接资产"
+   pageTitle="Azure 自动化中的连接资产 | Windows Azure"
    description="Azure 自动化中的连接资产包含从 Runbook 连接到外部服务或应用程序所需的信息。本文介绍了有关连接的详细信息，以及如何在文本和图形创作中使用连接。"
    services="automation"
    documentationCenter=""
@@ -7,9 +7,9 @@
    manager="stevenka"
    editor="tysonn" />
 <tags
-   ms.service="automation"
-   ms.date="08/18/2015"
-   wacn.date="12/14/2015" />
+	ms.service="automation"
+	ms.date="10/23/2015"
+	wacn.date="12/17/2015"/>
 
 # Azure 自动化中的连接资产
 
@@ -30,7 +30,7 @@
 |[Remove-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921827.aspx)|删除现有连接。|
 |[Set-AzureAutomationConnectionFieldValue](http://msdn.microsoft.com/zh-cn/library/dn921826.aspx)|设置现有连接的一个特定字段的值。|
 
-## Runbook 活动
+## 活动
 
 下表中的活动用于在 Runbook 中访问连接。
 
@@ -42,13 +42,15 @@
 
 ## 创建新连接
 
-### 使用 Azure 门户创建新连接
+### 使用 Azure 管理门户创建新连接
 
-1. 在您的自动化帐户中，单击窗口顶部的“资产”。
+1. 在你的自动化帐户中，单击窗口顶部的“资产”。
 1. 在窗口底部，单击“添加设置”。
 1. 单击“添加连接”。
 2. 在“连接类型”下拉列表中，选择您想要创建连接的类型。向导将显示该特定类型的属性。
 1. 完成该向导并单击该复选框以保存新连接。
+
+
 
 
 ### 使用 Windows PowerShell 创建新连接
@@ -85,4 +87,4 @@
 
  
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1207_2015-->

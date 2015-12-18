@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="11/06/2015"
+	wacn.date="12/17/2015"/>
 
 #Apache Storm on HDInsight 简介：面向 Hadoop 的实时分析
 
@@ -61,7 +61,7 @@ HDInsight Tools for Visual Studio 还提供了一个接口让你监视和管理�
 
 ![Storm 管理](./media/hdinsight-storm-overview/stormview.png)
 
-有关使用 HDInsight 工具创建 HDInsight 应用程序的示例，请参阅[使用 HDInsight Tools for Visual Studio 开发 C# Storm 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology)。
+有关使用 HDInsight 工具创建 Storm 应用程序的示例，请参阅[使用 HDInsight Tools for Visual Studio 开发 C# Storm 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology)。
 
 有关 HDInsight Tools for Visual Studio 的详细信息，请参阅 [HDInsight Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)。
 
@@ -71,7 +71,7 @@ HDInsight Tools for Visual Studio 还提供了一个接口让你监视和管理�
 
 有关使用 Storm 仪表板的详细信息，请参阅[在 HDInsight 上部署和管理 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology)。
 
-Storm on HDInsight 还支持通过**事件中心 Spout** 与 Azure 事件中心轻松集成。可以使用 **%STORM\_HOME%\\examples\\eventhubspout\\eventhubs-storm-spout-0.9-jar-with-dependencies.jar** 在每个 Storm 群集上实现此目的。有关在 Storm 中使用此 Spout 的示例，请参阅以下文档：
+Storm on HDInsight 还支持通过**事件中心 Spout** 与 Azure 事件中心轻松集成。可以使用 **%STORM\_HOME%\\examples\\eventhubspout\\eventhubs-storm-spout-0.9-jar-with-dependencies.jar** 在每个 Storm 群集上实现此目的。有关在 Storm 拓扑中使用此 Spout 的示例，请参阅以下文档：
 
 * [开发使用 Azure 事件中心的 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology)
 
@@ -81,7 +81,7 @@ Storm on HDInsight 还支持通过**事件中心 Spout** 与 Azure 事件中心�
 
 Apache Storm 始终保证每个传入消息将完全处理，即使数据分析分散在数百个节点。
 
-**Nimbus 节点**为 Hadoop 作业跟踪器中，提供了类似的功能，它将任务分配给通过群集中的其他节点 **Zookeeper**。Zookeeper 节点提供有关群集的协调和便于 Nimbus 之间进行交流和 **Supervisor** 进程在辅助节点上。如果处理的一个节点出现故障，Nimbus 节点将得到通知，并分配到另一个节点的任务和关联的数据。
+**Nimbus 节点**提供的功能与 Hadoop JobTracker 类似，它通过 **Zookeeper** 将任务分配给群集中的其他节点。Zookeeper 节点为群集提供协调功能，并促进 Nimbus 与辅助节点上的 **Supervisor** 进程进行通信。如果处理的一个节点出现故障，Nimbus 节点将得到通知，并分配到另一个节点的任务和关联的数据。
 
 Apache Storm 的默认配置是只能有一个 Nimbus 节点。Storm on HDInsight 运行两个 Nimbus 节点。如果主节点出现故障，HDInsight 群集将切换到辅助节点，同时主节点将会恢复。
 
@@ -111,29 +111,29 @@ Storm on HDInsight 附带全天候企业级支持。Storm on HDInsight 也提供
 
 ##如何处理 HDInsight Storm 中的数据？
 
-Apache Storm 群集运行的是**拓扑**，而不是你在 HDInsight 或 Hadoop 中可能熟悉的 MapReduce 作业。Storm on HDInsight 群集包含两种节点：运行 **Nimbus** 的头节点和运行 **Supervisor** 的辅助节点。
+Apache Storm 运行的是**拓扑**，而不是你在 HDInsight 或 Hadoop 中可能熟悉的 MapReduce 作业。Storm on HDInsight 群集包含两种类型的节点：运行 **Nimbus** 的头节点和运行 **Supervisor** 的辅助节点。
 
-* **Nimbus**：类似于 Hadoop 中的 JobTracker，负责在整个群集中分发节点、将任务分配给虚拟机以及监视故障情况。HDInsight 提供两个 Nimbus 节点，因此 Storm on HDInsight 不会出现单点故障
+* **Nimbus**：类似于 Hadoop 中的 JobTracker，负责在整个群集中分发代码、将任务分配给虚拟机以及监视故障情况。HDInsight 提供两个 Nimbus 节点，因此 Storm on HDInsight 不会出现单点故障
 
-* **Supervisor**：每个辅助节点的 supervisor 负责开始和停止该节点上的**工作进程**。
+* **Supervisor**：每个辅助节点的 supervisor 负责启动和停止该节点上的**工作进程**。
 
 * **工作进程**：运行**拓扑**的一个子集。正在运行的拓扑分布在整个群集的许多工作进程上。
 
 * **拓扑**：定义处理数据**流**的计算图形。与 MapReduce 作业不同，拓扑运行到你停止它们为止。
 
-* **流**：一个未绑定的**元组**集合。流由 **spout** 和 **bolt** 生成，并且由 **bolt** 使用。
+* **流**：一个未绑定的**元组**集合。流由 **spout** 和 **bolt** 生成，并由 **bolt** 使用。
 
-* **元组**：动态类型值的一个命名列表
+* **元组**：动态类型化值的一个命名列表。
 
-* **Spout**：使用数据源的数据并发出一个或多个**流**。
+* **Spout**：使用数据源中的数据并发出一个或多个**流**。
 
-	> [AZURE.NOTE]在许多情况下，从 Kafka、Azure 服务总线 队列或事件中心等队列中读取数据。队列确保发生中断时数据持续不断。
+	> [AZURE.NOTE]在许多情况下，从 Kafka、Azure 服务总线队列或事件中心等队列中读取数据。队列确保发生中断时数据持续不断。
 
 * **Bolt**：使用**流**，处理**元组**，并可以发出**流**。Bolt 还负责将数据编写到外部存储，比如队列、HDInsight HBase、blob 或其他数据存储。
 
 * **Apache Thrift**：用于可缩放跨语言服务开发的软件框架。可用于构建在 C++、Java、Python、PHP、Ruby、Erlang、Perl、Haskell、C#、Cocoa、JavaScript、Node.js、Smalltalk 及其他语言间工作的服务。
 
-	* **Nimbus** 是 Thrift 服务，**拓扑**是 Thrift 定义，因此可以使用各种编程语言来开发拓扑
+	* **Nimbus** 是一种 Thrift 服务，**拓扑**是 Thrift 定义，因此可以使用各种编程语言来开发拓扑
 
 有关 Storm 组件的详细信息，请参阅 apache.org 上的 [Storm 教程][apachetutorial]。
 
@@ -154,7 +154,7 @@ HDInsight Tools for Visual Studio 允许 .NET 开发人员以 C# 语言设计和
 
 有关 Trident 的详细信息，请参阅 apache.org 上的 [Trident 教程](https://storm.incubator.apache.org/documentation/Trident-tutorial.html)。
 
-有关 Java 和 Trident 拓扑的示例，请参阅[示例 Storm 拓扑列表](/documentation/articles/hdinsight-storm-example-topology)或 HDInsight Storm 群集上的 storm-starter 示例。
+有关 Java 和 Trident 拓扑的示例，请参阅 [Storm 拓扑示例列表](/documentation/articles/hdinsight-storm-example-topology)或 HDInsight 群集上的 storm-starter 示例。
 
 基于 Windows 的群集上的 **%storm\_home%\\contrib\\storm-starter** 目录。
 
@@ -168,11 +168,11 @@ Storm 可以提供不同级别的有保证的消息处理。例如，基本的 S
 
 ###IBasicBolt
 
-读取输入元组，发出零个或多个元组，然后在执行方法结束时立即询问输入元组，这种模式非常普通，以至 Storm 提供 [IBasicBolt](https://storm.apache.org/apidocs/backtype/storm/topology/IBasicBolt.html) 接口来自动执行这种模式。
+读取输入元组，发出零个或更多元组，然后在执行方法结束时立即确认输入元组，这种模式非常常见，以至 Storm 提供 [IBasicBolt](https://storm.apache.org/apidocs/backtype/storm/topology/IBasicBolt.html) 接口来自动执行这种模式。
 
 ###联接
 
-在应用程序之间联接两个数据流的方式将有所不同。例如，你可以从多个流将每个元组联接到一个新流，也可以仅联接特定窗口的批量元组。两种方式的联接都可以使用 [fieldsGrouping](http://javadox.com/org.apache.storm/storm-core/0.9.1-incubating/backtype/storm/topology/InputDeclarer.html#fieldsGrouping%28java.lang.String,%20backtype.storm.tuple.Fields%29) 来实现，这是定义元组如何路由到 bolt 的方式。
+在应用程序之间联接两个数据流的方式将有所不同。例如，你可以从多个流将每个元组联接到一个新流，也可以仅联接特定窗口的批量元组。两种方式的联接都可以使用 [fieldsGrouping](http://javadox.com/org.apache.storm/storm-core/0.9.1-incubating/backtype/storm/topology/InputDeclarer.html#fieldsGrouping%28java.lang.String,%20backtype.storm.tuple.Fields%29) 来实现，它是定义元组如何路由到 bolt 的方式。
 
 在以下 Java 实例中，fieldsGrouping 用于将来自组件“1”、“2”和“3”的元组路由至 **MyJoiner** bolt。
 
@@ -182,19 +182,19 @@ Storm 可以提供不同级别的有保证的消息处理。例如，基本的 S
 
 批处理可以通过若干方式来实现。利用基本 Storm Java 拓扑，你可以在发出元组前使用简单计数器对 X 个元组进行批处理，或使用称为计时周期元组的内部计时机制每 X 秒发出一批元组。
 
-有关使用计时周期的示例，请参阅[使用 HDInsight 上的 Storm 和 HBase 分析传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis)。
+有关使用计时周期元组的示例，请参阅[使用 HDInsight 上的 Storm 和 HBase 分析传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis)。
 
 如果你使用的是 Trident，则其基于批量处理元组。
 
 ###缓存
 
-内存缓存通常用作加速处理的机制，因为它在内存中存储常用资产。由于拓扑分布于多个节点，并且每个节点中有多个进程，你应考虑使用 [fieldsGrouping](http://javadox.com/org.apache.storm/storm-core/0.9.1-incubating/backtype/storm/topology/InputDeclarer.html#fieldsGrouping%28java.lang.String,%20backtype.storm.tuple.Fields%29) 来确保用于缓存查询的包含字段的元组始终路由至同一进程。这可以避免在进程间重复缓存条目。
+内存缓存通常用作加速处理的机制，因为它在内存中存储常用资产。由于拓扑分布于多个节点，并且每个节点中有多个进程，你应考虑使用 [fieldsGrouping](http://javadox.com/org.apache.storm/storm-core/0.9.1-incubating/backtype/storm/topology/InputDeclarer.html#fieldsGrouping%28java.lang.String,%20backtype.storm.tuple.Fields%29) 来确保包含用于缓存查询的字段的元组始终路由至同一进程。这可以避免在进程间重复缓存条目。
 
 ###流式处理 top N
 
-当拓扑依赖于计算“top”N 值（比如 Twitter 上的前 5 大趋势）时，你应并行计算 top N 值，然后将这些计算的输出合并到全局值中。这可以使用 [fieldsGrouping](http://javadox.com/org.apache.storm/storm-core/0.9.1-incubating/backtype/storm/topology/InputDeclarer.html#fieldsGrouping%28java.lang.String,%20backtype.storm.tuple.Fields%29) 按字段值路由至并行 bolt 来完成，其按字段值对数据进行划分，然后路由至从全局确定 top N 值的 bolt。
+当拓扑依赖于计算“top”N 值（比如 Twitter 上的前 5 大趋势）时，你应并行计算 top N 值，然后将这些计算的输出合并到全局值中。为此，可以使用 [fieldsGrouping](http://javadox.com/org.apache.storm/storm-core/0.9.1-incubating/backtype/storm/topology/InputDeclarer.html#fieldsGrouping%28java.lang.String,%20backtype.storm.tuple.Fields%29) 按字段路由至并行 bolt（该项按字段值对数据进行划分），然后路由至全局确定前 N 个值的 bolt。
 
-有关示例请参阅 [RollingTopWords](https://github.com/nathanmarz/storm-starter/blob/master/src/jvm/storm/starter/RollingTopWords.java) 示例。
+有关此内容的示例，请参阅 [RollingTopWords](https://github.com/nathanmarz/storm-starter/blob/master/src/jvm/storm/starter/RollingTopWords.java) 示例。
 
 ##后续步骤
 
@@ -209,4 +209,4 @@ Storm 可以提供不同级别的有保证的消息处理。例如，基本的 S
 [apachetutorial]: https://storm.incubator.apache.org/documentation/Tutorial.html
 [gettingstarted]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1207_2015-->

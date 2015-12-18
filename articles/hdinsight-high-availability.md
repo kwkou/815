@@ -1,5 +1,5 @@
 <properties
-	pageTitle="HDInsight 中 Hadoop 群集的可用性 | Azure"
+	pageTitle="HDInsight 中 Hadoop 群集的可用性 | Windows Azure"
 	description="HDInsight 可部署包含附加头节点的高度可用且可靠的群集。"
 	services="hdinsight"
 	tags="azure-portal"
@@ -8,10 +8,10 @@
 	authors="mumian"
 	documentationCenter=""/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.date="07/28/2015"
-	wacn.date="10/03/2015"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="10/29/2015"
+	wacn.date="12/17/2015"/>
 
 
 #HDInsight 中 Hadoop 群集的可用性和可靠性
@@ -40,13 +40,13 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 
 [ZooKeeper](http://zookeeper.apache.org/) 节点 (ZK) 已添加，用于头节点的主导选择，并确保辅助节点和网关 (GW) 知道在活动头节点 (Head Node0) 处于非活动状态的情况下何时故障转移到辅助头节点 (Head Node1)。
 
-![HDInsight Hadoop 实现中高度可靠的头节点示意图。](http://i.imgur.com/jrUmrH4.png)
+![HDInsight Hadoop 实现中高度可靠的头节点示意图。](./media/hdinsight-high-availability/hadoop.high.availability.architecture.diagram.png)
 
 
 
 
 ## 检查活动头节点服务的状态
-若要确定哪个头节点处于活动状态，并检查该头节点上运行的服务状态，你必须通过使用远程桌面协议 (RDP) 连接到 Hadoop 群集。一旦远程连接到了该群集，请双击位于桌面上的“Hadoop 服务可用状态”图标，以便通过相关状态来了解 Namenode、Jobtracker、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行，如果是 HDI 3.0，则可通过相关状态来了解 Namenode、Resource Manager、History Server、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行。
+若要确定哪个头节点处于活动状态，并检查该头节点上运行的服务状态，你必须通过使用远程桌面协议 (RDP) 连接到 Hadoop 群集。有关 RDP 说明，请参阅[使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp)。一旦远程连接到了该群集，请双击位于桌面上的“Hadoop 服务可用状态”图标，以便通过相关状态来了解 Namenode、Jobtracker、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行，如果是 HDI 3.0，则可通过相关状态来了解 Namenode、Resource Manager、History Server、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行。
 
 ![](./media/hdinsight-high-availability/Hadoop.Service.Availability.Status.png)
 
@@ -64,11 +64,19 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 
 超大 VM 可通过使用 Azure PowerShell cmdlet 或 HDInsight SDK 来配置。
 
-通过使用 Azure PowerShell 创建和预配群集的过程记录在[使用 PowerShell 管理 HDInsight](/documentation/articles/hdinsight-administer-use-powershell) 中。配置超大头节点需要将 `-HeadNodeVMSize ExtraLarge` 参数添加到此代码中使用的 `New-AzureHDInsightcluster` cmdlet。
+通过使用 Azure PowerShell 创建和预配群集的过程记录在[使用 PowerShell 管理 HDInsight](/documentation/articles/hdinsight-administer-use-powershell) 中。配置超大头节点需要将 `-HeadNodeVMSize ExtraLarge` 参数添加到此代码中使用的 `New-AzureRmHDInsightcluster` cmdlet。
 
     # Create a new HDInsight cluster in Azure PowerShell
 	# Configured with an ExtraLarge head-node VM
-    New-AzureHDInsightCluster -Name $clusterName -Location $location -HeadNodeVMSize ExtraLarge -DefaultStorageAccountName "$storageAccountName.blob.core.chinacloudapi.cn" -DefaultStorageAccountKey $storageAccountKey -DefaultStorageContainerName $containerName  -ClusterSizeInNodes $clusterNodes
+    New-AzureRmHDInsightCluster `
+				-ResourceGroupName $resourceGroupName `
+				-ClusterName $clusterName ` 
+				-Location $location `
+				-HeadNodeVMSize ExtraLarge `
+				-DefaultStorageAccountName "$storageAccountName.blob.core.chinacloudapi.cn" `
+				-DefaultStorageAccountKey $storageAccountKey `
+				-DefaultStorageContainerName $containerName  `
+				-ClusterSizeInNodes $clusterNodes
 
 对于 SDK，情况也是如此。通过使用 SDK 创建和预配群集的过程记录在[使用 HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters#sdk) 中。配置超大头节点需要将 `HeadNodeSize = NodeVMSize.ExtraLarge` 参数添加到此代码中使用的 `ClusterCreateParameters()` 方法。
 
@@ -76,22 +84,22 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 	# Configured with an ExtraLarge head-node VM
     ClusterCreateParameters clusterInfo = new ClusterCreateParameters()
     {
-    Name = clustername,
-    Location = location,
-    HeadNodeSize = NodeVMSize.ExtraLarge,
-    DefaultStorageAccountName = storageaccountname,
-    DefaultStorageAccountKey = storageaccountkey,
-    DefaultStorageContainer = containername,
-    UserName = username,
-    Password = password,
-    ClusterSizeInNodes = clustersize
+		Name = clustername,
+		Location = location,
+		HeadNodeSize = NodeVMSize.ExtraLarge,
+		DefaultStorageAccountName = storageaccountname,
+		DefaultStorageAccountKey = storageaccountkey,
+		DefaultStorageContainer = containername,
+		UserName = username,
+		Password = password,
+		ClusterSizeInNodes = clustersize
     };
 
 
 **参考**
 
-- [ZooKeeper](http://zookeeper.apache.org/)
+- [ZooKeeper](http://zookeeper.apache.org/ )
 - [使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)
-- [使用 HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters#sdk) 
+- [使用 HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters#sdk)
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_1207_2015-->
