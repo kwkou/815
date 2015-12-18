@@ -269,7 +269,6 @@ Azure CLI 默认使用 Azure 服务管理模式。要切换到 Resource Manager 
 [advanced-bash]: http://tldp.org/LDP/abs/html/
 [script]: http://en.wikipedia.org/wiki/Shell_script
 [batch]: http://technet.microsoft.com/zh-cn/library/bb490890.aspx
-[xplatarm]: /zh-cn/documentation/articles/xplat-cli-azure-resource-manager
 [portal]: https://manage.windowsazure.cn
 [signuporg]: http://azure.microsoft.com/zh-cn/documentation/articles/sign-up-organization/
 [Using the Azure CLI]: /documentation/articles/virtual-machines-command-line-tools
