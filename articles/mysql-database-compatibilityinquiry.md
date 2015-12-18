@@ -9,6 +9,8 @@
 - [安全性咨询](/documentation/articles/mysql-database-securityinquiry)
 - [兼容性问题](/documentation/articles/mysql-database-compatibilityinquiry)
 
+MySQL Database on Azure采用MySQL 社区版本，兼容MYSQL常见的管理工具。在实际运维当中，我们也发现对于某些客户端的某个版本存在一定的兼容性问题，归纳如下：
+
 ### **用workbench 6.3.5连接MySQL on Azure, 出现连接问题**
 
 workbench 6.3.5默认选择SSL连接, 请您配置SSL证书使用，步骤参见[SSL安全访问MySQL Database on Azure](/documentation/articles/mysql-database-ssl-connection/)。或者建议您可以选择6.3.5以前的版本，该问题将得以解决。
