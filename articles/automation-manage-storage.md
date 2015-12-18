@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="08/11/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="11/03/2015"
+	wacn.date="12/17/2015"/>
 
 
 
@@ -30,7 +30,7 @@ Azure 自动化 提供高度可靠且高度可用的工作流执行引擎，它�
 
 ## Azure 自动化 如何帮助管理 Azure 存储空间？
 
-可以使用 [Azure PowerShell 工具](https://msdn.microsoft.com/zh-CN/library/azure/jj156055.aspx)中提供的 PowerShell 命令 在 Azure 自动化 中管理 Azure 存储空间。Azure 自动化 现成地提供了这些 Storage PowerShell 命令，因此，你可以在该服务中执行所有 Blob、表和队列管理任务。你还可以将 Azure 自动化 中的这些 命令 与其他 Azure 服务的 命令 搭配使用，以自动完成跨 Azure 服务和第三方系统的复杂任务。
+可以使用 [Azure PowerShell](https://msdn.microsoft.com/zh-CN/library/azure/jj156055.aspx)工具中提供的 PowerShell 命令 在 Azure 自动化 中管理 Azure 存储空间。Azure 自动化 现成地提供了这些 Storage PowerShell 命令，因此，你可以在该服务中执行所有 Blob、表和队列管理任务。你还可以将 Azure 自动化 中的这些 命令 与其他 Azure 服务的 命令 搭配使用，以自动完成跨 Azure 服务和第三方系统的复杂任务。
 
 [Azure Automation Runbook 库](http://azure.microsoft.com/blog/2014/10/07/introducing-the-azure-automation-runbook-gallery/)包含产品团队和社区提供的各种 Runbook，以帮助你开始自动管理 Azure 存储空间、其他 Azure 服务和第三方系统。库中 Runbook 的功能包括：
 
@@ -43,4 +43,5 @@ Azure 自动化 提供高度可靠且高度可用的工作流执行引擎，它�
 
 在了解 Azure 自动化 以及如何使用它来管理 Azure 存储 Blob、表和队列的基础知识后，请使用以下链接了解有关 Azure 自动化 的更多信息。
 
-* 查看 Azure 自动化 [入门指南](/documentation/articles/automation-create-runbook-from-samples)
+请参阅 Azure 自动化 [入门请参阅](/documentation/articles/automation-create-runbook-from-samples)
+<!---HONumber=Mooncake_1207_2015-->
