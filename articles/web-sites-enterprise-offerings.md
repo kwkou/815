@@ -10,7 +10,7 @@
 <tags
 	ms.service="web-sites"  
 	ms.date="09/03/2015"
-	wacn.date=""/>
+	wacn.date="12/17/2015"/>
 
 # Azure 网站企业产品白皮书 #
 

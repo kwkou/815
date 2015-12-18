@@ -10,7 +10,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="11/06/2015"
-	wacn.date=""/>
+	wacn.date="12/17/2015"/>
 
 #Azure 网站上的企业级 WordPress
 
@@ -251,7 +251,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 [mysqlwindows]: /documentation/articles/virtual-machines-mysql-windows-server-2008r2
 [mysqllinux]: /documentation/articles/virtual-machines-linux-mysql-use-opensuse
 [cge]: http://www.mysql.com/products/cluster/
-[websitepricing]: /home/features/app-service/#price
+[websitepricing]: /home/features/web-site/#price
 [export]: http://en.support.wordpress.com/export/
 [import]: http://wordpress.org/plugins/wordpress-importer/
 [wordpressbackup]: http://wordpress.org/plugins/wordpress-importer/
