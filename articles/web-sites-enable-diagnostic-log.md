@@ -1,24 +1,23 @@
 <properties
 	pageTitle="在 Azure 网站中启用网站的诊断日志记录"
 	description="了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。"
-	services="app-service\web"
+	services="app-service"
 	documentationCenter=".net"
 	authors="cephalin"
 	manager="wpickett"
-	editor=""/>
+	editor="jimbe"/>
 
 <tags
 	ms.service="web-sites"
-	ms.date="09/16/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="10/20/2015"
+	wacn.date=""/>
 
-# 为 Azure 网站启用诊断日志记录
+# 在 Azure 网站中启用网站的诊断日志记录
 
-Azure 提供内置的诊断以帮助调试在 Azure 网站中托管的应用程序。在本文中，你将了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。
+## 概述
 
-> [AZURE.NOTE]本文介绍了如何通过 Azure 管理门户、Azure PowerShell 和 Azure 跨平台命令行接口使用诊断日志。有关通过 Visual Studio 使用诊断日志的信息，请参阅[在 Visual Studio 中对 Azure 网站进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)。
-
-## 目录##
+Azure 提供内置的诊断以帮助调试 [Azure 网站](/documentation/services/web-sites/)。在本文中，你将了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。本文通过 [Azure 管理门户](https://manage.windowsazure.cn/)、Azure PowerShell 和 Azure 命令行界面 (Azure CLI) 来使用诊断日志。有关通过 Visual Studio 使用诊断日志的信息，请参阅[在 Visual Studio 中对 Azure 进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)。
+##目录##
 
 - [网站诊断是什么？](#whatisdiag)
 - [如何：启用诊断](#enablediag)
@@ -27,13 +26,13 @@ Azure 提供内置的诊断以帮助调试在 Azure 网站中托管的应用程�
 - [如何：了解诊断日志](#understandlogs)
 - [后续步骤](#nextsteps)
 
-<a name="whatisdiag"></a><h2>网站诊断是什么？</h2>
+## <a name="whatisdiag"></a>Web 服务器诊断和应用程序诊断
 
-Azure 网站为 Web 服务器和网站中的日志记录信息提供了诊断功能。这些诊断功能按逻辑分为**站点诊断**和**应用程序诊断**。
+Azure 网站为 Web 服务器和网站中的日志记录信息提供了诊断功能。这些诊断功能按逻辑分为 **Web 服务器诊断**和**应用程序诊断**。
 
-### 网站诊断
+### Web 服务器诊断
 
-利用网站诊断，你可以启用或禁用以下功能：
+你可以启用或禁用以下种类的日志：
 
 - **详细错误日志记录** - 指示故障的 HTTP 状态代码（状态代码 400 或更大数字）的详细错误消息。其中可能包含有助于确定服务器返回错误代码的原因的信息。
 - **失败请求跟踪** - 有关失败请求的详细信息，包括对用于处理请求的 IIS 组件和每个组件所用的时间的跟踪。在尝试提高站点性能或隔离导致要返回特定 HTTP 错误的内容时，此信息很有用。
@@ -45,15 +44,11 @@ Azure 网站为 Web 服务器和网站中的日志记录信息提供了诊断功
 
 	System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
 
-应用程序诊断允许你在使用某些代码片段时发出信息来对正在运行的应用程序进行故障排除。在尝试确定代码使用某个特定路径的原因（通常为该路径导致了错误或其他意外行为）时，这个诊断非常有用。
+在运行时，你可以检索这些日志来协助进行故障排除。有关详细信息，请参阅[在 Visual Studio 中对 Azure 网站进行故障故障](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)。
 
-有关通过 Visual Studio 使用应用程序诊断的信息，请参阅[在 Visual Studio 中对 Azure 网站进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)。
+当你将内容发布到某个网站时，Azure 网站还将记录部署信息。此操作将自动执行，不会对部署日志记录进行配置设置。部署日志记录允许你确定部署失败的原因。例如，如果你使用的是自定义部署脚本，你可能会使用部署日志记录来确定该脚本失败的原因。
 
-> [WACOM.NOTE]不同于更改 Web.config 文件，启用应用程序诊断或更改诊断日志级别不会回收应用程序运行于其中的应用域。
-
-当你将应用程序发布到某个网站时，Azure 网站还将记录部署信息。此操作将自动执行，不会对部署日志记录进行配置设置。部署日志记录允许你确定部署失败的原因。例如，如果你使用的是自定义部署脚本，你可能会使用部署日志记录来确定该脚本失败的原因。
-
-<a name="enablediag"></a><h2>如何：启用诊断</h2>
+## <a name="enablediag"></a>如何启用诊断
 
 可通过在 [Azure 管理门户](https://manage.windowsazure.cn)中访问 Azure 网站的“配置”页启用诊断。在“配置”页面上，使用“应用程序诊断”和“网站诊断”部分来启用或禁用日志记录。
 
@@ -61,24 +56,29 @@ Azure 网站为 Web 服务器和网站中的日志记录信息提供了诊断功
 
 启用“网站诊断”时，必须为“Web 服务器日志记录”选择“存储”或“文件系统”。选择“存储”允许你选择存储帐户，然后日志会写入一个 Blob 容器。“站点诊断”的所有其他日志仅写入文件系统。
 
-在 [Azure 门户](https://manage.windowsazure.cn)网站的“配置”选项卡中，你可以选择“存储”或“文件系统”进行“Web 服务器日志记录”。选择“存储”允许你选择存储帐户，然后日志会写入一个 Blob 容器。“站点诊断”的所有其他日志仅写入文件系统。
+在 [Azure 管理门户](https://manage.windowsazure.cn)网站的“配置”选项卡中，你可以选择“存储”或“文件系统”进行“Web 服务器日志记录”。选择“存储”允许你选择存储帐户，然后日志会写入一个 Blob 容器。“站点诊断”的所有其他日志仅写入文件系统。
 
-[Azure 门户](https://manage.windowsazure.cn)网站的“配置”选项卡还包含用于应用程序诊断的其他设置：
+[Azure 管理门户](https://manage.windowsazure.cn)网站的“配置”选项卡还包含用于应用程序诊断的其他设置：
 
 * **文件系统** - 将应用程序诊断信息存储到网站文件系统。可以通过 FTP 访问这些文件，或者，使用 Azure PowerShell 或 Azure 命令行界面 (Azure CLI) 将这些文件作为 Zip 存档下载。
 * **表存储** - 将应用程序诊断信息存储在指定的 Azure 存储帐户和表名中。
 * **Blob 存储** - 将应用程序诊断信息存储在指定的 Azure 存储帐户和 Blob 容器中。
 * **保留期** - 默认情况下，日志不会自动从“Blob 存储”中删除。如果你希望自动删除日志，可选择“设置保留”并输入保存日志的天数。
 
+>[AZURE.NOTE]如果[重新生成存储帐户的访问密钥](/documentation/articles/storage-create-storage-account#view-copy-and-regenerate-storage-access-keys)，则必须重置相应的日志记录配置才能使用更新的密钥。为此，请按以下步骤操作：
+>
+> 1. 在“配置”选项卡上，将相应的日志记录功能设置为“关闭”。保存你的设置。
+> 2. 允许再次将日志记录到存储帐户 blob 或表。保存你的设置。
+
 文件系统、 表存储或 Blob 存储的任意组合可同时启用，并具有单独的日志级别配置。例如，你可能希望将错误和警告记录到 Blob 存储中作为长期的日志记录解决方案，同时将文件系统日志记录级别设置为“详细”。
 
 三种存储位置都为记录的事件提供同样的基本信息，但与记录到“文件系统”相比，“表存储”和“Blob 存储”记录有额外信息，如实例 ID、线程 ID 以及更详细的时间戳（刻度格式）。
 
-> [AZURE.NOTE]存储在“表存储”或“Blob 存储”中的信息只能使用存储客户端访问或由直接使用这些存储系统的应用程序访问。例如，Visual Studio 2013 包含的存储资源管理器可用于浏览表或 Blob 存储，而 HDInsight 可以访问存储在 Blob 存储中的数据。你还可以编写通过使用 [Azure SDK](/downloads/#) 之一访问 Azure 存储的应用程序。
+> [AZURE.NOTE]存储在“表存储”或“Blob 存储”中的信息只能使用存储客户端访问或由直接使用这些存储系统的应用程序访问。例如，Visual Studio 2013 包含的存储资源管理器可用于浏览表或 Blob 存储，而 HDInsight 可以访问存储在 Blob 存储中的数据。你还可以编写通过使用 [Azure SDK](/downloads/#) 之一访问 Azure 存储空间的应用程序。
 
-> [AZURE.NOTE]也可以从 Azure PowerShell 中使用 **Set-AzureWebsite** cmdlet 来启用诊断。如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+> [AZURE.NOTE]也可以从 Azure PowerShell 中使用 **Set-AzureWebsite** cmdlet 来启用诊断。如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/install-configure-powershell/)。
 
-## <a name="download"></a> 如何：下载日志
+##<a name="download"></a> 如何：下载日志
 
 存储到网站文件系统的诊断信息可使用 FTP 直接访问。还可使用 Azure PowerShell 或 Azure 命令行界面将这些信息作为 Zip 存档下载。
 
@@ -108,7 +108,7 @@ Azure 网站为 Web 服务器和网站中的日志记录信息提供了诊断功
 
 这会将 **-Name** 参数指定的网站的日志保存到当前目录中名为 **logs.zip** 的文件中。
 
-> [WACOM.NOTE]如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+> [AZURE.NOTE]如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/install-configure-powershell/)。
 
 ### 使用 Azure 命令行界面下载
 
@@ -118,15 +118,15 @@ Azure 网站为 Web 服务器和网站中的日志记录信息提供了诊断功
 
 这会将名为“webappname”的网站的日志保存到当前目录中名为 **diagnostics.zip** 的文件中。
 
-> [AZURE.NOTE]如果尚未安装 Azure 命令行界面 (Azure CLI)，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure CLI](/documentation/articles/xplat-cli)。
+> [AZURE.NOTE]如果尚未安装 Azure 命令行界面 (Azure CLI)，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure CLI](/documentation/articles/xplat-cli-install)。
 
-## <a name="streamlogs"></a> 如何：流式传输日志
+##<a name="streamlogs"></a> 如何：流式传输日志
 
 开发应用程序时，以近乎实时的方式查看日志记录信息通常很有用。通过使用 Azure PowerShell 或 Azure 命令行界面将日志记录信息流式传输到你的开发环境，可以实现这一点。
 
 > [AZURE.NOTE]某些类型的日志记录缓冲区会对日志文件进行写入操作，这可能导致流中的事件无序。例如，用户访问页面时出现的应用程序日志项可能显示在该页面请求所对应的 HTTP 日志项的前面。
 
-> [AZURE.NOTE]日志流式输出还会流式传输写入任何存储在 **D:\\home\\LogFiles** 文件夹中的文本文件的信息。
+> [AZURE.NOTE]日志流式输出还会流式传输写入任何存储在 **D:\\home\\LogFiles\** 文件夹中的文本文件的信息。
 
 ### 使用 Azure PowerShell 进行流式传输
 
@@ -142,31 +142,31 @@ Azure 网站为 Web 服务器和网站中的日志记录信息提供了诊断功
 
 若要筛选特定日志类型（如 HTTP），请使用 **-Path** 参数。例如：
 
-	Get-AzureWebSiteLog -Name websitename -Tail -Path http
+	Get-AzureWebSiteLog -Name webappname -Tail -Path http
 
 若要查看可用的路径列表，请使用 -ListPath 参数。
 
-> [WACOM.NOTE]如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+> [AZURE.NOTE]如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/install-configure-powershell/)。
 
-### 使用 Azure 命令行工具进行流式传输
+### 使用 Azure 命令行界面进行流式传输
 
 若要流式传输日志记录信息，请打开新的命令行提示、PowerShell、Bash 或终端会话并输入以下命令：
 
-	azure site log tail websitename
+	azure site log tail webappname
 
-这将连接到名为“websitename”的网站，并在该网站上出现日志事件时开始将信息流式传输到 PowerShell 窗口。任何写入以 .txt、.log 或 .htm 结尾并存储在 /LogFiles 目录 (d:/home/logfiles) 中的文件的信息将流式传输至本地控制台。
+这将连接到名为“webappname”的网站，并在该网站上出现日志事件时开始将信息流式传输到窗口。任何写入以 .txt、.log 或 .htm 结尾并存储在 /LogFiles 目录 (d:/home/logfiles) 中的文件的信息将流式传输至本地控制台。
 
 若要筛选特定事件（如错误），请使用 **--Filter** 参数。例如：
 
-	azure site log tail websitename --filter Error
+	azure site log tail webappname --filter Error
 
 若要筛选特定日志类型（如 HTTP），请使用 **--Path** 参数。例如：
 
-	azure site log tail websitename --path http
+	azure site log tail webappname --path http
 
-> [WACOM.NOTE]如果尚未安装 Azure 命令行工具，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure 命令行工具](/documentation/articles/xplat-cli/)。
+> [AZURE.NOTE]如果尚未安装 Azure 命令行界面，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure 命令行界面](/documentation/articles/xplat-cli-install)。
 
-<a name="understandlogs"></a><h2>如何：了解诊断日志</h2>
+##<a name="understandlogs"></a> 如何：了解诊断日志
 
 ### 应用程序诊断日志
 
@@ -188,107 +188,35 @@ __表存储__
 
 如果记录到表存储，可通过额外属性简化表中存储数据的搜索以及获得更详尽的事件信息。以下属性（列）可用于表中存储的所有实体（行）。
 
-<table style="width:100%;border-collapse:collapse">
-<thead>
-<tr>
-<th style="width:45%;border:1px solid black;background-color:#0099dd">属性名称</th>
-<th style="border:1px solid black;vertical-align:top;background-color:#0099dd">值/格式</th>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top">PartitionKey</td>
-<td style="border:1px solid black;vertical-align:top">事件的日期/时间，格式为 yyyyMMddHH</td>
-</tr>
-</thead>
-<tr>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">RowKey</td>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">唯一标识该实体的 GUID 值</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top">Timestamp</td>
-<td style="border:1px solid black;vertical-align:top">事件发生的日期和时间</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">EventTickCount</td>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">事件发生的日期和时间，刻度格式（精度更高）</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top">ApplicationName</td>
-<td style="border:1px solid black;vertical-align:top">网站名称</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">级别</td>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">事件级别（例如错误、警告、信息）</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top">EventId</td>
-<td style="border:1px solid black;vertical-align:top">此事件的事件 ID<br>如果未指定，则默认为 0</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">InstanceId</td>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">其上发生事件的网站实例</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top">Pid</td>
-<td style="border:1px solid black;vertical-align:top">进程 ID</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">Tid</td>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">产生事件的线程的线程 ID</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top">消息</td>
-<td style="border:1px solid black;vertical-align:top">事件详细消息</td>
-</tr>
-</table>
+属性名称|值/格式
+---|---
+PartitionKey|事件的日期/时间，格式为 yyyyMMddHH
+RowKey|唯一标识该实体的 GUID 值
+Timestamp|事件发生的日期和时间
+EventTickCount|事件发生的日期和时间，刻度格式（精度更高）
+ApplicationName|网站名称
+级别|事件级别（例如错误、警告、信息）
+EventId|此事件的事件 ID<p><p>如果未指定，默认为 0
+InstanceId|其上发生事件的网站实例
+Pid|进程 ID
+Tid|产生事件的线程的线程 ID
+消息|事件详细消息
 
 __Blob 存储__
 
 如果记录到 Blob 存储，数据以逗号分隔值 (CSV) 格式存储。类似于表存储，将记录额外字段以提供更详尽的事件相关信息。以下属性适用于每一行（以 CSV 格式）：
 
-<table style="width:100%;border-collapse:collapse">
-<thead>
-<tr>
-<th style="width:45%;border:1px solid black;background-color:#0099dd">属性名称</th>
-<th style="border:1px solid black;vertical-align:top;background-color:#0099dd">值/格式</th>
-</tr>
-</thead>
-<tr>
-<td style="border:1px solid black;vertical-align:top">日期</td>
-<td style="border:1px solid black;vertical-align:top">事件发生的日期和时间</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">级别</td>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">事件级别（例如错误、警告、信息）</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top">ApplicationName</td>
-<td style="border:1px solid black;vertical-align:top">网站名称</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">InstanceId</td>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">其上发生事件的网站实例</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">EventTickCount</td>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">事件发生的日期和时间，刻度格式（精度更高）</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top">EventId</td>
-<td style="border:1px solid black;vertical-align:top">此事件的事件 ID<br>如果未指定，则默认为 0</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top">Pid</td>
-<td style="border:1px solid black;vertical-align:top">进程 ID</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">Tid</td>
-<td style="border:1px solid black;vertical-align:top;background-color:#8ddaf6">产生事件的线程的线程 ID</td>
-</tr>
-<tr>
-<td style="border:1px solid black;vertical-align:top">消息</td>
-<td style="border:1px solid black;vertical-align:top">事件详细消息</td>
-</tr>
-</table>
+属性名称|值/格式
+---|---
+日期|事件发生的日期和时间
+级别|事件级别（例如错误、警告、信息）
+ApplicationName|网站名称
+InstanceId|其上发生事件的网站实例
+EventTickCount|事件发生的日期和时间，刻度格式（精度更高）
+EventId|此事件的事件 ID<p><p>如果未指定，默认为 0
+Pid|进程 ID
+Tid|产生事件的线程的线程 ID
+消息|事件详细消息
 
 存储在 Blob 中的数据类似如下所示：
 
@@ -313,10 +241,11 @@ Web 服务器日志使用 [W3C 扩展日志文件格式](http://msdn.microsoft.c
 
 > [AZURE.NOTE]Azure 网站生成的日志不支持 __s-computername__、__s-ip__ 或 __cs-version__ 字段。
 
-<a name="nextsteps"></a><h2>后续步骤</h2>
+##<a name="nextsteps"></a>后续步骤
 
 - [如何监视网站](/documentation/articles/web-sites-monitor/)
-- [教程 - 排除网站故障](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
-- [在 Visual Studio 中对 Azure 网站进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio//)
+- [在 Visual Studio 中对 Azure 网站进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
+- [在 HDInsight 中分析网站日志](http://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)
+ 
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_1207_2015-->
