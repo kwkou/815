@@ -9,7 +9,7 @@
 <tags
 	ms.service="automation"
 	ms.date="11/10/2015"
-	wacn.date=""/>
+	wacn.date="12/17/2015"/>
 
 # 配置 Azure 自动化
 
