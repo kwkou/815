@@ -9,7 +9,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="10/20/2015"
-	wacn.date=""/>
+	wacn.date="12/17/2015"/>
 
 # 在 Azure 网站中创建 Java 网站
 

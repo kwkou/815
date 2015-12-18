@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="10/23/2015"
-	wacn.date=""/>
+	wacn.date="12/17/2015"/>
 
 
 [AZURE.INCLUDE [configure-ssl-web-site](../includes/configure-ssl-web-site.md)]

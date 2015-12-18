@@ -10,7 +10,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="11/06/2015"
-	wacn.date=""/>
+	wacn.date="12/17/2015"/>
 
 # Azure 网站部署文档
 
