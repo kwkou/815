@@ -34,6 +34,8 @@
 
 	Get-Help Add-AzureAccount -Detailed
 
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
+
 ## Redis 缓存的简单 Azure PowerShell 脚本  ##
 
 以下脚本演示了如何创建、更新和删除 Azure Redis 缓存。
