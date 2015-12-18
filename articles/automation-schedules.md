@@ -1,15 +1,15 @@
 <properties 
-   pageTitle="Azure 自动化中的计划"
+   pageTitle="Azure 自动化中的计划 | Windows Azure"
    description="自动化计划用于安排自动启动 Azure 自动化中的 Runbook。本文介绍如何创建计划。"
    services="automation"
    documentationCenter=""
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags 
-   ms.service="automation"
-   ms.date="08/18/2015"
-   wacn.date="12/14/2015" />
+<tags
+	ms.service="automation"
+	ms.date="10/26/2015"
+	wacn.date=""/>
 
 # Azure 自动化中的计划
 
@@ -31,7 +31,7 @@
 
 ## 创建新计划
 
-### 使用 Azure 门户创建新计划
+### 使用 Azure 管理门户创建新计划
 
 
 1. 在你的自动化帐户中，单击窗口顶部的“资产”。
@@ -55,4 +55,4 @@
 - [在 Azure Automation 中计划 Runbook](/documentation/articles/automation-scheduling-a-runbook)
  
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1207_2015-->

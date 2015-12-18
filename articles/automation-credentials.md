@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Azure 自动化中的凭据资产"
+   pageTitle="Azure 自动化中的凭据资产 | Windows Azure"
    description="Azure 自动化中的凭据资产包含可用于向 Runbook 访问的资源进行身份验证的安全凭据。本文介绍如何创建凭据资产并在 Runbook 中使用它们。"
    services="automation"
    documentationCenter=""
@@ -7,9 +7,9 @@
    manager="stevenka"
    editor="tysonn" />
 <tags
-   ms.service="automation"
-   ms.date="08/18/2015"
-   wacn.date="12/14/2015" />
+	ms.service="automation"
+	ms.date="10/23/2015"
+	wacn.date=""/>
 
 # Azure 自动化中的凭据资产
 
@@ -41,13 +41,15 @@
 ## 创建新凭据
 
 
-### 使用 Azure 门户创建新变量
+### 使用 Azure 管理门户创建新变量
 
-1. 在您的自动化帐户中，单击窗口顶部的“资产”。
+1. 在你的自动化帐户中，单击窗口顶部的“资产”。
 1. 在窗口底部，单击“添加设置”。
 1. 单击“添加凭据”。
 2. 在“凭据类型”下拉列表中，选择“PowerShell 凭据”。
 1. 完成向导并单击复选框以保存新凭据。
+
+
 
 
 ### 使用 Windows PowerShell 创建新的 PowerShell 凭据
@@ -59,7 +61,7 @@
 	$cred = New-Object –TypeName System.Management.Automation.PSCredential –ArgumentList $user, $pw
 	New-AzureAutomationCredential -AutomationAccountName "MyAutomationAccount" -Name "MyCredential" -Value $cred
 
-## 在 Runbook 中使用 PowerShell 凭据
+## 使用 PowerShell 凭据
 
 在 Runbook 中使用 **Get-AutomationPSCredential** 活动检索凭据资产。此操作将返回“[PSCredential 对象](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscredential.aspx)”，您可将其用于需要 PSCredential 参数的活动或 cmdlet。还可以检索要单独使用的凭据对象的属性。该对象具有一个用于用户名和安全密码的属性，或者您可以使用 **GetNetworkCredential** 方法返回 [NetworkCredential](http://msdn.microsoft.com/zh-cn/library/system.net.networkcredential.aspx) 对象，该对象将提供该密码的不安全版本。
 
@@ -74,4 +76,6 @@
 
 
 
-<!---HONumber=69-->
+ 
+
+<!---HONumber=Mooncake_1207_2015-->
