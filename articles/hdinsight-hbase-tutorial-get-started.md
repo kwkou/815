@@ -22,7 +22,6 @@
 * [HBase 教程：开始在 HDInsight 中将 Apache HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
 
 > [AZURE.NOTE] 
->
 > 基于 Windows 的 HDInsight 上的 HBase（版本 0.98.0）只能用于 HDInsight 3.1 群集（基于 Apache Hadoop 和 YARN 2.4.0）。有关版本信息，请参阅 [HDInsight 提供的 Hadoop 群集版本有哪些新功能？][hdinsight-versions]
 
 ##先决条件
@@ -51,7 +50,7 @@
 
 	若要使用默认 HBase 设置过程，你需要一个 Azure 存储帐户。有关说明，请参阅[如何创建存储帐户][azure-create-storageaccount]。自定义创建选项可让你使用群集设置过程创建存储帐户选项。
 
-		> [AZURE.WARNING] For high availability of HBase services, you must create a cluster that contains at least **three** nodes. This ensures that, if one node goes down, the HBase data regions are available on other nodes.
+	> [AZURE.WARNING]为了实现 HBase 服务的高可用性，你必须设置至少包含**三个**节点的群集。这可确保，如果一个节点发生故障，则 HBase 数据区域在其他节点上可用。
 
 4. 单击右下方的复选标记图标，以创建 HBase 群集。
 >[AZURE.NOTE]在删除 HBase 群集后，你可以通过使用相同的默认 Blob 容器创建另一个 HBase 群集。新群集将选取你在原始群集中创建的 HBase 表。

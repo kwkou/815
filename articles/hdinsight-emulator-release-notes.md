@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="发行说明：Microsoft HDInsight Emulator for Azure | Windows Azure" 
 	description="获取有关最新版 HDInsight Hadoop Emulator、Hadoop 沙盒环境的最新信息。" 
 	editor="cgronlun" 
@@ -275,7 +275,7 @@
 
 
 
-[hdinsight-hadoop-emulator-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-emulator
+[hdinsight-hadoop-emulator-get-started]: /documentation/articles/hdinsight-hadoop-emulator-get-started
 
  
 

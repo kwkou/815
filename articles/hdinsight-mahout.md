@@ -321,11 +321,11 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 ###加载数据
 
-1. 从 [NSL-KDD 数据集](http://nsl.cs.unb.ca/NSL-KDD/)下载以下文件。
+1. 从 [NSL-KDD 数据集](http://www.unb.ca/research/iscx/dataset/iscx-NSL-KDD-dataset.html)下载以下文件。
 
-  * [KDDTrain+.ARFF](http://nsl.cs.unb.ca/NSL-KDD/KDDTrain+.arff)：训练文件
+  * [KDDTrain+.ARFF](A.Habibi.L@unb.ca)：训练文件
 
-  * [KDDTest+.ARFF](http://nsl.cs.unb.ca/NSL-KDD/KDDTest+.arff)：测试数据
+  * [KDDTest+.ARFF](A.Habibi.L@unb.ca)：测试数据
 
 2. 打开每个文件，删除顶部以“@”开头的行，然后保存文件。如果未删除这些行，则你在 Mahout 中使用数据时将会收到错误消息。
 
