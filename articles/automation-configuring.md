@@ -25,7 +25,7 @@
 如果你的 Azure 帐户存在问题（例如逾期付款），则自动化帐户可能会挂起。在这种情况下，你无法访问帐户，任何正在运行的作业都将挂起，并且所有计划都将被禁用。你将可以查看帐户，但无法看到其中的任何资源。在纠正问题并启用自动化帐户后，你必须启用你的计划并重新启动已挂起的任何 Runbook。
 
 
-## 配置对 Azure 资源的身份验证
+##<a id="configuring-authentication-to-azure-resources"></a> 配置对 Azure 资源的身份验证
 
 使用 [Azure cmdlet](http://msdn.microsoft.com/zh-cn/library/azure/jj554330.aspx) 访问 Azure 资源时，需要针对你的 Azure 订阅提供身份验证。在 Azure 自动化中，这是使用你在 Azure Active Directory 中配置为订阅管理员的组织帐户完成的。然后，可以为此用户帐户创建[凭据](/documentation/articles/automation-credentials)，并将它与 Runbook 中的 [Add-AzureAccount](http://msdn.microsoft.com/zh-cn/library/azure/dn722528.aspx) 结合使用。
 
