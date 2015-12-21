@@ -1,23 +1,21 @@
 <properties 
-	pageTitle="如何将 AMQP 1.0 用于 Java 服务总线 API | Windows Azure" 
-	metakeywords="Java Messsage AMQP, Service Bus AMQP, download AMQP JMS library" 
-	description="了解如何将 Java 消息服务 (JMS) 用于 Azure 服务总线和高级消息队列协议 (AMQP) 1.0。" 
-	authors="sethmanheim" 
-	documentationCenter="java" 
-	writer="sethm" 
+	pageTitle="将 AMQP 1.0 用于 Java 服务总线 API | Windows Azure" 
+	description="了解如何将 Java 消息服务 (JMS) 用于 Azure 服务总线和高级消息队列"
+	services="service-bus"
+	documentationCenter="java"
+	authors="sethmanheim"  
 	manager="timlt" 
-	editor="" 
-	services="service-bus"/>
+	editor=""/>
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="07/21/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="11/06/2015" 
+	wacn.date="12/17/2015"/>
 
 
 # 如何将 Java 消息服务 (JMS) API 用于服务总线和 AMQP 1.0
 
-高级消息队列协议 (AMQP) 1.0 是一个高效、可靠的线级消息传送协议，可用于构建强大、跨平台的消息传送应用程序。AMQP 1.0 支持已在 2012 年 10 月添加到 Azure 服务总线中，并已在 2013 年 5 月转为正式版 (GA)。
+高级消息队列协议 (AMQP) 1.0 是一个高效、可靠的线级消息传送协议，可用于构建可靠的跨平台消息传送应用程序。AMQP 1.0 支持已在 2012 年 10 月添加到 Azure 服务总线中，并已在 2013 年 5 月转为正式版 (GA)。
 
 添加 AMQP 1.0 意味着现在可以通过一系列使用高效二进制协议的平台综合利用 Service Bus 的队列及发布/订阅中转消息传送功能。此外，您还可以生成由结合使用多个语言、框架和操作系统构建的组件组成的应用程序。
 
@@ -104,7 +102,7 @@ topic.[jndi_name] = [physical_name]
 - **[physical\_name]**：应用程序向其发送或从该处接收消息的服务总线实体的名称。
 
 
-> [AZURE.NOTE]在从 Service Bus 主题订阅中接收时，在 JNDI 中指定的物理名称应该是该主题的名称。在 JMS 应用程序代码中创建可持久订阅时提供该订阅名称。[服务总线 AMQP 1.0 开发人员指南](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj841071.aspx)提供了有关从 JMS 使用服务总线主题订阅的详细信息。
+> [AZURE.NOTE]在从 Service Bus 主题订阅中接收时，在 JNDI 中指定的物理名称应该是该主题的名称。在 JMS 应用程序代码中创建可持久订阅时提供该订阅名称。[服务总线 AMQP 1.0 开发人员指南](/documenatation/articles/service-bus-amqp-dotnet)提供了有关从 JMS 使用服务总线主题订阅的更多详细信息。
 
 ### 编写 JMS 应用程序
 
@@ -121,7 +119,7 @@ env.put(Context.PROVIDER_URL, "servicebus.properties");
 InitialContext context = new InitialContext(env);
 ``` 
 
-### 使用 Service Bus 队列的简单 JMS 应用程序
+### 使用服务总线队列的简单 JMS 应用程序
 
 以下示例程序将 JMS TextMessages 发送到 JNDI 逻辑名称为 QUEUE 的 Service Bus 队列，然后接收返回的消息。
 
@@ -225,28 +223,27 @@ InitialContext context = new InitialContext(env);
 运行应用程序将生成以下输出：
 
 ```
-
-	> java SimpleSenderReceiver
-	Press [enter] to send a message. Type 'exit' + [enter] to quit.
-		
-	Sent message with JMSMessageID = ID:2867600614942270318
-	Received message with JMSMessageID = ID:2867600614942270318
-		
-	Sent message with JMSMessageID = ID:7578408152750301483
-	Received message with JMSMessageID = ID:7578408152750301483
-		
-	Sent message with JMSMessageID = ID:956102171969368961
-	Received message with JMSMessageID = ID:956102171969368961
-	exit
+> java SimpleSenderReceiver
+Press [enter] to send a message. Type 'exit' + [enter] to quit.
+	
+Sent message with JMSMessageID = ID:2867600614942270318
+Received message with JMSMessageID = ID:2867600614942270318
+	
+Sent message with JMSMessageID = ID:7578408152750301483
+Received message with JMSMessageID = ID:7578408152750301483
+	
+Sent message with JMSMessageID = ID:956102171969368961
+Received message with JMSMessageID = ID:956102171969368961
+exit
 ```
 
-##JMS 和 .NET 之间的跨平台消息传送
+## JMS 和 .NET 之间的跨平台消息传送
 
 本指南说明了如何使用 JMS 向 Service Bus 发送消息以及从 Service Bus 接收消息。但是，AMQP 1.0 的关键优势之一是它支持通过以不同语言编写的组件生成应用程序，从而能够可靠和完全无损地交换消息。
 
 通过使用前面所述的示例 JMS 应用程序和从随附的指南[如何将 AMQP 1.0 用于 .NET 服务总线 .NET API](/documentation/articles/service-bus-dotnet-advanced-message-queuing) 中选取的类似 .NET 应用程序，你可以在 .NET 和 Java 之间交换消息。
 
-有关使用服务总线和 AMQP 1.0 的跨平台消息传送的详细信息，请参阅[服务总线 AMQP 1.0 开发人员指南](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj841071.aspx)。
+有关使用服务总线和 AMQP 1.0 的跨平台消息传送的详细信息，请参阅[服务总线 AMQP 1.0 开发人员指南](/documenatation/articles/service-bus-amqp-dotnet)。
 
 ### JMS 到 .NET
 
@@ -260,13 +257,12 @@ InitialContext context = new InitialContext(env);
 #### 从 JMS 应用程序输出
 
 ```
-
-	> java SimpleSenderReceiver sendonly
-	Press [enter] to send a message. Type 'exit' + [enter] to quit.
-	Sent message with JMSMessageID = ID:4364096528752411591
-	Sent message with JMSMessageID = ID:459252991689389983
-	Sent message with JMSMessageID = ID:1565011046230456854
-	exit
+> java SimpleSenderReceiver sendonly
+Press [enter] to send a message. Type 'exit' + [enter] to quit.
+Sent message with JMSMessageID = ID:4364096528752411591
+Sent message with JMSMessageID = ID:459252991689389983
+Sent message with JMSMessageID = ID:1565011046230456854
+exit
 ```
 
 #### 从 .NET 应用程序输出
@@ -293,25 +289,23 @@ InitialContext context = new InitialContext(env);
 #### 从 .NET 应用程序输出
 
 ```
-
-	> SimpleSenderReceiver.exe sendonly
-	Press [enter] to send a message. Type 'exit' + [enter] to quit.
-	Sent message with MessageID = d64e681a310a48a1ae0ce7b017bf1cf3	
-	Sent message with MessageID = 98a39664995b4f74b32e2a0ecccc46bb
-	Sent message with MessageID = acbca67f03c346de9b7893026f97ddeb
-	exit
+> SimpleSenderReceiver.exe sendonly
+Press [enter] to send a message. Type 'exit' + [enter] to quit.
+Sent message with MessageID = d64e681a310a48a1ae0ce7b017bf1cf3	
+Sent message with MessageID = 98a39664995b4f74b32e2a0ecccc46bb
+Sent message with MessageID = acbca67f03c346de9b7893026f97ddeb
+exit
 ```
 
 #### 从 JMS 应用程序输出
 
 ```
-
-	> java SimpleSenderReceiver	
-	Press [enter] to send a message. Type 'exit' + [enter] to quit.
-	Received message with JMSMessageID = ID:d64e681a310a48a1ae0ce7b017bf1cf3
-	Received message with JMSMessageID = ID:98a39664995b4f74b32e2a0ecccc46bb
-	Received message with JMSMessageID = ID:acbca67f03c346de9b7893026f97ddeb
-	exit
+> java SimpleSenderReceiver	
+Press [enter] to send a message. Type 'exit' + [enter] to quit.
+Received message with JMSMessageID = ID:d64e681a310a48a1ae0ce7b017bf1cf3
+Received message with JMSMessageID = ID:98a39664995b4f74b32e2a0ecccc46bb
+Received message with JMSMessageID = ID:acbca67f03c346de9b7893026f97ddeb
+exit
 ```
 
 ## 不受支持的功能和限制
@@ -324,17 +318,17 @@ InitialContext context = new InitialContext(env);
 * 当前不支持临时目标（即 **TemporaryQueue** 和 **TemporaryTopic**），以及使用这些目标的 **QueueRequestor** 和 **TopicRequestor** API。
 * 不支持事务处理会话和分布式事务。
 
-##摘要
+## 摘要
 
 本操作方法指南演示了如何通过使用常用 JMS API 和 AMQP 1.0 通过 Java 使用 Service Bus 中转消息传送功能（队列和发布/订阅主题）。
 
-也可以通过其他语言（包括 .NET、C、Python 和 PHP）使用 Service Bus AMQP 1.0。使用这些不同语言构建的组件可以使用服务总线中的 AMQP 1.0 支持可靠且完全无损地交换消息。有关详细信息，请参阅[服务总线 AMQP 1.0 开发人员指南](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj841071.aspx)。
+也可以通过其他语言（包括 .NET、C、Python 和 PHP）使用 Service Bus AMQP 1.0。使用这些不同语言构建的组件可以使用服务总线中的 AMQP 1.0 支持可靠且完全无损地交换消息。有关详细信息，请参阅[服务总线 AMQP 1.0 开发人员指南](/documenatation/articles/service-bus-amqp-dotnet)。
 
 ## 后续步骤
 
 * [Azure Service Bus 中的 AMQP 1.0 支持](/documentation/articles/service-bus-amqp-overview)
 * [如何将 AMQP 1.0 与服务总线 .NET API 一起使用](/documentation/articles/service-bus-dotnet-advanced-message-queuing)
-* [服务总线 AMQP 1.0 开发人员指南](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj841071.aspx)
+* [服务总线 AMQP 1.0 开发人员指南](/documenatation/articles/service-bus-amqp-dotnet)
 * [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_1207_2015-->

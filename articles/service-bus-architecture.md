@@ -1,25 +1,25 @@
 <properties 
-   pageTitle="服务总线体系结构"
+   pageTitle="服务总线体系结构 | Windows Azure"
    description="介绍 Azure 服务总线的消息处理体系结构。"
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" />
-<tags
-	ms.service="service-bus"
-	ms.date="07/24/2015" 
-	wacn.date="10/03/2015" />
+<tags 
+   ms.service="service-bus"
+   ms.date="11/06/2015"
+   wacn.date="12/17/2015" />
 
 # 服务总线体系结构
 
-以下部分介绍 Azure 服务总线的消息处理体系结构。
+本文介绍 Azure 服务总线的消息处理体系结构。
 
 ## 服务总线缩放单位
 
-服务总线根据*缩放单位*进行组织。缩放单位是部署单位，包含运行服务所需的全部组件。每个区域部署一个或多个服务总线缩放单位。
+服务总线按*缩放单位*进行组织。缩放单位是部署单位，包含运行服务所需的全部组件。每个区域部署一个或多个服务总线缩放单位。
 
-一个服务总线命名空间映射到一个缩放单位。缩放单位处理所有类型的服务总线实体：中继、中转消息传送实体（队列、主题、订阅）和通知中心。服务总线缩放单位由以下组件构成：
+一个服务总线命名空间映射到一个缩放单位。缩放单位处理所有类型的服务总线实体：中继和中转消息实体（队列、主题、订阅）。服务总线缩放单位由以下组件构成：
 
 - **一组网关节点。** 网关节点对传入请求进行身份验证并处理中继请求。每个网关节点都有一个公共 IP 地址。
 
@@ -29,7 +29,7 @@
 
 - **一个网关存储。** 网关存储保存此缩放单位中定义的每个实体的数据。网关存储在 SQL Azure 数据库顶层实施。
 
-- **多个消息存储。** 消息存储保存此缩放单位中定义的所有队列、主题和订阅的消息。它还包含所有订阅数据。除非启用了[分区消息实体](https://msdn.microsoft.com/zh-cn/library/azure/dn520246.aspx)，否则队列或主题将映射到一个消息存储。订阅是存储在与其父主题相同的消息存储中。消息存储在 SQL Azure 数据库顶层实施。
+- **多个消息存储。** 消息存储保存此缩放单位中定义的所有队列、主题和订阅的消息。它还包含所有订阅数据。除非启用了[分区消息实体](/documentation/articles/service-bus-partitioning)，否则队列或主题将映射到一个消息存储。订阅是存储在与其父主题相同的消息存储中。除了服务总线[高级消息传送](/documentation/articles/service-bus-premium-messaging)外，消息存储在 SQL Azure 数据库顶层实施。
 
 - **多个注册存储。** 注册存储包含此缩放单位中定义的所有通知中心的设备注册。注册存储在 SQL Azure 数据库顶层实施。
 
@@ -65,4 +65,4 @@
 - [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 - [使用服务总线队列的队列消息解决方案](/documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues)
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_1207_2015-->

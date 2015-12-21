@@ -10,7 +10,7 @@
 <tags
    ms.service="service-bus"
    ms.date="09/04/2015"
-   wacn.date="10/22/2015"/>
+   wacn.date="12/17/2015"/>
 
 # 共享访问签名
 
@@ -251,4 +251,4 @@ AMQP 消息因为具有众多属性而有点复杂，且包含比简单消息更
 
 此[博客文章](http://developers.de/blogs/damir_dobric/archive/2013/10/17/how-to-create-shared-access-signature-for-service-bus.aspx)中介绍了更多关于 C# 和 Java 脚本中的 SAS 的示例。
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_1207_2015-->
