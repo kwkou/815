@@ -19,7 +19,7 @@ SQL 数据库是云中的关系数据库服务，它基于行业领先的 Micros
 本文将介绍 SQL 数据库在性能、缩放性和易管理性的核心概念与功能，并提供链接让你进一步了解详细信息。如果你已准备就绪，可以立即[创建第一个 SQL 数据库](/documentation/articles/sql-database-get-started)，或者[创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal)。如果你想要深入了解，请观看这段 30 分钟的视频。
 
 ## 无需停机即可调整性能和规模
-SQL 数据库采用基本、标准和高级*服务层*。每个服务层提供<!--[-->不同级别的性能和功能<!--](/documentation/articles/sql-database-service-tiers)-->，以支持从轻型到重型的数据库工作负荷。你可以在小型数据库中构建第一个应用，每个月只需花费少量的资金。然后在你的应用受到广泛欢迎之后，随时手动或以编程方式<!--[-->更改服务层<!--](/documentation/articles/sql-database-scale-up)-->，这不会给你的应用或客户造成停机。
+SQL 数据库采用基本、标准和高级*服务层*。每个服务层提供[不同级别的性能和功能](/documentation/articles/sql-database-service-tiers)，以支持从轻型到重型的数据库工作负荷。你可以在小型数据库中构建第一个应用，每个月只需花费少量的资金。然后在你的应用受到广泛欢迎之后，随时手动或以编程方式<!--[-->更改服务层<!--](/documentation/articles/sql-database-scale-up)-->，这不会给你的应用或客户造成停机。
 
 许多业务和应用只要能够创建数据库并按需调高或调低单一数据库的性能即可，尤其是当使用模式相对容易预测时。但如果有无法预测的使用模式，则管理成本和业务模式就会变得相当困难。
 
