@@ -33,75 +33,74 @@
 3.	将新类命名为“SessionContextInterceptor.cs”，然后单击“添加”。
 4.	将 SessionContextInterceptor.cs 的内容替换为以下代码。
 
-```
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data.Common;
-using System.Data.SqlClient;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure.Interception;
-using Microsoft.AspNet.Identity;
 
-namespace ContactManager.Models
-{
-    public class SessionContextInterceptor : IDbCommandInterceptor
-    {
-        private void SetSessionContext(DbCommand command)
-        {
-            try
-            {
-                var userId = System.Web.HttpContext.Current.User.Identity.GetUserId();
-                if (userId != null)
-                {
-                    // Set SESSION_CONTEXT to current UserId before executing queries
-                    var sql = "EXEC sp_set_session_context @key=N'UserId', @value=@UserId;";
+		using System;
+		using System.Collections.Generic;
+		using System.Linq;
+		using System.Web;
+		using System.Data.Common;
+		using System.Data.SqlClient;
+		using System.Data.Entity;
+		using System.Data.Entity.Infrastructure.Interception;
+		using Microsoft.AspNet.Identity;
 
-                    command.CommandText = sql + command.CommandText;
-                    command.Parameters.Insert(0, new SqlParameter("@UserId", userId));
-                }
-            }
-            catch (System.NullReferenceException)
-            {
-                // If no user is logged in, leave SESSION_CONTEXT null (all rows will be filtered)
-            }
-        }
-        public void NonQueryExecuting(DbCommand command, DbCommandInterceptionContext<int> interceptionContext)
-        {
-            this.SetSessionContext(command);
-        }
-        public void NonQueryExecuted(DbCommand command, DbCommandInterceptionContext<int> interceptionContext)
-        {
+		namespace ContactManager.Models
+		{
+    		public class SessionContextInterceptor : IDbCommandInterceptor
+    		{
+        		private void SetSessionContext(DbCommand command)
+        		{
+            		try
+            		{
+                		var userId = System.Web.HttpContext.Current.User.Identity.GetUserId();
+                		if (userId != null)
+                		{
+                    		// Set SESSION_CONTEXT to current UserId before executing queries
+                    		var sql = "EXEC sp_set_session_context @key=N'UserId', @value=@UserId;";
 
-        }
-        public void ReaderExecuting(DbCommand command, DbCommandInterceptionContext<DbDataReader> interceptionContext)
-        {
-            this.SetSessionContext(command);
-        }
-        public void ReaderExecuted(DbCommand command, DbCommandInterceptionContext<DbDataReader> interceptionContext)
-        {
+                    		command.CommandText = sql + command.CommandText;
+                    		command.Parameters.Insert(0, new SqlParameter("@UserId", userId));
+                		}
+            		}
+            		catch (System.NullReferenceException)
+            		{
+                		// If no user is logged in, leave SESSION_CONTEXT null (all rows will be filtered)
+            		}
+        		}
+        		public void NonQueryExecuting(DbCommand command, DbCommandInterceptionContext<int> interceptionContext)
+        		{
+            		this.SetSessionContext(command);
+        		}
+        		public void NonQueryExecuted(DbCommand command, DbCommandInterceptionContext<int> interceptionContext)
+        		{
 
-        }
-        public void ScalarExecuting(DbCommand command, DbCommandInterceptionContext<object> interceptionContext)
-        {
-            this.SetSessionContext(command);
-        }
-        public void ScalarExecuted(DbCommand command, DbCommandInterceptionContext<object> interceptionContext)
-        {
+        		}
+        		public void ReaderExecuting(DbCommand command, DbCommandInterceptionContext<DbDataReader> interceptionContext)
+        		{
+            		this.SetSessionContext(command);
+        		}
+        		public void ReaderExecuted(DbCommand command, DbCommandInterceptionContext<DbDataReader> interceptionContext)
+        		{
 
-        }
-    }
+        		}
+        		public void ScalarExecuting(DbCommand command, DbCommandInterceptionContext<object> interceptionContext)
+        		{
+            		this.SetSessionContext(command);
+        		}
+        		public void ScalarExecuted(DbCommand command, DbCommandInterceptionContext<object> interceptionContext)
+        		{
 
-    public class SessionContextConfiguration : DbConfiguration
-    {
-        public SessionContextConfiguration()
-        {
-            AddInterceptor(new SessionContextInterceptor());
-        }
-    }
-}
-```
+        		}
+    		}
+
+    		public class SessionContextConfiguration : DbConfiguration
+    		{
+        		public SessionContextConfiguration()
+        		{
+            		AddInterceptor(new SessionContextInterceptor());
+        		}
+    		}
+		}
 
 只需对应用程序进行这样的更改。继续操作，构建并发布应用程序。
 
@@ -111,10 +110,10 @@ namespace ContactManager.Models
 
 使用 SQL Server Management Studio 或 Visual Studio 直接连接到数据库，然后执行以下 T-SQL：
 
-```
-ALTER TABLE Contacts ADD UserId nvarchar(128)
-    DEFAULT CAST(SESSION_CONTEXT(N'UserId') AS nvarchar(128))
-```
+
+	ALTER TABLE Contacts ADD UserId nvarchar(128)
+    	DEFAULT CAST(SESSION_CONTEXT(N'UserId') AS nvarchar(128))
+
 
 此时会将 UserId 列添加到 Contacts 表。我们使用与 AspNetUsers 表中存储的 UserId 相匹配的 nvarchar(128) 数据类型，同时创建一个 DEFAULT 约束条件，以便自动将新插入行的 UserId 设置为当前存储在 SESSION_CONTEXT 中的 UserId。
 
@@ -130,10 +129,10 @@ ALTER TABLE Contacts ADD UserId nvarchar(128)
 
 复制 user1@contoso.com 的 ID，将其粘贴到下面的 T-SQL 语句中。执行该语句，将 3 个联系人与此 UserId 相关联。
 
-```
-UPDATE Contacts SET UserId = '19bc9b0d-28dd-4510-bd5e-d6b6d445f511'
-WHERE ContactId IN (1, 2, 5)
-```
+
+	UPDATE Contacts SET UserId = '19bc9b0d-28dd-4510-bd5e-d6b6d445f511'
+	WHERE ContactId IN (1, 2, 5)
+
 
 ## 步骤 3：在数据库中创建行级安全性策略
 
@@ -141,24 +140,24 @@ WHERE ContactId IN (1, 2, 5)
 
 在仍然连接到数据库的情况下，执行以下 T-SQL：
 
-```
-CREATE SCHEMA Security
-go
 
-CREATE FUNCTION Security.userAccessPredicate(@UserId nvarchar(128))
-	RETURNS TABLE
-	WITH SCHEMABINDING
-AS
-	RETURN SELECT 1 AS accessResult
-	WHERE @UserId = CAST(SESSION_CONTEXT(N'UserId') AS nvarchar(128))
-go
+	CREATE SCHEMA Security
+	go
 
-CREATE SECURITY POLICY Security.userSecurityPolicy
-	ADD FILTER PREDICATE Security.userAccessPredicate(UserId) ON dbo.Contacts,
-	ADD BLOCK PREDICATE Security.userAccessPredicate(UserId) ON dbo.Contacts
-go
+	CREATE FUNCTION Security.userAccessPredicate(@UserId nvarchar(128))
+		RETURNS TABLE
+		WITH SCHEMABINDING
+	AS
+		RETURN SELECT 1 AS accessResult
+		WHERE @UserId = CAST(SESSION_CONTEXT(N'UserId') AS nvarchar(128))
+	go
 
-```
+	CREATE SECURITY POLICY Security.userSecurityPolicy
+		ADD FILTER PREDICATE Security.userAccessPredicate(UserId) ON dbo.Contacts,
+		ADD BLOCK PREDICATE Security.userAccessPredicate(UserId) ON dbo.Contacts
+	go
+
+
 
 此代码执行三项操作。首先，它会根据最佳实践创建一个新的架构，以便对 RLS 对象的访问权限进行集中管理和限制。接下来，它会创建一个谓词函数，该函数会在行的 UserId 与 SESSION\_CONTEXT 中的 UserId 相匹配时返回“1”。最后，它会创建一项安全策略，以便将此函数添加为 Contacts 表的筛选谓词和阻塞谓词。筛选谓词迫使查询仅返回属于当前用户的行，阻塞谓词则充当保护角色，防止应用程序意外插入错误用户的行。*注意：阻塞谓词目前是一项针对 Azure SQL 数据库的预览功能。*
 

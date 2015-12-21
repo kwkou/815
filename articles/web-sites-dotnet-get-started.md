@@ -24,7 +24,7 @@
 
 ## 概述
 
-本教程将向你介绍如何使用 Visual Studio 2015 或 Visual Studio 2013 将 ASP.NET 网站部署到 [Azure 网站中的网站](/home/features/web-site/)。本教程假定你是此前没有 Azure 使用经验的 ASP.NET 开发人员。完成本教程之后，你将能够在云中启动并运行简单的网站。
+本教程将向你介绍如何使用 Visual Studio 2015 或 Visual Studio 2013 将 ASP.NET 网站部署到 [Azure 网站中](/home/features/web-site/)。本教程假定你是此前没有 Azure 使用经验的 ASP.NET 开发人员。完成本教程之后，你将能够在云中启动并运行简单的网站。
 
 下图演示了完整的应用程序：
 
