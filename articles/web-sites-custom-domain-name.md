@@ -113,7 +113,6 @@
 - **contoso.com** 映射到 168.62.48.183。
 - **www.contoso.com** 映射到 **contoso.chinacloudsites.cn**。
 
-<a name="awverify" />
 ##<a name="awverify"></a> 创建 awverify 记录（仅 A 记录）
 
 如果创建 A 记录，网站还需要特殊的 CNAME 记录，用于验证你是否拥有尝试要使用的域。此 CNAME 记录必须采用以下形式。
