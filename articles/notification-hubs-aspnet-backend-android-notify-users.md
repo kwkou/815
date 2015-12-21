@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="06/16/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="09/24/2015"
+	wacn.date="12/17/2015"/>
 
 # Azure 通知中心通知用户
 
@@ -19,10 +19,9 @@
 
 ## 概述
 
-利用 Azure 中的推送通知支持，你可以访问易于使用且向外扩展的多平台推送基础结构，这大大简化了为移动平台的使用者应用程序和企业应用程序实现推送通知的过程。本教程说明如何使用 Azure 通知中心将推送通知发送到特定设备上的特定应用程序用户。ASP.NET WebAPI 后端用于对客户端进行身份验证并生成通知，如指南主题[从应用后端注册](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx)中所述。本教程以你在**通知中心入门**教程中创建的通知中心为基础进行行制作。
+利用 Azure 中的推送通知支持，你可以访问易于使用且向外扩展的多平台推送基础结构，这大大简化了为移动平台的使用者应用程序和企业应用程序实现推送通知的过程。本教程说明如何使用 Azure 通知中心将推送通知发送到特定设备上的特定应用程序用户。ASP.NET WebAPI 后端用于对客户端进行身份验证并生成通知，如指南主题[从应用后端注册](http://msdn.microsoft.com/library/dn743807.aspx)中所述。本教程以你在[通知中心入门 (Android)](/documentation/articles/notification-hubs-android-get-started) 教程中创建的通知中心为基础。
 
-> [AZURE.NOTE]本教程假设你已根据[通知中心入门 (Android)](/documentation/articles/notification-hubs-android-get-started) 中所述创建并配置了通知中心。
-> 如果你使用移动服务作为后端服务，请参阅本教程的[移动服务版本](/documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users)。
+> [AZURE.NOTE]本教程假设你已按照[通知中心入门 (Android)](/documentation/articles/notification-hubs-android-get-started) 中所述创建并配置了通知中心。如果你使用移动服务作为后端服务，请参阅本教程的[移动服务版本](/documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users)。
 
 [AZURE.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../includes/notification-hubs-aspnet-backend-notifyusers.md)]
 
@@ -207,37 +206,37 @@
 				}
 			}
 
-			private int upsertRegistration(String registrationId, JSONObject deviceInfo)
-					throws UnsupportedEncodingException, IOException,
-					ClientProtocolException {
-				HttpPut request = new HttpPut(BACKEND_ENDPOINT+"/"+registrationId);
-				request.setEntity(new StringEntity(deviceInfo.toString()));
-				request.addHeader("Authorization", "Basic "+authorizationHeader);
-				request.addHeader("Content-Type", "application/json");
-				HttpResponse response = httpClient.execute(request);
-				int statusCode = response.getStatusLine().getStatusCode();
-				return statusCode;
-			}
+            private int upsertRegistration(String registrationId, JSONObject deviceInfo)
+                    throws UnsupportedEncodingException, IOException,
+                    ClientProtocolException {
+                HttpPut request = new HttpPut(Backend_Endpoint+"/"+registrationId);
+                request.setEntity(new StringEntity(deviceInfo.toString()));
+                request.addHeader("Authorization", "Basic "+authorizationHeader);
+                request.addHeader("Content-Type", "application/json");
+                HttpResponse response = httpClient.execute(request);
+                int statusCode = response.getStatusLine().getStatusCode();
+                return statusCode;
+            }
 
-			private String retrieveRegistrationIdOrRequestNewOne(String handle) throws ClientProtocolException, IOException {
-				if (settings.contains(REGID_SETTING_NAME))
-					return settings.getString(REGID_SETTING_NAME, null);
-				
-				HttpUriRequest request = new HttpPost(BACKEND_ENDPOINT+"?handle="+handle);
-				request.addHeader("Authorization", "Basic "+authorizationHeader);
-				HttpResponse response = httpClient.execute(request);
-				if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
-					Log.e("RegisterClient", "Error creating registrationId: " + response.getStatusLine().getStatusCode());
-					throw new RuntimeException("Error creating Notification Hubs registrationId");
-				}
-				String registrationId = EntityUtils.toString(response.getEntity());
-				registrationId = registrationId.substring(1, registrationId.length()-1);
-				
-				settings.edit().putString(REGID_SETTING_NAME, registrationId).commit();
-				
-				return registrationId;
-			}
-		}
+            private String retrieveRegistrationIdOrRequestNewOne(String handle) throws ClientProtocolException, IOException {
+                if (settings.contains(REGID_SETTING_NAME))
+                    return settings.getString(REGID_SETTING_NAME, null);
+
+                HttpUriRequest request = new HttpPost(Backend_Endpoint+"?handle="+handle);
+                request.addHeader("Authorization", "Basic "+authorizationHeader);
+                HttpResponse response = httpClient.execute(request);
+                if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
+                    Log.e("RegisterClient", "Error creating registrationId: " + response.getStatusLine().getStatusCode());
+                    throw new RuntimeException("Error creating Notification Hubs registrationId");
+                }
+                String registrationId = EntityUtils.toString(response.getEntity());
+                registrationId = registrationId.substring(1, registrationId.length()-1);
+
+                settings.edit().putString(REGID_SETTING_NAME, registrationId).commit();
+
+                return registrationId;
+            }
+        }
 
 	此组件将实现所需的 REST 调用，以便能够联系应用程序后端来注册推送通知。它还会在本地存储通知中心创建的 *registrationIds*（从[应用后端注册](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx)中提供了详细信息）。请注意，该组件使用当你单击“登录”按钮时存储在本地存储中的授权令牌。
 
@@ -266,8 +265,8 @@
             setContentView(R.layout.activity_main);
         }
 
-7. 在 `MainActivity` 类中，删除或注释掉整个 `registerWithNotificationHubs` 方法。本教程不会使用此方法。
-8. 将以下 `import` 语句添加到 **MainActivity.java** 文件。
+7. 在 `MainActivity` 类中，删除或注释掉整个 `registerWithNotificationHubs` 方法。本教程将不会使用该方法。
+8. 将以下 `import` 语句添加到 **MainActivity.java** 文件中。
 
 		import android.widget.Button;
 		import java.io.UnsupportedEncodingException;
@@ -277,7 +276,7 @@
 		import org.apache.http.client.ClientProtocolException;
 		import java.io.IOException;
 		import org.apache.http.HttpStatus;
-9. 然后，添加以下方法来处理**登录**按钮单击事件并发送推送通知。
+9. 然后，添加以下方法以处理“登录”按钮单击事件以及发送推送通知。
 
 	    @Override
 	    protected void onStart() {

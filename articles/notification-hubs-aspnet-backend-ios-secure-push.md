@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="06/16/2015"
-	wacn.date="11/02/2015" />
+	wacn.date="12/17/2015" />
 
 # Azure 通知中心安全推送
 
@@ -151,4 +151,4 @@
 
 [IOS1]: ./media/notification-hubs-aspnet-backend-ios-secure-push/secure-push-ios-1.png
 
-<!---HONumber=76-->
+<!---HONumber=82-->

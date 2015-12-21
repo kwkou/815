@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="09/03/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 通知中心入门（iOS 应用）
 
@@ -27,17 +27,17 @@
 本教程需要的内容如下：
 
 + [移动服务 iOS SDK]
-+ [XCode 6][Install Xcode]
++ [Xcode 6][Install Xcode]
 + 支持 iOS 8（或更高版本）的设备
 + iOS 开发人员计划成员身份
 
    >[AZURE.NOTE]由于推送通知配置要求，你必须在支持 iOS 的设备（iPhone 或 iPad）而不是在模拟器上部署和测试推送通知。
 
-完成本教程是学习有关 iOS 应用程序的所有其他通知中心教程的先决条件。
+完成本教程是学习有关 iOS 应用的所有其他通知中心教程的先决条件。
 
-<div class="dev-callout"><strong>Note</strong> <p>若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fzh-cn%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Azure 免费试用</a>。</p></div>
+> [AZURE.NOTE]若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fzh-CN%2Fdocumentation%2Farticles%2Fnotification-hubs-ios-get-started)。
 
-[AZURE.INCLUDE [启用 Apple 推送通知](../includes/enable-apple-push-notifications.md)]
+[AZURE.INCLUDE [通知中心：启用 Apple 推送通知](../includes/enable-apple-push-notifications.md)]
 
 ##<a name="configure-hub"></a>配置通知中心
 
@@ -54,7 +54,7 @@
 
 2. 登录到[Azure 管理门户][Azure 管理门户]，然后单击屏幕底部的“新建”。
 
-3. 依次单击“应用程序服务”、“服务总线”、“通知中心”、“快速创建”。
+3. 依次单击“应用程序服务”、“服务总线”、“通知中心”和“快速创建”。
 
    	![][2]
 
@@ -62,7 +62,7 @@
 
    	![][3]
 
-5. 单击刚刚创建的命名空间（通常为 ***notification hub name*-ns**），以打开其仪表板。
+5. 单击刚刚创建的命名空间（通常为***通知中心名称*-ns**），以打开其仪表板。
 
     ![][4]
 
@@ -143,7 +143,7 @@
 		}
 
 
-8. 在同一文件中，如果在应用程序激活时接收通知，则添加以下方法以显示 **UIAlert**：
+8. 在同一文件中，添加以下方法以便在应用处于活动状态时收到通知的情况下显示 **UIAlert**：
 
 
         - (void)application:(UIApplication *)application didReceiveRemoteNotification: (NSDictionary *)userInfo {
@@ -439,9 +439,9 @@
 
 
 
-##测试应用
+##测试应用程序
 
-若要在 iOS 上测试推送通知，必须将应用部署到设备。你无法使用 iOS 模拟器发送 Apple 推送通知。
+若要在 iOS 上测试推送通知，必须将应用部署到设备。不能使用 iOS 模拟器发送 Apple 推送通知。
 
 1. 运行应用并确认注册成功，然后按“确定”。
 
@@ -460,7 +460,7 @@
 
 ##后续步骤
 
-在这个简单的示例中，你已将通知广播到所有 iOS 设备。若要向特定的用户推送消息，请参考教程[使用通知中心将通知推送到用户]，如果要按兴趣组来划分用户，请阅读[使用通知中心发送突发新闻]。在[通知中心指南]中了解有关如何使用通知中心的更多信息。
+在这个简单的示例中，你已将通知广播到所有 iOS 设备。若要针对特定客户，请参考教程[使用通知中心向用户推送通知]。如果要按兴趣组划分用户，可以阅读[使用通知中心发送突发新闻]。在[通知中心指南]中了解有关如何使用通知中心的更多信息。
 
 
 
@@ -500,8 +500,8 @@
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 
 [Get started with push notifications in Mobile Services]: /documentation/articles/mobile-services-javascript-backend-ios-get-started-push
-[使用通知中心将通知推送到用户]: /documentation/articles/notification-hubs-aspnet-backend-ios-notify-users
+[使用通知中心向用户推送通知]: /documentation/articles/notification-hubs-aspnet-backend-ios-notify-users
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-ios-send-breaking-news
 [本地和推送通知编程指南]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_1207_2015-->
