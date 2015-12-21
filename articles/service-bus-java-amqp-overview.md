@@ -7,10 +7,10 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags
-	ms.service="service-bus"
-	ms.date="07/21/2015" 
-	wacn.date="10/22/2015"/>
+<tags 
+	ms.service="service-bus" 
+	ms.date="11/06/2015" 
+	wacn.date="12/17/2015"/>
 
 
 # 服务总线的 AMQP 1.0 支持
@@ -76,23 +76,24 @@ Azure 服务总线中对 AMQP 1.0 的支持意味着现在可以通过一系列�
 
 **图 2：AMQP 1.0 客户端库表**
 
-有关如何获取和使用这些库以便用于服务总线的详细信息，请参阅[服务总线 AMQP 开发人员指南][]。有关更多信息，请参阅下面的“参考”一节。
+有关如何获取和使用这些库以便用于服务总线的详细信息，请参阅 [服务总线 AMQP 开发人员指南][]。有关更多信息的链接，请参阅[后续步骤](/documenatation/articles/service-bus-java-amqp-overview/#next-steps)部分。
 
 ## 摘要
 
 *    AMQP 1.0 是一个开放、可靠的消息传递协议，可用于构建跨平台的混合应用程序。AMQP 1.0 是一种 OASIS 标准。
 *    Azure 服务总线和 Windows Server 服务总线（服务总线 1.1）都支持 AMQP 1.0。定价与现有协议相同。
 
-## 参考
+## 后续步骤
+
+请访问以下链接以了解有关服务总线中的 AMQP 支持的详细信息。
 
 *    [如何将 AMQP 1.0 与服务总线 .NET API 一起使用](/documentation/articles/service-bus-dotnet-advanced-message-queuing)
 *    [如何将 Java 消息服务 (JMS) API 用于服务总线 和 AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)
-*    [服务总线 AMQP 开发人员指南](http://msdn.microsoft.com/zh-cn/library/jj841071.aspx)
+*    [服务总线 AMQP 开发人员指南](/documentation/articles/service-bus-amqp-dotnet)
 *    [OASIS 高级消息队列协议 (AMQP) 1.0 版规范](http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf)
 
 [0]: ./media/service-bus-java-amqp-overview/Example1.png
-[服务总线 AMQP 开发人员指南]: http://msdn.microsoft.com/zh-cn/library/jj841071.aspx
 
  
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_1207_2015-->
