@@ -10,7 +10,7 @@
 <tags
    ms.service="redis-cache"
    ms.date="08/26/2015"
-   wacn.date="10/22/2015"/>
+   wacn.date="12/21/2015"/>
 
 # 使用 Azure PowerShell 管理 Azure Redis 缓存
 
@@ -47,7 +47,7 @@
 	        # Create a new cache with date string to make name unique. 
 		$cacheName = "MovieCache" + $(Get-Date -Format ('ddhhmm')) 
 		$location = "China North"
-		$resourceGroupName = "Default-Web-WestUS"
+		$resourceGroupName = "Default-Web-ChinaNorth"
 		
 		$movieCache = New-AzureRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
 
