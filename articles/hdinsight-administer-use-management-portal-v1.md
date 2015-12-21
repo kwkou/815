@@ -173,8 +173,6 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 	cd %sqoop_home%
 	cd %hcatalog_home%
 
-##缩放群集
-请参阅[缩放 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-hadoop-cluster-scaling)。
 
 ##后续步骤
 在本文中，你学习了如何使用 Azure 管理门户创建 HDInsight 群集以及如何打开 Hadoop 命令行工具。若要了解更多信息，请参阅下列文章：

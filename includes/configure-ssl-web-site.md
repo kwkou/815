@@ -401,7 +401,7 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 
 	![定价层][sslreserved]
 
-	> [AZURE.NOTE]如果出现“为网站‘&lt;应用名称&gt;’配置缩放失败”错误，你可以使用详细信息按钮来了解详细信息。可能会出现“可用的标准实例服务器不足，无法满足此请求。”错误。如果收到此错误，请联系 [Azure 支持人员](/support/options/)。
+	> [AZURE.NOTE]如果出现“为网站‘&lt;应用名称&gt;’配置缩放失败”错误，你可以使用详细信息按钮来了解详细信息。可能会出现“可用的标准实例服务器不足，无法满足此请求。”错误。如果收到此错误，请联系 [Azure 支持人员](/support/contact/)。
 
 
 ##<a name="bkmk_configuressl"></a>配置 SSL
