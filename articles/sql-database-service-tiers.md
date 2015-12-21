@@ -83,7 +83,7 @@
 
 如果你有兴趣以组的形式管理多个数据库，请考虑[弹性数据库池](/documentation/articles/sql-database-elastic-pool-guidance)以及关联的[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)。
 
-现在，你已了解有关 SQL 数据库层的信息，可使用[免费试用版](/pricing/1rmb-trial/)来试用这些层，并了解[如何创建你的第一个 SQL 数据库](/documentation/articles/sql-database-get-started)！
+现在，你已了解有关 SQL 数据库层的信息，可使用[试用版](/pricing/1rmb-trial/)来试用这些层，并了解[如何创建你的第一个 SQL 数据库](/documentation/articles/sql-database-get-started)！
  
 
 <!---HONumber=79-->
