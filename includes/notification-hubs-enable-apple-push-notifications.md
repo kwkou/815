@@ -1,11 +1,12 @@
 
-Apple 推送通知服务 (APNS) 使用证书对推送通知进行身份验证。请遵照这些说明来创建用于发送和接收通知的所需推送证书。有关正式的 APNS 功能文档，请参阅 [Apple 推送通知服务](http://go.microsoft.com/fwlink/p/?LinkId=272584)。
 
 ##生成证书签名请求文件
 
-首先，你必须生成证书签名请求 (CSR) 文件，Apple 将使用该文件生成签名的推送证书。
+Apple 推送通知服务 (APNS) 使用证书对推送通知进行身份验证。请遵照这些说明来创建用于发送和接收通知的所需推送证书。有关这些概念的详细信息，请参阅 [Apple Push Notification 服务](http://go.microsoft.com/fwlink/p/?LinkId=272584)文档。
 
-1. 从“Utilities”（实用工具）或“Other”（其他）文件夹中，运行 Keychain Access 工具。
+生成证书签名请求 (CSR) 文件，Apple 将使用该文件生成签名的推送证书。
+
+1. 在 Mac 上，运行 Keychain Access 工具。可以从启动板上的“Utilities”（实用工具）或“Other”（其他）文件夹中打开该工具。
 
 2. 单击“Keychain Access”，展开“Certificate Assistant”（证书助理），然后单击“Request a Certificate from a Certificate Authority...”（从证书颁发机构请求证书...）。
 
@@ -32,11 +33,13 @@ Apple 推送通知服务 (APNS) 使用证书对推送通知进行身份验证。
    	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-ios-appids.png)
 
 
-2. 在“App ID Description”（应用程序 ID 说明）中为应用程序键入一个描述性的名称。
+2. 更新新应用的以下三个字段，然后单击“Continue”（继续）：
 
-	在“Explicit App ID”（显式应用程序 ID）下，使用[应用程序分发指南](http://go.microsoft.com/fwlink/?LinkId=613485)中所述的 `<Organization Identifier>.<Product Name>` 格式输入“Bundle Identifier”（捆绑标识符）。使用的“Organization Identifier”（组织标识符）和“Product Name”（产品名称）必须与你在创建 XCode 项目时要使用的组织标识符与产品名称匹配。在下面的屏幕截图中，*NotificationHubs* 用作组织标识符，*GetStarted* 用作产品名称。如果确保这些信息与你要在 XCode 项目中使用的值匹配，则就可以在 XCode 中使用正确的发布配置文件。
+	* **Name（名称）**：在“App ID Description”（应用 ID 说明）部分的“Name”（名称）字段中为应用键入一个描述性名称。
 	
-	在“App Services”（应用程序服务）部分中选中“Push Notifications”（推送通知）选项，然后单击“Continue”（继续）。
+	* **Bundle Identifier（捆绑标识符）**：在“Explicit App ID”（显式应用 ID）部分下，使用[应用分发指南](http://go.microsoft.com/fwlink/?LinkId=613485)中所述的 `<Organization Identifier>.<Product Name>` 格式输入“Bundle Identifier”（捆绑标识符）。使用的“Organization Identifier”（组织标识符）和“Product Name”（产品名称）必须与你在创建 XCode 项目时要使用的组织标识符与产品名称匹配。在下面的屏幕截图中，*NotificationHubs* 用作组织标识符，*GetStarted* 用作产品名称。如果确保这些信息与你要在 XCode 项目中使用的值匹配，则就可以在 XCode 中使用正确的发布配置文件。
+	
+	* **Push Notifications（推送通知）**：在“App Services”（应用服务）部分中选中“Push Notifications”（推送通知）选项。
 
 	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-new-appid-info.png)
 
@@ -52,11 +55,11 @@ Apple 推送通知服务 (APNS) 使用证书对推送通知进行身份验证。
    ![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-appid-registration-complete.png)
 
 
-3. 找到你刚刚创建的应用程序 ID，然后单击其行。
+3. 在开发人员中心的“App IDs”（应用 ID）下，找到你刚刚创建的应用 ID，然后单击其所在行。
 
    	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-ios-appids2.png)
 
-   	单击应用程序 ID 会显示应用程序详细信息。单击“Edit”（编辑）按钮。
+   	单击应用程序 ID 会显示应用程序详细信息。单击底部的“Edit”（编辑）按钮。
 
    	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-edit-appid.png)
 
@@ -90,7 +93,14 @@ Apple 推送通知服务 (APNS) 使用证书对推送通知进行身份验证。
 
     > [AZURE.NOTE]证书中的名称可能不同，但将以 **Apple Development iOS Push Services:** 作为前缀。
 
-稍后，你将要使用此证书生成一个 .p12 文件，以使用 APNS 启用身份验证。
+8. 在 Keychain Access 中，右键单击你在“Certificates”（证书）类别中创建的新推送证书。单击“Export”（导出），为文件命名，选择“.p12”格式，然后单击“Save”（保存）。
+
+	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-export-cert-p12.png)
+
+	记下导出的 .p12 证书的文件名和位置。它将用于启用 APNS 身份验证。
+
+	>[AZURE.NOTE]本教程将创建 QuickStart.p12 文件。你的文件名和位置可能不同。
+
 
 ##为应用程序创建配置文件
 
@@ -116,13 +126,13 @@ Apple 推送通知服务 (APNS) 使用证书对推送通知进行身份验证。
    	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-provisioning-select-devices.png)
 
 
-6. 最后，在“Profile Name”（配置文件名称）中为配置文件选取一个名称，单击“Generate”（生成），然后单击“Done”（完成）
+6. 最后，在“Profile Name”（配置文件名称）中为配置文件选取一个名称，并单击“Generate”（生成）。
 
    	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-provisioning-name-profile.png)
 
 
-  	此操作可创建新的配置文件。
+7. 创建新的预配配置文件后，请单击下载该文件，并将其安装在你的 Xcode 开发计算机上。然后单击“Done”（完成）。
 
    	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-provisioning-profile-ready.png)
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_1207_2015-->
