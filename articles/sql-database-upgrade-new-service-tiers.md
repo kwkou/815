@@ -15,7 +15,7 @@
 
 # 将 SQL 数据库 Web 或企业数据库升级到新服务层
 
-Azure SQL [Web 和企业数据库即将淘汰](/documentation/articles/sql-database-web-business-sunset-faq)，因此现在是开始规划将现有的 Web 或企业数据库升级到<!--[-->基本、标准、高级或弹性服务层<!--](/documentation/articles/sql-database-service-tiers)-->的时候了。
+Azure SQL [Web 和企业数据库即将淘汰](/documentation/articles/sql-database-web-business-sunset-faq)，因此现在是开始规划将现有的 Web 或企业数据库升级到[基本、标准、高级或弹性服务层](/documentation/articles/sql-database-service-tiers)的时候了。
 
 
 > [AZURE.IMPORTANT]将 Web 或企业数据库升级到新的服务层不会使数据库脱机。数据库将保持联机，并且可在整个升级操作过程中使用。

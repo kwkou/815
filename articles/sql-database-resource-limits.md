@@ -49,7 +49,7 @@ CPU、内存、日志 I/O 和数据 I/O 以外的资源在达到限制时，将�
 
 [AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
-<!--有关服务层的详细讨论，请参阅 [Azure SQL 数据库服务层和性能级别](sql-database-service-tiers.md)。-->
+有关服务层的详细讨论，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers)。
 
 ## 每个服务器的 DTU 配额
 

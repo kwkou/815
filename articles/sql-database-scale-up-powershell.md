@@ -23,7 +23,7 @@
 
 本文介绍如何使用 PowerShell 更改 SQL 数据库的服务层和性能级别。
 
-使用[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-new-service-tiers)和 <!--[-->Azure SQL 数据库服务层和性能级别<!--](/documentation/articles/sql-database-service-tiers)-->中的信息为 Azure SQL 数据库确定适当的服务层和性能级别。
+使用[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-new-service-tiers)和 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers)中的信息为 Azure SQL 数据库确定适当的服务层和性能级别。
 
 > [AZURE.IMPORTANT]更改 SQL 数据库的服务层和性能级别是一项联机操作。这意味着在整个操作期间数据库将保持联机并可用而没有停机时间。
 

@@ -17,7 +17,7 @@
 
 ## 概述
 
-Microsoft Azure SQL 数据库提供三个<!--[-->服务层<!--](/documentation/articles/sql-database-service-tiers)-->：基本、标准和高级。高级服务层通过严格控制 Azure SQL 数据库及其辅助副本的资源量，使云应用程序的性能更有预测性。Azure SQL 数据库将这种理念扩展到了新的标准服务层，使数据库具有更高的性能可预测性。不过，与高级服务层适用的数据库相比，这种数据库的性能要求更低。基本服务层旨在满足较低开销数据库的性能要求。
+Microsoft Azure SQL 数据库提供三个[服务层](/documentation/articles/sql-database-service-tiers)：基本、标准和高级。高级服务层通过严格控制 Azure SQL 数据库及其辅助副本的资源量，使云应用程序的性能更有预测性。Azure SQL 数据库将这种理念扩展到了新的标准服务层，使数据库具有更高的性能可预测性。不过，与高级服务层适用的数据库相比，这种数据库的性能要求更低。基本服务层旨在满足较低开销数据库的性能要求。
 
 >[AZURE.NOTE]企业和 Web 版服务层将于 2015 年 9 月停用。有关详细信息，请参阅 [Web 和 Business Edition 版停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq/)。有关将现有 Web 和企业数据库升级到新服务层的详细信息，请参阅[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-new-service-tiers)。
 
