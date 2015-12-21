@@ -21,7 +21,7 @@
 - [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
 - [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
-本教程演示如何通过 [Azure 管理门户](https://manage.windowsazure.cn)[在 Azure 网站中创建 Java 网站](/documentation/services/web-sites/)。
+本教程演示如何通过 [Azure 管理门户](https://manage.windowsazure.cn)在 [Azure 网站](/documentation/services/web-sites/)中创建 Java 网站。
 
 > [AZURE.NOTE]若要完成本教程，您需要一个 Windows Azure 帐户。如果你没有帐户，可以[注册试用版][]。
 > 

@@ -76,7 +76,7 @@ Azure 网站为 Web 服务器和网站中的日志记录信息提供了诊断功
 
 > [AZURE.NOTE]存储在“表存储”或“Blob 存储”中的信息只能使用存储客户端访问或由直接使用这些存储系统的应用程序访问。例如，Visual Studio 2013 包含的存储资源管理器可用于浏览表或 Blob 存储，而 HDInsight 可以访问存储在 Blob 存储中的数据。你还可以编写通过使用 [Azure SDK](/downloads/#) 之一访问 Azure 存储空间的应用程序。
 
-> [AZURE.NOTE]也可以从 Azure PowerShell 中使用 **Set-AzureWebsite** cmdlet 来启用诊断。如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/install-configure-powershell/)。
+> [AZURE.NOTE]也可以从 Azure PowerShell 中使用 **Set-AzureWebsite** cmdlet 来启用诊断。如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ##<a name="download"></a> 如何：下载日志
 
@@ -108,7 +108,7 @@ Azure 网站为 Web 服务器和网站中的日志记录信息提供了诊断功
 
 这会将 **-Name** 参数指定的网站的日志保存到当前目录中名为 **logs.zip** 的文件中。
 
-> [AZURE.NOTE]如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/install-configure-powershell/)。
+> [AZURE.NOTE]如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ### 使用 Azure 命令行界面下载
 
@@ -146,7 +146,7 @@ Azure 网站为 Web 服务器和网站中的日志记录信息提供了诊断功
 
 若要查看可用的路径列表，请使用 -ListPath 参数。
 
-> [AZURE.NOTE]如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/install-configure-powershell/)。
+> [AZURE.NOTE]如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ### 使用 Azure 命令行界面进行流式传输
 
