@@ -9,10 +9,10 @@
 
 <tags
 	ms.service="backup"
-	ms.date="08/21/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="11/03/2015"
+	wacn.date="12/17/2015"/>
 
-# 配置 Microsoft Azure 备份以准备备份 Windows Server
+# 进行备份 Windows 计算机所需的环境准备
 
 本文将指导你完成启用 Azure 备份功能的整个过程。若要将 Windows Server 或 Windows 客户端备份到 Azure，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 >[AZURE.NOTE]以前，若要注册备份服务器，你需要创建或获取一个 X.509 v3 证书。证书目前仍受支持，但是，为了简化将服务器注册到 Azure 保管库，你现在可以直接通过“快速启动”页生成保管库凭据。
@@ -24,7 +24,7 @@
 - **下载保管库凭据** — 在 Azure 备份中，将你创建的管理证书上载到保管库。
 - **安装 Azure 备份代理并注册服务器** — 通过 Azure 备份安装代理，并在备份保管库中注册服务器。
 
-[AZURE.INCLUDE [backup-create-vault](../includes/backup-create-vault.md)]
+[AZURE.INCLUDE [backup-create-vault-wgif](../includes/backup-create-vault-wgif.md)]
 
 [AZURE.INCLUDE [backup-download-credentials](../includes/backup-download-credentials.md)]
 
@@ -37,4 +37,4 @@
 - [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq)
 - [Azure 备份论坛](https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=windowsazureonlinebackup)
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_1207_2015-->
