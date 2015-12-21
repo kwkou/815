@@ -19,6 +19,7 @@
 
 本文将指导你了解有关使用 Azure SQL 数据库保护应用程序数据层的基础知识。具体而言，本文将帮助你了解如何使用相应的资源，在 [SQL 数据库入门教程](/documentation/articles/sql-database-get-started)中创建的数据库中限制访问、保护数据和监视活动。有关 SQL 各版本上提供的安全功能的完整概述，请参阅 [SQL Server 数据库引擎和 Azure SQL 数据库安全中心](https://msdn.microsoft.com/zh-cn/library/bb510589)。[安全与 Azure SQL 数据库技术白皮书](https://download.microsoft.com/download/A/C/3/AC305059-2B3F-4B08-9952-34CDCA8115A9/Security_and_Azure_SQL_Database_White_paper.pdf) (PDF) 中提供了其他信息。
 
+<a id="connection-security"></a>
 ## 连接安全性
 
 连接安全性是指如何使用防火墙规则和连接加密来限制和保护数据库连接。
@@ -27,7 +28,7 @@
 
 在与数据库相互“传输”数据时，与 Azure SQL 数据库建立的所有连接都需要经过加密 (SSL/TLS)。必须在应用程序连接字符串中指定用于加密连接的参数，而*不要*信任服务器证书（服务器证书用于将连接字符串复制到 Azure 管理门户外部），否则，连接将不会验证服务器的身份，并且容易受到“中间人”攻击。例如，对于 ADO.NET 驱动程序，这些连接字符串参数为 **Encrypt=True** 和 **TrustServerCertificate=False**。有关详细信息，请参阅 [Azure SQL 数据库连接加密和证书验证](https://msdn.microsoft.com/zh-CN/library/azure/ff394108#encryption)。
 
-
+<a id="authentication"></a>
 ## 身份验证
 
 身份验证是指连接到数据库时如何证明你的身份。SQL 数据库支持两种类型的身份验证：
@@ -53,7 +54,7 @@ CREATE USER [Azure_AD_principal_name | Azure_AD_group_display_name] FROM EXTERNA
 
 有关在 SQL 数据库上进行身份验证的详细信息，请参阅[在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins)。
 
-
+<a id="authorization"></a>
 ## 授权
 授权是指你可以在 Azure SQL 数据库中执行哪些操作，这由你的用户帐户角色成员身份和权限来控制。作为最佳实践，你应向用户授予所需的最低权限。Azure SQL 数据库可让你在 T-SQL 中使用角色方便管理这种权限：
 
@@ -75,7 +76,7 @@ ALTER ROLE db_datawriter ADD MEMBER ApplicationUser; -- allows ApplicationUser t
 
 从 Azure 管理门户或使用 Azure 资源管理器 API 管理数据库和逻辑服务器的操作将会根据你的门户用户帐户的角色分配进行控制。<!--有关此主题的详细信息，请参阅 [Azure 预览门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。-->
 
-
+<a id="encryption"></a>
 ## 加密
 
 Azure SQL 数据库将会帮助你通过使用[透明数据加密](https://msdn.microsoft.com/zh-cn/library/dn948096.aspx)来加密处于“静止”状态或存储在数据库文件的数据，从而保护你的数据。若要加密你的数据库，请以数据库所有者身份连接，然后执行：
@@ -98,6 +99,7 @@ ALTER DATABASE [AdventureWorks] SET ENCRYPTION ON;
 
 审核和跟踪数据库事件可帮助你保持合规性，以及识别可疑活动。SQL 数据库审核可让你将数据库中的事件记录到 Azure 存储帐户中的审核日志。SQL 数据库审核还与 Microsoft Power BI 集成，以帮助向下钻取报告和分析数据。有关详细信息，请参阅 [SQL 数据库审核入门](/documentation/articles/sql-database-auditing-get-started)。
 
+<a id="compliance"></a>
 ## 合规性
 除了上述可帮助应用程序符合各项安全法规要求的特性和功能以外，Azure SQL 数据库 还定期参与审核，并已通过许多法规标准的认证。有关详细信息，请参阅 [Windows Azure 信任中心](/support/trust-center)，你可以在其中找到 [SQL 数据库法规认证](/support/trust-center/compliance/)的最新列表。
 
