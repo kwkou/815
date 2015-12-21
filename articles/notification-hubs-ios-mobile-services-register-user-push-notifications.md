@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="07/28/2015" 
-	wacn.date="11/02/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 通过使用移动服务注册推送通知的当前用户
 
@@ -21,48 +21,48 @@
 
 1.  在 Xcode 的项目中打开 QSTodoService.h 文件（该项目是你在完成基础教程[身份验证入门][身份验证入门]时创建的）并添加以下 **deviceToken** 属性：
 
-        @property (nonatomic) NSData* deviceToken;
+		@property (nonatomic) NSData* deviceToken;
 
-    此属性存储设备标记。
+ 	此属性存储设备标记。
 
-2.  在 QSTodoService.m 文件中，添加以下 **getDeviceTokenInHex** 方法：
+2. 在 QSTodoService.m 文件中，添加以下 **getDeviceTokenInHex** 方法：
 
-            - (NSString*)getDeviceTokenInHex {
-                const unsigned *tokenBytes = [[self deviceToken] bytes];
-                NSString *hexToken = [NSString stringWithFormat:@"%08X%08X%08X%08X%08X%08X%08X%08X",
-                                      ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),
-                                      ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
-                                      ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
-                return hexToken;
-            }
+			- (NSString*)getDeviceTokenInHex {
+			    const unsigned *tokenBytes = [[self deviceToken] bytes];
+			    NSString *hexToken = [NSString stringWithFormat:@"%08X%08X%08X%08X%08X%08X%08X%08X",
+			                          ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),
+			                          ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
+			                          ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
+			    return hexToken;
+			}
 
-    此方法将设备标记转换为十六进制字符串值。
+	此方法将设备标记转换为十六进制字符串值。
 
-3.  在 QSAppDelegate.m 文件中，将以下代码行添加到 **didFinishLaunchingWithOptions** 方法：
+3. 在 QSAppDelegate.m 文件中，将以下代码行添加到 **didFinishLaunchingWithOptions** 方法：
 
-            [[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
+			[[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
 
-    这在你的应用程序中启用推送通知。
+	这在你的应用程序中启用推送通知。
 
-4.  在 QSAppDelegate.m 文件中，添加以下方法：
+4. 	在 QSAppDelegate.m 文件中，添加以下方法：
 
-            - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-                [QSTodoService defaultService].deviceToken = deviceToken;
-            }
+			- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+			    [QSTodoService defaultService].deviceToken = deviceToken;
+			}
 
-    这会更新 **deviceToken** 属性。
+	这会更新 **deviceToken** 属性。
 
 	> [AZURE.NOTE]此时，此方法中不应有任何其他代码。如果你已调用在完成[通知中心入门](/manage/services/notification-hubs/get-started-notification-hubs-ios/"%20target="_blank")教程的学习时添加的 **registerNativeWithDeviceToken** 方法，必须注释掉或删除该调用。
 
 5.  （可选）在 QSAppDelegate.m 文件中，添加以下处理程序方法：
 
-            - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-                NSLog(@"%@", userInfo);
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:
-                                      [[userInfo objectForKey:@"aps"] valueForKey:@"alert"] delegate:nil cancelButtonTitle:
-                                      @"OK" otherButtonTitles:nil, nil];
-                [alert show];
-            }
+			- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+			    NSLog(@"%@", userInfo);
+			    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:
+			                          [[userInfo objectForKey:@"aps"] valueForKey:@"alert"] delegate:nil cancelButtonTitle:
+			                          @"OK" otherButtonTitles:nil, nil];
+			    [alert show];
+			}
 
     当你的应用程序接收到它正在运行的通知时，此方法将在 UI 中显示一个警报。
 
@@ -84,21 +84,21 @@
 
     此方法构造包含设备标记的 json 负载。它然后在你的移动服务中调用自定义 API 以注册通知。此方法为推送通知创建一个设备标记并将它与设备类型一起发送到在通知中心创建注册的自定义 API 方法。此自定义 API 已在[使用通知中心通知用户][使用通知中心通知用户]中定义。
 
-7.  最后，在 **viewDidAppear** 方法中，在用户成功进行身份验证后添加对这个新 **registerForNotificationsWithBackEnd** 方法的调用，如下例中所示：
-
-            - (void)viewDidAppear:(BOOL)animated
-            {
-                MSClient *client = self.todoService.client;
-
-                if (client.currentUser != nil) {
-                    return;
-                }
-
-                [client loginWithProvider:@"microsoftaccount" controller:self animated:YES completion:^(MSUser *user, NSError *error) {
-                    [self refresh];
-                    [self registerForNotificationsWithBackEnd];
-                }];
-            }
+7.	最后，在 **viewDidAppear** 方法中，在用户成功进行身份验证后添加对这个新 **registerForNotificationsWithBackEnd** 方法的调用，如下例中所示：
+	
+			- (void)viewDidAppear:(BOOL)animated
+			{
+			    MSClient *client = self.todoService.client;
+			
+			    if (client.currentUser != nil) {
+			        return;
+			    }
+			    
+			    [client loginWithProvider:@"microsoftaccount" controller:self animated:YES completion:^(MSUser *user, NSError *error) {
+			        [self refresh];
+			        [self registerForNotificationsWithBackEnd];
+			    }];
+			}
 
 	> [AZURE.NOTE]这可以确保每次加载页时都会请求注册。在应用程序中，你可能只需要定期执行此注册以确保注册是最新的。
 	
@@ -115,4 +115,4 @@
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Get Started with Notification Hubs]: /documentation/articles/notification-hubs-ios-get-started/
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_1207_2015-->

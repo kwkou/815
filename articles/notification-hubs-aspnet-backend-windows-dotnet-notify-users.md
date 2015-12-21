@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="06/16/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 #Azure 通知中心 - 通知用户
@@ -29,7 +29,7 @@
 
 在开始本教程之前，必须已完成以下移动服务教程：
 
-+ [通知中心入门]<br/>创建通知中心，保留应用名称，然后注册以接收本教程中的通知。本教程假设已完成这些步骤。请遵循[通知中心入门（Windows 应用商店）](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)中的步骤；具体而言，请遵循[在 Windows 应用商店中注册你的应用](/documentation/articles/notification-hubs-windows-store-dotnet-get-started#register-your-app-for-the-windows-store)和[配置通知中心](/documentation/articles/notification-hubs-windows-store-dotnet-get-started#configure-your-notification-hub)部分中的步骤。请务必确保已在门户中你的通知中心的“配置”选项卡上输入了“程序包 SID”和“客户端机密”值。[配置通知中心](/documentation/articles/notification-hubs-windows-store-dotnet-get-started#configure-your-notification-hub)部分中介绍了此配置过程。这个步骤非常重要：如果门户上的凭据与针对所选应用程序名称指定的凭据不匹配，推送通知将不会成功。
++ [通知中心入门]<br/>在此教程中，你创建通知中心，保留应用名称，然后注册以接收通知。本教程假设已完成这些步骤。请遵循[通知中心入门（Windows 应用商店）](notification-hubs-windows-store-dotnet-get-started.md)中的步骤；具体而言，请遵循[在 Windows 应用商店中注册你的应用](notification-hubs-windows-store-dotnet-get-started.md#register-your-app-for-the-windows-store)和[配置通知中心](notification-hubs-windows-store-dotnet-get-started.md#configure-your-notification-hub)部分中的步骤。请务必确保已在门户中你的通知中心的“配置”选项卡上输入了“程序包 SID”和“客户端机密”值。[配置通知中心](notification-hubs-windows-store-dotnet-get-started.md#configure-your-notification-hub)部分中介绍了此配置过程。这个步骤非常重要：如果门户上的凭据与针对所选应用程序名称指定的凭据不匹配，推送通知将不会成功。
 
 
 
@@ -348,7 +348,7 @@
  
 ## 后续步骤
 
-* 如果要按兴趣细分用户组，可以阅读[使用通知中心发送突发新闻]。 
+* 如果要按兴趣组划分用户，可以阅读[使用通知中心发送突发新闻]。 
 * 若要了解有关如何使用通知中心的详细信息，请参阅[通知中心指南]。
 
 
@@ -370,4 +370,4 @@
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_1207_2015-->

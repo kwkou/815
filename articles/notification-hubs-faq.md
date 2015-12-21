@@ -12,16 +12,15 @@
 	ms.date="08/18/2015" 
 	wacn.date="11/02/2015"/>
 
-# Azure 通知中心 - 常见问题 (Faq)
+# Azure 通知中心 - 常见问题 (FAQ)
 
 ##常规
 ###1.通知中心的定价有哪些？
-通知中心按三层提供 - *免费*、*基本*和*标准*层。有关详细信息，请参阅[通知中心定价]。定价根据订阅级别和推送次数收费，因此，命名空间或通知中心的多少与此无关。
-免费层适用于没有 SLA 保证的开发目的。基本和标准层适用于具有以下仅针对标准层启用的关键特性的生产使用情况：
+通知中心按三层提供 - *免费*、*基本*和*标准*层。在此处了解更多详情 - [通知中心定价]。定价根据订阅级别和推送次数收费，因此，命名空间或通知中心的多少与此无关。免费层适用于没有 SLA 保证的开发目的。基本和标准层适用于具有以下仅针对标准层启用的关键特性的生产使用情况：
 
-- *广播* - 基本层将通知中心标记数限制为 3 K（适用于 > 5 台设备）。如果受众大小大于 3K，则您必须移到标准层。 
-- *丰富的遥测功能* - 基本层不允许导出遥测或注册数据。如果需要能够导出遥测数据以便进行离线查看和分析，则您必须移到标准层。 
-- *多租户* - 如果要使用通知中心创建移动应用以支持多个租户，则必须考虑将移动到标准层。这使您可以在应用的通知中心命名空间级别设置推送通知服务 (PNS) 凭据，然后可以分隔租户以在此公共命名空间下向他们提供单个中心。这样便于维护，同时保存这些 SAS 密钥以从这些针对各个租户分隔的通知中心发送和接收通知，确保不会出现跨租户重叠。 
+- *广播* - 基本层将通知中心标记数限制为 3K（适用于 > 5 台设备）。如果受众大小大于 3K，则你必须移到标准层。 
+- *丰富的遥测功能* - 基本层不允许导出遥测或注册数据。如果需要能够导出遥测数据以便进行离线查看和分析，则你必须移到标准层。 
+- *多租户* - 如果要使用通知中心创建移动应用以支持多个租户，则必须考虑将移动到标准层。这使你可以在应用的通知中心命名空间级别设置推送通知服务 (PNS) 凭据，然后可以分隔租户以在此公共命名空间下向他们提供单个中心。这样便于维护，同时保存这些 SAS 密钥以从这些针对各个租户分隔的通知中心发送和接收通知，确保不会出现跨租户重叠。 
 
 ### 2.什么是 SLA？
 对于基本和标准通知中心层，就在基本或标准通知中心层内部署的通知中心而言，我们保证至少在 99.9% 情况下，正确配置的应用程序将能够发送通知或执行注册管理操作。若要详细了解我们的 SLA，请访问此处的 SLA 页面 - [通知中心 SLA]。请注意，由于通知中心依赖于外部平台提供商将通知传递到设备，因此平台通知服务和设备之间没有用于支撑的 SLA 保证。
@@ -44,10 +43,10 @@
 我们支持将通知发送到 Apple iOS、Android、Windows 通用和 Windows Phone Kindle、Android China（通过百度）、Xamarin（iOS 和 Android）、Chrome 应用平台。有关这些平台的分步入门教程，请参阅 [NH - 入门教程]
  
 ###3.是否支持 SMS/电子邮件/Web 通知？
-通知中心主要针对使用上述平台将通知发送到移动应用而设计。我们不提供发送电子邮件或 SMS 的功能，但提供这些功能的第三方平台可以与通知中心进行集成，以通过使用 Azure 移动服务发送原生推送通知。例如，本教程将探讨如何使用 Azure 移动服务发送 SMS 通知 - [通过移动服务发送 SMS] 我们也不提供现成的浏览器内推送通知。客户可能选择使用 SignalR 实现这一功能。我们还提供了将推送通知发送到将在 Google Chrome 浏览器内运行的 Chrome 应用的教程 。请参阅此 - [Chrome 应用教程]
+通知中心主要针对使用上述平台将通知发送到移动应用而设计。我们不提供发送电子邮件或 SMS 的功能，但提供这些功能的第三方平台可以与通知中心进行集成，以通过使用 Azure 移动服务发送原生推送通知。我们也不提供现成的浏览器内推送通知。客户可能选择使用 SignalR 实现这一功能。我们还提供了将推送通知发送到将在 Google Chrome 浏览器内运行的 Chrome 应用的教程 。请参阅此 - [Chrome 应用教程]
  
 ###4.Azure 移动服务与 Azure 通知中心之间的关系如何以及各自的适用场合？ 
-如果你有现成的移动应用后端并且只想添加发送推送通知的功能，则必须使用 Azure 通知中心。如果你想要从头开始安装移动应用后端，那么你应当考虑使用 Azure 移动服务。Azure 移动服务会自动预配通知中心，以便你能够轻松地从移动应用后端发送推送通知。Azure 移动服务的定价包括通知中心的基本费用，你只需在超出所含推送时支付费用。有关详细信息，请参阅[移动服务定价]
+如果你有现成的移动应用后端并且只想添加发送推送通知的功能，则必须使用 Azure 通知中心。如果你想要从头开始安装移动应用后端，那么你应当考虑使用 Azure 移动服务。Azure 移动服务会自动预配通知中心，以便你能够轻松地从移动应用后端发送推送通知。Azure 移动服务的定价包括通知中心的基本费用，你只需在超出所含推送时支付费用。在此处了解更多详情 - [移动服务定价]
  
 ###5.通知中心可以支持多少台设备？
 在基本和标准层中 - 我们未对可以接收通知的活动设备数量设定任何限制。有关详细信息，请参阅：[通知中心定价]
@@ -66,8 +65,7 @@
 每个环境中的每个移动应用只应有一个通知中心。在多租户方案中，每个租户都应具有一个单独的中心。
 你不能在测试与生产环境之间共享同一通知中心，因为这可能导致发送通知时出现问题，例如，Apple 提供沙盒和每个都具有单独凭据的生产推送终结点。如果中心最初的配置使用的是 Apple 沙盒证书，而后又使用 Apple 生产证书进行了重新配置，则旧的设备令牌将和新证书一起失效，导致推送失败。将生产和测试环境分开，针对不同的环境使用不同的中心是最佳做法。
 
-*PNS 凭据：*
-在某个平台的开发人员门户（如Apple 或 Google 等 ）注册了一个移动应用后，你会获得应用标识符和安全令牌，应用后端需要向平台的推送通知服务提供这些信息以便能够将推送通知发送到设备。这些安全令牌可以是证书（例如用于 Apple iOS 或 Windows Phone）或安全密钥（Google Android 和 Windows）等) 等，并需要在通知中心内进行配置。这通常在通知中心级别完成，在多租户方案中，也可在命名空间级别完成。
+*PNS 凭据：*将移动应用注册到某个平台的开发人员门户（如Apple 或 Google 等）后，你会获得应用标识符和安全令牌，应用后端需要向平台的推送通知服务提供这些信息以便能够将推送通知发送到设备。这些安全令牌可以是证书（例如用于 Apple iOS 或 Windows Phone）或安全密钥（Google Android 和 Windows）等) 等，并需要在通知中心内进行配置。这通常在通知中心级别完成，在多租户方案中，也可在命名空间级别完成。
 
 *命名空间：*
 命名空间还可用于部署分组。在多租户方案中，其还可以用于表示同一应用的所有租户的所有通知中心。
@@ -98,7 +96,7 @@ Azure 通知中心使用基于安全模型的共享访问签名 (SAS) 。你可�
 
 - 从主中心获取注册信息的常规转储作为备份，然后批量插入辅助 NH。
 
-（注册导出/导入功能在标准层中有提供，请参阅：[注册导出/导入]）
+（注册信息导出/导入功能在标准层中有提供，请参阅：[注册信息导出/导入]）
  
 如果你没有后端，那么当应用在设备上启动后，其会在辅助通知中心执行新注册，最终，辅助通知中心会将所有活动设备进行注册，但缺点是会出现这样的时间段，即其中应用没有打开的设备将不会收到通知。
  
@@ -112,21 +110,26 @@ Azure 通知中心提供了多种可执行常见故障排除的功能，特别�
 ###2.遥测功能有哪些？
 Azure 通知中心支持在 Azure 管理门户中查看遥测数据。有关可用度量值的详细信息，请参阅 [NH - 度量值]。请注意，通知成功仅意味着通知已传递到外部推送通知服务（例如，适用于 Apple 的 APNS、适用于 Google 的 GCM 等），而后，由 PNS 将通知传递至设备，PNS 不会向我们公开这些度量值。它还提供了以编程方式导出遥测数据的功能（在标准层）。请参阅此示例了解详细信息 - [NH - 度量值示例]
 
-[通知中心定价]: http://www.windowsazure.cn/home/features/notification-hubs/#price
-[通知中心 SLA]: http://www.windowsazure.cn/support/legal/sla
+[通知中心定价]: /home/features/notification-hubs/#price
+[通知中心 SLA]: /support/legal/sla
+[案例研究 - Sochi]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=7942
+[案例研究 - Skanska]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=5847
+[案例研究 - Seattle Times]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=8354
+[案例研究 -Mural.ly]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=11592
+[案例研究 - 7Digital]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=3684
 [NH - REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dn530746.aspx
 [NH - 入门教程]: /documentation/articles/notification-hubs-ios-get-started
-[通过移动服务发送 SMS]: /documentation/articles/partner-twilio-mobile-services-how-to-use-voice-sms
+
 [Chrome 应用教程]: /documentation/articles/notification-hubs-chrome-get-started
-[移动服务定价]: http://www.windowsazure.cn/home/features/mobile-services/#price
-[后端注册指导]: https://msdn.microsoft.com/zh-cn/library/azure/dn743807.aspx
+[移动服务定价]: /home/features/mobile-services/#price
+[后端注册指南]: https://msdn.microsoft.com/library/azure/dn743807.aspx
 [后端注册指南 - 2]: https://msdn.microsoft.com/zh-cn/library/azure/dn530747.aspx
 [NH 安全模型]: https://msdn.microsoft.com/zh-cn/library/azure/dn495373.aspx
 [NH - 安全推送教程]: /documentation/articles/notification-hubs-aspnet-backend-ios-secure-push
 [NH - 故障排除]: /documentation/articles/notification-hubs-diagnosing
 [NH - 度量值]: https://msdn.microsoft.com/zh-cn/library/dn458822.aspx
 [NH - 度量值示例]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/FetchNHTelemetryInExcel
-[注册导出/导入]: https://msdn.microsoft.com/zh-cn/library/dn790624.aspx
+[注册信息导出/导入]: https://msdn.microsoft.com/zh-cn/library/dn790624.aspx
  
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_1207_2015-->
