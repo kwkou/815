@@ -24,7 +24,7 @@
 
 ## 开始之前
 
-[AZURE.INCLUDE [notification-hubs-hero-slug](../../includes/notification-hubs-hero-slug.md)]
+[AZURE.INCLUDE [notification-hubs-hero-slug](../includes/notification-hubs-hero-slug.md)]
 
 可以在 GitHub 上的[此处](https://github.com/Azure/azure-notificationhubs-samples/tree/master/Android/GetStarted)找到本教程的已完成代码。
 
