@@ -11,7 +11,7 @@
 <tags 
 	ms.service="stream-analytics" 
 	ms.date="10/05/2015" 
-	wacn.date="11/12/2015" />
+	wacn.date="12/17/2015" />
 
 
 # 流分析关键概念：流分析作业基础指南 

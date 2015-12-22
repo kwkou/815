@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="10/13/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="11/06/2015"
+	wacn.date="12/17/2015"/>
 
 # Apache Storm 和 Azure 流分析的比较 #
 
@@ -586,4 +586,4 @@
     </tbody>
 </table>
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->
