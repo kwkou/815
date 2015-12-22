@@ -13,6 +13,7 @@
 	ms.date="10/23/2015"
 	wacn.date="12/17/2015"/>
 
+#在 Azure 网站中启用网站的 HTTPS
 
 [AZURE.INCLUDE [configure-ssl-web-site](../includes/configure-ssl-web-site.md)]
 
