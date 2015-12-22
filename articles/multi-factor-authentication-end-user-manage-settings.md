@@ -10,8 +10,9 @@
 <tags 
 	ms.service="multi-factor-authentication" 
 	ms.date="10/29/2015" 
-	wacn.date="12/10/2015"/>
-# 使用 Azure 多重认证时遇到问题
+	wacn.date="12/17/2015"/>
+
+# 使用 Azure 多重身份验证时遇到问题
 以下信息旨在帮助你解决可能遇到的一些常见问题。
 
 
@@ -59,12 +60,12 @@
 
 >[AZURE.IMPORTANT]必须配置辅助身份验证电话号码。由于你的主要电话号码和移动应用可能在同一部手机上，因此，当你的手机丢失或被盗时，只能通过辅助电话号码访问你的帐户。
 
-如果你未配置辅助身份验证电话号码，则需要与管理员联系并让他们清除你的设置，这样，当你下次登录时，系统将提示你再次[设置多重认证](multi-factor-authentication-manage-users-and-devices.md#require-selected-users-to-provide-contact-methods-again)。
+如果你未配置辅助身份验证电话号码，则需要与管理员联系并让他们清除你的设置，这样，当你下次登录时，系统将提示你再次[设置多重身份验证](multi-factor-authentication-manage-users-and-devices.md#require-selected-users-to-provide-contact-methods-again)。
 
 ## <a name="i-want-to-change-my-phone-number"></a>我想要更改我的电话号码
-根据多重认证的使用方式，你可以在多个位置更改设置，例如你的电话号码。使用下表来帮助选择最适合自己的方式。
+根据多重身份验证的使用方式，你可以在多个位置更改设置，例如你的电话号码。使用下表来帮助选择最适合自己的方式。
 
-如何使用多重认证|说明
+如何使用多重身份验证|说明
 :------------- | :------------- | 
 [我要将它用于 Office 365](#changing-your-settings-with-office-365)| 这意味着你要通过 Office 365 门户更改设置。
 [我不知道](#changing-your-settings-with-the-myapps-portal)|这意味着你要登录 [http://myapps.microsoft.com](http://myapps.microsoft.com) 并在该网站上更改设置。
@@ -75,7 +76,7 @@
 ### 在 Office 365 中更改设置
 
 
-如果你在 Office 365 上使用多重认证，则需要通过 Office 365 门户管理其他安全性验证设置。
+如果你在 Office 365 上使用多重身份验证，则需要通过 Office 365 门户管理其他安全性验证设置。
 
 #### 在 Office 365 门户中更改设置
 
@@ -88,7 +89,7 @@
 
 ### 使用 Myapps 门户更改设置
 
-如果你不确定多重认证的使用方式，你始终可以通过 myapps 门户更改设置。
+如果你不确定多重身份验证的使用方式，你始终可以通过 myapps 门户更改设置。
 
 #### 在 Myapps 门户中更改设置
 
@@ -101,7 +102,7 @@
 
 ### 使用 Microsoft Azure 更改设置
 
-如果你在 Azure 上使用多重认证，则需要通过 Azure 门户更改设置。
+如果你在 Azure 上使用多重身份验证，则需要通过 Azure 门户更改设置。
 
 #### 在 Azure 门户中访问其他安全性验证设置
 
@@ -129,7 +130,7 @@
 
 请注意，如果你收到了多个验证码，只有最新的一个验证码才起作用。
 
-如果先前已配置备用电话，建议你在登录页出现提示时选择该电话，然后再试一次。如果你未配置其他方法，请与管理员联系并让他们清除你的设置，这样，当你下次登录时，系统将提示你再次[设置多重认证](/documentation/articles/multi-factor-authentication-manage-users-and-devices#require-selected-users-to-provide-contact-methods-again)。
+如果先前已配置备用电话，建议你在登录页出现提示时选择该电话，然后再试一次。如果你未配置其他方法，请与管理员联系并让他们清除你的设置，这样，当你下次登录时，系统将提示你再次[设置多重身份验证](/documentation/articles/multi-factor-authentication-manage-users-and-devices#require-selected-users-to-provide-contact-methods-again)。
 
 ## <a name="app-passwords-are-not-working"></a>应用密码不起作用
 首先，请确保正确输入应用密码。如果仍然无法解决问题，请尝试登录并[创建新的应用密码](/documentation/articles/multi-factor-authentication-end-user-app-passwords)。如果还是不起作用，请与管理员联系并让他们[删除现有应用密码](/documentation/articles/multi-factor-authentication-manage-users-and-devices#delete-users-existing-app-passwords)，然后请新建一个应用密码并使用该密码。

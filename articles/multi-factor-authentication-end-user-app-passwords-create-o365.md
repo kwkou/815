@@ -10,7 +10,7 @@
 <tags 
 	ms.service="multi-factor-authentication" 
 	ms.date="06/02/2015" 
-	wacn.date="09/15/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 在 Office 365 门户中为 Azure 多重认证创建应用密码
 

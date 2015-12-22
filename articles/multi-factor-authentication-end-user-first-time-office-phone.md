@@ -10,7 +10,7 @@
 <tags 
 	ms.service="multi-factor-authentication" 
 	ms.date="06/02/2015" 
-	wacn.date="09/15/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 在 Azure 多重认证中使用办公电话作为联系方法
 

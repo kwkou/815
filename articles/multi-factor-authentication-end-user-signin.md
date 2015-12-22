@@ -10,7 +10,7 @@
 <tags 
 	ms.service="multi-factor-authentication" 
 	ms.date="10/15/2015" 
-	wacn.date="12/10/2015"/>
+	wacn.date="12/17/2015"/>
 
 # Azure 多重认证的登录体验
 > [AZURE.NOTE]本页提供的文档演示了一个典型的登录体验。有关登录的帮助，请参阅[使用 Azure 多重认证时遇到问题](multi-factor-authentication-end-user-manage-settings.md)

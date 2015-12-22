@@ -10,7 +10,7 @@
 <tags 
 	ms.service="multi-factor-authentication" 
 	ms.date="08/24/2015" 
-	wacn.date="12/10/2015"/>
+	wacn.date="12/17/2015"/>
 
 # Azure 多重认证常见问题
 

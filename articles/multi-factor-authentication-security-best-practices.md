@@ -10,7 +10,7 @@
 <tags 
 	ms.service="multi-factor-authentication" 
 	ms.date="10/15/2015" 
-	wacn.date="12/10/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 将 Azure 多重认证与 Azure AD 帐户配合使用时的安全最佳实践
 
