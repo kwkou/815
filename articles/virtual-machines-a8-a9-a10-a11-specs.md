@@ -9,8 +9,8 @@
  tags="azure-resource-manager,azure-service-management"/>
 <tags
 	ms.service="virtual-machines"
- 	ms.date="09/29/2015"
- 	wacn.date="11/12/2015"/>
+ 	ms.date="10/30/2015"
+ 	wacn.date="12/17/2015"/>
 
 # 关于 A8、A9、A10 和 A11 计算密集型实例
 
@@ -25,7 +25,7 @@
 
 * **支持 Linux 和 Windows HPC 群集** – 在 Azure 中的 A8、A9、A10 和 A11 实例上部署群集管理和作业计划软件，以创建一个独立的 HPC 群集或将容量添加到本地群集。与其他 Azure VM 大小一样，A8、A9、A10 和 A11 实例支持标准或自定义 Windows Server 和 Linux 操作系统映像或 Azure VM (IaaS) 中的 Azure 资源管理器模板，或云服务中的 Azure 来宾 OS 版本（PaaS，仅限于 Windows Server）。
 
->[AZURE.NOTE]A10 和 A11 实例与 A8 和 A9 实例具有相同的性能优化和规范。但是，它们不包括对 Azure 中 RDMA 网络的访问权限。它们为节点间不需要保持恒定和低延迟通信的 HPC 应用程序（也称为参数化或易并行应用程序）而设计。对于运行 MPI 应用程序以外的工作负荷，A8 和 A9 实例不会访问 RDMA 网络，并且功能上等效于 A10 和 A11 实例。
+>[AZURE.NOTE]A10 和 A11 实例与 A8 和 A9 实例具有相同的性能优化和规范。但是，它们不包括对 Azure 中 RDMA 网络的访问权限。它们为节点间不需要保持恒定和低延迟通信的 HPC 应用程序（也称为参数化或易并行应用程序）而设计。
 
 
 ## 规范
@@ -57,17 +57,15 @@ A8 和 A9 实例具有两个网络适配器，可连接到以下两个后端 Azu
 
 A10 和 A11 实例具有连接到 Azure 服务和 Internet 的单个 10-Gbps 以太网网络适配器。
 
-## 有关 Azure 订阅的注意事项
+## 有关订阅的注意事项
 
 * **Azure 帐户** – 如果要部署非少量的计算密集型实例，请考虑使用即付即用订阅或其他购买选项。还可以使用你的 MSDN 订阅。<!--请参阅 [MSDN 订户的 Azure 权益](/pricing/member-offers/msdn-benefits-details/)。-->如果你使用的是 [Azure 免费试用版](http://www.windowsazure.cn/pricing/1rmb-trial/)，则仅可以使用有限数量的 Azure 计算核心。
 
-* **内核配额** – 你可能需要在 20 个的默认内核配额的基础上增加 Azure 订阅中的内核配额，对于许多 8 核心或 16 核心实例的方案，20 个的默认内核是不够的。对于初始测试，可考虑请求将配额增加到 100 个内核。若要执行此操作，请打开免费支持票证，如[了解 Azure 限制与增加](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)中所示。
+* **内核配额** — 你可能需要在 Azure 订阅中，将核心配额从每个订阅 20 个核心（适用于 Azure 服务管理部署）或每个区域 20 个核心（适用于 Azure 资源管理器部署）的默认值加以提高，这对于许多 8 核或 16 核实例的案例来说是不够的。对于初始测试，可考虑请求将配额增加到 100 个内核。若要执行此操作，请开具免费支持票证，如[了解 Azure 限制与增加](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)中所示。
 
     >[AZURE.NOTE]Azure 配额为信用额度，而不是容量保障。仅收取你使用的内核的费用。
 
-* **地缘组** – 当前，对于大多数新部署不建议使用地缘组。但是请注意，如果正在使用包含 A8 – A11 以外大小的实例的地缘组，则无法对 A8 – A11 实例使用该地缘组，反之亦然。
-
-* **虚拟网络** – Azure 虚拟网络不需要使用计算密集型实例。但是，如果需要访问本地资源（例如，应用程序许可证服务器），则对于许多 IaaS 方案或者一个站点到站点连接，可能至少需要一个基于云的 Azure 虚拟网络。需要先创建一个新的（区域）虚拟网络，再部署实例。不支持将 A8、A9、A10 或 A11 VM 添加到地缘组中的虚拟网络。有关详细信息，请参阅[如何创建虚拟网络 (VNet)](/documentation/articles/virtual-network/virtual-networks-create-vnet) 和[为虚拟网络配置站点到站点 VPN 连接](/documentation/articles/vpn-gateway/vpn-gateway-site-to-site-create)。
+* **虚拟网络** – Azure 虚拟网络不需要使用计算密集型实例。但是，如果需要访问本地资源（例如，应用程序许可证服务器），则对于许多 IaaS 方案或者一个站点到站点连接，可能至少需要一个基于云的 Azure 虚拟网络。需要先创建一个新的（区域）虚拟网络，再部署实例。不支持将 A8、A9、A10 或 A11 VM 添加到地缘组中的虚拟网络。有关详细信息，请参阅[虚拟网络文档](/documentation/services/virtual-network/)。
 
 * **云服务或可用性集** – 若要通过 RDMA 网络进行连接，A8 和 A9 实例必须部署在同一云服务（用于在 Azure 资源管理器中具有基于 Linux 的 VM 或基于 Windows 的 VM 的 IaaS 方案；或者具有 Windows Server 的 PaaS 方案）或同一可用性集（用于 Azure 资源管理器中基于 Linux 的 VM 或基于 Windows 的 VM）中。
 
@@ -75,13 +73,13 @@ A10 和 A11 实例具有连接到 Azure 服务和 Internet 的单个 10-Gbps 以
 
 ### HPC Pack 和 Linux 的注意事项
 
-[HPC Pack](https://technet.microsoft.com/library/jj899572.aspx) 是用于 Windows 的 Microsoft 免费 HPC 群集和作业管理解决方案。从 HPC Pack 2012 R2 Update 2 开始，HPC Pack 支持多个 Linux 分发在 Windows Server 头节点管理的 Azure VM 中部署的计算节点上运行。使用 HPC Pack 的最新版本，可以部署基于 Linux 的群集，该群集可运行访问 Azure 中的 RDMA 网络的 MPI 应用程序。有关更多信息，请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)。
+[HPC Pack](https://technet.microsoft.com/library/jj899572.aspx) 是用于 Windows 的 Microsoft 免费 HPC 群集和作业管理解决方案。从 HPC Pack 2012 R2 Update 2 开始，HPC Pack 支持多个 Linux 分发在 Windows Server 头节点管理的 Azure VM 中部署的计算节点上运行。使用 HPC Pack 的最新版本，可以部署基于 Linux 的群集，该群集可运行访问 Azure 中的 RDMA 网络的 MPI 应用程序。有关详细信息，请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)。
 
 ### HPC Pack 和 Windows 的注意事项
 
 通过 Windows Server 使用 A8、A9、A10 和 A11 实例时，并不需要使用 HPC Pack，但在 Azure 中创建基于 Windows HPC Server 的群集时，它是推荐使用的工具。在 A8 和 A9 实例的情况下，HPC Pack 是运行可访问 Azure 中的 RDMA 网络的基于 Windows 的 MPI 应用程序的最有效方法。HPC Pack 中包括适用于 Windows 消息传递接口的 Microsoft 实现的运行时环境。
 
-有关在 Windows Server 上配合使用计算密集型实例和 HPC Pack 的更多信息和清单，请参阅[使用 HPC Pack 设置一个用于运行 MPI 应用程序的 Windows RDMA 群集](/documentation/articles/virtual-machines-windows-hpcpack-cluster-rdma)。
+有关在 Windows Server 上配合使用计算密集型实例和 HPC Pack 的详细信息和清单，请参阅[使用 HPC Pack 设置一个用于运行 MPI 应用程序的 Windows RDMA 群集](/documentation/articles/virtual-machines-windows-hpcpack-cluster-rdma)。
 
 ## RDMA 网络访问权限
 
@@ -111,18 +109,16 @@ MPI | Intel MPI Library 5
 MPI | MS-MPI 2012 R2 或更高版本，独立安装或通过 HPC Pack 2012 R2 或更高版本安装<br/><br/>Intel MPI Library 5 | MS-MPI 2012 R2 或更高版本，通过 HPC Pack 2012 R2 或更高版本安装<br/><br/>Intel MPI Library 5
 
 
->[AZURE.NOTE]对于 IaaS 方案，HpcVmDrivers 扩展必须添加到 VM 以安装 RDMA 连接所需的 Windows 网络设备驱动程序。视你的部署方法而定，HpcVmDrivers 扩展可自动添加到 A8 或 A9 VM，或者需要自行添加。若要将扩展添加，请参阅[管理虚拟机扩展](/documentation/articles/virtual-machines-extensions-install)。
+>[AZURE.NOTE]对于 IaaS 方案，HpcVmDrivers 扩展必须添加到 VM 以安装 RDMA 连接所需的 Windows 网络设备驱动程序。视你的部署方法而定，HpcVmDrivers 扩展可自动添加到 A8 或 A9 VM，或者需要自行添加。若要添加扩展，请参阅[管理 VM 扩展](/documentation/articles/virtual-machines-extensions-install)。
 
 
 ## 其他须知项
 
-* A8 – A11 VM 大小仅在标准定价层中可用。
+* **定价** — A8–A11 VM 大小仅适用于标准定价层。
 
-* 不能将现有的 Azure VM 的大小调整为 A8、A9、A10 或 A11 大小。
+* **重设大小** — 你无法将大小为 A8–A11 以外的实例重设为某个计算密集型实例大小 (A8-11)，也无法将计算密集型实例重设为非计算密集型实例的大小。这是因为特殊化硬件和性能优化是计算密集型实例特有的。
 
-* A8、A9、A10 和 A11 实例当前不能通过使用属于现有地缘组的云服务进行部署。同样，具有包含 A8、 A9、 A10 和 A11 实例的云服务的地缘组不能用于其他实例大小的部署。如果尝试这些部署，则将看到类似于 `Azure deployment failure (Compute.OverconstrainedAllocationRequest): The VM size (or combination of VM sizes) required by this deployment cannot be provisioned due to deployment request constraints.` 的错误消息
-
-* Azure 中的 RDMA 网络保留地址空间 172.16.0.0/12。如果计划在部署于 Azure 虚拟网络中的 A8 和 A9 实例上运行 MPI 应用程序，请确保虚拟网络地址空间不与 RDMA 网络重叠。
+* **RDMA 网络地址空间** — Azure 中的 RDMA 网络保留地址空间 172.16.0.0/12。如果计划在 Azure 虚拟网络中的 A8 和 A9 实例上运行 MPI 应用程序，请确保虚拟网络地址空间不与 RDMA 网络重叠。
 
 ## 后续步骤
 
@@ -130,4 +126,4 @@ MPI | MS-MPI 2012 R2 或更高版本，独立安装或通过 HPC Pack 2012 R2 �
 * 若要使用 A8 和 A9 实例部署和配置基于 Linux 的群集以访问 Azure RDMA 网络，请参阅[设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-cluster-rdma)。
 * 若要开始在 Windows 上使用 HPC Pack 部署和使用 A8 和 A9 实例，请参阅[使用 HPC Pack 设置一个用于运行 MPI 应用程序的 Windows RDMA 群集](/documentation/articles/virtual-machines-windows-hpcpack-cluster-rdma)。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

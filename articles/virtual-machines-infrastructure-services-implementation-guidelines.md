@@ -10,10 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/09/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/21/2015"
+	wacn.date="12/17/2015"/>
 
 # Azure 基础结构服务实施准则
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 Azure 是一个实现开发/测试或概念证明配置的极好平台，因为它只需很少的投资即可测试实现你的解决方案的特定方法。但是，你必须能够将用于开发/测试环境的简便做法与用于全功能生产就绪的 IT 工作负荷实现的更难且更详细的做法区分开来。
 
@@ -21,7 +23,7 @@ Azure 是一个实现开发/测试或概念证明配置的极好平台，因为�
 
 本文改编自 [Azure 实现指导原则](http://blogs.msdn.com/b/thecolorofazure/archive/2014/05/13/azure-implementation-guidelines.aspx)这篇博客文章中的内容。感谢 Santiago Cánepa（Microsoft 应用程序开发经理）和 Hugo Salcedo（Microsoft 应用程序开发经理）提供的原创内容。
 
-> [AZURE.NOTE]地缘组已弃用。此处不介绍其用法。有关详细信息，请参阅[关于区域虚拟网络和地缘组](https://msdn.microsoft.com/zh-CN/library/azure/jj156085.aspx)。
+> [AZURE.NOTE]地缘组已弃用。此处不介绍其用法。有关详细信息，请参阅[关于区域虚拟网络和地缘组](/documentation/articles/virtual-networks-migrate-to-regional-vnet)。
 
 ## 1\.命名约定
 
@@ -54,7 +56,7 @@ Azure 是一个实现开发/测试或概念证明配置的极好平台，因为�
 Azure 组件、服务或产品 | Rg 用于资源组，Svc 用于云服务，VNet 用于虚拟网络 | 根据资源提供支持的产品。
 角色 | sql、ora、sp、iis | 根据虚拟机的角色。
 实例 | 01、02、03 等。 | 适用于具有多个实例的资源。例如，云服务中经过负载平衡的 Web 服务器。
-		
+
 建立命名约定时，请确保这些命名约定明确说明要对每种类型的资源使用哪些词缀，以及在哪个位置使用（前缀还是后缀）。
 
 ### 日期
@@ -86,7 +88,7 @@ Azure 组件、服务或产品 | Rg 用于资源组，Svc 用于云服务，VNet
 
 如果使用已包含操作系统的 .vhd 映像文件创建虚拟机，Azure 中的虚拟机名称可能不同于虚拟机的操作系统计算机名称。这种情况可能会增加虚拟机管理难度，因此不建议使用这种方法。分配给 Azure 虚拟机资源的名称可以与分配给该虚拟机的操作系统的计算机名称相同。
 
-我们建议 Azure 虚拟机名称应该与基础 OS 计算机名称相同。因此，请遵循 [Microsoft NetBIOS 计算机命名约定](https://support.microsoft.com/zh-CN/kb/188997)中所述的 NetBIOS 命名规则。
+我们建议 Azure 虚拟机名称应该与基础操作系统计算机名称相同。因此，请遵循 [Microsoft NetBIOS 计算机命名约定](https://support.microsoft.com/zh-CN/kb/188997)中所述的 NetBIOS 命名规则。
 
 ### 存储帐户名称
 
@@ -96,7 +98,6 @@ Azure 组件、服务或产品 | Rg 用于资源组，Svc 用于云服务，VNet
 - mystorageaccount.table.core.chinacloudapi.cn
 - mystorageaccount.queue.core.chinacloudapi.cn
 
-此外，存储帐户还可以利用容器。这些项必须遵守[命名和引用容器、Blob 和元数据](https://msdn.microsoft.com/zh-CN/library/azure/dd135715.aspx)中所述的命名约定。
 
 ### Azure 构建基块名称
 
@@ -199,7 +200,7 @@ Azure 将对可用的数据磁盘量和带宽加以限制，具体取决于虚�
 
 任务：
 
-- 使用命名约定创建存储帐户集。可以使用 Azure 门户。
+- 使用命名约定创建存储帐户集。可以使用 Azure 门户或 **New-AzureStorageAccount** PowerShell cmdlet。
 
 ## 4\.云服务
 
@@ -435,4 +436,5 @@ Contoso 决定将以下名称用于其 Azure 虚拟机：
 
 [数据中心扩展参考体系结构关系图](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84)
 
-<!---HONumber=70-->
+
+<!---HONumber=Mooncake_1207_2015-->

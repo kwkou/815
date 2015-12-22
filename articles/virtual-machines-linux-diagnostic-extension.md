@@ -1,17 +1,18 @@
+
 <properties
-	pageTitle="使用 VM 扩展监视 Linux VM | Windows Azure"
-	description="了解如何使用 Linux 诊断扩展监视 Azure 中 Linux VM 的性能和诊断数据。"
-	services="virtual-machines"
-	documentationCenter=""
-  	authors="NingKuang"
-	manager="timlt"
-	editor=""
-    	tags=""/>
+		pageTitle="使用 VM 扩展监视 Linux VM | Windows Azure"
+		description="了解如何使用 Linux 诊断扩展监视 Azure 中 Linux VM 的性能和诊断数据。"
+		services="virtual-machines"
+		documentationCenter=""
+  		authors="NingKuang"
+		manager="timlt"
+		editor=""
+  		tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
 	ms.date="07/20/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 # 使用 Linux 诊断扩展监视 Linux VM 的性能和诊断数据
@@ -30,7 +31,8 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Windows Azure 上�
 - 此[文档](https://scx.codeplex.com/wikipage?title=xplatproviders")中指定的所有系统数据。
 - 用户指定的日志文件。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型管理资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+
 
 ## 如何启用扩展
 通过 [Azure 门户](https://manage.windowsazure.cn)、Azure PowerShell 或 Azure CLI 脚本可以启用该扩展。
@@ -62,7 +64,7 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Windows Azure 上�
      	"storageAccountKey":"the key of the account"
 	}
 
-步骤 2。运行 **azure vm extension set vm_name LinuxDiagnostic Microsoft.OSTCExtensions 2.* --private-config-path PrivateConfig.json**。
+步骤 2。运行 **azure vm extension set vm\_name LinuxDiagnostic Microsoft.OSTCExtensions 2.* --private-config-path PrivateConfig.json**。
 
 
 ###   方案 2.自定义性能监视器指标  
@@ -84,7 +86,7 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Windows Azure 上�
 	}
 
 
-步骤 2。运行 **azure vm extension set vm_name LinuxDiagnostic Microsoft.OSTCExtensions 2.* --private-config-path PrivateConfig.json**。
+步骤 2。运行 **azure vm extension set vm\_name LinuxDiagnostic Microsoft.OSTCExtensions 2.* --private-config-path PrivateConfig.json**。
 
 
 ###   方案 3.上载自己的日志文件
@@ -103,7 +105,7 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Windows Azure 上�
 	}
 
 
-步骤 2。运行 **azure vm extension set vm_name LinuxDiagnostic Microsoft.OSTCExtensions 2.* --private-config-path PrivateConfig.json**。
+步骤 2。运行 **azure vm extension set vm\_name LinuxDiagnostic Microsoft.OSTCExtensions 2.* --private-config-path PrivateConfig.json**。
 
 
 ###   方案 4.禁用 Linux 监视器扩展
@@ -117,7 +119,7 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Windows Azure 上�
 	}
 
 
-步骤 2。运行 **azure vm extension set vm_name LinuxDiagnostic Microsoft.OSTCExtensions 2.* --private-config-path PrivateConfig.json**。
+步骤 2。运行 **azure vm extension set vm\_name LinuxDiagnostic Microsoft.OSTCExtensions 2.* --private-config-path PrivateConfig.json**。
 
 
 ## 查看数据
@@ -138,4 +140,4 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Windows Azure 上�
 - 对于 2.0 版，只能通过脚本访问 Rsyslog 信息和客户指定的日志文件。
 - 对于 2.0 版本，如果首先通过脚本启用了 Linux 诊断扩展，那么你无法从 Azure 门户查看数据。如果先从门户启用扩展，那么脚本仍将正常工作。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

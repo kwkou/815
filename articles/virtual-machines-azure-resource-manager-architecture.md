@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure 资源管理器体系结构"
+   pageTitle="Azure 资源管理器体系结构 | Windows Azure"
    description="了解资源管理器的体系结构和计算、网络、存储资源提供程序之间的关系。"
    services="virtual-machines"
    documentationCenter=""
@@ -11,11 +11,13 @@
 <tags
 	ms.service="azure-resource-manager"
 	ms.date="08/25/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/17/2015"/>
 
 # Azure 资源管理器体系结构
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
+
+
 
 本文概括介绍了用于创建基于基础结构的应用程序和工作负荷的服务管理和资源管理器体系结构。
 
@@ -66,8 +68,9 @@
 在使用 Azure PowerShell 或 Azure CLI 创建基于资源管理器的虚拟机时，你还可以查看组件化和资源之间的依存关系。在你能够运行创建虚拟机的命令之前，必须创建一个资源组、一个存储帐户、一个含有子网的虚拟网络和一个含有 IP 地址的 NIC。<!--有关更多信息，请参阅[使用资源管理器和 Azure PowerShell 创建并配置 Windows 虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)。-->
 
 
+
 ## 其他资源
 
 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

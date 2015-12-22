@@ -1,24 +1,26 @@
-<properties 
-	pageTitle="Linux 的认可分发 | Windows Azure" 
-	description="了解 Azure 认可的分发中的 Linux，包括 Ubuntu、OpenLogic、Oracle 和 SUSE 的指南。" 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="szarkos" 
-	manager="timlt" 
+<properties
+	pageTitle="Linux 的认可分发 | Windows Azure"
+	description="了解 Azure 认可的分发中的 Linux，包括 Ubuntu、OpenLogic、Oracle 和 SUSE 的指南。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="szarkos"
+	manager="timlt"
 	editor="tysonn"
-	tags="azure-service-management,azure-resource-manager" 
+	tags="azure-service-management,azure-resource-manager"
 	/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.date="06/03/2015" 
-	wacn.date="11/12/2015"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="11/13/2015"
+	wacn.date="12/17/2015"/>
 
 
 
 #Azure 认可的分发中的 Linux
 
 Azure 库中的 Linux 映像由很多合作伙伴提供，并且我们正在与各个 Linux 社区合作，以便向“认可的分发”列表添加更多风格。在此期间，对于该库未提供的分发，你始终可以按照[本页](/documentation/articles/virtual-machines-linux-create-upload-vhd)中的指南自备 Linux。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 
 ## 支持的分发和版本 ##
@@ -31,7 +33,7 @@ Azure Linux 代理已预安装在 Azure 库映像中，并通常可从分发的�
 
 分发|版本|驱动程序|代理
 ---|---|---|---
-Canonical Ubuntu|Ubuntu 12.04、14.04、14.10 和 15.04|在内核中|包：在“walinuxagent”下的存储库中<p><p>源：[GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
+Canonical Ubuntu|Ubuntu 12.04、14.04、15.04 和 15.10|在内核中|包：在“walinuxagent”下的存储库中<p><p>源：[GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
 CentOS by OpenLogic |CentOS 6.3+、7.0+| CentOS 6.3：[LIS 下载](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)<p>CentOS 6.4+：在内核中|包：在“WALinuxAgent”下的 <a href="http://olcentgbl.trafficmanager.cn/openlogic/6/openlogic/x86_64/RPMS/">OpenLogic 存储库中<p><p>源：[GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
 [CoreOS](https://coreos.com/docs/running-coreos/cloud-providers/azure/)|494\.4.0+ |在内核中|源：[GitHub](https://github.com/coreos/coreos-overlay/tree/master/app-emulation/wa-linux-agent)
 Oracle Linux| 6\.4+、7.0+|在内核中|包：在“WALinuxAgent”下的存储库中<p><p>源：[GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
@@ -73,6 +75,4 @@ Oracle 的策略是为公有和私有云提供广泛的解决方案，同时针�
 
 Azure 上的 SUSE Linux Enterprise Server 是一个已验证的平台，该平台为云计算提供了高级可靠性和安全性。SUSE 的通用 Linux 平台可与 Azure 云服务无缝集成，以便交付易于管理的云环境。借助 1,800 多个独立软件供应商提供的适用于 SUSE Linux Enterprise Server 的 9,200 多个认证应用程序，SUSE 可确保满怀信心地在 Azure 上部署数据中心内支持的运行负载。
 
- 
-
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

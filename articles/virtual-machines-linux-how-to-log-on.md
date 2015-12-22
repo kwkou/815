@@ -1,21 +1,24 @@
 <properties
-	pageTitle="在 Azure 中登录到运行 Linux 的虚拟机"
+	pageTitle="登录到 Azure 中的 Linux VM | Windows Azure"
 	description="了解如何使用安全外壳 (SSH) 客户端登录到运行 Linux 的 Azure 虚拟机。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="squillace"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
 	ms.date="08/25/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 
 
 #如何登录到运行 Linux 的虚拟机 #
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)。
 
 对于运行 Linux 操作系统的虚拟机，你可以使用安全外壳 (SSH) 客户端来登录。
 
@@ -38,7 +41,7 @@
 
 	![打开 PuTTY](./media/virtual-machines-linux-how-to-log-on/putty.png)
 
-4. 使用你在创建虚拟机时指定的帐户登录到虚拟机。
+4. 使用你在创建虚拟机时指定的帐户登录到虚拟机。有关如何使用用户名和密码创建虚拟机的详细信息，请参阅[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)。
 
 	![登录到虚拟机](./media/virtual-machines-linux-how-to-log-on/sshlogin.png)
 
@@ -49,4 +52,4 @@
 <!-- LINKS -->
 [如何为 Linux 虚拟机重置密码或 SSH]: /documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

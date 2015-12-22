@@ -11,17 +11,20 @@
 <tags
    ms.service="virtual-machines"
    ms.date="09/01/2015"
-   wacn.date="11/12/2015"/>
+   wacn.date="12/17/2015"/>
 
 # Azure Windows VM 扩展配置示例。
 
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
+
+
+
 本文提供为 Windows VM 配置 Azure VM 扩展的示例配置。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
-若要了解有关这些扩展的详细信息，请单击此处：[Azure VM 扩展概述。](https://msdn.microsoft.com/library/azure/dn606311.aspx)
+若要了解有关这些扩展的详细信息，请参阅 [Azure VM 扩展概述。](https://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
 
-若要了解有关创作扩展模板的详细信息，请单击此处：[创作扩展模板。](/documentation/articles/virtual-machines-extensions-authoring-templates)
+若要了解有关创作扩展模板的详细信息，请参阅[创作扩展模板。](/documentation/articles/virtual-machines-extensions-authoring-templates)
 
 本文列出了一些 Windows 扩展的预期配置值。
 
@@ -161,12 +164,12 @@
               "type": "MicrosoftMonitoringAgent",
               "typeHandlerVersion": "1.0",
               "settings": {
-                "workspace_name" : "Workspace Name : The Workspace ID is available from within the Direct Agent Configuration section of the Azure Operational Insights portal"
+                "workspaceId" : "The Workspace ID is available from within the Direct Agent Configuration section of the Azure Operational Insights portal"
               }
               "protectedSettings": {
-                "workspace_key"  : "The Workspace Key is a string that is available from within the Direct Agent Configuration section of the Azure Operational Insights portal"
+                "workspaceKey"  : "The Workspace Key is a string that is available from within the Direct Agent Configuration section of the Azure Operational Insights portal"
               }
-          }
+              }
             }
 
 ### McAfee EndpointSecurity
@@ -278,12 +281,13 @@
 
 ### Azure 诊断
 
-单击此处获取 [Azure 诊断扩展](https://msdn.microsoft.com/library/azure/dn782207.aspx/)的概述
+有关如何配置诊断的更多详细信息，请参阅 [Azure 诊断扩展](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template)
 
           {
             "publisher": "Microsoft.Azure.Diagnostics",
             "type": "IaaSDiagnostics",
-            "typeHandlerVersion": "1.4",
+            "typeHandlerVersion": "1.5",
+			"autoUpgradeMinorVersion": true,
             "settings": {
               "xmlCfg": "[base64(variables('wadcfgx'))]",
               "storageAccount": "[parameters('diagnosticsStorageAccount')]"
@@ -301,4 +305,4 @@
 
 [Windows VM 上的自定义脚本扩展](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/201-list-storage-keys-windows-vm/azuredeploy.json/)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->
