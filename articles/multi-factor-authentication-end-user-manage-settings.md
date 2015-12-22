@@ -23,7 +23,7 @@
 - [如何从旧设备清理 Azure 验证器并将其迁移到新设备？](#how-do-i-clean-up-azure-authenticator-from-my-old-device-and-move-to-a-new-one)
 
 ##<a name="correlation-id-errors"></a>相关性 ID 错误
-如果你已尝试过以下故障排除步骤，但仍遇到问题，请将问题发布到 [Azure AD 论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=WindowsAzureAD)、[搜索 Microsoft 知识库 (KB)](https://www.microsoft.com/zh-CN/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport) 或者[与支持人员联系](https://support.microsoft.com/zh-CN)，我们将尽快解答你的问题。
+如果你已尝试过以下故障排除步骤，但仍遇到问题，请将问题发布到 [Azure AD 论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=WindowsAzureAD)、[搜索 Microsoft 知识库 (KB)](https://www.microsoft.com/zh-CN/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport) 或者[与支持人员联系](https://support.microsoft.com/zh-CN)，我们将尽快解答你的问题。
 
 与支持人员联系时，建议你包含以下信息：
 
