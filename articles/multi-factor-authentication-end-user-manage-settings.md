@@ -119,7 +119,7 @@
 - 如果你已选择通过手机短信接收验证码，请确保你的服务计划和设备支持短信传递。传递速度和服务可用性因位置和服务提供商的不同而异。另外，在尝试接收这些代码时，请确保有足够强的手机信号。
 - 如果你已选择通过移动应用接收验证码，请确保有足够强的手机信号。另请记住，传递速度和服务可用性因位置和服务提供商的不同而异。 
 
-如果你使用智能手机，我们建议你使用 [Azure 验证器应用](/documentation/articles/multi-factor-authentication-azure-authenticator)。
+<!-- 如果你使用智能手机，我们建议你使用 [Azure 验证器应用](/documentation/articles/multi-factor-authentication-azure-authenticator)。-->
 
 你可以在登录时通过选择“使用其他验证选项”，切换为通过短信或移动应用接收验证码。
 
@@ -136,6 +136,6 @@
 首先，请确保正确输入应用密码。如果仍然无法解决问题，请尝试登录并[创建新的应用密码](/documentation/articles/multi-factor-authentication-end-user-app-passwords)。如果还是不起作用，请与管理员联系并让他们[删除现有应用密码](/documentation/articles/multi-factor-authentication-manage-users-and-devices#delete-users-existing-app-passwords)，然后请新建一个应用密码并使用该密码。
 
 ## <a name="how-do-i-clean-up-azure-authenticator-from-my-old-device-and-move-to-a-new-one"></a>如何从旧设备清理 Azure 验证器并将其迁移到新设备？
-当你从设备上卸载应用或者在设备上刷机时，不会在后端删除激活信息。你应该使用[转移到新设备](/documentation/articles/multi-factor-authentication-azure-authenticator#how-to-move-to-the-new-azure-authenticator-app)中所述的步骤。
+当你从设备上卸载应用或者在设备上刷机时，不会在后端删除激活信息。<!-- 你应该使用[转移到新设备](/documentation/articles/multi-factor-authentication-azure-authenticator#how-to-move-to-the-new-azure-authenticator-app)中所述的步骤。-->
 
 <!---HONumber=Mooncake_1207_2015-->
