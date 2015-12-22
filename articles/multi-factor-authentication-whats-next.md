@@ -16,10 +16,6 @@
 
 在启动并运行 Azure 多重身份验证后，可以参考以下文章来对其进行管理。该文章涵盖各种主题，可让你充分利用 Azure 多重身份验证。请注意，并非所有版本的 Azure 多重身份验证都提供这些功能。
 
-功能| 说明| 涵盖的内容
-:------------- | :------------- | :------------- | 
-[应用密码](#app-passwords)|应用密码允许非MFA(多重身份验证)感知应用程序跳过多重身份验证并继续工作。|有关应用密码的信息。
-[暂停记住的设备和浏览器的多重身份验证（公共预览版）](#suspend-multi-factor-authentication-for-remembered-devices-and-browsers-public-preview)|可让你在用户使用多重身份验证成功登录后的设置天数内暂停多重身份验证。|有关启用此功能和设置天数的信息。
 <table class="table table-bordered table-striped table-condensed">
    <tr>
       <th>功能</th>
@@ -31,12 +27,7 @@
       <td>应用密码允许非 MFA 感知应用程序跳过多重身份验证并继续工作</td>
       <td>有关应用密码的信息 </td>
    </tr>
-   <tr>
-      <td><a href="#suspend-multi-factor-authentication-for-remembered-devices-and-browsers-public-preview">暂停记住的设备和浏览器的多重身份验证（公共预览版）</a></td>
-      <td>可让你在用户使用 MFA 成功登录后的设置天数内暂停 MFA</td>
-      <td>有关启用此功能和设置天数的信息</td>
-   </tr>
-
+   
 </table>
 
 ## <a name="app-passwords"></a>应用密码
@@ -155,29 +146,6 @@ Azure AD 支持与本地 Windows Server Active Directory 域服务 (AD DS) 联�
 
 <center>![Cloud](./media/multi-factor-authentication-whats-next/myapp.png)</center>
 
-## <a name="suspend-multi-factor-authentication-for-remembered-devices-and-browsers-public-preview"></a>暂停记住的设备和浏览器的多重身份验证（公共预览版）
 
-使用暂停记住的设备和浏览器的多重身份验证功能，管理员能够为用户提供相关选项，使其在成功执行 MFA 后，将 MFA 暂停一定的天数。这是面向所有 MFA 用户的免费功能，可以帮助用户提高可用性。但是，由于允许用户暂停 MFA，此功能可能会降低帐户安全性。
-
-若要确保用户帐户受到保护，用户应还原你的设备的多重身份验证，以防发生以下两种情况之一：
-
-- 如果你的公司帐户受到安全威胁
-- 如果记住的设备丢失或被盗
-
-> [AZURE.NOTE]此功能通过浏览器 Cookie 缓存方式实现。如果你没有启用浏览器 Cookie，则此功能无法实现。
-
-### 如何启用/禁用和设置暂停对已记住设备的 MFA
-
-<ol>
-<li>登录到 Azure 管理门户。</li>
-<li>在左侧单击“Active Directory”。</li>
-<li>在 Active Directory 下，单击你要设置记住的设备的多重身份验证的目录。</li>
-<li>在选择的目录上，单击“配置”。</li>
-<li>在“多重身份验证”部分中，单击“管理服务设置”。</li>
-<li>在“服务设置”页上的“管理用户设备设置”下，选择/取消选择“允许用户通过记住其设备暂停多重身份验证”选项。</li>
-![暂停设备](./media/multi-factor-authentication-manage-users-and-devices/suspend.png)
-<li>设置你希望允许暂停的天数。默认值为 14 天。</li>
-<li>单击“保存”。</li>
-<li>单击“关闭”。</li>
 
 <!---HONumber=69-->

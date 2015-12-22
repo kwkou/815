@@ -18,7 +18,7 @@
 
 - [要求选定的用户再次提供联系方法](#require-selected-users-to-provide-contact-methods-again)
 - [删除用户现有的应用密码](#delete-users-existing-app-passwords)
-- [还原用户所有已暂停设备上的 MFA（公共预览版）](#restore-mfa-on-all-suspended-devices-for-a-user)
+
 
 如果计算机或设备丢失、被盗或你需要删除用户访问权限，则此项设置将很有用。
 
@@ -61,23 +61,5 @@
 <li>单击“保存”。</li>
 <li>单击“关闭”。</li>
 </ol>
-## <a name="restore-mfa-on-all-suspended-devices-for-a-user"></a>还原用户所有已暂停设备上的MFA(多重身份验证)
 
-管理员可以重置用户设备和浏览器上的多重身份验证。这可以通过还原用户设备和浏览器的多重身份验证来实现。这样做会取消用户所有设备和浏览器的暂停状态。
-
-### 如何还原用户所有已暂停设备上的MFA(多重身份验证)
-
-<ol>
-<li>登录到 Azure 管理门户。</li>
-<li>在左侧单击“Active Directory”。</li>
-<li>在“目录”下，单击要为其还原 MFA 的用户对应的目录。</li>
-<li>在顶部单击“用户”。</li>
-<li>在页面底部，单击“管理 Multi-Factor Auth”。此时将打开“Multi-Factor Authentication”页。
-<li>找到要管理的用户，并勾选其名称旁边的框。你可能需要在顶部切换视图。</li>
-<li>此时会在右侧显示“管理用户设置”链接。单击此链接。</li>
-<li>勾选“还原所有已暂停设备上的 Multi-Factor Authentication”。</li>
-<center> <image src="./media/multi-factor-authentication-manage-users-and-devices/rememberdevices.png" /></center>
-<li>单击“保存”。</li>
-<li>单击“关闭”。</li>
-</ol>
 <!---HONumber=69-->
