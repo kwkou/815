@@ -258,7 +258,7 @@
 
 [pdo-mysql]: http://www.php.net/manual/en/ref.pdo-mysql.php
 [running-app]: ./media/web-sites-php-mysql-deploy-use-git/running_app_2.png
-[new-Website]: /media/web-sites-php-mysql-deploy-use-git/new_website.jpg
+[new-Website]: ./media/web-sites-php-mysql-deploy-use-git/new_website.jpg
 [custom-create]: ./media/web-sites-php-mysql-deploy-use-git/custom_create.png
 [Website-details]: ./media/web-sites-php-mysql-deploy-use-git/website_details.jpg
 [new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-git/new_mysql_db.jpg
