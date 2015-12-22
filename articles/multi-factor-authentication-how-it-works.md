@@ -12,14 +12,14 @@
 	ms.date="06/02/2015" 
 	wacn.date="12/17/2015"/>
 
-#Azure 多重认证的工作原理
+#Azure 多重身份验证的工作原理
 
-多因素身份验证的安全性在于它的分层方法。破坏多因素身份验证系统对于攻击者来说是巨大的挑战。即使攻击者设法得到用户的密码，如果没有同时占有可信设备也没有用处。如果用户丢失了设备，捡到该设备的人也无法使用它，除非他（她）也知道该用户的密码。
+多重身份验证的安全性在于它的分层方法。破坏多重身份验证系统对于攻击者来说是巨大的挑战。即使攻击者设法得到用户的密码，如果没有同时占有可信设备也没有用处。如果用户丢失了设备，捡到该设备的人也无法使用它，除非他（她）也知道该用户的密码。
 
 ![验证](./media/multi-factor-authentication-how-it-works/howitworks.png)
 
 
-Azure 多重认证可帮助保护对数据和应用程序的访问，同时可以满足用户对简单登录过程的需求。它通过要求第二种形式的身份验证提供额外的安全性，并通过一系列简单的身份验证选项提供增强式身份验证：
+Azure 多重身份验证可帮助保护对数据和应用程序的访问，同时可以满足用户对简单登录过程的需求。它通过要求第二种形式的身份验证提供额外的安全性，并通过一系列简单的身份验证选项提供增强式身份验证：
 
 - 电话呼叫 
 - 短信
@@ -30,7 +30,7 @@ Azure 多重认证可帮助保护对数据和应用程序的访问，同时可�
 
 [AZURE.VIDEO multi-factor-authentication-deep-dive-securing-access-on-premises]-->
 
-##可用于多重认证的方法
+##可用于多重身份验证的方法
 当用户登录时，系统会将额外的身份验证发送给该用户。以下是可用于这种二次身份验证的方法列表。
 <table class="table table-bordered table-striped table-condensed">
    <tr>
@@ -57,8 +57,8 @@ Azure 多重认证可帮助保护对数据和应用程序的访问，同时可�
    </tr>
 </table>
 
-##可用的多重认证版本
-Azure 多重认证有两个不同的版本。下表较详细地描述了每个版本。
+##可用的多重身份验证版本
+Azure 多重身份验证有两个不同的版本。下表较详细地描述了每个版本。
 
 <table class="table table-bordered table-striped table-condensed">
    <tr>
@@ -67,24 +67,24 @@ Azure 多重认证有两个不同的版本。下表较详细地描述了每个�
     
    </tr>
    <tr>
-      <td>适用于 Office 365 的多因素身份验证</td>
-      <td>此版本专门与 Office 365 应用程序配合使用，可以从 Office 365 门户进行管理。因此，管理员现在可以借助多重认证来保护其 Office 365 资源。Office 365 订阅随附了此版本</td>
+      <td>适用于 Office 365 的多重身份验证</td>
+      <td>此版本专门与 Office 365 应用程序配合使用，可以从 Office 365 门户进行管理。因此，管理员现在可以借助多重身份验证来保护其 Office 365 资源。Office 365 订阅随附了此版本</td>
       
    </tr>
    <tr>
-      <td>面向 Azure 管理员的多因素身份验证</td>
-      <td>适用于 Office 365 的多因素身份验证功能的相同子集将免费提供给所有 Azure 管理员使用。Azure 订阅的每个管理员帐户现在可以通过启用这项核心多重认证功能来获得更多的保护。因此，如果某个管理员想要访问 Azure 门户以创建 VM 和网站以及管理存储、移动服务或任何其他 Azure 服务，则可在其管理员帐户中添加多因素身份验证</td>
+      <td>面向 Azure 管理员的多重身份验证</td>
+      <td>适用于 Office 365 的多重身份验证功能的相同子集将免费提供给所有 Azure 管理员使用。Azure 订阅的每个管理员帐户现在可以通过启用这项核心多重身份验证功能来获得更多的保护。因此，如果某个管理员想要访问 Azure 门户以创建 VM 和网站以及管理存储、移动服务或任何其他 Azure 服务，则可在其管理员帐户中添加多因素身份验证</td>
          </tr>
 </table>
 ##版本功能比较
-下表提供了 Azure 多重认证各版本中可用的功能列表。
+下表提供了 Azure 多重身份验证各版本中可用的功能列表。
 
 <table class="table table-bordered table-striped table-condensed">
    <tr>
       <th>功能</th>
-      <th>适用于 Office 365 的多重认证（随附在 Office 365 SKU 中）</th>
-      <th>面向 Azure 管理员的多重认证（随附在 Azure 中）</th>   
-      <th> Azure 多重认证（随附在 Azure AD Premium 和企业移动套件中）</th>
+      <th>适用于 Office 365 的多重身份验证（随附在 Office 365 SKU 中）</th>
+      <th>面向 Azure 管理员的多重身份验证（随附在 Azure 中）</th>   
+      <th> Azure 多重身份验证（随附在 Azure AD Premium 和企业移动套件中）</th>
    </tr>
    <tr>
       <td>管理员可以使用 MFA 保护帐户</td>
@@ -148,13 +148,13 @@ Azure 多重认证有两个不同的版本。下表较详细地描述了每个�
   </tr>
 </table>
 
-##如何获取多重认证
+##如何获取多重身份验证
 
 
 
-如果你是 Office 365 用户或 Azure 订户，并想要充分利用多重认证提供的其他功能，请继续阅读其他部分。
+如果你是 Office 365 用户或 Azure 订户，并想要充分利用多重身份验证提供的其他功能，请继续阅读其他部分。
 
-如果你没有上述任何产品并想要使用多重认证，首先你需要一个 Azure 订阅或 [Azure 试用版订阅](/pricing/1rmb-trial/)。
+如果你没有上述任何产品并想要使用多重身份验证，首先你需要一个 Azure 订阅或 [Azure 试用版订阅](/pricing/1rmb-trial/)。
 
 
 请选择最适合你组织的模式。接下来，若要开始使用，请参阅[入门](/documentation/articles/multi-factor-authentication-get-started-cloud)
