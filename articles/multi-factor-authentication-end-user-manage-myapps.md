@@ -19,7 +19,7 @@
 
 ## 在 Myapps 门户中访问其他安全性验证设置
 <ol>
-<li>登录到 [https://myapps.microsoft.com] (https://myapps.microsoft.com)</li>
+<li>登录到 [https://myapps.microsoft.com](https://myapps.microsoft.com)</li>
 <li>在顶部选择配置文件。</li>
 <li>单击你的用户名并选择“其他安全性验证”。</li>
 

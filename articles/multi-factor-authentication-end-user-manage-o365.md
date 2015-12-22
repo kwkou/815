@@ -21,7 +21,7 @@
 
 <ol>
 
-<li>登录到 [Office 365 门户] (https://login.microsoftonline.com/)。</li>
+<li>登录到 [Office 365 门户](https://login.microsoftonline.com/)。</li>
 <li>在顶部，单击看起来像是齿轮的图标。此时将显示一个下拉列表，其中列出了 Office 365 设置。</li>
 
 
