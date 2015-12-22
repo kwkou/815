@@ -84,8 +84,6 @@
 
 	Windows Azure 中国暂时还不支持在 Visual Studio 中直接创建云中的网站，所以用户需要在“[管理门户](https://manage.windowsazure.cn/)”中新建 Azure 网站。
 
-	几秒钟后，Visual Studio 将在指定的文件夹中创建 Web 项目，并在指定的 Azure 区域中创建网站。
-
 	“解决方案资源管理器”窗口将显示新项目中的文件和文件夹。
 
 	![解决方案资源管理器](./media/web-sites-dotnet-get-started/solutionexplorer.png)
