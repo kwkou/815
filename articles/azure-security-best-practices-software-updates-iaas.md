@@ -5,15 +5,15 @@
    documentationCenter="na"
    authors="YuriD"
    manager="swadhwa"
-   editor=""/>
+   editor=""
+   tags="azure-service-management,azure-resource-manager"/>
 
 <tags
    ms.service="azure-security"
    ms.date="09/03/2015"
-   wacn.date="11/12/2015"/>
+   wacn.date="12/17/2015"/>
 
 #有关 Windows Azure IaaS 上软件更新的最佳实践
-
 
 在学习 Azure IaaS 环境的任何最佳实践深入探讨之前，请务必了解用于管理软件更新的方案。下图可帮助你了解这些方案：
 
@@ -29,7 +29,7 @@
 
 ## 初始评估
 
-即使公司已采用更新管理系统，并且已采用软件更新策略，也必须经常检查前面的策略评估并根据当前的要求进行更新。这意味着你需要熟悉公司中资源的当前状态。若要获取此状态，你需要知道：
+即使公司已采用更新管理系统，并且已采用软件更新策略，也必须经常检查前面的策略评估并根据当前的要求进行更新。这意味着你需要熟悉公司中资源的当前状态。若要达到此状态，你需要知道：
 
 -   企业中的物理和虚拟计算机。
 
@@ -67,7 +67,7 @@
 
 在对企业中所用的软件执行初始审核之后，你应该针对每个软件产品和版本确定用于接收新软件更新通知的最佳方法。根据具体的软件产品，最佳通知方法可能是电子邮件通知、网站或计算机发布内容。
 
-例如，Microsoft 安全响应中心 (MSRC) 会响应 Microsoft 产品的所有安全相关疑虑，并提供 Microsoft 安全公告服务、针对新发现漏洞的免费电子邮件通知，以及为了解决这些漏洞所发布的软件更新。你可以从 <http://www.microsoft.com/technet/security/bulletin/notify.mspx> 订阅此服务。
+例如，Microsoft 安全响应中心 (MSRC) 会响应 Microsoft 产品的所有安全相关疑虑，并提供 Microsoft 安全公告服务、针对新发现漏洞的免费电子邮件通知，以及为了解决这些漏洞所发布的软件更新。你可以从 http://www.microsoft.com/technet/security/bulletin/notify.mspx 订阅此服务。
 
 ## 软件更新注意事项
 
@@ -115,4 +115,4 @@ Azure IaaS 的某些备份选项包括：
 
 使用本文中所述的指导原则可以帮助判断适用于 Azure IaaS 中虚拟机软件更新的最佳选项。传统数据中心与 Azure IaaS 之间的软件更新最佳实践有许多相似之处，因此建议评估当前的软件更新策略，以包含 Azure VM 并将本文中的相关最佳实践纳入整个软件更新过程。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

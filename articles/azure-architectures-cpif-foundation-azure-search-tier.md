@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="cloud-services"
+   ms.service="multiple"
    ms.date="03/25/2015"
-   wacn.date="10/03/2015"/>
+   wacn.date="12/17/2015"/>
 
 # Azure 搜索层（Azure 体系结构模式）
 
@@ -42,4 +42,4 @@ Azure 搜素层设计模式详细说明了 Azure 功能，以及能跨地理边�
 
 [批处理层](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-0bc3f8b1)
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_1207_2015-->
