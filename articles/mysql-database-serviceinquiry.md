@@ -8,6 +8,7 @@
 - [服务咨询](/documentation/articles/mysql-database-serviceinquiry)
 - [连接问题](/documentation/articles/mysql-database-connectioninquiry)
 - [安全性咨询](/documentation/articles/mysql-database-securityinquiry)
+- [兼容性问题](/documentation/articles/mysql-database-compatibilityinquiry)
 
 ### **数据备份占用存储限额吗?**
   
