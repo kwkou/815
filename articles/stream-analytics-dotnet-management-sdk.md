@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="10/06/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="11/06/2015" 
+	wacn.date="12/17/2015"/>
 
 
 # 使用 Azure 流分析管理 .NET SDK 设置和运行分析作业
@@ -344,10 +344,10 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 
 
 <!--Link references-->
-[azure.blob.storage]: http://azure.microsoft.com/documentation/services/storage/
-[azure.blob.storage.use]: http://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/
+[azure.blob.storage]: /documentation/services/storage/
+[azure.blob.storage.use]: /documentation/articles/storage-dotnet-how-to-use-blobs/
 
-[azure.event.hubs]: http://azure.microsoft.com/services/event-hubs/
+[azure.event.hubs]: /services/event-hubs/
 [azure.event.hubs.developer.guide]: http://msdn.microsoft.com/zh-cn/library/azure/dn789972.aspx
 
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
@@ -361,4 +361,4 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

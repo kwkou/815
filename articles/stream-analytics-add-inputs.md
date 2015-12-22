@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="09/29/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="11/06/2015" 
+	wacn.date="12/17/2015"/>
 
 # 添加输入
 
@@ -60,4 +60,4 @@ Azure 流分析作业可以连接到一个或多个输入，其定义了一个�
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

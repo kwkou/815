@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="10/05/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="11/06/2015" 
+	wacn.date="12/17/2015"/>
 
 # 创建流分析输出
 
@@ -85,7 +85,7 @@ Azure 流分析提供了七种不同的方法来存储和查看作业输出。SQ
 ## 使用事件中心作为输出 ##
 ---
 ### 概述 ###
- 
+ 
 事件中心是高度可伸缩的事件引入器，通常是最常用的进行流分析数据引入的方法。另外，事件中心可以稳定地处理大量的事件，因此尤其适合作业输出。当流分析作业的输出将要成为另一个流式处理作业的输入时，可以将事件中心用作输出。有关事件中心的更多详细信息，请访问位于[事件中心](/documentation/services/event-hubs/ "事件中心")的门户。
  
 ### Parameters ###
@@ -127,8 +127,7 @@ Azure 流分析提供了七种不同的方法来存储和查看作业输出。SQ
 4. 分区键（必需）。
 5. 行键
 
-若要更好地设计分区键和行键，请参阅下面的文章：
-[为 Azure 表存储设计可扩展分区策略](https://msdn.microsoft.com/zh-cn/library/azure/hh508997.aspx)。
+若要更好地设计分区键和行键，请参阅下面的文章：[为 Azure 表存储设计可扩展分区策略](https://msdn.microsoft.com/zh-cn/library/azure/hh508997.aspx)。
 
 ### 添加 Azure 表存储作为输出 ###
 
@@ -270,4 +269,4 @@ Service Bus 队列提供的是一对一的从发送方到接收方的通信方�
 [graphic37]: ./media/stream-analytics-connect-data-event-outputs/37-stream-analytics-connect-data-event-input-output.png
 [graphic38]: ./media/stream-analytics-connect-data-event-outputs/38-stream-analytics-connect-data-event-input-output.png
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

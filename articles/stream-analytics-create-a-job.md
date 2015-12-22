@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="09/29/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="11/06/2015" 
+	wacn.date="12/17/2015"/>
 
 # 创建作业
 
@@ -24,8 +24,8 @@
     ![快速创建向导](./media/stream-analytics-create-a-job/1-stream-analytics-create-a-job.png)
 
 3.  指定流分析作业所需的配置。
-	- 在“作业名称”框中，输入一个名称以标识该流分析作业。对“作业名称”进行验证后，“作业名称”框中会出现一个绿色的复选标记。“作业名称”只能包含字母数字字符和字符“-”，且长度必须在 3 到 63 个字符之间。
-	- 使用 Azure 门户中的**区域**或 Azure 预览门户中的**位置**来指定要运行作业的地理位置。
+	- 在“作业名称”框中，输入一个名称以标识该流分析作业。对“作业名称”进行验证后，作业名称框中会出现一个绿色的复选标记。“作业名称”只能包含字母数字字符和字符“-”，且长度必须在 3 到 63 个字符之间。
+	- 使用 Azure 门户中的“区域”或 Azure 预览门户中的“位置”来指定要运行作业的地理位置。
 	- 如果使用 Azure 门户，请选择或创建存储帐户以用作**区域监视存储帐户**。该存储帐户用来存储针对该区域内运行的所有流分析作业的监控数据。
 	- 如果使用 Azure 预览门户，请指定新的或现有的**资源组**以保存应用程序的相关资源。
 
@@ -48,4 +48,4 @@
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

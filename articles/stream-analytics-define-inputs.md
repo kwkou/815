@@ -10,17 +10,15 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="10/13/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="11/06/2015"
+	wacn.date="12/17/2015"/>
 
 # 了解流分析输入
 
 Azure 流分析输入被定义为到数据源的连接。流分析可以与 Azure 源事件中心、IoT 中心以及 Blob 存储（你的作业通过 Azure 订阅之内或之外运行于该存储）进行一流集成。将数据推送到数据源时，流分析作业会使用该数据并对其进行实时处理。输入分为两种不同类型：数据流输入和引用数据输入。
 
-- **数据流输入**：
-    数据流是一段时间内传入的不受限制的事件序列。流分析作业必须包含至少一种可供作业使用和转换的数据流输入。Blob 存储、事件中心和 IoT 中心均可作为数据流输入源。事件中心用于从多个设备和服务（例如传感器提供的社交媒体活动源、股票交易信息或数据）收集事件流。IoT 中心经过优化以从物联网 (IoT) 方案中连接的设备收集数据。Blob 存储可用作按流的形式引入大量数据的输入源。  
-- **引用数据**：
-    流分析支持称为引用数据的第二类输入。此类数据为辅助数据，处于静态或者缓慢变化状态，通常用于执行关联性操作和查找操作。目前只支持使用 Azure Blob 存储作为引用数据的输入源。引用数据源 blob 存在 50 MB 的大小限制。若要了解如何创建引用数据输入，请参阅[使用引用数据](/documentation/articles/stream-analytics-use-reference-data)  
+- **数据流输入**：数据流是一段时间内传入的不受限制的事件序列。流分析作业必须包含至少一种可供作业使用和转换的数据流输入。Blob 存储、事件中心和 IoT 中心均可作为数据流输入源。事件中心用于从多个设备和服务（例如传感器提供的社交媒体活动源、股票交易信息或数据）收集事件流。IoT 中心经过优化以从物联网 (IoT) 方案中连接的设备收集数据。Blob 存储可用作按流的形式引入大量数据的输入源。  
+- **引用数据**：流分析支持称为引用数据的第二类输入。此类数据为辅助数据，处于静态或者缓慢变化状态，通常用于执行关联性操作和查找操作。目前只支持使用 Azure Blob 存储作为引用数据的输入源。引用数据源 blob 存在 50 MB 的大小限制。若要了解如何创建引用数据输入，请参阅[使用引用数据](/documentation/articles/stream-analytics-use-reference-data)  
 
 ## 创建事件中心数据输入流
 
@@ -64,7 +62,6 @@ SELECT
 	PartitionId
 FROM Input
 ````
-
 ## 创建 Blob 存储数据流输入 ##
 
 对于需要将大量非结构化数据存储在云中的情况，Blob 存储提供了一种经济高效且可伸缩的解决方案。通常情况下，可以将 [Blob 存储](/services/storage/)中的数据视为“静态”数据，但这些数据可以作为数据流由流分析进行处理。流分析使用 Blob 存储输入的一种常见情况是进行日志处理，即首先从某个系统捕获遥测数据，然后根据需要对这些数据进行分析和处理以提取有意义的数据。
@@ -98,7 +95,7 @@ FROM Input
 </tr>
 <tr>
 <td>路径前缀模式 [可选]</td>
-<td>用于对指定容器中的 blob 进行定位的文件路径。在路径中，你可以选择指定一个或多个使用以下 3 个变量的实例：<BR>{date}、{time}、<BR>{partition}<BR>示例 1：cluster1/logs/{date}/{time}/{partition}<BR>示例 2：cluster1/logs/{date}</td>
+<td>用于对指定容器中的 blob 进行定位的文件路径。在路径中，你可以选择指定一个或多个使用以下 3 个变量的实例：<BR>{date}、{time}、<BR>{partition}<BR>示例 1：cluster1/logs/{date}/{time}/{partition}<BR>示例 2：cluster1/logs/{date}<P>请注意，“*”不是路径前缀允许使用的值。仅允许使用有效的 <a HREF="https://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx">Azure blob 字符</a>。</td>
 </tr>
 <tr>
 <td>日期格式 [可选]</td>
@@ -151,7 +148,7 @@ FROM Input
 
 - [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
 - [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
-- [Azure 流分析查询语言参考](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+- [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
 <!--Link references-->
@@ -162,4 +159,4 @@ FROM Input
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->
