@@ -43,7 +43,7 @@
 包含这些信息将有助于我们尽快为你解决问题。
 
 ##<a name="i-have-lost-my-phone-or-it-was-stolen"></a>我的手机已丢失或被盗
-如果你的手机已丢失或被盗，建议你让管理员重置你的[应用密码](/documentation/articles/multi-factor-authentication-manage-users-and-devices#delete-users-existing-app-passwords)并清除所有[已记住的设备](multi-factor-authentication-manage-users-and-devices.md#restore-mfa-on-all-suspended-devices-for-a-user)。
+如果你的手机已丢失或被盗，建议你让管理员重置你的[应用密码](/documentation/articles/multi-factor-authentication-manage-users-and-devices#delete-users-existing-app-passwords)并清除所有[已记住的设备](/documentation/articles/multi-factor-authentication-manage-users-and-devices#restore-mfa-on-all-suspended-devices-for-a-user)。
 
 若要取回你的帐户，可以采取两种做法。第一种做法是，如果你已设置备用身份验证电话号码，你可以使用此号码来取回你的帐户并更改安全设置。
 
@@ -60,7 +60,7 @@
 
 >[AZURE.IMPORTANT]必须配置辅助身份验证电话号码。由于你的主要电话号码和移动应用可能在同一部手机上，因此，当你的手机丢失或被盗时，只能通过辅助电话号码访问你的帐户。
 
-如果你未配置辅助身份验证电话号码，则需要与管理员联系并让他们清除你的设置，这样，当你下次登录时，系统将提示你再次[设置多重身份验证](multi-factor-authentication-manage-users-and-devices.md#require-selected-users-to-provide-contact-methods-again)。
+如果你未配置辅助身份验证电话号码，则需要与管理员联系并让他们清除你的设置，这样，当你下次登录时，系统将提示你再次[设置多重身份验证](/documentation/articles/multi-factor-authentication-manage-users-and-devices#require-selected-users-to-provide-contact-methods-again)。
 
 ## <a name="i-want-to-change-my-phone-number"></a>我想要更改我的电话号码
 根据多重身份验证的使用方式，你可以在多个位置更改设置，例如你的电话号码。使用下表来帮助选择最适合自己的方式。
