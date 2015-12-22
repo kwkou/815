@@ -11,15 +11,16 @@
 <tags
    ms.service="virtual-machines"
    ms.date="09/01/2015"
-   wacn.date="11/12/2015"/>
+   wacn.date="12/17/2015"/>
 
 # Linux VM 扩展配置示例
 
 本文提供为 Linux VM 配置 Azure VM 扩展的示例配置。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
 
-若要了解有关这些扩展的详细信息，请单击此处：[Azure VM 扩展概述。](https://msdn.microsoft.com/library/azure/dn606311.aspx)
+
+若要了解有关这些扩展的详细信息，请单击此处：[Azure VM 扩展概述。](https://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
 
 若要了解有关创作扩展模板的详细信息，请单击此处：[创作扩展模板。](/documentation/articles/virtual-machines-extensions-authoring-templates)
 
@@ -185,4 +186,4 @@
 
 [Linux VM 上的自定义脚本扩展](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/mongodb-on-ubuntu/azuredeploy.json/)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

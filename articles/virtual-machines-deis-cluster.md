@@ -1,20 +1,24 @@
 <properties
-   pageTitle="在 Azure 上部署三节点 Deis 群集"
+   pageTitle="部署三节点 Deis 群集 | Windows Azure"
    description="本文介绍如何使用 Azure 资源管理器模板在 Azure 上创建三节点 Deis 群集"
    services="virtual-machines"
    documentationCenter=""
    authors="HaishiBai"
    manager="larar"
-   editor="08/29/2015"/>
+   editor=""
+   tags="azure-resource-manager"/>
 
 <tags
    ms.service="virtual-machines"
    ms.date="06/24/2015"
-   wacn.date="08/29/2015"/>
+   wacn.date="12/17/2015"/>
 
 # 部署三节点 Deis 群集
 
 本文将逐步指导你完成在 Azure 上设置 [Deis](http://deis.io/) 群集的过程。其中包括所有的步骤，从创建必要的证书，到在新设置的群集上部署和缩放示例 **Go** 应用程序。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
+
 
 下图显示了部署的系统的体系结构。系统管理员可以使用 Deis 工具（如 **deis** 和 **deisctl**）来管理群集。连接是通过会将连接转发到群集上某个成员节点的 Azure 负载平衡器建立的。客户端也通过负载平衡器访问部署的应用程序。在此情况下，负载平衡器会将流量转发到 Deis 路由器网络，从者进一步将流量路由到托管在群集上的对应 Docker 容器。
 
@@ -22,7 +26,7 @@
 
 若要完成以下步骤，你需要：
 
- * 一个有效的 Azure 订阅。如果没有，你可以在 [azure.com](http://www.windowsazure.cn/) 上获取免费试用帐户。
+ * 一个有效的 Azure 订阅。如果没有，你可以在 [Windows Azure](http://www.windowsazure.cn/) 上获取试用帐户。
  * 用来使用 Azure 资源组的工作或学校 ID。如果你有个人帐户并使用 Microsoft ID 登录，则需要<!--[-->基于你的个人 ID 创建工作 ID<!--](/documentation/articles/resource-group-create-work-id-from-personal)-->。
  * 以下组件之一（取决于客户端操作系统）[Azure PowerShell](/documentation/articles/powershell-install-configure) 或[适用于 Mac、Linux 和 Windows 的 Azure CLI](/documentation/articles/xplat-cli-install)。
  * [OpenSSL](https://www.openssl.org/)。OpenSSL 用于生成必要的证书。
@@ -82,9 +86,9 @@
         ./deploy-deis.sh -n "[resource group name]" -l "West US" -f ./azuredeploy.json -e ./azuredeploy-parameters.json
         -c ./cloud-config.yaml  
 
-11. 设置资源组后，可以在 Azure 门户上看到组中的所有资源。如以下屏幕截图所示，资源组中有一个包含三个 VM 的虚拟网络，这些 VM 已加入同一个可用性集。该组还包含具有关联公共 IP 的负载平衡器。
+<!-- 11. 设置资源组后，可以在 Azure 门户上看到组中的所有资源。如以下屏幕截图所示，资源组中有一个包含三个 VM 的虚拟网络，这些 VM 已加入同一个可用性集。该组还包含具有关联公共 IP 的负载平衡器。
 
-  ![Azure 门户上显示的已设置资源组](./media/virtual-machines-deis-cluster/resource-group.png)
+  ![Azure 门户上显示的已设置资源组](./media/virtual-machines-deis-cluster/resource-group.png)-->
 
 ## 安装客户端
 
@@ -103,10 +107,12 @@
 
 3. 配置 deisctl：
 
-        export DEISCTL_TUNNEL=[public ip of the load balancer]: /documentation/articles/2223
-模板定义了将 2223 映射到实例 1、将 2224 映射到实例 2、将 2225 映射到实例 3 的入站 NAT 规则。这提供了使用 deisctl 工具时的冗余。可以在 Azure 门户中检查这些规则：
+        export DEISCTL_TUNNEL=[public ip of the load balancer]:2223
 
-![负载平衡器上的 NAT 规则](./media/virtual-machines-deis-cluster/nat-rules.png)
+模板定义了将 2223 映射到实例 1、将 2224 映射到实例 2、将 2225 映射到实例 3 的入站 NAT 规则。这提供了使用 deisctl 工具时的冗余。
+<!--可以在 Azure 门户中检查这些规则：
+
+![负载平衡器上的 NAT 规则](./media/virtual-machines-deis-cluster/nat-rules.png)-->
 
 > [AZURE.NOTE]模板目前仅支持三节点群集。这是因为 Azure 资源管理器模板 NAT 规则定义存在限制，它不支持循环语法。
 
@@ -175,9 +181,11 @@
         cd ~/.ssh
         ssh-keygen (press [Enter]s to use default file names and empty passcode)
 
-4. 在 GitHub 添加 id_rsa.pub 或所选的公钥。可以使用 SSH 密钥配置屏幕上的“添加 SSH 密钥”按钮来执行此操作。
+4. 在 GitHub 添加 id\_rsa.pub 或所选的公钥。可以使用 SSH 密钥配置屏幕上的“添加 SSH 密钥”按钮来执行此操作。
 
-  ![Github 密钥](./media/virtual-machines-deis-cluster/github-key.png) <p /> 5.注册新用户：
+  ![Github 密钥](./media/virtual-machines-deis-cluster/github-key.png)
+<p />
+5. 注册新用户：
 
         deis register http://deis.[your domain]
 <p />
@@ -245,9 +253,9 @@
 
 [Azure 资源管理器概述][resource-group-overview]  
 [如何使用 Azure CLI][azure-command-line-tools]  
-[将 Azure PowerShell 与 Azure 资源管理器配合使用][powershell-azure-resource-manager]  
+[将 Azure PowerShell 与 Azure 资源管理器配合使用][powershell-azure-resource-manager]
 
 [azure-command-line-tools]: /documentation/articles/xplat-cli
 [resource-group-overview]: /documentation/articles/resource-group-overview
 [powershell-azure-resource-manager]: /documentation/articles/powershell-azure-resource-manager
-<!---HONumber=67-->
+<!---HONumber=Mooncake_1207_2015-->

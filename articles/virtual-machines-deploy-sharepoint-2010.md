@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/05/2015"
-	wacn.date="12/16/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 # Azure 虚拟机上的 SharePoint 2010 部署
@@ -55,7 +55,7 @@ Azure 虚拟机使开发人员能够灵活选取其所需的语言或运行时�
 
 ## 设置过程
 
-Azure 中的映像库提供了可用预配置虚拟机的列表。用户可将 SharePoint Server、SQL Server、Windows Server 和其他 ISO/VHD 发布到映像库。若要简化虚拟机的创建，可创建基本映像并将这些映像发布到该库。授权用户可使用这些映像来生成所需的虚拟机。有关详细信息，请转到[在 Azure 预览门户中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。图 1 演示了使用 Azure 门户创建虚拟机的基本步骤。
+Azure 中的映像库提供了可用预配置虚拟机的列表。用户可将 SharePoint Server、SQL Server、Windows Server 和其他 ISO/VHD 发布到映像库。若要简化虚拟机的创建，可创建基本映像并将这些映像发布到该库。授权用户可使用这些映像来生成所需的虚拟机。有关详细信息，请转到[在 Azure 管理门户中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。图 1 演示了使用 Azure 门户创建虚拟机的基本步骤。
 
 ![azure-sharepoint-wp-13](./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-2.png)
 
@@ -94,7 +94,7 @@ Azure 中的映像库提供了可用预配置虚拟机的列表。用户可将 S
 使用下列任一选项构建 SQL Server 虚拟机：
 
 - 执行上面的步骤 1 到步骤 7 来创建 SQL Server 2012 虚拟机，只是在步骤 3 中，请使用 SQL Server 2012 映像而不是 Windows Server 2008 R2 SP1 映像。有关详细信息，请转到[在 Azure 上设置 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server)。
-	- 单击该选项后，设置过程将在 C:\\SQLServer\_11.0_Full 目录路径中保留 SQL Server 2012 安装程序文件的副本，以便你能自定义安装。例如，你可通过使用许可证密钥将 SQL Server 2012 的评估版安装转换为许可版本。
+	- 单击该选项后，设置过程将在 C:\\SQLServer\_11.0\_Full 目录路径中保留 SQL Server 2012 安装程序文件的副本，以便你能自定义安装。例如，你可通过使用许可证密钥将 SQL Server 2012 的评估版安装转换为许可版本。
 
 - 使用 SQL Server System Preparation (SysPrep) 工具以在虚拟机上利用基本操作系统安装 SQL Server（如上面的步骤 1 到步骤 7 中所述）。有关详细信息，请转到[使用 SysPrep 安装 SQL Server 2012](http://msdn.microsoft.com/zh-cn/library/ee210664.aspx)。
 
@@ -109,7 +109,7 @@ Azure 中的映像库提供了可用预配置虚拟机的列表。用户可将 S
 步骤 2。通过创建另一台具有基本操作系统的虚拟机（如上面的步骤 1 到步骤 6 中所述）来设置 SharePoint Server。若要在此虚拟机上构建 SharePoint Server，请选择下列选项之一：
 
 - 使用 SharePoint GUI 进行设置：
-	- 若要创建和设置 SharePoint 场，请转到[创建 Microsoft SharePoint Server 场](http://technet.microsoft.com/zh-cn/library/ee805948.aspx#CreateConfigure)。
+	- 若要创建和预配 SharePoint 场，请转到[创建 Microsoft SharePoint Server 场](http://technet.microsoft.com/zh-cn/library/ee805948.aspx#CreateConfigure)。
 	- 若要将 Web 或应用程序服务器添加到场，请转到[将 Web 或应用程序服务器添加到场](http://technet.microsoft.com/zh-cn/library/cc261752.aspx)。
 	- 若要将数据库服务器添加到现有场，请转到[将数据库服务器添加到现有场](http://technet.microsoft.com/zh-cn/library/cc262781)。
 	- 若要将 SQL Server 2012 用于 SharePoint 场，你必须在安装应用程序并选择不配置服务器之后，下载并安装 SharePoint Server 2010 Service Pack 1。有关详细信息，请转到 [SharePoint Server 2010 Service Pack 1](http://www.microsoft.com/zh-CN/download/details.aspx?id=26623)。
@@ -153,7 +153,7 @@ Azure 中的映像库提供了可用预配置虚拟机的列表。用户可将 S
 
 若要在 Azure 上实现 SharePoint 开发和测试环境，请按照以下步骤操作：
 
-1. 设置：首先，使用 Azure 虚拟网络在本地和 Azure 之间设置 VPN 连接。（由于此处未使用 Active Directory，因此需要 VPN 隧道。） 有关详细信息，请转到[虚拟网络概述](http://msdn.microsoft.com/zh-cn/library/jj156007.aspx)。然后，使用映像库中的储备映像通过 Azure 门户设置新的虚拟机。
+1. 设置：首先，使用 Azure 虚拟网络在本地和 Azure 之间设置 VPN 连接。（由于此处未使用 Active Directory，因此需要 VPN 隧道。） 有关详细信息，请转到[虚拟网络概述](/documentation/articles/virtual-networks-overview)。然后，使用映像库中的储备映像通过 Azure 门户设置新的虚拟机。
 	- 你可以将本地 SharePoint 开发和测试虚拟机上载到 Azure 存储帐户，并通过映像库引用这些虚拟机来构建所需的环境。
 	- 可以使用 SQL Server 2012 映像来替代 Windows Server 2008 R2 SP1 映像。有关详细信息，请转到[在 Azure 上设置 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server)。
 
@@ -219,7 +219,7 @@ Azure 基础结构中的虚拟机将进行验证，并能够与其他 Microsoft 
 若要在 Azure 上向外扩展 BI 环境，请按照以下步骤操作：
 
 1. 设置：
-	- 使用 Azure 虚拟网络在本地和 Azure 之间设置 VPN 连接。有关详细信息，请转到[虚拟网络概述](http://msdn.microsoft.com/zh-cn/library/jj156007.aspx)。
+	- 使用 Azure 虚拟网络在本地和 Azure 之间预配 VPN 连接。有关详细信息，请转到[虚拟网络概述](/documentation/articles/virtual-networks-overview)。
 	- 使用 Azure 门户从映像库中的储备映像设置新的虚拟机。你可以将 SharePoint Server 或 SQL Server 商业智能工作负荷映像上载到映像库，并且任何授权用户均可选择这些商业智能组件虚拟机来构建向外扩展的环境。
 2. 安装： 
 	- 如果你的组织没有 SharePoint Server 或 SQL Server 商业智能组件的预构建映像，请使用远程桌面连接在虚拟机上安装 SharePoint Server 和 SQL Server。
@@ -258,7 +258,7 @@ Azure 基础结构中的虚拟机将进行验证，并能够与其他 Microsoft 
 	- 在虚拟机上配置 SQL Server。有关详细信息，请转到[使用 SysPrep 安装 SQL Server](http://msdn.microsoft.com/zh-cn/library/ee210664.aspx)。
 	- 将虚拟机加入新创建的 Active Directory 域。
 3. 部署多服务器 SharePoint 场：
-	- 创建虚拟网络。有关详细信息，请转到[虚拟网络概述](http://msdn.microsoft.com/zh-cn/library/jj156007.aspx)。
+	- 创建虚拟网络。有关详细信息，请转到[虚拟网络概述](/documentation/articles/virtual-networks-overview)。
 	- 在部署 SharePoint 虚拟机时，你需要为 SharePoint Server 提供的子网，以便在设置过程中可使用本地 Active Directory 框中的 DNS 地址。
 	- 使用 Azure 门户创建虚拟机。
 	- 在该虚拟机上安装 SharePoint Server 并生成可重复使用的映像。有关安装 SharePoint Server 的详细信息，请转到[使用 Windows PowerShell 安装和配置 SharePoint Server 2010](http://technet.microsoft.com/zh-cn/library/cc262839.aspx) 或 [CodePlex：AutoSPInstaller](http://autospinstaller.codeplex.com/)。
@@ -284,4 +284,4 @@ Azure 虚拟机提供了 SharePoint 部署的完整连续。它完全受支持�
 
 [在 Azure 中测试 SharePoint Server 2016 IT 预览](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

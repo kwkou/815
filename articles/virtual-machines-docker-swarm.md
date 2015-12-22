@@ -11,7 +11,7 @@
 <tags
    ms.service="virtual-machines"
    ms.date="09/22/2015"
-   wacn.date="11/12/2015"/>
+   wacn.date="12/17/2015"/>
 
 # 如何将 docker 与 swarm 一起使用
 
@@ -22,7 +22,7 @@
 
 > [AZURE.NOTE]这是早期的软件版本，因此请返回查看是否有关于在 Azure 上使用此软件创建 Docker 容器的大型平衡受控群集的更新，以及查阅 docker swarm 文档以了解其所有功能。
 <!-- -->
-此外，本主题会将 docker 与 swarm 和 Azure CLI 一起使用，*而不*使用 **docker-machine** 以显示不同工具如何协同工作，但又保持独立。**docker-machine** 具有 **--swarm** 开关，让你能够使用 **docker-machine** 直接将节点添加到 swarm 中。有关示例，请参阅 [docker-machine](https://github.com/docker/machine) 文档。如果你错过了针对 Azure VM 运行的 **docker-machine**，请参阅[如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-docker-machine)。
+> 此外，本主题会将 docker 与 swarm 和 Azure CLI 一起使用，*而不*使用 **docker-machine** 以显示不同工具如何协同工作，但又保持独立。**docker-machine** 具有 **--swarm** 开关，让你能够使用 **docker-machine** 直接将节点添加到 swarm 中。有关示例，请参阅 [docker-machine](https://github.com/docker/machine) 文档。如果你错过了针对 Azure VM 运行的 **docker-machine**，请参阅[如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-docker-machine)。
 
 ## 使用 Azure 虚拟机创建 docker 主机
 
@@ -63,7 +63,7 @@
 
 > [AZURE.NOTE]只是为了清楚起见，我们将使用本地 docker 安装连接到 Azure 中的 **swarm-master** VM，并指示 **swarm-master** 下载、安装和运行 **create** 命令，该命令会返回群集 ID，稍后我们会将该 ID 用于发现目的。
 <!-- -->
-若要确认此 ID，请运行 `docker -H tcp://`*&lt;hostname&gt;* ` images` 以列出 **swarm-master** 计算机和另一个节点上的容器进程以进行比较（因为我们在运行前一 swarm 命令时使用了 **--rm** 开关，在它完成后将删除该容器，因此使用 **docker ps-a** 不会返回任何内容）。
+>  若要确认此 ID，请运行 `docker -H tcp://`*&lt;hostname&gt;* ` images` 以列出 **swarm-master** 计算机和另一个节点上的容器进程以进行比较（因为我们在运行前一 swarm 命令时使用了 **--rm** 开关，在它完成后将删除该容器，因此使用 **docker ps-a** 不会返回任何内容）。
 
 
         $ docker --tls -H tcp://swarm-master.chinacloudapp.cn:2376 images
@@ -135,4 +135,4 @@
 [docker-machine-azure]: /documentation/articles/virtual-machines-docker-machine
  
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="将磁盘附加到 Linux 虚拟机 | Windows Azure"
-	description="了解如何将数据磁盘附加到 Azure 上运行的 Linux 虚拟机并将其初始化，以便它可供使用。"
+	pageTitle="将磁盘附加到 Linux VM | Windows Azure"
+	description="了解如何将数据磁盘附加到运行 Linux 的 Azure 虚拟机并将其初始化，以便它可供使用。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
@@ -11,11 +11,12 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="08/11/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 如何将数据磁盘附加到 Linux 虚拟机
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用 Azure 服务管理器附加磁盘。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+
 
 你可以附加空磁盘和包含数据的磁盘。在这两种情况下，这些磁盘实际上是驻留在 Azure 存储帐户中的 .vhd 文件。此外，也是在这两种情况下，在附加磁盘之后，你将需要对其进行初始化，然后才能使用。本文所指的虚拟机是使用经典部署模型创建的虚拟机。
 
@@ -43,7 +44,7 @@
 
 	或
 
-	b) 使用 `lsscsi` 命令找出设备 ID。`lsscsi` 的安装可以通过 `yum install lsscsi`（在基于 Red Hat 的分发上）或 `apt-get install lsscsi`（在基于 Debian 的分发上）来进行。你可以通过 _lun_（即**逻辑单元号**）找到所要的磁盘。例如，所附加磁盘的 *lun* 可以轻松地通过 `azure vm disk list <virtual-machine>` 来查看，如下所示：
+	b) 使用 `lsscsi` 命令找出设备 ID。`lsscsi` 的安装可以通过 `yum install lsscsi`（在基于 Red Hat 的分发上）或 `apt-get install lsscsi`（在基于 Debian 的分发上）来进行。你可以通过 _lun_（即**逻辑单元号**）找到所要的磁盘。例如，所附加磁盘的 _lun_ 可以轻松地通过 `azure vm disk list <virtual-machine>` 来查看，如下所示：
 
 			~$ azure vm disk list ubuntuVMasm
 			info:    Executing command vm disk list
@@ -146,7 +147,7 @@
 
 	另外，在基于 SUSE Linux 的系统上，您可能需要使用稍微不同的格式：
 
-		/dev/disk/by-uuid/33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /   ext3   defaults   1   2
+		/dev/disk/by-uuid/33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext3   defaults   1   2
 
 	现在，你可以通过简单地卸载并重新装载文件系统（即使用在之前的步骤中创建的示例装载点 `/datadrive`）来测试文件系统是否已正确装载：
 
@@ -155,6 +156,7 @@
 
 	如果 `mount` 命令产生错误，请检查 /etc/fstab 文件的语法是否正确。如果还创建了其他数据驱动器或分区，您同样也需要分别将其输入到 /etc/fstab 中。
 
+	你需要使用以下命令使驱动器成为可写的：# cd /datadrive # sudo chmod go+w /datadrive
 
 >[AZURE.NOTE]之后，在不编辑 fstab 的情况下删除数据磁盘可能会导致 VM 无法引导。如果这是一种常见情况，则请注意，大多数分发都提供了 `nofail` 和/或 `nobootwait` fstab 选项，这些选项使系统在磁盘无法装载的情况下也能引导。有关这些参数的详细信息，请查阅您的分发文档。
 
@@ -169,4 +171,4 @@
 [Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide
 [Logon]: /documentation/articles/virtual-machines-linux-how-to-log-on
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

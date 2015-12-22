@@ -6,11 +6,11 @@
    authors="dlepow"
    manager="timlt"
    editor=""
-   tags="azure-service-management"/>
+   tags="azure-service-management,hpc-pack"/>
 <tags
    ms.service="virtual-machines"
    ms.date="09/29/2015"
-   wacn.date="11/27/2015"/>
+   wacn.date="12/17/2015"/>
 
 # 使用 HPC Pack IaaS 部署脚本在 Azure VM 中创建高性能计算 (HPC) 群集
 
@@ -20,7 +20,7 @@
 
 在客户端计算机上运行 HPC Pack IaaS 部署 PowerShell 脚本，以在 Azure 基础结构服务 (IaaS) 中部署完整的 HPC Pack 群集。此脚本提供多种部署选项，并且可添加运行受支持 Linux 分发包或 Windows Server 操作系统的群集计算节点。
 
-根据你的环境和选择，该脚本可以创建所有群集基础结构，包括 Azure 虚拟网络、地缘组、存储帐户、云服务、域控制器、远程或本地 SQL 数据库、头节点、代理节点、计算节点和 Azure 云服务（“迸发”或 PaaS）节点。此外，该脚本还可以使用预先存在的 Azure 基础结构，然后创建 HPC 群集头节点、代理节点、计算节点和 Azure 迸发节点。
+根据你的环境和选择，该脚本可以创建所有群集基础结构，包括 Azure 虚拟网络、存储帐户、云服务、域控制器、远程或本地 SQL 数据库、头节点、代理节点、计算节点和 Azure 云服务（“迸发”或 PaaS）节点。此外，该脚本还可以使用预先存在的 Azure 基础结构，然后创建 HPC 群集头节点、代理节点、计算节点和 Azure 迸发节点。
 
 
 有关规划 HPC Pack 群集的背景信息，请参阅 HPC Pack TechNet 库中的[产品评估和规划](https://technet.microsoft.com/zh-cn/library/jj899596.aspx)及[入门](https://technet.microsoft.com/zh-cn/library/jj899590.aspx)内容。
@@ -30,7 +30,7 @@
 * **Azure 订阅** - 你可以使用 Azure 全球或 Azure 中国服务中的订阅。你的订阅限制只会影响你可以部署的群集节点数量和类型。有关信息，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits)。
 
 
-* **安装并配置了 Azure PowerShell 0.8.7 或更高版本的客户端计算机** - 请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。该脚本将在 Azure 服务管理中运行。
+* **安装并配置了 Azure PowerShell 0.8.7 或更高版本的 Windows 客户端计算机** - 请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。该脚本将在 Azure 服务管理中运行。
 
 
 * **HPC Pack IaaS 部署脚本** - 从 [Microsoft 下载中心](https://www.microsoft.com/download/details.aspx?id=44949)下载并解压缩最新版本的脚本。可以通过运行 `New-HPCIaaSCluster.ps1 –Version` 检查脚本的版本。本文基于版本 4.4.0 的脚本。
@@ -47,7 +47,7 @@ New-HPCIaaSCluster.ps1 [-ConfigFile] <String> [-AdminUserName]<String> [[-AdminP
 
 ### Parameters
 
-* **ConfigFile** - 指定描述 HPC 群集的配置文件的路径。有关配置文件的详细信息，请参阅本主题中的[配置文件](#Configuration-file)，或参阅包含该脚本的文件夹中的 Manual.rtf 文件。
+* **ConfigFile** - 指定描述 HPC 群集的配置文件的路径。有关详细信息，请参阅本主题中的[配置文件](#Configuration-file)，或参阅包含该脚本的文件夹中的 Manual.rtf 文件。
 
 * **AdminUserName** - 指定用户名。如果域林是由脚本创建的，则此用户名将成为所有 VM 的本地管理员用户名以及域管理员名称。如果域林已存在，则此参数会将域用户指定为安装 HPC Pack 的本地管理员用户名。
 
@@ -59,7 +59,7 @@ New-HPCIaaSCluster.ps1 [-ConfigFile] <String> [-AdminUserName]<String> [[-AdminP
 
 * **LogFile**（可选）- 指定部署日志文件路径。如果未指定，脚本将在运行脚本的计算机的 temp 目录中创建一个日志文件。
 
-* **Force**（可选）-抑制所有确认提示。
+* **Force**（可选）- 抑制所有确认提示。
 
 * **NoCleanOnFailure**（可选）- 指定将不删除未成功部署的 Azure VM。在重新运行脚本以继续部署之前，你必须手动删除这些 VM，否则部署可能失败。
 
@@ -298,7 +298,7 @@ New-HPCIaaSCluster.ps1 –ConfigFile MyConfigFile.xml -AdminUserName
 
 ### 示例 5
 
-以下配置文件将在现有域林中部署一个 HPC Pack 群集。该群集包含 1 个具有本地数据库的头节点，此外将创建 2 个 Azure 节点模板，并为 Azure 节点模板 AzureTemplate1 创建 3 个中等大小的 Azure 节点。配置头节点后，将在头节点上运行脚本文件。
+以下配置文件将在现有域林中部署一个 HPC Pack 群集。该群集包含 1 个具有本地数据库的头节点，此外将创建两个 Azure 节点模板，并为 Azure 节点模板 AzureTemplate1 创建 3 个中等大小的 Azure 节点。配置头节点后，将在头节点上运行脚本文件。
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -366,7 +366,7 @@ New-HPCIaaSCluster.ps1 –ConfigFile MyConfigFile.xml -AdminUserName
 ## 已知问题
 
 
-* **“虚拟网络不存在”错误** - 如果你运行 HPC Pack IaaS 部署脚本在 Azure 中的一个订阅下同时部署多个群集，则一个或多个部署可能会失败并显示错误“VNet *VNet 名称*不存在”。如果发生此错误，请对失败的部署重新运行该脚本。
+* **“虚拟网络不存在”错误** - 如果你运行 HPC Pack IaaS 部署脚本在 Azure 中的一个订阅下同时部署多个群集，则一个或多个部署可能会失败并显示错误“虚拟网络*虚拟网络名称*不存在”。如果发生此错误，请对失败的部署重新运行该脚本。
 
 * **从 Azure 虚拟网络访问 Internet 时出现问题** - 如果你通过使用部署脚本创建 HPC Pack 群集和新的域控制器，或者你手动将 VM 提升为域控制器，则在将 Azure 虚拟网络中的 VM 连接到 Internet 时可能会遇到问题。如果已在域控制器上自动配置转发器 DNS 服务器，但此转发器 DNS 服务器未正确解析，则会出现这种情况。
 
@@ -381,8 +381,8 @@ New-HPCIaaSCluster.ps1 –ConfigFile MyConfigFile.xml -AdminUserName
 
 * 尝试在群集上运行测试工作负荷。有关示例，请参阅 HPC Pack [入门指南](https://technet.microsoft.com/zh-cn/library/jj884144)。
 
-* 有关使用脚本创建群集和运行 HPC 工作负荷的教程，请参阅[在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD](virtual-machines-linux-cluster-hpcpack-namd)。
+* 有关使用脚本创建群集和运行 HPC 工作负荷的教程，请参阅[开始使用 Azure 中的 HPC Pack 群集运行 Excel 和 SOA 工作负荷](/documentation/articles/virtual-machines-excel-cluster-hpcpac)或[在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD](virtual-machines-linux-cluster-hpcpack-namd)。
 
 * 尝试使用 HPC Pack 的工具来启动、停止、添加和删除所创建群集中的计算节点。请参阅[在 Azure 中管理 HPC Pack 群集的计算节点](/documentation/articles/virtual-machines-hpcpack-cluster-node-manage)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1207_2015-->

@@ -11,14 +11,15 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="07/14/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 #将自定义数据注入到 Azure 虚拟机中
 
 无论操作系统是 Windows 还是 Linux 分发，在设置 Azure 虚拟机时，将脚本或其他数据注入到 Azure 虚拟机都是非常常见的方案。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+
 
 本主题介绍如何执行以下操作：
 
@@ -78,4 +79,4 @@
 
 [Azure 命令行界面](https://github.com/Azure/azure-sdk-tools-xplat)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

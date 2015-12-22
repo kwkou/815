@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/14/2015"
-	wacn.date="12/16/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 如何在 Windows VM 上安装和配置 Symantec Endpoint Protection
 
@@ -94,4 +94,4 @@
 
 [Ext]: https://msdn.microsoft.com/zh-cn/library/dn606311.aspx
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

@@ -11,9 +11,11 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="08/12/2015"
-	wacn.date="12/16/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 创建 Linux 虚拟机的不同方式
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 Azure 提供不同方式来创建 VM，因为 VM 适合于不同用户和目的。这意味着你将需要对 VM 以及如何创建它进行一些选择。本文提供了这些选项的摘要和说明链接。
 
@@ -97,4 +99,4 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 [创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-tutorial
 [创建自定义虚拟机]: /documentation/articles/virtual-machines-create-custom
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

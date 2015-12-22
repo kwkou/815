@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/09/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="10/29/2015"
+	wacn.date="12/17/2015"/>
 
 
 # 如何使用 Azure 资源管理器自动执行
@@ -23,25 +23,21 @@ Azure 资源管理器可简化在 Azure 基础结构服务上运行的复杂应�
 ## 从此处开始
 
 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)
-
 ## 联网
 
 [网络资源提供程序](/documentation/articles/resource-groups-networking)
 
-
-## 使用 .NET 自动执行
+## .NET
 
 [使用 .NET 库部署 Azure 资源](/documentation/articles/virtual-machines-arm-deployment)
 
 
-## 使用 Azure Automation 自动执行
+## Azure 自动化
 
 [使用 Azure 自动化管理 Azure 虚拟机](/documentation/articles/automation-manage-virtual-machines)
-
-
 
 ## 其他资源
 
 [虚拟机文档](/services/virtual-machines)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

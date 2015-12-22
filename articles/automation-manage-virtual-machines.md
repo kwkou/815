@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/11/2015"
-	wacn.date="11/12/2015" />
+	ms.date="11/03/2015"
+	wacn.date="12/17/2015" />
 	
 
 
@@ -18,6 +18,7 @@
 #使用 Azure Automation 管理 Azure 虚拟机
 
 本指南介绍 Azure 自动化服务，以及如何使用它来简化 Azure 虚拟机的管理。
+
 
 ## 什么是 Azure Automation？
 
@@ -39,4 +40,4 @@ Azure 自动化提供高度可靠且高度可用的工作流执行引擎，它�
 
 [Azure Automation 入门](/documentation/articles/automation-create-runbook-from-samples)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

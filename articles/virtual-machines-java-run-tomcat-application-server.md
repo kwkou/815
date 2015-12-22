@@ -6,12 +6,12 @@
 	authors="rmcmurray"
 	manager="wpickett"
 	editor="jimbe"
-    	tags="azure-service-management" />
+    tags="azure-service-management" />
 
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/22/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/17/2015"/>
 
 # 如何在使用经典部署模型创建的虚拟机上运行 Java 应用程序服务器
 
@@ -119,7 +119,7 @@
 此时，应可从外部浏览器使用 ****http://*your\_DNS_name*.chinacloudapp.cn** 格式的 URL 查看你的 Tomcat 网站，其中 ***your\_DNS_name*** 是你创建虚拟机时指定的 DNS 名称。
 
 ## 应用程序生命周期注意事项
-* 你可以创建自己的网站存档 (WAR) 并将其添加到 **webapps** 文件夹。例如，创建一个基本的 Java Service Page (JSP) 动态 Web 项目并将其导出为 WAR 文件，将此 WAR 复制到虚拟机上的 Apache Tomcat **webapps** 文件夹，然后在浏览器中运行它。
+* 你可以创建自己的 Web 应用程序存档 (WAR) 并将其添加到 **webapps** 文件夹。例如，创建一个基本的 Java Service Page (JSP) 动态 Web 项目并将其导出为 WAR 文件，将此 WAR 复制到虚拟机上的 Apache Tomcat **webapps** 文件夹，然后在浏览器中运行它。
 * 默认情况下，Tomcat 服务在安装后会设置为手动启动。你可以使用“服务”管理单元将其切换为自动启动。可通过依次单击 Windows 的“开始”、“管理工具”、“服务”来启动“服务”管理单元。双击“Apache Tomcat”服务，将“启动类型”设置为“自动”。
 
     ![将服务设置为自动启动][service_automatic_startup]
@@ -148,4 +148,4 @@
 [NewRuleName]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
 [NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1207_2015-->

@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/14/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/17/2015"/>
 
 #在 Windows VM 上安装 MongoDB
 
@@ -47,4 +47,4 @@
 [MongoDB]: http://www.mongodb.org/
 [AzureManagementPortal]: http://manage.windowsazure.cn
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

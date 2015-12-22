@@ -6,7 +6,7 @@
    authors="kundanap"
    manager="timlt"
    editor=""
-   tags="azure-resource-manager"/>
+   tags="top-support-issue,azure-resource-manager"/>
 
 <tags
    ms.service="virtual-machines"
@@ -15,7 +15,8 @@
 
 # 对 Azure VM 扩展故障进行故障排除。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用资源管理器部署模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
+
 
 ## Azure 资源管理器模板概述。
 
@@ -80,4 +81,4 @@ Azure Powershell：
 
 删除该扩展后，可以重新执行模板在 VM 上运行脚本。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->
