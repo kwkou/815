@@ -40,7 +40,7 @@
 
     Azure PowerShell 1.0 预览版：
 
-         PS C:\> Login-AzureRmAccount
+         PS C:\> Login-AzureRmAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
 
          Evironment : AzureCloud
          Account    : someone@example.com
@@ -53,7 +53,7 @@
 
 3. 如果目前没有资源组，请使用 **New-AzureRmResourceGroup** 命令创建新的资源组。提供资源组的名称，以及解决方案所需的位置。将返回新资源组的摘要。
 
-        PS C:\> New-AzureRmResourceGroup -Name ExampleResourceGroup -Location "West US"
+        PS C:\> New-AzureRmResourceGroup -Name ExampleResourceGroup -Location "China East"
    
         ResourceGroupName : ExampleResourceGroup
         Location          : westus
@@ -95,21 +95,13 @@
 
         PS C:\> Get-AzureRmResourceGroupDeployment -ResourceGroupName ExampleResourceGroup -Name ExampleDeployment
 
-        
-### 视频
-
-下面是介绍如何在 PowerShell 中使用资源管理器模板的视频演示。
-
-[AZURE.VIDEO deploy-an-application-with-azure-resource-manager-template]
-
-
 ## 使用适用于 Mac、Linux 和 Windows 的 Azure CLI 进行部署
 
 如果你以前没有对资源管理器使用过 Azure CLI，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager)。
 
 1. 登录到你的 Azure 帐户。提供凭据后，该命令将返回你的登录结果。
 
-        azure login
+        azure login -e AzureCinaCloud -u <username> -p <password>
   
         ...
         info:    login command OK
@@ -126,7 +118,7 @@
 
 4. 如果目前没有资源组，请创建新的资源组。提供资源组的名称，以及解决方案所需的位置。将返回新资源组的摘要。
 
-        azure group create -n ExampleResourceGroup -l "West US"
+        azure group create -n ExampleResourceGroup -l "China East"
    
         info:    Executing command group create
         + Getting resource group ExampleResourceGroup
@@ -180,7 +172,7 @@
          PUT https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>?api-version=2015-01-01
            <common headers>
            {
-             "location": "West US",
+             "location": "China East",
              "tags": {
                "tagname1": "tagvalue1"
              }
@@ -231,7 +223,7 @@
                 "value": "DefaultPlan"
             },
             "webSiteLocation": {
-                "value": "West US"
+                "value": "China East"
             }
        }
     }
