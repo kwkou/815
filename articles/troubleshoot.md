@@ -1,4 +1,4 @@
-<properties linkid="troubleshoot" urlDisplayName="troubleshoot" pageTitle="故障排除" metaKeywords="troubleshoot" 　disableRightNav="true" description="" metaCanonical="" services="" documentationCenter="" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="troubleshoot" urlDisplayName="troubleshoot" pageTitle="故障排除" metaKeywords="troubleshoot" disableRightNav="true" description="" metaCanonical="" services="" documentationCenter="" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="" ms.date="" wacn.date="12/23/2015"/>
 
 #故障排除
