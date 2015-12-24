@@ -141,7 +141,7 @@
 
 1. 使用你的凭据登录到 Azure 帐户。该命令将返回登录的结果。
 
-        azure login
+        azure login -e AzureChinaCloud -u <username> -p <password>
 
         ...
         info:    login command OK
