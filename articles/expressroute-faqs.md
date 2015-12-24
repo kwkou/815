@@ -8,8 +8,8 @@
    editor=""/>
 <tags
    ms.service="expressroute"
-   ms.date="09/02/2015"
-   wacn.date="11/27/2015"/>
+   ms.date="10/20/2015"
+   wacn.date="12/17/2015"/>
 
 # ExpressRoute 常见问题
 
@@ -105,6 +105,8 @@ ExpressRoute 目前支持大多数 Windows Azure 服务。
 - 你必须为私有对等互连配置 BGP（如果你使用的是连接提供商）。
 - 你必须将虚拟网络连接到 ExpressRoute 线路。
 
+有关详细信息，请参阅 [ExpressRoute 线路预配工作流和线路状态](/documentation/articles/expressroute-workflows)。
+
 ### 我的 ExpressRoute 线路是否存在连接界限？
 是的。[ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)页概述了 ExpressRoute 线路的连接界限。一条 ExpressRoute 线路的连接范围限制为单个地缘政治区域。可以通过启用 ExpressRoute 高级功能，将连接扩展为跨服务区域。
 
@@ -151,7 +153,7 @@ ExpressRoute 目前支持大多数 Windows Azure 服务。
 ### 如果超过 BGP 限制，会发生什么情况？
 BGP 会话将被删除。当前缀计数低于限制后，将重置这些会话。
 
-### ExpressRoute BGP 保持时间是多少？ 是否可以调整它?
+### ExpressRoute BGP 保持时间是多少？ 是否可以调整它？
 保持时间为 180 秒。Keep-Alive（保持活动）消息每隔 60 秒发送一次。这是 Microsoft 端的固定设置，不能更改。
 
 ### 将默认路由 (0.0.0.0/0) 播发到虚拟网络后，我无法激活 Azure VM 上运行的 Windows。我如何解决此问题？
@@ -187,6 +189,8 @@ ExpressRoute 高级版包括下面列出的功能集合。
 | 200 Mbps | 10 | 25 |
 | 500 Mbps | 10 | 40 |
 | 1 Gbps | 10 | 50 |
+| 2 Gbps | 10 | 60 |
+| 5 Gbps | 10 | 75 |
 | 10 Gbps | 10 | 100 |
 
 
@@ -209,4 +213,4 @@ ExpressRoute 高级版包括下面列出的功能集合。
 
 
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1207_2015-->
