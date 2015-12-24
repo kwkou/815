@@ -1,5 +1,5 @@
 <properties
-   pageTitle="如何配置 ExpressRoute 线路的路由 | Windows Azure"
+   pageTitle="如何使用 PowerShell 为经典部署模型的 ExpressRoute 线路配置路由 | Windows Azure"
    description="本文将指导你完成创建和预配 ExpressRoute 线路的专用、公共互连的步骤。本文还介绍了如何检查状态，以及如何更新或删除线路的对等互连。"
    documentationCenter="na"
    services="expressroute"
@@ -9,15 +9,18 @@
    tags="azure-service-management"/>
 <tags
    ms.service="expressroute"
-   ms.date="10/02/2015"
-   wacn.date="11/27/2015"/>
+   ms.date="11/05/2015"
+   wacn.date="12/17/2015"/>
 
-# 创建和修改 ExpressRoute 路由配置
+# 使用 PowerShell 创建和修改 ExpressRoute 线路的路由
+
+> [AZURE.SELECTOR]
+[PowerShell - Classic](/documentation/articles/expressroute-howto-routing-classic)
+[PowerShell - Resource Manager](/documentation/articles/expressroute-howto-routing-arm)
 
 本文将指导你执行相关步骤，以便使用 PowerShell cmdlet 和经典部署模型创建和管理 ExpressRoute 线路的路由配置。下面的步骤还将说明如何查看状态，以及如何更新、删除和取消预配 ExpressRoute 线路的对等互连。
 
->[AZURE.IMPORTANT]请务必了解 Azure 当前使用两种部署模型：资源管理器和经典部署模型。在开始你的配置之前，请确保你了解部署模型和工具。有关部署模型的信息，请参阅 [Azure 部署模型](/documentation/articles/azure-classic-rm)。
-
+[AZURE.INCLUDE [vpn-gateway-sm-rm](../includes/vpn-gateway-sm-rm-include.md)] 
 
 ## 配置先决条件
 
@@ -25,7 +28,7 @@
 - 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites)页、[路由要求](/documentation/articles/expressroute-routing)页和[工作流](/documentation/articles/expressroute-workflows)页。
 - 你必须有一个活动的 ExpressRoute 线路。在继续下一步之前，请按说明[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)，并通过连接提供商启用该线路。ExpressRoute 线路必须处于已预配和已启用状态，你才能运行下述 cmdlet。
 
->[AZURE.IMPORTANT]这些说明只适用于由提供第 2 层连接服务的服务提供商所创建的线路。如果你的服务提供商提供第 3 层托管服务（通常是 IPVPN，如 MPLS），连接服务提供商将为你设置和管理路由。在此情况下，你无法创建或管理对等互连。
+>[AZURE.IMPORTANT]这些说明只适用于由提供第 2 层连接服务的服务提供商创建的线路。如果你的服务提供商提供第 3 层托管服务（通常是 IPVPN，如 MPLS），则连接服务提供商将为你设置和管理路由。在此情况下，你无法创建或管理对等互连。
 
 你可以为 ExpressRoute 线路配置一到两个对等互连（Azure 专用和Azure 公共）。可以按照所选的任意顺序配置对等互连。但是，你必须确保一次只完成一个对等互连的配置。
 
@@ -44,11 +47,11 @@
 
 2. **创建 ExpressRoute 线路。**
 	
-	请遵循说明创建 [ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)，并由连接服务提供商进行预配。请在创建线路之后遵循以下说明。
+	请按说明创建 [ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)，并由连接服务提供商进行预配。请在创建线路之后遵循以下说明。
 
 3. **检查 ExpressRoute 线路以确保它已预配。**
 
-	首先必须检查 ExpressRoute 线路是否为已预配并已启用。请参阅以下示例。
+	首先必须检查 ExpressRoute 线路是否已预配并已启用。请参阅以下示例。
 
 		PS C:\> Get-AzureDedicatedCircuit -ServiceKey "*********************************"
 
@@ -69,7 +72,7 @@
 
 4. **配置线路的 Azure 专用对等互连。**
 
-	在执行后续步骤之前，请确保已准备好以下各项：
+	在继续执行后续步骤之前，请确保已准备好以下各项：
 
 	- 主链路的 /30 子网。它不能是保留给虚拟网络使用的任何地址空间的一部分。
 	- 辅助链路的 /30 子网。它不能是保留给虚拟网络使用的任何地址空间的一部分。
@@ -117,9 +120,10 @@
 
 可以运行以下 cmdlet 来删除对等互连配置。
 
+>[AZURE.WARNING]运行此 cmdlet 之前，必须确保已从 ExpressRoute 线路取消链接所有虚拟网络。
+
 	Remove-AzureBGPPeering -AccessType Private -ServiceKey "*********************************"
 
->[AZURE.IMPORTANT]运行此 cmdlet 之前，必须确保已从 ExpressRoute 取消链接所有虚拟网络。
 
 ## Azure 公共对等互连
 
@@ -136,11 +140,11 @@
 
 2. **创建 ExpressRoute 线路**
 	
-	请遵循说明创建 [ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)，并由连接服务提供商进行预配。请在创建线路之后遵循以下说明。
+	请按说明创建 [ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)，并由连接服务提供商进行预配。请在创建线路之后遵循以下说明。
 
-3. **检查 ExpressRoute 线路以确保它已预配。**
+3. **检查 ExpressRoute 线路以确保它已预配**
 
-	首先必须检查 ExpressRoute 线路是否为已预配并已启用。请参阅以下示例。
+	首先必须检查 ExpressRoute 线路是否已预配并已启用。请参阅以下示例。
 
 		PS C:\> Get-AzureDedicatedCircuit -ServiceKey "*********************************"
 
@@ -162,7 +166,7 @@
 
 4. **配置线路的 Azure 公共对等互连**
 
-	在继续下一步之前，请确保已准备好以下信息：
+	在继续下一步之前，请确保已准备好以下信息。
 
 	- 主链路的 /30 子网。这必须是有效的公共 IPv4 前缀。
 	- 辅助链路的 /30 子网。这必须是有效的公共 IPv4 前缀。
@@ -216,8 +220,8 @@
 
 ## 后续步骤
 
--  接下来，请[将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)。
--  有关工作流的详细信息，请参阅 [ExpressRoute 工作流](/documentation/articles/expressroute-workflows)。
--  有关线路对等互连的详细信息，请参阅 [ExpressRoute 线路和路由域](/documentation/articles/expressroute-circuit-peerings)。
+下一步，[将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)。
+- 有关工作流的详细信息，请参阅 [ExpressRoute 工作流](/documentation/articles/expressroute-workflows)。
+- 有关线路对等互连的详细信息，请参阅 [ExpressRoute 线路和路由域](/documentation/articles/expressroute-circuit-peerings)。
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1207_2015-->
