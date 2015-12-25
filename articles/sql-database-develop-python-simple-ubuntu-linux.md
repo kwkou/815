@@ -1,17 +1,17 @@
-<properties
-	pageTitle="在 Ubuntu 上使用 Python 和 pymssql 连接到 SQL 数据库"
-	description="演示了一个可以用来连接到 Azure SQL 数据库 的 Python 代码示例。该示例在 Unbutu Linux 客户端计算机上运行。"
-	services="sql-database"
-	documentationCenter=""
-	authors="meet-bhagdev"
-	manager="jeffreyg"
+<properties 
+	pageTitle="在 Ubuntu 上使用 Python 和 pymssql 连接到 SQL 数据库" 
+	description="演示了一个可以用来连接到 Azure SQL 数据库的 Python 代码示例。该示例在 Unbutu Linux 客户端计算机上运行。"
+	services="sql-database" 
+	documentationCenter="" 
+	authors="meet-bhagdev" 
+	manager="jeffreyg" 
 	editor="genemi"/>
 
 
 <tags 
-	ms.service="sql-database" 
-	ms.date="07/20/2015" 
-	wacn.date="09/15/2015"/>
+	ms.service="sql-database"
+	ms.date="10/20/2015" 
+	wacn.date="12/22/2015"/>
 
 
 # 在 Ubuntu Linux 上使用 Python 连接到 SQL 数据库
@@ -20,7 +20,7 @@
 [AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
-本主题演示了一个在 Unbutu Linux 客户端计算机上运行的，用于连接到 Azure SQL 数据库 数据库的 Python 代码示例。
+本主题演示了一个在 Unbutu Linux 客户端计算机上运行的，用于连接到 Azure SQL 数据库的 Python 代码示例。
 
 
 ## 要求
@@ -57,7 +57,7 @@
 
 ## 执行 SQL SELECT 语句
 
-[Cursor.execute](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Cursor.execute) 函数可用于针对 SQL 数据库 从查询中检索结果集。此函数实际上可接受任何查询，并返回可使用 [cursor.fetchone()](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Cursor.fetchone) 循环访问的结果集。
+[Cursor.execute](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Cursor.execute) 函数可用于针对 SQL 数据库从查询中检索结果集。此函数实际上可接受任何查询，并返回可使用 [cursor.fetchone()](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Cursor.fetchone) 循环访问的结果集。
 
 
 	import pymssql
@@ -72,7 +72,7 @@
 
 ## 插入一行，传递参数，然后检索生成的主键
 
-在 SQL 数据库 中，可以使用 [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) 属性和 [SEQUENECE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) 对象自动生成[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。
+在 SQL 数据库中，可以使用 [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) 属性和 [SEQUENECE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) 对象自动生成[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。
 
 
 	import pymssql
@@ -105,7 +105,10 @@
 	cursor.execute("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server Express New', 'SQLEXPRESS New', 0, 0, CURRENT_TIMESTAMP)")
 	cnxn.rollback()
 
+## 后续步骤
+
+有关详细信息，请参阅 [Python 开发人员中心](/develop/python/)。
 
  
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1207_2015-->

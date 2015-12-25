@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="在 Windows上使用 Node.js 连接到 SQL 数据库" 
-	description="演示了一个可以用来连接到 Azure SQL 数据库 的 NodeJS 代码示例。该示例在 Windows 客户端计算机上运行。"
+	description="演示了一个可以用来连接到 Azure SQL 数据库的 Node.js 代码示例。该示例在 Windows 客户端计算机上运行。"
 	services="sql-database" 
 	documentationCenter="" 
 	authors="meet-bhagdev" 
@@ -9,9 +9,9 @@
 
 
 <tags 
-	ms.service="sql-database" 
-	ms.date="07/30/2015" 
-	wacn.date="09/15/2015"/>
+	ms.service="sql-database"
+	ms.date="11/03/2015"
+	wacn.date="12/22/2015"/>
 
 
 # 在 Windows上使用 Node.js 连接到 SQL 数据库
@@ -32,7 +32,7 @@
 -  Node.js – [版本 0.8.9（32 位版本）](http://blog.nodejs.org/2012/09/11/node-v0-8-9-stable/)。滚动页面，然后单击 32 位 x86 Windows 安装程序（而不是 64 位 Windows x64 安装程序）对应的“下载”链接。
 - [Python 2.7.6](https://www.python.org/download/releases/2.7.6/) - 适用于 x86 或 x64 的安装程序。 
 - [Visual C++ 2010](https://app.vssps.visualstudio.com/profile/review?download=true&family=VisualStudioCExpress&release=VisualStudio2010&type=web&slcid=0x409&context=eyJwZSI6MSwicGMiOjEsImljIjoxLCJhbyI6MCwiYW0iOjEsIm9wIjpudWxsLCJhZCI6bnVsbCwiZmEiOjAsImF1IjpudWxsLCJjdiI6OTY4OTg2MzU1LCJmcyI6MCwic3UiOjAsImVyIjoxfQ2) - 可从 Microsoft 下载免费的 Express 版本。
-- SQL Server Native Client 11.0 - 在 [SQL Server 2012 Feature Pack](https://www.microsoft.com/zh-CN/download/details.aspx?id=29065) 中作为 Microsoft SQL Server 2012 Native Client 提供。
+- SQL Server Native Client 11.0 - 在 [SQL Server 2012 Feature Pack](https://www.microsoft.com/zh-cn/download/details.aspx?id=29065) 中作为 Microsoft SQL Server 2012 Native Client 提供。
 
 
 ### 安装所需的模块
@@ -49,7 +49,7 @@
 请参阅[入门主题](/documentation/articles/sql-database-get-started)，以了解如何创建示例数据库和检索连接字符串。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。
 
 
-## 连接到 SQL Database
+## 连接到 SQL 数据库
 
 
 - 将以下代码复制到项目目录中的某个 .js 文件。
@@ -216,5 +216,8 @@
 	});
 
  
+## 后续步骤
 
-<!---HONumber=69-->
+有关详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
+
+<!---HONumber=Mooncake_1207_2015-->

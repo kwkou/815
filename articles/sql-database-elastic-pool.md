@@ -10,12 +10,12 @@
 <tags 
 	ms.service="sql-database"
 	ms.date="10/08/2015" 
-	wacn.date="11/12/2015"/>
+	wacn.date="12/22/2015"/>
 
 
 # 使用弹性数据库缓解爆炸性增长
 
-如果你是 SaaS 开发人员，使用数十、数百甚至数千个数据库，则可以通过弹性数据库池来简化这些数据库的创建、维护以及性能管理流程，将预算置于自己的控制之下。使用 Windows Azure 门户、PowerShell 或 C#，在几分钟内就可以<!--[-->创建一个弹性数据库池<!--](/documentation/articles/sql-database-elastic-pool-portal)-->。
+如果你是 SaaS 开发人员，使用数十、数百甚至数千个数据库，则可以通过弹性数据库池来简化这些数据库的创建、维护以及性能管理流程，将预算置于自己的控制之下。使用 Microsoft Azure 门户、PowerShell 或 C#，在几分钟内就可以[创建一个弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal)。
 
 常见的 SaaS 应用模式是，每一个数据库的客户各不相同，每一个的资源消耗（以 eDTU 汇总的 CPU/IO/内存）也各不相同且不可预知。对每个数据库的需求都存在这种高峰和低谷，因此很难预测和设置资源。你将面临两种选择，一种是基于高峰使用情况过度设置数据库资源，因此需要支付额外的费用；另一种是为了节省成本而采用低配，但在高峰期间会出现性能下降而导致客户满意度降低。
 
@@ -43,20 +43,20 @@
 
 ## 池中数据库的业务连续性功能
 
-弹性数据库支持 V12 服务器上单一数据库可用的大部分[业务连续性功能](https://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)（目前以预览版提供）。
+弹性数据库支持 V12 服务器上单一数据库可用的大部分[业务连续性功能](/documentation/articles/sql-database-business-continuity)（目前以预览版提供）。
 
-### 备份和还原数据库（[时间点还原](https://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx#BKMK_PITR)）
+### 备份和还原数据库（时间点还原）
 
 系统会自动备份弹性数据库池中的数据库，备份保留策略与单一数据库对应的服务层相同。更具体地说，基本池中的弹性数据库可以还原到过去 7 天内的任何还原点，标准池中的弹性数据库可以还原到过去 14 天内的任何还原点，高级池中的弹性数据库可以还原到过去 35 天内的任何还原点。在预览期，池中的数据库将还原到相同池中的新数据库。删除的数据库始终还原为池外的独立数据库，因而将使用该服务层的最低性能层级。例如，标准池中删除的弹性数据库将还原为 S0 数据库。你可以通过 Azure 门户或以编程方式使用 REST API 执行数据库还原操作。PowerShell cmdlet 支持即将推出。
 
-### [异地还原](https://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx#BKMK_GEO)
+### 异地还原
 
 异地还原功能允许你将池中的数据库恢复到其他区域中的服务器。在使用预览版期间，若要将池中的数据库还原到其他服务器，目标服务器需要有一个名称与源池相同的池。如果需要，请在目标服务器上创建新的池，并在还原该数据库之前为其提供一个相同的名称。如果目标服务器上不存在相同名称的池，则异地还原操作将失败。你可以使用 Azure 门户或 REST API 执行异地还原操作。PowerShell cmdlet 支持即将推出。
 
 
-### [异地复制](https://msdn.microsoft.com/zh-cn/library/azure/dn783447.aspx)
+### 异地复制
 
-启用异地复制的数据库可以移入和移出弹性数据库池，复制功能仍可正常使用。如果指定的目标服务器包含与源池同名的池，则你可以对池中已包含的数据库启用异地复制。
+标准异地复制适用于标准或高级弹性数据库池中的任何数据库。只要服务层相同，异地复制合作关系中的一个或所有数据库就可以处于一个弹性数据库池中。可以使用 [Azure 门户](/documentation/articles/sql-database-geo-replication-portal)、[PowerShell](/documentation/articles/sql-database-geo-replication-powershell) 或 [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql) 为弹性数据库池配置异地复制。
 
 ### 导入和导出
 
@@ -66,4 +66,4 @@
 <!--Image references-->
 [1]: ./media/sql-database-elastic-pool/databases.png
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

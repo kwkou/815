@@ -11,7 +11,7 @@
 <tags 
 	ms.service="sql-database" 
 	ms.date="09/28/2015" 
-	wacn.date="11/12/2015"/>
+	wacn.date="12/22/2015"/>
 
 
 # 在 Windows 上配合使用 Java 和 JDBC 连接到 SQL 数据库
@@ -54,11 +54,10 @@ Could this instead be a #tempPerson table, so that the Java code sample could be
 ## SQL 数据库的连接字符串
 
 
-该代码示例将使用连接字符串创建 `Connection` 对象。你可以使用 [Azure 门户](http://manage.windowsazure.cn/)查找连接字符串。有关查找连接字符串的详细信息，请参阅[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)。
+该代码示例将使用连接字符串创建 `Connection` 对象。你可以使用 [Azure 门户](https://manage.windowsazure.cn)查找连接字符串。有关查找连接字符串的详细信息，请参阅[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)。
 
 
-> [AZURE.NOTE]JTDS JDBC 
-> 驱动程序，如果你使用的是 JTDS JDBC 驱动程序，则需要将“ssl=require”添加到连接字符串的 URL，并需要设置以下 JVM 选项：“-Djsse.enableCBCProtection=false”。此 JVM 选项会禁用针对某个安全漏洞的修复程序，因此在设置此选项之前，请确保你了解涉及哪些风险。
+> [AZURE.NOTE]JTDS JDBC 驱动程序，如果你使用的是 JTDS JDBC 驱动程序，则需要将“ssl=require”添加到连接字符串的 URL，并需要设置以下 JVM 选项：“-Djsse.enableCBCProtection=false”。此 JVM 选项会禁用针对某个安全漏洞的修复程序，因此在设置此选项之前，请确保你了解涉及哪些风险。
 
 
 ## Java 代码示例
@@ -82,7 +81,7 @@ Could this instead be a #tempPerson table, so that the Java code sample could be
 	
 		public static void main(String[] args) {
 			String connectionString =
-				"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433;"
+				"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433;" 
 				+ "database=your_database;"
 				+ "user=your_user@your_server;"
 				+ "password={your_password};"
@@ -227,4 +226,4 @@ Could this instead be a #tempPerson table, so that the Java code sample could be
 
 有关详细信息，请参阅 [Java 开发人员中心](/develop/java/)。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

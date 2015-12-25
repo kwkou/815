@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="07/14/2015"
-   wacn.date="09/15/2015"/>
+   ms.date="11/16/2015"
+   wacn.date="12/22/2015"/>
 
 # 业务连续性设计
 
@@ -45,7 +45,7 @@
 
 ## 何时选择标准异地复制或活动异地复制
 
-标准层数据库不提供使用活动异地复制的选项，因此，如果应用程序使用标准数据库并符合上述条件，则它应该启用标准异地复制。另一方面，高级数据库可以选择任一选项。标准异地复制可充当一种更简单且更经济的灾难恢复解决方案，对于只需防止非计划事件（例如中断）的应用程序，特别适合使用此选项。选择标准异地复制时，你只能使用 DR 配对的区域来进行恢复，但可以创建多个辅助数据库。后面这项功能对于应用程序升级方案非常关键。因此，如果此方案对于你的应用程序而言至关重要，则你应该启用活动异地复制。有关其他详细信息，请参阅[在不停机的情况下升级应用程序](/documentation/articles/sql-database-business-continuity-application-upgrade)。
+标准层数据库不提供使用活动异地复制的选项，因此，如果应用程序使用标准数据库并符合上述条件，则它应该启用标准异地复制。另一方面，高级数据库可以选择任一选项。标准异地复制可充当一种更简单且更经济的灾难恢复解决方案，对于只需防止非计划事件（例如中断）的应用程序，特别适合使用此选项。选择标准异地复制时，你只能使用 DR 配对的区域来进行恢复，并且只能为每个主数据库创建一个辅助数据库。对于应用程序升级方案，可能需要一个附加的辅助数据库。因此，如果此方案对于你的应用程序而言至关重要，则你应该启用活动异地复制。有关其他详细信息，请参阅[在不停机的情况下升级应用程序](/documentation/articles/sql-database-business-continuity-application-upgrade)。
 
 > [AZURE.NOTE]活动异地复制还支持对辅助数据库进行只读访问，因此为只读工作负荷提供了额外的容量。
 
@@ -67,32 +67,28 @@
  
 ### PowerShell
 
-使用 [Start-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-CN/library/dn720220.aspx) PowerShell cmdlet 可以自动完成异地复制配置。
+使用 [New-AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt603689.aspx) PowerShell cmdlet 可以创建异地复制配置。此命令是同步的，并在主数据库和辅助数据库同步后返回。
 
-为高级或标准数据库的不可读辅助数据库创建异地复制：
+为高级或标准数据库的不可读辅助数据库配置异地复制：
 		
-		Start-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName" -PartnerServer "PartnerServerName" –ContinuousCopy -OfflineSecondary
+    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb"
+    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary –PartnerResourceGroupName "rg2" –PartnerServerName "srv2" -AllowConnections "None"
+
 为高级数据库的可读辅助数据库创建异地复制：
 
-		Start-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName" -PartnerServer "PartnerServerName" –ContinuousCopy
+    $database = Get-AzureRmSqlDatabase –DatabaseName "mydb"
+    $secondaryLink = $database | New-AzureRmSqlDatabaseSecondary –PartnerResourceGroupName "rg2" –PartnerServerName "srv2" -AllowConnections "All"
 		 
-此命令是异步的。在它返回后，请使用 [Get-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-CN/library/dn720235.aspx) cmdlet 检查此操作的状态。完成操作后，返回对象的 ReplicationState 字段将包含值 CATCH\_UP。
 
-		Get-AzureSqlDatabaseCopy -ServerName "PrimaryServerName" -DatabaseName "PrimaryDatabaseName" -PartnerServer "SecondaryServerName"
+###REST API 
 
+在 *createMode* 设置为 *NonReadableSecondary* 或 *Secondary* 的情况下使用[创建数据库](https://msdn.microsoft.com/zh-cn/library/mt163685.aspx) API 可以编程方式创建异地复制辅助数据库。
 
-### REST API 
-
-使用[开始数据库复制](https://msdn.microsoft.com/zh-CN/library/azure/dn509576.aspx) API 可以编程方式创建异地复制配置。
-
-此 API 是异步的。在它返回后，请使用[获取数据库副本](https://msdn.microsoft.com/zh-CN/library/azure/dn509570.aspx) API 检查此操作的状态。完成操作后，响应正文的 ReplicationState 字段将包含值 CATCH\_UP。
+此 API 是异步的。在它返回后，请使用[获取复制链接](https://msdn.microsoft.com/zh-cn/library/mt600778.aspx) API 检查此操作的状态。完成操作后，响应正文的 *replicationState* 字段将包含值 CATCHUP。
 
 
 ## 如何选择故障转移配置 
 
-在针对业务连续性设计应用程序时，应考虑多个配置选项。所做的选择取决于应用程序部署拓扑，以及应用程序的哪些组件最容易中断。有关指导，请参阅[使用活动异地复制设计云解决方案以实现灾难恢复](https://msdn.microsoft.com/zh-CN/library/azure/dn741328.aspx)。
+在针对业务连续性设计应用程序时，应考虑多个配置选项。所做的选择取决于应用程序部署拓扑，以及应用程序的哪些组件最容易中断。有关指导，请参阅[使用异地复制设计云解决方案以实现灾难恢复](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery)。
 
-
- 
-
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1207_2015-->

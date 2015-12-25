@@ -11,7 +11,7 @@
 <tags 
 	ms.service="sql-database" 
 	ms.date="10/16/2015" 
-	wacn.date="11/12/2015"/>
+	wacn.date="12/22/2015"/>
 
 
 # 代码示例：Enterprise Library 6 中用于连接到 SQL 数据库的 C&#x23; 重试逻辑
@@ -60,10 +60,8 @@ Enterprise Library 6 (EntLib60) 是最新版本，并已于 2013 年 4 月发布
 
 
 - 使用 Visual Studio 中的 *NuGet* 包管理器功能：
- - 在 NuGet 中，搜索 **enterpriselibrary**。
-
-
-- 在“EntLib60 的家庭文档主题”中，找到标记为“下载”的行，然后单击 [Microsoft Enterprise Library 6](http://go.microsoft.com/fwlink/?linkid=290898)，以下载该二进制 .DLL 程序集文件[](http://msdn.microsoft.com/zh-cn/library/dn169621.aspx)。
+- 在 NuGet 中，搜索 **enterpriselibrary**。
+- 在“[EntLib60 的家庭文档主题](http://msdn.microsoft.com/zh-cn/library/dn169621.aspx)”中，找到标记为“下载”的行，然后单击 [Microsoft Enterprise Library 6](http://go.microsoft.com/fwlink/?linkid=290898)，以下载该二进制 .DLL 程序集文件。
 
 
 EntLib60 包含若干个 .DLL 程序集文件，这些文件的名称均以相同的前缀 **Microsoft.Practices.EnterpriseLibrary.&#x2a;.dll** 开头，但此代码示例仅关注以下两个程序集：
@@ -107,20 +105,18 @@ Program.cs 源代码示例将在本主题后面部分提供。可以使用以下
 4. 在 cmd.exe 命令窗口中，按如下所示运行程序。图中还显示了运行后的实际输出：
 
 
-```
+
 [C:\MyVS\EntLib60Retry\EntLib60Retry\bin\Debug]
->> EntLib60Retry.exe
+<br/>&gt;&gt; EntLib60Retry.exe
 
 database_firewall_rules_table   245575913
 filestream_tombstone_2073058421 2073058421
 filetable_updates_2105058535    2105058535
 
 [C:\MyVS\EntLib60Retry\EntLib60Retry\bin\Debug]
->>
-```
+<br/>&gt;&gt;
 
 
-&nbsp;
 
 
 ## Program.cs 源代码
@@ -129,19 +125,19 @@ filetable_updates_2105058535    2105058535
 下面的 Program.cs 文件中包含此 EntLib 示例的所有源代码。
 
 
-```
-using     System;   // C#
-using G = System.Collections.Generic;
-using D = System.Data;
-using C = System.Data.SqlClient;
-using X = System.Text;
-using H = System.Threading;
-using Y = Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling;
 
-namespace EntLib60Retry
-{
-   class Program
-   {
+	using     System;   // C#
+	using G = System.Collections.Generic;
+	using D = System.Data;
+	using C = System.Data.SqlClient;
+	using X = System.Text;
+	using H = System.Threading;
+	using Y = Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling;
+	
+	namespace EntLib60Retry
+	{
+	   class Program
+	   {
       static void Main(string[] args)
       {
          Program program = new Program();
@@ -176,13 +172,7 @@ namespace EntLib60Retry
                this.retryPolicy.ExecuteAction(this.OpenTheConnection_action);  // Open the connection.
 
                this.dbCommand = this.reliableSqlConnection.CreateCommand();
-               this.dbCommand.CommandText = @"
-SELECT TOP 3
-      ob.name,
-      CAST(ob.object_id as nvarchar(32)) as [object_id]
-   FROM sys.objects as ob
-   WHERE ob.type='IT'
-   ORDER BY ob.name;";
+               this.dbCommand.CommandText = @"SELECT TOP 3 ob.name, CAST(ob.object_id as nvarchar(32)) as [object_id] FROM sys.objects as ob WHERE ob.type='IT' ORDER BY ob.name;";
 
                // We retry connection .Open after transient faults, but
                // we do not retry commands that use the connection.
@@ -287,9 +277,9 @@ SELECT TOP 3
       private C.SqlConnectionStringBuilder sqlConnectionSB;
       private D.IDbCommand dbCommand;
       private D.IDataReader dataReader;
-   }
-}
-```
+    }
+    }
+
 
 
 &nbsp;
@@ -301,6 +291,7 @@ SELECT TOP 3
 - [Enterprise Library 6 – 2013 年 4 月](http://msdn.microsoft.com/zh-cn/library/dn169621.aspx)中提供了大量链接来帮助你了解更多信息。
 
 - 如果你想要查看源代码，本主题顶部的按钮提供了[下载 EntLib60 源代码](http://go.microsoft.com/fwlink/p/?LinkID=290898)。
+
 
 - Microsoft 提供的 .PDF 格式的免费电子书：[Microsoft Enterprise Library 版本 2 开发人员指南](http://www.microsoft.com/download/details.aspx?id=41145)。
 
@@ -316,4 +307,4 @@ SELECT TOP 3
 
 - [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

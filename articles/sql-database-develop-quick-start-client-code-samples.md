@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="08/04/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="10/29/2015" 
+	wacn.date="12/22/2015"/>
 
 
 # SQL 数据库 的客户端快速入门代码示例
@@ -73,7 +73,7 @@
 | :-- | :-- | :-- | :-- |
 | C# | [ADO.NET](/documentation/articles/sql-database-develop-dotnet-simple) | [ADO.NET 自定义](/documentation/articles/sql-database-develop-csharp-retry-windows)<br/><br/>[Enterprise Library](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows) | （实体框架） |
 | C++ | [ODBC 驱动程序](http://msdn.microsoft.com/zh-cn/library/azure/hh974312.aspx) | 。 | 。 |
-| Java | [Java。JDBC、JDK。Insert、Transaction、Select.](/documentation/articles/sql-database-develop-java-simple-windows)<br/><br/>[Java。Eclipse](/documentation/articles/sql-data-java-how-to-use-sql-database)<br/><br/>[Java。JDBC](http://msdn.microsoft.com/zh-cn/library/azure/gg715284.aspx) | 。 | 。 |
+| Java | [Java。JDBC、JDK。Insert、Transaction、Select。](/documentation/articles/sql-database-develop-java-simple-windows) | 。 | 。 |
 | Node.js | [msnodesql](/documentation/articles/sql-database-develop-nodejs-simple-windows) | 。 | 。 |
 | PHP | [ODBC](/documentation/articles/sql-database-develop-php-simple-windows) | [ODBC 自定义](/documentation/articles/sql-database-develop-php-retry-windows) | 。 |
 | Python | [pymssql](/documentation/articles/sql-database-develop-python-simple-windows) | 。 | 。 |
@@ -86,7 +86,8 @@
 - [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries)
 - [暂时性错误的数字代码列表](/documentation/articles/sql-database-develop-error-messages#bkmk_connection_errors)<br/>
 - [Azure SQL 数据库开发：操作指南主题](https://msdn.microsoft.com/zh-CN/library/azure/ee621787.aspx)
-- [连接到 SQL Database：链接、最佳实践和设计准则](/documentation/articles/sql-database-connect-central-recommendations)
-- [创建你的第一个 Azure SQL Database](/documentation/articles/sql-database-get-started)
+- [连接到 SQL 数据库：链接、最佳实践和设计准则](/documentation/articles/sql-database-connect-central-recommendations)
+- [创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)
+- [GitHub 上的 Entity Framework 6、EF 7](http://entityframework.codeplex.com/)
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1207_2015-->

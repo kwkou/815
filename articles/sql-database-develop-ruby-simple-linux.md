@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Ubuntu 上使用 Ruby 和 TinyTDS 连接到 SQL Database" 
+	pageTitle="在 Ubuntu 上使用 Ruby 和 TinyTDS 连接到 SQL 数据库" 
 	description="提供可在 Ubuntu Linux 上以客户端形式运行的，用于连接到 Azure SQL 数据库的 Ruby 代码示例。"
 	services="sql-database" 
 	documentationCenter="" 
@@ -9,14 +9,16 @@
 
 
 <tags 
-	ms.service="sql-database" ms.date="07/20/2015" wacn.date="08/14/2015"/>
+	ms.service="sql-database" 
+	ms.date="11/09/2015" 
+	wacn.date="12/22/2015"/>
 
 
-# 在 Ubuntu Linux 上使用 Ruby 连接到 SQL Database
+# 在 Ubuntu Linux 上使用 Ruby 连接到 SQL 数据库
 
 [AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
-本主题演示了一个在 Unbutu Linux 客户端计算机上运行的，用于连接到 Azure SQL 数据库数据库的 Ruby 代码示例。
+本主题演示了一个在 Unbutu Linux 客户端计算机上运行的，用于连接到 Azure SQL 数据库的 Ruby 代码示例。
 
 ## 安装所需的模块
 
@@ -32,7 +34,7 @@
 
 如果遇到了任何签名问题，请运行以下命令。
 
-    command curl -sSL https://rvm.io/mpapis.asc | gph --import - 
+    command curl -sSL https://rvm.io/mpapis.asc | gpg --import - 
 
 如果签名没有问题，请运行以下命令。
 
@@ -49,13 +51,13 @@
 
 ## 创建数据库并检索连接字符串
 
-Ruby 示例依赖于 AdventureWorks 示例数据库。如果你尚未创建 AdventureWorks，可以通过以下主题了解如何创建：[创建你的第一个 Azure SQL Database](/documentation/articles/sql-database-get-started)
+Ruby 示例依赖于 AdventureWorks 示例数据库。如果你尚未创建 AdventureWorks，可以通过以下主题了解如何创建：[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)
 
 本主题还将说明如何检索数据库连接字符串。
 
-## 连接到 SQL Database
+## 连接到 SQL 数据库
 
-[TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds) 函数用于连接到 SQL Database。
+[TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds) 函数用于连接到 SQL 数据库。
 
     require 'tiny_tds' 
     client = TinyTds::Client.new username: 'yourusername@yourserver', password: 'yourpassword', 
@@ -111,4 +113,4 @@ Ruby 示例依赖于 AdventureWorks 示例数据库。如果你尚未创建 Adve
     puts row
     end 
 
-<!---HONumber=66-->
+<!---HONumber=Mooncake_1207_2015-->

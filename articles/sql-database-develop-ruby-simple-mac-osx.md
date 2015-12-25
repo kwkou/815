@@ -9,7 +9,9 @@
 
 
 <tags 
-	ms.service="sql-database" ms.date="07/20/2015" wacn.date="08/14/2015"/>
+	ms.service="sql-database"
+	ms.date="11/09/2015" 
+	wacn.date="12/22/2015"/>
 
 
 # 在 Mac OS X 上使用 Ruby 连接到 SQL 数据库(Yosemite)
@@ -32,17 +34,17 @@
 
 **3) TinyTDS**：从你的终端运行以下命令。这将在你的计算机上安装 TinyTDS。
 
-    sudo ARCHFLAGS="-arch x86_64" gem install tiny_tds
+    gem install tiny_tds
 
 ## 创建数据库并检索连接字符串
 
-Ruby 示例依赖于 AdventureWorks 示例数据库。如果你尚未创建 AdventureWorks，可以通过以下主题了解如何创建：[创建你的第一个 Azure SQL Database](/documentation/articles/sql-database-get-started)
+Ruby 示例依赖于 AdventureWorks 示例数据库。如果你尚未创建 AdventureWorks，可以通过以下主题了解如何创建：[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)
 
 本主题还将说明如何检索数据库连接字符串。
 
-## 连接到 SQL Database
+## 连接到 SQL 数据库
 
-[TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds) 函数用于连接到 SQL Database。
+[TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds) 函数用于连接到 SQL 数据库。
 
     require 'tiny_tds' 
     client = TinyTds::Client.new username: 'yourusername@yourserver', password: 'yourpassword', 
@@ -98,4 +100,4 @@ Ruby 示例依赖于 AdventureWorks 示例数据库。如果你尚未创建 Adve
     puts row
     end
 
-<!---HONumber=66-->
+<!---HONumber=Mooncake_1207_2015-->

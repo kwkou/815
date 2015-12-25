@@ -1,8 +1,6 @@
 <properties
-	title="Getting started with elastic database jobs"
 	pageTitle="弹性数据库作业入门"
 	description="如何使用弹性数据库作业"
-	metaKeywords="azure sql database elastic jobs"
 	services="sql-database"
 	documentationCenter=""  
 	manager="jeffreyg"
@@ -11,7 +9,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="08/04/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="12/22/2015"/>
 
 # 弹性数据库作业入门
 
@@ -48,7 +46,7 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
 	New-AzureSqlJobTarget -CustomCollectionName $customCollectionName 
 	$ResourceGroupName = "ddove_samples"
 	$ServerName = "samples"
-	$dbsinserver = Get-AzureSqlDatabase -ResourceGroupName $ResourceGroupName -ServerName $ServerName 
+	$dbsinserver = Get-AzureRMSqlDatabase -ResourceGroupName $ResourceGroupName -ServerName $ServerName 
 	$dbsinserver | %{
     $currentdb = $_.DatabaseName 
     $ErrorActionPreference = "Stop"
@@ -105,7 +103,7 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
         }
     }
     $ErrorActionPreference = "Continue"
-    }
+}
 	
 ## 创建 T-SQL 脚本用于跨数据库执行
 
@@ -445,4 +443,4 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1207_2015-->
