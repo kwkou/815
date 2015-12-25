@@ -4,17 +4,19 @@
     services="sql-database"
     documentationCenter=""
     manager="jeffreyg"
-    authors="sidneyh"
+    authors="ddove"
     editor=""/>
 
 <tags
     ms.service="sql-database"
     ms.date="07/29/2015"
-    wacn.date="09/15/2015"/>
+    wacn.date="12/22/2015"/>
 
 # 弹性数据库客户端库概述
 
-**弹性数据库客户端库**可帮助你使用 Windows Azure 上托管的数百甚至数千个 Azure SQL 数据库轻松开发分片应用程序。此类设计通常用于软件即服务 (SaaS) 应用程序，这种应用程序往往采用单租户体系结构 -- 其中的每个租户是使用数据库设置的。生成和管理此类应用程序就是该库的目标。客户端库是一种 .NET Framework 库，可以使用 [Visual Studio](/documentation/articles/sql-database-elastic-scale-add-references-visual-studio) 和 [Nuget](http://go.microsoft.com/?linkid=9862605) 将它安装到任何应用程序项目。客户端库属于弹性数据库工具，具体而言，是一项[弹性数据库功能](/documentation/articles/sql-database-elastic-scale-introduction)。
+**弹性数据库客户端库**可帮助你使用 Windows Azure 上托管的数百甚至数千个 Azure SQL 数据库轻松开发分片应用程序。此类设计通常用于软件即服务 (SaaS) 应用程序，这种应用程序往往采用单租户体系结构 -- 其中的每个租户是使用数据库设置的。生成和管理此类应用程序就是该库的目标。
+
+[GitHub](https://github.com/Azure/elastic-db-tools) 目前以开源软件的形式提供了弹性数据库客户端库。若要安装该库，请参阅 [Windows Azure SQL 数据库：弹性缩放](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/)。客户端库属于弹性数据库工具，具体而言，是一项[弹性数据库功能](/documentation/articles/sql-database-elastic-scale-introduction)。
 
 ## 客户端功能
 
@@ -40,6 +42,8 @@
 
 有关使用拆分/合并工具的说明，请参阅[拆分/合并工具概述](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)。
 
+[弹性数据库客户端库的源代码现已发布！](http://azure.microsoft.com/blog/elastic-database-client-library-is-now-open-sourced/)
+
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
@@ -47,4 +51,4 @@
 <!--Image references-->
 [1]: ./media/sql-database-elastic-database-client-library/glossary.png
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1207_2015-->

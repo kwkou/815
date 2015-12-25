@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/21/2015"
-	wacn.date="09/15/2015"/>
+	ms.date="10/20/2015"
+	wacn.date="12/22/2015"/>
 
 
 # 使用 Windows 上的 PHP 和暂时性故障处理连接到 SQL 数据库
@@ -36,7 +36,12 @@
 
 设计该演示程序的目的是在尝试连接期间发生暂时性故障时导致重试。但是，在执行查询命令期间发生暂时性故障时会导致程序丢弃连接并创建新的连接，然后重试查询命令。我们既不建议也不反对这种设计。演示程序演示了一些可供你使用的设计弹性。
 
-<br>此代码示例的长度多半是因为捕获异常的逻辑。[此处](/documentation/articles/sql-database-develop-php-simple-windows)提供了此 Program.cs 文件的简短版本。<br>Main 方法在 Program.cs 中。调用堆栈的运行如下：* Main 调用 ConnectAndQuery。* ConnectAndQuery 调用 EstablishConnection。* EstablishConnection 调用 IssueQueryCommand。
+<br>此代码示例的长度多半是因为捕获异常的逻辑。[此处](/documentation/articles/sql-database-develop-php-simple-windows)提供了此 Program.cs 文件的简短版本。<br>
+
+Main 方法在 Program.cs 中。调用堆栈的运行如下：
+* Main 调用 ConnectAndQuery。
+* ConnectAndQuery 调用 EstablishConnection。
+* EstablishConnection 调用 IssueQueryCommand。
 
 [sqlsrv\_query()](http://php.net/manual/zh/function.sqlsrv-query.php) 函数可用于针对 SQL 数据库从查询中检索结果集。此函数实际上可接受任何查询和连接对象，并返回可使用 [sqlsrv\_fetch\_array()](http://php.net/manual/zh/function.sqlsrv-fetch-array.php) 循环访问的结果集。
 
@@ -126,11 +131,10 @@
 		}
 	?>
 	
-## 延伸阅读
-
+## 后续步骤
 
 有关 PHP 安装和用法的详细信息，请参阅[使用 PHP 访问 SQL Server 数据库](http://technet.microsoft.com/zh-cn/library/cc793139.aspx)。
 
  
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1207_2015-->

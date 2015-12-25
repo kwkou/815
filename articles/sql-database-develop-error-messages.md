@@ -9,9 +9,9 @@
 
 
 <tags 
-	ms.service="sql-database" 
-	ms.date="10/15/2015" 
-	wacn.date="11/12/2015"/>
+	ms.service="sql-database"
+	ms.date="11/04/2015" 
+	wacn.date="12/22/2015"/>
 
 
 # SQL 数据库客户端程序的错误消息
@@ -30,7 +30,8 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 在客户端程序中，你可以针对任何给定的错误，选择为用户提供由你自定义的替代消息。
 
 
-**提示：***暂时性故障错误*部分非常重要。这些错误应该提示客户端程序运行你设计的*重试*逻辑来重试操作。
+> [AZURE.TIP]以下有关[*暂时性故障*错误](#bkmk_connection_errors)的部分特别重要。
+
 
 
 <a id="bkmk_connection_errors" name="bkmk_connection_errors">&nbsp;</a>
@@ -40,31 +41,50 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 
 下表介绍连接断开错误和其他暂时性错误，你在 Internet 上使用 Azure SQL 数据库时可能会遇到这些错误。
 
-暂时性错误也称为暂时性故障。当程序捕获 `SqlException` 时，可以检查 `sqlException.Number` 值是否为本部分中列出的暂时性故障值。如果 `Number` 值指示暂时性故障，程序可以重试建立连接，然后重试通过连接进行查询。有关重试逻辑的代码示例，请参阅：
+
+### 最常见的暂时性故障
+
+
+出现暂时性故障错误时，客户端程序通常会发出以下错误消息之一：
+
+- 服务器 <Azure_instance> 上的数据库 <db_name> 当前不可用。请稍后重试连接。如果问题仍然存在，请与客户支持人员联系，并向其提供 <session_id> 的会话追踪 ID。
+
+- 服务器 <Azure_instance> 上的数据库 <db_name> 当前不可用。请稍后重试连接。如果问题仍然存在，请与客户支持人员联系，并向其提供 <session_id> 的会话追踪 ID。(Microsoft SQL Server，错误: 40613)
+
+- 远程主机强行关闭了现有连接。
+
+- System.Data.Entity.Core.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。---> System.Data.SqlClient.SqlException: 在接收来自服务器的结果时发生传输级错误。(提供程序: 会话提供程序，错误: 19 - 物理连接不可用)
+
+暂时性故障错误应该提示客户端程序运行你设计的*重试逻辑*来重试操作。有关重试逻辑的代码示例，请参阅：
 
 
 - [SQL 数据库的客户端开发和快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
 
-- [如何：可靠地连接到 Azure SQL 数据库](http://msdn.microsoft.com/zh-cn/library/azure/dn864744.aspx)
+- [排查 SQL 数据库中的暂时性故障和连接错误](/documentation/articles/sql-database-connectivity-issues)
+
+
+### 暂时性故障错误编号
 
 
 | 错误号 | 严重性 | 说明 |
 | ---: | ---: | :--- |
 | 4060 | 16 | 无法打开该登录请求的数据库“%.&#x2a;ls”。登录失败。 |
 |40197|17|该服务在处理你的请求时遇到错误。请稍后重试。错误代码 %d。<br/><br/>当服务由于软件或硬件升级、硬件故障或任何其他故障转移问题而关闭时，你将收到此错误。错误 40197 的消息中嵌入的错误代码 (%d) 提供有关所发生的故障或故障转移类型的其他信息。错误 40197 的消息中嵌入的错误代码的一些示例为 40020、40143、40166 和 40540。<br/><br/>重新连接到 SQL 数据库服务器会自动将你连接到数据库的正常运行的副本。应用程序必须捕获错误 40197，记录该消息中嵌入的错误代码 (%d) 以供进行故障排除，然后尝试重新连接到 SQL 数据库，直到资源可用且再次建立连接为止。|
-|40501|20|服务当前正忙。请在 10 秒钟后重试请求。事件 ID: %ls。代码: %d。<br/><br/>注意：有关此错误和如何对返回的代码进行解码的详细信息，请参阅：<br/>[Azure SQL 数据库限制](http://msdn.microsoft.com/zh-cn/library/azure/dn338079.aspx)。
+|40501|20|服务当前正忙。请在 10 秒钟后重试请求。事件 ID: %ls。代码: %d。<br/><br/>*注意：*<br/>有关一般信息，请参阅 [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
 |40613|17|数据库“%.&#x2a;ls”（在服务器“%.&#x2a;ls”上）当前不可用。请稍后重试连接。如果问题仍然存在，请与客户支持人员联系，并向其提供“%.&#x2a;ls”的会话追踪 ID。|
 |49918|16|无法处理请求。没有足够的资源，无法处理该请求。<br/><br/>服务当前正忙。请稍后重试请求。 |
 |49919|16|无法处理创建或更新请求。为订阅“%ld”处理的创建或更新请求过多。<br/><br/>服务正忙于处理订阅或服务器的多个创建或更新请求。为了优化资源，当前阻止了请求。请查询 [sys.dm\_operation\_stats](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx) 以了解挂起的操作。请等到挂起的创建或更新请求完成，或删除其中一个挂起的请求，然后重试请求。 |
-|49920|16|无法处理请求。为订阅“%ld”执行的操作过多。<br/><br/>服务正忙于处理此订阅的多个请求。为了优化资源，当前阻止了请求。请查询 [sys.dm\_operation_status](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx) 以了解操作统计信息。请等到挂起的请求完成，或删除其中一个挂起的请求，然后重试请求。 |
+|49920|16|无法处理请求。为订阅“%ld”执行的操作过多。<br/><br/>服务正忙于处理此订阅的多个请求。为了优化资源，当前阻止了请求。请查询 [sys.dm\_operation\_status](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx) 以了解操作状态。请等到挂起的请求完成，或删除其中一个挂起的请求，然后重试请求。 |
 
 **注意：**建议在你的重试逻辑中包含联合身份验证错误 10053 和 10054。
 
 
+<a id="bkmk_b_database_copy_errors" name="bkmk_b_database_copy_errors">&nbsp;</a>
+
 ## 数据库复制错误
 
 
-下表包含了你在 Azure SQL 数据库中复制数据库时你可能会遇到的不同错误。有关详细信息，请参阅[在 Azure SQL 数据库中复制数据库](http://msdn.microsoft.com/zh-cn/library/azure/ff951624.aspx)。
+下表包含了你在 Azure SQL 数据库中复制数据库时你可能会遇到的不同错误。有关详细信息，请参阅[复制 Azure SQL 数据库](/documentation/articles/sql-database-copy)。
 
 
 |错误号|严重性|说明|
@@ -84,6 +104,8 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 |40571|16|数据库复制由于内部错误而失败。请删除目标数据库，然后重试。|
 
 
+<a id="bkmk_c_resource_gov_errors" name="bkmk_c_resource_gov_errors">&nbsp;</a>
+
 ## 资源调控控制
 
 
@@ -99,13 +121,13 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 **提示：**以下链接提供适用于本部分中的大多数或所有错误的详细信息：
 
 
-- [Azure SQL 数据库资源限制](http://msdn.microsoft.com/zh-cn/library/azure/dn338081.aspx)。
+- [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)
 
 
 |错误号|严重性|说明|
 |---:|---:|:---|
-|10928|20|资源 ID: %d。数据库的 %s 限制是 %d 且已达到该限制。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。<br/><br/>资源 ID 指示已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>注意：有关此错误以及如何解决它的详细信息，请参阅：<br/>[Azure SQL 数据库资源调控](http://msdn.microsoft.com/zh-cn/library/azure/dn338078.aspx)。 |
-|10929|20|资源 ID: %d。%s 最小保证为 %d，最大限制为 %d，数据库的当前使用率为 %d。但是，服务器当前太忙，无法支持针对该数据库的数目大于 %d 的请求。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。否则，请稍后重试。<br/><br/>资源 ID 指明已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>注意：有关此错误以及如何解决它的详细信息，请参阅：<br/>[Azure SQL 数据库资源调控](http://msdn.microsoft.com/zh-cn/library/azure/dn338078.aspx)。|
+|10928|20|资源 ID: %d。数据库的 %s 限制是 %d 且已达到该限制。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。<br/><br/>资源 ID 指示已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>注意：有关此错误以及如何解决它的详细信息，请参阅：<br/>[Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。 |
+|10929|20|资源 ID: %d。%s 最小保证为 %d，最大限制为 %d，数据库的当前使用率为 %d。但是，服务器当前太忙，无法支持针对该数据库的数目大于 %d 的请求。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。否则，请稍后重试。<br/><br/>资源 ID 指明已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>注意：有关此错误以及如何解决它的详细信息，请参阅：<br/>[Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。|
 |40544|20|数据库已达到大小配额。请将数据分区或删除、删除索引或查阅文档以找到可能的解决方案。|
 |40549|16|由于你有长时间运行的事务，已终止会话。请尝试缩短事务运行时间。|
 |40550|16|由于会话获取的锁过多，已终止该会话。请尝试在单个事务中读取或修改更少的行。|
@@ -117,20 +139,22 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 有关此错误以及如何解决它的详细信息，请参阅：
 
 
-- [Azure SQL 数据库资源调控](http://msdn.microsoft.com/zh-cn/library/azure/dn338078.aspx)。
+- [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
 
+
+<a id="bkmk_d_federation_errors" name="bkmk_d_federation_errors">&nbsp;</a>
 
 ## 联合错误
 
 
-下表介绍在使用联合时可能遇到的错误。有关详细信息，请参阅[管理数据库联合（Azure SQL 数据库）](http://msdn.microsoft.com/zh-cn/library/azure/hh597455.aspx)。
+下表介绍在使用联合时可能遇到的错误。
 
 
 > [AZURE.IMPORTANT]联合的当前实现将随 Web 和企业服务层一起停用。Azure SQL 数据库版本 V12 不支持 Web 和企业服务层。
 > 
 > 弹性缩放功能旨在让你以最小的工作量创建分片应用程序。
 > 
-> 有关弹性伸缩的详细信息，请参阅 [Azure SQL 数据库弹性缩放主题](/documentation/articles/sql-database-elastic-scale-documentation-map)。请考虑部署自定义分片解决方案，以最大限度地提高可缩放性、灵活性和性能。有关自定义分片的详细信息，请参阅[向外扩展 Azure SQL 数据库](http://msdn.microsoft.com/zh-cn/library/azure/dn495641.aspx)。
+> 有关弹性伸缩的详细信息，请参阅 [Azure SQL 数据库弹性缩放主题](/documentation/articles/sql-database-elastic-scale-documentation-map)。请考虑部署自定义分片解决方案，以最大限度地提高可缩放性、灵活性和性能。有关自定义分片的详细信息，请参阅[弹性数据库功能概述](/documentation/articles/sql-database-elastic-scale-introduction)。
 
 
 |错误号|严重性|说明|缓解措施|
@@ -159,6 +183,8 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 |45022|16|<statement> 操作失败。联合键 <distribution_name> 和联合 <federation_name> 已存在指定的边界值|指定一个已是边界值的值。|
 |45023|16|<statement> 操作失败。联合键 <distribution_name> 和联合 <federation_name> 不存在指定的边界值|指定一个尚不是边界值的值。|
 
+
+<a id="bkmk_e_general_errors" name="bkmk_e_general_errors">&nbsp;</a>
 
 ## 常规错误
 
@@ -235,7 +261,7 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 
 ## 相关链接
 
-- [Azure SQL 数据库一般性的指导原则和限制](http://msdn.microsoft.com/zh-cn/library/azure/ee336245.aspx)
-- [资源管理](http://msdn.microsoft.com/zh-cn/library/azure/dn338083.aspx)
+- [Azure SQL 数据库的一般性限制和指导原则](/documentation/articles/sql-database-general-limitations)
+- [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

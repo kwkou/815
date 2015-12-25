@@ -3,18 +3,18 @@
 	description="了解 Azure SQL 数据库和 Azure 虚拟机中的 SQL Server。探讨常见的业务动机，以判断哪种 SQL 技术最适合你的应用程序。" 
 	services="sql-database, virtual-machines" 
 	documentationCenter="" 
-	authors="Selcin" 
+	authors="jeffgoll" 
 	manager="jeffreyg" 
 	editor="tysonn"/>
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="10/19/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="11/16/2015" 
+	wacn.date="12/22/2015"/>
 
 # 了解 Azure SQL 数据库和 Azure VM 中的 SQL Server
 
-Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数据库](/services/sql-databases) 和 [Azure VM 中的 SQL Server](/services/virtual-machines/)。本文首先介绍每个选项如何适应 Microsoft 数据平台的大体形势，然后根据业务要求进行更深入的探讨，以帮助你选择正确的选项。无论你是以节省成本为优先考虑，还是将精简管理视为第一要素，本文都会根据每种方法所提供的与你最重视的业务要求进行比较，以帮助你确定最适合的方法。
+Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数据库](/home/features/sql-database) 和 [Azure VM 中的 SQL Server](/home/features/virtual-machines#SQL)。本文首先介绍每个选项如何适应 Microsoft 数据平台的大体形势，然后根据业务要求进行更深入的探讨，以帮助你选择正确的选项。无论你是以节省成本为优先考虑，还是将精简管理视为第一要素，本文都会根据每种方法所提供的与你最重视的业务要求进行比较，以帮助你确定最适合的方法。
 
 - [Microsoft 的数据平台](#platform)
 - [Azure SQL 数据库和 Azure VM 中的 SQL Server 详述](#close)	
@@ -75,7 +75,7 @@ Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数�
           <li type=round>需要内置自动高可用性、灾难恢复解决方案和升级机制的应用程序。
           <li type=round>你有数百甚至数千个数据库，但不想要管理基础操作系统、硬件和配置设置。
          <li type=round>使用向外缩放模式的应用程序。
-         <li type=round>大小高达 500 GB 的数据库。
+         <li type=round>大小高达 1 TB 的数据库。
          <li type=round>构建软件即服务应用程序。
          
   </ul>
@@ -86,7 +86,7 @@ Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数�
       <li type=round>需要通过安全隧道从 Azure 访问本地资源的 SQL Server 应用程序（例如 Active Directory）。
       <li type=round>你需要一个具有完全管理权限的定制 IT 环境。
       <li type=round>你想要快速完成开发和测试方案，但又不想购买本地 SQL Server 非生产硬件。
-      <li type=round>使用 <a href="http://msdn.microsoft.com/library/jj919148.aspx">Azure 存储空间上的备份</a>或 <a href="/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions">Azure VM 中的 AlwaysOn 副本</a>的本地 SQL Server 应用程序实现灾难恢复。
+      <li type=round>使用 <a href="http://msdn.microsoft.com/zh-cn/library/jj919148.aspx">Azure 存储空间上的备份</a>或 <a href="/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions">Azure VM 中的 AlwaysOn 副本</a>的本地 SQL Server 应用程序实现灾难恢复。
       <li type=round>大于 1 TB 的大型数据库。
       </ul></td>
    
@@ -134,11 +134,11 @@ Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数�
 
 **Azure SQL 数据库** 以服务（不含许可证）的形式销售给客户，而 Azure VM 中的 SQL Server 则需要传统的 SQL Server 许可。
 
-目前，你可以在多个服务层中使用 **Azure SQL 数据库**。对于基本、标准和高级服务层，我们将根据你选择的服务层和性能级别，以固定费率向你收取每小时费用。基本、标准和高级服务层旨在以多个性能级别提供可预测的性能，以满足应用程序的高峰要求。你可以在服务层和性能级别之间进行更改，以满足应用程序的不同吞吐量需求。
+目前，你可以在多个服务层中使用 **Azure SQL 数据库**。对于基本、标准和高级服务层，我们将根据你选择的服务层和性能级别，以固定费率向你收取每小时费用。基本、标准和高级服务层旨在以多个性能级别提供可预测的性能，以满足应用程序的高峰要求。你可以在服务层和性能级别之间进行更改，以满足应用程序的不同吞吐量需求。有关目前支持的服务层的最新信息，请参阅 [Azure SQL 数据库服务层（版本）](/documentation/articles/sql-database-service-tiers)。
 
-使用 **Azure SQL 数据库**，世界各地数据中心内的 Microsoft Azure 将自动配置、修补和升级数据库软件。因此，你就能降低管理成本。此外，它的[内置备份](/documentation/articles/sql-database-business-continuity/)功能可帮助你大幅降低成本，尤其是当你拥有大量的数据库时。使用 Azure SQL 数据库时，你不必支付针对 Azure SQL 数据库运行的单个查询或传入 Internet 流量的费用。将根据[传出 Internet 流量](http://www.windowsazure.cn/pricing/details/data-transfer/)向你收费。如果你的数据库具有高事务量且必须支持许多并发用户，我们建议你使用高级（而不是基本或标准）服务层。
+使用 **Azure SQL 数据库**，世界各地数据中心内的 Microsoft Azure 将自动配置、修补和升级数据库软件。因此，你就能降低管理成本。此外，它的[内置备份](/documentation/articles/sql-database-business-continuity/)功能可帮助你大幅降低成本，尤其是当你拥有大量的数据库时。使用 Azure SQL 数据库时，你不必支付针对 Azure SQL 数据库运行的单个查询或传入 Internet 流量的费用。将根据[传出 Internet 流量](/pricing/details/data-transfer/)向你收费。如果你的数据库具有高事务量且必须支持许多并发用户，我们建议你使用高级（而不是基本或标准）服务层。
 
-有了 **Azure VM 中的 SQL Server**，你可以利用传统的 SQL Server 许可。你可以使用平台提供的 SQL Server 映像，或在 Azure 中使用你的 SQL Server 许可证。使用 SQL Server 平台提供的映像时，成本取决于选择的 VM 大小以及 SQL Server 版本。简单而言，你需要支付 SQL Server 的每分钟许可成本、Windows Server 每分钟许可和 Azure 存储空间成本。每分钟计费选项可让你随时使用 SQL Server，而无需购买完整的 SQL Server 许可证。如果在 Azure 中使用自己的 SQL Server 许可证，则只需支付 Azure 计算和存储成本。有关详细信息，请参阅 [Azure 上通过软件保障实现的许可移动性](http://www.windowsazure.cn/pricing/license-mobility/)。
+有了 **Azure VM 中的 SQL Server**，你可以利用传统的 SQL Server 许可。你可以使用平台提供的 SQL Server 映像，或在 Azure 中使用你的 SQL Server 许可证。使用 SQL Server 平台提供的映像时，成本取决于选择的 VM 大小以及 SQL Server 版本。简单而言，你需要支付 SQL Server 的每分钟许可成本、Windows Server 每分钟许可和 Azure 存储空间成本。每分钟计费选项可让你随时使用 SQL Server，而无需购买完整的 SQL Server 许可证。如果在 Azure 中使用自己的 SQL Server 许可证，则只需支付 Azure 计算和存储成本。有关详细信息，请参阅 [Azure 上通过软件保障实现的许可证移动性](/pricing/license-mobility/)。
 
 ####<a name="appcost"></a>计算应用程序总成本
 
@@ -154,16 +154,16 @@ Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数�
 
 *应用程序总成本 = 降到最低的软件开发/修改成本 + 管理成本 + SQL Server 与 Windows Server 许可成本 + Azure 存储空间成本*
 
-> [AZURE.IMPORTANT]目前，Azure SQL 数据库并非支持 SQL Server 的所有功能。有关详细的比较信息，请参阅 [Azure SQL 数据库指导原则和限制](/documentation/articles/sql-database-general-limitations/)。当你需要将现有数据库移到 Azure SQL 数据库时请留意这条说明，因为在数据库重新设计上你可能需要一些额外的预算。Azure SQL 数据库是 Microsoft 平台即服务产品。当你将现有的本地 SQL Server 应用程序迁移到 Azure SQL 数据库时，建议你更新应用程序以充分利用平台即服务产品的所有好处。例如，开始在应用程序层上使用 [Azure 云服务](/services/cloud-services/)，以提高成本效益。此外，请针对不同的 Azure SQL 数据库服务层验证你的应用程序，并检查哪个层最符合应用程序的需求。此过程可帮助你达到更好的性能效果并将成本降到最低。有关详细信息，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers)。
+> [AZURE.IMPORTANT]目前，Azure SQL 数据库并非支持 SQL Server 的所有功能。有关详细的比较信息，请参阅 [Azure SQL 数据库指导原则和限制](/documentation/articles/sql-database-general-limitations/)。当你需要将现有数据库移到 Azure SQL 数据库时请留意这条说明，因为在数据库重新设计上你可能需要一些额外的预算。Azure SQL 数据库是 Microsoft 平台即服务产品。当你将现有的本地 SQL Server 应用程序迁移到 Azure SQL 数据库时，建议你更新应用程序以充分利用平台即服务产品的所有好处。例如，开始在应用程序层上使用 [Azure 网站](/documentation/services/web-sites/)或 [Azure 云服务](/home/features/cloud-services/)，以提高成本效益。此外，请针对不同的 Azure SQL 数据库服务层验证你的应用程序，并检查哪个层最符合应用程序的需求。此过程可帮助你达到更好的性能效果并将成本降到最低。有关详细信息，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers)。
 
-要进行详细的成本估算，请使用 [Azure 价格计算器](http://www.windowsazure.cn/pricing/calculator)。
+要进行详细的成本估算，请使用 [Azure 价格计算器](/pricing/calculator)。
 
 有关定价的详细信息，请参阅以下资源：
 
-- [Azure SQL 数据库定价详细信息](http://www.windowsazure.cn/home/features/sql-database/#price) 
-- [虚拟机定价详细信息](http://www.windowsazure.cn/home/features/virtual-machines/)
-- [Azure VM 中的 SQL Server - 定价详细信息](http://www.windowsazure.cn/home/features/virtual-machines/#sql-server)
-- [Azure VM 中的 Windows Server - 定价详细信息](http://www.windowsazure.cn/home/features/virtual-machines/#windows) 
+- [Azure SQL 数据库定价详细信息](/home/features/sql-database/#price) 
+- [虚拟机定价详细信息](/home/features/virtual-machines/)
+- [Azure VM 中的 SQL Server - 定价详细信息](/home/features/virtual-machines/#sql-server)
+- [Azure VM 中的 Windows Server - 定价详细信息](/home/features/virtual-machines/#windows) 
 
 ###<a name="admin"></a>管理
 

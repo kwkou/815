@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/20/2015"
-	wacn.date="09/15/2015"/>
+	ms.date="11/03/2015"
+	wacn.date="12/22/2015"/>
 
 
 # 在 Windows上使用 PHP 连接到 SQL 数据库
@@ -43,12 +43,9 @@
 		try
 		{
 			$serverName = "tcp:myserver.database.chinacloudapi.cn,1433";
-
 			$connectionOptions = array("Database"=>"AdventureWorks",
 				"Uid"=>"MyUser", "PWD"=>"MyPassword");
-
 			$conn = sqlsrv_connect($serverName, $connectionOptions);
-
 			if($conn == false)
 				die(FormatErrors(sqlsrv_errors()));
 		}
@@ -179,4 +176,4 @@
 
  
 
-<!--HONumber=55-->
+<!---HONumber=Mooncake_1207_2015-->

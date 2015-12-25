@@ -1,5 +1,5 @@
 <properties
-    pageTitle="用于水平分区的弹性查询 | Windows Azure"
+    pageTitle="用于分片的弹性数据库查询（水平分区）| Windows Azure"
     description="如何对水平分区设置弹性查询"    
     services="sql-database"
     documentationCenter=""  
@@ -9,9 +9,9 @@
 <tags
     ms.service="sql-database"
     ms.date="10/15/2015"
-    wacn.date="11/12/2015" />
+    wacn.date="12/22/2015" />
 
-# 用于水平分区的弹性查询
+# 用于分片的弹性数据库查询（水平分区）
 
 本文档说明如何为水平分区方案设置弹性数据库查询以及如何执行查询。有关水平分区方案的定义，请参阅[弹性数据库查询概述（预览版）](/documentation/articles/sql-database-elastic-query-overview)。
 
@@ -23,13 +23,13 @@
 
 定义弹性数据库查询的数据库对象依赖于以下 T-SQL 语句，下面将针对水平分区方案对这些语句进行进一步说明：
 
-* [CREATE MASTER KEY](https://msdn.microsoft.com/library/ms174382.aspx) 
+* [CREATE MASTER KEY](https://msdn.microsoft.com/zh-cn/library/ms174382.aspx) 
 
-* [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/library/mt270260.aspx)
+* [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/zh-cn/library/mt270260.aspx)
 
-* [CREATE/DROP EXTERNAL DATA SOURCE](https://msdn.microsoft.com/library/dn935022.aspx)
+* [CREATE/DROP EXTERNAL DATA SOURCE](https://msdn.microsoft.com/zh-cn/library/dn935022.aspx)
 
-* [CREATE/DROP EXTERNAL TABLE](https://msdn.microsoft.com/library/dn935021.aspx)
+* [CREATE/DROP EXTERNAL TABLE](https://msdn.microsoft.com/zh-cn/library/dn935021.aspx)
 
 ### 1.1 数据库范围的主密钥和凭据 
 
@@ -116,7 +116,7 @@ DATA\_SOURCE 子句定义用于外部表的外部数据源（在水平分区情�
 
 使用 SCHEMA\_NAME 和 OBJECT\_NAME 子句可分别将外部表定义映射到分片上不同架构中的表，或映射到具有不同名称的表。如果省略，则假定远程对象的架构是“dbo”，并假定其名称与所定义的外部表名称相同。
 
-当远程表的名称已在你要在其中创建外部表的数据库中使用时，SCHEMA\_NAME 和 OBJECT\_NAME 子句特别有用。此问题的一个示例是当你要定义外部表以在扩大的数据层上获取目录视图或 DMV 的聚合视图时。由于目录视图和 DMV 已在本地存在，因此不能在外部表定义中使用其名称。而是改用不同名称，并在 SCHEMA\_NAME 和/或 OBJECT_NAME 子句中使用目录视图或 DMV 的名称。（请参阅下面的示例。）
+当远程表的名称已在你要在其中创建外部表的数据库中使用时，SCHEMA\_NAME 和 OBJECT\_NAME 子句特别有用。此问题的一个示例是当你要定义外部表以在扩大的数据层上获取目录视图或 DMV 的聚合视图时。由于目录视图和 DMV 已在本地存在，因此不能在外部表定义中使用其名称。而是改用不同名称，并在 SCHEMA\_NAME 和/或 OBJECT\_NAME 子句中使用目录视图或 DMV 的名称。（请参阅下面的示例。）
 
 DISTRIBUTION 子句指定用于此表的数据分布：
 
@@ -124,7 +124,7 @@ DISTRIBUTION 子句指定用于此表的数据分布：
 
 * REPLICATED 表示表的相同副本将存在于分片映射中的每个数据库上。Azure SQL 数据库不维护表的副本。你负责确保各数据库上的副本是相同的。
 
-* ROUND_ROBIN 表示将使用水平分区对表进行分布。但是，已使用应用程序相关的分布。
+* ROUND\_ROBIN 表示将使用水平分区对表进行分布。但是，已使用应用程序相关的分布。
 
 查询处理器利用 DISTRIBUTION 子句中提供的信息来构建最有效的查询计划。
 
@@ -188,7 +188,7 @@ DISTRIBUTION 子句指定用于此表的数据分布：
  
 ### 2.2 存储过程 SP\_EXECUTE\_FANOUT 
 
-弹性查询还引入了一个存储过程，以便提供对分片的直接访问。该存储过程名为 sp\_execute_fanout 并采用以下参数：
+弹性查询还引入了一个存储过程，以便提供对分片的直接访问。该存储过程名为 sp\_execute\_fanout 并采用以下参数：
 
 * 服务器名称 (nvarchar)：托管分片映射的逻辑服务器的完全限定名称。 
 * 分片映射数据库名称 (nvarchar)：分片映射数据库的名称。 
@@ -196,7 +196,7 @@ DISTRIBUTION 子句指定用于此表的数据分布：
 * 密码 (nvarchar)：用户的密码。 
 * 分片映射名称 (nvarchar)：要用于查询的分片映射的名称。 
 *  查询：要在每个分片上执行的 T-SQL 查询。 
-*  参数声明 (nvarchar) - 可选：在查询参数（如 sp_executesql）中使用的参数的字符串（包含数据类型定义）。 
+*  参数声明 (nvarchar) - 可选：在查询参数（如 sp\_executesql）中使用的参数的字符串（包含数据类型定义）。 
 *  参数值列表 - 可选：以逗号分隔的参数值（如 sp\_executesql）的列表  
 
 sp\_execute\_fanout 使用调用参数中提供的分片映射信息在注册到分片映射的所有分片上执行给定的 T-SQL 语句。使用 UNION ALL 语义合并任何结果。结果还包括附加的“virtual”列，其中包含分片名称。

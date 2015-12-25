@@ -9,7 +9,9 @@
 
 
 <tags 
-	ms.service="sql-database" ms.date="07/20/2015" wacn.date="08/14/2015"/>
+	ms.service="sql-database"
+	ms.date="10/20/2015" 
+	wacn.date="12/22/2015"/>
 
 
 # 在 Mac OS X 上配合 Tedious 使用 Node.js 连接到 SQL 数据库
@@ -164,4 +166,4 @@
 		connection.execSql(request);
 	}
 
-<!---HONumber=66-->
+<!---HONumber=Mooncake_1207_2015-->

@@ -9,7 +9,9 @@
 
 
 <tags 
-	ms.service="sql-database" ms.date="07/16/2015" wacn.date="08/14/2015"/>
+	ms.service="sql-database"
+	ms.date="10/20/2015" 
+	wacn.date="12/22/2015"/>
 
 
 # 在 Mac OS 上使用 Python 连接到 SQL 数据库
@@ -112,4 +114,4 @@
 
  
 
-<!---HONumber=66-->
+<!---HONumber=Mooncake_1207_2015-->
