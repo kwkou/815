@@ -26,7 +26,7 @@
 
 >[AZURE.NOTE]Windows Phone 8、Windows Phone 8.1 Silverlight 和非 Windows 应用程序可以跳过本部分。
 
-1. 如果尚未注册应用程序，请在开发人员中心内导航到 Windows 应用商店应用的“提交应用程序”页，用 Microsoft 帐户登录，然后单击“应用程序名称”[]。
+1. 如果尚未注册应用程序，请在开发人员中心内导航到 Windows 应用商店应用的“提交应用程序”页，用 Microsoft 帐户登录，然后单击“应用程序名称”。
 
    	![](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-submit-win8-app.png)
 

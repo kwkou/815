@@ -25,12 +25,12 @@
 <tr>
 <td>id</td>
 <td>字符串</td>
-<td>已编制索引</td>
+<td>已编入索引</td>
 </tr>
 <tr>
 <td>__createdAt</td>
 <td>日期</td>
-<td>已编制索引</td>
+<td>已编入索引</td>
 </tr>
 <tr>
 <td>__updatedAt</td>
