@@ -1,23 +1,20 @@
-<properties linkid="" urlDisplayName="" pageTitle="定制MySQL 数据库 on Azure服务器参数 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,参数,定制,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL 数据库 on Azure支持您根据需求定制化服务器部分参数,帮您了解不同参数的设置范围和区间。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="Setting MySQL Database on Azure Server Parameters – Microsoft Azure Cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, parameters, customization, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL Database on Azure supports customizing some parameters to your own requirements. We will help you to understand the selectable ranges and intervals for different parameters." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="12/28/2015"/>
 
-#定制MySQL 数据库 on Azure服务器参数
+#Setting MySQL Database on Azure server parameters
 
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/mysql-database-advanced-settings)
-- [英文版](/documentation/articles/mysql-enus-database-advanced-settings)
+MySQL Database on Azure supports custom settings for some parameters. The table below lists the configurable parameters, default values, and selectable ranges.
 
-MySQL 数据库 on Azure支持您对服务器部分参数进行自定义设置，下表中列出可配置的参数，默认值，以及可选范围。
 
-[了解更多MySQL参数信息](http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html)。
+[Find out more about MySQL parameters](http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html).
 
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
-  <th align="left"><strong>参数</strong>
+  <th align="left"><strong>Parameter</strong>
     </td>
-  <th align="left"><strong>默认值</strong>
+  <th align="left"><strong>Default value</strong>
     </td>
-  <th align="left"><strong>范围</strong>
+  <th align="left"><strong>Range</strong>
     </td>
   
   <tr>
@@ -68,7 +65,7 @@ MySQL 数据库 on Azure支持您对服务器部分参数进行自定义设置�
    <tr>
     <td>server-id</td>
     <td>Random Value</td>
-    <td>[1000 - 4294967295]</td>
+    <td>[1000 – 4294967295]</td>
   </tr>
   <tr>
     <td>sql_mode</td>
@@ -94,4 +91,5 @@ MySQL 数据库 on Azure支持您对服务器部分参数进行自定义设置�
     <td>[60-240] </td>
   </tr>
 </table>
->[AZURE.NOTE] **考虑到流量管理器的限制，我们将wait_timeout的默认值调整为120s，可选范围为60-240s，但上述调整只对10月后创建的实例生效。对于以前的实例，请您手动将wait_timeout值设置为60-240s之间的任意数值，推荐120s。**
+>[AZURE.NOTE]**In view of the limitations of Azure Traffic Manager, we have adjusted the default value for wait\_timeout to 120 seconds (s) and the selectable range to 60s to 240s, but this adjustment only works on instances created after October 2015. For earlier instances, please manually set the value of wait\_timeout to any number between 60s and 240s. We recommend 120s. **
+<!--HONumber=81-->

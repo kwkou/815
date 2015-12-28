@@ -1,8 +1,12 @@
 <properties linkid="" urlDisplayName="" pageTitle="使用PowerShell管理MySQL Database on Azure - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="本文介绍如何通过PowerShell实现更多MySQL Database on Azure的查询、创建、修改、删除等操作。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />  
 
-<tags ms.service="mysql" ms.date="" wacn.date="10/14/2015"/>
+<tags ms.service="mysql" ms.date="" wacn.date="12/28/2015"/>
 
 #使用PowerShell管理MySQL Database on Azure
+> [AZURE.SELECTOR]
+- [中文版](/documentation/articles/mysql-database-commandlines)
+- [英文版](/documentation/articles/mysql-database-enus-commandlines)
+
 本文主要介绍如何通过PowerShell实现更多MySQL Database on Azure的创建、查看、删除、更改等操作。建议您先阅读[利用Azure 资源管理器与 PowerShell 来部署使用MySQL Database on Azure](/documentation/articles/mysql-database-etoe-powershell),该文介绍了如何下载使用Azure PowerShell, 如何利用PowerShell来快速创建MySQL Database on Azure数据服务。
 
 在开始之前，请确保已将 Azure PowerShell 准备就绪。
