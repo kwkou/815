@@ -51,7 +51,7 @@ SQL Server 还在 Enterprise Edition 中提供了本机灾难恢复技术，用�
 
 - SQL Server 2014 Enterprise 和 Standard
 - SQL Server 2012 Enterprise 和 Standard
-- SQL Server 2008 R2 Enterprise 和 Standard
+- SQL Server 2008 R2 Enterprise 和 Standard  
 站点恢复可与下表中汇总的本机 SQL Server BCDR 技术集成，以提供灾难恢复解决方案。
 
 **功能** |**详细信息** | **SQL Server 版本** 
@@ -95,7 +95,7 @@ SQL Server（任何版本） | Enterprise 或 Standard | 故障转移群集实�
 
 - **中大型企业** — 如果您有大量的应用程序、您运行的是 Active Directory 林，而且您想要按应用程序或工作负载进行故障转移，则我们建议您在辅助数据中心或 Azure 配置附加的域控制器。请注意，如果您要使用 AlwaysOn 可用性组恢复到远程站点，建议您在辅助站点或 Azure 上配置另一个域控制器，供已恢复 SQL Server 实例使用。
 
-本文档中的说明假设辅助位置提供了域控制器。你可以在[此处](http://aka.ms/asr-ad)参考 AD DR 解决方案指南。
+本文档中的说明假设辅助位置提供了域控制器。你可以在[此处](/documentation/articles/site-recovery-active-directory)参考 AD DR 解决方案指南。
 
 ##设置 SQL AlwaysOn 可用性组的保护
 
