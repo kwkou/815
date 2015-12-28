@@ -13,7 +13,7 @@
   
   <tr>
     <td>PUT    </td>
-    <td>https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.MySql/servers/{server-name}/databases/{database-name}/privileges/{user-name}?api-version=2015-09-01 HTTP/1.1</td>
+    <td>https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.MySql/servers/{server-name}/databases/{database-name}/privileges/{user-name}?api-version=2015-09-01</td>
   </tr>
 </table>
 

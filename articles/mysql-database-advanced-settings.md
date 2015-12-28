@@ -6,7 +6,7 @@
 
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/mysql-database-advanced-settings)
-- [英文版](/documentation/articles/mysql-enus-database-advanced-settings)
+- [英文版](/documentation/articles/mysql-database-enus-advanced-settings)
 
 MySQL 数据库 on Azure支持您对服务器部分参数进行自定义设置，下表中列出可配置的参数，默认值，以及可选范围。
 
