@@ -24,18 +24,12 @@ Azure Redis 缓存是一种分布式托管缓存，可通过提供对数据的�
 
 有关高级缓存大小、吞吐量和带宽的更多详细信息，请参阅 [Azure Redis 缓存常见问题](/documentation/articles/cache-faq#what-redis-cache-offering-and-size-should-i-use)。
 
-## Redis 数据持久性
-高级层允许你将缓存数据暂留在 Azure 存储帐户中。在基本/标准缓存中，所有数据只存储在内存中。如果底层基础结构出现问题，可能会导致数据丢失。我们建议使用高级级别中的 Redis 数据暂留功能来增加灵活性，防止数据丢失。Azure Redis 缓存提供可在 [Redis 持久性](http://redis.io/topics/persistence)中使用的 RDB 和 AOF（即将推出）选项。
-
 ##Redis 群集
 如果你想要创建大于 53 GB 的缓存，或者想要将数据通过分片的方式分散到多个 Redis 节点中，则可以使用在高级层中提供的 Redis 群集功能。每个节点都包含一个由 Azure 管理的主/副缓存对，目的是提高可用性。
 
 **Redis 群集可提供最大的缩放能力和吞吐量。** 增加群集中分片（节点）的数量会导致吞吐量线性提高。例如，如果你创建了一个包含 10 个分片的 P4 群集，则可用吞吐量为 250K * 10 = 每秒 250 万个请求。有关高级缓存大小、吞吐量和带宽的更多详细信息，请参阅 [Azure Redis 缓存常见问题](/documentation/articles/cache-faq#what-redis-cache-offering-and-size-should-i-use)。
 
 若要开始使用群集，请参阅[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering)。
-
-##增强的安全性和隔离性
-可通过公共 Internet 访问基本或标准层中创建的缓存。根据访问密钥来限制对缓存的访问。使用高级层可以进一步确保只有指定网络中的客户端可以访问缓存。可以在 [Azure 虚拟网络 (VNet)](/home/features/networking/) 中部署 Redis 缓存。可以使用 VNet 的所有功能，例如子网、访问控制策略和其他功能，进一步限制对 Redis 的访问。
 
 
 ## 后续步骤

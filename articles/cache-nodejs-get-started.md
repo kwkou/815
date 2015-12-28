@@ -41,7 +41,7 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 	# Create a new cache with date string to make name unique. 
 	$cacheName = "MovieCache" + $(Get-Date -Format ('ddhhmm')) 
 	$location = "China North"
-	$resourceGroupName = "Default-Web-WestUS"
+	$resourceGroupName = "Default-Web-ChinaNorth"
 	
 	$movieCache = New-AzureRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
 

@@ -44,8 +44,6 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 
 将应用设置的密钥设置为 **REDIS\_HOST**，将应用设置的值设置为 Redis 缓存实例的**主机名**。
 
-![Web 应用 AppSetting REDIS\_HOST](./media/web-sites-connect-to-redis-using-memcache-protocol/3-azure-website-appsettings-redis-host.png)
-
 ### 添加 REDIS\_KEY 应用设置
 
 你需要创建的第二个应用设置是 **REDIS\_KEY** 应用设置。此设置提供了安全访问 Redis 缓存实例所需的身份验证令牌。REDIS\_KEY 应用设置所需的值可以通过以下的 PowerShell 命令行获得：
@@ -54,13 +52,10 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 
 将应用设置的密钥设置为 **REDIS\_KEY**，将应用设置的值设置为 Redis 缓存实例的**主密钥**。
 
-![Azure 网站 AppSetting REDIS\_KEY](./media/web-sites-connect-to-redis-using-memcache-protocol/5-azure-website-appsettings-redis-primarykey.png)
 
 ### 添加 MEMCACHESHIM\_REDIS\_ENABLE 应用设置
 
 最后一个应用设置用于启用 Web Apps 中的 Memcache 填充码，以便使用 REDIS\_HOST 和 REDIS\_KEY 来连接到 Azure Redis 缓存并转发缓存调用。将应用设置的密钥设置为 **MEMCACHESHIM\_REDIS\_ENABLE**，并将其值设置为 **true**。
-
-![Web 应用 AppSetting MEMCACHESHIM\_REDIS\_ENABLE](./media/web-sites-connect-to-redis-using-memcache-protocol/6-azure-website-appsettings-enable-shim.png)
 
 添加完这三 (3) 个应用设置以后，单击“保存”。
 

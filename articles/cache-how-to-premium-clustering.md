@@ -10,7 +10,7 @@
 <tags
 	ms.service="cache"
 	ms.date="10/09/2015"
-	wacn.date="12/21/2015"/>
+	wacn.date="12/23/2015"/>
 
 # 如何为高级 Azure Redis 缓存配置 Redis 群集功能
 Azure Redis 缓存具有不同的缓存产品（包括新推出的高级级别，目前为预览版），使缓存大小和功能的选择更加灵活。
@@ -50,6 +50,10 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 	
 	$movieCache = New-AzureRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 6GB -Sku Premium -ShardCount 2
 
+群集中最多可以有 10 个分片，以上的这段脚本可创建一个“分片计数”为 2 的缓存，“分片计数”可以 1 到 10 之间的一个数字。每个分片都是一个由 Azure 管理的主/副缓存对，而缓存的总大小则通过将定价层中选择的缓存大小乘以分片数来计算。
+
+创建缓存后，即可连接到缓存并使用缓存，就像该缓存没有进行群集一样，而 Redis 则会将数据分布到整个缓存分片中。
+
 ## 群集功能常见问题
 
 以下列表包含有关 Azure Redis 缓存群集功能常见问题的解答。
@@ -75,7 +79,7 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 
 ## 我可以创建的最大缓存大小是多大？
 
-高级缓存的最大大小为 53 GB。你可以创建多达 10 个分片，因此最大大小为 530 GB。如果你需要的大小更大，则可[请求更多](mailto:wapteams@microsoft.com?subject=Redis%20Cache%20quota%20increase)。有关详细信息，请参阅 [Azure Redis 缓存定价](/home/features/cache/#price)。
+高级缓存的最大大小为 53 GB。你可以创建多达 10 个分片，因此最大大小为 530 GB。如果你需要的大小更大，则可[请求更多](mailto:wapteams@microsoft.com?subject=Redis%20Cache%20quota%20increase)。有关详细信息，请参阅 [Azure Redis 缓存定价](/home/features/redis-cache/#price)。
 
 ## 是否所有 Redis 客户端都支持群集功能？
 
