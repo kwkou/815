@@ -1,8 +1,11 @@
 <properties linkid="" urlDisplayName="" pageTitle="监视MySQL 数据库 on Azure数据库 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,监视,性能指标,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL 数据库 on Azure 为用户提供核心性能指标的监控,您可以通过Windows Azure管理门户的仪表盘进行查看。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date="10/20/2015"/>
+<tags ms.service="mysql" ms.date="" wacn.date="12/28/2015"/>
 
 #监视MySQL 数据库 on Azure数据库
+> [AZURE.SELECTOR]
+- [中文版](/documentation/articles/mysql-database-operation-monitoring-metrics)
+- [英文版](/documentation/articles/mysql-database-enus-operation-monitoring-metrics)
 
 通过Windows Azure管理门户-> MySQL 数据库 on Azure，在列表中选择所需的监控性能指标，点击“仪表盘”进行实时监控。
 
