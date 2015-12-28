@@ -30,11 +30,10 @@ Azure Redis 缓存可让你访问 Microsoft 管理的、专用安全的 Redis �
 
 Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存进行管理。
 
-[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
 使用以下的 PowerShell 脚本创建缓存：
 
-	Switch-AzureMode AzureResourceManager
 	$VerbosePreference = "Continue"
 
 	# Create a new cache with date string to make name unique. 
@@ -42,7 +41,7 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 	$location = "China North"
 	$resourceGroupName = "Default-Web-ChinaNorth"
 	
-	$movieCache = New-AzureRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
+	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
 
 
 ## 启用非 SSL 终结点
@@ -50,7 +49,7 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 
 你可以使用以下的 PowerShell 命令行启用非 SSL 终结点
 
-	Set-AzureRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>" -EnableNonSslPort $true
+	Set-AzureRmRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>" -EnableNonSslPort $true
 
 
 ## 在缓存中添加一些内容并检索此内容

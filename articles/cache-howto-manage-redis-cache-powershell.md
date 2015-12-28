@@ -22,7 +22,7 @@
 
 - Windows PowerShell 3.0 版或 4.0 版。若要查找 Windows PowerShell 的版本，请键入：`$PSVersionTable` 并验证 `PSVersion` 的值是否为 3.0 或 4.0。若要安装兼容版本，请参阅 [Windows Management Framework 3.0 ](http://www.microsoft.com/download/details.aspx?id=34595) 或 [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)。
 
-- Azure PowerShell 0.8.0 版或更高版本。若要安装最新版本并将其与 Azure 订阅相关联，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+- Azure PowerShell 1.0.0 版或更高版本。若要安装最新版本并将其与 Azure 订阅相关联，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 本教程面向 Windows PowerShell 初学者。有关 Windows PowerShell 的详细信息，请参阅 [Windows PowerShell 入门](http://technet.microsoft.com/zh-cn/library/hh857337.aspx)。
 
@@ -30,18 +30,17 @@
 
 	Get-Help <cmdlet-name> -Detailed
 
-例如，若要获得有关 Add-AzureAccount cmdlet 的帮助，请键入：
+例如，若要获得有关 Add-AzureRmAccount cmdlet 的帮助，请键入：
 
-	Get-Help Add-AzureAccount -Detailed
+	Get-Help Add-AzureRmAccount -Detailed
 
-[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
 ## Redis 缓存的简单 Azure PowerShell 脚本  ##
 
 以下脚本演示了如何创建、更新和删除 Azure Redis 缓存。
 
 		# Azure Redis Cache operations require mode set to AzureResourceManager.
-		Switch-AzureMode AzureResourceManager
 		$VerbosePreference = "Continue"
 
 	        # Create a new cache with date string to make name unique. 
@@ -49,14 +48,14 @@
 		$location = "China North"
 		$resourceGroupName = "Default-Web-ChinaNorth"
 		
-		$movieCache = New-AzureRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
+		$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
 
 		# Wait until the Cache service is provisioned.
 
 		for ($i = 0; $i -le 60; $i++)
 		{
 		    Start-Sleep -s 30
-			$cacheGet = Get-AzureRedisCache -ResourceGroupName $resourceGroupName -Name $cacheName
+			$cacheGet = Get-AzureRmRedisCache -ResourceGroupName $resourceGroupName -Name $cacheName
 		    if ([string]::Compare("succeeded", $cacheGet[0].ProvisioningState, $True) -eq 0)
 		    {       
 		        break
@@ -70,18 +69,18 @@
 		# Update the access keys.
 
 		Write-Verbose "PrimaryKey: $($movieCache.PrimaryKey)"
-		New-AzureRedisCacheKey -KeyType "Primary" -Name $cacheName  -ResourceGroupName $resourceGroupName -Force
-		$cacheKeys = Get-AzureRedisCacheKey -ResourceGroupName $resourceGroupName  -Name $cacheName         
+		New-AzureRmRedisCacheKey -KeyType "Primary" -Name $cacheName  -ResourceGroupName $resourceGroupName -Force
+		$cacheKeys = Get-AzureRmRedisCacheKey -ResourceGroupName $resourceGroupName  -Name $cacheName         
 		Write-Verbose "PrimaryKey: $($cacheKeys.PrimaryKey)"
 		
-		# Use Set-AzureRedisCache to set Redis cache updatable parameters.
+		# Use Set-AzureRmRedisCache to set Redis cache updatable parameters.
 		# Set the memory policy to Least Recently Used.
 		
-		Set-AzureRedisCache -MaxMemoryPolicy AllKeysLRU -Name $cacheName -ResourceGroupName $resourceGroupName
+		Set-AzureRmRedisCache -MaxMemoryPolicy AllKeysLRU -Name $cacheName -ResourceGroupName $resourceGroupName
 		
 		# Delete the cache.
 		
-		Remove-AzureRedisCache -Name $movieCache.Name -ResourceGroupName $movieCache.ResourceGroupName  -Force 
+		Remove-AzureRmRedisCache -Name $movieCache.Name -ResourceGroupName $movieCache.ResourceGroupName  -Force 
 
 ## 后续步骤
 
