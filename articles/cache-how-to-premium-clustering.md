@@ -36,11 +36,10 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 ## 群集功能
 Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存进行管理。
 
-[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
 使用以下的 PowerShell 脚本创建缓存：
 
-	Switch-AzureMode AzureResourceManager
 	$VerbosePreference = "Continue"
 
 	# Create a new cache with date string to make name unique. 
@@ -48,7 +47,7 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 	$location = "China North"
 	$resourceGroupName = "Default-Web-ChinaNorth"
 	
-	$movieCache = New-AzureRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 6GB -Sku Premium -ShardCount 2
+	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 6GB -Sku Premium -ShardCount 2
 
 群集中最多可以有 10 个分片，以上的这段脚本可创建一个“分片计数”为 2 的缓存，“分片计数”可以 1 到 10 之间的一个数字。每个分片都是一个由 Azure 管理的主/副缓存对，而缓存的总大小则通过将定价层中选择的缓存大小乘以分片数来计算。
 

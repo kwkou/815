@@ -43,11 +43,10 @@ Azure Redis Cache 非常容易上手。若要开始使用，需要首先设置�
 
 Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存进行管理。
 
-[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
 使用以下的 PowerShell 脚本创建缓存：
 
-	Switch-AzureMode AzureResourceManager
 	$VerbosePreference = "Continue"
 
 	# Create a new cache with date string to make name unique. 
@@ -55,7 +54,7 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 	$location = "China North"
 	$resourceGroupName = "Default-Web-ChinaNorth"
 	
-	$movieCache = New-AzureRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
+	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
 
 
 <a name="NuGet"></a>
@@ -113,11 +112,11 @@ NuGet 程序包会给客户端应用程序下载并添加所需的程序集引�
 
 你可以使用以下的 PowerShell 命令行获得缓存密钥：
 
-	Get-AzureRedisCacheKey -Name "<your cache name>" -ResourceGroupName "<your resource group name>"
+	Get-AzureRmRedisCacheKey -Name "<your cache name>" -ResourceGroupName "<your resource group name>"
 
 而使用以下的 PowerShell 命令行获得缓存主机以及 ssl 端口：
 
-	$myRedisCache = Get-AzureRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>"; $myRedisCache.HostName; $myRedisCache.Port
+	$myRedisCache = Get-AzureRmRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>"; $myRedisCache.HostName; $myRedisCache.Port
 
 建立连接后，通过调用 `ConnectionMultiplexer.GetDatabase` 方法返回对 Redis 缓存数据库的引用。
 
