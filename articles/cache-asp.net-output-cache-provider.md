@@ -9,7 +9,7 @@
 <tags
 	ms.service="cache"
 	ms.date="10/23/2015"
-	wacn.date="12/21/2015"/>
+	wacn.date=""/>
 
 # Azure Redis 缓存的 ASP.NET 输出缓存提供程序
 
