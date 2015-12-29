@@ -1,11 +1,9 @@
 <properties linkid="troubleshoot" urlDisplayName="troubleshoot" pageTitle="故障排除" metaKeywords="troubleshoot" disableRightNav="true" description="" metaCanonical="" services="" documentationCenter="" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="" ms.date="" wacn.date="12/29/2015"/>
 
- <div style="margin: 0px auto;">
-        <div style="width:880px">
-            <div><span style="font-size:24px;font-weight:bold">故障排除</span></div>
-            <div style="margin-top:30px;"><span style="font-weight:normal;font-size:15px;"> 更新日期: 12/23/2015 </span></div>
-        </div>
+#故障排除
+
+ <div style="margin: 0px auto;">        
         <div style="width: 880px;margin-top:40px;">
             <div style="width: 428px;  margin-right: 42px;  display: inline-block;">
                 <div style="width: 404px;">
