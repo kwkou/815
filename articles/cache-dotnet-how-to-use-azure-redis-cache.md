@@ -19,12 +19,13 @@
 <a name="what-is"></a>
 ## 什么是 Azure Redis Cache？
 
-Microsoft Azure Redis 缓存基于流行的开放源代码 Redis 缓存。它让您访问 Microsoft 管理的安全专用的 Redis 缓存。使用 Azure Redis 缓存创建的缓存可从 Microsoft Azure 内的任何应用程序进行访问。
+Windows Azure Redis 缓存基于流行的开放源代码 Redis 缓存。它让您访问 Microsoft 管理的安全专用的 Redis 缓存。使用 Azure Redis 缓存创建的缓存可从 Microsoft Azure 内的任何应用程序进行访问。
 
-Microsoft Azure Redis 缓存现已推出两种层级：
+Windows Azure Redis 缓存现已推出两种层级：
 
 -	**基本** - 单个节点。多种大小，最大 53 GB。
--	**标准** – 双节点主/副本配置。多种大小，最大 53 GB。99.9% SLA。
+-	**标准** - 双节点主/副本配置。多种大小，最大 53 GB。99.9% SLA。
+-	**高级** - 双节点主/副本配置，最多可达 10 分片. 多种大小，从 6 GB 到 530 GB。所有标准层级的功能，还包括支持 [Redis cluster](/documentation/articles/cache-how-to-premium-clustering). 99.9% SLA.
 
 每个级别在功能和定价方面存在差异。在本指南的后面将介绍这些功能，而有关定价的详细信息，则请参阅[缓存定价详细信息][]。
 
