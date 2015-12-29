@@ -20,9 +20,9 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 ## 何时缩放
 
-你可以使用 Azure Redis 缓存的[监视](/documentation/articles/cache-how-to-monitor)功能来监视你的缓存应用程序的运行状况和性能，并帮助确定是否需要缩放缓存。
+[访问 Redis 缓存监视数据](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring)示例演示了如何访问你的 Azure Redis 缓存的监视数据。
 
-你可以监视以下指标以帮助确定是否需要进行缩放。
+你可以看以下指标以帮助确定是否需要进行缩放。
 
 -	Redis 服务器负载
 -	内存用量
