@@ -5,7 +5,7 @@
 
 <div style="margin: 0px auto;">
     <div style="width:1200px">
-        <div style="padding-top:7px;"><span style="font-weight:normal;font-family:'Microsoft YaHei';font-size:14px;"> 最后更新时间（中文版）:12/30/2015 </span></div>
+        <div><span style="font-weight:normal;font-family:'Microsoft YaHei';font-size:14px;"> 最后更新时间（中文版）:12/30/2015 </span></div>
     </div>
     <div style="width:1200px;margin-top:35px;">
         <div style="width: 550px;  margin-right: 100px;  display: inline-block;">
