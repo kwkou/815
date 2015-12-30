@@ -58,6 +58,5 @@
                 </div>
             </div>
         </div>
+        <div style="width: 100%;margin-top:50px;display:inline-block;"></div>      
     </div>
- <div style="width: 1200px;margin-top: 50px;">
- </div>
