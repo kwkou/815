@@ -3,12 +3,12 @@
 
 #故障排除
 
-  <div style="margin: 0px auto;margin-bottom:40px">
-        <div style="width:880px">
+  <div style="margin-bottom:40px">
+        <div style="width:1200px">
             <div style="margin-top:30px;"><span style="font-weight:normal;font-family:'Microsoft YaHei';font-size:14px;"> 最后更新日期（中文版）: 12/30/2015 </span></div>
         </div>
-        <div style="width: 880px;margin-top:40px;">
-            <div style="width: 428px;  margin-right: 42px;  display: inline-block;">
+        <div style="width: 1200px;margin-top:40px;">
+            <div style="width: 550px;  margin-right: 100px;  display: inline-block;">
                 <div style="width: 404px;">
                     <div><span style="font-size:24px;font-family:'Microsoft YaHei';font-weight:normal;">计算</span></div>
                     <div style="margin-top:25px;"><a href="/documentation/articles/troubleshoot/virtual-machine-how-to-reset-vm-size" style="font-size:16px;font-family:'Microsoft YaHei';font-weight:normal;">如何调整虚拟机的尺寸</a></div>
@@ -25,8 +25,8 @@
                     <div style="margin-top:15px;"><span style="font-family:'Microsoft YaHei';font-size:14px">介绍如何使用Azure Automation来自动实现开启或者关闭虚拟机。</span></div>
                 </div>
             </div>
-            <div style="width:410px; float:right">
-                <div style="width: 404px;">
+            <div style="width:550px; float:right">
+                <div style="width: 550px;">
                     <div><span style="font-size:24px;font-family:'Microsoft YaHei';font-weight:normal;">数据服务</span></div>
                     <div style="margin-top:25px;"><a href="/documentation/articles/troubleshoot/storage-how-to-create-account-container" style="font-size:16px;font-family:'Microsoft YaHei';">如何创建存储账号及容器</a></div>
                     <div style="margin-top:10px;"><span style="font-weight:normal;font-size:14px;font-family:'Microsoft YaHei';"> 更新日期: 12/14/2015 </span></div>
@@ -37,17 +37,17 @@
                 </div>
             </div>
         </div>
-        <div style="width: 880px;margin-top: 40px;">
-            <div style="width: 428px; margin-right: 42px; display: inline-block;">
-                <div style="width: 404px;">
+        <div style="width: 1200px;margin-top: 40px;">
+            <div style="width: 550px; margin-right: 100px; display: inline-block;">
+                <div style="width: 550px;">
                     <div><span style="font-size:24px;font-family:'Microsoft YaHei';font-weight:normal;">应用服务</span></div>
                     <div style="margin-top:25px;"><a href="/documentation/articles/troubleshoot/management-portal-how-to-see-operation-log" style="font-size:16px;font-family:'Microsoft YaHei';">如何通过管理服务查看在管理门户中执行的相关操作记录</a></div>
                     <div style="margin-top:10px;"><span style="font-weight:normal;font-size:14px;font-family:'Microsoft YaHei';"> 更新日期: 12/18/2015 </span></div>
                     <div style="margin-top:15px;"><span style="font-family:'Microsoft YaHei';font-size:14px">介绍操作记录的作用，演示如何查看我们在管理门户里的操作记录。</span></div>
                 </div>
             </div>
-            <div style="width:410px; float:right">
-                <div style="width: 404px;">
+            <div style="width:550px; float:right">
+                <div style="width: 550px;">
                     <div><span style="font-size:24px;font-family:'Microsoft YaHei';font-weight:normal;">网络服务</span></div>
                     <div style="margin-top:25px;"><a href="/documentation/articles/troubleshoot/virtual-network-how-to-use-internal-ip" style="font-size:16px;font-family:'Microsoft YaHei';">使用Powershell设置VNET中的静态IP</a></div>
                     <div style="margin-top:10px;"><span style="font-weight:normal;font-size:14px;font-family:'Microsoft YaHei';"> 更新日期: 12/16/2015 </span></div>
