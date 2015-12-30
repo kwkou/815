@@ -3,9 +3,9 @@
 
 #故障排除
 
-  <div style="margin: 0px auto;">
+  <div style="margin: 0px auto;margin-bottom:40px">
         <div style="width:880px">
-            <div style="margin-top:30px;"><span style="font-weight:normal;font-family:'Microsoft YaHei';font-size:14px;"> 最后更新日期（中文版）: 12/23/2015 </span></div>
+            <div style="margin-top:30px;"><span style="font-weight:normal;font-family:'Microsoft YaHei';font-size:14px;"> 最后更新日期（中文版）: 12/30/2015 </span></div>
         </div>
         <div style="width: 880px;margin-top:40px;">
             <div style="width: 428px;  margin-right: 42px;  display: inline-block;">
