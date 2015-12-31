@@ -1,10 +1,11 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Windows Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, 不能缓存, 不能CNAME, 回源比例大, 缓存刷新失败, CDN FAQ, CDN常见问题, CDN使用故障, CDN服务故障, CDN配置错误, 速度慢, 网站打不开, 登录异常, CNAME, CDN技术文档, CDN帮助文档" description="Find answers to common service consulting or inquiries related to Windows Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
-    wacn.date="12/28/2015"
+    wacn.date="12/31/2015"
     />
 #常见问题 - 使用故障
 
++ [出现CDN加速域名不能访问时需要提供哪些信息协助调查](#step10)
 + [为什么我的URL不能缓存？](#step1)
 + [为什么域名会解析到源站？](#step2)
 + [系统提示不能CNAME](#step3)
@@ -12,7 +13,17 @@
 + [使用CDN后，网站打不开*](#step5)
 + [使用CDN后，网站登录异常](#step6)
 + [缓存刷新失败](#step8)
-+ [为什么没有CNAME到Windows Azure CDN却消耗CDN流量](#step9)
++ [为什么没有CNAME到Azure CDN却消耗CDN流量](#step9)
+
+## **出现CDN加速域名不能访问时需要提供哪些信息协助排查问题?**<a id="step10"></a>
+
+出现CDN加速域名不能访问时，为了尽快找出问题所在，需要您提供如下信息：
+
+1. 出问题时访问到的CDN节点IP，可以nslookup+域名，获取Addresss对应的IP地址
+2. 可复制的的问题URL，有时候出现的URL太长，排查人员需要可复制的URL 减少排查时间
+3. 终端出口IP
+4. 问题截图，比如打不开，转圈，5XX 等等可以截图可视化的信息
+5. 发生问题的大概时间点
 
 ## **为什么我的URL不能缓存？**<a id="step1"></a>
 
@@ -70,6 +81,6 @@ URL不能被缓存，通常有以下几个原因： 
 
 手动提交刷新后系统会统计正常服务的设备来下发任务，如果任务下发过程中某一台设备出现异常，系统会自动检测出来并探测关闭（服务状态关闭后客户不会解析到该节点，不影响加速服务），其他正常设备继续下发任务，直至完成，此时界面就会显示“刷新失败”，同时客服和运维会接到邮件，第一时间做处理，即便是刷新失败不影响CDN服务。
 
-## **为什么没有CNAME到Windows Azure CDN却消耗CDN流量**<a id="step9"></a>
+## **为什么没有CNAME到Azure CDN却消耗CDN流量**<a id="step9"></a>
 
 有可能，因为只要加速域名的服务状态是开启的，即便没有CNAME到Windows Azure CDN， 我们的探测设备都会通过监控url探测原站和加速情况，这个也是为什么我们建议您选择监控url尽可能选择小一些的文件，如果您不想未CNAME的加速域名消耗流量可以将服务切换至关闭状态。
