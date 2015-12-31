@@ -1,5 +1,5 @@
 <properties
-	pageTitle="事件中心入门"
+	pageTitle="通过 C# 使用事件中心入门 | Microsoft Azure"
 	description="遵循本教程开始使用以 C# 编写的 Azure 事件中心和 EventProcessorHost。"
 	services="event-hubs"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.date="09/01/2015"
-	wacn.date="09/28/2015"/>
+	ms.date="11/05/2015"
+	wacn.date="12/17/2015"/>
 
 # 事件中心入门
 
@@ -79,9 +79,10 @@
 
 现在，你已生成了一个可以创建事件中心以及发送和接收数据的有效应用程序，接下来请继续学习以下方案：
 
-- [使用事件中心的完整示例应用程序]。
-- [使用事件中心扩大事件处理]示例。
-<!--- 使用服务总线队列的[队列消息解决方案]。-->
+- [使用事件中心的完整示例应用程序][]。
+- [使用事件中心扩大事件处理][]示例。
+- 使用服务总线队列的[队列消息解决方案][]。
+- [事件中心概述][]
 
 <!-- Images. -->
 [1]: ./media/event-hubs-csharp-ephcs-getstarted/create-event-hub1.png
@@ -97,8 +98,10 @@
 <!-- Links -->
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [事件处理程序主机]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[Event Hubs Overview]: /documentation/articles/event-hubs-overview
+[事件中心概述]: /documentation/articles/event-hubs-overview
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
-<!---HONumber=66-->
+ 
+
+<!---HONumber=Mooncake_1207_2015-->
