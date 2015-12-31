@@ -78,7 +78,6 @@ Microsoft 发布了一套高级别的 [体系结构蓝图](http://aka.ms/azbluep
 
 该模板在本课程外也可用。
 
-- 首先[观看视频培训](http://aka.ms/3dBlueprintTemplateVideo)了解其功能   
 - 下载 [3D Blueprint Visio Template](http://aka.ms/3DBlueprintTemplate)
 - 下载与 3D 模板配合使用的[云和企业符号](#drawing-symbol-and-icon-sets) 
 
@@ -90,7 +89,7 @@ Microsoft 发布了一套高级别的 [体系结构蓝图](http://aka.ms/azbluep
 
 ##绘制符号和图标集 
 
-[查看 Visio 和符号培训视频](http://aka.ms/CnESymbolsVideo)然后[下载云和企业符号集](http://aka.ms/CnESymbols)来帮助创建描述 Azure、Windows Server 和 SQL Server 等的技术资料。如果此书培训用户如何使用 Microsoft 产品，您可以使用体系结构图的符号、培训材料、演示文稿、数据表、信息图、白皮书和甚至是第三方书籍。但是，它们并不适合在用户界面中使用。
+[下载云和企业符号集](http://aka.ms/CnESymbols)来帮助创建描述 Azure、Windows Server 和 SQL Server 等的技术资料。如果此书培训用户如何使用 Microsoft 产品，您可以使用体系结构图的符号、培训材料、演示文稿、数据表、信息图、白皮书和甚至是第三方书籍。但是，它们并不适合在用户界面中使用。
 
 CnE 符号采用 Visio 和 PNG 格式。有关如何在 PowerPoint 中使用 PNG 的其他说明包括在集中。
 
@@ -104,8 +103,6 @@ Microsoft Office 和相关技术的其他符号可在 [Microsoft Office Visio st
 
 
 ##体系结构信息图
-
-Microsoft 发布了几个与体系结构相关的海报/信息图。它们包括[构建实际云应用程序](http://azure.microsoft.com/documentation/infographics/building-real-world-cloud-apps/)和[与云服务一起成长](http://azure.microsoft.com/documentation/infographics/cloud-services/)。
 
 ![Azure 体系结构信息图](./media/architecture-overview/AzureArchInfographicThumb.jpg)
 

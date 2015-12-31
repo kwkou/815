@@ -119,6 +119,5 @@
 ## 后续步骤
 
 - 有关模板结构的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
-- 有关基于角色的访问控制的详细信息，请参阅 [Azure Active Directory 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
 
 <!---HONumber=Mooncake_1207_2015-->

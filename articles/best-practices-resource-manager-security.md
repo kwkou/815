@@ -331,6 +331,5 @@ Azure 使用路由表来决定如何根据每个数据包的目标来转发 IP �
 - 若要了解如何设置安全主体，以便通过正确的访问权限来使用组织中的资源，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)
 - 如果你需要锁定对资源的访问，则可使用管理锁。请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources)
 - 若要配置路由和 IP 转发，请参阅[如何在 Azure 中创建路由和启用 IP 转发](/documentation/articles/virtual-networks-udr-how-to) 
-- 有关基于角色的访问控制的概述，请参阅 [Windows Azure 门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)
 
 <!---HONumber=Mooncake_1207_2015-->

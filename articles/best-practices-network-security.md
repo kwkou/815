@@ -466,10 +466,9 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 ### 有用的网站和文档
 - 使用 ARM 访问 Azure： 
 - 使用 PowerShell 访问 Azure：[/documentation/articles/powershell-install-configure/](/documentation/articles/powershell-install-configure)
-- 虚拟网络文档：[https://azure.microsoft.com/documentation/services/virtual-network/](/services/virtual-network/)
+- 虚拟网络文档：[https://azure.microsoft.com/documentation/services/virtual-network/](/services/networking/)
 - 虚拟网络组文档：[/documentation/articles/virtual-networks-nsg/](/documentation/articles/virtual-networks-nsg)
 - 用户定义的路由文档：[/documentation/articles/virtual-networks-udr-overview/](/documentation/articles/virtual-networks-udr-overview)
-- 站点到站点 VPN：[/documentation/articles/vpn-gateway-site-to-site-create/](/documentation/articles/vpn-gateway-site-to-site-create)
 - ExpressRoute 文档（请务必阅读“入门”和“操作指南”部分）：[https://azure.microsoft.com/documentation/services/expressroute/](/services/expressroute/)
 
 <!--Image References-->

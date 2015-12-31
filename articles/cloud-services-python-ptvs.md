@@ -110,7 +110,7 @@ Azure 提供了三种计算模型用于运行应用程序：[Azure App Service �
 
 <!--Link references-->
 
-[什么是云服务？]: /documentation/articles/cloud-services-what-is
+[什么是云服务？]: /documentation/articles/fundamentals-application-models
 [execution model-web sites]: /documentation/articles/fundamentals-application-models/#WebSites
 [execution model-vms]: /documentation/articles/fundamentals-application-models/#VMachine
 [execution model-cloud services]: /documentation/articles/fundamentals-application-models/#CloudServices
