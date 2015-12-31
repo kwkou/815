@@ -6,7 +6,7 @@
 
 <div style="margin: 0px auto;">
   <div style="width:1200px">
-    <div  style="line-height:12px;margin-top:30px">
+    <div  style="line-height:12px;margin-top:20px">
       <span style="font-weight:normal;font-family:'Microsoft YaHei';font-size:14px;"> 最后更新时间（中文版）:12/31/2015 </span>
     </div>
   </div>
