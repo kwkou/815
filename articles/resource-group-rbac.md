@@ -259,7 +259,6 @@
 
 ## 后续步骤
 
-- 若要了解有关基于角色的访问控制的详细信息，请参阅 [Windows Azure 门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
 - 若要了解有关使用服务主体管理订阅中的应用程序的访问权限的详细信息，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)和[使用 Azure 经典门户创建新的 Azure 服务主体](/documentation/articles/resource-group-create-service-principal-portal)。
 - 若要了解有关组织中的审核操作的详细信息，请参阅[使用资源管理器执行审核操作](/documentation/articles/resource-group-audit)。
 - 你可以使用自定义策略对订阅应用限制和约定。有关详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy)。

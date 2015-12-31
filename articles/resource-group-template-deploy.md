@@ -78,7 +78,7 @@
             PS C:\> $parameters = @{"<ParameterName>"="<Parameter Value>"}
             PS C:\> New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateFile <PathOrLinkToTemplate> -TemplateParameterObject $parameters
 
-     - 使用参数文件。有关模板文件的信息，请参阅[参数文件](./#parameter-file)。
+     - 使用参数文件。有关模板文件的信息，请参阅[参数文件](#parameter-file)。
 
             PS C:\> New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateFile <PathOrLinkToTemplate> -TemplateParameterFile <PathOrLinkToParameterFile>
 
@@ -213,8 +213,6 @@
 
 使用 Visual Studio，可以创建资源组项目，并通过用户界面将其部署到 Azure。可选择要在项目中包括的资源类型，这些资源将自动添加到资源管理器模板中。该项目还提供了用于部署模板的 PowerShell 脚本。
 
-有关将 Visual Studio 用于资源组的简介，请参阅[通过 Visual Studio 创建和部署 Azure 资源组](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy)
-
 
 ## 参数文件
 
@@ -240,7 +238,6 @@
 
 ## 后续步骤
 - 有关通过 .NET 客户端库部署资源的示例，请参阅[使用 .NET 库和模板部署资源](/documentation/articles/arm-template-deployment)
-- 有关进一步了解部署应用程序的示例，请参阅[按可预见的方式在 Azure 中预配和部署微服务](/documentation/articles/app-service-deploy-complex-application-predictably)
 - 若要了解 Azure 资源管理器模板的节，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)。
 - 有关可在 Azure 资源管理器模板中使用的函数列表，请参阅[模板函数](/documentation/articles/resource-group-template-functions)。
 

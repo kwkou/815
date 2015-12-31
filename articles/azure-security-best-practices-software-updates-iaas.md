@@ -95,8 +95,6 @@ Azure IaaS 的某些备份选项包括：
 
 -   [使用 Data Protection Manager 保护 Azure IaaS 工作负荷](https://azure.microsoft.com/blog/2014/09/08/azure-iaas-workload-protection-using-data-protection-manager/)
 
--   [备份 Azure 虚拟机](/documentation/articles/backup-azure-vms/)
-
 ### 监视
 
 应该定期运行报告，以针对每个已获授权的软件更新，监视遗漏或已安装的更新数目，或状态不完整的更新。同样，报告未获授权的软件更新可让部署决策变得更容易。

@@ -58,7 +58,7 @@ Microsoft 所采用的“职责分离”和[最小特权](https://en.wikipedia.o
 
 ### Azure 加密技术
 
-你可以使用 [Azure AD 报告](/documentation/articles/active-directory-reporting-audit-events)来收集对订阅进行管理性访问的相关详细信息。你可以选择在 Azure 的 VHD（内含敏感信息）上配置 [BitLocker 驱动器加密](https://technet.microsoft.com/library/cc732774.aspx)。
+你可以使用 <!--[-->Azure AD 报告<!--](/documentation/articles/active-directory-reporting-audit-events)-->来收集对订阅进行管理性访问的相关详细信息。你可以选择在 Azure 的 VHD（内含敏感信息）上配置 [BitLocker 驱动器加密](https://technet.microsoft.com/library/cc732774.aspx)。
 
 Azure 中其他用于确保数据安全的功能包括：
 
@@ -140,7 +140,7 @@ IP 筛选器可以防止来宾 VM 执行以下操作：
 
 - 发送或接收不当的广播流量
 
-你可以将虚拟机置于 [Azure 虚拟网络](/services/virtual-network/)中。这些虚拟网络类似于你在本地环境中配置的网络，在本地环境中，网络通常与虚拟交换机相关联。连接到同一个 Azure 虚拟网络的虚拟机可以相互通信而无需其他配置。你还可以选择在 Azure 虚拟网络中配置不同的子网。
+你可以将虚拟机置于 [Azure 虚拟网络](/services/networking/)中。这些虚拟网络类似于你在本地环境中配置的网络，在本地环境中，网络通常与虚拟交换机相关联。连接到同一个 Azure 虚拟网络的虚拟机可以相互通信而无需其他配置。你还可以选择在 Azure 虚拟网络中配置不同的子网。
 
 可以使用以下 Azure 虚拟网络技术来帮助实现 Azure 虚拟网络上的安全通信：
 
@@ -168,7 +168,7 @@ IP 筛选器可以防止来宾 VM 执行以下操作：
 
 -   **存储防火墙 (FW)**：存储前端的防火墙会对通信进行筛选，只允许在端口 80/443 以及其他必需实用程序端口上进行通信。存储后端的防火墙会将通信限制为只能来自存储前端服务器。
 
--   **虚拟网络网关**：[Azure 虚拟网络网关](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)充当跨界网关，将你在 Azure 虚拟网络中的工作负荷连接到本地站点。它需要通过 [IPsec 站点到站点 VPN 隧道](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)或 [ExpressRoute](/documentation/articles/expressroute-introduction) 线路连接到本地站点。对于 IPsec/IKE VPN 隧道，这些网关会执行 IKE 握手，并在虚拟网络和本地站点之间建立 IPsec S2S VPN 隧道。虚拟网络网关还会终止[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create)。
+-   **虚拟网络网关**：<!--[-->Azure 虚拟网络网关<!--](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)-->充当跨界网关，将你在 Azure 虚拟网络中的工作负荷连接到本地站点。它需要通过 [IPsec 站点到站点 VPN 隧道](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)或 [ExpressRoute](/documentation/articles/expressroute-introduction) 线路连接到本地站点。对于 IPsec/IKE VPN 隧道，这些网关会执行 IKE 握手，并在虚拟网络和本地站点之间建立 IPsec S2S VPN 隧道。虚拟网络网关还会终止[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create)。
 
 ##安全远程访问
 
@@ -176,7 +176,7 @@ IP 筛选器可以防止来宾 VM 执行以下操作：
 
 内置加密技术使你能够在部署内部和部署之间、Azure 区域之间以及从 Azure 到本地数据中心之间对通信进行加密。管理员通过[远程桌面会话](/documentation/articles/virtual-machines-log-on-windows-server)、[远程 Windows PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2013/09/07/weekend-scripter-remoting-the-cloud-with-windows-azure-and-powershell.aspx)对虚拟机进行的访问始终加密。
 
-为了安全地将你的本地数据中心扩展到云，Azure 提供了[站点到站点 VPN](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell) 和[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create) 以及通过 [ExpressRoute](/documentation/articles/expressroute-introduction) 进行的专用链接（通过 VPN 连接到 Azure 虚拟网络会进行加密）。
+为了安全地将你的本地数据中心扩展到云，Azure 提供了[站点到站点 VPN](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell) 和<!--[-->点到站点 VPN<!--](/documentation/articles/vpn-gateway-point-to-site-create)--> 以及通过 [ExpressRoute](/documentation/articles/expressroute-introduction) 进行的专用链接（通过 VPN 连接到 Azure 虚拟网络会进行加密）。
 
 ### Azure 如何实现安全的远程访问
 
@@ -211,8 +211,6 @@ Microsoft 采取的安全控制和风险管理流程目的是确保其云基础�
 ### Azure 如何实施威胁缓解措施
 
 Azure 建立安全控制的目的是实施威胁缓解措施，同时协助客户减轻其环境中的可能威胁。以下列表总结了 Azure 提供的威胁缓解功能：
-
--   [Azure 反恶意软件](/documentation/articles/azure-security-antimalware)在所有基础结构服务器上默认启用。你可以在自己的 VM 中选择性地启用它。
 
 -   Microsoft 会持续监视服务器、网络和应用程序以检测各种威胁，防止遭到攻击。自动警报会将异常行为通知给管理员，因此管理员可以针对内部和外部威胁采取纠正性措施。
 
