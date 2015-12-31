@@ -52,15 +52,12 @@
 ![将虚拟机添加到现有云服务](./media/howto-connect-vm-cloud-service/Connect-VM-to-CS.png)
 
 ##资源
-[对虚拟机进行负载平衡](/documentation/articles/load-balance-virtual-machines)
-
-[管理虚拟机的可用性](/documentation/articles/manage-availability-virtual-machines)
 
 [虚拟网络配置任务](/documentation/services/virtual-machines/)
 
 创建虚拟机后，建议添加数据磁盘，你的服务和工作负荷才有地方存储数据。请参阅下列资源之一：
 
-[如何将数据磁盘附加到 Linux 虚拟机](/documentation/articles/virtual-machines/virtual-machines-linux-how-to-attach-disk)
+[如何将数据磁盘附加到 Linux 虚拟机](/documentation/articles/virtual-machines-linux-how-to-attach-disk)
 
 [如何将数据磁盘附加到 Windows 虚拟机](/documentation/articles/storage-windows-attach-disk)
 

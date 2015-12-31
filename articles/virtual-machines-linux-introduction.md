@@ -25,7 +25,6 @@
 
 
  - 请参阅[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
- - 请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/linux-use-ssh-key)
 
 
 ## 使用 `sudo` 获取超级用户特权
@@ -35,8 +34,6 @@
 	# sudo <COMMAND>
 
 可以选择使用 **sudo -s** 获取根 shell。
-
-- 请参阅[在 Azure 中对 Linux 虚拟机使用根特权](/zh-cn/documentation/articlesvirtual-machines-linux-use-root-privileges/)
 
 
 ## 防火墙配置

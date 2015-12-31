@@ -281,8 +281,6 @@
 
 ### Azure 诊断
 
-有关如何配置诊断的更多详细信息，请参阅 [Azure 诊断扩展](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template)
-
           {
             "publisher": "Microsoft.Azure.Diagnostics",
             "type": "IaaSDiagnostics",

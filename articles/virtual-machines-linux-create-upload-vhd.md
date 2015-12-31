@@ -53,7 +53,7 @@ Windows Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentat
 - **[Oracle Linux](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)**
 - **[Red Hat Enterprise Linux](/documentation/articles/virtual-machines-linux-create-upload-vhd-redhat)**
 - **[SLES 和 openSUSE](/documentation/articles/virtual-machines-linux-create-upload-vhd-suse)**
-- **[Ubuntu](virtual-machines-linux-create-upload-vhd-ubuntu)**
+- **[Ubuntu](/documentation/articles/virtual-machines-linux-create-upload-vhd-ubuntu)**
 - **[其他 - 非认可分发](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic)**
 
 另请参阅 **[Linux 安装说明](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic#linuxinstall)**，以获取更多有关如何为 Azure 准备 Linux 映像的提示。
