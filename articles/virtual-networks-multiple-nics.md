@@ -4,16 +4,18 @@
    services="virtual-network, virtual-machines"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
-   editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.date="08/10/2015"
-   wacn.date="12/17/2015" />
+   manager="carmonm"
+   editor="tysonn" 
+   tags="azure-service-management,azure-resource-manager"
+/>
+<tags
+	ms.service="virtual-network"
+	ms.date="11/09/2015"
+	wacn.date=""/>
 
 # 创建具有多个 NIC 的 VM
 
-使用多 NIC 功能，你可以在 Azure 虚拟机 (VM) 上创建和管理多个虚拟网络接口卡 (NIC)。多 NIC 是许多网络虚拟设备（例如应用程序传送和 WAN 优化解决方案）所必需的。多 NIC 还提供更多的网络流量管理功能，包括在前端 NIC 和后端 NIC 之间进行流量隔离，或者将数据平面流量与管理平面流量进行隔离。
+你可以在 Azure 中创建虚拟机 (VM)，然后将多个网络接口 (NIC) 附加到每个 VM。多 NIC 是许多网络虚拟设备（例如应用程序传送和 WAN 优化解决方案）所必需的。多 NIC 还提供更多的网络流量管理功能，包括在前端 NIC 和后端 NIC 之间进行流量隔离，或者将数据平面流量与管理平面流量进行隔离。
 
 ![用于 VM 的多 NIC](./media/virtual-networks-multiple-nics/IC757773.png)
 
@@ -24,15 +26,15 @@
 多 NIC 目前有以下要求和约束：
 
 - 必须在 Azure 虚拟网络 (VNet) 中创建多 NIC VM。不支持非 VNet VM。 
-- 在单个云服务中，仅允许以下设置： 
+- 在单个云服务（经典部署）或资源组（资源管理器部署）中，仅允许以下设置： 
 	- 该云服务中的所有 VM 都必须启用多 NIC，否则 
 	- 该云服务中的所有 VM 都必须使用单个 NIC 
 
->[AZURE.IMPORTANT]如果你尝试将多 NIC VM 添加到某个已包含单 NIC VM 的部署（云服务）（反之亦然），则会收到以下错误：同一部署中不支持同时使用带辅助网络接口的虚拟机和不带辅助网络接口的虚拟机，此外，不能将不带辅助网络接口的虚拟机更新为带辅助网络接口，反之亦然。
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
  
-- 仅在“默认”NIC 上支持面向 Internet 的 VIP。默认 NIC 的 IP 只有一个对应的 VIP。 
-- 多 NIC VM 目前不支持实例级公共 IP (LPIP) 地址。 
-- VM 内部 NIC 的顺序将是随机的，在 Azure 基础结构更新过程中也可能会更改。不过，IP 地址和相应的以太网 MAC 地址将会保持不变。例如，假定 **Eth1** 的 IP 地址为 10.1.0.100，MAC 地址为 00-0D-3A-B0-39-0D；在进行 Azure 基础结构更新并重新启动后，它可能会更改为 Eth2，但 IP 和 MAC 配对将会保持不变。如果是客户执行的重新启动，NIC 顺序将保持不变。 
+- 仅在“默认”NIC 上支持面向 Internet 的 VIP（经典部署）。默认 NIC 的 IP 只有一个对应的 VIP。 
+- 多 NIC VM 目前不支持实例级公共 IP (LPIP) 地址（经典部署）。 
+- VM 内部 NIC 的顺序将是随机的，在 Azure 基础结构更新过程中也可能会更改。不过，IP 地址和相应的以太网 MAC 地址将会保持不变。例如，假定 **Eth1** 的 IP 地址为 10.1.0.100，MAC 地址为 00-0D-3A-B0-39-0D；在进行 Azure 基础结构更新并重新启动后，它可能会更改为 **Eth2**，但 IP 和 MAC 配对将会保持不变。如果是客户执行的重新启动，NIC 顺序将保持不变。 
 - 每个 VM 上的每个 NIC 的地址必须位于一个子网中，你可以向单个 VM 上的多个 NIC 分配同一子网中的地址。 
 - VM 大小决定了可以为 VM 创建的 NIC 的数目。下表列出了与 VM 大小相对应的 NIC 数目： 
 
@@ -67,6 +69,15 @@
 |DS12|4|
 |DS13|8|
 |DS14|16|
+|D1\_v2|1|
+|D2\_v2|2|
+|D3\_v2|4|
+|D4\_v2|8|
+|D5\_v2|16|
+|D11\_v2|2|
+|D12\_v2|4|
+|D13\_v2|8|
+|D14\_v2|16|
 |G1|1|
 |G2|2|
 |G3|4|
@@ -75,20 +86,20 @@
 |所有其他大小|1|
 
 ## 网络安全组 (NSG)
-VM 上的任何 NIC（包括启用了多 NIC 的 VM 上的任何 NIC）都可以与网络安全组 (NSG) 相关联。如果向 NIC 分配了子网中的地址，且该子网与某个 NSG 相关联，则子网的 NSG 中的规则也适用于该 NIC。除了将子网与 NSG 相关联，你还可以将 NIC 与 NSG 相关联。
+在资源管理器部署中，VM 上的任何 NIC（包括启用了多 NIC 的 VM 上的任何 NIC）都可以与网络安全组 (NSG) 相关联。如果向 NIC 分配了子网中的地址，且该子网与某个 NSG 相关联，则子网的 NSG 中的规则也适用于该 NIC。除了将子网与 NSG 相关联，你还可以将 NIC 与 NSG 相关联。
 
-如果子网与 NSG 相关联，且该子网中的 NIC 与 NSG 单独关联，则关联的 NSG 规则将按“**流顺序**”（根据传入或传出 NIC 的流量的方向）进行应用：
+如果子网与 NSG 相关联，且该子网中的 NIC 与 NSG 单独关联，则关联的 NSG 规则将按**流顺序**（根据传入或传出 NIC 的流量的方向）进行应用：
 
-- **传入流量**其目标为本文所讨论的 NIC，在首先流经子网时，会触发子网的 NSG 规则，然后在传入到 NIC 中之前，会触发 NIC 的 NSG 规则。
+- **传入流量 **其目标为本文所讨论的 NIC，在首先流经子网时，会触发子网的 NSG 规则，然后在传入到 NIC 中之前，会触发 NIC 的 NSG 规则。
 - **传出流量**：其源为本文所讨论的 NIC，在首先从 NIC 中流出时，会触发 NIC 的 NSG 规则，然后在通过子网之前，会触发子网的 NSG 规则。 
 
-上图表示如何根据流量（从 VM 流向子网，或者从子网流向 VM）来应用 NSG 规则。
+详细了解[网络安全组](/documentation/articles/virtual-networks-nsg)以及如何基于与子网、VM 和 NIC 的关联应用它们。
 
-## 如何配置多 NIC VM
+## 如何在经典部署中配置多 NIC VM
 
 下面的说明将指导你创建包含 3 个 NIC（1 个默认 NIC，2 个其他 NIC）的多 NIC VM。这些配置步骤将会创建一个 VM，该 VM 将根据下面的服务配置文件片段进行配置：
 
-	<VirtualNetworkSite name="MultiNIC-VNet" Location="China East">
+	<VirtualNetworkSite name="MultiNIC-VNet" Location="China North">
 	<AddressSpace>
 	  <AddressPrefix>10.1.0.0/16</AddressPrefix>
 	    </AddressSpace>
@@ -245,4 +256,9 @@ Azure 中的当前模型是虚拟机中的所有 NIC 都设置有默认网关。
 
 对于 Linux VM，由于默认行为使用弱主机路由，因为我们建议将辅助 NIC 限制为仅在同一子网内的通信流。但是，如果某些情况需要子网外的连接，用户应启用基于策略的路由以确保流入和流出流量使用同一 NIC。
 
-<!---HONumber=70-->
+## 后续步骤
+
+- [在资源管理器部署的 2 层应用程序方案中部署多 NIC VM](/documentation/articles/virtual-network-deploy-multinic-arm-template)。
+- [在经典部署的 2 层应用程序方案中部署多 NIC VM](/documentation/articles/virtual-network-deploy-multinic-classic-ps)。
+
+<!---HONumber=Mooncake_1221_2015-->

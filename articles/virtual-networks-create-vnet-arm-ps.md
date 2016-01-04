@@ -4,14 +4,14 @@
    services="virtual-network"
    documentationCenter=""
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-network"
-	ms.date="10/08/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="10/21/2015"
+	wacn.date=""/>
 
 # 使用 PowerShell 创建虚拟网络
 
@@ -19,12 +19,14 @@
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-intro](../includes/virtual-networks-create-vnet-intro-include.md)]
 
-本文档介绍如何使用资源管理器部署模型创建 VNet。
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)]本文档介绍如何使用资源管理器部署模型创建 VNet。你还可以[使用经典部署模型创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps)。
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-scenario-include](../includes/virtual-networks-create-vnet-scenario-include.md)]
 
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../includes/azure-ps-prerequisites-include.md)]
 
+[AZURE.INCLUDE [powershell-preview-include.md](../includes/powershell-preview-include.md)]
+
 [AZURE.INCLUDE [virtual-networks-create-vnet-arm-ps-include](../includes/virtual-networks-create-vnet-arm-ps-include.md)]
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->

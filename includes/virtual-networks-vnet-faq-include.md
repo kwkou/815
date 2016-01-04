@@ -58,7 +58,7 @@ VNet 中使用的子网数量没有限制。所有子网都必须完全包含在
 
 ### 使用这些子网中的 IP 地址是否有任何限制？
 
-Azure 会保留每个子网中的某些 IP 地址。子网的第一个和最后一个 IP 地址仅为协议一致性而保留，其他两个地址用于 Azure 服务。
+Azure 会保留每个子网中的某些 IP 地址。子网的第一个和最后一个 IP 地址仅为协议一致性而保留，其他 3 个地址用于 Azure 服务。
 
 ### VNet 和子网的最小和最大容量是多少？
 
@@ -118,13 +118,13 @@ Azure 会保留每个子网中的某些 IP 地址。子网的第一个和最后�
 
 ### 是否可以将 VNet 连接到 Azure 中的另一个 VNet？
 
-是的。可以使用 REST API 或 Windows PowerShell 创建 VNet 到 VNet 通信。
+是的。可以使用 REST API 或 Windows PowerShell 创建 VNet 到 VNet 通信。请参阅[配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)。
 
 ## 名称解析 (DNS)
 
 ### VNet 的 DNS 选项有哪些？
 
-使用[](https://msdn.microsoft.com/zh-cn/library/azure/jj156088.aspx)“VM 和角色实例的名称解析”页的决策表，引导你浏览提供的所有 DNS 选项。
+使用“[VM 和角色实例的名称解析](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances)”页的决策表，引导你浏览提供的所有 DNS 选项。
 
 ### 是否可以为 VNet 指定 DNS 服务器？
 
@@ -205,7 +205,7 @@ Azure 提供的 DNS 是由 Microsoft 提供的多租户 DNS 服务。在此服�
 
 ### 创建 MAC 后，其地址是否在 VM 中保持不变？
 
-否。MAC地址仅会在虚机关机（释放）时更改。如果更改虚机大小，重启，服务修复或计划内维护，MAC地址将被保留。
+否。VM 的 MAC 地址可以因不同的原因更改。如果 VM 处于停止（释放）状态，如果更改 VM 大小，或者，如果没有主机服务器的服务修复或计划内的维护，MAC 地址则不会保留。
 
 ### 是否可以通过 VNet 中的 VM 连接到 Internet？
 
@@ -217,16 +217,9 @@ Azure 提供的 DNS 是由 Microsoft 提供的多租户 DNS 服务。在此服�
 
 只能在 VNet 中使用计算服务。计算服务仅限于云服务（Web 和辅助角色）和 VM。
 
-### 是否可以共同使用网站和虚拟网络？
+- [将 VNet 集成和混合连接用于网站](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
 
-否。不能在 VNet 中部署 Azure 网站。但是，如果 VNet 中配置了点到站点，网站则可以安全地连接和访问 Azure VNet 中的资源。有关详细信息，请参阅以下主题：
-
-- [网站虚拟网络集成](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)
-
-
-
-- [共同使用 VNet 集成和混合连接与网站](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
-
+- [将网站与 Azure 虚拟网络集成](/documentation/articles/web-sites-integrate-with-vnet)
 
 ### 是否可以在 VNet 中部署云服务与 Web 和辅助角色 (PaaS)？
 
@@ -264,4 +257,4 @@ VNet 相互之间以及与 Azure 基础结构中托管的其他服务之间完�
 
 是的。PowerShell 和命令行工具可用于各种平台。可在[此处](https://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx)找到更多信息。
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_1221_2015-->

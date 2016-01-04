@@ -4,12 +4,12 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
 <tags
-   ms.service="virtual-network"
-   ms.date="09/14/2015"
-   wacn.date="12/17/2015" />
+	ms.service="virtual-network"
+	ms.date="10/29/2015"
+	wacn.date=""/>
 
 # 虚拟网络概述
 
@@ -65,7 +65,6 @@ VNet 为部署到它们的 IaaS VM 和 PaaS 角色的角色实例提供以下服
 
 - **内部负载平衡器**。可以使用内部负载平衡器为从 VNet 中的其他服务访问的 IaaS VM 和 PaaS 角色实例提供高可用性。
 
-<!--若要了解有关 Azure 中的负载平衡的详细信息，请访问[负载平衡器概述](/documentation/articles/load-balancer-overview)。-->
 
 ## 网络安全组 (NSG)
 
@@ -84,9 +83,8 @@ VNet 为部署到它们的 IaaS VM 和 PaaS 角色的角色实例提供以下服
 - [创建 VNet](/documentation/articles/virtual-networks-create-vnet-classic-portal) 和子网。
 - [在 VNet 中创建 VM](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。
 - 了解 [NSG](/documentation/articles/virtual-networks-nsg)。
-<!--- 了解[负载平衡器](/documentation/articles/load-balancer-overview)。-->
 - [保留内部 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip)
 - [保留公共 IP 地址](/documentation/articles/virtual-networks-reserved-public-ip)。
 - 了解[用户定义的路由和 IP 转发](/documentation/articles/virtual-networks-udr-overview)。
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_1221_2015-->

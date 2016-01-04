@@ -1,18 +1,18 @@
 <properties 
-   pageTitle="实例级公共 IP (ILPIP)"
+   pageTitle="实例级公共 IP (ILPIP) | Windows Azure"
    description="了解 ILPIP (PIP) 以及如何对其进行管理"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.date="08/10/2015"
-   wacn.date="09/18/2015" />
+<tags
+	ms.service="virtual-network"
+	ms.date="11/11/2015"
+	wacn.date=""/>
 
 # 实例级公共 IP 概述
-实例级公共 IP (ILPIP) 是可直接向 VM 或角色实例而非 VM 或角色实例所在的云服务分配的 IP 地址。它不是用来代替分配给云服务的 VIP（虚拟 IP），而是可以用来直接连接到 VM 或角色实例的其他 IP 地址。
+实例级公共 IP (ILPIP) 是可直接向 VM 或角色实例而非 VM 或角色实例所在的云服务分配的公共 IP 地址。它不是用来代替分配给云服务的 VIP（虚拟 IP），而是可以用来直接连接到 VM 或角色实例的其他 IP 地址。
 
 >[AZURE.NOTE]在过去，ILPIP 称为 PIP，表示公共 IP。
 
@@ -22,8 +22,8 @@
 
 当你在 Azure 中创建云服务时，会自动创建相应的 DNS A 记录，以便通过完全限定的域名 (FQDN) 而非实际 VIP 来访问服务。系统会针对 ILPIP 执行相同的进程，以便通过 FQDN 而非 ILPIP 来访问 VM 或角色实例。例如，如果你创建了名为 *contosoadservice* 的云服务，并且通过两个实例配置了名为 *contosoweb* 的 Web 角色，则 Azure 会为实例注册以下 A 记录：
 
-- contosoweb_IN_0.contosoadservice.chinacloudapp.cn
-- contosoweb_IN_1.contosoadservice.chinacloudapp.cn 
+- contosoweb\_IN\_0.contosoadservice.chinacloudapp.cn
+- contosoweb\_IN\_1.contosoadservice.chinacloudapp.cn 
 
 >[AZURE.NOTE]你只能为每个 VM 或角色实例分配一个 ILPIP。每个订阅最多可使用 5 个 ILPIP。多 NIC VM 目前不支持 ILPIP。
 
@@ -31,8 +31,6 @@
 如果你希望能够通过直接分配的 IP 地址而非云服务 VIP:&lt;端口号&gt; 连接到 VM 或角色实例，则可为 VM 或角色实例请求 ILPIP。
 - **被动 FTP** - 在 VM 上分配 ILPIP 后，你就可以在几乎任何端口上接收流量，而不必打开终结点来接收流量。这样就可以启用与被动 FTP 类似的方案，以便动态选择端口。
 - **出站 IP** - 源自 VM 的出站流量与充当源的 ILPIP 一起出站，这样就可以针对外部实体来唯一地标识 VM。
-
->[AZURE.NOTE]使用保留 ILPIP 可能需要支付额外的 Azure 订阅费用。有关 ILPIP 定价的详细信息，请参阅 [IP 地址定价](/pricing/details/reserved-ip-addresses/)。
 
 ## 如何在 VM 创建期间请求 ILPIP
 下面的 PowerShell 脚本将创建名为 *FTPService* 的全新云服务，然后从 Azure 中检索映像，并使用检索到的映像创建名为 *FTPInstance* 的 VM，接着将 VM 设置为使用 ILPIP，最后再将 VM 添加到新服务：
@@ -120,6 +118,7 @@
 
 [保留 IP](/documentation/articles/virtual-networks-reserved-public-ip)
 
-[保留 IP REST API](https://msdn.microsoft.com/zh-CN/library/azure/dn722420.aspx)
+[保留 IP REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx)
+ 
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

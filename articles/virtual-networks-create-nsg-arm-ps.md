@@ -4,14 +4,14 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn"
    tags="azure-resource-manager"
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="10/08/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="10/21/2015"
+	wacn.date=""/>
 
 # 如何在 PowerShell 中创建 NSG
 
@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-intro-include](../includes/virtual-networks-create-nsg-intro-include.md)]
 
-本文介绍资源管理器部署模型。你还可以[在经典部署模型中创建 NSG](/documentation/articles/virtual-networks-create-nsg-classic-ps)。
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)]本文介绍资源管理器部署模型。你还可以[在经典部署模型中创建 NSG](/documentation/articles/virtual-networks-create-nsg-classic-ps)。
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-scenario-include](../includes/virtual-networks-create-nsg-scenario-include.md)]
 
@@ -28,25 +28,27 @@
 ## 如何为前端子网创建 NSG
 若要基于上述方案创建名为 *NSG-FrontEnd* 的 NSG，请执行下面的步骤。
 
+[AZURE.INCLUDE [powershell-preview-include.md](../includes/powershell-preview-include.md)]
+
 1. 如果你从未使用过 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)，并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
 
 3. 创建允许从 Internet 访问端口 3389 的安全规则。
 
-		$rule1 = New-AzureRMNetworkSecurityRuleConfig -Name rdp-rule -Description "Allow RDP" `
+		$rule1 = New-AzureNetworkSecurityRuleConfig -Name rdp-rule -Description "Allow RDP" `
 		    -Access Allow -Protocol Tcp -Direction Inbound -Priority 100 `
 		    -SourceAddressPrefix Internet -SourcePortRange * `
 		    -DestinationAddressPrefix * -DestinationPortRange 3389
 
 4. 创建允许从 Internet 访问端口 80 的安全规则。
 
-		$rule2 = New-AzureRMNetworkSecurityRuleConfig -Name web-rule -Description "Allow HTTP" `
+		$rule2 = New-AzureNetworkSecurityRuleConfig -Name web-rule -Description "Allow HTTP" `
 		    -Access Allow -Protocol Tcp -Direction Inbound -Priority 101 `
 		    -SourceAddressPrefix Internet -SourcePortRange * `
 		    -DestinationAddressPrefix * -DestinationPortRange 80
 
 5. 将上面创建的规则添加到名为 **NSG-FrontEnd** 的新 NSG。
 
-		$nsg = New-AzureRMNetworkSecurityGroup -ResourceGroupName TestRG -Location chinanorth -Name "NSG-FrontEnd" `
+		$nsg = New-AzureNetworkSecurityGroup -ResourceGroupName TestRG -Location chinanorth -Name "NSG-FrontEnd" `
 			-SecurityRules $rule1,$rule2
 
 6. 检查在 NSG 中创建的规则。
@@ -90,8 +92,8 @@
 
 6. 将上面创建的 NSG 与 *FrontEnd* 子网关联起来。
 
-		$vnet = Get-AzureRMVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
-		Set-AzureRMVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name FrontEnd `
+		$vnet = Get-AzureVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
+		Set-AzureVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name FrontEnd `
 			-AddressPrefix 192.168.1.0/24 -NetworkSecurityGroup $nsg
 
 	输出只显示 *FrontEnd* 子网设置，注意 **NetworkSecurityGroup** 属性值：
@@ -117,9 +119,11 @@
 		                        "ProvisioningState": "Succeeded"
 		                      }
 
+>[AZURE.WARNING]上述命令的输出显示虚拟网络配置对象的内容，该对象仅存在于运行 PowerShell 的计算机上。若要将这些设置保存到 Azure，需要运行 **Set-AzureVirtualNetwork** cmdlet。
+
 7. 将新的 VNet 设置保存到 Azure。
 
-		Set-AzureRMVirtualNetwork -VirtualNetwork $vnet
+		Set-AzureVirtualNetwork -VirtualNetwork $vnet
 
 	输出仅显示 NSG 部分：
 
@@ -132,26 +136,26 @@
 
 1. 创建允许从前端子网访问端口 1433（SQL Server 使用的默认端口）的安全规则。
 
-		$rule1 = New-AzureRMNetworkSecurityRuleConfig -Name frontend-rule -Description "Allow FE subnet" `
+		$rule1 = New-AzureNetworkSecurityRuleConfig -Name frontend-rule -Description "Allow FE subnet" `
 		    -Access Allow -Protocol Tcp -Direction Inbound -Priority 100 `
 		    -SourceAddressPrefix 192.168.1.0/24 -SourcePortRange * `
 		    -DestinationAddressPrefix * -DestinationPortRange 1433
 
 4. 创建阻止访问 Internet 的安全规则。
 
-		$rule2 = New-AzureRMNetworkSecurityRuleConfig -Name web-rule -Description "Block Internet" `
+		$rule2 = New-AzureNetworkSecurityRuleConfig -Name web-rule -Description "Block Internet" `
 		    -Access Deny -Protocol * -Direction Outbound -Priority 200 `
 		    -SourceAddressPrefix * -SourcePortRange * `
 		    -DestinationAddressPrefix Internet -DestinationPortRange *
 
 5. 将上面创建的规则添加到名为 **NSG-BackEnd** 的新 NSG。
 
-		$nsg = New-AzureRMNetworkSecurityGroup -ResourceGroupName TestRG -Location chinanorth `-Name "NSG-BackEnd" `
+		$nsg = New-AzureNetworkSecurityGroup -ResourceGroupName TestRG -Location chinanorth `-Name "NSG-BackEnd" `
 			-SecurityRules $rule1,$rule2
 
 6. 将上面创建的 NSG 与 *BackEnd* 子网关联起来。
 
-		Set-AzureRMVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name BackEnd `
+		Set-AzureVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name BackEnd `
 			-AddressPrefix 192.168.2.0/24 -NetworkSecurityGroup $nsg
 
 	输出只显示 *BackEnd* 子网设置，注意 **NetworkSecurityGroup** 属性值：
@@ -172,6 +176,6 @@
 
 7. 将新的 VNet 设置保存到 Azure。
 
-		Set-AzureRMVirtualNetwork -VirtualNetwork $vnet
+		Set-AzureVirtualNetwork -VirtualNetwork $vnet
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->
