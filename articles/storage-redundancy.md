@@ -10,8 +10,8 @@
 
 <tags 
   ms.service="storage" 
-  ms.date="10/07/2015" 
-  wacn.date="11/27/2015"/>
+  ms.date="10/20/2015" 
+  wacn.date="12/31/2015"/>
 
 # Azure 存储复制
 
@@ -19,9 +19,9 @@
 
 创建存储帐户时，必须选择以下复制选项之一：
 
-- [本地冗余存储空间 (LRS)](#locally-redundant-storage)
+- [本地冗余存储 (LRS)](#locally-redundant-storage)
 - [区域冗余存储空间 (ZRS)](#zone-redundant-storage)
-- [异地冗余存储空间 (GRS)](#geo-redundant-storage)
+- [异地冗余存储 (GRS)](#geo-redundant-storage)
 - [读取访问异地冗余存储 (RA-GRS)](#read-access-geo-redundant-storage)
 
 下表简要概述了 LRS、ZRS、GRS 和 RA-GRS 之间的差异，而后续章节将详细介绍每种类型的复制。
@@ -29,7 +29,7 @@
 
 |复制策略|LRS|ZRS|GRS|RA-GRS 
 |--------------------|---|---|---|------
-|数据在多个实施之间进行复制。|否|是|是|是|
+|数据在多个设施之间进行复制。|否|是|是|是|
 |可以从辅助位置和主位置读取数据。|否|否|否|是
 |在单独的节点上维护的数据副本数。|3|3|6|6
 
@@ -52,7 +52,7 @@
 区域冗余存储 (ZRS) 在两到三个设施之间复制数据（在单个区域内或两个区域之间），提供比 LRS 更高的持久性。如果你的存储帐户启用了 ZRS，即使其中一个设施出现故障，你的数据也能持久保存。
 
 
->[AZURE.NOTE] ZRS 当前仅适用于块 Blob，并且仅支持版本 2014-02-14 和更高版本。请注意，在创建存储帐户并选择区域冗余复制后，你无法将其转换为使用任何其他类型的复制，反之亦然。
+>[AZURE.NOTE]ZRS 当前仅适用于块 blob，并且仅在版本 2014-02-14 和更高版本中受支持。请注意，在创建存储帐户并选择区域冗余复制后，你无法将其转换为使用任何其他类型的复制，反之亦然。
 
 
 ##<a id="geo-redundant-storage"></a> 异地冗余存储 
@@ -85,4 +85,4 @@
 - [Azure 存储 SOSP 论文](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)  
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->
