@@ -1,33 +1,31 @@
 <properties 
 	pageTitle="高级存储：适用于 Azure 虚拟机工作负荷的高性能存储 | Windows Azure"
-	description="了解 Azure 高级存储磁盘。了解如何创建高级存储帐户。" 
+	description="高级存储为 Azure 虚拟机上运行的 I/O 密集型工作负载提供高性能、低延迟的磁盘支持。Azure DS 系列和 GS 系列 VM 支持高级存储。"
 	services="storage" 
 	documentationCenter="" 
-	authors="Selcin" 
-	manager="adinah" 
+	authors="tamram"
+	manager="carolz"
 	editor="tysonn"/>
 
 <tags 
 	ms.service="storage"
-	ms.date="08/06/2015"
-	wacn.date="12/16/2015"/>
+	ms.date="11/04/2015"
+	wacn.date="12/31/2015"/>
 
 
 # 高级存储：适用于 Azure 虚拟机工作负荷的高性能存储
 
 ## 概述
 
-欢迎使用 **Azure 高级存储磁盘**来加快 Azure 虚拟机的速度。
-
-随着新的高级存储的推出，Windows Azure 现在提供两种类型的持久性存储：**高级存储**和**标准存储**。高级存储将数据存储在采用最新技术的固态硬盘 (SSD) 上，而标准存储将数据存储在硬盘驱动器 (HDD) 上。 
-
-高级存储为 Azure 虚拟机上运行的 I/O 密集型工作负载提供高性能、低延迟的磁盘支持。可以将多个高级存储磁盘附加到虚拟机 (VM)。借助高级存储，应用程序对于每个 VM 可以具有多达 64 TB 的存储空间，对于每个 VM 可以实现 80,000 IOPS（每秒输入/输出操作数）和每秒 2000 MB 的磁盘吞吐量，并且读取操作的延迟非常低。
+Azure 高级存储为运行 I/O 密集型工作负荷的虚拟机提供高性能、低延迟的磁盘支持。在固态硬盘 (SSD) 上使用高级存储存储数据的虚拟机 (VM) 磁盘。可以将应用程序的 VM 磁盘迁移到 Azure 高级存储，以充分利用这些磁盘的速度和性能。
 
 
-若要开始使用 Azure 高级存储，请访问[开始免费试用](/pricing/1rmb-trial/)页。
+Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具有每个 VM 多达 64 TB 的存储空间。借助高级存储，应用程序对于每个 VM 可以实现 80,000 IOPS（每秒输入/输出操作数）和每秒 2000 MB 的磁盘吞吐量，并且读取操作的延迟非常低。
 
+>[AZURE.NOTE]建议将任何需要高 IOPS 的虚拟机磁盘迁移到 Azure 高级存储，以便你的应用程序实现最佳性能。如果你的磁盘不需要高 IOPS，你可以通过在标准存储（将虚拟机磁盘数据存储在硬盘驱动器 (HDD) 上而不是 SSD 上）中对其进行维护来限制成本。
 
-本文提供 Azure 高级存储的深入概述。
+若要开始使用 Azure 高级存储，请访问[开始免费试用](/zh-cn/pricing/1rmb-trial/)页。有关将现有的虚拟机迁移到高级存储的信息，请参阅[迁移到 Azure 高级存储](/documentation/articles/storage-migration-to-premium-storage)。
+
 
 ## 有关高级存储的重要事项
 
@@ -35,15 +33,15 @@
 
 - 若要使用高级存储，你必须有一个高级存储帐户。若要了解如何创建高级存储帐户，请参阅[为磁盘创建和使用高级存储帐户](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk)。
 
-- [Windows Azure 门户](https://manage.windowsazure.cn)中目前已提供高级存储且可通过以下 SDK 库来访问：[存储 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) 2014-02-14 或更高版本；[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 2014-10-01 或更高版本；[Azure PowerShell](/documentation/articles/powershell-install-configure) 0.8.10 或更高版本。
+- [Windows Azure 门户](https://manage.windowsazure.cn)中目前已提供高级存储且可通过以下 SDK 库来访问：[存储 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) 版本 2014-02-14 或更高版本；[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 版本 2014-10-01 或更高版本；[Azure PowerShell](/documentation/articles/powershell-install-configure) 版本 0.8.10 或更高版本。
 
 - 以下地区提供受限的高级存储：中国东部。
 
-- 高级存储仅支持 Azure 页 Blob，用于保存适用于 Azure 虚拟机 (VM) 的持久性磁盘。有关 Azure 页 blob 的信息，请参阅[了解块 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)。高级存储不支持 Azure 块 Blob、Azure 文件、Azure 表或 Azure 队列。
+- 高级存储仅支持 Azure 页 Blob，用于保存适用于 Azure 虚拟机 (VM) 的持久性磁盘。有关 Azure 页 Blob 的信息，请参阅[了解块 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)。高级存储不支持 Azure 块 Blob、Azure 文件、Azure 表或 Azure 队列。
 
 - 高级存储帐户是本地冗余 (LRS) 帐户，在单一区域内会保留三份数据。有关使用高级存储时的异地复制注意事项，请参阅本文中的[使用高级存储时的快照与复制 Blob](#snapshots-and-copy-blob-when-using-premium-storage) 部分。
 
-- 如果你希望 VM 磁盘使用高级存储帐户，你必须使用 DS 或 GS 系列的 VM。DS 或 GS 系列的 VM 可同时使用标准和高级存储磁盘。非 DS 或非 GS 系列的 VM 无法使用高级存储磁盘。有关可用 Azure VM 磁盘类型和大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)。
+- 如果你希望 VM 磁盘使用高级存储帐户，你必须使用 DS 或 GS 系列的 VM。DS 或 GS 系列的 VM 可同时使用标准和高级存储磁盘。非 DS 或非 GS 系列的 VM 无法使用高级存储磁盘。有关可用 Azure VM 磁盘类型和大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-size-specs)。
 
 - 为 VM 设置高级存储磁盘的过程，与设置标准存储磁盘的过程类似。你需要为 Azure 磁盘和 VM 选择最适合的高级存储选项。根据高级产品的性能特征，VM 大小应适合工作负载。有关详细信息，请参阅[使用高级存储时的缩放性和性能目标](#scalability-and-performance-targets-when-using-premium-storage)。
 
@@ -57,25 +55,28 @@
 - 首先创建新的高级存储帐户，然后在创建 VM 时使用它。
 - 创建新的 DS 或 GS 系列 VM。创建 VM 时，你可以选择以前创建的高级存储帐户、创建新的高级存储帐户，或者让 Azure 门户创建默认的高级帐户。
 
-Azure 使用存储帐户作为操作系统和数据磁盘的容器。换句话说，如果你创建 Azure DS 或 GS 系列的 VM 并选择 Azure 高级存储帐户，操作系统和数据磁盘会存储在该存储帐户中。
+Azure 使用存储帐户作为操作系统和数据磁盘的容器。换句话说，如果你创建 Azure DS 系列或 GS 系列的 VM 并选择 Azure 高级存储帐户，操作系统和数据磁盘会存储在该存储帐户中。
 
+
+有关将现有的虚拟机迁移到高级存储的信息，请参阅[迁移到 Azure 高级存储](/documentation/articles/storage-migration-to-premium-storage)。
 为充分利用高级存储的优点，请先使用帐户类型 *Premium_LRS* 创建一个高级存储帐户。为此，可以使用 [Windows Azure 门户](https://manage.windowsazure.cn)、[Azure PowerShell](/documentation/articles/powershell-install-configure) 或[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)。有关分步说明，请参阅[为磁盘创建和使用高级存储帐户](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk)。
+
 
 ### 重要说明：
 
-- 有关高级存储帐户的容量和带宽限制的详细信息，请参阅[使用高级存储时的缩放性和性能目标](#scalability-and-performance-targets-when-using-premium-storage) 部分。如果你的应用程序的需求超过了单个存储帐户的可伸缩性目标，则在生成应用程序时请让它使用多个存储帐户，并将数据分布在这些存储帐户中。例如，如果要将 51 TB 的磁盘附加到多个 VM，请将它们分布在两个存储帐户中，因为 32 TB 是单个高级存储帐户的限制。请确保单个高级存储帐户永远不会超过 35 TB 的设置磁盘。
-- 默认情况下，所有高级数据磁盘的磁盘缓存策略都是"只读的"，所有附加到 VM 的高级操作系统都是"读写的"。为使应用程序的 I/O 达到最佳性能，建议使用此配置设置。对于频繁写入或只写的磁盘（例如 SQL Server 日志文件），禁用磁盘缓存可获得更佳的应用程序性能。
+- 有关高级存储帐户的容量和带宽限制的详细信息，请参阅[使用高级存储时的缩放性和性能目标](#scalability-and-performance-targets-when-using-premium-storage)部分。如果你的应用程序的需求超过了单个存储帐户的可伸缩性目标，则在生成应用程序时请让它使用多个存储帐户，并将数据分布在这些存储帐户中。例如，如果要将 51 TB 的磁盘附加到多个 VM，请将它们分布在两个存储帐户中，因为 35 TB 是单个高级存储帐户的限制。请确保单个高级存储帐户永远不会超过 35 TB 的设置磁盘。
+- 默认情况下，所有高级数据磁盘的磁盘缓存策略都是“只读的”，所有附加到 VM 的高级操作系统都是“读写的”。为使应用程序的 I/O 达到最佳性能，建议使用此配置设置。对于频繁写入或只写的磁盘（例如 SQL Server 日志文件），禁用磁盘缓存可获得更佳的应用程序性能。
 - 确保 VM 上有足够的带宽来驱动磁盘通信。例如，STANDARD_DS1 VM 为高级存储磁盘通信提供每秒 32 MB 的专用带宽。这意味着，附加到此 VM 的 P10 高级存储磁盘最高只能达到每秒 32 MB，而不能像 P10 磁盘那样最高达到每秒 100 MB。同样，STANDARD_DS13 VM 可跨所有磁盘最高达到每秒 256 MB。目前，DS 系列上的最大 VM 是 STANDARD_DS14，它可以跨所有磁盘最高提供每秒 512 MB。GS 系列上的最大 VM 是 STANDARD_GS5，它可以跨所有磁盘最高提供每秒 2000 MB。
 
 	请注意，这些限制只适用于磁盘流量，而不包括缓存命中和网络流量。VM 网络通信可以使用单独的带宽，这不同于高级存储磁盘的专用带宽。
 	
-	有关 DS 和 GS 系列 VM 的最大 IOPS 与吞吐量（带宽）的最新信息，请参阅 [Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)。若要了解高级存储磁盘及其 IOPS 和吞吐量限制，请参阅本文的[使用高级存储时的缩放性和性能目标](#scalability-and-performance-targets-when-using-premium-storage) 部分中的表格。
+	有关 DS 系列和 GS 系列 VM 的最大 IOPS 与吞吐量（带宽）的最新信息，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-size-specs)。若要了解高级存储磁盘及其 IOPS 和吞吐量限制，请参阅本文的[使用高级存储时的缩放性和性能目标](#scalability-and-performance-targets-when-using-premium-storage)部分中的表格。
 
-> [AZURE.NOTE] 缓存命中数不受到磁盘配置 IOPS/吞吐量的限制。还就是说，当你在 DS 或 GS 系列 VM 上使用具有 ReadOnly 缓存设置的数据磁盘时，来自缓存的读取数不受到高级存储磁盘的限制。因此，如果工作负荷以读取为主，可以从磁盘获得极高的吞吐量。请注意，缓存根据 VM 大小受到 VM 级别不同的 IOPS / 吞吐量的限制。DS 系列 VM 大约有 4000 IOPS，缓存与本地 SSD IO 是每个核心 33 MB/秒。
+> [AZURE.NOTE]缓存命中数不受到磁盘配置 IOPS/吞吐量的限制。也就是说，当你在 DS 系列或 GS 系列 VM 上使用具有 ReadOnly 缓存设置的数据磁盘时，缓存提供的读取数不受高级存储磁盘限制的约束。因此，如果工作负荷以读取为主，可以从磁盘获得极高的吞吐量。请注意，缓存根据 VM 大小受到 VM 级别不同的 IOPS / 吞吐量的限制。DS 系列 VM 大约有 4000 IOPS，缓存与本地 SSD IO 是每个核心 33 MB/秒。
 
-- 可以在同一个 DS 或 GS 系列 VM 中使用高级和标准存储磁盘。
+- 可以在同一个 DS 系列或 GS 系列 VM 中同时使用高级和标准存储磁盘。
 - 使用高级存储时，可以设置 DS 系列 VM 并将多个持久性数据磁盘附加到 VM。如有需要，可以跨磁盘条带化，以增加卷的容量与性能。如果你使用[存储空间](http://technet.microsoft.com/zh-cn/library/hh831739.aspx)来条带化高级存储数据磁盘，应该以使用的每个磁盘一个列的方式来配置它。否则，条带化卷的整体性能可能会低于预期，因为磁盘之间的通信分配不平均。默认情况下，服务器管理器用户界面 (UI) 可让你设置最多包含 8 个磁盘的列。但如果磁盘超过 8 个，则你必须使用 PowerShell 来创建卷，并手动指定列数。否则，即使你有更多磁盘，服务器管理器 UI 仍会继续使用 8 个列。例如，如果在一个条带集中有 32 个磁盘，则你应该指定 32 列。可以使用 [New-VirtualDisk](http://technet.microsoft.com/zh-cn/library/hh848643.aspx) PowerShell cmdlet 的 *NumberOfColumns* 参数来指定虚拟磁盘使用的列数。有关详细信息，请参阅[存储空间概述](http://technet.microsoft.com/zh-cn/library/jj822938.aspx)和[存储空间常见问题](http://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx)。
-- 避免将 DS 系列虚拟机添加到包含非 DS 系列 VM 的现有云服务。可能的解决方法是将现有 VHD 迁移到只运行 DS 系列 VM 的新云服务。如果想要保留托管 DS 系列 VM 的新云服务的相同虚拟 IP 地址 (VIP)，请使用[保留 IP 地址](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)功能。GS 系列 VM 只能添加到运行 GS 系列 VM 的现有云服务。
+- 避免将 DS 系列虚拟机添加到包含非 DS 系列 VM 的现有云服务。可能的解决方法是将现有 VHD 迁移到只运行 DS 系列 VM 的新云服务。如果想要保留托管 DS 系列 VM 的新云服务的相同虚拟 IP 地址 (VIP)，请使用[保留 IP 地址](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)功能。GS 系列 VM 只能添加到运行 G 系列 VM 的现有云服务。
 - 可以将 DS 系列 Azure 虚拟机配置为使用标准存储帐户或高级存储帐户上托管的操作系统 (OS) 磁盘。如果 OS 磁盘只是用于引导，则你可以考虑使用基于标准存储的 OS 磁盘。这样既可以提高性价比，又可以在引导后提供类似于高级存储的性能。如果在除引导以外的 OS 磁盘上执行任何其他任务，请使用高级存储，因为它提供更好的性能。例如，如果你的应用程序要与 OS 磁盘相互读/写数据，则使用基于高级存储的 OS 磁盘可为 VM 提供更好的性能。
 - 可以对高级存储使用 [Azure 命令行界面 (Azure CLI)](/documentation/articles/xplat-cli-install)。若要使用 Azure CLI 更改某个磁盘上的缓存策略，请运行以下命令：
 
@@ -157,14 +158,14 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 有关详细信息，请参阅 [Azure 存储缩放性和性能目标](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)。
 
 ## 使用高级存储时的限制
-如果应用程序的 IOPS 或吞吐量超出了分配的高级存储磁盘限制，或者 VM 上所有磁盘的总磁盘通信超出了 VM 可用的磁盘带宽限制，则可能会有限制情况。若要避免限制，建议根据设置的磁盘缩放性和性能目标，以及 VM 可用的磁盘带宽，来限制磁盘的挂起 I/O 请求数。  
+如果应用程序的 IOPS 或吞吐量超出了分配的高级存储磁盘限制，或者 VM 上所有磁盘的总磁盘通信超出了 VM 可用的磁盘带宽限制，则可能会有限制情况。若要避免限制，建议根据设置的磁盘缩放性和性能目标，以及 VM 可用的磁盘带宽，来限制磁盘的挂起 I/O 请求数。
 
 当应用程序设计为避免限制情况时，可以达到最低延迟。另一方面，如果磁盘的挂起 I/O 请求数过小，应用程序便无法利用磁盘可用的最大 IOPS 和吞吐量级别。
 
 以下示例演示了如何计算限制级别：
 
 ### 示例 1：
-在 P10 磁盘上，应用程序一秒内有 495 个 16 KB 磁盘大小的 I/O（相当于 495 个 I/O 单位）。如果你在该秒内尝试 2 MB 的 I/O，I/O 单位的总数会等于 495 + 8。这是因为当 I/O 单位大小是 256 KB 时，2 MB 的 I/O 会产生 2048 KB / 256 KB = 8 个 I/O 单位。因为 495 + 8 的总和超出磁盘 500 的 IOPS 限制，因此会发生限制情况。 
+在 P10 磁盘上，应用程序一秒内有 495 个 16 KB 磁盘大小的 I/O（相当于 495 个 I/O 单位）。如果你在该秒内尝试 2 MB 的 I/O，I/O 单位的总数会等于 495 + 8。这是因为当 I/O 单位大小是 256 KB 时，2 MB 的 I/O 会产生 2048 KB / 256 KB = 8 个 I/O 单位。因为 495 + 8 的总和超出磁盘 500 的 IOPS 限制，因此会发生限制情况。
 
 ### 注意： 
 所有计算都是基于 256 KB 的 I/O 单位大小。
@@ -341,7 +342,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
     	Add-AzureProvisioningConfig -Windows -VM $vm -AdminUsername $adminName -Password $adminPassword
     	New-AzureVM -ServiceName $vmName -VMs $VM -Location $location
 
-4. 如果希望 VM 有更多的磁盘空间，请在创建虚拟机后于控制台窗口中运行以下 PowerShell cmdlet 以将新的数据磁盘附加到现有 DS 或 GS 系列 VM。
+4. 如果希望 VM 有更多的磁盘空间，请在创建虚拟机后于控制台窗口中运行以下 PowerShell cmdlet 以将新的数据磁盘附加到现有 DS 系列或 GS 系列 VM。
 
     	$storageAccount = "yourpremiumaccount"
     	$vmName ="yourVM"
@@ -381,7 +382,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 
 [对 Azure 高级存储使用 Blob 服务操作](https://msdn.microsoft.com/zh-cn/library/dn889922.aspx)
 
-[创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [迁移到 Azure 高级存储](/documentation/articles/storage-migration-to-premium-storage)。[创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 
 [Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)
 
@@ -391,4 +392,4 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->
