@@ -1,8 +1,8 @@
 # Use Microsoft Azure Content Delivery Network
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/cdn)
-- [English Version](/documentation/articles/cdn-enus)
+- [Chinese Version](/documentation/includes/cdn)
+- [English Version](/documentation/includes/cdn-enus)
 
 
 Microsoft Azure Content Delivery Network caches static content in storage blobs, cloud services, and websites on the Azure platform by using large numbers of physical nodes that are distributed across mainland China to provide developers with a solution for delivering high-bandwidth content. This network also currently supports the use of origins that are not deployed on the Azure platform.
