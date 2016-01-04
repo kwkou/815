@@ -7,10 +7,10 @@
    manager="adinah"
    editor="joaoma" />
 
-<tags 
-   ms.service="traffic-manager"
-   ms.date="08/19/2015"
-   wacn.date="10/03/2015" />
+<tags
+	ms.service="traffic-manager"
+	ms.date="11/12/2015"
+	wacn.date=""/>
 
 
 # 流量管理器的性能注意事项
@@ -18,13 +18,13 @@
 
 有关 Azure 流量管理器处理其可能引起的潜在性能问题的常见问题。这些问题通常类似于“流量管理器会给我的网站带来多长时间的延迟？”、“我的监视站点显示昨天我的网站慢了几个小时 – 在那个时候是否存在任何流量管理器问题？”、“流量管理器的服务器位于何处？ 我想要确保它们与我的网站位于同一数据中心，以便性能不受影响”。
 
-此页面将探讨流量管理器可能会给网站带来的直接性能影响。如果你在美国东部和亚洲各有一个网站，而美国东部网站的流量管理器探测器出现故障，则会将你的所有用户定向到亚洲网站，你会看出性能影响，但这种性能影响与流量管理器本身无关。
+此页面将探讨流量管理器可能会给网站带来的直接性能影响。如果你在中国东部和亚洲各有一个网站，而中国东部网站的流量管理器探测器出现故障，则会将你的所有用户定向到亚洲网站，你会看出性能影响，但这种性能影响与流量管理器本身无关。
 
   
 
 ## 有关流量管理器工作原理的重要说明
 
-http://msdn.microsoft.com/zh-cn/library/azure/hh744833.aspx 是了解流量管理器工作原理的绝佳资源，但该页面的信息量很大，难以挑选出涉及性能的关键信息。MSDN 文档中需要查看的要点是图像 3 中的步骤 5 和 步骤 6，以下将详细介绍这两个步骤：
+[流量管理器概述](/documentation/articles/traffic-manager-overview)是了解流量管理器工作原理的绝佳资源，但该页面的信息量很大，难以挑选出涉及性能的关键信息。MSDN 文档中需要查看的要点是图像 3 中的步骤 5 和 步骤 6，以下将详细介绍这两个步骤：
 
 - 流量管理器实质上只做一件事 – DNS 解析。这意味着流量管理器对你的网站会产生的唯一性能影响就是初始 DNS 查找。
 - 有关流量管理器 DNS 查找需要澄清的一点。流量管理器根据你的策略和探测器结果填充并定期更新常规的 Microsoft DNS 根服务器。流量管理器甚至不会参与初始 DNS 查找，因为 DNS 请求由常规 Microsoft DNS 根服务器处理。如果流量管理器出现故障（即，VM 在执行策略探测和 DNS 更新的过程中发生故障），也不会对流量管理器 DNS 名称产生任何影响，因为系统仍会保留 Microsoft DNS 服务器中的条目 – 产生的唯一影响是，不会执行基于策略的探测和更新（即，如果你的主站点出现故障，流量管理器将无法更新 DNS 来指向你的故障转移站点）。
@@ -63,7 +63,7 @@ http://www.watchmouse.com/en/checkit.php
 
 ![pulse1](./media/traffic-manager-performance-considerations/traffic-manager-web-site-watchmouse.png)
 
-http://tools.pingdom.com/ – 测试网站并为可视图形页面上的每个元素提供性能统计信息。如果你切换到“页面分析”选项卡，则可以看到执行 DNS 查找的耗时百分比。
+http://tools.pingdom.com/ – 这将测试网站并为可视图形页面上的每个元素提供性能统计信息。如果你切换到“页面分析”选项卡，则可以看到执行 DNS 查找的耗时百分比。
 
  
 
@@ -81,17 +81,13 @@ http://www.digwebinterface.com – 类似于 Watchmouse 站点，但此站点显
 ## 后续步骤
 
 
-[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)
+[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-load-balancing-methods)
 
-[什么是流量管理器？](/documentation/articles/traffic-manager-overview)
-
-[云服务](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
-
-[网站](/home/features/web-site/)
+[测试流量管理器设置](/documentation/articles/traffic-manager-testing-settings)
 
 [流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
 
 [Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
  
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_1221_2015-->

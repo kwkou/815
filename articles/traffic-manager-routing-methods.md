@@ -4,12 +4,12 @@
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="traffic-manager"
-   ms.date="08/19/2015"
-   wacn.date="11/02/2015" />
+<tags
+	ms.service="traffic-manager"
+	ms.date="11/12/2015"
+	wacn.date=""/>
 
 # 流量管理器路由方法
 
@@ -119,18 +119,11 @@
 
 ## 后续步骤
 
-[什么是流量管理器？](/documentation/articles/traffic-manager-overview)
+[流量管理器监视](/documentation/articles/traffic-manager-monitoring)
 
-[关于流量管理器监视](/documentation/articles/traffic-manager-monitoring)
+[创建配置文件](/documentation/articles/traffic-manager-manage-profiles)
 
-[流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-CN/library/hh758255.aspx)
-
-[云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)
-
-[网站](/home/features/web-site/)
-
-[Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
-
+[添加终结点](/documentation/articles/traffic-manager-endpoints)
  
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_1221_2015-->

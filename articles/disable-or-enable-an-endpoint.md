@@ -1,15 +1,15 @@
 <properties
-   pageTitle="禁用或启用流量管理器终结点 | Azure"
+   pageTitle="禁用或启用流量管理器终结点 | Windows Azure"
    description="本文将帮助你禁用或启用流量管理器配置文件终结点。"
    services="traffic-manager"
    documentationCenter="na"
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="traffic-manager"
-   ms.date="08/19/2015"
-   wacn.date="10/03/2015" />
+<tags
+	ms.service="traffic-manager"
+	ms.date="11/12/2015"
+	wacn.date=""/>
 
 # 禁用或启用流量管理器终结点
 
@@ -36,13 +36,8 @@
 
 [流量管理器 - 禁用、启用或删除配置文件](/documentation/articles/disable-enable-or-delete-a-profile)
 
-[什么是流量管理器？](/documentation/articles/traffic-manager)
+[流量管理器降级状态疑难解答](/documentation/articles/traffic-manager-troubleshooting-degraded)
 
-[云服务](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
+[流量管理器性能注意事项](/documentation/articles/traffic-manager-performance-considerations)
 
-[网站](/documentation/services/web-sites/)
-
-
-[流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
-
-<!---HONumber=71-->
+<!---HONumber=Mooncake_1221_2015-->
