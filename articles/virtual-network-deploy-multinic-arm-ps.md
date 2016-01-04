@@ -25,7 +25,7 @@
 
 由于目前你不能使用具有单个 NIC 的 VM 以及具有同一个资源组中的多个 NIC 的 VM，因此你将在一个资源组中实现后端服务器，而在其他资源组中实现所有其他组件。以下步骤使用名为 *IaaSStory* 的资源组作为主资源组，并在名为 *IaaSStory-BackEnd* 的资源组中实现后端服务器。
 
-## 先决条件
+##<a name="Prerequisites"></a> 先决条件
 
 在部署后端服务器之前，你需要先使用此方案的所有必需资源部署主资源组。若要部署这些资源，请按照以下步骤操作。
 
@@ -47,7 +47,7 @@
 
 ### 步骤 1 - 启动脚本
 
-你可以在[此处](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/arm/multinic.ps1)下载所用的完整 PowerShell 脚本。请按照以下步骤更改要在你的环境中使用的脚本。
+你可以在[此处](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/arm/virtual-network-deploy-multinic-arm-ps.ps1)下载所用的完整 PowerShell 脚本。请按照以下步骤更改要在你的环境中使用的脚本。
 
 1. 基于你在上面[先决条件](#Prerequisites)中部署的现有资源组更改以下变量的值。
 

@@ -46,13 +46,9 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
 
 ####带令牌的 AES 加密 
 
-[http://aestoken.azurewebsites.net]("http://aestoken.azurewebsites.net)
+[http://aestoken.azurewebsites.net](http://aestoken.azurewebsites.net)
 
 ###Silverlight 播放器
-
-####监视
-
-[http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor)
 
 ####带令牌的 PlayReady
 

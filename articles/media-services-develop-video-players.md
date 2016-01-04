@@ -45,7 +45,7 @@ Windows Azure 媒体服务允许播放使用 DASH、平滑流和 HLS 流格式�
 - [Microsoft 媒体平台：播放器框架](http://playerframework.codeplex.com/) 
 - [HTML5 Player Framework 文档](http://playerframework.codeplex.com/wikipage?title=HTML5%20Player&referringTitle=Documentation) 
 - [Microsoft Smooth Streaming Plugin for OSMF](https://www.microsoft.com/download/details.aspx?id=36057) 
-- [授权 Microsoft® 平滑流式处理客户端移植工具包](http://aka.ms/sspk) 
+- [授权 Microsoft® 平滑流式处理客户端移植工具包](/documentation/articles/media-services-sspk) 
 - [XBOX 视频应用程序开发](http://xbox.create.msdn.com/) 
  
 

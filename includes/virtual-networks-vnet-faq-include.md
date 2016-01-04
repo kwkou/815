@@ -118,8 +118,7 @@ Azure 会保留每个子网中的某些 IP 地址。子网的第一个和最后�
 
 ### 是否可以将 VNet 连接到 Azure 中的另一个 VNet？
 
-是的。可以使用 REST API 或 Windows PowerShell 创建 VNet 到 VNet 通信。请参阅[配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)。
-
+是的。可以使用 REST API 或 Windows PowerShell 创建 VNet 到 VNet 通信。
 ## 名称解析 (DNS)
 
 ### VNet 的 DNS 选项有哪些？
@@ -219,8 +218,6 @@ Azure 提供的 DNS 是由 Microsoft 提供的多租户 DNS 服务。在此服�
 
 - [将 VNet 集成和混合连接用于网站](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
 
-- [将网站与 Azure 虚拟网络集成](/documentation/articles/web-sites-integrate-with-vnet)
-
 ### 是否可以在 VNet 中部署云服务与 Web 和辅助角色 (PaaS)？
 
 是的。可以在 VNet 中部署 PaaS 服务。
@@ -253,8 +250,5 @@ VNet 相互之间以及与 Azure 基础结构中托管的其他服务之间完�
 
 是的。可以使用 REST API 管理 VNet 和跨界连接。可在[此处](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)找到更多信息。
 
-### 是否有 VNet 的工具支持？
-
-是的。PowerShell 和命令行工具可用于各种平台。可在[此处](https://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx)找到更多信息。
 
 <!---HONumber=Mooncake_1221_2015-->

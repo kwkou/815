@@ -270,7 +270,6 @@ NSG 规则包含以下属性。
 ## 后续步骤
 
 - [在经典部署模型中部署 NSG](/documentation/articles/virtual-networks-create-nsg-classic-ps)。
-- [在资源管理器中部署 NSG](/documentation/articles/virtual-networks-create-nsg-arm-pportal)。
 - [管理 NSG 日志](/documentation/articles/virtual-network-nsg-manage-log)。
 
 <!---HONumber=Mooncake_1221_2015-->
