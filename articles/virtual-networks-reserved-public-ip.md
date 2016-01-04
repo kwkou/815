@@ -1,15 +1,15 @@
 <properties 
-   pageTitle="保留 IP"
-   description="了解保留 IP、VIP、ILPIP 以及如何对其进行管理"
+   pageTitle="保留 IP | Windows Azure"
+   description="了解保留 IP 以及如何对其进行管理"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.date="08/17/2015"
-   wacn.date="09/18/2015" />
+<tags
+	ms.service="virtual-network"
+	ms.date="11/11/2015"
+	wacn.date=""/>
 
 # 保留 IP 概述
 Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 Azure 管理的公共 IP 地址默认为动态 IP 地址。这意味着，用于给定云服务的 IP 地址 (VIP) 或用于直接访问 VM 或角色示例的 IP 地址 (ILPIP) 可能会在关闭资源或释放资源的情况下不时进行更改。
@@ -23,13 +23,13 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 A
 
 ## 常见问题
 1. 可以将保留 IP 用于所有 Azure 服务吗？  
-  - 保留 IP 只能用于 VM 和云服务实例角色。
+  - 保留 IP 只能用于通过 VIP 公开的 VM 和云服务实例角色。
 1. 我可以有多少个保留 IP？  
-  - 目前，所有 Azure 订阅都有权使用 20 个保留 IP。不过，你可以请求更多的保留 IP。
+  - 目前，所有 Azure 订阅都有权使用 20 个保留 IP。不过，你可以请求更多的保留 IP。请参阅[订阅和服务限制](/documentation/articles/azure-subscription-service-limits)页以获取更多的信息。
 1. 保留 IP 是否收费？ 
-  - 请参阅[保留 IP 地址定价详细信息](/pricing/details/reserved-ip-addresses/)以获取定价信息。
+  - 请参阅[保留 IP 地址定价详细信息](/pricing/details/reserved-ip-addresses)以获取定价信息。
 1. 如何保留某个 IP 地址？ 
-  - 你可以使用 PowerShell 或 [Azure 管理 REST API](https://msdn.microsoft.com/zh-CN/library/azure/dn722420.aspx) 来请求特定区域的保留 IP。Azure 会保留该区域的 IP 地址并将其关联到你的订阅。然后，你就可以使用该区域的保留 IP。你不能使用管理门户来保留 IP 地址。
+  - 你可以使用 PowerShell 或 [Azure 管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx) 来请求特定区域的保留 IP。Azure 会保留该区域的 IP 地址并将其关联到你的订阅。然后，你就可以使用该区域的保留 IP。你不能使用管理门户来保留 IP 地址。
 1. 我可以将保留 IP 用于基于地缘组的 VNet 吗？ 
   - 仅区域 VNet 支持保留 IP。与地缘组关联的 VNet 不支持保留 IP。有关如何将 VNet 与区域或地缘组关联的详细信息，请参阅[关于区域 VNet 和地缘组](/documentation/articles/virtual-networks-migrate-to-regional-vnet)。 
 
@@ -115,4 +115,4 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 A
 
 - 查阅[保留 IP REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx)。
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

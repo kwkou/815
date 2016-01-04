@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="10/29/2015"
+	wacn.date=""/>
 
 #简要介绍并比较 Azure 按需媒体编码器
 
@@ -34,7 +34,7 @@ Media Services 所提供的动态打包可让你以 Media Services 支持的流�
 
 本文简要概述了按需媒体编码器，并提供了指向介绍更多详细信息的文章的链接。本主题还提供了编码器的比较。
 
-请注意，默认情况下每个媒体服务帐户同时只能有一个活动的编码任务。你可以保留编码单元，使用它们可以同时运行多个编码任务，你购买的每个编码保留单位对应一个任务。有关信息，请参阅[缩放编码单元](/documentation/articles/media-services-portal-encoding-units)。
+请注意，默认情况下每个媒体服务帐户同时只能有一个活动的编码任务。你可以保留编码单元，使用它们可以同时运行多个编码任务，你购买的每个编码保留单位对应一个任务。有关信息，请参阅[缩放编码单位](/documentation/articles/media-services-portal-encoding-units)。
 
 ##媒体编码器标准版
 <a name="media_encoder_standard"></a>
@@ -67,6 +67,10 @@ Media Services 所提供的动态打包可让你以 Media Services 支持的流�
 编码器输入元数据在[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783120.aspx)说明。
 
 编码器输出元数据在[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx)说明。
+
+###缩略图
+
+有关如何生成缩略图的信息，请参阅[如何使用媒体编码器标准版来生成缩略图](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes)。
 
 ###音频和/或视频叠加
 
@@ -147,6 +151,7 @@ AVI（8 位/10 位未压缩）|是|是 |是
 平滑流文件格式 (PIFF 1.3)|是|是|否
 [Microsoft Digital Video Recording(DVR-MS)](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dd692984)|是|否|否
 Matroska/WebM |是|否|否
+QuickTime (.mov) |是|否|否
 
 ###输入视频编解码器
 
@@ -162,6 +167,12 @@ Windows Media 视频/VC-1 |是|是|是
 Canopus HQ/HQX |否|是|否
 Mpeg-4 第 2 部分 |是|否|否
 [Theora](https://zh.wikipedia.org/wiki/Theora) |是|否|否
+Apple ProRes 422 |是|否|否
+Apple ProRes 422 LT |是|否|否
+Apple ProRes 422 HQ |是|否|否
+Apple ProRes Proxy|是|否|否
+Apple ProRes 4444 |是|否|否
+Apple ProRes 4444 XQ |是|否|否
 
 ###输入音频编解码器
 
@@ -220,6 +231,14 @@ MP3 (MPEG-1 Audio Layer 3)|否|否|是
 Windows Media 音频|否|是|是
 
 
+
+
+
+##提供反馈
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
+
 ##相关文章
 
 - [配额和限制](/documentation/articles/media-services-quotas-and-limitations)
@@ -228,4 +247,4 @@ Windows Media 音频|否|是|是
 <!--Reference links in article-->
 [1]: /home/features/media-services/#price
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->

@@ -6,10 +6,10 @@
    authors="joaoma"
    manager="adinah"
    editor="tysonn" />
-<tags 
-   ms.service="traffic-manager"
-   ms.date="08/19/2015"
-   wacn.date="10/17/2015" />
+<tags
+	ms.service="traffic-manager"
+	ms.date="11/12/2015"
+	wacn.date=""/>
 
 # 配置故障转移路由方法
 
@@ -24,7 +24,7 @@
 3. 在你的配置文件页面上，单击页面顶部的“终结点”并验证你要在配置中包括的云服务和网站（终结点）是否都存在。有关添加或删除终结点的步骤，请参阅[在流量管理器中管理终结点](/documentation/articles/traffic-manager-endpoints)。
 4. 在你的配置文件页面上，单击顶部的“配置”以打开配置页面。
 5. 对于“流量路由方法设置”，验证负载流量路由是否是“故障转移”。如果不是，请在下拉列表中单击“故障转移”。
-6. 对于“故障转移优先级列表”，请调整你的终结点的故障转移顺序。如果选择了“故障转移”流量路由方法，则所选终结点的顺序很重要。主终结点位于顶部。请使用向上和向下箭头根据需要更改顺序。有关如何使用 Windows PowerShell 设置故障转移优先级的信息，请参阅 [Set-AzureTrafficManagerProfile](https://msdn.microsoft.com/library/dn690254.aspx)。
+6. 对于“故障转移优先级列表”，请调整你的终结点的故障转移顺序。如果选择了“故障转移”流量路由方法，则所选终结点的顺序很重要。主终结点位于顶部。请使用向上和向下箭头根据需要更改顺序。有关如何使用 Windows PowerShell 设置故障转移优先级的信息，请参阅 [Set-AzureTrafficManagerProfile](https://msdn.microsoft.com/zh-cn/library/dn690254.aspx)。
 7. 验证是否已正确配置了“监视设置”。监视可确保不会向处于脱机状态的终结点发送流量。为了监视终结点，必须指定路径和文件名。注意，正斜杠“/”是有效的相对路径条目，表示该文件位于根目录（默认值）中。有关监视的详细信息，请参阅[流量管理器监视](/documentation/articles/traffic-manager-monitoring)。
 8. 完成你的配置更改后，单击页面底部的“保存”。
 9. 测试你的配置更改。有关详细信息，请参阅[测试流量管理器设置](/documentation/articles/traffic-manager-testing-settings)。
@@ -32,21 +32,20 @@
 
 ## 后续步骤
 
-[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-load-balancing-methods)
+[将公司 Internet 域指向流量管理器域](/documentation/articles/traffic-manager-point-internet-domain)
 
-[什么是流量管理器？](/documentation/articles/traffic-manager-overview)
+[流量管理器路由方法](/documentation/articles/traffic-manager-load-balancing-methods)
+
+[配置轮循机制路由方法](/documentation/articles/traffic-manager-configure-round-robin-routing-method)
+
+[配置性能路由方法](/documentation/articles/traffic-manager-configure-performance-routing-method)
+
+[流量管理器降级状态疑难解答](/documentation/articles/traffic-manager-troubleshooting-degraded)
 
 [流量管理器 - 禁用、启用或删除配置文件](/documentation/articles/disable-enable-or-delete-a-profile)
 
 [流量管理器 - 禁用或启用终结点](/documentation/articles/disable-or-enable-an-endpoint)
 
-[云服务](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
-
-[网站](/home/features/web-site/)
-
-[流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
-
-[Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
  
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_1221_2015-->

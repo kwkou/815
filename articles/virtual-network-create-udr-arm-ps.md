@@ -4,14 +4,14 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-resource-manager"
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="10/08/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="10/21/2015"
+	wacn.date=""/>
 
 #在 PowerShell 中创建用户定义的路由 (UDR)
 
@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [virtual-network-create-udr-intro-include.md](../includes/virtual-network-create-udr-intro-include.md)]
 
-本文介绍资源管理器部署模型。你还可以[在经典部署模型中创建 UDR](/documentation/articles/virtual-network-create-udr-classic-ps)。
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)]本文介绍资源管理器部署模型。你还可以[在经典部署模型中创建 UDR](/documentation/articles/virtual-network-create-udr-classic-ps)。
 
 [AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../includes/virtual-network-create-udr-scenario-include.md)]
 
@@ -30,25 +30,33 @@
 ## 为前端子网创建 UDR
 若要根据上述方案为前端子网创建所需的路由表和路由，请按照下面的步骤操作。
 
+[AZURE.INCLUDE [powershell-preview-include.md](../includes/powershell-preview-include.md)]
+
 3. 创建一个路由，用于发送目标至后端子网 (192.168.2.0/24) 的所有流量，然后路由到 **FW1** 虚拟设备 (192.168.0.4)。
 
-		$route = New-AzureRMRouteConfig -Name RouteToBackEnd `
+		$route = New-AzureRouteConfig -Name RouteToBackEnd `
 		    -AddressPrefix 192.168.2.0/24 -NextHopType VirtualAppliance `
 		    -NextHopIpAddress 192.168.0.4
 
 4. 在 **chinanorth** 区域中创建一个名为 **UDR-FrontEnd** 的路由表，其中包含上面创建的路由。
 
-		$routeTable = New-AzureRMRouteTable -ResourceGroupName TestRG -Location chinanorth `
+		$routeTable = New-AzureRouteTable -ResourceGroupName TestRG -Location chinanorth `
 		    -Name UDR-FrontEnd -Route $route
 
-5. 创建一个变量，包含该子网所在的 VNet。在我们方案中，VNet 名为 **TestVNet**。
+5. 创建一个变量，包含该子网所在的 VNet。在我们的方案中，VNet 名为 **TestVNet**。
 
-		$vnet = Get-AzureRMVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
+		$vnet = Get-AzureVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
 
 6. 将上面创建的路由表与 **FrontEnd** 子网关联起来。
 		
-		Set-AzureRMVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name FrontEnd `
+		Set-AzureVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name FrontEnd `
 			-AddressPrefix 192.168.1.0/24 -RouteTable $routeTable
+
+>[AZURE.WARNING]上述命令的输出显示虚拟网络配置对象的内容，该对象仅存在于运行 PowerShell 的计算机上。若要将这些设置保存到 Azure，需要运行 **Set-AzureVirtualNetwork** cmdlet。
+
+7. 将新的子网配置保存在 Azure 中。
+
+		Set-AzureVirtualNetwork -VirtualNetwork $vnet
 
 	预期输出：
 
@@ -88,7 +96,7 @@
 		                          }
 		                        ],
 		                        "NetworkSecurityGroup": {
-		                          "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/networkSecurityGroups/NSG-BackEnd"
+		                          "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/networkSecurityGroups/NSG-FrontEnd"
 		                        },
 		                        "RouteTable": {
 		                          "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/routeTables/UDR-FrontEnd"
@@ -96,26 +104,30 @@
 		                        "ProvisioningState": "Succeeded"
 		                      },
 								...
-		                    ]
+		                    ]	
 
 ## 为后端子网创建 UDR
 若要根据上述方案为后端子网创建所需的路由表和路由，请按照下面的步骤操作。
 
 1. 创建一个路由，用于发送目标至前端子网 (192.168.1.0/24) 的所有流量，然后路由到 **FW1** 虚拟设备 (192.168.0.4)。
 
-		$route = New-AzureRMRouteConfig -Name RouteToFrontEnd `
+		$route = New-AzureRouteConfig -Name RouteToFrontEnd `
 		    -AddressPrefix 192.168.1.0/24 -NextHopType VirtualAppliance `
 		    -NextHopIpAddress 192.168.0.4
 
 4. 在 **uswest** 区域中创建一个名为 **UDR-BackEnd** 的路由表，其中包含上面创建的路由。
 
-		$routeTable = New-AzureRMRouteTable -ResourceGroupName TestRG -Location chinanorth `
+		$routeTable = New-AzureRouteTable -ResourceGroupName TestRG -Location chinanorth `
 		    -Name UDR-BackEnd -Route $route
 
 5. 将上面创建的路由表与 **BackEnd** 子网关联起来。
 
-		Set-AzureRMVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name BackEnd `
+		Set-AzureVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name BackEnd `
 			-AddressPrefix 192.168.2.0/24 -RouteTable $routeTable
+
+7. 将新的子网配置保存在 Azure 中。
+
+		Set-AzureVirtualNetwork -VirtualNetwork $vnet
 
 	预期输出：
 
@@ -155,7 +167,7 @@
 		                          }
 		                        ],
 		                        "NetworkSecurityGroup": {
-		                          "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/networkSecurityGroups/NSG-FrontEnd"
+		                          "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/networkSecurityGroups/NSG-BacEnd"
 		                        },
 		                        "RouteTable": {
 		                          "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/routeTables/UDR-BackEnd"
@@ -169,12 +181,12 @@
 
 1. 创建一个变量，包含由 FW1 使用的 NIC 的设置。在我们的方案中，NIC 名为 **NICFW1**。
 
-		$nicfw1 = Get-AzureRMNetworkInterface -ResourceGroupName TestRG -Name NICFW1
+		$nicfw1 = Get-AzureNetworkInterface -ResourceGroupName TestRG -Name NICFW1
 
 2. 启用 IP 转发，并保存 NIC 设置。
 
 		$nicfw1.EnableIPForwarding = 1
-		Set-AzureRMNetworkInterface -NetworkInterface $nicfw1
+		Set-AzureNetworkInterface -NetworkInterface $nicfw1
 
 	预期输出：
 
@@ -220,4 +232,4 @@
 		NetworkSecurityGroup : null
 		Primary              : True
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->

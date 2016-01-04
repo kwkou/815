@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="10/20/2015"
+	wacn.date=""/>
 
 #使用能够使用 Azure 媒体服务执行实时编码的频道
 
@@ -25,10 +25,39 @@
 
 - **无** - 如果你打算使用输出多比特率流的本地实时编码器，请指定此值。在这种情况下，传入流将传递到输出，而不会进行任何编码。这是 2.10 发行版以前的频道行为。有关使用此类型的频道的更详细信息，请参阅[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-manage-channels-overview)。
 
-- **标准** - 如果你打算使用媒体服务将单比特率实时流编码为多比特率流，请选择此值。
+- **标准** - 如果你打算使用媒体服务将单比特率实时流编码为多比特率流，请选择此值。请注意，实时编码会影响计费，你应该记住，将实时编码通道保持为“正在运行”状态会产生费用。建议在实时流式处理事件完成之后立即停止正在运行的通道，以避免产生额外的小时费用。
 
 >[AZURE.NOTE]本主题讨论为执行实时编码（“标准”编码类型）启用的频道的属性。有关使用未为执行实时编码启用的频道的信息，请参阅[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-manage-channels-overview)。
 
+
+##计费影响
+
+一旦通过 API 将实时编码通道的状态转换为“正在运行”，就会开始计费。你也可以在 Azure 管理门户或 Azure 媒体服务资源管理器工具 (http://aka.ms/amse)) 中查看状态。
+
+下表显示了通道状态如何映射到 API 和门户中的计费状态。请注意，API 与门户 UX 之间的状态略有不同。一旦通过 API 将通道置于“正在运行”状态，或者在 Azure 管理门户中将它设置为“就绪”或“正在流式处理”状态，就会开始计费。
+若要阻止通道进一步向你计费，你必须通过 API 或 Azure 管理门户停止通道。
+在使用完实时编码通道时，你需要亲自停止通道。不停止编码通道会导致持续计费。
+
+###<a id="states"></a>通道状态及其如何映射到计费模式 
+
+频道的当前状态。可能的值包括：
+
+- **已停止**。这是通道在创建后的初始状态（除非在门户中选择了自动启动）。 此状态下不会发生计费。在此状态下，可以更新频道属性，但不允许进行流式传输。
+- **正在启动**。频道正在启动。此状态下不会发生计费。在此状态下，不允许进行更新或流式传输。如果发生错误，则频道会返回到“已停止”状态。
+- **正在运行**。频道能够处理实时流。现在会计收使用费。你必须停止通道以防止进一步计费。 
+- **正在停止**。频道正在停止。此暂时性状态下不会发生计费。在此状态下，不允许进行更新或流式传输。
+- **正在删除**。频道正被删除。此暂时性状态下不会发生计费。在此状态下，不允许进行更新或流式传输。
+
+下表显示频道状态如何映射到计费模式。
+ 
+频道状态|门户 UI 指示器|是否计费？
+---|---|---
+正在启动|正在启动|否（暂时状态）
+正在运行|准备就绪（没有正在运行的节目）<br/>或<br/>流式处理（至少有一个正在运行的节目）|是
+正在停止|正在停止|否（暂时状态）
+已停止|已停止|否
+
+##实时编码工作流
 下图表示了实时流式处理工作流，其中频道通过以下协议之一接收单比特率流：RTMP、平滑流式处理或 RTP (MPEG-TS)；然后，将该流编码为多比特率流。
 
 ![实时工作流][live-overview]
@@ -45,7 +74,7 @@
 
 以下是在创建常见的实时流应用程序时涉及的常规步骤。
 
->[AZURE.NOTE]目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 WindowsAzure.cn 联系 amslived。
+>[AZURE.NOTE]目前，实时事件的最大建议持续时间为 8 小时。如果你需要长时间运行某个通道，请通过 WindowsAzure.cn 联系 amslived。请注意，实时编码会影响计费，你应该记住，将实时编码通道保持为“正在运行”状态会产生费用。建议在实时流式处理事件完成之后立即停止正在运行的通道，以避免产生额外的小时费用。
 
 1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出**单**比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure Media Services RTMP 支持和实时编码器](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/)。
 	
@@ -72,6 +101,9 @@
 2. （可选）可以向实时编码器发信号，以启动广告。将广告插入到输出流中。
 1. 在要停止对事件进行流式传输和存档时，停止节目。
 1. 删除节目（并选择性地删除资产）。   
+
+>[AZURE.NOTE]千万不要忘记停止实时编码通道。请注意，实时编码会影响每小时计费，你应该记住，将实时编码通道保持为“正在运行”状态会产生费用。建议在实时流式处理事件完成之后立即停止正在运行的通道，以避免产生额外的小时费用。
+
 
 [实时流式处理任务](/documentation/articles/media-services-manage-channels-overview#tasks)部分将链接到演示如何完成上述任务的主题。
 
@@ -258,7 +290,7 @@
 
 指定此频道内的实时编码器要使用的预设。目前，唯一允许的值是 **Default720p**（默认值）。
 
-请注意，如果你需要自定义预设，应在 WindowsAzure.cn 上联系 amslived。
+请注意，如果你需要自定义预设，应通过 WindowsAzure.cn 联系 amslived。
 
 **Default720p** 会将视频编码为以下 7 层。
 
@@ -379,7 +411,7 @@
 已停止|已停止|否
 
 
->[AZURE.NOTE]目前，通道启动可能最多需要 20 多分钟。频道重置可能最多需要 5 分钟。
+>[AZURE.NOTE]目前，启动通道所需的平均时间为大约 2 分钟，最长可能需要 20 多分钟。通道重置最长可能需要 5 分钟。
 
 
 ##<a id="Considerations"></a>注意事项
@@ -393,21 +425,26 @@
 - 仅当你的频道处于**“正在运行”**状态时才会向你收费。有关详细信息，请参阅[此](/documentation/articles/media-services-manage-live-encoder-enabled-channels#states)部分。
 - 目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 WindowsAzure.cn 联系 amslived。
 - 确保你要从中以流形式传输内容的流式传输终结点上至少有一个流式传输保留单元。
+- 完成后请不要忘记关闭你的通道。否则会继续计费。 
 
 ##已知问题
 
-- 通道启动可能需要 20 多分钟。
+- 通道启动时间已改善为平均 2 分钟，但有时因为需求提高，可能仍然需要长达 20 分钟以上的时间。
 - RTP 支持迎合专业的广播装置。请查看[此](http://azure.microsoft.com/blog/2015/04/13/an-introduction-to-live-encoding-with-azure-media-services/)博客中有关 RTP 的说明。
 - 静态图像应符合[此处](/documentation/articles/media-services-manage-live-encoder-enabled-channels#default_slate)所述的限制。如果你想要尝试创建默认静态图像大于 1920x1080 的频道，最终请求将会出错。
+- 再次强调，完成流式处理后请不要忘记关闭你的通道。否则会继续计费。
 
 ###如何创建频道以执行从单比特率到自适应比特率流的实时编码 
 
 选择**“门户”**、**.NET**、**REST API** 以了解如何创建和管理频道和节目。
 
 > [AZURE.SELECTOR]
-- [Portal](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
+- [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
 - [.NET SDK](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
+
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 
 ##相关主题
@@ -421,4 +458,4 @@
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

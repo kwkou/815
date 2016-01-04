@@ -4,12 +4,12 @@
    services="traffic-manager"
    documentationCenter="na"
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="traffic-manager"
-   ms.date="08/19/2015"
-   wacn.date="10/03/2015" />
+<tags
+	ms.service="traffic-manager"
+	ms.date="11/12/2015"
+	wacn.date=""/>
 
 # 禁用、启用或删除配置文件
 
@@ -42,8 +42,12 @@
 
 [流量管理器 - 禁用或启用终结点](/documentation/articles/disable-or-enable-an-endpoint)
 
-[什么是流量管理器？](/documentation/articles/traffic-manager-overview)
+[配置故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method)
 
- 
+[配置轮循机制路由方法](/documentation/articles/traffic-manager-configure-round-robin-routing-method)
 
-<!---HONumber=71-->
+[配置性能路由方法](/documentation/articles/traffic-manager-configure-performance-routing-method)
+
+[流量管理器降级状态疑难解答](/documentation/articles/traffic-manager-troubleshooting-degraded)
+
+<!---HONumber=Mooncake_1221_2015-->

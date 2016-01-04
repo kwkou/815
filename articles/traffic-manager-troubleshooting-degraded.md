@@ -4,16 +4,17 @@
    services="traffic-manager"
    documentationCenter=""
    authors="kwill-MSFT"
-   manager="adinah"
+   manager="carmonm"
    editor="joaoma" />
 
-<tags 
-   ms.service="traffic-manager"
-   ms.date="08/19/2015"
-   wacn.date="10/03/2015" />
-# Azure 流量管理器上的降级状态故障排除
-此页面将介绍如何对显示降级状态的 Azure 流量管理器配置文件进行故障排除，并提供了解流量管理器探测器的一些要点。
+<tags
+	ms.service="traffic-manager"
+	ms.date="11/12/2015"
+	wacn.date=""/>
 
+# Azure 流量管理器上的降级状态故障排除
+
+此页面将介绍如何对显示降级状态的 Azure 流量管理器配置文件进行故障排除，并提供了解流量管理器探测器的一些要点。
 
 你已将流量管理器配置文件配置为指向部分 .chinacloudapp.cn 托管服务，几秒钟后你会看到状态为“已降级”。
 
@@ -34,7 +35,7 @@
  
 - 最佳做法是将探测器路径设置为具有足够逻辑来确定站点是启动还是关闭的内容。在上面的示例中，将路径设置为“/favicon.ico”后，只测试 w3wp.exe 是否响应，而不会测试你的网站是否处于正常状态。更好的选择是将路径设置为诸如 “/Probe.aspx” 的内容，且 Probe.aspx 内包含足够的逻辑来确定你的站点是否处于正常状态（即，检查性能计数器以确保你的 CPU 使用率未达到 100%，或确保未在接收大量失败请求，尝试访问诸如数据库或会话状态等资源，以确保应用程序的逻辑正常运行等）。
  
-- 如果配置文件中的所有终结点都已降级，流量管理器会将所有终结点视为处于正常状态，并将负载平衡到所有终结点。这是为了确保探测机制中导致错误失败探测器的任何潜在问题不会造成服务完全中断。
+- 如果配置文件中的所有终结点都已降级，流量管理器会将所有终结点视为处于正常状态，并将流量路由到所有终结点。这是为了确保探测机制中导致错误失败探测器的任何潜在问题不会造成服务完全中断。
 
   
 
@@ -62,9 +63,9 @@
 ## 后续步骤
 
 
-[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)
+[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-load-balancing-methods)
 
-[流量管理器概述](/documentation/articles/traffic-manager-overview)
+[什么是流量管理器](/documentation/articles/traffic-manmager-overview)
 
 [云服务](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
 
@@ -75,4 +76,4 @@
 [Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
  
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_1221_2015-->
