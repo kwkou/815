@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="11/09/2015"
-	wacn.date=""/>
+	wacn.date="12/31/2015"/>
 
 # 创建具有多个 NIC 的 VM
 

@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="10/21/2015"
-	wacn.date=""/>
+	wacn.date="12/31/2015"/>
 
 #Azure 媒体服务分片 MP4 实时引入规范
 

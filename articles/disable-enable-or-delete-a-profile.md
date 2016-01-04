@@ -9,7 +9,7 @@
 <tags
 	ms.service="traffic-manager"
 	ms.date="11/12/2015"
-	wacn.date=""/>
+	wacn.date="12/31/2015"/>
 
 # 禁用、启用或删除配置文件
 

@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="10/29/2015"
-	wacn.date=""/>
+	wacn.date="12/31/2015"/>
 
 #简要介绍并比较 Azure 按需媒体编码器
 

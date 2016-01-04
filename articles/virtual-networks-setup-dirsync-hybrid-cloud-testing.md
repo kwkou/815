@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="11/13/2015"
-	wacn.date=""/>
+	wacn.date="12/31/2015"/>
 
 # 在混合云中设置 Office 365 目录同步 (DirSync) 以便进行测试
 

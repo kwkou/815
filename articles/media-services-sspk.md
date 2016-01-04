@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="10/30/2015"
-	wacn.date=""/>
+	wacn.date="12/31/2015"/>
 
 #授权 Microsoft® 平滑流式处理客户端移植工具包
 

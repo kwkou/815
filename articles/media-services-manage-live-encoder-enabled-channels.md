@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="10/20/2015"
-	wacn.date=""/>
+	wacn.date="12/31/2015"/>
 
 #使用能够使用 Azure 媒体服务执行实时编码的频道
 

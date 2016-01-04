@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="10/19/2015"
-	wacn.date=""/>
+	wacn.date="12/31/2015"/>
 
 
 # Hyperlapse 媒体文件与 Azure Media Hyperlapse
@@ -24,7 +24,7 @@ Azure Media Hyperlapse 是可以使用第一人称视角或运动相机内容创
 
 Azure Media Hyperlapse 作业接受输入 MP4、MOV 或 WMV 资产文件以及配置文件，以指定视频中要缩时的帧及其速度（例如前 10,000 帧的速度为 2x）。输出是输入视频经过稳定和缩时转译的结果。
 
-有关最新的 Azure Media Hyperlapse 更新，请参阅[媒体服务博客](http://azure.microsoft.com/blog/topics/media-services/)。
+有关最新的 Azure Media Hyperlapse 更新，请参阅[媒体服务博客](/blog/tags/媒体服务)。
 
 ## 将资产进行 Hyperlapse 处理
 
