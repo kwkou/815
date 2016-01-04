@@ -4,7 +4,7 @@
     wacn.date="1/5/2016"
     />
 
-#FAQs: Server configuration
+#FAQs: Service configuration
 
 > [AZURE.SELECTOR]
 - [Chinese Version](/documentation/articles/cdn-faq-service-config)
