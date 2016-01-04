@@ -7,10 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015"
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="11/03/2015"
+	wacn.date=""/>
 
 
 #使用现有播放器播放内容
@@ -18,7 +18,6 @@
 Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 实时流和 MPEG-Dash。本主题会将你指向可用来测试流的现有播放器。
 
 >[AZURE.NOTE]若要播放动态打包或动态加密的内容，请确保获取你计划从中传送内容的流式处理终结点的至少一个流式处理单元。有关缩放流式处理单元的信息，请参阅：[如何缩放流式处理单元](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
-
 
 ###Azure 管理门户媒体服务内容播放器
 
@@ -33,7 +32,7 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
 
 ![AMSPlayer][AMSPlayer]
 
-###Azure 媒体服务播放器
+###Azure 媒体播放器
 
 使用 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)以下列任意格式播放你的内容（清除或受保护）：
 
@@ -75,7 +74,12 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
 ##开发视频播放器
 
 有关如何开发自己的播放器的信息，请参阅[开发视频播放器](/documentation/articles/media-services-develop-video-players)
+
+##提供反馈
+
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
  
 [AMSPlayer]: ./media/media-services-playback-content-with-existing-players/media-services-portal-player.png
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_1221_2015-->
