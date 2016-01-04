@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure 移动服务开发 iOS 应用程序入门"
+	pageTitle="适用于 iOS 应用的 Azure 移动服务入门 | JavaScript 后端"
 	description="遵照本教程开始使用 Azure 移动服务进行 iOS 开发。"
 	services="mobile-services"
 	documentationCenter="ios"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/07/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="11/04/2015"
+	wacn.date="12/31/2015"/>
 
 #  <a name="getting-started"></a>移动服务入门
 
@@ -90,4 +90,4 @@
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [.NET 后端版本]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

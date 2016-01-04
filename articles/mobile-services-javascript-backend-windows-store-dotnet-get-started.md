@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/06/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="11/06/2015"
+	wacn.date="12/31/2015"/>
 
 # <a name="getting-started"> </a>移动服务入门
 
@@ -66,13 +66,11 @@
 ## 后续步骤
 完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
-<!--
-* [脱机数据同步入门] 
-了解如何使用脱机数据同步来使应用保持较高的响应能力和稳健性。
--->
+* [脱机数据同步入门]  
+  了解如何使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
 
-* [向移动服务应用添加身份验证][Get started with authentication]
-了解如何使用标识提供者对应用的用户进行身份验证。
+* [向移动服务应用程序添加身份验证][Get started with authentication]  
+  了解如何使用标识提供者对应用程序的用户进行身份验证。
 
 * [向应用添加推送通知][Get started with push notifications]
 了解如何向应用发送一条很基本的推送通知。
@@ -94,7 +92,7 @@
 
 <!-- URLs. -->
 
-[Get started with data]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data
+[脱机数据同步入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 [Get started with authentication]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users
 [Get started with push notifications]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
 [Visual Studio 2013 Express for Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
@@ -102,4 +100,4 @@
 [Management Portal]: https://manage.windowsazure.cn/
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

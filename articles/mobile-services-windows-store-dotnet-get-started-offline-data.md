@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/23/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="11/06/2015" 
+	wacn.date="12/31/2015"/>
 
 # 在移动服务中使用脱机数据同步
 
@@ -33,7 +33,6 @@
 * [Azure 移动服务 SDK 版本 1.3.0（或更高版本）][Mobile Services SDK Nuget]
 * [Azure 移动服务 SQLite Store 版本 1.0.0（或更高版本）][SQLite store nuget]
 * [SQLite for Windows 8.1](http://www.sqlite.org/download.html)
-
 * 一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并取得多达 10 个免费的移动服务，即使在试用期结束之后仍可继续使用这些服务。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。 
 
 ## <a name="enable-offline-app"></a>更新应用程序以支持脱机功能
@@ -60,13 +59,11 @@
 
 3. 在解决方案资源管理器中，右键单击适用于 Windows 8.1 运行时和 Windows Phone 8.1 平台项目的“引用”，并确保存在对位于“扩展”部分的 SQLite 的引用。
 
-    ![][1] 
-    </br>
+    ![][1] </br>
 
     **Windows 8.1 运行时**
 
-    ![][11] 
-    </br>
+    ![][11] </br>
 
     **Windows Phone 8.1**
 
@@ -239,7 +236,7 @@
 
 * [使用移动服务脱机支持处理冲突]
 
-* [使用移动服务中的软删除][软删除]
+* [使用移动服务中的软删除](/documentation/articles/mobile-services-using-soft-delete)
 
 <!-- Anchors. -->
 [Update the app to support offline features]: #enable-offline-app
@@ -274,4 +271,4 @@
 [Mobile Services SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

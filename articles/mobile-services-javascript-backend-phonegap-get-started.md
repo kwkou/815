@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/05/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="11/06/2015"
+	wacn.date="12/31/2015"/>
 
 #  移动服务入门
 
@@ -176,4 +176,4 @@
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/13/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="11/09/2015" 
+	wacn.date="12/31/2015"/>
 
 # 使用移动服务将图像上载到 Azure Blob 存储
 
@@ -79,4 +79,4 @@
 [App settings]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
  
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_1221_2015-->

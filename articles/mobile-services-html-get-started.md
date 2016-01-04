@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/05/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="11/06/2015"
+	wacn.date="12/31/2015"/>
 
 
 #  <a name="getting-started"></a>移动服务入门
@@ -85,7 +85,7 @@
 
 1. 浏览到压缩的项目文件所保存到的位置，在计算机上展开这些文件，然后启动 **server** 子文件夹中的下列命令文件之一。
 
-	+ **launch-windows**（Windows 计算机） 
+	+ **.\\start-iisexpress.ps1**（Windows 计算机）
 	+ **launch-mac.command**（Mac OS X 计算机）
 	+ **launch-linux.sh**（Linux 计算机）
 
@@ -101,7 +101,7 @@
 
    	这样可向在 Azure 中托管的新移动服务发送 POST 请求。来自请求的数据被插入到 TodoItem 表。移动服务返回存储在表中的项，数据显示在应用的第二列中。
 
-	> [AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 app.js 文件中。
+	> [AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 page.js 文件中。
 
 4. 返回管理门户，单击“数据”选项卡，然后单击 **TodoItem** 表。
 
@@ -148,7 +148,7 @@
 [Management Portal]: https://manage.windowsazure.cn/
 [Microsoft Web 平台安装程序]: http://go.microsoft.com/fwlink/p/?LinkId=286333
 [最新版本的 Python]: http://go.microsoft.com/fwlink/p/?LinkId=286342
-[移动服务 HTML/JavaScript 操作方法概念性参考]: /documentation/articles/mobile-services-html-how-to-use-client-library
+[移动服务 HTML/JavaScript 操作方法概念性参考]: /zh-cn/documentation/articles/mobile-services-html-how-to-use-client-library
 [Cross-origin resource sharing]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn155871.aspx
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

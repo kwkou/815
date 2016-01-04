@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/06/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="11/05/2015"
+	wacn.date="12/31/2015"/>
 
 #  <a name="getting-started"></a>移动服务入门
 
@@ -132,4 +132,4 @@
 
 [Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

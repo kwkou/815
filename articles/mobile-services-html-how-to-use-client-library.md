@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/24/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="10/23/2015"
+	wacn.date="12/31/2015"/>
 
 #  如何使用适用于 Azure 移动服务的 HTML/JavaScript 客户端
 
@@ -160,7 +160,8 @@
 
 以下代码演示了如何通过在查询中包含 `orderBy` 或 `orderByDescending` 函数来为数据排序。该代码将返回 `todoItemTable` 中的项，这些项已按 `text` 字段的升序排序。默认情况下，服务器只返回前 50 个元素。
 
-> [AZURE.NOTE]默认情况下，将使用服务器驱动的页大小来防止返回所有元素。这可以防止对大型数据集发出的默认请求对服务造成负面影响。你可以根据下一节中所述，通过调用 `take` 来增加返回的项数。`todoItemTable` 是对前面创建的移动服务表的引用。
+> [AZURE.NOTE]默认情况下，将使用服务器驱动的页大小来防止返回所有元素。这可以防止对大型数据集发出的默认请求对服务造成负面影响。 
+你可以根据下一节中所述，通过调用 `take` 来增加返回的项数。`todoItemTable` 是对前面创建的移动服务表的引用。
 
 	var ascendingSortedTable = todoItemTable.orderBy("text").read().done(function (results) {
 	   alert(JSON.stringify(results));
@@ -501,7 +502,7 @@
 	authenticate();
 
 此代码初始化 Live Connect 客户端，向 Microsoft 帐户发送一个新的登录请求，将返回的身份验证令牌发送到移动服务，然后显示有关已登录用户的信息。在身份验证成功之前，该应用不会启动。
-
+<!--- //this guidance may be bad from an XSS vulnerability standpoint. We need to find better guidance for this
 ### 缓存身份验证令牌
 在某些情况下，完成首次用户身份验证后，可以避免调用 login 方法。我们可以使用 [sessionStorage] 或 [localStorage] 来缓存当前用户首次登录时使用的标识，以后每次该用户登录时，系统都会检查缓存中是否存在该用户标识。如果缓存为空或者调用失败（意味着当前登录会话已过期），则用户仍然需要完成整个登录过程。
 
@@ -518,6 +519,7 @@
          // Log out
         client.logout();
         sessionStorage.loggedInUser = null;
+-->
 
 ## <a name="push-notifications"></a>如何：注册推送通知
 
@@ -663,4 +665,4 @@
 [ASCII control codes C0 and C1]: http://zh.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [OData 系统查询选项参考]: http://go.microsoft.com/fwlink/p/?LinkId=444502
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

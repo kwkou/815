@@ -9,10 +9,10 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="10/08/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="11/05/2015"
+	wacn.date="12/31/2015"/>
 
-# 移动服务入门
+# 适用于 Android 的移动服务入门（JavaScript 后端）
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
@@ -94,4 +94,4 @@
 
 [Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

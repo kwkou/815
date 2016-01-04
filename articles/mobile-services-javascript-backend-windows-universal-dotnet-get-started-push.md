@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/22/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="11/10/2015" 
+	wacn.date="12/31/2015"/>
 
 
 #  向移动服务应用程序添加推送通知
@@ -40,7 +40,7 @@
 
 &nbsp;&nbsp;7.打开共享的 App.xaml.cs 代码文件，可以看到已在 **OnLaunched** 事件处理程序中添加了对新的 **UploadChannel** 方法的调用。这可确保每次启动应用程序时都尝试注册设备。
 
-&nbsp;&nbsp;8.重复执行前面的步骤为 Windows Phone 应用商店应用项目添加推送通知，然后在共享的 App.xaml.cs 文件中，删除对 **UploadChannel** 的额外调用和剩余的 `#if...#endif` 条件包装器。现在，这两个项目可以共用对 **UploadChannel** 的单一调用。
+&nbsp;&nbsp;8.重复执行前面的步骤为 Windows Phone 应用商店应用项目添加推送通知，然后在共享的 App.xaml.cs 文件中，删除对**移动服务客户端**、**UploadChannel** 和剩余 `#if...#endif` 条件包装的额外调用。现在，这两个项目可以共用对 **UploadChannel** 的单一调用。
 
 &nbsp;&nbsp;请注意，你还可以通过将 `#if...#endif` 包装的 [MobileServiceClient] 定义统一为单个解包的定义，供这两个版本的应用使用来简化生成的代码。
 
@@ -75,9 +75,8 @@
 * [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-diagnosing)
 <br/>了解如何排查推送通知问题。
 
-
-* [身份验证入门](/documentation/articles/mobile-services-windows-phone-get-started-users)
-<br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
+* [身份验证入门]
+  <br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
 
 
 * [什么是通知中心？] 
@@ -96,7 +95,7 @@
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
-[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-data
+[身份验证入门]: /documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-users
 
 [Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users
 
@@ -105,4 +104,4 @@
 [如何使用适用于 Azure 移动服务的 .NET 客户端]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [MobileServiceClient]: http://go.microsoft.com/fwlink/p/?LinkId=302030
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->
