@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/22/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="11/02/2015" 
+	wacn.date="12/31/2015"/>
 
 #  使用命令行工具自动操作移动服务 
 
@@ -103,7 +103,7 @@
 下面显示了脚本权限值与 [Azure 管理门户]中的权限值的对照表。
 
 |脚本值|管理门户值|
-|========|========|
+|---|---|
 |`public`|每个人|
 |`application`（默认值）|拥有应用程序密钥的任何人|
 |`user`|仅限经过身份验证的用户|
@@ -181,6 +181,6 @@
 [mac-installer]: http://go.microsoft.com/fwlink/p?LinkId=252249
 [windows-installer]: http://go.microsoft.com/fwlink/p?LinkID=275464
 [reference-docs]: /documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_mobile_services
-[如何安装适用于 Mac 和 Linux 的 Azure 命令行工具]: /documentation/articles/xplat-cli
+[如何安装适用于 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/documentation/articles/xplat-cli
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_1221_2015-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/24/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="11/15/2015" 
+	wacn.date="12/31/2015"/>
 
 # 注册应用程序以使用 Azure Active Directory 帐户登录
 
@@ -64,4 +64,4 @@
 <!-- URLs. -->
 [Azure 管理门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/25/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="11/11/2015" 
+	wacn.date="12/31/2015"/>
 
 
 #  将移动服务添加到现有应用程序
@@ -88,12 +88,12 @@
 
   	这将创建用于访问移动服务的 **MobileServiceClient** 的新实例。
 
-6. 在 MainPage.xaml.cs 文件中，添加或取消注释以下 `using` 语句：
+6. 在 MainPage.cs 文件中，添加或取消注释以下 `using` 语句：
 
        	using Microsoft.WindowsAzure.MobileServices;
 		using Newtonsoft.Json;
 
-7. 在同一个文件中，将 **TodoItem** 类定义替换为以下代码：
+7. 在此 DataModel 文件夹中，将 **TodoItem** 类定义替换为以下代码：
 
         public class TodoItem
         {
@@ -189,4 +189,4 @@
 [开发人员代码示例站点]: http://go.microsoft.com/fwlink/p/?LinkId=271146
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

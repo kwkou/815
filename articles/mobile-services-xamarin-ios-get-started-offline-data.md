@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/01/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="11/02/2015"
+	wacn.date="12/31/2015"/>
 
 #  在移动服务中使用脱机数据同步
 
@@ -43,7 +43,8 @@
 
 ##  <a name="review-offline"></a>查看移动服务同步代码
 
-Azure 移动服务脱机同步允许最终用户，当无法访问网络时，与本地数据库交互。若要在你的应用程序中使用这些功能，请将 `MobileServiceClient.SyncContext` 初始化到本地存储。然后，通过 `IMobileServiceSyncTable` 接口引用你的表。本部分将指导完成脱机同步 `QSTodoService.cs` 中的相关代码。
+Azure 移动服务脱机同步允许最终用户在无法访问网络时与本地数据库交互。若要在你的应用程序中使用这些功能，请将 `MobileServiceClient.SyncContext` 初始化到本地存储。然后，通过 `IMobileServiceSyncTable` 接口引用你的表。
+本部分将指导完成脱机同步 `QSTodoService.cs` 中的相关代码。
 
 1. 在 Visual Studio 中，打开你在完成[移动服务入门]教程后创建的项目。打开 `QSTodoService.cs` 文件。
 
@@ -176,4 +177,4 @@ Azure 移动服务脱机同步允许最终用户，当无法访问网络时，�
 [Xamarin Studio]: http://xamarin.com/download
 [Xamarin 扩展]: http://xamarin.com/visual-studio
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

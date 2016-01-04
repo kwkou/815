@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="10/07/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="11/05/2015"
+	wacn.date="12/31/2015"/>
 
 
 # <a name="getting-started"></a>移动服务入门
@@ -86,6 +86,9 @@
 * [向应用程序添加推送通知]
 <br/>了解如何向应用程序发送一条很基本的推送通知。
 
+* [向应用添加身份验证]
+  <br/>了解如何将后端数据的访问权限限制为应用的特定注册用户。
+
 * [移动服务 .NET 后端故障排除]
 <br/>了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。
 
@@ -123,4 +126,4 @@
 [移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
 [Azure管理门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/21/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="11/11/2015" 
+	wacn.date="12/31/2015"/>
 
 # 向移动服务应用程序添加推送通知
 
@@ -32,7 +32,7 @@
  
 &nbsp;&nbsp;7.打开共享的 App.xaml.cs 代码文件，可以看到已在 **OnLaunched** 事件处理程序中添加了对新的 **UploadChannel** 方法的调用。这可确保每次启动应用程序时都尝试注册设备。
 
-&nbsp;&nbsp;8.重复执行前面的步骤为 Windows Phone 应用商店应用项目添加推送通知，然后在共享的 App.xaml.cs 文件中，删除对 **UploadChannel** 的额外调用和剩余的 `#if...#endif` 条件包装器。现在，这两个项目可以共用对 **UploadChannel** 的单一调用。
+&nbsp;&nbsp;8.重复执行前面的步骤为 Windows Phone 应用商店应用项目添加推送通知，然后在共享的 App.xaml.cs 文件中，删除对 **UploadChannel** 和剩余 `#if...#endif` 条件包装的额外调用。现在，这两个项目可以共用对 **UploadChannel** 的单一调用。
 
 > [AZURE.NOTE]此外，你还可以通过将 `#if...#endif` 包装的 [MobileServiceClient](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx) 定义统一为单个解包的定义供这两个版本的应用程序使用来简化生成的代码。
 
@@ -108,4 +108,4 @@
 [如何使用适用于 Azure 移动服务的 .NET 客户端]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [MobileServiceClient]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

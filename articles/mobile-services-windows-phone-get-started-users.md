@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/23/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="11/02/2015" 
+	wacn.date="12/31/2015"/>
 
 #  向移动服务应用程序添加身份验证
 
@@ -77,4 +77,4 @@
 [Azure Management Portal]: https://manage.windowsazure.cn/
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->
