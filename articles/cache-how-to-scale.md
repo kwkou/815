@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cache" 
 	ms.date="09/10/2015" 
-	wacn.date=""/>
+	wacn.date="01/04/2016"/>
 
 # 如何缩放 Azure Redis 缓存
 

@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cache" 
 	ms.date="08/25/2015" 
-	wacn.date=""/>
+	wacn.date="01/04/2016"/>
 
 # Azure Redis Cache 示例 
 
