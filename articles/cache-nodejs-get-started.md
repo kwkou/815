@@ -77,7 +77,6 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 
 ## 后续步骤
 
-- [启用缓存诊断](cache-how-to-monitor.md#enable-cache-diagnostics)，以便可以[监视](cache-how-to-monitor.md)缓存的运行状况。
 - 阅读官方 [Redis 文档](http://redis.io/documentation)。
 
 
@@ -87,6 +86,6 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 [3]: ./media/cache-nodejs-get-started/cache03.png
 [4]: ./media/cache-nodejs-get-started/cache04.png
 
-[在 Azure 网站中使用 Socket.IO 生成 Node.js 聊天应用程序]: ../app-service-web/web-sites-nodejs-chat-app-socketio.md
+[在 Azure 网站中使用 Socket.IO 生成 Node.js 聊天应用程序]: /documentation/articles/web-sites-nodejs-chat-app-socketio
 
 <!---HONumber=71-->

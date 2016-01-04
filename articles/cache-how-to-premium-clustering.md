@@ -60,12 +60,12 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 ## 使用群集功能时，是否需要对客户端应用程序进行更改？
 
 -	启用群集功能时，仅数据库 0 可用。如果你的客户端应用程序使用多个数据库并尝试读取或写入数据库 0 之外的其他数据库，则会引发以下异常。`Unhandled Exception: StackExchange.Redis.RedisConnectionException: ProtocolFailure on GET --->` `StackExchange.Redis.RedisCommandException: Multiple databases are not supported on this server; cannot switch to database: 6`
--	如果你使用的是 [StackExchange.Redis](https://www.nuget.org/packages/StackExchange.Redis/)，则必须使用 1.0.481 或更高版本。连接到该缓存时，你使用的[终结点、端口和密钥](/documentation/articles/cache-configure#properties)与你连接到未启用群集功能的缓存时使用的相同。唯一的区别是，所有读取和写入都必须在数据库 0 中进行。
+-	如果你使用的是 [StackExchange.Redis](https://www.nuget.org/packages/StackExchange.Redis/)，则必须使用 1.0.481 或更高版本。连接到该缓存时，你使用的终结点、端口和密钥与你连接到未启用群集功能的缓存时使用的相同。唯一的区别是，所有读取和写入都必须在数据库 0 中进行。
 	-	其他客户端可能有不同的要求。请参阅[是否所有 Redis 客户端都支持群集功能？](#do-all-redis-clients-support-clustering)
 -	如果应用程序使用的多个密钥操作都在单个命令中成批执行，则所有密钥都必须位于同一分片。若要完成此操作，请参阅[密钥在群集中是如何分布的？](#how-are-keys-distributed-in-a-cluster)。
 -	如果你使用的是 Redis ASP.NET 会话状态提供程序，则必须使用 2.0.0 或更高版本。请参阅[能否在 Redis ASP.NET 会话状态和输出缓存提供程序中使用群集功能？](#can-i-use-clustering-with-the-redis-aspnet-session-state-and-output-caching-providers)。
 
-## 密钥在群集中是如何分布的？
+##<a name="how-are-keys-distributed-in-a-cluster"></a> 密钥在群集中是如何分布的？
 
 请参阅 Redis [密钥分布模型](http://redis.io/topics/cluster-spec#keys-distribution-model)文档：密钥空间拆分成 16384 个槽。每个密钥都经过哈希处理并分配到其中一个槽，这些槽分布在群集的节点中。对密钥的哪部分进行哈希处理是可以配置的，这样可确保多个使用哈希标记的密钥位于同一分片。
 
@@ -80,7 +80,7 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 
 高级缓存的最大大小为 53 GB。你可以创建多达 10 个分片，因此最大大小为 530 GB。如果你需要的大小更大，则可[请求更多](mailto:wapteams@microsoft.com?subject=Redis%20Cache%20quota%20increase)。有关详细信息，请参阅 [Azure Redis 缓存定价](/home/features/redis-cache/#price)。
 
-## 是否所有 Redis 客户端都支持群集功能？
+##<a name="do-all-redis-clients-support-clustering"></a> 是否所有 Redis 客户端都支持群集功能？
 
 目前，并非所有客户端都支持 Redis 群集功能。StackExchange.Redis 是不支持该功能的客户端。有关其他客户端的详细信息，请参阅 [Redis 群集教程](http://redis.io/topics/cluster-tutorial)的[使用群集](http://redis.io/topics/cluster-tutorial#playing-with-the-cluster)部分。
 
@@ -88,7 +88,7 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 
 ## 启用群集功能后，如何连接到我的缓存？
 
-连接到你的缓存时，可以使用的[终结点、端口和密钥](/documentation/articles/cache-configure#properties)与你连接到未启用群集功能的缓存时使用的相同。Redis 在后端管理群集功能，因此不需要你通过客户端来管理它。
+连接到你的缓存时，可以使用的终结点、端口和密钥与你连接到未启用群集功能的缓存时使用的相同。Redis 在后端管理群集功能，因此不需要你通过客户端来管理它。
 
 ## 我可以直接连接到缓存的各个分片吗？
 
@@ -112,7 +112,7 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 
 群集功能仅适用于高级缓存。
 
-## 能否在 Redis ASP.NET 会话状态和输出缓存提供程序中使用群集功能？
+##<a name="can-i-use-clustering-with-the-redis-aspnet-session-state-and-output-caching-providers"></a> 能否在 Redis ASP.NET 会话状态和输出缓存提供程序中使用群集功能？
 
 -	**Redis 输出缓存提供程序** - 无需进行更改。
 -	**Redis 会话状态提供程序** - 若要使用群集功能，必须使用 [RedisSessionStateProvider](https://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider) 2.0.0 或更高版本，否则会引发异常。这是一项重大更改；有关详细信息，请参阅 [2\.0.0 版重大更改详细信息](https://github.com/Azure/aspnet-redis-providers/wiki/v2.0.0-Breaking-Change-Details)。
