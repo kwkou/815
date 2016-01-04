@@ -10,7 +10,7 @@
 <tags
 	ms.service="cache"
 	ms.date="10/02/2015"
-	wacn.date=""/>
+	wacn.date="01/04/2016"/>
 
 # Azure Redis 缓存高级层简介
 Azure Redis 缓存是一种分布式托管缓存，可通过提供对数据的超高速访问权限来帮助你构建高度可缩放且响应灵敏的应用程序。
