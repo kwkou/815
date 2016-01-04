@@ -36,9 +36,7 @@
 
 [如何将 Azure Redis 缓存与 Python 配合使用](/documentation/articles/cache-python-get-started)展示了如何使用 Python 和 [redis-py](https://github.com/andymccurdy/redis-py) 客户端开始使用 Azure Redis 缓存。
 
-[PHP 示例](https://msdn.microsoft.com/library/azure/dn690470.aspx#PHPExample)演示了将 Azure Redis 缓存与 PHP 和 [predis](https://github.com/nrk/predis) 客户端配合使用的入门知识。
-
-[在缓存中处理 .NET 对象](https://msdn.microsoft.com/library/azure/dn690521.aspx#Objects)演示了如何对 .NET 对象进行序列化以便可以将其写入到 Azure Redis 缓存实例以及从中进行读取。
+[在缓存中处理 .NET 对象](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#working-with-caches)演示了如何对 .NET 对象进行序列化以便可以将其写入到 Azure Redis 缓存实例以及从中进行读取。
 
 ## 将 Redis Cache 用作 ASP.NET SignalR 的扩展基架
 
