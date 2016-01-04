@@ -1,5 +1,5 @@
 <properties
-   pageTitle="云中的 批处理( Batch )和 HPC 解决方案 | Windows Azure"
+   pageTitle="云中的批处理( Batch )和 HPC 解决方案 | Windows Azure"
    description="介绍 Azure 中的 批处理( Batch )和高性能计算（大型计算）应用方案和解决方案选项"
    services="batch, virtual-machines, cloud-services"
    documentationCenter=""
@@ -9,12 +9,12 @@
 
 <tags
    ms.service="batch"
-   ms.date="07/01/2015"
+   ms.date="09/29/2015"
    wacn.date="10/30/2015"/>
 
 #  批处理( Batch )和 HPC 解决方案
 
-本文介绍 批处理( Batch )和高性能计算（HPC，又称为*大型计算*）的 Azure 解决方案。尽管本文主要面向技术决策人、IT 经理和独立软件供应商，但其他 IT 专业人员和开发人员也可以使用它来熟悉这些解决方案。
+本文介绍批处理( Batch )和高性能计算（HPC，又称为*大型计算*）的 Azure 解决方案。尽管本文主要面向技术决策人、IT 经理和独立软件供应商，但其他 IT 专业人员和开发人员也可以使用它来熟悉这些解决方案。
 
 组织面临着一些大规模计算问题，包括工程设计和分析、图像渲染、复杂建模、Monte Carlo 仿真和财务风险计算。为了帮助组织解决这些问题并在资源、缩放和计划方面做出决策，Azure 提供了可缩放、按需计算功能和服务。借助 Azure，组织可以：
 
@@ -27,11 +27,11 @@
 Azure 还为组织和软件供应商提供开发工具与服务，用于构建定制的端到端大数据解决方案。
 
 
-## 背景： 批处理( Batch )和 HPC 应用程序
+## 背景：批处理( Batch )和 HPC 应用程序
 
-与网站和许多业务线应用程序不同， 批处理( Batch )和 HPC 应用程序有确定的开始和结束时间，而且它们可以按照计划运行或按需运行。其中的大多数应用程序可分为两大类：*内在并行*（有时称为“高度并行”，因为它们解决的问题有助于使自身在多个计算机或处理器上并行运行）和*紧密耦合*。有关这些应用程序类型的详细信息，请参阅下表。某些 Azure 解决方案方法更适合一种类型或其他类型。
+与网站和许多业务线应用程序不同，批处理( Batch )和 HPC 应用程序有确定的开始和结束时间，而且它们可以按照计划运行或按需运行。其中的大多数应用程序可分为两大类：*内在并行*（有时称为“高度并行”，因为它们解决的问题有助于使自身在多个计算机或处理器上并行运行）和*紧密耦合*。有关这些应用程序类型的详细信息，请参阅下表。某些 Azure 解决方案方法更适合一种类型或其他类型。
 
->[AZURE.NOTE]在 批处理( Batch )和 HPC 解决方案中，应用程序的运行中实例通常称为*作业*，而每个作业可以划分成*任务*。应用程序的群集计算资源通常称为*计算节点*。
+>[AZURE.NOTE]在批处理( Batch )和 HPC 解决方案中，应用程序的运行中实例通常称为*作业*，而每个作业可以划分成*任务*。应用程序的群集计算资源通常称为*计算节点*。
 
 类型 | 特征 | 示例
 ------------- | ----------- | ---------------
@@ -48,7 +48,7 @@ Azure 还为组织和软件供应商提供开发工具与服务，用于构建�
 
 * **数据访问** - 企业网络群集内经常使用的数据访问技术（例如 NFS）可能需要云中的特殊配置，或者你可能需要为云采用不同的数据访问做法与模式。
 
-* **数据移动** - 对于处理大量数据的应用程序，需要使用策略将数据移至云存储和计算资源，并可能需要考虑部署高速跨界网络。另外，还要考虑到法律、法规或政策对存储或访问该数据的限制。
+* **数据移动** - 对于处理大量数据的应用程序，需要使用策略将数据移至云存储和计算资源，并可能需要考虑部署高速跨界网络，例如 [Azure ExpressRoute](/services/expressroute/)。另外，还要考虑到法律、法规或政策对存储或访问该数据的限制。
 
 
 * **许可** - 请向供应商咨询有关任何商业应用程序在云中的运行许可或其他限制。并非所有供应商都提供即付即用许可。你可能需要根据自己的解决方案，在云中规划许可服务器，或连接到本地许可服务器。
@@ -88,7 +88,7 @@ Azure 还为组织和软件供应商提供开发工具与服务，用于构建�
 
 ## 用于大型计算的 Azure 服务
 
-Azure 提供一系列的计算、数据、网络和相关服务，你可将其用于大型计算解决方案和工作流。有关其中每项服务的深入指导，请参阅 Azure 服务文档。有关涉及 批处理( Batch )和 HPC 应用程序的一些常见方法，请参阅本文中的[解决方案应用方案](#solution-scenarios)。
+Azure 提供一系列的计算、数据、网络和相关服务，你可将其用于大型计算解决方案和工作流。有关其中每项服务的深入指导，请参阅 Azure 服务文档。有关涉及批处理( Batch )和 HPC 应用程序的一些常见方法，请参阅本文中的[解决方案应用方案](#solution-scenarios)。
 
 >[AZURE.NOTE]新服务会定期导入 Azure 平台，可能适用于你的方案。建议仅将预览版服务用于测试或概念认证部署，而不要用于非生产任务负荷。如有疑问，请联系 [Azure 合作伙伴](https://pinpoint.microsoft.com/zh-CN/search?keyword=azure)或者向 *bigcompute@microsoft.com* 发送电子邮件。
 
@@ -100,9 +100,9 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 
 服务 | 说明
 ------------- | -----------
-**[云服务](http://www.windowsazure.cn/documentation/services/cloud-services)**<br/><br/> |• 可以在辅助角色实例中运行大型计算应用程序，辅助角色实例是运行某个 Windows Server 版本的虚拟机并且完全由 Azure 托管<br/><br/>• 可以较低的管理开销支持运行在平台即服务 (PaaS) 模型中的可缩放的可靠应用程序<br/><br/>• 可能需要额外的工具或开发来与现有的本地 HPC 群集解决方案进行集成
-**[虚拟机](http://www.windowsazure.cn/documentation/services/virtual-machines)**<br/><br/> |• 使用 Microsoft Hyper-V 技术提供计算基础结构即服务 (IaaS)<br/><br/>• 使你能够从标准 Windows Server 或 Linux 映像，或者你提供的映像和数据磁盘灵活地设置和管理永久性虚拟机<br/><br/>• 完全在云中运行本地计算群集工具和应用程序
-**[ 批处理( Batch )](http://www.windowsazure.cn/documentation/services/batch)**<br/><br/> |• 在完全托管的服务中运行大规模的并行与 批处理( Batch )工作负荷，例如图像渲染及媒体编码和转码<br/><br/>• 针对虚拟机的托管池提供作业计划和自动缩放<br/><br/>• 允许开发人员构建自定义大型计算解决方案或支持云的现有应用程序<br/>
+**[云服务](/documentation/services/cloud-services)**<br/><br/> |• 可以在辅助角色实例中运行大型计算应用程序，辅助角色实例是运行某个 Windows Server 版本的虚拟机并且完全由 Azure 托管<br/><br/>• 可以较低的管理开销支持运行在平台即服务 (PaaS) 模型中的可缩放的可靠应用程序<br/><br/>• 可能需要额外的工具或开发来与现有的本地 HPC 群集解决方案进行集成
+**[虚拟机](/documentation/services/virtual-machines)**<br/><br/> |• 使用 Microsoft Hyper-V 技术提供计算基础结构即服务 (IaaS)<br/><br/>• 使你能够从标准 Windows Server 或 Linux 映像，或者你提供的映像和数据磁盘灵活地设置和管理永久性虚拟机<br/><br/>• 完全在云中运行本地计算群集工具和应用程序
+**[ 批处理( Batch )](/documentation/services/batch)**<br/><br/> |• 在完全托管的服务中运行大规模的并行与 批处理( Batch )工作负荷，例如图像渲染及媒体编码和转码<br/><br/>• 针对虚拟机的托管池提供作业计划和自动缩放<br/><br/>• 允许开发人员构建自定义大型计算解决方案或支持云的现有应用程序<br/>
 
 ### 存储服务
 
@@ -110,7 +110,7 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 
 * [Blob、表和队列存储](/documentation/services/storage) - 分别管理大量非结构化数据、NoSQL 数据，以及有关工作流和通信的消息。例如，你可以为大型技术数据集或应用程序处理的输入图像或媒体文件使用 Blob 存储。可以在解决方案中使用队列以进行异步通信。有关这些存储解决方案的详细信息，请参阅 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction)。
 
-* Azure 文件存储 - 在 Azure 中使用标准 SMB 通信协议（某些 HPC 群集解决方案需要这种协议）来共享公用文件和数据。
+* [Azure 文件存储](/services/storage/files/) - 在 Azure 中使用标准 SMB 通信协议（某些 HPC 群集解决方案需要这种协议）来共享公用文件和数据。
 
 ### 数据和分析服务
 
@@ -118,7 +118,7 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 
 <!--* [Data Factory](/documentation/services/data-factory) - Builds data-driven workflows (pipelines) that join, aggregate, and transform data sourced from on-premises, cloud-based, and Internet data stores.-->
 
-* [SQL Database](/documentation/services/sql-databases) - 提供托管平台服务中 Microsoft SQL Server 关系数据库管理系统的主要功能。
+* [SQL 数据库](/documentation/services/sql-databases) - 提供托管平台服务中 Microsoft SQL Server 关系数据库管理系统的主要功能。
 
 * [HDInsight](/documentation/services/hdinsight) - 在云中部署和设置基于 Windows Server 或 Linux 的 Apache Hadoop 群集，用于管理、分析和报告具有高可靠性与可用性的大数据。
 
@@ -166,9 +166,8 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 
 **自动化部署** - 若要部署大量 Windows Server 或 Linux VM，可以使用标准或自定义的 VM 映像与 Azure 自动化工具，例如 [Azure 命令行界面](/documentation/articles/xplat-cli)或 [Azure PowerShell](/documentation/articles/powershell-install-configure)。示例包括：
 
-* 若要在 Azure 基础结构服务中部署 HPC Pack 群集，可以从客户端计算机运行灵活的 [Azure PowerShell 脚本](https://msdn.microsoft.com/zh-cn/library/azure/dn864734.aspx)；该脚本使用预装了 HPC Pack 的 Windows Server VM 映像。<1你也可以使用 Azure [快速入门模板](https://azure.microsoft.com/zh-cn/documentation/templates/create-hpc-cluster/)与 Azure PowerShell 或 Azure CLI 来部署 HPC Pack 群集。
+* 若要在 Azure 基础结构服务中部署 HPC Pack 群集，可以从客户端计算机运行灵活的 [Azure PowerShell 脚本](https://msdn.microsoft.com/zh-cn/library/azure/dn864734.aspx)；该脚本使用预装了 HPC Pack 的 Windows Server VM 映像。
 
-* 可以使用 Azure [快速入门模板](https://azure.microsoft.com/zh-cn/documentation/templates/slurm/)与 Azure PowerShell 或 Azure CLI，来部署运行 [SLURM](https://computing.llnl.gov/linux/slurm/) 开源工作负荷管理器的 Linux 群集。
 
 将整个 HPC 群集置于云中会带来明显的好处。
 
@@ -186,15 +185,15 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 
 根据工作负荷，你可以利用 Azure 中由 Microsoft 或其他服务供应商托管的现有大型计算服务，以简化解决方案的基础结构和应用程序管理。某些服务为特定行业的客户托管特定的应用程序。某些服务会插入到本地应用程序，从而实现混合解决方案。[Azure 媒体服务](/documentation/services/media-services)等其他一些服务属于专用平台服务。
 
-为了轻松地从云启用并相应地横向扩展目前运行的应用程序，[ 批处理( Batch )](/documentation/services/batch)提供了用于计划作业和管理服务中计算资源的 API。 批处理( Batch )可管理虚拟机的部署和自动缩放、作业计划、灾难恢复、数据移动、依赖性管理、应用程序部署，以及在云中运行作业所需的所有其他管道。目前， 批处理( Batch )非常适合用于内在并行应用程序，例如，在 Windows Server 计算资源中运行的图像渲染、金融风险建模和 Monte Carlo 仿真。
+为了轻松地从云启用并相应地横向扩展目前运行的应用程序，[批处理( Batch )](/documentation/services/batch)提供了用于计划作业和管理服务中计算资源的 API。批处理( Batch )可管理虚拟机的部署和自动缩放、作业计划、灾难恢复、数据移动、依赖性管理、应用程序部署，以及在云中运行作业所需的所有其他管道。目前，批处理( Batch )非常适合用于内在并行应用程序，例如，在 Windows Server 计算资源中运行的图像渲染、金融风险建模和 Monte Carlo 仿真。
 
 请参阅下图，了解开发人员可使用 批处理( Batch )创建的典型工作流。
 
-![Azure  批处理( Batch )][batch_proc]
+![Azure 批处理( Batch )][batch_proc]
 
 1. 将输入文件（例如源数据或图像、所需的应用程序、.exe 或脚本文件及其依赖项）上载到 Azure 存储空间。
 
-2. 创建一个 批处理( Batch )服务，以便：
+2. 创建一个批处理( Batch )服务，以便：
 
     a.部署包含相同 Azure VM 的池以运行应用程序，这类似于 HPC 群集中的计算节点。开发人员指定其大小、其运行的操作系统及其他属性，例如池是否可以自动缩放。在运行某个任务时，会自动向它分配此池中的某个 VM。
 
@@ -207,7 +206,7 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 
 ## 后续步骤
 
-* 如需有关你解决方案的技术指导，请参阅[ 批处理( Batch )和 HPC 的技术资源](/documentation/articles/big-compute-resources)。
+* 如需有关你解决方案的技术指导，请参阅[批处理( Batch )和 HPC 的技术资源](/documentation/articles/big-compute-resources)。
 
 * 有关最新通告，请参阅 [Microsoft HPC 和 批处理( Batch )团队博客](http://blogs.technet.com/b/windowshpc/)与 [Azure 博客](http://azure.microsoft.com/blog/tag/hpc/)。
 
