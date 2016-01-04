@@ -21,7 +21,7 @@
 
 ### 创建新的流量管理器配置文件
 
-1. **将云服务和网站部署到生产环境中。** 有关云服务的详细信息，请参阅[云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)。有关云服务的信息，请参阅[最佳实践](https://msdn.microsoft.com/zh-cn/library/azure/5229dd1c-5a91-4869-8522-bed8597d9cf5#bkmk_TrafficManagerBestPracticesProfile)。有关网站的详细信息，请参阅[网站](/home/features/web-site/)。
+1. **将云服务和网站部署到生产环境中。** 有关云服务的详细信息，请参阅[云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)。有关网站的详细信息，请参阅[网站](/home/features/web-site/)。
 
 2. **登录到 Azure 管理门户。** 若要创建新的流量管理器配置文件，请单击门户左下角的“新建”，单击“网络服务”>“流量管理器”，然后单击“快速创建”，以开始配置你的配置文件。
 3. **配置 DNS 前缀。** 为流量管理器配置文件提供唯一的 DNS 前缀名称。可以只为流量管理器域名指定前缀。

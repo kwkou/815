@@ -62,10 +62,6 @@
 
 你可以使用基于 Web 的免费 DNS 查找和挖掘服务。这些服务中，有些可以从不同位置检查 DNS 名称解析。例如，针对“DNS 查找”执行搜索。另一种做法是使用 Gomez 或 Keynote 等第三方解决方案来确认配置文件是否按预期分配流量。
 
-## 另请参阅
-
-[关于流量管理器流量路由方法](/documentation/articles/about-traffic-manager-balancing-methods)
-[流量管理器](/documentation/articles/traffic-manager)
  
 
 <!---HONumber=Mooncake_1221_2015-->

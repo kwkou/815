@@ -29,8 +29,7 @@
 
 - [常见实时流式处理方案](/documentation/articles/media-services-manage-channels-overview#scenario)
 - [频道及其相关组件的说明](/documentation/articles/media-services-manage-channels-overview#channel)
-- [注意事项](/documentation/articles/media-services-manage-channels-overview#considerations)
-- [与实时流式处理相关的任务](/documentation/articles/media-services-manage-channels-overview#tasks)
+- [注意事项](/documentation/articles/media-services-manage-channels-overview#Considerations)
 
 ##<a id="scenario"></a>常见实时流式处理方案
 以下步骤介绍创建常见的实时流式处理应用程序时涉及的任务。
@@ -153,7 +152,7 @@
 
 在频道开始摄取数据后，你可以预览流。
 
-请注意，当前，不管指定了哪种输入类型，都只能以分片 MP4 (Smooth Streaming) 格式来传送预览流。你可以使用 [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor) 播放器来测试平滑流。你还可以使用 Azure 管理门户中承载的播放器来查看你的流。
+请注意，当前，不管指定了哪种输入类型，都只能以分片 MP4 (Smooth Streaming) 格式来传送预览流。你还可以使用 Azure 管理门户中承载的播放器来查看你的流。
 
 
 ####允许的 IP 地址

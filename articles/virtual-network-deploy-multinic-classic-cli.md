@@ -25,7 +25,7 @@
 
 由于目前你不能使用具有单个 NIC 的 VM 以及具有同一个云服务中的多个 NIC 的 VM，因此你将在一个云服务中实现后端服务器，而在其他云服务中实现方案中的所有其他组件。以下步骤使用名为 *IaaSStory* 的云服务作为主资源，并在名为 *IaaSStory-BackEnd* 的云服务中实现后端服务器。
 
-## 先决条件
+## <a name="Prerequisites"></a> 先决条件
 
 在部署后端服务器之前，你需要先使用此方案的所有必需资源部署主云服务。至少，你需要创建包含后端子网的虚拟网络。若要了解如何部署虚拟网络，请访问[使用 Azure CLI 创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-cli)。
 
@@ -41,7 +41,7 @@
 
 ### 步骤 1 - 启动脚本
 
-你可以在[此处](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/classic/multinic.sh)下载所用的完整 bash 脚本。请按照以下步骤更改要在你的环境中使用的脚本。
+你可以在[此处](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/classic/virtual-network-deploy-multinic-classic-cli.sh)下载所用的完整 bash 脚本。请按照以下步骤更改要在你的环境中使用的脚本。
 
 1. 基于你在上面[先决条件](#Prerequisites)中部署的现有资源组更改以下变量的值。
 
