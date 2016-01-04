@@ -9,7 +9,7 @@
 <tags
 	ms.service="cache"
 	ms.date="10/23/2015"
-	wacn.date=""/>
+	wacn.date="01/04/2016"/>
 
 # Azure Redis 缓存的 ASP.NET 会话状态提供程序
 
@@ -61,7 +61,7 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
 -	**port** - 使用非 SSL 端口或 SSL 端口，具体取决于 SSL 设置。
 -	**accessKey** - 使用缓存的主密钥或辅助密钥。
 -	**ssl** - 如果要使用 ssl 保护缓存/客户端通信，则为 true；否则为 false。请务必指定正确的端口。
-	-	默认情况下，将为新缓存禁用非 SSL 端口。为此设置指定 true 可使用 SSL 端口。有关启用非 SSL 端口的详细信息，请参阅[配置缓存](/documentation/articles/cache-configure)主题中的[访问端口](/documentation/articles/cache-configure#access-ports)部分。
+	-	默认情况下，将为新缓存禁用非 SSL 端口。为此设置指定 true 可使用 SSL 端口。
 -	**throwOnError** - 如果你想要在失败时引发异常，则为 true；如果你想要操作以静默方式失败，则为 false。可以通过检查静态 Microsoft.Web.Redis.RedisSessionStateProvider.LastException 属性来检查失败。默认值为 true。
 -	**retryTimeoutInMilliseconds** - 将在此时间间隔内重试失败的操作，以毫秒为单位指定。首次重试在 20 毫秒后进行，然后重试每隔一秒进行，直到 retryTimeoutInMilliseconds 间隔到期。在此时间间隔过后，将立即重试操作最后一次。如果操作仍失败，则会将异常返回给调用方，具体取决于 throwOnError 设置。默认值为 0，这意味着不重试。
 -	**databaseId** - 指定要用于缓存输出数据的数据库。如果未指定，则使用默认值 0。
@@ -88,7 +88,7 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
 
 >[AZURE.NOTE]请注意，与可以存储在默认的内存中 ASP.NET 会话状态提供程序中的数据不同，在缓存中存储的数据必须可序列化。使用适用于 Redis 的会话状态提供程序时，请确保在会话状态中存储的数据类型可序列化。
 
-## ASP.NET 会话状态选项
+##<a name="aspnet-session-state-options"></a> ASP.NET 会话状态选项
 
 - 内存中会话状态提供程序 - 此提供程序将会话状态存储在内存中。使用此提供程序的好处是它简单且快速。但是，如果使用内存中提供程序，由于它不是分布式的，因此不能缩放 Web 应用。
 
@@ -100,6 +100,6 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
 
 ## 后续步骤
 
-了解 [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](cache-asp.net-output-cache-provider.md)。
+了解 [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](/documentation/articles/cache-asp.net-output-cache-provider)。
 
 <!---HONumber=Mooncake_1207_2015-->

@@ -36,7 +36,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 	Set-AzureRmRedisCache -ResourceGroupName myGroup -Name myCache -Size 2.5GB
 
-你还可以使用 [Microsoft Azure 管理库 (MAML)](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/) 进行缩放。要缩放你的缓存，请调用 `IRedisOperations.CreateOrUpdate` 方法并传入 `RedisProperties.SKU.Capacity` 的新大小。
+你还可以使用 [Windows Azure 管理库 (MAML)](http://azure.microsoft.com/zh-cn/updates/management-libraries-for-net-release-announcement/) 进行缩放。要缩放你的缓存，请调用 `IRedisOperations.CreateOrUpdate` 方法并传入 `RedisProperties.SKU.Capacity` 的新大小。
 
     static void Main(string[] args)
     {
