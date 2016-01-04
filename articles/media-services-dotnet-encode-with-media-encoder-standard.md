@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="11/08/2015"
-	wacn.date=""/>
+	wacn.date="12/31/2015"/>
 
 
 #如何使用媒体编码器标准版对资产进行编码

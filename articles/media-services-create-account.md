@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="11/03/2015"
-	wacn.date=""/>
+	wacn.date="12/31/2015"/>
 
 
 # 创建 Azure 媒体服务帐户

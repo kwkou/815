@@ -10,7 +10,7 @@
 <tags
 	ms.service="traffic-manager"
 	ms.date="11/12/2015"
-	wacn.date=""/>
+	wacn.date="12/31/2015"/>
 
 # Azure 流量管理器上的降级状态故障排除
 

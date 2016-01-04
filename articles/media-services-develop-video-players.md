@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="11/02/2015"
-	wacn.date=""/>
+	wacn.date="12/31/2015"/>
 
 
 #开发视频播放器应用程序
