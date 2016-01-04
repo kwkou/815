@@ -7,8 +7,8 @@
 # Microsoft Azure CDN Node Distribution
 
 > [AZURE.SELECTOR]
-- [Chinese version](/documentation/articles/cdn-faq-service-config)
-- [English Version](/documentation/articles/cdn-enus-faq-service-config)
+- [Chinese version](/documentation/articles/cdn-pops)
+- [English Version](/documentation/articles/cdn-enus-pops)
 
 The image below shows how Microsoft Azure CDN POPs (points of presence) are currently distributed.
 
