@@ -43,7 +43,7 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 	$location = "China North"
 	$resourceGroupName = "Default-Web-WestUS"
 	
-	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 6GB -Sku Premium -RedisConfiguration @{"rdb-backup-enabled"="true"; "rdb-backup-frequency"="60"; "rdb-backup-max-snapshot-count"="1"; "rdb-storage-connection-string"="BlobEndpoint=https://<your storage account name>.blob.core.chinacloudapi.cn/;QueueEndpoint=https://<your storage account name>.queue.core.chinacloudapi.cn/;TableEndpoint=https://<your storage account name>.table.core.chinacloudapi.cn/;AccountName=<your storage account name>;AccountKey=<your storage account name>"}
+	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 6GB -Sku Premium -RedisConfiguration @{"rdb-backup-enabled"="true"; "rdb-backup-frequency"="60"; "rdb-backup-max-snapshot-count"="1"; "rdb-storage-connection-string"="DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.chinacloudapi.cn"}
 
 这一段脚本可以建立一个6GB，“备份频率”为60分钟的高级缓存。
 
