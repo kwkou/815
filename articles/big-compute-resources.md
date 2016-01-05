@@ -47,7 +47,7 @@ HPC Pack 是在 Microsoft Azure 和 Windows Server 技术基础之上构建的 M
 * [文档](https://technet.microsoft.com/zh-cn/library/jj899572.aspx)
 
 
-* [在 Azure 中使用 Microsoft HPC Pack 时的 HPC 群集选项](../virtual-machines/virtual-machines-hpcpack-cluster-options.md)
+* [在 Azure 中使用 Microsoft HPC Pack 时的 HPC 群集选项](/documentation/articles/virtual-machines-hpcpack-cluster-options)
 
 * [使用 HPC Pack 迸发到 Azure 辅助角色实例](https://technet.microsoft.com/library/gg481749.aspx)
 
@@ -87,9 +87,6 @@ Azure 提供[不同的大小](/documentation/articles/virtual-machines-size-spec
 
 * [Batch Apps Blender 示例](https://github.com/Azure/azure-batch-apps-blender)
 ## 相关的 Azure 服务
-
-
-* [机器学习](/documentation/services/machine-learning/)
 
 * [HDInsight](/documentation/services/hdinsight/)
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="通过并行任务最大限度地使用 Batch 节点 | Windows Azure"
+   pageTitle="通过并行任务最大限度地使用批处理 ( Batch ) 节点 | Windows Azure"
    description="在 Azure Batch 池的每个节点上运行并发任务时，通过减少所使用的计算节点数来提高效率并降低成本"
    services="batch"
    documentationCenter=".net"
@@ -14,7 +14,7 @@
 
 # 通过并发节点任务最大限度提高 Azure 批处理 ( Batch ) 计算资源的使用量
 
-大规模地并行执行任务是 Azure 批处理 ( Batch ) 的核心功能，利用此功能，你不仅可以在多个计算节点上运行任务，而且可以并行运行这些任务。利用 Batch，你可以横向和纵向扩展任务的并行执行规模。
+大规模地并行执行任务是 Azure 批处理 ( Batch ) 的核心功能，利用此功能，你不仅可以在多个计算节点上运行任务，而且可以并行运行这些任务。利用批处理 ( Batch ) ，你可以横向和纵向扩展任务的并行执行规模。
 
 允许在池的计算节点上并行执行任务可以最大程度地利用池中的资源，减少所需的节点数目。虽然某些情况下将一个节点的所有资源分配给单个任务更有利，但在更多情况下，最好是让多个任务共享这些资源：
 
@@ -32,9 +32,9 @@
 
 ## 允许并行执行任务
 
-将在Batch 解决方案中进行池级别的计算节点配置，以便并行执行任务。在创建池时，可以通过 Batch .NET API 设置 [CloudPool.MaxTasksPerComputeNode][maxtasks_net] 属性。在 Batch REST API 中，[maxTasksPerNode][maxtasks_rest] 元素是在创建池时在请求正文中设置的。
+将在批处理 ( Batch ) 解决方案中进行池级别的计算节点配置，以便并行执行任务。在创建池时，可以通过批处理 ( Batch ) .NET API 设置 [CloudPool.MaxTasksPerComputeNode][maxtasks_net] 属性。在批处理 ( Batch ) REST API 中，[maxTasksPerNode][maxtasks_rest] 元素是在创建池时在请求正文中设置的。
 
-使用 Azure Batch 时，可以通过节点设置来设置多达四倍 (4x) 的节点核心数，从而最大限度地提高任务数。例如，如果将池的节点大小配置为“大型”（四核），则可将 `maxTasksPerNode` 设置为 16。有关每个节点大小的核心数的详细信息，请参阅[虚拟机的大小](/documentation/articles/virtual-machines-size-specs)；有关服务限制的详细信息，请参阅 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)。
+使用 Azure 批处理 ( Batch ) 时，可以通过节点设置来设置多达四倍 (4x) 的节点核心数，从而最大限度地提高任务数。例如，如果将池的节点大小配置为“大型”（四核），则可将 `maxTasksPerNode` 设置为 16。有关每个节点大小的核心数的详细信息，请参阅[虚拟机的大小](/documentation/articles/virtual-machines-size-specs)；有关服务限制的详细信息，请参阅 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)。
 
 > [AZURE.TIP]为池构造[自动缩放公式][enable_autoscaling]时，请务必考虑 `maxTasksPerNode` 值。例如，如果增加每个节点的任务数，则可能会极大地影响对 `$RunningTasks` 求值的公式。有关详细信息，请参阅[自动缩放 Azure 批处理 ( Batch ) 池中的计算节点](/documentation/articles/batch-automatic-scaling)。
 
@@ -48,7 +48,7 @@
 
 ## 批处理 ( Batch ) .NET 示例
 
-此 [批处理 ( Batch ) .NET][api_net] API 代码段演示了一个请求，该请求要求创建一个包含 4 个大型节点的池，每个节点最多 4 个任务，同时指定了一个任务计划策略，要求先用任务填充一个节点，然后再将任务分配给池中的其他节点。有关如何使用 Batch .NET API 添加池的详细信息，请参阅 [BatchClient.PoolOperations.CreatePool][poolcreate_net]。
+此 [批处理 ( Batch ) .NET][api_net] API 代码段演示了一个请求，该请求要求创建一个包含 4 个大型节点的池，每个节点最多 4 个任务，同时指定了一个任务计划策略，要求先用任务填充一个节点，然后再将任务分配给池中的其他节点。有关如何使用批处理 ( Batch ) .NET API 添加池的详细信息，请参阅 [BatchClient.PoolOperations.CreatePool][poolcreate_net]。
 
         CloudPool pool = batchClient.PoolOperations.CreatePool(poolId: "mypool",
         													osFamily: "2",
@@ -58,9 +58,9 @@
         pool.TaskSchedulingPolicy = new TaskSchedulingPolicy(ComputeNodeFillType.Pack);
         pool.Commit();
 
-## Batch REST 示例
+## 批处理 ( Batch ) REST 示例
 
-此 [Batch REST][api_rest] API 代码段演示了一个请求，该请求要求创建一个包含 2 个大型节点的池，每个节点最多 4 个任务。有关如何使用 REST API 添加池的详细信息，请参阅[将池添加到帐户][maxtasks_rest]。
+此 [批处理 ( Batch ) REST][api_rest] API 代码段演示了一个请求，该请求要求创建一个包含 2 个大型节点的池，每个节点最多 4 个任务。有关如何使用 REST API 添加池的详细信息，请参阅[将池添加到帐户][maxtasks_rest]。
 
         {
           "id": "mypool",
@@ -100,13 +100,13 @@ Duration: 00:08:48.2423500
 
 > [AZURE.NOTE]上述摘要中的作业持续时间不包括创建池的时间。上述每个作业都提交到此前已创建的池，这些池的计算节点在提交时处于*空闲* 状态。
 
-## Batch 资源管理器热度地图
+## 批处理 ( Batch ) 资源管理器热度地图
 
-[Batch 资源管理器][batch_explorer]是 Azure 批处理 ( Batch ) [示例应用程序][github_samples]之一，包含*热度地图* 功能，允许以可视方式来呈现池中节点核心的使用情况。执行 [ParallelTasks][parallel_tasks_sample] 示例应用程序时，可使用热度地图功能来方便地呈现节点核心的活动。
+[批处理 ( Batch ) 资源管理器][batch_explorer]是 Azure 批处理 ( Batch ) [示例应用程序][github_samples]之一，包含*热度地图* 功能，允许以可视方式来呈现池中节点核心的使用情况。执行 [ParallelTasks][parallel_tasks_sample] 示例应用程序时，可使用热度地图功能来方便地呈现节点核心的活动。
 
-![Batch 资源管理器热度地图][1]
+![批处理 ( Batch ) 资源管理器热度地图][1]
 
-*Batch 资源管理器热度地图，显示一共有四个节点，每个节点四个核心，每个核心目前运行一个任务*
+*批处理 ( Batch ) 资源管理器热度地图，显示一共有四个节点，每个节点四个核心，每个核心目前运行一个任务*
 
 [api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
 [api_rest]: http://msdn.microsoft.com/library/azure/dn820158.aspx

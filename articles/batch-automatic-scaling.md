@@ -13,9 +13,9 @@
 	ms.date="08/26/2015"
 	wacn.date="12/31/2015"/>
 
-# 自动缩放 Azure 批处理( Batch )池中的计算节点
+# 自动缩放 Azure 批处理 ( Batch )池中的计算节点
 
-自动缩放 Azure 批处理( Batch )池中的计算节点是指动态调整应用程序使用的处理能力。这种调整灵活性节省了时间和资金。若要了解有关计算节点和池的详细信息，请参阅 [Azure 批次技术概述](/documentation/articles/batch-technical-overview)。
+自动缩放 Azure 批处理 ( Batch )池中的计算节点是指动态调整应用程序使用的处理能力。这种调整灵活性节省了时间和资金。若要了解有关计算节点和池的详细信息，请参阅 [Azure 批次技术概述](/documentation/articles/batch-technical-overview)。
 
 如果对池启用了相应的功能并将某个公式与池相关联，则会发生自动缩放。该公式用于确定处理应用程序所需的计算节点数。对定期收集的样本进行操作时，池中可用计算节点的数目会根据关联的公式每 15 分钟调整一次。
 
@@ -37,7 +37,7 @@
 	VAR₀ = Expression₀(system-defined variables);
 	VAR₁ = Expression₁(system-defined variables, VAR₀);
 
-> [AZURE.NOTE]自动缩放公式由 [批处理( Batch ) REST](https://msdn.microsoft.com/library/azure/dn820158.aspx) API 变量、类型、操作和函数组成。即使是在使用 [批处理( Batch ) .NET](https://msdn.microsoft.com/library/azure/mt348682.aspx) 库的时候，也会在公式字符串中使用这些组成元素。
+> [AZURE.NOTE]自动缩放公式由 [批处理 ( Batch ) REST](https://msdn.microsoft.com/library/azure/dn820158.aspx) API 变量、类型、操作和函数组成。即使是在使用 [批处理 ( Batch ) .NET](https://msdn.microsoft.com/library/azure/mt348682.aspx) 库的时候，也会在公式字符串中使用这些组成元素。
 
 ### 变量
 

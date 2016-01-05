@@ -42,13 +42,13 @@ Azure 批处理 ( Batch )可帮助你在云中有效运行大规模并行和高�
 
 ## 使用批处理 ( Batch ) 进行开发
 
-使用批处理 ( Batch ) API 进行开发，以创建和管理计算节点池，以及计划要对池运行的作业和任务。编写客户端应用程序和前端来按需、按计划或者在执行工具（例如 [Azure 数据工厂](/documentation/services/data-factory/)）管理的大型工作流期间中运行作业和任务。
+使用批处理 ( Batch ) API 进行开发，以创建和管理计算节点池，以及计划要对池运行的作业和任务。编写客户端应用程序和前端来按需、按计划或者在执行工具管理的大型工作流期间中运行作业和任务。
 
 有关批处理 ( Batch ) 概念的详细信息，请参阅 [Azure 批处理 ( Batch ) 功能概述](/documentation/articles/batch-api-basics)。
 
 ### 所需的帐户
 
-+ **Azure 帐户和订阅** - 如果你没有帐户，可以激活 [MSDN 订户权益](/pricing/member-offers/msdn-benefits-details/)或注册获取[免费试用版](/pricing/free-trial/)。
++ **Azure 帐户和订阅** - 如果你没有帐户，可以注册获取[免费试用版](/pricing/free-trial/)。
 
 + **批处理 ( Batch ) 帐户** - 在进行批处理 ( Batch ) API 调用时，应使用批处理 ( Batch ) 帐户的名称和 URL 以及访问密钥作为凭据。所有批处理 ( Batch ) 资源（如计算节点、池、作业和任务）都与批处理 ( Batch ) 帐户关联。创建批处理 ( Batch ) 帐户和管理该帐户访问密钥的一种方式是使用 [Azure 门户](/documentation/articles/batch-account-create-portal)。
 

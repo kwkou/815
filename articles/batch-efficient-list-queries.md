@@ -12,11 +12,11 @@
 	ms.service="Batch"
 	ms.date="10/12/2015"
 	wacn.date="12/31/2015"/>
-# 有效地查询 Azure 批处理( batch ) 服务
+# 有效地查询 Azure 批处理 ( batch ) 服务
 
-在本文中，你将了解在使用 [批处理( batch ) .NET][api_net] API 查询批处理( batch ) 服务以获取作业、任务、计算节点等项的列表时，如何减少返回的项数和数据量。
+在本文中，你将了解在使用 [批处理 ( batch ) .NET][api_net] API 查询批处理 ( batch ) 服务以获取作业、任务、计算节点等项的列表时，如何减少返回的项数和数据量。
 
-Azure 批处理( batch ) 属于大计算，在生产环境中，作业、任务和计算节点等实体的数目成千上万。因此，获取这些项的信息时，可能会生成大量的数据，这些数据在每次查询时都必须进行传输。限制每次查询时返回的项数和信息类型将会提高查询速度，因此也会提高应用程序的性能。
+Azure 批处理 ( batch ) 属于大计算，在生产环境中，作业、任务和计算节点等实体的数目成千上万。因此，获取这些项的信息时，可能会生成大量的数据，这些数据在每次查询时都必须进行传输。限制每次查询时返回的项数和信息类型将会提高查询速度，因此也会提高应用程序的性能。
 
 列出作业、任务、计算节点--这些是几乎每个使用 Azure 批处理( batch ) 的应用程序都会执行的操作示例，而且这些操作的执行频率很高。常见的用例是监视。例如，确定池的容量和状态需要查询该池中的所有计算节点。另一个示例是查询作业的任务，以便确定是否有任务仍在排队。
 
@@ -46,7 +46,7 @@ IPagedEnumerable<CloudTask> completedTasks = batchClient.JobOperations.ListTasks
 
 ## 高效查询工具
 
-[批处理( batch ) .NET][api_net] 和 [批处理( batch ) REST][api_rest] API 可以在执行列表查询时指定 *filter*、*select* 和 *expand* 字符串，因此能够减少列表中返回的项数以及针对每个查询返回的信息量。
+[批处理 ( batch ) .NET][api_net] 和 [批处理 ( batch ) REST][api_rest] API 可以在执行列表查询时指定 *filter*、*select* 和 *expand* 字符串，因此能够减少列表中返回的项数以及针对每个查询返回的信息量。
 
 - **filter** - *filter 字符串* 是一个表达式，用于减少返回的项数。例如，只列出作业的运行中任务，或者只列出已做好运行任务准备的计算节点。
   - filter 字符串包含一个或多个表达式，其中一个表达式包含属性名称、运算符和值。能够指定哪些属性取决于每个 API 调用类型，每个属性所支持的运算符也是这样。
@@ -106,7 +106,7 @@ IPagedEnumerable<CloudTask> completedTasks = batchClient.JobOperations.ListTasks
 
 > [AZURE.TIP]使用 Select 和 Expand 子句配置的 [ODATADetailLevel][odata] 实例也可以传递给相应的 Get 方法（例如 [PoolOperations.GetPool](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.getpool.aspx)），以便限制返回的数据量。
 
-## 批处理( batch ) REST 到 .NET API 映射
+## 批处理 ( batch ) REST 到 .NET API 映射
 
 filter、select 和 expand 字符串中的属性名称*必须*反映其 REST API 对应项，不管是名称本身还是大小写。下表提供了 .NET 和 REST API 的对应项之间的映射。
 

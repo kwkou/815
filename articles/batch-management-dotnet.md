@@ -48,7 +48,7 @@ AccountResource account = getResponse.Resource;
 await batchManagementClient.Accounts.DeleteAsync("MyResourceGroup", account.Name);
 ```
 
-> [AZURE.NOTE]使用Batch Management .NET 库及其 BatchManagementClient 的应用程序需有**服务管理员**或**共同管理员**访问权限才能使用拥有要管理的批处理 ( Batch ) 帐户的订阅。有关详细信息，请参阅下面的 [Azure Active Directory](#aad) 部分和 [AccountManagement][acct_mgmt_sample] 代码示例。
+> [AZURE.NOTE]使用批处理 ( Batch ) Management .NET 库及其 BatchManagementClient 的应用程序需有**服务管理员**或**共同管理员**访问权限才能使用拥有要管理的批处理 ( Batch ) 帐户的订阅。有关详细信息，请参阅下面的 [Azure Active Directory](#aad) 部分和 [AccountManagement][acct_mgmt_sample] 代码示例。
 
 ## 检索和重新生成帐户密钥
 
@@ -135,7 +135,7 @@ Azure 本身使用 Azure Active Directory (AAD) 来对其客户、服务管理�
 
 查看 GitHub 上的 [AccountManagment][acct_mgmt_sample] 示例项目，以了解批处理 ( Batch ) Management .NET 库的操作实践。此控制台应用程序将显示 [BatchManagementClient][net_mgmt_client] 和 [ResourceManagementClient][resman_client] 的创建与使用方式，并演示两个客户端所需的 [Azure Active Directory 身份验证库][aad_adal] (ADAL) 使用方式。
 
-> [AZURE.IMPORTANT]若要成功运行该示例应用程序，你必须先使用 Azure 管理门户将它注册到 Azure Active Directory。查看[将应用程序与 Azure Active Directory 集成][aad_integrate]中的**添加应用程序**，然后遵循该文章中的步骤，在你自己的帐户中注册示例应用程序。
+> [AZURE.IMPORTANT]若要成功运行该示例应用程序，你必须先使用 Azure 管理门户将它注册到 Azure Active Directory。
 
 该示例应用程序演示了以下操作：
 
