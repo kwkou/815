@@ -10,14 +10,14 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="09/29/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="11/10/2015" 
+	wacn.date="12/31/2015"/>
 
 # 了解流分析作业监视
 
 ## “监视”页
 
-Azure 管理门户提供了用于监视你的作业及进行故障排除的关键性能指标。
+Azure 管理门户提供了可用于监视你的作业及对其进行故障排除的关键性能指标。
 
 在 Azure 管理门户中，单击正在运行的流分析作业的“监视”选项卡可查看这些指标。在“监视”页中显示性能指标最多有 1 分钟的延迟。
 
@@ -67,7 +67,7 @@ Azure 管理门户提供了用于监视你的作业及进行故障排除的关�
 
 ## 诊断
 
-在 Azure 管理门户中，作业仪表板提供有关需要在何处查找诊断的信息，例如输入、输出和/或操作日志。可以单击链接以前往相应的位置来查看诊断。
+在 Azure 管理门户中，作业仪表板提供有关需要在何处查找诊断的信息（即输入、输出和/或操作日志）。可以单击链接以前往相应的位置来查看诊断。
 
   ![错误](./media/stream-analytics-monitoring/04-stream-analytics-monitoring.png)
 
@@ -86,4 +86,4 @@ Azure 管理门户提供了用于监视你的作业及进行故障排除的关�
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

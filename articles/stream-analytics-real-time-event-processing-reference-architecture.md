@@ -8,13 +8,13 @@
 	editor=""/>
 
 <tags 
-	ms.service="stream-analytics" 
-	ms.date="10/05/2015" 
-	wacn.date="11/27/2015"/>
+	ms.service="stream-analytics"
+	ms.date="11/06/2015" 
+	wacn.date="12/31/2015"/>
 
 # 参考体系结构：使用 Windows Azure 流分析进行实时事件处理
 
-通过 Azure 流分析进行实时事件处理的参考体系结构的用途是充当一个通用的蓝图，以便通过 Windows Azure 部署实时平台即服务 (PaaS) 流处理解决方案。
+通过 Azure 流分析进行实时事件处理的参考体系结构的用途是提供一个通用的蓝图，以便通过 Windows Azure 部署实时平台即服务 (PaaS) 流处理解决方案。
 
 ## 摘要
 
@@ -58,4 +58,4 @@ Windows Azure 提供了各种类别的分析技术，支持一系列不同的解
 
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->
