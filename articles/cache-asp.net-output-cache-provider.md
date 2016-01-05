@@ -69,7 +69,7 @@ NuGet 包会下载并添加所需的程序集引用，并将以下部分添加�
 
     <%@ OutputCache Duration="60" VaryByParam="*" %>
 
-在此示例中，缓存的页面数据将保留在缓存中 60 秒，并且将为每个参数组合缓存不同版本的页面。有关 OutputCache 指令的详细信息，请参阅 [@OutputCache](http://go.microsoft.com/fwlink/?linkid=320837)。
+在此示例中，缓存的页面数据将保留在缓存中 60 秒，并且将为每个参数组合缓存不同版本的页面。有关 OutputCache 指令的详细信息，请参阅 [@OutputCache](https://msdn.microsoft.com/zh-cn/library/hdxfb6cy(v=vs.100).aspx)。
 
 执行这些步骤后，你的应用程序已配置为使用 Redis 输出缓存提供程序。
 
