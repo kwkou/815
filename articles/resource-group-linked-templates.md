@@ -10,7 +10,7 @@
 <tags
    ms.service="azure-resource-manager"
    ms.date="09/04/2015"
-   wacn.date="11/12/2015"/>
+   wacn.date="12/31/2015"/>
 
 # 将已链接的模版与 Azure 资源管理器配合使用
 
@@ -104,5 +104,6 @@
 
 ## 后续步骤
 - [创作模板](/documentation/articles/resource-group-authoring-templates)
+- [部署模板](/documentation/articles/resource-group-template-deploy)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->

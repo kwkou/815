@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Azure 资源管理器模板函数"
-   description="介绍在 Azure 资源管理器模板中检索值、格式字符串和检索部署信息时所使用的函数。"
+   pageTitle="资源管理器模板函数 | Windows Azure"
+   description="介绍在 Azure 资源管理器模板中检索值、处理字符串和数字以及检索部署信息时所用的函数。"
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
@@ -9,12 +9,14 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="10/13/2015"
-   wacn.date="11/27/2015"/>
+   ms.date="11/12/2015"
+   wacn.date="12/31/2015"/>
 
 # Azure 资源管理器模板函数
 
 本主题介绍你可以在 Azure 资源管理器模板中使用的所有函数。
+
+模板函数及其参数不区分大小写。例如，资源管理器将 **variables('var1')** 和 **VARIABLES('VAR1')** 视为相同。在求值时，除非函数明确修改大小与（例如，使用 toUpper 或 toLower），否则函数将保留大小写。某些资源类型可能会提出大小写要求，而不考虑表达式求值方式。
 
 ## 添加
 
@@ -489,6 +491,25 @@
         "upperCaseAppName": "[toUpper(parameters('appName'))]"
     }
 
+## trim
+
+**trim (stringToTrim)**
+
+从指定的字符串中删除所有前导和尾随空白字符。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| stringToTrim | 是 | 要裁剪的字符串。
+
+以下示例将裁剪掉用户提供的参数值中的空白字符。
+
+    "parameters": {
+        "appName": { "type": "string" }
+    },
+    "variables": { 
+        "trimAppName": "[trim(parameters('appName'))]"
+    }
+
 
 ## uniqueString
 
@@ -524,6 +545,21 @@
         "type": "Microsoft.Storage/storageAccounts", 
         ...
 
+## uri
+
+**uri (baseUri, relativeUri)**
+
+通过组合 baseUri 和 relativeUri 字符串来创建绝对 URI。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| baseUri | 是 | 基本 uri 字符串。
+| relativeUri | 是 | 要添加到基本 uri 字符串的相对 uri 字符串。
+
+以下示例演示了如何在模板链接中创建绝对 URI。结果为 **http://contoso.com/resources/nested/azuredeploy.json**。
+
+    "templateLink": "[uri('http://contoso.com/resources/', 'nested/azuredeploy.json')]"
+
 
 ## variables
 
@@ -538,7 +574,8 @@
 
 ## 后续步骤
 - 有关 Azure 资源管理器模板中对各部分的说明，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)
-- 若要合并多个模版，请参阅[将已链接的模版与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates)
+- 若要合并多个模板，请参阅[将已链接的模板与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates)
 - 若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)
+- 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

@@ -10,7 +10,7 @@
 <tags
 	ms.service="multiple"
 	ms.date="08/31/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/31/2015"/>
 
 #下载 Azure SDK for PHP
 
@@ -28,7 +28,7 @@ Azure SDK for PHP 包括允许你针对 Azure 开发、部署和管理 PHP 应�
 本主题中的说明假定您已安装 [PHP][install-php]。
 
 > [AZURE.NOTE]
-若要使用 Azure 的 PHP 客户端库，您必须安装 PHP 5.3 或更高版本。
+> 若要使用 Azure 的 PHP 客户端库，您必须安装 PHP 5.3 或更高版本。
 
 ##Azure 的 PHP 客户端库
 
@@ -42,7 +42,7 @@ Azure 的 PHP 客户端库提供了一个用于从任何操作系统访问 Azure
 
 
 	> [AZURE.NOTE]
-	在 Windows 上，您还需要向您的 PATH 环境变量添加 Git 可执行文件。
+	> 在 Windows 上，您还需要向您的 PATH 环境变量添加 Git 可执行文件。
 
 2. 在您的项目的根目录中创建一个名为 **composer.json** 的文件并向其添加以下代码：
 
@@ -87,8 +87,7 @@ Azure 的 PHP 客户端库提供了一个用于从任何操作系统访问 Azure
 
 1. 下载包含 [GitHub][php-sdk-github] 中的库的 .zip 存档。或者，复制现有存储库并将其克隆到您的本地计算机。（后一种选择需要一个 GitHub 帐户并要求已在本地安装 Git。）
 
-	> [AZURE.NOTE]
-	用于 Azure 的 PHP 客户端库依赖于 [HTTP\_Request2](http://pear.php.net/package/HTTP_Request2)、[Mail\_mime](http://pear.php.net/package/Mail_mime) 和 [Mail\_mimeDecode](http://pear.php.net/package/Mail_mimeDecode) PEAR 包。若要处理这些依赖关系，建议使用 [PEAR 包管理器](http://pear.php.net/manual/en/installation.php)安装这些包
+	> [AZURE.NOTE]用于 Azure 的 PHP 客户端库依赖于 [HTTP\_Request2](http://pear.php.net/package/HTTP_Request2)、[Mail\_mime](http://pear.php.net/package/Mail_mime) 和 [Mail\_mimeDecode](http://pear.php.net/package/Mail_mimeDecode) PEAR 包。若要处理这些依赖关系，建议使用 [PEAR 包管理器](http://pear.php.net/manual/en/installation.php)安装这些包
 
 2. 将已下载的存档的 `WindowsAzure` 目录复制到应用程序目录结构中并从应用程序引用类。
 
@@ -104,7 +103,9 @@ Azure PowerShell 是一组用于部署和管理 Azure 服务（例如，云服�
 
 Azure CLI 是一组用于部署和管理 Azure 服务（例如 Azure 网站和 Azure 虚拟机）的命令。有关安装 Azure CLI 的信息，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install)。
 
+## 后续步骤
 
+有关详细信息，请参阅 [PHP 开发中心](/develop/php/)。
 
 
 [install-php]: http://www.php.net/manual/en/install.php
@@ -127,4 +128,4 @@ Azure CLI 是一组用于部署和管理 Azure 服务（例如 Azure 网站和 A
 [php-sdk-github]: http://go.microsoft.com/fwlink/?LinkId=252719
 [install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->

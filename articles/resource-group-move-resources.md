@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="azure-resource-manager" 
-	ms.date="10/14/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="11/13/2015" 
+	wacn.date="12/31/2015"/>
 
 # 将资源移动到新的资源组或订阅中
 
@@ -26,6 +26,7 @@
 2. 目标资源组应仅包含与您在移动的资源共享相同的应用程序生命周期的资源。
 3. 如果您在使用 Azure PowerShell，请确保您使用的是最新版本。**Move-AzureResource** 命令将经常更新。若要更新您的版本，请运行 Microsoft Web 平台安装程序并检查新版本是否可用。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 4. 移动操作可能需要一段时间才能完成，在这个过程中，您的 PowerShell 提示符将处于等待状态，直到操作完成。
+5. 移动资源时，源组和目标组将被锁定，直到移动操作完成。在完成移动之前，将阻止对组执行写入和删除操作。
 
 ## 支持的服务
 
@@ -53,11 +54,12 @@
 
 - 虚拟机
 - 虚拟网络
+- 存储
 
-当使用网站时，不能仅移动 App Service 计划。若要移动网站，您的选项包括：
+当使用 Web 应用时，不能仅移动 App Service 计划。若要移动 Web 应用，您的选项包括：
 
 - 如果目标资源组不具有 Microsoft.Web 资源，则将所有资源从一个资源组移到另一个资源组中。
-- 将网站移到另一个资源组中，但保留原始资源组中的 App Service 计划。
+- 将 web 应用移到另一个资源组中，但保留原始资源组中的 App Service 计划。
 
 ## 使用 PowerShell 来移动资源
 
@@ -83,21 +85,11 @@
 
     POST https://management.azure.com/subscriptions/{source-subscription-id}/resourcegroups/{source-resource-group-name}/moveResources?api-version={api-version} 
 
-将 **{source-subscription-id}** 和 **{source-resource-group-name}** 替换为当前包含您想要移动的资源的订阅和资源组。将 **2015-01-01** 用于 {api-version}。
-
-在请求中，包括一个能够定义您想要移动的目标资源组和资源的 JSON 对象。
-
-    {
-        "targetResourceGroup": "/subscriptions/{target-subscription-id}/resourceGroups/{target-resource-group-name}", "resources": [
-            "/subscriptions/{source-id}/resourceGroups/{source-group-name}/providers/{provider-namespace}/{type}/{name}",
-            "/subscriptions/{source-id}/resourceGroups/{source-group-name}/providers/{provider-namespace}/{type}/{name}",
-            "/subscriptions/{source-id}/resourceGroups/{source-group-name}/providers/{provider-namespace}/{type}/{name}",
-            "/subscriptions/{source-id}/resourceGroups/{source-group-name}/providers/{provider-namespace}/{type}/{name}"
-        ]
-    }
+在请求正文中，指定目标资源组和要移动的资源。有关移动 REST 操作的详细信息，请参阅[移动资源](https://msdn.microsoft.com/zh-cn/library/azure/mt218710.aspx)。
 
 ## 后续步骤
 - [将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager)
+- [将 Azure CLI 用于资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)
 - [使用标记来组织资源](/documentation/articles/resource-group-using-tags)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

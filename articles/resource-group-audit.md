@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="azure-resource-manager" 
-	ms.date="10/14/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="10/27/2015" 
+	wacn.date="12/31/2015"/>
 
 # 使用资源管理器执行审核操作
 
@@ -18,7 +18,12 @@
 
 审核日志包含对资源执行的所有操作。因此，如果组织中的用户修改了资源，你将可以识别相应的操作、时间和用户。
 
-可以通过 Azure PowerShell、Azure CLI、REST API 或 Azure 预览门户检索审核日志中的信息。
+在使用审核日志时，需要记住两个重要限制：
+
+1. 审核日志仅保留 90 天。
+2. 只能查询 15 天或更少天数内的日志。
+
+可以通过 Azure PowerShell、Azure CLI、REST API 或 Azure 门户检索审核日志中的信息。
 
 ## PowerShell
 
@@ -26,13 +31,17 @@
 
 若要检索日志条目，请运行 **Get-AzureRmLog** 命令（如果 PowerShell 版本低于 1.0 预览版，则运行 **Get-AzureResourceGroupLog**）。你可以提供附加参数来筛选条目列表。
 
-以下示例演示了如何使用审核日志来调查在解决方案生存期内执行的操作。你可以查看此操作的发生时间以及请求者。
+以下示例演示了如何使用审核日志来调查在解决方案生存期内执行的操作。你可以查看此操作的发生时间以及请求者。开始日期和结束日期以日期格式指定。
 
-    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime 2015-08-28T06:00
+    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime 2015-08-28T06:00 -EndTime 2015-09-10T06:00
 
-根据指定的开始时间，前面的命令可能会返回对该资源组执行的一长串操作。你可以提供搜索条件，以筛选所要查找的结果。例如，如果你想要调查网站的停止方式，可以运行以下命令并查看 someone@example.com 所执行的停止操作。
+或者，可以使用 date 函数来指定日期范围，例如过去 15 天。
 
-    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime 2015-08-28T06:00 | Where-Object OperationName -eq Microsoft.Web/sites/stop/action
+    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime (Get-Date).AddDays(-15)
+
+根据指定的开始时间，前面的命令可能会返回对该资源组执行的一长串操作。你可以提供搜索条件，以筛选所要查找的结果。例如，如果你想要调查 Web 应用的停止方式，可以运行以下命令并查看 someone@example.com 所执行的停止操作。
+
+    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime (Get-Date).AddDays(-15) | Where-Object OperationName -eq Microsoft.Web/sites/stop/action
 
     Authorization     :
                         Scope     : /subscriptions/xxxxx/resourcegroups/ExampleGroup/providers/Microsoft.Web/sites/ExampleSite
@@ -52,7 +61,7 @@
 
 在下一个示例中，我们将只查找在指定的开始时间后执行失败的操作。我们还将包含 **DetailedOutput** 参数，以查看错误消息。
 
-    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime 2015-08-27T12:00 -Status Failed –DetailedOutput
+    PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime (Get-Date).AddDays(-15) -Status Failed –DetailedOutput
     
 如果此命令返回了过多的条目和属性，你可以通过检索 **properties** 属性来专注于审核。
 
@@ -133,7 +142,8 @@
 
 ## 后续步骤
 
+- 若要了解如何设置安全策略，请参阅[管理对资源的访问权限](/documentation/articles/resource-group-rbac)。
 - 若要了解如何向服务主体授予访问权限，请参阅[使用 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)。
 - 若要了解如何操作所有用户的资源，请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources)。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->

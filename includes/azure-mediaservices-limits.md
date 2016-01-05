@@ -25,4 +25,4 @@
 
 <sup>5</sup> 存储帐户必须来自同一 Azure 订阅。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_1221_2015-->

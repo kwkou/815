@@ -10,7 +10,7 @@
 <tags
 	ms.service="multiple"
 	ms.date="08/31/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/31/2015"/>
 
 # 安装 Python 和 SDK
 
@@ -149,7 +149,9 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 
 对于 VM 方案，你只需启动所选的 Linux VM（Ubuntu、CentOS、Suse）并运行/管理所需内容。例如，你可以在 Windows/Mac/Linux 计算机上运行 [IPython][] REPL/notebook，并使你的浏览器指向在 Azure 上运行 IPython 引擎的 Linux 或 Windows 多处理器 VM。请参阅 [Azure 上的 IPython Notebook][] 教程，以了解详细信息。
 
-使用 Git 部署，可以从任何操作系统开发 Python网站并将其发布到 Azure 网站。当将您的存储库推送到 Azure 时，它将自动创建虚拟环境和 pip 安装所需的包。
+有关如何安装 Linux VM 的信息，请参阅[创建运行 Linux 的虚拟机][]教程。
+
+使用 Git 部署，可以从任何操作系统开发 Python 网站并将其发布到 Azure 网站。当将您的存储库推送到 Azure 时，它将自动创建虚拟环境和 pip 安装所需的包。
 
 有关开发和发布 Azure 网站的详细信息，请参阅有关教程：[使用 Django 创建网站][]、[使用 Bottle 创建网站][]和[使用 Flask 创建网站][]。有关使用任何 WSGI 合规框架的更多常规信息，请参阅[使用 Azure 网站配置 Python][]。
 
@@ -165,7 +167,7 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 * [IPython - Python 的高级 REPL/Notebook][]
 * [Azure 上的 IPython Notebook][]
 * [GitHub 上的 Python Tools for Visual Studio][]
-
+* [Python 开发人员中心](/develop/python/)
 
 [Continuum Analytics Python 分发]: http://continuum.io
 [Enthought Python 分发]: http://www.enthought.com
@@ -183,12 +185,13 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 [云服务]: /documentation/articles/cloud-services-python-ptvs
 [网站]: /documentation/articles/web-sites-python-ptvs-django-mysql
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
-[Python Tools for Visual Studio on CodePlex]: http://pytools.codeplex.com
+[GitHub 上的 Python Tools for Visual Studio]: http://microsoft.github.io/PTVS/
 [Python 包索引]: http://pypi.python.org/pypi
 [Windows Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?LinkId=254281&clcid=0x409
 [Windows Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?LinkID=516990&clcid=0x409
 [Setting up a Linux VM via the Azure portal]: /documentation/articles/create-and-configure-opensuse-vm-in-portal
 [How to use the Azure Command-Line Interface]: /documentation/articles/crossplat-cmd-tools
+[创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-tutorial
 [使用 Django 创建网站]: /documentation/articles/web-sites-python-create-deploy-django-app
 [使用 Bottle 创建网站]: /documentation/articles/web-sites-python-create-deploy-bottle-app
 [使用 Flask 创建网站]: /documentation/articles/web-sites-python-create-deploy-flask-app
@@ -197,4 +200,4 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 [队列存储]: /documentation/articles/storage-python-how-to-use-queue-storage
 [Blob 存储]: /documentation/articles/storage-python-how-to-use-blob-storage
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->

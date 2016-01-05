@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.date="10/02/2015"
-   wacn.date="11/27/2015"/>
+   ms.service="azure-resource-manager"
+   ms.date="11/09/2015"
+   wacn.date="12/31/2015"/>
 
 # Azure 资源管理器概述
 
@@ -91,15 +91,19 @@
 
 资源管理器可让你控制谁有权访问组织的特定操作。Azure 资源管理器原生地在管理平台中集成了 OAuth 和基于角色的访问控制 (RBAC)，并向资源组中的所有服务应用该访问控制。你可以将用户添加到预定义的平台和特定于资源的角色，并将这些角色应用到订阅、资源组或资源以限制访问。例如，你可以利用名为 SQL DB Contributor 的预定义角色，以允许用户管理数据库，但不允许管理数据库服务器或安全策略。为此，可将组织中需要此类访问权限的用户添加到 SQL DB Contributor 角色，并将该角色应用到订阅、资源组或资源。
 
-资源管理器会自动记录用户操作以供审核。
+资源管理器会自动记录用户操作以供审核。有关使用审核日志的信息，请参阅[使用资源管理器执行审核操作](/documentation/articles/resource-group-audit)。
 
 <!--有关基于角色的访问控制的详细信息，请参阅 [Windows Azure 预览版门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。-->此主题包含内置角色和允许的操作的列表。内置角色包括“所有者”、“读取者”和“参与者”等普通角色，以及“虚拟机参与者”、“虚拟网络参与者”和“SQL 安全管理员”等服务特定角色（这里只是列举了几个可用的角色）。
 
-<!--有关设置访问策略的示例，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)。-->
+有关分配角色的示例，请参阅[管理对资源的访问权限](/documentation/articles/resource-group-rbac)。
 
 你可以显式锁定关键资源，以防止用户删除或修改这些资源。有关详细信息，请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources)。
 
 有关最佳实践，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)
+
+## 使用自定义策略管理资源
+
+资源管理器可让你创建自定义策略来管理资源。创建的策略类型多种多样，例如，对资源实施命名约定、限制哪些区域可以托管哪种资源，或者要求在资源中包含标记值，以便按部门安排计费。有关详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy)。
 
 ## 一致的管理层
 
@@ -107,12 +111,15 @@
 
 有关 PowerShell 的信息，请参阅[将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager)和 [Azure 资源管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx)。
 
+有关 Azure CLI 的信息，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager)。
+
 有关 REST API 的信息，请参阅 [Azure 资源管理器 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)。
 
 ## 后续步骤
 
 - 若要了解如何创建模板，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)
+- 若要部署你创建的模板，请参阅[部署模板](/documentation/articles/resource-group-template-deploy)
 - 若要了解可以在模板中使用的函数，请参阅[模板函数](/documentation/articles/resource-group-template-functions)
 - 有关如何设计您的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->
