@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何将 Azure Redis 缓存与 Python 配合使用 | Microsoft Azure"
+	pageTitle="如何将 Azure Redis 缓存与 Python 配合使用 | Windows Azure"
 	description="开始将 Azure Redis 缓存与 Python 配合使用"
 	services="redis-cache"
 	documentationCenter=""

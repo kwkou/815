@@ -116,7 +116,7 @@ ConnectTimeout|连接操作的超时，以毫秒为单位。|
 -	重试
 	-	对于 ConnectRetry 和 ConnectTimeout，一般指导原则是快速失败并重试。这取决于工作负载，以及客户端发出 Redis 命令和接收响应平均花费的时间。
 	-	让 StackExchange.Redis 自动重新连接，而不是检查连接状态，然后由你自己重新连接。**避免使用 ConnectionMultiplexer.IsConnected 属性**。
-	-	雪球效应 - 有时，你可能会遇到这样的问题：不断地重试解决，但问题不断累积而永远无法恢复。在这种情况下，你应该根据 Microsoft 模式和实践小组发布的[一般重试指导原则](https://github.com/mspnp/azure-guidance/blob/master/Retry-General.md)中所述，考虑使用指数退让重试算法。
+	-	雪球效应 - 有时，你可能会遇到这样的问题：不断地重试解决，但问题不断累积而永远无法恢复。在这种情况下，你应该根据 WindowsAzure.cn 模式和实践小组发布的[一般重试指导原则](https://github.com/mspnp/azure-guidance/blob/master/Retry-General.md)中所述，考虑使用指数退让重试算法。
 -	超时值
 	-	根据工作负载相应地设置值。如果要存储较大值，应将超时设置为较大值。
 		-	将 ABortOnConnectFail 设置为 false，让 StackExchange.Redis 为你重新连接。
@@ -173,7 +173,7 @@ Redis 服务器不能现成地支持 SSL，但 Azure Redis 缓存可提供此支
 <a name="cache-common-patterns"></a>
 ## 常见的缓存模式和注意事项有哪些？
 
--	Microsoft 模式和实践小组制定了以下指导原则。
+-	WindowsAzure.cn 模式和实践小组制定了以下指导原则。
 	-	[缓存指导原则](https://github.com/mspnp/azure-guidance/blob/master/Caching.md)。
 	-	[Azure 云应用程序设计和实施指导原则](https://github.com/mspnp/azure-guidance)
 -	[使用 Azure Redis 缓存的常见缓存模式](/documentation/articles/cache-howto-common-cache-patterns)
@@ -181,14 +181,14 @@ Redis 服务器不能现成地支持 SSL，但 Azure Redis 缓存可提供此支
 <a name="cache-reference"></a>
 ## Azure Redis 缓存为何不像某些其他 Azure 服务一样提供 MSDN 类库参考？
 
-Microsoft Azure Redis 缓存基于主流开源 Redis 缓存，让你能够访问由 Microsoft 管理的安全专用 Redis 缓存。我们针对许多编程语言提供各种 [Redis 客户端](http://redis.io/clients)。每个客户端有自身的 API，用于通过 [Redis 命令](http://redis.io/commands)调用 Redis 缓存实例。
+Windows Azure Redis 缓存基于主流开源 Redis 缓存，让你能够访问由 WindowsAzure.cn 管理的安全专用 Redis 缓存。我们针对许多编程语言提供各种 [Redis 客户端](http://redis.io/clients)。每个客户端有自身的 API，用于通过 [Redis 命令](http://redis.io/commands)调用 Redis 缓存实例。
 
 由于客户端各不相同，因此 MSDN 上未提供统一的类参考；而是每个客户端都在维护其自身的参考文档。除了参考文档以外，Azure.com 的 [Redis 缓存文档](/documentation/services/redis-cache/)页上提供了许多教程，说明如何使用不同的语言和缓存客户端开始使用 Azure Redis 缓存。
 
 
 ## 哪种 Azure 缓存产品适合我？
 
->[AZURE.IMPORTANT]Microsoft 建议所有新开发使用 Azure Redis 缓存。
+>[AZURE.IMPORTANT]WindowsAzure.cn 建议所有新开发使用 Azure Redis 缓存。
 
 Azure 缓存当前具有三种产品：
 
@@ -200,7 +200,7 @@ Azure 缓存当前具有三种产品：
 ### Azure Redis Cache
 Azure Redis 缓存已正式发布，最大大小为 53 GB，且其可用性 SLA 为 99.9%。全新[高级层](/documentation/articles/cache-premium-tier-intro)处于预览状态，提供的最大大小为 530 GB，且支持群集、VNET 和持久性。
 
-Azure Redis 缓存使客户能够使用 Microsoft 管理的安全专用 Redis 缓存。有了此产品，你可以利用 Redis 提供的丰富功能集和生态系统，并可以从 Microsoft 获得可靠的托管和监控。
+Azure Redis 缓存使客户能够使用 WindowsAzure.cn 管理的安全专用 Redis 缓存。有了此产品，你可以利用 Redis 提供的丰富功能集和生态系统，并可以从 WindowsAzure.cn 获得可靠的托管和监控。
 
 与仅处理键/值对的传统缓存不同，Redis 因其高性能的数据类型而受欢迎。Redis 还支持对这些类型运行原子操作，如在字符串后面追加内容；递增哈希中的值；推送到列表；计算交集、并集和差集，或者获取排序集中排名最高的成员。其他功能包括支持事务、发布/订阅、Lua 脚本、具有有限生存时间的键和配置设置，使 Redis 在行为上更类似于传统缓存。
 
@@ -212,6 +212,6 @@ Redis 取得成功的另一个重要方面是围绕它构建了健康而充满�
 如果你是现有 Azure 托管缓存服务客户，则可以继续使用现有服务，也可选择迁移到 Azure Redis 缓存，以利用其丰富的功能集。Azure 托管缓存服务也已正式发布，并且也提供 99.9% 的可用性 SLA。
 
 ### 角色中缓存
-如果你正在使用角色中缓存自托管缓存，也可以继续这样做。由于角色中缓存是自托管的软件组件，不是 Microsoft 托管的服务，因此它不提供任何 SLA。角色中缓存的用户可以选择迁移到 Azure Redis 缓存，以利用其丰富的功能集并获取 SLA。
+如果你正在使用角色中缓存自托管缓存，也可以继续这样做。由于角色中缓存是自托管的软件组件，不是 WindowsAzure.cn 托管的服务，因此它不提供任何 SLA。角色中缓存的用户可以选择迁移到 Azure Redis 缓存，以利用其丰富的功能集并获取 SLA。
 
 <!---HONumber=Mooncake_1207_2015-->

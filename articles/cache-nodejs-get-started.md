@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何将 Azure Redis 缓存与 Node.js 配合使用 | Microsoft Azure"
+	pageTitle="如何将 Azure Redis 缓存与 Node.js 配合使用 | Windows Azure"
 	description="开始将 Azure Redis 缓存与 Node.js 和 node_redis 配合使用。"
 	services="redis-cache"
 	documentationCenter=""
@@ -14,7 +14,7 @@
 
 # 如何将 Azure Redis 缓存与 Node.js 配合使用
 
-Azure Redis 缓存可让你访问 Microsoft 管理的、专用安全的 Redis 缓存。可从 Microsoft Azure 内部的任何应用程序访问你的缓存。
+Azure Redis 缓存可让你访问 WindowsAzure.cn 管理的、专用安全的 Redis 缓存。可从 Windows Azure 内部的任何应用程序访问你的缓存。
 
 本主题说明如何开始将 Azure Redis 缓存与 Node.js 配合使用。有关将 Azure Redis 缓存与 Node.js 配合使用的另一个示例，请参阅[在 Azure 网站中使用 Socket.IO 生成 Node.js 聊天应用程序][]。
 
