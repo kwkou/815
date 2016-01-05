@@ -1,26 +1,30 @@
-<properties 
-	pageTitle="Azure 上使用 Linux VM 的 Ruby on Rails网站" 
-	description="在 Azure 上使用 Linux 虚拟机托管基于 Ruby on Rails 的网站。" 
-	services="virtual-machines" 
-	documentationCenter="ruby" 
-	authors="MikeWasson" 
-	manager="wpickett" 
-	editor=""/>
+<properties
+	pageTitle="在 Linux VM 上托管 Ruby on Rails 网站 | Windows Azure"
+	description="在 Azure 上使用 Linux 虚拟机设置和托管基于 Ruby on Rails 的网站。"
+	services="virtual-machines"
+	documentationCenter="ruby"
+	authors="MikeWasson"
+	manager="wpickett"
+	editor=""
+	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.date="06/09/2015" 
-	wacn.date="09/18/2015"/>
-
-
-
+<tags
+	ms.service="virtual-machines"
+	ms.date="06/09/2015"
+	wacn.date="12/31/2015"/>
 
 
-# Azure 虚拟机上的 Ruby on Rails网站
+
+
+
+#Azure VM 上的 Ruby on Rails 网站
 
 本教程介绍如何在 Azure 中使用 Linux 虚拟机托管 Ruby on Rails 网站。
 
 本教程使用 Ubuntu Server 14.04 LTS 进行了验证。如果你使用不同 Linux 分发，则可能需要修改安装 Rails 的步骤。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+
 
 ## 创建 Azure VM
 
@@ -46,8 +50,8 @@
 
 ## 在 Rails 上安装 Ruby
 
-1. 使用 SSH 连接到 VM。 
-	
+1. 使用 SSH 连接到 VM。
+
 2. 从 SSH 会话中，使用以下命令在虚拟机上安装 Ruby：
 
 		sudo apt-get update -y
@@ -122,7 +126,7 @@
 	![默认 rails 页面][default-rails-cloud]
 
 
-## <a id="next"></a>后续步骤
+##<a id="next"></a>后续步骤
 
 在本教程中，你手动执行大多数步骤。在生产环境中，会在开发计算机上编写应用，然后将其部署到 Azure VM。此外，大多数生产环境都结合其他服务器进程（如 Apache 或 NginX）来托管 Rails 应用程序，这些进程会处理路由到多个 Rails 应用程序实例的请求并提供静态资源。有关详细信息，请参阅 http://rubyonrails.org/deploy/。
 
@@ -132,14 +136,15 @@
 
 * [使用 Blob 存储非结构化数据][blobs]
 
-* <!--[-->使用表存储键/值对<!--][tables]-->
+* [使用表存储键/值对][tables]
 
-* <!--[-->使用内容交付网络提供高带宽内容<!--][cdn-howto]-->
+* [使用内容交付网络提供高带宽内容][cdn-howto]
 
 
 
 <!-- WA.com links -->
 [blobs]: /documentation/articles/storage-ruby-how-to-use-blob-storage
+
 [cdn-howto]: /develop/ruby/app-services/
 
 [management-portal]: https://manage.windowsazure.cn/
@@ -147,6 +152,8 @@
 [tables]: /develop/ruby/how-to-guides/table-service/
 
 [vm-instructions]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm
+
+
 <!-- External Links -->
 [rails-guides]: http://guides.rubyonrails.org/
 
@@ -163,6 +170,5 @@
 [new-endpoint]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint.png
 
 [new-endpoint1]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint1.png
- 
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

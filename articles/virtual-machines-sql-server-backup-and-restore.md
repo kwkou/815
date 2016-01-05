@@ -1,22 +1,25 @@
-<properties 
-	pageTitle="Azure 虚拟机中 SQL Server 的备份和还原"
+<properties
+	pageTitle="SQL Server 的备份和还原 | Windows Azure"
 	description="介绍 Azure 虚拟机上运行的 SQL Server 数据库的备份和还原注意事项。"
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar" />
+	editor="monicar"
+	tags="azure-service-management" />
 
 <tags 
 	ms.service="virtual-machines"
-	ms.date="08/05/2015"
-	wacn.date="09/18/2015" />
+	ms.date="11/13/2015"
+	wacn.date="12/31/2015" />
 
 # Azure 虚拟机中 SQL Server 的备份和还原
 
 ## 概述
 
 备份 SQL Server 数据库中的数据是防止应用程序或用户错误导致数据丢失而采取的策略的重要组成部分。对于 Azure 虚拟机 (VM) 上运行的 SQL Server 同样如此。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
 
 对于 Azure VM 中运行的 SQL Server，可以使用附加的磁盘作为备份文件目标，通过本机备份和还原技术实现此目的。不过，你只能[根据虚拟机的大小](/documentation/articles/virtual-machines-size-specs)，将有限数量的磁盘附加到 Azure 虚拟机。磁盘管理开销也是一个考虑因素。
 
@@ -85,4 +88,4 @@ SQL Server 2014 包括以下增强功能：
 
 请查看其他[有关在 Azure 虚拟机中运行 SQL Server 的资源](/documentation/articles/virtual-machines-sql-server-infrastructure-services)。
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

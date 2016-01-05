@@ -1,6 +1,6 @@
 <properties
 	pageTitle="如何使用 CoreOS | Windows Azure"
-	description="介绍 CoreOS、如何在 Azure 上创建 CoreOS 虚拟机群集及其基本用法。"
+	description="介绍 CoreOS、如何在 Azure 上使用经典部署模型创建 CoreOS 虚拟机群集及其基本用法。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="squillace"
@@ -10,16 +10,17 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/03/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/21/2015"
+	wacn.date="12/31/2015"/>
 
 # 如何在 Azure 上使用 CoreOS
 
 本主题介绍 [CoreOS] 并演示如何在 Azure 上创建三个 CoreOS 虚拟机构成的群集，以帮助你快速了解此操作系统。它使用非常基本的 CoreOS 部署元素和来自 [CoreOS 与 Azure]、[Tim Park 的 CoreOS 教程]和 [Patrick Chanezon 的 CoreOS 教程]中的示例，演示了解 CoreOS 部署的基本结构及成功运行三个虚拟机构成的群集的绝对最低要求。
 
->[AZURE.NOTE]本文介绍了如何通过 Azure 命令行界面来使用服务管理命令创建 CoreOS VM。若要在 Azure 资源管理器中开始使用 CoreOS，请尝试此<!--[-->快速入门模板<!--](/documentation/templates/coreos-with-fleet-multivm)-->。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model]（https://azure.microsoft.com/documentation/templates/coreos-with-fleet-multivm/)。
 
-## <a id='intro'>CoreOS、群集和 Linux 容器</a>
+
+## CoreOS、群集和 Linux 容器
 
 CoreOS 是 Linux 的轻量级版本，旨在支持快速创建使用 Linux 容器作为唯一打包机制的可能的大型 VM 群集（包括 [Docker] 容器）。CoreOS 旨在支持：
 
@@ -35,10 +36,10 @@ CoreOS 是 Linux 的轻量级版本，旨在支持快速创建使用 Linux 容�
 
 这是对 CoreOS 及其功能的概要说明。有关 CoreOS 更完整的信息，请参阅 [CoreOS 概述]。
 
-## <a id='security'>安全注意事项</a>
+## 安全注意事项
 目前，CoreOS 假定可以通过 SSH 进入群集的人员有权对群集进行管理。因此，在不进行修改的情况下，CoreOS 群集在测试和开发环境中的表现也相当出色，但你应该在所有生产环境中应用更多安全措施。
 
-## <a id='usingcoreos'>如何在 Azure 上使用 CoreOS</a>
+## 如何在 Azure 上使用 CoreOS
 
 本部分介绍如何使用 [Azure 命令行界面 (Azure CLI)]，创建拥有三个 CoreOS 虚拟机的 Azure 云服务。基本步骤如下所示：
 
@@ -104,10 +105,6 @@ coreos:
 	数据: 2b171e93f07c4903bcad35bda10acf22\_\_CoreOS-Stable-522.6.0 Public Linux
 
 3. 键入 `azure service create <cloud-service-name>`（其中的 <*cloud-service-name*> 是你的 CoreOS 云服务的名称）可创建用于基本群集的云服务。此示例使用 **`coreos-cluster`** 作为名称；你将需要重用所选名称来创建云服务内部的 CoreOS VM 实例。
-
-注意：如果在[门户](https://manage.windowsazure.cn)中观察你到目前为止的工作，你会在资源组和域中看到你的云服务名称，如下图所示：
-
-	![][CloudServiceInNewPortal]
 
 4. 使用 **azure vm create** 命令可连接到你的云服务，并可在其中创建新的 CoreOS VM。你将在 **--ssh-cert** 选项中传递 X.509 证书的位置。通过键入以下命令创建你的第一个 VM 映像，请记得使用你创建的云服务名称替换 **coreos-cluster**：
 
@@ -176,11 +173,11 @@ azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem
 在 Azure 上，你现在应该拥有正常运行的三节点 CoreOS 群集。此后，你可以探索如何创建更复杂的群集、使用 Docker 和创建更有趣的应用程序。若要尝试操作几个快速示例，请参阅[在 Azure 上的 CoreOS 上使用 Fleet 入门]。
 
 <!--Anchors-->
-[CoreOS, Clusters, and Linux Containers]: #intro
-[Security Considerations]: #security
-[How to use CoreOS on Azure]: #usingcoreos
+[CoreOS、群集和 Linux 容器]: #intro
+[安全注意事项]: #security
+[如何在 Azure 上使用 CoreOS]: #usingcoreos
 [Subheading 3]: #subheading-3
-[Next steps]: #next-steps
+[后续步骤]: #next-steps
 
 <!--Image references-->
 [CloudServiceInNewPortal]: ./media/virtual-machines-linux-coreos-how-to/cloudservicefromnewportal.png
@@ -199,4 +196,5 @@ azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem
 [Docker]: http://docker.io
 [YAML]: http://yaml.org/
 [在 Azure 上的 CoreOS 上使用 Fleet 入门]: /documentation/articles/virtual-machines-linux-coreos-fleet-get-started
-<!---HONumber=70-->
+
+<!---HONumber=Mooncake_1221_2015-->

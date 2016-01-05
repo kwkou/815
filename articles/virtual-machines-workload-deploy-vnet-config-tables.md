@@ -1,6 +1,6 @@
 <properties
-	pageTitle="使用配置表创建跨界虚拟网络"
-	description="本主题介绍如何使用预先确定的配置表配置跨界虚拟网络。"
+	pageTitle="使用配置表的虚拟网络 | Windows Azure"
+	description="了解如何使用预先确定的设置通过配置表中的设置配置跨界 Azure 虚拟网络。"
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -10,10 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/21/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/20/2015"
+	wacn.date="12/31/2015"/>
 
 # 使用配置表创建跨界虚拟网络
+
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../includes/learn-about-deployment-models-classic-include.md)]资源管理器部署模型。
 
 本主题将指导你逐步完成使用以前在下列一组配置表中指定的设置创建跨界虚拟网络：
 
@@ -63,4 +65,4 @@
 
 [配置与 Azure 虚拟网络的跨界站点到站点连接](/documentation/articles/vpn-gateway-site-to-site-create)
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

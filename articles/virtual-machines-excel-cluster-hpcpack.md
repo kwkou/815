@@ -1,19 +1,24 @@
 <properties
-	 pageTitle="开始使用 HPC Pack 群集运行 Excel 和 SOA 工作负荷 | Windows Azure"
-	 description="。"
-	 services="virtual-machines"
-	 documentationCenter=""
-	 authors="dlepow"
-	 manager="timlt"
-	 editor=""/>
+ pageTitle="用于 Excel 和 SOA 的 HPC Pack 群集 | Windows Azure"
+ description="使用资源管理器部署模型运行 Excel 和 SOA 工作负荷的 HPC Pack 群集入门。"
+ services="virtual-machines"
+ documentationCenter=""
+ authors="dlepow"
+ manager="timlt"
+ editor=""
+ tags="azure-resource-manager,hpc-pack"/>
+
 <tags
-	ms.service="virtual-machines"
-	ms.date="08/18/2015"
-	wacn.date="09/15/2015"/>
+ 	ms.service="virtual-machines"
+ 	ms.date="11/11/2015"
+ 	wacn.date="12/31/2015"/>
 
 # 开始使用 Azure 中的 HPC Pack 群集运行 Excel 和 SOA 工作负荷
 
 本文介绍如何使用 Azure 快速入门模板或 Azure PowerShell 部署脚本将 HPC Pack 群集部署在 Azure 基础结构服务 (IaaS) 上。你将使用设计为使用 HPC Pack 运行 Microsoft Excel 或面向服务的体系结构 (SOA) 工作负荷的 Azure 应用商店 VM 映像。你可以使用群集从本地客户端计算机运行简单的 Excel HPC 和 SOA 服务。Excel HPC 服务提供 Excel 工作簿卸载和 Excel 用户定义的函数或 UDF。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
+
 
 下图在较高级别显示了将创建的 HPC Pack 群集。
 
@@ -25,7 +30,7 @@
 
 * **Azure 订阅** - 如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 
-* **内核配额** - 你可能需要增加内核配额，尤其是在你选择部署具有多核 VM 大小的多个群集节点时需要。如果你使用的是 Azure 快速入门模板，请注意资源管理器中的内核配额是按 Azure 区域设定的，你可能需要增加特定区域中的配额。请参阅 <!--[-->Azure 订阅限制、配额和约束<!--](/documentation/articles/azure-subscription-service-limits)-->。若要增加配额，可免费[建立联机客户支持请求](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。
+* **内核配额** - 你可能需要增加内核配额，尤其是在你选择部署具有多核 VM 大小的多个群集节点时需要。如果你使用的是 Azure 快速入门模板，请注意资源管理器中的内核配额是按 Azure 区域设定的，你可能需要增加特定区域中的配额。请参阅 [Azure 订阅限制、配额和约束](/documentation/articles/azure-subscription-service-limits)。若要增加配额，可免费[建立联机客户支持请求](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。
 
 
 ## 步骤 1.在 Azure 中设置 HPC Pack 群集
@@ -38,11 +43,11 @@ HPC Pack IaaS 部署脚本提供了另一种通用的方法来部署 HPC Pack �
 
 * **Azure PowerShell** - 在客户端计算机上[安装并配置 Azure PowerShell](/documentation/articles/powershell-install-configure)（版本 0.8.10 或更高版本）。
 
-* **HPC Pack IaaS 部署脚本** - 从 [Microsoft 下载中心](/downloads/)下载并解压缩最新版本的脚本。通过运行 `New-HPCIaaSCluster.ps1 –Version` 检查脚本的版本。本文基于版本 4.4.0 或更高版本的脚本。
+* **HPC Pack IaaS 部署脚本** - 从 [Microsoft 下载中心](https://www.microsoft.com/download/details.aspx?id=44949)下载并解压缩最新版本的脚本。通过运行 `New-HPCIaaSCluster.ps1 –Version` 检查脚本的版本。本文基于版本 4.5.0 或更高版本的脚本。
 
 **创建配置文件**
 
- HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文件作为输入。若要部署由 1 个头节点和 18 个计算节点（从包含 Microsoft Excel 的计算节点映像创建）组成的群集，请将你环境的值代入下面的示例配置文件。有关配置文件的详细信息，请参阅脚本文件夹中的 Manual.rtf 文件或[脚本文档](https://msdn.microsoft.com/zh-cn/library/azure/dn864734.aspx)。
+ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文件作为输入。若要部署由 1 个头节点和 18 个计算节点（从包含 Microsoft Excel 的计算节点映像创建）组成的群集，请将你环境的值代入下面的示例配置文件。有关配置文件的详细信息，请参阅脚本文件夹中的 Manual.rtf 文件和[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)。
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -74,21 +79,21 @@ HPC Pack IaaS 部署脚本提供了另一种通用的方法来部署 HPC Pack �
     <VMSize>Large</VMSize>
     <EnableRESTAPI/>
     <EnableWebPortal/>
-<PostConfigScript>C:\tests\PostConfig.ps1</PostConfigScript>
+    <PostConfigScript>C:\tests\PostConfig.ps1</PostConfigScript>
   </HeadNode>
   <ComputeNodes>
     <VMNamePattern>HPCExcelCN%00%</VMNamePattern>
     <ServiceName>HPCExcelCN01</ServiceName>
     <VMSize>Medium</VMSize>
     <NodeCount>18</NodeCount>
-    <ImageName HPCPackInstalled="true">96316178b0644ae08bc4e037635ce104__HPC-Pack-2012R2-Update2-CN-Excel-4.4.4864.0-WS2012R2-ENU</ImageName>
+    <ImageName>HPCPack2012R2_ComputeNodeWithExcel</ImageName>
   </ComputeNodes>
 </IaaSClusterConfig>
 ```
 
 **有关配置文件的说明**
 
-* 头节点的 **VMName** 的必须与 **ServiceName** 完全相同。
+* 头节点的 **VMName** **必须**与 **ServiceName** 完全相同，否则 SOA 作业将无法运行。
 
 * 请确保指定 **EnableWebPortal**，以便生成头节点证书并将其导出。
 
@@ -104,7 +109,7 @@ HPC Pack IaaS 部署脚本提供了另一种通用的方法来部署 HPC Pack �
     # remove the compute node role for head node to make sure the Excel workbook won’t run on head node
         Get-HpcNode -GroupName HeadNodes | Set-HpcNodeState -State offline | Set-HpcNode -Role BrokerNode
 
-    # total number of nodes in the deployment including the head node and compute nodes
+    # total number of nodes in the deployment including the head node and compute nodes, which should match the number specified in the XML configuration file
         $TotalNumOfNodes = 19
 
         $ErrorActionPreference = 'SilentlyContinue'
@@ -130,13 +135,13 @@ HPC Pack IaaS 部署脚本提供了另一种通用的方法来部署 HPC Pack �
 
     ```
     cd E:\IaaSClusterScript
-```
+	```
 
 4. 运行以下命令以部署 HPC Pack 群集。本示例假定配置文件位于 E:\\HPCDemoConfig.xml。
 
     ```
     .\New-HpcIaaSCluster.ps1 –ConfigFile E:\HPCDemoConfig.xml –AdminUserName MyAdminName
-```
+	```
 
 HPC Pack 部署脚本将运行一段时间。此脚本将做的一件事情是导出并下载群集证书并将其保存到客户端计算机上当前用户的 Documents 文件夹中。此脚本将生成如下消息。在下面的步骤中，你将在相应的证书存储中导入证书。
 
@@ -161,12 +166,12 @@ You have enabled REST API or web portal on HPC Pack head node. Please import the
     ```
 <?xml version="1.0"?>
 <configuration>
-  <startup useLegacyV2RuntimeActivationPolicy="true">
-    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/>
-  </startup>
+    <startup useLegacyV2RuntimeActivationPolicy="true">
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/>
+    </startup>
 </configuration>
 ```
-4.	为你的计算机（[x64](http://www.microsoft.com/download/details.aspx?id=14632)，[x86](https://www.microsoft.com/download/details.aspx?id=5555)）下载完整的 [HPC Pack 2012 R2 Update 2 安装](http://www.microsoft.com/download/details.aspx?id=47755)并安装 HPC Pack 客户端，或下载并安装 [HPC Pack 2012 R2 Update 2 客户端实用工具](https://www.microsoft.com/download/details.aspx?id=47754)和相应的 Visual C++ 2010 可再发行组件。
+4.	为你的计算机（[x64](http://www.microsoft.com/download/details.aspx?id=14632)，[x86](https://www.microsoft.com/download/details.aspx?id=5555)）下载完整的 [HPC Pack 2012 R2 Update 3 安装](http://www.microsoft.com/download/details.aspx?id=49922)并安装 HPC Pack 客户端，或下载并安装 [HPC Pack 2012 R2 Update 3 客户端实用工具](https://www.microsoft.com/download/details.aspx?id=49923)和相应的 Visual C++ 2010 可再发行组件。
 
 5.	在此示例中，我们使用名为 ConvertiblePricing\_Complete.xlsb 的示例 Excel 工作簿，在[此处](https://www.microsoft.com/zh-cn/download/details.aspx?id=2939)可供下载。
 
@@ -205,15 +210,15 @@ You have enabled REST API or web portal on HPC Pack head node. Please import the
 
 若要运行 Excel UDF，请按照前面的步骤 1 – 3 设置客户端计算机。对于 Excel UDF，不需要将 Excel 应用程序安装在计算节点上，因此你可以在步骤 1 中选择普通计算节点映像，而不是带 Excel 的计算节点映像。
 
->[AZURE.NOTE]在 Excel 2010 和 Excel 2013 群集连接器对话框中有 34 字符限制。如果完整的群集名称较长（例如 hpcexcelhn01.southeastasia.cloudapp.azure.com），则它会容纳不下，UDF 将不会运行。解决方法是使用 IaaS 部署脚本为群集部署较短名称（如 hpcexcelhn01.cloudapp.net）。将在以后版本的 SOA 会话 API 中解决此问题。
+>[AZURE.NOTE]在 Excel 2010 和 Excel 2013 群集连接器对话框中有 34 字符限制。如果完整的群集名称较长（例如 hpcexcelhn01.southeastasia.cloudapp.azure.com），则它会在对话框中容纳不下。解决方法是将计算机范围的变量（例如 *CCP\_IAASHN*）的值设置为长群集名称，并在对话框中输入 *%CCP\_IAASHN%* 作为群集头节点名称。请注意，对于 Update 2 群集，需要 Update 2 QFE KB3085833（在[此处](http://www.microsoft.com/zh-cn/download/details.aspx?id=48725)下载）才能使客户端计算机上的 SOA 会话 API 支持此解决方法。
 
 成功部署群集后，继续使用以下步骤来运行示例内置 Excel UDF。对于自定义 Excel UDF，请参阅这些[资源](http://social.technet.microsoft.com/wiki/contents/articles/1198.windows-hpc-and-microsoft-excel-resources-for-building-cluster-ready-workbooks.aspx)来构建 XLL并将它们部署在 IaaS 群集上。
 
-1.	打开一个新的 Excel 工作簿。在**“开发”**功能区上，单击**“外接程序”**。然后，在对话框中单击**“浏览”**，导航到 %CCP\_HOME%Bin\\XLL32 文件夹，并选择示例 ClusterUDF32.xll。
+1.	打开一个新的 Excel 工作簿。在**“开发”**功能区上，单击**“外接程序”**。然后，在对话框中单击**“浏览”**，导航到 %CCP\_HOME%Bin\\XLL32 文件夹，并选择示例 ClusterUDF32.xll。如果 ClusterUDF32 未存在于客户端计算机上，则可以从头节点上的 %CCP\_HOME%Bin\\XLL32 文件夹复制它。
 
     ![选择 UDF][udf]
 
-2.	单击**“文件”**>**“选项”**>**“高级”**。在**“公式”**下，选中**“允许用户定义的 XLL 函数运行计算群集”**。然后，单击**“选项”**，在**“群集头节点名称”**中输入完整的群集名称 。（如前所述，此输入框限制为 34 个字符，因此较长的群集名称可能容纳不下。在通过 IaaS 部署脚本部署群集时，可以配置较短的完整名称。）
+2.	单击**“文件”**>**“选项”**>**“高级”**。在**“公式”**下，选中**“允许用户定义的 XLL 函数运行计算群集”**。然后，单击**“选项”**，在**“群集头节点名称”**中输入完整的群集名称 。（如前所述，此输入框限制为 34 个字符，因此较长的群集名称可能容纳不下。你可以在此处使用计算机范围的变量作为长群集名称。）
 
     ![配置 UDF][options]
 
@@ -229,7 +234,7 @@ You have enabled REST API or web portal on HPC Pack head node. Please import the
 
 1. 检索群集证书之后，在客户端计算机上的 Cert: \\CurrentUser\\Root 下导入它。
 
-2. 安装 [HPC Pack 2012 R2 Update 2 SDK](http://www.microsoft.com/download/details.aspx?id=47756) 和 [HPC Pack 2012 R2 Update 2 客户端实用工具](https://www.microsoft.com/download/details.aspx?id=47754)，以便可以开发和运行 SOA 客户端应用程序。
+2. 安装 [HPC Pack 2012 R2 Update 3 SDK](http://www.microsoft.com/download/details.aspx?id=49921) 和 [HPC Pack 2012 R2 Update 3 客户端实用工具](https://www.microsoft.com/download/details.aspx?id=49923)，以便可以开发和运行 SOA 客户端应用程序。
 
 3. 下载 HellowWorldR2 [示例代码](https://www.microsoft.com/download/details.aspx?id=41633)。在 Visual Studio 2010 或 2012 中打开 HelloWorldR2.sln。
 
@@ -247,7 +252,7 @@ const string headnode = "[headnode]";
 // After e.g.
 const string headnode = "hpc01.eastus.cloudapp.azure.com";
 or
-const string headnode = "hpc01.cloudapp.net";
+const string headnode = "hpc01.chinacloudapp.cn";
 ```
 
 * （可选）在 SessionStartInfo 中使用默认 TransportScheme 或显式将其设置为 Http。
@@ -288,7 +293,7 @@ binding.Security.Message.ClientCredentialType = BasicHttpMessageCredentialType.U
 
 ### 使用 NetTcp 绑定
 
-若要使用 NetTcp 绑定，配置与连接到本地群集时类似。你需要在头节点 VM 上打开几个终结点。在 Azure 管理门户中，执行以下操作。
+若要使用 NetTcp 绑定，配置与连接到本地群集时类似。你需要在头节点 VM 上打开几个终结点。在 Azure 门户中，执行以下操作。
 
 
 1. 停止 VM。
@@ -322,4 +327,4 @@ binding.Security.Message.ClientCredentialType = BasicHttpMessageCredentialType.U
 [endpoint]: ./media/virtual-machines-excel-cluster-hpcpack/endpoint.png
 [udf]: ./media/virtual-machines-excel-cluster-hpcpack/udf.png
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1221_2015-->

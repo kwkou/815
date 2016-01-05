@@ -1,6 +1,6 @@
 <properties
-	pageTitle="SharePoint Intranet 场工作负荷阶段 4：配置 SharePoint Server"
-	description="在部署仅限 Intranet 的 SharePoint 2013 场的这个第四阶段，你将创建 SharePoint Server 虚拟机和新的 SharePoint 场。"
+	pageTitle="SharePoint Server 2013 场（阶段 4）| Windows Azure"
+	description="在 Azure 的 SharePoint Server 2013 场阶段 4 中创建 SharePoint Server 虚拟机和新的 SharePoint 场。"
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -10,10 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/22/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/20/2015"
+	wacn.date=""/>
 
 # SharePoint Intranet 场工作负荷阶段 4：配置 SharePoint Server
+
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../includes/learn-about-deployment-models-classic-include.md)]资源管理器部署模型。
 
 在部署仅限 Intranet 的 SharePoint 2013 场（在 Azure 基础结构服务中通过 SQL Server AlwaysOn 可用性组进行）的这个阶段，你将构建出 SharePoint 场的应用程序层和 Web 层，并使用 SharePoint 配置向导创建场。
 
@@ -95,6 +97,8 @@
 利用[“使用远程桌面连接登录到虚拟机”过程](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2#logon)四次（对每个 SharePoint Server 利用一次），使用 [Domain]\\sp\_farm\_db 帐户凭据登录。这些凭据是在[阶段 2：配置域控制器](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2)中创建的。
 
 使用[测试连接过程](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2#testconn)四次（对每个 SharePoint Server 使用一次），测试与你的组织网络上的位置的连接。
+
+> [AZURE.NOTE]SharePoint Server 是从 SharePoint Server 2013 试用版映像中创建而来。对于 SharePoint Server 2013 Standard 版或 Enterprise 版，你需要将安装转换为使用“零售”或“批量许可证”密钥。
 
 ## 配置 SharePoint 场
 
@@ -187,6 +191,6 @@
 
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-LOB-application)
+[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-lob-application)
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

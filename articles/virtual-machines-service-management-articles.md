@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/07/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/31/2015"/>
 
 # 有关服务管理中虚拟机的文章
 
@@ -34,15 +34,17 @@
 
 [使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
-[使用 Azure PowerShell 创建和管理基于 Windows 的虚拟机](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)
+[使用 Powershell 和经典部署模型创建 Windows 虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
-[使用 Azure CLI 创建多 VM 部署](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli)
+[使用 Azure 命令行界面 (Azure CLI) 创建运行 Linux 的自定义 VM](/documentation/articles/virtual-machines-linux-create-custom)
+
+[使用 Azure CLI 创建多 VM 部署](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli-install)
 
 ## 计划
 
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[我是否需要虚拟网络？](https://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)
+[我是否需要虚拟网络？](/documentation/articles/virtual-networks-overview)
 
 ## 创建
 
@@ -80,17 +82,15 @@
 
 ## 创建工作负荷
 
-[Active Directory](https://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx)
-
-[BizTalk Server](https://msdn.microsoft.com/zh-cn/library/azure/jj248689)
+[Active Directory](/documentation/articles/active-directory-new-forest-virtual-machine)
 
 [Cassandra](/documentation/articles/virtual-machines-linux-nodejs-running-cassandra)
 
-[Docker](/documentation/articles/virtual-machines-docker-with-xplat-cli)
+[Docker](/documentation/articles/virtual-machines-docker-with-xplat-cli-install)
 
 [Exchange Server](https://technet.microsoft.com/zh-cn/library/jj619301.aspx)
 
-[HPC Pack](https://msdn.microsoft.com/zh-cn/library/azure/dn518135.aspx)
+[HPC Pack](/documentation/articles/virtual-machines-hpcpack-cluster-options)
 
 [LAMP 堆栈](/documentation/articles/virtual-machines-linux-install-lamp-stack)
 
@@ -138,6 +138,8 @@
 
 [Azure 服务管理 cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn708504.aspx)
 
-[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools) [服务管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
+[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools)
 
-<!---HONumber=82-->
+[服务管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
+
+<!---HONumber=Mooncake_1221_2015-->

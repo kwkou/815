@@ -1,6 +1,6 @@
 <properties
-	pageTitle="SharePoint Intranet 场工作负荷阶段 2：配置域控制器"
-	description="在部署仅限 Intranet 的 SharePoint 2013 场（在 Azure 基础结构服务中通过 SQL Server AlwaysOn 可用性组进行）的这个第二阶段，你将创建并配置两个 Active Directory 域控制器。"
+	pageTitle="SharePoint Server 2013 场（阶段 2）| Windows Azure"
+	description="在 Azure 的 SharePoint Server 2013 场阶段 2 中创建并配置两个 Active Directory 副本域控制器。"
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -10,10 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/21/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/20/2015"
+	wacn.date="12/31/2015"/>
 
 # SharePoint Intranet 场工作负荷阶段 2：配置域控制器
+
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../includes/learn-about-deployment-models-classic-include.md)]资源管理器部署模型。
 
 在部署仅限 Intranet 的 SharePoint 2013 场（在 Azure 基础结构服务中通过 SQL Server AlwaysOn 可用性组进行）的这个阶段，你将在服务管理中配置 Azure 虚拟网络中的两个域控制器。然后，针对 SharePoint 场的客户端 Web 请求可在 Azure 虚拟网络中进行身份验证，而无需通过与本地网络的 VPN 或 Azure ExpressRoute 连接发送身份验证流量。
 
@@ -27,9 +29,9 @@
 --- | --- | --- | ---
 1\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（第一个域控制器，示例 DC1） | Windows Server 2012 R2 Datacenter | A2（中）
 2\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（第二个域控制器，示例 DC2） | Windows Server 2012 R2 Datacenter | A2（中）
-3\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（第一台 SQL Server 计算机，示例 SQL1） | Microsoft SQL Server 2014 Enterprise - Windows Server 2012 R2 | 	A7
-4\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（第二台 SQL Server 计算机，示例 SQL2） | Microsoft SQL Server 2014 Enterprise - Windows Server 2012 R2 | 	A7
-5\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（群集的多数节点见证，示例 MN1） | Windows Server 2012 R2 Datacenter | A1（小）
+3\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（第一台 SQL Server 计算机，示例 SQL1） | Microsoft SQL Server 2014 Enterprise - Windows Server 2012 R2 | A5
+4\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（第二台 SQL Server 计算机，示例 SQL2） | Microsoft SQL Server 2014 Enterprise - Windows Server 2012 R2 | A5
+5\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（群集的多数节点，示例 MN1） | Windows Server 2012 R2 Datacenter | A1（小）
 6\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（第一台 SharePoint 应用程序服务器，示例 APP1） | Microsoft SharePoint Server 2013 试用版 - Windows Server 2012 R2 | A4（超大）
 7\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（第二台 SharePoint 应用程序服务器，示例 APP2） | Microsoft SharePoint Server 2013 试用版 - Windows Server 2012 R2 | A4（超大）
 8\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（第一个 SharePoint Web 服务器，示例 WEB1） | Microsoft SharePoint Server 2013 试用版 - Windows Server 2012 R2 | A4（超大）
@@ -106,7 +108,7 @@
 2.	若要连接到 VM，请单击其名称旁边的**“状态”**列中的**“正在运行”**。
 3.	在页面底部的命令栏中，单击**“连接”**。
 4.	此时门户会通知你正在检索 .rdp 文件。单击**“确定”**。
-5.	此时浏览器对话框会出现并询问“要打开还是要保存来自 manage.windowsazure.com 的 ComputerName.rdp?” 单击**“打开”**。
+5.	此时浏览器对话框会出现并询问“要打开还是要保存来自 manage.windowsazure.cn 的 ComputerName.rdp?” 单击**“打开”**。
 6.	在**“远程桌面连接”**对话框中，单击**“连接”**。
 7.	在**“Windows 安全性”**对话框中，单击**“使用另一帐户”**。
 8.	在**“用户名”**中，键入 VM 的名称以及随 VM 一起创建的本地管理员帐户（本地计算机帐户）的用户名。使用以下格式：*计算机名*\*本地管理员帐户名*
@@ -179,7 +181,7 @@ SharePoint 场将需要以下用户帐户：
 
 	New-ADUser -SamAccountName sp_install -AccountPassword (read-host "Set user password" -assecurestring) -name "sp_install" -enabled $true -PasswordNeverExpires $true -ChangePasswordAtLogon $false
 
-	New-	ADUser -SamAccountName sqlservice -AccountPassword (read-host "Set user password" -assecurestring) -name "sqlservice" -enabled $true -PasswordNeverExpires $true -ChangePasswordAtLogon $false
+	New-ADUser -SamAccountName sqlservice -AccountPassword (read-host "Set user password" -assecurestring) -name "sqlservice" -enabled $true -PasswordNeverExpires $true -ChangePasswordAtLogon $false
 
 对于每个命令，系统会提示你输入密码。记录这些帐户名和密码，并将其存储在安全位置。
 
@@ -240,6 +242,6 @@ SharePoint 场将需要以下用户帐户：
 
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-LOB-application)
+[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-lob-application)
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

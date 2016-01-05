@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure 中部署高可用性业务线应用程序" 
-	description="可以在 Azure 中通过 SQL Server AlwaysOn 可用性组分五个阶段部署基于 web 的高可用性业务线应用程序。" 
+	pageTitle="部署业务线应用程序 | Windows Azure" 
+	description="在 Azure 中通过 SQL Server AlwaysOn 可用性组分五个阶段部署基于 web 的高可用性业务线应用程序。" 
 	documentationCenter=""
 	services="virtual-machines" 
 	authors="JoeDavies-MSFT" 
@@ -9,11 +9,13 @@
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines" 
-	ms.date="08/11/2015" 
-	wacn.date="09/15/2015"/>
+	ms.service="virtual-machines"
+	ms.date="11/09/2015" 
+	wacn.date="12/31/2015"/>
 
 # 在 Azure 中部署高可用性业务线应用程序
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
 
 本主题包含有关在 Azure 基础结构服务中通过 SQL Server AlwaysOn 可用性组部署仅限 Intranet 的基于web 的高可用性业务线应用程序的分步说明链接。在以下计算机上托管应用程序：
 
@@ -62,4 +64,4 @@
 
 [Azure 基础结构服务工作负荷：SharePoint Server 2013 场](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1221_2015-->

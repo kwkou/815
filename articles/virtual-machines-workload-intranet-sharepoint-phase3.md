@@ -1,6 +1,6 @@
 <properties
-	pageTitle="SharePoint Intranet 场工作负荷阶段 3：配置 SQL Server 基础结构"
-	description="在部署仅限 Intranet 的 SharePoint 2013 场（在 Azure 基础结构服务中通过 SQL Server AlwaysOn 可用性组进行）的这个第三阶段，你将创建 SQL Server 群集计算机和群集本身。"
+	pageTitle="SharePoint Server 2013 场（阶段 3）| Windows Azure"
+	description="在 Azure 的 SharePoint Server 2013 场阶段 3 中创建计算机和 SQL Server 群集并启用可用性组。"
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -10,14 +10,18 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/21/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/20/2015"
+	wacn.date="12/31/2015"/>
 
 # SharePoint Intranet 场工作负荷阶段 3：配置 SQL Server 基础结构
+
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../includes/learn-about-deployment-models-classic-include.md)]资源管理器部署模型。
 
 在部署仅限 Intranet 的 SharePoint 2013 场（在 Azure 基础结构服务中通过 SQL Server AlwaysOn 可用性组进行）的这个阶段，你将在服务管理中创建并配置两台 SQL Server 计算机和一台群集多数节点计算机，然后将它们组合成 Windows Server 群集。
 
 你必须在转到[阶段 4](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase4) 之前完成此阶段。请参阅[在 Azure 中通过 SQL Server AlwaysOn 可用性组部署 SharePoint](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview) 以了解所有阶段的相关信息。
+
+> [AZURE.NOTE]这些指令使用 Azure 映像库中的 SQL Server 映像并将收取让你使用 SQL Server 许可证的持续费用。还可以在 Azure 中创建虚拟机并安装你自己的 SQL Server 许可证，但你必须具有软件保障和许可移动性才能在虚拟机（包括 Azure 虚拟机）上使用 SQL Server 许可证。有关在虚拟机上安装 SQL Server 的详细信息，请参阅[安装 SQL Server](https://msdn.microsoft.com/zh-cn/library/bb500469.aspx)。
 
 ## 在 Azure 中创建 SQL Server 群集虚拟机
 
@@ -135,11 +139,11 @@
 
 SQL Server 需要客户端用于访问数据库服务器的端口。它还需要用于与 SQL Server Management Studio 连接的端口和用于管理高可用性组的端口。接下来，在管理员级别的 Windows PowerShell 命令提示符下运行以下命令两次（对每个 SQL Server 运行一次），以添加允许到 SQL Server 的入站流量的防火墙规则。
 
-	New-NetFirewallRule -DisplayName "SQL Server ports 1433, 4234, and 5022" -Direction Inbound –Protocol TCP –LocalPort 1433,1434,5022 -Action Allow
+	New-NetFirewallRule -DisplayName "SQL Server ports 1433, 1434, and 5022" -Direction Inbound –Protocol TCP –LocalPort 1433,1434,5022 -Action Allow
 
 对于每个 SQL Server 虚拟机，以本地管理员身份注销。
 
-有关优化 Azure 中的 SQL Server 性能的信息，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](https://msdn.microsoft.com/zh-cn/library/azure/dn133149.aspx)。你还可以为 SharePoint 场存储帐户禁用地域冗余存储 (GRS)，并使用存储空间来优化 IOP。
+有关优化 Azure 中的 SQL Server 性能的信息，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-sql-server-performance-best-practices)。你还可以为 SharePoint 场存储帐户禁用地域冗余存储 (GRS)，并使用存储空间来优化 IOP。
 
 ## 配置群集多数节点服务器
 
@@ -155,7 +159,7 @@ SQL Server AlwaysOn 可用性组依赖于 Windows Server 的 Windows Server 故�
 - 辅助 SQL Server
 - 群集多数节点
 
-故障转移群集要求至少三个 VM。两台计算机托管 SQL Server。第二个 SQL Server VM 是同步的辅助副本，并确保在主计算机出现故障时无数据丢失。第三台计算机不需要托管 SQL Server。群集多数节点充当 WSFC 中的仲裁见证。由于 WSFC 群集依赖于仲裁来监视运行状况，因此必须始终有一个主体来确保 WSFC 群集处于联机状态。如果群集中只有两台计算机，并且其中一台出现故障，则在两台中计算机只有一台出现故障时可能没有主体。有关详细信息，请参阅 [WSFC 仲裁模式和投票配置 (SQL Server)](http://msdn.microsoft.com/zh-cn/library/hh270280.aspx)。
+故障转移群集要求至少三个 VM。两台计算机托管 SQL Server。第二个 SQL Server VM 是同步的辅助副本，并确保在主计算机出现故障时无数据丢失。第三台计算机不需要托管 SQL Server。群集多数节点在 WSFC 中提供了仲裁。由于 WSFC 群集依赖于仲裁来监视运行状况，因此必须始终有一个主体来确保 WSFC 群集处于联机状态。如果群集中只有两台计算机，并且其中一台出现故障，则在两台中计算机只有一台出现故障时可能没有主体。有关详细信息，请参阅 [WSFC 仲裁模式和投票配置 (SQL Server)](http://msdn.microsoft.com/zh-cn/library/hh270280.aspx)。
 
 针对这两台 SQL Server 计算机和群集多数节点，在管理员级别的 Windows PowerShell 命令提示符下运行以下命令。
 
@@ -198,7 +202,7 @@ SQL Server AlwaysOn 可用性组依赖于 Windows Server 的 Windows Server 故�
 3.	在左窗格中，单击**“SQL Server 服务”**。
 4.	在内容窗格中，双击 **SQL Server (MSSQLSERVER)**。
 5.	在“SQL Server (MSSQLSERVER)属性”中，单击“AlwaysOn 高可用性”选项卡，选择“启用 AlwaysOn 可用性组”，单击“应用”，然后在出现提示时单击“确定”。尚不要关闭属性窗口。
-6.	单击“虚拟机管理可用性”选项卡，然后在“帐户名称”中键入 [Domain]**\\sqlservice**。在“密码”和“确认密码”中键入 sqlservice 帐户密码，然后单击“确定”。
+6.	单击“虚拟机管理可用性”选项卡，然后在**“帐户名称”**中键入 [Domain]**\\sqlservice**。在**“密码”**和**“确认密码”**中键入 sqlservice 帐户密码，然后单击**“确定”**。
 7.	在消息窗口中，单击**“是”**以重新启动 SQL Server 服务。
 8.	登录到辅助 SQL Server 并重复此过程。
 
@@ -222,6 +226,6 @@ SQL Server AlwaysOn 可用性组依赖于 Windows Server 的 Windows Server 故�
 
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-LOB-application)
+[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-lob-application)
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="在 Azure 中通过 SQL Server AlwaysOn 可用性组部署 SharePoint"
-	description="你在 Azure 中通过 SQL Server AlwaysOn 可用性组部署 SharePoint 可以分为五个阶段。"
+	pageTitle="部署 SharePoint Server 2013 场 | Windows Azure"
+	description="在 Azure 中通过 SQL Server AlwaysOn 可用性组以五个阶段部署高可用性 SharePoint Server 2013 场。"
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -10,12 +10,14 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/22/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/20/2015"
+	wacn.date="12/31/2015"/>
 
 # 在 Azure 中通过 SQL Server AlwaysOn 可用性组部署 SharePoint
 
-本主题包含有关使用 Azure 服务管理在 Azure 基础结构服务中通过 SQL Server AlwaysOn 可用性组部署仅限 Intranet 的 SharePoint 2013 场的分步说明的链接。该场包含以下计算机：
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../includes/learn-about-deployment-models-classic-include.md)]资源管理器部署模型。
+
+本主题包含有关使用经典部署模型通过 SQL Server AlwaysOn 可用性组部署仅限 Intranet 的 SharePoint 2013 场的分步说明的链接。该场包含以下计算机：
 
 - 两个 SharePoint Web 服务器
 - 两个 SharePoint 应用程序服务器
@@ -51,6 +53,8 @@
 
 有关 SharePoint 以及 SQL Server AlwaysOn 可用性组的其他信息，请参阅[针对 SharePoint 2013 配置 SQL Server 2012 AlwaysOn 可用性组](https://technet.microsoft.com/zh-cn/library/jj715261.aspx)。
 
+> [AZURE.NOTE]Microsoft 已发布 SharePoint Server 2016 IT Preview。要使此预览版易于安装和测试，可以使用预安装了 SharePoint Server 2016 IT Preview 及其必备组件的 Azure 虚拟机库映像。有关详细信息，请参阅[在 Azure 中测试 SharePoint Server 2016 IT Preview](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/)。
+
 ## 后续步骤
 
 若要开始配置此工作负荷，请转到[阶段 1：配置 Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase1)。
@@ -66,6 +70,6 @@
 
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-LOB-application)
+[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-lob-application)
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="在 SQL Server 上使用 Azure 高级存储 | Windows Azure"
-	description="本主题使用通过经典部署模型创建的资源并介绍如何对 Azure 虚拟机上运行的 SQL Server 使用 Azure 高级存储。"
+	description="本文使用通过经典部署模型创建的资源并介绍如何对 Azure 虚拟机上运行的 SQL Server 使用 Azure 高级存储。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="danielsollondon"
@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/02/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/31/2015"/>
 
 # 将 Azure 高级存储用于虚拟机上的 SQL Server
 
@@ -477,7 +477,7 @@
 - 在迁移期间，会暂时失去高可用性和灾难恢复。
 - 由于这是 1 对 1 迁移，你必须使用支持你的 VHD 数量的最小 VM 大小，因此你可能不能减小 VM 大小。
 - 此方案会使用 Azure **Start-AzureStorageBlobCopy** commandlet，它是异步的。复制完成后没有 SLA。复制时间各不相同，这取决于在队列中等待的时间，还取决于要传输的数据量。如果传输转到另一个在其他区域中支持高级存储的 Azure 数据中心，则复制时间将增加。如果你只有 2 个节点，请考虑在复制所用时间长于测试时的可能的缓解措施。这可以包括以下建议。
-	- 在使用商定的停机时间进行迁移之前，为 HA 添加临时的第 3 个 SQL Server 节点。
+	- 在使用商定的停机时间进行迁移之前，添加临时的第 3 个 SQL Server 节点以实现 HA。
 	- 在 Azure 计划的维护之外运行迁移。
 	- 确保已正确配置群集仲裁。  
 
@@ -507,8 +507,7 @@
 
 ##### 停机时间点
 
-停机时间包含故障转移到备用 DC 并返回的时间。它还取决于你的客户端/DNS 配置，并且你的客户端重新连接可能会延迟。
-请考虑以下混合 AlwaysOn 配置的示例：
+停机时间包含故障转移到备用 DC 并返回的时间。它还取决于你的客户端/DNS 配置，并且你的客户端重新连接可能会延迟。请考虑以下混合 AlwaysOn 配置的示例：
 
 ![MultiSite1][9]
 
@@ -619,8 +618,7 @@
 
 #### 步骤 4：DNS 配置
 
-能否实现平稳过渡取决于如何利用和更新 DNS。
-安装 AlwaysOn 时，它将创建一个 Windows 群集资源组，如果你打开故障转移群集管理器，你将看到它将至少包含三个资源，其中本文档引用的两个资源是：
+能否实现平稳过渡取决于如何利用和更新 DNS。安装 AlwaysOn 时，它将创建一个 Windows 群集资源组，如果你打开故障转移群集管理器，你将看到它将至少包含三个资源，其中本文档引用的两个资源是：
 
 - 虚拟网络名称 (VNN) - 这是客户端想要通过 AlwaysOn 连接到 SQL Server 时要连接的 DNS 名称。
 - IP 地址资源 - 这是与 VNN 关联的 IP 地址，你可以具有多个 IP 地址，在多站点配置中，你将针对每个站点/子网有一个 IP 地址。
@@ -668,7 +666,7 @@
 
 如果 SQL 客户端应用程序支持 .Net 4.5 SQLClient，则可以使用“MULTISUBNETFAILOVER=TRUE”关键字，建议你应用此项，因为这样可以在故障转移期间更快地连接到 SQL AlwaysOn 可用性组。它在故障转移过程中枚举与 AlwaysOn 侦听器并行关联的所有 IP 地址，并执行更激进的 TCP 连接重试速度。
 
-有关上述设置的详细信息，请参阅 [MultiSubnetFailover 关键字和关联功能](https://msdn.microsoft.com/zh-CN/library/hh213080.aspx#MultiSubnetFailover)。另请参阅 [SqlClient 对高可用性、灾难恢复的支持](https://msdn.microsoft.com/zh-CN/library/hh205662(v=vs.110).aspx).
+有关上述设置的详细信息，请参阅 [MultiSubnetFailover 关键字和关联功能](https://msdn.microsoft.com/zh-cn/library/hh213080.aspx#MultiSubnetFailover)。另请参阅 [SqlClient 对高可用性、灾难恢复的支持](https://msdn.microsoft.com/zh-cn/library/hh205662(v=vs.110).aspx)。
 
 #### 步骤 5：群集仲裁设置
 
@@ -677,7 +675,7 @@
 
     Set-ClusterQuorum -NodeMajority  
 
-有关管理和配置群集仲裁的详细信息，请参阅[配置和管理 Windows Server 2012 故障转移群集中的仲裁](https://technet.microsoft.com/zh-CN/library/jj612870.aspx)。
+有关管理和配置群集仲裁的详细信息，请参阅[配置和管理 Windows Server 2012 故障转移群集中的仲裁](https://technet.microsoft.com/zh-cn/library/jj612870.aspx)。
 
 #### 步骤 6：提取现有终结点和 ACL
     #GET Endpoint info
@@ -871,7 +869,7 @@
     
     #SET Azure ACLs or Network Security Groups & Windows FWs 
      
-    #https://msdn.microsoft.com/zh-CN/library/azure/dn495192.aspx
+    #http://msdn.microsoft.com/zh-cn/library/azure/dn495192.aspx
     
     ####WAIT FOR FULL AlwaysOn RESYNCRONISATION!!!!!!!!!#####
 
@@ -1016,6 +1014,7 @@
      
     
 你可以检查所有 VHD 的 VHD 复制状态：
+	ForEach ($disk in $diskobjects) { $lun = $disk.Lun $vhdname = $disk.vhdname $cacheoption = $disk.HostCaching $disklabel = $disk.DiskLabel $diskName = $disk.DiskName
     ForEach ($disk in $diskobjects)
        {
        $lun = $disk.Lun
@@ -1033,8 +1032,8 @@
 等到所有这些状态都记录为成功。
 
 如需单个 blob 的信息：
-#Check induvidual blob status 
-Get-AzureStorageBlobCopyState -Blob "danRegSvcAms-dansqlams1-2014-07-03.vhd" -Container $containerName -Context $xioContextnode2
+	#Check induvidual blob status
+	Get-AzureStorageBlobCopyState -Blob "danRegSvcAms-dansqlams1-2014-07-03.vhd" -Container $containerName -Context $xioContextnode2
 
 #### 步骤 21：注册操作系统磁盘
     #change storage account to the new XIO storage account
@@ -1102,7 +1101,6 @@ Get-AzureStorageBlobCopyState -Blob "danRegSvcAms-dansqlams1-2014-07-03.vhd" -Co
 你应测试所有节点之间的故障转移，并运行所有混沌测试，以确保故障转移及时地正常工作。
 
 #### 步骤 24：置回群集仲裁设置/DNS TTL/故障转移伙伴/同步设置 
-
 ##### 在同一子网上添加 IP 地址资源
 
 如果你只有 2 个 SQL Server 并且想要将它们迁移到新的云服务，但想要将它们保留在同一子网中，则可以避免使侦听器脱机即可删除原始 AlwaysOn IP 地址，然后添加新的 IP 地址。如果要将 VM 迁移到另一个子网，则不需要执行此操作，因为将会有一个附加群集网络会引用该子网。
@@ -1154,5 +1152,6 @@ Get-AzureStorageBlobCopyState -Blob "danRegSvcAms-dansqlams1-2014-07-03.vhd" -Co
 [23]: ./media/virtual-machines-sql-server-use-premium-storage/10_Appendix_13.png
 [24]: ./media/virtual-machines-sql-server-use-premium-storage/10_Appendix_14.png
 [25]: ./media/virtual-machines-sql-server-use-premium-storage/10_Appendix_15.png
+ 
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->
