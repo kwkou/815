@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="09/29/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="11/10/2015" 
+	wacn.date="12/31/2015"/>
 
 # 操作日志
 
@@ -34,7 +34,7 @@
 
 在 Azure 门户中手动导航到流分析和其他服务的操作日志：
 
-1.	在 **Azure 门户**中单击“[管理服务](https://manage.windowsazure.cn)”。
+1.	在 [Azure 门户 ](https://manage.windowsazure.cn)中单击“管理服务”。
 2.	在“类型”中选择“流分析”，在“服务名称”中选择作业的名称。  
 
   ![选择流分析](./media/stream-analytics-operation-logs/02-stream-analytics-operation-logs.png)
@@ -70,4 +70,4 @@
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->
