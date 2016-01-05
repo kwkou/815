@@ -1,5 +1,5 @@
 <properties
-	pageTitle="教程 - 适用于 .NET 的 Azure 批处理( Batch ) Apps 库入门"
+	pageTitle="教程 - 适用于 .NET 的 Azure 批处理 ( Batch ) Apps 库入门"
 	description="了解 Azure Batch Apps 的基本概念，以及如何使用一个简单方案进行开发"
 	services="batch"
 	documentationCenter=".net"
@@ -15,20 +15,20 @@
 
 
 
-# 适用于 .NET 的 Azure Batch Apps 库入门
-本教程说明如何在 Azure 批处理( Batch )上，使用 Batch Apps 服务运行并行计算工作负载。
+# 适用于 .NET 的 Azure 批处理 ( Batch ) Apps 库入门
+本教程说明如何在 Azure 批处理 ( Batch ) 上，使用批处理 ( Batch ) Apps 服务运行并行计算工作负载。
 
-Batch Apps 是 Azure  批处理( Batch )的一项功能，提供以应用程序为中心的方法来管理和执行批处理( Batch )工作负载。使用 Batch Apps SDK 可以创建包，以便能够批处理( Batch )应用程序，并将这些包部署在自己的帐户中，或提供给其他批处理( Batch )用户使用。批处理( Batch )还提供数据管理、作业监视、内置的诊断和日志记录，以及任务间依赖关系支持。此外，它还包含一个管理门户，你可以在其中管理作业、查看日志和下载输出，而无需编写自己的客户端。
+批处理 ( Batch ) Apps 是 Azure 批处理 ( Batch )的一项功能，提供以应用程序为中心的方法来管理和执行批处理 ( Batch ) 工作负载。使用 Batch Apps SDK 可以创建包，以便能够批处理 ( Batch ) 应用程序，并将这些包部署在自己的帐户中，或提供给其他批处理 ( Batch ) 用户使用。批处理 ( Batch ) 还提供数据管理、作业监视、内置的诊断和日志记录，以及任务间依赖关系支持。此外，它还包含一个管理门户，你可以在其中管理作业、查看日志和下载输出，而无需编写自己的客户端。
 
-在 Batch Apps 方案中，可以使用批处理( Batch ) Apps 云 SDK 编写代码，将作业分割成并行任务、描述这些任务之间的任何依赖关系，以及指定如何执行每个任务。此代码将部署到批处理( Batch )帐户。然后，客户端只需指定作业类型和 REST API 的输入文件，即可执行作业。
+在批处理 ( Batch ) Apps 方案中，可以使用批处理 ( Batch ) Apps 云 SDK 编写代码，将作业分割成并行任务、描述这些任务之间的任何依赖关系，以及指定如何执行每个任务。此代码将部署到批处理 ( Batch ) 帐户。然后，客户端只需指定作业类型和 REST API 的输入文件，即可执行作业。
 
 >[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。只需几分钟即可创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/)。可以使用 NuGet 来获取 <a href="http://www.nuget.org/packages/Microsoft.Azure.Batch.Apps.Cloud/">Batch Apps 云</a>程序集和 <a href="http://www.nuget.org/packages/Microsoft.Azure.Batch.Apps/">Batch Apps 客户端</a>程序集。在 Visual Studio 中创建项目后，可在“解决方案资源管理器”中右键单击该项目，然后选择“管理 NuGet 包”。你还可以下载 Batch Apps 的 Visual Studio 扩展，其中包含可启用应用程序云功能的项目模板和部署应用程序的功能。若要下载该扩展，请单击<a href="https://visualstudiogallery.msdn.microsoft.com/8b294850-a0a5-43b0-acde-57a07f17826a">此处</a>，或者在 Visual Studio 中通过“扩展和更新”菜单项搜索 **Batch Apps**。你也可以查找 <a href="https://go.microsoft.com/fwLink/?LinkID=512183&clcid=0x409">MSDN 上的端到端示例。</a>
 >
 
-###Azure Batch Apps 基础知识
-批处理( Batch )旨在用于处理现有的计算密集型应用程序。它利用现有的应用代码，并在动态、虚拟化、通用环境中运行。为了使应用程序能够与 批处理( Batch ) Apps 配合运行，必须先完成一些准备工作：
+###Azure 批处理 ( Batch ) Apps 基础知识
+批处理 ( Batch ) 旨在用于处理现有的计算密集型应用程序。它利用现有的应用代码，并在动态、虚拟化、通用环境中运行。为了使应用程序能够与 批处理 ( Batch ) Apps 配合运行，必须先完成一些准备工作：
 
-1.	准备现有应用程序可执行文件（在传统服务器场或群集中运行的相同可执行文件）的 zip 文件，以及它所需的任何支持文件。然后，使用管理门户或 REST API 将此 zip 文件上载到批处理( Batch )帐户。
+1.	准备现有应用程序可执行文件（在传统服务器场或群集中运行的相同可执行文件）的 zip 文件，以及它所需的任何支持文件。然后，使用管理门户或 REST API 将此 zip 文件上载到批处理 ( Batch ) 帐户。
 2.	创建“云程序集”（用于将工作负载分派给应用程序）的 zip 文件，然后通过管理门户或 REST API 上载它。云程序集包含两个针对云 SDK 构建的组件：
 	1.	作业拆分器 - 将作业分解成可独立处理的任务。例如，在动画案例中，作业拆分器将使用某个影片作业，并将影片分割成若干帧。
 	2.	任务处理器– 调用给定任务的应用程序可执行文件。例如，在动画案例中，任务处理器将调用一个渲染程序，以渲染现有任务指定的单个帧。
@@ -36,8 +36,8 @@ Batch Apps 是 Azure  批处理( Batch )的一项功能，提供以应用程序�
 
 
 
-###批处理( Batch ) Apps 的重要概念
-批处理( Batch ) Apps 的编程和使用模式围绕以下重要概念：
+###批处理 ( Batch ) Apps 的重要概念
+批处理 ( Batch ) Apps 的编程和使用模式围绕以下重要概念：
 
 ####作业
 **作业**是用户提交的一项工作。提交作业后，用户将指定作业的类型、该作业的任何设置，以及作业所需的数据。启用的实现可以代表用户确定这些详细信息，或者，在某些情况下，用户可以通过客户端显式提供此信息。作业具有返回的结果。每个作业都有主要输出，有时还有预览输出。如果需要，作业还可以返回额外的输出。
@@ -92,7 +92,7 @@ SplitIntoTasks 实现必须任务序列。每个任务代表一项独立的工�
 
 你还可以指定整组任务必须等到另一组任务完成之后才开始处理。在此情况下，可以设置 TaskSpecifier.Stage 属性。具有给定 Stage 值的任务必须等到 Stage 值更小的所有任务完成之后，才会开始处理。例如，必须等到 Stage 0、 1 或 2 的所有任务完成之后，具有 Stage 3 的任务才会开始处理。Stage 必须从 0 开始，各个 Stage 的顺序必须没有间隔，并且 SplitIntoTasks 必须依 Stage 顺序返回任务：例如，在返回 Stage 为 1 的任务之后返回 Stage 为 0 的任务，即为错误。
 
-每个并行操作以一项称为合并任务的特殊任务来结束。合并任务的作业是将并行处理任务的结果组合成最终结果。批处理( Batch ) Apps 会自动为你创建合并任务。
+每个并行操作以一项称为合并任务的特殊任务来结束。合并任务的作业是将并行处理任务的结果组合成最终结果。批处理 ( Batch ) Apps 会自动为你创建合并任务。
 
 在极少数情况下，你可能想要显式控制合并任务，例如，自定义其参数。在此情况下，可以返回 TaskSpecifier 并将其 IsMerge 属性设置为 true，以指定合并任务。这会覆盖自动合并任务。如果要创建显式合并任务：
 
@@ -187,7 +187,7 @@ RunExternalMergeProcess 的实现非常类似于 RunExternalTaskProcess，差别
 	    };
 	}
 
-###将作业提交到批处理( Batch ) Apps
+###将作业提交到批处理 ( Batch ) Apps
 作业描述要运行的工作负载，需要包含有关工作负载的所有信息（文件内容除外）。例如，作业包含从客户端流向作业拆分器，再流向任务的配置设置。MSDN 上提供的示例演示了如何提交作业并提供多个客户端，包括 Web 门户和命令行客户端。
 
 <!---HONumber=66-->

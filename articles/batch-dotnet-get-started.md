@@ -12,7 +12,7 @@
 	ms.date="09/23/2015"
 	wacn.date="10/30/2015"/>
 
-# 适用于 .NET 的 Azure 批处理( Batch )库入门  
+# 适用于 .NET 的 Azure 批处理 ( Batch )库入门  
 
 通过创建可设置程序的控制台应用程序，以及可在 Azure 批处理 ( Batch ) 池的多个计算节点上运行的支持文件，来开始使用 Azure 批处理 ( Batch ) .NET 库。在本教程中创建的任务将评估上载到 Azure 存储空间中的文件文本，然后返回这些文件中最常出现的词语。示例是用 C# 编写的，并使用了 [Azure 批处理 ( Batch ) .NET 库](https://msdn.microsoft.com/library/azure/mt348682.aspx)。
 

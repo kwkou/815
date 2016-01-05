@@ -27,9 +27,9 @@
 Azure 还为组织和软件供应商提供开发工具与服务，用于构建定制的端到端大数据解决方案。
 
 
-## 背景：批处理( Batch )和 HPC 应用程序
+## 背景：批处理 ( Batch )和 HPC 应用程序
 
-与网站和许多业务线应用程序不同，批处理( Batch )和 HPC 应用程序有确定的开始和结束时间，而且它们可以按照计划运行或按需运行。其中的大多数应用程序可分为两大类：*内在并行*（有时称为“高度并行”，因为它们解决的问题有助于使自身在多个计算机或处理器上并行运行）和*紧密耦合*。有关这些应用程序类型的详细信息，请参阅下表。某些 Azure 解决方案方法更适合一种类型或其他类型。
+与网站和许多业务线应用程序不同，批处理 ( Batch )和 HPC 应用程序有确定的开始和结束时间，而且它们可以按照计划运行或按需运行。其中的大多数应用程序可分为两大类：*内在并行*（有时称为“高度并行”，因为它们解决的问题有助于使自身在多个计算机或处理器上并行运行）和*紧密耦合*。有关这些应用程序类型的详细信息，请参阅下表。某些 Azure 解决方案方法更适合一种类型或其他类型。
 
 >[AZURE.NOTE]在批处理( Batch )和 HPC 解决方案中，应用程序的运行中实例通常称为*作业*，而每个作业可以划分成*任务*。应用程序的群集计算资源通常称为*计算节点*。
 
@@ -88,13 +88,13 @@ Azure 还为组织和软件供应商提供开发工具与服务，用于构建�
 
 ## 用于大型计算的 Azure 服务
 
-Azure 提供一系列的计算、数据、网络和相关服务，你可将其用于大型计算解决方案和工作流。有关其中每项服务的深入指导，请参阅 Azure 服务文档。有关涉及批处理( Batch )和 HPC 应用程序的一些常见方法，请参阅本文中的[解决方案应用方案](#solution-scenarios)。
+Azure 提供一系列的计算、数据、网络和相关服务，你可将其用于大型计算解决方案和工作流。有关其中每项服务的深入指导，请参阅 Azure 服务文档。有关涉及批处理 ( Batch )和 HPC 应用程序的一些常见方法，请参阅本文中的[解决方案应用方案](#solution-scenarios)。
 
 >[AZURE.NOTE]新服务会定期导入 Azure 平台，可能适用于你的方案。建议仅将预览版服务用于测试或概念认证部署，而不要用于非生产任务负荷。如有疑问，请联系 [Azure 合作伙伴](https://pinpoint.microsoft.com/zh-CN/search?keyword=azure)或者向 *bigcompute@microsoft.com* 发送电子邮件。
 
 ### 计算服务
 
-Azure 中的计算服务是大计算解决方案的核心。下表是经常使用的计算服务，它们能够为各种方案带来优势。在基本级别中，这些服务为使用 Windows Server Hyper-V 技术，由 Azure 提供的基于虚拟机的计算实例上运行的应用程序提供不同模式。根据具体的服务，这些实例可以运行各种标准和自定义的 Linux 和 Windows 操作系统与工具。Azure 提供[各种实例大小](/documentation/articles/virtual-machines-sizes-specs)，对 CPU 核心、内存、磁盘容量和其他特征进行了不同的配置。你可以根据需要将实例扩展到数千个核心，并在需要较少的资源时相应减少。
+Azure 中的计算服务是大计算解决方案的核心。下表是经常使用的计算服务，它们能够为各种方案带来优势。在基本级别中，这些服务为使用 Windows Server Hyper-V 技术，由 Azure 提供的基于虚拟机的计算实例上运行的应用程序提供不同模式。根据具体的服务，这些实例可以运行各种标准和自定义的 Linux 和 Windows 操作系统与工具。Azure 提供[各种实例大小](/documentation/articles/virtual-machines-size-specs)，对 CPU 核心、内存、磁盘容量和其他特征进行了不同的配置。你可以根据需要将实例扩展到数千个核心，并在需要较少的资源时相应减少。
 
 >[AZURE.NOTE]你可以利用 A8-A11 实例改善某些大型计算任务负荷的性能，包括需要低延迟、高吞吐量应用程序网络的并行 MPI 应用程序。请参阅[关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)。
 
@@ -110,7 +110,7 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 
 * [Blob、表和队列存储](/documentation/services/storage) - 分别管理大量非结构化数据、NoSQL 数据，以及有关工作流和通信的消息。例如，你可以为大型技术数据集或应用程序处理的输入图像或媒体文件使用 Blob 存储。可以在解决方案中使用队列以进行异步通信。有关这些存储解决方案的详细信息，请参阅 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction)。
 
-* [Azure 文件存储](/services/storage/files/) - 在 Azure 中使用标准 SMB 通信协议（某些 HPC 群集解决方案需要这种协议）来共享公用文件和数据。
+<!-- * [Azure 文件存储](/services/storage/files/) - 在 Azure 中使用标准 SMB 通信协议（某些 HPC 群集解决方案需要这种协议）来共享公用文件和数据。-->
 
 ### 数据和分析服务
 
@@ -128,7 +128,7 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 
 大型计算解决方案可能需要包含其他 Azure 基础结构和平台服务，才能连接到本地或其他环境中的资源。示例包括：
 
-* [虚拟网络](/documentation/services/virtual-network) - 在 Azure 中创建逻辑隔离的区段，以使用 IPSec 将 Azure 资源连接到本地数据中心或单个客户端计算机；可让大型计算应用程序访问本地数据、Active Directory 服务和许可证服务器
+* [虚拟网络](/documentation/services/networking) - 在 Azure 中创建逻辑隔离的区段，以使用 IPSec 将 Azure 资源连接到本地数据中心或单个客户端计算机；可让大型计算应用程序访问本地数据、Active Directory 服务和许可证服务器
 
 <!--* [ExpressRoute](/documentation/services/expressroute) - Creates a private connection between Microsoft data centers and infrastructure that’s on-premises or in a co-location environment, with higher security, more reliability, faster speeds, and lower latencies than typical connections over the Internet.-->
 
@@ -185,9 +185,9 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 
 根据工作负荷，你可以利用 Azure 中由 Microsoft 或其他服务供应商托管的现有大型计算服务，以简化解决方案的基础结构和应用程序管理。某些服务为特定行业的客户托管特定的应用程序。某些服务会插入到本地应用程序，从而实现混合解决方案。[Azure 媒体服务](/documentation/services/media-services)等其他一些服务属于专用平台服务。
 
-为了轻松地从云启用并相应地横向扩展目前运行的应用程序，[批处理( Batch )](/documentation/services/batch)提供了用于计划作业和管理服务中计算资源的 API。批处理( Batch )可管理虚拟机的部署和自动缩放、作业计划、灾难恢复、数据移动、依赖性管理、应用程序部署，以及在云中运行作业所需的所有其他管道。目前，批处理( Batch )非常适合用于内在并行应用程序，例如，在 Windows Server 计算资源中运行的图像渲染、金融风险建模和 Monte Carlo 仿真。
+为了轻松地从云启用并相应地横向扩展目前运行的应用程序，[批处理( Batch )](/documentation/services/batch)提供了用于计划作业和管理服务中计算资源的 API。批处理 ( Batch )可管理虚拟机的部署和自动缩放、作业计划、灾难恢复、数据移动、依赖性管理、应用程序部署，以及在云中运行作业所需的所有其他管道。目前，批处理 ( Batch )非常适合用于内在并行应用程序，例如，在 Windows Server 计算资源中运行的图像渲染、金融风险建模和 Monte Carlo 仿真。
 
-请参阅下图，了解开发人员可使用 批处理( Batch )创建的典型工作流。
+请参阅下图，了解开发人员可使用 批处理 ( Batch )创建的典型工作流。
 
 ![Azure 批处理( Batch )][batch_proc]
 
@@ -206,9 +206,9 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 
 ## 后续步骤
 
-* 如需有关你解决方案的技术指导，请参阅[批处理( Batch )和 HPC 的技术资源](/documentation/articles/big-compute-resources)。
+* 如需有关你解决方案的技术指导，请参阅[批处理 ( Batch )和 HPC 的技术资源](/documentation/articles/big-compute-resources)。
 
-* 有关最新通告，请参阅 [Microsoft HPC 和 批处理( Batch )团队博客](http://blogs.technet.com/b/windowshpc/)与 [Azure 博客](http://azure.microsoft.com/blog/tag/hpc/)。
+* 有关最新通告，请参阅 [Microsoft HPC 和 批处理 ( Batch )团队博客](http://blogs.technet.com/b/windowshpc/)与 [Azure 博客](http://azure.microsoft.com/blog/tag/hpc/)。
 
 <!--Image references-->
 [parallel]: ./media/batch-hpc-solutions/parallel.png

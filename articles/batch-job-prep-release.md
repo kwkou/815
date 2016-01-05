@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Batch 中的作业准备和清理 | Windows Azure"
-	description="采用作业级准备任务最大程度地减少 Azure Batch 计算节点的数据传输，并在完成作业时执行释放任务来清理节点。"
+	description="采用作业级准备任务最大程度地减少 Azure 批处理 ( Batch )计算节点的数据传输，并在完成作业时执行释放任务来清理节点。"
 	services="batch"
 	documentationCenter=".net"
 	authors="mmacy"
@@ -91,48 +91,48 @@ Azure 批处理( Batch ) 任务在执行之前通常需要进行某种形式的�
 
 示例应用程序的输出类似于：
 
-```
-Attempting to create pool: JobPrepReleaseSamplePool
-The pool already existed when we tried to create it
-Checking for existing job JobPrepReleaseSampleJob...
-Job JobPrepReleaseSampleJob not found, creating...
-Submitting tasks and awaiting completion...
-All tasks completed.
-
-Contents of shared\job_prep_and_release.txt on tvm-3105992504_1-20151015t150030z:
--------------------------------------------
-tvm-3105992504_1-20151015t150030z tasks:
-  task001
-  task002
-  task006
-  task007
-
-Contents of shared\job_prep_and_release.txt on tvm-3105992504_2-20151015t150030z:
--------------------------------------------
-tvm-3105992504_2-20151015t150030z tasks:
-  task003
-  task005
-  task004
-  task008
-
-Waiting for job JobPrepReleaseSampleJob to reach state Completed
-....
-
-tvm-3105992504_1-20151015t150030z:
-  Prep task exit code:    0
-  Release task exit code: 0
-
-tvm-3105992504_2-20151015t150030z:
-  Prep task exit code:    0
-  Release task exit code: 0
-
-Delete job? [yes] no
-yes
-Delete pool? [yes] no
-no
-
-Sample complete, hit ENTER to exit...
-```
+	
+	Attempting to create pool: JobPrepReleaseSamplePool
+	The pool already existed when we tried to create it
+	Checking for existing job JobPrepReleaseSampleJob...
+	Job JobPrepReleaseSampleJob not found, creating...
+	Submitting tasks and awaiting completion...
+	All tasks completed.
+	
+	Contents of shared\job_prep_and_release.txt on tvm-3105992504_1-20151015t150030z:
+	-------------------------------------------
+	tvm-3105992504_1-20151015t150030z tasks:
+	  task001
+	  task002
+	  task006
+	  task007
+	
+	Contents of shared\job_prep_and_release.txt on tvm-3105992504_2-20151015t150030z:
+	-------------------------------------------
+	tvm-3105992504_2-20151015t150030z tasks:
+	  task003
+	  task005
+	  task004
+	  task008
+	
+	Waiting for job JobPrepReleaseSampleJob to reach state Completed
+	....
+	
+	tvm-3105992504_1-20151015t150030z:
+	  Prep task exit code:    0
+	  Release task exit code: 0
+	
+	tvm-3105992504_2-20151015t150030z:
+	  Prep task exit code:    0
+	  Release task exit code: 0
+	
+	Delete job? [yes] no
+	yes
+	Delete pool? [yes] no
+	no
+	
+	Sample complete, hit ENTER to exit...
+	
 
 ### 使用 Batch 资源管理器检查作业准备和释放任务
 
