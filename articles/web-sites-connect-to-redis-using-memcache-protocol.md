@@ -9,12 +9,12 @@
 
 <tags
    ms.service="app-service-web"
-   ms.date="06/30/2015"
-   wacn.date=""/>
+   ms.date="09/16/2015"
+   wacn.date="01/05/2016"/>
 
 # 通过 Memcache 协议将 Azure 网站中的 Web 应用连接到 Redis 缓存
 
-在本文中，你将学习如何使用 [Memcache][13] 协议将 [Azure 网站](/documentation/services/web-sites/)中的 WordPress Web 应用连接到 [Azure Redis 缓存][12]。如果你的现有 Web 应用使用 Memcached 服务器作为内存中缓存，则你可以将其迁移到 Azure 网站，并使用 Microsoft Azure 中的第一方缓存解决方案，其中对你的应用程序代码进行少量更改或无更改。此外，你可以利用现有的 Memcache 专业知识，在使用 Azure Redis 缓存作为内存中缓存的 Azure 网站中创建高度可缩放的分布式应用，同时使用常用的应用程序框架，例如 .NET、PHP、Node.js、Java 和 Python。
+在本文中，你将学习如何使用 [Memcache][13] 协议将 [Azure 网站](/documentation/services/web-sites/)中的 WordPress Web 应用连接到 [Azure Redis 缓存][12]。如果你的现有 Web 应用使用 Memcached 服务器作为内存中缓存，则你可以将其迁移到 Azure 网站，并使用 Windows Azure 中的第一方缓存解决方案，其中对你的应用程序代码进行少量更改或无更改。此外，你可以利用现有的 Memcache 专业知识，在使用 Azure Redis 缓存作为内存中缓存的 Azure 网站中创建高度可缩放的分布式应用，同时使用常用的应用程序框架，例如 .NET、PHP、Node.js、Java 和 Python。
 
 Azure 网站使用 Web Apps Memcache 填充码启用该应用程序方案，这是充当 Memcache 代理服务器的本地 Memcached 服务器，用于缓存对 Azure Redis 缓存的调用。这使得使用 Memcache 协议通信的任何应用可以使用 Redis 缓存缓存数据。此 Memcache 填充码在协议级别运行，因此只要它使用 Memcached 协议通信，就可以供任何应用程序或应用程序框架使用。
 
@@ -154,10 +154,8 @@ redis-cli –h <hostname-for-redis-cache> –a <primary-key-for-redis-cache> –
 
 祝贺你！ WordPress 应用现在有了集中式的内存中缓存，这将有助于提高吞吐量。请记住，Web Apps Memcache 填充码可以与任何 Memcache 客户端结合使用，无需考虑编程语言或应用程序框架。若要提供反馈或者提问有关 Web Apps Memcache 填充码的问题，请在 [MSDN 论坛][10]或 [Stackoverflow][11] 上发布相关文章。
 
->[AZURE.NOTE]若想要在注册 Azure 帐户前开始使用 Azure 网站，请转至[试用 Azure 网站](http://go.microsoft.com/fwlink/?LinkId=523751)，在此处，可立即在 Azure 网站中创建临时初学者 Web 应用。你不需要使用信用卡，也不需要做出承诺。
-
-[0]: http://bit.ly/1F0m3tw
-[1]: http://bit.ly/1t0KxBQ
+[0]: /documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#create-a-cache
+[1]: https://azure.microsoft.com/zh-cn/blog/how-to-host-a-scalable-and-optimized-wordpress-for-azure-in-minutes/
 [2]: https://manage.windowsazure.cn
 [3]: https://manage.windowsazure.cn
 [4]: /documentation/articles/powershell-install-configure
@@ -166,9 +164,9 @@ redis-cli –h <hostname-for-redis-cache> –a <primary-key-for-redis-cache> –
 [7]: http://pecl.php.net/package/memcache
 [8]: http://blog.syntaxc4.net/post/2015/02/05/how-to-enable-a-site-extension-in-azure-websites.aspx
 [9]: http://redis.io/download#installation
-[10]: https://social.msdn.microsoft.com/Forums/home?forum=windowsazurewebsitespreview
+[10]: https://social.msdn.microsoft.com/Forums/zh-cn/home
 [11]: http://stackoverflow.com/questions/tagged/azure-web-sites
-[12]: /documentation/services/cache
+[12]: /documentation/services/redis-cache
 [13]: http://memcached.org
  
 
