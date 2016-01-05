@@ -9,7 +9,7 @@
 - [中文版](/documentation/articles/cdn-faq-service-inquiry)
 - [英文版](/documentation/articles/cdn-enus-faq-service-inquiry)
 
-+ [Windows Azure CDN价格咨询](#step1)
++ [价格咨询](#step1)
 + [CDN的概念和作用](#step2)
 + [什么是CNAM](#step3)
 + [CDN流量和回原流量关系](#step4)
