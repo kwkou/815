@@ -10,13 +10,13 @@
 <tags
 	ms.service="multiple"
 	ms.date="10/13/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/31/2015"/>
 
 # 如何安装和配置 Azure PowerShell#
 
 <div class="dev-center-tutorial-selector sublanding"><a href="#" title="PowerShell" class="current">PowerShell</a><a href="/documentation/articles/install-and-configure-cli/" title="Azure CLI">Azure CLI</a></div>
 
-> [AZURE.NOTE]**Azure PowerShell 1.0 预览版**现已在 [PowerShell 库](http://www.powershellgallery.com/)中发布。此预览版对以前的版本做了很多更改，我们将使用它来收集反馈，并会将它整合到 Azure PowerShell 1.0 中。**此预览版不适用于任务关键型应用程序**。如果你运行的是此类应用程序，请继续使用 Azure PowerShell 0.9.8。如果你使用了 1.0 预览版，可以随时将其卸载并重新改用 0.9.8。有关完整安装说明，请参阅此[博客文章](https://azure.microsoft.com/zh-CN/blog/azps-1-0-pre/)。
+> [AZURE.NOTE]**Azure PowerShell 1.0 预览版**现已在 [PowerShell 库](http://www.powershellgallery.com/)中发布。此预览版对以前的版本做了很多更改，我们将使用它来收集反馈，并会将它整合到 Azure PowerShell 1.0 中。**此预览版不适用于任务关键型应用程序**。如果你运行的是此类应用程序，请继续使用 Azure PowerShell 0.9.8。如果你使用了 1.0 预览版，可以随时将其卸载并重新改用 0.9.8。有关完整安装说明，请参阅此[博客文章](https://azure.microsoft.com/zh-cn/blog/azps-1-0-pre/)。
 
 你可以使用 Windows PowerShell 在 Azure 中执行各种任务，不管是在命令提示符下以交互方式，还是通过脚本自动执行执行。Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。你可以使用 cmdlet 来创建、测试、部署和管理通过 Azure 平台传送的解决方案和服务。在大多数情况下，这些 cmdlet 可让你执行在 Azure 管理门户中可以执行的任务。例如，你可以创建和配置云服务、虚拟机、虚拟网络和网站。
 
@@ -32,12 +32,13 @@ Azure 是基于订阅的平台。这意味着需要订阅才能使用平台。�
 
 当您安装此模块时，安装程序将检查系统是否具备必需的软件并安装所有依赖项，如 Windows PowerShell 和 .NET Framework 的正确版本。
 
-<a id="Install"></a>
+<a id="Install">
 ## 如何：安装 Azure PowerShell
 
 你可以通过运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?LinkId=320376)下载并安装 Azure PowerShell 模块。出现提示时，单击“运行”。Web 平台安装程序将安装 Azure PowerShell 模块和所有依赖项。按照提示完成安装。
 
-> [AZURE.NOTE]如果你只想要下载 PowerShell 安装程序，请访问 [https://github.com/Azure/azure-powershell](https://github.com/Azure/azure-powershell/)。也可以在此存储库中找到 PowerShell Cmdlet 的源代码
+> [AZURE.NOTE]如果你只想要下载 PowerShell 安装程序，请访问 https://github.com/Azure/azure-powershell/releases。
+也可以在此存储库中找到 PowerShell Cmdlet 的源代码
 
 有关可用于 Azure 的命令行工具的详细信息，请参阅[命令行工具](/downloads/)。
 
@@ -49,6 +50,7 @@ Azure 是基于订阅的平台。这意味着需要订阅才能使用平台。�
 
 - 在运行早于 Windows 8 或 Windows Server 2012 的版本的计算机上，请使用“开始”菜单。在“开始”菜单上，依次单击“所有程序”、“Azure”和“Azure PowerShell”。
 
+<a id="Connect">
 ## 如何连接到订阅
 
 使用 Azure 需要一个订阅。如果你没有订阅，请参阅 [Azure 入门](/pricing/overview)。
@@ -59,6 +61,8 @@ cmdlet 需要使用你的订阅来管理你的服务。可通过两种方法向 
 
 - Azure AD 是建议的身份验证方法，因为使用此方法可以更轻松地管理对订阅的访问。安装 0.8.6 版的更新后，如果你使用工作或学校帐户，则还可以启用 Azure AD 身份验证的自动化方案。这种方法也适用于 Azure 资源管理器 API。
 - 在您使用证书方法时，只要订阅和证书有效，订阅信息就可用。但是，此方法使得管理对共享订阅的访问更加困难，例如在授权多人可以访问帐户时。此外，Azure 资源管理器 API 不接受证书身份验证。
+
+有关 Azure 中的身份验证和订阅管理的详细信息，请参阅[管理帐户、订阅和管理角色](http://go.microsoft.com/fwlink/?LinkId=324796)。
 
 ### 使用 Azure AD 方法
 
@@ -81,7 +85,7 @@ cmdlet 需要使用你的订阅来管理你的服务。可通过两种方法向 
 
 	> [AZURE.NOTE]这种非交互式登录方法仅适用于工作或学校帐户。工作或学校帐户是由你的公司或学校所管理的用户，并在你公司或学校的 Azure Active Directory 实例中定义。如果你当前没有工作或学校帐户，且已使用 Microsoft 帐户登录到 Azure 订阅，则你可以按照以下步骤轻松地创建一个工作或学校帐户。
 	>
-	> 1. 登录到“Azure 管理门户”，然后单击“Active Directory”[](https://manage.windowsazure.cn)。
+	> 1. 登录到[Azure 管理门户](https://manage.windowsazure.cn)，然后单击“Active Directory”。
 	>
 	> 2. 如果目录不存在，请选择“创建目录”，并提供所请求的信息。
 	>
@@ -99,14 +103,14 @@ cmdlet 需要使用你的订阅来管理你的服务。可通过两种方法向 
 
 Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 
-> [AZURE.NOTE]AzureResourceManager 模块中的 cmdlet 需要 Azure AD 方法 (Add-AzureAccount)。这些 cmdlet 不支持发布设置文件。有关 AzureResourceManager 模块中的 cmdlet 的详细信息，请参阅 [Azure 资源管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn708504.aspx)。
+> [AZURE.NOTE]AzureResourceManager 模块中的 cmdlet 需要 Azure AD 方法 (Add-AzureAccount)。这些 cmdlet 不支持发布设置文件。有关 AzureResourceManager 模块中的 cmdlet 的详细信息，请参阅 [Azure 资源管理器 Cmdlet](http://go.microsoft.com/fwlink/?LinkID=394765)。
 
 
 - **Get-AzurePublishSettingsFile** cmdlet 会在 Azure 管理门户中打开一个网页，你可以从中下载订阅信息。信息包含在 .publishsettings 文件中。
 
 - **Import-AzurePublishSettingsFile** 导入 .publishsettings 文件以供模块使用。此文件包含一个管理证书，其中具有安全凭据。
 
-> [AZURE.IMPORTANT]我们建议在你导入发布设置后，删除使用 <b>Get-AzurePublishSettingsFile</b> 下载的发布配置文件。因为管理证书包含安全凭据，所以不应由未授权用户访问。如需有关订阅的信息，可以从 [Azure 管理门户](http://manage.windowsazure.cn/)获得。
+> [AZURE.IMPORTANT]我们建议在你导入发布设置后，删除使用 <b>Get-AzurePublishSettingsFile</b> 下载的发布配置文件。因为管理证书包含安全凭据，所以不应由未授权用户访问。如果你需要有关你的订阅的信息，可以从 [Azure 管理门户](http://manage.windowsazure.cn/)或 [Microsoft Online Services 客户门户](http://go.microsoft.com/fwlink/p/?LinkId=324875)获得。
 
 1. 使用你的 Azure 帐户的凭据登录 [Azure 管理门户](http://manage.windowsazure.cn)。
 
@@ -118,7 +122,7 @@ Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 
 4. 当系统提示时，下载并保存发布配置文件，并记下 .publishsettings 文件的路径和名称。当你运行 **Import-AzurePublishSettingsFile** cmdlet 导入设置时，必须提供此信息。默认的位置和文件名格式为：
 
-			C:\\Users\\<UserProfile>\\Downloads\[*MySubscription*-...]-*downloadDate*-credentials.publishsettings
+			C:\\Users<UserProfile>\\Download\[*MySubscription*-...]-*downloadDate*-credentials.publishsettings
 
 5. 键入类似于下面的命令，用你的 Windows 帐户名称和路径以及文件名替换占位符：
 
@@ -145,12 +149,14 @@ Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 1. 启动 Azure PowerShell 控制台。
 
 2. 选择网站的名称。请选择符合 DNS 命名约定的名称。有效名称只能包含字母“a”到“z”以及数字“0”到“9”，以及连字符（“-”）。
-网站名称在 Azure 中必须唯一。我们将在此示例中使用“mySite”，但请务必选择其他名称，例如，你的帐户名称后接一个数字。
-在选择某一名称后，键入如下命令。将“mySite”替换你的网站名称。
+
+	网站名称在 Azure 中必须唯一。我们将在此示例中使用“mySite”，但请务必选择其他名称，例如，你的帐户名称后接一个数字。
+
+	在选择某一名称后，键入如下命令。将“mySite”替换为你的网站名称。
 
 		New-AzureWebsite mySite
 
-    该 cmdlet 将创建网站，然后返回代表新网站的对象。对象属性包含有关网站的有用信息。
+	该 cmdlet 将创建网站，然后返回代表新网站的对象。对象属性包含有关网站的有用信息。
 
 3. 若要获取有关网站的信息，键入此命令。该命令将返回订阅中所有网站（包括你刚刚创建的应用程序）的某些信息。
 
@@ -160,19 +166,19 @@ Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 
 		Get-AzureWebsite -Name mySite
 
-5. 网站在创建后将会启动。若要停止网站，请键入此命令，包括你的网站名称。
-	
+5. 网站将在创建后启动。若要停止网站，请键入此命令，包括你的网站名称。
+
 		Stop-AzureWebsite -Name mySite
 
 6. 若要验证该站点的状态是否为“已停止”，请再次运行 Get-AzureWebsite 命令。
 
-		Get-AzureWebsite -Name mySite
+		Get-AzureWebsite
 
 7. 若要完成此测试，请删除网站。键入：
 
 		Remove-AzureWebsite -Name mySite
 
-8. 若要完成该任务，请确认已删除网站。
+7. 若要完成该任务，请确认已删除网站。
 
 		Get-AzureWebsite -Name mySite
 
@@ -253,4 +259,4 @@ Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 
   [Microsoft Online Services Customer Portal]: https://mocp.microsoftonline.com/site/default.aspx
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->

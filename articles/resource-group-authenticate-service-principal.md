@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="10/14/2015"
-   wacn.date="11/12/2015"/>
+   ms.date="10/30/2015"
+   wacn.date="12/31/2015"/>
 
 # 通过 Azure 资源管理器对服务主体进行身份验证
 
@@ -277,7 +277,7 @@
 
 5. 若要确定服务主体角色分配所在租户的 **TenantId**，请列出帐户，然后查找输出中的 **TenantId** 属性。
 
-        azure account list
+        azure account list --json
 
 6. 使用作为你的标识的服务主体登录。对于用户名，请使用你在创建应用程序时所用的 **ApplicationId**。对于密码，请使用你在创建帐户时指定的密码。
 
@@ -286,7 +286,8 @@
     现在，你应该已经作为所创建 AAD 应用程序的服务主体进行身份验证。
 
 ## 后续步骤
-
+  
+- 有关基于角色的访问控制的概述，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)  
 - 若要了解有关使用服务主体的门户的信息，请参阅[使用 Azure 门户创建新的 Azure 服务主体](/documentation/articles/resource-group-create-service-principal-portal)  
 - 有关在 Azure 资源管理器中实现安全性的指南，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)
 
@@ -294,4 +295,4 @@
 <!-- Images. -->
 [1]: ./media/resource-group-authenticate-service-principal/arm-get-credential.png
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->

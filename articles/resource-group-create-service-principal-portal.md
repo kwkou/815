@@ -1,6 +1,6 @@
 <properties
-   pageTitle="使用 Azure 门户创建新的 Azure 服务主体"
-   description="介绍如何创建一个新的 Azure 服务主体，在 Azure 资源管理器中将此服务主体与基于角色的访问控制配合使用可以管理对资源的访问权限。"
+   pageTitle="在门户中创建 AD 应用程序和服务主体 | Windows Azure"
+   description="介绍如何创建新的 Active Directory 应用程序和服务主体，在 Azure 资源管理器中将此服务主体与基于角色的访问控制配合使用可以管理对资源的访问权限。"
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
@@ -9,24 +9,28 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="09/18/2015"
-   wacn.date="11/12/2015"/>
+   ms.date="10/29/2015"
+   wacn.date="12/31/2015"/>
 
-# 使用 Azure 门户创建新的 Azure 服务主体
+# 使用门户创建 Active Directory 应用程序和服务主体
 
 ## 概述
-服务主体是需要访问其他资源的自动化进程、应用程序或服务。使用 Azure 资源管理器，可以向服务主体授予访问权限并对服务主体进行身份验证，使服务主体可对存在于订阅或用作租户的资源执行允许的管理操作。
+当你的应用程序需要访问或修改订阅中的资源时，你可以使用门户来创建 Active Directory 应用程序，并将它分配到拥有适当权限的角色。通过门户创建某个 Active Directory 应用程序时，实际上会同时创建该应用程序和一个服务主体。设置权限时，将要使用该服务主体。
 
-本主题说明如何使用 Azure 门户创建新的服务主体。目前，你必须使用 Windows Azure 门户来创建新的服务主体。在更新的版本中，此功能将添加到 Azure 预览版门户。
+本主题说明如何使用 Azure 门户创建新的应用程序和服务主体。目前，你必须使用 Windows Azure 门户来创建新的 Active Directory 应用程序。在以后的版本中，此功能将添加到 Azure 门户。可以使用预览门户将应用程序添加到角色。
 
 ## 概念
 1. Azure Active Directory (AAD) - 云的标识与访问管理服务生成版。有关详细信息，请参阅：[什么是 Azure Active Directory](/documentation/articles/active-directory-whatis)
 2. 服务主体 - 目录中应用程序的实例。
-3. AD 应用程序 - AAD 中向 AAD 标识某个应用程序的目录记录。有关详细信息，请参阅 [Azure AD 中的身份验证基本知识](https://msdn.microsoft.com/zh-cn/library/azure/874839d9-6de6-43aa-9a5c-613b0c93247e#BKMK_Auth)。
+3. AD 应用程序 - AAD 中向 AAD 标识某个应用程序的目录记录。 
+
+有关应用程序和服务主体的详细说明，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects)。
+有关 Active Directory 身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios)。
 
 
-## 创建 Active Directory 应用程序
-1. 通过[经典门户](https://manage.windowsazure.cn/)登录到你的 Azure 帐户。
+## 创建应用程序对象和服务主体对象
+
+1. 通过[门户](https://manage.windowsazure.cn/)登录到你的 Azure 帐户。
 
 2. 在左侧窗格中选择“Active Directory”。
 
@@ -52,15 +56,16 @@
 
      ![新应用程序][10]
 
-6. 填写应用程序名称，然后选择你要使用的应用程序类型。由于我们想要使用此应用程序的服务主体在 Azure 资源管理器上进行身份验证，因此要选择创建“WEB 应用程序和/或 WEB API”，然后单击“下一步”按钮。
+6. 填写应用程序名称，然后选择你要使用的应用程序类型。由于我们想要使用此应用程序的服务主体在 Azure 资源管理器上进行身份验证，因此要选择创建“网站和/或 WEB API”，然后单击“下一步”按钮。
 
      ![命名应用程序][9]
 
-7. 填写应用程序的属性。对于“登入 URL”，请提供用于描述应用程序的网站 URI。将不验证网站是否存在。对于“应用程序 ID URI”，请提供用于标识应用程序的 URI。将不验证终结点的唯一性或存在性。单击“完成”创建 AAD 应用程序。
+7. 填写应用程序的属性。对于“登入 URL”，请提供用于描述应用程序的网站 URI。将不验证网站是否存在。对于“应用程序 ID URI”，请提供用于标识应用程序的 URI。
+将不验证终结点的唯一性或存在性。单击“完成”创建 AAD 应用程序。
 
      ![应用程序属性][4]
 
-## 创建服务主体密码
+## 为应用程序创建身份验证密钥
 门户现在应该已选择你的应用程序。
 
 1. 单击“配置”选项卡以配置应用程序的密码。
@@ -89,9 +94,41 @@
 * **客户端 ID** - 与你的用户名相同。
 * **密钥** - 与你的密码相同。
 
+## 将应用程序分配到角色
+
+可以使用[Azure 门户](https://manage.windowsazure.cn)将 Active Directory 应用程序分配到有权访问你需要访问的资源的角色。有关将应用程序分配到角色的信息，请参阅 [Azure Active Directory 基于角色的访问控制](active-directory/role-based-access-control-configure.md)。
+
+## 在代码中获取访问令牌
+
+如果你正在使用 .NET，可以通过以下代码检索应用程序的访问令牌。
+
+首先，必须将 Active Directory 身份验证库安装到你的 Visual Studio 项目中。执行此操作的最简单方法是使用 NuGet 包。打开包管理器控制台并键入以下命令。
+
+    PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Version 2.19.208020213
+    PM> Update-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Safe
+
+在你的应用程序中，添加如下所示的方法以检索令牌。
+
+    public static string GetAccessToken()
+    {
+        var authenticationContext = new AuthenticationContext("https://login.chinacloudapi.cn/{tenantId or tenant name}");  
+        var credential = new ClientCredential(clientId: "{application id}", clientSecret: "{application password}");
+        var result = authenticationContext.AcquireToken(resource: "https://management.core.chinacloudapi.cn/", clientCredential:credential);
+
+        if (result == null) {
+            throw new InvalidOperationException("Failed to obtain the JWT token");
+        }
+
+        string token = result.AccessToken;
+
+        return token;
+    }
+
 ## 后续步骤
-- 有关允许服务主体访问资源的步骤，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)  
-- 有关在 Azure 资源管理器中实现安全性的指南，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)
+
+- 若要了解有关指定安全策略的信息，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)。  
+- 若要了解如何使用 Azure PowerShell 或 Azure CLI 来处理 Active Directory 应用程序和服务主体，包括如何使用证书进行身份验证，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](./resource-group-authenticate-service-principal.md)。
+- 有关在 Azure 资源管理器中实现安全性的指南，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)。
 
 
 <!-- Images. -->
@@ -109,4 +146,4 @@
 [12]: ./media/resource-group-create-service-principal-portal/add-icon.png
 [13]: ./media/resource-group-create-service-principal-portal/save-icon.png
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->
