@@ -1,33 +1,39 @@
 <properties
-	pageTitle="无法通过 RDP 连接到 Azure VM |Windows Azure"
-	description="对运行 Windows 的 Azure 虚拟机的远程桌面或 RDP 连接进行故障排除。"
+	pageTitle="对 Windows VM 的远程桌面连接进行故障排除 | Windows Azure"
+	description="查找并解决使用 RDP 连接到 Windows VM 的常见问题。获取快速缓解措施，根据错误消息获取特定帮助和进行详细的网络故障排除。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
 	manager="timlt"
 	editor=""
-	tags="azure-service-management,azure-resource-manager"/>
+	tags="top-support-issue,azure-service-management,azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/16/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="10/27/2015"
+	wacn.date="12/31/2015"/>
 
 # 对运行 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除
 
-有多种原因可能导致远程桌面 (RDP) 无法连接到运行 Windows 的 Azure 虚拟机。本文将帮助你找出原因并更正它们。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
-> [AZURE.NOTE]本文仅适用于运行 Windows 的 Azure 虚拟机。有关对运行 Linux 的 Azure 虚拟机的连接进行故障排除，请参阅[此文](/documentation/articles/virtual-machines-troubleshoot-ssh-connections)。
 
-## 与 Azure 客户支持联系
+有多种原因可能导致远程桌面 (RDP) 无法连接到运行 Windows 的 Azure 虚拟机。问题可能出在 VM 上的 RDP 软件、基础主计算机、网络连接或发起连接的客户端上。本文将帮助你找出原因并更正它们。
 
-如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和CSDN论坛](/support/forums/)上的 Azure 专家 。
+本文仅适用于运行 Windows 的 Azure 虚拟机。有关对*运行 Linux 的 Azure 虚拟机*的连接进行故障排除，请参阅[此文](/documentation/articles/virtual-machines-troubleshoot-ssh-connections)。
 
-或者，你也可以提出 Azure 支持事件。转至 [Azure 支持站点](/support/contact/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Windows Azure 支持常见问题](/support/faq/)。
+如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和CSDN](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](http://azure.microsoft.com/support/options/)并单击“获取支持”。
 
-## 在 Windows 上运行 Azure IaaS 诊断程序包
+第一部分“基本步骤”列出了解决常见连接问题的步骤，第二部分按特定错误消息提供了解决方法步骤，最后一部分可帮助对每个网络组件执行详细的故障排除。
 
-如果从运行 Windows 8、Windows 8.1、Windows Server 2012 或 Windows Server 2012 R2 的计算机进行故障排除，则可以尝试运行 [Azure IaaS (Windows) 诊断程序包](http://support.microsoft.com/kb/2976864)。此程序包可以解决远程桌面存在的许多常见问题。
+## 基本步骤 - 经典部署模型
+
+这些基本步骤可帮助解决使用经典部署模型创建的虚拟机中的大部分常见远程桌面连接失败。在执行每个步骤之后，请尝试重新连接到 VM。
+
+- 从 [Azure 门户](https://manage.windowsazure.cn)重置远程桌面服务可修复 RDP 服务器的启动问题。<br>
+	单击“浏览全部”>“虚拟机(经典)”> 你的 Windows 虚拟机 >“重置远程访问”。
+
+    ![重置远程访问](./media/virtual-machines-troubleshoot-remote-desktop-connections/Portal-RDP-Reset-Windows.png)
 
 1.	在[“支持诊断”](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864)页上单击“Windows Azure IaaS (Windows)诊断程序包”。单击“创建”以创建新的诊断会话。你可以将此会话与不同目标计算机**共享**，或者将它**下载**到本地计算机上。
 2.	**运行**此会话，**接受** Microsoft 许可协议，并**启动**诊断工具。
@@ -76,7 +82,8 @@
 - 如果你在组织的 Intranet 上，请确保你的计算机有权访问代理服务器，并可以向其发送 HTTPS 流量。
 - 如果你使用的是本地存储的 RDP 文件，请尝试使用 Azure 门户生成的 RDP 文件。这将确保你使用的是虚拟机或云服务的正确 DNS 名称以及虚拟机的终结点端口。下面是 Azure 门户生成的示例 RDP 文件：
 
-	full address:s:tailspin-azdatatier.chinacloudapp.cn:55919 prompt for credentials:i:1
+		full address:s:tailspin-azdatatier.chinacloudapp.cn:55919
+		prompt for credentials:i:1
 
 此 RDP 文件的地址部分由包含 VM 的云服务的完全限定域名（在此示例中为 tailspin-azdatatier.chinacloudapp.cn）和远程桌面通信终结点的外部 TCP 端口 (55919) 组成。
 
@@ -118,7 +125,6 @@
 
 确保你用于连接的帐户具有远程桌面登录权限。一种解决方法是，使用域帐户或本地管理员帐户通过远程桌面连接，然后使用“计算机管理”管理单元（“系统工具”>“本地用户和组”>“组” > Remote Desktop Users）将所需的帐户添加到 Remote Desktop Users 本地组。
 
-
 ## 详细的疑难解答
 
 如果未发生上述任何错误，而你仍无法通过远程桌面连接到 VM，请阅读[此文](/documentation/articles/virtual-machines-rdp-detailed-troubleshoot)以找出其他原因。
@@ -136,4 +142,4 @@
 
 [对在 Azure 虚拟机上运行的应用程序的访问进行故障排除](/documentation/articles/virtual-machines-troubleshoot-access-application)
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_1221_2015-->

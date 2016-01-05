@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/02/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/31/2015"/>
 
 
 # 将数据库迁移到 Azure VM 上的 SQL Server
@@ -18,7 +18,7 @@
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
 
 
-将本地 SQL Server 用户数据库迁移到 Azure VM 中的 SQL Server 的方法有很多。本文将简要讨论各种方法，针对各种情况推荐最佳方法，并提供一个[教程](#azure-vm-deployment-wizard-tutorial)，指导你使用“将 SQL Server 数据库部署到 Windows Azure VM”向导。
+将本地 SQL Server 用户数据库迁移到 Azure VM 中的 SQL Server 的方法有很多。本文将简要讨论各种方法，针对各种情况推荐最佳方法，并提供一个[教程](#azure-vm-deployment-wizard-tutorial)，指导你使用**将 SQL Server 数据库部署到 Windows Azure VM** 向导。
 
 ## 主要迁移方法有哪些？
 
@@ -151,7 +151,7 @@
 使用此方法可将本地 SQL Server 实例中的所有系统数据库和用户数据库迁移到 Azure 虚拟机。使用此手动方法按照下列常规步骤迁移整个 SQL Server 实例：
 
 1.	使用 [Microsoft 虚拟机转换器](http://technet.microsoft.com/zh-cn/library/dn873998.aspx)将物理或虚拟机转换为 Hyper-V VHD。
-2.	使用 <!--[-->Add-AzureVHD cmdlet<!--](https://msdn.microsoft.com/zh-cn/library/windowsazure/dn495173.aspx)--> 将 VHD 文件上载到 Azure 存储空间。
+2.	使用 [Add-AzureVHD cmdlet](https://msdn.microsoft.com/zh-cn/library/windowsazure/dn495173.aspx) 将 VHD 文件上载到 Azure 存储空间。
 3.	使用上载的 VHD 部署新的虚拟机。
 
 > [AZURE.NOTE]若要迁移整个应用程序，请考虑使用<!-- [-->Azure Site Recovery<!--](/documentation/articles/services/site-recovery)-->。
@@ -164,4 +164,4 @@
 
 有关在 Azure 虚拟机中运行 SQL Server 的详细信息，请参阅 [Azure 虚拟机中的 SQL Server 概述](/documentation/articles/virtual-machines-sql-server-infrastructure-services)。
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

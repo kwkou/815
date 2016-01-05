@@ -10,18 +10,18 @@
 	
 <tags 
 	ms.service="virtual-machines"
-	ms.date="09/01/2015"
-	wacn.date="11/12/2015" />
+	ms.date="11/13/2015"
+	wacn.date="12/31/2015" />
 
 # SQL Server 在 Azure 虚拟机中的性能最佳实践
-
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
 
 ## 概述
 
 本主题提供有关优化 SQL Server 在 Windows Azure 虚拟机中的性能最佳实践。在 Azure 虚拟机中运行 SQL Server 时，我们建议你继续使用适用于 SQL Server 在本地服务器环境中的相同数据库性能优化选项。但是，关系数据库在公有云中的性能取决于许多因素，如虚拟机的大小和数据磁盘的配置。
 
->[AZURE.NOTE]本白皮书重点介绍获得 SQL Server 在 Azure VM 上的最佳性能。如果你的工作负荷要求较低，可能不需要下面列出的每项优化。评估这些建议时应考虑性能需求和工作负荷模式。
+本白皮书重点介绍获得 SQL Server 在 Azure VM 上的最佳性能。如果你的工作负荷要求较低，可能不需要下面列出的每项优化。评估这些建议时应考虑性能需求和工作负荷模式。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 ## 快速检查列表
 
@@ -55,15 +55,15 @@
 
 ### 操作系统磁盘
 
-操作系统磁盘是你可以作为操作系统的运行版本来启动和安装的 VHD，并且标记为 **C** 驱动器。
+操作系统磁盘是你可以作为操作系统的运行版本来启动和装载的 VHD，并且标记为 **C** 驱动器。
 
 操作系统磁盘上的默认缓存策略是**读/写**。对于性能敏感型应用程序，我们建议使用数据磁盘而不是操作系统磁盘。请参阅下面有关数据磁盘的部分。
 
 ### 临时磁盘
 
-临时存储驱动器，标记为 **D**: 驱动器，不会保留到 Azure blob 存储区。在 **D**: 驱动器上不会存储任何数据或日志文件。
+临时存储驱动器，标记为 **D**: 驱动器，不会保留到 Azure blob 存储。请勿在 **D**: 驱动器上存储数据或日志文件。
 
-使用 D 系列或 G 系列虚拟机 (VM) 时，仅将 TempDB 和/或缓冲池扩展存储在 **D** 驱动器上。与其他 VM 序列不同，D 系列和 G 系 VM 中的 **D** 驱动器是基于 SSD 的。如果工作负载大量使用临时对象或具有不适合存储在内存中的工作集，这可以提高其性能。有关详细信息，请参阅[在 Azure VM 中使用 SSD 来存储 SQL Server TempDB 和缓冲池扩展](http://blogs.technet.com/b/dataplatforminsider/archive/2014/09/25/using-ssds-in-azure-vms-to-store-sql-server-tempdb-and-buffer-pool-extensions.aspx)。
+使用 D 系列或 G 系列虚拟机 (VM) 时，仅将 TempDB 和/或缓冲池扩展存储在 **D** 驱动器上。与其他 VM 序列不同，D 系列和 G 系列 VM 中的 **D** 驱动器是基于 SSD 的。如果工作负载大量使用临时对象或具有不适合存储在内存中的工作集，这可以提高其性能。有关详细信息，请参阅[在 Azure VM 中使用 SSD 来存储 SQL Server TempDB 和缓冲池扩展](http://blogs.technet.com/b/dataplatforminsider/archive/2014/09/25/using-ssds-in-azure-vms-to-store-sql-server-tempdb-and-buffer-pool-extensions.aspx)。
 
 ### 数据磁盘
 
@@ -71,15 +71,15 @@
 
 - **缓存策略**：仅在托管你的数据文件和 TempDB 的数据磁盘上启用读缓存。如果使用的不是高级存储，不要在任何数据磁盘上启用任何缓存。有关配置磁盘缓存的说明，请参阅以下主题：[Set-azureosdisk](https://msdn.microsoft.com/library/azure/jj152847) 和 [Set-azuredatadisk](https://msdn.microsoft.com/library/azure/jj152851.aspx)。
 
-- **NTFS 分配单元大小**：当格式化数据磁盘时，建议你为数据和日志文件以及 TempDB 使用 64-KB 分配单元大小。
+- **NTFS 分配单元大小**：当格式化数据磁盘时，建议你对数据和日志文件以及 TempDB 使用 64-KB 分配单元大小。
 
 - **磁盘条带化**：我们建议你遵循以下准则：
 
 	- 对于 Windows 8/Windows Server 2012 或更高版本，使用[存储空间](https://technet.microsoft.com/library/hh831739.aspx)。对于 OLTP 工作负荷，将条带大小设置为 64 KB，对于数据仓库工作负荷，将条带大小设置为 256 KB，以避免分区定位错误导致的性能影响。此外，设置卷计数 = 物理磁盘的数量。若要配置具有 8 个以上磁盘的存储空间，必须使用 PowerShell（而不是服务器管理器 UI）来显式设置卷数以匹配磁盘数。有关如何配置[存储空间](https://technet.microsoft.com/library/hh831739.aspx)的详细信息，请参阅 [Windows PowerShell 中的存储空间 Cmdlet](https://technet.microsoft.com/library/jj851254.aspx)
 	
-	- 对于 Windows 2008 R2 或更早版本，你可以使用动态磁盘（操作系统条带化卷），条带大小始终为 64 KB。请注意，从 Windows 8/Windows Server 2012 开始不推荐使用此选项。有关信息，请参阅[虚拟磁盘服务正在过渡到 Windows 存储管理 API](https://msdn.microsoft.com/library/windows/desktop/hh848071.aspx) 中的支持声明。
+	- 对于 Windows 2008 R2 或更早版本，你可以使用动态磁盘（操作系统条带化卷），条带大小始终为 64 KB。请注意，从 Windows 8/Windows Server 2012 开始不推荐使用此选项。有关信息，请参阅[虚拟磁盘服务正在过渡到 Windows 存储管理 API](https://msdn.microsoft.com/zh-cn/library/windows/desktop/hh848071.aspx) 中的支持声明。
 	
-	- 如果你的工作负荷不是日志密集型的并且不需要专用的 IOPS，你可以只配置一个存储池。否则，请创建两个存储池，一个用于日志文件，另一个用于数据文件和 TempDB。根据负载预期确定与每个存储池相关联的磁盘数。请记住，不同的 VM 大小允许不同数量的附加数据磁盘。有关更多信息，请参见[虚拟机的大小](/documentation/articles/virtual-machines-size-specs)。
+	- 如果你的工作负荷不是日志密集型的并且不需要专用的 IOPS，你可以只配置一个存储池。否则，请创建两个存储池，一个用于日志文件，另一个用于数据文件和 TempDB。根据负载预期确定与每个存储池相关联的磁盘数。请记住，不同的 VM 大小允许不同数量的附加数据磁盘。有关详细信息，请参阅[虚拟机的大小](/documentation/articles/virtual-machines-size-specs)。
 
 ## I/O 性能注意事项
 
@@ -89,7 +89,7 @@
 
 - 请考虑在传入/传出 Azure 时压缩所有数据文件。
 
-- 请考虑启用即时文件初始化以减少初始文件分配所需的时间。若要利用即时文件初始化，请将 SE\_MANAGE\_VOLUME_NAME 授予 SQL Server (MSSQLSERVER) 服务帐户并将其添加到**执行卷维护任务**安全策略。如果使用的是用于 Azure 的 SQL Server 平台映像，默认服务帐户 (NT Service\\MSSQLSERVER) 不会添加到**执行卷维护任务**安全策略。换而言之，在 SQL Server Azure 平台映像中不启用即时文件初始化。在将 SQL Server 服务帐户添加到**执行卷维护任务**安全策略后，请重新启动 SQL Server 服务。使用此功能可能有一些安全注意事项。有关详细信息，请参阅[数据库文件初始化](https://msdn.microsoft.com/library/ms175935.aspx)。
+- 请考虑启用即时文件初始化以减少初始文件分配所需的时间。若要利用即时文件初始化，请将 SE\_MANAGE\_VOLUME\_NAME 授予 SQL Server (MSSQLSERVER) 服务帐户并将其添加到**执行卷维护任务**安全策略。如果使用的是用于 Azure 的 SQL Server 平台映像，默认服务帐户 (NT Service\\MSSQLSERVER) 不会添加到**执行卷维护任务**安全策略。换而言之，在 SQL Server Azure 平台映像中不启用即时文件初始化。将 SQL Server 服务帐户添加到**执行卷维护任务**安全策略后，请重新启动 SQL Server 服务。使用此功能可能有一些安全注意事项。有关详细信息，请参阅[数据库文件初始化](https://msdn.microsoft.com/zh-cn/library/ms175935.aspx)。
 
 - **自动增长**被视为只是非预期增长的偶发情况。自动增长不管理你的数据和记录每天的增长。如果使用自动增长，请使用大小开关预先增长文件。
 
@@ -113,11 +113,11 @@
 
 某些部署可以使用更高级的配置技术，获得更多的性能好处。下面的列表主要介绍可帮助你实现更佳性能的一些 SQL Server 功能：
 
-- **备份到 Azure 存储空间**：为在 Azure 虚拟机中运行的 SQL Server 执行备份时，可以使用 [SQL Server 备份到 URL](https://msdn.microsoft.com/library/dn435916.aspx)。此功能是从 SQL Server 2012 SP1 CU2 开始提供的，在备份到附加数据磁盘时建议使用。当你备份至 Azure 存储或从中还原时，请按照 [SQL Server 备份到 URL 最佳实践和故障排除以及从 Azure 中存储的备份还原提供的建议操作](https://msdn.microsoft.com/library/jj919149.aspx)。此外还可以使用 [Azure 虚拟机中 SQL Server 的自动备份](/documentation/articles/virtual-machines-sql-server-automated-backup)自动执行这些备份。
+- **备份到 Azure 存储空间**：为在 Azure 虚拟机中运行的 SQL Server 执行备份时，可以使用 [SQL Server 备份到 URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx)。此功能是从 SQL Server 2012 SP1 CU2 开始提供的，在备份到附加数据磁盘时建议使用。当你备份至 Azure 存储空间或从中还原时，请按照 [SQL Server 备份到 URL 最佳实践和故障排除以及从 Azure 存储空间中存储的备份还原](https://msdn.microsoft.com/zh-cn/library/jj919149.aspx)中提供的建议操作。此外，还可以使用 [Azure 虚拟机中 SQL Server 的自动备份](/documentation/articles/virtual-machines-sql-server-automated-backup)自动执行这些备份。
 
-	在 SQL Server 2012 之前可以使用 [SQL Server 备份到 Azure 工具](https://www.microsoft.com/download/details.aspx?id=40740)。此工具可以通过使用多个备份条带目标帮助提高备份吞吐量。
+	对于 SQL Server 2012 以前版本，可以使用 [SQL Server 备份到 Azure 工具](https://www.microsoft.com/download/details.aspx?id=40740)。此工具可以通过使用多个备份条带目标帮助提高备份吞吐量。
 
-- **Azure 中的 SQL Server 数据文件**：[Azure 中的 SQL Server 数据文件](https://msdn.microsoft.com/library/dn385720.aspx)这一新功能从 SQL Server 2014 开始提供。在 SQL Server 上运行 Azure 中的数据文件，与使用 Azure 数据磁盘时的性能特征相当。
+- **Azure 中的 SQL Server 数据文件**：[Azure 中的 SQL Server 数据文件](https://msdn.microsoft.com/zh-cn/library/dn385720.aspx)这一新功能从 SQL Server 2014 开始提供。在 SQL Server 上运行 Azure 中的数据文件，与使用 Azure 数据磁盘时的性能特征相当。
 
 ## 后续步骤
 
@@ -127,4 +127,4 @@
 
 查看 [Azure 虚拟机上的 SQL Server 概述](/documentation/articles/virtual-machines-sql-server-infrastructure-services)中的其他 SQL Server 虚拟机主题。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->

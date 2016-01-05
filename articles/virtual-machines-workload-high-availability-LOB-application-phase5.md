@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="业务线应用程序工作负荷阶段 5：创建可用性组并添加应用程序数据库" 
-	description="在部署高可用性业务线应用程序的这个最终阶段，你将创建可用性组并向其中添加应用程序数据库。" 
+	pageTitle="业务线应用程序（阶段 5）| Windows Azure" 
+	description="在 Azure 的业务线应用程序阶段 5 中创建可用性组并向其中添加应用程序数据库。" 
 	documentationCenter=""
 	services="virtual-machines" 
 	authors="JoeDavies-MSFT" 
@@ -9,11 +9,14 @@
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines" 
-	ms.date="08/11/2015" 
-	wacn.date="09/15/2015"/>
+	ms.service="virtual-machines"
+	ms.date="11/09/2015" 
+	wacn.date="12/31/2015"/>
 
 # 业务线应用程序工作负荷阶段 5：创建可用性组并添加应用程序数据库
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
+
 
 在 Azure 基础结构服务中部署高可用性组业务线应用程序的这个最后阶段，你将创建新的 SQL Server AlwaysOn 可用性组，并添加应用程序数据库。
 
@@ -121,4 +124,4 @@
 
 [Azure 基础结构服务工作负荷：SharePoint Server 2013 场](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1221_2015-->

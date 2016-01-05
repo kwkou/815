@@ -6,14 +6,16 @@
 	authors="dsk-2015"
 	manager="timlt"
 	editor=""
-	tags="azure-service-management,azure-resource-manager"/>
+	tags="top-support-issue,azure-service-management,azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/16/2015"
-	wacn.date="12/16/2015"/>
+	wacn.date="12/31/2015"/>
 
 # 对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行详细故障排除
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 本文提供复杂远程桌面错误的详细故障排除步骤。
 
@@ -23,7 +25,7 @@
 
 如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和CSDN论坛](/support/forums/)上的 Azure 专家。
 
-或者，你也可以提出 Azure 支持事件。转至 [Azure 支持站点](/support/contact/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Windows Azure 支持常见问题](/support/faq/)。
+或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Windows Azure 支持常见问题](/support/faq/)。
 
 
 ## 一般远程桌面错误消息
@@ -125,7 +127,7 @@
 
 ![](./media/virtual-machines-rdp-detailed-troubleshoot/tshootrdp_5.png)
 
-[远程桌面基本故障排除文章](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)介绍如何使用 [Azure IaaS (Windows) 诊断程序包](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864)。如果此诊断程序包无法解决针对**与 Azure VM 的 RDP 连接（需要重启）**问题，请按照[本文](/documentation/articles/virtual-machines-windows-reset-password)中的说明在虚拟机上重置“远程桌面服务”服务。这将：
+[远程桌面基本故障排除文章](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)介绍如何使用 [Azure IaaS (Windows) 诊断程序包](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864)。如果此诊断程序包无法解决**与 Azure VM 的 RDP 连接（需要重启）**问题，请按照[本文](/documentation/articles/virtual-machines-windows-reset-password)中的说明在虚拟机上重置“远程桌面服务”服务。这将：
 
 - 启用“远程桌面”Windows 防火墙默认规则（TCP 端口 3389）。
 - 通过将 HKLM\\System\\CurrentControlSet\\Control\\Terminal Server\\fDenyTSConnections 注册表值设置为 0，启用远程桌面连接。
@@ -201,4 +203,4 @@ PortNumber 属性显示当前端口号。如果需要，可使用此命令将远
 
 [对在 Azure 虚拟机上运行的应用程序的访问进行故障排除](/documentation/articles/virtual-machines-troubleshoot-access-application)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->

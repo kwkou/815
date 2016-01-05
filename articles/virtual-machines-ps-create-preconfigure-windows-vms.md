@@ -11,12 +11,14 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/13/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/31/2015"/>
 
 # 使用 Powershell 和经典部署模型创建 Windows 虚拟机 
 
 > [AZURE.SELECTOR]
-- [Azure portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [Azure 门户](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [Powershell - Windows](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
+- [PowerShell - Linux](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] 
 
@@ -25,7 +27,7 @@
 
 这些步骤采用填空方法来创建 Azure PowerShell 命令集。如果你不熟悉 PowerShell 或只想知道为成功的配置指定什么值，则此方法很有用。高级 PowerShell 用户可以使用命令并将变量（以“$”开头的行）替换为他们自己的值。
 
-<!-- 有关配置基于 Linux 的虚拟机的配套主题，请参阅[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)。 -->
+有关配置基于 Linux 的虚拟机的配套主题，请参阅[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)。
 
 
 ## 步骤 1：安装 Azure PowerShell
@@ -91,7 +93,7 @@
 
 有关 D、DS 或 G 系列虚拟机的 InstanceSize 值，请参阅 [Azure 的虚拟机和云服务大小](https://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)。
 
-为独立 Windows 计算机指定本地管理员帐户和密码。
+（可选）为独立 Windows 计算机指定本地管理员帐户和密码。
 
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account."
 	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
@@ -106,7 +108,7 @@
 	$domacctdomain="<domain of the account that has permission to add the machine to the domain>"
 	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.GetNetworkCredential().Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain $domacctdomain -DomainUserName $cred2.GetNetworkCredential().Username -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain $domaindns
 
-有关基于 Windows 的虚拟机的其他预配置选项，请参阅 [Add-AzureProvisioningConfig](https://msdn.microsoft.com/zh-CN/library/azure/dn495299.aspx) 中 **Windows** 和 **WindowsDomain** 参数集的语法。
+有关基于 Windows 的虚拟机的其他预配置选项，请参阅 [Add-AzureProvisioningConfig](https://msdn.microsoft.com/zh-cn/library/azure/dn495299.aspx) 中 **Windows** 和 **WindowsDomain** 参数集的语法。
 
 （可选）为虚拟机分配一个特定 IP 地址（称为静态 DIP）。
 
@@ -137,8 +139,8 @@
 	$pubport=<port number of the external port>
 	$endpointname="<name of the endpoint>"
 	$lbsetname="<name of the existing load-balanced set>"
-	$probeprotocol="<Specify one: tcp, udp>"
-	$probeport=<TCP or UDP port number of probe traffic>
+	$probeprotocol="<Specify one: tcp, http>"
+	$probeport=<TCP or HTTP port number of probe traffic>
 	$probepath="<URL path for probe traffic>"
 	$vm1 | Add-AzureEndpoint -Name $endpointname -Protocol $prot -LocalPort $localport -PublicPort $pubport -LBSetName $lbsetname -ProbeProtocol $probeprotocol -ProbePort $probeport -ProbePath $probepath
 
@@ -148,7 +150,7 @@
 
 	New-AzureVM –ServiceName "<short name of the cloud service>" -VMs $vm1
 
-云服务的短名称是 Azure 管理门户的云服务列表中或 Azure 预览版门户的资源组列表中显示的名称。
+云服务的短名称是在 Azure 门户的云服务列表中或 Azure 门户的资源组列表中显示的名称。
 
 选项 2：在现有的云服务和虚拟网络中创建虚拟机。
 
@@ -165,7 +167,7 @@
 如果你要再次创建此虚拟机或类似的虚拟机，则可以：
 
 - 将此命令集保存为 PowerShell 脚本文件 (*.ps1)。
-- 在 Azure 管理门户的“自动化”部分中将此命令集保存为 Azure Automation Runbook。
+- 在 Azure 门户的“自动化”部分中将此命令集保存为 Azure 自动化 Runbook。
 
 ## <a id="examples"></a>示例
 
@@ -250,10 +252,10 @@
 
 [虚拟机文档](/services/virtual-machines/)
 
-[Azure 虚拟机常见问题](https://msdn.microsoft.com/zh-CN/library/azure/dn683781.aspx)
+[Azure 虚拟机常见问题](http://msdn.microsoft.com/zh-cn/library/azure/dn683781.aspx)
 
-[Azure 虚拟机概述](https://msdn.microsoft.com/zh-CN/library/azure/jj156143.aspx)
+[Azure 虚拟机概述](http://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx)
 
 [如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

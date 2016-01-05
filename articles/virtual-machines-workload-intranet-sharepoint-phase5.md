@@ -1,6 +1,6 @@
 <properties
-	pageTitle="SharePoint Intranet 场工作负荷阶段 5：创建可用性组，并添加 SharePoint 数据库"
-	description="在部署仅限 Intranet 的 SharePoint 2013 场的这个最后阶段，你将创建可用性组，并将 SharePoint 数据库添加到其中。"
+	pageTitle="SharePoint Server 2013 场（阶段 5）| Windows Azure"
+	description="在 Azure 的 SharePoint Server 2013 场阶段 5 中创建可用性组并向其中添加 SharePoint 数据库。"
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -10,10 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/21/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/20/2015"
+	wacn.date="12/31/2015"/>
 
 # SharePoint Intranet 场工作负荷阶段 5：创建可用性组，并添加 SharePoint 数据库
+
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../includes/learn-about-deployment-models-classic-include.md)]资源管理器部署模型。
 
 在部署仅限 Intranet 的 SharePoint 2013 场（在 Azure 基础结构服务中通过 SQL Server AlwaysOn 可用性组进行）的这个最后阶段，你将创建新的 AlwaysOn 可用性组，并添加 SharePoint 场数据库。
 
@@ -75,7 +77,7 @@
 
 1.	返回到主 SQL Server 计算机的远程桌面会话。
 2.	在 **SQL Server Management Studio** 的左窗格中，右键单击“AlwaysOn 高可用性”，然后单击“新建可用性组向导”。
-3.	在“简介”页上单击“下一步”。
+3.	在**“简介”**页上单击**“下一步”**。
 4.	在“指定可用性组名称”页的“可用性组名称”中，键入可用性组的名称（示例：AG1），然后单击“下一步”。
 5.	在“选择数据库”页中选择已备份的 SharePoint 场的数据库，然后单击“下一步”。这些数据库满足可用性组的先决条件，因为你已经对目标主副本进行了至少一次完整备份。
 6.	在“指定副本”页上，单击“添加副本”。
@@ -94,7 +96,7 @@
 9.	单击**“下一步”**。  
 10.	在“选择初始数据同步”页上，单击“仅加入”，然后单击“下一步”。数据同步是手动执行的，方法是：在主服务器上执行完整备份和事务备份，然后在备份的基础上进行还原。你可以改为选择“完整”，让新建可用性组向导为你执行数据同步。但是，对于某些企业中的大型数据库，不建议进行同步。  
 11.	在“验证”页中，单击“下一步”。如果配置中缺少侦听器，则会出现警告，因为未配置可用性组侦听器。
-12.	在“摘要”页上，单击“完成”。完成向导操作以后，请检查“结果”页，确保可用性组已成功创建。如果已成功创建，则单击“关闭”退出向导。
+12.	在**“摘要”**页上，单击**“完成”**。完成向导操作以后，请检查“结果”页，确保可用性组已成功创建。如果已成功创建，则单击“关闭”退出向导。
 13.	在“开始”屏幕中，键入**“故障转移”**，然后单击**“故障转移群集管理器”**。在左窗格中，打开你的群集的名称，然后单击“角色”。此时会显示带可用性组名称的新角色。  
 
 你已成功为 SharePoint 数据库配置 SQL Server AlwaysOn 可用性组。
@@ -120,6 +122,6 @@
 
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-LOB-application)
+[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-lob-application)
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

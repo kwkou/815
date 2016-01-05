@@ -11,13 +11,26 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="08/28/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/31/2015"/>
 
+
+# 适合使用针对 Mac、Linux 和 Windows 的 Azure CLI 执行 VM 任务的等效资源管理器和服务管理命令
+本文介绍用于在 Azure 服务管理和 Azure 资源管理器中创建和管理 Azure VM 的等效 Windows Azure 命令行接口 (Azure CLI) 命令。在将脚本从一个命令模式迁移到其他命令模式时，请使用本文作为简易指南。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+
+
+
+* 如果你尚未安装 Azure CLI 并连接到订阅，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install) 和[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)。如果你想要使用资源管理器模式命令，请务必使用登录方法连接。
+
+* 若要开始在 Azure CLI 中使用资源管理器模式和切换命令模式，请参阅[将 Azure 命令行接口用于资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)。默认情况下，CLI 在服务管理模式下启动。若要更改为资源管理器模式，请运行 `azure config mode arm`。若要回到服务管理模式，请运行 `azure config mode asm`。
+
+* 如需联机命令帮助和选项，请键入 `azure <command> <subcommand> --help` 或 `azure help <command> <subcommand>`。
 
 ## VM 任务
 下表比较了你可以在服务管理和资源管理器中使用 Azure CLI 命令执行的常见 VM 任务。使用许多资源管理器命令时，你需要传递现有资源组的名称。
 
-> [AZURE.NOTE]这些示例不包括资源管理器中基于模板的操作。
+> [AZURE.NOTE]这些示例不包括资源管理器中基于模板的操作。有关信息，请参阅[将 Azure 命令行接口用于资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)。
 
 任务 | 服务管理 | 资源管理器
 -------------- | ----------- | -------------------------
@@ -51,7 +64,7 @@
 
 ## 后续步骤
 
-* 有关使用 Azure CLI 来处理资源管理器资源的详细信息，请参阅[使用 Azure 命令行接口管理基于角色的访问控制](/documentation/articles//role-based-access-control-xplat-cli)。
+* 有关使用 Azure CLI 来处理资源管理器资源的详细信息，请参阅[将 Azure 命令行接口用于资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)和[使用 Azure 命令行接口管理基于角色的访问控制](/documentation/articles/role-based-access-control-xplat-cli-install)。
 * 如需 CLI 命令的其他示例，请参阅[将 Azure 命令行接口用于 Azure 服务管理](/documentation/articles/virtual-machines-command-line-tools)和[将 Azure CLI 用于 Azure 资源管理器](/documentation/articles/azure-cli-arm-commands)。
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_1221_2015-->

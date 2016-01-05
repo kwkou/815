@@ -1,27 +1,30 @@
 <properties
-   pageTitle="如何在 Azure 中标记虚拟机"
-   description="了解如何在 Azure 中标记虚拟机"
+   pageTitle="如何标记 VM | Windows Azure"
+   description="了解如何标记使用资源管理器部署模型创建的 Azure 虚拟机。"
    services="virtual-machines"
    documentationCenter=""
-   authors="dsk-2015"
+   authors="mmccrory"
    manager="timlt"
    editor="tysonn"
    tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines"
-    ms.date="07/23/2015" 
-    wacn.date="08/29/2015"/>
+<tags
+   ms.service="virtual-machines"
+   ms.date="11/10/2015"
+   wacn.date="12/31/2015"/>
 
 # 如何在 Azure 中标记虚拟机
 
-本文章介绍了在 Azure 中标记虚拟机的不同方式。标记是用户定义的键/值对，可直接放置在资源或资源组中。针对每个资源和资源组，Azure 当前支持最多 15 个标记。标记可以在创建时放置在资源中或添加到现有资源中。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
+
+
+本文介绍在 Azure 中通过 Azure 资源管理器标记虚拟机的不同方式。标记是用户定义的键/值对，可直接放置在资源或资源组中。针对每个资源和资源组，Azure 当前支持最多 15 个标记。标记可以在创建时放置在资源中或添加到现有资源中。请注意，只有通过 Azure 资源管理器创建的资源支持标记。
 
 ## 通过模板标记虚拟机
 
 首先，让我们看一下通过模板进行标记。[此模板](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm)将标记放置在以下资源中：计算（虚拟机）、存储（存储帐户）和网络（公共 IP 地址、虚拟网络和网络接口）。
 
-单击[](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm)“模板链接”中的“部署至 Azure”按钮。此操作将导航到[Azure 预览门户](http://manage.windowsazure.cn/)，可在其中部署此模板。
+单击[](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm)“模板链接”中的“部署至 Azure”按钮。此操作将导航到[Azure 预览门户](https://manage.windowsazure.cn)，可在其中部署此模板。
 
 ![使用标记进行简单部署](./media/virtual-machines-tagging-arm/deploy-to-azure-tags.png)
 
@@ -64,7 +67,7 @@
 
 如果想要通过 PowerShell 添加标记，则可以使用 `Set-AzureResource` 命令。请注意，通过 PowerShell 更新时，标记会作为整体进行更新。因此，如果要向已具有标记的资源添加标记，则需要包括想要在资源中放置的所有标记。下面是如何通过 PowerShell Cmdlet 将其他标记添加到资源的示例。
 
-第一个 cmdlet 使用 `Get-AzureResource` 和 `Tags` 函数将 *MyWindowsVM* 中放置的所有标记放置到 *tags* 变量中。
+第一个 cmdlet 使用 `Get-AzureResource` 和 `Tags` 函数将 *MyWindowsVM* 中放置的所有标记放置到 *tags* 变量中。请注意，参数 `ApiVersion` 是可选的；如果未指定，则使用资源提供程序的最新 API 版本。
 
         PS C:\> $tags = (Get-AzureResource -Name MyWindowsVM -ResourceGroupName MyResourceGroup -ResourceType "Microsoft.Compute/virtualmachines" -ApiVersion 2015-05-01-preview).Tags
 
@@ -111,6 +114,24 @@
 若要了解有关通过 PowerShell 标记的详细信息，请查看 [Azure 资源 Cmdlet][]。
 
 
+## 使用 Azure CLI 进行标记
+
+还支持通过 Azure CLI 针对已创建的资源进行标记。若要开始，请设置 [Azure CLI 环境][]。通过 Azure CLI 登录到订阅，并切换到 ARM 模式。你可以使用此命令查看给定虚拟机的所有属性，包括标记：
+
+        azure vm show -g MyResourceGroup -n MyVM
+
+与 PowerShell 不同，如果要将标记添加到已包含标记的资源中，不必在使用 `azure vm set` 命令之前指定所有标记（旧标记和新标记）。相反，使用此命令可以将标记追加到资源中。若要通过 Azure CLI 添加新的 VM 标记，可以使用 `azure vm set` 命令以及标记参数 **-t**：
+
+        azure vm set -g MyResourceGroup -n MyVM –t myNewTagName1=myNewTagValue1;myNewTagName2=myNewTagValue2
+
+若要删除所有标记，可以使用 `azure vm set` 命令中的 **–T** 参数。
+
+        azure vm set – g MyResourceGroup –n MyVM -T
+
+
+既然我们已通过 PowerShell、Azure CLI 和门户将标记应用到资源中，那就让我们看一看使用情况详细信息，以在计费门户中的查看标记。
+
+
 ## 在使用情况详细信息中查看标记
 
 通过 Azure 资源管理器放置在计算、网络和存储资源中的标记将在计费门户中的使用情况详细信息中填充。
@@ -137,8 +158,10 @@
 
 [将 PowerShell 环境用于 Azure 资源管理器]: /documentation/articles/powershell-azure-resource-manager
 [Azure 资源 Cmdlet]: https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx
+[Azure CLI 环境]: /documentation/articles/xplat-cli-azure-resource-manager
 [Azure 资源管理器概述]: /documentation/articles/resource-group-overview
 [使用标记组织 Azure 资源]: /documentation/articles/resource-group-using-tags
 [了解 Azure 帐单]: /documentation/articles/billing-understand-your-bill
 [深入了解 Windows Azure 资源消耗]: /documentation/articles/billing-usage-rate-card-overview
-<!---HONumber=67-->
+
+<!---HONumber=Mooncake_1221_2015-->

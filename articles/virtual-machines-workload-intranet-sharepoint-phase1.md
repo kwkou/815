@@ -1,6 +1,6 @@
 <properties
-	pageTitle="SharePoint Intranet 场工作负荷阶段 1：配置 Azure"
-	description="在部署仅限 Intranet 的 SharePoint 2013 场（在 Azure 基础结构服务中通过 SQL Server AlwaysOn 可用性组进行）的这个第一阶段，你将创建 Azure 虚拟网络和其他 Azure 基础结构元素。"
+	pageTitle="SharePoint Server 2013 场（阶段 1）| Windows Azure"
+	description="在 Azure 的 SharePoint Server 2013 场阶段 1 中创建虚拟网络和其他 Azure 基础结构元素。"
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -10,12 +10,14 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/21/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/20/2015"
+	wacn.date="12/31/2015"/>
 
 # SharePoint Intranet 场工作负荷阶段 1：配置 Azure
 
-在部署仅限 Intranet 的 SharePoint 2013 场（在 Azure 基础结构服务中通过 SQL Server AlwaysOn 可用性组进行）的这个阶段，你将构建出 Azure 网络和存储基础结构。你必须在转到[阶段 2](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2) 之前完成此阶段。请参阅[在 Azure 中通过 SQL Server AlwaysOn 可用性组部署 SharePoint](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview) 以了解所有阶段的相关信息。
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../includes/learn-about-deployment-models-classic-include.md)]资源管理器部署模型。
+
+在部署仅限 Intranet 的 SharePoint 2013 场（在 Azure 基础结构服务中通过 SQL Server AlwaysOn 可用性组进行）的这个阶段，你将在 Windows Azure 服务管理中构建出 Azure 网络和存储基础结构。你必须在转到[阶段 2](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2) 之前完成此阶段。请参阅[在 Azure 中通过 SQL Server AlwaysOn 可用性组部署 SharePoint](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview) 以了解所有阶段的相关信息。
 
 必须使用这些基本网络组件设置 Azure：
 
@@ -165,6 +167,6 @@
 
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-LOB-application)
+[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-lob-application)
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

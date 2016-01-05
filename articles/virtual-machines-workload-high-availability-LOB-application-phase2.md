@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="业务线应用程序工作负荷阶段 2：配置域控制器" 
-	description="在此第二阶段中，你创建并配置了两个 Active Directory 域控制器。" 
+	pageTitle="业务线应用程序（阶段 2）| Windows Azure" 
+	description="在 Azure 的业务线应用程序的阶段 2 中创建并配置两个 Active Directory 副本域控制器。" 
 	documentationCenter=""
 	services="virtual-machines" 
 	authors="JoeDavies-MSFT" 
@@ -9,11 +9,14 @@
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines" 
-	ms.date="08/11/2015" 
-	wacn.date="09/15/2015"/>
+	ms.service="virtual-machines"
+	ms.date="10/20/2015" 
+	wacn.date="12/31/2015"/>
 
 # 业务线应用程序工作负荷阶段 2：配置域控制器
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
+ 
 
 在 Azure 基础结构服务中部署高可用性组业务线应用程序的这个阶段，你将在 Azure 虚拟网络中配置两个副本域控制器，以便可以在 Azure 虚拟网络中对针对 Web 资源的客户端 Web 请求进行身份验证，而不必将身份验证流量通过连接发送到你的本地网络。
 
@@ -29,7 +32,7 @@
 2\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（第二个域控制器，示例 DC2） | Windows Server 2012 R2 Datacenter | Standard\_D1
 3\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（主数据库服务器，示例 SQL1） | Microsoft SQL Server 2014 Enterprise - Windows Server 2012 R2 | 	Standard\_DS4
 4\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（辅助数据库服务器，示例 SQL2） | Microsoft SQL Server 2014 Enterprise - Windows Server 2012 R2 | 	Standard\_DS4
-5\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（群集的多数节点见证，示例 MN1） | Windows Server 2012 R2 Datacenter | Standard\_D1
+5\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（群集的多数节点，示例 MN1） | Windows Server 2012 R2 Datacenter | Standard\_D1
 6\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（第一个 Web 服务器，示例 WEB1） | Windows Server 2012 R2 Datacenter | Standard\_D3
 7\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_（第二个 Web 服务器，示例 WEB2） | Windows Server 2012 R2 Datacenter | Standard\_D3
 
@@ -47,12 +50,11 @@
 
 回想一下，你在[阶段 1：配置 Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase1) 中定义了表 V、表 S、表 ST 和表 A。
 
+> [AZURE.NOTE]本文包含 Azure PowerShell Preview 1.0 的命令。若要在 Azure PowerShell 0.9.8 和之前版本中运行这些命令，请在执行任何命令之前，先将“-AzureRM”的所有实例替换为“-Azure”，并添加 **Switch-AzureMode AzureResourceManager** 命令。有关详细信息，请参阅 [Azure PowerShell 1.0 预览版](https://azure.microsoft.com/blog/azps-1-0-pre/)。
+
 如果已提供所有适当的值，请在 Azure PowerShell 提示符下运行生成的块。
 
-	# Set up subscription and key variables
-	$subscr="<name of the Azure subscription>"
-	Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $subscr
-	Switch-AzureMode AzureResourceManager
+	# Set up key variables
 	$rgName="<resource group name>"
 	$locName="<Azure location of your resource group>"
 	$saName="<Table ST – Item 2 – Storage account name column>"
@@ -63,47 +65,49 @@
 	$vmName="<Table M – Item 1 - Virtual machine name column>"
 	$vmSize="<Table M – Item 1 - Minimum size column>"
 	$staticIP="<Table V – Item 6 - Value column>"
-	$vnet=Get-AzurevirtualNetwork -Name $vnetName -ResourceGroupName $rgName
-	$nic=New-AzureNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id -PrivateIpAddress $staticIP
-	$avSet=Get-AzureAvailabilitySet –Name $avName –ResourceGroupName $rgName 
-	$vm=New-AzureVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
+	$vnet=Get-AzureRMVirtualNetwork -Name $vnetName -ResourceGroupName $rgName
+	$nic=New-AzureRMNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id -PrivateIpAddress $staticIP
+	$avSet=Get-AzureRMAvailabilitySet –Name $avName –ResourceGroupName $rgName 
+	$vm=New-AzureRMVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
 	
 	$diskSize=<size of the extra disk for AD DS data in GB>
-	$storageAcc=Get-AzureStorageAccount -ResourceGroupName $rgName -Name $saName
+	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
 	$vhdURI=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-ADDSDisk.vhd"
-	Add-AzureVMDataDisk -VM $vm -Name "ADDSData" -DiskSizeInGB $diskSize -VhdUri $vhdURI  -CreateOption empty
+	Add-AzureRMVMDataDisk -VM $vm -Name "ADDSData" -DiskSizeInGB $diskSize -VhdUri $vhdURI  -CreateOption empty
 	
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account for the first domain controller." 
-	$vm=Set-AzureVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-	$vm=Set-AzureVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
-	$vm=Add-AzureVMNetworkInterface -VM $vm -Id $nic.Id
-	$storageAcc=Get-AzureStorageAccount -ResourceGroupName $rgName -Name $saName
+	$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
+	$vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
+	$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
+	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
 	$osDiskUri=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-OSDisk.vhd"
-	$vm=Set-AzureVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
-	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
+	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
+	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 	
 	# Create the second domain controller
 	$vmName="<Table M – Item 2 - Virtual machine name column>"
 	$vmSize="<Table M – Item 2 - Minimum size column>"
 	$staticIP="<Table V – Item 7 - Value column>"
-	$vnet=Get-AzurevirtualNetwork -Name $vnetName -ResourceGroupName $rgName
-	$nic=New-AzureNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id -PrivateIpAddress $staticIP
-	$avSet=Get-AzureAvailabilitySet –Name $avName –ResourceGroupName $rgName 
-	$vm=New-AzureVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
+	$vnet=Get-AzureRMVirtualNetwork -Name $vnetName -ResourceGroupName $rgName
+	$nic=New-AzureRMNetworkInterface -Name ($vmName +"-NIC") -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[1].Id -PrivateIpAddress $staticIP
+	$avSet=Get-AzureRMAvailabilitySet –Name $avName –ResourceGroupName $rgName 
+	$vm=New-AzureRMVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
 	
 	$diskSize=<size of the extra disk for AD DS data in GB>
-	$storageAcc=Get-AzureStorageAccount -ResourceGroupName $rgName -Name $saName
+	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
 	$vhdURI=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-ADDSDisk.vhd"
-	Add-AzureVMDataDisk -VM $vm -Name "ADDSData" -DiskSizeInGB $diskSize -VhdUri $vhdURI  -CreateOption empty
+	Add-AzureRMVMDataDisk -VM $vm -Name "ADDSData" -DiskSizeInGB $diskSize -VhdUri $vhdURI  -CreateOption empty
 	
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account for the second domain controller." 
-	$vm=Set-AzureVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-	$vm=Set-AzureVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
-	$vm=Add-AzureVMNetworkInterface -VM $vm -Id $nic.Id
-	$storageAcc=Get-AzureStorageAccount -ResourceGroupName $rgName -Name $saName
+	$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
+	$vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
+	$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
+	$storageAcc=Get-AzureRMStorageAccount -ResourceGroupName $rgName -Name $saName
 	$osDiskUri=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-OSDisk.vhd"
-	$vm=Set-AzureVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
-	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
+	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
+	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
+
+> [AZURE.NOTE]由于这些虚拟机用于 Intranet 应用程序，因此未为它们分配公共 IP 地址或 DNS 域名标签，也未向 Internet 公开。但是，这也意味着你无法从 Azure 预览门户连接到它们。当你查看虚拟机的属性时，“连接”按钮将不可用。使用虚拟机的专用 IP 地址或 Intranet DNS 名称通过“远程桌面连接”附件或其他远程桌面工具可以连接到虚拟机。
 
 ## 配置第一个域控制器
 
@@ -157,7 +161,7 @@
 
 接下来，需要更新你的虚拟网络的 DNS 服务器，使 Azure 可以为虚拟机分配两个新域控制器的 IP 地址用作其 DNS 服务器。请注意，此过程使用表 V（用于虚拟网络设置）和表 M（用于虚拟机）中的值。
 
-1.	在 [Azure 预览门户](https://manage.windowsazure.cn/)的左窗格中，单击**“浏览全部”>“虚拟网络”**，然后单击你的虚拟网络的名称（表 V - 项目 1 -“值”列）。
+1.	在 [Azure 门户](https://manage.windowsazure.cn)的左窗格中，单击**“浏览全部”>“虚拟网络”**，然后单击你的虚拟网络的名称（表 V - 项目 1 -“值”列）。
 2.	在虚拟网络的窗格中，单击**“所有设置”**。
 3.	在**“设置”**窗格中，单击**“DNS 服务器”**。
 4.	在**“DNS 服务器”**窗格中，键入以下内容：
@@ -202,4 +206,4 @@
 
 [Azure 基础结构服务工作负荷：SharePoint Server 2013 场](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1221_2015-->

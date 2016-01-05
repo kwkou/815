@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/14/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/31/2015"/>
 
 # 如何为 Windows 虚拟机重置密码或远程桌面服务
 
@@ -93,10 +93,10 @@ VMAccess 扩展在虚拟机上运行这两个命令：
 
 ## 其他资源
 
-[Azure VM 扩展和功能](https://msdn.microsoft.com/zh-CN/library/azure/dn606311.aspx)
+[Azure VM 扩展和功能](http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
 
-[使用 RDP 或 SSH 连接到 Azure 虚拟机](https://msdn.microsoft.com/zh-CN/library/azure/dn535788.aspx)
+[使用 RDP 或 SSH 连接到 Azure 虚拟机](http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx)
 
 [对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

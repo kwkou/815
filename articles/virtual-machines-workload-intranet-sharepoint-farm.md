@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure 基础结构服务工作负荷：Intranet SharePoint 场"
-	description="了解 Azure 中部署的 Intranet SharePoint 场的价值、如何设置开发/测试环境，以及如何部署高可用性生产配置。"
+	pageTitle="Azure 中的 SharePoint Server 2013 场 | Windows Azure"
+	description="了解 Azure 中的 SharePoint Server 2013 场的价值、设置测试环境，以及部署高可用性配置。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="JoeDavies-MSFT"
@@ -10,10 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/11/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/29/2015"
+	wacn.date="12/31/2015"/>
 
 # Azure 基础结构服务工作负荷：Intranet SharePoint 场
+
+[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../includes/learn-about-deployment-models-classic-include.md)]资源管理器部署模型。
 
 在 Windows Azure 中设置你的第一个或下一个 SharePoint 场，并利用配置的简便性和相关功能快速扩展场以包括关键功能的新增能力或优化。许多 SharePoint 场从标准的高度可用的三层配置扩展为可能具有十几个或更多服务器的场，该场针对性能或单独的角色进行了优化，如分布式缓存或搜索。
 
@@ -29,6 +31,8 @@
 
 下一步是设置 Azure 中托管的开发/测试 Intranet SharePoint 场。
 
+> [AZURE.NOTE]Microsoft 已发布 SharePoint Server 2016 IT Preview。要使此预览版易于安装和测试，可以使用预安装了 SharePoint Server 2016 IT Preview 及其必备组件的 Azure 虚拟机库映像。有关详细信息，请参阅[在 Azure 中测试 SharePoint Server 2016 IT Preview](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/)。
+
 ## 创建 Azure 中托管的开发/测试 Intranet SharePoint 场
 
 为 Azure 中托管的 SharePoint 场创建开发/测试环境有两个选择：
@@ -36,20 +40,20 @@
 - 仅限云的虚拟网络
 - 跨界虚拟网络
 
-你可以创建 [Azure 试用订阅](/pricing/1rmb-trial/)。
+可以使用 [Azure 试用](/pricing/1rmb-trial/)。
 
 ### 仅限云的虚拟网络
 
-仅限云的虚拟网络未连接到本地网络。如果你只想快速创建基本或高可用性 SharePoint 场，请参阅 [SharePoint Server 场](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview)。以下示例显示了基本 SharePoint 场配置。
+仅限云的虚拟网络未连接到本地网络。如果你只想快速创建基本或高可用性 SharePoint 场，请参阅[创建 SharePoint Server 场](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview)。以下示例显示了基本 SharePoint 场配置。
 
-![](./media/virtual-machines-workload-intranet-sharepoint-farm/SPFarm_Basic.png)
- 
+![](./media/virtual-machines-workload-intranet-sharepoint-farm/Non-HAFarm.png)
+
 ### 跨界虚拟网络
 
 跨界虚拟网络通过站点到站点 VPN 或 ExpressRoute 连接与本地网络连接。如果你想要创建开发/测试环境，以模拟通过 VPN 连接访问 SharePoint Server 并执行远程管理的最终配置和试验，请参阅[在混合云中设置 SharePoint Intranet 场用于测试](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)。
 
 ![](./media/virtual-machines-workload-intranet-sharepoint-farm/CreateSPFarmHybridCloud.png)
- 
+
 下一步是在 Azure 中创建高可用性 Intranet SharePoint 场。
 
 ## 部署 Azure 中托管的 Intranet SharePoint 场
@@ -64,9 +68,7 @@
 - 在群集中包含两个 SQL Server 和一个多数节点计算机的 SQL Server AlwaysOn 可用性组配置。
 - 具有两个副本域控制器的虚拟网络中的 Azure Active Directory。
 
-<!--
-	To see this configuration as an infographic, see [SharePoint with SQL Server AlwaysOn](http://azure.microsoft.com/zh-cn/documentation/infographics/sharepoint-sqlserver-alwayson/).
--->
+若要以信息图形式查看此配置，请参阅[具有 SQL Server AlwaysOn 的 SharePoint](http://go.microsoft.com/fwlink/?LinkId=394788)。
 
 ### 材料清单
 
@@ -79,6 +81,31 @@
 - 一个跨界虚拟网络。
 - 一个存储帐户。
 - 一个 Azure 订阅。
+
+下面是此配置的虚拟机及其默认大小。
+
+项目 | 虚拟机说明 | 库映像 | 默认大小
+--- | --- | --- | ---
+1\. | 第一个域控制器 | Windows Server 2012 R2 Datacenter | A2（中）
+2\. | 第二个域控制器 | Windows Server 2012 R2 Datacenter | A2（中）
+3\. | 第一个数据库服务器 | Microsoft SQL Server 2014 Enterprise - Windows Server 2012 R2 | A5
+4\. | 第二个数据库服务器 | Microsoft SQL Server 2014 Enterprise - Windows Server 2012 R2 | A5
+5\. | 群集多数节点 | Windows Server 2012 R2 Datacenter | A1（小）
+6\. | 第一个 SharePoint 应用程序服务器 | Microsoft SharePoint Server 2013 试用版 - Windows Server 2012 R2 | A4（超大）
+7\. | 第二个 SharePoint 应用程序服务器 | Microsoft SharePoint Server 2013 试用版 - Windows Server 2012 R2 | A4（超大）
+8\. | 第一个 SharePoint Web 服务器 | Microsoft SharePoint Server 2013 试用版 - Windows Server 2012 R2 | A4（超大）
+9\. | 第二个 SharePoint Web 服务器 | Microsoft SharePoint Server 2013 试用版 - Windows Server 2012 R2 | A4（超大）
+
+若要计算此配置的估计成本，请参阅 [Azure 定价计算器](https://azure.microsoft.com/pricing/calculator/)。
+
+1. 在“模块”中，单击“计算”，然后单击“虚拟机”相应次以创建包含九个虚拟机的列表。
+2. 对于每个虚拟机，请选择：
+	- 所需的区域
+	- 对于类型，选择 **Windows**
+	- 对于定价层，选择“标准”
+	- 上一个表中的默认大小，或者在**实例大小**中选择所需的大小
+
+> [AZURE.NOTE]Azure 定价计算器不包括运行 SQL Server 2014 Enterprise 的两个虚拟机的 SQL Server 许可证的额外成本。有关详细信息，请参阅[虚拟机定价-SQL](https://azure.microsoft.com/pricing/details/virtual-machines/#Sql)。
 
 ### 部署阶段
 
@@ -120,6 +147,6 @@
 
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-LOB-application)
+[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-lob-application)
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

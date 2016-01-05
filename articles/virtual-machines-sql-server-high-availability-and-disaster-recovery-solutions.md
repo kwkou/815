@@ -1,21 +1,25 @@
 <properties 
-   pageTitle="Azure 虚拟机中 SQL Server 的高可用性和灾难恢复"
-   description="介绍 Azure 虚拟机中运行的 SQL Server 的各种 HADR 策略。"
-   services="virtual-machines"
-   documentationCenter="na"
-   authors="rothja"
-   manager="jeffreyg"
-   editor="monicar" />
+	pageTitle="SQL Server 的高可用性和灾难恢复 | Windows Azure"
+	description="本教程中使用通过经典部署模型创建的资源，并且讨论适用于在 Azure 虚拟机中运行的 SQL Server 的各种类型 HADR 策略。"
+	services="virtual-machines"
+	documentationCenter="na"
+	authors="rothja"
+	manager="jeffreyg"
+	editor="monicar" 
+	tags="azure-service-management"/>
 <tags 
-   ms.service="virtual-machines"
-   ms.date="08/17/2015"
-   wacn.date="09/18/2015" />
+	ms.service="virtual-machines"
+	ms.date="11/13/2015"
+	wacn.date="12/31/2015" />
 
 # Azure 虚拟机中 SQL Server 的高可用性和灾难恢复
 
 ## 概述
 
 带有 SQL Server 的 Azure 虚拟机 (VM) 有助于降低高可用性和灾难恢复 (HADR) 数据库解决方案的成本。Azure 虚拟机支持大多数充当云解决方案和混合解决方案的 SQL Server HADR 解决方案。在仅包含 Azure 的解决方案中，整个 HADR 系统都在 Azure 中运行。而在混合配置中，解决方案的一部分在 Azure 中运行，另一部分则在组织的本地运行。Azure 环境具有灵活性，允许你部分或完全迁移至 Azure，以满足 SQL Server 数据库系统对于预算和 HADR 的要求。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+
 
 ## 了解对 HADR 解决方案的需求
 
@@ -96,9 +100,14 @@ Azure 中的 DHCP 服务不符合 RFC 标准，可能会导致创建某些 WSFC 
 
 ### 可用性组侦听器支持
 
-运行 Windows Server 2008 R2、Windows Server 2012 和 Windows Server 2012 R2 的 Azure VM 支持可用性组侦听器。这种支持的实现，是借助于在 Azure VM 上启用了直接服务器返回 (DSR) 的负载平衡终结点，它们都是可用性组节点。你必须执行特殊的配置步骤，才能让这些侦听器对在 Azure 中运行和本地运行的客户端应用程序都有效。
+运行 Windows Server 2008 R2、Windows Server 2012 和 Windows Server 2012 R2 的 Azure VM 支持可用性组侦听器。这种支持的实现，是借助于在 Azure VM 上启用的负载平衡终结点，它们都是可用性组节点。你必须执行特殊的配置步骤，才能让这些侦听器对在 Azure 中运行和本地运行的客户端应用程序都有效。
 
-客户端必须从未托管 AlwaysOn 可用性组节点的云服务中的计算机连接到侦听器。如果可用性组跨多个 Azure 子网（例如，跨 Azure 区域的部署），则客户端连接字符串必须包含“MultisubnetFailover=True”。这会导致与不同子网中的副本建立并行连接。有关设置侦听器的说明，请参阅[在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener)。
+有两个主要选项用于设置侦听器：“外部(公共)”或“内部”。外部（公共）侦听器与可通过 Internet 访问的公共虚拟 IP (VIP) 相关联。使用外部侦听器，必须启用“直接服务器返回”，这意味着，你必须从不与 AlwaysOn 可用性组节点在同一云服务中的计算机连接到侦听器。另一个选项是使用内部负载平衡器 (ILB) 的内部侦听器。内部侦听器仅支持在同一虚拟网络内的客户端。
+
+如果可用性组跨多个 Azure 子网（例如，跨 Azure 区域的部署），则客户端连接字符串必须包含“**MultisubnetFailover=True**”。这会导致与不同子网中的副本建立并行连接。有关设置侦听器的说明，请参阅
+
+- [在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener)。
+- [在 Azure 中配置 AlwaysOn 可用性组的外部侦听器](/documentation/articles/virtual-machines-sql-server-configure-public-alwayson-availability-group-listener)。
 
 你仍可通过直接连接到服务实例，单独连接到每个可用性副本。此外，由于 AlwaysOn 可用性组与数据库镜像客户端向后兼容，因此可以像数据库镜像伙伴一样连接到可用性副本，只要这些副本配置得类似于数据库镜像即可：
 
@@ -130,7 +139,7 @@ Azure 磁盘中的异地复制不支持将同一数据库的数据文件和日�
 
 如果需要创建使用 SQL Server 的 Azure 虚拟机，请参阅[在 Azure 上预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server)。
 
-若要使 Azure VM 上运行的 SQL Server 保持最佳性能，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](https://msdn.microsoft.com/zh-cn/library/azure/dn133149.aspx)中的指导。
+若要使 Azure VM 上运行的 SQL Server 保持最佳性能，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-sql-server-performance-best-practices)中的指导。
 
 有关其他与在 Azure VM 中运行 SQL Server 相关的主题，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-sql-server-infrastructure-services)。
 
@@ -139,4 +148,4 @@ Azure 磁盘中的异地复制不支持将同一数据库的数据文件和日�
 - [在 Azure 中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine)
 - [在 Azure VM 中创建用于 AlwaysOn 可用性组的 WSFC 群集](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a)
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->
