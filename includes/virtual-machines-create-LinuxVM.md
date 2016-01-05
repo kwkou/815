@@ -8,6 +8,8 @@
 
         azure vm image list | grep "Linux"
 
+   在 Windows 命令提示符窗口中，使用 find 而不是 grep。
+
 4. 利用上述列表中的 Linux 映像，使用 `azure vm create` 创建新的虚拟机。此步骤将创建新的云服务以及新的存储帐户。你还可通过 `-c` 选项将此虚拟机连接到现有云服务。其还通过 `-e` 选项创建 SSH 终结点以登录到 Linux 虚拟机。
 
         ~$ azure vm create "MyTestVM" b4590d9e3ed742e4a1d46e5424aa335e__suse-opensuse-13.1-20141216-x86-64 "adminUser" -z "Small" -e -l "West US"
@@ -39,4 +41,4 @@
 
 有关所有这些 Azure CLI 虚拟机命令的详细信息，请参阅[使用服务管理 API 的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools)。
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->
