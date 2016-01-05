@@ -250,7 +250,6 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
 
 -	查看 [StackExchange.Redis 缓存客户端文档][]。
 	-	可以从许多 Redis 客户端和开发语言访问 azure Redis 缓存。有关详细信息，请参阅 [http://redis.io/clients][] 和[以其他语言开发 Azure Redis 缓存][]。
-	-	Azure Redis 缓存还可用于 Redsmin 等服务。有关详细信息，请参阅[如何检索 Azure Redis 连接字符串并将其用于 Redsmin][]。
 -	请参阅 [redis][] 文档并阅读 [redis 数据类型][]和 [Redis 数据类型的十五分钟介绍][]。
 -   请参阅有关 [Azure Redis 缓存][]的 MSDN 参考内容。 
 
