@@ -19,7 +19,7 @@
 <a name="what-is"></a>
 ## 什么是 Azure Redis Cache？
 
-Windows Azure Redis 缓存基于流行的开放源代码 Redis 缓存。它让您访问 Microsoft 管理的安全专用的 Redis 缓存。使用 Azure Redis 缓存创建的缓存可从 Microsoft Azure 内的任何应用程序进行访问。
+Windows Azure Redis 缓存基于流行的开放源代码 Redis 缓存。它让您访问 WindowsAzure.cn 管理的安全专用的 Redis 缓存。使用 Azure Redis 缓存创建的缓存可从 Windows Azure 内的任何应用程序进行访问。
 
 Windows Azure Redis 缓存现已推出两种层级：
 
