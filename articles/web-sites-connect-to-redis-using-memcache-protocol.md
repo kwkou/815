@@ -34,13 +34,13 @@ Web Apps Memcache 填充码可以与任何应用程序一起使用，前提是�
 
 Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存进行管理。然而，你可以通过以下教程获得所以必须的信息。
 
-[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
 ### 添加 REDIS\_HOST 应用设置
 
 你需要创建的第一个应用设置是 **REDIS\_HOST** 应用设置。此设置将对该填充码将缓存信息转发到的目的地进行设置。REDIS\_HOST 应用设置所需的值可以通过以下的 PowerShell 命令行获得：
 
-	$myRedisCache = Get-AzureRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>"; $myRedisCache.HostName
+	$myRedisCache = Get-AzureRmRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>"; $myRedisCache.HostName
 
 将应用设置的密钥设置为 **REDIS\_HOST**，将应用设置的值设置为 Redis 缓存实例的**主机名**。
 
@@ -48,7 +48,7 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 
 你需要创建的第二个应用设置是 **REDIS\_KEY** 应用设置。此设置提供了安全访问 Redis 缓存实例所需的身份验证令牌。REDIS\_KEY 应用设置所需的值可以通过以下的 PowerShell 命令行获得：
 
-	Get-AzureRedisCacheKey -Name "<your cache name>" -ResourceGroupName "<your resource group name>"
+	Get-AzureRmRedisCacheKey -Name "<your cache name>" -ResourceGroupName "<your resource group name>"
 
 将应用设置的密钥设置为 **REDIS\_KEY**，将应用设置的值设置为 Redis 缓存实例的**主密钥**。
 
@@ -132,7 +132,7 @@ $memcached_servers = array(
 
 你可以使用以下的 PowerShell 命令行启用非 SSL 终结点
 
-	Set-AzureRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>" -EnableNonSslPort $true
+	Set-AzureRmRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>" -EnableNonSslPort $true
 
 ### 从 redis-cli 连接到 Azure Redis Cache
 
