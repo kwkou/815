@@ -27,8 +27,6 @@ Azure CLI 是一组开源且跨平台的命令，可以用于 Azure 平台。本
 
 * **下载并使用发布设置文件** - 这将在本地计算机上安装证书，只要订阅和证书有效，你就可以执行管理任务。此方法只允许你使用经典（服务管理）命令。
 
-有关身份验证和订阅管理的详细信息，请参阅[基于帐户的身份验证和基于证书的身份验证之间的区别是什么][authandsub]。
-
 如果你没有 Azure 帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][free-trial]。
 
 >[AZURE.NOTE]如果你使用的是早于版本 0.9.10 的 Azure CLI 版本，则只能将 `azure login` 命令用于工作或学校帐户标识，对于 Microsoft 帐户标识不起作用。但是，使用 Azure CLI 版本 0.9.10 及更高版本，你可以通过交互式 `azure login` 命令使用任何标识登录到你的帐户。
@@ -64,7 +62,7 @@ CLI 版本 0.9.9 及更高版本支持多重身份验证。
 ## 使用非交互式登录（使用工作或学校帐户）
 
 
-非交互式登录方法仅适用于工作或学校帐户，也称为*组织帐户*。此帐户由你的组织管理，并在组织的 Azure Active Directory 中定义。你可以[创建组织帐户](#create-an-organizational-account)（如果你没有），也可以[基于 Microsoft 帐户 ID 创建工作或学校 ID](./virtual-machines/resource-group-create-work-id-from-personal.md)。这需要在 `azure login` 命令中指定用户名或用户名和密码，如下所示：
+非交互式登录方法仅适用于工作或学校帐户，也称为*组织帐户*。此帐户由你的组织管理，并在组织的 Azure Active Directory 中定义。你可以[创建组织帐户](#create-an-organizational-account)（如果你没有），也可以[基于 Microsoft 帐户 ID 创建工作或学校 ID](/documentation/articles/resource-group-create-work-id-from-personal)。这需要在 `azure login` 命令中指定用户名或用户名和密码，如下所示：
 
 	azure login -u ahmet@contoso.partner.onmschina.cn
 	info:    Executing command login
@@ -144,10 +142,6 @@ CLI 版本 0.9.9 及更高版本支持多重身份验证。
 * 如果你在使用 Azure CLI 或 Azure 时遇到问题，请访问 [Azure 论坛](http://social.msdn.microsoft.com/Forums/windowsazure/home)。
 
 
-
-
-
-[authandsub]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh531793.aspx#BKMK_AccountVCert
 [free-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
 [portal]: https://manage.windowsazure.cn
 [signuporg]: /documentation/articles/sign-up-organization

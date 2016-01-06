@@ -68,7 +68,6 @@
 - 在群集中包含两个 SQL Server 和一个多数节点计算机的 SQL Server AlwaysOn 可用性组配置。
 - 具有两个副本域控制器的虚拟网络中的 Azure Active Directory。
 
-若要以信息图形式查看此配置，请参阅[具有 SQL Server AlwaysOn 的 SharePoint](http://go.microsoft.com/fwlink/?LinkId=394788)。
 
 ### 材料清单
 
@@ -96,7 +95,7 @@
 8\. | 第一个 SharePoint Web 服务器 | Microsoft SharePoint Server 2013 试用版 - Windows Server 2012 R2 | A4（超大）
 9\. | 第二个 SharePoint Web 服务器 | Microsoft SharePoint Server 2013 试用版 - Windows Server 2012 R2 | A4（超大）
 
-若要计算此配置的估计成本，请参阅 [Azure 定价计算器](https://azure.microsoft.com/pricing/calculator/)。
+若要计算此配置的估计成本，请参阅 [Azure 定价计算器](/pricing/calculator/)。
 
 1. 在“模块”中，单击“计算”，然后单击“虚拟机”相应次以创建包含九个虚拟机的列表。
 2. 对于每个虚拟机，请选择：
@@ -105,7 +104,7 @@
 	- 对于定价层，选择“标准”
 	- 上一个表中的默认大小，或者在**实例大小**中选择所需的大小
 
-> [AZURE.NOTE]Azure 定价计算器不包括运行 SQL Server 2014 Enterprise 的两个虚拟机的 SQL Server 许可证的额外成本。有关详细信息，请参阅[虚拟机定价-SQL](https://azure.microsoft.com/pricing/details/virtual-machines/#Sql)。
+> [AZURE.NOTE]Azure 定价计算器不包括运行 SQL Server 2014 Enterprise 的两个虚拟机的 SQL Server 许可证的额外成本。有关详细信息，请参阅[虚拟机定价-SQL](/home/features/virtual-machines/#SQL)。
 
 ### 部署阶段
 
@@ -146,7 +145,5 @@
 [Azure 基础结构服务中托管的 SharePoint 场](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
-
-[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-lob-application)
 
 <!---HONumber=Mooncake_1221_2015-->

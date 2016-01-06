@@ -24,7 +24,7 @@
  
 下列步骤演示如何通过使用填空方法创建 Azure PowerShell 命令集来创建 Linux 虚拟机。如果你不熟悉 Azure PowerShell 或只想知道为成功的配置指定什么值，则此方法很有用。
 
-你将通过将几组命令块复制到文本文件或 PowerShell ISE 中，然后填写变量值并删除 < and > 字符来生成命令集。请参阅本文末尾的两个[示例](/documentation/articles/#examples)，了解最终结果。
+你将通过将几组命令块复制到文本文件或 PowerShell ISE 中，然后填写变量值并删除 < and > 字符来生成命令集。请参阅本文末尾的两个[示例](#examples)，了解最终结果。
 
 有关基于 Windows 的虚拟机的配套主题，请参阅[使用 Azure PowerShell 创建基于 Windows 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)。
 
@@ -267,7 +267,7 @@
 
 [Azure 虚拟机常见问题](http://msdn.microsoft.com/zh-cn/library/azure/dn683781.aspx)
 
-[Azure 虚拟机概述](http://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx)
+[Azure 虚拟机概述](/documentation/articles/virtual-machines-about/)
 
 [如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 

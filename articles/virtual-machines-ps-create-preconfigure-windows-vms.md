@@ -252,9 +252,9 @@
 
 [虚拟机文档](/services/virtual-machines/)
 
-[Azure 虚拟机常见问题](http://msdn.microsoft.com/zh-cn/library/azure/dn683781.aspx)
+[Azure 虚拟机常见问题](/documentation/articles/virtual-machines-questions/)
 
-[Azure 虚拟机概述](http://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx)
+[Azure 虚拟机概述](/documentation/articles/virtual-machines-about/)
 
 [如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 

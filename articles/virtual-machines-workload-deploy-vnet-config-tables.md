@@ -63,6 +63,4 @@
 
 [虚拟网络配置任务](https://msdn.microsoft.com/zh-CN/library/jj156206.aspx)
 
-[配置与 Azure 虚拟网络的跨界站点到站点连接](/documentation/articles/vpn-gateway-site-to-site-create)
-
 <!---HONumber=Mooncake_1221_2015-->

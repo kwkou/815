@@ -37,7 +37,6 @@
 >
 >在 Windows Azure 中不支持在本地处理模式下配置的 ReportViewer。
 
-查看白皮书 [Reporting Services 报表查看器控件和基于 Windows Azure 虚拟机的报表服务器](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Reporting%20Services%20report%20viewer%20control%20and%20Azure%20VM%20based%20report%20servers.docx)。
 
 ## 将程序集添加到部署包
 
@@ -89,7 +88,7 @@ ReportViewer 需要使用正确的凭据向报表服务器进行身份验证，�
 
 ## 将 ASP.NET 网站发布到 Azure
 
-有关将 ASP.NET Web 应用程序发布到 Azure 的说明，请参阅[如何：从 Visual Studio 迁移和发布 Web 应用程序到 Azure](/documentation/articles/vs-azure-tools-migrate-publish-web-app-to-cloud-service) 和 [Web Apps 和 ASP.NET 入门](../app-service-web/web-sites-dotnet-get-started.md)。
+有关将 ASP.NET Web 应用程序发布到 Azure 的说明，请参阅 [Web Apps 和 ASP.NET 入门](/documentation/articles/web-sites-dotnet-get-started)。
 
 >[AZURE.IMPORTANT]如果在解决方案资源管理器中的快捷菜单中未显示添加Azure 部署项目或添加 Azure 云服务项目命令，你可能需要将该项目的目标框架更改为 .NET Framework 4。
 >

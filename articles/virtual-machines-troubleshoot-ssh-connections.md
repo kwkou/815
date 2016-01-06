@@ -36,7 +36,7 @@
 
 1. 从 [Azure 门户](https://manage.windowsazure.cn)**重置远程访问**。单击“浏览全部”>“虚拟机(经典)”> 你的 Windows 虚拟机 >“重置远程访问”。
 
-2. **重新启动**虚拟机。在 [Azure 门户](https://manage.windowsazure.cn)中，单击“全部浏览”>“虚拟机(经典)”> 你的 Windows 虚拟机 >“重新启动”。在 [Azure 管理门户](https://manage.windowsazure.com)中，打开“虚拟机”>“实例”，然后单击“重新启动”。
+2. **重新启动**虚拟机。在 [Azure 门户](https://manage.windowsazure.cn)中，单击“全部浏览”>“虚拟机(经典)”> 你的 Windows 虚拟机 >“重新启动”。在 [Azure 管理门户](https://manage.windowsazure.cn)中，打开“虚拟机”>“实例”，然后单击“重新启动”。
 
 3. [**调整**虚拟机的大小](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx)。
 
@@ -178,7 +178,7 @@
 在 [Azure 门户](https://manage.windowsazure.cn)中：
 
 1. 如需查找使用经典部署模型创建的虚拟机，请单击“浏览”>“虚拟机(经典)”>“VM 名称”。如需查找使用资源管理器创建的虚拟机，请单击“浏览”>“虚拟机”>“VM 名称”。该虚拟机的状态窗格中应显示“正在运行”。向下滚动以显示计算、存储和网络资源的最近活动。
-2. 单击“设置”以检查终结点、IP 地址和其他设置。若要确定使用资源管理器创建的虚拟机中的终结点，请检查是否定义了[网络安全组](../traffic-manager/virtual-networks-nsg.md)、规则是否应用于该组，以及在子网中是否引用了这些终结点。
+2. 单击“设置”以检查终结点、IP 地址和其他设置。若要确定使用资源管理器创建的虚拟机中的终结点，请检查是否定义了[网络安全组](/documentation/articles/virtual-networks-nsg)、规则是否应用于该组，以及在子网中是否引用了这些终结点。
 
 若要验证网络连接，请检查所配置的终结点，并了解是否可通过其他协议（例如 HTTP 或其他服务）连接到该 VM。
 

@@ -56,7 +56,7 @@
 
 ### 连接到同一虚拟网络中的 SQL Server
 
-[虚拟网络](/documentation/articles/virtual-networks-overview)支持其他方案。你可以连接同一虚拟网络中的 VM，即使这些 VM 位于不同的云服务中。使用[站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create)，可以创建连接 VM 与本地网络和计算机的混合体系结构。
+[虚拟网络](/documentation/articles/virtual-networks-overview)支持其他方案。你可以连接同一虚拟网络中的 VM，即使这些 VM 位于不同的云服务中。
 
 虚拟网络还可让你将 Azure VM 加入域。这是对 SQL Server 使用 Windows 身份验证的唯一方式。其他连接方案需要使用用户名和密码进行 SQL 身份验证。
 

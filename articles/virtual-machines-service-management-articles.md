@@ -38,7 +38,7 @@
 
 [使用 Azure 命令行界面 (Azure CLI) 创建运行 Linux 的自定义 VM](/documentation/articles/virtual-machines-linux-create-custom)
 
-[使用 Azure CLI 创建多 VM 部署](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli-install)
+<!--[-->使用 Azure CLI 创建多 VM 部署<!--](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli-install)-->
 
 ## 计划
 
@@ -86,7 +86,7 @@
 
 [Cassandra](/documentation/articles/virtual-machines-linux-nodejs-running-cassandra)
 
-[Docker](/documentation/articles/virtual-machines-docker-with-xplat-cli-install)
+<!--[-->Docker<!--](/documentation/articles/virtual-machines-docker-with-xplat-cli-install)-->
 
 [Exchange Server](https://technet.microsoft.com/zh-cn/library/jj619301.aspx)
 
@@ -123,10 +123,6 @@
 ## 监视
 
 [在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)
-
-[在 Visual Studio 中调试云服务或虚拟机](https://msdn.microsoft.com/zh-cn/library/azure/ff683670.aspx)
-
-[使用 Windows PowerShell 脚本发布到开发和测试环境](https://msdn.microsoft.com/zh-cn/library/azure/dn642480.aspx)
 
 ## 故障排除
 
