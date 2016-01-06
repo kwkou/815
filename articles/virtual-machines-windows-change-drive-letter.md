@@ -112,6 +112,6 @@
 [VHD]: /documentation/articles/virtual-machines-create-upload-vhd-windows-server
 [Logon]: /documentation/articles/virtual-machines-log-on-windows-server
 [Detach]: /documentation/articles/storage-windows-detach-disk
-[Storage]: /documentation/articles/storage-whatis-account
+[Storage]: /documentation/articles/storage-create-storage-account/
 
 <!---HONumber=Mooncake_1221_2015-->

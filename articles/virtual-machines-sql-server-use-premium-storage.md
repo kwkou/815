@@ -18,7 +18,7 @@
 
 ## 概述
 
-[Azure 高级存储](/documentation/articles/storage-premium-storage-preview-portal)是下一代提供低延迟和高吞吐量 IO 的存储。它最适用于关键 IO 密集型工作负荷，例如 IaaS [虚拟机](http://azure.microsoft.com/services/virtual-machines/)上的 SQL Server。
+[Azure 高级存储](/documentation/articles/storage-premium-storage-preview-portal)是下一代提供低延迟和高吞吐量 IO 的存储。它最适用于关键 IO 密集型工作负荷，例如 IaaS [虚拟机](/services/virtual-machines/)上的 SQL Server。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
  

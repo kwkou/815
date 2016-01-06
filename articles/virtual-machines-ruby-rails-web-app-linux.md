@@ -149,7 +149,7 @@
 
 [management-portal]: https://manage.windowsazure.cn/
 
-[tables]: /develop/ruby/how-to-guides/table-service/
+[tables]: /develop/ruby/
 
 [vm-instructions]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm
 

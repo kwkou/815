@@ -59,7 +59,7 @@ CentOS Linux 分发是从 Red Hat Enterprise Linux (RHEL) 的源代码派生的�
 1. [MSOpenTech VM Depot](https://vmdepot.msopentech.cn/List/Index?sort=Featured&search=centos)
 3. [如何：为 Azure 准备自定义的基于 CentOS 的 VM](/documentation/articles/virtual-machines-linux-create-upload-vhd-centos)
 4. [博客：如何从 OpenLogic 部署 CentOS VM 映像](http://azure.microsoft.com/blog/2013/01/11/deploying-openlogic-centos-images-on-windows-azure-virtual-machines/)
-6. [如何：为 AMQP 和 Service Bus 安装 Apache Qpid Proton-C](http://msdn.microsoft.com/zh-cn/library/azure/dn235560.aspx)
+6. [如何：为 AMQP 和 Service Bus 安装 Apache Qpid Proton-C](/documentation/articles/service-bus-amqp-apache)
 
 ### SUSE Linux Enterprise Server 和 openSUSE
 
@@ -93,7 +93,6 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 ## 基础知识
 
 1. [基础知识：Azure 命令行界面 (Azure CLI)](/documentation/articles/xplat-cli)
-4. [基础知识：证书的使用和管理](http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx)
 5. [基础知识：选择 Linux 用户名](/documentation/articles/virtual-machines-linux-usernames)
 6. [基础知识：使用 Azure 门户登录到 Linux VM](/documentation/articles/virtual-machines-linux-how-to-log-on)
 7. [基础知识：SSH](/documentation/articles/virtual-machines-linux-use-ssh-key)
@@ -105,7 +104,6 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 13. [基础知识：RAID](/documentation/articles/virtual-machines-linux-configure-raid)
 14. [基础知识：捕获 Linux VM 来创建模板](/documentation/articles/virtual-machines-linux-capture-image)
 15. [基础知识：Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)
-16. [基础知识：Azure VM 扩展和功能](http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
 17. [基础知识：将自定义数据注入到 VM 中以用于 Cloud-init](/documentation/articles/virtual-machines-how-to-inject-custom-data)
 18. [博客中的基础知识：通过 12 个步骤在 Azure 上构建具有高可用性的 Linux](http://blogs.technet.com/b/keithmayer/archive/2014/10/03/quick-start-guide-building-highly-available-linux-servers-in-the-cloud-on-microsoft-azure.aspx)
 19. [博客中的基础知识：使用 Azure CLI、node.js、jhawk 在 Azure 上自动预配 Linux](http://blogs.technet.com/b/keithmayer/archive/2014/11/24/step-by-step-automated-provisioning-for-linux-in-the-cloud-with-microsoft-azure-xplat-cli-json-and-node-js-part-1.aspx)
@@ -123,12 +121,11 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 ### [Azure Java 开发人员中心](/develop/java/)
 
 1. [映像](https://vmdepot.msopentech.cn/List/Index?sort=Featured&search=java)
-2. [如何：使用 AMQP 1.0 通过 Java 使用 Service Bus](http://msdn.microsoft.com/zh-cn/library/azure/jj841073.aspx)
+2. [如何：使用 AMQP 1.0 通过 Java 使用 Service Bus](/documentation/articles/service-bus-amqp-java)
 3. [如何：使用 Azure 门户在 Linux 上设置 Tomcat7](/documentation/articles/virtual-machines-linux-setup-tomcat7-linux)
 4. [视频：Azure Java SDK for Service Management](http://channel9.msdn.com/Shows/Cloud+Cover/Episode-157-The-Java-SDK-for-Azure-Management-with-Brady-Gaster)
 5. [博客：适用于 Java 的 Azure 管理库入门](http://azure.microsoft.com/blog/2014/09/15/getting-started-with-the-azure-java-management-libraries/)
 5. [GitHub 存储库：适用于 Eclipse with Java 的 Azure 工具包](https://github.com/MSOpenTech/WindowsAzureToolkitForEclipseWithJava)
-6. [参考：适用于 Eclipse with Java 的 Azure 工具包](http://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx)
 7. [GitHub 存储库：适用于 IntelliJ IDEA 和 Android Studio 的 MS Open Tech Tools 插件](https://github.com/MSOpenTech/msopentech-tools-for-intellij)
 7. [博客：MSOpenTech 对 OpenJDK 做出了贡献](http://msopentech.com/blog/2014/10/21/ms-open-techs-first-contribution-openjdk/)
 
@@ -168,8 +165,6 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 2. Couchdb
     - [Slideshare (MSOpenTech)：在 Azure 上体验 CouchDb](http://www.slideshare.net/brianbenz/experiences-using-couchdb-inside-microsofts-azure-team)
     - [博客：使用 node.js、CORS 和 Grunt 运行 CouchDB 即服务](http://msopentech.com/blog/2013/12/19/tutorial-building-multi-tier-windows-azure-web-application-use-cloudants-couchdb-service-node-js-cors-grunt-2/)
-3. MongoDB
-    - [如何：使用 MongoLab 外接程序通过 MongoDB 在 Azure 上创建 Node.js 应用程序](/documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb)
 4. Cassandra
     - [如何：在 Azure 上将 Cassandra 与 Linux 一起运行以及通过 Node.js 对其进行访问](/documentation/articles/virtual-machines-linux-nodejs-running-cassandra)
 5. Redis
@@ -181,7 +176,7 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 ### 大型数据
 2. Hadoop/Cloudera  
 	- [博客：在 Azure Linux VM 上安装 Hadoop](http://blogs.msdn.com/b/benjguin/archive/2013/04/05/how-to-install-hadoop-on-windows-azure-linux-virtual-machines.aspx)
-	- [如何：通过 HDInsight 使用 Hadoop 和 Hive 入门](/documentation/articles/hdinsight-get-started)  
+	- [如何：通过 HDInsight 使用 Hadoop 和 Hive 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)  
 3. [Azure HDInsight](/documentation/services/hdinsight/) -- Azure 上的一项完全托管的 Hadoop 服务。
 
 ### 关系数据库
@@ -237,7 +232,7 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 	- [第三方：适用于 Azure 的 Hudson Slave 插件](http://wiki.hudson-ci.org/display/HUDSON/Azure+Slave+Plugin)
 	- [第三方：适用于 Azure 的 Hudson Storage 插件](https://github.com/hudson3-plugins/windows-azure-storage-plugin)
 10. Chef
-	- [Chef 和虚拟机](/documentation/articles/virtual-machines-windows-install-chef-client)
+	- [Chef 和虚拟机](/documentation/articles/virtual-machines-extensions-features)
 	- [视频：Chef 是什么及其工作原理](https://msopentech.com/blog/2014/03/31/using-chef-to-manage-azure-resources/)
 
 13. Powershell DSC for Linux

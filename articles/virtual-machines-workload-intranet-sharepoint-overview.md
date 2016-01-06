@@ -39,7 +39,6 @@
 - [阶段 4：配置 SharePoint Server](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase4)。创建并配置四个 SharePoint 虚拟机。
 - [阶段 5：创建可用性组并添加 SharePoint 数据库](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase5)。准备数据库并创建 SQL Server AlwaysOn 可用性组。
 
-这项具有 SQL Server AlwaysOn 可用性组的 SharePoint 部署旨在为[具有 SQL Server AlwaysOn 的 SharePoint 信息图](http://go.microsoft.com/fwlink/?LinkId=394788)提供补充，并加入了最新的建议。
 
 此配置是针对预定义的体系结构的规范性分阶段指南，用于在 Azure 基础结构服务中创建正常工作、高度可用的 Intranet SharePoint 场。有关在 Azure 中实现 SharePoint 2013 的其他体系结构指南，请参阅[适用于 SharePoint 2013 的 Windows Azure 体系结构](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)。
 
@@ -69,7 +68,5 @@
 [Azure 基础结构服务中托管的 SharePoint 场](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
-
-[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-lob-application)
 
 <!---HONumber=Mooncake_1221_2015-->

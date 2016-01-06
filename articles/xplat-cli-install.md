@@ -151,6 +151,6 @@ Azure CLI 以 JavaScript 编写，并且需要 [Node.js](https://nodejs.org)。�
 [windows-installer]: http://go.microsoft.com/?linkid=9828653&clcid=0x409
 [linux-installer]: http://go.microsoft.com/fwlink/?linkid=253472
 [cliasm]: /documentation/articles/virtual-machines-command-line-tools
-[cliarm]: /documentation/articles/virtual-machines/xplat-cli-azure-resource-manager.md
+[cliarm]: /documentation/articles/xplat-cli-azure-resource-manager
 
 <!---HONumber=Mooncake_1221_2015-->

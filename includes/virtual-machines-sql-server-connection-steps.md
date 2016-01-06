@@ -18,7 +18,7 @@
 
 要从 Internet 访问 SQL Server，虚拟机必须具有终结点以侦听传入的 TCP 通信。此 Azure 配置步骤将传入 TCP 端口通信定向到虚拟机可以访问的 TCP 端口。
 
->[AZURE.NOTE]如果你在同一云服务或虚拟网络中连接，则不需要创建一个公开访问的终结点。在这种情况下，你可以继续执行下一步。有关详细信息，请参阅 [Azure 虚拟机中的 SQL Server 的连接注意事项](https://msdn.microsoft.com/zh-cn/library/azure/dn133152.aspx)。
+>[AZURE.NOTE]如果你在同一云服务或虚拟网络中连接，则不需要创建一个公开访问的终结点。在这种情况下，你可以继续执行下一步。有关详细信息，请参阅 [Azure 虚拟机中的 SQL Server 的连接注意事项](/documentation/articles/virtual-machines-sql-server-connectivity)。
 
 1. 在 Azure 管理门户上，单击“虚拟机”。
 	

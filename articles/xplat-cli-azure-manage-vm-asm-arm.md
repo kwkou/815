@@ -64,7 +64,7 @@
 
 ## 后续步骤
 
-* 有关使用 Azure CLI 来处理资源管理器资源的详细信息，请参阅[将 Azure 命令行接口用于资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)和[使用 Azure 命令行接口管理基于角色的访问控制](/documentation/articles/role-based-access-control-xplat-cli-install)。
+* 有关使用 Azure CLI 来处理资源管理器资源的详细信息，请参阅[将 Azure 命令行接口用于资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)。
 * 如需 CLI 命令的其他示例，请参阅[将 Azure 命令行接口用于 Azure 服务管理](/documentation/articles/virtual-machines-command-line-tools)和[将 Azure CLI 用于 Azure 资源管理器](/documentation/articles/azure-cli-arm-commands)。
 
 <!---HONumber=Mooncake_1221_2015-->

@@ -36,7 +36,7 @@
 
 ![](./media/virtual-machines-workload-high-availability-LOB-application/CreateLOBAppHybridCloud_3.png)
  
-可以使用 [MSDN 订阅](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/)或 [Azure 试用版订阅](http://azure.microsoft.com/pricing/free-trial/)免费创建此开发/测试环境。
+可以使用 [Azure 试用版订阅](/pricing/1rmb-trial/)免费创建此开发/测试环境。
 
 下一步是在 Azure 中创建高可用性业务线应用程序。
 
@@ -76,7 +76,7 @@ Azure 中的高可用性业务线应用程序的基线代表配置如下所示�
 6\. | 第一个 Web 服务器 | Windows Server 2012 R2 Datacenter | D3
 7\. | 第二个 Web 服务器 | Windows Server 2012 R2 Datacenter | D3
 
-若要计算此配置的估计成本，请参阅 [Azure 定价计算器](https://azure.microsoft.com/pricing/calculator/)。
+若要计算此配置的估计成本，请参阅 [Azure 定价计算器](/pricing/calculator/)。
 
 1. 在“模块”中，单击“计算”，然后单击“虚拟机”相应次以创建包含七个虚拟机的列表。
 2. 对于每个虚拟机，请选择：
@@ -85,7 +85,7 @@ Azure 中的高可用性业务线应用程序的基线代表配置如下所示�
 	- 对于定价层，选择“标准”
 	- 上一个表中的默认大小，或者在**实例大小**中选择所需的大小
 
-> [AZURE.NOTE]Azure 定价计算器不包括运行 SQL Server 2014 Enterprise 的两个虚拟机的 SQL Server 许可证的额外成本。有关详细信息，请参阅[虚拟机定价-SQL](https://azure.microsoft.com/pricing/details/virtual-machines/#Sql)。
+> [AZURE.NOTE]Azure 定价计算器不包括运行 SQL Server 2014 Enterprise 的两个虚拟机的 SQL Server 许可证的额外成本。有关详细信息，请参阅[虚拟机定价-SQL](/home/features/virtual-machines/#SQL)。
 
 ### 部署阶段
 

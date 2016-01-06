@@ -25,7 +25,6 @@ AlwaysOn 可用性组通过添加辅助副本为数据库组提供高可用性�
 
 - 本地现有 AlwaysOn 可用性组。有关可用性组的详细信息，请参阅 [AlwaysOn 可用性组](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx)。
 
-- 本地网络和 Azure 虚拟网络之间的连接。有关创建此虚拟网络的详细信息，请参阅[在管理门户中配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create)。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
 

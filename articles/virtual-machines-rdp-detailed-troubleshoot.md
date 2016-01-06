@@ -104,9 +104,9 @@
 
 ![](./media/virtual-machines-rdp-detailed-troubleshoot/tshootrdp_3.png)
 
-> [AZURE.NOTE]对于在资源管理器中创建的虚拟机，请跳转到[来源 4：网络安全组](/documentation/articles/#nsgs)。
+> [AZURE.NOTE]对于在资源管理器中创建的虚拟机，请跳转到[来源 4：网络安全组](#nsgs)。
 
-如果同一云服务或虚拟网络中没有其他虚拟机，可以轻松创建一个新虚拟机。有关详细信息，请参阅[在 Azure 中创建运行 Windows 的虚拟机](virtual-machines-windows-tutorial)。测试完成后，请删除多余的虚拟机。
+如果同一云服务或虚拟网络中没有其他虚拟机，可以轻松创建一个新虚拟机。有关详细信息，请参阅[在 Azure 中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。测试完成后，请删除多余的虚拟机。
 
 如果可以创建与同一云服务或虚拟网络中的虚拟机的远程桌面连接，请检查以下项：
 
@@ -143,7 +143,7 @@
 
 接下来，安装 Azure PowerShell（如果尚未安装）。请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
-接下来，打开 Azure PowerShell 命令提示符，并将当前文件夹更改为 **InstallWinRMCertAzureVM.ps1** 脚本文件所在的位置。若要运行 Azure PowerShell 脚本，必须设置正确的执行策略。运行 **Get-ExecutionPolicy** 命令，以确定当前的策略级别。有关设置相应级别的信息，请参阅 [Set-ExecutionPolicy](https://technet.microsoft.com/library/hh849812.aspx)。
+接下来，打开 Azure PowerShell 命令提示符，并将当前文件夹更改为 **InstallWinRMCertAzureVM.ps1** 脚本文件所在的位置。若要运行 Azure PowerShell 脚本，必须设置正确的执行策略。运行 **Get-ExecutionPolicy** 命令，以确定当前的策略级别。有关设置相应级别的信息，请参阅 [Set-ExecutionPolicy](https://technet.microsoft.com/zh-cn/library/hh849812.aspx)。
 
 接下来，填写你的 Azure 订阅名称、云服务名称和虚拟机名称（删除 < and > 字符），然后运行这些命令。
 
