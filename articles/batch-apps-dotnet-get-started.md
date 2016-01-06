@@ -22,7 +22,7 @@
 
 在批处理 ( Batch ) Apps 方案中，可以使用批处理 ( Batch ) Apps 云 SDK 编写代码，将作业分割成并行任务、描述这些任务之间的任何依赖关系，以及指定如何执行每个任务。此代码将部署到批处理 ( Batch ) 帐户。然后，客户端只需指定作业类型和 REST API 的输入文件，即可执行作业。
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。只需几分钟即可创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/)。可以使用 NuGet 来获取 <a href="http://www.nuget.org/packages/Microsoft.Azure.Batch.Apps.Cloud/">Batch Apps 云</a>程序集和 <a href="http://www.nuget.org/packages/Microsoft.Azure.Batch.Apps/">Batch Apps 客户端</a>程序集。在 Visual Studio 中创建项目后，可在“解决方案资源管理器”中右键单击该项目，然后选择“管理 NuGet 包”。你还可以下载 Batch Apps 的 Visual Studio 扩展，其中包含可启用应用程序云功能的项目模板和部署应用程序的功能。若要下载该扩展，请单击<a href="https://visualstudiogallery.msdn.microsoft.com/8b294850-a0a5-43b0-acde-57a07f17826a">此处</a>，或者在 Visual Studio 中通过“扩展和更新”菜单项搜索 **Batch Apps**。你也可以查找 <a href="https://go.microsoft.com/fwLink/?LinkID=512183&clcid=0x409">MSDN 上的端到端示例。</a>
+>[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。只需几分钟即可创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。可以使用 NuGet 来获取 <a href="http://www.nuget.org/packages/Microsoft.Azure.Batch.Apps.Cloud/">Batch Apps 云</a>程序集和 <a href="http://www.nuget.org/packages/Microsoft.Azure.Batch.Apps/">Batch Apps 客户端</a>程序集。在 Visual Studio 中创建项目后，可在“解决方案资源管理器”中右键单击该项目，然后选择“管理 NuGet 包”。你还可以下载 Batch Apps 的 Visual Studio 扩展，其中包含可启用应用程序云功能的项目模板和部署应用程序的功能。若要下载该扩展，请单击<a href="https://visualstudiogallery.msdn.microsoft.com/8b294850-a0a5-43b0-acde-57a07f17826a">此处</a>，或者在 Visual Studio 中通过“扩展和更新”菜单项搜索 **Batch Apps**。你也可以查找 <a href="https://go.microsoft.com/fwLink/?LinkID=512183&clcid=0x409">MSDN 上的端到端示例。</a>
 >
 
 ###Azure 批处理 ( Batch ) Apps 基础知识
