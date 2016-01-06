@@ -75,14 +75,9 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 
 ### 启用 php\_memcache 扩展
 
-下载文件之后，将 **php\_memcache.dll** 解压缩并上载到 **d:\\home\\site\\wwwroot\\bin\\ext\\** 目录。php\_memcache.dll 上载到 Web 应用之后，需要启用扩展，使之成为 PHP Runtime 的扩展。若要启用 Memcache 扩展，请使用以下的 PowerShell 命令行设置 `PHP_EXTENSIONS`：
-
-	Set-AzureRmRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>" -RedisConfiguration @{"PHP_EXTENSIONS" = "bin\ext\php_memcache.dll"}
-
+下载文件之后，将 **php\_memcache.dll** 解压缩并上载到 **d:\\home\\site\\wwwroot\\bin\\ext\\** 目录。php\_memcache.dll 上载到 Web 应用之后，需要启用扩展，使之成为 PHP Runtime 的扩展。若要在 Azure 管理门户中启用 Memcache 扩展，请打开 Web 应用的“配置”页面，然后添加密钥为 **PHP\_EXTENSIONS**、值为 **bin\\ext\\php\_memcache.dll** 的新应用设置。
 
 > 如果 Web 应用需要加载多个 PHP 扩展，则 PHP\_EXTENSIONS 的值应为由逗号分隔的 DLL 文件相对路径的列表。
-
-![Web 应用 AppSetting PHP\_EXTENSIONS](./media/web-sites-connect-to-redis-using-memcache-protocol/9-azure-website-appsettings-php-extensions.png)
 
 完成后，单击“保存”。
 
