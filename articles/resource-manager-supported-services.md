@@ -128,8 +128,6 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 
 部署资源时，通常需要指定资源的区域。所有区域都支持资源管理器，但部署的资源可能无法在所有区域中受到支持。此外，订阅上可能有一些限制，以防止使用某些支持该资源的区域。这些限制可能与所在国家/地区的税务问题有关，或者与由订阅管理员所放置，只能使用特定区域的策略结果有关。
 
-有关所有 Azure 服务支持的所有区域的完整列表，请参阅[按区域列出的服务](https://azure.microsoft.com/regions/#services)；但是，此列表可能包含你的订阅不支持的区域。可以通过运行以下命令之一，来确定你的订阅支持的特定资源类型所在的区域。
-
 ### REST API
 
 若要发现哪些区域可供订阅中的特定资源类型使用，请使用[列出所有资源提供程序](https://msdn.microsoft.com/zh-cn/library/azure/dn790524.aspx)操作。
@@ -154,8 +152,6 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 以下示例返回每个资源类型支持的所有位置。
 
     azure location list
-
-你也可以使用 **jq** 之类的工具来筛选位置结果。若要了解有关 jq 等工具的信息，请参阅[与 Azure 交互的有用工具](/documentation/articles/resource-group-deploy-debug/#useful-tools-to-interact-with-azure)。
 
     azure location list --json | jq '.[] | select(.name == "Microsoft.Web/sites")'
 

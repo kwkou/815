@@ -28,7 +28,7 @@
 
 > [AZURE.NOTE]请务必强调 Azure 资源组中的资源配额是您的订阅可以访问的每个区域，而不像服务管理配额那样是可以访问的每个订阅。我们来使用核心配额作为示例。如果您需要根据对核心的支持请求增加配额，则需要决定您想要在哪个区域中使用多少核心，然后针对您希望的 Azure 资源组核心配额的数量和区域进行特定请求。因此，如果您需要在西欧使用 30 个核心以在那里运行您的应用程序，则应专门在西欧请求 30 个核心。但这不会增加您在任何其他区域的核心配额 -- 仅西欧会有 30 个核心配额。
 <!-- -->
-因此，您可能会发现考虑决定您在任何一个区域中的工作负荷所需的 Azure 资源组配额数量，以及请求您考虑在其中进行部署的每个区域的数量很有用。请参阅[部署问题疑难解答](/documentation/articles/resource-group-deploy-debug##authentication-subscription-role-and-quota-issues)，了解有关发现你特定区域的当前配额的更多帮助。
+因此，您可能会发现考虑决定您在任何一个区域中的工作负荷所需的 Azure 资源组配额数量，以及请求您考虑在其中进行部署的每个区域的数量很有用。
 
 
 ## 服务特定的限制
@@ -39,7 +39,6 @@
 - [批处理](#batch-limits)
 - [CDN](#cdn-limits)
 - [云服务](#cloud-services-limits)
-- [DNS](#dns-limits)
 - [密钥保管库](#key-vault-limits)
 - [媒体服务](#media-services-limits)
 - [移动服务](#mobile-services-limits)
@@ -198,7 +197,7 @@
 <a id="sql-database-limits"></a>
 ### SQL 数据库限制
 
-有关 Azure SQL 数据库限制，请参阅 [SQL 数据库资源限制](sql-database/sql-database-resource-limits.md)。
+有关 Azure SQL 数据库限制，请参阅 [SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
 
 ## 另请参阅
 

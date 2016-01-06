@@ -85,13 +85,13 @@ WebPI 安装程序提供了开发 Python Azure 应用程序所需的所有内容
 
 ![how-to-install-python-webpi-27-1](./media/python-how-to-install/how-to-install-python-webpi-27-1.png)
 
-安装完成后，在提示符处键入 `python` 以确保一切正常。根据你的安装方式，你可能需要设置“path”变量以找到（正确版本的）Python：
+安装完成后，在提示符处键入 **python** 以确保一切正常。根据你的安装方式，你可能需要设置“path”变量以找到（正确版本的）Python：
 
 ![how-to-install-python-win-run-27](./media/python-how-to-install/how-to-install-python-win-run-27.png)
 
 安装后，您应该具有位于默认位置的 Python 和客户端库：
 
-		C:\Python27\Lib\site-packages\azure
+	C:\Python27\Lib\site-packages\azure
 
 
 ### Python 3.4
