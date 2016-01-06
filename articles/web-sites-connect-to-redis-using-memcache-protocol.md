@@ -75,7 +75,7 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 
 ### 启用 php\_memcache 扩展
 
-下载文件之后，将 **php\_memcache.dll** 解压缩并上载到 **d:\\home\\site\\wwwroot\\bin\\ext\** 目录。php\_memcache.dll 上载到 Web 应用之后，需要启用扩展，使之成为 PHP Runtime 的扩展。若要启用 Memcache 扩展，请使用以下的 PowerShell 命令行设置 `PHP_EXTENSIONS`：
+下载文件之后，将 **php\_memcache.dll** 解压缩并上载到 **d:\\home\\site\\wwwroot\\bin\\ext\\** 目录。php\_memcache.dll 上载到 Web 应用之后，需要启用扩展，使之成为 PHP Runtime 的扩展。若要启用 Memcache 扩展，请使用以下的 PowerShell 命令行设置 `PHP_EXTENSIONS`：
 
 	Set-AzureRmRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>" -RedisConfiguration @{"PHP_EXTENSIONS" = "bin\ext\php_memcache.dll"}
 
@@ -108,11 +108,11 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 
 在 `wp-config.php` 文件中，将以下代码段添加到该文件末尾附近停止编辑备注的上方。
 
-```php
-$memcached_servers = array(
-	'default' => array('localhost:' . getenv("MEMCACHESHIM_PORT"))
-);
-```
+
+	$memcached_servers = array(
+		'default' => array('localhost:' . getenv("MEMCACHESHIM_PORT"))
+	);
+
 
 粘贴此代码段后，monaco 会自动保存该文档。
 
@@ -140,9 +140,9 @@ $memcached_servers = array(
 
 打开你选择的命令行控制台并键入以下命令：
 
-```shell
-redis-cli –h <hostname-for-redis-cache> –a <primary-key-for-redis-cache> –p 6379
-```
+
+	redis-cli –h <hostname-for-redis-cache> –a <primary-key-for-redis-cache> –p 6379
+
 
 将 **<hostname-for-redis-cache>** 替换为实际的 xxxxx.redis.cache.chinacloudapi.cn 主机名，将 **<primary-key-for-redis-cache>** 替换为缓存的访问密钥，然后按 **Enter**。CLI 连接到 Redis 缓存实例之后，发出任何 Redis 命令。在下面的屏幕截图中，我已选择列出密钥。
 
