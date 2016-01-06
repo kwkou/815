@@ -96,7 +96,7 @@
 
 ## 将应用程序分配到角色
 
-可以使用[Azure 门户](https://manage.windowsazure.cn)将 Active Directory 应用程序分配到有权访问你需要访问的资源的角色。有关将应用程序分配到角色的信息，请参阅 [Azure Active Directory 基于角色的访问控制](active-directory/role-based-access-control-configure.md)。
+可以使用[Azure 门户](https://manage.windowsazure.cn)将 Active Directory 应用程序分配到有权访问你需要访问的资源的角色。
 
 ## 在代码中获取访问令牌
 
@@ -127,7 +127,7 @@
 ## 后续步骤
 
 - 若要了解有关指定安全策略的信息，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)。  
-- 若要了解如何使用 Azure PowerShell 或 Azure CLI 来处理 Active Directory 应用程序和服务主体，包括如何使用证书进行身份验证，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](./resource-group-authenticate-service-principal.md)。
+- 若要了解如何使用 Azure PowerShell 或 Azure CLI 来处理 Active Directory 应用程序和服务主体，包括如何使用证书进行身份验证，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)。
 - 有关在 Azure 资源管理器中实现安全性的指南，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)。
 
 

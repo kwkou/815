@@ -23,7 +23,7 @@
 ## 概念
 1. Azure Active Directory (AAD) - 云的标识与访问管理服务。有关详细信息，请参阅[什么是 Azure Active Directory](/documentation/articles/active-directory-whatis)
 2. 服务主体 - 目录中需要访问其他资源的应用程序实例。
-3. AD 应用程序 - 向 AAD 标识某个应用程序的目录记录。有关详细信息，请参阅 [Azure AD 中的身份验证基本知识](https://msdn.microsoft.com/zh-cn/library/azure/874839d9-6de6-43aa-9a5c-613b0c93247e#BKMK_Auth)。
+3. AD 应用程序 - 向 AAD 标识某个应用程序的目录记录。有关详细信息，请参阅 [Azure AD 中的身份验证基本知识](/documentation/articles/active-directory-authentication-scenarios/)。
 
 ## 使用密码对服务主体进行身份验证 - PowerShell
 

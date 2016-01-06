@@ -14,7 +14,7 @@
 
 # 如何安装和配置 Azure PowerShell#
 
-<div class="dev-center-tutorial-selector sublanding"><a href="#" title="PowerShell" class="current">PowerShell</a><a href="/documentation/articles/install-and-configure-cli/" title="Azure CLI">Azure CLI</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="#" title="PowerShell" class="current">PowerShell</a><a href="/documentation/articles/xplat-cli-install/" title="Azure CLI">Azure CLI</a></div>
 
 > [AZURE.NOTE]**Azure PowerShell 1.0 预览版**现已在 [PowerShell 库](http://www.powershellgallery.com/)中发布。此预览版对以前的版本做了很多更改，我们将使用它来收集反馈，并会将它整合到 Azure PowerShell 1.0 中。**此预览版不适用于任务关键型应用程序**。如果你运行的是此类应用程序，请继续使用 Azure PowerShell 0.9.8。如果你使用了 1.0 预览版，可以随时将其卸载并重新改用 0.9.8。有关完整安装说明，请参阅此[博客文章](https://azure.microsoft.com/zh-cn/blog/azps-1-0-pre/)。
 
@@ -61,8 +61,6 @@ cmdlet 需要使用你的订阅来管理你的服务。可通过两种方法向 
 
 - Azure AD 是建议的身份验证方法，因为使用此方法可以更轻松地管理对订阅的访问。安装 0.8.6 版的更新后，如果你使用工作或学校帐户，则还可以启用 Azure AD 身份验证的自动化方案。这种方法也适用于 Azure 资源管理器 API。
 - 在您使用证书方法时，只要订阅和证书有效，订阅信息就可用。但是，此方法使得管理对共享订阅的访问更加困难，例如在授权多人可以访问帐户时。此外，Azure 资源管理器 API 不接受证书身份验证。
-
-有关 Azure 中的身份验证和订阅管理的详细信息，请参阅[管理帐户、订阅和管理角色](http://go.microsoft.com/fwlink/?LinkId=324796)。
 
 ### 使用 Azure AD 方法
 
@@ -128,7 +126,7 @@ Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 
 		Import-AzurePublishSettingsFile C:\Users<UserProfile>\Downloads<SubscriptionName>-credentials.publishsettings
 
-> [AZURE.NOTE]如果在您导入发布设置后，将您添加到其他订阅中作为共同管理员，则您将需要重复此过程来下载新的 .publishsettings 文件，然后导入这些设置。有关添加共同管理员来帮助管理订阅服务的信息，请参阅[为 Azure 订阅添加和删除协同管理员](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg456328.aspx)。
+> [AZURE.NOTE]如果在您导入发布设置后，将您添加到其他订阅中作为共同管理员，则您将需要重复此过程来下载新的 .publishsettings 文件，然后导入这些设置。
 
 ### 查看帐户和订阅详细信息
 
@@ -229,7 +227,7 @@ Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 
 
 
-- Azure 库中也提供了有关 Azure PowerShell 模块中 cmdlet 的参考信息。有关信息，请参阅 [Azure Cmdlet 参考](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554330.aspx)。
+- Azure 库中也提供了有关 Azure PowerShell 模块中 cmdlet 的参考信息。有关信息，请参阅 [Azure Cmdlet 参考](https://msdn.microsoft.com/zh-cn/library/azure/jj554330.aspx)。
 
 要获得社区中的帮助信息，请尝试以下常见论坛：
 
@@ -242,10 +240,6 @@ Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 下面列出了可用来了解如何使用 Azure 和 Windows PowerShell 的资源。
 
 - 若要了解如何访问 Azure 存储组件，请参阅[对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full)。
-
-- 若要提供有关这些 cmdlet 的反馈、报告问题或访问源代码，请参阅 [Azure PowerShell 代码存储库](https://github.com/WindowsAzure/azure-sdk-tools)。
-
-- 若要了解有关 Windows PowerShell 命令行和脚本环境的信息，请参阅 [TechNet 脚本中心](https://technet.microsoft.com/zh-cn/scriptcenter/powershell.aspx)。
 
 - 有关安装、学习、使用和自定义 Windows PowerShell 的信息，请参阅[使用 Windows PowerShell 编写脚本](https://technet.microsoft.com/zh-cn/library/bb978526.aspx)。
 

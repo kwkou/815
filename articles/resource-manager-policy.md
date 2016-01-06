@@ -95,7 +95,6 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
 源：**action**
 
-若要获取有关操作的详细信息，请参阅 [RBAC - 内置角色](/documentation/articles/role-based-access-built-in-roles)。
 
 ## 策略定义示例
 
