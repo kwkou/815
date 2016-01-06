@@ -17,8 +17,8 @@
 # 在 Azure 门户中创建和管理 Azure 批处理 ( Batch ) 帐户
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/Batch-account-create-portal)
-- [批处理 ( Batch ) Management .NET](/documentation/articles/Batch-management-dotnet)
+- [Azure 门户](/documentation/articles/batch-account-create-portal)
+- [批处理 ( Batch ) Management .NET](/documentation/articles/batch-management-dotnet)
 
 本文说明如何使用 [Azure 门户](https://manage.windowsazure.cn)来创建和管理 Azure 批处理 ( Batch ) 帐户，以及帐户密钥等设置。你需要使用批处理 ( Batch ) 帐户 URL 和关联的访问密钥来对所有 批处理 ( Batch ) API 请求进行身份验证。将批处理 ( Batch ) 工作负荷的所有批处理 ( Batch ) 资源（例如池、作业和任务）与特定 批处理 ( Batch ) 帐户相关联。
 
@@ -61,23 +61,23 @@
 
 ## 有关批处理 ( Batch ) 帐户的其他注意事项
 
-* 创建和管理批处理 ( Batch ) 帐户的其他方法包括 [批处理 ( Batch ) PowerShell cmdlet](/documentation/articles/Batch-powershell-cmdlets-get-started) 和 [批处理 ( Batch ) Management .NET 库](http://www.nuget.org/packages/Microsoft.Azure.Management.Batch/)。
+* 创建和管理批处理 ( Batch ) 帐户的其他方法包括 [批处理 ( Batch ) PowerShell cmdlet](/documentation/articles/batch-powershell-cmdlets-get-started) 和 [批处理 ( Batch ) Management .NET 库](http://www.nuget.org/packages/Microsoft.Azure.Management.Batch/)。
 
 
-* Azure 不收取批处理 ( Batch ) 帐户的费用。当你使用 Azure 计算资源和其他服务时，只有在运行工作负荷时才需要付费（请参阅 [批处理 ( Batch ) 定价](/pricing/details/Batch/)）。
+* Azure 不收取批处理 ( Batch ) 帐户的费用。当你使用 Azure 计算资源和其他服务时，只有在运行工作负荷时才需要付费（请参阅 [批处理 ( Batch ) 定价](/pricing/details/batch/)）。
 
 * 你可以在单个批处理 ( Batch ) 帐户中运行多个批处理 ( Batch ) 工作负荷，或者在不同 Azure 区域的批处理 ( Batch ) 帐户之间分散工作负荷。
 
-* 如果你正在运行多个大规模批处理 ( Batch ) 工作负荷，请注意适用于 Azure 订阅和每个批处理 ( Batch ) 帐户的特定 [批处理 ( Batch ) 服务配额与限制](/documentation/articles/Batch-quota-limit)。批处理 ( Batch ) 帐户的当前配额显示在预览门户上的帐户属性中。
+* 如果你正在运行多个大规模批处理 ( Batch ) 工作负荷，请注意适用于 Azure 订阅和每个批处理 ( Batch ) 帐户的特定 [批处理 ( Batch ) 服务配额与限制](/documentation/articles/batch-quota-limit)。批处理 ( Batch ) 帐户的当前配额显示在预览门户上的帐户属性中。
 
 ## 后续步骤
 
-* 有关批处理 ( Batch ) 概念的详细信息，请参阅 [Azure 批处理 ( Batch ) 功能概述](/documentation/articles/Batch-api-basics)。
+* 有关批处理 ( Batch ) 概念的详细信息，请参阅 [Azure 批处理 ( Batch ) 功能概述](/documentation/articles/batch-api-basics)。
 
-* 使用 [批处理 ( Batch ) .NET 客户端库](/documentation/articles/Batch-dotnet-get-started)开始开发你的第一个应用程序。
+* 使用 [批处理 ( Batch ) .NET 客户端库](/documentation/articles/batch-dotnet-get-started)开始开发你的第一个应用程序。
 
-[marketplace_portal]: ./media/batch-account-create-portal/marketplace_Batch.PNG
-[account_portal]: ./media/batch-account-create-portal/Batch_acct_portal.png
+[marketplace_portal]: ./media/batch-account-create-portal/marketplace_batch.PNG
+[account_portal]: ./media/batch-account-create-portal/batch_acct_portal.png
 [account_keys]: ./media/batch-account-create-portal/account_keys.PNG
 
 <!---HONumber=Mooncake_1221_2015-->
