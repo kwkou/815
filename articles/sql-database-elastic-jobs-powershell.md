@@ -8,7 +8,7 @@
 <tags 
 	ms.service="sql-database"
 	ms.date="11/03/2015" 
-	wacn.date="01/05/2016/>
+	wacn.date="01/05/2016"/>
 
 # 使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）
 
