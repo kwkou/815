@@ -10,14 +10,14 @@
 <tags
     ms.service="sql-database"
     ms.date="10/13/2015"
-    wacn.date="11/27/2015"/>
+    wacn.date="01/05/2016"/>
 
 # 使用 PowerShell 导入 BACPAC 文件以创建新的 Azure SQL 数据库
 
 **单一数据库**
 
 > [AZURE.SELECTOR]
-- [Azure Portal](/documentation/articles/sql-database-import)
+- [Azure 经典门户](/documentation/articles/sql-database-import)
 - [PowerShell](/documentation/articles/sql-database-import-powershell)
 
 
@@ -25,18 +25,18 @@
 
 BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息，请参阅[数据层应用程序](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx)中的备份包 (.bacpac)。
 
-数据库是使用从 Azure 存储 blob 容器导入的 BACPAC 创建的。如果 Azure 存储中没有 .bacpac 文件，你可以按照<!--[-->创建和导出 Azure SQL 数据库的 BACPAC<!--](/documentation/articles/sql-database-backup)--> 中的步骤创建一个。
+数据库是使用从 Azure 存储 blob 容器导入的 BACPAC 创建的。如果 Azure 存储空间中没有 .bacpac 文件，你可以按照[创建和导出 Azure SQL 数据库的 BACPAC](/documentation/articles/sql-database-export-powershell) 中的步骤创建一个。
 
 > [AZURE.NOTE]Azure SQL 数据库会自动为你可以还原的每个用户数据库创建和维护备份。有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
 
 
 要导入 SQL 数据库，你需要以下各项：
 
-- Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“免费试用”，然后再回来完成本文的相关操作即可。
+- Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
 - 要还原的数据库的 .bacpac 文件 (BACPAC)。BACPAC 需位于 [Azure 存储帐户（经典）](/documentation/articles/storage-create-storage-account)blob 容器中。
 
 
-> [AZURE.IMPORTANT]本文包含最高为 Azure PowerShell 版本 1.0 *但不包括* 1.0 及更高版本的命令。可以使用 **Get-Module azure | format-table version** 命令查看 Azure PowerShell 的版本。
+> [AZURE.IMPORTANT]本文包含的命令适用于最高版本为 1.0（*但不含*）的 Azure PowerShell。可以使用 **Get-Module azure | format-table version** 命令查看 Azure PowerShell 的版本。
 
 
 
@@ -44,7 +44,7 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
 
 首先必须与 Azure 帐户建立访问连接，因此请启动 PowerShell，然后运行以下 cmdlet。在登录屏幕中，输入登录 Azure 门户时所用的相同电子邮件和密码。
 
-	Add-AzureAccount -Environment AzureChinaCloud
+	Add-AzureAccount
 
 成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
 
@@ -55,7 +55,7 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
 
 	Select-AzureSubscription -SubscriptionId 4cac86b0-1e56-bbbb-aaaa-000000000000
 
-成功运行 **Select-AzureSubscription** 后，将返回到 PowerShell 提示符处。如果你有多个订阅，可以运行 **Get-AzureSubscription** 并验证所选择的订阅显示 **IsCurrent: True**。
+成功运行 **Select-AzureSubscription** 后，将返回到 PowerShell 提示符处。如果你有多个订阅，可以运行 **Get-AzureSubscription** 并验证所选择的订阅是否显示 **IsCurrent: True**。
 
 
 ## 设置适合环境的变量
@@ -70,7 +70,7 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
     $DatabaseName = "databasename"
 
 
-以下变量来自 BACPAC 所处的存储帐户。在 [Azure 门户](https://manage.windowsazure.cn)中，浏览到你的存储帐户以获取这些值。你可以单击存储帐户边栏选项卡中的“所有设置”，然后单击“密钥”，找到主访问密钥。
+以下变量来自 BACPAC 所处的存储帐户。在 [Azure 经典门户](https://manage.windowsazure.cn)中，浏览到你的存储帐户以获取这些值。你可以单击存储帐户边栏选项卡中的“所有设置”，然后单击“密钥”，找到主访问密钥。
 
 Blob 名称是你想要从中创建的数据库的现有 .bacpac 文件的名称。需要包括 .bacpac 扩展名。
 
@@ -86,7 +86,7 @@ Blob 名称是你想要从中创建的数据库的现有 .bacpac 文件的名称
     $credential = Get-Credential
     $SqlCtx = New-AzureSqlDatabaseServerContext -ServerName $ServerName -Credential $credential
 
-    $StorageCtx = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $StorageName -StorageAccountKey $StorageKey
+    $StorageCtx = New-AzureStorageContext -StorageAccountName $StorageName -StorageAccountKey $StorageKey
     $Container = Get-AzureStorageContainer -Name $ContainerName -Context $StorageCtx
 
 
@@ -113,7 +113,7 @@ Blob 名称是你想要从中创建的数据库的现有 .bacpac 文件的名称
 ## SQL 数据库 PowerShell 还原脚本
 
 
-    Add-AzureAccount -Environment AzureChinaCloud
+    Add-AzureAccount
     Select-AzureSubscription -SubscriptionId "4cac86b0-1e56-bbbb-aaaa-000000000000"
     
     $ServerName = "servername"
@@ -148,4 +148,4 @@ Blob 名称是你想要从中创建的数据库的现有 .bacpac 文件的名称
 - [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills)
 - [SQL 数据库文档](/documentation/services/sql-databases/)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

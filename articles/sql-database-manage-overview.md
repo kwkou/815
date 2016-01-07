@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="概述：SQL 数据库的管理工具" 
 	description="比较管理 Azure SQL 数据库的工具和选项" 
 	services="sql-database" 
@@ -7,10 +7,10 @@
 	manager="" 
 	editor=""/>
 
-<tags
+<tags 
 	ms.service="sql-database" 
-  	wacn.date="05/20/2015"
-	ms.date="10/17/2015" />
+	ms.date="10/17/2015"
+	wacn.date="01/05/2016" />
 
 # 概述：SQL 数据库的管理工具
 
@@ -38,5 +38,6 @@ Visual Studio 中的 SQL Server Management Studio (SSMS) 和 SQL Server Data Too
 你可以使用诸如 PowerShell 之类的命令行工具管理 Azure SQL 数据库并自动执行 Azure 资源部署。Microsoft 建议在生产环境中使用此工具来管理大量的 Azure SQL 数据库和部署资源变化。
 
 有关使用命令行工具管理 Azure SQL 数据库的详细信息，请[单击此处](/documentation/articles/sql-database-command-line-tools)
+ 
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_1221_2015-->

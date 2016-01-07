@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="将弹性数据库客户端库与实体框架配合使用" 
-	description="弹性数据库客户端简化了缩放，实体框架易于在编码数据库中使用" 
+	pageTitle="将弹性数据库客户端库与实体框架配合使用 | Windows Azure" 
+	description="将弹性数据库客户端库和实体框架用于数据库编码" 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
-	authors="sidneyh" 
+	authors="torsteng" 
 	editor=""/>
 
 <tags 
-	ms.service="sql-database" 
-	ms.date="07/24/2015" 
-	wacn.date="09/15/2015"/>
+	ms.service="sql-database"
+	ms.date="11/04/2015" 
+	wacn.date="01/05/2016"/>
 
 # 将弹性数据库客户端库与实体框架配合使用 
  
-你可以将弹性数据库客户端库与 Microsoft 的实体框架 (EF) 配合使用，以构建利用数据库分片的应用程序，方便进行应用程序数据层的向外缩放。此文档介绍与弹性数据库工具的功能集成所需的实体框架应用程序中的更改。重点是使用实体框架的**代码优先**方法撰写[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management)和[数据相关路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)。[EF 的代码优先 – 新数据库](http://msdn.microsoft.com/data/jj193542.aspx)教程在本文档中充当运行示例。本文档附带的示例代码是 Visual Studio 代码示例中弹性数据库工具示例的一部分。
+此文档介绍与[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-introduction)集成所需的实体框架应用程序中的更改。重点是使用实体框架的**代码优先**方法撰写[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management)和[数据相关路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)。[EF 的代码优先 – 新数据库](http://msdn.microsoft.com/data/jj193542.aspx)教程在本文档中充当运行示例。本文档附带的示例代码是 Visual Studio 代码示例中弹性数据库工具示例的一部分。
   
 ## 下载和运行示例代码
 若要下载本文的代码：
@@ -28,7 +28,7 @@
 
     选择名为 **Azure SQL 的弹性数据库工具 – 实体框架集成**的示例。在接受许可证后，该示例将加载。
 
-若要运行该示例，您需要在 Azure SQL 数据库 中创建三个空数据库：
+若要运行该示例，您需要在 Azure SQL 数据库中创建三个空数据库：
 
 * 分片映射管理器数据库
 * 分片 1 数据库
@@ -176,10 +176,10 @@ Microsoft 模式和实践团队已发布[暂时性故障处理应用程序块](h
 
 上述代码中的 **SqlDatabaseUtils.SqlRetryPolicy** 定义为 **SqlDatabaseTransientErrorDetectionStrategy**，重试计数为 10，每两次重试的等待时间为 5 秒。此方法类似于 EF 和用户启动事务的指南（请参阅[重试执行策略的限制（从 EF6 开始）](http://msdn.microsoft.com/data/dn307226)。这两种情况都要求应用程序控制返回暂时性异常的范围：重新打开事务，或者（如下所示）从使用弹性数据库客户端库的适当构造函数重新创建上下文。
 
-需要控制其中暂时性异常返回范围还使该列不能使用 EF 随附的内置 **SqlAzureExecutionStrategy**。**SqlAzureExecutionStrategy** 将重新打开连接，但不会使用 **OpenConnectionForKey**，从而绕过了调用 **OpenConnectionForKey** 期间执行的所有验证。该代码示例使用的是 EF 也已随附的内置 **DefaultExecutionStrategy**。与 **SqlAzureExecutionStrategy** 相反，它能与暂时性故障处理中的重试策略配合工作。执行策略在 **ElasticScaleDbConfiguration** 类中设置。请注意，我们决定不使用 **DefaultSqlExecutionStrategy**，因为在发生暂时性异常时，最好使用 **SqlAzureExecutionStrategy** - 这会导致所述的错误行为。有关不同重试策略和 EF 的详细信息，请参阅 [EF 中的连接弹性](http://msdn.microsoft.com/zh-cn/data/dn456835.aspx)。     
+需要控制其中暂时性异常返回范围还使该列不能使用 EF 随附的内置 **SqlAzureExecutionStrategy**。**SqlAzureExecutionStrategy** 将重新打开连接，但不会使用 **OpenConnectionForKey**，从而绕过了调用 **OpenConnectionForKey** 期间执行的所有验证。该代码示例使用的是 EF 也已随附的内置 **DefaultExecutionStrategy**。与 **SqlAzureExecutionStrategy** 相反，它能与暂时性故障处理中的重试策略配合工作。执行策略在 **ElasticScaleDbConfiguration** 类中设置。请注意，我们决定不使用 **DefaultSqlExecutionStrategy**，因为在发生暂时性异常时，最好使用 **SqlAzureExecutionStrategy** - 这会导致所述的错误行为。有关不同重试策略和 EF 的详细信息，请参阅 [EF 中的连接弹性](http://msdn.microsoft.com/data/dn456835.aspx)。
 
 #### 构造函数重写
-上方的代码示例演示你的应用程序所需的默认构造函数重写，以将弹性缩放数据相关路由与实体框架一起使用。下表将此方法一般化到其他构造函数。 
+上方的代码示例演示你的应用程序所需的默认构造函数重写，以将数据相关路由与实体框架一起使用。下表将此方法一般化到其他构造函数。
 
 
 当前构造函数 | 为数据重写构造函数 | 基构造函数 | 说明
@@ -277,4 +277,4 @@ MyContext(DbConnection, DbCompiledModel,bool) |ElasticScaleContext(ShardMap, TKe
 [1]: ./media/sql-database-elastic-scale-use-entity-framework-applications-visual-studio/sample.png
  
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1221_2015-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SQL 数据库的 XEvent 事件文件代码 | Windows Azure" 
+	pageTitle="SQL 数据库的 XEvent 环形缓冲区代码 | Windows Azure" 
 	description="提供一个 Transact-SQL 代码示例，以帮助你快速轻松地在 Azure SQL 数据库中使用环形缓存区目标。" 
 	services="sql-database" 
 	documentationCenter="" 
@@ -10,9 +10,9 @@
 
 
 <tags 
-	ms.service="sql-database" 
-	ms.date="09/30/2015" 
-	wacn.date="11/27/2015"/>
+	ms.service="sql-database"
+	ms.date="10/22/2015" 
+	wacn.date="01/05/2016"/>
 
 
 # SQL 数据库中扩展事件的环形缓冲区目标代码
@@ -47,7 +47,7 @@
 ## 先决条件
 
 
-- Azure 帐户和订阅。你可以注册[免费试用版](/pricing/1rmb-trial/)。
+- Azure 帐户和订阅。你可以注册[试用版](/pricing/1rmb-trial)。
 
 
 - 可以在其中创建表的任何数据库。
@@ -63,7 +63,7 @@
 ## 代码示例
 
 
-只要稍加修改，就可以在 Azure SQL 数据库或 Microsoft SQL Server 上运行以下环形缓冲区的代码示例。不同之处在于步骤 5 的 FROM 子句中，有些动态管理视图 (DMV) 的名称出现了 '\_database'。例如：
+只要稍加修改，就可以在 Azure SQL 数据库或 Microsoft SQL Server 上运行以下环形缓冲区的代码示例。不同之处在于步骤 5 的 FROM 子句中，有些动态管理视图 (DMV) 的名称出现了节点“\_database”。例如：
 
 - sys.dm\_xe**\_database**\_session\_targets
 - sys.dm\_xe\_session\_targets
@@ -337,7 +337,7 @@ GO
 ```
 
 
-事件会话的定义将会更新，但不会删除。然后可以将环形缓冲区的另一个实例添加事件会话：
+事件会话的定义将会更新，但不会删除。然后可以将环形缓冲区的另一个实例添加到事件会话：
 
 
 ```
@@ -369,8 +369,8 @@ ALTER EVENT SESSION eventsession_gm_azuresqldb51
 <!--
 ('lock_acquired' event.)
 
-- Code sample for SQL Server: [Determine Which Queries Are Holding Locks](http://msdn.microsoft.com/library/bb677357.aspx)
-- Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/library/bb630355.aspx)
+- Code sample for SQL Server: [Determine Which Queries Are Holding Locks](http://msdn.microsoft.com/zh-cn/library/bb677357.aspx)
+- Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/zh-cn/library/bb630355.aspx)
 -->
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

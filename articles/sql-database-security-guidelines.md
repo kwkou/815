@@ -11,7 +11,7 @@
 <tags
    ms.service="sql-database"
    ms.date="08/20/2015"
-   wacn.date="09/15/2015"/>
+   wacn.date="01/05/2016"/>
 
 # Azure SQL 数据库安全指导原则和限制
 
@@ -41,7 +41,7 @@ SQL Server Management Studio 也支持证书验证。在“连接到服务器”
 
 ## 身份验证
 
-SQL 数据库仅支持 SQL Server 身份验证。不支持 Windows 身份验证（集成安全性）。用户在每次连接到 SQL Database 时都必须提供凭据（登录名和密码）。有关 SQL Server 身份验证的详细信息，请参阅 SQL Server 联机丛书中的[选择身份验证模式](https://msdn.microsoft.com/zh-cn/library/ms144284.aspx)。
+Active Directory 身份验证（集成安全性）在 SQL 数据库 V12 中以预览版的形式提供。有关如何配置 AD 身份验证的信息，请参阅[通过使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication)。如果与使用预览版，则用户在每次连接到 SQL 数据库时都必须提供凭据（登录名和密码）。有关 SQL Server 身份验证的详细信息，请参阅 SQL Server 联机丛书中的[选择身份验证模式](https://msdn.microsoft.com/zh-cn/library/ms144284.aspx)。
 
 [SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new) 允许用户使用包含的数据库用户在数据库中进行身份验证。有关详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)、[CREATE USER (Transact-SQL)](https://technet.microsoft.com/zh-cn/library/ms173463.aspx) 和[包含的数据库](https://technet.microsoft.com/zh-cn/library/ff929071.aspx)。
 
@@ -92,7 +92,7 @@ GO
 
 请考虑以下这些要点，以免你的 Azure SQL 数据库应用程序受到安全威胁：
 
-- 始终使用最新的更新：在连接到 SQL 数据库时，始终使用工具和库的最新版本来防止安全漏洞。有关支持哪些工具和库的详细信息，请参阅 [Azure SQL 数据库一般性的指导原则和限制](https://msdn.microsoft.com/zh-cn/library/azure/ee336245.aspx)。
+- 始终使用最新的更新：在连接到 SQL 数据库时，始终使用工具和库的最新版本来防止安全漏洞。
 - 阻止 TCP 端口 1433 上的入站连接：应用程序只需 TCP 端口 1433 上的出站连接即可与 SQL 数据库通信。如果该计算机上任何其他应用程序不需要入站通信，则请确保你的防火墙继续阻止 TCP 端口 1433 上的入站连接。
 - 防止注入安全漏洞：为了确保应用程序不存在 SQL 注入安全漏洞，请尽可能使用参数化查询。此外，请确保首先通查代码并且运行渗透测试，再部署你的应用程序。
 
@@ -103,8 +103,6 @@ GO
 
 [如何：配置防火墙设置（Azure SQL 数据库）](/documentation/articles/sql-database-configure-firewall-settings)
 
-[Azure SQL 数据库一般性的指导原则和限制](https://msdn.microsoft.com/zh-cn/library/azure/ee336245.aspx)
-
 [在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins)
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1221_2015-->

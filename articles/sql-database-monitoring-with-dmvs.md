@@ -11,7 +11,7 @@
 <tags
    ms.service="sql-database"
    ms.date="09/15/2015"
-   wacn.date="10/17/2015"/>
+   wacn.date="01/05/2016"/>
 
 # 使用动态管理视图监视 Azure SQL 数据库
 
@@ -31,11 +31,11 @@ SQL 数据库部分支持三种类别的动态管理视图：
 
 ```GRANT VIEW DATABASE STATE TO database_user; ```
 
-在本地 SQL Server 的实例中，动态管理视图返回服务器状态信息。在 SQL 数据库中，它们仅返回有关你当前逻辑数据库的信息。
+在本地 SQL Server 的实例中，动态管理视图会返回服务器状态信息。在 SQL 数据库中，这些视图会返回只与当前逻辑数据库相关的信息。
 
-## 正在计算数据库大小
+## 计算数据库大小
 
-下面的查询返回您的数据库的大小（以 MB 为单位）：
+下面的查询返回你的数据库的大小（以 MB 为单位）：
 
 ```
 -- Calculates the size of the database. 
@@ -57,7 +57,8 @@ GO
 
 ## 监视连接
 
-你可以使用 [sys.dm\_exec\_connections](https://msdn.microsoft.com/zh-cn/library/ms181509.aspx) 视图来检索有关特定的 Azure SQL 数据库服务器所建立连接的信息以及每个连接的详细信息。此外，[sys.dm\_exec\_sessions](https://msdn.microsoft.com/zh-cn/library/ms176013.aspx) 视图在检索有关所有活动用户连接和内部任务的信息时非常有用。下面的查询将检索当前连接上的信息：
+你可以使用 [sys.dm\_exec\_connections](https://msdn.microsoft.com/zh-cn/library/ms181509.aspx) 视图来检索有关特定的 Azure SQL 数据库服务器所建立连接的信息以及每个连接的详细信息。此外，[sys.dm\_exec\_sessions](https://msdn.microsoft.com/zh-cn/library/ms176013.aspx) 视图在检索有关所有活动用户连接和内部任务的信息时非常有用。
+下面的查询将检索当前连接上的信息：
 
 ```
 SELECT 
@@ -131,4 +132,4 @@ ORDER BY highest_cpu_queries.total_worker_time DESC;
 
 [SQL 数据库简介](/documentation/articles/sql-database-technical-overview)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_1221_2015-->

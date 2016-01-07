@@ -10,8 +10,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="08/07/2015"
-   wacn.date="09/15/2015"/>
+   ms.date="11/09/2015"
+   wacn.date="01/05/2016"/>
 
 # Azure SQL 数据库 Transact-SQL 信息
 
@@ -25,7 +25,6 @@ Windows Azure SQL 数据库完全支持大多数 SQL Server 2016 Transact-SQL �
 
 SQL 数据库 V12 支持相应 SQL Server 2016 Transact-SQL 语句中存在的某些（但不是所有）参数。例如，CREATE PROCEDURE 语句可用，但 CREATE PROCEDURE 的 WITH ENCRYPTION 选项不可用。请参阅链接的语法主题，以了解有关每个语句的受支持区域的详细信息。
 
-- CLR 程序集：[CREATE ASSEMBLY](https://msdn.microsoft.com/zh-cn/library/ms189524.aspx)
 - 数据库：[CREATE](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx)/[ALTER](https://msdn.microsoft.com/zh-cn/library/ms174269.aspx)
 - DMV 通常适用于可用的功能
 - 函数：[CREATE](https://msdn.microsoft.com/zh-cn/library/ms186755.aspx)/[ALTER FUNCTION](https://msdn.microsoft.com/zh-cn/library/ms186967.aspx)
@@ -72,6 +71,8 @@ SQL 数据库 V12 支持相应 SQL Server 2016 Transact-SQL 语句中存在的�
 - 关机
 - sp\_addmessage
 - sp\_configure 选项和 RECONFIGURE
+- sp\_helpuser
+- sp\_migrate\_user\_to\_contained
 - SQL Server 审核（改用 SQL 数据库审核）
 - SQL Server 事件探查器
 - SQL Server 跟踪
@@ -90,4 +91,4 @@ Transact-SQL 参考包括与 SQL Server 2008、SQL Server 2008 R2、SQL Server 2
 
 在某些情况下，可以在产品中使用主题的常规主旨，但并非支持所有参数。例如，SQL Server 2012 中引入了包含的数据库用户。可以在任何 SQL Server 产品中使用 **CREATE USER** 语句，但 **WITH PASSWORD** 语法不能与旧版结合使用。在此情况下，已在主题正文的相应参数描述中插入“适用于”部分。
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1221_2015-->
