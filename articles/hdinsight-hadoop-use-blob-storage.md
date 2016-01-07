@@ -12,7 +12,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/23/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/07/2016"/>
 
 
 # 将 HDFS 兼容的 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用
@@ -113,25 +113,19 @@ Blob 存储可用于结构化和非结构化数据。Blob 存储容器将数据�
 
 如果你[已安装并配置 Azure PowerShell][powershell-install]，则可以从 Azure PowerShell 提示符使用以下命令来创建存储帐户和容器：
 
-	$SubscriptionID = "<Your Azure Subscription ID>"
-	$ResourceGroupName = "<New Azure Resource Group Name>"
-	$Location = "China East"
-	
-	$StorageAccountName = "<New Azure Storage Account Name>"
-	$containerName = "<New Azure Blob Container Name>"
-	
-	$china = Get-AzureRmEnvironment -Name AzureChinaCloud; Login-AzureRmAccount -Environment $china
-	Select-AzureRmSubscription -SubscriptionId $SubscriptionID
-	
-	# Create resource group
-	New-AzureRmResourceGroup -name $ResourceGroupName -Location $Location
-	
-	# Create default storage account
-	New-AzureRmStorageAccount -ResourceGroupName $ResourceGroupName -Name $StorageAccountName -Location $Location -Type Standard_LRS 
-	
-	# Create default blob containers
-	$storageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -StorageAccountName $StorageAccountName |  %{ $_.Key1 }
+	$subscriptionName = "<SubscriptionName>"	# Azure subscription name
+	$storageAccountName = "<AzureStorageAccountName>" # The storage account that you will create
+	$containerName="<BlobContainerToBeCreated>" # The Blob container name that you will create
+
+	# Connect to your Azure account and selec the current subscription
+	Add-AzureAccount # The connection will expire in 12 hours.
+	Select-AzureSubscription $subscriptionName #only required if you have multiple subscriptions
+
+	# Create a storage context object
+	$storageAccountkey = get-azurestoragekey $storageAccountName | %{$_.Primary}
 	$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
+
+	# Create a Blob storage container
 	New-AzureStorageContainer -Name $containerName -Context $destContext
 
 
@@ -205,48 +199,70 @@ URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 
 
 以下脚本将一个块 Blob 下载到当前文件夹。运行该脚本之前，请将该目录更改为你有写权限的文件夹。
 
-	$resourceGroupName = "<AzureResourceGroupName>"
-	$storageAccountName = "<AzureStorageAccountName>"   # The storage account used for the default file system specified at creation.
+	$storageAccountName = "<AzureStorageAccountName>"   # The storage account used for the default file system specified at provision.
 	$containerName = "<BlobStorageContainerName>"  # The default file system container has the same name as the cluster.
 	$blob = "example/data/sample.log" # The name of the blob to be downloaded.
-	
+
 	# Use Add-AzureAccount if you haven't connected to your Azure subscription
-	$china = Get-AzureRmEnvironment -Name AzureChinaCloud; Login-AzureRmAccount -Environment $china
-	Select-AzureRmSubscription -SubscriptionID "<Your Azure Subscription ID>"
-	
+	#Add-AzureAccount # The connection is good for 12 hours
+
+	# Use these two commands if you have multiple subscriptions
+	#$subscriptionName = "<SubscriptionName>"
+	#Select-AzureSubscription $subscriptionName
+
 	Write-Host "Create a context object ... " -ForegroundColor Green
-	$storageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName | %{ $_.key1 }
+	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
 	$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
-	
+
 	Write-Host "Download the blob ..." -ForegroundColor Green
 	Get-AzureStorageBlobContent -Container $ContainerName -Blob $blob -Context $storageContext -Force
-	
+
 	Write-Host "List the downloaded file ..." -ForegroundColor Green
 	cat "./$blob"
 
-如果提供资源组名称和群集名称，可以使用以下代码：
-
-	$resourceGroupName = "<AzureResourceGroupName>"
-	$clusterName = "<HDInsightClusterName>"
-	$blob = "example/data/sample.log" # The name of the blob to be downloaded.
-	
-	$cluster = Get-AzureRmHDInsightCluster -ResourceGroupName $resourceGroupName -ClusterName $clusterName
-	$defaultStorageAccount = $cluster.DefaultStorageAccount -replace '.blob.core.chinacloudapi.cn'
-	$defaultStorageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $defaultStorageAccount |  %{ $_.Key1 }
-	$defaultStorageContainer = $cluster.DefaultStorageContainer
-	$storageContext = New-AzureStorageContext -StorageAccountName $defaultStorageAccount -StorageAccountKey $defaultStorageAccountKey 
-	
-	Write-Host "Download the blob ..." -ForegroundColor Green
-	Get-AzureStorageBlobContent -Container $defaultStorageContainer -Blob $blob -Context $storageContext -Force
-
 ###删除文件
 
+以下脚本显示如何删除文件。
 
+	$storageAccountName = "<AzureStorageAccountName>"   # The storage account used for the default file system specified at provision.
+	$containerName = "<BlobStorageContainerName>"  # The default file system container has the same name as the cluster.
+	$blob = "example/data/sample.log" # The name of the blob to be downloaded.
+
+	# Use Add-AzureAccount if you haven't connected to your Azure subscription
+	#Add-AzureAccount -Environment AzureChinaCloud # The connection is good for 12 hours
+
+	# Use these two commands if you have multiple subscriptions
+	#$subscriptionName = "<SubscriptionName>"
+	#Select-AzureSubscription $subscriptionName
+
+	Write-Host "Create a context object ... " -ForegroundColor Green
+	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
+	$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
+
+	Write-Host "Delete the blob ..." -ForegroundColor Green
 	Remove-AzureStorageBlob -Container $containerName -Context $storageContext -blob $blob
 
 ###列出文件
 
-	Get-AzureStorageBlob -Container $containerName -Context $storageContext -prefix "example/data/"
+以下脚本显示如何列出文件夹中的文件。（下一个示例显示如何使用 **Invoke-Hive** cmdlet 来执行 **dfs ls** 命令以列出文件夹。）
+
+	$storageAccountName = "<AzureStorageAccountName>"   # The storage account used for the default file system specified at provision.
+	$containerName = "<BlobStorageContainerName>"  # The default file system container has the same name as the cluster.
+	$blobPrefix = "example/data/"
+
+	# Use Add-AzureAccount if you haven't connected to your Azure subscription
+	#Add-AzureAccount -Environment AzureChinaCloud # The connection is good for 12 hours
+
+	# Use these two commands if you have multiple subscriptions
+	#$subscriptionName = "<SubscriptionName>"
+	#Select-AzureSubscription $subscriptionName
+
+	Write-Host "Create a context object ... " -ForegroundColor Green
+	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
+	$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
+
+	Write-Host "List the files in $blobPrefix ..."
+	Get-AzureStorageBlob -Container $containerName -Context $storageContext -prefix $blobPrefix
 
 ###使用未定义的存储帐户运行 Hive 查询
 
@@ -258,12 +274,12 @@ URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 
 
 	$undefinedStorageKey = Get-AzureStorageKey $undefinedStorageAccount | %{ $_.Primary }
 
-	Use-AzureRmHDInsightCluster $clusterName
+	Use-AzureHDInsightCluster $clusterName
 
 	$defines = @{}
 	$defines.Add("fs.azure.account.key.$undefinedStorageAccount.blob.core.chinacloudapi.cn", $undefinedStorageKey)
 
-	Invoke-AzureRmHDInsightHiveJob -Defines $defines -Query "dfs -ls wasb://$undefinedContainer@$undefinedStorageAccount.blob.core.chinacloudapi.cn/;"
+	Invoke-Hive -Defines $defines -Query "dfs -ls wasb://$undefinedContainer@$undefinedStorageAccount.blob.core.chinacloudapi.cn/;"
 
 ##<a id="nextsteps"></a>后续步骤
 

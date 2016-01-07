@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="11/09/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/07/2016"/>
 
 # 为 HDInsight 开发脚本操作脚本
 
@@ -195,9 +195,9 @@ Name | 脚本
 
 在此示例中，你必须确保存储帐户“somestorageaccount”中的容器“somecontainer”可公开访问。否则，该脚本将引发“未找到”异常并失败。
 
-### 将参数传递给 Add-AzureRmHDInsightScriptAction cmdlet
+### 将参数传递给 Add-AzureHDInsightScriptAction cmdlet
 
-若要将多个参数传递给 Add-AzureRmHDInsightScriptAction cmdlet，你需要将字符串值的格式设置为包含脚本的所有参数。例如：
+若要将多个参数传递给 Add-AzureHDInsightScriptAction cmdlet，你需要将字符串值的格式设置为包含脚本的所有参数。例如：
 
 	"-CertifcateUri wasb:///abc.pfx -CertificatePassword 123456 -InstallFolderName MyFolder"
  

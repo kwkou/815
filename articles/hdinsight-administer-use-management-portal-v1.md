@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="11/04/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/07/2016"/>
 
 # 使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集
 
@@ -109,7 +109,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在
 
 **创建自签名证书**
 
-1. 创建用来对请求进行身份验证的自签名证书。可以使用 Internet Information Services (IIS) 或 [makecert]( https://msdn.microsoft.com/zh-cn/library/bfsktky3(v=vs.110).aspx) 创建该证书。
+1. 创建用来对请求进行身份验证的自签名证书。可以使用 Internet Information Services (IIS) 或 [makecert](https://msdn.microsoft.com/zh-cn/library/windows/desktop/aa386968.aspx) 创建该证书。
 
 2. 浏览到证书所在的位置，右键单击该证书，单击“安装证书”，然后将证书安装到计算机的个人存储。编辑证书属性，以便为证书指定一个友好名称。
 

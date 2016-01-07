@@ -10,7 +10,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="08/11/2015"
-   wacn.date="12/15/2015"/>
+   wacn.date="01/07/2016"/>
 
 # 使用 HDInsight 入门库了解 Hadoop
 
@@ -26,11 +26,6 @@
 	- Mahout 电影推荐
 
 ![包括示例数据的 HDInsight Hadoop、Storm 和 HBase 入门库解决方案。][hdinsight.sample.gallery]
-
-以下视频剪辑演示了如何运行 Twitter 趋势分析示例：
-
-<center><a href="https://www.youtube.com/embed/7ePbHot1SN4">https://www.youtube.com/embed/7ePbHot1SN4></a></center>
-
 
 **从入门库运行示例**
 
