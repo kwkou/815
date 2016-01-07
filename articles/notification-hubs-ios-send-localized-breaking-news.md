@@ -7,14 +7,14 @@
 	manager="dwrede"
 	editor=""/>
 <tags 
-	ms.service="mobile-services,notification-hubs"
-	ms.date="06/02/2015" 
-	wacn.date="11/02/2015"/>
+	ms.service="notification-hubs"
+	ms.date="06/16/2015"
+	wacn.date="12/31/2015"/>
 
 # 使用通知中心将本地化的突发新闻发送到 iOS 设备
 
 > [AZURE.SELECTOR]
-- [Localized Breaking News](/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news)
+- [Windows Store C#](/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news)
 - [iOS](/documentation/articles/notification-hubs-ios-send-localized-breaking-news)
 
 
@@ -172,7 +172,7 @@
 
 <h2><a name="send"></a>从后端发送本地化的通知</h2>
 
-[AZURE.INCLUDE [notification-hubs-localized-back-end](../includes/notification-hubs-localized-back-end.md)]
+[WACN.INCLUDE [notification-hubs-localized-back-end](../includes/notification-hubs-localized-back-end.md)]
 
 
 ## 后续步骤
@@ -208,4 +208,4 @@
 [使用通知中心通知用户：移动服务]: /documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [适用于 iOS 的通知中心操作方法]: /documentation/articles/notification-hubs-ios-get-started
-<!---HONumber=71-->
+<!---HONumber=82-->

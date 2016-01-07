@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通知中心入门（Xamarin.Android 应用）| Microsoft Azure"
+	pageTitle="通知中心入门（Xamarin.Android 应用）| Windows Azure"
 	description="在本教程中，你将了解如何使用 Azure 通知中心将推送通知发送到 Xamarin.Android 应用程序。"
 	authors="ysxu"
 	manager="dwrede"
@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="06/09/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/31/2015"/>
 
 # 通知中心入门
 
@@ -18,7 +18,7 @@
 
 ##概述
 
-本主题说明如何使用 Azure 通知中心将推送通知发送到 Xamarin.Android 应用程序。在本教程中，您将创建一个空白 Xamarin.Android 应用程序，它使用 Google Cloud Messaging (GCM) 接收推送通知。完成后，你将能使用通知中心将推送通知广播到运行你的应用程序的所有设备。[NotificationHubs 应用][GitHub]示例中提供了完成的代码。
+本教程说明如何使用 Azure 通知中心将推送通知发送到 Xamarin.Android 应用程序。你将创建一个空白 Xamarin.Android 应用，它使用 Google Cloud Messaging (GCM) 接收推送通知。完成后，你将能够使用通知中心将推送通知广播到运行你的应用的所有设备。[NotificationHubs][GitHub] 应用程序示例中提供了完成的代码。
 
 本教程演示使用通知中心的简单广播方案。
 
@@ -32,19 +32,19 @@
 + [Azure 消息传送组件]
 + [Google Cloud Messaging 客户端组件]
 
-只有在完成本教程后，才能完成有关 Xamarin.Android 应用程序通知中心的其他所有教程。
+完成本教程是学习有关 Xamarin.Android 应用的所有其他通知中心教程的先决条件。
 
 > [AZURE.IMPORTANT]若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用][Azure 试用]。
 
-##启用 Google Cloud Messaging
+##<a name="register"></a>启用 Google Cloud Messaging
 
 [AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../includes/mobile-services-enable-google-cloud-messaging.md)]
 
-##配置通知中心
+##<a name="configure-hub"></a>配置通知中心
 
 [AZURE.INCLUDE [notification-hubs-android-configure-push](../includes/notification-hubs-android-configure-push.md)]
 
-##将你的应用连接到通知中心
+##<a name="connecting-app"></a>将你的应用连接到通知中心
 
 ### 创建新项目
 
@@ -319,7 +319,7 @@ Xamarin 组件应用商店中提供的 Google Cloud Messaging Client 可以简�
 		}
 
 
-##在模拟器中运行应用
+##<a name="run-app"></a>在模拟器中运行应用
 
 如果在模拟器中运行此应用，请确保使用支持 Google API 的 Android 虚拟设备 (AVD)。
 
@@ -357,7 +357,7 @@ Xamarin 组件应用商店中提供的 Google Cloud Messaging Client 可以简�
 - PHP：[如何通过 PHP 使用通知中心](/documentation/articles/notification-hubs-php-backend-how-to)。
 
 
-在本教程的后续小节中，你将使用 .NET 控制台应用和移动服务来发送通知，通过节点脚本来执行这些操作。
+在本教程的后续小节中，你将使用 .NET 控制台应用和移动服务通过节点脚本来发送通知。
 
 ####使用 .NET 应用程序发送通知：
 
@@ -368,7 +368,7 @@ Microsoft 提供了 Azure 服务总线 SDK 用于在.NET 平台上发送通知�
 
    	![][20]
 
-2. 使用 <a href="http://nuget.org/packages/WindowsAzure.ServiceBus/">WindowsAzure.ServiceBus NuGet 包</a>添加对 Azure 服务总线 SDK 的引用。在 Visual Studio 主菜单中，依次单击“工具”、“库包管理器”和“包管理器控制台”。然后，在控制台窗口中键入：
+2. 通过使用 <a href="http://nuget.org/packages/WindowsAzure.ServiceBus/">WindowsAzure.ServiceBus NuGet 包</a>添加对 Azure 服务总线 SDK 的引用。在 Visual Studio 主菜单中，依次单击“工具”、“库包管理器”和“Package Manager Console”。然后，在控制台窗口中键入：
 
         Install-Package WindowsAzure.ServiceBus
 

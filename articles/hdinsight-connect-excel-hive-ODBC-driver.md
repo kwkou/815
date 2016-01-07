@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/15/2015"
-	wacn.date="12/15/2015"/>
+	wacn.date="01/07/2016"/>
 
 #使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 Hadoop
 
@@ -121,7 +121,7 @@ HTTP 路径|将此字段留空。
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hive-odbc-driver-download]: http://go.microsoft.com/fwlink/?LinkID=286698
 
 [img-hdi-simbahiveodbc-datasource-admin]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveOdbc.DataSourceAdmin1.png

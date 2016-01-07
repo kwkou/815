@@ -252,7 +252,7 @@
 
 ## 发送消息
 
-使用 .NET 发送消息：
+若要使用 .NET 发送消息：
 
         static void Main(string[] args)
         {

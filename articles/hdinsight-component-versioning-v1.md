@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="11/09/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/07/2016"/>
 
 
 #HDInsight 提供的 Hadoop 群集版本有哪些新功能？
@@ -149,8 +149,6 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 [hdp-1-3-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-1.3.0/bk_releasenotes_hdp_1.x/content/ch_relnotes-hdp1.3.0_1.html
 
 [hdp-1-1-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-Win-1.1/bk_releasenotes_HDP-Win/content/ch_relnotes-hdp-win-1.1.0_1.html
-
-[ambari-docs]: https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md
 
 [zookeeper]: http://zookeeper.apache.org/
 

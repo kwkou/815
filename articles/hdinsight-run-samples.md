@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/29/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/07/2016"/>
 
 #在基于 Windows 的 HDInsight 中运行 Hadoop MapReduce 示例
 
@@ -58,46 +58,39 @@ Web 上有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 编
 2. 粘贴以下 PowerShell 脚本：
 
 		$subscriptionName = "<Azure Subscription Name>"
-		$resourceGroupName = "<Resource Group Name>"
 		$clusterName = "<HDInsight cluster name>"             # HDInsight cluster name
 		
-		Select-AzureRmSubscription $subscriptionName
+		Select-AzureSubscription $subscriptionName
 		
 		# Define the MapReduce job
-		$mrJobDefinition = New-AzureRmHDInsightMapReduceJobDefinition `
+		$mrJobDefinition = New-AzureHDInsightMapReduceJobDefinition `
 									-JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" `
 									-ClassName "wordcount" `
 									-Arguments "wasb:///example/data/gutenberg/davinci.txt", "wasb:///example/data/WordCountOutput1"
 		
 		# Submit the job and wait for job completion
 		$cred = Get-Credential -Message "Enter the HDInsight cluster HTTP user credential:" 
-		$mrJob = Start-AzureRmHDInsightJob `
-							-ResourceGroupName $resourceGroupName `
-							-ClusterName $clusterName `
-							-HttpCredential $cred `
+		$mrJob = Start-AzureHDInsightJob `
+							-Cluster $clusterName `
+							-Credential $cred `
 							-JobDefinition $mrJobDefinition 
 		
-		Wait-AzureRmHDInsightJob `
-			-ResourceGroupName $resourceGroupName `
-			-ClusterName $clusterName `
-			-HttpCredential $cred `
+		Wait-AzureHDInsightJob `
+			-Cluster $clusterName `
+			-Credential $cred `
 			-JobId $mrJob.JobId 
 		
 		# Get the job output
-		$cluster = Get-AzureRmHDInsightCluster -ResourceGroupName $resourceGroupName -ClusterName $clusterName
+		$cluster = Get-AzureHDInsightCluster -Name $clusterName
 		$defaultStorageAccount = $cluster.DefaultStorageAccount -replace '.blob.core.chinacloudapi.cn'
-		$defaultStorageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $defaultStorageAccount |  %{ $_.Key1 }
+		$defaultStorageAccountKey = Get-AzureStorageKey -StorageAccountName $defaultStorageAccount |  %{ $_.Primary }
 		$defaultStorageContainer = $cluster.DefaultStorageContainer
 		
-		Get-AzureRmHDInsightJobOutput `
-			-ResourceGroupName $resourceGroupName `
-			-ClusterName $clusterName `
-			-HttpCredential $cred `
-			-DefaultStorageAccountName $defaultStorageAccount `
-			-DefaultStorageAccountKey $defaultStorageAccountKey `
-			-DefaultContainer $defaultStorageContainer  `
+		Get-AzureHDInsightJobOutput `
+			-Cluster $clusterName `
+			-Credential $cred `
 			-JobId $mrJob.JobId `
-			-DisplayOutputType StandardError
+			-StandardError
 
 		# Download the job output to the workstation
 		$storageContext = New-AzureStorageContext -StorageAccountName $defaultStorageAccount -StorageAccountKey $defaultStorageAccountKey 
@@ -130,8 +123,8 @@ Hadoop 向 MapReduce 提供了一个流式处理 API，利用它，你可以采�
 
 - 按照[字数统计 - Java](#word-count-java) 中的过程操作，并将作业定义替换为以下内容：
 
-		$mrJobDefinition = New-AzureRmHDInsightStreamingMapReduceJobDefinition `
-									-File "/example/apps/" `
+		$mrJobDefinition = New-AzureHDInsightStreamingMapReduceJobDefinition `
+									-Files <a collection of files> `
 									-Mapper "cat.exe" `
 									-Reducer "wc.exe" `
 									-InputPath "/example/data/gutenberg/davinci.txt" `
@@ -152,7 +145,7 @@ pi 估计器使用统计学方法（拟蒙特卡罗法）来估算 pi 值。单�
 
 - 按照[字数统计 - Java](#word-count-java) 中的过程操作，并将作业定义替换为以下内容：
 
-		$mrJobJobDefinition = New-AzureRmHDInsightMapReduceJobDefinition `
+		$mrJobJobDefinition = New-AzureHDInsightMapReduceJobDefinition `
 									-JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" `
 									-ClassName "pi" `
 									-Arguments "16", "10000000"
@@ -179,17 +172,17 @@ pi 估计器使用统计学方法（拟蒙特卡罗法）来估算 pi 值。单�
 
 - 按照[字数统计 - Java](#word-count-java) 中的过程操作，并使用以下作业定义：
 
-	$teragen = New-AzureRmHDInsightMapReduceJobDefinition `
+	$teragen = New-AzureHDInsightMapReduceJobDefinition `
 								-JarFile "/example/jars/hadoop-mapreduce-examples.jar" `
 								-ClassName "teragen" `
 								-Arguments "-Dmapred.map.tasks=50", "100000000", "/example/data/10GB-sort-input"
 	
-	$terasort = New-AzureRmHDInsightMapReduceJobDefinition `
+	$terasort = New-AzureHDInsightMapReduceJobDefinition `
 								-JarFile "/example/jars/hadoop-mapreduce-examples.jar" `
 								-ClassName "terasort" `
 								-Arguments "-Dmapred.map.tasks=50", "-Dmapred.reduce.tasks=25", "/example/data/10GB-sort-input", "/example/data/10GB-sort-output"
 	
-	$teravalidate = New-AzureRmHDInsightMapReduceJobDefinition `
+	$teravalidate = New-AzureHDInsightMapReduceJobDefinition `
 								-JarFile "/example/jars/hadoop-mapreduce-examples.jar" `
 								-ClassName "teravalidate" `
 								-Arguments "-Dmapred.map.tasks=50", "-Dmapred.reduce.tasks=25", "/example/data/10GB-sort-output", "/example/data/10GB-sort-validate"
@@ -984,7 +977,7 @@ wc.cs 文件中的化简器代码使用 [StreamReader][streamreader] 对象从 c
 
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples
 [hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort

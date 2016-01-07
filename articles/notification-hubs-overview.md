@@ -1,18 +1,15 @@
-<properties 
-	linkid="dev-net-service-bus-amqp-overview" 
-	urlDisplayName="Azure Notification Hubs" 
-	pageTitle="Azure 通知中心" 
-	metaKeywords="Azure push notifications, Azure notification hubs, Azure messaging" 
-	description="了解如何在 Azure 中使用通知中心。代码示例是使用 .NET API 通过 C# 编写的。" 
-	metaCanonical="" 
-	disqusComments="1" 
-	umbracoNaviHide="0" 
-	title="Azure Notification Hubs" 
-	authors="sethm" />
+<properties
+	pageTitle="Azure 通知中心"
+	description="了解如何在 Azure 中使用通知中心。代码示例是使用 .NET API 通过 C# 编写的。"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""
+	services="notification-hubs"
+	documentationCenter=""/>
 <tags 
 	ms.service="notification-hubs" 
 	ms.date="06/16/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/31/2015"/>
 
 
 #Azure 通知中心
@@ -155,4 +152,4 @@ Azure 通知中心提供易用的基础结构，使你能够从任何后端（�
   [Microsoft.ServiceBus.Notifications]: http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.notifications.aspx
   
 
-<!---HONumber=71-->
+<!---HONumber=82-->

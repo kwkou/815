@@ -342,7 +342,6 @@
 
 3. 每个订阅突发新闻的设备都会收到刚刚发送的突发新闻通知。
 
-<!--	![][4] ![][5] -->
 
 
 ## 后续步骤
@@ -363,8 +362,7 @@
 [1]: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews-subscribed.png
 [2]: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews-ios1.png
 [3]: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews-ios2.png
-[4]: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews1.png
-[5]: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews2.png
+
 
 
 
@@ -381,4 +379,4 @@
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Notification Hubs How-To for iOS]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [get-started]: /documentation/articles/notification-hubs-ios-get-started
-<!---HONumber=71-->
+<!---HONumber=82-->

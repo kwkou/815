@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	wacn.date="12/15/2015"
+	wacn.date="01/07/2016"
 	ms.date="08/07/2015"/>
 
 # 使用 HDInsight Emulator（一个 Hadoop 沙盒）开始了解 Hadoop 生态系统
@@ -466,7 +466,7 @@ HDInsight Emulator 也支持某些 Azure PowerShell cmdlet。这些 cmdlet 包�
 ##<a name="nextsteps"></a>后续步骤
 在本 MapReduce 教程中，你安装了 HDInsight Emulator - 一个 Hadoop 沙盒 - 并运行了一些 Hadoop 作业。若要了解更多信息，请参阅下列文章：
 
-- [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows)
+- [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 - [为 HDInsight 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
 - [为 HDInsight 开发 C# Hadoop 流式处理 MapReduce 程序](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs)
 - [HDInsight Emulator 发行说明](/documentation/articles/hdinsight-emulator-release-notes)

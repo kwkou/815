@@ -11,7 +11,7 @@
 <tags 
 	ms.service="hdinsight" 
 	ms.date="07/28/2015"
-	wacn.date="12/15/2015"/>
+	wacn.date="01/07/2016"/>
 
 
 # 将基于时间的 Oozie 协调器与 HDInsight 中的 Hadoop 配合使用以定义工作流和协调作业
@@ -692,7 +692,7 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
 
 

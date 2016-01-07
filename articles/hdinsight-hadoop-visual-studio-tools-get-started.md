@@ -12,7 +12,7 @@
 <tags 
 	ms.service="hdinsight"  
 	ms.date="09/21/2015"
-	wacn.date="12/15/2015"/>
+	wacn.date="01/07/2016"/>
 
 # 开始使用 HDInsight 的 Visual Studio Hadoop 工具来运行 Hive 查询
 
@@ -27,7 +27,7 @@
 
 - Azure HDInsight 群集：基于 Windows 的群集可用于本文档中的步骤。有关创建群集的详细信息，请参阅下列主题之一：
 
-	- [开始使用基于 Windows 的 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows)
+	- [开始使用基于 Windows 的 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 
 - 安装有以下软件的工作站：
 
@@ -226,7 +226,7 @@ HDInsight Tools for Visual Studio 支持创建 Pig 脚本并将其提交到 HDIn
 <!--Link references-->
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight.introduction]: /documentation/articles/hdinsight-introduction/
-[hdinsight.get.started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
+[hdinsight.get.started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 [hdinsight.hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 

@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/02/2015"
-	wacn.date="12/15/2015"/>
+	wacn.date="01/07/2016"/>
 
 # 在 HDInsight Hadoop 群集上安装并使用 R
 
@@ -292,6 +292,6 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
 
 <!---HONumber=79-->

@@ -11,7 +11,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="08/07/2015"
-   wacn.date="12/16/2015"/>
+   wacn.date="01/07/2016"/>
 
 # 在 Azure 虚拟网络上设置 HBase 群集
 
@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 
-* [在 Azure 虚拟网络上设置 HBase 群集](/documentation/articles/hdinsight-hbase-provision-vnet)
+* [在 Azure 虚拟网络上设置 HBase 群集](/documentation/articles/hdinsight-hbase-provision-vnet-v1)
 
 通过虚拟网络集成，可以将 HBase 群集部署到应用程序所在的虚拟网络，以便应用程序直接与 HBase 进行通信。优点包括：
 
@@ -120,7 +120,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 4. 在“配置群集”页上，输入或选择以下内容：
 
-	![提供 HBase 群集的详细信息](./media/hdinsight-hbase-provision-vnet/hbasewizard2.png)
+	![提供 HBase 群集的详细信息](./media/hdinsight-hbase-provision-vnet-v1/hbasewizard2.png)
 
 	<table border='1'>
 	<tr><th>属性</th><th>值</th></tr>
@@ -136,7 +136,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 5. 输入要用于此群集的 Hadoop 用户名和密码，然后单击右侧按钮。
 
-	![提供 Hadoop HDInsight 群集的存储帐户](./media/hdinsight-hbase-provision-vnet/hbasewizard3.png)
+	![提供 Hadoop HDInsight 群集的存储帐户](./media/hdinsight-hbase-provision-vnet-v1/hbasewizard3.png)
 
 	<table border='1'>
 	<tr><th>属性</th><th>值</th></tr>
@@ -150,7 +150,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 6. 在“存储帐户”页上提供以下值：
 
-    ![提供 Hadoop HDInsight 群集的存储帐户](./media/hdinsight-hbase-provision-vnet/hbasewizard4.png)
+    ![提供 Hadoop HDInsight 群集的存储帐户](./media/hdinsight-hbase-provision-vnet-v1/hbasewizard4.png)
 
 	<table border='1'>
 	<tr><th>属性</th><th>值</th></tr>
@@ -181,9 +181,9 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 	![配置脚本操作以自定义 HDInsight HBase 群集][img-provision-cluster-page5]
 
-	> [AZURE.NOTE]此页可用于在安装过程中自定义群集。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster)。
+	> [AZURE.NOTE]此页可用于在安装过程中自定义群集。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)。
 
-要开始处理新 HBase 群集，可以按照[开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started)中的步骤操作。
+要开始处理新 HBase 群集，可以按照[开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)中的步骤操作。
 
 ##通过使用 HBase Java RPC API 连接到虚拟网络中设置的 HBase 群集
 
@@ -378,7 +378,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 - [开始使用 HDInsight](/documentation/articles/hdinsight-get-started)
 - [在 HDInsight 中配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication)
 - [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)
-- [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started)
+- [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
 - [虚拟网络概述][vnet-overview]
 
 
@@ -386,7 +386,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [2]: http://technet.microsoft.com/zh-cn/library/ee176961.aspx
 [3]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
-[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
 [vnet-overview]: http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx
 [vm-create]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 [azure-portal]: https://manage.windowsazure.cn
@@ -406,7 +406,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 
 [powershell-install]: /documentation/articles/powershell-install-configure
-[hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster
+[hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-storage-powershell]: /documentation/articles/hdinsight-use-blob-storage#powershell
@@ -416,9 +416,9 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 [hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
-[img-dns-surffix]: ./media/hdinsight-hbase-provision-vnet/DNSSuffix.png
-[img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet/PrimaryDNSSuffix.png
-[img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png "预配新 HBase 群集的详细信息"
-[img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet/hbasewizard5.png "使用脚本操作来自定义 HBase 群集"
+[img-dns-surffix]: ./media/hdinsight-hbase-provision-vnet-v1/DNSSuffix.png
+[img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet-v1/PrimaryDNSSuffix.png
+[img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet-v1/hbasewizard1.png "预配新 HBase 群集的详细信息"
+[img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet-v1/hbasewizard5.png "使用脚本操作来自定义 HBase 群集"
 
 <!---HONumber=71-->

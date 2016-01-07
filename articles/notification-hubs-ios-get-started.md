@@ -153,7 +153,7 @@
 
 8. 在设备上生成并运行应用，以验证应用是否能够成功运行。
 
-## 如何发送通知
+## 发送通知
 
 
 在 Azure 门户中通过通知中心上的调试选项卡（如以下屏幕中所示）来发送通知，可以在应用中测试通知的接收情况。
@@ -344,7 +344,7 @@
 			NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@/messages/%@", HubEndpoint,
 												HUBNAME, API_VERSION]];
 
-			// Generated the token to be used in the authorization header.
+			// Generate the token to be used in the authorization header
 			NSString* authorizationToken = [self generateSasToken:[url absoluteString]];
 
 			//Create the request to add the APNS notification message to the hub

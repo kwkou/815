@@ -9,7 +9,7 @@
 <tags 
     ms.service="notification-hubs" 
     ms.date="09/03/2015"
-    wacn.date="12/17/2015" />
+    wacn.date="12/31/2015" />
 
 # 通知中心入门（Chrome 应用）
 
@@ -25,7 +25,7 @@
 
 本教程将指导你完成启用推送通知的以下基本步骤：
 
-* [启用 Google Cloud Messaging (GCM)](#register)
+* [启用 Google Cloud Messaging](#register)
 * [配置通知中心](#configure-hub)
 * [将你的 Chrome 应用连接到通知中心](#connect-app)
 * [向你的 Chrome 应用发送通知](#send)
@@ -35,9 +35,9 @@
 
 请务必继续学习“后续步骤”部分中的教程，以了解如何使用通知中心来通知特定用户和设备组。
 
->[AZURE.NOTE]若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](http://www.windowsazure.cn/pricing/1rmb-trial/)。
+>[AZURE.NOTE]若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/1rmb-trial/)。
 
-##<a id="register"></a>启用 Google Cloud Messaging (GCM)
+##<a id="register"></a>启用 Google Cloud Messaging
 
 1. 导航到 [Google Cloud Console] 网站，使用你的 Google 帐户凭据登录，然后单击“创建项目”按钮。提供相应的**项目名称**，然后单击“创建”按钮。
 
@@ -61,7 +61,7 @@
 
 ##<a id="configure-hub"></a>配置通知中心
 
-1. 登录到 **[Azure 管理门户]**，然后单击屏幕左下角的“+新建”。
+1. 登录到 [Azure 门户]，然后单击屏幕左下角的“+ 新建”。
 
 2. 单击“应用程序服务”->“服务总线”->“通知中心”->“快速创建”。键入通知中心的名称，选择所需的区域，然后单击“创建新的通知中心”。
 
@@ -477,11 +477,11 @@
 <!-- URLs. -->
 [Chrome 应用通知中心示例]: http://google.com
 [Google Cloud Console]: http://cloud.google.com/console
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 门户]: https://manage.windowsazure.com/
 [通知中心概述]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Chrome 应用概述]: https://developer.chrome.com/apps/about_apps
-[Chrome App GCM 示例]: https://github.com/GoogleChrome/chrome-app-samples/tree/master/samples/gcm-notifications
-[可安装的网站]: https://developers.google.com/chrome/apps/docs/
+[Chrome 应用 GCM 示例]: https://github.com/GoogleChrome/chrome-app-samples/tree/master/samples/gcm-notifications
+[可安装的 Web Apps]: https://developers.google.com/chrome/apps/docs/
 [移动设备上的 Chrome 应用]: https://developer.chrome.com/apps/chrome_apps_on_mobile
 [创建注册 NH REST API]: http://msdn.microsoft.com/zh-cn/library/azure/dn223265.aspx
 [crypto-js 库]: http://code.google.com/p/crypto-js/

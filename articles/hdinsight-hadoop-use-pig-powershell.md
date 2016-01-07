@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/16/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/07/2016"/>
 
 #使用 PowerShell 运行 Pig 作业
 
@@ -36,41 +36,26 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Pig �
 
 在远程 HDInsight 群集上运行 Pig 作业时，将使用以下 Cmdlet：
 
-* **Login-AzureRmAccount**：向 Azure 订阅进行 Azure PowerShell 身份验证
+* **Add-AzureAccount**：向 Azure 订阅进行 Azure PowerShell 身份验证
 
-[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
 
-* **New-AzureRmHDInsightPigJobDefinition**：使用指定的 Pig Latin 语句创建新的*作业定义*
+* **New-AzureHDInsightPigJobDefinition**：使用指定的 Pig Latin 语句创建新的*作业定义*
 
-* **Start-AzureRmHDInsightJob**：将作业定义发送到 HDInsight，启动作业，然后返回可用来检查作业状态的*作业*对象
+* **Start-AzureHDInsightJob**：将作业定义发送到 HDInsight，启动作业，然后返回可用来检查作业状态的*作业*对象
 
-* **Wait-AzureRmHDInsightJob**：使用作业对象来检查作业的状态。它将等到作业完成或超出等待时间。
+* **Wait-AzureHDInsightJob**：使用作业对象来检查作业的状态。它将等到作业完成或超出等待时间。
 
-* **Get-AzureRmHDInsightJobOutput**：用于检索作业的输出
+* **Get-AzureHDInsightJobOutput**：用于检索作业的输出
 
 以下步骤演示了如何使用这些 Cmdlet 在 HDInsight 群集上运行作业。
 
 1. 使用编辑器将以下代码保存为 **pigjob.ps1**。必须将 **CLUSTERNAME** 替换为 HDInsight 群集的名称。
 
-		#Login to your Azure subscription
-		$china = Get-AzureRmEnvironment -Name AzureChinaCloud; Login-AzureRmAccount -Environment $china
-        #Get credentials for the admin/HTTPs account
-        $creds=Get-Credential
-
 		#Specify the cluster name
 		$clusterName = "CLUSTERNAME"
 		#Where the output will be saved
 		$statusFolder = "/tutorial/pig/status"
-        
-        #Get the cluster info so we can get the resource group, storage, etc.
-        $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
-        $resourceGroup = $clusterInfo.ResourceGroup
-        $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
-        $container=$clusterInfo.DefaultStorageContainer
-        $storageAccountKey=Get-AzureRmStorageAccountKey `
-            -Name $storageAccountName `
-            -ResourceGroupName $resourceGroup `
-            | %{ $_.Key1 }
 
 		#Store the Pig Latin into $QueryString
 		$QueryString =  "LOGS = LOAD 'wasb:///example/data/sample.log';" +
@@ -82,32 +67,19 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Pig �
 		"DUMP RESULT;"
 
 		#Create a new HDInsight Pig Job definition
-		$pigJobDefinition = New-AzureRmHDInsightPigJobDefinition `
-            -Query $QueryString `
+		$pigJobDefinition = New-AzureHDInsightPigJobDefinition -Query $QueryString -StatusFolder $statusFolder
 
 		# Start the Pig job on the HDInsight cluster
 		Write-Host "Start the Pig job ..." -ForegroundColor Green
-		$pigJob = Start-AzureRmHDInsightJob `
-            -ClusterName $clusterName `
-            -JobDefinition $pigJobDefinition `
-            -ClusterCredential $creds
+		$pigJob = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $pigJobDefinition
 
 		# Wait for the Pig job to complete
 		Write-Host "Wait for the Pig job to complete ..." -ForegroundColor Green
-		Wait-AzureRmHDInsightJob `
-            -ClusterName $clusterName `
-            -JobId $pigJob.JobId `
-            -HttpCredential $creds
+		Wait-AzureHDInsightJob -Job $pigJob -WaitTimeoutInSeconds 3600
 
-		# Display the output of the Pig job.
+		# Print the output of the Pig job.
 		Write-Host "Display the standard output ..." -ForegroundColor Green
-		Get-AzureRmHDInsightJobOutput `
-            -ClusterName $clusterName `
-            -JobId $pigJob.JobId `
-            -DefaultContainer $container `
-            -DefaultStorageAccountName $storageAccountName `
-            -DefaultStorageAccountKey $storageAccountKey `
-            -HttpCredential $creds
+		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $pigJob.JobId -StandardOutput
 
 2. 打开一个新的 Azure PowerShell 命令提示符。将目录更改为 **pigjob.ps1** 文件的所在位置，然后使用以下命令来运行脚本：
 
@@ -117,27 +89,27 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Pig �
 
 7. 在作业完成时，它应返回如下信息：
 
-		Start the Pig job ...
-		Wait for the Pig job to complete ...
+		Cluster         : CLUSTERNAME
+		ExitCode        : 0
+		Name            :
+		PercentComplete : 100% complete
+		Query           : LOGS = LOAD 'wasb:///example/data/sample.log';LEVELS = foreach LOGS generate REGEX_EXTRACT($0,
+			'(TRACE|DEBUG|INFO|WARN|ERROR|FATAL)', 1)  as LOGLEVEL;FILTEREDLEVELS = FILTER LEVELS by LOGLEVEL is
+			not null;GROUPEDLEVELS = GROUP FILTEREDLEVELS by LOGLEVEL;FREQUENCIES = foreach GROUPEDLEVELS
+			generate group as LOGLEVEL, COUNT(FILTEREDLEVELS.LOGLEVEL) as COUNT;RESULT = order FREQUENCIES by
+			COUNT desc;DUMP RESULT;
+			State           : Completed
+			StatusDirectory : /tutorial/pig/status
+			SubmissionTime  : 11/20/2014 4:04:58 PM
+			JobId           : job_1415949758166_0023
 
-		Cluster         : CLUSTERNAME.
-        HttpEndpoint    : CLUSTERNAME.azurehdinsight.cn
-        State           : SUCCEEDED
-        JobId           : job_1444852971289_0018
-        ParentId        :
-        PercentComplete : 100% complete
-        ExitValue       : 0
-        User            : admin
-        Callback        :
-        Completed       : done
-        
-        Display the standard output ...
-        (TRACE,816)
-        (DEBUG,434)
-        (INFO,96)
-        (WARN,11)
-        (ERROR,6)
-        (FATAL,2)
+			Display the standard output ...
+			(TRACE,816)
+			(DEBUG,434)
+			(INFO,96)
+			(WARN,11)
+			(ERROR,6)
+			(FATAL,2)
 
 ##<a id="troubleshooting"></a>故障排除
 
@@ -145,14 +117,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Pig �
 
 	# Print the output of the Pig job.
 	Write-Host "Display the standard output ..." -ForegroundColor Green
-    Get-AzureRmHDInsightJobOutput `
-            -Clustername $clusterName `
-            -JobId $pigJob.JobId `
-            -DefaultContainer $container `
-            -DefaultStorageAccountName $storageAccountName `
-            -DefaultStorageAccountKey $storageAccountKey `
-            -HttpCredential $creds
-            -DisplayOutputType StandardError
+    Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $pigJob.JobId -StandardError
 
 这样就会返回运行作业时写入到服务器上的 STDERR 的信息，它可帮助确定该作业失败的原因。
 

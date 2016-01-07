@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/22/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/07/2016"/>
 
 #借助 Maven 生成可将 HBase 与 HDInsight (Hadoop) 配合使用的 Java 应用程序
 
@@ -25,7 +25,7 @@
 
 * [Maven](http://maven.apache.org/)
 
-* [安装有 HBase 的 Azure HDInsight 群集](/documentation/articles/hdinsight-hbase-tutorial-get-started#create-hbase-cluster)
+* [安装有 HBase 的 Azure HDInsight 群集](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1#create-hbase-cluster)
 
 ##创建项目
 

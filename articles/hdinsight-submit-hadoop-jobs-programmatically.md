@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/30/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/07/2016"/>
 
 # 在 HDInsight 中提交 Hadoop 作业
 
@@ -242,7 +242,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs

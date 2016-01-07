@@ -10,9 +10,9 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="06/16/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/31/2015"/>
 
-# Azure 通知中心通知用户
+#Azure 通知中心 - 通知用户
 
 [AZURE.INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
@@ -462,4 +462,4 @@
 [4]: ./media/notification-hubs-aspnet-backend-ios-notify-users/notification-hubs-ios-notify-users-enter-msg.png
  
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_1207_2015-->
