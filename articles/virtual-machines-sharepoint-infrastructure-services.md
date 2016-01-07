@@ -41,12 +41,6 @@
 
 此配置使用经典虚拟机。
 
-## 高度可用的 Intranet SharePoint 生产场
-
-借助于[使用 Azure 中的 SQL Server AlwaysOn 可用性组部署 SharePoint 2013](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview)，你可以在 Azure 中构建出生产就绪的高可用性 Intranet SharePoint Server 2013 场。
-
-此配置使用经典虚拟机。
-
 ## 其他资源
 
 有关 Azure 中的 SharePoint 的其他信息和配置，请参阅以下资源：

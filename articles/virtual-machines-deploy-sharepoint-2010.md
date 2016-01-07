@@ -278,8 +278,6 @@ Azure 虚拟机提供了 SharePoint 部署的完整连续。它完全受支持�
 
 [Azure 基础结构服务中托管的 SharePoint 场](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 
-[Azure 基础结构服务工作负荷：Intranet SharePoint 场](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)
-
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
 [在 Azure 中测试 SharePoint Server 2016 IT 预览](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/)
