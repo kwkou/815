@@ -254,4 +254,4 @@ In this tutorial we learned how to broadcast breaking news by category. Consider
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=71-->
+<!---HONumber=76-->

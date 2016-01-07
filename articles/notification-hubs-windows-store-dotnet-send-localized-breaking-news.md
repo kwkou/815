@@ -14,9 +14,9 @@
 
 # 使用通知中心发送本地化的突发新闻
 
-
-[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../includes/notification-hubs-selector-breaking-news.md)]
-
+> [AZURE.SELECTOR]
+- [Windows Store C#](notification-hubs-windows-store-dotnet-send-localized-breaking-news.md)
+- [iOS](notification-hubs-ios-send-localized-breaking-news.md)
 
 ##概述
 
@@ -104,7 +104,7 @@
         <Button Content="Subscribe" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Click="Button_Click" />
     </Grid>
 
-## <a name="building-client"></a><span class="building app">应用程序 UI</span>生成 Windows 应用商店客户端应用程序
+## <a name="building-client"></a>构建 Windows 应用商店客户端应用程序
 
 1.  在 Notifications 类中，将一个区域设置参数添加到 *StoreCategoriesAndSubscribe* 和 *SubscribeToCateories* 方法。
 
@@ -173,7 +173,7 @@
 [Send notifications from your back-end]: #send
 [Next Steps]: #next-steps
 
-<!-- Images. --> 
+<!-- Images. -->
 
 <!-- URLs. -->
 [Mobile Service]: /develop/mobile/tutorials/get-started
@@ -198,4 +198,4 @@
 [Notification Hubs How-To for iOS]: http://msdn.microsoft.com/library/jj927168.aspx
 [针对 Windows 应用商店的通知中心操作指南]: http://msdn.microsoft.com/library/jj927172.aspx
 
-<!---HONumber=71-->
+<!---HONumber=76-->

@@ -16,7 +16,7 @@
 
 ## 概述
 
-本文说明如何使用 PowerShell 创建和管理 Azure 通知中心。本主题将演示以下常见自动化任务。
+本文说明如何使用 PowerShell 来创建和管理 Azure 通知中心。本主题将演示以下常见自动化任务。
 
 + 创建通知中心
 + 设置凭据
@@ -28,9 +28,9 @@
 
 ## 先决条件
 
-在开始阅读本文前，您必须具有：
+在开始阅读本文前，你必须具有：
 
-- Azure 订阅。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[购买选项]、<!-- [成员优惠]或-->[免费试用]。
+- Azure 订阅。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[购买选项]、[免费试用]。
 
 - 配备 Azure PowerShell 的计算机。有关说明，请参阅[安装和配置 Azure PowerShell]。
 
@@ -39,7 +39,7 @@
 
 ## 包含对适用于服务总线的 .NET 程序集的引用
 
-Azure PowerShell 中的 PowerShell cmdlet 尚不支持管理 Azure 通知中心。若要设置通知中心和其他不是通过现有 cmdlet 公开的服务总线实体，您可以使用[服务总线 NuGet 包](http://www.nuget.org/packages/WindowsAzure.ServiceBus/)中适用于服务总线的 .NET 客户端。
+Azure PowerShell 中的 PowerShell cmdlet 尚不支持管理 Azure 通知中心。若要设置通知中心和其他不是通过现有 cmdlet 公开的服务总线实体，你可以使用[服务总线 NuGet 包](http://www.nuget.org/packages/WindowsAzure.ServiceBus/)中适用于服务总线的 .NET 客户端。
 
 首先，请确保脚本可以找到 **Microsoft.ServiceBus.dll** 程序集，该程序集在 Visual Studio 项目中以 NuGet 包的形式安装。为了灵活起见，该脚本执行以下步骤：
 
@@ -90,7 +90,7 @@ Azure PowerShell 中的 PowerShell cmdlet 尚不支持管理 Azure 通知中心�
 
 <!--若要设置新的通知中心，请使用[服务总线的 .NET API]。本文只着重于通知中心。若要使用其他服务总线实体，请参阅[使用 PowerShell 管理服务总线](/documentation/articles/service-bus-powershell-how-to-provision)。-->
 
-您将在脚本的这个部分设置四个本地变量。
+你将在脚本的这个部分设置四个本地变量。
 
 1. `$Namespace`：将此变量设置为要创建通知中心的命名空间的名称。
 2. `$Path`：将此路径设置为新通知中心的名称。例如“MyHub”。    
@@ -166,4 +166,4 @@ Azure PowerShell 中的 PowerShell cmdlet 尚不支持管理 Azure 通知中心�
 [Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/zh-cn/library/azure/dn495113.aspx
  
 
-<!---HONumber=67-->
+<!---HONumber=82-->
