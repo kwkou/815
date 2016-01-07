@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="09/23/2015"
-	wacn.date="12/15/2015"/>
+	wacn.date="01/07/2016"/>
 
 # 使用 Hadoop Tools for Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑
 
@@ -634,6 +634,6 @@ SCP.Net 版本 0.9.4.203 引入了专用于事件中心 Spout（从事件中心�
 
 **Apache HBase on HDInsight**
 
--	[HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-tutorial-get-started)
+-	[HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
 
 <!---HONumber=82-->

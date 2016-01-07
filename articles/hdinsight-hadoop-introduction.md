@@ -11,7 +11,7 @@
 <tags
    ms.service="hdinsight" 
    ms.date="09/03/2015"
-   wacn.date="12/15/2015"/>
+   wacn.date="01/07/2016"/>
 
 
 # HDInsight 中的 Hadoop 简介：云中的大数据分析和处理
@@ -53,7 +53,7 @@ Azure HDInsight 使用 **Windows** 作为基础操作系统，在云中部署并
 
 ### Hadoop、HBase、Storm 和自定义群集
 
-HDInsight 为 Hadoop、HBase、Storm 提供了群集配置。或者，你可以<a href="/documentation/articles/hdinsight-hadoop-customize-cluster/" target="_blank">使用脚本操作自定义群集</a>。
+HDInsight 为 Hadoop、HBase、Storm 提供了群集配置。或者，你可以<a href="/documentation/articles/hdinsight-hadoop-customize-cluster-v1/" target="_blank">使用脚本操作自定义群集</a>。
 
 * **Hadoop**（“查询”工作负荷）：为可靠的数据存储提供了 [HDFS](#HDFS) 和一个简单的 [MapReduce](#mapreduce) 编程模型以并行地处理和分析数据。
 
@@ -160,7 +160,7 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 * [HDInsight 文档](/documentation/services/hdinsight/) - Azure HDInsight 的文档页，包含指向文章、视频及更多资源的链接。
 
-* [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows) - 关于使用 HDInsight 中的 Hadoop 的快速入门教程。
+* [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1) - 关于使用 HDInsight 中的 Hadoop 的快速入门教程。
 
 * [运行 HDInsight 示例](/documentation/articles/hdinsight-run-samples) - 有关如何运行随 HDInsight 提供的示例的教程。
 	

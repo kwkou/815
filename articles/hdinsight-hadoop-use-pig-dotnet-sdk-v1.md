@@ -10,7 +10,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="07/24/2015"
-   wacn.date="10/03/2015"/>
+   wacn.date="01/07/2016"/>
 
 #使用 HDInsight 中的 .NET SDK for Hadoop 运行 Pig 作业
 
@@ -22,7 +22,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 [AZURE.INCLUDE [azure-preview-portal](../includes/hdinsight-azure-portal.md)]
 
-* [使用 HDInsight 中的 .NET SDK for Hadoop 运行 Pig 作业](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk)
+* [使用 HDInsight 中的 .NET SDK for Hadoop 运行 Pig 作业](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1)
 
 ##<a id="prereq"></a>先决条件
 
