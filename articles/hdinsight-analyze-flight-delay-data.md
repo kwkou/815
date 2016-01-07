@@ -353,7 +353,7 @@ Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的
 	</table>
 
 3. 单击“下载”。
-4. 将文件解压缩到 **C:\\Tutorials\\FlightDelay\\2013Data** 文件夹。每个文件均为 CSV 文件且大小约为 60GB。
+4. 将文件解压缩到 **C:\\Tutorials\\FlightDelays\\Data** 文件夹。每个文件均为 CSV 文件且大小约为 60GB。
 5.	将文件重命名为其包含的数据所对应的月份的名称。例如，将包含 1 月份数据的文件命名为 *January.csv*。
 6. 重复步骤 2 和步骤 5 为 2013 年中的 12 个月分别下载一个对应的文件。完成本教程到少要有一个文件。  
 
@@ -622,10 +622,10 @@ HiveQL 脚本将执行以下操作：
 
 	该脚本中使用了以下变量：
 
-	- **$hqlLocalFileName** - 该脚本会先将 HiveQL 脚本文件保存在本地，然后才上载到 Blob 存储。这是文件名。默认值是 <u>C:\\tutorials\\flightdelay\\flightdelays.hql</u>。
+	- **$hqlLocalFileName** - 该脚本会先将 HiveQL 脚本文件保存在本地，然后才上载到 Blob 存储。这是文件名。默认值是 <u>C:\\tutorials\\flightdelays\\flightdelays.hql</u>。
 	- **$hqlBlobName** - 这是 Azure Blob 存储中使用的 HiveQL 脚本文件 Blob 名称。默认值是 tutorials/flightdelay/flightdelays.hql。因为文件会直接写入 Azure Blob 存储，所以 Blob 名称的开头不是“/”。如果你要从 Blob 存储访问文件，必须在文件名的开头添加“/”。
 	- **$srcDataFolder** 和 **$dstDataFolder** - = "tutorials/flightdelay/data" 
-	= "tutorials/flightdelay/output"
+	= "tutorials/flightdelays/output"
 
 
 ---
