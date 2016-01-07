@@ -240,13 +240,11 @@
 
 单击“部署到 Azure”。
 
-![arm-scenario](./media/application-gateway-create-gateway-arm-template/deploytoazure.png)
 
 ### 步骤 3
 
 在门户上填写部署模板的参数，然后单击“确定”
 
-![arm-scenario](./media/application-gateway-create-gateway-arm-template/ibiza1.png)
 
 ### 步骤 4
 
