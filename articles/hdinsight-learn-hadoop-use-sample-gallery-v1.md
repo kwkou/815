@@ -46,8 +46,8 @@
 - [HDInsight 信息图][hdinsight.infographic]
 
 <!--Image references-->
-[hdinsight.sample.gallery]: ./media/hdinsight-learn-hadoop-use-sample-gallery/HDInsight-Getting-Started-Gallery.png
-[hdinsight.twitter.sample]: ./media/hdinsight-learn-hadoop-use-sample-gallery/HDInsight-Twitter-Trend-Analysis-sample.png
+[hdinsight.sample.gallery]: ./media/hdinsight-learn-hadoop-use-sample-gallery-v1/HDInsight-Getting-Started-Gallery.png
+[hdinsight.twitter.sample]: ./media/hdinsight-learn-hadoop-use-sample-gallery-v1/HDInsight-Twitter-Trend-Analysis-sample.png
 
 <!--Link references-->
 [hdinsight.learn.map]: /documentation/articles/hdinsight-learn-map

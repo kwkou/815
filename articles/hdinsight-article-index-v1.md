@@ -10,7 +10,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="08/17/2015"
-   wacn.date="10/22/2015"/>
+   wacn.date="01/07/2016"/>
 
 # Azure 门户的 HDInsight 文章索引
 
@@ -73,7 +73,7 @@
 ## 操作
 
 * [在 Windows 上预配群集](/documentation/articles/hdinsight-provision-clusters-v1)
-* [在 Azure 虚拟网络上设置 HBase 群集](/documentation/articles/hdinsight-hbase-provision-vnet)
+* [在 Azure 虚拟网络上设置 HBase 群集](/documentation/articles/hdinsight-hbase-provision-vnet-v1)
 * [使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)
 * [HDInsight 中 Hadoop 群集的可用性和可靠性](/documentation/articles/hdinsight-high-availability)
 

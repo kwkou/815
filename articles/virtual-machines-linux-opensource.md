@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/02/2015"
-	wacn.date="12/31/2015"/>
+	wacn.date="01/07/2016"/>
 
 
 
@@ -176,7 +176,7 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 ### 大型数据
 2. Hadoop/Cloudera  
 	- [博客：在 Azure Linux VM 上安装 Hadoop](http://blogs.msdn.com/b/benjguin/archive/2013/04/05/how-to-install-hadoop-on-windows-azure-linux-virtual-machines.aspx)
-	- [如何：通过 HDInsight 使用 Hadoop 和 Hive 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)  
+	- [如何：通过 HDInsight 使用 Hadoop 和 Hive 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/)  
 3. [Azure HDInsight](/documentation/services/hdinsight/) -- Azure 上的一项完全托管的 Hadoop 服务。
 
 ### 关系数据库

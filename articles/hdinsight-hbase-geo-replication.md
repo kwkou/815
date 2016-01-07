@@ -10,7 +10,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="07/08/2015"
-   wacn.date="12/15/2015"/>
+   wacn.date="01/07/2016"/>
 
 # 在 HDInsight 中配置 HBase 地域复制
 
@@ -283,7 +283,7 @@ Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如
 - [HDInsight 文档](/documentation/services/hdinsight/)
 - [开始在 HDInsight 中使用 Apache HBase][hdinsight-hbase-get-started]
 - [HDInsight HBase 概述][hdinsight-hbase-overview]
-- [在 Azure 虚拟网络上设置 HBase 群集][hdinsight-hbase-provision-vnet]
+- [在 Azure 虚拟网络上设置 HBase 群集][hdinsight-hbase-provision-vnet-v1]
 - [使用 HDInsight (Hadoop) 中的 Storm 和 HBase 分析传感器数据][hdinsight-sensor-data]
 
 [hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
@@ -293,7 +293,7 @@ Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication/HDInsight.HBase.Replication.Network.diagram.png
 
 
-[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
 [hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-hbase-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
@@ -301,7 +301,7 @@ Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如
 <!-- [hdinsight-hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment -->
 [hdinsight-sensor-data]: /documentation/articles/hdinsight-storm-sensor-data-analysis
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
-[hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
-[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started
+[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
 
 <!---HONumber=71-->

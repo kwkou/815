@@ -12,7 +12,7 @@
 <tags 
 	ms.service="hdinsight" 
 	ms.date="09/17/2015"
-	wacn.date="12/15/2015"/>
+	wacn.date="01/07/2016"/>
 
 
 
@@ -58,11 +58,11 @@ HDInsight 实施利用 HBase 的横向扩展架构来提供表自动分片、使
 
 
 
-[hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
+[hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
 [hbase-build-java-maven]: /documentation/articles/hdinsight-hbase-build-java-maven
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started/
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1/
 
 [azure-purchase-options]: /pricing/overview/
 

@@ -590,7 +590,7 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie

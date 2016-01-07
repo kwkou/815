@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="11/06/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/07/2016"/>
 
 # 将 Pig 与 HDInsight 上的 Hadoop 配合使用
 
@@ -87,7 +87,7 @@ HDInsight 可以使用各种方法来运行 Pig Latin 作业。使用下表来�
 | **使用此方法**，如果你想要... | ...**交互式** shell | ...**批处理** | ...使用此**群集操作系统** | ...从此**客户端操作系统** |
 |:--------------------------------------------------------------|:---------------------------:|:-----------------------:|:------------------------------------------|:-----------------------------------------|
 | [Curl](/documentation/articles/hdinsight-hadoop-use-pig-curl) | &nbsp; | ✔ | Windows | Windows |
-| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk) | &nbsp; | ✔ | Windows | Windows（暂时） |
+| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1) | &nbsp; | ✔ | Windows | Windows（暂时） |
 | [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-pig-powershell) | &nbsp; | ✔ | Windows | Windows |
 | [远程桌面](/documentation/articles/hdinsight-hadoop-use-pig-remote-desktop) | ✔ | ✔ | Windows | Windows |
 
@@ -123,7 +123,7 @@ HDInsight 可以使用各种方法来运行 Pig Latin 作业。使用下表来�
 
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive

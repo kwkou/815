@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="09/25/2015"
-	wacn.date="12/15/2015"/>
+	wacn.date="01/07/2016"/>
 
 
 #使用 Power Query 将 Excel 连接到 Hadoop
@@ -74,7 +74,7 @@ Microsoft 大数据解决方案的一个关键功能是，将 Microsoft 商业�
 * [将数据上载到 HDInsight][hdinsight-upload-data]
 
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [image-hdi-powerquery-hdi-source]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.SelectHdiSource.png
 [image-hdi-powerquery-importdata]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.ImportData.png

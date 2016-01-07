@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="11/03/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/07/2016"/>
 
 # 使用 Azure CLI 管理 HDInsight 中的 Hadoop 群集
 
@@ -171,7 +171,7 @@ Azure CLI 是开放源代码。在 GitHub 中管理源代码（网址为 <a href
 
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
 [image-cli-account-download-import]: ./media/hdinsight-administer-use-command-line/HDI.CLIAccountDownloadImport.png
 [image-cli-clustercreation]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreation.png

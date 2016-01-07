@@ -10,7 +10,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="07/28/2015"
-   wacn.date="10/03/2015"/>
+   wacn.date="01/07/2016"/>
 
 
 # 在 Hdinsight 中优化 Hadoop 的 Hive 查询
@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [门户](../includes/hdinsight-azure-portal.md)]
 
-* [在 Hdinsight 中优化 Hadoop 的 Hive 查询](/documentation/articles/hdinsight-hadoop-optimize-hive-query)。
+* [在 Hdinsight 中优化 Hadoop 的 Hive 查询](/documentation/articles/hdinsight-hadoop-optimize-hive-query-v1)。
 
 ##向外缩放辅助节点
 
