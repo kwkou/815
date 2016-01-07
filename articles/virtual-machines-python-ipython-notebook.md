@@ -99,7 +99,7 @@
 ### 配置 Jupyter 和使用 SSL
 在安装后，我们需要花一些时间来为 Jupyter 设置配置文件。如果你在配置 Jupyter 时遇到问题，查看[针对运行 Notebook 服务器的 Jupyter 文档](http://jupyter-notebook.readthedocs.org/en/latest/public_server.html)可能会有帮助。
 
-然后，通过 `cd` 进入配置文件目录来创建 SSL 证书并编辑配置文件。
+然后，通过 **cd** 命令进入配置文件目录来创建 SSL 证书并编辑配置文件。
 
 在 Linux 上使用以下命令。
 

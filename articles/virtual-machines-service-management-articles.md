@@ -86,8 +86,6 @@
 
 [Cassandra](/documentation/articles/virtual-machines-linux-nodejs-running-cassandra)
 
-<!--[-->Docker<!--](/documentation/articles/virtual-machines-docker-with-xplat-cli-install)-->
-
 [Exchange Server](https://technet.microsoft.com/zh-cn/library/jj619301.aspx)
 
 [HPC Pack](/documentation/articles/virtual-machines-hpcpack-cluster-options)
@@ -107,8 +105,6 @@
 [Oracle](/documentation/articles/virtual-machines-oracle-azure-virtual-machines)
 
 [SAP](https://msdn.microsoft.com/zh-cn/library/azure/dn745892.aspx)
-
-[SharePoint Server](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)
 
 [SQL Server](/documentation/articles/virtual-machines-sql-server-infrastructure-services)
 

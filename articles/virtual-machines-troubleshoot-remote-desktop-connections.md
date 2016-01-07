@@ -22,7 +22,7 @@
 
 本文仅适用于运行 Windows 的 Azure 虚拟机。有关对*运行 Linux 的 Azure 虚拟机*的连接进行故障排除，请参阅[此文](/documentation/articles/virtual-machines-troubleshoot-ssh-connections)。
 
-如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和CSDN](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](http://azure.microsoft.com/support/options/)并单击“获取支持”。
+如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和CSDN](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。
 
 第一部分“基本步骤”列出了解决常见连接问题的步骤，第二部分按特定错误消息提供了解决方法步骤，最后一部分可帮助对每个网络组件执行详细的故障排除。
 

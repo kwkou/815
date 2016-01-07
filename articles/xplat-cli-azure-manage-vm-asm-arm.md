@@ -32,34 +32,139 @@
 
 > [AZURE.NOTE]这些示例不包括资源管理器中基于模板的操作。有关信息，请参阅[将 Azure 命令行接口用于资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)。
 
-任务 | 服务管理 | 资源管理器
--------------- | ----------- | -------------------------
-创建最基本的 VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>`<br/><br/>（从 `azure vm image list` 命令获取 `image-urn`。）
-创建 Linux VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure  vm create [options] <resource-group> <name> <location> -y "Linux"`
-创建 Windows VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure  vm create [options] <resource-group> <name> <location> -y "Windows"`
-列出 VM | `azure  vm list [options]` | `azure  vm list [options] <resource_group>`
-获取有关 VM 的信息 | `azure  vm show [options] <vm_name>` | `azure  vm show [options] <resource_group> <name>`
-启动 VM | `azure vm start [options] <name>` | `azure vm start [options] <resource_group> <name>`
-停止 VM | `azure vm shutdown [options] <name>` | `azure vm stop [options] <resource_group> <name>`
-释放 VM | 不可用 | `azure vm deallocate [options] <resource-group> <name>`
-重新启动 VM | `azure vm restart [options] <vname>` | `azure vm restart [options] <resource_group> <name>`
-删除 VM | `azure vm delete [options] <name>` | `azure vm delete [options] <resource_group> <name>`
-捕获 VM | `azure vm capture [options] <name>` | `azure vm capture [options] <resource_group> <name>`
-从用户映像创建 VM | `azure  vm create [options] <dns-name> <image> [userName] [password]` | `azure  vm create [options] –q <image-name> <resource-group> <name> <location> <os-type>`
-从专用磁盘创建 VM | `azure  vm create [options]-d <custom-data-file> <dns-name> [userName] [password]` | `azue  vm create [options] –d <os-disk-vhd> <resource-group> <name> <location> <os-type>`
-将数据磁盘添加到 VM | `azure  vm disk attach [options] <vm-name> <disk-image-name>` -或- <br/> `vm disk attach-new [options] <vm-name> <size-in-gb> [blob-url]` | `azure  vm disk attach-new [options] <resource-group> <vm-name> <size-in-gb> [vhd-name]`
-从 VM 中删除数据磁盘 | `azure  vm disk detach [options] <vm-name> <lun>` | `azure  vm disk detach [options] <resource-group> <vm-name> <lun>`
-将泛型扩展添加到 VM | `azure  vm extension set [options] <vm-name> <extension-name> <publisher-name> <version>` | `azure  vm extension set [options] <resource-group> <vm-name> <name> <publisher-name> <version>`
-将 VM 访问扩展添加到 VM | 不可用 | `azure vm reset-access [options] <resource-group> <name>`
-将 Docker 扩展添加到 VM | `azure  vm docker create [options] <dns-name> <image> <user-name> [password]` | `azure  vm docker create [options] <resource-group> <name> <location> <os-type>`
-将 Chef 扩展添加到 VM | `azure  vm extension get-chef [options] <vm-name>` | 不可用
-禁用 VM 扩展 | `azure  vm extension set [options] –b <vm-name> <extension-name> <publisher-name> <version>` | 不可用
-删除 VM 扩展 | `azure  vm extension set [options] –u <vm-name> <extension-name> <publisher-name> <version>` | `azure  vm extension set [options] –u <resource-group> <vm-name> <name> <publisher-name> <version>`
-列出 VM 扩展 | `azure vm extension list [options]` | `azure  vm extension get [options] <resource-group> <vm-name>`
-列出 VM 映像 | `azure vm image list [options]` | `azure vm image list [options] <location> <publisher> [offer] [sku]` -或- <br/> `azure vm image list-publishers [options] <location>` -或- <br/> `azure vm image list-offers [options] <location>` -或- <br/> `azure vm image list-skus [options] <location>`
-显示 VM 映像 | `azure vm image show [options]` | 不可用
-获取 VM 资源的使用情况 | 不可用 | `azure vm list-usage [options] <location>`
-获取所有可用 VM 大小 | 不可用 | `azure vm sizes [options]`
+<table><thead>
+<tr>
+	<td>任务</td>
+	<td>服务管理</td>
+	<td>资源管理器</td>
+</tr>
+</thead><tbody>
+<tr>
+	<td>创建最基本的 VM</td>
+	<td><code>azure vm create [options] &lt;dns-name&gt; &lt;image&gt; [userName] [password]</code></td>
+	<td><code>azure vm quick-create [options] &lt;resource-group&gt; &lt;name&gt; &lt;location&gt; &lt;os-type&gt; &lt;image-urn&gt; &lt;admin-username&gt; &lt;admin-password&gt;</code><br><br>(Obtain the <code>image-urn</code> from the <code>azure vm image list</code> command. See <a href="../resource-groups-vm-searching/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="this article" ms.title="" km.title="" ms.interactiontype="1">this article</a> for examples.)</td>
+</tr>
+<tr>
+	<td>创建 Linux VM</td>
+	<td><code>azure vm create [options] &lt;dns-name&gt; &lt;image&gt; [userName] [password]</code></td>
+	<td><code>azure  vm create [options] &lt;resource-group&gt; &lt;name&gt; &lt;location&gt; -y "Linux"</code></td>
+</tr>
+<tr>
+	<td>创建 Windows VM</td>
+	<td><code>azure vm create [options] &lt;dns-name&gt; &lt;image&gt; [userName] [password]</code></td>
+	<td><code>azure  vm create [options] &lt;resource-group&gt; &lt;name&gt; &lt;location&gt; -y "Windows"</code></td>
+</tr>
+<tr>
+	<td>列出 VM</td>
+	<td><code>azure  vm list [options]</code></td>
+	<td><code>azure  vm list [options]</code></td>
+</tr>
+<tr>
+	<td>获取有关 VM 的信息</td>
+	<td><code>azure  vm show [options] &lt;vm_name&gt;</code></td>
+	<td><code>azure  vm show [options] &lt;resource_group&gt; &lt;name&gt;</code></td>
+</tr>
+<tr>
+	<td>启动 VM</td>
+	<td><code>azure vm start [options] &lt;name&gt;</code></td>
+	<td><code>azure vm start [options] &lt;resource_group&gt; &lt;name&gt;</code></td>
+</tr>
+<tr>
+	<td>停止 VM</td>
+	<td><code>azure vm shutdown [options] &lt;name&gt;</code></td>
+	<td><code>azure vm stop [options] &lt;resource_group&gt; &lt;name&gt;</code></td>
+</tr>
+<tr>
+	<td>释放 VM</td>
+	<td>Not available</td>
+	<td><code>azure vm deallocate [options] &lt;resource-group&gt; &lt;name&gt;</code></td>
+</tr>
+<tr>
+	<td>重新启动 VM</td>
+	<td><code>azure vm restart [options] &lt;vname&gt;</code></td>
+	<td><code>azure vm restart [options] &lt;resource_group&gt; &lt;name&gt;</code></td>
+</tr>
+<tr>
+	<td>删除 VM</td>
+	<td><code>azure vm delete [options] &lt;name&gt;</code></td>
+	<td><code>azure vm delete [options] &lt;resource_group&gt; &lt;name&gt;</code></td>
+</tr>
+<tr>
+	<td>捕获 VM</td>
+	<td><code>azure vm capture [options] &lt;name&gt;</code></td>
+	<td><code>azure vm capture [options] &lt;resource_group&gt; &lt;name&gt;</code></td>
+</tr>
+<tr>
+	<td>从用户映像创建 VM</td>
+	<td><code>azure  vm create [options] &lt;dns-name&gt; &lt;image&gt; [userName] [password]</code></td>
+	<td><code>azure  vm create [options] ¨Cq &lt;image-name&gt; &lt;resource-group&gt; &lt;name&gt; &lt;location&gt; &lt;os-type&gt;</code></td>
+</tr>
+<tr>
+	<td>从专用磁盘创建 VM</td>
+	<td><code>azure  vm create [options]-d &lt;custom-data-file&gt; &lt;dns-name&gt; [userName] [password]</code></td>
+	<td><code>azue  vm create [options] ¨Cd &lt;os-disk-vhd&gt; &lt;resource-group&gt; &lt;name&gt; &lt;location&gt; &lt;os-type&gt;</code></td>
+</tr>
+<tr>
+	<td>将数据磁盘添加到 VM</td>
+	<td><code>azure  vm disk attach [options] &lt;vm-name&gt; &lt;disk-image-name&gt;</code> -OR- <br>  <code>vm disk attach-new [options] &lt;vm-name&gt; &lt;size-in-gb&gt; [blob-url]</code></td>
+	<td><code>azure  vm disk attach-new [options] &lt;resource-group&gt; &lt;vm-name&gt; &lt;size-in-gb&gt; [vhd-name]</code></td>
+</tr>
+<tr>
+	<td>从 VM 中删除数据磁盘</td>
+	<td><code>azure  vm disk detach [options] &lt;vm-name&gt; &lt;lun&gt;</code></td>
+	<td><code>azure  vm disk detach [options] &lt;resource-group&gt; &lt;vm-name&gt; &lt;lun&gt;</code></td>
+</tr>
+<tr>
+	<td>将泛型扩展添加到 VM</td>
+	<td><code>azure  vm extension set [options] &lt;vm-name&gt; &lt;extension-name&gt; &lt;publisher-name&gt; &lt;version&gt;</code></td>
+	<td><code>azure  vm extension set [options] &lt;resource-group&gt; &lt;vm-name&gt; &lt;name&gt; &lt;publisher-name&gt; &lt;version&gt;</code></td>
+</tr>
+<tr>
+	<td>将 VM 访问扩展添加到 VM</td>
+	<td>Not available</td>
+	<td><code>azure vm reset-access [options] &lt;resource-group&gt; &lt;name&gt;</code></td>
+</tr>
+<tr>
+	<td>将 Docker 扩展添加到 VM</td>
+	<td><code>azure  vm docker create [options] &lt;dns-name&gt; &lt;image&gt; &lt;user-name&gt; [password]</code></td>
+	<td><code>azure  vm docker create [options] &lt;resource-group&gt; &lt;name&gt; &lt;location&gt; &lt;os-type&gt;</code></td>
+</tr>
+<tr>
+	<td>将 Chef 扩展添加到 VM</td>
+	<td><code>azure  vm extension get-chef [options] &lt;vm-name&gt;</code></td>
+	<td>Not available</td>
+</tr>
+<tr>
+	<td>禁用 VM 扩展</td>
+	<td><code>azure  vm extension set [options] ¨Cb &lt;vm-name&gt; &lt;extension-name&gt; &lt;publisher-name&gt; &lt;version&gt;</code></td>
+	<td>Not available</td>
+</tr>
+<tr>
+	<td>删除 VM 扩展</td>
+	<td><code>azure  vm extension set [options] ¨Cu &lt;vm-name&gt; &lt;extension-name&gt; &lt;publisher-name&gt; &lt;version&gt;</code></td>
+	<td><code>azure  vm extension set [options] ¨Cu &lt;resource-group&gt; &lt;vm-name&gt; &lt;name&gt; &lt;publisher-name&gt; &lt;version&gt;</code></td>
+</tr>
+<tr>
+	<td>列出 VM 扩展</td>
+	<td><code>azure vm extension list [options]</code></td>
+	<td>Not available</td>
+</tr>
+<tr>
+	<td>列出 VM 映像</td>
+	<td><code>azure vm image show [options]</code></td>
+	<td>Not available</td>
+</tr>
+<tr>
+	<td>显示 VM 映像</td>
+	<td>Not available</td>
+	<td><code>azure vm list-usage [options] &lt;location&gt;</code></td>
+</tr>
+<tr>
+	<td>获取 VM 资源的使用情况</td>
+	<td>Not available</td>
+	<td><code>azure vm sizes [options]</code></td>
+</tr>
+</tbody></table>
 
 
 ## 后续步骤

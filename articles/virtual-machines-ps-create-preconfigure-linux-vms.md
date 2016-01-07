@@ -265,7 +265,7 @@
 
 [虚拟机文档](/documentation/services/virtual-machines/)
 
-[Azure 虚拟机常见问题](http://msdn.microsoft.com/zh-cn/library/azure/dn683781.aspx)
+[Azure 虚拟机常见问题](/documentation/articles/virtual-machines-questions)
 
 [Azure 虚拟机概述](/documentation/articles/virtual-machines-about/)
 
