@@ -1,16 +1,15 @@
 
-本节演示了如何从 .NET 控制台应用以及其他任何应用发送通知。
-如果您使用的是移动服务，请参见[推送入门](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push)教程。如果您使用的是 Java 或 PHP，请参见[如何从 Java/PHP 使用通知中心](/zh-cn/documentation/articles/notification-hubs-java-backend-how-to)。您可使用[通知中心 REST 接口]通过任何后端发送通知。
+本节演示了如何从 .NET 控制台应用以及其他任何应用发送通知。如果你使用的是移动服务，请参阅[推送入门](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/)教程。如果你使用的是 Java 或 PHP，请参阅[如何从 Java/PHP 使用通知中心](/zh-cn/documentation/articles/notification-hubs-java-backend-how-to/)。你可使用[通知中心 REST 接口]通过任何后端发送通知。
 
-以下代码可将通知发送到 Windows 应用商店、Windows Phone、iOS 和 Android 设备。 
+以下代码可将通知发送到 Windows 应用商店、Windows Phone、iOS 和 Android 设备。
 
-如果您在完成[通知中心入门][入门]时创建了控制台应用，则跳过步骤 1-3。
+如果你在完成[通知中心入门][get-started]时创建了控制台应用程序，则跳过步骤 1-3。
 
 1. 在 Visual Studio 中创建新的 Visual C# 控制台应用程序： 
 
    	![][13]
 
-2. 在 Visual Studio 主菜单中，依次单击"工具"、"库程序包管理器"和"程序包管理器控制台"，然后在控制台窗口中键入以下命令并按 **Enter**：
+2. 在 Visual Studio 主菜单中，依次单击“工具”、“库程序包管理器”和“程序包管理器控制台”，然后在控制台窗口中键入以下命令并按 **Enter**：
 
         Install-Package WindowsAzure.ServiceBus
  	
@@ -94,6 +93,7 @@
 [16]: ./media/notification-hubs-back-end/notification-hub-scheduler2.png
 
 <!-- URLs. -->
-[入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
+[get-started]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
 [通知中心 REST 接口]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn223264.aspx
-<!--HONumber=41-->
+
+<!---HONumber=82-->

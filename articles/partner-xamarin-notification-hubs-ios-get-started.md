@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通知中心入门（Xamarin iOS 应用）| Microsoft Azure"
+	pageTitle="通知中心入门（Xamarin iOS 应用）| Windows Azure"
 	description="在本教程中，你将了解如何使用 Azure 通知中心将推送通知发送到 Xamarin iOS 应用程序。"
 	services="notification-hubs"
 	documentationCenter="xamarin"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="07/28/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="10/19/2015"
+	wacn.date="12/31/2015"/>
 
 # 通知中心入门
 
@@ -24,17 +24,17 @@
 
 ##先决条件
 
-本教程需要满足以下前提条件：
+本教程需要的内容如下：
 
-+ [XCode 6.0][Install Xcode]
++ [Xcode 6.0][Install Xcode]
 + 支持 iOS 7.0（或更高版本）的设备
 + iOS 开发人员计划成员身份
 + [Xamarin.iOS]
 + [Azure 移动服务组件]
 
-   >[AZURE.NOTE]由于推送通知配置要求，你必须在支持 iOS 的设备（iPhone 或 iPad），而不是在模拟器上部署和测试推送通知。
+   >[AZURE.NOTE]由于推送通知配置要求，你必须在支持 iOS 的设备（iPhone 或 iPad）而不是在模拟器上部署和测试推送通知。
 
-只有在完成本教程后，才能完成有关 Xamarin.iOS 应用程序通知中心的其他所有教程。
+只有在完成本教程后，才能完成有关 Xamarin.iOS 应用的所有其他通知中心教程。
 
 > [AZURE.IMPORTANT]若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/1rmb-trial/)。
 
@@ -58,8 +58,8 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
 4. 在“Save As”（另存为）中为证书签名请求 (CSR) 文件键入一个名称，在“Where”（位置）中选择一个位置，然后单击“Save”（保存）。
 
   	![][7]
-  
-  	此操作会将 CSR 文件保存到选定位置；默认位置是桌面。请记住为此文件选择的位置。
+
+  	此操作会将 CSR 文件保存到选定位置。默认位置是桌面。请记住你为此文件选择的位置。
 
 接下来，你将向 Apple 注册你的应用程序、启用推送通知并上载此导出的 CSR 以创建一个推送证书。
 
@@ -67,7 +67,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
 
 若要将推送通知从移动服务发送到 iOS 应用程序，你必须向 Apple 注册应用程序，还要注册推送通知。
 
-1. 如果你尚未注册应用程序，请导航到 Apple 开发人员中心的 <a href="http://go.microsoft.com/fwlink/p/?LinkId=272456" target="_blank">iOS 设置门户</a>，使用 Apple ID 登录，单击“Identifiers”（标识符），然后单击“App IDs”（应用程序 ID），最后单击“+”符号以注册新的应用程序。
+1. 如果你尚未注册应用，请导航到 Apple 开发人员中心的 <a href="http://go.microsoft.com/fwlink/p/?LinkId=272456" target="_blank">iOS 预配门户</a>，使用 Apple ID 登录，单击“Identifiers”（标识符），然后单击“App IDs”（应用 ID），最后单击“+”符号以注册新应用。
 
    	![][105]
 
@@ -88,7 +88,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
    
    	![][110]
 
-	> [AZURE.NOTE]如果你选择提供“Bundle Identifier”（捆绑标识符）值，而不是 MobileServices.Quickstart，则还必须更新 Xcode 项目中的捆绑标识符值。
+	> [AZURE.NOTE]如果你选择提供“Bundle Identifier”（捆绑标识符）值，而不是 **MobileServices.Quickstart**，则还必须更新 Xcode 项目中的捆绑标识符值。
 
 3. 找到你刚刚创建的应用程序 ID，然后单击其行。
 
@@ -100,7 +100,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
    
    	![][113]
 
-4. 单击“Edit”（编辑），然后滚动到屏幕底部并单击“Development Push SSL Certificate”（开发推送 SSL 证书）部分下的“Create Certificate...”（创建证书...）。
+4. 单击“Edit”（编辑），然后滚动到屏幕底部并单击“Development Push SSL Certificate”（开发推送 SSL 证书）部分下的“Create Certificate”（创建证书）。
 
    	![][114]
 
@@ -132,7 +132,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
 
    	![][10]
 
-	> [WACN.NOTE] 证书中的名称可能不同，但将以 <strong>Apple Development iOS Push Notification Services:</strong> 作为前缀。
+	> [AZURE.NOTE]证书中的名称可能不同，但将以 <strong>Apple Development iOS Push Notification Services:</strong> 作为前缀。
 
 	接下来，你将使用此证书生成一个 .p12 文件，并将其上载到通知中心以通过 APNS 启用推送通知。
 
@@ -154,7 +154,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
   
    	![][123]
 
-5. 接下来，选择要用于测试的“Devices”（设备），然后单击“Continue”（继续）。
+5. 选择要用于测试的设备，然后单击“Continue”（继续）。
 
    	![][124]
 
@@ -225,7 +225,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
 
    	![][31]
 
-2. 首先，请添加对 Azure 消息传送组件的引用。在“解决方案”视图中，右键单击你项目的“Components”文件夹，然后选择“获取更多组件”。搜索“Azure 消息传送”组件，并向你的项目添加该组件。
+2. 添加对 Azure 消息传送组件的引用。在“解决方案”视图中，右键单击你项目的“Components”文件夹，然后选择“获取更多组件”。搜索“Azure 消息传送”组件，并向你的项目添加该组件。
 
 3. 在 **AppDelegate.cs** 中，添加以下 using 语句：
 
@@ -317,14 +317,14 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
             }
         }
 
-    > [AZURE.NOTE]你可以选择覆盖 **FailedToRegisterForRemoteNotifications()** 来处理不包括网络连接等的情况。
+    > [AZURE.NOTE]你可以选择覆盖 **FailedToRegisterForRemoteNotifications()** 以处理无网络连接等情况。
 
 
 10. 在你的设备上运行应用程序。
 
 ##<a name="send"></a>从后端发送通知
 
-你可以使用通知中心通过 <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx">REST 接口</a>从任意后端发送通知。在本教程中，我们将使用 .NET 控制台应用程序和移动服务来发送通知，通过节点脚本来执行这些操作。
+你可以使用通知中心通过 <a href="http://msdn.microsoft.com/library/windowsazure/dn223264.aspx">REST 接口</a>从任意后端发送通知。在本教程中，我们将使用 .NET 控制台应用和移动服务通过节点脚本来发送通知。
 
 使用 .NET 应用程序发送通知：
 
@@ -345,18 +345,18 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
         private static async void SendNotificationAsync()
         {
             NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("<connection string with full access>", "<hub name>");
-            var alert = "{"aps":{"alert":"Hello from .NET!"}}";
+            var alert = "{\"aps\":{\"alert\":\"Hello from .NET!\"}}";
             await hub.SendAppleNativeNotificationAsync(alert);
         }
 
-4. 然后在 `Main` 方法中添加以下行：
+4. 在 `Main` 方法中添加以下行：
 
          SendNotificationAsync();
 		 Console.ReadLine();
 
-5. 按 F5 键以运行应用。你应在设备上收到警报。如果正在使用 Wi-fi，请确保你的连接有效。
+5. 按 F5 键以运行应用。你应在设备上收到警报。如果正在使用 Wi-Fi，请确保你的连接有效。
 
-可以在 Apple [本地和推送通知编程指南]中查看所有可能的负载。
+可以在 Apple [本地和推送通知编程指南]中找到所有可能的负载。
 
 若要使用移动服务发送通知，请按[移动服务入门]中的说明操作，然后：
 
@@ -372,7 +372,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
 
 4. 创建作业时，单击该作业名称。然后单击顶部栏上的“脚本”选项卡。
 
-5. 在你的计划程序函数中插入以下脚本。确保将占位符替换为你的通知中心名称和你以前获取的 *DefaultFullSharedAccessSignature* 的连接字符串。单击“保存”。
+5. 在你的计划程序函数中插入以下脚本。确保将占位符替换为你先前获取的通知中心名称和 *DefaultFullSharedAccessSignature* 的连接字符串。单击“保存”。
 
 		var azure = require('azure');
 		var notificationHubService = azure.createNotificationHubService('<Hubname>', '<SAS Full access >');
@@ -396,7 +396,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
 
 ## <a name="next-steps"></a>后续步骤
 
-在这个简单的示例中，你已将通知广播到所有 iOS 设备。若要向特定的用户推送消息，请参考教程[使用通知中心将通知推送到用户]，如果要按兴趣组来划分用户，请阅读[使用通知中心发送突发新闻]。请在[通知中心指南]和[适用于 iOS 的通知中心操作方法指南]中了解有关如何使用通知中心的详细信息。
+在这个简单的示例中，你已将通知广播到所有 iOS 设备。若要针对特定客户，请参考教程[使用通知中心向用户推送通知]。如果要按兴趣组划分用户，可以阅读[使用通知中心发送突发新闻]。请在[通知中心指南]和[适用于 iOS 的通知中心操作方法指南]中了解有关如何使用通知中心的详细信息。
 
 <!-- Anchors. -->
 [Generate the certificate signing request]: #certificates

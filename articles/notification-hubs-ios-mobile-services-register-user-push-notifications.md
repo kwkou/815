@@ -15,6 +15,7 @@
 # 通过使用移动服务注册推送通知的当前用户
 
 > [AZURE.SELECTOR]
+[Windows Store C#](/documentation/articles/notification-hubs-windows-store-mobile-services-register-user-push-notifications)
 [iOS](/documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications)
 
 本主题说明在 Azure 移动服务执行注册时如何请求向 Azure 通知中心注册推送通知。它是对教程[使用通知中心通知用户][使用通知中心通知用户]的扩展。你必须在该教程中已完成创建经过身份验证的移动服务所需的步骤。有关通知用户方案的详细信息，请参阅[使用通知中心通知用户][使用通知中心通知用户]。

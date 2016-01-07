@@ -12,7 +12,7 @@
 	ms.date="09/24/2015"
 	wacn.date="12/17/2015"/>
 
-# Azure 通知中心通知用户
+#Azure 通知中心 - 通知用户
 
 
 [AZURE.INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
@@ -424,4 +424,4 @@
 [A1]: ./media/notification-hubs-aspnet-backend-android-notify-users/android-notify-users.png
 [A2]: ./media/notification-hubs-aspnet-backend-android-notify-users/android-notify-users-enter-password.png
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_1207_2015-->
