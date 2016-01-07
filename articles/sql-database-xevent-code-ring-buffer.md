@@ -69,8 +69,6 @@
 - sys.dm\_xe\_session\_targets
 
 
-&nbsp;
-
 
 ```
 GO
@@ -232,10 +230,8 @@ GO
 输出显示在以下块中。结果看起来很长，但其实只是两个 **<event>** 元素。
 
 
-&nbsp;
 
 
-```
 <RingBufferTarget truncated="0" processingTime="0" totalEventsProcessed="2" eventCount="2" droppedCount="0" memoryUsed="1728">
   <event name="sql_statement_starting" package="sqlserver" timestamp="2015-09-22T15:29:31.317Z">
     <data name="state">
@@ -320,7 +316,7 @@ SELECT 'AFTER__Updates', EmployeeKudosCount, * FROM tabEmployee;
     </action>
   </event>
 </RingBufferTarget>
-```
+
 
 
 #### 释放环形缓冲区占用的资源
