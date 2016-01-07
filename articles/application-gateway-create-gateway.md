@@ -8,18 +8,27 @@
    editor="tysonn"/>
 <tags 
    ms.service="application-gateway" 
-   ms.date="07/29/2015"
-   wacn.date="09/15/2015"/>
+   ms.date="11/10/2015"
+   wacn.date="01/05/2016"/>
 
 # 创建、启动或删除应用程序网关
 
-在此版本中，你可以使用 PowerShell 或 REST API 调用创建应用程序网关。即将推出的版本将会提供门户和 CLI 支持。
+应用程序网关是第 7 层负载平衡器。它在不同服务器之间提供故障转移和性能路由 HTTP 请求，而不管它们是在云中还是本地。应用程序网关具有以下应用程序传递功能：HTTP 负载平衡、基于 Cookie 的会话相关性和 SSL 卸载。
+
+> [AZURE.SELECTOR]
+- [Azure Classic PowerShell](/documentation/articles/application-gateway-create-gateway)
+- [Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-create-gateway-arm)
+- [Azure 资源管理器模板](/documentation/articles/application-gateway-create-gateway-arm-template)
+
+
+<BR>
 
 本文将指导你完成创建、配置、启动和删除应用程序网关的步骤。
 
-> [AZURE.SELECTOR]
-- [Azure classic steps](/documentation/articles/application-gateway-create-gateway)
-- [Resource Manager Powershell steps](/documentation/articles/application-gateway-create-gateway-arm)
+
+>[AZURE.IMPORTANT]在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文档将说明使用 Azure 经典部署创建应用程序网关的方式。若要使用资源管理器版本，请转到[使用资源管理器创建应用程序网关部署](/documentation/articles/application-gateway-create-gateway-arm)。
+
+
 
 
 
@@ -340,7 +349,7 @@
 
 使用 `Get-AzureApplicationGateway` cmdlet 检查网关状态。如果前一步骤中的 *Start-AzureApplicationGateway* 成功，则 State 应为 *Running*，Vip 和 DnsName 应包含有效的条目。
 
-以下示例演示了一个正常运行并已准备好将流量定向到 `http://<generated-dns-name>.cloudapp.net` 的应用程序网关。
+以下示例演示了一个正常运行并已准备好将流量定向到 `http://<generated-dns-name>.chinacloudapp.cn` 的应用程序网关。
 
 	PS C:\> Get-AzureApplicationGateway AppGwTest
 
@@ -354,7 +363,7 @@
 	GatewaySize   : Medium
 	State         : Running
 	Vip           : 138.91.170.26
-	DnsName       : appgw-1b8402e8-3e0d-428d-b661-289c16c82101.cloudapp.net
+	DnsName       : appgw-1b8402e8-3e0d-428d-b661-289c16c82101.chinacloudapp.cn
 
 
 ## 删除应用程序网关
@@ -404,7 +413,7 @@
 
 如需负载平衡选项的其他常规信息，请参阅：
 
-<!--- [Azure Load Balancer](https://azure.microsoft.com/documentation/services/load-balancer/)-->
+<!--- [Azure Load Balancer](/documentation/services/load-balancer/)-->
 - [Azure 流量管理器](/documentation/services/traffic-manager)
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1221_2015-->
