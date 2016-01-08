@@ -17,7 +17,6 @@
 > [AZURE.SELECTOR]
 - [Windows Universal](/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-secure-push)
 - [iOS](/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push)
-- [Android](/documentation/articles/notification-hubs-aspnet-backend-android-secure-push)
 
 
 ## 概述

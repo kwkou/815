@@ -89,33 +89,9 @@ Azure 通知中心可提供用于向移动设备发送推送通知的易于使�
 
 **NotificationHubService** 对象将公开用于向特定设备和应用程序发送通知的以下对象实例：
 
--   **Android** - 使用可从 **notificationHubService.gcm** 中获取的 **GcmService** 对象
 -   **iOS** - 使用可在 **notificationHubService.apns** 中访问的 **ApnsService** 对象
 -   **Windows Phone** - 使用可从 **notificationHubService.mpns** 中获取的 **MpnsService** 对象
 -   **Windows 应用商店应用程序** - 使用可从 **notificationHubService.wns** 中获取的 **WnsService** 对象
-
-### 如何发送 Android 应用程序通知
-
-**GcmService** 对象提供可用于将通知发送到 Android 应用程序的 **send** 方法。该 **send** 方法接受以下参数：
-
--   Tags - 标记标识符。如果没有提供任何标记，通知将发送给所有客户端。
--   Payload - 消息的 JSON 或字符串负载
--   Callback - 回调函数
-
-有关负载格式的详细信息，请参阅[实施 GCM 服务器][实施 GCM 服务器]中的“负载”部分。
-
-以下代码使用 **NotificationHubService** 公开的 **GcmService** 实例将一条消息发送到所有客户端。
-
-    var payload = {
-      data: {
-        msg: 'Hello!'
-      }
-    };
-    notificationHubService.gcm.send(null, payload, function(error){
-      if(!error){
-        //notification sent
-      }
-    });
 
 ### 如何发送 iOS 应用程序通知
 
