@@ -237,15 +237,6 @@
 	}
 	hub.send_apple_notification(alert_payload)
 
-### Android
-	gcm_payload = {
-	    'data':
-	        {
-	            'msg': 'Hello!'
-	        }
-	}
-	hub.send_gcm_notification(gcm_payload)
-
 ### Kindle Fire
 	adm_payload = {
 	    'data':

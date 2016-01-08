@@ -40,7 +40,6 @@
 	+ **密码**：包含占位符文本“输入密码”的 UITextField，直接位于用户名文本字段的下面并受左边距和右边距约束。选中属性检查器中“返回密钥”下的“安全文本输入”选项。
 	+ **登录**：在密码文本字段的直接下方标记的 UIButton 并取消选中属性检查器中“控件内容”下的“已启用”选项
 	+ **WNS**：标签和开关，用于已在中心设置 Windows 通知服务时，启用将通知发送到 Windows 通知服务。请参阅 [Windows 入门](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)教程。
-	+ **GCM**：标签和开关，用于已在中心设置 Google Cloud Messaging 时，启用将通知发送到 Google Cloud Messaging。请参阅 [Android 入门](/documentation/articles/notification-hubs-android-get-started)教程。
 	+ **APNS**：标签和开关，用于启用将通知发送到 Apple 平台通知服务。
 	+ **收件人用户名**：包含占位符文本“收件人用户名标记”的 UITextField，直接位于 GCM 标签的下面并受左边距和右边距约束。
 	

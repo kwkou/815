@@ -129,7 +129,7 @@ Azure 通知中心提供易用的基础结构，使你能够从任何后端（�
 
 + **[通知中心教程和指南]**
 
-+ **通知中心入门教程**（[iOS]、[Android]、[Windows Universal]、[Windows Phone]、[Kindle]、[Xamarin.iOS]、[Xamarin.Android]）
++ **通知中心入门教程**（[iOS]、[Windows Universal]、[Windows Phone]、[Kindle]、[Xamarin.iOS]、[Xamarin.Android]）
 
 通知中心的相关 .NET 托管 API 参考位于此处：
 
@@ -142,7 +142,6 @@ Azure 通知中心提供易用的基础结构，使你能够从任何后端（�
   [客户如何使用通知中心]: /zh-cn/services/notification-hubs
   [通知中心教程和指南]: /zh-cn/documentation/services/notification-hubs
   [iOS]: /zh-cn/documentation/articles/notification-hubs-ios-get-started
-  [Android]: /zh-cn/documentation/articles/notification-hubs-android-get-started
   [Windows Universal]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started
   [Windows Phone]: /zh-cn/documentation/articles/notification-hubs-windows-phone-get-started
   [Kindle]: /zh-cn/documentation/articles/notification-hubs-kindle-get-started
