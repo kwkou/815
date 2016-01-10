@@ -1,10 +1,14 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Overview of Windows Azure CDN in China - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN, CDN加速, CDN服务, 主流CDN, 多场景加速, 免费CDN, CDN网站加速, 网站加速, 网页加速, 静态加速, 下载加速, VOD加速, 流媒体直播加速, 云服务,  存储账户,缓存刷新, 回源, 云加速, 加速效果, 节点, 流量, CNAME, 带宽, 网速, 防盗链,https加速, 低成本带宽, 访问加速, 小文件加速, 下载加速, 大文件加速, 流媒体加速, HTTPS安全加速, 缓存刷新, 内容预加载, 防盗链, 日志下载, CDN技术文档, CDN帮助文档, CDN FAQ" description="Learn the overview of WIndows Azure CDN, advantages, typical scenarios and key features." metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
-    wacn.date="12/28/2015"
+    wacn.date="1/11/2015"
     />
 
 # Windows Azure CDN （内容交付网络）概述
+
+> [AZURE.SELECTOR]
+- [中文版](/documentation/articles/cdn-overview)
+- [英文版](/documentation/articles/cdn-enus-overview)
 
 Windows Azure CDN （内容传送网络） 通过遍布在中国大陆的众多物理节点上缓存Azure平台上的Storage Blob，Cloud Service和WebSites的静态内容，以及为媒体服务提供流式内容分发提供加速，为开发人员提供一个传送高带宽内容的解决方案。目前本CDN服务也同时支持没有部署在Azure平台上的源站。
 
@@ -30,16 +34,16 @@ CDN 的全称是 Content Delivery Network，即内容传送网络。目前几乎
 
 ## 优势<a id="step2"></a>
 
-### 对多种Windows Azure服务内置支持
+### 对多种Azure服务内置支持
 
-默认对包括Storage Blob，Cloud Service， Websites，媒体服务等在内的多种Windows Azure服务的原生支持，为用户提供完整的一站式云服务支持。
+默认对包括Storage Blob，Cloud Service， Websites，媒体服务等在内的多种Azure服务的原生支持，为用户提供完整的一站式云服务支持。
 
 ![][1]
 
 
 ### 全自助化服务
 
-传统的CDN服务需要很多复杂冗长的配置流程。对于Windows Azure CDN用户来说，从创建CDN加速节点，到之后的对CDN加速节点整个生命周期的管理，以及各种统计报表的查询，原始访问日志下载，各种高级功能（如缓存规则配置，缓存内容强制刷新，内容预加载，防盗链等）的配置，均可以通过Windows Azure管理门户以及专门的CDN管理门户自助完成。
+传统的CDN服务需要很多复杂冗长的配置流程。对于Windows Azure CDN用户来说，从创建CDN加速节点，到之后的对CDN加速节点整个生命周期的管理，以及各种统计报表的查询，原始访问日志下载，各种高级功能（如缓存规则配置，缓存内容强制刷新，内容预加载，防盗链等）的配置，均可以通过Azure管理门户以及专门的CDN管理门户自助完成。
 
 ![][2]  
 
@@ -52,11 +56,11 @@ CDN 的全称是 Content Delivery Network，即内容传送网络。目前几乎
 
 ### 节省成本
 
-依托和多家主流CDN服务的合作优势，Windows Azure CDN可以给包括企业客户，网站支付用户在内的所有Azure用户，提供质优价廉的CDN服务。让更多的用户可以享受到CDN服务所带来的红利。
+依托和多家主流CDN服务的合作优势，Azure CDN可以给包括企业客户，网站支付用户在内的所有Azure用户，提供质优价廉的CDN服务。让更多的用户可以享受到CDN服务所带来的红利。
 
 ## 多场景加速
 
-Windows Azure CDN服务支持下面描述的多种加速场景，为用户打造出全方位多维度的加速服务。
+Azure CDN服务支持下面描述的多种加速场景，为用户打造出全方位多维度的加速服务。
 
 ![][8]
 
@@ -74,14 +78,14 @@ CDN另外一个典型的应用场景就是针对大文件下载进行多节点�
 
 ### HTTPS安全加速
 
-安全永远是用户最关心的话题，具体到CDN服务，Windows Azure CDN除了提供全面完善的HTTP访问类型的加速以外，还为对HTTPS访问协议有需要的用户提供专门的HTTPS类型加速服务。该加速服务从使用场景来说属于小文件加速服务，并能同时提供一定的动态路由访问优化服务。
+安全永远是用户最关心的话题，具体到CDN服务，Azure CDN除了提供全面完善的HTTP访问类型的加速以外，还为对HTTPS访问协议有需要的用户提供专门的HTTPS类型加速服务。该加速服务从使用场景来说属于小文件加速服务，并能同时提供一定的动态路由访问优化服务。
 
 
 ## 功能<a id="step3"></a>
 
 ### 全自助化创建管理CDN加速节点
 
-包括CDN加速节点的创建，删除，启用，禁用以及源站修改等功能在内，Windows Azure CDN对CDN加速节点的整个生命周期，提供全面自助化的管理配置服务。
+包括CDN加速节点的创建，删除，启用，禁用以及源站修改等功能在内，Azure CDN对CDN加速节点的整个生命周期，提供全面自助化的管理配置服务。
 
 ![][5]
 
