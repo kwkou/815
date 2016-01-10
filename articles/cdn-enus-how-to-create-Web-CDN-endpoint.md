@@ -30,40 +30,35 @@ The Azure CDN sets default cache rules (see below) for web acceleration. You can
 
 1. In the navigation pane of the Microsoft Azure Management Portal, click “CDN.”
 2. In the function area, click “New.” In the “New” dialogue box, select “App Services,” “CDN,” and “Quick Create” in that order.
-
-    ![001](./media/cdn-doc/001.png)
-
 3. Select “Web Acceleration” from the “Acceleration Type” drop-down list.
 4. In the “Origin Domain Type” drop-down list, select cloud service, storage account, web app, or a customized origin domain. **Note** that Web Acceleration does not support the “media service” origin domain type.
 5. In the “Origin Domain” drop-down list, select one option from the list of available cloud services, storage accounts, or web apps for use in creating the CDN endpoint.
 
-    ![002](./media/cdn-doc/002.png)
+    ![002](./media/cdn-doc/web-en-001.png)
     
     If the selected “Origin Domain Type” is “Customized Origin Domain,” input your own origin domain address under “Origin Domain.” You can enter one or multiple origin domain IP addresses (separate multiple addresses with semicolons, e.g. “126.1.1.1;172.1.1.1”), or an origin domain name such as “origin.chinaazuretest.com”.
 
-    ![014](./media/cdn-doc/014.png)
+    ![014](./media/cdn-doc/web-en-002.png)
 
 6. In “Custom Domain”, enter the custom domain name you wish to use, e.g. cdn.chinaazuretest1.com. Custom domains support extensive domain name acceleration. **Note** that the custom domain name cannot be the same as the origin domain name.
 7. In “Origin Host Header,” enter the return to source access host header accepted by your source station. Once you have entered the “Custom Domain,” the system will automatically fill in a default value based on the “Origin Domain Type” you selected. To be more specific, if your source station is on Azure, the default value will be the corresponding source station address. If your source station is not on Azure, the default value will be the “Custom Domain” that you entered. Of course, you can also modify this based on the actual configuration of your source station.
     
     If the origin domain type is cloud services, the corresponding return to source host header is:
 
-    ![023](./media/cdn-doc/023.png)
+    ![023](./media/cdn-doc/web-en-003.png)
     
     If the origin domain type is a custom origin domain, the corresponding return to source host header is:
 
-    ![024](./media/cdn-doc/024.png)
+    ![024](./media/cdn-doc/web-en-004.png)
 
 8. In “ICP Number,” enter the corresponding ICP record number for the custom domain that you entered (e.g., Jing ICP Bei XXXXXXXX Hao-X).
 
-    ![003](./media/cdn-doc/003.png)
+    ![003](./media/cdn-doc/web-en-005.png)
 
 9. Click “Create” to create the new endpoint.
 
 Once the endpoint has been created, it will appear in the list of subscribed endpoints. The list view shows the custom domains used to access cached content, as well as the origin domains.
  The origin domain is the original location of the content cached on the CDN. Custom domains are URLs used to access CDN cache content.
-
-   ![004](./media/cdn-doc/004.png)
 
 >**Note** that configurations created for endpoints cannot be used immediately; they must first pass checks to confirm that the ICP custom domain name matches the ICP number. For more details, see the second half of Step 2: Create new CDN endpoints in [Using Microsoft Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-how-to-use/).
 
