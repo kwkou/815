@@ -1,10 +1,14 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to useWindows Azure CDN Management Portal advanced features - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, 缓存刷新, 内容预取, 日志下载, 缓存规则, CDN 助文档, CDN技术文档, CDN" description="Learn how to use advanced features of Windows Azure CDN management portal to manage CDN endpoint" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
-    wacn.date="12/28/2015"
+    wacn.date="1/11/2016"
     />
 
 # Windows Azure CDN 管理门户使用指南
+
+> [AZURE.SELECTOR]
+- [中文版](/documentation/articles/cdn-management-portal-how-to-use)
+- [英文版](/documentation/articles/cdn-enus-management-portal-how-to-use)
 
 Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物理节点上缓存Azure平台上的Storage Blob，Cloud Service和WebSites的静态内容，为开发人员提供一个传送高带宽内容的解决方案。目前本CDN服务也同时支持没有部署在Azure平台上的源站。
 
