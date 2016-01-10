@@ -31,40 +31,35 @@ The Microsoft Azure CDN sets default cache rules (see below) for Live Streaming 
 1. In the navigation pane of the Microsoft Azure Management Portal, click “CDN.”
 2. In the function area, click “Create New.” In the “Create New” dialogue box, select “App Services,” “CDN,” and “Quick Create” in that order.
 3. Select “Streaming Media Acceleration” from the “Acceleration Type” drop-down list.
-
-    ![025](./media/cdn-doc/025.png)
-
 4. In the “Origin Domain Type” drop-down list, select cloud service, storage account, web app, media services, or a customized origin domain.
 5. In the “Origin Domain” drop-down list, select one option from the list of available media services for use in creating the CDN endpoint. 
  
-    ![026](./media/cdn-doc/026.png)
+    ![026](./media/cdn-doc/ls-en-001.png)
 
     If the selected “Origin Domain Type” is “Customized Origin Domain,” input your own origin domain address under “Origin Domain.” You can enter one or multiple origin domain IP addresses (separate multiple addresses with semicolons, e.g. “126.1.1.1;172.1.1.1”), or an origin domain name such as “origin.livestreaming.com.”
 
-    ![027](./media/cdn-doc/027.png)
+    ![027](./media/cdn-doc/ls-en-002.png)
 
 6. In “Custom Domain”, enter the custom domain name you wish to use, e.g. cdn.livestreaming.com. Custom domains support extensive domain name acceleration.
 7. In “Origin Host Header,” enter the return to source access host header accepted by your source station. Once you have entered the “Custom Domain,” the system will automatically fill in a default value based on the “Origin Domain Type” you selected. To be more specific, if your source station is on Azure, the default value will be the corresponding source station address. If your source station is not on Azure, the default value will be the “Custom Domain” that you entered. Of course, you can also modify this based on the actual configuration of your source station.
 
     If the origin domain type is media services, the corresponding return to source host header is:
 
-    ![028](./media/cdn-doc/028.png)
+    ![028](./media/cdn-doc/ls-en-003.png)
     
     If the origin domain type is a custom origin domain, the corresponding return to source host header is:
 
-    ![029](./media/cdn-doc/029.png)
+    ![029](./media/cdn-doc/ls-en-004.png)
     
       
 8. In “ICP Number,” enter the corresponding ICP record number for the custom domain that you entered (e.g., Jing ICP Bei XXXXXXXX Hao-X).
      
-    ![030](./media/cdn-doc/030.png)
+    ![030](./media/cdn-doc/ls-en-005.png)
 
 9. Click “Create” to create the new endpoint.
 
 Once the endpoint has been created, it will appear in the list of subscribed endpoints. The list view shows the custom domains used to access cached content, as well as the origin domains. 
 The origin domain is the original location of the content cached on the CDN. Custom domains are URLs used to access CDN cache content.
-
-   ![031](./media/cdn-doc/031.png)
 
 >**Note** that configurations created for endpoints cannot be used immediately; they must first pass checks to confirm that the ICP custom domain name matches the ICP number. For more details, see the second half of Step 2: Create new CDN endpoints in [Using Microsoft Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-how-to-use/).
 
