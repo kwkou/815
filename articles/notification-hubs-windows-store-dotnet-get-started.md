@@ -39,7 +39,7 @@
 
 若要将推送通知发送到 Windows 应用商店应用，你必须将你的应用关联到 Windows 应用商店。然后必须将通知中心配置为与 WNS 集成。
 
-1. 如果尚未注册应用，请导航到 <a href="http://go.microsoft.com/fwlink/p/?LinkID=266582" target="_blank">Windows 开发人员中心</a>，使用你的 Microsoft 帐户登录，然后单击“创建新应用”。
+1. 如果尚未注册应用，请导航到 <a href="http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409" target="_blank">Windows 开发人员中心</a>，使用你的 Microsoft 帐户登录，然后单击“创建新应用”。
 
    	
 
@@ -176,7 +176,7 @@
 
 ##从后端发送通知
 
-你可以使用通知中心通过 <a href="http://msdn.microsoft.com/library/windowsazure/dn223264.aspx">REST 接口</a>从任意后端发送通知。在本教程中，你将使用 .NET 控制台应用程序来发送通知。有关如何从与通知中心集成的 Azure 移动服务后端中发送通知的示例，请参阅**移动服务中的推送通知入门**（[.NET 后端](/documentation/articles/mobile-services/mobile-services-dotnet-backend-windows-store-dotnet-get-started) | [JavaScript 后端](/documentation/articles/mobile-services/mobile-services-javascript-backend-windows-store-dotnet-get-started)）。有关如何使用 REST API 发送通知的示例，请参阅**如何使用 Java/PHP** ([Java](/documentation/articles/notification-hubs-java-backend-how-to) | [PHP](/documentation/articles/notification-hubs-php-backend-how-to)) 中的通知中心。
+你可以使用通知中心通过 <a href="http://msdn.microsoft.com/library/windowsazure/dn223264.aspx">REST 接口</a>从任意后端发送通知。在本教程中，你将使用 .NET 控制台应用程序来发送通知。有关如何从与通知中心集成的 Azure 移动服务后端中发送通知的示例，请参阅**移动服务中的推送通知入门**（[.NET 后端](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started) | [JavaScript 后端](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started)）。有关如何使用 REST API 发送通知的示例，请参阅**如何使用 Java/PHP** ([Java](/documentation/articles/notification-hubs-java-backend-how-to) | [PHP](/documentation/articles/notification-hubs-php-backend-how-to)) 中的通知中心。
 
 1. 右键单击解决方案，选择“添加”和“新建项目...”，然后在“Visual C#”下依次单击“Windows”、“控制台应用程序”和“确定”。
 
@@ -254,7 +254,7 @@
 [20]: ./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-windows-universal-app-install-package.png
 
 <!-- URLs. -->
-[Azure 管理门户]: https://manage.windowsazure.com/
+[Azure 管理门户]: https://manage.windowsazure.cn/
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
 
 [使用通知中心向用户推送通知]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users

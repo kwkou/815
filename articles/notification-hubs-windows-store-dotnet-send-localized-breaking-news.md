@@ -15,8 +15,8 @@
 # 使用通知中心发送本地化的突发新闻
 
 > [AZURE.SELECTOR]
-- [Windows Store C#](notification-hubs-windows-store-dotnet-send-localized-breaking-news.md)
-- [iOS](notification-hubs-ios-send-localized-breaking-news.md)
+- [Windows Store C#](/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news)
+- [iOS](/documentation/articles/notification-hubs-ios-send-localized-breaking-news)
 
 ##概述
 
@@ -176,26 +176,13 @@
 <!-- Images. -->
 
 <!-- URLs. -->
-[Mobile Service]: /develop/mobile/tutorials/get-started
-[使用通知中心通知用户：ASP.NET]: /manage/services/notification-hubs/notify-users-aspnet
-[使用通知中心通知用户：移动服务]: /manage/services/notification-hubs/notify-users
-[使用通知中心发送突发新闻]: /manage/services/notification-hubs/breaking-news-dotnet
+[Mobile Service]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
+[使用通知中心通知用户：ASP.NET]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
+[使用通知中心通知用户：移动服务]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 
-[Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
-[Get started with data]: /develop/mobile/tutorials/get-started-with-data-dotnet
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-dotnet
-[Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-dotnet
-[Push notifications to app users]: /develop/mobile/tutorials/push-notifications-to-app-users-dotnet
-[Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-dotnet
-[JavaScript and HTML]: /develop/mobile/tutorials/get-started-with-push-js
+[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
 
 [Azure Management Portal]: https://manage.windowsazure.com/
-[wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
-[通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
-[Notification Hubs How-To for iOS]: http://msdn.microsoft.com/library/jj927168.aspx
-[针对 Windows 应用商店的通知中心操作指南]: http://msdn.microsoft.com/library/jj927172.aspx
 
+[通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
 <!---HONumber=76-->

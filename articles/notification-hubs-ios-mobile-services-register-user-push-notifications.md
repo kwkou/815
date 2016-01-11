@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用移动服务注册推送通知的当前用户 | Microsoft Azure" 
+	pageTitle="使用移动服务注册推送通知的当前用户 | Windows Azure" 
 	description="了解在 Azure 移动服务执行注册时如何在 iOS 应用程序中请求向 Azure 通知中心注册推送通知。" 
 	services="notification-hubs" 
 	documentationCenter="ios" 
@@ -15,7 +15,7 @@
 # 通过使用移动服务注册推送通知的当前用户
 
 > [AZURE.SELECTOR]
-[Windows Store C#](/documentation/articles/notification-hubs-windows-store-mobile-services-register-user-push-notifications)
+[Windows Store C#](/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news)
 [iOS](/documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications)
 
 本主题说明在 Azure 移动服务执行注册时如何请求向 Azure 通知中心注册推送通知。它是对教程[使用通知中心通知用户][使用通知中心通知用户]的扩展。你必须在该教程中已完成创建经过身份验证的移动服务所需的步骤。有关通知用户方案的详细信息，请参阅[使用通知中心通知用户][使用通知中心通知用户]。
@@ -53,7 +53,7 @@
 
 	这会更新 **deviceToken** 属性。
 
-	> [AZURE.NOTE]此时，此方法中不应有任何其他代码。如果你已调用在完成[通知中心入门](/manage/services/notification-hubs/get-started-notification-hubs-ios/"%20target="_blank")教程的学习时添加的 **registerNativeWithDeviceToken** 方法，必须注释掉或删除该调用。
+	> [AZURE.NOTE]此时，此方法中不应有任何其他代码。如果你已调用在完成[通知中心入门](/documentation/articles/notification-hubs-ios-get-started)教程的学习时添加的 **registerNativeWithDeviceToken** 方法，必须注释掉或删除该调用。
 
 5.  （可选）在 QSAppDelegate.m 文件中，添加以下处理程序方法：
 
