@@ -15,7 +15,7 @@
 # 通过使用 ASP.NET 注册推送通知的当前用户
 
 > [AZURE.SELECTOR]
-- [Windows Store C#](/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news)
+- [Windows Store C#](/documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications)
 - [iOS](/documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications)
 
 
