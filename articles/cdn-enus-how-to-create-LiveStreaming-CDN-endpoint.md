@@ -61,6 +61,6 @@ The Microsoft Azure CDN sets default cache rules (see below) for Live Streaming 
 Once the endpoint has been created, it will appear in the list of subscribed endpoints. The list view shows the custom domains used to access cached content, as well as the origin domains. 
 The origin domain is the original location of the content cached on the CDN. Custom domains are URLs used to access CDN cache content.
 
->**Note** that configurations created for endpoints cannot be used immediately; they must first pass checks to confirm that the ICP custom domain name matches the ICP number. For more details, see the second half of Step 2: Create new CDN endpoints in [Using Microsoft Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-how-to-use/).
+>**Note** that configurations created for endpoints cannot be used immediately; they must first pass checks to confirm that the ICP custom domain name matches the ICP number. For more details, see the second half of Step 2: Create new CDN endpoints in [Using Microsoft Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-enus-how-to-use/).
 
 <!---HONumber=CDN_1201_2015-->
