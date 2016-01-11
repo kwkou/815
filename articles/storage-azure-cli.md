@@ -9,7 +9,7 @@
 <tags
     ms.service="storage"
     ms.date="09/28/2015"
-    wacn.date="12/11/2015"/>
+    wacn.date="01/11/2016"/>
 
 # 使用 Azure CLI 管理 Azure 存储服务
 
@@ -32,7 +32,7 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
 **创建 Windows Azure 订阅和帐户之后：**
 
-1. 按照[安装 Azure CLI](/documentation/articles//xplat-cli-install) 中概述的说明，下载和安装 Azure CLI。
+1. 按照[安装 Azure CLI](/documentation/articles/xplat-cli-install) 中概述的说明，下载和安装 Azure CLI。
 2. 安装了 Azure CLI 之后，你将可以从命令行界面（Bash、终端、命令提示符）使用 azure 命令访问 Azure CLI 命令。输入 `azure` 命令，你应该会看到以下输出：
 
     ![Azure 命令输出][Image1]

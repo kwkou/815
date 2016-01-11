@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="09/01/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/11/2016"/>
 
 #如何创建 PHP Web 角色和辅助角色
 
@@ -169,7 +169,7 @@ Azure 提供了三种计算模型以运行应用程序：Azure App Service、Azu
 
 ## 在计算和存储模拟器中运行你的应用程序
 
-Azure 模拟器提供了一个本地环境，可在将 Azure 应用程序部署到云之前在该本地环境中测试此应用程序。模拟器与 Azure 环境之间存在一些差异。若要更好地了解该模拟器，请参阅[使用 Azure 存储模拟器进行开发和测试](/documentation/articles//storage-use-emulator)。
+Azure 模拟器提供了一个本地环境，可在将 Azure 应用程序部署到云之前在该本地环境中测试此应用程序。模拟器与 Azure 环境之间存在一些差异。若要更好地了解该模拟器，请参阅[使用 Azure 存储模拟器进行开发和测试](/documentation/articles/storage-use-emulator)。
 
 请注意，你必须本地安装 PHP 才能使用计算模拟器。计算模拟器将使用本地 PHP 安装来运行应用程序。
 
