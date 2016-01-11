@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="10/28/2015"
-	wacn.date=""/>
+	wacn.date="12/22/2015"/>
 
 
 # 监视 XTP 内存中存储

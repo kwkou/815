@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="10/16/2015"
-	wacn.date=""/>
+	wacn.date="12/22/2015"/>
 
 
 # 使用 PowerShell 创建 Azure SQL 数据库的副本

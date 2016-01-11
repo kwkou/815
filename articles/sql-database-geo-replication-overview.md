@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="10/21/2015"
-	wacn.date="" />
+	wacn.date="12/22/2015" />
 
 # Azure SQL 数据库的活动异地复制
 

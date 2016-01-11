@@ -10,7 +10,7 @@
 <tags
     ms.service="sql-database"
     ms.date="11/06/2015"
-    wacn.date=""/>
+    wacn.date="12/22/2015"/>
 
 # 使用 C&#x23; 创建弹性数据库池
 

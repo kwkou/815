@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="11/16/2015"
-	wacn.date=""/>
+	wacn.date="12/22/2015"/>
 
 
 # 使用 In-Memory（预览版）改善 SQL 数据库中的应用程序性能

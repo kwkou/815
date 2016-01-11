@@ -10,7 +10,7 @@
 <tags
    ms.service="sql-database"
    ms.date="11/02/2015"
-   wacn.date=""/>
+   wacn.date="12/22/2015"/>
 
 # Azure SQL 数据库的弹性数据库事务概述（预览版）
 

@@ -9,7 +9,7 @@
 <tags 
    ms.service="sql-database"
    ms.date="11/16/2015"
-   wacn.date="" />
+   wacn.date="12/22/2015" />
 
 # Azure SQL 数据库的一般性限制和指导原则
 

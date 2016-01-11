@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="11/13/2015"
-	wacn.date=""/>
+	wacn.date="12/22/2015"/>
 
 
 # 如何：使用 PowerShell 在 SQL 数据库上配置防火墙设置
