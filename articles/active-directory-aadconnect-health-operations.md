@@ -138,7 +138,6 @@ Azure AD Connect 支持两个级别的管理访问：
 ## 相关链接
 
 * [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health)
-* [适用于 AD FS 的 Azure AD Connect Health 代理安装](/documentation/articles/active-directory-aadconnect-health-agent-install-adfs)
 * [在 AD FS 中使用 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-adfs)
 * [Azure AD Connect Health 常见问题](/documentation/articles/active-directory-aadconnect-health-faq)
 

@@ -196,9 +196,7 @@ UI 中会显示以下选项：
 **其他资源**
 
 * [在云中使用本地标识基础结构](/documentation/articles/active-directory-aadconnect)
-* [Azure AD Connect 工作原理](/documentation/articles/active-directory-aadconnect-how-it-works)
 * [Azure AD Connect 后续步骤](/documentation/articles/active-directory-aadconnect-whats-next)
-* [了解详细信息](/documentation/articles/active-directory-aadconnect-learn-more)
 * [MSDN 上的 Azure AD Connect](/documentation/articles/active-directory-aadconnect)
  
 
