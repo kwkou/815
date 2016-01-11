@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="JAVA"
     ms.date=""
-    wacn.date="11/02/2015"
+    wacn.date="01/11/2016"
     />
 
 #Java 开发人员中心
@@ -33,7 +33,7 @@ editor="Eric Chen" />
 ###数据服务</h3>
 - [在 Blob 中存储数据](/documentation/articles/storage-java-how-to-use-blob-storage)
 - [在表中存储数据](/documentation/articles/storage-java-how-to-use-table-storage)
-- [在 SQL 数据库 中存储数据](/documentation/articles/sql-data-java-how-to-use-sql-database)
+<!--- [在 SQL 数据库 中存储数据](/documentation/articles/sql-data-java-how-to-use-sql-database)-->
 - [使用来自内部部署的存储](/documentation/articles/storage-java-use-blob-storage-on-premises-app)
 - [管理 SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms)
 - [全部显示](/develop/java/data)
@@ -59,7 +59,7 @@ editor="Eric Chen" />
 - [服务总线主题](/documentation/articles/service-bus-java-how-to-use-topics-subscriptions) / [API](http://dl.windowsazure.com/javadoc) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh780717)
 - [服务运行时](http://msdn.microsoft.com/zh-cn/library/azure/hh690948.aspx) / [API](http://dl.windowsazure.com/javadoc)
 - [服务管理](/documentation/articles/java-create-azure-website-using-java-sdk) / [API](http://dl.windowsazure.com/javadoc) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/ee460799)
-- [SQL 数据库](/documentation/articles/sql-data-java-how-to-use-sql-database) /  [TSQL](http://msdn.microsoft.com/zh-cn/library/azure/ee336281) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/gg715283)
+<!--- [SQL 数据库](/documentation/articles/sql-data-java-how-to-use-sql-database) /  [TSQL](http://msdn.microsoft.com/zh-cn/library/azure/ee336281) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/gg715283)-->
 - [表服务](/documentation/articles/storage-java-how-to-use-table-storage) / [API](http://dl.windowsazure.com/storage/javadoc) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - [Twilio](/documentation/articles/partner-twilio-java-how-to-use-voice-sms) / [API](https://github.com/twilio/twilio-java) / [REST](http://www.twilio.com/docs/api/rest)
 

@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 pageTitle="Windows Azure 开发人员中心：RUBY" 
 description="" 
 services="RUBY" 
@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="RUBY"
     ms.date=""
-    wacn.date="06/29/2015"
+    wacn.date="01/11/2016"
     />
 
 #Ruby开发人员中心
@@ -31,7 +31,7 @@ editor="Eric Chen" />
 ###数据服务
 - [在 Blob 中存储数据](/zh-cn/documentation/articles/storage-ruby-how-to-use-blob-storage)
 - [在表中存储数据](/zh-cn/documentation/articles/storage-ruby-how-to-use-table-storage)
-- [管理和分析数据](/zh-cn/documentation/articles/fundamentals-data-management-business-analytics)
+<!--- [管理和分析数据](/zh-cn/documentation/articles/fundamentals-data-management-business-analytics)-->
 - [全部显示](/zh-cn/develop/ruby/data)
   
 ###应用服务
