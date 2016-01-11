@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="10/30/2015"
-	wacn.date="" />
+	wacn.date="12/22/2015" />
 
 # 如何使用批处理来改善 SQL 数据库应用程序的性能
 

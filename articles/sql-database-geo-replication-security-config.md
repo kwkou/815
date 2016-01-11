@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="10/22/2015"
-	wacn.date="" />
+	wacn.date="12/22/2015" />
 
 # 标准异地复制或活动异地复制的安全性配置
 

@@ -9,7 +9,7 @@
 <tags 
 	ms.service="sql-database" 
 	ms.date="11/09/2015" 
-	wacn.date=""/>
+	wacn.date="12/22/2015"/>
 
 # 使用 RecoveryManager 类解决分片映射问题
 

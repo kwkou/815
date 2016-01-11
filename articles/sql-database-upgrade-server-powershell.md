@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database" 
 	ms.date="11/11/2015" 
-	wacn.date=""/>
+	wacn.date="12/22/2015"/>
 
 # 使用 PowerShell 升级到 Azure SQL 数据库 V12
 

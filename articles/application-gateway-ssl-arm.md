@@ -7,6 +7,7 @@
    manager="jdial"
    editor="tysonn"/>
 <tags 
+   ms.service="application-gateway"
    ms.date="10/28/2015"
    wacn.date="01/05/2016"/>
 

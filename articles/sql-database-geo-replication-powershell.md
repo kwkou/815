@@ -10,7 +10,7 @@
 <tags
     ms.service="sql-database"
     ms.date="11/10/2015"
-    wacn.date=""/>
+    wacn.date="12/22/2015"/>
 
 # 使用 PowerShell 为 Azure SQL 数据库配置异地复制
 

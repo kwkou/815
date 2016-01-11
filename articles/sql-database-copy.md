@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="10/16/2015"
-	wacn.date=""/>
+	wacn.date="12/22/2015"/>
 
 
 # 复制 Azure SQL 数据库
