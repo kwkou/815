@@ -19,10 +19,10 @@
 
 为帮助你开始使用 Azure HDInsight 在 Hadoop 群集上运行 MapReduce 作业，我们提供了一组示例。在你创建的每一个 HDInsight 托管群集上都可以使用这些示例。运行这些示例会让你熟悉使用 Azure PowerShell cmdlet 在 Hadoop 群集上运行作业。
 
-- [**字数统计**][hdinsight-sample-wordcount]：计算单词在文本文件中出现的次数。
-- [**C# 流式处理字数统计**][hdinsight-sample-csharp-streaming]：使用 Hadoop 流式处理接口计算单词在文本文件中出现的次数。
-- [**Pi 估计器**][hdinsight-sample-pi-estimator]：使用统计学方法（拟蒙特卡罗法）来估算 pi 值。
-- [**10-GB Graysort**][hdinsight-sample-10gb-graysort]：使用 HDInsight 对 10 GB 文件运行常规用途的 GraySort。有三个作业要运行：Teragen 生成数据，Terasort 对数据排序，而 Teravalidate 确认数据已正确排序。
+- [**字数统计**](#hdinsight-sample-wordcount)：计算单词在文本文件中出现的次数。
+- [**C# 流式处理字数统计**](#hdinsight-sample-csharp-streaming)：使用 Hadoop 流式处理接口计算单词在文本文件中出现的次数。
+- [**Pi 估计器**](#hdinsight-sample-pi-estimator)：使用统计学方法（拟蒙特卡罗法）来估算 pi 值。
+- [**10-GB Graysort**](#hdinsight-sample-10gb-graysort)：使用 HDInsight 对 10 GB 文件运行常规用途的 GraySort。有三个作业要运行：Teragen 生成数据，Terasort 对数据排序，而 Teravalidate 确认数据已正确排序。
 
 >[AZURE.NOTE]可以在附录中找到源代码。
 
@@ -44,7 +44,7 @@ Web 上有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 编
 - **一个 HDInsight 群集**。有关可用于创建这类群集的不同方法的说明，请参阅[在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)。
 - **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
-## 字数统计 - Java 
+##<a name="hdinsight-sample-wordcount"></a> 字数统计 - Java 
 
 若要提交 MapReduce 项目，请先创建 MapReduce 作业定义。在作业定义中，指定 MapReduce 程序 jar 文件和 jar 文件的位置（即，* ***wasb:///example/jars/hadoop-mapreduce-examples.jar**）、类名和参数。Wordcount MapReduce 程序采用两个参数：用于计算单词数的源文件和输出位置。
 
@@ -103,7 +103,7 @@ Web 上有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 编
 
 3. 设置前 3 个变量，然后运行脚本。
 
-## 字数统计 - C# 流式处理
+## <a name="hdinsight-sample-csharp-streaming"></a> 字数统计 - C# 流式处理
 
 Hadoop 向 MapReduce 提供了一个流式处理 API，利用它，你可以采用 Java 之外的其他语言来编写映射函数和化简函数。
 
@@ -135,7 +135,7 @@ Hadoop 向 MapReduce 提供了一个流式处理 API，利用它，你可以采�
 	
 		example/data/StreamingOutput/wc.txt/part-00000		
 								
-## PI 估计器
+## <a name="hdinsight-sample-pi-estimator"></a> PI 估计器
 
 pi 估计器使用统计学方法（拟蒙特卡罗法）来估算 pi 值。单位平方形内部随机放置的点也落入该平方形内嵌的圆圈内，其概率等于圆圈面积 pi/4。可以从 4R 的值来估算 pi 的值，其中 R 是落入圆圈内的点数与平方形内总点数的比率。所使用的取样点越多，估算值越准确。
 
@@ -150,7 +150,7 @@ pi 估计器使用统计学方法（拟蒙特卡罗法）来估算 pi 值。单�
 									-ClassName "pi" `
 									-Arguments "16", "10000000"
 
-## 10-GB Graysort
+## <a name="hdinsight-sample-10gb-graysort"></a> 10-GB Graysort
 
 此示例使用适中的 10GB 数据，这样它运行时能相对快一点。它使用由 Owen O'Malley 和 Arun Murthy 开发的 MapReduce 应用程序，此应用程序以 0.578TB/分钟（100TB 用时 173 分钟）的速率赢得了 2009 年年度常用（“daytona”）TB 级排序基准。有关这一排序基准和其他排序基准的详细信息，请参阅 [Sortbenchmark](http://sortbenchmark.org/) 网站。
 
