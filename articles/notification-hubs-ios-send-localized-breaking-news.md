@@ -171,9 +171,7 @@
 	    }];
 
 <h2><a name="send"></a>从后端发送本地化的通知</h2>
-
-[WACN.INCLUDE [notification-hubs-localized-back-end](../includes/notification-hubs-localized-back-end.md)]
-
+[AZURE.INCLUDE [notification-hubs-localized-back-end](../includes/notification-hubs-localized-back-end.md)]
 
 ## 后续步骤
 
@@ -205,7 +203,7 @@
 [操作方法：服务总线通知中心（iOS 应用）]: https://msdn.microsoft.com/zh-cn/library/dn530748.aspx
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 [使用通知中心通知用户：ASP.NET]: /documentation/articles/notification-hubs-aspnet-cross-platform-notify-users
-[使用通知中心通知用户：移动服务]: /documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users
+[使用通知中心通知用户：移动服务]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [适用于 iOS 的通知中心操作方法]: /documentation/articles/notification-hubs-ios-get-started
 <!---HONumber=82-->

@@ -461,7 +461,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
 
 
 <!-- URLs. -->
-[移动服务入门]: /documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users
+[移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users
 [ Azure 管理门户]: https://manage.windowsazure.cn/
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [适用于 iOS 的通知中心操作方法指南]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
@@ -474,4 +474,4 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
 
 [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkId=331329
-[WindowsAzure.Messaging]: https://github.com/infosupport/WindowsAzure.Messaging.iOS
+[WindowsAzure.Messaging]: https://github.com/ghuntley/WindowsAzure.Messaging.iOS

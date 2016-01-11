@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通过使用 Web API 注册推送通知的当前用户 | Microsoft Azure"
+	pageTitle="通过使用 Web API 注册推送通知的当前用户 | Windows Azure"
 	description="了解在 ASP.NET Web API 执行注册时如何在 iOS 应用程序中请求向 Azure 通知中心注册推送通知。"
 	services="notification-hubs"
 	documentationCenter="ios"
@@ -15,7 +15,7 @@
 # 通过使用 ASP.NET 注册推送通知的当前用户
 
 > [AZURE.SELECTOR]
-- [Windows Store C#](/documentation/articles/notification-hubs-windows-store-aspnet-register-user-push-notifications)
+- [Windows Store C#](/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news)
 - [iOS](/documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications)
 
 

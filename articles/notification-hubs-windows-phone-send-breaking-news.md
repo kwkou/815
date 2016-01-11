@@ -248,8 +248,8 @@ In this tutorial we learned how to broadcast breaking news by category. Consider
 <!-- URLs.-->
 [通知中心入门]: /documentation/articles/notification-hubs-windows-phone-get-started
 [Use Notification Hubs to broadcast localized breaking news]: ./breakingnews-localized-wp8.md
-[Notify users with Notification Hubs]: /manage/services/notification-hubs/notify-users/
-[Mobile Service]: /develop/mobile/tutorials/get-started
+[Notify users with Notification Hubs]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
+[Mobile Service]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 
 [Azure Management Portal]: https://manage.windowsazure.cn/

@@ -81,11 +81,6 @@ Azure 通知中心提供易用的基础结构，使你能够从任何后端（�
 
 ![][1]
 
-
-
-
-
-
 通知中心提供了随时可用的推送通知基础结构，该基础结构具有以下优势：
 
 - **多个平台。**   
@@ -139,8 +134,8 @@ Azure 通知中心提供易用的基础结构，使你能够从任何后端（�
 
   [0]: ./media/notification-hubs-overview/SBPushNotifications1.gif
   [1]: ./media/notification-hubs-overview/SBPushNotifications2.gif
-  [客户如何使用通知中心]: /zh-cn/services/notification-hubs
-  [通知中心教程和指南]: /zh-cn/documentation/services/notification-hubs
+  [客户如何使用通知中心]: /services/notification-hubs
+  [通知中心教程和指南]: /documentation/services/notification-hubs
   [iOS]: /zh-cn/documentation/articles/notification-hubs-ios-get-started
   [Windows Universal]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started
   [Windows Phone]: /zh-cn/documentation/articles/notification-hubs-windows-phone-get-started

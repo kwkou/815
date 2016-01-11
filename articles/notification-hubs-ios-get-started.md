@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 通知中心入门（iOS 应用）| Microsoft Azure"
+	pageTitle="Azure 通知中心入门（iOS 应用）| Windows Azure"
 	description="在本教程中，你将了解如何使用 Azure 通知中心将通知推送到 iOS 应用程序。"
 	services="notification-hubs"
 	documentationCenter="ios"
@@ -35,7 +35,7 @@
 
 完成本教程是学习有关 iOS 应用的所有其他通知中心教程的先决条件。
 
-> [AZURE.NOTE]若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fzh-CN%2Fdocumentation%2Farticles%2Fnotification-hubs-ios-get-started)。
+> [AZURE.NOTE]若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/free-trial)。
 
 [AZURE.INCLUDE [通知中心：启用 Apple 推送通知](../includes/enable-apple-push-notifications.md)]
 

@@ -11,11 +11,7 @@
 	ms.service="notification-hubs"
 	ms.date="09/24/2015"
 	wacn.date="11/02/2015"/>
-	
-	
-	
-	
-	
+
 # 如何通过 Node.js 使用通知中心
 
 > [AZURE.SELECTOR]
@@ -25,19 +21,17 @@
 
 ##概述
 
-本指南演示如何从 Node.js 应用程序使用通知中心。涉及的任务包括**将通知发送到 Android、iOS、Windows Phone 和 Windows 应用商店应用程序**。有关通知中心的详细信息，请参阅[后续步骤](#next)部分。
+本指南演示如何从 Node.js 应用程序使用通知中心。涉及的任务包括**将通知发送到 Android(GCM 不能用)、iOS、Windows Phone 和 Windows 应用商店应用程序**。有关通知中心的详细信息，请参阅[后续步骤](#next)部分。
 
 ##什么是通知中心？
 
-
-
 Azure 通知中心可提供用于向移动设备发送推送通知的易于使用、多平台且可缩放的基础结构。有关详细信息，请参阅 [Azure 通知中心](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj927170.aspx)。
 
-##<a id="create"></a>创建 Node.js 应用程序
+##创建 Node.js 应用程序
 
 创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站][nodejswebsite]、[Node.js 云服务][Node.js Cloud Service]（使用 Windows PowerShell）或“使用 WebMatrix 构建网站”。
 
-##<a id="config"></a>将应用程序配置为使用通知中心
+##将应用程序配置为使用通知中心
 
 要使用 Azure 通知中心，需要下载并使用 Node.js azure 包。其中包括一组便于与 REST 服务进行通信的库。
 
@@ -85,7 +79,7 @@ Azure 通知中心可提供用于向移动设备发送推送通知的易于使�
 
 </div>
 
-##<a id="send"></a>如何发送通知
+##如何发送通知
 
 **NotificationHubService** 对象将公开用于向特定设备和应用程序发送通知的以下对象实例：
 
@@ -157,7 +151,7 @@ Azure 通知中心可提供用于向移动设备发送推送通知的易于使�
       }
     });
 
-##<a id="next"></a>后续步骤
+##后续步骤
 
 现在，你已了解有关通知中心的基础知识，请单击下面的链接了解更多信息。
 
