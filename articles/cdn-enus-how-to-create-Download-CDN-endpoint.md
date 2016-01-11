@@ -31,6 +31,7 @@ The Microsoft Azure CDN sets default cache rules (see below) for Download Accele
 3. Select “Download Acceleration” from the “Acceleration Type” drop-down list.
 4. In the “Origin Domain Type” drop-down list, select cloud service, storage account, web app, or a customized origin domain. **Note** that Download Acceleration does not support the “media service” origin domain type.
 5. In the “Origin Domain” drop-down list, select one option from the list of available cloud services, storage accounts, or web apps for use in creating the CDN endpoint. 
+
     ![012](./media/cdn-doc/download-en-001.png)
 
     If the selected “Origin Domain Type” is “Customized Origin Domain,” input your own origin domain address under “Origin Domain.” You can enter one or multiple origin domain IP addresses (separate multiple addresses with semicolons, e.g. “126.1.1.1;172.1.1.1”), or an origin domain name such as “origin.azurechina.com.”
@@ -59,6 +60,6 @@ Once the endpoint has been created, it will appear in the list of subscribed end
 The list view shows the custom domains used to access cached content, as well as the origin domains. The origin domain is the original location of the content cached on the CDN. Custom domains are URLs used to access CDN cache content.
 
 
-> **Note** that configurations created for endpoints cannot be used immediately; they must first pass checks to confirm that the ICP custom domain name matches the ICP number. For more details, see the second half of Step 2: Create new CDN endpoints in [Using Microsoft Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-how-to-use/).
+> **Note** that configurations created for endpoints cannot be used immediately; they must first pass checks to confirm that the ICP custom domain name matches the ICP number. For more details, see the second half of Step 2: Create new CDN endpoints in [Using Microsoft Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-enus-how-to-use/).
 
 <!---HONumber=CDN_1201_2015-->

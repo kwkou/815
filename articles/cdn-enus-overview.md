@@ -14,7 +14,7 @@ The Microsoft Azure Content Delivery Network caches static content in storage bl
 
 For more details and pricing for Content Delivery Network, see [Introduction to the Microsoft Azure Content Delivery Network service](http://www.windowsazure.cn/home/features/cdn/).
 
-If you are an existing user of the CDN, visit the [Microsoft Azure Content Delivery Network management portal](https://manage.windowsazure.cn) to manage your CDN domains. See [Using Microsoft Azure Content Delivery Network](http://www.windowsazure.cn/documentation/articles/cdn-how-to-use/) for a more specific user guide.
+If you are an existing user of the CDN, visit the [Microsoft Azure Content Delivery Network management portal](https://manage.windowsazure.cn) to manage your CDN domains. See [Using Microsoft Azure Content Delivery Network](http://www.windowsazure.cn/documentation/articles/cdn-enus-how-to-use/) for a more specific user guide.
 
 + [What is a Content Delivery Network?](#step1)
 + [Advantages of Content Delivery Network](#step2)
