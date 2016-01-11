@@ -53,7 +53,7 @@
 
 3. **创建 ExpressRoute 线路。**
 
-	以下示例演示如何通过硅谷中的 Equinix 创建 200 Mbps 的 ExpressRoute 线路。如果你使用的是其他提供商和其他设置，请在发出请求时替换该信息。
+	以下示例演示如何通过北京的 Beijing Telecom Ethernet 创建 200 Mbps 的 ExpressRoute 线路。如果你使用的是其他提供商和其他设置，请在发出请求时替换该信息。
 
 	下面是请求新的服务密钥的示例：
 
