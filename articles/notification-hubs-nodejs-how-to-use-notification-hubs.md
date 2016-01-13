@@ -99,7 +99,7 @@ Azure 通知中心可提供用于向移动设备发送推送通知的易于使�
 
     var payload={ 
         alert: 'Hello!'
-      };Node.js Cloud Service
+      };
     notificationHubService.apns.send(null, payload, function(error){
       if(!error){
         // notification sent
