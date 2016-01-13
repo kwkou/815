@@ -7,9 +7,9 @@
 
 在[如何高效连接到MySQL Database on Azure](/documentation/articles/mysql-database-connection-pool)一文中谈到，为了更好地使用数据库的连接资源，我们推荐您使用连接池或长连接的方法进行数据库访问。但需要注意的是连接池或长连接也存在时效性。这是因为服务器会设置超时机制，如果一个连接在一段时间内处于闲置状态，服务器就会关闭这个链接，以释放不必要的资源占用。这就造成了如果客户端长时间在idle状态，再次访问数据库较慢的问题，相当于客户端与服务器间重新建立了连接请求。因此，为了保障在使用过程中，连接的有效性，本文以Tomcat JDBC 连接池为例，介绍如何在客户端配置验证机制确认长连接的有效性。
 
-通过设定testOnBorrow参数，在有新的请求时，会检测已有的长连接是否有效。如果有效，便可正常访问； 如果无效，连接池中会自动删除此连接，并会将连接池一个有效的连接“借”出来，分配给这个请求使用。这样会有效地保障数据库的访问速度。
+通过设定testOnBorrow参数，在有新的请求时，如果连接池中有闲置的可用连接，在返回这个闲置连接之前，连接池会自动验证这个连接的有效性，如果有效，直接返回，如果无效，连接池会回收这个无效连接，重新建立一个新的有效连接并返回。这样会有效地保障数据库的访问速度。
 
-具体设置用户可参考[JDBC Connection Pool官方介绍文档](https://tomcat.apache.org/tomcat-7.0-doc/jdbc-pool.html#Common_Attributes)。主要需要配置以下三个参数： TestOnBorrow (设为ture), ValidationQuery (设为1), ValidationQueryTimeout (设为1)，具体示例代码如下：
+具体设置用户可参考[JDBC Connection Pool官方介绍文档](https://tomcat.apache.org/tomcat-7.0-doc/jdbc-pool.html#Common_Attributes)。主要需要配置以下三个参数： TestOnBorrow (设为ture), ValidationQuery (设为 SELECT 1), ValidationQueryTimeout (设为1)，具体示例代码如下：
 
 
 

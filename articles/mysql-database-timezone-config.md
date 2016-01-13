@@ -12,9 +12,7 @@ MySQL Database on Azure目前支持用户通过修改参数设定的方式来进
 ![北京时间设置](./media/mysql-database-timezone-config/time_zone.png)
 
 >[AZURE.NOTE]**目前暂不支持已命名时区如"Europe/Helsinki", "US/Eastern" or "MET"等**
-
->[AZURE.NOTE]**对于已有的数据库服务器实例，time_zone配置可能不可见。在这种情况下，您可以通过变更其他参数或更改SKU，重启实例之后，便可以进行time_zone的配置。**
-
+*
 
 
 
