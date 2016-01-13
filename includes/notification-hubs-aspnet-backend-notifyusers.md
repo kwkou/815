@@ -53,9 +53,9 @@
 	* 请求使用*基本* 身份验证。
 	* 用户名字符串和密码字符串是相同的字符串。
 
-   否则，将会拒绝该请求。这不是真正的身份验证和授权方法。它只是本教程中一个非常简单的示例。
+	否则，将会拒绝该请求。这不是真正的身份验证和授权方法。它只是本教程中一个非常简单的示例。
 
-   如果请求消息已经过 `AuthenticationTestHandler` 的身份验证和授权，则基本身份验证用户将附加到 [HttpContext](https://msdn.microsoft.com/library/system.web.httpcontext.current.aspx) 上的当前请求。然后，另一个控制器 (RegisterController) 会使用 HttpContext 中的用户信息，将[标记](https://msdn.microsoft.com/library/azure/dn530749.aspx)添加到通知注册请求。
+	如果请求消息已经过 `AuthenticationTestHandler` 的身份验证和授权，则基本身份验证用户将附加到 [HttpContext](https://msdn.microsoft.com/library/system.web.httpcontext.current.aspx) 上的当前请求。然后，另一个控制器 (RegisterController) 会使用 HttpContext 中的用户信息，将[标记](https://msdn.microsoft.com/library/azure/dn530749.aspx)添加到通知注册请求。
 
 		public class AuthenticationTestHandler : DelegatingHandler
 	    {
