@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage"
 	ms.date="11/04/2015"
-	wacn.date="12/31/2015"/>
+	wacn.date="01/13/2016"/>
 
 
 # 高级存储：适用于 Azure 虚拟机工作负荷的高性能存储
@@ -47,7 +47,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 - 高级存储帐户无法映射到自定义域名。
 
-- 存储分析目前不支持高级存储。若要使用高级存储帐户上的磁盘分析 VM 的性能度量值，请使用基于操作系统的工具，如 [Windows 性能监视器](https://technet.microsoft.com/zh-cn/library/cc749249.aspx)（对于 Windows VM）和 [IOSTAT](http://linux.die.net/man/1/iostat)（对于 Linux VM）。你还可以在 Azure 预览门户上启用 Azure VM 诊断。有关详细信息，请参阅[使用 Azure Diagnostics 扩展监视 Windows Azure 虚拟机](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/)。
+- 存储分析目前不支持高级存储。若要使用高级存储帐户上的磁盘分析 VM 的性能度量值，请使用基于操作系统的工具，如 [Windows 性能监视器](https://technet.microsoft.com/zh-cn/library/cc749249.aspx)（对于 Windows VM）和 [IOSTAT](http://linux.die.net/man/1/iostat)（对于 Linux VM）。你还可以在 Azure 管理门户上启用 Azure VM 诊断。有关详细信息，请参阅[使用 Azure Diagnostics 扩展监视 Windows Azure 虚拟机](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/)。
 
 ## 使用高级存储磁盘
 可通过两种方式使用高级存储磁盘：
@@ -295,31 +295,8 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 - [虚拟机定价](/home/features/virtual-machines/#price)
 
 ## 为虚拟机器数据磁盘创建和使用高级存储帐户
-本部分演示如何使用 Azure 预览门户、Azure PowerShell 和 Azure 命令行界面 (Azure CLI) 创建高级存储帐户。另外，还演示了高级存储帐户的示例用例：在使用高级存储帐户时创建虚拟机，并将数据磁盘附加到虚拟机。
-<!--
-### 通过 Azure 预览门户使用高级存储创建 Azure 虚拟机
+本部分演示如何使用Azure PowerShell 和 Azure 命令行界面 (Azure CLI) 创建高级存储帐户。另外，还演示了高级存储帐户的示例用例：在使用高级存储帐户时创建虚拟机，并将数据磁盘附加到虚拟机。
 
-本部分说明如何使用 Azure 预览门户创建高级存储帐户。
-
-1.	登录 [Azure 预览门户](https://manage.windowsazure.cn)。如果你没有订阅，请查看[免费试用](/pricing/1rmb-trial/)优惠产品。
-
-
-    > [AZURE.NOTE]登录 Azure 管理门户时，请在门户右上角单击你的用户帐户名。然后单击“切换到新门户”。
-        
-
-2.	在“中心”菜单上，单击“新建”。
-
-3.	在“新建”下方，单击“全部”。选择“存储、缓存和备份”。在该处单击“存储”，然后单击“创建”。
-
-4.	在“存储帐户”边栏中，键入存储帐户名称。单击“定价层”。在“建议的定价层”边栏选项卡中，单击“浏览所有定价层”。在“选择定价层”边栏中，选择“高级本地冗余”。单击“选择”。请注意，“存储帐户”边栏选项卡在默认情况下会显示“标准-GRS”作为“定价层”。在你单击“选择”后，“定价层”会显示为“高级-LRS”。
-	
-	![定价层][Image1]
-
-	
-5.	在“存储帐户”边栏选项卡中，保留“资源组”、“订阅”、“位置”和“诊断”的默认值。单击“创建”。
-
-有关在 Azure 环境中的完整演练，请参阅[在 Azure 预览门户中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-azure-preview)。
--->
 ### 通过 Azure PowerShell 使用高级存储创建 Azure 虚拟机
 本 PowerShell 示例演示如何创建新的高级存储帐户并将使用该帐户的数据磁盘附加到新的 Azure 虚拟机。
 
