@@ -20,6 +20,5 @@ workbench 6.3.5默认选择SSL连接, 且会使用“TLS-DHE-RSA-WITH-AES-256-CB
 当user name超过16个字符时，该客户端会自动截取前16个字符，造成连接的问题。建议您采用最新版本的SQLyog客户端，或其他MySQL的管理客户端，如MySQL workbench。
 
 
-<!--Image references-->
 
 [1]: ./media/mysql-database-compatibilityinquiry/ssl.png
