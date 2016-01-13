@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="09/24/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="1/13/2016"/>
 
 # 如何通过 Node.js 使用通知中心
 
@@ -29,7 +29,7 @@ Azure 通知中心可提供用于向移动设备发送推送通知的易于使�
 
 ##创建 Node.js 应用程序
 
-创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站][nodejswebsite]、[Node.js 云服务][Node.js Cloud Service]（使用 Windows PowerShell）或“使用 WebMatrix 构建网站”。
+创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站][]、[Node.js 云服务][]（使用 Windows PowerShell）或[使用 WebMatrix 构建网站][]。
 
 ##将应用程序配置为使用通知中心
 
@@ -77,8 +77,6 @@ Azure 通知中心可提供用于向移动设备发送推送通知的易于使�
 
 > [AZURE.NOTE]还可以使用 Azure PowerShell 提供的 **Get-AzureSbNamespace** cmdlet 或者在 Azure 命令行界面 (Azure CLI) 中使用 **azure sb namespace show** 命令检索连接字符串。
 
-</div>
-
 ##如何发送通知
 
 **NotificationHubService** 对象将公开用于向特定设备和应用程序发送通知的以下对象实例：
@@ -101,7 +99,7 @@ Azure 通知中心可提供用于向移动设备发送推送通知的易于使�
 
     var payload={ 
         alert: 'Hello!'
-      };
+      };Node.js Cloud Service
     notificationHubService.apns.send(null, payload, function(error){
       if(!error){
         // notification sent
@@ -166,7 +164,7 @@ Azure 通知中心可提供用于向移动设备发送推送通知的易于使�
   [Azure 服务总线 通知中心]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx
   [创建 Node.js 应用程序并将其部署到 Azure 网站]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
   [Node.js 云服务]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
-  [使用 WebMatrix 生成网站]: /documentation/articles/web-sites-nodejs-use-webmatrix
+  [使用 WebMatrix 构建网站]: /documentation/articles/web-sites-nodejs-use-webmatrix
   [实施 GCM 服务器]: http://developer.android.com/google/gcm/server.html#payload
   [本地和推送通知编程指南]: http://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html
   [从服务器推送通知]: http://msdn.microsoft.com/library/hh221551.aspx
