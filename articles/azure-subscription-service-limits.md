@@ -86,11 +86,6 @@
 
 [AZURE.INCLUDE [azure-storage-limits-premium-storage](../includes/azure-storage-limits-premium-storage.md)]
 
-
-#### 存储限制- Azure 资源管理器
-
-[AZURE.INCLUDE [azure-storage-limits-azure-resource-manager](../includes/azure-storage-limits-azure-resource-manager.md)]
-
 <a id="cloud-services-limits"></a>
 ### 云服务限制
 
