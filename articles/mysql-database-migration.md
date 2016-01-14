@@ -13,7 +13,7 @@ MySQL Database on Azure兼容MySQL 5.5 和 MySQL 5.6，所以绝大部分应用�
 
 另外一个需要注意的地方是MySQL Database on Azure不支持老的MYISAM引擎，可以参考[常见问题](/documentation/articles/mysql-database-serviceinquiry)中，为什么MySQL Database on Azure不支持MYISAM格式的数据库?在大多数情况下，您可以直接在建表的代码里把MyISAM数据引擎改成InnoDB就可以正常使用。 
 
-##方案一： 应用可以接受Downtime的迁移 -  数据库导入导出
+##方案一： 基于数据库导入导出的迁移
 如果您的系统可以接受较长时间（比如一二个小时）因系统迁移导致的downtime，您可以用比较简单的数据库导出和导入的方式进行数据库的迁移。
 具体步骤：
 
@@ -60,7 +60,7 @@ MySQL Database on Azure兼容MySQL 5.5 和 MySQL 5.6，所以绝大部分应用�
 10.把新部署的应用指向迁移好的数据库上，并完成剩余的应用迁移的步骤。 
 
 
-##方案二： 应用不能接受Downtime的迁移 -  数据同步
+##方案二： 基于数据同步的迁移
 
 
 上面的数据库迁移方式比较简单，但缺点是会有较长时间的downtime，同时每一个迁移步骤要能够很熟练的完成并能很好地预期时间，否则会对您的业务连续性带来较大的影响。如果您不能接受迁移过程中的downtime， 比如是公司的网站，或者希望分阶段完成平滑的迁移，建议您用数据库同步的方式把当前的生产数据库同步到Azure上，MySQL Database on Azure提供了这个功能，在同步期间您的应用和当前的数据库可以继续工作不受影响。 
@@ -77,8 +77,7 @@ MySQL Database on Azure兼容MySQL 5.5 和 MySQL 5.6，所以绝大部分应用�
 2.在Azure上部署新的应用并指向新建的Azure上的数据库。 
 
 
-
->[AZURE.NOTE] **此时由于Azure上的数据库运行在只读模式，应用的功能可能受限。 **
+提示： 此时由于Azure上的数据库运行在只读模式，应用的功能可能受限。
 
 3.确认Azure上的从数据库已达到同步的状态。您可以根据复制页面上的复制状态和复制滞后来确认同步状态。 
 ![迁移][1]
@@ -88,11 +87,12 @@ MySQL Database on Azure兼容MySQL 5.5 和 MySQL 5.6，所以绝大部分应用�
 5.停止数据库同步复制。您只需在下面的页面上点击“禁用”然后保存就可以。
 ![迁移][2]
 >[AZURE.NOTE] **注意：这个操作会重启数据库服务器 **
+
 6.启用新的应用。
 
 ## 关于数据库迁移的常见问题：
 ###导入TRIGGER, PROCEDURE, VIEW, FUNCTION, 或EVENT过程中报”Access denied; you need (at least one of) the SUPER privilege(s) for this operation” 错误。
-检查报错的语句有否使用DEFINER并使用非当前用户，比如DEFINER=`user`@`host`， 如果这样的话MySQL是要求SUPER权限来执行该语句，由于MySQL Database on Azure不提供用户SUPER权限（参考[服务限制](http://www.windowsazure.cn/documentation/articles/mysql-database-operation-limitation) ），导致运行该语句失败。您只需要把DEFINER从该语句删掉而使用缺省的当前用户就可以了。
+检查报错的语句有否使用DEFINER并使用非当前用户，比如DEFINER=user@host， 如果这样的话MySQL是要求SUPER权限来执行该语句，由于MySQL Database on Azure不提供用户SUPER权限（参考[服务限制](http://www.windowsazure.cn/documentation/articles/mysql-database-operation-limitation) ），导致运行该语句失败。您只需要把DEFINER从该语句删掉而使用缺省的当前用户就可以了。
 
 ###MYSQL Database on Azure 的管理门户只支持对用户设置整个数据库的读写权限，如果我现在的数据库有对用户权限更细化的设置，迁移会成功吗？
 没有问题，虽然我们的管理门户 以及PowerShell /REST API在创建用户或数据库时只支持对整个数据库设置读写权限，但您可以用“grant”语句对用户权限进行更细化的设置。
