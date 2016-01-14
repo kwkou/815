@@ -1,9 +1,9 @@
 资源|默认限制|最大限制
 ---|---|---
-每个[订阅](http://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx)的核心数 <sup>1</sup>|20|10,000
-每个订阅的[协同管理员数](http://msdn.microsoft.com/zh-cn/library/azure/gg456328.aspx)|200|200
-每个订阅的[存储帐户数](/documentation/articles/storage-create-storage-account)|100|100
-每个订阅的[云服务数](/documentation/articles/cloud-services-what-is)|20|200
+每个订阅的核心数 <sup>1</sup>|20|10,000
+每个订阅的协同管理员数|200|200
+每个订阅的[存储帐户数](/documentation/articles/storage-create-storage-account)|20|100
+每个订阅的[云服务数](/documentation/articles/fundamentals-application-models)|20|200
 每个订阅的[本地网络数](http://msdn.microsoft.com/zh-cn/library/jj157100.aspx)|10|500
 每个订阅的 SQL 数据库服务器数|6|150
 每个订阅的 DNS 服务器|9|100

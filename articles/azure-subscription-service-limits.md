@@ -174,6 +174,8 @@
 
 [了解 Azure 限制和增加](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 
-[Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)
+[Azure虚拟机大小](/documentation/articles/virtual-machines-size-specs)
+
+[Azure云服务大小](/documentation/articles/cloud-services-sizes-specs)
 
 <!---HONumber=Mooncake_1221_2015-->
