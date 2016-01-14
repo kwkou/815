@@ -20,8 +20,6 @@
 本文介绍了你可用于运行应用程序和工作负荷的基于虚拟机的计算资源的可用大小和选项。此外，还提供了你在计划使用这些资源时要考虑的部署注意事项。
 
 Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚拟机和云服务。有关说明，请参阅 [Azure 提供的计算托管选项](/documentation/articles/fundamentals-application-models/)。
-<!--
->[AZURE.NOTE]若要查看相关的 Azure 限制，请参阅 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)-->
 
 ## 规划注意事项
 
