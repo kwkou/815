@@ -1,4 +1,4 @@
-﻿
+
 
 
 本教程的最后一个阶段是生成和运行你的新应用程序。
@@ -12,7 +12,5 @@
    	![](./media/mobile-services-ios-run-app/mobile-quickstart-startup-ios.png)
 
    	这样可向在 Azure 中托管的新移动服务发送 POST 请求。来自请求的数据被插入到 TodoItem 表。移动服务返回存储在表中的项，数据显示在列表中。
-
- 	</div>
 
 <!---HONumber=71-->
