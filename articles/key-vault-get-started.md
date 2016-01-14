@@ -55,7 +55,7 @@
 
 启动 Azure PowerShell 会话，然后使用以下命令登录你的 Azure 帐户：
 
-    Login-AzureRmAccount 
+    Login-AzureRmAccount –Environment (Get-AzureRmEnvironment –Name AzureChinaCloud)
 
 在弹出的浏览器窗口中，输入你的 Azure 帐户用户名和密码。Azure PowerShell 会获取与此帐户关联的所有订阅，并按默认使用第一个订阅。
 
@@ -81,7 +81,7 @@
 
 使用 [New-AzureRmKeyVault](https://msdn.microsoft.com/zh-cn/library/azure/mt603736.aspx) cmdlet 创建密钥保管库。此 cmdlet 包含三个必需参数：**资源组名称**、**密钥保管库名称**和**地理位置**。
 
-例如，如果使用的保管库名称为 **ContosoKeyVault**，资源组名称为 **ContosoResourceGroup**，位置为**亚洲东部**，请键入：
+例如，如果使用的保管库名称为 **ContosoKeyVault**，资源组名称为 **ContosoResourceGroup**，位置为**中国东部**，请键入：
 
     New-AzureRmKeyVault -VaultName 'ContosoKeyVault' -ResourceGroupName 'ContosoResourceGroup' -Location 'China East'
 

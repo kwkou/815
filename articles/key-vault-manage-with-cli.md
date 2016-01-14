@@ -58,11 +58,11 @@
 
 要使用组织帐户登录，请使用以下命令：
 
-    azure login -u username -p password
+    azure login -u username -p password -e azurechinacloud
 
-或者如果你想要通过以交互方式键入来登录
-
-    azure login
+或者
+   
+	azure login -u username -e azurechinacloud
 
 >[AZURE.NOTE]login 方法仅适用于组织帐户。组织帐户是指受组织管理、并在组织的 Azure Active Directory 租户中定义的用户。
 
@@ -98,7 +98,7 @@
 
 使用 Azure 资源管理器时，会在资源组中创建所有相关资源。在本教程中，我们将创建新资源组“ContosoResourceGroup”。
 
-    azure group create 'ContosoResourceGroup' 'East Asia'
+    azure group create 'ContosoResourceGroup' 'China East'
 
 第一个参数是资源组名称，第二个参数是位置。对于位置，请使用命令 `azure location list` 来了解如何针对本示例中的位置指定替代位置。如需更多信息，请键入：`azure help location`
 
@@ -108,9 +108,9 @@
 
 使用 `azure keyvault create` 命令来创建密钥保管库。此脚本包含三个必需参数：资源组名称、密钥保管库名称和地理位置。
 
-例如，如果使用的保管库名称为 ContosoKeyVault，资源组名称为 ContosoResourceGroup，位置为亚洲东部，请键入：
+例如，如果使用的保管库名称为 ContosoKeyVault，资源组名称为 ContosoResourceGroup，位置为中国东部，请键入：
 
-    azure keyvault create --vault-name 'ContosoKeyVault' --resource-group 'ContosoResourceGroup' --location 'East Asia'
+    azure keyvault create --vault-name 'ContosoKeyVault' --resource-group 'ContosoResourceGroup' --location 'China East'
 
 此命令的输出会显示你刚刚创建的密钥保管库的属性。两个最重要的属性是：
 
