@@ -108,4 +108,4 @@ workbench 6.3.5默认选择SSL连接, 且会使用“TLS-DHE-RSA-WITH-AES-256-CB
 
 <!--Image references-->
 
-[1]: ./media/mysql-database-compatibilityinquiry/ssl.png
+[1]: ./media/mysql-database-compatibilityinquiry/SSL.png
