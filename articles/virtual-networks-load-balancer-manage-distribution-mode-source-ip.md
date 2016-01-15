@@ -9,10 +9,9 @@
    />
 
 <tags
-   ms.service="virtual-network"
-   ms.date="08/21/2015"
-   wacn.date="10/17/2015"
-   />
+	ms.service="virtual-network"
+	ms.date="12/07/2015"
+	wacn.date=""/>
    
 # 管理虚拟网络：负载平衡器分发模式（源 IP 关联）
 **源 IP 关联**（也称为“会话关联”或“客户端 IP 关联”）是一种 Azure 负载平衡器分发模式，它将来自单个客户端的连接绑定到 Azure 托管的单个服务器，而不是将每个客户端连接动态分发到 Azure 托管的不同服务器（默认负载平衡器行为）。

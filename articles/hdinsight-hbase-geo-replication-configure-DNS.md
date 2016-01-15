@@ -8,9 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.date="07/28/2015"
-   wacn.date="10/03/2015"/>
+	ms.service="hdinsight"
+	ms.date="12/02/2015"
+	wacn.date="01/14/2015"/>
 
 # 在两个 Azure 虚拟网络之间配置 DNS
 

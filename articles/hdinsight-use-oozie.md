@@ -1,26 +1,24 @@
-<properties 
-	pageTitle="在 HDInsight 中使用 Hadoop Oozie | Azure" 
+<properties
+	pageTitle="在 HDInsight 中使用 Hadoop Oozie | Windows Azure"
 	description="在 HDInsight 中使用大数据服务 Hadoop Oozie。了解如何定义 Oozie 工作流，并提交 Oozie 作业。"
-	services="hdinsight" 
-	documentationCenter="" 
+	services="hdinsight"
+	documentationCenter=""
 	tags="azure-portal"
-	authors="mumian" 
-	manager="paulettm" 
+	authors="mumian"
+	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.date="07/28/2015"
-	wacn.date="01/07/2016"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="12/02/2015"
+	wacn.date="01/14/2015"/>
 
 
 # 在 HDInsight 中将 Oozie 与 Hadoop 配合使用以定义和运行工作流
 
 [AZURE.INCLUDE [oozie-selector](../includes/hdinsight-oozie-selector.md)]
-##概述
-了解如何定义工作流，以及如何在 HDInsight 上运行工作流。若要了解 Oozie 协调器，请参阅[将基于时间的 Hadoop Oozie 协调器与 HDInsight 配合使用][hdinsight-oozie-coordinator-time]。
 
-##什么是 Oozie？
+了解如何定义工作流，以及如何在 HDInsight 上运行工作流。若要了解 Oozie 协调器，请参阅[将基于时间的 Hadoop Oozie 协调器与 HDInsight 配合使用][hdinsight-oozie-coordinator-time]。
 
 Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。它与 Hadoop 堆栈集成，支持 Apache MapReduce、Apache Pig、Apache Hive 和 Apache Sqoop 的 Hadoop 作业。它也能用于安排特定于某系统的作业，例如 Java 程序或 shell 脚本。
 
@@ -36,7 +34,7 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。它与 Had
 		...
 
 	该 Hive 脚本的输出结果类似于：
-	
+
 		[DEBUG] 434
 		[ERROR] 3
 		[FATAL] 1
@@ -45,156 +43,102 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。它与 Had
 		[WARN]  4
 
 	有关 Hive 的详细信息，请参阅[将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]。
-	
+
 2.  Sqoop 操作将 HiveQL 输出结果导出到 Azure SQL 数据库中的表。有关 Sqoop 的详细信息，请参阅[将 Hadoop Sqoop 与 HDInsight 配合使用][hdinsight-use-sqoop]。
 
 > [AZURE.NOTE]有关在 HDInsight 群集上支持的 Oozie 版本，请参阅 [HDInsight 提供的 Hadoop 群集版本有哪些新增功能？][hdinsight-versions]。
 
-> [AZURE.NOTE]本教程适用于 HDInsight 群集版本 3.0 和 2.1。本教程尚未在 HDInsight Emulator 上测试过。
-
-
-##先决条件
-<a name="prerequisites"></a>
+###<a name="prerequisites"></a>先决条件
 
 在开始阅读本教程前，你必须具有：
 
-- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell][powershell-install-configure]。若要执行 Windows PowerShell 脚本，必须以管理员身份运行并将执行策略设为 *RemoteSigned*。有关详细信息，请参阅[运行 Windows PowerShell 脚本][powershell-script]。
-- **一个 HDInsight 群集**。有关创建 HDInsight 群集的信息，请参阅 [使用自定义选项在 HDInsight 中预配 Hadoop 群集][hdinsight-provision-clusters] 或[将 Hadoop 与 HDInsight 中的 Hive 配合使用以分析手机使用情况][hdinsight-get-started]。你将需要以下数据才能完成本教程：
-
-	<table border = "1">
-<tr><th>群集属性</th><th>Windows PowerShell 变量名</th><th>值</th><th>说明</th></tr>
-<tr><td>HDInsight 群集名称</td><td>$clusterName</td><td></td><td>要在其中运行本教程的 HDInsight 群集。</td></tr>
-<tr><td>HDInsight 群集用户名</td><td>$clusterUsername</td><td></td><td>HDInsight 群集用户名。</td></tr>
-<tr><td>HDInsight 群集用户的密码 </td><td>$clusterPassword</td><td></td><td>HDInsight 群集用户的密码。</td></tr>
-<tr><td>Azure 存储帐户名</td><td>$storageAccountName</td><td></td><td>可用于 HDInsight 群集的 Azure 存储帐户。在本教程中，使用在群集设置过程中指定的默认存储帐户。</td></tr>
-<tr><td>Azure Blob 容器名称</td><td>$containerName</td><td></td><td>在此示例中，使用用于默认 HDInsight 群集文件系统的 Blob 存储容器名称。默认情况下，该容器与 HDInsight 群集同名。</td></tr>
-</table>
-
-- **Azure SQL 数据库**。你必须为该 Azure SQL 数据库配置防火墙规则以允许从你的工作站进行访问。有关创建 SQL 数据库和配置防火墙的说明，请参阅 [Windows Azure SQL 数据库入门][sqldatabase-get-started]。本文提供了用于创建本教程所需的 Azure SQL 数据库表的 Windows PowerShell 脚本。
-
-	<table border = "1">
-<tr><th>SQL 数据库属性</th><th>Windows PowerShell 变量名</th><th>值</th><th>说明</th></tr>
-<tr><td>SQL 数据库服务器名称</td><td>$sqlDatabaseServer</td><td></td><td>Sqoop 要将数据导出到其中的 Azure SQL 数据库。</td></tr>
-<tr><td>SQL 数据库登录名</td><td>$sqlDatabaseLogin</td><td></td><td>SQL 数据库登录名。</td></tr>
-<tr><td>SQL 数据库登录密码</td><td>$sqlDatabaseLoginPassword</td><td></td><td>SQL 数据库登录密码。</td></tr>
-<tr><td>SQL 数据库名</td><td>$sqlDatabaseName</td><td></td><td>Sqoop 要将数据导出到其中的 Azure SQL 数据库。</td></tr>
-</table>> [AZURE.NOTE]默认情况下，可以从 Azure HDInsight 这样的 Azure 服务连接 Azure SQL 数据库。如果禁用了此防火墙设置，则必须从 Azure 门户启用它。有关创建 SQL 数据库和配置防火墙规则的说明，请参阅[如何创建和配置 Azure SQL 数据库][sqldatabase-create-configue]。
-
-
-> [AZURE.NOTE]在表中填写值，以帮助完成本教程。
-
+- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/powershell-install-configure)。若要执行 Windows PowerShell 脚本，必须以管理员身份运行并将执行策略设为 *RemoteSigned*。有关详细信息，请参阅[运行 Windows PowerShell 脚本][powershell-script]。
 
 ##定义 Oozie 工作流及相关 HiveQL 脚本
 
-Oozie 工作流定义是用 hPDL（一种 XML 过程定义语言）编写的。默认的工作流文件名为 *workflow.xml*。你将在本地保存该工作流文件，并将在本教程后面使用 Windows PowerShell 将它部署到 HDInsight 群集。
+Oozie 工作流定义是用 hPDL（一种 XML 过程定义语言）编写的。默认的工作流文件名为 *workflow.xml*。以下是你要在本教程中使用的工作流文件。
 
-该工作流中的 Hive 操作调用 HiveQL 脚本文件。此脚本文件包含三个 HiveQL 语句：
+	<workflow-app name="useooziewf" xmlns="uri:oozie:workflow:0.2">
+		<start to = "RunHiveScript"/>
 
-1. **DROP TABLE 语句**删除 log4j Hive 表（如果存在）。
-2. **CREATE TABLE 语句**创建指向 log4j 日志文件位置的 log4j Hive 外部表。字段分隔符为“,”。默认分行符为“\\n”。Hive 外部表用于在你想多次运行 Oozie 工作流的情况下避免数据文件从原始位置被删除。
-3. **INSERT OVERWRITE 语句**可从 log4j Hive 表中计算每个日志级别类型的出现次数，并将输出保存到 Azure 存储中的 Blob。 
+		<action name="RunHiveScript">
+			<hive xmlns="uri:oozie:hive-action:0.2">
+				<job-tracker>${jobTracker}</job-tracker>
+				<name-node>${nameNode}</name-node>
+				<configuration>
+					<property>
+						<name>mapred.job.queue.name</name>
+						<value>${queueName}</value>
+					</property>
+				</configuration>
+				<script>${hiveScript}</script>
+				<param>hiveTableName=${hiveTableName}</param>
+				<param>hiveDataFolder=${hiveDataFolder}</param>
+				<param>hiveOutputFolder=${hiveOutputFolder}</param>
+			</hive>
+			<ok to="RunSqoopExport"/>
+			<error to="fail"/>
+		</action>
 
-有一个已知的 Hive 路径问题。此问题在你提交 Oozie 作业时发生。可在 TechNet Wiki 上找到用于解决此问题的说明：[HDInsight Hive 错误: 无法重命名][technetwiki-hive-error]。
+		<action name="RunSqoopExport">
+			<sqoop xmlns="uri:oozie:sqoop-action:0.2">
+				<job-tracker>${jobTracker}</job-tracker>
+				<name-node>${nameNode}</name-node>
+				<configuration>
+					<property>
+						<name>mapred.compress.map.output</name>
+						<value>true</value>
+					</property>
+				</configuration>
+			<arg>export</arg>
+			<arg>--connect</arg>
+			<arg>${sqlDatabaseConnectionString}</arg>
+			<arg>--table</arg>
+			<arg>${sqlDatabaseTableName}</arg>
+			<arg>--export-dir</arg>
+			<arg>${hiveOutputFolder}</arg>
+			<arg>-m</arg>
+			<arg>1</arg>
+			<arg>--input-fields-terminated-by</arg>
+			<arg>"\001"</arg>
+			</sqoop>
+			<ok to="end"/>
+			<error to="fail"/>
+		</action>
 
-**将 HiveQL 脚本文件定义为由工作流调用**
+		<kill name="fail">
+			<message>Job failed, error message[${wf:errorMessage(wf:lastErrorNode())}] </message>
+		</kill>
 
-1. 创建一个内容如下的文本文件：
+		<end name="end"/>
+	</workflow-app>
 
-		DROP TABLE ${hiveTableName};
-		CREATE EXTERNAL TABLE ${hiveTableName}(t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION '${hiveDataFolder}';
-		INSERT OVERWRITE DIRECTORY '${hiveOutputFolder}' SELECT t4 AS sev, COUNT(*) AS cnt FROM ${hiveTableName} WHERE t4 LIKE '[%' GROUP BY t4;
+该工作流中定义了两个操作。start-to 操作是 *RunHiveScript*。如果该操作成功运行，则下一个操作是 *RunSqoopExport*。
 
-	该脚本中使用了三个变量：
+RunHiveScript 有几个变量。在从工作站使用 Azure PowerShell 提交 Oozie 作业时，将会传递值。
 
-	- ${hiveTableName}
-	- ${hiveDataFolder}
-	- ${hiveOutputFolder}
-			
-	工作流定义文件（本教程中的 workflow.xml）在运行时会将三个值传递到这个 HiveQL 脚本。
-		
-2. 使用 **ANSI(ASCII)** 编码将文件另存为 **C:\\Tutorials\\UseOozie\\useooziewf.hql**。（如果你的文本编辑器不提供此选项，则使用记事本。） 在本教程的后面，此脚本文件将被部署到 HDInsight 群集。
-
-
-
-**定义工作流**
-
-1. 创建一个内容如下的文本文件：
-
-		<workflow-app name="useooziewf" xmlns="uri:oozie:workflow:0.2">
-		    <start to = "RunHiveScript"/> 
-			
-		    <action name="RunHiveScript">
-		        <hive xmlns="uri:oozie:hive-action:0.2">
-		            <job-tracker>${jobTracker}</job-tracker>
-		            <name-node>${nameNode}</name-node>
-		            <configuration>
-		                <property>
-		                    <name>mapred.job.queue.name</name>
-		                    <value>${queueName}</value>
-		                </property>
-		            </configuration>
-		            <script>${hiveScript}</script>
-			    	<param>hiveTableName=${hiveTableName}</param>
-		            <param>hiveDataFolder=${hiveDataFolder}</param>
-		            <param>hiveOutputFolder=${hiveOutputFolder}</param>
-		        </hive>
-		        <ok to="RunSqoopExport"/>
-		        <error to="fail"/>
-		    </action>
-		
-		    <action name="RunSqoopExport">
-		        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
-		            <job-tracker>${jobTracker}</job-tracker>
-		            <name-node>${nameNode}</name-node>
-		            <configuration>
-		                <property>
-		                    <name>mapred.compress.map.output</name>
-		                    <value>true</value>
-		                </property>
-		            </configuration>
-			    <arg>export</arg>
-			    <arg>--connect</arg> 
-			    <arg>${sqlDatabaseConnectionString}</arg> 
-			    <arg>--table</arg>
-			    <arg>${sqlDatabaseTableName}</arg> 
-			    <arg>--export-dir</arg> 
-			    <arg>${hiveOutputFolder}</arg> 
-			    <arg>-m</arg> 
-			    <arg>1</arg>
-			    <arg>--input-fields-terminated-by</arg>
-			    <arg>"\001"</arg>
-		        </sqoop>
-		        <ok to="end"/>
-		        <error to="fail"/>
-		    </action>
-		
-		    <kill name="fail">
-		        <message>Job failed, error message[${wf:errorMessage(wf:lastErrorNode())}] </message>
-		    </kill>
-		
-		   <end name="end"/>
-		</workflow-app>
-
-	该工作流中定义了两个操作。start-to 操作是 *RunHiveScript*。如果该操作成功运行，则下一个操作是 *RunSqoopExport*。
-
-	RunHiveScript 有几个变量。在从工作站使用 Windows PowerShell 提交 Oozie 作业时，将会传递值。
-
-	<table border = "1">
+<table border = "1">
 <tr><th>工作流变量</th><th>说明</th></tr>
-<tr><td>${jobTracker}</td><td>指定 Hadoop 作业跟踪器的 URL。在 HDInsight 版本 3.0 中使用 <strong>jobtrackerhost:9010</strong>。</td></tr>
+<tr><td>${jobTracker}</td><td>指定 Hadoop 作业跟踪器的 URL。在 HDInsight 版本 3.0 和 2.1 中使用 <strong>jobtrackerhost:9010</strong>。</td></tr>
 <tr><td>${nameNode}</td><td>指定 Hadoop 名称节点的 URL。请使用默认文件系统地址，例如 <i>wasb://&lt;containerName>@&lt;storageAccountName>.blob.core.chinacloudapi.cn</i>。</td></tr>
 <tr><td>${queueName}</td><td>指定要将作业提交到的队列名称。使用<strong>默认值</strong>。</td></tr>
-</table><table border = "1">
+</table>
+
+<table border = "1">
 <tr><th>Hive 操作变量</th><th>说明</th></tr>
 <tr><td>${hiveDataFolder}</td><td>指定 Hive Create Table 命令的源目录。</td></tr>
 <tr><td>${hiveOutputFolder}</td><td>指定 INSERT OVERWRITE 语句的输出文件夹。</td></tr>
 <tr><td>${hiveTableName}</td><td>指定引用 log4j 数据文件的 Hive 表的名称。</td></tr>
-</table><table border = "1">
+</table>
+
+<table border = "1">
 <tr><th>Sqoop 操作变量</th><th>说明</th></tr>
 <tr><td>${sqlDatabaseConnectionString}</td><td>指定 Azure SQL 数据库连接字符串。</td></tr>
 <tr><td>${sqlDatabaseTableName}</td><td>指定要将数据导出到的 Azure SQL 数据库表。</td></tr>
 <tr><td>${hiveOutputFolder}</td><td>指定 Hive INSERT OVERWRITE 语句的输出文件夹。这是用于 Sqoop 导出 (export-dir) 的同一个文件夹。</td></tr>
-</table>有关 Oozie 工作流和使用工作流操作的详细信息，请参阅 [Apache Oozie 4.0 文档][apache-oozie-400]（适用于 HDInsight 3.0 版）或 [Apache Oozie 3.3.2 文档][apache-oozie-332]（适用于 HDInsight 2.1 版）。
+</table>
+
+有关 Oozie 工作流和使用工作流操作的详细信息，请参阅 [Apache Oozie 4.0 文档][apache-oozie-400]（适用于 HDInsight 3.0 版）或 [Apache Oozie 3.3.2 文档][apache-oozie-332]（适用于 HDInsight 2.1 版）。
 
 2. 使用 ANSI (ASCII) 编码将文件另存为 **C:\\Tutorials\\UseOozie\\workflow.xml**。（如果你的文本编辑器不提供此选项，则使用记事本。）
 	
@@ -611,4 +555,4 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0104_2016-->

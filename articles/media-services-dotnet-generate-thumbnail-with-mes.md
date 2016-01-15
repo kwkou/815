@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/20/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="12/15/2015"
+	wacn.date=""/>
 
 
 #如何使用媒体编码器标准通过 .NET 来生成缩略图

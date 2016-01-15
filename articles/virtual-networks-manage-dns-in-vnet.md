@@ -4,12 +4,12 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
-   editor="tysonn"/>
-<tags 
-   ms.service="virtual-network"
-   ms.date="09/04/2015"
-   wacn.date="10/17/2015"/>
+   manager="carmonm"
+   editor="tysonn" />
+<tags
+	ms.service="virtual-network"
+	ms.date="12/11/2015"
+	wacn.date=""/>
 
 # 管理虚拟网络 (VNet) 使用的 DNS 服务器
 

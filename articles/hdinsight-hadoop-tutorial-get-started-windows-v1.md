@@ -9,9 +9,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.date="08/07/2015"
-   wacn.date="01/07/2016"/>
+	ms.service="hdinsight"
+	ms.date="11/29/2015"
+	wacn.date="01/14/2015"/>
 
 
 # Hadoop 教程：在 Windows 上的 HDInsight 中开始将 Hadoop 与 Hive 查询配合使用

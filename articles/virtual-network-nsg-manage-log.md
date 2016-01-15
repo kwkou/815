@@ -10,8 +10,8 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="10/02/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="12/11/2015"
+	wacn.date=""/>
 
 #网络安全组 (NSG) 的日志分析
 

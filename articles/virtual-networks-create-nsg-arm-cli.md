@@ -4,13 +4,14 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn"
-   tags="azure-resource-manager" />
-<tags 
-   ms.service="virtual-network"
-   ms.date="09/15/2015"
-   wacn.date="10/17/2015" />
+   tags="azure-resource-manager"
+/>
+<tags
+	ms.service="virtual-network"
+	ms.date="12/11/2015"
+	wacn.date=""/>
 
 # 如何在 Azure CLI 中创建 NSG
 

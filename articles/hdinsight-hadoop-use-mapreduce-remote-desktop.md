@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="12/04/2015"
+	wacn.date="01/14/2015"/>
 
 # 通过远程桌面在 HDInsight 上的 Hadoop 中使用 MapReduce
 

@@ -7,10 +7,10 @@
 	services="media-services" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="12/17/2015"
+	wacn.date="01/14/2015"/>
 
 
 #如何：传送流内容

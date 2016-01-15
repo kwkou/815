@@ -9,9 +9,9 @@
 	editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.date="08/07/2015"
-   wacn.date="01/07/2016"/>
+	ms.service="hdinsight"
+	ms.date="12/02/2015"
+	wacn.date="01/14/2015"/>
 
 # 在 Azure 虚拟网络上设置 HBase 群集
 

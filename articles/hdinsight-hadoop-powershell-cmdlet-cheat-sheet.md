@@ -7,10 +7,10 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.date="08/07/2015" 
-	wacn.date="10/03/2015"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="11/29/2015"
+	wacn.date="01/14/2015"/>
 
 
 # 用于执行 Hadoop 常见任务的 Windows Azure HDInsight PowerShell cmdlet 备忘单

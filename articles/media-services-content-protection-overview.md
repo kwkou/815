@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="11/03/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="12/05/2015"
+	wacn.date="01/14/2015"/>
 
 #保护内容概述
 

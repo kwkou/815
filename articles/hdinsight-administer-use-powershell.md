@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/04/2015"
-	wacn.date="01/07/2016"/>
+	ms.date="12/01/2015"
+	wacn.date="01/14/2015"/>
 
 # 使用 Azure PowerShell 管理 HDInsight 中的 Hadoop 群集
 
@@ -65,7 +65,7 @@ HDInsight 群集在 Azure 存储帐户上需要 Azure 资源组和 Blob 容器�
 	# List the keys for a Storage account
 	Get-AzureRmStorageAccountKey -ResourceGroupName <Azure Resource Group Name> -name $storageAccountName <Azure Storage Account Name>
 
-有关使用管理门户获取信息的详细信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)的“查看、复制和重新生成存储访问密钥”一节。
+有关使用门户获取信息的详细信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)的“查看、复制和重新生成存储访问密钥”部分。
 
 **创建 Azure 存储帐户**
 
@@ -151,7 +151,7 @@ Azure PowerShell 无法在 HDInsight 创建过程中创建 Blob 容器。你可�
 
 	可以使用两种方法来完成重新平衡操作：
 
-	* Storm web UI
+	* Storm Web UI
 	* 命令行界面 (CLI) 工具
 
 	有关更多详细信息，请参阅 [Apache Storm 文档](http://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html)。
@@ -205,7 +205,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 >[AZURE.NOTE]授予/撤消访问权限时，你将重设群集用户的用户名和密码。
 
-也可以通过管理门户完成此操作。请参阅[使用 Azure 管理门户管理 HDInsight][hdinsight-admin-portal]。
+也可以使用门户完成此操作。请参阅[使用 Azure 管理门户管理 HDInsight][hdinsight-admin-portal]。
 
 ##更新 HTTP 用户凭据
 
@@ -243,7 +243,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 **提交 Hive 作业**
 
-请参阅[使用 PowerShell 运行 Hive 查询](/documentation/articles/hdinsight-hadoop-use-hive-powershell)。
+请参阅[使用 PowerShell 运行 Hive 查询](/documentation/articles/hdinsight-hadoop-use-hive-powershell)
 
 **提交 Pig 作业**
 
@@ -295,4 +295,4 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

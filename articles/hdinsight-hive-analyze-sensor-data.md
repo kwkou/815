@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="12/04/2015"
+	wacn.date="01/14/2015"/>
 
 #使用 HDInsight 中 Hadoop上的 Hive 查询控制台分析传感器数据
 

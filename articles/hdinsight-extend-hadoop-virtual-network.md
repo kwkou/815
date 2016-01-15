@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/28/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="11/18/2015"
+	wacn.date="01/14/2015"/>
 
 
 #使用 Azure 虚拟网络扩展 HDInsight 功能

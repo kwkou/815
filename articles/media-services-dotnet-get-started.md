@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="11/08/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="12/17/2015"
+	wacn.date=""/>
 
 
 # 使用 .NET SDK 开始传送点播内容
@@ -18,22 +18,19 @@
 [AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started.md)]
 
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/?WT.mc_id=A8A8397B5" target="_blank">Azure 试用</a>。
+>[AZURE.NOTE]
+>若要完成本教程，你需要一个 Azure 帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
+ 
+##概述 
 
-本教程将引导你完成使用 Azure Media Services (AMS) SDK for .NET 实施视频点播 (VoD) 内容传送应用程序的步骤。
+本教程将引导你完成使用用于 .NET 的 Azure 媒体服务 (AMS) SDK 实施视频点播 (VoD) 内容传送应用程序的步骤。
 
 
 本教程介绍了基本的媒体服务工作流，以及进行媒体服务开发需要用到的最常见编程对象和任务。完成本教程后，你就能够流式传输或渐进下载你已上载、编码和下载的示例媒体文件。
 
-## 先决条件
-以下是开始使用 Media Services SDK for .NET 进行开发所要满足的先决条件。
+## 学习内容
 
-- 操作系统：Windows 8 或更高版本、Windows 2008 R2、Windows 7。
-- .NET Framework 4.5 或 .NET Framework 4.0
-- Visual Studio 2010 SP1（专业版、高级专业版、旗舰版或学习版）或更高版本。
-
-
-本快速入门教程说明了以下任务。
+本教程说明如何完成以下任务：
 
 1.  创建媒体服务帐户（使用 Azure 管理门户）。
 2.  配置流式处理终结点（使用门户）。
@@ -41,15 +38,30 @@
 5.  连接到媒体服务帐户。
 6.  创建新资产并上载视频文件。
 7.  将源文件编码为一组自适应比特率 MP4 文件。
-8.  发布资产并获取用于流式处理和渐进式下载的 URL。  
-9.  播放内容。
+8.  发布资产并获取用于流式处理和渐进式下载的 URL。
+9.  通过播放内容进行测试。
 
+## 先决条件
+
+以下是完成本教程所需具备的条件。
+
+- 若要完成本教程，你需要一个 Azure 帐户。 
+	
+	如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留该帐户，使用那些免费的 Azure 服务和功能，例如 Azure 网站中的网站功能。
+- 操作系统：Windows 8 或更高版本、Windows 2008 R2、Windows 7。
+- .NET Framework 4.0 或更高版本
+- Visual Studio 2010 SP1（Professional、Premium、Ultimate 或 Express）或更高版本。
+
+
+##下载示例
+
+从[此处](http://azure.microsoft.com/documentation/samples/media-services-dotnet-on-demand-encoding-with-media-encoder-standard/)获取并运行示例。
 
 ##使用门户创建媒体服务帐户
 
 1. 在 Azure 管理门户中，依次单击“新建”、“媒体服务”和“快速创建”。
 
-	![媒体服务快速创建](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
+![Media Services 快速创建](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
 
 2. 在“名称”中，输入新帐户的名称。媒体服务帐户名称由小写字母或数字构成（不含空格），长度为 3 - 24 个字符。
 
@@ -61,15 +73,15 @@
 
 6. 单击窗体底部的“快速创建”。
 
-	可以在窗口底部的消息区域中监视过程的状态。
+可以在窗口底部的消息区域中监视过程的状态。
 
-	成功创建帐户后，状态将更改为“活动”。
+成功创建帐户后，状态将更改为“活动”。
 
-	在页面底部，将出现“管理密钥”按钮。当你单击此按钮时，将会显示一个对话框，其中包含媒体服务帐户名以及主密钥和辅助密钥。你必须要有帐户名和主要密钥信息，才能以编程方式访问媒体服务帐户。
+在页面底部，将出现“管理密钥”按钮。当你单击此按钮时，将会显示一个对话框，其中包含媒体服务帐户名以及主密钥和辅助密钥。你必须要有帐户名和主要密钥信息，才能以编程方式访问媒体服务帐户。
 
-	![“媒体服务”页](./media/media-services-dotnet-get-started/wams-mediaservices-page.png)
+![“Media Services”页](./media/media-services-dotnet-get-started/wams-mediaservices-page.png)
 
-	当你双击帐户名时，默认情况下将显示“快速启动”页。可从此页执行某些管理任务，而这些管理任务也可从该门户的其他页执行。例如，你可以从此页上载视频文件，也可以从“内容”页执行此操作。
+当你双击帐户名时，默认情况下将显示“快速启动”页。可从此页执行某些管理任务，而这些管理任务也可从该门户的其他页执行。例如，你可以从此页上载视频文件，也可以从“内容”页执行此操作。
 
 ##使用门户配置流式处理终结点
 
@@ -79,8 +91,8 @@
 
 若要使用动态打包，必须执行下列操作：
 
-- 将夹层（源）文件编码或转换成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。  
-- 针对你要传送内容的“流式处理终结点”，获取至少一个流式处理单位。
+- 将夹层（源）文件编码或转换成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。
+- 针对你要传送内容的**流式处理终结点**，获取至少一个流式处理单位。
 
 通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
 
@@ -92,15 +104,15 @@
 
 3. 若要指定流式处理单元数，请单击“缩放”选项卡，然后移动“保留容量”滑块。
 
-	![“缩放”页](./media/media-services-dotnet-get-started/media-services-origin-scale.png)
+![“缩放”页](./media/media-services-dotnet-get-started/media-services-origin-scale.png)
 
 4. 按“保存”以保存更改。
 
-	分配所有新的单元大约需要 20 分钟才能完成。
+分配所有新的单元大约需要 20 分钟才能完成。
 
-	>[AZURE.NOTE]当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
-	>
-	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅[媒体服务定价详细信息](/home/features/media-services/#price)。
+>[AZURE.NOTE]当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
+>
+> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅[媒体服务定价详细信息](/home/features/media-services/#price)。
 
 
 
@@ -108,7 +120,7 @@
 
 1. 在 Visual Studio 2013、Visual Studio 2012 或 Visual Studio 2010 SP1 中创建一个新的 C# 控制台应用程序。输入“名称”、“位置”和“解决方案名称”，然后单击“确定”。
 
-2. 使用 [windowsazure.mediaservices.extensions](https://www.nuget.org/packages/windowsazure.mediaservices.extensions) Nuget 包安装 **Azure 媒体服务 .NET SDK 扩展**。Media Services .NET SDK Extensions 是一组扩展方法和帮助器函数，可简化你的代码，并令使用媒体服务进行开发变得更加容易。安装此包也会安装**媒体服务 .NET SDK** 并添加所有其他必需的依赖项。
+2. 使用 [windowsazure.mediaservices.extensions](https://www.nuget.org/packages/windowsazure.mediaservices.extensions) Nuget 包安装 **Azure 媒体服务 .NET SDK 扩展**。媒体服务 .NET SDK Extensions 是一组扩展方法和帮助器函数，可简化你的代码，并令使用媒体服务进行开发变得更加容易。安装此包也会安装**媒体服务 .NET SDK** 并添加所有其他必需的依赖项。
 
 3. 添加对 System.Configuration 程序集的引用。此程序集包含用于访问配置文件（例如，App.config）的 **System.Configuration.ConfigurationManager** 类。
 
@@ -135,8 +147,6 @@
 		using System.IO;
 		using Microsoft.WindowsAzure.MediaServices.Client;
 		using Microsoft.WindowsAzure.MediaServices.Client.DynamicEncryption;
-
-	>[AZURE.NOTE] 如果 System.Configuration 没有默认被引用，请首先把它添加到引用。
 
 6. 在 projects 目录下创建新的文件夹，然后复制你要编码和流处理或渐进式下载的 .mp4 或 .wmv 文件。在此示例中，我们使用了“C:\\VideoFiles”路径。
 
@@ -318,7 +328,7 @@ MPEG DASH 的流 URL 采用以下格式：
 
 	{blob container name}/{asset name}/{file name}/{SAS signature}
 
-Media Services .NET SDK Extensions 提供了便利的帮助器方法，可针对已发布的资产返回格式化 URL。
+媒体服务 .NET SDK Extensions 提供了便利的帮助器方法，可针对已发布的资产返回格式化 URL。
 
 以下代码使用 .NET SDK 扩展创建定位符，获取流和渐进式下载 URL。该代码还演示了如何将文件下载到本地文件夹。
 
@@ -389,7 +399,7 @@ Media Services .NET SDK Extensions 提供了便利的帮助器方法，可针对
         Console.WriteLine("Output asset files available at '{0}'.", Path.GetFullPath(outputFolder));
     }
 
-##播放内容  
+##通过播放内容进行测试  
 
 在执行上一部分中定义的程序后，控制台窗口中会显示如下所示的 URL。
 
@@ -446,4 +456,4 @@ MPEG DASH
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
   [Portal]: http://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->

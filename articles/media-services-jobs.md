@@ -7,10 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="12/05/2015"
+	wacn.date=""/>
 
 #处理 Azure 媒体服务作业
 
@@ -29,7 +29,7 @@
 
 [AZURE.INCLUDE [media-services-selector-get-media-processor](../includes/media-services-selector-get-media-processor.md)]
 
-##创建作业 
+##创建作业
 
 作业是包含有关一组任务（例如，编码或索引编制）的元数据的实体。每个任务对输入资产执行原子操作。有关如何创建编码作业的示例，请参阅：
 
@@ -39,10 +39,10 @@
 
 [AZURE.INCLUDE [media-services-selector-index-content](../includes/media-services-selector-index-content.md)]
 
-##编码 
+##编码
 
 使用 **Azure 管理门户**、**.NET** 或 **REST API** 通过 **Azure 媒体编码器**进行编码。
- 
+
 [AZURE.INCLUDE [media-services-selector-encode](../includes/media-services-selector-encode.md)]
 
 ##监视作业进度
@@ -51,8 +51,20 @@
 
 [AZURE.INCLUDE [media-services-selector-job-progress](../includes/media-services-selector-job-progress.md)]
 
+##列出 
+
+> [AZURE.SELECTOR]
+- [.NET](/documentation/articles/media-services-dotnet-manage-entities#list-jobs-and-assets)
+- [REST](/documentation/articles/media-services-rest-manage-entities#querying-entities)
+
+##删除作业
+
+> [AZURE.SELECTOR]
+- [.NET](/documentation/articles/media-services-dotnet-manage-entities#delete-a-job)
+- [REST](/documentation/articles/media-services-rest-manage-entities##deleting-entities)
+
 ##相关链接
 
 [配额与限制](/documentation/articles/media-services-quotas-and-limitations) - 介绍媒体服务编码器的使用配额和限制
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0104_2016-->

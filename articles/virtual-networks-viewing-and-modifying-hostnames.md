@@ -4,12 +4,12 @@
    services="virtual-network"
    documentationCenter="na"
    authors="joaoma"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.date="08/25/2015"
-   wacn.date="09/15/2015" />
+<tags
+	ms.service="virtual-network"
+	ms.date="12/07/2015"
+	wacn.date=""/>
 
 # 查看和修改主机名
 

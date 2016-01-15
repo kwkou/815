@@ -7,10 +7,10 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.date="08/07/2015" 
-	wacn.date="01/07/2016"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="11/29/2015"
+	wacn.date="01/14/2015"/> 
 
 # 使用脚本操作自定义 HDInsight 群集
 

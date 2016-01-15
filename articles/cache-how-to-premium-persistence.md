@@ -9,32 +9,33 @@
 
 <tags
 	ms.service="cache"
-	ms.date="10/01/2015"
-	wacn.date="01/04/2016"/>
+	ms.date="12/03/2015"
+	wacn.date="01/14/2015"/>
 
 # 如何为高级 Azure Redis 缓存配置数据暂留
 
-Azure Redis 缓存具有不同的缓存产品（包括新推出的高级级别，目前为预览版），使缓存大小和功能的选择更加灵活。
+Azure Redis 缓存具有不同的缓存产品（包括新推出的高级层），使缓存大小和功能的选择更加灵活。
 
 Azure Redis 缓存高级级别包括群集、暂留和虚拟网络支持。本文介绍如何配置高级 Azure Redis 缓存实例中的暂留。
 
 有关其他高级缓存功能的信息，请参阅[如何配置高级 Azure Redis 缓存的群集功能](/documentation/articles/cache-how-to-premium-clustering)和[如何配置高级 Azure Redis 缓存的虚拟网络支持](/documentation/articles/cache-how-to-premium-vnet)。
 
->[AZURE.NOTE]Azure Redis 缓存高级级别目前处于预览状态。在预览期间，暂留不能与群集功能或虚拟网络一起使用。
-
 ## 什么是数据暂留？
 Redis 暂留可让你保留存储在 Redis 中的数据。你还可获取快照并备份数据，以便在出现硬件故障时进行加载。这相对于基本级别或标准级别是一项巨大优势，因为基本级别或标准级别将所有数据存储在内存中，在出现故障的情况下，如果缓存节点停机，则可能导致数据丢失。
 
-Azure Redis 缓存提供的 Redis 暂留功能允许将数据存储在 Azure 存储帐户中。公共预览版支持 [RDB 模型](http://redis.io/topics/persistence)，并且很快就会支持 [AOF](http://redis.io/topics/persistence)。
+Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供的 Redis 持久性，允许将数据存储在 Azure 存储帐户中。配置暂留以后，Azure Redis 缓存会按照可配置的备份频率，将 Redis 缓存的快照以 Redis 二进制格式暂留在磁盘上。如果发生了灾难性事件，导致主缓存和副缓存都无法使用，则会使用最新快照重新构造缓存。
 
-## 数据暂留
-配置暂留以后，Azure Redis 缓存会按照可配置的备份频率，将 Redis 缓存的快照以 Redis 二进制格式暂留在磁盘上。如果发生了灾难性事件，导致主缓存和副缓存都无法使用，则会使用最新快照重新构造缓存。
+可以在创建缓存过程中通过“新建 Redis 缓存”边栏选项卡配置持久性；另外还可以在现有高级缓存的“设置”边栏选项卡上进行这项配置。
 
-Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存进行管理。
+## 创建高级缓存
+
+在 Windows Azure 中国区，只能通过 Azure PowerShell 或 Azure CLI 管理 Redis 缓存
+
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
-使用以下的 PowerShell 脚本创建一个已激活数据暂留的高级缓存：
+
+使用以下 PowerShell 脚本创建具有 Redis 持久性的高级缓存：
 
 	$VerbosePreference = "Continue"
 
@@ -45,13 +46,25 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 	
 	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 6GB -Sku Premium -RedisConfiguration @{"rdb-backup-enabled"="true"; "rdb-backup-frequency"="60"; "rdb-backup-max-snapshot-count"="1"; "rdb-storage-connection-string"="DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.chinacloudapi.cn"}
 
-这一段脚本可以建立一个6GB，“备份频率”为60分钟的高级缓存。
+以下部分中的步骤说明如何在新的高级缓存上配置 Redis 持久性。
 
-“备份频率”选项包括“60 分钟”、“6 小时”、“12 小时”和“24 小时”。在上一个备份操作成功完成以后，此时间间隔就会开始倒计时，同时会启动新的备份。建议使用“高级存储”帐户，因为高级存储的吞吐量更大，关于如何建立“高级存储”，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)，同样地， Windows Azure 中国目前只支持用 PowerShell 管理高级存储。
+## 配置 Redis 持久性
 
->[AZURE.NOTE]AOF 在高级级别预览期间不可用，但缓存团队会争取尽快增加此功能。有关 RDB 和 AOF 以及各自优势的详细信息，请参阅 [Redis 暂留](http://redis.io/topics/persistence)。
+可以使用 **Set-AzureRmRedisCache** PowerShell 命令来配置 Redis 数据持久性：
 
-创建完缓存后，一旦备份频率间隔时间已过，则会启动第一次备份。
+	Set-AzureRmRedisCache -Name $cacheName  -ResourceGroupName $resourceGroupName -RedisConfiguration @{"rdb-backup-enabled"="true"; "rdb-backup-frequency"="60"; "rdb-backup-max-snapshot-count"="1"; "rdb-storage-connection-string"="DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.chinacloudapi.cn"}
+
+在此 PowerShell 命令中可以看到，对于 **-RedisConfiguration** 参数，将“rdb-backup-enabled”设置为 true 可以启用 RDB，设置为 false 可以禁用 RDB。
+
+若要配置备份间隔，可以将“rdb-backup-frequency”设置为 15（表示 **15 分钟**）、30（表示 **30 分钟**）、60（表示 **60 分钟**）、360（表示 **6 小时**）、720（表示 **12 小时**）或 1440（表示 **24 小时**）。在上一个备份操作成功完成以后，此时间间隔就会开始倒计时，同时会启动新的备份。
+
+若要配置存储帐户，可以将“rdb-storage-connection-string”设置为 Windows Azure 中国区的某个连接字符串。在上述命令中可以看到，你需要在连接字符串中指定 BlobEndpoint、QueueEndpoint 和 TableEndpoint。
+
+>[AZURE.IMPORTANT]如果重新生成了持久性帐户的存储密钥，则必须更新“rdb-backup-frequency”。
+
+一旦备份频率间隔时间已过，则会启动下一次备份（或新缓存的首次备份）。
+
+
 
 ## 保留常见问题
 
@@ -59,11 +72,13 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 
 ## 能否在此前已创建的缓存的基础上启用保留？
 
-在预览期间，你只能在高级缓存的创建过程中启用和配置保留。在公共预览期间，不允许从基本/标准版扩展到高级版，但很快就会允许。
+是的，可以在创建缓存时或者在现有高级缓存上配置 Redis 持久性。
 
 ## 能否在创建缓存后更改备份频率？
 
-在预览期间，你只能在缓存创建过程中配置保留。若要更改保留配置，请先删除缓存，然后使用所需保留配置创建新的缓存。这是预览版存在的限制，很快会推出相应的支持。
+是的，可以在 Azure PowerShell 更改备份频率。以下是一个命令示例，通过修改 rdb-backup-frequency 可以改变备份频率。
+
+	Set-AzureRmRedisCache -Name $cacheName  -ResourceGroupName $resourceGroupName -RedisConfiguration @{"rdb-backup-enabled"="true"; "rdb-backup-frequency"="60"; "rdb-backup-max-snapshot-count"="1"; "rdb-storage-connection-string"="DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.chinacloudapi.cn"}
 
 ## 为何我的备份频率为 60 分钟，而两次备份的间隔却超过 60 分钟？
 
@@ -89,4 +104,6 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 
 [redis-cache-persistence-selected]: ./media/cache-how-to-premium-persistence/redis-cache-persistence-selected.png
 
-<!---HONumber=79-->
+[redis-cache-settings]: ./media/cache-how-to-premium-persistence/redis-cache-settings.png
+
+<!---HONumber=Mooncake_0104_2016-->

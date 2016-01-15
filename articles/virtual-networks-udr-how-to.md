@@ -4,12 +4,12 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.date="08/10/2015"
-   wacn.date="12/17/2015" />
+<tags
+	ms.service="virtual-network"
+	ms.date="12/07/2015"
+	wacn.date=""/>
 
 # 如何在 Azure 中创建路由和启用 IP 转发
 你可以使用 Azure 中的虚拟设备来处理 Azure 虚拟网络中的流量。但是，你需要创建相应的路由，以便虚拟网络中的 VM 和云服务将数据包发送到虚拟设备而非数据包的所需目标。你还需要在虚拟设备 VM 上启用 IP 转发，使之能够接收和转发其目标地址不是实际虚拟设备 VM 的数据包。

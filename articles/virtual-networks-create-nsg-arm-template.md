@@ -4,14 +4,14 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn"
    tags="azure-resource-manager"
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="10/08/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="11/20/2015"
+	wacn.date=""/>
 
 # 如何使用模板创建 NSG
 

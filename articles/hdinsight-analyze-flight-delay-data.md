@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/11/2015"
-	wacn.date="01/07/2016"/>
+	ms.date="12/01/2015"
+	wacn.date="01/14/2015"/>
 
 #使用 HDInsight 中的 Hive 分析航班延误数据
 
