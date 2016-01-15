@@ -10,8 +10,8 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="11/12/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="11/20/2015"
+	wacn.date="01/14/2016"/>
 
 # 使用模板部署多 NIC VM
 
@@ -211,21 +211,15 @@
 
 公共存储库中提供的示例模板采用包含用于生成上述方案的默认值的参数文件。若要使用单击部署来部署此模板，请打开[此链接](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC)，在“后端资源组(参见文档)”右侧单击“部署至 Azure”，如有必要替换默认参数值，然后按照门户中的说明进行操作。
 
+下图显示在部署之后新资源组的内容。
+
+![后端资源组](./media/virtual-network-deploy-multinic-arm-template/Figure2.png)
 
 ## 使用 PowerShell 部署模板
 
 若要使用 PowerShell 部署下载的模板，请执行以下步骤。
 
-1. 如果你从未使用过 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)，并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
-2. 运行 **Switch-AzureMode** cmdlet 以切换到资源管理器模式，如下所示。
-
-		Switch-AzureMode AzureResourceManager
-
-	下面是上述命令的预期输出：
-
-		WARNING: The Switch-AzureMode cmdlet is deprecated and will be removed in a future release.
-
-	>[AZURE.WARNING]Switch-AzureMode cmdlet 将在不久后弃用。如果弃用，所有资源管理器 cmdlet 都将重命名。
+[AZURE.INCLUDE [powershell-preview-include.md](../includes/powershell-preview-include.md)]
 
 3. 运行 **New-AzureResourceGroup** cmdlet 以使用模板创建资源组。
 
@@ -294,4 +288,4 @@
 		data:
 		info:    group create command OK
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->

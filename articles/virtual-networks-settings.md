@@ -4,12 +4,12 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
-   editor="tysonn"/>
-<tags 
-   ms.service="virtual-network"
-   ms.date="09/02/2015"
-   wacn.date="11/02/2015"/>
+   manager="carmonm"
+   editor="tysonn" />
+<tags
+	ms.service="virtual-network"
+	ms.date="12/11/2015"
+	wacn.date="01/14/2016"/>
 
 # 如何管理虚拟网络 (VNet) 属性
 你可以使用管理门户查看和修改 VNet 设置。

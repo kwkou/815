@@ -7,10 +7,10 @@
 	services="media-services" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="12/16/2015"
+	wacn.date="01/14/2016"/>
 
 
 #使用 DASH.js 在 HTML5 应用程序中嵌入 MPEG-DASH 自适应流式处理视频

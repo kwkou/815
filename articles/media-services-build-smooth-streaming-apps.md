@@ -7,18 +7,16 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="12/16/2015"
+	wacn.date="01/14/2016"/>
 
 
 
 #如何生成平滑流式处理 Windows 应用商店应用程序
 
-借助适用于 Windows 8 的平滑流式处理客户端 SDK，开发人员可以生成支持按需付费、直播平滑流式处理内容的 Windows 应用商店应用程序。除了播放平滑流式处理内容这一基本功能以外，该 SDK 还提供其他丰富功能，例如 Microsoft PlayReady 保护、质量级别限制、实时 DVR、音频流切换、收听状态更新（如质量级别更改）和错误事件，等等。有关支持的功能的详细信息，请参阅[发行说明](http://www.iis.net/learn/media/smooth-streaming/smooth-streaming-client-sdk-for-windows-8-release-notes)。
-
-本教程介绍 API。对于播放器开发，Microsoft 强烈建议使用 [Windows 8 播放器框架](http://playerframework.codeplex.com/)。使用播放器框架可以更轻松地生成应用程序及提供多种附加功能。
+借助适用于 Windows 8 的平滑流式处理客户端 SDK，开发人员可以生成支持按需付费、直播平滑流式处理内容的 Windows 应用商店应用程序。除了播放平滑流式处理内容这一基本功能以外，该 SDK 还提供其他丰富功能，例如 Microsoft PlayReady 保护、质量级别限制、实时 DVR、音频流切换、收听状态更新（如质量级别更改）和错误事件，等等。有关支持的功能的详细信息，请参阅[发行说明](http://www.iis.net/learn/media/smooth-streaming/smooth-streaming-client-sdk-for-windows-8-release-notes)。有关详细信息，请参阅[适用于 Windows 8 的播放器框架](http://playerframework.codeplex.com/)。
 
 本教程包含四个课时：
 
@@ -28,19 +26,26 @@
 4. 选择平滑流式处理曲目
 
 ##先决条件
-- Windows 8 32 位或 64 位。你可以从 MSDN 获取 Windows 8 企业评估版。
-- 在 Windows 8 上安装适用于 Windows 8 的 Visual Studio 2012 或 Visual Studio Express 2012。你可以从[此处](http://www.microsoft.com/visualstudio/11/zh-cn/downloads)获取试用版。
+
+- Windows 8 32 位或 64 位。你可以从 MSDN 获取 [Windows 8 企业评估版](http://msdn.microsoft.com/evalcenter/jj554510.aspx)。
+- Visual Studio 2012 或 Visual Studio Express 2012（或更高版本）。你可以从[此处](http://www.microsoft.com/visualstudio/11/downloads)获取试用版。
 - [适用于 Windows 8 的 Microsoft 平滑流式处理客户端 SDK](http://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Homehttp://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Home)。
 
-可从 MSDN 开发人员代码示例（代码库）下载每一课后生成的解决方案：[第 1 课](http://code.msdn.microsoft.com/Smooth-Streaming-Client-0bb1471f "一个简单的 Windows 8 平滑流式处理媒体播放器")、[第 2 课](http://code.msdn.microsoft.com/A-simple-Windows-8-Smooth-ee98f63a "带滚动条控件的简单 Windows 8 平滑流式处理媒体播放器")、[第 3 课](http://code.msdn.microsoft.com/A-Windows-8-Smooth-883c3b44 "支持流选择的 Windows 8 平滑流式处理媒体播放器")和[第 4 课](http://code.msdn.microsoft.com/A-Windows-8-Smooth-aa9e4907 "支持轨迹选择的 Windows 8 平滑流式处理媒体播放器")。
+
+可从 MSDN 开发人员代码示例（代码库）下载每一课后生成的解决方案：
+
+- [第 1 课](http://code.msdn.microsoft.com/Smooth-Streaming-Client-0bb1471f) - 简单的 Windows 8 平滑流式处理媒体播放器， 
+- [第 2 课](http://code.msdn.microsoft.com/A-simple-Windows-8-Smooth-ee98f63a) - 带滚动条控件的简单 Windows 8 平滑流式处理媒体播放器， 
+- [第 3 课](http://code.msdn.microsoft.com/A-Windows-8-Smooth-883c3b44) - 支持流选择的 Windows 8 平滑流式处理媒体播放器，  
+- [第 4 课](http://code.msdn.microsoft.com/A-Windows-8-Smooth-aa9e4907) - 支持轨迹选择的 Windows 8 平滑流式处理媒体播放器。
 
 ##第 1 课：创建基本的平滑流式处理应用商店应用程序
+
 在本课中，你将要使用 MediaElement 控件创建一个 Windows 应用商店应用程序，以播放平滑流内容。运行的应用程序如下所示：
 
 ![平滑流式处理 Windows 应用商店应用程序示例][PlayerApplication]
  
-有关开发 Windows 应用商店应用程序的详细信息，请参阅[开发适用于 Windows 8 的极佳应用](http://msdn.microsoft.com/zh-cn/windows/apps/br229512.aspx)。
-本课包含以下过程：
+有关开发 Windows 应用商店应用程序的详细信息，请参阅[开发适用于 Windows 8 的极佳应用](http://msdn.microsoft.com/windows/apps/br229512.aspx)。本课包含以下过程：
 
 1.	创建 Windows 应用商店项目
 2.	设计用户界面 (XAML)
@@ -53,36 +58,14 @@
 2.	在“文件”菜单中，单击“新建”，然后单击“项目”。
 3.	在“新建项目”对话框中，键入或选择以下值：
 
-	<table border="1">
-<tr>
-	<th>Name</th>
-	<th>值</th>
-</tr>
-<tr>
-	<td>模板组</td>
-	<td>已安装/模板/Visual C#/Windows 应用商店</td>
-</tr>
-<tr>
-	<td>模板</td>
-	<td>空白应用程序(XAML)</td>
-</tr>
-<tr>
-	<td>Name</td>
-	<td>SSPlayer</td>
-</tr>
-<tr>
-	<td>位置</td>
-	<td>C:\SSTutorials</td>
-</tr>
-<tr>
-	<td>解决方案名称</td>
-	<td>SSPlayer</td>
-</tr>
-<tr>
-	<td>创建解决方案的目录</td>
-	<td>(选定)</td>
-</tr>
-</table>
+Name|值
+---|---
+模板组|已安装/模板/Visual C#/Windows 应用商店
+模板|空白应用程序(XAML)
+Name|SSPlayer
+位置|C:\\SSTutorials
+解决方案名称|SSPlayer
+创建解决方案的目录|(选定)
 
 4.	单击**“确定”**。
 
@@ -91,23 +74,12 @@
 1.	在解决方案资源管理器中，右键单击“SSPlayer”，然后单击“添加引用”。
 2.	键入或选择以下值：
 
-	<table border="1">
-<tr>
-	<th>Name</th>
-	<th>值</th>
-</tr>
-<tr>
-	<td>引用组</td>
-	<td>Windows/扩展</td>
-</tr>
-<tr>
-	<td>引用</td>
-	<td>选择适用于 Windows 8 和 Microsoft Visual C++ 运行时程序包的 Microsoft 平滑流式处理客户端 SDK 
-	</td>
-</tr>
-</table>
+Name|值
+---|---
+引用组|Windows/扩展
+引用|选择适用于 Windows 8 和 Microsoft Visual C++ 运行时程序包的 Microsoft 平滑流式处理客户端 SDK
 	
-3.	单击**“确定”**。
+3.	单击**“确定”**。 
 
 添加引用后，必须选择目标平台（x64 或 x86），添加引用对于任何 CPU 平台配置都不起作用。在解决方案资源管理器中，你将会看到这些添加的引用出现了对应的黄色警告标记。
 
@@ -317,8 +289,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 4.	在 **MainPage** 构造函数的末尾，添加以下行以订阅自适应源打开事件：
 	
-	adaptiveSourceManager.AdaptiveSourceOpenedEvent += 
-    new AdaptiveSourceOpenedEventHandler(mediaElement\_AdaptiveSourceOpened);
+	adaptiveSourceManager.AdaptiveSourceOpenedEvent += new AdaptiveSourceOpenedEventHandler(mediaElement\_AdaptiveSourceOpened);
 
 5.	按 **CTRL+S** 保存文件。
 
@@ -803,7 +774,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 **修改 XAML 文件**
 
 1. 在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看设计器”。
-2. 找到名为 **gridStreamAndBitrateSelection** 的 &lt;Grid&gt; 标记，并在该标记的末尾追加以下代码：
+2. 找到名为 **gridStreamAndBitrateSelection** 的 Grid 标记，并在该标记的末尾追加以下代码：
 
 		<StackPanel Name="spBitRateSelection" Grid.Row="1" Grid.Column="1">
 		 <StackPanel Orientation="Horizontal">
@@ -997,11 +968,14 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 你已完成第 4 课。在本课中，你已添加了用于选择曲目的功能。
 
 
+
+
 ##其他资源：
 - [如何生成具有高级功能的平滑流式处理 Windows 8 JavaScript 应用程序](http://blogs.iis.net/cenkd/archive/2012/08/10/how-to-build-a-smooth-streaming-windows-8-javascript-application-with-advanced-features.aspx)
 - [平滑流式处理技术概述](http://www.iis.net/learn/media/on-demand-smooth-streaming/smooth-streaming-technical-overview)
 
 [PlayerApplication]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-1.png
 [CodeViewPic]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-2.png
+ 
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -4,12 +4,12 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-machines"
-   ms.date="09/18/2015"
-   wacn.date="10/17/2015" />
+<tags
+	ms.service="virtual-network"
+	ms.date="12/11/2015"
+	wacn.date="01/14/2016"/>
 
 # 将经典 VNet 连接到新 VNet
 

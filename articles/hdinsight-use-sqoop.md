@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 HDInsight 中使用 Hadoop Sqoop | Microsoft Azure"
+	pageTitle="在 HDInsight 中使用 Hadoop Sqoop | Windows Azure"
 	description="学习如何从工作站使用 Azure PowerShell 在 Hadoop 群集和 Azure SQL 数据库之间运行 Sqoop 导入和导出。"
 	editor="cgronlun"
 	manager="paulettm"
@@ -10,82 +10,52 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/11/2015"
-	wacn.date="01/07/2016"/>
+	ms.date="12/01/2015"
+	wacn.date="01/14/2016"/>
 
 #将 Sqoop 与 HDInsight 中的 Hadoop 配合使用 (Windows)
 
 [AZURE.INCLUDE [sqoop-selector](../includes/hdinsight-selector-use-sqoop.md)]
 
-学习如何从工作站使用 Azure PowerShell 和 HDInsight .NET SDK 在 HDInsight 群集和 Azure SQL 数据库或 SQL Server 数据库之间运行 Sqoop 进行导入和导出。
-
-##什么是 Sqoop？
+了解如何使用 HDInsight 中的 Sqoop 在 HDInsight 群集和 Azure SQL 数据库或 SQL Server 数据库之间进行导入和导出。
 
 虽然自然而然地选用 Hadoop 处理如日志和文件等非结构化和半结构化的数据，但可能还需要处理存储在关系数据库中的结构化数据。
 
 [Sqoop][sqoop-user-guide-1.4.4] 是一种为在 Hadoop 群集和关系数据库之间传输数据而设计的工具。可以使用此工具将数据从关系数据库管理系统 (RDBMS)（如 SQL Server、MySQL 或 Oracle）中导入到 Hadoop 分布式文件系统 (HDFS)，在 Hadoop 中使用 MapReduce 或 Hive 转换数据，然后回过来将数据导出到 RDBMS。在本教程中，你要为你的关系数据库使用 SQL Server 数据库。
 
-有关 HDInsight 群集上支持的 Sqoop 版本，请参阅 [HDInsight 提供的群集版本有哪些新功能？][hdinsight-versions]。
+有关 HDInsight 群集上支持的 Sqoop 版本，
+请参阅 [HDInsight 提供的群集版本有哪些新功能？][hdinsight-versions]。
 
-##先决条件
-<a name="prerequisites"></a>
+###<a name="prerequisites"></a>先决条件
 
 在开始阅读本教程前，你必须具有：
 
 - **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/powershell-install-configure)。若要执行 Azure PowerShell 脚本，必须以管理员身份运行 Azure PowerShell 并将执行策略设为 *RemoteSigned*。请参阅[运行 Windows PowerShell 脚本][powershell-script]。
 
-- **Azure HDInsight 群集**：有关群集预配的说明，请参阅[开始使用 HDInsight][hdinsight-get-started] 或[预配 HDInsight 群集][hdinsight-provision]。你需要以下数据才能完成本教程：
+如果选择使用现有的 Azure SQL 数据库或 Microsoft SQL Server
 
-	<table border="1">
-	<tr><th>群集属性</th><th>Azure PowerShell 变量名</th><th>值</th><th>说明</th></tr>
-	<tr><td>HDInsight 群集名称</td><td>$clusterName</td><td></td><td>HDInsight 群集名称。</td></tr>
-	<tr><td>Azure 存储帐户名</td><td>$storageAccountName</td><td></td><td>可用于 HDInsight 群集的 Azure 存储帐户。在本教程中，使用在群集设置过程中指定的默认存储帐户。</td></tr>
-	<tr><td>Azure Blob 容器名称</td><td>$containerName</td><td></td><td>在此示例中，使用用于默认 HDInsight 群集文件系统的 Blob 的名称。默认情况下，该容器与 HDInsight 群集同名。</td></tr>
-	</table>
-
-- ****Azure SQL 数据库或 Microsoft SQL Server
-
-	- **Azure SQL 数据库**：你必须为 Azure SQL 数据库服务器配置防火墙规则以允许从你的工作站进行访问。有关创建 Azure SQL 数据库和配置防火墙的说明，请参阅 [Azure SQL 数据库入门][sqldatabase-get-started]。本文提供了用于创建本教程所需的 Azure SQL 数据库表的 Windows PowerShell 脚本。
-	
-		<table border="1">
-		<tr><th>Azure SQL 数据库属性</th><th>Azure PowerShell 变量名</th><th>值</th><th>说明</th></tr>
-		<tr><td>Azure SQL 数据库服务器名称</td><td>$sqlDatabaseServer</td><td></td><td>Sqoop 要将数据导出到其中或从中导入数据的 Azure SQL 数据库服务器。</td></tr>
-		<tr><td>Azure SQL 数据库登录名</td><td>$sqlDatabaseLogin</td><td></td><td>你的 Azure SQL 数据库登录名。</td></tr>
-		<tr><td>Azure SQL 数据库登录密码</td><td>$sqlDatabasePassword</td><td></td><td>你的 Azure SQL 数据库登录密码。</td></tr>
-		<tr><td>Azure SQL 数据库名称</td><td>$sqlDatabaseName</td><td></td><td>Sqoop 要将数据导出到其中或从中导入数据的 Azure SQL 数据库。</td></tr>
-		</table>
+- **Azure SQL 数据库**：你必须为 Azure SQL 数据库服务器配置防火墙规则以允许从你的工作站进行访问。有关创建 Azure SQL 数据库和配置防火墙的说明，请参阅 [Azure SQL 数据库入门][sqldatabase-get-started]。 
 
 	> [AZURE.NOTE]默认情况下，可以从 Azure HDInsight 这样的 Azure 服务连接 Azure SQL 数据库。如果禁用了此防火墙设置，则必须从 Azure 管理门户启用它。有关创建 Azure SQL 数据库和配置防火墙规则的说明，请参阅[创建和配置 SQL 数据库][sqldatabase-create-configue]。
-	
-	* **SQL Server**：如果你的 HDInsight 群集与 SQL Server 位于 Azure 中的同一虚拟网络，你可以使用本文中的步骤对 SQL Server 数据库执行数据导入和导出操作。
-	
-		> [AZURE.NOTE]HDInsight 仅支持基于位置的虚拟网络，并且当前不适用于基于地缘组的虚拟网络。
-	
-		* 若要创建和配置虚拟网络，请参阅[虚拟网络配置任务](/home/features/virtual-machines/)。
-	
-			* 在数据中心使用 SQL Server 时，必须将虚拟网络配置为*站点到站点*或*点到站点*。
-	
-				> [AZURE.NOTE]对于**点到站点**虚拟网络，SQL Server 必须运行 Azure 虚拟网络配置的“仪表板”中提供的 VPN 客户端配置应用程序。
-	
-			* 当你在 Azure 虚拟机上使用 SQL Server 时，如果托管 SQL Server 的虚拟机是 HDInsight 所在虚拟网络的成员，则可以使用任何虚拟网络配置。
-	
-		* 若要在虚拟网络上预配 HDInsight 群集，请参阅[使用自定义选项在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)
-	
-		> [AZURE.NOTE]SQL Server 还必须允许身份验证。必须使用 SQL Server 登录名来完成此文章中的步骤。
-	
-	
-		<table border="1">
-		<tr><th>SQL Server 数据库属性</th><th>Azure PowerShell 变量名</th><th>值</th><th>说明</th></tr>
-		<tr><td>SQL Server 名称</td><td>$sqlDatabaseServer</td><td></td><td>Sqoop 要将数据导出到其中或从中导入数据的 SQL Server。</td></tr>
-		<tr><td>SQL Server 登录名</td><td>$sqlDatabaseLogin</td><td></td><td>你的 SQL Server 登录名。</td></tr>
-		<tr><td>SQL Server 登录密码</td><td>$sqlDatabasePassword</td><td></td><td>你的 SQL Server 登录密码。</td></tr>
-		<tr><td>SQL Server 数据库名称</td><td>$sqlDatabaseName</td><td></td><td>Sqoop 要将数据导出到其中或从中导入数据的 SQL Server 数据库。</td></tr>
-		</table>
 
+- **SQL Server**：如果你的 HDInsight 群集与 SQL Server 位于 Azure 中的同一虚拟网络，你可以使用本文中的步骤对 SQL Server 数据库执行数据导入和导出操作。
 
-> [AZURE.NOTE]将值填充到以前的表中。这将有助于学习本教程。
+	> [AZURE.NOTE]HDInsight 仅支持基于位置的虚拟网络，并且当前不适用于基于地缘组的虚拟网络。
 
+	* 若要创建和配置虚拟网络，请参阅[虚拟网络配置任务](/home/features/virtual-machines/)。
+
+		* 在数据中心使用 SQL Server 时，必须将虚拟网络配置为*站点到站点*或*点到站点*。
+
+			> [AZURE.NOTE]对于**点到站点**虚拟网络，SQL Server 必须运行 Azure 虚拟网络配置的“仪表板”中提供的 VPN 客户端配置应用程序。
+
+		* 当你在 Azure 虚拟机上使用 SQL Server 时，如果托管 SQL Server 的虚拟机是 HDInsight 所在虚拟网络的成员，则可以使用任何虚拟网络配置。
+
+	* 若要在虚拟网络上预配 HDInsight 群集，请参阅[使用自定义选项在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)
+
+	> [AZURE.NOTE]SQL Server 还必须允许身份验证。必须使用 SQL Server 登录名来完成此文章中的步骤。
+	
 ##了解方案
+
 HDInsight 群集带有某些示例数据。你将会使用以下两个示例：
 
 - 位于 */example/data/sample.log* 的 log4j 日志文件。以下日志会从该文件中提取出来：
@@ -353,7 +323,7 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 > [AZURE.NOTE]除了连接字符串信息，此节中的步骤还应适用于 Azure SQL 数据库或 SQL Server。这些步骤已使用以下配置测试过：
 >
 > * **Azure 虚拟网络点到站点配置**：虚拟网络已将 HDInsight 群集连接到专用数据中心的 SQL Server。
-> * **Azure HDInsight 3.1**：有关在虚拟网络上创建群集的信息，请参阅[在 HDInsight 中使用自定义选项预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)。
+> * **Azure HDInsight 3.1**：有关在虚拟网络上创建群集的信息，请参阅[在 HDInsight 中使用自定义选项预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)。
 > * **SQL Server 2014**：已配置为允许身份验证和运行 VPN 客户端配置包，可以安全地连接到虚拟网络。
 
 **导出 log4j 日志文件**
@@ -583,13 +553,10 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 - [使用 HDInsight 分析航班延误数据][hdinsight-analyze-flight-data]：使用 Hive 分析航班延误数据，然后使用 Sqoop 将数据导出到 Azure SQL 数据库。
 - [将数据上载到 HDInsight][hdinsight-upload-data]：了解将数据上载到 HDInsight/Azure Blob 存储的其他方法。
 
-
-
-
 [azure-management-portal]: https://manage.windowsazure.cn/
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-versions]: /documentation/articles//documentation/articles/hdinsight-component-versioning-v1
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
@@ -602,8 +569,8 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-install]: /documentation/articles/powershell-install-configure
-[powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
+[powershell-script]: https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

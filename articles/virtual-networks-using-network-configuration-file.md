@@ -4,13 +4,13 @@
 	services="virtual-network" 
 	documentationCenter="" 
 	authors="telmosampaio" 
-	manager="carolz" 
+	manager="carmonm" 
 	editor="tysonn"/>
 
 <tags
 	ms.service="virtual-network"
-	ms.date="08/10/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="12/07/2015"
+	wacn.date="01/14/2016"/>
 
 # 使用网络配置文件配置虚拟网络
 

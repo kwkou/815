@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/18/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="12/17/2015"
+	wacn.date="01/14/2016"/>
 
 #如何：配置资产传送策略
 
@@ -50,11 +50,19 @@ HDS
 
 有关如何发布资产和生成流 URL 的说明，请参阅[生成流 URL](/documentation/articles/media-services-deliver-streaming-content)。
 
+
+##注意事项
+
+- 如果某个资产存在 OnDemand（流式处理）定位符，则不能与该资产关联的 AssetDeliveryPolicy。在删除策略之前，建议先从资产中删除该策略。
+- 如果未设置资产传送策略，则无法在存储加密的资产上创建流式处理定位符。如果资产未经过存储加密，则即使未设置资产传送策略，系统也可让你顺利地创建定位符和流式处理资产。
+- 可将多个资产传送策略关联到单个资产，但只能指定一种方法来处理给定的 AssetDeliveryProtocol。也就是说，如果你尝试链接两个指定 AssetDeliveryProtocol.SmoothStreaming 协议的传送策略，则会导致出错，因为当客户端发出平滑流请求时，系统不知道你要应用哪个策略。  
+- 如果你的资产包含现有的流式处理定位符，则不能将新策略链接到该资产、取消现有策略与资产的链接，或者更新与该资产关联的传送策略。必须先删除流式传输定位符，再调整策略，然后重新创建流式传输定位符。在重新创建流式传输定位符时可以使用同一个 locatorId，但应确保该操作不会导致客户端出现问题，因为内容可能已被来源或下游 CDN 缓存。  
+ 
 >[AZURE.NOTE]使用媒体服务 REST API 时，需注意以下事项：
 >
 >访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use)。
 
->在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须根据[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically)中所述对新的 URI 执行后续调用。
+>在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须按[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically)中所述对新的 URI 执行后续调用。
 
 
 ##清除资产传送策略 
@@ -62,7 +70,7 @@ HDS
 ###<a id="create_asset_delivery_policy"></a>创建资产传送策略
 以下 HTTP 请求将创建一个资产传送策略，该策略指定不要应用动态加密，而使用以下任何协议传送流：MPEG DASH、HLS 和平滑流式处理协议。
 
-有关在创建 AssetDeliveryPolicy 时可指定的值的信息，请参阅[定义 AssetDeliveryPolicy 时使用的类型](#types)一节。
+有关创建 AssetDeliveryPolicy 时可以指定哪些值的信息，请参阅[定义 AssetDeliveryPolicy 时使用的类型](#types)部分。
 
 
 请求：
@@ -184,7 +192,7 @@ HDS
 以下 HTTP 请求将创建 **AssetDeliveryPolicy**，该策略配置为将动态信封加密 (**DynamicEnvelopeEncryption**) 应用到 **HLS** 协议（在本示例中，已阻止流式处理其他协议）。
 
 
-有关在创建 AssetDeliveryPolicy 时可指定的值的信息，请参阅[定义 AssetDeliveryPolicy 时使用的类型](#types)一节。
+有关创建 AssetDeliveryPolicy 时可以指定哪些值的信息，请参阅[定义 AssetDeliveryPolicy 时使用的类型](#types)部分。
 
 请求：
 
@@ -241,7 +249,7 @@ HDS
 
 以下 HTTP 请求将创建 **AssetDeliveryPolicy**，该策略配置为将动态通用加密 (**DynamicCommonEncryption**) 应用到**平滑流式处理**协议（在本示例中，已阻止流式处理其他协议）。
 
-有关在创建 AssetDeliveryPolicy 时可指定的值的信息，请参阅[定义 AssetDeliveryPolicy 时使用的类型](#types)一节。
+有关创建 AssetDeliveryPolicy 时可以指定哪些值的信息，请参阅[定义 AssetDeliveryPolicy 时使用的类型](#types)部分。
 
 
 请求：
@@ -261,7 +269,7 @@ HDS
 	{"Name":"AssetDeliveryPolicy","AssetDeliveryProtocol":1,"AssetDeliveryPolicyType":4,"AssetDeliveryConfiguration":"[{"Key":2,"Value":"https:\\/\\/amsaccount1.keydelivery.mediaservices.chinacloudapi.cn\/PlayReady\/"}]"}
 
 
-若要使用 Widevine DRM 保护你的内容，请更新 AssetDeliveryConfiguration 值以使用 WidevineLicenseAcquisitionUrl（其值为 7），并指定许可证交付服务的 URL。你可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。
+若要使用 Widevine DRM 保护你的内容，请更新 AssetDeliveryConfiguration 值以使用 WidevineLicenseAcquisitionUrl（其值为 7），并指定许可证交付服务的 URL。你可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)
 
 例如：
  
@@ -348,30 +356,43 @@ HDS
         /// Apply Dynamic Common encryption.
         /// </summary>
         DynamicCommonEncryption
-    }
+        }
 
 ###ContentKeyDeliveryType
 
+
     /// <summary>
     /// Delivery method of the content key to the client.
-    /// </summary>
+    ///
+    </summary>
     public enum ContentKeyDeliveryType
     {
         /// <summary>
         /// None.
-        /// </summary>
-        None,
+        ///
+        </summary>
+        None = 0,
 
         /// <summary>
         /// Use PlayReady License acquistion protocol
-        /// </summary>
-        PlayReadyLicense,
+        ///
+        </summary>
+        PlayReadyLicense = 1,
 
         /// <summary>
         /// Use MPEG Baseline HTTP key protocol.
-        /// </summary>
-        BaselineHttp
+        ///
+        </summary>
+        BaselineHttp = 2,
+
+        /// <summary>
+        /// Use Widevine License acquistion protocol
+        ///
+        </summary>
+        Widevine = 3
+
     }
+
 
 ###AssetDeliveryPolicyConfigurationKey
 
@@ -422,7 +443,4 @@ HDS
         WidevineLicenseAcquisitionUrl
     }
 
-
- 
-
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

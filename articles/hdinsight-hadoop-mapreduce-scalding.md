@@ -9,8 +9,8 @@
 	tags="azure-portal"/>
 <tags
 	ms.service="hdinsight"
-	ms.date="10/15/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="12/04/2015"
+	wacn.date="01/14/2016"/>
 
 # 使用 Apache Hadoop on HDInsight 开发 Scalding MapReduce 作业
 
@@ -21,7 +21,7 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 ## 先决条件
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-* **HDInsight 群集上基于 Windows 的 Hadoop**。有关详细信息，请参阅[在 HDInsight 上预配基于 Windows 的 Hadoop](/documentation/articles/hdinsight-provision-clusters)。
+* **HDInsight 群集上基于 Windows 的 Hadoop**。有关详细信息，请参阅[在 HDInsight 上预配基于 Windows 的 Hadoop](/documentation/articles/hdinsight-provision-clusters-v1)。
 
 * **[Maven](http://maven.apache.org/)**
 
@@ -238,4 +238,4 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
 * [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

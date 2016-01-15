@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="12/04/2015"
+	wacn.date="01/14/2016"/>
 
 #使用 Curl 在 HDInsight 上的 Hadoop 上远程运行 MapReduce 作业
 

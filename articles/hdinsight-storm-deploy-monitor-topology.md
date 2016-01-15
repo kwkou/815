@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="12/15/2015"/>
+	ms.date="11/18/2015"
+	wacn.date="01/14/2016"/>
 
 #在基于 Windows 的 HDInsight 上部署和管理 Apache Storm 拓扑
 

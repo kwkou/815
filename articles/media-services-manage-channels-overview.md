@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="11/03/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="12/15/2015"
+	wacn.date="01/14/2016"/>
 
 #使用从本地编码器接收多比特率实时流的频道
 

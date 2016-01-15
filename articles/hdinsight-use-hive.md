@@ -1,7 +1,7 @@
 <properties
 	pageTitle="了解什么是 Hive 以及如何使用 HiveQL | Windows Azure"
 	description="了解 Apache Hive 以及如何将它与 HDInsight 中的 Hadoop 配合使用。选择如何运行 Hive 作业，以及如何使用 HiveQL 来分析示例 Apache log4j 文件。"
-	keywords="hiveql,what is hive"
+	keywords="hiveql,什么是 hive"
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/05/2015"
-	wacn.date="12/15/2015"/>
+	ms.date="12/03/2015"
+	wacn.date="01/14/2016"/>
 
 # 将 Hive 和 HiveQL 与 HDInsight 中的 Hadoop 配合使用以分析示例 Apache log4j 文件
 
@@ -26,7 +26,7 @@
 
 Hive 允许你在很大程度上未结构化的数据上投影结构。在定义结构后，你可以使用 Hive 来查询这些数据，而不需要具备 Java 或 MapReduce 的知识。**HiveQL**（Hive 查询语言）可让你使用类似于 T-SQL 的语句编写查询。
 
-Hive 知道如何处理结构化和半结构化数据，例如其中的字段以特定字符分隔的文本文件。Hive 还支持对复杂或不规则的结构化数据使用自定义**序列化程序/反序列化程序 (SerDe)**。有关详细信息，请参阅[如何将自定义 JSON SerDe 与 hdinsight 配合使用](http://blogs.msdn.com/b/bigdatasupport/archive/2014/06/18/how-to-use-a-custom-json-serde-with-microsoft-azure-hdinsight.aspx)。
+Hive 知道如何处理结构化和半结构化数据，例如其中的字段以特定字符分隔的文本文件。Hive 还支持对复杂或不规则的结构化数据使用自定义**序列化程序/反序列化程序 (SerDe)**。有关详细信息，请参阅[如何将自定义 JSON SerDe 与 HDInsight 配合使用](http://blogs.msdn.com/b/bigdatasupport/archive/2014/06/18/how-to-use-a-custom-json-serde-with-microsoft-azure-hdinsight.aspx)。
 
 还可以通过**用户定义函数的 (UDF)** 扩展 Hive。UDF 允许你实现 HiveQL 中不容易建模的功能或逻辑。有关将 UDF 与 Hive 配合使用的示例，请参阅：
 
@@ -36,9 +36,23 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 * [如何将自定义 Hive UDF 添加到 HDInsight](http://blogs.msdn.com/b/bigdatasupport/archive/2014/01/14/how-to-add-custom-hive-udfs-to-hdinsight.aspx)
 
+
+## Hive 内部表与外部表
+
+以下是你需要了解的有关 Hive 内部表和外部表的一些信息：
+
+- **CREATE TABLE** 命令创建内部表。数据文件必须位于默认容器中。
+- **CREATE TABLE** 命令会将数据文件移到 /hive/warehouse/<TableName> 文件夹中。
+- **CREATE EXTERNAL TABLE** 命令创建外部表。数据文件可以位于默认容器以外的位置。
+- **CREATE EXTERNAL TABLE** 命令不移动数据文件。
+- **CREATE EXTERNAL TABLE** 命令不允许在 LOCATION 中有任何文件夹。这是本教程生成 sample.log 文件的副本的原因。
+
+有关详细信息，请参阅 [HDInsight：Hive 内部和外部表简介][cindygross-hive-tables]。
+
+
 ##<a id="data"></a>关于示例数据（一个 Apache log4j 文件）
 
-本示例使用 *log4j* 示例文件，该文件存储在 Blob 存储容器的 **/example/data/sample.log** 中。文件内的每个日志具有包含 `[LOG LEVEL]` 字段的一行字段以显示类型和严重级别，例如：
+本示例使用 *log4j* 示例文件，该文件存储在 Blob 存储容器的 **/example/data/sample.log** 中。该文件中的每个日志都包含一行字段，其中包含一个 `[LOG LEVEL]` 字段，用于显示类型和严重性，例如：
 
 	2012-02-03 20:26:41 SampleClass3 [ERROR] verbose detail for id 1527353937
 
@@ -52,11 +66,11 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 由于 Azure Blob 存储是 HDInsight 的默认存储，因此你也可以使用 HiveQL 中的 **/example/data/sample.log** 访问该文件。
 
-> [AZURE.NOTE]语法 **wasb:///** 用于访问存储在 HDInsight 群集的默认存储容器中的文件。如果你在预配群集时指定了其他存储帐户，并且你想要访问存储在这些帐户中的文件，则可以通过指定容器名称和存储帐户地址来访问这些数据，例如：**wasb://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log**。
+> [AZURE.NOTE]语法 ****wasb:///** 用于访问存储在 HDInsight 群集的默认存储容器中的文件。如果你在预配群集时指定了其他存储帐户，并且你想要访问存储在这些帐户中的文件，则可以通过指定容器名称和存储帐户地址来访问这些数据，例如：**wasb://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log**。
 
 ##<a id="job"></a>示例作业：将列投影到分隔的数据
 
-以下 HiveQL 语句将列投影到 **wasb:///example/data** 目录中存储的分隔数据：
+以下 HiveQL 语句将列投影到 ****wasb:///example/data** 目录中存储的分隔数据：
 
 	DROP TABLE log4jLogs;
     CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
@@ -94,13 +108,13 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 ##<a id="usetez"></a>使用 Apache Tez 提高性能
 
-[Apache Tez](http://tez.apache.org) 是可让数据密集型应用程序（例如 Hive）大规模高效运行的框架。在最新版的 HDInsight 中，Hive 支持在 Tez 上运行。默认情况下，已经为基于 Linux 的 HDInsight 群集启用了 Tez。
+[Apache Tez](http://tez.apache.org) 是可让数据密集型应用程序（例如 Hive）大规模高效运行的框架。在最新版的 HDInsight 中，Hive 支持在 Tez 上运行。
 
 > [AZURE.NOTE]对于基于 Windows 的 HDInsight 群集来说，Tez 目前默认处于关闭状态，必须将其启用。若要充分利用 Tez，你必须设置 Hive 查询的以下值：
 >
 > ```set hive.execution.engine=tez;```
 >
->你可为每个查询提交此值，只需将它放置在查询的开头即可。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)中找到详细信息。
+>你可为每个查询提交此值，只需将它放置在查询的开头即可。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1)中找到详细信息。
 
 [Tez 上的 Hive 设计文档](https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez)包含实现选项和优化配置的详细信息。
 
@@ -112,7 +126,7 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 | **使用此方法**，如果你想要... | ...**交互式** shell | ...**批处理** | ...使用此**群集操作系统** | ...从此**客户端操作系统** |
 |:--------------------------------------------------------------------------------|:---------------------------:|:-----------------------:|:------------------------------------------|:-----------------------------------------|
 | [Curl](/documentation/articles/hdinsight-hadoop-use-hive-curl) | &nbsp; | ✔ | Windows | Windows |
-| [查询控制台](/documentation/articles/hdinsight-hadoop-use-hive-query-console) | &nbsp; | ✔ | Windows | 基于浏览器 |
+| [查询控制台](/documentation/articles/hdinsight-hadoop-use-hive-query-console) | &nbsp; | ✔ | Windows | 任何（基于浏览器） |
 | [HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-use-hive-visual-studio) | &nbsp; | ✔ | Windows | Windows |
 | [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-hive-powershell) | &nbsp; | ✔ | Windows | Windows |
 | [远程桌面](/documentation/articles/hdinsight-hadoop-use-hive-remote-desktop) | ✔ | ✔ | Windows | Windows |
@@ -165,10 +179,10 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
 
 [Powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
@@ -177,4 +191,7 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
-<!---HONumber=82-->
+
+[cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
+
+<!---HONumber=Mooncake_0104_2016-->

@@ -4,12 +4,12 @@
    services="virtual-network"
    documentationCenter="na"
    authors="joaoma"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.date="09/01/2015"
-   wacn.date="11/02/2015" />
+<tags
+	ms.service="virtual-network"
+	ms.date="12/07/2015"
+	wacn.date="01/14/2016"/>
 
 # 在服务配置文件中指定 DNS 设置
 

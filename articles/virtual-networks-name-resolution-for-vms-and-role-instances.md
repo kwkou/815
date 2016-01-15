@@ -3,13 +3,13 @@
    description="Azure IaaS、混合解决方案、不同的云服务之间、Active Directory 和使用自己的 DNS 服务器的名称解析方案"
    services="virtual-network"
    documentationCenter="na"
-   authors="joaoma"
+   authors="GarethBradshawMSFT"
    manager="jdial"
-   editor="tysonn"/>
-<tags 
-   ms.service="virtual-network"
-   ms.date="09/02/2015"
-   wacn.date="10/17/2015" />
+   editor="tysonn" />
+<tags
+	ms.service="virtual-network"
+	ms.date="09/02/2015"
+	wacn.date="01/14/2016"/>
 
 # VM 和角色实例的名称解析
 

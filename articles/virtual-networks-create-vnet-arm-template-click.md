@@ -4,14 +4,14 @@
    services="virtual-network"
    documentationCenter=""
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-resource-manager"/>
 
 <tags
-   ms.service="virtual-network"
-   ms.date="08/21/2015"
-   wacn.date="09/15/2015"/>
+	ms.service="virtual-network"
+	ms.date="12/07/2015"
+	wacn.date="01/14/2016"/>
 
 # 使用 ARM 模板创建虚拟网络
 

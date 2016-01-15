@@ -8,9 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.date="07/29/2015"
-   wacn.date="01/07/2016"/>
+	ms.service="hdinsight"
+	ms.date="12/02/2015"
+	wacn.date="01/14/2016"/>
 
 # 将 Apache Phoenix 和 SQuirreL 与 HDinsight 中的 HBase 配合使用  
 
@@ -172,7 +172,7 @@ Phoenix 驱动程序 jar 文件位于 HBase 群集上。根据具体的版本，
 
 [azure-portal]: https://manage.windowsazure.cn
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-versions]: /documentation/articles//documentation/articles/hdinsight-component-versioning-v1
 [hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
 [hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp
 [hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1

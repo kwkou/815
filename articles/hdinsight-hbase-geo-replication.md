@@ -8,9 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.date="07/08/2015"
-   wacn.date="01/07/2016"/>
+	ms.service="hdinsight"
+	ms.date="12/02/2015"
+	wacn.date="01/14/2016"/>
 
 # 在 HDInsight 中配置 HBase 地域复制
 
@@ -295,7 +295,7 @@ Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如
 
 [hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
 [hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-hbase-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
 [hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
 <!-- [hdinsight-hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment -->

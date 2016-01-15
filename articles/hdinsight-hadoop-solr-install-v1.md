@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/02/2015"
-	wacn.date="01/07/2016"/>
+	wacn.date="01/15/2016"/>
 
 # 在 HDInsight Hadoop 群集上安装并使用 Solr
 
@@ -18,13 +18,13 @@
 了解如何使用 Solr 通过脚本操作来自定义基于 Windows 的 HDInsight 群集，以及如何使用 R 来搜索数据。
 你可以使用*脚本操作*，在 Azure HDInsight 的任何一种群集（Hadoop、Storm、HBase）上安装 Solr。用于在 HDInsight 群集上安装 Solr 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1) 上的只读 Azure 存储 Blob 获得。
 
-示例脚本仅适用于 HDInsight 群集版本 3.1。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning)。
+示例脚本仅适用于 HDInsight 群集版本 3.1。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles//documentation/articles/hdinsight-component-versioning-v1)。
 
 本主题中使用的示例脚本将使用特定配置创建基于 Windows 的 Solr 群集。如果你要使用不同集合、分片、架构、副本等配置 Solr 群集，则必须相应地修改脚本和 Solr 二进制文件。
 
 **相关文章** 
 
-- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)：有关如何创建 HDInsight 群集的一般信息 
+- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)：有关如何创建 HDInsight 群集的一般信息 
 - [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关如何使用脚本操作自定义 HDInsight 群集的一般信息 
 - [针对 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions)
 <a name="whatis"></a> 
@@ -36,7 +36,7 @@
 用于在 HDInsight 群集上安装 Solr 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1) 上的只读 Azure 存储 Blob 获得。本部分说明了如何在通过 Azure 管理门户预配群集时使用示例脚本。 
 * [在 HDInsight 群集上安装 Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1)
 
-1. 根据[在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters#portal)中的说明，使用“自定义创建”选项开始创建群集。 
+1. 根据[在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1#portal)中的说明，使用“自定义创建”选项开始创建群集。 
 2. 在向导的“脚本操作”页上，单击“添加脚本操作”，以提供有关脚本操作的详细信息，如下所示：
 
 	![使用脚本操作自定义群集](./media/hdinsight-hadoop-solr-install-v1/hdi-script-action-solr.png "使用脚本操作自定义群集")
@@ -356,17 +356,17 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 
 ## 另请参阅
 
-- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)：有关如何创建 HDInsight 群集的一般信息
+- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)：有关如何创建 HDInsight 群集的一般信息
 - [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关如何使用脚本操作自定义 HDInsight 群集的一般信息
 - [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions)
 - [在 HDInsight 群集上安装 R][hdinsight-install-r]：有关如何安装 R 的脚本操作示例
-- [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)：有关如何安装 Giraph 的脚本操作示例
+- [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-v1)：有关如何安装 Giraph 的脚本操作示例
 
 
 
 
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
 

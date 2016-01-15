@@ -7,10 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/20/2015" 
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="12/17/2015"
+	wacn.date="01/14/2016"/>
 
 #实现故障转移流式处理方案
 

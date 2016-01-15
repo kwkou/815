@@ -4,14 +4,14 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn"
    tags="azure-service-management"
 />
-<tags 
-   ms.service="virtual-network"
-   ms.date="09/08/2015"
-   wacn.date="11/02/2015" />
+<tags
+	ms.service="virtual-network"
+	ms.date="12/11/2015"
+	wacn.date="01/14/2016"/>
 
 # 如何在 Azure CLI 中设置静态专用 IP 地址（经典）
 

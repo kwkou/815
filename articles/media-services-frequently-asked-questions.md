@@ -3,14 +3,14 @@
 	description="常见问题 (FAQ)" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="Juliako" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="12/05/2015"
+	wacn.date="01/14/2016"/>
 
 
 #常见问题  
@@ -41,4 +41,21 @@
 
 答：要将资产从一个媒体服务帐户复制到另一个，可使用 [Azure 媒体服务 .NET SDK 扩展](https://github.com/Azure/azure-sdk-for-media-services-extensions/)存储库中提供的 [IAsset.Copy](https://github.com/Azure/azure-sdk-for-media-services-extensions/blob/dev/MediaServices.Client.Extensions/IAssetExtensions.cs#L354) 扩展方法。有关详细信息，请参阅[此](https://social.msdn.microsoft.com/Forums/azure/28912d5d-6733-41c1-b27d-5d5dff2695ca/migrate-media-services-across-subscription?forum=MediaServices)论坛线程。
 
-<!---HONumber=74-->
+问：如何在编码过程中旋转视频。
+
+答：[媒体编码器标准](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard)支持旋转 90/180/270 度。默认行为是“自动”，即尝试在传入的 MP4/MOV 文件中检测旋转元数据并对其进行补偿。包含[此处](http://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)定义的 json 预设之一的以下 **Sources** 元素：
+	
+	"Version": 1.0,
+	"Sources": [
+	{
+	  "Streams": [],
+	  "Filters": {
+	    "Rotation": "90"
+	  }
+	}
+	],
+	"Codecs": [
+	
+	...
+
+<!---HONumber=Mooncake_0104_2016-->

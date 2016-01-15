@@ -8,10 +8,10 @@
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.date="08/07/2015" 
-	wacn.date="10/03/2015"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="11/29/2015"
+	wacn.date="01/14/2016"/>
 
 # 将 Hive 与 HDInsight 配合使用来分析来自网站的日志
 
@@ -48,7 +48,7 @@
 尝试以下示例：[通过将 Hive 与 HDInsight 配合使用来分析传感器数据][hdinsight-hive-analyze-sensor-data]。
 
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-use-hive-sensor-data-analysis
 
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png

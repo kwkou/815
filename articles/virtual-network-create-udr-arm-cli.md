@@ -10,8 +10,8 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/30/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="12/11/2015"
+	wacn.date="01/14/2016"/>
 
 #在 Azure CLI 中创建用户定义的路由 (UDR)
 

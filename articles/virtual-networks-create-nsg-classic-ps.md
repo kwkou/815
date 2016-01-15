@@ -10,8 +10,8 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="10/29/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="12/11/2015"
+	wacn.date="01/14/2016"/>
 
 # 如何在 PowerShell 中创建 NSG（经典）
 

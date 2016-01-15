@@ -4,4 +4,4 @@
 
 ![MultiNIC 方案](./media/virtual-network-deploy-multinic-scenario-include/Figure1.png)
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->

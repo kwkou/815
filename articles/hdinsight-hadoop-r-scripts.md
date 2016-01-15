@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/02/2015"
-	wacn.date="01/07/2016"/>
+	wacn.date="01/15/2016"/>
 
 # 在 HDInsight Hadoop 群集上安装并使用 R
 
@@ -22,7 +22,7 @@
 
 **相关文章** 
 
-- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)：有关如何创建 HDInsight 群集的一般信息 
+- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)：有关如何创建 HDInsight 群集的一般信息 
 - [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关如何使用脚本操作自定义 HDInsight 群集的一般信息 
 - [针对 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions)
 
@@ -36,9 +36,9 @@ R 与 Azure Blob 存储 (WASB) 兼容，这样，存储在此的数据可以在 
 
 用于在 HDInsight 群集上安装 R 的[示例脚本](https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1)可从 Azure 存储中的只读 Blob 获得。本部分提供有关如何在使用 Azure 管理门户预配群集时使用示例脚本的说明。
 
-> [AZURE.NOTE]示例脚本是随同 HDInsight 群集版本 3.1 一起引入的。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning)。
+> [AZURE.NOTE]示例脚本是随同 HDInsight 群集版本 3.1 一起引入的。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles//documentation/articles/hdinsight-component-versioning-v1)。
 
-1. 根据[使用自定义选项设置群集](/documentation/articles/hdinsight-provision-clusters#portal)中的说明，使用“自定义创建”选项开始设置群集。 
+1. 根据[使用自定义选项设置群集](/documentation/articles/hdinsight-provision-clusters-v1#portal)中的说明，使用“自定义创建”选项开始设置群集。 
 2. 在向导的“脚本操作”页上，单击“添加脚本操作”，以提供有关脚本操作的详细信息，如下所述：
 
 
@@ -283,15 +283,15 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 
 ## 另请参阅
 
-- [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)。使用群集自定义在 HDInsight Hadoop 群集上安装 Giraph。Giraph 可让你使用 Hadoop 执行图形处理，并可以在 Azure HDInsight 上使用。
-- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)：有关如何创建 HDInsight 群集的一般信息
+- [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-v1)。使用群集自定义在 HDInsight Hadoop 群集上安装 Giraph。Giraph 可让你使用 Hadoop 执行图形处理，并可以在 Azure HDInsight 上使用。
+- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)：有关如何创建 HDInsight 群集的一般信息
 - [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关如何使用脚本操作自定义 HDInsight 群集的一般信息
 - [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions)
-- [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)：有关如何安装 Giraph 的脚本操作示例
+- [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-v1)：有关如何安装 Giraph 的脚本操作示例
 
 
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
 
 <!---HONumber=79-->

@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="12/04/2015"
+	wacn.date="01/14/2016"/>
 
 #使用 HDInsight 中 Hadoop上的 Hive 查询控制台分析传感器数据
 
@@ -30,7 +30,7 @@
 
 ##先决条件
 
-* HDInsight (Hadoop) 群集：有关创建群集的信息，请参阅[在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)。
+* HDInsight (Hadoop) 群集：有关创建群集的信息，请参阅[在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)。
 
 * Microsoft Excel 2013
 

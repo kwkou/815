@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/29/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/15/2016"/>
 
 
 
@@ -30,7 +30,7 @@
 
 ### 新增功能 
  
-* [已更新 Hadoop 组件版本](/documentation/articles/hdinsight-component-versioning)，使其对应于服务版本 3.1。这包括 Hive 0.13 和 Tez 支持。
+* [已更新 Hadoop 组件版本](/documentation/articles//documentation/articles/hdinsight-component-versioning-v1)，使其对应于服务版本 3.1。这包括 Hive 0.13 和 Tez 支持。
 
 ## 于 2013 年 10 月 28 日发布的版本 1.0.0.0
 

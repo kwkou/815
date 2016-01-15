@@ -4,12 +4,12 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
-   editor="tysonn"/>
-<tags 
-   ms.service="virtual-network"
-   ms.date="09/04/2015"
-   wacn.date="11/02/2015"/>
+   manager="carmonm"
+   editor="tysonn" />
+<tags
+	ms.service="virtual-network"
+	ms.date="12/11/2015"
+	wacn.date="01/14/2016"/>
 
 # 虚拟网络 (VNet) 中的公共 IP 地址空间
 
@@ -29,15 +29,15 @@
 
 有几个不允许使用的 IP 地址范围：
 
-- 224.0.0.0/4（多播）
+- 224\.0.0.0/4（多播）
 
-- 255.255.255.255/32（广播）
+- 255\.255.255.255/32（广播）
 
-- 127.0.0.0/8（环回）
+- 127\.0.0.0/8（环回）
 
-- 169.254.0.0/16（本地链路）
+- 169\.254.0.0/16（本地链路）
 
-- 68.63.129.16/32（内部 DNS）
+- 68\.63.129.16/32（内部 DNS）
 
 ## 后续步骤
 
@@ -47,4 +47,4 @@
 
 [如何删除虚拟网络 (VNet)](/documentation/articles/virtual-networks-delete-vnet)
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0104_2016-->
