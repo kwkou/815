@@ -2,4 +2,4 @@
 [PowerShell](/documentation/articles/virtual-network-deploy-multinic-classic-ps)
 [Azure CLI](/documentation/articles/virtual-network-deploy-multinic-classic-cli)
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->

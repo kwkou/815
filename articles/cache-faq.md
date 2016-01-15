@@ -22,7 +22,7 @@
 
 以下是选择缓存产品的注意事项。
 
--	**内存**：基本级别和标准级别提供 250 MB - 53 GB。高级级别提供高达 530 GB 的内存，还可[请求](mailto:wapteams@microsoft.com?subject=Redis%20Cache%20quota%20increase)提供更多。有关详细信息，请参阅 [Azure Redis 缓存定价](/home/features/redis-cache/#price)。
+-	**内存**：基本级别和标准级别提供 250 MB - 53 GB。高级级别提供高达 530 GB 的内存。有关详细信息，请参阅 [Azure Redis 缓存定价](/home/features/redis-cache/#price)。
 -	**网络性能**：如果你的工作负荷需要高的吞吐量，则可使用高级级别，该级别提供比标准级别或基本级别更高的带宽。另外，在每个级别中，缓存大小越大，带宽越高，因为是由基础 VM 托管缓存。有关详细信息，请参阅[下表](#cache-performance)。
 -	**吞吐量**：高级级别提供的可用吞吐量最大。如果缓存服务器或客户端达到带宽限制，客户端上会出现超时。有关详细信息，请参阅下表。
 -	**高可用性/SLA**：Azure Redis 缓存保证标准/高级缓存在至少 99.9% 的时间内都可用。若要了解有关 SLA 的详细信息，请参阅 [Azure Redis 缓存定价](/home/features/redis-cache/#price)。SLA 仅涉及与缓存终结点的连接。SLA 不涉及对数据丢失的防护。我们建议使用高级级别中的 Redis 数据暂留功能来增加灵活性，防止数据丢失。

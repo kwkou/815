@@ -32,10 +32,6 @@
 		azure login -e AzureChinaCloud
 
 	有关使用公司或学校帐户进行身份验证的详细信息，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)。
-	
-- 使用以下命令**切换到 Azure 资源管理器模式**：
-
-		azure config mode arm
 
 若要获得帮助，请使用 **-h** 开关。例如：
 
@@ -45,17 +41,8 @@
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
-在创建 HDInsight 群集之前，你必须拥有 Azure 资源管理 (ARM) 和 Azure Blob 存储帐户。若要创建 HDInsight 群集，你必须指定以下信息：
+若要创建 HDInsight 群集，你必须指定以下信息：
 
-- **Azure 资源组**：必须在 Azure 资源组中创建一个 Data Lake 分析帐户。那么，你可以使用 Azure 资源管理器以组的方式处理应用程序中的资源。你可以通过一个协调的操作为应用程序部署、更新或删除所有资源。 
-
-	若要列出订阅中的资源组：
-	
-		azure group list 
-	
-	若要创建新的资源组：
-	
-		azure group create -n "<Resource Group Name>" -l "<Azure Location>"
 
 - **HDInsight 群集名称**
 
@@ -65,7 +52,7 @@
 
 	若要创建新的 Azure 存储帐户：
 	
-		azure storage account create "<Azure Storage Account Name>" -g "<Resource Group Name>" -l "<Azure Location>" --type LRS
+		azure storage account create "<Azure Storage Account Name>" -l "<Azure Location>" --type LRS
 
 	> [AZURE.NOTE]存储帐户必须与 HDInsight 共置于同一数据中心。存储帐户类型不能为 ZRS，因为 ZRS 不支持表。
 	
@@ -76,7 +63,7 @@
 		-- Shows a Storage account
 		azure storage account show "<Storage Account Name>"
 		-- Lists the keys for a Storage account
-		azure storage account keys list "<Storage Account Name>" -g "<Resource Group Name>"
+		azure storage account keys list "<Storage Account Name>"
 
 	有关使用 Azure 管理门户获取信息的详细信息，请参阅[创建、管理或删除存储帐户][azure-create-storageaccount]中的“查看、复制和重新生成存储访问密钥”部分。
 
@@ -89,31 +76,6 @@
 	azure hdinsight cluster create --clusterName <ClusterName> --storageAccountName "<Storage Account Name>" --storageAccountKey <storageAccountKey> --storageContainer <StorageContainer> --nodes <NumberOfNodes> --location <DataCenterLocation> --username <HDInsightClusterUsername> --clusterPassword <HDInsightClusterPassword>
 
 ![HDI.CLIClusterCreation][image-cli-clustercreation]
-
-##使用配置文件创建群集
-通常，你创建一个 HDInsight 群集，对其运行作业，然后删除该群集以降低成本。在命令行界面上，你可以选择将配置保存到文件，以便在每次创建群集时可以重用这些配置。
-
-> [AZURE.NOTE]元存储配置不可用于 HBase 群集类型。
-
-	azure hdinsight cluster config create <file>
-
-	azure hdinsight cluster config set <file> --clusterName <ClusterName> --nodes <NumberOfNodes> --location "<DataCenterLocation>" --storageAccountName ""<Storage Account Name>".blob.core.chinacloudapi.cn" --storageAccountKey "<StorageAccountKey>" --storageContainer "<BlobContainerName>" --username "<Username>" --clusterPassword "<UserPassword>"
-
-	azure hdinsight cluster config storage add <file> --storageAccountName ""<Storage Account Name>".blob.core.chinacloudapi.cn"
-	       --storageAccountKey "<StorageAccountKey>"
-
-	azure hdinsight cluster config metastore set <file> --type "hive" --server "<SQLDatabaseName>.database.chinacloudapi.cn"
-	       --database "<HiveDatabaseName>" --user "<Username>" --metastorePassword "<UserPassword>"
-
-	azure hdinsight cluster config metastore set <file> --type "oozie" --server "<SQLDatabaseName>.database.chinacloudapi.cn"
-	       --database "<OozieDatabaseName>" --user "<SQLUsername>" --metastorePassword "<SQLPassword>"
-
-	azure hdinsight cluster create --config <file>
-
-
-
-![HDI.CLIClusterCreationConfig][image-cli-clustercreation-config]
-
 
 ##列出并显示群集详细信息
 使用以下命令来列出和显示群集详细信息：

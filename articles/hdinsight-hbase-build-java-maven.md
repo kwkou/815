@@ -407,41 +407,35 @@
         $jarFile = "wasb:///example/jars/hbaseapp-1.0-SNAPSHOT.jar"
         
         # The job definition
-        $jobDefinition = New-AzureRmHDInsightMapReduceJobDefinition `
+        $jobDefinition = New-AzureHDInsightMapReduceJobDefinition `
             -JarFile $jarFile `
             -ClassName $className `
             -Arguments $emailRegex
         
         # Get the job output
-        $job = Start-AzureRmHDInsightJob `
-            -ClusterName $clusterName `
+        $job = Start-AzureHDInsightJob `
+            -Cluster $clusterName `
             -JobDefinition $jobDefinition `
-            -HttpCredential $creds
+            -Credential $creds
         Write-Host "Wait for the job to complete ..." -ForegroundColor Green
-        Wait-AzureRmHDInsightJob `
-            -ClusterName $clusterName `
+        Wait-AzureHDInsightJob `
+            -Cluster $clusterName `
             -JobId $job.JobId `
-            -HttpCredential $creds
+            -Credential $creds
         if($showErr)
         {
         Write-Host "STDERR"
-        Get-AzureRmHDInsightJobOutput `
-                    -Clustername $clusterName `
+        Get-AzureHDInsightJobOutput `
+                    -Cluster $clusterName `
                     -JobId $job.JobId `
-                    -DefaultContainer $storage.container `
-                    -DefaultStorageAccountName $storage.storageAccountName `
-                    -DefaultStorageAccountKey $storage.storageAccountKey `
-                    -HttpCredential $creds
-                    -DisplayOutputType StandardError
+                    -Credential $creds
+                    -StandardError
         }
         Write-Host "Display the standard output ..." -ForegroundColor Green
-        Get-AzureRmHDInsightJobOutput `
-                    -Clustername $clusterName `
+        Get-AzureHDInsightJobOutput `
+                    -Cluster $clusterName `
                     -JobId $job.JobId `
-                    -DefaultContainer $storage.container `
-                    -DefaultStorageAccountName $storage.storageAccountName `
-                    -DefaultStorageAccountKey $storage.storageAccountKey `
-                    -HttpCredential $creds
+                    -Credential $creds
         }
         
         <#
@@ -508,10 +502,10 @@
         
         function FindAzure {
             # Is there an active Azure subscription?
-            $sub = Get-AzureRmSubscription -ErrorAction SilentlyContinue
+            $sub = Get-AzureSubscription -ErrorAction SilentlyContinue
             if(-not($sub))
             {
-                throw "No active Azure subscription found! If you have a subscription, use the Login-AzureRmAccount cmdlet to login to your subscription."
+                throw "No active Azure subscription found! If you have a subscription, use the Add-AzureAccount cmdlet to login to your subscription."
             }
         }
         
@@ -520,7 +514,7 @@
                 [Parameter(Mandatory = $true)]
                 [String]$clusterName
             )
-            $hdi = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+            $hdi = Get-AzureHDInsightCluster -Name $clusterName
             # Does the cluster exist?
             if (!$hdi)
             {
@@ -534,12 +528,9 @@
             $resourceGroup = $hdi.ResourceGroup
             $storageAccountName=$hdi.DefaultStorageAccount.split('.')[0]
             $container=$hdi.DefaultStorageContainer
-            $storageAccountKey=Get-AzureRmStorageAccountKey `
-                -Name $storageAccountName `
-                -ResourceGroupName $resourceGroup `
-                | %{ $_.Key1 }
-            # Get the resource group, in case we need that
-            $return.resourceGroup = $resourceGroup
+            $storageAccountKey=Get-AzureStorageKey `
+                -StorageAccountName $storageAccountName `
+                | %{ $_.Primary }
             # Get the storage context, as we can't depend
             # on using the default storage context
             $return.context = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
