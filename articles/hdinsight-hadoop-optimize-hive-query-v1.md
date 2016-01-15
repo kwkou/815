@@ -17,10 +17,6 @@
 
 默认情况下，不会为了性能而优化 Hadoop 群集。本文介绍可对查询应用的几种最常见 Hive 性能优化方法。
 
-[AZURE.INCLUDE [门户](../includes/hdinsight-azure-portal.md)]
-
-* [在 Hdinsight 中优化 Hadoop 的 Hive 查询](/documentation/articles/hdinsight-hadoop-optimize-hive-query-v1)。
-
 ##向外缩放辅助节点
 
 增加群集中的辅助节点数目，即可利用更多并行运行的映射器和化简器。在 HDInsight 中，可通过两种方式增加扩大的数目：
@@ -203,7 +199,6 @@ ORC（优化行纵栏式）格式是存储 Hive 数据的高效方式。与其�
 在本文中，你已学习了几种常见的 Hive 查询优化方法。若要了解更多信息，请参阅下列文章：
 
 - [使用 HDInsight 中的 Hive 分析航班延误数据](/documentation/articles/hdinsight-analyze-flight-delay-data)
-- [使用 HDInsight 中的 Hive 分析 Twitter 数据](/documentation/articles/hdinsight-analyze-twitter-data)
 - [使用 HDInsight 中 Hadoop上的 Hive 查询控制台分析传感器数据](/documentation/articles/hdinsight-hive-analyze-sensor-data)
 
 

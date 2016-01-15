@@ -146,7 +146,7 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
 
 > [AZURE.NOTE]有关从外部数据源读取的 Spout 的示例，请参阅以下示例之一：
 >
-> * <a href="https://github.com/apache/storm/blob/master/examples/storm-starter/src/jvm/storm/starter/spout/TwitterSampleSpout.java" target="_blank">TwitterSampleSpout</a>：从Twitter 读取数据的示例 Spout
+> * <a href="https://github.com/apache/storm/blob/master/examples/storm-starter/src/jvm/org/apache/storm/starter/spout/TwitterSampleSpout.java" target="_blank">TwitterSampleSpout</a>：从Twitter 读取数据的示例 Spout
 >
 > * <a href="https://github.com/apache/storm/tree/master/external/storm-kafka" target="_blank">Storm-Kafka</a>：从 Kafka 读取数据的 Spout
 

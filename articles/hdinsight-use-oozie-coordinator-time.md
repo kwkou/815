@@ -690,7 +690,7 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
 
 
-[hdinsight-versions]: /documentation/articles//documentation/articles/hdinsight-component-versioning-v1/
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/

@@ -42,7 +42,6 @@
 ## 后续步骤
 了解 HDInsight 的其他方法包括：
 
-- [HDInsight 学习路线图][hdinsight.learn.map]
 - [HDInsight 信息图][hdinsight.infographic]
 
 <!--Image references-->

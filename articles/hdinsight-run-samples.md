@@ -200,7 +200,7 @@ pi 估计器使用统计学方法（拟蒙特卡罗法）来估算 pi 值。单�
 * [在 HDInsight 中调试 Hadoop：错误消息][hdinsight-errors]
 
 
-## 附录 A - 字数统计源代码
+##<a name="word-count-java" id="apendix-a---the-word-count-MapReduce-program-in-java"></a> 附录 A - 字数统计源代码
 
 	package org.apache.hadoop.examples;
 	import java.io.IOException;

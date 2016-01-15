@@ -46,7 +46,7 @@
 
 #### 监视你的网站
 
-此选项可让你找出应用程序是否存在任何问题。在网站的边栏选项卡中，单击“请求和错误”磁贴。“指标”边栏选项卡将显示所有可以添加的指标。
+此页面可让你找出应用程序是否存在任何问题。在管理门户中，单击你网页的“监视器”。
 
 你可能想要在网站中监视的一些指标包括
 
@@ -61,7 +61,6 @@
 有关详细信息，请参阅：
 
 -	[在 Azure 网站中监视网站](/documentation/articles/web-sites-monitor)
--	[接收警报通知](/documentation/articles/insights-receive-alert-notifications)
 
 #### 监视 Web 终结点状态
 
@@ -76,9 +75,9 @@
 <a name="collect"></a>
 ### 2\.收集数据
 
-####	为网站启用诊断日志记录
+####	使用 FTP 诊断日志
 
-网站环境为 Web 服务器和网站中的日志记录信息提供了诊断功能。这些诊断功能按逻辑分为 Web 服务器诊断和应用程序诊断。
+在你的网页的“仪表板”页面中，找到 FTP 诊断日志的链接，一般为 `ftp://********.ftp.chinacloudsites.chinacloudapi.cn/LogFiles`。点击进去，可以下载 eventlog.xml 以及 Kudu 日志流。
 
 ##### Web 服务器诊断
 
@@ -93,12 +92,6 @@
 使用应用程序诊断可以捕获网站生成的信息。ASP.NET 应用程序可使用 `System.Diagnostics.Trace` 类将信息记录到应用程序诊断日志。
 
 有关如何在应用程序中配置日志记录的详细说明，请参阅[在 Azure 网站中为网站启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)。
-
-#### 使用远程分析
-
-在 Azure 网站中，可以远程分析网站和 Web 作业。如果进程运行速度比预期缓慢，或者 HTTP 请求的延迟高于平时并且进程的 CPU 使用率偏高，则你可以远程分析进程并获取 CPU 采样调用堆栈，以分析进程活动和代码繁忙的路径。
-
-有关详细信息，请参阅 [Azure 网站中的远程分析支持](/blog/remote-profiling-support-in-azure-app-service)。
 
 <a name="mitigate"></a>
 ### 3\.缓解问题
@@ -117,7 +110,6 @@
 
 AutoHeal 会根据你选择的设置（例如配置更改、请求、基于内存的限制或执行请求所需的时间），回收应用程序的工作进程。在大多数情况下，回收进程是在出现问题后进行恢复的最快方式。尽管你始终可以从 Azure 管理门户直接重新启动网站，但 AutoHeal 可以自动为你执行此操作。你只需在网站的根 web.config 中添加一些触发器即可。请注意，即使你的应用程序并非 .Net 应用程序，这些设置的工作方式也仍然相同。
 
-有关详细信息，请参阅[自动修复 Azure 网站](/blog/auto-healing-windows-azure-web-sites/)。
 
 ####	重新启动网站
 

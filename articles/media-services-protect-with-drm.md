@@ -624,6 +624,5 @@ Windows Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://w
 
 [使用 AMS 配置 Widevine 打包](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
 
-[特此宣布已在 Azure 媒体服务中推出 Google Widevine 许可证传送服务公共预览版](http://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/)
 
 <!---HONumber=Mooncake_0104_2016-->

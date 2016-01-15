@@ -52,11 +52,6 @@
 - .NET Framework 4.0 或更高版本
 - Visual Studio 2010 SP1（Professional、Premium、Ultimate 或 Express）或更高版本。
 
-
-##下载示例
-
-从[此处](http://azure.microsoft.com/documentation/samples/media-services-dotnet-on-demand-encoding-with-media-encoder-standard/)获取并运行示例。
-
 ##使用门户创建媒体服务帐户
 
 1. 在 Azure 管理门户中，依次单击“新建”、“媒体服务”和“快速创建”。

@@ -106,7 +106,7 @@
 * [如何使用 Azure CLI][azure-command-line-tools]
 
 
-[azure-command-line-tools]: /documentation/articles/xplat-cli
+[azure-command-line-tools]: /documentation/articles/xplat-cli-install
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/

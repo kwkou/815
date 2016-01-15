@@ -71,8 +71,6 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 	https://<clustername>.azurehdinsight.cn/ambari/api/v1/clusters/<clustername>.azurehdinsight.cn/services/<servicename>/components/<componentname>
 
-> [AZURE.NOTE]有关如何将 Ambari 与 HDInsight 配合使用的详细信息，请参阅[使用 Ambari API 监视 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-monitor-use-ambari-api)。
-
 必须指定群集名称和群集上运行的服务和组件，例如 YARN 资源管理器。
 
 > [AZURE.NOTE]返回的数据是一个 JavaScript 对象表示法 (JSON) 文档，其中包含有关组件的大量信息。若只要提取 FQDN，你应该使用 JSON 分析器来检索 `host_components[0].HostRoles.host_name` 值。
