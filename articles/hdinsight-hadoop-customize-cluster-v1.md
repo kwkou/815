@@ -17,7 +17,7 @@
 HDInsight 提供了一个称为**脚本操作**的配置选项，该脚本操作可调用自定义脚本，以定义设置过程中要在群集上执行自定义。这些脚本可用于在群集上安装额外的软件或更改群集上的应用程序配置。
 
 
-> [AZURE.NOTE]只有在随附 Windows 操作系统的 HDInsight 群集 3.1 或更高版本上才支持脚本操作。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles//documentation/articles/hdinsight-component-versioning-v1)。
+> [AZURE.NOTE]只有在随附 Windows 操作系统的 HDInsight 群集 3.1 或更高版本上才支持脚本操作。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning-v1)。
 > 
 > 脚本操作是标准 Azure HDInsight 订阅免费提供的功能之一。
 
@@ -124,7 +124,7 @@ Windows Azure HDInsight 服务是一个弹性平台，可让你使用围绕着 H
 
 HDInsight 服务中有两种类型的开放源代码组件：
 
-- **内置组件** - 这些组件预先安装在 HDInsight 群集上，并提供在群集的核心功能。例如，Yarn ResourceManager、Hive 查询语言 (HiveQL) 及 Mahout 库均属于此类别。<a href="/documentation/articles//documentation/articles/hdinsight-component-versioning-v1/" target="_blank">HDInsight 提供的 Hadoop 群集版本有哪些新功能</a>中提供了群集组件的完整列表。
+- **内置组件** - 这些组件预先安装在 HDInsight 群集上，并提供在群集的核心功能。例如，Yarn ResourceManager、Hive 查询语言 (HiveQL) 及 Mahout 库均属于此类别。<a href="/documentation/articles/hdinsight-component-versioning-v1/" target="_blank">HDInsight 提供的 Hadoop 群集版本有哪些新功能</a>中提供了群集组件的完整列表。
 - **自定义组件** - 作为群集用户，你可以安装，或者在工作负荷中使用由社区提供的或你自己创建的任何组件。
 
 完全支持内置组件，Microsoft 支持部门将帮助你找出并解决与这些组件相关的问题。

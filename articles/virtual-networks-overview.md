@@ -13,7 +13,7 @@
 
 # 虚拟网络概述
 
-Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是对专用于你的订阅的 Azure 云进行的逻辑隔离。你可以完全控制该网络中的 IP 地址块、DNS 设置、安全策略和路由表。你还可以进一步将 VNet 细分成各个子网，并启动 Azure IaaS 虚拟机 (VM) 和/或[云服务（PaaS 角色实例）](/documentation/articles/cloud-services-choose-me)。此外，你还可以使用 Azure 中提供的[连接选项](/documentation/articles/vpn-gateway-cross-premises-options)之一将虚拟网络连接到本地网络。实际上，你可以将网络扩展到 Azure，对 IP 地址块进行完全的控制，并享受企业级 Azure 带来的好处。
+Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是对专用于你的订阅的 Azure 云进行的逻辑隔离。你可以完全控制该网络中的 IP 地址块、DNS 设置、安全策略和路由表。你还可以进一步将 VNet 细分成各个子网，并启动 Azure IaaS 虚拟机 (VM) 和/或[云服务（PaaS 角色实例）](/documentation/articles/cloud-services-choose-me)。实际上，你可以将网络扩展到 Azure，对 IP 地址块进行完全的控制，并享受企业级 Azure 带来的好处。
 
 若要更好地了解 VNet，请看下图，其中显示了简化的本地网络。
 
@@ -41,7 +41,6 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 
 - **安全性**。进出虚拟网络的流量以及 VNet 中的 PaaS 角色实例都可使用网络安全组进行控制。
 
-- **连接**。VNet 通过使用站点到站点 VPN 连接或 ExpressRoute 连接可以彼此连接，甚至可以连接到本地数据中心。若要了解有关 VPN 网关的详细信息，请访问[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways)。若要了解有关 ExpressRoute 的详细信息，请访问 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction)。
 
     >[AZURE.NOTE]请确保在将任何 IaaS VM 或 PaaS 角色实例部署到 Azure 环境之前创建 VNet。基于 ARM 的 VM 需要 VNet，如果你未指定现有 VNet，Azure 将创建其 CIDR 地址块可能会与本地网络冲突的默认 VNet。使你无法将 VNet 连接到本地网络。
     
@@ -52,7 +51,7 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 ## IP 地址
 
 
-有两种类型的 IP 地址分配给 Azure 中的资源：*公共* 和*专用*。使用公共 IP 地址可以让 Azure 资源与 Internet 以及其他面向公众的 Azure 服务（例如 [Azure Redis 缓存](/home/features/cache/)、[Azure 事件中心](/documentation/services/event-hubs/)）通信。专用 IP 地址允许在虚拟网络的资源之间通信，以及与那些通过 VPN 连接的资源通信，不需使用可通过 Internet 路由的 IP 地址。
+有两种类型的 IP 地址分配给 Azure 中的资源：*公共* 和*专用*。使用公共 IP 地址可以让 Azure 资源与 Internet 以及其他面向公众的 Azure 服务（例如 [Azure Redis 缓存](/home/features/cache/)、[Azure 事件中心](/documentation/services/event-hubs/)）通信。
 
 若要详细了解 Azure 中的 IP 地址，请访问[虚拟网络中的 IP 地址](/documentation/articles/virtual-network-ip-addresses-arm)
 
@@ -82,7 +81,7 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 一个订阅中允许的虚拟网络数是有限制的，请参阅 [Azure 网络限制](/documentation/articles/azure-subscription-service-limits#networking-limits)以获取更多信息。
 
 ## 定价
-在 Azure 中使用虚拟网络不需支付额外的费用。在 Vnet 中启动的计算实例将按标准费率计费，如 [Azure VM 定价](/home/features/virtual-machines/#price)中所述。在 VNet 中使用的 [VPN 网关](/home/features/vpn-gateway/#price)和[公共 IP 地址](/home/features/ip-addresses/#price)也将按标准费率计费。
+在 Azure 中使用虚拟网络不需支付额外的费用。在 Vnet 中启动的计算实例将按标准费率计费，如 [Azure VM 定价](/home/features/virtual-machines/#price)中所述。在 VNet 中使用的[公共 IP 地址](/home/features/ip-addresses/#price)也将按标准费率计费。
 
 ## 后续步骤
 

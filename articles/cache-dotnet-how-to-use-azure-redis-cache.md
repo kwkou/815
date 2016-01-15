@@ -104,7 +104,7 @@ NuGet 程序包会给客户端应用程序下载并添加所需的程序集引�
 
 如果你不想使用 SSL，请设置 `ssl=false` 或者省略 `ssl` 参数。
 
->[AZURE.NOTE]默认情况下，将为新缓存禁用非 SSL 端口。有关启用非 SSL 端口的说明，请参阅[访问端口](/documentation/articles/cache-configure#access-ports)。
+>[AZURE.NOTE]默认情况下，将为新缓存禁用非 SSL 端口。
 
 共享应用程序中的 `ConnectionMultiplexer` 实例的一个方法是，拥有返回连接示例的静态属性（与下列示例类似）。这种线程安全方法，可仅初始化单一连接的 `ConnectionMultiplexer` 实例。在这些示例中，`abortConnect` 设置为 false，这表示即使未建立 Azure Redis 缓存连接，也可成功调用。`ConnectionMultiplexer` 的一个关键功能是，一旦还原网络问题和其他原因，它将自动还原缓存连接。
 
@@ -171,7 +171,7 @@ Redis 将大多数数据存储为 Redis 字符串，但这些字符串可能包�
 
 	cache.StringSet("key1", "value1", TimeSpan.FromMinutes(90));
 
-## <a name="store-session"></a>处理缓存中的 .NET 对象
+## <a name="store-session" id="work-with-net-objects-in-the-cache"></a>处理缓存中的 .NET 对象
 
 Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓存 .NET 对象之前，必须对其进行序列化。这是应用程序开发人员的责任，同时赋与开发人员选择序列化程序的弹性。
 
@@ -201,11 +201,10 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 现在，你已学习了基础知识，接下来请打开以下链接了解有关 Azure Redis 缓存的详细信息。
 
 -	了解 Azure Redis 缓存的 ASP.NET 提供程序。
-	-	[Azure Redis 会话状态提供程序](cache-asp.net-session-state-provider.md)
-	-	[Azure Redis 缓存 ASP.NET 输出缓存提供程序](cache-asp.net-output-cache-provider.md)
+	-	[Azure Redis 会话状态提供程序](/documentation/articles/cache-asp.net-session-state-provider)
+	-	[Azure Redis 缓存 ASP.NET 输出缓存提供程序](/documentation/articles/cache-asp.net-output-cache-provider)
 -	查看 [StackExchange.Redis 缓存客户端文档][]。
 	-	可以从许多 Redis 客户端和开发语言访问 azure Redis 缓存。有关详细信息，请参阅 [http://redis.io/clients][] 和[以其他语言开发 Azure Redis 缓存][]。
-	-	Azure Redis 缓存还可用于 Redsmin 等服务。有关详细信息，请参阅[如何检索 Azure Redis 连接字符串并将其用于 Redsmin][]。
 -	请参阅 [redis][] 文档并阅读 [redis 数据类型][]和 [Redis 数据类型的十五分钟介绍][]。
 
 

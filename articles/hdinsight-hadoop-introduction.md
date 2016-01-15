@@ -43,7 +43,7 @@ Azure HDInsight 使用 **Windows** 作为基础操作系统，在云中部署并
 ---------| --------------------
 **群集 OS** | Windows Server 2012 R2
 **群集类型** | Hadoop、HBase、Storm
-**部署** | Azure CLI、Azure PowerShell | Azure 管理门户、Azure CLI、Azure PowerShell、HDInsight .NET SDK
+**部署** | Azure CLI、Azure PowerShell
 **群集 UI** | 群集仪表板
 **远程访问** | 远程桌面协议 (RDP)、REST API、ODBC、JDBC
 
@@ -51,7 +51,7 @@ Azure HDInsight 使用 **Windows** 作为基础操作系统，在云中部署并
 
 ### Hadoop、HBase、Storm 和自定义群集
 
-HDInsight 为 Apache Hadoop、HBase 或 Storm 提供了群集配置。或者，你可以[使用脚本操作自定义群集](/documentation/articles/hdinsight-hadoop-customize-cluster)。
+HDInsight 为 Apache Hadoop、HBase 或 Storm 提供了群集配置。或者，你可以[使用脚本操作自定义群集](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)。
 
 * **Hadoop**（“查询”工作负荷）：为可靠的数据存储提供了 [HDFS](#HDFS) 和一个简单的 [MapReduce](#mapreduce) 编程模型以并行地处理和分析数据。
 
@@ -207,7 +207,7 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 
 [marketing-page]: /home/features/hdinsight/
-[component-versioning]: /documentation/articles//documentation/articles/hdinsight-component-versioning-v1
+[component-versioning]: /documentation/articles/hdinsight-component-versioning-v1
 [zookeeper]: http://zookeeper.apache.org/
 
 <!---HONumber=Mooncake_0104_2016-->

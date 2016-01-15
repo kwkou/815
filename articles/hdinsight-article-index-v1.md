@@ -90,6 +90,6 @@
 * [收集堆转储](/documentation/articles/hdinsight-hadoop-collect-debug-heap-dumps)
 * [访问应用程序日志](/documentation/articles/hdinsight-hadoop-access-yarn-app-logs)
 * [解释错误消息](/documentation/articles/hdinsight-debug-jobs)
-* [在论坛上获取帮助](https://social.msdn.microsoft.com/forums/azure/home?forum=hdinsight)
+* [在论坛上获取帮助](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hdinsight)
 
 <!---HONumber=74-->

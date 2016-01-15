@@ -166,7 +166,7 @@
 
 	New-AzureRmRedisCache -ResourceGroupName myGroup -Name mycache -Location "China North" -Sku Premium -Size P1 -ShardCount 3
 
-若要指定 `RedisConfiuration` 参数的值，请以键/值对的方式将值括在 `{}` 内，例如 `@{"maxmemory-policy" = "allkeys-random", "notify-keyspace-events" = "KEA"}`。以下示例将创建标准 1 GB 缓存，其包含 `allkeys-random` maxmemory 策略，以及使用 `KEA` 配置的 keyspace 通知。有关详细信息，请参阅 [Keyspace 通知（高级设置）](/documentation/articles/cache-configure#keyspace-notifications-advanced-settings)以及 [Maxmemory-policy 和 maxmemory-reserved](/documentation/articles/cache-configure#maxmemory-policy-and-maxmemory-reserved)。
+若要指定 `RedisConfiuration` 参数的值，请以键/值对的方式将值括在 `{}` 内，例如 `@{"maxmemory-policy" = "allkeys-random", "notify-keyspace-events" = "KEA"}`。以下示例将创建标准 1 GB 缓存，其包含 `allkeys-random` maxmemory 策略，以及使用 `KEA` 配置的 keyspace 通知。
 
 	New-AzureRmRedisCache -ResourceGroupName myGroup -Name mycache -Location "China North" -RedisConfiguration @{"maxmemory-policy" = "allkeys-random", "notify-keyspace-events" = "KEA"}
 

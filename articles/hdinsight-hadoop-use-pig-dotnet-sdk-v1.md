@@ -20,10 +20,6 @@
 
 HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsight 群集的操作。Pig 可让你通过为一系列数据转换建模，来创建 MapReduce 操作。你将学习如何使用基本 C# 应用程序将 Pig 作业提交到 HDInsight 群集。
 
-[AZURE.INCLUDE [azure-preview-portal](../includes/hdinsight-azure-portal.md)]
-
-* [使用 HDInsight 中的 .NET SDK for Hadoop 运行 Pig 作业](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1)
-
 ##<a id="prereq"></a>先决条件
 
 若要完成本文中的步骤，你将需要：

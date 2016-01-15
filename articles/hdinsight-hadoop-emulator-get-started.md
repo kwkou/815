@@ -14,7 +14,7 @@
 	wacn.date="01/14/2016"/>
 # 使用 HDInsight Emulator（一个 Hadoop 沙盒）开始了解 Hadoop 生态系统
 
-本指南指导你开始使用 Microsoft HDInsight Emulator for Azure（以前称作 HDInsight Server 开发者预览版）中的 Hadoop 群集。HDInsight Emulator 附带来自 Hadoop 生态系统的与 Azure HDInsight 相同的组件。有关详细信息（包括与部署的版本有关的信息），请参阅 [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles//documentation/articles/hdinsight-component-versioning-v1)。
+本指南指导你开始使用 Microsoft HDInsight Emulator for Azure（以前称作 HDInsight Server 开发者预览版）中的 Hadoop 群集。HDInsight Emulator 附带来自 Hadoop 生态系统的与 Azure HDInsight 相同的组件。有关详细信息（包括与部署的版本有关的信息），请参阅 [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles/hdinsight-component-versioning-v1)。
 
 安装该模拟器后，遵照 MapReduce 教程进行单词计数，然后运行示例。
 
@@ -486,7 +486,7 @@ HDInsight Emulator 也支持某些 Azure PowerShell cmdlet。这些 cmdlet 包�
 [hdinsight-powershell-reference]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-develop-deploy-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-versions]: /documentation/articles//documentation/articles/hdinsight-component-versioning-v1
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 [Powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 [hadoop-commands-manual]: http://hadoop.apache.org/docs/r1.1.1/commands_manual.html

@@ -1108,7 +1108,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 
 </table>
 
-有关 HDInsight 的 Hortonworks 数据平台上 YARN 和 MapReduce 使用的内存配置设置的更多信息，请参阅[确定 HDP 内存配置设置](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/rpm-chap1-11.html)。Hortonworks 还提供了一款工具用于计算合适的内存设置。
+有关 HDInsight 的 Hortonworks 数据平台上 YARN 和 MapReduce 使用的内存配置设置的更多信息，请参阅[确定 HDP 内存配置设置](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.15/bk_installing_manually_book/content/rpm-chap1-11.html)。Hortonworks 还提供了一款工具用于计算合适的内存设置。
 
 关于 Azure PowerShell 和 HDInsight SDK 错误消息：“群集未配置 HTTP 服务访问”：
 
@@ -1154,7 +1154,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 * **HDInsight 已在新区域推出：**我们已将 HDInsight 的地理位置据点扩展到三个新的区域。HDInsight 客户可以在这些区域创建群集。
 	* 中国北部
 	* 中国东部
-* HDInsight 1.6 版（HDP 1.1、Hadoop 1.0.3）和 HDInsight 2.1 版（HDP 1.3、Hadoop 1.2）即将从 Azure 管理门户中删除。你可以继续使用 Azure PowerShell cmdlet [New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) 或 [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx) 来创建这些版本的 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本控制](/documentation/articles//documentation/articles/hdinsight-component-versioning-v1)页。
+* HDInsight 1.6 版（HDP 1.1、Hadoop 1.0.3）和 HDInsight 2.1 版（HDP 1.3、Hadoop 1.2）即将从 Azure 管理门户中删除。你可以继续使用 Azure PowerShell cmdlet [New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) 或 [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx) 来创建这些版本的 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning-v1)页。
 * 此版本中发生的 Hortonworks 数据平台 (HDP) 更改：
 
 <table border="1"> <tr><th>HDP</th><th>更改</th></tr> <tr><td>HDP 1.3 / HDI 2.1</td><td>无更改</td></tr> <tr><td>HDP 2.0 / HDI 3.0</td><td>无更改</td></tr> <tr><td>HDP 2.1 / HDI 3.1</td><td>zookeeper：['3.4.5.2.1.3.0-1948'] -> ['3.4.5.2.1.3.2-0002']</td></tr>
@@ -1319,7 +1319,7 @@ HDInsight 3.x (HDP2.x) 中不再存在以下依赖项：
 
 
 ### 驱动程序
-SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部使用，不用于外部操作。如果你希望使用开放数据库连接 (ODBC) 连接到 HDInsight，请使用 Microsoft Hive ODBC 驱动程序。有关详细信息，请参阅[使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight](/documentation/articles/hdinsight-connect-excel-hive-odbc-driver)。
+SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部使用，不用于外部操作。如果你希望使用开放数据库连接 (ODBC) 连接到 HDInsight，请使用 Microsoft Hive ODBC 驱动程序。有关详细信息，请参阅[使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight](/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver)。
 
 
 ### Bug 修复

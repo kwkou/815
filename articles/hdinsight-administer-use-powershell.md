@@ -161,7 +161,7 @@ Azure PowerShell 无法在 HDInsight 创建过程中创建 Blob 容器。你可�
 	Set-AzureHDInsightClusterSize -Cluster <Cluster Name> -ClusterSizeInNodes <NewSize>
 	
 
-##授予/撤消访问权限
+##<a name="grant/revoke-access"></a> 授予/撤消访问权限
 
 HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样式的终结点）：
 

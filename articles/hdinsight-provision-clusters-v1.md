@@ -16,10 +16,6 @@
 
 了解如何规划 HDInsight 群集的预配。
 
-[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
-
-* [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1) 
-
 **先决条件：**
 
 在开始按照本文中的说明操作之前，你必须具有以下内容：
@@ -48,7 +44,7 @@
 
 - **HDInsight 版本**
 
-	用于确定要用于此群集的 HDInsight 版本。有关详细信息，请参阅 [HDInsight 中的 Hadoop 群集版本和组件](/documentation/articles//documentation/articles/hdinsight-component-versioning-v1/)。
+	用于确定要用于此群集的 HDInsight 版本。有关详细信息，请参阅 [HDInsight 中的 Hadoop 群集版本和组件](/documentation/articles/hdinsight-component-versioning-v1/)。
 
 - **群集类型**和**群集大小（也称为数据节点）**
 
@@ -234,7 +230,7 @@
 - .NET SDK
 - CLI
 
-### 使用 Azure 门户
+###<a name="portal"></a> 使用 Azure 门户
 
 你可以参考 [基本配置选项] 和 [高级配置选项] 以获取有关字段的说明。
 
@@ -606,7 +602,7 @@ HDInsight 群集还需要在存储帐户中提供一个容器。如果你提供�
 
 
 
-### 使用 HDInsight .NET SDK
+###<a name="sdk"></a> 使用 HDInsight .NET SDK
 HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使用 HDInsight 的操作。
 
 通过使用 SDK 设置 HDInsight 群集时必须执行以下过程：

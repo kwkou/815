@@ -29,7 +29,7 @@
 - **一个 Azure 订阅**。请参阅[获取 Azure 免费试用版](/pricing/1rmb-trial/)。
 - 装有 Visual Studio 2013 的**工作站**：有关说明，请参阅[安装 Visual Studio](http://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx)。
 
-## 设置 HBase 群集
+##<a name="create-hbase-cluster"></a> 设置 HBase 群集
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
@@ -335,7 +335,7 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
 [hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
-[hdinsight-versions]: /documentation/articles//documentation/articles/hdinsight-component-versioning-v1
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 [hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
