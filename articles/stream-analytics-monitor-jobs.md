@@ -1,6 +1,7 @@
 <properties 
-	pageTitle="以编程方式监视流分析的作业 |Windows Azure" 
-	description="了解如何以编程方式监视通过 REST API、Azure SDK 或 Powershell 创建的流分析作业。" 
+	pageTitle="以编程方式监视流分析的作业 | Windows Azure" 
+	description="了解如何以编程方式监视通过 REST API、Azure SDK 或 Powershell 创建的流分析作业。"
+	keywords=".net 监视器, 作业监视器, 监视应用"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -9,14 +10,14 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="11/06/2015" 
-	wacn.date="12/31/2015"/>
+	ms.date="12/04/2015" 
+	wacn.date="01/14/2015"/>
 
 
-# 以编程方式监视流分析作业 
-本文说明如何为流分析作业启用监视功能。通过 REST API、Azure SDK 或 Powershell 创建的流分析作业并不默认启用监视功能。你可以在 Azure 门户中手动启用此功能，只需导航到作业的“监视”页并单击“启用”按钮即可；你也可以按本文所述步骤自动化此过程。流分析作业的监视数据将显示在 Azure 门户的“监视”选项卡中。
+# 以编程方式创建流分析作业监视器
+ 本文说明如何为流分析作业启用监视功能。通过 REST API、Azure SDK 或 Powershell 创建的流分析作业并不默认启用监视功能。你可以在 Azure 门户中手动启用此功能，只需导航到作业的“监视”页并单击“启用”按钮即可；你也可以按本文所述步骤自动化此过程。流分析作业的监视数据将显示在 Azure 门户的“监视”选项卡中。
 
-![“监视作业”选项卡](./media/stream-analytics-monitor-jobs/stream-analytics-monitor-jobs-tab.png)
+![作业监视器作业选项卡](./media/stream-analytics-monitor-jobs/stream-analytics-monitor-jobs-tab.png)
 
 ## 先决条件
 在开始阅读本文前，你必须具有：
@@ -134,8 +135,7 @@
 
 以下代码将为**现有**流分析作业启用监视功能。代码的第一部分针对流分析服务执行 GET 请求，目的是检索特定流分析作业的信息。它使用“Id”属性（从 GET 请求检索而得）作为代码第二部分中 Put 方法的参数，目的是将 PUT 请求发送到 Insights 服务以启用流分析作业的监视功能。
 
-> [AZURE.WARNING]
-> 如果你此前为其他流分析作业启用了监视功能，不管是通过 Azure 门户进行的还是通过以下代码以编程方式完成的，**我们都建议你在提供存储帐户名称时提供你此前在启用监视功能时所使用的那个相同的存储帐户名称。**
+> [AZURE.WARNING]如果你此前为其他流分析作业启用了监视功能，不管是通过 Azure 门户进行的还是通过以下代码以编程方式完成的，**我们都建议你在提供存储帐户名称时提供你此前在启用监视功能时所使用的那个相同的存储帐户名称。**
 > 
 > 存储帐户与你创建流分析作业时所在的区域相关联，并不特定于作业本身。
 > 
@@ -175,4 +175,4 @@
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->

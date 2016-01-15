@@ -1,7 +1,7 @@
 <properties
 	pageTitle="扩展流分析作业以增加吞吐量 | Windows Azure"
 	description="了解如何通过配置输入分区、细化查询定义和设置作业流式处理单位来扩展流分析作业。"
-	keywords="分析作业,数据流,数据流式处理"
+	keywords="数据流式处理, 流数据处理, 优化分析"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -10,15 +10,15 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="11/06/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="12/16/2015"
+	wacn.date="01/14/2015"/>
 
-# 扩展 Azure 流分析作业以增加吞吐量 #
+# 扩展 Azure 流分析作业，以增加流数据处理吞吐量 #
 
-了解如何计算流分析作业的*流式处理单位*，以及如何通过配置输入分区、细化查询定义和设置作业流式处理单位来扩展流分析作业。
+了解如何优化分析作业和计算流分析的*流式处理单位*，如何通过配置输入分区、优化分析查询定义和设置作业流式处理单位来缩放流分析作业。
 
 ## 流分析作业的组成部分有哪些？ ##
-Azure 流分析作业定义包括输入、查询和输出。输入是作业读取数据流的地方，查询是用于转换数据输入流的一种方式，而输出则是作业将作业结果发送到的地方。
+流分析作业定义包括输入、查询和输出。输入是作业读取数据流的地方，查询是用于转换数据输入流的一种方式，而输出则是作业将作业结果发送到的地方。
 
 若要对数据进行流式处理，作业需要至少一个输入源。可以将数据流输入源存储在 Azure Service Bus 事件中心或 Azure Blob 存储中。有关详细信息，请参阅 [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)、[Azure 流分析入门](/documentation/articles/stream-analytics-get-started)<!--和 [Azure 流分析开发人员指南](/documentation/articles/stream-analytics-developer-guide)-->。
 
@@ -257,4 +257,4 @@ Azure 流分析作业定义包括输入、查询和输出。输入是作业读�
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->
