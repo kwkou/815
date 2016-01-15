@@ -38,6 +38,7 @@ HDInsight 是在 Windows Azure 上快速扩展 Apache Hadoop 技术堆栈（作�
 ### Windows 群集
 
 Azure HDInsight 使用 **Windows** 作为基础操作系统，在云中部署并设置 Hadoop 群集。
+
 类别 | Windows 上的 Hadoop
 ---------| --------------------
 **群集 OS** | Windows Server 2012 R2
