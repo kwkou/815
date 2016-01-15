@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="11/20/2015"
-	wacn.date=""/>
+	wacn.date="01/14/2016"/>
 
 # 如何使用模板创建 NSG
 

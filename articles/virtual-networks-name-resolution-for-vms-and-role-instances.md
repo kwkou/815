@@ -9,7 +9,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="09/02/2015"
-	wacn.date=""/>
+	wacn.date="01/14/2016"/>
 
 # VM 和角色实例的名称解析
 

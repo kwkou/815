@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="12/02/2015"
-	wacn.date="01/14/2015"/>
+	wacn.date="01/14/2016"/>
 
 
 # 云中的 Hadoop 是什么？ 介绍如何使用 HDInsight 中的 Hadoop 组件进行大数据分析
@@ -135,7 +135,7 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 作为 Azure 云生态系统的一部分，HDInsight 中的 Hadoop 具有很多优势，其中包括：
 
-* Hadoop 群集自动设置。创建 HDInsight 群集比手动配置 Hadoop 群集容易得多。有关详细信息，请参阅[在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)。
+* Hadoop 群集自动设置。创建 HDInsight 群集比手动配置 Hadoop 群集容易得多。有关详细信息，请参阅[在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)。
 
 * 最先进的 Hadoop 组件。有关详细信息，请参阅 [HDInsight 提供的 Hadoop 群集版本有哪些新功能？][component-versioning]。
 
@@ -206,7 +206,7 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 
 [marketing-page]: /home/features/hdinsight/
-[component-versioning]: /documentation/articles/hdinsight-component-versioning
+[component-versioning]: /documentation/articles//documentation/articles/hdinsight-component-versioning-v1
 [zookeeper]: http://zookeeper.apache.org/
 
 <!---HONumber=Mooncake_0104_2016-->

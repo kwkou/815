@@ -12,7 +12,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/23/2015"
-	wacn.date="01/07/2016"/>
+	wacn.date="01/15/2016"/>
 
 
 # 将 HDFS 兼容的 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用
@@ -293,7 +293,7 @@ URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 
 * [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
 
 [Powershell-install]: /documentation/articles/powershell-install-configure
-[hdinsight-creation]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-creation]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive

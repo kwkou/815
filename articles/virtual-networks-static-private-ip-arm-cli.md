@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="12/11/2015"
-	wacn.date=""/>
+	wacn.date="01/14/2016"/>
 
 # 如何在 Azure CLI 中设置静态专用 IP 地址
 

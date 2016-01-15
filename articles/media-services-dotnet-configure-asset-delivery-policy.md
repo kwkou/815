@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="12/17/2015"
-	wacn.date="01/14/2015"/>
+	wacn.date="01/14/2016"/>
 
 #使用 .NET SDK 配置资产传送策略
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy.md)]

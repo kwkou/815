@@ -10,7 +10,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="09/21/2015"
-   wacn.date="01/14/2015"/>
+   wacn.date="01/14/2016"/>
 
 #在 HDInsight 中设置 Hadoop 群集
 
@@ -18,7 +18,7 @@
 
 [AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 
-* [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters) 
+* [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1) 
 
 **先决条件：**
 
@@ -48,7 +48,7 @@
 
 - **HDInsight 版本**
 
-	用于确定要用于此群集的 HDInsight 版本。有关详细信息，请参阅 [HDInsight 中的 Hadoop 群集版本和组件](/documentation/articles/hdinsight-component-versioning/)。
+	用于确定要用于此群集的 HDInsight 版本。有关详细信息，请参阅 [HDInsight 中的 Hadoop 群集版本和组件](/documentation/articles//documentation/articles/hdinsight-component-versioning-v1/)。
 
 - **群集类型**和**群集大小（也称为数据节点）**
 

@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="12/08/2015"
-	wacn.date=""/>
+	wacn.date="01/14/2016"/>
 
 #如何将媒体服务与 Java 结合使用
 

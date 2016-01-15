@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="12/05/2015"
-	wacn.date=""/>
+	wacn.date="01/14/2016"/>
 
 
 # 使用 Azure 媒体包装器完成静态打包任务

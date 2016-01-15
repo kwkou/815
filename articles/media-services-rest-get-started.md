@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="12/05/2015"
-	wacn.date=""/>
+	wacn.date="01/14/2016"/>
 
 #使用 REST API 开始传送点播视频 (VoD) 
 

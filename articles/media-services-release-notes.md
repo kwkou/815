@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="12/09/2015"
-	wacn.date=""/>
+	wacn.date="01/14/2016"/>
 
 
 # Azure 媒体服务发行说明

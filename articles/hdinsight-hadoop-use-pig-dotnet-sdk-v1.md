@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="12/04/2015"
-	wacn.date="01/14/2015"/>
+	wacn.date="01/14/2016"/>
 
 #使用 HDInsight 中的 .NET SDK for Hadoop 运行 Pig 作业
 

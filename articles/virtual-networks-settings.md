@@ -9,7 +9,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="12/11/2015"
-	wacn.date=""/>
+	wacn.date="01/14/2016"/>
 
 # 如何管理虚拟网络 (VNet) 属性
 你可以使用管理门户查看和修改 VNet 设置。
