@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 SQL Server 和 Azure Site Recovery 实现灾难恢复" 
+	pageTitle="使用 SQL Server 灾难恢复和 Azure Site Recovery 来保护 SQL Server | Windows Azure" 
 	description="Azure Site Recovery 可以协调 SQL Server 到辅助本地站点或 Azure 的复制、故障转移和恢复。" 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -9,11 +9,11 @@
 
 <tags 
 	ms.service="site-recovery"  
-	ms.date="11/09/2015" 
-	wacn.date="12/17/2015"/>
+	ms.date="12/14/2015" 
+	wacn.date="01/14/2016"/>
 
 
-# 使用 SQL Server 和 Azure 站点恢复实现灾难恢复 
+# 使用 SQL Server 灾难恢复和 Azure Site Recovery 来保护 SQL Server 
 
 站点恢复是有助于实现业务连续性和灾难恢复 (BCDR) 策略的 Azure 服务，因为它可以协调复制、故障转移和恢复虚拟机和物理服务器。站点恢复支持多种复制机制，能够以一致的方式保护、复制计算机以及将其故障转移到 Azure 或辅助数据中心。在 [Azure 站点恢复概述](/documentation/articles/site-recovery-overview)中获取所有部署方案的概述。
 
@@ -35,6 +35,9 @@ SQL Server 还在 Enterprise Edition 中提供了本机灾难恢复技术，用�
 
 1. SQL 2012 或 2014 Enterprise Edition 灾难恢复中的 SQL Always On 可用性组 
 2.	SQL Server Standard（任何版本）或 SQL Server 2008 R2 的高安全性模式下的 SQL 数据库镜像
+
+
+
 站点恢复可以保护在 Hyper-V 虚拟机、VMware 虚拟机或物理服务器上运行的 SQL Server。
 
  |**本地到本地** | **本地到 Azure** 
@@ -51,7 +54,9 @@ SQL Server 还在 Enterprise Edition 中提供了本机灾难恢复技术，用�
 
 - SQL Server 2014 Enterprise 和 Standard
 - SQL Server 2012 Enterprise 和 Standard
-- SQL Server 2008 R2 Enterprise 和 Standard  
+- SQL Server 2008 R2 Enterprise 和 Standard
+
+
 站点恢复可与下表中汇总的本机 SQL Server BCDR 技术集成，以提供灾难恢复解决方案。
 
 **功能** |**详细信息** | **SQL Server 版本** 
@@ -97,7 +102,7 @@ SQL Server（任何版本） | Enterprise 或 Standard | 故障转移群集实�
 
 本文档中的说明假设辅助位置提供了域控制器。你可以在[此处](/documentation/articles/site-recovery-active-directory)参考 AD DR 解决方案指南。
 
-##设置 SQL AlwaysOn 可用性组的保护
+## 将 SQL AlwaysOn 集成到 Azure
 
 ### 本地到 Azure
 
@@ -127,7 +132,7 @@ Azure Site Recovery (ASR) 本身支持 SQL AlwaysOn。如果你已创建 SQL 可
 	- 更改可用性组 - [参考 1](https://msdn.microsoft.com/zh-cn/library/hh231018.aspx)、[参考 2](https://msdn.microsoft.com/zh-cn/library/ff878601.aspx#Anchor_3)
 	- 更改数据库 - [参考 1](https://msdn.microsoft.com/zh-cn/library/ff877956.aspx#Security)
 
-##### 添加 SQL Server
+##### 1.添加 SQL Server
 
 单击“添加 SQL”以添加新的 SQL Server。
 
@@ -138,17 +143,17 @@ Azure Site Recovery (ASR) 本身支持 SQL AlwaysOn。如果你已创建 SQL 可
 ![添加 SQL 对话框](./media/site-recovery-sql/add-sql-dialog.png)
 
 ###### Parameters
-1. 名称：要提供的用于引用此 SQL Server 的友好名称
-2. SQL Server (FQDN)：要添加的源 SQL Server 的完全限定域名 (FQDN)。如果 SQL Server 安装在故障转移群集上，请提供群集的 FQDN，而不是任何群集节点的 FQDN。 
-3. SQL Server 实例：选择默认 SQL 实例或提供自定义 SQL 实例的名称。
-4. VMM 服务器：选择其中一个已向 Azure Site Recovery (ASR) 注册的 VMM 服务器。ASR 会使用此 VMM 服务器来与 SQL Server 通信
-5. 运行方式帐户：提供已在前面选择的 VMM 服务器上创建的某个运行方式帐户名。此运行方式帐户用于访问 SQL Server，并且应该对 SQL Server 上的可用性组具有读取和故障转移权限。 
+ - 名称：要提供的用于引用此 SQL Server 的友好名称
+ - SQL Server (FQDN)：要添加的源 SQL Server 的完全限定域名 (FQDN)。如果 SQL Server 安装在故障转移群集上，请提供群集的 FQDN，而不是任何群集节点的 FQDN。 
+ - SQL Server 实例：选择默认 SQL 实例或提供自定义 SQL 实例的名称。
+ - VMM 服务器：选择其中一个已向 Azure Site Recovery (ASR) 注册的 VMM 服务器。ASR 会使用此 VMM 服务器来与 SQL Server 通信
+ - 运行方式帐户：提供已在前面选择的 VMM 服务器上创建的某个运行方式帐户名。此运行方式帐户用于访问 SQL Server，并且应该对 SQL Server 上的可用性组具有读取和故障转移权限。 
 
 添加 SQL Server 后，它将显示在“SQL Server”选项卡下。
 
 ![SQL Server 列表](./media/site-recovery-sql/sql-server-list.png)
 
-##### 添加 SQL 可用性组
+##### 2.添加 SQL 可用性组
 
 添加 SQL Server 后，下一步是将可用性组添加到 ASR。为此，请向下钻取到在上一步骤中添加的 SQL Server，然后单击“添加 SQL 可用性组”。
 
@@ -162,7 +167,7 @@ SQL 可用性组可以复制到 Azure 中的一个或多个虚拟机。添加 SQ
 
 >[AZURE.NOTE]只有上述步骤中添加为 SQL Server 上的主节点的可用性组可以添加到 ASR。如果已在 SQL Server 上将可用性组设为主节点，或在添加可用性组后在 SQL Server 上添加了更多可用性组，请使用 SQL Server 上的“刷新”选项进行刷新。
 
-#### 创建恢复计划
+#### 3.创建恢复计划
 
 下一步是使用虚拟机和可用性组创建恢复计划。选择在步骤 1 中所用的同一 VMM 服务器作为源，并选择 Windows Azure 作为目标。
 
@@ -176,7 +181,7 @@ SQL 可用性组可以复制到 Azure 中的一个或多个虚拟机。添加 SQ
 
 ![自定义恢复计划](./media/site-recovery-sql/customize-rp.png)
 
-#### 故障转移
+#### 4.故障转移
 
 将可用性组添加到恢复计划后，可以使用不同的故障转移选项。
 
@@ -206,7 +211,7 @@ SQL 可用性组可以复制到 Azure 中的一个或多个虚拟机。添加 SQ
 1.	创建 SQL Server 虚拟机实例的副本（使用 VMM 克隆进行站点到站点备份或 Azure 备份），并在测试网络中启动该副本
 2.	使用恢复计划执行测试故障转移。
 
-##### 故障回复
+#### 故障回复
 
 如果你想要再次在本地 SQL Server 上使可用性组成为主节点，可以通过在恢复计划上触发计划的故障转移，并选择从 Windows Azure 到本地 VMM 服务器的方向来实现
 
@@ -252,20 +257,20 @@ SQL 可用性组可以复制到 Azure 中的一个或多个虚拟机。添加 SQ
     
     		InLineScript
     		{
-			#Update the script with name of your storage account, key and blob name
-			$context = New-AzureStorageContext -StorageAccountName "Account" -StorageAccountKey "Key";
-			$sasuri = New-AzureStorageBlobSASToken -Container "script-container"- Blob "AGFailover.ps1" -Permission r -FullUri -Context $context;
+     		#Update the script with name of your storage account, key and blob name
+     		$context = New-AzureStorageContext -StorageAccountName "Account" -StorageAccountKey "Key";
+     		$sasuri = New-AzureStorageBlobSASToken -Container "script-container"- Blob "AGFailover.ps1" -Permission r -FullUri -Context $context;
      
-			Write-output "failovertype " + $Using:RecoveryPlanContext.FailoverType;
+     		Write-output "failovertype " + $Using:RecoveryPlanContext.FailoverType;
                
-			if ($Using:RecoveryPlanContext.FailoverType -eq "Test")
-					{
+     		if ($Using:RecoveryPlanContext.FailoverType -eq "Test")
+       			{
            		#Skipping TFO in this version.
            		#We will update the script in a follow-up post with TFO support
            		Write-output "tfo: Skipping SQL Failover";
-					}
-			else
-					{
+       			}
+     		else
+       			{
            		Write-output "pfo/ufo";
            		#Get the SQL Azure Replica VM.
            		#Update the script to use the name of your VM and Cloud Service
@@ -285,7 +290,7 @@ SQL 可用性组可以复制到 Azure 中的一个或多个虚拟机。添加 SQ
        
            		Write-output "Completed AG Failover";
 
-					}
+       			}
         
     		}
     	}
@@ -306,7 +311,7 @@ SQL 可用性组可以复制到 Azure 中的一个或多个虚拟机。添加 SQ
 
 对于使用分布式事务的应用程序，建议你使用[包含 SAN 复制的站点恢复](/documentation/articles/site-recovery-vmm-san)或 [VMWare 站点到站点复制](/documentation/articles/site-recovery-vmware-to-vmware)。
 
-####恢复计划注意事项
+#### 恢复计划注意事项
 
 1. 将此示例脚本添加到主站点和辅助站点上的 VMM 库。
 
@@ -333,6 +338,7 @@ SQL 可用性组可以复制到 Azure 中的一个或多个虚拟机。添加 SQ
 #### 本地到本地
 
 - 如果应用程序使用分布式事务，建议你为 Hyper-V 环境部署[包含 SAN 复制的站点恢复](/documentation/articles/site-recovery-vmm-san)，为 VMware 环境部署 [VMware 到 VMware](/documentation/articles/site-recovery-vmware-to-vmware)。
+
 - 对于非 DTC 应用程序，可使用上述方法通过利用本地高安全性数据库镜像将群集恢复为独立服务器。
 
 #### 本地到 Azure
@@ -365,4 +371,4 @@ SQL 可用性组可以复制到 Azure 中的一个或多个虚拟机。添加 SQ
 
  
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

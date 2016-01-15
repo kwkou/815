@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure Site Recovery：性能和扩展测试：本地到本地"
-	description="本文介绍如何在本地到本地部署中对使用 Azure Site Recovery 进行复制给性能造成的影响进行测试。"
+	pageTitle="使用 Site Recovery 进行本地到本地 Hyper-V 复制的性能测试和缩放结果 | Windows Azure"
+	description="本文介绍了使用 Azure Site Recovery 进行本地到本地复制时的性能测试。"
 	services="site-recovery"
 	documentationCenter=""
 	authors="csilauraa"
@@ -9,24 +9,25 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="10/07/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="12/14/2015"
+	wacn.date="01/14/2016"/>
 
-# 性能和扩展测试：本地到本地
+# 使用 Site Recovery 进行本地到本地 Hyper-V 复制的性能测试和缩放结果
 
-Windows Azure Site Recovery 负责协调和管理从主数据中心到辅助位置的复制，以便对你的数据进行备份并且在发生计划内和计划外中断时可以对其进行恢复。你可以将位于 System Center Virtual Machine Manager (VMM) 上的本地私有云备份到另一个本地位置或者备份到 Windows Azure 存储空间。为了执行复制，VMM 使用 Hyper-V 副本，这是 Windows Server 2012 和 Windows Server 2012 R2 中内置到 Hyper-V 的一种复制机制。它在两个宿主服务器之间提供 Hyper-V 虚拟机的异步复制。可以在 Hyper-V 中虚拟化的任何服务器工作负荷都可以复制。复制通过任意普通的基于 IP 的网络 Hyper-V 副本进行，并且适用于独立服务器、故障转移群集或两者的混合体。
+你可以使用 Windows Azure Site Recovery 来协调和管理从虚拟机和物理服务器到 Azure 或辅助数据中心的复制。本文提供了我们在两个本地数据中心之间进行 Hyper-V 虚拟机复制时执行的性能测试的结果。
 
-本主题将在本地到本地部署中对使用 Azure Site Recovery 进行复制给性能造成的影响进行测试。它提供了关于测试中使用的参数和配置设置的详细信息，显示了测试部署步骤，并提供了详细的测试结果。
 
-## 测试目标
 
-目标是观察在稳定状态复制期间 Azure Site Recovery 的性能如何。当虚拟机已完成初始复制并且在同步增量更改时会发生稳定状态复制。使用稳定状态对性能进行测量非常重要，因为除非发生意外中断，这是大多数虚拟机保持的状态。
+## 概述
 
-## 运行测试部署
+测试目标是观察在稳定状态复制期间 Azure Site Recovery 的性能如何。当虚拟机已完成初始复制并且在同步增量更改时会发生稳定状态复制。使用稳定状态对性能进行测量非常重要，因为除非发生意外中断，这是大多数虚拟机保持的状态。
 
-测试部署包括两个本地站点，每个站点中有一台 VMM 服务器。两台 VMM 服务器都在 Azure Site Recovery 保管库中进行了注册。此测试部署是典型的总公司/分公司部署，总公司作为主站点，分公司作为辅助站点或恢复站点。
 
-### 测试部署步骤
+测试部署包括两个本地站点，每个站点中有一台 VMM 服务器。此测试部署是典型的总公司/分公司部署，总公司作为主站点，分公司作为辅助站点或恢复站点。
+
+### 我们的操作
+
+下面是我们在测试过程中执行的操作：
 
 1. 使用 VMM 模板创建虚拟机。
 
@@ -100,9 +101,9 @@ Hyper-V 副本使用恢复服务器上的少量内存来使存储操作数量最
 
 ### 结束语
 
-我们的结果清晰地表明，与 Hyper-V 副本配合使用的 Azure Site Recovery 可以针对大型群集以最小的开销很好地进行扩展。Azure Site Recovery 提供了简单的部署、复制、管理和监视。Hyper-V 副本为成功进行复制扩展提供了必要的基础结构。为规划最佳的部署，建议你下载 [Hyper-V 副本容量规划器](https://www.microsoft.com/zh-CN/download/details.aspx?id=39057)。
+我们的结果清晰地表明，与 Hyper-V 副本配合使用的 Azure Site Recovery 可以针对大型群集以最小的开销很好地进行扩展。Azure Site Recovery 提供了简单的部署、复制、管理和监视。Hyper-V 副本为成功进行复制扩展提供了必要的基础结构。为规划最佳的部署，建议你下载 [Hyper-V 副本容量规划器](https://www.microsoft.com/zh-cn/download/details.aspx?id=39057)。
 
-## 测试部署环境
+## 测试环境详细信息
 
 ### 主站点
 
@@ -201,12 +202,8 @@ Hyper-V 副本使用恢复服务器上的少量内存来使存储操作数量最
 
 ## 后续步骤
 
-开始部署 ASR：
-
-- [设置本地 VMM 站点与 Azure 之间的保护](/documentation/articles/site-recovery-vmm-to-azure)
-- [在本地 Hyper-V 站点与 Azure 之间设置保护](/documentation/articles/site-recovery-hyper-v-site-to-azure)
 - [设置两个本地 VMM 站点之间的保护](/documentation/articles/site-recovery-vmm-to-vmm)
-- [使用 SAN 在两个本地 VMM 站点之间设置保护](/documentation/articles/site-recovery-vmm-san)
-- [使用单个 VMM 服务器设置保护](/documentation/articles/site-recovery-single-vmm)
 
-<!---HONumber=79-->
+ 
+
+<!---HONumber=Mooncake_0104_2016-->

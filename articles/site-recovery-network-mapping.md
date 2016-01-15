@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure Site Recovery 网络映射 | Windows Azure"
-	description="Azure Site Recovery 可以协调位于本地的虚拟机和物理服务器到 Azure 或辅助本地站点的复制、故障转移和恢复。"
+	pageTitle="准备网络映射，以便在 Azure Site Recovery 中通过 VMM 进行 Hyper-V 虚拟机保护 | Windows Azure"
+	description="设置网络映射，以便进行从本地数据中心到 Azure 或者到辅助站点的 Hyper-V 虚拟机复制。"
 	services="site-recovery"
 	documentationCenter=""
 	authors="rayne-wiselman"
@@ -9,48 +9,36 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="10/07/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="12/01/2015"
+	wacn.date="01/14/2016"/>
 
 
-# Azure Site Recovery 网络映射
+# 准备网络映射，以便在 Azure Site Recovery 中通过 VMM 进行 Hyper-V 虚拟机保护
 
+Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。
 
-Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以安排复制、故障转移和恢复虚拟机和物理服务器。在 [Site Recovery 概述](/documentation/articles/site-recovery-overview)中了解可能的部署方案。
+本文介绍网络映射，你可以通过网络映射来优化网络设置的配置，以便使用 Site Recovery 在两个本地数据中心之间或本地数据中心与 Azure 之间复制位于 VMM 云中的 Hyper-V 虚拟机。请注意，如果你是在没有 VMM 云的情况下复制 Hyper-V VM，或者是复制 VMware VM 或物理服务器，则本文与之不相关。
 
+阅读本文后，可在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)上发布任何问题
 
-## 关于本文
-
-网络映射是部署 VMM 和 Site Recovery 时的要素。网络映射可将复制的虚拟机放在最佳的目标 Hyper-V 主机服务器上，并确保复制的虚拟机在故障转移后可连接到适当的网络。本文介绍网络映射，并提供几个示例来帮助你了解网络映射的工作原理。
-
-
-请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=hypervrecovmgr)上发布你的任何问题。
 
 ## 概述
 
-设置网络映射的方式取决于 Site Recovery 的部署方案。
+通过部署 Azure Site Recovery 将 Hyper-V 虚拟机复制到 Azure 或辅助数据中心时，可通过 Hyper-V 副本或 SAN 复制使用网络映射。
 
-
-
-- **本地到本地 VMM 服务器** - 网络映射将在源 VMM 服务器上的 VM 网络与目标 VMM 服务器上的 VM 网络之间进行映射，以实现以下功能：
+- **在两个本地数据中心之间复制 VMM 云中的 Hyper-V 虚拟机** - 网络映射功能可以在源 VMM 服务器上的 VM 网络和目标 VMM 服务器上的 VM 网络之间进行映射，以便执行以下操作：
 
 	- **在故障转移后连接虚拟机** - 确保在故障转移后，虚拟机会连接到适当的网络。副本虚拟机将连接到已映射到源网络的目标网络。
 	- **将副本虚拟机放到主机服务器上** - 以最佳方式在 Hyper-V 主机服务器上放置副本虚拟机。副本虚拟机将放置在可访问映射 VM 网络的主机上。
 	- **无网络映射** - 如果未配置网络映射，则复制的虚拟机在故障转移后将不会连接到任何 VM 网络。
 
-- **本地 VMM 服务器到 Azure** - 网络映射将在源 VMM 服务器上的 VM 网络与目标 Azure 网络之间进行映射，以实现以下功能：
+- **将本地 VMM 云中的 Hyper-V 虚拟机复制到 Azure** - 网络映射功能将在源 VMM 服务器上的 VM 网络与目标 Azure 网络之间进行映射，以便执行以下操作：
 	- **在故障转移后连接虚拟机** - 在同一网络上进行故障转移的所有计算机都可以彼此连接到对方，不管它们位于哪个恢复计划中。
 	- **网关** - 如果在目标 Azure 网络上设置了网络网关，则虚拟机可以连接到其他本地虚拟机。
 	- **无网络映射** - 如果没有配置网络映射，则只有在同一恢复计划中进行故障转移的虚拟机能够在故障转移到 Azure 后彼此连接到对方。
 
-## VM 网络
 
-VMM 逻辑网络提供物理网络基础结构的抽象视图。VM 网络提供了一个网络接口，使虚拟机可以连接到逻辑网络。一个逻辑网络至少需要一个 VM 网络。将虚拟机放入云中以提供保护时，必须将该虚拟机连接到 VM 网络，此网络链接到与该云关联的逻辑网络。了解详细信息：
-
-- [逻辑网络（第 1 部分）](http://blogs.technet.com/b/scvmm/archive/2013/02/14/networking-in-vmm-2012-sp1-logical-networks-part-i.aspx)
-- [VMM 2012 SP1 中的虚拟网络](http://blogs.technet.com/b/scvmm/archive/2013/01/08/virtual-networking-in-vmm-2012-sp1.aspx)
-
-## 示例
+## 网络映射示例
 
 可以在两个 VMM 服务器上的 VM 网络之间配置网络映射；如果两个站点由同一个服务器管理，则在可以在单个 VMM 服务器上的两个对应 VM 网络之间配置网络映射。在正确地配置映射且启用复制后，位于主位置的虚拟机将连接到网络，其位于目标位置的副本将连接到其映射网络。
 
@@ -129,6 +117,6 @@ VMNetwork1-Shanghai 的网络映射已更改 | VM-1 将连接到现映射到 VMN
 
 ## 后续步骤
 
-对网络映射有了更好的理解后，请开始阅读[最佳实践](/documentation/articles/site-recovery-best-practices)以做好部署准备。
+现在，你已经对网络映射有了更好的了解，因此可以[开始 Site Recovery 部署](/documentation/articles/site-recovery-best-practices)了。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0104_2016-->
