@@ -17,10 +17,6 @@
 
 了解如何在 [Azure 虚拟网络][1]上创建 Azure HDInsight HBase 群集。
 
-[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
-
-* [在 Azure 虚拟网络上设置 HBase 群集](/documentation/articles/hdinsight-hbase-provision-vnet-v1)
-
 通过虚拟网络集成，可以将 HBase 群集部署到应用程序所在的虚拟网络，以便应用程序直接与 HBase 进行通信。优点包括：
 
 - 将网站直接连接到 HBase 群集节点，以通过 HBase Java 远程过程调用 (RPC) API 实现通信。
@@ -80,7 +76,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 **创建群集要使用的 Azure 存储帐户和 Blob 存储容器**
 
-> [AZURE.NOTE]HDInsight 群集使用 Azure Blob 存储来存储数据。有关详细信息，请参阅[在 HDInsight 中将 Azure Blob 存储与 Hadoop 配合使用](/documentation/articles/hdinsight-use-blob-storage)。你需要存储帐户和 Blob 存储容器。存储帐户位置必须与虚拟网络位置和群集位置匹配。
+> [AZURE.NOTE]HDInsight 群集使用 Azure Blob 存储来存储数据。有关详细信息，请参阅[在 HDInsight 中将 Azure Blob 存储与 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。你需要存储帐户和 Blob 存储容器。存储帐户位置必须与虚拟网络位置和群集位置匹配。
 
 像其他 HDInsight 群集，HBase 群集要求将 Azure 存储帐户和 Blob 存储容器作为默认文件系统。存储帐户位置必须与虚拟网络位置和群集位置匹配。有关详细信息，请参阅[在 HDInsight 中将 Azure Blob 存储与 Hadoop 配合使用][hdinsight-storage]。在设置 HBase 群集时，你可以选择创建新群集或使用现有群集。此过程演示如何使用 Azure 门户创建存储帐户和 Blob 存储容器。
 
@@ -332,7 +328,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 > [AZURE.NOTE]有关 Azure 虚拟网络中的名称解析的详细信息，包括如何使用自己的 DNS 服务器，请参阅[名称解析 (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances)。
 
-##通过使用 Azure PowerShell 设置 HBase 群集
+##<a name="powershell"></a>通过使用 Azure PowerShell 设置 HBase 群集
 
 **通过使用 Azure PowerShell 设置 HBase 群集**
 
@@ -375,19 +371,19 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 在本教程中，你已学习了如何设置 HBase 群集。若要了解更多信息，请参阅以下文章：
 
-- [开始使用 HDInsight](/documentation/articles/hdinsight-get-started)
+- [开始使用 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 - [在 HDInsight 中配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication)
 - [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)
 - [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
 - [虚拟网络概述][vnet-overview]
 
 
-[1]: http://azure.microsoft.com/services/networking/
+[1]:/home/features/networking/
 [2]: http://technet.microsoft.com/zh-cn/library/ee176961.aspx
 [3]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
 [hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
-[vnet-overview]: http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx
+[vnet-overview]: /documentation/services/networking
 [vm-create]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 [azure-portal]: https://manage.windowsazure.cn
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
@@ -409,9 +405,9 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-storage-powershell]: /documentation/articles/hdinsight-use-blob-storage#powershell
+[hdinsight-storage-powershell]: /documentation/articles/hdinsight-hadoop-use-blob-storage#powershell
 [hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 [hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver

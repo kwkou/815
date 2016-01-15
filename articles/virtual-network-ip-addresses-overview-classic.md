@@ -19,10 +19,8 @@
 
 专用 IP 地址用于在 Azure 虚拟网络 (VNet) 或云服务中通信，以及在本地网络中通信（当你使用 ExpressRoute 线路将网络扩展到 Azure 时）。
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-rm-include.md)] [resource manager deployment model](/documentation/articles/virtual-network-ip-addresses-overview-arm)。
-
 ## 公共 IP 地址
-分配公共 IP 地址可以让 Azure 资源与 Internet 服务（其中包括面向公众的 Azure 服务，例如 [Azure Redis 缓存](/home/features/cache)、[Azure 事件中心](/home/features/event-hubs)、[SQL 数据库](/documentation/articles/sql-database-technical-overview)和 [Azure 存储空间](/documentation/articles/storage-introduction)）通信。
+分配公共 IP 地址可以让 Azure 资源与 Internet 服务（其中包括面向公众的 Azure 服务，例如 [Azure Redis 缓存](/home/features/redis-cache)、[Azure 事件中心](/home/features/event-hubs)、[SQL 数据库](/documentation/articles/sql-database-technical-overview)和 [Azure 存储空间](/documentation/articles/storage-introduction)）通信。
 
 你可以将公共 IP 地址分配给以下任何资源：
 
@@ -107,13 +105,6 @@
 ###VM 和角色实例
 你可以通过一个或多个 NIC 来创建 VM 和角色实例。每个 NIC 都有自己的专用 IP 地址。
 
-###内部负载平衡器 (ILB)
-你可以使用[内部负载平衡器](/documentation/articles/load-balancer-internal-overview)通过子网中的单个专用 IP 地址跨多个 VM 来平衡应用程序的负载。例如，你可以让多个 VM 托管同一数据库，然后再让来自 VNet 的数据库连接传播到这些 VM。你可以使用内部负载平衡器来执行此操作。
-
-你可以将专用 IP 地址关联到内部负载平衡器的后端池，以便将关联到这些 IP 地址的 VM 或角色实例用作经过负载平衡处理的流量的目标。你还可以将专用 IP 地址关联到 ILB 的前端。
-
-你可以将动态或静态专用 IP 地址分配到内部负载平衡器的前端和后端池。
-
 ###应用程序网关数
 你可以使用[应用程序网关](/documentation/articles/application-gateway-introduction)通过单个专用 IP 地址跨多个 VM 来平衡应用程序的负载，从而创建一个内部应用程序网关。
 
@@ -134,9 +125,6 @@
 
 ## 后续步骤
 
-- [使用静态公共 IP 部署 VM](/documentation/articles/virtual-network-deploy-static-pip-classic-ps)
-- [使用静态专用 IP 地址部署 VM](/documentation/articles/virtual-networks-static-private-ip-classic-pportal)
-- [使用 PowerShell 创建内部负载平衡器](/documentation/articles/load-balancer-get-started-ilb-classic-ps)
 - [使用 PowerShell 创建内部应用程序网关](/documentation/articles/application-gateway-create-gateway)
 
 <!---HONumber=Mooncake_0104_2016-->

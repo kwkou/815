@@ -51,7 +51,7 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 
 每个分片都是一个由 Azure 管理的主/副缓存对，而缓存的总大小则通过将定价层中选择的缓存大小乘以分片数来计算。
 
-创建缓存后，即可连接到缓存并使用缓存，就像该缓存没有进行群集一样，而 Redis 则会将数据分布到整个缓存分片中。如果诊断[已启用](/documentation/articles/cache-how-to-monitor#enable-cache-diagnostics)，则会分别为每个分片捕获相应的度量值，这些度量值可以在“Redis 缓存”边栏选项卡中[查看](/documentation/articles/cache-how-to-monitor)。
+创建缓存后，即可连接到缓存并使用缓存，就像该缓存没有进行群集一样，而 Redis 则会将数据分布到整个缓存分片中。
 
 有关在 StackExchange.Redis 客户端中使用群集的示例代码，请参阅 [Hello World](https://github.com/rustd/RedisSamples/tree/master/HelloWorld) 示例的 [clustering.cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/Clustering.cs) 部分。
 
@@ -147,7 +147,7 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 
 群集功能仅适用于高级缓存。
 
-## 能否在 Redis ASP.NET 会话状态和输出缓存提供程序中使用群集功能？
+##<a name="can-i-use-clustering-with-the-redis-aspnet-session-state-and-output-caching-providers"></a> 能否在 Redis ASP.NET 会话状态和输出缓存提供程序中使用群集功能？
 
 -	**Redis 输出缓存提供程序** - 无需进行更改。
 -	**Redis 会话状态提供程序** - 若要使用群集功能，必须使用 [RedisSessionStateProvider](https://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider) 2.0.1 或更高版本，否则会引发异常。这是一项重大更改；有关详细信息，请参阅 [2\.0.0 版重大更改详细信息](https://github.com/Azure/aspnet-redis-providers/wiki/v2.0.0-Breaking-Change-Details)。

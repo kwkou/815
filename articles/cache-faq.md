@@ -16,7 +16,7 @@
 
 了解常见问题的答案，以及有关 Azure Redis 缓存的模式和最佳实践。
 
-<a name="cache-size"></a>
+<a name="cache-size" id="what-redis-cache-offering-and-size-should-i-use"></a>
 ## 我应使用哪种 Redis 缓存产品和大小？
 每款 Azure Redis 缓存产品在**大小**、**带宽**、**高可能性**和 **SLA** 方面提供不同的级别。
 
@@ -120,7 +120,7 @@ ConnectTimeout|连接操作的超时，以毫秒为单位。|
 -	超时值
 	-	根据工作负载相应地设置值。如果要存储较大值，应将超时设置为较大值。
 		-	将 ABortOnConnectFail 设置为 false，让 StackExchange.Redis 为你重新连接。
--	使用应用程序的单个 ConnectionMultiplexer 实例。可以使用 LazyConnection 创建 Connection 属性返回的单个实例，如[使用 ConnectionMultiplexer 类连接到缓存](https://msdn.microsoft.com/zh-cn/library/azure/dn690521.aspx#Connect)中所示。
+-	使用应用程序的单个 ConnectionMultiplexer 实例。可以使用 LazyConnection 创建 Connection 属性返回的单个实例，如[使用 ConnectionMultiplexer 类连接到缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#working-with-caches)中所示。
 -	将 `ConnectionMultiplexer.ClientName` 属性设置为应用程序实例的唯一名称以进行诊断。
 -	对自定义工作负载使用多个 `ConnectionMultiplexer` 实例。
 	-	如果应用程序中的负载不同，你可以遵循此模型。例如：
@@ -144,7 +144,7 @@ ConnectTimeout|连接操作的超时，以毫秒为单位。|
 
 Redis 服务器不能现成地支持 SSL，但 Azure Redis 缓存可提供此支持。如果你要连接到 Azure Redis 缓存并且客户端支持 SSL（如 StackExchange.Redis），则你应使用 SSL。
 
-请注意，默认情况下，为新的 Azure Redis 缓存实例禁用了非 SSL 端口。如果客户端不支持 SSL，则你必须根据[在 Azure Redis 缓存中配置缓存](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx)一文中的[访问端口](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx#AccessPorts)部分中的说明启用非 SSL 端口。
+请注意，默认情况下，为新的 Azure Redis 缓存实例禁用了非 SSL 端口。如果客户端不支持 SSL，则你必须启用非 SSL 端口。
 
 `redis-cli` 等 Redis 工具对 SSL 端口不起作用，但是，你可以根据[适用于 Redis 预览版的 ASP.NET 会话状态提供程序通告](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx)中的说明，使用 `stunnel` 等实用程序安全地将这些工具连接到 SSL。
 
@@ -163,7 +163,7 @@ Redis 服务器不能现成地支持 SSL，但 Azure Redis 缓存可提供此支
 <a name="cache-commands"></a>
 ## 如何运行 Redis 命令？
 
-你可以使用 [Redis 命令](http://redis.io/commands#)中列出的任何命令，但 [Azure Redis 缓存中不支持的 Redis 命令](/documentation/articles/cache-configure#redis-commands-not-supported-in-azure-redis-cache)中列出的命令除外。可以配合多个选项来运行 Redis 命令。
+你可以使用 [Redis 命令](http://redis.io/commands#)中列出的任何命令。可以配合多个选项来运行 Redis 命令。
 
 -	你可以使用 Redis 命令行工具。若要使用这些选项，请执行以下步骤。
 	-	下载 [Redis 命令行工具](https://github.com/MSOpenTech/redis/releases/download/win-2.8.19.1/redis-2.8.19.zip)。
@@ -197,20 +197,14 @@ Azure 缓存当前具有三种产品：
 -	Azure 托管缓存服务
 -	Azure 角色中缓存
 
->[AZURE.IMPORTANT]我们特此宣布将在 2016 年 11 月 30 日停用 Azure 托管缓存服务和 Azure 角色中缓存。我们建议你迁移到 Azure Redis 缓存，以便为这次停用做好准备。
->
->自该服务的正式版推出以来，Azure Redis 缓存一直是 Azure 中建议使用的缓存解决方案，而且它现在可以在所有 Azure 区域使用，包括中国和美国政府。由于这种广泛可用性，我们宣布即将停用托管缓存服务和角色中缓存服务。
->
->自 2015 年 11 月 30 日宣布之后，现有的客户最多仍可使用托管缓存服务和角色中缓存服务 12 个月，两者的服务终止日期将在 2016 年 11 月 30 日结束。在此日期之后，将关闭托管缓存服务，并且不再支持角色中缓存服务。
->
->我们将在 2016 年 2 月 1 日之后发布的第一个 Azure SDK 版本中去除对创建新角色中缓存的支持。不过，客户可以打开包含角色中缓存的现有项目。
->
->在此期间，我们建议所有现有托管缓存服务和角色中缓存服务客户迁移到 Azure Redis 缓存。Azure Redis 缓存提供更多的功能以及更高的总体价值。有关迁移的详细信息，请访问[从托管缓存服务迁移到 Azure Redis 缓存](/documentation/articles/cache-migrate-to-redis)文档网页。
->
->如有任何问题，请[与我们联系](https://azure.microsoft.com/support/contact/?WT.mc_id=azurebg_email_Trans_933)。
+>[AZURE.IMPORTANT]我们特此宣布将在 2016 年 11 月 30 日停用 Azure 托管缓存服务和 Azure 角色中缓存。我们建议你迁移到 Azure Redis 缓存，以便为这次停用做好准备。<br/>
+>自该服务的正式版推出以来，Azure Redis 缓存一直是 Azure 中建议使用的缓存解决方案，而且它现在可以在所有 Azure 区域使用，包括中国和美国政府。由于这种广泛可用性，我们宣布即将停用托管缓存服务和角色中缓存服务。<br/>
+>自 2015 年 11 月 30 日宣布之后，现有的客户最多仍可使用托管缓存服务和角色中缓存服务 12 个月，两者的服务终止日期将在 2016 年 11 月 30 日结束。在此日期之后，将关闭托管缓存服务，并且不再支持角色中缓存服务。<br/>
+>我们将在 2016 年 2 月 1 日之后发布的第一个 Azure SDK 版本中去除对创建新角色中缓存的支持。不过，客户可以打开包含角色中缓存的现有项目。<br/>
+>在此期间，我们建议所有现有托管缓存服务和角色中缓存服务客户迁移到 Azure Redis 缓存。Azure Redis 缓存提供更多的功能以及更高的总体价值。
 
 ### Azure Redis Cache
-Azure Redis 缓存已正式发布，最大大小为 53 GB，且其可用性 SLA 为 99.9%。全新[高级层](/documentation/articles/cache-premium-tier)提供的最大大小为 530 GB，且支持群集、VNET 和持久性，并附带 99.9% SLA。
+Azure Redis 缓存已正式发布，最大大小为 53 GB，且其可用性 SLA 为 99.9%。全新[高级层](/documentation/articles/cache-premium-tier-intro)提供的最大大小为 530 GB，且支持群集、VNET 和持久性，并附带 99.9% SLA。
 
 Azure Redis 缓存使客户能够使用 WindowsAzure.cn 管理的安全专用 Redis 缓存。有了此产品，你可以利用 Redis 提供的丰富功能集和生态系统，并可以从 WindowsAzure.cn 获得可靠的托管和监控。
 

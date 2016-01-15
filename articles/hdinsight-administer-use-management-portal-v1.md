@@ -43,7 +43,7 @@
 
 ##自定义 HDInsight 群集
 
-HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件的列表，请参阅 [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles//documentation/articles/hdinsight-component-versioning-v1)。可使用以下选项之一自定义 HDInsight：
+HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件的列表，请参阅 [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles/hdinsight-component-versioning-v1)。可使用以下选项之一自定义 HDInsight：
 
 - 使用脚本操作来运行可以自定义群集的自定义脚本，以更改群集配置或安装 Giraph 或 Solr 等自定义组件。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)。
 - 在群集设置期间使用 HDInsight .NET SDK 或 Azure PowerShell 中的群集自定义参数。这样，这些配置更改将在群集的整个生存期内保留，并且不受 Azure 平台在维护时定期执行的群集节点重置映像影响。有关使用群集自定义参数的详细信息，请参阅[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1)。
@@ -52,7 +52,7 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 
 	>[AZURE.NOTE]如果你在将 JAR 文件部署到 HDInsight 群集或调用 HDInsight 群集上的 JAR 文件时遇到问题，请联系 [Microsoft 技术支持](/support/contact/)。
 
-	> Cascading 不受 HDInsight 支持，因此不符合 Microsoft 技术支持的条件。有关支持的组件的列表，请参阅 [HDInsight 提供的群集版本有哪些新功能？](/documentation/articles//documentation/articles/hdinsight-component-versioning-v1)。
+	> Cascading 不受 HDInsight 支持，因此不符合 Microsoft 技术支持的条件。有关支持的组件的列表，请参阅 [HDInsight 提供的群集版本有哪些新功能？](/documentation/articles/hdinsight-component-versioning-v1)。
 
 
 不支持使用远程桌面连接在群集上安装自定义软件。你应该避免在头节点的驱动器上存储任何文件，因为如果你需要重新创建群集，这些文件会丢失。建议你在 Azure Blob 存储中存储文件。Blob 存储是持久性的。
@@ -73,7 +73,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在
 8. 单击“保存”。
 
 
-##使用 RDP 连接到 HDInsight 群集
+##<a name="rdp" id="connect-to-hdinsight-clusters-by-using-rdp"></a> 使用 RDP 连接到 HDInsight 群集
 
 通过你在创建群集时提供的凭据，可以访问群集上的服务，但无法通过远程桌面访问群集本身。远程桌面访问默认情况下处于关闭状态，因此，使用它来直接访问群集时，要求一些其他的创建后配置。
 
@@ -103,7 +103,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在
 4. 在页面顶部，单击“配置”。
 5. 单击“连接”，然后按照说明进行操作。
 
-##创建自签名证书
+##<a name="cert"></a> 创建自签名证书
 
 如果你要使用 .NET SDK 在群集上执行任何操作，必须在工作站上创建自签名证书，并将该证书上载到你的 Azure 订阅。这是一次性的任务。只要证书有效，你就可以将它安装在其他计算机上。
 
@@ -182,7 +182,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 * [设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1)
 * [以编程方式提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)
 * [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
-* [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles//documentation/articles/hdinsight-component-versioning-v1)
+* [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles/hdinsight-component-versioning-v1)
 
 [image-cluster-quickcreate]: ./media/hdinsight-administer-use-management-portal-v1/HDI.QuickCreateCluster.png
 [image-cluster-landing]: ./media/hdinsight-administer-use-management-portal-v1/HDI.ClusterLanding.PNG "群集登录页"
