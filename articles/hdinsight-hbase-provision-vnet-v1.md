@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="12/02/2015"
-	wacn.date="01/14/2015"/>
+	wacn.date="01/14/2016"/>
 
 # 在 Azure 虚拟网络上设置 HBase 群集
 
@@ -377,7 +377,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 - [开始使用 HDInsight](/documentation/articles/hdinsight-get-started)
 - [在 HDInsight 中配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication)
-- [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)
+- [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)
 - [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
 - [虚拟网络概述][vnet-overview]
 
@@ -407,7 +407,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 [powershell-install]: /documentation/articles/powershell-install-configure
 [hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-storage-powershell]: /documentation/articles/hdinsight-use-blob-storage#powershell
 [hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data

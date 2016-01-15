@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="12/01/2015"
-	wacn.date="01/14/2015"/>
+	wacn.date="01/14/2016"/>
 
 # 使用 Azure PowerShell 管理 HDInsight 中的 Hadoop 群集
 
@@ -277,8 +277,8 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 [azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-provision-custom-options]: /documentation/articles/hdinsight-provision-clusters#configuration
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-provision-custom-options]: /documentation/articles/hdinsight-provision-clusters-v1#configuration
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 
 [hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line

@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="12/01/2015"
-	wacn.date="01/14/2015"/>
+	wacn.date="01/14/2016"/>
 
 #使用 HDInsight 中的 Hive 分析航班延误数据
 
@@ -809,7 +809,7 @@ HiveQL 脚本将执行以下操作：
 
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1

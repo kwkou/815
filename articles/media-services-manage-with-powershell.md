@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="12/08/2015"
-	wacn.date=""/>
+	wacn.date="01/14/2016"/>
 
 
 #使用 PowerShell 管理 Azure 媒体服务帐户

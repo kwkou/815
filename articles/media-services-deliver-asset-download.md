@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="12/05/2015"
-	wacn.date="01/14/2015"/>
+	wacn.date="01/14/2016"/>
 
 #如何：通过下载交付资产
 

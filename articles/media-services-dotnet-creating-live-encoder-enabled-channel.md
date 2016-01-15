@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="12/17/2015"
-	wacn.date=""/>
+	wacn.date="01/14/2016"/>
 
 
 #使用 .NET SDK 创建频道，以执行从单比特率流到多比特率流的实时编码

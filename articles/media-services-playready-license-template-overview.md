@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="12/05/2015"
-	wacn.date=""/>
+	wacn.date="01/14/2016"/>
 
 #媒体服务 PlayReady 许可证模板概述
 

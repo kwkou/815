@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="12/07/2015"
-	wacn.date=""/>
+	wacn.date="01/14/2016"/>
 
 # 使用 Azure CLI 创建虚拟网络
 

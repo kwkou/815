@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="11/06/2015"
-	wacn.date="01/07/2016"/>
+	wacn.date="01/15/2016"/>
 
 # 在 HDInsight 上的 Hadoop 中使用 MapReduce
 
@@ -174,7 +174,7 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
 

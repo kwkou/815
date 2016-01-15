@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="12/15/2015"
-	wacn.date=""/>
+	wacn.date="01/14/2016"/>
 
 #如何：轮转存储访问密钥后更新媒体服务
 

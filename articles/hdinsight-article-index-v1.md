@@ -10,7 +10,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="08/17/2015"
-   wacn.date="01/07/2016"/>
+   wacn.date="01/15/2016"/>
 
 # Azure 门户的 HDInsight 文章索引
 
@@ -67,7 +67,7 @@
 ## 可扩展性
 
 * [使用 Azure 虚拟网络扩展 HDInsight 功能](/documentation/articles/hdinsight-extend-hadoop-virtual-network)
-* [使用 HDInsight 群集上的 Giraph 处理大型图形](/documentation/articles/hdinsight-hadoop-giraph-install)
+* [使用 HDInsight 群集上的 Giraph 处理大型图形](/documentation/articles/hdinsight-hadoop-giraph-install-v1)
 * [在 Hadoop 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1)
 
 ## 操作
