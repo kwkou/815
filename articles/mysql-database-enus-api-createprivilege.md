@@ -57,7 +57,7 @@ Creating or updating MySQL on Azure servers requires writing the following param
 
 An HTTPS response comprises a status code, response header and response body.
 ### Status codes
-200 OK: Indicates that server state is updated.
+200 OK: indicates that the server status has been updated.
 
 ### Response Headers
 
