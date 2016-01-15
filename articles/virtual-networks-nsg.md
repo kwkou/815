@@ -8,41 +8,12 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="11/10/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="12/11/2015"
+	wacn.date=""/>
 
 # 什么是网络安全组 (NSG)？
 
-你可能已熟悉如何使用防火墙和访问控制列表 (ACL) 来筛选流向网络段、各个计算机甚至计算机中的网络接口卡 (NIC) 的网络流量。你也可以通过类似方式筛选 Azure 中的网络流量，如以下列表所示。
-
-- **终结点 ACL**
-	- 只能筛选入站流量。
-	- 只能在向 Internet 公开的终结点上使用，或者只能通过内部负载平衡器来使用。
-	- 每个终结点仅限 50 个 ACL 规则。
-	- **不**需要 VNet（经典部署）。
-- **网络安全组 (NSG)**
-	- 根据流量方向、协议、源地址和端口以及目标地址和端口允许或拒绝流量。
-	- 可以在以下位置控制入站和出站流量：VM 或角色实例（经典部署）、NIC（资源管理器部署）和子网（所有部署）。这包括连接到子网的任何资源，例如云服务和 AppService 环境。
-	- 仅适用于连接到区域 VNet 的资源。
-	- **不**需要管理防火墙设备。
-	- 仅限 100 个 NSG，每个 200 条规则，按区域。
-- **防火墙设备**
-	- 作为 VM 在 Azure 网络中实现。
-	- 根据流量方向、协议、源地址和端口以及目标地址和端口允许或拒绝流量。
-	- 提供了额外的功能，具体取决于使用的防火墙设备。
-
-本文的重点在于 NSG。有关其他流量筛选选项的详细信息，请访问下面提供的链接。
-
-- [ACL 文档](/documentation/articles/virtual-networks-acl)。
-- [使用 NSG 和防火墙设备生成 DMZ](/documentation/articles/virtual-networks-dmz-nsg-fw-udr-asm)。
-
-## NSG 是如何工作的？
-
-NSG 包含两种类型的规则，分为**入站规则**和**出站规则**。当流量流进托管 VM 或角色实例的 Azure 服务器时，主机会根据流量方向加载所有入站或出站 NSG 规则。然后，这些主机会按优先顺序检查每个规则。如果某项规则与主机正在分析的数据包匹配，则会应用该规则所对应的操作（允许或拒绝）。如果没有规则与该数据包匹配，则丢弃该数据包。下图显示了此决策流程。
-
-![NSG ACL](./media/virtual-network-nsg-overview/figure3.png)
-
->[AZURE.NOTE]应用于给定 VM 或角色实例的规则可能会来自多个 NSG，因为你可以将 NSG 与 VM（经典部署）、NIC（资源管理器部署）或子网（所有部署）相关联。[关联 NSG](#Associating-NSGs) 部分介绍如何根据流量方向应用来自多个 NSG 的规则。
+网络安全组 (NSG) 包含一系列访问控制列表 (ACL) 规则，这些规则可以允许\\拒绝虚拟网络中流向 VM 实例的网络流量。NSG 可以与子网或该子网中的各个 VM 实例相关联。当 NSG 与某个子网相关联时，ACL 规则适用于该子网中的所有 VM 实例。另外，可以进一步通过将 NSG 直接关联到单个 VM 对流向该 VM 的流量进行限制。
 
 NSG 包含以下属性。
 
@@ -245,9 +216,9 @@ NSG 规则包含以下属性。
 
 |规则|Access|Priority|Source address range|Source port|Destination address range|Destination port|协议|
 |---|---|---|---|---|---|---|---|
-|允许来自 Internet 的 RDP|允许|100|INTERNET|*|*|3389|TCP|
+|允许来自 Internet 的 RDP|允许|100|INTERNET|**|*|3389|TCP|
 
->[AZURE.NOTE]请注意，此规则的源地址范围是 **Internet**，不是负载平衡器的 VIP；源端口是 *****，不是 500001。请勿混淆 NAT 规则/负载平衡规则和 NSG 规则。NSG 规则始终与流量的最初源和最终目标相关，与二者之间的负载平衡器**无关**。
+>[AZURE.NOTE]请注意，此规则的源地址范围是 **Internet**，不是负载平衡器的 VIP；源端口是 **\***，不是 500001。请勿混淆 NAT 规则/负载平衡规则和 NSG 规则。NSG 规则始终与流量的最初源和最终目标相关，与二者之间的负载平衡器**无关**。
 
 ### 适用于 BackEnd 中管理 NIC 的 NSG
 
@@ -255,7 +226,7 @@ NSG 规则包含以下属性。
 
 |规则|Access|Priority|Source address range|Source port|Destination address range|Destination port|协议|
 |---|---|---|---|---|---|---|---|
-|允许来自前端的 RDP|允许|100|192\.168.1.0/24|*|*|3389|TCP|
+|允许来自前端的 RDP|允许|100|192\.168.1.0/24|**|*|3389|TCP|
 
 ### 适用于后端中数据库访问 NIC 的 NSG
 
@@ -263,7 +234,7 @@ NSG 规则包含以下属性。
 
 |规则|Access|Priority|Source address range|Source port|Destination address range|Destination port|协议|
 |---|---|---|---|---|---|---|---|
-|允许来自前端的 SQL|允许|100|192\.168.1.0/24|*|*|1433|TCP|
+|允许来自前端的 SQL|允许|100|192.168.1.0/24|*|\*|1433|TCP|
 
 由于上面的某些 NSG 需要与单独的 NIC 关联，你需要将此方案部署为资源管理器部署。请注意规则是如何针对子网和 NIC 级别进行组合的，具体取决于需要如何应用这些规则。
 
@@ -272,4 +243,4 @@ NSG 规则包含以下属性。
 - [在经典部署模型中部署 NSG](/documentation/articles/virtual-networks-create-nsg-classic-ps)。
 - [管理 NSG 日志](/documentation/articles/virtual-network-nsg-manage-log)。
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -8,9 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.date="07/08/2015"
-   wacn.date="01/07/2016"/>
+	ms.service="hdinsight"
+	ms.date="12/02/2015"
+	wacn.date="01/14/2015"/>
 
 # 在 HDInsight 中配置 HBase 地域复制
 

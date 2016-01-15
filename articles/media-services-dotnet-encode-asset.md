@@ -7,10 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015"  
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="12/08/2015"
+	wacn.date=""/>
 
 
 #如何使用 Azure Media Encoder 对资产进行编码

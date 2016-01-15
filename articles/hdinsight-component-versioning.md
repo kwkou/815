@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/11/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="12/03/2015"
+	wacn.date="01/14/2015"/>
 
 
 #HDInsight 提供的 Hadoop 群集版本有哪些新功能？
@@ -38,7 +38,7 @@ Apache Phoenix|4\.2.0|4\.0.0.2.1.7.0-2162||
 
 **获取当前组件版本信息**
 
-与 HDInsight 群集版本关联的组件版本可能在将来的 HDInsight 更新中更改。
+与 HDInsight 群集版本关联的组件版本可能在将来的 HDInsight 更新中更改。获取此信息的一种方法是使用远程桌面登录到群集并直接检查“C:\\apps\\dist”目录的内容。
 
 
 **发行说明**
@@ -65,7 +65,7 @@ HDInsight 平台的一些突出功能包括：
 
 - **Apache Phoenix** - Apache Phoenix 是基于 HBase 的结构化查询语言 (SQL) 查询层。它支持有限的 SQL 查询语言规范子集，包括辅助索引支持。它是以客户端中嵌入的 Java 数据库连接 (JDBC) 驱动程序形式交付，面向 HBase 数据的低延迟查询。Apache Phoenix 将获取 SQL 查询，将它编译成一系列 HBase 扫描和协处理器调用，然后生成正则 JDBC 结果集。Apache Phoenix 是基于 HBase 的关系数据库。它是以客户端中嵌入的 JDBC 驱动程序形式交付，面向 HBase 数据的低延迟查询。Apache Phoenix 将获取 SQL 查询，将它编译成一系列 HBase 扫描，并协调这些扫描的运行来生成正则 JDBC 结果集。
 
-- **群集仪表板** - 部署到 HDInsight 群集中的新 Web 应用程序。用于运行 Hive 查询、检查作业日志以及浏览 Azure Blob 存储。用于访问 Web 应用程序的 URL 是 <*ClusterName*>.azurehdinsight.cn。
+- **群集仪表板** - 部署到 HDInsight 群集中的新网站。用于运行 Hive 查询、检查作业日志以及浏览 Azure Blob 存储。用于访问网站的 URL 是 <*ClusterName*>.azurehdinsight.cn。
 
 - **Microsoft Avro Library** - 此库针对 Microsoft.NET 环境实现 Apache Avro 数据序列化系统。Apache Avro 为序列化提供了一种紧凑的二进制数据交换格式。它使用 JavaScript 对象表示法 (JSON) 定义与语言无关的架构，以支持语言互操作性。以一种语言序列化的数据可以用另一种语言读取。目前支持 C、C++、C#、Java、PHP、Python 和 Ruby。Apache Avro 序列化格式在 Azure HDInsight 中广泛使用，用于表示 Hadoop MapReduce 作业内的复杂数据结构。
 
@@ -95,8 +95,8 @@ HDInsight 版本|HDP 版本|高可用性|发布日期|在 Azure 管理门户中�
 HDI 3.2|HDP 2.2|是|2/18/2015|是||
 HDI 3.1|HDP 2.1|是|6/24/2014|是||
 HDI 3.0|HDP 2.0|是|02/11/2014|是|09/17/2014|06/30/2015
-HDI 2.1|HDP 1.3|是|10/28/2013|否|05/12/2014|05/31/2015
-HDI 1.6|HDP 1.1|否|10/28/2013|否|04/26/2014|05/31/2015
+HDI 2.1|HDP 1.3|是|10/28/2013|是|05/12/2014|05/31/2015
+HDI 1.6|HDP 1.1|否|10/28/2013|是|04/26/2014|05/31/2015
 
 **非默认群集的部署**
 
@@ -105,7 +105,7 @@ HDI 1.6|HDP 1.1|否|10/28/2013|否|04/26/2014|05/31/2015
 SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集版本受 Microsoft 客户服务和支持部门支持的时间段。如果 HDInsight 群集版本具有早于当前日期的**支持过期日期**，则表示它处于支持窗口外。有关支持的 HDInsight 群集版本的列表，请参见上表。给定 HDInsight 版本 X（一旦提供更新的 X+1 版本）的支持到期日期为按以下公式计算所得时间的较晚者：
 
 - 公式 1：发布 HDInsight 群集版本 X 的日期加 180 天。
-- 公式 2：HDInsight 群集版本 X+1（X 之后的后续版本）在管理门户中可用的日期加 90 天。
+- 公式 2：HDInsight 群集版本 X+1（X 之后的后续版本）在门户中可用的日期加 90 天。
 
 **弃用日期**是在该日期后，不能在 HDInsight 上创建此群集版本的日期。
 
@@ -118,7 +118,7 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 	* 特定 Apache 组件的发行说明 - [Hive 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310843&version=12326450)、[Pig 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310730&version=12326954)、[HBase 0.98.4](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310753&version=12326810)、[Phoenix 4.2.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12315120&version=12327581)、[M/R 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310941&version=12327180)、[HDFS 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310942&version=12327181)、[YARN 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12313722&version=12327197)、[Common](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310240&version=12327179)、[Tez 0.5.2](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314426&version=12328742)、[Storm 0.9.3](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314820&version=12327112)、[Oozie 4.1.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12324960&projectId=12311620)。
 
 
-* HDInsight 群集版本 3.1 使用基于 [Hortonworks 数据平台 2.1.7][hdp-2-1-7] 的 Hadoop 分发版。这是使用 11/7/2014 之后的门户时创建的**默认** Hadoop 群集。创建于 11/7/2014 之前的 HDInsight 3.1 群集基于[ Hortonworks 数据平台 2.1.1][hdp-2-1-1]。
+* HDInsight 群集版本 3.1 使用基于 [Hortonworks 数据平台 2.1.7][hdp-2-1-7] 的 Hadoop 分发版。创建于 11/7/2014 之前的 HDInsight 3.1 群集基于 [Hortonworks 数据平台 2.1.1][hdp-2-1-1]
 
 * HDInsight 群集版本 3.0 使用基于 [Hortonworks 数据平台 2.0][hdp-2-0-8] 的 Hadoop 分发版。
 
@@ -147,4 +147,4 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 
 [zookeeper]: http://zookeeper.apache.org/
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

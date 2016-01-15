@@ -7,10 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="12/04/2015"
+	wacn.date=""/>
 
 
 #配额和限制

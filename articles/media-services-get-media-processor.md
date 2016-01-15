@@ -7,10 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="12/05/2015"
+	wacn.date=""/>
 
 
 #如何：获取媒体处理器实例

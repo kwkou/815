@@ -7,10 +7,10 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/16/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="12/08/2015"
+	wacn.date=""/>
 
 #如何将媒体服务与 Java 结合使用
 

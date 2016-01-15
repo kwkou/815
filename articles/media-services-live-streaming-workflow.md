@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/28/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="12/05/2015"
+	wacn.date=""/>
 
 
 #使用 Azure 媒体服务传递实时流式处理事件

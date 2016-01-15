@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="11/11/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="12/11/2015"
+	wacn.date=""/>
 
 # 实例级公共 IP 概述
 实例级公共 IP (ILPIP) 是可直接向 VM 或角色实例而非 VM 或角色实例所在的云服务分配的公共 IP 地址。它不是用来代替分配给云服务的 VIP（虚拟 IP），而是可以用来直接连接到 VM 或角色实例的其他 IP 地址。

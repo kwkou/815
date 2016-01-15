@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/03/2015"
-	wacn.date="01/07/2016"/>
+	ms.date="12/16/2015"
+	wacn.date="01/14/2015"/>
 
 # 使用 Azure CLI 管理 HDInsight 中的 Hadoop 群集
 
@@ -19,17 +19,13 @@
 
 了解如何使用 [Azure 命令行界面](/documentation/articles/xplat-cli-install)管理 Azure HDInsight 中的 Hadoop 群集。Azure CLI 是以 Node.js 实现的。可以在支持 Node.js 的任意平台上使用它。
 
-Azure CLI 是开放源代码。在 GitHub 中管理源代码（网址为 <a href= "https://github.com/azure/azure-xplat-cli">https://github.com/azure/azure-xplat-cli</a>）。
-
 本文仅介绍如何将 Azure CLI 与 HDInsight 配合使用。有关如何使用 Azure CLI 的常规指南，请参阅[安装和配置 Azure CLI][azure-command-line-tools]。
-
 
 ##先决条件
 
 在开始阅读本文前，你必须具有：
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-
 - **Azure CLI** - 有关安装和配置信息，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。
 - 使用以下命令**连接到 Azure**：
 
@@ -41,7 +37,10 @@ Azure CLI 是开放源代码。在 GitHub 中管理源代码（网址为 <a href
 
 		azure config mode arm
 
+若要获得帮助，请使用 **-h** 开关。例如：
 
+	azure hdinsight cluster create -h
+	
 ##创建群集
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
@@ -68,8 +67,7 @@ Azure CLI 是开放源代码。在 GitHub 中管理源代码（网址为 <a href
 	
 		azure storage account create "<Azure Storage Account Name>" -g "<Resource Group Name>" -l "<Azure Location>" --type LRS
 
-> [AZURE.NOTE]存储帐户必须与 HDInsight 共置于同一数据中心。
-	> 存储帐户类型不能为 ZRS，因为 ZRS 不支持表。
+	> [AZURE.NOTE]存储帐户必须与 HDInsight 共置于同一数据中心。存储帐户类型不能为 ZRS，因为 ZRS 不支持表。
 	
 	如果你已有存储帐户但是不知道帐户名称和帐户密钥，则可以使用以下命令来检索该信息：
 	
@@ -80,33 +78,17 @@ Azure CLI 是开放源代码。在 GitHub 中管理源代码（网址为 <a href
 		-- Lists the keys for a Storage account
 		azure storage account keys list "<Storage Account Name>" -g "<Resource Group Name>"
 
-有关使用 Azure 管理门户获取信息的详细信息，请参阅[创建、管理或删除存储帐户][azure-create-storageaccount]中的“查看、复制和重新生成存储访问密钥”部分。
+	有关使用 Azure 管理门户获取信息的详细信息，请参阅[创建、管理或删除存储帐户][azure-create-storageaccount]中的“查看、复制和重新生成存储访问密钥”部分。
 
 - **(可选)默认 Blob 容器**：如果容器不存在，可使用 **azure hdinsight cluster create** 命令创建它。如果选择预先创建容器，可以使用以下命令：
 
-	azure storage container create --account-name "<Storage Account Name>" --account-key <StorageAccountKey> [ContainerName]
+	azure storage container create --account-name "<Storage Account Name>" --account-key <Storage Account Key> [ContainerName]
 
 准备好存储帐户和 blob 容器后，你就可以创建群集了：
 
 	azure hdinsight cluster create --clusterName <ClusterName> --storageAccountName "<Storage Account Name>" --storageAccountKey <storageAccountKey> --storageContainer <StorageContainer> --nodes <NumberOfNodes> --location <DataCenterLocation> --username <HDInsightClusterUsername> --clusterPassword <HDInsightClusterPassword>
 
 ![HDI.CLIClusterCreation][image-cli-clustercreation]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ##使用配置文件创建群集
 通常，你创建一个 HDInsight 群集，对其运行作业，然后删除该群集以降低成本。在命令行界面上，你可以选择将配置保存到文件，以便在每次创建群集时可以重用这些配置。
@@ -137,7 +119,7 @@ Azure CLI 是开放源代码。在 GitHub 中管理源代码（网址为 <a href
 使用以下命令来列出和显示群集详细信息：
 
 	azure hdinsight cluster list
-	azure hdinsight cluster show <ClusterName>
+	azure hdinsight cluster show <Cluster Name>
 
 ![HDI.CLIListCluster][image-cli-clusterlisting]
 
@@ -145,7 +127,7 @@ Azure CLI 是开放源代码。在 GitHub 中管理源代码（网址为 <a href
 ##删除群集
 使用以下命令来删除群集：
 
-	azure hdinsight cluster delete <ClusterName>
+	azure hdinsight cluster delete <Cluster Name>
 
 ##缩放群集
 
@@ -178,4 +160,4 @@ Azure CLI 是开放源代码。在 GitHub 中管理源代码（网址为 <a href
 [image-cli-clustercreation-config]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreationConfig.png
 [image-cli-clusterlisting]: ./media/hdinsight-administer-use-command-line/HDI.CLIListClusters.png "列出并显示群集"
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

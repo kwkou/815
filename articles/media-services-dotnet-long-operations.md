@@ -7,10 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015"
-	wacn.date="12/17/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="12/05/2015"
+	wacn.date=""/>
 
 
 #使用 Azure 媒体服务传送实时流
