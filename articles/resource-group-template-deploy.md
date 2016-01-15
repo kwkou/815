@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="11/13/2015"
-   wacn.date="12/17/2015"/>
+   ms.date="12/08/2015"
+   wacn.date="01/14/2015"/>
 
 # 使用 Azure 资源管理器模板部署应用程序
 
@@ -20,6 +20,21 @@
 
 在使用模板部署应用程序时，可以提供参数值来自定义如何创建资源。以内联方式或者在参数文件中指定这些参数的值。
 
+## 增量部署和完整部署
+
+默认情况下，资源管理器会将部署视为对资源组的增量更新。进行增量部署时，资源管理器将会：
+
+- 使资源组中存在的、但未在模板中指定的资源**保留不变**
+- **添加**模板中指定的、但不在资源组中的资源 
+- **不会重新预配**资源组中存在的、与模板中定义的条件相同的资源
+
+你可以通过 Azure PowerShell 或 REST API 指定对资源组进行完整更新。Azure CLI 目前不支持完整部署。进行完整部署时，资源管理器将会：
+
+- **删除**资源组中存在的、但未在模板中指定的资源
+- **添加**模板中指定的、但不在资源组中的资源 
+- **不会重新预配**资源组中存在的、与模板中定义的条件相同的资源
+ 
+可以通过 **Mode** 属性指定部署的类型。
 
 ## 使用 PowerShell 进行部署
 
@@ -28,17 +43,7 @@
 
 1. 登录到你的 Azure 帐户。提供凭据后，该命令将返回有关你的帐户的信息。
 
-    早于 Azure PowerShell 1.0 预览版：
-
-        PS C:\> Switch-AzureMode AzureResourceManager
-        ...
-        PS C:\> Add-AzureAccount
-
-        Id                             Type       ...
-        --                             ----    
-        someone@example.com            User       ...   
-
-    Azure PowerShell 1.0 预览版：
+    Azure PowerShell 1.0：
 
          PS C:\> Login-AzureRmAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
 
@@ -90,6 +95,14 @@
           Timestamp         : 4/14/2015 7:00:27 PM
           Mode              : Incremental
           ...
+
+     若要运行完整部署，请将 **Mode** 设置为 **Complete**。
+
+          PS C:\> New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateFile <PathOrLinkToTemplate> -Mode Complete
+          Confirm
+          Are you sure you want to use the complete deployment mode? Resources in the resource group 'ExampleResourceGroup' which are not
+          included in the template will be deleted.
+          [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 
 6. 获取有关部署错误的信息。
 
@@ -235,4 +248,4 @@
 
  
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="11/10/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="12/18/2015"
+	wacn.date="01/14/2015"/>
 
 # 使用策略来管理资源和控制访问
 
@@ -67,10 +67,10 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 | 运算符名称 | 语法 |
 | :------------- | :------------- |
 | Not | "not" : {&lt;condition or operator &gt;} |
-| And | "allOf" : [ {&lt;condition1&gt;},{&lt;condition2&gt;}] |
-| 或 | "anyOf" : [ {&lt;condition1&gt;},{&lt;condition2&gt;}] |
+| And | "allOf" : [ {&lt;condition or operator &gt;},{&lt;condition or operator &gt;}] |
+| 或 | "anyOf" : [ {&lt;condition or operator &gt;},{&lt;condition or operator &gt;}] |
 
-不支持嵌套条件。
+资源管理器可让你通过嵌套的运算符在策略中指定复杂逻辑。例如，你可以拒绝在指定资源类型的特定位置创建资源。下面显示了嵌套运算符的示例。
 
 ## 条件
 
@@ -180,6 +180,30 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
         "effect" : "deny"
       }
     }
+    
+### 只要求存储资源的标记
+
+以下示例演示如何嵌套逻辑运算符，以便要求只对存储资源使用应用程序标记。
+
+    {
+        "if": {
+            "allOf": [
+              {
+                "not": {
+                  "field": "tags",
+                  "containsKey": "application"
+                }
+              },
+              {
+                "source": "action",
+                "like": "Microsoft.Storage/*"
+              }
+            ]
+        },
+        "then": {
+            "effect": "audit"
+        }
+    }
 
 ## 策略分配
 
@@ -286,4 +310,17 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
 同样地，可以分别通过 Get-AzureRmPolicyAssignment、Set-AzureRmPolicyAssignment 和 Remove-AzureRmPolicyAssignment 来获取、更改或删除策略分配。
 
-<!---HONumber=Mooncake_1221_2015-->
+##策略审核事件
+
+在应用策略之后，即可看到与策略相关的事件。你可以转到门户，或使用 PowerShell 来获取此数据。
+
+若要查看拒绝效果相关的所有事件，可以使用以下命令。
+
+    Get-AzureRmLog | where {$_.subStatus -eq "Forbidden"}     
+
+若要查看审核效果相关的所有事件，可以使用以下命令。
+
+    Get-AzureRmLog | where {$_.OperationName -eq "Microsoft.Authorization/policies/audit/action"} 
+    
+
+<!---HONumber=Mooncake_0104_2016-->

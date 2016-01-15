@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="10/20/2015"
-   wacn.date="12/31/2015"/>
+   ms.date="12/01/2015"
+   wacn.date="01/14/2015"/>
 
 # 在 Azure 资源管理器中创建多个资源实例
 
@@ -147,9 +147,52 @@
 	    "outputs": {}
     }
 
+## 对嵌套资源的循环
+
+不能对嵌套资源使用 copy 循环。如果你需要创建某个资源的多个实例，而该资源通常定义为另一个资源中的嵌套资源，那么，你必须将该资源创建为顶级资源，并通过 **type** 和 **name** 属性定义该资源与其父资源的关系。
+
+例如，假设你通常要将某个数据集定义为数据工厂中的嵌套资源。
+
+    "resources": [
+    {
+        "type": "Microsoft.DataFactory/datafactories",
+        "name": "[variables('dataFactoryName')]",
+        ...
+        "resources": [
+        {
+            "type": "datasets",
+            "name": "[variables('dataSetName')]",
+            "dependsOn": [
+                "[variables('dataFactoryName')]"
+            ],
+            ...
+        }
+    }]
+    
+若要创建数据集的多个实例，你需要按如下所示更改模板。请注意完全限定的类型，名称包括数据工厂名称。
+
+    "resources": [
+    {
+        "type": "Microsoft.DataFactory/datafactories",
+        "name": "[variables('dataFactoryName')]",
+        ...
+    },
+    {
+        "type": "Microsoft.DataFactory/datafactories/datasets",
+        "name": "[concat(variables('dataFactoryName'), '/', variables('dataSetName'), copyIndex())]",
+        "dependsOn": [
+            "[variables('dataFactoryName')]"
+        ],
+        "copy": { 
+            "name": "datasetcopy", 
+            "count": "[parameters('count')]" 
+        } 
+        ...
+    }]
+
 ## 后续步骤
 - 若要了解有关模板区段的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/./resource-group-authoring-templates)。
 - 有关可在模板中使用的函数列表，请参阅 [Azure 资源管理器模板函数](/documentation/articles/./resource-group-template-functions)
 - 若要了解如何部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->

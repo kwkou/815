@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="10/30/2015"
-   wacn.date="12/31/2015"/>
+   ms.date="11/18/2015"
+   wacn.date="01/14/2015"/>
 
 # 通过 Azure 资源管理器对服务主体进行身份验证
 
@@ -18,7 +18,7 @@
 
 它演示如何使用用户名和密码或证书进行身份验证。
 
-您可以使用适用于 Mac、Linux 和 Windows 的 Azure PowerShell 或 Azure CLI。如果你未安装 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。如果您未安装 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。
+您可以使用适用于 Mac、Linux 和 Windows 的 Azure PowerShell 或 Azure CLI。如果你未安装 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。如果你未安装 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。有关使用门户执行这些步骤的信息，请参阅[使用门户创建 Active Directory 应用程序和服务主体](/documentation/articles/resource-group-create-service-principal-portal)
 
 ## 概念
 1. Azure Active Directory (AAD) - 云的标识与访问管理服务。有关详细信息，请参阅[什么是 Azure Active Directory](/documentation/articles/active-directory-whatis)
@@ -76,7 +76,7 @@
 
 3. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。对于 **ServicePrincipalName** 参数，请提供你在创建应用程序时使用的 **ApplicationId** 或 **IdentifierUris**。<!--有关基于角色的访问控制的详细信息，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)-->
 
-        PS C:\> New-AzureRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
+        PS C:\> New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
 
 4. 检索在其中创建了角色分配的订阅。稍后将使用此订阅来获取服务主体角色分配所在租户的 **TenantId**。
 
@@ -84,7 +84,7 @@
 
      如果角色分配不是在当前选择的订阅中创建的，你可以指定 **SubscriptoinId** 或 **SubscriptionName** 参数来检索其他订阅。
 
-5. 运行 **Get-Credential** 命令，以创建包含你的凭据的新 **PSCredential** 对象。
+5. 若要通过 PowerShell 以服务主体的身份登录，请运行 **Get-Credential** 命令，以创建包含你的凭据的新 **PSCredential** 对象。
 
         PS C:\> $creds = Get-Credential
 
@@ -94,10 +94,9 @@
 
      对于用户名，请使用你在创建应用程序时所用的 **ApplicationId** 或 **IdentifierUris**。对于密码，请使用你在创建帐户时指定的密码。
 
-6. 使用输入的凭据作为 **Add-AzureAccount** Cmdlet 的输入，以将服务主体登录：
+     使用输入的凭据作为 **Add-AzureRmAccount** cmdlet 的输入，以将服务主体登录：
 
         PS C:\> Login-AzureRmAccount -Credential $creds -ServicePrincipal -Tenant $subscription.TenantId
-        
         Environment           : AzureCloud
         Account               : {guid}
         Tenant                : {guid}
@@ -106,9 +105,9 @@
 
      现在，你应该已经作为所创建 AAD 应用程序的服务主体进行身份验证。
 
-7. 若要从应用程序进行身份验证，请包含以下 .NET 代码。检索令牌之后，便可以访问订阅中的资源。
+6. 若要从应用程序进行身份验证，请包含以下 .NET 代码。检索令牌之后，便可以访问订阅中的资源。
 
-        public static string GetAToken()
+        public static string GetAccessToken()
         {
           var authenticationContext = new AuthenticationContext("https://login.chinacloudapi.cn/{tenantId or tenant name}");  
           var credential = new ClientCredential(clientId: "{application id}", clientSecret: "{application password}");
@@ -139,7 +138,7 @@
 
 1. 对于这两种方法，从您的证书创建一个 X509Certificate 对象并检索密钥值。使用指向您的证书的路径和该证书的密码。
 
-        $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate("C:\certificates\examplecert.pfx", "yourpassword")
+        $cert = New-Object -TypeName System.Security.Cryptography.X509Certificates.X509Certificate -ArgumentList @("C:\certificates\examplecert.pfx", "yourpassword")
         $keyValue = [System.Convert]::ToBase64String($cert.GetRawCertData())
 
 2. 如果你使用密钥凭据，请创建密钥凭据对象并将其值设置为上一步中的 `$keyValue`。
@@ -285,9 +284,23 @@
 
     现在，你应该已经作为所创建 AAD 应用程序的服务主体进行身份验证。
 
+## 使用证书对服务主体进行身份验证 - Azure CLI
+
+在本部分，你将执行以下步骤，为使用证书进行身份验证的 Azure Active Directory 应用程序创建服务主体。本主题假设你获得所颁发的证书并已安装 [OpenSSL](http://www.openssl.org/)。
+
+1. 使用以下命令创建 **.pem** 文件：
+
+        openssl.exe pkcs12 -in examplecert.pfx -out examplecert.pem -nodes
+
+2. 打开 **.pem** 文件并复制证书数据。
+
+3. 通过运行 **azure ad app create** 命令创建新的 AAD 应用程序，并提供你在上一步中复制为密钥值的证书数据。
+
+        azure ad app create -n "<your application name>" --home-page "<https://YourApplicationHomePage>" -i "<https://YouApplicationUri>" --key-value <certificate data>
+
 ## 后续步骤
   
-- 有关基于角色的访问控制的概述，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)  
+- 有关基于角色的访问控制的概述，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)  
 - 若要了解有关使用服务主体的门户的信息，请参阅[使用 Azure 门户创建新的 Azure 服务主体](/documentation/articles/resource-group-create-service-principal-portal)  
 - 有关在 Azure 资源管理器中实现安全性的指南，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)
 
@@ -295,4 +308,4 @@
 <!-- Images. -->
 [1]: ./media/resource-group-authenticate-service-principal/arm-get-credential.png
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->
