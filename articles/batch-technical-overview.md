@@ -10,7 +10,7 @@
 <tags
 	ms.service="batch"
 	ms.date="10/26/2015"
-	wacn.date="12/31/2015"/>
+	wacn.date="01/15/2016"/>
 
 # Azure 批处理 ( Batch ) 基础知识
 
@@ -50,7 +50,7 @@ Azure 批处理 ( Batch )可帮助你在云中有效运行大规模并行和高�
 
 + **Azure 帐户和订阅** - 如果你没有帐户，可以注册获取[免费试用版](/pricing/free-trial/)。
 
-+ **批处理 ( Batch ) 帐户** - 在进行批处理 ( Batch ) API 调用时，应使用批处理 ( Batch ) 帐户的名称和 URL 以及访问密钥作为凭据。所有批处理 ( Batch ) 资源（如计算节点、池、作业和任务）都与批处理 ( Batch ) 帐户关联。创建批处理 ( Batch ) 帐户和管理该帐户访问密钥的一种方式是使用 [Azure 门户](/documentation/articles/batch-account-create-portal)。
++ **批处理 ( Batch ) 帐户** - 在进行批处理 ( Batch ) API 调用时，应使用批处理 ( Batch ) 帐户的名称和 URL 以及访问密钥作为凭据。所有批处理 ( Batch ) 资源（如计算节点、池、作业和任务）都与批处理 ( Batch ) 帐户关联。
 
 + **存储帐户** – 大多数批处理 ( Batch ) 方案需要使用一个 Azure 存储帐户来存储数据输入和输出，以及在计算节点上运行的脚本或可执行文件。若要创建存储帐户，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)。
 
