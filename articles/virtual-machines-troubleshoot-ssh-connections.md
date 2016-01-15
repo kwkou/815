@@ -1,6 +1,7 @@
 <properties
-	pageTitle="对通过 SSH 连接到 Azure VM 进行故障排除 | Windows Azure"
-	description="对运行 Linux 的 Azure 虚拟机的安全外壳 (SSH) 连接进行故障排除。"
+	pageTitle="对 Azure VM 的 SSH 连接进行故障排除 | Windows Azure"
+	description="为运行 Linux 的 Azure 虚拟机排查并修复“SSH 连接失败”或“SSH 连接被拒绝”等 SSH 错误。"
+	keywords="ssh 连接被拒绝,ssh 错误,azure ssh,SSH 连接失败"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
@@ -11,17 +12,15 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/27/2015"
-	wacn.date="12/31/2015"/>
+	wacn.date="01/14/2015"/>
 
 # 对于基于 Linux 的 Azure 虚拟机的 Secure Shell (SSH) 连接进行故障排除
 
+有许多原因可能会导致在尝试连接到基于 Linux 的 Azure 虚拟机时出现 SSH 错误。本文将帮助你找出原因并更正它们。
+
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
-
-
-有许多原因可能会导致基于 Linux 的 Azure 虚拟机 SSH 失败。本文将帮助你找出原因并予以更正。
-
-本文仅适用于运行 Linux 的 Azure 虚拟机。有关对运行 Windows 的 Azure 虚拟机的连接进行故障排除，请参阅[此文](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)。
+本文仅适用于运行 Linux 的 Azure 虚拟机。有关运行 Windows 的 Azure 虚拟机，请参阅[对 Azure VM 的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)。
 
 ## 与 Azure 客户支持联系
 
@@ -30,7 +29,7 @@
 或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Windows Azure 支持常见问题](/support/faq/)。
 
 
-## 基本步骤 - 经典部署模型
+## 修复经典部署模型中常见 SSH 错误的步骤
 
 若要解决使用经典部署模型创建的虚拟机中较常见的 SSH 连接失败，请尝试以下步骤：
 
@@ -47,11 +46,12 @@
 	- 重置 SSH 配置。
 
 
-## 基本步骤 - 资源管理器部署模型
+
+## 修复资源管理器部署模型中常见 SSH 错误的步骤
 
 若要解决使用资源管理器部署模型创建的虚拟机的常见 SSH 问题，请尝试以下步骤。
 
-1. 使用 Azure CLI 或 Azure PowerShell，在命令行上为 Linux VM **重置 SSH 连接**。确保已安装 [Windows Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide) 2.0.5 或更高版本。
+1. 使用 Azure CLI 或 Azure PowerShell，在命令行上为 Linux VM **重置 SSH 连接**。确保已安装 [Windows Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)版本 2.0.5 或更高版本。
 
 	**使用 Azure CLI**
 
@@ -156,17 +156,17 @@
 
 	请务必将 $RGName、$VmName、$Location 和 SSH 凭据的值替换为特定于安装的值。
 
-## 详细的疑难解答
+## SSH 错误的详细故障排除
 
 如果 SSH 客户端仍然无法连接到虚拟机上的 SSH 服务，原因可能是多方面的。下面是这种失败所涉及到的组件。
 
-![](./media/virtual-machines-troubleshoot-ssh-connections/ssh-tshoot1.png)
+![显示 SSH 服务组件的图表](./media/virtual-machines-troubleshoot-ssh-connections/ssh-tshoot1.png)
 
 以下部分将帮助你查明失败的原因，并得出解决方法或应对措施。
 
 ### 故障排除之前的步骤
 
-首先，在 Azure 门户中检查虚拟机的状态。
+首先，在门户中检查虚拟机的状态。
 
 在 [Azure 管理门户](https://manage.windowsazure.cn)中，针对采用经典部署模型的虚拟机：
 
@@ -199,7 +199,7 @@
 
 若要将你的计算机从失败原因中排除，请检查你的计算机是否能够与其他基于 Linux 的本地计算机建立 SSH 连接。
 
-![](./media/virtual-machines-troubleshoot-ssh-connections/ssh-tshoot2.png)
+![突出显示 SSH 客户端计算机组件的图表](./media/virtual-machines-troubleshoot-ssh-connections/ssh-tshoot2.png)
 
 如果不能，请检查你的计算机上是否存在以下项：
 
@@ -221,7 +221,7 @@
 
 若要将你的组织边缘设备从失败原因中排除，请检查直接连接到 Internet 的计算机是否可以与 Azure VM 建立 SSH 连接。如果是通过站点到站点 VPN 或 ExpressRoute 连接来访问 VM，请跳转到[来源 4：网络安全组](#nsg)。
 
-![](./media/virtual-machines-troubleshoot-ssh-connections/ssh-tshoot3.png)
+![突出显示组织边缘设备的图表](./media/virtual-machines-troubleshoot-ssh-connections/ssh-tshoot3.png)
 
 如果没有直接连接到 Internet 的计算机，可以轻松地在其自己的资源组或云服务中创建新的 Azure 虚拟机，然后进行使用。有关详细信息，请参阅[在 Azure 中创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)。测试完成后，请删除资源组或虚拟机以及云服务。
 
@@ -239,7 +239,7 @@
 
 若要将云服务终结点和 ACL 从失败原因中排除，请检查同一虚拟网络中的其他 Azure VM 是否可与使用[经典部署模型](/documentation/articles/resource-manager-deployment-model)创建的 VM 建立 SSH 连接。
 
-![](./media/virtual-machines-troubleshoot-ssh-connections/ssh-tshoot4.png)
+![突出显示云服务终结点和 ACL 的图表](./media/virtual-machines-troubleshoot-ssh-connections/ssh-tshoot4.png)
 
 如果同一虚拟网络中没有其他 VM，你可以轻松创建一个新 VM。有关详细信息，请参阅[在 Azure 中创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)。测试完成后，请删除多余的 VM。
 
@@ -260,7 +260,7 @@
 
 最后一个可能出现问题的来源是 Azure 虚拟机本身。
 
-![](./media/virtual-machines-troubleshoot-ssh-connections/ssh-tshoot5.png)
+![突出显示基于 Linux 的 Azure 虚拟机的图表](./media/virtual-machines-troubleshoot-ssh-connections/ssh-tshoot5.png)
 
 如果尚未这样做，请按照[如何为基于 Linux 的虚拟机重置密码或 SSH](/documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh) 中的说明，在虚拟机上执行操作。
 
@@ -280,4 +280,4 @@
 
 [对在 Azure 虚拟机上运行的应用程序的访问进行故障排除](/documentation/articles/virtual-machines-troubleshoot-access-application)
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -7,10 +7,11 @@
 	manager="jeffreyg"
 	editor="monicar"
 	tags="azure-resource-manager" />
+
 <tags
 	ms.service="virtual-machines"
 	ms.date="11/12/2015"
-	wacn.date="12/31/2015" />
+	wacn.date="01/14/2015" />
 
 # Azure 虚拟机中 SQL Server 的自动备份
 
@@ -94,4 +95,4 @@ Azure 中 SQL Server VM 的一个相关功能是 [Azure 虚拟机中的 SQL Serv
 
 请查看其他[有关在 Azure 虚拟机中运行 SQL Server 的资源](/documentation/articles/virtual-machines-sql-server-infrastructure-services)。
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->

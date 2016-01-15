@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/05/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="11/17/2015"
+	wacn.date="01/14/2015"/>
 
 # 对在 Azure 虚拟机上运行的应用程序的访问进行故障排除
 
@@ -96,9 +96,21 @@
 - 从客户端计算机到 Azure 虚拟机的出站应用程序请求流量。
 - 来自 Azure 虚拟机的入站应用程序响应流量。
 
+## 对终结点连接问题进行故障排除
+
+如果在连接终结点（例如远程桌面终结点）时遇到问题，可以尝试以下常规故障排除步骤：
+
+- 重新启动虚拟机
+- 重新创建终结点
+- 从另一个位置进行连接
+- 调整虚拟机的大小
+- 重新创建虚拟机
+
+有关详细信息，请参阅[终结点连接（RDP/SSH/HTTP 等故障）疑难解答](https://social.msdn.microsoft.com/Forums/azure/en-US/538a8f18-7c1f-4d6e-b81c-70c00e25c93d/troubleshooting-endpoint-connectivity-rdpsshhttp-etc-failures?forum=WAVirtualMachinesforWindows)。
+
 ## 后续步骤
 
-如果已完成本文章中的步骤 1 至 3，并且需要更多帮助更正问题，则可以：
+如果已执行本文中的上述步骤，并且需要更多帮助更正问题，则可以：
 
 - 从世界各地的 Azure 专家那里获取帮助。向 MSDN Azure 或 CSDN 论坛提交问题。有关详细信息，请参阅 [Windows Azure 论坛](http://www.windowsazure.cn/support/forums/)。
 - 提出 Azure 支持事件。转到[](http://www.windowsazure.cn/support/contact/)“Azure 支持站点”，单击“技术和帐单支持”下的“获得支持”。
@@ -109,4 +121,4 @@
 
 [对于基于 Linux 的 Azure 虚拟机的 Secure Shell (SSH) 连接进行故障排除](/documentation/articles/virtual-machines-troubleshoot-ssh-connections)
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->

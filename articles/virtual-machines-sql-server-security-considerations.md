@@ -1,19 +1,23 @@
 <properties 
-	pageTitle="Azure 虚拟机中的 SQL Server 的安全注意事项"
-	description="提供用于保护在 Azure 虚拟机中运行的 SQL Server 的一般指南。"
+	pageTitle="Azure 中的 SQL Server 的安全注意事项 | Windows Azure"
+	description="本主题适用于使用经典部署模型创建的资源，并提供了有关保护 Azure 虚拟机中运行的 SQL Server 的一般指南。"
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar" />
+	editor="monicar"    
+	tags="azure-service-management"/>
 <tags 
 	ms.service="virtual-machines"
-	ms.date="08/19/2015"
-	wacn.date="09/15/2015" />
+	ms.date="12/04/2015"
+	wacn.date="01/14/2015" />
 
 # Azure 虚拟机中的 SQL Server 的安全注意事项
 
 本主题包括可帮助建立对 Azure VM 中的 SQL Server 实例的安全访问的总体安全准则。但是，为了确保更好地保护你在 Azure 中的 SQL Server 数据库实例，我们建议你除了实施传统的本地安全做法外，还实施 Azure 的安全最佳做法。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+ 
 
 有关 SQL Server 安全做法的详细信息，请参阅 [SQL Server 2008 R2 安全最佳做法 - 操作和管理任务](http://download.microsoft.com/download/1/2/A/12ABE102-4427-4335-B989-5DA579A4D29D/SQL_Server_2008_R2_Security_Best_Practice_Whitepaper.docx)
 
@@ -46,12 +50,12 @@ Azure 遵守多个行业法规和标准，使你能够使用在虚拟机中运�
 
 - 为 Azure 虚拟机中的 SQL Server 数据库引擎实例启用加密连接选项。使用签名证书配置 SQL Server 实例。有关详细信息，请参阅[为数据库引擎启用加密连接](https://msdn.microsoft.com/zh-cn/library/ms191192.aspx)和[连接字符串语法](https://msdn.microsoft.com/zh-cn/library/ms254500.aspx)。
 
-- 如果只应从特定网络访问虚拟机，请使用 Windows 防火墙将访问限制为特定 IP 地址或网络子网。还可以考虑在终结点上添加 ACL 以将流量限制为你允许的客户端。有关在终结点上使用 ACL 的说明，请参阅[管理终结点上的 ACL](/documentation/articles/virtual-machines-set-up-endpoints#manage-the-acl-on-an-endpoint)
+- 如果只应从特定网络访问虚拟机，请使用 Windows 防火墙将访问限制为特定 IP 地址或网络子网。还可以考虑在终结点上添加 ACL 以将流量限制为你允许的客户端。有关在终结点上使用 ACL 的说明，请参阅[管理终结点上的 ACL](/documentation/articles/virtual-machines-set-up-endpoints/#manage-the-acl-on-an-endpoint)
 
 ## 后续步骤
 
-如果你还对有关性能的最佳实践感兴趣，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](https://msdn.microsoft.com/zh-cn/library/azure/dn133149.aspx)。
+如果你还对有关性能的最佳实践感兴趣，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-sql-server-performance-best-practices)。
 
-有关其他与在 Azure VM 中运行 SQL Server 相关的主题，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-sql-server-infrastructure-services)。
+有关其他与在 Azure VM 中运行 SQL Server 相关的主题，请参阅 [Azure 虚拟机上的 SQL Server 概述](/documentation/articles/virtual-machines-sql-server-infrastructure-services)。
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_0104_2016-->

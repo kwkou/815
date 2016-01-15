@@ -9,12 +9,13 @@
 	tags="azure-service-management"/>
 <tags 
 	ms.service="virtual-machines"
-	ms.date="08/19/2015"
-	wacn.date="11/12/2015" />
+	ms.date="12/11/2015"
+	wacn.date="01/14/2015" />
 
 # 使用 PowerShell 创建运行本机模式报表服务器的 Azure VM
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+ 
 
 本主题说明并指导你完成 SQL Server Reporting Services 本机模式报表服务器在 Azure 虚拟机中的部署和配置。本文档中的步骤使用一系列手动步骤来创建虚拟机以及用于在 VM 上配置 Reporting Services 的 Windows PowerShell 脚本。配置脚本包括为 HTTP 或 HTTPs 打开防火墙端口。
 
@@ -62,43 +63,43 @@
 									
 	- 如果“版本发布日期”超过一个，请选择最新版本。
 	
-	- “虚拟机名称”：计算机名称在下一个配置页上还用作默认云服务 DNS 名称。Azure 服务中的 DNS 名称必须唯一。请考虑为 VM 配置一个描述虚拟机用途的计算机名称。例如 ssrsnativecloud。
+	- **虚拟机名称**：虚拟机名称在下一个配置页上还用作默认云服务 DNS 名称。Azure 服务中的 DNS 名称必须唯一。请考虑为 VM 配置一个描述虚拟机用途的计算机名称。例如 ssrsnativecloud。
 	
-	- “层”：标准
+	- **层**：标准
 	
-	- “大小：A3”是 SQL Server 工作负荷的建议虚拟机大小。如果 VM 仅用作报表服务器，A2 的 VM 大小就足够了，除非报表服务器遇到大量工作负荷。有关虚拟机定价信息，请参阅[虚拟机定价](/pricing/details/virtual-machines/)。
+	- **大小：A3** 是 SQL Server 工作负荷的建议 VM 大小。如果 VM 仅用作报表服务器，A2 的 VM 大小就足够了，除非报表服务器遇到大量工作负荷。有关 VM 定价信息，请参阅[虚拟机定价](http://azure.microsoft.com/pricing/details/virtual-machines/)。
 	
-	- “新用户名”：将你提供的名称创建为 VM 上的管理员。
+	- **新用户名**：将你提供的名称创建为 VM 上的管理员。
 	
-	- “新密码”和“确认”。此密码用于新的管理员帐户并建议使用强密码。
+	- **新密码**和**确认**。此密码用于新的管理员帐户并建议使用强密码。
 	
 	- 单击“下一步”。![下一步](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC692021.gif)
 
 1. 在下一页上，编辑以下字段：
 
-	- “云服务”：选择“创建新的云服务”。
+	- **云服务**：选择“创建新的云服务”。
 	
-	- “云服务 DNS 名称”：这是与 VM 关联的云服务的公共 DNS 名称。默认名称是为 VM 名称键入的名称。如果在该主题的后续步骤中，你创建受信任的 SSL 证书，则该 DNS 名称将用于该证书的“**Issued to**”的值。
+	- **云服务 DNS 名称**：这是与 VM 关联的云服务的公共 DNS 名称。默认名称是为 VM 名称键入的名称。如果在该主题的后续步骤中，你创建受信任的 SSL 证书，则该 DNS 名称将用于该证书的“**Issued to**”的值。
 	
-	- “区域/地缘组/虚拟网络”：选择离你的最终用户最近的区域。
+	- **区域/地缘组/虚拟网络**：选择离你的最终用户最近的区域。
 	
-	- “存储帐户”：使用自动生成的存储帐户。
+	- **存储帐户**：使用自动生成的存储帐户。
 	
-	- “可用性集”：无。
+	- **可用性集**：无。
 	
-	- “终结点”：保留“远程桌面”和 **PowerShell** 终结点，然后添加一个 HTTP 或 HTTPS 终结点，具体取决于你的环境。
+	- **终结点**：保留“远程桌面”和 **PowerShell** 终结点，然后添加一个 HTTP 或 HTTPS 终结点，具体取决于你的环境。
 
-		- **HTTP**：默认公共和私有端口均为 **80**。请注意，如果你使用非 80 的私有端口，修改 http 脚本中的 **$HTTPport = 80**。
+		- **HTTP**：默认公共和专用端口均为 **80**。请注意，如果你使用非 80 的专用端口，请修改 http 脚本中的 **$HTTPport = 80**。
 
-		- **HTTPS**：默认公共和私有端口均为 **443**。最佳安全方案是更改私有端口并配置你的防火墙和报表服务器以使用私有端口。有关终结点的详细信息，请参阅[如何设置与虚拟机通信](/documentation/articles/virtual-machines-set-up-endpoints)。请注意，如果你使用非 443 的端口，更改 HTTPS 脚本中的参数 **$HTTPsport = 443**。
+		- **HTTPS**：默认公共和专用端口均为 **443**。最佳安全方案是更改私有端口并配置你的防火墙和报表服务器以使用私有端口。有关终结点的详细信息，请参阅[如何设置与虚拟机的通信](/documentation/articles/virtual-machines-set-up-endpoints)。请注意，如果你使用非 443 的端口，请更改 HTTPS 脚本中的参数 **$HTTPsport = 443**。
 	
-	- 单击下一步。![下一步](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC692021.gif)
+	- 单击“下一步”。![下一步](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC692021.gif)
 
-1. 在向导的最后一页上，保持默认选中“安装 VM 代理”。本主题中的步骤不使用 VM 代理，但如果你计划保留此 VM，VM 代理和扩展将允许你增强该 VM。有关 VM 代理的详细信息，请参阅 [VM 代理和扩展 – 第 1 部分](http://azure.microsoft.com/blog/2014/04/11/vm-agent-and-extensions-part-1/)。安装并运行的一个默认扩展是“BGINFO”扩展，它在 VM 桌面上显示系统信息，如内部 IP 和驱动器可用空间。
+1. 在向导的最后一页上，保持选中默认的“安装 VM 代理”。本主题中的步骤不使用 VM 代理，但如果你计划保留此 VM，VM 代理和扩展将允许你增强该 VM。有关 VM 代理的详细信息，请参阅 [VM 代理和扩展 – 第 1 部分](http://azure.microsoft.com/blog/2014/04/11/vm-agent-and-extensions-part-1/)。安装并运行的一个默认扩展是“BGINFO”扩展，它在 VM 桌面上显示系统信息，如内部 IP 和驱动器可用空间。
 
-1. 单击完成。![确定](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC660122.gif)
+1. 单击“完成”。![确定](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC660122.gif)
 
-1. 在设置过程中，VM 的“状态”显示为“正在启动（正在设置）”，然后在 VM 设置完并可供使用时显示为“正在运行”。
+1. 在预配过程中，VM 的“状态”显示为“正在启动(正在预配)”，然后在 VM 预配完成并可供使用时显示为“正在运行”。
 
 ## 步骤 2：创建服务器证书
 
@@ -128,7 +129,7 @@
 
 1. **在 Web 服务器上安装服务器证书**。Web 服务器在这种情况下是托管报表服务器的 VM，网站在配置 Reporting Services 时的后续步骤中创建。有关通过使用证书 MMC 管理单元在 Web 服务器上安装服务器证书的详细信息，请参阅[安装服务器证书](https://technet.microsoft.com/library/cc740068)。
 	
-	如果想要使用本主题中包括的脚本来配置报表服务器，则需要证书 **Thumbprint** 的值作为该脚本的参数。有关如何获取证书指纹的详细信息，请参阅以下部分。
+	如果要使用本主题中包含的脚本来配置报表服务器，则需要证书 **Thumbprint** 的值作为该脚本的参数。有关如何获取证书指纹的详细信息，请参阅以下部分。
 
 1. 将服务器证书分配给报表服务器。将在下一部分中配置报表服务器时完成分配。
 
@@ -136,27 +137,27 @@
 
 当设置 VM 时已在 VM 上创建了自签名证书。证书具有与 VM DNS 名称相同的名称。为避免出现证书错误，它必须在 VM 本身上受信任，并且受该站点的所有用户信任。
 
-1. 若要信任本地 VM 上的证书的根 CA，将该证书添加到**受信任的根证书颁发机构**。以下是所需步骤的摘要。有关如何信任 CA 的详细步骤，请参阅[安装服务器证书](https://technet.microsoft.com/library/cc740068)。
+1. 若要信任本地 VM 上的证书的根 CA，请将该证书添加到**受信任的根证书颁发机构**。以下是所需步骤的摘要。有关如何信任 CA 的详细步骤，请参阅[安装服务器证书](https://technet.microsoft.com/library/cc740068)。
 
-	1. 从 Azure 管理门户中，选择 VM 并单击连接。根据你的浏览器配置，可能会向你提示保存一个用于连接到 VM 的 .rdp 文件。
+	1. 从 Azure 门户中，选择 VM 并单击“连接”。根据你的浏览器配置，可能会向你提示保存一个用于连接到 VM 的 .rdp 文件。
 	
 		![连接到 Azure 虚拟机](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif) 使用你在创建 VM 时配置的用户 VM 名称、用户名和密码。
 	
-		例如，在下图中，VM 名称是 **ssrsnativecloud**，用户名称是 **testuser**。
+		例如，在下图中，VM 名称是 **ssrsnativecloud**，用户名是 **testuser**。
 		
 		![登录名包含 VM 名称](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC764111.png)
 	
-	1. 运行 mmc.exe。有关详细信息，请参阅[如何：使用 mmc 管理单元查看证书](https://msdn.microsoft.com/library/ms788967.aspx)。
+	1. 运行 mmc.exe。有关详细信息，请参阅[如何：使用 MMC 管理单元查看证书](https://msdn.microsoft.com/library/ms788967.aspx)。
 	
-	1. 在控制台应用程序“文件”菜单上，添加“证书”管理单元，在系统提示时选择“计算机帐户”，然后单击“下一步”。
+	1. 在控制台应用程序“文件”菜单中，添加“证书”管理单元，在系统提示时选择“计算机帐户”，然后单击“下一步”。
 	
 	1. 选择要管理的“本地计算机”，然后单击“完成”。
 	
-	1. 单击“确定”，然后展开“证书 – 个人”节点，最后单击“证书”。证书名为 VM 的 DNS 名称，以 **chinacloudapp.cn** 结尾。右键单击证书名称，然后单击“复制”。
+	1. 单击“确定”，然后展开“证书 – 个人”节点，最后单击“证书”。证书以 VM 的 DNS 名称命名，并以 **chinacloudapp.cn** 结尾。右键单击证书名称，然后单击“复制”。
 	
 	1. 展开“受信任的根证书颁发机构”节点，然后右键单击“证书”，最后单击“粘贴”。
 	
-	1. 若要验证，双击“受信任的根证书颁发机构”下的证书名称，验证其中不存在错误并且你能看到你的证书。如果你想要本主题中包含的 HTTPS 脚本来配置报表服务器，需要证书 **Thumbprint** 的值作为该脚本的参数。**要获取该指纹值**，请完成下列操作。[使用脚本来配置报表服务器和 HTTPS](/documentation/articles/#use-script-to-configure-the-report-server-and-HTTPS) 部分中还有一个 PowerShell 示例用于检索该指纹。
+	1. 若要验证，双击“受信任的根证书颁发机构”下的证书名称，验证其中不存在错误并且你能看到你的证书。如果要使用本主题中包含的 HTTPS 脚本来配置报表服务器，则需要证书 **Thumbprint** 的值作为该脚本的参数。**要获取该指纹值**，请完成下列操作。[使用脚本来配置报表服务器和 HTTPS](/documentation/articles/#use-script-to-configure-the-report-server-and-HTTPS) 部分中还有一个 PowerShell 示例用于检索该指纹。
 		
 		1. 双击该证书名称，例如 ssrsnativecloud.chinacloudapp.cn。
 		
@@ -180,19 +181,19 @@
 
 - 使用配置管理器配置报表服务器。
 
-有关详细步骤，请参阅[连接到虚拟机并启动 Reporting Services 配置管理器](virtual-machines-sql-server-business-intelligence#connect-to-the-virtual-machine-and-start-the-reporting-services-configuration-manager)。
+有关更多详细步骤，请参阅[连接到虚拟机并启动 Reporting Services 配置管理器](/documentation/articles/virtual-machines-sql-server-business-intelligence/#connect-to-the-virtual-machine-and-start-the-reporting-services-configuration-manager)。
 
-**身份验证说明：**Windows 身份验证是建议的身份验证方法，它是默认的 Reporting Services 身份验证方法。只有在 VM 配置的用户可以访问 Reporting Services 并分配给 Reporting Services 角色。
+**身份验证说明：**Windows 身份验证是建议的身份验证方法，并且它是默认的 Reporting Services 身份验证方法。只有在 VM 配置的用户可以访问 Reporting Services 并分配给 Reporting Services 角色。
 
 ### 使用脚本来配置报表服务器和 HTTP
 
 若要使用 Windows PowerShell 脚本配置报表服务器，请完成以下步骤。该配置包括 HTTP 而不是 HTTPS：
 
-1. 从 Azure 管理门户中，选择 VM 并单击连接。根据你的浏览器配置，可能会向你提示保存一个用于连接到 VM 的 .rdp 文件。
+1. 从 Azure 门户中，选择 VM 并单击“连接”。根据你的浏览器配置，可能会向你提示保存一个用于连接到 VM 的 .rdp 文件。
 
 	![连接到 Azure 虚拟机](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif) 使用你在创建 VM 时配置的用户 VM 名称、用户名和密码。
 
-	例如，在下图中，VM 名称是 **ssrsnativecloud**，用户名称是 **testuser**。
+	例如，在下图中，VM 名称是 **ssrsnativecloud**，用户名是 **testuser**。
 	
 	![登录名包含 VM 名称](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC764111.png)
 
@@ -323,17 +324,17 @@
 
 1. 运行该脚本。
 
-“验证”：若要验证基本报表服务器功能是否正常工作，请参阅本主题中稍后的[验证配置](#verify-the-configuration)部分。
+**验证**：若要验证基本报表服务器功能是否正常工作，请参阅本主题中稍后的[验证配置](#verify-the-configuration)部分。
 
 ### 使用脚本来配置报表服务器和 HTTPS
 
 若要使用 Windows PowerShell 来配置报表服务器，请完成以下步骤。该配置包括 HTTPS 而不是 HTTP。
 
-1. 从 Azure 管理门户中，选择 VM 并单击连接。根据你的浏览器配置，可能会向你提示保存一个用于连接到 VM 的 .rdp 文件。
+1. 从 Azure 门户中，选择 VM 并单击“连接”。根据你的浏览器配置，可能会向你提示保存一个用于连接到 VM 的 .rdp 文件。
 
 	![连接到 Azure 虚拟机](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif) 使用你在创建 VM 时配置的用户 VM 名称、用户名和密码。
 
-	例如，在下图中，VM 名称是 **ssrsnativecloud**，用户名称是 **testuser**。
+	例如，在下图中，VM 名称是 **ssrsnativecloud**，用户名是 **testuser**。
 
 	![登录名包含 VM 名称](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC764111.png)
 
@@ -347,7 +348,7 @@
 
 		Get-ExecutionPolicy
 
-1. 在 **Windows PowerShell ISE** 中，单击“视图”菜单，然后单击“显示脚本窗格”。
+1. 在 Windows PowerShell ISE 中，单击“视图”菜单，然后单击“显示脚本窗格”。
 
 1. 复制以下脚本并将其粘贴到 Windows PowerShell ISE 脚本窗格。
 
@@ -510,13 +511,13 @@
 
 			dir cert:\LocalMachine -rec | Select-Object * | where {$_.issuer -like "*cloudapp*" -and $_.pspath -like "*root*"} | select dnsnamelist, thumbprint, issuer
 
-		输出与以下内容类似：例如，如果该脚本返回一个空白行，未为 VM 配置证书，请参阅[若要使用虚拟机自签名证书](#to-use-the-virtual-machines-self-signed-certificate)部分。
+		输出与以下内容类似：例如，如果该脚本返回一个空白行，则尚未为 VM 配置证书，请参阅[使用虚拟机自签名证书](#to-use-the-virtual-machines-self-signed-certificate)部分。
 	
 	或者
 	
 	- 在 VM 上运行 mmc.exe，然后添加“证书”管理单元。
 	
-	- 在“受信任的根证书颁发机构”节点下，双击你的证书名称。如果你使用的是 VM 的自签名证书，证书名为该 VM 的 DNS 名称，以 **chinacloudapp.cn** 结尾。
+	- 在“受信任的根证书颁发机构”节点下，双击你的证书名称。如果你使用的是 VM 的自签名证书，则证书将以该 VM 的 DNS 名称命名，并以 **chinacloudapp.cn** 结尾。
 	
 	- 单击“详细信息”选项卡。
 	
@@ -538,7 +539,7 @@
 
 1. 运行该脚本。
 
-“验证”：若要验证基本报表服务器功能是否正常工作，请参阅本主题中稍后的[验证配置](#verify-the-connection)部分。若要验证证书绑定，请使用具有管理权限的身份打开命令提示符，然后运行以下命令：
+**验证**：若要验证基本报表服务器功能是否正常工作，请参阅本主题中稍后的[验证配置](#verify-the-connection)部分。若要验证证书绑定，请使用具有管理权限的身份打开命令提示符，然后运行以下命令：
 
 	netsh http show sslcert
 
@@ -552,13 +553,13 @@
 
 如果你不想要运行 PowerShell 脚本来配置报表服务器，请按照本部分中的步骤使用 Reporting Services 本机模式配置管理器来配置报表服务器。
 
-1. 从 Azure 管理门户中，选择 VM 并单击连接。使用在创建 VM 时配置的用户名和密码。
+1. 从 Azure 门户中，选择 VM 并单击“连接”。使用在创建 VM 时配置的用户名和密码。
 
 	![连接到 Azure 虚拟机](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif)
 
-1. 运行 Windows 更新并将更新安装到 VM。如果需要重新启动 VM，则重新启动 VM 并从 Azure 管理门户重新连接到虚拟机。
+1. 运行 Windows 更新并将更新安装到 VM。如果需要重新启动 VM，请重新启动 VM 并从 Azure 门户重新连接到该 VM。
 
-1. 从虚拟机上的开始菜单中，键入 **Reporting Services** 并打开“Reporting Services 配置管理器”。
+1. 从 VM 上的“开始”菜单，键入 **Reporting Services** 并打开“Reporting Services 配置管理器”。
 
 1. 保留“服务器名称”和“报表服务器实例”的默认值。单击“连接”。
 
@@ -566,7 +567,7 @@
 
 1. 默认情况下，为 HTTP 端口 80 配置 RS 且 IP 为“全部分配”。若要添加 HTTPS：
 
-	1. 在“SSL 证书”中：选择你想要使用的证书，例如，[VM name].chinacloudapp.cn。如果未列出证书，请参阅**第 2 步：创建服务器证书**部分，以了解如何安装和信任 VM 上的证书的信息。
+	1. 在“SSL 证书”中：选择要使用的证书，例如，[VM 名称].chinacloudapp.cn。如果未列出证书，请参阅**第 2 步：创建服务器证书**部分，以了解如何在 VM 上安装和信任证书的信息。
 	
 	1. 在“SSL 端口”下：选择 443。如果使用不同的专用端口配置了 VM 中的 HTTPS 私有终结点，此处使用该值。
 	
@@ -578,15 +579,15 @@
 	
 	1. 单击“创建新的报表服务器数据库”，然后单击“下一步”。
 	
-	1. 将默认的“服务器名称”保留为 VM 名称，将默认的“身份验证类型”保留为“当前用户”-“集成安全性”。单击“下一步”。
+	1. 将默认的“服务器名称”保留为 VM 名称，将默认的“身份验证类型”保留为“当前用户”-“集成安全性”。单击**“下一步”**。
 	
-	1. 将默认的“数据库名称”保留为 **ReportServer**，单击“下一步”。
+	1. 将默认的“数据库名称”保留为 **ReportServer**，然后单击“下一步”。
 	
 	1. 将默认的“身份验证类型”保留为“服务凭据”，然后单击“下一步”。
 	
-	1. 在“摘要”页上，单击“下一步”。
+	1. 在“摘要”页上单击“下一步”。
 	
-	1. 完成配置步骤后，单击“完成”。
+	1. 配置完成后，单击“完成”。
 
 1. 在左窗格中，单击“报表管理器 URL”。将默认的“虚拟目录”保留为“报告”，然后单击“应用”。
 
@@ -598,7 +599,7 @@
 
 若要远程连接到虚拟机上的报表管理器或报表服务器，在 VM 上需要 TCP 终结点。在 VM 防火墙中需要打开同一个端口。设置 VM 时创建了该终结点。
 
-本部分提供有关如何打开防火墙端口的基本信息。有关详细信息，请参阅[将防火墙配置为允许报表服务器访问](https://technet.microsoft.com/library/bb934283.aspx)
+本部分提供有关如何打开防火墙端口的基本信息。有关详细信息，请参阅[为报表服务器访问配置防火墙](https://technet.microsoft.com/library/bb934283.aspx)
 
 >[AZURE.NOTE]如果使用了脚本来配置报表服务器，则可以跳过本节。该脚本包含一个用于打开防火墙端口的步骤。
 
@@ -610,7 +611,7 @@
 
 		New-NetFirewallRule -DisplayName “Report Server (TCP on port 443)” -Direction Inbound –Protocol TCP –LocalPort 443
 
-1. 命令完成后，在命令提示符中显示 **Ok**。
+1. 命令完成后，将在命令提示符中显示 **Ok**。
 
 若要验证端口已打开，请打开 Windows PowerShell 窗口并运行以下命令：
 
@@ -642,7 +643,7 @@
 
 - [创建本地用户帐户](https://technet.microsoft.com/library/cc770642.aspx)
 
-- [将用户访问权限授予报表服务器（报表管理器）](https://msdn.microsoft.com/library/ms156034.aspx)）
+- [授予用户对报表服务器（报表管理器）的访问权限](https://msdn.microsoft.com/library/ms156034.aspx)）
 
 - [创建和管理角色分配](https://msdn.microsoft.com/library/ms155843.aspx)
 
@@ -652,15 +653,15 @@
 
 - **RS.exe 脚本**：使用 RS.exe 脚本将报表项从现有报表服务器复制到你的 Windows Azure 虚拟机。有关详细信息，请参阅[用示例 Reporting Services rs.exe 脚本在报表服务器之间迁移内容](https://msdn.microsoft.com/library/dn531017.aspx)中的“本机模式到本机模式 – Windows Azure 虚拟机”部分。
 
-- **报表生成器**：虚拟机包括 Microsoft SQL Server 报表生成器的 ClickOnce 版本。若要首次在虚拟机上启动报表生成器：
+- **报表生成器**：虚拟机包括 Microsoft SQL Server 报表生成器的单击一次版本。若要首次在虚拟机上启动报表生成器：
 
 	1. 使用管理权限启动你的浏览器。
 	
 	1. 浏览到虚拟机上的报表管理器，然后单击功能区中的“报表生成器”。
 
-	有关详细信息，请参阅“安装、卸载和支持报表生成器”。[](https://technet.microsoft.com/library/dd207038.aspx)
+	有关详细信息，请参阅[安装、卸载和支持报表生成器](https://technet.microsoft.com/library/dd207038.aspx)。
 
-- **SQL Server Data Tools：VM**：如果创建的 VM 安装了 SQL Server 2012，则将 SQL Server Data Tools 安装在该虚拟机上并可用于在该虚拟机上创建**报表服务器项目**和报表。SQL Server Data Tools 可以将报表发布到虚拟机上的报表服务器。
+- **SQL Server Data Tools：VM**：如果创建的 VM 安装了 SQL Server 2012，则 SQL Server Data Tools 将安装在该虚拟机上并可用于在该虚拟机上创建**报表服务器项目**和报表。SQL Server Data Tools 可以将报表发布到虚拟机上的报表服务器。
 	
 	如果你创建的 VM 安装了 SQL Server 2014，则可以安装适用于 Visual Studio 的 SQL Server Data Tools- BI。有关详细信息，请参阅以下主题：
 
@@ -674,11 +675,11 @@
 
 	![SSRS 项目的 ssdt 项目属性](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650114.gif)
 
-- **使用脚本**：使用脚本来复制报表服务器内容。有关详细信息，请参阅[用示例 Reporting Services rs.exe 脚本在报表服务器之间迁移内容](https://msdn.microsoft.com/library/dn531017.aspx)。
+- **使用脚本**：使用脚本来复制报表服务器内容。有关详细信息，请参阅[使用示例 Reporting Services rs.exe 脚本在报表服务器之间迁移内容](https://msdn.microsoft.com/library/dn531017.aspx)。
 
 ## 如果使用的不是 VM，将成本降到最低
 
->[AZURE.NOTE]为了在不使用 Azure 虚拟机时尽可能减少费用，可从 Azure 管理门户关闭 VM。如果使用 VM 内的 Windows 电源选项来关闭 VM，仍将为 VM 支付相同的金额。若要减少费用，你需要在 Azure 管理门户中关闭 VM。如果你不再需要该 VM，请记住删除 VM 和关联的 .vhd 文件以避免存储费用。有关详细信息，请参阅[虚拟机定价详细信息](/pricing/details/virtual-machines)中的常见问题部分。
+>[AZURE.NOTE]为了在不使用 Azure 虚拟机时尽可能减少费用，可从 Azure 门户关闭 VM。如果使用 VM 内的 Windows 电源选项来关闭 VM，仍将为 VM 支付相同的金额。若要减少费用，你需要在 Azure 管理门户中关闭 VM。如果你不再需要该 VM，请记住删除 VM 和关联的 .vhd 文件以避免产生存储费用。有关详细信息，请参阅[虚拟机定价详细信息](http://azure.microsoft.com/pricing/details/virtual-machines)中的常见问题部分。
 
 ## 更多信息
 
@@ -700,4 +701,4 @@
 
 [Azure 虚拟机中的 SQL Server 概述](/documentation/articles/virtual-machines-sql-server-infrastructure-services)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0104_2016-->
