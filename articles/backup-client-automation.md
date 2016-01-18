@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="backup" 
-	ms.date="08/18/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="10/01/2015"
+	wacn.date="01/16/2016"/>
 
 
 # 使用 Azure PowerShell 部署和管理 Windows Server/Windows 客户端的 Azure 备份
@@ -19,7 +19,16 @@
 [AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell.md)]
 
 ## 设置和注册
-使用 Azure PowerShell 可以自动化以下设置和注册任务：
+开始时，请执行以下操作：
+
+1. [下载最新 PowerShell](https://github.com/Azure/azure-powershell/releases)（要求的最低版本：1.0.0）
+2. 通过 **Switch-AzureMode** cmdlet 切换到 *AzureResourceManager* 模式，从而启用 Azure 备份 cmdlet：
+
+```
+PS C:\> Switch-AzureMode AzureResourceManager
+```
+
+使用 PowerShell 可以自动化以下设置和注册任务：
 
 - 创建备份保管库
 - 安装 Azure 备份代理
@@ -28,7 +37,10 @@
 - 加密设置
 
 ### 创建备份保管库
-可以使用 **New-AzureBackupVault** cmdlet 创建新的备份保管库。备份保管库是一种 ARM 资源，因此需要将它放置在资源组中。在权限提升的 Azure PowerShell 控制台中运行以下命令：
+
+> [AZURE.WARNING] 对于第一次使用 Azure 备份的客户，你需要注册用于订阅的 Azure 备份提供程序。可通过运行以下命令来执行此操作：Register-AzureProvider -ProviderNamespace "Microsoft.Backup"
+
+可以使用 **New-AzureRMBackupVault** cmdlet 创建新的备份保管库。备份保管库是一种 ARM 资源，因此需要将它放置在资源组中。在权限提升的 Azure PowerShell 控制台中运行以下命令：
 
 ```
 PS C:\> New-AzureResourceGroup –Name “test-rg” –Region “China North”

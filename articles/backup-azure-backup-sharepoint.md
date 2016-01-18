@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="backup" 
-	ms.date="07/14/2015" 
-	wacn.date="11/02/2015"/>
+	ms.date="09/22/2015"
+	wacn.date="01/14/2016"/>
 
 
 # 将 SharePoint 场备份到 Azure
@@ -27,7 +27,7 @@ DPM 的 Azure 备份支持以下方案。
 在将 SharePoint 场备份到 Azure 之前，需要确保满足几个条件。
 
 ### 先决条件
-在继续之前，请确保符合使用 Microsoft Azure 备份保护工作负荷的所有[先决条件]<!--(/documentation/articles/backup-azure-dpm-introduction)-->。先决条件包括如下任务：创建备份保管库、下载保管库凭据、安装 Azure 备份代理，以及向保管库注册服务器。
+在继续之前，请确保符合使用 Microsoft Azure 备份保护工作负荷的所有[先决条件](/documentation/articles/backup-azure-dpm-introduction)。先决条件包括如下任务：创建备份保管库、下载保管库凭据、安装 Azure 备份代理，以及向保管库注册服务器。
 
 ### DPM 代理
 必须在 SharePoint Server、SQL Server 以及属于 SharePoint 场的任何其他服务器上安装 DPM 代理。有关设置保护代理的详细信息，请参阅[设置保护代理](https://technet.microsoft.com/zh-cn/library/hh758039.aspx)。唯一的例外是，你只能在单个 Web 前端 (WFE) 服务器上安装代理。DPM 只需将 WFE 服务器上的代理作为保护的入口点。
@@ -80,7 +80,7 @@ DPM 以本地系统的形式运行，并备份 SQL Server 数据库，它需要�
 
     ![选择组成员](./media/backup-azure-backup-sharepoint/select-group-members2.png)
 
-    >[AZURE.NOTE]在已安装 DPM 代理的情况下，你可以在向导中看到该服务器。DPM 还会显示其结构。由于已运行 ConfigureSharePoint.exe，DPM 将与 SharePoint VSS 写入器及其对应的 SQL 数据库通信，并识别 SharePoint 场结构（关联的内容数据库和任何对应项）。
+    >[AZURE.NOTE] 在已安装 DPM 代理的情况下，你可以在向导中看到该服务器。DPM 还会显示其结构。由于已运行 ConfigureSharePoint.exe，DPM 将与 SharePoint VSS 写入器及其对应的 SQL 数据库通信，并识别 SharePoint 场结构（关联的内容数据库和任何对应项）。
 
 4. 在“选择数据保护方法”屏幕上，输入“保护组”的名称，然后选择偏好的“保护方法”。单击**“下一步”**。
 
@@ -231,8 +231,8 @@ DPM 以本地系统的形式运行，并备份 SQL Server 数据库，它需要�
 答：由于 SharePoint 数据库是在 SQL AlwaysOn 中配置的，因此除非删除可用性组 (AG)，否则无法修改它们。因此，DPM 无法将数据库还原到原始位置。你可以将 SQL 数据库恢复到其他 SQL 实例。
 
 ## 后续步骤
-
+- 了解有关使用 DPM 保护 SharePoint 的详细信息 - 参阅[视频系列 - 使用 DPM 保护 SharePoint](http://channel9.msdn.com/Series/Azure-Backup/Microsoft-SCDPM-Protection-of-SharePoint-1-of-2-How-to-create-a-SharePoint-Protection-Group)
 - 查看 [System Center 2012 - Data Protection Manager 发行说明](https://technet.microsoft.com/zh-cn/library/jj860415.aspx)
 - 查看 [System Center 2012 SP1 中的 Data Protection Manager 发行说明](https://technet.microsoft.com/zh-cn/library/jj860394.aspx)
 
-<!---HONumber=66-->
+<!---HONumber=82-->

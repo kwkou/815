@@ -9,10 +9,14 @@
 
 <tags
 	ms.service="backup" 
-	ms.date="07/16/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="10/05/2015"
+	wacn.date="01/15/2016"/>
+	
+# 使用 DPM 准备将工作负荷备份到 Azure
 
-# Azure DPM 备份简介
+> [AZURE.SELECTOR]
+- [Azure 备份](/documentation/articles/backup-azure-microsoft-azure-backup)
+- [SCDPM](/documentation/articles/backup-azure-dpm-introduction)
 
 本文介绍如何使用 Microsoft Azure 备份来保护 System Center Data Protection Manager (DPM) 服务器和工作负载。通过阅读本文，你将会了解：
 
@@ -38,7 +42,7 @@ System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可
 
 拍摄快照后，数据将由 Azure 备份服务传输到备份保管库中。该服务负责确定并传输自上次备份以来进行了更改的块，使备份存储和网络更高效。数据传输完成后，将会删除快照并创建恢复点。在 Azure 管理门户中，可以查看此恢复点。
 
->[AZURE.NOTE]Linux 虚拟机只能使用文件一致性备份。
+>[AZURE.NOTE] Linux 虚拟机只能使用文件一致性备份。
 
 ## 先决条件
 按如下所述让 Azure 备份做好备份 DPM 数据的准备：
@@ -84,4 +88,4 @@ System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可
 
 >[AZURE.NOTE]从 System Center 2012 DPM SP1 开始，你可以使用 Microsoft Azure 备份将 DPM 保护的工作负载备份到 Azure。
 
-<!---HONumber=67-->
+<!---HONumber=82-->

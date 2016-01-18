@@ -9,24 +9,22 @@
 
 <tags
    ms.service="backup" 
-   ms.date="09/03/2015"
-   wacn.date="11/02/2015"/>
+   ms.date="11/26/2015"
+   wacn.date="01/14/2016"/>
 
 # Azure 备份 10 分钟入门
 Azure 备份的设置极其简单，以下操作方法将会帮助你入门。
 
 ## 步骤 1：获取 Azure 订阅
-+ 如果你还没有 Azure 订阅，可以先注册一个免费试用产品，这样就可以访问任何 Azure 服务。请访问链接 [http://www.windowsazure.cn/pricing/1rmb-trial/](http://www.windowsazure.cn/pricing/1rmb-trial/) 了解详细信息。
-+ 如果你已经有了 Azure 订阅，则可以跳过此步骤。
+- 如果你还没有 Azure 订阅，可以先注册一个免费试用产品，这样就可以访问任何 Azure 服务。请访问[免费试用](/pricing/free-trial)链接以了解详细信息。
+- 如果你已经有了 Azure 订阅，则可以跳过此步骤。
 
 ## 步骤 2：配置 Azure 备份服务
 完成视频 [Azure 备份入门第 1 部分（共 3 部分）- 在 Azure 上设置备份保管库](http://azure.microsoft.com/documentation/videos/getting-started-with-azure-backup-1-of-3-set-up-a-backup-vault-on-azure/)中所述的全部步骤，以便：
 
-+	创建备份保管库
-
-+	下载“保管库凭据”
-
-+	下载 Azure 备份代理
+- 创建备份保管库
+- 下载“保管库凭据”
+- 下载 Azure 备份代理
 
 
 
@@ -54,4 +52,4 @@ Azure 备份的设置极其简单，以下操作方法将会帮助你入门。
 - [备份 Windows Server](/documentation/articles/backup-azure-backup-windows-server)
 + 访问 [Azure 备份论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)。
 
-<!---HONumber=66-->
+<!---HONumber=Mooncake_0104_2016-->
