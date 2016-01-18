@@ -46,13 +46,15 @@
 
 3. 单击“网站”，然后单击“自定义创建”。
 	
-	在“URL”中输入值，从“数据库”下拉列表中选择“新建 MySQL 数据库”，然后在“区域”下拉列表中选择网站的数据中心。单击对话框底部的箭头。
+	在“URL”中输入值，从“数据库”下拉列表中选择“无数据库”，然后在“区域”下拉列表中选择网站的数据中心。点击确定新建网站
 
 	![填写网站详细信息][Website-details]
 
-4. 为数据库的“名称”输入一个值，在“区域”下拉列表中为数据库选择数据中心，并选中表明你同意法律条款的框。单击对话框底部的复选标记。
+4. 继续单机“新建” --> “数据服务” --> “MYSQL DATABASE ON AZURE” --> “快速创建”，为你的网站创建一个 MYSQL 数据库。
 
-	创建网站后，你将看到文本“创建网站 ‘[SITENAME]’ 成功完成”。现在，可以启用 FTP 发布了。
+	![数据库][new-mysql-db]
+
+	创建网站后，你将看到文本“创建网站 ‘[SITENAME]’ 成功完成”。现在，您可以启用 Git 发布。
 
 5. 单击网站列表中显示的网站的名称以打开该网站的“快速启动”仪表板。
 
@@ -211,33 +213,17 @@
 
 ##获取 MySQL 和 FTP 连接信息
 
-若要连接到正在网站中运行的 MySQL 数据库，你将需要连接信息。若要获取 MySQL 连接信息，请按照以下步骤操作：
+若要连接到正在 Azure 网站中运行的 MySQL 数据库，你将需要连接信息。若要获取 MySQL 连接信息，请按照以下步骤操作：
 
-1. 在资源组中单击数据库：
+1. 点击打开你的 MYSQL 服务器，进入“仪表板”页面，在“速览”下可以查看你的服务器地址以及端口。
 
-	![选择数据库][select-database]
-
-2. 在数据库摘要中选择“属性”。
-
-    ![选择属性][select-properties]
+	![获取数据库连接信息][connection-string-info]
 	
-2. 记下 `Database`、`Host`、`User Id` 和 `Password` 的值。
+2. 在“账户”页面可以查看各个账户名，也可以重置其密码。
 
-    ![记下属性][note-properties]
+3. 在“数据库”页面可以查看这个服务器下的数据库。
 
-3. 从网站的仪表板中，单击页面右下角的“下载发布配置文件”链接：
-
-	![下载发布配置文件][download-publish-profile]
-
-4. 在 XML 编辑器中打开 `.publishsettings` 文件。
-
-3. 查找带有 `publishMethod="FTP"` 的 `<publishProfile >` 元素，该元素与以下内容类似：
-
-		<publishProfile publishMethod="FTP" publishUrl="ftp://[mysite].chinacloudsites.cn/site/wwwroot" ftpPassiveMode="True" userName="[username]" userPWD="[password]" destinationAppUrl="http://[name].chinacloudsites.cn" 
-			...
-		</publishProfile>
-	
-记下 `publishUrl`、`userName` 和 `userPWD` 属性。
+	于是 Data Source 为 tcp:<your MYSQL server name\>.database.chinacloudapi.cn,<port\>
 
 ##发布应用
 
@@ -275,7 +261,7 @@
 [new-website]: ./media/web-sites-php-mysql-deploy-use-ftp/new_website2.jpg
 [custom-create]: ./media/web-sites-php-mysql-deploy-use-ftp/create_web_mysql.png
 [website-details]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/website_details.jpg
-[new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-ftp/create_db.png
+[new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-ftp/new_mysql_db.jpg
 [go-to-webapp]: ./media/web-sites-php-mysql-deploy-use-ftp/select_webapp.png
 [set-deployment-credentials]: ./media/web-sites-php-mysql-deploy-use-ftp/set_credentials.png
 [portal-ftp-username-password]: ./media/web-sites-php-mysql-deploy-use-ftp/save_credentials.png
