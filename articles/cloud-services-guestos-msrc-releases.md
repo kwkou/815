@@ -4,17 +4,46 @@
    services="cloud-services" 
    documentationCenter="na" 
    authors="yuemlu" 
-   manager="markkie" 
+   manager="timlt" 
    editor=""/>
 
 <tags
    ms.service="cloud-services"
-   ms.date="10/18/2015"
-   wacn.date="11/12/2015"/>
+   ms.date="12/15/2015"
+   wacn.date="01/15/2016"/>
 
 # Azure 来宾 OS 
 
 下表显示了适用于 Azure 来宾 OS 的 Microsoft 安全响应中心 (MSRC) 更新。若要确定特定的更新是否适用于你使用的来宾 OS，请搜索本文。引入这些更新的特定[系列][family-explain]始终会包含这些更新。
+
+## 12 月来宾 OS
+
+| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS15-124 | [3116180] | Internet Explorer 的累积安全更新 | 4\.27、3.34、2.46 | 2015 年 12 月 8 日 |
+| MS15-126 | [3116178] | Microsoft VBScript 和 JScript 的安全更新，解决远程代码执行过程中的问题 | 2\.46 | 2015 年 12 月 8 日 |
+| MS15-127 | [3100465] | Microsoft Windows DNS 的安全更新，解决远程代码执行过程中的问题 | 4\.27、3.34、2.46 | 2015 年 12 月 8 日 |
+| MS15-128 | [3104503] | Microsoft 图形组件的安全更新，解决远程代码执行过程中的问题 | 4\.27、3.34、2.46 | 2015 年 12 月 8 日 |
+| MS15-132 | [3116162] | Windows 的安全更新，解决远程代码执行过程中的问题 | 4\.27、3.34、2.46 | 2015 年 12 月 8 日 |
+| MS15-133 | [3116130] | Windows PGM 的安全更新，解决权限提升过程中的问题 | 4\.27、3.34、2.46 | 2015 年 12 月 8 日 |
+| MS15-134 | [3108669] | Windows 媒体中心的安全更新，解决远程代码执行过程中的问题 | 4\.27、3.34、2.46 | 2015 年 12 月 8 日 |
+| MS15-135 | [3119075] | Windows 内核模式驱动程序的安全更新，解决权限提升过程中的问题 | 4\.27、3.34、2.46 | 2015 年 12 月 8 日 |
+
+## 11 月来宾 OS
+
+| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS15-112 | [3104517] | Internet Explorer 的累积安全更新 | 4\.26、3.33、2.45 | 2015 年 11 月 10 日 |
+| MS15-114 | [3100213] | Windows 日记本安全更新，解决远程代码执行过程中的问题 | 2\.45 | 2015 年 11 月 10 日 |
+| MS15-115 | [3105864] | Microsoft Windows 安全更新，解决远程代码执行过程中的问题 | 4\.26、3.33、2.45 | 2015 年 11 月 10 日 |
+| MS15-117 | [3101722] | NDIS 安全更新，解决权限提升过程中的问题 | 2\.45 | 2015 年 11 月 10 日 |
+| MS15-118 | [3104507] | .NET Framework 安全更新，解决权限提升过程中的问题 | 4\.26、3.33、2.45 | 2015 年 11 月 10 日 |
+| MS15-119 | [3104521] | Winsock 安全更新，解决权限提升过程中的问题 | 4\.26、3.33、2.45 | 2015 年 11 月 10 日 |
+| MS15-120 | [3102939] | IPSec 安全更新，解决拒绝服务问题 | 4\.26、3.33 | 2015 年 11 月 10 日 |
+| MS15-121 | [3081320] | Schannel 安全更新，解决欺骗问题 | 4\.26、3.33、2.45 | 2015 年 11 月 10 日 |
+| MS15-122 | [3105256] | Kerberos 安全更新，解决绕过安全功能问题 | 4\.26、3.33、2.45 | 2015 年 11 月 10 日 |
+| Microsoft 安全公告 | [3097966] | 无意中泄漏数字证书可能会导致欺骗的发生 | 4\.26、3.33、2.45 | 2015 年 11 月 10 日 |
+
 
 ## 10 月来宾 OS
 
@@ -178,11 +207,33 @@
 | 不适用 | [2999802][2999802] | 在 Windows 中打印时，虚线变成实线 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
 | 不适用 | [2896881][2896881] | 在 Windows 中登录期间使用 AddPrinterConnection VBScript 命令映射用户的打印机时，登录时间过长 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
 
+
+[3116180]: http://support.microsoft.com/zh-cn/kb/3116180
+[3116178]: http://support.microsoft.com/zh-cn/kb/3116178
+[3100465]: http://support.microsoft.com/zh-cn/kb/3100465
+[3104503]: http://support.microsoft.com/zh-cn/kb/3104503
+[3116162]: http://support.microsoft.com/zh-cn/kb/3116162
+[3116130]: http://support.microsoft.com/zh-cn/kb/3116130
+[3108669]: http://support.microsoft.com/zh-cn/kb/3108669
+[3119075]: http://support.microsoft.com/zh-cn/kb/3119075
+
+[3104517]: http://support.microsoft.com/zh-cn/kb/3104517
+[3100213]: http://support.microsoft.com/zh-cn/kb/3100213
+[3105864]: http://support.microsoft.com/zh-cn/kb/3105864
+[3101722]: http://support.microsoft.com/zh-cn/kb/3101722
+[3104507]: http://support.microsoft.com/zh-cn/kb/3104507
+[3104521]: http://support.microsoft.com/zh-cn/kb/3104521
+[3102939]: http://support.microsoft.com/zh-cn/kb/3102939
+[3081320]: http://support.microsoft.com/zh-cn/kb/3081320
+[3105256]: http://support.microsoft.com/zh-cn/kb/3105256
+[3097966]: http://support.microsoft.com/zh-cn/kb/3097966
+
 [3096441]: http://support.microsoft.com/zh-cn/kb/3096441
 [3089659]: http://support.microsoft.com/zh-cn/kb/3089659
 [3096443]: http://support.microsoft.com/zh-cn/kb/3096443
 [3096447]: http://support.microsoft.com/zh-cn/kb/3096447
 [3092627]: http://support.microsoft.com/zh-cn/kb/3092627
+
 [3088903]: http://support.microsoft.com/zh-cn/kb/3088903
 [3089548]: http://support.microsoft.com/zh-cn/kb/3089548
 [3072595]: http://support.microsoft.com/zh-cn/kb/3072595
@@ -191,6 +242,7 @@
 [3089657]: http://support.microsoft.com/zh-cn/kb/3089657
 [3091287]: http://support.microsoft.com/zh-cn/kb/3091287
 [3089662]: http://support.microsoft.com/zh-cn/kb/3089662
+
 [3082442]: http://support.microsoft.com/zh-cn/kb/3082442
 [3078662]: http://support.microsoft.com/zh-cn/kb/3078662
 [3080348]: http://support.microsoft.com/zh-cn/kb/3080348
@@ -218,7 +270,7 @@
 
 [MS15-034]: https://technet.microsoft.com/zh-cn/library/security/MS15-034
 
-[3042553]: https://support.microsoft.com/zh-CN/zh-cn/kb/3042553/
+[3042553]: https://support.microsoft.com/zh-cn/kb/3042553/
 
 [3034682]: http://support.microsoft.com/zh-cn/kb/3034682
 [3036220]: http://support.microsoft.com/zh-cn/kb/3036220
@@ -298,4 +350,4 @@
 [family-explain]: /documentation/articles/cloud-services-guestos-update-matrix/#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0104_2016-->

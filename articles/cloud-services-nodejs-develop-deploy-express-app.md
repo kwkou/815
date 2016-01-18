@@ -1,25 +1,25 @@
 <properties 
-	pageTitle="使用 Express (Node.js) 构建网站| Windows Azure" 
+	pageTitle="使用 Express 构建网站 (Node.js) | Windows Azure" 
 	description="本教程以云服务教程为基础，演示如何使用 Express 模块。" 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
-	authors="MikeWasson" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="09/01/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="11/20/2015" 
+	wacn.date="01/15/2016"/>
 
 
 
 
 
 
-# 使用 Express 在 Azure 云服务中生成 Node.js网站
+# 使用 Express 在 Azure 云服务中生成 Node.js Web 应用程序
 
-Node.js 包含核心运行时中最小的一个功能集。开发人员在开发 Node.js 应用程序时经常会使用第三方模块来提供额外功能。在本教程中，你将使用 [Express][] 模块新建一个应用程序，该模块可提供用于创建 Node.js网站的 MVC 框架。
+Node.js 包含核心运行时中最小的一个功能集。开发人员在开发 Node.js 应用程序时经常会使用第三方模块来提供额外功能。在本教程中，你将使用 [Express][] 模块新建一个应用程序，该模块可提供用于创建 Node.js Web 应用程序的 MVC 框架。
 
 以下是已完成应用程序的屏幕快照：
 
@@ -35,11 +35,11 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 	[AZURE.INCLUDE [install-dev-tools](../includes/install-dev-tools.md)]
 
-2. 将目录切换到 **c:\node** 目录，然后输入下列命令以新建一个名为 **expressapp** 的解决方案和名为 **WebRole1** 的 Web 角色：
+2. 将目录切换到 **c:\\node** 目录，然后输入下列命令以新建一个名为 **expressapp** 的解决方案和名为 **WebRole1** 的 Web 角色：
 
 		PS C:\node> New-AzureServiceProject expressapp
 		PS C:\Node\expressapp> Add-AzureNodeWebRole
-		PS C:\Node\expressapp> Set-AzureServiceProjectRole WebRole1 node 0.10.21
+		PS C:\Node\expressapp> Set-AzureServiceProjectRole WebRole1 Node 0.10.21
 
 	> [AZURE.NOTE]默认情况下，**Add-azurenodewebrole** 使用旧版 Node.js。上述 **Set-azureserviceprojectrole** 语句将指示 Azure 使用 v0.10.21 版本的节点。请注意，这些参数区分大小写。通过检查 **WebRole1\\package.json** 中的 **engines** 属性可以验证是否已选择正确的 Node.js 版本。
 
@@ -49,7 +49,7 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 		PS C:\node\expressapp> npm install express-generator -g
 
-	npm 命令的输出应与以下结果类似。 
+	npm 命令的输出应与以下结果类似。
 
 	![Windows PowerShell 显示 npm install express 命令的输出。](./media/cloud-services-nodejs-develop-deploy-express-app/express-g.png)
 
@@ -84,7 +84,7 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 	之所以需要进行此更改，是因为我们已将文件（以前的 **bin/www**）移到了所需应用程序文件所在的同一个目录。完成此更改后，请保存 **server.js** 文件。
 
-6.  使用以下命令以在 Windows Azure 仿真程序中运行应用程序：
+6.  使用以下命令以在 Azure 模拟器中运行应用程序：
 
         PS C:\node\expressapp\WebRole1> Start-AzureEmulator -launch
 
@@ -118,7 +118,7 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 在 Azure PowerShell 窗口中，可使用 **Publish-AzureServiceProject** cmdlet 将应用程序部署到云服务
 
-    PS C:\node\expressapp\WebRole1> Publish-AzureServiceProject -ServiceName myexpressapp -Location "East US" -Launch
+    PS C:\node\expressapp\WebRole1> Publish-AzureServiceProject -ServiceName myexpressapp -Location "China East" -Launch
 
 在部署操作完成后，浏览器将打开并显示该网页。
 
@@ -126,10 +126,12 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 ## 后续步骤
 
-有关详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
+有关详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs)。
 
-  [Node.js网站lication]: /develop/nodejs/
+  [Node.js Web Application]: /documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [Express]: http://expressjs.com/
   [http://jade-lang.com]: http://jade-lang.com
 
-<!---HONumber=79-->
+ 
+
+<!---HONumber=Mooncake_0104_2016-->

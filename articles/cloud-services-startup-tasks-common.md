@@ -6,11 +6,10 @@ documentationCenter=""
 authors="Thraka" 
 manager="timlt" 
 editor=""/>
-
 <tags 
-ms.service="cloud-services" 
-ms.date="08/24/2015" 
-wacn.date="10/17/2015"/>
+	ms.service="cloud-services" 
+	ms.date="12/07/2015" 
+	wacn.date="01/15/2016"/>
 
 # 常见的云服务启动任务
 
@@ -198,9 +197,9 @@ Azure 将为你角色中启动的进程创建防火墙规则。例如，当你�
 ```xml
 <system.webServer>
     <security>
-    <!--Unlisted IP addresses are denied access-->
+    <!--Unlisted IP addresses are granted access-->
     <ipSecurity>
-        <!--The following IP addresses are granted access-->
+        <!--The following IP addresses are denied access-->
         <add allowed="false" ipAddress="192.168.100.1" subnetMask="255.255.0.0" />
         <add allowed="false" ipAddress="192.168.100.2" subnetMask="255.255.0.0" />
     </ipSecurity>
@@ -483,18 +482,16 @@ Startup2.cmd：
 
 详细了解[任务](/documentation/articles/cloud-services-startup-tasks)的工作方式。
 
+[创建和部署](/documentation/articles/cloud-services-how-to-create-deploy-portal)云服务包。
 
 
-
-[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package#csdef
-[Task]: https:
-
-msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
+[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package/#csdef
+[Task]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
 [Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime
 [Startup]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Startup
 [Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime
 [Environment]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Environment
-[Variable]: https://msdn.microsoft.com/zh-cn/library/zh-cn/azure/gg557552.aspx#Variable
+[Variable]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Variable
 [RoleInstanceValue]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
 [Endpoints]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Endpoints
@@ -502,4 +499,4 @@ msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
 [LocalResources]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#LocalResources
 [RoleInstanceValue]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#RoleInstanceValue
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0104_2016-->

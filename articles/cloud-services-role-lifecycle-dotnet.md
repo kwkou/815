@@ -1,15 +1,17 @@
 <properties 
-pageTitle="使用 .NET 响应云服务的生命周期事件" 
+pageTitle="处理云服务生命周期事件 | Windows Azure" 
 description="了解如何在 .NET 中使用云服务角色的生命周期方法" 
 services="cloud-services" 
 documentationCenter=".net" 
 authors="Thraka" 
 manager="timlt" 
 editor=""/>
+
 <tags 
 ms.service="cloud-services" 
-ms.date="09/08/2015" 
-wacn.date="10/17/2015"/>
+ms.date="12/07/2015" 
+wacn.date="01/15/2016"
+/>
 
 # 在 .NET 中自定义 Web 角色或辅助角色的生命周期
 
@@ -42,17 +44,16 @@ wacn.date="10/17/2015"/>
 下面的代码示例演示如何重写 **OnStart** 方法。当角色实例启动并设置将日志记录数据传输到存储帐户时，此方法将配置并启动诊断监视器：
 
 ```csharp
+public override bool OnStart()
+{
+    var config = DiagnosticMonitor.GetDefaultInitialConfiguration();
 
-	public override bool OnStart()
-	{
-	    var config = DiagnosticMonitor.GetDefaultInitialConfiguration();
-	
-	    config.DiagnosticInfrastructureLogs.ScheduledTransferLogLevelFilter = LogLevel.Error;
-	    config.DiagnosticInfrastructureLogs.ScheduledTransferPeriod = TimeSpan.FromMinutes(5);
-	
-	    DiagnosticMonitor.Start("DiagnosticsConnectionString", config);
-	
-	    return true;
+    config.DiagnosticInfrastructureLogs.ScheduledTransferLogLevelFilter = LogLevel.Error;
+    config.DiagnosticInfrastructureLogs.ScheduledTransferPeriod = TimeSpan.FromMinutes(5);
+
+    DiagnosticMonitor.Start("DiagnosticsConnectionString", config);
+
+    return true;
 }
 ```
 
@@ -77,4 +78,4 @@ wacn.date="10/17/2015"/>
 ## 后续步骤
 了解如何[创建云服务包](/documentation/articles/cloud-services-model-and-package)。
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0104_2016-->
