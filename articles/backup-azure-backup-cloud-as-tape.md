@@ -8,7 +8,7 @@
    editor=""/>
 <tags
    ms.service="backup"
-   ms.date="09/22/2015"
+   ms.date="12/15/2015"
    wacn.date="01/15/2016"/>
 
 # 使用 Azure 备份来取代磁带基础结构
