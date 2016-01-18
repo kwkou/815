@@ -1,7 +1,7 @@
 <properties linkid="documentation-overview" urlDisplayName="Doc-Overview" pageTitle="文档概览" metaKeywords="Doc-Overview" description="" metaCanonical="" services="" documentationCenter="" title="" authors="" solutions="" manager="Tiffena" editor="Eric Chen" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="12/03/2015"
+    wacn.date="01/18/2016"
     />
 
 #文档中心
@@ -71,6 +71,12 @@
     <td><a href="/documentation/services/notification-hubs/">通知中心</a></td>
     <td><a href="/documentation/services/event-hubs/">事件中心</a></td>
     <td><a href="/documentation/services/automation/">自动化</a></td>
+  </tr>
+<tr>
+    <td><a href="/documentation/services/multi-factor-authentication/">多重身份验证</a></td>
+    <td><a href=""></a></td>
+    <td><a href=""></a></td>
+    <td><a href=""></a></td>
   </tr>
 </table>
 
