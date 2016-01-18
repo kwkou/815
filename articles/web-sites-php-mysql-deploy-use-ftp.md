@@ -10,7 +10,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="10/01/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/18/2016"/>
 
 
 #使用 FTP 在 Azure 网站中创建和部署 PHP-MySQL网站
