@@ -10,7 +10,7 @@
 <tags
    ms.service="azure-resource-manager"
    ms.date="12/04/2015"
-   wacn.date="01/14/2015"/>
+   wacn.date="01/14/2016"/>
 
 # 服务、区域和 API 版本对资源管理器的支持
 

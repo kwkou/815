@@ -10,7 +10,7 @@
 <tags
    ms.service="azure-resource-manager"
    ms.date="12/08/2015"
-   wacn.date="01/14/2015"/>
+   wacn.date="01/14/2016"/>
 
 # 使用 Azure 资源管理器模板部署应用程序
 

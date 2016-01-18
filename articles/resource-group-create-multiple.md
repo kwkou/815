@@ -10,7 +10,7 @@
 <tags
    ms.service="azure-resource-manager"
    ms.date="12/01/2015"
-   wacn.date="01/14/2015"/>
+   wacn.date="01/14/2016"/>
 
 # 在 Azure 资源管理器中创建多个资源实例
 

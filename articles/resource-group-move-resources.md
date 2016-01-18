@@ -10,7 +10,7 @@
 <tags 
 	ms.service="azure-resource-manager" 
 	ms.date="12/18/2015" 
-	wacn.date="01/14/2015"/>
+	wacn.date="01/14/2016"/>
 
 # 将资源移动到新的资源组或订阅中
 

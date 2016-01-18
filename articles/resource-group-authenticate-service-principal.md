@@ -10,7 +10,7 @@
 <tags
    ms.service="azure-resource-manager"
    ms.date="11/18/2015"
-   wacn.date="01/14/2015"/>
+   wacn.date="01/14/2016"/>
 
 # 通过 Azure 资源管理器对服务主体进行身份验证
 

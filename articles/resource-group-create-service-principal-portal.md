@@ -10,7 +10,7 @@
 <tags
    ms.service="azure-resource-manager"
    ms.date="12/17/2015"
-   wacn.date="01/14/2015"/>
+   wacn.date="01/14/2016"/>
 
 # 使用门户创建 Active Directory 应用程序和服务主体
 
