@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="12/05/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="01/18/2016"/>
 
 
 #动态打包 
@@ -58,11 +58,21 @@ Windows Azure 媒体服务可用于向多种客户端技术（例如，iOS、XBO
 
 使用 **Azure 管理门户**、**.NET** 或 **REST API** 上载文件。
 
-[AZURE.INCLUDE [media-services-selector-upload-files](../includes/media-services-selector-upload-files.md)]
+<div class="technical-azure-selector">
+<a href="/documentation/articles/media-services-manage-content">Portal</a>
+<a href="/documentation/articles/media-services-dotnet-upload-files">.NET</a>
+<a href="/documentation/articles/media-services-rest-upload-files">REST API</a>
+</div>
+<!---HONumber=67-->
 
 使用 **Azure 管理门户**、**.NET** 或 **REST API** 通过 **Azure 媒体编码器**进行编码。
  
-[AZURE.INCLUDE [media-services-selector-encode](../includes/media-services-selector-encode.md)]
+<div class="technical-azure-selector">
+<a href="/documentation/articles/media-services-manage-content#encode">Portal</a>
+<a href="/documentation/articles/media-services-dotnet-encode-asset">.NET</a>
+<a href="/documentation/articles/media-services-rest-encode-asset">REST API</a>
+</div>
+<!---HONumber=67-->
 
 
 ###使用 Media Packager 上载现有的自适应比特率集并对其进行验证
@@ -79,11 +89,21 @@ Windows Azure 媒体服务可用于向多种客户端技术（例如，iOS、XBO
 
 使用 **.NET** 或 **REST API** 配置资源传送策略。
 
-[AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy.md)]
+<div class="technical-azure-selector">
+<a href="/documentation/articles/media-services-dotnet-configure-asset-delivery-policy">.NET</a>
+<a href="/documentation/articles/media-services-rest-configure-asset-delivery-policy">REST API</a>
+<a href="https://github.com/southworkscom/azure-sdk-for-media-services-java-samples">Java</a>
+</div>
+<!---HONumber=67-->
 
 使用 **Azure 管理门户**或 **.NET** 发布资源（通过创建定位符）。
 
-[AZURE.INCLUDE [media-services-selector-publish](../includes/media-services-selector-publish.md)]
+<div class="technical-azure-selector">
+<a href="/documentation/articles/media-services-manage-content#publish">Portal</a>
+<a href="/documentation/articles/media-services-deliver-streaming-content">.NET</a>
+<a href="/documentation/articles/media-services-rest-deliver-streaming-content">REST API</a>
+</div>
+<!---HONumber=67-->
 
 
 ##<a id="unsupported_formats"></a>动态打包不支持的格式
