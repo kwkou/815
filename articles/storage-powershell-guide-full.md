@@ -3,13 +3,13 @@
 	description="了解如何使用 Azure 存储的 Azure PowerShell cmdlet 来创建和管理存储帐户；使用 Blob、表、队列和文件；配置和查询存储分析并创建共享访问签名。"
 	services="storage"
 	documentationCenter="na"
-	authors="tamram" 
-	manager="adinah"/>
+	authors="robinsh" 
+	manager="carmonm"/>
 
 <tags
 	ms.service="storage"
-	ms.date="10/26/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="12/07/2015"
+	wacn.date="01/14/2016"/>
 
 # 对 Azure 存储空间使用 Azure PowerShell
 
@@ -19,7 +19,7 @@
 
 Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。它是一种基于任务的命令行 shell 和脚本语言，专门用于系统管理。使用 PowerShell，你可以轻松控制和自动化 Azure 服务与应用程序的管理。例如，这些 cmdlet 可让你执行在 Azure 管理门户中可以执行的任务。
 
-本指南假设你有使用 [Azure 存储空间](/documentation/services/storage)和 [Windows PowerShell](http://technet.microsoft.com/zh-cn/library/bb978526.aspx) 的经验。本指南提供了大量的脚本，用于演示 PowerShell 与 Azure 存储空间的用法。在运行每个脚本之前，你应该根据配置更新脚本变量。
+本指南假设你有使用 [Azure 存储服务](/documentation/services/storage)和 [Windows PowerShell](http://technet.microsoft.com/zh-cn/library/bb978526.aspx) 的经验。本指南提供了大量的脚本，用于演示 PowerShell 与 Azure 存储空间的用法。在运行每个脚本之前，你应该根据配置更新脚本变量。
 
 本指南的第一部分提供 Azure 存储空间和 PowerShell 的概览。有关详细信息和说明，请先了解[对 Azure 存储空间使用 Azure PowerShell 的先决条件](#prerequisites-for-using-azure-powershell-with-azure-storage)。
 
@@ -28,7 +28,7 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 
 本部分说明如何在 5 分钟内通过 PowerShell 访问 Azure 存储空间。
 
-**Azure 新用户：**获取一个 Windows Azure 订阅以及与该订阅关联的 Microsoft 帐户。有关 Azure 购买选项的信息，请参阅[试用](/pricing/1rmb-trial/)、[购买选项](/pricing/purchase-options/)、和[成员优惠](/pricing/member-offers/)（适用于 MSDN、Microsoft 合作伙伴网络和 BizSpark 以及其他 Microsoft 计划的成员）。
+**Azure 新用户：**获取一个 Windows Azure 订阅以及与该订阅关联的 Microsoft 帐户。有关 Azure 购买选项的信息，请参阅[1元试用](/pricing/1rmb-trial/)、[购买选项](/pricing/purchase-options/)、和[成员优惠](/pricing/member-offers/)（适用于 MSDN、Microsoft 合作伙伴网络和 BizSpark 以及其他 Microsoft 计划的成员）。
 
 有关 Windows Azure 订阅的详细信息，请参阅[管理帐户、订阅和管理角色](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx)。
 
@@ -542,9 +542,6 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
     $QueueName = "yourqueuename"
     Remove-AzureStorageQueue –Name $QueueName –Context $Ctx
 
-### 如何管理队列消息
-目前，Azure PowerShell 不直接提供用于管理队列消息的 cmdlet。若要对队列消息执行操作，可以使用[用于 .NET 的 Azure 存储客户端库](http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx)中提供的类。
-
 #### 如何在队列中插入消息
 若要在现有队列中插入一条消息，请先创建 [Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage](http://msdn.microsoft.com/zh-cn/library/azure/jj732474.aspx) 类的新实例。接下来，调用 [AddMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.storage.queue.cloudqueue.addmessage.aspx) 方法。可从字符串（UTF-8 格式）或字节数组创建 CloudQueueMessage。
 
@@ -666,7 +663,7 @@ Azure 环境的部署独立于 Microsoft Azure，其示例包括[面向美国政
 
 <!--若要将 Azure 存储空间与[美国Azure Government](http://azure.microsoft.com/features/gov/) 一起使用，请应定义一个新环境，然后使用此环境创建新的存储上下文：
 
-1. 调用 [Add-AzureEnvironment](http://msdn.microsoft.com/zh-cn/library/azure/dn790364.aspx) cmdlet 为专用数据中心创建新的 Azure 环境。 
+1. 调用 [Add-AzureEnvironment](http://msdn.microsoft.com/zh-cn/library/azure/dn790364.aspx) cmdlet 为专用数据中心创建新的 Azure 环境。
 
     	Add-AzureEnvironment -Name $EnvironmentName -PublishSettingsFileUrl $publishSettingsFileUrl -ServiceEndpoint $serviceEndpoint -ManagementPortalUrl $managementPortalUrl -StorageEndpoint $storageEndpoint -ActiveDirectoryEndpoint $activeDirectoryEndpoint -ResourceManagerEndpoint $resourceManagerEndpoint -GalleryEndpoint $galleryEndpoint -ActiveDirectoryServiceEndpointResourceId $activeDirectoryServiceEndpointResourceId -GraphEndpoint $graphEndpoint -SubscriptionDataFile $subscriptionDataFile
 
@@ -685,7 +682,7 @@ Azure 环境的部署独立于 Microsoft Azure，其示例包括[面向美国政
 - [Azure 存储文档](/documentation/services/storage)
 - [Azure 存储 MSDN 参考](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
 - [Azure 存储空间 PowerShell Cmdlet](http://msdn.microsoft.com/zh-cn/library/azure/dn806401.aspx)
-- [Windows PowerShell 参考](https://msdn.microsoft.com/zh-cn/library/ms714469.aspx)
+- [Windows PowerShell 参考](https://msdn.microsoft.com/zh-cn/library/ms714469.aspx)
 
 [Image1]: ./media/storage-powershell-guide-full/Subscription_currentportal.png
 [Image2]: ./media/storage-powershell-guide-full/Subscription_Previewportal.png

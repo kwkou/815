@@ -1,16 +1,16 @@
 <properties 
 	pageTitle="如何通过 Ruby 使用表存储 | Windows Azure" 
 	description="了解如何使用 Azure 中的 Azure 表存储。相关代码示例是使用 Ruby API 编写的。"
-	services="storage" 
-	documentationCenter="ruby" 
-	authors="tfitzmac" 
-	manager="wpickett" 
+	services="storage"
+	documentationCenter="ruby"
+	authors="tfitzmac"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
 	ms.service="storage" 
-	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="12/16/2015"
+	wacn.date="01/14/2016"/>
 
 
 # 如何通过 Ruby 使用 Azure 表存储
@@ -27,7 +27,7 @@
 
 ## 创建 Ruby 应用程序
 
-有关如何创建 Ruby 应用程序的说明，请参阅[在 Azure 上创建 Ruby 应用程序](/develop/ruby/tutorials/web-app-with-linux-vm/)。
+有关如何创建 Ruby 应用程序的说明，请参阅[在 Azure 中创建 Ruby 应用程序](/documentation/articles/virtual-machines-ruby-rails-web-app-linux)。
 
 ## 配置应用程序以访问存储
 
@@ -54,9 +54,9 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 
 获取这些值：
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn).
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/)。
 
-2. 导航到要使用的存储帐户。
+2. 导航到你的存储帐户。
 
 3. 单击导航窗格底部的“管理密钥”。
 
@@ -77,7 +77,7 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 
 若要添加实体，应首先创建一个定义了你的实体属性的哈希对象。请注意，对于每个实体，您必须指定 **PartitionKey** 和 **RowKey**。这些值是实体的唯一标识符，并且查询它们比查询其他属性快很多。Azure 存储服务使用 **PartitionKey** 自动将表的实体分发到多个存储节点上。具有相同的 **PartitionKey** 的实体存储在同一个节点上。**RowKey** 是实体在其所属分区内的唯一 ID。
 
-	entity = { "content" => "test entity", 
+	entity = { "content" => "test entity",
 	  :PartitionKey => "test-partition-key", :RowKey => "1" }
 	azure_table_service.insert_entity("testtable", entity)
 
@@ -92,7 +92,7 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 
 以下示例演示了使用 **update_entity()** 更新实体：
 
-	entity = { "content" => "test entity with updated content", 
+	entity = { "content" => "test entity with updated content",
 	  :PartitionKey => "test-partition-key", :RowKey => "1" }
 	azure_table_service.update_entity("testtable", entity)
 
@@ -103,7 +103,7 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 有时，有必要成批地同时提交多项操作以确保通过服务器进行原子处理。若要完成此操作，首先要创建一个 **Batch** 对象，然后对 **TableService** 使用 **execute_batch()** 方法。下面的示例演示在一个批次中提交 RowKey 为 2 和 3 的两个实体。请注意，这仅适用于具有相同 PartitionKey 的实体。
 
 	azure_table_service = Azure::TableService.new
-	batch = Azure::Storage::Table::Batch.new("testtable", 
+	batch = Azure::Storage::Table::Batch.new("testtable",
 	  "test-partition-key") do
 	  insert "2", { "content" => "new content 2" }
 	  insert "3", { "content" => "new content 3" }
@@ -114,7 +114,7 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 
 若要查询表中的实体，请使用 **get_entity()** 方法并传递表名称 **PartitionKey** 和 **RowKey**。
 
-	result = azure_table_service.get_entity("testtable", "test-partition-key", 
+	result = azure_table_service.get_entity("testtable", "test-partition-key",
 	  "1")
 
 ## 查询实体集
@@ -124,13 +124,13 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 	query = { :filter => "PartitionKey eq 'test-partition-key'" }
 	result, token = azure_table_service.query_entities("testtable", query)
 
-> [AZURE.NOTE] 如果结果集太大，一个查询无法全部返回，将会返回一个继续标记，你可以使用该标记检索后续页面。
+> [AZURE.NOTE]如果结果集太大，一个查询无法全部返回，将会返回一个继续标记，你可以使用该标记检索后续页面。
 
 ## 查询一部分实体属性
 
 对表的查询可以只检索实体中的少数几个属性。此方法称为“投影”，可减少带宽并提高查询性能，尤其适用于大型实体。请使用 select 子句并传递你希望显示给客户端的属性的名称。
 
-	query = { :filter => "PartitionKey eq 'test-partition-key'", 
+	query = { :filter => "PartitionKey eq 'test-partition-key'",
 	  :select => ["content"] }
 	result, token = azure_table_service.query_entities("testtable", query)
 
@@ -148,9 +148,9 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 
 ## <a id="next-steps"></a>后续步骤
 
-若要了解有关更复杂存储任务的详细信息，请访问下面的链接：
+若要了解有关更复杂存储任务的信息，请访问下面的链接：
 
-* MSDN 参考：[Azure 存储](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
-* [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage)
-* GitHub 上的 [Azure SDK for Ruby](http://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
-<!---HONumber=82-->
+- [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
+- GitHub 上的 [Azure SDK for Ruby](http://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
+
+<!---HONumber=Mooncake_0104_2016-->

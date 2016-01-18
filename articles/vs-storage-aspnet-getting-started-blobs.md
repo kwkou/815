@@ -1,27 +1,18 @@
 <properties
-	pageTitle="开始使用 Azure Blob 存储和 Visual Studio 连接服务"
-	description="如何开始在 Visual Studio 的 ASP.NET 项目中使用 Azure Blob 存储"
+	pageTitle="开始使用 blob 存储和 Visual Studio 连接服务 (ASP.NET) | Windows Azure"
+	description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的 ASP.NET 项目中使用 Azure Blob 存储"
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
-	ms.date="08/04/2015"
-	wacn.date="09/16/2015"/>
+	ms.date="12/16/2015"
+	wacn.date="01/14/2016"/>
 
-# 开始使用 Azure Blob 存储和 Visual Studio 连接服务
-
-> [AZURE.SELECTOR]
-> - [入门](/documentation/articles/vs-storage-aspnet-getting-started-blobs)
-> - [发生了什么情况](/documentation/articles/vs-storage-aspnet-what-happened)
-
-> [AZURE.SELECTOR]
-> - [Blobs](/documentation/articles/vs-storage-aspnet-getting-started-blobs)
-> - [队列](/documentation/articles/vs-storage-aspnet-getting-started-queues)
-> - [表](/documentation/articles/vs-storage-aspnet-getting-started-tables)
+# 开始使用 blob 存储和 Visual Studio 连接服务 (ASP.NET)
 
 ## 概述
 
@@ -38,7 +29,7 @@ Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可
 
 
 
-##使用代码访问 blob 容器
+## 使用代码访问 blob 容器
 
 若要以编程方式访问 ASP.NET 项目中的 Blob，你需要添加以下项（如果尚未存在）。
 
@@ -50,14 +41,14 @@ Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可
 		using Microsoft.WindowsAzure.Storage.Blob;
 
 
-2. 获取表示存储帐户信息的 `CloudStorageAccount` 对象。使用下面的代码获取存储连接字符串和 Azure 服务配置中的存储帐户信息。
+2. 获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用下面的代码获取存储连接字符串和 Azure 服务配置中的存储帐户信息。
 
 		CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
 		   CloudConfigurationManager.GetSetting("<storage-account-name>_AzureStorageConnectionString"));
 
     > [AZURE.NOTE]在接下来的部分中，将在代码的前面使用先前的全部代码。
 
-3. 获取 `CloudBlobClient` 对象，以引用存储帐户中的现有容器。
+3. 获取 **CloudBlobClient** 对象，以引用存储帐户中的现有容器。
 
 		// Create a blob client.
 		CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
@@ -70,7 +61,7 @@ Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可
 
 ## 使用代码创建 blob 容器
 
-还可以使用 `CloudBlobClient` 对象在存储帐户中创建容器。你所需做的只是在上面的代码中添加对 `CreateIfNotExistsAsync` 的调用，如下面的示例所示。
+你还可以使用 **CloudBlobClient** 对象在存储帐户中创建容器。你所需做的只是在上面的代码中添加对 **CreateIfNotExistsAsync** 的调用，如下面的示例所示。
 
     // If “mycontainer” doesn’t exist, create it.
     await container.CreateIfNotExistsAsync();
@@ -79,7 +70,7 @@ Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可
 
 Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用块 Blob。
 
-若要将文件上载到块 Blob，请获取容器引用，并使用它获取块 Blob 引用。获取 Blob 引用后，可以通过调用 `UploadFromStream` 方法，将任何数据流上载到该 Blob。如果之前不存在 Blob，此操作将创建一个；如果存在 Blob，此操作将覆盖它。下面的示例演示了如何将 Blob 上载到容器中，并假定已创建容器。
+若要将文件上载到块 Blob，请获取容器引用，并使用它获取块 Blob 引用。获取 Blob 引用后，可以通过调用 **UploadFromStream** 方法，将任何数据流上载到该 Blob。如果之前不存在 Blob，此操作将创建一个；如果存在 Blob，此操作将覆盖它。下面的示例演示了如何将 Blob 上载到容器中，并假定已创建容器。
 
     // Get a CloudBlobContainer named 'container' as described in "Access blob containers in code."
 
@@ -91,7 +82,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 
 ## 列出容器中的 Blob
 
-若要列出容器中的 Blob，可以使用 `ListBlobs` 方法检索其中的 Blob 和/或目录。若要访问返回的 `IListBlobItem` 的丰富属性和方法集，必须将它强制转换为 `CloudBlockBlob`、`CloudPageBlob` 或 `CloudBlobDirectory` 对象。如果类型未知，您可以使用类型检查来确定要将其转换为哪种类型。以下代码演示了如何检索和输出 `photos` 容器中每项的 URI。
+若要列出容器中的 Blob，可以使用 **ListBlobs** 方法检索其中的 Blob 和/或目录。若要访问返回的 **IListBlobItem** 的丰富属性和方法，您必须将它转换到 **CloudBlockBlob**、**CloudPageBlob** 或 **CloudBlobDirectory** 对象。如果类型未知，你可以使用类型检查来确定要将其转换为哪种类型。以下代码演示了如何检索和输出 **photos** 容器中每项的 URI。
 
     // Get a CloudBlobContainer named 'container' as described in "Access blob containers in code."
 
@@ -120,7 +111,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 		}
 	}
 
-如上例所示，还可将 Blob 服务视为容器中的目录。这是为了让您能够以更类似于文件夹的结构来组织 Blob。例如，考虑名为 `photos` 的容器中包含的下面一组块 Blob。
+如上例所示，还可将 Blob 服务视为容器中的目录。这是为了让您能够以更类似于文件夹的结构来组织 Blob。例如，考虑名为 **photos** 的容器中包含的下面一组块 Blob。
 
 	photo1.jpg
 	2010/architecture/description.txt
@@ -131,14 +122,14 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 	2011/architecture/description.txt
 	2011/photo7.jpg
 
-当你对“photos”容器调用 `ListBlobs` 时（如上一示例所示），返回的集合将包含 `CloudBlobDirectory` 和 `CloudBlockBlob` 对象，分别表示最高层中所含的目录和 Blob。以下示例显示生成的输出。
+当你对“photos”容器调用 **ListBlobs** 时（如前面的示例所示），返回的集合将包含 **CloudBlobDirectory** 和 **CloudBlockBlob** 对象，分别表示最高层中所含的目录和 Blob。以下示例显示生成的输出。
 
 	Directory: https://<accountname>.blob.core.chinacloudapi.cn/photos/2010/
 	Directory: https://<accountname>.blob.core.chinacloudapi.cn/photos/2011/
 	Block blob of length 505623: https://<accountname>.blob.core.chinacloudapi.cn/photos/photo1.jpg
 
 
-或者，也可以将 `ListBlobs` 方法的 `UseFlatBlobListing` 参数设置为 `true`。这将导致每个 Blob 作为 `CloudBlockBlob` 返回，而无论目录如何。以下示例显示对 `ListBlobs` 的调用。
+另外，也可以将 **ListBlobs** 方法的 **UseFlatBlobListing** 参数设置为 **true**。这将导致每个 Blob 将作为 **CloudBlockBlob** 返回，而无论目录如何。以下示例显示对 **ListBlobs** 的调用。
 
     // Loop over items within the container and output the length and URI.
 	foreach (IListBlobItem item in container.ListBlobs(null, true))
@@ -161,7 +152,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 
 ## 下载 Blob
 
-若要下载 Blob，请使用 `DownloadToStream` 方法。以下示例使用 `DownloadToStream` 方法将 Blob 内容传输到一个流对象，然后你可以将该流对象保存到本地文件。
+若要下载 blob，请使用 **DownloadToStream** 方法。以下示例使用 **DownloadToStream** 方法将 Blob 内容传输到一个流对象，然后您可以将该对象保存到本地文件。
 
     // Get a CloudBlobContainer named 'container' as described in "Access blob containers in code"
 
@@ -174,7 +165,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
         blockBlob.DownloadToStream(fileStream);
     }
 
-也可以使用 `DownloadToStream` 方法以文本字符串形式下载 Blob 的内容。
+也可以使用 **DownloadToStream** 方法以文本字符串形式下载 Blob 的内容。
 
     // Get a CloudBlobContainer named 'container' as described in "Access blob containers in code"
 
@@ -190,7 +181,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 
 ## 删除 Blob
 
-若要删除 Blob，请使用 `Delete` 方法。
+若要删除 Blob，请使用 **Delete** 方法。
 
     // Get a CloudBlobContainer named 'container' as described in "Access blob containers in code"
 
@@ -205,9 +196,9 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 
 如果要列出大量 Blob，或需要控制一个列表操作中返回的结果数，则可以结果页的方式列出 Blob。以下示例显示如何以页面形式异步返回结果，这样就不会在等待返回大型结果集时阻止操作的执行。
 
-此示例演示平面 Blob 列表，但你也可以执行分层列表，只需将 `ListBlobsSegmentedAsync` 方法的 `useFlatBlobListing` 参数设置为 `false` 即可。
+此示例演示平面 Blob 列表，但你也可以执行分层列表，只需将 **ListBlobsSegmentedAsync** 方法的 **useFlatBlobListing** 参数设置为 **false** 即可。
 
-由于示例方法调用异步方法，因此它必须以 `async` 关键字开头，且必须返回 `Task` 对象。为 `ListBlobsSegmentedAsync` 方法指定的 await 关键字将挂起示例方法的执行，直至列表任务完成。
+由于示例方法调用异步方法，因此必须以 **async** 关键字开头，且必须返回 **Task** 对象。为 **ListBlobsSegmentedAsync** 方法指定的 await 关键字将挂起示例方法的执行，直至列表任务完成。
 
     async public static Task ListBlobsSegmentedInFlatListing(CloudBlobContainer container)
     {
@@ -242,4 +233,4 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_0104_2016-->

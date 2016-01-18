@@ -3,14 +3,14 @@
 	description="了解如何通过 Python 使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。" 
 	services="storage" 
 	documentationCenter="python" 
-	authors="huguesv" 
+	authors="emgerner-msft" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags 
 	ms.service="storage" 
-	ms.date="08/25/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="12/11/2015" 
+	wacn.date="01/14/2016"/>
 
 # 如何通过 Python 使用队列存储
 
@@ -18,14 +18,14 @@
 
 ## 概述
 
-本指南演示如何使用 Azure 队列存储服务执行常见方案。相关示例是使用 Python 编写的，并使用 [Python Azure 存储包][]。介绍的方案包括“插入”、“查看”、“获取”和“删除”队列消息以及“创建和删除队列”。有关队列的详细信息，请参阅 [后续步骤](#Next-Steps) 部分。
+本指南演示如何使用 Azure 队列存储服务执行常见方案。相关示例是使用 Python 编写的，并使用 [Python Azure 存储服务包][]。介绍的方案包括“插入”、“查看”、“获取”和“删除”队列消息以及“创建和删除队列”。有关队列的详细信息，请参阅 [后续步骤](#Next-Steps) 部分。
 
 [AZURE.INCLUDE [storage-queue-concepts-include](../includes/storage-queue-concepts-include.md)]
 
 [AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 
-> [AZURE.NOTE] 如果您需要安装 Python 或 [Python Azure 包][]，请参阅 [Python 安装指南](/documentation/articles/python-how-to-install)。
+> [AZURE.NOTE]如果您需要安装 Python 或 [Python Azure 包][]，请参阅 [Python 安装指南](/documentation/articles/python-how-to-install)。
 
 ## 如何：创建队列
 
@@ -100,14 +100,13 @@
 
 现在，您已了解有关队列存储的基础知识，请按照下面的链接了解更复杂的存储任务。
 
--   请参阅 MSDN 参考：[在 Azure 中存储和访问数据][]
 -   访问 [Azure 存储空间团队博客][]
 
 有关详细信息，另请参阅 [Python 开发人员中心](/develop/python/)。
-[在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+
 [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Python Azure 包]: https://pypi.python.org/pypi/azure
 [Python Azure 存储空间包]: https://pypi.python.org/pypi/azure-storage
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->
