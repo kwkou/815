@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="11/09/2015"
-	wacn.date="12/31/2015"/>
+	wacn.date="01/18/2016"/>
 
 
 # 使用 Azure 管理门户管理 Azure 媒体服务的内容
@@ -32,7 +32,12 @@
 ##<a id="upload"></a>如何：上载内容 
 
 
-[AZURE.INCLUDE [media-services-selector-upload-files](../includes/media-services-selector-upload-files.md)]
+<div class="technical-azure-selector">
+<a href="/documentation/articles/media-services-manage-content">Portal</a>
+<a href="/documentation/articles/media-services-dotnet-upload-files">.NET</a>
+<a href="/documentation/articles/media-services-rest-upload-files">REST API</a>
+</div>
+<!---HONumber=67-->
 
 
 1. 在[管理门户](http://manage.windowsazure.cn)中，单击“媒体服务”，然后单击媒体服务帐户名。
@@ -55,10 +60,10 @@
 
 ##<a id="index"></a>如何：为内容编制索引
 
-> [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-index-content)
-- [门户](/documentation/articles/media-services-manage-content#index)
-
+<div class="technical-azure-selector">
+<a href="/documentation/articles/media-services-index-content">.NET</a>
+<a href="/documentation/articles/media-services-manage-content#index">门户</a>
+</div>
 使用 Azure 媒体索引器，可以使媒体文件内容可供搜索，并为隐藏的字幕和关键字生成全文本脚本。你可以根据下面所示的步骤，使用管理门户为内容编制索引。但是，如果你想要以更大的力度控制文件和索引作业的完成方式，可以使用 Media Services SDK for .NET 或 REST API。有关详细信息，请参阅[使用 Azure 媒体索引器为媒体文件编制索引](/documentation/articles/media-services-index-content)。
 
 下面的步骤演示如何使用管理门户为内容编制索引。
@@ -72,11 +77,11 @@
 
 ##<a id="encode"></a>如何：对内容进行编码
 
-> [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-dotnet-encode-asset)
-- [REST](/documentation/articles/media-services-rest-encode-asset)
-- [门户](/documentation/articles/media-services-manage-content#encode)
-
+<div class="technical-azure-selector">
+<a href="/documentation/articles/media-services-dotnet-encode-asset">.NET</a>
+<a href="/documentation/articles/media-services-rest-encode-asset">REST</a>
+<a href="/documentation/articles/media-services-manage-content#encode">门户</a>
+</div>
 要通过 Internet 传送数字视频，你必须对媒体进行压缩。媒体服务提供了一个媒体编码器，可让你指定如何为内容编码（例如，要使用的编解码器、文件格式、分辨率和比特率。）
 
 使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
@@ -146,11 +151,11 @@
 
 ##<a id="publish"></a>如何：发布内容
 
-> [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-deliver-streaming-content)
-- [REST](/documentation/articles/media-services-rest-deliver-streaming-content)
-- [门户](/documentation/articles/media-services-manage-content#publish)
-
+<div class="technical-azure-selector">
+<a href="/documentation/articles/media-services-deliver-streaming-content">.NET</a>
+<a href="/documentation/articles/media-services-rest-deliver-streaming-content">REST</a>
+<a href="/documentation/articles/media-services-manage-content#publish">门户</a>
+</div>
 ###概述
 
 若要为用户提供一个可用来流式传输内容或下载内容的 URL，你首先需要通过创建定位符来“发布”资产。定位符提供对资产中所含文件的访问权限。媒体服务支持两种类型的定位符：用于流媒体（例如 MPEG DASH、HLS 或平滑流式处理）的 OnDemandOrigin 定位符，以及用于下载媒体文件的访问签名 (SAS) 定位符。
