@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="backup"
-	ms.date="10/01/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="11/26/2015"
+	wacn.date="01/15/2016"/>
 
 
 # 使用 PowerShell 部署和管理 Data Protection Manager (DPM) 服务器的 Azure 备份
@@ -58,10 +58,10 @@ PS C:\> Switch-AzureMode AzureResourceManager
 
 ```
 PS C:\> New-AzureResourceGroup –Name “test-rg” –Region “China North”
-PS C:\> $backupvault = New-AzureBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “China North” –Storage GRS
+PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “China North” –Storage GRS
 ```
 
-可以使用 **Get-AzureBackupVault** cmdlet 获取给定订阅中所有备份保管库的列表。
+可以使用 **Get-AzureRMBackupVault** cmdlet 获取给定订阅中所有备份保管库的列表。
 
 
 ### 在 DPM 服务器上安装 Azure 备份代理
@@ -111,7 +111,7 @@ PS C:\> MARSAgentInstaller.exe /?
 
 ```
 PS C:\> $credspath = "C:"
-PS C:\> $credsfilename = Get-AzureBackupVaultCredentials -Vault $backupvault -TargetLocation $credspath
+PS C:\> $credsfilename = Get-AzureRMBackupVaultCredentials -Vault $backupvault -TargetLocation $credspath
 PS C:\> $credsfilename
 f5303a0b-fae4-4cdb-b44d-0e4c032dde26_backuprg_backuprn_2015-08-11--06-22-35.VaultCredentials
 ```

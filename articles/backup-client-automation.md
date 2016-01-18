@@ -43,15 +43,15 @@ PS C:\> Switch-AzureMode AzureResourceManager
 可以使用 **New-AzureRMBackupVault** cmdlet 创建新的备份保管库。备份保管库是一种 ARM 资源，因此需要将它放置在资源组中。在权限提升的 Azure PowerShell 控制台中运行以下命令：
 
 ```
-PS C:\> New-AzureResourceGroup –Name “test-rg” –Region “China North”
-PS C:\> $backupvault = New-AzureBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “China North” –Storage GRS
+PS C:\> New-AzureResourceGroup –Name “test-rg” -Region “China North”
+PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “China North” –Storage GeoRedundant
 ```
 
-可以使用 **Get-AzureBackupVault** cmdlet 获取给定订阅中所有备份保管库的列表。
+可以使用 **Get-AzureRMBackupVault** cmdlet 获取给定订阅中所有备份保管库的列表。
 
 
 ### 安装 Azure 备份代理
-在安装 Azure 备份代理之前，必须先将安装程序下载到 Windows Server 上。将安装程序保存到方便访问的位置，例如 *C:\Downloads*。
+在安装 Azure 备份代理之前，必须先将安装程序下载到 Windows Server 上。将安装程序保存到方便访问的位置，例如 *C:\Downloads\*。
 
 若要安装代理，请在已提升权限的 Azure PowerShell 控制台中运行以下命令：
 
@@ -90,16 +90,16 @@ PS C:\> MARSAgentInstaller.exe /?
 
 
 ### 注册到 Azure 备份服务
-在可注册 Azure 备份服务之前，需要确保符合[先决条件](/documentation/articles/backup-try-azure-backup-in-10-mins)。你必须：
+在可注册 Azure 备份服务之前，需要确保符合[先决条件](/documentation/articles/backup-configure-vault)。你必须：
 
 - 具备有效的 Azure 订阅
 - 有一个备份保管库
 
-若要下载保管库凭据，请在 Azure PowerShell 控制台中运行 **Get-AzureBackupVaultCredentials**，并将其存储在方便的位置，例如 *C:\Downloads*。
+若要下载保管库凭据，请在 Azure PowerShell 控制台中运行 **Get-AzureRMBackupVaultCredentials**，并将其存储在方便的位置，例如 *C:\Downloads*。
 
 ```
-PS C:\> $credspath = "C:"
-PS C:\> $credsfilename = Get-AzureBackupVaultCredentials -Vault $backupvault -TargetLocation $credspath
+PS C:\> $credspath = "C:\"
+PS C:\> $credsfilename = Get-AzureRMBackupVaultCredentials -Vault $backupvault -TargetLocation $credspath
 PS C:\> $credsfilename
 f5303a0b-fae4-4cdb-b44d-0e4c032dde26_backuprg_backuprn_2015-08-11--06-22-35.VaultCredentials
 ```
@@ -223,7 +223,7 @@ PolicyState     : Valid
 在以下示例中，我们要备份卷 C: 和 D:，并排除 Windows 文件夹和任何临时文件夹中的操作系统二进制文件。为此，我们将使用 [New-OBFileSpec](https://technet.microsoft.com/zh-cn/library/hh770408) cmdlet 创建两个文件规范 - 一个用于包含，一个用于排除。创建文件规范后，使用 [Add-OBFileSpec](https://technet.microsoft.com/zh-cn/library/hh770424) cmdlet 将它们与策略相关联。
 
 ```
-PS C:\> $inclusions = New-OBFileSpec -FileSpec @("C:", "D:")
+PS C:\> $inclusions = New-OBFileSpec -FileSpec @("C:\", "D:\")
 
 PS C:\> $exclusions = New-OBFileSpec -FileSpec @("C:\windows", "C:\temp") -Exclude
 
@@ -595,7 +595,7 @@ PS C:\> Invoke-Command -Session $s -Script { param($d, $a) Start-Process -FilePa
 ## 后续步骤
 有关适用于 Windows Server/客户端的 Azure 备份的详细信息，请参阅
 
-- [Azure 备份简介](/documentation/articles/backup-introduction-to-azure-backup)
+- [Azure 备份简介](/documentation/articles/backup-configure-vault)
 - [备份 Windows Server](/documentation/articles/backup-azure-backup-windows-server)
 
 <!---HONumber=67-->
