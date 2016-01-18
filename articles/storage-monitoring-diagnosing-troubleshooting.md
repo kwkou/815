@@ -897,7 +897,7 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 [功能“X”在存储模拟器中无法正常工作]: #feature-X-is-not-working
 [使用存储模拟器时出现错误“其中一个 HTTP 标头的值的格式不正确”]: #error-HTTP-header-not-correct-format
 [运行存储模拟器需要管理权限]: #storage-emulator-requires-administrative-privileges
-[安装 Azure SDK for .NET 时遇到问题]: #you-are-encountering-problems-installing-the-Windows-Azure-SDK
+[安装 Windows Azure SDK for.NET 时遇到问题]: #you-are-encountering-problems-installing-the-Windows-Azure-SDK
 [你遇到了其他存储服务问题]: #you-have-a-different-issue-with-a-storage-service
 
 [附录]: #appendices
