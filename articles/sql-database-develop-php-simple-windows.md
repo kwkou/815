@@ -1,5 +1,5 @@
-﻿<properties
-	pageTitle="使用 Windows 上的 PHP 连接到 SQL 数据库 | Windows Azure"
+<properties
+	pageTitle="在 Windows上使用 PHP 连接到 SQL 数据库"
 	description="演示一个示例 PHP 程序，该程序可以从 Windows 客户端连接到 Azure SQL 数据库，并与客户端所需的软件组件建立链接。"
 	services="sql-database"
 	documentationCenter=""
@@ -10,14 +10,20 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="11/03/2015"
-	wacn.date="12/22/2015"/>
+	ms.date="12/17/2015"
+	wacn.date="01/15/2016"/>
 
 
 # 在 Windows上使用 PHP 连接到 SQL 数据库
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+> [AZURE.SELECTOR]
+- [C#](/documentation/articles/sql-database-develop-dotnet-simple)
+- [PHP](/documentation/articles/sql-database-develop-php-simple-windows)
+- [Python](/documentation/articles/sql-database-develop-python-simple-windows)
+- [Ruby](/documentation/articles/sql-database-develop-ruby-simple-windows)
+- [Java](/documentation/articles/sql-database-develop-java-simple-windows)
+- [Node.js](/documentation/articles/sql-database-develop-nodejs-simple-windows)
 
 
 本主题演示了如何从 Windows 运行的、以 PHP 编写的客户端应用程序连接到 Azure SQL 数据库。
@@ -25,14 +31,17 @@
 
 [AZURE.INCLUDE [sql-database-develop-includes-prerequisites-php-windows](../includes/sql-database-develop-includes-prerequisites-php-windows.md)]
 
+### SQL 数据库
 
-## 创建数据库并检索连接字符串
-
-
-请参阅[入门主题](/documentation/articles/sql-database-get-started)，以了解如何创建示例数据库和检索连接字符串。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。
+请参阅[入门页](/documentation/articles/sql-database-get-started)，以了解如何创建示例数据库。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。
 
 
-## 连接到 SQL 数据库
+## 步骤 1：获取连接详细信息
+
+[AZURE.INCLUDE [sql-database-include-connection-string-details-20-portalshots](../includes/sql-database-include-connection-string-details-20-portalshots.md)]
+
+
+## 步骤 2：连接
 
 
 此 **OpenConnection** 函数将在其后面的所有函数的靠近顶部位置调用。
@@ -56,7 +65,7 @@
 	}
 
 
-## 执行查询并检索结果集
+## 步骤 3：执行查询
 
 [sqlsrv\_query()](http://php.net/manual/zh/function.sqlsrv-query.php) 函数可用于针对 SQL 数据库从查询中检索结果集。此函数实际上可接受任何查询和连接对象，并返回可使用 [sqlsrv\_fetch\_array()](http://php.net/manual/zh/function.sqlsrv-fetch-array.php) 循环访问的结果集。
 
@@ -84,12 +93,11 @@
 			echo("Error!");
 		}
 	}
-	
-
-## 插入一行，传递参数，然后检索生成的主键
 
 
-在 SQL 数据库中，可以使用 [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) 属性和 [SEQUENCE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) 对象自动生成[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。
+## 步骤 4：插入行
+
+在本示例中，你将了解如何安全地执行 [INSERT](https://msdn.microsoft.com/zh-cn/library/ms174335.aspx) 语句，传递参数以保护应用程序免遭 [SQL 注入](https://technet.microsoft.com/zh-cn/library/ms161953(v=sql.105).aspx) 漏洞的危害，然后检索自动生成的[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。
 
 
 	function InsertData()
@@ -103,7 +111,7 @@
 			$insertReview = sqlsrv_query($conn, $tsql);
 			if($insertReview == FALSE)
 				die(FormatErrors( sqlsrv_errors()));
-			echo "Product Key inserted is :";	
+			echo "Product Key inserted is :";
 			while($row = sqlsrv_fetch_array($insertReview, SQLSRV_FETCH_ASSOC))
 			{   
 				echo($row['ProductID']);
@@ -117,7 +125,7 @@
 		}
 	}
 
-## 事务
+## 步骤 5：回退事务
 
 
 此代码示例演示了你可以在其中执行以下操作的事务的用法：
@@ -138,14 +146,14 @@
 			if (sqlsrv_begin_transaction($conn) == FALSE)
 				die(FormatErrors(sqlsrv_errors()));
 
-			$tsql1 = "INSERT INTO SalesLT.SalesOrderDetail (SalesOrderID,OrderQty,ProductID,UnitPrice) 
+			$tsql1 = "INSERT INTO SalesLT.SalesOrderDetail (SalesOrderID,OrderQty,ProductID,UnitPrice)
 			VALUES (71774, 22, 709, 33)";
 			$stmt1 = sqlsrv_query($conn, $tsql1);
-			
+
 			/* Set up and execute the second query. */
 			$tsql2 = "UPDATE SalesLT.SalesOrderDetail SET OrderQty = (OrderQty + 1) WHERE ProductID = 709";
 			$stmt2 = sqlsrv_query( $conn, $tsql2);
-			
+
 			/* If both queries were successful, commit the transaction. */
 			/* Otherwise, rollback the transaction. */
 			if($stmt1 && $stmt2)
@@ -169,11 +177,9 @@
 	}
 
 
-## 延伸阅读
+## 后续步骤
 
 
-有关 PHP 安装和用法的详细信息，请参阅[使用 PHP 访问 SQL Server 数据库](https://technet.microsoft.com/zh-CN/library/cc793139.aspx)。
+有关 PHP 安装和用法的详细信息，请参阅[使用 PHP 访问 SQL Server 数据库](http://technet.microsoft.com/zh-cn/library/cc793139.aspx)。
 
- 
-
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->
