@@ -145,10 +145,10 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
 为了降低设置外部数据源的要求，以下 Spout 只会发出随机句子。它是 <a href="https://github.com/apache/storm/blob/master/examples/storm-starter/" target="_blank">Storm-Starter 示例</a>随附的 Spout 的修改版本。
 
 > [AZURE.NOTE]有关从外部数据源读取的 Spout 的示例，请参阅以下示例之一：
->
-> * <a href="https://github.com/apache/storm/blob/master/examples/storm-starter/src/jvm/org/apache/storm/starter/spout/TwitterSampleSpout.java" target="_blank">TwitterSampleSpout</a>：从Twitter 读取数据的示例 Spout
->
-> * <a href="https://github.com/apache/storm/tree/master/external/storm-kafka" target="_blank">Storm-Kafka</a>：从 Kafka 读取数据的 Spout
+> <ul>
+> <li> <a href="https://github.com/apache/storm/blob/master/examples/storm-starter/src/jvm/org/apache/storm/starter/spout/TwitterSampleSpout.java" target="_blank">TwitterSampleSpout</a>：从Twitter 读取数据的示例 Spout</li>
+> <li><a href="https://github.com/apache/storm/tree/master/external/storm-kafka" target="_blank">Storm-Kafka</a>：从 Kafka 读取数据的 Spout</li>
+> </ul>
 
 对于 Spout，在 **src\\main\\java\\com\\microsoft\\example** 目录中创建名为 **RandomSentenceSpout.java** 的新文件，并使用以下内容做为内容：
 
