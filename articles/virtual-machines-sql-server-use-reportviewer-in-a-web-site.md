@@ -10,7 +10,7 @@
 <tags 
 	ms.service="virtual-machines"
 	ms.date="12/11/2015"
-	wacn.date="01/14/2015" />
+	wacn.date="01/14/2016" />
 
 # 在 Azure 中托管的网站中使用 ReportViewer
 

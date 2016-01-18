@@ -11,7 +11,7 @@
 <tags 
 	ms.service="virtual-machines" 
 	ms.date="12/14/2015" 
-	wacn.date="01/14/2015" />
+	wacn.date="01/14/2016" />
 
 <!--The next line, with one pound sign at the beginning, is the page title-->
 # Azure 中的虚拟机和容器

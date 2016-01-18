@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="11/12/2015"
-	wacn.date="01/14/2015" />
+	wacn.date="01/14/2016" />
 
 # Azure 虚拟机中 SQL Server 的自动备份
 

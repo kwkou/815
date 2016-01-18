@@ -10,7 +10,7 @@
 <tags 
 	ms.service="virtual-machines"
 	ms.date="12/04/2015"
-	wacn.date="01/14/2015" />
+	wacn.date="01/14/2016" />
 
 # Azure 虚拟机中的 SQL Server 的安全注意事项
 

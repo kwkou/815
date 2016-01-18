@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/27/2015"
-	wacn.date="01/14/2015"/>
+	wacn.date="01/14/2016"/>
 
 # 对于基于 Linux 的 Azure 虚拟机的 Secure Shell (SSH) 连接进行故障排除
 
