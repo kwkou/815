@@ -15,6 +15,14 @@
 
 #创建 PHP-MySQL Azure 网站并使用 Git 进行部署
 
+> [AZURE.SELECTOR]
+- [.Net](/documentation/articles/web-sites-dotnet-get-started)
+- [Node.js](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
+- [Java](/documentation/articles/web-sites-java-get-started)
+- [PHP - Git](/documentation/articles/web-sites-php-mysql-deploy-use-git)
+- [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
+- [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
+
 本教程演示如何创建 PHP-MySQL Azure 网站以及如何使用 Git 部署该网站。你将使用计算机上已安装的 [PHP][install-php]、MySQL 命令行工具（[MySQL][install-mysql] 的一部分）、Web 服务器和 [Git][install-git]。本教程中的说明适用于任何操作系统，包括 Windows、Mac 和 Linux。完成本指南之后，您将拥有一个在 Azure 中运行的 PHP/MySQL 网站。
  
 你将学习以下内容：
@@ -48,13 +56,13 @@
 
 	![自定义创建新的网站][custom-create]
 	
-	在“URL”中输入值，从“数据库”下拉列表中选择“新建 MySQL 数据库”，然后在“区域”下拉列表中选择网站的数据中心。单击对话框底部的箭头。
+	在“URL”中输入值，从“数据库”下拉列表中选择“无数据库”，然后在“区域”下拉列表中选择网站的数据中心。点击确定新建网站
 
 	![填写网站详细信息][Website-details]
 
-4. 为数据库的“名称”输入一个值，在“区域”下拉列表中为数据库选择数据中心，并选中表明你同意法律条款的框。单击对话框底部的复选标记。
+4. 继续单机“新建” --> “数据服务” --> “MYSQL DATABASE ON AZURE” --> “快速创建”，为你的网站创建一个 MYSQL 数据库。
 
-	![新建新的 MySQL 数据库][new-mysql-db]
+	![数据库][new-mysql-db]
 
 	创建网站后，你将看到文本“创建网站 ‘[SITENAME]’ 成功完成”。现在，您可以启用 Git 发布。
 
@@ -81,11 +89,15 @@
 
 若要连接到正在 Azure 网站中运行的 MySQL 数据库，你将需要连接信息。若要获取 MySQL 连接信息，请按照以下步骤操作：
 
-1. 从网站的仪表板中，单击页面右侧的“查看连接字符串”链接：
+1. 点击打开你的 MYSQL 服务器，进入“仪表板”页面，在“速览”下可以查看你的服务器地址以及端口。
 
 	![获取数据库连接信息][connection-string-info]
 	
-2. 记下 `Database`、`Data Source`、`User Id` 和 `Password` 的值。
+2. 在“账户”页面可以查看各个账户名，也可以重置其密码。
+
+3. 在“数据库”页面可以查看这个服务器下的数据库。
+
+	于是 Data Source 为 tcp:<your MYSQL server name\>.database.chinacloudapi.cn,<port\>
 
 ##在本地生成并测试应用
 
