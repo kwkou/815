@@ -50,7 +50,7 @@
 
 	![填写网站详细信息][Website-details]
 
-4. 继续单机“新建” --> “数据服务” --> “MYSQL DATABASE ON AZURE” --> “快速创建”，为你的网站创建一个 MYSQL 数据库。
+4. 继续单击“新建” --> “数据服务” --> “MYSQL DATABASE ON AZURE” --> “快速创建”，为你的网站创建一个 MYSQL 数据库。
 
 	![数据库][new-mysql-db]
 
