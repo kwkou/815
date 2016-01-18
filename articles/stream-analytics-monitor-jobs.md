@@ -11,7 +11,7 @@
 <tags 
 	ms.service="stream-analytics" 
 	ms.date="12/04/2015" 
-	wacn.date="01/14/2015"/>
+	wacn.date="01/14/2016"/>
 
 
 # 以编程方式创建流分析作业监视器

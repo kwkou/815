@@ -11,7 +11,7 @@
 <tags 
 	ms.service="stream-analytics"
 	ms.date="12/04/2015" 
-	wacn.date="01/14/2015"/>
+	wacn.date="01/14/2016"/>
 
 # 参考体系结构：使用 Windows Azure 流分析进行实时事件处理
 

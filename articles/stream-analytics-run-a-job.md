@@ -11,7 +11,7 @@
 <tags 
 	ms.service="stream-analytics" 
 	ms.date="12/04/2015" 
-	wacn.date="01/14/2015"/>
+	wacn.date="01/14/2016"/>
 
 # 如何在 Azure 流分析中运行流式处理作业
 

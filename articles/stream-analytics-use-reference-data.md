@@ -11,7 +11,7 @@
 <tags 
 	ms.service="stream-analytics" 
 	ms.date="12/04/2015" 
-	wacn.date="01/14/2015"/>
+	wacn.date="01/14/2016"/>
 
 # 在流分析的输入流中使用引用数据或查找表
 

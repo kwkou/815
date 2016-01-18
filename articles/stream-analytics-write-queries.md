@@ -11,7 +11,7 @@
 <tags 
 	ms.service="stream-analytics" 
 	ms.date="12/11/2015" 
-	wacn.date="01/14/2015"/>
+	wacn.date="01/14/2016"/>
 
 
 # 如何使用流分析编写查询
