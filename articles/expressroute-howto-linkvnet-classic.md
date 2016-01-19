@@ -10,13 +10,14 @@
 <tags 
    ms.service="expressroute"
    ms.date="11/02/2015"
-   wacn.date="12/17/2015" />
+   wacn.date="01/14/2016" />
 
 # 将 VNet 链接到 ExpressRoute 线路
 
 > [AZURE.SELECTOR]
-- [PowerShell - Classic](/documentation/articles/expressroute-howto-linkvnet-classic)
-- [Template - Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/ecad62c231848ace2fbdc36cbe3dc04a96edd58c/301-expressroute-circuit-vnet-connection)
+- [PowerShell - 经典](/documentation/articles/expressroute-howto-linkvnet-classic)
+- [PowerShell - 资源管理器](/documentation/articles/expressroute-howto-linkvnet-arm)  
+- [模板 - Azure 资源管理器](https://github.com/Azure/azure-quickstart-templates/tree/ecad62c231848ace2fbdc36cbe3dc04a96edd58c/301-expressroute-circuit-vnet-connection)
 
 本文概述了如何将虚拟网络 (VNet) 链接到 ExpressRoute 线路。虚拟网络可以在同一个订阅中，也可以属于另一个订阅。本文适用于使用经典部署模型部署的 VNet。如果你想要链接使用 Azure 资源管理器部署方法部署的虚拟网络，可使用模板来完成此操作。查看上面的选项卡可导航到该模板。
 
@@ -145,4 +146,4 @@
 
 有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

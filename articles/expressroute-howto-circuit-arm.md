@@ -9,14 +9,14 @@
    tags="azure-resource-manager"/>
 <tags
    ms.service="expressroute"
-   ms.date="11/06/2015"
-   wacn.date="12/17/2015"/>
+   ms.date="12/04/2015"
+   wacn.date="01/14/2016"/>
 
 # 使用 Azure 资源管理器和 PowerShell 创建和修改 ExpressRoute 线路
 
 > [AZURE.SELECTOR]
-[PowerShell - Classic](/documentation/articles/expressroute-howto-circuit-classic)
-[PowerShell - Resource Manager](/documentation/articles/expressroute-howto-circuit-arm)
+[PowerShell - 经典](/documentation/articles/expressroute-howto-circuit-classic)
+[PowerShell - 资源管理器](/documentation/articles/expressroute-howto-circuit-arm)
 
 本文将指导你执行相关步骤，以便使用 PowerShell cmdlet 和 Azure 资源管理器部署模型创建 ExpressRoute 线路。下面的步骤还将向你显示如何查看状态，以及如何更新、删除和预配 ExpressRoute 线路。
 
@@ -215,7 +215,7 @@
 
 7. **将 VNet 链接到 ExpressRoute 线路。**
 
-	接下来，将 VNet 链接到 ExpressRoute 线路。如需分步说明，请参阅[将 ExpressRoute 线路链接到 VNet](/documentation/articles/expressroute-howto-linkvnet-arm)。如需为 ExpressRoute 创建虚拟网络，请参阅[为 ExpressRoute 创建虚拟网络](/documentation/articles/expressroute-howto-createvnet-classic)以获取相关说明。
+	接下来，将 VNet 链接到 ExpressRoute 线路。使用 Azure 资源管理器部署模式时，你可以使用[此模板](https://github.com/Azure/azure-quickstart-templates/tree/ecad62c231848ace2fbdc36cbe3dc04a96edd58c/301-expressroute-circuit-vnet-connection)。我们目前正在致力于 PowerShell 步骤。
 
 ##  获取 ExpressRoute 线路的状态
 
@@ -354,4 +354,4 @@
 - [配置路由](/documentation/articles/expressroute-howto-routing-arm)
 - [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm) 
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

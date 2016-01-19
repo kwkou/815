@@ -9,7 +9,7 @@
 <tags
    ms.service="expressroute"
    ms.date="10/12/2015"
-   wacn.date="11/27/2015"/>
+   wacn.date="01/14/2016"/>
 
 # ExpressRoute 线路预配工作流和线路状态
 本页从较高层面引导你完成服务预配和路由配置工作流。
@@ -41,7 +41,7 @@
 - 服务提供商预配状态
 - 状态
 
-“状态”表示 Windows Azure 的预配状态。此属性可能是以下状态之一：*Enabled*、*Enabling* 或 *Disabling*ExpressRoute 线路必须处于 Enabled 状态才可供使用。
+“状态”表示 Windows Azure 的预配状态。此属性可能是以下状态之一：*Enabled*、*Enabling* 或 *Disabling*。 ExpressRoute 线路必须处于 Enabled 状态才可供使用。
 
 连接服务提供商预配状态表示连接服务提供商一端的状态。该状态可能是 *NotProvisioned*、*Provisioning* 或 *Provisioned*。ExpressRoute 线路必须处于 Provisioned 状态才可供使用。
 
@@ -111,4 +111,4 @@ BGP 预配状态可让你知道 Windows Azure 边缘是否已启用 BGP 会话�
 	- [配置路由](/documentation/articles/expressroute-howto-routing-classic)
 	- [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -9,14 +9,14 @@
    tags="azure-service-management"/>
 <tags
    ms.service="expressroute"
-   ms.date="11/05/2015"
-   wacn.date="12/17/2015"/>
+   ms.date="12/08/2015"
+   wacn.date="01/14/2016"/>
 
 # 使用 PowerShell 创建和修改 ExpressRoute 线路
 
 > [AZURE.SELECTOR]
-[PowerShell - Classic](/documentation/articles/expressroute-howto-circuit-classic)
-[PowerShell - Resource Manager](/documentation/articles/expressroute-howto-circuit-arm)
+[PowerShell - 经典](/documentation/articles/expressroute-howto-circuit-classic)
+[PowerShell - 资源管理器](/documentation/articles/expressroute-howto-circuit-arm)
 
 本文将指导你执行相关步骤，以便使用 PowerShell cmdlet 和经典部署模型创建 ExpressRoute 线路。下面的步骤还将向你显示如何查看状态，以及如何更新、删除和预配 ExpressRoute 线路。
 
@@ -63,11 +63,11 @@
 		$ServiceProvider = "Beijing Telecom Ethernet"
 		$Location = "Beijing"
 
-		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Standard
+		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Standard -BillingType MeteredData 
 
 	或者，如果你想要通过高级版外接程序创建 ExpressRoute 线路，则可使用下述示例。请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)页，了解有关高级版外接程序的更多详细信息。
 
-		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Premium
+		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Premium - BillingType MeteredData
 	
 	
 	响应将包含服务密钥。你可以通过运行以下命令获取所有这些参数的详细说明。
@@ -229,4 +229,4 @@
 - [配置路由](/documentation/articles/expressroute-howto-routing-classic)
 - [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic) 
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->
