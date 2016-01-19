@@ -8,9 +8,9 @@
    editor=""/>
 
 <tags
-	ms.service="service-bus"
-	ms.date="08/14/2015" 
-	wacn.date="10/22/2015"/>
+   ms.service="service-bus"
+   ms.date="12/09/2015"
+   wacn.date="01/14/2016"/>
 
 # 使用 PowerShell 管理 Service Bus 和事件中心资源
 
@@ -22,7 +22,7 @@ Windows Azure PowerShell 是一个脚本编写环境，可用于控制和自动�
 
 - Azure 订阅。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[购买选项][试用版]。
 
-- 配备 Azure PowerShell 的计算机。有关说明，请参阅[安装和配置 Azure PowerShell]。
+- 配备 Azure PowerShell 的计算机。有关说明，请参阅[安装和配置 Azure PowerShell][]。
 
 - 大致了解 PowerShell 脚本、NuGet 包和 .NET Framework。
 
@@ -249,14 +249,15 @@ catch [System.Exception]
 
 ## 后续步骤
 
-本文提供使用 PowerShell 设置 Service Bus 实体的基本概述。尽管通过引用 Microsoft.ServiceBus.dll 程序集有有限数量的 PowerShell cmdlet 可用于管理 Service Bus 消息实体，但可以使用 .NET 客户端库执行的任何操作几乎也可以在 PowerShell 脚本中执行。
+本文提供使用 PowerShell 预配服务总线实体的基本概述。尽管通过引用 Microsoft.ServiceBus.dll 程序集有有限数量的 PowerShell cmdlet 可用于管理 Service Bus 消息实体，但可以使用 .NET 客户端库执行的任何操作几乎也可以在 PowerShell 脚本中执行。
 
 以下博客文章提供了更多详细示例：
 
 - [如何使用 PowerShell 脚本创建 Service Bus 队列、主题和订阅](http://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
 - [如何使用 PowerShell 脚本创建 Service Bus 命名空间和事件中心](http://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
 
-一些现成的脚本也可供下载：- [Service Bus PowerShell 脚本](https://code.msdn.microsoft.com/windowsazure/Service-Bus-PowerShell-a46b7059)
+一些现成的脚本也可供下载：
+- [服务总线 PowerShell 脚本](https://code.msdn.microsoft.com/windowsazure/Service-Bus-PowerShell-a46b7059)
 
 <!--Anchors-->
 
@@ -269,4 +270,4 @@ catch [System.Exception]
 [.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx
 [安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0104_2016-->

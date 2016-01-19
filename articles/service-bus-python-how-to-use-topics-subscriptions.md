@@ -1,5 +1,5 @@
 ﻿<properties 
-	pageTitle="如何通过 Python 使用服务总线主题 | Microsoft Azure" 
+	pageTitle="如何通过 Python 使用服务总线主题 | Windows Azure" 
 	description="了解如何使用 Python 中的 Azure 服务总线主题和订阅" 
 	services="service-bus" 
 	documentationCenter="python" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="10/08/2015" 
-	wacn.date="11/27/2015"/>
+	wacn.date="01/14/2016"/>
 
 # 如何使用服务总线主题和订阅
 
@@ -30,7 +30,7 @@
 from azure.servicebus import ServiceBusService, Message, Topic, Rule, DEFAULT_RULE_NAME
 ```
 
-以下代码创建 **ServiceBusService** 对象。将 `mynamespace`、`sharedaccesskeyname` 和 `sharedaccesskey` 替换为实际的命名空间、共享访问签名 (SA) 密钥名称和密钥值。
+以下代码创建 **ServiceBusService** 对象。将 `mynamespace`、`sharedaccesskeyname` 和 `sharedaccesskey` 替换为实际的命名空间、共享访问签名 (SAS) 密钥名称和密钥值。
 
 ```
 bus_service = ServiceBusService(
@@ -39,7 +39,7 @@ bus_service = ServiceBusService(
 	shared_access_key_value='sharedaccesskey')
 ```
 
-你可以从 [Azure 门户] [] **连接信息**窗口获得 SAS 密钥名称和值。
+你可以从 [Azure 经典门户][]中的“连接信息”窗口获得 SAS 密钥名称和值。
 
 ```
 bus_service.create_topic('mytopic')
@@ -149,11 +149,11 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 还存在与订阅中的锁定消息关联的超时，如果应用程序未能在锁定超时过期前处理消息（例如，如果应用程序崩溃），服务总线将自动解锁该消息并使它重新可供接收。
 
-如果应用程序在处理消息之后，但在调用 **delete** 方法之前崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作“至少处理一次”，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的 **MessageId** 属性来实现，该属性在多次传送尝试中保持不变。
+如果应用程序在处理消息之后，但在调用 **delete** 方法之前崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的 **MessageId** 属性来实现，该属性在多次传送尝试中保持不变。
 
 ## 删除主题和订阅
 
-主题和订阅具有持久性，必须通过 Azure 管理门户或以编程方式显式删除。以下示例演示如何删除名为 `mytopic` 的主题：
+主题和订阅具有持久性，必须通过 [Azure 经典门户][]或以编程方式显式删除。以下示例演示如何删除名为 `mytopic` 的主题：
 
 ```
 bus_service.delete_topic('mytopic')
@@ -172,10 +172,10 @@ bus_service.delete_subscription('mytopic', 'HighMessages')
 -   请参阅[队列、主题和订阅][]。
 -   [SqlFilter.SqlExpression][] 参考。
 
-[Azure Management Portal]: http://manage.windowsazure.cn
+[Azure 经典门户]: http://manage.windowsazure.cn
 [Python Azure 包]: https://pypi.python.org/pypi/azure
 [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
 [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
 [Azure 队列和服务总线队列]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

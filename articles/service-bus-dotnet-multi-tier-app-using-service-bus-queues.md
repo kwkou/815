@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="10/07/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/14/2016"/>
 
 # 使用 Azure 服务总线队列创建 .NET 多层应用程序
 
@@ -83,13 +83,13 @@
 
 下一步是创建服务命名空间并获取共享访问签名 (SAS) 密钥。命名空间为每个通过服务总线公开的应用程序提供应用程序边界。创建服务命名空间时，系统将会生成 SAS 密钥。命名空间与 SAS 密钥的组合为服务总线提供了用于验证应用程序访问权限的凭据。
 
-### 使用 Azure 门户设置命名空间
+### 使用 Azure 经典门户设置命名空间
 
-1.  登录到 [Azure 门户][]。
+1.  登录到 [Azure 经典门户][]。
 
-2.  在 Azure 门户的左侧导航窗格中，单击“Service Bus”。
+2.  在门户的左侧导航窗格中，单击“服务总线”。
 
-3.  在 Azure 门户的下方窗格中，单击“创建”。
+3.  在门户的下方窗格中，单击“创建”。
 
     ![][6]
 
@@ -121,7 +121,7 @@
 
 ## 创建 Web 角色
 
-在本节中，你将生成应用程序的前端。首先，你将创建应用程序显示的各种页面。之后，你将添加代码，以便将项提交到服务总线队列并显示有关队列的状态信息。
+在本部分中，你将生成应用程序的前端。首先，你将创建应用程序显示的各种页面。之后，你将添加代码，以便将项提交到服务总线队列并显示有关队列的状态信息。
 
 ### 创建项目
 
@@ -159,7 +159,7 @@
 
 ### 为你的 Web 角色编写代码
 
-在本节中，你将创建应用程序显示的各种页面。
+在本部分，你将创建应用程序显示的各种页面。
 
 1.  在 Visual Studio 的 OnlineOrder.cs 文件中将现有命名空间定义替换为以下代码：
 
@@ -265,7 +265,7 @@
 
 2.  将类命名为 QueueConnector.cs。单击“添加”以创建类。
 
-3.  现在，将添加可封装连接信息并初始化服务总线队列连接的代码。在 QueueConnector.cs 中添加以下代码，并输入 **Namespace**（你的服务命名空间）和 **yourKey**（前面通过 [Azure 门户][Azure portal]获取的 SAS 密钥）的值。
+3.  现在，将添加可封装连接信息并初始化服务总线队列连接的代码。在 QueueConnector.cs 中添加以下代码，并输入 **Namespace**（你的服务命名空间）和 **yourKey**（前面通过 [Azure 经典门户][]获取的 SAS 密钥）的值。
 
         using System;
         using System.Collections.Generic;
@@ -282,7 +282,7 @@
                 // on every request.
                 public static QueueClient OrdersQueueClient;
 
-                // Obtain these values from the Azure portal.
+                // Obtain these values from the portal.
                 public const string Namespace = "your service bus namespace";
 
                 // The name of your queue.
@@ -479,13 +479,13 @@
 
 若要实施在本教程中以标准 Web 项目而不是云服务 Web 角色方式创建的应用程序，请遵循本教程中的步骤，但需注意以下差异：
 
-1. 创建项目时，请选择 Web 类别中的“ASP.NET MVC网站”项目模板，而不是“云”类别中的“云服务”模板。然后，请遵循创建 MVC 应用程序时遵循的相同指导，直到你转到“云配置管理器”部分。
+1. 创建项目时，请选择 Web 类别中的“ASP.NET MVC Web 应用程序”项目模板，而不是“云”类别中的“云服务”模板。然后，请遵循创建 MVC 应用程序时遵循的相同指导，直到你转到“云配置管理器”部分。
 
 2. 创建辅助角色时，请在新的独立解决方案中创建它，采用的说明与创建 Web 角色所用的原始说明类似。不过现在，你只是在云服务项目中创建辅助角色。然后，请遵循创建辅助角色所用的相同说明。
 
 3. 你可以分别测试前端和后端，也可以在单独的 Visual Studio 实例中同时运行这二者。
 
-若要了解如何将前端部署到 Azure 网站，请参阅[在 Azure App Service 中创建 ASP.NET网站](/documentation/articles/web-sites-dotnet-get-started)。若要了解如何将后端部署到 Azure 云服务，请参阅[使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]。
+若要了解如何将前端部署到 Azure 网站，请参阅[在 Azure App Service 中创建 ASP.NET Web 应用]](/documentation/articles/web-sites-dotnet-get-started)。若要了解如何将后端部署到 Azure 云服务，请参阅[使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]。
 
 
   [0]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-01.png
@@ -507,7 +507,7 @@
   [EventHubClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx
 
   [Azure portal]: http://manage.windowsazure.cn
-  [Azure 门户]: http://manage.windowsazure.cn
+  [Azure 经典门户]: http://manage.windowsazure.cn
   [6]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-03.png
   [7]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-04.png
   [8]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-09.png
@@ -541,4 +541,4 @@
   [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
   [executionmodels]: /documentation/articles/fundamentals-application-models
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

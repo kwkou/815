@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-   ms.date="09/04/2015"
-   wacn.date="12/17/2015" />
+   ms.date="12/09/2015"
+   wacn.date="01/14/2016" />
 
 # 服务总线身份验证和授权
 
@@ -23,7 +23,7 @@
 
 可以在服务总线命名空间上配置用于 SAS 的密钥。该密钥将应用到该命名空间中的所有消息传送实体。还可在服务总线队列和主题上配置密钥。服务总线中继上也支持 SAS。
 
-若要使用 SAS，可以在命名空间、队列或主题上配置包含以下内容的 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx) 对象：
+若要使用 SAS，可以在命名空间、队列或主题上配置包含以下内容的 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx) 对象：
 
 - *KeyName*，用于标识规则。
 
@@ -33,15 +33,15 @@
 
 - *Rights*，表示授予的侦听、发送或管理权限的集合。
 
-通过在命名空间级别配置的授权规则，可以向具有使用相应密钥签名的令牌的客户端授予命名空间中所有实体的访问权限。服务总线命名空间、队列或主题上可以配置 12 条这样的授权规则。默认情况下，首次预配时，将为每个命名空间配置具有所有权限的 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx)。
+通过在命名空间级别配置的授权规则，可以向具有使用相应密钥签名的令牌的客户端授予命名空间中所有实体的访问权限。服务总线命名空间、队列或主题上可以配置 12 条这样的授权规则。默认情况下，首次预配时，将为每个命名空间配置具有所有权限的 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx)。
 
-若要访问某个实体，客户端需要使用特定 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx) 生成的 SAS 令牌。SAS 令牌是通过使用资源字符串的 HMAC-SHA256 生成的，该字符串由要授予对其访问权限的资源 URI 和授权规则相关加密密钥的过期时间组成。
+若要访问某个实体，客户端需要使用特定 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx) 生成的 SAS 令牌。SAS 令牌是通过使用资源字符串的 HMAC-SHA256 生成的，该字符串由要授予对其访问权限的资源 URI 和授权规则相关加密密钥的过期时间组成。
 
-Azure.NET SDK 2.0 版和更高版本支持服务总线的 SAS 身份验证。SAS 支持 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx)。允许将连接字符串作为参数的所有 API 都支持 SAS 连接字符串。
+Azure.NET SDK 2.0 版和更高版本支持服务总线的 SAS 身份验证。SAS 支持 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx)。允许将连接字符串作为参数的所有 API 都支持 SAS 连接字符串。
 
 ## ACS 身份验证
 
-使用 ACS 的服务总线身份验证通过随附的“-sb”ACS 命名空间进行管理。如果你想为服务总线命名空间创建随附 ACS 命名空间，则不能使用 Azure 管理门户创建服务总线命名空间，而必须使用 [New-AzureSBNamespace](https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx) PowerShell cmdlet 来创建命名空间。例如：
+使用 ACS 的服务总线身份验证通过随附的“-sb”ACS 命名空间进行管理。如果你想为服务总线命名空间创建随附 ACS 命名空间，则不能使用 Azure 经典门户创建服务总线命名空间，而必须使用 [New-AzureSBNamespace](https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx) PowerShell cmdlet 来创建命名空间。例如：
 
 ```
 New-AzureSBNamespace <namespaceName> "<Region>” -CreateACSNamespace $true
@@ -69,4 +69,4 @@ Azure.NET SDK 2.0 版和更高版本支持服务总线的 ACS 身份验证。此
 
 可在以下位置找到有关 ACS 令牌的详细信息：[如何：通过 OAuth WRAP 协议从 ACS 请求令牌](https://msdn.microsoft.com/zh-cn/library/hh674475.aspx)。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="10/07/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/14/2016"/>
 
 
 # 如何使用服务总线主题和订阅
@@ -88,7 +88,7 @@
 
 还可以设置筛选器，以确定发送到主题的哪些消息应该在特定主题订阅中显示。
 
-订阅支持的最灵活的筛选器类型是 [SqlFilter][]，它实现了一部分 SQL92 功能。SQL 筛选器将对发布到主题的消息的属性进行操作。有关可用于 SQL 筛选器的表达式的更多详细信息，请参阅 [SqlFilter.SqlExpression][] 语法。
+订阅支持的最灵活的一种筛选器是 [SqlFilter][]，它实现了一部分 SQL92 功能。SQL 筛选器将对发布到主题的消息的属性进行操作。有关可用于 SQL 筛选器的表达式的更多详细信息，请参阅 [SqlFilter.SqlExpression][] 语法。
 
 以下示例创建了一个名为 `HighMessages` 的订阅（带有只选择自定义 **MessageNumber** 属性大于 3 的消息的 [SqlFilter][] 对象）：
 
@@ -208,7 +208,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 还存在与主题中锁定的消息关联的超时，如果应用程序未能在锁定超时过期前处理消息（例如，如果应用程序崩溃），则 Service Bus 将自动解锁该消息并使它能够再次被接收。
 
-如果在处理消息之后，发出 **deleteMessage** 请求之前应用程序发生崩溃，该消息将在应用程序重新启动时重新传送给它。此情况通常称作“至少处理一次”，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。通常可使用消息的 **getMessageId** 方法实现此操作，这在多个传送尝试中保持不变。
+如果在处理消息之后，发出 **deleteMessage** 请求之前应用程序发生崩溃，该消息将在应用程序重新启动时重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。通常可使用消息的 **getMessageId** 方法实现此操作，这在多个传送尝试中保持不变。
 
 ## 删除主题和订阅
 
@@ -228,10 +228,10 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
   [Azure SDK for Java]: /develop/java/
   [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
-  [Azure portal]: http://manage.windowsazure.cn/
+  [Azure classic portal]: http://manage.windowsazure.cn
   [服务总线队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
   [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

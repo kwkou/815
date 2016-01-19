@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="09/18/2015"
-   wacn.date="10/22/2015" />
+   wacn.date="01/14/2016" />
 
 # 异步消息传送模式和高可用性
 

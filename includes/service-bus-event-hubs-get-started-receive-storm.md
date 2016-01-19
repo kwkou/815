@@ -112,7 +112,7 @@
 		
 		}
 
-	此 Storm 螺栓记录接收到的事件的内容。在存储服务中，它可以轻松扩展为存储元组。[HDInsight 传感器分析教程][]同样使用这种方法将数据存储到 HBase 中。
+	此 Storm 螺栓记录接收到的事件的内容。在存储服务中，它可以轻松扩展为存储元组。[HDInsight 传感器分析教程]同样使用这种方法将数据存储到 HBase 中。
 
 11. 使用以下代码创建一个名为 **LogTopology** 的类：
 
@@ -230,4 +230,4 @@
 [13]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp1.png
 [14]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

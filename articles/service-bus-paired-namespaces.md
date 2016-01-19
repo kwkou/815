@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="09/18/2015"
-   wacn.date="10/22/2015" />
+   wacn.date="01/14/2016" />
 
 # 配对命名空间实现详细信息和成本影响
 

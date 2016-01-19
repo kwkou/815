@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="09/16/2015"
-   wacn.date="10/22/2015" />
+   wacn.date="01/14/2016" />
 
 # 创建使用服务总线主题和订阅的应用程序
 

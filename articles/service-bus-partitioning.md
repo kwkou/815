@@ -9,13 +9,13 @@
 <tags 
    ms.service="service-bus"
    ms.date="09/18/2015"
-   wacn.date="10/22/2015" />
+   wacn.date="01/14/2016" />
 
 # 分区消息传送实体
 
 Azure 服务总线使用多个消息中转站来处理消息，并用多个消息传送存储来存储消息。传统的队列或主题由单个消息中转站进行处理并存储在一个消息传送存储中。服务总线还允许跨多个消息中转站和消息传送存储对队列或主题进行分区。这意味着分区的队列或主题的总吞吐量不再受到单个消息中转站或消息传送存储的性能所限制。此外，消息传送存储的临时中断不会导致分区的队列或主题不可用。分区的队列和主题可以包含所有先进的服务总线功能，如事务和会话支持。
 
-有关服务总线内部的更多详细信息，请参阅 [Service Bus 体系结构][]主题。
+有关服务总线内部的更多详细信息，请参阅[服务总线体系结构][]主题。
 
 ## 分区的队列和主题
 
@@ -27,9 +27,9 @@ Azure 服务总线使用多个消息中转站来处理消息，并用多个消�
 
 ## 启用分区
 
-要将分区的队列和主题用于 Windows Azure 服务总线，使用 Azure SDK version 2.2 或更高版本，或在 HTTP 请求中指定 `api-version=2013-10`。
+要将分区的队列和主题用于 Windows Azure 服务总线，使用 Azure SDK 2.2 或更高版本，或在 HTTP 请求中指定 `api-version=2013-10`。
 
-你可以创建 1、2、3、4 或 5 GB 大小的服务总线队列和主题（默认值为 1 GB）。启用分区时，服务总线将为指定的每份大小创建 16 个分区。因此，如果你创建了一个大小为 5 GB 的队列，共有 16 个分区，最大队列大小为 (5 * 16) = 80 GB。可以通过在 [Azure 门户][]上查看分区队列或主题的条目，来了解该队列或主题的最大大小。
+你可以创建 1、2、3、4 或 5 GB 大小的服务总线队列和主题（默认值为 1 GB）。启用分区时，服务总线将为指定的每份大小创建 16 个分区。因此，如果你创建了一个大小为 5 GB 的队列，共有 16 个分区，最大队列大小为 (5 * 16) = 80 GB。可以通过在 [Azure 经典门户][]上查看分区队列或主题的条目，来了解该队列或主题的最大大小。
 
 有多种方法可以创建分区的队列或主题。当从你的应用程序中创建队列或主题时，可以通过分别将 [QueueDescription.EnablePartitioning][] 或 [TopicDescription.EnablePartitioning][] 属性设置为 **true** 来启用队列或主题的分区。这些属性必须在队列或主题创建时设置。不可能更改现有队列或主题上的这些属性。例如：
 
@@ -41,7 +41,7 @@ td.EnablePartitioning = true;
 ns.CreateTopic(td);
 ```
 
-或者，你可以在 Visual Studio 中或在 [Azure 门户][]中创建分区的队列或主题。当在门户中创建新的队列或主题时，请检查队列或主题窗口的“配置”选项卡中的“启用分区”选项。在 Visual Studio 中，点击“新队列”或“新主题”对话框中的“启用分区”复选框。
+或者，你可以在 Visual Studio 中或在 [Azure 经典门户][]中创建分区的队列或主题。当在门户中创建新的队列或主题时，请选中队列或主题窗口的“配置”选项卡中的“启用分区”选项。在 Visual Studio 中，单击“新队列”或“新主题”对话框中的“启用分区”复选框。
 
 ## 使用分区键
 
@@ -123,8 +123,8 @@ Azure 服务总线支持从分区实体、向分区的实体或在分区的实�
 
 请参阅针对服务总线分区队列和主题的 AMQP 1.0 支持的讨论（即将推出！），了解有关分区消息传送实体的详细信息。
 
-  [Service Bus 体系结构]: /documentation/articles/service-bus-architecture
-  [Azure 门户]: http://manage.windowsazure.cn
+  [服务总线体系结构]: /documentation/articles/service-bus-architecture
+  [Azure 经典门户]: http://manage.windowsazure.cn
   [QueueDescription.EnablePartitioning]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx
   [TopicDescription.EnablePartitioning]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.enablepartitioning.aspx
   [BrokeredMessage.SessionId]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.sessionid.aspx
@@ -140,4 +140,4 @@ Azure 服务总线支持从分区实体、向分区的实体或在分区的实�
   [QueueDescription.ForwardTo]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.forwardto.aspx
   [AMQP 1.0 support for Service Bus partitioned queues and topics]: /documentation/articles/service-bus-partitioned-entities-amqp-overview
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0104_2016-->

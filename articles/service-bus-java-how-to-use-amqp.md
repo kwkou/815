@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="11/06/2015" 
-	wacn.date="12/17/2015"/>
+	wacn.date="01/14/2016"/>
 
 
 # 如何将 Java 消息服务 (JMS) API 用于服务总线和 AMQP 1.0
@@ -23,7 +23,7 @@
 
 ## 服务总线入门
 
-此指南假定你已具有包含名为“queue1”的队列的 Service Bus 命名空间。 如果没有，则可以使用 [Azure 管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)。
+此指南假定你已具有包含名为“queue1”的队列的 Service Bus 命名空间。 如果没有，则可以使用 [Azure 经典门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)。
 
 ### 下载 AMQP 1.0 JMS 客户端库
 
@@ -331,4 +331,4 @@ exit
 * [服务总线 AMQP 1.0 开发人员指南](/documenatation/articles/service-bus-amqp-dotnet)
 * [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

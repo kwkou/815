@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="10/14/2015"
-   wacn.date="11/27/2015" />
+   wacn.date="01/14/2016" />
 
 # 服务总线 REST 教程
 
@@ -23,9 +23,9 @@
 
 ### 创建服务命名空间并获取 SAS 密钥
 
-1. 若要在 Azure 管理门户中创建服务命名空间，请遵循[如何：创建或修改服务总线服务命名空间中的步骤](https://msdn.microsoft.com/zh-cn/library/hh690931.aspx)。
+1. 若要在 [Azure 经典门户][] 中创建服务命名空间，请遵循[如何：创建或修改服务总线服务命名空间中的步骤](https://msdn.microsoft.com/zh-cn/library/hh690931.aspx)。
 
-2. 在 Azure 管理门户的主窗口中，单击在上一步中创建的服务命名空间的名称。
+2. 在门户的主窗口中，单击在上一步中创建的服务命名空间的名称。
 
 3. 单击“配置”以查看服务命名空间的共享访问策略。
 
@@ -49,7 +49,7 @@
 
 	a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，然后单击“添加引用”。
 
-	b.在“添加引用”对话框中选择“.NET”选项卡并向下滚动，直到看到“System.ServiceModel”。选中后单击“确定”。
+	b.在“添加引用”对话框中选择“.NET”选项卡并向下滚动，直到看到“System.ServiceModel”。然后单击“确定”。
 
 5. 重复上述步骤以添加对 **System.ServiceModel.Web.dll** 程序集的引用。
 
@@ -62,9 +62,9 @@
   	using System.IO;
 	```
 
-	[System.ServiceModel](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.aspx) 是可以以编程方式访问 WCF 基本功能的命名空间。服务总线使用 WCF 的许多对象和属性来定义服务约定。你将在大多数服务总线中继应用程序中使用此命名空间。同样，[System.ServiceModel.Channels](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.channels.aspx) 可帮助定义通道，通道是用来与服务总线和客户端 Web 浏览器通信的对象。最后，[System.ServiceModel.Web](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.web.aspx) 包含的类型可用于创建基于 Web 的应用程序。
+	[System.ServiceModel](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.aspx) 是让你以通过编程方式访问 WCF 基本功能的命名空间。服务总线使用 WCF 的许多对象和属性来定义服务约定。你将在大多数服务总线中继应用程序中使用此命名空间。同样，[System.ServiceModel.Channels](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.channels.aspx) 可帮助定义通道，通道是用来与服务总线和客户端 Web 浏览器通信的对象。最后，[System.ServiceModel.Web](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.web.aspx) 包含的类型可用于创建基于 Web 的应用程序。
 
-7. 将程序的命名空间从 Visual Studio 默认值重命名为 **Microsoft.ServiceBus.Samples**。
+7. 从 Visual Studio 重命名默认为 **Microsoft.ServiceBus.Samples** 的程序的命名空间。
 
  	```
 	namespace Microsoft.ServiceBus.Samples
@@ -81,7 +81,7 @@
 	}
 	```
 
-9. 在 `IImageContract` 接口中，为 `IImageContract` 协定在接口中公开的单个操作声明一个方法，然后将 `OperationContractAttribute` 属性应用到你希望将其作为公共服务总线协定的一部分进行公开的方法中。
+9. 在 `IImageContract` 接口中，为 `IImageContract` 约定在接口中公开的单个操作声明一个方法，然后将 `OperationContractAttribute` 属性应用到你希望将其作为公共服务总线约定的一部分进行公开的方法中。
 
 	```
 	public interface IImageContract
@@ -91,7 +91,7 @@
 	}
 	```
 
-10. 在 **OperationContract** 属性旁，应用 **WebGet** 属性。
+10. 紧接在 **OperationContract** 属性后面，应用 **WebGet** 属性。
 
 	```
 	public interface IImageContract
@@ -118,7 +118,7 @@
 
 	通道是服务和客户端用来互相传递信息的 WCF 对象。稍后，你将在主机应用程序中创建通道。然后服务总线将使用该通道将浏览器的 HTTP GET 请求传递到你的 **GetImage** 实现。服务总线还使用该通道获取 **GetImage** 返回值并将其转换为客户端浏览器的 HTTP GETRESPONSE。
 
-12. 在“生成”菜单中，单击“生成解决方案”以确认到目前为止工作的准确性。
+12. 在“生成”菜单中，单击“生成解决方案”以确认工作的准确性。
 
 ### 示例
 
@@ -163,7 +163,7 @@ namespace Microsoft.ServiceBus.Samples
 
 ### 实现 REST 样式的服务总线约定
 
-1. 直接在 **IImageContract** 接口的定义之后创建名为 **ImageService** 的新类。**ImageService** 类可实现 **IImageContract** 接口。 
+1. 在 **IImageContract** 接口定义的正下方创建名为 **ImageService** 的新类。**ImageService** 类实现 **IImageContract** 接口。。 
 
 	```
 	class ImageService : IImageContract
@@ -181,13 +181,13 @@ namespace Microsoft.ServiceBus.Samples
 	}
 	```
 
-	如前所述，此命名空间不是传统的命名空间，而是用于标识约定的 WCF 体系结构的一部分。有关详细信息，请参阅 WCF 文档中的[数据协定名称](https://msdn.microsoft.com/zh-cn/library/ms731045.aspx)主题。
+	如前所述，此命名空间不是传统的命名空间，而是用于标识约定的 WCF 体系结构的一部分。有关详细信息，请参阅 WCF 文档中的[数据约定名称](https://msdn.microsoft.com/zh-cn/library/ms731045.aspx)主题。
 
 3. 将一幅 .jpg 图像添加到项目中。
 
 	这是服务在接收浏览器中显示的图片。右键单击你的项目并单击“添加”。然后单击“现有项”。使用“添加现有项”对话框浏览到相应的 .jpg，然后单击“添加”。
     
-	添加文件时，请确保在“文件名:”字段旁的下拉列表中选择“所有文件”。本教程的余下部分假定图像的名称为“image.jpg”。如果你的 .jpg 文件名不是这样，则必须重命名图像，或更改代码进行弥补。
+	添加文件时，请确保在“文件名:”旁的下拉列表中选择“所有文件(*.*)”。本教程的余下部分假定图像的名称为“image.jpg”。如果你的 .jpg 文件名不是这样，则必须重命名图像，或更改代码进行弥补。
 
 4. 为了确保正在运行的服务可以找到该图像文件，请在“解决方案资源管理器”中右键单击该图像文件。在“属性”窗格中，将“复制到输出目录”设置为“如果较新则复制”。
 
@@ -296,7 +296,7 @@ namespace Microsoft.ServiceBus.Samples
   
 	此步骤将配置一个服务，该服务使用前面定义的默认 **webHttpRelayBinding**。此外，它还使用下一步骤中定义的默认 **sbTokenProvider**。
 
-6. 在 `<services>` 元素的后面，使用以下内容创建 `<behaviors>` 元素，并将 “SAS\_KEY” 替换为你在通过 Azure 管理门户执行步骤 1 时获取的*共享访问签名* (SAS) 密钥。
+6. 在 `<services>` 元素的后面，使用以下内容创建 `<behaviors>` 元素，并将 “SAS\_KEY” 替换为你在通过 [Azure 经典门户][] 执行步骤 1 时获取的*共享访问签名* (SAS) 密钥。
   
 	```
 	<behaviors>
@@ -574,8 +574,9 @@ namespace Microsoft.ServiceBus.Samples
 
 在生成使用服务总线中继服务的应用程序后，请参阅以下文章了解有关中继消息传送的详细信息。
 
-- [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
+- [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions/#relays)
 
-- [如何使用 Service Bus 中继服务](/documentation/articles/service-bus-dotnet-how-to-use-relay)
+- [如何使用服务总线中继服务](/documentation/articles/service-bus-dotnet-how-to-use-relay)
+[Azure 经典门户]: http://manage.windowsazure.cn
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

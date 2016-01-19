@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="10/06/2015" 
-	wacn.date="11/27/2015"/>
+	wacn.date="01/14/2016"/>
 
 # 如何使用 Service Bus 队列
 
@@ -65,7 +65,7 @@ Azure 模块将读取环境变量 AZURE_SERVICEBUS_NAMESPACE 和 AZURE_SERVICEBU
 
 有关在 Azure 云服务的配置文件中设置环境变量的示例，请参阅[使用存储构建 Node.js 云服务][]。
 
-有关在管理门户中为 Azure 网站设置环境变量的示例，请参阅 [使用存储构建 Node.js网站][]。
+有关在 [Azure 经典门户][]中为 Azure 网站设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用程序][]。
 
 ## 创建队列
 
@@ -178,7 +178,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 还存在与队列中已锁定消息关联的超时，并且如果应用程序无法在锁定超时到期之前处理消息（例如，如果应用程序崩溃），Service Bus 将自动解锁该消息并使它可再次被接收。
 
-如果应用程序在处理消息之后，调用 **deleteMessage** 方法之前崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作“至少处理一次”，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的 **MessageId** 属性来实现，该属性在多次传送尝试中保持不变。
+如果应用程序在处理消息之后，调用 **deleteMessage** 方法之前崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的 **MessageId** 属性来实现，该属性在多次传送尝试中保持不变。
 
 ## 后续步骤
 
@@ -189,13 +189,13 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 -   [Node.js 开发人员中心](/develop/nodejs/)
 
   [Azure SDK for Node]: https://github.com/Azure/azure-sdk-for-node
-  [Azure portal]: http://manage.windowsazure.cn
+  [Azure 经典门户]: http://manage.windowsazure.cn
   
   [Node.js 云服务]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app
   [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
   [创建 Node.js 应用程序并将其部署到 Azure 网站]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
   [使用存储构建 Node.js 云服务]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
-  [使用存储构建 Node.js网站]: /documentation/articles/storage-nodejs-how-to-use-table-storage
+  [使用存储构建 Node.js Web 应用程序]: /documentation/articles/storage-nodejs-how-to-use-table-storage
   [Azure 队列和服务总线队列]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

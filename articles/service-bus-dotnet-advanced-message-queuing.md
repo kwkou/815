@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="10/08/2015" 
-	wacn.date="11/27/2015"/>
+	wacn.date="01/14/2016"/>
 
 # 如何将 AMQP 1.0 与服务总线 .NET API 一起使用
 
@@ -22,7 +22,7 @@
 
 ## 服务总线入门
 
-本文假定你已拥有包含名为“queue1”的队列的服务总线命名空间。 如果没有，则可以使用 [Azure 门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)。
+本文假定你已拥有包含名为“queue1”的队列的服务总线命名空间。 如果没有，则可以使用 [Azure 经典门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)。
 
 ## 下载服务总线 SDK
 
@@ -32,7 +32,7 @@ AMQP 1.0 支持在 Service Bus SDK 2.1 版或更高版本中提供。可从以�
 
 默认情况下，Service Bus .NET 客户端库使用基于 SOAP 的专用协议与 Service Bus 服务通信。若要使用 AMQP 1.0 而非默认协议，需要 Service Bus 连接字符串上的显式配置，如下一节所述。除了此更改之外，在使用 AMQP 1.0 时应用程序代码基本保持不变。
 
-在当前版本中，有一些在使用 AMQP 时不受支持的 API 功能。这些不受支持的功能将在后面的[不受支持的功能和限制](#unsupported-features-and-restrictions)一节中列出。在使用 AMQP 时，一些高级配置设置还具有不同的含义。在本文中没有使用这些设置，但在[服务总线 AMQP 概述](/documentation/articles/service-bus-amqp-dotnet/#unsupported-features-restrictions-and-behavioral-differences)中提供了更多详细信息。
+在当前版本中，有一些在使用 AMQP 时不受支持的 API 功能。这些不受支持的功能将在后面的[不支持的功能和限制](#unsupported-features-and-restrictions)部分中列出。在使用 AMQP 时，一些高级配置设置还具有不同的含义。在本文中没有使用这些设置，但在[服务总线 AMQP 概述](/documentation/articles/service-bus-amqp-dotnet/#unsupported-features-restrictions-and-behavioral-differences)中提供了更多详细信息。
 
 ### 通过 App.config 进行配置
 
@@ -59,7 +59,7 @@ AMQP 1.0 支持在 Service Bus SDK 2.1 版或更高版本中提供。可从以�
 Endpoint=sb://[namespace].servicebus.chinacloudapi.cn;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp
 ```
 
-其中 `[namespace]` 和 `[SAS key]` 从 Azure 门户获取。有关详细信息，请参阅 [如何使用服务总线队列][]。
+其中 `[namespace]` 和 `[SAS key]` 是从 [Azure 经典门户][]获取的。有关详细信息，请参阅 [如何使用服务总线队列][]。
 
 在使用 AMQP 时，在连接字符串后面追加了 `;TransportType=Amqp`，以通知客户端库使用 AMQP 1.0 连接到服务总线。
 
@@ -287,7 +287,7 @@ Received message with JMSMessageID = ID:acbca67f03c346de9b7893026f97ddeb
 exit
 ```
 
-## 不受支持的功能和限制
+## <a name="unsupported-features-and-restrictions"></a>不支持的功能和限制
 
 在使用 AMQP 时，.NET Service Bus API 的以下功能目前不受支持：
 
@@ -318,5 +318,6 @@ exit
 * [如何将 Java 消息服务 (JMS) API 用于服务总线 和 AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)
 * [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
  
+[Azure 经典门户]: http://manage.windowsazure.cn
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

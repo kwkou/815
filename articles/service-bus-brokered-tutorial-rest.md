@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="09/15/2015"
-   wacn.date="11/27/2015" />
+   wacn.date="01/14/2016" />
 
 # 服务总线中转消息传送 REST 教程
 
@@ -23,7 +23,7 @@
 
 1. 有关如何创建服务命名空间的完整信息，请参阅[管理服务总线服务命名空间](https://msdn.microsoft.com/zh-cn/library/azure/hh690928.aspx)部分中的[如何：创建或修改服务总线服务命名空间](https://msdn.microsoft.com/zh-cn/library/azure/hh690931.aspx)主题。
 
-2. 在 Azure 门户的主窗口中，单击在上一步中创建的命名空间的名称。
+1. 在 [Azure 经典门户][] 的主窗口中，单击在上一步中创建的命名空间的名称。
 
 3. 单击“配置”选项卡。
 
@@ -176,10 +176,11 @@ private static string GetSASToken(string SASKeyName, string SASKeyValue)
 
 下一步是编写使用 REST 样式的 HTTP PUT 命令来创建队列的方法。
 
-在上一步中添加的 `GetToken()` 代码后直接粘贴以下代码：
+在上一步中添加的 `GetSASToken()` 代码后直接粘贴以下代码：
 
 ```
-// Uses HTTP PUT to create the queueprivatestaticstring CreateQueue(string queueName, string token)
+// Uses HTTP PUT to create the queue
+private static string CreateQueue(string queueName, string token)
 {
     // Create the URI of the new queue, note that this uses the HTTPS schemestring queueAddress = baseAddress + queueName;
     WebClient webClient = new WebClient();
@@ -206,7 +207,8 @@ private static string GetSASToken(string SASKeyName, string SASKeyValue)
 
 	```
 	// Sends a message to the "queueName" queue, given the name and the value to enqueue
-	// Uses an HTTP POST request.privatestaticvoid SendMessage(string queueName, string body)
+	// Uses an HTTP POST request.
+	private static void SendMessage(string queueName, string body)
 	{
 	    string fullAddress = baseAddress + queueName + "/messages" + "?timeout=60&api-version=2013-08 ";
 	    Console.WriteLine("\nSending message {0} - to address {1}", body, fullAddress);
@@ -221,7 +223,7 @@ private static string GetSASToken(string SASKeyName, string SASKeyValue)
 
 	```
 	// Add brokered message properties "TimeToLive" and "Label"
-	webClient.Headers.Add("BrokerProperties", "{ \"TimeToLive\":30, \"Label\":\"M1\"}");
+	webClient.Headers.Add("BrokerProperties", "{ "TimeToLive":30, "Label":"M1"}");
 	```
 
 	请注意，已添加并将继续添加中转消息属性。因此，发送请求必须指定支持属于请求一部分的所有中转消息属性的 API 版本。如果指定的 API 版本不支持中转消息属性，则忽略该属性。
@@ -515,7 +517,7 @@ namespace Microsoft.ServiceBus.Samples
             WebClient webClient = new WebClient();
             webClient.Headers[HttpRequestHeader.Authorization] = token;
             // Add brokered message properties “TimeToLive” and “Label”.
-            webClient.Headers.Add("BrokerProperties", "{ \"TimeToLive\":30, \"Label\":\"M1\"}");
+            webClient.Headers.Add("BrokerProperties", "{ "TimeToLive":30, "Label":"M1"}");
             // Add custom properties “Priority” and “Customer”.
             webClient.Headers.Add("Priority", "High");
             webClient.Headers.Add("Customer", "12345");
@@ -624,5 +626,6 @@ namespace Microsoft.ServiceBus.Samples
 - [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview)
 - [Azure 服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 - [服务总线中继 REST 教程](/documentation/articles/service-bus-relay-rest-tutorial)
+[Azure 经典门户]: http://manage.windowsazure.cn
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

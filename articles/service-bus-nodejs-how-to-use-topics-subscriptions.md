@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="10/07/2015" 
-	wacn.date="11/27/2015"/>
+	wacn.date="01/14/2016"/>
 
 
 # 如何使用服务总线主题和订阅
@@ -65,7 +65,7 @@ Azure 模块将读取环境变量 AZURE_SERVICEBUS_NAMESPACE 和 AZURE_SERVICEBU
 
 有关在 Azure 云服务的配置文件中设置环境变量的示例，请参阅[使用存储构建 Node.js 云服务][]。
 
-有关在管理门户中为 Azure 网站设置环境变量的示例，请参阅[使用存储构建 Node.js网站][]。
+有关在 [Azure 经典门户][]中为 Azure 网站设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用程序][]。
 
 ## 创建主题
 
@@ -144,13 +144,13 @@ serviceBusService.createSubscription('MyTopic','AllMessages',function(error){
 
 还可以创建筛选器，以确定发送到主题的哪些消息应该在特定主题订阅中显示。
 
-订阅支持的最灵活的筛选器类型是 **SqlFilter**，它实现了一部分 SQL92 功能。SQL 筛选器将对发布到主题的消息的属性进行操作。有关可用于 SQL 筛选器的表达式的更多详细信息，请参阅 [SqlFilter.SqlExpression][SqlFilter.SqlExpression] 语法。
+订阅支持的最灵活的一种筛选器是 **SqlFilter**，它实现了一部分 SQL92 功能。SQL 筛选器将对发布到主题的消息的属性进行操作。有关可用于 SQL 筛选器的表达式的更多详细信息，请参阅 [SqlFilter.SqlExpression][SqlFilter.SqlExpression] 语法。
 
 可以使用 **ServiceBusService** 对象的 **createRule** 方法向订阅中添加筛选器。此方法允许你向现有订阅中添加新筛选器。
 
 > [AZURE.NOTE] 由于默认筛选器会自动应用到所有新订阅，因此，你必须首先删除默认筛选器，否则 **MatchAll** 会替代你可能指定的任何其他筛选器。可以使用 **ServiceBusService** 对象的 **deleteRule** 方法删除默认规则。
 
-以下示例创建了一个名为 `HighMessages` 的订阅（带有只选择具有大于 3 的自定义 **messagenumber** 属性的 **SqlFilter**）：
+以下示例创建了一个名为 `HighMessages` 的订阅（带有只选择自定义 **messagenumber** 属性大于 3 的消息的 **SqlFilter**）：
 
 ```
 serviceBusService.createSubscription('MyTopic', 'HighMessages', function (error){
@@ -284,11 +284,11 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 还存在与订阅中的锁定消息关联的超时，如果应用程序未能在锁定超时过期前处理消息（例如，如果应用程序崩溃），Service Bus 将自动解锁该消息并使之重新可供接收。
 
-如果应用程序在处理消息之后，但在调用 **deleteMessage** 方法之前崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作“至少处理一次”，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的 **MessageId** 属性来实现，该属性在多次传送尝试中保持不变。
+如果应用程序在处理消息之后，调用 **deleteMessage** 方法之前崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的 **MessageId** 属性来实现，该属性在多次传送尝试中保持不变。
 
 ## 删除主题和订阅
 
-主题和订阅具有持久性，必须通过 Azure 管理门户或以编程方式显式删除。以下示例演示了如何删除名为 `MyTopic` 的主题：
+主题和订阅具有持久性，必须通过 [Azure 经典门户][]或以编程方式显式删除。以下示例演示了如何删除名为 `MyTopic` 的主题：
 
     serviceBusService.deleteTopic('MyTopic', function (error) {
         if (error) {
@@ -314,13 +314,13 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
   [Azure SDK for Node]: https://github.com/WindowsAzure/azure-sdk-for-node
 
-  [Azure Management Portal]: http://manage.windowsazure.cn
+  [Azure 经典门户]: http://manage.windowsazure.cn
   [SqlFilter.SqlExpression]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx
   [Node.js Cloud Service]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [创建 Node.js 应用程序并将其部署到 Azure 网站]:/develop/nodejs/
   [使用存储构建 Node.js 云服务]:/develop/nodejs/
-  [使用存储构建 Node.js网站]:/develop/nodejs/
+  [使用存储构建 Node.js Web 应用程序]:/develop/nodejs/
 
 <!---HONumber=82-->
