@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="07/02/2015" 
-	wacn.date="12/17/2015"/>
+	ms.date="11/19/2015" 
+	wacn.date="01/14/2016"/>
 
 
 
@@ -39,12 +39,11 @@
 ### 创建应用密码
 在你首次登录期间，系统将为你提供一个可用的应用密码。另外，以后你还可以创建应用密码。具体的操作方式取决于你使用多重身份验证的方式。请选择最适用你自己的方式。
 
-<!--
-如何使用多重身份验证|说明
+如何使用 Multi-Factor Authentication|说明
 :------------- | :------------- | 
-[我要将应用密码用于 Office 365](/documentation/articles/multi-factor-authentication-end-user-manage-o365)| 这意味着你要通过 Office 365 门户创建应用密码。
-[我要将应用密码用于 Microsoft Azure](/documentation/articles/multi-factor-authentication-end-user-manage-azure)| 这意味着你要通过 Azure 门户创建应用密码。
-[我不知道](/documentation/articles/multi-factor-authentication-end-user-manage-myapps)|这意味着你要通过 [https://myapps.microsoft.com](https://myapps.microsoft.com) 创建应用密码-->
+[我要将它用于 Office 365](#creating-and-deleting-app-passwords-with-office-365)| 这意味着你要通过 Office 365 门户创建应用密码。
+[我不知道](#creating-and-deleting-app-passwords-with-myapps-portal)|这意味着你要通过 [https://myapps.microsoft.com](https://myapps.microsoft.com) 创建应用密码
+[我要将它用于 Microsoft Azure](#create-app-passwords-in-the-azure-portal)| 这意味着你要通过 Azure 门户创建应用密码。
 
 
 

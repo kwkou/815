@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="07/02/2015" 
-	wacn.date="12/17/2015"/>
+	ms.date="11/19/2015" 
+	wacn.date="01/14/2016"/>
 
 # 配置 Azure 多重身份验证
 
