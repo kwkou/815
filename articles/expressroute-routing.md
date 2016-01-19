@@ -9,7 +9,7 @@
 <tags
    ms.service="expressroute"
    ms.date="10/06/2015"
-   wacn.date="11/27/2015"/>
+   wacn.date="01/14/2016"/>
 
 
 # ExpressRoute 路由要求  
@@ -102,4 +102,4 @@ Windows Azure 不遵循你设置的任何 BGP 社区值。你需要为每个对�
 	- [配置路由](/documentation/articles/expressroute-howto-routing-classic)
 	- [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

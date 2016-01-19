@@ -9,7 +9,7 @@
 <tags
    ms.service="expressroute"
    ms.date="10/20/2015"
-   wacn.date="12/17/2015"/>
+   wacn.date="01/14/2016"/>
 
 # ExpressRoute 常见问题
 
@@ -56,7 +56,7 @@ ExpressRoute 目前支持大多数 Windows Azure 服务。
 **不支持以下服务：**
 
 - CDN
-- Visual Studio Online Load Testing
+- Visual Studio Team Services 负载测试
 - 多重身份验证
 
 ## 数据和连接
@@ -213,4 +213,4 @@ ExpressRoute 高级版包括下面列出的功能集合。
 
 
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->
