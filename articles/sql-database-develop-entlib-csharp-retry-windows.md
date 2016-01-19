@@ -117,15 +117,15 @@ Program.cs 源代码示例将在本主题后面部分提供。可以使用以下
 4. 在 cmd.exe 命令窗口中，按如下所示运行程序。图中还显示了运行后的实际输出：
  
 	
-	[C:\MyVS\EntLib60Retry\EntLib60Retry\bin\Debug]
-	>> EntLib60Retry.exe
-	
-	database_firewall_rules_table   245575913
-	filestream_tombstone_2073058421 2073058421
-	filetable_updates_2105058535    2105058535
-	
-	[C:\MyVS\EntLib60Retry\EntLib60Retry\bin\Debug]
-	>>
+		[C:\MyVS\EntLib60Retry\EntLib60Retry\bin\Debug]
+		>> EntLib60Retry.exe
+		
+		database_firewall_rules_table   245575913
+		filestream_tombstone_2073058421 2073058421
+		filetable_updates_2105058535    2105058535
+		
+		[C:\MyVS\EntLib60Retry\EntLib60Retry\bin\Debug]
+		>>
 
 
 
