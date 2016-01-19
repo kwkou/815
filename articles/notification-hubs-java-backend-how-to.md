@@ -10,8 +10,8 @@
 
 <tags    	
 	ms.service="notification-hubs" 
-    ms.date="07/17/2015"
-	wacn.date="12/17/2015"/>
+        ms.date="11/01/2015"
+	wacn.date="01/14/2016"/>
 
 # 如何通过 Java 使用通知中心
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]

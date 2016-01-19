@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="notification-hubs"
-	ms.date="07/14/2015" 
-	wacn.date="12/17/2014"/>
+	ms.date="10/27/2015" 
+	wacn.date="01/14/2016"/>
 
 # Azure 通知中心 - 诊断指南
 
@@ -233,4 +233,4 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 [以编程方式遥测访问]: http://msdn.microsoft.com/zh-cn/library/azure/dn458823.aspx
 [通过 API 示例遥测访问]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/FetchNHTelemetryInExcel
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

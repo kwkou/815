@@ -9,13 +9,11 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="08/18/2015" 
-	wacn.date="11/02/2015"/>
+	ms.date="12/11/2015" 
+	wacn.date="01/14/2016"/>
 	
 # 使用通知中心向用户发送跨平台通知
-> [AZURE.SELECTOR]
-- [移动服务](/documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users)
-- [ASP.NET](/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users)
+
 
 在上一教程[使用通知中心通知用户][使用通知中心通知用户]中，你了解了如何将通知推送到经过身份验证的特定用户所注册的所有设备。在该教程中，需要使用多个请求将通知发送到每个支持的客户端平台。通知中心支持模板，这允许你指定特定设备要如何接收通知。这简化了发送跨平台通知。本主题演示如何利用模板在单个请求中发送针对所有平台的平台未知通知。有关模板的更多详细信息，请参见 [Azure 通知中心概述][Azure 通知中心概述]。
 
@@ -23,7 +21,7 @@
 
 完成以下步骤来使用模板发送跨平台通知：
 
-1.  在 Visual Studio 的解决方案资源管理器中，展开“控制器”文件夹，然后打开 RegisterController.cs 文件。
+1. 在 Visual Studio 的解决方案资源管理器中，展开“控制器”文件夹，然后打开 RegisterController.cs 文件。 
 
 2. 在 **Post** 方法中查找用于创建新注册的代码块，并将 `switch` 内容替换为以下代码：
 
@@ -53,8 +51,8 @@
             default:
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
         }
-
-    此代码调用平台特定的方法来创建模板注册而非本机注册。不需要修改现有注册，因为模板注册派生自本机注册。
+	
+	此代码调用平台特定的方法来创建模板注册而非本机注册。不需要修改现有注册，因为模板注册派生自本机注册。
 
 3. 在 **Notifications** 控制器中，将 **sendNotification** 方法替换为以下代码：
 
@@ -87,7 +85,7 @@
 
 +  **[Azure 通知中心概述][Templates]**<br/>“概述”主题提供有关模板的更多详细信息。
 
-<!--+  **[针对 Windows 应用商店的通知中心操作指南]**<br/>包含模板表示语言参考-->
++  **[针对 Windows 应用商店的通知中心操作指南]**<br/>包含模板表示语言参考。
 
 
 <!-- Anchors. --> 

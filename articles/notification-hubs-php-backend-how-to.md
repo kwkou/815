@@ -9,8 +9,8 @@
 
 <tags 
      ms.service="notification-hubs"
-     ms.date="07/17/2015" 
-     wacn.date="12/17/2015" />
+     ms.date="11/01/2015" 
+     wacn.date="01/14/2016" />
 
 # 如何通过 PHP 使用通知中心
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
@@ -104,7 +104,7 @@
 	}
 
 ### 发送通知
-首先，定义表示通知的类。
+首先，让我们定义表示通知的类。
 
 	class Notification {
 		public $format;
@@ -131,11 +131,7 @@
 
 具备了此类后，我们现在可以在 **NotificationHub** 类中编写发送通知方法了。
 
-	public function sendNotification($notification) {
-		$this->sendNotification($notification, "");
-	}
-
-	public function sendNotification($notification, $tagsOrTagExpression) {
+	public function sendNotification($notification, $tagsOrTagExpression="") {
 		if (is_array($tagsOrTagExpression)) {
 			$tagExpression = implode(" || ", $tagsOrTagExpression);
 		} else {
@@ -228,7 +224,7 @@
 		                '<wp:Text1>Hello from PHP!</wp:Text1>' .
 		           '</wp:Toast> ' .
 		        '</wp:Notification>';
-	$notification = new Notification("mpns", $toast);
+	$notification = new Notification("windowsphone", $toast);
 	$notification->headers[] = 'X-WindowsPhone-Target : toast';
 	$notification->headers[] = 'X-NotificationClass : 2';
 	$hub->sendNotification($notification);
@@ -249,9 +245,9 @@
 * 在 [突发新闻教程] 中继续学习通知中心标记功能
 * 在 [通知用户教程] 中了解如何将通知推送到单个用户
 
-有关详细信息，另请参阅 [PHP 开发人员中心](/develop/php/)。
+<!-- For more information, see also the [PHP Developer Center](/develop/php/). -->
 
 [PHP REST 包装器示例]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
 [入门教程]: /documentation/articles/notification-hubs-ios-get-started
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

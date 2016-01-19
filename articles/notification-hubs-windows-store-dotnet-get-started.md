@@ -9,8 +9,8 @@
 
 <tags
     ms.service="notification-hubs"
-    ms.date="09/03/2015"
-    wacn.date="11/02/2015"/>
+    ms.date="12/14/2015"
+    wacn.date="01/14/2016"/>
 
 # 通知中心入门（Windows 应用商店应用）
 
@@ -20,14 +20,19 @@
 
 本教程演示如何使用 Azure 通知中心将推送通知发送到 Windows 应用商店或 Windows Phone 8.1（非 Silverlight）应用程序。如果你要以 Windows Phone 8.1 Silverlight 为目标，请参阅 [Windows Phone](/documentation/articles/notification-hubs-windows-phone-get-started) 版本。在本教程中，你将创建一个空白 Windows 应用商店应用，它使用 Windows 推送通知服务 (WNS) 接收推送通知。完成后，你将能够使用通知中心将推送通知广播到运行你的应用的所有设备。
 
-本教程演示使用通知中心的简单广播方案。请确保随后学习下一教程以了解如何使用通知中心来发送到特定用户和设备组。
+
+## 开始之前
+
+[AZURE.INCLUDE [notification-hubs-hero-slug](../../includes/notification-hubs-hero-slug.md)]
+
+可以在 GitHub 上的[此处](https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet/GetStartedWindowsUniversal)找到本教程的已完成代码。
 
 
 ##先决条件
 
 本教程需要的内容如下：
 
-+ Microsoft Visual Studio Express 2013 for Windows with Update 2<br/>若要创建通用应用项目，则必须使用这个版本的 Visual Studio。如果你只是想要创建 Windows 应用商店应用，则需要 Visual Studio 2012 Express for Windows 8。
++ Microsoft Visual Studio Express 2013 for Windows with Update 2 或更高版本<br/>若要创建通用应用项目，则必须使用这个版本的 Visual Studio。如果你只是想要创建 Windows 应用商店应用，则需要 Visual Studio 2012 Express for Windows 8。
 
 + 有效的 Windows 应用商店帐户
 
@@ -39,7 +44,7 @@
 
 若要将推送通知发送到 Windows 应用商店应用，你必须将你的应用关联到 Windows 应用商店。然后必须将通知中心配置为与 WNS 集成。
 
-1. 如果尚未注册应用，请导航到 <a href="http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409" target="_blank">Windows 开发人员中心</a>，使用你的 Microsoft 帐户登录，然后单击“创建新应用”。
+1. 如果尚未注册应用，请导航到 [Windows 开发人员中心](http://go.microsoft.com/fwlink/p/?LinkID=266582)，使用你的 Microsoft 帐户登录，然后单击“创建新应用”。
 
    	
 
@@ -81,31 +86,15 @@
 
 ##配置通知中心
 
-1. 登录到 [Azure 管理门户]，然后单击屏幕底部的“新建”。
+[AZURE.INCLUDE [notification-hubs-portal-create-new-hub](../../includes/notification-hubs-portal-create-new-hub.md)]
 
-2. 依次单击“应用程序服务”、“服务总线”、“通知中心”、“快速创建”。
+<ol start="7">
+<li><p>选择顶部的“配置”选项卡，输入你在前一部分中从 WNS 获取的“客户端密码”和“包 SID”值，然后单击“保存”。<b></b><b></b><b></b><b></b></p>
+</li>
+</ol>
 
-   	![][7]
+&emsp;&emsp;![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-configure-wns.png)
 
-3. 键入通知中心的名称，选择所需的区域，然后单击“创建新的通知中心”。
-
-   	![][8]
-
-4. 单击刚刚创建的命名空间（通常为***通知中心名称*-ns**），然后单击顶部的“配置”选项卡。
-
-   	![][9]
-
-5. 选择顶部的“通知中心”选项卡，然后单击你刚刚创建的通知中心。
-
-   	![][10]
-
-6. 选择顶部的“配置”选项卡，输入你在前一部分中从 WNS 获取的“客户端密码”和“包 SID”值，然后单击“保存”。
-
-   	![][11]
-
-7. 选择顶部的“仪表板”选项卡，然后单击页面底部的“连接信息”按钮。记下两个连接字符串。
-
-   	![][12]
 
 你的通知中心现在已配置为使用 WNS，并且你有连接字符串用于注册你的应用程序和发送通知。
 
@@ -150,7 +139,7 @@
 
     此代码从 WNS 检索应用的通道 URI，然后将该通道 URI 注册到你的通知中心。
 
-    >[AZURE.NOTE]确保将“中心名称”占位符替换为在门户的“通知中心”选项卡中显示的通知中心名称（例如，上例中的 **mynotificationhub2**）。此处，使用在上一部分中获取的 **DefaultListenSharedAccessSignature** 连接字符串替换连接字符串占位符。
+    >[AZURE.NOTE]确保将“中心名称”占位符替换为在 [Azure 管理门户]的“通知中心”选项卡中显示的通知中心名称（例如，上例中的 **mynotificationhub2**）。此处，使用在上一部分中获取的 **DefaultListenSharedAccessSignature** 连接字符串替换连接字符串占位符。
 
 5. 在 App.xaml.cs 中 **OnLaunched** 事件处理程序的上方，添加对新 **InitNotificationsAsync** 方法的以下调用：
 
@@ -170,13 +159,36 @@
 
    	![][19]
 
-9. （可选）重复上一个步骤以运行另一个项目。
+9. （可选）重复上述步骤运行 Windows Phone 项目，以便在 Windows Phone 设备上注册应用。
+
 
 你的应用现在已能够接收 toast 通知。
 
-##从后端发送通知
+##发送通知 
 
-你可以使用通知中心通过 <a href="http://msdn.microsoft.com/library/windowsazure/dn223264.aspx">REST 接口</a>从任意后端发送通知。在本教程中，你将使用 .NET 控制台应用程序来发送通知。有关如何从与通知中心集成的 Azure 移动服务后端中发送通知的示例，请参阅**移动服务中的推送通知入门**（[.NET 后端](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started) | [JavaScript 后端](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started)）。有关如何使用 REST API 发送通知的示例，请参阅**如何使用 Java/PHP** ([Java](/documentation/articles/notification-hubs-java-backend-how-to) | [PHP](/documentation/articles/notification-hubs-php-backend-how-to)) 中的通知中心。
+在 [Azure 经典门户] 中通过通知中心上的调试选项卡（如以下屏幕中所示）来发送通知，可以在应用中测试通知的接收情况。
+
+![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-debug.png)
+
+通常，推送通知是在后端服务（例如，移动服务，或者使用兼容库的 ASP.NET）中发送的。如果你的后端没有可用的库，则你也可以使用 REST API 直接发送通知消息。
+
+在本教程中，为了保持内容的简单性，我们只会演示如何在控制台应用程序（而不是后端服务）中，使用通知中心的 .NET SDK 发送通知，以此测试你的客户端应用。建议你接下来学习[使用通知中心向用户推送通知]教程，以了解如何从 ASP.NET 后端发送通知。不过，可以使用以下方法来发送通知：
+
+* **REST 接口**：可以使用 [REST 接口](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx)在任何后端平台上支持通知。
+
+* **Microsoft Azure 通知中心 .NET SDK**：在 Visual Studio 的 Nuget 包管理器中，运行 [Install-Package Microsoft.Azure.NotificationHubs](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)。
+
+* **Node.js**：[如何通过 Node.js 使用通知中心](notification-hubs-nodejs-how-to-use-notification-hubs.md)。
+
+* **Azure 移动服务**：有关如何从与通知中心集成的 Azure 移动服务后端发送通知的示例，请参阅“移动服务中的推送通知入门”（[.NET 后端](../mobile-services/mobile-services-javascript-backend-windows-store-dotnet-get-started-push.md) | [JavaScript 后端](../mobile-services/mobile-services-javascript-backend-windows-store-dotnet-get-started-push.md)）。
+
+* **Java/PHP**：有关如何使用 REST API 发送通知的示例，请参阅“如何通过 Java/PHP 使用通知中心”([Java](notification-hubs-java-backend-how-to.md) | [PHP](notification-hubs-php-backend-how-to.md))。
+
+
+## （可选）通过控制台应用发送通知
+
+
+若要使用 .NET 控制台应用程序发送通知，请遵循以下步骤。
 
 1. 右键单击解决方案，选择“添加”和“新建项目...”，然后在“Visual C#”下依次单击“Windows”、“控制台应用程序”和“确定”。
 
@@ -184,21 +196,24 @@
 
 	这会将新的 Visual C# 控制台应用程序添加到解决方案。你也可以在单独的解决方案中进行此项操作。
 
-4. 在 Visual Studio 中，依次单击“工具”、“NuGet 包管理器”和“包管理器控制台”。
+2. 在 Visual Studio 中，依次单击“工具”、“NuGet 包管理器”和“包管理器控制台”。
 
 	这会在 Visual Studio 中显示“包管理器控制台”。
 
-6. 在“包管理器控制台”窗口中，将“默认项目”设置为新的控制台应用程序项目，然后在控制台窗口中执行以下命令：
+3. 在“包管理器控制台”窗口中，将“默认项目”设置为新的控制台应用程序项目，然后在控制台窗口中执行以下命令：
 
         Install-Package Microsoft.Azure.NotificationHubs
 
 	这将使用 <a href="http://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/">Microsoft.Azure.Notification Hubs NuGet 包</a>添加对 Azure 通知中心 SDK 的引用。
 
-5. 打开文件 Program.cs 并添加以下 `using` 语句：
+	![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-package-manager.png)
+
+
+4. 打开文件 Program.cs 并添加以下 `using` 语句：
 
         using Microsoft.Azure.NotificationHubs;
 
-6. 在 **Program** 类中，添加以下方法：
+5. 在 **Program** 类中，添加以下方法：
 
         private static async void SendNotificationAsync()
         {
@@ -208,28 +223,30 @@
             await hub.SendWindowsNativeNotificationAsync(toast);
         }
 
-   	确保将“中心名称”占位符替换为在门户的“通知中心”选项卡中显示的通知中心名称。此外，使用你在“配置通知中心”部分中获取的名称为 **DefaultFullSharedAccessSignature** 的连接字符串替换连接字符串占位符。
+   	确保将“中心名称”占位符替换为在 [Azure 经典门户] 的“通知中心”选项卡中显示的通知中心名称。此外，使用你在“配置通知中心”部分中获取的名称为 **DefaultFullSharedAccessSignature** 的连接字符串替换连接字符串占位符。
 
 	>[AZURE.NOTE]确保你使用的是具有**完全**访问权限的连接字符串，而不是具有**侦听**访问权限的连接字符串。侦听访问字符串无权发送通知。
 
-7. 在 **Main** 方法中添加以下行：
+6. 在 **Main** 方法中添加以下行：
 
          SendNotificationAsync();
 		 Console.ReadLine();
 
-8. 在 Visual Studio 中，右键单击控制台应用程序项目，然后单击“设为启动项目”，将它设置为启动项目。然后按 **F5** 键运行应用程序。
+7. 在 Visual Studio 中，右键单击控制台应用程序项目，然后单击“设为启动项目”，将它设置为启动项目。然后按 **F5** 键运行应用程序。
 
    	![][14]
 
 	所有已注册的设备将会收到 toast 通知。单击或点击 toast 标题可加载应用。
 
-你可以在 MSDN 上的 [toast 目录]、[磁贴目录]和[提醒概述]主题中找到所有支持的负载。
+你可以在 MSDN 上的 [toast 目录]、[磁贴目录]和[锁屏提醒]主题中找到所有支持的负载。
 
 ##后续步骤
 
-在这个简单的示例中，你将通知广播到所有 Windows 设备。若要针对特定客户，请参考教程[使用通知中心向用户推送通知]。如果要按兴趣组划分用户，可以阅读[使用通知中心发送突发新闻]。若要了解有关如何使用通知中心的详细信息，请参阅[通知中心指南]。
+在这个简单示例中，你将使用门户或控制台应用将广播通知发送到所有 Windows 设备。建议下一步学习[使用通知中心向用户推送通知]教程。它将显示如何使用标记从 ASP.NET 后端将通知发送到目标特定的用户。
 
+如果要按兴趣组划分用户，可以阅读[使用通知中心发送突发新闻]。
 
+若要了解有关通知中心的更多常规信息，请参阅[通知中心指南]。
 
 <!-- Images. -->
 
@@ -261,7 +278,7 @@
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 [toast 目录]: http://msdn.microsoft.com/library/windows/apps/hh761494.aspx
 [磁贴目录]: http://msdn.microsoft.com/library/windows/apps/hh761491.aspx
-[提醒概述]: http://msdn.microsoft.com/library/windows/apps/hh779719.aspx
+[锁屏提醒]: http://msdn.microsoft.com/library/windows/apps/hh779719.aspx
  
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

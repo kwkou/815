@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="06/16/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="12/15/2015"
+	wacn.date="01/14/2016"/>
 
 # 使用通知中心发送突发新闻
 
@@ -71,7 +71,17 @@
 
 		#import <WindowsAzureMessaging/WindowsAzureMessaging.h>
 
-6. 在文件 Notifications.m 的实现部分中复制以下代码，并将 `<hub name>` 和 `<connection string with listen access>` 占位符替换为你的通知中心的名称和你之前获取的 *DefaultListenSharedAccessSignature* 的连接字符串。
+6. 在文件 Notifications.m 的实现部分中复制以下代码。
+
+	    SBNotificationHub* hub;
+
+		- (id)initWithConnectionString:(NSString*)listenConnectionString HubName:(NSString*)hubName{
+
+		    hub = [[SBNotificationHub alloc] initWithConnectionString:listenConnectionString
+										notificationHubPath:hubName];
+
+			return self;
+		}
 
 		- (void)storeCategoriesAndSubscribeWithCategories:(NSSet *)categories completion:(void (^)(NSError *))completion {
 		    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
@@ -93,32 +103,32 @@
 
 		- (void)subscribeWithCategories:(NSSet *)categories completion:(void (^)(NSError *))completion
 		{
-		    SBNotificationHub* hub = [[SBNotificationHub alloc] 
-										initWithConnectionString:@"<connection string with listen access>" 
-										notificationHubPath:@"<hub name>"];
+		   //[hub registerNativeWithDeviceToken:self.deviceToken tags:categories completion: completion];
 
-		    [hub registerNativeWithDeviceToken:self.deviceToken tags:categories completion: completion];
+			NSString* templateBodyAPNS = @"{"aps":{"alert":"$(messageParam)"}}";
+
+			[hub registerTemplateWithDeviceToken:self.deviceToken name:@"simpleAPNSTemplate" 
+				jsonBodyTemplate:templateBodyAPNS expiryTemplate:@"0" tags:categories completion:completion];
 		}
 
 
 
-	此类使用本地存储区存储和检索此设备将要接收的新闻类别。此外，它还包含注册这些类别所用的方法。
-
-	> [AZURE.NOTE]由于使用客户端应用程序分发的凭据通常是不安全的，你只应使用客户端应用程序分发具有侦听访问权限的密钥。侦听访问权限允许应用程序注册通知，但是无法修改现有注册，也无法发送通知。在受保护的后端服务中使用完全访问权限密钥，以便发送通知和更改现有注册。
+	此类使用本地存储区存储和检索此设备将要接收的新闻类别。此外，它还包含了一个方法用于通过[模板](/documentation/articles/notification-hubs-templates)注册来注册这些类别。
 
 7. 在 AppDelegate.h 文件中，添加 Notifications.h 的导入语句，并添加 Notifications 类实例的属性：
 
 		#import "Notifications.h"
 
 		@property (nonatomic) Notifications* notifications;
-
-	它在 AppDelegate 中创建 Notification 类的单一实例。
+	
 
 8. 在 AppDelegate.m 的 **didFinishLaunchingWithOptions** 方法中，于方法开头添加代码来初始化 notifications 实例：
+ 
+	在 hubinfo.h 中定义的 `HUBNAME` 和 `HUBLISTENACCESS` 内，`<hub name>` 和 `<connection string with listen access>` 占位符应已替换为你的通知中心的名称和你之前获取的 *DefaultListenSharedAccessSignature* 的连接字符串。
 
-		self.notifications = [[Notifications alloc] init];
+		self.notifications = [[Notifications alloc] initWithConnectionString:HUBLISTENACCESS HubName:HUBNAME];
 
-	初始化 Notification 单一实例。
+	> [AZURE.NOTE]由于使用客户端应用程序分发的凭据通常是不安全的，你只应使用客户端应用程序分发具有侦听访问权限的密钥。侦听访问权限允许应用程序注册通知，但是无法修改现有注册，也无法发送通知。在受保护的后端服务中使用完全访问权限密钥，以便发送通知和更改现有注册。
 
 
 9. 在 AppDelegate.m 的 **didRegisterForRemoteNotificationsWithDeviceToken** 方法中，使用以下代码来替换方法中的代码，以将设备令牌传递给 notifications 类。notifications 类将通知注册到类别。如果用户更改类别选择，我们将调用 `subscribeWithCategories` 方法以响应“订阅”按钮来进行更新。
@@ -159,6 +169,10 @@
 
 11. 在 ViewController.m 中，添加 AppDelegate.h 的导入语句，并将以下代码复制到 XCode 生成的 **subscribe** 方法中。此代码将更新通知注册，以使用用户在用户界面中选择的新类别标记。
 
+		```
+		#import "Notifications.h"
+		```
+
 		NSMutableArray* categories = [[NSMutableArray alloc] init];
 
 	    if (self.WorldSwitch.isOn) [categories addObject:@"World"];
@@ -172,7 +186,7 @@
 
 	    [notifications storeCategoriesAndSubscribeWithCategories:categories completion: ^(NSError* error) {
 	        if (!error) {
-	            [self MessageBox:@"Notification" message:@"Subscribed!"];
+	            [(AppDelegate*)[[UIApplication sharedApplication]delegate] MessageBox:@"Notification" message:@"Subscribed!"];
 	        } else {
 	            NSLog(@"Error subscribing: %@", error);
 	        }
@@ -185,7 +199,7 @@
 
 		// This updates the UI on startup based on the status of previously saved categories.
 
-		Notifications* notifications = [(BreakingNewsAppDelegate*)[[UIApplication sharedApplication]delegate] notifications];
+		Notifications* notifications = [(AppDelegate*)[[UIApplication sharedApplication]delegate] notifications];
 
 	    NSSet* categories = [notifications retrieveCategories];
 
@@ -201,14 +215,21 @@
 应用程序现在可以在设备的本地存储区中存储一组类别，每当应用程序启动时，将使用这些类别注册到通知中心。用户可以在运行时更改选择的类别，然后单击 **subscribe** 方法来更新设备注册。接下来，你将更新应用程序，以直接从应用本身发送突发新闻通知。
 
 
-##发送通知
+##（可选）发送带标记的通知
 
-通常，后端服务将发送通知，但在本教程中，我们将更新发送通知代码，以直接从应用发送突发新闻通知。为此，我们需要更新[通知中心入门][get-started]教程中所定义的 `SendNotificationRESTAPI` 方法。
+如果你无权访问 Visual Studio，可以跳到下一部分，并从应用内部发送通知。你还可以在 [Azure 经典门户] 中使用通知中心的调试选项卡发送适当的模板通知。
+
+[AZURE.INCLUDE [notification-hubs-send-categories-template](../includes/notification-hubs-send-categories-template.md)]
 
 
-1. 在 ViewController.m 中，按如下所示更新 `SendNotificationRESTAPI` 方法，以接受平台通知服务 `pns` 参数以及类别标记的参数。
+##（可选）从设备发送通知
 
-		- (void)SendNotificationRESTAPI:(NSString*)pns Category:(NSString*)categoryTag
+通常，通知将由后端服务发送，但你也可以直接从应用发送突发新闻通知。为此，我们需要更新[通知中心入门][get-started]教程中所定义的 `SendNotificationRESTAPI` 方法。
+
+
+1. 在 ViewController.m 中，按如下所示更新 `SendNotificationRESTAPI` 方法，使其接受类别标记的参数并发送适当的[模板](/documentation/articles/notification-hubs-templates)通知。
+
+		- (void)SendNotificationRESTAPI:(NSString*)categoryTag
 		{
 		    NSURLSession* session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration
 									 defaultSessionConfiguration] delegate:nil delegateQueue:nil];
@@ -221,60 +242,24 @@
 		    
 		    // Generated the token to be used in the authorization header.
 		    NSString* authorizationToken = [self generateSasToken:[url absoluteString]];
-		    
-		    //Create the request to add the APNS notification message to the hub
+
+		    //Create the request to add the template notification message to the hub
 		    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 		    [request setHTTPMethod:@"POST"];
 		    
 		    // Add the category as a tag
 		    [request setValue:categoryTag forHTTPHeaderField:@"ServiceBusNotification-Tags"];
-		
-		    // Windows Notification format of the notification message
-		    if ([pns isEqualToString:@"wns"])
-		    {
-		        json = [NSString stringWithFormat:@"<?xml version="1.0" encoding="utf-8"?>"
-		                                           "<toast>"
-		                                           "<visual><binding template="ToastText01">"
-		                                           "<text id="1">Breaking %@ News : %@</text>"
-		                                           "</binding>"
-		                                           "</visual>"
-		                                           "</toast>",
-		                categoryTag, self.notificationMessage.text];
-		        
-		        // Signify windows notification format
-		        [request setValue:@"windows" forHTTPHeaderField:@"ServiceBusNotification-Format"];
-		        
-		        // XML Content-Type
-		        [request setValue:@"application/xml" forHTTPHeaderField:@"Content-Type"];
-		        
-		        // Set X-WNS-TYPE header
-		        [request setValue:@"wns/toast" forHTTPHeaderField:@"X-WNS-Type"];
-		    }
-		    
-		    // Google Cloud Messaging Notification format of the notification message
-		    if ([pns isEqualToString:@"gcm"])
-		    {
-		        json = [NSString stringWithFormat:@"{"data":{"message":"Breaking %@ News : %@"}}",
-		                categoryTag, self.notificationMessage.text];
-		        // Signify gcm notification format
-		        [request setValue:@"gcm" forHTTPHeaderField:@"ServiceBusNotification-Format"];
 
-				// JSON Content-Type
-				[request setValue:@"application/json;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-		    }
-		    
-		    // Apple Notification format of the notification message
-		    if ([pns isEqualToString:@"apns"])
-		    {
-		        json = [NSString stringWithFormat:@"{"aps":{"alert":"Breaking %@ News : %@"}}",
-		                categoryTag, self.notificationMessage.text];
-		        // Signify apple notification format
-		        [request setValue:@"apple" forHTTPHeaderField:@"ServiceBusNotification-Format"];
+			// Template notification
+	        json = [NSString stringWithFormat:@"{"messageParam":"Breaking %@ News : %@"}",
+	                categoryTag, self.notificationMessage.text];
 
-				// JSON Content-Type
-				[request setValue:@"application/json;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-		    }
-		    
+	        // Signify template notification format
+	        [request setValue:@"template" forHTTPHeaderField:@"ServiceBusNotification-Format"];
+
+			// JSON Content-Type
+			[request setValue:@"application/json;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+
 		    //Authenticate the notification message POST request with the SaS token
 		    [request setValue:authorizationToken forHTTPHeaderField:@"Authorization"];
 		    
@@ -314,11 +299,10 @@
 									@"Technology", @"Science", @"Sports", nil];
 		
 		    // Lets send the message as breaking news for each category to WNS, GCM, and APNS
+			// using a template.
 		    for(NSString* category in categories)
 		    {
-		        [self SendNotificationRESTAPI:@"wns" Category:category];
-		        [self SendNotificationRESTAPI:@"gcm" Category:category];
-		        [self SendNotificationRESTAPI:@"apns" Category:category];
+		        [self SendNotificationRESTAPI:category];
 		    }
 		}
 
@@ -335,7 +319,7 @@
 
 	选择“订阅”时，应用程序将所选类别转换为标记并针对所选标签从通知中心请求注册新设备。
 
-2. 输入要以突发新闻形式发送的消息，然后按“发送通知”按钮
+2. 输入要以突发新闻形式发送的消息，然后按“发送通知”按钮。或者，运行 .NET 控制台应用以生成通知。
 
 	![][2]
 
@@ -352,9 +336,7 @@
 
 	了解如何扩展突发新闻应用程序以允许发送本地化的通知。
 
-+ **[使用通知中心通知用户]**
 
-	了解如何将通知推送到经过身份验证的特定用户。这是仅将通知发送到特定用户的好的解决方案。
 
 
 
@@ -379,4 +361,4 @@
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Notification Hubs How-To for iOS]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [get-started]: /documentation/articles/notification-hubs-ios-get-started
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

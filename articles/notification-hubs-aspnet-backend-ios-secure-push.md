@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="06/16/2015"
-	wacn.date="12/17/2015" />
+	ms.date="10/05/2015"
+	wacn.date="01/14/2016" />
 
 # Azure 通知中心安全推送
 

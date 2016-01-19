@@ -9,15 +9,11 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="09/24/2015"
-	wacn.date="1/13/2016"/>
+	ms.date="12/10/2015"
+	wacn.date="01/14/2016"/>
 
 # 如何通过 Node.js 使用通知中心
-
-> [AZURE.SELECTOR]
-- [Java](/documentation/articles/notification-hubs-java-backend-how-to)
-- [PHP](/documentation/articles/notification-hubs-php-backend-how-to)
-- [Python](/documentation/articles/notification-hubs-python-backend-how-to)
+[AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
 
 ##概述
 
@@ -42,16 +38,16 @@ Azure 通知中心可提供用于向移动设备发送推送通知的易于使�
 2.  在命令窗口中键入 **npm install azure**，这应会生成以下输出：
 
         azure@0.7.0 node_modules\azure
-        |-- dateformat@1.0.2-1.2.3
-        |-- xmlbuilder@0.4.2
-        |-- node-uuid@1.2.0
-        |-- mime@1.2.9
-        |-- underscore@1.4.4
-        |-- validator@0.4.28
-        |-- tunnel@0.0.2
-        |-- wns@0.5.3
-        |-- xml2js@0.2.6 (sax@0.4.2)
-        |-- request@2.16.6 (forever-agent@0.2.0, aws-sign@0.2.0, tunnel-agent@0.2.0, oauth-sign@0.2.0, json-stringify-safe@3.0.0, cookie-jar@0.2.0, node-uuid@1.4.0, qs@0.5.5, hawk@0.10.2, form-data@0.0.7)
+		|-- dateformat@1.0.2-1.2.3
+		|-- xmlbuilder@0.4.2
+		|-- node-uuid@1.2.0
+		|-- mime@1.2.9
+		|-- underscore@1.4.4
+		|-- validator@0.4.28
+		|-- tunnel@0.0.2
+		|-- wns@0.5.3
+		|-- xml2js@0.2.6 (sax@0.4.2)
+		|-- request@2.16.6 (forever-agent@0.2.0, aws-sign@0.2.0, tunnel-agent@0.2.0, oauth-sign@0.2.0, json-stringify-safe@3.0.0, cookie-jar@0.2.0, node-uuid@1.4.0, qs@0.5.5, hawk@0.10.2, form-data@0.0.7)
 
 3.  可以手动运行 **ls** 或 **dir** 命令来验证是否创建了 **node\_modules** 文件夹。在该文件夹中，找到 **azure** 包，其中包含访问通知中心所需的库。
 
@@ -67,11 +63,11 @@ Azure 通知中心可提供用于向移动设备发送推送通知的易于使�
 
     var notificationHubService = azure.createNotificationHubService('hubname','connectionstring');
 
-可通过执行以下步骤从 Azure 管理门户获取连接 **connectionstring** 值：
+可通过执行以下步骤从 [Azure 管理门户]获取连接 **connectionstring** 值：
 
-1.  在 Azure 管理门户中选择“服务总线”，然后选择包含通知中心的命名空间。
+1. 在 [Azure 管理门户]中选择“服务总线”，然后选择包含通知中心的命名空间。
 
-2.  选择“通知中心”，然后选择要使用的通知中心。
+2. 选择“通知中心”，然后选择要使用的中心。
 
 3.  从“速览”部分中选择“查看连接字符串”，并复制连接字符串值。
 
@@ -84,6 +80,29 @@ Azure 通知中心可提供用于向移动设备发送推送通知的易于使�
 -   **iOS** - 使用可在 **notificationHubService.apns** 中访问的 **ApnsService** 对象
 -   **Windows Phone** - 使用可从 **notificationHubService.mpns** 中获取的 **MpnsService** 对象
 -   **Windows 应用商店应用程序** - 使用可从 **notificationHubService.wns** 中获取的 **WnsService** 对象
+
+### 如何发送 Android 应用程序通知
+
+**GcmService** 对象提供可用于将通知发送到 Android 应用程序的 **send** 方法。该 **send** 方法接受以下参数：
+
+* Tags - 标记标识符。如果没有提供任何标记，通知将发送给所有客户端。
+* Payload - 消息的 JSON 或字符串负载
+* Callback - 回调函数
+
+有关负载格式的详细信息，请参阅[实施 GCM 服务器](http://developer.android.com/google/gcm/server.html#payload)中的“负载”部分。
+
+以下代码使用 **NotificationHubService** 公开的 **GcmService** 实例将一条消息发送到所有客户端。
+
+	var payload = {
+	  data: {
+	    msg: 'Hello!'
+	  }
+	};
+	notificationHubService.gcm.send(null, payload, function(error){
+	  if(!error){
+	    //notification sent
+	  }
+	});
 
 ### 如何发送 iOS 应用程序通知
 
@@ -170,3 +189,4 @@ Azure 通知中心可提供用于向移动设备发送推送通知的易于使�
   [从服务器推送通知]: http://msdn.microsoft.com/library/hh221551.aspx
   [推送通知服务请求和响应标头]: http://msdn.microsoft.com/library/windows/apps/hh465435.aspx
   [Azure SDK for Node]: https://github.com/WindowsAzure/azure-sdk-for-node
+<!---HONumber=Mooncake_0104_2016-->
