@@ -11,7 +11,7 @@
 <tags 
 	ms.service="sql-database" 
 	ms.date="12/17/2015" 
-        wacn.date="01/15/2016"/>
+    wacn.date="01/15/2016"/>
 
 
 # 代码示例：Enterprise Library 6 中用于连接到 SQL 数据库的 C&#x23; 重试逻辑
@@ -115,19 +115,18 @@ Program.cs 源代码示例将在本主题后面部分提供。可以使用以下
 3. 使用 Visual Studio 中的“生成”>“生成解决方案”菜单编译你的项目。
 
 4. 在 cmd.exe 命令窗口中，按如下所示运行程序。图中还显示了运行后的实际输出：
+ 
+	
+	[C:\MyVS\EntLib60Retry\EntLib60Retry\bin\Debug]
+	>> EntLib60Retry.exe
+	
+	database_firewall_rules_table   245575913
+	filestream_tombstone_2073058421 2073058421
+	filetable_updates_2105058535    2105058535
+	
+	[C:\MyVS\EntLib60Retry\EntLib60Retry\bin\Debug]
+	>>
 
-
-```
-[C:\MyVS\EntLib60Retry\EntLib60Retry\bin\Debug]
->> EntLib60Retry.exe
-
-database_firewall_rules_table   245575913
-filestream_tombstone_2073058421 2073058421
-filetable_updates_2105058535    2105058535
-
-[C:\MyVS\EntLib60Retry\EntLib60Retry\bin\Debug]
->>
-```
 
 
 &nbsp;
@@ -138,162 +137,161 @@ filetable_updates_2105058535    2105058535
 
 下面的 Program.cs 文件中包含此 EntLib 示例的所有源代码。
 
+	 
+	using     System;   // C#
+	using G = System.Collections.Generic;
+	using D = System.Data;
+	using C = System.Data.SqlClient;
+	using X = System.Text;
+	using H = System.Threading;
+	using Y = Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling;
+	
+	namespace EntLib60Retry
+	{
+	   class Program
+	   {
+	      static void Main(string[] args)
+	      {
+	         Program program = new Program();
+	
+	         if (program.Run(args) == false)
+	         {
+	            Console.WriteLine("Something was unable to complete.  :-( ");
+	         }
+	      }
+	
+	      bool Run(string[] _args)
+	      {
+	         int retryIntervalSeconds = 10;
+	         bool returnBool = false;
+	
+	         this.InitializeEntLibObjects();
+	
+	         for (int tries = 1; tries <= 3; tries++)
+	         {
+	            if (tries > 1)
+	            {
+	               H.Thread.Sleep(1000 * retryIntervalSeconds);
+	               retryIntervalSeconds = Convert.ToInt32(retryIntervalSeconds * 1.5);
+	            }
+	
+	            try
+	            {
+	               this.reliableSqlConnection = new Y.ReliableSqlConnection(
+	                  this.sqlConnectionSB.ToString(),
+	                  this.retryPolicy, null
+	                  );
+	               this.retryPolicy.ExecuteAction(this.OpenTheConnection_action);  // Open the connection.
+	
+	               this.dbCommand = this.reliableSqlConnection.CreateCommand();
+	               this.dbCommand.CommandText = @"SELECT TOP 3 ob.name, CAST(ob.object_id as nvarchar(32)) as [object_id] FROM sys.objects as ob WHERE ob.type='IT' ORDER BY ob.name;";
+	
+	               // We retry connection .Open after transient faults, but
+	               // we do not retry commands that use the connection.
+	               this.IssueTheQuery();  // Run the query, loop through results.
+	
+	               returnBool = true;
+	               break;
+	            }
+	
+	            catch (C.SqlException sqlExc)
+	            {
+	               if (false == this.sqlDatabaseTransientErrorDetectionStrategy.IsTransient(sqlExc))
+	               {
+	                  throw sqlExc;
+	               }
+	            }
+	         }
+	         return returnBool;
+	      }
+	
+	      void OpenTheConnection()  // Called by .ExecuteAction.
+	      {
+	         this.reliableSqlConnection.Open();
+	      }
+	
+	      void IssueTheQuery()      // Called by .ExecuteAction.
+	      {
+	         X.StringBuilder sBuilder = new X.StringBuilder(256);
+	
+	         this.dataReader = this.dbCommand.ExecuteReader();
+	
+	         while (this.dataReader.Read())
+	         {
+	            sBuilder.Length = 0;
+	            sBuilder.Append(this.dataReader.GetString(0));
+	            sBuilder.Append("\t");
+	            sBuilder.Append(this.dataReader.GetString(1));
+	
+	            Console.WriteLine(sBuilder.ToString());
+	         }
+	      }
+	
+	      void InitializeEntLibObjects()
+	      {
+	         this.InitializeSqlConnectionStringBuilder();
+	
+	         this.exponentialBackoff = new Y.ExponentialBackoff(
+	            "exponentialBackoff",
+	             3,                    // Maximum number of times to retry, then let exception bubble up.
+	             TimeSpan.FromMilliseconds(10000), // Minimum interval between retries.
+	             TimeSpan.FromMilliseconds(30000), // Maximum interval between retries.
+	             TimeSpan.FromMilliseconds( 2000)  // For random differences in interval between retries.
+	            );
+	         this.sqlDatabaseTransientErrorDetectionStrategy =
+	            new Y.SqlDatabaseTransientErrorDetectionStrategy();
+	         this.retryPolicy = new Y.RetryPolicy(
+	               this.sqlDatabaseTransientErrorDetectionStrategy,
+	               this.exponentialBackoff
+	               );
+	         this.OpenTheConnection_action = delegate() { this.OpenTheConnection(); };
+	      }
+	
+	      void InitializeSqlConnectionStringBuilder()
+	      {
+	         // Prepare the connection string to Azure SQL Database.
+	         this.sqlConnectionSB = new C.SqlConnectionStringBuilder();
+	
+	         // Change these values to your values.
+	         this.sqlConnectionSB["Server"] = "tcp:myazuresqldbserver.database.chinacloudapi.cn,1433";
+	         this.sqlConnectionSB["User ID"] = "MyLogin";  // "@yourservername"  as suffix sometimes.
+	         this.sqlConnectionSB["Password"] = "MyPassword";
+	         this.sqlConnectionSB["Database"] = "MyDatabase";
+	
+	         // Leave these values as they are.
+	         this.sqlConnectionSB["Trusted_Connection"] = false;
+	         this.sqlConnectionSB["Integrated Security"] = false;
+	         this.sqlConnectionSB["Encrypt"] = true;
+	         this.sqlConnectionSB["Connection Timeout"] = 30;
+	      }
+	
+	      Program()   // Constructor.
+	      {
+	         int[] arrayOfTransientErrorNumbers =
+	                { 4060, 10928, 10929, 40197, 40501, 40613, 49918, 49919, 49920
+	                    //,11001   // 11001 for testing, pretend network error is transient.
+	                    //,18456   // 18456 for testing, purposely misspell database name.
+	                };
+	         listTransientErrorNumbers = new G.List<int>(arrayOfTransientErrorNumbers);
+	      }
+	
+	      // Fields.
+	      private G.List<int> listTransientErrorNumbers;
+	
+	      private Y.ReliableSqlConnection reliableSqlConnection;
+	      private Y.ExponentialBackoff exponentialBackoff;
+	      private Y.SqlDatabaseTransientErrorDetectionStrategy
+	                   sqlDatabaseTransientErrorDetectionStrategy;
+	      private Y.RetryPolicy retryPolicy;
+	
+	      private Action OpenTheConnection_action;
+	
+	      private C.SqlConnectionStringBuilder sqlConnectionSB;
+	      private D.IDbCommand dbCommand;
+	      private D.IDataReader dataReader;
+	   }
+	}
 
-```
-using     System;   // C#
-using G = System.Collections.Generic;
-using D = System.Data;
-using C = System.Data.SqlClient;
-using X = System.Text;
-using H = System.Threading;
-using Y = Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling;
-
-namespace EntLib60Retry
-{
-   class Program
-   {
-      static void Main(string[] args)
-      {
-         Program program = new Program();
-
-         if (program.Run(args) == false)
-         {
-            Console.WriteLine("Something was unable to complete.  :-( ");
-         }
-      }
-
-      bool Run(string[] _args)
-      {
-         int retryIntervalSeconds = 10;
-         bool returnBool = false;
-
-         this.InitializeEntLibObjects();
-
-         for (int tries = 1; tries <= 3; tries++)
-         {
-            if (tries > 1)
-            {
-               H.Thread.Sleep(1000 * retryIntervalSeconds);
-               retryIntervalSeconds = Convert.ToInt32(retryIntervalSeconds * 1.5);
-            }
-
-            try
-            {
-               this.reliableSqlConnection = new Y.ReliableSqlConnection(
-                  this.sqlConnectionSB.ToString(),
-                  this.retryPolicy, null
-                  );
-               this.retryPolicy.ExecuteAction(this.OpenTheConnection_action);  // Open the connection.
-
-               this.dbCommand = this.reliableSqlConnection.CreateCommand();
-               this.dbCommand.CommandText = @"SELECT TOP 3 ob.name, CAST(ob.object_id as nvarchar(32)) as [object_id] FROM sys.objects as ob WHERE ob.type='IT' ORDER BY ob.name;";
-
-               // We retry connection .Open after transient faults, but
-               // we do not retry commands that use the connection.
-               this.IssueTheQuery();  // Run the query, loop through results.
-
-               returnBool = true;
-               break;
-            }
-
-            catch (C.SqlException sqlExc)
-            {
-               if (false == this.sqlDatabaseTransientErrorDetectionStrategy.IsTransient(sqlExc))
-               {
-                  throw sqlExc;
-               }
-            }
-         }
-         return returnBool;
-      }
-
-      void OpenTheConnection()  // Called by .ExecuteAction.
-      {
-         this.reliableSqlConnection.Open();
-      }
-
-      void IssueTheQuery()      // Called by .ExecuteAction.
-      {
-         X.StringBuilder sBuilder = new X.StringBuilder(256);
-
-         this.dataReader = this.dbCommand.ExecuteReader();
-
-         while (this.dataReader.Read())
-         {
-            sBuilder.Length = 0;
-            sBuilder.Append(this.dataReader.GetString(0));
-            sBuilder.Append("\t");
-            sBuilder.Append(this.dataReader.GetString(1));
-
-            Console.WriteLine(sBuilder.ToString());
-         }
-      }
-
-      void InitializeEntLibObjects()
-      {
-         this.InitializeSqlConnectionStringBuilder();
-
-         this.exponentialBackoff = new Y.ExponentialBackoff(
-            "exponentialBackoff",
-             3,                    // Maximum number of times to retry, then let exception bubble up.
-             TimeSpan.FromMilliseconds(10000), // Minimum interval between retries.
-             TimeSpan.FromMilliseconds(30000), // Maximum interval between retries.
-             TimeSpan.FromMilliseconds( 2000)  // For random differences in interval between retries.
-            );
-         this.sqlDatabaseTransientErrorDetectionStrategy =
-            new Y.SqlDatabaseTransientErrorDetectionStrategy();
-         this.retryPolicy = new Y.RetryPolicy(
-               this.sqlDatabaseTransientErrorDetectionStrategy,
-               this.exponentialBackoff
-               );
-         this.OpenTheConnection_action = delegate() { this.OpenTheConnection(); };
-      }
-
-      void InitializeSqlConnectionStringBuilder()
-      {
-         // Prepare the connection string to Azure SQL Database.
-         this.sqlConnectionSB = new C.SqlConnectionStringBuilder();
-
-         // Change these values to your values.
-         this.sqlConnectionSB["Server"] = "tcp:myazuresqldbserver.database.chinacloudapi.cn,1433";
-         this.sqlConnectionSB["User ID"] = "MyLogin";  // "@yourservername"  as suffix sometimes.
-         this.sqlConnectionSB["Password"] = "MyPassword";
-         this.sqlConnectionSB["Database"] = "MyDatabase";
-
-         // Leave these values as they are.
-         this.sqlConnectionSB["Trusted_Connection"] = false;
-         this.sqlConnectionSB["Integrated Security"] = false;
-         this.sqlConnectionSB["Encrypt"] = true;
-         this.sqlConnectionSB["Connection Timeout"] = 30;
-      }
-
-      Program()   // Constructor.
-      {
-         int[] arrayOfTransientErrorNumbers =
-                { 4060, 10928, 10929, 40197, 40501, 40613, 49918, 49919, 49920
-                    //,11001   // 11001 for testing, pretend network error is transient.
-                    //,18456   // 18456 for testing, purposely misspell database name.
-                };
-         listTransientErrorNumbers = new G.List<int>(arrayOfTransientErrorNumbers);
-      }
-
-      // Fields.
-      private G.List<int> listTransientErrorNumbers;
-
-      private Y.ReliableSqlConnection reliableSqlConnection;
-      private Y.ExponentialBackoff exponentialBackoff;
-      private Y.SqlDatabaseTransientErrorDetectionStrategy
-                   sqlDatabaseTransientErrorDetectionStrategy;
-      private Y.RetryPolicy retryPolicy;
-
-      private Action OpenTheConnection_action;
-
-      private C.SqlConnectionStringBuilder sqlConnectionSB;
-      private D.IDbCommand dbCommand;
-      private D.IDataReader dataReader;
-   }
-}
-```
 
 
 &nbsp;

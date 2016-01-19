@@ -74,13 +74,10 @@ wacn.date="01/15/2016"/>
 
 当你使用辅助角色和 web 角色时，在终结点方面需要注意一个细微的差别。Web 角色必须至少有一个使用 **HTTP** 协议的输入终结点。
 
-
-```xml
-<Endpoints>
-  <InputEndpoint name="StandardWeb" protocol="http" port="80" localPort="80" />
-  <!-- more endpoints may be declared after the first InputEndPoint -->
-</Endpoints>
-```
+	<Endpoints>
+	  <InputEndpoint name="StandardWeb" protocol="http" port="80" localPort="80"/>
+	  <!-- more endpoints may be declared after the first InputEndPoint -->
+	</Endpoints>
 
 ## 使用 .NET SDK 访问终结点
 Azure 托管库提供了角色实例在运行时用来通信的方法。可以从角色实例中运行的代码检索有关其他角色实例及其终结点是否存在的信息，以及有关当前角色实例的信息。
@@ -198,9 +195,9 @@ namespace WorkerRole1
       // see the MSDN topic at http://go.microsoft.com/fwlink/?LinkId=166357.
       return base.OnStart();
     }
-  }
-}
-```
+	}
+	}
+	```
 
 ## 用于控制角色通信的网络流量规则
 在定义内部终结点之后，可以根据创建的终结点添加网络流量规则以控制各角色实例之间的通信方式。下图演示了一些用于控制角色通信的常见方案：

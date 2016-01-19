@@ -46,7 +46,7 @@
 
 首先必须与 Azure 帐户建立访问连接，因此请启动 PowerShell，然后运行以下 cmdlet。在登录屏幕中，输入登录 Azure 经典门户时所用的相同电子邮件和密码。
 
-	Add-AzureAccount
+	Add-AzureAccount -environment azurechinacloud
 
 成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
 

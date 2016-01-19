@@ -9,7 +9,6 @@
 
 <tags
    ms.service="multiple"
-
    ms.date="12/01/2015"
    wacn.date="01/15/2016"/>
 

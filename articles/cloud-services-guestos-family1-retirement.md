@@ -37,15 +37,15 @@
 
 若要了解你的哪个云服务在运行哪个 OS 系列，你可以在 Azure PowerShell 中运行以下脚本，但必须首先[设置 Azure PowerShell](/documentation/articles/powershell-install-configure )。有关该脚本的其他详细信息，请参阅 [Azure 来宾 OS 系列 1 生命周期终结：2014 年 6 月](http://blogs.msdn.com/b/ryberry/archive/2014/04/02/azure-guest-os-family-1-end-of-life-june-2014.aspx)。
 
-```Powershell
-foreach($subscription in Get-AzureSubscription) {
-    Select-AzureSubscription -SubscriptionName $subscription.SubscriptionName 
-    
-    $deployments=get-azureService | get-azureDeployment -ErrorAction Ignore | where {$_.SdkVersion -NE ""} 
+	Powershell
+	foreach($subscription in Get-AzureSubscription) {
+	    Select-AzureSubscription -SubscriptionName $subscription.SubscriptionName 
+	    
+	    $deployments=get-azureService | get-azureDeployment -ErrorAction Ignore | where {$_.SdkVersion -NE ""} 
+	
+	    $deployments | ft @{Name="SubscriptionName";Expression={$subscription.SubscriptionName}}, ServiceName, SdkVersion, Slot, @{Name="osFamily";Expression={(select-xml -content $_.configuration -xpath "/ns:ServiceConfiguration/@osFamily" -namespace $namespace).node.value }}, osVersion, Status, URL
+	}
 
-    $deployments | ft @{Name="SubscriptionName";Expression={$subscription.SubscriptionName}}, ServiceName, SdkVersion, Slot, @{Name="osFamily";Expression={(select-xml -content $_.configuration -xpath "/ns:ServiceConfiguration/@osFamily" -namespace $namespace).node.value }}, osVersion, Status, URL
-}
-```
 
 如果脚本输出中的 osFamily 列为空或者包含“1”，则表示 OS 系列 1 的停用将影响到你的云服务。
 

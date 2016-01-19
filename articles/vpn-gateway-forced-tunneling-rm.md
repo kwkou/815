@@ -73,7 +73,7 @@
 
 1. 在 PowerShell 控制台中，登录到你的 Azure 帐户。该 cmdlet 将提示你提供 Azure 帐户的登录凭据。登录后它会下载你的帐户设置，以便这些信息可供 Azure PowerShell 使用。
 
-		Login-AzureRmAccount 
+		Login-AzureRmAccount –Environment (Get-AzureRmEnvironment –Name AzureChinaCloud)
 
 2. 获取 Azure 订阅的列表。
 

@@ -285,30 +285,29 @@ ADO.NET 4.5：
 
 
 在 Linux 上，以下实用程序可能很有用：
-- `netstat -nap`
-- `nmap -sS -O 127.0.0.1`
- - （将示例值更改为你的 IP 地址）。
+	netstat -nap
+	nmap -sS -O 127.0.0.1
+	将示例值更改为你的 IP 地址）。
 
 
 在 Windows 上，[PortQry.exe](http://www.microsoft.com/zh-cn/download/details.aspx?id=17148) 实用程序可能很有用。以下是在 Azure SQL 数据库服务器上查询端口情况，以及在便携式计算机上运行的的示例执行：
+ 
 
+	[C:\Users\johndoe]
+	>> portqry.exe -n johndoesvr9.database.chinacloudapi.cn -p tcp -e 1433
+	
+	Querying target system called:
+	 johndoesvr9.database.chinacloudapi.cn
+	
+	Attempting to resolve name to IP address...
+	Name resolved to 23.100.117.95
+	
+	querying...
+	TCP port 1433 (ms-sql-s service): LISTENING
+	
+	[C:\Users\johndoe]
+	>>
 
-```
-[C:\Users\johndoe]
->> portqry.exe -n johndoesvr9.database.chinacloudapi.cn -p tcp -e 1433
-
-Querying target system called:
- johndoesvr9.database.chinacloudapi.cn
-
-Attempting to resolve name to IP address...
-Name resolved to 23.100.117.95
-
-querying...
-TCP port 1433 (ms-sql-s service): LISTENING
-
-[C:\Users\johndoe]
->>
-```
 
 
 <a id="g-diagnostics-log-your-errors" name="g-diagnostics-log-your-errors"></a>
@@ -464,72 +463,71 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 
 为了注重易读性，我们在此副本中删除了大量的 **//comment** 行。
 
+	
+	public bool IsTransient(Exception ex)
+	{
+	  if (ex != null)
+	  {
+	    SqlException sqlException;
+	    if ((sqlException = ex as SqlException) != null)
+	    {
+	      // Enumerate through all errors found in the exception.
+	      foreach (SqlError err in sqlException.Errors)
+	      {
+	        switch (err.Number)
+	        {
+	            // SQL Error Code: 40501
+	            // The service is currently busy. Retry the request after 10 seconds.
+	            // Code: (reason code to be decoded).
+	          case ThrottlingCondition.ThrottlingErrorNumber:
+	            // Decode the reason code from the error message to
+	            // determine the grounds for throttling.
+	            var condition = ThrottlingCondition.FromError(err);
+	
+	            // Attach the decoded values as additional attributes to
+	            // the original SQL exception.
+	            sqlException.Data[condition.ThrottlingMode.GetType().Name] =
+	              condition.ThrottlingMode.ToString();
+	            sqlException.Data[condition.GetType().Name] = condition;
+	
+	            return true;
+	
+	          case 10928:
+	          case 10929:
+	          case 10053:
+	          case 10054:
+	          case 10060:
+	          case 40197:
+	          case 40540:
+	          case 40613:
+	          case 40143:
+	          case 233:
+	          case 64:
+	            // DBNETLIB Error Code: 20
+	            // The instance of SQL Server you attempted to connect to
+	            // does not support encryption.
+	          case (int)ProcessNetLibErrorCode.EncryptionNotSupported:
+	            return true;
+	        }
+	      }
+	    }
+	    else if (ex is TimeoutException)
+	    {
+	      return true;
+	    }
+	    else
+	    {
+	      EntityException entityException;
+	      if ((entityException = ex as EntityException) != null)
+	      {
+	        return this.IsTransient(entityException.InnerException);
+	      }
+	    }
+	  }
+	
+	  return false;
+	}
 
-```
-public bool IsTransient(Exception ex)
-{
-  if (ex != null)
-  {
-    SqlException sqlException;
-    if ((sqlException = ex as SqlException) != null)
-    {
-      // Enumerate through all errors found in the exception.
-      foreach (SqlError err in sqlException.Errors)
-      {
-        switch (err.Number)
-        {
-            // SQL Error Code: 40501
-            // The service is currently busy. Retry the request after 10 seconds.
-            // Code: (reason code to be decoded).
-          case ThrottlingCondition.ThrottlingErrorNumber:
-            // Decode the reason code from the error message to
-            // determine the grounds for throttling.
-            var condition = ThrottlingCondition.FromError(err);
-
-            // Attach the decoded values as additional attributes to
-            // the original SQL exception.
-            sqlException.Data[condition.ThrottlingMode.GetType().Name] =
-              condition.ThrottlingMode.ToString();
-            sqlException.Data[condition.GetType().Name] = condition;
-
-            return true;
-
-          case 10928:
-          case 10929:
-          case 10053:
-          case 10054:
-          case 10060:
-          case 40197:
-          case 40540:
-          case 40613:
-          case 40143:
-          case 233:
-          case 64:
-            // DBNETLIB Error Code: 20
-            // The instance of SQL Server you attempted to connect to
-            // does not support encryption.
-          case (int)ProcessNetLibErrorCode.EncryptionNotSupported:
-            return true;
-        }
-      }
-    }
-    else if (ex is TimeoutException)
-    {
-      return true;
-    }
-    else
-    {
-      EntityException entityException;
-      if ((entityException = ex as EntityException) != null)
-      {
-        return this.IsTransient(entityException.InnerException);
-      }
-    }
-  }
-
-  return false;
-}
-```
 
 
 ## 详细信息

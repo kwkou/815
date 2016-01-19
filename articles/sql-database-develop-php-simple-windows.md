@@ -106,7 +106,7 @@
 		{
 			$conn = OpenConnection();
 
-			$tsql = "INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT 			INSERTED.ProductID VALUES ('SQL Server 1', 'SQL Server 2', 0, 0, getdate())";
+			$tsql = "INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server 1', 'SQL Server 2', 0, 0, getdate())";
 			//Insert query
 			$insertReview = sqlsrv_query($conn, $tsql);
 			if($insertReview == FALSE)

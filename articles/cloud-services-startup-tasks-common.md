@@ -260,33 +260,32 @@ Windows PowerShell 脚本不能直接从 [ServiceDefinition.csdef] 文件调用�
 
 在此处显示 **ServiceDefinition.csdef** 文件的相关节：
 
-```xml
-<ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
-    <WebRole name="WebRole1">
-        ...
-        
-        <LocalResources>
-          <LocalStorage name="StartupLocalStorage" sizeInMB="5"/>
-        </LocalResources>
-        
-        ...
-        
-        <Runtime>
-            <Environment>
-                <Variable name="PathToStartupStorage">
-                    <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='StartupLocalStorage']/@path" />
-                </Variable>
-            </Environment>
-        </Runtime>
-        
-        ...
-        
-        <Startup>
-          <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple" />
-        </Startup>
-    </WebRole>
-</ServiceDefinition>
-```
+	<ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+	    <WebRole name="WebRole1">
+	        ...
+	        
+	        <LocalResources>
+	          <LocalStorage name="StartupLocalStorage" sizeInMB="5"/>
+	        </LocalResources>
+	        
+	        ...
+	        
+	        <Runtime>
+	            <Environment>
+	                <Variable name="PathToStartupStorage">
+	                    <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='StartupLocalStorage']/@path" />
+	                </Variable>
+	            </Environment>
+	        </Runtime>
+	        
+	        ...
+	        
+	        <Startup>
+	          <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple" />
+	        </Startup>
+	    </WebRole>
+	</ServiceDefinition>
+
 
 例如，这个 **Startup.cmd** 批处理文件使用 **PathToStartupStorage** 环境变量在本地存储位置上创建文件 **MyTest.txt**。
 
@@ -319,23 +318,22 @@ string fileContent = System.IO.File.ReadAllText(System.IO.Path.Combine(localStor
 若要创建环境变量，请添加 [Variable]/[RoleInstanceValue] 元素并创建 `/RoleEnvironment/Deployment/@emulated` 的 XPath 值。在计算模拟器中运行时，**%ComputeEmulatorRunning%** 环境变量的值将为 `"true"`，而在云中运行时，该值将为 `"false"`。
 
 
-```xml
-<ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
-    <WebRole name="WebRole1">
+	<ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+	    <WebRole name="WebRole1">
+	
+	        ...
+	        
+	        <Runtime>
+	            <Environment>
+	                <Variable name="ComputeEmulatorRunning">
+	                    <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
+	                </Variable>
+	            </Environment>
+	        </Runtime>
+	
+	    </WebRole>
+	</ServiceDefinition>
 
-        ...
-        
-        <Runtime>
-            <Environment>
-                <Variable name="ComputeEmulatorRunning">
-                    <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
-                </Variable>
-            </Environment>
-        </Runtime>
-
-    </WebRole>
-</ServiceDefinition>
-```
 
 运行的任何任务现在可以使用 **%ComputeEmulatorRunning%** 环境变量根据角色是在云中还是在模拟器中运行来执行不同的操作。下面是用于检查该环境变量的 .cmd shell 脚本。
 

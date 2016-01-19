@@ -49,7 +49,7 @@
 
 打开 PowerShell 控制台并连接到你的帐户。使用下面的示例来帮助你连接：
 
-	Login-AzureRmAccount
+	Login-AzureRmAccount –Environment (Get-AzureRmEnvironment –Name AzureChinaCloud)
 
 检查该帐户的订阅。
 

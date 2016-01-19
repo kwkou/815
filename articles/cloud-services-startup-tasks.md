@@ -130,24 +130,24 @@ EXIT /B 0
 
 例如，若要创建这样一个环境变量（当实例在计算模拟器中运行时为**“true”**，在云中运行时为**“false”**），请使用以下 [Variable] 和 [RoleInstanceValue] 元素：
 
-```xml
-<Startup>
-    <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple">
-        <Environment>
-    
-            <!-- Create the environment variable that informs the startup task whether it is running
-                in the Compute Emulator or in the cloud. "%ComputeEmulatorRunning%"=="true" when
-                running in the Compute Emulator, "%ComputeEmulatorRunning%"=="false" when running
-                in the cloud. -->
-    
-            <Variable name="ComputeEmulatorRunning">
-                <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
-            </Variable>
-    
-        </Environment>
-    </Task>
-</Startup>
-```
+
+	<Startup>
+	    <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple">
+	        <Environment>
+	    
+	            <!-- Create the environment variable that informs the startup task whether it is running
+	                in the Compute Emulator or in the cloud. "%ComputeEmulatorRunning%"=="true" when
+	                running in the Compute Emulator, "%ComputeEmulatorRunning%"=="false" when running
+	                in the cloud. -->
+	    
+	            <Variable name="ComputeEmulatorRunning">
+	                <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
+	            </Variable>
+	    
+	        </Environment>
+	    </Task>
+	</Startup>
+
 
 ## 后续步骤
 了解如何使用云服务执行一些[常见的启动任务](/documentation/articles/cloud-services-startup-tasks-common)。
