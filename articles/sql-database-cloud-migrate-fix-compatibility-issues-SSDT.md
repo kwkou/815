@@ -18,7 +18,7 @@
 
 > [AZURE.SELECTOR]
 - 使用 [SQL Azure 迁移向导](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues)
-- 使用 [SSDT](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssdt)
+- 使用 [SSDT](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-SSDT)
 - 使用 [SSMS](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-SSMS)
 
 ## 使用 SQL Server Data Tools for Visual Studio

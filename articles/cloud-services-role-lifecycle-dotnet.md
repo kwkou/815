@@ -43,7 +43,6 @@ wacn.date="01/15/2016"
 
 下面的代码示例演示如何重写 **OnStart** 方法。当角色实例启动并设置将日志记录数据传输到存储帐户时，此方法将配置并启动诊断监视器：
 	
-	csharp
 	public override bool OnStart()
 	{
 	    var config = DiagnosticMonitor.GetDefaultInitialConfiguration();
