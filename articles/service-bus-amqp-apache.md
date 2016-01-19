@@ -9,15 +9,15 @@
 <tags 
    ms.service="service-bus"
    ms.date="10/07/2015"
-   wacn.date="11/27/2015" />
+   wacn.date="01/14/2016" />
 
 # 在 Azure Linux VM 上安装 Apache Qpid Proton-C
 
 [AZURE.INCLUDE [service-bus-selector-amqp](../includes/service-bus-selector-amqp.md)]
 
-本节演示如何使用 Azure 虚拟机创建 CentOS Linux VM，以及如何下载、构建和安装 Apache Qpid Proton-C 库及 Python 和 PHP 语言绑定。完成这些步骤后，你将能够运行本指南附带的 Python 和 PHP 示例。
+本部分演示如何使用 Azure 虚拟机创建 CentOS Linux VM，以及如何下载、构建和安装 Apache Qpid Proton-C 库及 Python 和 PHP 语言绑定。完成这些步骤后，你将能够运行本指南附带的 Python 和 PHP 示例。
 
-第一步使用 [Azure 门户][]执行。下面的屏幕快照显示了如何创建名为“scott-centos”的 CentOS VM：
+第一步是使用 [Azure 经典门户][]执行的。以下屏幕截图显示了如何创建名为“scott-centos”的 CentOS VM：
 
 ![Azure Linux VM 上的 Proton][0]
 
@@ -25,11 +25,11 @@
 
 ![Azure Linux VM 上的 Proton][1]
 
-若要登录到计算机，必须知道 SSH 的终结点端口。可以通过选择新创建的 VM 并单击“终结点”选项卡从门户中获取此值。下面的屏幕快照显示此计算机的公共 SSH 端口为 57146。
+若要登录到计算机，必须知道 SSH 的终结点端口。可以通过 [Azure 经典门户][]选择新创建的 VM 并单击“终结点”选项卡从门户中获取此值。以下屏幕截图显示此计算机的公共 SSH 端口为 57146。
 
 ![Azure Linux VM 上的 Proton][2]
 
-现在可以使用 SSH 连接到此计算机。此示例使用 PuTTY 工具，如下面的屏幕快照所示：
+现在可以使用 SSH 连接到此计算机。此示例使用 PuTTY 工具，如以下屏幕截图所示：
 
 ![Azure Linux VM 上的 Proton][3]
 
@@ -64,7 +64,7 @@
 		Length: 456693 (446K) [application/x-gzip] 
 		Saving to: âqpid-proton-0.4.tar.gzâ
 
-		100%[======================================\>] 456,693 --.-K/s in 0.06s
+		100%[======================================>] 456,693 --.-K/s in 0.06s
 
 		2015-05-23 21:27:55 (6.84 MB/s) - qpid-proton-0.4.tar.gz
 	```
@@ -108,6 +108,6 @@
 [2]: ./media/service-bus-amqp-apache/amqp-apache-3.png
 [3]: ./media/service-bus-amqp-apache/amqp-apache-4.png
 
-[Azure 门户]: http://manage.windowsazure.cn
+[Azure 经典门户]: http://manage.windowsazure.cn
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="10/07/2015"
-   wacn.date="11/27/2015" />
+   wacn.date="01/14/2016" />
 
 # 使用 AMQP 1.0 通过 Java 使用服务总线
 
@@ -78,9 +78,9 @@ amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
 
 | Name | 含义 | | | | |
 |---------------|--------------------------------------------------------------------------------|---|---|---|---|
-| `[namespace]` | 从 Azure 门户获得的服务总线命名空间。 | | | | |
-| `[username]` | 从 Azure 门户获得的服务总线颁发者名称。 | | | | |
-| `[password]` | 从 Azure 门户获得的 URL 编码形式的服务总线颁发者密钥。 | | | | |
+| `[namespace]` | 从 [Azure 经典门户][]获取的服务总线命名空间。 | | | | |
+| `[username]` | 从 [Azure 经典门户][]获取的服务总线颁发者名称。 | | | | |
+| `[password]` | 从 [Azure 经典门户][]获取的 URL 编码形式的服务总线颁发者密钥。 | | | | |
 
 > [AZURE.NOTE]必须手动为密码进行 URL 编码。在 [http://www.w3schools.com/tags/ref\_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp) 上提供了一个有用的 URL 编码实用工具。
 
@@ -128,7 +128,7 @@ topic.TOPIC = topic1
 
 ### 使用 JMS 发送消息
 
-以下代码演示如何向服务总线主题发送消息。它假定在上一节中所述的 **servicebus.properties** 配置文件中定义了 `SBCONNECTIONFACTORY` 和 `TOPIC`。
+以下代码演示如何向服务总线主题发送消息。假设在上一部分中所述的 **servicebus.properties** 配置文件中定义了 `SBCONNECTIONFACTORY` 和 `TOPIC`。
 
 ```
 Hashtable<String, String> env = new Hashtable<String, String>(); 
@@ -149,7 +149,7 @@ producer.send(message);
 
 ### 使用 JMS 接收消息
 
-以下代码演示如何从服务总线主题订阅接收消息。它假定在上一节中所述的 **servicebus.properties** 配置文件中定义了 `SBCONNECTIONFACTORY` 和 TOPIC。它还假定订阅名称是 `subscription1`。
+以下代码演示如何从服务总线主题订阅接收消息。`how`假设在上一部分中所述的 **servicebus.properties** 配置文件中定义了 `SBCONNECTIONFACTORY` 和 TOPIC。它还假定订阅名称是 `subscription1`。
 
 ```
 Hashtable<String, String> env = new Hashtable<String, String>(); 
@@ -174,7 +174,7 @@ JMS 规范定义了应如何编写 API 方法和应用程序代码的异常约�
 
 -   使用 **connection.setExceptionListener** 向 JMS 连接注册 **ExceptionListener**。这允许以异步方式向客户端通知问题。此通知对于仅使用消息的连接特别重要，因为客户端没有其他方法可以获知其连接已失败。如果底层 AMQP 连接、会话或链接有问题，将调用 **ExceptionListener**。在此情况下，应用程序应从零开始重新创建 **JMS Connection**、**Session**、**MessageProducer** 和 **MessageConsumer** 对象。
 
--   若要验证是否已从 **MessageProducer** 将一条消息成功发送到 Service Bus 实体，请确保已为应用程序配置 **qpid.sync_publish** 系统属性集。可以通过在启动应用程序时在命令行上设置 **-Dqpid.sync_publish=true** Java VM 选项启动程序来完成此操作。设置此选项可将库配置为不从发送调用返回，直到收到该消息已被服务总线接受的确认为止。如果在发送操作期间出现问题，则将引发 **JMSException**。有两个可能的原因：
+-   若要验证是否已从 **MessageProducer** 将一条消息成功发送到服务总线实体，请确保已为应用程序配置 **qpid.sync\_publish** 系统属性集。可以通过在启动应用程序时在命令行上设置 **-Dqpid.sync\_publish=true** Java VM 选项启动程序来完成此操作。设置此选项可将库配置为不从发送调用返回，直到收到该消息已被服务总线接受的确认为止。如果在发送操作期间出现问题，则将引发 **JMSException**。有两个可能的原因：
 	1. 如果问题是由于服务总线拒绝所发送的特定消息所致，则将引发 **MessageRejectedException** 异常。此错误是暂时的，或者由于消息出现某些问题所致。建议的操作过程是进行多次尝试，以便使用一些后退逻辑重试该操作。如果问题仍然存在，则应使用本地记录的错误放弃该消息。在这种情况下，无需重新创建 **JMS Connection**、**Session** 或 **MessageProducer** 对象。 
 	2. 如果问题是由于服务总线关闭 AMQP 链接所致，则将引发 **InvalidDestinationException** 异常。这可能是由于暂时性问题或由于消息实体被删除所致。在这两种情况中的任一情况下，均应重新创建 **JMS Connection**、**Session** 和 **MessageProducer** 对象。如果错误条件是暂时的，则此操作最终将会成功。如果实体已被删除，则失败将是永久的。
 
@@ -315,7 +315,7 @@ if (message.Properties.Keys.Count > 0)
 | 整数 | int |
 | Float | float |
 | Double | double |
-| Boolean | bool |
+| 布尔 | bool |
 | String | 字符串 |
 
 [BrokeredMessage][] 类型支持以下类型的应用程序属性：**byte**、**sbyte**、**char**、**short**、**ushort**、**int**、**uint**、**long**、**ulong**、**float**、**double**、**decimal**、**bool**、**Guid**、**string**、**Uri**、**DateTime**、**DateTimeOffset** 和 **TimeSpan**。以下 .NET 代码显示如何使用上述每种属性类型在 [BrokeredMessage][] 对象上设置属性。
@@ -356,27 +356,27 @@ while (propertyNames.hasMoreElements())
 
 下表显示如何将 .NET 属性类型映射到 JMS 属性类型。
 
-| .NET 属性类型 | JMS 属性类型 | 说明 |
+| .NET 属性类型 | JMS 属性类型 | 说明                                                                                                                                                                            |
 |--------------------|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| byte | UnsignedByte | - 
-| sbyte | Byte | - 
-| char | Character | - 
-| short | Short | - 
-| ushort | UnsignedShort | - 
-| int | Integer | - 
-| uint | UnsignedInteger | - 
-| long | Long | - 
-| ulong | UnsignedLong | - 
-| float | Float | - 
-| double | Double | - 
-| decimal | BigDecimal | - 
-| bool | Boolean | - 
-| Guid | UUID | - 
-| string | String | - 
-| DateTime | Date | - 
-| DateTimeOffset | DescribedType | 映射到 AMQP 类型的 DateTimeOffset.UtcTicks：<type name=”datetime-offset” class=restricted source=”long”> <descriptor name=”com.microsoft:datetime-offset” /></type> | 
-| TimeSpan | DescribedType | 映射到 AMQP 类型的 Timespan.Ticks：<type name=”timespan” class=restricted source=”long”> <descriptor name=”com.microsoft:timespan” /></type> | 
-| Uri | DescribedType | 映射到 AMQP 类型的 Uri.AbsoluteUri：<type name=”uri” class=restricted source=”string”> <descriptor name=”com.microsoft:uri” /></type> |
+| byte               | UnsignedByte      | -                                                                                                                                                                      |
+| sbyte              | Byte              | -                                                                                                                                                                     |
+| char               | Character         | -                                                                                                                                                                     |
+| short              | Short             | -                                                                                                                                                                     |
+| ushort             | UnsignedShort     | -                                                                                                                                                                     |
+| int                | Integer           | -                                                                                                                                                                     |
+| uint               | UnsignedInteger   | -                                                                                                                                                                     |
+| long               | Long              | -                                                                                                                                                                     |
+| ulong              | UnsignedLong      | -                                                                                                                                                                     |
+| float              | Float             | -                                                                                                                                                                     |
+| double             | Double            | -                                                                                                                                                                     |
+| decimal            | BigDecimal        | -                                                                                                                                                                     |
+| bool               | Boolean           | -                                                                                                                                                                     |
+| Guid               | UUID              | -                                                                                                                                                                     |
+| string             | String            | -                                                                                                                                                                     |
+| DateTime           | Date              | -                                                                                                                                                                     |
+| DateTimeOffset     | DescribedType     | 映射到 AMQP 类型的 DateTimeOffset.UtcTicks：<type name=”datetime-offset” class=restricted source=”long”> <descriptor name=”com.microsoft:datetime-offset” /></type> |
+| TimeSpan           | DescribedType     | 映射到 AMQP 类型的 Timespan.Ticks：<type name=”timespan” class=restricted source=”long”> <descriptor name=”com.microsoft:timespan” /></type>                        |
+| Uri                | DescribedType     | 映射到 AMQP 类型的 Uri.AbsoluteUri：<type name=”uri” class=restricted source=”string”> <descriptor name=”com.microsoft:uri” /></type>                               |
 
 ### 标准标头
 
@@ -384,34 +384,34 @@ while (propertyNames.hasMoreElements())
 
 #### JMS 到服务总线 .NET API
 
-| JMS | 服务总线 .NET | 说明 |
+| JMS | 服务总线 .NET | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| JMSCorrelationID | Message.CorrelationID | - 
-| JMSDeliveryMode | 当前不可用 | 服务总线仅支持持久消息；例如，DeliveryMode.PERSISTENT，而不考虑指定的内容。
-| JMSDestination | Message.To | - 
-| JMSExpiration | Message.TimeToLive | 转换 
-| JMSMessageID | Message.MessageID | 默认情况下，JMSMessageID 在 AMQP 消息中以二进制格式编码。收到二进制消息 ID 后，.NET 客户端库将根据字节的 unicode 值将其转换为字符串表示形式。若要将 JMS 库切换为使用字符串消息 ID，请在 JNDI ConnectionURL 的查询参数后面追加“binary-messageid=false”字符串。例如：“amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn? binary-messageid=false”。
-| JMSPriority | 当前不可用 | 服务总线不支持消息优先级。|
-| JMSRedelivered | 当前不可用 | - 
-| MSReplyTo | 消息。ReplyTo | - 
-| JMSTimestamp | Message.EnqueuedTimeUtc | Conversion |
-| JMSType | Message.Properties[“jms-type”] | - 
+| JMSCorrelationID | Message.CorrelationID | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| JMSDeliveryMode  | 当前不可用             | 服务总线仅支持持久消息；例如，DeliveryMode.PERSISTENT，而不考虑指定的内容。                                                                                                                                                                                                                                                                                                            |
+| JMSDestination   | Message.To            | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| JMSExpiration    | Message.TimeToLive    | 转换                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| JMSMessageID     | Message.MessageID     | 默认情况下，JMSMessageID 在 AMQP 消息中以二进制格式编码。收到二进制消息 ID 后，.NET 客户端库将根据字节的 unicode 值将其转换为字符串表示形式。若要将 JMS 库切换为使用字符串消息 ID，请在 JNDI ConnectionURL 的查询参数后面追加“binary-messageid=false”字符串。例如：“amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn? binary-messageid=false”。 |
+| JMSPriority      | 当前不可用             | 服务总线不支持消息优先级。                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| JMSRedelivered   | 当前不可用             | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| JMSReplyTo       | 消息。ReplyTo          | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| JMSTimestamp     | Message.EnqueuedTimeUtc        | Conversion                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| JMSType          | Message.Properties[“jms-type”] | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 #### 服务总线 .NET API 到 JMS
 
-| 服务总线 .NET | JMS | 说明 |
+| 服务总线 .NET            | JMS              | 说明                     |
 |-------------------------|------------------|-------------------------|
-| ContentType | - | 当前不可用 | 
-| CorrelationId | JMSCorrelationID | - | 
-| EnqueuedTimeUtc | JMSTimestamp | 转换 | 
-| Label | 不适用 | 当前不可用 | 
-| MessageId | JMSMessageID | - | 
-| ReplyTo | JMSReplyTo | - | 
-| ReplyToSessionId | 不适用 | 当前不可用 | 
-| ScheduledEnqueueTimeUtc | 不适用 | 当前不可用 | 
-| SessionId | 不适用 | 当前不可用| 
-| TimeToLive | JMSExpiration | 转换 | 
-| To | JMSDestination | - |
+| ContentType             | -                  | 当前不可用              |
+| CorrelationId           | JMSCorrelationID | -                        |
+| EnqueuedTimeUtc         | JMSTimestamp     | 转换                    |
+| Label                   | 不适用            | 当前不可用                |
+| MessageId               | JMSMessageID     | -                        |
+| ReplyTo                 | JMSReplyTo       | -                        |
+| ReplyToSessionId        | 不适用            | 当前不可用                |
+| ScheduledEnqueueTimeUtc | 不适用            | 当前不可用                |
+| SessionId               | 不适用            | 当前不可用                |
+| TimeToLive              | JMSExpiration    | 转换                      |
+| To                      | JMSDestination    | -                       |
 
 ## 不受支持的功能和限制
 
@@ -440,5 +440,6 @@ while (propertyNames.hasMoreElements())
 [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
 [服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview
+[Azure 经典门户]: http://manage.windowsazure.cn
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

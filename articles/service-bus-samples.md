@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="10/08/2015"
-   wacn.date="11/27/2015" />
+   wacn.date="01/14/2016" />
 
 # 服务总线示例
 
@@ -25,7 +25,7 @@
 
 ### 获取 Azure 服务总线的连接字符串
 
-1. 登录到 [Azure 门户](http://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典门户](http://manage.windowsazure.cn)。
 
 2. 在左侧列中，单击“服务总线”。
 
@@ -128,4 +128,4 @@
 - [服务总线体系结构](/documentation/articles/service-bus-architecture)
 - [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

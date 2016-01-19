@@ -9,8 +9,8 @@
 
 <tags
    ms.service="service-bus"
-   ms.date="09/04/2015"
-   wacn.date="12/17/2015"/>
+   ms.date="12/09/2015"
+   wacn.date="01/14/2016"/>
 
 # 共享访问签名
 
@@ -20,7 +20,7 @@
 
 共享访问签名是基于 SHA-256 安全哈希或 URI 的身份验证机制。SAS 是所有服务总线服务使用的非常强大的机制。在实际应用中，SAS 有两个组件：*共享访问策略*和*共享访问签名*（通常称为*令牌*）。
 
-你可以在[对服务总线进行共享访问签名身份验证](https://msdn.microsoft.com/zh-cn/library/azure/dn170477.aspx)中找到有关共享访问签名与服务总线的更详细信息。
+你可以在[对服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-shared-access-signature-authentication)中找到有关共享访问签名与服务总线的更详细信息。
 
 ## 共享访问策略
 
@@ -32,7 +32,7 @@
   + 侦听
   + 管理
 
-在你创建策略后，系统将为它分配*主密钥*和*辅助密钥*。它们是加密形式的强密钥。请不要遗失或透漏这些密钥 - 在门户中总要用到它们。你可以使用其中一个生成的密钥，并且随时可以重新生成密钥。不过，如果你重新生成或更改策略中的主密钥，基于该密钥创建的所有共享访问签名都将失效。
+在你创建策略后，系统将为它分配*主密钥*和*辅助密钥*。它们是加密形式的强密钥。请不要遗失或透漏这些密钥 - 在 [Azure 经典门户][]中总要用到它们。你可以使用其中一个生成的密钥，并且随时可以重新生成密钥。不过，如果你重新生成或更改策略中的主密钥，基于该密钥创建的所有共享访问签名都将失效。
 
 当你创建服务总线命名空间时，系统将自动为整个命名空间创建名为 **RootManageSharedAccessKey** 的策略，此策略具有所有权限。你不会以 **root** 身份登录，因此除非有适合的理由，否则请勿使用此策略。可以在 Azure 管理门户上的命名空间“配置”选项卡中创建更多的策略。请务必注意，在服务总线中的单一树级别（命名空间、队列、事件中心等）中，最多只能附加 12 个策略。
 
@@ -203,7 +203,7 @@ private bool PutCbsToken(Connection connection, string sasToken)
     // construct the put-token message
     var request = new Message(sasToken);
     request.Properties = new Properties();
-    request.Properties.MessageId = "1";
+    request.Properties.MessageId = Guid.NewGuid().ToString();
     request.Properties.ReplyTo = cbsClientAddress;
     request.ApplicationProperties = new ApplicationProperties();
     request.ApplicationProperties["operation"] = "put-token";
@@ -251,4 +251,6 @@ AMQP 消息因为具有众多属性而有点复杂，且包含比简单消息更
 
 此[博客文章](http://developers.de/blogs/damir_dobric/archive/2013/10/17/how-to-create-shared-access-signature-for-service-bus.aspx)中介绍了更多关于 C# 和 Java 脚本中的 SAS 的示例。
 
-<!---HONumber=Mooncake_1207_2015-->
+[Azure 经典门户]: http://manage.windowsazure.cn
+
+<!---HONumber=Mooncake_0104_2016-->

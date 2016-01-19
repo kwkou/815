@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="09/18/2015"
-   wacn.date="10/22/2015" />
+   wacn.date="01/14/2016" />
 
 # 使用自动转发链接服务总线实体
 

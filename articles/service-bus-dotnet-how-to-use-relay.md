@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="10/07/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/14/2016"/>
 
 
 # 如何使用 Azure 服务总线中继服务
@@ -35,11 +35,11 @@
 
 创建服务命名空间：
 
-1.  登录到 [Azure 管理门户][]。
+1.  登录到 [Azure 经典门户][]。
 
-2.  在 Azure 管理门户的左侧导航窗格中，单击“服务总线”。
+2.  在门户的左侧导航窗格中，单击“服务总线”。
 
-3.  在Azure 管理门户的下方窗格中，单击“创建”。
+3.  在门户的下方窗格中，单击“创建”。
 
 	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png)
 
@@ -56,7 +56,7 @@
 
 	![](./media/service-bus-dotnet-how-to-use-relay/getting-started-multi-tier-27.png)
 
-	你创建的命名空间随后将显示在 Azure 管理门户中，需花费一点时间来激活。请等到状态变为“活动”后再继续。
+	你创建的命名空间随后将显示在门户中，然后要花费一段时间来激活。请等到状态变为“活动”后再继续。
 
 ## 获取命名空间的默认管理凭据
 
@@ -173,7 +173,7 @@ Console.ReadLine();
 sh.Close();
 ```
 
-终结点定义将移到 App.config 文件中。请注意，NuGet 包已向 App.config 文件添加一系列定义，这些定义是服务总线必需的配置扩展。以下示例（与前面的代码完全等效）应该紧靠在 **system.serviceModel** 元素的下面。此代码示例假定你的项目 C# 命名空间名为“Service”。将占位符替换为你的服务总线服务命名空间和密钥。
+终结点定义将移到 App.config 文件中。请注意，NuGet 包已向 App.config 文件添加一系列定义，这些定义是服务总线必需的配置扩展。以下示例（与前面的代码完全等效）应该紧靠在 **system.serviceModel** 元素的下面。此代码示例假设你的项目 C# 命名空间名为“Service”。将占位符替换为你的服务总线服务命名空间和密钥。
 
 ```
 <services>
@@ -274,9 +274,9 @@ using (var ch = cf.CreateChannel())
   [Obtain the Default Management Credentials for the Namespace]: #obtain_credentials
   [Get the Service Bus NuGet Package]: #get_nuget_package
   [How to: Use Service Bus to Expose and Consume a SOAP Web Service  with TCP]: #how_soap
-  [Azure 管理门户]: http://manage.windowsazure.cn
+  [Azure 经典门户]: http://manage.windowsazure.cn
   [使用服务总线进行共享访问签名身份验证]: /documentation/articles/service-bus-shared-access-signature-authentication
   [Azure 示例]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
   [服务总线示例概述]: /documentation/articles/service-bus-samples
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

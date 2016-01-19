@@ -8,8 +8,8 @@
    editor="" />
 <tags 
    ms.service="service-bus"
-   ms.date="09/04/2015"
-   wacn.date="10/22/2015" />
+   ms.date="12/09/2015"
+   wacn.date="01/14/2016" />
 
 # 服务总线的共享访问签名身份验证
 
@@ -21,7 +21,7 @@ Azure SDK 2.0 版和更高版本包括 SAS 身份验证支持。有关服务总�
 
 服务总线中的 SAS 身份验证涉及配置具有服务总线资源相关权限的加密密钥。客户端通过提供 SAS 令牌，声明访问服务总线资源。此令牌包括正在访问的 URI 资源，以及一个由配置密钥签名的到期时间。
 
-你可以在服务总线[中继](/documentation/articles/service-bus-fundamentals-hybrid-solutions/#relays)、[队列](/documentation/articles/service-bus-fundamentals-hybrid-solutions/#queues)、[主题](/documentation/articles/service-bus-fundamentals-hybrid-solutions/#topics)和[事件中心](/services/event-hubs/)上配置共享访问签名授权规则。
+你可以在服务总线[中继](/documentation/articles/service-bus-fundamentals-hybrid-solutions/#relays)、[队列](/documentation/articles/service-bus-fundamentals-hybrid-solutions/#queues)、[主题](/documentation/articles/service-bus-fundamentals-hybrid-solutions/#topics)和[事件中心](/documentation/services/event-hubs/)上配置共享访问签名授权规则。
 
 SAS 身份验证使用以下元素：
 
@@ -64,7 +64,7 @@ SAS 身份验证使用以下元素：
 SharedAccessSignature sig=<signature-string>&se=<expiry>&skn=<keyName>&sr=<URL-encoded-resourceURI>
 ```
 
-SAS 令牌的“签名”使用签名字符串的 HMAC-SHA256 哈希来计算，此字符串包含授权规则的 [PrimaryKey](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.primarykey.aspx) 属性。签名字符串由资源 URI 和到期时间组成，格式如下：
+SAS 令牌的**签名**使用签名字符串的 HMAC-SHA256 哈希来计算，此字符串包含授权规则的 [PrimaryKey](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.primarykey.aspx) 属性。签名字符串由资源 URI 和到期时间组成，格式如下：
 
 ```
 StringToSign = <resourceURI> + "\n" + expiry;
@@ -80,7 +80,7 @@ SAS 令牌对于签名字符串中使用的 `<resourceURI>` 下的所有资源�
 
 SAS 令牌中的 [KeyName](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.keyname.aspx) 是指用于生成令牌的共享访问授权规则的 **keyName**。
 
-*URL 编码的资源 URI* 必须与在签名计算期间签名字符串中使用的 URI 相同。它应该是[百分比编码](https://msdn.microsoft.com/zh-cn/library/4fkewx0t.aspx)。
+*URL-encoded-resourceURI* 必须与在签名计算期间签名字符串中使用的 URI 相同。它应该是[百分比编码](https://msdn.microsoft.com/zh-cn/library/4fkewx0t.aspx)。
 
 ## 如何使用服务总线的共享访问签名身份验证
 
@@ -90,7 +90,7 @@ SAS 令牌中的 [KeyName](https://msdn.microsoft.com/zh-cn/library/azure/micros
 
 ## 访问命名空间上的共享访问授权规则
 
-在服务总线命名空间根路径上的操作需要证书身份验证。你必须上载用于 Azure 订阅的管理证书若要上载管理证书，请在 Azure 门户的左窗格中单击“设置”。有关 Azure 管理证书的详细信息，请参阅[为 Azure 创建管理证书](https://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx)。
+在服务总线命名空间根路径上的操作需要证书身份验证。你必须上载用于 Azure 订阅的管理证书若要上载管理证书，请在 [Azure 经典门户][] 的左窗格中单击“设置”。有关 Azure 管理证书的详细信息，请参阅[为 Azure 创建管理证书](https://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx)。
 
 访问服务总线命名空间上的共享访问授权规则的终结点如下所示：
 
@@ -251,5 +251,6 @@ sendClient.Send(helloMessage);
 有关服务总线中的 SAS 的高级概述，请参阅[共享访问签名](/documentation/articles/service-bus-sas-overview)。
 
 有关服务总线身份验证的更多背景信息，请参阅[服务总线身份验证和授权](/documentation/articles/service-bus-authentication-and-authorization)。
+[Azure 经典门户]: http://manage.windowsazure.cn
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0104_2016-->

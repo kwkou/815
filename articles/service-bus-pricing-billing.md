@@ -10,7 +10,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="09/10/2015"
-   wacn.date="10/22/2015" />
+   wacn.date="01/14/2016" />
 
 # 服务总线定价和计费
 
@@ -30,7 +30,7 @@
 
 请注意，每个 Azure 订阅每月仅需支付一次标准基础费用。这意味着在你创建了一个标准或高级层级的服务总线命名空间后，你将能够在同一 Azure 订阅下创建任意数目的标准或高级层级命名空间，而不会产生附加的基础费用。
 
-在 2014 年 11 月 1 日之前创建的所有现有服务总线命名空间会自动放入标准层。这可确保你继续有权访问服务总线当前可用的所有功能。随后，可以根据需要使用 Azure 门户降级到基本层。
+在 2014 年 11 月 1 日之前创建的所有现有服务总线命名空间会自动放入标准层。这可确保你继续有权访问服务总线当前可用的所有功能。随后，可以根据需要使用 [Azure 经典门户][]降级到基本层。
 
 下表总结了基本和标准/高级层之间的功能差异。
 
@@ -118,7 +118,7 @@
 
 ### 如何计算中继小时数？
 
-请参阅[本主题](/documentation/articles/service-bus-pricing-faq/#How-is-the-Relay-Hours-meter-calculated?)。
+请参阅[此主题](/documentation/articles/service-bus-pricing-faq/#How-is-the-Relay-Hours-meter-calculated?)。
 
 ### 什么是中转连接，它的计费方式是怎样的？
 
@@ -144,4 +144,6 @@
 
 [服务总线定价常见问题](/documentation/articles/service-bus-pricing-faq)
 
-<!---HONumber=74-->
+[Azure 经典门户]: http://manage.windowsazure.cn
+
+<!---HONumber=Mooncake_0104_2016-->

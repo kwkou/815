@@ -19,9 +19,9 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 创建服务命名空间：
 
-1.  登录到 [Azure 管理门户][]。
+1.  登录到 [Azure 经典门户][]。
 
-2.  在管理门户的左侧导航窗格中，单击“Service Bus”。
+2.  在门户的左侧导航窗格中，单击“服务总线”。
 
 3.  在管理门户的下方窗格中，单击“创建”。
 
@@ -40,11 +40,11 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 	![](./media/service-bus-java-how-to-create-queue/getting-started-multi-tier-27.png)
 
-创建的命名空间将花费一段时间来激活，然后显示在管理门户中。请等到命名空间状态变为“活动”后再继续操作。
+创建的命名空间将花费一段时间来激活，然后显示在 Azure 门户中。请等到命名空间状态变为“活动”后再继续操作。
 
 ## 获取命名空间的默认管理凭据
 
-若要在新命名空间上执行管理操作（如创建队列），则必须获取该命名空间的管理凭据。可以从 Azure 管理门户中获取这些凭据。
+若要在新命名空间上执行管理操作（如创建队列），则必须获取该命名空间的管理凭据。可以从门户中获取这些凭据。
 
 ###从门户中获取管理凭据
 
@@ -56,8 +56,8 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 4.  记下主密钥，或将其复制到剪贴板。
 
-  [Azure 管理门户]: http://manage.windowsazure.cn
+  [Azure 经典门户]: http://manage.windowsazure.cn
 
   [34]: ./media/service-bus-java-how-to-create-queue/VSProperties.png
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

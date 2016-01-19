@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="09/14/2015"
-   wacn.date="10/22/2015" />
+   wacn.date="01/14/2016" />
 
 # 服务总线中转消息传送 .NET 教程
 
@@ -29,11 +29,11 @@ Azure 服务总线提供两个综合性消息传送解决方案：一是通过�
 
 1. 若要创建服务命名空间，请遵循[如何：创建或修改服务总线服务命名空间](https://msdn.microsoft.com/zh-cn/library/azure/hh690931.aspx)中概述的步骤。
 
-2. 在 Azure 门户的主窗口中，单击在上一步中创建的命名空间的名称。
+1. 在 [Azure 经典门户][]的主窗口中，单击在上一步中创建的命名空间的名称。
 
 3. 单击**“配置”**。
 
-4. 在“共享访问签名生成器”部分中，记下与 **RootManageSharedAccessKey** 策略关联的主密钥，或将其复制到剪贴板。你将在本教程的后面部分使用此值。
+4. 在“共享访问签名生成器”部分中，记下与 **RootManagerSharedAccessKey** 策略关联的主密钥，或将其复制到剪贴板。你将在本教程的后面部分使用此值。
 
 下一步是创建一个 Visual Studio 项目并编写两个帮助程序函数，用于将以逗号分隔的消息列表加载到强类型的 [BrokeredMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) .NET [List](https://msdn.microsoft.com/zh-cn/library/6sh2ey19.aspx) 对象。
 
@@ -45,7 +45,7 @@ Azure 服务总线提供两个综合性消息传送解决方案：一是通过�
 
 3. 使用 NuGet 包管理器将服务总线库添加到你的项目：
 	1. 在解决方案资源管理器中，右键单击项目文件夹，然后单击“管理 NuGet 包”。
-	2. 在“管理 Nuget 包”对话框中，联机搜索“服务总线”并单击“安装”。<br />
+	2. 在“管理 Nuget 包”对话框中，在线搜索“服务总线”并单击“安装”。<br />
 1. 在解决方案资源管理器中，双击 Program.cs 文件以在 Visual Studio 编辑器中将其打开。将命名空间名称从其默认名称 `QueueSample` 更改为 `Microsoft.ServiceBus.Samples`。
 
 	```
@@ -165,7 +165,8 @@ Azure 服务总线提供两个综合性消息传送解决方案：一是通过�
 	    // Instantiate the brokered list object
 	    List<BrokeredMessage> result = new List<BrokeredMessage>();
 	
-	    // Iterate through the table and create a brokered message for each rowforeach (DataRow item in issues.Rows)
+	    // Iterate through the table and create a brokered message for each row
+	    foreach (DataRow item in issues.Rows)
 	    {
 	        BrokeredMessage message = new BrokeredMessage();
 	        foreach (DataColumn property in issues.Columns)
@@ -435,6 +436,7 @@ namespace Microsoft.ServiceBus.Samples
 
 在 `Queue()` 方法中，使用 [Microsoft.ServiceBus.Messaging.QueueClient.Receive](https://msdn.microsoft.com/zh-cn/library/azure/hh322678.aspx) 方法循环访问队列和接收消息，并将每条消息输出到控制台。在上一步中添加的代码之下直接添加以下代码：
 
+	```
 	Console.WriteLine("Now receiving messages from Queue.");
 	BrokeredMessage message;
 	while ((message = myQueueClient.Receive(new TimeSpan(hours: 0, minutes: 1, seconds: 5))) != null)
@@ -445,21 +447,23 @@ namespace Microsoft.ServiceBus.Samples
 	        Console.WriteLine("Processing message (sleeping...)");
 	        Thread.Sleep(1000);
 	    }
-
+	```
 
 ### 结束 `Queue()` 方法并清理资源
 
 在前面的代码之下直接添加以下代码，以清理消息工厂和队列资源：
 
+	```
 	factory.Close();
 	myQueueClient.Close();
 	namespaceClient.DeleteQueue("IssueTrackingQueue");
-
+	```
 
 ### 调用 `Queue()` 方法
 
 最后一步是添加用于从 `Main()` 调用 `Queue()` 方法的代码。在 Main() 的末尾添加以下突出显示的行：
 	
+	```
 	public static void Main(string[] args)
 	{
 	    // Collect user input
@@ -472,7 +476,7 @@ namespace Microsoft.ServiceBus.Samples
 	    // Add this call
 	    Queue();
 	}
-
+	```
 
 ### 示例
 
@@ -624,7 +628,7 @@ namespace Microsoft.ServiceBus.Samples
 
 1. 运行该应用程序之前，必须确保已创建服务命名空间并已获得 SAS 密钥，如[简介和先决条件](#introduction-and-prerequisites)中所述。
 
-2. 打开浏览器并转到 [Azure 门户](http://manage.windowsazure.cn)。
+1. 打开浏览器并转到 [Azure 经典门户][]。
 
 3. 单击左侧树中的“服务总线”。
 
@@ -634,12 +638,14 @@ namespace Microsoft.ServiceBus.Samples
 
 ## 后续步骤
 
-本教程介绍了如何使用服务总线中转消息传送功能构建服务总线客户端应用程序和服务。有关使用服务总线[中继消息传送](/documentation/articles/service-bus-messaging-overview/#Relayed-messaging)的类似教程，请参阅[服务总线中继消息传送教程](/documentation/articles/service-bus-relay-tutorial)。
+本教程介绍了如何使用服务总线中转消息传送功能构建服务总线客户端应用程序和服务。有关使用服务总线[中继消息传送](service-bus-messaging-overview.md/#Relayed-messaging)的类似教程，请参阅[服务总线中继消息传送教程](service-bus-relay-tutorial.md)。
 
-若要了解有关服务总线的详细信息，请参阅以下主题。
+若要了解有关[服务总线](/home/features/messaging)的详细信息，请参阅以下主题。
 
 - [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview)
 - [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 - [服务总线体系结构](/documentation/articles/service-bus-architecture)
 
-<!---HONumber=74-->
+[Azure 经典门户]: http://manage.windowsazure.cn
+
+<!---HONumber=Mooncake_0104_2016-->

@@ -10,7 +10,7 @@
 <tags
     ms.service="service-bus"
     ms.date="10/07/2015"
-    wacn.date="11/27/2015"/>
+    wacn.date="01/14/2016"/>
 
 # 如何使用 Service Bus 队列
 
@@ -50,7 +50,7 @@
 
 ### 使用云服务时配置连接字符串
 
-该服务配置机制是 Azure 云服务项目特有的，它使你能够从 Azure 管理门户动态更改配置设置，而无需重新部署你的应用程序。例如，向服务定义 (.csdef) 文件中添加 `Setting` 标签，如下一示例所示。
+该服务配置机制是 Azure 云服务项目特有的，它使你能够从 [Azure 经典门户][]动态更改配置设置，而无需重新部署你的应用程序。例如，向服务定义 (.csdef) 文件中添加 `Setting` 标签，如以下示例所示。
 
 ```
 <ServiceDefinition name="Azure1">
@@ -78,11 +78,11 @@
 </ServiceConfiguration>
 ```
 
-使用从 Azure 管理门户检索到的共享访问签名 (SAS) 密钥名称和密钥值，如上一部分中所述。
+使用从 Azure 经典门户检索到的共享访问签名 (SAS) 密钥名称和密钥值，如上一部分中所述。
 
 ### 在使用网站或 Azure 虚拟机时配置连接字符串
 
-在使用网站或虚拟机时，建议你使用 .NET 配置系统（如 **Web.config**）。你可以使用 `<appSettings>` 元素存储连接字符串。
+在使用网站或虚拟机时，建议你使用 .NET 配置系统（如 **Web.config**）。你可以使用 `<appSettings>` 元素存储连接字符串：
 
 ```
 <configuration>
@@ -93,9 +93,9 @@
 </configuration>
 ```
 
-使用从 Azure 管理门户检索到的 SAS 名称和密钥值，如上一部分中所述。
+使用从 Azure 经典门户检索到的 SAS 名称和密钥值，如上一部分中所述。
 
-## 如何创建队列
+## 创建队列
 
 你可以使用 [NamespaceManager][] 类对服务总线队列执行管理操作。此类提供了创建、枚举和删除队列的方法。
 
@@ -160,7 +160,7 @@ QueueClient Client =
 Client.Send(new BrokeredMessage());
 ```
 
-发送至服务总线队列和接收自服务总线队列的消息是 [BrokeredMessage][] 类的实例。[BrokeredMessage][] 对象包含一组标准属性（如 [Label](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) 和 [TimeToLive](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)）、一个用来保存自定义应用程序特定属性的字典以及大量随机应用程序数据。应用程序可通过将任何可序列化对象传入到 [BrokeredMessage][] 对象的构造函数中来设置消息的正文，然后将使用适当的 **DataContractSerializer** 序列化对象。或者，你可以提供 **System.IO.Stream** 对象。
+在服务总线队列中发送和接收的消息是 [BrokeredMessage][] 类的实例。[BrokeredMessage][] 对象包含一组标准属性（如 [Label](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) 和 [TimeToLive](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)）、一个用来保存自定义应用程序特定属性的词典以及大量随机应用程序数据。应用程序可通过将任何可序列化对象传入到 [BrokeredMessage][] 对象的构造函数中来设置消息的正文，然后将使用适当的 **DataContractSerializer** 序列化对象。或者，你可以提供 **System.IO.Stream** 对象。
 
 以下示例演示了如何将五条测试消息发送到在前面的代码示例中获取的 `TestQueue` [QueueClient][] 对象。
 
@@ -242,13 +242,7 @@ Client.OnMessage((message) =>
 -   使用[服务总线中转消息传送 .NET 教程][]构建向服务总线队列发送消息以及从中接收消息的工作应用程序。
 -   从 [Azure 示例][]下载服务总线示例，或参阅[服务总线示例概述][]。
 
-  [Azure Management Portal]: http://manage.windowsazure.cn
-  
-  
-  
-  
-  
-  
+  [Azure 经典门户]: http://manage.windowsazure.cn
   [7]: ./media/service-bus-dotnet-how-to-use-queues/getting-started-multi-tier-13.png
   [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
   [服务总线中转消息传送 .NET 教程]: /documentation/articles/service-bus-brokered-tutorial-dotnet
@@ -261,4 +255,4 @@ Client.OnMessage((message) =>
   [QueueClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx
   [Complete]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -10,7 +10,7 @@
 <tags
     ms.service="service-bus"
     ms.date="10/15/2015"
-    wacn.date="11/27/2015"/>
+    wacn.date="01/14/2016"/>
 
 # 如何使用服务总线主题和订阅
 
@@ -50,7 +50,7 @@
 
 ### 使用云服务时配置连接字符串
 
-该服务配置机制是 Azure 云服务项目特有的，它使你能够从 Azure 管理门户动态更改配置设置，而无需重新部署你的应用程序。例如，向服务定义 (****.csdef**) 文件中添加 `Setting` 标签，如以下示例所示。
+该服务配置机制是 Azure 云服务项目特有的，它使你能够从 [Azure 经典门户][]动态更改配置设置，而无需重新部署你的应用程序。例如，向服务定义 (****.csdef**) 文件中添加 `Setting` 标签，如以下示例所示。
 
 ```
 <ServiceDefinition name="WindowsAzure1">
@@ -79,7 +79,7 @@
 </ServiceConfiguration>
 ```
 
-使用从 Azure 门户检索到的共享访问签名 (SAS) 密钥名称和密钥值，如上一节中所述。
+使用从 Azure 门户检索到的共享访问签名 (SAS) 密钥名称和密钥值，如上一部分中所述。
 
 ### 在使用 Azure 网站或 Azure 虚拟机时配置连接字符串
 
@@ -94,7 +94,7 @@
 </configuration>
 ```
 
-使用从管理门户检索到的 SAS 名称和密钥值，如上一部分中所述。
+使用从 Azure 经典门户检索到的 SAS 名称和密钥值，如上一部分中所述。
 
 ## 创建主题
 
@@ -184,7 +184,7 @@ namespaceManager.CreateSubscription("TestTopic",
    highMessagesFilter);
 ```
 
-同样，下面的示例将创建一个名为 **LowMessages** 的订阅，该订阅包含仅选择 **MessageNumber** 属性小于或等于 3 的消息的 [SqlFilter][]。
+类似地，以下示例创建一个名为 **LowMessages** 的订阅，其 [SqlFilter][] 只选择 **MessageNumber** 属性小于或等于 3 的消息：
 
 ```
 // Create a "LowMessages" filtered subscription.
@@ -214,7 +214,7 @@ TopicClient Client =
 Client.Send(new BrokeredMessage());
 ```
 
-发送到服务总线主题的消息是 [BrokeredMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) 类的实例。[BrokeredMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) 对象包含一组标准属性（如 [Label](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) 和 [TimeToLive](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)）、一个用来保存自定义应用程序特定属性的字典以及大量随机应用程序数据。应用程序可通过将任何可序列化对象传入到 [BrokeredMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) 对象的构造函数中来设置消息的正文，然后将使用适当的 **DataContractSerializer** 序列化对象。或者，也可以提供 **System.IO.Stream**。
+发送到服务总线主题的消息是 [BrokeredMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) 类的实例。[BrokeredMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) 对象包含一组标准属性（如 [Label](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) 和 [TimeToLive](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)）、一个用来保存自定义应用程序特定属性的词典以及大量随机应用程序数据。应用程序可通过将任何可序列化对象传入到 [BrokeredMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) 对象的构造函数中来设置消息的正文，然后将使用适当的 **DataContractSerializer** 序列化对象。或者，也可以提供 **System.IO.Stream**。
 
 以下示例演示了如何将五条测试消息发送到在前面的代码示例中获取的 **TestTopic** [TopicClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx) 对象。请注意，每条消息的 [MessageNumber](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.properties.aspx) 属性值因循环迭代而异（这将确定哪些订阅接收它）。
 
@@ -232,7 +232,7 @@ for (int i=0; i<5; i++)
 }
 ```
 
-服务总线主题支持[最大为 256 KB 的消息](/documentation/articles/service-bus-quotas)（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。如果启用了分区，则上限更高。有关详细信息，请参阅[分区消息实体](https://msdn.microsoft.com/zh-cn/library/azure/dn520246.aspx)。
+服务总线主题支持[最大为 256 Kb 的消息](/documentation/articles/service-bus-quotas)（标头最大为 64 Kb，其中包括标准和自定义应用程序属性）。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。如果启用了分区，则上限更高。有关详细信息，请参阅[分区消息实体](https://msdn.microsoft.com/zh-cn/library/azure/dn520246.aspx)。
 
 ## 如何从订阅接收消息
 
@@ -313,7 +313,7 @@ namespaceManager.DeleteSubscription("TestTopic", "HighMessages");
 -   构建向服务总线队列发送消息以及从中接收消息的工作应用程序：[服务总线中转消息传送 .NET 教程][]。
 -   服务总线示例：从 [Azure 示例][]下载，或参阅[概述](/documentation/articles/service-bus-samples)。
 
-  [Azure management portal]: http://manage.windowsazure.cn
+  [Azure 经典门户]: http://manage.windowsazure.cn
 
   [7]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/getting-started-multi-tier-13.png
   
@@ -323,4 +323,4 @@ namespaceManager.DeleteSubscription("TestTopic", "HighMessages");
   [服务总线中转消息传送 .NET 教程]: /documentation/articles/service-bus-brokered-tutorial-dotnet
   [Azure 示例]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="10/15/2015"
-   wacn.date="11/27/2015" />
+   wacn.date="01/14/2016" />
 
 # 使用 AMQP 1.0 通过 .NET 使用服务总线
 
@@ -21,11 +21,11 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。可以从 [
 
 ## 将 .NET 应用程序配置为使用 AMQP 1.0
 
-默认情况下，Service Bus .NET 客户端库使用基于 SOAP 的专用协议与 Service Bus 服务通信。若要使用 AMQP 1.0 而非默认协议，需要对服务总线连接字符串进行显式配置，如下一节所述。除了此更改之外，在使用 AMQP 1.0 时应用程序代码基本保持不变。
+默认情况下，Service Bus .NET 客户端库使用基于 SOAP 的专用协议与 Service Bus 服务通信。若要使用 AMQP 1.0 而非默认协议，需要对服务总线连接字符串进行显式配置，如下一部分所述。除了此更改之外，在使用 AMQP 1.0 时应用程序代码基本保持不变。
 
-在当前版本中，有一些在使用 AMQP 时不受支持的 API 功能。这些不受支持的功能将在后面的“不受支持的功能和限制”一节中列出。 在使用 AMQP 时，一些高级配置设置还具有不同的含义。
+在当前版本中，有一些在使用 AMQP 时不受支持的 API 功能。这些不受支持的功能将在后面的[不支持的功能、限制和行为差异](#unsupported-features-restrictions-and-behavioral-differences)部分中列出。在使用 AMQP 时，一些高级配置设置还具有不同的含义。
 
-### 通过 App.config 进行配置
+### 使用 App.config 进行配置
 
 应用程序使用 App.config 配置文件存储设置是一个很好的做法。对于服务总线应用程序，你可以使用 App.config 来存储服务总线 **ConnectionString** 值的设置。示例 App.config 文件如下所示：
 
@@ -41,7 +41,7 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。可以从 [
 
 	Endpoint=sb://[namespace].servicebus.chinacloudapi.cn/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp
 
-其中 `[namespace]` 和 `SharedAccessKey` 从 Azure 门户获取。有关详细信息，请参阅[如何使用服务总线队列][]。
+其中 `[namespace]` 和 `SharedAccessKey` 是从 [Azure 经典门户][]获取的。有关详细信息，请参阅[如何使用服务总线队列][]。
 
 使用 AMQP 时，在连接字符串后面追加 `;TransportType=Amqp`。此表示法将通知客户端库使用 AMQP 1.0 连接到服务总线。
 
@@ -73,11 +73,11 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。可以从 [
 | 字节 | binary | AMQP 值 |
 | 字符串 | 字符串 | AMQP 值 |
 | System.Collections.IList | list | AMQP 值：集合中包含的项只能是此表中定义的类型。 |
-| System.Array | array | AMQP 值：集合中包含的项只能是此表中定义的类型。 |
+| System.Array | 数组 | AMQP 值：集合中包含的项只能是此表中定义的类型。 |
 | System.Collections.IDictionary | map | AMQP 值：集合中包含的项只能是此表中定义的类型。注意：仅支持字符串键。 |
-| Uri | 描述型 string（请参见下表） | AMQP 值 |
-| DateTimeOffset | 描述型 long（请参见下表） | AMQP 值 |
-| TimeSpan | 描述型 long（请参见下文） | AMQP 值 |
+| Uri | 描述型 string（请参阅下表） | AMQP 值 |
+| DateTimeOffset | 描述型 long（请参阅下表） | AMQP 值 |
+| TimeSpan | 描述型 long（请参阅下文） | AMQP 值 |
 | Stream | binary | AMQP 数据（可能有多个）。数据部分包含从流对象读取的原始字节。 |
 | 其他对象 | binary | AMQP 数据（可能有多个）。包含使用 DataContractSerializer 或应用程序提供的序列化程序的对象的已序列化二进制值。 |
 
@@ -87,7 +87,7 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。可以从 [
 | DateTimeOffset | `<type name=”datetime-offset” class=restricted source=”long”> <descriptor name=”com.microsoft:datetime-offset” /></type>` | DateTimeOffset.UtcTicks |
 | TimeSpan | `<type name=”timespan” class=restricted source=”long”> <descriptor name=”com.microsoft:timespan” /></type> ` | TimeSpan.Ticks |
 
-## 不支持的功能、限制和行为差异
+## <a name="unsupported-features-restrictions-and-behavioral-differences"></a>不支持的功能、限制和行为差异
 
 在使用 AMQP 时，服务总线 .NET API 的以下功能目前不受支持：
 
@@ -101,7 +101,7 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。可以从 [
 
 -   会话状态。
 
--   基于批处理的 API。
+-   基于 Batch 的 API。
 
 -   扩大接收。
 
@@ -194,7 +194,8 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。可以从 [
   [OperationTimeout]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout.aspx
 [NuGet]: http://nuget.org/packages/WindowsAzure.ServiceBus/
 
+[Azure 经典门户]: http://manage.windowsazure.cn
 [服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview
 [适用于 Windows Server 的服务总线中的 AMQP]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->
