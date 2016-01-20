@@ -187,16 +187,16 @@ namespace Microsoft.ServiceBus.Samples
 
 4. 在 `<system.serviceModel>` 标记中，添加 `<services>` 元素。可以在单个配置文件中定义多个服务总线应用程序。但是，本教程只定义一个。
  
-	```
-	<?xmlversion="1.0"encoding="utf-8"?>
-	<configuration>
-	  <system.serviceModel>
-	    <services>
-
-	    </services>
-	  </system.serviceModel>
-	</configuration>
-	```
+		```
+		<?xmlversion="1.0"encoding="utf-8"?>
+		<configuration>
+		  <system.serviceModel>
+		    <services>
+	
+		    </services>
+		  </system.serviceModel>
+		</configuration>
+		```
 
 5. 在 `<services>` 元素中，添加 `<service>` 元素来定义服务名称。
 
