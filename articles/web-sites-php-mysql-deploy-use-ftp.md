@@ -80,9 +80,9 @@
 
 1. 创建名为 `registration` 的 MySQL 数据库。您可以在 MySQL 命令提示符中使用此命令执行此操作：
 
-	<code>mysql> create database registration;</code>
+		mysql> create database registration;
 
-2. 在 Web 服务器的根目录中，创建一个名为 `registration` 的文件夹，并在其中创建两个文件 - 一个名为 <code>createtable.php</code>，另一个名为 `index.php`。
+2. 在 Web 服务器的根目录中，创建一个名为 `registration` 的文件夹，并在其中创建两个文件 - 一个名为 `createtable.php`，另一个名为 `index.php`。
 
 3. 在文本编辑器或 IDE 中打开 `createtable.php` 文件并添加以下代码。此代码将用于在 `registration` 数据库中创建 `registration_tbl` 表。
 
