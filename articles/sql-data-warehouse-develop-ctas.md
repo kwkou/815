@@ -406,7 +406,7 @@ OPTION (LABEL = 'CTAS : Partition IN table : Create');
 有关更多开发技巧，请参阅[开发概述][]。
 
 <!--Image references-->
-[1]: media/sql-data-warehouse-develop-ctas/ctas-results.png
+[1]: ./media/sql-data-warehouse-develop-ctas/ctas-results.png
 
 <!--Article references-->
 [开发概述]: /documentation/articles/sql-data-warehouse-overview-develop

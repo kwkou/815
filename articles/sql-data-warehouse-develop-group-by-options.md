@@ -173,7 +173,7 @@ ORDER BY 1,2,3
 有关更多开发技巧，请参阅[开发概述][]。
 
 <!--Image references-->
-[1]: media/sql-data-warehouse-develop-group-by-options/sql-data-warehouse-develop-group-by-cube.png
+[1]: ./media/sql-data-warehouse-develop-group-by-options/sql-data-warehouse-develop-group-by-cube.png
 
 <!--Article references-->
 [开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
