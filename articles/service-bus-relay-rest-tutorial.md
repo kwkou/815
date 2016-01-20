@@ -252,28 +252,27 @@ namespace Microsoft.ServiceBus.Samples
 
 3. 在 App.config 文件中添加一个 `<system.serviceModel>` XML 元素。该元素是一个 WCF 元素，用于定义一个或多个服务。在这里，它用于定义服务名称和终结点。
 
-	```
-	<?xml version="1.0" encoding="utf-8" ?>
-	<configuration>
-		<system.serviceModel>
-      
-		</system.serviceModel>
-    
-	</configuration>
-	```
+
+		<?xml version="1.0" encoding="utf-8" ?>
+		<configuration>
+			<system.serviceModel>
+		      
+			</system.serviceModel>
+		</configuration>
+
 
 4. 在 `system.serviceModel` 元素中，添加包含以下内容的 `<bindings>` 元素。这样就定义了应用程序中使用的绑定。你可以定义多个绑定，但在本教程中，你只要定义一个绑定。
 
-	```
-	<bindings>
-		<!-- Application Binding -->
-		<webHttpRelayBinding>
-			<binding name="default">
-				<security relayClientAuthenticationType="None" />
-			</binding>
-		</webHttpRelayBinding>
-	</bindings>
-	```
+
+		<bindings>
+			<!-- Application Binding -->
+			<webHttpRelayBinding>
+				<binding name="default">
+					<security relayClientAuthenticationType="None" />
+				</binding>
+			</webHttpRelayBinding>
+		</bindings>
+
   
 	此步骤定义了一个服务总线 [WebHttpRelayBinding](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.webhttprelaybinding.aspx) 绑定，其中的 **relayClientAuthenticationType** 为 **None**。此设置表明使用此绑定的终结点将不需要客户端凭据。
 
@@ -385,53 +384,53 @@ namespace Microsoft.ServiceBus.Samples
 
 以下示例显示了与该服务关联的 App.config 文件。
 
-```
-<?xml version="1.0" encoding="utf-8" ?>
-<configuration>
-  <system.serviceModel>
-    <bindings>
-      <!-- Application Binding -->
-      <webHttpRelayBinding>
-        <binding name="default">
-          <!-- Turn off client authentication so that client does not need to present credential through browser or fiddler -->
-          <security relayClientAuthenticationType="None" />
-        </binding>
-      </webHttpRelayBinding>
-    </bindings>
-
-    <services>
-      <!-- Application Service -->
-      <service name="Microsoft.ServiceBus.Samples.ImageService"
-               behaviorConfiguration="default">
-        <endpoint name="RelayEndpoint"
-                  contract="Microsoft.ServiceBus.Samples.IImageContract"
-                  binding="webHttpRelayBinding"
-                  bindingConfiguration="default"
-                  behaviorConfiguration="sbTokenProvider"
-                  address="" />
-      </service>
-    </services>
-
-    <behaviors>
-      <endpointBehaviors>
-        <behavior name="sbTokenProvider">
-          <transportClientEndpointBehavior>
-            <tokenProvider>
-              <sharedAccessSignature keyName="RootManageSharedAccessKey" key="SAS_KEY" />
-            </tokenProvider>
-          <transportClientEndpointBehavior>
-        </behavior>
-      </endpointBehaviors>
-      <serviceBehaviors>
-        <behavior name="default">
-          <serviceDebug httpHelpPageEnabled="false" httpsHelpPageEnabled="false" />
-        </behavior>
-      </serviceBehaviors>
-    </behaviors>
-
-  </system.serviceModel>
-</configuration>
-```
+	```
+	<?xml version="1.0" encoding="utf-8" ?>
+	<configuration>
+	  <system.serviceModel>
+	    <bindings>
+	      <!-- Application Binding -->
+	      <webHttpRelayBinding>
+	        <binding name="default">
+	          <!-- Turn off client authentication so that client does not need to present credential through browser or fiddler -->
+	          <security relayClientAuthenticationType="None" />
+	        </binding>
+	      </webHttpRelayBinding>
+	    </bindings>
+	
+	    <services>
+	      <!-- Application Service -->
+	      <service name="Microsoft.ServiceBus.Samples.ImageService"
+	               behaviorConfiguration="default">
+	        <endpoint name="RelayEndpoint"
+	                  contract="Microsoft.ServiceBus.Samples.IImageContract"
+	                  binding="webHttpRelayBinding"
+	                  bindingConfiguration="default"
+	                  behaviorConfiguration="sbTokenProvider"
+	                  address="" />
+	      </service>
+	    </services>
+	
+	    <behaviors>
+	      <endpointBehaviors>
+	        <behavior name="sbTokenProvider">
+	          <transportClientEndpointBehavior>
+	            <tokenProvider>
+	              <sharedAccessSignature keyName="RootManageSharedAccessKey" key="SAS_KEY" />
+	            </tokenProvider>
+	          <transportClientEndpointBehavior>
+	        </behavior>
+	      </endpointBehaviors>
+	      <serviceBehaviors>
+	        <behavior name="default">
+	          <serviceDebug httpHelpPageEnabled="false" httpsHelpPageEnabled="false" />
+	        </behavior>
+	      </serviceBehaviors>
+	    </behaviors>
+	
+	  </system.serviceModel>
+	</configuration>
+	```
 
 ## 步骤 4：托管基于 REST 的 WCF 服务以使用服务总线
 
