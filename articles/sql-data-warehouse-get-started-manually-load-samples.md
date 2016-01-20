@@ -14,7 +14,7 @@
 
 #将示例数据载入 SQL 数据仓库
 
-[创建 SQL 数据仓库数据库实例][create a SQL Data Warehouse database instance]后，下一步是创建并加载一些表。你可以使用我们为 SQL 数据仓库创建的 Adventure Works 示例脚本来创建并加载名为 Adventure Works 的虚构公司的表。这些脚本使用 sqlcmd 来运行 SQL，并使用 bcp 加载数据。如果你还没有安装这些工具，请单击以下链接[安装 bcp][] 并[安装 sqlcmd][]。
+创建 SQL 数据仓库数据库实例后，下一步是创建并加载一些表。你可以使用我们为 SQL 数据仓库创建的 Adventure Works 示例脚本来创建并加载名为 Adventure Works 的虚构公司的表。这些脚本使用 sqlcmd 来运行 SQL，并使用 bcp 加载数据。如果你还没有安装这些工具，请单击以下链接[安装 bcp][] 并安装 sqlcmd。
 
 请遵循以下简单步骤，将 Adventure Works 示例数据库加载到 SQL DW...
 

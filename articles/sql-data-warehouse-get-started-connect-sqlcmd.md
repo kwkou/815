@@ -70,12 +70,6 @@ C:\>sqlcmd -S <Server Name>.database.chinacloudapi.cn -d <Database> -U <User> -P
 有关 sqlcmd 的更多信息，请参阅 [sqlcmd 文档](https://msdn.microsoft.com/zh-cn/library/azure/ms162773.aspx)。
 
 
-## 后续步骤
-
-既然你可以执行连接和查询，接下来请尝试[使用 PowerBI 进行连接][]。
-
-[使用 PowerBI 进行连接]: /documentation/articles/sql-data-warehouse-integrate-power-bi
- 
 
 <!--Image references-->
 [1]: ./media/sql-data-warehouse-get-started-connect/get-server-name.png

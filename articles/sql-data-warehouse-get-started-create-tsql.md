@@ -16,8 +16,8 @@
 #使用 TSQL 创建 SQL 数据仓库 
 
 > [AZURE.SELECTOR]
-- [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-TSQL)
-- [PowerShell](/documentation/articles/sql-data-warehouse-get-started-create-powershell)
+- [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-tsql)
+
 
 本文说明如何使用 Transact SQL 创建 SQL 数据仓库。若要完成本文中的步骤，你需要以下各项：
 

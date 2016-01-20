@@ -444,7 +444,7 @@ FROM	sys.dm_pdw_wait_stats w
 [开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
 
 <!--MSDN references-->
-[在 Azure SQL 数据库中管理数据库和登录名]: https://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx
+[在 Azure SQL 数据库中管理数据库和登录名]: /documentation/articles/sql-database-manage-logins
 
 <!--Other Web references-->
 

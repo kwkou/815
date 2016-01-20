@@ -16,7 +16,6 @@
 # 使用 PolyBase 加载数据
 
 > [AZURE.SELECTOR]
-- [Data Factory](/documentation/articles/sql-data-warehouse-get-started-load-with-azure-data-factory)
 - [PolyBase](/documentation/articles/sql-data-warehouse-load-with-polybase-short)
 - [BCP](/documentation/articles/sql-data-warehouse-load-with-bcp)
 
