@@ -45,7 +45,7 @@ Add-AzureAccount -Environment AzureChinaCloud
 ```
 ### Azure PowerShell 1.0.0+版本：
 ```
-Login-AzureRmAccount –EnvironmetName AzureChinaCloud
+Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 ```
 
 若您有多个SubID需要选择，可通过运行 Select-AzureSubscription命令进行选择。
@@ -62,50 +62,72 @@ Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.MySql"
 ```
 ##<a id="step4"></a>步骤4： 创建资源组
 如果您已有资源组，可以直接创建服务器，或者编辑运行以下命令，创建新的资源组：
-
+### Azure PowerShell 0.9* 版本：
 ```
 New-AzureResourceGroup -Name "resourcegroupChinaEast" -Location "chinaeast"
 ```
-
+### Azure PowerShell 1.0.0+版本：
+```
+New-AzureRmResourceGroup -Name "resourcegroupChinaEast" -Location "chinaeast"
+```
 >[AZURE.NOTE] ** 注意:Location的默认选项为chinanorth, 处于性能以及安全性考虑，强烈建议您将资源组中的服务选择在同一个地域中。**
 
 ##<a id="step5"></a>步骤5： 创建服务器
 编辑运行以下命令，定义您的服务器名称、位置、版本等信息来完成服务器创建。
-
+### Azure PowerShell 0.9* 版本：
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -Location chinaeast -PropertyObject @{version = '5.5'} 
 ```
-
+### Azure PowerShell 1.0.0+版本：
+```
+New-AzureRmResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -Location chinaeast -PropertyObject @{version = '5.5'} 
+```
 >[AZURE.NOTE] ** 注意:“-ApiVersion 2015-09-01”指定了API的版本，是必要的。另外，运行上述命令可以完成MySQL服务器的创建，但没有用户，须在后续步骤中创建用户设置权限，这一点和使用Azure管理门户创建稍有不同**
 
 ##<a id="step6"></a>步骤6： 创建服务器防火墙原则
 编辑运行以下命令，定义您的防火墙原则名称、IP白名单范围（起始IP地址，终止IP地址）等信息来完成防火墙原则的创建。
-
+### Azure PowerShell 0.9* 版本：
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers/firewallRules" -ResourceName testPSH/rule1 -ApiVersion 2015-09-01 -PropertyObject @{startIpAddress="0.0.0.0"; endIpAddress="255.255.255.255"} -ResourceGroupName resourcegroupChinaEast
 ```
-
+### Azure PowerShell 1.0.0+版本：
+```
+New-AzureRmResource -ResourceType "Microsoft.MySql/servers/firewallRules" -ResourceName testPSH/rule1 -ApiVersion 2015-09-01 -PropertyObject @{startIpAddress="0.0.0.0"; endIpAddress="255.255.255.255"} -ResourceGroupName resourcegroupChinaEast
+```
 ##<a id="step7"></a>步骤7： 创建数据库
 编辑运行以下命令，定义您的数据库名称、字符集等信息完成数据库创建。
-
+### Azure PowerShell 0.9* 版本：
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers/databases" -ResourceName testPSH/demodb -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{collation='utf8_general_ci'; charset='utf8'}
 ```
+### Azure PowerShell 1.0.0+版本：
+```
+New-AzureRmResource -ResourceType "Microsoft.MySql/servers/databases" -ResourceName testPSH/demodb -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{collation='utf8_general_ci'; charset='utf8'}
+```
+
 
 ##<a id="step8"></a>步骤8： 创建用户
 编辑运行以下命令，定义您的用户名、密码等信息完成数据库创建。
+### Azure PowerShell 0.9* 版本：
 
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers/users" -ResourceName testPSH/admin -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{password='abc123'}
 ```
+### Azure PowerShell 1.0.0+版本：
+```
+New-AzureRmResource -ResourceType "Microsoft.MySql/servers/users" -ResourceName testPSH/admin -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{password='abc123'}
+```
 
 ##<a id="step9"></a>步骤9： 添加用户权限
 编辑运行以下命令，设置数据库读写权限给用户。权限分为"Read"以及"ReadWrite"。
-
+### Azure PowerShell 0.9* 版本：
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers/databases/privileges" -ResourceName testPSH/demodb/admin -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{level='ReadWrite'}
 ```
-
+### Azure PowerShell 1.0.0+版本：
+```
+New-AzureRmResource -ResourceType "Microsoft.MySql/servers/databases/privileges" -ResourceName testPSH/demodb/admin -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{level='ReadWrite'}
+```
 通过上述操作，您已经完成了服务器、数据库、用户、防火墙原则等的创建工作，可以开始使用MySQL Database on Azure的数据库服务。在使用过程中，如需更多创建、查看、删除、更改的操作，您可以查看[使用PowerShell管理MySQL Database on Azure](/documentation/articles/mysql-database-commandlines)。
 
 
