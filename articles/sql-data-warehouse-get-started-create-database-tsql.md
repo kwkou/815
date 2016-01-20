@@ -27,7 +27,7 @@
 
 - Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
 - Visual Studio。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
-- 一个 V12 逻辑服务器。你将需要使用 V12 SQL 服务器来创建 SQL 数据仓库。如果你没有 V12 逻辑 SQL 服务器，[Azure 经典门户教程][]说明了如何创建一个这样的服务器。
+- 一个 V12 逻辑服务器。你将需要使用 V12 SQL 服务器来创建 SQL 数据仓库。
 
 ## 使用 Visual Studio 创建数据库
 

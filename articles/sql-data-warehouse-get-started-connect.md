@@ -22,7 +22,7 @@
 
 ## 先决条件
 
-+ SQL 数据仓库中的 AdventureWorksDW 示例数据库。若要创建此数据库，请参阅[创建 SQL 数据仓库数据库](/documentation/articles/sql-data-warehouse-get-started-create)。 
++ SQL 数据仓库中的 AdventureWorksDW 示例数据库。 
 + SQL Server Data Tools for Visual Studio。有关安装指说明和选项，请参阅[安装 Visual Studio 和/或 SSDT](/documentation/articles/sql-data-warehouse-install-visual-studio)
 
 ## 步骤 1：查找完全限定的 Azure SQL 服务器名称
@@ -84,11 +84,7 @@
 
     ![查询结果][8]
 
-## 后续步骤
-
-既然你可以执行连接和查询，接下来请尝试[使用 PowerBI 可视化数据][]。
-
-[使用 PowerBI 可视化数据]: /documentation/articles/sql-data-warehouse-get-started-visualize-with-power-bi
+ 
 
 
 <!--Image references-->

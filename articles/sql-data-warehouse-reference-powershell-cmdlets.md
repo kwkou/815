@@ -16,7 +16,7 @@
 
 可以使用 Azure PowerShell cmdlet 或 REST API 来管理 SQL 数据仓库。
 
-为 **Azure SQL 数据库**定义的命令也可用于 **SQL 数据仓库**。有关最新列表，请参阅 [Azure SQL Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn546726.aspx)。**Suspend-AzureRmSqlDatabase** 和 **Resume-AzureRmSqlDatabase** 是为 SQL 数据仓库补充设计的 cmdlet（如下所述）。
+为 **Azure SQL 数据库**定义的命令也可用于 **SQL 数据仓库**。**Suspend-AzureRmSqlDatabase** 和 **Resume-AzureRmSqlDatabase** 是为 SQL 数据仓库补充设计的 cmdlet（如下所述）。
 
 同样，**SQL Azure 数据库**的 REST API 也可用于 **SQL 数据仓库**实例。有关最新列表，请参阅[对 Azure SQL 数据库的操作](https://msdn.microsoft.com/zh-cn/library/azure/dn505719.aspx)。
 

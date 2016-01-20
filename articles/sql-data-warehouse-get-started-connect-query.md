@@ -71,11 +71,7 @@
 
 	若要运行查询，请单击绿色箭头，或使用以下快捷键：`CTRL`+`SHIFT`+`E`。
 
-## 后续步骤
 
-既然你可以执行连接和查询，接下来请尝试[使用 PowerBI 进行连接][]。
-
-[使用 PowerBI 进行连接]: /documentation/articles/sql-data-warehouse-integrate-power-bi
 
 
 <!--Image references-->
