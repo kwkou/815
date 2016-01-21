@@ -10,7 +10,7 @@
 <tags
    ms.service="site-recovery"
    ms.date="10/07/2015"
-   wacn.date="11/27/2015"/>
+   wacn.date="01/21/2016"/>
 
   
    
@@ -26,7 +26,7 @@
 
 ## 在 Azure 中保护应用程序
 
-让我们先从一个包括两个虚拟机的简单应用程序开始。在这里，我们已有一个 HR网站Fabrikam。Fabrikam-HRweb-frontend 和 Fabrikam-Hrweb-backend 是使用 Azure Site Recovery 在 Azure 中保护的两个虚拟机。若要使用 Azure Site Recovery 保护虚拟机，请遵循以下步骤。 
+让我们先从一个包括两个虚拟机的简单应用程序开始。在这里，我们已有一个 HR WEB 应用Fabrikam。Fabrikam-HRweb-frontend 和 Fabrikam-Hrweb-backend 是使用 Azure Site Recovery 在 Azure 中保护的两个虚拟机。若要使用 Azure Site Recovery 保护虚拟机，请遵循以下步骤。 
 
 1.  为虚拟机启用保护。
 
@@ -37,7 +37,7 @@
 ![](./media/site-recovery-runbook-automation/01.png)
 ---------------------
 
-在本教程中，我们将为 Fabrikam HR网站创建一个恢复计划，以将应用程序故障转移到 Azure。然后，我们会将它与某个 Runbook 集成，该 Runbook 将在故障转移的 Azure 虚拟机上创建一个终结点，以便为端口 80 上的网页提供服务。
+在本教程中，我们将为 Fabrikam HR WEB 应用创建一个恢复计划，以将应用程序故障转移到 Azure。然后，我们会将它与某个 Runbook 集成，该 Runbook 将在故障转移的 Azure 虚拟机上创建一个终结点，以便为端口 80 上的网页提供服务。
 
 首先，让我们为应用程序创建恢复计划。
 

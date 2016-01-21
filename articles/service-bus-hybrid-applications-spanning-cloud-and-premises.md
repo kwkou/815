@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="10/06/2015" 
-	wacn.date="11/27/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 启用跨云和本地的混合应用程序
 
@@ -26,7 +26,7 @@
 
 - [使用 Service Bus 中继构建 .NET 本地/云混合应用程序](/documentation/articles/service-bus-dotnet-hybrid-app-using-service-bus-relay)
 - [如何使用服务总线中继（视频和代码示例）](http://appfabricdemos.codeplex.com/releases/view/67597)
-- [如何通过服务总线中继将 Azure 网站和 LOB 应用集成](https://code.msdn.microsoft.com/How-to-integrate-a-Windows-f1fedff8) 
+- [如何通过服务总线中继将 Azure WEB 应用和 LOB 应用集成](https://code.msdn.microsoft.com/How-to-integrate-a-Windows-f1fedff8) 
 - [使用服务总线中继消息进行异地复制](http://code.msdn.microsoft.com/Geo-replication-with-16dbfecd)
 - [如何将移动服务与 REST 服务总线中继服务集成](http://blogs.msdn.com/b/paolos/archive/2013/07/09/how-to-integrate-a-mobile-service-with-a-rest-service-bus-relay-service.aspx)
  

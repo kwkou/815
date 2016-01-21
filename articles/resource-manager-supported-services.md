@@ -10,7 +10,7 @@
 <tags
    ms.service="azure-resource-manager"
    ms.date="11/13/2015"
-   wacn.date="12/31/2015"/>
+   wacn.date="01/21/2016"/>
 
 # 服务、区域和 API 版本对资源管理器的支持
 
@@ -134,7 +134,7 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 
 ### PowerShell
 
-以下示例演示如何使用 Azure PowerShell 1.0 预览版来获取支持网站的区域。有关 1.0 预览版的详细信息，请参阅 [Azure PowerShell 1.0 预览版](https://azure.microsoft.com/blog/azps-1-0-pre/)
+以下示例演示如何使用 Azure PowerShell 1.0 预览版来获取支持 WEB 应用的区域。有关 1.0 预览版的详细信息，请参阅 [Azure PowerShell 1.0 预览版](https://azure.microsoft.com/blog/azps-1-0-pre/)
 
     PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).Locations
     

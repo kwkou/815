@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="10/08/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 #使用 castLabs 将 Widevine 许可证传送到 Azure 媒体服务
@@ -66,7 +66,7 @@ jti|有关此令牌的唯一标识符（每个令牌只能在 castLabs 系统中
 [示例解决方案](https://github.com/AzureMediaServicesSamples/CastlabsIntegration)由两个项目组成：
 
 -	可用于对 PlayReady 和 Widevine 的已引入资源设置 DRM 限制的控制台应用程序。
--	分发令牌的网站，可将其视为 STS 的非常简化版本。
+-	分发令牌的 WEB 应用，可将其视为 STS 的非常简化版本。
 
 
 若要使用控制台应用程序，请执行以下操作：
@@ -84,11 +84,11 @@ jti|有关此令牌的唯一标识符（每个令牌只能在 castLabs 系统中
 5.	运行该程序。
 
 
-若要使用网站(STS)，请执行以下操作：
+若要使用 WEB 应用(STS)，请执行以下操作：
 
 1.	更改 web.config 以设置 castlabs 商家 ID、STS 配置和共享密钥。
-2.	部署到 Azure 网站。
-3.	导航到该网站。
+2.	部署到 Azure WEB 应用。
+3.	导航到该 WEB 应用。
 
 ##播放视频
 

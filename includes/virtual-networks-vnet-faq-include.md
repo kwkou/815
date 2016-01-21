@@ -28,7 +28,7 @@
 
 ### 哪些服务可以与 VNet 共同使用？
 
-VNet 可以与各种不同的 Azure 服务共同使用，例如云服务 (PaaS)、虚拟机和网站。但是，有几个 VNet 不支持的服务。请检查你想要使用的特定服务，并验证是否兼容。
+VNet 可以与各种不同的 Azure 服务共同使用，例如云服务 (PaaS)、虚拟机和 WEB 应用。但是，有几个 VNet 不支持的服务。请检查你想要使用的特定服务，并验证是否兼容。
 
 ### 没有跨界连接的情况下是否可以使用 VNet？
 
@@ -216,7 +216,7 @@ Azure 提供的 DNS 是由 Microsoft 提供的多租户 DNS 服务。在此服�
 
 只能在 VNet 中使用计算服务。计算服务仅限于云服务（Web 和辅助角色）和 VM。
 
-- [将 VNet 集成和混合连接用于网站](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
+- [将 VNet 集成和混合连接用于 WEB 应用](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
 
 ### 是否可以在 VNet 中部署云服务与 Web 和辅助角色 (PaaS)？
 

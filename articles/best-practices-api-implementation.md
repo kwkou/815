@@ -11,7 +11,7 @@
 <tags
    ms.service="best-practice"
    ms.date="05/13/2015"
-   wacn.date="08/29/2015"/>
+   wacn.date="01/21/2016"/>
 
 # API 实现指南
 
@@ -21,7 +21,7 @@
 精心设计的 REST 样式 Web API 定义了客户端应用程序可以访问的资源、关系和导航方案。当你实现和部署 Web API 时，应考虑托管该 Web API 的环境的物理要求以及构造该 Web API 的方式，而不是考虑数据的逻辑结构。本指南重点介绍实现 Web API 并发布它，使其可供客户端应用程序使用的最佳实践。安全问题将在 API 安全指南文档中单独说明。你可以在 API 设计指南文档中找到有关 Web API 设计的详细信息。
 
 ## 有关实现 REST 样式 Web API 的注意事项
-以下各节说明了使用 ASP.NET Web API 模板构建 REST 样式 Web API 的最佳做法。有关使用 Web API 模板的详细信息，请访问 Microsoft 网站上的[了解 ASP.NET Web API](http://www.asp.net/web-api) 页。
+以下各节说明了使用 ASP.NET Web API 模板构建 REST 样式 Web API 的最佳做法。有关使用 Web API 模板的详细信息，请访问 Microsoft WEB 应用上的[了解 ASP.NET Web API](http://www.asp.net/web-api) 页。
 
 ## 有关实现请求路由的注意事项
 
@@ -71,7 +71,7 @@
 
 	> [AZURE.TIP]尽可能利用默认路由并避免定义很多复杂的自定义路由，因为这可能会导致易受攻击（很容易向控制器添加导致多义性路由的方法）和性能降低（路由表越大，Web API 框架越不得不执行更多操作来找出哪个路由与给定的 URI 匹配）。简化 API 和路由。有关详细信息，请参阅 API 设计指南中的“围绕资源组织 Web API”一节。如果你必须定义自定义路由，则更可取的方法是使用本节稍后所述的基于属性的路由。
 
-	有关基于约定的路由的详细信息，请参阅 Microsoft 网站上的 [ASP.NET Web API 中的路由](http://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api)页。
+	有关基于约定的路由的详细信息，请参阅 Microsoft WEB 应用上的 [ASP.NET Web API 中的路由](http://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api)页。
 
 - **避免路由中的多义性**。
 
@@ -126,7 +126,7 @@
 	}
 	```
 
-	有关基于属性的路由的详细信息，请参阅 Microsoft 网站上的 [Web API 2 中的属性路由](http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2)页。
+	有关基于属性的路由的详细信息，请参阅 Microsoft WEB 应用上的 [Web API 2 中的属性路由](http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2)页。
 
 - **在路由中支持 Unicode 字符**。
 
@@ -138,9 +138,9 @@
 
 - **考虑在子域中放置 API 的优点和缺点**。
 
-	默认情况下，ASP.NET Web API 将 API 组织到域中的 /api 目录，如 http://www.adventure-works.com/api/orders。 此目录与同一主机公开的任何其他服务位于同一域中。最好将 Web API 拆分到具有 URI（如 http://api.adventure-works.com/orders） 的单独主机上运行的其自己的子域中。这种分离使你可以更有效地对 Web API 进行分隔和缩放，而不会影响 www.adventure-works.com 域中运行的任何其他网站或服务。
+	默认情况下，ASP.NET Web API 将 API 组织到域中的 /api 目录，如 http://www.adventure-works.com/api/orders。 此目录与同一主机公开的任何其他服务位于同一域中。最好将 Web API 拆分到具有 URI（如 http://api.adventure-works.com/orders） 的单独主机上运行的其自己的子域中。这种分离使你可以更有效地对 Web API 进行分隔和缩放，而不会影响 www.adventure-works.com 域中运行的任何其他 WEB 应用或服务。
 
-	但是，将 Web API 放在不同的子域中也可能会带来安全问题。在 _www.adventure-works.com_ 上托管的任何网站或服务调用在其他位置运行的 Web API 可能会违反很多 Web 浏览器的同源策略。在这种情况下，将需要启用主机之间的跨域资源共享 (CORS)。有关详细信息，请参阅 API 安全指南文档。
+	但是，将 Web API 放在不同的子域中也可能会带来安全问题。在 _www.adventure-works.com_ 上托管的任何 WEB 应用或服务调用在其他位置运行的 Web API 可能会违反很多 Web 浏览器的同源策略。在这种情况下，将需要启用主机之间的跨域资源共享 (CORS)。有关详细信息，请参阅 API 安全指南文档。
 
 ## 有关处理请求的注意事项
 
@@ -160,7 +160,7 @@
 
 	支持对资源集合发出 POST、PUT 和 DELETE 请求。POST 请求可以包含多个新资源的详细信息并将这些资源全都添加到同一个集合，PUT 请求可以替换集合中的整个资源集，DELETE 请求可以删除整个集合。
 
-	请注意，ASP.NET Web API 2 中包含的 OData 支持提供了成批处理请求的功能。客户端应用程序可以打包多个 Web API 请求并通过单个 HTTP 请求将其发送给服务器，然后接收包含每个请求的答复的单个 HTTP 响应。有关详细信息，请参阅 Microsoft 网站上的 [Web API 和 Web API OData 中的批处理支持简介](http://blogs.msdn.com/b/webdev/archive/2013/11/01/introducing-batch-support-in-web-api-and-web-api-odata.aspx)。
+	请注意，ASP.NET Web API 2 中包含的 OData 支持提供了成批处理请求的功能。客户端应用程序可以打包多个 Web API 请求并通过单个 HTTP 请求将其发送给服务器，然后接收包含每个请求的答复的单个 HTTP 响应。有关详细信息，请参阅 Microsoft WEB 应用上的 [Web API 和 Web API OData 中的批处理支持简介](http://blogs.msdn.com/b/webdev/archive/2013/11/01/introducing-batch-support-in-web-api-and-web-api-odata.aspx)。
 
 - **将响应发送回客户端应用程序时遵守 HTTP 协议**。
 
@@ -310,7 +310,7 @@
 
 - **捕获异常并向客户端返回有意义的响应**。
 
-	实现 HTTP 操作的代码应提供全面的异常处理，而不是让未捕获的异常传播到 Web API 框架。如果异常会导致无法成功完成此操作，则可以在响应消息中传递回此异常，但它应包括导致异常的错误的有意义描述。该异常还应包括相应的 HTTP 状态代码，而不是对于每种情况都只返回状态代码 500。例如，如果用户请求导致了违反约束的数据库更新（例如，尝试删除具有未完成订单的客户），则应返回状态代码 409（冲突）和指示冲突原因的消息正文。如果某种其他情况显示请求无法完成，则可以返回状态代码 400（错误请求）。你可以在 W3C 网站上的[状态代码定义](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)页中找到 HTTP 状态代码的完整列表。
+	实现 HTTP 操作的代码应提供全面的异常处理，而不是让未捕获的异常传播到 Web API 框架。如果异常会导致无法成功完成此操作，则可以在响应消息中传递回此异常，但它应包括导致异常的错误的有意义描述。该异常还应包括相应的 HTTP 状态代码，而不是对于每种情况都只返回状态代码 500。例如，如果用户请求导致了违反约束的数据库更新（例如，尝试删除具有未完成订单的客户），则应返回状态代码 409（冲突）和指示冲突原因的消息正文。如果某种其他情况显示请求无法完成，则可以返回状态代码 400（错误请求）。你可以在 W3C WEB 应用上的[状态代码定义](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)页中找到 HTTP 状态代码的完整列表。
 
 	下面的代码演示了捕获不同条件并返回相应响应的示例。
 
@@ -355,13 +355,13 @@
 	}
 	```
 
-	> [AZURE.TIP]不要包括可能对尝试入侵你的 Web API 的攻击者有用的信息。有关详细信息，请访问 Microsoft 网站上的 [ASP.NET Web API 中的异常处理](http://www.asp.net/web-api/overview/error-handling/exception-handling)页。
+	> [AZURE.TIP]不要包括可能对尝试入侵你的 Web API 的攻击者有用的信息。有关详细信息，请访问 Microsoft WEB 应用上的 [ASP.NET Web API 中的异常处理](http://www.asp.net/web-api/overview/error-handling/exception-handling)页。
 
-	> [AZURE.NOTE]许多 Web 服务器在错误条件到达 Web API 之前，自行捕获错误条件。例如，如果你为网站配置了身份验证，但用户无法提供正确的身份验证信息，则 Web 服务器应以状态代码 401（未经授权）进行响应。客户端经过身份验证后，你的代码可以执行自己的检查来验证客户端是否应能够访问所请求的资源。如果此授权失败，则应返回状态代码 403（禁止访问）。
+	> [AZURE.NOTE]许多 Web 服务器在错误条件到达 Web API 之前，自行捕获错误条件。例如，如果你为 WEB 应用配置了身份验证，但用户无法提供正确的身份验证信息，则 Web 服务器应以状态代码 401（未经授权）进行响应。客户端经过身份验证后，你的代码可以执行自己的检查来验证客户端是否应能够访问所请求的资源。如果此授权失败，则应返回状态代码 403（禁止访问）。
 
 - **以一致方式处理异常，并记录有关错误的信息**。
 
-	若要以一致方式处理异常，请考虑在整个 Web API 中实现全局错误处理策略。可以通过创建一个异常筛选器来实现部分此功能，该异常筛选器在每次控制器引发非 `HttpResponseException` 异常的任何未处理异常时运行。此方法在 Microsoft 网站上的 [ASP.NET Web API 中的异常处理](http://www.asp.net/web-api/overview/error-handling/exception-handling)页中进行了介绍。
+	若要以一致方式处理异常，请考虑在整个 Web API 中实现全局错误处理策略。可以通过创建一个异常筛选器来实现部分此功能，该异常筛选器在每次控制器引发非 `HttpResponseException` 异常的任何未处理异常时运行。此方法在 Microsoft WEB 应用上的 [ASP.NET Web API 中的异常处理](http://www.asp.net/web-api/overview/error-handling/exception-handling)页中进行了介绍。
 
 	但是，在几种情况下，异常筛选器将不会捕获异常，这些情况包括：
 
@@ -373,7 +373,7 @@
 
 	- 序列化响应消息的内容时引发的异常。
 
-	若要处理这种情况，可能需要实现更具自定义性的方法。你还应将整合捕获每个异常的完整详细信息的错误日志记录；只要客户端无法通过 Web 访问它，此错误日志就会包含详细的信息。Microsoft 网站上的 [Web API 全局错误处理](http://www.asp.net/web-api/overview/error-handling/web-api-global-error-handling)一文显示了执行此任务的一种方式。
+	若要处理这种情况，可能需要实现更具自定义性的方法。你还应将整合捕获每个异常的完整详细信息的错误日志记录；只要客户端无法通过 Web 访问它，此错误日志就会包含详细的信息。Microsoft WEB 应用上的 [Web API 全局错误处理](http://www.asp.net/web-api/overview/error-handling/web-api-global-error-handling)一文显示了执行此任务的一种方式。
 
 - **区分客户端错误和服务器端错误**。
 
@@ -882,7 +882,7 @@
 
 	将要发送大量数据到服务器的客户端应用程序可能会先确定服务器是否实际可以接受该请求。在发送数据之前，客户端应用程序可以提交一个 HTTP 请求，其中包含 Expect: 100-Continue 标头、Content-Length 标头（指示数据的大小），但消息正文为空。如果服务器可以处理该请求，则应以指定 HTTP 状态 100（继续）的消息进行响应。然后，客户端应用程序可以继续操作并发送在消息正文中包含数据的完整请求。
 
-	如果你使用 IIS 来托管服务，则 HTTP.sys 驱动程序会自动检测并处理 Expect: 100-Continue 标头，然后再将请求传递到你的网站。这意味着你很可能在应用程序代码中看不到这些标头，你可以假设 IIS 已筛选掉任何它认为不适合或太大的消息。
+	如果你使用 IIS 来托管服务，则 HTTP.sys 驱动程序会自动检测并处理 Expect: 100-Continue 标头，然后再将请求传递到你的 WEB 应用。这意味着你很可能在应用程序代码中看不到这些标头，你可以假设 IIS 已筛选掉任何它认为不适合或太大的消息。
 
 	如果你使用.NET Framework 生成客户端应用程序，则默认情况下所有 POST 和 PUT 消息都将先发送包含 Expect: 100-Continue 标头的消息。与服务器端一样，由 .NET Framework 透明地处理该过程。但是，此过程的结果是，每个 POST 和 PUT 请求会导致对服务器进行 2 次往返，即使是小请求，也是如此。如果你的应用程序不发送包含大量数据的请求，则可以通过在客户端应用程序中使用 `ServicePointManager` 类创建 `ServicePoint` 对象来禁用此功能。`ServicePoint` 对象将基于标识服务器上的资源的 URI 的方案和主机片段处理客户端建立的与服务器的连接。然后，你可以将 `ServicePoint` 对象的 `Expect100Continue` 属性设置为 false。客户端通过与 `ServicePoint` 对象的方案和主机片段匹配的 URI 发出的所有后续 POST 和 PUT 请求在发送时将不包含 Expect: 100-Continue 标头。下面的代码演示如何配置 `ServicePoint` 对象，以便将所有请求都发送到方案为 `http` 且主机为 `www.contoso.com` 的 URI。
 
@@ -892,7 +892,7 @@
 	sp.Expect100Continue = false;
 	```
 
-	你还可以设置 `ServicePointManager` 类的静态 `Expect100Continue` 属性，以便为所有后续创建的 `ServicePoint` 对象指定此属性的默认值。有关详细信息，请参阅 Microsoft 网站上的 [ServicePoint 类](https://msdn.microsoft.com/zh-cn/library/system.net.servicepoint.aspx)页。
+	你还可以设置 `ServicePointManager` 类的静态 `Expect100Continue` 属性，以便为所有后续创建的 `ServicePoint` 对象指定此属性的默认值。有关详细信息，请参阅 Microsoft WEB 应用上的 [ServicePoint 类](https://msdn.microsoft.com/zh-cn/library/system.net.servicepoint.aspx)页。
 
 - **对可能返回大量对象的请求支持分页**。
 
@@ -928,9 +928,9 @@
 
 - **为长时间运行的请求提供异步支持**。
 
-	可能需要很长的时间来处理的请求应在执行时确保不会阻塞提交请求的客户端。Web API 可以执行一些初始检查来验证请求，启动单独的任务来执行工作，然后返回包含 HTTP 代码 202（已接受）的响应消息。此任务可以在 Web API 处理期间异步运行，也可以卸载到 Azure Web 作业（如果 Web API 由 Azure 网站托管）或辅助角色（如果将 Web API 作为 Azure 云服务实现）。
+	可能需要很长的时间来处理的请求应在执行时确保不会阻塞提交请求的客户端。Web API 可以执行一些初始检查来验证请求，启动单独的任务来执行工作，然后返回包含 HTTP 代码 202（已接受）的响应消息。此任务可以在 Web API 处理期间异步运行，也可以卸载到 Azure Web 作业（如果 Web API 由 Azure WEB 应用托管）或辅助角色（如果将 Web API 作为 Azure 云服务实现）。
 
-	> [AZURE.NOTE]有关在 Azure 网站上使用 Web 作业的详细信息，请访问 Microsoft 网站上的[使用 Web 作业在 Windows Azure 网站中运行后台任务](/documentation/articles/web-sites-create-web-jobs)页。
+	> [AZURE.NOTE]有关在 Azure WEB 应用上使用 Web 作业的详细信息，请访问 Microsoft WEB 应用上的[使用 Web 作业在 Windows Azure 中运行后台任务](/documentation/articles/web-sites-create-web-jobs)页。
 
 	Web API 还应提供一种向客户端应用程序返回处理结果的机制。可以通过以下两种方案实现此目的：为客户端应用程序提供轮询机制以定期查询处理是否已完成并获取结果，或者使 Web API 可以在操作完成时发送通知。
 
@@ -952,11 +952,11 @@
 
 	如果你想要实现通知，可用选项包括：
 
-	- 使用 Azure 通知中心将异步响应推送到客户端应用程序。Microsoft 网站上的 [Azure 通知中心通知用户](/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users)页提供了进一步的详细信息。
+	- 使用 Azure 通知中心将异步响应推送到客户端应用程序。Microsoft WEB 应用上的 [Azure 通知中心通知用户](/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users)页提供了进一步的详细信息。
 
 	- 使用 Comet 模型来保持客户端与托管 Web API 的服务器之间的永久网络连接，并使用此连接将消息从服务器推送回客户端。MSDN 杂志文章[在 Microsoft .NET Framework 中构建简单的 Comet 应用程序](https://msdn.microsoft.com/magazine/jj891053.aspx)介绍了一个示例解决方案。
 
-	- 使用 SignalR 通过永久网络连接将 Web 服务器中的实时数据推送到客户端。SignalR 可作为 NuGet 程序包用于 ASP.NET网站。可以在 [ASP.NET SignalR](http://signalr.net/) 网站上找到详细信息。
+	- 使用 SignalR 通过永久网络连接将 Web 服务器中的实时数据推送到客户端。SignalR 可作为 NuGet 程序包用于 ASP.NET WEB 应用。可以在 [ASP.NET SignalR](http://signalr.net/) WEB 应用上找到详细信息。
 
 	> [AZURE.NOTE]Comet 和 SignalR 均利用 Web 服务器和客户端应用程序之间的永久网络连接。这会影响可伸缩性，因为大量客户端可能需要同样多的并发连接数。
 
@@ -994,7 +994,7 @@
 - 缓存请求和响应以减少托管 Web API 的服务器上的负载。
 
 ## 有关测试 Web API 的注意事项
-Web API 应和软件的任何其他部分一样进行全面测试。你应考虑创建单元测试来验证每个操作的功能，就像对任何其他类型的应用程序所做的那样。有关详细信息，请参阅 Microsoft 网站上的[使用单元测试验证代码](https://msdn.microsoft.com/zh-cn/library/dd264975.aspx)页。
+Web API 应和软件的任何其他部分一样进行全面测试。你应考虑创建单元测试来验证每个操作的功能，就像对任何其他类型的应用程序所做的那样。有关详细信息，请参阅 Microsoft WEB 应用上的[使用单元测试验证代码](https://msdn.microsoft.com/zh-cn/library/dd264975.aspx)页。
 
 > [AZURE.NOTE]本指南提供的示例 Web API 包括一个演示如何对所选操作执行单元测试的测试项目。
 
@@ -1028,13 +1028,13 @@ Web API 的性质带来了其自己的验证是否正常运行的附加要求。
 
 - 验证异步操作是否成功完成。如果 Web API 支持对返回大型二进制对象（如视频或音频）的请求进行流式处理，请确保在流式传输数据时不会阻止客户端请求。如果 Web API 实现了轮询长时间运行的数据修改操作，请验证这些操作在执行时正确报告其状态。
 
-你还应创建并运行性能测试以检查 Web API 在压力下令人满意地运行。你可以使用 Visual Studio Ultimate 构建一个 Web 性能和负载测试项目。有关详细信息，请参阅 Microsoft 网站上的[在发布前对应用程序运行性能测试](https://msdn.microsoft.com/zh-cn/library/dn250793.aspx)页。
+你还应创建并运行性能测试以检查 Web API 在压力下令人满意地运行。你可以使用 Visual Studio Ultimate 构建一个 Web 性能和负载测试项目。有关详细信息，请参阅 Microsoft WEB 应用上的[在发布前对应用程序运行性能测试](https://msdn.microsoft.com/zh-cn/library/dn250793.aspx)页。
 
 <!--## 通过使用 Azure API 管理服务发布和管理 Web API
 
 Azure 提供了 [API 管理服务](http://azure.microsoft.com/documentation/services/api-management/)，你可以使用它来发布和管理 Web API。使用此工具，你可以生成一个充当一个或多个 Web API 的外观的服务。该服务本身是一个可缩放的 Web 服务，你可以使用 Azure 管理门户创建和配置它。可以使用此服务发布和管理 Web API，如下所示：
 
-1. 将 Web API 部署到网站、Azure 云服务或 Azure 虚拟机。
+1. 将 Web API 部署到 WEB 应用、Azure 云服务或 Azure 虚拟机。
 
 2. 将 API 管理服务连接到 Web API。发送到管理 API 的 URL 的请求将映射到 Web API 中的 URI。同一 API 管理服务可以将请求路由到多个 Web API。这使你可以将多个 Web API 聚合为单个管理服务。同样，如果你需要限制或分隔可用于不同应用程序的功能，则可以从多个 API 管理服务引用同一 Web API。
 
@@ -1052,11 +1052,11 @@ Azure 提供了 [API 管理服务](http://azure.microsoft.com/documentation/serv
 
 6.	为每个 Web API 配置策略。策略可以控制以下方面：是否应允许跨域调用、如何对客户端进行身份验证、是否要在 XML 和 JSON 数据格式之间透明地进行转换、是否要限制从给定 IP 范围发起的调用、使用配额，以及是否要限制调用率等。策略可以对整个产品全局应用、对产品中的单个 Web API 应用，或者对 Web API 中的单个操作应用。
 
-你可以在 Microsoft 网站上的 [API 管理](http://azure.microsoft.com/services/api-management/)页中找到描述如何执行这些任务的完整详细信息。Azure API 管理服务还提供其自己的 REST 接口，使你可以构建自定义界面来简化配置 Web API 的过程。有关详细信息，请访问 Microsoft 网站上的 [Azure API 管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn776326.aspx)页。
+你可以在 Microsoft WEB 应用上的 [API 管理](http://azure.microsoft.com/services/api-management/)页中找到描述如何执行这些任务的完整详细信息。Azure API 管理服务还提供其自己的 REST 接口，使你可以构建自定义界面来简化配置 Web API 的过程。有关详细信息，请访问 Microsoft WEB 应用上的 [Azure API 管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn776326.aspx)页。
 
-> [AZURE.TIP]Azure 提供了使用 Azure 流量管理器，使用它可以实现故障转移和负载平衡，并可以减少在不同地理位置托管的多个网站实例之间的延迟。可以将 Azure 流量管理器与 API 管理服务结合使用；API 管理服务可以通过 Azure 流量管理器将请求路由到网站实例。有关详细信息，请访问 Microsoft 网站上的[关于流量管理器负载平衡方法](https://msdn.microsoft.com/zh-cn/library/azure/dn339010.aspx)页。
+> [AZURE.TIP]Azure 提供了使用 Azure 流量管理器，使用它可以实现故障转移和负载平衡，并可以减少在不同地理位置托管的多个 WEB 应用实例之间的延迟。可以将 Azure 流量管理器与 API 管理服务结合使用；API 管理服务可以通过 Azure 流量管理器将请求路由到 WEB 应用实例。有关详细信息，请访问 Microsoft WEB 应用上的[关于流量管理器负载平衡方法](https://msdn.microsoft.com/zh-cn/library/azure/dn339010.aspx)页。
 
-> 在此结构中，如果你要对网站使用自定义 DNS 名称，则应将每个网站的相应 CNAME 记录配置为指向 Azure 流量管理器网站的 DNS 名称。-->
+> 在此结构中，如果你要对 WEB 应用使用自定义 DNS 名称，则应将每个 WEB 应用的相应 CNAME 记录配置为指向 Azure 流量管理器 WEB 应用的 DNS 名称。-->
 
 ## 为构建客户端应用程序的开发人员提供支持
 构造客户端应用程序的开发人员通常需要了解有关如何访问 Web API 和与参数、数据类型、返回类型和返回代码（描述 Web 服务和客户端应用程序之间的不同请求和响应）相关的文档的信息。
@@ -1086,7 +1086,7 @@ Azure API 管理服务包括一个开发人员门户，其中描述了由 Web AP
 根据你发布和部署 Web API 的方式，可以直接监视 Web API，也可以通过分析通过 API 管理服务传递的流量收集使用情况和运行状况信息。
 
 ### 直接监视 Web API
-如果已通过使用 ASP.NET Web API 模板（不管作为 Web API 项目还是作为 Azure 云服务中的 Web 角色）和 Visual Studio 2013 实现你的 Web API，则可以通过使用 ASP.NET Application Insights 收集可用性、性能和使用情况数据。Application Insights 是在 Web API 部署到云中后透明地跟踪和记录有关请求和响应的信息的程序包；安装并配置该包后，无需修改你的 Web API 中的任何代码即可使用它。将 Web API 部署到 Azure 网站时，将检查所有通信并收集以下统计信息：
+如果已通过使用 ASP.NET Web API 模板（不管作为 Web API 项目还是作为 Azure 云服务中的 Web 角色）和 Visual Studio 2013 实现你的 Web API，则可以通过使用 ASP.NET Application Insights 收集可用性、性能和使用情况数据。Application Insights 是在 Web API 部署到云中后透明地跟踪和记录有关请求和响应的信息的程序包；安装并配置该包后，无需修改你的 Web API 中的任何代码即可使用它。将 Web API 部署到 Azure WEB 应用时，将检查所有通信并收集以下统计信息：
 
 - 服务器响应时间。
 
@@ -1098,13 +1098,13 @@ Azure API 管理服务包括一个开发人员门户，其中描述了由 Web AP
 
 - 由不同浏览器和用户代理启动的会话数。
 
-- 最经常查看的网页（主要适用于网站而不是 Web API）。
+- 最经常查看的网页（主要适用于 WEB 应用而不是 Web API）。
 
 - 访问 Web API 的不同用户角色。
 
 可以从 Azure 管理门户实时查看此数据。此外，还可以创建监视 Web API 的运行状况的 webtest。Webtest 将定期请求发送到 Web API 中指定的 URI，并捕获响应。你可以指定成功响应的定义（如 HTTP 状态代码 200），如果请求未返回此响应，可以安排向管理员发送警报。如有必要，管理员可以重新启动托管 Web API 的服务器（如果它出现故障）。
 
-<!--Microsoft 网站上的 [Application Insights - 开始监视你的应用的运行状况和使用情况](/documentation/articles/app-insights-start-monitoring-app-health-usage)页提供了详细信息。-->
+<!--Microsoft WEB 应用上的 [Application Insights - 开始监视你的应用的运行状况和使用情况](/documentation/articles/app-insights-start-monitoring-app-health-usage)页提供了详细信息。-->
 
 ### 通过 API 管理服务监视 Web API
 
@@ -1126,20 +1126,20 @@ Azure API 管理服务包括一个开发人员门户，其中描述了由 Web AP
 - [外观](http://en.wikipedia.org/wiki/Facade_pattern)模式描述了如何为 Web API 提供接口。
 
 ## 详细信息
-- Microsoft 网站上的[了解 ASP.NET Web API](http://www.asp.net/web-api) 页提供了通过使用 Web API 构建 REST 样式 Web 服务的详细介绍。
-- Microsoft 网站上的 [ASP.NET Web API 中的路由](http://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api)页介绍了基于约定的路由在 ASP.NET Web API 框架中的工作方式。
-- 有关基于属性的路由的详细信息，请参阅 Microsoft 网站上的 [Web API 2 中的属性路由](http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2)页。
-- OData 网站上的[基础教程](http://www.odata.org/getting-started/basic-tutorial/)页提供了 OData 协议功能的简介。
-- Microsoft 网站上的 [ASP.NET Web API OData](http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api) 页包含有关使用使用 ASP.NET 实现 OData Web API 的示例和更多信息。
-- Microsoft 网站上的 [Web API 和 Web API OData 中的批处理支持简介](http://blogs.msdn.com/b/webdev/archive/2013/11/01/introducing-batch-support-in-web-api-and-web-api-odata.aspx)介绍了如何使用 OData 在 Web API 中实现批处理操作。
+- Microsoft WEB 应用上的[了解 ASP.NET Web API](http://www.asp.net/web-api) 页提供了通过使用 Web API 构建 REST 样式 Web 服务的详细介绍。
+- Microsoft WEB 应用上的 [ASP.NET Web API 中的路由](http://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api)页介绍了基于约定的路由在 ASP.NET Web API 框架中的工作方式。
+- 有关基于属性的路由的详细信息，请参阅 Microsoft WEB 应用上的 [Web API 2 中的属性路由](http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2)页。
+- OData WEB 应用上的[基础教程](http://www.odata.org/getting-started/basic-tutorial/)页提供了 OData 协议功能的简介。
+- Microsoft WEB 应用上的 [ASP.NET Web API OData](http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api) 页包含有关使用使用 ASP.NET 实现 OData Web API 的示例和更多信息。
+- Microsoft WEB 应用上的 [Web API 和 Web API OData 中的批处理支持简介](http://blogs.msdn.com/b/webdev/archive/2013/11/01/introducing-batch-support-in-web-api-and-web-api-odata.aspx)介绍了如何使用 OData 在 Web API 中实现批处理操作。
 - Jonathan Oliver 博客上的[幂等性模式](http://blog.jonathanoliver.com/idempotency-patterns/)一文概述了幂等性以及它如何与数据管理操作相关。
-- W3C 网站上的[状态代码定义](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)页包含 HTTP 状态代码及其说明的完整列表。
-- 有关使用 ASP.NET Web API 处理 HTTP 异常的详细信息，请访问 Microsoft 网站上的 [ASP.NET Web API 中的异常处理](http://www.asp.net/web-api/overview/error-handling/exception-handling)页。
-- Microsoft 网站上的 [Web API 全局错误处理](http://www.asp.net/web-api/overview/error-handling/web-api-global-error-handling)一文介绍了如何为 Web API 实现全局错误处理和日志记录策略。
-- Microsoft 网站上的[使用 Web 作业在 Windows Azure 网站中运行后台任务](/documentation/articles/web-sites-create-web-jobs)页提供了有关使用 Web 作业在 Azure 网站上执行后台操作的信息和示例。
-- Microsoft 网站上的 [API 管理](http://azure.microsoft.com/services/api-management/)页介绍了如何发布可提供对 Web API 的受控且安全访问的产品。
-- Microsoft 网站上的 [Azure API 管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn776326.aspx)页介绍了如何使用 API 管理 REST API 构建自定义管理应用程序。
-- Microsoft 网站上的[使用单元测试验证代码](https://msdn.microsoft.com/zh-cn/library/dd264975.aspx)页提供了有关使用 Visual Studio 创建和管理单元测试的详细信息。
-- Microsoft 网站上的[在发布前对应用程序运行性能测试](https://msdn.microsoft.com/zh-cn/library/dn250793.aspx)页介绍了如何使用 Visual Studio Ultimate 来创建 Web 性能和负载测试项目。
+- W3C WEB 应用上的[状态代码定义](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)页包含 HTTP 状态代码及其说明的完整列表。
+- 有关使用 ASP.NET Web API 处理 HTTP 异常的详细信息，请访问 Microsoft WEB 应用上的 [ASP.NET Web API 中的异常处理](http://www.asp.net/web-api/overview/error-handling/exception-handling)页。
+- Microsoft WEB 应用上的 [Web API 全局错误处理](http://www.asp.net/web-api/overview/error-handling/web-api-global-error-handling)一文介绍了如何为 Web API 实现全局错误处理和日志记录策略。
+- Microsoft WEB 应用上的[使用 Web 作业在 Windows Azure 中运行后台任务](/documentation/articles/web-sites-create-web-jobs)页提供了有关使用 Web 作业在 Azure WEB 应用上执行后台操作的信息和示例。
+- Microsoft WEB 应用上的 [API 管理](http://azure.microsoft.com/services/api-management/)页介绍了如何发布可提供对 Web API 的受控且安全访问的产品。
+- Microsoft WEB 应用上的 [Azure API 管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn776326.aspx)页介绍了如何使用 API 管理 REST API 构建自定义管理应用程序。
+- Microsoft WEB 应用上的[使用单元测试验证代码](https://msdn.microsoft.com/zh-cn/library/dd264975.aspx)页提供了有关使用 Visual Studio 创建和管理单元测试的详细信息。
+- Microsoft WEB 应用上的[在发布前对应用程序运行性能测试](https://msdn.microsoft.com/zh-cn/library/dn250793.aspx)页介绍了如何使用 Visual Studio Ultimate 来创建 Web 性能和负载测试项目。
 
 <!---HONumber=67-->

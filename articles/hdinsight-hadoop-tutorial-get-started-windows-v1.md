@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="11/29/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="01/21/2016"/>
 
 
 # Hadoop 教程：在 Windows 上的 HDInsight 中开始将 Hadoop 与 Hive 查询配合使用
@@ -114,7 +114,7 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 示例 | 它有什么作用？
 ------ | ---------------
 [传感器数据分析][hdinsight-sensor-data-sample] | 了解如何使用 HDInsight 处理加热、通风和空调 (HVAC) 系统产生的历史数据，以识别无法可靠地保持设定温度的系统
-[网站日志分析][hdinsight-weblogs-sample] | 了解如何使用 HDInsight 分析网站日志文件，以了解一天中从外部网站对该网站的访问次数，以及用户遇到的网站错误汇总
+[ WEB 应用日志分析][hdinsight-weblogs-sample] | 了解如何使用 HDInsight 分析 WEB 应用日志文件，以了解一天中从外部 WEB 应用对该 WEB 应用的访问次数，以及用户遇到的 WEB 应用错误汇总
 
 
 

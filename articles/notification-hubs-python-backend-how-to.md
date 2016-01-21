@@ -10,7 +10,7 @@
 <tags
       ms.service="notification-hubs" 
       ms.date="07/17/2015" 
-      wacn.date="12/17/2015" />
+      wacn.date="01/21/2016" />
 
 # 如何通过 Python 使用通知中心
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
@@ -32,7 +32,7 @@
 > [AZURE.NOTE]该示例仅限于发送通知，并不执行任何注册管理操作。
 
 ## 客户端接口
-主要的客户端接口可提供与 [.NET 通知中心 SDK](http://msdn.microsoft.com/zh-cn/library/jj933431.aspx) 中相同的方法。这将允许你直接翻译当前该网站上提供的所有教程和示例，这些内容均来自 Internet 上的社区。
+主要的客户端接口可提供与 [.NET 通知中心 SDK](http://msdn.microsoft.com/zh-cn/library/jj933431.aspx) 中相同的方法。这将允许你直接翻译当前该 WEB 应用上提供的所有教程和示例，这些内容均来自 Internet 上的社区。
 
 你可以在 [Python REST 包装器示例]中找到提供的所有代码。
 

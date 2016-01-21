@@ -9,7 +9,7 @@
 <tags 
 	ms.service="multiple"  
 	ms.date="09/01/2015" 
-	wacn.date="11/12/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 是否应选择云服务？
 
@@ -17,7 +17,7 @@ Azure 提供了用于运行应用程序的不同托管模型。每种模型提�
 
 | 计算选项 | 目标受众 |
 | ------------------ | --------   |
-| [App Service] | 任何设备的可缩放网站、Mobile Apps、API Apps 和 Logic Apps |
+| [App Service] | 任何设备的可缩放 WEB 应用、Mobile Apps、API Apps 和 Logic Apps |
 | [云服务] | 对操作系统具有更高控制度的高可用、可缩放 n 层云应用程序 |
 | [虚拟机] | 可完全控制操作系统的自定义 Windows 和 Linux VM |
 

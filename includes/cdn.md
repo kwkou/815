@@ -8,7 +8,7 @@ Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物�
 
 此任务包括下列步骤：
 
-+ [步骤 1:创建存储帐户，云服务,网站或媒体服务](#step1)
++ [步骤 1:创建存储帐户，云服务, WEB 应用或媒体服务](#step1)
 + [步骤 2:创建新的 CDN 终结点](#step2)
 + [步骤 3:访问 CDN 内容](#step3)
 + [步骤 4:删除 CDN 中的内容](#step4)
@@ -21,8 +21,8 @@ Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物�
 
 现有 Windows Azure 中国客户现在可使用[Windows Azure 管理门户](https://manage.windowsazure.cn/)中的 Windows Azure CDN。 
 
-## 步骤 1:创建存储帐户，云服务，网站或媒体服务<a id="step1"></a>
-您可以为现有的Windows Azure订阅中的存储账户，云服务，网站或媒体服务创建CDN终结点。您也可以按以下过程创建新的存储帐户，云服务或者网站用于 Windows Azure 订阅。
+## 步骤 1:创建存储帐户，云服务， WEB 应用或媒体服务<a id="step1"></a>
+您可以为现有的Windows Azure订阅中的存储账户，云服务， WEB 应用或媒体服务创建CDN终结点。您也可以按以下过程创建新的存储帐户，云服务或者 WEB 应用用于 Windows Azure 订阅。
 
 ### 为 Windows Azure 订阅创建存储帐户
 请参阅 [如何创建存储帐户](http://www.windowsazure.cn/zh-cn/documentation/articles/storage-create-storage-account/)
@@ -30,14 +30,14 @@ Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物�
 ### 为 Windows Azure 订阅创建云服务
 请参阅 [如何创建和部署云服务](http://www.windowsazure.cn/zh-cn/documentation/articles/cloud-services-how-to-create-deploy/) 
 
-### 为 Windows Azure 订阅创建网站
-请参阅 [如何创建和部署网站](http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-create-deploy/) 
+### 为 Windows Azure 订阅创建 WEB 应用
+请参阅 [如何创建和部署 WEB 应用](http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-create-deploy/) 
 
 ### 为 Windows Azure 订阅创建媒体服务
 请参阅 [如何创建和部署媒体服务](http://www.windowsazure.cn/documentation/articles/media-services-create-account/) 
 
 ## 步骤 2:创建新的 CDN 终结点<a id="step2"></a>
-一旦启用对存储帐户，云服务或者网站的 CDN 访问，所有公开可用的对象将有资格获得 CDN 边缘高速缓存。如果您修改一个当前在 CDN 中缓存的对象，则只有 CDN 在缓存内容生存时间到期时刷新了对象的内容后（或通过高级管理功能进行手动刷新），才能通过 CDN 访问新内容。
+一旦启用对存储帐户，云服务或者 WEB 应用的 CDN 访问，所有公开可用的对象将有资格获得 CDN 边缘高速缓存。如果您修改一个当前在 CDN 中缓存的对象，则只有 CDN 在缓存内容生存时间到期时刷新了对象的内容后（或通过高级管理功能进行手动刷新），才能通过 CDN 访问新内容。
 
 ### 创建新的 CDN 终结点
 1. 在 [Windows Azure 管理门户](https://manage.windowsazure.cn/)的导航窗格中，单击“CDN”。
@@ -90,7 +90,7 @@ Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物�
 
 
 
-[步骤 1:创建存储帐户，云服务,网站或媒体服务]: https://github.com/mccdn/cdndoc/blob/master/wacn/azurecdn.md#步骤-1创建存储帐户云服务网站或媒体服务
+[步骤 1:创建存储帐户，云服务, WEB 应用或媒体服务]: https://github.com/mccdn/cdndoc/blob/master/wacn/azurecdn.md#步骤-1创建存储帐户云服务 WEB 应用或媒体服务
 [步骤 2:创建新的 CDN 终结点]: #%E6%AD%A5%E9%AA%A4-2%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84-cdn-%E7%BB%88%E7%BB%93%E7%82%B9
 [步骤 3:访问 CDN 内容]: #%E6%AD%A5%E9%AA%A4-3%E8%AE%BF%E9%97%AE-cdn-%E5%86%85%E5%AE%B9
 [步骤 4:删除 CDN 中的内容]: #%E6%AD%A5%E9%AA%A4-4%E5%88%A0%E9%99%A4-cdn-%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9

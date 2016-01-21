@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="10/07/2015" 
-	wacn.date="01/14/2016"/>
+	wacn.date="01/21/2016"/>
 
 
 # 如何使用服务总线主题和订阅
@@ -23,7 +23,7 @@
 
 ## 创建 Node.js 应用程序
 
-创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站]、[Node.js 云服务][Node.js Cloud Service]（使用 Windows PowerShell）或“使用 WebMatrix 创建网站”。
+创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure WEB 应用]、[Node.js 云服务][Node.js Cloud Service]（使用 Windows PowerShell）或“使用 WebMatrix 创建 WEB 应用”。
 
 ## 配置应用程序以使用 Service Bus
 
@@ -65,7 +65,7 @@ Azure 模块将读取环境变量 AZURE_SERVICEBUS_NAMESPACE 和 AZURE_SERVICEBU
 
 有关在 Azure 云服务的配置文件中设置环境变量的示例，请参阅[使用存储构建 Node.js 云服务][]。
 
-有关在 [Azure 经典门户][]中为 Azure 网站设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用程序][]。
+有关在 [Azure 经典门户][]中为 Azure WEB 应用设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用程序][]。
 
 ## 创建主题
 
@@ -319,7 +319,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx
   [Node.js Cloud Service]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
-  [创建 Node.js 应用程序并将其部署到 Azure 网站]:/develop/nodejs/
+  [创建 Node.js 应用程序并将其部署到 Azure WEB 应用]:/develop/nodejs/
   [使用存储构建 Node.js 云服务]:/develop/nodejs/
   [使用存储构建 Node.js Web 应用程序]:/develop/nodejs/
 

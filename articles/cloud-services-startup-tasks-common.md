@@ -10,7 +10,7 @@ editor=""/>
 <tags 
 ms.service="cloud-services" 
 ms.date="08/24/2015" 
-wacn.date="10/17/2015"/>
+wacn.date="01/21/2016"/>
 
 # 常见的云服务启动任务
 
@@ -68,7 +68,7 @@ wacn.date="10/17/2015"/>
 
 ## 使用 AppCmd.exe 配置 IIS 启动
 
-[AppCmd.exe](https://technet.microsoft.com/zh-cn/library/jj635852.aspx) 命令行工具在 Azure 上启动时可用于管理 IIS 设置。*AppCmd.exe* 提供对要在 Azure 上的启动任务中使用的配置设置的方便的命令行访问。使用 *AppCmd.exe*，可以为应用程序和站点添加、修改或删除网站设置。
+[AppCmd.exe](https://technet.microsoft.com/zh-cn/library/jj635852.aspx) 命令行工具在 Azure 上启动时可用于管理 IIS 设置。*AppCmd.exe* 提供对要在 Azure 上的启动任务中使用的配置设置的方便的命令行访问。使用 *AppCmd.exe*，可以为应用程序和站点添加、修改或删除 WEB 应用设置。
 
 但是，在使用 *AppCmd.exe* 作为启动任务时有几点需要注意：
 

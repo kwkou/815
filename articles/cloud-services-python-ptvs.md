@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="08/30/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 
@@ -34,7 +34,7 @@ Azure 提供了三种计算模型用于运行应用程序：[Azure App Service �
 
 有关详细信息，请参阅[什么是云服务？]。
 
-> [AZURE.NOTE]*想要构建一个简单的网站？* 如果你的方案只涉及一个简单的网站前端，请考虑使用 Azure App Service 中的轻型 Web Apps 功能。随着您网站的不断扩大和需求的变化，您可以轻松升级到云服务。请参阅 <a href="/develop/python/">Python 开发人员中心</a>上关于开发 Azure App Service 中的 Web Apps 功能的文章。<br />
+> [AZURE.NOTE]*想要构建一个简单的 WEB 应用？* 如果你的方案只涉及一个简单的 WEB 应用前端，请考虑使用 Azure App Service 中的轻型 Web Apps 功能。随着您 WEB 应用的不断扩大和需求的变化，您可以轻松升级到云服务。请参阅 <a href="/develop/python/">Python 开发人员中心</a>上关于开发 Azure App Service 中的 Web Apps 功能的文章。<br />
 
 
 ## 创建项目

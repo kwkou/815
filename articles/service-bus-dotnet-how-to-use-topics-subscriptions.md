@@ -10,7 +10,7 @@
 <tags
     ms.service="service-bus"
     ms.date="10/15/2015"
-    wacn.date="01/14/2016"/>
+    wacn.date="01/21/2016"/>
 
 # 如何使用服务总线主题和订阅
 
@@ -44,7 +44,7 @@
 服务总线使用连接字符串来存储终结点和凭据。你可以将连接字符串置于配置文件中，而不是对其进行硬编码：
 
 - 当使用 Azure 云服务时，建议你使用 Azure 服务配置系统（.csdef 和 .cscfg 文件）来存储连接字符串。
-- 在使用 Azure 网站或 Azure 虚拟机时，建议使用 .NET 配置系统（如 Web.config 文件）来存储连接字符串。
+- 在使用 Azure WEB 应用或 Azure 虚拟机时，建议使用 .NET 配置系统（如 Web.config 文件）来存储连接字符串。
 
 在上述两种情况下，你都可以使用 `CloudConfigurationManager.GetSetting` 方法检索连接字符串，本文稍后部分将对此进行介绍。
 
@@ -81,9 +81,9 @@
 
 使用从 Azure 门户检索到的共享访问签名 (SAS) 密钥名称和密钥值，如上一部分中所述。
 
-### 在使用 Azure 网站或 Azure 虚拟机时配置连接字符串
+### 在使用 Azure WEB 应用或 Azure 虚拟机时配置连接字符串
 
-在使用网站或虚拟机时，建议你使用 .NET 配置系统（如 Web.config）。你可以使用 `<appSettings>` 元素存储连接字符串。
+在使用 WEB 应用或虚拟机时，建议你使用 .NET 配置系统（如 Web.config）。你可以使用 `<appSettings>` 元素存储连接字符串。
 
 ```
 <configuration>

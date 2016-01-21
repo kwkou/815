@@ -10,7 +10,7 @@
 <tags 
 	ms.service="site-recovery" 
 	ms.date="09/21/2015" 
-	wacn.date="11/30/2015"/>
+	wacn.date="01/21/2016"/>
 
 # Site Recovery 工作负荷指南
 
@@ -37,7 +37,7 @@ ASR 复制技术与虚拟机中运行的任何应用程序兼容。我们与应�
 **工作负荷** | <p>**复制 Hyper-V 虚拟机**</p> <p>**（到辅助站点）**</p> | <p>**复制 Hyper-V 虚拟机**</p> <p>**（到 Azure）**</p> | <p>**复制 VMware 虚拟机**</p> <p>**（到辅助站点）**</p> | <p>**复制 VMware 虚拟机**</p><p>**（到 Azure）**</p> 
 ---|---|---|---|---
 Active Directory、DNS | Y | Y | Y | Y 
-网站（IIS、SQL） | Y | Y | Y | Y 
+WEB 应用（IIS、SQL） | Y | Y | Y | Y 
 SCOM | Y | Y | Y | Y 
 Sharepoint | Y | Y | Y | Y 
 <p>SAP</p><p>将非群集 SAP 站点复制到 Azure</p> | Y（Microsoft 已测试）| Y（Microsoft 已测试）| Y（Microsoft 已测试）| Y（Microsoft 已测试）
@@ -69,7 +69,7 @@ Microsoft SQL Server 是很多企业级第一方、第三方和自定义业务�
 请参阅链接的文档以获取有关[部署面向 SQL 的 Azure Site Recovery](/documentation/articles/site-recovery-sql) 的详细指南
 
 ##<a id="sharepoint"></a>SharePoint
-SharePoint 是一款流行的应用程序，让众多组织能够通过提供 Intranet 门户、文档和文件管理、社交网络、网站和企业搜索能力来进行合作。它也是一个应用程序平台，用于轻松地部署自定义应用程序和工作流程。通过使用面向 SharePoint 的 Azure Site Recovery，你可以：
+SharePoint 是一款流行的应用程序，让众多组织能够通过提供 Intranet 门户、文档和文件管理、社交网络、 WEB 应用和企业搜索能力来进行合作。它也是一个应用程序平台，用于轻松地部署自定义应用程序和工作流程。通过使用面向 SharePoint 的 Azure Site Recovery，你可以：
 
 - 消除对用于灾难恢复的备用场的需要以及相关的基础结构成本。使用 ASR，你可以启用整个场（Web、应用程序和数据库层）到 Azure 或到辅助站点的保护。
 - 简化应用程序的部署和可管理性。部署到主站点的更新会被自动复制到辅助站点并在场恢复时变得可用。这消除了让备用场保持最新的管理复杂性，并降低了总拥有成本 (TCO)。

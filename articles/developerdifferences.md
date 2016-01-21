@@ -1,5 +1,5 @@
 <properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Windows Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
-<tags ms.service="" ms.date="" wacn.date="07/28/2015"/>
+<tags ms.service="" ms.date="" wacn.date="01/21/2016"/>
 
 #中国 Windows Azure 应用程序开发人员说明
 
@@ -68,7 +68,7 @@ Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球
 
 * 计算 – 虚拟机	 
 * 计算 – 云服务（适用于 PaaS 服务）
-* 计算 – 网站
+* 计算 – WEB 应用
 * 计算 – 移动服务
 * 数据服务 – 存储（适用于 Blob、表和队列）
 * 数据服务 – SQL 数据库

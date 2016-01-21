@@ -11,7 +11,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="12/09/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="01/21/2016"/>
 
 
 #<a id="managemediaservicesorigins"></a>如何在媒体服务帐户中管理流式处理终结点
@@ -74,7 +74,7 @@
 - 访问控制
 - 自定义主机名
 - 缓存控制
-- 跨网站访问策略
+- 跨 WEB 应用访问策略
 
 有关这些属性的详细信息，请参阅 [StreamingEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn783468.aspx)。
 

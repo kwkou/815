@@ -11,7 +11,7 @@
 <tags
    ms.service="best-practice"
    ms.date="04/28/2015"
-   wacn.date="11/12/2015"/>
+   wacn.date="01/21/2016"/>
 
 # 重试服务指南
 
@@ -679,7 +679,7 @@ namespace RetryCodeSamples
 
 Azure Redis 高速缓存是一项快速数据访问和低延迟高速缓存服务，基于常用的开放源代码 Redis 高速缓存。它是由 Microsoft 管理的安全服务，可通过 Azure 中的任意应用程序进行访问。
 
-本部分中的指南假设您使用 StackExchange.Redis 客户端访问高速缓存。[Redis 网站](http://redis.io/clients)上列出了其他合适的客户端，这些客户端可能具有不同的重试机制。
+本部分中的指南假设您使用 StackExchange.Redis 客户端访问高速缓存。[Redis WEB 应用](http://redis.io/clients)上列出了其他合适的客户端，这些客户端可能具有不同的重试机制。
 
 请注意，StackExchange.Redis 客户端通过单个连接使用多路复用。建议的用法是，在应用程序启动时创建客户端实例，然后对针对高速缓存执行的所有操作使用此实例。因此，高速缓存连接只建立一次，且本部分中的所有指南均与此启动连接（而不是访问高速缓存的每个操作）的重试策略相关。
 
@@ -845,11 +845,11 @@ namespace RetryCodeSamples
 }
 ```
 
-有关更多示例，请参阅项目网站上的[配置](http://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Configuration.md#configuration)。
+有关更多示例，请参阅项目 WEB 应用上的[配置](http://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Configuration.md#configuration)。
 
 ## 详细信息
 
-* [Redis 网站](http://redis.io/)
+* [Redis WEB 应用](http://redis.io/)
 
 ## DocumentDB（预发行）重试指南
 
@@ -882,7 +882,7 @@ DocumentDB 客户端的预发行版本包括内部重试机制和不可配置的
 
 ## 搜索重试指南
 
-Azure 搜索可用于向网站或应用程序添加功能强大且复杂的搜索功能、快速轻松地优化搜索结果，并构造大量经过微调的排名模型。
+Azure 搜索可用于向 WEB 应用或应用程序添加功能强大且复杂的搜索功能、快速轻松地优化搜索结果，并构造大量经过微调的排名模型。
 
 ### 重试机制
 

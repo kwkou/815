@@ -11,7 +11,7 @@
 <tags
    ms.service="best-practice"
    ms.date="04/28/2015"
-   wacn.date="10/3/2015"/>
+   wacn.date="01/21/2016"/>
 
 # API 设计指南
 
@@ -440,7 +440,7 @@ Content-Length: ...
 
 此方法具有语义优势（即，同一资源始终从同一 URI 进行检索），但它依赖于代码处理请求以分析查询字符串并发送回相应的 HTTP 响应。此方法也与 URI 版本控制机制一样，增加了实现 HATEOAS 的复杂性。
 
-> [AZURE.NOTE]某些较旧的 Web 浏览器和 Web 代理将不会缓存在 URL 中包括查询字符串的请求的响应。这可能会对使用 Web API 的网站以及从此类 Web 浏览器运行的网站的性能产生不利影响。
+> [AZURE.NOTE]某些较旧的 Web 浏览器和 Web 代理将不会缓存在 URL 中包括查询字符串的请求的响应。这可能会对使用 Web API 的 WEB 应用以及从此类 Web 浏览器运行的 WEB 应用的性能产生不利影响。
 
 ### 标头版本控制
 

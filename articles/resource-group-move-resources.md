@@ -10,7 +10,7 @@
 <tags 
 	ms.service="azure-resource-manager" 
 	ms.date="11/13/2015" 
-	wacn.date="12/31/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 将资源移动到新的资源组或订阅中
 
@@ -37,7 +37,7 @@
 - API 管理
 - Azure DocumentDB
 - Azure 搜索
-- Azure 网站（存在一些<!--[-->限制<!--](/documentation/articles/app-service-move-resources)）-->
+- Azure WEB 应用（存在一些<!--[-->限制<!--](/documentation/articles/app-service-move-resources)）-->
 - Data Factory
 - 密钥保管库
 - Mobile Engagement

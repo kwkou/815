@@ -10,7 +10,7 @@
 <tags
    ms.service="cloud-services"
    ms.date="08/18/2015"
-   wacn.date="11/02/2015"/>
+   wacn.date="01/21/2016"/>
 
 # Azure 来宾 OS 可支持性和停用策略
 本页面上的信息与 Azure 来宾操作系统（[来宾 OS](https://msdn.microsoft.com/zh-cn/library/azure/ff729422.aspx)）相关。来宾 OS 仅适用于云服务辅助角色和 Web 角色 (PaaS)，而不适用于虚拟机 (IaaS)。
@@ -79,9 +79,9 @@ Microsoft 将继续推出合并了最新 MSRC 更新的新来宾 OS 版本，直
 2. 设置临时测试部署以测试在新系列上运行的云服务。 
 3. [将来宾 OS 版本设置](https://msdn.microsoft.com/zh-cn/library/azure/gg433101.aspx)为“自动”（在 [.CSCFG](https://msdn.microsoft.com/zh-cn/library/azure/gg456324.aspx) 文件中设置 osVersion=*），以便自动迁移到新的来宾 OS 版本。
 
-**如果我的网站需要更深入地与 OS 集成，我该怎么办？**
+**如果我的 WEB 应用需要更深入地与 OS 集成，我该怎么办？**
 
-如果你的网站体系结构需要更深入地依赖于基本操作系统，请使用平台支持的功能（例如[“启动任务”](https://msdn.microsoft.com/library/windowsazure/gg456327.aspx)）或将来可能存在的其他扩展性机制。此外，你还可以使用 [Azure 虚拟机](http://azure.microsoft.com/documentation/scenarios/virtual-machines/)（IaaS – 基础结构即服务），你可以在其中负责维护基本操作系统。
+如果你的 WEB 应用体系结构需要更深入地依赖于基本操作系统，请使用平台支持的功能（例如[“启动任务”](https://msdn.microsoft.com/library/windowsazure/gg456327.aspx)）或将来可能存在的其他扩展性机制。此外，你还可以使用 [Azure 虚拟机](http://azure.microsoft.com/documentation/scenarios/virtual-machines/)（IaaS – 基础结构即服务），你可以在其中负责维护基本操作系统。
  
 ## 后续步骤
 查看最新的[来宾 OS 版本](/documentation/articles/cloud-services-guestos-update-matrix)。

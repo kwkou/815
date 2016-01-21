@@ -1,6 +1,6 @@
 <properties
-	pageTitle="在 Linux VM 上托管 Ruby on Rails 网站 | Windows Azure"
-	description="在 Azure 上使用 Linux 虚拟机设置和托管基于 Ruby on Rails 的网站。"
+	pageTitle="在 Linux VM 上托管 Ruby on Rails WEB 应用 | Windows Azure"
+	description="在 Azure 上使用 Linux 虚拟机设置和托管基于 Ruby on Rails 的 WEB 应用。"
 	services="virtual-machines"
 	documentationCenter="ruby"
 	authors="MikeWasson"
@@ -11,15 +11,15 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="06/09/2015"
-	wacn.date="12/31/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 
 
 
-#Azure VM 上的 Ruby on Rails 网站
+#Azure VM 上的 Ruby on Rails WEB 应用
 
-本教程介绍如何在 Azure 中使用 Linux 虚拟机托管 Ruby on Rails 网站。
+本教程介绍如何在 Azure 中使用 Linux 虚拟机托管 Ruby on Rails WEB 应用。
 
 本教程使用 Ubuntu Server 14.04 LTS 进行了验证。如果你使用不同 Linux 分发，则可能需要修改安装 Rails 的步骤。
 
@@ -121,7 +121,7 @@
 
 4. 单击复选标记以保存该终结点。
 
-5. 此时应显示一条消息，指出“正在进行更新”。此消息消失后，终结点即处于活动状态。现在你可以通过导航到虚拟机的 DNS 名称来测试你的应用程序。网站应显示如下：
+5. 此时应显示一条消息，指出“正在进行更新”。此消息消失后，终结点即处于活动状态。现在你可以通过导航到虚拟机的 DNS 名称来测试你的应用程序。 WEB 应用应显示如下：
 
 	![默认 rails 页面][default-rails-cloud]
 

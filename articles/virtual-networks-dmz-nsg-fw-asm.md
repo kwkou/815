@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="09/16/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 示例 2 – 构建外围网络以通过防火墙和 NSG 保护应用程序
 
@@ -46,7 +46,7 @@
 成功运行脚本后，可执行以下脚本后续步骤：
 
 1.	设置防火墙规则，下面的“防火墙规则”部分中做了介绍。
-2.	（可选）“参考”部分中提供了两个脚本，用于设置 Web 服务器和包含简单网站的应用服务器，以便能使用此外围网络配置进行测试。
+2.	（可选）“参考”部分中提供了两个脚本，用于设置 Web 服务器和包含简单 WEB 应用的应用服务器，以便能使用此外围网络配置进行测试。
 
 下一部分介绍与网络安全组相关的大部分脚本语句。
 
@@ -64,7 +64,7 @@
 5.	拒绝从 Internet 到整个 VNet（两个子网）的任何流量（所有端口）
 6.	拒绝从前端子网到后端子网的任何流量（所有端口）
 
-将这些规则绑定到每个子网后，如果有从 Internet 到 Web 服务器的入站 HTTP 请求，将应用规则 3（允许）和规则 5（拒绝），但由于规则 3 具有较高的优先级，因此只应用规则 3 并忽略规则 5。这样就会允许 HTTP 请求传往防火墙。如果相同的流量尝试传往 DNS01 服务器，则会先应用规则 5（拒绝），因此不允许该流量传递到服务器。规则 6（拒绝）阻止前端子网与后端子网对话（规则 1 和 4 允许的流量除外），这可在攻击者入侵前端上的网站时保护后端网络，攻击者只能对后端的“受保护”网络进行有限度的访问（只能访问 AppVM01 服务器上公开的资源）。
+将这些规则绑定到每个子网后，如果有从 Internet 到 Web 服务器的入站 HTTP 请求，将应用规则 3（允许）和规则 5（拒绝），但由于规则 3 具有较高的优先级，因此只应用规则 3 并忽略规则 5。这样就会允许 HTTP 请求传往防火墙。如果相同的流量尝试传往 DNS01 服务器，则会先应用规则 5（拒绝），因此不允许该流量传递到服务器。规则 6（拒绝）阻止前端子网与后端子网对话（规则 1 和 4 允许的流量除外），这可在攻击者入侵前端上的 WEB 应用时保护后端网络，攻击者只能对后端的“受保护”网络进行有限度的访问（只能访问 AppVM01 服务器上公开的资源）。
 
 有一个默认出站规则可允许流量外流到 Internet。在此示例中，我们允许出站流量，且未修改任何出站规则。如果两个方向的流量都要锁定，则需要用户定义的路由，相关信息将在[主要安全边界文档][HOME]中的不同示例中探讨。
 
@@ -503,14 +503,14 @@ Web 服务器、IIS01 和防火墙都在相同的云服务中，因此共享相�
 	
 	# Optional Post-script Manual Configuration
 	  # Configure Firewall
-	  # Install Test网站(Run Post-Build Script on the IIS Server)
+	  # Install Test WEB 应用(Run Post-Build Script on the IIS Server)
 	  # Install Backend resource (Run Post-Build Script on the AppVM01)
 	  Write-Host
 	  Write-Host "Build Complete!" -ForegroundColor Green
 	  Write-Host
 	  Write-Host "Optional Post-script Manual Configuration Steps" -ForegroundColor Gray
 	  Write-Host " - Configure Firewall" -ForegroundColor Gray
-	  Write-Host " - Install Test网站(Run Post-Build Script on the IIS Server)" -ForegroundColor Gray
+	  Write-Host " - Install Test WEB 应用(Run Post-Build Script on the IIS Server)" -ForegroundColor Gray
 	  Write-Host " - Install Backend resource (Run Post-Build Script on the AppVM01)" -ForegroundColor Gray
 	  Write-Host
 
