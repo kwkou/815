@@ -10,7 +10,7 @@
 <tags
 	ms.service="azure-resource-manager"
 	ms.date="08/13/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 # Azure 资源管理器的安全注意事项
@@ -259,7 +259,7 @@ INTERNET | 表示虚拟网络外部的 IP 地址空间，可以通过公共 Inte
 
 当 NSG 与 VM 或子网关联时，网络访问控制规则变得很明确。该平台不会插入任何允许流量流向特定端口的隐式规则。在这种情况下，如果你在 VM 中创建一个终结点，则还必须创建一项规则以允许来自 Internet 的流量。如果不执行该操作，则不能从外部访问 *VIP:{Port}*。
 
-例如，你可以创建新的 VM 和新的 NSG。你将 NSG 与 VM 相关联。该 VM 可以通过 ALLOW VNET INBOUND 规则与虚拟网络中的其他 VM 通信。该 VM 还可通过 ALLOW INTERNET OUTBOUND 规则进行连接到 Internet 的出站连接。随后，你可以在端口 80 上创建一个终结点以接收流到在 VM 中运行的网站的流量。除非你向 NSG 添加与下表类似的规则，否则从 Internet 流向 VIP（公用虚拟 IP 地址）上端口 80 的数据包将不会到达 VM。
+例如，你可以创建新的 VM 和新的 NSG。你将 NSG 与 VM 相关联。该 VM 可以通过 ALLOW VNET INBOUND 规则与虚拟网络中的其他 VM 通信。该 VM 还可通过 ALLOW INTERNET OUTBOUND 规则进行连接到 Internet 的出站连接。随后，你可以在端口 80 上创建一个终结点以接收流到在 VM 中运行的 WEB 应用的流量。除非你向 NSG 添加与下表类似的规则，否则从 Internet 流向 VIP（公用虚拟 IP 地址）上端口 80 的数据包将不会到达 VM。
 
 **允许流量流向特定端口的显式规则**
 

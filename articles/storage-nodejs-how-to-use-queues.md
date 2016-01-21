@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage" 
 	ms.date="03/11/2015" 
-	wacn.date="09/18/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 # 如何通过 Node.js 使用队列存储
@@ -27,7 +27,7 @@
 
 ## 创建 Node.js 应用程序
 
-创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅 [创建 Node.js 应用程序并将其部署到 Azure 网站]、[Node.js 云服务][Node.js 云服务]（使用 Windows PowerShell）或 [使用 WebMatrix 构建网站]。
+创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅 [创建 Node.js 应用程序并将其部署到 Azure WEB 应用]、[Node.js 云服务][Node.js 云服务]（使用 Windows PowerShell）或 [使用 WebMatrix 构建 WEB 应用]。
 
 ## 配置应用程序以访问存储
 
@@ -65,7 +65,7 @@
 
 Azure 模块将读取环境变量 AZURE_STORAGE_ACCOUNT 和 AZURE_STORAGE_ACCESS_KEY 或 AZURE_STORAGE_CONNECTION_STRING 以获取连接到您的 Azure 存储帐户所需的信息。如果未设置这些环境变量，则在调用 **createQueueService** 时必须指定帐户信息。
 
-有关在管理门户中为 Azure 网站设置环境变量的示例，请参阅[使用存储构建 Node.js网站]
+有关在管理门户中为 Azure WEB 应用设置环境变量的示例，请参阅[使用存储构建 Node.js WEB 应用]
 
 ## 如何：创建队列
 
@@ -317,9 +317,9 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
   [使用 REST API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh264518.aspx
   [Azure 管理门户]: http://manage.windowsazure.cn
-  [创建 Node.js 应用程序并将其部署到 Azure 网站]: /zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/
+  [创建 Node.js 应用程序并将其部署到 Azure WEB 应用]: /zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/
   [使用存储构建 Node.js 云服务]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
-  [使用存储构建 Node.js网站]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-web-site/
+  [使用存储构建 Node.js WEB 应用]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-web-site/
 
   
   [Queue1]: ./media/storage-nodejs-how-to-use-queues/queue1.png
@@ -331,5 +331,5 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [Node.js 云服务]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
- [使用 WebMatrix 构建网站]: /zh-cn/documentation/articles/web-sites-nodejs-use-webmatrix/
+ [使用 WebMatrix 构建 WEB 应用]: /zh-cn/documentation/articles/web-sites-nodejs-use-webmatrix/
 <!---HONumber=70-->

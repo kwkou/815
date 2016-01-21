@@ -34,7 +34,7 @@ WebJobs SDK 包括以下组件：
 
 * **NuGet 程序包**。添加到 Visual Studio 控制台应用程序项目的 NuGet 程序包提供一个框架，你的代码可通过此框架来使用 Azure 存储服务或 Service Bus 队列。   
   
-* **仪表板**。Azure WEB 应用中包含 WebJobs SDK 部分，它可针对使用 NuGet 程序包的程序提供丰富的监视和诊断功能。你无需编写代码就可以使用这些监视和诊断功能。
+* **仪表板**。Azure 中包含 WebJobs SDK 部分，它可针对使用 NuGet 程序包的程序提供丰富的监视和诊断功能。你无需编写代码就可以使用这些监视和诊断功能。
 
 ## <a id="scenarios"></a>方案
 

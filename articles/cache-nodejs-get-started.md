@@ -10,13 +10,13 @@
 <tags
 	ms.service="cache"
 	ms.date="08/17/2015"
-	wacn.date="01/04/2016"/>
+	wacn.date="01/21/2016"/>
 
 # 如何将 Azure Redis 缓存与 Node.js 配合使用
 
 Azure Redis 缓存可让你访问 WindowsAzure.cn 管理的、专用安全的 Redis 缓存。可从 Windows Azure 内部的任何应用程序访问你的缓存。
 
-本主题说明如何开始将 Azure Redis 缓存与 Node.js 配合使用。有关将 Azure Redis 缓存与 Node.js 配合使用的另一个示例，请参阅[在 Azure 网站中使用 Socket.IO 生成 Node.js 聊天应用程序][]。
+本主题说明如何开始将 Azure Redis 缓存与 Node.js 配合使用。有关将 Azure Redis 缓存与 Node.js 配合使用的另一个示例，请参阅[在 Azure 中使用 Socket.IO 生成 Node.js 聊天应用程序][]。
 
 
 ## 先决条件
@@ -86,6 +86,6 @@ Windows Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存
 [3]: ./media/cache-nodejs-get-started/cache03.png
 [4]: ./media/cache-nodejs-get-started/cache04.png
 
-[在 Azure 网站中使用 Socket.IO 生成 Node.js 聊天应用程序]: /documentation/articles/web-sites-nodejs-chat-app-socketio
+[在 Azure 中使用 Socket.IO 生成 Node.js 聊天应用程序]: /documentation/articles/web-sites-nodejs-chat-app-socketio
 
 <!---HONumber=71-->

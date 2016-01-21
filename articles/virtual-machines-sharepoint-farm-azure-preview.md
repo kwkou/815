@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/05/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/21/2016"/>
 
 # SharePoint Server 场
 
@@ -56,7 +56,7 @@
 
 ## 访问和管理 SharePoint 场
 
-SharePoint 场具有预先配置的终结点，可允许未经身份验证的 Web 流量（TCP 端口 80）传入 SharePoint Web 服务器，以用于连接 Internet 的客户端计算机。此终结点连接的是预先配置的工作组网站。若要访问此工作组网站，请访问以下操作：
+SharePoint 场具有预先配置的终结点，可允许未经身份验证的 Web 流量（TCP 端口 80）传入 SharePoint Web 服务器，以用于连接 Internet 的客户端计算机。此终结点连接的是预先配置的工作组 WEB 应用。若要访问此工作组 WEB 应用，请访问以下操作：
 
 1.	从 Azure 预览门户中，单击“浏览”，然后单击“资源组”。 
 2.	在资源组列表中，单击 SharePoint 场资源组的名称。

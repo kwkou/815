@@ -10,28 +10,28 @@
 <tags
    ms.service="active-directory"
    ms.date="09/17/2015"
-   wacn.date="11/12/2015"/>
+   wacn.date="01/21/2016"/>
 
 # Azure Active Directory 代码示例 
 
 [AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
-你可以使用 Windows Azure Active Directory (Azure AD) 向你的网站和 web API 添加身份验证和授权。本部分提供了指向代码示例的链接，这些代码示例将向你展示它的工作原理以及你可以在你的应用程序中使用的代码片段。在代码示例页上，你可以找到在要求、安装和设置方面提供了帮助的详细自述主题。并且代码带有注释，可以帮助你理解关键部分。
+你可以使用 Windows Azure Active Directory (Azure AD) 向你的 WEB 应用和 web API 添加身份验证和授权。本部分提供了指向代码示例的链接，这些代码示例将向你展示它的工作原理以及你可以在你的应用程序中使用的代码片段。在代码示例页上，你可以找到在要求、安装和设置方面提供了帮助的详细自述主题。并且代码带有注释，可以帮助你理解关键部分。
 
 若要了解每个示例类型的基本方案，请参阅"Azure AD 的身份验证方案"。
 
 为我们在 GitHub 上的示例做贡献：[ Azure Active Directory 示例和文档](https://github.com/AzureADSamples)。
 
-## Web 浏览器到网站
+## Web 浏览器到 WEB 应用
 
-这些示例展示了如何编写网站来对用户的浏览器进行定向以使用户登录到 Azure AD。
+这些示例展示了如何编写 WEB 应用来对用户的浏览器进行定向以使用户登录到 Azure AD。
 
 
 
 | 语言/平台 | 示例 | 说明
 | ----------------- | ------ | -----------
 | C#/.NET | [WebApp-OpenIDConnect-DotNet](http://github.com/AzureADSamples/WebApp-OpenIDConnect-DotNet) | 使用 OpenID Connect（ASP.Net OpenID Connect OWIN 中间件）从一个 Azure AD 租户对用户进行身份验证。
-| C#/.NET | [WebApp-MultiTenant-OpenIdConnect-DotNet](https://github.com/AzureADSamples/WebApp-MultiTenant-OpenIdConnect-DotNet) | 一个多租户 .NET MVC网站，使用 OpenID Connect（ASP.Net OpenID Connect OWIN 中间件）从多个 Azure AD 租户对用户进行身份验证。
+| C#/.NET | [WebApp-MultiTenant-OpenIdConnect-DotNet](https://github.com/AzureADSamples/WebApp-MultiTenant-OpenIdConnect-DotNet) | 一个多租户 .NET MVC WEB 应用，使用 OpenID Connect（ASP.Net OpenID Connect OWIN 中间件）从多个 Azure AD 租户对用户进行身份验证。
 | C#/.NET | [WebApp-WSFederation-DotNet](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet) | 使用 WS-Federation（ASP.Net WS-Federation OWIN 中间件）从一个 Azure AD 租户对用户进行身份验证。
 
 ## 单页面应用程序 (SPA)
@@ -64,17 +64,17 @@
 
    
 
-##网站到 Web API
+## WEB 应用到 Web API
 
-这些代码示例展示了如何使用 [Azure AD 中的 OAuth 2.0](https://msdn.microsoft.com/zh-CN/library/azure/dn645545.aspx) 构建网站来调用由 Azure AD 保护的 web API。
+这些代码示例展示了如何使用 [Azure AD 中的 OAuth 2.0](https://msdn.microsoft.com/zh-CN/library/azure/dn645545.aspx) 构建 WEB 应用来调用由 Azure AD 保护的 web API。
 
 | 语言/平台 | 示例 | 说明
 | ----------------- | ------ | -----------
 | C#/.NET | [WebApp-WebAPI-OpenIDConnect-DotNet](http://github.com/AzureADSamples/WebApp-WebAPI-OpenIDConnect-DotNet) | 使用已注册用户的权限调用一个 web API。
 |  C#/.NET | [WebApp-WebAPI-OAuth2-AppIdentity-DotNet](http://github.com/AzureADSamples/WebApp-WebAPI-OAuth2-AppIdentity-DotNet) | 使用应用程序的权限调用一个 web API。
-| C#/.NET | [WebApp-WebAPI-OAuth2-UserIdentity-Dotnet](http://github.com/AzureADSamples/WebApp-WebAPI-OAuth2-UserIdentity-Dotnet) | 使用 [Azure AD 中的 OAuth 2.0](https://msdn.microsoft.com/zh-CN/library/azure/dn645545.aspx) 向现有网站添加授权以便它能够更调用 web API。
+| C#/.NET | [WebApp-WebAPI-OAuth2-UserIdentity-Dotnet](http://github.com/AzureADSamples/WebApp-WebAPI-OAuth2-UserIdentity-Dotnet) | 使用 [Azure AD 中的 OAuth 2.0](https://msdn.microsoft.com/zh-CN/library/azure/dn645545.aspx) 向现有 WEB 应用添加授权以便它能够更调用 web API。
 | JavaScript | [WebAPI-Nodejs](http://github.com/AzureADSamples/WebAPI-Nodejs) | 设置一个与 Azure AD 集成的 REST API 服务以提供 API 保护。使用 Web API 包括一个 Node.js 服务器。
-| C#/.NET | [WebApp-WebAPI-MultiTenant-OpenIdConnect-DotNet](https://github.com/AzureADSamples/WebApp-WebAPI-MultiTenant-OpenIdConnect-DotNet) | 一个多租户 MVC网站，使用 OpenID Connect（ASP.Net OpenID Connect OWIN 中间件）从 Azure AD 租户对用户进行身份验证。使用授权代码来调用 Graph API。
+| C#/.NET | [WebApp-WebAPI-MultiTenant-OpenIdConnect-DotNet](https://github.com/AzureADSamples/WebApp-WebAPI-MultiTenant-OpenIdConnect-DotNet) | 一个多租户 MVC WEB 应用，使用 OpenID Connect（ASP.Net OpenID Connect OWIN 中间件）从 Azure AD 租户对用户进行身份验证。使用授权代码来调用 Graph API。
 
 ## 服务器或守护程序应用程序到 Web API
 
@@ -92,9 +92,9 @@
 
 | 语言/平台 | 示例 | 说明
 | ----------------- | ------ | -----------
-| Java | [WebApp-GraphAPI-Java](http://github.com/AzureADSamples/WebApp-GraphAPI-Java) | 一个网站，它使用图形 API 访问 Azure AD 目录数据。
-| PHP | [WebApp-GraphAPI-PHP](http://github.com/AzureADSamples/WebApp-GraphAPI-PHP) | 一个网站，它使用图形 API 访问 Azure AD 目录数据。
-| C#/.NET | [WebApp-GraphAPI-DotNet](http://github.com/AzureADSamples/WebApp-GraphAPI-DotNet) | 一个网站，它使用图形 API 访问 Azure AD 目录数据。
+| Java | [WebApp-GraphAPI-Java](http://github.com/AzureADSamples/WebApp-GraphAPI-Java) | 一个 WEB 应用，它使用图形 API 访问 Azure AD 目录数据。
+| PHP | [WebApp-GraphAPI-PHP](http://github.com/AzureADSamples/WebApp-GraphAPI-PHP) | 一个 WEB 应用，它使用图形 API 访问 Azure AD 目录数据。
+| C#/.NET | [WebApp-GraphAPI-DotNet](http://github.com/AzureADSamples/WebApp-GraphAPI-DotNet) | 一个 WEB 应用，它使用图形 API 访问 Azure AD 目录数据。
 | C#/.NET | [ConsoleApp-GraphAPI-DotNet](https://github.com/AzureADSamples/ConsoleApp-GraphAPI-DotNet) | 这是一个控制台应用程序，它展示了对图形 API 的常用读取和写入调用，并展示了如何执行用户许可证分配以及更新用户的缩略图照片和链接。
 | C#/.NET | [ConsoleApp-GraphAPI-DiffQuery-DotNet](https://github.com/AzureADSamples/ConsoleApp-GraphAPI-DiffQuery-DotNet) | 一个控制台应用程序，它使用图形 API 中的差异查询来获取对 Azure AD 中的用户对象的定期更改。
 | C#/.NET | [WebApp-GraphAPI-DirectoryExtensions-DotNet](https://github.com/AzureADSamples/WebApp-GraphAPI-DirectoryExtensions-DotNet) | 一个 MVC 应用程序，它使用图形 API 查询生成简单的公司组织图。
@@ -122,8 +122,8 @@
 | C#/.NET | [ADAL - 调用 REST 服务的本机应用 - 通过浏览器对话框使用 AAD 进行身份验证](http://code.msdn.microsoft.com/AAL-Native-Application-to-fd648dcf) | 使用 [Azure AD 身份验证库 (ADAL)](https://msdn.microsoft.com/zh-CN/library/jj573266) 向 WPF 客户端添加用户身份验证功能。
 | C#/.NET | [ADAL - 调用 REST 服务的本机应用 - 通过浏览器对话框使用 ACS 进行身份验证](http://code.msdn.microsoft.com/AAL-Native-App-to-REST-de57f2cc) | 使用 [Azure AD 身份验证库 (ADAL)](https://msdn.microsoft.com/zh-CN/library/jj573266) 和[访问控制服务 2.0 (ACS)](https://msdn.microsoft.com/zh-CN/library/azure/hh147631.aspx) 向 WPF 客户端添加用户身份验证功能。
 | C#/.NET | [ADAL - 服务器到服务器的身份验证](http://code.msdn.microsoft.com/AAL-Server-to-Server-9aafccc1) | 使用 [Azure AD 身份验证库 (ADAL)](https://msdn.microsoft.com/zh-CN/library/jj573266) 保护从服务器端进程到 MVC4 Web API REST 服务的服务调用。
-| C#/.NET | [使用 Azure AD 将登录名添加到网站中](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect) | 将 .NET 应用程序配置为根据你的 Azure AD 企业目录执行 Web 单一登录。
-| C#/.NET | [利用 Azure AD 开发多租户网站](https://github.com/Azure-Samples/active-directory-dotnet-webapp-multitenant-openidconnect) | 使用 Azure AD 向一个 .NET 应用程序添加单一登录和目录访问功能以便在多个组织中工作。
+| C#/.NET | [使用 Azure AD 将登录名添加到 WEB 应用中](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect) | 将 .NET 应用程序配置为根据你的 Azure AD 企业目录执行 Web 单一登录。
+| C#/.NET | [利用 Azure AD 开发多租户 WEB 应用](https://github.com/Azure-Samples/active-directory-dotnet-webapp-multitenant-openidconnect) | 使用 Azure AD 向一个 .NET 应用程序添加单一登录和目录访问功能以便在多个组织中工作。
 JAVA | [Azure AD 图形 API 的 Java 示例应用](http://code.msdn.microsoft.com/Java-Sample-App-for-30d36d54) | 使用图形 API 访问 Azure AD 中的目录数据。
 PHP | [Azure AD 图形 API 的 PHP 示例应用](http://code.msdn.microsoft.com/PHP-Sample-App-For-Windows-228c6ddb) | 使用图形 API 访问 Azure AD 中的目录数据。
 | C#/.NET | [Azure AD 图形 API 的示例应用](http://code.msdn.microsoft.com/Write-Sample-App-for-79e55502) | 使用图形 API 访问 Azure AD 中的目录数据。

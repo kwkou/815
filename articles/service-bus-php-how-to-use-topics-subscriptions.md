@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="10/06/2015" 
-	wacn.date="11/27/2015"/>
+	wacn.date="01/21/2016"/>
 # 如何使用服务总线主题和订阅
 
 [AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
@@ -25,7 +25,7 @@
 
 > [AZURE.NOTE]你的 PHP 安装还必须已安装并启用 [OpenSSL 扩展](http://php.net/openssl)。
 
-本文说明如何使用服务功能，这些功能可在 PHP 应用程序中本地调用，或通过在 Azure 的 Web 角色、辅助角色或网站中运行的代码调用。
+本文说明如何使用服务功能，这些功能可在 PHP 应用程序中本地调用，或通过在 Azure 的 Web 角色、辅助角色或 WEB 应用中运行的代码调用。
 
 ## 获取 Azure 客户端库
 

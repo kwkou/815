@@ -11,11 +11,11 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="07/10/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="01/21/2016"/>
 
 #如何使用 Windows Azure 创建 LAMP 堆栈
 
-“LAMP”堆栈是一组开源软件，通常一起安装，使服务器可以托管动态网站和网站。此术语实际上首字母缩写词，表示带 Apache Web 服务器的 Linux 操作系统。站点数据将存储在 MySQL 数据库中，而动态内容将由 PHP 进行处理。
+“LAMP”堆栈是一组开源软件，通常一起安装，使服务器可以托管动态 WEB 应用和 WEB 应用。此术语实际上首字母缩写词，表示带 Apache Web 服务器的 Linux 操作系统。站点数据将存储在 MySQL 数据库中，而动态内容将由 PHP 进行处理。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用资源管理器部署模型或经典部署模型创建资源。
 
@@ -315,7 +315,7 @@ Tasksel 是一个 Debian/Ubuntu 工具，它将多个相关包作为协调任务
 
 ##附加步骤
 
-常规做法是，你将更改某些默认设置以准备进行网站部署。
+常规做法是，你将更改某些默认设置以准备进行 WEB 应用部署。
 
 ###允许远程访问 MySQL
 如果你随 MySQL 一起安装了多个虚拟机，并且这些虚拟机需要交换数据，则应启用 MySQL 远程访问并授予相应权限。
@@ -339,8 +339,8 @@ Tasksel 是一个 Debian/Ubuntu 工具，它将多个相关包作为协调任务
 
 ![][17]
 
-###将网站部署到 Apache 服务器
-成功安装 LAMP 堆栈后，便可以将现有网站部署到 Apache Web 服务器（你的虚拟机）了。这些步骤与在物理 Web 服务器上部署现有网站的步骤相同。
+###将 WEB 应用部署到 Apache 服务器
+成功安装 LAMP 堆栈后，便可以将现有 WEB 应用部署到 Apache Web 服务器（你的虚拟机）了。这些步骤与在物理 Web 服务器上部署现有 WEB 应用的步骤相同。
 
 -	Web 服务器的根位于 **/var/www/html**。你应向需要将文件上载到此文件夹的用户授予特权。以下示例演示如何将写权限添加到名为 lampappgroup 的组并在此组中放置 azureuser 用户名：  
 

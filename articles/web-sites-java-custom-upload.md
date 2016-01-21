@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="将自定义 Java网站上载到 Azure" 
-	description="本教程介绍了如何将自定义 Java网站上载到 Azure 网站。" 
+	pageTitle="将自定义 Java WEB 应用上载到 Azure" 
+	description="本教程介绍了如何将自定义 Java WEB 应用上载到 Azure WEB 应用。" 
 	services="app-service\web" 
 	documentationCenter="java" 
 	authors="rmcmurray" 
@@ -10,23 +10,23 @@
 <tags 
 	ms.service="web-sites" 
 	ms.date="08/31/2015" 
-	wacn.date="12/17/2015"/>
+	wacn.date="01/21/2016"/>
 
-# 将自定义 Java网站上载到 Azure
+# 将自定义 Java WEB 应用上载到 Azure
 
-本主题介绍了如何将自定义 Java网站上载到 Azure。包括适用于 Java 网站的信息以及特定应用程序的示例。
+本主题介绍了如何将自定义 Java WEB 应用上载到 Azure。包括适用于 Java WEB 应用的信息以及特定应用程序的示例。
 
-请注意，Azure 提供了一种使用 Azure 门户配置 UI 创建 Java 网站的方法，如 [Azure 网站和 Java 入门](/documentation/articles/web-sites-java-get-started)中所述。此教程适用于无需使用 Azure 配置 UI 的方案。
+请注意，Azure 提供了一种使用 Azure 门户配置 UI 创建 Java WEB 应用的方法，如 [Azure WEB 应用和 Java 入门](/documentation/articles/web-sites-java-get-started)中所述。此教程适用于无需使用 Azure 配置 UI 的方案。
 
 ## 配置指南
 
-下面描述了 Azure 上的自定义 Java网站所需的设置。
+下面描述了 Azure 上的自定义 Java WEB 应用所需的设置。
 
 - Java 进程使用的 HTTP 端口是动态分配的。该进程必须使用环境变量 `HTTP_PLATFORM_PORT` 的端口。
 - 除单个 HTTP 侦听程序以外的所有其他侦听端口都应禁用。在 Tomcat 中，这些端口包括 Shutdown、HTTPS 和 AJP 端口。
 - 容器仅应针对 IPv4 流量进行配置。
 - 需要在配置中设置应用程序的 **startup** 命令。
-- 需要目录具有写入权限的应用程序应位于 Azure 网站的内容目录中，即 **D:\\home**。环境变量 `HOME` 引用 D:\\home。  
+- 需要目录具有写入权限的应用程序应位于 Azure WEB 应用的内容目录中，即 **D:\\home**。环境变量 `HOME` 引用 D:\\home。  
 
 您可以在 web.config 文件中根据需要设置环境变量。
 
@@ -72,14 +72,14 @@
 
 ## 部署
 
-可以通过基于 Internet Information Services (IIS) 的网站所用的方法轻松地部署基于 Java 的网站。FTP、Git 和 Kudu 都是支持的部署机制，和网站集成的 SCM 功能一样。WebDeploy 可充当协议，但由于 Java 不是在 Visual Studio 中开发的，因此 WebDeploy 不适用于 Java网站部署使用案例。
+可以通过基于 Internet Information Services (IIS) 的 WEB 应用所用的方法轻松地部署基于 Java 的 WEB 应用。FTP、Git 和 Kudu 都是支持的部署机制，和 WEB 应用集成的 SCM 功能一样。WebDeploy 可充当协议，但由于 Java 不是在 Visual Studio 中开发的，因此 WebDeploy 不适用于 Java WEB 应用部署使用案例。
 
 ## 应用程序配置示例
 
-对于以下应用程序，提供了 web.config 文件和应用程序配置作为示例，用以说明如何在 Azure 网站上启用 Java 应用程序。
+对于以下应用程序，提供了 web.config 文件和应用程序配置作为示例，用以说明如何在 Azure WEB 应用上启用 Java 应用程序。
 
 ### Tomcat
-尽管 Azure 网站提供了两个 Tomcat 变体，但仍可以上载客户特定的实例。使用不同的 JVM 安装 Tomcat 的示例如下。
+尽管 Azure WEB 应用提供了两个 Tomcat 变体，但仍可以上载客户特定的实例。使用不同的 JVM 安装 Tomcat 的示例如下。
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<configuration>
@@ -107,7 +107,7 @@
 -	注释掉 HTTPS 和 AJP 连接器
 -	也可以在 catalina.properties 文件中设置 IPv4 设置，并在其中添加 `java.net.preferIPv4Stack=true`。
     
-Azure 网站上不支持 Direct3d 调用。若要禁用这些调用，添加以下 Java 选项使你的应用程序进行以下调用：`-Dsun.java2d.d3d=false`
+Azure WEB 应用上不支持 Direct3d 调用。若要禁用这些调用，添加以下 Java 选项使你的应用程序进行以下调用：`-Dsun.java2d.d3d=false`
 
 ### Jetty
 
@@ -132,9 +132,9 @@ Azure 网站上不支持 Direct3d 调用。若要禁用这些调用，添加以�
 
 ### Hudson
 
-我们的测试使用 Hudson 3.1.2 war 和默认 Tomcat 7.0.50 实例，但没有使用 UI 来进行设置。由于 Hudson 为软件构建工具，因此建议将其安装在可在网站上设置 **AlwaysOn** 标志的专用实例上。
+我们的测试使用 Hudson 3.1.2 war 和默认 Tomcat 7.0.50 实例，但没有使用 UI 来进行设置。由于 Hudson 为软件构建工具，因此建议将其安装在可在 WEB 应用上设置 **AlwaysOn** 标志的专用实例上。
 
-1. 在网站的站点根目录（即 **d:\\home\\site\\wwwroot**）中创建 **webapps** 目录（如果尚不存在），并将 Hudson.war 放在 **d:\\home\\site\\wwwroot\\webapps** 中。
+1. 在 WEB 应用的站点根目录（即 **d:\\home\\site\\wwwroot**）中创建 **webapps** 目录（如果尚不存在），并将 Hudson.war 放在 **d:\\home\\site\\wwwroot\\webapps** 中。
 2. 下载 Apache Maven 3.0.5（与 Hudson 兼容），并将其放在 **d:\\home\\site\\wwwroot** 中。
 3. 在 **d:\\home\\site\\wwwroot** 中创建 web.config，并在其中粘贴以下内容：
 	
@@ -158,7 +158,7 @@ Azure 网站上不支持 Direct3d 调用。若要禁用这些调用，添加以�
 		  </system.webServer>
 		</configuration>
 
-    此时可以重新启动网站，使所做的更改生效。连接到 http://yourwebapp/hudson 以启动 Hudson。
+    此时可以重新启动 WEB 应用，使所做的更改生效。连接到 http://yourwebapp/hudson 以启动 Hudson。
 
 4. Hudson 对自身进行配置后，您将看到以下屏幕：
 
@@ -179,7 +179,7 @@ Azure 网站上不支持 Direct3d 调用。若要禁用这些调用，添加以�
 
 ### Liferay
 
-Azure 网站支持 Liferay。由于 Liferay 可能需要大量内存，因此站点需要在可以提供足够内存的中型或大型专用工作机上运行。Liferay 也需要花数分钟才能启动。鉴于上述原因，建议你将站点设置为“始终打开”。
+Azure WEB 应用支持 Liferay。由于 Liferay 可能需要大量内存，因此站点需要在可以提供足够内存的中型或大型专用工作机上运行。Liferay 也需要花数分钟才能启动。鉴于上述原因，建议你将站点设置为“始终打开”。
 
 使用与 Tomcat 捆绑的 Liferay 6.1.2 Community Edition GA3 时，下载 Liferay 后将编辑以下文件：
 
@@ -221,7 +221,7 @@ Azure 网站支持 Liferay。由于 Liferay 可能需要大量内存，因此站
 
 值得注意的是，JRE\_HOME 环境变量将在上述 web.config 中指定为指向 64 位 JDK。默认为 32 位，但由于 Liferay 可能需要大量内存，因此建议使用 64 位 JDK。
 
-做完上述更改后，重新启动运行 Liferay 的网站，然后打开 http://yourwebapp。可从网站根目录访问 Liferay 门户。
+做完上述更改后，重新启动运行 Liferay 的 WEB 应用，然后打开 http://yourwebapp。可从 WEB 应用根目录访问 Liferay 门户。
 
 有关 Liferay 的详细信息，请参阅 [http://www.liferay.com](http://www.liferay.com)。
 

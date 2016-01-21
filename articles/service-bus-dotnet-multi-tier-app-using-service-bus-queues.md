@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="10/07/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="01/21/2016"/>
 
 # 使用 Azure 服务总线队列创建 .NET 多层应用程序
 
@@ -27,7 +27,7 @@
 
 [AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
-在本教程中，你将生成多层应用程序并在 Azure 云服务中运行它。前端将为 ASP.NET MVC Web 角色，后端将为辅助角色。你可以创建与前端相同的多层应用程序，作为将部署到 Azure 网站而不是云服务的 Web 项目。有关如何以不同方式处理 Azure 网站前端的说明，请参阅[后续步骤](#nextsteps)部分。
+在本教程中，你将生成多层应用程序并在 Azure 云服务中运行它。前端将为 ASP.NET MVC Web 角色，后端将为辅助角色。你可以创建与前端相同的多层应用程序，作为将部署到 Azure WEB 应用而不是云服务的 Web 项目。有关如何以不同方式处理 Azure WEB 应用前端的说明，请参阅[后续步骤](#nextsteps)部分。
 
 以下屏幕截图显示了已完成的应用程序。
 
@@ -475,7 +475,7 @@
 
 * [使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]  
 
-你可能需要在 Azure 网站而不是 Azure 云服务中实现多层应用程序的前端。若要详细了解网站和云服务之间的差异，请参阅 [Azure 执行模型][executionmodels]。
+你可能需要在 Azure WEB 应用而不是 Azure 云服务中实现多层应用程序的前端。若要详细了解 WEB 应用和云服务之间的差异，请参阅 [Azure 执行模型][executionmodels]。
 
 若要实施在本教程中以标准 Web 项目而不是云服务 Web 角色方式创建的应用程序，请遵循本教程中的步骤，但需注意以下差异：
 
@@ -485,7 +485,7 @@
 
 3. 你可以分别测试前端和后端，也可以在单独的 Visual Studio 实例中同时运行这二者。
 
-若要了解如何将前端部署到 Azure 网站，请参阅[在 Azure App Service 中创建 ASP.NET Web 应用]](/documentation/articles/web-sites-dotnet-get-started)。若要了解如何将后端部署到 Azure 云服务，请参阅[使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]。
+若要了解如何将前端部署到 Azure WEB 应用，请参阅[在 Azure App Service 中创建 ASP.NET Web 应用]](/documentation/articles/web-sites-dotnet-get-started)。若要了解如何将后端部署到 Azure 云服务，请参阅[使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]。
 
 
   [0]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-01.png

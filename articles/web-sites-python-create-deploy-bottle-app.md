@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure 中使用 Bottle 的 Python网站" 
-	description="本教程介绍在 Azure 网站上运行 Python网站。" 
+	pageTitle="在 Azure 中使用 Bottle 的 Python WEB 应用" 
+	description="本教程介绍在 Azure WEB 应用上运行 Python WEB 应用。" 
 	services="app-service\web" 
 	documentationCenter="python" 
 	tags="python"
@@ -11,24 +11,24 @@
 <tags 
 	ms.service="web-sites"  
 	ms.date="08/30/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 
 
-# 在 Azure 中使用 Bottle 创建网站
+# 在 Azure 中使用 Bottle 创建 WEB 应用
 
-本教程描述如何开始在 Azure 网站中运行 Python。网站提供有限的免费托管和快速部署功能，现在，您可以使用 Python！ 随着您的应用增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
+本教程描述如何开始在 Azure 中运行 Python。 WEB 应用提供有限的免费托管和快速部署功能，现在，您可以使用 Python！ 随着您的应用增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
 
-您将使用 Bottle web 框架创建网站（请参阅本教程针对 [Django](/documentation/articles/web-sites-python-create-deploy-django-app) 和 [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app) 的备选版本)。将从 Azure 应用商店创建网站，设置 Git 部署和本地克隆存储库。然后在本地运行网站，对其进行更改并将其提交和推送到 [Azure 网站](/documentation/services/web-sites/)。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
+您将使用 Bottle web 框架创建 WEB 应用（请参阅本教程针对 [Django](/documentation/articles/web-sites-python-create-deploy-django-app) 和 [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app) 的备选版本)。将从 Azure 应用商店创建 WEB 应用，设置 Git 部署和本地克隆存储库。然后在本地运行 WEB 应用，对其进行更改并将其提交和推送到 [Azure WEB 应用](/documentation/services/web-sites/)。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 
 + [先决条件](#prerequisites)
-+ [在门户中创建网站](#website-creation-on-portal)
++ [在门户中创建 WEB 应用](#website-creation-on-portal)
 + [应用程序概述](#application-overview)
-+ 网站开发
++ WEB 应用开发
   + [Windows - Python Tools for Visual Studio](#website-development-windows-ptvs)
   + [Windows - 命令行](#website-development-windows-command-line)
   + [Mac/Linux - 命令行](#website-development-mac-linux-command-line)
@@ -60,16 +60,16 @@
 您应安装了 Python 和 Git ，但请确保您具有 Python 2.7 或 3.4。
 
 
-## 在 Azure 门户中创建网站
+## 在 Azure 门户中创建 WEB 应用
 
-创建您的应用的第一步是通过 [Azure 门户](https://manage.windowsazure.cn)创建网站。
+创建您的应用的第一步是通过 [Azure 门户](https://manage.windowsazure.cn)创建 WEB 应用。
 
 1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
-1. 在页面底部，依次单击“新建”、“计算”、“网站”和“快速创建”。提供网站的“URL”，并选择网站的“区域”。最后，单击“创建网站”。
+1. 在页面底部，依次单击“新建”、“计算”、“ WEB 应用”和“快速创建”。提供 WEB 应用的“URL”，并选择 WEB 应用的“区域”。最后，单击“创建 WEB 应用”。
 
-    ![选择“快速创建”网站](./media/web-sites-php-create-web-sites/select-quickcreate-Website.png)
+    ![选择“快速创建” WEB 应用](./media/web-sites-php-create-web-sites/select-quickcreate-Website.png)
 
-6. 按照[在 Azure 网站中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)的说明为新创建的网站配置 Git 发布。
+6. 按照[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)的说明为新创建的 WEB 应用配置 Git 发布。
  
 ## 应用程序概述
 
@@ -128,20 +128,20 @@ IIS 配置文件。每次部署中从 web.x.y.config 创建
 
     \env\
 
-Python 虚拟环境。如果在网站上尚不存在兼容的虚拟环境，请在部署期间创建。在 requirements.txt 中列出的软件包是 pip 安装的，但如果已安装软件包，pip 将跳过安装。
+Python 虚拟环境。如果在 WEB 应用上尚不存在兼容的虚拟环境，请在部署期间创建。在 requirements.txt 中列出的软件包是 pip 安装的，但如果已安装软件包，pip 将跳过安装。
 
-后续 3 节描述如何在 3 个不同的环境下继续进行网站开发：
+后续 3 节描述如何在 3 个不同的环境下继续进行 WEB 应用开发：
 
 - Windows，具有 Python Tools for Visual Studio
 - Windows，具有命令行
 - Mac/Linux，具有命令行
 
 
-##网站开发 - Windows - Python Tools for Visual Studio
+## WEB 应用开发 - Windows - Python Tools for Visual Studio
 
 ### 克隆存储库
 
-首先，使用 Azure 门户网站上提供的 URL 来克隆存储库。有关详细信息，请参阅[在 Azure 网站中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用 Azure 门户 WEB 应用上提供的 URL 来克隆存储库。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
 
 打开包含在存储库根中的解决方案文件 (.sln) 。
 
@@ -153,7 +153,7 @@ Python 虚拟环境。如果在网站上尚不存在兼容的虚拟环境，请�
 
 - 请确保环境的名称是 `env`。
 
-- 选择基解释器。请确保使用为你的网站选择的相同版本 Python（在 runtime.txt 或站点配置页中）。
+- 选择基解释器。请确保使用为你的 WEB 应用选择的相同版本 Python（在 runtime.txt 或站点配置页中）。
 
 - 请确保选中此选项以下载并安装软件包。
 
@@ -204,11 +204,11 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 浏览到 Azure URL 要查看您的更改。
 
 
-##网站开发 - Windows - 命令行
+## WEB 应用开发 - Windows - 命令行
 
 ### 克隆存储库
 
-首先，使用在 Azure 门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 网站中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用在 Azure 门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -218,7 +218,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 我们将为开发目的创建新的虚拟环境 （不要将其添加到存储库）。Python 中的虚拟环境是可重定位，因此使用该应用程序的每个开发人员将在本地创建自己的环境。
 
-请确保使用为你的网站选择的相同版本 Python（在 runtime.txt 或站点配置页中）
+请确保使用为你的 WEB 应用选择的相同版本 Python（在 runtime.txt 或站点配置页中）
 
 对于 Python 2.7：
 
@@ -283,11 +283,11 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 浏览到 Azure URL 要查看您的更改。
 
 
-##网站开发 - Mac/Linux - 命令行
+## WEB 应用开发 - Mac/Linux - 命令行
 
 ### 克隆存储库
 
-首先，使用在 Azure 门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 网站中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用在 Azure 门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -297,7 +297,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 我们将为开发目的创建新的虚拟环境 （不要将其添加到存储库）。Python 中的虚拟环境是可重定位，因此使用该应用程序的每个开发人员将在本地创建自己的环境。
 
-请确保使用为你的网站选择的相同版本 Python（在 runtime.txt 或站点配置页中）。
+请确保使用为你的 WEB 应用选择的相同版本 Python（在 runtime.txt 或站点配置页中）。
 
 对于 Python 2.7：
 

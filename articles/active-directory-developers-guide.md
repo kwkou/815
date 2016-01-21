@@ -10,7 +10,7 @@
 <tags
    ms.service="active-directory"
    ms.date="10/16/2015"
-   wacn.date="11/12/2015"/>
+   wacn.date="01/21/2016"/>
 
 
 # Azure Active Directory 开发人员指南
@@ -38,7 +38,7 @@
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:
 |[iOS](active-directory-devquickstarts-ios)|[Android](/documentation/articles/active-directory-devquickstarts-android)|[.NET](active-directory-devquickstarts-dotnet)|[Windows Phone](active-directory-devquickstarts-windowsphone)|[Windows 应用商店](active-directory-devquickstarts-windowsstore)|[Xamarin](active-directory-devquickstarts-xamarin)|[Cordova](active-directory-devquickstarts-cordova)
 
-###网站快速入门指南
+### WEB 应用快速入门指南
 
 |[![.NET](./media/active-directory-developers-guide/net.png)](/documentation/articles/active-directory-devquickstarts-webapp-dotnet)|[![Javascript](./media/active-directory-developers-guide/javascript.png)](active-directory-devquickstarts-angular)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](active-directory-devquickstarts-openidconnect-nodejs)
 |:--:|:--:|:--:|
@@ -63,7 +63,7 @@
 
 - [获取 Azure Active Directory 租户](/documentation/articles/active-directory-howto-tenant)
 - [使用 Office 365 API 创建应用](https://msdn.microsoft.com/office/office365/howto/getting-started-Office-365-APIs)
-- [将适用于 Office 365 的网站提交到卖家仪表板](https://msdn.microsoft.com/office/office365/howto/submit-web-apps-seller-dashboard)
+- [将适用于 Office 365 的 WEB 应用提交到卖家仪表板](https://msdn.microsoft.com/office/office365/howto/submit-web-apps-seller-dashboard)
 
 ## 引用
 
@@ -91,7 +91,7 @@
 - [SAML 2.0 协议参考](https://msdn.microsoft.com/zh-cn/library/azure/dn195591.aspx)：SAML 2.0 协议使应用程序能够为其用户提供单一登录体验。
 
 
-- [OAuth 2.0 协议参考](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx)：OAuth 2.0 协议使你能够授权访问 Azure AD 租户中的网站和 Web API。
+- [OAuth 2.0 协议参考](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx)：OAuth 2.0 协议使你能够授权访问 Azure AD 租户中的 WEB 应用和 Web API。
 
 
 - [OpenID Connect 1.0 协议参考](https://msdn.microsoft.com/zh-cn/library/azure/dn645541.aspx)：OpenID Connect 1.0 协议扩展了 OAuth 2.0，使其能够用作身份验证协议。

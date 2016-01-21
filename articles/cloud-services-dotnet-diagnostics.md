@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="08/25/2015" 
-	wacn.date="12/07/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 
@@ -36,7 +36,7 @@ Azure Diagnostics 可以收集以下类型的遥测数据：
 
 数据源|说明
 ---|---
-IIS Logs|有关 IIS 网站的信息。
+IIS Logs|有关 IIS WEB 应用的信息。
 Azure Diagnostics基础结构日志|有关 Diagnostics 自身的信息。
 IIS 失败请求日志|有关 IIS 站点或应用程序的失败请求的信息。
 Windows 事件日志|发送到 Windows 事件日志记录系统的信息。
@@ -475,7 +475,7 @@ PowerShell 脚本 - 用于在角色上管理 Diagnostics 的安装和配置的�
 数据源|默认集合|格式|说明|Diagnostics 1.0|Diagnostics 1.1/1.2|Diagnostics 1.3
 ---|---|---|---|---|---|---
 System.Diagnostics.Trace 日志|是|表|记录从您的代码发送到跟踪侦听器的跟踪消息（必须将跟踪侦听器添加到 web.config 或 app.config 文件）。日志数据将以 scheduledTransferPeriod 指定的传输间隔传输到存储表 WADLogsTable。|是|否（使用 EventSource）|是
-IIS 日志|是|Blob|记录有关 IIS 网站的信息。日志数据将以 scheduledTransferPeriod 指定的传输间隔传输到您指定的容器。|是|是|是
+IIS 日志|是|Blob|记录有关 IIS WEB 应用的信息。日志数据将以 scheduledTransferPeriod 指定的传输间隔传输到您指定的容器。|是|是|是
 Azure Diagnostics基础结构日志|是|表|记录有关诊断基础结构、RemoteAccess 模块和 RemoteForwarder 模块的信息。日志数据将以 scheduledTransferPeriodtransfer 指定的间隔传输到存储表 WADDiagnosticInfrastructureLogsTable。|是|是|是
 IIS 失败请求日志|否|Blob|记录有关 IIS 站点或应用程序的失败请求的信息。还必须通过在 Web.config 文件中的 system.WebServer 下设置跟踪选项来启用。日志数据将以 scheduledTransferPeriod 指定的传输间隔传输到您指定的容器。|是|是|是
 Windows 事件日志|否|表|记录有关操作系统、应用程序或驱动程序运行状况的信息。必须显式指定性能计数器。添加性能计数器后，性能计数器数据将以 scheduledTransferPeriod 指定的传输间隔传输到存储表 WADPerformanceCountersTable。|是|是|是

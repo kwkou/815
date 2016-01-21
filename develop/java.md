@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="JAVA"
     ms.date=""
-    wacn.date="01/11/2016"
+    wacn.date="01/21/2016"
     />
 
 #Java 开发人员中心
@@ -23,7 +23,7 @@ editor="Eric Chen" />
 ##Java 教程和文档
 
 ###计算
-- [创建网站](/documentation/articles/web-sites-java-get-started)
+- [创建 WEB 应用](/documentation/articles/web-sites-java-get-started)
 - [VM 上的 Tomcat](/documentation/articles/virtual-machines-java-run-tomcat-application-server)
 - [在 VM 上运行任务](/documentation/articles/virtual-machines-java-run-compute-intensive-task)
 - [使用 Eclipse 进行部署][使用 Eclipse 进行部署]

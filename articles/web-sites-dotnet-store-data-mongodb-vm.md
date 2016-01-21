@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure 中创建连接到虚拟机上运行的 MongoDB 的网站" 
-	description="本教程介绍如何使用 Git 将 ASP.NET 应用部署到连接至Azure 虚拟机上 MongoDB 的 Azure 网站。"
+	pageTitle="在 Azure 中创建连接到虚拟机上运行的 MongoDB 的 WEB 应用" 
+	description="本教程介绍如何使用 Git 将 ASP.NET 应用部署到连接至Azure 虚拟机上 MongoDB 的 Azure WEB 应用。"
 	tags="azure-portal" 
 	services="app-service\web, virtual-machines" 
 	documentationCenter=".net" 
@@ -11,12 +11,12 @@
 <tags 
 	ms.service="web-sites" 
 	ms.date="08/11/2015" 
-	wacn.date="12/17/2015"/>
+	wacn.date="01/21/2016"/>
 
 
-# 在 Azure 中创建连接到虚拟机上运行的 MongoDB 的网站
+# 在 Azure 中创建连接到虚拟机上运行的 MongoDB 的 WEB 应用
 
-使用 Git，你可以将 ASP.NET 应用程序部署到 Azure 网站。在本教程中，你将构建一个简单的前端 ASP.NET MVC 任务列表应用程序，该程序将连接至在 Azure 内的虚拟机中运行的 MongoDB 数据库。[MongoDB][MongoDB] 是一个受欢迎的开源、高性能 NoSQL 数据库。在开发计算机上运行并测试了该 ASP.NET 应用程序后，可使用 Git 将其上载至 Azure 网站。
+使用 Git，你可以将 ASP.NET 应用程序部署到 Azure WEB 应用。在本教程中，你将构建一个简单的前端 ASP.NET MVC 任务列表应用程序，该程序将连接至在 Azure 内的虚拟机中运行的 MongoDB 数据库。[MongoDB][MongoDB] 是一个受欢迎的开源、高性能 NoSQL 数据库。在开发计算机上运行并测试了该 ASP.NET 应用程序后，可使用 Git 将其上载至 Azure WEB 应用。
 
 [WACOM.INCLUDE [create-account-and-websites-and-vms-note](../includes/create-account-and-websites-and-vms-note.md)]
 
@@ -28,8 +28,8 @@
 
 - [创建虚拟机和安装 MongoDB](#virtualmachine)
 - [在开发计算机上开发并运行 My Task List ASP.NET 应用程序](#createapp)
-- [创建 Azure 网站](#createwebsite)
-- [使用 Git 将 ASP.NET 应用程序部署到网站](#deployapp)
+- [创建 Azure WEB 应用](#createwebsite)
+- [使用 Git 将 ASP.NET 应用程序部署到 WEB 应用](#deployapp)
 
 
 ##背景知识##
@@ -37,8 +37,8 @@
 以下知识对于学习本教程有用但非必需：
 
 * MongoDB 的 C# 驱动程序。有关针对 MongoDB 开发 C# 应用程序的更多信息，请参阅 [MongoDB CSharp 语言中心][MongoC#LangCenter]。 
-* ASP .NET网站框架。可通过 [ASP.net 网站][ASP.NET]进行全面了解。
-* ASP .NET MVC网站框架。可通过 [ASP.NET MVC 网站][MVCWebSite] 进行全面了解。
+* ASP .NET WEB 应用框架。可通过 [ASP.net WEB 应用][ASP.NET]进行全面了解。
+* ASP .NET MVC WEB 应用框架。可通过 [ASP.NET MVC WEB 应用][MVCWebSite] 进行全面了解。
 * Azure。你可以先阅读 [Azure][WindowsAzure] 上的文章。
 
 ## 先决条件 ##
@@ -62,13 +62,13 @@
 <a id="createapp"></a>
 ## 创建应用程序 ##
 
-在本部分中，你将使用 Visual Studio 创建一个名为“My Task List”的 ASP.NET 应用程序，并执行到 Azure 网站的初始部署。你将在本地运行该应用程序，但其将连接到你在 Azure 上的虚拟机并使用你在此处创建的 MongoDB 实例。
+在本部分中，你将使用 Visual Studio 创建一个名为“My Task List”的 ASP.NET 应用程序，并执行到 Azure WEB 应用的初始部署。你将在本地运行该应用程序，但其将连接到你在 Azure 上的虚拟机并使用你在此处创建的 MongoDB 实例。
 
 1. 在 Visual Studio 中，单击“新建项目”。
 
 	![新项目开始页面][StartPageNewProject]
 
-1. 在“新建项目”窗口中的左侧窗格中，选择“Visual C#”，然后选择“Web”。在中间窗格中，选择“ASP.NET网站”。在底部，将项目命名为“MyTaskListApp”，然后单击“确定”。
+1. 在“新建项目”窗口中的左侧窗格中，选择“Visual C#”，然后选择“Web”。在中间窗格中，选择“ASP.NET WEB 应用”。在底部，将项目命名为“MyTaskListApp”，然后单击“确定”。
 
 	![新建项目对话框][NewProjectMyTaskListApp]
 
@@ -84,7 +84,7 @@
 
 	![](./media/web-sites-dotnet-store-data-mongodb-vm/VSPublishWeb.png)
 
-	将默认的 ASP.NET 应用程序发布到 Azure 网站后，将在浏览器中启动该应用程序。
+	将默认的 ASP.NET 应用程序发布到 Azure WEB 应用后，将在浏览器中启动该应用程序。
 ## 安装 MongoDB C# 驱动程序
 
 MongoDB 通过驱动程序为 C# 应用程序提供客户端支持，你需要在本地开发计算机上安装此驱动程序。C# 驱动程序通过 NuGet 提供。
@@ -441,31 +441,31 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Bson**、**MongoDB.Driver** 
 
 ![My Task List 应用程序][TaskListAppBlank]
 
-<h2>将 ASP.NET 应用程序部署到 Azure 网站</h2>
+<h2>将 ASP.NET 应用程序部署到 Azure WEB 应用</h2>
 
-在本部分中，你将创建一个网站并使用 Git 部署 My Task List ASP.NET 应用程序。
+在本部分中，你将创建一个 WEB 应用并使用 Git 部署 My Task List ASP.NET 应用程序。
 
 <a id="createwebsite"></a>
-###创建 Azure 网站###
-本部分中，你将创建一个 Azure 网站。
+###创建 Azure WEB 应用###
+本部分中，你将创建一个 Azure WEB 应用。
 
 1. 打开 Web 浏览器并浏览至 [Azure 管理门户][AzurePortal]。使用您的 Azure 帐户进行登录。 
 2. 在页面底部，依次单击“+新建”、“WEB APPS”和“速览”。
 3. 为应用程序的 URL 输入唯一的前缀。
 4. 选择区域。
-5. 单击“创建网站”。
+5. 单击“创建 WEB 应用”。
 
-![创建新网站][WAWSCreateWebSite]
+![创建新 WEB 应用][WAWSCreateWebSite]
 
-6. 你的网站将快速创建，并显示在“WEB APPS”列表中。
+6. 你的 WEB 应用将快速创建，并显示在“WEB APPS”列表中。
 
 ![WAWSDashboardMyTaskListApp][WAWSDashboardMyTaskListApp]
 
 <a id="deployapp"></a>
-###使用 Git 将 ASP.NET 应用程序部署到网站
+###使用 Git 将 ASP.NET 应用程序部署到 WEB 应用
 在本部分中，你将使用 Git 部署 My Task List 应用程序。
 
-1. 在“WEB APPS”中单击你的网站名称，然后单击“仪表板”。在右侧的“速览”下，单击“从源代码管理设置部署”。
+1. 在“WEB APPS”中单击你的 WEB 应用名称，然后单击“仪表板”。在右侧的“速览”下，单击“从源代码管理设置部署”。
 2. 在“你的源代码位置”页面，选择“本地 Git 存储库”并单击“下一步”箭头。 
 3. Git 存储库将快速创建。请注意生成页面上的说明，这些内容将在后面的部分用到。
 
@@ -477,12 +477,12 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Bson**、**MongoDB.Driver** 
 	
 5. 如果没有安装 Git，可使用步骤 1 中的“从此处获取”链接进行安装。
 6. 按照步骤 2 中的说明提交你的本地文件。  
-7. 按照步骤 3 中的说明添加远程 Azure 存储库并将你的文件推送至 Azure 网站。
+7. 按照步骤 3 中的说明添加远程 Azure 存储库并将你的文件推送至 Azure WEB 应用。
 8. 部署完成后，你将看到以下确认信息：
 
 	![部署完成][Image11]
 
-9. 你的 Azure 网站现已可用。查看你的站点的“仪表板”页面，找到“站点 URL”字段以确定站点的 URL。按照本教程的步骤执行，你的站点的 URL 应该是：http://mytasklistapp.chinacloudsites.cn。
+9. 你的 Azure WEB 应用现已可用。查看你的站点的“仪表板”页面，找到“站点 URL”字段以确定站点的 URL。按照本教程的步骤执行，你的站点的 URL 应该是：http://mytasklistapp.chinacloudsites.cn。
 
 ##摘要##
 

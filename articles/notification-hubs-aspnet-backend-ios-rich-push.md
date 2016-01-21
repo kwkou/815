@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="09/24/2015"
-	wacn.date="11/02/2015" />
+	wacn.date="01/21/2016" />
 
 # Azure 通知中心富推送
 
@@ -121,9 +121,9 @@
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-8. 现在，我们将此应用重新部署到 Azure 网站，以便可以从所有设备对其进行访问。右键单击 **AppBackend** 项目，然后选择“发布”。
+8. 现在，我们将此应用重新部署到 Azure WEB 应用，以便可以从所有设备对其进行访问。右键单击 **AppBackend** 项目，然后选择“发布”。
 
-9. 选择 Azure 网站作为发布目标。使用您的 Azure 帐户登录，选择一个现有的或新的网站，并记下“连接”选项卡中的**目标 URL** 属性。在本教程后面的部分中，我们将此 URL 称为*后端终结点*。单击“发布”。
+9. 选择 Azure WEB 应用作为发布目标。使用您的 Azure 帐户登录，选择一个现有的或新的 WEB 应用，并记下“连接”选项卡中的**目标 URL** 属性。在本教程后面的部分中，我们将此 URL 称为*后端终结点*。单击“发布”。
 
 ## 修改 iOS 项目
 

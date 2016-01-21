@@ -10,11 +10,11 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="12/04/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="01/21/2016"/>
 
 # 使用 Storm on HDInsight 从 Azure 事件中心处理事件 (Java)
 
-Azure 事件中心可让你处理网站、应用程序和设备中的大量数据。借助事件中心 Spout，你可以轻松使用 Apache Storm on HDInsight 实时分析这些数据。你还可以使用事件中心 Bolt 从 Storm 向事件中心写入数据。
+Azure 事件中心可让你处理 WEB 应用、应用程序和设备中的大量数据。借助事件中心 Spout，你可以轻松使用 Apache Storm on HDInsight 实时分析这些数据。你还可以使用事件中心 Bolt 从 Storm 向事件中心写入数据。
 
 在本教程中，你将学习如何使用事件中心 Spout 和 Bolt 在基于 Java 的 Storm 拓扑中读取和写入数据。
 

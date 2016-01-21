@@ -10,7 +10,7 @@
 <tags 
 	ms.service="key-vault" 
 	ms.date="09/16/2015" 
-	wacn.date="12/28/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 从 Web 应用程序使用 Azure 密钥保管库 #
 
@@ -222,7 +222,7 @@
 
 你需要执行的最后一项操作是将应用程序设置添加到 Web 应用中，该设置名为 WEBSITE\_LOAD\_CERTIFICATES，值为 *。这将确保加载所有证书。如果你只想加载已上载的证书，则可以输入这些证书的指纹的逗号分隔列表。
 
-若要了解有关将证书添加到 Web 应用的详细信息，请参阅[在 Azure 网站应用程序中使用证书](https://azure.microsoft.com/blog/2014/10/27/using-certificates-in-azure-websites-applications/)
+若要了解有关将证书添加到 Web 应用的详细信息，请参阅[在 Azure WEB 应用应用程序中使用证书](https://azure.microsoft.com/blog/2014/10/27/using-certificates-in-azure-websites-applications/)
 
 
 

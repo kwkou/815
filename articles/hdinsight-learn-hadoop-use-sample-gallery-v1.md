@@ -10,19 +10,19 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="12/02/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="01/21/2016"/>
 
 # 使用 HDInsight 入门库了解 Hadoop
 
 借助 HDInsight 入门库，你可以通过在 HDInsight 中运行示例应用程序快速轻松地了解 Hadoop。某些示例随附了示例数据。你可以为其余示例提供自己的数据。目前，有下面六个示例（还会有更多）：
 
 - 包含 Azure 数据的解决方案
-	- Windows Azure 网站日志分析
+	- Windows Azure WEB 应用日志分析
 	- Windows Azure 存储分析
 - 包含示例数据的解决方案
 	- 传感器数据分析
 	- Twitter 趋势分析
-	- 网站日志分析
+	- WEB 应用日志分析
 	- Mahout 电影推荐
 
 ![包括示例数据的 HDInsight Hadoop、Storm 和 HBase 入门库解决方案。][hdinsight.sample.gallery]

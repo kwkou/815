@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="10/14/2015" 
-	wacn.date="11/27/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 如何使用 Service Bus 队列
 
@@ -26,7 +26,7 @@
 
 > [AZURE.NOTE]你的 PHP 安装还必须已安装并启用 [OpenSSL 扩展](http://php.net/openssl)。
 
-在本指南中，你将使用服务功能，这些功能可在 PHP 应用程序中本地调用，或通过在 Azure 的 Web 角色、辅助角色或网站中运行的代码调用。
+在本指南中，你将使用服务功能，这些功能可在 PHP 应用程序中本地调用，或通过在 Azure 的 Web 角色、辅助角色或 WEB 应用中运行的代码调用。
 
 ## 获取 Azure 客户端库
 

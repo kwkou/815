@@ -1,6 +1,6 @@
 <properties
 	pageTitle="向'登录'和'访问面板'页添加公司品牌"
-	description="本主题介绍组织如何在它们管理的所有网站和服务上应用一致的外观，使得最终用户在使用这些站点时，不会感到困惑。"
+	description="本主题介绍组织如何在它们管理的所有 WEB 应用和服务上应用一致的外观，使得最终用户在使用这些站点时，不会感到困惑。"
 	services="active-directory"
 	documentationCenter=""
 	authors="MarkusVi"
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="08/11/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 向"登录"和"访问面板"页添加公司品牌
 
@@ -19,7 +19,7 @@
 - 只有在升级到 Azure Active Directory 高级或基本版后，才可以使用公司品牌这一功能。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions)。
 - 在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国 21Vianet 运营的 Windows Azure 服务目前不支持 Azure Active Directory 高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](http://feedback.azure.com/forums/169401-azure-active-directory)与我们联系。
 
-许多公司想要在他们管理的所有网站和服务上应用一致的外观，使得最终用户在需要使用这些站点时，不会感到困惑。Azure Active Directory 提供了此功能，它允许你自定义以下面向最终用户的网页的外观，使其包含你公司的徽标和颜色方案：
+许多公司想要在他们管理的所有 WEB 应用和服务上应用一致的外观，使得最终用户在需要使用这些站点时，不会感到困惑。Azure Active Directory 提供了此功能，它允许你自定义以下面向最终用户的网页的外观，使其包含你公司的徽标和颜色方案：
 
 - **"登录"页** - 当用户要登录到 Office 365 或其他使用 Azure AD 作为标识提供程序且基于 Web 的现代应用程序时，会将其重定向到此页面。大多数用户将与此页进行交互（无论是否要通过 Home Realm Discovery），这样一来，系统就可以将联合用户重定向到他们的本地 STS（如 AD FS），或输入其凭据。
 

@@ -10,7 +10,7 @@
 <tags 
 	ms.service="azure-resource-manager" 
 	ms.date="10/16/2015" 
-	wacn.date="11/12/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 将 Azure PowerShell 与 Azure 资源管理器配合使用
 
@@ -19,14 +19,14 @@
 
 Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。首先应该构想整个解决方案，而不是创建和管理各个资源，如博客、照片库、SharePoint 门户或 wiki。可以使用模板（解决方案的声明性表示形式）创建包含支持该解决方案所需资源的资源组。然后，可以将该资源组作为一个逻辑单元进行管理和部署。
 
-在本教程中，你将了解如何将 Azure PowerShell 与 Azure 资源管理器配合使用。本教程将指导您逐步完成通过 SQL 数据库创建和部署 Azure 托管的网站的资源组的过程，其中充分使用了支持该过程所需的所有资源。
+在本教程中，你将了解如何将 Azure PowerShell 与 Azure 资源管理器配合使用。本教程将指导您逐步完成通过 SQL 数据库创建和部署 Azure 托管的 WEB 应用的资源组的过程，其中充分使用了支持该过程所需的所有资源。
 
 ## 先决条件
 
 若要完成本教程，你需要：
 
 - 一个 Azure 帐户
-  + 可以[免费建立一个 Azure 帐户](/pricing/1rmb-trial/)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如网站）。你的信用卡将永远不会付费，除非你显式更改设置并要求付费。
+  + 可以[免费建立一个 Azure 帐户](/pricing/1rmb-trial/)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 WEB 应用）。你的信用卡将永远不会付费，除非你显式更改设置并要求付费。
   
 - Azure PowerShell
 
@@ -36,13 +36,13 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 ## 将部署的内容
 
-在本教程中，你将使用 Azure PowerShell 来部署网站和 SQL 数据库。但是，此网站和 SQL 数据库解决方案由多个共同协作的资源类型构成。将要部署的实际资源包括：
+在本教程中，你将使用 Azure PowerShell 来部署 WEB 应用和 SQL 数据库。但是，此 WEB 应用和 SQL 数据库解决方案由多个共同协作的资源类型构成。将要部署的实际资源包括：
 
 - SQL 服务器 - 用于托管数据库
 - SQL 数据库 - 用于存储数据
-- 防火墙规则 - 允许网站连接到数据库
-- App Service 计划 - 用于定义网站的功能和成本
-- 网站 - 用于运行网站
+- 防火墙规则 - 允许 WEB 应用连接到数据库
+- App Service 计划 - 用于定义 WEB 应用的功能和成本
+- WEB 应用 - 用于运行 WEB 应用
 - Web 配置 - 用于存储数据库的连接字符串 
 
 ## 获取有关 cmdlet 的帮助
@@ -89,7 +89,7 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 ## 获取资源类型的位置
 
-在部署资源时，必须指定资源的托管位置。并非每个区域都支持每种资源类型。在部署网站和 SQL 数据库之前，必须确定哪些区域支持这些类型。资源组可以包含位于不同区域的资源；但是，只要可能，你就应该在同一位置创建资源，以优化性能。具体而言，请确保你的数据库位于应用所访问的同一位置。
+在部署资源时，必须指定资源的托管位置。并非每个区域都支持每种资源类型。在部署 WEB 应用和 SQL 数据库之前，必须确定哪些区域支持这些类型。资源组可以包含位于不同区域的资源；但是，只要可能，你就应该在同一位置创建资源，以优化性能。具体而言，请确保你的数据库位于应用所访问的同一位置。
 
 若要获取支持每种资源类型的位置，需要使用 **Get-AzureRmResourceProvider** cmdlet。首先，让我们看看此命令的返回内容：
 
@@ -115,7 +115,7 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
     Microsoft.Sql     Registered        {locations/capabilities}                      {China North, China East
     ...
 
-若要将输出限制为特定资源类型（例如网站）的支持位置，请使用：
+若要将输出限制为特定资源类型（例如 WEB 应用）的支持位置，请使用：
 
     PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).Locations
     
@@ -136,7 +136,7 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
 
 ## 创建资源组
 
-本教程部分将指导你完成创建资源组的整个过程。资源组将充当解决方案中具有相同生命周期的所有资源的容器。在后面的教程部分，你要向此资源组部署网站和 SQL 数据库。
+本教程部分将指导你完成创建资源组的整个过程。资源组将充当解决方案中具有相同生命周期的所有资源的容器。在后面的教程部分，你要向此资源组部署 WEB 应用和 SQL 数据库。
 
 若要创建资源组，请使用 **New-AzureRmResourceGroup** cmdlet。
 
@@ -348,7 +348,7 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
 
     Outputs           :
 
-在几个步骤中，我们将创建和部署复杂网站所需的资源。
+在几个步骤中，我们将创建和部署复杂 WEB 应用所需的资源。
 
 ## 获取有关资源组的信息
 
@@ -394,7 +394,7 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
 
 - 若要从资源组中删除资源，请使用 **Remove-AzureRmResource** cmdlet。此 cmdlet 将删除该资源，但不会删除该资源组。
 
-	此命令从 TestRG 资源组中删除 TestSite 网站。
+	此命令从 TestRG 资源组中删除 TestSite WEB 应用。
 
 		Remove-AzureRmResource -Name TestSite -ResourceGroupName TestRG1 -ResourceType "Microsoft.Web/sites" -ApiVersion 2015-08-01
 
