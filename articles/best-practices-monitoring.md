@@ -11,7 +11,7 @@
 <tags
    ms.service="best-practice"
    ms.date="04/28/2015"
-   wacn.date="08/29/2015"/>
+   wacn.date="01/21/2016"/>
 
 # 监视和诊断指南
 
@@ -368,7 +368,7 @@ _图 1.监视和诊断管道中的阶段_
 
 - **分析**。这种方法主要以监视和改善应用程序性能为目标。它不是在实际和合成用户监视所使用的功能级别运行，而是在应用程序运行时捕获更低级信息。若要实施分析，可以定期对应用程序的执行状态进行采样（确定应用程序在特定时间点正在运行哪个代码片段），或使用在重要时刻（例如方法调用的开始和结束时间）将探测插入代码的检测，而此检测会记录何时调用方法和每个调用花费多长时间。然后，可以分析此数据，以确定应用程序的哪些部分可能会造成性能问题。
 
-- **终结点监视**。此方法专门使用应用程序公开的一个或多个诊断终结点来启用监视。终结点提供一个进入应用程序代码的途径，并可返回有关系统运行状况的信息。不同的终结点可以专注于功能的各方面。你可以编写自己的诊断客户端，用于定期将请求发送到这些终结点，并同化响应。Microsoft 网站上的[运行状况终结点监视模式](https://msdn.microsoft.com/zh-cn/library/dn589789.aspx)更全面地描述了此方法。
+- **终结点监视**。此方法专门使用应用程序公开的一个或多个诊断终结点来启用监视。终结点提供一个进入应用程序代码的途径，并可返回有关系统运行状况的信息。不同的终结点可以专注于功能的各方面。你可以编写自己的诊断客户端，用于定期将请求发送到这些终结点，并同化响应。Microsoft WEB 应用上的[运行状况终结点监视模式](https://msdn.microsoft.com/zh-cn/library/dn589789.aspx)更全面地描述了此方法。
 
 若要获得最大覆盖范围，你应该搭配使用这些方法。
 
@@ -449,7 +449,7 @@ _图 2.收集检测数据_
 - Windows Azure 诊断基础结构日志  
 - 自定义错误日志
 
-有关详细信息，请参阅 Microsoft 网站上的 [Azure：遥测基础知识和疑难解答](http://social.technet.microsoft.com/wiki/contents/articles/18146.windows-azure-telemetry-basics-and-troubleshooting.aspx)一文。
+有关详细信息，请参阅 Microsoft WEB 应用上的 [Azure：遥测基础知识和疑难解答](http://social.technet.microsoft.com/wiki/contents/articles/18146.windows-azure-telemetry-basics-and-troubleshooting.aspx)一文。
 
 ### 收集检测数据的策略
 由于云的弹性，为了避免从系统中每个节点手动检索遥测数据，你应该安排将数据发送到中心位置并进行合并。在跨多个数据中心的系统中，先根据区域收集、合并数据，再将数据存储在区域中，然后将区域数据聚合成单个中心系统可能很有帮助。
@@ -459,7 +459,7 @@ _图 2.收集检测数据_
 #### _提取和推送检测数据_
 检测数据收集子系统可以从各种日志和应用程序的每个实例的其他源主动检索检测数据（_提取模型_），或可以用作被动接收者，等候要从构成应用程序每个实例的组件发送的数据（_推送模型_）。
 
-实现提取模型的方法是将本地运行的监视代理与应用程序的每个实例配合使用。监视代理是独立的进程，可定期检索（提取）已在本地节点收集的遥测数据，并将此信息直接写入到应用程序所有实例共享的中心存储。这是 WAD 实施的机制。Azure Web 或辅助角色的每个实例可以配置为捕获本地存储的诊断和其他跟踪信息。一起运行的每个监视代理将指定的数据复制到 Azure 存储空间。Microsoft 网站上的[为 Azure 云服务和虚拟机配置诊断](https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx)页提供了有关此过程的详细信息。某些元素（例如 IIS 日志、故障转储和自定义错误日志）将写入 Blob 存储，而来自 Windows 事件日志、ETW 事件和性能计数器的数据将记录在表存储中。图 3 演示了此机制：
+实现提取模型的方法是将本地运行的监视代理与应用程序的每个实例配合使用。监视代理是独立的进程，可定期检索（提取）已在本地节点收集的遥测数据，并将此信息直接写入到应用程序所有实例共享的中心存储。这是 WAD 实施的机制。Azure Web 或辅助角色的每个实例可以配置为捕获本地存储的诊断和其他跟踪信息。一起运行的每个监视代理将指定的数据复制到 Azure 存储空间。Microsoft WEB 应用上的[为 Azure 云服务和虚拟机配置诊断](https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx)页提供了有关此过程的详细信息。某些元素（例如 IIS 日志、故障转储和自定义错误日志）将写入 Blob 存储，而来自 Windows 事件日志、ETW 事件和性能计数器的数据将记录在表存储中。图 3 演示了此机制：
 
 ![](./media/best-practices-monitoring/PullModel.png)
 
@@ -467,7 +467,7 @@ _图 3.使用监视代理提取信息并写入共享存储_
 
 > [AZURE.NOTE]监视代理非常适合用于捕获从数据源自然提取的检测数据，例如来自 SQL Server 管理视图的信息或 Azure 服务总线队列的长度。
 
-有关配置和使用 Azure 诊断的信息，请访问 Microsoft 网站上的[使用 Azure 诊断收集日志记录数据](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx)页。
+有关配置和使用 Azure 诊断的信息，请访问 Microsoft WEB 应用上的[使用 Azure 诊断收集日志记录数据](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx)页。
 
 使用刚才介绍的方法可以有效地在单个位置存储数量有限的节点上运行小型应用程序的遥测数据。但是，复杂、高度可缩放、全局云应用程序可以轻松地从数百个 Web 和辅助角色、数据库分片和其他服务生成大量的数据。此大量数据很容易超额占用单个中心位置提供的 I/O 带宽。因此，遥测解决方案必须可缩放，以防止它在系统扩展时成为瓶颈，并且在理想情况下，应整合某种程度的冗余，以降低系统部件发生故障时丢失重要监视信息（例如审核或计费数据）的风险。
 
@@ -519,7 +519,7 @@ _图 6.根据分析和存储要求将数据分区_
 ## 分析数据和诊断问题
 监视和诊断过程的重要组成部分是分析收集的数据，以获取系统整体运行状况的视图。你应该已定义自己的 KPI 和性能度量值，并且必须了解如何根据你的分析要求构建已收集的数据。此外，还必须了解如何在不同的度量值中捕获数据，以及如何关联日志文件，因为此信息可能是跟踪事件序列的关键，并可帮助诊断发生的问题。
 
-如[合并检测数据](#consolidating-instrumentation-data)部分中所述，系统每个部件的数据通常在本地捕获，但一般需要在与参与系统的其他站点上生成的数据相合并。需要慎重关联此信息，以确保准确合并数据。例如，操作的使用数据可能跨越托管用户连接的网站的节点、运行作为此操作一部分访问之独立服务的节点，以及其他节点上保留的数据存储。此信息必须关联在一起，以提供操作的资源和处理使用情况的整体视图。某些预处理和数据筛选可能发生在捕获数据的节点上，而聚合与格式化更可能发生中心节点上。
+如[合并检测数据](#consolidating-instrumentation-data)部分中所述，系统每个部件的数据通常在本地捕获，但一般需要在与参与系统的其他站点上生成的数据相合并。需要慎重关联此信息，以确保准确合并数据。例如，操作的使用数据可能跨越托管用户连接的 WEB 应用的节点、运行作为此操作一部分访问之独立服务的节点，以及其他节点上保留的数据存储。此信息必须关联在一起，以提供操作的资源和处理使用情况的整体视图。某些预处理和数据筛选可能发生在捕获数据的节点上，而聚合与格式化更可能发生中心节点上。
 
 <a name="supporting-hot-warm-and-cold-analysis"></a>
 ### 支持热、暖和冷分析
@@ -596,13 +596,13 @@ _图 6.根据分析和存储要求将数据分区_
 - [优先级队列](https://msdn.microsoft.com/zh-cn/library/dn589794.aspx)模式说明如何排定队列消息的优先级，以便在较不紧急的消息之前接收和处理紧急请求。
 
 ## 更多信息
-- Microsoft 网站上的[监视、诊断和排查 Windows Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)一文。
-- Microsoft 网站上的 [Azure：遥测基础知识和疑难解答](http://social.technet.microsoft.com/wiki/contents/articles/18146.windows-azure-telemetry-basics-and-troubleshooting.aspx)一文。
-- Microsoft 网站上的[使用 Azure 诊断收集日志记录数据](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx)页。
-- Microsoft 网站上的[为 Azure 云服务和虚拟机配置诊断](https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx)页。
-- Microsoft 网站上的 [Azure Redis 缓存](/home/features/redis-cache/) 和 [HDInsight](/home/features/hdinsight/) 页。
-- Microsoft 网站上的[如何使用服务总线队列](/home/features/messaging/)页。
-- Microsoft 网站上的 [Azure 虚拟机中的 SQL Server Business Intelligence](https://msdn.microsoft.com/zh-cn/library/azure/jj992719.aspx) 一文。
-- Microsoft 网站上的[了解 Azure 中的监视警报和通知](https://msdn.microsoft.com/zh-cn/library/azure/dn306639.aspx)页。
+- Microsoft WEB 应用上的[监视、诊断和排查 Windows Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)一文。
+- Microsoft WEB 应用上的 [Azure：遥测基础知识和疑难解答](http://social.technet.microsoft.com/wiki/contents/articles/18146.windows-azure-telemetry-basics-and-troubleshooting.aspx)一文。
+- Microsoft WEB 应用上的[使用 Azure 诊断收集日志记录数据](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx)页。
+- Microsoft WEB 应用上的[为 Azure 云服务和虚拟机配置诊断](https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx)页。
+- Microsoft WEB 应用上的 [Azure Redis 缓存](/home/features/redis-cache/) 和 [HDInsight](/home/features/hdinsight/) 页。
+- Microsoft WEB 应用上的[如何使用服务总线队列](/home/features/messaging/)页。
+- Microsoft WEB 应用上的 [Azure 虚拟机中的 SQL Server Business Intelligence](https://msdn.microsoft.com/zh-cn/library/azure/jj992719.aspx) 一文。
+- Microsoft WEB 应用上的[了解 Azure 中的监视警报和通知](https://msdn.microsoft.com/zh-cn/library/azure/dn306639.aspx)页。
 
 <!---HONumber=67-->

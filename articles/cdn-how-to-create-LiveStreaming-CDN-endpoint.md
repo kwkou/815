@@ -1,7 +1,7 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to create Live Streaming acceleration type CDN - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-on, Live Streaming, 流媒体加速, CDN加速,CDN服务,主流CDN, 流媒体直播加速, 媒体服务, Azure Media Service, 缓存规则, HLS, CDN技术文档, CDN帮助文档, 视频直播加速, 直播加速" description="Learn How to create Live Streaming acceleration type CDN on Windows Azure Management Portal and default caching rules for Live Streaming CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
-    wacn.date="1/11/2016"
+    wacn.date="01/21/2016"
     />
 
 #流媒体直播加速CDN节点创建
@@ -14,7 +14,7 @@
 
 Windows Azure CDN 流媒体直播加速主要基于HTTP Live Streaming(HLS)协议，且支持Windows Azure内置的[媒体服务](http://www.windowsazure.cn/home/features/media-services/)。
 
-流媒体直播加速适用于各类流媒体直播网站，如网络电视直播，体育赛事，盛典赛事直播等。
+流媒体直播加速适用于各类流媒体直播 WEB 应用，如网络电视直播，体育赛事，盛典赛事直播等。
 
 本文是针对流媒体直播加速域名创建，您也可以参考[使用Windows Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-how-to-use/)了解基本的Windows Azure CDN加速节点创建信息。
 

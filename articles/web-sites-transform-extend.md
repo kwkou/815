@@ -2,18 +2,18 @@
 <tags
 	ms.service="web-sites"
 	ms.date="09/16/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/21/2016"/>
 
-# Azure 网站高级配置和扩展
+# Azure WEB 应用高级配置和扩展
 
-通过使用 [XML 文档转换](https://msdn.microsoft.com/zh-cn/library/dd465326.aspx) (XDT) 声明，可以转换 Azure 网站中网站的 [ApplicationHost.config](http://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig) 文件。你还可使用 XDT 声明添加专用扩展，启用自定义网站管理操作。本文包括一个 PHP Manager网站扩展示例，可用于通过 Web 界面管理 PHP 设置。
+通过使用 [XML 文档转换](https://msdn.microsoft.com/zh-cn/library/dd465326.aspx) (XDT) 声明，可以转换 Azure 中 的 [ApplicationHost.config](http://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig) 文件。你还可使用 XDT 声明添加专用扩展，启用自定义 WEB 应用管理操作。本文包括一个 PHP Manager WEB 应用扩展示例，可用于通过 Web 界面管理 PHP 设置。
 
 ##<a id="transform"></a>通过 ApplicationHost.config 完成的高级配置
-Azure 网站平台为站点配置提供灵活性和控制。尽管标准 IIS ApplicationHost.config 配置文件不能在 Windows Azure 网站中直接编辑，但该平台支持基于 XML 文档转换 (XDT) 的声明性 ApplicationHost.config 转换模型。
+Azure WEB 应用平台为站点配置提供灵活性和控制。尽管标准 IIS ApplicationHost.config 配置文件不能在 Windows Azure 中直接编辑，但该平台支持基于 XML 文档转换 (XDT) 的声明性 ApplicationHost.config 转换模型。
 
-若要利用此转换功能，请创建包含 XDT 内容的 ApplicationHost.xdt 文件，并将其放在网站根目录下。可能需要重新启动网站才能使更改生效。
+若要利用此转换功能，请创建包含 XDT 内容的 ApplicationHost.xdt 文件，并将其放在 WEB 应用根目录下。可能需要重新启动 WEB 应用才能使更改生效。
 
-以下 applicationHost.xdt 示例介绍了如何将新的自定义环境变量添加到使用 PHP 5.4 的网站。
+以下 applicationHost.xdt 示例介绍了如何将新的自定义环境变量添加到使用 PHP 5.4 的 WEB 应用。
 
 	<?xml version="1.0"?> 
 	<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform"> 
@@ -37,37 +37,37 @@ Azure 网站平台为站点配置提供灵活性和控制。尽管标准 IIS App
 `system.webServer` 下的模块列表中的元素无法删除或重新排序，但列表的附加内容可以删除或重新排序。
 
 
-##<a id="extend"></a> 扩展你的网站
-###<a id="overview"></a> 专用网站扩展概述
-Azure 网站支持站点扩展作为站点管理操作的扩展点。事实上，某些 Azure 网站平台功能是作为预安装的站点扩展实现的。尽管不能修改预安装的平台扩展，但您可以为您自己的站点创建并配置专用扩展。此功能也依赖于 XDT 声明。创建专用站点扩展的关键步骤如下：
+##<a id="extend"></a> 扩展你的 WEB 应用
+###<a id="overview"></a> 专用 WEB 应用扩展概述
+Azure WEB 应用支持站点扩展作为站点管理操作的扩展点。事实上，某些 Azure WEB 应用平台功能是作为预安装的站点扩展实现的。尽管不能修改预安装的平台扩展，但您可以为您自己的站点创建并配置专用扩展。此功能也依赖于 XDT 声明。创建专用站点扩展的关键步骤如下：
 
-1.网站扩展**内容**：创建 Azure 网站支持的网站
-2.网站扩展**声明**：创建 ApplicationHost.xdt 文件
-3.网站扩展**部署**：将内容存放在 `root` 下的 SiteExtensions 文件夹内
+1. WEB 应用扩展**内容**：创建 Azure 支持的 WEB 应用
+2. WEB 应用扩展**声明**：创建 ApplicationHost.xdt 文件
+3. WEB 应用扩展**部署**：将内容存放在 `root` 下的 SiteExtensions 文件夹内
 
-网站的内部链接应指向 ApplicationHost.xdt 文件中指定的应用程序路径的相对路径。对 ApplicationHost.xdt 文件的任何更改都需要网站回收。
+WEB 应用的内部链接应指向 ApplicationHost.xdt 文件中指定的应用程序路径的相对路径。对 ApplicationHost.xdt 文件的任何更改都需要 WEB 应用回收。
 
 **注意**：有关这些关键元素的更多信息，请参阅 [https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions)。
 
-内含一个详细示例，用于说明创建和启用专用网站扩展的步骤。可以从 [https://github.com/projectkudu/PHPManager](https://github.com/projectkudu/PHPManager) 下载后跟的 PHP Manager 示例的源代码。
+内含一个详细示例，用于说明创建和启用专用 WEB 应用扩展的步骤。可以从 [https://github.com/projectkudu/PHPManager](https://github.com/projectkudu/PHPManager) 下载后跟的 PHP Manager 示例的源代码。
 
-###<a id="SiteSample"></a>网站扩展示例：PHP Manager
+###<a id="SiteSample"></a> WEB 应用扩展示例：PHP Manager
 
-PHP Manager 是一个网站扩展，通过该网站扩展，网站管理员可以轻松地使用 Web 界面来查看和配置 PHP 设置，而无需直接修改 PHP.ini 文件。PHP 常用配置文件包括位于 Program Files 下的 php.ini 文件和位于网站根文件夹中的 .user.ini 文件。由于 php.ini 文件不可在 Azure 网站平台上直接编辑，因此 PHP Manager 扩展使用 .user.ini 文件来应用设置更改。
+PHP Manager 是一个 WEB 应用扩展，通过该 WEB 应用扩展， WEB 应用管理员可以轻松地使用 Web 界面来查看和配置 PHP 设置，而无需直接修改 PHP.ini 文件。PHP 常用配置文件包括位于 Program Files 下的 php.ini 文件和位于 WEB 应用根文件夹中的 .user.ini 文件。由于 php.ini 文件不可在 Azure WEB 应用平台上直接编辑，因此 PHP Manager 扩展使用 .user.ini 文件来应用设置更改。
 
-####<a id="PHPwebapp"></a> PHP Manager网站
+####<a id="PHPwebapp"></a> PHP Manager WEB 应用
 
 PHP Manager 部署主页如下：
 
 ![TransformSitePHPUI][TransformSitePHPUI]
 
-如你所见，网站扩展和常规网站一样，只是包含一个位于网站根文件夹中的额外的 ApplicationHost.xdt 文件（有关 ApplicationHost.xdt 文件的详细信息，请见本文下一部分）。
+如你所见， WEB 应用扩展和常规 WEB 应用一样，只是包含一个位于 WEB 应用根文件夹中的额外的 ApplicationHost.xdt 文件（有关 ApplicationHost.xdt 文件的详细信息，请见本文下一部分）。
 
-PHP Manager 扩展是使用 Visual Studio ASP.NET MVC 4网站模板创建的。以下解决方案资源管理器视图显示了 PHP Manager 扩展的结构。
+PHP Manager 扩展是使用 Visual Studio ASP.NET MVC 4 WEB 应用模板创建的。以下解决方案资源管理器视图显示了 PHP Manager 扩展的结构。
 
 ![TransformSiteSolEx][TransformSiteSolEx]
 
-文件 I/O 所需的唯一特殊逻辑是表示网站的 wwwroot 目录所在的位置。如以下代码示例所示，环境变量“HOME”表示网站根路径，可以通过附加“site\\wwwroot”来构造 wwwroot 路径：
+文件 I/O 所需的唯一特殊逻辑是表示 WEB 应用的 wwwroot 目录所在的位置。如以下代码示例所示，环境变量“HOME”表示 WEB 应用根路径，可以通过附加“site\\wwwroot”来构造 wwwroot 路径：
 
 	/// <summary>
 	/// Gives the location of the .user.ini file, even if one doesn't exist yet
@@ -86,21 +86,21 @@ PHP Manager 扩展是使用 Visual Studio ASP.NET MVC 4网站模板创建的。�
 
 得到目录路径后，可以使用常规文件 I/O 操作来读取和写入文件。
 
-网站扩展需要注意的一点是处理内部链接。如果 HTML 文件中有任何链接给出了网站内部链接的绝对路径，必须确保这些链接前面带有扩展的名称作为根目录。这是必须的，因为扩展的根目录现在为“/`[your-extension-name]`/”而不只是“/”，因此所有内部链接都必须相应更新。例如，假设代码包含指向以下内容的链接：
+WEB 应用扩展需要注意的一点是处理内部链接。如果 HTML 文件中有任何链接给出了 WEB 应用内部链接的绝对路径，必须确保这些链接前面带有扩展的名称作为根目录。这是必须的，因为扩展的根目录现在为“/`[your-extension-name]`/”而不只是“/”，因此所有内部链接都必须相应更新。例如，假设代码包含指向以下内容的链接：
 
 `"<a href="/Home/Settings">PHP Settings</a>"`
 
-如果链接是网站扩展的一部分，则该链接的格式必须为：
+如果链接是 WEB 应用扩展的一部分，则该链接的格式必须为：
 
 `"<a href="/[your-site-name]/Home/Settings">Settings</a>"`
 
-可以通过只使用网站中的相对路径，或者如果是 ASP.NET 应用程序，通过使用 `@Html.ActionLink` 方法创建适当的链接，来满足此要求。
+可以通过只使用 WEB 应用中的相对路径，或者如果是 ASP.NET 应用程序，通过使用 `@Html.ActionLink` 方法创建适当的链接，来满足此要求。
 
 ####<a id="XDT"></a>applicationHost.xdt 文件
 
-网站扩展的代码位于 %HOME%\\SiteExtensions[你的扩展名称] 下。该目录称为扩展根目录。
+WEB 应用扩展的代码位于 %HOME%\\SiteExtensions[你的扩展名称] 下。该目录称为扩展根目录。
 
-若要使用 applicationHost.config 文件注册网站扩展，需要将 ApplicationHost.xdt 文件放在扩展根目录中。ApplicationHost.xdt 文件的内容应如下所示：
+若要使用 applicationHost.config 文件注册 WEB 应用扩展，需要将 ApplicationHost.xdt 文件放在扩展根目录中。ApplicationHost.xdt 文件的内容应如下所示：
 
 	<?xml version="1.0"?>
 	<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
@@ -143,16 +143,16 @@ PHP Manager 扩展是使用 Visual Studio ASP.NET MVC 4网站模板创建的。�
 	  ...
 	</system.applicationHost>
 
-###<a id="deploy"></a>网站扩展部署
+###<a id="deploy"></a> WEB 应用扩展部署
 
-若要安装网站扩展，你可以使用 FTP 将网站的所有文件复制到要安装该扩展的网站的 `\SiteExtensions[your-extension-name]` 文件夹中。请确保也将 ApplicationHost.xdt 文件复制到此位置。重新启动网站以启用该扩展。
+若要安装 WEB 应用扩展，你可以使用 FTP 将 WEB 应用的所有文件复制到要安装该扩展的 WEB 应用的 `\SiteExtensions[your-extension-name]` 文件夹中。请确保也将 ApplicationHost.xdt 文件复制到此位置。重新启动 WEB 应用以启用该扩展。
 
-网站扩展位于：
+WEB 应用扩展位于：
 
 
 `https://[your-site-name].scm.chinacloudsites.cn/[your-extension-name]`
 
-请注意，该 URL 类似于你的网站的 URL，只不过它使用 HTTPS，且包含“.scm”。在开发和调查过程中，可以通过添加使用键 `WEBSITE_PRIVATE_EXTENSIONS` 和值 `0` 的应用设置，来禁用网站的所有专用（非预装）扩展。
+请注意，该 URL 类似于你的 WEB 应用的 URL，只不过它使用 HTTPS，且包含“.scm”。在开发和调查过程中，可以通过添加使用键 `WEBSITE_PRIVATE_EXTENSIONS` 和值 `0` 的应用设置，来禁用 WEB 应用的所有专用（非预装）扩展。
 
 
 <!-- IMAGES -->

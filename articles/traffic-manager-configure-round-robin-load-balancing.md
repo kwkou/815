@@ -9,13 +9,13 @@
 <tags 
    ms.service="traffic-manager"
    ms.date="08/19/2015"
-   wacn.date="10/03/2015" />
+   wacn.date="01/21/2016" />
 
 # 配置轮循机制路由方法
 
-一种常见的负载平衡模式是提供一组相同的终结点（包括云服务和网站），并以循环方式向每个终结点发送流量。下面的步骤概述了如何对流量管理器进行配置以执行此类型的负载平衡。有关不同负载平衡方法的详细信息，请参阅[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)。
+一种常见的负载平衡模式是提供一组相同的终结点（包括云服务和 WEB 应用），并以循环方式向每个终结点发送流量。下面的步骤概述了如何对流量管理器进行配置以执行此类型的负载平衡。有关不同负载平衡方法的详细信息，请参阅[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)。
 
->[AZURE.NOTE]Azure 网站已经针对数据中心（也称为区域）内的网站提供了轮循机制负载平衡功能。你可以使用流量管理器为不同数据中心内的网站指定轮询机制负载平衡。
+>[AZURE.NOTE]Azure WEB 应用已经针对数据中心（也称为区域）内的 WEB 应用提供了轮循机制负载平衡功能。你可以使用流量管理器为不同数据中心内的 WEB 应用指定轮询机制负载平衡。
 
 ## 均衡地（轮循机制）在一组终结点之间路由流量：
 
@@ -41,7 +41,7 @@
 
 [云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)
 
-[网站](/home/features/web-site/)
+[ WEB 应用](/home/features/web-site/)
 
 [流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-CN/library/hh758255.aspx)
 

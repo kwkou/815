@@ -10,7 +10,7 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="11/06/2015"
-	wacn.date="12/31/2015"/>
+	wacn.date="01/21/2016"/>
 
 #  <a name="getting-started"></a>移动服务和 Sencha Touch 入门
 
@@ -21,7 +21,7 @@
 
 ##概述
 
-本教程演示了如何在您的 Sencha Touch 应用程序中利用 Azure 移动服务。使用可利用你通过管理门户定义的移动服务的 Sencha Touch，来创建一个简单的*待办事项列表*应用。本教程适用于中级到高级的网站开发人员，这些开发人员非常了解 JavaScript 并熟悉 Sencha Touch 框架。
+本教程演示了如何在您的 Sencha Touch 应用程序中利用 Azure 移动服务。使用可利用你通过管理门户定义的移动服务的 Sencha Touch，来创建一个简单的*待办事项列表*应用。本教程适用于中级到高级的 WEB 应用开发人员，这些开发人员非常了解 JavaScript 并熟悉 Sencha Touch 框架。
 
 
 下面显示的是完成的应用程序的屏幕快照：

@@ -10,7 +10,7 @@
 <tags
    ms.service="active-directory"
    ms.date="10/13/2015"
-   wacn.date="11/02/2015"/>
+   wacn.date="01/21/2016"/>
 
 # Azure AD Connect 的先决条件
 本主题介绍 Azure AD Connect 的先决条件和硬件要求。
@@ -29,7 +29,7 @@
 - AD 架构版本与林功能级别必须是 Windows Server 2003 或更高版本。只要符合架构和林级别的要求，域控制器就能运行任何版本。
 - Azure AD Connect 必须安装在 Windows Server 2008 或更高版本上。如果使用快速设置，此服务器可以是域控制器或成员服务器。如果使用自定义设置，服务器也可以是独立服务器，并且不需要加入域。
 - 如果你打算使用密码同步功能，服务器必须是 Windows Server 2008 R2 SP1 或更高版本。
-- 如果你正在部署 Active Directory 联合身份验证服务，则要安装 AD FS 或网站代理的服务器必须是 Windows Server 2012 R2 或更高版本。必须在这些服务器上启用 Windows 远程管理才能进行远程安装。
+- 如果你正在部署 Active Directory 联合身份验证服务，则要安装 AD FS 或 WEB 应用代理的服务器必须是 Windows Server 2012 R2 或更高版本。必须在这些服务器上启用 Windows 远程管理才能进行远程安装。
 - Azure AD Connect 要求使用 SQL Server 数据库来存储标识数据。默认情况下，将会安装 SQL Server 2012 Express LocalDB（轻量版 SQL Server Express），并在本地计算机上创建服务的服务帐户。SQL Server Express 有 10 GB 的大小限制，允许你管理大约 100000 个对象。如果你需要管理更多的目录对象，则需要将安装过程指向不同版本的 SQL Server。Azure AD Connect 支持从 SQL Server 2008（装有 SP4）到 SQL Server 2014 的各种 Microsoft SQL Server。
 
 **帐户**
@@ -101,7 +101,7 @@ Azure AD Connect 依赖于 PowerShell 和 .Net 4.5.1。请根据 Windows Server 
 | 300,000–600,000 | 1\.6 GHz | 32 GB | 450 GB |
 | 超过 600,000 个 | 1\.6 GHz | 32 GB | 500 GB |
 
-以下是运行 AD FS 或网站服务器的计算机的最低要求：
+以下是运行 AD FS 或 WEB 应用服务器的计算机的最低要求：
 
 - CPU：双核 1.6 GHz 或更高
 - 内存：2GB 或更高

@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="09/01/2015" 
-	wacn.date="11/12/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 
@@ -146,7 +146,7 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
 ##后续步骤
 
-在本教程中，你已了解如何创建在 Azure 云服务中托管的基本聊天应用程序。若要了解如何在 Azure 网站中托管此应用程序，请参阅[在 Azure 网站中使用 Socket.IO 生成 Node.js 聊天应用程序][chat Website]。
+在本教程中，你已了解如何创建在 Azure 云服务中托管的基本聊天应用程序。若要了解如何在 Azure 中托管此应用程序，请参阅[在 Azure 中使用 Socket.IO 生成 Node.js 聊天应用程序][chat Website]。
 
 有关详细信息，另请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
 
@@ -155,7 +155,7 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
   [Azure SDK for Node.js GitHub repository]: https://github.com/WindowsAzure/azure-sdk-for-node
   [completed-app]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-10.png
   [Azure SDK for Node.js]: /develop/nodejs/
-  [Node.js网站lication]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+  [Node.js WEB 应用lication]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
   [Socket.IO GitHub 存储库]: https://github.com/LearnBoost/socket.io/tree/0.9.14
   [Azure Considerations]: #windowsazureconsiderations
   [Hosting the Chat Example in a Worker Role]: #hostingthechatexampleinawebrole

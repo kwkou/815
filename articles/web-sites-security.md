@@ -1,6 +1,6 @@
 <properties
-	pageTitle="保护 Azure 网站中的网站"
-	description="了解如何保护 Azure 网站安全。"
+	pageTitle="保护 Azure WEB 应用"
+	description="了解如何保护 Azure WEB 应用安全。"
 	services="app-service\web"
 	documentationCenter=""
 	authors="cephalin"
@@ -10,14 +10,14 @@
 <tags
 	ms.service="web-sites"
 	ms.date="09/16/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/21/2016"/>
 
 
-#保护 Azure 网站中的网站
+#保护 Azure WEB 应用
 
-开发网站时所要面对的一大难题是，如何为您的客户提供安全服务。在本文中，你将了解到可以保护你的网站的 [Azure 网站](/documentation/services/web-sites/)功能的相关信息。
+开发 WEB 应用时所要面对的一大难题是，如何为您的客户提供安全服务。在本文中，你将了解到可以保护你的 [Azure WEB 应用](/documentation/services/web-sites/)功能的相关信息。
 
-> [AZURE.NOTE] 关于基于 web 的应用程序安全注意事项的全面讨论超出了本文的范围。有关保护网站安全的更多指导，请参阅[打开网站安全项目 (OWASP)](https://www.owasp.org/index.php/Main_Page)（尤其是[前 10 大项目](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)），其中列出了前 10 大网站安全缺陷（由 OWASP 成员确定）。
+> [AZURE.NOTE] 关于基于 web 的应用程序安全注意事项的全面讨论超出了本文的范围。有关保护 WEB 应用安全的更多指导，请参阅[打开 WEB 应用安全项目 (OWASP)](https://www.owasp.org/index.php/Main_Page)（尤其是[前 10 大项目](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)），其中列出了前 10 大 WEB 应用安全缺陷（由 OWASP 成员确定）。
 
 ###目录
 
@@ -27,7 +27,7 @@
  
 ##<a name="https"></a>安全通信
 
-如果你使用为网站创建的 ***.chinacloudsites.cn** 域名，则可以立即使用 HTTPS，因为 SSL 证书是针对所有 ***.chinacloudsites.cn** 域名提供的。如果您的网站使用[自定义域名](/documentation/articles/web-sites-custom-domain-name)，则可以上载 SSL 证书，为自定义域[启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)。
+如果你使用为 WEB 应用创建的 ***.chinacloudsites.cn** 域名，则可以立即使用 HTTPS，因为 SSL 证书是针对所有 ***.chinacloudsites.cn** 域名提供的。如果您的 WEB 应用使用[自定义域名](/documentation/articles/web-sites-custom-domain-name)，则可以上载 SSL 证书，为自定义域[启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)。
 
 ##<a name="develop"></a>安全开发
 
@@ -43,28 +43,28 @@
 
 * **发布配置文件**包含
 
-	* 用于发布到网站的信息
+	* 用于发布到 WEB 应用的信息
 
 如果您使用的实用程序利用发布设置或发布配置文件，请将包含发布设置或配置文件的文件导入实用程序，然后**删除**文件。如果您必须保留文件（例如，要与处理项目的其他人共享），请将文件存储在安全的位置上，如权限受限的**加密**目录。
 
 此外，应确保已导入的凭证受到保护。例如，**Azure PowerShell** 和 **Azure 命令行界面 (Azure CLI)** 都将导入的信息存储在您的**主目录**中（在 Linux 或 OS X 系统中，为*~*；在 Windows 系统中，为 */users/yourusername*）。 为了多一层安全保障，您可能希望使用操作系统支持的加密工具来**加密**这些位置。
 
 ### 配置设置和连接字符串
-常见的做法是，将连接字符串、 身份验证凭证和其他敏感信息存储在配置文件中。遗憾的是，这些文件可能会在您的网站上被公开或将其检入一个公共存储库，从而公开此类信息。
+常见的做法是，将连接字符串、 身份验证凭证和其他敏感信息存储在配置文件中。遗憾的是，这些文件可能会在您的 WEB 应用上被公开或将其检入一个公共存储库，从而公开此类信息。
 
-Azure 网站允许你将配置信息作为“应用设置”和“连接字符串”存储为网站运行时环境的一部分。对于大多数编程语言，这些值通过*环境变量*在运行时向您的应用程序公开。对于 .NET 应用程序，在运行时这些值被注入到.NET 配置。
+Azure WEB 应用允许你将配置信息作为“应用设置”和“连接字符串”存储为 WEB 应用运行时环境的一部分。对于大多数编程语言，这些值通过*环境变量*在运行时向您的应用程序公开。对于 .NET 应用程序，在运行时这些值被注入到.NET 配置。
 
 可以使用 [Azure 门户](https://manage.windowsazure.cn)或实用程序（如 PowerShell 或 Azure CLI）配置**应用设置**和**连接字符串**。
 
-有关应用设置和连接字符串的更多信息，请参阅[配置网站](/documentation/articles/web-sites-configure)。
+有关应用设置和连接字符串的更多信息，请参阅[配置 WEB 应用](/documentation/articles/web-sites-configure)。
 
 ### FTPS
 
-Azure 通过 **FTPS** 提供对您网站文件系统的安全 FTP 访问。这样一来，您可以安全地访问网站上的应用程序代码以及诊断日志。按照以下步骤操作，可以找到网站的 FTPS 链接：
+Azure 通过 **FTPS** 提供对您 WEB 应用文件系统的安全 FTP 访问。这样一来，您可以安全地访问 WEB 应用上的应用程序代码以及诊断日志。按照以下步骤操作，可以找到 WEB 应用的 FTPS 链接：
 
 1. 打开 [Azure 门户](https://manage.windowsazure.cn)。
-2. 单击“Web 应用”，选择所需的网站。
-5. 在网站中，选择“仪表板”。
+2. 单击“Web 应用”，选择所需的 WEB 应用。
+5. 在 WEB 应用中，选择“仪表板”。
 7. 在右边“速览”下，可以找到 FTP 和 FTPS 链接。 
 
 有关 FTPS 的更多信息，请参阅[文件传输协议](http://zh.wikipedia.org/wiki/File_Transfer_Protocol)。
@@ -72,11 +72,11 @@ Azure 通过 **FTPS** 提供对您网站文件系统的安全 FTP 访问。这�
 ## 后续步骤
 <a name="next"></a>
 
-若要详细了解 Azure 平台安全、如何举报**安全事件或滥用行为**，或者如何通知 Microsoft 你将对网站执行**渗透测试**，请参阅 [Windows Azure 信任中心](/support/trust-center/security/)的安全部分。
+若要详细了解 Azure 平台安全、如何举报**安全事件或滥用行为**，或者如何通知 Microsoft 你将对 WEB 应用执行**渗透测试**，请参阅 [Windows Azure 信任中心](/support/trust-center/security/)的安全部分。
 
-有关网站中 **web.config** 或 **applicationhost.config** 文件的更多信息，请参阅 [Azure 网站中解锁的配置选项](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)。
+有关 WEB 应用中 **web.config** 或 **applicationhost.config** 文件的更多信息，请参阅 [Azure 中解锁的配置选项](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)。
 
-若要了解网站的日志记录（可能在检测攻击时很有用），请参阅[启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)。
+若要了解 WEB 应用的日志记录（可能在检测攻击时很有用），请参阅[启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)。
  
 
 <!---HONumber=76-->

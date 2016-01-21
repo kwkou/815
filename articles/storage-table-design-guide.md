@@ -9,8 +9,8 @@
 
 <tags
    ms.service="storage"
-   ms.date="12/03/2015"
-   wacn.date="01/14/2016"/>
+   ms.date="08/03/2015"
+   wacn.date="01/21/2016"/>
 
 # Azure 存储表设计指南：设计可伸缩的高性能表
 
@@ -1129,7 +1129,7 @@ Storage Analytics 在内部缓存日志消息，然后定期更新相应的 blob
 
 #### 管理并发  
 
-默认情况下，表服务在单个实体级别实现针对 **Insert**、**Merge** 和 **Delete** 操作的开放式并发检查，尽管客户端可以强制表服务跳过这些检查。有关表服务如何管理并发的详细信息，请参阅 Windows Azure 网站上的[在 Windows Azure 存储空间中管理并发](/documentation/articles/storage-concurrency) 。  
+默认情况下，表服务在单个实体级别实现针对 **Insert**、**Merge** 和 **Delete** 操作的开放式并发检查，尽管客户端可以强制表服务跳过这些检查。有关表服务如何管理并发的详细信息，请参阅 Windows Azure WEB 应用上的[在 Windows Azure 存储空间中管理并发](/documentation/articles/storage-concurrency) 。  
 
 ####<a id="merge-or-replace"></a> 合并或替换  
 

@@ -2,7 +2,7 @@
 <tags 
 	ms.service="multiple" 
 	ms.date="08/14/2015" 
-	wacn.date="10/3/2015"/>
+	wacn.date="01/21/2016"/>
 # 什么是 Azure SDK for .NET？
 
 Azure SDK for .NET 是一套应用程序，其中包括 Visual Studio 工具、命令行工具、运行时二进制文件和客户端库，可帮助你开发、测试和部署在 Azure 中运行的应用程序。本文详细介绍了安装 SDK 时获得的内容。你可以从[“Azure 下载”](/downloads/)页下载 SDK。
@@ -37,14 +37,14 @@ Azure SDK for .NET 将安装以下产品：
  
 ###Microsoft ASP.NET 和 Web Tools for Visual Studio
 
-这使你可以使用 Azure 网站：
+这使你可以使用 Azure WEB 应用：
 
-* 将 Web 项目发布到 Azure 网站。
+* 将 Web 项目发布到 Azure WEB 应用。
 * 将控制台应用程序项目发布到 Azure WebJobs。
-* 在创建新的 Web 项目或发布 Web 项目时创建 Azure 网站和 SQL 数据库资源。
-* 在创建新网站时创建 PowerShell 部署脚本。
-* 在服务器资源管理器中管理和故障诊断 Azure 网站。
-* 在调试模式下针对网站和 WebJobs 远程运行。 
+* 在创建新的 Web 项目或发布 Web 项目时创建 Azure WEB 应用和 SQL 数据库资源。
+* 在创建新 WEB 应用时创建 PowerShell 部署脚本。
+* 在服务器资源管理器中管理和故障诊断 Azure WEB 应用。
+* 在调试模式下针对 WEB 应用和 WebJobs 远程运行。 
 
 >[WACOM.NOTE]无需安装 Azure SDK for .NET 即可使用这些功能；它们还包括在 Visual Studio 更新中。
 
@@ -89,7 +89,7 @@ Azure 存储模拟器使用 SQL Server 实例和本地文件系统来模拟 Azur
 
 ###用于 Visual Studio 的 LightSwitch Azure Publishing 外接程序
 
-这使你可以将 LightSwitch 项目发布到 Azure 网站。LightSwitch 外接程序包括在 Visual Studio 更新和 Azure SDK for .NET 中。安装 SDK 可确保你拥有最新版本的外接程序。
+这使你可以将 LightSwitch 项目发布到 Azure WEB 应用。LightSwitch 外接程序包括在 Visual Studio 更新和 Azure SDK for .NET 中。安装 SDK 可确保你拥有最新版本的外接程序。
 
 ##在安装 Azure SDK for .NET 时未获得的内容
 
@@ -124,7 +124,7 @@ Azure 存储模拟器使用 SQL Server 实例和本地文件系统来模拟 Azur
 如果你想要使用最新工具针对 Azure 进行开发，则最好是安装该 SDK。如果你不愿意安装该 SDK，则在符合以下条件的情况下，你可以这样做：
 
 * 你已安装了最新版的 Visual Studio 更新。
-* 你的开发仅针对 Azure 网站或移动服务，不针对云服务或虚拟机。
+* 你的开发仅针对 Azure WEB 应用或移动服务，不针对云服务或虚拟机。
 * 你的应用程序不使用存储，或者它使用存储，但你不需要存储模拟器或 AzCopy 工具。
 
 ###我想要一个客户端库。我必须安装 Azure SDK for .NET 才能获取它吗？

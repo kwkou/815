@@ -1,7 +1,7 @@
 <properties linkid="" urlDisplayName="" pageTitle="如何迁移数据库至MySQL Database on Azure- Azure 微软云" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，连接池，connection pool, Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="
 通过SSL加密访问数据库，可以保障您访问的安全性，本文介绍如何下载并配置SSL证书。目前MySQL Database on Azure支持利用公钥在服务器端进行加密验证。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date="01/12/2015"/>
+<tags ms.service="mysql" ms.date="" wacn.date="01/21/2016"/>
 
 # 迁移数据库至MySQL Database on Azure
 本文概括介绍迁移用用数据库到MySQL Database on Azure的方式和需要考虑的注意事项。
@@ -63,7 +63,7 @@ MySQL Database on Azure兼容MySQL 5.5 和 MySQL 5.6，所以绝大部分应用�
 ##方案二： 基于数据同步的迁移
 
 
-上面的数据库迁移方式比较简单，但缺点是会有较长时间的downtime，同时每一个迁移步骤要能够很熟练的完成并能很好地预期时间，否则会对您的业务连续性带来较大的影响。如果您不能接受迁移过程中的downtime， 比如是公司的网站，或者希望分阶段完成平滑的迁移，建议您用数据库同步的方式把当前的生产数据库同步到Azure上，MySQL Database on Azure提供了这个功能，在同步期间您的应用和当前的数据库可以继续工作不受影响。 
+上面的数据库迁移方式比较简单，但缺点是会有较长时间的downtime，同时每一个迁移步骤要能够很熟练的完成并能很好地预期时间，否则会对您的业务连续性带来较大的影响。如果您不能接受迁移过程中的downtime， 比如是公司的 WEB 应用，或者希望分阶段完成平滑的迁移，建议您用数据库同步的方式把当前的生产数据库同步到Azure上，MySQL Database on Azure提供了这个功能，在同步期间您的应用和当前的数据库可以继续工作不受影响。 
 
 
 建议的迁移步骤： 

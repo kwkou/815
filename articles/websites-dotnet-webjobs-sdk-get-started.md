@@ -1,6 +1,6 @@
 <properties
-	pageTitle="在 Azure WEB 应用中创建 .NET Web 作业 | Windows Azure"
-	description="使用 ASP.NET MVC 和 Azure 创建多层应用。前端在 Azure WEB 应用中运行，后端以 Web 作业的形式运行。应用程序使用实体框架、SQL 数据库和 Azure 存储队列和 Blob。"
+	pageTitle="在 Azure 中创建 .NET Web 作业 | Windows Azure"
+	description="使用 ASP.NET MVC 和 Azure 创建多层应用。前端在 Azure 中运行，后端以 Web 作业的形式运行。应用程序使用实体框架、SQL 数据库和 Azure 存储队列和 Blob。"
 	services="app-service"
 	documentationCenter=".net"
 	authors="tdykstra"
@@ -12,7 +12,7 @@
 	ms.date="10/22/2015"
 	wacn.date="01/21/2016"/>
 
-# 在 Azure WEB 应用中创建 .NET Web 作业
+# 在 Azure 中创建 .NET Web 作业
 
 本教程说明了如何为简单的多层次 ASP.NET MVC 5 应用程序编写代码，以使用 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk) 来处理 [Azure 队列](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern)和 [Azure Blob](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage)。本教程还说明了如何将应用程序部署到 [Azure WEB 应用](/documentation/services/web-sites/)和 [Azure SQL 数据库](/documentation/articles/sql-database-technical-overview/)。
 
@@ -48,7 +48,7 @@
 * 通过安装 Azure SDK 来使计算机进行 Azure 开发。
 * 创建一个控制台应用程序项目，当你部署关联的 Web 项目时，该应用程序项目将自动部署为 Azure Web 作业。
 * 在开发计算机上本地测试 WebJobs SDK 后端。
-* 将包含 Web 作业后端的应用程序发布到 Azure WEB 应用中。
+* 将包含 Web 作业后端的应用程序发布到 Azure 中。
 * 上载文件并将其存储在 Azure Blob 服务中。
 * 使用 Azure WebJobs SDK 来处理 Azure 存储队列和 Blob。
 
@@ -205,7 +205,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 你将执行以下步骤，以便在云中运行应用程序：
 
-* 部署到 WEB 应用。Visual Studio 将自动在 Azure WEB 应用中创建一个新的 WEB 应用，并创建一个 SQL 数据库实例。
+* 部署到 WEB 应用。Visual Studio 将自动在 Azure 中创建一个新的 WEB 应用，并创建一个 SQL 数据库实例。
 * 将 WEB 应用配置为使用你的 Azure SQL 数据库和存储帐户。
 
 在云中运行时创建一些广告后，请查看 WebJobs SDK 仪表板，以了解该仪表板提供的丰富功能。

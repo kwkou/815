@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="12/01/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="01/21/2016"/>
 
 
 # Azure HDInsight 上的 Hadoop 组件发行说明
@@ -244,7 +244,7 @@
 
 <tr>
 <td>修复 Storm 群集的 502 网关不正确错误</td>
-<td>此版本修复了影响作业提交 API 并导致网站在重新启动后关闭的 Bug。</td>
+<td>此版本修复了影响作业提交 API 并导致 WEB 应用在重新启动后关闭的 Bug。</td>
 <td>服务</td>
 <td>Storm</td>
 <td>不适用</td>
@@ -809,7 +809,7 @@
 <td><p>在此版本中，HDInsight 查询控制台具有两个其他示例：</p>
 
 <p><b>Twitter 趋势分析</b><br>
-Twitter 等网站所提供的公共 API 是一类用于分析和了解流行趋势的有用数据源。在此教程中，你可以学习如何使用 Hive 获取发送包含特定文字的多数推文的 Twitter 用户列表。</p>
+Twitter 等 WEB 应用所提供的公共 API 是一类用于分析和了解流行趋势的有用数据源。在此教程中，你可以学习如何使用 Hive 获取发送包含特定文字的多数推文的 Twitter 用户列表。</p>
 
 <p><b>Mahout 电影推荐</b><br>
 Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理数据的算法（例如筛选、分类和群集）。在本教程中，你将要使用一个推荐引擎根据你的好友观看的电影生成电影推荐。</p></td>
@@ -1017,7 +1017,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 </tr>
 
 <tr>
-<td>为 Azure 网站与存储日志分析预先生成作业</td>
+<td>为 Azure WEB 应用与存储日志分析预先生成作业</td>
 <td>HDInsight 查询控制台有一个入门库，它支持处理数据或示例数据的解决方案。
 <p>**处理数据的解决方案**：<br>
 我们已经为最常见的部分数据分析方案创建作业，作为你创建自己的解决方案的起点。你可以运行作业来使用自己的数据，以查看其运作方式。就绪后，使用已学得的知识来创建你在预先生成作业后所制作的解决方案模型。</p>
@@ -1169,7 +1169,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 * **HDP 2.1 可用性**：HDInsight 3.1（包含 HDP 2.1）已正式发布，并成为新群集的默认版本。
 * **HBase - Azure 管理门户改进**：我们将在预览版中提供 HBase 群集。你只需单击几下鼠标，就能从门户创建 HBase 群集： 
 
-借助 HBase，你可以在 HDInsight 上生成各种实时工作负载 - 从用于处理大型数据集的交互式网站，到用于存储来自数百万个终结点的传感器数据与遥测数据的服务。你接下来要做的就是使用 Hadoop 作业分析这些工作负载中的数据，也可以通过 Azure PowerShell 和 Hive 群集仪表板完成这种分析。
+借助 HBase，你可以在 HDInsight 上生成各种实时工作负载 - 从用于处理大型数据集的交互式 WEB 应用，到用于存储来自数百万个终结点的传感器数据与遥测数据的服务。你接下来要做的就是使用 Hadoop 作业分析这些工作负载中的数据，也可以通过 Azure PowerShell 和 Hive 群集仪表板完成这种分析。
 
 ### Apache Mahout 已预装在 HDInsight 3.1 上
 
@@ -1179,7 +1179,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 
 		mahout org.apache.mahout.classifier.df.BreimanExample -d /user/hdp/glass.data -ds /user/hdp/glass.info -i 10 -t 100
 
-有关此过程的更完整说明，请参阅 Apache Mahout 网站上的 [Breiman 示例](https://mahout.apache.org/users/classification/breiman-example.html)文档。
+有关此过程的更完整说明，请参阅 Apache Mahout WEB 应用上的 [Breiman 示例](https://mahout.apache.org/users/classification/breiman-example.html)文档。
 
 
 ### Hive 查询可以在 HDInsight 3.1 中使用 Tez

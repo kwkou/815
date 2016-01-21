@@ -10,11 +10,11 @@
 <tags
    ms.service="azure-resource-manager"
    ms.date="11/13/2015"
-   wacn.date="12/31/2015"/>
+   wacn.date="01/21/2016"/>
 
 # 创作 Azure 资源管理器模板
 
-Azure 应用程序通常需要多种资源的组合（例如数据库服务器、数据库或网站）来达到所需的目标。你无需单独部署和管理每个资源，而可以创建一个 Azure 资源管理器模板，以单个协调操作为应用程序部署和设置所有资源。在模板中，定义应用程序所需的资源，并指定部署参数以针对不同的环境输入值。模板中包含可用于构造部署值的 JSON 和表达式。
+Azure 应用程序通常需要多种资源的组合（例如数据库服务器、数据库或 WEB 应用）来达到所需的目标。你无需单独部署和管理每个资源，而可以创建一个 Azure 资源管理器模板，以单个协调操作为应用程序部署和设置所有资源。在模板中，定义应用程序所需的资源，并指定部署参数以针对不同的环境输入值。模板中包含可用于构造部署值的 JSON 和表达式。
 
 本主题介绍了该模板的部分。对于实际的架构，请参阅 [Azure 资源管理器架构](https://github.com/Azure/azure-resource-manager-schemas)。
 
@@ -327,7 +327,7 @@ Azure 应用程序通常需要多种资源的组合（例如数据库服务器�
 你可能需要使用不同资源组中的资源。使用跨多个资源组共享的存储帐户或虚拟网络时，这很常见。有关详细信息，请参阅 [resourceId 函数](/documentation/articles/resource-group-template-functions/#resourceid)。
 
 ## 完整的模板
-以下模板将部署一个网站，并使用 .zip 文件中的代码设置该应用程序。
+以下模板将部署一个 WEB 应用，并使用 .zip 文件中的代码设置该应用程序。
 
     {
        "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",

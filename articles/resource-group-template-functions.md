@@ -10,7 +10,7 @@
 <tags
    ms.service="azure-resource-manager"
    ms.date="11/12/2015"
-   wacn.date="12/31/2015"/>
+   wacn.date="01/21/2016"/>
 
 # Azure 资源管理器模板函数
 
@@ -306,7 +306,7 @@
       "location": "{resourceGroupLocation}",
     }
 
-以下示例使用资源组位置来分配网站的位置。
+以下示例使用资源组位置来分配 WEB 应用的位置。
 
     "resources": [
        {
@@ -333,7 +333,7 @@
 | resourceName1 | 是 | 资源的名称。
 | resourceName2 | 否 | 下一个资源名称段（如果资源是嵌套的）。
 
-以下示例演示了如何检索网站和数据库的资源 ID。网站存在于名为 **myWebsitesGroup** 的资源组中，而数据库存在于此模板的当前资源组中。
+以下示例演示了如何检索 WEB 应用和数据库的资源 ID。 WEB 应用存在于名为 **myWebsitesGroup** 的资源组中，而数据库存在于此模板的当前资源组中。
 
     [resourceId('myWebsitesGroup', 'Microsoft.Web/sites', parameters('siteName'))]
     [resourceId('Microsoft.SQL/servers/databases', parameters('serverName'),parameters('databaseName'))]

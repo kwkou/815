@@ -10,7 +10,7 @@
 <tags
    ms.service="azure-security"
    ms.date="08/13/2015"
-   wacn.date="12/17/2015"/>
+   wacn.date="01/21/2016"/>
 
 # Windows Azure 安全和审核日志管理
 
@@ -56,7 +56,7 @@ EnableLogOnAudit.cmd 的内容：
 
 除了生成 Windows 事件日志，还可以对各种 Windows 操作系统组件进行配置以生成日志，这些日志对于安全分析和监视而言非常重要。例如，自动为 Web 角色生成的 Internet Information Services (IIS) 日志和 http.err 日志，可以配置这些日志以进行收集。这些日志提供有价值的信息，可用于标识未经授权的访问或针对您的 Web 角色的攻击。有关详细信息，请参阅[在 IIS 中配置日志记录](http://technet.microsoft.com/zh-cn/library/hh831775.aspx)和 [ IIS 高级日志记录 – 自定义日志记录](http://www.iis.net/learn/extensions/advanced-logging-module/advanced-logging-for-iis-custom-logging)。
 
-若要更改 Web 角色中的 IIS 日志记录，客户可以向 Web 角色服务定义文件添加启动任务。下面的示例为名为 Contoso 的网站启用 HTTP 日志记录，并指定 IIS 应记录 Contoso 网站的所有请求。
+若要更改 Web 角色中的 IIS 日志记录，客户可以向 Web 角色服务定义文件添加启动任务。下面的示例为名为 Contoso 的 WEB 应用启用 HTTP 日志记录，并指定 IIS 应记录 Contoso WEB 应用的所有请求。
 
 更新 IIS 配置的任务需要包含在 Web 角色的服务定义文件中。对服务定义文件的以下更改运行一个启动任务，该启动任务通过运行名为 ConfigureIISLogging.cmd 的脚本来配置 IIS 日志记录。
 
@@ -561,9 +561,9 @@ Azure Active Directory (Azure AD) 包括一组安全、使用情况和审核日�
 
 | 数据源 | 说明 |
 |----- | ----- |
-| IIS Logs | 有关 IIS 网站的信息 |
+| IIS Logs | 有关 IIS WEB 应用的信息 |
 | Azure Diagnostics基础结构日志 | 有关 Azure 诊断的信息 |
-| IIS 失败请求日志 | 有关 IIS 网站或应用程序的失败请求的信息 |
+| IIS 失败请求日志 | 有关 IIS WEB 应用或应用程序的失败请求的信息 |
 | Windows 事件日志 | 发送到 Windows 事件日志记录系统的信息 |
 | 性能计数器 | 操作系统和自定义性能计数器 |
 | 故障转储 | 有关应用程序崩溃时进程状态的信息 |

@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="11/18/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="01/21/2016"/>
 
 
 #使用 Azure 虚拟网络扩展 HDInsight 功能
@@ -29,7 +29,7 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 	使用虚拟网络链接 Azure 服务与 HDInsight 可实现以下方案：
 
-	* 从 Azure 虚拟机中运行的 Azure 网站或服务**调用 HDInsight 服务或作业**。
+	* 从 Azure 虚拟机中运行的 Azure WEB 应用或服务**调用 HDInsight 服务或作业**。
 
 	* 在 HDInsight 与 SQL 数据库或 SQL Server 或其他运行于虚拟机的数据存储解决方案之间**直接传输数据**。
 

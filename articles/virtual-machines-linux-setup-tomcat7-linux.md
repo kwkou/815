@@ -10,7 +10,7 @@
 <tags 
 	ms.service="virtual-machines" 
 	ms.date="05/21/2015" 
-	wacn.date="09/18/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 如何使用 Windows Azure 在 Linux 虚拟机上设置 Tomcat7 
 
@@ -179,7 +179,7 @@ oracle-jdk
 
 使用 **sudo apt-cache search tomcat7** 命令可查看所有可用的组件。以下命令是安装某些有用部件的示例。
 
-	sudo apt-get install tomcat7-admin      #admin网站lications
+	sudo apt-get install tomcat7-admin      #admin WEB applications
 	sudo apt-get install tomcat7-user         #tools to create user instances  
 
 ##第 4 阶段：配置 Tomcat
