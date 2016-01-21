@@ -19,7 +19,7 @@
         <td style="width: 200px;">
           <a href="http://download.microsoft.com/download/F/2/6/F26E80C5-C43B-4913-99AB-F2E4DFBFCBBF/Single%20Sign-On%20from%20Active%20Directory%20to%20a%20Windows%20Azure%20Application%20Whitepaper-RTW.pdf">Single Sign-On from Active Directory to an Azure Application Whitepaper</a>
         </td>
-        <td style="width: 400px;">This paper contains step-by-step instructions for using Windows Identity Foundation, Azure, and Active Directory Federation Services (AD FS) 2.0 for achieving SSO across网站lications that are deployed both on premises and in the cloud.</td>
+        <td style="width: 400px;">This paper contains step-by-step instructions for using Windows Identity Foundation, Azure, and Active Directory Federation Services (AD FS) 2.0 for achieving SSO across WEB applications that are deployed both on premises and in the cloud.</td>
       </tr>
       <tr>
         <td style="width: 200px;">
@@ -151,7 +151,7 @@
         <td style="width: 200px;">
           <a href="http://go.microsoft.com/?linkid=9737839">Custom Web (Rapid Scaling Focus) Application Migration Scenario</a>
         </td>
-        <td style="width: 400px;">This paper describes the Custom网站lication (Rapid Scaling) architectural pattern and illustrate specific considerations and suggested approaches for migrating applications with this or similar patterns.</td>
+        <td style="width: 400px;">This paper describes the Custom WEB application (Rapid Scaling) architectural pattern and illustrate specific considerations and suggested approaches for migrating applications with this or similar patterns.</td>
       </tr>
       <tr>
         <td style="width: 200px;">
