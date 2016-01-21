@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/02/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 虚拟机的大小
 
