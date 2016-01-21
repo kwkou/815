@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="12/17/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="01/21/2016"/>
 
 
 #使用 .NET SDK 创建频道，以执行从单比特率流到多比特率流的实时编码
@@ -86,7 +86,7 @@
 
 - 若要完成本教程，你需要一个 Azure 帐户。 
 	
-	如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留该帐户，使用那些免费的 Azure 服务和功能，例如 Azure 网站中的网站功能。
+	如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留该帐户，使用那些免费的 Azure 服务和功能，例如 Azure 中的 WEB 应用功能。
 - 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
 - Visual Studio 2010 SP1（Professional、Premium、Ultimate 或 Express）或更高版本。
 - 必须使用媒体服务 .NET SDK 版本 3.2.0.0 或更高版本。

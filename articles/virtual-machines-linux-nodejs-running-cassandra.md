@@ -10,7 +10,7 @@
 <tags 
 	ms.service="virtual-machines" 
 	ms.date="08/30/2015" 
-	wacn.date="11/12/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 
@@ -151,7 +151,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 <tr><th>字段名称             </th><th> 字段值	                   </th><th> 备注                                 </th></tr>
 <tr><td> 云服务	</td><td> 创建新的云服务	</td><td>云服务是类似虚拟机的容器计算资源</td></tr>
 <tr><td> 云服务 DNS 名称	</td><td>ubuntu-template.chinacloudapp.cn	</td><td>为计算机提供不可知的负载平衡器名称</td></tr>
-<tr><td> 区域/地缘组/虚拟网络 </td><td>	美国西部	</td><td> 选择你的网站从中访问 Cassandra 群集的区域</td></tr>
+<tr><td> 区域/地缘组/虚拟网络 </td><td>	美国西部	</td><td> 选择你的 WEB 应用从中访问 Cassandra 群集的区域</td></tr>
 <tr><td>存储帐户 </td><td>	使用默认值	</td><td>使用特定区域的默认存储帐户或预先创建的存储帐户</td></tr>
 <tr><td>可用性集 </td><td>	无 </td><td>	将此字段留空</td></tr>
 <tr><td>终结点	</td><td>使用默认值 </td><td>	使用默认 SSH 配置 </td></tr>

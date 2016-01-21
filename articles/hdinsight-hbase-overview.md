@@ -12,7 +12,7 @@
 <tags 
 	ms.service="hdinsight" 
 	ms.date="09/17/2015"
-	wacn.date="01/07/2016"/>
+	wacn.date="01/21/2016"/>
 
 
 
@@ -24,7 +24,7 @@ Apache HBase 是一种开源 NoSQL 数据库，它构建于 Hadoop 基础之上�
 
 ## 如何在 Azure HDInsight 中实施 HBase？
 
-HDInsight HBase 以集成到 Azure 环境中的托管群集形式提供。这些群集配置为在 Azure Blob 存储中直接存储数据，这样就减少了延迟，并提高了选择性能和价格的灵活性。这样，客户便可构建用于处理大型数据集的交互式网站，构建用于存储数百万个终结点的传感器数据与遥测数据的服务，并通过 Hadoop 作业来分析这些数据。HBase 和 Hadoop 是在 Azure 中构建大数据项目的良好起点，特别是可以支持实时应用程序来处理大数据集。
+HDInsight HBase 以集成到 Azure 环境中的托管群集形式提供。这些群集配置为在 Azure Blob 存储中直接存储数据，这样就减少了延迟，并提高了选择性能和价格的灵活性。这样，客户便可构建用于处理大型数据集的交互式 WEB 应用，构建用于存储数百万个终结点的传感器数据与遥测数据的服务，并通过 Hadoop 作业来分析这些数据。HBase 和 Hadoop 是在 Azure 中构建大数据项目的良好起点，特别是可以支持实时应用程序来处理大数据集。
 
 HDInsight 实施利用 HBase 的横向扩展架构来提供表自动分片、使读写操作保持高度的一致性，以及支持自动故障转移。性能可通过对读取使用内存中缓存并对写入使用高吞吐量流式处理来提高。可视化网络设置也适用于 HDInsight HBase。有关详细信息，请参阅[在 Azure 虚拟网络上预配 HDInsight 群集][hbase-provision-vnet]。
 

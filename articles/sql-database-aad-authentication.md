@@ -11,7 +11,7 @@
 <tags
    ms.service="sql-database"
    ms.date="09/14/2015"
-   wacn.date="10/17/2015"/>
+   wacn.date="01/21/2016"/>
 
 # 通过使用 Azure Active Directory 身份验证连接到 SQL 数据库 
 
@@ -103,7 +103,7 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 
 若要将你的数据库与你组织的 Azure AD 目录相关联，请允许目录成为托管数据库的 Azure 订阅的一个受信目录。有关详细信息，请参阅 [Azure 订阅与 Azure AD 的关联方式](https://msdn.microsoft.com/zh-cn/library/azure/dn629581.aspx)。
 
-**其他信息：**每个 Azure 订阅都与某个 Azure AD 实例存在信任关系。这意味着，此订阅信任该目录对用户、服务和设备执行身份验证。多个订阅可以信任同一个目录，但一个订阅只能信任一个目录。可以访问 [https://manage.windowsazure.cn/](https://manage.windowsazure.cn/)，在“设置”选项卡下查看你的订阅信任的目录。订阅与目录之间的这种信任关系不同于订阅与 Azure 中所有其他资源（网站、数据库等）之间的信任关系，在后一种关系中，这些资源更像是订阅的子资源。如果某个订阅过期，则对该订阅关联的其他那些资源的访问权限也将被终止。但是，目录将保留在 Azure 中，并且你可以将另一个订阅与该目录相关联，然后继续管理目录用户。有关资源的详细信息，请参阅[了解 Azure 中的资源访问](https://msdn.microsoft.com/zh-cn/library/azure/dn584083.aspx)。
+**其他信息：**每个 Azure 订阅都与某个 Azure AD 实例存在信任关系。这意味着，此订阅信任该目录对用户、服务和设备执行身份验证。多个订阅可以信任同一个目录，但一个订阅只能信任一个目录。可以访问 [https://manage.windowsazure.cn/](https://manage.windowsazure.cn/)，在“设置”选项卡下查看你的订阅信任的目录。订阅与目录之间的这种信任关系不同于订阅与 Azure 中所有其他资源（ WEB 应用、数据库等）之间的信任关系，在后一种关系中，这些资源更像是订阅的子资源。如果某个订阅过期，则对该订阅关联的其他那些资源的访问权限也将被终止。但是，目录将保留在 Azure 中，并且你可以将另一个订阅与该目录相关联，然后继续管理目录用户。有关资源的详细信息，请参阅[了解 Azure 中的资源访问](https://msdn.microsoft.com/zh-cn/library/azure/dn584083.aspx)。
 
 以下过程提供分步说明，介绍如何更改给定订阅的关联目录。
 

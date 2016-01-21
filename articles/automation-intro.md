@@ -10,7 +10,7 @@
 <tags
 	ms.service="automation"
 	ms.date="11/05/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/21/2016"/>
 
 # Azure 自动化概述
 
@@ -55,7 +55,7 @@ Runbook 是 Azure 自动化中执行某些自动化过程的一组任务。它�
 * 通过管理确保在云和本地基础结构中对应用程序代码进行连续的部署。 
 * 针对你的实验室环境在 Azure 中构建 Active Directory 林。 
 * 如果 SQL 数据库即将达到其最大大小，则截断数据库中的表。 
-* 远程更新 Azure 网站的环境设置。 
+* 远程更新 Azure WEB 应用的环境设置。 
 
 
 ## Azure 自动化如何与其他自动化工具关联？

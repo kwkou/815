@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure 网站中还原网站" 
-	description="了解如何从备份还原网站。" 
+	pageTitle="在 Azure 中还原 WEB 应用" 
+	description="了解如何从备份还原 WEB 应用。" 
 	services="app-service\web" 
 	documentationCenter="" 
 	authors="cephalin" 
@@ -10,36 +10,36 @@
 <tags 
 	ms.service="web-sites" 
 	ms.date="09/16/2015" 
-	wacn.date="12/17/2015"/>
+	wacn.date="01/21/2016"/>
 
-#还原 Windows Azure 网站
+#还原 Windows Azure WEB 应用
 
-本文介绍如何通过使用 Azure 网站备份功能来还原你先前备份的网站。有关详细信息，请参阅 [Windows Azure 网站备份](/documentation/articles/web-sites-backup/)。
+本文介绍如何通过使用 Azure WEB 应用备份功能来还原你先前备份的 WEB 应用。有关详细信息，请参阅 [Windows Azure WEB 应用备份](/documentation/articles/web-sites-backup/)。
 
-利用网站还原功能，可将网站还原到以前某个你自己需要的状态，或基于原有网站备份之一创建新的网站。创建与最新版本并行运行的新网站对于 A/B 测试会很有用。
+利用 WEB 应用还原功能，可将 WEB 应用还原到以前某个你自己需要的状态，或基于原有 WEB 应用备份之一创建新的 WEB 应用。创建与最新版本并行运行的新 WEB 应用对于 A/B 测试会很有用。
 
-网站还原功能在 [Azure 门户](http://manage.windowsazure.cn)中的“备份”边栏选项卡上，只能用于“标准”模式。有关使用“标准”模式缩放应用的信息，请参阅[在 Azure 网站中缩放网站](/documentation/articles/web-sites-scale)。
+WEB 应用还原功能在 [Azure 门户](http://manage.windowsazure.cn)中的“备份”边栏选项卡上，只能用于“标准”模式。有关使用“标准”模式缩放应用的信息，请参阅[在 Azure 中缩放 WEB 应用](/documentation/articles/web-sites-scale)。
 
 ##本文内容
-- [从以前制作的备份中还原 Azure 网站](#PreviousBackup)
-- [直接从存储帐户还原 Azure 网站](#StorageAccount)
-- [选择网站还原设置并开始还原操作](#RestoreSettings)
+- [从以前制作的备份中还原 Azure WEB 应用](#PreviousBackup)
+- [直接从存储帐户还原 Azure WEB 应用](#StorageAccount)
+- [选择 WEB 应用还原设置并开始还原操作](#RestoreSettings)
 - [查看操作日志](#OperationLogs)
 
 
 <a name="PreviousBackup"></a>
-## 从以前制作的备份中还原网站
+## 从以前制作的备份中还原 WEB 应用
 
 1. 在“备份”选项卡上，单击门户页底部的命令栏中的“立即还原”。此时将显示“立即还原”对话框。
 	
 	![选择备份源][ChooseBackupSource]
 	
-2. 在“选择备份源”下，选择“该网站的上一个备份”。
+2. 在“选择备份源”下，选择“该 WEB 应用的上一个备份”。
 3. 选择要还原的备份的日期，然后单击向右箭头以继续。
-4. 按本文后面[选择网站还原设置](#RestoreSettings)部分的步骤操作。
+4. 按本文后面[选择 WEB 应用还原设置](#RestoreSettings)部分的步骤操作。
 
 <a name="StorageAccount"></a>
-##直接从存储帐户还原 Azure 网站
+##直接从存储帐户还原 Azure WEB 应用
 
 1. 在“备份”选项卡上，单击门户页底部的命令栏中的“立即还原”。此时将显示“立即还原”对话框。
 	
@@ -60,20 +60,20 @@
 	
 	![已选择的存储帐户文件][StorageAccountFileSelected]
 	
-7. 继续学习[选择网站还原设置并开始还原操作](#RestoreSettings)部分。
+7. 继续学习[选择 WEB 应用还原设置并开始还原操作](#RestoreSettings)部分。
 
 <a name="RestoreSettings"></a>
-##选择网站还原设置并开始还原操作
-1. 在“选择网站还原设置”下的“还原到”中，选择“当前网站”或“新网站实例”。
+##选择 WEB 应用还原设置并开始还原操作
+1. 在“选择 WEB 应用还原设置”下的“还原到”中，选择“当前 WEB 应用”或“新 WEB 应用实例”。
 	
-	![选择网站还原设置][ChooseRestoreSettings]
+	![选择 WEB 应用还原设置][ChooseRestoreSettings]
 	
-	如果选择“当前网站”，现有网站将会被所选备份改写（破坏性还原）。所选备份创建时间之后对网站所做的所有更改都将被永久删除，而且还原操作是不可撤消的。还原操作期间，将暂时无法使用当前网站，你将会收到相关警告信息。
+	如果选择“当前 WEB 应用”，现有 WEB 应用将会被所选备份改写（破坏性还原）。所选备份创建时间之后对 WEB 应用所做的所有更改都将被永久删除，而且还原操作是不可撤消的。还原操作期间，将暂时无法使用当前 WEB 应用，你将会收到相关警告信息。
 	
-	如果选择“新网站实例”，将会在同一区域中使用你指定的名称创建一个新网站。（默认情况下，新名称是 **restored-***旧网站名称*。）
+	如果选择“新 WEB 应用实例”，将会在同一区域中使用你指定的名称创建一个新 WEB 应用。（默认情况下，新名称是 **restored-***旧 WEB 应用名称*。）
 	
-	你还原的网站所包含的内容和配置将与在门户中为原网站提供的内容和配置相同。它还将包括你在下一步中选择要包括的任何数据库。
-2. 如果要连同网站一起还原数据库，请在“包含的数据库”下通过使用“还原到”下的下拉列表选择要将数据库还原到其中的数据库服务器的名称。你还可以选择创建要还原到其中的新数据库服务器，或者选择“不还原”，这是默认设置，这样就不会还原数据库。 
+	你还原的 WEB 应用所包含的内容和配置将与在门户中为原 WEB 应用提供的内容和配置相同。它还将包括你在下一步中选择要包括的任何数据库。
+2. 如果要连同 WEB 应用一起还原数据库，请在“包含的数据库”下通过使用“还原到”下的下拉列表选择要将数据库还原到其中的数据库服务器的名称。你还可以选择创建要还原到其中的新数据库服务器，或者选择“不还原”，这是默认设置，这样就不会还原数据库。 
 	
 	选择了服务器名称后，在“数据库名称”框中为还原指定目标数据库的名称。
 	
@@ -94,14 +94,14 @@
 	
 	![新 SQL 数据库设置][NewSQLDBConfig]
 	
-5. 单击复选标记以开始还原操作。操作完成时，在门户网站的列表中将能够看到新网站实例（如果那是你选择的还原选项）。
+5. 单击复选标记以开始还原操作。操作完成时，在门户 WEB 应用的列表中将能够看到新 WEB 应用实例（如果那是你选择的还原选项）。
 	
-	![还原的 Contoso 网站][RestoredContoso Website]
+	![还原的 Contoso WEB 应用][RestoredContoso Website]
 
 <a name="OperationLogs"></a>
 ##查看操作日志
 	
-1. 要查看有关网站还原操作成功或失败的详细信息，请转到网站的“仪表板”选项卡。在“速览”部分的“管理服务”下，单击“操作日志”。
+1. 要查看有关 WEB 应用还原操作成功或失败的详细信息，请转到 WEB 应用的“仪表板”选项卡。在“速览”部分的“管理服务”下，单击“操作日志”。
 	
 	![仪表板 - 操作日志链接][DashboardOperationLogsLink]
 	

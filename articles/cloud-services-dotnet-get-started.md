@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="09/01/2015"
-	wacn.date="10/17/2015"/>
+	wacn.date="01/21/2016"/>
 
 # Azure 云服务和 ASP.NET 入门
 
@@ -32,9 +32,9 @@
 
 应用程序使用[以队列为中心的工作模式](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern)来减轻创建缩略图到后端进程的 CPU 密集型工作。
 
-## 替代体系结构：网站和 Web 作业
+## 替代体系结构： WEB 应用和 Web 作业
 
-本教程演示如何在 Azure 云服务中运行前端和后端。一种替代方法是在 [Azure 网站](/services/web-sites/)中运行前端，并为后端使用 [Web 作业](/documentation/articles/websites-webjobs-resources)功能（目前以预览版提供）。有关如何选择最适合你方案的服务信息，请参阅 [Azure 网站、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm)。
+本教程演示如何在 Azure 云服务中运行前端和后端。一种替代方法是在 [Azure WEB 应用](/services/web-sites/)中运行前端，并为后端使用 [Web 作业](/documentation/articles/websites-webjobs-resources)功能（目前以预览版提供）。有关如何选择最适合你方案的服务信息，请参阅 [Azure WEB 应用、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm)。
 
 ## 学习内容
 
@@ -108,7 +108,7 @@
 
 	![详细信息页](./media/cloud-services-dotnet-get-started/details.png)
 
-你已在本地计算机上完全运行应用程序，但未连接到云。存储模拟器将队列和 Blob 数据存储在 SQL Server Express LocalDB 数据库中，应用程序将广告数据存储在另一个 LocalDB 数据库中。在网站首次尝试访问它时，实体框架 Code First 自动创建广告数据库。
+你已在本地计算机上完全运行应用程序，但未连接到云。存储模拟器将队列和 Blob 数据存储在 SQL Server Express LocalDB 数据库中，应用程序将广告数据存储在另一个 LocalDB 数据库中。在 WEB 应用首次尝试访问它时，实体框架 Code First 自动创建广告数据库。
 
 下一部分中，你要将解决方案配置为在云中运行时对队列、Blob 和应用程序数据库使用 Azure 云资源。如果想要继续在本地运行但使用云存储和数据库资源，你可以这样做；这只需要设置连接字符串即可。 
 
@@ -337,7 +337,7 @@ Web 角色项目和辅助角色项目的 azure 存储帐户连接字符串存储
 
 	![Azure 活动日志窗口](./media/cloud-services-dotnet-get-started/waal.png)
 
-6. 当部署状态为完成时，单击“网站 URL”以启动应用程序。
+6. 当部署状态为完成时，单击“ WEB 应用 URL”以启动应用程序。
 
 7. 就像在本地运行应用程序一样，现在可以通过创建、查看和编辑一些广告测试应用程序。
 
@@ -548,7 +548,7 @@ ContosoAdsContext 类指定 DbSet 集合中使用的 Ad 类，实体框架将存
 		var storageAccount = CloudStorageAccount.Parse
 		    (RoleEnvironment.GetConfigurationSettingValue("StorageConnectionString"));
 
-然后，它获取对*图像* Blob 容器的引用，创建尚不存在的容器，并在新容器上设置访问权限。默认情况下，新容器只允许带存储帐户凭据的客户端访问 Blob。网站需要 Blob 是公共的，以便它可以使用指向图像 Blob 的 Url 显示图像。
+然后，它获取对*图像* Blob 容器的引用，创建尚不存在的容器，并在新容器上设置访问权限。默认情况下，新容器只允许带存储帐户凭据的客户端访问 Blob。 WEB 应用需要 Blob 是公共的，以便它可以使用指向图像 Blob 的 Url 显示图像。
 
 		var blobClient = storageAccount.CreateCloudBlobClient();
 		var imagesBlobContainer = blobClient.GetContainerReference("images");
@@ -584,7 +584,7 @@ ContosoAdsContext 类指定 DbSet 集合中使用的 Ad 类，实体框架将存
 
 在 *AdController.cs* 文件中，构造函数调用 `InitializeStorage` 方法来创建 Azure 存储客户端库对象，它提供一个用于处理 Blob 和队列的 API。
 
-然后，代码获取对*图像* Blob 容器的引用，正如你之前在 *Global.asax.cs* 中看到的。在执行该操作时，它设置适用于网站的默认[重试策略](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling)。对于超过暂时性故障反复重试超过一分钟的网站，默认指数回退重试策略将其可能挂起。此处指定的重试策略将在每次尝试后等待 3 秒，最多可尝试 3 次。
+然后，代码获取对*图像* Blob 容器的引用，正如你之前在 *Global.asax.cs* 中看到的。在执行该操作时，它设置适用于 WEB 应用的默认[重试策略](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling)。对于超过暂时性故障反复重试超过一分钟的 WEB 应用，默认指数回退重试策略将其可能挂起。此处指定的重试策略将在每次尝试后等待 3 秒，最多可尝试 3 次。
 
 		var blobClient = storageAccount.CreateCloudBlobClient();
 		blobClient.RetryPolicy = new LinearRetry(TimeSpan.FromSeconds(3), 3);

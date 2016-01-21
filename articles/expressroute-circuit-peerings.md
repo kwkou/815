@@ -9,7 +9,7 @@
 <tags 
    ms.service="expressroute"
    ms.date="09/22/2015"
-   wacn.date="11/27/2015"/>
+   wacn.date="01/21/2016"/>
 
 # ExpressRoute 线路和路由域
 
@@ -47,7 +47,7 @@ ExpressRoute 线路最多可以有两个独立的对等互连：Azure 公共和A
 
 ### 公共对等互连
 
-Azure 存储空间、SQL 数据库和网站等服务是使用公共 IP 地址提供的。你可以通过公共对等路由域私下连接到公共 IP 地址（包括云服务的 VIP）上托管的服务。可以将公共对等域连接到外围网络，并从 WAN 连接到公共 IP 地址上的所有 Azure 服务，而无需通过 Internet 连接。
+Azure 存储空间、SQL 数据库和 WEB 应用等服务是使用公共 IP 地址提供的。你可以通过公共对等路由域私下连接到公共 IP 地址（包括云服务的 VIP）上托管的服务。可以将公共对等域连接到外围网络，并从 WAN 连接到公共 IP 地址上的所有 Azure 服务，而无需通过 Internet 连接。
 
 始终会从 WAN 发起到 Windows Azure 服务的连接。Windows Azure 服务无法通过此路由域发起到你网络的连接。启用公共对等互连后，你将能够连接到所有 Azure 服务。我们不允许选择要将路由播发到的服务。可以通过世纪互联客服来查询 Azure 通过此对等互连播发给你的前缀列表。
 

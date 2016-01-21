@@ -10,7 +10,7 @@
 <tags
 	ms.service="multiple"
 	ms.date="08/31/2015"
-	wacn.date="12/31/2015"/>
+	wacn.date="01/21/2016"/>
 
 #下载 Azure SDK for PHP
 
@@ -19,7 +19,7 @@
 Azure SDK for PHP 包括允许你针对 Azure 开发、部署和管理 PHP 应用程序的组件。具体而言，Azure SDK for PHP 包括以下组件：
 
 * **Azure 的 PHP 客户端库**。这些类库提供用于访问 Azure 功能（例如数据管理服务和云服务）的接口。  
-* **适用于 Mac、Linux 和 Windows (Azure CLI) 的 Azure 命令行界面**。这是一组用于部署和管理 Azure 服务（例如 Azure 网站和 Azure 虚拟机）的命令。Azure CLI 可在任何平台（包括 Mac、Linux 和 Windows）上使用。
+* **适用于 Mac、Linux 和 Windows (Azure CLI) 的 Azure 命令行界面**。这是一组用于部署和管理 Azure 服务（例如 Azure WEB 应用和 Azure 虚拟机）的命令。Azure CLI 可在任何平台（包括 Mac、Linux 和 Windows）上使用。
 * **Azure PowerShell（仅限 Windows）**。这是一组用于部署和管理 Azure 服务（例如云服务和虚拟机）的 PowerShell cmdlet。
 * **Azure 模拟器（仅限 Windows）**。计算和存储模拟器是一系列云服务和数据管理服务的本地模拟器，允许你在本地测试应用程序。Azure 模拟器仅在 Windows 上运行。
 
@@ -101,7 +101,7 @@ Azure PowerShell 是一组用于部署和管理 Azure 服务（例如，云服�
 
 ##Azure CLI
 
-Azure CLI 是一组用于部署和管理 Azure 服务（例如 Azure 网站和 Azure 虚拟机）的命令。有关安装 Azure CLI 的信息，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install)。
+Azure CLI 是一组用于部署和管理 Azure 服务（例如 Azure WEB 应用和 Azure 虚拟机）的命令。有关安装 Azure CLI 的信息，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install)。
 
 ## 后续步骤
 

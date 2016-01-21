@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="11/13/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 
@@ -53,7 +53,7 @@ Canonical 工程和开放社区监管对 Ubuntu 在客户端、服务器和云�
 ### CoreOS
 [https://coreos.com/docs/running-coreos/cloud-providers/azure/](https://coreos.com/docs/running-coreos/cloud-providers/azure/)
 
-从 CoreOS 网站：
+从 CoreOS WEB 应用：
 
 *CoreOS 在设计时就已考虑到了安全性、一致性和可靠性。CoreOS 使用 Linux 容器在更高的抽象级别管理你的服务，而不是通过 yum 或 apt 来安装程序包。单个服务的代码和所有依赖项都打包在一个容器中，这个容器可以运行在一个或多个 CoreOS 计算机中。*
 

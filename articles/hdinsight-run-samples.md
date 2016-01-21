@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/29/2015"
-	wacn.date="01/15/2016"/>
+	wacn.date="01/21/2016"/>
 
 #在基于 Windows 的 HDInsight 中运行 Hadoop MapReduce 示例
 
@@ -152,7 +152,7 @@ pi 估计器使用统计学方法（拟蒙特卡罗法）来估算 pi 值。单�
 
 ## <a name="hdinsight-sample-10gb-graysort"></a> 10-GB Graysort
 
-此示例使用适中的 10GB 数据，这样它运行时能相对快一点。它使用由 Owen O'Malley 和 Arun Murthy 开发的 MapReduce 应用程序，此应用程序以 0.578TB/分钟（100TB 用时 173 分钟）的速率赢得了 2009 年年度常用（“daytona”）TB 级排序基准。有关这一排序基准和其他排序基准的详细信息，请参阅 [Sortbenchmark](http://sortbenchmark.org/) 网站。
+此示例使用适中的 10GB 数据，这样它运行时能相对快一点。它使用由 Owen O'Malley 和 Arun Murthy 开发的 MapReduce 应用程序，此应用程序以 0.578TB/分钟（100TB 用时 173 分钟）的速率赢得了 2009 年年度常用（“daytona”）TB 级排序基准。有关这一排序基准和其他排序基准的详细信息，请参阅 [Sortbenchmark](http://sortbenchmark.org/) WEB 应用。
 
 本示例使用三组 MapReduce 程序：
 

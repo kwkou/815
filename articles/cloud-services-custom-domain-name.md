@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="09/22/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 为 Azure 云服务配置自定义域名
 
@@ -26,12 +26,12 @@
 你是否已经了解什么是 CNAME 和 A 记录？ [跳过解释](#add-a-cname-record-for-your-custom-domain)。
 
 > [AZURE.NOTE]
-> 快速入门 - 使用全新的 Azure [操作实例指南](https://support.microsoft.com/zh-cn/kb/2990804)！ 它可使自定义域名快速地与 Azure 云服务或 Azure 网站相关联，并确保通信安全 (SSL)。
+> 快速入门 - 使用全新的 Azure [操作实例指南](https://support.microsoft.com/zh-cn/kb/2990804)！ 它可使自定义域名快速地与 Azure 云服务或 Azure WEB 应用相关联，并确保通信安全 (SSL)。
 
 <p/>
 
 > [AZURE.NOTE]
-> 本任务中的过程适用于 Azure 云服务。有关网站，请参阅[为 Azure App Service网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。有关存储帐户，请参阅[为 Azure 存储帐户配置自定义域名](/documentation/articles/storage-custom-domain-name)。
+> 本任务中的过程适用于 Azure 云服务。有关 WEB 应用，请参阅[为 Azure App Service WEB 应用配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。有关存储帐户，请参阅[为 Azure 存储帐户配置自定义域名](/documentation/articles/storage-custom-domain-name)。
 
 
 ## 了解 CNAME 和 A 记录
@@ -60,7 +60,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符�
 
 1. 使用下列方法之一找到分配给你的云服务的 **.chinacloudapp.cn** 域名。
 
-    * 登录到 [Azure 管理门户]，依次选择你的云服务、“仪表板”，然后在“速览”部分中查找“网站 URL”条目。
+    * 登录到 [Azure 管理门户]，依次选择你的云服务、“仪表板”，然后在“速览”部分中查找“ WEB 应用 URL”条目。
     
         ![显示站点 URL 的速览部分][csurl]
     
@@ -74,7 +74,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符�
     
     保存任一方法返回的 URL 中所使用的域名，因为您将在创建 CNAME 记录时需要它。
 
-2.  登录到您的 DNS 注册机构的网站，然后转至用于管理 DNS 的页面。查找标为**域名**、**DNS** 或**名称服务器管理**的站点链接或区域。
+2.  登录到您的 DNS 注册机构的 WEB 应用，然后转至用于管理 DNS 的页面。查找标为**域名**、**DNS** 或**名称服务器管理**的站点链接或区域。
 
 3.  现在找到您可以在其中选择或输入 CNAME 记录的位置。您可能需要从下拉列表中选择记录类型，或者需要转到高级设置页面。你应该查找词 **CNAME**、**Alias** 或 **Subdomains**。
 
@@ -116,7 +116,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符�
     
     保存该 IP 地址，因为您将在创建 A 记录时需要它。
 
-2.  登录到您的 DNS 注册机构的网站，然后转至用于管理 DNS 的页面。查找标为**域名**、**DNS** 或**名称服务器管理**的站点链接或区域。
+2.  登录到您的 DNS 注册机构的 WEB 应用，然后转至用于管理 DNS 的页面。查找标为**域名**、**DNS** 或**名称服务器管理**的站点链接或区域。
 
 3.  现在找到您可以在其中选择或输入 A 记录的位置。您可能需要从下拉列表中选择记录类型，或者需要转到高级设置页面。
 

@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="PHP"
     ms.date=""
-    wacn.date="11/02/2015"
+    wacn.date="01/21/2016"
     />
 
 #PHP开发人员中心
@@ -21,13 +21,13 @@ editor="Eric Chen" />
 
 ##PHP 教程和文档
 
-###网站
+### WEB 应用
 
-- [Azure 网站](/zh-cn/documentation/articles/fundamentals-application-models/#WebSites)
-- [创建 PHP 网站](/zh-cn/documentation/articles/web-sites-php-create-web-sites)
+- [Azure WEB 应用](/zh-cn/documentation/articles/fundamentals-application-models/#WebSites)
+- [创建 PHP WEB 应用](/zh-cn/documentation/articles/web-sites-php-create-web-sites)
 - [配置 PHP](/zh-cn/documentation/articles/web-sites-php-configure)
 - [使用 XDT 进行转换](/zh-cn/documentation/articles/web-sites-transform-extend)
-- [创建 PHP-MySQL 网站](/zh-cn/documentation/articles/web-sites-php-mysql-deploy-use-git)
+- [创建 PHP-MySQL WEB 应用](/zh-cn/documentation/articles/web-sites-php-mysql-deploy-use-git)
 - **[全部显示](/develop/php/websites)**
 
 ###虚拟机

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="使用 Django 创建 Python网站| Windows Azure"
-	description="本教程演示如何在 Azure 中使用 Windows Server 2012 R2 Datacenter 虚拟机托管基于 Django 的网站。"
+	pageTitle="使用 Django 创建 Python WEB 应用| Windows Azure"
+	description="本教程演示如何在 Azure 中使用 Windows Server 2012 R2 Datacenter 虚拟机托管基于 Django 的 WEB 应用。"
 	services="virtual-machines"
 	documentationCenter="python"
 	authors="huguesv"
@@ -11,23 +11,23 @@
 <tags 
 	ms.service="virtual-machines" 
 	ms.date="08/04/2015" 
-	wacn.date="09/18/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 
 
-# Django Hello World网站
+# Django Hello World WEB 应用
 <!--
 <div class="dev-center-tutorial-selector sublanding"><a href="/develop/python/tutorials/web-app-with-django/" title="Windows" class="current">Windows</a><a href="/develop/python/tutorials/django-hello-world-(maclinux)/" title="MacLinux">Mac/Linux</a></div>
 -->
-本教程介绍如何在 Windows Azure 中使用 Windows Server 虚拟机托管基于 Django 的网站。本教程假定您之前未使用过 Azure。完成本教程之后，你将能够在云中启动和运行基于 Django 的应用程序。
+本教程介绍如何在 Windows Azure 中使用 Windows Server 虚拟机托管基于 Django 的 WEB 应用。本教程假定您之前未使用过 Azure。完成本教程之后，你将能够在云中启动和运行基于 Django 的应用程序。
 
 你将了解如何执行以下操作：
 
 * 设置 Azure 虚拟机以托管 Django。虽然本教程介绍如何在 Windows Server 下实现此目的，但也可以使用托管在 Azure 中的 Linux VM 实现相同目的。
 * 从 Windows 创建新的 Django 应用程序。
 
-通过按照本教程中的说明进行操作，您将构建一个简单的 Hello World网站。该应用程序将托管在 Azure 虚拟机中。
+通过按照本教程中的说明进行操作，您将构建一个简单的 Hello World WEB 应用。该应用程序将托管在 Azure 虚拟机中。
 
 接下来显示的是已完成应用程序的屏幕截图。
 
@@ -86,9 +86,9 @@
 
 	![New-AzureService 命令的结果](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-cmd-new-azure-service.png)
 
-1.  **django-admin** 命令生成基于 Django 的网站的基本结构：
+1.  **django-admin** 命令生成基于 Django 的 WEB 应用的基本结构：
 
-  -   **helloworld\\manage.py** 可帮助你启动托管和停止托管你的基于 Django 的网站
+  -   **helloworld\\manage.py** 可帮助你启动托管和停止托管你的基于 Django 的 WEB 应用
   -   **helloworld\\helloworld\\settings.py** 包含你的应用程序的 Django 设置。
   -   **helloworld\\helloworld\\urls.py** 包含每个 url 及其视图之间的映射代码。
 
@@ -154,7 +154,7 @@
           </system.webServer>
         </configuration>
 
-1. 更新 IIS 默认网站的位置以指向 django 项目文件夹。
+1. 更新 IIS 默认 WEB 应用的位置以指向 django 项目文件夹。
 
         %windir%\system32\inetsrv\appcmd set vdir "Default Web Site/" -physicalPath:"C:\inetpub\wwwroot\helloworld"
 

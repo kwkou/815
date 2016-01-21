@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="11/09/2015"
-	wacn.date="01/07/2016"/>
+	wacn.date="01/21/2016"/>
 
 
 #HDInsight 提供的 Hadoop 群集版本有哪些新功能？
@@ -63,7 +63,7 @@ HDInsight 平台的一些突出功能包括：
 
 - **脚本操作** - 此群集自定义功能可让你使用自定义脚本任意修改 Hadoop 群集。凭借此新功能，用户可以体验如何将 Apache Hadoop 生态系统中的项目部署到 Azure HDInsight 群集。此自定义功能适用于所有类型的 HDInsight 群集，包括 Hadoop、HBase 和 Storm。
 
-- **HBase** - HBase 是一种低延迟的 NoSQL 数据库，可用于对大数据进行联机事务处理。HBase 以集成到 Azure 环境中的托管群集形式提供。这些群集配置为在 Azure Blob 存储中直接存储数据，这样就降低了延迟，使客户在性能与价格方面做出选择时拥有更大的弹性。这样，客户便可构建用于处理大型数据集的交互式网站，构建用于存储数百万个终结点的传感器数据与遥测数据的服务，并通过 Hadoop 作业来分析这些数据。
+- **HBase** - HBase 是一种低延迟的 NoSQL 数据库，可用于对大数据进行联机事务处理。HBase 以集成到 Azure 环境中的托管群集形式提供。这些群集配置为在 Azure Blob 存储中直接存储数据，这样就降低了延迟，使客户在性能与价格方面做出选择时拥有更大的弹性。这样，客户便可构建用于处理大型数据集的交互式 WEB 应用，构建用于存储数百万个终结点的传感器数据与遥测数据的服务，并通过 Hadoop 作业来分析这些数据。
 
 - **Apache Phoenix** - Apache Phoenix 是基于 HBase 的结构化查询语言 (SQL) 查询层。它支持有限的 SQL 查询语言规范子集，包括辅助索引支持。它是以客户端中嵌入的 Java 数据库连接 (JDBC) 驱动程序形式交付，面向 HBase 数据的低延迟查询。Apache Phoenix 将获取 SQL 查询，将它编译成一系列 HBase 扫描和协处理器调用，然后生成正则 JDBC 结果集。Apache Phoenix 是基于 HBase 的关系数据库。它是以客户端中嵌入的 JDBC 驱动程序形式交付，面向 HBase 数据的低延迟查询。Apache Phoenix 将获取 SQL 查询，将它编译成一系列 HBase 扫描，并协调这些扫描的运行来生成正则 JDBC 结果集。
 

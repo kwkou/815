@@ -1,6 +1,6 @@
 <properties
-	pageTitle="在 Azure 网站中启用网站的 HTTPS"
-	description="了解如何为 Azure 网站启用 SSL。"
+	pageTitle="在 Azure 中启用 WEB 应用的 HTTPS"
+	description="了解如何为 Azure WEB 应用启用 SSL。"
 	services="app-service"
 	documentationCenter=".net"
 	authors="cephalin"
@@ -11,9 +11,9 @@
 <tags
 	ms.service="web-sites"
 	ms.date="10/23/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/21/2016"/>
 
-#在 Azure 网站中启用网站的 HTTPS
+#在 Azure 中启用 WEB 应用的 HTTPS
 
 [AZURE.INCLUDE [configure-ssl-web-site](../includes/configure-ssl-web-site.md)]
 

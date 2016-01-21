@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="09/24/2015" 
-	wacn.date="11/27/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 使用 Azure 移动服务 .NET 后端创建排行榜应用程序
 
@@ -18,7 +18,7 @@
 
 ## 概述
 
-Web API 是一个开源框架，可为 .NET 开发人员提供创建 REST API 的绝佳途径。你可以在 Azure 网站或使用 .NET 后端的 Azure 移动服务上托管 Web API 解决方案，甚至以自定义过程自我托管解决方案。移动服务是专门为移动应用程序设计的托管环境。当你在移动服务上托管 Web API 服务时，除了数据存储以外，还可以获得以下好处：
+Web API 是一个开源框架，可为 .NET 开发人员提供创建 REST API 的绝佳途径。你可以在 Azure WEB 应用或使用 .NET 后端的 Azure 移动服务上托管 Web API 解决方案，甚至以自定义过程自我托管解决方案。移动服务是专门为移动应用程序设计的托管环境。当你在移动服务上托管 Web API 服务时，除了数据存储以外，还可以获得以下好处：
 
 - 使用社交服务提供商和 Azure Active Directory (AAD) 的内置身份验证。 
 - 使用设备特定的通知服务将通知推送到应用程序。
@@ -60,11 +60,11 @@ PlayerRank 具有 Player 的外键。每个玩家各有零个或一个 PlayerRan
 
 ## 创建项目
 
-启动 Visual Studio，并创建新的 ASP.NET网站项目。将项目命名为 Leaderboard。
+启动 Visual Studio，并创建新的 ASP.NET WEB 应用项目。将项目命名为 Leaderboard。
 
 ![][3]
 
-在 Visual Studio 2013 中，ASP.NET网站项目包含 Azure 移动服务的模板。请选择此模板，然后单击“确定”。
+在 Visual Studio 2013 中，ASP.NET WEB 应用项目包含 Azure 移动服务的模板。请选择此模板，然后单击“确定”。
 
 ![][4]
  

@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="04/14/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 使用负载平衡集群集化 Linux 上的 MySQL
 
@@ -164,7 +164,7 @@ MySQL 的其他可能体系结构包括 NBD 群集、Percona 和 Galera 以及�
 
 ### 测试负载平衡集
 
-可以从外部计算机使用任何 MySQL 客户端以及应用程序（例如，作为 Azure 网站运行的 phpMyAdmin）执行测试。在这种情况下，我们在另一台 Linux 计算机上使用 MySQL 的命令行工具：
+可以从外部计算机使用任何 MySQL 客户端以及应用程序（例如，作为 Azure WEB 应用运行的 phpMyAdmin）执行测试。在这种情况下，我们在另一台 Linux 计算机上使用 MySQL 的命令行工具：
 
     mysql azureha –u root –h hadb.chinacloudapp.cn –e "select * from things;"
 

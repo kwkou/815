@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/05/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 # Azure 虚拟机上的 SharePoint 2010 部署
@@ -175,9 +175,9 @@ Azure 中的映像库提供了可用预配置虚拟机的列表。用户可将 S
 
 ### 方案 2：带自定义项的面向公众的 SharePoint 场
 
-组织希望创建一个托管于云中并可基于需求和要求轻松缩放的 Internet 展示。他们还希望创建用于协作的合作伙伴 Extranet 网站，并轻松完成对分布式创作的处理以及对网站内容的审批。最后，为了处理不断增加的负载，这些组织希望按需向其网站提供容量。
+组织希望创建一个托管于云中并可基于需求和要求轻松缩放的 Internet 展示。他们还希望创建用于协作的合作伙伴 Extranet WEB 应用，并轻松完成对分布式创作的处理以及对 WEB 应用内容的审批。最后，为了处理不断增加的负载，这些组织希望按需向其 WEB 应用提供容量。
 
-在此方案中，SharePoint Server 将用作托管面向公众的网站的基础。它使组织能够在安全的、可伸缩的云基础结构上快速部署、自定义和承载其商业网站。通过在 Azure 上使用 SharePoint 的面向公众的网站，组织可在流量增加时进行扩展，并且只需为其使用的部分付费。常用工具（类似于本地使用的工具）可用于在 Azure 上使用 SharePoint 进行的内容创作、工作流和审批。
+在此方案中，SharePoint Server 将用作托管面向公众的 WEB 应用的基础。它使组织能够在安全的、可伸缩的云基础结构上快速部署、自定义和承载其商业 WEB 应用。通过在 Azure 上使用 SharePoint 的面向公众的 WEB 应用，组织可在流量增加时进行扩展，并且只需为其使用的部分付费。常用工具（类似于本地使用的工具）可用于在 Azure 上使用 SharePoint 进行的内容创作、工作流和审批。
 
 此外，通过使用 Azure 虚拟机，组织可轻松配置在虚拟机上运行的过渡和生产环境。可在虚拟存储中备份在 Azure 中创建的 SharePoint 的面向公众的虚拟机。另外，若要进行灾难恢复，组织可使用“持续异地复制”功能将位于某个数据中心的虚拟机自动备份到千里之外的其他数据中心。
 
@@ -233,19 +233,19 @@ Azure 基础结构中的虚拟机将进行验证，并能够与其他 Microsoft 
 	- 使用管理中心监视 SharePoint 场。
 	- 使用本地管理软件（如 Microsoft System Center Operations Manager）监视和管理虚拟机。
 
-### 方案 4：完全自定义的基于 SharePoint 的网站
+### 方案 4：完全自定义的基于 SharePoint 的 WEB 应用
 
-越来越多的组织希望在云中创建完全自定义的 SharePoint 网站。这些组织需要一个长期持久的可用环境来完全控制对云中运行的复杂应用程序的维护，但他们不希望花费太多的时间和资金。
+越来越多的组织希望在云中创建完全自定义的 SharePoint WEB 应用。这些组织需要一个长期持久的可用环境来完全控制对云中运行的复杂应用程序的维护，但他们不希望花费太多的时间和资金。
 
-在此方案中，组织可在云中部署其整个 SharePoint 场，并动态缩放所有组件以获取额外容量，也可以在需要时将其本地部署扩展到云中来增加容量并提高性能。此方案侧重于希望获得应用程序开发和企业内容管理的完整 SharePoint 体验的组织。更为复杂的网站还可包含增强的报告、Power View、PerformancePoint、PowerPivot、详细图表和大多数其他 SharePoint 网站功能以实现端到端的完整功能。
+在此方案中，组织可在云中部署其整个 SharePoint 场，并动态缩放所有组件以获取额外容量，也可以在需要时将其本地部署扩展到云中来增加容量并提高性能。此方案侧重于希望获得应用程序开发和企业内容管理的完整 SharePoint 体验的组织。更为复杂的 WEB 应用还可包含增强的报告、Power View、PerformancePoint、PowerPivot、详细图表和大多数其他 SharePoint WEB 应用功能以实现端到端的完整功能。
 
 组织可使用 Azure 虚拟机在经济实惠且高度安全的云基础结构上托管自定义应用程序和关联组件。他们还可将本地 Microsoft System Center 用作本地和云应用程序的常见管理工具。
 
-若要在 Azure 上实现完全自定义的 SharePoint 网站，组织必须在云中部署 Active Directory 域并在此域中设置新的虚拟机。然后，必须创建运行 SQL Server 2012 的虚拟机并将其配置为 SharePoint 场的一部分。最后，必须创建 SharePoint 场，对该场进行负载平衡并将其连接到 Active Directory 和 SQL Server（图 6）。
+若要在 Azure 上实现完全自定义的 SharePoint WEB 应用，组织必须在云中部署 Active Directory 域并在此域中设置新的虚拟机。然后，必须创建运行 SQL Server 2012 的虚拟机并将其配置为 SharePoint 场的一部分。最后，必须创建 SharePoint 场，对该场进行负载平衡并将其连接到 Active Directory 和 SQL Server（图 6）。
 
 ![azure-sharepoint-wp-14](./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-14.png)
 
-**图 6：完全自定义的基于 SharePoint 的网站**
+**图 6：完全自定义的基于 SharePoint 的 WEB 应用**
 
 下列步骤演示了如何从映像库中的可用的预构建映像创建自定义的 SharePoint 场环境。但请注意，你还可将 SharePoint 场虚拟机上载到映像库，并且授权用户可选择这些虚拟机以在 Azure 上构建所需的 SharePoint 场。
 

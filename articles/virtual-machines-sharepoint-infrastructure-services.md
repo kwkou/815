@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/08/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="01/21/2016"/>
 
 # Azure 基础结构服务中托管的 SharePoint 场
 
@@ -23,7 +23,7 @@
 
 ## 基本 SharePoint 开发/测试场
 
-对于使用经典部署模型创建的虚拟机，可使用 Azure 预览门户的 [SharePoint 服务器场](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview)功能来为面向 Internet 的 SharePoint 网站创建基本开发/测试场。
+对于使用经典部署模型创建的虚拟机，可使用 Azure 预览门户的 [SharePoint 服务器场](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview)功能来为面向 Internet 的 SharePoint WEB 应用创建基本开发/测试场。
 
 自动创建的环境由仅限云的 Azure 虚拟网络中的三个服务器组成：分别用于域控制器、SQL Server 和 SharePoint 服务器。
 
@@ -31,7 +31,7 @@
 
 ## 高可用性 SharePoint 开发/测试场
 
-对于经典虚拟机，可使用 Azure 预览门户的 [SharePoint 服务器场](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview)功能来为面向 Internet 的 SharePoint 网站创建高可用性 SharePoint 开发/测试场。
+对于经典虚拟机，可使用 Azure 预览门户的 [SharePoint 服务器场](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview)功能来为面向 Internet 的 SharePoint WEB 应用创建高可用性 SharePoint 开发/测试场。
 
 在仅限云的 Azure 虚拟网络中自动创建的环境由九个服务器组成：两个用于域控制器、三个用于 SQL Server 群集、两个应用程序层 SharePoint 服务器和两个 Web 层 SharePoint 服务器。
 

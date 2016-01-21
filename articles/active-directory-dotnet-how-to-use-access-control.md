@@ -1,12 +1,12 @@
-<properties linkid="dev-net-how-to-access-control" urlDisplayName="Access Control" pageTitle="如何使用 Access Control (.NET) - Azure 功能指南" metaKeywords="Azure Access Control Service authentication C#" description="了解如何在 Azure 应用程序中使用访问控制服务 (ACS) 在用户尝试获取对网站的访问权限时对其进行身份验证。" metaCanonical="" services="active-directory" documentationCenter=".NET" title="如何使用 Azure Active Directory 访问控制对 Web 用户进行身份验证" authors="juneb" solutions="" manager="" editor="" />
+<properties linkid="dev-net-how-to-access-control" urlDisplayName="Access Control" pageTitle="如何使用 Access Control (.NET) - Azure 功能指南" metaKeywords="Azure Access Control Service authentication C#" description="了解如何在 Azure 应用程序中使用访问控制服务 (ACS) 在用户尝试获取对 WEB 应用的访问权限时对其进行身份验证。" metaCanonical="" services="active-directory" documentationCenter=".NET" title="如何使用 Azure Active Directory 访问控制对 Web 用户进行身份验证" authors="juneb" solutions="" manager="" editor="" />
 <tags ms.service="active-directory"
     ms.date="03/04/2014"
-    wacn.date="04/11/2015"
+    wacn.date="01/21/2016"
     />
 
 # 如何使用 Azure Active Directory 访问控制对 Web 用户进行身份验证
 
-本指南演示如何使用 Azure Active Directory 访问控制（也称为访问控制服务或 ACS）在标识提供程序（如 Microsoft 和 Yahoo）用户尝试获取对网站的访问权限时对其进行身份验证。
+本指南演示如何使用 Azure Active Directory 访问控制（也称为访问控制服务或 ACS）在标识提供程序（如 Microsoft 和 Yahoo）用户尝试获取对 WEB 应用的访问权限时对其进行身份验证。
 
 ## <span class="short-header">目录</span>
 
@@ -15,7 +15,7 @@
 -   [先决条件][先决条件]
 -   [创建 Access Control 命名空间][创建 Access Control 命名空间]
 -   [创建 ASP.NET MVC 应用程序][创建 ASP.NET MVC 应用程序]
--   [将您的网站与 ACS 集成][将您的网站与 ACS 集成]
+-   [将您的 WEB 应用与 ACS 集成][将您的 WEB 应用与 ACS 集成]
 -   [测试与 ACS 的集成][测试与 ACS 的集成]
 -   [查看 ACS 发送的声明][查看 ACS 发送的声明]
 -   [在 ACS 管理门户中查看应用程序][在 ACS 管理门户中查看应用程序]
@@ -24,7 +24,7 @@
 
 ## <span class="short-header">什么是 ACS？</span>
 
-大多数开发人员都不是标识专家，他们都不想花时间开发针对其应用程序和服务的身份验证和授权机制。ACS 是一项 Azure 服务，可用于轻松对访问您的网站和服务的用户进行身份验证，而不必将复杂的身份验证逻辑添加到代码中。
+大多数开发人员都不是标识专家，他们都不想花时间开发针对其应用程序和服务的身份验证和授权机制。ACS 是一项 Azure 服务，可用于轻松对访问您的 WEB 应用和服务的用户进行身份验证，而不必将复杂的身份验证逻辑添加到代码中。
 
 ACS 具有以下可用功能：
 
@@ -44,9 +44,9 @@ ACS 在基于声明的标识主体的基础上构建，它是一种创建针对�
 
 若要完成本指南中的任务，您应了解本指南中使用的以下术语和概念：
 
-**客户端** - 尝试获取对网站的访问权限的浏览器。
+**客户端** - 尝试获取对 WEB 应用的访问权限的浏览器。
 
-**信赖方 (RP) 应用程序** - 您的网站。RP 应用程序是一个将身份验证外包给外部权威机构的网站或服务。用标识行话来说，RP 信任该权威机构。本指南说明如何将您的应用程序配置为信任 ACS。
+**信赖方 (RP) 应用程序** - 您的 WEB 应用。RP 应用程序是一个将身份验证外包给外部权威机构的 WEB 应用或服务。用标识行话来说，RP 信任该权威机构。本指南说明如何将您的应用程序配置为信任 ACS。
 
 **令牌** - 用户可通过提供由 RP 应用程序信任的颁发机构颁发的有效令牌来获取对 RP 应用程序的访问权限。对客户端进行身份验证时颁发的安全数据集合。它包含一组声明，这些声明是经过身份验证的用户的特性，例如，用户的姓名或年龄或者用户角色的标识符。已对令牌进行数字签名，这样便能标识其颁发者，并且无法更改其内容。
 
@@ -58,7 +58,7 @@ ACS 在基于声明的标识主体的基础上构建，它是一种创建针对�
 
 **Access Control 命名空间** - 提供在应用程序中对 ACS 资源进行寻址的唯一范围。该命名空间包含您的设置（例如您信任的 IP、您需要服务的 RP 应用程序、您对传入令牌应用的规则），并且它显示应用程序和开发人员用来与 ACS 进行通信的终结点。
 
-下图演示 ACS 身份验证如何使用网站：
+下图演示 ACS 身份验证如何使用 WEB 应用：
 
 ![][0]
 
@@ -113,9 +113,9 @@ Azure 将创建并激活该命名空间。
 
 1.  启动 Visual Studio 2012 或 Visual Studio Express for Web 2012（本教程不适用于早期版本的 Visual Studio）。
 2.  单击**“文件”**，然后单击**“新建项目”**。
-3.  选择 Visual C#/Web 模板，然后选择**“ASP.NET MVC 4网站”**。
+3.  选择 Visual C#/Web 模板，然后选择**“ASP.NET MVC 4 WEB 应用”**。
 
-    在本指南中，我们将使用 MVC 应用程序，但您可以使用任何网站类型来执行该任务。
+    在本指南中，我们将使用 MVC 应用程序，但您可以使用任何 WEB 应用类型来执行该任务。
 
     ![][3]
 
@@ -151,9 +151,9 @@ Azure 将创建并激活该命名空间。
 
 1.  按 F5 运行应用程序。默认的 ASP.NET MVC 应用程序将显示在 Web 浏览器中。
 
-## <span class="short-header">将您的网站与 ACS 集成</span>
+## <span class="short-header">将您的 WEB 应用与 ACS 集成</span>
 
-在此任务中，您将 ASP.NET网站与 ACS 集成。
+在此任务中，您将 ASP.NET WEB 应用与 ACS 集成。
 
 1.  在“解决方案资源管理器”中，右键单击 MvcACS 项目，然后选择**身份验证和访问**。
 
@@ -205,7 +205,7 @@ Azure 将创建并激活该命名空间。
 
 ![][13]
 
-祝贺你！您已成功将 ACS 与 ASP.NET网站集成。ACS 现在正在使用用户的 Microsoft 帐户凭据处理用户的身份验证。
+祝贺你！您已成功将 ACS 与 ASP.NET WEB 应用集成。ACS 现在正在使用用户的 Microsoft 帐户凭据处理用户的身份验证。
 
 ## <a name="bkmk_viewClaims"></a>查看 ACS 发送的声明
 
@@ -315,7 +315,7 @@ Visual Studio 中的身份验证和访问工具会自动将您的应用程序与
 
 5.  单击 **MvcACS**。
 
-    “编辑信赖方应用程序”页包含 MvcACS网站的配置设置。在此页面上更改设置并进行保存后，这些更改将立即应用于应用程序。
+    “编辑信赖方应用程序”页包含 MvcACS WEB 应用的配置设置。在此页面上更改设置并进行保存后，这些更改将立即应用于应用程序。
 
     ![][18]
 
@@ -323,7 +323,7 @@ Visual Studio 中的身份验证和访问工具会自动将您的应用程序与
 
     ![][19]
 
-在下一节中，我们将使用 ACS 管理门户的功能来对网站进行更改 -- 只是为了说明此操作是多么容易完成。
+在下一节中，我们将使用 ACS 管理门户的功能来对 WEB 应用进行更改 -- 只是为了说明此操作是多么容易完成。
 
 ## <span class="short-header">添加标识提供程序</span>
 
@@ -353,9 +353,9 @@ Visual Studio 中的身份验证和访问工具会自动将您的应用程序与
 
 ## <span class="short-header">后续步骤</span>
 
-您已创建与 ACS 集成的网站。但这只是开始！您可以在此方案的基础上进行扩展。
+您已创建与 ACS 集成的 WEB 应用。但这只是开始！您可以在此方案的基础上进行扩展。
 
-例如，您可以为此 RP 添加多个标识提供程序或允许企业目录（例如 Active Directory 域服务）中注册的用户登录到网站。
+例如，您可以为此 RP 添加多个标识提供程序或允许企业目录（例如 Active Directory 域服务）中注册的用户登录到 WEB 应用。
 
 还可以向命名空间中添加规则，这些规则确定将哪些声明发送到应用程序以便在应用程序业务逻辑中进行处理。
 
@@ -366,7 +366,7 @@ Visual Studio 中的身份验证和访问工具会自动将您的应用程序与
   [先决条件]: #pre
   [创建 Access Control 命名空间]: #create-namespace
   [创建 ASP.NET MVC 应用程序]: #create-web-app
-  [将您的网站与 ACS 集成]: #Identity-Access
+  [将您的 WEB 应用与 ACS 集成]: #Identity-Access
   [测试与 ACS 的集成]: #Test-ACS
   [查看 ACS 发送的声明]: #bkmk_viewClaims
   [在 ACS 管理门户中查看应用程序]: #bkmk_VP

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用 Git 创建 PHP-SQL网站并将其部署到 Azure 网站" 
-	description="本教程演示如何创建在 Azure SQL 数据库中存储数据的 PHP网站并使用 Git 部署到 Azure 网站。" 
+	pageTitle="使用 Git 创建 PHP-SQL WEB 应用并将其部署到 Azure WEB 应用" 
+	description="本教程演示如何创建在 Azure SQL 数据库中存储数据的 PHP WEB 应用并使用 Git 部署到 Azure WEB 应用。" 
 	services="app-service\web, sql-database" 
 	documentationCenter="php" 
 	authors="tfitzmac" 
@@ -10,40 +10,40 @@
 <tags 
 	ms.service="web-sites" 
 	ms.date="08/03/2015" 
-	wacn.date="12/17/2015"/>
+	wacn.date="01/21/2016"/>
 
-#使用 SQL 数据库创建 PHP 网站并使用 Git 进行部署
+#使用 SQL 数据库创建 PHP WEB 应用并使用 Git 进行部署
 
-本教程演示如何创建带 Azure SQL 数据库的 PHP Azure 网站以及如何使用 Git 部署该网站。本教程假定你已在计算机上安装 [PHP][install-php]、[SQL Server Express][install-SQLExpress]、[Microsoft Drivers for SQL Server for PHP][install-drivers]、Web 服务器和 [Git][install-git]。完成本指南之后，您将拥有一个在 Azure 中运行的 PHP-SQL 数据库网站。
+本教程演示如何创建带 Azure SQL 数据库的 PHP Azure WEB 应用以及如何使用 Git 部署该 WEB 应用。本教程假定你已在计算机上安装 [PHP][install-php]、[SQL Server Express][install-SQLExpress]、[Microsoft Drivers for SQL Server for PHP][install-drivers]、Web 服务器和 [Git][install-git]。完成本指南之后，您将拥有一个在 Azure 中运行的 PHP-SQL 数据库 WEB 应用。
 
 > [AZURE.NOTE]你可以使用 <a href="http://www.microsoft.com/web/downloads/platform.aspx">Microsoft Web 平台安装程序</a>安装和配置 PHP、SQL Server Express、Microsoft Drivers for SQL Server for PHP 和 Internet Information Services (IIS)。
 
 你将学习以下内容：
 
-* 如何使用 Azure 管理门户创建 Azure 网站和 SQL 数据库。由于在 Azure 网站中默认启用 PHP，因此运行 PHP 代码没有任何特殊要求。
+* 如何使用 Azure 管理门户创建 Azure WEB 应用和 SQL 数据库。由于在 Azure 中默认启用 PHP，因此运行 PHP 代码没有任何特殊要求。
 * 如何使用 Git 将应用程序发布和重新发布到 Azure。
  
-通过按照本教程中的说明进行操作，您将在 PHP 中构建简单的注册网站。将在 Azure 网站中托管应用程序。以下是已完成应用程序的屏幕快照：
+通过按照本教程中的说明进行操作，您将在 PHP 中构建简单的注册 WEB 应用。将在 Azure 中托管应用程序。以下是已完成应用程序的屏幕快照：
 
-![Azure PHP 网站][running-app]
+![Azure PHP WEB 应用][running-app]
 
 > [AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。你可以<a href="/zh-cn/pricing/1rmb-trial/">注册以获取免费试用版</a>。
 
 
-##创建 Azure 网站并设置 Git 发布
+##创建 Azure WEB 应用并设置 Git 发布
 
-按照以下步骤创建 Azure 网站和 SQL 数据库：
+按照以下步骤创建 Azure WEB 应用和 SQL 数据库：
 
 1. 登录到 [Azure 管理门户][management-portal]。
-2. 单击门户左下角的“新建”图标。![创建新的 Azure 网站][new-Website]
+2. 单击门户左下角的“新建”图标。![创建新的 Azure WEB 应用][new-Website]
 
-3. 单击“网站”，然后单击“自定义创建”。
+3. 单击“ WEB 应用”，然后单击“自定义创建”。
 
-	![自定义创建新的网站][custom-create]
+	![自定义创建新的 WEB 应用][custom-create]
 
 	在“URL”中输入值，从“数据库”下拉列表中选择“新建 SQL 数据库”，然后选择“从源控制发布”。单击对话框底部的箭头。
 
-	![填写网站详细信息][Website-details-sqlazure]
+	![填写 WEB 应用详细信息][Website-details-sqlazure]
 
 4. 输入数据库的“名称”值，选择“新建 SQL 数据库服务器”，提供登录凭据，然后选择一个区域。单击对话框底部的箭头。
 
@@ -55,9 +55,9 @@
 
 	如果之前未设置 Git 存储库，则必须提供用户名和密码。
 
-6. 创建了网站之后，打开网站的仪表板，然后选择“查看部署”。
+6. 创建了 WEB 应用之后，打开 WEB 应用的仪表板，然后选择“查看部署”。
 
-	![网站仪表板][go-to-dashboard]
+	![ WEB 应用仪表板][go-to-dashboard]
 
 9. 您将看到有关将应用程序文件推送到存储库的说明。记下这些说明 — 稍后您将需要它们。
 
@@ -65,7 +65,7 @@
 
 ##获取 SQL 数据库连接信息
 
-若要连接到正在 Azure 网站中运行的 SQL 数据库实例，你将需要连接信息。若要获取 SQL 数据库连接信息，请按照以下步骤操作：
+若要连接到正在 Azure 中运行的 SQL 数据库实例，你将需要连接信息。若要获取 SQL 数据库连接信息，请按照以下步骤操作：
 
 1. 从 Azure 管理门户中，单击“链接的资源”，然后单击数据库名称。
 
@@ -222,7 +222,7 @@
 
 ##发布应用程序
 
-在本地测试你的应用程序之后，你可以使用 Git 将其发布到 Azure 网站。但是，你首先需要更新应用程序中的数据库连接信息。使用之前获取的数据库连接信息（在“获取 SQL 数据库连接信息”部分中），使用适当的值在 `createdatabase.php` 和 `index.php` 文件中更新以下信息：
+在本地测试你的应用程序之后，你可以使用 Git 将其发布到 Azure WEB 应用。但是，你首先需要更新应用程序中的数据库连接信息。使用之前获取的数据库连接信息（在“获取 SQL 数据库连接信息”部分中），使用适当的值在 `createdatabase.php` 和 `index.php` 文件中更新以下信息：
 
 	// DB connection info
 	$host = "tcp:<value of Server>";
@@ -235,7 +235,7 @@
 
 现在，您已准备好设置 Git 发布并发布应用程序。
 
-> [AZURE.NOTE]这些步骤与上面的**创建 Azure 网站并设置 Git 发布**部分结尾标明的步骤相同。
+> [AZURE.NOTE]这些步骤与上面的**创建 Azure WEB 应用并设置 Git 发布**部分结尾标明的步骤相同。
 
 
 1. 打开 GitBash（或终端，如果 Git 在 `PATH` 中），将目录更改为应用程序的根目录，并运行以下命令：

@@ -1,7 +1,7 @@
 
 1. 登录 [Azure 管理门户](manage.windowsazure.com)，单击“移动服务”，单击你的移动服务，然后单击“仪表板”选项卡。
 
-2. （可选）如果您已经为 Azure 订阅设置移动服务或网站源控制凭证，则可以跳到步骤 4。否则，单击“速览”下的“设置源代码管理”，然后单击“是”确认。
+2. （可选）如果您已经为 Azure 订阅设置移动服务或 WEB 应用源控制凭证，则可以跳到步骤 4。否则，单击“速览”下的“设置源代码管理”，然后单击“是”确认。
 
 	![设置源代码管理](./media/mobile-services-enable-source-control/mobile-setup-source-control.png)
 

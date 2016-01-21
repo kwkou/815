@@ -10,7 +10,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="09/22/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 什么是 Azure WebJobs SDK
 
@@ -28,31 +28,31 @@
 
 本文说明 WebJobs SDK 是什么、了解部分适用的典型方案，以及提供在代码中的使用方式概述。
 
-[Web 作业](/documentation/articles/websites-webjobs-resources)是一项 Azure 网站功能，可让你在与网站相同的上下文中运行程序或脚本。WebJobs SDK 旨在简化作为 Web 作业运行并适用于 Azure 存储队列、Blob、表和 Service Bus 队列的代码的编写任务。
+[Web 作业](/documentation/articles/websites-webjobs-resources)是一项 Azure WEB 应用功能，可让你在与 WEB 应用相同的上下文中运行程序或脚本。WebJobs SDK 旨在简化作为 Web 作业运行并适用于 Azure 存储队列、Blob、表和 Service Bus 队列的代码的编写任务。
 
 WebJobs SDK 包括以下组件：
 
 * **NuGet 程序包**。添加到 Visual Studio 控制台应用程序项目的 NuGet 程序包提供一个框架，你的代码可通过此框架来使用 Azure 存储服务或 Service Bus 队列。   
   
-* **仪表板**。Azure 网站中包含 WebJobs SDK 部分，它可针对使用 NuGet 程序包的程序提供丰富的监视和诊断功能。你无需编写代码就可以使用这些监视和诊断功能。
+* **仪表板**。Azure 中包含 WebJobs SDK 部分，它可针对使用 NuGet 程序包的程序提供丰富的监视和诊断功能。你无需编写代码就可以使用这些监视和诊断功能。
 
 ## <a id="scenarios"></a>方案
 
 下面是 Azure WebJobs SDK 可帮助你轻松处理的部分典型方案：
 
-* 图像处理或其他需要大量 CPU 的工作。网站的一项常见功能是上载图像或视频。在许多时候，你想要在内容上载后处理该内容，但又不想在你执行此任务时让用户等候。
+* 图像处理或其他需要大量 CPU 的工作。 WEB 应用的一项常见功能是上载图像或视频。在许多时候，你想要在内容上载后处理该内容，但又不想在你执行此任务时让用户等候。
 
-* 队列处理。Web 前端与后端服务的一个常见通信方式是使用队列。当网站需要完成工作时，它会将消息推送到队列。后端服务会从队列提取消息，并完成工作。你可以在图像处理中使用队列：例如，在用户上载多个文件之后，文件名会被放置在队列消息中，由后端选取队列消息进行处理。或者，你可以使用队列来改进网站响应能力。例如，无需将目录直接写入 SQL 数据库，而可以写入队列并告知用户已完成，然后由后端服务处理高延迟的关系型数据库工作。有关使用图像处理的队列处理示例，请参阅 [WebJobs SDK 入门教程](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)。
+* 队列处理。Web 前端与后端服务的一个常见通信方式是使用队列。当 WEB 应用需要完成工作时，它会将消息推送到队列。后端服务会从队列提取消息，并完成工作。你可以在图像处理中使用队列：例如，在用户上载多个文件之后，文件名会被放置在队列消息中，由后端选取队列消息进行处理。或者，你可以使用队列来改进 WEB 应用响应能力。例如，无需将目录直接写入 SQL 数据库，而可以写入队列并告知用户已完成，然后由后端服务处理高延迟的关系型数据库工作。有关使用图像处理的队列处理示例，请参阅 [WebJobs SDK 入门教程](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)。
 
-* RSS 聚合。如果你有维护 RSS 源列表的网站，你可以在后台进程中提取源中的所有文章。
+* RSS 聚合。如果你有维护 RSS 源列表的 WEB 应用，你可以在后台进程中提取源中的所有文章。
 
-* 文件维护，例如聚合或清理日志文件。你可能拥有由数个网站在不同的时间所创建的日志文件，你想要结合这些文件以便执行分析工作。或者你想要计划每周运行的任务，来清理旧的日志文件。
+* 文件维护，例如聚合或清理日志文件。你可能拥有由数个 WEB 应用在不同的时间所创建的日志文件，你想要结合这些文件以便执行分析工作。或者你想要计划每周运行的任务，来清理旧的日志文件。
 
 * 输入 Azure 表。你可能会有想要分析的存储文件和 Blob，并想要将数据存储在表中。入口函数可能会写入许多行（在某些情况下可能有上百万行），而 WebJobs SDK 让你可以轻松地实现此功能。SDK 还提供进度指示器的实时监视，例如表中的写入行数。
 
 * 您想要在后台线程中执行的其他长时间运行任务，例如[发送电子邮件](https://github.com/victorhurdugaci/AzureWebJobsSamples/tree/master/SendEmailOnFailure)。
 
-在许多情况下，你可能想要扩展网站以便它在多个 VM 上运行，这就需要同时运行多个 Web 作业。在某些情况下，这可能导致相同的数据被处理多次，但如果使用 WebJobs SDK 的内置队列、Blob 和服务总线触发器，则不会造成问题。该 SDK 可确保只会针对每个消息或 Blob 处理函数一次。
+在许多情况下，你可能想要扩展 WEB 应用以便它在多个 VM 上运行，这就需要同时运行多个 Web 作业。在某些情况下，这可能导致相同的数据被处理多次，但如果使用 WebJobs SDK 的内置队列、Blob 和服务总线触发器，则不会造成问题。该 SDK 可确保只会针对每个消息或 Blob 处理函数一次。
 
 ## <a id="code"></a>代码示例
 
@@ -93,7 +93,7 @@ WebJobs SDK 提供多种使用 Azure 存储空间的方法。例如，如果使�
 
 使用 WebJobs SDK 的程序是指可在任意位置运行的标准控制台应用程序 - 它不一定要以 Web 作业的形式运行。你可以在开发计算机上本地测试程序，而在生产环境中，可以在云服务辅助角色或 Windows 服务中运行程序（如果你偏好其中一个环境）。
 
-但是，仪表板只能用作 Azure 网站的扩展。如果您想要在 WebJob 外部运行并且仍使用仪表板，可将网站配置为使用您的 WebJobs SDK 仪表板连接字符串引用的同一存储帐户，然后，网站的 WebJobs 仪表板将显示有关来自其他某处运行程序的函数执行数据。可以使用 URL https://*{webappname}*.scm.chinacloudsites.cn/azurejobs/#/functions 来访问仪表板。有关详细信息，请参阅[使用 WebJobs SDK 获取用于本地开发的仪表板](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx)，但请注意，此博客文章会显示旧的连接字符串名称。
+但是，仪表板只能用作 Azure WEB 应用的扩展。如果您想要在 WebJob 外部运行并且仍使用仪表板，可将 WEB 应用配置为使用您的 WebJobs SDK 仪表板连接字符串引用的同一存储帐户，然后， WEB 应用的 WebJobs 仪表板将显示有关来自其他某处运行程序的函数执行数据。可以使用 URL https://*{webappname}*.scm.chinacloudsites.cn/azurejobs/#/functions 来访问仪表板。有关详细信息，请参阅[使用 WebJobs SDK 获取用于本地开发的仪表板](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx)，但请注意，此博客文章会显示旧的连接字符串名称。
 
 ## <a id="nostorage"></a>使用 WebJobs SDK 调用任何函数
 
