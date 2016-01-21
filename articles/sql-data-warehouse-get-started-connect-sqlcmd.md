@@ -28,16 +28,16 @@
 
 + [sqlcmd.exe](https://msdn.microsoft.com/zh-cn/library/azure/ms162773.aspx) - 若要下载 sqlcmd.exe，请参阅[适用于 SQL Server 的 Microsoft 命令行实用程序 11](http://www.microsoft.com/zh-cn/download/details.aspx?id=36433)。
 
-## 获取完全限定的 Azure SQL 服务器名称
+## 获取可用限定的 Azure SQL 服务器名称
 
 若要连接到数据库，你需要服务器的完整名称 (****servername**.database.chinacloudapi.cn*)，该名称中包含要连接到的数据库。
 
 
 若要查找完全限定的服务器名称，请执行以下操作。
 
-1. 通过以下命令查找我们需要的服务器信息。本示例使用 AdventureWorksDW 示例数据库,Group1 资源组。
+1. 通过以下命令查找我们需要的服务器信息。本示例使用 ,Group1 资源组。
 ```
-PS C:\> Get-AzureRmSqlServer -ResourceGroupName "Group1" -DatabaseName "AdventureWorksDW"  
+PS C:\> Get-AzureRmSqlServer -ResourceGroupName "Group1" 
 ```
 
 ## 使用 sqlcmd 连接到 SQL 数据仓库

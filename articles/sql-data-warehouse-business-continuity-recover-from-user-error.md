@@ -44,13 +44,13 @@ SQL 数据仓库提供两个核心功能，用于在发生导致意外数据损�
 		
 		# List database restore points
 		Select-AzureRmSubscription -SubscriptionId <MySubscriptionID>
-		Get-AzureSqlDatabaseRestorePoints -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>" -ResourceGroupName "<YourResourceGroupName>"(example:Default-Sql-ChinaNorth)
+		Get-AzureRmSqlDatabaseRestorePoints -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>" -ResourceGroupName "<YourResourceGroupName>"(example:Default-Sql-ChinaNorth)
 		
 		# Pick desired restore point using RestorePointCreationDate
 		$PointInTime = "<RestorePointCreationDate>"
 		
 		# Get the specific database to restore
-		$Database = Get-AzureRMSqlDatabase -ServerName "<YourServerName>" –DatabaseName "<YourDatabaseName>"-ResourceGroupName "<YourResourceGroupName>"
+		$Database = Get-AzureSqlDatabase -ServerName "<YourServerName>" –DatabaseName "<YourDatabaseName>"-ResourceGroupName "<YourResourceGroupName>"
 		
 		# Restore database
 		$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceServerName "<YourServerName>" -SourceDatabase $Database -TargetDatabaseName "<NewDatabaseName>" -PointInTime $PointInTime
@@ -92,7 +92,7 @@ SQL 数据仓库提供两个核心功能，用于在发生导致意外数据损�
 5. 获取特定的已删除数据库，然后开始还原。
 
 			
-		$Database = Get-AzureSqlDatabase -RestorableDropped -ServerName "<YourServerName>" –DatabaseName "<YourDatabaseName>" -DeletionDate "1/01/2015 12:00:00 AM"
+		$Database = Get-AzureSqlDatabase -RestorableDropped -ServerName "<YourServerName>"
 			
 		$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceRestorableDroppedDatabase $Database –TargetDatabaseName "<NewDatabaseName>"
 			
