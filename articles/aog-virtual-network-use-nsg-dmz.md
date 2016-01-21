@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual network" ms.date="" wacn.date="1/4/2016"/>
+<tags ms.service="virtual network" ms.date="" wacn.date="01/21/2016"/>
 
 #使用NSG实现DMZ区域
 
@@ -123,9 +123,9 @@
 3.	配置了NSG后，虚拟网络中如果设置了规则的线路就无法ping通了（因为规则只允许TCP或者UDP协议），例如上面的例子中，Subnet-1和Subnet-2中的虚拟机可以使用Psping来测试连通性，ping命令会超时。
 4.	当设置规则的时候，对于虚拟机或者虚拟网络来说，指定开放或者屏蔽端口的时候，需要使用内网端口，不存在NAT转换。
  
-##  <a id="resrouce"></a>参考文档
+##  <a id="resource"></a>参考文档
 
-- [网络安全组](http://www.windowsazure.cn/documentation/articles/virtual-networks-nsg)
-- [如何在 PowerShell 中创建 NSG（经典）](http://wacn-ppe.chinacloudsites.cn/documentation/articles/virtual-networks-create-nsg-classic-ps)
+- [网络安全组](/documentation/articles/virtual-networks-nsg)
+- [如何在 PowerShell 中创建 NSG（经典）](/documentation/articles/virtual-networks-create-nsg-classic-ps)
 
 
