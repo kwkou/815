@@ -10,7 +10,7 @@
 <tags
    ms.service="azure-resource-manager"
    ms.date="10/25/2015"
-   wacn.date="12/17/2015"/>
+   wacn.date="01/25/2016"/>
 
 # 存储帐户 - 模板架构
 
@@ -47,7 +47,7 @@
 
 | Name | 类型 | 必选 | 允许的值 | 说明 |
 | ---- | ---- | -------- | ---------------- | ----------- |
-| accountType | 字符串 | 是 | **Standard\_LRS**<br />**Standard\_ZRS**<br />**Standard\_GRS**<br />**Standard\_RAGRS**<br />**Premium\_LRS** | 存储帐户的类型。允许的值对应于标准本地冗余、标准区域冗余、标准地域冗余、标准读取访问地域冗余和高级本地冗余。有关这些帐户类型的信息，请参阅 [Azure 存储复制](/documentation/articles/storage-redundancy)。 |
+| accountType | 字符串 | 是 | **Standard\_LRS**<br />**Standard\_GRS**<br />**Standard\_RAGRS**<br />**Premium\_LRS** | 存储帐户的类型。允许的值对应于标准本地冗余、标准地域冗余、标准读取访问地域冗余和高级本地冗余。有关这些帐户类型的信息，请参阅 [Azure 存储复制](/documentation/articles/storage-redundancy)。 |
 
 	
 ## 示例
