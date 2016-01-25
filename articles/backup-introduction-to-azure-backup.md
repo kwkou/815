@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup"
 	ms.date="08/18/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="01/25/2016"/>
 
 
 # 什么是 Azure 备份？
@@ -48,7 +48,7 @@ Azure 备份是一个多租户 Azure 服务，可让你在本地或 Azure 中备
 | --- | --- | --- | --- |
 | Azure 备份代理 | **是**<br><br>Azure 备份代理可以部署在 Azure 中运行的任何 Windows Server VM 上。 | **是**<br><br>Azure 备份代理可以部署在任何 Windows Server VM 或物理计算机上。 | Azure 备份保管库 |
 | System Center Data Protection Manager (SCDPM) | **是的**<br><br>请了解有关[使用 SCDPM 保护 Azure 中的工作负荷](http://blogs.technet.com/b/dpm/archive/2014/09/02/azure-iaas-workload-protection-using-data-protection-manager.aspx)的详细信息。 | **是**<br><br>请了解有关[保护数据中心内的工作负荷和 VM](https://technet.microsoft.com/zh-cn/library/hh758173.aspx) 的详细信息。 | 本地附加的磁盘、<br>Azure 备份保管库、<br>磁带（仅限本地） |
-| Azure 备份（VM 扩展） | **是**<br><br>专门用于[备份 Azure IaaS 虚拟机](backup-azure-vms-introduction.md)。 | **否**<br><br>请使用 SCDPM 备份数据中心内的虚拟机。 | Azure 备份保管库 |
+| Azure 备份（VM 扩展） | **是**<br><br>专门用于备份 Azure IaaS 虚拟机 | **否**<br><br>请使用 SCDPM 备份数据中心内的虚拟机。 | Azure 备份保管库 |
 
 
 ## 应用程序和工作负荷
@@ -62,8 +62,8 @@ Azure 备份是一个多租户 Azure 服务，可让你在本地或 Azure 中备
 | Microsoft SQL Server | Windows Server | [System Center DPM](/documentation/articles/backup-azure-backup-sql) |
 | Microsoft SharePoint | Windows Server | [System Center DPM](/documentation/articles/backup-azure-backup-sharepoint) |
 | Microsoft Exchange | Windows Server | System Center DPM |
-| Azure IaaS VM (Windows)| - | [Azure 备份（VM 扩展）](/documentation/articles/backup-azure-vms-introduction)|
-| Azure IaaS VM (Linux) | - | [Azure 备份（VM 扩展）](/documentation/articles/backup-azure-vms-introduction)|
+| Azure IaaS VM (Windows)| - | Azure 备份（VM 扩展）|
+| Azure IaaS VM (Linux) | - | Azure 备份（VM 扩展）|
 
 
 ## 后续步骤
@@ -71,4 +71,7 @@ Azure 备份是一个多租户 Azure 服务，可让你在本地或 Azure 中备
 - [此处](/documentation/articles/backup-azure-backup-faq)列出了有关 Azure 备份服务的常见问题。
 - 访问 [Azure 备份论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)。
 
+
+[Azure 备份（VM 扩展）]: /documentation/articles/backup-azure-vms-introduction
+[备份 Azure IaaS 虚拟机]: /documentation/articles/backup-azure-vms-introduction
 <!---HONumber=Mooncake_0104_2016-->

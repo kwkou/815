@@ -10,7 +10,7 @@
 <tags 
 	ms.service="backup"
 	ms.date="12/08/2015"
-	wacn.date=""/>
+	wacn.date="01/14/2016"/>
 
 
 # 使用 System Center 2012 R2 DPM 将 Exchange Server 备份到 Azure 备份
