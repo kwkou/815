@@ -1,9 +1,9 @@
 
 本部分说明如何从 .NET 控制台应用以标记模板通知的形式发送突发新闻。
 
-如果你使用的是移动服务，请参阅[推送入门](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push)教程。
+如果你使用的是移动服务，请参阅[推送入门](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push/)教程。
 
-如果你使用的是 Java 或 PHP，请参阅[如何从 Java/PHP 使用通知中心](/documentation/articles/notification-hubs/notification-hubs-java-backend-how-to)。你可使用[通知中心 REST 接口](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx)通过任何后端发送通知。
+如果你使用的是 Java 或 PHP，请参阅[如何从 Java/PHP 使用通知中心](/documentation/articles/notification-hubs-java-backend-how-to)。你可使用[通知中心 REST 接口](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx)通过任何后端发送通知。
 
 如果你在完成[通知中心入门][get-started]时创建了用于发送通知的控制台应用，则跳过步骤 1-3。
 
@@ -71,8 +71,7 @@
 
 <!-- URLs. -->
 [get-started]: /documentation/articles/notification-hubs/notification-hubs-windows-store-dotnet-get-started
-[Use Notification Hubs to send notifications to users]: /documentation/articles/tutorial-notify-users-mobileservices
-[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
+
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 [Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
 [Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx

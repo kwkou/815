@@ -48,7 +48,7 @@
 我们支持将通知发送到 Apple iOS、Android、Windows 通用和 Windows Phone Kindle、Android China（通过百度）、Xamarin（iOS 和 Android）、Chrome 应用平台。有关这些平台的分步入门教程，请参阅 [NH - 入门教程]
  
 ###3.是否支持 SMS/电子邮件/Web 通知？
-通知中心主要针对使用上述平台将通知发送到移动应用而设计。我们不提供发送电子邮件或 SMS 的功能，但提供这些功能的第三方平台可以与通知中心进行集成，以通过使用 Azure 移动服务发送原生推送通知。例如，本教程将探讨如何使用 Azure 移动服务发送 SMS 通知 - [通过移动服务发送 SMS] 我们也不提供现成的浏览器内推送通知。客户可能选择使用 SignalR 实现这一功能。我们还提供了将推送通知发送到将在 Google Chrome 浏览器内运行的 Chrome 应用的教程 。请参阅此 - [Chrome 应用教程]
+通知中心主要针对使用上述平台将通知发送到移动应用而设计。我们不提供发送电子邮件或 SMS 的功能，但提供这些功能的第三方平台可以与通知中心进行集成，以通过使用 Azure 移动服务发送原生推送通知。我们也不提供现成的浏览器内推送通知。客户可能选择使用 SignalR 实现这一功能。
  
 ###4.Azure 移动服务与 Azure 通知中心之间的关系如何以及各自的适用场合？ 
 如果你有现成的移动应用后端并且只想添加发送推送通知的功能，则必须使用 Azure 通知中心。如果你想要从头开始安装移动应用后端，那么你应当考虑使用 Azure 移动服务。Azure 移动服务会自动预配通知中心，以便你能够轻松地从移动应用后端发送推送通知。Azure 移动服务的定价包括通知中心的基本费用，你只需在超出所含推送时支付费用。有关详细信息，请参阅[移动服务定价]
@@ -124,8 +124,6 @@ Azure 通知中心支持在 Azure 管理门户中查看遥测数据。有关可�
 [案例研究 - 7Digital]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=3684
 [NH - REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dn530746.aspx
 [NH - 入门教程]: /documentation/articles/notification-hubs-ios-get-started
-[通过移动服务发送 SMS]: /documentation/articles/partner-twilio-mobile-services-how-to-use-voice-sms
-[Chrome 应用教程]: /documentation/articles/notification-hubs-chrome-get-started
 [移动服务定价]: /home/features/mobile-services/#price
 [后端注册指南]:https://msdn.microsoft.com/library/azure/dn743807.aspx
 [后端注册指南 - 2]:https://msdn.microsoft.com/library/azure/dn530747.aspx
