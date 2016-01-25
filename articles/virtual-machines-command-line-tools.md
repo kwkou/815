@@ -1894,7 +1894,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 + **-d** 或 **--description** &lt;description>：存储帐户的说明。
 + **-l** 或 **--location** &lt;name>：要在其中创建存储帐户的地理区域。
 + **-a** 或 **--affinity-group** &lt;name>：要与存储帐户关联的地缘组。
-+ **--type**：指示要创建的帐户的类型：带冗余选项的标准存储 (LRS/ZRS/GRS/RAGRS) 或高级存储 (PLRS)。
++ **--type**：指示要创建的帐户的类型：带冗余选项的标准存储 (LRS/GRS/RAGRS) 或高级存储 (PLRS)。
 
 **storage account set [options] <name>**
 
@@ -1910,7 +1910,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 + **-e** 或 **--label** &lt;label>：存储帐户的标签。
 + **-d** 或 **--description** &lt;description>：存储帐户的说明。
 + **-l** 或 **--location** &lt;name>：要在其中创建存储帐户的地理区域。
-+ **--type**：指示帐户的新类型：带冗余选项的标准存储 (LRS/ZRS/GRS/RAGRS) 或高级存储 (PLRS)。
++ **--type**：指示帐户的新类型：带冗余选项的标准存储 (LRS/GRS/RAGRS) 或高级存储 (PLRS)。
 
 **storage account delete [options] <name>**
 
