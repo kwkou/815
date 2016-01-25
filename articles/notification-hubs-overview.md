@@ -120,7 +120,7 @@ Azure 通知中心提供易用的基础结构，使你能够从任何后端（�
 
 ##与 App Service Mobile Apps 集成
 
-为了在 Azure 服务之间促成完美且统一的体验，[App Service Mobile Apps] 原生支持使用通知中心来推送通知。[App Service Mobile Apps] 提供面向企业开发人员和系统集成商的高度可缩放、全局可用的移动应用程序平台，该平台向移动开发人员提供一组丰富的功能。
+为了在 Azure 服务之间促成完美且统一的体验， App Service Mobile Apps 原生支持使用通知中心来推送通知。App Service Mobile Apps 提供面向企业开发人员和系统集成商的高度可缩放、全局可用的移动应用程序平台，该平台向移动开发人员提供一组丰富的功能。
 
 Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
 
@@ -168,5 +168,5 @@ Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
   [Microsoft.WindowsAzure.Messaging.NotificationHub]: http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.messaging.notificationhub.aspx
   [Microsoft.ServiceBus.Notifications]: http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.notifications.aspx
   [App Service Mobile Apps]: /documentation/articles/app-service-mobile-value-prop/
-
+  [Azure 门户]: https://manage.windowsazure.cn
 <!---HONumber=Mooncake_0104_2016-->
