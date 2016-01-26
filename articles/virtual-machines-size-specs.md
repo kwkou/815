@@ -25,9 +25,11 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 
 ## 规划注意事项
 
-虚拟机有两个可用层级：基本和标准。这两种类型都提供大小选择，但基本层级不提供标准层级中可用的一些功能，例如负载平衡和自动缩放。标准层级的大小由不同系列组成：A 和 D。其中某些大小的注意事项包括：
+虚拟机有两个可用层级：基本和标准。这两种类型都提供大小选择，但基本层级不提供标准层级中可用的一些功能，例如负载平衡和自动缩放。标准层级的大小由不同系列组成：A、D 和 DS。其中某些大小的注意事项包括：
 
 *   D 系列的 VM 旨在运行需要更高计算能力和临时磁盘性能的应用程序。D 系列 VM 为临时磁盘提供更快的处理器、更高的内存内核比和固态驱动器 (SSD)。有关详细信息，请参阅 Azure 博客[新的 D 系列虚拟机大小](http://azure.microsoft.com/blog/2014/09/22/new-d-series-virtual-machine-sizes/)上的公告。  
+
+*   DS 系列的 VM 可使用高级存储，从而为 I/O 密集型工作负荷提供高性能、低延迟的存储。这些 VM 使用固态硬盘 (SSD) 托管虚拟机的磁盘，而且还提供本地 SSD 磁盘高速缓存。高级存储只在某些区域可用。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)。
 
 虚拟机的大小会影响定价。大小还会影响虚拟机的处理、内存和存储容量。存储成本是基于存储帐户中的已使用页数进行单独计算。有关详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/#price)和 [Azure 存储定价](/home/features/storage/#price)。有关 VM 的存储的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-disks-vhds)。
 
@@ -89,6 +91,20 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 |Standard\_D13（相同）|8|56 GB|(SSD) = 400 GB|16|16x500|
 |Standard\_D14（相同）|16|112 GB|(SSD) = 800 GB|32|32x500|
 
+### 标准层级 – DS 系列*
+
+|大小 – Azure 门户\\cmdlet 和 API|CPU 核心数|内存|最大磁盘大小 – 虚拟机|最大数据磁盘（每个 1023 GB）|高速缓存大小 (GB)|最大磁盘 IOPS 和带宽|
+|---|---|---|---|---|---|---|
+|Standard\_DS1（相同）|1|3\.5|本地 SSD 磁盘 = 7 GB|2|43|<p>3,200</p><p>每秒 32 MB</p>|
+|Standard\_DS2（相同）|2|7|本地 SSD 磁盘 = 14 GB|4|86|<p>6,400</p><p>每秒 64 MB</p>|
+|Standard\_DS3（相同）|4|14|本地 SSD 磁盘 = 28 GB|8|172|<p>12,800</p><p>每秒 128 MB</p>|
+|Standard\_DS4（相同）|8|28|本地 SSD 磁盘 = 56 GB|16|344|<p>25,600</p><p>每秒 256 MB</p>|
+|Standard\_DS11（相同）|2|14|本地 SSD 磁盘 = 28 GB|4|72|<p>6,400</p><p>每秒 64 MB</p>|
+|Standard\_DS12（相同）|4|28|本地 SSD 磁盘 = 56 GB|8|144|<p>12,800</p><p>每秒 128 MB</p>|
+|Standard\_DS13（相同）|8|56|本地 SSD 磁盘 = 112 GB|16|288|<p>25,600</p><p>每秒 256 MB</p>|
+|Standard\_DS14（相同）|16|112|本地 SSD 磁盘 = 224 GB|32|576|<p>50,000</p><p>每秒 512 MB</p>|
+
+**DS 系列 VM 可能的最大每秒输入/输出操作次数 (IOPS) 和吞吐量（带宽）受磁盘大小影响。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)。
 
 ### 另请参阅
 
