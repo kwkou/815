@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="管理对容器和 blob 的匿名访问 |Windows Azure" 
-	description="了解如何使容器和 blob 可供匿名访问。" 
+	pageTitle="管理对容器和 blob 的匿名读取访问 |Windows Azure" 
+	description="了解如何使容器和 blob 可供匿名访问，以及如何对其进行程序式访问。" 
 	services="storage" 
 	documentationCenter="" 
 	authors="micurd,tamram" 
@@ -9,20 +9,16 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="09/28/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="10/26/2015" 
+	wacn.date="12/17/2015"/>
 
-# 管理对 Azure 存储资源的访问
+# 管理对容器和 blob 的匿名读取访问
 
 ## 概述
 
-默认情况下，只有存储帐户的所有者可访问该帐户中的存储资源。如果服务或应用程序需要向其他客户端提供这些资源但不共享访问密钥，则有以下选项可允许访问：
+默认情况下，只有存储帐户的所有者可访问该帐户中的存储资源。如果是 Blob 存储，则可设置容器的权限，允许对容器及其 Blob 进行匿名读取访问，这样即可授予对这些资源的访问权限而不必共享你的帐户密钥。
 
-- 可设置容器的权限以允许匿名读取该容器及其 Blob。匿名读取访问仅供用于容器和 Blob。 
-
-- 可通过共享访问签名公开资源，这样即可通过指定提供资源的间隔以及客户端对于容器、Blob、表、队列、文件共享或文件将拥有的权限，允许对这些资源进行有限的访问。
-
-- 可使用存储访问策略管理容器或其 Blob、队列、表或文件共享或其文件的共享访问签名。存储访问策略对于共享访问签名提供了另一种控制措施，并提供了一种简单明了的撤消这些签名的方法。
+如果你想要始终允许对某些 Blob 进行匿名读取访问，则最好是启用匿名访问。若要进行更精细的控制，则可以创建一个共享访问签名，这样即可使用不同的权限在指定时间间隔内委派受限访问。有关创建共享访问签名的详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)。
 
 ## 授予对容器和 blob 的匿名用户权限
 
@@ -36,7 +32,84 @@
 
 - **无公共读取访问：**仅帐户所有者可读取容器和 Blob 数据。
 
->[AZURE.NOTE] 如果服务要求你对 Blob 资源进行更精确的控制，或者你希望提供针对读取操作以外的其他操作的权限，则可以使用“共享访问签名”来使资源对用户可访问。
+你可以通过以下方式来设置容器权限：
+
+- 通过 [Azure 管理门户](https://manage.windowsazure.cn/)。
+- 通过使用存储客户端库或 REST API 以编程方式进行。
+- 通过使用 PowerShell 进行。若要了解如何通过 Azure PowerShell 来设置容器权限，请参阅[对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full#how-to-manage-azure-blobs)。
+
+### 通过 Azure 门户设置容器权限
+
+若要通过 Azure 门户设置容器权限，请按以下步骤操作：
+
+1. 导航到存储帐户的仪表板。
+2. 从列表中选择容器名称。请注意，你必须在“名称”列的右侧单击来选择容器名称。单击该名称即可向下钻取到相应容器以显示其 blob。
+3. 从工具栏中选择“编辑”。
+4. 在“编辑容器元数据”对话框的“访问权限”字段中，选择所需的权限级别，如以下屏幕截图所示。
+
+	![编辑“容器元数据”对话框](./media/storage-manage-access-to-resources/storage-manage-access-to-resources-1.png)
+
+### 使用 .NET 通过编程方式设置容器权限
+
+若要使用 .NET 客户端库设置容器的权限，请先调用 **GetPermissions** 方法以检索容器的现有权限。然后，设置 **GetPermissions** 方法返回的 **BlobContainerPermissions** 对象的 **PublicAccess** 属性。最后，使用更新的权限调用 **SetPermissions** 方法。
+
+以下示例将容器的权限设置为完全公共读取访问。若要将权限设置为仅针对 blob 的公共读取访问，请将 **PublicAccess** 属性设置为 **BlobContainerPublicAccessType.Blob**。若要删除匿名用户的所有权限，请将该属性设置为 **BlobContainerPublicAccessType.Off**。
+
+    public static void SetPublicContainerPermissions(CloudBlobContainer container)
+    {
+        BlobContainerPermissions permissions = container.GetPermissions();
+        permissions.PublicAccess = BlobContainerPublicAccessType.Container;
+        container.SetPermissions(permissions);
+    }
+
+## 匿名访问容器和 blob
+
+如果某个客户端需要以匿名方式访问容器和 blob，则可以让该客户端使用不需要凭据的构造函数。以下示例显示了如何通过多种不同的方法以匿名方式引用 Blob 服务资源。
+
+### 创建匿名客户端对象
+
+你可以创建一个新的进行匿名访问的服务客户端对象，只需提供帐户的 Blob 服务终结点即可。不过，你还必须知道该帐户中允许进行匿名访问的容器的名称。
+
+    public static void CreateAnonymousBlobClient()
+    {
+        // Create the client object using the Blob service endpoint.
+        CloudBlobClient blobClient = new CloudBlobClient(new Uri(@"https://storagesample.blob.core.Chinacloudapi.cn"));
+
+        // Get a reference to a container that's available for anonymous access.
+        CloudBlobContainer container = blobClient.GetContainerReference("sample-container");
+
+        // Read the container's properties. Note this is only possible when the container supports full public read access.
+        container.FetchAttributes();
+        Console.WriteLine(container.Properties.LastModified);
+        Console.WriteLine(container.Properties.ETag);
+    }
+
+### 以匿名方式引用容器
+
+如果你有容器的 URL，而该容器可以通过匿名方式来使用，则可使用该 URL 来直接引用容器。
+
+    public static void ListBlobsAnonymously()
+    {
+        // Get a reference to a container that's available for anonymous access.
+        CloudBlobContainer container = new CloudBlobContainer(new Uri(@"https://storagesample.blob.core.Chinacloudapi.cn/sample-container"));
+
+        // List blobs in the container.
+        foreach (IListBlobItem blobItem in container.ListBlobs())
+        {
+            Console.WriteLine(blobItem.Uri);
+        }
+    }
+
+
+### 以匿名方式引用 blob
+
+如果你有 blob 的 URL，而该 blob 允许进行匿名访问，则可使用该 URL 来直接引用 blob：
+
+    public static void DownloadBlobAnonymously()
+    {
+        CloudBlockBlob blob = new CloudBlockBlob(new Uri(@"https://storagesample.blob.Chinacloudapi.cn/sample-container/logfile.txt"));
+        blob.DownloadToFile(@"C:\Temp\logfile.txt", System.IO.FileMode.Create);
+    }
 
 ## 对匿名用户可用的功能
 
@@ -77,4 +150,4 @@
 - [共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)
 - [使用共享的访问签名委托访问](https://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx) 
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

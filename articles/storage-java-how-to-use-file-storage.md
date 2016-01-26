@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="06/03/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="10/26/2015" 
+	wacn.date="12/17/2015"/>
 
 # 如何通过 Java 使用文件存储
 
@@ -64,7 +64,7 @@
 
 ## 如何：创建共享
 
-文件存储中的所有文件和目录都位于名为 **Share** 的容器内。你的存储帐户可以拥有无数的共享，只要你的帐户容量允许。若要获得共享及其内容的访问权限，你需要在代码中创建CloudFileClient类的实例。
+文件存储中的所有文件和目录都位于名为 **Share** 的容器内。你的存储帐户可以拥有无数的共享，只要你的帐户容量允许。若要获得共享及其内容的访问权限，你需要使用文件存储客户端。
 
 	// Create the file storage client.
 	CloudFileClient fileClient = storageAccount.createCloudFileClient();
@@ -101,7 +101,7 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 
 ## 如何：创建目录
 
-你也可以将文件置于子目录中，不必将其全部置于根目录中，以便对存储进行有效的组织。Azure 文件存储服务可以创建任意数目的目录，只要你的帐户容量允许。以下代码将在根目录下创建名为 **sampledir** 的子目录。
+你也可以将文件置于子目录中，不必将其全部置于根目录中，以便对存储进行有效的组织。Azure 文件存储服务可以创建任意数目的目录，只要你的帐户允许。以下代码将在根目录下创建名为 **sampledir** 的子目录。
 
 	//Get a reference to the root directory for the share.
 	CloudFileDirectory rootDir = share.getRootDirectoryReference();
@@ -218,4 +218,4 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
  
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_1207_2015-->

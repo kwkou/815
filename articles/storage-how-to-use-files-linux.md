@@ -8,8 +8,8 @@
         editor="" />
 
 <tags ms.service="storage"
-      ms.date="10/06/2015"
-      wacn.date="11/02/2015" />
+      ms.date="10/26/2015"
+      wacn.date="12/17/2015" />
 
 
 # 如何通过 Linux 使用 Azure 文件存储 
@@ -126,4 +126,4 @@ Linux 用户，我们希望倾听你的意见！
 - [Windows Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [将连接保存到 Windows Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

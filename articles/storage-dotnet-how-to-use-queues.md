@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="08/04/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/21/2015"
+	wacn.date="12/17/2015"/>
 
 # 如何通过 .NET 使用队列存储
 
@@ -120,8 +120,8 @@
 	// Get the message from the queue and update the message contents.
     CloudQueueMessage message = queue.GetMessage();
     message.SetMessageContent("Updated contents.") ;
-    queue.UpdateMessage(message, 
-        TimeSpan.FromSeconds(0.0),  // Make it visible immediately.
+    queue.UpdateMessage(message,
+        TimeSpan.FromSeconds(60.0),  // Make it visible for another 60 seconds.
         MessageUpdateFields.Content | MessageUpdateFields.Visibility);
 
 ## 取消对下一条消息的排队
@@ -195,7 +195,7 @@
 
 ## 获取队列长度
 
-你可以获取队列中消息的估计数。使用 **FetchAttributes** 方法可请求队列服务检索队列属性，包括消息计数。**ApproximateMethodCount** 属性返回 **FetchAttributes** 方法检索到的最后一个值，而不会调用队列服务。
+你可以获取队列中消息的估计数。使用 **FetchAttributes** 方法可请求队列服务检索队列属性，包括消息计数。**ApproximateMessageCount** 属性返回 **FetchAttributes** 方法检索到的最后一个值，而不会调用队列服务。
 
     // Retrieve storage account from connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -218,7 +218,7 @@
 
 ## 删除队列
 
-若要删除队列及其包含的所有消息，请调用队列对象的 **Delete** 方法。
+若要删除队列及其包含的所有消息，请对队列对象调用 **Delete** 方法。
 
     // Retrieve storage account from connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -238,7 +238,7 @@
 现在，您已了解有关队列存储的基础知识，可单击下面的链接来了解更复杂的存储任务。
 
 - 查看队列服务参考文档，了解有关可用 API 的完整详细信息：
-    - [.NET 存储客户端库参考](http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx)
+    - [.NET 存储客户端库参考](https://msdn.microsoft.com/zh-cn/library/mt347887.aspx)
     - [REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - 通过查看[在 Azure 中存储和访问数据](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)了解可以通过 Azure 存储空间执行的更高级任务
 - 了解如何通过使用 [Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk) 简化为使用 Azure 存储空间而写的代码。
@@ -250,7 +250,7 @@
 
 
   [下载并安装 Azure SDK for.NET]：/develop/net/
-  [.NET 客户端库引用]: http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx
+  [.NET 客户端库引用]: https://msdn.microsoft.com/zh-cn/library/mt347887.aspx
   [在 Visual Studio 中创建 Azure 项目]: http://msdn.microsoft.com/zh-cn/library/azure/ee405487.aspx
   [CloudStorageAccount]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.cloudstorageaccount_methods.aspx
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
@@ -261,4 +261,4 @@
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
  
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1207_2015-->

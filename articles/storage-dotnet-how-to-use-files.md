@@ -8,10 +8,12 @@
             editor="" />
 
 <tags ms.service="storage"
-      ms.date="09/28/2015"
-      wacn.date="12/11/2015" />
+      ms.date="10/26/2015"
+      wacn.date="12/17/2015" />
 
 # 如何通过 Windows 使用 Azure 文件存储
+
+[AZURE.INCLUDE [storage-selector-file-include](../includes/storage-selector-file-include.md)]
 
 ## 概述
 
@@ -66,7 +68,7 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 > [AZURE.NOTE]建议你下载并安装最新的 Azure PowerShell 模块或升级到最新模块。
 
-通过单击"开始"并键入"Azure PowerShell"打开 Azure PowerShell 窗口。Azure PowerShell 窗口将为你加载 Azure PowerShell 模块。
+通过单击“开始”并键入 **Azure PowerShell** 打开 Azure PowerShell 窗口。Azure PowerShell 窗口将为你加载 Azure PowerShell 模块。
 
 ###为存储帐户和密钥创建上下文
 
@@ -136,6 +138,7 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 | Windows 8 | SMB 3.0 |
 | Windows Server 2012 | SMB 3.0 |
 | Windows Server 2012 R2 | SMB 3.0 |
+| Windows 10 | SMB 3.0 |
 
 ### 从运行 Windows 的 Azure 虚拟机装载文件共享
 
@@ -181,7 +184,7 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 - 安装支持 SMB 3.0 的 Windows 版本。Windows 将利用 SMB 3.0 加密来在本地客户端和云中的 Azure 文件共享之间安全地传输数据。 
 - 根据 SMB 协议的需要，在本地网络中打开端口 445（TCP 出站）的 Internet 访问。 
 
-[AZURE.NOTE]某些 Internet 服务提供商可能会阻止端口 445，因此你可能需要与你的服务提供商核实。
+> [AZURE.NOTE]某些 Internet 服务提供商可能会阻止端口 445，因此你可能需要与你的服务提供商核实。
 
 ## 使用文件存储进行开发
 
@@ -191,7 +194,7 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 若要在 Visual Studio 中创建新的控制台应用程序并安装 Azure 存储 NuGet 包，请执行以下操作：
 
-1. 在 Visual Studio 中，选择“文件”->“新建项目”，然后从 Visual C# 模板列表中选择“Windows”->“控制台应用程序”。
+1. 在 Visual Studio 中，选择“文件”>“新建项目”，然后从 Visual C# 模板列表中选择“Windows”>“控制台应用程序”。
 2. 提供控制台应用程序的名称，然后单击“确定”。
 3. 创建项目后，在解决方案资源管理器中右键单击该项目并选择“管理 NuGet 包”。在线搜索“WindowsAzure.Storage”，然后单击“安装”以安装 Azure 存储包和依赖项。
 
@@ -537,4 +540,4 @@ Azure 存储服务分析现在支持用于文件存储的指标。使用指标�
 - [将连接保存到 Windows Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)-->
  
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->
