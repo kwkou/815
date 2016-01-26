@@ -17,12 +17,12 @@
 
 本文介绍如何创建和上载包含 FreeBSD 操作系统的虚拟硬盘 (VHD)，以便可以使用它作为自己的映像在 Azure 中创建虚拟机 (VM)。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 ##先决条件##
 本文假定你拥有以下项目：
 
-- **Azure 订阅** - 如果你没有帐户，只需花费几分钟就能创建一个帐户。如果你有 MSDN 订阅，请参阅 [MSDN 订户的 Azure 权益](http://www.windowsazure.cn/pricing/member-offers/msdn-benefits-details/)。否则，请参阅[创建一个免费试用帐户](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/)。  
+- **Azure 订阅** - 如果你没有帐户，只需花费几分钟就能创建一个帐户。请参阅[创建一个免费试用帐户](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/)。  
 
 - **Azure PowerShell 工具** - 已安装 Windows Azure PowerShell 模块并将其配置为使用你的订阅。若要下载该模块，请参阅 [Azure 下载](/downloads/)。可在此处获取安装和配置该模块的教程。你将使用 [Azure 下载](/downloads/) cmdlet 上载 VHD。
 

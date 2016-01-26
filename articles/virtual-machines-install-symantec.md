@@ -15,7 +15,7 @@
 
 # 如何在 Windows VM 上安装和配置 Symantec Endpoint Protection
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 本文演示了如何在运行 Windows Server 的新的或现有虚拟机 (VM) 上安装和配置 Symantec Endpoint Protection。这是完整的客户端，其中包括病毒和间谍软件防护、防火墙和入侵防御等服务。

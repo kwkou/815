@@ -16,7 +16,7 @@
 
 #使用远程桌面连接到 Windows Azure Linux VM
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型管理资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 ##概述
 

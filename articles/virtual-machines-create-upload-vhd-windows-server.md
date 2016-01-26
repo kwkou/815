@@ -15,7 +15,7 @@
 
 # 创建 Windows Server VHD 并将其上载到 Azure
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 本文介绍如何上载包含操作系统的虚拟硬盘 (VHD)，以便可以使用它作为映像来基于该映像创建虚拟机。有关 Windows Azure 中的磁盘和 VHD 的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-disks-vhds)。

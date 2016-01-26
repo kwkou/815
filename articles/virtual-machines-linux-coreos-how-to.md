@@ -17,7 +17,7 @@
 
 本主题介绍 [CoreOS] 并演示如何在 Azure 上创建三个 CoreOS 虚拟机构成的群集，以帮助你快速了解此操作系统。它使用非常基本的 CoreOS 部署元素和来自 [CoreOS 与 Azure]、[Tim Park 的 CoreOS 教程]和 [Patrick Chanezon 的 CoreOS 教程]中的示例，演示了解 CoreOS 部署的基本结构及成功运行三个虚拟机构成的群集的绝对最低要求。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model]（https://azure.microsoft.com/documentation/templates/coreos-with-fleet-multivm/)。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 ## CoreOS、群集和 Linux 容器

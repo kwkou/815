@@ -20,7 +20,7 @@
 - [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
 
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
  
 下列步骤演示如何通过使用填空方法创建 Azure PowerShell 命令集来创建 Linux 虚拟机。如果你不熟悉 Azure PowerShell 或只想知道为成功的配置指定什么值，则此方法很有用。
 

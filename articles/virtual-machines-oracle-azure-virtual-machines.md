@@ -15,7 +15,7 @@
 
 # 在 Azure 虚拟机上托管的 Oracle 软件
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
  
 
 在 Azure 基础结构服务中，设置要在虚拟机上运行的第一个或下一个开发/测试或生产 Oracle 数据库。利用方便的配置和快速扩展 Oracle 数据库工作负荷的功能来包含新的容量。

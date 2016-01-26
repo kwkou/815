@@ -15,7 +15,8 @@
 
 # 将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
+
 
 本文介绍如何在服务管理模式（asm 模式）下使用 Azure CLI 在 Mac、Linux 和 Windows 计算机的命令行中创建、管理和删除服务。你可以使用 Azure SDK 的各种库、Azure PowerShell 和 Azure 门户执行许多相同的任务。在服务管理模式下使用 Azure 服务从概念上讲类似于创建和管理各个 Azure 概念和服务（如 WEB 应用、虚拟机、虚拟网络、存储器等）。
 
@@ -168,8 +169,8 @@
 	~$ azure account env show
 	info:    Executing command account env show
 	Environment name: AzureCloud
-	data:    Environment publishingProfile  <!--http://go.microsoft.com/fwlink/?LinkId=2544--><!--??????cannot be found -->
-	data:    Environment portal  <!--http://go.microsoft.com/fwlink/?LinkId=2544--><!--??????cannot be found -->
+	data:    Environment publishingProfile  http://go.microsoft.com/fwlink/?LinkId=2544
+	data:    Environment portal  http://go.microsoft.com/fwlink/?LinkId=2544
 	info:    account env show command OK
 
 **account env add [options] [environment]**
@@ -221,7 +222,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 **-s** 订阅。<br /> 
 **-o, --community** 指定的映像是社区映像。<br /> 
 **-w** 虚拟网络名称。<br/> 
-**-l, --location** 指定位置（例如，“North Central China”）。<br /> 
+**-l, --location** 指定位置（例如，“China North”）。<br /> 
 **-a, --affinity-group** 指定地缘组。<br /> 
 **-w, --virtual-network-name** 指定要在其中添加新虚拟机的虚拟网络。可从 Azure 门户设置和管理虚拟网络。<br /> 
 **-b, --subnet-names** 指定要分配虚拟机的子网名称。
@@ -259,7 +260,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 	info:   Executing command vm location list
 	data:   Name                   Display Name
 	data:   ---------------------  ------------
-	data:   Azure Preview  North US
+	data:   Azure Preview  China North
 	info:   account location list command OK
 
 **vm show [options] &lt;name>**
@@ -461,7 +462,7 @@ info:   vm shutdown command OK
 	data:       Label: 'Windows Server 2008 R2 SP1, Nov 2011',
 	data:       Name: 'MSFT__Windows-Server-2008-R2-SP1.11-29-2011',
 	data:       Description: 'Microsoft Windows Server 2008 R2 SP1',
-	data:       @: { xmlns: 'http://schemas.microsoft.cn/windowsazure', xmlns:i: 'http://www.w3.org/2001/XMLSchema-instance' },
+	data:       @: { xmlns: 'http://schemas.microsoft.com/windowsazure', xmlns:i: 'http://www.w3.org/2001/XMLSchema-instance' },
 	data:       Category: 'Microsoft',
 	data:       OS: 'Windows',
 	data:       Eula: 'http://www.microsoft.com',

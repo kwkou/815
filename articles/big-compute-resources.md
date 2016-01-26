@@ -71,7 +71,7 @@ HPC Pack 是在 Microsoft Azure 和 Windows Server 技术基础之上构建的 M
 
 ## 计算密集型实例
 
-Azure 提供[不同的大小](/documentation/articles/virtual-machines-size-specs)，包括计算密集型的 [A8、A9、A10 和 A11 实例](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)，用于运行 Linux 和 Windows HPC 工作负荷。
+Azure 提供[不同的大小](/documentation/articles/virtual-machines-size-specs)，用于运行 Linux 和 Windows HPC 工作负荷。
 
 * [设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-cluster-rdma)
 

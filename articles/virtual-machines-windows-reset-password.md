@@ -93,7 +93,7 @@ VMAccess 扩展在虚拟机上运行这两个命令：
 
 ## 其他资源
 
-[Azure VM 扩展和功能](http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
+[Azure VM 扩展和功能](/documentation/articles/virtual-machines-extensions-features)
 
 [使用 RDP 或 SSH 连接到 Azure 虚拟机](http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx)
 

@@ -325,7 +325,7 @@ Azure 订阅最多可以支持 200 个云服务。
 任务：
 
 - 使用命名约定定义每个虚拟机名称。
-- 使用 Azure 门户、**New-AzureVM** PowerShell cmdlet、Azure CLI，或使用资源管理器模板创建虚拟机。
+- 使用 Azure 门户、**New-AzureVM** PowerShell cmdlet 或使 Azure CLI。
 
 ## IT 工作负荷的示例：Contoso 财务分析引擎
 

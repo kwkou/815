@@ -12,23 +12,21 @@
  	ms.date="09/28/2015"
  	wacn.date="11/27/2015"/>
 
-# 使用 HPC Pack 及 A8 和 A9 实例设置一个运行 MPI 应用程序的 Windows RDMA 群集
+# 使用 HPC Pack 设置一个运行 MPI 应用程序的 Windows RDMA 群集
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
 
 
-本文说明如何使用 [Microsoft HPC Pack](https://technet.microsoft.com/zh-cn/library/cc514029) 和[大小为 A8 和 A9 的计算密集型实例](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)在 Azure 中设置一个 Windows RDMA 群集，以运行并行消息传递接口 (MPI) 应用程序。当你配置了基于 Windows Server 的 A8 和 A9 实例以运行支持的 MPI 实现时，MPI 应用程序将通过 Azure 中基于远程直接内存访问 (RDMA) 技术的低延迟、高吞吐量网络高效地进行通信。
+本文说明如何使用 [Microsoft HPC Pack](https://technet.microsoft.com/zh-cn/library/cc514029) 在 Azure 中设置一个 Windows RDMA 群集，以运行并行消息传递接口 (MPI) 应用程序。当你配置了基于 Windows Server 的实例以运行支持的 MPI 实现时，MPI 应用程序将通过 Azure 中基于远程直接内存访问 (RDMA) 技术的低延迟、高吞吐量网络高效地进行通信。
 
->[AZURE.NOTE]Azure Windows RDMA 目前支持使用 Microsoft Network Direct 接口在 A8 与 A9 实例之间进行通信的 MPI 应用程序。
->
-> Azure 还提供了 A10 和 A11 计算密集型实例，其处理能力与 A8 和 A9 实例相同，但无需连接到 RDMA 后端网络。若要在 Azure 中运行 MPI 工作负荷，通常使用 A8 和 A9 实例可获得最佳性能。
+>[AZURE.NOTE]Azure Windows RDMA 目前支持使用 Microsoft Network Direct 接口在实例之间进行通信的 MPI 应用程序。
 
 如果你想要在访问 Azure RDMA 网络的 Linux VM 上运行 MPI 工作负荷，请参阅[设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-cluster-rdma)。
 
 ## Windows HPC 群集部署选项
-Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时建议使用的工具。在使用 A8 和 A9 实例时，HPC Pack 是运行可访问 Azure 中 RDMA 网络的基于 Windows 的 MPI 应用程序的最有效方法。HPC Pack 中包括适用于 Windows 消息传递接口的 Microsoft 实现的运行时环境。
+Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时建议使用的工具。HPC Pack 是运行可访问 Azure 中 RDMA 网络的基于 Windows 的 MPI 应用程序的最有效方法。HPC Pack 中包括适用于 Windows 消息传递接口的 Microsoft 实现的运行时环境。
 
-本文将介绍使用 Microsoft HPC Pack 部署 A8 和 A9 实例的以下两种方案。
+本文将介绍使用 Microsoft HPC Pack 部署实例的以下两种方案。
 
 * 方案 1.部署计算密集型辅助角色实例 (PaaS)
 
@@ -36,22 +34,19 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 
 ## 先决条件
 
-* **查看有关计算密集型实例的[背景信息和注意事项](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)**
-
-
 * **Azure 订阅** - 如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/1rmb-trial/)。
 
 
-* **内核配额** - 你可能需要增加内核配额才能部署 A8 或 A9 VM 的群集。例如，若要使用 HPC Pack 部署 8 个 A9 实例，你至少需要 128 个核心。若要增加配额，可免费建立[在线客户支持请求](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。
+* **内核配额** - 你可能需要增加内核配额才能部署 VM 的群集。例如，若要使用 HPC Pack 部署 8 个 A9 实例，你至少需要 128 个核心。若要增加配额，可免费建立[在线客户支持请求](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。
 
 ## 方案 1.部署计算密集型辅助角色实例 (PaaS)
 
 
-从现有的 HPC Pack 群集，添加运行在云服务 (PaaS) 中的 Azure 辅助角色实例（Azure 节点）形式的额外计算资源。此功能（也称为从 HPC Pack“迸发到 Azure”）支持一定范围的辅助角色实例大小。若要使用计算密集型实例，只需在添加 Azure 节点时将大小指定为 A8 或 A9 即可。
+从现有的 HPC Pack 群集，添加运行在云服务 (PaaS) 中的 Azure 辅助角色实例（Azure 节点）形式的额外计算资源。此功能（也称为从 HPC Pack“迸发到 Azure”）支持一定范围的辅助角色实例大小。
 
-以下是从现有（通常在本地）群集迸发到 A8 或 A9 Azure 实例的步骤。可以使用类似的过程，将辅助角色实例添加到部署在 Azure VM 中的 HPC Pack 头节点。
+以下是从现有（通常在本地）群集迸发到 Azure 实例的步骤。可以使用类似的过程，将辅助角色实例添加到部署在 Azure VM 中的 HPC Pack 头节点。
 
->[AZURE.NOTE]有关使用 HPC Pack 迸发到 Azure 的教程，请参阅[使用 HPC Pack 设置混合群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster)。请注意，以下步骤中的注意事项仅适用于 A8 和 A9 Azure 节点。
+>[AZURE.NOTE]有关使用 HPC Pack 迸发到 Azure 的教程，请参阅[使用 HPC Pack 设置混合群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster)。请注意，以下步骤中的注意事项仅适用于 Azure 节点。
 
 ![迸发到 Azure][burst]
 
@@ -59,7 +54,7 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 
 4. **部署和配置 HPC Pack 2012 R2 头节点**
 
-    从 [Microsoft 下载中心](https://www.microsoft.com/download/details.aspx?id=47755)下载最新的 HPC Pack 安装包。有关 Azure 迸发部署准备工作的要求和说明，请参阅 [HPC Pack 入门指南](https://technet.microsoft.com/zh-cn/library/jj884144.aspx)和[使用 Microsoft HPC Pack 迸发到 Azure](https://technet.microsoft.com/zh-cn/library/gg481749.aspx)。
+    从 [Microsoft 下载中心](https://www.microsoft.com/download/details.aspx?id=49922)下载最新的 HPC Pack 安装包。有关 Azure 迸发部署准备工作的要求和说明，请参阅 [HPC Pack 入门指南](https://technet.microsoft.com/zh-cn/library/jj884144.aspx)和[使用 Microsoft HPC Pack 迸发到 Azure](https://technet.microsoft.com/zh-cn/library/gg481749.aspx)。
 
 5. **在 Azure 订阅中设置管理证书**
 
@@ -79,8 +74,6 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 
     在 HPC 群集管理器中使用“添加节点”向导。有关详细信息，请参阅[向 Windows HPC 群集中添加 Azure 节点](http://technet.microsoft.com/zh-cn/library/gg481758.aspx#BKMK_Add)。
 
-    指定节点大小时，请选择“A8”或“A9”。
-
 9. **启动（设置）节点并使它们联机以运行作业**
 
     在 HPC 群集管理器中选择节点，并使用“启动”操作。完成预配后，在 HPC 群集管理器中选择节点并使用“联机”操作。节点将准备运行作业。
@@ -96,23 +89,23 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 
 ### 其他注意事项
 
-* **代理节点** - 在每个使用计算密集型实例的“迸发到 Azure”部署中，除了你指定的 Azure 辅助角色实例外，HPC Pack 至少还会将另外 2 个 A8 大小的实例自动部署为代理节点。有关详细信息，请参阅[设置 Azure 代理节点的数量](https://technet.microsoft.com/zh-cn/library/jj899633.aspx)。代理节点使用分配给订阅的内核，并会与 Azure 辅助角色实例一起产生费用。
+* **代理节点** - 在每个使用计算密集型实例的“迸发到 Azure”部署中，除了你指定的 Azure 辅助角色实例外，HPC Pack 至少还会将另外 2 个实例自动部署为代理节点。有关详细信息，请参阅[设置 Azure 代理节点的数量](https://technet.microsoft.com/zh-cn/library/jj899633.aspx)。代理节点使用分配给订阅的内核，并会与 Azure 辅助角色实例一起产生费用。
 
 * **虚拟网络** - HPC Pack 目前不支持点到站点 VPN 配置或将区域虚拟网络用于 PaaS 部署。
 
 
 ## 方案 2.在计算密集型 VM (IaaS) 中部署计算节点
 
-在此方案中，你可以将 HPC Pack 群集的头节点和计算节点部署到 Azure 虚拟网络中已加入 Active Directory 域的 VM 中。[HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)将自动完成此过程的大多数步骤，并提供了灵活的部署选项，其中包括可以指定群集节点的 A8 或 A9 VM 大小。以下步骤将指导你使用这种自动的部署方法。或者，你也可以使用 Azure 快速入门模板，结合资源管理器部署模型来部署群集。对于测试部署，你也可以手动部署 Active Directory 域、头节点 VM，计算节点 VM 以及 Azure 中 HPC Pack 群集基础结构的其他部分。请参阅 [Azure 中 Microsoft HPC Pack 的 HPC 群集选项](/documentation/articles/virtual-machines-hpcpack-cluster-options)。
+在此方案中，你可以将 HPC Pack 群集的头节点和计算节点部署到 Azure 虚拟网络中已加入 Active Directory 域的 VM 中。[HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)将自动完成此过程的大多数步骤，并提供了灵活的部署选项，其中包括可以指定群集节点的 VM 大小。以下步骤将指导你使用这种自动的部署方法。或者，你也可以使用 Azure 快速入门模板，结合资源管理器部署模型来部署群集。对于测试部署，你也可以手动部署 Active Directory 域、头节点 VM，计算节点 VM 以及 Azure 中 HPC Pack 群集基础结构的其他部分。请参阅 [Azure 中 Microsoft HPC Pack 的 HPC 群集选项](/documentation/articles/virtual-machines-hpcpack-cluster-options)。
 
 ![Azure VM 中的群集][iaas]
 
 
 1. **创建一个群集头节点，并通过在客户端计算机上运行 HPC Pack IaaS 部署脚本来计算节点 VM**
 
- 从[ Microsoft 下载中心](https://www.microsoft.com/download/details.aspx?id=47755)下载 HPC Pack IaaS 部署脚本包。
+ 从[ Microsoft 下载中心](https://www.microsoft.com/download/details.aspx?id=49922)下载 HPC Pack IaaS 部署脚本包。
 
- 若要准备客户端计算机、创建脚本配置文件并运行该脚本，请参阅[使用 HPC Pack IaaS 部署脚本创建 Windows HPC 群集](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)。若要部署大小为 A8 和 A9 的计算节点，请参阅本主题中稍后介绍的其他注意事项。
+ 若要准备客户端计算机、创建脚本配置文件并运行该脚本，请参阅[使用 HPC Pack IaaS 部署脚本创建 Windows HPC 群集](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)。
 
 2. **使计算节点联机以运行作业**
 
@@ -127,24 +120,24 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
     完成运行作业后，请在 HPC 群集管理器中使节点脱机。然后，使用 Azure 管理工具来关闭这些节点。
 
 ### 运行群集部署脚本的其他注意事项
-* **虚拟网络** - 确保在 A8 和 A9 实例可用的区域中指定一个新的虚拟网络。
+* **虚拟网络** - 确保在实例可用的区域中指定一个新的虚拟网络。
 
 
-* **Windows Server 操作系统** - 若要支持 RDMA 连接，请为大小为 A8 或 A9 的计算节点 VM 指定 Windows Server 2012 R2 或 Windows Server 2012 操作系统。
+* **Windows Server 操作系统** - 若要支持 RDMA 连接，请为 VM 指定 Windows Server 2012 R2 或 Windows Server 2012 操作系统。
 
 
-* **云服务** - 我们建议你在一个云服务中部署头节点，在另一个云服务中部署 A8 和 A9 计算节点。
+* **云服务** - 我们建议你在一个云服务中部署头节点，在另一个云服务中部署计算节点。
 
 
-* **头节点大小** - 添加大小为 A8 或 A9 的计算节点 VM 时，请考虑至少为头节点选择 A4（“特大”）大小。
+* **头节点大小** - 添加计算节点 VM 时，请考虑至少为头节点选择 A4（“特大”）大小。
 
 
-* **HpcVmDrivers 扩展** - 当你部署大小为 A8 或 A9、运行 Windows Server 操作系统的计算节点时，部署脚本会自动安装 Azure VM 代理和 HpcVmDrivers 扩展。HpcVmDrivers 扩展将驱动程序安装在计算节点 Vm 上，以便它们可以连接到 RDMA 网络。请参阅 [Azure VM 扩展和功能](/documentation/articles/virtual-machines-extensions-features)。
+* **HpcVmDrivers 扩展** - 当你部署运行 Windows Server 操作系统的计算节点时，部署脚本会自动安装 Azure VM 代理和 HpcVmDrivers 扩展。HpcVmDrivers 扩展将驱动程序安装在计算节点 Vm 上，以便它们可以连接到 RDMA 网络。请参阅 [Azure VM 扩展和功能](/documentation/articles/virtual-machines-extensions-features)。
 
 
-* **群集网络配置** - 部署脚本将自动配置拓扑 5 中的 HPC Pack 群集（企业网络上的所有节点）。对于 VM 中的所有 HPC Pack 集群部署（包括计算节点大小为 A8 或 A9 的部署）而言，此拓扑是所必需。以后请不要更改群集网络拓扑。
+* **群集网络配置** - 部署脚本将自动配置拓扑 5 中的 HPC Pack 群集（企业网络上的所有节点）。对于 VM 中的所有 HPC Pack 集群部署（包括计算节点的部署）而言，此拓扑是所必需。以后请不要更改群集网络拓扑。
 
-## 在 A8 和 A9 实例上运行 MPI 应用程序
+## 运行 MPI 应用程序
 
 ### 示例：在 HPC Pack 群集上运行 mpipingpong
 
@@ -210,7 +203,7 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 * Azure 会定期对云服务中的辅助角色实例进行重新设置，且不会事先通知（例如，出于系统维护目的，或者在实例失败时）。如果在实例正在运行一个 MPI 作业时对它进行重新设置，则该实例将会丢失其所有数据，并且返回到首次部署它时的状态，这可能导致该 MPI 作业失败。你用于单个 MPI 作业的节点越多，该作业的运行时间就会越长，在某一作业正在运行时重新设置其中一个实例的可能性就越大。如果你在部署中将单个节点指定为文件服务器，则也应考虑此情况。
 
 
-* 不必使用 A8 和 A9 实例即可在 Azure 中运行 MPI 作业。你可以使用 HPC Pack 支持的任何实例大小。但是，为运行可能易受连接节点的网络延迟和带宽影响的相对大规模的 MPI 作业，建议使用 A8 和 A9 实例。如果你使用并非 A8 和 A9 的其他实例来运行易受延迟和带宽影响的 MPI 作业，我们建议运行小型作业，其中，单个任务仅在几个节点上运行。
+* 你可以使用 HPC Pack 支持的任何实例大小。但是，为运行可能易受连接节点的网络延迟和带宽影响的相对大规模的 MPI 作业。
 
 * 部署到 Azure 实例的应用程序将受到与应用程序关联的许可条款的限制。请向商用应用程序的供应商核实，了解针对在云中运行的许可或其他限制。并非所有供应商都提供即付即用许可。
 

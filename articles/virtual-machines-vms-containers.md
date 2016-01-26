@@ -138,7 +138,7 @@ Docker 有自己的 VM 创建工具集 ([docker-machine](/documentation/articles
 
 另外，[kubernetes](http://azure.microsoft.com/blog/2014/08/28/hackathon-with-kubernetes-on-azure) 是一种用于 VM 和容器组管理的开放源系统，借鉴了从 Google 学习的经验。你甚至可以将 [kubernetes 与 weave 配合使用，以提供网络支持](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/coreos/azure/README.md#kubernetes-on-azure-with-coreos-and-weave)。
 
-[Deis](http://deis.io/overview/) 是一种开放源“平台即服务”(PaaS)，可帮助在你自己的服务器上轻松部署和管理应用程序。Deis 构建在 Docker 和 CoreOS 的基础之上，可提供轻型 PaaS，其中包含一个受 Heroku 启发的工作流。你可以轻松[创建一个包含 3 个节点的 Azure VM 组并将 Deis 安装](/documentation/articles/virtual-machines-deis-cluster)到 Azure 上，然后[安装 Hello World Go 应用程序](virtual-machines-deis-cluster.md#deploy-and-scale-a-hello-world-application)。
+[Deis](http://deis.io/overview/) 是一种开放源“平台即服务”(PaaS)，可帮助在你自己的服务器上轻松部署和管理应用程序。Deis 构建在 Docker 和 CoreOS 的基础之上，可提供轻型 PaaS，其中包含一个受 Heroku 启发的工作流。
 
 [CoreOS](/documentation/articles/virtual-machines-linux-coreos-how-to) 是一种 Linux 分发，可提供优化的占用空间和 Docker 支持，且具有名为 [rkt](https://github.com/coreos/rkt) 的自有容器系统，还有一个名为 [fleet](/documentation/articles/virtual-machines-linux-coreos-fleet-get-started) 的容器组管理工具。
 

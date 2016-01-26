@@ -16,7 +16,7 @@
 
 # Azure 虚拟机上的 SharePoint 2010 部署
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 Microsoft SharePoint Server 2010 提供了丰富的部署灵活性，可帮助组织确定合适的部署方案，以便与其业务需求和目标保持一致。Azure 虚拟机产品/服务通过 Windows Azure 进行托管和管理，它提供了完整、可靠且可用的基础结构，以便支持各种按需应用程序和数据库工作负荷（如 Microsoft SQL Server 和 SharePoint 部署）。

@@ -17,7 +17,7 @@
 
 # 在使用经典部署模型创建的运行 Windows Server 2012 R2 的虚拟机上安装 MySQL
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 [MySQL](http://www.mysql.com) 是一种受欢迎的 SQL 开源数据库。使用 [Azure 门户](http://manage.windowsazure.cn)，你可以从映像库创建运行 Windows Server 2012 R2 的虚拟机。然后，你就可以将其安装并配置为 MySQL Server。

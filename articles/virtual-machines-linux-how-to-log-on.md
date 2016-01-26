@@ -18,7 +18,7 @@
 
 #如何登录到运行 Linux 的虚拟机 #
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 对于运行 Linux 操作系统的虚拟机，你可以使用安全外壳 (SSH) 客户端来登录。
 

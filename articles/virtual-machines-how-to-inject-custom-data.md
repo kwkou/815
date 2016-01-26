@@ -18,7 +18,7 @@
 
 无论操作系统是 Windows 还是 Linux 分发，在设置 Azure 虚拟机时，将脚本或其他数据注入到 Azure 虚拟机都是非常常见的方案。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 本主题介绍如何执行以下操作：
@@ -40,7 +40,7 @@
     VMNAME=mycustomdataubuntu
     USERNAME=username
     VMIMAGE= An image chosen from among those listed by azure vm image list
-    azure vm create $VMNAME $VMIMAGE $USERNAME $PASSWORD --location "West US" --json -d ./custom-data.txt -e 22
+    azure vm create $VMNAME $VMIMAGE $USERNAME $PASSWORD --location "China North" --json -d ./custom-data.txt -e 22
 ```
 
 

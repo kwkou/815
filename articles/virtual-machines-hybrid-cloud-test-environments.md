@@ -15,7 +15,8 @@
 
 # Azure 混合云测试环境
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
+
 
 对于开发/测试或概念证明，混合云测试环境使用本地 Internet 连接和公共 IP 地址之一，逐步引导你设置可正常工作的跨界 Azure 虚拟网络 (VNet)。完成后，可以执行应用程序开发和测试、用简化的 IT 工作负荷进行试验，以及测量相对于你在 Internet 上的位置的站点到站点虚拟专用网络 (VPN) 连接的性能。
 

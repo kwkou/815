@@ -44,7 +44,6 @@ Ubuntu 是一种非常流行的经 Azure 认可的 Linux 分发，它基于 dpkg
 2. [如何：Ubuntu LAMP 堆栈](/documentation/articles/virtual-machines-linux-install-lamp-stack)
 3. [如何：MySQL 群集](/documentation/articles/virtual-machines-linux-mysql-cluster)
 4. [如何：Node.js 和 Cassandra](/documentation/articles/virtual-machines-linux-nodejs-running-cassandra)
-5. [如何：IPython Notebook](/documentation/articles/virtual-machines-python-ipython-notebook)
 6. [钻研：使用 Docker 容器在 Linux 上运行 ASP.NET 5](http://blogs.msdn.com/b/webdev/archive/2015/01/14/running-asp-net-5-applications-in-linux-containers-with-docker.aspx)
 
 

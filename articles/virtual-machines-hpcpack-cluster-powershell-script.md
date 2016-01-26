@@ -14,7 +14,7 @@
 
 # 使用 HPC Pack IaaS 部署脚本在 Azure VM 中创建高性能计算 (HPC) 群集
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 

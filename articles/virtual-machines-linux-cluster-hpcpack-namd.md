@@ -16,7 +16,7 @@
 
 本文介绍如何在 Azure 上部署 Microsoft HPC Pack 群集，以及如何在虚拟群集网络的多个 Linux 计算节点上通过 **charmrun** 运行 [NAMD](http://www.ks.uiuc.edu/Research/namd/) 作业，以计算和直观呈现大型生物分子系统的结构。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 

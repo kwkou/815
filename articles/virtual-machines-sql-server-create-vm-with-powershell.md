@@ -23,7 +23,7 @@
 
 本文提供了有关如何通过使用 PowerShell cmdlet 在 Azure 中创建 SQL Server 虚拟机的步骤。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。<!-- 如果你想要使用 PowerShell 中的资源管理器创建 SQL Server 虚拟机，请参阅以下主题中有关资源管理器 VM 的一般说明：[使用资源管理器和 Azure PowerShell 创建和预配置 Windows 虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)。-->
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
 
 ## 安装和配置 PowerShell
 

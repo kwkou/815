@@ -17,7 +17,7 @@
 
 [MySQL][MySQL] 是一种受欢迎的 SQL 开源数据库。本教程介绍如何创建运行 OpenSUSE Linux 的虚拟机，然后安装 MySQL。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 <br>
