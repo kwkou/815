@@ -249,7 +249,7 @@
 
 
 
-  [下载并安装 Azure SDK for.NET]：/develop/net/
+  [下载并安装 Azure SDK for.NET]:/develop/net/
   [.NET 客户端库引用]: https://msdn.microsoft.com/zh-cn/library/mt347887.aspx
   [在 Visual Studio 中创建 Azure 项目]: http://msdn.microsoft.com/zh-cn/library/azure/ee405487.aspx
   [CloudStorageAccount]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.cloudstorageaccount_methods.aspx
