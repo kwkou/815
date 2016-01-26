@@ -15,7 +15,7 @@
 
 #如何设置虚拟机的终结点
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 在 Azure 中创建的所有虚拟机都可以通过专用网络通道与同一云服务或虚拟网络中的其他虚拟机自动连接。但是，Internet 上的计算机或其他虚拟网络需要终结点才能定向虚拟机的入站网络流量。
 

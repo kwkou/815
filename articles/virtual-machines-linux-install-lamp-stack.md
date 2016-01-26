@@ -17,7 +17,7 @@
 
 #在 Azure 中的 Linux 虚拟机上安装 LAMP 堆栈
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用资源管理器部署模型或经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 LAMP 堆栈包含以下不同元素：
 

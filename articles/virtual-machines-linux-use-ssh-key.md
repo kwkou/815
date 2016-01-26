@@ -22,7 +22,7 @@
 
 本主题介绍如何在 Linux 和 Mac 上使用 **ssh-keygen** 和 **openssl**，创建和使用 **ssh-rsa** 格式和 **.pem** 格式文件来基于 Linux 保护与 Azure VM 的通信。对于新部署，建议使用资源管理器部署模型创建基于 Linux 的 Azure 虚拟机，并采用 *ssh-rsa* 类型公钥文件或字符串（具体取决于部署客户端）。[预览门户](https://manage.windowsazure.cn)当前仅接受 **ssh-rsa** 格式字符串，无论是进行经典部署还是资源管理器部署。
 
-> [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]若要创建这些类型的文件以便在 Windows 计算机上用于与 Azure 中的 Linux VM 安全地通信，请参阅[在 Windows 上使用 SSH 密钥](/documentation/articles/virtual-machines-windows-use-ssh-key)。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 ## 你需要哪些文件？
 

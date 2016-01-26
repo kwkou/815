@@ -14,7 +14,7 @@
 
 # 设置 Linux RDMA 群集以运行 MPI 应用程序
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 本文介绍如何使用 [A8 和 A9 大小虚拟机](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)在 Azure 中设置 Linux RDMA 群集以运行并行消息传递接口 (MPI) 应用程序。当你配置了基于 Linux 的 A8 和 A9大小 VM 以运行支持的 MPI 实现时，MPI 应用程序将通过 Azure 中基于远程直接内存访问 (RDMA) 技术的低延迟、高吞吐量网络高效地进行通信。

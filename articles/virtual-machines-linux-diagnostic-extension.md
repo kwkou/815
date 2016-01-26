@@ -31,7 +31,7 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Windows Azure 上�
 - 此[文档](https://scx.codeplex.com/wikipage?title=xplatproviders")中指定的所有系统数据。
 - 用户指定的日志文件。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 ## 如何启用扩展

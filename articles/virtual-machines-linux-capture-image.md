@@ -17,7 +17,7 @@
 
 # 如何捕获经典 Linux 虚拟机以用作映像
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-linux-capture-image-resource-manager)。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 本文将演示如何捕获运行 Linux 的经典 Azure 虚拟机，以用作映像来创建其他虚拟机。此映像包括操作系统磁盘和附加到虚拟机的数据磁盘。它不包括网络配置，因此你在使用此映像创建其他虚拟机时需要进行网络配置。

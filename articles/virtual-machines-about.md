@@ -44,7 +44,7 @@ Azure 虚拟机让你能够灵活地进行虚拟化，而无需购买和维护�
 
 
 <!--links-->
-[App Service]: /documentation/articles/app-service-choose-me
+[Azure Web App]: /documentation/services/web-sites
 [Virtual Machines]: #tellmevm
 [Cloud Services]: /documentation/articles/cloud-services-choose-me
 

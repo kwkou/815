@@ -16,7 +16,7 @@
 
 # 如何创建自定义 Linux VM
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] []资源管理器模型](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 本主题介绍如何通过 Azure CLI 使用经典部署模型创建*自定义*虚拟机。我们将使用 Azure 上可用**映像**中的 Linux 映像。Azure CLI 命令提供以下配置选项以及其他配置选项：
 

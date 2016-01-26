@@ -14,7 +14,7 @@
 
 # 在 HPC Pack 群集中根据群集工作负荷自动增加和减少 Azure 计算资源
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 如果在 HPC Pack 群集中部署 Azure“突发”节点，或者在 Azure VM 中创建 HPC Pack 群集，你可能希望有一种方法能够根据群集上作业及任务的当前工作负荷自动增加或减少 Azure 计算资源。这可让你更有效地使用你的 Azure 资源并控制其成本。为此，请使用随 HPC Pack安装的 **AzureAutoGrowShrink.ps1** HPC PowerShell 脚本。

@@ -15,7 +15,7 @@
 
 # 在 Azure 上部署自己的私有 Docker 注册表
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文适用于使用资源管理器部署模型或典型部署模型创建的 VM。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 
 本文档描述什么是 Docker 私有注册表，并说明如何使用 Azure Blob 存储将 Docker 注册表 2.0 容器映像部署到 Windows Azure 上的 Docker 私有注册表。
