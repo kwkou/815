@@ -3,23 +3,16 @@
 	description="如何开始在 Visual Studio 中的 ASP.NET 5 项目中使用 Azure 队列存储"
 	services="storage"
 	documentationCenter=""
-	authors="patshea123"
+	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
-<tags 
+<tags
 	ms.service="storage"
-	ms.date="09/03/2015"
-	wacn.date="10/17/2015"/>
+	ms.date="12/16/2015"
+	wacn.date="01/14/2016"/>
 
 # 开始使用队列存储和 Visual Studio 连接服务 (ASP.NET 5)
-
-> [AZURE.SELECTOR]
-> - [入门](/documentation/articles/vs-storage-aspnet5-getting-started-queues)
-> - [发生了什么情况](/documentation/articles/vs-storage-aspnet5-what-happened)
-> - [Blobs](/documentation/articles/vs-storage-aspnet5-getting-started-blobs)
-> - [队列](/documentation/articles/vs-storage-aspnet5-getting-started-queues)
-> - [表](/documentation/articles/vs-storage-aspnet5-getting-started-tables)
 
 ##概述
 
@@ -35,6 +28,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 - 有关 Azure 存储空间的常规信息，请参阅[存储空间文档](/documentation/services/storage/)。
 - 有关 Azure 云服务的常规信息，请参阅[云服务文档](/documentation/services/cloud-services/)。
 - 有关对 ASP.NET 应用程序进行编程的详细信息，请参阅 [ASP.NET](http://www.asp.net)。
+
 
 
 
@@ -59,12 +53,12 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 3. 获取 **CloudQueueClient** 对象，以引用存储帐户中的队列对象。
 
 	    // Create the table client.
-    	CloudQuecClient queueClient = storageAccount.CreateCloudTableClient();
+    	CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
 4. 获取 **CloudQueue** 对象，以引用特定队列。
 
     	// Get a reference to a table named "messageQueue"
-	    CloudTable messageQueue = queueClient.GetQueueReference("messageQueue");
+	    CloudQueue messageQueue = queueClient.GetQueueReference("messageQueue");
 
 
 **注意：**在下列示例中，在代码的前面使用上述全部代码。
@@ -102,7 +96,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 ##读取和删除队列中的消息
 
-你的代码分两步从队列中删除消息（取消对消息的排队）。1.调用 **GetMessageAsync**，以获得队列中的下一条消息。从 **GetMessageAsync** 返回的消息将变为对从此队列读取消息的任何其他代码不可见。默认情况下，此消息将持续 30 秒不可见。2.若要完成从队列中删除消息，请调用 **DeleteMessageAsync**。
+你的代码分两步从队列中删除消息（取消对消息的排队）。1.调用 **GetMessageAsync**，以获得队列中的下一条消息。从 **GetMessageAsync** 返回的消息将变为对从此队列读取消息的任何其他代码不可见。默认情况下，此消息将持续 30 秒不可见。2.若要完成从队列中删除消息的操作，请调用 **DeleteMessageAsync**。
 
 此删除消息的两步过程可确保，如果你的代码因硬件或软件故障而无法处理消息，则你的代码的其他实例可以获取相同消息并重试。以下代码将在处理消息后立即调用 **DeleteMessageAsync**。
 
@@ -111,7 +105,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 	// Get the next message in the queue.
 	CloudQueueMessage retrievedMessage = await messageQueue.GetMessageAsync();
 
-	// Process the message in less than 30 seconds
+	// Process the message in less than 30 seconds.
 
     // Then delete the message.
 	await messageQueue.DeleteMessageAsync(retrievedMessage);
@@ -147,27 +141,27 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 此示例演示如何共同使用 Async Await 模式和公用队列 API。示例代码会调用每个给定方法的异步版本，这可以通过每个方法的 Async 后修补程序体现。使用异步方法时，async-await 模式将暂停本地执行，直到调用完成。此行为允许当前的线程执行其他工作，这有助于避免性能瓶颈并提高应用程序的整体响应能力。有关在.NET 中使用 Async-Await 模式的详细信息，请参阅 [Async 和 Await（C# 和 Visual Basic）](https://msdn.microsoft.com/zh-cn/library/hh191443.aspx)
 
-    // Get a reference to the **CloudQueue** object named 'messageQueue' as described in "Access a queue in code"
+    // Get a reference to the CloudQueue object named 'messageQueue' as described in "Access a queue in code".
 
-    // Create a message to put in the queue
+    // Create a message to put in the queue.
     CloudQueueMessage cloudQueueMessage = new CloudQueueMessage("My message");
 
-    // Async enqueue the message
+    // Async enqueue the message.
     await messageQueue.AddMessageAsync(cloudQueueMessage);
     Console.WriteLine("Message added");
 
-    // Async dequeue the message
+    // Async dequeue the message.
     CloudQueueMessage retrievedMessage = await messageQueue.GetMessageAsync();
     Console.WriteLine("Retrieved message with content '{0}'", retrievedMessage.AsString);
 
-    // Async delete the message
+    // Async delete the message.
     await messageQueue.DeleteMessageAsync(retrievedMessage);
     Console.WriteLine("Deleted message");
 ## 删除队列
 
 若要删除队列及其包含的所有消息，请对队列对象调用 **Delete** 方法。
 
-    // Get a reference to the **CloudQueue** object named 'messageQueue' as described in "Access a queue in code"
+    // Get a reference to the CloudQueue object named 'messageQueue' as described in "Access a queue in code".
 
     // Delete the queue.
     messageQueue.Delete();
@@ -177,6 +171,5 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 ##后续步骤
 
 [AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../includes/vs-storage-dotnet-queues-next-steps.md)]
-			
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0104_2016-->

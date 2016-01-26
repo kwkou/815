@@ -1,16 +1,16 @@
 <properties 
 	pageTitle="高级存储：适用于 Azure 虚拟机工作负荷的高性能存储 | Windows Azure"
 	description="高级存储为 Azure 虚拟机上运行的 I/O 密集型工作负载提供高性能、低延迟的磁盘支持。Azure DS 系列和 GS 系列 VM 支持高级存储。"
-	services="storage" 
-	documentationCenter="" 
-	authors="tamram"
-	manager="carolz"
+	services="storage"
+	documentationCenter=""
+	authors="ms-prkhad"
+	manager=""
 	editor="tysonn"/>
 
 <tags 
 	ms.service="storage"
-	ms.date="11/04/2015"
-	wacn.date="01/13/2016"/>
+	ms.date="12/04/2015"
+	wacn.date="01/14/2016"/>
 
 
 # 高级存储：适用于 Azure 虚拟机工作负荷的高性能存储
@@ -22,10 +22,11 @@ Azure 高级存储为运行 I/O 密集型工作负荷的虚拟机提供高性能
 
 Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具有每个 VM 多达 64 TB 的存储空间。借助高级存储，应用程序对于每个 VM 可以实现 80,000 IOPS（每秒输入/输出操作数）和每秒 2000 MB 的磁盘吞吐量，并且读取操作的延迟非常低。
 
+使用高级存储，Azure 提供的功能可真正将要求苛刻的企业应用程序（如 Dynamics AX、Dynamics CRM、Exchange Server、SharePoint 场和 SAP Business Suite）转移到云。你可以运行各种需要高级存储的一致高性能和低延迟的性能密集型数据库工作负荷，如 SQL Server、Oracle、MongoDB、MySQL、Redis。
+
 >[AZURE.NOTE]建议将任何需要高 IOPS 的虚拟机磁盘迁移到 Azure 高级存储，以便你的应用程序实现最佳性能。如果你的磁盘不需要高 IOPS，你可以通过在标准存储（将虚拟机磁盘数据存储在硬盘驱动器 (HDD) 上而不是 SSD 上）中对其进行维护来限制成本。
 
 若要开始使用 Azure 高级存储，请访问[开始免费试用](/zh-cn/pricing/1rmb-trial/)页。有关将现有的虚拟机迁移到高级存储的信息，请参阅[迁移到 Azure 高级存储](/documentation/articles/storage-migration-to-premium-storage)。
-
 
 ## 有关高级存储的重要事项
 
@@ -33,7 +34,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 - 若要使用高级存储，你必须有一个高级存储帐户。若要了解如何创建高级存储帐户，请参阅[为磁盘创建和使用高级存储帐户](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk)。
 
-- [Windows Azure 门户](https://manage.windowsazure.cn)中目前已提供高级存储且可通过以下 SDK 库来访问：[存储 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) 版本 2014-02-14 或更高版本；[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 版本 2014-10-01 或更高版本；[Azure PowerShell](/documentation/articles/powershell-install-configure) 版本 0.8.10 或更高版本。
+- 高级存储已在 [Windows Azure 门户](https://manage.windowsazure.cn)中中提供并可通过以下 SDK 库来访问：[存储 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) 版本 2014-02-14 或更高版本；[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 版本 2014-10-01 或更高版本；[Azure PowerShell](/documentation/articles/powershell-install-configure) 版本 0.8.10 或更高版本。
 
 - 以下地区提供受限的高级存储：中国东部。
 
@@ -61,7 +62,6 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。换句话�
 有关将现有的虚拟机迁移到高级存储的信息，请参阅[迁移到 Azure 高级存储](/documentation/articles/storage-migration-to-premium-storage)。
 为充分利用高级存储的优点，请先使用帐户类型 *Premium_LRS* 创建一个高级存储帐户。为此，可以使用 [Windows Azure 门户](https://manage.windowsazure.cn)、[Azure PowerShell](/documentation/articles/powershell-install-configure) 或[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)。有关分步说明，请参阅[为磁盘创建和使用高级存储帐户](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk)。
 
-
 ### 重要说明：
 
 - 有关高级存储帐户的容量和带宽限制的详细信息，请参阅[使用高级存储时的缩放性和性能目标](#scalability-and-performance-targets-when-using-premium-storage)部分。如果你的应用程序的需求超过了单个存储帐户的可伸缩性目标，则在生成应用程序时请让它使用多个存储帐户，并将数据分布在这些存储帐户中。例如，如果要将 51 TB 的磁盘附加到多个 VM，请将它们分布在两个存储帐户中，因为 35 TB 是单个高级存储帐户的限制。请确保单个高级存储帐户永远不会超过 35 TB 的设置磁盘。
@@ -70,7 +70,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。换句话�
 
 	请注意，这些限制只适用于磁盘流量，而不包括缓存命中和网络流量。VM 网络通信可以使用单独的带宽，这不同于高级存储磁盘的专用带宽。
 	
-	有关 DS 系列和 GS 系列 VM 的最大 IOPS 与吞吐量（带宽）的最新信息，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-size-specs)。若要了解高级存储磁盘及其 IOPS 和吞吐量限制，请参阅本文的[使用高级存储时的缩放性和性能目标](#scalability-and-performance-targets-when-using-premium-storage)部分中的表格。
+	有关 DS 系列和 GS 系列 VM 的最大 IOPS 与吞吐量（带宽）的最新信息，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-size-specs)。若要了解高级存储磁盘及其 IOPS 和吞吐量限制，请参阅本文的[使用高级存储时的可伸缩性和性能目标](#scalability-and-performance-targets-when-using-premium-storage)部分中的表格。
 
 > [AZURE.NOTE]缓存命中数不受到磁盘配置 IOPS/吞吐量的限制。也就是说，当你在 DS 系列或 GS 系列 VM 上使用具有 ReadOnly 缓存设置的数据磁盘时，缓存提供的读取数不受高级存储磁盘限制的约束。因此，如果工作负荷以读取为主，可以从磁盘获得极高的吞吐量。请注意，缓存根据 VM 大小受到 VM 级别不同的 IOPS / 吞吐量的限制。DS 系列 VM 大约有 4000 IOPS，缓存与本地 SSD IO 是每个核心 33 MB/秒。
 
@@ -87,7 +87,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。换句话�
 	`azure vm disk attach --help`
 
 
-## 使用高级存储时的缩放性和性能目标
+##<a id="scalability-and-performance-targets-when-using-premium-storage"></a> 使用高级存储时的可伸缩性和性能目标
 
 当你为某个高级存储帐户设置磁盘时，其每秒的输入/输出操作次数 (IOPS) 和吞吐量（带宽）取决于磁盘大小。目前有三种类型的高级存储磁盘：P10、P20 和 P30。每种类型各有特定的 IOPS 和吞吐量限制，如下表所示：
 
@@ -155,7 +155,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 - 入站是指发送到存储帐户的所有数据（请求）。
 - 出站是指从存储帐户接收的所有数据（响应）。
 
-有关详细信息，请参阅 [Azure 存储缩放性和性能目标](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)。
+有关详细信息，请参阅 [Azure 存储服务缩放性和性能目标](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)。
 
 ## 使用高级存储时的限制
 如果应用程序的 IOPS 或吞吐量超出了分配的高级存储磁盘限制，或者 VM 上所有磁盘的总磁盘通信超出了 VM 可用的磁盘带宽限制，则可能会有限制情况。若要避免限制，建议根据设置的磁盘缩放性和性能目标，以及 VM 可用的磁盘带宽，来限制磁盘的挂起 I/O 请求数。
@@ -206,7 +206,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
 <tbody>
 <tr>
-	<td><strong>分发版</strong></td>
+	<td><strong>分发</strong></td>
 	<td><strong>版本</strong></td>
 	<td><strong>支持的内核</strong></td>
 	<td><strong>支持的映像</strong></td>
@@ -248,14 +248,17 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 	<td rowspan="2"><strong>CentOS</strong></td>
 	<td>6.5, 6.6, 6.7, 7.0</td>
 	<td></td>
-		<td> <a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> 需要 LIS 4.0 </a> </br> *请参阅以下注释
+	<td>
+		<a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> 需要 LIS 4.0 </a> </br>
+		*请参阅以下注释
 	</td>
 </tr>
 <tr>
 	<td>7.1</td>
 	<td>3.10.0-229.1.2.el7</td>
 	<td>
-		<a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> 建议使用 LIS 4.0 </a> <br/> *请参阅以下注释
+		<a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> 建议使用 LIS 4.0 </a> <br/>
+		*请参阅以下注释
 	</td>
 </tr>
 
@@ -282,19 +285,22 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 	sudo yum install microsoft-hyper-v
 
 需要重新启动才能激活新的驱动程序。
+
+
+
 ## 使用高级存储时的定价和计费方式
 使用高级存储时，请注意以下计费方式：
 
-- 高级存储磁盘的计费根据是磁盘的设置大小。Azure 会将磁盘大小（向上舍入）映射到[使用高级存储时的缩放性和性能目标](#scalability-and-performance-targets-when-using-premium-storage) 部分的表中指定的最接近高级存储磁盘。任何已设置的磁盘都是按每月的高级存储优惠价格以每小时的方式计费。例如，如果你在设置完 P10 磁盘的 20 小时后删除它，则会以 20 小时计算 P10 解决方案的费用。这与写入磁盘的实际数据量或使用的 IOPS/吞吐量无关。
+- 高级存储磁盘的计费根据是磁盘的设置大小。Azure 会将磁盘大小（向上舍入）映射到[使用高级存储时的缩放性和性能目标](#scalability-and-performance-targets-when-using-premium-storage)部分的表中指定的最接近高级存储磁盘。任何已设置的磁盘都是按每月的高级存储优惠价格以每小时的方式计费。例如，如果你在设置完 P10 磁盘的 20 小时后删除它，则会以 20 小时计算 P10 解决方案的费用。这与写入磁盘的实际数据量或使用的 IOPS/吞吐量无关。
 - 高级存储上的快照会因为使用的额外容量而产生费用。有关快照的详细信息，请参阅[创建 Blob 的快照](http://msdn.microsoft.com/zh-cn/library/azure/hh488361.aspx)。
-- [出站数据传输](/pricing/details/data-transfer)（Azure 数据中心送出的数据）会产生带宽使用费。
+- [出站数据传输](/pricing/details/data-transfer/)（Azure 数据中心送出的数据）会产生带宽使用费。
 
 有关高级存储与 DS 和 GS 系列 VM 定价的详细信息，请参阅：
 
 - [Azure 存储定价](/home/features/storage/#price)
-- [虚拟机定价](/home/features/virtual-machines/#price)
+- [虚拟机定价](/home/features/virtual-machines#price)
 
-## 为虚拟机器数据磁盘创建和使用高级存储帐户
+##<a id="create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk"></a> 为虚拟机数据磁盘创建和使用高级存储帐户
 本部分演示如何使用Azure PowerShell 和 Azure 命令行界面 (Azure CLI) 创建高级存储帐户。另外，还演示了高级存储帐户的示例用例：在使用高级存储帐户时创建虚拟机，并将数据磁盘附加到虚拟机。
 
 ### 通过 Azure PowerShell 使用高级存储创建 Azure 虚拟机
@@ -361,12 +367,10 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 
 - [迁移到 Azure 高级存储](/documentation/articles/storage-migration-to-premium-storage)。[创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 
-[Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)
+[Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-size-specs)
 
-[存储文档](/documentation/services/storage)
-
-[MSDN 参考](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
+[存储服务文档](/documentation/services/storage)
 
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->

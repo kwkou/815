@@ -1,29 +1,20 @@
 <properties 
-	pageTitle="开始使用 Azure 队列存储和 Visual Studio 连接服务（云服务项目）" 
-	description="如何开始在 Visual Studio 的云服务项目中使用 Azure 队列存储" 
-	services="storage" 
-	documentationCenter="" 
-	authors="patshea123" 
-	manager="douge" 
-	editor="tglee"/>
+    pageTitle="开始使用队列存储和 Visual Studio 连接服务（云服务）| Windows Azure"
+	description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的云服务项目中使用 Azure 队列存储"
+	services="storage"
+	documentationCenter=""
+	authors="TomArcher"
+	manager="douge"
+	editor=""/>
 
-<tags ms.service="storage"
-
-	ms.date="08/04/2015" 
-	wacn.date="09/16/2015"/>
+<tags
+	ms.service="storage"
+	ms.date="12/16/2015"
+	wacn.date="01/14/2016"/>
 
 # 开始使用 Azure 队列存储和 Visual Studio 连接服务（云服务项目）
 
-> [AZURE.SELECTOR]
-> - [Getting started](/documentation/articles/vs-storage-cloud-services-getting-started-queues)
-> - [What happened](/documentation/articles/vs-storage-cloud-services-what-happened)
-
-> [AZURE.SELECTOR]
-> - [Blobs](/documentation/articles/vs-storage-cloud-services-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-cloud-services-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-cloud-services-getting-started-tables)
-
-##概述
+## 概述
 
 本文介绍通过使用 Visual Studio 中的“添加连接服务”对话框在云服务项目中创建或引用 Azure 存储帐户之后，如何开始在 Visual Studio 中使用 Azure 队列存储。
 
@@ -40,7 +31,7 @@
 Azure 队列存储是一项可存储大量消息的服务，用户可以通过经验证的呼叫，使用 HTTP 或 HTTPS 从世界任何地方访问这些消息。一条队列消息的大小可达 64 KB，一个队列中可以包含数百万条消息，直至达到存储帐户的总容量限值。
 
 
-##使用代码访问队列
+## 使用代码访问队列
 
 若要在 Visual Studio 云服务项目中访问队列，需要在可访问 Azure 队列存储的任何 C# 源文件中包含以下项。
 
@@ -68,17 +59,17 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 **注意：**在下列示例中，在代码的前面使用上述全部代码。
 
-##使用代码创建队列
+## 使用代码创建队列
 
 若要在代码中创建队列，只需添加对 **CreateIfNotExists** 的调用。
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue'
     // as described in the "Access queues in code" section.
-	
+
 	// Create the CloudQueue if it does not exist
 	messageQueue.CreateIfNotExists();
 
-##向队列添加消息
+## 向队列添加消息
 
 若要在现有队列中插入消息，请创建新的 **CloudQueueMessage** 对象，然后调用 **AddMessage** 方法。
 
@@ -86,24 +77,24 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 以下示例插入了消息“Hello, World”。
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' as described in 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue' as described in
     // the "Access queues in code" section.
 
 	// Create a message and add it to the queue.
 	CloudQueueMessage message = new CloudQueueMessage("Hello, World");
 	messageQueue.AddMessage(message);
 
-##读取队列中的消息
+## 读取队列中的消息
 
 通过调用 **PeekMessage** 方法，可以查看队列前面的消息，而不必从队列中将其删除。
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue'
     // as described in the "Access queues in code" section.
-	
+
 	// Peek at the next message
     CloudQueueMessage peekedMessage = messageQueue.PeekMessage();
 
-##读取和删除队列中的消息
+## 读取和删除队列中的消息
 
 您的代码分两步从队列中删除消息（取消对消息的排队）。
 
@@ -112,9 +103,9 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 此删除消息的两步过程可确保，如果你的代码因硬件或软件故障而无法处理消息，则你的代码的其他实例可以获取相同消息并重试。以下代码将在处理消息后立即调用 **DeleteMessage**。
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue'
     // as described in the "Access queues in code" section.
-	
+
 	// Get the next message in the queue.
 	CloudQueueMessage retrievedMessage = messageQueue.GetMessage();
 
@@ -124,7 +115,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 	await messageQueue.DeleteMessage(retrievedMessage);
 
 
-## 利用其他选项处理和删除队列消息
+## 使用其他选项来处理和删除队列消息
 
 你可以通过两种方式自定义队列中的消息检索。
 
@@ -133,25 +124,25 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 下面是一个示例：
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue'
     // as described in the "Access queues in code" section.
-	
+
     foreach (CloudQueueMessage message in messageQueue.GetMessages(20, TimeSpan.FromMinutes(5)))
     {
         // Process all messages in less than 5 minutes, deleting each message after processing.
-    
+
         // Then delete the message after processing
         messageQueue.DeleteMessage(message);
-    
+
     }
 
 ## 获取队列长度
 
 你可以获取队列中消息的估计数。使用 **FetchAttributes** 方法可请求队列服务检索队列属性，包括消息计数。**ApproximateMethodCount** 属性返回 **FetchAttributes** 方法检索到的最后一个值，而不会调用队列服务。
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue'
     // as described in the "Access queues in code" section.
-	
+
 	// Fetch the queue attributes.
 	messageQueue.FetchAttributes();
 
@@ -165,9 +156,9 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 此示例演示如何将 Async-Await 模式与公用 Azure 队列 API 配合使用。示例会调用每个给定方法的异步版本，这可以通过每个方法的 **Async** 后修补程序查看。使用异步方法时，async-await 模式将暂停本地执行，直到调用完成。此行为允许当前的线程执行其他工作，这有助于避免性能瓶颈并提高应用程序的整体响应能力。有关在 .NET 中使用 Async-Await 模式的更多详细信息，请参阅 [Async 和 Await（C# 和 Visual Basic）](https://msdn.microsoft.com/zh-cn/library/hh191443.aspx)
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue'
     // as described in the "Access queues in code" section.
-	
+
     // Create a message to put in the queue
     CloudQueueMessage cloudQueueMessage = new CloudQueueMessage("My message");
 
@@ -187,15 +178,14 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 若要删除队列及其包含的所有消息，请对队列对象调用 **Delete** 方法。
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue'
     // as described in the "Access queues in code" section.
-	
+
     // Delete the queue.
     messageQueue.Delete();
 
-##后续步骤
+## 后续步骤
 
 [AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../includes/vs-storage-dotnet-queues-next-steps.md)]
-			
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_0104_2016-->

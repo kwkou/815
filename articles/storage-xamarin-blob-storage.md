@@ -3,14 +3,14 @@
 	description="用于 Xamarin 的 Azure 存储客户端库预览版使开发人员能够使用其本机用户界面创建 iOS、Android 和 Windows 应用商店应用程序。本教程演示了如何通过 Xamarin 来创建使用 Azure Blob 存储的 Android 应用程序。" 
 	services="storage" 
 	documentationCenter="xamarin" 
-	authors="tamram" 
-	manager="carolz" 
+	authors="micurd" 
+	manager="" 
 	editor=""/>
 
 <tags 
 	ms.service="storage" 
-	ms.date="06/15/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="12/01/2015" 
+	wacn.date="01/14/2016"/>
 
 # 如何通过 Xamarin（预览版）使用 Blob 存储
 
@@ -173,6 +173,6 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 [如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)  
 [如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables)  
 [如何通过 .NET 使用队列存储](/documentation/articles/storage-dotnet-how-to-use-queues)
- 
+[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_0104_2016-->

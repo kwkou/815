@@ -9,7 +9,7 @@
 
 	ZRS 提供比 LRS 更高级别的持久性；不过，为获得最大持久性，我们建议你使用下文所述的地域冗余存储。
 
-	> [AZURE.NOTE]ZRS 当前仅适用于块 blob，并且仅支持版本 2014-02-14 和更高版本。
+	> [AZURE.NOTE] ZRS 当前仅适用于块 blob，并且仅支持版本 2014-02-14 和更高版本。
 	> 
 	> 在创建存储帐户并选择 ZRS 后，你无法将其转换为使用任何其他类型的复制，反之亦然。
 -->
@@ -18,12 +18,12 @@
 
 - 读取访问异地冗余存储 (RA-GRS)。读取访问地域冗余存储将你的数据复制到一个辅助地理位置，同时提供对你在辅助位置中的数据的读访问权限。读取访问地域冗余存储允许你从主位置或辅助位置访问数据，以防其中一个位置不可用。
 
-	> [AZURE.IMPORTANT]创建存储帐户后，你可以更改复制数据的方式，除非你在创建该帐户时指定了 ZRS。但请注意，如果你从 LRS 切换到 GRS 或 RA-GRS，可能会产生额外的一次性数据传输费用。
+	> [AZURE.IMPORTANT] 创建存储帐户后，你可以更改复制数据的方式，除非你在创建该帐户时指定了 ZRS。但请注意，如果你从 LRS 切换到 GRS 或 RA-GRS，可能会产生额外的一次性数据传输费用。
  
 有关存储复制选项的其他详细信息，请参阅 [Azure 存储空间复制](/documentation/articles/storage-redundancy)。
 
-有关存储帐户复制的定价信息，请参阅[存储定价详细信息](/home/features/storage/#price)。
+有关存储帐户复制的定价信息，请参阅[存储定价详细信息](/home/features/storage#price)。
 
 有关 Azure 存储持久性的体系结构详细信息，请参阅 [Azure 存储空间 SOSP 白皮书](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0104_2016-->
