@@ -17,11 +17,9 @@
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
-本文介绍如何使用 [A8 和 A9 大小虚拟机](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)在 Azure 中设置 Linux RDMA 群集以运行并行消息传递接口 (MPI) 应用程序。当你配置了基于 Linux 的 A8 和 A9大小 VM 以运行支持的 MPI 实现时，MPI 应用程序将通过 Azure 中基于远程直接内存访问 (RDMA) 技术的低延迟、高吞吐量网络高效地进行通信。
+本文介绍如何在 Azure 中设置 Linux RDMA 群集以运行并行消息传递接口 (MPI) 应用程序。当你配置了基于 Linux 的 VM 以运行支持的 MPI 实现时，MPI 应用程序将通过 Azure 中基于远程直接内存访问 (RDMA) 技术的低延迟、高吞吐量网络高效地进行通信。
 
 >[AZURE.NOTE]目前，在 SUSE Linux Enterprise Server 12 (SLES 12) 上运行的 Intel MPI 库版本 5 支持 Azure Linux RDMA。本文基于 Intel MPI 版本 5.0.3.048。
->
-> Azure 还提供了 A10 和 A11 计算密集型实例，其处理能力与 A8 和 A9 实例相同，但无需连接到 RDMA 后端网络。若要在 Azure 中运行 MPI 工作负荷，通常使用 A8 和 A9 实例可获得最佳性能。
 
 
 ## Linux 群集部署选项
@@ -32,11 +30,11 @@
 
 * **Azure CLI 脚本** - 如本文其他地方的步骤中所示，使用适用于 Mac、Linux 和 Windows 的 [Azure 命令行界面](/documentation/articles/xplat-cli-install) (CLI) 生成部署创建 Linux 群集所需的虚拟网络和其他必需组件的脚本。经典（服务管理）部署模式中的 CLI 将依次创建群集节点，因此，如果你要部署许多计算节点，可能需要几分钟才能完成部署。
 
-* **Azure 资源管理器模板** - 通过创建简单的 Azure 资源管理器 JSON 模板文件，并为资源管理器运行 Azure CLI 命令或使用 Azure 门户，部署多个 A8 和 A9 Linux VM，并定义虚拟网络、静态 IP 地址、DNS 设置和其他资源来创建可利用 RDMA 网络运行 MPI 工作负荷的计算群集。你可以[创建自己的模板](/documentation/articles/resource-group-authoring-templates)或查看[“Azure 快速入门模板”页](https://azure.microsoft.com/documentation/templates/)获取由 Microsoft 或社区提供的模板以部署所需的解决方案。资源管理器模板通常提供最快且最可靠的方式来部署 Linux 群集。
+* **Azure 资源管理器模板** - 通过创建简单的 Azure 资源管理器 JSON 模板文件，并为资源管理器运行 Azure CLI 命令或使用 Azure 门户，部署多个 Linux VM，并定义虚拟网络、静态 IP 地址、DNS 设置和其他资源来创建可利用 RDMA 网络运行 MPI 工作负荷的计算群集。你可以[创建自己的模板](/documentation/articles/resource-group-authoring-templates)或查看[“Azure 快速入门模板”页](https://azure.microsoft.com/documentation/templates/)获取由 Microsoft 或社区提供的模板以部署所需的解决方案。资源管理器模板通常提供最快且最可靠的方式来部署 Linux 群集。
 
 ## 在 Azure 服务管理中使用 Azure CLI 脚本进行部署
 
-以下步骤将帮助你使用 Azure CLI 部署 SLES 12 VM、安装 Intel MPI 库和其他自定义项、创建自定义 VM 映像，然后编写脚本部署 A8 或 A9 VM 的群集。
+以下步骤将帮助你使用 Azure CLI 部署 SLES 12 VM、安装 Intel MPI 库和其他自定义项、创建自定义 VM 映像，然后编写脚本部署 VM 的群集。
 
 ### 先决条件
 
@@ -44,7 +42,7 @@
 
 * **Azure 订阅** - 如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](http://www.windowsazure.cn/pricing/1rmb-trial/)。
 
-*   **内核配额** - 你可能需要增加内核配额才能部署 A8 或 A9 VM 的群集。例如，如果你要按本文所示部署 8 个 A9 VM，则至少需要 128 个内核。若要增加配额，可免费[建立联机客户支持请求](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。
+*   **内核配额** - 你可能需要增加内核配额才能部署 VM 的群集。例如，如果你要按本文所示部署 8 个 A9 VM，则至少需要 128 个内核。若要增加配额，可免费[建立联机客户支持请求](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。
 
 *   **Azure CLI** - [安装](/documentation/articles/xplat-cli-install) Azure CLI 并[对其进行配置](/documentation/articles/xplat-cli-connect)，以从客户端计算机连接到你的 Azure 订阅。
 
@@ -86,11 +84,9 @@ azure vm create -g <username> -p <password> -c <cloud-service-name> -l <location
 
 其中
 
-* 大小（在此示例中为 A9）可以是 A8 或 A9
-
 * 外部 SSH 端口号（在此示例中为 SSH 默认值 22）是任何有效的端口号；内部 SSH 端口号将设为 22
 
-* 将在 location 指定的 Azure 区域中创建新的云服务；请指定提供 A8 和 A9 实例的位置，例如“West US”
+* 将在 location 指定的 Azure 区域中创建新的云服务；请指定提供实例的位置，例如“China East”
 
 * 映像名称当前可以是 `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708`（免费）或 `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-priority-v20150708`（用于 SUSE 优先支持，收费）
 
@@ -180,12 +176,12 @@ sudo waagent -deprovision
 	# Create a custom private network in Azure
 	# Replace 10.32.0.0 with your virtual network address space
 	# Replace <network-name> with your network identifier
-	# Select a region where A8 and A9 VMs are available, such as West US
-	# See Azure Pricing pages for prices and availability of A8 and A9 VMs
+	# Select a region where VMs are available, such as West US
+	# See Azure Pricing pages for prices and availability of VMs
 	
 	azure network vnet create -l "China East" -e 10.32.0.0 -i 16 <network-name>
 	
-	# Create a cloud service. All the A8 and A9 instances need to be in the same cloud service for Linux RDMA to work across InfiniBand.
+	# Create a cloud service. All the instances need to be in the same cloud service for Linux RDMA to work across InfiniBand.
 	# Note: The current maximum number of VMs in a cloud service is 50. If you need to provision more than 50 VMs in the same cloud service in your cluster, contact Azure Support.
 	
 	azure service create <cloud-service-name> --location "China East" –s <subscription-ID>

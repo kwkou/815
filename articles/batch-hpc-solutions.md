@@ -96,8 +96,6 @@ Azure 提供一系列的计算、数据、网络和相关服务，你可将其�
 
 Azure 中的计算服务是大计算解决方案的核心。下表是经常使用的计算服务，它们能够为各种方案带来优势。在基本级别中，这些服务为使用 Windows Server Hyper-V 技术，由 Azure 提供的基于虚拟机的计算实例上运行的应用程序提供不同模式。根据具体的服务，这些实例可以运行各种标准和自定义的 Linux 和 Windows 操作系统与工具。Azure 提供[各种实例大小](/documentation/articles/virtual-machines-size-specs)，对 CPU 核心、内存、磁盘容量和其他特征进行了不同的配置。你可以根据需要将实例扩展到数千个核心，并在需要较少的资源时相应减少。
 
->[AZURE.NOTE]你可以利用 A8-A11 实例改善某些大型计算任务负荷的性能，包括需要低延迟、高吞吐量应用程序网络的并行 MPI 应用程序。请参阅[关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)。
-
 服务 | 说明
 ------------- | -----------
 **[云服务](/documentation/services/cloud-services)**<br/><br/> |• 可以在辅助角色实例中运行大型计算应用程序，辅助角色实例是运行某个 Windows Server 版本的虚拟机并且完全由 Azure 托管<br/><br/>• 可以较低的管理开销支持运行在平台即服务 (PaaS) 模型中的可缩放的可靠应用程序<br/><br/>• 可能需要额外的工具或开发来与现有的本地 HPC 群集解决方案进行集成

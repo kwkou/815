@@ -25,8 +25,6 @@
 
 本文中的步骤有助于你将 Azure 节点快速添加到基于云的 HPC Pack 头节点 VM，进行测试或概念证明部署。此程序实质上与“迸发到 Azure”的程序相同，可将云计算能力添加到本地 HPC Pack 群集。有关教程，请参阅[使用 Microsoft HPC Pack 设置混合计算群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster)。有关生产部署的详细指南和注意事项，请参阅[使用 Microsoft HPC Pack 迸发到 Azure ](http://go.microsoft.com/fwlink/p/?LinkID=200493)。
 
-如果你想使用 A8 或 A9 计算密集型实例大小，请参阅[关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)。
-
 ## 先决条件
 
 * **Azure VM 中部署的 HPC Pack 头节点** - 请参阅[在 Azure VM 中部署 HPC Pack 头节点](/documentation/articles/virtual-machines-hpcpack-cluster-headnode)，了解在经典（服务管理）部署模型中创建群集头节点的步骤。

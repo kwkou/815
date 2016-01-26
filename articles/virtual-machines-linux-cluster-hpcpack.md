@@ -292,8 +292,6 @@ HPC Pack **clusrun** 工具可用于通过命令窗口或 HPC 群集管理器在
 
 * 尝试在群集上运行 Linux 工作负荷。有关示例，请参阅[在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd)。
 
-* 尝试将群集向上扩展为包含更多节点，或部署 [A8 或 A9](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs) 大小计算节点以运行 MPI 工作负荷。
-
 * 尝试 [Azure 快速入门模板](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/)，组合 Azure 资源管理器来加快部署 HPC Pack 与大量 Linux 计算节点。
 
 <!--Image references-->

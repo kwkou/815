@@ -28,10 +28,6 @@
 - 存储
 - 网络
 
-对于这些资源类型，您必须知道使用的是哪个版本，因为支持的操作会有所不同。
-
-若要了解两个模型之间的体系结构差异，请参阅 [Azure 资源管理器体系结构](/documentation/articles/virtual-machines-azure-resource-manager-architecture)。
-
 ## 资源管理器的特性
 
 通过资源管理器创建的资源具备以下共同特性：

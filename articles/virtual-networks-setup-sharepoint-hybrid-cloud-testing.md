@@ -195,8 +195,6 @@
 
 [Azure 基础结构服务上的 SharePoint](https://msdn.microsoft.com/zh-CN/library/azure/dn275955.aspx)
 
-[SharePoint Server 场](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview)
-
 [设置用于测试的混合云环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)
 
 [在混合云中设置用于测试且基于 Web 的 LOB 应用程序](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)

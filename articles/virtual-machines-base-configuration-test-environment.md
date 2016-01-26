@@ -15,7 +15,7 @@
 
 # 基本配置测试环境
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-base-configuration-test-environment-resource-manager)。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 本文为你提供在 Azure 虚拟网络中创建基本配置测试环境的分步说明。
 
@@ -253,8 +253,6 @@ Azure 中的基本配置现已可用于应用程序开发和测试或其他测�
 [Azure 测试实验室](http://social.technet.microsoft.com/wiki/contents/articles/24092.azure-test-lab.aspx)
 
 [混合云测试环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)
-
-[使用 Azure 资源管理器的基本配置测试环境](/documentation/articles/virtual-machines-base-configuration-test-environment-resource-manager)
 
 ## <a id="costs"></a>将 Azure 中的测试环境虚拟机的成本降至最低
 

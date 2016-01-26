@@ -80,7 +80,6 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 [创建并上载包含 Linux 操作系统的虚拟硬盘]: /documentation/articles/virtual-machines-linux-create-upload-vhd
 
 [使用 Visual Studio 创建用于网站的虚拟机]: /documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell
-[使用计算、网络和存储 .NET 库部署 Azure 资源]: /documentation/articles/virtual-machines-arm-deployment
 
 [登录到虚拟机]: /documentation/articles/virtual-machines-linux-how-to-log-on
 

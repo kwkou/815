@@ -44,8 +44,6 @@
 
     * 你可以接受虚拟网络地址空间和子网的默认配置。
 
-    * 如果你计划为 HPC Pack 头节点使用计算密集型实例大小 (A8 – A11)，或稍后向群集添加计算资源添，请选择实例在其中可用的区域。为 MPI 工作负荷使用 A8 或 A9 实例时，还要确保虚拟网络地址空间没有与 Azure 中 RDMA 网络保留的地址空间 (172.16.0.0/12) 重叠。有关详细信息，请参阅[关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)。
-
 2. 如果你需要在单独的 VM 上创建新的 Active Directory 林，请参阅[在 Azure 虚拟网络中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine)。
 
     **注意事项**
