@@ -59,7 +59,7 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 
 4. **部署和配置 HPC Pack 2012 R2 头节点**
 
-    从 [Microsoft 下载中心](https://www.microsoft.com/download/details.aspx?id=47755)下载最新的 HPC Pack 安装包。有关 Azure 迸发部署准备工作的要求和说明，请参阅 [HPC Pack 入门指南](https://technet.microsoft.com/zh-cn/library/jj884144.aspx)和[使用 Microsoft HPC Pack 迸发到 Azure](https://technet.microsoft.com/zh-cn/library/gg481749.aspx)。
+    从 [Microsoft 下载中心](https://www.microsoft.com/download/details.aspx?id=49922)下载最新的 HPC Pack 安装包。有关 Azure 迸发部署准备工作的要求和说明，请参阅 [HPC Pack 入门指南](https://technet.microsoft.com/zh-cn/library/jj884144.aspx)和[使用 Microsoft HPC Pack 迸发到 Azure](https://technet.microsoft.com/zh-cn/library/gg481749.aspx)。
 
 5. **在 Azure 订阅中设置管理证书**
 
@@ -110,7 +110,7 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 
 1. **创建一个群集头节点，并通过在客户端计算机上运行 HPC Pack IaaS 部署脚本来计算节点 VM**
 
- 从[ Microsoft 下载中心](https://www.microsoft.com/download/details.aspx?id=47755)下载 HPC Pack IaaS 部署脚本包。
+ 从[ Microsoft 下载中心](https://www.microsoft.com/download/details.aspx?id=49922)下载 HPC Pack IaaS 部署脚本包。
 
  若要准备客户端计算机、创建脚本配置文件并运行该脚本，请参阅[使用 HPC Pack IaaS 部署脚本创建 Windows HPC 群集](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)。若要部署大小为 A8 和 A9 的计算节点，请参阅本主题中稍后介绍的其他注意事项。
 
