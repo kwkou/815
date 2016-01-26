@@ -48,7 +48,7 @@ IOPS 是指应用程序在一秒内发送到存储磁盘的请求数。可以按
 
 吞吐量和 IOPS 之间存在一个关系，如以下公式所示。
 
-![](media/storage-premium-storage-performance/image1.png)
+![](./media/storage-premium-storage-performance/image1.png)
 
 因此，必须确定你的应用程序所需的最佳吞吐量和 IOPS 值。当你尝试优化其中一个值时，另一个值也会受影响。在后面的“优化应用程序性能”部分，我们会更详细地讨论如何优化 IOPS 和吞吐量。
 
@@ -136,7 +136,7 @@ PerfMon 计数器适用于处理器、内存以及服务器的每个逻辑磁盘
 IO 请求是应用程序将要执行的输入/输出操作单元。识别 IO 请求的性质（是随机还是顺序，是读取还是写入，是小还是大）将有助于你确定应用程序的性能要求。了解 IO 请求的性质很重要，这将有助于你在设计应用程序基础结构时进行正确的决策。
 
 IO 大小是较为重要的因素之一。IO 大小是由应用程序生成的输入/输出操作请求的大小。IO 大小对性能（尤其是应用程序能够实现的 IOPS 和带宽）有很大的影响。下面的公式说明了 IOPS、IO 大小和带宽/吞吐量之间的关系。  
-	![](media/storage-premium-storage-performance/image1.png)
+	![](./media/storage-premium-storage-performance/image1.png)
 
 某些应用程序允许你更改其 IO 大小，而某些应用程序则不允许。例如，SQL Server 会自行确定最佳 IO 大小，不允许用户对其进行更改。另一方面，Oracle 提供了一个名为 [DB\BLOCK\SIZE](https://docs.oracle.com/cd/B19306_01/server.102/b14211/iodesign.htm#i28815) 的参数，你可以使用该参数配置数据库的 I/O 请求大小。
 
@@ -313,13 +313,13 @@ Azure 将高级存储平台设计为可以进行大规模并行处理。因此�
 
 *最佳队列深度*  
 队列深度值过高也有其缺点。如果队列深度值过高，则应用程序会尝试实现非常高的 IOPS。除非应用程序的永久性磁盘具有足够高的预配 IOPS，否则会对应用程序延迟造成负面影响。以下公式显示了 IOPS、延迟和队列深度之间的关系。  
-	![](media/storage-premium-storage-performance/image6.png)
+	![](./media/storage-premium-storage-performance/image6.png)
 
 不应随意地将队列深度配置为某个很高的值，而应将其配置为最佳值，该值可以确保应用程序实现足够高的 IOPS，但又不会影响延迟。例如，如果应用程序延迟需要设置为 1 毫秒，则要实现 5,000 IOPS，所需队列深度为：QD = 5000 x 0.001 = 5。
 
 *条带化卷的队列深度*  
 条带化卷应保持足够高的队列深度，使得每个磁盘都有各自的高峰队列深度。例如，以某个应用程序为考虑对象，该应用程序所推送的队列深度为 2，条带中有 4 个磁盘。两个 IO 请求会发送到两个磁盘中，剩下两个磁盘将处于空闲状态。因此，请将队列深度配置为让所有磁盘都能够处于繁忙状态。下面的公式说明了如何确定条带化卷的队列深度。  
-	![](media/storage-premium-storage-performance/image7.png)
+	![](./media/storage-premium-storage-performance/image7.png)
 
 ## 限制  
 Azure 高级存储会预配指定数目的 IOPS 和吞吐量，具体取决于你所选择的 VM 大小和磁盘大小。任何时候，只要你的应用程序尝试实现的 IOPS 或吞吐量超出了这些限制（VM 或磁盘能够处理的量），高级存储就会对其进行限制。这会以应用程序性能下降的方式体现出来。具体表现为延迟增高、吞吐量下降或 IOPS 降低。如果高级存储不对此进行限制，你的应用程序可能会超过其资源的处理能力，从而彻底崩溃。因此，为了避免因限制而造成的性能问题，请始终为应用程序预配足够的资源。请考虑一下我们在上面的 VM 大小和磁盘大小部分讨论过的内容。若要了解你需要哪些资源来托管应用程序，最好的方式是进行基准测试。
@@ -347,7 +347,7 @@ Iometer 使用一个测试文件，该文件存储在将要运行基准测试的
 规范、请求 IO 大小、读/写百分比、随机/顺序百分比都在 Iometer 中使用“访问规范”选项卡进行配置。为下述每个方案创建一个访问规范。创建访问规范，并使用合适的名称（例如 RandomWrites\8K、RandomReads\8K）进行“保存”。在运行测试方案时，请选择相应的规范。
 
 最大写入 IOPS 方案的访问规范示例如下所示：  
-	![](media/storage-premium-storage-performance/image8.png)
+	![](./media/storage-premium-storage-performance/image8.png)
 
 *最大 IOPS 测试规范*  
 若要演示最大 IOPS，请使用较小的请求大小。使用 8k 请求大小，创建随机读写的规范。
@@ -403,10 +403,10 @@ Iometer 使用一个测试文件，该文件存储在将要运行基准测试的
 以下是组合型 IOPS 和吞吐量方案的 Iometer 测试结果的屏幕快照。
 
 *组合型读写最大 IOPS*  
-	![](media/storage-premium-storage-performance/image9.png)
+	![](./media/storage-premium-storage-performance/image9.png)
 
 *组合型读写最大吞吐量*  
-	![](media/storage-premium-storage-performance/image10.png)
+	![](./media/storage-premium-storage-performance/image10.png)
 
 ### FIO  
 FIO 是一种常用工具，可以在 Linux VM 上对存储进行基准测试。它可以灵活地选择不同的 IO 大小、顺序或随机读取和写入。它生成的工作线程或进程可以执行指定的 I/O 操作。你可以指定每个工作线程使用作业文件时必须执行的 I/O 操作类型。我们根据以下示例所描述的方案创建了一个作业文件。你可以更改这些作业文件中的规范，以便对在高级存储上运行的不同工作负荷进行基准测试。在这些示例中，我们将使用运行 **Ubuntu** 的标准 DS 14 VM。运行基准测试之前，请使用“基准测试”部分开头描述的相同设置来预热缓存。
@@ -454,7 +454,7 @@ directory=/mnt/nocache
 	sudo fio --runtime 30 fiowrite.ini
 
 进行测试时，你就能够看到 VM 和高级磁盘传送的写入 IOPS 数。如以下示例所示，DS14 VM 传送的写入 IOPS 达到了最大限制：50,000 IOPS。  
-	![](media/storage-premium-storage-performance/image11.png)
+	![](./media/storage-premium-storage-performance/image11.png)
 
 *最大读取 IOPS*  
 使用以下规范创建作业文件，以便获得最大读取 IOPS。将其命名为“fioread.ini”。
@@ -492,7 +492,7 @@ directory=/mnt/readcache
 	sudo fio --runtime 30 fioread.ini
 
 进行测试时，你就能够看到 VM 和高级磁盘传送的读取 IOPS 数。如以下示例所示，DS14 VM 传送了 64,000 个以上的读取 IOPS。这是磁盘和缓存性能相结合。  
-	![](media/storage-premium-storage-performance/image12.png)
+	![](./media/storage-premium-storage-performance/image12.png)
 
 *最大读取和写入 IOPS*  
 使用以下规范创建作业文件，以便获得最大组合型读取和写入 IOPS。将其命名为“fioreadwrite.ini”。
@@ -547,7 +547,7 @@ rate_iops=12500
 	sudo fio --runtime 30 fioreadwrite.ini
 
 进行测试时，你就能够看到 VM 和高级磁盘传送的组合型读取和写入 IOPS 数。如以下示例所示，DS14 VM 传送了 100,000 个以上的组合型读取和写入 IOPS。这是磁盘和缓存性能相结合。  
-	![](media/storage-premium-storage-performance/image13.png)
+	![](./media/storage-premium-storage-performance/image13.png)
 
 *最大组合吞吐量*  
 若要获得最大组合型读取和写入吞吐量，请使用较大的块大小和大的队列深度，并通过多个线程执行读取和写入操作。你可以使用 64KB 的块大小，128 的队列深度。
