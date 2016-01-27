@@ -54,7 +54,7 @@ Docker 及其他*容器*技术使用 Linux 内核的进程和文件系统隔离�
 
 #### Docker 和 Linux 容器的安全最佳实践
 
-因为容器对主计算机内核进行共享访问，因此，如果恶意代码可以获取 root 权限，则也可以获取对其他容器的访问权限，而不仅仅是主机。为了以强于默认配置的力度保护容器系统，[Docker 建议](https://docs.docker.com/articles/security/)同时使用附加的组原则或[基于角色的安全性](http://en.wikipedia.org/wiki/Role-based_access_control)（例如 [SELinux](http://selinuxproject.org/page/Main_Page) 或 [AppArmor](http://wiki.apparmor.net/index.php/Main_Page)），并尽可能减少授予容器的内核功能。除此之外，Internet 上也提供了其他许多介绍如何使用 Docker 等容器实现安全性的文档。
+因为容器对主计算机内核进行共享访问，因此，如果恶意代码可以获取 root 权限，则也可以获取对其他容器的访问权限，而不仅仅是主机。为了以强于默认配置的力度保护容器系统，[Docker 建议](https://docs.docker.com/articles/security/)同时使用附加的组原则或[基于角色的安全性](http://zh.wikipedia.org/wiki/RBAC)（例如 [SELinux](http://selinuxproject.org/page/Main_Page) 或 [AppArmor](http://wiki.apparmor.net/index.php/Main_Page)），并尽可能减少授予容器的内核功能。除此之外，Internet 上也提供了其他许多介绍如何使用 Docker 等容器实现安全性的文档。
 
 ## 如何对 Azure 使用 Docker VM 扩展
 
