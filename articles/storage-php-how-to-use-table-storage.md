@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="如何通过 PHP 使用表存储 | Windows Azure"
 	description="了解如何通过 PHP 使用表服务来创建和删除表以及插入、删除和查询表。"
 	services="storage"
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="09/23/2015"
+	ms.date="12/16/2015"
 	wacn.date="01/21/2016"/>
 
 
