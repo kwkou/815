@@ -77,8 +77,7 @@ WEB 应用可以备份以下信息：
 	
 你可以随时进行手动备份。在预览版期间，每 24 小时内的手动备份不能超过 2 个（此限制可能会变更）。
 
-<a name="automatedbackups"></a>
-## 配置自动化的备份
+##<a name="automatedbackups" id="configure-automated-backups"></a> 配置自动化的备份
 
 1. 在“备份”页上，将“自动化的备份”设置为“打开”。
 	
