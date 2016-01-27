@@ -89,7 +89,7 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 [基本配置测试环境]: /documentation/articles/virtual-machines-base-configuration-test-environment
 [Azure 混合云测试环境]: /documentation/articles/virtual-machines-hybrid-cloud-test-environments
 
-[创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-tutorial
+[创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm
 [创建自定义虚拟机]: /documentation/articles/virtual-machines-create-custom
 
 <!---HONumber=Mooncake_1207_2015-->
