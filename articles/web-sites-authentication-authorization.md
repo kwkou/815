@@ -16,12 +16,6 @@
 
 [Azure 网站](/documentation/services/web-sites/)通过支持单一登录 (SSO) 的用户启用企业业务线应用程序方案，允许你在本地环境或公共 Internet 访问应用程序。可以将它与 [Azure Active Directory](/home/features/identity/) (AAD) 或本地安全令牌服务 (STS)（如 Active Directory 联合身份验证服务 (AD FS)）集成，以便对内部 Active Directory (AD) 用户进行身份验证并正确授权。
 
-## 零摩擦身份验证和授权 ##
-
-单击几下按钮，就可以为网站启用身份验证和授权。每个 Azure 网站中的复选框样式配置都提供了业务线网站的基本访问控制。它在授予用户对网站内容的访问权限之前，会强制对所选的 Azure AD 租户进行 HTTPS 通信和身份验证。有关详细信息，请参阅 [网站身份验证/授权](http://azure.microsoft.com/zh-cn/blog/2014/11/13/azure-websites-authentication-authorization/)。
-
->[AZURE.NOTE]此功能目前处于预览状态。
-
 ## 手动实现身份验证和授权 ##
 
 在许多情况下，你想要自定义应用程序的身份验证和授权行为，例如，登录和注销页、自定义授权逻辑、多租户应用程序行为，等等。在这种情况下，最好是手动配置身份验证和授权以提高功能的灵活性。以下是两个主要选项
