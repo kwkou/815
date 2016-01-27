@@ -83,7 +83,6 @@
 
 ## 后续步骤
 
-- 了解如何[在资源管理器部署模型中创建路由](/documentation/articles/virtual-network-create-udr-arm-template)并将路由关联到子网。 
 - 了解如何[在经典部署模型中创建路由](/documentation/articles/virtual-network-create-udr-classic-ps)并将路由关联到子网。
 
 <!---HONumber=82-->

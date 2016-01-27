@@ -27,8 +27,6 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 
 请注意 Azure 基础结构如何起着路由器作用，允许从 VNet 访问公共 Internet 而无需进行任何配置。防火墙可由应用于每个单独子网的网络安全组 (NSG) 替代。而物理负载平衡器可由 Azure 中面向 Internet 的负载平衡器和内部负载平衡器替代。
 
->[AZURE.NOTE]在 Azure 中有两种部署模式：经典（也称为服务管理）和 Azure 资源管理器 (ARM)。不能将经典 VNet 添加到地缘组，或创建为区域 VNet。如果你在地缘组中有一个 VNet，建议你[将它迁移到区域 VNet](/documentation/articles/virtual-networks-migrate-to-regional-vnet)。
-
 ## 虚拟网络优点
 
 - **隔离**。VNet 彼此之间完全隔离。这使你可以为使用相同 CIDR 地址块的开发、测试和生产创建单独的网络。

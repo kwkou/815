@@ -16,7 +16,7 @@
 
 # 在混合云中设置用于测试的 SharePoint Intranet 场
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 本主题将指导你逐步创建混合云环境，以便测试在 Windows Azure 中托管的 Intranet SharePoint 场。这是生成的配置。
 

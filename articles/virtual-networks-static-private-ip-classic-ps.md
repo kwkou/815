@@ -19,8 +19,6 @@
 
 [AZURE.INCLUDE [virtual-networks-static-private-ip-intro-include](../includes/virtual-networks-static-private-ip-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)]本文介绍经典部署模型。你还可以[管理资源管理器部署模型中的静态专用 IP 地址](/documentation/articles/virtual-networks-static-private-ip-arm-ps)。
-
 [AZURE.INCLUDE [virtual-networks-static-ip-scenario-include](../includes/virtual-networks-static-ip-scenario-include.md)]
 
 下面的示例 PowerShell 命令需要已创建简单的环境。
