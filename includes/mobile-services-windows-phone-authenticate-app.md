@@ -1,4 +1,4 @@
-﻿1. 打开项目文件 mainpage.xaml.cs 并将以下代码段添加到 MainPage 类：
+1. 打开项目文件 mainpage.xaml.cs 并将以下代码段添加到 MainPage 类：
 	
         private MobileServiceUser user;
         private async System.Threading.Tasks.Task Authenticate()
@@ -24,7 +24,7 @@
 
     这样可以创建用于存储当前用户的成员变量，以及用于处理身份验证过程的方法。将使用 Facebook 登录对用户进行身份验证。
 
-    >[AZURE.NOTE]如果使用的标识提供者不是 Facebook，请将上述 <strong>MobileServiceAuthenticationProvider</strong> 的值更改为你的提供者的值。</p></div>
+    >[AZURE.NOTE]如果使用的标识提供者不是 Facebook，请将上述 <strong>MobileServiceAuthenticationProvider</strong> 的值更改为你的提供者的值。
 
 2. 删除或注释掉现有的 **OnNavigatedTo** 方法覆盖，并将其替换为以下方法，用于处理页的 **Loaded** 事件。 
 
