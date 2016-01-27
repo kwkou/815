@@ -241,6 +241,5 @@ NSG 规则包含以下属性。
 ## 后续步骤
 
 - [在经典部署模型中部署 NSG](/documentation/articles/virtual-networks-create-nsg-classic-ps)。
-- [管理 NSG 日志](/documentation/articles/virtual-network-nsg-manage-log)。
 
 <!---HONumber=Mooncake_0104_2016-->

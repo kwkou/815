@@ -15,7 +15,7 @@
 
 # 在混合云中设置 Office 365 目录同步 (DirSync) 以便进行测试
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
  
 
 本主题将指导你逐步创建混合云环境，以便测试在 Windows Azure 中托管的带密码同步的 Office 365 目录同步 (DirSync)。这是生成的配置。

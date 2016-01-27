@@ -26,7 +26,7 @@
 多 NIC 目前有以下要求和约束：
 
 - 必须在 Azure 虚拟网络 (VNet) 中创建多 NIC VM。不支持非 VNet VM。 
-- 在单个云服务（经典部署）或资源组（资源管理器部署）中，仅允许以下设置： 
+- 在单个云服务（经典部署）或资源组中，仅允许以下设置： 
 	- 该云服务中的所有 VM 都必须启用多 NIC，否则 
 	- 该云服务中的所有 VM 都必须使用单个 NIC 
 
@@ -85,15 +85,6 @@
 |G5|16|
 |所有其他大小|1|
 
-## 网络安全组 (NSG)
-在资源管理器部署中，VM 上的任何 NIC（包括启用了多 NIC 的 VM 上的任何 NIC）都可以与网络安全组 (NSG) 相关联。如果向 NIC 分配了子网中的地址，且该子网与某个 NSG 相关联，则子网的 NSG 中的规则也适用于该 NIC。除了将子网与 NSG 相关联，你还可以将 NIC 与 NSG 相关联。
-
-如果子网与 NSG 相关联，且该子网中的 NIC 与 NSG 单独关联，则关联的 NSG 规则将按**流顺序**（根据传入或传出 NIC 的流量的方向）进行应用：
-
-- **传入流量 **其目标为本文所讨论的 NIC，在首先流经子网时，会触发子网的 NSG 规则，然后在传入到 NIC 中之前，会触发 NIC 的 NSG 规则。
-- **传出流量**：其源为本文所讨论的 NIC，在首先从 NIC 中流出时，会触发 NIC 的 NSG 规则，然后在通过子网之前，会触发子网的 NSG 规则。 
-
-详细了解[网络安全组](/documentation/articles/virtual-networks-nsg)以及如何基于与子网、VM 和 NIC 的关联应用它们。
 
 ## 如何在经典部署中配置多 NIC VM
 
@@ -258,7 +249,6 @@ Azure 中的当前模型是虚拟机中的所有 NIC 都设置有默认网关。
 
 ## 后续步骤
 
-- [在资源管理器部署的 2 层应用程序方案中部署多 NIC VM](/documentation/articles/virtual-network-deploy-multinic-arm-template)。
 - [在经典部署的 2 层应用程序方案中部署多 NIC VM](/documentation/articles/virtual-network-deploy-multinic-classic-ps)。
 
 <!---HONumber=Mooncake_1221_2015-->

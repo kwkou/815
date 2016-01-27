@@ -300,7 +300,7 @@ Azure 使用路由表来决定如何根据每个数据包的目标来转发 IP �
 
 ### BGP 路由
 
-在撰写本文时，[ExpressRoute](/documentation/articles/expressroute-introduction) 在 Azure 资源管理器的[网络资源提供程序](/documentation/articles/resource-groups-networking)中并不受支持。如果在本地网络和 Azure 之间存在 ExpressRoute 连接，则一旦 NRP 支持 ExpressRoute，即可通过 BGP 将路由从本地网络传播到 Azure。在每个 Azure 子网中，这些 BGP 路由的使用方式与默认路由和用户定义路由相同。有关详细信息，请参阅 [ExpressRoute 简介](/documentation/articles/expressroute-introduction)。
+如果在本地网络和 Azure 之间存在 ExpressRoute 连接，则一旦 NRP 支持 ExpressRoute，即可通过 BGP 将路由从本地网络传播到 Azure。在每个 Azure 子网中，这些 BGP 路由的使用方式与默认路由和用户定义路由相同。有关详细信息，请参阅 [ExpressRoute 简介](/documentation/articles/expressroute-introduction)。
 
 >[AZURE.NOTE]NRP 上支持 ExpressRoute 时，你就可以将 Azure 环境配置为使用强制方式通过隧道来连接你的本地网络，即为子网 0.0.0.0/0 创建一个用户定义路由，而该子网则使用 VPN 网关作为下一跃点。但是，仅在使用 VPN 网关而非 ExpressRoute 的情况下，此方法才起作用。对于 ExpressRoute，强制隧道是通过 BGP 配置的。
 

@@ -19,8 +19,6 @@
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-intro-include](../includes/virtual-networks-create-nsg-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] 本文介绍经典部署模型。你还可以[在资源管理器部署模型中创建 NSG](/documentation/articles/virtual-networks-create-nsg-arm-cli)。
-
 [AZURE.INCLUDE [virtual-networks-create-nsg-scenario-include](../includes/virtual-networks-create-nsg-scenario-include.md)]
 
 下面的示例 Azure CLI 命令需要一个已经基于上述方案创建的简单环境。如果你想要运行本文档中所显示的命令，首先通过[创建 VNet](/documentation/articles/virtual-networks-create-vnet-classic-cli) 构建测试环境。

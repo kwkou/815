@@ -15,7 +15,7 @@
 
 # 在混合云中设置用于测试且基于 Web 的 LOB 应用程序
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 本主题将指导你逐步创建混合云环境，以便测试在 Windows Azure 中托管的 Intranet 业务线 (LOB) 应用程序。这是生成的配置。
 
