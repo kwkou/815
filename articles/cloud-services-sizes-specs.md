@@ -9,7 +9,7 @@
 <tags 
  ms.service="cloud-services" 
  ms.date="09/14/2015"
- wacn.date="01/21/2016"/>
+ wacn.date="01/27/2016"/>
  
 # 云服务的大小
 
@@ -43,10 +43,6 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 |A5|2|14 GB|OS = 来宾 OS 大小<br/>本地资源 = 496664 MB<br/>应用 = 约 1.5 GB|
 |A6|4|28 GB|OS = 来宾 OS 大小<br/>本地资源 = 1018904 MB<br/>应用 = 约 1.5 GB|
 |A7|8|56 GB|OS = 来宾 OS 大小<br/>本地资源 = 2083864 MB<br/>应用 = 约 1.5 GB
-|A8|8|56 GB|OS = 来宾 OS 大小<br/>本地资源 = 1856172 MB<br/>应用 = 约 1.5 GB<blockquote> 注意：有关使用此大小的信息和注意事项，请参阅<a href="http://go.microsoft.com/fwlink/p/?linkid=328042">关于 A8、A9、A10 和 A11 计算密集型实例</a>。</blockquote>|
-|A9|16|112 GB|OS = 来宾 OS 大小<br/>本地资源 = 1856172 MB<br/>应用 = 约 1.5 GB<blockquote> 注意：有关使用此大小的信息和注意事项，请参阅<a href="http://go.microsoft.com/fwlink/p/?linkid=328042">关于 A8、A9、A10 和 A11 计算密集型实例</a>。</blockquote>|
-|A10|8|56 GB|OS = 来宾 OS 大小<br/>本地资源 = 1856172 MB<br/>应用 = 约 1.5 GB<blockquote> 注意：有关使用此大小的信息和注意事项，请参阅<a href="http://go.microsoft.com/fwlink/p/?linkid=328042">关于 A8、A9、A10 和 A11 计算密集型实例</a>。</blockquote>|
-|A11|16|112 GB|OS = 来宾 OS 大小<br/>本地资源 = 1856172 MB<br/>应用 = 约 1.5 GB<blockquote> 注意：有关使用此大小的信息和注意事项，请参阅<a href="http://go.microsoft.com/fwlink/p/?linkid=328042">关于 A8、A9、A10 和 A11 计算密集型实例</a>。</blockquote>|
 |Standard\_D1|1|3\.5 GB|OS = 来宾 OS 大小<br/>本地资源 = 46104 MB<br/>应用 = 约 1.5 GB|
 |Standard\_D2|2|7 GB|OS = 来宾 OS 大小<br/>本地资源 = 97304 MB<br/>应用 = 约 1.5 GB|
 |Standard\_D3|4|14 GB|OS = 来宾 OS 大小<br/>本地资源 = 199704 MB<br/>应用 = 约 1.5 GB|
