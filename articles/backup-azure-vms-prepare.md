@@ -25,9 +25,9 @@
 下图显示了各种 Azure 备份实体之间的关系：
 ![Azure 备份实体和关系](./media/backup-azure-vms-prepare/vault-policy-vm.png)
 
-创建备份保管库的步骤：
+<a name="2-network-connectivity"></a>创建备份保管库的步骤：
 
-1. 登录到[管理门户](http://manage.windowsazure.com/)。
+1. 登录到[管理门户](http://manage.windowsazure.cn/)。
 
 2. 单击“新建”->“数据服务”->“恢复服务”->“备份保管库”，然后选择“快速创建”。如果有多个订阅与你的组织帐户相关联，请选择要与备份保管库关联的正确订阅。在每个 Azure 订阅中，你可以使用多个备份保管库来组织受保护的虚拟机。
 
@@ -63,7 +63,7 @@
 
 可以通过两种方法来提供备份流量的路径：
 
-1. 将 [Azure 数据中心 IP 范围](http://www.microsoft.com/zh-cn/download/details.aspx?id=41653)加入允许列表。
+1. 将 [Azure 数据中心 IP 范围](https://www.microsoft.com/en-in/download/details.aspx?id=41653)加入允许列表。
 2. 部署 HTTP 代理以路由流量。
 
 需要在可管理性、精细控制和成本之间进行平衡。
@@ -184,7 +184,7 @@ VM 代理已存在于从 Azure 库创建的 VM 中。但是，从本地数据中
 	- 使用多个网络适配器的虚拟机
 
 ## 有疑问？
-如果你有疑问，或者希望包含某种功能，请[给我们反馈](http://aka.ms/azurebackup_feedback)。
+如果你有疑问，或者希望包含某种功能，请[给我们反馈](/support/contact/)。
 
 ## 后续步骤
 

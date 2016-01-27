@@ -45,7 +45,7 @@
 
 3. 从“恢复点”表中选择恢复点，然后单击“下一步”箭头转到下一个屏幕。
 
-### 3\.指定目标位置
+### 3\.<a name="restoring-vms-with-special-network-configurations"></a>指定目标位置
 
 1. 在“选择还原实例”屏幕中，指定有关要将虚拟机还原到何处的详细信息。
 
@@ -89,7 +89,7 @@
 
 还原虚拟机后，你可能需要重新安装原始 VM 上的扩展，并在 Azure 门户中为虚拟机[修改终结点](/documentation/articles/virtual-machines-set-up-endpoints)。
 
-## 还原域控制器 VM
+## <a name="restoring-domain-controller-vms"></a>还原域控制器 VM
 Azure 备份支持对域控制器 (DC) 虚拟机进行备份的方案。但在还原过程中，你必须谨慎操作。在单 DC 配置中，域控制器 VM 的还原体验大大不同于多 DC 配置中的 VM。
 
 ### 单 DC
@@ -104,7 +104,7 @@ Azure 备份支持对域控制器 (DC) 虚拟机进行备份的方案。但在�
 
 阅读更多内容，了解 [USN 回退问题](https://technet.microsoft.com/library/dd363553)以及建议的问题解决策略。
 
-## 还原采用特殊网络配置的 VM
+## <a name="restoring-vms-with-special-netwrok-configurations"></a>还原采用特殊网络配置的 VM
 Azure 备份支持备份虚拟机的以下特殊网络配置。
 
 - 采用负载平衡器的 VM（内部和外部）

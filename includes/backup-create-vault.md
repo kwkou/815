@@ -21,7 +21,7 @@
     ![创建保管库状态](./media/backup-create-vault/backupvaultstatus1.png)
 
 
-### Azure 备份 - 存储冗余选项
+### <a name="azure-backup---storage-redundancy-options"></a>Azure 备份 - 存储冗余选项
 
 > AZURE.IMPORTANT：确定存储冗余选项的最佳时机是在创建保管库之后、将任何计算机注册到保管库之前。将某个项注册到保管库后，存储冗余选项将会锁定且不能修改。
 
