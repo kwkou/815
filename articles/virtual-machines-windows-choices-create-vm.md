@@ -25,17 +25,23 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 
 [创建运行 Windows 的虚拟机][]
 
-### Azure PowerShell
+### 命令 Shell：Azure CLI 或 Azure PowerShell
 
-如果你喜欢使用命令行界面，请选择Azure PowerShell，它提供 Windows PowerShell cmdlets for Azure 和自定义控制台。
+如果你喜欢使用命令行解释器，请选择适用于 Mac 和 Linux 用户的 Azure 命令行界面 (CLI) 或 Azure PowerShell，后者提供 cmdlet for Azure 和自定义控制台。
+
+有关 Azure CLI，请参阅：
+
+- [将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](virtual-machines-command-line-tools).
+- [使用 Azure CLI 创建多 VM 部署](virtual-machines-create-multi-vm-deployment-xplat-cli)
 
 有关 Azure PowerShell，请参阅：
 
+- [在 Azure 中创建 SQL Server 虚拟机 (PowerShell)](virtual-machines-sql-server-create-vm-with-powershell)
 - [使用 PowerShell 来部署和管理虚拟机][]
 
 ## 操作系统和映像选项
 
-根据要运行的操作系统选择映像。Azure 及其合作伙伴提供了许多映像，其中一些映像包括应用程序和工具。或者，使用你自己的某一映像。
+根据要运行的操作系统选择映像。Azure 及其合作伙伴提供了许多映像，其中一些映像包括应用程序和工具。或者，使用你自己的某一映像。使用此文中的信息查找你的应用程序所需的平台映像：[使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像][]。
 
 <!-- LINKS -->
 [概述]: /documentation/articles/resource-group-overview
