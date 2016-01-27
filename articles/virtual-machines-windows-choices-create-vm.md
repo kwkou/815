@@ -43,7 +43,7 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 [创建运行 Windows 的虚拟机]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 
 [适合使用针对 Mac、Linux 和 Windows 的 Azure CLI 进行虚拟机操作的等效资源管理器和服务管理命令]: /documentation/articles/xplat-cli-azure-manage-vm-asm-arm
-[使用 Azure CLI 部署和管理虚拟机]: /documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli
+
 [使用 PowerShell 来部署和管理虚拟机]: /documentation/articles/virtual-machines-manage-vms-powershell
 
 
