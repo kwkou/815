@@ -45,7 +45,7 @@
 
 	对于这样的情况，你可以通过门户创建一个应用，然后手动提供相应的运行时文件。在本示例中，这些文件将占用你 App Service 计划的存储空间配额。有关详细信息，请参阅[将自定义 Java 网站上载到 Azure](/documentation/articles/web-sites-java-custom-upload/)。
 
-## 使用 Azure 配置 UI 创建 Java 网站
+##<a name="appsettings"></a> 使用 Azure 配置 UI 创建 Java 网站
 
 此信息讲解如何使用 Azure 配置 UI 为你的网站选择 Java 应用程序容器（Apache Tomcat 或 Jetty）。
 

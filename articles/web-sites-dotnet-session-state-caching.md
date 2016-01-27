@@ -42,7 +42,7 @@
 
 1. 打开 *web.config* 并查找 **sessionState** 元素。
 
-1. 输入 `host`、`accessKey`、 `port` 的值（SSL 端口应为 6380），并将 `SSL` 设置为 `true`。可以从 [Azure 门户](http://manage.windowsazure.cn)边栏选项卡为你的缓存实例获取这些值。请注意，默认情况下，将为新缓存禁用非 SSL 端口。有关启用非 SSL 端口的详细信息，请参阅[在 Azure Redis 缓存中配置缓存](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx)主题中的[访问端口](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx#AccessPorts)部分。以下标记显示了对 *web.config* 文件所做的更改，具体而言，是对 *port*、*host*、accessKey* 和 *ssl* 的更改。
+1. 输入 `host`、`accessKey`、 `port` 的值（SSL 端口应为 6380），并将 `SSL` 设置为 `true`。可以从 [Azure 门户](http://manage.windowsazure.cn)边栏选项卡为你的缓存实例获取这些值。请注意，默认情况下，将为新缓存禁用非 SSL 端口。以下标记显示了对 *web.config* 文件所做的更改，具体而言，是对 *port*、*host*、accessKey* 和 *ssl* 的更改。
 
 		  <system.web>;
 		    <customErrors mode="Off" />;

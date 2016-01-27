@@ -101,7 +101,7 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 
 
 
-## 如何：使用自定义 PHP 运行时
+##<a name="UseCustomPHP"></a> 如何：使用自定义 PHP 运行时
 Azure 网站可以使用提供的 PHP 运行时（而非默认 PHP 运行时）来执行 PHP 脚本。提供的运行时可由提供的 <code class="prettyprint">php.ini</code> 文件配置。若要在 Azure 网站中使用自定义 PHP 运行时，请执行下列步骤。
 
 1. 获取非线程安全、VC9 兼容版本的 PHP for Windows。可在此处找到 PHP for Windows 最新版本：[http://windows.php.net/download/]。可在此处的存档中找到旧版本：[http://windows.php.net/downloads/releases/archives/]。

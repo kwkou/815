@@ -39,8 +39,6 @@
 * 如何使用 [Azure 管理门户](https://manage.windowsazure.cn)监视和管理网站。
 
 > [AZURE.NOTE]本教程是关于如何将 ASP.NET 用于 Azure 网站的，不讲述如何开发 ASP.NET 网站。如需 ASP.NET MVC 5 简介，请参阅 [ASP.NET](http://asp.net/) 站点上的 [ASP.NET MVC 5 入门](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started)。如需更详细讲述如何使用 Azure 网站的其他文章的链接，请参阅[后续步骤](#next-steps)部分。
-> 
-> 帮助我们确定本教程的范围和方法 -- 如果你想要我们在此处的入门教程中讲述其他主题，请在本教程末尾的 [Disqus 意见](#comments)中留下反馈。
 
 ##<a name="video"></a>注册 Windows Azure
 
@@ -213,7 +211,7 @@
 
 这只是门户的一部分功能。你还可以创建新网站、删除现有网站、停止和重新启动网站，以及管理其他类型的 Azure 服务，如数据库和虚拟机。
 
-## 后续步骤
+##<a name="next-steps"></a> 后续步骤
 
 在本教程中，你已了解如何创建简单的网站并将其部署到 Azure 网站。你可以通过以下相关主题和资源来了解有关 Azure 网站中网站的详细信息。
 

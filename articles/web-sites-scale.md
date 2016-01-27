@@ -20,7 +20,7 @@
 
 可在管理门户的“缩放”选项卡中轻松地更改模式并进行配置。您可以根据需要向上或向下缩放。这些更改只需数秒即可生效，可影响 Web 托管计划中的所有网站。无需更改代码或重新部署应用程序。
 
-有关 Web 托管计划的信息，请参阅[什么是 Web 托管计划？](/documentation/articles/web-sites-web-hosting-plan-overview/)和 [Azure 网站 Web 托管计划深入概述](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/)。有关各个 Web 托管计划的定价和功能的信息，请参阅[网站定价详细信息](/home/features/web-site/#price)。
+有关各个 Web 托管计划的定价和功能的信息，请参阅[网站定价详细信息](/home/features/web-site/#price)。
 
 > [AZURE.NOTE] 在将网站从“免费”Web 托管计划模式切换为“基本”或“标准”Web 托管计划模式之前，你必须先删除 Azure 网站订阅现有支出上限。若要查看或更改针对你的 Windows Azure 网站订阅的选项，请参阅 [Windows Azure 订阅][azuresubscriptions]。
 

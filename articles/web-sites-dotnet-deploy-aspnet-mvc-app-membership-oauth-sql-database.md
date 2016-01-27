@@ -707,7 +707,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
  
 3. 验证 **UserId** 是否来自 **user1@contoso.com* 和你注册的 Google 帐户。
 
-## 疑难解答
+##<a name="troubleshooting"></a> 疑难解答
 
 如果你遇到了问题，请尝试遵循以下建议。
 
