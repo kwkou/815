@@ -47,10 +47,6 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 
 [AZURE.INCLUDE [azure-virtual-machines-limits](../includes/azure-virtual-machines-limits.md)]
 
-下表显示适用于使用资源管理器部署模型创建的虚拟机的限制，而与虚拟机的大小无关。
-
-[AZURE.INCLUDE [azure-virtual-machines-limits-azure-resource-manager](../includes/azure-virtual-machines-limits-azure-resource-manager.md)]
-
 ## 大小表
 
 下表显示这些虚拟机提供的大小和容量。
