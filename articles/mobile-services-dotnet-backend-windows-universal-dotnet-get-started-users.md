@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="向通用 Windows 8.1 应用添加身份验证 | Windows Azure" 
-	description="了解如何使用移动服务通过提供各种标识提供者（包括 Google、Facebook、Twitter 和 Microsoft）对通用 Windows 8.1 应用的用户进行身份验证。" 
+	description="了解如何使用移动服务通过提供各种标识提供者（包括 Microsoft 和 Azure Active Directory）对通用 Windows 8.1 应用的用户进行身份验证。" 
 	services="mobile-services" 
 	documentationCenter="windows" 
 	authors="ggailey777" 

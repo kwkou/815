@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="向 HTML/JavaScript 应用添加身份验证 | Windows Azure" 
-	description="了解如何使用移动服务通过各种标识提供程序（包括 Google、Facebook、Twitter 和 Microsoft）对 HTML 应用程序的用户进行身份验证。" 
+	description="了解如何使用移动服务通过各种标识提供程序（包括 Microsoft 和 Azure Active Directory 对 HTML 应用程序的用户进行身份验证。" 
 	services="mobile-services" 
 	documentationCenter="" 
 	authors="ggailey777" 

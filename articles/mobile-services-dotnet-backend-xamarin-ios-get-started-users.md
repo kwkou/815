@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="用于 Xamarin iOS 应用的移动服务中的身份验证入门 | Windows Azure"
-	description="了解如何使用移动服务通过各种标识提供程序（包括 Google、Facebook、Twitter 和 Microsoft）对 Xamarin iOS 应用程序的用户进行身份验证。" 
+	description="了解如何使用移动服务通过各种标识提供程序（包括 Microsoft 和 Azure Active Directory 对 Xamarin iOS 应用程序的用户进行身份验证。" 
 	services="mobile-services" 
 	documentationCenter="xamarin" 
 	authors="lindydonna" 
