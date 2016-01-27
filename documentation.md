@@ -1,7 +1,7 @@
 <properties linkid="documentation-overview" urlDisplayName="Doc-Overview" pageTitle="文档概览" metaKeywords="Doc-Overview" description="" metaCanonical="" services="" documentationCenter="" title="" authors="" solutions="" manager="Tiffena" editor="Eric Chen" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="01/18/2016"
+    wacn.date="01/27/2016"
     />
 
 #文档中心
@@ -55,6 +55,12 @@
     <td><a href="/documentation/services/redis-cache/">Redis 缓存</a></td>
     <td><a href="/documentation/services/stream-analytics/">流分析</a></td>
   </tr>
+<tr>
+    <td><a href="/documentation/services/sql-data-warehouse/">SQL 数据仓库</a></td>
+    <td><a href=""></a></td>
+    <td><a href=""></a></td>
+    <td><a href=""></a></td>
+  </tr>
 </table>
 
 ##应用服务
@@ -74,7 +80,7 @@
   </tr>
 <tr>
     <td><a href="/documentation/services/multi-factor-authentication/">多重身份验证</a></td>
-    <td><a href=""></a></td>
+    <td><a href="/documentation/services/key-vault/">密钥保管库</a></td>
     <td><a href=""></a></td>
     <td><a href=""></a></td>
   </tr>
