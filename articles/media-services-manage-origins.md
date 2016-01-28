@@ -74,7 +74,7 @@
 - 访问控制
 - 自定义主机名
 - 缓存控制
-- 跨 WEB 应用访问策略
+- 跨 Web 应用访问策略
 
 有关这些属性的详细信息，请参阅 [StreamingEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn783468.aspx)。
 

@@ -114,7 +114,7 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 示例 | 它有什么作用？
 ------ | ---------------
 [传感器数据分析][hdinsight-sensor-data-sample] | 了解如何使用 HDInsight 处理加热、通风和空调 (HVAC) 系统产生的历史数据，以识别无法可靠地保持设定温度的系统
-[ WEB 应用日志分析][hdinsight-weblogs-sample] | 了解如何使用 HDInsight 分析 WEB 应用日志文件，以了解一天中从外部 WEB 应用对该 WEB 应用的访问次数，以及用户遇到的 WEB 应用错误汇总
+[ Web 应用日志分析][hdinsight-weblogs-sample] | 了解如何使用 HDInsight 分析 Web 应用日志文件，以了解一天中从外部 Web 应用对该 Web 应用的访问次数，以及用户遇到的 Web 应用错误汇总
 
 
 

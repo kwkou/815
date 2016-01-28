@@ -144,7 +144,7 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 * 使用 Azure Blob 存储（一种与 Hadoop 兼容的选项），数据存储高效又经济。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。
 
-* 与其他 Azure 服务集成，包括[ WEB 应用](/documentation/services/web-sites/)和 [SQL 数据库](/documentation/services/sql-databases/)。
+* 与其他 Azure 服务集成，包括[ Web 应用](/documentation/services/web-sites/)和 [SQL 数据库](/documentation/services/sql-databases/)。
 
 * 进入成本低。开始[试用](/pricing/1rmb-trial/)或查阅 [HDInsight 定价详细信息](/home/features/hdinsight/#price)。
 
@@ -201,7 +201,7 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 * [分析 HVAC 传感器数据](/documentation/articles/hdinsight-hive-analyze-sensor-data)：了解如何通过将 Hive 与 HDInsight (Hadoop) 配合使用来分析传感器数据，然后在 Microsoft Excel 中实现数据的可视化。在此例中，你将使用 Hive 处理 HVAC 系统生成的历史数据，从而了解哪些系统无法可靠地维持设定的温度。
 
-* [将 Hive 与 HDInsight 配合使用来分析 WEB 应用日志](/documentation/articles/hdinsight-hive-analyze-website-log)：了解如何使用 HDInsight 中的 HiveQL 来分析 WEB 应用日志，从而了解来自外部 WEB 应用的一天访问次数以及用户遇到的 WEB 应用错误摘要。
+* [将 Hive 与 HDInsight 配合使用来分析 Web 应用日志](/documentation/articles/hdinsight-hive-analyze-website-log)：了解如何使用 HDInsight 中的 HiveQL 来分析 Web 应用日志，从而了解来自外部 Web 应用的一天访问次数以及用户遇到的 Web 应用错误摘要。
 
 * [使用 HDInsight (Hadoop) 中的 Storm 和 HBase 实时分析传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis)：了解如何构建一个解决方案，使用 HDInsight 中的 Storm 群集处理 Azure 事件中心的传感器数据，然后将处理后的传感器数据以近乎实时的信息显示在基于 Web 的仪表板上。
 

@@ -22,7 +22,7 @@
 
 安全套接字层 (SSL) 加密是用于保护通过 Internet 发送的数据的最常见方法。此常见任务讨论了如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护你的应用程序。
 
-> [AZURE.NOTE]本任务中的过程适用于 Azure 云服务；对于 WEB 应用，请参阅[为 Azure WEB 应用配置 SSL 证书](/documentation/articles/web-sites-configure-ssl-certificate)。
+> [AZURE.NOTE]本任务中的过程适用于 Azure 云服务；对于 Web 应用，请参阅[为 Azure Web 应用配置 SSL 证书](/documentation/articles/web-sites-configure-ssl-certificate)。
 
 此任务将使用生产部署；本主题的末尾提供了有关如何使用过渡部署的信息。
 
@@ -42,7 +42,7 @@
 -   证书的使用者名称必须与用于访问云服务的域匹配。你无法从证书颁发机构 (CA) 处获取针对 chinacloudapp.cn 域的 SSL 证书。你必须获取在访问服务时要使用的自定义域名。在从 CA 处请求证书时，该证书的使用者名称必须与用于访问应用程序的自定义域名匹配。例如，如果自定义域名为 **contoso.com**，则将要从 CA 处请求用于 ****.contoso.com** 或 **www.contoso.com** 的证书。
 -   该证书必须使用至少 2048 位加密。
 
-出于测试目的，可以[创建](/documentation/articles/cloud-services-certs-create)并使用自签名证书。自签名证书不通过 CA 进行身份验证并可使用 chinacloudapp.cn 域作为 WEB 应用 URL。例如，以下任务使用其公用名 (CN) 为 **sslexample.chinacloudapp.cn** 的自签名证书。
+出于测试目的，可以[创建](/documentation/articles/cloud-services-certs-create)并使用自签名证书。自签名证书不通过 CA 进行身份验证并可使用 chinacloudapp.cn 域作为 Web 应用 URL。例如，以下任务使用其公用名 (CN) 为 **sslexample.chinacloudapp.cn** 的自签名证书。
 
 接下来，你必须在服务定义和服务配置文件中包含有关此证书的信息。
 
@@ -75,7 +75,7 @@
         ...
         </WebRole>
 
-3.  在你的服务定义文件中，在 **Sites** 节中添加 **Binding** 元素。这将添加 HTTPS 绑定以将终结点映射到您的 WEB 应用：
+3.  在你的服务定义文件中，在 **Sites** 节中添加 **Binding** 元素。这将添加 HTTPS 绑定以将终结点映射到您的 Web 应用：
 
         <WebRole name="CertificateTesting" vmsize="Small">
         ...
@@ -130,15 +130,15 @@
 
 1.  在管理门户中，选择你的部署，然后单击“站点 URL”下的链接。
 
-    ![确定 WEB 应用 URL][2]
+    ![确定 Web 应用 URL][2]
 
 2.  在 Web 浏览器中，修改链接以使用 **https** 而不是 **http**，然后访问该页。
 
     **注意：**如果你使用的是自签名证书，则当你浏览到与自签名证书关联的 HTTPS 终结点时，浏览器中将显示一个证书错误。使用由受信任的证书颁发机构签名的证书可避免此问题；同时，您可以忽略此错误。（另一个选项是将自签名证书添加到用户的受信任证书颁发机构证书存储中。）
 
-    ![SSL 示例 WEB 应用][3]
+    ![SSL 示例 Web 应用][3]
 
-若要对过渡部署而非生产部署使用 SSL，你首先需要确定用于过渡部署的 URL。将云服务部署到过渡环境，而不包括证书或任何证书信息。部署后，你可以确定基于 GUID 的 URL，此 URL 将在管理门户的“ WEB 应用 URL”字段中列出。使用等效于基于 GUID 的 URL（例如，**32818777-6e77-4ced-a8fc-57609d404462.chinacloudapp.cn**）的公用名 (CN) 创建一个证书，再使用管理门户将该证书添加到过渡云服务，将该证书的信息添加到你的 CSDEF 和 CSCFG 文件，重新打包你的应用程序，然后将过渡部署更新为使用新的包和 CSCFG 文件。
+若要对过渡部署而非生产部署使用 SSL，你首先需要确定用于过渡部署的 URL。将云服务部署到过渡环境，而不包括证书或任何证书信息。部署后，你可以确定基于 GUID 的 URL，此 URL 将在管理门户的“ Web 应用 URL”字段中列出。使用等效于基于 GUID 的 URL（例如，**32818777-6e77-4ced-a8fc-57609d404462.chinacloudapp.cn**）的公用名 (CN) 创建一个证书，再使用管理门户将该证书添加到过渡云服务，将该证书的信息添加到你的 CSDEF 和 CSCFG 文件，重新打包你的应用程序，然后将过渡部署更新为使用新的包和 CSCFG 文件。
 
 ## 后续步骤
 

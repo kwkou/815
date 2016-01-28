@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Bottle 和 Azure 表存储" 
-	description="了解如何使用 Python Tools for Visual Studio 来创建 Bottle 应用程序，该应用程序在 Azure 表存储中存储数据并且可以部署到 Azure WEB 应用。" 
+	description="了解如何使用 Python Tools for Visual Studio 来创建 Bottle 应用程序，该应用程序在 Azure 表存储中存储数据并且可以部署到 Azure Web 应用。" 
 	services="app-service\web" 
 	documentationCenter="python" 
 	authors="huguesv" 
@@ -17,13 +17,13 @@
 
 # 具有 Python Tools 2.2 for Visual Studio 的 Azure 上的 Bottle 和 Azure 表存储 
 
-在本教程中，我们将使用 [Python Tools for Visual Studio] 通过一个 PTVS 样本模板创建简单的轮询 WEB 应用。
+在本教程中，我们将使用 [Python Tools for Visual Studio] 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。
 
-轮询 WEB 应用定义其存储库的抽象，因此您可以轻松地在不同类型存储库（内存中、Azure 表存储、MongoDB）之间进行切换。
+轮询 Web 应用定义其存储库的抽象，因此您可以轻松地在不同类型存储库（内存中、Azure 表存储、MongoDB）之间进行切换。
 
-我们将了解如何创建 Azure 存储帐户、如何将 WEB 应用配置为使用 Azure 表存储，以及如何将 WEB 应用发布到 [Azure WEB 应用](/documentation/services/web-sites/)中。
+我们将了解如何创建 Azure 存储帐户、如何将 Web 应用配置为使用 Azure 表存储，以及如何将 Web 应用发布到 [Azure Web 应用](/documentation/services/web-sites/)中。
 
-请参阅 [Python 开发人员中心]以获取更多文章，这些文章介绍了如何通过 PTVS（使用 Bottle、Flask 和 Django Web 框架）、MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure WEB 应用。虽然本文将着重介绍 Azure WEB 应用，但 [Azure 云服务]的开发步骤也是类似的。
+请参阅 [Python 开发人员中心]以获取更多文章，这些文章介绍了如何通过 PTVS（使用 Bottle、Flask 和 Django Web 框架）、MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure Web 应用。虽然本文将着重介绍 Azure Web 应用，但 [Azure 云服务]的开发步骤也是类似的。
 
 ##<a name="prerequisites"></a>先决条件
 
@@ -115,39 +115,39 @@
 
   	<!-- ![Table Query Results](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonServerExplorerTable.png) -->
 
-## 将 WEB 应用发布到 Azure WEB 应用
+## 将 Web 应用发布到 Azure Web 应用
 
-借助 Azure.NET SDK，你可以轻松地将 WEB 应用部署到 Azure 中。
+借助 Azure.NET SDK，你可以轻松地将 Web 应用部署到 Azure 中。
 
 1.  在“解决方案资源管理器”中，右键单击项目节点，然后选择“发布”。
 
   	<!-- ![Publish Web Dialog](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonPublishWebSiteDialog.png) -->
 
-1.  单击“Windows Azure WEB 应用”。
+1.  单击“Windows Azure Web 应用”。
 
-1.  单击“新建”，新建一个 WEB 应用。
+1.  单击“新建”，新建一个 Web 应用。
 
 1.  填写以下字段，然后单击“创建”。
-	-	**WEB 应用名称**
-	-	**Azure WEB 应用计划**
+	-	**Web 应用名称**
+	-	**Azure Web 应用计划**
 	-	**区域**
 	-	保持“数据库服务器”的“无数据库”设置不变
 
-  	<!-- ![Create WEB 应用on Windows Azure Dialog](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonCreateWebSite.png) -->
+  	<!-- ![Create Web 应用on Windows Azure Dialog](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonCreateWebSite.png) -->
 
 1.  接受其他所有默认值，然后单击**发布**。
 
-1.  此时，您的 Web 浏览器会自动打开已发布的 WEB 应用。如果您转到“关于”页面，则会看到它使用的是**内存**存储库，而不是 **Azure 表存储库**。
+1.  此时，您的 Web 浏览器会自动打开已发布的 Web 应用。如果您转到“关于”页面，则会看到它使用的是**内存**存储库，而不是 **Azure 表存储库**。
 
-    这是因为未在 Azure WEB 应用实例上设置环境变量，因此它使用的是 **settings.py** 中指定的默认值。
+    这是因为未在 Azure Web 应用实例上设置环境变量，因此它使用的是 **settings.py** 中指定的默认值。
 
-## 配置 WEB 应用实例
+## 配置 Web 应用实例
 
-在此部分中，我们将配置 WEB 应用实例的环境变量。
+在此部分中，我们将配置 Web 应用实例的环境变量。
 
-1.  在 [Azure 门户]，通过单击**浏览** > **Web Apps** > 您的 WEB 应用名称来打开 WEB 应用的边栏选项卡。
+1.  在 [Azure 门户]，通过单击**浏览** > **Web Apps** > 您的 Web 应用名称来打开 Web 应用的边栏选项卡。
 
-1.  在 WEB 应用边栏选项卡中，单击**所有设置**，然后单击**应用程序设置**。
+1.  在 Web 应用边栏选项卡中，单击**所有设置**，然后单击**应用程序设置**。
 
   	<!-- ![Top Menu](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonWebSiteTopMenu.png) -->
 
@@ -159,7 +159,7 @@
 
   	<!-- ![Bottom Menu](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonWebSiteConfigureBottomMenu.png) -->
 
-1.  您应该会看到 WEB 应用使用 **Azure 表存储库**按预期方式运行。
+1.  您应该会看到 Web 应用使用 **Azure 表存储库**按预期方式运行。
 
     祝贺你！
 

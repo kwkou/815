@@ -13,9 +13,9 @@
 > 
 > ![][B4]
 
-> [AZURE.NOTE]请确保已安装 Visual Studio [Azure SDK](/zh-cn/downloads/) 以便进行 WEB 应用部署。
+> [AZURE.NOTE]请确保已安装 Visual Studio [Azure SDK](/zh-cn/downloads/) 以便进行 Web 应用部署。
 
-1. 启动 Visual Studio 或 Visual Studio Express。单击“服务器资源管理器”并登录到你的 Azure 帐户。Visual Studio 需要你登录才能在你的帐户中创建 WEB 应用资源。
+1. 启动 Visual Studio 或 Visual Studio Express。单击“服务器资源管理器”并登录到你的 Azure 帐户。Visual Studio 需要你登录才能在你的帐户中创建 Web 应用资源。
 2. 在 Visual Studio 中，依次单击“文件”、“新建”和“项目”，依次展开“模板”和“Visual C#”，然后依次单击“Web”和“ASP.NET Web 应用程序”，键入名称 **AppBackend**，然后单击“确定”。 
 	
 	![][B1]
@@ -339,7 +339,7 @@
 
 ##发布新的 WebAPI 后端
 
-1. 现在，我们将此应用部署到 Azure WEB 应用，以便可以从任意设备访问它。右键单击 **AppBackend** 项目，然后选择“发布”。
+1. 现在，我们将此应用部署到 Azure Web 应用，以便可以从任意设备访问它。右键单击 **AppBackend** 项目，然后选择“发布”。
 
 2. 选择“Microsoft Azure Web Apps”作为发布目标。
 

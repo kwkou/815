@@ -21,13 +21,13 @@ editor="Eric Chen" />
 
 ##PHP 教程和文档
 
-### WEB 应用
+### Web 应用
 
-- [Azure WEB 应用](/zh-cn/documentation/articles/fundamentals-application-models/#WebSites)
-- [创建 PHP WEB 应用](/zh-cn/documentation/articles/web-sites-php-create-web-sites)
+- [Azure Web 应用](/zh-cn/documentation/articles/fundamentals-application-models/#WebSites)
+- [创建 PHP Web 应用](/zh-cn/documentation/articles/web-sites-php-create-web-sites)
 - [配置 PHP](/zh-cn/documentation/articles/web-sites-php-configure)
 - [使用 XDT 进行转换](/zh-cn/documentation/articles/web-sites-transform-extend)
-- [创建 PHP-MySQL WEB 应用](/zh-cn/documentation/articles/web-sites-php-mysql-deploy-use-git)
+- [创建 PHP-MySQL Web 应用](/zh-cn/documentation/articles/web-sites-php-mysql-deploy-use-git)
 - **[全部显示](/develop/php/websites)**
 
 ###虚拟机

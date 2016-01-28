@@ -33,7 +33,7 @@
 
 3. 单击“应用程序”>“添加”。
 
-4. 在“添加应用程序向导”中，为应用程序输入“名称”，并单击“WEB 应用程序和/或 Web API”类型。
+4. 在“添加应用程序向导”中，为应用程序输入“名称”，并单击“Web 应用程序和/或 Web API”类型。
 
     ![为 AAD 应用命名](./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-add-app-wizard-1-waad-auth.png)
 

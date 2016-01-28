@@ -27,7 +27,7 @@ SS for OSMF 包括两个版本的插件：
 
 - 适用于 OSMF 的动态平滑流式处理插件 (.swf)
 
-本文档假设读者具有 OSMF 和 OSMF 插件方面的一般实践知识。有关 OSMF 的详细信息，请参阅 [OSMF 官方 WEB 应用](http://osmf.org/)上的文档。
+本文档假设读者具有 OSMF 和 OSMF 插件方面的一般实践知识。有关 OSMF 的详细信息，请参阅 [OSMF 官方 Web 应用](http://osmf.org/)上的文档。
 
 ###适用于 OSMF 2.0 的平滑流式处理插件
 

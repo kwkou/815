@@ -20,7 +20,7 @@ editor="Eric Chen" />
 
 ###计算
 
-- [部署 WEB 应用](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
+- [部署 Web 应用](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
 - [使用 Socket.IO 生成聊天应用程序](/documentation/articles/web-sites-nodejs-chat-app-socketio)
 - [使用 CLI 进行部署](/documentation/articles/xplat-cli)
 - [使用 WebMatrix 进行部署](/documentation/articles/web-sites-nodejs-use-webmatrix)

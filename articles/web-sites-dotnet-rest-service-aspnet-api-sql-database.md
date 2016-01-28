@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="在 Azure 中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务" 
-	description="本教程将向你介绍如何通过使用 Visual Studio 将使用 ASP.NET Web API 的应用部署到 Azure WEB 应用。" 
+	description="本教程将向你介绍如何通过使用 Visual Studio 将使用 ASP.NET Web API 的应用部署到 Azure Web 应用。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="Rick-Anderson" 
@@ -15,11 +15,11 @@
 
 # 在 Azure 中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务
 
-本教程将向你介绍如何使用 Visual Studio 2013 或 Visual Studio 2013 for Web Express 中的“发布 Web”向导将 ASP.NET WEB 应用部署到 Azure WEB 应用。
+本教程将向你介绍如何使用 Visual Studio 2013 或 Visual Studio 2013 for Web Express 中的“发布 Web”向导将 ASP.NET Web 应用部署到 Azure Web 应用。
 
 你可以免费注册一个 Azure 帐户，而且，如果你还没有 Visual Studio 2013，则此 SDK 会自动安装 Visual Studio 2013 for Web Express。这样你就能够完全免费地开始针对 Azure 进行开发了。
 
-本教程假定你之前未使用过 Azure。完成本教程之后，你将能够在云中启动并运行简单的 WEB 应用。
+本教程假定你之前未使用过 Azure。完成本教程之后，你将能够在云中启动并运行简单的 Web 应用。
  
 学习内容：
 
@@ -29,9 +29,9 @@
 * 如何使用 SQL 数据库在 Azure 中存储数据。
 * 如何将应用程序更新发布到 Azure。
 
-你将生成一个简单的联系人列表 WEB 应用，该应用程序基于 ASP.NET MVC 5 构建并使用 ADO.NET Entity Framework 进行数据库访问。下图演示了完整的应用程序：
+你将生成一个简单的联系人列表 Web 应用，该应用程序基于 ASP.NET MVC 5 构建并使用 ADO.NET Entity Framework 进行数据库访问。下图演示了完整的应用程序：
 
-![WEB 应用屏幕截图][intro001]
+![Web 应用屏幕截图][intro001]
 
 [WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -39,7 +39,7 @@
 
 1. 启动 Visual Studio 2013。
 1. 在“文件”菜单中，单击“新建项目”。
-3. 在“新建项目”对话框中，展开“Visual C#”并选择“Web”，然后选择“ASP.NET MVC 5 WEB 应用”。将该应用程序命名为 **ContactManager**，然后单击“确定”。
+3. 在“新建项目”对话框中，展开“Visual C#”并选择“Web”，然后选择“ASP.NET MVC 5 Web 应用”。将该应用程序命名为 **ContactManager**，然后单击“确定”。
 
 	![“新建项目”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr4.PNG)]
 
@@ -51,7 +51,7 @@
 
 如果你事先没有新建好 Web 应用，请先到 Azure 管理门户中，新建一个，并在“仪表板”的速览下，下载“发布配置文件”。
 
-如果你有数据库服务器，请使用它来创建新的数据库。数据库服务器是非常宝贵的资源，而且你通常会想要在同一台服务器上创建多个数据库来进行测试和开发，而不是在每个数据库中各创建一个数据库服务器。请确保你的 WEB 应用和数据库位于相同区域中。
+如果你有数据库服务器，请使用它来创建新的数据库。数据库服务器是非常宝贵的资源，而且你通常会想要在同一台服务器上创建多个数据库来进行测试和开发，而不是在每个数据库中各创建一个数据库服务器。请确保你的 Web 应用和数据库位于相同区域中。
 
 ### 设置页眉和页脚
 
@@ -524,11 +524,11 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 	**安全警告**：此时，你的应用程序是不安全的，而且容易受到 CSRF 攻击。本教程稍后部分将将解决这一漏洞。有关详细信息，请参阅[防止跨站点请求伪造 (CSRF) 攻击][prevent-csrf-attacks]。
 ## 添加 XSRF 保护
 
-跨站点请求伪造（也称为 XSRF 或 CSRF）是一种针对 Web 托管型应用程序的攻击，恶意 WEB 应用凭此可以影响客户端浏览器与受该浏览器信任的 WEB 应用之间的交互。这些攻击出现的原因可能是 Web 浏览器针对每一个对 WEB 应用的请求自动发送身份验证令牌。典型示例是身份验证 cookie，如 ASP.NET 的表单身份验证票证。然而，使用任何持久身份验证（如 Windows Authentication、Basic 等）的 WEB 应用也可能成为受攻击目标。
+跨站点请求伪造（也称为 XSRF 或 CSRF）是一种针对 Web 托管型应用程序的攻击，恶意 Web 应用凭此可以影响客户端浏览器与受该浏览器信任的 Web 应用之间的交互。这些攻击出现的原因可能是 Web 浏览器针对每一个对 Web 应用的请求自动发送身份验证令牌。典型示例是身份验证 cookie，如 ASP.NET 的表单身份验证票证。然而，使用任何持久身份验证（如 Windows Authentication、Basic 等）的 Web 应用也可能成为受攻击目标。
 
-XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进行交互。在网络钓鱼攻击中，恶意 WEB 应用将仿冒目标 WEB 应用，受到欺骗的受害者会向攻击者提供敏感信息。在 XSRF 攻击中，通常不必与受害者进行交互。相反，浏览器自动向目标 WEB 应用发送所有相关 Cookie 为攻击者提供了可乘之机。
+XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进行交互。在网络钓鱼攻击中，恶意 Web 应用将仿冒目标 Web 应用，受到欺骗的受害者会向攻击者提供敏感信息。在 XSRF 攻击中，通常不必与受害者进行交互。相反，浏览器自动向目标 Web 应用发送所有相关 Cookie 为攻击者提供了可乘之机。
 
-有关详细信息，请参阅[打开 WEB 应用安全性项目](https://www.owasp.org/index.php/Main_Page) (OWASP) [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF))。
+有关详细信息，请参阅[打开 Web 应用安全性项目](https://www.owasp.org/index.php/Main_Page) (OWASP) [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF))。
 
 1. 在“解决方案资源管理器”中，右键单击“ContactManager”项目并单击“添加”，然后单击“类”。
 
@@ -705,7 +705,7 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 <h2><a name="nextsteps"></a>后续步骤</h2>
 ## 后续步骤
 
-实际的应用程序需要身份验证和授权，你可以使用成员资格数据库实现此目的。教程[使用 OAuth、成员资格以及 SQL 数据库部署安全的 ASP.NET MVC 应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)基于本教程，其中介绍了如何部署包含成员资格数据库的 WEB 应用。
+实际的应用程序需要身份验证和授权，你可以使用成员资格数据库实现此目的。教程[使用 OAuth、成员资格以及 SQL 数据库部署安全的 ASP.NET MVC 应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)基于本教程，其中介绍了如何部署包含成员资格数据库的 Web 应用。
 
 另一种在 Azure 应用程序中存储数据的方法是使用 Azure 存储，该方法以 Blob 和表的形式提供非关系数据存储。以下链接提供了更多有关 Web API、ASP.NET MVC 以及 Window Azure 的信息。
  

@@ -122,7 +122,7 @@
 此外，Azure 门户还可以提供影响各种 Azure 服务的事件的通知。
 注意：此信息以前未在 Azure 服务仪表板（网址为：<a href="http://www.windowsazure.cn/support/service-dashboard/" target="_blank">http://www.windowsazure.cn/support/service-dashboard/</a>）上与历史数据一起提供。
 
-虽然此门户从 Azure 数据中心内部收集运行状况信息（由内而外监视），但你也可以考虑采用由外而内方法来生成定期从多个位置访问 Azure 托管的 WEB 应用的综合事务。<a href="http://www.keynote.com/solutions/monitoring/web-monitoring" target="_blank">Keynote</a>、<a href="https://www.gomeznetworks.com/?g=1" target="_blank">Gomez</a> 和 Application Insights for Visual Studio Online 提供的服务是这种由外而内方法的示例。有关 Application Insights for Visual Studio Online 的详细信息，请参阅附录“[附录 5：使用 Application Insights for Visual Studio Online 进行监视]”。
+虽然此门户从 Azure 数据中心内部收集运行状况信息（由内而外监视），但你也可以考虑采用由外而内方法来生成定期从多个位置访问 Azure 托管的 Web 应用的综合事务。<a href="http://www.keynote.com/solutions/monitoring/web-monitoring" target="_blank">Keynote</a>、<a href="https://www.gomeznetworks.com/?g=1" target="_blank">Gomez</a> 和 Application Insights for Visual Studio Online 提供的服务是这种由外而内方法的示例。有关 Application Insights for Visual Studio Online 的详细信息，请参阅附录“[附录 5：使用 Application Insights for Visual Studio Online 进行监视]”。
 
 ### <a name="monitoring-capacity"></a>监视容量
 
@@ -839,7 +839,7 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 
 在性能和可用性监视过程中，你还可以使用用于 Visual Studio Online 的 Application Insights 功能。此工具可以：
 
-- 确保你的 Web 服务可用且响应迅速。无论您的应用程序是一个 WEB 应用还是使用 Web 服务的设备应用程序，它都可以从世界各地的位置每隔几分钟测试一次您的 URL，并让您知道是否存在问题。 
+- 确保你的 Web 服务可用且响应迅速。无论您的应用程序是一个 Web 应用还是使用 Web 服务的设备应用程序，它都可以从世界各地的位置每隔几分钟测试一次您的 URL，并让您知道是否存在问题。 
 - 快速诊断你的 Web 服务中的任何性能问题或异常。查明 CPU 或其他资源是否过多使用，从异常获取堆栈跟踪并通过日志跟踪轻松地进行搜索。如果应用程序的性能降至低于可接受的限制，我们可以向你发送电子邮件。你可以同时监视 .NET 和 Java Web 服务。
 
 <!--

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用 FTP 在 Azure 中创建和部署 PHP-MySQL WEB 应用" 
-	description="本教程演示如何创建在 MySQL 中存储数据的 PHP WEB 应用并使用 FTP 部署到 Azure。" 
+	pageTitle="使用 FTP 在 Azure 中创建和部署 PHP-MySQL Web 应用" 
+	description="本教程演示如何创建在 MySQL 中存储数据的 PHP Web 应用并使用 FTP 部署到 Azure。" 
 	services="app-service\web" 
 	documentationCenter="php" 
 	authors="tfitzmac" 
@@ -13,7 +13,7 @@
 	wacn.date="01/21/2016"/>
 
 
-#使用 FTP 在 Azure 中创建和部署 PHP-MySQL WEB 应用
+#使用 FTP 在 Azure 中创建和部署 PHP-MySQL Web 应用
 
 > [AZURE.SELECTOR]
 - [.Net](/documentation/articles/web-sites-dotnet-get-started)
@@ -23,42 +23,42 @@
 - [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
 - [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
-本教程演示如何创建 PHP-MySQL WEB 应用以及如何使用 FTP 部署该应用。本教程假定你已在计算机上安装 [PHP][install-php]、[MySQL][install-mysql]、Web 服务器和 FTP 客户端。本教程中的说明适用于任何操作系统，包括 Windows、Mac 和 Linux。完成本指南之后，你将拥有一个在 Azure 中运行的 PHP/MySQL WEB 应用。
+本教程演示如何创建 PHP-MySQL Web 应用以及如何使用 FTP 部署该应用。本教程假定你已在计算机上安装 [PHP][install-php]、[MySQL][install-mysql]、Web 服务器和 FTP 客户端。本教程中的说明适用于任何操作系统，包括 Windows、Mac 和 Linux。完成本指南之后，你将拥有一个在 Azure 中运行的 PHP/MySQL Web 应用。
  
 你将学习以下内容：
 
-* 如何使用 Azure 管理门户创建 WEB 应用和 MySQL 数据库。由于 WEB 应用默认已启用 PHP，因此运行 PHP 代码没有任何特殊要求。
+* 如何使用 Azure 管理门户创建 Web 应用和 MySQL 数据库。由于 Web 应用默认已启用 PHP，因此运行 PHP 代码没有任何特殊要求。
 * 如何使用 FTP 将应用程序发布到 Azure。
  
-通过按照本教程中的说明进行操作，你将在 PHP 中构建简单的注册 WEB 应用。将在 WEB 应用中托管应用程序。以下是已完成应用程序的屏幕快照：
+通过按照本教程中的说明进行操作，你将在 PHP 中构建简单的注册 Web 应用。将在 Web 应用中托管应用程序。以下是已完成应用程序的屏幕快照：
 
-![Azure PHP WEB 应用][running-app]
+![Azure PHP Web 应用][running-app]
 
 
-##创建 WEB 应用并设置 FTP 发布
+##创建 Web 应用并设置 FTP 发布
 
-按照以下步骤创建 WEB 应用和 MySQL 数据库：
+按照以下步骤创建 Web 应用和 MySQL 数据库：
 
 1. 登录到 [Azure 管理门户][management-portal]。
 2. 单击该门户左下的“+ 新建”图标。
 
-	![创建新的 Azure WEB 应用][new-website]
+	![创建新的 Azure Web 应用][new-website]
 
-3. 单击“ WEB 应用”，然后单击“自定义创建”。
+3. 单击“ Web 应用”，然后单击“自定义创建”。
 	
-	在“URL”中输入值，从“数据库”下拉列表中选择“无数据库”，然后在“区域”下拉列表中选择 WEB 应用的数据中心。点击确定新建 WEB 应用
+	在“URL”中输入值，从“数据库”下拉列表中选择“无数据库”，然后在“区域”下拉列表中选择 Web 应用的数据中心。点击确定新建 Web 应用
 
-	![填写 WEB 应用详细信息][Website-details]
+	![填写 Web 应用详细信息][Website-details]
 
-4. 继续单击“新建” --> “数据服务” --> “MYSQL DATABASE ON AZURE” --> “快速创建”，为你的 WEB 应用创建一个 MYSQL 数据库。
+4. 继续单击“新建” --> “数据服务” --> “MYSQL DATABASE ON AZURE” --> “快速创建”，为你的 Web 应用创建一个 MYSQL 数据库。
 
 	![数据库][new-mysql-db]
 
-	创建 WEB 应用后，你将看到文本“创建 WEB 应用 ‘[SITENAME]’ 成功完成”。现在，您可以启用 Git 发布。
+	创建 Web 应用后，你将看到文本“创建 Web 应用 ‘[SITENAME]’ 成功完成”。现在，您可以启用 Git 发布。
 
-5. 单击 WEB 应用列表中显示的 WEB 应用的名称以打开该 WEB 应用的“快速启动”仪表板。
+5. 单击 Web 应用列表中显示的 Web 应用的名称以打开该 Web 应用的“快速启动”仪表板。
 
-	![打开 WEB 应用仪表板][go-to-dashboard]
+	![打开 Web 应用仪表板][go-to-dashboard]
 
 
 6. 在“快速启动”页的底部，单击“重置部署凭据”。
@@ -227,7 +227,7 @@
 
 ##发布应用
 
-在本地测试你的应用之后，你可以使用 FTP 将其发布到 WEB 应用。但是，你首先需要更新应用程序中的数据库连接信息。使用之前获取的数据库连接信息（在“获取 MySQL 和 FTP 连接信息”部分中），使用适当的值在 `createdatabase.php` 和 `index.php` 文件中更新以下信息：
+在本地测试你的应用之后，你可以使用 FTP 将其发布到 Web 应用。但是，你首先需要更新应用程序中的数据库连接信息。使用之前获取的数据库连接信息（在“获取 MySQL 和 FTP 连接信息”部分中），使用适当的值在 `createdatabase.php` 和 `index.php` 文件中更新以下信息：
 
 	// DB connection info
 	$host = "value of Data Source";

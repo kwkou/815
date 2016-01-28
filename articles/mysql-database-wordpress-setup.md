@@ -1,8 +1,8 @@
-<properties linkid="" urlDisplayName="" pageTitle="如何使用MySQL 数据库 on Azure来配置WordPress WEB 应用- Azure 微软云" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，WordPress, WEB 应用配置,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="WordPress是一种使用非常广泛的CMS系统。本文介绍如何使用 MySQL 数据库 on Azure 和 Azure Web应用来安装配置WordPress。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor=""/>
+<properties linkid="" urlDisplayName="" pageTitle="如何使用MySQL 数据库 on Azure来配置WordPress Web 应用- Azure 微软云" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，WordPress, Web 应用配置,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="WordPress是一种使用非常广泛的CMS系统。本文介绍如何使用 MySQL 数据库 on Azure 和 Azure Web应用来安装配置WordPress。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor=""/>
 
 <tags ms.service="mysql" ms.date="" wacn.date="01/21/2016"/>
 
-# 如何使用MySQL 数据库 on Azure来配置WordPress WEB 应用
+# 如何使用MySQL 数据库 on Azure来配置WordPress Web 应用
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/mysql-database-wordpress-setup)
 - [英文版](/documentation/articles/mysql-database-enus-wordpress-setup)
@@ -11,7 +11,7 @@ WordPress是一种使用非常广泛的CMS系统。本文介绍如何使用 MySQ
 
 ## 步骤 1:下载最新版WordPress安装包  
 
-您可以通过[WordPress官方 WEB 应用]( https://wordpress.org/download)下载最新版的安装包到您的本地存储目录。并进行解压到该目录中。
+您可以通过[WordPress官方 Web 应用]( https://wordpress.org/download)下载最新版的安装包到您的本地存储目录。并进行解压到该目录中。
 
 ## 步骤 2：新建MySQL 数据库 on Azure的服务器  
 
@@ -40,7 +40,7 @@ WordPress是一种使用非常广泛的CMS系统。本文介绍如何使用 MySQ
 
 ### 部署WordPress安装文件  
 
-接下来，将第一步中解压出来的所有WordPress安装文件部署到刚创建的Web应用中。这里建议使用Git来做部署操作。具体方式请参见[从源控件发布到 Azure WEB 应用](/documentation/articles/web-sites-publish-source-control)
+接下来，将第一步中解压出来的所有WordPress安装文件部署到刚创建的Web应用中。这里建议使用Git来做部署操作。具体方式请参见[从源控件发布到 Azure Web 应用](/documentation/articles/web-sites-publish-source-control)
 
 > [AZURE.NOTE] **注意**：步骤3 主要针对WordPress的新用户，若您已经使用Azure Web应用并已成功部署WordPress安装文件并开始使用，出于内容一致性的目的，建议您将数据进行导出，重新安装部署WordPress并与新建的MySql数据库成功连接之后，再进行数据导入。具体的Wordpress数据导入导出，请通过WordPress控制台来完成（如下图所示）。  
 

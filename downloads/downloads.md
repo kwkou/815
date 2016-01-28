@@ -129,7 +129,7 @@
     </ul>
   </div>
   <div style="display:none">
-    <h3> WEB 应用迁移助手</h3>
+    <h3> Web 应用迁移助手</h3>
     <ul>
       <li><a href="http://go.microsoft.com/?linkid=9863189&amp;clcid=0x804">安装</a></li>
       <li><a href="http://azure.microsoft.com/zh-cn/downloads/migration-assistant/">文档</a></li>

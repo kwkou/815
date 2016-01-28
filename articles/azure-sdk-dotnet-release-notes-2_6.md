@@ -58,15 +58,15 @@
 
 	有关详细信息，请参阅 [Azure 缓存的角色中缓存](https://msdn.microsoft.com/zh-cn/library/azure/dn386103.aspx)。
 
-##Azure WEB 应用工具
+##Azure Web 应用工具
 
 以下各项已在 Azure SDK 2.6 版本中更新。
 
 - Azure 发布功能已增强，其中包括了作为部署目标的 Azure API Apps。
 - API Apps 预配功能，允许用户创建 API App 并行使预配功能。
-- 服务器资源管理器已更改，目的是反映新的 Azure WEB 应用节点，同时 Web、移动和 API 应用程序已按资源组进行分组。
+- 服务器资源管理器已更改，目的是反映新的 Azure Web 应用节点，同时 Web、移动和 API 应用程序已按资源组进行分组。
 - 将 Azure API App 客户端手势添加到了大多数 C# 项目中，这样就可以自动生成可以在用户的 Azure 订阅中运行且支持 Swagger 的 API Apps。
-- 服务器资源管理器中的 API Apps 工具和 Azure WEB 应用节点仅在 Visual Studio 2013 中可用。 
+- 服务器资源管理器中的 API Apps 工具和 Azure Web 应用节点仅在 Visual Studio 2013 中可用。 
 
 ##Azure 资源管理器工具更新
 

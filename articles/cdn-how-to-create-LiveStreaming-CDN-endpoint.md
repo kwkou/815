@@ -14,7 +14,7 @@
 
 Windows Azure CDN 流媒体直播加速主要基于HTTP Live Streaming(HLS)协议，且支持Windows Azure内置的[媒体服务](http://www.windowsazure.cn/home/features/media-services/)。
 
-流媒体直播加速适用于各类流媒体直播 WEB 应用，如网络电视直播，体育赛事，盛典赛事直播等。
+流媒体直播加速适用于各类流媒体直播 Web 应用，如网络电视直播，体育赛事，盛典赛事直播等。
 
 本文是针对流媒体直播加速域名创建，您也可以参考[使用Windows Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-how-to-use/)了解基本的Windows Azure CDN加速节点创建信息。
 

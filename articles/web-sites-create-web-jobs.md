@@ -16,9 +16,9 @@
 
 ## 概述
 
-你可以使用三种方式在 [Azure WEB 应用](/documentation/services/web-sites/) WEB 应用的 Web 作业中运行程序或脚本，即：按需、连续或按计划。使用 Web 作业无需支付额外的费用。
+你可以使用三种方式在 [Azure Web 应用](/documentation/services/web-sites/) Web 应用的 Web 作业中运行程序或脚本，即：按需、连续或按计划。使用 Web 作业无需支付额外的费用。
 
-本文说明如何使用 [Azure 管理门户](https://manage.windowsazure.cn/)来部署 Web 作业。有关如何使用 Visual Studio 或连续交付过程进行部署的信息，请参阅[如何将 Azure Web 作业部署到 WEB 应用](/documentation/articles/websites-dotnet-deploy-webjobs)。
+本文说明如何使用 [Azure 管理门户](https://manage.windowsazure.cn/)来部署 Web 作业。有关如何使用 Visual Studio 或连续交付过程进行部署的信息，请参阅[如何将 Azure Web 作业部署到 Web 应用](/documentation/articles/websites-dotnet-deploy-webjobs)。
 
 Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，请参阅[什么是 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk)。
 
@@ -56,7 +56,7 @@ Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，
 	
 4. 在“如何运行”框中，选择“按需运行”。
 	
-5. 选中对话框右下角的复选标记，以将该脚本上载到你的 WEB 应用。为任务指定的名称将显示在列表中：
+5. 选中对话框右下角的复选标记，以将该脚本上载到你的 Web 应用。为任务指定的名称将显示在列表中：
 	
 	![任务列表][WebJobsList]
 	
@@ -72,10 +72,10 @@ Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，
 	
 2. 若要启动或停止连续运行的任务，请在列表中选择任务，然后在命令栏中单击“启动”或“停止”。
 
-> [AZURE.NOTE]如果你的 WEB 应用在多个实例上运行，则连续运行的任务将在所有实例上运行。按需运行任务和计划任务在 Windows Azure 针对负载平衡所选择的单个实例上运行。
+> [AZURE.NOTE]如果你的 Web 应用在多个实例上运行，则连续运行的任务将在所有实例上运行。按需运行任务和计划任务在 Windows Azure 针对负载平衡所选择的单个实例上运行。
 
 > [AZURE.NOTE]
->对于连续运行任务，建议你在“配置”页上为 WEB 应用启用“始终打开”。Always On 功能（在基本和标准模式下可用）可防止 WEB 应用被卸载，即使 WEB 应用已空闲一段时间也是如此。如果你的 WEB 应用始终处于加载状态，则连续运行的任务可能会更可靠地运行。
+>对于连续运行任务，建议你在“配置”页上为 Web 应用启用“始终打开”。Always On 功能（在基本和标准模式下可用）可防止 Web 应用被卸载，即使 Web 应用已空闲一段时间也是如此。如果你的 Web 应用始终处于加载状态，则连续运行的任务可能会更可靠地运行。
 
 ## <a name="CreateScheduled"></a>创建计划的 Web 作业
 
@@ -168,10 +168,10 @@ Azure 管理门户不提供创建计划 Web 作业的功能，但在这种功能
 
 ## <a name="WHPNotes"></a>说明
 	
-- 如果没有对 scm（部署）站点发出任何请求，并且未在 Azure 中打开 WEB 应用的门户，则免费模式下的 WEB 应用可能会在 20 分钟之后超时。对实际 WEB 应用发出的请求不会对此进行重置。
+- 如果没有对 scm（部署）站点发出任何请求，并且未在 Azure 中打开 Web 应用的门户，则免费模式下的 Web 应用可能会在 20 分钟之后超时。对实际 Web 应用发出的请求不会对此进行重置。
 - 需要对连续作业的代码进行编写，才能使其在无穷循环中运行。
-- 仅当 WEB 应用启动后连续作业才能连续运行。
-- 基本和标准模式提供了“始终打开”功能，启用该功能可防止 WEB 应用进入空闲状态。
+- 仅当 Web 应用启动后连续作业才能连续运行。
+- 基本和标准模式提供了“始终打开”功能，启用该功能可防止 Web 应用进入空闲状态。
 - 仅可以调试连续运行 WebJobs。不支持按计划或按需调试 WebJobs。
 
 

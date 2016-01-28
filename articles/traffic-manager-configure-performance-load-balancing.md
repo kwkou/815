@@ -13,7 +13,7 @@
 
 # 配置性能负载平衡方法
 
-若要对分布在全球不同数据中心（也称为区域）的云服务和 WEB 应用（终结点）进行负载平衡，可以将传入的流量从发出请求的客户端定向到延迟最低的终结点。通常，延迟最低的数据中心对应于地理距离最短的终结点。使用“性能”负载平衡方法可以基于最低延迟进行分发，但无法考虑网络配置或负载中的实时变化。有关流量管理器提供的各种负载平衡方法的详细信息，请参阅[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)。
+若要对分布在全球不同数据中心（也称为区域）的云服务和 Web 应用（终结点）进行负载平衡，可以将传入的流量从发出请求的客户端定向到延迟最低的终结点。通常，延迟最低的数据中心对应于地理距离最短的终结点。使用“性能”负载平衡方法可以基于最低延迟进行分发，但无法考虑网络配置或负载中的实时变化。有关流量管理器提供的各种负载平衡方法的详细信息，请参阅[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)。
 
 ## 根据最低延迟在一组终结点之间路由流量：
 
@@ -39,7 +39,7 @@
 
 [云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)
 
-[ WEB 应用](/home/features/web-site/)
+[ Web 应用](/home/features/web-site/)
 
 [流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-CN/library/hh758255.aspx)
 

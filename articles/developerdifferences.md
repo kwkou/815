@@ -68,7 +68,7 @@ Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球
 
 * 计算 – 虚拟机	 
 * 计算 – 云服务（适用于 PaaS 服务）
-* 计算 – WEB 应用
+* 计算 – Web 应用
 * 计算 – 移动服务
 * 数据服务 – 存储（适用于 Blob、表和队列）
 * 数据服务 – SQL 数据库

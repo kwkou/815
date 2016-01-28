@@ -21,7 +21,7 @@
 你可以配置自定义域以便访问 Azure 存储帐户中的 Blob 数据。Blob 服务的默认终结点为 https://<*mystorageaccount*>.blob.core.chinacloudapi.cn。如果你将自定义域和子域（例如 **www.contoso.com**）映射到你的存储帐户的 Blob 终结点，则你的用户也可以使用该域访问你的存储帐户中的 Blob 数据。
 
 
-> [WACOM.NOTE]	此任务中的过程适用于 Azure 存储帐户。对于云服务，请参阅<a href = "/documentation/articles/cloud-services-custom-domain-name/">为 Azure 云服务配置自定义域名</a>；对于 WEB 应用，请参阅<a href="/documentation/articles/web-sites-custom-domain-name/">为 Azure WEB 应用配置自定义域名</a>。 
+> [WACOM.NOTE]	此任务中的过程适用于 Azure 存储帐户。对于云服务，请参阅<a href = "/documentation/articles/cloud-services-custom-domain-name/">为 Azure 云服务配置自定义域名</a>；对于 Web 应用，请参阅<a href="/documentation/articles/web-sites-custom-domain-name/">为 Azure Web 应用配置自定义域名</a>。 
 
 > [WACOM.NOTE]	高级存储帐户无法映射到自定义域名。请参阅[高级存储：Azure 虚拟机工作负载的高性能存储](/zh-cn/documentation/articles/storage-premium-storage-preview-portal)，以了解有关高级存储帐户的信息。
 
@@ -55,7 +55,7 @@ Blob|**默认 URL：** http://mystorageaccount.blob.core.chinacloudapi.cn/mycont
 
 4.  在屏幕的底部，单击“管理域”以显示“管理自定义域”对话框。在该对话框顶部的文本中，你将看到有关如何创建 CNAME 记录的信息。对于此过程，请忽略引用 **asverify** 子域的文本。
 
-5.  登录到您的 DNS 注册机构的 WEB 应用，然后转至用于管理 DNS 的页面。可能会在“域名”、“DNS”或“名称服务器管理”等部分中找到此页。
+5.  登录到您的 DNS 注册机构的 Web 应用，然后转至用于管理 DNS 的页面。可能会在“域名”、“DNS”或“名称服务器管理”等部分中找到此页。
 
 6.  找到用于管理 CNAME 的部分。你可能需要转至高级设置页面，并查找“CNAME”、“别名”或“子域”字样。
 
@@ -81,7 +81,7 @@ Blob|**默认 URL：** http://mystorageaccount.blob.core.chinacloudapi.cn/mycont
 
 4.  在屏幕的底部，单击“管理域”以显示“管理自定义域”对话框。在对话框顶部的文本中，你将看到有关如何使用 **asverify** 子域创建 CNAME 记录的信息。
 
-5.  登录到您的 DNS 注册机构的 WEB 应用，然后转至用于管理 DNS 的页面。可能会在“域名”、“DNS”或“名称服务器管理”等部分中找到此页。
+5.  登录到您的 DNS 注册机构的 Web 应用，然后转至用于管理 DNS 的页面。可能会在“域名”、“DNS”或“名称服务器管理”等部分中找到此页。
 
 6.  找到用于管理 CNAME 的部分。你可能需要转至高级设置页面，并查找“CNAME”、“别名”或“子域”字样。
 
@@ -95,7 +95,7 @@ Blob|**默认 URL：** http://mystorageaccount.blob.core.chinacloudapi.cn/mycont
 
 	如果预先注册成功，你将会看到一条消息“你的自定义域处于活动状态”。
 
-11. 此时，你的自定义域已由 Azure 进行了验证，但传输到你的域的流量尚未路由到你的存储帐户。若要完成此过程，请返回到你的 DNS 注册机构的 WEB 应用，创建将你的子域映射到你的 Blob 终结点的另一条 CNAME 记录。例如，将该子域指定为 **www** 或 **photos**，将主机名指定为 **mystorageaccount.blob.core.chinacloudapi.cn**（其中，**mystorageaccount** 是你的存储帐户的名称）。完成此步骤后，也就完成了你的自定义域的注册。
+11. 此时，你的自定义域已由 Azure 进行了验证，但传输到你的域的流量尚未路由到你的存储帐户。若要完成此过程，请返回到你的 DNS 注册机构的 Web 应用，创建将你的子域映射到你的 Blob 终结点的另一条 CNAME 记录。例如，将该子域指定为 **www** 或 **photos**，将主机名指定为 **mystorageaccount.blob.core.chinacloudapi.cn**（其中，**mystorageaccount** 是你的存储帐户的名称）。完成此步骤后，也就完成了你的自定义域的注册。
 
 12. 最后，你可以使用 **asverify** 删除你创建的 CNAME 记录，因为只需要将其作为中间步骤使用。
 

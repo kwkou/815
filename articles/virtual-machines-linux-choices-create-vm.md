@@ -33,7 +33,7 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 
 ### 开发环境：Visual Studio
 
-[使用 Visual Studio 创建用于 WEB 应用的虚拟机][]
+[使用 Visual Studio 创建用于 Web 应用的虚拟机][]
 
 ## 操作系统和映像选项
 
@@ -79,7 +79,7 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 
 [创建并上载包含 Linux 操作系统的虚拟硬盘]: /documentation/articles/virtual-machines-linux-create-upload-vhd
 
-[使用 Visual Studio 创建用于 WEB 应用的虚拟机]: /documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell
+[使用 Visual Studio 创建用于 Web 应用的虚拟机]: /documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell
 
 [登录到虚拟机]: /documentation/articles/virtual-machines-linux-how-to-log-on
 

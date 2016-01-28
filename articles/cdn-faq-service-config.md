@@ -48,7 +48,7 @@
 
 ## **源站日志中如何获取访问者的原始IP**<a id="step6"></a>
 
-WEB 应用通过CDN加速后，其访问来源绝大部分将会来自于CDN缓存节点。CDN回源时，会在HTTP Header **X-Forwarded-For** 中填入原始IP，源站的Web服务器可以修改日志配置记下该信息。
+Web 应用通过CDN加速后，其访问来源绝大部分将会来自于CDN缓存节点。CDN回源时，会在HTTP Header **X-Forwarded-For** 中填入原始IP，源站的Web服务器可以修改日志配置记下该信息。
 
 以 Nginx 为例，其配置文件可以加入如下信息：
 
@@ -68,7 +68,7 @@ access_log /var/log/nginx/access.log logCDN;
 
 2. 修改本地hosts文件，添加纪录 "a.b.c.d www.domain.com
      
-用户打开浏览器访问 _www.domain.com_，如果打开 WEB 应用显示成功，则说明CDN没有问题。如果无法访问，而hosts文件中IP地址改为源站的IP地址后可以成功访问，则说明CDN服务器有问题。
+用户打开浏览器访问 _www.domain.com_，如果打开 Web 应用显示成功，则说明CDN没有问题。如果无法访问，而hosts文件中IP地址改为源站的IP地址后可以成功访问，则说明CDN服务器有问题。
 
 >**注意**
 >Windows下，hosts文件的路径为 C:\Windows\System32\drivers\etc\hosts。     

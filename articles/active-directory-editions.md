@@ -27,7 +27,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 > [AZURE.NOTE]有关这些版本的定价选项，请参阅 [Azure Active Directory 定价](https://azure.microsoft.com/zh-CN/pricing/details/active-directory/)。<br>中国地区目前不支持 Azure Active Directory Premium 和 Azure Active Directory 基本版。有关详细信息，请通过 Azure Active Directory 论坛与我们联系。
 <!--
 
-- **Azure Active Directory 基本版** - 面向具有云优先需求的任务工作者，此版本提供以云为中心的应用程序访问和自助标识管理解决方案。使用 Azure Active Directory 基本版，你可以增强工作效率并获得成本缩减功能，例如基于组的访问管理、用于云应用程序的自助密码重置、Azure Active Directory 应用程序代理（使用 Azure Active Directory 发布本地 WEB 应用），以及 99.9％ 正常运行时间的企业级 SLA。
+- **Azure Active Directory 基本版** - 面向具有云优先需求的任务工作者，此版本提供以云为中心的应用程序访问和自助标识管理解决方案。使用 Azure Active Directory 基本版，你可以增强工作效率并获得成本缩减功能，例如基于组的访问管理、用于云应用程序的自助密码重置、Azure Active Directory 应用程序代理（使用 Azure Active Directory 发布本地 Web 应用），以及 99.9％ 正常运行时间的企业级 SLA。
  
 - **Azure Active Directory Premium** - Azure Active Directory Premium Edition 增加了丰富的企业级标识管理功能，并允许各类用户无缝访问本地与云功能，旨在满足组织更加严苛的标识和访问管理需求。此版本为混合环境中的信息工作者和标识管理员提供一切必要的功能，让他们执行应用程序访问、自助标识和访问管理 (IAM)、标识保护及实现云中的安全性。它支持动态组和自助服务组管理等高级管理与委派资源。它包含 Microsoft 标识管理器（一个本地标识与访问管理套件），并提供云写回功能，使本地用户能够使用自助密码重置等解决方案。
 

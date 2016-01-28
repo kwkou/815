@@ -33,7 +33,7 @@
 - **提高可用性**。跨多个服务器隔离数据可避免单点故障。如果服务器发生故障，或正在进行计划的维护，只有该分区中的数据不可用。其他分区上的操作可以继续进行。增加分区的数量可减少无法使用的数据百分比，从而减轻单个服务器故障造成的相对影响。复制每个分区可以进一步减少单个分区故障影响操作的可能性。它还可以隔离必须持续高度可用的重要数据和具有较低可用性请求的低价值数据（例如日志文件）。
 - **提高安全性**。根据数据的性质及其分区方式，可以将机密和非机密数据隔离到不同的分区，因而隔离到不同的服务器或数据存储。然后，便可以针对机密数据专门进行安全优化。
 - **提供操作灵活性**。使用分区可以从多方面优化操作、最大程度提高管理效率及降低成本。一些示例包括根据数据在每个分区中的重要性定义不同的策略，例如管理、监视、备份和还原及其他管理任务。
-- **将数据存储和使用模式相匹配**。分区允许根据数据存储提供的成本和内置功能，将每个分区部署在不同类型的数据存储上。例如，大型二进制数据可存储在 Blob 数据存储中，而结构化程度更高的数据则可保存在文档数据库中。有关详细信息，请参阅 Microsoft WEB 应用上模式与实践指南[高度可缩放解决方案的数据访问：使用 SQL、NoSQL 和 Polyglot 持续性](https://msdn.microsoft.com/zh-cn/library/dn271399.aspx)中的[构建 Polyglot 解决方案](https://msdn.microsoft.com/zh-cn/library/dn313279.aspx)。
+- **将数据存储和使用模式相匹配**。分区允许根据数据存储提供的成本和内置功能，将每个分区部署在不同类型的数据存储上。例如，大型二进制数据可存储在 Blob 数据存储中，而结构化程度更高的数据则可保存在文档数据库中。有关详细信息，请参阅 Microsoft Web 应用上模式与实践指南[高度可缩放解决方案的数据访问：使用 SQL、NoSQL 和 Polyglot 持续性](https://msdn.microsoft.com/zh-cn/library/dn271399.aspx)中的[构建 Polyglot 解决方案](https://msdn.microsoft.com/zh-cn/library/dn313279.aspx)。
 
 有些系统不实施分区，因为分区被视为额外的开销，而不是一项优势。持有这种观点的常见原因包括：
 
@@ -114,7 +114,7 @@ _图 3. - 按界限上下文或子域对数据进行功能分区_
 3. 确保每个分区的可用资源充足，在数据大小和吞吐量方面可以应对缩放性要求。例如，托管分区的节点可能对存储空间量、处理能力或它所提供的网络带宽施加了硬性限制。如果数据存储和处理要求可能会超过这些限制，则可能必须优化你的分区策略或进一步拆分数据。例如，实现可缩放性的方法之一是使用不同的数据存储来避免整个数据存储要求超过节点的缩放限制，从而将日志记录数据与核心应用程序功能相隔离。如果数据存储的总数超过节点限制，可能需要使用独立的存储节点。
 4. 监视使用中的系统以验证数据是否按预期分布，并且分区可以处理其上施加的负载。该用法可能不符合分析的预期，也就是它可以重新平衡分区。如果无法做到，可能需要重新设计系统的某些部件以获得所需的平衡。
 
-请注意，某些云环境会根据基础结构边界分配资源，你应该确保所选边界的限制可在数据存储、处理能力和带宽等方面提供足够的空间，以满足数据量的预期增长。例如，如果你使用 Azure 表存储，繁忙的分片所需的资源可能会超过可供单一分区处理请求的资源（单一分区在给定时间段内可处理的请求数量是有限制的 — 请参阅 Microsoft WEB 应用上的 [Azure 存储缩放性和性能目标](https://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)页以了解详细信息）。在此情况下，可能需要重新分区以分散负载。如果这些表的总大小或吞吐量超过存储帐户的容量，可能需要创建其他存储帐户并跨帐户分散表。如果存储帐户的数目超过订阅可用的帐户数目，可能需要使用多个订阅。
+请注意，某些云环境会根据基础结构边界分配资源，你应该确保所选边界的限制可在数据存储、处理能力和带宽等方面提供足够的空间，以满足数据量的预期增长。例如，如果你使用 Azure 表存储，繁忙的分片所需的资源可能会超过可供单一分区处理请求的资源（单一分区在给定时间段内可处理的请求数量是有限制的 — 请参阅 Microsoft Web 应用上的 [Azure 存储缩放性和性能目标](https://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)页以了解详细信息）。在此情况下，可能需要重新分区以分散负载。如果这些表的总大小或吞吐量超过存储帐户的容量，可能需要创建其他存储帐户并跨帐户分散表。如果存储帐户的数目超过订阅可用的帐户数目，可能需要使用多个订阅。
 
 ## 针对查询性能设计分区
 
@@ -178,7 +178,7 @@ _图 3. - 按界限上下文或子域对数据进行功能分区_
 
 ## Azure SQL 数据库的分区策略
 
-Azure SQL 数据库是在云中运行的关系数据库即服务。它基于 Microsoft SQL Server。关系数据库将信息分割成表，每个表以一系列的行保存有关实体的信息。每个行包含的列保存实体各个字段的数据。Microsoft WEB 应用上的 [Azure SQL 数据库](https://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx)页提供了有关创建和使用 SQL 数据库的详细文档。
+Azure SQL 数据库是在云中运行的关系数据库即服务。它基于 Microsoft SQL Server。关系数据库将信息分割成表，每个表以一系列的行保存有关实体的信息。每个行包含的列保存实体各个字段的数据。Microsoft Web 应用上的 [Azure SQL 数据库](https://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx)页提供了有关创建和使用 SQL 数据库的详细文档。
 
 ## 使用弹性缩放进行水平分区
 
@@ -188,7 +188,7 @@ Azure SQL 数据库是在云中运行的关系数据库即服务。它基于 Mic
 
 每个分片将作为 SQL 数据库实施。一个分片可以保存多个数据集（称为 _shardlet_），而每个数据库将维护描述其所包含的 shardlet 的元数据。shardlet 可以是单个数据项，也可以是一组共享同一 shardlet 键的项。例如，如果在多租户应用程序中分片数据，则 shardlet 键可能是租户 ID，给定租户的所有数据都将保存为同一 shardlet 的一部分。其他租户的数据保存在不同的 shardlet 中。
 
-程序员负责将数据集与 shardlet 键相关联。一个独立的 SQL 数据库将充当包含数据库（分片）列表（由整个系统和每个数据库中 shardlet 的相关信息构成）的全局分片映射管理器。访问数据的客户端应用程序先连接到全局分片映射管理器数据库，以获取它在本地缓存的分片映射副本（列出分片和 shardlet）。然后，应用程序使用这项信息将数据请求路由发送到相应的分片。此功能隐藏在 Azure SQL 数据库弹性缩放客户端库（以 NuGet 包的形式提供）中的一系列 API 之后。Microsoft WEB 应用上的 [Azure SQL 数据库弹性缩放概述](/documentation/articles/sql-database-elastic-scale-introduction)页提供了有关弹性缩放的更全面介绍。
+程序员负责将数据集与 shardlet 键相关联。一个独立的 SQL 数据库将充当包含数据库（分片）列表（由整个系统和每个数据库中 shardlet 的相关信息构成）的全局分片映射管理器。访问数据的客户端应用程序先连接到全局分片映射管理器数据库，以获取它在本地缓存的分片映射副本（列出分片和 shardlet）。然后，应用程序使用这项信息将数据请求路由发送到相应的分片。此功能隐藏在 Azure SQL 数据库弹性缩放客户端库（以 NuGet 包的形式提供）中的一系列 API 之后。Microsoft Web 应用上的 [Azure SQL 数据库弹性缩放概述](/documentation/articles/sql-database-elastic-scale-introduction)页提供了有关弹性缩放的更全面介绍。
 
 > [AZURE.NOTE]你可以复制全局分片映射管理器数据库，以减少延迟并提高可用性。如果使用某个高级定价层实施数据库，可以配置活动异地复制以持续将数据复制到不同区域中的数据库。在用户所在的每个区域中创建数据库的副本，并将应用程序配置为连接到此副本，以获取分片映射。
 
@@ -218,7 +218,7 @@ _图 6. - 实施多个分片映射_
 
 - 将一起使用的数据分组到同一个分片，并避免执行需要访问保存在多个分片中的数据的操作。请记住，使用弹性缩放时，分片本身就是 SQL 数据库，而 Azure SQL 数据库不支持跨数据库联接；这些操作必须在客户端执行。另请记住，使用 Azure SQL 数据库时，引用完整性条件约束、触发器和一个数据库中的存储过程无法引用另一个数据库中的对象，因此请不要设计在分片之间具有依赖性的系统。但是，SQL 数据库可以包含表（保存查询和其他操作常用的引用数据副本），而这些表并不一定属于任何特定 shardlet。跨分片复制此数据有助于消除联接跨数据库的数据的需要。在理想的情况下，此类数据应该是静态或缓慢移动的，以最大限度地减少复制工作量并减少数据变陈旧的可能性。
 
-	> [AZURE.NOTE]尽管 Azure SQL 数据库不支持跨数据库联接，但是弹性缩放 API 支持执行跨分片查询，这些查询可以透明方式循环访问分片映射引用的所有 shardlet 中保存的数据。弹性缩放 API 将跨分片查询分解成一系列独立查询（每个数据库一个），然后将结果合并在一起。有关详细信息，请参阅 Microsoft WEB 应用上的[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying)页。
+	> [AZURE.NOTE]尽管 Azure SQL 数据库不支持跨数据库联接，但是弹性缩放 API 支持执行跨分片查询，这些查询可以透明方式循环访问分片映射引用的所有 shardlet 中保存的数据。弹性缩放 API 将跨分片查询分解成一系列独立查询（每个数据库一个），然后将结果合并在一起。有关详细信息，请参阅 Microsoft Web 应用上的[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying)页。
 
 - 存储在属于相同分片映射的 shardlet 中的数据应该具有相同的架构。例如，创建的列表分片映射不应指向包含租户数据的某些 shardlet 和其他包含产品信息的 shardlet。弹性缩放不会强制实施此规则，但如果每个 shardlet 都有不同的架构，则数据管理和查询将变得非常复杂。在上述示例中，应该创建两个列表分片映射；一个引用租户数据，另一个指向产品信息。请记住，属于不同 shardlet 的数据可以存储在相同的分片中。
 
@@ -229,7 +229,7 @@ _图 6. - 实施多个分片映射_
 - 如果要按地域查找分片，请确保哈希键映射到的 shardlet 保存在访问该数据的用户附近存储的分片中。
 - 目前，仅支持将有限的一组 SQL 数据类型用作 shardlet 键；_int、bigint、varbinary_ 和 _uniqueidentifier_。SQL _int_ 和 _bigint_ 类型映射为 C# 中的 _int_ 和 _long_ 数据类型，并且具有相同的范围。SQL _varbinary_ 类型可以使用 C# 中的 _Byte_ 数组处理，SQL _uniqueidentier_ 类型映射为 .NET Framework 中的 _Guid_ 类。
 
-顾名思义，弹性缩放可在数据量缩小和增大时，让系统添加和删除分片。Azure SQL 数据库弹性缩放客户端库中的 API 可让应用程序动态创建和删除分片（并以透明方式更新分片映射管理器），但删除分片是破坏性操作，还需要删除该分片中的所有数据。如果应用程序需要将一个分片拆分成两个独立的分片或者将分片组合在一起，弹性缩放可提供独立的拆分/合并服务。此服务在云托管的服务中（开发人员必须创建此云托管服务）运行，并负责安全地在分片之间迁移数据。有关详细信息，请参阅 Microsoft WEB 应用上的[使用弹性缩放拆分和合并](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)主题。
+顾名思义，弹性缩放可在数据量缩小和增大时，让系统添加和删除分片。Azure SQL 数据库弹性缩放客户端库中的 API 可让应用程序动态创建和删除分片（并以透明方式更新分片映射管理器），但删除分片是破坏性操作，还需要删除该分片中的所有数据。如果应用程序需要将一个分片拆分成两个独立的分片或者将分片组合在一起，弹性缩放可提供独立的拆分/合并服务。此服务在云托管的服务中（开发人员必须创建此云托管服务）运行，并负责安全地在分片之间迁移数据。有关详细信息，请参阅 Microsoft Web 应用上的[使用弹性缩放拆分和合并](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)主题。
 
 ## Azure 存储空间的分区策略
 
@@ -245,7 +245,7 @@ Azure 存储空间提供用于管理数据的三个抽象：
 - 区域冗余存储，可以维护在相同区域中跨不同数据中心（或跨两个地理位置靠近近的区域）分散的三个数据副本。这种形式的冗余可以防范单个数据中心发生的灾难，但无法防范影响整个区域的大规模网络中断。请注意，区域冗余存储目前仅适用于块 Blob。
 - 异地冗余存储，可维护六个数据副本。三个副本在一个区域中（你所在的区域），另外三个副本在远程区域中。这种形式的冗余提供最高级别的灾难保护。
 
-Microsoft 已发布 Azure 存储帐户的缩放性目标，请参阅 Microsoft WEB 应用上的 [Azure 存储空间可缩放性和性能目标](https://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)页。目前，总存储帐户容量（保存在表存储、Blob 存储中的数据大小和保存在存储队列中的未处理消息大小）不能超过 500TB。请求速率上限（假设为 1KB 实体、Blob 或消息大小）为每秒 20K。如果系统可能会超过这些限制，请考虑跨多个存储帐户分散负载；单个 Azure 订阅可以创建多达 100 个存储帐户。但是，请注意这些限制会随时更改。
+Microsoft 已发布 Azure 存储帐户的缩放性目标，请参阅 Microsoft Web 应用上的 [Azure 存储空间可缩放性和性能目标](https://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)页。目前，总存储帐户容量（保存在表存储、Blob 存储中的数据大小和保存在存储队列中的未处理消息大小）不能超过 500TB。请求速率上限（假设为 1KB 实体、Blob 或消息大小）为每秒 20K。如果系统可能会超过这些限制，请考虑跨多个存储帐户分散负载；单个 Azure 订阅可以创建多达 100 个存储帐户。但是，请注意这些限制会随时更改。
 
 ## 将 Azure 表存储分区
 
@@ -254,7 +254,7 @@ Azure 表存储是存储的键/值，专为分区而设计。所有实体都存�
 - 分区键。这是一个字符串值，确定 Azure 表存储将在哪个分区中放置实体。具有相同分区键的所有实体将存储在同一分区中。
 - 行键。这是另一个字符串值，用于标识分区中的实体。分区中的所有实体已按此键的词法升序排序。每个实体的分区键/行键组合必须是唯一的，且长度不能超过 1KB。
 
-实体数据的剩余部分由应用程序定义的字段组成。没有强制实施特定的架构，每个行可以包含一组不同的应用程序定义字段。唯一的限制是实体的大小上限（包括分区和行键）目前为 1MB。表的大小上限为 200TB，但是这些数字将来可能会更改（请查看 Microsoft WEB 应用上的 [Azure 存储空间可缩放性和性能目标](https://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)页以了解有关这些限制的最新信息。如果尝试存储的实体超过此容量，请考虑将它们拆分成多个表；使用垂直分区，并将字段分割成很有可能一起访问的组。
+实体数据的剩余部分由应用程序定义的字段组成。没有强制实施特定的架构，每个行可以包含一组不同的应用程序定义字段。唯一的限制是实体的大小上限（包括分区和行键）目前为 1MB。表的大小上限为 200TB，但是这些数字将来可能会更改（请查看 Microsoft Web 应用上的 [Azure 存储空间可缩放性和性能目标](https://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)页以了解有关这些限制的最新信息。如果尝试存储的实体超过此容量，请考虑将它们拆分成多个表；使用垂直分区，并将字段分割成很有可能一起访问的组。
 
 图 7 显示了一个虚构电子商务应用程序的示例存储帐户（Contoso 数据）的逻辑结构。存储帐户包含三个表（“客户信息”、“产品信息”和“订单信息”），每个表有多个分区。在“客户信息”表中，数据已根据客户所在的城市分区，行键包含客户 ID。在“产品信息”表中，产品已按产品类别分区，行键包含产品编号。在“订单信息”表中，订单已按下单日期分区，行键指定了收到订单的时间。请注意，所有数据都已按行键在每个分区中排序。
 
@@ -274,17 +274,17 @@ Azure 表存储使用分区键来确定如何存储数据。如果将具有先�
 
 - 如果使用分区和行键以外的字段定期执行查找数据的查询，请考虑实施[索引表模式](https://msdn.microsoft.com/zh-cn/library/dn589791.aspx)。
 - 如果使用单调递增或递减序列（例如 "0001"、"0002"、"0003"...）生成分区键，而每个分区只包含有限的数据量，则 Azure 表存储可以物理方式将同一服务器上的这些分区分组在一起。这个机制假设应用程序很可能在连续范围的分区中执行查询（范围查询），并已针对此情况进行优化。但是，这种方法可能会导致热点聚焦在单个服务器上，因为新实体的所有插入可能集中在连续范围的其中一端。这也会降低可缩放性。若要跨服务器更平均地分散负载，请考虑编写分区键哈希，使序列更加随机。
-- Azure 表存储支持属于相同分区的实体的事务操作。这意味着，应用程序可以原子单位的形式执行多次插入、更新、删除、替换或合并操作（条件是事务不包含 100 个以上的实体，且请求负载大小不超过 4MB）。跨多个分区的操作不是事务式的，并且可能需要你按“数据一致性指南”中所述实施最终一致性。有关表存储和事务的详细信息，请访问 Microsoft WEB 应用上的[执行实体组事务](https://msdn.microsoft.com/zh-cn/library/azure/dd894038.aspx)页。
+- Azure 表存储支持属于相同分区的实体的事务操作。这意味着，应用程序可以原子单位的形式执行多次插入、更新、删除、替换或合并操作（条件是事务不包含 100 个以上的实体，且请求负载大小不超过 4MB）。跨多个分区的操作不是事务式的，并且可能需要你按“数据一致性指南”中所述实施最终一致性。有关表存储和事务的详细信息，请访问 Microsoft Web 应用上的[执行实体组事务](https://msdn.microsoft.com/zh-cn/library/azure/dd894038.aspx)页。
 - 请特别注意分区键的粒度：
 	- 对每个实体使用相同的分区键使表存储服务创建保存在一台服务器上的单个大型分区，可以防止它向外扩展，并改为将负载焦点放在单个服务器上。因此，这种方法只适用于管理少数实体的系统。但是，这种方法确实能确保所有实体都可以参与实体组事务。
 	- 对每个实体使用唯一的分区键使表存储服务为每个实体创建不同的分区，可能会导致大量的小分区（取决于实体的大小）。这种方法比使用单个分区键更具可缩放性，但是无法进行实体组事务，并且检索多个实体的查询可能涉及到读取多台服务器。但是，如果应用程序执行范围查询，使用单调序列生成分区键可能有助于优化这些查询。
 	- 跨实体子集共享分区键可将相同分区中的相关实体分组。涉及使用实体组事务执行的相关实体的操作，以及提取一组相关实体的查询，可能通过访问单个服务器即可满足。
 
-有关 Azure 表存储中的分区的更多信息，请参阅 Microsoft WEB 应用上的[为 Azure 表存储设计可缩放分区策略](https://msdn.microsoft.com/zh-cn/library/azure/hh508997.aspx)一文。
+有关 Azure 表存储中的分区的更多信息，请参阅 Microsoft Web 应用上的[为 Azure 表存储设计可缩放分区策略](https://msdn.microsoft.com/zh-cn/library/azure/hh508997.aspx)一文。
 
 ## 将 Azure Blob 存储分区
 
-Azure Blob 存储可让你保存大型二进制对象，目前可保存高达 200GB 的块 Blob 或 1TB 的页 Blob（有关最新信息，请访问 Microsoft WEB 应用上的 [Azure 存储空间可缩放性和性能目标](https://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)页）。在方案中使用块 Blob，例如，需要在其中快速上载或下载大量数据的数据流。对需要随机而不是串行访问部分数据的应用程序使用页 Blob。
+Azure Blob 存储可让你保存大型二进制对象，目前可保存高达 200GB 的块 Blob 或 1TB 的页 Blob（有关最新信息，请访问 Microsoft Web 应用上的 [Azure 存储空间可缩放性和性能目标](https://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)页）。在方案中使用块 Blob，例如，需要在其中快速上载或下载大量数据的数据流。对需要随机而不是串行访问部分数据的应用程序使用页 Blob。
 
 每个 Blob（块或页）保存在 Azure 存储帐户中的容器内。可以使用容器将具有相同安全要求的相关 Blob 分组在一起，不过，这种分组是逻辑性的而不是物理性的。在容器中，每个 Blob 都有唯一的名称。
 
@@ -292,7 +292,7 @@ Blob 存储根据 Blob 名称自动分区。每个 Blob 保存在自己的分区
 
 写入单个块（块 Blob）或页（页 Blob）的操作是原子性的，但跨块、页或 Blob 的操作则不是。如果需要在跨块、页和 Blob 写入操作时确保一致性，需要使用 Blob 租约取消写入锁。
 
-Azure Blob 存储支持高达每秒 60MB 的传输速率或每个 Blob 每秒 500 个请求。如果预期会超过这些限制，并且 Blob 数据相当静态，请考虑使用 Azure 内容交付网络 (CDN) 复制 Blob。有关详细信息，请参阅 Microsoft WEB 应用上的[将 CDN 用于 Azure](/documentation/articles/cdn-how-to-use) 页。有关其他指导和注意事项，请参阅“内容交付网络 (CDN)”一文。
+Azure Blob 存储支持高达每秒 60MB 的传输速率或每个 Blob 每秒 500 个请求。如果预期会超过这些限制，并且 Blob 数据相当静态，请考虑使用 Azure 内容交付网络 (CDN) 复制 Blob。有关详细信息，请参阅 Microsoft Web 应用上的[将 CDN 用于 Azure](/documentation/articles/cdn-how-to-use) 页。有关其他指导和注意事项，请参阅“内容交付网络 (CDN)”一文。
 
 ## 将 Azure 存储队列分区
 
@@ -318,7 +318,7 @@ Azure 服务总线使用消息代理处理发送到服务总线队列或主题�
 确定如何（或者是否）将服务总线消息队列或主题分区时，应注意以下几点：
 
 - 服务总线队列和主题在服务总线命名空间的范围内创建。服务总线当前允许为每个命名空间最多创建 100 个分区的队列或主题。
-- 每个服务总线命名空间施加了可用资源的配额，例如每个主题的订阅数目、每秒并发发送和接收请求的数目，以及可创建的并发连接的最大数目。这些配额已记录在 Microsoft WEB 应用上的[服务总线配额](https://msdn.microsoft.com/zh-cn/library/azure/ee732538.aspx)页上。如果你预期会超过这些值，请创建更多包含自身队列和主题的命名空间，并跨这些命名空间分散工作。例如，在每个区域的全局应用程序中创建不同的命名空间，并将应用程序实例配置为使用最接近命名空间中的队列和主题。
+- 每个服务总线命名空间施加了可用资源的配额，例如每个主题的订阅数目、每秒并发发送和接收请求的数目，以及可创建的并发连接的最大数目。这些配额已记录在 Microsoft Web 应用上的[服务总线配额](https://msdn.microsoft.com/zh-cn/library/azure/ee732538.aspx)页上。如果你预期会超过这些值，请创建更多包含自身队列和主题的命名空间，并跨这些命名空间分散工作。例如，在每个区域的全局应用程序中创建不同的命名空间，并将应用程序实例配置为使用最接近命名空间中的队列和主题。
 - 作为事务一部分发送的消息必须指定分区键。这可能是 _SessionId、PartitionKey_ 或 _MessageId_。作为相同事务一部分发送的所有消息必须指定相同的分区键，因为它们需要由相同的消息代理进程进行处理。无法在同一事务中将消息发送到不同队列或主题。
 - 无法将分区的队列或主题配置为在空闲状态时自动删除。
 - 如果要构建跨平台解决方案或混合解决方案，当前无法将分区的队列和主题与高级消息队列协议 (AMQP) 配合使用。
@@ -331,11 +331,11 @@ Azure DocumentDB 是可以存储文档的 NoSQL 数据库。DocumentDB 中的文
 
 文档集合提供一个自然机制用于在单个数据库中将数据分区。在内部，DocumentDB 数据库可以跨多台服务器，DocumentDB 可以尝试跨服务器分布集合以分散负载。实施分片的最简单方法是为每个分片创建一个集合。
 
-> [AZURE.NOTE]根据_性能级别_为每个 DocumentDB 分配资源。性能级别与_请求单位_ (RU) 比率限制关联。RU 比率限制指定要为该集合保留的并可供该集合独占使用的资源量。集合的成本取决于为集合选择的性能级别；性能级别（以及 RU 比率限制）越高，则费用就越高。可以使用 Azure 管理门户来调整集合的性能级别。有关详细信息，请参阅 Microsoft WEB 应用上的 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels)页。
+> [AZURE.NOTE]根据_性能级别_为每个 DocumentDB 分配资源。性能级别与_请求单位_ (RU) 比率限制关联。RU 比率限制指定要为该集合保留的并可供该集合独占使用的资源量。集合的成本取决于为集合选择的性能级别；性能级别（以及 RU 比率限制）越高，则费用就越高。可以使用 Azure 管理门户来调整集合的性能级别。有关详细信息，请参阅 Microsoft Web 应用上的 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels)页。
 
 所有数据库在 DocumentDB 帐户的上下文中创建。一个 DocumentDB 帐户可以包含多个数据库，并指定数据库要在哪些区域中创建。每个 DocumentDB 帐户还强制实施自身的访问控制。可以使用 DocumentDB 帐户异地查找靠近需要访问帐户的用户的分片（数据库中的集合），并强制实施限制，以便只有这些用户才能连接到这些帐户。
 
-每个 DocumentDB 帐户都有配额，用于限制其包含的数据库和集合数目，以及可用的文档存储量。这些限制随时会更改，但 Microsoft WEB 应用上的 [DocumentDB 限制和配额](/documentation/articles/documentdb-limits)页上已提供了说明。如果实施的系统中所有分片都属于同一数据库，则理论上有可能会达到帐户的存储容量限制。在此情况下，可能需要创建更多的 DocumentDB 帐户和数据库，并跨这些数据库分布分片。但是，即使你不太可能会超过数据库的存储容量，使用多个数据库也是个不错的做法，因为每个数据库都有自身的用户和权限集。可以使用这种机制按数据库隔离对集合的访问。
+每个 DocumentDB 帐户都有配额，用于限制其包含的数据库和集合数目，以及可用的文档存储量。这些限制随时会更改，但 Microsoft Web 应用上的 [DocumentDB 限制和配额](/documentation/articles/documentdb-limits)页上已提供了说明。如果实施的系统中所有分片都属于同一数据库，则理论上有可能会达到帐户的存储容量限制。在此情况下，可能需要创建更多的 DocumentDB 帐户和数据库，并跨这些数据库分布分片。但是，即使你不太可能会超过数据库的存储容量，使用多个数据库也是个不错的做法，因为每个数据库都有自身的用户和权限集。可以使用这种机制按数据库隔离对集合的访问。
 
 图 8 演示了 DocumentDB 体系结构的高级结构。
 
@@ -351,24 +351,24 @@ _图 9. - 使用 Azure DocumentDB 实施分片_
 
 确定如何使用 DocumentDB 将数据分区时，应注意以下几点：
 
-- DocumentDB 数据库的可用资源受限于 DocumentDB 帐户的配额限制。每个数据库可以保存许多集合（同样存在限制），每个集合都与控制该集合 RU 比率限制（保留吞吐量）的性能级别相关联。有关详细信息，请访问 Microsoft WEB 应用上的 [DocumentDB 限制和配额](/documentation/articles/documentdb-limits)页。
+- DocumentDB 数据库的可用资源受限于 DocumentDB 帐户的配额限制。每个数据库可以保存许多集合（同样存在限制），每个集合都与控制该集合 RU 比率限制（保留吞吐量）的性能级别相关联。有关详细信息，请访问 Microsoft Web 应用上的 [DocumentDB 限制和配额](/documentation/articles/documentdb-limits)页。
 - 每个文档必须有一个可用于在保存该文档的集合中唯一标识该文档的属性。这和定义文档要保存在哪个集合中的分片键不同。一个集合可以包含大量的文档，理论上只受限于文档 ID 的最大长度。文档 ID 最多可包含 255 个字符。
 - 针对文档的所有操作都在事务的上下文中执行，事务的范围是包含该文档的集合。如果操作失败，已执行的工作将会回滚。当文档正在接受某项操作时，所做的任何更改将受限于快照级隔离。例如，如果创建新文档的请求失败，此机制将保证另一个同时查询数据库的用户不会看到当时删除的部分文档。
 - DocumentDB 查询的范围还只限于集合级别。单个查询只能从一个集合检索数据。如果需要从多个集合检索数据，则必须分别查询每个集合，并将结果合并到应用程序代码中。
 - DocumentDB 支持所有可与文档一起存储在集合中的可编程项：存储过程、用户定义的函数和触发器（以 JavaScript 编写）。这些项可以访问同一集合中的任何文档。此外，这些项在环境事务的范围内执行（如果是由于针对文档执行了创建、删除或替换操作而激发了触发器），或者通过启动新的事务执行（如果是由于显式客户端请求结果而执行的存储过程）。如果可编程项中的代码引发异常，事务将会回滚。可以使用存储过程和触发器来维护文档之间的完整性和一致性，但这些文档必须属于同一集合。
-- 应该确保想要在 DocumentDB 帐户的数据库中保存的集合不太可能超过集合的性能级别所定义的吞吐量限制。Microsoft WEB 应用上的 [DocumentDB 容量需求](/documentation/articles/documentdb-manage)页上已说明了这些限制。如果预计会达到这些限制，请考虑在不同的 DocumentDB 帐户中跨数据库拆分集合，以减少每个集合的负载。
+- 应该确保想要在 DocumentDB 帐户的数据库中保存的集合不太可能超过集合的性能级别所定义的吞吐量限制。Microsoft Web 应用上的 [DocumentDB 容量需求](/documentation/articles/documentdb-manage)页上已说明了这些限制。如果预计会达到这些限制，请考虑在不同的 DocumentDB 帐户中跨数据库拆分集合，以减少每个集合的负载。
 
 ## Azure 搜索的分区策略
 
-搜索数据的功能通常是许多 WEB 应用提供的主要导航和浏览方法，使用户能够快速根据搜索条件的组合查找资源（例如，电子商务应用程序中的产品）。Azure 搜索服务针对 Web 内容提供全文搜索功能，并包括自动提示、根据近似的匹配内容建议查询，以及分面导航等功能。有关这些功能的完整说明，请参阅 Microsoft WEB 应用上的 [Azure 搜索概述](https://msdn.microsoft.com/zh-cn/library/azure/dn798933.aspx)页。
+搜索数据的功能通常是许多 Web 应用提供的主要导航和浏览方法，使用户能够快速根据搜索条件的组合查找资源（例如，电子商务应用程序中的产品）。Azure 搜索服务针对 Web 内容提供全文搜索功能，并包括自动提示、根据近似的匹配内容建议查询，以及分面导航等功能。有关这些功能的完整说明，请参阅 Microsoft Web 应用上的 [Azure 搜索概述](https://msdn.microsoft.com/zh-cn/library/azure/dn798933.aspx)页。
 
 搜索服务将可搜索的内容存储为数据库中的 JSON 文档。你可以定义一些索引，用于在这些文档中指定可搜索的字段，并将这些定义提供给搜索服务。当用户提交搜索请求时，搜索服务将使用适当的索引来查找匹配项。
 
 为了减少争用，搜索服务使用的存储可以分割为 1、2、3、4、6 或 12 个分区，并且每个分区最多可以复制 6 次。分区数目乘以副本数目的乘积称为_搜索单位_ (SU)。搜索服务的单个实例最多可以包含 36 个 SU（具有 12 个分区的数据库最多只支持 3 个副本）。你需要支付分配给服务的每个 SU 的费用。当可搜索内容的数量增加或搜索请求的比率增大时，可以将 SU 添加到搜索服务的现有实例以处理额外的负载。搜索服务本身负责跨分区平均分配文档，目前不支持任何手动分区策略。
 
-每个分区最多可以包含 1500 万个文档或占用 300GB 的存储空间（取两者中较小者，视文档和索引的大小而定）。最多可以创建 50 个索引。服务的性能因文档的复杂性、可用索引以及网络延迟的影响而有所不同。一般而言，单个副本 (1SU) 每秒应该可以处理 15 个查询 (QPS)，不过，你应该使用自己的数据执行基准计算，以获取更精确的吞吐量测量值。有关详细信息，请参阅 Microsoft WEB 应用上的[限制和约束（Azure 搜索 API）](https://msdn.microsoft.com/zh-cn/library/azure/dn798934.aspx)页。
+每个分区最多可以包含 1500 万个文档或占用 300GB 的存储空间（取两者中较小者，视文档和索引的大小而定）。最多可以创建 50 个索引。服务的性能因文档的复杂性、可用索引以及网络延迟的影响而有所不同。一般而言，单个副本 (1SU) 每秒应该可以处理 15 个查询 (QPS)，不过，你应该使用自己的数据执行基准计算，以获取更精确的吞吐量测量值。有关详细信息，请参阅 Microsoft Web 应用上的[限制和约束（Azure 搜索 API）](https://msdn.microsoft.com/zh-cn/library/azure/dn798934.aspx)页。
 
-> [AZURE.NOTE]可以将有限的一组数据类型存储在可搜索文档中：字符串、布尔值、数字数据、日期时间数据和一些地理数据。有关详细信息，请参阅 Microsoft WEB 应用上的[支持的数据类型（Azure 搜索）](https://msdn.microsoft.com/zh-cn/library/azure/dn798938.aspx)页。
+> [AZURE.NOTE]可以将有限的一组数据类型存储在可搜索文档中：字符串、布尔值、数字数据、日期时间数据和一些地理数据。有关详细信息，请参阅 Microsoft Web 应用上的[支持的数据类型（Azure 搜索）](https://msdn.microsoft.com/zh-cn/library/azure/dn798938.aspx)页。
 
 你只能有限地控制 Azure 搜索服务如何对每个服务实例的数据分区。但是，在全局环境中，你可以通过使用以下任一策略将服务本身分区，以进一步提高性能并减少延迟和争用：
 
@@ -377,20 +377,20 @@ _图 9. - 使用 Azure DocumentDB 实施分片_
 
 ## Azure Redis 缓存的分区策略
 
-Azure Redis 缓存在云中提供基于 Redis 键/值数据存储的共享缓存服务。顾名思义，Azure Redis 缓存旨在用作缓存解决方案，因此应该只用于保存暂时性数据，而不是用作永久性的数据存储；如果缓存不可用，利用 Azure Redis 缓存的应用程序应可继续工作。Azure Redis 缓存支持主要/辅助复制，可提供高可用性，但目前缓存大小上限为 53GB。如果需要更多的空间，则必须创建更多缓存。有关详细信息，请访问 Microsoft WEB 应用上的 [Windows Azure 缓存](/documentation/articles/redis-cache)页。
+Azure Redis 缓存在云中提供基于 Redis 键/值数据存储的共享缓存服务。顾名思义，Azure Redis 缓存旨在用作缓存解决方案，因此应该只用于保存暂时性数据，而不是用作永久性的数据存储；如果缓存不可用，利用 Azure Redis 缓存的应用程序应可继续工作。Azure Redis 缓存支持主要/辅助复制，可提供高可用性，但目前缓存大小上限为 53GB。如果需要更多的空间，则必须创建更多缓存。有关详细信息，请访问 Microsoft Web 应用上的 [Windows Azure 缓存](/documentation/articles/redis-cache)页。
 
 将 Redis 数据存储分区涉及到跨 Redis 服务的实例拆分数据。每个实例构成单个分区。Azure Redis 缓存将抽象化幕后的 Redis 服务，而不直接公开它们。实施分区的最简单方法是创建多个 Azure Redis 缓存，并在其中分散数据。可以将每个数据项与指定要存储在哪个缓存中的标识符（分区键）关联。客户端应用程序逻辑可以使用此标识符将请求路由到相应的分区。此方案非常简单，但如果分区方案发生更改（例如，如果已创建其他 Azure Redis 缓存），则可能需要重新配置客户端应用程序。
 
-本机 Redis（非 Azure Redis 缓存）支持基于 Redis 群集的服务器端分区。使用此方法时，将使用哈希机制跨服务器平均分割数据。每个 Redis 服务器将存储用于描述分区保存的哈希键范围的元数据，同时还包含有关哪些哈希键位于其他服务器上的分区中的信息。客户端应用程序只需将请求发送到任何参与方 Redis 服务器（可能是最靠近的服务器）。Redis 服务器将检查客户端请求，如果可以在本地解决，则执行请求的操作，否则将请求转发到相应的服务器。此模型是使用 Redis 群集实施的，Redis WEB 应用上的 [Redis 群集教程](http://redis.io/topics/cluster-tutorial)页上提供了更详细的说明。Redis 群集对客户端应用程序而言是透明的，其他 Redis 服务器可以添加到群集（数据将重新分区），而无需重新配置客户端。
+本机 Redis（非 Azure Redis 缓存）支持基于 Redis 群集的服务器端分区。使用此方法时，将使用哈希机制跨服务器平均分割数据。每个 Redis 服务器将存储用于描述分区保存的哈希键范围的元数据，同时还包含有关哪些哈希键位于其他服务器上的分区中的信息。客户端应用程序只需将请求发送到任何参与方 Redis 服务器（可能是最靠近的服务器）。Redis 服务器将检查客户端请求，如果可以在本地解决，则执行请求的操作，否则将请求转发到相应的服务器。此模型是使用 Redis 群集实施的，Redis Web 应用上的 [Redis 群集教程](http://redis.io/topics/cluster-tutorial)页上提供了更详细的说明。Redis 群集对客户端应用程序而言是透明的，其他 Redis 服务器可以添加到群集（数据将重新分区），而无需重新配置客户端。
 
-> [AZURE.IMPORTANT]Azure Redis 缓存目前不支持 Redis 群集。如果想要对 Azure 实施此方法，必须通过将 Redis 安装在一组 Azure 虚拟机上并手动配置这些虚拟机，来实施自己的 Redis 服务器。Microsoft WEB 应用上的[在 Azure 中的 CentOS Linux VM 上运行 Redis](http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx) 页逐步讲解了一个示例，用于演示如何构建和配置作为 Azure VM 运行的 Redis 节点。
+> [AZURE.IMPORTANT]Azure Redis 缓存目前不支持 Redis 群集。如果想要对 Azure 实施此方法，必须通过将 Redis 安装在一组 Azure 虚拟机上并手动配置这些虚拟机，来实施自己的 Redis 服务器。Microsoft Web 应用上的[在 Azure 中的 CentOS Linux VM 上运行 Redis](http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx) 页逐步讲解了一个示例，用于演示如何构建和配置作为 Azure VM 运行的 Redis 节点。
 
-Redis WEB 应用上的[分区：如何在多个 Redis 实例之间拆分数据](http://redis.io/topics/partitioning)页提供了有关使用 Redis 实施分区的更多信息。本部分的余下内容假设你要实施客户端分区或代理辅助分区。
+Redis Web 应用上的[分区：如何在多个 Redis 实例之间拆分数据](http://redis.io/topics/partitioning)页提供了有关使用 Redis 实施分区的更多信息。本部分的余下内容假设你要实施客户端分区或代理辅助分区。
 
 在确定如何使用 Azure Redis 缓存将数据分区时，应注意以下几点：
 
 - Azure Redis 缓存并非旨在用作永久性的数据存储，因此无论实施哪种分区方案，应用程序代码都应该准备好接受在缓存中找不到数据，因而必须从其他位置检索数据的事实。
-- 将经常访问的数据一起保存在同一分区中。Redis 是一个功能强大的键/值存储，提供多种高度优化的机制用于建构数据：从简单字符串（实际上是长度最大为 512MB 的二进制数据）、聚合类型（例如列表（可充当队列和堆栈））、集（已排序和未排序）到哈希（可将相关的字段分组在一起，例如表示对象中字段的项）。聚合类型可让你将许多相关值与同一个键相关联；Redis 键标识列表、集或哈希，而不是它包含的数据项。可以在 Azure Redis 缓存中使用这些类型，Redis WEB 应用上的[数据类型](http://redis.io/topics/data-types)页已提供了说明。例如，跟踪客户所下订单的电子商务系统部件中，每位客户的详细信息可能存储在 Redis 哈希中，使用客户 ID 键控。每个哈希可以保存该客户的订单 ID 集合。一个独立的 Redis 集可以保存订单（同样已结构化为哈希），使用订单 ID 键控。图 10 显示了此结构。请注意，Redis 不实施任何形式的引用完整性，因此开发人员需要负责维护客户与订单之间的关系。
+- 将经常访问的数据一起保存在同一分区中。Redis 是一个功能强大的键/值存储，提供多种高度优化的机制用于建构数据：从简单字符串（实际上是长度最大为 512MB 的二进制数据）、聚合类型（例如列表（可充当队列和堆栈））、集（已排序和未排序）到哈希（可将相关的字段分组在一起，例如表示对象中字段的项）。聚合类型可让你将许多相关值与同一个键相关联；Redis 键标识列表、集或哈希，而不是它包含的数据项。可以在 Azure Redis 缓存中使用这些类型，Redis Web 应用上的[数据类型](http://redis.io/topics/data-types)页已提供了说明。例如，跟踪客户所下订单的电子商务系统部件中，每位客户的详细信息可能存储在 Redis 哈希中，使用客户 ID 键控。每个哈希可以保存该客户的订单 ID 集合。一个独立的 Redis 集可以保存订单（同样已结构化为哈希），使用订单 ID 键控。图 10 显示了此结构。请注意，Redis 不实施任何形式的引用完整性，因此开发人员需要负责维护客户与订单之间的关系。
 
 ![](./media/best-practices-data-partitioning/RedisCustomersandOrders.png)
 
@@ -405,7 +405,7 @@ _图 10. - 记录客户订单及其详细信息的 Redis 存储中的建议结�
 
 - Redis 批处理与事务不能跨多个连接，因此受批处理或事务影响的所有数据应保存在同一数据库（分片）中。
 
-	> [AZURE.NOTE]Redis 事务中的操作序列不一定是原子性的。构成事务的命令已经过验证，并在执行之前已排入队列，如果在此阶段期间发生错误，将会丢弃整个队列。但是，一旦成功提交事务，排入队列的命令就会按顺序执行。如果任一命令失败，只会中止该命令；队列中所有前面与后面的命令都将执行。如果需要执行原子操作。有关详细信息，请访问 Redis WEB 应用上的[事务](http://redis.io/topics/transactions)页。
+	> [AZURE.NOTE]Redis 事务中的操作序列不一定是原子性的。构成事务的命令已经过验证，并在执行之前已排入队列，如果在此阶段期间发生错误，将会丢弃整个队列。但是，一旦成功提交事务，排入队列的命令就会按顺序执行。如果任一命令失败，只会中止该命令；队列中所有前面与后面的命令都将执行。如果需要执行原子操作。有关详细信息，请访问 Redis Web 应用上的[事务](http://redis.io/topics/transactions)页。
 
 - Redis 支持有限数量的原子操作，并且这种类型的、支持多个键和值的操作只有 MGET（返回指定键列表的值集合）和 MSET（可以存储指定键列表的值集合）。如果需要使用这些操作，必须将 MSET 和 MGET 命令引用的键/值对存储在同一数据库中。
 
@@ -440,35 +440,35 @@ _图 10. - 记录客户订单及其详细信息的 Redis 存储中的建议结�
 
 执行联机迁移更复杂，但是用户比较不受干扰，因为数据在整个过程中保持可用。该过程与脱机迁移类似，不同之处在于，原始分片不会标记为脱机（步骤 1）。根据迁移过程的数据粒度（逐项或逐分片），客户端应用程序中的数据访问代码可能需要处理保存在两个位置（原始分片和新分片）的数据的读取和写入。
 
-有关支持联机迁移的解决方案示例，请参阅 Microsoft WEB 应用上的联机文档[弹性缩放的拆分/合并服务](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)。
+有关支持联机迁移的解决方案示例，请参阅 Microsoft Web 应用上的联机文档[弹性缩放的拆分/合并服务](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)。
 
 ## 相关模式和指南
 
 考虑有关实现数据一致性的策略时，以下模式也可能与你的方案相关：
 
-- Microsoft WEB 应用上的“数据一致性指南”页：介绍在云等分布式环境中保持一致性的策略。
-- Microsoft WEB 应用上的[数据分区指南](https://msdn.microsoft.com/zh-cn/library/dn589795.aspx)页：一般性地概述如何设计分区，以符合分布式解决方案中的各种条件。
-- Microsoft WEB 应用上介绍的[分片模式](https://msdn.microsoft.com/zh-cn//dn589797.aspx)：汇总了有关分片数据的常见策略。
-- Microsoft WEB 应用上介绍的[索引表模式](https://msdn.microsoft.com/zh-cn/library/dn589791.aspx)：演示如何基于数据创建辅助索引。此方法可让应用程序使用未引用集合主键的查询快速检索数据。
-- Microsoft WEB 应用上介绍的[具体化视图模式](https://msdn.microsoft.com/zh-cn/library/dn589782.aspx)：介绍如何生成预先填充的视图，用于汇总数据以支持快速查询操作。如果包含汇总数据的分区分布在多个站点上，此方法可能对分区的数据存储很有用。
+- Microsoft Web 应用上的“数据一致性指南”页：介绍在云等分布式环境中保持一致性的策略。
+- Microsoft Web 应用上的[数据分区指南](https://msdn.microsoft.com/zh-cn/library/dn589795.aspx)页：一般性地概述如何设计分区，以符合分布式解决方案中的各种条件。
+- Microsoft Web 应用上介绍的[分片模式](https://msdn.microsoft.com/zh-cn//dn589797.aspx)：汇总了有关分片数据的常见策略。
+- Microsoft Web 应用上介绍的[索引表模式](https://msdn.microsoft.com/zh-cn/library/dn589791.aspx)：演示如何基于数据创建辅助索引。此方法可让应用程序使用未引用集合主键的查询快速检索数据。
+- Microsoft Web 应用上介绍的[具体化视图模式](https://msdn.microsoft.com/zh-cn/library/dn589782.aspx)：介绍如何生成预先填充的视图，用于汇总数据以支持快速查询操作。如果包含汇总数据的分区分布在多个站点上，此方法可能对分区的数据存储很有用。
 - 文章“内容交付网络 (CDN)”提供了有关配置和使用 Azure CDN 的更多指引。
 
 ## 更多信息
 
-- Microsoft WEB 应用上的 [Azure SQL 数据库](https://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx)页提供了有关如何创建和使用 SQL 数据库的详细文档。
-- Microsoft WEB 应用上的 [Azure SQL 数据库弹性缩放概述](/documentation/articles/sql-database-elastic-scale-introduction)页提供了有关弹性缩放的全面介绍。
-- Microsoft WEB 应用上的[使用弹性缩放进行拆分和合并](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)主题包含有关使用拆分/合并服务管理弹性缩放分片的信息。
-- Microsoft WEB 应用上的 [Azure 存储空间可缩放性和性能目标](/documentation/articles/storage-scalability-targets)页介绍了 Azure 存储空间的当前大小和吞吐量限制。
-- Microsoft WEB 应用上的[执行实体组事务](https://msdn.microsoft.com/zh-cn/library/azure/dd894038.aspx)页提供了有关通过存储在 Azure 表存储的实体执行事务操作的详细信息。
-- Microsoft WEB 应用上的[为 Azure 表存储设计可缩放分区策略](https://msdn.microsoft.com/zh-cn/library/azure/hh508997.aspx)一文包含有关 Azure 表存储中的分区的详细信息。
-- Microsoft WEB 应用上的[使用 Azure CDN](/documentation/articles/cdn-how-to-use) 页介绍了如何使用 Azure 内容交付网络 (CDN) 复制保存在 Azure Blob 存储中的数据。
-- Microsoft WEB 应用上的[管理 DocumentDB 容量和性能](/documentation/articles/documentdb-manage)页包含有关 Azure DocumentDB 如何将资源分配给数据库的信息。
-- Microsoft WEB 应用上的 [Azure 搜索概述](https://msdn.microsoft.com/zh-cn/library/azure/dn798933.aspx)页介绍了 Azure 搜索服务提供的功能。
-- Microsoft WEB 应用上的[限制和约束（Azure 搜索 API）](https://msdn.microsoft.com/zh-cn/library/azure/dn798934.aspx)页包含有关每个 Azure 搜索服务实例的容量的信息。
-- Microsoft WEB 应用上的[支持的数据类型（Azure 搜索）](https://msdn.microsoft.com/zh-cn/library/azure/dn798938.aspx)页汇总了你可以在可搜索文档和索引中使用的数据类型。
-- Microsoft WEB 应用上的 [Windows Azure 缓存](/home/features/redis-cache/)页提供了 Azure Redis 缓存的介绍。
-- Redis WEB 应用上的[分区：如何在多个 Redis 实例之间拆分数据](http://redis.io/topics/partitioning)页提供了有关使用 Redis 实施分区的信息。
-- Microsoft WEB 应用上的[在 Azure 中的 CentOS Linux VM 上运行 Redis](http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx) 页逐步讲解了一个示例，用于演示如何构建和配置作为 Azure VM 运行的 Redis 节点。
-- Redis WEB 应用上的[数据类型](http://redis.io/topics/data-types)页介绍了可在 Redis 和 Azure Redis 缓存中使用的数据类型。
+- Microsoft Web 应用上的 [Azure SQL 数据库](https://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx)页提供了有关如何创建和使用 SQL 数据库的详细文档。
+- Microsoft Web 应用上的 [Azure SQL 数据库弹性缩放概述](/documentation/articles/sql-database-elastic-scale-introduction)页提供了有关弹性缩放的全面介绍。
+- Microsoft Web 应用上的[使用弹性缩放进行拆分和合并](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)主题包含有关使用拆分/合并服务管理弹性缩放分片的信息。
+- Microsoft Web 应用上的 [Azure 存储空间可缩放性和性能目标](/documentation/articles/storage-scalability-targets)页介绍了 Azure 存储空间的当前大小和吞吐量限制。
+- Microsoft Web 应用上的[执行实体组事务](https://msdn.microsoft.com/zh-cn/library/azure/dd894038.aspx)页提供了有关通过存储在 Azure 表存储的实体执行事务操作的详细信息。
+- Microsoft Web 应用上的[为 Azure 表存储设计可缩放分区策略](https://msdn.microsoft.com/zh-cn/library/azure/hh508997.aspx)一文包含有关 Azure 表存储中的分区的详细信息。
+- Microsoft Web 应用上的[使用 Azure CDN](/documentation/articles/cdn-how-to-use) 页介绍了如何使用 Azure 内容交付网络 (CDN) 复制保存在 Azure Blob 存储中的数据。
+- Microsoft Web 应用上的[管理 DocumentDB 容量和性能](/documentation/articles/documentdb-manage)页包含有关 Azure DocumentDB 如何将资源分配给数据库的信息。
+- Microsoft Web 应用上的 [Azure 搜索概述](https://msdn.microsoft.com/zh-cn/library/azure/dn798933.aspx)页介绍了 Azure 搜索服务提供的功能。
+- Microsoft Web 应用上的[限制和约束（Azure 搜索 API）](https://msdn.microsoft.com/zh-cn/library/azure/dn798934.aspx)页包含有关每个 Azure 搜索服务实例的容量的信息。
+- Microsoft Web 应用上的[支持的数据类型（Azure 搜索）](https://msdn.microsoft.com/zh-cn/library/azure/dn798938.aspx)页汇总了你可以在可搜索文档和索引中使用的数据类型。
+- Microsoft Web 应用上的 [Windows Azure 缓存](/home/features/redis-cache/)页提供了 Azure Redis 缓存的介绍。
+- Redis Web 应用上的[分区：如何在多个 Redis 实例之间拆分数据](http://redis.io/topics/partitioning)页提供了有关使用 Redis 实施分区的信息。
+- Microsoft Web 应用上的[在 Azure 中的 CentOS Linux VM 上运行 Redis](http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx) 页逐步讲解了一个示例，用于演示如何构建和配置作为 Azure VM 运行的 Redis 节点。
+- Redis Web 应用上的[数据类型](http://redis.io/topics/data-types)页介绍了可在 Redis 和 Azure Redis 缓存中使用的数据类型。
 
 <!---HONumber=67-->
