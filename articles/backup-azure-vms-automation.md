@@ -162,7 +162,7 @@ PS C:\> Wait-AzureRMBackupJob -Job $joblist[0] -Timeout 43200
 ```
 
 
-## 还原 Azure VM
+## <a name="restore-an-azure-vm"></a>还原 Azure VM
 
 若要还原备份数据，你需要确定已备份项目以及保留了时间点数据的恢复点。此信息将提供给 Restore-AzureRMBackupItem cmdlet，以便启动还原过程，将数据从保管库还原到客户的帐户。
 

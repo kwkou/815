@@ -12,9 +12,9 @@
 	ms.date="10/29/2015"
 	wacn.date="01/26/2016"/>
 # 在 Azure 中计划 VM 备份基础结构
-本文介绍在计划虚拟机 (VM) 备份基础结构时应牢记的重要注意事项。如果你已[进行环境准备](/documentation/articles/backup-azure-vms-prepare)，则在你开始[备份 VM](/documentation/articles/backup-azure-vms) 之前，下一步就是执行此操作。如果你需要有关 Azure 虚拟机的详细信息，请参阅[虚拟机文档](documentation/services/virtual-machines/)。
+本文介绍在计划虚拟机 (VM) 备份基础结构时应牢记的重要注意事项。如果你已[进行环境准备](/documentation/articles/backup-azure-vms-prepare)，则在你开始[备份 VM](/documentation/articles/backup-azure-vms) 之前，下一步就是执行此操作。如果你需要有关 Azure 虚拟机的详细信息，请参阅[虚拟机文档](/documentation/services/virtual-machines/)。
 
-## Azure 虚拟机备份原理
+## <a name="how-does-azure-back-up-virtual-machines"></a>Azure 虚拟机备份原理
 当 Azure 备份服务在计划的时间启动备份作业时，它将触发进行时间点快照拍摄所需的备份扩展。创建此快照时，将借助卷影复制服务 (VSS) 来获取虚拟机中磁盘的一致性快照，不必关闭该虚拟机。
 
 拍摄快照后，数据将由 Azure 备份服务传输到备份保管库中。为了使备份过程更加高效，服务只标识并传输自上次备份后已更改的数据块。
@@ -46,7 +46,7 @@ Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完
 
 
 ## 性能和资源利用率
-与本地部署的备份软件一样，Azure 中 VM 的备份也需要在容量和资源利用率方面进行规划。[Azure 存储空间限制](/documentation/articles/azure-subscription-service-limits#storage-limits)定义如何构建 VM 部署，以获得最大性能，同时对运行中的工作负荷造成最小的影响。
+与本地部署的备份软件一样，Azure 中 VM 的备份也需要在容量和资源利用率方面进行规划。[Azure 存储空间限制](/documentation/articles/azure-subscription-service-limits)定义如何构建 VM 部署，以获得最大性能，同时对运行中的工作负荷造成最小的影响。
 
 有两个主要 Azure 存储空间限制会影响备份性能：
 

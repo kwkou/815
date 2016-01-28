@@ -39,7 +39,7 @@
 
     ![选择日期](./media/backup-azure-restore-vms/select-date.png)
 
-    在你单击日历控件中的日期后，该日可用的恢复点将显示在下面的恢复点表中。“时间”列指示生成快照的时间。“类型”列显示恢复点的[一致性](documentation/articles/backup-azure-vms#consistency-of-recovery-points)。表标题在括号中显示该日期可用的恢复点数目。
+    在你单击日历控件中的日期后，该日可用的恢复点将显示在下面的恢复点表中。“时间”列指示生成快照的时间。“类型”列显示恢复点的[一致性](/documentation/articles/backup-azure-vms#consistency-of-recovery-points)。表标题在括号中显示该日期可用的恢复点数目。
 
     ![恢复点](./media/backup-azure-restore-vms/recovery-points.png)
 
@@ -68,7 +68,7 @@
 
     ![选择虚拟网络](./media/backup-azure-restore-vms/restore-cs-vnet.png)
 
-4. 选择子网：如果 VNET 有子网，默认选择的选项为第一个子网。从下拉选项中选择你想要的子网。有关子网详细信息，请转到[门户主页](https://manage.windowsazure.com/)中的“网络”扩展，然后转到“虚拟网络”并在选择虚拟网络后，向下钻取到“配置”以查看子网详细信息。
+4. 选择子网：如果 VNET 有子网，默认选择的选项为第一个子网。从下拉选项中选择你想要的子网。有关子网详细信息，请转到[门户主页](https://manage.windowsazure.cn/)中的“网络”扩展，然后转到“虚拟网络”并在选择虚拟网络后，向下钻取到“配置”以查看子网详细信息。
 
     ![选择子网](./media/backup-azure-restore-vms/select-subnet.png)
 
@@ -126,10 +126,10 @@ PowerShell 能够只从备份还原 VM 磁盘，而不建立虚拟机。当还�
 1. 使用 [Azure 备份 PowerShell](/documentation/articles/backup-azure-vms-automation#restore-an-azure-vm) 从备份保管库还原磁盘
 
 2. 使用 PowerShell cmdlet 创建负载平衡器/多个 NIC/多个保留 IP 所需的 VM 配置，并使用该配置创建具有所需配置的 VM。
-	- 使用[内部负载平衡器](https://azure.microsoft.com/documentation/articles/load-balancer-internal-getstarted/)在云服务中创建 VM
-	- 创建 VM 以连接到[面向 Internet 的负载平衡器](https://azure.microsoft.com/zh-cn/documentation/articles/load-balancer-internet-getstarted)
-	- 创建具有[多个 NIC](https://azure.microsoft.com/documentation/articles/virtual-networks-multiple-nics) 的 VM
-	- 具有[多个保留 IP](https://azure.microsoft.com/documentation/articles/virtual-networks-reserved-public-ip/) 的 VM
+	- 使用[内部负载平衡器](/documentation/articles/load-balancer-internal-getstarted/)在云服务中创建 VM
+	- 创建 VM 以连接到[面向 Internet 的负载平衡器](/documentation/articles/load-balancer-internet-getstarted)
+	- 创建具有[多个 NIC](/documentation/articles/virtual-networks-multiple-nics) 的 VM
+	- 具有[多个保留 IP](/documentation/articles/virtual-networks-reserved-public-ip/) 的 VM
   
 
 ## 后续步骤

@@ -19,9 +19,9 @@
 
 首先，在备份 Azure 虚拟机之前，需要注意一些事项。如果你尚未这样做，请完成[先决条件](/documentation/articles/backup-azure-vms-prepare)部分，在环境中做好 VM 备份的准备，然后再继续。
 
-有关其他信息，请参阅[在 Azure 中规划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction)和 [Azure 虚拟机](documentation/services/virtual-machines/)。
+有关其他信息，请参阅[在 Azure 中规划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction)和 [Azure 虚拟机](/documentation/services/virtual-machines/)。
 
-备份 Azure 虚拟机的过程包括三个主要步骤：
+<a name="offline-vms"></a>备份 Azure 虚拟机的过程包括三个主要步骤：
 
 ![备份 Azure IaaS VM 的三个步骤](./media/backup-azure-vms/3-steps-for-backup.png)
 
