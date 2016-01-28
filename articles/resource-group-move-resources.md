@@ -37,7 +37,7 @@
 - API 管理
 - Azure DocumentDB
 - Azure 搜索
-- Azure WEB 应用（存在一些<!--[-->限制<!--](/documentation/articles/app-service-move-resources)）-->
+- Azure Web 应用（存在一些<!--[-->限制<!--](/documentation/articles/app-service-move-resources)）-->
 - Data Factory
 - 密钥保管库
 - Mobile Engagement

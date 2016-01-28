@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Express (Node.js) 构建 WEB 应用| Windows Azure" 
+	pageTitle="使用 Express (Node.js) 构建 Web 应用| Windows Azure" 
 	description="本教程以云服务教程为基础，演示如何使用 Express 模块。" 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
@@ -17,9 +17,9 @@
 
 
 
-# 使用 Express 在 Azure 云服务中生成 Node.js WEB 应用
+# 使用 Express 在 Azure 云服务中生成 Node.js Web 应用
 
-Node.js 包含核心运行时中最小的一个功能集。开发人员在开发 Node.js 应用程序时经常会使用第三方模块来提供额外功能。在本教程中，你将使用 [Express][] 模块新建一个应用程序，该模块可提供用于创建 Node.js WEB 应用的 MVC 框架。
+Node.js 包含核心运行时中最小的一个功能集。开发人员在开发 Node.js 应用程序时经常会使用第三方模块来提供额外功能。在本教程中，你将使用 [Express][] 模块新建一个应用程序，该模块可提供用于创建 Node.js Web 应用的 MVC 框架。
 
 以下是已完成应用程序的屏幕快照：
 
@@ -128,7 +128,7 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 有关详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
 
-  [Node.js WEB 应用lication]: /develop/nodejs/
+  [Node.js Web 应用lication]: /develop/nodejs/
   [Express]: http://expressjs.com/
   [http://jade-lang.com]: http://jade-lang.com
 

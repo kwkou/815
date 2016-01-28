@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure WEB 应用上部署 ASP.NET MVC 5 移动 WEB 应用" 
-	description="本教程说明如何使用 ASP.NET MVC 5 WEB 应用中的移动功能将 WEB 应用部署到 Azure WEB 应用。" 
+	pageTitle="在 Azure Web 应用上部署 ASP.NET MVC 5 移动 Web 应用" 
+	description="本教程说明如何使用 ASP.NET MVC 5 Web 应用中的移动功能将 Web 应用部署到 Azure Web 应用。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -13,9 +13,9 @@
 	wacn.date="01/21/2016"/>
 
 
-# 在 Azure WEB 应用上部署 ASP.NET MVC 5 移动 WEB 应用
+# 在 Azure Web 应用上部署 ASP.NET MVC 5 移动 Web 应用
 
-本教程介绍有关生成一个方便移动的 ASP.NET MVC 5 WEB 应用并将其部署到 Windows Azure 的基础知识。对于本教程中，你需要 [Visual Studio Express 2013 for Web][Visual Studio Express 2013] 或者 Visual Studio 专业版（如果你已具有）。你可以使用 [Visual Studio 2015]，但屏幕快照将会有所不同并且你必须使用 ASP.NET 4.x 模板。
+本教程介绍有关生成一个方便移动的 ASP.NET MVC 5 Web 应用并将其部署到 Windows Azure 的基础知识。对于本教程中，你需要 [Visual Studio Express 2013 for Web][Visual Studio Express 2013] 或者 Visual Studio 专业版（如果你已具有）。你可以使用 [Visual Studio 2015]，但屏幕快照将会有所不同并且你必须使用 ASP.NET 4.x 模板。
 
 [WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -31,7 +31,7 @@
 
 学习内容：
 
--	如何使用 Visual Studio 2013 将 WEB 应用直接发布到 Windows Azure WEB 应用。
+-	如何使用 Visual Studio 2013 将 Web 应用直接发布到 Windows Azure Web 应用。
 -   ASP.NET MVC 5 模板如何使用 CSS Bootstrap 框架来改善在移动设备上的显示。
 -   如何创建面向特定移动浏览器（如 iPhone 和 Android）的移动视图
 -   如何创建响应式视图（跨设备响应不同浏览器的视图）
@@ -56,7 +56,7 @@
 
 <h2>本教程中的步骤</h2>
 
-- [将初学者项目部署到 Windows Azure WEB 应用][]
+- [将初学者项目部署到 Windows Azure Web 应用][]
 - [Bootstrap CSS 框架][]
 - [重写视图、布局和分部视图][]
 - [改进发言人列表][]
@@ -65,7 +65,7 @@
 - [改进 SessionsTable 视图][]
 - [改进 SessionByCode 视图][]
 
-##<a name="bkmk_DeployStarterProject"></a>将初学者项目部署到 Windows Azure WEB 应用
+##<a name="bkmk_DeployStarterProject"></a>将初学者项目部署到 Windows Azure Web 应用
 
 1.	下载会议列表应用程序[初学者项目][StarterProject]。
 
@@ -77,7 +77,7 @@
 
 5. 	在 Visual Studio 中，打开 *Mvc5Mobile.sln* 文件。
 
-5.  登录[管理门户](https://manage.windowsazure.cn/)，并点击已有的 WEB 应用或新建一个 WEB 应用。
+5.  登录[管理门户](https://manage.windowsazure.cn/)，并点击已有的 Web 应用或新建一个 Web 应用。
 
 6.  在“仪表板”页面的“速览”中，下载发布配置文件
 
@@ -87,17 +87,17 @@
 
 7.	在“发布 Web”中，单击“Import”，并选择刚刚下载的发布配置文件。
 
-13.	“发布 Web”对话框中将填充新 WEB 应用的设置。单击“发布”。
+13.	“发布 Web”对话框中将填充新 Web 应用的设置。单击“发布”。
 
 	![][DeployPublishSite]
 
-	在 Visual Studio 完成将初学者项目发布到 Azure WEB 应用后，将打开桌面浏览器并显示实时 WEB 应用。
+	在 Visual Studio 完成将初学者项目发布到 Azure Web 应用后，将打开桌面浏览器并显示实时 Web 应用。
 
 14.	启动移动浏览器模拟器，将会议应用程序 (*<prefix>*.chinacloudsites.cn) URL 复制到模拟器，然后单击“按标签浏览”链接。如果使用 Internet Explorer 11 作为默认浏览器，则只需依次按 `F12` 和 `Ctrl+8`，然后将浏览器配置文件更改为“Windows Phone”。下图显示纵向模式下的 *AllTags* 视图（选择“按标签浏览”后显示）。
 
 	![][AllTags]
 
->[AZURE.NOTE]虽然可以从 Visual Studio 内部调试 MVC 5 应用程序，但可以再次将 WEB 应用发布到 Windows Azure，以直接从移动浏览器或浏览器模拟器验证实时 WEB 应用。
+>[AZURE.NOTE]虽然可以从 Visual Studio 内部调试 MVC 5 应用程序，但可以再次将 Web 应用发布到 Windows Azure，以直接从移动浏览器或浏览器模拟器验证实时 Web 应用。
 
 显示内容在移动设备上一目了然。你可能还看到了 Bootstrap CSS 框架应用的一些视觉效果。单击“ASP.NET”链接。
 
@@ -109,7 +109,7 @@ ASP.NET 标记视图已根据屏幕大小缩放，这是 Bootstrap 自动为你�
 
 Bootstrap 支持是 MVC 5 模板中内置的新功能。你已经看到了它如何立即改进应用程序中的不同视图。例如，当浏览器宽度较小时，顶部导航栏可自动折叠。在桌面浏览器中，尝试调整浏览器窗口的大小，并了解导航栏如何改变其外观。这是 Bootstrap 内置的响应式 Web 设计。
 
-若要在没有 Bootstrap 的情况下查看 WEB 应用的外观，请打开 *App_Start\\BundleConfig.cs* 并注释掉包含的行 *bootstrap.js* 和 *bootstrap.css*。以下代码显示了更改后 `RegisterBundles` 方法的两个语句：
+若要在没有 Bootstrap 的情况下查看 Web 应用的外观，请打开 *App_Start\\BundleConfig.cs* 并注释掉包含的行 *bootstrap.js* 和 *bootstrap.css*。以下代码显示了更改后 `RegisterBundles` 方法的两个语句：
 
      bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
               //"~/Scripts/bootstrap.js",
@@ -127,7 +127,7 @@ Bootstrap 支持是 MVC 5 模板中内置的新功能。你已经看到了它如
 
 撤消所做的更改并刷新移动浏览器，以适合移动应用的显示画面是否已恢复。
 
-Bootstrap 并不特定于 ASP.NET MVC 5，你可以在任何 WEB 应用上利用这些功能。但是，它现已内置到 ASP.NET MVC 5 项目模板中，因此，MVC 5 WEB 应用可按默认利用 Bootstrap。
+Bootstrap 并不特定于 ASP.NET MVC 5，你可以在任何 Web 应用上利用这些功能。但是，它现已内置到 ASP.NET MVC 5 项目模板中，因此，MVC 5 Web 应用可按默认利用 Bootstrap。
 
 有关 Bootstrap 的详细信息，请转到 [Bootstrap][BootstrapSite] 站点。
 
@@ -519,9 +519,9 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 
 ## 总结和回顾
 
-本教程说明如何使用 ASP.NET MVC 5 开发适合移动应用的 WEB 应用。其中包括：
+本教程说明如何使用 ASP.NET MVC 5 开发适合移动应用的 Web 应用。其中包括：
 
--	将 ASP.NET MVC 5 应用程序部署到 Windows Azure WEB 应用
+-	将 ASP.NET MVC 5 应用程序部署到 Windows Azure Web 应用
 -   使用 Bootstrap 在 MVC 5 应用程序中创建响应式 Web 布局
 -   在全局以及针对单个视图重写布局、视图和分部视图
 -   使用 `RequireConsistentDisplayMode` 属性控制布局和分步重写的实施
@@ -535,11 +535,11 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 -   [Bootstrap 官方博客][]
 -   [Tutorial Republic 中的 Bootstrap Twitter 教程][]
 -   [Bootstrap 演练中心][]
--   [W3C 建议移动 WEB 应用的最佳做法][]
+-   [W3C 建议移动 Web 应用的最佳做法][]
 -   [用于媒体查询的 W3C 候选建议方案][]
 
 <!-- Internal Links -->
-[将初学者项目部署到 Windows Azure WEB 应用]: #bkmk_DeployStarterProject
+[将初学者项目部署到 Windows Azure Web 应用]: #bkmk_DeployStarterProject
 [Bootstrap CSS 框架]: #bkmk_bootstrap
 [重写视图、布局和分部视图]: #bkmk_overrideviews
 [Create Browser-Specific Views]: #bkmk_browserviews
@@ -570,7 +570,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 [Bootstrap 官方博客]: http://blog.getbootstrap.com/
 [Tutorial Republic 中的 Bootstrap Twitter 教程]: http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/
 [Bootstrap 演练中心]: http://www.bootply.com/
-[W3C 建议移动 WEB 应用的最佳做法]: http://www.w3.org/TR/mwabp/
+[W3C 建议移动 Web 应用的最佳做法]: http://www.w3.org/TR/mwabp/
 [用于媒体查询的 W3C 候选建议方案]: http://www.w3.org/TR/css3-mediaqueries/
 
 <!-- Images -->

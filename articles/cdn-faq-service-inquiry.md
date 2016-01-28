@@ -1,4 +1,4 @@
-<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Windows Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN常见问题, 回源流量, ICP备案号, CDN默认缓存规则, 回源域名, 订阅, CNAME, 下载加速, Web加速, WEB 应用加速, 流媒体直播加速, VOD加速, 视频点播加速, CDN价格, CDN收费, 技术文档, 帮助文档" description="Find answers to common service consulting or inquiries related to Windows Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Windows Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN常见问题, 回源流量, ICP备案号, CDN默认缓存规则, 回源域名, 订阅, CNAME, 下载加速, Web加速, Web 应用加速, 流媒体直播加速, VOD加速, 视频点播加速, CDN价格, CDN收费, 技术文档, 帮助文档" description="Find answers to common service consulting or inquiries related to Windows Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
     wacn.date="01/21/2016"
@@ -50,11 +50,11 @@
 
 ## **CDN的概念和作用**<a id="step2"></a>
 
-CDN 的全称是 Content Delivery Network，即内容分发网络。CDN通过在现有的 Internet 中添加一层新的网络架构，将 WEB 应用的内容缓存到离用户最近的网络“边缘”，使用户可以就近取得所需的内容，从而提供高带宽、低延迟的用户体验。 
+CDN 的全称是 Content Delivery Network，即内容分发网络。CDN通过在现有的 Internet 中添加一层新的网络架构，将 Web 应用的内容缓存到离用户最近的网络“边缘”，使用户可以就近取得所需的内容，从而提供高带宽、低延迟的用户体验。 
 
 ## **什么是CNAME？**<a id="step3"></a>
 
-CNAME(Canonical Name record)，通常是别名指向。例如，假设用户自定义加速域名为www.abc.com，用户配置完成后 WEB 应用加速里给出的CDN服务域名为www.abc.com.mschcdn.com。用户需要在 域名托管服务商那里将www.abc.com对应的A记录删除，添加域名的CNAME记录为www.abc.com.mschcdn.com。这样，用户访问www.abc.com时会去获取www.abc.com.mschcdn.com解析出的加速节点的IP地址记录。
+CNAME(Canonical Name record)，通常是别名指向。例如，假设用户自定义加速域名为www.abc.com，用户配置完成后 Web 应用加速里给出的CDN服务域名为www.abc.com.mschcdn.com。用户需要在 域名托管服务商那里将www.abc.com对应的A记录删除，添加域名的CNAME记录为www.abc.com.mschcdn.com。这样，用户访问www.abc.com时会去获取www.abc.com.mschcdn.com解析出的加速节点的IP地址记录。
 
 ## **CDN流量和回原流量关系**<a id="step4"></a>
 
@@ -74,7 +74,7 @@ CNAME(Canonical Name record)，通常是别名指向。例如，假设用户自�
 
 - 源站类型，可缓存的内容少 
 
-- WEB 应用访问量低，过期时间短，命中的文件少 
+- Web 应用访问量低，过期时间短，命中的文件少 
 
 ## **域名审核周期是多久？**<a id="step6"></a>
 
@@ -176,7 +176,7 @@ Windows Azure CDN支持的加速类型包括：Web加速，下载加速，VOD加
 ## **Blob使用CDN加速，是否直接使用blob地址，而不使用自定义域名，是否还需要备案，为什么？**<a id="step20"></a>
 CDN（内容分发网络）说白了就是一组网络内容缓存节点，和客户的源站不是等价的。缓存节点上，只包含用户设置需要缓存的内容，且有可能会过期。
 
-自定义域名是用来被CNAME的，通过自定义域名经过CDN访问源 WEB 应用内容时，源站缓存命中则直接返回，否则可能回源。这是CDN的原理。
+自定义域名是用来被CNAME的，通过自定义域名经过CDN访问源 Web 应用内容时，源站缓存命中则直接返回，否则可能回源。这是CDN的原理。
 
 假设，自定义域名和原始域名一样，会造成：
 
@@ -187,7 +187,7 @@ CDN（内容分发网络）说白了就是一组网络内容缓存节点，和�
 
 ## **如果有多个订阅，如何在不同的订阅间切换？**<a id="step21"></a>
    
-如果您有多个订阅，如图所示，可以点击管理门户 WEB 应用右上角订阅ID处的下拉三角，选择恰当的订阅ID。
+如果您有多个订阅，如图所示，可以点击管理门户 Web 应用右上角订阅ID处的下拉三角，选择恰当的订阅ID。
     
 ![FAQ](./media/cdn-doc/FAQ.png)
 

@@ -31,7 +31,7 @@ Azure SDK for Python 包括允许您针对 Azure 开发、部署和管理 Python
 * IronPython - 在 .Net/CLR 上运行的 Python 解释程序
 * Jython - 在 JVM 上运行的 Python 解释程序
 
-仅 **CPython** 经过测试且支持 Python Azure SDK 和 Azure 服务（如 WEB 应用和云服务）。我们建议使用 2.7 或 3.4 版本。
+仅 **CPython** 经过测试且支持 Python Azure SDK 和 Azure 服务（如 Web 应用和云服务）。我们建议使用 2.7 或 3.4 版本。
 
 ## 从哪里获得 Python？
 
@@ -131,7 +131,7 @@ WebPI 安装程序提供了开发 Python Azure 应用程序所需的所有内容
 
 是否使用 PTVS 是可选择的，但建议使用，因为它能够为您提供 Python 和 Web 项目/解决方案支持、调试、分析、交互式窗口、模板编辑和智能感知。
 
-PTVS 还可以轻松实现部署到 Windows Azure，同时支持部署到[云服务][]和[ WEB 应用][]。
+PTVS 还可以轻松实现部署到 Windows Azure，同时支持部署到[云服务][]和[ Web 应用][]。
 
 PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关文档、下载和讨论的信息，请参阅 [Python Tools for Visual Studio]。
 
@@ -143,17 +143,17 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 
 2. 在 Linux VM 中运行你的应用程序
 
-3. 使用 Git 开发和发布到 Azure WEB 应用
+3. 使用 Git 开发和发布到 Azure Web 应用
 
-第一个方案使你能够通过 Azure REST API 的 Pythonic 包装来创作利用 Azure PaaS 功能（例如 [Blob 存储][]、[队列存储][]、[表存储][]等）的丰富 WEB 应用。这些应用程序的工作方式与在 Windows、Mac 和 Linux 上相同。此外可以从本地开发计算机或在 Azure 上运行的 Linux VM 中使用这些客户端库。
+第一个方案使你能够通过 Azure REST API 的 Pythonic 包装来创作利用 Azure PaaS 功能（例如 [Blob 存储][]、[队列存储][]、[表存储][]等）的丰富 Web 应用。这些应用程序的工作方式与在 Windows、Mac 和 Linux 上相同。此外可以从本地开发计算机或在 Azure 上运行的 Linux VM 中使用这些客户端库。
 
 对于 VM 方案，你只需启动所选的 Linux VM（Ubuntu、CentOS、Suse）并运行/管理所需内容。例如，你可以在 Windows/Mac/Linux 计算机上运行 [IPython][] REPL/notebook，并使你的浏览器指向在 Azure 上运行 IPython 引擎的 Linux 或 Windows 多处理器 VM。请参阅 [Azure 上的 IPython Notebook][] 教程，以了解详细信息。
 
 有关如何安装 Linux VM 的信息，请参阅[创建运行 Linux 的虚拟机][]教程。
 
-使用 Git 部署，可以从任何操作系统开发 Python WEB 应用并将其发布到 Azure WEB 应用。当将您的存储库推送到 Azure 时，它将自动创建虚拟环境和 pip 安装所需的包。
+使用 Git 部署，可以从任何操作系统开发 Python Web 应用并将其发布到 Azure Web 应用。当将您的存储库推送到 Azure 时，它将自动创建虚拟环境和 pip 安装所需的包。
 
-有关开发和发布 Azure WEB 应用的详细信息，请参阅有关教程：[使用 Django 创建 WEB 应用][]、[使用 Bottle 创建 WEB 应用][]和[使用 Flask 创建 WEB 应用][]。有关使用任何 WSGI 合规框架的更多常规信息，请参阅[使用 Azure WEB 应用配置 Python][]。
+有关开发和发布 Azure Web 应用的详细信息，请参阅有关教程：[使用 Django 创建 Web 应用][]、[使用 Bottle 创建 Web 应用][]和[使用 Flask 创建 Web 应用][]。有关使用任何 WSGI 合规框架的更多常规信息，请参阅[使用 Azure Web 应用配置 Python][]。
 
 
 ## 其他软件和资源：
@@ -183,7 +183,7 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 [IPython]: http://ipython.org
 [Azure 上的 IPython Notebook]: /documentation/articles/virtual-machines-python-ipython-notebook
 [云服务]: /documentation/articles/cloud-services-python-ptvs
-[ WEB 应用]: /documentation/articles/web-sites-python-ptvs-django-mysql
+[ Web 应用]: /documentation/articles/web-sites-python-ptvs-django-mysql
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [GitHub 上的 Python Tools for Visual Studio]: http://microsoft.github.io/PTVS/
 [Python 包索引]: http://pypi.python.org/pypi
@@ -192,10 +192,10 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 [Setting up a Linux VM via the Azure portal]: /documentation/articles/create-and-configure-opensuse-vm-in-portal
 [How to use the Azure Command-Line Interface]: /documentation/articles/crossplat-cmd-tools
 [创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm
-[使用 Django 创建 WEB 应用]: /documentation/articles/web-sites-python-create-deploy-django-app
-[使用 Bottle 创建 WEB 应用]: /documentation/articles/web-sites-python-create-deploy-bottle-app
-[使用 Flask 创建 WEB 应用]: /documentation/articles/web-sites-python-create-deploy-flask-app
-[使用 Azure WEB 应用配置 Python]: /documentation/articles/web-sites-python-configure
+[使用 Django 创建 Web 应用]: /documentation/articles/web-sites-python-create-deploy-django-app
+[使用 Bottle 创建 Web 应用]: /documentation/articles/web-sites-python-create-deploy-bottle-app
+[使用 Flask 创建 Web 应用]: /documentation/articles/web-sites-python-create-deploy-flask-app
+[使用 Azure Web 应用配置 Python]: /documentation/articles/web-sites-python-configure
 [表存储]: /documentation/articles/storage-python-how-to-use-table-storage
 [队列存储]: /documentation/articles/storage-python-how-to-use-queue-storage
 [Blob 存储]: /documentation/articles/storage-python-how-to-use-blob-storage

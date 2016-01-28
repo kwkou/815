@@ -38,11 +38,11 @@
 
 	![云服务仪表板][cloud-service-dashboard]
 
-4. 注意右侧“ WEB 应用 URL”条目中的值。DNS 名称是由 Azure 生成的经过模糊处理的内部 ID。
+4. 注意右侧“ Web 应用 URL”条目中的值。DNS 名称是由 Azure 生成的经过模糊处理的内部 ID。
 
-    ![ WEB 应用 url][cloud-service-staging-url]
+    ![ Web 应用 url][cloud-service-staging-url]
 
-现在，你可以使用此过渡 WEB 应用 URL 验证应用程序能否在过渡环境中正常运行。
+现在，你可以使用此过渡 Web 应用 URL 验证应用程序能否在过渡环境中正常运行。
 
 ## 步骤 2：通过交换 VIP 升级生产环境中的应用程序
 

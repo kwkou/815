@@ -127,7 +127,7 @@ SDK 实现了随机指数退让算法，以降低空闲队列轮询对存储事�
 
 ### <a id="instances"></a>多个实例
 
-如果 WEB 应用在多个实例上运行，则每台计算机上都会运行一个连续 Web 作业，并且都会等待触发器并尝试运行函数。在某些情况下，这可能会导致某些函数处理相同的数据两次，因此函数应该是幂等的（编写的这些函数在使用相同输入数据重复调用时不会生成重复的结果）。
+如果 Web 应用在多个实例上运行，则每台计算机上都会运行一个连续 Web 作业，并且都会等待触发器并尝试运行函数。在某些情况下，这可能会导致某些函数处理相同的数据两次，因此函数应该是幂等的（编写的这些函数在使用相同输入数据重复调用时不会生成重复的结果）。
 
 ### <a id="parallel"></a>并行执行
 
@@ -530,7 +530,7 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 
 无法将控制台输出链接到特定的方法调用，因为控制台是单线程的，而许多作业函数可能同时运行。正因如此，SDK 为每个函数调用提供了自身唯一的日志写入器对象。
 
-若要写入[应用程序跟踪日志](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#logsoverview)，请使用 `Console.Out`（创建标记为 INFO 的日志）和 `Console.Error`（创建标记为 ERROR 的日志）。或者，您可以使用 [Trace 或 TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)，它除了提供“信息”和“错误”外，还提供“详细”、“警告”和“严重级别”。应用程序跟踪日志在 WEB 应用日志文件、Azure 表或 Azure blob 中显示，具体取决于配置 Azure WEB 应用的方式。与所有控制台输出一样，最近的 100 条应用程序日志也会显示在 Web 作业的仪表板页中，而不是显示在函数调用的页中。
+若要写入[应用程序跟踪日志](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#logsoverview)，请使用 `Console.Out`（创建标记为 INFO 的日志）和 `Console.Error`（创建标记为 ERROR 的日志）。或者，您可以使用 [Trace 或 TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)，它除了提供“信息”和“错误”外，还提供“详细”、“警告”和“严重级别”。应用程序跟踪日志在 Web 应用日志文件、Azure 表或 Azure blob 中显示，具体取决于配置 Azure Web 应用的方式。与所有控制台输出一样，最近的 100 条应用程序日志也会显示在 Web 作业的仪表板页中，而不是显示在函数调用的页中。
 
 仅当程序在 Azure Web 作业中运行（而不是在本地运行或者在其他某个环境中运行）时，控制台输出才显示在仪表板中。
 
@@ -563,7 +563,7 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
  
 ![单击“切换输出”](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardapplogs.png)
 
-在连续的 WebJob 中，应用程序日志在 WEB 应用文件系统的 /data/jobs/continuous/*{webjobname}*/job\_log.txt 中显示。
+在连续的 WebJob 中，应用程序日志在 Web 应用文件系统的 /data/jobs/continuous/*{webjobname}*/job\_log.txt 中显示。
 
 		[09/26/2014 21:01:13 > 491e54: INFO] Console.Write - Hello world!
 		[09/26/2014 21:01:13 > 491e54: ERR ] Console.Error - Hello world!

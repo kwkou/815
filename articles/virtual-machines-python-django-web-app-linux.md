@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Mac 上使用 Django 的 Python WEB 应用| Windows Azure" 
-	description="本教程演示如何在 Azure 中使用 Linux 虚拟机托管基于 Django 的 WEB 应用。" 
+	pageTitle="在 Mac 上使用 Django 的 Python Web 应用| Windows Azure" 
+	description="本教程演示如何在 Azure 中使用 Linux 虚拟机托管基于 Django 的 Web 应用。" 
 	services="virtual-machines" 
 	documentationCenter="python" 
 	authors="huguesv" 
@@ -16,20 +16,20 @@
 
 
 
-# Django Hello World WEB 应用(mac-linux)
+# Django Hello World Web 应用(mac-linux)
 
 > [AZURE.SELECTOR]
 - [Windows](/documentation/articles/web-app-with-django)
 - [Mac/Linux](/documentation/articles/django-hello-world-(maclinux))
 
-本教程介绍如何在 Windows Azure 中使用 Linux 虚拟机托管基于 Django 的 WEB 应用。本教程假定您之前未使用过 Azure。完成本指南之后，你将能够在云中启动和运行基于 Django 的应用程序。
+本教程介绍如何在 Windows Azure 中使用 Linux 虚拟机托管基于 Django 的 Web 应用。本教程假定您之前未使用过 Azure。完成本指南之后，你将能够在云中启动和运行基于 Django 的应用程序。
 
 你将了解如何执行以下操作：
 
 * 设置 Azure 虚拟机以托管 Django。虽然本教程介绍如何在 **Linux** 下实现此目的，但也可以使用托管在 Azure 中的 Windows Server VM 实现相同目的。 
 * 从 Linux 创建新的 Django 应用程序。
 
-通过按照本教程中的说明进行操作，您将构建一个简单的 Hello World WEB 应用。该应用程序将托管在 Azure 虚拟机中。
+通过按照本教程中的说明进行操作，您将构建一个简单的 Hello World Web 应用。该应用程序将托管在 Azure 虚拟机中。
 
 以下是已完成应用程序的屏幕快照：
 
@@ -84,8 +84,8 @@ Ubuntu Linux VM 已预安装了 Python 2.7，但它没有安装 Apache 或 Djang
 		$ cd /var/www
 		$ sudo django-admin.py startproject helloworld
 
-    **django-admin.py** 脚本为基于 Django 的 WEB 应用生成基本结构：
-    -   **helloworld/manage.py** 可帮助你启动托管和停止托管基于 Django 的 WEB 应用；
+    **django-admin.py** 脚本为基于 Django 的 Web 应用生成基本结构：
+    -   **helloworld/manage.py** 可帮助你启动托管和停止托管基于 Django 的 Web 应用；
     -   **helloworld/helloworld/settings.py** 包含应用程序的 Django 设置；
     -   **helloworld/helloworld/urls.py** 包含每个 url 及其视图之间的映射代码。
 

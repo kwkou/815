@@ -1,7 +1,7 @@
 >[AZURE.NOTE]若要完成此过程，你必须拥有一个包含已验证电子邮件地址的 Google 帐户。若要新建一个 Google 帐户，请转到 <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>。
 
 
-1. 导航到 <a href="http://cloud.google.com/console" target="_blank">Google Cloud Console</a> WEB 应用，使用你的 Google 帐户凭据登录，然后单击“创建项目”。
+1. 导航到 <a href="http://cloud.google.com/console" target="_blank">Google Cloud Console</a> Web 应用，使用你的 Google 帐户凭据登录，然后单击“创建项目”。
 
    	![](./media/notification-hubs-android-get-started/mobile-services-google-new-project.png)   
 

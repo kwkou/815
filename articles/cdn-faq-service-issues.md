@@ -1,4 +1,4 @@
-<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Windows Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, 不能缓存, 不能CNAME, 回源比例大, 缓存刷新失败, CDN FAQ, CDN常见问题, CDN使用故障, CDN服务故障, CDN配置错误, 速度慢, WEB 应用打不开, 登录异常, CNAME, CDN技术文档, CDN帮助文档" description="Find answers to common service consulting or inquiries related to Windows Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Windows Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, 不能缓存, 不能CNAME, 回源比例大, 缓存刷新失败, CDN FAQ, CDN常见问题, CDN使用故障, CDN服务故障, CDN配置错误, 速度慢, Web 应用打不开, 登录异常, CNAME, CDN技术文档, CDN帮助文档" description="Find answers to common service consulting or inquiries related to Windows Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
     wacn.date="01/21/2016"
@@ -14,8 +14,8 @@
 + [为什么域名会解析到源站？](#step2)
 + [系统提示不能CNAME](#step3)
 + [为什么回源大于CDN流量](#step4)
-+ [使用CDN后， WEB 应用打不开](#step5)
-+ [使用CDN后， WEB 应用登录异常](#step6)
++ [使用CDN后， Web 应用打不开](#step5)
++ [使用CDN后， Web 应用登录异常](#step6)
 + [缓存刷新失败](#step8)
 + [为什么没有CNAME到Azure CDN却消耗CDN流量](#step9)
 
@@ -70,7 +70,7 @@ URL不能被缓存，通常有以下几个原因： 
     
 3. 缓存时间短    
 
-## **使用CDN后， WEB 应用打不开**<a id="step6"></a> 
+## **使用CDN后， Web 应用打不开**<a id="step6"></a> 
 
 可能因素：
  
@@ -84,9 +84,9 @@ URL不能被缓存，通常有以下几个原因： 
      
 5. 设备故障  
     
-## **使用CDN后， WEB 应用登录异常**<a id="step7"></a>
+## **使用CDN后， Web 应用登录异常**<a id="step7"></a>
 
-很有可能是在缓存规则中设置了不该缓存的资源，需要将用户后台登陆的文件夹设置不缓存（如： /user  或者 /admin等等）；如果是非登录或用户回话 WEB 应用，缓存规则配置中请开启允许忽略Cookie。
+很有可能是在缓存规则中设置了不该缓存的资源，需要将用户后台登陆的文件夹设置不缓存（如： /user  或者 /admin等等）；如果是非登录或用户回话 Web 应用，缓存规则配置中请开启允许忽略Cookie。
 
 ## **缓存刷新失败**<a id="step8"></a>
 

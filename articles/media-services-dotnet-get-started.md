@@ -47,7 +47,7 @@
 
 - 若要完成本教程，你需要一个 Azure 帐户。 
 	
-	如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留该帐户，使用那些免费的 Azure 服务和功能，例如 Azure 中的 WEB 应用功能。
+	如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留该帐户，使用那些免费的 Azure 服务和功能，例如 Azure 中的 Web 应用功能。
 - 操作系统：Windows 8 或更高版本、Windows 2008 R2、Windows 7。
 - .NET Framework 4.0 或更高版本
 - Visual Studio 2010 SP1（Professional、Premium、Ultimate 或 Express）或更高版本。

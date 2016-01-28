@@ -57,17 +57,17 @@
 - 使用此版本的工具时，必须先升级旧的 **Storm** 项目。有关详细信息，请参阅[此博客](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 - 不再支持 Visual Studio Web Express。有关详细信息，请参阅[此博客](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
-### Azure WEB 应用工具
+### Azure Web 应用工具
 
 此版本对 Web 工具扩展做了以下更新。有关详细信息，请参阅[此博客](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)。
 
 - 添加了对 DreamSpark 帐户的支持
 - 对 Azure 工具做了全面的更改，以支持新的 Azure 资源管理 API
-- 在[云资源管理器](/documentation/articles/azure-sdk-dotnet-release-notes-2_7#cloud_explorer)中添加了对 Azure WEB 应用的支持
+- 在[云资源管理器](/documentation/articles/azure-sdk-dotnet-release-notes-2_7#cloud_explorer)中添加了对 Azure Web 应用的支持
 
 #### 已知问题
 
-服务器资源管理器的“槽”节点下面不会出现 WEB 应用部署槽节点，而云资源管理器下面不会加载 WEB 应用部署槽的子节点。此问题已解决，下一个 SDK 版本将不再发生。
+服务器资源管理器的“槽”节点下面不会出现 Web 应用部署槽节点，而云资源管理器下面不会加载 Web 应用部署槽的子节点。此问题已解决，下一个 SDK 版本将不再发生。
 
 
 ### <a id="cloud_explorer"></a>适用于 Visual Studio 2015 的云资源管理器

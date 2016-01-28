@@ -306,7 +306,7 @@
       "location": "{resourceGroupLocation}",
     }
 
-以下示例使用资源组位置来分配 WEB 应用的位置。
+以下示例使用资源组位置来分配 Web 应用的位置。
 
     "resources": [
        {
@@ -333,7 +333,7 @@
 | resourceName1 | 是 | 资源的名称。
 | resourceName2 | 否 | 下一个资源名称段（如果资源是嵌套的）。
 
-以下示例演示了如何检索 WEB 应用和数据库的资源 ID。 WEB 应用存在于名为 **myWebsitesGroup** 的资源组中，而数据库存在于此模板的当前资源组中。
+以下示例演示了如何检索 Web 应用和数据库的资源 ID。 Web 应用存在于名为 **myWebsitesGroup** 的资源组中，而数据库存在于此模板的当前资源组中。
 
     [resourceId('myWebsitesGroup', 'Microsoft.Web/sites', parameters('siteName'))]
     [resourceId('Microsoft.SQL/servers/databases', parameters('serverName'),parameters('databaseName'))]

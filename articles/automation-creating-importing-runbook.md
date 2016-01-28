@@ -24,7 +24,7 @@
 
 Windows Azure 中国目前只能使用 Azure 管理门户中的 PowerShell 工作流 Runbook。
 
-1. 在 Azure 管理门户中，依次单击“新建”、“Azure WEB 应用”、“自动化”、“Runbook”、“快速创建”。
+1. 在 Azure 管理门户中，依次单击“新建”、“Azure Web 应用”、“自动化”、“Runbook”、“快速创建”。
 2. 输入所需的信息，然后单击“创建”。Runbook 名称必须以字母开头，可以使用字母、数字、下划线和短划线。
 3. 若要立即编辑 Runbook，则请单击“编辑 Runbook”。否则，请单击“确定”。
 4. 新的 Runbook 将出现在“Runbook”选项卡中。

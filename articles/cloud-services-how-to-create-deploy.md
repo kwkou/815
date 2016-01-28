@@ -137,7 +137,7 @@ Azure 门户为你提供两种创建和部署云服务的方法：“快速创�
 
 	该状态应该显示该服务**正在运行**。
 
-2. 在“速览”下，单击 WEB 应用 URL 以在 Web 浏览器中打开你的云服务。
+2. 在“速览”下，单击 Web 应用 URL 以在 Web 浏览器中打开你的云服务。
 
     ![云服务\_速览](./media/cloud-services-how-to-create-deploy/CloudServices_QuickGlance.png)
 

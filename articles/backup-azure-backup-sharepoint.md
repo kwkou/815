@@ -33,7 +33,7 @@ DPM 的 Azure 备份支持以下方案。
 必须在 SharePoint Server、SQL Server 以及属于 SharePoint 场的任何其他服务器上安装 DPM 代理。有关设置保护代理的详细信息，请参阅[设置保护代理](https://technet.microsoft.com/zh-cn/library/hh758039.aspx)。唯一的例外是，你只能在单个 Web 前端 (WFE) 服务器上安装代理。DPM 只需将 WFE 服务器上的代理作为保护的入口点。
 
 ### SharePoint 场
-针对场中的每 1000 万个项，必须有至少 2 GB 的卷空间用于放置 DPM 文件夹。此空间对目录生成是必要的。为了使 DPM 恢复特定项（ WEB 应用集合、站点、列表、文档库、文件夹、单个文档与列表项），目录生成将创建一个包含在每个内容数据库中的 URL 列表。你可以在 DPM 管理员控制台的“恢复”任务区域中，查看“可恢复项”窗格中的 URL 列表。
+针对场中的每 1000 万个项，必须有至少 2 GB 的卷空间用于放置 DPM 文件夹。此空间对目录生成是必要的。为了使 DPM 恢复特定项（ Web 应用集合、站点、列表、文档库、文件夹、单个文档与列表项），目录生成将创建一个包含在每个内容数据库中的 URL 列表。你可以在 DPM 管理员控制台的“恢复”任务区域中，查看“可恢复项”窗格中的 URL 列表。
 
 ### SQL Server
 DPM 以本地系统的形式运行，并备份 SQL Server 数据库，它需要对帐户具有 SQL Server 的 sysadmin 权限。在你想要备份的 SQL Server 上，将 NT AUTHORITY\\SYSTEM 设置为 *sysadmin*。

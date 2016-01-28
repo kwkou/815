@@ -1,20 +1,20 @@
-# 使用 Git 发布到 Azure WEB 应用
+# 使用 Git 发布到 Azure Web 应用
 
-Azure WEB 应用支持从源代码控件和存储库工具（例如，BitBucket、CodePlex、Dropbox、Git、GitHub、Mercurial 和 TFS）进行连续部署。可以使用这些工具维护你 WEB 应用的内容和代码，然后在需要时快速轻松地将更改推送到你的站点。
+Azure Web 应用支持从源代码控件和存储库工具（例如，BitBucket、CodePlex、Dropbox、Git、GitHub、Mercurial 和 TFS）进行连续部署。可以使用这些工具维护你 Web 应用的内容和代码，然后在需要时快速轻松地将更改推送到你的站点。
 
-在本文中，你将了解如何使用 Git 从本地计算机直接发布到 Azure WEB 应用（在 Azure 中，此发布方法称为**本地 Git**）。你还将了解如何启用从存储库 WEB 应用（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）进行的连续部署。
+在本文中，你将了解如何使用 Git 从本地计算机直接发布到 Azure Web 应用（在 Azure 中，此发布方法称为**本地 Git**）。你还将了解如何启用从存储库 Web 应用（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）进行的连续部署。
 
-> [AZURE.NOTE]在使用“针对 Mac 和 Linux 的 Azure 命令行工具”创建 WEB 应用时，将自动执行本文中所述的许多 Git 命令。[](/documentation/articles/xplat-cli)
+> [AZURE.NOTE]在使用“针对 Mac 和 Linux 的 Azure 命令行工具”创建 Web 应用时，将自动执行本文中所述的许多 Git 命令。[](/documentation/articles/xplat-cli)
 
 此任务包括下列步骤：
 
 * [安装 Git](#Step1)
 * [创建本地存储库](#Step2)
 * [添加网页](#Step3)
-* [启用 WEB 应用存储库](#Step4)
+* [启用 Web 应用存储库](#Step4)
 * [部署项目](#Step5)
 	* [将本地文件推送到 Azure（本地 Git）](#Step6)
-	* [从存储库 WEB 应用（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）部署文件](#Step7)
+	* [从存储库 Web 应用（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）部署文件](#Step7)
 * [故障排除](#Step8)
 
 ## <a id="Step1"></a>步骤 1：安装 Git
@@ -27,7 +27,7 @@ Azure WEB 应用支持从源代码控件和存储库工具（例如，BitBucket�
 
 执行下列任务可创建新的 Git 存储库。
 
-1. 创建名为 MyGitRepository 的目录，用于包含 Git 存储库和 WEB 应用文件。
+1. 创建名为 MyGitRepository 的目录，用于包含 Git 存储库和 Web 应用文件。
 
 2. 打开一个命令行，例如 **GitBash** (Windows) 或 **Bash** (Unix Shell)。在 OS X 系统上，可以通过 **Terminal** 应用程序访问命令行。
 
@@ -43,7 +43,7 @@ Azure WEB 应用支持从源代码控件和存储库工具（例如，BitBucket�
 
 ## <a id="Step3"></a>步骤 3：添加网页
 
-Azure WEB 应用支持用各种编程语言创建的应用程序。对于此示例，你将使用静态 .html 文件。有关将用其他编程语言创建的 WEB 应用发布到 Azure 的信息，请参阅 [Azure 开发人员中心]。
+Azure Web 应用支持用各种编程语言创建的应用程序。对于此示例，你将使用静态 .html 文件。有关将用其他编程语言创建的 Web 应用发布到 Azure 的信息，请参阅 [Azure 开发人员中心]。
 
 1. 通过使用文本编辑器，在 Git 存储库的根目录下（你先前创建的 MyGitRepository 目录）创建一个名为 **index.html** 的新文件。
 
@@ -67,17 +67,17 @@ Azure WEB 应用支持用各种编程语言创建的应用程序。对于此示�
 		 1 file changed, 1 insertion(+)
 		 create mode 100644 index.html
 
-## <a id="Step4"></a>步骤 4：启用 WEB 应用存储库
+## <a id="Step4"></a>步骤 4：启用 Web 应用存储库
 
-执行以下步骤可使用 Azure 门户为你的 WEB 应用启用 Git 存储库：
+执行以下步骤可使用 Azure 门户为你的 Web 应用启用 Git 存储库：
 
 1. 登录到 [Azure 门户]。
 
-2. 单击“新建”按钮以创建将为其启用存储库的新 WEB 应用。
+2. 单击“新建”按钮以创建将为其启用存储库的新 Web 应用。
 
-2. 等待至 WEB 应用创建过程在“ WEB 应用”视图中完成，然后选择该 WEB 应用。
+2. 等待至 Web 应用创建过程在“ Web 应用”视图中完成，然后选择该 Web 应用。
 
-	![显示选定 WEB 应用的图像][portal-select-website]
+	![显示选定 Web 应用的图像][portal-select-website]
 
 3. 选择“仪表板”选项卡。
 
@@ -98,7 +98,7 @@ Azure WEB 应用支持用各种编程语言创建的应用程序。对于此示�
 ## <a id="Step5"></a>步骤 5：部署项目
 
 * [将本地文件推送到 Azure（本地 Git）](#Step6)
-* [从存储库 WEB 应用（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）部署文件](#Step7)
+* [从存储库 Web 应用（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）部署文件](#Step7)
 * [从 BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial 部署 Visual Studio 解决方案](#Step75)
 
 
@@ -106,7 +106,7 @@ Azure WEB 应用支持用各种编程语言创建的应用程序。对于此示�
 
 此时，门户将显示有关初始化本地存储库和添加文件的说明。你已经在本主题的前几个步骤中执行了此操作。但是，如果没有设置你的部署凭据，你必须转回至门户中的“仪表板”选项卡并单击“重置部署凭据”。
 
-按照以下步骤，使用本地 Git 将你的 WEB 应用发布到 Azure：
+按照以下步骤，使用本地 Git 将你的 Web 应用发布到 Azure：
 
 1. 通过使用命令行，确认当前位置是包含以前创建的 index.html 文件的本地 Git 存储库的根目录。
 
@@ -114,9 +114,9 @@ Azure WEB 应用支持用各种编程语言创建的应用程序。对于此示�
 
 		git remote add azure https://username@needsmoregit.scm.chinacloudsites.cn:443/NeedsMoreGit.git
 
-    > [AZURE.NOTE]**remote** 命令可将命名引用添加到远程存储库。在本例中，它为 Azure WEB 应用存储库创建名为“azure”的引用。
+    > [AZURE.NOTE]**remote** 命令可将命名引用添加到远程存储库。在本例中，它为 Azure Web 应用存储库创建名为“azure”的引用。
 
-1. 从命令行中使用以下命令可将当前存储库内容从本地存储库推送到“azure”远程 WEB 应用：
+1. 从命令行中使用以下命令可将当前存储库内容从本地存储库推送到“azure”远程 Web 应用：
 
 		git push azure master
 
@@ -134,7 +134,7 @@ Azure WEB 应用支持用各种编程语言创建的应用程序。对于此示�
 		To https://username@needsmoregit.scm.chinacloudsites.cn:443/NeedsMoreGit.git
 		* [new branch]		master -> master
 
-	> [AZURE.NOTE]为 Azure WEB 应用创建的存储库应推送请求以便面向其存储库的 <strong>master</strong> 分支，后者将用作该 WEB 应用的内容。
+	> [AZURE.NOTE]为 Azure Web 应用创建的存储库应推送请求以便面向其存储库的 <strong>master</strong> 分支，后者将用作该 Web 应用的内容。
 
 2. 在门户中，单击门户底部的“浏览”链接以验证是否已部署 **index.html**。这将显示一个包含“Hello Git!”的页面。
 
@@ -152,17 +152,17 @@ Azure WEB 应用支持用各种编程语言创建的应用程序。对于此示�
 
 	![包含“Yay!”的网页][yay]
 
-### <a id="Step7"></a>从存储库 WEB 应用（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）部署文件
+### <a id="Step7"></a>从存储库 Web 应用（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）部署文件
 
-通过使用“本地 Git”将本地文件推送到 Azure，可以手动将更新从本地项目推送到你的 Azure WEB 应用，而从 BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial 进行部署会生成一个连续部署过程，在此过程中，Azure 会从项目中拉入最新的更新。
+通过使用“本地 Git”将本地文件推送到 Azure，可以手动将更新从本地项目推送到你的 Azure Web 应用，而从 BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial 进行部署会生成一个连续部署过程，在此过程中，Azure 会从项目中拉入最新的更新。
 
-这两种方法都会将项目部署到 Azure WEB 应用，如果你有多个人员在处理同一个项目并希望确保始终发布最新版本（不管是谁执行了最新更新），则连续部署会很有用。此外，如果你将上述工具之一用作应用程序的中央存储库，则连续部署也很有用。
+这两种方法都会将项目部署到 Azure Web 应用，如果你有多个人员在处理同一个项目并希望确保始终发布最新版本（不管是谁执行了最新更新），则连续部署会很有用。此外，如果你将上述工具之一用作应用程序的中央存储库，则连续部署也很有用。
 
 从 GitHub、CodePlex 或 BitBucket 部署文件需要你已将本地项目发布到这些服务之一。有关将项目发布到这些服务的详细信息，请参阅[创建存储库 (GitHub)]、[使用 Git 和 CodePlex]、[创建存储库 (BitBucket)]、[使用 Dropbox 共享 Git 存储库]或[快速入门 - Mercurial]。
 
-1. 首先，将你的 WEB 应用文件放到将用于连续部署的选定存储库中。
+1. 首先，将你的 Web 应用文件放到将用于连续部署的选定存储库中。
 
-2. 在 WEB 应用的 Azure 门户中，转到“仪表板”选项卡。在“速览”部分中，选择“从源控件设置部署”。这将显示“设置部署”对话框，该对话框会询问“你的源代码在哪里?”。
+2. 在 Web 应用的 Azure 门户中，转到“仪表板”选项卡。在“速览”部分中，选择“从源控件设置部署”。这将显示“设置部署”对话框，该对话框会询问“你的源代码在哪里?”。
 
 2. 选择"外部存储库"。
 	
@@ -172,17 +172,17 @@ Azure WEB 应用支持用各种编程语言创建的应用程序。对于此示�
 
 	![git-githubdeployed][git-githubdeployed]
 
-7. 此时，已将你的项目从所选存储库部署到 Azure WEB 应用。若要验证该站点是否处于活动状态，请单击门户底部的“浏览”链接。浏览器应导航到该 WEB 应用。
+7. 此时，已将你的项目从所选存储库部署到 Azure Web 应用。若要验证该站点是否处于活动状态，请单击门户底部的“浏览”链接。浏览器应导航到该 Web 应用。
 
-8. 若要验证连续部署是否正在进行，请更改你的项目，然后将所做的更新推送到已与此 WEB 应用关联的存储库。推送到存储库完成后，你的 WEB 应用应很快更新以反映更改。可以在 WEB 应用的“部署”页面上验证是否已拉入更新。
+8. 若要验证连续部署是否正在进行，请更改你的项目，然后将所做的更新推送到已与此 Web 应用关联的存储库。推送到存储库完成后，你的 Web 应用应很快更新以反映更改。可以在 Web 应用的“部署”页面上验证是否已拉入更新。
 
 	![git-GitHubDeployed-Updated][git-GitHubDeployed-Updated]
 
 ### <a id="Step75"></a>从 BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial 部署 Visual Studio 解决方案
 
-将 Visual Studio 解决方案推送到 Azure WEB 应用就像推送简单的 index.html 文件一样容易。Azure WEB 应用部署过程简化了所有细节，包括还原 NuGet 依赖项和构建应用程序二进制文件。可以按照仅在你的 Git 存储库中维护代码的源控制最佳实践操作，并让 Azure WEB 应用部署处理其余工作。
+将 Visual Studio 解决方案推送到 Azure Web 应用就像推送简单的 index.html 文件一样容易。Azure Web 应用部署过程简化了所有细节，包括还原 NuGet 依赖项和构建应用程序二进制文件。可以按照仅在你的 Git 存储库中维护代码的源控制最佳实践操作，并让 Azure Web 应用部署处理其余工作。
 
-将 Visual Studio 解决方案推送到 Azure WEB 应用的步骤与[上一部分](#Step7)中的步骤相同，前提是按以下方式配置你的解决方案和存储库：
+将 Visual Studio 解决方案推送到 Azure Web 应用的步骤与[上一部分](#Step7)中的步骤相同，前提是按以下方式配置你的解决方案和存储库：
 
 -	在你的存储库根中，添加 `.gitignore` 文件，然后指定想要从你的存储库中排除的所有文件和文件夹，例如，`Obj`、`Bin` 和 `packages` 文件夹（有关格式信息，请参阅 [gitignore 文档](http://git-scm.com/docs/gitignore)）。例如：
 
@@ -208,22 +208,22 @@ Azure WEB 应用支持用各种编程语言创建的应用程序。对于此示�
 
 -	在 Visual Studio 解决方案中，[启用 NuGet 程序包还原](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages)以使 Visual Studio 会自动还原丢失的包。
 
-你按照说明设置存储库并配置 Azure WEB 应用从其中一个联机 Git 存储库连续发布后，你就可以在 Visual Studio 中从本地开发 ASP.NET 应用程序，并且只需通过将所做的更改推送到联机的 Git 存储库即可连续部署代码。
+你按照说明设置存储库并配置 Azure Web 应用从其中一个联机 Git 存储库连续发布后，你就可以在 Visual Studio 中从本地开发 ASP.NET 应用程序，并且只需通过将所做的更改推送到联机的 Git 存储库即可连续部署代码。
 
 <h4>连续部署的工作方式</h4>
-连续部署的工作方式是提供在你 WEB 应用的“配置”选项卡的“部署”部分中找到的“部署触发器 URL”。
+连续部署的工作方式是提供在你 Web 应用的“配置”选项卡的“部署”部分中找到的“部署触发器 URL”。
 
 ![git-DeploymentTrigger][git-DeploymentTrigger]
 
-在对存储库进行更新时，会将 POST 请求发送到此 URL，这将告知你的 Azure WEB 应用已更新存储库。此时，将检索更新并将其部署到你的 WEB 应用。
+在对存储库进行更新时，会将 POST 请求发送到此 URL，这将告知你的 Azure Web 应用已更新存储库。此时，将检索更新并将其部署到你的 Web 应用。
 
-有关隐藏在 Azure WEB 应用 Git 部署过程背后的引擎的更多信息，请参阅[项目 Kudu](https://github.com/projectkudu/kudu/wiki)。
+有关隐藏在 Azure Web 应用 Git 部署过程背后的引擎的更多信息，请参阅[项目 Kudu](https://github.com/projectkudu/kudu/wiki)。
 
 <h4>指定要使用的分支</h4>
 
 启用连续部署时，将默认为存储库的 **master** 分支。若要使用其他分支，请执行下列步骤：
 
-1. 在门户中，选择你的 WEB 应用，然后选择“配置”。
+1. 在门户中，选择你的 Web 应用，然后选择“配置”。
 
 2. 在此页面的“部署”部分中，在“要部署的分支”字段中输入要使用的分支，然后按 Enter。最后，单击“保存”。
 
@@ -239,24 +239,24 @@ Azure WEB 应用支持用各种编程语言创建的应用程序。对于此示�
 
 ## <a id="Step8"></a>故障排除
 
-以下是使用 Git 发布到 Azure WEB 应用时遇到的常见错误或问题：
+以下是使用 Git 发布到 Azure Web 应用时遇到的常见错误或问题：
 
 ****
 
 **症状**：无法访问“[siteURL]”：无法连接到 [scmAddress]
 
-**原因**：如果 WEB 应用无法正常工作，则可能发生此错误。
+**原因**：如果 Web 应用无法正常工作，则可能发生此错误。
 
-**解决方法**：在 Azure 门户中启动 WEB 应用。在 WEB 应用运行之前，Git 部署无法进行。
+**解决方法**：在 Azure 门户中启动 Web 应用。在 Web 应用运行之前，Git 部署无法进行。
 
 
 ****
 
 **症状**：无法解析主机“主机名”
 
-**原因**：如果创建“azure”远程 WEB 应用时输入的地址信息不正确，则会发生该错误。
+**原因**：如果创建“azure”远程 Web 应用时输入的地址信息不正确，则会发生该错误。
 
-**解决方法**：使用 `git remote -v` 命令列出所有远程 WEB 应用以及关联的 URL。确认“azure”远程 WEB 应用的 URL 正确。如果需要，请删除此远程 WEB 应用并使用正确的 URL 重新创建它。
+**解决方法**：使用 `git remote -v` 命令列出所有远程 Web 应用以及关联的 URL。确认“azure”远程 Web 应用的 URL 正确。如果需要，请删除此远程 Web 应用并使用正确的 URL 重新创建它。
 
 ****
 
@@ -272,7 +272,7 @@ Azure WEB 应用支持用各种编程语言创建的应用程序。对于此示�
 
 **症状**：src refspec [分支名] 不匹配任何内容。
 
-**原因**：如果你尝试推送到“azure”远程 WEB 应用上 master 分支之外的分支，则会发生该错误。
+**原因**：如果你尝试推送到“azure”远程 Web 应用上 master 分支之外的分支，则会发生该错误。
 
 **解决方法**：请再次执行推送操作，并指定 master 分支。例如：
 
@@ -280,7 +280,7 @@ Azure WEB 应用支持用各种编程语言创建的应用程序。对于此示�
 
 ****
 
-**症状**：错误 - 已将更改提交到远程存储库，但未更新你的 WEB 应用。
+**症状**：错误 - 已将更改提交到远程存储库，但未更新你的 Web 应用。
 
 **原因**：如果你部署的是 Node.js 应用程序，其中包含用于指定其他必需模块的 package.json 文件，则会发生该错误。
 

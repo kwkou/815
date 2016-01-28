@@ -184,8 +184,8 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
     - [如何：优化 Azure 上的 MySQL 的性能](/documentation/articles/virtual-machines-linux-optimize-mysql-perf)
     - [如何：MySQL 群集](/documentation/articles/virtual-machines-linux-mysql-cluster)
     - [如何：使用应用商店创建 MySQL 数据库](/documentation/articles/store-php-create-mysql-database)
-    - [如何：具有 Python 和 Visual Studio 的 Azure WEB 应用上的 Django 和 MySQL](/documentation/articles/web-sites-python-ptvs-django-mysql)
-    - [如何：具有 WebMatrix 的 Azure WEB 应用上的 PHP 和 MySQL](/documentation/articles/web-sites-php-mysql-use-webmatrix)
+    - [如何：具有 Python 和 Visual Studio 的 Azure Web 应用上的 Django 和 MySQL](/documentation/articles/web-sites-python-ptvs-django-mysql)
+    - [如何：具有 WebMatrix 的 Azure Web 应用上的 PHP 和 MySQL](/documentation/articles/web-sites-php-mysql-use-webmatrix)
     - [在 Windows Azure 中的 MySQL 高可用性体系结构](http://download.microsoft.com/download/6/1/C/61C0E37C-F252-4B33-9557-42B90BA3E472/MySQL_HADR_solution_in_Azure.pdf)
 7. MariaDB
     - [如何：创建多主的 MariaDb 群集](/documentation/articles/virtual-machines-mariadb-cluster)

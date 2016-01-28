@@ -29,7 +29,7 @@ Azure 通知中心可提供用于向移动设备发送推送通知的易于使�
 
 ##创建 Node.js 应用程序
 
-创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure WEB 应用][]、[Node.js 云服务][]（使用 Windows PowerShell）或[使用 WebMatrix 构建 WEB 应用][]。
+创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure Web 应用][]、[Node.js 云服务][]（使用 Windows PowerShell）或[使用 WebMatrix 构建 Web 应用][]。
 
 ##将应用程序配置为使用通知中心
 
@@ -162,9 +162,9 @@ Azure 通知中心可提供用于向移动设备发送推送通知的易于使�
   [配置应用程序以使用 服务总线]: #config
   [如何：发送通知]: #send
   [Azure 服务总线 通知中心]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx
-  [创建 Node.js 应用程序并将其部署到 Azure WEB 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+  [创建 Node.js 应用程序并将其部署到 Azure Web 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
   [Node.js 云服务]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
-  [使用 WebMatrix 构建 WEB 应用]: /documentation/articles/web-sites-nodejs-use-webmatrix
+  [使用 WebMatrix 构建 Web 应用]: /documentation/articles/web-sites-nodejs-use-webmatrix
   [实施 GCM 服务器]: http://developer.android.com/google/gcm/server.html#payload
   [本地和推送通知编程指南]: http://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/ApplePushService/ApplePushService.html
   [从服务器推送通知]: http://msdn.microsoft.com/library/hh221551.aspx

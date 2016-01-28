@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="使用 Visual Studio 部署 Web 作业" 
-	description="了解如何使用 Visual Studio 将 Azure Web 作业部署到 Azure WEB 应用。" 
+	description="了解如何使用 Visual Studio 将 Azure Web 作业部署到 Azure Web 应用。" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="tdykstra" 
@@ -16,11 +16,11 @@
 
 ## 概述
 
-本主题说明如何使用 Visual Studio 将控制台应用程序项目作为 [Azure Web 作业](/documentation/articles/websites-webjobs-resources/)部署到 [Azure WEB 应用](/documentation/services/web-sites/)中。有关如何使用 [Azure 管理门户](https://manage.windowsazure.cn/)部署 Web 作业的信息，请参阅[使用 Web 作业运行后台任务](/documentation/articles/web-sites-create-web-jobs)。
+本主题说明如何使用 Visual Studio 将控制台应用程序项目作为 [Azure Web 作业](/documentation/articles/websites-webjobs-resources/)部署到 [Azure Web 应用](/documentation/services/web-sites/)中。有关如何使用 [Azure 管理门户](https://manage.windowsazure.cn/)部署 Web 作业的信息，请参阅[使用 Web 作业运行后台任务](/documentation/articles/web-sites-create-web-jobs)。
 
 当 Visual Studio 部署启用 Web 作业的控制台应用程序项目时，它会执行两个任务：
 
-* 将运行时文件复制到 WEB 应用中的相应文件夹（对于连续 Web 作业，该文件夹为 *App\_Data/jobs/continuous*，对于计划的按需 Web 作业，则为 *App\_Data/jobs/triggered*）。
+* 将运行时文件复制到 Web 应用中的相应文件夹（对于连续 Web 作业，该文件夹为 *App\_Data/jobs/continuous*，对于计划的按需 Web 作业，则为 *App\_Data/jobs/triggered*）。
 * 为已计划在特定时间运行的 Web 作业设置 [Azure 计划程序作业](#scheduler)。（无需为连续 Web 作业执行此操作。）
 
 已启用 Web 作业的项目中添加了以下项：
@@ -52,11 +52,11 @@
 
 * [使用 Web 项目启用自动部署](#convertlink)。
 
-	配置现有控制台应用程序项目，以便在部署 Web 项目时，它以 Web 作业的方式自动部署。当你要在与运行相关 WEB 应用相同的 WEB 应用中运行 Web 作业时，请使用此选项。
+	配置现有控制台应用程序项目，以便在部署 Web 项目时，它以 Web 作业的方式自动部署。当你要在与运行相关 Web 应用相同的 Web 应用中运行 Web 作业时，请使用此选项。
 
 * [不使用 Web 项目启用部署](#convertnolink)。
 
-	配置现有控制台应用程序项目以 Web 作业的方式部署，且不提供 Web 项目的链接。当你要在 WEB 应用本身中运行 Web 作业，且 Azure 中没有正在运行的 WEB 应用时，请使用此选项。为了能够缩放不受 WEB 应用资源影响的 Web 作业资源，你可能想要执行此操作。
+	配置现有控制台应用程序项目以 Web 作业的方式部署，且不提供 Web 项目的链接。当你要在 Web 应用本身中运行 Web 作业，且 Azure 中没有正在运行的 Web 应用时，请使用此选项。为了能够缩放不受 Web 应用资源影响的 Web 作业资源，你可能想要执行此操作。
 
 ### <a id="convertlink"></a>使用 Web 项目启用自动 Web 作业部署
   
@@ -90,11 +90,11 @@
 
 * [为独立的 Web 作业使用 Web 作业新建项目模板](#createnolink)
 
-	创建一个项目，并将它配置为以 Web 作业的方式部署，且不提供 Web 项目的链接。当你要在 WEB 应用本身中运行 Web 作业，且 Azure 中没有正在运行的 WEB 应用时，请使用此选项。为了能够缩放不受 WEB 应用资源影响的 Web 作业资源，你可能想要执行此操作。
+	创建一个项目，并将它配置为以 Web 作业的方式部署，且不提供 Web 项目的链接。当你要在 Web 应用本身中运行 Web 作业，且 Azure 中没有正在运行的 Web 应用时，请使用此选项。为了能够缩放不受 Web 应用资源影响的 Web 作业资源，你可能想要执行此操作。
 
 * [在链接到 Web 项目的 Web 作业中使用 Web 作业新建项目模板](#createlink)
 
-	创建一个项目，该项目配置为在针对位于相同解决方案中的 Web 项目进行部署时，自动以 Web 作业的方式部署。当你要在与运行相关 WEB 应用相同的 WEB 应用中运行 Web 作业时，请使用此选项。
+	创建一个项目，该项目配置为在针对位于相同解决方案中的 Web 项目进行部署时，自动以 Web 作业的方式部署。当你要在与运行相关 Web 应用相同的 Web 应用中运行 Web 作业时，请使用此选项。
 
 在 SDK 2.4 版本中，Web 作业新建项目模板并不比创建控制台应用程序项目并启用 Web 作业部署容易。将来，Web 作业新建项目模板将更有助于[ WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started) 开发，因为它会自动安装相应的 WebJobs SDK NuGet 包。在此之前，你可以手动安装此包，以将项目配置为使用 Webjobs SDK，如 [Webjobs SDK 教程](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)中所示。
 
@@ -127,7 +127,7 @@
 
 对于计划的 Web 作业（而不是连续 Web 作业），Visual Studio 将创建 [Azure 计划程序](/home/features/scheduler/)作业集合（如果尚不存在），然后在该集合中创建一个作业：
 
-* 计划程序作业集合命名为 *WebJobs-{regionname}*，其中的 *{regionname}* 表示托管 WEB 应用的区域。例如：WebJobs-WestUS。
+* 计划程序作业集合命名为 *WebJobs-{regionname}*，其中的 *{regionname}* 表示托管 Web 应用的区域。例如：WebJobs-WestUS。
 * 计划程序作业命名为 *{webappname}-{webjobname}*。例如：MyWebApp-MyWebJob。 
  
 >[AZURE.NOTE]
@@ -176,7 +176,7 @@
   
 ## <a id="deploy"></a>部署 Web 作业项目
 
-已链接到 Web 项目的 Web 作业项目会通过 Web 项目自动部署。有关 Web 项目部署的信息，请参阅[如何部署到 WEB 应用](/documentation/articles/web-sites-deploy)。
+已链接到 Web 项目的 Web 作业项目会通过 Web 项目自动部署。有关 Web 项目部署的信息，请参阅[如何部署到 Web 应用](/documentation/articles/web-sites-deploy)。
 
 若要自动部署某个 Web 作业项目，请在“解决方案资源管理器”中右键单击该项目，然后单击“发布为 Azure Web 作业”。
 

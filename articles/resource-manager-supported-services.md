@@ -134,7 +134,7 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 
 ### PowerShell
 
-以下示例演示如何使用 Azure PowerShell 1.0 预览版来获取支持 WEB 应用的区域。有关 1.0 预览版的详细信息，请参阅 [Azure PowerShell 1.0 预览版](https://azure.microsoft.com/blog/azps-1-0-pre/)
+以下示例演示如何使用 Azure PowerShell 1.0 预览版来获取支持 Web 应用的区域。有关 1.0 预览版的详细信息，请参阅 [Azure PowerShell 1.0 预览版](https://azure.microsoft.com/blog/azps-1-0-pre/)
 
     PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).Locations
     

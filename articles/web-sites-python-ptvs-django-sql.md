@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Django 和 SQL 数据库" 
-	description="了解如何使用 Python Tools for Visual Studio 来创建在 SQL 数据库实例中存储数据的 Django WEB 应用，以及将应用部署到 Azure 中。" 
+	description="了解如何使用 Python Tools for Visual Studio 来创建在 SQL 数据库实例中存储数据的 Django Web 应用，以及将应用部署到 Azure 中。" 
 	services="app-service\web" 
 	tags="python"
 	documentationCenter="python" 
@@ -18,11 +18,11 @@
 
 # 具有 Python Tools 2.2 for Visual Studio 的 Azure 上的 Django 和 SQL 数据库 
 
-在本教程中，我们将使用 [Python Tools for Visual Studio] 通过一个 PTVS 样本模板创建简单的轮询 WEB 应用。您还可以观看本教程的[视频](https://www.youtube.com/watch?v=ZwcoGcIeHF4)。
+在本教程中，我们将使用 [Python Tools for Visual Studio] 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。您还可以观看本教程的[视频](https://www.youtube.com/watch?v=ZwcoGcIeHF4)。
 
-我们将了解如何使用在 Azure 上托管的 SQL 数据库、如何将 WEB 应用配置为使用 SQL 数据库，以及如何将 WEB 应用发布到 [Azure WEB 应用](/documentation/services/web-sites/)中。
+我们将了解如何使用在 Azure 上托管的 SQL 数据库、如何将 Web 应用配置为使用 SQL 数据库，以及如何将 Web 应用发布到 [Azure Web 应用](/documentation/services/web-sites/)中。
 
-请参阅 [Python 开发人员中心]以获取更多文章，这些文章介绍了如何通过 PTVS（使用 Bottle、Flask 和 Django Web 框架）、MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure WEB 应用。虽然本文将着重介绍 Azure WEB 应用，但 [Azure 云服务]的开发步骤也是类似的。
+请参阅 [Python 开发人员中心]以获取更多文章，这些文章介绍了如何通过 PTVS（使用 Bottle、Flask 和 Django Web 框架）、MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure Web 应用。虽然本文将着重介绍 Azure Web 应用，但 [Azure 云服务]的开发步骤也是类似的。
 
 ##<a name="prerequisites"></a>先决条件
 
@@ -36,7 +36,7 @@
 
 ## 创建项目
 
-在此部分中，我们将使用样本模板创建 Visual Studio 项目。我们将创建虚拟环境并安装所需软件包。我们将创建一个使用 sqlite 的本地数据库。然后，我们将在本地运行 WEB 应用。
+在此部分中，我们将使用样本模板创建 Visual Studio 项目。我们将创建虚拟环境并安装所需软件包。我们将创建一个使用 sqlite 的本地数据库。然后，我们将在本地运行 Web 应用。
 
 1.  在 Visual Studio 中，依次选择“文件”和“新建项目”。
 
@@ -108,7 +108,7 @@
 
 ## 配置项目
 
-在此部分中，我们将把 WEB 应用配置为使用我们刚刚创建的 SQL 数据库。我们还将安装结合使用 SQL 数据库和 Django 所需的其他 Python 包。然后，我们将在本地运行 WEB 应用。
+在此部分中，我们将把 Web 应用配置为使用我们刚刚创建的 SQL 数据库。我们还将安装结合使用 SQL 数据库和 Django 所需的其他 Python 包。然后，我们将在本地运行 Web 应用。
 
 1.  在 Visual Studio 中，打开“项目名称” 文件夹中的 **settings.py**。暂时将连接字符串粘贴在编辑器中。连接字符串是按以下格式：
 
@@ -150,21 +150,21 @@
 1.  使用 `F5` 运行应用程序。使用“创建样本轮询”创建的轮询以及通过投票提交的数据会在 SQL 数据库中进行序列化。
 
 
-## 将 WEB 应用发布到 Azure WEB 应用
+## 将 Web 应用发布到 Azure Web 应用
 
-借助 Azure.NET SDK，你可以轻松地将 WEB 应用部署到 Azure 中。
+借助 Azure.NET SDK，你可以轻松地将 Web 应用部署到 Azure 中。
 
 1.  在“解决方案资源管理器”中，右键单击项目节点，然后选择“发布”。
 
   	<!-- ![Publish Web Dialog](./media/web-sites-python-ptvs-django-sql/PollsCommonPublishWebSiteDialog.png) -->
 
-1.  单击“Windows Azure WEB 应用”。
+1.  单击“Windows Azure Web 应用”。
 
-1.  单击“新建”，新建一个 WEB 应用。
+1.  单击“新建”，新建一个 Web 应用。
 
 1.  填写以下字段，然后单击“创建”。
-	-	** WEB 应用名称**
-	-	**Azure WEB 应用计划**
+	-	** Web 应用名称**
+	-	**Azure Web 应用计划**
 	-	**资源组**
 	-	**区域**
 	-	保持“数据库服务器”的“无数据库”设置不变
@@ -173,7 +173,7 @@
 
 1.  接受其他所有默认值，然后单击**发布**。
 
-1.  此时，您的 Web 浏览器会自动打开已发布的 WEB 应用。您应该会看到 WEB 应用使用在 Azure 上托管的 **SQL** 数据库按预期方式运行。
+1.  此时，您的 Web 浏览器会自动打开已发布的 Web 应用。您应该会看到 Web 应用使用在 Azure 上托管的 **SQL** 数据库按预期方式运行。
 
     祝贺你！
 

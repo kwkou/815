@@ -37,7 +37,7 @@ Azure 云服务有一个特有的服务配置机制，让您能够从 Azure 管�
 	
 ### 使用 .NET 配置来配置连接字符串
 
-如果您编写的不是 Azure 云服务的应用程序（参见上一部分），则建议您使用 .NET 配置系统（例如 `web.config` 或 `app.config`）。这包括 Azure WEB 应用或 Azure 虚拟机，以及设计为在 Azure 外部运行的应用程序。您可以使用 `<appSettings>` 元素存储连接字符串，如下所示。将 `account-name` 替换为您的存储帐户名称，将 `account-key` 替换为您的存储帐户密钥：
+如果您编写的不是 Azure 云服务的应用程序（参见上一部分），则建议您使用 .NET 配置系统（例如 `web.config` 或 `app.config`）。这包括 Azure Web 应用或 Azure 虚拟机，以及设计为在 Azure 外部运行的应用程序。您可以使用 `<appSettings>` 元素存储连接字符串，如下所示。将 `account-name` 替换为您的存储帐户名称，将 `account-key` 替换为您的存储帐户密钥：
 
 	<configuration>
   		<appSettings>
