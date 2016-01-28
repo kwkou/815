@@ -99,7 +99,7 @@
 	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](/home/features/media-services/#price)。
 
  
-##创建频道
+##<a id="create-a-channel"></a>创建频道
 
 1.	在[管理门户](http://manage.windowsazure.cn/)中，单击“媒体服务”，然后单击媒体服务帐户名。
 2.	选择“频道”页。
@@ -157,7 +157,7 @@
 ![ingesturls](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-ingest-urls.png)
 
 
-##创建和管理节目
+##<a id="create-and-manage-a-program"></a>创建和管理节目
 
 ###概述
 
