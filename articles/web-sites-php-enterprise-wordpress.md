@@ -16,7 +16,7 @@
 
 Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了一个可扩展、安全且易用的环境。Microsoft 自身在运营 [Office][officeblog] 和 [Bing][bingblog] 博客等企业级网站。本文档说明如何使用 Azure 网站建立和维护一个可以处理大量访客且基于云的企业级 WordPress 网站。
 
-## 架构与规划
+##<a name="planning"></a> 架构与规划
 
 基本的 WordPress 安装有只有两个要求。
 
@@ -96,7 +96,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 ## 分步说明
 
-### 创建一个新的 WordPress 网站
+###<a name="Create-a-new-WordPress-site"></a> 创建一个新的 WordPress 网站
 
 1. 创建 MySQL 数据库。
 
@@ -104,7 +104,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 如果要迁移现有的 WordPress 网站，请在创建新网站后，参阅[将现有 WordPress 网站迁移到 Azure](#Migrate-an-existing-WordPress-site-to-Azure)。
 
-### 将现有 WordPress 网站迁移到 Azure
+###<a name="Migrate-an-existing-WordPress-site-to-Azure"></a> 将现有 WordPress 网站迁移到 Azure
 
 如[架构与规划](#planning)部分所述，有两种方法迁移 WordPress 网站。
 

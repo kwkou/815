@@ -20,7 +20,7 @@
 
 请求 SSL 证书之前，必须先确定将受证书保护的域名。这将确定必须获取的证书类型。如果你只需保护单个域名（例如 **contoso.com** 或 **www.contoso.com**）的安全，则基本证书就足够了。如果你需要保护多个域名（例如 **contoso.com**、**www.contoso.com** 和 **mail.contoso.com**）的安全，则可以获取[通配符证书](http://en.wikipedia.org/wiki/Wildcard_certificate)或带有[使用者备用名称](http://en.wikipedia.org/wiki/SubjectAltName) (subjectAltName) 的证书。
 
-配合网站使用的 SSL 证书必须由[证书颁发机构](http://en.wikipedia.org/wiki/Certificate_authority) (CA) 签名。如果你尚未获取 SSL 证书，将需要从颁发 SSL 证书的公司购买一个 SSL 证书。有关证书颁发机构的列表，请参阅 Microsoft TechNet Wiki 上的 [Windows 和 Windows Phone 8 SSL 根证书计划（成员 CA）][cas]。
+配合网站使用的 SSL 证书必须由[证书颁发机构](http://zh.wikipedia.org/wiki/证书颁发机构) (CA) 签名。如果你尚未获取 SSL 证书，将需要从颁发 SSL 证书的公司购买一个 SSL 证书。有关证书颁发机构的列表，请参阅 Microsoft TechNet Wiki 上的 [Windows 和 Windows Phone 8 SSL 根证书计划（成员 CA）][cas]。
 
 该证书必须满足 Azure 中的以下 SSL 证书要求：
 
@@ -511,7 +511,7 @@ Azure 网站*不*强制实施 HTTPS。访问者可能仍使用 HTTP 访问网站
 
 ## 更多资源 ##
 - [Windows Azure 信任中心](/support/trust-center/security/)
-- [Azure 网站中解锁的设置选项](http://azure.microsoft.com/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)
+- [Azure 网站中解锁的设置选项](http://azure.microsoft.com/zh-cn/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)
 - [启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)
 - [配置网站](/documentation/articles/web-sites-configure)
 - [Azure 管理门户](https://manage.windowsazure.cn)
@@ -522,7 +522,7 @@ Azure 网站*不*强制实施 HTTPS。访问者可能仍使用 HTTP 访问网站
 [exportcertiis]: http://technet.microsoft.com/zh-cn/library/cc731386(WS.10).aspx
 [openssl]: http://www.openssl.org/
 [portal]: https://manage.windowsazure.cn/
-[tls]: http://en.wikipedia.org/wiki/Transport_Layer_Security
+[tls]: http://zh.wikipedia.org/wiki/Transport_Layer_Security
 [staticip]: ./media/configure-ssl-web-site/staticip.png
 [website]: ./media/configure-ssl-web-site/sslwebsite.png
 [scale]: ./media/configure-ssl-web-site/sslscale.png

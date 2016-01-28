@@ -24,7 +24,7 @@
 
 只有 Visual Studio 2015 和 Visual Studio 2013 才支持 Azure SDK 2.7。[Azure SDK 2.6](/downloads/) 是 Visual Studio 2012 支持的最后一个 SDK。
 
-有关此版本的详细信息，请参阅 [Azure SDK 2.7 通告文章](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)和 [Azure SDK 2.7.1 通告文章](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-7-1-for-net/)。
+有关此版本的详细信息，请参阅 [Azure SDK 2.7 通告文章](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)和 [Azure SDK 2.7.1 通告文章](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/)。
 
 ## Azure SDK for .NET 2.7
 
@@ -59,7 +59,7 @@
 
 ### Azure 网站工具
 
-此版本对 Web 工具扩展做了以下更新。有关详细信息，请参阅[此博客](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)。
+此版本对 Web 工具扩展做了以下更新。有关详细信息，请参阅[此博客](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)。
 
 - 添加了对 DreamSpark 帐户的支持
 - 对 Azure 工具做了全面的更改，以支持新的 Azure 资源管理 API
@@ -114,7 +114,7 @@ Azure 资源管理器工具已更新为使用基于角色的访问控制 (RBAC) 
 以下部分包含的更新是 Azure SDK for .NET 2.7.1 发行版中引入的。
 ### HDInsight 工具 
 
-有关 HDInsight 工具更新的更多详细说明，请参阅[此博客](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-7-1-for-net/)。
+有关 HDInsight 工具更新的更多详细说明，请参阅[此博客](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/)。
 
 - Hive 作业运算符视图（新功能）
 
@@ -134,7 +134,7 @@ Azure 资源管理器工具已更新为使用基于角色的访问控制 (RBAC) 
 
 	我们改进了 IntelliSense，添加了更多用户友好建议。例如，现在还可以在 IntelliSense 中提供表别名建议，方便你撰写查询。此外，我们还改进了 Hive 元数据加载，只需数秒即可列出 Hive 源存储中的所有数据库、表和列。
 
-有关 HDInsight 工具更新的更多详细说明，请参阅[此博客](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-7-1-for-net/)。
+有关 HDInsight 工具更新的更多详细说明，请参阅[此博客](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/)。
 
 ### Visual Studio 2013 中的改进
 
@@ -147,9 +147,9 @@ Azure 资源管理器工具已更新为使用基于角色的访问控制 (RBAC) 
 
 
 ## 另请参阅
-[Azure SDK 2.7.1 通告文章](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-7-1-for-net/)
+[Azure SDK 2.7.1 通告文章](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/)
 
-[Azure SDK 2.7 通告文章](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)
+[Azure SDK 2.7 通告文章](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)
 
 [Azure SDK for .NET 和 API 的支持和停用信息](https://msdn.microsoft.com/zh-cn/library/azure/dn479282.aspx/)
 

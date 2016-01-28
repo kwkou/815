@@ -124,9 +124,9 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 	存储连接字符串是一个示例，其中包含存储帐户名称和访问密钥的占位符。你需要将此字符串替换为包含你的存储帐户的名称和密钥的连接字符串。
 
-	<pre class="prettyprint">&lt;connectionStrings&gt;
-	  &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" /&gt;
-	  &lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;
+	<pre class="prettyprint">&lt;connectionStrings&gt;<br/>
+	  &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" /&gt;<br/>
+	  &lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;<br/>
 	&lt;/connectionStrings&gt;</pre>
 
 	存储连接字符串命名为 AzureWebJobsStorage，因为这是 WebJobs SDK 默认情况下使用的名称。此处之所以使用相同的名称，是因为你只需在 Azure 环境中设置一个连接字符串值。
@@ -148,15 +148,15 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 6. 打开 ContosoAdsWebJob 项目中的 *App.config* 文件。
 
 	此文件包含两个存储连接字符串，一个用于应用程序数据，另一个用于日志记录。对于本教程，你将为两者使用相同的帐户。连接字符串包含存储帐户密钥的占位符。
-	<pre class="prettyprint">&lt;configuration&gt; 
-    &lt;connectionStrings&gt; 
-    	&lt;add name="AzureWebJobsDashboard" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt; 
-	&lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt; 
-	&lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;"/&gt; 
-    &lt;/connectionStrings&gt;
-    	 &lt;startup&gt; 
-	     &lt;supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /&gt; 
-    &lt;/startup&gt; 
+	<pre class="prettyprint">&lt;configuration&gt; <br/>
+    	&lt;connectionStrings&gt; <br/>
+    		&lt;add name="AzureWebJobsDashboard" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt; <br/>
+			&lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt; <br/>
+			&lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;"/&gt; <br/>
+    	&lt;/connectionStrings&gt;<br/>
+    	&lt;startup&gt; <br/>
+			&lt;supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /&gt; <br/>
+    	&lt;/startup&gt; <br/>
 &lt;/configuration&gt;</pre>
 
 	默认情况下，WebJobs SDK 将查找名为 AzureWebJobsStorage 和 AzureWebJobsDashboard 的连接字符串。作为替代方法，你可以根据需要[存储该连接字符串，并显式将它传递给 `JobHost` 对象](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#config)。
@@ -216,53 +216,11 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 2. 在“解决方案资源管理器”中，右键单击 ContosoAdsWeb 项目，然后单击“发布”。
 
-3. 在“发布 Web”向导的“配置文件”步骤中，单击“Windows Azure 网站”。
-
-	![选择 Azure 网站发布目标](./media/websites-dotnet-webjobs-sdk-get-started/pubweb.png)
-
-4. 登录 Azure（如果尚未登录）。
-
-5. 单击“新建”。
-
-	根据你安装的 Azure SDK for.NET 版本，对话框可能与屏幕截图略有不同。
-
-	![单击“新建”](./media/websites-dotnet-webjobs-sdk-get-started/clicknew.png)
-
-6. 在“在 Windows Azure 上创建网站”对话框框中，在“网站名称”框中输入唯一名称。
-
-	完整的 URL 将包含你在此处输入的内容和 .chinacloudsites.cn（如“网站名称”文本框的旁边所示）。例如，如果网站名称为 ContosoAds，则 URL 将为 ContosoAds.chinacloudsites.cn。
-
-7. 在“App Service 计划”下拉列表中，选择“创建新的 App Service 计划”。[](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview)输入 App Service 计划的名称，例如 ContosoAdsPlan。
-
-8. 在“资源组”下拉列表中，选择“创建新的资源组”。[](/documentation/articles/resource-group-overview)
-
-9. 输入资源组的名称，例如 ContosoAdsGroup。
-
-10. 在“区域”下拉列表中，选择你为存储帐户所选的同一区域。
-
-	此设置指定你的网站将在哪个 Azure 数据中心运行。在同一数据中心保留网站和存储帐户可以最大程度地减少延迟和数据传出费用。
-
-11. 在“数据库服务器”下拉列表中选择“创建新的服务器”。
-
-12. 输入数据库服务器的名称，例如 contosoadsserver + 数字或你的姓名，使服务器名称保持唯一。
-
-	服务器名称必须唯一。该名称可以包含小写字母、数字和短划线，但尾部不能包含短划线。
-
-	或者，如果你的订阅已有一台服务器，可从下拉列表中选择该服务器。
-
-12. 输入管理员的“数据库用户名”和“数据库密码”。
-
-	如果你选择了“新建 SQL 数据库服务器”，则在此处不要输入现有名称和密码。你应输入新的名称和密码，你现在定义的名称和密码将在你以后访问数据库时使用。如果你选择之前创建的服务器，系统将提示你已创建的管理用户帐户的密码。
-
-13. 单击“创建”。
-
-	![在 Windows Azure 对话框中创建网站](./media/websites-dotnet-webjobs-sdk-get-started/newdb.png)
-
-	Visual Studio 将创建解决方案、Web 项目、Azure 中的网站和 Azure SQL 数据库实例。
-
-14. 在“发布 Web”向导的“连接”步骤中，单击“下一步”。
+3. 点击“导入”，选择事先下载好的“发布配置文件”，然后确认。
 
 	![连接步骤](./media/websites-dotnet-webjobs-sdk-get-started/connstep.png)
+
+	如果还没新建 Web 应用，可以到 Azure 管理门户新建一个，并在“仪表板”的“速览”下，下载“发布配置文件”。
 
 15. 在“设置”步骤中，清除“在运行时使用此连接字符串”复选框，然后单击“下一步”。
 
@@ -616,7 +574,7 @@ ContosoAdsContext 类指定 DbSet 集合中使用的 Ad 类，实体框架将存
 		<li>@Html.ActionLink("Free stuff", "Index", "Ad", new { category = (int)Category.FreeStuff }, null)</li>
 		<li>@Html.ActionLink("All", "Index", "Ad", null, null)</li>
 
-### ContosoAdsWeb - AdController.cs
+###<a name="ResolveBlobName"></a> ContosoAdsWeb - AdController.cs
 
 在 *AdController.cs* 文件中，构造函数调用 `InitializeStorage` 方法来创建 Azure 存储客户端库对象，它提供一个用于处理 Blob 和队列的 API。
 

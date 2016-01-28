@@ -232,7 +232,7 @@ SendGrid 通过使用应用提供其他电子邮件功能。可将这些设置�
 
 SendGrid 提供了基于 Web 的 API 和 Webhook，可通过这些 API 从 Azure 应用程序中使用其他 SendGrid 功能。有关完整详细信息，请参阅 [SendGrid API 文档][]。
 
-<a name="nextsteps"></a> 
+<a name="nextsteps" id="next-steps"></a> 
 ## 后续步骤
 
 此时，你已了解 SendGrid 电子邮件服务的基础知识，请访问以下链接以了解更多信息。

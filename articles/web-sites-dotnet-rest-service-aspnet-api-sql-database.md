@@ -31,20 +31,8 @@
 
 你将生成一个简单的联系人列表网站，该应用程序基于 ASP.NET MVC 5 构建并使用 ADO.NET Entity Framework 进行数据库访问。下图演示了完整的应用程序：
 
-![网站屏幕截图][intro001]本教程的内容：
+![网站屏幕截图][intro001]
 
-* [设置开发环境][setupdbenv]
-* [设置 Azure 环境][setupwindowsazureenv]
-* [创建 ASP.NET MVC 5 应用程序][createapplication]
-* [将应用程序部署到 Azure][deployapp1]
-* [向应用程序添加数据库][adddb]
-* [为数据添加控制器和视图][addcontroller]
-* [添加 Web API Restful 接口][addwebapi]
-* [添加 XSRF 保护][]
-* [将应用程序更新发布到 Azure 和 SQL 数据库][deploy2]
-
-<a name="bkmk_setupdevenv"></a> 
-<!-- the next line produces the "Set up the development environment" section as see at http://www.windowsazure.cn/documentation/articles/web-sites-dotnet-get-started/ -->
 [WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 ### 创建项目
@@ -55,30 +43,15 @@
 
 	![“新建项目”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr4.PNG)]
 
-1. 在“新建 ASP.NET 项目”对话框中，选择“MVC”模板，选中“Web API”，然后单击“更改身份验证”。
-
-	![“新建 ASP.NET 项目”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.PNG)
-
-1. 在“更改身份验证”对话框中，单击“无身份验证”，然后单击“确定”。
-
-	![无身份验证](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/GS13noauth.png)
-
-	你要创建的示例应用程序没有需要用户登录的功能。有关如何实现身份验证和授权功能的信息，请参阅本教程末尾的[后续步骤](#nextsteps)部分。
+1. 在“新建 ASP.NET 项目”对话框中，选择“MVC”模板，选中“Web API”。
 
 1. 在“新建 ASP.NET 项目”对话框中，单击“确定”。
 
 	![“新建 ASP.NET 项目”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.PNG)
 
-如果你事先未登录 Azure，系统会提示你登录。
-
-1. 配置向导将根据 *ContactManager* 建议唯一名称（参阅下图）。选择你附近的区域。可以使用 [azurespeed.com](http://www.azurespeed.com/ "AzureSpeed.com") 查找延迟最低的数据中心。 
-2. 如果你以前未创建过数据库服务器，请选择“创建新服务器”，并输入数据库用户名和密码。
-
-	![配置 Azure 网站](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/configAz.PNG)
+如果你事先没有新建好 Web 应用，请先到 Azure 管理门户中，新建一个，并在“仪表板”的速览下，下载“发布配置文件”。
 
 如果你有数据库服务器，请使用它来创建新的数据库。数据库服务器是非常宝贵的资源，而且你通常会想要在同一台服务器上创建多个数据库来进行测试和开发，而不是在每个数据库中各创建一个数据库服务器。请确保你的网站和数据库位于相同区域中。
-
-![配置 Azure 网站](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/configWithDB.PNG)
 
 ### 设置页眉和页脚
 
@@ -142,11 +115,11 @@
 
 	“发布 Web”向导将打开。
 
-12. 单击“发布”。
+12. 单击“发布”。点击“导入”，并选择之前下载的“发布配置文件”。
 
-![“设置”选项卡](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/pw.png)
+	![“设置”选项卡](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/pw.png)
 
-Visual Studio 开始执行将文件复制到 Azure 服务器的过程。“输出”窗口将显示已执行的部署操作并报告已成功完成部署。
+	Visual Studio 开始执行将文件复制到 Azure 服务器的过程。“输出”窗口将显示已执行的部署操作并报告已成功完成部署。
 
 14. 默认浏览器会自动打开，并指向所部署站点的 URL。
 
@@ -742,7 +715,7 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 * [你的第一个 ASP.NET Web API](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api)
 * [调试 WAWS](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 
-本教程和示例应用程序由 [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) 在 Tom Dykstra 和 Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) 的帮助下编写完成。
+本教程和示例应用程序由 [Rick Anderson](http://blogs.msdn.com/b/rickandy/) 在 Tom Dykstra 和 Barry Dorrans 的帮助下编写完成。
 
 请提供有关你喜欢的内容或者你希望看到改善的内容的反馈，不仅关于教程本身，也关于它所演示的产品。你的反馈将帮助我们确定优先改进哪些方面。我们特别希望确定大家对于对配置和部署成员资格数据库的流程进行更多自动化的兴趣有多大。
 

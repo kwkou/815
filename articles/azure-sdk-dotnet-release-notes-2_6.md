@@ -54,7 +54,7 @@
 
 - **角色中缓存**已更新，可以使用 **Windows Azure 存储空间 SDK** 版本 4.3。到目前为止，**角色中缓存**一直在使用 Azure 存储空间 SDK 版本 1.7。
 
-	使用 Azure SDK 2.5 或以下版本的客户应更新到 Azure SDK 2.6，并选择使用新版 Azure 存储空间 SDK。请注意，将在 2015 年 12 月 9 日删除 Azure 存储空间版本 2011-08-18。有关更多详细信息，请阅读[此公告](http://azure.microsoft.com/blog/2014/08/04/microsoft-azure-storage-service-version-removal/)。
+	使用 Azure SDK 2.5 或以下版本的客户应更新到 Azure SDK 2.6，并选择使用新版 Azure 存储空间 SDK。请注意，将在 2015 年 12 月 9 日删除 Azure 存储空间版本 2011-08-18。有关更多详细信息，请阅读[此公告](http://azure.microsoft.com/zh-cn/blog/2014/08/04/microsoft-azure-storage-service-version-removal/)。
 
 	有关详细信息，请参阅 [Azure 缓存的角色中缓存](https://msdn.microsoft.com/zh-cn/library/azure/dn386103.aspx)。
 
@@ -76,15 +76,15 @@ Azure 资源管理器工具已更新，现在包括适用于虚拟机、网络�
 
 Azure SDK 2.6 重新支持在 Azure 计算模拟器中收集诊断日志，并可将其传输到开发存储空间中。当应用程序在模拟器中运行时生成的任何诊断日志（包括应用程序跟踪日志、Windows 事件跟踪 (ETW) 日志、性能计数器、基础结构日志和 Windows 事件日志）都可以传输到开发存储空间中，以便验证你的诊断日志功能在本地计算机上是否正常工作。
 
-现在，诊断存储帐户可以在服务配置 (.cscfg) 文件中指定，因此可以更轻松地针对不同环境使用不同的诊断存储帐户。链接字符串在 Azure SDK 2.4 和 Azure SDK 2.6 中的工作方式有明显的区别。如需详细了解如何使用诊断存储连接字符串以及它如何影响你的项目，请参阅[针对 Azure 云服务配置诊断](https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx#BKBM_Changes)。
+现在，诊断存储帐户可以在服务配置 (.cscfg) 文件中指定，因此可以更轻松地针对不同环境使用不同的诊断存储帐户。链接字符串在 Azure SDK 2.4 和 Azure SDK 2.6 中的工作方式有明显的区别。
 
 ##重大变化
 
 ###Azure 资源管理器工具 
 
 - 在 Azure SDK 2.5 中提供的“云部署项目”项目类型已重命名为“Azure 资源组”。
-- 在 Azure SDK 2.5 中创建的项目的“云部署项目”类型可以在 2.6 中使用，但通过 Visual Studio 部署模板会失败。不过，仍可使用 PowerShell 脚本进行部署，就像以前一样。有关如何在 2.6 中使用“云部署项目”的信息，请阅读此[文章](https://msdn.microsoft.com/zh-cn/library/azure/dn872471.aspx)。
- 
+- 在 Azure SDK 2.5 中创建的项目的“云部署项目”类型可以在 2.6 中使用，但通过 Visual Studio 部署模板会失败。不过，仍可使用 PowerShell 脚本进行部署，就像以前一样。
+
 ##已知问题
 
 - 在模拟器中收集诊断日志需要 64 位操作系统。在 32 位操作系统上运行时，不会收集诊断日志。这不会影响任何其他模拟器功能。 

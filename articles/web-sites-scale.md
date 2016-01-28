@@ -22,8 +22,6 @@
 
 有关各个 Web 托管计划的定价和功能的信息，请参阅[网站定价详细信息](/home/features/web-site/#price)。
 
-> [AZURE.NOTE] 在将网站从“免费”Web 托管计划模式切换为“基本”或“标准”Web 托管计划模式之前，你必须先删除 Azure 网站订阅现有支出上限。若要查看或更改针对你的 Windows Azure 网站订阅的选项，请参阅 [Windows Azure 订阅][azuresubscriptions]。
-
 本文内容：
 
 - [缩放到“共享”或“基本”计划模式](#scalingsharedorbasic)
@@ -53,7 +51,7 @@
 	
 	“Web 托管计划站点”部分将介绍当前计划中的简短站点列表。当前计划中的所有站点都将更改为您选择的 Web 托管计划模式。
 	
-5. 在“容量”部分，选择“实例大小”。可用的选项包括“小”、“中”或“大”。在“共享”模式下，实例大小选项不可用。有关这些实例大小的详细信息，请参阅 [Windows Azure 虚拟机和云服务大小][vmsizes]。
+5. 在“容量”部分，选择“实例大小”。可用的选项包括“小”、“中”或“大”。在“共享”模式下，实例大小选项不可用。有关这些实例大小的详细信息，请参阅 Windows Azure [虚拟机](/documentation/articles/virtual-machines-size-specs)和[云服务大小](/documentation/articles/cloud-services-sizes-specs)。
 	
 	![“基本”模式的实例大小][ChooseBasicInstanceSize]
 	

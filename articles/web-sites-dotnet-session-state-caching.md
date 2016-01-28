@@ -22,7 +22,6 @@
 
 将缓存服务（预览版）用于会话状态缓存的基本步骤包括：
 
-* [创建缓存。](#createcache)
 * [将 RedisSessionStateProvider NuGet 包添加到网站。](#configureproject)
 * [修改 Web.config 文件。](#configurewebconfig)
 * [使用会话对象存储和检索缓存项。](#usesessionobject)

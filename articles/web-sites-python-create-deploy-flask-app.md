@@ -23,19 +23,6 @@
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
-
-+ [先决条件](#prerequisites)
-+ [在门户中创建网站](#website-creation-on-portal)
-+ [应用程序概述](#application-overview)
-+ 网站开发
-  + [Windows - Python Tools for Visual Studio](#website-development-windows-ptvs)
-  + [Windows - 命令行](#website-development-windows-command-line)
-  + [Mac/Linux - 命令行](#website-development-mac-linux-command-line)
-+ [故障排除 - 部署](#troubleshooting-deployment)
-+ [故障排除 - 软件包安装](#troubleshooting-package-installation)
-+ [故障排除 - 虚拟环境](#troubleshooting-virtual-environment)
-+ [后续步骤](#next-steps)
-
 ## 先决条件
 
 - Windows、 Mac 或 Linux
@@ -209,7 +196,7 @@ Python 虚拟环境。如果在应用上尚不存在兼容的虚拟环境，请�
 
 首次部署将需要一些时间，因为它将创建虚拟环境、 安装包等。
 
-Visual Studio 不会显示部署的进度。如果您想要查看输出，请参阅[故障排除 - 部署](#troubleshooting-deployment)上的相关部分。
+Visual Studio 不会显示部署的进度。
 
 浏览到 Azure URL 要查看您的更改。
 
@@ -397,7 +384,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 
 <!--Link references-->
-[具有 Python Tools for Visual Studio 的 Azure 上的 Flask 和 MongoDB]: /documentation/articles/web-sites-python-ptvs-flask-mongodb
+[具有 Python Tools for Visual Studio 的 Azure 上的 Flask 和 MongoDB]: https://github.com/microsoft/ptvs/wiki/Flask-and-MongoDB-on-Azure
 [具有 Python Tools for Visual Studio 的 Azure 上的 Flask 和 Azure 表存储]: /documentation/articles/web-sites-python-ptvs-flask-table-storage
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281

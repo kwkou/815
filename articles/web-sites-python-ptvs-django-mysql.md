@@ -27,13 +27,6 @@
 
 请参阅 [Python 开发人员中心]以获取更多文章，这些文章介绍了如何通过 PTVS（使用 Bottle、Flask 和 Django Web 框架）、MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure 网站。虽然本文将着重介绍 Azure 网站，但 [Azure 云服务]的开发步骤也是类似的。
 
-+ [先决条件](#prerequisites)
-+ [创建项目](#create-the-project)
-+ [创建 MySQL 数据库](#create-a-mysql-database)
-+ [配置项目](#configure-the-project)
-+ [发布到 Azure 网站](#publish-to-an-azure-website)
-+ [后续步骤](#next-steps)
-
 ##<a name="prerequisites"></a>先决条件
 
  - Visual Studio 2013 或 2015

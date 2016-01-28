@@ -40,8 +40,6 @@
 <a name="bkmk_need"></a>
 ## 所需的项目 ##
 
-[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
-
 >[AZURE.NOTE]若想要在注册 Azure 帐户前开始使用 Azure 网站，请转至[试用 Azure 网站](https://tryappservice.azure.com/)，在此处，可立即在 Azure 网站中创建临时初学者网站。你不需要使用信用卡，也不需要做出承诺。
 
 若要完成本教程，你需要以下项目：
@@ -87,30 +85,31 @@
 
 5.	在 App\_Start.Auth.cs 中，根据以下突出显示部分所示更改静态字符串定义：
 	<pre class="prettyprint">
-private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
-<mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark>
-<mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark>
-<mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark>
-<mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", ConfigurationManager.AppSettings["ida:ADFS"]);</mark>
-
-<mark><del>string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);</del></mark>
-</pre>
+	private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];<br/>
+	<mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark><br/>
+	<mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark><br/>
+	<mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark><br/>
+	<mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", ConfigurationManager.AppSettings["ida:ADFS"]);</mark><br/>
+	<mark><del>string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);</del></mark>
+	</pre>
 
 6.	现在，你将在 Web.config 中进行相应更改。打开 Web.config 并根据以下突出显示部分所示修改应用程序设置：
-	<pre class="prettyprint">
-&lt;appSettings>
-  &lt;add key="webpages:Version" value="3.0.0.0" />
-  &lt;add key="webpages:Enabled" value="false" />
-  &lt;add key="ClientValidationEnabled" value="true" />
-  &lt;add key="UnobtrusiveJavaScriptEnabled" value="true" />
-  <mark><del>&lt;add key="ida:Wtrealm" value="[Enter the App ID URI of WebApp-WSFederation-DotNet https://contoso.partner.onmschina.cn/WebApp-WSFederation-DotNet]" /></del></mark>
-  <mark><del>&lt;add key="ida:AADInstance" value="https://login.chinacloudapi.cn" /></del></mark>
-  <mark><del>&lt;add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.partner.onmschina.cn]" /></del></mark>
-  <mark>&lt;add key="ida:RPIdentifier" value="[Enter the relying party identifier as configured in AD FS, e.g. https://localhost:44320/]" /></mark>
-  <mark>&lt;add key="ida:ADFS" value="[Enter the FQDN of AD FS service, e.g. adfs.contoso.com]" /></mark>
 
-&lt;/appSettings>
-</pre>根据相应的环境填写键值。
+	<pre class="prettyprint">
+	&lt;appSettings><br/>
+		&lt;add key="webpages:Version" value="3.0.0.0" /><br/>
+		&lt;add key="webpages:Enabled" value="false" /><br/>
+		&lt;add key="ClientValidationEnabled" value="true" /><br/>
+		&lt;add key="UnobtrusiveJavaScriptEnabled" value="true" /><br/>
+		<mark><del>&lt;add key="ida:Wtrealm" value="[Enter the App ID URI of WebApp-WSFederation-DotNet https://contoso.partner.onmschina.cn/WebApp-WSFederation-DotNet]" /></del></mark><br/>
+		<mark><del>&lt;add key="ida:AADInstance" value="https://login.chinacloudapi.cn" /></del></mark><br/>
+		<mark><del>&lt;add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.partner.onmschina.cn]" /></del></mark><br/>
+		<mark>&lt;add key="ida:RPIdentifier" value="[Enter the relying party identifier as configured in AD FS, e.g. https://localhost:44320/]" /></mark><br/>
+		<mark>&lt;add key="ida:ADFS" value="[Enter the FQDN of AD FS service, e.g. adfs.contoso.com]" /></mark><br/>
+	&lt;/appSettings>
+	</pre>
+
+	根据相应的环境填写键值。
 
 7.	生成应用程序，以确保没有任何错误。
 
@@ -125,23 +124,19 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
 
 	![](./media/web-sites-dotnet-lob-application-adfs/01-publish-website.png)
 
-2. 选择“Windows Azure 网站”。
-3. 如果您尚未登录 Azure，请单击“登录”，然后使用 Azure 订阅的 Microsoft 帐户进行登录。
-4. 登录后，单击“新建”，新建一个网站。
-5. 填写所有必填字段。稍后，您将要连接到本地数据，因此不需要为此网站创建数据库。
-
-	![](./media/web-sites-dotnet-lob-application-adfs/02-create-website.png)
-
-6. 单击“创建”。在您创建网站后，系统会打开“发布 Web”对话框。
+2. 选择“导入”。
+3. 如果您尚未下载“发布配置文件”，请到 Azure 管理门户下载。如果你尚未创建 Web 应用，也请在 Azure 管理门户创建，并下载其“发布配置文件”
+4. 选择你下载好的“发布配置文件”，并确认。
 7. 在“目标 URL”中，将 **http** 更改为 **https**。将整个 URL 复制到文本编辑器。稍后将要用到它。然后，单击“发布”。
 
 	![](./media/web-sites-dotnet-lob-application-adfs/03-destination-url.png)
 
 11. 在 Visual Studio 中，在项目中打开 **Web.Release.config**。在 `<configuration>` 标记中插入以下 XML，然后将键值替换为发布网站的 URL。
 	<pre class="prettyprint">
-&lt;appSettings>
-   &lt;add key="ida:RPIdentifier" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
-&lt;/appSettings></pre>
+	&lt;appSettings><br/>
+		&lt;add key="ida:RPIdentifier" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /><br/>
+	&lt;/appSettings>
+	</pre>
 
 完成后，您的项目中将配置有两个 RP 标识符，一个用于 Visual Studio 中的调试环境，另一个用于 Azure 中发布的网站。你将为 AD FS 中两个环境的每一个设置 RP 信任。在调试期间，Web.config 中的应用设置用于让**调试**配置适用于 AD FS；在发布后（默认情况下，发布的是**版本**配置），上载的是转换后的 Web.config，其中包含 Web.Release.config 中的应用设置更改。
 
@@ -203,17 +198,17 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
 10.	选择“使用自定义规则发送声明”，然后单击“下一步”。
 11.	将以下规则语言粘贴到“自定义规则”框中，**根据会话标识符**命名规则，然后单击“完成”。  
 	<pre class="prettyprint">
-	c1:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"] &amp;&amp;
-	c2:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"]
-		=> add(
-			store = "_OpaqueIdStore",
-			types = ("<mark>http://contoso.com/internal/sessionid</mark>"),
-			query = "{0};{1};{2};{3};{4}",
-			param = "useEntropy",
-			param = c1.Value,
-			param = c1.OriginalIssuer,
-			param = "",
-			param = c2.Value);
+	c1:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"] &amp;&amp;<br/>
+	c2:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"]<br/>
+		=> add(<br/>
+			store = "_OpaqueIdStore",<br/>
+			types = ("<mark>http://contoso.com/internal/sessionid</mark>"),<br/>
+			query = "{0};{1};{2};{3};{4}",<br/>
+			param = "useEntropy",<br/>
+			param = c1.Value,<br/>
+			param = c1.OriginalIssuer,<br/>
+			param = "",<br/>
+			param = c2.Value);<br/>
 	</pre>
 
 	你的自定义规则应如下所示：
@@ -269,21 +264,21 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
 1. 打开 Controllers\\HomeController.cs。
 2. 使用已经过身份验证的用户具有的安全组成员资格，修饰 `About` 和 `Contact` 操作方法（如下所示）。  
 	<pre class="prettyprint">
-    <mark>[Authorize(Roles="Test Group")]</mark>
-    public ActionResult About()
-    {
-        ViewBag.Message = "Your application description page.";
+    <mark>[Authorize(Roles="Test Group")]</mark><br/>
+    public ActionResult About()<br/>
+    {<br/>
+        ViewBag.Message = "Your application description page.";<br/>
 
-        return View();
-    }
+        return View();<br/>
+    }<br/>
 
-    <mark>[Authorize(Roles="Domain Admins")]</mark>
-    public ActionResult Contact()
-    {
-        ViewBag.Message = "Your contact page.";
+    <mark>[Authorize(Roles="Domain Admins")]</mark><br/>
+    public ActionResult Contact()<br/>
+    {<br/>
+        ViewBag.Message = "Your contact page.";<br/>
 
-        return View();
-    }
+        return View();<br/>
+    }<br/>
 	</pre>
 
 	由于我已在 AD FS 实验室环境中向“测试组”添加了**测试用户**，因此我将使用“测试组”在 `About` 上测试授权。对于 `Contact`，我将测试**测试用户**不属于的**域管理员**的反面情况。
@@ -294,11 +289,12 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
 	![](./media/web-sites-dotnet-lob-application-adfs/13-authorize-adfs-error.png)
 
 	如果在 AD FS 服务器的事件查看器中调查此错误，您会看到以下异常消息：
+
 	<pre class="prettyprint">
-	Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Contact your administrator for details.
-	   at Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context)
-	   at Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response)
-	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler)
+	Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Contact your administrator for details.<br/>
+	   at Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context)<br/>
+	   at Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response)<br/>
+	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler)<br/>
 	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.OnGetContext(WrappedHttpListenerContext context)
 	</pre>
 

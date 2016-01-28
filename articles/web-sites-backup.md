@@ -50,7 +50,7 @@
 
 * 备份和还原功能要求 Azure 存储帐户与要备份的网站必须同属一个订阅。如果你还没有存储帐户，可以创建一个，方法是：单击 Azure 门户左窗格中的“存储”按钮（网格图标），然后选择底部命令栏中的“新建”。有关 Azure 存储帐户的详细信息，请参阅本文结尾处的[链接](#moreaboutstorage)。
 
-<a name="manualbackup"></a>
+<a name="manualbackup" id="create-a-manual-backup"></a>
 ## 创建手动备份
 
 1. 在网站的 Azure 门户中，选择“备份”选项卡。
@@ -202,8 +202,6 @@
 
 <a name="moreaboutstorage"></a>
 ### 有关存储帐户的详细信息
-
-[什么是存储帐户？](/documentation/articles/storage-whatis-account/)
 
 [如何创建存储帐户](/documentation/articles/storage-create-storage-account/)
 

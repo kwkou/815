@@ -129,7 +129,7 @@
 [ChooseDBServer]: ./media/web-sites-restore/06ChooseDBServer.png
 [RestoreToNewSQLDB]: ./media/web-sites-restore/07RestoreToNewSQLDB.png
 [NewSQLDBConfig]: ./media/web-sites-restore/08NewSQLDBConfig.png
-[RestoredContoso Website]: ./media/web-sites-restore/09RestoredContosoWebsite.png
+[RestoredContoso Website]: ./media/web-sites-restore/09RestoredContosoWebSite.png
 [DashboardOperationLogsLink]: ./media/web-sites-restore/10DashboardOperationLogsLink.png
 [ManagementServicesOperationLogsList]: ./media/web-sites-restore/11ManagementServicesOperationLogsList.png
 [DetailsButton]: ./media/web-sites-restore/12DetailsButton.png

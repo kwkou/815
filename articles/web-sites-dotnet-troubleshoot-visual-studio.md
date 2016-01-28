@@ -67,8 +67,6 @@
 
 	> [AZURE.NOTE]将此订阅文件下载并保存到源代码目录之外的文件夹中（例如，在 Downloads 文件夹中），然后在导入完成后将其删除。获得了此订阅文件访问权的恶意用户可以编辑、创建和删除你的 Azure 服务。
 
-	有关从 Visual Studio 连接至 Azure 资源的详细信息，请参阅[管理帐户、订阅和管理角色](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx#bkmk_accountvcert&clcid=0x409)。
-
 2. 在“服务资源管理器”中，展开“Azure”，然后展开“网站”。
 
 3. 右键单击在 [Azure 和 ASP.NET 入门][GetStarted]中创建的网站的节点，然后单击“查看设置”。
@@ -81,7 +79,7 @@
 
 	本教程将向你介绍如何使用日志记录和跟踪下拉列表。其中，还将用到远程调试，但会通过不同方式启用该调试。
    
-	有关该窗口中“应用程序设置”和“连接字符串”框的信息，请参阅 [Azure 网站：应用程序字符串和连接字符串的工作原理](http://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx)。
+	有关该窗口中“应用程序设置”和“连接字符串”框的信息，请参阅 [Azure 网站：应用程序字符串和连接字符串的工作原理](https://azure.microsoft.com/zh-cn/blog/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)。
 
 	如果你想执行的网站管理任务无法在此窗口进行，可单击“完整的网站设置”打开一个到管理门户的浏览器窗口。有关详细信息，请参阅[如何配置网站](/documentation/articles/web-sites-configure)。
 
@@ -532,7 +530,7 @@ Web 服务器日志将记录网站上所有的 HTTP 活动。若要在“输出�
 	![下载的文件](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-logfilefolders.png)
 
 	* 应用程序跟踪日志位于 *LogFiles\\Application* 文件夹的 *.txt* 文件中。
-	* Web 服务器位于 *LogFiles\\http\\RawLogs* 文件夹的 *.log* 文件中。可以使用诸如 [Log Parser](http://www.microsoft.com/zh-cn/download/details.aspx?displaylang=en&id=24659) 之类的工具查看并处理这些文件。
+	* Web 服务器位于 *LogFiles\\http\\RawLogs* 文件夹的 *.log* 文件中。可以使用诸如 [Log Parser](http://www.microsoft.com/download/details.aspx?displaylang=en&id=24659) 之类的工具查看并处理这些文件。
 	* 详细的错误消息日志位于 *LogFiles\\DetailedErrors* 文件夹的 *.html* 文件中。
 
 	（*deployments* 文件夹内是由源代码管理发布创建的文件；其中没有任何有关 Visual Studio 发布的内容。*Git* 文件夹内是与源代码管理发布以及日志文件流式传输服务相关的跟踪。）
@@ -623,7 +621,7 @@ Web 服务器日志将记录网站上所有的 HTTP 活动。若要在“输出�
 
 	![表视图中的存储日志](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-tracelogtableview.png)
 
-	该视图将显示任何其他视图都没提供的额外字段。该视图还支持你使用特殊的 Query Builder UI 构建查询以筛选日志。有关详细信息，请参阅[通过服务器资源管理器浏览存储资源](http://msdn.microsoft.com/zh-cn/library/azure/ff683677.aspx)中的“使用表资源 - 筛选实体”。
+	该视图将显示任何其他视图都没提供的额外字段。该视图还支持你使用特殊的 Query Builder UI 构建查询以筛选日志。
 
 7. 要查看单个行的详细信息，请双击其中一行。
 
@@ -708,11 +706,10 @@ Azure 网站使用 IIS 7.0 及更高版本中提供的相同的失败请求跟�
 
 * [ASP.NET 站点上的 Azure 论坛](http://forums.asp.net/1247.aspx/1?Azure+and+ASP+NET)。
 * [MSDN 上的 Azure 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchs)。
-* [StackOverflow.com](http://www.stackoverflow.com)。
 
 ### 在 Visual Studio 中进行调试 
 
-有关如何在 Visual Studio 中使用调试模式，请参阅[在 Visual Studio 中进行调试](http://msdn.microsoft.com/zh-cn/library/vstudio/sc65sadd.aspx) MSDN 主题和[使用 Visual Studio 2010 进行调试的提示](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx)。
+有关如何在 Visual Studio 中使用调试模式，请参阅[在 Visual Studio 中进行调试](http://msdn.microsoft.com/zh-cn/library/sc65sadd.aspx) MSDN 主题和[使用 Visual Studio 2010 进行调试的提示](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx)。
 
 ### 在 Azure 中进行远程调试
 
@@ -756,7 +753,7 @@ Internet 上对于 ASP.NET 跟踪没有全面且最新的介绍。最佳做法�
 
 有关分析 Web 服务器日志的详细信息，请参阅以下资源：
 
-* [LogParser](http://www.microsoft.com/zh-cn/download/details.aspx?id=24659)<br/>用于查看 Web 服务器日志（*.log* 文件）中的数据的工具。
+* [LogParser](http://www.microsoft.com/download/details.aspx?id=24659)<br/>用于查看 Web 服务器日志（*.log* 文件）中的数据的工具。
 * [使用 LogParser 解决 IIS 性能问题或应用程序错误](http://www.iis.net/learn/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser)<br/>可用于分析 Web 服务器日志的 Log Parser 工具介绍。
 * [Robert McMurray 有关 LogParser 使用的博客文章](http://blogs.msdn.com/b/robert_mcmurray/archive/tags/logparser/)<br/>
 * [IIS 7.0、IIS 7.5 以及 IIS 8.0 中的 HTTP 状态代码](http://support.microsoft.com/kb/943891)
@@ -764,11 +761,6 @@ Internet 上对于 ASP.NET 跟踪没有全面且最新的介绍。最佳做法�
 ### 分析失败请求跟踪日志
 
 Microsoft TechNet 网站包含的[使用失败请求跟踪](http://www.iis.net/learn/troubleshoot/using-failed-request-tracing)部分对于了解如何使用这些日志非常有用。然而，该文档主要着重于在 IIS 中配置失败请求跟踪，并不适用于 Azure 网站。
-
-### 调试云服务
-
-如果你希望调试 Azure 云服务而不是网站，请参阅[调试云服务](http://msdn.microsoft.com/zh-cn/library/azure/ee405479.aspx)。
-
 
 
 

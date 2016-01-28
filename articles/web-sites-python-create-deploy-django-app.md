@@ -22,24 +22,6 @@
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
-
-+ [先决条件](#prerequisites)
-+ [在门户中创建网站](#website-creation-on-portal)
-+ [应用程序概述](#application-overview)
-+ 网站开发
-  + [Windows - Python Tools for Visual Studio](#website-development-windows-ptvs)
-  + [Windows - 命令行](#website-development-windows-command-line)
-  + [Mac/Linux - 命令行](#website-development-mac-linux-command-line)
-+ [部署](#troubleshooting-deployment)
-+ [故障排除 - 软件包安装](#troubleshooting-package-installation)
-+ [故障排除 - 虚拟环境](#troubleshooting-virtual-environment)
-+ [疑难解答 — 静态文件](#troubleshooting-static-files)
-+ [疑难解答 — 设置](#troubleshooting-settings)
-+ [使用数据库](#using-a-database)
-+ [Django 管理界面](#django-admin-interface)
-+ [后续步骤](#next-steps)
-
-
 <a name="prerequisites"></a>
 ## 先决条件
 

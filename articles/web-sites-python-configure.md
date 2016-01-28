@@ -22,22 +22,7 @@
 
 其中描述了 Git 部署的其他功能，如使用 requirements.txt 安装虚拟环境和包。
 
-
-+ [Bottle、Django 还是 Flask？](#bottle-django-flask)
-+ [在门户中创建网站](#website-creation-on-portal)
-+ [Git 发布](#git-publishing)
-+ [应用程序概述](#application-overview)
-+ [WSGI 处理程序](#wsgi-handler)
-+ [虚拟环境](#next-steps)
-+ [包管理](#next-steps)
-+ [Python 版本](#next-steps)
-+ [虚拟环境代理](#virtual-environment-proxy)
-+ [自定义 Git 部署](#customize-git-deployment)
-+ [故障排除 - 部署](#troubleshooting-deployment)
-+ [故障排除 - 软件包安装](#troubleshooting-package-installation)
-+ [故障排除 - 虚拟环境](#troubleshooting-virtual-environment)
-
-## Bottle、Django 还是 Flask？
+##<a name="bottle-django-flask"></a> Bottle、Django 还是 Flask？
 
 Azure 应用商店包含用于 Bottle、Django 和 Flask 框架的模板。如果你正在 Azure 网站中开发第一个网站，或者你不熟悉 Git，我们建议你遵循以下教程之一，其中包括用于从 Windows 或 Mac 使用 Git 部署从库构建工作应用程序的分步说明：
 
@@ -46,23 +31,22 @@ Azure 应用商店包含用于 Bottle、Django 和 Flask 框架的模板。如�
 - [使用 Flask 创建网站](/documentation/articles/web-sites-python-create-deploy-flask-app)
 
 
-## 在 Azure 管理门户中创建网站
+##<a name="website-creation-on-portal"></a> 在 Azure 管理门户中创建网站
 
 本教程使用现有 Azure 订阅以及对 Azure 管理门户的访问权限。
 
 如果你没有现成的网站，则可[从 Azure 管理门户](https://manage.windowsazure.cn)创建一个。单击左下角的“新建”按钮。将出现一个窗口。依次单击“计算”、“网站”和“快速创建”。
 
-![](./media/web-sites-python-configure/configure-python-create-Website.png)
+![](./media/web-sites-python-configure/configure-python-create-website.png)
 
-## Git 发布
-<a name="git-publishing"></a>
+##<a name="git-publishing"></a> Git 发布
 
 按照[在 Azure 网站中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)的说明为新创建的网站配置 Git 发布。本教程使用 Git 来创建、管理 Python网站以及将其发布到 Azure 网站。
 
 在设置 Git 发布之后，将创建 Git 存储库并使其与你的网站相关联。将显示该存储库的 URL，并且之后可将其用于将数据从本地开发环境推送到云。若要通过 Git 发布应用程序，请确保还安装了 Git 客户端，并使用提供的说明将你的网站内容推送到 Azure 网站。
 
 
-## 应用程序概述
+##<a name="application-overview"></a> 应用程序概述
 
 在接下来的各节中，将创建以下文件。这些文件应放在 Git 存储库的根目录中。
 
@@ -73,7 +57,7 @@ Azure 应用商店包含用于 Bottle、Django 和 Flask 框架的模板。如�
     ptvs_virtualenv_proxy.py
 
 
-## WSGI 处理程序
+##<a name="wsgi-handler"></a> WSGI 处理程序
 
 WSGI 是 [PEP 3333](http://www.python.org/dev/peps/pep-3333/) 描述的 Python 标准，用于定义 Web 服务器和 Python 之间的接口。它提供了用于使用 Python 编写各种网站和框架的标准化接口。当今常用的 Python Web 框架都使用 WSGI。Azure 网站支持任何此类框架；另外，高级用户甚至可以创作自己的框架，只要自定义处理程序遵循 WSGI 规范指南即可。
 
