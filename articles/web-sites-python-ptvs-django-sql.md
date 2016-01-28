@@ -24,13 +24,6 @@
 
 请参阅 [Python 开发人员中心]以获取更多文章，这些文章介绍了如何通过 PTVS（使用 Bottle、Flask 和 Django Web 框架）、MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure WEB 应用。虽然本文将着重介绍 Azure WEB 应用，但 [Azure 云服务]的开发步骤也是类似的。
 
-+ [先决条件](#prerequisites)
-+ [创建项目](#create-the-project)
-+ [创建 SQL 数据库](#create-a-sql-database)
-+ [配置项目](#configure-the-project)
-+ [发布到 Azure WEB 应用](#publish-to-an-azure-website)
-+ [后续步骤](#next-steps)
-
 ##<a name="prerequisites"></a>先决条件
 
  - Visual Studio 2013 或 2015
@@ -215,7 +208,7 @@
 [Web 项目]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
 [云服务项目]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
 [Django 文档]: https://www.djangoproject.com/
-[SQL 数据库]: /documentation/services/sql-database
+[SQL 数据库]: /documentation/services/sql-databases
  
 
 <!---HONumber=76-->

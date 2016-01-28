@@ -40,7 +40,7 @@ Azure WEB 应用可以集成 [Azure CDN](/home/features/caching/)，增强 [Azur
 > [AZURE.NOTE]完成本教程需要有一个 Azure 帐户：+ 你可以[免费建立一个 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - 获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 WEB 应用）。
 >
 
-## 将 WEB 应用部署到具有集成 CDN 终结点的 Azure ##
+##<a name="deploy-a-web-app-to-azure-with-an-integrated-cdn-endpoint"></a> 将 WEB 应用部署到具有集成 CDN 终结点的 Azure ##
 
 在本部分，你需要将 Visual Studio 2013 中的默认 ASP.NET MVC 应用程序模板部署到 Azure WEB 应用，然后将其与新的 CDN 终结点相集成。请根据以下说明进行操作：
 

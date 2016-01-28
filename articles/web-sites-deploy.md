@@ -28,7 +28,7 @@
 ##### 从本地源代码管理系统进行部署
 
 * [使用 Team Foundation Service (TFS) 进行持续交付](#tfs)
-* [本地 Git 或 Mercurial 存储库](#onpremises)
+* [本地 Git 或 Mercurial 存储库](#gitmercurial)
 
 ##### 使用命令行工具自动进行部署
 
@@ -42,7 +42,6 @@
 ##### 从集成开发环境 (IDE) 进行部署
 
 * [从 Visual Studio 直接进行部署](#vs)
-* [从 WebMatrix 直接进行部署](#webmatrix)
 
 另一个部署选项是使用基于云的服务，例如 [Octopus 部署](http://en.wikipedia.org/wiki/Octopus_Deploy)。有关更多信息，请参阅[将 ASP.NET WEB 应用部署到 Azure WEB 应用](https://octopusdeploy.com/blog/deploy-aspnet-applications-to-azure-websites)。
 
@@ -148,10 +147,9 @@ Team Foundation Server 是 Microsoft 针对源代码管理和团队协作的本�
 有关详细信息，请参阅以下资源：
 
 * [简单的 WEB 应用：部署](http://azure.microsoft.com/blog/2014/07/28/simple-azure-websites-deployment/)。David Ebbo 的博客，介绍如何更轻松地使用 Web 部署。
-* [Web 部署工具](http://technet.microsoft.com/zh-cn/library/dd568996)。Microsoft TechNet WEB 应用上的正式文档。虽然已过时，但仍是一个不错的起点。
-* [使用 Web 部署](http://www.iis.net/learn/publish/using-web-deploy)。Microsoft IIS.NET WEB 应用上的正式文档。虽然也已过时，但仍是一个不错的起点。
-* [StackOverflow](http://www.stackoverflow.com)。获得有关如何从命令行中使用 Web 部署的最新信息的最佳位置。
-* [使用 Visual Studio 的 ASP.NET Web 部署：命令行部署](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/command-line-deployment)。MSBuild 是由 Visual Studio 使用的生成引擎，还可以从命令行使用它以将 WEB 应用部署到 WEB 应用。本教程是主要介绍 Visual Studio 部署的一系列教程的一部分。
+* [Web 部署工具](http://technet.microsoft.com/zh-cn/library/dd568996)。Microsoft TechNet 网站上的正式文档。虽然已过时，但仍是一个不错的起点。
+* [使用 Web 部署](http://www.iis.net/learn/publish/using-web-deploy)。Microsoft IIS.NET 网站上的正式文档。虽然也已过时，但仍是一个不错的起点。
+* [使用 Visual Studio 的 ASP.NET Web 部署：命令行部署](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/command-line-deployment)。MSBuild 是由 Visual Studio 使用的生成引擎，还可以从命令行使用它以将网站部署到网站。本教程是主要介绍 Visual Studio 部署的一系列教程的一部分。
 
 ##<a name="nextsteps"></a>后续步骤
 

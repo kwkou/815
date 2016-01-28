@@ -26,15 +26,6 @@
 
 请参阅 [Python 开发人员中心]以获取更多文章，这些文章介绍了如何通过 PTVS（使用 Bottle、Flask 和 Django Web 框架）、MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure WEB 应用。虽然本文将着重介绍 Azure WEB 应用，但 [Azure 云服务]的开发步骤也是类似的。
 
-+ [先决条件](#prerequisites)
-+ [创建项目](#create-the-project)
-+ [创建 Azure 存储帐户](#create-an-azure-storage-account)
-+ [配置项目](#configure-the-project)
-+ [了解 Azure 表存储](#explore-the-azure-table-storage)
-+ [发布到 Azure WEB 应用](#publish-to-an-azure-website)
-+ [配置 Azure WEB 应用](#configure-the-azure-website)
-+ [后续步骤](#next-steps)
-
 ##<a name="prerequisites"></a>先决条件
 
  - Visual Studio 2013 或 2015
@@ -139,18 +130,11 @@ PTVS 提供了将 WEB 应用部署到 Azure WEB 应用的方便方法。
 
   	![发布 Web 对话框](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonPublishWebSiteDialog.png)
 
-1.  单击“Windows Azure WEB 应用”。
+1.  单击“导入”。
 
-1.  单击“新建”，新建一个 WEB 应用。
+1.  选择已经下载好的“发布配置文件”，然后确认。
 
-1.  填写以下字段，然后单击“创建”。
-	-	** WEB 应用名称**
-	-	**Azure WEB 应用计划**
-	-	**资源组**
-	-	**区域**
-	-	保持“数据库服务器”的“无数据库”设置不变
-
-  	<!-- ![Create Site on Windows Azure Dialog](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonCreateWebSite.png) -->
+	如果还没有下载“发布配置文件”，或者还没新建 Web 应用，请到 Azure 管理门户新建一个，然后再“仪表板”的“速览”下，下载“发布配置文件”
 
 1.  接受其他所有默认值，然后单击**发布**。
 

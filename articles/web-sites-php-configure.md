@@ -13,20 +13,12 @@
 	wacn.date="01/21/2016"/>
 #在 Azure 中配置 PHP
 
-##目录
+##<a name="WhatIs"></a> 介绍
 
-* [什么是 Azure WEB 应用？](#WhatIs)
-* [如何：更改默认 PHP 配置](#ChangeBuiltInPHP)
-* [如何：启用内置 PHP 运行时中的扩展](#EnableExtDefaultPHP)
-* [如何：使用自定义 PHP 运行时](#UseCustomPHP)
-* [后续步骤](#NextSteps)
+本指南将向你演示如何执行以下操作：在 Azure WEB 应用中配置网站的内置 PHP 运行时，提供自定义 PHP 运行时，以及启用扩展。若要使用 Azure WEB 应用，请注册[免费试用版]。若要充分利用本指南，你应先在 Azure 中创建一个 PHP WEB 应用。
 
-## 介绍
-
-本指南将向你演示如何执行以下操作：在 Azure 中配置 WEB 应用的内置 PHP 运行时，提供自定义 PHP 运行时，以及启用扩展。若要使用 Azure WEB 应用，请注册[免费试用版]。若要充分利用本指南，你应先在 Azure 中创建一个 PHP WEB 应用。
-
-## 如何：更改内置 PHP 版本
-默认情况下，将安装 PHP 5.4 并且在创建 Azure WEB 应用时立即可用。查看可用发行版、其默认配置以及已启用的扩展的最佳方式是部署调用 [phpinfo()] 函数的脚本。
+##<a name="ChangeBuiltInPHP"></a> 如何：更改内置 PHP 版本
+默认情况下，将安装 PHP 5.4 并且在创建 Azure 网站时立即可用。查看可用发行版、其默认配置以及已启用的扩展的最佳方式是部署调用 [phpinfo()] 函数的脚本。
 
 PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更新 PHP 版本，请使用下列方法之一：
 

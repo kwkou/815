@@ -20,7 +20,9 @@
 
 以下是在 Azure WEB 应用上运行的 .COM WEB 应用的示例。该示例演示了只需少量的技术投资，就能结合 WEB 应用和其他服务来完成任务。**单击拓扑中的元素可阅读更多相关详细信息。**
 
-<object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/corp-website-visio.svg" width="100%" height="100%">
+![](./media/web-sites-global-web-presence-solution-overview/corp-website-visio.svg)
+
+<object type="image/svg+xml" data="./media/web-sites-global-web-presence-solution-overview/corp-website-visio.svg" width="100%" height="100%"></object>
 
 > [AZURE.NOTE]本指南介绍了一些与在 Azure 中运行面向公众的 .COM 站点相一致的最常见领域和任务。但是，还有其他你可以在 Azure 中实现的常见解决方案。若要查看这些解决方案，请参阅[数字市场营销活动](/documentation/articles/web-sites-digital-marketing-application-solution-overview)和[业务应用程序](/documentation/articles/web-sites-business-application-solution-overview)中的其他指导。
 

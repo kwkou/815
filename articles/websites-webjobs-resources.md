@@ -30,7 +30,6 @@ Azure 管理门户中的 Web 作业仪表板提供了强大的管理功能，可
 * [Azure Web 作业功能很强大，快来试试吧！](http://www.troyhunt.com/2015/01/azure-webjobs-are-awesome-and-you.html) （Troy Hunt 的博客文章。）
 * [Azure Web 作业功能](https://azure.microsoft.com/zh-cn/blog/webjobs-goes-into-full-production/)
 * [什么是 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk)
-* [模式与实践中的后台作业指南](https://github.com/mspnp/azure-guidance/blob/master/Background-Jobs.md)
 * [宣布推出 Windows Azure WebJobs SDK 1.0.0 RTM](https://azure.microsoft.com/zh-cn/blog/2014/10/25/announcing-the-1-0-0-rtm-of-microsoft-azure-webjobs-sdk/)
 * [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)
 * [如何通过 WebJobs SDK 使用 Azure 队列存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to)
@@ -42,7 +41,7 @@ Azure 管理门户中的 Web 作业仪表板提供了强大的管理功能，可
 
 另请参阅以下有关[部署 Web 作业](#deploy)及[测试和调试 Web 作业](#debug)的部分。
 
-##<a name="deploy"></a>部署 Web 作业
+##<a name="deploy" id="deploying"></a>部署 Web 作业
 
 * [如何使用 Visual Studio 部署 Azure Web 作业](/documentation/articles/websites-dotnet-deploy-webjobs)
 * [如何使用 Azure 管理门户部署 Web 作业](/documentation/articles/web-sites-create-web-jobs)
@@ -108,8 +107,6 @@ Azure 管理门户中的 Web 作业仪表板提供了强大的管理功能，可
 
 ##<a name="gethelp"></a>获取有关 Web 作业的帮助
 
-* [Web 作业堆栈溢出](http://stackoverflow.com/questions/tagged/azure-webjobs)
-* [WebJobs SDK 堆栈溢出](http://stackoverflow.com/questions/tagged/azure-webjobssdk)
 * [Azure 和 ASP.NET 论坛](http://forums.asp.net/1247.aspx)
 * [Azure WEB 应用论坛](http://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs)
 * [Azure WEB 应用用户之声站点](/product-feedback)

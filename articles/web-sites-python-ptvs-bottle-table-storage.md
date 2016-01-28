@@ -25,15 +25,6 @@
 
 请参阅 [Python 开发人员中心]以获取更多文章，这些文章介绍了如何通过 PTVS（使用 Bottle、Flask 和 Django Web 框架）、MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure WEB 应用。虽然本文将着重介绍 Azure WEB 应用，但 [Azure 云服务]的开发步骤也是类似的。
 
-+ [先决条件](#prerequisites)
-+ [创建项目](#create-the-project)
-+ [创建 Azure 存储帐户](#create-an-azure-storage-account)
-+ [配置项目](#configure-the-project)
-+ [了解 Azure 表存储](#explore-the-azure-table-storage)
-+ [发布到 Azure WEB 应用](#publish-to-an-azure-website)
-+ [配置 Azure WEB 应用](#configure-the-azure-website)
-+ [后续步骤](#next-steps)
-
 ##<a name="prerequisites"></a>先决条件
 
  - Visual Studio 2013 或 2015
@@ -74,15 +65,11 @@
 
 1.  登录到 [Azure 门户]。
 
-2. 单击门户左下角的**新建**图标，然后单击**数据 + 存储** > **存储**。提供存储帐户一个唯一名称并为其创建一个新[资源组](/documentation/articles/resource-group-overview)。
+2. 单击门户左下角的**新建**图标，然后单击**数据 + 存储** > **存储**。提供存储帐户一个唯一名称。
 
 1.  依次单击**数据服务**、**存储**和**快速创建**。
 
   	![快速创建](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonAzureStorageCreate.png)
-
-	创建存储帐户后，**通知**按钮将呈绿色闪烁**成功**，且存储帐户的边栏选项卡处于打开状态以显示属于您创建的新资源组。
-
-  	<!-- ![Quick Create](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonAzureStorageCreate.png) -->
 
 5. 单击存储帐户边栏选项卡处的**设置**部分。记录帐户名称和主密钥。
 
@@ -141,9 +128,8 @@
 1.  单击“新建”，新建一个 WEB 应用。
 
 1.  填写以下字段，然后单击“创建”。
-	-	** WEB 应用名称**
+	-	**WEB 应用名称**
 	-	**Azure WEB 应用计划**
-	-	**资源组**
 	-	**区域**
 	-	保持“数据库服务器”的“无数据库”设置不变
 

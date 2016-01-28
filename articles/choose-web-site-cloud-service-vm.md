@@ -124,7 +124,7 @@ Azure WEB 应用是用于托管公司 WEB 应用的理想解决方案。通过�
 
 ### <a id="lob"></a>我有一个需要连接到公司网络的业务线应用程序
 
-如果你想要创建业务线应用程序，你的 WEB 应用可能需要直接访问公司网络上的服务或数据。可以在 WEB 应用、云服务和虚拟机上使用 [Azure 虚拟网络服务](/home/features/networking/)实现这个目的。在 WEB 应用上，可以使用新的 [VNET 集成功能](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)，通过此功能，你的 Azure 应用程序能够像在公司网络上一样运行。
+如果你想要创建业务线应用程序，你的 WEB 应用可能需要直接访问公司网络上的服务或数据。可以在 WEB 应用、云服务和虚拟机上使用 [Azure 虚拟网络服务](/home/features/networking/)实现这个目的。
 
 ### <a id="mobile"></a>我想为移动客户端托管 REST API 或 web 服务
 
@@ -257,7 +257,7 @@ Azure WEB 应用是用于托管公司 WEB 应用的理想解决方案。通过�
    <td valign="middle">X</td>
    <td valign="middle">X</td>
    <td valign="middle">X</td>
-   <td valign="middle">对于 WEB 应用，只有基本和标准模式支持自定义域名称的 SSL。有关结合使用 SSL 和 WEB 应用的信息，请参阅<a href="../web-sites-configure-ssl-certificate/">为 Azure WEB 应用配置 SSL 证书</a>。</td>
+   <td valign="middle">对于 WEB 应用，只有基本和标准模式支持自定义域名称的 SSL。有关结合使用 SSL 和 WEB 应用的信息，请参阅<a href="/documentation/articles/web-sites-configure-ssl-certificate/">为 Azure WEB 应用配置 SSL 证书</a>。</td>
 </tr>
 <tr>
    <td valign="middle"><p>Visual Studio 集成</p></td>

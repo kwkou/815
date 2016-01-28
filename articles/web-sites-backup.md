@@ -50,7 +50,7 @@ WEB 应用可以备份以下信息：
 
 * 备份和还原功能要求 Azure 存储帐户与要备份的 WEB 应用必须同属一个订阅。如果你还没有存储帐户，可以创建一个，方法是：单击 Azure 门户左窗格中的“存储”按钮（网格图标），然后选择底部命令栏中的“新建”。有关 Azure 存储帐户的详细信息，请参阅本文结尾处的[链接](#moreaboutstorage)。
 
-<a name="manualbackup"></a>
+<a name="manualbackup" id="create-a-manual-backup"></a>
 ## 创建手动备份
 
 1. 在 WEB 应用的 Azure 门户中，选择“备份”选项卡。
@@ -202,8 +202,6 @@ WEB 应用的数据库备份存储在 .zip 文件的根目录中。对于 SQL �
 
 <a name="moreaboutstorage"></a>
 ### 有关存储帐户的详细信息
-
-[什么是存储帐户？](/documentation/articles/storage-whatis-account/)
 
 [如何创建存储帐户](/documentation/articles/storage-create-storage-account/)
 

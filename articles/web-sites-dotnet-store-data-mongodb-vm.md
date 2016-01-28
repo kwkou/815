@@ -72,15 +72,17 @@
 
 	![新建项目对话框][NewProjectMyTaskListApp]
 
-1. 在“新建 ASP.NET 项目”对话框中，选择“MVC”，然后单击“确定”。
+1. 在“新建 ASP.NET 项目”对话框中，选择“MVC”，然后单击“确定”。确保不选中“在云中托管”
 
-	![选择 MVC 模板][VS2013SelectMVCTemplate]
+	项目完成后，将显示由模板创建的默认页。
 
-项目完成后，将显示由模板创建的默认页。
+	![默认的 ASP.NET MVC 应用程序][VS2013DefaultMVCApplication]
 
-![默认的 ASP.NET MVC 应用程序][VS2013DefaultMVCApplication]
+	如果还没新建好 Web 应用，可以到 Azure 管理门户新建一个，并在“仪表板”的“速览”下，下载“发布配置文件”。
 
 1. 单击“发布”。
+
+2. 点击“导入”，选择之前下载的“发布配置文件”，然后确认。
 
 	![](./media/web-sites-dotnet-store-data-mongodb-vm/VSPublishWeb.png)
 

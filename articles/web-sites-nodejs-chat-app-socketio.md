@@ -17,7 +17,7 @@
 
 # 在 Azure 中使用 Socket.IO 创建 Node.js 聊天应用程序
 
-Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时通信。还支持回退到使用低版本浏览器的其他传输（如长轮询）。本教程将演示如何以 Azure WEB 应用的的形式托管基于 Socket.IO 的聊天应用程序，并说明如何通过 [Azure Redis 缓存](/documentation/services/redis-cache)来[缩放](#scale-out)应用程序。有关 Socket.IO 的详细信息，请参阅 [http://socket.io/][socketio]。
+Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时通信。还支持回退到使用低版本浏览器的其他传输（如长轮询）。本教程将演示如何以 Azure WEB 应用的的形式托管基于 Socket.IO 的聊天应用程序，并说明如何通过 [Azure Redis 缓存](/documentation/services/redis-cache)来[向外扩展](#scale-out)应用程序。有关 Socket.IO 的详细信息，请参阅 [http://socket.io/][socketio]。
 
 > [AZURE.NOTE]此任务中的过程适用于 [Azure WEB 应用](/documentation/services/web-sites/)；对于云服务，请参阅<a href="/documentation/articles/cloud-services-nodejs-chat-app-socketio/">在 Azure 云服务中使用 Socket.IO 构建 Node.js 聊天应用程序</a>。
 
@@ -65,7 +65,7 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 
 > [AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/?WT.mc_id=A7171371E" target="_blank">Azure 试用</a>。
 
-1. 安装 Azure 命令行界面 (Azure CLI) 并连接到 Azure 订阅。请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli)。
+1. 安装 Azure 命令行界面 (Azure CLI) 并连接到 Azure 订阅。请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。
 
 2. 如果这是你第一次在 Azure 中设置存储库，则需要创建登录凭据。从 Azure CLI 输入以下命令：
 
@@ -110,7 +110,7 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 
 你的应用现在即可在 Azure 上运行，并可使用 Socket.IO 在不同客户端之间中继聊天消息。
 
-##向外扩展
+##<a name="scale-out"></a>向外扩展
 
 Socket.IO 应用程序可通过__适配器__实现向外扩展，以在多个应用程序实例之间发布消息和事件。尽管有几个适配器可用，[socket.io redis](https://github.com/automattic/socket.io-redis) 适配器可轻松与 Azure Redis 缓存功能一同使用。
 

@@ -26,7 +26,10 @@
 
 以下是在 Azure WEB 应用上运行的业务线应用程序的示例。该示例演示了只需少量的技术投资，就能结合 WEB 应用和其他服务来完成任务。**单击拓扑中的元素可阅读更多相关详细信息。**
 
-<object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/web-app-notitle.svg" width="100%" height="100%"></object>
+
+![svg](./media/web-sites-business-application-solution-overview/web-app-notitle.svg)
+
+<object type="image/svg+xml" data="./media/web-sites-business-application-solution-overview/web-app-notitle.svg" width="100%" height="100%"></object>
 
 > [AZURE.NOTE]
 > 本指南演示了与业务线应用程序相关的一些最常见领域和任务。但是，还有可在特定实施中使用的其他一些 Azure WEB 应用功能。若要查看这些功能，另请参阅[全球网络影响力](/documentation/articles/web-sites-global-web-presence-solution-overview)和[数字市场营销活动](/documentation/articles/web-sites-digital-marketing-application-solution-overview)中的其他指导。
@@ -35,7 +38,7 @@
 
 将使用各种语言和框架的现有 Web 资产引入 Azure WEB 应用。
 
-无论你的现有 Web 资产是 .NET、PHP、Java、Node.js 还是 Python，现在都可在 Azure 中运行。你可以使用熟悉的 [FTP] 工具或源代理管理系统将它们移到 WEB 应用。 WEB 应用支持使用流行的源代码管理选项直接发布，如 [Visual Studio] 和 本地 [Git]、GitHub、BitBucket、DropBox、Mercurial 等。
+无论你的现有 Web 资产是 .NET、PHP、Java、Node.js 还是 Python，现在都可在 Azure  WEB 应用中运行。你可以使用熟悉的 [FTP] 工具或源代理管理系统将它们移到 WEB 应用。 WEB 应用支持使用流行的源代码管理选项直接发布，如 [Visual Studio] 和 本地 [Git]、GitHub、Mercurial 等。
 
 ## 保护资产
 
@@ -43,7 +46,7 @@
 
 使用 [HTTPS] 保护内部资产，以防止窃听。SSL 证书随附 ***.chinacloudsites.cn** 域名，如果你使用自定义域，可以在 Azure 中引入该域的 SSL 证书。存在与每个 SSL 证书相关联的每月费用（每小时按比例分摊）。有关详细信息，请参阅 [Azure WEB 应用定价详细信息]。
 
-根据企业目录[对用户进行身份验证]。Azure WEB 应用可以使用本地标识提供者（例如，Active Directory 联合身份验证服务 (AD FS)），或者已同步到企业 Active Directory 部署的 Azure Active Directory 租户来对用户进行身份验证。当用户在办公室或者外出时，可以通过单一登录访问 WEB 应用中的 Web 属性。现有的服务（例如 Office 365 或 Microsoft Intune）已在使用 Azure Active Directory。通过[简易身份验证]，可以十分方便地使用 WEB 应用的同一 Azure Active Directory 租户进行身份验证。
+根据企业目录[对用户进行身份验证]。Azure WEB 应用可以使用本地标识提供者（例如，Active Directory 联合身份验证服务 (AD FS)），或者已同步到企业 Active Directory 部署的 Azure Active Directory 租户来对用户进行身份验证。当用户在办公室或者外出时，可以通过单一登录访问网站中的 Web 属性。现有的服务（例如 Office 365 或 Microsoft Intune）已在使用 Azure Active Directory。
 
 [为用户授权]，以便他们能够使用 Web 属性。只需编写少量的附加代码，就能使用 `[Authorize]` 等装饰将相同的本地 ASP.NET 代码模式引入 Azure WEB 应用。你可以像在本地维护应用程序一样，保留精细的访问控制灵活性。
 
@@ -73,8 +76,7 @@ Azure WEB 应用具有[向上和向外缩放]功能，不论工作负荷的大�
 ## 更多资源
 
 - [Azure WEB 应用文档](/home/features/web-site/)
-- [Azure WEB 应用学习路线图](/documentation/articles/websites-learning-map)
-- [Azure Web 博客](/blog/tags/ WEB 应用/)
+- [Azure Web 博客](/blog/tags/网站/)
 
 
 [Azure Websites]: /home/features/web-site/

@@ -15,14 +15,6 @@
 # 在 Azure WEB 应用上创建数字市场营销活动
 [Azure WEB 应用](/documentation/services/web-sites/) WEB 应用是数字市场营销活动的极佳选择。数字市场营销活动的持续时间通常较短，旨在促成短期市场营销目标。有两个要考虑的主要方案。在第一个方案中，第三方市场营销公司为其客户为促销期间创建并管理市场营销活动。第二个方案涉及市场营销公司创建数字市场营销活动资源，然后将资源的所有权转移给其客户。客户然后自己运行和管理数字市场营销活动。Azure WEB 应用非常适合于这两种方案。
 
-在本指南中将针对以下方面：
-
-- [部署现有 WEB 应用](#deployexisting)
-- [与社交媒体相集成](#socialmedia)
-- [根据用户要求进行缩放](#scale)
-- [与其他服务集成](#integrate)
-- [监视活动](#monitor)
-
 > [AZURE.NOTE]
 > 本指南介绍了一些与在 Azure 中运行数字市场营销活动一致的最常见领域和任务。但是，还有其他你可以在 Azure 中实现的常见解决方案。若要查看这些解决方案，请参阅[全球网络影响力](/documentation/articles/web-sites-global-web-presence-solution-overview)和[业务应用程序](/documentation/articles/web-sites-business-application-solution-overview)中的其他指南。
 
@@ -32,7 +24,7 @@
 
 你可以使用你最喜欢的 CMS 风格创建 WEB 应用。你可以从各种数据库后端选择以满足你的需要，包括 [Azure SQL 数据库]和 [MySQL]。
 
-无论你的现有 Web 资产是 .NET、PHP、Java、Node.js 还是 Python，现在都可在 WEB 应用中运行。你可以使用熟悉的 [FTP] 工具将它们移动到 WEB 应用。如果频繁创建数字市场营销活动，则源代码控制系统中可能存在现有 Web 资产。你可以直接从流行的源代码管理选项部署到 WEB 应用，如 [Visual Studio] 和 本地 [Git]、GitHub、BitBucket、DropBox、Mercurial 等。
+无论你的现有 Web 资产是 .NET、PHP、Java、Node.js 还是 Python，现在都可在 WEB 应用中运行。你可以使用熟悉的 [FTP] 工具将它们移动到 WEB 应用。如果频繁创建数字市场营销活动，则源代码控制系统中可能存在现有 Web 资产。你可以直接从流行的源代码管理选项部署到 WEB 应用，如 [Visual Studio] 和 本地 [Git]、GitHub、Mercurial 等。
 
 ## 保持敏捷
 
@@ -85,10 +77,7 @@ Azure WEB 应用的增加和扩大功能非常适用于不可预测的工作负�
 ## 更多资源
 
 - [Azure WEB 应用文档](/home/features/web-site/)
-- [Azure WEB 应用学习路线图](/documentation/articles/websites-learning-map)
-- [Azure Web 博客](/blog/tags/ WEB 应用)
-
-[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
+- [Azure Web 博客](/blog/tags/网站)
 
 [Azure Websites]: /home/features/web-site/
 

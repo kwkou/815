@@ -598,14 +598,9 @@
 
 4. 推送操作完成后，浏览到 `azure create site` 命令之前返回的 WEB 应用URL，以查看你的应用程序。
 
-
-## 后续步骤
-
-虽然本文中的步骤介绍了使用表服务来存储信息，但你也可以使用 MongoDB。有关详细信息，请参阅 [使用 MongoDB 的 Node.js WEB 应用]。
-
 ## 其他资源
-[Azure 命令行界面]
-[创建 Node.js 应用程序并将其部署到 Azure  WEB 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
+[Azure 命令行界面][Azure CLI]
+[创建 Node.js 应用程序并将其部署到 Azure WEB 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
 [使用 Git 发布到 Azure WEB 应用]: /documentation/articles/web-sites-publish-source-control/
 [Azure 开发人员中心]: /develop/nodejs/
 
@@ -618,7 +613,7 @@
 [Git remote]: http://git-scm.com/docs/git-remote
 
 [使用 MongoDB 的 Node.js WEB 应用]: /documentation/articles/web-sites-nodejs-store-data-mongodb/
-[Azure CLI]: /documentation/articles/xplat-cli/
+[Azure CLI]: /documentation/articles/xplat-cli-install
 
 [使用 Git 发布到 Azure WEB 应用]: /documentation/articles/web-sites-publish-source-control/
 [azure]: https://github.com/Azure/azure-sdk-for-node

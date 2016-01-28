@@ -99,7 +99,7 @@
 
 	若要指定 Azure 存储帐户和 Blob，请依次选择“打开”、“日志记录级别”和“管理 Blob 存储”。指定要使用的存储帐户、Blob 容器和 Blob 名称，或者创建一个新容器和 Blob。
 
-有关 Azure 存储帐户的详细信息，请参阅[如何管理存储帐户](/documentation/articles/storage-manage-storage-account/)。
+有关 Azure 存储帐户的详细信息，请参阅[如何管理存储帐户](/documentation/articles/storage-create-storage-account/)。
 
 > [AZURE.NOTE]只有 .NET 应用程序支持到表或 Blob 存储中的应用程序日志记录。
 
@@ -122,7 +122,7 @@
 
 - **Web 服务器日志记录** – 启用“Web 服务器日志记录”可使用 W3C 扩展日志文件格式保存 WEB 应用日志。Web 服务器日志记录为对你的 WEB 应用的所有传入请求生成一个记录，记录中包含客户端 IP 地址、请求的 URI、响应的 HTTP 状态代码以及客户端的用户代理字符串之类的信息。可将日志保存到 Azure 存储帐户或文件系统中。
 
- 若要将 Web 服务器日志保存到 Azure 存储帐户，请选择“存储”，然后选择“管理存储”，以指定用来保留日志的存储帐户和 Azure Blob 容器。有关 Azure 存储帐户的详细信息，请参阅[如何管理存储帐户](/documentation/articles/storage-manage-storage-account/)。
+ 若要将 Web 服务器日志保存到 Azure 存储帐户，请选择“存储”，然后选择“管理存储”，以指定用来保留日志的存储帐户和 Azure Blob 容器。有关 Azure 存储帐户的详细信息，请参阅[如何管理存储帐户](/documentation/articles/storage-create-storage-account/)。
 
    若要将 Web 服务器日志保存到文件系统，请选择“文件系统”。这将会启用“配额”框，在该框中，你可为日志文件设置最大磁盘空间量。最小大小为 25MB，最大为 100MB。默认大小是 35MB。
 
