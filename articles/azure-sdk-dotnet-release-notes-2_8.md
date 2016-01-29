@@ -19,7 +19,7 @@
  
 本文包含 Azure SDK for .NET 2.8 和 Azure SDK for 2.8.1 版本的发行说明（包括已知问题和重大更改）。
 
-有关此版本中的新功能和更新的完整列表，请参阅 [Azure SDK 2.8 for Visual Studio 2013 和 Azure SDK 2.8 for Visual Studio 2015](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-8-for-net/) 通知。
+有关此版本中的新功能和更新的完整列表，请参阅 [Azure SDK 2.8 for Visual Studio 2013 和 Azure SDK 2.8 for Visual Studio 2015](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-8-for-net/) 通知。
 
 ##  Azure SDK for .NET 2.8
 
@@ -52,7 +52,7 @@ Azure 资源组项目提供的 PowerShell 脚本在此版本中已更新，可�
 
 使用 2.8 SDK 时，无法从 Visual Studio 运行在旧版 SDK 上创建的项目中的脚本。如果使用适当的 Azure PowerShell cmdlet 版本，所有脚本可继续在 Visual Studio 外部运行。
 
-2\.8 SDK 需要 1.0 版的 Azure PowerShell cmdlet。所有其他版本的 SDK 需要 0.9.8 版的 Azure PowerShell cmdlet。有关详细信息，请参阅[此](http://go.microsoft.com/fwlink/?LinkID=623011)博客。
+2\.8 SDK 需要 1.0 版的 Azure PowerShell cmdlet。所有其他版本的 SDK 需要 0.9.8 版的 Azure PowerShell cmdlet。
 
 ###Web 工具扩展
 
@@ -70,7 +70,7 @@ Azure 资源组项目提供的 PowerShell 脚本在此版本中已更新，可�
 - 可以通过 HiveServer2 在群集中运行 Hive 查询，而且几乎不需要额外的开销，即可实时查看作业日志。
 - 使用新的 Hive 任务执行视图可以更深入地分析作业、查找更多详细信息和识别潜在问题。
 
-有关详细信息，请参阅 [Azure SDK 2.8 for Visual Studio 2013 和 Azure SDK 2.8 for Visual Studio 2015](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-8-for-net/)。
+有关详细信息，请参阅 [Azure SDK 2.8 for Visual Studio 2013 和 Azure SDK 2.8 for Visual Studio 2015](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-8-for-net/)。
 
 ## Azure SDK for .NET 2.8.1
 
@@ -83,11 +83,11 @@ Azure 资源组项目提供的 PowerShell 脚本在此版本中已更新，可�
 
 ##其他更新
 
-有关其他更新，请参阅 [Azure SDK 2.8 通知文章](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-8-for-net/)。
+有关其他更新，请参阅 [Azure SDK 2.8 通知文章](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-8-for-net/)。
 
 ##另请参阅
 
-[Azure SDK 2.8 通知文章](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-8-for-net/)
+[Azure SDK 2.8 通知文章](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-8-for-net/)
 
 [Azure SDK for .NET 和 API 的支持和停用信息](https://msdn.microsoft.com/zh-cn/library/azure/dn479282.aspx)
 

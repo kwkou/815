@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="在 Azure 中创建使用 AD FS 身份验证的 .NET MVC Web 应用" 
 	description="了解如何在 Azure 中创建使用本地 STS 进行身份验证的 ASP.NET MVC 业务线应用程序。本教程将 AD FS 定位为本地 STS。" 
 	services="app-service\web" 
@@ -39,8 +39,6 @@
 
 <a name="bkmk_need"></a>
 ## 所需的项目 ##
-
->[AZURE.NOTE]若想要在注册 Azure 帐户前开始使用 Azure Web 应用，请转至[试用 Azure Web 应用](https://tryappservice.azure.com/)，在此处，可立即在 Azure 中创建临时初学者 Web 应用。你不需要使用信用卡，也不需要做出承诺。
 
 若要完成本教程，你需要以下项目：
 

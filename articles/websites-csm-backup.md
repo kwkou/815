@@ -30,8 +30,6 @@
 * sitename - 应用的名称
 * backupId - 应用备份的 ID
 
-有关此 API 的完整文档，包括可以包含在 HTTP 请求中的几个可选参数，请参阅 [Azure 资源浏览器](https://resources.azure.com/)。
-
 <a name="backup-on-demand"></a>
 ## 按需备份应用
 若要立即备份应用，请向 `https://manage.windowsazure.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{sitename}/backup/` 发送 **POST** 请求。
