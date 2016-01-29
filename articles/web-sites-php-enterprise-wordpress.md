@@ -98,9 +98,9 @@ Azure Web 应用为大规模的关键任务 [WordPress][wordpress] Web 应用提
 
 ###<a name="Create-a-new-WordPress-site"></a> 创建一个新的 WordPress Web 应用
 
-1. 创建 MySQL 数据库。
+按照[创建 PHP-MySQL Azure Web 应用并使用 Git 进行部署](/documentation/articles/web-sites-php-mysql-deploy-use-git)中的步骤新建一个 PHP web 应用。
 
-2. 创建 Web 应用时，选择使**用现有的 MySQL 数据库**，然后选择在步骤 1 中创建的数据库。
+在本地把你的 PHP web 应用设置成 WordPress 站点，然后推送到 Azure 中。
 
 如果要迁移现有的 WordPress Web 应用，请在创建新 Web 应用后，参阅[将现有 WordPress Web 应用迁移到 Azure](#Migrate-an-existing-WordPress-site-to-Azure)。
 
