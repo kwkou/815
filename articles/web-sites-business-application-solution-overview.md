@@ -26,9 +26,9 @@
 
 以下是在 Azure Web 应用上运行的业务线应用程序的示例。该示例演示了只需少量的技术投资，就能结合 Web 应用和其他服务来完成任务。**单击拓扑中的元素可阅读更多相关详细信息。**
 
-
+<div style="display:none">
 ![svg](./media/web-sites-business-application-solution-overview/web-app-notitle.svg)
-
+</div>
 <object type="image/svg+xml" data="./media/web-sites-business-application-solution-overview/web-app-notitle.svg" width="100%" height="100%"></object>
 
 > [AZURE.NOTE]
