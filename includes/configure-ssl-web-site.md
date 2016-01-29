@@ -511,7 +511,7 @@ Azure Web 应用*不*强制实施 HTTPS。访问者可能仍使用 HTTP 访问 W
 
 ## 更多资源 ##
 - [Windows Azure 信任中心](/support/trust-center/security/)
-- [Azure Web 应用中解锁的设置选项](http://azure.microsoft.com/zh-cn/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)
+- [Azure Web 应用中解锁的设置选项](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)
 - [启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)
 - [配置 Web 应用](/documentation/articles/web-sites-configure)
 - [Azure 管理门户](https://manage.windowsazure.cn)
