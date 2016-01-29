@@ -1,6 +1,6 @@
 <properties
-	pageTitle="使用 PowerShell 在本地 VMM 站点与 Azure 之间自动提供保护"
-	description="使用 PowerShell 自动部署 Azure Site Recovery。"
+	pageTitle="使用 Azure Site Recovery 和 PowerShell 在 VMM 云中复制 Hyper-V 虚拟机 | Windows Azure"
+	description="了解如何使用站点恢复和 PowerShell 在 VMM 云中自动复制 Hyper-V 虚拟机。"
 	services="site-recovery"
 	documentationCenter=""
 	authors="csilauraa"
@@ -9,48 +9,44 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="10/07/2015"
-	wacn.date="12/15/2015"/>
+	ms.date="12/14/2015"
+	wacn.date="01/29/2016"/>
 
-#  使用 PowerShell 部署 Azure Site Recovery
-Windows PowerShell® 是一种基于任务的命令行 shell 和脚本语言，专门用于系统管理。支持在 VMM 管理的 Hyper-V 站点与 Azure 之间为 Azure Site Recovery 使用 PowerShell cmdlet。
+# 使用 Azure Site Recovery 和 PowerShell 在 VMM 云中复制 Hyper-V 虚拟机
+
 
 ## 概述
 
 Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障转移和恢复，为业务连续性和灾难恢复 (BCDR) 策略发挥作用。有关部署方案的完整列表，请参阅 [Azure Site Recovery 概述](/documentation/articles/site-recovery-overview)。
 
-本文说明如何使用 PowerShell 来自动完成有关部署 Azure Site Recovery 的常见任务，包括针对在位于 VMM 私有云中 Hyper-V 主机服务器上的虚拟机上运行的工作负载协调和自动实施保护。此方案使用 Hyper-V 副本将虚拟机从主 VMM 站点复制到 Azure。
+本文说明当你设置 Azure Site Recovery 以便将 System Center VMM 云中的 Hyper-V 虚拟机复制到 Azure 存储空间时，如何使用 PowerShell 来自动完成所要执行的常见任务。
 
 本文将会介绍方案的先决条件，并说明如何设置 Site Recovery 保管库，在源 VMM 服务器上安装 Azure Site Recovery 提供程序，在保管库中注册服务器，添加 Azure 存储帐户，在 Hyper-V 主机服务器上安装 Azure 恢复服务代理，为 VMM 云配置将应用于所有受保护虚拟机的保护设置，然后为这些虚拟机启用保护。最后将测试故障转移以确保一切都正常工作。
 
-如果在设置本方案时遇到问题，请将你的问题发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=hypervrecovmgr)。
+如果在设置本方案时遇到问题，请将你的问题发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)。
 
 
 ## 开始之前
 
 确保已满足以下先决条件：
+
 ### Azure 先决条件
 
-- 需要一个 [Windows Azure](http://www.windowsazure.cn) 帐户。如果没有，请先使用[试用帐户](/pricing/1rmb-trial)。此外，你可以阅读 [Azure Site Recovery Manager 定价](/home/features/site-recovery/#price)。
-- 你将需要一个 Azure 存储帐户来存储复制到 Azure 的数据。需要为帐户启用地域复制。该帐户应位于 Azure Site Recovery 服务所在的同一区域，并与同一订阅相关联。若要了解有关设置 Azure 存储的更多信息，请参阅 [Windows Azure 存储空间简介](/documentation/articles/storage-introduction)。
-- 你将需要确保你要保护的虚拟机符合 Azure 要求。有关详细信息，请参阅[虚拟机支持](/documentation/articles/site-recovery-best-practices)。
+- 需要一个 [Windows Azure](http://www.windowsazure.cn) 帐户。你可以从[试用版](/price/1rmb-trial)开始。
+- 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。[了解有关 Azure 存储空间的详细信息](/documentation/articles/storage-introduction)。
+- 需要确保你要保护的虚拟机符合 [Azure 虚拟机先决条件](/documentation/articles/site-recovery-best-practices#virtual-machines)。
 
 ### VMM 先决条件
 - 你需要具有运行 System Center 2012 R2 的 VMM 服务器。
-- 包含你要保护的虚拟机的任何 VMM 服务器必须运行有 Azure Site Recovery 提供程序。这是在部署 Azure Site Recovery 期间安装的。
 - 在 VMM 服务器上需要至少有一个你要保护的云。云应当包含：
 	- 一个或多个 VMM 主机组。
 	- 每个主机组中有一个或多个 Hyper-V 主机服务器或群集。
 	- 源 Hyper-V 服务器上有一个或多个虚拟机。
-- 了解有关设置 VMM 云的更多信息：
-	- 在 [System Center 2012 R2 VMM 中私有云的新增功能](http://go.microsoft.com/fwlink/?LinkId=324952)及 [VMM 2012 和云](http://go.microsoft.com/fwlink/?LinkId=324956)中阅读有关私有 VMM 云的详细信息。
-	- 了解有关[配置 VMM 云结构](/documentation/articles/site-recovery-best-practices)的更多信息
-	- 在你的云结构元素就位后，通过[在 VMM 中创建私有云](https://technet.microsoft.com/zh-cn/library/jj860425.aspx)和[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://go.microsoft.com/fwlink/?LinkId=324954)了解有关创建私有云的更多信息。
 
 ### Hyper-V 先决条件
 
 - Hyper-V 主机服务器必须至少运行具有 Hyper-V 角色且安装了最新更新的 Windows Server 2012。
-- 如果你在群集中运行 Hyper-V，请注意，如果你具有基于静态 IP 地址的群集，则不会自动创建群集代理。你需要手动配置群集代理。有关说明，请参阅[配置 Hyper-V 副本代理](https://technet.microsoft.com/zh-cn/library/jj134153.aspx#BKMK_1_4)。
+- 如果你在群集中运行 Hyper-V，请注意，如果你具有基于静态 IP 地址的群集，则不会自动创建群集代理。你需要手动配置群集代理。为此，请在“服务器管理器”>“故障转移群集管理器”中连接到群集，然后在“高可用性”向导的“选择角色”屏幕中单击“配置角色”并选择“Hyper-V 副本代理”。 
 - 你要为其管理保护的任何 Hyper-V 主机服务器或群集必须包括在 VMM 云中。
 
 ### 网络映射先决条件
@@ -64,10 +60,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 - 源 VMM 服务器上你要保护的虚拟机应当连接到某个 VM 网络。该网络应当该链接到与该云相关联的逻辑网络。
 - 具有在故障转移后复制的虚拟机可以连接到的 Azure 网络。你将在故障转移时选择此网络。此网络应当与你的 Azure Site Recovery 订阅位于同一区域中。
-- 了解有关网络映射的更多信息：
-	- [在 VMM 中配置逻辑网络](https://technet.microsoft.com/zh-cn/library/jj721568.aspx)
-	- [在 VMM 中配置 VM 网络和网关](https://technet.microsoft.com/zh-cn/library/jj721575.aspx)
-	- [在 Azure 中配置和监视虚拟网络](/documentation/services/networking)
+- [详细了解](/documentation/articles/site-recovery-network-mapping)网络映射：
 
 ###PowerShell 必决条件
 确保已将 Azure PowerShell 准备就绪。如果你已使用 PowerShell，则升级到 0.8.10 或更高版本。如需设置 PowerShell 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。安装并配置 PowerShell 后，可在[此处](https://msdn.microsoft.com/zh-cn/library/dn850420.aspx)查看该服务的所有可用 cmdlet。
@@ -100,7 +93,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 	$VaultName = "<testvault123>"
 	$VaultGeo  = "<China North>"
-	$OutputPathForSettingsFile = "<c:\>"
+	$OutputPathForSettingsFile = "<c:>"
 
 ```
 
@@ -121,7 +114,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 	
 		$VaultName = "<testvault123>"
 		$VaultGeo  = "<China North>"
-		$OutputPathForSettingsFile = "<c:\>"
+		$OutputPathForSettingsFile = "<c:>"
 	
 		$VaultSetingsFile = Get-AzureSiteRecoveryVaultSettingsFile -Location $VaultGeo -Name $VaultName -Path $OutputPathForSettingsFile;
 	
@@ -156,21 +149,21 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 	
 
 	
-		.\SetupDr.exe /i
+	.\SetupDr.exe /i
 	
 
 	
 
 	
-		$installationRegPath = "hklm:\software\Microsoft\Microsoft System Center Virtual Machine Manager Server\DRAdapter"
-		do
-		{
+	$installationRegPath = "hklm:\software\Microsoft\Microsoft System Center Virtual Machine Manager Server\DRAdapter"
+	do
+	{
 	                $isNotInstalled = $true;
 	                if(Test-Path $installationRegPath)
 	                {
 	                                $isNotInstalled = $false;
 	                }
-		}While($isNotInstalled)
+	}While($isNotInstalled)
 	
 
 	等待安装完成。
@@ -181,7 +174,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 	
 	$BinPath = $env:SystemDrive+"\Program Files\Microsoft System Center 2012 R2\Virtual Machine Manager\bin"
 	pushd $BinPath
-	$encryptionFilePath = "C:\temp\"
+	$encryptionFilePath = "C:\temp"
 	.\DRConfigurator.exe /r /Credentials $VaultSettingFilePath /vmmfriendlyname $env:COMPUTERNAME /dataencryptionenabled $encryptionFilePath /startvmmservice
 	
 	```
@@ -310,7 +303,7 @@ PS C:\> New-AzureSiteRecoveryNetworkMapping -PrimaryNetwork $Networks[0] -AzureS
 
 在正确配置服务器、云和网络后，可以在云中为虚拟机启用保护。注意以下事项：
 
-虚拟机必须满足 Azure 要求。可以在规划指南中的[先决条件和支持](/documentation/articles/site-recovery-best-practices)中查看这些要求。
+虚拟机必须符合 [Azure 虚拟机先决条件](/documentation/articles/site-recovery-best-practices.md#virtual-machines)。
 
 若要启用保护，必须为虚拟机设置操作系统和操作系统磁盘属性。当你使用虚拟机模板在 VMM 中创建虚拟机时，可以设置属性。也可以在虚拟机属性的“常规”和“硬件配置”选项卡中为现有虚拟机设置这些属性。如果未在 VMM 中设置这些属性，可以在 Azure Site Recovery 门户中配置它们。
 
@@ -334,8 +327,8 @@ PS C:\> New-AzureSiteRecoveryNetworkMapping -PrimaryNetwork $Networks[0] -AzureS
 			
 3. 通过运行以下命令为 VM 启用 DR：
 
-	
-		$jobResult = Set-AzureSiteRecoveryProtectionEntity -ProtectionEntity $protectionEntity 	-Protection Enable -Force
+
+	$jobResult = Set-AzureSiteRecoveryProtectionEntity -ProtectionEntity $protectionEntity -Protection Enable -Force
 	
 
 ## 测试你的部署
@@ -349,17 +342,17 @@ PS C:\> New-AzureSiteRecoveryNetworkMapping -PrimaryNetwork $Networks[0] -AzureS
 
 ### 创建恢复计划
 
-1. 使用以下数据创建 .xml 文件作为恢复计划模板，然后将它保存为“C:\RPTemplatePath.xml”。
+1. 使用以下数据创建 .xml 文件作为恢复计划模板，然后将它保存为“C:\\RPTemplatePath.xml”。
 2. 更改 RecoveryPlan 节点 ID、Name、PrimaryServerId 和 SecondaryServerId。
 3. 更改 ProtectionEntity 节点 PrimaryProtectionEntityId（来自 VMM 的 vmid）。
 4. 可以通过添加更多 ProtectionEntity 节点来添加更多 VM。
 
 	
-		<#
-		<?xml version="1.0" encoding="utf-16"?>
-		<RecoveryPlan Id="d0323b26-5be2-471b-addc-0a8742796610" Name="rp-test" 	PrimaryServerId="9350a530-d5af-435b-9f2b-b941b5d9fcd5" 	SecondaryServerId="21a9403c-6ec1-44f2-b744-b4e50b792387" Description="" 	Version="V2014_07">
-	  	<Actions />
-	  	<ActionGroups>
+	<#
+	<?xml version="1.0" encoding="utf-16"?>
+	<RecoveryPlan Id="d0323b26-5be2-471b-addc-0a8742796610" Name="rp-test" 	PrimaryServerId="9350a530-d5af-435b-9f2b-b941b5d9fcd5" 	SecondaryServerId="21a9403c-6ec1-44f2-b744-b4e50b792387" Description="" 	Version="V2014_07">
+	  <Actions />
+	  <ActionGroups>
 	    <ShutdownAllActionGroup Id="ShutdownAllActionGroup">
 	      <PreActionSequence />
 	      <PostActionSequence />
@@ -373,10 +366,10 @@ PS C:\> New-AzureSiteRecoveryNetworkMapping -PrimaryNetwork $Networks[0] -AzureS
 	      <PostActionSequence />
 	      <ProtectionEntity PrimaryProtectionEntityId="d4c8ce92-a613-4c63-9b03-	cf163cc36ef8" />
 	    </BootActionGroup>
-	  	</ActionGroups>
-	  	<ActionGroupSequence>
-	    	<ActionGroup Id="ShutdownAllActionGroup" ActionId="ShutdownAllActionGroup" 	Before="FailoverAllActionGroup" />
-	    	<ActionGroup Id="FailoverAllActionGroup" ActionId="FailoverAllActionGroup" 	After="ShutdownAllActionGroup" Before="DefaultActionGroup" />
+	  </ActionGroups>
+	  <ActionGroupSequence>
+	    <ActionGroup Id="ShutdownAllActionGroup" ActionId="ShutdownAllActionGroup" 	Before="FailoverAllActionGroup" />
+	    <ActionGroup Id="FailoverAllActionGroup" ActionId="FailoverAllActionGroup" 	After="ShutdownAllActionGroup" Before="DefaultActionGroup" />
 	    <ActionGroup Id="DefaultActionGroup" ActionId="DefaultActionGroup" After="FailoverAllActionGroup"/>
 	  	</ActionGroupSequence>
 		</RecoveryPlan>
@@ -443,8 +436,7 @@ if($isJobLeftForProcessing)
 
 
 ##<a id="next" name="next" href="#next"></a>后续步骤
-- 有关 Azure Site Recovery PowerShell cmdlet 的详细信息，请参阅<a href="https://msdn.microsoft.com/zh-cn/library/dn850420.aspx">此文</a>。
-- 若要在完全的生产环境中规划和部署 Azure Site Recovery，请参阅 [Azure Site Recovery 规划指南](/documentation/articles/site-recovery-best-practices) 和 [Azure Site Recovery 部署指南](/documentation/articles/site-recovery-vmm-to-vmm) 。
-- 如有问题，请访问 <a href="https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs">Azure 恢复服务论坛</a>。
 
-<!---HONumber=79-->
+[详细了解](https://msdn.microsoft.com/zh-cn/library/dn850420.aspx) Azure Site Recovery PowerShell cmdlet。</a>
+
+<!---HONumber=Mooncake_0118_2016-->
