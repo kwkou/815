@@ -43,9 +43,7 @@
 
 	![“新建项目”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr4.PNG)]
 
-1. 在“新建 ASP.NET 项目”对话框中，选择“MVC”模板，选中“Web API”。
-
-1. 在“新建 ASP.NET 项目”对话框中，单击“确定”。
+1. 在“新建 ASP.NET 项目”对话框中，选择“MVC”模板，选中“Web API”，确保“在云中托管”不勾选，然后单击“确定”。
 
 	![“新建 ASP.NET 项目”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.PNG)
 

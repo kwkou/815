@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="在 Azure 中创建使用 AD FS 身份验证的 .NET MVC Web 应用" 
 	description="了解如何在 Azure 中创建使用本地 STS 进行身份验证的 ASP.NET MVC 业务线应用程序。本教程将 AD FS 定位为本地 STS。" 
 	services="app-service\web" 
@@ -85,27 +85,27 @@
 
 5.	在 App\_Start.Auth.cs 中，根据以下突出显示部分所示更改静态字符串定义：
 	<pre class="prettyprint">
-	private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];<br/>
-	<mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark><br/>
-	<mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark><br/>
-	<mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark><br/>
-	<mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", ConfigurationManager.AppSettings["ida:ADFS"]);</mark><br/>
+	private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];<span>&#13;</span>
+	<mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark><span>&#13;</span>
+	<mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark><span>&#13;</span>
+	<mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark><span>&#13;</span>
+	<mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", ConfigurationManager.AppSettings["ida:ADFS"]);</mark><span>&#13;</span>
 	<mark><del>string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);</del></mark>
 	</pre>
 
 6.	现在，你将在 Web.config 中进行相应更改。打开 Web.config 并根据以下突出显示部分所示修改应用程序设置：
 
 	<pre class="prettyprint">
-	&lt;appSettings><br/>
-		&lt;add key="webpages:Version" value="3.0.0.0" /><br/>
-		&lt;add key="webpages:Enabled" value="false" /><br/>
-		&lt;add key="ClientValidationEnabled" value="true" /><br/>
-		&lt;add key="UnobtrusiveJavaScriptEnabled" value="true" /><br/>
-		<mark><del>&lt;add key="ida:Wtrealm" value="[Enter the App ID URI of WebApp-WSFederation-DotNet https://contoso.partner.onmschina.cn/WebApp-WSFederation-DotNet]" /></del></mark><br/>
-		<mark><del>&lt;add key="ida:AADInstance" value="https://login.chinacloudapi.cn" /></del></mark><br/>
-		<mark><del>&lt;add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.partner.onmschina.cn]" /></del></mark><br/>
-		<mark>&lt;add key="ida:RPIdentifier" value="[Enter the relying party identifier as configured in AD FS, e.g. https://localhost:44320/]" /></mark><br/>
-		<mark>&lt;add key="ida:ADFS" value="[Enter the FQDN of AD FS service, e.g. adfs.contoso.com]" /></mark><br/>
+	&lt;appSettings><span>&#13;</span>
+		&lt;add key="webpages:Version" value="3.0.0.0" /><span>&#13;</span>
+		&lt;add key="webpages:Enabled" value="false" /><span>&#13;</span>
+		&lt;add key="ClientValidationEnabled" value="true" /><span>&#13;</span>
+		&lt;add key="UnobtrusiveJavaScriptEnabled" value="true" /><span>&#13;</span>
+		<mark><del>&lt;add key="ida:Wtrealm" value="[Enter the App ID URI of WebApp-WSFederation-DotNet https://contoso.partner.onmschina.cn/WebApp-WSFederation-DotNet]" /></del></mark><span>&#13;</span>
+		<mark><del>&lt;add key="ida:AADInstance" value="https://login.chinacloudapi.cn" /></del></mark><span>&#13;</span>
+		<mark><del>&lt;add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.partner.onmschina.cn]" /></del></mark><span>&#13;</span>
+		<mark>&lt;add key="ida:RPIdentifier" value="[Enter the relying party identifier as configured in AD FS, e.g. https://localhost:44320/]" /></mark><span>&#13;</span>
+		<mark>&lt;add key="ida:ADFS" value="[Enter the FQDN of AD FS service, e.g. adfs.contoso.com]" /></mark><span>&#13;</span>
 	&lt;/appSettings>
 	</pre>
 
@@ -133,8 +133,8 @@
 
 11. 在 Visual Studio 中，在项目中打开 **Web.Release.config**。在 `<configuration>` 标记中插入以下 XML，然后将键值替换为发布 Web 应用的 URL。
 	<pre class="prettyprint">
-	&lt;appSettings><br/>
-		&lt;add key="ida:RPIdentifier" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /><br/>
+	&lt;appSettings><span>&#13;</span>
+		&lt;add key="ida:RPIdentifier" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /><span>&#13;</span>
 	&lt;/appSettings>
 	</pre>
 
@@ -198,17 +198,17 @@
 10.	选择“使用自定义规则发送声明”，然后单击“下一步”。
 11.	将以下规则语言粘贴到“自定义规则”框中，**根据会话标识符**命名规则，然后单击“完成”。  
 	<pre class="prettyprint">
-	c1:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"] &amp;&amp;<br/>
-	c2:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"]<br/>
-		=> add(<br/>
-			store = "_OpaqueIdStore",<br/>
-			types = ("<mark>http://contoso.com/internal/sessionid</mark>"),<br/>
-			query = "{0};{1};{2};{3};{4}",<br/>
-			param = "useEntropy",<br/>
-			param = c1.Value,<br/>
-			param = c1.OriginalIssuer,<br/>
-			param = "",<br/>
-			param = c2.Value);<br/>
+	c1:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"] &amp;&amp;<span>&#13;</span>
+	c2:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"]<span>&#13;</span>
+		=> add(<span>&#13;</span>
+			store = "_OpaqueIdStore",<span>&#13;</span>
+			types = ("<mark>http://contoso.com/internal/sessionid</mark>"),<span>&#13;</span>
+			query = "{0};{1};{2};{3};{4}",<span>&#13;</span>
+			param = "useEntropy",<span>&#13;</span>
+			param = c1.Value,<span>&#13;</span>
+			param = c1.OriginalIssuer,<span>&#13;</span>
+			param = "",<span>&#13;</span>
+			param = c2.Value);<span>&#13;</span>
 	</pre>
 
 	你的自定义规则应如下所示：
@@ -264,21 +264,21 @@
 1. 打开 Controllers\\HomeController.cs。
 2. 使用已经过身份验证的用户具有的安全组成员资格，修饰 `About` 和 `Contact` 操作方法（如下所示）。  
 	<pre class="prettyprint">
-    <mark>[Authorize(Roles="Test Group")]</mark><br/>
-    public ActionResult About()<br/>
-    {<br/>
-        ViewBag.Message = "Your application description page.";<br/>
+    <mark>[Authorize(Roles="Test Group")]</mark><span>&#13;</span>
+    public ActionResult About()<span>&#13;</span>
+    {<span>&#13;</span>
+        ViewBag.Message = "Your application description page.";<span>&#13;</span>
 
-        return View();<br/>
-    }<br/>
+        return View();<span>&#13;</span>
+    }<span>&#13;</span>
 
-    <mark>[Authorize(Roles="Domain Admins")]</mark><br/>
-    public ActionResult Contact()<br/>
-    {<br/>
-        ViewBag.Message = "Your contact page.";<br/>
+    <mark>[Authorize(Roles="Domain Admins")]</mark><span>&#13;</span>
+    public ActionResult Contact()<span>&#13;</span>
+    {<span>&#13;</span>
+        ViewBag.Message = "Your contact page.";<span>&#13;</span>
 
-        return View();<br/>
-    }<br/>
+        return View();<span>&#13;</span>
+    }<span>&#13;</span>
 	</pre>
 
 	由于我已在 AD FS 实验室环境中向“测试组”添加了**测试用户**，因此我将使用“测试组”在 `About` 上测试授权。对于 `Contact`，我将测试**测试用户**不属于的**域管理员**的反面情况。
@@ -291,10 +291,10 @@
 	如果在 AD FS 服务器的事件查看器中调查此错误，您会看到以下异常消息：
 
 	<pre class="prettyprint">
-	Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Contact your administrator for details.<br/>
-	   at Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context)<br/>
-	   at Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response)<br/>
-	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler)<br/>
+	Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Contact your administrator for details.<span>&#13;</span>
+	   at Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context)<span>&#13;</span>
+	   at Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response)<span>&#13;</span>
+	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler)<span>&#13;</span>
 	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.OnGetContext(WrappedHttpListenerContext context)
 	</pre>
 

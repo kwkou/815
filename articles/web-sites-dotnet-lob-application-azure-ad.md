@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="在 Azure 中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用" 
 	description="学习如何在使用 Azure Active Directory 进行身份验证的 Azure 中创建 ASP.NET MVC 业务线应用程序" 
 	services="app-service\web, active-directory" 
@@ -145,10 +145,10 @@
 
 11. 在 Visual Studio 中，在项目中打开 **Web.Release.config**。将以下 XML 插入 `<configuration>` 标记，并将每个键的值替换为新的 Azure Active Directory 应用程序保存的信息。
 	<pre class="prettyprint">
-	&lt;appSettings><br/>
-		&lt;add key="ida:ClientId" value="<mark>[e.g. 82692da5-a86f-44c9-9d53-2f88d52b478b]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /><br/>
-		&lt;add key="ida:AppKey" value="<mark>[e.g. rZJJ9bHSi/cYnYwmQFxLYDn/6EfnrnIfKoNzv9NKgbo=]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /><br/>
-		&lt;add key="ida:PostLogoutRedirectUri" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /><br/>
+	&lt;appSettings><span>&#13;</span>
+		&lt;add key="ida:ClientId" value="<mark>[e.g. 82692da5-a86f-44c9-9d53-2f88d52b478b]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /><span>&#13;</span>
+		&lt;add key="ida:AppKey" value="<mark>[e.g. rZJJ9bHSi/cYnYwmQFxLYDn/6EfnrnIfKoNzv9NKgbo=]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /><span>&#13;</span>
+		&lt;add key="ida:PostLogoutRedirectUri" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /><span>&#13;</span>
 	&lt;/appSettings></pre>
 
 	请确保 ida:PostLogoutRedirectUri 的值以斜杠“/”结尾。
@@ -193,13 +193,13 @@
 
 6.	打开 DAL\\RoleClaimContext.cs 并添加突出显示的代码：
 	<pre class="prettyprint">
-	public class RoleClaimContext : DbContext<br/>
-	{<br/>
-	    public RoleClaimContext() : base("RoleClaimContext") { }<br/>
+	public class RoleClaimContext : DbContext<span>&#13;</span>
+	{<span>&#13;</span>
+	    public RoleClaimContext() : base("RoleClaimContext") { }<span>&#13;</span>
 
-	    public DbSet&lt;Task> Tasks { get; set; }<br/>
-	    <mark>public DbSet&lt;WorkItem> WorkItems { get; set; }</mark><br/>
-	    public DbSet&lt;TokenCacheEntry> TokenCacheEntries { get; set; }<br/>
+	    public DbSet&lt;Task> Tasks { get; set; }<span>&#13;</span>
+	    <mark>public DbSet&lt;WorkItem> WorkItems { get; set; }</mark><span>&#13;</span>
+	    public DbSet&lt;TokenCacheEntry> TokenCacheEntries { get; set; }<span>&#13;</span>
 	}</pre>
 
 7.	生成项目，以便能够通过 Visual Studio 中的基架逻辑访问你的新模型。
@@ -216,36 +216,36 @@
 
 11. 将突出显示的 [Authorize] 修饰添加到下面的相应操作。
 	<pre class="prettyprint">
-	...<br/>
+	...<span>&#13;</span>
 
-    <mark>[Authorize(Roles = "Admin, Observer, Writer, Approver")]</mark><br/>
-    public class WorkItemsController : Controller<br/>
-    {<br/>
-		...<br/>
+    <mark>[Authorize(Roles = "Admin, Observer, Writer, Approver")]</mark><span>&#13;</span>
+    public class WorkItemsController : Controller<span>&#13;</span>
+    {<span>&#13;</span>
+		...<span>&#13;</span>
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark><br/>
-        public ActionResult Create()<br/>
-        ...<br/>
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span>
+        public ActionResult Create()<span>&#13;</span>
+        ...<span>&#13;</span>
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark><br/>
-        public async Task&lt;ActionResult&gt; Create([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)<br/>
-        ...<br/>
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span>
+        public async Task&lt;ActionResult&gt; Create([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)<span>&#13;</span>
+        ...<span>&#13;</span>
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark><br/>
-        public async Task&lt;ActionResult&gt; Edit(int? id)<br/>
-        ...<br/>
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span>
+        public async Task&lt;ActionResult&gt; Edit(int? id)<span>&#13;</span>
+        ...<span>&#13;</span>
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark><br/>
-        public async Task&lt;ActionResult&gt; Edit([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)<br/>
-        ...<br/>
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span>
+        public async Task&lt;ActionResult&gt; Edit([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)<span>&#13;</span>
+        ...<span>&#13;</span>
 
-        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark><br/>
-        public async Task&lt;ActionResult&gt; Delete(int? id)<br/>
-        ...<br/>
+        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark><span>&#13;</span>
+        public async Task&lt;ActionResult&gt; Delete(int? id)<span>&#13;</span>
+        ...<span>&#13;</span>
 
-        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark><br/>
-        public async Task&lt;ActionResult&gt; DeleteConfirmed(int id)<br/>
-        ...<br/>
+        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark><span>&#13;</span>
+        public async Task&lt;ActionResult&gt; DeleteConfirmed(int id)<span>&#13;</span>
+        ...<span>&#13;</span>
 	}</pre>
 
 	> [AZURE.NOTE]你可能已注意到某些操作带有 <code>[ValidateAntiForgeryToken]</code> 修饰。由于存在 [Brock Allen](https://twitter.com/BrockLAllen) 在 [MVC 4、AntiForgeryToken 和声明](http://brockallen.com/2012/07/08/mvc-4-antiforgerytoken-and-claims/)中所述的行为，HTTP POST 可能无法完成防伪令牌验证，因为： + Azure Active Directory 不会发送 http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider，而默认情况下防伪令牌需要此项。+ 如果 Azure Active Directory 是与 AD FS 进行同步处理的目录，则默认情况下 AD FS 信任不发送 http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider 声明，不过你可以手动将 AD FS 配置为发送此声明。你将在下一步对此进行处理。
@@ -273,69 +273,69 @@
         }
 		
 14.	在 Views\\WorkItems\\Create.cshtml（自动搭建基架的项）中，找到 `Html.BeginForm` 帮助器方法并对其进行如下修改：
-	<pre class="prettyprint">@using (Html.BeginForm(<mark>"Create", "WorkItems", FormMethod.Post, new { id = "main-form" }</mark>))<br/>
-	{<br/>
-    @Html.AntiForgeryToken()<br/>
+	<pre class="prettyprint">@using (Html.BeginForm(<mark>"Create", "WorkItems", FormMethod.Post, new { id = "main-form" }</mark>))<span>&#13;</span>
+	{<span>&#13;</span>
+    @Html.AntiForgeryToken()<span>&#13;</span>
 
-    &lt;div class="form-horizontal"><br/>
-        &lt;h4>WorkItem&lt;/h4><br/>
-        &lt;hr /><br/>
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })<br/>
+    &lt;div class="form-horizontal"><span>&#13;</span>
+        &lt;h4>WorkItem&lt;/h4><span>&#13;</span>
+        &lt;hr /><span>&#13;</span>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })<span>&#13;</span>
 
-        &lt;div class="form-group"><br/>
-            &lt;div class="col-md-10"><br/>
-                @Html.EditorFor(model => model.AssignedToID, new { htmlAttributes = new { @class = "form-control"<mark>, @type="hidden"</mark> } })<br/>
-                @Html.ValidationMessageFor(model => model.AssignedToID, "", new { @class = "text-danger" })<br/>
-            &lt;/div><br/>
-        &lt;/div><br/>
+        &lt;div class="form-group"><span>&#13;</span>
+            &lt;div class="col-md-10"><span>&#13;</span>
+                @Html.EditorFor(model => model.AssignedToID, new { htmlAttributes = new { @class = "form-control"<mark>, @type="hidden"</mark> } })<span>&#13;</span>
+                @Html.ValidationMessageFor(model => model.AssignedToID, "", new { @class = "text-danger" })<span>&#13;</span>
+            &lt;/div><span>&#13;</span>
+        &lt;/div><span>&#13;</span>
 
-        &lt;div class="form-group"><br/>
-            @Html.LabelFor(model => model.AssignedToName, htmlAttributes: new { @class = "control-label col-md-2" })<br/>
-            &lt;div class="col-md-10"><br/>
-                @Html.EditorFor(model => model.AssignedToName, new { htmlAttributes = new { @class = "form-control" } })<br/>
-                @Html.ValidationMessageFor(model => model.AssignedToName, "", new { @class = "text-danger" })<br/>
-            &lt;/div><br/>
-        &lt;/div><br/>
+        &lt;div class="form-group"><span>&#13;</span>
+            @Html.LabelFor(model => model.AssignedToName, htmlAttributes: new { @class = "control-label col-md-2" })<span>&#13;</span>
+            &lt;div class="col-md-10"><span>&#13;</span>
+                @Html.EditorFor(model => model.AssignedToName, new { htmlAttributes = new { @class = "form-control" } })<span>&#13;</span>
+                @Html.ValidationMessageFor(model => model.AssignedToName, "", new { @class = "text-danger" })<span>&#13;</span>
+            &lt;/div><span>&#13;</span>
+        &lt;/div><span>&#13;</span>
 
-        &lt;div class="form-group"><br/>
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })<br/>
-            &lt;div class="col-md-10"><br/>
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })<br/>
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })<br/>
-            &lt;/div><br/>
-        &lt;/div><br/>
+        &lt;div class="form-group"><span>&#13;</span>
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })<span>&#13;</span>
+            &lt;div class="col-md-10"><span>&#13;</span>
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })<span>&#13;</span>
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })<span>&#13;</span>
+            &lt;/div><span>&#13;</span>
+        &lt;/div><span>&#13;</span>
 
-        &lt;div class="form-group"><br/>
-            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })<br/>
-            &lt;div class="col-md-10"><br/>
-                @Html.EnumDropDownListFor(model => model.Status, htmlAttributes: new { @class = "form-control" })<br/>
-                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })<br/>
-            &lt;/div><br/>
-        &lt;/div><br/>
+        &lt;div class="form-group"><span>&#13;</span>
+            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })<span>&#13;</span>
+            &lt;div class="col-md-10"><span>&#13;</span>
+                @Html.EnumDropDownListFor(model => model.Status, htmlAttributes: new { @class = "form-control" })<span>&#13;</span>
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })<span>&#13;</span>
+            &lt;/div><span>&#13;</span>
+        &lt;/div><span>&#13;</span>
 
-        &lt;div class="form-group"><br/>
-            &lt;div class="col-md-offset-2 col-md-10"><br/>
-                &lt;input type="submit" value="Create" class="btn btn-default" <mark>id="submit-button"</mark> /><br/>
-            &lt;/div><br/>
-        &lt;/div><br/>
-    &lt;/div><br/>
+        &lt;div class="form-group"><span>&#13;</span>
+            &lt;div class="col-md-offset-2 col-md-10"><span>&#13;</span>
+                &lt;input type="submit" value="Create" class="btn btn-default" <mark>id="submit-button"</mark> /><span>&#13;</span>
+            &lt;/div><span>&#13;</span>
+        &lt;/div><span>&#13;</span>
+    &lt;/div><span>&#13;</span>
 
-    <mark>&lt;script><br/>
-            // People/Group Picker Code<br/>
-            var maxResultsPerPage = 14;<br/>
-            var input = document.getElementById("AssignedToName");<br/>
-            var token = "@ViewData["token"]";<br/>
-            var tenant = "@ViewData["tenant"]";<br/>
+    <mark>&lt;script><span>&#13;</span>
+            // People/Group Picker Code<span>&#13;</span>
+            var maxResultsPerPage = 14;<span>&#13;</span>
+            var input = document.getElementById("AssignedToName");<span>&#13;</span>
+            var token = "@ViewData["token"]";<span>&#13;</span>
+            var tenant = "@ViewData["tenant"]";<span>&#13;</span>
 
-            var picker = new AadPicker(maxResultsPerPage, input, token, tenant);<br/>
+            var picker = new AadPicker(maxResultsPerPage, input, token, tenant);<span>&#13;</span>
 
-            // Submit the selected user/group to be asssigned.<br/>
-            $("#submit-button").click({ picker: picker }, function () {<br/>
-                if (!picker.Selected())<br/>
-                    return;<br/>
-                $("#main-form").get()[0].elements["AssignedToID"].value = picker.Selected().objectId;<br/>
-            });<br/>
-    &lt;/script></mark>}<br/>
+            // Submit the selected user/group to be asssigned.<span>&#13;</span>
+            $("#submit-button").click({ picker: picker }, function () {<span>&#13;</span>
+                if (!picker.Selected())<span>&#13;</span>
+                    return;<span>&#13;</span>
+                $("#main-form").get()[0].elements["AssignedToID"].value = picker.Selected().objectId;<span>&#13;</span>
+            });<span>&#13;</span>
+    &lt;/script></mark>}<span>&#13;</span>
     
     	</pre>
    
