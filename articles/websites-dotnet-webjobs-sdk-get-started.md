@@ -121,7 +121,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 5. 在“解决方案资源管理器”中，请确保选择“ContosoAdsWeb”作为启动项目。
 
-## <a id="configurestorage"></a>将应用程序配置为使用你的存储帐户
+## <a id="configure-storage"></a>将应用程序配置为使用你的存储帐户
 
 1. 打开 ContosoAdsWeb 项目中的应用程序 *Web.config* 文件。
 
@@ -265,7 +265,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 ### 将 Web 应用配置为使用你的 Azure SQL 数据库和存储帐户。
 
-最佳安全做法是[避免将敏感信息（如连接字符串）放置在源代码存储库中存储的文件内](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets)。Azure 提供了一种方法来做到这一点：你可以在 Azure 环境中设置连接字符串和其他设置值，在 Azure 中运行应用程序时，ASP.NET 配置 API 将自动提取这些值。你可以使用**服务器资源管理器**、Azure 管理门户、Windows PowerShell 或跨平台命令行界面在 Azure 中设置这些值。有关详细信息，请参阅[应用程序字符串和连接字符串的工作原理](/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)。
+最佳安全做法是[避免将敏感信息（如连接字符串）放置在源代码存储库中存储的文件内](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets)。Azure 提供了一种方法来做到这一点：你可以在 Azure 环境中设置连接字符串和其他设置值，在 Azure 中运行应用程序时，ASP.NET 配置 API 将自动提取这些值。你可以使用**服务器资源管理器**、Azure 管理门户、Windows PowerShell 或跨平台命令行界面在 Azure 中设置这些值。有关详细信息，请参阅[应用程序字符串和连接字符串的工作原理](http://azure.microsoft.com/zh-cn/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)。
 
 在本部分中，你将使用**服务器资源管理器**在 Azure 中设置连接字符串值。
 
@@ -585,7 +585,7 @@ ContosoAdsContext 类指定 DbSet 集合中使用的 Ad 类，实体框架将存
 		<li>@Html.ActionLink("Free stuff", "Index", "Ad", new { category = (int)Category.FreeStuff }, null)</li>
 		<li>@Html.ActionLink("All", "Index", "Ad", null, null)</li>
 
-###<a name="ResolveBlobName"></a> ContosoAdsWeb - AdController.cs
+###<a name="resolveblobname"></a> ContosoAdsWeb - AdController.cs
 
 在 *AdController.cs* 文件中，构造函数调用 `InitializeStorage` 方法来创建 Azure 存储客户端库对象，它提供一个用于处理 Blob 和队列的 API。
 

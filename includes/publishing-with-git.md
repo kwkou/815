@@ -1,8 +1,8 @@
-[Azure Web 应用](/documentation/services/web-sites/)支持从源代码控件和存储库工具（例如，BitBucket、CodePlex、Dropbox、Git、GitHub、Mercurial 和 TFS）连续部署到 Web 应用。可以使用这些工具维护你 Web 应用的内容和代码，然后在需要时快速轻松地将更改推送到你的 Azure Web 应用。
+[Azure Web 应用](/documentation/services/web-sites/)支持从源代码控件和存储库工具（例如，Git、GitHub、Mercurial 和 TFS）连续部署到 Web 应用。可以使用这些工具维护你 Web 应用的内容和代码，然后在需要时快速轻松地将更改推送到你的 Azure Web 应用。
 
 在本文中，你将了解如何使用 Git 从本地计算机直接发布到 Web 应用（在 Azure 中，此发布方法称为**本地 Git**）。你还将了解如何启用从存储库站点（例如，GitHub 或 Mercurial）进行的连续部署。
 
-> [AZURE.NOTE] 在使用[适用于 Mac 和 Linux 的 Azure 命令行工具](/documentation/articles/xplat-cli)创建 Web 应用时，将自动执行本文中所述的许多 Git 命令。
+> [AZURE.NOTE] 在使用[适用于 Mac 和 Linux 的 Azure 命令行工具](/documentation/articles/xplat-cli-install)创建 Web 应用时，将自动执行本文中所述的许多 Git 命令。
 
 此任务包括下列步骤：
 
@@ -12,7 +12,7 @@
 * [启用 Web 应用存储库](#Step4)
 * [部署项目](#Step5)
 	* [将本地文件推送到 Azure（本地 Git）](#Step6)
-	* [从存储库 Web 应用（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）部署文件](#Step7)
+	* [从存储库 Web 应用（例如，GitHub 或 Mercurial）部署文件](#Step7)
 * [故障排除](#Step8)
 
 ## <a id="Step1"></a>步骤 1：安装 Git
@@ -96,8 +96,8 @@
 ## <a id="Step5"></a>部署项目
 
 * [将本地文件推送到 Azure（本地 Git）](#Step6)
-* [从存储库 Web 应用（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）部署文件](#Step7)
-* [从 BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial 部署 Visual Studio 解决方案](#Step75)
+* [从存储库 Web 应用（例如，GitHub 或 Mercurial）部署文件](#Step7)
+* [从 GitHub 或 Mercurial 部署 Visual Studio 解决方案](#Step75)
 
 <a id="Step6"></a>按照以下步骤，使用本地 Git 将你的 Web 应用发布到 Azure。
 
@@ -148,13 +148,13 @@
 
 	完成 **push** 命令后，请刷新浏览器（你可能必须按 Ctrl+F5 才能正确刷新浏览器），你会发现该页面的内容此时将反映最新提交的更改。
 
-### <a id="Step7"></a>从存储库站点（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）部署文件
+### <a id="Step7"></a>从存储库站点（例如，GitHub 或 Mercurial）部署文件
 
-通过使用“本地 Git”将本地文件推送到 Azure，可以手动将更新从本地项目推送到 Azure 中的 Web 应用，而从 BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial 进行部署会生成一个连续部署过程，在此过程中，Azure 会从项目中拉入最新的更新。
+通过使用“本地 Git”将本地文件推送到 Azure，可以手动将更新从本地项目推送到 Azure 中的 Web 应用，而从 GitHub 或 Mercurial 进行部署会生成一个连续部署过程，在此过程中，Azure 会从项目中拉入最新的更新。
 
 这两种方法都会将项目部署到 Web 应用，如果你有多个人员在处理同一个项目并希望确保始终发布最新版本（不管是谁执行了最新更新），则连续部署会很有用。此外，如果你将上述工具之一用作应用程序的中央存储库，则连续部署也很有用。
 
-从 GitHub、CodePlex 或 BitBucket 部署文件需要你已将本地项目发布到这些服务之一。有关将项目发布到这些服务的详细信息，请参阅[创建存储库 (GitHub)]、[使用 Git 和 CodePlex]、[创建存储库 (BitBucket)]、[使用 Dropbox 共享 Git 存储库]或[快速入门 - Mercurial]。
+从 GitHub 部署文件需要你已将本地项目发布到这些服务之一。有关将项目发布到这些服务的详细信息，请参阅[创建存储库 (GitHub)] 或[快速入门 - Mercurial]。
 
 1. 首先，将您的 Web 应用文件放到将用于连续部署的选定存储库中。
 
@@ -172,7 +172,7 @@
 
 8. 若要验证连续部署是否正在进行，请更改你的项目，然后将所做的更新推送到已与此 Web 应用关联的存储库。推送到存储库完成后，你的 Web 应用应很快更新以反映更改。可以在 Web 应用的“部署”页面上验证是否已拉入更新。
 
-### <a id="Step75"></a>从 BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial 部署 Visual Studio 解决方案
+### <a id="Step75"></a>从 GitHub 或 Mercurial 部署 Visual Studio 解决方案
 
 将 Visual Studio 解决方案推送到 Azure Web 应用中的 Web 应用就像推送简单的 index.html 文件一样容易。 Web 应用部署过程简化了所有细节，包括还原 NuGet 依赖项和构建应用程序二进制文件。可以按照仅在你的 Git 存储库中维护代码的源控制最佳实践操作，并让 Web 应用部署处理其余工作。
 
@@ -284,7 +284,7 @@
 [Git website]: http://git-scm.com
 [安装 Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
 [如何使用适用于 Azure 的 PowerShell]: /documentation/articles/powershell-install-configure
-[如何使用针对 Mac 和 Linux 的 Azure 命令行工具]: /documentation/articles/xplat-cli
+[如何使用针对 Mac 和 Linux 的 Azure 命令行工具]: /documentation/articles/xplat-cli-install
 [Git 文档]: http://git-scm.com/documentation
 
 [portal-select-website]: ./media/publishing-with-git/git-select-website.png

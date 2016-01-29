@@ -8,13 +8,9 @@
 
 1. 在你的浏览器中，打开 [Azure 管理门户](https://manage.windowsazure.cn)。
 
-2. 在“Web Apps”选项卡中，单击 Web 应用的名称，选择“设置”，然后选择“自定义域和 SSL”
+2. 在“Web Apps”中，单击 Web 应用的名称，选择“配置”。
 
-	![](./media/custom-dns-web-site/dncmntask-cname-6.png)
-
-3. 在“自定义域和 SSL”边栏选项卡中，单击“自带外部域”。
-
-	![](./media/custom-dns-web-site/dncmntask-cname-7.png)
+3. 在“域名”下，点击“管理域名”
 
 4. 使用“域名”文本框输入要与此 Web 应用相关联的流量管理器域名 (contoso.trafficmanager.cn)。
 

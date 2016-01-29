@@ -63,7 +63,7 @@
 
 - 添加了对 DreamSpark 帐户的支持
 - 对 Azure 工具做了全面的更改，以支持新的 Azure 资源管理 API
-- 在[云资源管理器](/documentation/articles/azure-sdk-dot-net-release-notes-2_7#cloud_explorer)中添加了对 Azure Web 应用的支持
+- 在[云资源管理器](#cloud_explorer)中添加了对 Azure Web 应用的支持
 
 ####已知问题
 
@@ -137,7 +137,7 @@ LightSwitch 项目与此版本不兼容。下一个 SDK 版本将解决此问题
 ##另请参阅
 [Azure SDK 2.7.1 通告文章](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/)
 
-[Azure SDK 2.7 通告文章](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)
+[Azure SDK 2.7 通告文章](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)
 
 [Azure SDK for .NET 和 API 的支持和停用信息](https://msdn.microsoft.com/zh-cn/library/azure/dn479282.aspx/)
 

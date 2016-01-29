@@ -36,6 +36,7 @@
 
 1. 登录到 [Azure 管理门户][management-portal]。
 2. 单击该门户左下部的“新建”图标。
+
 	![创建新的 Azure Web 应用][new- Website]
 
 3. 单击“ Web 应用”，然后单击“自定义创建”。

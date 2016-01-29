@@ -1,6 +1,6 @@
 <properties
-	pageTitle="使用 Azure 网站进行灵便软件开发"
-	description="学习如何使用支持灵便软件开发的方式，通过 Azure 网站创建高缩放性的复杂应用程序。"
+	pageTitle="使用 Azure Web 应用进行灵便软件开发"
+	description="学习如何使用支持灵便软件开发的方式，通过 Azure Web 应用创建高缩放性的复杂应用程序。"
 	services="app-service"
 	documentationCenter=""
 	authors="cephalin"
@@ -13,11 +13,11 @@
 	wacn.date="01/29/2016"/>
 
 
-# 使用 Azure 网站进行灵便软件开发 #
+# 使用 Azure Web 应用进行灵便软件开发 #
 
-在本教程中，你将学习如何使用支持[灵便软件开发](https://en.wikipedia.org/wiki/Agile_software_development)的方式，通过 [Azure 网站](/home/features/app-service/)创建高缩放性的复杂应用程序。
+在本教程中，你将学习如何使用支持[灵便软件开发](https://en.wikipedia.org/wiki/Agile_software_development)的方式，通过 [Azure Web 应用](/home/features/web-site/)创建高缩放性的复杂应用程序。
 
-技术流程限制通常会妨碍成功的实施灵便方法。如果在 [Azure 资源管理器](/documentation/articles/resource-group-overview)中合理地结合了部署的协调与管理，则具有[连续发布](/documentation/articles/web-sites-publish-source-control)、[过渡环境](/documentation/articles/web-sites-staged-publishing)（槽）和[监视](/documentation/articles/web-sites-monitor)等功能的 Azure 网站是非常适合采用灵便软件开发的开发人员的解决方案。
+技术流程限制通常会妨碍成功的实施灵便方法。如果在 [Azure 资源管理器](/documentation/articles/resource-group-overview)中合理地结合了部署的协调与管理，则具有[连续发布](/documentation/articles/web-sites-publish-source-control)、[过渡环境](/documentation/articles/web-sites-staged-publishing)（槽）和[监视](/documentation/articles/web-sites-monitor)等功能的 Azure Web 应用是非常适合采用灵便软件开发的开发人员的解决方案。
 
 下表是灵便开发的相关要求以及 Azure 服务如何启用它们的简短列表。
 
@@ -28,15 +28,15 @@
 
 ## 执行的操作 ##
 
-你将逐步执行典型的“开发-测试-过渡-生产”工作流，以将新更改发布到 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 示例应用程序（包含两个[网站](/home/features/web-site/)：一个是前端 (FE)，另一个是 Web API 后端 (BE)）和 [SQL 数据库](/home/features/sql-database/)。将按如下所示使用部署体系结构：
+你将逐步执行典型的“开发-测试-过渡-生产”工作流，以将新更改发布到 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 示例应用程序（包含两个[ Web 应用](/home/features/web-site/)：一个是前端 (FE)，另一个是 Web API 后端 (BE)）和 [SQL 数据库](/home/features/sql-database/)。将按如下所示使用部署体系结构：
 
 ![](./media/app-service-agile-software-development/what-1-architecture.png)
 
 将图片放入文字：
 
--	部署体系结构分成三个不同的环境（或 Azure 中的[资源组](/documentation/articles/resource-group-overview)），各有其自身的 [App Service](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview) 计划、[缩放](/documentation/articles/web-sites-scale)设置和 SQL 数据库。 
+-	部署体系结构分成三个不同的环境（或 Azure 中的[资源组](/documentation/articles/resource-group-overview)），各有其自身的 App Service 计划、[缩放](/documentation/articles/web-sites-scale)设置和 SQL 数据库。 
 -	你可以单独管理每个环境。它们甚至可以存在于不同的订阅中。
--	过渡和生产环境实现为相同网站应用的两个槽。
+-	过渡和生产环境实现为相同 Web 应用应用的两个槽。
 -	在过渡槽（包含生产数据）上验证主分支的提交时，已验证的过渡应用将交换到生产槽，且[不会造成停机](/documentation/articles/web-sites-staged-publishing)。
 
 生产和过渡环境由 [*&lt;repository\_root>*/ARMTemplates/ProdandStage.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/ProdAndStage.json) 中的模板定义。
@@ -61,12 +61,12 @@
 	> 3. 将 `New-AzureResourceGroup` 解构为 `New-AzureRmResourceGroup` 和 `New-AzureRmResourceGroupDeployment`，例如 `New-AzureRmResourceGroup -Name $RG_Name -Location $RG_Location` 和 `New-AzureRmResourceGroupDeployment -Verbose -name $RG_Name -ResourceGroupName $RG_Name -TemplateFile ".\$TemplateFile" -TemplateParameterFile ".\temp.json" -ErrorAction Stop`
 
 -	基本了解以下知识：
-	-	[Azure 资源管理器](/documentation/articles/resource-group-overview)模板部署（另请参阅[通过可预测的方式在 Azure 中部署复杂应用程序](/documentation/articles/app-service-deploy-complex-application-predictably)）
+	-	[Azure 资源管理器](/documentation/articles/resource-group-overview)模板部署
 	-	[Git](http://git-scm.com/documentation)
 	-	[PowerShell](https://technet.microsoft.com/zh-cn/library/bb978526.aspx)
 
 > [AZURE.NOTE] 完成本教程需要有一个 Azure 帐户：
-> + 你可以[建立一个试用 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - 获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如网站）。
+> + 你可以[建立一个试用 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - 获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web 应用）。
 
 
 ## 设置生产环境 ##
@@ -115,7 +115,7 @@
  
 5.	登录到 [Azure 管理门户](https://manage.windowsazure.cn)并查看创建的内容。
 
-	你应该可以看到两个网站，其中一个网站的名称包含 `Api` 后缀。你还会看到 SQL 数据库和服务器、App Service 计划，以及网站的过渡槽。浏览不同的资源，并将它们与 *&lt;repository\_root>*\\ARMTemplates\\ProdAndStage.json 进行比较，以查看它们在模板中的配置方式。
+	你应该可以看到两个 Web 应用，其中一个 Web 应用的名称包含 `Api` 后缀。你还会看到 SQL 数据库和服务器、App Service 计划，以及 Web 应用的过渡槽。浏览不同的资源，并将它们与 *&lt;repository\_root>*\\ARMTemplates\\ProdAndStage.json 进行比较，以查看它们在模板中的配置方式。
 
 
 你现在已经设置了生产环境。接下来，将要开始更新应用程序。
@@ -167,7 +167,7 @@
 
 ![](./media/app-service-agile-software-development/test-1-github-view.png)
 
-[Azure 管理门户](https://manage.windowsazure.cn)中应该有六个网站（一共三组，每组两个网站）：
+[Azure 管理门户](https://manage.windowsazure.cn)中应该有六个 Web 应用（一共三组，每组两个 Web 应用）：
  
 >[AZURE.NOTE] 请注意，ProdandStage.json 将生产环境指定为使用**标准**定价层，这适合生产应用程序的缩放性。
 
@@ -189,7 +189,7 @@
 
 就这么简单！
 
-转到测试环境的网站边栏选项卡，以查看新提交是否已推送到测试环境（合并到 NewUpdate 分支）。然后，单击“浏览”查看样式更改是否在 Azure 中实时运行。
+转到测试环境的 Web 应用边栏选项卡，以查看新提交是否已推送到测试环境（合并到 NewUpdate 分支）。然后，单击“浏览”查看样式更改是否在 Azure 中实时运行。
 
 ## 将更新部署到生产环境 ##
 
@@ -211,7 +211,7 @@
 	cd <repository_root>\ARMTemplates
 	.\swap.ps1 -Name ToDoApp<unique_string>master
 
-祝贺你！ 你已成功地将新的更新发布到生产网站。不仅如此，完成的方式也只是轻松地创建开发和测试环境，以及构建和测试每项提交。这些是灵便软件开发的重要构建块。
+祝贺你！ 你已成功地将新的更新发布到生产 Web 应用。不仅如此，完成的方式也只是轻松地创建开发和测试环境，以及构建和测试每项提交。这些是灵便软件开发的重要构建块。
 
 <a name="delete"></a>
 ## 删除开发和测试环境 ##
@@ -228,13 +228,12 @@
 
 ## 摘要 ##
 
-对于许多想要采用 Azure 作为其应用程序平台的公司而言，灵便软件开发是必不可少的。在本教程中，你已学习如何轻松创建和删除生产环境的确切副本或近似副本，即使对于复杂应用程序也是一样。你还学习了如何利用此功能创建开发过程，以便在 Azure 中构建和测试每项提交。本教程旨在演示如何最恰当地将 Azure 网站和 Azure 资源管理器配合使用，以创建提供灵便方法的 DevOps 解决方案。接下来，你可以通过执行高级 DevOps 技术（例如[在生产环境测试](/documentation/articles/app-service-web-test-in-production-get-start)），基于此方案生成项目。有关常用的生产中测试方案，请参阅 [Azure 网站中的即时部署（Beta 测试）](/documentation/articles/app-service-web-test-in-production-controlled-test-flight)。
+对于许多想要采用 Azure 作为其应用程序平台的公司而言，灵便软件开发是必不可少的。在本教程中，你已学习如何轻松创建和删除生产环境的确切副本或近似副本，即使对于复杂应用程序也是一样。你还学习了如何利用此功能创建开发过程，以便在 Azure 中构建和测试每项提交。本教程旨在演示如何最恰当地将 Azure Web 应用和 Azure 资源管理器配合使用，以创建提供灵便方法的 DevOps 解决方案。接下来，你可以通过执行高级 DevOps 技术，基于此方案生成项目。
 
 ## 更多资源 ##
 
--	[通过可预测的方式在 Azure 中部署复杂应用程序](/documentation/articles/app-service-deploy-complex-application-predictably)
 -	[灵便开发实践：有关现代化开发周期的提示和技巧](http://channel9.msdn.com/Events/Ignite/2015/BRK3707)
--	[使用资源管理器模板为 Azure 网站制定高级部署策略](http://channel9.msdn.com/Events/Build/2015/2-620)
+-	[使用资源管理器模板为 Azure Web 应用制定高级部署策略](http://channel9.msdn.com/Events/Build/2015/2-620)
 -	[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)
 -	[JSONLint – JSON 验证程序](http://jsonlint.com/)
 -	[ARMClient - 设置从 GitHub 到站点的发布](https://github.com/projectKudu/ARMClient/wiki/Setup-GitHub-publishing-to-Site)

@@ -119,7 +119,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 此 cmdlet 将返回流量管理器配置文件对象。
 
-## 更新流量管理器配置文件 [](#update-traffic-manager-profile)
+##<a name="update-traffic-manager-profile"></a> 更新流量管理器配置文件
 
 例如，修改流量管理器配置文件以添加或删除终结点或修改配置文件设置需要遵循三个步骤：
 
@@ -137,7 +137,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 	PS C:\> $profile.Ttl = 300
 	PS C:\> Set-AzureTrafficManagerProfile -TrafficManagerProfile $profile
 
-## 添加流量管理器终结点[](#adding-traffic-manager-endpoints)
+##<a name="adding-traffic-manager-endpoints"></a> 添加流量管理器终结点
 有三种类型的流量管理器终结点：
 1.Azure 终结点：表示在 Azure 中托管的服务。
 2.外部终结点：表示在 Azure 外部托管的服务。
@@ -186,7 +186,7 @@ Azure 终结点会引用在 Azure 中托管的其他服务。目前支持 3 类 
 
 指定外部终结点时：
  - 终结点域名必须使用“Target”参数指定
- - 如果使用了“性能”流量路由方法，则“EndpointLocation”为必填项，否则为可选项。该值必须是[有效的 Azure 区域名称](http://azure.microsoft.com/regions/)。
+ - 如果使用了“性能”流量路由方法，则“EndpointLocation”为必填项，否则为可选项。该值必须是有效的 Azure 区域名称。
  - 对于 Azure 终结点来说，“Weight”和“Priority”为可选项。
 
 #### 示例 1：使用 Add-AzureRmTrafficManagerEndpointConfig 和 Set-AzureRmTrafficManagerProfile 添加外部终结点
