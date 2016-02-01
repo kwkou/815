@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="web-sites" 
-	ms.date="08/03/2015"
+	ms.date="11/20/2015"
 	wacn.date="01/21/2016"/>
 
 #如何将 io.js 与 Azure Web 应用配合使用

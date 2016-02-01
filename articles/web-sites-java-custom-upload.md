@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="web-sites" 
-	ms.date="08/31/2015" 
+	ms.date="11/19/2015" 
 	wacn.date="01/21/2016"/>
 
 # 将自定义 Java Web 应用上载到 Azure

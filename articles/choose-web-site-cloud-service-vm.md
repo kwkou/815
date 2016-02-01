@@ -8,8 +8,8 @@
 	editor="jimbe"/>
 
 <tags
-	ms.service="virtual-machines"
-	ms.date="08/10/2015"
+	ms.service="app-service-web"
+	ms.date="11/19/2015"
 	wacn.date="01/21/2016"/>
 
 # Azure Web 应用、云服务和虚拟机比较

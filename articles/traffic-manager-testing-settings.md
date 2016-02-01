@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="11/12/2015"
+   ms.date="12/02/2015"
 	wacn.date="01/21/2016"/>
 
 # 测试流量管理器设置

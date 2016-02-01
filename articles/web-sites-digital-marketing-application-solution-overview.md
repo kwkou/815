@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="web-sites"
-	ms.date="09/29/2015"
+	ms.date="12/10/2015" 
 	wacn.date="01/21/2016"/>
 
 # 在 Azure Web 应用上创建数字市场营销活动
