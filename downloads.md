@@ -1,7 +1,7 @@
 <properties linkid="downloads" urlDisplayName="下载和安装 Azure SDK工具" pageTitle="Windows Azure 服务管理" metaKeywords="下载和安装 Azure SDK工具" description="下载和安装 Azure SDK、Azure PowerShell 和用于管理和部署的命令行工具" metaCanonical="" services="downloads" documentationCenter="downloads" title="下载和安装 Azure SDK工具" authors="ACom" solutions="" manager="" editor="Eric Chen" />
 <tags ms.service="downloads"
     ms.date=""
-    wacn.date="12/18/2015"
+    wacn.date="02/01/2016"
     />
 
 
@@ -105,7 +105,7 @@
     <ul>
       <li><a href="http://aka.ms/webpi-azps">安装</a></li>
 	  <li><a href="http://go.microsoft.com/?linkid=9811175&clcid=0x804">安装旧版</a></li>
-      <li><a href="/documentation/articles/install-configure-powershell/">文档</a></li>
+      <li><a href="/documentation/articles/powershell-install-configure/">文档</a></li>
       <li><a href="https://technet.microsoft.com/zh-cn/scriptcenter/bb410849.aspx">浏览脚本中心</a></li>
     </ul>
   </div>
@@ -115,7 +115,7 @@
       <li><a href="http://go.microsoft.com/?linkid=9828653&clcid=0x804">Windows 安装</a></li>
       <li><a href="http://go.microsoft.com/fwlink/?linkid=253471&clcid=0x804">Mac 安装</a></li>
       <li><a href="http://go.microsoft.com/fwlink/?linkid=253472&clcid=0x804">Linux 安装</a></li>
-      <li><a href="/documentation/articles/xplat-cli/">文档</a></li>
+      <li><a href="/documentation/articles/xplat-cli-install/">文档</a></li>
     </ul>
   </div>
   <div>
