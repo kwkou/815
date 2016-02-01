@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="web-sites"
-	ms.date="10/14/2015"
+	ms.date="12/10/2015" 
 	wacn.date="01/21/2016"/>
 
 # 在 Azure 中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用#

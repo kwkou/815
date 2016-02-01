@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="09/01/2015"
+	ms.date="11/20/2015"
 	wacn.date="01/21/2016"/>
 
 

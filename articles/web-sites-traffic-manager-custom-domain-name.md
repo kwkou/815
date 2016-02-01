@@ -2,7 +2,7 @@
 
 <tags 
 	ms.service="web-sites" 
-	ms.date="08/18/2015"
+	ms.date="11/18/2015" 
 	wacn.date="01/21/2016"/>
 #为使用流量管理器的 Azure Web 应用配置自定义域名
 

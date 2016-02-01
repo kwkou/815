@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="web-sites" 
-	ms.date="09/16/2015" 
+	ms.date="12/10/2015" 
 	wacn.date="01/21/2016"/>
 
 # 在 Azure 中缩放 Web 应用#

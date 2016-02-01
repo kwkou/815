@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="web-sites"
-	ms.date="08/11/2015"
+	ms.date="11/18/2015"
 	wacn.date="01/21/2016"/>
 
 #如何在 Azure 中调试 Node.js 应用程序

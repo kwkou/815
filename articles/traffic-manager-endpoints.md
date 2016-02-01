@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="11/12/2015"
+   ms.date="12/07/2015"
 	wacn.date="01/21/2016"/>
 
 # 添加、禁用、启用或删除终结点

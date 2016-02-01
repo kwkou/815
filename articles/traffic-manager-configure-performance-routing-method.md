@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="11/12/2015"
+   ms.date="12/09/2015"
 	wacn.date="01/21/2016"/>
 
 # 配置性能流量路由方法

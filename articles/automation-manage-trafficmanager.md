@@ -9,8 +9,8 @@
 
 <tags 
  ms.service="traffic-manager" 
- ms.date="08/12/2015" 
- wacn.date="10/03/2015"/>
+ ms.date="11/12/2015" 
+ wacn.date="01/29/2016"/>
 
 
 #使用 Azure 自动化管理 Azure 流量管理器
