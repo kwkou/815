@@ -10,9 +10,13 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="10/05/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/29/2016"/>
 
 # 向 Xamarin.Forms 应用添加推送通知
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 ##概述
@@ -45,7 +49,7 @@
 
 为了能够在新移动服务中存储应用程序数据，必须先创建一个新表。
 
-1. 在管理门户中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1. 在 **Azure 经典门户**中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2. 单击“数据”选项卡，然后单击“+创建”。
 
@@ -76,7 +80,7 @@
   
 1. 下载以下示例：[Xamarin.Forms Azure 推送通知初学者示例]。
 
-2. 在管理门户中单击“移动服务”，然后单击移动服务。单击“仪表板”选项卡，并记下“站点 URL”。然后单击“管理密钥”，并记下“应用程序密钥”。从应用代码访问移动服务时，你需要使用这些值。
+2. 在 [Azure 经典门户]中单击“移动服务”，然后单击该移动服务。单击“仪表板”选项卡，并记下“站点 URL”。然后单击“管理密钥”，并记下“应用程序密钥”。从应用代码访问移动服务时，你需要使用这些值。
 
 3. 在解决方案的 **ToDoAzure(Portable)** 项目中，打开 **Constants.cs** 文件，将 `ApplicationURL` 和 `ApplicationKey` 替换为你在上一步中获得的站点 URL 和应用程序密钥。
 
@@ -158,9 +162,9 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
     ![][9]
 
-    注意：默认情况下，下载的文件（开发证书）名为 <strong>aps_development.cer</strong>。
+    注意：默认情况下，下载的文件（开发证书）名为 <strong>aps\_development.cer</strong>。
 
-7. 双击下载的推送证书 **aps_development.cer**。
+7. 双击下载的推送证书 **aps\_development.cer**。
 
     将在 Keychain 中安装新证书，如下所示：
 
@@ -210,7 +214,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
     记下文件名和导出的证书的位置。
 
-2. 登录到 [Azure 管理门户]，单击“移动服务”，然后单击你的应用。
+2. 登录到 [Azure 经典门户]，单击“移动服务”，然后单击你的应用。
 
     ![][18]
 
@@ -313,9 +317,9 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 你的应用现已更新，可支持推送通知。
 
-### <a name="update-scripts"></a>在管理门户中更新已注册的插入脚本
+### <a name="update-scripts"></a>在 Azure 经典门户中更新已注册的插入脚本
 
-1. 在管理门户中，单击“数据”选项卡，然后单击“TodoItem”表。
+1. 在 Azure 经典门户中，单击“数据”选项卡，然后单击“TodoItem”表。
 
     ![][21]
 
@@ -383,9 +387,9 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 ###<a id="update-scripts"></a>更新已注册的插入脚本以发送通知
 
->[AZURE.NOTE]以下步骤说明了如何在 Azure 管理门户中，更新已注册到 TodoItem 表上的插入操作的脚本。你也可以在 Visual Studio 的“服务器资源管理器”的“Azure”节点中直接访问和编辑此移动服务脚本。
+>[AZURE.NOTE]以下步骤说明了如何在 Azure 经典门户中，更新已注册到 TodoItem 表上的插入操作的脚本。你也可以在 Visual Studio 的“服务器资源管理器”的“Azure”节点中直接访问和编辑此移动服务脚本。
 
-1. 在管理门户中，单击“数据”选项卡，然后单击“TodoItem”表。
+在 [Azure 经典门户]中，单击“数据”选项卡，然后单击“TodoItem”表。
 
 	![][21]
 
@@ -685,7 +689,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 	>[AZURE.NOTE]在本教程中，移动服务将向设备发送一条 toast 通知。而当你发送磁贴通知时，必须在通道上调用 **BindToShellTile** 方法。
 
-3. 在 App.xaml.cs 中 **Application_Launching** 事件处理程序的顶部，添加对新的 **AcquirePushChannel** 方法的以下调用：
+3. 在 App.xaml.cs 中 **Application\_Launching** 事件处理程序的顶部，添加对新的 **AcquirePushChannel** 方法的以下调用：
 
         AcquirePushChannel();
 
@@ -693,7 +697,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 4. 按 **F5** 键以运行应用。将显示包含注册密钥的弹出式对话框。
   
-5.	在解决方案资源管理器中，展开“属性”，打开 WMAppManifest.xml 文件，单击“功能”选项卡并确保选中 **ID___CAP___PUSH_NOTIFICATION** 功能。
+5.	在解决方案资源管理器中，展开“属性”，打开 WMAppManifest.xml 文件，单击“功能”选项卡并确保选中 **ID\_\_\_CAP\_\_\_PUSH\_NOTIFICATION** 功能。
 
    	![在 VS 中启用通知](./media/partner-xamarin-mobile-services-xamarin-forms-get-started-push/mobile-app-enable-push-wp8.png)
 
@@ -703,7 +707,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 最后，您必须更新注册到 TodoItem 表上的插入操作的脚本，以便发送通知。
 
-1. 在管理门户中，单击“数据”选项卡，然后单击“TodoItem”表。
+1. 在 [Azure 经典门户]中，单击“数据”选项卡，然后单击“TodoItem”表。
 
     ![][21]
 
@@ -832,7 +836,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 [Xamarin 设备设置]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
 
 
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
 [completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331303
@@ -842,4 +846,4 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 [已完成的 Xamarin.Forms Azure 推送通知示例]: https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithPushXamarinForms
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="如何在多个客户端上使用单个移动服务后端 | Azure 移动服务"
-	description="了解如何在面向不同移动平台的多个客户端应用程序上使用单个移动服务后端。"
+	description="了解如何在面向不同移动平台的多个客户端应用上使用单个移动服务后端。"
 	services="mobile-services"
 	documentationCenter=""
 	authors="ggailey777"
@@ -8,12 +8,15 @@
 	editor="mollybos"/>
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/16/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="12/07/2015"
+	wacn.date="01/29/2016"/>
 
 #  通过单个移动服务支持多个设备平台
  
-在移动应用程序开发中使用 Azure 移动服务的主要优势之一在于，能够使用单个后端服务来支持多个客户端平台上的应用程序。移动服务为所有主要设备平台提供了本机客户端库，让你更轻松地使用单个后端服务，通过跨平台开发人员工具开发应用程序。本主题讨论在使用单个移动服务后端时让应用程序运行在多个客户端平台上的注意事项。
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+在移动应用开发中使用 Azure 移动服务的主要优势之一在于，能够使用单个后端服务来支持多个客户端平台上的应用。移动服务为所有主要设备平台提供了本机客户端库，让你更轻松地使用单个后端服务，通过跨平台开发人员工具开发应用程序。本主题讨论在使用单个移动服务后端时让应用程序运行在多个客户端平台上的注意事项。
 
 ## <a id="push"></a>跨平台推送通知
 
@@ -30,7 +33,7 @@
 
 + **本机注册**<br/>本机注册专门针对特定于平台的推送通知服务。将通知发送到使用本机注册注册的设备时，你必须在移动服务中调用特定于平台的 API。若要将通知发送到多个平台上的设备，需要多个特定于平台的调用。   
   
-+ **模板注册**<br/>通知中心还支持特定于平台的模板注册。通过使用模板注册，你可以使用单个 API 调用将通知发送到任何已注册的平台上运行的应用程序。
++ **模板注册**<br/>通知中心还支持特定于平台的模板注册。通过使用模板注册，你可以使用单个 API 调用将通知发送到任何已注册的平台上运行的应用程序。有关详细信息，请参阅[向用户发送跨平台通知]。
 
 链接到特定于客户端的教程的以下各节中的表显示了如何实现从 .NET 和 JavaScript 后端移动服务推送通知。
 
@@ -141,29 +144,28 @@
 
 
 <!-- URLs -->
-
-[Azure 管理门户]: https://manage.windowsazure.cn
-[Azure 通知中心]: /documentation/articles/notification-hubs-overview
-[SSO Windows Store]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on
-[SSO Windows Phone]: /documentation/articles/mobile-services-windows-phone-single-sign-on
-[Tutorials and resources]: /documentation/services/mobile-services/
-[Get started with Notification Hubs]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
-[向用户发送跨平台通知]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-xplat-mobile-services
-[Get started with push Windows dotnet]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push-vs2012
-[Get started with push Windows js]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js-vs2012
-[Get started with push Windows Phone]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8
-[Get started with push iOS]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
-[Get started with push Android]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android
+[Azure Management portal]: https://manage.windowsazure.cn
+[Azure 通知中心]: /zh-cn/documentation/articles/notification-hubs-overview/
+[SSO Windows Store]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/
+[SSO Windows Phone]: /zh-cn/documentation/articles/mobile-services-windows-phone-single-sign-on/
+[Tutorials and resources]: /zh-cn/documentation/services/mobile-services/
+[Get started with Notification Hubs]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started
+[向用户发送跨平台通知]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-xplat-mobile-services/
+[Get started with push Windows dotnet]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push-vs2012/
+[Get started with push Windows js]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js-vs2012/
+[Get started with push Windows Phone]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
+[Get started with push iOS]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
+[Get started with push Android]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
 [Dynamic schema]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj193175.aspx
-[如何将 .NET 客户端用于移动服务]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[How to use a .NET client with Mobile Services]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
 [push 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554217.aspx
 [TemplatePushMessage]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.templatepushmessage.aspx
 [PhoneGap]: /documentation/articles/mobile-services-javascript-backend-phonegap-get-started
 [Sencha]: /documentation/articles/partner-sencha-mobile-services-get-started
 [Appcelerator]: /documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started
 [SendAsync]: http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mobile.service.notifications.pushclient.sendasync.aspx
-[Windows Phone 8 开发人员下一步要做什么]: http://msdn.microsoft.com/zh-cn/library/windows/apps/dn655121(v=vs.105).aspx
-[构建适用于所有 Windows 设备的通用 Windows 应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=509905
-[使用 MVVM 的 Azure 移动服务的通用 Windows 应用程序项目]: http://code.msdn.microsoft.com/Universal-Windows-app-for-db3564de
+[What's next for Windows Phone 8 developers]: http://msdn.microsoft.com/zh-cn/library/windows/apps/dn655121(v=vs.105).aspx
+[Building universal Windows apps for all Windows devices]: http://go.microsoft.com/fwlink/p/?LinkId=509905
+[Universal Windows app project for Azure Mobile Services using MVVM]: http://code.msdn.microsoft.com/Universal-Windows-app-for-db3564de
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

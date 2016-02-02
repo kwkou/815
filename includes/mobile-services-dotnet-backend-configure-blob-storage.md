@@ -32,11 +32,11 @@ TodoItem 类定义数据对象，并且您需要将相同属性添加到此类�
 
 现有 **TodoItemController** 已更新，以便在插入新的 TodoItem 时 **PostTodoItem** 方法生成 SAS。您还
 
-0. 如果你尚未创建存储帐户，请参阅[如何创建存储帐户]。
+0. 如果你尚未创建你的存储帐户，请参阅[如何创建存储帐户]。
 
-1. 在“管理门户”中，依次单击“存储”、存储帐户和“管理密钥”。
+1. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中，单击“存储”，单击存储帐户，然后单击“管理密钥”。
 
-2. 记下**存储帐户名称**和**访问密钥**。
+2. 记下“存储帐户名称”和“访问密钥”。
  
 3. 在你的移动服务中，单击“配置”选项卡、向下滚动到“应用设置”、输入你从存储帐户获取的下述每个项的“名称”和“值”对，然后单击“保存”。
 
@@ -45,7 +45,7 @@ TodoItem 类定义数据对象，并且您需要将相同属性添加到此类�
 
 	![](./media/mobile-services-configure-blob-storage/mobile-blob-storage-app-settings.png)
 
-	存储帐户访问密钥将会加密存储在应用设置中。您可在运行时从任何服务器脚本访问此密钥。有关详细信息，请参阅[应用设置]。
+	存储帐户访问密钥将会加密存储在应用设置中。你可在运行时从任何服务器脚本访问此密钥。有关详细信息，请参阅[应用设置]。
 
 4. 在 Visual Studio 中的 Solution Explorer 内，打开移动服务项目的 Web.config 文件并添加以下新应用设置，将占位符替换为您刚才在门户中设置的存储帐户名称和访问密钥：
 
@@ -54,13 +54,13 @@ TodoItem 类定义数据对象，并且您需要将相同属性添加到此类�
 
 	移动服务在本地计算机上运行时将使用这些存储的设置，这让你在发布代码之前对代码进行测试。在 Azure 中运行时，移动服务将改用门户中设置的应用设置值，并忽略这些项目设置。
 
-5.  在控制器文件夹中，打开 TodoItemController.cs 文件并添加以下 **using** 指令：
+7.  在控制器文件夹中，打开 TodoItemController.cs 文件并添加以下 **using** 指令：
 
 		using System;
 		using Microsoft.WindowsAzure.Storage.Auth;
 		using Microsoft.WindowsAzure.Storage.Blob;
   
-6.  将现有 **PostTodoItem** 方法替换为以下代码：
+8.  将现有 **PostTodoItem** 方法替换为以下代码：
 
         public async Task<IHttpActionResult> PostTodoItem(TodoItem item)
         {
@@ -132,4 +132,4 @@ TodoItem 类定义数据对象，并且您需要将相同属性添加到此类�
 [如何创建存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account
 [应用设置]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0118_2016-->

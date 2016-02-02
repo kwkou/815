@@ -11,11 +11,14 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="11/05/2015"
-	wacn.date="12/31/2015"/>
+	wacn.date="01/29/2016"/>
 
 
 # <a name="getting-started"></a>移动服务入门
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
@@ -64,7 +67,7 @@
 
 在本部分中，你将要创建一个连接到移动服务的新的 Android 应用程序。
 
-1. 在[Azure管理门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1. 在 [Azure 经典门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2. 在快速入门选项卡中，单击“选择平台”下的“Android”，然后展开“创建新的 Android 应用程序”。
  
@@ -124,6 +127,7 @@
 [Android Studio]: https://developer.android.com/sdk/index.html
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
-[Azure管理门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_1221_2015-->
+[Azure 经典门户]: https://manage.windowsazure.cn/
+
+<!---HONumber=Mooncake_0118_2016-->

@@ -10,10 +10,13 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="10/05/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/29/2016"/>
 
 # 从 Android 设备将图像上载到 Azure 存储空间
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
 本主题演示如何使 Android Azure 移动服务应用能够将图像上载到 Azure 存储空间。
@@ -46,7 +49,7 @@
 ## 代码示例
 [此处](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages)提供了此应用的已完成客户端源代码部分。若要运行此代码，你必须先完成本教程的移动服务后端部分。
 
-## 在管理门户中更新已注册的插入脚本
+## 在 Azure 经典门户中更新已注册的插入脚本
 
 [AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 
@@ -365,7 +368,7 @@
 
 4. 按“上载”。注意 ToDoItem 如何像往常一样已添加到列表中。
 
-5. 在 Windows Azure 门户中，转到你的存储帐户，按“容器”选项卡，然后在列表中按你的容器的名称。
+5. 在 Azure 经典门户中，转到你的存储帐户，按“容器”选项卡，然后在列表中按你的容器的名称。
 
 6. 此时将显示已上载的 blob 文件列表。选择其中一个，然后按“下载”。
 
@@ -407,11 +410,11 @@
 [Send push notifications to Windows Store apps using Service Bus from a .NET back-end]: http://go.microsoft.com/fwlink/?LinkId=277073&clcid=0x409
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure classic portal]: https://manage.windowsazure.cn/
 [How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866
 [移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [App settings]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

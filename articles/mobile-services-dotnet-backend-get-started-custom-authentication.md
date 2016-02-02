@@ -10,9 +10,14 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="09/28/2015" 
-	wacn.date="11/27/2015"/>
+	wacn.date="01/29/2016"/>
 
 # 自定义身份验证入门
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 ## 概述
 本主题说明如何通过颁发自己的移动服务身份验证令牌，对 Azure 移动服务 .NET 后端中的用户进行身份验证。在本教程中，你将使用应用程序的自定义用户名和密码向快速入门项目添加身份验证。
@@ -48,7 +53,9 @@
 
         public DbSet<Account> Accounts { get; set; }
 
-	>[AZURE.NOTE]本教程中的代码段使用 `todoContext` 作为上下文名称。你必须更新项目上下文的代码段。接下来，请设置安全功能以处理此数据。
+	>[AZURE.NOTE]本教程中的代码段使用 `todoContext` 作为上下文名称。你必须更新项目上下文的代码段。 
+        &nbsp;
+	接下来，请设置安全功能以处理此数据。
  
 5. 创建名为 `CustomLoginProviderUtils` 的类，然后添加以下 `using` 语句：
 
@@ -160,7 +167,8 @@
 
 ## 创建 LoginProvider
 
-**LoginProvider** 是移动服务身份验证管道中的基础构造之一。在本部分中，你将创建自己的 `CustomLoginProvider`。它并不会像内置提供程序一样插入管道中，但会为你提供方便的功能。如果你使用 Visual Studio 2013，则可能需要安装 `WindowsAzure.MobileServices.Backend.Security` Nuget 包才能添加对 `LoginProvider` 类的引用。
+**LoginProvider** 是移动服务身份验证管道中的基础构造之一。在本部分中，你将创建自己的 `CustomLoginProvider`。它并不会像内置提供程序一样插入管道中，但会为你提供方便的功能。  
+如果你使用 Visual Studio 2013，则可能需要安装 `WindowsAzure.MobileServices.Backend.Security` Nuget 包才能添加对 `LoginProvider` 类的引用。
 
 1. 创建派生自 **LoginProvider** 的新类 `CustomLoginProvider`，然后添加以下 `using` 语句：
 
@@ -413,4 +421,4 @@
 [ProviderCredentials]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.security.providercredentials.aspx
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

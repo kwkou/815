@@ -10,7 +10,7 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="09/28/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/29/2016"/>
 
 #  向 iOS 应用程序和 JavaScript 后端添加推送通知
 
@@ -29,7 +29,7 @@
 
 ##  <a id="update-scripts"></a>更新后端脚本以发送推送通知
 
-* 在管理门户中，单击“数据”选项卡，然后单击“TodoItem”表。在 **TodoItem** 中，单击“脚本”选项卡，然后选择“插入”。将显示当 **TodoItem** 表中发生插入时所调用的函数。
+* 在 [Azure 经典门户]中，单击“数据”选项卡，然后单击“TodoItem”。在 **TodoItem** 中，单击“脚本”选项卡，然后选择“插入”。将显示当 **TodoItem** 表中发生插入时所调用的函数。
 
 * 将 insert 函数替换为以下代码，然后单击“保存”。这将会注册一个新的插入脚本，该脚本使用 [apns 对象]将推送通知（插入的文本）发送到插入请求中提供的设备。此脚本将延迟发送通知，使你有足够的时间关闭应用程序以接收推送通知。
 
@@ -102,7 +102,7 @@
 [Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
 [移动服务入门]: /documentation/articles/mobile-services-ios-get-started
 [Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [apns 对象]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
 [Mobile Services server script reference]: /zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts/
@@ -113,4 +113,4 @@
 [Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news
 [Mobile Services Objective-C how-to conceptual reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

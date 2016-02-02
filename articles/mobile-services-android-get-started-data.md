@@ -10,9 +10,11 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="10/05/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/29/2016"/>
 
 # 将移动服务添加到现有 Android 应用（JavaScript 后端）
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
 
 ## 摘要
 
@@ -45,7 +47,7 @@
 
 [AZURE.INCLUDE [mobile-services-android-run-sample-code](../includes/mobile-services-android-run-sample-code.md)]
 
-## 在管理门户中创建新的移动服务
+## 在 Azure 经典门户中创建新的移动服务
 
 [AZURE.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
 
@@ -70,7 +72,7 @@
 
    	此时会将一个新项作为 insert 发送到移动服务。
 
-3. 在[Azure 管理门户]中单击“移动服务”，然后单击你的移动服务。
+3. 在 [Azure 经典门户]中，单击“移动服务”，然后单击你的移动服务。
 
 4. 单击“数据”选项卡，然后单击“浏览”。
 
@@ -132,10 +134,9 @@
 [身份验证入门]: /documentation/articles/mobile-services-android-get-started-users
 [推送通知入门]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [Azure 移动服务 Android SDK]: http://aka.ms/Iajk6q
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkID=282122
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

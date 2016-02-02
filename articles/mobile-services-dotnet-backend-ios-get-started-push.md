@@ -10,11 +10,14 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="09/28/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/29/2016"/>
 
 
 # 向 iOS 应用和 .NET 后端添加推送通知
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 本教程说明将推送通知发送到[快速入门项目](/documentation/articles/mobile-services-dotnet-backend-ios-get-started)，这样，每次插入一条记录时，你的移动服务就会发送一条推送通知。你必须先完成[移动服务入门]教程。
@@ -124,4 +127,4 @@
 [Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-breaking-news
 [Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

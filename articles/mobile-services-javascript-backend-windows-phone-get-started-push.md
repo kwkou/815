@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/14/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="12/07/2015" 
+	wacn.date="01/29/2016"/>
 
 
 #  向移动服务应用程序添加推送通知
@@ -62,7 +62,7 @@
 
 	>[AZURE.NOTE]在本教程中，移动服务将向设备发送一条 toast 通知。而当你发送磁贴通知时，必须在通道上调用 **BindToShellTile** 方法。
 
-3. 在 App.xaml.cs 中 **Application_Launching** 事件处理程序的顶部，添加对新的 **AcquirePushChannel** 方法的以下调用：
+3. 在 App.xaml.cs 中 **Application\_Launching** 事件处理程序的顶部，添加对新的 **AcquirePushChannel** 方法的以下调用：
 
         AcquirePushChannel();
 
@@ -70,7 +70,7 @@
 
 5. 按 **F5** 键以运行应用。将显示包含注册密钥的弹出式对话框。
   
-5.	在解决方案资源管理器中，展开“属性”，打开 WMAppManifest.xml 文件，单击“功能”选项卡并确保选中 **ID___CAP___PUSH_NOTIFICATION** 功能。
+5. 在解决方案资源管理器中，展开“属性”，打开 WMAppManifest.xml 文件，单击“功能”选项卡并确保选中 **ID\_\_\_CAP\_\_\_PUSH\_NOTIFICATION** 功能。
 
    	![在 VS 中启用通知](./media/mobile-services-javascript-backend-windows-phone-get-started-push/mobile-app-enable-push-wp8.png)
 
@@ -182,4 +182,4 @@
 
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

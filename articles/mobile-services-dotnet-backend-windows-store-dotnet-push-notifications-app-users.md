@@ -10,10 +10,13 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="10/05/2015" 
-	wacn.date="11/27/2015"/>
+	wacn.date="01/29/2016"/>
 
 # 向经过身份验证的用户发送推送通知
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-push-users](../includes/mobile-services-selector-push-users.md)]
 
 ##概述
@@ -26,9 +29,11 @@
 
 在开始本教程之前，必须已完成以下移动服务教程：
 
-+ [身份验证入门]向 TodoList 示例应用添加登录要求。
++ [身份验证入门]  
+向 TodoList 示例应用添加登录要求。
 
-+ [推送通知入门]配置 TodoList 示例应用，以使用通知中心发送推送通知。
++ [推送通知入门]  
+配置 TodoList 示例应用，以使用通知中心发送推送通知。
 
 完成这两篇教程后，你可以防止未经身份验证的用户从你的移动服务注册推送通知。
 
@@ -46,16 +51,17 @@
 
 
 <!-- Anchors. -->
-[更新服务以要求对注册进行身份验证]: #register
-[更新应用程序以要求在注册之前登录]: #update-app
-[测试应用程序]: #test
-[后续步骤]:#next-steps
+[Updating the service to require authentication for registration]: #register
+[Updating the app to log in before registration]: #update-app
+[Testing the app]: #test
+[Next Steps]: #next-steps
 
 
 <!-- URLs. -->
 [身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
 [推送通知入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
-[Azure Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=82-->
+[Azure classic portal]: https://manage.windowsazure.cn/
+
+<!---HONumber=Mooncake_0118_2016-->

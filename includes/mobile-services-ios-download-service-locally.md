@@ -1,4 +1,4 @@
-1. 在 [Azure 管理门户]中，单击新建的移动服务或者其云图标选项卡，以转到概述页。
+1. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中，单击新建的移动服务或者其云图标选项卡，以转到概述页。
 
     ![](./media/mobile-services-ios-download-service-locally/mobile-portal-quickstart-ios.png)
 
@@ -24,6 +24,6 @@
 
 
 <!-- URLs. -->
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

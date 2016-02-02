@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/21/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="11/30/2015" 
+	wacn.date="01/29/2016"/>
 
 #  向移动服务应用程序添加身份验证 
 
@@ -64,7 +64,7 @@
 
 	这样，你便可以从该页登录到移动服务。
 
-2. 在 app.js 文件中，找到位于文件最底部的、调用 refreshTodoItems 函数的代码行，并将它替换为以下代码：
+2. 在 page.js 文件中，找到位于文件最底部的、调用 refreshTodoItems 函数的代码行，并将它替换为以下代码：
 	
 		function refreshAuthDisplay() {
 			var isLoggedIn = client.currentUser !== null;
@@ -100,8 +100,8 @@
     这将会创建一组用于处理身份验证过程的函数。将使用 Facebook 登录对用户进行身份验证。如果使用的标识提供者不是 Facebook，请将传递给上述 **login** 方法的值更改为下列其中一项：*microsoftaccount*、*facebook*、*twitter*、*google* 或 *aad*。
 
 	>[AZURE.IMPORTANT]在 PhoneGap 应用程序中，还必须向项目中添加以下插件：
-	<ul><li><code>phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git</code></li> 
-	<li><code>phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git</code></li></ul>
+	><ul><li><code>phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git</code></li>
+	><li><code>phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git</code></li></ul>
 
 9. 返回到运行应用程序的浏览器并刷新页。
 
@@ -131,8 +131,9 @@
 <!-- URLs. -->
 [移动服务入门]: /documentation/articles/mobile-services-html-get-started
 [使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
-[Azure Management Portal]: https://manage.windowsazure.cn/
+
+[Azure classic portal]: https://manage.windowsazure.cn/
 [移动服务 HTML/JavaScript 操作方法概念性参考]: /documentation/articles/mobile-services-html-how-to-use-client-library
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

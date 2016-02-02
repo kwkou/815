@@ -10,10 +10,13 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="10/01/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/29/2016"/>
 
 # 向现有 Azure 移动服务应用程序添加身份验证
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 在本教程中，你将要使用支持的标识提供程序向快速入门项目添加身份验证。本教程是在你必须先完成的[移动服务快速入门教程]的基础之上制作的。
@@ -60,4 +63,4 @@
 [Mobile Services .NET How-to Conceptual Reference]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

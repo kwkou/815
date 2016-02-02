@@ -11,7 +11,7 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="10/01/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/29/2016"/>
 
 #  向经过身份验证的用户发送推送通知
 
@@ -50,7 +50,7 @@
 
 [AZURE.INCLUDE [mobile-services-ios-push-notifications-app-users-login](../includes/mobile-services-ios-push-notifications-app-users-login.md)]
 
-## <a name="test"></a>测试应用程序
+##<a name="test"></a>测试应用
 
 [AZURE.INCLUDE [mobile-services-ios-push-notifications-app-users-test-app](../includes/mobile-services-ios-push-notifications-app-users-test-app.md)]
 
@@ -68,7 +68,7 @@
 [身份验证入门]: /documentation/articles/mobile-services-ios-get-started-users
 [推送通知入门]: /documentation/articles/mobile-services-javascript-backend-ios-get-started-push
 
-[Azure 门户]: https://manage.windowsazure.cn/
+[Azure classic portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-ios-how-to-use-client-library
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

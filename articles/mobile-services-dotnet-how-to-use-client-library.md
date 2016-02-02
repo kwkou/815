@@ -10,10 +10,13 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="11/02/2015" 
-	wacn.date="12/31/2015"/>
+	wacn.date="01/29/2016"/>
 
 # 如何使用 Azure 移动服务的托管客户端库
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
 ##概述 
@@ -54,7 +57,7 @@
 		"AppKey"
 	);
 
-在上面的代码中，请将 `AppUrl` 和 `AppKey` 依次替换为移动服务 URL 和应用程序密钥。在 Azure 管理门户中选择你的移动服务，然后单击“仪表板”即可获取这两个值。
+在上面的代码中，请将 `AppUrl` 和 `AppKey` 依次替换为移动服务 URL 和应用程序密钥。在 Azure 经典门户中选择你的移动服务，然后单击“仪表板”即可获取这两个值。
 
 >[AZURE.IMPORTANT]应用程序密钥用于针对移动服务筛选出随机请求，将随应用程序一起分发。由于此密钥未加密，因此不能被认为是安全的。为确保安全访问你的移动服务数据，你必须改为在允许用户访问前对用户进行身份验证。有关详细信息，请参阅[如何：对用户进行身份验证](#authentication)。
 
@@ -306,6 +309,18 @@ Xamarin 应用需要一些额外的代码才能将 iOS 或 Android 应用上运�
 
 >[AZURE.NOTE]当你需要发送通知给特定的已注册用户时，必须在注册之前要求身份验证，然后验证是否已授权该用户注册特定标记。例如，必须检查以确保用户注册的标记不是其他人的用户 ID。有关详细信息，请参阅[向经过身份验证的用户发送推送通知](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users)。
 
+##<a name="pull-notifications"></a>如何：在 Windows 应用中使用定期通知
+
+Windows 支持使用定期通知（提取通知）更新动态磁贴。启用定期通知后，Windows 将定期访问自定义 API 终结点以更新开始菜单上的应用磁贴。若要使用定期通知，必须[定义一个自定义 API](mobile-services-javascript-backend-define-custom-api.md)，以便使用磁贴特定的格式返回 XML 数据。有关详细信息，请参阅[定期通知](https://msdn.microsoft.com/library/windows/apps/hh761461.aspx)。
+
+以下示例将启用定期通知，以便从 *tiles* 自定义终结点请求磁贴模板数据：
+
+    TileUpdateManager.CreateTileUpdaterForApplication().StartPeriodicUpdate(
+        new System.Uri(MobileService.ApplicationUri, "/api/tiles"),
+        PeriodicUpdateRecurrence.Hour
+    );
+
+选择与你的数据更新频率最匹配的 [PeriodicUpdateRecurrance](https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.notifications.periodicupdaterecurrence.aspx) 值。
 
 ##<a name="optimisticconcurrency"></a>如何：使用乐观并发
 
@@ -748,4 +763,4 @@ Xamarin 应用需要一些额外的代码才能将 iOS 或 Android 应用上运�
 [Azure 移动服务客户端 SDK 中的自定义 API]: http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx
 [InvokeApiAsync]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

@@ -10,12 +10,14 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="11/04/2015"
-	wacn.date="12/31/2015"/>
+	wacn.date="01/29/2016"/>
 
 # <a name="getting-started"></a>移动服务入门
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
 &nbsp;
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]&nbsp;
 
 >[AZURE.TIP]如果你不熟悉如何使用 Windows Azure 进行移动开发，请[开始使用 Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-ios-get-started-preview) 而不是 Azure 移动服务；Mobile Apps 提供[更多的优势](/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services-preview)。
 
@@ -102,4 +104,4 @@
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [JavaScript 后端版本]: /documentation/articles/mobile-services-ios-get-started
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

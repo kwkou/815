@@ -9,11 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/18/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="11/30/2015"
+	wacn.date="01/29/2016"/>
 
 # 向移动服务应用程序添加身份验证
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 本主题说明如何通过应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
@@ -48,7 +51,7 @@
 
 ## <a name="add-authentication"></a>向应用程序添加身份验证
 
-1. 打开 **TodoService** 项目文件，并添加以下变量
+1. 打开 **QSToDoService** 项目文件并添加以下变量
 
 		// Mobile Service logged in user
 		private MobileServiceUser user; 
@@ -101,9 +104,10 @@
             {
                 // TODO:: show error
                 return;
-            } 
-                
-            RefreshAsync();
+            }
+
+
+            await RefreshAsync();
         }
 6. 从 **TodoListViewController.ViewDidLoad** 中删除对 **RefreshAsync** 的原始调用。
 		
@@ -131,7 +135,7 @@
 [14]: ./media/partner-xamarin-mobile-services-ios-get-started-users/mobile-portal-data-tables.png
 [15]: ./media/partner-xamarin-mobile-services-ios-get-started-users/mobile-portal-change-table-perms.png
 
-
+<!-- URLs. TODO:: update completed example project link with project download -->
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
@@ -142,8 +146,8 @@
 [Get started with push notifications]: /develop/mobile/tutorials/-get-started-with-push-xamarin-ios
 [使用脚本为用户授权]: /develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure classic Portal]: https://manage.windowsazure.cn/
 [已完成的示例项目]: http://go.microsoft.com/fwlink/p/?LinkId=331328
 [Xamarin.iOS]: http://xamarin.com/download
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->
