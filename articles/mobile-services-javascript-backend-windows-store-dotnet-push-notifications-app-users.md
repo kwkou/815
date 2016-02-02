@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="11/11/2015" 
-	wacn.date="12/31/2015"/>
+	wacn.date="01/29/2016"/>
 
 
 # 向经过身份验证的用户发送推送通知
@@ -92,6 +92,6 @@
 [向应用程序添加身份验证]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
 [向应用程序添加推送通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
 
-[Azure 门户]: https://manage.windowsazure.cn/
+[Azure classic portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

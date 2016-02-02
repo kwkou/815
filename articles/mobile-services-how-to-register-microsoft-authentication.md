@@ -9,11 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/15/2015" 
-	wacn.date="12/31/2015"/>
+	ms.date="11/30/2015" 
+	wacn.date="01/29/2016"/>
 
 # 注册应用程序以使用 Microsoft 帐户进行身份验证
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../includes/mobile-services-selector-register-identity-provider.md)]
 
 ## 概述 
@@ -66,8 +69,8 @@
 
     > [AZURE.NOTE]客户端密钥是一个非常重要的安全凭据。请勿与任何人分享客户端密钥或将密钥随应用程序分发。只有 Windows 应用商店应用程序注册才能看到“包 SID”字段。
 
-4. 在 [Azure 管理门户]中，单击移动服务的“标识”选项卡，输入从标识提供者获取的客户端 ID、客户端机密和包 SID，然后单击“保存”。
-	
+4. 在 [Azure 经典门户]中，单击移动服务的“标识”选项卡，输入从标识提供者获取的客户端 ID、客户端机密和包 SID，然后单击“保存”。
+
 	>[AZURE.NOTE]对于 Windows Phone 8、Windows Phone 应用商店 8.1 Silverlight 或非 Windows 应用程序，不需提供包 SID 值。
 	
 现在，你的移动服务和应用程序都已配置为使用 Microsoft 帐户。
@@ -81,6 +84,6 @@
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

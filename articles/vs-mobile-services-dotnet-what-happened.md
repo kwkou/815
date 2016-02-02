@@ -3,20 +3,25 @@
 	description="描述使用“连接服务”添加 Azure 移动服务后，Visual Studio .NET 项目发生了什么情况" 
 	services="mobile-services" 
 	documentationCenter="" 
-	authors="patshea123" 
+	authors="TomArcher"
 	manager="douge" 
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.date="09/17/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="01/29/2016"/>
 
-#  我的项目发生了什么情况？
+# 使用“连接服务”添加 Azure 移动服务后，我的 Visual Studio .NET 项目发生了什么情况？
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR]
 > - [入门](/documentation/articles/vs-mobile-services-dotnet-getting-started)
-> - [发生了什么情况](/documentation/articles/vs-mobile-services-dotnet-what-happened)
+> - [What Happened](/documentation/articles/vs-mobile-services-dotnet-what-happened)
 
 ## 已添加引用
 
@@ -37,6 +42,6 @@ Azure 移动服务 NuGet 包已添加到您的项目。因此，下面的 .NET �
 如果在连接服务提供程序中创建了 .NET 移动服务，则已创建移动服务项目并已将其添加到解决方案中。
 
 
-[详细了解移动服务](/services/mobile-services/)
+[详细了解移动服务](/documentation/services/mobile-services/)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

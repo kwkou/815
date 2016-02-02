@@ -10,10 +10,13 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="10/05/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/29/2016"/>
 
 # 向移动服务 Android 应用添加身份验证（JavaScript 后端）
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 ## 摘要
@@ -88,12 +91,7 @@
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Single sign-on for Windows Store apps by using Live Connect]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on
 [移动服务入门]: /documentation/articles/mobile-services-android-get-started
-[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-android-get-started-data
-[Get started with authentication]: /documentation/articles/mobile-services-android-get-started-users
-[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
-[使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization/
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

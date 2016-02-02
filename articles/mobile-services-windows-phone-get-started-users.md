@@ -10,10 +10,13 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="11/02/2015" 
-	wacn.date="12/31/2015"/>
+	wacn.date="01/29/2016"/>
 
 #  向移动服务应用程序添加身份验证
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-users-legacy](../includes/mobile-services-selector-get-started-users-legacy.md)]
 
 ##概述
@@ -56,10 +59,9 @@
 在下一教程[移动服务用户的服务端授权](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。
 
 <!-- Anchors. -->
-
-[注册应用程序以进行身份验证并配置移动服务]: #register
-[将表权限限制给已经过身份验证的用户]: #permissions
-[向应用程序添加身份验证]: #add-authentication
+[Register your app for authentication and configure Mobile Services]: #register
+[Restrict table permissions to authenticated users]: #permissions
+[Add authentication to the app]: #add-authentication
 [Next Steps]: #next-steps
 
 <!-- Images. -->
@@ -74,7 +76,7 @@
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-windows-phone-get-started-data
 [Authorize users with scripts]: /documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure classic portal]: https://manage.windowsazure.cn/
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

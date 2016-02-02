@@ -12,7 +12,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="10/06/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/29/2016"/>
 
 
 #  向移动服务 Android 应用程序添加推送通知
@@ -56,7 +56,7 @@
 [AZURE.INCLUDE [mobile-services-android-getting-started-with-push](../includes/mobile-services-android-getting-started-with-push.md)]
 
 
-## 在管理门户中更新已注册的插入脚本
+## 在 Azure 经典门户中更新已注册的插入脚本
 
 [AZURE.INCLUDE [mobile-services-javascript-backend-android-push-insert-script](../includes/mobile-services-javascript-backend-android-push-insert-script.md)]
 
@@ -149,7 +149,7 @@
 [Authorize users with scripts]: /zh-cn/documentation/articles/mobile-services-windows-store-javascript-authorize-users-in-scripts
 [JavaScript and HTML]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js
 [设置 Google Play Services SDK]: http://go.microsoft.com/fwlink/?LinkId=389801
-[Windows Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure classic portal]: https://manage.windowsazure.cn/
 [如何使用适用于移动服务的 Android 客户端库 ]: /documentation/articles/mobile-services-android-how-to-use-client-library
 [gcm object]: http://go.microsoft.com/fwlink/p/?LinkId=282645
 
@@ -160,4 +160,4 @@
 [Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-android-send-breaking-news
 [Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-android-send-localized-breaking-news
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

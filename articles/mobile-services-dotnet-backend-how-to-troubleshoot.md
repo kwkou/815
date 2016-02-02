@@ -9,10 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="08/18/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="12/01/2015" 
+	wacn.date="01/29/2016"/>
 
 # 移动服务 .NET 后端故障排除
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 
 使用移动服务进行开发通常是简单轻松的工作，但即便如此，有时还是可能会出错。本教程提供了一些技巧，以帮助你排查移动服务 .NET 后端可能出现的常见问题。
 
@@ -22,7 +26,7 @@
 4. [调试云程序集解析](#AssemblyResolution)
 5. [实体框架迁移疑难解答](#EFMigrations)
 
-<a name="HttpDebugging">
+<a name="HttpDebugging"></a>
 ## HTTP 调试
 
 使用移动服务开发应用程序时，通常会将移动服务客户端 SDK 用于你所使用的平台（Windows 应用商店、iOS、Android 等）。但有时候，深入了解 HTTP 级别并观察网络上发生的原始调用可能会有所帮助。此方法在调试连接和序列化问题时特别有用。通过移动服务 .NET 后端，你可以将此方法与 Visual Studio 本地和远程调试搭配使用（下一部分将详细说明），以了解 HTTP 调用在调用服务代码之前所创建的路径。
@@ -32,7 +36,8 @@
 1. 首先，在 **Visual Studio 2013 Update 2** 或更高版本中打开移动服务服务器项目。如果你尚无此项目，可以通过依次选择“文件”、“新建”、“项目”、“云”节点和“Windows Azure 移动服务”模板来创建一个项目。
 2. 按 **F5**，以生成并运行该项目。在起始页上，选择“试用”。 
 
-    >[AZURE.NOTE]如果服务在本地托管，则单击链接会定向至下一页。但是，如果在云中托管，则系统会提示你提供一组凭据。这是为了确保未经授权的用户无法访问你的 API 和负载的相关信息。若要查看该页，你需要使用**空白用户名**以及**应用程序密钥**（充当密码）来登录。若要获取应用程序密钥，你可以在“Azure 管理门户”中导航至移动服务的“仪表板”选项卡，并选择“管理密钥”。
+    >[AZURE.NOTE]
+    >如果服务在本地托管，则单击链接会定向至下一页。但是，如果在云中托管，则系统会提示你提供一组凭据。这是为了确保未经授权的用户无法访问你的 API 和负载的相关信息。若要查看该页，你需要使用**空白用户名**以及**应用程序密钥**（充当密码）来登录。若要获取应用程序密钥，你可以在 Azure 经典门户中导航至移动服务的“仪表板”选项卡，并选择“管理密钥”。
     >
     > ![访问帮助页时的身份验证提示][HelpPageAuth]
 
@@ -64,8 +69,8 @@
 
     ![配置符号加载][SymbolLoading]
 
-3. 选择左边的“符号”节点，并使用 URI [http://srv.symbolsource.org/pdb/Public](http://srv.symbolsource.org/pdb/Public) 添加对 [SymbolSource](http://symbolsource.org) 服务器的引用。移动服务 .NET 后端的符号将以最新版本启用。
- 
+3. 选择左边的“符号”节点，并使用 URI [http://srv.symbolsource.org/pdb/Public](http://srv.symbolsource.org/pdb/Public) 添加对 [SymbolSource] 服务器的引用。移动服务 .NET 后端的符号将以最新版本启用。
+
     ![配置符号服务器][SymbolServer]
 
 4. 在代码段中要进行调试的位置设置一个断点。你可以在 Visual Studio 中移动服务项目模板随附的 **TodoItemController** 的 **GetAllTodoItems()** 方法中设置一个断点。
@@ -103,9 +108,9 @@
 
 ![Visual Studio 服务器资源管理器中的日志][LogsServerExplorer]
 
-也可以从“Azure 管理门户”中移动服务的“日志”选项卡获取相同的日志。
+也可以从 Azure 经典门户中移动服务的“日志”选项卡获取相同的日志。
 
-![Azure 管理门户中的日志][LogsPortal]
+![登录 Azure 经典门户][LogsPortal]
 
 <a name="AssemblyResolution"></a>
 ## 调试云程序集解析
@@ -150,4 +155,8 @@
 [LogsPortal]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/13.png
 [HelpConflict]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/14.png
 
-<!---HONumber=71-->
+
+<!-- Links -->
+[SymbolSource]: http://symbolsource.org
+
+<!---HONumber=Mooncake_0118_2016-->

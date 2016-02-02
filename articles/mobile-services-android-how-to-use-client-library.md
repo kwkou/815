@@ -10,11 +10,14 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="10/05/2015" 
-	wacn.date="11/27/2015"/>
+	wacn.date="01/29/2016"/>
 
 
 # 如何使用适用于移动服务的 Android 客户端库
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
 本指南说明如何使用适用于 Azure 移动服务的 Android 客户端执行常见任务。所述的任务包括：查询数据；插入、更新和删除数据；对用户进行身份验证；处理错误；自定义客户端。
@@ -51,7 +54,7 @@
 				"AppKey", 			// replace with the Application Key 
 				this)
 
-在上面的代码中，请将 `MobileServiceUrl` 和 `AppKey` 依次替换为移动服务 URL 和应用程序密钥。在 Azure 管理门户中选择你的移动服务，然后单击“仪表板”即可获取这两个值。
+在上面的代码中，请将 `MobileServiceUrl` 和 `AppKey` 依次替换为移动服务 URL 和应用程序密钥。在 Azure 经典门户中选择你的移动服务，然后单击“仪表板”即可获取这两个值。
 
 ## <a name="instantiating"></a>如何创建表引用
 
@@ -367,7 +370,7 @@
 	}
 
 
-以下代码演示了执行删除操作的另一种方法。该代码通过指定要删除的行的 ID 字段值（假设等于 "2FA404AB-E458-44CD-BC1B-3BC847EF0902"）来删除 ToDoItem 表中的现有项。在实际的应用程序中，你会以某种方式获取 ID，并将它作为变量传入。此处为了简化测试，你可以进入服务的 Azure 移动服务门户，单击“数据”并复制你要测试的 ID。
+以下代码演示了执行删除操作的另一种方法。该代码通过指定要删除的行的 ID 字段值（假设等于 "2FA404AB-E458-44CD-BC1B-3BC847EF0902"）来删除 ToDoItem 表中的现有项。在实际的应用程序中，你会以某种方式获取 ID，并将它作为变量传入。此处为了简化测试，你可以在 Azure 经典门户中转到你的服务，单击“数据”并复制你要测试的 ID。
 
     public void deleteItem(View view) {
 
@@ -391,8 +394,8 @@
         }.execute();
     }
 
-## <a name="lookup"></a>如何查找特定的项
-有时，你需要按 *id* 查找特定的项，这一点不像查询，因为查询通常会返回满足某些条件的项集合。以下代码演示了如何执行此作业，此处假设 *id* 值为 `0380BAFB-BCFF-443C-B7D5-30199F730335`。在实际的应用程序中，你会以某种方式获取 ID，并将它作为变量传入。此处为了简化测试，你可以进入服务的 Azure 移动服务门户，单击“数据”并复制你要测试的 ID。
+##<a name="lookup"></a>如何查找特定的项
+有时，你需要按 *id* 查找特定的项，这一点不像查询，因为查询通常会返回满足某些条件的项集合。以下代码演示了如何执行此作业，此处假设 *id* 值为 `0380BAFB-BCFF-443C-B7D5-30199F730335`。在实际的应用程序中，你会以某种方式获取 ID，并将它作为变量传入。此处为了简化测试，你可以在 Azure 经典门户中转到你的服务，单击“数据”选项卡并复制你要测试的 ID。
 
     /**
      * Lookup specific item from table and UI
@@ -654,7 +657,7 @@
 
 ##<a name="authentication"></a>如何对用户进行身份验证
 
-移动服务支持使用各种外部标识提供者对应用程序用户进行身份验证和授权，这些提供者包括：Microsoft 帐户和 Active Directory。你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。你还可以在后端中使用已经过身份验证的用户的标识来实施授权规则。有关详细信息，请参阅[身份验证入门](/documentation/articles/mobile-services-android-get-started-users/)。
+移动服务支持使用各种外部标识提供者对应用程序用户进行身份验证和授权，这些提供者包括：Microsoft 帐户和 Azure Active Directory。你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。你还可以在后端中使用已经过身份验证的用户的标识来实施授权规则。有关详细信息，请参阅[身份验证入门](/documentation/articles/mobile-services-android-get-started-users/)。
 
 支持两种身份验证流: *服务器*流和*客户端*流。服务器流依赖于提供者的 Web 身份验证界面，因此可提供最简便的身份验证体验。客户端流依赖于提供者和设备特定的 SDK，因此允许与设备特定的功能（例如单一登录）进行更深入的集成。
 
@@ -672,7 +675,7 @@
 
 你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。还可以使用已经过身份验证的用户的 ID 来修改请求。
 
-前两个任务可使用 [Azure 管理门户](https://manage.windowsazure.cn/)来完成。有关详细信息，请参阅[身份验证入门](/documentation/articles/mobile-services-android-get-started-users/)。
+前两个任务可使用 [Azure 经典门户](https://manage.windowsazure.cn/)来完成。有关详细信息，请参阅[身份验证入门](/documentation/articles/mobile-services-android-get-started-users/)。
 
 ### <a name="caching"></a>如何向应用程序添加身份验证代码
 
@@ -928,4 +931,4 @@
 [移动服务快速入门]: /documentation/articles/mobile-services-android-get-started
 [ASCII 控制代码 C0 和 C1]: http://zh.wikipedia.org/wiki/Data_link_escape_character#C1_set
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

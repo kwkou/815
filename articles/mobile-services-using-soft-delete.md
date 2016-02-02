@@ -9,12 +9,15 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/28/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="12/07/2015"
+	wacn.date="01/29/2016"/>
 
 #  使用移动服务中的软删除
 
-## 概述
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+##概述
 
 使用 JavaScript 或.NET 后端创建的表可根据需要启用软删除。使用软删除时，将在数据库中添加一个名为 *__deleted* 的 [SQL 位类型]的新列。启用软删除后，删除操作不会以物理方式删除来自数据库的行，而是将已删除的列的值设置为 TRUE。
 
@@ -61,12 +64,12 @@
 
 若要在 JavaScript 后端中的现有表上启用软删除：
 
-1. 在[管理门户]中，单击你的移动服务。然后单击数据选项卡。
-2. 在数据页面上，单击以选择所需的表。然后在命令栏中单击“启用软删除”按钮。如果表已启用软删除，则此按钮将不会出现，但当你单击表的“浏览”或“列”选项卡时，可以看到 *__deleted* 列。
+1. 在 [Azure 经典门户]中单击你的移动服务。然后单击数据选项卡。
+2. 在数据页面上，单击以选择所需的表。然后在命令栏中单击“启用软删除”按钮。如果表已启用软删除，则此按钮将不会出现，但当你单击表的“浏览”或“列”选项卡时，可以看到 *\_\_deleted* 列。
 
     ![][0]
 
-    若要对表禁用软删除，请单击“列”选项卡，然后单击 *__deleted* 列和“删除”按钮。
+    若要对表禁用软删除，请单击“列”选项卡，然后单击 *\_\_deleted* 列和“删除”按钮。
 
     ![][1]
 
@@ -121,7 +124,7 @@
         }
     });
 
-若要通过 HTTP 请求检索已删除的记录，请添加查询参数"__includedeleted=true"：
+若要通过 HTTP 请求检索已删除的记录，请添加查询参数"\_\_includedeleted=true"：
 
     http://youservice.azure-mobile.net/tables/todoitem?__includedeleted=true
 
@@ -155,6 +158,6 @@
 
 [SQL 位类型]: http://msdn.microsoft.com/zh-cn/library/ms177603.aspx
 [移动服务的脱机数据同步]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
-[管理门户]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

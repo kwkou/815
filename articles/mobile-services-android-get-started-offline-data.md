@@ -9,18 +9,21 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/01/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="12/06/2015"
+	wacn.date="01/29/2016"/>
 
 # 将脱机数据同步添加到 Android 移动服务应用
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
 
 ## 摘要
 
 移动到没有服务的区域或出现网络问题时，移动应用可能丢失网络连接。例如，在遥远施工现场上使用的建筑行业应用可能需要输入稍后要同步到 Azure 的计划数据。使用 Azure 移动服务脱机同步，可以在丢失网络连接时继续工作，这对许多移动应用至关重要。借助脱机同步，你可以使用 Azure SQL Server 表的本地副本并定期重新同步两者。
 
-在本教程中，你将从[移动服务快速入门教程][]更新应用，从而启用脱机同步，然后通过脱机添加数据、将这些项同步至联机数据库并验证 Azure 管理门户中的更改，来测试该应用。
+在本教程中，你将从[移动服务快速入门教程]更新应用，从而启用脱机同步，然后通过脱机添加数据、将这些项同步至联机数据库并验证 Azure 经典门户中的更改，来测试该应用。
 
 无论你是脱机还是已连接，任何时候对数据作出多种更改都可能引发冲突。将来的教程将探索如何处理同步冲突，其中你将选择要接受的更改版本。在本教程中，我们假定没有同步冲突且对现有数据所做的任何更改都将直接应用到 Azure SQL Server。
 
@@ -32,7 +35,7 @@
 
 ## 更新应用以支持脱机同步
 
-借助脱机同步，可从*同步表*读取和写入（使用 *IMobileServiceSyncTable* 接口），该表是设备上 **SQL Light** 数据库的一部分。
+借助脱机同步，可从*同步表*读取和写入（使用 *IMobileServiceSyncTable* 接口），该表是设备上 **SQLite** 数据库的一部分。
 
 若要在设备与 Azure 移动服务之间推送和拉取更改，你可以使用*同步上下文* (*MobileServiceClient.SyncContext*)，该上下文借助本地存储数据时所用的本地数据库进行初始化。
 
@@ -176,12 +179,12 @@ One thing which is important to point out: if there are pending changes in the l
 
 3. 查看 Azure *TodoItem* 表的内容。验证新项是否_未_同步到服务器：
 
-   - 对于 JavaScript 后端，请转到管理门户，然后单击“数据”选项卡查看 `TodoItem` 表的内容。
+   - 对于 JavaScript 后端，请转到 Azure 经典门户，然后单击“数据”选项卡查看 `TodoItem` 表的内容。
    - 对于 .NET 后端，请使用 SQL 工具（如 *SQL Server Management Studio*）或 REST 客户端（如 *Fiddler* 或 *Poistman*）查看表内容。
 
 4. 在设备或模拟器中打开 WiFi。接下来，按“刷新”按钮。
 
-5. 在 Azure 门户中再次查看 TodoItem 数据。新的和更改的 TodoItem 现在应会出现。
+5. 在 Azure 经典门户中再次查看 TodoItem 数据。新的和更改的 TodoItem 现在应会出现。
 
 
 ## 后续步骤
@@ -216,4 +219,4 @@ One thing which is important to point out: if there are pending changes in the l
 
 [移动服务快速入门教程]: /documentation/articles/mobile-services-android-get-started
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

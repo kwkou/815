@@ -9,11 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/01/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="12/09/2015"
+	wacn.date="01/29/2016"/>
 
 # 移动服务中的用户服务端授权
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 > [AZURE.SELECTOR]
 - [(Any | .NET)](/zh-cn/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
 - [(Any | Javascript)](/zh-cn/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
@@ -32,7 +35,7 @@
 
 2. 在 Visual Studio 中，展开“控制器”文件夹，打开 **TodoItemController.cs**，然后添加以下 using 语句：
 
-		using Microsoft.Azure.Mobile.Server.Security;
+		using Microsoft.WindowsAzure.Mobile.Service.Security;
 
 3. 找到 **PostTodoItem** 方法，并在该方法的开头添加以下代码。
 
@@ -74,4 +77,4 @@
 <!-- URLs. -->
 [向现有移动服务应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

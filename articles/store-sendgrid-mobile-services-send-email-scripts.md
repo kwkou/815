@@ -9,11 +9,16 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/31/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="11/30/2015" 
+	wacn.date="01/29/2016"/>
 
 
 # 使用 SendGrid 从移动服务发送电子邮件
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 此主题演示如何将电子邮件功能添加到你的移动服务中。在本教程中，你将添加服务器端脚本以使用 SendGrid 发送电子邮件。完成后，每次插入记录时，你的移动服务即会发送一封电子邮件。
 
@@ -33,9 +38,9 @@ SendGrid 是一项[基于云的电子邮件服务]，该服务提供了可靠的
 
 ## <a name="add-script"></a>注册发送电子邮件的新脚本
 
-1. 登录到 [Azure 管理门户]，单击“移动服务”，然后单击你的移动服务。
+1. 登录到 [Azure 经典门户]，单击“移动服务”，然后单击你的移动服务。
 
-2. 在管理门户中，单击“数据”选项卡，然后单击“TodoItem”表。
+2. 在 Azure 经典门户中，单击“数据”选项卡，然后单击“TodoItem”表。
 
 	![][1]
 
@@ -123,13 +128,13 @@ SendGrid 是一项[基于云的电子邮件服务]，该服务提供了可靠的
 [4]: ./media/store-sendgrid-mobile-services-send-email-scripts/mobile-receive-email.png
 
 <!-- URLs. -->
-[完成移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
+[完成移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
 [sign up page]: https://sendgrid.com/windowsazure.html
 [Multiple User Credentials page]: https://sendgrid.com/credentials
-[Azure 管理门户]: https://manage.windowsazure.cn
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [基于云的电子邮件服务]: https://sendgrid.com/email-solutions
 [事务性电子邮件传递]: https://sendgrid.com/transactional-email
 
  
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

@@ -31,7 +31,7 @@
 
 	> [AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.java 文件中。
 
-8. 返回管理门户，单击“数据”选项卡，然后单击 **TodoItem** 表。
+8. 返回 Azure 经典门户，单击“数据”选项卡，然后单击“TodoItems”表。
 
    	![](./media/mobile-services-android-get-started/mobile-data-tab1.png)
 
@@ -39,4 +39,4 @@
 
    	![](./media/mobile-services-android-get-started/mobile-data-browse.png)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

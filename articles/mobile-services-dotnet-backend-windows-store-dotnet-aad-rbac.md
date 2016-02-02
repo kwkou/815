@@ -9,11 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/03/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="12/07/2015"
+	wacn.date="01/29/2016"/>
 
 # 使用 JavaScript 的移动服务和 Azure Active Directory 中基于角色的访问控制
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-rbac](../includes/mobile-services-selector-rbac.md)]
 
 ##概述
@@ -385,4 +388,4 @@
 [IsMemberOf]: http://msdn.microsoft.com/zh-cn/library/azure/dn151601.aspx
 [ADAL for .NET]: https://msdn.microsoft.com/zh-cn/library/azure/jj573266.aspx
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

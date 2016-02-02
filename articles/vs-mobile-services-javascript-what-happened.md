@@ -1,21 +1,21 @@
 <properties 
-	pageTitle="通过使用 Visual Studio 连接服务将移动服务添加到 Javascript 应用时会发生什么情况？" 
+	pageTitle="通过使用 Visual Studio 连接服务将移动服务添加到 Javascript 应用时会发生什么情况" 
 	description="描述 Visual Studio 中的 Azure 移动服务项目发生了什么情况" 
 	services="mobile-services" 
 	documentationCenter="" 
-	authors="patshea123" 
+	authors="TomArcher" 
 	manager="douge" 
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.date="09/23/2015" 
-	wacn.date="11/27/2015"/>
+	wacn.date="01/29/2016"/>
 
 # 当我使用连接的 Visual Studio 服务添加 Azure 移动服务时，我的 Javascript 项目会发生什么情况？
 
 > [AZURE.SELECTOR]
-> - [Getting Started](/documentation/articles/vs-mobile-services-javascript-getting-started)
+> - [入门](/documentation/articles/vs-mobile-services-javascript-getting-started)
 > - [What Happened](/documentation/articles/vs-mobile-services-javascript-what-happened)
 
 ###我的项目发生了什么情况？
@@ -42,4 +42,4 @@
 
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

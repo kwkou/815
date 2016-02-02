@@ -10,10 +10,11 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="11/11/2015" 
-	wacn.date="12/31/2015"/>
+	wacn.date="01/29/2016"/>
 
 # 向移动服务应用程序添加推送通知
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 ##概述
@@ -108,4 +109,4 @@
 [如何使用适用于 Azure 移动服务的 .NET 客户端]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [MobileServiceClient]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

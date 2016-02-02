@@ -10,10 +10,13 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="10/01/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/29/2016"/>
 
 #  向现有应用程序添加身份验证
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 在本教程中，你将要使用支持的标识提供者向[移动服务快速入门教程]项目添加身份验证。
@@ -78,6 +81,6 @@
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
 [Authorize users with scripts]: /documentation/articles/mobile-services-ios-authorize-users-in-scripts
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure classic portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

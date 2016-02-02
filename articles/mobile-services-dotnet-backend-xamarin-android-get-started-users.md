@@ -9,11 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="08/18/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="12/01/2015" 
+	wacn.date="01/29/2016"/>
 
 # 移动服务中的身份验证入门
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 本主题说明如何通过应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
@@ -71,15 +74,12 @@
 
 3. 在 **OnCreate** 方法中，在实例化 `MobileServiceClient` 对象的代码后面添加以下代码行。
 
-		// Get the Mobile Service Table instance to use
-        toDoTable = client.GetTable <ToDoItem> ();
-
-        await Authenticate(); // add this line
+		await Authenticate(); // add this line
 
 	此调用启动身份验证过程，并以异步方式等待它。
 
 
-4. 然后，从“运行”菜单中单击“运行”以启动应用程序，并使用所选的标识提供程序登录。
+4. 在“运行”菜单中单击“开始调试”以启动应用，然后使用所选的标识提供者登录。
 
    	当你成功登录时，应用应该运行而不出现错误，你应该能够查询移动服务，并对数据进行更新。
 
@@ -108,4 +108,4 @@ In the next tutorial, [Service-side authorization of Mobile Services users][Auth
 [JavaScript and HTML]: /documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0118_2016-->

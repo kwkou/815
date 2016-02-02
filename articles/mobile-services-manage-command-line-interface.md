@@ -10,11 +10,14 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="11/02/2015" 
-	wacn.date="12/31/2015"/>
+	wacn.date="01/29/2016"/>
 
 #  使用命令行工具自动操作移动服务 
 
-## 概述
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+##概述
 
 本主题说明如何使用 Azure 命令行工具来自动创建和管理 Azure 移动服务。另外，还说明了如何安装和开始使用这些命令行工具，以及如何使用它们执行关键的移动服务。
  
@@ -42,7 +45,7 @@
 
 		azure account download
 
-这将会打开默认浏览器，并提示你登录到管理门户。登录后，将会下载你的 `.publishsettings` 文件。请记下此文件的保存位置。
+这将会打开默认浏览器，并提示你登录到 Azure 经典门户。登录后，将会下载你的 `.publishsettings` 文件。请记下此文件的保存位置。
 
 接下来，通过运行以下命令导入 `.publishsettings` 文件，并将 `<path-to-settings-file>` 替换为 `.publishsettings` 文件的路径：
 
@@ -100,10 +103,10 @@
 
 		azure mobile table create <service-name> <table-name> -p read=public,delete=admin
 
-下面显示了脚本权限值与 [Azure 管理门户]中的权限值的对照表。
+下面显示了脚本权限值与 [Azure 经典门户]中的权限值的对照表。
 
-|脚本值|管理门户值|
-|---|---|
+|脚本值|门户值|
+|========|========|
 |`public`|每个人|
 |`application`（默认值）|拥有应用程序密钥的任何人|
 |`user`|仅限经过身份验证的用户|
@@ -174,7 +177,7 @@
 <!-- URLs. -->
 [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/p?LinkId=262293
 
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [nodejs-org]: http://nodejs.org/
 [install-node-linux]: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
 
@@ -183,4 +186,4 @@
 [reference-docs]: /documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_mobile_services
 [如何安装适用于 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/documentation/articles/xplat-cli
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

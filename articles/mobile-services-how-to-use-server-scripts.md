@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="08/17/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="12/01/2015" 
+	wacn.date="01/29/2016"/>
 
 
 #  使用 JavaScript 后端移动服务
@@ -86,7 +86,7 @@
 
 你可以使用下列方式之一定义可注册到表操作的服务器脚本：
 
-+ 在 [Azure 管理门户][Management Portal]中。在给定表的“脚本”选项卡中访问表操作的脚本。下面显示了已注册到 `TodoItem` 表的插入脚本的默认代码。你可以使用自己的自定义业务逻辑重写此代码。
++ 通过 [Azure 经典门户]。在给定表的“脚本”选项卡中访问表操作的脚本。下面显示了已注册到 `TodoItem` 表的插入脚本的默认代码。你可以使用自己的自定义业务逻辑重写此代码。
 
 	![1][1]
 	
@@ -227,7 +227,7 @@
 +  可打印字符：**"**(0x0022), **+** (0x002B), **/** (0x002F), **?** (0x003F), **\** (0x005C), **`** (0x0060)
 +  ID“.”和“..”
 
-也可以为表使用整数 ID。若要使用整数 ID，必须结合 `--integerId` 选项使用 `mobile table create` 命令创建表。应在适用于 Azure 的命令行界面 (CLI) 中使用此命令。有关使用 CLI 的详细信息，请参阅[用于管理移动服务表的 CLI](/documentation/articles/virtual-machines-command-line-tools#Mobile_Tables)。
+也可以为表使用整数 ID。若要使用整数 ID，必须结合 `--integerId` 选项使用 `mobile table create` 命令创建表。应在适用于 Azure 的命令行界面 (CLI) 中使用此命令。有关使用 CLI 的详细信息，请参阅[用于管理移动服务表的 CLI](/documentation/articles/virtual-machines-command-line-tools/#Mobile_Tables)。
 
 
 ### <a name="access-headers"></a>如何：访问自定义参数
@@ -286,7 +286,7 @@
 
 ### <a name="work-with-users"></a>如何：处理用户
 
-在 Azure 移动服务中，你可以使用标识提供程序对用户进行身份验证。有关详细信息，请参阅[身份验证入门]。当经过身份验证的用户调用表操作时，移动服务将使用 [user 对象]向已注册的脚本函数提供有关该用户的信息。可以使用 **userId** 属性来存储和检索用户特定的信息。以下示例将基于某个经过身份验证的用户的 userId 来设置项的 owner 属性：
+在 Azure 移动服务中，你可以使用标识提供程序对用户进行身份验证。有关详细信息，请参阅[身份验证入门]。当经过身份验证的用户调用表操作时，移动服务将使用 [user 对象]向已注册的脚本函数提供有关该用户的信息。可以使用 **userId** 属性来存储和检索用户特定的信息。以下示例将基于某个经过身份验证的用户的 **userId** 来设置项的 owner 属性：
 
 	function insert(item, user, request) {
 	    item.owner = user.userId;
@@ -333,7 +333,7 @@
 
 你可以使用下列方式之一定义可注册到自定义 API 终结点中 HTTP 方法的服务器脚本：
 
-+ 在 [Azure 管理门户][Management Portal]中。可以在“API”选项卡中创建和修改自定义 API 脚本。服务器脚本代码位于给定自定义 API 的“脚本”选项卡中。下面显示了向 `CompleteAll` 自定义 API 终结点发出的 POST 请求调用的脚本。 
++ 通过 [Azure 经典门户]。可以在“API”选项卡中创建和修改自定义 API 脚本。服务器脚本代码位于给定自定义 API 的“脚本”选项卡中。下面显示了向 `CompleteAll` 自定义 API 终结点发出的 POST 请求调用的脚本。 
 
 	![2][2]
 	
@@ -375,7 +375,7 @@
 
 在 Azure 移动服务中，你可以使用标识提供程序对用户进行身份验证。有关详细信息，请参阅[身份验证入门]。当经过身份验证的用户请求自定义 API 时，移动服务将使用[用户对象]向自定义 API 代码提供有关该用户的信息。可从 [request 对象]的 user 属性访问 [user 对象]。可以使用 **userId** 属性来存储和检索用户特定的信息。
 
-以下 **OrderPizza** 自定义 API 函数将基于某个经过身份验证的用户的 userId 来设置项的 owner 属性：
+以下 **OrderPizza** 自定义 API 函数将基于某个经过身份验证的用户的 **userId** 来设置项的 owner 属性：
 
 		exports.post = function(request, response) {
 			var userTable = request.service.tables.getTable('user');
@@ -440,17 +440,17 @@ HTTP GET 请求可按如下所示调用上述自定义 API 示例中的两个路
 
 ## <a name="scheduler-scripts"></a>作业计划程序
 
-移动服务允许你定义按固定计划以作业形式执行或通过管理门户按需执行的服务器脚本。计划的作业可用于执行周期性任务，例如，清理表数据和批处理。有关详细信息，请参阅[计划作业]。
+移动服务允许你定义按固定计划以作业形式执行或通过 Azure 经典门户按需执行的服务器脚本。计划的作业可用于执行周期性任务，例如，清理表数据和批处理。有关详细信息，请参阅[计划作业]。
 
 注册到计划作业的脚本具有一个与计划作业同名的主函数。由于 HTTP 请求不调用计划的脚本，没有可由服务器运行时传递的上下文，因此该函数不采用任何参数。与其他类型的脚本一样，你可以使用子例程函数并需要使用共享模块。有关详细信息，请参阅[源代码管理、共享代码和 Helper 函数]。
 
 ### <a name="scheduler-scripts"></a>如何：定义计划的作业脚本
 
-可将一个服务器脚本分配到移动服务计划程序中定义的作业。这些脚本属于该作业，并根据作业计划执行。（你也可以使用[管理门户]按需运行作业。） 定义计划作业的脚本不带参数，因为移动服务不会向它传递任何数据；该脚本作为常规 JavaScript 函数执行，不直接与移动服务交互。
+可将一个服务器脚本分配到移动服务计划程序中定义的作业。这些脚本属于该作业，并根据作业计划执行。（你也可以使用 [Azure 经典门户]按需运行作业。） 定义计划作业的脚本不带参数，因为移动服务不会向它传递任何数据；该脚本作为常规 JavaScript 函数执行，不直接与移动服务交互。
 
 可通过下列方式之一定义计划作业：
 
-+ 通过 [Azure 管理门户][Management Portal]中的计划程序的“脚本”选项卡：
++ 通过 [Azure 经典门户]中的计划程序的“脚本”选项卡：
 
 	![3][3]
 
@@ -765,38 +765,16 @@ Helper 函数也可以只定义一次，然后在服务器脚本之间共享。�
 
 当你使用 [tables 对象]或 [mssql 对象]时，或只是执行表脚本时，将在 SQL 数据库中插入反序列化的 JavaScript 对象。在此过程中，对象属性将映射到 T-SQL 类型：
 
-<table border="1">
-<tr>
-<td>JavaScript 属性</td>
-<td>T-SQL 类型</td>
-</tr><tr>
-<td>Number</td>
-<td>Float(53)</td>
-</tr><tr>
-<td>Boolean</td>
-<td>Bit</td>
-</tr><tr>
-<td>Date</td>
-<td>DateTimeOffset(3)</td>
-</tr>
-<tr>
-<td>String</td>
-<td>Nvarchar(max)</td>
-</tr>
-<tr>
-<td>Buffer</td>
-<td>不支持</td>
-</tr><tr>
-<td>对象</td>
-<td>不支持</td>
-</tr><tr>
-<td>Array</td>
-<td>不支持</td>
-</tr><tr>
-<td>Stream</td>
-<td>不支持</td>
-</tr>
-</table>
+JavaScript 属性|T-SQL 类型
+---|---
+Number|Float(53)
+Boolean|Bit
+Date|DateTimeOffset(3)|
+String|Nvarchar(max)
+Buffer|不支持
+对象|不支持
+Array|不支持
+Stream|不支持
 
 ### <a name="TSQL"></a>使用 Transact-SQL 访问表
 
@@ -940,7 +918,7 @@ Helper 函数也可以只定义一次，然后在服务器脚本之间共享。�
 
 若要写入日志，请使用全局 [console 对象]。使用 **log** 或 **info** 函数记录信息级警告。**warning** 和 **error** 函数将记录其对应级别，这些级别已在日志中予以标注。
 
-> [AZURE.NOTE]若要查看移动服务的日志，请登录到[管理门户](https://manage.windowsazure.cn/)，选择你的移动服务，然后选择“日志”选项卡。
+> [AZURE.NOTE]若要查看移动服务的日志，请登录到 [Azure 经典门户](https://manage.windowsazure.cn/)，选择你的移动服务，然后选择“日志”选项卡。
 
 你还可以使用 [console 对象]的日志记录功能通过参数来设置消息格式。以下示例向消息字符串提供了一个参数形式的 JSON 对象：
 
@@ -1037,8 +1015,7 @@ Helper 函数也可以只定义一次，然后在服务器脚本之间共享。�
 [验证数据]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj631638.aspx
 [修改请求]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj631635.aspx
 [修改响应]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj631631.aspx
-[Management Portal]: https://manage.windowsazure.cn/
-[管理门户]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [计划作业]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj860528.aspx
 [使用服务器脚本在移动服务中验证和修改数据]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/
 [用于管理 Azure 移动服务的命令]: /zh-cn/documentation/articles/command-line-tools/#Commands_to_manage_mobile_services/#Mobile_Scripts
@@ -1068,4 +1045,4 @@ Helper 函数也可以只定义一次，然后在服务器脚本之间共享。�
 [config module]: http://msdn.microsoft.com/zh-cn/library/dn508125.aspx
 [Azure 移动服务中对 package.json 的支持]: http://go.microsoft.com/fwlink/p/?LinkId=391036
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0118_2016-->

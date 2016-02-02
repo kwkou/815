@@ -10,10 +10,13 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="10/01/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="01/29/2016"/>
 
 #  如何使用适用于 Azure 移动服务的 iOS 客户端库
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
 本指南介绍如何使用 Azure 移动服务 [iOS SDK] 执行常见任务。如果你不熟悉移动服务，请先完成[移动服务快速入门]，以配置你的帐户、创建表，并创建移动服务。
@@ -316,7 +319,7 @@ Azure 移动服务支持两种身份验证工作流：
 [移动服务快速入门]: /documentation/articles/mobile-services-ios-get-started
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
+[身份验证]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
 [iOS SDK]: https://developer.apple.com/xcode
 
 [Handling Expired Tokens]: http://go.microsoft.com/fwlink/p/?LinkId=301955
@@ -331,4 +334,4 @@ Azure 移动服务支持两种身份验证工作流：
 [冲突处理程序]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data/#add-conflict-handling
  
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

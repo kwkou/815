@@ -10,11 +10,14 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="11/12/2015" 
-	wacn.date="12/31/2015"/>
+	wacn.date="01/29/2016"/>
 
 
 # 在“移动服务”中处理与脱机数据同步的冲突
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../includes/mobile-services-selector-offline-conflicts.md)]
 
 ##概述
@@ -22,6 +25,10 @@
 本主题演示在使用 Azure 移动服务的脱机功能时如何同步数据和处理冲突。
 
 
+
+在本教程中，你将为支持处理脱机同步冲突的应用下载通用 Windows C# 解决方案。您要将移动服务与应用程序集成，然后再运行的 Windows 应用商店 8.1 和 Windows Phone 8.1 客户端生成同步冲突，并解决冲突。
+
+本教程以前一教程[脱机数据处理入门]中的步骤和示例应用程序为基础。在开始本教程之前，应先完成[脱机数据入门]。
 
 
 ##先决条件
@@ -54,7 +61,7 @@
 
 现在可以针对移动服务测试应用程序了。
 
-1. 在 Azure 管理门户中，通过单击“仪表板”选项卡的命令栏上的“管理密钥”找到移动服务的应用程序密钥。复制“应用程序密钥”。
+1. 在 [Azure 经典门户]中，通过单击“仪表板”选项卡的命令栏上的“管理密钥”找到移动服务的应用程序密钥。复制“应用程序密钥”。
 
 2. 在 Visual Studio 的解决方案资源管理器中，打开客户端示例项目中的 App.xaml.cs 文件。更改 **MobileServiceClient** 的初始化以使用你的移动服务 URL 和应用程序密钥：
 
@@ -149,9 +156,9 @@
 [脱机数据入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 [脱机数据处理入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 [SQLite for Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [Handling Database Conflicts]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/#test-app
 [移动服务示例 GitHub 存储库]: http://go.microsoft.com/fwlink/?LinkId=512865
 [Todo 脱机移动服务示例]: http://go.microsoft.com/fwlink/?LinkId=512866
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

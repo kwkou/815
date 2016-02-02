@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="11/06/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="11/30/2015"
+	wacn.date="01/29/2016"/>
 
 
 #  <a name="getting-started"></a>移动服务入门
@@ -52,11 +52,11 @@
 
 ##  创建新的 HTML 应用程序
 
-创建移动服务后，你可以在管理门户中遵照一个简易的快速入门项目来创建新应用程序或修改现有应用程序，以连接到你的移动服务。
+创建移动服务后，你可以在 Azure 经典门户中遵照一个简易的快速入门项目来创建新应用程序或修改现有应用程序，以连接到你的移动服务。
 
 在本部分中，你将要创建一个连接到移动服务的新 HTML 应用程序。
 
-1.  在管理门户中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1.  在 [Azure 经典门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
    
 2. 在快速启动选项卡中，单击“选择平台”下的“Windows”，然后展开“创建新的 HTML 应用程序”。
@@ -71,7 +71,7 @@
 
 4. 在“下载并运行应用程序”下面单击“下载”。
 
-  	随即将会下载已连接到移动服务的_示例待办事项_ 列表应用程序的 Web 应用文件。将压缩文件保存到本地计算机，并记下保存位置。
+  	随即将会下载已连接到移动服务的_示例待办事项_列表应用程序的网站文件。将压缩文件保存到本地计算机，并记下保存位置。
 
 5. 在“配置”选项卡中，验证 是否已列在“跨域资源共享(CORS)”下的“允许来自以下主机名的请求”列表中`localhost`。如果未列出，请在“主机名”字段中键入 `localhost`，然后单击“保存”。
 
@@ -85,7 +85,7 @@
 
 1. 浏览到压缩的项目文件所保存到的位置，在计算机上展开这些文件，然后启动 **server** 子文件夹中的下列命令文件之一。
 
-	+ **.\\start-iisexpress.ps1**（Windows 计算机）
+	+ **launch-windows**（Windows 计算机）
 	+ **launch-mac.command**（Mac OS X 计算机）
 	+ **launch-linux.sh**（Linux 计算机）
 
@@ -103,7 +103,7 @@
 
 	> [AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 page.js 文件中。
 
-4. 返回管理门户，单击“数据”选项卡，然后单击 **TodoItem** 表。
+4. 返回 [Azure 经典门户]，单击“数据”选项卡，然后单击“TodoItems”表。
 
    	![][11]
 
@@ -145,10 +145,10 @@
 <!-- URLs. -->
 [向应用程序添加身份验证]: /documentation/articles/mobile-services-html-get-started-users
 
-[Management Portal]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [Microsoft Web 平台安装程序]: http://go.microsoft.com/fwlink/p/?LinkId=286333
 [最新版本的 Python]: http://go.microsoft.com/fwlink/p/?LinkId=286342
 [移动服务 HTML/JavaScript 操作方法概念性参考]: /zh-cn/documentation/articles/mobile-services-html-how-to-use-client-library
 [Cross-origin resource sharing]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn155871.aspx
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

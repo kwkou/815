@@ -9,10 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/16/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="12/07/2015"
+	wacn.date="01/29/2016"/>
 
-#  向移动服务应用程序添加推送通知
+# 向移动服务应用程序添加推送通知
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
@@ -36,7 +40,7 @@
 
 ## <a id="update-scripts"></a>更新已注册的插入脚本以发送通知
 
->[AZURE.TIP]以下步骤说明了如何在 Azure 管理门户中，更新已注册到 TodoItem 表上的插入操作的脚本。你也可以在 Visual Studio 的“服务器资源管理器”的“Azure”节点中直接访问和编辑此移动服务脚本。
+>[AZURE.TIP]以下步骤说明了如何在 Azure 经典门户中，更新已注册到 TodoItem 表上的插入操作的脚本。你也可以在 Visual Studio 的“服务器资源管理器”的“Azure”节点中直接访问和编辑此移动服务脚本。
 
 [AZURE.INCLUDE [mobile-services-javascript-backend-android-push-insert-script](../includes/mobile-services-javascript-backend-android-push-insert-script.md)]
 
@@ -84,4 +88,4 @@
 [Azure 移动服务]: http://components.xamarin.com/view/azure-mobile-services/
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

@@ -9,10 +9,15 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/15/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="12/07/2015"
+	wacn.date="01/29/2016"/>
 
-# 在源代码管理中存储项目代码
+# 在源代码管理中存储移动服务项目代码
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR]
 - [.NET backend](/zh-cn/documentation/articles/mobile-services-dotnet-backend-store-code-source-control)
@@ -96,4 +101,4 @@
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [如何对 .NET 后端移动服务进行数据模型更改]: /documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

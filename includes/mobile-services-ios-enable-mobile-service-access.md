@@ -27,7 +27,7 @@
 ```
 
 
-* 在管理门户中单击“移动服务”，然后单击移动服务。单击“仪表板”选项卡，并记下“站点 URL”。然后单击“管理密钥”，并记下“应用程序密钥”。从应用代码访问移动服务时，您需要使用这些值。
+* 在 [Azure 经典门户](https://manage.windowsazure.cn/)中单击“移动服务”，然后单击该移动服务。单击“仪表板”选项卡，并记下“站点 URL”。然后单击“管理密钥”，并记下“应用程序密钥”。从应用代码访问移动服务时，您需要使用这些值。
 
 
 * 在 **TodoService.m** 中找到以下行：
@@ -109,42 +109,42 @@ self.items = [results mutableCopy];
 
 在该方法的正文中，将从该位置到方法末尾的部分替换为以下代码。此代码将删除标记为已完成的 todo 项。
 
-
-	// Update the item in the TodoItem table and remove from the items array on completion
-	[self.table update:mutable completion:^(NSDictionary *item, NSError *error) {
+```
+// Update the item in the TodoItem table and remove from the items array on completion
+[self.table update:mutable completion:^(NSDictionary *item, NSError *error) {
 
             // Get a fresh index in case the list has changed
             NSUInteger index = [items indexOfObjectIdenticalTo:mutable];
 
             [mutableItems removeObjectAtIndex:index];
 
-    		// Let the caller know that we have finished
-    		completion(index);
-	}];
-
+    // Let the caller know that we have finished
+    completion(index);
+}];
+```
 
 
 * 在 TodoListController.m 中，找到 **onAdd** 方法，并用以下代码将其覆盖：
 
+```
+- (IBAction)onAdd:(id)sender
+{
+    if (itemText.text.length  == 0)
+    {
+        return;
+    }
 
-		- (IBAction)onAdd:(id)sender
-		{
-    		if (itemText.text.length  == 0)
-    		{
-        		return;
-    		}
+          NSDictionary *item = @{ @"text" : itemText.text, @"complete" : @NO };
+          UITableView *view = self.tableView;
+          [self.todoService addItem:item completion:^(NSUInteger index)
+          {
+              NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+              [view insertRowsAtIndexPaths:@[ indexPath ]
+                          withRowAnimation:UITableViewRowAnimationTop];
+          }];
 
-          	NSDictionary *item = @{ @"text" : itemText.text, @"complete" : @NO };
-          	UITableView *view = self.tableView;
-          	[self.todoService addItem:item completion:^(NSUInteger index)
-          	{
-              	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-              	[view insertRowsAtIndexPaths:@[ indexPath ]
-                withRowAnimation:UITableViewRowAnimationTop];
-          	}];
+    itemText.text = @"";
+}
+```
 
-    	itemText.text = @"";
-		}
-
-
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0118_2016-->

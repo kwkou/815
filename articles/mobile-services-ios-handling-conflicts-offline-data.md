@@ -9,12 +9,15 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/16/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="12/16/2015"
+	wacn.date="01/29/2016"/>
 
 
 #  使用移动服务中的脱机数据处理冲突
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../includes/mobile-services-selector-offline-conflicts.md)]
 
 本主题演示在使用 Azure 移动服务的脱机功能时如何同步数据和处理冲突。本教程基于[脱机数据入门]教程编写。
@@ -139,4 +142,4 @@
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

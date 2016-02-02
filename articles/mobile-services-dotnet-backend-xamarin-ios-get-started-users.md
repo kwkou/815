@@ -9,11 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="08/18/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="12/01/2015" 
+	wacn.date="01/29/2016"/>
 
 # 向移动服务应用程序添加身份验证
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 本主题说明如何通过应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
@@ -46,7 +49,7 @@
 
 ##<a name="add-authentication"></a>向应用程序添加身份验证
 
-在本部分中，你将修改应用程序，以便在显示数据之前显示登录屏幕。当应用程序启动时，它将不会连接到移动服务，并且不会显示任何数据。用户首次执行刷新笔势后，将显示登录屏幕；成功登录后，将显示 Todo 项列表。
+在本部分中，你将修改应用程序，以便在显示数据之前显示登录屏幕。当应用启动时，它将不会连接到移动服务，并且不会显示任何数据。用户首次执行刷新笔势后，将显示登录屏幕；成功登录后，将显示 Todo 项列表。
 
 1. 在客户端项目中，打开文件 **QSTodoService.cs** 并将以下声明添加到 QSTodoService：
 
@@ -132,4 +135,4 @@ In the next tutorial, [Service-side authorization of Mobile Services users][Auth
 [JavaScript and HTML]: /documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=61-->
+<!---HONumber=Mooncake_0118_2016-->

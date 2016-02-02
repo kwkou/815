@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/11/2015" 
-	wacn.date="12/31/2015"/>
+	ms.date="11/22/2015" 
+	wacn.date="01/29/2016"/>
 
 # 向通用 Windows 8.1 应用添加身份验证
 
@@ -30,7 +30,7 @@
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-windows](../includes/mobile-services-restrict-permissions-windows.md)]
 
->[AZURE.NOTE]当你使用 Visual Studio 工具将应用程序连接到移动服务时，该工具将生成两组 **MobileServiceClient** 定义，每个客户端平台一组。这是简化生成的代码的好时机，你可以通过将 `#if...#endif` 包装的 **MobileServiceClient** 定义统一为单个解包的定义供这两个版本的应用程序使用来简化生成的代码。如果从 Azure 管理门户下载快速入门应用程序，则无需执行此操作。
+>[AZURE.NOTE]当你使用 Visual Studio 工具将应用程序连接到移动服务时，该工具将生成两组 **MobileServiceClient** 定义，每个客户端平台一组。这是简化生成的代码的好时机，你可以通过将 `#if...#endif` 包装的 **MobileServiceClient** 定义统一为单个解包的定义供这两个版本的应用程序使用来简化生成的代码。从 [Azure 经典门户]下载快速入门应用时无需执行此操作。
 
 ## <a name="add-authentication"></a>向应用程序添加身份验证
 
@@ -40,7 +40,11 @@
 
 ## <a name="tokens"></a>在客户端上存储授权令牌
 
-[AZURE.INCLUDE [mobile-services-windows-store-dotnet-authenticate-app-with-token](../includes/mobile-services-windows-store-dotnet-authenticate-app-with-token.md)]
+先前示例显示标准登录，这要求在此应用每次启动时客户端同时联系标识提供商和移动服务。此方法不仅效率低下，而且如果很多客户尝试同时启动你的应用程序，你会遇到关于使用率的问题。更好的方法是缓存移动服务返回的授权令牌，然后在使用基于提供商的登录之前首先尝试使用此令牌。
+
+>[AZURE.NOTE]无论你使用客户端管理的还是服务管理的身份验证，都可以缓存由移动服务颁发的令牌。本教程使用服务管理的身份验证。
+
+[AZURE.INCLUDE [mobile-windows-universal-dotnet-authenticate-app-with-token](../includes/mobile-windows-universal-dotnet-authenticate-app-with-token.md)]
 
 ##  <a name="next-steps"></a>后续步骤
 
@@ -74,8 +78,8 @@
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
 [Authorize users with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

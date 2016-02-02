@@ -10,10 +10,13 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="11/06/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="01/29/2016"/>
 
 #  <a name="getting-started"></a>移动服务和 Sencha Touch 入门
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 &nbsp;
 
@@ -21,7 +24,7 @@
 
 ##概述
 
-本教程演示了如何在您的 Sencha Touch 应用程序中利用 Azure 移动服务。使用可利用你通过管理门户定义的移动服务的 Sencha Touch，来创建一个简单的*待办事项列表*应用。本教程适用于中级到高级的 Web 应用开发人员，这些开发人员非常了解 JavaScript 并熟悉 Sencha Touch 框架。
+本教程演示了如何在您的 Sencha Touch 应用程序中利用 Azure 移动服务。使用可利用你通过 Azure 经典门户定义的移动服务的 Sencha Touch，来创建一个简单的*待办事项列表*应用。本教程适用于中级到高级的 Web 应用程序开发人员，这些开发人员非常了解 JavaScript 并熟悉 Sencha Touch 框架。
 
 
 下面显示的是完成的应用程序的屏幕快照：
@@ -43,9 +46,9 @@
 
 ## 创建 TodoItems 表
 
-创建移动服务后，你可以在管理门户中按照简单的快速入门来创建一个新数据库表，以便在该移动服务中使用。
+创建移动服务后，你可以在 Azure 经典门户中按照简单的快速入门来创建一个新数据库表，以便在该移动服务中使用。
 
-1. 在管理门户中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1. 在 [Azure 经典门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2. 在快速启动选项卡中，单击“选择平台”下的“HTML”，然后展开“创建新的 HTML 应用程序”。
 
@@ -57,10 +60,10 @@
 
 3. 单击“创建 TodoItem 表”以创建用于存储应用程序数据的表。
 
-	> [AZURE.NOTE]不要从管理门户下载 HTML 应用程序。相反，我们将在下面的部分中手动创建一个 Sencha Touch 应用程序。
+	> [AZURE.NOTE]不要从 Azure 经典门户下载 HTML 应用。相反，我们将在下面的部分中手动创建一个 Sencha Touch 应用程序。
 
 
-1. 记下管理门户中的 **appKey** 和 **appUrl**。您将在本教程的其他部分中使用它们。
+1. 记下 Azure 经典门户中的 **appKey** 和 **appUrl**。您将在本教程的其他部分中使用它们。
 
     ![应用程序密钥](./media/partner-sencha-mobile-services-get-started/mobile-app-key-portal.png)
 
@@ -671,7 +674,7 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 
     这样可向在 Azure 中托管的新移动服务发送 POST 请求。来自请求的数据被插入到 TodoItem 表。
 
-  5. 返回管理门户，单击“数据”选项卡，然后单击 TodoItem 表。
+  5. 返回 [Azure 经典门户]，单击“数据”选项卡，然后单击“TodoItems”表。
 
     ![Todo 项表](./media/partner-sencha-mobile-services-get-started/mobile-data-tab.png)
 
@@ -702,7 +705,7 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 
 此处所述的示例在 Sencha Touch Extension for Azure 包中提供，并作为“基本数据”示例位于示例目录中。还提供了几个其他示例，它们演示了此扩展的其他功能以及详细的注释和说明。
 
-有关 Sencha Touch 入门的详细信息，请访问整套[指南](http://docs.sencha.com/touch/#!/guide)。
+有关 Sencha Touch 入门的详细信息，请访问整套[指南](http://docs.sencha.com/touch/#!/guide)
 
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
@@ -711,4 +714,6 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 
 [0]: ./media/partner-sencha-mobile-services-get-started/finished-app.png
 
-<!---HONumber=Mooncake_1221_2015-->
+[Azure 经典门户]: https://manage.windowsazure.cn/
+
+<!---HONumber=Mooncake_0118_2016-->

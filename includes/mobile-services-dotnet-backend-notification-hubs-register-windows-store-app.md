@@ -1,6 +1,6 @@
 
 
-1. 如果尚未注册应用程序，请在开发人员中心内导航到 Windows 应用商店应用的[提交应用程序]页，用 Microsoft 帐户登录，然后单击“应用程序名称”。
+1. 如果尚未注册应用程序，请在开发人员中心内导航到 Windows 应用商店应用的“[提交应用程序]”页，用 Microsoft 帐户登录，然后单击“应用程序名称”。
 
    	![](./media/mobile-services-dotnet-backend-notification-hubs-register-windows-store-app/mobile-services-submit-win8-app.png)
 
@@ -42,7 +42,7 @@
 
     > [AZURE.NOTE]客户端密钥和程序包 SID 是重要的安全凭据。请勿与任何人分享这些密钥或将密钥随应用分发。
 
-11. 登录到 [Azure 管理门户]，单击“移动服务”，然后单击你的应用。
+11. 登录到 [Azure 经典门户](https://manage.windowsazure.cn/)，单击“移动服务”，然后单击你的应用。
 
    	![](./media/mobile-services-dotnet-backend-notification-hubs-register-windows-store-app/mobile-services-selection.png)
 
@@ -54,6 +54,5 @@
 
 <!-- URLs. -->
 [提交应用程序]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[Azure 管理门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->
