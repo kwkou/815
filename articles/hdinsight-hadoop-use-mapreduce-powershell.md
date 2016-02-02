@@ -54,7 +54,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 MapRed
 		$sub = Get-AzureSubscription -ErrorAction SilentlyContinue
 		if(-not($sub))
 		{
-		    Add-AzureAccount
+		    Add-AzureAccount -Environment AzureChinaCloud
 		}
 
 		#Specify the cluster name
