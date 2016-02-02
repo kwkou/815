@@ -47,54 +47,45 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Hive �
 
 * **Get-AzureHDInsightJobOutput**：用于检索作业的输出
 
-* **Invoke-AzureHDInsightHiveJob**：用于运行 HiveQL 语句。这将阻止查询完成，然后返回结果
+* **Invoke-Hive**：用于运行 HiveQL 语句。这将阻止查询完成，然后返回结果
 
-* **Use-AzureHDInsightCluster**：设置要用于 **Invoke-AzureHDInsightHiveJob** 命令的当前群集
+* **Use-AzureHDInsightCluster**：设置要用于 **Invoke-Hive** 命令的当前群集
 
 以下步骤演示了如何使用这些 Cmdlet 在 HDInsight 群集上运行作业：
 
 1. 使用编辑器将以下代码保存为 **hivejob.ps1**。必须将 **CLUSTERNAME** 替换为 HDInsight 群集的名称。
 
-		#Specify the values
-		$clusterName = "CLUSTERNAME"
-		$resourceGroupName = "RESOURCEGROUPNAME"
-		$httpUsername = "HTTPUSERNAME"
-		$httpUserPassword  = "HTTPUSERPASSWORD"
-
-		# Switch to the ARM mode
-		Switch-AzureMode -Name AzureResourceManager
-		
-		# Login to your Azure subscription
+		#Login to your Azure subscription
 		# Is there an active Azure subscription?
 		$sub = Get-AzureSubscription -ErrorAction SilentlyContinue
 		if(-not($sub))
 		{
-		    Add-AzureAccount
+		    Add-AzureAccount -Environment AzureChinaCloud
 		}
-
+		
+		#Specify the cluster name
+		$clusterName = "CLUSTERNAME" 
+		
 		#HiveQL
 		$queryString = "DROP TABLE log4jLogs;" +
 				       "CREATE EXTERNAL TABLE log4jLogs(t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION 'wasb:///example/data/';" +
-				       "SELECT * FROM log4jLogs WHERE t4 = '[ERROR]';"
-
+				       "SELECT t4 AS sev, COUNT(*) AS cnt FROM log4jLogs WHERE t4 = '[ERROR]' GROUP BY t4;"
+		
 		#Create an HDInsight Hive job definition
-		$hiveJobDefinition = New-AzureHDInsightHiveJobDefinition -Query $queryString 
-
+		$hiveJobDefinition = New-AzureHDInsightHiveJobDefinition -Query $queryString
+		
 		#Submit the job to the cluster
 		Write-Host "Start the Hive job..." -ForegroundColor Green
-
-		$passwd = ConvertTo-SecureString $httpUserPassword -AsPlainText -Force
-		$creds = New-Object System.Management.Automation.PSCredential ($httpUsername, $passwd)
-		$hiveJob = Start-AzureHDInsightJob -ResourceGroupName $resourceGroupName -ClusterName $clusterName -JobDefinition $hiveJobDefinition -ClusterCredential $creds
-
-
+		$hiveJob = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $hiveJobDefinition
+		
 		#Wait for the Hive job to complete
 		Write-Host "Wait for the job to complete..." -ForegroundColor Green
-		Wait-AzureHDInsightJob -ResourceGroupName $resourceGroupName -ClusterName $clusterName -JobId $hiveJob.JobId -ClusterCredential $creds
-
+		Wait-AzureHDInsightJob -Job $hiveJob -WaitTimeoutInSeconds 3600
+		
 		# Print the output
 		Write-Host "Display the standard output..." -ForegroundColor Green
-		Get-AzureHDInsightJobOutput -ClusterName $clusterName -JobId $hiveJob.JobId -StandardOutput
+		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $hiveJob.JobId -StandardOutput
+
             
 2. 打开一个新的 **Azure PowerShell** 命令提示符。将目录更改为 **hivejob.ps1** 文件的所在位置，然后使用以下命令来运行脚本：
 
