@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="09/22/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="12/15/2015"
+   wacn.date="01/29/2016"/>
 
 # 使用 DMV 监视工作负荷
 
@@ -23,19 +23,23 @@
 你可以使用 *sys.dm\_pdw\_nodes\_exec\_connections* 视图来检索有关与 Azure SQL 数据仓库数据库建立的连接的信息。此外，*sys.dm\_exec\_sessions* 视图在检索有关所有活动用户连接的信息时非常有用。
 
 ```
+
 SELECT * FROM sys.dm_pdw_nodes_exec_connections;
 SELECT * FROM sys.dm_pdw_nodes_exec_sessions;
+
 ```
 
 
 使用以下查询可以检索有关当前连接的信息。
 
 ```
+
 SELECT * 
 FROM sys.dm_pdw_nodes_exec_connections AS c 
    JOIN sys.dm_pdw_nodes_exec_sessions AS s 
    ON c.session_id = s.session_id 
 WHERE c.session_id = @@SPID;
+
 ```
 
 
@@ -49,12 +53,15 @@ WHERE c.session_id = @@SPID;
 
 ### 步骤 1：查找要调查的查询
 
-		-- Monitor running queries
-		SELECT * FROM sys.dm_pdw_exec_requests WHERE status = 'Running';
-		
-		-- Find the longest running queries
-		SELECT * FROM sys.dm_pdw_exec_requests ORDER BY total_elapsed_time DESC;
+```
 
+-- Monitor running queries
+SELECT * FROM sys.dm_pdw_exec_requests WHERE status = 'Running';
+
+-- Find the longest running queries
+SELECT * FROM sys.dm_pdw_exec_requests ORDER BY total_elapsed_time DESC;
+
+```
 
 保存查询的请求 ID。
 
@@ -62,27 +69,27 @@ WHERE c.session_id = @@SPID;
   
 ### 步骤 2：检查查询是否正在等待资源
 
+```
 
+-- Find waiting tasks for your session.
+-- Replace request_id with value from Step 1.
 
-	-- Find waiting tasks for your session.
-	-- Replace request_id with value from Step 1.
-	
-	SELECT waits.session_id,
-	      waits.request_id,  
-	      requests.command,
-	      requests.status, 
-	      requests.start_time,  
-	      waits.type,  
-	      waits.object_type, 
-	      waits.object_name,  
-	      waits.state  
-	FROM   sys.dm_pdw_waits waits 
-	   JOIN  sys.dm_pdw_exec_requests requests
-	   ON waits.request_id=requests.request_id 
-	WHERE waits.request_id = 'QID33188'
-	ORDER BY waits.object_name, waits.object_type, waits.state;
+SELECT waits.session_id,
+      waits.request_id,  
+      requests.command,
+      requests.status, 
+      requests.start_time,  
+      waits.type,  
+      waits.object_type, 
+      waits.object_name,  
+      waits.state  
+FROM   sys.dm_pdw_waits waits 
+   JOIN  sys.dm_pdw_exec_requests requests
+   ON waits.request_id=requests.request_id 
+WHERE waits.request_id = 'QID33188'
+ORDER BY waits.object_name, waits.object_type, waits.state;
 
-
+```
 
 
 上述查询的结果将显示请求的等待状态。
@@ -97,15 +104,16 @@ WHERE c.session_id = @@SPID;
 
 使用请求 ID 检索所有分布式查询步骤的列表。通过查看总已用时间，查找长时间运行的步骤。
 
+```
 
+-- Find the distributed query plan steps for a specific query.
+-- Replace request_id with value from Step 1.
+ 
+SELECT * FROM sys.dm_pdw_request_steps
+WHERE request_id = 'QID33209'
+ORDER BY step_index;
 
-	-- Find the distributed query plan steps for a specific query.
-	-- Replace request_id with value from Step 1.
-	 
-	SELECT * FROM sys.dm_pdw_request_steps
-	WHERE request_id = 'QID33209'
-	ORDER BY step_index;
-
+```
 
 保存长时间运行步骤的步骤索引。
 
@@ -119,17 +127,17 @@ WHERE c.session_id = @@SPID;
 
 ### 步骤 4a：查找 SQL 步骤的执行进度
 
-使用请求 ID 和步骤索引，将 SQL Server 查询分布的相关信息检索为查询中 SQL 步骤的一部分。保存节点 ID 和 SPID。
+使用请求 ID 和步骤索引，将 SQL Server 查询分布的相关信息检索为查询中 SQL 步骤的一部分。保存分发 ID 和 SPID。
 
+```
 
+-- Find the distribution run times for a SQL step.
+-- Replace request_id and step_index with values from Step 1 and 3.
 
-	-- Find the distribution run times for a SQL step.
-	-- Replace request_id and step_index with values from Step 1 and 3.
-	
-	SELECT * FROM sys.dm_pdw_sql_requests
-	WHERE request_id = 'QID33209' AND step_index = 2;
+SELECT * FROM sys.dm_pdw_sql_requests
+WHERE request_id = 'QID33209' AND step_index = 2;
 
-
+```
 
 
 使用以下查询在特定节点上检索 SQL 步骤的 SQL Server 执行计划。
@@ -137,7 +145,7 @@ WHERE c.session_id = @@SPID;
 ```
 
 -- Find the SQL Server execution plan for a query running on a specific SQL Data Warehouse Compute or Control node. 
--- Replace node_id and spid with values from previous query.
+-- Replace distribution_id and spid with values from previous query.
 
 DBCC PDW_SHOWEXECUTIONPLAN(1, 78);
 
@@ -149,14 +157,15 @@ DBCC PDW_SHOWEXECUTIONPLAN(1, 78);
 
 使用请求 ID 和步骤索引检索对每个分布运行的数据移动步骤的相关信息。
 
+```
 
-	-- Find the information about all the workers completing a Data Movement Step.
-	-- Replace request_id and step_index with values from Step 1 and 3.
-	 
-	SELECT * FROM sys.dm_pdw_dms_workers
-	WHERE request_id = 'QID33209' AND step_index = 2;
+-- Find the information about all the workers completing a Data Movement Step.
+-- Replace request_id and step_index with values from Step 1 and 3.
+ 
+SELECT * FROM sys.dm_pdw_dms_workers
+WHERE request_id = 'QID33209' AND step_index = 2;
 
-
+```
 
 - 检查 *total\_elapsed\_time* 列，以查看是否有特定分布在数据移动上比其他分布花费了更多时间。 
 - 对于长时间运行的分布，请检查 *rows\_processed* 列，以查看从该分布移动的行数是否远远多于其他分布。这会显示你的查询出现了数据偏斜。
@@ -168,12 +177,15 @@ DBCC PDW_SHOWEXECUTIONPLAN(1, 78);
 ## 调查数据偏斜
 
 ```
+
 -- Find data skew for a distributed table
 DBCC PDW_SHOWSPACEUSED("dbo.FactInternetSales");
+
 ```
 
 
-此查询的结果将显示存储在数据库中每组 60 个分布内的表行数目。为了获得最佳性能，分布式表中的行应该平均分散在所有分布区中。若要了解详细信息，请参阅[表设计][]。
+此查询的结果将显示存储在数据库中每组 60 个分布内的表行数目。为了获得最佳性能，分布式表中的行应该平均分散在所有分布区中。
+若要了解详细信息，请参阅[表设计][]。
 
 
 
@@ -188,4 +200,4 @@ DBCC PDW_SHOWSPACEUSED("dbo.FactInternetSales");
 
 <!--MSDN references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->
