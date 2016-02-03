@@ -26,7 +26,7 @@
 
 以下是可用于创建 Linux RDMA 群集的方法（使用或不使用作业计划程序）。
 
-* **HPC Pack** - 在 Azure 中创建 Microsoft HPC Pack 群集，然后添加运行支持的 Linux 分发（Linux 计算节点从 HPC Pack 2012 R2 Update 2 开始支持）的计算节点。可以将某些 Linux 节点配置为访问 RDMA 网络。请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster)。
+* **HPC Pack** - 在 Azure 中创建 Microsoft HPC Pack 群集，然后添加运行支持的 Linux 分发（Linux 计算节点从 HPC Pack 2012 R2 Update 2 开始支持）的计算节点。可以将某些 Linux 节点配置为访问 RDMA 网络。
 
 * **Azure CLI 脚本** - 如本文其他地方的步骤中所示，使用适用于 Mac、Linux 和 Windows 的 [Azure 命令行界面](/documentation/articles/xplat-cli-install) (CLI) 生成部署创建 Linux 群集所需的虚拟网络和其他必需组件的脚本。经典（服务管理）部署模式中的 CLI 将依次创建群集节点，因此，如果你要部署许多计算节点，可能需要几分钟才能完成部署。
 
