@@ -43,9 +43,9 @@
 
 你可以在[此处](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/classic/virtual-network-deploy-multinic-classic-cli.sh)下载所用的完整 bash 脚本。请按照以下步骤更改要在你的环境中使用的脚本。
 
-1. 基于你在上面[先决条件](#Prerequisites)中部署的现有资源组更改以下变量的值。
+1. 基于你在上面[先决条件](#Prerequisites)中部署的更改以下变量的值。
 
-		location="useast2"
+		location="chinaeast"
 		vnetName="WTestVNet"
 		backendSubnetName="BackEnd"
 
@@ -68,7 +68,7 @@
 
 ### 步骤 2 - 为你的 VM 创建必要的资源
 
-1. 为所有后端 VM 创建新的云服务。请注意使用 `$backendCSName` 变量表示资源组名称，使用 `$location` 表示 Azure 区域。
+1. 为所有后端 VM 创建新的云服务。请注意使用 `$backendCSName` 变量表示云服务名称，使用 `$location` 表示 Azure 区域。
 
 		azure service create --serviceName $backendCSName \
 		    --location $location
