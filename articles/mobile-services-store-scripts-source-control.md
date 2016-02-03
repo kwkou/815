@@ -14,7 +14,7 @@
 
 # 在源代码管理中存储移动服务项目代码
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
 
 &nbsp;
 > [AZURE.SELECTOR]
