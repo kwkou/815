@@ -9,65 +9,73 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="07/15/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="09/10/2015"
+	wacn.date="01/29/2016"/>
 
 # 在 Azure 资源管理器模板中共享状态
 
-本主题介绍如何在 Azure 资源管理器模板中以及多个链接的模板中管理和共享状态。
+本主题介绍有关在 Azure 资源管理器模板中以及多个链接的模板中管理和共享状态的最佳实践。本主题中所示的参数和变量是你为了方便组织部署要求而可以定义的对象类型的示例。通过这些示例，你可以使用适合环境的属性值实现自己的对象。
+
+本主题是包含更多内容的白皮书的一部分。若要阅读完整的白皮书，请下载 [一流的 ARM 模板注意事项和成熟的做法](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World Class ARM Templates - Considerations and Proven Practices.pdf)。
+
 
 ## 使用复杂的对象来共享状态
 
-除了单值参数，你还可以在 Azure 资源管理器模板中使用复杂对象作为参数。使用复杂对象时，你可以实现和引用特定区域的数据集合，例如 T 恤大小（用于描述虚拟机）、网络设置、操作系统 (OS) 设置和可用性设置。
+与其给予模板来提供整体弹性和无数种差异，不如采用一种常用模式，就是提供选择已知配置的功能 - 实际上，是诸如沙箱、小、中和大之类的标准 T 恤尺寸。T 恤尺寸的其他示例包括产品，例如社区版本或企业版本。在其他情况下，这可能是某种技术的工作负荷特定配置，例如，映射化简或 No SQL。
+
+如果使用复杂对象，你可以创建包含数据集合的变量（有时称为“属性包”），并使用使用数据驱动模板中的资源声明。这种方法可对于预先为客户配置好的各种大小提供正常且已知的配置。如果没有已知配置，客户就必须自行确定群集大小、整合平台资源约束，以及执行数学运算来识别存储帐户的生成分区和其他资源（因群集大小和资源约束而导致）。已知配置使客户能够轻松选择正确的 T 恤尺寸，也就是给定的部署。除了为客户提供更好的体验，少量的已知配置可让你更轻松地提供支持，并帮助你提供较高的密度级别。
+
 
 以下示例显示了如何定义包含复杂对象（代表数据聚合）的变量。这些集合定义的值可用于虚拟机大小、网络设置、操作系统设置和可用性设置。
 
-    "tshirtSizeLarge": {
-      "vmSize": "Standard_A4",
-      "diskSize": 1023,
-      "vmTemplate": "[concat(variables('templateBaseUrl'), 'database-16disk-resources.json')]",
-      "vmCount": 3,
-      "slaveCount": 2,
-      "storage": {
-        "name": "[parameters('storageAccountNamePrefix')]",
-        "count": 2,
-        "pool": "db",
-        "map": [0,1,1],
-        "jumpbox": 0
-      }
-    },
-    "osSettings": {
-      "scripts": [
-        "[concat(variables('templateBaseUrl'), 'install_postgresql.sh')]",
-        "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/shared_scripts/ubuntu/vm-disk-utils-0.1.sh"
-      ],
-      "imageReference": {
-				"publisher": "Canonical",
-        "offer": "UbuntuServer",
-        "sku": "14.04.2-LTS",
-        "version": "latest"
-      }
-    },
-    "networkSettings": {
-      "vnetName": "[parameters('virtualNetworkName')]",
-      "addressPrefix": "10.0.0.0/16",
-      "subnets": {
-        "dmz": {
-          "name": "dmz",
-          "prefix": "10.0.0.0/24",
-          "vnet": "[parameters('virtualNetworkName')]"
-        },
-        "data": {
-          "name": "data",
-          "prefix": "10.0.1.0/24",
-          "vnet": "[parameters('virtualNetworkName')]"
+    "variables": {
+      "tshirtSizeLarge": {
+        "vmSize": "Standard_A4",
+        "diskSize": 1023,
+        "vmTemplate": "[concat(variables('templateBaseUrl'), 'database-16disk-resources.json')]",
+        "vmCount": 3,
+        "slaveCount": 2,
+        "storage": {
+          "name": "[parameters('storageAccountNamePrefix')]",
+          "count": 2,
+          "pool": "db",
+          "map": [0,1,1],
+          "jumpbox": 0
         }
+      },
+      "osSettings": {
+        "scripts": [
+          "[concat(variables('templateBaseUrl'), 'install_postgresql.sh')]",
+          "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/shared_scripts/ubuntu/vm-disk-utils-0.1.sh"
+        ],
+        "imageReference": {
+	  "publisher": "Canonical",
+          "offer": "UbuntuServer",
+          "sku": "14.04.2-LTS",
+          "version": "latest"
+        }
+      },
+      "networkSettings": {
+        "vnetName": "[parameters('virtualNetworkName')]",
+        "addressPrefix": "10.0.0.0/16",
+        "subnets": {
+          "dmz": {
+            "name": "dmz",
+            "prefix": "10.0.0.0/24",
+            "vnet": "[parameters('virtualNetworkName')]"
+          },
+          "data": {
+            "name": "data",
+            "prefix": "10.0.1.0/24",
+            "vnet": "[parameters('virtualNetworkName')]"
+          }
+        }
+      },
+      "availabilitySetSettings": {
+        "name": "pgsqlAvailabilitySet",
+        "fdCount": 3,
+        "udCount": 5
       }
-    },
-    "availabilitySetSettings": {
-      "name": "pgsqlAvailabilitySet",
-      "fdCount": 3,
-      "udCount": 5
     }
 
 然后，你可以在将来引用模板中的这些变量。能够引用指定变量及其属性可以简化模板语法，从而轻松地理解上下文。下面的示例定义的资源在部署时可以使用上述对象来设置值。例如，你可以注意到，VM 大小是通过检索 `variables('tshirtSize').vmSize` 的值来设置的，而磁盘大小的值是从 `variables('tshirtSize').diskSize` 检索的。此外，已链接模板的 URI 是通过 `variables('tshirtSize').vmTemplate` 的值来设置的。
@@ -362,7 +370,7 @@ enableJumpbox | 约束列表中的字符串 (enabled/disabled) | 一个参数，
 
     "outputs": {
         "masterip": {
-            "value": "[reference(concat(variables('nicName'),0)).ipConfigurations[0].properties.privateIPAddress]",
+            "value": "[reference(concat(variables('nicName'),0)).ipConfigurations[0].privateIPAddress]",
             "type": "string"
          }
     }
@@ -377,4 +385,4 @@ enableJumpbox | 约束列表中的字符串 (enabled/disabled) | 一个参数，
 - [创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)
 - [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

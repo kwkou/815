@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multiple" 
-	ms.date="08/31/2015" 
-	wacn.date="12/17/2015"/>
+	ms.date="11/19/2015" 
+	wacn.date="01/29/2016"/>
 
 # 将证书添加到 Java CA 证书存储
 以下步骤演示如何将证书颁发机构 (CA) 证书添加到 Java CA 证书 (cacerts) 存储。使用的示例适用于 Twilio 服务所需的 CA 证书。本主题中稍后提供的信息将介绍如何安装 Azure Service Bus 的 CA 证书。
@@ -52,4 +52,4 @@ Baltimore 证书可能已安装到您的 cacerts 存储中，因此请务必先�
 
 有关 Java 的详细信息，请参阅 [Java 开发人员中心](/develop/java/)。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

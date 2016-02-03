@@ -10,8 +10,8 @@
 
 <tags
    ms.service="best-practice"
-   ms.date="04/28/2015"
-   wacn.date="01/21/2016"/>
+   ms.date="12/17/2015"
+   wacn.date="01/29/2016"/>
 
 # API 设计指南
 
@@ -47,14 +47,14 @@ GET http://adventure-works.com/orders HTTP/1.1
 ...
 ```
 
-下面所示的响应将订单编码为 XML 列表结构。该列表包含 7 个订单：
+下面所示的响应将订单编码为 JSON 列表结构：
 
 ```HTTP
 HTTP/1.1 200 OK
 ...
 Date: Fri, 22 Aug 2014 08:49:02 GMT
 Content-Length: ...
-<OrderList xmlns:i="..." xmlns="..."><Order><OrderID>1</OrderID><OrderValue>99.90</OrderValue><ProductID>1</ProductID><Quantity>1</Quantity></Order><Order><OrderID>2</OrderID><OrderValue>10.00</OrderValue><ProductID>4</ProductID><Quantity>2</Quantity></Order><Order><OrderID>3</OrderID><OrderValue>16.60</OrderValue><ProductID>2</ProductID><Quantity>4</Quantity></Order><Order><OrderID>4</OrderID><OrderValue>25.90</OrderValue><ProductID>3</ProductID><Quantity>1</Quantity></Order><Order><OrderID>7</OrderID><OrderValue>99.90</OrderValue><ProductID>1</ProductID><Quantity>1</Quantity></Order></OrderList>
+[{"orderId":1,"orderValue":99.90,"productId":1,"quantity":1},{"orderId":2,"orderValue":10.00,"productId":4,"quantity":2},{"orderId":3,"orderValue":16.60,"productId":2,"quantity":4},{"orderId":4,"orderValue":25.90,"productId":3,"quantity":1},{"orderId":5,"orderValue":99.90,"productId":1,"quantity":1}]
 ```
 若要提取单个订单，需要指定_订单_资源中的订单标识符，例如 _/orders/2_：
 
@@ -68,11 +68,10 @@ HTTP/1.1 200 OK
 ...
 Date: Fri, 22 Aug 2014 08:49:02 GMT
 Content-Length: ...
-<Order xmlns:i="..." xmlns="...">
-<OrderID>2</OrderID><OrderValue>10.00</OrderValue><ProductID>4</ProductID><Quantity>2</Quantity></Order>
+{"orderId":2,"orderValue":10.00,"productId":4,"quantity":2}
 ```
 
-> [AZURE.NOTE]为简单起见，这些示例显示响应中作为 XML 文本数据返回的信息。但是，没有理由资源不应包含 HTTP 支持的任何其他类型的数据（如二进制或加密信息）；HTTP 响应中的 content-type 应指定类型。此外，REST 模型还能够以不同格式返回相同数据，如 XML 或 JSON。在这种情况下，Web 服务应能够与发出请求的客户端执行内容协商。请求可包含 _Accept_ 标头以指定客户端想要接收的首选格式，Web 服务应尝试尽可能采用这种格式。
+> [AZURE.NOTE]为简单起见，这些示例显示响应中作为 JSON 文本数据返回的信息。但是，没有理由资源不应包含 HTTP 支持的任何其他类型的数据（如二进制或加密信息）；HTTP 响应中的 content-type 应指定类型。此外，REST 模型还能够以不同格式返回相同数据，如 XML 或 JSON。在这种情况下，Web 服务应能够与发出请求的客户端执行内容协商。请求可包含 _Accept_ 标头以指定客户端想要接收的首选格式，Web 服务应尝试尽可能采用这种格式。
 
 请注意，REST 请求的响应需使用标准 HTTP 状态代码。例如，返回有效数据的请求应包括 HTTP 响应代码 200（正常），而无法找到或删除指定资源的请求则应返回包含 HTTP 状态代码 404（未找到）的响应。
 
@@ -162,10 +161,10 @@ Content-Type: application/json; charset=utf-8
 ...
 Date: Fri, 22 Aug 2014 09:18:37 GMT
 Content-Length: ...
-{"OrderID":2,"ProductID":4,"Quantity":2,"OrderValue":10.00}
+{"orderID":2,"productID":4,"quantity":2,"orderValue":10.00}
 ```
 
-如果 Web 服务器不支持所请求的媒体类型，它可以使用其他格式发送数据。在所有情况下，它都必须在 Content-Type 标头中指定媒体类型（如 _text/xml_）。客户端应用程序负责分析响应消息并相应地解释消息正文中的结果。
+如果 Web 服务器不支持所请求的媒体类型，它可以使用其他格式发送数据。在所有情况下，它都必须在 Content-Type 标头中指定媒体类型（如 _application/json_）。客户端应用程序负责分析响应消息并相应地解释消息正文中的结果。
 
 请注意，在此示例中，Web 服务器成功检索所请求的数据，并通过在响应标头中传递回状态代码 200 来指示成功。如果未找到任何匹配的数据，它应改为返回状态代码 404（找不到），响应消息的正文可以包含附加信息。此信息的格式由 Content-Type 标头指定，如下面的示例中所示：
 
@@ -185,7 +184,7 @@ Content-Type: application/json; charset=utf-8
 ...
 Date: Fri, 22 Aug 2014 09:18:37 GMT
 Content-Length: ...
-{"Message":"No such order"}
+{"message":"No such order"}
 ```
 
 当应用程序发送 HTTP PUT 请求以更新资源时，它将指定资源的 URI 并在请求消息的正文中提供要修改的数据。它还应使用 Content-Type 标头指定此数据的格式。用于基于文本的信息的常见格式是 _application/x-www-form-urlencoded_，它由用 & 字符分隔的一组名称/值对组成。下一个示例演示了用于修改订单 1 中的信息的 HTTP PUT 请求：
@@ -225,7 +224,7 @@ Content-Type: application/x-www-form-urlencoded
 ...
 Date: Fri, 22 Aug 2014 09:18:37 GMT
 Content-Length: ...
-ProductID=5&Quantity=15&OrderValue=400
+productID=5&quantity=15&orderValue=400
 ```
 
 如果该请求成功，Web 服务器应以包含 HTTP 状态代码 201（已创建）的消息代码进行响应。Location 标头应包含新创建的资源的 URI，响应正文应包含新资源的副本；Content-Type 标头指定此数据的格式：
@@ -238,7 +237,7 @@ Location: http://adventure-works.com/orders/99
 ...
 Date: Fri, 22 Aug 2014 09:18:37 GMT
 Content-Length: ...
-{"OrderID":99,"ProductID":5,"Quantity":15,"OrderValue":400}
+{"orderID":99,"productID":5,"quantity":15,"orderValue":400}
 ```
 
 > [AZURE.TIP]如果 PUT 或 POST 请求提供的数据无效，Web 服务器应以包含 HTTP 状态代码 400（错误请求）的消息进行响应。此消息的正文可以包含有关请求存在的问题的其他信息以及所需的格式，也可以包含指向提供更多详细信息的 URL 的链接。
@@ -285,7 +284,7 @@ Date: Fri, 22 Aug 2014 09:18:37 GMT
 单个资源可能包含大型二进制字段，例如文件或图像。若要解决由不可靠和间歇性连接导致的传输问题并缩短响应时间，请考虑提供使客户端应用程序能够分块检索此类资源的操作。为此，Web API 对于针对大型资源的 GET 请求应支持 Accept-Ranges 标头，并完美地实现对这些资源的 HTTP HEAD 请求。Accept-Ranges 标头指示 GET 操作支持部分结果并且客户端应用程序可以提交返回指定为字节范围的资源子集的 GET 请求。HEAD 请求与 GET 请求类似，不同的是它仅返回描述资源的标头和空的消息正文。客户端应用程序可以发出 HEAD 请求以确定是否要通过使用部分 GET 请求获取某个资源。下面的示例演示获取有关产品图像的信息的 HEAD 请求：
 
 ```HTTP
-HEAD http://adventure-works.com/products/10?fields=ProductImage HTTP/1.1
+HEAD http://adventure-works.com/products/10?fields=productImage HTTP/1.1
 ...
 ```
 
@@ -303,7 +302,7 @@ Content-Length: 4580
 客户端应用程序可以使用此信息构造一系列 GET 操作以检索较小区块中的图像。第一个请求通过使用 Range 标头提取前 2500 个字节：
 
 ```HTTP
-GET http://adventure-works.com/products/10?fields=ProductImage HTTP/1.1
+GET http://adventure-works.com/products/10?fields=productImage HTTP/1.1
 Range: bytes=0-2499
 ...
 ```
@@ -324,7 +323,7 @@ _{binary data not shown}_
 客户端应用程序的后续请求可以通过使用相应的 Range 标头检索资源的其余部分：
 
 ```HTTP
-GET http://adventure-works.com/products/10?fields=ProductImage HTTP/1.1
+GET http://adventure-works.com/products/10?fields=productImage HTTP/1.1
 Range: bytes=2500-
 ...
 ```
@@ -355,7 +354,7 @@ Accept: application/json
 ...
 ```
 
-响应消息的正文包含一个 `Links` 数组（在代码示例中突出显示），用于指定关系的性质（_客户_）、客户的 URI (\__http://adventure-works.com/customers/3_))、检索此客户的详细信息的方法 (_GET_)，以及 Web 服务器支持检索此信息的 MIME 类型（_text/xml_ 和 _application/json_）。这是客户端应用程序要能够提取客户的详细信息所需的所有信息。此外，链接数组还包括其他可以执行的操作的链接，例如 PUT（用于修改客户以及 Web 服务器需要客户端提供的格式）和 DELETE。
+响应消息的正文包含一个 `links` 数组（在代码示例中突出显示），用于指定关系的性质（_客户_）、客户的 URI (_http://adventure-works.com/customers/3_))、检索此客户的详细信息的方法 (_GET_)，以及 Web 服务器支持检索此信息的 MIME 类型（_text/xml_ 和 _application/json_）。这是客户端应用程序要能够提取客户的详细信息所需的所有信息。此外，链接数组还包括其他可以执行的操作的链接，例如 PUT（用于修改客户以及 Web 服务器需要客户端提供的格式）和 DELETE。
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -363,8 +362,8 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-{"OrderID":3,"ProductID":2,"Quantity":4,"OrderValue":16.60,"Links":[(some links omitted){"Relationship":"customer","HRef":" http://adventure-works.com/customers/3", "Action":"GET","LinkedResourceMIMETypes":["text/xml","application/json"]},{"Relationship":"
-customer","HRef":" http://adventure-works.com /customers/3", "Action":"PUT","LinkedResourceMIMETypes":["application/x-www-form-urlencoded"]},{"Relationship":"customer","HRef":" http://adventure-works.com /customers/3","Action":"DELETE","LinkedResourceMIMETypes":[]}]}
+{"orderID":3,"productID":2,"quantity":4,"orderValue":16.60,"links":[(some links omitted){"rel":"customer","href":" http://adventure-works.com/customers/3", "action":"GET","types":["text/xml","application/json"]},{"rel":"
+customer","href":" http://adventure-works.com /customers/3", "action":"PUT","types":["application/x-www-form-urlencoded"]},{"rel":"customer","href":" http://adventure-works.com /customers/3","action":"DELETE","types":[]}]}
 ```
 
 出于完整性考虑，链接数组还应包括有关已检索到的资源的自引用信息。这些链接在前一示例中省略了，但在下面的代码中突出显示。请注意，在这些链接中，关系 _self_ 已用于指示这是对该操作所返回的资源的引用：
@@ -375,8 +374,8 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-{"OrderID":3,"ProductID":2,"Quantity":4,"OrderValue":16.60,"Links":[{"Relationship":"self","HRef":" http://adventure-works.com/orders/3", "Action":"GET","LinkedResourceMIMETypes":["text/xml","application/json"]},{"Relationship":" self","HRef":" http://adventure-works.com /orders/3", "Action":"PUT","LinkedResourceMIMETypes":["application/x-www-form-urlencoded"]},{"Relationship":"self","HRef":" http://adventure-works.com /orders/3", "Action":"DELETE","LinkedResourceMIMETypes":[]},{"Relationship":"customer",
-"HRef":" http://adventure-works.com /customers/3", "Action":"GET","LinkedResourceMIMETypes":["text/xml","application/json"]},{"Relationship":" customer" (customer links omitted)}]}
+{"orderID":3,"productID":2,"quantity":4,"orderValue":16.60,"links":[{"rel":"self","href":" http://adventure-works.com/orders/3", "action":"GET","types":["text/xml","application/json"]},{"rel":" self","href":" http://adventure-works.com /orders/3", "action":"PUT","types":["application/x-www-form-urlencoded"]},{"rel":"self","href":" http://adventure-works.com /orders/3", "action":"DELETE","types":[]},{"rel":"customer",
+"href":" http://adventure-works.com /customers/3", "action":"GET","types":["text/xml","application/json"]},{"rel":" customer" (customer links omitted)}]}
 ```
 
 要使此方法有效，必须客户端应用程序准备好检索和分析此附加信息。
@@ -391,7 +390,7 @@ Content-Length: ...
 
 这是最简单的方法，它对于一些内部 API 来说可能是可以接受的。较大的更改可以表示为新资源或新链接。向现有资源添加内容可能未呈现重大更改，因为不应查看此内容的客户端应用程序将直接忽略它。
 
-例如，向 URI \__http://adventure-works.com/customers/3_ 发出请求应返回包含客户端应用程序所需的 `Id`、`Name` 和 `Address` 字段的单个客户的详细信息：
+例如，向 URI _http://adventure-works.com/customers/3_ 发出请求应返回包含客户端应用程序所需的 `id`、`name` 和 `address` 字段的单个客户的详细信息：
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -399,7 +398,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","Address":"1 Microsoft Way Redmond WA 98053"}]
+{"id":3,"name":"Contoso LLC","address":"1 Microsoft Way Redmond WA 98053"}
 ```
 
 > [AZURE.NOTE]为简单清晰起见，本节中所示的示例响应将不包括 HATEOAS 链接。
@@ -412,7 +411,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","DateCreated":"2014-09-04T12:11:38.0376089Z","Address":"1 Microsoft Way Redmond WA 98053"}]
+{"id":3,"name":"Contoso LLC","dateCreated":"2014-09-04T12:11:38.0376089Z","address":"1 Microsoft Way Redmond WA 98053"}
 ```
 
 现有的客户端应用程序可能会继续正常工作（如果能够忽略无法识别的字段），而新的客户端应用程序则可以设计为处理该新字段。但是，如果对资源的架构进行了更根本的更改（如删除或重命名字段）或资源之间的关系发生更改，则这些更改可能构成重大更改，从而阻止现有客户端应用程序正常工作。在这些情况下应考虑以下方法之一。
@@ -421,7 +420,7 @@ Content-Length: ...
 
 每次修改 Web API 或更改资源的架构时，向每个资源的 URI 添加版本号。以前存在的 URI 应像以前一样继续运行，并返回符合原始架构的资源。
 
-继续前面的示例，如果将 `Address` 字段重构为包含地址的每个构成部分的子字段（例如 `StreetAddress`、`City`、`State` 和 `ZipCode`），则此版本的资源可通过包含版本号的 URI（如 http://adventure-works.com/v2/customers/3）公开：
+继续前面的示例，如果将 `address` 字段重构为包含地址的每个构成部分的子字段（例如 `streetAddress`、`city`、`state` 和 `zipCode`），则此版本的资源可通过包含版本号的 URI（如 http://adventure-works.com/v2/customers/3 ）公开：
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -429,18 +428,18 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","DateCreated":"2014-09-04T12:11:38.0376089Z","Address":{"StreetAddress":"1 Microsoft Way","City":"Redmond","State":"WA","ZipCode":98053}}]
+{"id":3,"name":"Contoso LLC","dateCreated":"2014-09-04T12:11:38.0376089Z","address":{"streetAddress":"1 Microsoft Way","city":"Redmond","state":"WA","zipCode":98053}}
 ```
 
 此版本控制机制非常简单，但依赖于将请求路由到相应终结点的服务器。但是，随着 Web API 经过多次迭代而变得成熟，服务器必须支持多个不同版本，它可能变得难以处理。此外，从单纯的角度来看，在所有情况下客户端应用程序都要提取相同数据（客户 3），因此 URI 实在不应该因版本而有所不同。此方案也增加了 HATEOAS 实现的复杂性，因为所有链接都需要在其 URI 中包括版本号。
 
 ### 查询字符串版本控制
 
-不是提供多个 URI，而是可以通过在追加到 HTTP 请求后面的查询字符串中使用参数来指定资源的版本，例如 \__http://adventure-works.com/customers/3?version=2_。如果 version 参数被较旧的客户端应用程序省略，则应默认为有意义的值（例如 1）。
+不是提供多个 URI，而是可以通过在追加到 HTTP 请求后面的查询字符串中使用参数来指定资源的版本，例如 _http://adventure-works.com/customers/3?version=2_。如果 version 参数被较旧的客户端应用程序省略，则应默认为有意义的值（例如 1）。
 
 此方法具有语义优势（即，同一资源始终从同一 URI 进行检索），但它依赖于代码处理请求以分析查询字符串并发送回相应的 HTTP 响应。此方法也与 URI 版本控制机制一样，增加了实现 HATEOAS 的复杂性。
 
-> [AZURE.NOTE]某些较旧的 Web 浏览器和 Web 代理将不会缓存在 URL 中包括查询字符串的请求的响应。这可能会对使用 Web API 的 Web 应用以及从此类 Web 浏览器运行的 Web 应用的性能产生不利影响。
+> [AZURE.NOTE]某些较旧的 Web 浏览器和 Web 代理将不会缓存在 URL 中包括查询字符串的请求的响应。这可能会对使用 Web API 的 Web 应用程序以及从此类 Web 浏览器运行的 Web 应用程序的性能产生不利影响。
 
 ### 标头版本控制
 
@@ -461,7 +460,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","Address":"1 Microsoft Way Redmond WA 98053"}]
+{"id":3,"name":"Contoso LLC","address":"1 Microsoft Way Redmond WA 98053"}
 ```
 
 版本 2：
@@ -479,7 +478,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","DateCreated":"2014-09-04T12:11:38.0376089Z","Address":{"StreetAddress":"1 Microsoft Way","City":"Redmond","State":"WA","ZipCode":98053}}]
+{"id":3,"name":"Contoso LLC","dateCreated":"2014-09-04T12:11:38.0376089Z","address":{"streetAddress":"1 Microsoft Way","city":"Redmond","state":"WA","zipCode":98053}}
 ```
 
 请注意，与前面两个方法一样，实现 HATEOAS 需要在任何链接中包括相应的自定义标头。
@@ -503,7 +502,7 @@ HTTP/1.1 200 OK
 Content-Type: application/vnd.adventure-works.v1+json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","Address":"1 Microsoft Way Redmond WA 98053"}]
+{"id":3,"name":"Contoso LLC","address":"1 Microsoft Way Redmond WA 98053"}
 ```
 
 如果 Accept 标头未指定任何已知的媒体类型，则 Web 服务器可以生成 HTTP 406（不可接受）响应消息或返回使用默认媒体类型的消息。
@@ -519,4 +518,4 @@ Content-Length: ...
 - [RESTful Cookbook](http://restcookbook.com/) 包含构建 RESTful API 的简介。
 - Web [API 清单](https://mathieu.fenniak.net/the-api-checklist/)包含在设计和实现 Web API 时要考虑的有用的项目列表。
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0118_2016-->

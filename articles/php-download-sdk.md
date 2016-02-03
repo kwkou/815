@@ -2,15 +2,15 @@
 	pageTitle="下载 Azure SDK for PHP"
 	description="了解如何下载和安装 Azure SDK for PHP。"
 	documentationCenter="php"
-	services=""
+	services="app-service\web"
 	authors="tfitzmac"
 	manager="wpickett"
 	editor=""/>
 
 <tags
-	ms.service="multiple"
-	ms.date="08/31/2015"
-	wacn.date="01/21/2016"/>
+	ms.service="app-service-web"
+	ms.date="12/16/2015"
+	wacn.date="01/29/2016"/>
 
 #下载 Azure SDK for PHP
 
@@ -19,7 +19,7 @@
 Azure SDK for PHP 包括允许你针对 Azure 开发、部署和管理 PHP 应用程序的组件。具体而言，Azure SDK for PHP 包括以下组件：
 
 * **Azure 的 PHP 客户端库**。这些类库提供用于访问 Azure 功能（例如数据管理服务和云服务）的接口。  
-* **适用于 Mac、Linux 和 Windows (Azure CLI) 的 Azure 命令行界面**。这是一组用于部署和管理 Azure 服务（例如 Azure Web 应用和 Azure 虚拟机）的命令。Azure CLI 可在任何平台（包括 Mac、Linux 和 Windows）上使用。
+* **适用于 Mac、Linux 和 Windows (Azure CLI) 的 Azure 命令行界面**。这是一组用于部署和管理 Azure 服务（例如 Azure 网站和 Azure 虚拟机）的命令。Azure CLI 可在任何平台（包括 Mac、Linux 和 Windows）上使用。
 * **Azure PowerShell（仅限 Windows）**。这是一组用于部署和管理 Azure 服务（例如云服务和虚拟机）的 PowerShell cmdlet。
 * **Azure 模拟器（仅限 Windows）**。计算和存储模拟器是一系列云服务和数据管理服务的本地模拟器，允许你在本地测试应用程序。Azure 模拟器仅在 Windows 上运行。
 
@@ -27,8 +27,7 @@ Azure SDK for PHP 包括允许你针对 Azure 开发、部署和管理 PHP 应�
 
 本主题中的说明假定您已安装 [PHP][install-php]。
 
-> [AZURE.NOTE]
-> 若要使用 Azure 的 PHP 客户端库，您必须安装 PHP 5.3 或更高版本。
+> [AZURE.NOTE]若要使用 Azure 的 PHP 客户端库，您必须安装 PHP 5.3 或更高版本。
 
 ##Azure 的 PHP 客户端库
 
@@ -41,10 +40,9 @@ Azure 的 PHP 客户端库提供了一个用于从任何操作系统访问 Azure
 1. [安装 Git][install-git]。
 
 
-	> [AZURE.NOTE]
-	> 在 Windows 上，您还需要向您的 PATH 环境变量添加 Git 可执行文件。
+	> [AZURE.NOTE]在 Windows 上，您还需要向您的 PATH 环境变量添加 Git 可执行文件。
 
-2. 在您的项目的根目录中创建一个名为 **composer.json** 的文件并向其添加以下代码：
+2. 在你的项目的根目录中创建一个名为 **composer.json** 的文件并向其添加以下代码：
 
         {
             "repositories": [
@@ -101,7 +99,7 @@ Azure PowerShell 是一组用于部署和管理 Azure 服务（例如，云服�
 
 ##Azure CLI
 
-Azure CLI 是一组用于部署和管理 Azure 服务（例如 Azure Web 应用和 Azure 虚拟机）的命令。有关安装 Azure CLI 的信息，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install)。
+Azure CLI 是一组用于部署和管理 Azure 服务（例如 Azure 网站和 Azure 虚拟机）的命令。有关安装 Azure CLI 的信息，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install)。
 
 ## 后续步骤
 
@@ -128,4 +126,4 @@ Azure CLI 是一组用于部署和管理 Azure 服务（例如 Azure Web 应用�
 [php-sdk-github]: http://go.microsoft.com/fwlink/?LinkId=252719
 [install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

@@ -10,8 +10,8 @@
 
 <tags
    ms.service="virtual-network"
-   ms.date="08/14/2015"
-   wacn.date="12/17/2015"/>
+   ms.date="12/07/2015"
+   wacn.date="01/29/2016"/>
 
 # Azure 部署模型
 
@@ -62,4 +62,4 @@ Azure 平台正在转换。不论你是 Azure 新手还是经验丰富的老手�
 - 了解如何[设计模板](/documentation/articles/best-practices-resource-manager-design-templates)。
 - 使用[最佳实践](/documentation/articles/best-practices-resource-manager-examples)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->
