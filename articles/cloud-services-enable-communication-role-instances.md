@@ -8,12 +8,12 @@ manager="timlt"
 editor=""/>
 <tags 
 ms.service="cloud-services" 
-ms.date="08/18/2015" 
-wacn.date="11/12/2015"/>
+ms.date="12/07/2015" 
+wacn.date="01/15/2016"/>
 
 # 为 Azure 中的角色实例启用通信
 
-云服务角色通过内部和外部连接进行通信。外部连接称为**输入终结点**，内部连接称为**内部终结点**。本主题介绍如何修改[服务定义](/documentation/articles/cloud-services-model-and-package#csdef)以创建终结点。
+云服务角色通过内部和外部连接进行通信。外部连接称为**输入终结点**，内部连接称为**内部终结点**。本主题介绍如何修改[服务定义](/documentation/articles/cloud-services-model-and-package/#csdef)以创建终结点。
 
 
 ## 输入终结点
@@ -74,10 +74,11 @@ wacn.date="11/12/2015"/>
 
 当你使用辅助角色和 web 角色时，在终结点方面需要注意一个细微的差别。Web 角色必须至少有一个使用 **HTTP** 协议的输入终结点。
 
+
 ```xml
 <Endpoints>
-	<InputEndpoint name="StandardWeb" protocol="http" port="80" localPort="80" />
-	<!-- more endpoints may be declared after the first InputEndPoint -->
+  <InputEndpoint name="StandardWeb" protocol="http" port="80" localPort="80" />
+  <!-- more endpoints may be declared after the first InputEndPoint -->
 </Endpoints>
 ```
 
@@ -118,86 +119,86 @@ foreach (RoleInstance roleInst in RoleEnvironment.CurrentRoleInstance.Role.Insta
 > [AZURE.WARNING]此代码仅适用于已部署的服务。在 Azure 计算模拟器中运行时，将忽略创建直接端口终结点的服务配置元素（**InstanceInputEndpoint** 元素）。
 
 ```csharp
-using System;
-using System.Diagnostics;
-using System.Linq;
-using System.Net;
-using System.Net.Sockets;
-using System.Threading;
-using Microsoft.WindowsAzure;
-using Microsoft.WindowsAzure.Diagnostics;
-using Microsoft.WindowsAzure.ServiceRuntime;
-using Microsoft.WindowsAzure.StorageClient;
+using System;
+using System.Diagnostics;
+using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
+using Microsoft.WindowsAzure;
+using Microsoft.WindowsAzure.Diagnostics;
+using Microsoft.WindowsAzure.ServiceRuntime;
+using Microsoft.WindowsAzure.StorageClient;
 
-namespace WorkerRole1
+namespace WorkerRole1
 {
-  public class WorkerRole : RoleEntryPoint
-  {
-    public override void Run()
-    {
-      try
-      {
-        // Initialize method-wide variables
-        var epName = "Endpoint1";
-        var roleInstance = RoleEnvironment.CurrentRoleInstance;
-        
-        // Identify direct communication port
-        var myPublicEp = roleInstance.InstanceEndpoints[epName].PublicIPEndpoint;
-        Trace.TraceInformation("IP:{0}, Port:{1}", myPublicEp.Address, myPublicEp.Port);
+  public class WorkerRole : RoleEntryPoint
+  {
+    public override void Run()
+    {
+      try
+      {
+        // Initialize method-wide variables
+        var epName = "Endpoint1";
+        var roleInstance = RoleEnvironment.CurrentRoleInstance;
+        
+        // Identify direct communication port
+        var myPublicEp = roleInstance.InstanceEndpoints[epName].PublicIPEndpoint;
+        Trace.TraceInformation("IP:{0}, Port:{1}", myPublicEp.Address, myPublicEp.Port);
 
-        // Identify public endpoint
-        var myInternalEp = roleInstance.InstanceEndpoints[epName].IPEndpoint;
-                
-        // Create socket listener
-        var listener = new Socket(
-          myInternalEp.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-                
-        // Bind socket listener to internal endpoint and listen
-        listener.Bind(myInternalEp);
-        listener.Listen(10);
-        Trace.TraceInformation("Listening on IP:{0},Port: {1}",
-          myInternalEp.Address, myInternalEp.Port);
+        // Identify public endpoint
+        var myInternalEp = roleInstance.InstanceEndpoints[epName].IPEndpoint;
+                
+        // Create socket listener
+        var listener = new Socket(
+          myInternalEp.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+                
+        // Bind socket listener to internal endpoint and listen
+        listener.Bind(myInternalEp);
+        listener.Listen(10);
+        Trace.TraceInformation("Listening on IP:{0},Port: {1}",
+          myInternalEp.Address, myInternalEp.Port);
 
-        while (true)
-        {
-          // Block the thread and wait for a client request
-          Socket handler = listener.Accept();
-          Trace.TraceInformation("Client request received.");
+        while (true)
+        {
+          // Block the thread and wait for a client request
+          Socket handler = listener.Accept();
+          Trace.TraceInformation("Client request received.");
 
-          // Define body of socket handler
-          var handlerThread = new Thread(
-            new ParameterizedThreadStart(h =>
-            {
-              var socket = h as Socket;
-              Trace.TraceInformation("Local:{0} Remote{1}",
-                socket.LocalEndPoint, socket.RemoteEndPoint);
+          // Define body of socket handler
+          var handlerThread = new Thread(
+            new ParameterizedThreadStart(h =>
+            {
+              var socket = h as Socket;
+              Trace.TraceInformation("Local:{0} Remote{1}",
+                socket.LocalEndPoint, socket.RemoteEndPoint);
 
-              // Shut down and close socket
-              socket.Shutdown(SocketShutdown.Both);
-              socket.Close();
-            }
-          ));
+              // Shut down and close socket
+              socket.Shutdown(SocketShutdown.Both);
+              socket.Close();
+            }
+          ));
 
-          // Start socket handler on new thread
-          handlerThread.Start(handler);
-        }
-      }
-      catch (Exception e)
-      {
-        Trace.TraceError("Caught exception in run. Details: {0}", e);
-      }
-    }
+          // Start socket handler on new thread
+          handlerThread.Start(handler);
+        }
+      }
+      catch (Exception e)
+      {
+        Trace.TraceError("Caught exception in run. Details: {0}", e);
+      }
+    }
 
-    public override bool OnStart()
-    {
-      // Set the maximum number of concurrent connections 
-      ServicePointManager.DefaultConnectionLimit = 12;
+    public override bool OnStart()
+    {
+      // Set the maximum number of concurrent connections 
+      ServicePointManager.DefaultConnectionLimit = 12;
 
-      // For information on handling configuration changes
-      // see the MSDN topic at http://go.microsoft.com/fwlink/?LinkId=166357.
-      return base.OnStart();
-    }
-  }
+      // For information on handling configuration changes
+      // see the MSDN topic at http://go.microsoft.com/fwlink/?LinkId=166357.
+      return base.OnStart();
+    }
+  }
 }
 ```
 
@@ -354,4 +355,4 @@ namespace WorkerRole1
 ## 后续步骤
 阅读有关云服务[模型](/documentation/articles/cloud-services-model-and-package)的详细信息。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0104_2016-->

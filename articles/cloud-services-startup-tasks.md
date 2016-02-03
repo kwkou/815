@@ -6,11 +6,10 @@ documentationCenter=""
 authors="Thraka" 
 manager="timlt" 
 editor=""/>
-
 <tags 
-ms.service="cloud-services" 
-ms.date="09/08/2015" 
-wacn.date="10/17/2015"/>
+	ms.service="cloud-services" 
+	ms.date="12/07/2015" 
+	wacn.date="01/15/2016"/>
 
 
 
@@ -26,8 +25,7 @@ wacn.date="10/17/2015"/>
 
 环境变量将信息传递给启动任务，而本地存储可用于从启动任务中传出信息。例如，环境变量可以指定你要安装的程序的路径，并可以将文件写入到本地存储，然后你的角色可以稍后读取这些文件。
 
-启动任务可以将信息和错误记录到 **TEMP** 环境变量指定的目录。在云中运行时，在启动任务期间，**TEMP** 环境变量将解析为 
-*C:\\Resources\\temp\\[guid].[rolename]\\RoleTemp* 目录。
+启动任务可以将信息和错误记录到 **TEMP** 环境变量指定的目录。在云中运行时，在启动任务期间，**TEMP** 环境变量将解析为 *C:\\Resources\\temp\\[guid].[rolename]\\RoleTemp* 目录。
 
 此外，启动任务还可以在重新启动之间执行多次。例如，每次角色回收时都会运行启动任务，但角色回收可能并非始终包括重新启动。应以这样的方式编写启动任务：使其能够多次运行而不会出现问题。
 
@@ -91,31 +89,31 @@ EXIT /B 0
 - 该命令具有可选的命令行参数，用于开始启动任务。
 - 通常它是 .cmd 或 .bat 批处理文件的文件名。
 - 该任务相对于部署的 AppRoot\\Bin 文件夹。在确定任务的路径和文件时不扩展环境变量。如果需要环境扩展，则可以创建用于调用启动任务的小型 .cmd 脚本。
-- 可以是一个启动 [PowerShell 脚本](/documentation/articles/cloud-services-startup-tasks-common#create-a-powershell-startup-task)的控制台应用程序或批处理文件。
+- 可以是一个启动 [PowerShell 脚本](/documentation/articles/cloud-services-startup-tasks-common/#create-a-powershell-startup-task)的控制台应用程序或批处理文件。
 
 **executionContext** - 为启动任务指定权限级别。权限级别可以为 limited 或 elevated：
 
-- **limited** 
+- **limited**  
 启动任务以与角色相同的权限运行。当 [Runtime] 元素的 **executionContext** 属性也是 **limited** 时，则使用用户权限。
 
-- **elevated** 
+- **elevated**  
 启动任务以管理员特权运行。这将允许启动任务安装程序、更改 IIS 配置、执行注册表更改和其他管理员级别任务，而不会提高角色本身的权限级别。
 
 > [AZURE.NOTE]启动任务的权限级别不需要与角色本身相同。
 
 **taskType** - 指定启动任务的执行方式。
 
-- **simple** 
+- **simple**  
 任务按照 [ServiceDefinition.csdef] 文件中指定的顺序一次一个地以同步方式执行。当一个 **simple** 启动任务以为零的 **errorlevel** 结束时，将执行下一个 **simple** 启动任务。如果没有更多 **simple** 启动任务要执行，则将启动角色本身。   
 
     > [AZURE.NOTE]如果 **simple** 任务以非零 **errorlevel** 结束，则将阻止该实例。后续 **simple** 启动任务和角色本身将不会启动。
 
     若要确保你的批处理文件以为零的 **errorlevel** 结束，请在在批处理文件进程结束时执行命令 `EXIT /B 0`。
 
-- **background** 
+- **background**  
 任务与角色同时启动，并以异步方式执行。
 
-- **foreground** 
+- **foreground**  
 任务与角色同时启动，并以异步方式执行。**foreground** 任务与 **background** 任务之间的主要区别在于 **foreground** 任务阻止角色回收或关闭，直到任务结束。**background** 任务没有此限制。
 
 ## 环境变量
@@ -157,10 +155,8 @@ EXIT /B 0
 [打包](/documentation/articles/cloud-services-model-and-package)你的云服务。
 
 
-[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package#csdef
-[Task]: https:
-
-msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
+[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package/#csdef
+[Task]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
 [Startup]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Startup
 [Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime
 [Environment]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Environment
@@ -168,4 +164,4 @@ msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
 [RoleInstanceValue]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0104_2016-->
