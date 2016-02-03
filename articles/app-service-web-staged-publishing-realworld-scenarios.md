@@ -1,6 +1,3 @@
-<!-- not suitable for Mooncake -->
-<!-- ? -->
-
 <properties
    pageTitle="对网站有效地使用 DevOps 环境"
    description="了解如何使用部署槽来设置和管理应用程序的多个开发环境"
