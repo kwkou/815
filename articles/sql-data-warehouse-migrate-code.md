@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="09/22/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="12/09/2015"
+   wacn.date="01/29/2015"/>
 
 # 将 SQL 代码迁移到 SQL 数据仓库
 
@@ -30,8 +30,8 @@
 - output 子句
 - 内联用户定义的函数
 - 多语句函数
+- [通用表表达式](#Common-table-expressions)
 - [递归通用表表达式 (CTE)](#Recursive-common-table-expressions-(CTE)
-- [通过 CTE 更新](#Updates-through-CTEs)
 - CLR 函数和过程
 - $partition 函数
 - 表变量
@@ -48,13 +48,30 @@
 
 幸好可以解决其中的大多数限制。上面提到的相关开发文章已提供了说明。
 
+### 通用表表达式
+SQL 数据仓库中当前的通用表表达式 (CTE) 实现具有以下功能和限制：
+
+**CTE 功能**
++ 可以在 SELECT 语句中指定 CTE。
++ 可以在 CREATE VIEW 语句中指定 CTE。
++ 可以在 CREATE TABLE AS SELECT (CTAS) 语句中指定 CTE。
++ 可以在 CREATE REMOTE TABLE AS SELECT (CRTAS) 语句中指定 CTE。
++ 可以在 CREATE EXTERNAL TABLE AS SELECT (CETAS) 语句中指定 CTE。
++ 可以从 CTE 引用远程表。
++ 可以从 CTE 引用外部表。
++ 可以在一个 CTE 中定义多个 CTE 查询定义。
+
+**CTE 限制**
++ CTE 必须后接单个 SELECT 语句。INSERT、UPDATE、DELETE 和 MERGE 语句不受支持。
++ 包含自身引用（递归通用表表达式）的通用表表达式不受支持（请参阅下一部分）。
++ 不允许在一个 CTE 中指定多个 WITH 子句。例如，如果 CTE\_query\_definition 包含子查询，则该子查询不能包含定义另一个 CTE 的嵌套 WITH 子句。
++ ORDER BY 子句不能在 CTE\_query\_definition 中使用，除非指定了 TOP 子句。
++ 如果在属于批处理的语句中使用 CTE，该 CTE 前面的语句必须后接分号。
++ 在 sp\_prepare 准备的语句中使用时，CTE 的行为与 PDW 中其他 SELECT 语句的行为相同。但是，如果 CTE 用作 sp\_prepare 所准备的 CETAS 的一部分，则因为针对 sp\_prepare 实现绑定的方式不同，CTE 的行为将与 SQL Server 和其他 PDW 语句不同。如果引用 CTE 的 SELECT 使用了不在 CTE 中的错误列，sp\_prepare 将会通过且不检测错误，但在 sp\_execute 期间将引发错误。
+
 ### 递归通用表表达式 (CTE)
 
-这是一种复杂的情形，目前没有快速解决办法。CTE 需要细分并逐步处理。通常你可以使用相当复杂的循环；当你循环访问递归的临时查询时，将会填充临时表。填充临时表之后，你可以使用单个结果集返回数据。类似的方法已用于解决[结合 rollup / cube / grouping sets 选项的 Group By 子句][]一文中所述的 `GROUP BY WITH CUBE`。
-
-### 通过 CTE 更新
-
-如果 CTE 不是递归性的，你可以重新编写查询来使用子查询。对于递归 CTE，需要如前所述先创建结果集，然后将最终结果集加入目标表并执行更新。
+这是一种复杂的迁移方案，最佳过程是细分 CTE 并逐步处理。通常你可以使用循环，并在循环访问递归的临时查询时填充临时表。填充临时表之后，你可以使用单个结果集返回数据。类似的方法已用于解决[结合 rollup / cube / grouping sets 选项的 Group By 子句][]一文中所述的 `GROUP BY WITH CUBE`。
 
 ### 系统函数
 
@@ -109,4 +126,4 @@ AND     request_id IN
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

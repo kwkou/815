@@ -10,7 +10,7 @@
 <tags
    ms.service="sql-data-warehouse"
    ms.date="11/05/2015"
-   wacn.date="01/20/2016"/>
+   wacn.date="01/29/2016"/>
 
 #Transact-SQL 主题
 
@@ -58,7 +58,7 @@
 - [DBCC DROPCLEANBUFFERS](https://msdn.microsoft.com/zh-cn/library/ms187762.aspx)
 - [DBCC FREEPROCCACHE](https://msdn.microsoft.com/zh-cn/library/ms174283.aspx)
 - DBCC SHRINKLOG
-- DBCC PDW\_SHOWEXECUTIONPLAN
+- [DBCC PDW\_SHOWEXECUTIONPLAN](https://msdn.microsoft.com/library/mt204017.aspx)
 - DBCC PDW\_SHOWPARTITIONSTATS
 - DBCC PDW\_SHOWSPACEUSED
 - [DBCC SHOW\_STATISTICS](https://msdn.microsoft.com/zh-cn/library/ms174384.aspx)
@@ -124,4 +124,4 @@
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->
