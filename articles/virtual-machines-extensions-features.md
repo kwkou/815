@@ -9,9 +9,9 @@
  tags="azure-service-management,azure-resource-manager"/>
 
 <tags
- ms.service="virtual-machines"
- ms.date="09/03/2015"
- wacn.date="12/17/2015"/>
+ 	ms.service="virtual-machines"
+ 	ms.date="12/08/2015"
+ 	wacn.date="01/29/2016"/>
 #关于虚拟机扩展和功能
 
 Windows Azure 提供由 Microsoft 和受信任的第三方提供商生成的 VM 扩展以实现安全性、运行时、调试、管理和其他功能，你可以在使用 Azure 虚拟机时利用这些功能提高工作效率。本主题介绍 Azure VM 扩展为 Windows 和 Linux 虚拟机提供的供你使用的各种功能并指向每个扩展的文档。
@@ -20,7 +20,7 @@ Windows Azure 提供由 Microsoft 和受信任的第三方提供商生成的 VM 
 
 
 
-有关 VM 代理以及它们如何工作以支持 VM 扩展的详细信息，请参阅 [VM 代理和 VM 扩展概述](https://msdn.microsoft.com/zh-cn/library/dn832621.aspx)。
+有关 VM 代理以及它们如何工作以支持 VM 扩展的详细信息，请参阅 [VM 代理和 VM 扩展概述](/documentation/articles/virtual-machines-extensions-install)。
 
 ##Azure VM 扩展
 
@@ -32,8 +32,8 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 
 |VM 扩展名称|功能说明|更多信息
 |---|---|---|
-|VMAccessAgent (Windows)|创建、更新和重置用户信息以及 RDP 和 SSH 连接配置。|[Windows](https://msdn.microsoft.com/zh-cn/library/dn606308.aspx)
-|VMAccessForLinux (Linux)|创建、更新和重置用户信息以及 RDP 和 SSH 连接配置。|[Linux](http://azure.microsoft.com/blog/2014/08/25/using-vmaccess-extension-to-reset-login-credentials-for-linux-vm/)
+|VMAccessAgent (Windows)|创建、更新和重置用户信息以及 RDP 和 SSH 连接配置。|[Windows](/documentation/articles/virtual-machines-extensions-customscript)
+|VMAccessForLinux (Linux)|创建、更新和重置用户信息以及 RDP 和 SSH 连接配置。|[Linux](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess)
 
 ##部署和配置管理
 
@@ -43,14 +43,14 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 |---|---|---|
 |**MSEnterpriseApplication**|实现了由 Windows System Center 提供支持的功能。|[System Center 2012 R2 虚拟机角色](http://social.technet.microsoft.com/wiki/contents/articles/18274.system-center-2012-r2-virtual-machine-role-authoring-guide-resource-extension-package.aspx)|
 |**Octopus Deploy**（基于 DSC 扩展）|支持自动将 ASP.NET Web 应用程序和 Windows 服务部署到开发、测试和生产环境。|[Octopus Deploy 入门](http://docs.octopusdeploy.com/display/OD/Getting%20started)|
-|**Visual Studio 发布管理器**（基于 DSC 扩展）|使用 Visual Studio 支持连续部署。|[使用 Release Management 自动进行部署](https://msdn.microsoft.com/zh-cn/library/dn217874.aspx)|
+|**Visual Studio 发布管理器**（基于 DSC 扩展）|使用 Visual Studio 支持连续部署。|[使用 Release Management 自动进行部署](https://msdn.microsoft.com/Library/vs/alm/Release/overview)|
 |**CentosChefClient**|||
 |**ChefClient**|在 Windows 上创建 Chef 客户端。（也可以使用下面的 DSC 扩展。）|[Chef 与 Windows Azure](https://www.getchef.com/solutions/azure/)|
 |**LinuxChefClient**|||
 |**DockerExtension**|安装 Docker 后台程序以支持远程 Docker 命令。|[如何使用 Docker 虚拟机扩展](/documentation/articles/virtual-machines-docker-vm-extension)有关更广泛的信息，请参阅 [Docker VM 扩展用户指南](https://github.com/Azure/azure-docker-extension/blob/master/README.md)|
 |**DSC**|PowerShell DSC（所需状态配置）扩展。|[Azure PowerShell DSC（所需状态配置）扩展](http://blogs.msdn.com/b/powershell/archive/2014/08/07/introducing-the-azure-powershell-dsc-desired-state-configuration-extension.aspx)|
 |**PuppetEnterpriseAgent**|实现 Puppet Enterprise 的功能。 |[Azure 上的 Puppet](http://puppetlabs.com/solutions/microsoft)|
-|**CustomScriptExtension** (Windows)**CustomScriptForLinux** (Linux)|在任何时候调用 VM 上的自定义脚本：启动时或在生存期内。|[自定义脚本扩展](https://msdn.microsoft.com/zh-cn/library/dn781373.aspx)[Linux](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/)|
+|**CustomScriptExtension** (Windows)**CustomScriptForLinux** (Linux)|在任何时候调用 VM 上的自定义脚本：启动时或在生存期内。|[自定义脚本扩展](/documentation/articles/virtual-machines-extensions-customscript) | [Linux](https://github.com/Azure/azure-linux-extensions/tree/master/CustomScript)|
 |**AzureCATExtensionHandler**|使用 **IaaSDiagnostics** 和少数其他数据源（如 [Azure 存储分析指标](https://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)）收集的诊断数据，并将这些数据转换为适合 SAP 主机控制进程使用的聚合数据集|[适用于 SAP 的 Azure 增强型监视](http://azure.microsoft.com/blog/2014/06/04/azure-enhanced-monitoring-for-sap/)|
 
 ##安全和保护
@@ -60,7 +60,7 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 |VM 扩展名称|功能说明|更多信息|
 |---|---|---|
 |**CloudLinkSecureVMWindowsAgent**|为 Windows Azure 客户提供在多租户共享的基础结构上加密其虚拟机数据的功能，并完全控制 Azure 存储基础结构上其加密数据的加密密钥。|[利用 BitLocker 和本机 OS 加密保护 Windows Azure 虚拟机](http://www.cloudlinktech.com/azure)|
-|**McAfeeEndpointSecurity**|保护 VM 免受恶意软件的威胁。|[McAfee](http://www.mcafeeasap.com/)|
+|**McAfeeEndpointSecurity**|保护 VM 免受恶意软件的威胁。|[McAfee](https://www.mcafeeasap.com/MarketingContent/default.aspx)|
 |**TrendMicroDSA**|启用 TrendMicro 的 Deep Security 平台支持可提供入侵检测和防护、防火墙、防恶意软件、Web 信誉评估、日志检查和完整性监视。|[如何在 Azure VM 上安装和配置 Trend Micro Deep Security 即服务](/documentation/articles/virtual-machines-install-trend)|
 |**PortalProtectExtension**|防止对你的 Microsoft SharePoint 环境构成威胁。|[保护 Azure 上的 SharePoint 部署](http://blog.trendmicro.com/securing-sharepoint-deployment-azure/)|
 |**IaaSAntimalware**|用于 Azure 云服务和虚拟机的 Microsoft 反恶意软件是一种实时保护功能，当已知恶意软件或不需要的软件试图在你的系统上安装自身或运行时，它可使用可配置的警报帮助识别和删除病毒、间谍软件和其他恶意软件。|[下载反恶意软件文档](http://go.microsoft.com/fwlink/?linkid=398023&clcid=0x409)|
@@ -72,7 +72,7 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 
 |**VM 扩展名称**|功能说明|更多信息|
 |---|---|---|
-|**AzureVmLogCollector**|可以使用 **AzureVMLogCollector** 扩展按需从一个或多个云服务 VM（从 web 角色和辅助角色）执行一次性日志收集，并将收集到的文件传输到 Azure 存储帐户 - 所有这些操作都无需远程登录到任何 VM。 |[AzureLogCollector 扩展](https://msdn.microsoft.com/zh-cn/library/dn927183.aspx)|
+|**AzureVmLogCollector**|可以使用 **AzureVMLogCollector** 扩展按需从一个或多个云服务 VM（从 web 角色和辅助角色）执行一次性日志收集，并将收集到的文件传输到 Azure 存储帐户 - 所有这些操作都无需远程登录到任何 VM。 |[AzureLogCollector 扩展](/documentation/articles/virtual-machines-extensions-log-collector)|
 |**IaaSDiagnostics**|启用、禁用和配置 Azure 诊断，也可由 **AzureCATExtensionHandler** 用于支持 SAP 监视。|[使用 Azure 诊断扩展监视 Windows Azure 虚拟机](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/)|
 |**OSPatchingForLinux**|使 Azure VM 管理员能够使用自定义配置自动执行 VM OS 更新。可以使用 OSPatching 扩展为虚拟机配置 OS 更新，包括：指定安装 OS 修补程序的频率和时间，指定要安装哪些修补程序，并配置更新后的重新启动行为|[OS 修补扩展博客文章](http://azure.microsoft.com/blog/2014/10/23/automate-linux-vm-os-updates-using-ospatching-extension/)。另请参阅 Github 上 [OS 修补扩展](https://github.com/Azure/azure-linux-extensions)中的自述文件和源。|
 
@@ -97,6 +97,6 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 |VM 扩展名称|功能说明|更多信息|
 |---|---|---|
 |**BGInfo**|使用 RDP 时在桌面上显示有用服务器信息的合并图片。|[BGInfo 扩展](https://msdn.microsoft.com/zh-cn/library/dn606289.aspx)|
-|**HpcVmDrivers**|在运行 Windows Server 2012 R2 或 Windows Server 2012 的 VM 上，安装、配置和维护远程直接内存访问 (RDMA) 网络设备驱动程序。运行并行 MPI 应用程序时，支持群集 VM 使用 RDMA 网络。|
+|**HpcVmDrivers**|在运行 Windows Server 2012 R2 或 Windows Server 2012 的 A8 或 A9 VM 上，安装、配置和维护远程直接内存访问 (RDMA) 网络设备驱动程序。运行并行 MPI 应用程序时，支持群集 A8 或 A9 VM 使用 RDMA 网络。|[关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

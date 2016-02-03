@@ -8,21 +8,21 @@
  editor=""
  tags="azure-service-management"/>
 <tags
- ms.service="virtual-machines"
- ms.date="08/25/2015"
- wacn.date="12/17/2015"/>
+	ms.service="virtual-machines"
+	ms.date="12/08/2015"
+	wacn.date="01/29/2016"/>
 #管理虚拟机扩展
 
 介绍如何在 Azure 上查找、添加、修改或删除 Windows 或 Linux 虚拟机的 VM 扩展。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] 资源管理器模式
 
 
 ##使用 VM 扩展
 
 Azure VM 扩展实现了可帮助其他程序在 Azure VM 上正常工作的行为或功能（例如，**WebDeployForVSDevTest** 扩展允许 Visual Studio 在 Azure VM 上对解决方案进行 Web 部署），或为你提供与 VM 交互的功能以支持其他某种行为（例如，你可以使用 VM 访问扩展从 Powershell、Azure CLI 和 REST 客户端重置或修改 Azure VM 上的远程访问值）。
 
->[AZURE.IMPORTANT]有关这些扩展按它们支持的功能列出的完整列表，请参阅 [Azure VM 扩展和功能](https://msdn.microsoft.com/zh-cn/library/dn606311.aspx)。由于每个 VM 扩展都支持特定功能，因此使用扩展确切地可以和不可以执行哪些操作取决于该扩展。因此，在修改 VM 之前，请确保你已阅读要使用的 VM 扩展的文档。不支持删除某些 VM 扩展；其他 VM 扩展具有可设置以从根本上更改 VM 行为的属性。
+>[AZURE.IMPORTANT] 有关这些扩展按它们支持的功能列出的完整列表，请参阅 [Azure VM 扩展和功能](/documentation/articles/virtual-machines-extensions-features)。由于每个 VM 扩展都支持特定功能，因此使用扩展确切地可以和不可以执行哪些操作取决于该扩展。因此，在修改 VM 之前，请确保你已阅读要使用的 VM 扩展的文档。不支持删除某些 VM 扩展；其他 VM 扩展具有可设置以从根本上更改 VM 行为的属性。
 
 最常见的任务是：
 
@@ -36,7 +36,7 @@ Azure VM 扩展实现了可帮助其他程序在 Azure VM 上正常工作的行�
 
 ##查找可用扩展
 
-Azure VM 扩展是（有关这些扩展按它们支持的功能列出的完整列表，请参阅 [Azure VM 扩展和功能](https://msdn.microsoft.com/zh-cn/library/dn606311.aspx)）。 可以使用以下项查找扩展和扩展信息：
+Azure VM 扩展是（有关这些扩展按它们支持的功能列出的完整列表，请参阅 [Azure VM 扩展和功能](/documentation/articles/virtual-machines-extensions-features)）。 可以使用以下项查找扩展和扩展信息：
 
 -   PowerShell
 -   Azure 跨平台界面 (Azure CLI)
@@ -138,4 +138,4 @@ Azure VM 扩展是（有关这些扩展按它们支持的功能列出的完整�
 
 >[AZURE.NOTE]扩展也可以使用使用 JSON 定义的配置。使用这些类型的扩展时，仅使用 **SampleConfig** 元素。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

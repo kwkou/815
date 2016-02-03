@@ -1,6 +1,6 @@
 <properties
-   pageTitle="使用 PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像"
-   description="了解在使用资源管理器创建 Azure 虚拟机时如何确定映像的确定发布者、产品和 SKU。"
+   pageTitle="导航和选择 VM 映像 | Windows Azure"
+   description="了解在使用资源管理器部署模型创建 Azure 虚拟机时如何确定映像的确定发布者、产品和 SKU。"
    services="virtual-machines"
    documentationCenter=""
    authors="squillace"
@@ -11,8 +11,8 @@
 
 <tags
    ms.service="virtual-machines"
-   ms.date="08/25/2015"
-   wacn.date="01/26/2016"/>
+   ms.date="12/08/2015"
+   wacn.date="01/29/2016"/>
 
 # 使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像
 
@@ -101,4 +101,4 @@
 [yah]: http://search.yahoo.com/
 [msn]: http://search.msn.com/
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

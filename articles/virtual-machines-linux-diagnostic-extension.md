@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/20/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="12/15/2015"
+	wacn.date="01/29/2016"/>
 
 
 # 使用 Linux 诊断扩展监视 Linux VM 的性能和诊断数据
@@ -31,11 +31,11 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Windows Azure 上�
 - 此[文档](https://scx.codeplex.com/wikipage?title=xplatproviders")中指定的所有系统数据。
 - 用户指定的日志文件。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
 
 
 ## 如何启用扩展
-通过 [Azure 门户](https://manage.windowsazure.cn)、Azure PowerShell 或 Azure CLI 脚本可以启用该扩展。
+通过 [Azure 门户](https://manage.windowsazure.cn)、Azure PowerShell 或 Azure CLI 脚本可以启用扩展。
 
 若要直接从 Azure 门户查看和配置系统和性能数据，请执行以下[步骤](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/ "Windows 博客 URL")。
 
@@ -138,6 +138,5 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Windows Azure 上�
 
 ## 已知问题
 - 对于 2.0 版，只能通过脚本访问 Rsyslog 信息和客户指定的日志文件。
-- 对于 2.0 版本，如果首先通过脚本启用了 Linux 诊断扩展，那么你无法从 Azure 门户查看数据。如果先从门户启用扩展，那么脚本仍将正常工作。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

@@ -1,22 +1,25 @@
 <properties
-   pageTitle="在 Azure 虚拟机上使用 Docker 和 Compose 入门"
-   description="在 Azure 上使用 Compose 和 Docker 的快速简介"
+   pageTitle="虚拟机上的 Docker 和 Compose | Windows Azure"
+   description="在 Azure 虚拟机上使用 Compose 和 Docker 的快速简介。"
    services="virtual-machines"
    documentationCenter=""
    authors="dlepow"
    manager="timlt"
-   editor=""/>
+   editor=""
+   tags="azure-service-management"/>
 
 <tags
    ms.service="virtual-machines"
-   ms.date="08/07/2015"
-   wacn.date="11/12/2015"/>
+   ms.date="11/16/2015"
+   wacn.date="01/29/2016"/>
 
-# 在 Azure 虚拟机上使用 Docker 和 Compose 入门
+# 开始使用 Docker 和 Compose，在 Azure 虚拟机上定义和运行多容器应用程序
 
-本文介绍如何开始使用 Docker 和 [Compose](http://github.com/docker/compose) 在 Azure 中的 Linux 虚拟机上定义和运行复杂的应用程序。借助 Compose（*Fig* 的后继版本），你可以使用简单的文本文件定义由多个 Docker 容器组成的应用程序。然后使用单个命令启动应用程序，该命令会执行使该应用程序在 VM 上运行的所有操作。作为示例，本文说明如何使用后端 MariaDB SQL 数据库快速设置 WordPress 博客，但你也可以使用 Compose 设置更复杂的应用程序。
+本文介绍如何开始使用 Docker 和 [Compose](http://github.com/docker/compose) 在 Azure 中的 Linux 虚拟机上定义和运行复杂的应用程序。借助 Compose（ *Fig* 的后继版本），你可以使用简单的文本文件定义由多个 Docker 容器组成的应用程序。然后使用单个命令启动应用程序，该命令会执行使该应用程序在 VM 上运行的所有操作。作为示例，本文说明如何使用后端 MariaDB SQL 数据库快速设置 WordPress 博客，但你也可以使用 Compose 设置更复杂的应用程序。
 
-<!-- 如果你不熟悉 Docker 和容器，请参阅 [Docker 高级白板](/documentation/videos/docker-high-level-whiteboard/)。-->
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]。
+
+
 
 ## 步骤 1：将 Linux VM 设置为 Docker 主机
 
@@ -26,7 +29,7 @@
 
 在 Linux VM 使用 Docker 运行后，从客户端计算机使用 SSH 连接到它。如果需要，可通过运行以下两个命令安装 [Compose](https://github.com/docker/compose/blob/882dc673ce84b0b29cd59b6815cb93f74a6c4134/docs/install.md)。
 
->[AZURE.TIP]如果你已使用 Docker VM 扩展创建 VM，则已为你安装 Compose。跳过这些命令并转到步骤 3。仅当你自己将 Docker 安装在 VM 上时，才需要安装 Compose。
+>[AZURE.TIP] 如果你已使用 Docker VM 扩展创建 VM，则已为你安装 Compose。跳过这些命令并转到步骤 3。仅当你自己将 Docker 安装在 VM 上时，才需要安装 Compose。
 
 ```
 $ curl -L https://github.com/docker/compose/releases/download/1.1.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
@@ -41,50 +44,47 @@ $ chmod +x /usr/local/bin/docker-compose
 $ docker-compose --version
 ```
 
-你将看到与 
-```
-docker-compose 1.3.2
-``` 类似的输出。
+你将看到与 `docker-compose 1.4.1` 类似的输出。
 
 
 ## 步骤 3：创建 docker-compose.yml 配置文件
 
 接下来，将创建 `docker-compose.yml` 文件，它只是一个文本配置文件，用于定义要在 VM 上运行的 Docker 容器。该文件指定要在每个容器中运行的映像（或者它可能从 Dockerfile 生成）、必要的环境变量和依赖关系、端口、容器之间的链接等。有关 yml 文件语法的详细信息，请参阅 [docker-compose.yml 参考](http://docs.docker.com/compose/yml/)。
 
-在 VM 上创建工作目录，并使用你最喜欢的文本编辑器创建 `docker-compose.yml`。若要试用一个简单示例，请将以下文本复制到该文件中。此配置将使用 [DockerHub 注册表](https://registry.hub.docker.com/_/wordpress/)中的映像安装 WordPress（开源博客和内容管理系统）和链接的后端 MariaDB SQL 数据库。
+在 VM 上创建工作目录，并使用你最喜欢的文本编辑器创建 `docker-compose.yml`。若要试用一个简单示例，请将以下文本复制到该文件中。此配置将使用 [DockerHub 注册表](https://registry.hub.docker.com/_/wordpress/)中的映像安装 WordPress（开源博客和内容管理系统）和链接的后端 MariaDB 数据库。
 
  ```
- wordpress: 
- image: wordpress 
- links: 
- - db:mysql 
- ports: 
- - 8080:80
+ wordpress:
+  image: wordpress
+  links:
+    - db:mysql
+  ports:
+    - 8080:80
 
 db:
-image: mariadb
-environment:
-MYSQL\_ROOT\_PASSWORD: <your password>
+  image: mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: <your password>
 
 ```
 
-## Step 4: Start the containers with Compose
+## 步骤 4: 使用“撰写”启动容器
 
-In the working directory on your VM, simply run the following command.
+在 VM 上的工作目录中，直接运行以下命令。
 
 ```
 $ docker-compose up -d
 
 ```
 
-This starts the Docker containers specified in `docker-compose.yml`. You'll see output similar to:
+这将启动“docker-compose.yml”中指定的 Docker 容器。你将看到类似于以下内容的输出：
 
 ```
-正在创建 wordpress\_db\_1...
-正在创建 wordpress\_wordpress_1...
+Creating wordpress\_db\_1...
+Creating wordpress\_wordpress\_1...
 ```
 
->[AZURE.NOTE]启动时请务必使用 **-d** 选项，以使容器在后台继续运行。
+>[AZURE.NOTE] 启动时请务必使用 **-d** 选项，以使容器在后台继续运行。
 
 若要验证容器是否已启动，请键入 `docker-compose ps`。你应看到类似如下的内容：
 
@@ -112,12 +112,11 @@ $ azure vm endpoint create <machine-name> 80 8080
 
 ## 后续步骤
 
-* 有关构建和部署多容器应用的更多示例，请查阅 [Compose CLI 参考](http://docs.docker.com/compose/cli/)和[用户指南](http://docs.docker.com/compose/)。
-* 使用 Azure 资源管理器模板（你自己的<!--或[社区](/documentation/templates/)提供的），-->通过 Docker 部署 Azure VM 和使用 Compose 设置的应用程序。<!--例如，[使用 Docker 部署 WordPress 博客](/documentation/templates/docker-wordpress-mysql/)模板使用 Docker 和 Compose 通过 Ubuntu VM 上的 MySQL 后端快速部署 WordPress。-->
+* 有关构建和部署多容器应用的更多示例，请查阅 [Compose CLI 参考](http://docs.docker.com/compose/reference/)和[用户指南](http://docs.docker.com/compose/)。
 * 请尝试将 Docker Compose 与 [Docker Swarm](/documentation/articles/virtual-machines-docker-swarm) 群集集成。有关方案，请参阅 [Docker Compose/Swarm 集成](https://github.com/docker/compose/blob/master/SWARM.md)。
 
 <!--Image references-->
 
 [wordpress_start]: ./media/virtual-machines-docker-compose-quickstart/WordPress.png
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

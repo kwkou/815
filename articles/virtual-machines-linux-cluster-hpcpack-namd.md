@@ -9,20 +9,20 @@
  tags="azure-service-management,hpc-pack"/>
 <tags
  	ms.service="virtual-machines"
- 	ms.date="09/02/2015"
- 	wacn.date="12/17/2015"/>
+	ms.date="12/02/2015"
+ 	wacn.date="01/29/2016"/>
 
 # 在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD
 
-本文介绍如何在 Azure 上部署 Microsoft HPC Pack 群集，以及如何在虚拟群集网络的多个 Linux 计算节点上通过 **charmrun** 运行 [NAMD](http://www.ks.uiuc.edu/Research/namd/) 作业，以计算和直观呈现大型生物分子系统的结构。
+本文介绍如何在使用多个 Linux 计算节点的 Azure 上部署 Microsoft HPC Pack 群集，以及如何通过 **charmrun** 运行 [NAMD](http://www.ks.uiuc.edu/Research/namd/) 作业，以计算和直观呈现大型生物分子系统的结构。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
 
 
 
 NAMD（用于纳米级分子动力学程序）是并行分子动力学软件包，设计用于包含数百万个原子的大型生物分子系统（如病毒、细胞结构和大蛋白）的高性能仿真。NAMD 扩展至数百个核心进行典型仿真，扩展至 500,000 个核心进行最大型仿真。
 
-Microsoft HPC Pack 可提供在 Windows Azure 虚拟机群集上运行各种大型 HPC 和并行应用程序的功能，包括 MPI 应用程序。从 Microsoft HPC Pack 2012 R2 Update 2 开始，HPC Pack 还支持在 HPC Pack 群集中部署的 Linux 计算节点 VM 上运行 Linux HPC 应用程序。有关将 Linux 计算节点与 HPC Pack 一起使用的简介，请参阅[Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)。
+Microsoft HPC Pack 可提供在 Windows Azure 虚拟机群集上运行各种大型 HPC 和并行应用程序的功能，包括 MPI 应用程序。从 Microsoft HPC Pack 2012 R2 Update 2 开始，HPC Pack 还支持在 HPC Pack 群集中部署的 Linux 计算节点 VM 上运行 Linux HPC 应用程序。如需简介，请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)。
 
 
 ## 先决条件
@@ -31,7 +31,7 @@ Microsoft HPC Pack 可提供在 Windows Azure 虚拟机群集上运行各种大�
 
     下面是一个示例 XML 配置文件，可以与脚本配合使用以部署基于 Azure 的 HPC Pack 群集，群集中包含一个 Windows Server 2012 R2 头节点和 4 个大型 (A3) CentOS 6.6 计算节点。请将订阅和服务名称替换为相应值。
 
-```
+    ```
     <?xml version="1.0" encoding="utf-8" ?>
     <IaaSClusterConfig>
       <Subscription>
@@ -68,7 +68,7 @@ Microsoft HPC Pack 可提供在 Windows Azure 虚拟机群集上运行各种大�
 ```
 
 
-* **NAMD 软件和教程文件** - 从 [NAMD](http://www.ks.uiuc.edu/Research/namd/) 站点下载适用于 Linux 的 NAMD 软件。本文基于 NAMD 版本 2.10，并使用 [Linux x86_64（64 位 Intel/AMD 与以太网）](http://www.ks.uiuc.edu/Development/Download/download.cgi?UserID=&AccessCode=&ArchiveID=1310)存档，你将使用此存档在群集网络的多个 Linux 计算节点上运行 NAMD。请同时下载 [NAMD 教程文件](http://www.ks.uiuc.edu/Training/Tutorials/#namd)。按照本文后面的说明将存档和教程示例提取至群集头节点。
+* **NAMD 软件和教程文件** - 从 [NAMD](http://www.ks.uiuc.edu/Research/namd/) 站点下载适用于 Linux 的 NAMD 软件。本文基于 NAMD 版本 2.10，并使用 [Linux x86\_64（64 位 Intel/AMD 与以太网）](http://www.ks.uiuc.edu/Development/Download/download.cgi?UserID=&AccessCode=&ArchiveID=1310)存档，你将使用此存档在群集网络的多个 Linux 计算节点上运行 NAMD。请同时下载 [NAMD 教程文件](http://www.ks.uiuc.edu/Training/Tutorials/#namd)。按照本文后面的说明将存档和教程示例提取至群集头节点。
 
 * **VMD**（可选）- 若要查看 NAMD 作业的结果，请在你所选择的计算机上下载和安装分子可视化程序 [VMD](http://www.ks.uiuc.edu/Research/vmd/)。当前版本是 1.9.2。请参阅 VMD 下载站点入门。
 
@@ -100,16 +100,16 @@ Microsoft HPC Pack 可提供在 Windows Azure 虚拟机群集上运行各种大�
 
 2. 使用 Windows Server 标准程序，在群集的 Active Directory 域中创建一个域用户帐户。例如，在头节点上使用 Active Directory 用户和计算机工具。本文中的示例假设你创建了一个名为 hpclab\\hpcuser 域用户。
 
-2.	创建一个名为 C:\\cred.xml 的文件，将 RSA 密钥数据复制到此文件中。你可以在本文末尾的附录中找到一个此文件的示例。
+2.	创建一个名为 C:\\cred.xml 的文件，将 RSA 密钥数据复制到此文件中。你可以在本文末尾的示例文件中找到一个示例。
 
     ```
     <ExtendedData>
-      <PrivateKey>Copy the contents of private key here</PrivateKey>
-      <PublicKey>Copy the contents of public key here</PublicKey>
+        <PrivateKey>Copy the contents of private key here</PrivateKey>
+        <PublicKey>Copy the contents of public key here</PublicKey>
     </ExtendedData>
     ```
 
-3.	打开“命令”窗口，输入以下命令，为 hpclab\\hpcuser 帐户设置凭据数据。使用 **extendeddata** 参数传递你为关键数据创建的 C:\\cred.xml 文件的名称。
+3.	打开命令提示符，输入以下命令，为 hpclab\\hpcuser 帐户设置凭据数据。使用 **extendeddata** 参数传递你为关键数据创建的 C:\\cred.xml 文件的名称。
 
     ```
     hpccred setcreds /extendeddata:c:\cred.xml /user:hpclab\hpcuser /password:<UserPassword>
@@ -123,7 +123,7 @@ Microsoft HPC Pack 可提供在 Windows Azure 虚拟机群集上运行各种大�
 
 ## 为 Linux 节点设置文件共享
 
-现在，在头节点上对一个文件夹设置标准 SMB 共享，然后在所有 Linux 节点上装载此共享文件夹，就可以支持 Linux 节点使用一个通用路径访问 NAMD 文件。请参阅[Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)中的文件共享选项和步骤。（在本文中，我们建议在头节点上装载一个共享文件夹，因为 CentOS 6.6 Linux 节点目前不支持可提供类似功能的 Azure 文件服务。有关装载 Azure 文件共享的详细信息，请参阅[将连接保存到 Windows Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)。）
+现在，在头节点上对一个文件夹设置标准 SMB 共享，然后在所有 Linux 节点上装载此共享文件夹，就可以支持 Linux 节点使用一个通用路径访问 NAMD 文件。请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)中的文件共享选项和步骤。（在本文中，我们建议在头节点上装载一个共享文件夹，因为 CentOS 6.6 Linux 节点目前不支持可提供类似功能的 Azure 文件服务。有关装载 Azure 文件共享的详细信息，请参阅[将连接保存到 Microsoft Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)。）
 
 1.	在头节点上创建一个文件夹，然后通过设置读/写权限与所有人共享。在本示例中，\\\CentOS66HN\\Namd 是文件夹的名称，其中 CentOS66HN 是头节点的主机名称。
 
@@ -132,12 +132,12 @@ Microsoft HPC Pack 可提供在 Windows Azure 虚拟机群集上运行各种大�
 2.	打开 Windows PowerShell 窗口并运行以下命令来装载共享文件夹。
 
     ```
-    PS > clusrun /nodegroup:LinuxNodes mkdir -p /namd2
+    clusrun /nodegroup:LinuxNodes mkdir -p /namd2
 
-    PS > clusrun /nodegroup:LinuxNodes mount -t cifs //CentOS66HN/Namd/namd2 /namd2 -o vers=2.1`,username=<username>`,password='<password>'`,dir_mode=0777`,file_mode=0777
+    clusrun /nodegroup:LinuxNodes mount -t cifs //CentOS66HN/Namd/namd2 /namd2 -o vers=2.1`,username=<username>`,password='<password>'`,dir_mode=0777`,file_mode=0777
     ```
 
-第一个命令在 LinuxNodes 组中的所有节点上创建名为 /namd2 的文件夹。第二个命令将共享文件夹 //CentOS66HN/Namd/namd2 装载到该文件夹上，并将 dir\_mode 和 file_mode 位设置为 777。该命令中的*用户名*和*密码*应是头节点上的用户的凭据。
+第一个命令在 LinuxNodes 组中的所有节点上创建名为 /namd2 的文件夹。第二个命令将共享文件夹 //CentOS66HN/Namd/namd2 装载到该文件夹上，并将 dir\_mode 和 file\_mode 位设置为 777。该命令中的*用户名*和*密码*应是头节点上的用户的凭据。
 
 >[AZURE.NOTE]第二个命令中的 “`” 符号是 PowerShell 的转义符号。“`,” 表示 “,”（逗号字符）是命令的一部分。
 
@@ -178,13 +178,13 @@ host CENTOS66LN-03 ++cpus 2
 ```
 ### 创建 nodelist 文件的 Bash 脚本
 
-使用你选择的文本编辑器，在包含 NAMD 程序文件的文件夹中创建以下 Bash 脚本并将其命名为 hpccharmrun.sh。在本文的附录中有此文件的完整示例。此 Bash 脚本执行以下任务。
+使用你选择的文本编辑器，在包含 NAMD 程序文件的文件夹中创建以下 Bash 脚本并将其命名为 hpccharmrun.sh。完整示例位于本文末尾的示例文件中。此 Bash 脚本执行以下任务。
 
 >[AZURE.TIP]将你的脚本保存为带有 Linux 换行（仅 LF，而不是 CR LF）的文本文件。这可确保其在 Linux 节点上正常运行。
 
 1.	定义一些变量。
 
-```
+    ```
     #!/bin/bash
 
     # The path of this script
@@ -195,30 +195,30 @@ host CENTOS66LN-03 ++cpus 2
     NODELIST_OPT="++nodelist"
     # Argument of ++p
     NUMPROCESS="+p"
-```
+    ```
 
 2.	从环境变量中获取节点信息。$NODESCORES 存储一个来自 $CCP\_NODES\_CORES 的拆分词列表。$COUNT 是 $NODESCORES 的大小。
 
-```
+    ```
     # Get node information from the environment variables
     # CCP_NODES_CORES=3 CENTOS66LN-00 4 CENTOS66LN-01 4 CENTOS66LN-03 4
     NODESCORES=(${CCP_NODES_CORES})
     COUNT=${#NODESCORES[@]}
-```
+    ```
 
 3.	如果没有设置 $CCP\_NODES\_CORES 变量，则只需直接启动 **charmrun**。（这只应出现于在 Linux 节点上直接运行此脚本的情况。）
 
-```
+    ```
     if [ ${COUNT} -eq 0 ]
     then
     	# CCP_NODES is_CORES is not found or is empty, so just run charmrun without nodelist arg.
     	#echo ${CHARMRUN} $*
     	${CHARMRUN} $*
-```
+    ```
 
 4.	或者创建适用于 **charmrun** 的 nodelist 文件。
 
-```
+    ```
     else
     	# Create the nodelist file
     	NODELIST_PATH=${SCRIPT_PATH}/nodelist_$$
@@ -238,7 +238,7 @@ host CENTOS66LN-03 ++cpus 2
 
     ${CCP\_NUMCPUS} 是 HPC Pack 头节点设置的另一个环境变量。它存储了分配到此作业的核心总数。我们使用其指定 charmrun 的流程数。
 
-```
+    ```
 	# Run charmrun with nodelist arg
 	#echo ${CHARMRUN} ${NUMPROCESS}${CCP_NUMCPUS} ${NODELIST_OPT} ${NODELIST_PATH} $*
 	${CHARMRUN} ${NUMPROCESS}${CCP_NUMCPUS} ${NODELIST_OPT} ${NODELIST_PATH} $*
@@ -247,8 +247,7 @@ host CENTOS66LN-03 ++cpus 2
 	rm -f ${NODELIST_PATH}
     fi
 
-```
-
+    ```
 6.	以 **charmrun** 返回状态退出。
 
     ```
@@ -305,56 +304,56 @@ host CENTOS66LN-03 ++cpus 2
 
     ![作业结果][vmd_view]
 
-## 附录
+## 示例文件
 
 ### 示例 hpccharmrun.sh 脚本
 
 ```
-	#!/bin/bash
-	
-	# The path of this script
-	SCRIPT_PATH="$( dirname "${BASH_SOURCE[0]}" )"
-	# Charmrun command
-	CHARMRUN=${SCRIPT_PATH}/charmrun
-	# Argument of ++nodelist
-	NODELIST_OPT="++nodelist"
-	# Argument of ++p
-	NUMPROCESS="+p"
-	
-	# Get node information from ENVs
-	# CCP_NODES_CORES=3 CENTOS66LN-00 4 CENTOS66LN-01 4 CENTOS66LN-03 4
-	NODESCORES=(${CCP_NODES_CORES})
-	COUNT=${#NODESCORES[@]}
-	
-	if [ ${COUNT} -eq 0 ]
-	then
-		# If CCP_NODES_CORES is not found or is empty, just run the charmrun without nodelist arg.
-		#echo ${CHARMRUN} $*
-		${CHARMRUN} $*
-	else
-		# Create the nodelist file
-		NODELIST_PATH=${SCRIPT_PATH}/nodelist_$$
-	
-		# Write the head line
-		echo "group main" > ${NODELIST_PATH}
-	
-		# Get every node name & cores and write into the nodelist file
-		I=1
-		while [ ${I} -lt ${COUNT} ]
-		do
-			echo "host ${NODESCORES[${I}]} ++cpus ${NODESCORES[$(($I+1))]}" >> ${NODELIST_PATH}
-			let "I=${I}+2"
-		done
-	
-		# Run the charmrun with nodelist arg
-		#echo ${CHARMRUN} ${NUMPROCESS}${CCP_NUMCPUS} ${NODELIST_OPT} ${NODELIST_PATH} $*
-		${CHARMRUN} ${NUMPROCESS}${CCP_NUMCPUS} ${NODELIST_OPT} ${NODELIST_PATH} $*
-	
-		RTNSTS=$?
-		rm -f ${NODELIST_PATH}
-	fi
-	
-	exit ${RTNSTS}
+#!/bin/bash
+
+# The path of this script
+SCRIPT_PATH="$( dirname "${BASH_SOURCE[0]}" )"
+# Charmrun command
+CHARMRUN=${SCRIPT_PATH}/charmrun
+# Argument of ++nodelist
+NODELIST_OPT="++nodelist"
+# Argument of ++p
+NUMPROCESS="+p"
+
+# Get node information from ENVs
+# CCP_NODES_CORES=3 CENTOS66LN-00 4 CENTOS66LN-01 4 CENTOS66LN-03 4
+NODESCORES=(${CCP_NODES_CORES})
+COUNT=${#NODESCORES[@]}
+
+if [ ${COUNT} -eq 0 ]
+then
+	# If CCP_NODES_CORES is not found or is empty, just run the charmrun without nodelist arg.
+	#echo ${CHARMRUN} $*
+	${CHARMRUN} $*
+else
+	# Create the nodelist file
+	NODELIST_PATH=${SCRIPT_PATH}/nodelist_$$
+
+	# Write the head line
+	echo "group main" > ${NODELIST_PATH}
+
+	# Get every node name & cores and write into the nodelist file
+	I=1
+	while [ ${I} -lt ${COUNT} ]
+	do
+		echo "host ${NODESCORES[${I}]} ++cpus ${NODESCORES[$(($I+1))]}" >> ${NODELIST_PATH}
+		let "I=${I}+2"
+	done
+
+	# Run the charmrun with nodelist arg
+	#echo ${CHARMRUN} ${NUMPROCESS}${CCP_NUMCPUS} ${NODELIST_OPT} ${NODELIST_PATH} $*
+	${CHARMRUN} ${NUMPROCESS}${CCP_NUMCPUS} ${NODELIST_OPT} ${NODELIST_PATH} $*
+
+	RTNSTS=$?
+	rm -f ${NODELIST_PATH}
+fi
+
+exit ${RTNSTS}
 ```
 
  
@@ -405,4 +404,4 @@ a8lxTKnZCsRXU1HexqZs+DSc+30tz50bNqLdido/l5B4EJnQP03ciO0=
 [task_details]: ./media/virtual-machines-linux-cluster-hpcpack-namd/task_details.png
 [vmd_view]: ./media/virtual-machines-linux-cluster-hpcpack-namd/vmd_view.png
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

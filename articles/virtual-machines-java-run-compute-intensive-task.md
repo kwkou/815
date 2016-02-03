@@ -10,12 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/22/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="11/19/2015"
+	wacn.date="01/29/2016"/>
 
 # 如何在虚拟机上通过 Java 运行需要进行大量计算的任务
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
  
 
 借助 Azure，您可以使用虚拟机来处理需要进行大量计算的任务。例如，虚拟机可以处理任务并将结果传送给客户端计算机或移动应用程序。阅读完本文后，你将了解如何创建运行可由其他 Java 应用程序监视的、需要进行大量计算的 Java 应用程序的虚拟机。
@@ -44,7 +44,7 @@
 
 ## 创建虚拟机
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
 2. 依次单击“新建”、“计算”、“虚拟机”和“从库中”。
 3. 在“虚拟机映像选择”对话框中，选择“JDK 7 Windows Server 2012”。请注意，万一你安装的是还不能在 JDK 7 中运行的旧应用程序，可选择 **JDK 6 Windows Server 2012**。
 4. 单击**“下一步”**。
@@ -67,7 +67,7 @@
 
 ## 远程登录到虚拟机
 
-1. 登录到“管理门户”。[](https://manage.windowsazure.cn)
+1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
 2. 单击“虚拟机”。
 3. 单击你要登录的虚拟机名称。
 4. 单击“连接”。
@@ -81,28 +81,34 @@
 
 创建服务命名空间：
 
-1.  登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
-2.  在管理门户的左下方导航窗格中，单击“Service Bus、Access Control 和 Caching”。
-3.  在管理门户的左上方窗格中，单击“ServiceBus”节点，然后单击“新建”按钮。![“Service Bus 节点”屏幕快照][svc_bus_node]
-4.  在“新建服务命名空间”对话框中，输入一个命名空间，然后单击“检查可用性”按钮以确保该命名空间是唯一的。![“创建新的命名空间”屏幕快照][create_namespace]
+1.  登录到 [Azure 门户](https://manage.windowsazure.cn)。
+2.  在 Azure 门户的左下方导航窗格中，单击“服务总线、访问控制和 Caching”。
+3.  在 Azure 门户的左上方窗格中，单击“服务总线”节点，然后单击“新建”按钮。
+	![“Service Bus 节点”屏幕快照][svc_bus_node]
+4.  在“新建服务命名空间”对话框中，输入一个命名空间，然后单击“检查可用性”按钮以确保该命名空间是唯一的。
+	![“创建新的命名空间”屏幕快照][create_namespace]
 5.  确保该命名空间名称可用之后，选择应该承载你的命名空间的国家或地区，然后单击“创建命名空间”按钮。  
 
-    您创建的命名空间随后将显示在管理门户中，然后要花费一段时间来激活。请等到状态变为“活动”后再继续下一步。
+    你创建的命名空间随后将显示在 Azure 门户中，然后要花费一段时间来激活。请等到状态变为“活动”后再继续下一步。
 
 ## 获取命名空间的默认管理凭据
 
 若要在新命名空间上执行管理操作（如创建队列），则需要获取该命名空间的管理凭据。
 
-1.  在左侧导航窗格中，单击“Service Bus”节点以显示可用命名空间的列表。![“可用命名空间”屏幕快照][avail_namespaces]
-2.  从显示的列表中选择刚刚创建的命名空间。![“命名空间列表”屏幕快照][namespace_list]
-3.  右侧的“属性”窗格将列出新命名空间的属性。![“属性窗格”屏幕快照][properties_pane]
-4.  将隐藏“默认密钥”。单击“查看”按钮以显示安全凭据。![“默认密钥”屏幕快照][default_key]
+1.  在左侧导航窗格中，单击“Service Bus”节点以显示可用命名空间的列表。
+	![“可用命名空间”屏幕快照][avail_namespaces]
+2.  从显示的列表中选择刚刚创建的命名空间。
+	![“命名空间列表”屏幕快照][namespace_list]
+3.  右侧的“属性”窗格将列出新命名空间的属性。
+	![“属性窗格”屏幕快照][properties_pane]
+4.  将隐藏“默认密钥”。单击“查看”按钮以显示安全凭据。
+	![“默认密钥”屏幕快照][default_key]
 5.  记下默认颁发者和默认密钥，因为你将在下面使用此信息来对命名空间执行操作。
 
 ## 如何创建 Java 应用程序来执行需要进行大量计算的任务
 
 1. 在你的开发计算机（不必是你创建的虚拟机）上，下载 [Azure SDK for Java](/develop/java/)。
-2. 使用本节末尾的示例代码创建 Java 控制台应用程序。在本教程中，我们将使用 **TSPSolver.java** 作为 Java 文件名。将 **your\_service\_bus_namespace**、**your\_service\_bus_owner** 和 **your\_service\_bus_key** 占位符修改为分别使用你的 Service Bus 的“命名空间”、“默认颁发者”和“默认密钥”值。
+2. 使用本节末尾的示例代码创建 Java 控制台应用程序。在本教程中，我们将使用 **TSPSolver.java** 作为 Java 文件名。将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符修改为分别使用你的 Service Bus 的“命名空间”、“默认颁发者”和“默认密钥”值。
 3. 编码后，将应用程序导出至可运行的 Java 存档 (JAR)，并将所需的库打包到生成的 JAR 中。在本教程中，我们将使用 **TSPSolver.jar** 作为生成的 JAR 名称。
 
 <p/>
@@ -292,7 +298,7 @@
 
 ## 如何创建 Java 应用程序来监视需要进行大量计算的任务的进度
 
-1. 在开发计算机上，使用本节末尾的示例代码创建 Java 控制台应用程序。在本教程中，我们将使用 **TSPClient.java** 作为 Java 文件名。如前所述，将 **your\_service\_bus_namespace**、**your\_service\_bus_owner** 和 **your\_service\_bus_key** 占位符修改为分别使用你的 Service Bus 的“命名空间”、“默认颁发者”和“默认密钥”值。
+1. 在开发计算机上，使用本节末尾的示例代码创建 Java 控制台应用程序。在本教程中，我们将使用 **TSPClient.java** 作为 Java 文件名。如前所述，将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符修改为分别使用你的 Service Bus 的“命名空间”、“默认颁发者”和“默认密钥”值。
 2. 将应用程序导出至可运行的 JAR，并将所需的库打包到生成的 JAR 中。在本教程中，我们将使用 **TSPClient.jar** 作为生成的 JAR 名称。
 
 <p/>
@@ -516,4 +522,4 @@
 [default_key]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_07_DefaultKey.jpg
 [add_ca_cert]: /documentation/articles/java-add-certificate-ca-store
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

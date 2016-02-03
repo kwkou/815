@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="创建并上载 Red Hat Enterprise Linux VHD，以供在 Azure 中使用" 
-	description="了解如何创建和上载包含 RedHat Linux 操作系统的 Azure 虚拟硬盘 (VHD)。" 
+	description="了解如何创建和上载包含 Red Hat Linux 操作系统的 Azure 虚拟硬盘 (VHD)。" 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="SuperScottz" 
@@ -9,12 +9,12 @@
 
 <tags 
 	ms.service="virtual-machines" 
-	ms.date="10/28/2015" 
-	wacn.date="12/17/2015"/>
+	ms.date="11/23/2015" 
+	wacn.date="01/29/2016"/>
 
 
-# 为 Azure 准备基于 RedHat 的虚拟机
-在本文中，你将了解如何准备 Red Hat Enterprise Linux (RHEL) 虚拟机，以供在 Azure 中使用。本文中涉及的 RHEL 的版本是 6.6、6.7、7.0 和 7.1，且本文中涉及的进行准备的虚拟机监控程序是 Hyper-V、KVM 和 VMWare。
+# 为 Azure 准备基于 Red Hat 的虚拟机
+在本文中，你将了解如何准备 Red Hat Enterprise Linux (RHEL) 虚拟机，以供在 Azure 中使用。本文中涉及的 RHEL 的版本是 6.7、7.1 和 7.2，本文中涉及的进行准备的虚拟机监控程序是 Hyper-V、KVM 和 VMWare。有关参与 Red Hat 云访问计划的资格要求的详细信息，请参阅 [Red Hat 的云访问网站](http://www.redhat.com/en/technologies/cloud-computing/cloud-access)和[在 Azure 上运行 RHEL](https://access.redhat.com/articles/1989673)。
 
 
 
@@ -33,7 +33,10 @@
 
 - 所有 VHD 的大小必须是 1 MB 的倍数。
 
-###RHEL 6.6/6.7
+- 请注意，在使用 qemu-img 将磁盘映像转换成 VHD 格式时，2.2.1 及更高版本的 qemu-img 中存在一个已知的 Bug，导致 VHD 格式不正常。我们会在即将发布的 qemu-img 版本中解决此问题。现在建议使用 qemu-img 版本 2.2.0 或较低版本。
+
+
+###RHEL 6.7
 
 1.	在 Hyper-V 管理器中，选择虚拟机。
 
@@ -107,7 +110,8 @@
 
     **注意：**如果没有如步骤 2 中所述删除 NetworkManager 包和 NetworkManager-gnome 包，则安装 WALinuxAgent 包时会将其删除。
 
-13.	请勿在 OS 磁盘上创建交换空间。Azure Linux 代理可使用在 Azure 上预配后附加到 VM 的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是临时磁盘，并且当取消设置 VM 时可能会被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
+13.	请勿在 OS 磁盘上创建交换空间。
+Azure Linux 代理可使用在 Azure 上预配后附加到 VM 的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是临时磁盘，并且当取消设置 VM 时可能会被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
 
         ResourceDisk.Format=y
         ResourceDisk.Filesystem=ext4
@@ -127,9 +131,9 @@
 
 16.	在 Hyper-V 管理器中单击**“操作”->“关闭”**。Linux VHD 现已准备好上载到 Azure。
 
-###RHEL 7.0/7.1
+###RHEL 7.1/7.2
 
-1. 在 Hyper-V 管理器中，选择虚拟机。
+1.  在 Hyper-V 管理器中，选择虚拟机。
 
 2.	单击“连接”以打开虚拟机的控制台窗口。
 
@@ -165,7 +169,8 @@
     这还将确保所有控制台消息都发送到第一个串行端口，从而可以协助 Azure 支持人员调试问题。除此之外，建议删除以下参数：
 
         rhgb quiet crashkernel=auto
-    图形引导和无人参与引导不适用于云环境，在该环境中我们想要将所有日志都发送到串行端口。根据需要可以配置 crashkernel 选项，但请注意，此参数会使 VM 中的可用内存量减少 128MB 或更多，这在较小的 VM 上可能会出现问题。
+    图形引导和无人参与引导不适用于云环境，在该环境中我们想要将所有日志都发送到串行端口。
+	根据需要可以配置 crashkernel 选项，但请注意，此参数会使 VM 中的可用内存量减少 128MB 或更多，这在较小的 VM 上可能会出现问题。
 
 8.	按照上面所示完成编辑 `/etc/default/grub` 后，运行以下命令以重新生成 grub 配置：
 
@@ -207,9 +212,9 @@
 
 
 ##通过 KVM 准备映像 
-###RHEL 6.6/6.7
+###RHEL 6.7
 
-1.	从 Red Hat 网站上下载 RHEL 6.6/6.7 的 KVM 映像。
+1.	从 Red Hat 网站上下载 RHEL 6.7 的 KVM 映像。
 
 2.	设置根密码
 
@@ -267,7 +272,8 @@
 
         rhgb quiet crashkernel=auto
 
-    图形引导和无人参与引导不适用于云环境，在该环境中我们想要将所有日志都发送到串行端口。根据需要可以配置 crashkernel 选项，但请注意，此参数会使 VM 中的可用内存量减少 128MB 或更多，这在较小的 VM 上可能会出现问题。
+    图形引导和无人参与引导不适用于云环境，在该环境中我们想要将所有日志都发送到串行端口。
+	根据需要可以配置 crashkernel 选项，但请注意，此参数会使 VM 中的可用内存量减少 128MB 或更多，这在较小的 VM 上可能会出现问题。
 
 10.	卸载 cloud-init：
 
@@ -316,21 +322,26 @@
 
 17.	关闭 KVM 中的 VM。
 
-18.	将 qcow2 映像转换为 vhd 格式：首先将此映像转换为原始格式：
+18.	将 qcow2 映像转换为 vhd 格式：
+	首先将此映像转换为原始格式：
          
-         # qemu-img convert -f qcow2 –O raw rhel-6.6.qcow2 rhel-6.6.raw
+         # qemu-img convert -f qcow2 –O raw rhel-6.7.qcow2 rhel-6.7.raw
     确保原始映像的大小为 1MB，如果不符合，则将数值大小四舍五入，使其等于 1MB：
+         # MB=$((1024*1024))
+         # size=$(qemu-img info -f raw --output json "rhel-6.7.raw" | \
+                  gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}')
+         # rounded\_size=$((($size/$MB + 1)*$MB))
 
-         # qemu-img resize rhel-6.6.raw $rounded_size
+         # qemu-img resize rhel-6.7.raw $rounded_size
 
     将原始磁盘转换为固定大小的 vhd：
 
-         # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-6.6.raw rhel-6.6.vhd
- 
+         # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-6.7.raw rhel-6.7.vhd
 
-###RHEL 7.0/7.1
 
-1.	从 Red Hat 网站上下载 RHEL 7.0 的 KVM 映像。
+###RHEL 7.1/7.2
+
+1.	请从 Red Hat 网站下载 RHEL 7.1（或 7.2）的 KVM 映像，我们在这里将使用 RHEL 7.1 作为示例。
 
 2.	设置根密码
 
@@ -384,7 +395,8 @@
 
         rhgb quiet crashkernel=auto
 
-    图形引导和无人参与引导不适用于云环境，在该环境中我们想要将所有日志都发送到串行端口。根据需要可以配置 crashkernel 选项，但请注意，此参数会使 VM 中的可用内存量减少 128MB 或更多，这在较小的 VM 上可能会出现问题。
+    图形引导和无人参与引导不适用于云环境，在该环境中我们想要将所有日志都发送到串行端口。
+	根据需要可以配置 crashkernel 选项，但请注意，此参数会使 VM 中的可用内存量减少 128MB 或更多，这在较小的 VM 上可能会出现问题。
 
 9.	按照上面所示完成编辑 `/etc/default/grub` 后，运行以下命令以重新生成 grub 配置：
 
@@ -444,15 +456,20 @@
 
     首先将此映像转换为原始格式：
 
-         # qemu-img convert -f qcow2 –O raw rhel-7.0.qcow2 rhel-7.0.raw
+         # qemu-img convert -f qcow2 –O raw rhel-7.1.qcow2 rhel-7.1.raw
 
     确保原始映像的大小为 1MB，如果不符合，则将数值大小四舍五入，使其等于 1MB：
 
-         # qemu-img resize rhel-7.0.raw $rounded_size
+         # MB=$((1024*1024))
+         # size=$(qemu-img info -f raw --output json "rhel-7.1.raw" | \
+                  gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}')
+         # rounded_size=$((($size/$MB + 1)*$MB))
+
+         # qemu-img resize rhel-7.1.raw $rounded_size
 
     将原始磁盘转换为固定大小的 vhd：
 
-         # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-7.0.raw rhel-7.0.vhd
+         # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-7.1.raw rhel-7.1.vhd
 
 
 ##通过 VMWare 准备映像
@@ -465,7 +482,7 @@
 
 - 当你创建虚拟硬盘时，选择“将虚拟磁盘存储为单个文件”。
 
-###RHEL 6.6/6.7
+###RHEL 6.7
 1.	通过运行以下命令卸载 NetworkManager：
 
          # sudo rpm -e --nodeps NetworkManager
@@ -517,7 +534,8 @@
 
         rhgb quiet crashkernel=auto
 
-    图形引导和无人参与引导不适用于云环境，在该环境中我们想要将所有日志都发送到串行端口。根据需要可以配置 crashkernel 选项，但请注意，此参数会使 VM 中的可用内存量减少 128MB 或更多，这在较小的 VM 上可能会出现问题。
+    图形引导和无人参与引导不适用于云环境，在该环境中我们想要将所有日志都发送到串行端口。
+	根据需要可以配置 crashkernel 选项，但请注意，此参数会使 VM 中的可用内存量减少 128MB 或更多，这在较小的 VM 上可能会出现问题。
 
 9.	请确保已安装 SSH 服务器且已将其配置为在引导时启动。这通常是默认设置。修改 `/etc/ssh/sshd_config` 以包含以下行：
 
@@ -552,18 +570,21 @@
 
     首先将此映像转换为原始格式：
 
-        # qemu-img convert -f vmdk –O raw rhel-6.6.vmdk rhel-6.6.raw
+        # qemu-img convert -f vmdk –O raw rhel-6.7.vmdk rhel-6.7.raw
 
     确保原始映像的大小为 1MB，如果不符合，则将数值大小四舍五入，使其等于 1MB：
 
-        # qemu-img resize rhel-6.6.raw $rounded_size
+        # MB=$((1024*1024))
+        # size=$(qemu-img info -f raw --output json "rhel-6.7.raw" | \
+                gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}')
+        # rounded_size=$((($size/$MB + 1)*$MB))
+        # qemu-img resize rhel-6.7.raw $rounded_size
 
     将原始磁盘转换为固定大小的 vhd：
 
-        # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-6.6.raw rhel-6.6.vhd
+        # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-6.7.raw rhel-6.7.vhd
 
-
-###RHEL 7.0/7.1
+###RHEL 7.1/7.2
 
 1.	在包含以下文本的 /etc/sysconfig/ 目录中创建一个名为 **network** 的文件：
 
@@ -598,7 +619,8 @@
 
         rhgb quiet crashkernel=auto
 
-    图形引导和无人参与引导不适用于云环境，在该环境中我们想要将所有日志都发送到串行端口。根据需要可以配置 crashkernel 选项，但请注意，此参数会使 VM 中的可用内存量减少 128MB 或更多，这在较小的 VM 上可能会出现问题。
+    图形引导和无人参与引导不适用于云环境，在该环境中我们想要将所有日志都发送到串行端口。
+	根据需要可以配置 crashkernel 选项，但请注意，此参数会使 VM 中的可用内存量减少 128MB 或更多，这在较小的 VM 上可能会出现问题。
 
 6.	按照上面所示完成编辑 `/etc/default/grub` 后，运行以下命令以重新生成 grub 配置：
 
@@ -651,21 +673,25 @@
 
     首先将此映像转换为原始格式：
 
-        # qemu-img convert -f vmdk –O raw rhel-7.0.vmdk rhel-7.0.raw
+        # qemu-img convert -f vmdk –O raw rhel-7.1.vmdk rhel-7.1.raw
 
     确保原始映像的大小为 1MB，如果不符合，则将数值大小四舍五入，使其等于 1MB：
 
-        # qemu-img resize rhel-7.0.raw $rounded_size
+        # MB=$((1024*1024))
+        # size=$(qemu-img info -f raw --output json "rhel-7.1.raw" | \
+                 gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}')
+        # rounded_size=$((($size/$MB + 1)*$MB))
+        # qemu-img resize rhel-7.1.raw $rounded_size
 
     将原始磁盘转换为固定大小的 vhd：
 
-        # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-7.0.raw rhel-7.0.vhd
+        # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-7.1.raw rhel-7.1.vhd
 
 
 ##使用启动文件通过 ISO 进行自动准备
-###RHEL 7.0/7.1
+###RHEL 7.1/7.2
 
-1.	创建包含以下内容的启动文件，并保存该文件。有关启动安装的详细信息，请参阅[启动安装指南](https://access.redhat.com/documentation/zh-CN/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html)。
+1.	创建包含以下内容的启动文件，并保存该文件。有关启动安装的详细信息，请参阅[启动安装指南](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html)。
 
 
         # Kickstart for provisioning a RHEL 7 Azure VM
@@ -795,28 +821,24 @@
 
 7.	等待安装完成，完成后，VM 会自动关闭。Linux VHD 现已准备好上载到 Azure。
 
-##已知问题：
-当你在 Hyper-V 和 Azure 中使用 RHEL 6.6、7.0 和 7.1 时，会遇到两个已知问题。
+##已知问题
+当你在 Hyper-V 和 Azure 中使用 RHEL 7.1 时，会遇到多个已知问题。
 
-###问题 1：预配超时
-在 Hyper-V 和 Azure 中使用 RHEL 时，在启动过程可能发生此问题。这在 RHEL 6.6 中更为常见。
+###问题：磁盘 I/O 冻结 
 
-重现率：
-
-问题是间歇出现的。在具有单个 vCPU 的较小型 VM 上最常重现，且在比较繁忙的服务器上重现较为频繁。
-
-
-###问题 2：磁盘 I/O 冻结 
-
-在 Hyper-V 和 Azure 中使用 RHEL 6.6、7.0 和 7.1 时，频繁的存储磁盘 I/O 活动期间可能会出现此问题。
+在 Hyper-V 和 Azure 中使用 RHEL 7.1 时，频繁的存储磁盘 I/O 活动期间可能会出现此问题。
 
 重现率：
 
-此问题是间歇出现的，但在 Hyper-V 和 Azure 中进行频繁的磁盘 I/O 操作过程中重现更加频繁。
+此问题是间歇出现的，但在 Hyper-V 和 Azure 中进行频繁的磁盘 I/O 操作过程中出现更加频繁。
 
     
-[AZURE.NOTE]Red Hat 已解决了这两个已知问题。若要安装关联的修补程序，可以运行以下命令：
+[AZURE.NOTE]此已知问题已被 Red Hat 解决。若要安装关联的修补程序，请运行以下命令：
 
     # sudo yum update
 
-<!---HONumber=Mooncake_1207_2015-->
+
+## 后续步骤
+现在，你已准备就绪，可以使用 Red Hat Enterprise Linux .vhd 在 Azure 中创建新的 Azure 虚拟机了。有关已通过认证可运行 Red Hat Enterprise Linux 的虚拟机监控程序的更多详细信息，请访问 [Red Hat 网站](https://access.redhat.com/certified-hypervisors)。
+
+<!---HONumber=Mooncake_0118_2016-->
