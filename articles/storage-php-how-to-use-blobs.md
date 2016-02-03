@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 PHP 使用 Blob | Windows Azure"
+	pageTitle="如何通过 PHP 使用 Blob 存储 | Windows Azure"
 	description="了解如何使用 Azure Blob 服务上载、列出、下载和删除 Blob。通过 PHP 编写代码示例。"
 	documentationCenter="php"
 	services="storage"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="09/01/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="12/16/2015"
+	wacn.date="01/29/2016"/>
 
 # 如何通过 PHP 使用 Blob 存储
 
@@ -49,7 +49,7 @@
 	use WindowsAzure\Common\ServicesBuilder;
 
 
-在下面的示例中， `require_once` 语句将始终显示，但只会引用执行该示例所需的类。
+在下面的示例中，`require_once` 语句将始终显示，但只会引用执行该示例所需的类。
 
 <h2><a id="ConnectionString"></a>设置 Azure 存储连接</h2>
 
@@ -97,35 +97,35 @@
 
 	// OPTIONAL: Set public access policy and metadata.
 	// Create container options object.
-	$createContainerOptions = new CreateContainerOptions();	
+	$createContainerOptions = new CreateContainerOptions();
 
-	// Set public access policy. Possible values are 
+	// Set public access policy. Possible values are
 	// PublicAccessType::CONTAINER_AND_BLOBS and PublicAccessType::BLOBS_ONLY.
-	// CONTAINER_AND_BLOBS: 	
+	// CONTAINER_AND_BLOBS:
 	// Specifies full public read access for container and blob data.
-    // proxys can enumerate blobs within the container via anonymous 
+    // proxys can enumerate blobs within the container via anonymous
 	// request, but cannot enumerate containers within the storage account.
 	//
 	// BLOBS_ONLY:
-	// Specifies public read access for blobs. Blob data within this 
-    // container can be read via anonymous request, but container data is not 
-    // available. proxys cannot enumerate blobs within the container via 
+	// Specifies public read access for blobs. Blob data within this
+    // container can be read via anonymous request, but container data is not
+    // available. proxys cannot enumerate blobs within the container via
 	// anonymous request.
-	// If this value is not specified in the request, container data is 
+	// If this value is not specified in the request, container data is
 	// private to the account owner.
 	$createContainerOptions->setPublicAccess(PublicAccessType::CONTAINER_AND_BLOBS);
 
 	// Set container metadata.
 	$createContainerOptions->addMetaData("key1", "value1");
 	$createContainerOptions->addMetaData("key2", "value2");
-	
+
 	try	{
 		// Create container.
 		$blobRestProxy->createContainer("mycontainer", $createContainerOptions);
 	}
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
+		// Error codes and messages are here:
 		// http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -148,17 +148,17 @@
 	// Create blob REST proxy.
 	$blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
-	
+
 	$content = fopen("c:\myfile.txt", "r");
 	$blob_name = "myblob";
-	
+
 	try	{
 		//Upload blob
 		$blobRestProxy->createBlockBlob("mycontainer", $blob_name, $content);
 	}
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
+		// Error codes and messages are here:
 		// http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -179,12 +179,12 @@
 	// Create blob REST proxy.
 	$blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
-	
+
 	try	{
 		// List blobs.
 		$blob_list = $blobRestProxy->listBlobs("mycontainer");
 		$blobs = $blob_list->getBlobs();
-		
+
 		foreach($blobs as $blob)
 		{
 			echo $blob->getName().": ".$blob->getUrl()."<br />";
@@ -192,7 +192,7 @@
 	}
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
+		// Error codes and messages are here:
 		// http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -212,7 +212,7 @@
 	// Create blob REST proxy.
 	$blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
-	
+
 	try	{
 		// Get blob.
 		$blob = $blobRestProxy->getBlob("mycontainer", "myblob");
@@ -220,7 +220,7 @@
 	}
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
+		// Error codes and messages are here:
 		// http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -241,14 +241,14 @@
 	// Create blob REST proxy.
 	$blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
-	
+
 	try	{
 		// Delete container.
 		$blobRestProxy->deleteBlob("mycontainer", "myblob");
 	}
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
+		// Error codes and messages are here:
 		// http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -267,14 +267,14 @@
 	// Create blob REST proxy.
 	$blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
-	
+
 	try	{
 		// Delete container.
 		$blobRestProxy->deleteContainer("mycontainer");
 	}
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
+		// Error codes and messages are here:
 		// http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -285,16 +285,15 @@
 
 现在，您已了解了 Azure Blob 服务的基础知识，单击下面的链接可了解有关更复杂的存储任务的详细信息。
 
-- 请参阅 MSDN 参考：[Azure 存储](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
 - 访问 [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 - 参阅位于以下位置的 PHP 块 Blob 示例：<https://github.com/WindowsAzure/azure-sdk-for-php-samples/blob/master/storage/BlockBlobExample.php>。
 - 参阅位于以下位置的 PHP 页 Blob 示例：<https://github.com/WindowsAzure/azure-sdk-for-php-samples/blob/master/storage/PageBlobExample.php>
-
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
+ 
 有关详细信息，另请参阅 [PHP 开发中心](/develop/php/)。
 
 
 [download]: /documentation/articles/php-download-sdk
-[在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [container-acl]: http://msdn.microsoft.com/zh-cn/library/azure/dd179391.aspx
 [error-codes]: http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
 [file_get_contents]: http://php.net/file_get_contents
@@ -302,4 +301,4 @@
 [fopen]: http://www.php.net/fopen
 [stream-get-contents]: http://www.php.net/stream_get_contents
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

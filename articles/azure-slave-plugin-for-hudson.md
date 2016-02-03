@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage" 
-	ms.date="06/03/2015" 
-	wacn.date="09/18/2015"/>
+	ms.date="11/19/2015" 
+	wacn.date="01/29/2015"/>
 
 #如何在 Hudson 连续集成中使用 Azure Slave 插件
 
@@ -41,22 +41,14 @@
 可以在你的订阅配置文件中找到这些信息。如果你没有你的订阅配置文件副本，则可以从[此处](https://manage.windowsazure.cn/publishsettings/Index?SchemaVersion=2.0)下载。以下是订阅配置文件的一个示例。
 
 	<?xml version="1.0" encoding="utf-8"?>
-
 		<PublishData>
-
   		<PublishProfile SchemaVersion="2.0" PublishMethod="AzureServiceManagementAPI">
-
     	<Subscription
-
       		ServiceManagementUrl="https://management.core.chinacloudapi.cn"
-
       		Id="<Subscription ID>"
-
       		Name="Pay-As-You-Go"
 			ManagementCertificate="<Management certificate value>" />
-
   		</PublishProfile>
-
 	</PublishData>
 
 获得订阅配置文件以后，请按照以下步骤配置 Azure Slave 插件。
@@ -64,9 +56,7 @@
 1. 在 Hudson 仪表板中，单击“管理 Hudson”。
 2. 单击“配置系统”。
 3. 向下滚动页面以找到“云”部分。
-4. 单击“添加新的云”> Windows Azure。
-
-
+4. 单击“添加新云”>“Microsoft Azure”。
 
 	![添加新的云](./media/azure-slave-plugin-for-hudson/hudson-setup-addcloud.png)
 
@@ -90,8 +80,6 @@
 3. 向下滚动页面以找到“云”部分。
 4. 在“云”部分中，找到“添加 Azure 虚拟机模板”，然后单击“添加”按钮。
 
-
-
 	![添加 VM 模板](./media/azure-slave-plugin-for-hudson/hudson-setup-addnewvmtemplate.png)
 
 5. 在“名称”字段中指定一个云服务名称。如果你指定的名称引用一个现有的云服务，则将在该服务中设置 VM。否则，Azure 将创建一个新服务。
@@ -102,8 +90,6 @@
 10. 指定要创建 VM 的存储帐户。确保其所在区域与你要使用的云服务相同。如果你想要创建新的存储空间，可以将此字段留空。
 11. 保留时间指定 Hudson 删除空闲从属节点之前所需要的分钟数。其保留默认值为 60。
 12. 在“使用情况”中，选择使用此从属节点时的适当条件。现在，选择“尽可能多地使用此节点”。
-
-
 
 	此时，你的窗体会与以下类似：
 
@@ -124,27 +110,16 @@
 
 		# Install Java
 		sudo apt-get -y update
-
 		sudo apt-get install -y openjdk-7-jdk
-
 		sudo apt-get -y update --fix-missing
-
 		sudo apt-get install -y openjdk-7-jdk
-
-
 
 		# Install git
-
 		sudo apt-get install -y git
 
-
-
 		#Install ant
-
 		sudo apt-get install -y ant
-
 		sudo apt-get -y update --fix-missing
-
 		sudo apt-get install -y ant
 
 	将在创建 VM 后执行“初始化脚本”。在此示例中，脚本安装 Java、git 和 ant。
@@ -170,29 +145,18 @@
 
 
 		# Clone from git repo
-
 		currentDir="$PWD"
-
 		if [ -e (your project directory) ]; then
-
   			cd (your project directory)
-
   			git pull origin master
-
 		else
-
   			git clone https://github.com/(your github account name)/(your project name).git
-
 		fi
 		
 		# change directory to project
-
 		cd $currentDir/(your project directory)
 
-
-
 		#Execute build task
-
 		ant
 		
 9. 单击“保存”。
@@ -209,4 +173,4 @@
 
   
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_0118_2016-->

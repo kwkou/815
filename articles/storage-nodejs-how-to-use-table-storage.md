@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="09/01/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="12/01/2015"
+	wacn.date="01/29/2016"/>
 
 
 # 如何通过 Node.js 使用 Azure 表存储
@@ -85,7 +85,7 @@ Azure 模块将读取环境变量 AZURE_STORAGE_ACCOUNT 和 AZURE_STORAGE_ACCESS
 
 `result` 将为 `true`（如果创建了新表），或者为 `false`（如果表已存在）。`response` 将包含有关该请求的信息。
 
-###筛选器
+### 筛选器
 
 可选的筛选操作可应用于使用 **TableService** 执行的操作。筛选操作可包括日志记录、自动重试等。筛选器是实现具有签名的方法的对象：
 
@@ -95,7 +95,7 @@ Azure 模块将读取环境变量 AZURE_STORAGE_ACCOUNT 和 AZURE_STORAGE_ACCESS
 
 		function (returnObject, finalCallback, next)
 
-在此回调中并且在处理 returnObject（来自对服务器请求的响应）后，回调需要调用 next（如果它存在以便继续处理其他筛选器）或只调用 finalCallback 以便结束服务调用。
+在此回调中并且在处理 returnObject（来自对服务器请求的响应）后，回调需要调用 next（如果它存在，以便继续处理其他筛选器）或只调用 finalCallback 以便结束服务调用。
 
 Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分别是 **ExponentialRetryPolicyFilter** 和 **LinearRetryPolicyFilter**。以下代码将创建使用 **ExponentialRetryPolicyFilter** 的 **TableService** 对象:
 
@@ -114,7 +114,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 下面是如何定义实体的示例。请注意，**dueDate** 被定义为一种类型的 **Edm.DateTime**。可以选择性地指定类型。如果未指定类型，系统会进行推断。
 
-	var task = { 
+	var task = {
 	  PartitionKey: {'_':'hometasks'},
 	  RowKey: {'_': '1'},
 	  description: {'_':'take out the trash'},
@@ -155,13 +155,13 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 可使用多种方法来更新现有实体：
 
-* **updateEntity** - 通过替换现有实体来更新现有实体。
+* **updateEntity** - 通过替换现有实体来更新现有实体
 
-* **mergeEntity** - 通过将新属性值合并到现有实体来更新现有实体。
+* **mergeEntity** - 通过将新属性值合并到现有实体来更新现有实体
 
-* **insertOrReplaceEntity** - 通过替换现有实体来更新现有实体。如果不存在实体，将插入一个新实体。
+* **insertOrReplaceEntity** - 通过替换现有实体来更新现有实体。如果不存在实体，将插入一个新实体
 
-* **insertOrMergeEntity** - 通过将新属性值合并到现有实体来更新现有实体。如果不存在实体，将插入一个新实体。
+* **insertOrMergeEntity** - 通过将新属性值合并到现有实体来更新现有实体。如果不存在实体，将插入一个新实体
 
 以下示例演示了使用 **updateEntity** 更新实体：
 
@@ -172,18 +172,18 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
     });
 
 > [AZURE.NOTE] 默认情况下，更新某个实体时，不会查看要更新的数据是否曾被其他进程更新过。若要支持并发更新，请执行以下步骤：
-> 
-> 1.获取要更新的对象的 ETag。对于任何实体相关操作，该 ETag 将在  `response` 中返回，并且可通过  `response['.metadata'].etag` 检索。
-> 
-> 2.对某个实体执行更新操作时，请将以前检索的 ETag 信息添加到新的实体。例如：
-> 
+>
+> 1. 获取要更新的对象的 ETag。对于任何实体相关操作，该 ETag 将在 `response` 中返回，并且可通过 `response['.metadata'].etag` 检索。
+>
+> 2. 对某个实体执行更新操作时，请将以前检索的 ETag 信息添加到新的实体。例如：
+>
 >     `entity2['.metadata'].etag = currentEtag;`
 >    
 > 3. 执行更新操作。如果实体在您检索 ETag 值后已被修改，例如被应用程序的其他实例修改，则会返回一条 `error`，指出未满足请求中指定的更新条件。
-    
+
 对于 **updateEntity** 和 **mergeEntity**，如果待更新的实体不存在，则更新操作将失败。因此，如果您希望存储某个实体而不考虑它是否已存在，请使用 **insertOrReplaceEntity** 或 **insertOrMergeEntity**。
 
-如果更新操作成功，则  `result` 会包含所更新实体的 **Etag**。
+如果更新操作成功，则 `result` 会包含所更新实体的 **Etag**。
 
 ## 使用实体组
 
@@ -191,13 +191,13 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
  下面的示例演示了在一个批次中提交两个实体：
 
-    var task1 = { 
+    var task1 = {
 	  PartitionKey: {'_':'hometasks'},
 	  RowKey: {'_': '1'},
 	  description: {'_':'Take out the trash'},
 	  dueDate: {'_':new Date(2015, 6, 20)}
 	};
-	var task2 = { 
+	var task2 = {
 	  PartitionKey: {'_':'hometasks'},
 	  RowKey: {'_': '2'},
 	  description: {'_':'Wash the dishes'},
@@ -205,7 +205,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	};
 
 	var batch = new azure.TableBatch();
-	
+
 	batch.insertEntity(task1, {echoContent: true});
 	batch.insertEntity(task2, {echoContent: true});
 
@@ -215,9 +215,9 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-对于成功的批处理操作， `result` 将包含批处理中每个操作的信息。
+对于成功的批处理操作，`result` 将包含批处理中每个操作的信息。
 
-###使用批处理操作
+### 使用批处理操作
 
 可以通过查看 `operations` 属性来检查添加到批处理中的操作。你可以使用以下方法来处理操作：
 
@@ -241,7 +241,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
     });
 
-此操作完成后， `result` 将包含该实体。
+此操作完成后，`result` 将包含该实体。
 
 ## 查询实体集
 
@@ -272,7 +272,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-如果成功，`result.entries` 将包含与查询匹配的一组实体。如果查询无法返回所有实体，`result.continuationToken` 就不会是 *null*，因此可用作 **queryEntities** 的第三个参数来检索更多结果。对于初始查询，请为第三个参数使用 *null*。
+如果成功，`result.entries` 将包含与查询匹配的一组实体。如果查询无法返回所有实体，`result.continuationToken` 就不会是 *null* ，因此可用作 **queryEntities** 的第三个参数来检索更多结果。对于初始查询，请为第三个参数使用 *null* 。
 
 ### 查询一部分实体属性
 
@@ -287,7 +287,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 可以使用实体的分区键和行键删除实体。在本例中，**task1** 对象包含要删除的实体的 **RowKey** 和 **PartitionKey** 值。然后，该对象被传递给 **deleteEntity** 方法。
 
-	var task = { 
+	var task = {
 	  PartitionKey: {'_':'hometasks'},
 	  RowKey: {'_': '1'}
 	};
@@ -337,7 +337,7 @@ dc.table.queryEntities(tableName,
     });
 ```
 
-如果您检查 `continuationToken` 对象，您会发现如 `nextPartitionKey`、`nextRowKey` 和 `targetLocation` 等属性可用于循环访问所有结果。
+如果你检查 `continuationToken` 对象，你会发现 `nextPartitionKey`、`nextRowKey` 和 `targetLocation` 等属性可用于循环访问所有结果。
 
 在 GitHub 上的 Azure 存储 Node.js 存储库中还有一个继续样本。查找 `examples/samples/continuationsample.js`。
 
@@ -353,7 +353,7 @@ dc.table.queryEntities(tableName,
 	var expiryDate = new Date(startDate);
 	expiryDate.setMinutes(startDate.getMinutes() + 100);
 	startDate.setMinutes(startDate.getMinutes() - 100);
-		
+
 	var sharedAccessPolicy = {
 	  AccessPolicy: {
 	    Permissions: azure.TableUtilities.SharedAccessPermissions.QUERY,
@@ -372,7 +372,7 @@ dc.table.queryEntities(tableName,
 	var sharedTableService = azure.createTableServiceWithSas(host, tableSAS);
 	var query = azure.TableQuery()
 	  .where('PartitionKey eq ?', 'hometasks');
-		
+
 	sharedTableService.queryEntities(query, null, function(error, result, response) {
 	  if(!error) {
 		// result contains the entities
@@ -381,7 +381,7 @@ dc.table.queryEntities(tableName,
 
 由于 SAS 在生成时只具有查询访问权限，因此如果尝试插入、更新或删除实体，则会返回错误。
 
-###访问控制列表
+### 访问控制列表
 
 你还可以使用访问控制列表 (ACL) 为 SAS 设置访问策略。如果你希望允许多个客户端访问某个表，但为每个客户端提供了不同的访问策略，则访问控制列表会很有用。
 
@@ -428,8 +428,7 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 
 有关详细信息，请参阅以下资源。
 
--   MSDN 参考：[在 Azure 中存储和访问数据][]。
--   [Azure 存储空间团队博客][]。
+-   [Azure 存储团队博客][]。
 -   GitHub 上的 [Azure Storage SDK for Node][] 存储库。
 -   [Node.js 开发人员中心](/develop/nodejs/)
 
@@ -439,12 +438,10 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [Azure 管理门户]: http://manage.windowsazure.cn
 
   [Node.js 云服务]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app
-  [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [访问 Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
   [使用 WebMatrix 构建 Web 应用]: /zh-cn/documentation/articles/web-sites-nodejs-use-webmatrix
   [使用存储构建 Node.js 云服务]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
   [使用存储构建 Node.js Web 应用]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-web-site
   [Create and deploy a Node.js application to an Azure  Website]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
-  [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

@@ -9,11 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="08/31/2015" 
-	wacn.date="11/12/2015"/>
-
-
-
+	ms.date="12/01/2015" 
+	wacn.date="01/29/2016"/>
 
 # 如何通过 Java 使用 Blob 存储
 
@@ -33,7 +30,7 @@
 
 在本文中，你将使用存储功能，这些功能可在本地 Java 应用程序中运行，或在 Azure 的 Web 角色或辅助角色中通过运行的代码来运行。
 
-为此，你将需要安装 Java 开发工具包 (JDK)，并在你的 Azure 订阅中创建一个 Azure 存储帐户。完成此操作后，你将需要验证开发系统是否满足最低要求和 GitHub 上的 [Azure Storage SDK for Java][] 存储库中列出的依赖项。如果你的系统满足这些要求，你可以按照说明下载和安装系统中该存储库的 Azure Storage Libraries for Java。完成这些任务后，您将能够创建一个 Java 应用程序，以便使用本文中的示例。
+为此，你将需要安装 Java 开发工具包 (JDK)，并在你的 Azure 订阅中创建一个 Azure 存储帐户。完成此操作后，你将需要验证开发系统满足最低要求和 GitHub 上的 [Azure Storage SDK for Java][] 存储库中列出的依赖项。如果你的系统满足这些要求，你可以按照说明下载和安装系统中该存储库的 Azure Storage Libraries for Java。完成这些任务后，您将能够创建一个 Java 应用程序，以便使用本文中的示例。
 
 ## 配置你的应用程序以访问 Blob 存储
 
@@ -45,19 +42,19 @@
 
 ## 设置 Azure 存储连接字符串
 
-Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，必须提供以下格式的存储连接字符串，并对 *AccountName* 和 *AccountKey* 值使用管理门户中列出的存储帐户的名称和存储帐户的主访问密钥。下面的示例演示如何声明一个静态字段以保存连接字符串：
+Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，必须提供以下格式的存储连接字符串，并对 *AccountName* 和 *AccountKey* 值使用[管理门户](https://manage.windowsazure.cn)中列出的存储帐户的名称和存储帐户的主访问密钥。下面的示例演示如何声明一个静态字段以保存连接字符串。
 
     // Define the connection-string with your values
-    public static final String storageConnectionString = 
-        "DefaultEndpointsProtocol=http;" + 
-        "AccountName=your_storage_account;" + 
-        "AccountKey=your_storage_account_key;"+
-		"EndpointSuffix=core.Chinacloudapi.cn";
+    public static final String storageConnectionString =
+        "DefaultEndpointsProtocol=http;" +
+        "AccountName=your_storage_account;" +
+        "AccountKey=your_storage_account_key;" +
+	"EndpointSuffix=core.chinacloudapi.cn";
 
 在 Windows Azure 的角色中运行的应用程序中，此字符串可存储在服务配置文件  *ServiceConfiguration.cscfg* 中，并可通过调用 **RoleEnvironment.getConfigurationSettings** 方法进行访问。下面的示例从服务配置文件中名为  *StorageConnectionString* 的 **Setting** 元素获取连接字符串
 
     // Retrieve storage account from connection-string.
-    String storageConnectionString = 
+    String storageConnectionString =
         RoleEnvironment.getConfigurationSettings().get("StorageConnectionString");
 
 下面的示例假定你使用了这两个方法之一来获取存储连接字符串。
@@ -66,7 +63,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 利用 **CloudBlobClient** 对象，可以获得容器和 Blob 的引用对象。以下代码将创建 **CloudBlobClient** 对象。
 
-> [AZURE.NOTE]还有其他方式可创建 **CloudStorageAccount** 对象；有关详细信息，请参阅 [Azure 存储空间客户端 SDK 参考] 中的 **CloudStorageAccount**。
+> [AZURE.NOTE] 还有其他方式来创建 **CloudStorageAccount** 对象；有关详细信息，请参阅 [Azure 存储空间客户端 SDK 参考]中的 **CloudStorageAccount**。
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
 
@@ -120,9 +117,9 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 	   // Retrieve reference to a previously created container.
     	CloudBlobContainer container = blobClient.getContainerReference("mycontainer");
-			
+
         // Define the path to a local file.
-        final String filePath = "C:&#92;myimages&#92;myimage.jpg";
+        final String filePath = "C:\\myimages\\myimage.jpg";
 
     	// Create or overwrite the "myimage.jpg" blob with contents from a local file.
     	CloudBlockBlob blob = container.getBlockBlobReference("myimage.jpg");
@@ -149,7 +146,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
     	// Retrieve reference to a previously created container.
     	CloudBlobContainer container = blobClient.getContainerReference("mycontainer");
-			
+
     	// Loop over blobs within the container and output the URI to each of them.
     	for (ListBlobItem blobItem : container.listBlobs()) {
 	       System.out.println(blobItem.getUri());
@@ -181,14 +178,14 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 	   // Retrieve reference to a previously created container.
 	   CloudBlobContainer container = blobClient.getContainerReference("mycontainer");
-			
+
 	   // Loop through each blob item in the container.
 	   for (ListBlobItem blobItem : container.listBlobs()) {
 	       // If the item is a blob, not a virtual directory.
 	       if (blobItem instanceof CloudBlob) {
 	           // Download the item and save it to a file with the same name.
     	        CloudBlob blob = (CloudBlob) blobItem;
-    	        blob.download(new FileOutputStream("C:&#92;mydownloads&#92;" + blob.getName()));
+    	        blob.download(new FileOutputStream("C:\\mydownloads\\" + blob.getName()));
     	    }
     	}
     }
@@ -212,7 +209,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 	   // Retrieve reference to a previously created container.
 	   CloudBlobContainer container = blobClient.getContainerReference("mycontainer");
-			
+
 	   // Retrieve reference to a blob named "myimage.jpg".
 	   CloudBlockBlob blob = container.getBlockBlobReference("myimage.jpg");
 
@@ -239,7 +236,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 	   // Retrieve reference to a previously created container.
 	   CloudBlobContainer container = blobClient.getContainerReference("mycontainer");
-			
+
 	   // Delete the blob container.
 	   container.deleteIfExists();
     }
@@ -253,16 +250,17 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 现在，你已了解有关 Blob 存储的基础知识，可单击下面的链接来了解更复杂的存储任务。
 
-- [Azure Storage SDK for Java]
-- [Azure 存储客户端 SDK 参考]
-- [Azure 存储 REST API]
-- [Azure 存储团队博客]
+- [Azure Storage SDK for Java][]
+- [Azure 存储客户端 SDK 参考][]
+- [Azure 存储 REST API][]
+- [Azure 存储团队博客][]
 
 [Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
+[Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
 [Azure 存储空间客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
-[Azure 存储 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+[Azure 存储 REST API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

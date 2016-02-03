@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="03/11/2015" 
-	wacn.date="01/21/2016"/>
+	ms.date="12/01/2015" 
+	wacn.date="01/29/2016"/>
 
 
 # 如何通过 Node.js 使用队列存储
@@ -19,7 +19,7 @@
 
 ## 概述
 
-本指南演示如何使用 Windows Azure 队列服务执行常见任务。相关示例是使用 Node.js API 编写的。介绍的方案包括“插入”、“扫视”、“获取”和“删除”队列消息以及“创建”和“删除”队列。
+本指南将演示如何使用 Windows Azure 队列服务执行常见方案。相关示例是使用 Node.js API 编写的。介绍的方案包括“插入”、“扫视”、“获取”和“删除”队列消息以及“创建”和“删除”队列。
 
 [AZURE.INCLUDE [storage-queue-concepts-include](../includes/storage-queue-concepts-include.md)]
 
@@ -37,20 +37,21 @@
 
 1.  使用 **PowerShell** (Windows)、**Terminal** (Mac) 或 **Bash** (Unix) 等命令行界面导航到您在其中创建了示例应用程序的文件夹。
 
-2.  在命令窗口中键入 **npm install azure-storage**，这应该产生以下输出：
+2.  在命令窗口中键入 **npm install azure-storage**。该命令的输出类似于以下示例。
 
-        azure-storage@0.1.0 node_modules\azure-storage
-		(c)À(c)¤(c)¤ extend@1.2.1
-		(c)À(c)¤(c)¤ xmlbuilder@0.4.3
-		(c)À(c)¤(c)¤ mime@1.2.11
-		(c)À(c)¤(c)¤ underscore@1.4.4
-		(c)À(c)¤(c)¤ validator@3.1.0
-		(c)À(c)¤(c)¤ node-uuid@1.4.1
-		(c)À(c)¤(c)¤ xml2js@0.2.7 (sax@0.5.2)
-		(c)¸(c)¤(c)¤ request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
+		azure-storage@0.5.0 node_modules\azure-storage
+		+-- extend@1.2.1
+		+-- xmlbuilder@0.4.3
+		+-- mime@1.2.11
+		+-- node-uuid@1.4.3
+		+-- validator@3.22.2
+		+-- underscore@1.4.4
+		+-- readable-stream@1.0.33 (string_decoder@0.10.31, isarray@0.0.1, inherits@2.0.1, core-util-is@1.0.1)
+		+-- xml2js@0.2.7 (sax@0.5.2)
+		+-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
 
 3.  可以手动运行 **ls** 命令来验证是否创建了
-    **node\_modules** 文件夹。在该文件夹中，你会
+    **node_modules** 文件夹。在该文件夹中，你会
     找到 **azure-storage** 包，其中包含你访问
     存储所需的库。
 
@@ -81,9 +82,9 @@ Azure 模块将读取环境变量 AZURE_STORAGE_ACCOUNT 和 AZURE_STORAGE_ACCESS
 	  }
 	});
 
-如果创建了队列，则  `result` 为 true。如果队列已存在，则  `result` 为 false。
+如果创建了队列，则 `result` 为 true。如果队列已存在，则 `result` 为 false。
 
-###筛选器
+### 筛选器
 
 可以向使用 **QueueService** 执行的操作应用可选的筛选操作。筛选操作可包括日志记录、自动重试等。筛选器是实现具有签名的方法的对象：
 
@@ -110,18 +111,18 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-## 如何：查看下一条消息
+## 如何：扫视下一条消息
 
 通过调用 peekMessages 方法，可以查看队列前面的消息，而不必从队列中将其删除。默认情况下，
 **peekMessages** 查看单个消息。
 
 	queueSvc.peekMessages('myqueue', function(error, result, response){
 	  if(!error){
-		// Messages peeked
+		// Message text is in messages[0].messagetext
 	  }
 	});
 
- `result` 包含该消息。
+`result` 包含该消息。
 
 > [AZURE.NOTE] 在队列中没有消息时使用 **peekMessages** 不会返回错误，但也不会返回消息。
 
@@ -133,11 +134,11 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 2. 删除该消息。
 
-若要取消消息的排队，请使用 **getMessage**。这会使该消息在队列中不可见，因此其他客户端无法处理它。一旦应用程序处理完该消息，即可调用 **deleteMessage** 将其从队列中删除。下面的示例获取了一条消息，然后又将其删除：
+若要取消消息的排队，请使用 **getMessages**。这会使消息在队列中不可见，因此其他客户端无法处理它们。一旦应用程序处理完某个消息，即可调用 **deleteMessage** 将其从队列中删除。下面的示例获取了一条消息，然后又将其删除：
 
 	queueSvc.getMessages('myqueue', function(error, result, response){
       if(!error){
-	    // message dequed
+	    // Message text is in messages[0].messagetext
         var message = result[0];
         queueSvc.deleteMessage('myqueue', message.messageid, message.popreceipt, function(error, response){
 	      if(!error){
@@ -149,8 +150,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 > [AZURE.NOTE] 默认情况下，一条消息只会隐藏 30 秒，然后其他客户端就可以看见它。您可以将 `options.visibilityTimeout` 与 **getMessages** 一起使用，以便指定其他值。
 
-> [AZURE.NOTE]
-> 在队列中没有消息时使用 <b>getMessages</b> 不会返回错误，但也不会返回消息。
+> [AZURE.NOTE] 在队列中没有消息时使用 **getMessages** 不会返回错误，但也不会返回消息。
 
 ## 如何：更改已排队消息的内容
 
@@ -212,7 +212,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-如果无法返回所有队列，则可使用  `result.continuationToken` 作为 **listQueuesSegmented** 的第一个参数或 **listQueuesSegmentedWithPrefix** 的第二个参数，以便检索更多结果。
+如果无法返回所有队列，则可使用 `result.continuationToken` 作为 **listQueuesSegmented** 的第一个参数或 **listQueuesSegmentedWithPrefix** 的第二个参数，以便检索更多结果。
 
 ## 如何：删除队列
 
@@ -263,7 +263,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 由于 SAS 在生成时只具有添加访问权限，因此如果尝试读取、更新或删除消息，则会返回错误。
 
-###访问控制列表
+### 访问控制列表
 
 你还可以使用访问控制列表 (ACL) 为 SAS 设置访问策略。如果你希望允许多个客户端访问某个队列，但为每个客户端提供了不同的访问策略，则访问控制列表会很有用。
 
@@ -310,7 +310,6 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 
 现在，您已了解有关队列存储的基础知识，可单击下面的链接来了解更复杂的存储任务。
 
--   请参阅 MSDN 参考：[在 Azure 中存储和访问数据][]。
 -   访问 [Azure 存储空间团队博客][]。
 -   访问 GitHub 上的 [Azure Storage SDK for Node][] 存储库。
 
@@ -329,7 +328,7 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   
   
   [Node.js 云服务]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
-  [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
  [使用 WebMatrix 构建 Web 应用]: /zh-cn/documentation/articles/web-sites-nodejs-use-webmatrix/
-<!---HONumber=70-->
+
+<!---HONumber=Mooncake_0118_2016-->

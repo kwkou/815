@@ -9,10 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="06/03/2015" 
-	wacn.date="11/12/2015"/>
-
-
+	ms.date="12/01/2015" 
+	wacn.date="01/29/2016"/>
 
 # 如何通过 Java 使用队列存储
 
@@ -44,14 +42,14 @@
 
 ## 设置 Azure 存储连接字符串
 
-Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，必须提供以下格式的存储连接字符串，并对 *AccountName* 和 *AccountKey* 值使用管理门户中列出的存储帐户的名称和存储帐户的主访问密钥。此示例演示如何声明一个静态字段以保存连接字符串：
+Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，必须提供以下格式的存储连接字符串，并对 *AccountName* 和 *AccountKey* 值使用[管理门户](https://manage.windowsazure.cn)中列出的存储帐户的名称和存储帐户的主访问密钥。此示例演示如何声明一个静态字段以保存连接字符串：
 
     // Define the connection-string with your values.
     public static final String storageConnectionString = 
         "DefaultEndpointsProtocol=http;" + 
         "AccountName=your_storage_account;" + 
-        "AccountKey=your_storage_account_key;"+
-		"EndpointSuffix=core.Chinacloudapi.cn";
+        "AccountKey=your_storage_account_key;" +
+	"EndpointSuffix=core.chinacloudapi.cn";
 
 在 Windows Azure 的角色中运行的应用程序中，此字符串可存储在服务配置文件 *ServiceConfiguration.cscfg* 中，并可通过调用 **RoleEnvironment.getConfigurationSettings** 方法进行访问。下面是从服务配置文件中名为 *StorageConnectionString* 的 **Setting** 元素中获取连接字符串的示例：
 
@@ -63,7 +61,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 ## 如何：创建队列
 
-利用 **CloudQueueClient** 对象，可以获取队列的引用对象。以下代码将创建 **CloudQueueClient** 对象。（注意：还有其他方式来创建 **CloudStorageAccount** 对象；有关详细信息，请参阅 **Azure 存储客户端 SDK 参考**中的 [CloudStorageAccount]。）
+利用 **CloudQueueClient** 对象，可以获取队列的引用对象。以下代码将创建 **CloudQueueClient** 对象。（注意：还有其他方式来创建 **CloudStorageAccount** 对象；有关详细信息，请参阅 [Azure 存储客户端 SDK 参考]中的 **CloudStorageAccount**。）
 
 使用 **CloudQueueClient** 对象获取对你要使用的队列的引用。如果队列不存在，你可以创建它。
 
@@ -324,7 +322,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 ## 如何：列出队列
 
-若要获取当前队列的列表，请调用 **CloudQueueClient.listQueues()** 方法，它将返回 **CloudQueue** 对象的集合。 
+若要获取当前队列的列表，请调用 **CloudQueueClient.listQueues()** 方法，它将返回 **CloudQueue** 对象的集合。
 
     try
     {
@@ -378,16 +376,17 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 现在，您已了解有关队列存储的基础知识，可单击下面的链接来了解更复杂的存储任务。
 
-- [Azure Storage SDK for Java]
-- [Azure 存储客户端 SDK 参考]
-- [Azure 存储 REST API]
-- [Azure 存储团队博客]
+- [Azure Storage SDK for Java][]
+- [Azure 存储客户端 SDK 参考][]
+- [Azure 存储 REST API][]
+- [Azure 存储团队博客][]
 
 [Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
 [Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
 [CloudStorageAccount]: http://dl.windowsazure.com/storage/javadoc/
-[Azure 存储 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+[Azure 存储 REST API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
-<!---HONumber=70-->
+
+<!---HONumber=Mooncake_0118_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="10/21/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="12/04/2015"
+	wacn.date="01/29/2016"/>
 
 # 如何通过 .NET 使用队列存储
 
@@ -37,9 +37,9 @@
 
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Auth;
-	using Microsoft.WindowsAzure.Storage.Queue;
+    using Microsoft.WindowsAzure.Storage.Queue;
 
-确保你引用  `Microsoft.WindowsAzure.Storage.dll` 程序集。
+确保你引用 `Microsoft.WindowsAzure.Storage.dll` 程序集。
 
 [AZURE.INCLUDE [storage-dotnet-retrieve-conn-string](../includes/storage-dotnet-retrieve-conn-string.md)]
 
@@ -119,7 +119,7 @@
 
 	// Get the message from the queue and update the message contents.
     CloudQueueMessage message = queue.GetMessage();
-    message.SetMessageContent("Updated contents.") ;
+    message.SetMessageContent("Updated contents.");
     queue.UpdateMessage(message,
         TimeSpan.FromSeconds(60.0),  // Make it visible for another 60 seconds.
         MessageUpdateFields.Content | MessageUpdateFields.Visibility);
@@ -240,7 +240,6 @@
 - 查看队列服务参考文档，了解有关可用 API 的完整详细信息：
     - [.NET 存储客户端库参考](https://msdn.microsoft.com/zh-cn/library/mt347887.aspx)
     - [REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
-- 通过查看[在 Azure 中存储和访问数据](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)了解可以通过 Azure 存储空间执行的更高级任务
 - 了解如何通过使用 [Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk) 简化为使用 Azure 存储空间而写的代码。
 - 查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
     - 使用[表存储](/documentation/articles/storage-dotnet-how-to-use-tables)来存储结构化数据。 
@@ -261,4 +260,4 @@
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
  
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="06/03/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="12/01/2015" 
+	wacn.date="01/29/2016"/>
 
 # 使用 Blob 存储的本地应用程序
 
@@ -22,11 +22,11 @@
 
 - 已安装 Java 开发人员工具包 (JDK) 版本1.6 或更高版本。
 - 已安装 Azure SDK。
-- 适用于 Azure Libraries for Java 的 JAR 以及任何适用的依赖项 JAR 已安装并且位于 Java 编译器使用的生成路径中。有关安装 Azure Libraries for Java 的信息，请参阅“下载 Azure SDK for Java”。
-- 已设置了一个 Azure 存储帐户。本文中的代码将使用存储帐户的帐户名称和帐户密钥。有关创建存储帐户的信息，请参阅[如何创建存储帐户]；有关检索帐户密钥的信息，请参阅[如何管理存储帐户]。
+- 适用于 Azure Libraries for Java 的 JAR 以及任何适用的依赖项 JAR 已安装并且位于 Java 编译器使用的生成路径中。有关安装 Azure Libraries for Java 的信息，请参阅 [下载 Azure SDK for Java][]。
+- 已设置了一个 Azure 存储帐户。本文中的代码将使用存储帐户的帐户名称和帐户密钥。有关创建存储帐户的信息，请参阅[如何创建存储帐户]；有关检索帐户密钥的信息，请参阅[如何管理存储帐户][]。
 - 您已创建存储在路径 c:\\myimages\\image1.jpg 处的已命名本地图像文件。或者，在示例中修改 **FileInputStream** 构造函数以使用其他图像路径和文件名。
 
-[WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
+[AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 ## 使用 Azure Blob 存储上载文件
 
@@ -34,8 +34,8 @@
 
 在代码的开头请包括对 Azure 核心存储类、Azure Blob 客户端类、Java IO 类和 **URISyntaxException** 类的导入：
 
-    import com.microsoft.windowsazure.services.core.storage.*;
-    import com.microsoft.windowsazure.services.blob.client.*;
+    import com.microsoft.azure.storage.*;
+    import com.microsoft.azure.storage.blob.*;
     import java.io.*;
     import java.net.URISyntaxException;
 
@@ -46,15 +46,15 @@
 在 StorageSample 类中，声明一个将包含**默认终结点协议、你的存储帐户名称和存储访问密钥**（在你的 Azure 存储帐户中指定）的字符串变量。将占位符值 **your_account_name** 和
 **your_account_key** 分别替换为你自己的帐户名称和帐户密钥。
 
-    public static final String storageConnectionString = 
-           "DefaultEndpointsProtocol=http;" + 
-               "AccountName=your_account_name;" + 
+    public static final String storageConnectionString =
+           "DefaultEndpointsProtocol=http;" +
+               "AccountName=your_account_name;" +
                "AccountKey=your_account_name;" +
-				"EndpointSuffix=core.Chinacloudapi.cn";
+	       "EndpointSuffix=core.chinacloudapi.cn";
 
 添加对 **main** 的声明，包括 **try** 块并包括必需的左大括号 **{**。
 
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
         try
         {
@@ -104,9 +104,9 @@ Azure 存储空间中的 Blob。
 
     blob = container.getBlockBlobReference("image1.jpg");
 
-使用 File 构造函数获取对你将上载的在本地创建的文件的引用。（确保在运行代码之前已创建此文件。）
+使用 **File** 构造函数获取对你将上载的在本地创建的文件的引用。确保在运行代码之前已创建此文件。
 
-    File fileReference = new File ("c:&#92;myimages&#92;image1.jpg");
+    File fileReference = new File ("c:\\myimages\\image1.jpg");
 
 通过调用 CloudBlockBlob.upload 方法上载该本地文件。**CloudBlockBlob.upload** 方法的第一个参数为
 **FileInputStream**对象，它表示将上载到 Azure 存储空间的本地文件。第二个参数是此文件的大小（以字节为单位）。
@@ -130,7 +130,7 @@ Azure 存储空间中的 Blob。
 -   **FileNotFoundException**：可由 **FileInputStream**
     或 **FileOutputStream** 构造函数引发。
 -   **StorageException**：可由 Azure 客户端存储库引发。
--   **URISyntaxException**：可由 ListBlobItem.getUri 方法引发。
+-   **URISyntaxException**：可由 **ListBlobItem.getUri** 方法引发。
 -   **Exception**：一般异常处理。
 
 <!-- -->
@@ -172,8 +172,7 @@ Azure 存储空间中的 Blob。
     PrintStream stream;
     stream = new PrintStream(new FileOutputStream("index.html"));
 
-写入本地文件，加入 **&lt;html&gt;**、**&lt;header&gt;** 和
-**&lt;body&gt;** 元素。
+写入本地文件，添加 **&lt;html&gt;**、**&lt;header&gt;** 和 **&lt;body&gt;** 元素。
 
     stream.println("<html>");
     stream.println("<header/>");
@@ -206,21 +205,21 @@ Azure 存储空间中的 Blob。
 以下是此示例的完整代码。请记得修改占位符值 **your_account_name** 和
 **your_account_key**，这样才能分别使用你的帐户名和帐户密钥。
 
-    import com.microsoft.windowsazure.services.core.storage.*;
-    import com.microsoft.windowsazure.services.blob.client.*;
+    import com.microsoft.azure.storage.*;
+    import com.microsoft.azure.storage.blob.*;
     import java.io.*;
     import java.net.URISyntaxException;
 
     // Create an image, c:\myimages\image1.jpg, prior to running this sample.
-    // Alternatively, change the value used by the FileInputStream constructor 
+    // Alternatively, change the value used by the FileInputStream constructor
     // to use a different image path and file that you have already created.
     public class StorageSample {
 
-        public static final String storageConnectionString = 
-                "DefaultEndpointsProtocol=http;" + 
-                   "AccountName=your_account_name;" + 
-                   "AccountKey=your_account_name;" +
-					"EndpointSuffix=core.Chinacloudapi.cn"; 
+        public static final String storageConnectionString =
+                "DefaultEndpointsProtocol=http;" +
+                       "AccountName=your_account_name;" +
+                       "AccountKey=your_account_name;" +
+		       "EndpointSuffix=core.chinacloudapi.cn";
 
         public static void main(String[] args) 
         {
@@ -230,7 +229,7 @@ Azure 存储空间中的 Blob。
                 CloudBlobClient serviceClient;
                 CloudBlobContainer container;
                 CloudBlockBlob blob;
-                
+
                 account = CloudStorageAccount.parse(storageConnectionString);
                 serviceClient = account.createCloudBlobClient();
                 // Container name must be lower case.
@@ -245,7 +244,8 @@ Azure 存储空间中的 Blob。
 
                 // Upload an image file.
                 blob = container.getBlockBlobReference("image1.jpg");
-                File fileReference = new File ("c:&#92;myimages&#92;image1.jpg");
+
+                File fileReference = new File("c:\\myimages\\image1.jpg");
                 blob.upload(new FileInputStream(fileReference), fileReference.length());
 
                 // At this point the image is uploaded.
@@ -285,7 +285,7 @@ Azure 存储空间中的 Blob。
         // Create an HTML page that can be used to display the uploaded images.
         // This example assumes all of the blobs are for images.
         public static void MakeHTMLPage(CloudBlobContainer container) throws FileNotFoundException, URISyntaxException
-    {
+        {
             PrintStream stream;
             stream = new PrintStream(new FileOutputStream("index.html"));
 
@@ -329,26 +329,26 @@ Azure 存储空间中的 Blob。
 
     public class DeleteContainer {
 
-        public static final String storageConnectionString = 
-                "DefaultEndpointsProtocol=http;" + 
-                   "AccountName=your_account_name;" + 
+        public static final String storageConnectionString =
+                "DefaultEndpointsProtocol=http;" +
+                   "AccountName=your_account_name;" +
                    "AccountKey=your_account_key;" +
-					"EndpointSuffix=core.Chinacloudapi.cn"; 
+		   "EndpointSuffix=core.chinacloudapi.cn";
 
-        public static void main(String[] args) 
+        public static void main(String[] args)
         {
             try
             {
                 CloudStorageAccount account;
                 CloudBlobClient serviceClient;
                 CloudBlobContainer container;
-                
+
                 account = CloudStorageAccount.parse(storageConnectionString);
                 serviceClient = account.createCloudBlobClient();
                 // Container name must be lower case.
                 container = serviceClient.getContainerReference("gettingstarted");
                 container.delete();
-                
+
                 System.out.println("Container deleted.");
 
             }
@@ -373,10 +373,10 @@ Azure 存储空间中的 Blob。
 
 请访问下面的链接了解有关更复杂的存储任务的详细信息。
 
-- [Azure Storage SDK for Java]
-- [Azure 存储客户端 SDK 参考]
-- [Azure 存储 REST API]
-- [Azure 存储团队博客]
+- [Azure Storage SDK for Java][]
+- [Azure 存储客户端 SDK 参考][]
+- [Azure 存储 REST API][]
+- [Azure 存储团队博客][]
 
   [Download the Azure SDK for Java]: /develop/java/
   [如何创建存储帐户]: /documentation/articles/storage-create-storage-account#create-a-storage-account
@@ -385,7 +385,7 @@ documentation/articles/storage-create-storage-account#view-copy-and-regenerate-s
   [如何通过 Java 使用 Blob 存储服务]: /documentation/articles/storage-java-how-to-use-blob-storage
   [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
   [Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
-  [Azure 存储 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Azure 存储 REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_0118_2016-->
