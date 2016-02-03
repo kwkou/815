@@ -285,19 +285,18 @@ ADO.NET 4.5：
 
 
 在 Linux 上，以下实用程序可能很有用：
-- `netstat -nap`
-- `nmap -sS -O 127.0.0.1`
- - （将示例值更改为你的 IP 地址）。
+	netstat -nap
+	nmap -sS -O 127.0.0.1
+	将示例值更改为你的 IP 地址）。
 
 
 在 Windows 上，[PortQry.exe](http://www.microsoft.com/zh-cn/download/details.aspx?id=17148) 实用程序可能很有用。以下是在 Azure SQL 数据库服务器上查询端口情况，以及在便携式计算机上运行的的示例执行：
-
-
+ 
 	[C:\Users\johndoe]
 	>> portqry.exe -n johndoesvr9.database.chinacloudapi.cn -p tcp -e 1433
 	
 	Querying target system called:
- 	johndoesvr9.database.chinacloudapi.cn
+	 johndoesvr9.database.chinacloudapi.cn
 	
 	Attempting to resolve name to IP address...
 	Name resolved to 23.100.117.95
@@ -307,7 +306,6 @@ ADO.NET 4.5：
 	
 	[C:\Users\johndoe]
 	>>
-
 
 
 <a id="g-diagnostics-log-your-errors" name="g-diagnostics-log-your-errors"></a>
