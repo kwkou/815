@@ -59,7 +59,5 @@ Azure 平台正在转换。不论你是 Azure 新手还是经验丰富的老手�
 ## 后续步骤
 
 - 详细了解[资源管理器](/documentation/articles/resource-group-overview)。
-- 了解如何[设计模板](/documentation/articles/best-practices-resource-manager-design-templates)。
-- 使用[最佳实践](/documentation/articles/best-practices-resource-manager-examples)
 
 <!---HONumber=Mooncake_0118_2016-->

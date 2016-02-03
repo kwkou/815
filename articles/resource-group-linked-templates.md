@@ -100,7 +100,7 @@
 
 ## 将值传递回链接模板
 
-如果你需要将值从链接模板传递到主模板，则可以在链接模板的**输出**部分创建一个值。有关示例，请参阅[在 Azure 资源管理器模板中共享状态](/documentation/articles/best-practices-resource-manager-state)。
+如果你需要将值从链接模板传递到主模板，则可以在链接模板的**输出**部分创建一个值。
 
 ## 后续步骤
 - [创作模板](/documentation/articles/resource-group-authoring-templates)
