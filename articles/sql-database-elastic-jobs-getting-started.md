@@ -103,7 +103,7 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
         }
     }
     $ErrorActionPreference = "Continue"
-}
+	}
 	
 ## 创建 T-SQL 脚本用于跨数据库执行
 
