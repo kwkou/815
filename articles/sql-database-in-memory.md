@@ -10,45 +10,73 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="11/16/2015"
-	wacn.date="12/22/2015"/>
+	ms.date="12/11/2015"
+	wacn.date="01/29/2016"/>
 
 
 # SQL 数据库中的 In-Memory（预览版）入门
 
-普通的 SQL 表只会存储在硬盘驱动器上。通过使用 In-Memory 功能，你可以增强表，以便在服务器运行时，使该表能够驻留在活动的内存中。
+在适当的情况下，In-Memory 功能可以大幅提升事务和分析工作负荷的性能。
+
+本主题着重进行两个演示，一个适用于 In-Memory OLTP，另一个适用于 In-Memory Analytics。每个演示都有完整的步骤以及运行演示所需的代码。你可以：
+
+- 使用代码来测试变体，以查看性能结果差异；或者
+- 阅读代码来了解方案，以及了解如何创建和使用 In-Memory 对象。
+
+#### In-Memory OLTP
+
+In-Memory [OLTP](#install_oltp_manuallink)（联机事务处理）的功能如下：
+
+- 内存优化表。
+- 本机编译的存储过程。
 
 
-In-Memory 技术大幅提升了事务和分析工作负荷的性能：
+除了硬盘驱动器上的标准表示法以外，内存优化表本身在活动内存中有一种表示法。针对表的业务事务运行速度更快，因为这些事务只直接与活动内存中的表示法交互。
 
-- 通过 In-Memory OLTP（联机事务处理），根据工作负荷的具体情况，最高可以将事务吞吐量提高 30 倍。
- - 内存优化表。
- - 本机编译的存储过程。
-
-- 使用 In-Memory Analytics，最高可以将查询性能提高 100 倍。
- - 列存储索引。
+通过 In-Memory OLTP，根据工作负荷的具体情况，最高可以将事务吞吐量提高 30 倍。
 
 
-对于[实时分析](http://msdn.microsoft.com/zh-cn/library/dn817827.aspx)，可以结合这些技术来获得：
+如果本机编译的存储过程是作为传统解释的存储过程创建的，则在运行时，它们需要的计算机指令比原本需要的数量更少。我们已观察到，本机编译的持续时间是解释持续时间的 1/100。
+
+
+#### In-Memory Analytics 
+
+In-Memory [Analytics](#install_analytics_manuallink) 的功能如下：
+
+- 列存储索引
+
+
+列存储索引通过特殊的数据压缩来改善查询工作负荷性能。
+
+在其他服务中，列存储索引将必要地经过内存优化。但是，Azure SQL 数据库中的列存储索引可与编制索引的传统表一起存在于硬盘驱动器上。
+
+
+#### 实时分析
+
+对于[实时分析](http://msdn.microsoft.com/zh-cn/library/dn817827.aspx)，你可以结合 In-Memory OLTP 和 Analytics 来获取：
 
 - 基于操作数据的实时业务见解。
-- 飞快的 OLTP。
 
 
 #### 可用性
 
 
-- *GA：*In-Memory Analytics 已推出正式版 (GA)。
-- *预览版：*In-Memory OLTP 和 Real-Time Operational Analytics 都以预览版提供。
- - 这两个产品仅适用于[高级](/documentation/articles/sql-database-service-tiers) Azure SQL 数据库。
+GA（正式版）：
+
+- *磁盘上* 的[列存储索引](http://msdn.microsoft.com/zh-cn/library/dn817827.aspx)。
 
 
-#### OLTP 和 Analytics
+预览版：
 
-本主题中的两个主要部分为：
+- In-Memory OLTP
+- 具有内存优化列存储索引的 In-Memory Analytics
+- Real-Time Operational Analytics
 
-- A.In-Memory [OLTP](#install_oltp_manuallink)，涉及到读取和写入。
-- B.In-Memory [Analytics](#install_analytics_manuallink)，涉及到读取。
+
+[本主题稍后](#preview_considerations_for_in_memory)将介绍 In-Memory 功能在预览期的注意事项。
+
+
+> [AZURE.NOTE] 这些预览期功能仅适用于 [*高级版*](/documentation/articles/sql-database-service-tiers) Azure SQL 数据库，而不适用于标准或基本服务层上的数据库。
 
 
 
@@ -58,7 +86,7 @@ In-Memory 技术大幅提升了事务和分析工作负荷的性能：
 
 ## A.安装 In-Memory OLTP 示例
 
-在 [Azure 门户](https://manage.windowsazure.cn)中按几下鼠标，即可创建 AdventureWorksLT [V12] 示例数据库。本部分中的步骤说明如何使用以下项目扩充 AdventureWorksLT 数据库：
+在 [Azure 门户](http://manage.windowsazure.cn)中按几下鼠标，即可创建 AdventureWorksLT [V12] 示例数据库。本部分中的步骤说明如何使用以下项目扩充 AdventureWorksLT 数据库：
 
 - In-Memory 表。
 - 本机编译的存储过程。
@@ -66,7 +94,7 @@ In-Memory 技术大幅提升了事务和分析工作负荷的性能：
 
 #### 安装步骤
 
-1. 在 [Azure 门户](https://manage.windowsazure.cn)中，于 V12 服务器上创建一个高级数据库。将“源”设置为 AdventureWorksLT [V12] 示例数据库。
+1. 在 [Azure 门户](http://manage.windowsazure.cn)中，于 V12 服务器上创建一个高级数据库。将“源”设置为 AdventureWorksLT [V12] 示例数据库。
  - 有关详细指示，请参阅[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)。
 
 2. 使用 SQL Server Management Studio [(SSMS.exe)](http://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 连接到该数据库。
@@ -97,7 +125,10 @@ SELECT DatabasePropertyEx(DB_Name(), 'IsXTPSupported');
 ```
 
 
-结果为 **0** 表示不支持 In-Memory，而 1 表示支持。
+结果为 **0** 表示不支持 In-Memory，而 1 表示支持。诊断问题：
+
+- 确保数据库是在 In-Memory OLTP 功能可用于预览版之后创建的。
+- 确保数据库位于高级服务层。
 
 
 #### 关于创建的内存优化项
@@ -140,7 +171,7 @@ SELECT uses_native_compilation, OBJECT_NAME(object_id), definition
 
 ## 运行示例 OLTP 工作负荷
 
-以下两个*存储过程*的唯一差别在于，第一个过程使用内存优化表版本，而第二个过程使用普通磁盘表：
+以下两个 *存储过程* 的唯一差别在于，第一个过程使用内存优化表版本，而第二个过程使用普通磁盘表：
 
 - SalesLT**.**usp\_InsertSalesOrder**\_inmem**
 - SalesLT**.**usp\_InsertSalesOrder**\_ondisk**
@@ -185,8 +216,11 @@ INSERT INTO @od
 	FROM Demo.DemoSalesOrderDetailSeed
 	WHERE OrderID= cast((rand()*60) as int);
 	
-EXECUTE SalesLT.usp_InsertSalesOrder_inmem @SalesOrderID OUTPUT,
-	@DueDate, @CustomerID, @BillToAddressID, @ShipToAddressID, @od;
+WHILE (@i < 20)
+begin;
+	EXECUTE SalesLT.usp_InsertSalesOrder_inmem @SalesOrderID OUTPUT,
+		@DueDate, @CustomerID, @BillToAddressID, @ShipToAddressID, @od;
+end
 ```
 
 
@@ -196,19 +230,25 @@ EXECUTE SalesLT.usp_InsertSalesOrder_inmem @SalesOrderID OUTPUT,
 ### 安装 RML 实用程序和 ostress
 
 
-最好规划在 Azure VM 上运行 ostress.exe。在 AdventureWorksLT 数据库所在的同一 Azure 地理区域中创建 [Azure 虚拟机](/documentation/services/virtual-machines/)。但你可以改为在便携式计算机上运行 ostress.exe。
+最好规划在 Azure VM 上运行 ostress.exe。在 AdventureWorksLT 数据库所在的同一 Azure 地理区域中创建 [Azure 虚拟机](/documentation/services/virtual-machines)。但你可以改为在便携式计算机上运行 ostress.exe。
 
 
 在 VM 或任何选择的主机上，安装包含 ostress.exe 的重放标记语言 (RML) 实用程序。
 
-- 请参阅[用于演示 In-Memory OLTP 的 AdventureWorks 扩展](http://msdn.microsoft.com/zh-cn/library/dn511655&#x28;v=sql.120&#x29;.aspx)中的 ostress.exe 介绍。
+- 请参阅 [In-Memory OLTP 的示例数据库](http://msdn.microsoft.com/zh-cn/library/mt465764.aspx)中的 ostress.exe 介绍。
  - 或参阅 [In-Memory OLTP 的示例数据库](http://msdn.microsoft.com/zh-cn/library/mt465764.aspx)。
  - 或参阅[有关安装 ostress.exe 的博客](http://blogs.msdn.com/b/psssql/archive/2013/10/29/cumulative-update-2-to-the-rml-utilities-for-microsoft-sql-server-released.aspx)
 
 
 
 <!--
-dn511655.aspx is for SQL 2014, whereas mt465764.aspx is for SQL 2016.
+dn511655.aspx is for SQL 2014,
+[Extensions to AdventureWorks to Demonstrate In-Memory OLTP]
+(http://msdn.microsoft.com/zh-cn/library/dn511655&#x28;v=sql.120&#x29;.aspx)
+
+whereas for SQL 2016+
+[Sample Database for In-Memory OLTP]
+(http://msdn.microsoft.com/zh-cn/library/mt465764.aspx)
 -->
 
 
@@ -216,43 +256,30 @@ dn511655.aspx is for SQL 2014, whereas mt465764.aspx is for SQL 2016.
 ### 首先运行 \_inmem 压力工作负荷
 
 
-可以使用 *RML 命令提示符*窗口来运行 ostress.exe 命令行。
+可以使用 *RML 命令提示符*窗口来运行 ostress.exe 命令行。命令行参数将指示 ostress：
 
-从 RML 命令提示符运行时，以下 ostress.exe 命令将会：
-
-- 在内存优化表中插入 100 万个销售订单，每个订单包含 5 个细目。
-- 使用 100 个并发连接 (-n100)。
+- 同时运行 100 个连接 (-n100)。
+- 每个连接运行 T-SQL 脚本 50 次 (-r50)。
 
 
 ```
-ostress.exe -n100 -r500 -S<servername>.database.chinacloudapi.cn
-	 -U<login> -P<password> -d<database>
-	 -q -Q"DECLARE @i int = 0, @od SalesLT.SalesOrderDetailType_inmem,
-	 @SalesOrderID int, @DueDate datetime2 = sysdatetime(), @CustomerID int = rand() *
-	 8000, @BillToAddressID int = rand() * 10000, @ShipToAddressID int = rand()*
-	 10000;
-	 INSERT INTO @od SELECT OrderQty, ProductID FROM
-	 Demo.DemoSalesOrderDetailSeed WHERE OrderID= cast((rand()*60) as int);
-	 WHILE (@i < 20) begin;
-	 EXECUTE SalesLT.usp_InsertSalesOrder_inmem
-	 @SalesOrderID OUTPUT, @DueDate, @CustomerID, @BillToAddressID,
-	 @ShipToAddressID, @od; set @i += 1; end"
+ostress.exe -n100 -r50 -S<servername>.database.chinacloudapi.cn -U<login> -P<password> -d<database> -q -Q"DECLARE @i int = 0, @od SalesLT.SalesOrderDetailType_inmem, @SalesOrderID int, @DueDate datetime2 = sysdatetime(), @CustomerID int = rand() * 8000, @BillToAddressID int = rand() * 10000, @ShipToAddressID int = rand()* 10000; INSERT INTO @od SELECT OrderQty, ProductID FROM Demo.DemoSalesOrderDetailSeed WHERE OrderID= cast((rand()*60) as int); WHILE (@i < 20) begin; EXECUTE SalesLT.usp_InsertSalesOrder_inmem @SalesOrderID OUTPUT, @DueDate, @CustomerID, @BillToAddressID, @ShipToAddressID, @od; set @i += 1; end"
 ```
 
 
 若要运行上述 ostress.exe 命令行：
 
 
-1. 在 SSMS 中运行以下命令重置数据库，以删除前面运行的命令所插入的所有数据：
+1. 在 SSMS 中运行以下命令重置数据库数据内容，以删除前面运行的命令所插入的所有数据：
 ```
 EXECUTE Demo.usp_DemoReset;
 ```
 
-2. 将文本复制到剪贴板。
+2. 将上述 ostress.exe 命令行的文本复制到剪贴板。
 
-3. 所有行尾字符 (\\r\\n) 和所有制表符 (\\t) 替换为空格。
+3. 将参数 -S -U -P -d 的 <placeholders> 替换为正确的实数值。
 
-4. 将参数 -S -U -P -d 的 <placeholders> 替换为正确的实数值。
+4. 在 RML Cmd 窗口中运行编辑后的命令行。
 
 
 #### 结果是一个持续时间
@@ -276,15 +303,15 @@ EXECUTE Demo.usp_DemoReset;
 
 2. 编辑 ostress.exe 命令行，将所有的 *\_inmem* 替换为 *\_ondisk*。
 
-3. 重新运行 ostress.exe，并捕获持续时间结果。
+3. 再次重新运行 ostress.exe，并捕获持续时间结果。
 
-4. 再次重置数据库，以确保清理数据。
- - 插入 100 万个销售订单的单次测试运行将在表中生成 500 MB 或更多的数据。
+4. 再次重置数据库，以便可靠地删除大量测试数据。
 
 
 #### 预期比较结果
 
 在与数据库相同的 Azure 区域的 Azure VM 上运行 ostress，In-Memory 测试已显示此简化工作负荷大约有 **9 倍**的性能改善。
+
 
 添加转换成本机编译的存储过程时，性能可以获得更大改善。
 
@@ -318,6 +345,7 @@ EXECUTE Demo.usp_DemoReset;
  - 重要的是 **CREATE INDEX** 语句中的 **COLUMNSTORE** 关键词，如下所示：<br/>`CREATE NONCLUSTERED COLUMNSTORE INDEX ...;`
 
 4. 将 AdventureWorksLT 设置为兼容级别 130：<br/>`ALTER DATABASE AdventureworksLT SET compatibility_level = 130;`
+ - 级别 130 并不与 In-Memory 功能直接相关。但级别 130 通常提供比级别 120 更快的查询性能。
 
 
 #### 关键表和列存储索引
@@ -410,22 +438,25 @@ GO
 ```
 
 
-## In-Memory 预览版注意事项
+
+<a id="preview_considerations_for_in_memory" name="preview_considerations_for_in_memory"></a>
 
 
-Azure SQL 数据库中的 In-Memory 功能将在 [2015 年 10 月 28 日推出预览版](http://azure.microsoft.com/updates/public-preview-in-memory-oltp-and-real-time-operational-analytics-for-azure-sql-database/)。
+## In-Memory OLTP 预览版注意事项
+
+
+Azure SQL 数据库中的 In-Memory OLTP 功能将在 [2015 年 10 月 28 日推出预览版](http://azure.microsoft.com/updates/public-preview-in-memory-oltp-and-real-time-operational-analytics-for-azure-sql-database)。
 
 
 在正式版 (GA) 发布前的预览期间，只有下述数据库支持 In-Memory OLTP：
 
 - 使用*高级*服务层的数据库。
 
-- 在 In-Memory 功能生效后创建的数据库。
- - 从 In-Memory 激活日期前创建的备份还原的新数据库无法支持 In-memory。
- - 假如你备份了支持 In-Memory 的数据库，然后在旧的高级数据库中还原该备份。那么，该旧数据库现在将支持 In-Memory。
+- 在 In-Memory OLTP 功能生效后创建的数据库。
+ - 如果从 In-Memory OLTP 功能生效前创建的数据库还原，则新的数据库无法支持 In-memory OLTP。
 
 
-如有疑问，始终可以通过运行以下 T-SQL SELECT 来确定数据库是否支持 In-memory OLTP。结果为 **1** 表示数据库确实支持 In-Memory：
+如有疑问，始终可以通过运行以下 T-SQL SELECT 来确定数据库是否支持 In-memory OLTP。结果为 **1** 表示数据库确实支持 In-Memory OLTP：
 
 ```
 SELECT DatabasePropertyEx(DB_NAME(), 'IsXTPSupported');
@@ -490,4 +521,4 @@ SELECT DatabasePropertyEx(DB_NAME(), 'IsXTPSupported');
 
 - [监视内存中存储](/documentation/articles/sql-database-in-memory-oltp-monitoring)（适用于 In-Memory OLTP）。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

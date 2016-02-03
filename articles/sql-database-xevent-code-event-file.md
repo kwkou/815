@@ -11,8 +11,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="09/30/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="12/09/2015" 
+	wacn.date="01/29/2016"/>
 
 
 # SQL 数据库中扩展事件的事件文件目标代码
@@ -27,7 +27,7 @@
 本主题演示了一个两阶段代码示例：
 
 
-- PowerShell：用于在云中创建 Azure 存储空间容器
+- PowerShell：用于在云中创建 Azure 存储空间容器。
 
 - Transact-SQL：
  - 将 Azure 存储空间容器分配到事件文件目标。
@@ -37,7 +37,7 @@
 ## 先决条件
 
 
-- Azure 帐户和订阅。你可以注册[免费试用版](/pricing/free-trial/)。
+- Azure 帐户和订阅。你可以注册[试用版](/pricing/1rmb-trial)。
 
 
 - 可以在其中创建表的任何数据库。
@@ -81,7 +81,7 @@
 &nbsp;
 
 
-```
+
 	## TODO: Before running, find all 'TODO' and make each edit!
 	
 	#--------------- 1 -----------------------
@@ -93,7 +93,7 @@
 	'Expect a pop-up window in which you log in to Azure.'
 	
 	
-	Add-AzureAccount
+	Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 	
 	#-------------- 2 ------------------------
 	
@@ -108,7 +108,7 @@
 	
 	
 	$storageAccountName     = 'gmstorageaccountxevent'
-	$storageAccountLocation = 'West US'
+	$storageAccountLocation = 'China North'
 	$contextName            = 'gmcontext'
 	$containerName          = 'gmcontainerxevent'
 	$policySasToken      = 'gmpolicysastoken'
@@ -245,7 +245,7 @@
 	Now shift to the Transact-SQL portion of the two-part code sample!'
 	
 	# EOFile
-```
+
 
 
 &nbsp;
@@ -280,202 +280,198 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 6. 保存然后运行该脚本。
 
 
-&nbsp;
-
-
-```
-	---- TODO: First, run the PowerShell portion of this two-part code sample.
-	---- TODO: Second, find every 'TODO' in this Transact-SQL file, and edit each.
-	
-	---- Transact-SQL code for Event File target on Azure SQL Database.
-	
-	
-	SET NOCOUNT ON;
-	
-	GO
-	
-	
-	----  Step 1.  Establish one little table, and  ---------
-	----  insert one row of data.
-	
-	
-	IF EXISTS
-		(SELECT * FROM sys.objects
-			WHERE type = 'U' and name = 'gmTabEmployee')
-	BEGIN
-		DROP TABLE gmTabEmployee;
-	END
-	GO
-	
-	
-	CREATE TABLE gmTabEmployee
-	(
-		EmployeeGuid         uniqueIdentifier   not null  default newid()  primary key,
-		EmployeeId           int                not null  identity(1,1),
-		EmployeeKudosCount   int                not null  default 0,
-		EmployeeDescr        nvarchar(256)          null
-	);
-	GO
-	
-	
-	INSERT INTO gmTabEmployee ( EmployeeDescr )
-		VALUES ( 'Jane Doe' );
-	GO
-	
-	
-	------  Step 2.  Create key, and  ------------
-	------  Create credential (your Azure Storage container must already exist).
-	
-	
-	IF EXISTS
-		(SELECT * FROM sys.symmetric_keys
-			WHERE symmetric_key_id = 101)
-	BEGIN
-		CREATE MASTER KEY ENCRYPTION BY PASSWORD = '0C34C960-6621-4682-A123-C7EA08E3FC46' -- Or any newid().
-	END
-	GO
-	
-	
-	IF EXISTS
-		(SELECT * FROM sys.database_scoped_credentials
-			-- TODO: Assign AzureStorageAccount name, and the associated Container name.
-			WHERE name = 'https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent')
-	BEGIN
-		DROP DATABASE SCOPED CREDENTIAL
-			-- TODO: Assign AzureStorageAccount name, and the associated Container name.
-			[https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent] ;
-	END
-	GO
-	
-	
-	CREATE
-		DATABASE SCOPED
-		CREDENTIAL
-			-- use '.blob.',   and not '.queue.' or '.table.' etc.
-			-- TODO: Assign AzureStorageAccount name, and the associated Container name.
-			[https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent]
-		WITH
-			IDENTITY = 'SHARED ACCESS SIGNATURE',  -- "SAS" token.
-			-- TODO: Paste in the long SasToken string here for Secret, but exclude any leading '?'.
-			SECRET = 'sv=2014-02-14&sr=c&si=gmpolicysastoken&sig=EjAqjo6Nu5xMLEZEkMkLbeF7TD9v1J8DNB2t8gOKTts%3D'
-		;
-	GO
-	
-	
-	------  Step 3.  Create (define) an event session.  --------
-	------  The event session has an event with an action,
-	------  and a has a target.
-	
-	IF EXISTS
-		(SELECT * from sys.database_event_sessions
-			WHERE name = 'gmeventsessionname240b')
-	BEGIN
+		---- TODO: First, run the PowerShell portion of this two-part code sample.
+		---- TODO: Second, find every 'TODO' in this Transact-SQL file, and edit each.
+		
+		---- Transact-SQL code for Event File target on Azure SQL Database.
+		
+		
+		SET NOCOUNT ON;
+		
+		GO
+		
+		
+		----  Step 1.  Establish one little table, and  ---------
+		----  insert one row of data.
+		
+		
+		IF EXISTS
+			(SELECT * FROM sys.objects
+				WHERE type = 'U' and name = 'gmTabEmployee')
+		BEGIN
+			DROP TABLE gmTabEmployee;
+		END
+		GO
+		
+		
+		CREATE TABLE gmTabEmployee
+		(
+			EmployeeGuid         uniqueIdentifier   not null  default newid()  primary key,
+			EmployeeId           int                not null  identity(1,1),
+			EmployeeKudosCount   int                not null  default 0,
+			EmployeeDescr        nvarchar(256)          null
+		);
+		GO
+		
+		
+		INSERT INTO gmTabEmployee ( EmployeeDescr )
+			VALUES ( 'Jane Doe' );
+		GO
+		
+		
+		------  Step 2.  Create key, and  ------------
+		------  Create credential (your Azure Storage container must already exist).
+		
+		
+		IF NOT EXISTS
+			(SELECT * FROM sys.symmetric_keys
+				WHERE symmetric_key_id = 101)
+		BEGIN
+			CREATE MASTER KEY ENCRYPTION BY PASSWORD = '0C34C960-6621-4682-A123-C7EA08E3FC46' -- Or any newid().
+		END
+		GO
+		
+		
+		IF EXISTS
+			(SELECT * FROM sys.database_scoped_credentials
+				-- TODO: Assign AzureStorageAccount name, and the associated Container name.
+				WHERE name = 'https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent')
+		BEGIN
+			DROP DATABASE SCOPED CREDENTIAL
+				-- TODO: Assign AzureStorageAccount name, and the associated Container name.
+				[https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent] ;
+		END
+		GO
+		
+		
+		CREATE
+			DATABASE SCOPED
+			CREDENTIAL
+				-- use '.blob.',   and not '.queue.' or '.table.' etc.
+				-- TODO: Assign AzureStorageAccount name, and the associated Container name.
+				[https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent]
+			WITH
+				IDENTITY = 'SHARED ACCESS SIGNATURE',  -- "SAS" token.
+				-- TODO: Paste in the long SasToken string here for Secret, but exclude any leading '?'.
+				SECRET = 'sv=2014-02-14&sr=c&si=gmpolicysastoken&sig=EjAqjo6Nu5xMLEZEkMkLbeF7TD9v1J8DNB2t8gOKTts%3D'
+			;
+		GO
+		
+		
+		------  Step 3.  Create (define) an event session.  --------
+		------  The event session has an event with an action,
+		------  and a has a target.
+		
+		IF EXISTS
+			(SELECT * from sys.database_event_sessions
+				WHERE name = 'gmeventsessionname240b')
+		BEGIN
+			DROP
+				EVENT SESSION
+					gmeventsessionname240b
+			    ON DATABASE;
+		END
+		GO
+		
+		
+		CREATE
+			EVENT SESSION
+				gmeventsessionname240b
+			ON DATABASE
+		
+			ADD EVENT
+				sqlserver.sql_statement_starting
+					(
+					ACTION (sqlserver.sql_text)
+					WHERE statement LIKE 'UPDATE gmTabEmployee%'
+					)
+			ADD TARGET
+				package0.event_file
+					(
+					-- TODO: Assign AzureStorageAccount name, and the associated Container name.
+					-- Also, tweak the .xel file name at end, if you like.
+					SET filename =
+						'https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent/anyfilenamexel242b.xel'
+					)
+			WITH
+				(MAX_MEMORY = 10 MB,
+				MAX_DISPATCH_LATENCY = 3 SECONDS)
+			;
+		GO
+		
+		
+		------  Step 4.  Start the event session.  ----------------
+		------  Issue the SQL Update statements that will be traced.
+		------  Then stop the session.
+		
+		------  Note: If the target fails to attach,
+		------  the session must be stopped and restarted.
+		
+		ALTER
+			EVENT SESSION
+				gmeventsessionname240b
+			ON DATABASE
+			STATE = START;
+		GO
+		
+		
+		SELECT 'BEFORE_Updates', EmployeeKudosCount, * FROM gmTabEmployee;
+		
+		UPDATE gmTabEmployee
+			SET EmployeeKudosCount = EmployeeKudosCount + 2
+			WHERE EmployeeDescr = 'Jane Doe';
+		
+		UPDATE gmTabEmployee
+			SET EmployeeKudosCount = EmployeeKudosCount + 13
+			WHERE EmployeeDescr = 'Jane Doe';
+		
+		SELECT 'AFTER__Updates', EmployeeKudosCount, * FROM gmTabEmployee;
+		GO
+		
+		
+		ALTER
+			EVENT SESSION
+				gmeventsessionname240b
+			ON DATABASE
+			STATE = STOP;
+		GO
+		
+		
+		-------------- Step 5.  Select the results. ----------
+		
+		SELECT
+				*, 'CLICK_NEXT_CELL_TO_BROWSE_ITS_RESULTS!' as [CLICK_NEXT_CELL_TO_BROWSE_ITS_RESULTS],
+				CAST(event_data AS XML) AS [event_data_XML]  -- TODO: In ssms.exe results grid, double-click this cell!
+			FROM
+				sys.fn_xe_file_target_read_file
+					(
+						-- TODO: Fill in Storage Account name, and the associated Container name.
+						'https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent/anyfilenamexel242b',
+						null, null, null
+					);
+		GO
+		
+		
+		-------------- Step 6.  Clean up. ----------
+		
 		DROP
 			EVENT SESSION
 				gmeventsessionname240b
-		    ON DATABASE;
-	END
-	GO
-	
-	
-	CREATE
-		EVENT SESSION
-			gmeventsessionname240b
-		ON DATABASE
-	
-		ADD EVENT
-			sqlserver.sql_statement_starting
-				(
-				ACTION (sqlserver.sql_text)
-				WHERE statement LIKE 'UPDATE gmTabEmployee%'
-				)
-		ADD TARGET
-			package0.event_file
-				(
-				-- TODO: Assign AzureStorageAccount name, and the associated Container name.
-				-- Also, tweak the .xel file name at end, if you like.
-				SET filename =
-					'https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent/anyfilenamexel242b.xel'
-				)
-		WITH
-			(MAX_MEMORY = 10 MB,
-			MAX_DISPATCH_LATENCY = 3 SECONDS)
-		;
-	GO
-	
-	
-	------  Step 4.  Start the event session.  ----------------
-	------  Issue the SQL Update statements that will be traced.
-	------  Then stop the session.
-	
-	------  Note: If the target fails to attach,
-	------  the session must be stopped and restarted.
-	
-	ALTER
-		EVENT SESSION
-			gmeventsessionname240b
-		ON DATABASE
-		STATE = START;
-	GO
-	
-	
-	SELECT 'BEFORE_Updates', EmployeeKudosCount, * FROM gmTabEmployee;
-	
-	UPDATE gmTabEmployee
-		SET EmployeeKudosCount = EmployeeKudosCount + 2
-		WHERE EmployeeDescr = 'Jane Doe';
-	
-	UPDATE gmTabEmployee
-		SET EmployeeKudosCount = EmployeeKudosCount + 13
-		WHERE EmployeeDescr = 'Jane Doe';
-	
-	SELECT 'AFTER__Updates', EmployeeKudosCount, * FROM gmTabEmployee;
-	GO
-	
-	
-	ALTER
-		EVENT SESSION
-			gmeventsessionname240b
-		ON DATABASE
-		STATE = STOP;
-	GO
-	
-	
-	-------------- Step 5.  Select the results. ----------
-	
-	SELECT
-			*, 'CLICK_NEXT_CELL_TO_BROWSE_ITS_RESULTS!' as [CLICK_NEXT_CELL_TO_BROWSE_ITS_RESULTS],
-			CAST(event_data AS XML) AS [event_data_XML]  -- TODO: In ssms.exe results grid, double-click this cell!
-		FROM
-			sys.fn_xe_file_target_read_file
-				(
-					-- TODO: Fill in Storage Account name, and the associated Container name.
-					'https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent/anyfilenamexel242b',
-					null, null, null
-				);
-	GO
-	
-	
-	-------------- Step 6.  Clean up. ----------
-	
-	DROP
-		EVENT SESSION
-			gmeventsessionname240b
-		ON DATABASE;
-	GO
-	
-	DROP DATABASE SCOPED CREDENTIAL
-		-- TODO: Assign AzureStorageAccount name, and the associated Container name.
-		[https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent]
-		;
-	GO
-	
-	DROP TABLE gmTabEmployee;
-	GO
-	
-	PRINT 'Use PowerShell Remove-AzureStorageAccount to delete your Azure Storage account!';
-	GO
-```
+			ON DATABASE;
+		GO
+		
+		DROP DATABASE SCOPED CREDENTIAL
+			-- TODO: Assign AzureStorageAccount name, and the associated Container name.
+			[https://gmstorageaccountxevent.blob.core.chinacloudapi.cn/gmcontainerxevent]
+			;
+		GO
+		
+		DROP TABLE gmTabEmployee;
+		GO
+		
+		PRINT 'Use PowerShell Remove-AzureStorageAccount to delete your Azure Storage account!';
+		GO
+
 
 
 &nbsp;
@@ -484,15 +480,12 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 如果当你运行脚本时无法附加目标，则你必须停止再重新启动事件会话：
 
 
-```
+	 
 	ALTER EVENT SESSION ... STATE = STOP;
 	GO
 	ALTER EVENT SESSION ... STATE = START;
 	GO
-```
-
-
-&nbsp;
+ 
 
 
 ## 输出
@@ -502,11 +495,7 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 
 下面是测试期间生成的一个 **<event>** 元素：
 
-
-&nbsp;
-
-
-```
+ 
 	<event name="sql_statement_starting" package="sqlserver" timestamp="2015-09-22T19:18:45.420Z">
 	  <data name="state">
 	    <value>0</value>
@@ -543,14 +532,9 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 	</value>
 	  </action>
 	</event>
-```
 
 
-
-
-
-&nbsp;
-
+ 
 
 ## 转换代码示例以在 SQL Server 上运行
 
@@ -593,4 +577,4 @@ Image references.
 
 [30_powershell_ise]: ./media/sql-database-xevent-code-event-file/event-file-powershell-ise-b30.png
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

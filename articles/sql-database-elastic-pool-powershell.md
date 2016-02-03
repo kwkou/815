@@ -1,41 +1,40 @@
 <properties 
-    pageTitle="使用 PowerShell 创建 Azure SQL 数据库弹性数据库池 | Windows Azure" 
-    description="创建一个弹性数据库池，以跨多个 Azure SQL 数据库共享资源。" 
-    services="sql-database" 
+    pageTitle="使用弹性数据库池向外缩放资源 | Windows Azure" 
+    description="了解如何通过创建弹性数据库池，使用 PowerShell 向外缩放 Azure SQL 数据库资源以管理多个数据库。" 
+	keywords="多个数据库,向外缩放"    
+	services="sql-database" 
     documentationCenter="" 
     authors="stevestein" 
     manager="jeffreyg" 
     editor=""/>
 
 <tags
-   ms.service="sql-database"
-   ms.date="10/08/2015"
-   wacn.date="12/22/2015"/>
+    ms.service="sql-database"
+    ms.date="12/01/2015"
+    wacn.date="01/29/2016"/>
 
-
-# 使用 PowerShell 创建弹性数据库池
+# 使用 PowerShell 创建弹性数据库池以便向外缩放多个 SQL 数据库的资源 
 
 > [AZURE.SELECTOR]
-- [Azure Management Portal](/documentation/articles/sql-database-elastic-pool-portal)
+- [Azure 门户](/documentation/articles/sql-database-elastic-pool-portal)
 - [C#](/documentation/articles/sql-database-elastic-pool-csharp)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell)
 
+了解如何使用 PowerShell cmdlet 通过[创建弹性数据库池](/documentation/articles/sql-database-elastic-pool)来管理多个数据库。
 
-本文说明如何使用 PowerShell cmdlet 创建[弹性数据库池](/documentation/articles/sql-database-elastic-pool)。
+> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server)。
 
-> [AZURE.NOTE]弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server)。
+弹性数据库池允许你向外缩放数据库资源和跨多个 SQL 数据库进行管理。
 
-本文说明如何创建所有必要项目（包括 V12 服务器，Azure 订阅除外）来创建和配置弹性数据库池。如果你需要 Azure 订阅，只需单击本页顶部的“免费试用”，然后再回来完成本文的相关操作即可。
+本文说明如何创建所有必要项目（包括 V12 服务器，Azure 订阅除外）来创建和配置弹性数据库池。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
 
 
 
 
 我们对使用 Azure PowerShell 创建弹性数据库池的各个步骤进行了剖析。如果你只需命令的简明列表，请参阅本文底部的“汇总”部分。
 
-> [AZURE.IMPORTANT]从 Azure PowerShell 1.0 预览版开始，Switch-AzureMode cmdlet 不再可用，并且 Azure ResourceManger 模块中的 cmdlet 已重命名。本文中的示例使用新的 PowerShell 1.0 预览版命名约定。有关详细信息，请参阅[弃用 Azure PowerShell 中的 Switch-AzureMode](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell)。
 
-若要运行 PowerShell cmdlet，需要安装并运行 Azure PowerShell，而且由于 Switch-AzureMode 已删除，你应该通过运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)来下载并安装最新的 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
-
+若要运行 PowerShell cmdlet，需要已安装并运行 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 
 
@@ -44,7 +43,7 @@
 
 现在，你已经运行 Azure 资源管理器模块，因此可以访问创建和配置弹性数据库池所需的所有 cmdlet。首先，你必须能够访问 Azure 帐户。运行以下项目，然后就会出现一个要求你输入凭据的登录屏幕。使用登录 Azure 门户时所用的相同电子邮件和密码。
 
-	Add-AzureRmAccount
+	Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
 
@@ -58,17 +57,17 @@
 
 ## 创建资源组、服务器和防火墙规则
 
-现在，你已经有了针对 Azure 订阅运行 cmdlet 所需的访问权限，因此下一步是建立一个资源组，使其中包含创建弹性数据库池所需的服务器。你可以编辑下一个命令，以便使用所选择的有效位置。运行 **(Get-AzureRMLocation | where-object {$\_.Name -eq "Microsoft.Sql/servers" }).Locations**，以便获取有效位置的列表。
+现在，你已经有了针对 Azure 订阅运行 cmdlet 所需的访问权限，因此下一步是建立一个资源组，其中包含创建弹性数据库池（包含多个数据库）所需的服务器。你可以编辑下一个命令，以便使用所选择的有效位置。运行 **(Get-AzureRmLocation | where-object {$\_.Name -eq "Microsoft.Sql/servers" }).Locations**，以便获取有效位置的列表。
 
 如果你已经有了一个资源组，则可转到下一步，也可运行以下命令来创建新的资源组：
 
-	New-AzureRmResourceGroup -Name "resourcegroup1" -Location "West US"
+	New-AzureRmResourceGroup -Name "resourcegroup1" -Location "China North"
 
 ### 创建服务器 
 
 弹性数据库池在 Azure SQL 数据库服务器中创建。如果你已经有了一个服务器，则可转到下一步，也可运行 [New-AzureRmSqlServer](https://msdn.microsoft.com/zh-cn/library/azure/mt603715.aspx) cmdlet 来创建新的 V12 服务器。将 ServerName 替换为你的服务器的名称。该服务器名称对于 Azure SQL Server 必须是唯一的，因此如果该服务器名称已被使用，你会在此处收到一个错误。还必须指出的是，该命令可能需要数分钟才能运行完毕。成功创建服务器后，会显示服务器详细信息和 PowerShell 提示。你可以编辑该命令，以便使用所选的任何有效位置。
 
-	New-AzureRmSqlServer -ResourceGroupName "resourcegroup1" -ServerName "server1" -Location "West US" -ServerVersion "12.0"
+	New-AzureRmSqlServer -ResourceGroupName "resourcegroup1" -ServerName "server1" -Location "China North" -ServerVersion "12.0"
 
 当你运行此命令时，会打开一个窗口，要求你提供**用户名**和**密码**。这不是你的 Azure 凭据，请输入用户名和密码，将其作为你要为新服务器创建的管理员凭据。
 
@@ -81,7 +80,7 @@
 
 	New-AzureRmSqlServerFirewallRule -ResourceGroupName "resourcegroup1" -ServerName "server1" -FirewallRuleName "rule1" -StartIpAddress "192.168.0.198" -EndIpAddress "192.168.0.199"
 
-有关详细信息，请参阅 [Azure SQL 数据库防火墙](https://msdn.microsoft.com/zh-cn/library/azure/ee621782.aspx)。
+有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)。
 
 
 ## 创建弹性数据库池和弹性数据库
@@ -96,7 +95,7 @@
 
 在上一步创建的池是空的，里面没有弹性数据库。以下部分说明如何在池中创建新的弹性数据库，以及如何将现有数据库添加到池中。
 
-*创建池后，你还可以使用 Transact-SQL 在该池中创建新的弹性数据库，以及将现有数据库移入和移出池。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL)。*
+*创建池后，你还可以使用 Transact-SQL 在该池中创建新的弹性数据库，以及将现有数据库移入和移出池。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL)。*
 
 ### 在弹性数据库池中创建新的弹性数据库
 
@@ -127,6 +126,8 @@
 
 
 ## 监视弹性数据库和弹性数据库池
+弹性数据库池提供度量值报告以帮助你向外缩放资源来管理多个数据库。
+
 
 ### 获取弹性数据库池的操作状态
 
@@ -184,7 +185,9 @@
 
 * 就此 API 来说，检索的度量值将表示为为该弹性数据库池设置的单个 databaseDtuMax（或者 CPU、IO 等基础度量值的等效最大值）的百分比。例如，对于任何此类度量值来说，50% 的使用率表示特定资源消耗为父弹性数据库池中该资源的相应 DB 上限的 50%。 
 
-获取度量值：$metrics = (Get-Metrics -ResourceId /subscriptions/d7c1d29a-ad13-4033-877e-8cc11d27ebfd/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/databases/myDB -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015")
+获取指标：
+
+    $metrics = (Get-Metrics -ResourceId /subscriptions/d7c1d29a-ad13-4033-877e-8cc11d27ebfd/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/databases/myDB -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015") 
 
 重复进行调用并追加数据，以便根据需要获取更多天数：
 
@@ -202,7 +205,7 @@
 ## 汇总
 
 
-    Add-AzureRmAccount
+    Add-AzureRmAccount -EnvironmentName AzureChinaCloud
     Select-AzureRmSubscription -SubscriptionId 4cac86b0-1e56-bbbb-aaaa-000000000000
     New-AzureRmResourceGroup -Name "resourcegroup1" -Location "China North"
     New-AzureRmSqlServer -ResourceGroupName "resourcegroup1" -ServerName "server1" -Location "China North" -ServerVersion "12.0"
@@ -230,4 +233,4 @@
 
 有关弹性数据库和弹性数据库池的详细信息，包括 API 和错误详细信息，请参阅[弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference)。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

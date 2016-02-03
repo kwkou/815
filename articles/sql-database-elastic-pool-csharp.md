@@ -1,43 +1,46 @@
-<properties 
-    pageTitle="使用 C# 创建 Azure SQL 数据库弹性数据库池 | Windows Azure" 
-    description="本文说明如何使用 C# 创建 Azure SQL 数据库弹性数据库池（使用适用于 .NET 的 Azure SQL 数据库库）。" 
-    services="sql-database" 
-    documentationCenter="" 
-    authors="stevestein" 
-    manager="jeffreyg" 
+<properties
+    pageTitle="C# 数据库开发：弹性数据库池 | Windows Azure"
+    description="使用 C# 数据库开发技术创建 Azure SQL 数据库弹性数据库池，以便可以在多个数据库之间共享资源。"
+    services="sql-database"
+    keywords="c# 数据库,sql 开发"
+    documentationCenter=""
+    authors="stevestein"
+    manager="jeffreyg"
     editor=""/>
 
 <tags
     ms.service="sql-database"
-    ms.date="11/06/2015"
-    wacn.date="12/22/2015"/>
+    ms.date="12/01/2015"
+    wacn.date="01/29/2016"/>
 
-# 使用 C&#x23; 创建弹性数据库池
+# C&#x23; 数据库开发：为 SQL 数据库创建和配置弹性数据库池
 
 > [AZURE.SELECTOR]
+- [Azure 门户](/documentation/articles/sql-database-elastic-pool-portal)
 - [C#](/documentation/articles/sql-database-elastic-pool-csharp)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell)
 
 
-本文说明如何使用 C# 通过应用程序创建[弹性数据库池](/documentation/articles/sql-database-elastic-pool)。
+本文说明如何使用 C# 数据库开发技术，通过应用程序为 SQL 数据库创建[弹性数据库池](/documentation/articles/sql-database-elastic-pool)。
 
-> [AZURE.NOTE]弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server)。
+> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server)。
 
-这些示例使用了[适用于 .NET 的 Azure SQL 数据库库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)。为简明起见，我们已分开列出各个代码段，并在本文底部的某个部分中提供了一个示例控制台应用程序，其中结合了所有命令。
+这些示例使用了[适用于 .NET 的 Azure SQL 数据库库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)。
+为简明起见，我们已分开列出各个代码段，并在本文底部的某个部分中提供了一个示例控制台应用程序，其中结合了所有命令。
 
 适用于 .NET 的 Azure SQL 数据库库提供了基于 [Azure 资源管理器](/documentation/articles/resource-group-overview)的 API，用于包装[基于资源管理器的 SQL 数据库 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx)。此客户端库遵循基于资源管理器的客户端库的通用模式。资源管理器需要资源组，并要求使用 [Azure Active Directory](https://msdn.microsoft.com/zh-cn/library/azure/mt168838.aspx) (AAD) 进行身份验证。
 
 <br>
 
-> [AZURE.NOTE]适用于 .NET 的 Azure SQL 数据库库目前以预览版提供。
+> [AZURE.NOTE] 适用于 .NET 的 Azure SQL 数据库库目前以预览版提供。
 
 <br>
 
-如果你没有 Azure 订阅，只需单击本页顶部的“免费试用”，然后再返回到本文中。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
+如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
 
 ## 安装所需的库
 
-使用[包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)安装以下包，即可获取所需的管理库：
+使用[包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)安装以下包，即可获取所需的管理库用于在 SQL 上进行开发：
 
     Install-Package Microsoft.Azure.Management.Sql –Pre
     Install-Package Microsoft.Azure.Management.Resources –Pre
@@ -46,29 +49,29 @@
 
 ## 使用 Azure Active Directory 配置身份验证
 
-必须通过设置所需的身份验证，使应用程序能够访问 REST API。
+在开始使用 C# 进行 SQL 开发之前，必须在 Azure 门户中完成一些任务。首先请通过设置所需的身份验证，使应用程序能够访问 REST API。
 
 [Azure 资源管理器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx) 使用 Azure Active Directory 进行身份验证，而不是早期 Azure 服务管理 REST API 使用的证书。
 
-若要基于当前的用户对客户端应用程序进行身份验证，你必须先将该应用程序注册到与创建了 Azure 资源的订阅关联的 AAD 域中。如果 Azure 订阅是以 Microsoft 帐户而不是工作或学校帐户创建的，则你已经有了默认的 AAD 域。可以在[管理门户](https://manage.windowsazure.cn/)中完成应用程序的注册。
+若要基于当前的用户对客户端应用程序进行身份验证，你必须先将该应用程序注册到与创建了 Azure 资源的订阅关联的 AAD 域中。如果 Azure 订阅是以 Microsoft 帐户而不是工作或学校帐户创建的，则你已经有了默认的 AAD 域。可以在[经典门户](https://manage.windowsazure.cn)中完成应用程序的注册。
 
 若要创建新应用程序并将其注册到正确的 Active Directory 中，请执行以下操作：
 
 1. 滚动左侧的菜单，找到 **Active Directory** 服务并将它打开。
 
-    ![AAD][1]
+    ![C# SQL 数据库开发：Active Directory 设置][1]
 
 2. 选择用于对应用程序进行身份验证的目录，然后单击该目录的**名称**。
 
-    ![目录][4]
+    ![选择目录。][4]
 
 3. 在目录页上，单击“应用程序”。
 
-    ![应用程序][5]
+    ![单击“应用程序”。][5]
 
 4. 单击“添加”以创建新的应用程序。
 
-    ![添加应用程序][6]
+    ![单击“添加”按钮：创建 C# 应用程序。][6]
 
 5. 选择“添加我的组织正在开发的应用程序”。
 
@@ -90,7 +93,7 @@
 1. 选择“Azure 服务管理 API”，然后完成向导。
 2. 选择 API 之后，需要通过选择“访问 Azure 服务管理(预览)”，授予访问此 API 所需的特定权限。
 
-    ![权限][2]
+    ![设置权限][2]
 
 2. 单击“保存”。
 
@@ -103,15 +106,16 @@
 1. 转到 [Azure 门户](https://manage.windowsazure.cn)。
 2. 将鼠标悬停在右上角的名称上，并记下弹出窗口中显示的域。将以下代码段中的 **domain.partner.onmschina.cn** 替换为你帐户的值。
 
+    ![标识域名][3]
 
 
 
 **其他 AAD 资源**
 
-在[这篇有用的博客文章](http://www.cloudidentity.com/blog/2013/09/12/active-directory-authentication-library-adal-v1-for-net-general-availability/)中，可以找到有关使用 Azure Active Directory 进行身份验证的其他信息。
+在[这篇有用的博客文章](http://www.cloudidentity.com/blog/2013/09/12/active-directory-authentication-library-adal-v1-for-net-general-availability)中，可以找到有关使用 Azure Active Directory 进行身份验证的其他信息。
 
 
-### 检索当前用户的访问令牌 
+### 检索当前用户的访问令牌
 
 客户端应用程序必须检索当前用户的应用程序访问令牌。当用户首次执行代码时，系统会提示用户输入其用户凭据，生成的令牌将在本地缓存。后续的执行将从缓存中检索令牌，并且仅在令牌已过期时才提示用户登录。
 
@@ -123,13 +127,13 @@
     private static AuthenticationResult GetAccessToken()
     {
         AuthenticationContext authContext = new AuthenticationContext
-            ("https://login.chinacloudapi.cn/" /* AAD URI */ 
+            ("https://login.chinacloudapi.cn/" /* AAD URI */
                 + "domain.partner.onmschina.cn" /* Tenant ID or AAD domain */);
 
         AuthenticationResult token = authContext.AcquireToken
-            ("https://management.azure.com/"/* the Azure Resource Management endpoint */, 
-                "aa00a0a0-a0a0-0000-0a00-a0a00000a0aa" /* application client ID from AAD*/, 
-        new Uri("urn:ietf:wg:oauth:2.0:oob") /* redirect URI */, 
+            ("https://management.azure.com/"/* the Azure Resource Management endpoint */,
+                "aa00a0a0-a0a0-0000-0a00-a0a00000a0aa" /* application client ID from AAD*/,
+        new Uri("urn:ietf:wg:oauth:2.0:oob") /* redirect URI */,
         PromptBehavior.Auto /* with Auto user will not be prompted if an unexpired token is cached */);
 
         return token;
@@ -137,30 +141,30 @@
 
 
 
-> [AZURE.NOTE]本文中的示例使用每个 API 请求的同步形式，并会一直阻塞，直到对基础服务的 REST 调用完成。有可用的异步方法。
+> [AZURE.NOTE] 本文中的示例使用每个 API 请求的同步形式，并会一直阻塞，直到对基础服务的 REST 调用完成。有可用的异步方法。
 
 
 
 ## 创建资源组
 
-使用资源管理器时，必须在资源组中创建所有资源。资源组是一个容器，包含应用程序的相关资源。若要创建弹性数据库池，现有资源组中需有一个 Azure SQL 数据库服务器。运行以下代码创建资源组：
+使用资源管理器时，必须在资源组中创建所有资源。资源组是一个容器，包含应用程序的相关资源。若要创建弹性数据库池，现有资源组中需有一个 Azure SQL 数据库服务器。运行以下 C# 代码创建资源组：
 
 
-    // Create a resource management client 
+    // Create a resource management client
     ResourceManagementClient resourceClient = new ResourceManagementClient(new TokenCloudCredentials("XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" /*subscription id*/, token.AccessToken ));
-    
+
     // Resource group parameters
     ResourceGroup resourceGroupParameters = new ResourceGroup()
     {
-        Location = "South Central US"
+        Location = "China East"
     };
-    
+
     //Create a resource group
     var resourceGroupResult = resourceClient.ResourceGroups.CreateOrUpdate("resourcegroup-name", resourceGroupParameters);
 
 
 
-## 创建服务器 
+## 创建服务器
 
 弹性数据库池将包含在 Azure SQL 数据库服务器中，因此下一步就是创建服务器。服务器名称在所有 Azure SQL Server 中必须全局唯一，因此，如果该服务器名称已被使用，你将会收到错误。还必须指出的是，该命令可能需要数分钟才能运行完毕。为了使应用程序能够连接到服务器，你还必须在服务器上创建防火墙规则，以允许从客户端 IP 地址进行访问。
 
@@ -171,7 +175,7 @@
     // Create a server
     ServerCreateOrUpdateParameters serverParameters = new ServerCreateOrUpdateParameters()
     {
-        Location = "South Central US",
+        Location = "China East",
         Properties = new ServerCreateOrUpdateProperties()
         {
             AdministratorLogin = "ServerAdmin",
@@ -192,7 +196,7 @@
 以下示例将创建一个服务器防火墙规则，用于实现从任何 IP 地址对服务器进行访问。建议你创建适当的 SQL 登录名和密码来保护数据库，并且不要依赖防火墙规则作为防范入侵的主要防御机制。有关详细信息，请参阅[管理 Azure SQL 数据库的数据库和登录名](/documentation/articles/sql-database-manage-logins)。
 
 
-    // Create a firewall rule on the server to allow TDS connection 
+    // Create a firewall rule on the server to allow TDS connection
     FirewallRuleCreateOrUpdateParameters firewallParameters = new FirewallRuleCreateOrUpdateParameters()
     {
         Properties = new FirewallRuleCreateOrUpdateProperties()
@@ -218,7 +222,7 @@
 
         // Retrieve the server on which the database will be created
         Server currentServer = sqlClient.Servers.Get("resourcegroup-name", "server-name").Server;
- 
+
         // Create a database: configure create or update parameters and properties explicitly
         DatabaseCreateOrUpdateParameters newDatabaseParameters = new DatabaseCreateOrUpdateParameters()
         {
@@ -245,7 +249,7 @@
     // Create elastic pool: configure create or update parameters and properties explicitly
     ElasticPoolCreateOrUpdateParameters newPoolParameters = new ElasticPoolCreateOrUpdateParameters()
     {
-        Location = "South Central US",
+        Location = "China East",
         Properties = new ElasticPoolCreateOrUpdateProperties()
         {
             Edition = "Standard",
@@ -286,16 +290,16 @@
 
 ## 将现有数据库移入弹性数据库池
 
-*创建一个池后，你还可以使用 Transact-SQL 将现有数据库移入和移出一个池。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL)。*
+*创建一个池后，你还可以使用 Transact-SQL 将现有数据库移入和移出一个池。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL)。*
 
 以下示例将现有的 Azure SQL 数据库移到池中：
 
-    
+
     // Update database service objective to add the database to a pool
-    
-    // Retrieve current database properties 
+
+    // Retrieve current database properties
     currentDatabase = sqlClient.Databases.Get("resourcegroup-name", "server-name", "Database1").Database;
-    
+
     // Configure create or update parameters with existing property values, override those to be changed.
     DatabaseCreateOrUpdateParameters updatePooledDbParameters = new DatabaseCreateOrUpdateParameters()
     {
@@ -309,22 +313,22 @@
             Collation = currentDatabase.Properties.Collation,
         }
     };
-    
+
     // Update the database
     var dbUpdateResponse = sqlClient.Databases.CreateOrUpdate("resourcegroup-name", "server-name", "Database1", updatePooledDbParameters);
-    
-    
+
+
 
 
 ## 在弹性数据库池中创建新数据库
 
-*创建一个池后，你还可以使用 Transact-SQL 在池中创建新的弹性数据库。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference#Transact-SQL)。*
+*创建一个池后，你还可以使用 Transact-SQL 在池中创建新的弹性数据库。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL)。*
 
 以下示例将直接在池中创建一个新的数据库：
 
-    
+
     // Create a new database in the pool
-    
+
     // Create a database: configure create or update parameters and properties explicitly
     DatabaseCreateOrUpdateParameters newPooledDatabaseParameters = new DatabaseCreateOrUpdateParameters()
     {
@@ -338,7 +342,7 @@
             Collation = "SQL_Latin1_General_CP1_CI_AS"
         }
     };
-    
+
     var poolDbResponse = sqlClient.Databases.CreateOrUpdate("resourcegroup-name", "server-name", "Database2", newPooledDatabaseParameters);
 
 
@@ -381,13 +385,13 @@
         private static AuthenticationResult GetAccessToken()
         {
             AuthenticationContext authContext = new AuthenticationContext
-                ("https://login.chinacloudapi.cn/" /* AAD URI */ 
+                ("https://login.chinacloudapi.cn/" /* AAD URI */
                 + "domain.partner.onmschina.cn" /* Tenant ID or AAD domain */);
 
             AuthenticationResult token = authContext.AcquireToken
-                ("https://management.azure.com/"/* the Azure Resource Management endpoint */, 
-                "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" /* application client ID from AAD*/, 
-                new Uri("urn:ietf:wg:oauth:2.0:oob") /* redirect URI */, 
+                ("https://management.azure.com/"/* the Azure Resource Management endpoint */,
+                "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" /* application client ID from AAD*/,
+                new Uri("urn:ietf:wg:oauth:2.0:oob") /* redirect URI */,
                 PromptBehavior.Auto /* with Auto user will not be prompted if an unexpired token is cached */);
 
             return token;
@@ -419,19 +423,19 @@
         static void Main(string[] args)
         {
             var token = GetAccessToken();
-            
+
             // Who am I?
             Console.WriteLine("Identity is {0} {1}", token.UserInfo.GivenName, token.UserInfo.FamilyName);
             Console.WriteLine("Token expires on {0}", token.ExpiresOn);
             Console.WriteLine("");
 
-            // Create a resource management client 
+            // Create a resource management client
             ResourceManagementClient resourceClient = new ResourceManagementClient(new TokenCloudCredentials("XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" /*subscription id*/, token.AccessToken));
 
             // Resource group parameters
             ResourceGroup resourceGroupParameters = new ResourceGroup()
             {
-                Location = "South Central US"
+                Location = "China East"
             };
 
             //Create a resource group
@@ -447,7 +451,7 @@
             // Create a server
             ServerCreateOrUpdateParameters serverParameters = new ServerCreateOrUpdateParameters()
             {
-                Location = "South Central US",
+                Location = "China East",
                 Properties = new ServerCreateOrUpdateProperties()
                 {
                     AdministratorLogin = "ServerAdmin",
@@ -463,7 +467,7 @@
 
             Console.WriteLine("Server {0} create or update completed with status code {1}", serverResult.Server.Name, serverResult.StatusCode);
 
-            // Create a firewall rule on the server to allow TDS connection 
+            // Create a firewall rule on the server to allow TDS connection
 
             FirewallRuleCreateOrUpdateParameters firewallParameters = new FirewallRuleCreateOrUpdateParameters()
             {
@@ -511,7 +515,7 @@
 
             // Update a databases service objective to add the database to a pool
 
-            // Update database: retrieve current database properties 
+            // Update database: retrieve current database properties
             currentDatabase = sqlClient.Databases.Get("resourcegroup-name", "server-name", "Database1").Database;
 
             // Update database: configure create or update parameters with existing property values, override those to be changed.
@@ -559,7 +563,8 @@
 
 ## 其他资源
 
-[SQL 数据库](/documentation/services/sql-databases/)
+
+[SQL 数据库](/documentation/services/sql-databases)
 
 [Azure 资源管理 API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)
 
@@ -577,4 +582,4 @@
 [8]: ./media/sql-database-elastic-pool-csharp/add-application2.png
 [9]: ./media/sql-database-elastic-pool-csharp/clientid.png
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

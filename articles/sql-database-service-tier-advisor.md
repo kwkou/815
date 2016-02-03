@@ -9,22 +9,22 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="10/02/2015"
-   wacn.date="01/05/2016"/>
+   ms.date="12/01/2015"
+   wacn.date="01/29/2016"/>
 
 # SQL 数据库定价层建议
 
  提供的定价层建议将会推荐最适合用于运行现有 Azure SQL 数据库工作负荷的服务层和性能级别。
 
-> [AZURE.NOTE]定价层建议仅适用于 Web 和企业数据库及弹性数据库池，并且只会在 [Azure 经典门户](https://manage.windowsazure.cn)中提供。
+> [AZURE.NOTE] 定价层建议仅适用于 Web 和企业数据库及弹性数据库池，并且只会在 [Azure 门户](https://manage.windowsazure.cn)中提供。
 
 
 在执行以下任务期间获取定价层建议：
 
 - [更改 SQL 数据库的服务层和性能级别（定价层）](/documentation/articles/sql-database-scale-up)
 - [将 Azure SQL 服务器升级到 V12](/documentation/articles/sql-database-v12-upgrade)
-- 浏览到 V12 服务器 - 如果你的数据库可以[从弹性数据库池受益](/documentation/articles/sql-database-elastic-pool-portal#recommended-elastic-database-pools)，服务器边栏选项卡将显示一条消息来指出建议的池。单击该消息可以创建建议的池。
-- [创建弹性数据库池](/documentation/articles/sql-database-elastic-pool#elastic-database-pool-pricing-tier-recommendations)
+- 浏览到 V12 服务器 - 如果你的数据库可以[从弹性数据库池受益](/documentation/articles/sql-database-elastic-pool-portal/#recommended-elastic-database-pools)，服务器边栏选项卡将显示一条消息来指出建议的池。单击该消息可以创建建议的池。
+- [创建弹性数据库池](/documentation/articles/sql-database-elastic-pool/#elastic-database-pool-pricing-tier-recommendations)
 
 
 
@@ -32,7 +32,7 @@
 
 ## 概述
 
-SQL 数据库服务会通过评估 SQL 数据库的历史资源使用量，来分析当前的性能和功能要求。此外，会根据数据库大小和启用的[业务连续性](sql-database-business-continuity)功能确定可接受的最低服务层。
+SQL 数据库服务会通过评估 SQL 数据库的历史资源使用量，来分析当前的性能和功能要求。此外，会根据数据库大小和启用的[业务连续性](/documentation/articles/sql-database-business-continuity)功能确定可接受的最低服务层。
 
 服务将分析这些信息，然后推荐最适合用于运行数据库的典型工作负载和保留其当前功能集的服务层与性能级别。
 
@@ -54,11 +54,11 @@ SQL 数据库服务会通过评估 SQL 数据库的历史资源使用量，来�
 
 可以通过选择现有的 Web 或企业数据库并单击“定价层”磁贴来获取定价层建议。（当你[将 Azure SQL 服务器升级到 V12](/documentation/articles/sql-database-v12-upgrade) 时，也可以获取定价层建议。）
 
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
 2. 单击“浏览”>“SQL 数据库”。
 4. 在“SQL 数据库”边栏选项卡中，单击想要查看其建议的数据库：
 
- 
+
 
 5. 在数据库边栏选项卡中，选择“定价层”磁贴。
 
@@ -83,7 +83,7 @@ SQL 数据库服务会通过评估 SQL 数据库的历史资源使用量，来�
 
 ## 后续步骤
 
-根据具体数据库的详细信息，执行升级或降级通常不会立即发生。当数据库过渡到新层时，管理门户会提供通知；你也可以通过在 SQL 数据库服务器的 master 数据库中查询 [sys.dm\_operation\_status (Azure SQL 数据库)](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx) 视图，来监视升级状态。
+根据具体数据库的详细信息，执行升级或降级通常不会立即发生。当数据库过渡到新层时，门户会提供通知；你也可以通过在 SQL 数据库服务器的 master 数据库中查询 [sys.dm\_operation\_status (Azure SQL 数据库)](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx) 视图，来监视升级状态。
 
 
 <!--Image references-->
@@ -96,4 +96,4 @@ SQL 数据库服务会通过评估 SQL 数据库的历史资源使用量，来�
 
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

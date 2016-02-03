@@ -9,9 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/04/2015"
-	wacn.date="01/05/2016"/>
-
+	ms.date="12/01/2015"
+	wacn.date="01/29/2016"/>
 
 # 用于 SQL 数据库和 SQL Server 的连接库
 
@@ -24,11 +23,11 @@
 | 平台 | 操作系统 | 供下载的库<br/> | 驱动程序版本<br/> | 驱动程序说明<br/> | 详细信息<br/> |
 | :--- | :--- | :--- | :--- | :--- | :-- |
 | .NET | 跨平台 (.NET) | [ADO.NET, System .Data .SqlClient](http://www.microsoft.com/zh-cn/download/details.aspx?id=30653) | 4\.5+ | 用于 .NET Framework 的 SQL Server 提供程序 | 。 |
-| PHP | Windows | [PHP for SQL Server](http://www.microsoft.com/zh-cn/download/details.aspx?id=20098) | 2\.0+ | 用于 SQL Server 的 PHP 驱动程序 | [链接](http://msdn.microsoft.com/zh-cn/library/dn865013.aspx) |
+| PHP | Windows | [PHP for SQL Server](http://www.microsoft.com/en-us/download/details.aspx?id=20098) | 2\.0+ | 用于 SQL Server 的 PHP 驱动程序 | [链接](http://msdn.microsoft.com/zh-cn/library/dn865013.aspx) |
 | Java | Windows | [JDBC for SQL Server](http://www.microsoft.com/zh-cn/download/details.aspx?id=11774) | 2\.0+ | 通过标准 JDBC API 提供数据库连接性的类型 4 JDBC 驱动程序 | [链接](http://msdn.microsoft.com/zh-cn/library/dn425070.aspx) |
 | ODBC | Windows | [ODBC for SQL Server](http://www.microsoft.com/zh-cn/download/details.aspx?id=36434) | 11\.0+ | 用于 SQL Server 的 Microsoft ODBC 驱动程序 | [链接](http://msdn.microsoft.com/zh-cn/library/jj730308.aspx) |
-| ODBC | Suse Linux | [ODBC for SQL Server](http://www.microsoft.com/zh-cn/download/details.aspx?id=34687) | 11\.0+ | 用于 SQL Server 的 Microsoft ODBC 驱动程序 | 。 |
-| ODBC | Redhat Linux | [ODBC for SQL Server](http://www.microsoft.com/zh-cn/download/details.aspx?id=34687) | 11\.0+ | 用于 SQL Server 的 Microsoft ODBC 驱动程序 | 。 |
+| ODBC | Suse Linux | [ODBC for SQL Server](http://www.microsoft.com/en-us/download/details.aspx?id=34687) | 11\.0+ | 用于 SQL Server 的 Microsoft ODBC 驱动程序 | 。 |
+| ODBC | Redhat Linux | [ODBC for SQL Server](http://www.microsoft.com/en-us/download/details.aspx?id=34687) | 11\.0+ | 用于 SQL Server 的 Microsoft ODBC 驱动程序 | 。 |
 
 ### ODBC 支持
 
@@ -49,21 +48,21 @@
 
 ## 第三方库
 
-> [AZURE.IMPORTANT]下表显示在第三方的许可条款下发布的库。要使用这些库，你有责任验证并遵守相关的第三方许可。使用者自行承担使用这些库的风险。Microsoft 不对此处提供的信息作出任何明示或暗示的保证，仅出于用户方便起见而提供这些信息。此处的任何内容都不表示 Microsoft 的任何认可。
-<br/><br/>由开发人员公共社区使用 GitHub.com 上为 **Azure** 所有的 [azure-content](http://github.com/Azure/azure-content/) 存储库对此“第三方库”部分中的信息进行更新和维护。Microsoft 鼓励开发人员更新此部分。Microsoft 员工*不*计划维护此部分中的信息，部分原因是对于每个特定的第三方库，其他人员比我们更加专业。谢谢。
+> [AZURE.IMPORTANT] 下表显示在第三方的许可条款下发布的库。要使用这些库，你有责任验证并遵守相关的第三方许可。使用者自行承担使用这些库的风险。Microsoft 不对此处提供的信息作出任何明示或暗示的保证，仅出于用户方便起见而提供这些信息。此处的任何内容都不表示 Microsoft 的任何认可。
+<br/><br/>由开发人员公共社区使用 GitHub.com 上为 **Azure** 所有的 [azure-content](http://github.com/Azure/azure-content) 存储库对此“第三方库”部分中的信息进行更新和维护。Microsoft 鼓励开发人员更新此部分。Microsoft 员工 *不* 计划维护此部分中的信息，部分原因是对于每个特定的第三方库，其他人员比我们更加专业。谢谢。
 
 下表显示了其他公司或社区之类的第三方发布的库。Microsoft 只发布了本主题前面部分中所述的库。
 
 | 平台 | 库 |
 | :-- | :-- |
-| Python | [pymssql *(org, stable)*](http://pymssql.org/en/stable/)<br/><br/>[pymssql *(org)*](http://pymssql.org/) |
+| Python | [pymssql *(org, stable)*](http://pymssql.org/en/stable)<br/><br/>[pymssql *(org)*](http://pymssql.org) |
 | Node.js | [Tedious *(npmjs)*](http://www.npmjs.com/package/tedious) |
 | Node.js | [Node-MSSQL *(github, patriksimek)*](https://github.com/patriksimek/node-mssql)<br/><br/>[Node-MSSQL *(npmjs)*](https://www.npmjs.com/package/node-mssql)<br/><br/>[Node-MSSQL-Connector *(npmjs)*](https://www.npmjs.com/package/node-mssql-connector) |
-| Node.js | [Edge.js *(github com, tjanczuk)*](https://github.com/tjanczuk/edge)<br/><br/>[Edge.js *(tjanczuk, github io)*](http://tjanczuk.github.io/edge/) |
-| 。 | [FreeTDS *(org)*](http://www.freetds.org/) |
+| Node.js | [Edge.js *(github com, tjanczuk)*](https://github.com/tjanczuk/edge)<br/><br/>[Edge.js *(tjanczuk, github io)*](http://tjanczuk.github.io/edge) |
+| 。 | [FreeTDS *(org)*](http://www.freetds.org) |
 
 <!--
 https://zh.wikipedia.org/wiki/Draft:Microsoft_SQL_Server_Libraries/Drivers
 -->
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

@@ -9,14 +9,15 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="11/10/2015"
-    wacn.date="12/22/2015"/>
+    ms.date="12/01/2015"
+    wacn.date="01/29/2016"/>
 
 # 使用 PowerShell 为 Azure SQL 数据库配置异地复制
 
 
 
 > [AZURE.SELECTOR]
+- [Azure 门户](/documentation/articles/sql-database-geo-replication-portal)
 - [PowerShell](/documentation/articles/sql-database-geo-replication-powershell)
 - [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql)
 
@@ -31,12 +32,9 @@
 
 若要配置异地复制，需要提供以下各项：
 
-- Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“免费试用”，然后再回来完成本文的相关操作即可。
+- Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
 - 一个 Azure SQL 数据库 - 你要复制到不同地理区域的主数据库。
-- Azure PowerShell 1.0 预览版。根据遵循[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 来下载并安装 Azure PowerShell 模块。
-
-> [AZURE.IMPORTANT]从 Azure PowerShell 1.0 预览版开始，Switch-AzureMode cmdlet 不再可用，并且 Azure ResourceManger 模块中的 cmdlet 已重命名。本文中的示例使用新的 PowerShell 1.0 预览版命名约定。有关详细信息，请参阅[弃用 Azure PowerShell 中的 Switch-AzureMode](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell)。
-
+- Azure PowerShell 1.0 或更高版本。根据遵循[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 来下载并安装 Azure PowerShell 模块。
 
 
 
@@ -46,7 +44,7 @@
 首先必须与 Azure 帐户建立访问连接，因此请启动 PowerShell，然后运行以下 cmdlet。在登录屏幕中，输入登录 Azure 门户时所用的相同电子邮件和密码。
 
 
-	Login-AzureRmAccount
+	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
 
@@ -72,7 +70,8 @@
 
 此 cmdlet 将 **Start-AzureSqlDatabaseCopy** 替换为 **-IsContinuous** 参数。它将输出可供其他 cmdlet 用于明确识别特定复制链接的 **AzureRmSqlDatabaseSecondary** 对象。创建辅助数据库并完全设定种子后，此 cmdlet 将返回。根据数据库的大小，这可能需要花费数分钟到数小时的时间。
 
-辅助服务器上的复制数据库具备与主要服务器上的数据库相同的名称，并且默认具有相同的服务级别。辅助数据库可以是可读或不可读，并且可以是单一数据库或弹性数据库。有关详细信息，请参阅 [New-AzureRMSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt603689.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers)。创建辅助数据库并设定种子之后，开始将数据从主数据库复制到新的辅助数据库。以下步骤说明如何使用 PowerShell 完成这项任务，以使用单一数据库或弹性数据库来创建不可读和可读的辅助数据库。
+辅助服务器上的复制数据库具备与主要服务器上的数据库相同的名称，并且默认具有相同的服务级别。辅助数据库可以是可读或不可读，并且可以是单一数据库或弹性数据库。有关详细信息，请参阅 [New-AzureRMSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt603689.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers)。
+创建辅助数据库并设定种子之后，开始将数据从主数据库复制到新的辅助数据库。以下步骤说明如何使用 PowerShell 完成这项任务，以使用单一数据库或弹性数据库来创建不可读和可读的辅助数据库。
 
 如果伙伴数据库已存在（例如，由于终止前面的异地复制关系），命令将会失败。
 
@@ -118,7 +117,7 @@
 
 ## 删除辅助数据库
 
-使用 **Remove-AzureRmSqlDatabaseSecondary** cmdlet 永久终止辅助数据库与其主数据库之间的复制合作关系。终止关系后，辅助数据库将成为读写数据库。如果与辅助数据库的连接断开，命令将会成功，但辅助数据库必须等到连接恢复后才变为可读写。有关详细信息，请参阅 [Remove-AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt603457.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers/)。
+使用 **Remove-AzureRmSqlDatabaseSecondary** cmdlet 永久终止辅助数据库与其主数据库之间的复制合作关系。终止关系后，辅助数据库将成为读写数据库。如果与辅助数据库的连接断开，命令将会成功，但辅助数据库必须等到连接恢复后才变为可读写。有关详细信息，请参阅 [Remove-AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt603457.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers)。
 
 此 cmdlet 取代了用于复制的 Stop-AzureSqlDatabaseCopy。
 
@@ -149,7 +148,7 @@
 此顺序可确保不发生任何数据丢失。切换角色时，有一小段时间无法使用这两个数据库（大约为 0 到 25 秒）。在正常情况下，完成整个操作所需的时间应该少于一分钟。有关详细信息，请参阅 [Set-AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt619393.aspx)。
 
 
-> [AZURE.NOTE]发出该命令时，如果主数据库不可用，则命令将会失败并出现一条错误消息，指出没有可用的主服务器。在少数情况下，操作无法完成并且可能会出现停滞。在此情况下，用户可以调用强制故障转移命令（非计划的故障转移）并接受数据丢失。
+> [AZURE.NOTE] 发出该命令时，如果主数据库不可用，则命令将会失败并出现一条错误消息，指出没有可用的主服务器。在少数情况下，操作无法完成并且可能会出现停滞。在此情况下，用户可以调用强制故障转移命令（非计划的故障转移）并接受数据丢失。
 
 
 
@@ -171,7 +170,7 @@
 
 但是，由于辅助数据库上不支持时间点还原，如果你想要恢复已提交到旧主数据库但尚未复制到新主数据库的数据，则应该咨询 CSS 将数据库还原到已知的日志备份。
 
-> [AZURE.NOTE]如果在主数据库和辅助数据库联机时发出此命令，旧的主数据库将变为新的辅助数据库，但不会尝试数据同步，因此可能会丢失一些数据。
+> [AZURE.NOTE] 如果在主数据库和辅助数据库联机时发出此命令，旧的主数据库将变为新的辅助数据库，但不会尝试数据同步，因此可能会丢失一些数据。
 
 
 如果主数据库中有多个辅助数据库，命令只会部分成功。执行命令的辅助数据库将变为主数据库。但是，旧的主数据库将仍为主数据库，即，两个主数据库最终处于不一致状态并通过挂起的复制链接进行连接。用户必须在主数据库上使用“删除辅助数据库”API 手动修复此配置。
@@ -208,9 +207,9 @@
 
 ## 其他资源
 
-- [新异地复制功能的亮点](https://azure.microsoft.com/blog/spotlight-on-new-capabilities-of-azure-sql-database-geo-replication)
+- [新异地复制功能的亮点](http://azure.microsoft.com/blog/spotlight-on-new-capabilities-of-azure-sql-database-geo-replication)
 - [将云应用程序设计为使用异地复制实现业务连续性](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery)
 - [业务连续性概述](/documentation/articles/sql-database-business-continuity)
-- [SQL 数据库文档](/documentation/services/sql-databases/)
+- [SQL 数据库文档](/documentation/services/sql-databases)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

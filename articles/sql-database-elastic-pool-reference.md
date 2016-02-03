@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="sql-database"
-	ms.date="10/08/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="12/01/2015" 
+	wacn.date="01/29/2016"/>
 
 
 # SQL 数据库弹性数据库池参考
@@ -28,9 +28,27 @@
 ## 创建和管理弹性数据库池的先决条件
 
 
-- 弹性数据库池只能在 Azure SQL 数据库 V12 服务器中使用。   
-- 只有针对 Azure 资源管理器使用[门户](https://manage.windowsazure.cn)、PowerShell 和 .NET 客户端库（REST API 的包装）才支持创建和管理弹性数据库池；[门户](https://manage.windowsazure.cn/)和服务管理命令不受支持。 
+- 弹性数据库池只能在 Azure SQL 数据库 V12 服务器中使用。若要升级到 V12 并将数据库迁移直接到池中，请参阅[升级到 Azure SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server-powershell)。
+- 只有针对 Azure 资源管理器使用 [Azure 门户](https://manage.windowsazure.cn)、PowerShell 和 .NET 客户端库（REST API 的包装）才支持创建和管理弹性数据库池；[经典门户](https://manage.windowsazure.cn)和服务管理命令不受支持。
 - 此外，还支持使用 Transact-SQL 创建新的弹性数据库，以及将现有数据库移入和移出弹性数据库池。
+
+
+
+## 当前预览版注意事项
+
+
+- 每个池的数据库数目和池 eDTU 存在上限：
+
+    | 服务层 | 每个池的数据库数目上限* | 每个池的 eDTU 上限* |
+    | :-- | :-- | :-- |
+    | 基本 | 200 | 1200 | 
+    | 标准 | 200 | 1200 |
+    | 高级 | 50 | 1500 |
+
+    ****每个池的数据库数和池 eDTU 数的当前限制预期会增加。***
+
+
+
 
 ## 文章列表
 
@@ -40,7 +58,7 @@
 | :-- | :-- |
 | [SQL 数据库弹性数据库池](/documentation/articles/sql-database-elastic-pool) | 弹性数据库池的概述 |
 | [价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance) | 如果评估使用弹性数据库池是否符合成本效益 |
-| 如何使用 Azure 门户创建和管理弹性数据库池 |
+| [使用 Azure 门户创建和管理 SQL 数据库弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal) | 如何使用 Azure 门户创建和管理弹性数据库池 |
 | [使用 PowerShell 创建和管理 SQL 数据库弹性数据库池](/documentation/articles/sql-database-elastic-pool-powershell) | 如何使用 PowerShell cmdlet 创建和管理弹性数据库池 |
 | [使用适用于 .NET 的 Azure SQL 数据库库创建和管理 SQL 数据库](/documentation/articles/sql-database-elastic-pool-powershell) | 如何使用 C# 创建和管理弹性数据库池 |
 | [弹性数据库作业概述](/documentation/articles/sql-database-elastic-jobs-overview) | 概述弹性作业服务，该服务可用于跨池中的所有弹性数据库运行 T-SQL 脚本 |
@@ -54,7 +72,7 @@
 弹性数据库池是 Windows Azure SQL 数据库中“ElasticPool”类型的 Azure 资源管理器资源。
 
 - **命名空间**：Microsoft.Sql/ElasticPool
-- 用于 REST API 调用的**管理终结点**（资源管理器）：https://management.windowsazure.cn
+- 用于 REST API 调用的**管理终结点**（资源管理器）：https://manage.windowsazure.cn
 
 
 
@@ -127,17 +145,16 @@ Azure SQL 数据库 V12 服务器位于资源组中。
 
 有几个 PowerShell cmdlet 和 REST API 命令可用于创建和管理弹性池。有关详细信息和代码示例，请参阅[使用 PowerShell 创建和管理 SQL 数据库弹性数据库池](/documentation/articles/sql-database-elastic-pool-powershell)和[使用 C# 创建和管理 SQL 数据库](/documentation/articles/sql-database-client-library)。
 
-> [AZURE.IMPORTANT]从 Azure PowerShell 1.0 预览版开始，Switch-AzureMode cmdlet 不再可用，并且 Azure ResourceManger 模块中的 cmdlet 已重命名。有关详细信息，请参阅[弃用 Azure PowerShell 中的 Switch-AzureMode](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell)。
 
-| [PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/mt163521.aspx) | [REST API 命令](https://msdn.microsoft.com/library/mt163571.aspx) |
+| [PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/mt163521.aspx) | [REST API 命令](https://msdn.microsoft.com/zh-cn/library/mt163571.aspx) |
 | :-- | :-- |
-| [New-AzureRMSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt619378.aspx) | [创建弹性数据库池](https://msdn.microsoft.com/library/mt163596.aspx) |
-| [Set-AzureRMSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt603511.aspx) | [设置弹性数据库池的性能设置](https://msdn.microsoft.com/library/mt163641.aspx) |
-| [Remove-AzureRMSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt619355.aspx) | [删除弹性数据库池](https://msdn.microsoft.com/library/mt163672.aspx) |
-| [Get-AzureRMSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt603517.aspx) | [获取弹性数据库池及其属性值](https://msdn.microsoft.com/zh-CN/library/mt163646.aspx) |
-| [Get-AzureRMSqlElasticPoolActivity](https://msdn.microsoft.com/zh-cn/library/azure/mt603812.aspx) | [获取弹性数据库池的操作状态](https://msdn.microsoft.com/library/mt163669.aspx) |
-| [Get-AzureRMSqlElasticPoolDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619484.aspx) | [获取弹性数据库池中的数据库](https://msdn.microsoft.com/library/mt163646.aspx) |
-| [Get-AzureRMSqlElasticPoolDatabaseActivity]() | [获取将数据库移入和移出池的状态](https://msdn.microsoft.com/zh-cn/library/mt163669.aspx) |
+| [New-AzureRmSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt619378.aspx) | [创建弹性数据库池](https://msdn.microsoft.com/zh-cn/library/mt163596.aspx) |
+| [Set-AzureRmSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt603511.aspx) | [设置弹性数据库池的性能设置](https://msdn.microsoft.com/zh-cn/library/mt163641.aspx) |
+| [Remove-AzureRmSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt619355.aspx) | [删除弹性数据库池](https://msdn.microsoft.com/zh-cn/library/mt163672.aspx) |
+| [Get-AzureRMSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt603517.aspx) | [获取弹性数据库池及其属性值](https://msdn.microsoft.com/zh-cn/library/mt163646.aspx) |
+| [Get-AzureRmSqlElasticPoolActivity](https://msdn.microsoft.com/zh-cn/library/azure/mt603812.aspx) | [获取弹性数据库池的操作状态](https://msdn.microsoft.com/zh-cn/library/mt163669.aspx) |
+| [Get-AzureRmSqlElasticPoolDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619484.aspx) | [获取弹性数据库池中的数据库](https://msdn.microsoft.com/zh-cn/library/mt163646.aspx) |
+| [Get-AzureRmSqlElasticPoolDatabaseActivity]() | [获取将数据库移入和移出池的状态](https://msdn.microsoft.com/zh-cn/library/mt163669.aspx) |
 
 ## Transact-SQL
 
@@ -145,9 +162,9 @@ Azure SQL 数据库 V12 服务器位于资源组中。
 
 | 任务 | 详细信息 |
 | :-- | :-- |
-| 创建新的弹性数据库（直接在池中创建） | [CREATE DATABASE（Azure SQL 数据库）](https://msdn.microsoft.com/library/dn268335.aspx) |
-| 将现有数据库移入和移出池 | [ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/library/ms174269.aspx) |
-| 获取池的资源使用情况统计信息 | [sys.elastic\_pool\_resource\_stats（Azure SQL 数据库）](https://msdn.microsoft.com/library/mt280062.aspx) |
+| 创建新的弹性数据库（直接在池中创建） | [CREATE DATABASE（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx) |
+| 将现有数据库移入和移出池 | [ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms174269.aspx) |
+| 获取池的资源使用情况统计信息 | [sys.elastic\_pool\_resource\_stats（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/mt280062.aspx) |
 
 
 ## 计费和定价信息
@@ -177,16 +194,16 @@ Azure SQL 数据库 V12 服务器位于资源组中。
 | 40860 | EX\_USER | 弹性池“%ls”和服务目标“%ls”的组合无效。 | 弹性池名称；服务级别目标名称 | 仅当服务目标指定为 ‘ElasticPool’ 的情况下，才能一起指定弹性池和服务目标。 | 请指定正确的弹性池和服务目标组合。 |
 | 40861 | EX\_USER | 数据库版本“%.ls”不能不同于弹性池服务层“%.ls”。| 数据库版本、弹性池服务层 | 数据库版本不同于弹性池服务层。| 请勿指定不同于弹性池服务层的数据库版本。注意，数据库版本不需要指定。|
 | 40862 | EX\_USER | 如果指定了弹性池服务目标，则必须指定弹性池名称。| 无 | 弹性池服务目标没有唯一地标识弹性池。| 如果使用弹性池服务目标，请指定弹性池名称。|
-| 40864 | EX_USER | 对于服务层“%.*ls”来说，弹性池的 DTU 数必须至少为 (%d) 个 DTU。| 弹性池的 DTU 数；弹性池服务层。| 尝试将弹性池的 DTU 数设置为最小限制以下。| 请重新尝试将弹性池的 DTU 数至少设置为最小限制。|
+| 40864 | EX\_USER | 对于服务层“%.*ls”来说，弹性池的 DTU 数必须至少为 (%d) 个 DTU。| 弹性池的 DTU 数；弹性池服务层。| 尝试将弹性池的 DTU 数设置为最小限制以下。| 请重新尝试将弹性池的 DTU 数至少设置为最小限制。|
 | 40865 | EX\_USER | 对于服务层“%.*ls”来说，弹性池的 DTU 数不能超过 (%d) 个 DTU。| 弹性池的 DTU 数；弹性池服务层。| 尝试将弹性池的 DTU 数设置为高出最大限制。| 请重新尝试将弹性池的 DTU 数设置为不超过最大限制。|
-| 40867 | EX_USER | 对于服务层“%.*ls”来说，每个数据库的 DTU 最大值必须至少为 (%d)。| 每个数据库的 DTU 最大值；弹性池服务层 | 尝试将每个数据库的 DTU 最大值设置为支持的限制以下。| 请考虑使用支持所需设置的弹性池服务层。|
+| 40867 | EX\_USER | 对于服务层“%.*ls”来说，每个数据库的 DTU 最大值必须至少为 (%d)。| 每个数据库的 DTU 最大值；弹性池服务层 | 尝试将每个数据库的 DTU 最大值设置为支持的限制以下。| 请考虑使用支持所需设置的弹性池服务层。|
 | 40868 | EX\_USER | 对于服务层“%.*ls”来说，每个数据库的 DTU 最大值不能超过 (%d)。| 每个数据库的 DTU 最大值；弹性池服务层。| 尝试将每个数据库的 DTU 最大值设置为超出支持的限制。| 请考虑使用支持所需设置的弹性池服务层。|
-| 40870 | EX_USER | 对于服务层“%.*ls”来说，每个数据库的 DTU 最小值不能超出 (%d)。| 每个数据库的 DTU 最小值；弹性池服务层。| 尝试将每个数据库的 DTU 最小值设置为超出支持的限制。| 请考虑使用支持所需设置的弹性池服务层。|
+| 40870 | EX\_USER | 对于服务层“%.*ls”来说，每个数据库的 DTU 最小值不能超出 (%d)。| 每个数据库的 DTU 最小值；弹性池服务层。| 尝试将每个数据库的 DTU 最小值设置为超出支持的限制。| 请考虑使用支持所需设置的弹性池服务层。|
 | 40873 | EX\_USER | 数据库数目 (%d) 和每个数据库的 DTU 最小值 (%d) 不能超过弹性池的 DTU 数 (%d)。| 弹性池中的数据库数；每个数据库的 DTU 最小值；弹性池的 DTU 数。| 尝试指定弹性池中数据库的 DTU 最小值，该最小值超出弹性池的 DTU 数。| 请考虑增加弹性池的 DTU 数，或者降低每个数据库的 DTU 最小值，或者降低弹性池中数据库的数目。|
 | 40877 | EX\_USER | 除非弹性池不含任何数据库，否则不能将其删除。| 无 | 弹性池包含一个或多个数据库，因此无法将其删除。| 请删除弹性池中的数据库，以便删除弹性池。|
 | 40881 | EX\_USER | 弹性池“%.*ls”已达到其数据库计数限制。弹性池的数据库计数限制不能超出 (%d) 是针对 DTU 数为 (%d) 的弹性池的。| 弹性池名称；弹性池的数据库计数限制；资源池的 DTU 数。| 达到弹性池的数据库计数限制时，尝试创建数据库或将其添加到弹性池。| 可能情况下，请考虑增加弹性池的 DTU 数，以便提高其数据库限制，或者从弹性池中删除数据库。|
-| 40889 | EX_USER | 弹性池“%.*ls”的 DTU 数或存储限制不能降低，因为这样就无法为其数据库提供足够的存储空间。| 弹性池的名称。| 尝试将弹性池的存储限制降低到其存储使用量以下。| 请考虑降低弹性池中各个数据库的存储使用量，或者从池中删除数据库以降低其 DTU 或存储限制。|
+| 40889 | EX\_USER | 弹性池“%.*ls”的 DTU 数或存储限制不能降低，因为这样就无法为其数据库提供足够的存储空间。| 弹性池的名称。| 尝试将弹性池的存储限制降低到其存储使用量以下。| 请考虑降低弹性池中各个数据库的存储使用量，或者从池中删除数据库以降低其 DTU 或存储限制。|
 | 40891 | EX\_USER | 每个数据库的 DTU 最小值 (%d) 不能超过每个数据库的 DTU 最大值 (%d)。| 每个数据库的 DTU 最小值；每个数据库的 DTU 最大值。| 尝试将每个数据库的 DTU 最小值设置为高于每个数据库的 DTU 最大值。| 请确保每个数据库的 DTU 最小值不超过每个数据库的 DTU 最大值。|
 | 待定 | EX\_USER | 弹性池中每个数据库的存储大小不能超过“%.*ls”服务层弹性池所允许的最大大小。| 弹性池服务层 | 数据库的最大大小超过弹性池服务层允许的最大大小。| 请将数据库的最大大小设置为处于弹性池服务层允许的最大大小限制范围内。|
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

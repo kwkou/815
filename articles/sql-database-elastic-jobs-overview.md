@@ -1,15 +1,15 @@
 <properties
 	pageTitle="弹性数据库作业概述 | Windows Azure" 
 	description="安装弹性数据库作业服务" 
-	metaKeywords="azure sql 数据库 弹性 数据库" 
+	metaKeywords="Azure SQL 数据库弹性数据库" 
 	services="sql-database" documentationCenter=""  
 	manager="jeffreyg" 
 	authors="ddove"/>
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="07/21/2015" 
-	wacn.date="12/22/2015" />
+	ms.date="11/04/2015" 
+	wacn.date="01/29/2016" />
 
 # 弹性数据库作业概述
 
@@ -36,7 +36,7 @@
 * 定义执行计划
 * 将 Azure SQL 数据库集合中的数据聚合到单个目标表中
 
-> [AZURE.NOTE]在 Azure 门户中，只有一小组受限为 SQL Azure 弹性池的函数可供使用。使用 PowerShell API 可以访问当前功能的完整集。
+> [AZURE.NOTE] 在 Azure 门户中，只有一小组受限为 SQL Azure 弹性池的函数可供使用。使用 PowerShell API 可以访问当前功能的完整集。
 
 ## 方案
 
@@ -55,7 +55,7 @@
 6.	或使用 PowerShell 脚本：[使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）](/documentation/articles/sql-database-elastic-jobs-powershell)。
 
 ## 幂等脚本的重要性
-脚本必须是[幂等的](https://en.wikipedia.org/wiki/Idempotence)。简单而言，“幂等”是指如果脚本成功，则再次运行时，会出现相同的结果。脚本可能由于暂时性网络问题而失败。在此情况下，作业将自动重试运行脚本，达到默认的次数才停止。即使幂等脚本已成功运行两次，也仍会返回相同的结果。
+脚本必须是[幂等的](https://zh.wikipedia.org/wiki/Idempotence)。简单而言，“幂等”是指如果脚本成功，则再次运行时，会出现相同的结果。脚本可能由于暂时性网络问题而失败。在此情况下，作业将自动重试运行脚本，达到默认的次数才停止。即使幂等脚本已成功运行两次，也仍会返回相同的结果。
 
 一个简单的策略是在创建对象之前测试其是否存在。
 
@@ -84,8 +84,8 @@
 ## 组件和定价 
 以下组件配合工作可以创建支持即席执行管理作业的 Azure 云服务。在安装期间，这些组件将自动在你的订阅中安装和配置。你可以识别这些服务，因为它们具有相同的自动生成名称。名称是唯一的，包括前缀“edj”后接 21 个随机生成的字符。
 
-* **Azure 云服务**：弹性数据库作业（预览版）以客户托管的 Azure 云服务交付，可执行请求的任务。服务可从门户部署，并托管在你的 Windows Azure 订阅中。默认部署的服务将结合最少两个辅助角色运行，以实现高可用性。每个默认大小的辅助角色 (ElasticDatabaseJobWorker) 在 A0 实例上运行。有关价格，请参阅[云服务定价](/home/features/cloud-services/#price)。
-* **Azure SQL 数据库**：服务使用名为**控制数据库**的 Azure SQL 数据库 来存储所有的作业元数据。默认的服务层是 S0。有关价格，请参阅 [SQL 数据库 定价](/home/features/sql-database/#price)。
+* **Azure 云服务**：弹性数据库作业（预览版）以客户托管的 Azure 云服务交付，可执行请求的任务。服务可从门户部署，并托管在你的 Windows Azure 订阅中。默认部署的服务将结合最少两个辅助角色运行，以实现高可用性。每个默认大小的辅助角色 (ElasticDatabaseJobWorker) 在 A0 实例上运行。有关价格，请参阅[云服务定价](/home/features/cloud-services/#price)。 
+* **Azure SQL 数据库**：服务使用名为**控制数据库**的 Azure SQL 数据库来存储所有的作业元数据。默认的服务层是 S0。有关价格，请参阅 [SQL 数据库定价](/home/features/sql-database/#price)。
 * **Azure Service Bus**：Azure Service Bus 用于协调 Azure 云服务中的工作。请参阅 [Service Bus 定价](/home/features/messaging/#price)。
 * **Azure 存储空间**：在某个问题需要进一步调试时，将使用 Azure 存储帐户来存储诊断输出（[Azure 诊断](/documentation/articles/cloud-services-dotnet-diagnostics)的常见做法）。有关价格，请参阅 [Azure 存储空间定价](/home/features/storage/#price)。
 
@@ -120,4 +120,4 @@
 [1]: ./media/sql-database-elastic-jobs-overview/elastic-jobs.png
 <!--anchors-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

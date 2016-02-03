@@ -1,6 +1,6 @@
 <properties 
-    pageTitle="使用 Azure 经典门户为 Azure SQL 数据库配置异地复制 | Windows Azure" 
-    description="使用 Azure 经典门户为 Azure SQL 数据库配置异地复制" 
+    pageTitle="使用 Azure 门户为 Azure SQL 数据库配置异地复制 | Windows Azure" 
+    description="使用 Azure 门户为 Azure SQL 数据库配置异地复制" 
     services="sql-database" 
     documentationCenter="" 
     authors="stevestein" 
@@ -9,8 +9,8 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="11/10/2015"
-    wacn.date="01/05/2016"/>
+    ms.date="12/01/2015"
+    wacn.date="01/29/2016"/>
 
 # 使用 Azure 门户为 Azure SQL 数据库配置异地复制
 
@@ -43,9 +43,10 @@
 
 若要添加辅助数据库，你必须是订阅所有者或共同所有者。
 
-辅助数据库将使用与主数据库相同的名称，并将默认使用相同的服务级别。辅助数据库可以是可读数据库（仅限高级版），也可以是不可读数据库；可以是单一数据库，也可以是弹性数据库。有关详细信息，请参阅[服务层](/documentation/articles/sql-database-service-tiers)。创建辅助数据库并设定种子之后，开始将数据从主数据库复制到新的辅助数据库。
+辅助数据库将使用与主数据库相同的名称，并将默认使用相同的服务级别。辅助数据库可以是可读数据库（仅限高级版），也可以是不可读数据库；可以是单一数据库，也可以是弹性数据库。有关详细信息，请参阅[服务层](/documentation/articles/sql-database-service-tiers)。
+创建辅助数据库并设定种子之后，开始将数据从主数据库复制到新的辅助数据库。
 
-> [AZURE.NOTE]如果伙伴数据库已存在（例如，由于终止前面的异地复制关系），命令将会失败。
+> [AZURE.NOTE] 如果伙伴数据库已存在（例如，由于终止前面的异地复制关系），命令将会失败。
 
 
 
@@ -96,7 +97,7 @@
 5. 单击“停止复制”将会打开一个确认窗口，因此请单击“是”从异地复制合作关系中删除该数据库（将其设置为不参与任何复制过程的读-写数据库）。
 
 
- 
+
 
 
 
@@ -147,4 +148,4 @@
 [9]: ./media/sql-database-geo-replication-portal/seeding-complete.png
 [10]: ./media/sql-database-geo-replication-portal/failover.png
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->
