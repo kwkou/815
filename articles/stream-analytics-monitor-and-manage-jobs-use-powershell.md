@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="使用 PowerShell 监视和管理流分析作业 | Windows Azure" 
 	description="了解如何使用 Azure PowerShell 和 cmdlet 监视和管理流分析作业。" 
-	keywords="azure powershell,azure powershell cmdlet,powershell 命令"	
+	keywords="azure powershell,azure powershell cmdlet,powershell 命令,powershell 脚本"	
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -10,14 +10,13 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="10/06/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="12/04/2015" 
+	wacn.date="01/29/2016"/>
 
 
 # 使用 Azure PowerShell cmdlet 监视和管理流分析作业
 
-了解如何使用可执行基本流分析任务的 Azure PowerShell cmdlet 来监视和管理流分析资源。
-
+了解如何使用可执行基本流分析任务的 Azure PowerShell cmdlet 和 PowerShell 脚本来监视和管理流分析资源。
 
 ## 针对流分析运行 Azure PowerShell cmdlet 的先决条件
 
@@ -30,9 +29,12 @@
 		# Select the Azure subscription you want to use to create the resource group
 		Select-AzureSubscription -SubscriptionName <subscription name>
  
-		# Create an Azure resource group	
+		# Set the appropriate Azure mode to access Stream Analytics cmdlets
+		Switch-AzureMode AzureResourceManager
+
+		# Optional - Create an Azure resource group	
 			# If Stream Analytics has not been registered to the subscription, remove remark symbol below (#) to run the Register-AzureRMProvider cmdlet to register the provider namespace
-			#Register-AzureRMProvider -Force -ProviderNamespace 'Microsoft.StreamAnalytics'
+		#Register-AzureProvider -Force -ProviderNamespace 'Microsoft.StreamAnalytics'
 
 		# Create an Azure resource group
 		New-AzureResourceGroup -Name <YOUR RESOURCE GROUP NAME> -Location <LOCATION>
@@ -272,7 +274,7 @@
 
 
 [msdn-switch-azuremode]: http://msdn.microsoft.com/zh-cn/library/dn722470.aspx
-[powershell-install]: http://azure.microsoft.com/documentation/articles/powershell-install-configure/
+[powershell-install]: /documentation/articles/powershell-install-configure/
 [msdn-rest-api-create-stream-analytics-job]: https://msdn.microsoft.com/zh-cn/library/dn834994.aspx
 [msdn-rest-api-create-stream-analytics-input]: https://msdn.microsoft.com/zh-cn/library/dn835010.aspx
 [msdn-rest-api-create-stream-analytics-output]: https://msdn.microsoft.com/zh-cn/library/dn835015.aspx
@@ -286,4 +288,4 @@
 [stream.analytics.rest.api.reference]: https://msdn.microsoft.com/zh-cn/library/dn835031.aspx
  
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->
