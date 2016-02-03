@@ -19,7 +19,7 @@
 
 许多类型的应用程序需要运行与用户界面 (UI) 无关的后台任务。示例包括批处理作业、密集处理型任务，以及长时间运行的过程，例如工作流。后台作业无需用户交互就可执行；应用程序可以启动作业，然后继续处理来自用户的交互请求。这有助于减少应用程序 UI 上的负载，从而提高可用性，降低交互响应时间。
 
-例如，如果应用程序需要生成用户上载的图像缩图，可以后台作业的形式执行此操作，并在完成时将缩图保存到存储中，用户无需等待过程完成。同样地，下单的用户可以启动一个后台工作流来处理订单，同时，UI 可让用户继续浏览 Web 应用。当后台作业完成时，可以更新存储的订单数据，并将确认订单的电子邮件发送给用户。
+例如，如果应用程序需要生成用户上载的图像缩图，可以后台作业的形式执行此操作，并在完成时将缩图保存到存储中，用户无需等待过程完成。同样地，下单的用户可以启动一个后台工作流来处理订单，同时，UI 可让用户继续浏览网站。当后台作业完成时，可以更新存储的订单数据，并将确认订单的电子邮件发送给用户。
 
 考虑是否将任务作为后台作业执行时，主要的准则是：是否可以在无需用户交互的情况下运行该任务，且 UI 无需等待作业完成。在完成之前需要用户或 UI 等待的任务不适合作为后台作业运行。
 
@@ -31,7 +31,7 @@
 - I/O 密集型作业，例如执行一系列存储事务或文件索引编制。
 - 批处理作业，例如夜间数据更新或计划的处理。
 - 长时间运行的工作流，例如订单履行或设置服务和系统。
-- 敏感数据处理，其中的任务将转移到更安全的位置以进行处理。例如，你可能不想要处理 Web 角色中的敏感数据，而是改为使用[守护程序](http://msdn.microsoft.com/zh-cn/library/dn589793.aspx)等模式将数据传输到有权访问受保护存储的已隔离后台角色。
+- 敏感数据处理，其中的任务将转移到更安全的位置以进行处理。例如，你可能不想要处理 Web 应用中的敏感数据，而是改为使用[守护程序](http://msdn.microsoft.com/library/dn589793.aspx)等模式将数据传输到有权访问受保护存储的已隔离后台进程。
 
 ## 触发器
 
@@ -78,41 +78,41 @@
 
 可以使用各种不同的 Azure 平台服务来托管后台任务：
 
-- [**Azure Web 应用**](#azure-web-sites-and-webjobs)。可以根据 Web 应用上下文中各种不同类型的脚本或可执行程序，使用 WebJobs 来执行自定义作业。
+- [**Azure Web Apps 和 Web 作业**](#azure-web-apps-and-webjobs)。可以根据 Web 应用上下文中各种不同类型的脚本或可执行程序，使用 Web 作业来执行自定义作业。
 - [**Azure 云服务 Web 和辅助角色**](#azure-cloud-services-web-and-worker-roles)。可以在作为后台任务执行的角色中编写代码。
 - [**Azure 虚拟机**](#azure-virtual-machines)。如果你有 Windows 服务或想要使用 Windows 任务计划程序，则常见的做法是将后台任务托管在专用虚拟机中。
 
 以下部分更详细地介绍了其中的每个选项，并描述了一些注意事项来帮助你选择适当的选项。
 
-### Azure Web 应用和 Web 作业
+### Azure Web Apps 和 Web 作业
 
-可以使用 Azure Web 作业将自定义作业作为 Azure Web 应用托管应用程序中的后台作业来执行。Web 作业可将 Web 应用上下文中的脚本或可执行程序作为连续进程执行，或者在响应来自 Azure 计划程序或外部因素（例如更改存储 Blob 和消息队列）的触发器事件时执行。作业可按需启动和停止，并可以正常关闭。如果连续运行的 Web 作业失败，它将会自动重新启动。重试和错误操作可配置。
+可以使用 Azure Web 作业将自定义作业作为 Azure Web 应用中的后台任务来执行。Web 作业可在 Web 应用的上下文中作为连续进程运行，或者在响应来自 Azure 计划程序或外部因素（例如更改存储 Blob 和消息队列）的触发器事件时运行。作业可按需启动和停止，并可以正常关闭。如果连续运行的 Web 作业失败，它将会自动重新启动。重试和错误操作可配置。
 
 配置 Web 作业时：
 
-- 如果想要作业响应事件驱动的触发器，应将其配置为“连续运行”。脚本或进程存储在名为 site/wwwroot/app_data/jobs/continuous 的文件夹中。
-- 如果想要作业响应计划驱动的触发器，应将其配置为“按计划运行”。脚本或进程存储在名为 site/wwwroot/app_data/jobs/triggered 的文件夹中。
+- 如果想要作业响应事件驱动的触发器，应将其配置为“连续运行”。脚本或进程存储在名为 site/wwwroot/app\_data/jobs/continuous 的文件夹中。
+- 如果想要作业响应计划驱动的触发器，应将其配置为“按计划运行”。脚本或进程存储在名为 site/wwwroot/app\_data/jobs/triggered 的文件夹中。
 - 如果在配置作业时选择了“按需要运行”选项，在启动时，该作业将执行选择了“按计划运行”选项时的相同代码。
 
-Azure Web 作业在 Web 应用沙箱中运行，这意味着，它们可以访问环境变量，并与 Web 应用共享连接字符串等信息。作业有权访问运行该作业的计算机的唯一标识符。名为 **AzureJobsStorage** 的连接字符串可用于访问应用程序数据的 Azure 存储空间队列、Blob 和表，以及用于消息传送和通信的服务总线。名为 **AzureJobsDashboard** 的连接字符串可用于访问作业操作日志文件。
+Azure Web 作业在 Web 应用沙箱中运行，这意味着，它们可以访问环境变量，并与 Web 应用共享连接字符串等信息。作业有权访问运行该作业的计算机的唯一标识符。名为 **AzureWebJobsStorage** 的连接字符串可用于访问应用程序数据的 Azure 存储空间队列、Blob 和表，以及用于消息传送和通信的服务总线。名为 **AzureWebJobsDashboard** 的连接字符串可用于访问作业操作日志文件。
 
 Azure Web 作业具有以下特征：
 
 - **安全性**：Web 作业受 Web 应用的部署凭据保护。
 - **支持的文件类型**：Web 作业可以使用命令脚本 (.cmd)、批处理文件 (.bat)、PowerShell 脚本 (.ps1)、bash shell 脚本 (.sh)、PHP 脚本 (.php)、Python 脚本 (.py)、JavaScript 代码 (.js) 和可执行程序（.exe、.jar 等等）来定义。
 - **部署**：可以使用 Azure 门户部署脚本和可执行文件；可以使用 Visual Studio 或 Visual [Studio 2013 Update 4](http://www.visualstudio.com/news/vs2013-update4-rc-vs) 的 [WebJobsVs](https://visualstudiogallery.msdn.microsoft.com/f4824551-2660-4afa-aba1-1fcc1673c3d0) 加载项、使用 [Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started) 或通过直接复制到以下位置来创建和部署脚本与可执行文件：
-  - 对于触发的执行：site/wwwroot/app_data/jobs/triggered/{job name}
-  - 对于连续执行：site/wwwroot/app_data/jobs/continuous/{job name}
+  - 对于触发的执行：site/wwwroot/app\_data/jobs/triggered/{job name}
+  - 对于连续执行：site/wwwroot/app\_data/jobs/continuous/{job name}
 - **日志记录**：Console.Out 被视为（标记为）INFO，Console.Error 被视为 ERROR。可以使用 Azure 门户访问监视和诊断信息，可从站点直接下载日志文件。这些信息保存在以下位置：
   - 对于触发的执行：Vfs/data/jobs/continuous/jobName
   - 对于连续执行：Vfs/data/jobs/triggered/jobName
 - **配置**：可以使用门户、REST API 和 PowerShell 配置 Web 作业。可以使用与作业脚本位于同一根目录的配置文件（名为 settings.job）来提供作业的配置信息。例如：
-  - { "stopping_wait_time": 60 }
-  - { "is_singleton": true }
+  - { "stopping\_wait\_time": 60 }
+  - { "is\_singleton": true }
 
 ### 注意事项
 
-- 默认情况下，Web 作业会随 Web 应用缩放。但是，可以通过将 **is_singleton** 配置属性设置为 true，将作业配置为在单个实例上运行。单实例 Web 作业可用于你不想要缩放或作为多个同步实例运行的任务，例如重新编制索引、数据分析和类似任务。
+- 默认情况下，Web 作业会随 Web 应用缩放。但是，可以通过将 **is\_singleton** 配置属性设置为 true，将作业配置为在单个实例上运行。单实例 Web 作业可用于你不想要缩放或作为多个同步实例运行的任务，例如重新编制索引、数据分析和类似任务。
 - 若要将 Web 应用性能对任务的影响降到最低，请考虑在新的 App Service 计划中创建空的 Azure Web 应用，以托管可能长时间运行或资源密集型的 Web 作业。
 
 ### 详细信息
@@ -125,10 +125,10 @@ Azure Web 作业具有以下特征：
 
 可通过多种方式在云服务角色中实施后台任务：
 
-- 在角色中创建 **RoleEntryPoint** 类的实现，并使用它的方法来执行后台任务。任务在 WaIISHost.exe 的上下文中运行，并可以使用 **CloudConfigurationManager** 类的 **GetSetting** 方法来加载配置设置。有关详细信息，请参阅[生命周期（云服务）](#lifecycle-cloud-services-)。
-- 应用程序启动时，使用启动任务来执行后台任务。若要强制任务继续在后台运行，请将 **taskType** 属性设置为 **background**（如果不这样做，应用程序启动进程将会中止并等待任务完成）。有关详细信息，请参阅[在 Azure 中运行启动任务](http://msdn.microsoft.com/zh-cn/library/azure/hh180155.aspx)。
+- 在角色中创建 **RoleEntryPoint** 类的实现，并使用它的方法来执行后台任务。任务在 WaIISHost.exe 的上下文中运行，并可以使用 **CloudConfigurationManager** 类的 **GetSetting** 方法来加载配置设置。有关详细信息，请参阅[生命周期（云服务）](#lifecycle-cloud-services)。
+- 应用程序启动时，使用启动任务来执行后台任务。若要强制任务继续在后台运行，请将 **taskType** 属性设置为 **background**（如果不这样做，应用程序启动进程将会中止并等待任务完成）。有关详细信息，请参阅[在 Azure 中运行启动任务](/documentation/articles/cloud-services-startup-tasks)。
 - 可以使用 WebJobs SDK 将后台任务实施为作为启动任务启动的 Web 作业。有关详细信息，请参阅 [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)。
-- 使用启动任务可以安装一个 Windows 服务来执行一个或多个后台任务。必须将 **taskType** 属性设置为 **background**，以便服务在后台执行。有关详细信息，请参阅[在 Azure 中运行启动任务](http://msdn.microsoft.com/zh-cn/library/azure/hh180155.aspx)。
+- 使用启动任务可以安装一个 Windows 服务来执行一个或多个后台任务。必须将 **taskType** 属性设置为 **background**，以便服务在后台执行。有关详细信息，请参阅[在 Azure 中运行启动任务](/documentation/articles/cloud-services-startup-tasks)。
 
 ### 在 Web 角色中运行后台任务
 
@@ -162,9 +162,9 @@ Azure Web 作业具有以下特征：
 
 ## Azure 虚拟机
 
-实施后台任务时，可以避免将其部署到 Azure Web 应用或云服务，但有时不方便这样做。典型的示例包括 Windows 服务、第三方实用程序和可执行程序。它还可以包含针对托管应用程序以外的执行环境所编写的程序；例如，它可能是你想要从 Windows 或 .NET 应用程序执行的 Unix 或 Linux 程序。可以为 Azure 虚拟机选择各种操作系统，并在该虚拟机上运行你的服务或可执行文件。
+实施后台任务时，可以避免将其部署到 Azure Web Apps 或云服务，但有时这些选项可能不方便。典型的示例包括 Windows 服务、第三方实用程序和可执行程序。它还可以包含针对托管应用程序以外的执行环境所编写的程序；例如，它可能是你想要从 Windows 或 .NET 应用程序执行的 Unix 或 Linux 程序。可以为 Azure 虚拟机选择各种操作系统，并在该虚拟机上运行你的服务或可执行文件。
 
-若要确定何时使用虚拟机，请参阅 [Azure Web 应用、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm)。有关虚拟机选项的信息，请参阅 [Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)。有关虚拟机可用的操作系统和预建映像的详细信息，请参阅 [Azure 虚拟机库](http://azure.microsoft.com/gallery/virtual-machines/)。
+若要确定何时使用虚拟机，请参阅 [Azure 应用程序服务、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm)。有关虚拟机选项的信息，请参阅 [Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)。有关虚拟机可用的操作系统和预建映像的详细信息，请参阅 [Azure 虚拟机库](http://azure.microsoft.com/gallery/virtual-machines/)。
 
 若要在独立的虚拟机中启动后台任务，可以从多个选项中进行选择：
 
@@ -184,8 +184,8 @@ Azure Web 作业具有以下特征：
 
 ### 详细信息
 
-- Azure Web 应用上的[虚拟机](http://azure.microsoft.com/services/virtual-machines/)
-- [Azure 虚拟机常见问题解答](http://msdn.microsoft.com/zh-cn/library/azure/dn683781.aspx)
+- Azure 上的[虚拟机](http://azure.microsoft.com/services/virtual-machines/)
+- [Azure 虚拟机常见问题解答](/documentation/articles/virtual-machines-questions)
 
 ## 设计注意事项
 
@@ -229,9 +229,9 @@ Web 角色和辅助角色在启动、运行和停止时会经历一组不同的�
 
 - Azure 加载角色程序集，并在其中搜索派生自 **RoleEntryPoint** 的类。
 - 如果找到此类，则调用 **RoleEntryPoint.OnStart()**。重写此方法可初始化后台任务。
-- 完成 **OnStart** 方法后，Azure 将调用应用程序全局文件（如果存在，例如，运行 ASP.NET 的 Web 角色中的 Global.asax）中的 **Application_Start()**。
+- 完成 **OnStart** 方法后，Azure 将调用应用程序全局文件（如果存在，例如，运行 ASP.NET 的 Web 角色中的 Global.asax）中的 **Application\_Start()**。
 - Azure 在与 **OnStart()** 对同时执行的新前台线程调用 **RoleEntryPoint.Run()**。重写此方法可启动你的后台任务。
-- Run 方法结束时，Azure 会先对应用程序的全局文件（如果存在）调用 **Application_End()**，然后调用 **RoleEntryPoint.OnStop()**。可以重写 **OnStop** 方法来停止后台任务、清理资源、处置对象，并关闭任务可能已使用的连接。
+- Run 方法结束时，Azure 会先对应用程序的全局文件（如果存在）调用 **Application\_End()**，然后调用 **RoleEntryPoint.OnStop()**。可以重写 **OnStop** 方法来停止后台任务、清理资源、处置对象，并关闭任务可能已使用的连接。
 - Azure 辅助角色主机进程已停止。此时，该角色将被回收并重新启动。
 
 有关 **RoleEntryPoint** 类的用法详细信息和示例，请参阅[计算资源整合模式](http://msdn.microsoft.com/zh-cn/library/dn589778.aspx)。
@@ -245,7 +245,7 @@ Web 角色和辅助角色在启动、运行和停止时会经历一组不同的�
 - 如果后台任务引发了未处理的异常，则应该回收该任务，同时允许角色中的任何其他后台任务继续运行。但是，如果异常是由于任务外部的对象（例如共享存储）损坏所造成的，则应由 **RoleEntryPoint** 类处理异常，应取消所有任务，并允许 **Run** 方法结束。然后，Azure 将重新启动角色。
 - 使用 **OnStop** 方法可以暂停或终止后台任务并清理资源。这可能涉及到停止长时间运行的任务或多步骤任务，请务必考虑到这种操作的后果，以避免数据不一致。如果角色实例出于任何原因（用户启动的关机除外）而停止，**OnStop** 方法中运行的代码必须在五分钟内完成，然后才能将它强行终止。确保代码可以在这段时间内完成，或者可以容忍无法完成运行。  
 - 当 **RoleEntryPoint.OnStart** 方法返回 true 时，Azure 负载平衡器开始将流量定向到角色实例。因此，请考虑将所有初始化代码置于 **OnStart** 方法中，使未成功初始化的角色实例不会收到任何流量。
-- 除了 **RoleEntryPoint** 类的方法以外，还可以使用启动任务。你应该使用启动任务来初始化需要在 Azure 负载平衡器中更改的任何设置，因为在角色接收任何请求之前将执行这些任务。有关详细信息，请参阅[在 Azure 中运行启动任务](http://msdn.microsoft.com/zh-cn/library/azure/hh180155.aspx)。
+- 除了 **RoleEntryPoint** 类的方法以外，还可以使用启动任务。你应该使用启动任务来初始化需要在 Azure 负载平衡器中更改的任何设置，因为在角色接收任何请求之前将执行这些任务。有关详细信息，请参阅[在 Azure 中运行启动任务](/documentation/articles/cloud-services-startup-tasks)。
 - 如果启动任务发生错误，它可以强制角色持续重新启动。这可能会阻止你执行到以前暂存版本的 VIP 回切，因为交换需要对角色的独占访问权限，而在角色重新启动时无法做到这一点。若要解决此问题：
 	-  将以下代码添加到角色中 **OnStart** 和 **Run** 方法的开头：
 
@@ -279,11 +279,11 @@ Web 角色和辅助角色在启动、运行和停止时会经历一组不同的�
 
 后台任务必须提供足够的性能，确保它们不会阻止应用程序，或者不会因系统负载不足而延迟操作时导致不一致。通常，可以通过缩放托管后台任务的计算实例来提高性能。规划和设计后台任务时，请注意以下有关可缩放性和性能的要点：
 
-- Azure 根据当前的需求和负载或预定义的计划，支持对 Web 应用、云服务 Web 角色和辅助角色以及虚拟机托管的部署使用自动缩放（向外缩放和向内缩放）。使用此功能可确保整个应用程序具有足够的性能，同时将运行时成本降到最低。
+- Azure 根据当前的需求和负载或预定义的计划，支持对 Web Apps、云服务 Web 角色和辅助角色以及虚拟机托管的部署使用自动缩放（向外缩放和向内缩放）。使用此功能可确保整个应用程序具有足够的性能，同时将运行时成本降到最低。
 - 当后台任务具有与云服务应用程序其他部分（例如，UI 或数据访问层等组件）的不同的性能时，将不同辅助角色的后台任务托管在一起可让 UI 和辅助任务角色单独进行缩放以管理负载。如果多个后台任务彼此有明显不同的性能，请考虑将它们分割成不同的辅助角色并单独缩放每个角色类型，但请注意，相比将所有任务合并成较少的角色，这可能会增加运行时成本。
 - 只是缩放角色可能不足以防止在低负载下损失性能。你还可能需要缩放存储队列和其他资源，以防止整体处理链的单个点变成瓶颈。另外，请考虑其他限制，例如存储的最大吞吐量，以及应用程序的其他服务和后台任务依赖的服务。
 - 必须针对缩放设计后台任务。例如，后台任务必须能够动态检测正在使用的存储队列数，以侦听相应的队列或向其发送消息。
-- 默认情况下，Web 作业会随着其关联的 Azure Web 应用实例进行缩放。但是，如果你只想要将 Web 作业当作单个实例运行，可以创建包含 JSON 数据 **{ "is_singleton": true }** 的 Settings.job 文件。这会强制 Azure 只运行 Web 作业的一个实例，即使关联的 Web 应用有多个实例。对于必须以单个实例运行的计划作业而言，这可能是有用的方法。
+- 默认情况下，Web 作业会随着其关联的 Azure Web Apps 实例进行缩放。但是，如果你只想要将 Web 作业当作单个实例运行，可以创建包含 JSON 数据 **{ "is\_singleton": true }** 的 Settings.job 文件。这会强制 Azure 只运行 Web 作业的一个实例，即使关联的 Web 应用有多个实例。对于必须以单个实例运行的计划作业而言，这可能是有用的方法。
 
 ## 相关模式
 
@@ -306,8 +306,8 @@ Web 角色和辅助角色在启动、运行和停止时会经历一组不同的�
 - [执行后台任务](http://msdn.microsoft.com/zh-cn/library/ff803365.aspx)
 - [Azure 角色启动生命周期](http://blog.syntaxc4.net/post/2011/04/13/windows-azure-role-startup-life-cycle.aspx)（博客文章）
 - [Azure 云服务角色生命周期](http://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Windows-Azure-Cloud-Services-Role-Lifecycle)（视频）
-- [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)
-- [Azure 队列和服务总线队列 - 比较与对照](http://msdn.microsoft.com/zh-cn/library/hh767287.aspx)
-- [如何在云服务中启用诊断](http://msdn.microsoft.com/zh-cn/library/dn482131.aspx)
+- [Azure WebJobs SDK 入门](websites-dotnet-webjobs-sdk-get-started/)
+- [Azure 队列和服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted)
+- [如何在云服务中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_0118_2016-->

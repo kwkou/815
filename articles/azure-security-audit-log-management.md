@@ -3,14 +3,14 @@
    description="文章提供了从托管在 Azure 上的服务生成、收集和分析安全日志的介绍。它面向每天要进行信息资产管理的 IT 专业人员和安全分析人员（包括负责其组织安全和合规性工作的人员）。"
    services="virtual-machines, cloud-services, storage"
    documentationCenter="na"
-   authors="TerryLanfear"
+   authors="nayak-mahesh"
    manager="msStevenPo"
    editor=""/>
 
 <tags
    ms.service="azure-security"
-   ms.date="08/13/2015"
-   wacn.date="01/21/2016"/>
+   ms.date="12/10/2015"
+   wacn.date=""/>
 
 # Windows Azure 安全和审核日志管理
 
@@ -52,11 +52,11 @@ EnableLogOnAudit.cmd 的内容：
     auditpol.exe /set /category:"Logon/Logoff" /success:enable /failure:enable
     Exit /B 0
 
-前面示例中使用的 [Auditpol.exe](https://technet.microsoft.com/zh-cn/library/cc731451.aspx) 是 Windows Server 操作系统中包含的命令行工具，该操作系统允许您管理审核策略设置。
+前面示例中使用的 [Auditpol.exe](https://technet.microsoft.com/library/cc731451.aspx) 是 Windows Server 操作系统中包含的命令行工具，该操作系统允许您管理审核策略设置。
 
-除了生成 Windows 事件日志，还可以对各种 Windows 操作系统组件进行配置以生成日志，这些日志对于安全分析和监视而言非常重要。例如，自动为 Web 角色生成的 Internet Information Services (IIS) 日志和 http.err 日志，可以配置这些日志以进行收集。这些日志提供有价值的信息，可用于标识未经授权的访问或针对您的 Web 角色的攻击。有关详细信息，请参阅[在 IIS 中配置日志记录](http://technet.microsoft.com/zh-cn/library/hh831775.aspx)和 [ IIS 高级日志记录 – 自定义日志记录](http://www.iis.net/learn/extensions/advanced-logging-module/advanced-logging-for-iis-custom-logging)。
+除了生成 Windows 事件日志，还可以对各种 Windows 操作系统组件进行配置以生成日志，这些日志对于安全分析和监视而言非常重要。例如，自动为 Web 角色生成的 Internet Information Services (IIS) 日志和 http.err 日志，可以配置这些日志以进行收集。这些日志提供有价值的信息，可用于标识未经授权的访问或针对您的 Web 角色的攻击。有关详细信息，请参阅[在 IIS 中配置日志记录](http://technet.microsoft.com/library/hh831775.aspx)和 [ IIS 高级日志记录 – 自定义日志记录](http://www.iis.net/learn/extensions/advanced-logging-module/advanced-logging-for-iis-custom-logging)。
 
-若要更改 Web 角色中的 IIS 日志记录，客户可以向 Web 角色服务定义文件添加启动任务。下面的示例为名为 Contoso 的 Web 应用启用 HTTP 日志记录，并指定 IIS 应记录 Contoso Web 应用的所有请求。
+若要更改 Web 角色中的 IIS 日志记录，客户可以向 Web 角色服务定义文件添加启动任务。下面的示例为名为 Contoso 的网站启用 HTTP 日志记录，并指定 IIS 应记录 Contoso 网站的所有请求。
 
 更新 IIS 配置的任务需要包含在 Web 角色的服务定义文件中。对服务定义文件的以下更改运行一个启动任务，该启动任务通过运行名为 ConfigureIISLogging.cmd 的脚本来配置 IIS 日志记录。
 
@@ -164,7 +164,7 @@ Azure PowerShell SDK 提供用于配置 Azure 虚拟机上的 Azure 诊断的 cm
 ##### <a name="step4"></a> 步骤 4：配置 Azure 诊断
  使用以下步骤启用 Azure 诊断并启动数据收集：
 
- 1.	若要打开 Azure PowerShell，键入 **Add-AzureAccount -Environment AzureChinaCloud**，然后按 ENTER。
+ 1.	若要打开 Azure PowerShell，键入 **Add-AzureAccount**，然后按 ENTER。
  2.	使用您的 Azure 帐户进行登录。
  3.	运行以下 PowerShell 脚本。请确保更新 storage\_name、key、config\_path、service\_name 和 vm\_name。
 
@@ -174,7 +174,7 @@ $key = "<Storage Key>"
 $config_path="<Path Of WAD Config XML>"
 $service_name="<Service Name. Usually it is same as VM Name>"
 $vm_name="<VM Name>"
-$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storage_name -StorageAccountKey $key
+$storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key
 $VM1 = Get-AzureVM -ServiceName $service_name -Name $vm_name
 $VM2 = Set-AzureVMDiagnosticsExtension -DiagnosticsConfigurationPath $config_path -Version "1.*" -VM $VM1 -StorageContext $storageContext
 $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
@@ -199,7 +199,8 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
 
 1.	在 Visual Studio（2013、2012 和 2010 SP1）中，单击“视图”，然后单击“服务器资源管理器”。
 2.	导航到您的存储帐户。
-3.	单击“表”，然后双击相应的表来查看从虚拟机中收集的安全日志。![][2]
+3.	单击“表”，然后双击相应的表来查看从虚拟机中收集的安全日志。
+![][2]
 
 4.	右键单击名为 WADWindowsEventLogsTable 的表，然后单击“查看数据”以打开表视图，如下所示：
 
@@ -310,8 +311,7 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
 3.	选择 **ASP.NET** Web 角色。
 4.	选择 **MVC** 项目。
 5.	在解决方案资源管理器中，单击“角色”，然后双击“Web 角色” (WebRole1) 以打开“属性”窗口。
-6.	在“配置”选项卡上，清除“启用诊断”复选框以禁用 Visual Studio 2013 随附的 Azure 诊断版本。
-![][8]
+6.	在“配置”选项卡上，清除“启用诊断”复选框以禁用 Visual Studio 2013 随附的 Azure 诊断版本。 ![][8]
 
 7.	生成你的解决方案，以确认不会出错。
 8.	打开 WebRole1/Controllers/HomeController.cs 文件。
@@ -354,7 +354,7 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
     $key = " <storage key>"
     $config_path="<path to configuration XML file>"
     $service_name="<Cloud Service Name>"
-    $storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storage_name -StorageAccountKey $key
+    $storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key
     Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name
 
 若要验证您的服务是否具有最新的诊断配置，请运行以下 Azure PowerShell 命令：
@@ -507,8 +507,8 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
 
 1.	打开 Web 浏览器并导航到云服务 Web 角色（例如，http://contosowebrole.chinacloudapp.cn/)）。
 2.	导航到“关于”和“联系人”页面以创建部分日志事件。
-3.	导航到生成状态代码 500 的页面（例如，http://contosowebrole.chinacloudapp.cn/Home/StatusCode500)）。
-您应该会看到一个错误，如下所示。请记住，我们在标题为“设置云服务名上日志收集管道的新实例”部分的步骤 1 中为 **StatusCode500** 添加了代码。![][16]
+3.	导航到生成状态代码 500 的页面（例如，http://contosowebrole.chinacloudapp.cn/Home/StatusCode500 ）。您应该会看到一个错误，如下所示。请记住，我们在标题为“设置云服务名上日志收集管道的新实例”部分的步骤 1 中为 **StatusCode500** 添加了代码。
+![][16]
 4.	打开到您的云服务实例的远程桌面会话。
 5.	打开 IIS 管理器。
 6.	默认情况下，启用 IIS 日志记录并将其设置为每小时生成包含 W3C 格式中的所有字段的文件。单击“浏览”，至少会显示一个日志文件，如下所示：
@@ -519,7 +519,8 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
 
 8.	右键单击并选中“查看 Blob 容器”以显示存储在 blob 中的 IIS 日志文件：
 ![][19]
-9.	在 IIS 事件都位于客户的存储帐户后，利用 HDInsight 分析的应用程序可以用于执行事件聚合。下面的折线图是显示 HTTP 状态代码 500 的事件聚合任务的一个示例：![][20]
+9.	在 IIS 事件都位于客户的存储帐户后，利用 HDInsight 分析的应用程序可以用于执行事件聚合。下面的折线图是显示 HTTP 状态代码 500 的事件聚合任务的一个示例：
+![][20]
 
 ## 安全日志收集的建议
 在收集安全日志时，我们建议您：
@@ -550,20 +551,20 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
 ## Azure Active Directory 报告
 Azure Active Directory (Azure AD) 包括一组安全、使用情况和审核日志报告，让您清楚地了解 Azure AD 租户的完整性和安全性。例如，Azure AD 能够自动分析用户活动和显示异常访问，然后通过客户可见的报告提供这一功能。
 
-通过“Active Directory”>“目录”下的[Azure 管理门户](https://manage.windowsazure.cn/)提供这些报告。其中一些报告是免费的，而其他报告作为 Azure AD Premium 版本的一部分功能提供。有关 Azure AD 报告的详细信息，请参阅[查看访问和使用情况报告](http://msdn.microsoft.com/zh-cn/library/azure/dn283934.aspx)。
+通过“Active Directory”>“目录”下的“[Azure 管理门户](https://manage.windowsazure.cn/)”提供这些报告。其中一些报告是免费的，而其他报告作为 Azure AD Premium 版本的一部分功能提供。有关 Azure AD 报告的详细信息，请参阅[查看访问和使用情况报告](http://msdn.microsoft.com/zh-cn/library/azure/dn283934.aspx)。
 
 ## Azure 操作日志
 与您的 Azure 订阅资源相关的操作日志还可通过管理门户中的“操作日志”功能提供。
 
-若要查看“操作日志”，请打开[Azure 管理门户](https://manage.windowsazure.cn/)，依次单击“管理服务”和“操作日志”。
+若要查看“操作日志”，请打开“[Azure 管理门户](https://manage.windowsazure.cn/)”，依次单击“管理服务”和“操作日志”。
 
 ## <a name="diagnostics"></a>支持 Azure 诊断的数据源
 
 | 数据源 | 说明 |
 |----- | ----- |
-| IIS Logs | 有关 IIS Web 应用的信息 |
+| IIS Logs | 有关 IIS 网站的信息 |
 | Azure Diagnostics基础结构日志 | 有关 Azure 诊断的信息 |
-| IIS 失败请求日志 | 有关 IIS Web 应用或应用程序的失败请求的信息 |
+| IIS 失败请求日志 | 有关 IIS 网站或应用程序的失败请求的信息 |
 | Windows 事件日志 | 发送到 Windows 事件日志记录系统的信息 |
 | 性能计数器 | 操作系统和自定义性能计数器 |
 | 故障转储 | 有关应用程序崩溃时进程状态的信息 |
@@ -616,4 +617,4 @@ Azure Active Directory (Azure AD) 包括一组安全、使用情况和审核日�
 [19]: ./media/azure-security-audit-log-management/sec-view-blob-container.png
 [20]: ./media/azure-security-audit-log-management/sec-hdinsight-analysis.png
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->
