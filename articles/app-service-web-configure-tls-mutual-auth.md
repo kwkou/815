@@ -1,6 +1,3 @@
-<!-- not suitable for Mooncake -->
-<!-- ? -->
-
 <properties 
 	pageTitle="如何为网站配置 TLS 相互身份验证" 
 	description="了解如何将网站配置为使用 TLS 客户端证书身份验证。" 
@@ -25,17 +22,19 @@
 
 你可以使用 [ARMClient 工具](https://github.com/projectkudu/ARMClient)轻松创建 REST API 调用。使用该工具登录之后，需要发出以下命令：
 
+>[AZURE.NOTE] 使用 `ARMClient.exe login [environment name]` 登陆时， `[environment name]` 应为 `AzureChinaCloud`。
+
     ARMClient PUT subscriptions/{Subscription Id}/resourcegroups/{Resource Group Name}/providers/Microsoft.Web/sites/{Website Name}?api-version=2015-04-01 @enableclientcert.json -verbose
     
 将 {} 中的所有内容替换为网站的信息，并创建包含以下 JSON 内容的 enableclientcert.json 文件：
 
-> {
->   "location": "My web site Location",   
->   "properties": 
->   {  
->     "clientCertEnabled": true
->   }
-> }  
+	{
+	   "location": "My web site Location",   
+	   "properties": 
+	   {  
+	     "clientCertEnabled": true
+	   }
+	}  
 
 
 确保将“location”的值更改为网站所在的位置，例如 China North 或 China East。
