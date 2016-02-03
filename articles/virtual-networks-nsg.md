@@ -104,7 +104,7 @@ NSG 规则包含以下属性。
 
 2. 你要过滤其进出流量的资源是连接到现有 VNet 中的子网，还是连接到新的 VNet 或其子网？
  
-有关如何针对 Azure 中的网络安全进行规划的详细信息，请参阅[云服务和网络安全最佳实践](/documentation/articles/best-practices-network-security)。
+<!-- 有关如何针对 Azure 中的网络安全进行规划的详细信息，请参阅[云服务和网络安全最佳实践](/documentation/articles/best-practices-network-security)。-->
 
 ## 设计注意事项
 
