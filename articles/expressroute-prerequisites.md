@@ -40,7 +40,7 @@
 
 ## 安全与防火墙
 
-有关安全与防火墙信息，请参阅 [Microsoft 云服务和网络安全](/documentation/articles/best-practices-network-security)一文。
+有关安全与防火墙信息，请参阅<!-- [-->Microsoft 云服务和网络安全<!--](/documentation/articles/best-practices-network-security)-->一文。
 
 ## 后续步骤
 
