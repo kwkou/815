@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="连接到 SQL 数据库：链接、最佳实践和设计准则" 
+	pageTitle="连接到 SQL 数据库：最佳实践 | Windows Azure" 
 	description="一个入门主题，其中收集了通过 ADO.NET 和 PHP 等技术连接到 Azure SQL 数据库的客户端程序的相关链接和最佳实践建议。" 
 	services="sql-database" 
 	documentationCenter="" 
@@ -9,9 +9,9 @@
 
 
 <tags 
-	ms.service="sql-database" 
-	ms.date="09/15/2015" 
-	wacn.date="10/17/2015"/>
+	ms.service="sql-database"
+	ms.date="11/13/2015" 
+	wacn.date="12/22/2015"/>
 
 
 # 连接到 SQL 数据库：最佳实践和设计准则
@@ -20,17 +20,21 @@
 本主题能够很好地帮助你学习如何与 Azure SQL 数据库建立客户端连接。其中提供了你可以用来连接到 SQL 数据库以及与之进行交互的各种技术的代码示例的链接。这些技术包括企业库、JDBC、PHP，等等。无论你使用何种具体技术连接到 SQL 数据库，所提供的信息均适用。
 
 
+<a id="a-tech-independent-recommend" name="a-tech-independent-recommend"></a>
+
 ## 独立于技术的建议
 
 
 - [以编程方式连接到 Azure SQL 数据库时的准则](http://msdn.microsoft.com/zh-cn/library/azure/ee336282.aspx) - 讨论了以下内容：
  - [端口和防火墙](/documentation/articles/sql-database-configure-firewall-settings)
  - 连接字符串
-- [Azure SQL 数据库资源管理](https://msdn.microsoft.com/zh-CN/library/azure/dn338083.aspx) - 讨论了以下内容：
+- [Azure SQL 数据库资源管理](https://msdn.microsoft.com/zh-cn/library/azure/dn338083.aspx) - 讨论了以下内容：
  - 资源控制
  - 强制实施限制
  - 限制
 
+
+<a id="b-authentication-recommend" name="b-authentication-recommend"></a>
 
 ## 身份验证建议
 
@@ -59,8 +63,10 @@
  - 如果一个人在多个数据库中都是包含用户，则可能有更多的密码需要记住或更新。
 
 
-有关进一步信息，请参阅[包含数据库](http://msdn.microsoft.com/zh-cn/library/ff929071.aspx)。
+[包含数据库用户 - 使你的数据库可移植](http://msdn.microsoft.com/zh-cn/library/ff929188.aspx)中提供了更多信息。
 
+
+<a id="c-connection-recommend" name="c-connection-recommend"></a>
 
 ## 连接建议
 
@@ -69,8 +75,7 @@
  - 默认值 15 秒对于依赖于 Internet 的连接而言太短。
 
 
-- 确保你的 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)允许端口 1433 上的传出 TCP 通信。
- - 你可以在 SQL 数据库服务器上或者为单个的数据库配置防火墙设置。
+- 在托管你的客户端程序的计算机上，确保防火墙允许端口 1433 上的传出 TCP 通信。
 
 
 - 如果客户端程序连接到 SQL 数据库 V12，而客户端运行在 Azure 虚拟机 (VM) 上，则必须打开虚拟机上的端口范围 11000-11999 和 14000-14999。请单击[此处](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)了解详细信息。
@@ -91,16 +96,6 @@
 - 关闭连接。
 
 
-#### 在使用池时引发的异常
-
-
-启用了连接池并且发生超时错误或其他登录错误时，将引发异常。后续连接尝试将在接下来的 5 秒钟内停止，这种行为称为*阻塞期*。
-
-如果应用程序尝试在阻塞期内连接，将再次引发第一个异常。阻塞期结束后，后续故障会导致一个新的阻塞期，其持续时间是前一阻塞期的两倍。
-
-阻塞期最长持续时间为 60 秒。
-
-
 ### V12 中的非 1433 端口
 
 
@@ -113,7 +108,6 @@
 
 <a name="TransientFaultsAndRetryLogicGm" id="TransientFaultsAndRetryLogicGm"></a>
 
-&nbsp;
 
 ## 暂时性错误和重试逻辑
 
@@ -122,9 +116,15 @@ Azure 系统能够在 SQL 数据库服务中出现大量工作负载时动态地
 
 但是，重新配置可能会导致客户端程序失去其与 SQL 数据库的连接。此错误称为*暂时性故障*。
 
-在重试之间大约等待 6 到 60 秒之后，客户端程序可以尝试重新建立连接。你必须在客户端中提供重试逻辑。
+如果你的客户端程序包含重试逻辑，它可以提供一段时间来让暂时性故障纠正自身，然后尝试重建连接。
 
-有关演示重试逻辑的代码示例，请参阅：[SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
+我们建议在第一次重试前延迟 5 秒钟。如果在少于 5 秒的延迟后重试，云服务有超载的风险。对于后续的每次重试，延迟应以指数级增大，最大值为 60 秒。
+
+[SQL Server 连接池 (ADO.NET)](http://msdn.microsoft.com/zh-cn/library/8xx3tyca.aspx) 中提供了有关使用 ADO.NET 的客户端的*阻塞期*的说明。
+
+
+有关演示重试逻辑的代码示例，请参阅：
+- [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
 
 
 ### 暂时性故障的错误编号
@@ -139,9 +139,11 @@ Azure 系统能够在 SQL 数据库服务中出现大量工作负载时动态地
 
 
 有关详细信息，请参阅：
-- [Azure SQL 数据库开发：操作指南主题](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx) 
+- [Azure SQL 数据库开发：操作指南主题](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
 - [Azure SQL 数据库连接问题故障排除](http://support.microsoft.com/zh-cn/kb/2980233/)
 
+
+<a id="e-technologies" name="e-technologies"></a>
 
 ## 技术
 
@@ -165,4 +167,4 @@ Azure 系统能够在 SQL 数据库服务中出现大量工作负载时动态地
 
 - [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_1207_2015-->

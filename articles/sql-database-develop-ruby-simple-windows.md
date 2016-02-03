@@ -11,7 +11,7 @@
 <tags 
 	ms.service="sql-database" 
 	ms.date="08/04/2015" 
-	wacn.date="09/15/2015"/>
+	wacn.date="12/22/2015"/>
 
 
 # 在 Windows上使用 Ruby 连接到 SQL 数据库
@@ -65,7 +65,7 @@ Ruby 示例依赖于 `AdventureWorks` 示例数据库。如果你尚未创建 `A
 
 本主题还将说明如何检索数据库连接字符串。
 
-## 连接到 SQL Database
+## 连接到 SQL 数据库
 
 [TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds) 函数用于连接到 SQL 数据库。
 
@@ -87,7 +87,7 @@ Ruby 示例依赖于 `AdventureWorks` 示例数据库。如果你尚未创建 `A
     client = TinyTds::Client.new username: 'yourusername@yourserver', password: 'yourpassword', 
     host: 'yourserver.database.chinacloudapi.cn', port: 1433, 
     database: 'AdventureWorks', azure:true 
-    results = client.execute("select * from SalesLT.Product") 
+    results = client.execute("SELECT c.CustomerID, c.CompanyName,COUNT(soh.SalesOrderID) AS OrderCount FROM SalesLT.Customer AS c LEFT OUTER JOIN SalesLT.SalesOrderHeader AS soh ON c.CustomerID = soh.CustomerID GROUP BY c.CustomerID, c.CompanyName ORDER BY OrderCount DESC") 
     results.each do |row| 
     puts row 
     end 
@@ -127,4 +127,4 @@ Ruby 示例依赖于 `AdventureWorks` 示例数据库。如果你尚未创建 `A
     puts row
     end
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1207_2015-->

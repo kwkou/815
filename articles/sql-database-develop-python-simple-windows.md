@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="在 Windows上使用 Python 连接到 SQL 数据库" 
-	description="提供了一个可以用于从 Windows 客户端连接到 Azure SQL 数据库的 Python 代码示例。该示例使用 pyodbc 驱动程序。"
+	description="提供了一个可以用于从 Windows 客户端连接到 Azure SQL 数据库的 Python 代码示例。该示例使用 pymssql 驱动程序。"
 	services="sql-database" 
 	documentationCenter="" 
 	authors="meet-bhagdev" 
@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="07/20/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="10/20/2015" 
+	wacn.date="12/22/2015"/>
 
 
 # 在 Windows上使用 Python 连接到 SQL 数据库
@@ -57,7 +57,7 @@
 [Pymssql.connect](http://pymssql.org/en/latest/ref/pymssql.html) 函数用于连接到 SQL 数据库。
 
 	import pymssql
-	conn = pymssql.connect(server='yourserver.database.windows.net', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
+	conn = pymssql.connect(server='yourserver.database.chinacloudapi.cn', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
 
 
 ## 执行 SQL SELECT 语句
@@ -110,6 +110,8 @@
 	cursor.execute("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server Express New', 'SQLEXPRESS New', 0, 0, CURRENT_TIMESTAMP)")
 	cnxn.rollback()
 
- 
+## 后续步骤
 
-<!---HONumber=69-->
+有关详细信息，请参阅 [Python 开发人员中心](/develop/python/)。
+
+<!---HONumber=Mooncake_1207_2015-->

@@ -1,19 +1,16 @@
 <properties
-	urlDisplayName="How to connect to an Azure SQL database using SQL Server Management Studio (SSMS)"
-	pageTitle="如何使用 SSMS 连接到 Azure SQL 数据库 | Microsoft Azure"
-	metaKeywords=""
-	description="了解如何使用 SSMS 连接到 Azure SQL 数据库。"
-	metaCanonical=""
-	services="sql-database"
-	documentationCenter=""
-	title="How to connect to an Azure SQL database using SSMS"
-	authors="sidneyh" solutions=""
-	manager="jhubbard" editor="" />
-
+   pageTitle="如何使用 SSMS 连接到 Azure SQL 数据库 | Windows Azure"
+   description="了解如何使用 SSMS 连接到 Azure SQL 数据库。"
+   services="sql-database"
+   documentationCenter=""
+   authors="sidneyh"
+   manager="jeffreyg"
+   editor=""
+   tags=""/>
 <tags
-	ms.service="sql-database"
-	ms.date="09/14/2015"
-	wacn.date="10/17/2015" />
+   ms.service="sql-database"
+   ms.date="09/14/2015"
+   wacn.date="12/22/2015" />
 
 # 使用 SQL Server Management Studio 进行连接 (SSMS)
 
@@ -22,14 +19,14 @@
 ## 先决条件
 
 * SQL Server Management Studio (SSMS) - 若要下载最新版本的 SSMS，请参阅[下载 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
-* [Microsoft Azure SQL 数据库入门](/documentation/articles/sql-database-get-started)中所述的 SQL 数据库 AdventureWorks 示例数据库。
+* [Microsoft Azure SQL 数据库入门](/documentation/articles/sql-database-get-started)中所述的 AdventureWorks 示例数据库。
 
 
 ## 获取完全限定的 Azure SQL 服务器名称
 
-若要连接到数据库，你需要服务器的完整名称 (****servername**.database.windows.net*)，该名称中包含要连接到的数据库。
+若要连接到数据库，你需要服务器的完整名称 (***servername**.database.chinacloudapi.cn*)，该名称中包含要连接到的数据库。
 
-1. 转到 [Azure 门户](https://www.windowsazure.cn)。
+1. 转到 [Azure 门户](https://manage.windowsazure.cn)。
 2. 浏览到要连接到的数据库。
 3. 找到完整的服务器名称：
 
@@ -46,7 +43,7 @@
 
     ![连接 > 数据库引擎][7]
 
-2. 在“连接到服务器”窗口的“服务器名称”框中，输入格式为 *&lt;服务器名称>*.**database.windows.net** 的服务器名称。
+2. 在“连接到服务器”窗口的“服务器名称”框中，键入格式为 *&lt;服务器名称>*.**database.chinacloudapi.cn** 的服务器名称。
 3. 在“身份验证”列表中，选择“SQL Server 身份验证”。
 4. 输入你创建 SQL 数据库服务器时指定的“登录名”和“密码”，然后单击“连接”。
 
@@ -55,7 +52,7 @@
 
 
 ### 如果连接失败
-确保创建的逻辑服务器防火墙允许来自本地计算机的连接。有关详细信息，请参阅[如何：在 SQL 数据库上配置防火墙设置](https://msdn.microsoft.com/zh-cn/library/azure/jj553530.aspx)。
+确保创建的逻辑服务器防火墙允许来自本地计算机的连接。有关详细信息，请参阅[如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings)。
 
 ## 运行示例查询
 
@@ -94,4 +91,4 @@
 [6]: ./media/sql-database-connect-to-database/server-name.png
 [7]: ./media/sql-database-connect-to-database/connect-dbengine.png
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_1207_2015-->

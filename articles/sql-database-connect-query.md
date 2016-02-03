@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="10/09/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/22/2015"/>
 
 
 # 使用 C&#x23; 连接和查询 SQL 数据库
@@ -31,7 +31,7 @@
 若要运行 C# 代码示例，你必须拥有：
 
 
-- Azure 帐户和订阅。你可以注册[免费试用版](http://wacn-ppe.chinacloudsites.cn/zh-cn/pricing/1rmb-trial/)。
+- Azure 帐户和订阅。你可以注册[试用版](/pricing/1rmb-trial/)。
 
 
 - Azure SQL 数据库服务的 **AdventureWorksLT** 演示数据库。
@@ -41,7 +41,7 @@
 - Visual Studio 2013 Update 4（或更高版本）。Microsoft 现在*免费*提供 Visual Studio Community。
  - [Visual Studio Community，下载](http://www.visualstudio.com/products/visual-studio-community-vs)
  - [Visual Studio 的更多免费选项](http://www.visualstudio.com/products/free-developer-offers-vs.aspx)
- - 或者，让本主题中后面的[步骤](#InstallVSForFree)介绍 [Azure 预览门户](http://portal.azure.com/)如何指导你安装 Visual Studio。
+ - 或者，使用本主题中稍后介绍的[步骤](#InstallVSForFree)，在 [Azure 门户](https://manage.windowsazure.cn)中安装 Visual Studio。
 
 
 <a name="InstallVSForFree" id="InstallVSForFree"></a>
@@ -53,7 +53,39 @@
 
 如果你需要安装 Visual Studio，可以：
 
-- 使用浏览器导航到 Visual Studio 产品网页（该网页提供免费下载及其他选项），免费安装 Visual Studio Community。
+- 使用浏览器导航到 Visual Studio 产品网页（该网页提供免费下载及其他选项），免费安装 Visual Studio Community；或者
+- 让 [Azure 门户](https://manage.windowsazure.cn)指导你找到下载网页，这将在后面的部分进行介绍。
+
+
+### 通过 Azure 门户安装 Visual Studio
+
+
+1. 通过 [Azure 门户](https://manage.windowsazure.cn)（网址为 https://manage.windowsazure.cn )登录。
+
+2. 单击“浏览*全部”>“SQL 数据库”。将打开边栏选项卡搜索数据库。
+
+3. 在顶部附近的筛选器文本框中，开始键入 **AdventureWorksLT** 数据库的名称。
+
+4. 当你在服务器上看到你的数据库行时，请单击该行。将为你的数据库打开边栏选项卡。
+
+5. 为方便起见，可单击以前每个边栏选项卡上的最小化控件。
+
+6. 单击数据库边栏选项卡顶部附近的“在 Visual Studio 中打开”按钮。将打开一个关于 Visual Studio 的新边栏选项卡，其中包含指向 Visual Studio 安装位置的链接。
+ 
+	![“在 Visual Studio 中打开”按钮][20-OpenInVisualStudioButton]
+
+7. 单击“Community (免费)”链接或类似的链接。将添加新的网页。
+
+8. 使用新网页上的链接安装 Visual Studio。
+
+9. 安装 Visual Studio 后，请在“在 Visual Studio 中打开”边栏选项卡中，单击“在 Visual Studio 中打开”按钮。将打开 Visual Studio。
+
+10. 在 **SQL Server 对象资源管理器**窗格中，Visual Studio 会要求你在对话框中填写连接字符串字段。
+ - 选择“SQL Server 身份验证”，而非“Windows 身份验证”。
+ - 记住要指定自己的 **AdventureWorksLT** 数据库（对话框中的“选项”>“连接属性”）。
+
+11. 在“SQL Server 对象资源管理器”中，展开数据库的节点。
+
 
 ## 步骤 2：在 Visual Studio 中创建新项目
 
@@ -61,13 +93,13 @@
 在 Visual Studio 中，按照“C#”>“Windows”>“控制台应用程序”的初学者模板创建新项目。
 
 
-1. 单击“文件”>“新建”>“项目”。将显示“****”对话框。
+1. 单击“文件”>“新建”>“项目”。将显示“***”对话框。
 
 2. 在“已安装”下，扩展到 C# 和 Windows，以便“控制台应用程序”选项显示在中间窗格中。
 
 	![“新建项目”对话框][30-VSNewProject]
 
-2. 对于“名称”，请输入 **ConnectAndQuery_Example**。单击**“确定”**。
+2. 对于“名称”，请输入 **ConnectAndQuery\_Example**。单击**“确定”**。
 
 
 ## 步骤 3：添加程序集引用以进行配置处理
@@ -90,7 +122,7 @@
 ## 步骤 4：获取连接字符串
 
 
-使用 [Azure 预览门户](http://portal.azure.com/)复制数据库的连接字符串。
+使用 [Azure 门户](https://manage.windowsazure.cn)复制数据库的连接字符串。
 
 首次使用时，系统会将 Visual Studio 连接到 Azure SQL 数据库的 **AdventureWorksLT** 数据库。
 
@@ -104,12 +136,12 @@
 1. 在 Visual Studio 中，从“解决方案资源管理器”窗格中打开 App.config 文件。
 
 2. 如下面的示例 App.config 代码示例所示，添加 **&#x3c;configuration&#x3e; &#x3c;/configuration&#x3e;** 元素。
- - 将 *{your_placeholders}* 替换为你自己的实际值：
+ - 将 *{your\_placeholders}* 替换为你自己的实际值：
 
 ```
 	<?xml version="1.0" encoding="utf-8" ?>
 	<configuration>
-	    <startup> 
+	   <startup> 
 	        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
 	    </startup>
 	
@@ -279,7 +311,7 @@ namespace ConnectAndQuery_Example
 在将客户端计算机的 IP 地址添加到 SQL 数据库防火墙之前，客户端 C# 程序无法连接到 Azure SQL 数据库。你的程序将失败，并显示简单的错误消息，指出必需的 IP 地址。
 
 
-可以使用 [Azure 管理门户](http://manage.windowsazure.cn)添加该 IP 地址。
+可以使用 [Azure 门户](https://manage.windowsazure.cn)添加该 IP 地址。
 
 
 
@@ -306,6 +338,7 @@ namespace ConnectAndQuery_Example
 
 
 - [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
+
 - 如果你的客户端程序运行在 Azure VM 上，请参阅<br/>[适用于 ADO.NET 4.5 和 SQL 数据库 V12 的 1433 之外的端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)，了解 1433 以外的 TCP 端口。
 
 
@@ -320,4 +353,4 @@ namespace ConnectAndQuery_Example
 
 [50-VSCopyToOutputDirectoryProperty]: ./media/sql-database-connect-query/connqry-vs-appconfig-copytoputputdir-h.png
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

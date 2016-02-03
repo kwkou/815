@@ -1,16 +1,15 @@
 <properties 
-	title="How to add a users to an elastic database pool" 
 	pageTitle="如何将用户添加到弹性数据库池" 
 	description="必须将具有权限的用户添加到池中的每个数据库" 
 	metaKeywords="azure sql database elastic databases credentials" 
 	services="sql-database" documentationCenter=""  
 	manager="jeffreyg" 
-	authors="sidneyh"/>
+	authors="ddove"/>
 
 <tags 
-	ms.service="sql-database" 
-	ms.date="07/27/2015" 
-	wacn.date="09/15/2015" />
+	ms.service="sql-database"
+	ms.date="11/03/2015"
+	wacn.date="12/22/2015" />
 
 # 如何将用户添加到弹性数据库池
 
@@ -29,9 +28,11 @@
 
 		CREATE USER admin1 FROM LOGIN login1;
 		
-3. 该用户还必须有足够的权限执行针对作业指定的脚本。使用 **sp\_addrolemember** 过程为用户提供所需的最低权限，以便能够成功执行脚本。
+3. 该用户还必须有足够的权限执行针对作业指定的脚本。使用 [ALTER ROLE](https://msdn.microsoft.com/zh-cn/library/ms189775.aspx) 为用户提供所需的最低权限，以便能够成功执行脚本。
 
 ## 后续步骤
+
+若要使用 Azure 门户创建和管理作业，请参阅[创建和管理弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-create-and-manage)。若要使用 PowerShell 创建作业，请参阅[使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）](/documentation/articles/sql-database-elastic-jobs-powershell)。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
@@ -39,4 +40,4 @@
 [1]: ./media/sql-database-elastic-jobs-overview/elastic-jobs.png
 <!--anchors-->
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1207_2015-->

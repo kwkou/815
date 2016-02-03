@@ -1,7 +1,5 @@
 <properties
-	urlDisplayName="How to connect to an Azure SQL database using SSMS"
 	pageTitle="如何使用 SSMS 连接到 Azure SQL 数据库 | Windows Azure"
-	metaKeywords=""
 	description="了解如何使用 SSMS 连接到 Azure SQL 数据库。"
 	metaCanonical=""
 	services="sql-database"
@@ -13,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="10/09/2015"
-	wacn.date="11/12/2015" />
+	wacn.date="12/22/2015" />
 
 # 使用 SQL Server Management Studio 进行连接
 
@@ -28,7 +26,7 @@
 
 ## 安装并启动 SQL Server Management Studio (SSMS)
 
-使用 SQL 数据库时，应使用最新版本的 SSMS。请参阅[下载 SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) 以获取最新版本的 SSMS。使用最新版本时，如果有最新的更新，SSMS 会自动通知你。
+使用 SQL 数据库时，应使用最新版本的 SSMS。请参阅[下载 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 以获取最新版本的 SSMS。使用最新版本时，如果有最新的更新，SSMS 会自动通知你。
 
 ## 启动 SSMS 并连接到 SQL 数据库服务器
 
@@ -43,7 +41,7 @@
 
 连接失败的最常见原因是服务器名称、用户名或密码错误，以及出于安全原因，服务器不允许进行连接。请确保服务器的防火墙设置允许来自本地计算机 IP 地址的连接和 SSMS 客户端使用 IP 地址的连接。有时这二者不同。
 
-如果连接失败是因为防火墙规则，错误消息中会报告该 IP 地址。请将该 IP 地址添加到服务器防火墙规则。有关详细信息，请参阅[如何：配置防火墙设置（Azure SQL 数据库）](/documentation/articles/sql-database-configure-firewall-settings)。
+如果连接由于防火墙设置而失败，最新版本的 SSMS 将在询问后为你创建防火墙规则。若要获取该版本，请参阅[下载 SSMS](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。如果你使用早期的版本，则错误消息中会报告 IP 地址，你需要将此 IP 地址添加到服务器防火墙规则。有关详细信息，请参阅[如何：配置防火墙设置（Azure SQL 数据库）](/documentation/articles/sql-database-configure-firewall-settings)。
 
 ## 运行示例查询
 
@@ -72,6 +70,6 @@
 
 可以按照与 SQL Server 基本相同的方法，使用 Transact-SQL 语句来创建和管理 Azure 中的数据库。如果你熟悉如何使用 SQL Server 的 Transact-SQL，请参阅 [Azure SQL 数据库 Transact-SQL 信息](/documentation/articles/sql-database-transact-sql-information)，了解差异摘要。
 
-如果你不熟悉 Transact-SQL，请参阅[教程：编写 Transact-SQL 语句](https://msdn.microsoft.com/library/ms365303.aspx)和 [Transact-SQL 参考（数据库引擎）](https://msdn.microsoft.com/library/bb510741.aspx)。
+如果你不熟悉 Transact-SQL，请参阅[教程：编写 Transact-SQL 语句](https://msdn.microsoft.com/zh-cn/library/ms365303.aspx)和 [Transact-SQL 参考（数据库引擎）](https://msdn.microsoft.com/zh-cn/library/bb510741.aspx)。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->
