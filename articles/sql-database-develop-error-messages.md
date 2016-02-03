@@ -9,9 +9,9 @@
 
 
 <tags 
-	ms.service="sql-database"
-	ms.date="11/04/2015" 
-	wacn.date="12/22/2015"/>
+	ms.service="sql-database" 
+	ms.date="12/06/2015" 
+	wacn.date="01/15/2016"/>
 
 
 # SQL 数据库客户端程序的错误消息
@@ -30,7 +30,7 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 在客户端程序中，你可以针对任何给定的错误，选择为用户提供由你自定义的替代消息。
 
 
-> [AZURE.TIP]以下有关[*暂时性故障*错误](#bkmk_connection_errors)的部分特别重要。
+> [AZURE.TIP]以下有关[ *暂时性故障* 错误](#bkmk_connection_errors)的部分特别重要。
 
 
 
@@ -55,7 +55,7 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 
 - System.Data.Entity.Core.EntityCommandExecutionException: 执行命令定义时出错。有关详细信息，请参阅内部异常。---> System.Data.SqlClient.SqlException: 在接收来自服务器的结果时发生传输级错误。(提供程序: 会话提供程序，错误: 19 - 物理连接不可用)
 
-暂时性故障错误应该提示客户端程序运行你设计的*重试逻辑*来重试操作。有关重试逻辑的代码示例，请参阅：
+暂时性故障错误应该提示客户端程序运行你设计的 *重试逻辑* 来重试操作。有关重试逻辑的代码示例，请参阅：
 
 
 - [SQL 数据库的客户端开发和快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
@@ -70,13 +70,11 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 | ---: | ---: | :--- |
 | 4060 | 16 | 无法打开该登录请求的数据库“%.&#x2a;ls”。登录失败。 |
 |40197|17|该服务在处理你的请求时遇到错误。请稍后重试。错误代码 %d。<br/><br/>当服务由于软件或硬件升级、硬件故障或任何其他故障转移问题而关闭时，你将收到此错误。错误 40197 的消息中嵌入的错误代码 (%d) 提供有关所发生的故障或故障转移类型的其他信息。错误 40197 的消息中嵌入的错误代码的一些示例为 40020、40143、40166 和 40540。<br/><br/>重新连接到 SQL 数据库服务器会自动将你连接到数据库的正常运行的副本。应用程序必须捕获错误 40197，记录该消息中嵌入的错误代码 (%d) 以供进行故障排除，然后尝试重新连接到 SQL 数据库，直到资源可用且再次建立连接为止。|
-|40501|20|服务当前正忙。请在 10 秒钟后重试请求。事件 ID: %ls。代码: %d。<br/><br/>*注意：*<br/>有关一般信息，请参阅 [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
+|40501|20|服务当前正忙。请在 10 秒钟后重试请求。事件 ID: %ls。代码: %d。<br/><br/> *注意：*<br/>有关一般信息，请参阅 [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
 |40613|17|数据库“%.&#x2a;ls”（在服务器“%.&#x2a;ls”上）当前不可用。请稍后重试连接。如果问题仍然存在，请与客户支持人员联系，并向其提供“%.&#x2a;ls”的会话追踪 ID。|
 |49918|16|无法处理请求。没有足够的资源，无法处理该请求。<br/><br/>服务当前正忙。请稍后重试请求。 |
 |49919|16|无法处理创建或更新请求。为订阅“%ld”处理的创建或更新请求过多。<br/><br/>服务正忙于处理订阅或服务器的多个创建或更新请求。为了优化资源，当前阻止了请求。请查询 [sys.dm\_operation\_stats](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx) 以了解挂起的操作。请等到挂起的创建或更新请求完成，或删除其中一个挂起的请求，然后重试请求。 |
 |49920|16|无法处理请求。为订阅“%ld”执行的操作过多。<br/><br/>服务正忙于处理此订阅的多个请求。为了优化资源，当前阻止了请求。请查询 [sys.dm\_operation\_status](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx) 以了解操作状态。请等到挂起的请求完成，或删除其中一个挂起的请求，然后重试请求。 |
-
-**注意：**建议在你的重试逻辑中包含联合身份验证错误 10053 和 10054。
 
 
 <a id="bkmk_b_database_copy_errors" name="bkmk_b_database_copy_errors">&nbsp;</a>
@@ -126,14 +124,14 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 
 |错误号|严重性|说明|
 |---:|---:|:---|
-|10928|20|资源 ID: %d。数据库的 %s 限制是 %d 且已达到该限制。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。<br/><br/>资源 ID 指示已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>注意：有关此错误以及如何解决它的详细信息，请参阅：<br/>[Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。 |
-|10929|20|资源 ID: %d。%s 最小保证为 %d，最大限制为 %d，数据库的当前使用率为 %d。但是，服务器当前太忙，无法支持针对该数据库的数目大于 %d 的请求。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。否则，请稍后重试。<br/><br/>资源 ID 指明已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>注意：有关此错误以及如何解决它的详细信息，请参阅：<br/>[Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。|
+|10928|20|资源 ID: %d。数据库的 %s 限制是 %d 且已达到该限制。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。<br/><br/>资源 ID 指示已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>*注意：*有关此错误以及如何解决它的详细信息，请参阅：<br/>• [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。 |
+|10929|20|资源 ID: %d。%s 最小保证为 %d，最大限制为 %d，数据库的当前使用率为 %d。但是，服务器当前太忙，无法支持针对该数据库的数目大于 %d 的请求。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。否则，请稍后重试。<br/><br/>资源 ID 指明已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>*注意：*有关此错误以及如何解决它的详细信息，请参阅：<br/>• [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。|
 |40544|20|数据库已达到大小配额。请将数据分区或删除、删除索引或查阅文档以找到可能的解决方案。|
 |40549|16|由于你有长时间运行的事务，已终止会话。请尝试缩短事务运行时间。|
 |40550|16|由于会话获取的锁过多，已终止该会话。请尝试在单个事务中读取或修改更少的行。|
-|40551|16|会话已由于过多的 `TEMPDB` 使用而终止。请尝试修改你的查询以减少使用临时表空间。<br/><br/>提示：如果你在使用临时对象，则通过在会话不再需要临时对象后删除这些临时对象，可以节省 `TEMPDB` 数据库中的空间。|
-|40552|16|由于过度使用事务日志空间，已终止该会话。请尝试在单个事务中修改更少的行。<br/><br/>提示：如果你在使用 `bcp.exe` 实用工具或 `System.Data.SqlClient.SqlBulkCopy` 类执行大容量插入，则尝试使用 `-b batchsize` 或 `BatchSize` 选项限制在各事务中复制到服务器的行数。如果你正在使用 `ALTER INDEX` 语句重新生成索引，请尝试使用 `REBUILD WITH ONLINE = ON` 选项。|
-|40553|16|由于过度使用内存，已终止该会话。请尝试修改你的查询以处理更少的行。<br/><br/>提示：在你的 Transact-SQL 代码中减少 `ORDER BY` 和 `GROUP BY` 操作数可以帮助降低查询的内存要求。|
+|40551|16|会话已由于过多的 `TEMPDB` 使用而终止。请尝试修改你的查询以减少使用临时表空间。<br/><br/>*提示：*如果你在使用临时对象，则通过在会话不再需要临时对象后删除这些临时对象，可以节省 `TEMPDB` 数据库中的空间。|
+|40552|16|由于过度使用事务日志空间，已终止该会话。请尝试在单个事务中修改更少的行。<br/><br/>*提示：*如果你在使用 `bcp.exe` 实用工具或 `System.Data.SqlClient.SqlBulkCopy` 类执行大容量插入，则尝试使用 `-b batchsize` 或 `BatchSize` 选项限制在各事务中复制到服务器的行数。如果你正在使用 `ALTER INDEX` 语句重新生成索引，请尝试使用 `REBUILD WITH ONLINE = ON` 选项。|
+|40553|16|由于过度使用内存，已终止该会话。请尝试修改你的查询以处理更少的行。<br/><br/>*提示：*在你的 Transact-SQL 代码中减少 `ORDER BY` 和 `GROUP BY` 操作数可以帮助降低查询的内存要求。|
 
 
 有关此错误以及如何解决它的详细信息，请参阅：
@@ -141,47 +139,6 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 
 - [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
 
-
-<a id="bkmk_d_federation_errors" name="bkmk_d_federation_errors">&nbsp;</a>
-
-## 联合错误
-
-
-下表介绍在使用联合时可能遇到的错误。
-
-
-> [AZURE.IMPORTANT]联合的当前实现将随 Web 和企业服务层一起停用。Azure SQL 数据库版本 V12 不支持 Web 和企业服务层。
-> 
-> 弹性缩放功能旨在让你以最小的工作量创建分片应用程序。
-> 
-> 有关弹性伸缩的详细信息，请参阅 [Azure SQL 数据库弹性缩放主题](/documentation/articles/sql-database-elastic-scale-documentation-map)。请考虑部署自定义分片解决方案，以最大限度地提高可缩放性、灵活性和性能。有关自定义分片的详细信息，请参阅[弹性数据库功能概述](/documentation/articles/sql-database-elastic-scale-introduction)。
-
-
-|错误号|严重性|说明|缓解措施|
-|---:|---:|:---|:---|
-|266|16|在多语句事务中不允许使用 <statement> 语句|在发出该语句之前，检查连接上的 `@@trancount` 是否为 0。|
-|2072|16|数据库“%.&#x2a;ls”不存在|在发出 `USE FEDERATION` 之前，检查 `sys.databases` 以了解数据库状态。|
-|2209|16|“%ls”附近有 %s 语法错误|`FEDERATED ON` 仅可以在联合成员中创建表时使用。|
-|2714|16|数据库中已存在名为“%.&#x2a;ls”的对象|联合名称已存在。|
-|10054、10053|20|在接收来自服务器的结果时发生传输级错误。主机上的软件已中止建立的连接|在应用程序中实现重试逻辑|
-|40530|15|<statement> 需是批处理中的唯一语句|确保批处理中不存在其他语句|
-|40604|16|由于将超过服务器的配额，无法执行 `CREATE DATABASE`|扩展服务器 db 计数配额|
-|45000|16|<statement> 操作失败。指定的联合名称 <federation_name> 无效|Federation\_name 不符合联合名称规则或不是有效标识符|
-|45001|16|<statement> 操作失败。指定的联合名称不存在|联合名称不存在|
-|45002|16|<statement> 操作失败。指定的键名称 <distribution_name> 无效|联合键不存在或无效|
-|45004|16|<statement> 操作失败。指定的值对于联合键 <distribution_name> 和联合 <federation_name> 无效|`USE FEDERATION`：使用联合键数据类型域中的边界值，或使用非 NULL 的边界值。<br/><br/>`ALTER FEDERATION SPLIT`：使用尚不是现有拆分点的联合键域中的有效值。<br/><br/>`ALTER FEDERATION DROP`：使用已是拆分点的联合键域中的有效值。|
-|45005|16|当正在对联合 <federation_name> 和 ID 为 <member_id> 的成员进行其他联合操作时，无法运行 <statement>|等待并发操作完成。|
-|45006|16|<statement> 操作失败。联合成员中不允许使用引用了联合表的引用表中的外键关系|不支持。|
-|45007|16|<statement> 操作失败。联合表之间的外键关系必须包含联合键列。|不支持|
-|45008|16|<statement> 操作失败。联合键数据类型与列数据类型不匹配|不支持。|
-|45009|16|<statement> 操作失败。此操作在筛选连接上不受支持|不支持。|
-|45010|16|<statement> 操作失败。不能更新联合键|不支持。|
-|45011|16|<statement> 操作失败。不能更新联合键架构|不支持。|
-|45012|16|为联合键指定的值无效|值必须在连接寻址的范围内。<br/><br/>如果已进行筛选，则为指定的联合键值。<br/><br/>如果未进行筛选，则为联合成员所涵盖的范围。|
-|45013|16|在另一个用户名下已经存在该 SID|从联合根中同一用户帐户的 SID 复制联合成员中某个用户的 SID。某些情况下，该 SID 可能已在使用中。|
-|45014|16|%ls 在 %ls 上不受支持|不支持的操作。|
-|45022|16|<statement> 操作失败。联合键 <distribution_name> 和联合 <federation_name> 已存在指定的边界值|指定一个已是边界值的值。|
-|45023|16|<statement> 操作失败。联合键 <distribution_name> 和联合 <federation_name> 不存在指定的边界值|指定一个尚不是边界值的值。|
 
 
 <a id="bkmk_e_general_errors" name="bkmk_e_general_errors">&nbsp;</a>
@@ -255,8 +212,9 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 |40651|16|无法创建服务器，因为订阅 <subscription-id> 被禁用。|
 |40652|16|无法移动或创建服务器。订阅 <subscription-id> 将超出服务器配额。|
 |40671|17|网关与管理服务之间的通信失败。请稍后重试。|
-|45168|16|SQL Azure 系统负载过小，正在设置单个服务器的并发 DB CRUD 操作数（例如 create database）的上限。在错误消息中指定的服务器已超过最大并发连接数。请稍后重试。|
-|45169|16|SQL Azure 系统负载过小，正在设置单个订阅的并发服务器 CRUD 操作数（例如 create server）的上限。在错误消息中指定的订阅已超过最大并发连接数，已拒绝请求。请稍后重试。|
+|40852|16|无法打开该登录请求的数据库“%.*ls”（在服务器“%.*ls”上）。仅允许使用已启用安全性的连接字符串访问数据库。若要访问此数据库，请修改你的连接字符串以在服务器 FQDN 中包含“secure”-“服务器名称”.database.chinacloudapi.cn 应修改为 “服务器名称”.database.`secure`.chinacloudapi.cn。|
+|45168|16|SQL Azure 系统负载过小，正在设置单个服务器的并发 DB CRUD 操作（例如 create database）数的上限。在错误消息中指定的服务器已超过最大并发连接数。请稍后重试。|
+|45169|16|SQL Azure 系统负载过小，正在设置单个订阅的并发服务器 CRUD 操作（例如 create server）数的上限。在错误消息中指定的订阅已超过最大并发连接数，已拒绝请求。请稍后重试。|
 
 
 ## 相关链接
@@ -264,4 +222,4 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 - [Azure SQL 数据库的一般性限制和指导原则](/documentation/articles/sql-database-general-limitations)
 - [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

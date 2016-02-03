@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/16/2015"
-	wacn.date="12/22/2015"/>
+	ms.date="12/01/2015"
+	wacn.date="01/15/2016"/>
 
 
 # 使用 Transact-SQL 创建 Azure SQL 数据库的副本
@@ -18,15 +18,16 @@
 **单一数据库**
 
 > [AZURE.SELECTOR]
+- [Azure 门户](/documentation/articles/sql-database-copy)
 - [PowerShell](/documentation/articles/sql-database-copy-powershell)
 - [SQL](/documentation/articles/sql-database-copy-transact-sql)
 
 
 
-以下步骤说明如何使用 Transact-SQL 复制 SQL 数据库。数据库复制操作使用 [CREATE DATABASE](/documentation/articles/) 语句将 SQL 数据库复制到新的数据库。副本是在相同或不同服务器上创建的数据库快照备份。
+以下步骤说明如何使用 Transact-SQL 复制 SQL 数据库。数据库复制操作使用 [CREATE DATABASE]() 语句将 SQL 数据库复制到新的数据库。副本是在相同或不同服务器上创建的数据库快照备份。
 
 
-> [AZURE.NOTE]Azure SQL 数据库会自动为你可以还原的每个用户数据库创建和维护备份。有关详细信息，请参阅[业务连续性概述](sql-database-business-continuity)。
+> [AZURE.NOTE]Azure SQL 数据库会自动为你可以还原的每个用户数据库创建和维护备份。有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
 
 
 复制过程完成后，新数据库将完全正常工作，并独立于源数据库。完成复制时，新数据库的事务处理方式将与源数据库保持一致。数据库副本的服务层和性能级别（定价层）都与源数据库相同。在完成该复制后，副本将成为能够完全行使功能的独立数据库。登录名、用户和权限可单独进行管理。
@@ -37,7 +38,7 @@
 
 若要完成本文中的步骤，你需要以下各项：
 
-- Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“免费试用”，然后再回来完成本文的相关操作即可。
+- Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
 - Azure SQL 数据库。如果你没有 SQL 数据库，请按照[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)文章中的步骤创建一个。
 - [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/zh-cn/library/ms174173.aspx)。如果你没有 SSMS，或无法使用本文中所述的功能，请[下载最新版本](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
 
@@ -96,6 +97,6 @@
 
 - [业务连续性概述](/documentation/articles/sql-database-business-continuity)
 - [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills)
-- [SQL 数据库文档](/documentation/services/sql-databases/)
+- [SQL 数据库文档](/documentation/services/sql-databases)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

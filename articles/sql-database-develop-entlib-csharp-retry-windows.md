@@ -10,11 +10,17 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="10/16/2015" 
-	wacn.date="12/22/2015"/>
+	ms.date="12/17/2015" 
+        wacn.date="01/15/2016"/>
 
 
 # 代码示例：Enterprise Library 6 中用于连接到 SQL 数据库的 C&#x23; 重试逻辑
+
+
+> [AZURE.SELECTOR]
+- [PHP](/documentation/articles/sql-database-develop-php-retry-windows)
+- [C#](/documentation/articles/sql-database-develop-csharp-retry-windows)
+- [C# EntLib6](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows)
 
 
 本主题提供了一个用于演示 Enterprise Library (EntLib) 的完整代码示例。EntLib 简化了与云服务（如 Azure SQL 数据库）进行交互的客户端程序的许多任务。我们的示例重点介绍包括暂时性故障的重试逻辑在内的重要任务。
@@ -25,7 +31,11 @@ EntLib 类旨在区分两种类别的运行时错误：
 - 永远不会自行更正的错误，如拼写错误的服务器名称。
 - 暂时性故障，例如，在 Azure 系统进行负载平衡的情况下，服务器在接受新连接时暂停了几秒钟。
 
+
 Enterprise Library 6 (EntLib60) 是最新版本，并已于 2013 年 4 月发布。
+
+- Microsoft 已向公众发布源代码。
+- Microsoft 没有进一步维护源代码的计划。
 
 
 ## 先决条件
@@ -46,7 +56,7 @@ Enterprise Library 6 (EntLib60) 是最新版本，并已于 2013 年 4 月发布
 你可能需要向 MSDN 注册你的电子邮件地址。步骤与下面类似：
 
 
-1. [转到 MSDN](http://msdn.microsoft.com/)。
+1. [转到 MSDN](http://msdn.microsoft.com)。
 2. 单击顶部附近的“MSDN 订阅”。
 3. 单击“立即注册”。
 4. 在表单中填写你的信息。
@@ -60,7 +70,9 @@ Enterprise Library 6 (EntLib60) 是最新版本，并已于 2013 年 4 月发布
 
 
 - 使用 Visual Studio 中的 *NuGet* 包管理器功能：
-- 在 NuGet 中，搜索 **enterpriselibrary**。
+ - 在 NuGet 中，搜索 **enterpriselibrary**。
+
+
 - 在“[EntLib60 的家庭文档主题](http://msdn.microsoft.com/zh-cn/library/dn169621.aspx)”中，找到标记为“下载”的行，然后单击 [Microsoft Enterprise Library 6](http://go.microsoft.com/fwlink/?linkid=290898)，以下载该二进制 .DLL 程序集文件。
 
 
@@ -82,7 +94,7 @@ EntLib 类用于构造其他 EntLib 类。在此代码示例中，构造和使�
  - **ExponentialBackoff** 对象。
  - **SqlDatabaseTransientErrorDetectionStrategy** 对象。
 4. 构造 **ReliableSqlConnection** 对象。输入参数包括：
- - 一个 **字符串** 对象 - 包含服务器名称和其他连接信息。
+ - 一个 **String** 对象 - 包含服务器名称和其他连接信息。
  - **RetryPolicy** 对象。
 5. 调用以通过 **RetryPolicy .ExecuteAction** 方法进行连接。
 6. 调用 **ReliableSqlConnection .CreateCommand** 方法。
@@ -105,18 +117,20 @@ Program.cs 源代码示例将在本主题后面部分提供。可以使用以下
 4. 在 cmd.exe 命令窗口中，按如下所示运行程序。图中还显示了运行后的实际输出：
 
 
-
+```
 [C:\MyVS\EntLib60Retry\EntLib60Retry\bin\Debug]
-<br/>&gt;&gt; EntLib60Retry.exe
+>> EntLib60Retry.exe
 
 database_firewall_rules_table   245575913
 filestream_tombstone_2073058421 2073058421
 filetable_updates_2105058535    2105058535
 
 [C:\MyVS\EntLib60Retry\EntLib60Retry\bin\Debug]
-<br/>&gt;&gt;
+>>
+```
 
 
+&nbsp;
 
 
 ## Program.cs 源代码
@@ -125,19 +139,19 @@ filetable_updates_2105058535    2105058535
 下面的 Program.cs 文件中包含此 EntLib 示例的所有源代码。
 
 
+```
+using     System;   // C#
+using G = System.Collections.Generic;
+using D = System.Data;
+using C = System.Data.SqlClient;
+using X = System.Text;
+using H = System.Threading;
+using Y = Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling;
 
-	using     System;   // C#
-	using G = System.Collections.Generic;
-	using D = System.Data;
-	using C = System.Data.SqlClient;
-	using X = System.Text;
-	using H = System.Threading;
-	using Y = Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling;
-	
-	namespace EntLib60Retry
-	{
-	   class Program
-	   {
+namespace EntLib60Retry
+{
+   class Program
+   {
       static void Main(string[] args)
       {
          Program program = new Program();
@@ -277,9 +291,9 @@ filetable_updates_2105058535    2105058535
       private C.SqlConnectionStringBuilder sqlConnectionSB;
       private D.IDbCommand dbCommand;
       private D.IDataReader dataReader;
-    }
-    }
-
+   }
+}
+```
 
 
 &nbsp;
@@ -289,11 +303,11 @@ filetable_updates_2105058535    2105058535
 
 
 - [Enterprise Library 6 – 2013 年 4 月](http://msdn.microsoft.com/zh-cn/library/dn169621.aspx)中提供了大量链接来帮助你了解更多信息。
+ - 如果你想要查看源代码，本主题顶部的按钮提供了[下载 EntLib60 源代码](http://go.microsoft.com/fwlink/p/?LinkID=290898)。
 
-- 如果你想要查看源代码，本主题顶部的按钮提供了[下载 EntLib60 源代码](http://go.microsoft.com/fwlink/p/?LinkID=290898)。
 
-
-- Microsoft 提供的 .PDF 格式的免费电子书：[Microsoft Enterprise Library 版本 2 开发人员指南](http://www.microsoft.com/download/details.aspx?id=41145)。
+- Microsoft 提供的 .PDF 格式的免费电子书：
+[Microsoft Enterprise Library 版本 2 开发人员指南](http://www.microsoft.com/zh-cn/download/details.aspx?id=41145)。
 
 
 - [Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling 命名空间](http://msdn.microsoft.com/zh-cn/library/microsoft.practices.enterpriselibrary.transientfaulthandling.aspx)
@@ -307,4 +321,4 @@ filetable_updates_2105058535    2105058535
 
 - [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->
