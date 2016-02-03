@@ -127,7 +127,6 @@
 - 若要了解如何指定安全策略，请参阅 [Azure 基于角色的访问控制](/documentation/articles/active-directory/role-based-access-control-configure)。  
 - 有关这些步骤的演示视频，请参阅[使用 Azure Active Directory 启用 Azure 资源的编程管理](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/Enabling-Programmatic-Management-of-an-Azure-Resource-with-Azure-Active-Directory)。
 - 若要了解如何使用 Azure PowerShell 或 Azure CLI 来处理 Active Directory 应用程序和服务主体，包括如何使用证书进行身份验证，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](./resource-group-authenticate-service-principal.md)。
-- 有关在 Azure 资源管理器中实现安全性的指南，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)。
 
 
 <!-- Images. -->

@@ -77,7 +77,7 @@
 
 <!--有关使用模板进行部署的信息，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。-->
 
-有关如何构建你的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)。
+<!-- 有关如何构建你的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)。 -->
 
 ## 标记
 
@@ -99,8 +99,6 @@
 
 你可以显式锁定关键资源，以防止用户删除或修改这些资源。有关详细信息，请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources)。
 
-有关最佳实践，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)
-
 ## 使用自定义策略管理资源
 
 资源管理器可让你创建自定义策略来管理资源。创建的策略类型多种多样，例如，对资源实施命名约定、限制哪些区域可以托管哪种资源，或者要求在资源中包含标记值，以便按部门安排计费。有关详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy)。
@@ -120,6 +118,5 @@
 - 若要了解如何创建模板，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)
 - 若要部署你创建的模板，请参阅[部署模板](/documentation/articles/resource-group-template-deploy)
 - 若要了解可以在模板中使用的函数，请参阅[模板函数](/documentation/articles/resource-group-template-functions)
-- 有关如何设计您的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)
 
 <!---HONumber=Mooncake_1221_2015-->

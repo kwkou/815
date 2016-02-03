@@ -301,8 +301,7 @@
 ## 后续步骤
   
 - 有关基于角色的访问控制的概述，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)  
-- 若要了解有关使用服务主体的门户的信息，请参阅[使用 Azure 门户创建新的 Azure 服务主体](/documentation/articles/resource-group-create-service-principal-portal)  
-- 有关在 Azure 资源管理器中实现安全性的指南，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)
+- 若要了解有关使用服务主体的门户的信息，请参阅[使用 Azure 门户创建新的 Azure 服务主体](/documentation/articles/resource-group-create-service-principal-portal) 
 
 
 <!-- Images. -->
