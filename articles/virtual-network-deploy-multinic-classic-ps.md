@@ -43,7 +43,7 @@
 
 你可以在[此处](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/classic/virtual-network-deploy-multinic-classic-ps.ps1)下载所用的完整 PowerShell 脚本。请按照以下步骤更改要在你的环境中使用的脚本。
 
-1. 基于你在上面[先决条件](#Prerequisites)中部署的现有资源组更改以下变量的值。
+1. 基于你在上面[先决条件](#Prerequisites)中部署的更改以下变量的值。
 
 		$location              = "China North"
 		$vnetName              = "WTestVNet"
