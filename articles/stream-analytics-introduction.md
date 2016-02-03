@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="流分析简介 | Windows Azure" 
-	description="了解 Azure 流分析，这是一种完全托管的云服务，可以帮助你分析物联网 (IoT) 实时提供的流式数据。" 
-	keywords="大数据分析、云服务、物联网、托管服务、流处理、流分析、流数据"
+	description="了解流分析，这是一种托管的服务，可以帮助你分析物联网 (IoT) 实时提供的流式数据。" 
+	keywords="分析即服务、托管服务、流处理、流式分析、什么是流分析"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -10,13 +10,13 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="11/06/2015" 
-	wacn.date="01/21/2016"/>
+	ms.date="12/04/2015" 
+	wacn.date="01/29/2016"/>
 
 
-# 什么是 Azure 流分析？
+# 什么是流分析？
 
-Azure 流分析 (ASA) 是一种完全托管的、经济高效的实时事件处理引擎，帮助开启来自数据的深入见解。通过流分析，可以针对设备、传感器、 Web 应用、社交媒体、应用程序、基础设施系统等的数据流，轻松地设置实时分析计算。
+Azure 流分析 (ASA) 是一种完全托管的、经济高效的实时事件处理引擎，帮助开启来自数据的深入见解。通过流分析，可以针对设备、传感器、网站、社交媒体、应用程序、基础设施系统等的数据流，轻松地设置实时分析计算。
 
 只需在 Azure 门户中单击几下，你便可创建一个流分析作业，用于指定流式数据的输入源，你的作业结果的输出接收器以及用类似 SQL 的语言表示的数据转换。你可以在 Azure 门户中监视并调整作业的规模/速度，从几千字节扩展到千兆字节或者每秒处理更多事件。
 
@@ -49,4 +49,4 @@ Azure 流分析 (ASA) 是一种完全托管的、经济高效的实时事件处�
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

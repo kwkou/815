@@ -1,6 +1,7 @@
 <properties 
-	pageTitle="创建作业 | Windows Azure" 
-	description="添加作业的学习路径段。"
+	pageTitle="如何为流分析创建数据分析处理作业 | Windows Azure" 
+	description="为流分析创建数据分析处理作业 | 学习路径段。"
+	keywords="数据分析处理"
 	documentationCenter=""
 	services="stream-analytics"
 	authors="jeffstokes72" 
@@ -9,19 +10,18 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="11/06/2015" 
-	wacn.date="12/17/2015"/>
+	ms.date="12/04/2015" 
+	wacn.date="01/29/2016"/>
+# 如何为流分析创建数据分析处理作业
 
-# 创建作业
+在 Azure 流分析中的最上层资源是一个流分析作业。它包含一个或多个输入数据源、一个表达数据转换的查询以及一个或多个结果写入的输出目标。用户可以利用所有这些元素，针对流式数据方案进行数据分析处理。
 
-在 Azure 流分析中的最上层资源是一个流分析作业。它包含一个或多个输入数据源、一个表达数据转换的查询以及一个或多个结果写入的输出目标。
-
-要开始使用流分析，请创建一个新的流分析作业。请注意，该操作直到作业启动后才对计费产生影响。
+若要开始使用流分析，请创建一个新的流分析作业。请注意，该操作直到作业启动后才对计费产生影响。
 
 1.  登录在线 [Windows Azure 门户](http://manage.windowsazure.cn)。
 2.  在 Azure 门户中：依次单击“新建”、“数据服务”，再单击“流分析”和“快速创建”。
 
-    ![快速创建向导](./media/stream-analytics-create-a-job/1-stream-analytics-create-a-job.png)
+    ![数据分析处理作业向导](./media/stream-analytics-create-a-job/1-stream-analytics-create-a-job.png)
 
 3.  指定流分析作业所需的配置。
 	- 在“作业名称”框中，输入一个名称以标识该流分析作业。对“作业名称”进行验证后，作业名称框中会出现一个绿色的复选标记。“作业名称”只能包含字母数字字符和字符“-”，且长度必须在 3 到 63 个字符之间。
@@ -31,11 +31,11 @@
 
 4.  当新的流分析作业选项配置完成后，请单击“创建流分析作业”。创建流分析作业需要几分钟时间。要查看状态，你可以在通知中心监视进度。
 
-    ![通知中心](./media/stream-analytics-create-a-job/2-stream-analytics-create-a-job.png)
+    ![数据分析处理作业通知中心](./media/stream-analytics-create-a-job/2-stream-analytics-create-a-job.png)
 
 5.  新作业在显示时的状态为**“已创建”**。请注意，“启动”按钮被禁用。你必须先配置作业输入、查询和输出，然后才能启动作业。
 
-    ![作业状态](./media/stream-analytics-create-a-job/3-stream-analytics-create-a-job.png)
+    ![数据分析处理作业作业状态](./media/stream-analytics-create-a-job/3-stream-analytics-create-a-job.png)
 
 ## 获取帮助
 如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=AzureStreamAnalytics)
@@ -48,4 +48,4 @@
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

@@ -1,23 +1,22 @@
-<properties 
-	pageTitle="定义输出 | Windows Azure" 
-	description="了解流分析输出" 
-	keywords="大数据分析、云服务、物联网、托管服务、流处理、流分析、流数据"
-	services="stream-analytics,documentdb,sql-database,event-hubs,service-bus,storage" 
-	documentationCenter="" 
-	authors="jeffstokes72" 
-	manager="paulettm" 
+<properties
+	pageTitle="数据转换输出：针对存储、分析的选项 | Windows Azure"
+	description="了解如何使流分析数据转换输出输出到数据存储选项。另外，请使用 Power BI 来获取分析结果。"
+	keywords="数据转换、分析结果、数据存储选项"
+	services="stream-analytics,documentdb,sql-database,event-hubs,service-bus,storage"
+	documentationCenter=""
+	authors="jeffstokes72"
+	manager="paulettm"
 	editor="cgronlun"/>
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="11/12/2015" 
-	wacn.date="12/17/2015"/>
+	ms.date="12/01/2015"
+	wacn.date="01/29/2016"/>
+# 使流分析数据转换输出输出到分析工具和数据存储选项
 
-# 了解流分析输出
+创作流分析作业时，需考虑如何使用数据转换输出。如何查看流分析作业的结果？ 使用哪些工具来显示数据分析结果？ 数据存储选项是必需的吗？
 
-创作流分析作业时，一个考虑因素是将如何使用作业的输出。数据转换的使用者如何查看流分析作业的结果？ 他们会使用什么工具来分析输出？ 是否必须进行数据保留或数据仓库操作？
-
-为启用多种应用模式，Azure 流分析提供了七种不同的方法来存储和查看作业输出。SQL 数据库、Blob 存储、事件中心、服务总线队列、服务总线主题、Power BI 和表存储都是支持的输出。这样可以轻松地查看作业输出，并可灵活地使用和存储作业输出，以便进行数据仓库操作和其他操作。
+为了启用多种应用程序模式，Azure 流分析提供了不同的选项来存储输出和查看分析结果。这样可以轻松地查看作业输出，并可灵活地使用和存储作业输出，以便进行数据仓库操作和其他操作。必须先存在作业中配置的输出，然后才能启动作业并开始事件的流动。例如，如果你使用 Blob 存储作为输出，该作业将不会自动创建存储帐户。在启动 ASA 作业之前，需要由用户创建该存储帐户。
 
 
 ## SQL 数据库 ##
@@ -182,4 +181,4 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->
