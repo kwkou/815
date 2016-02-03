@@ -10,15 +10,15 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/14/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="12/08/2015"
+	wacn.date="01/29/2016"/>
 
 
 #将自定义数据注入到 Azure 虚拟机中
 
 无论操作系统是 Windows 还是 Linux 分发，在设置 Azure 虚拟机时，将脚本或其他数据注入到 Azure 虚拟机都是非常常见的方案。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] 资源管理器模型。
 
 
 本主题介绍如何执行以下操作：
@@ -29,7 +29,7 @@
 
 - 使用某些系统上提供的特殊工具来检测和自动处理自定义数据。
 
-> [AZURE.NOTE]本文介绍了如何才能使用通过 Azure 服务管理 API 创建的 VM 注入自定义数据。若要了解如何使用 Azure 资源管理 API，请参阅[示例模板](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-customdata)。
+> [AZURE.NOTE] 本文介绍了如何才能使用通过 Azure 服务管理 API 创建的 VM 注入自定义数据。若要了解如何使用 Azure 资源管理 API，请参阅[示例模板](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-customdata)。
 
 ## 将自定义数据注入到 Azure 虚拟机中
 
@@ -48,7 +48,7 @@
 
 + 如果你的 Azure 虚拟机是基于 Windows 的虚拟机，则自定义数据文件将保存到 `%SYSTEMDRIVE%\AzureData\CustomData.bin`。虽然它已进行 Base64 编码，以便从本地计算机传输到新虚拟机，但它将自动解码并可以立即打开或使用。
 
-   >[AZURE.NOTE]如果该文件存在，它将被覆盖。目录的安全性已设为 **System:Full Control** 和 **Administrators:Full Control**。
+   >[AZURE.NOTE] 如果该文件存在，它将被覆盖。目录的安全性已设为 **System:Full Control** 和 **Administrators:Full Control**。
 
 + 如果你的 Azure 虚拟机是基于 Linux 的虚拟机，则自定义数据文件将位于以下两个位置。数据将会是 base64 编码的，因此需要首先对数据进行解码。
 
@@ -77,6 +77,6 @@
 <!--Link references-->
 [添加 Azure 角色服务管理 REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/jj157186.aspx)
 
-[Azure 命令行界面](https://github.com/Azure/azure-sdk-tools-xplat)
+[Azure 命令行界面](https://github.com/Azure/azure-xplat-cli)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

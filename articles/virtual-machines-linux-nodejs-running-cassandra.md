@@ -1,24 +1,22 @@
 <properties 
 	pageTitle="在 Azure 上通过 Linux 运行 Cassandra" 
-	description="如何使用 Node.js 应用在 Azure 虚拟机上通过 Linux 运行 Cassandra 群集" 
+	description="如何使用 Node.js 应用在 Azure 虚拟机上通过 Linux 运行 Cassandra 群集"
 	services="virtual-machines" 
 	documentationCenter="nodejs" 
-	authors="MikeWasson" 
+	authors="rmcmurray" 
 	manager="wpickett" 
-	editor=""/>
+	editor=""
+	azure-service-management"/>
 
 <tags 
-	ms.service="virtual-machines" 
-	ms.date="08/30/2015" 
-	wacn.date="01/21/2016"/>
-
-
-
+	ms.service="virtual-machines"
+	ms.date="11/20/2015" 
+	wacn.date="01/29/2016"/>
 
 
 # 在 Azure 上将 Cassandra 与 Linux 一起运行以及通过 Node.js 对其进行访问 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 ## 概述
 Windows Azure 是一种开放式的云平台，该平台运行 Microsoft 软件和非 Microsoft 软件，其中包括：操作系统、应用程序服务器、消息传递中间件，以及 SQL 数据库和 NoSQL 数据库，采用商业模型和开源模型。在包括 Azure 在内的公共云上构建可复原的服务需要针对应用程序服务器和存储层进行仔细的规划和周到的体系结构设计。Cassandra 具有分布式的存储体系结构，这自然有助于构建可用性高的系统，此类系统在发生群集故障时容错性很强。Cassandra 是云级别的 NoSQL 数据库，由 Apache Software Foundation 在 cassandra.apache.org 上进行维护；Cassandra 是以 Java 编写的，因此可以运行在 Windows 和 Linux 平台上。
@@ -94,7 +92,8 @@ Cassandra 的上述数据中心感知型复制和一致性模型可以很方便�
 部署到专用网络（位于两个区域）的虚拟机组使用 VPN 隧道互相通信。VPN 隧道连接两个在网络部署过程中预配的软件网关。就“Web”和“数据”子网来说，两个区域有类似的网络体系结构；Azure 网络允许你根据需要创建多个子网，并根据网络安全需要应用 ACL。在设计群集拓扑时，需要考虑数据数据中心之间的通信延迟，以及网络通信的经济影响。
 
 ### 进行多数据中心部署时需要考虑的数据一致性
-进行分布式部署时，需要了解群集拓扑对吞吐量和高可用性的影响。在选择 RF 和一致性级别时，需要确保仲裁不依赖于所有数据中心的可用性。对于需要高一致性的系统来说，如果一致性级别（针对读取和写入）为 LOCAL_QUORUM，则可以确保本地读取和写入能够从本地节点得到满足，而数据则会通过异步方式复制到远程数据中心。表 2 汇总了将在后面讲述的多区域群集的配置详细信息。
+进行分布式部署时，需要了解群集拓扑对吞吐量和高可用性的影响。在选择 RF 和一致性级别时，需要确保仲裁不依赖于所有数据中心的可用性。
+对于需要高一致性的系统来说，如果一致性级别（针对读取和写入）为 LOCAL\_QUORUM，则可以确保本地读取和写入能够从本地节点得到满足，而数据则会通过异步方式复制到远程数据中心。表 2 汇总了将在后面讲述的多区域群集的配置详细信息。
 
 **双区域 Cassandra 群集配置**
 
@@ -122,7 +121,7 @@ Cassandra 的上述数据中心感知型复制和一致性模型可以很方便�
 
 由于下载 JRE 需要手动接受 Oracle 许可证，为了简化部署，可先将所有必需软件下载到桌面，然后再将其上载到进行群集部署之前需要创建的 Ubuntu 模板映像中。
 
-将以上软件下载到本地桌面上某个已知的下载目录（例如，Windows 上的 %TEMP%/downloads 或者 Linux 或 Mac 上的 ~/download）。
+将以上软件下载到本地计算机上某个已知 的下载目录（例如，Windows 上的 %TEMP%/downloads 或者大多数 Linux 分发或 Mac 上的 ~/Downloads）。
 
 ### 创建 Ubuntu VM
 在过程的这个步骤中，我们将使用必备软件创建 Ubuntu 映像，以便重复使用该映像进行多个 Cassandra 节点的预配。
@@ -130,7 +129,7 @@ Cassandra 的上述数据中心感知型复制和一致性模型可以很方便�
 Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如何在 Azure 上通过 Linux 使用 SSH（可能为英文页面）上的说明进行操作来生成公/私钥对。如果你打算在 Windows 或 Linux 上将 putty.exe 用作 SSH 客户端，则必须使用 puttygen.exe 将 PEM 编码的 RSA 私钥转换为 PPK 格式。可在以上网页中找到有关此操作的说明。
 
 ####步骤 2：创建 Ubuntu 模板 VM
-若要创建模板 VM，请登录到 azure.microsoft.com 门户并按以下顺序操作：依次单击“新建”、“计算”、“虚拟机”、“从库中”、“Ubuntu”、“Ubuntu Server 14.04 LTS”，然后单击右键头。有关介绍如何创建 Linux VM 的教程，请参阅创建运行 Linux 的虚拟机（可能为英文页面）。
+若要创建模板 VM，请登录到 Azure 门户并按以下顺序操作：依次单击“新建”、“计算”、“虚拟机”、“从库中”、“Ubuntu”、“Ubuntu Server 14.04 LTS”，然后单击右键头。有关介绍如何创建 Linux VM 的教程，请参阅创建运行 Linux 的虚拟机（可能为英文页面）。
 
 在“虚拟机配置”屏幕 #1 中输入以下信息：
 
@@ -153,7 +152,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 <tr><th>字段名称             </th><th> 字段值	                   </th><th> 备注                                 </th></tr>
 <tr><td> 云服务	</td><td> 创建新的云服务	</td><td>云服务是类似虚拟机的容器计算资源</td></tr>
 <tr><td> 云服务 DNS 名称	</td><td>ubuntu-template.chinacloudapp.cn	</td><td>为计算机提供不可知的负载平衡器名称</td></tr>
-<tr><td> 区域/地缘组/虚拟网络 </td><td>	美国西部	</td><td> 选择你的 Web 应用从中访问 Cassandra 群集的区域</td></tr>
+<tr><td> 区域/地缘组/虚拟网络 </td><td>	China East	</td><td> 选择你的 Web 应用程序从中访问 Cassandra 群集的区域</td></tr>
 <tr><td>存储帐户 </td><td>	使用默认值	</td><td>使用特定区域的默认存储帐户或预先创建的存储帐户</td></tr>
 <tr><td>可用性集 </td><td>	无 </td><td>	将此字段留空</td></tr>
 <tr><td>终结点	</td><td>使用默认值 </td><td>	使用默认 SSH 配置 </td></tr>
@@ -263,9 +262,11 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 	export PATH
 
 ####第 4 步：为生产系统安装 JNA
-使用以下命令顺序：以下命令会将 jna-3.2.7.jar 和 jna-platform-3.2.7.jar 安装到 /usr/share.java 目录 sudo apt-get install libjna-java
+使用以下命令顺序： 
+以下命令会将 jna-3.2.7.jar 和 jna-platform-3.2.7.jar 安装到 /usr/share.java 目录
+sudo apt-get install libjna-java 
 
-在 $CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本能够找到这些 jar：
+在 $CASS\_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本能够找到这些 jar：
 
 	ln -s /usr/share/java/jna-3.2.7.jar $CASS_HOME/lib/jna.jar
 
@@ -287,7 +288,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 使用以前创建的主机名 (hk-cas-template.chinacloudapp.cn) 和 SSH 私钥登录到虚拟机。请参阅“如何在 Azure 上通过 Linux 使用 SSH”，以详细了解如何使用命令 ssh 或 putty.exe 登录。
 
 执行以下顺序的操作以捕获映像：
-#####1.预配
+#####1\.预配
 使用命令“sudo waagent –deprovision+user”删除特定于虚拟机实例的信息。请参阅[如何捕获将用作模板的 Linux 虚拟机](/documentation/articles/virtual-machines-linux-capture-image)，了解映像捕获过程的详细信息。
 
 #####2：关闭 VM
@@ -323,7 +324,8 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 
 数据和 Web 子网可以通过网络安全组进行保护，此方面的内容不在本文讲述范围之内。
 
-**步骤 2：预配虚拟机**使用前面创建的映像，我们可以在云服务器“hk-c-svc-west”中创建以下虚拟机并将其绑定到相应的子网，如下所示：
+**步骤 2：预配虚拟机** 
+使用前面创建的映像，我们可以在云服务器“hk-c-svc-west”中创建以下虚拟机并将其绑定到相应的子网，如下所示：
 
 <table>
 <tr><th>计算机名称    </th><th>子网	</th><th>IP 地址	</th><th>可用性集</th><th>DC/机架</th><th>种子？</th></tr>
@@ -407,7 +409,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 
 登录到 VM 并执行以下操作：
 
-* 编辑 $CASS_HOME/conf/cassandra-rackdc.properties 以指定数据中心和机架属性：
+* 编辑 $CASS\_HOME/conf/cassandra-rackdc.properties 以指定数据中心和机架属性：
       
        dc =EASTUS，机架 =rack1
 
@@ -440,7 +442,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 
 1.    使用 Powershell 命令 Get-AzureInternalLoadbalancer cmdlet 获取内部负载平衡器的 IP 地址（例如 10.1.2.101）。该命令的语法如下所示：Get-AzureLoadbalancer –ServiceName "hk-c-svc-west-us” [显示内部负载平衡器及其 IP 地址的详细信息]
 2.	使用 Putty 或 ssh 登录到 Web 场 VM（例如 hk-w1-west-us）
-3.	执行 $CASS_HOME/bin/cqlsh 10.1.2.101 9160 
+3.	执行 $CASS\_HOME/bin/cqlsh 10.1.2.101 9160 
 4.	使用以下 CQL 命令验证群集是否正常工作：
 
 		CREATE KEYSPACE customers_ks WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };	
@@ -465,7 +467,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 将利用已完成的单区域部署，并在安装第二个区域时重复相同的过程。单区域部署和多区域部署的主要区别是 VPN 隧道，设置该隧道是为了进行区域间通信；我们一开始将进行网络安装，并完成 VM 预配和 Cassandra 配置。
 
 ###步骤 1：在第二个区域创建虚拟网络
-登录到管理门户，然后使用下表中的属性创建虚拟网络。请参阅[在管理门户中配置只使用云的虚拟网络](/documentation/articles/virtual-networks-create-vnet)，以了解此过程的详细步骤。
+登录到 Azure 门户，然后使用下表中的属性创建虚拟网络。请参阅[在管理门户中配置只使用云的虚拟网络](/documentation/articles/virtual-networks-create-vnet)，以了解此过程的详细步骤。
 
 <table>
 <tr><th>属性名称    </th><th>值	</th><th>备注</th></tr>
@@ -499,7 +501,7 @@ Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映�
 
 
 ###步骤 3：将“本地”网络映射到相应的 VNET
-在服务管理门户中，选择每个 VNET，单击“配置”，选中“连接到本地网络”，然后按照以下详细信息选择本地网络：
+在 Azure 门户中，选择每个 VNET，单击“配置”，选中“连接到本地网络”，然后按照以下详细信息选择本地网络：
 
 
 | 虚拟网络 | 本地网络 |
@@ -523,7 +525,7 @@ Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映�
 使用以下 Powershell 脚本更新每个 VPN 网关的 IPSec 密钥 [使用这两个网关的 sake 密钥]：Set-AzureVNetGatewayKey -VNetName hk-vnet-east-us -LocalNetworkSiteName hk-lnet-map-to-west-us -SharedKey D9E76BKK Set-AzureVNetGatewayKey -VNetName hk-vnet-west-us -LocalNetworkSiteName hk-lnet-map-to-east-us -SharedKey D9E76BKK
 
 ###步骤 6：建立 VNET 到 VNET 连接
-在 Azure 服务管理门户中，使用这两个虚拟网络的“仪表板”菜单建立网关到网关连接。使用底部工具栏中的“连接”菜单项。几分钟后，仪表板会以图形方式显示连接详细信息。
+在 Azure 门户中，使用这两个虚拟网络的“仪表板”菜单建立网关到网关连接。使用底部工具栏中的“连接”菜单项。几分钟后，仪表板会以图形方式显示连接详细信息。
 
 ###步骤 7：在区域 #2 中创建虚拟机 
 按照相同步骤创建区域 #1 部署中描述的 Ubuntu 映像，或者将映像 VHD 文件复制到区域 #2 中的 Azure 存储帐户，然后创建该映像。使用该映像，将下列虚拟机创建到新的云服务 hk-c-svc-east-us 中：
@@ -546,14 +548,10 @@ Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映�
 ###步骤 8：在每个 VM 上配置 Cassandra
 登录到 VM 并执行以下操作：
 
-1. 编辑 $CASS\_HOME/conf/cassandra-rackdc.properties 以指定下述格式的数据中心和机架属性：
-dc =EASTUS
-机架 =rack1
-2. 编辑 cassandra.yaml 以配置种子节点
-种子“10.1.2.4,10.1.2.6,10.1.2.8,10.1.2.10,10.2.2.4,10.2.2.6,10.2.2.8,10.2.2.10”
+1. 编辑 $CASS\_HOME/conf/cassandra-rackdc.properties 以指定下述格式的数据中心和机架属性：dc =China East 机架 =rack1
+2. 编辑 cassandra.yaml 以配置种子节点：种子：“10.1.2.4,10.1.2.6,10.1.2.8,10.1.2.10,10.2.2.4,10.2.2.6,10.2.2.8,10.2.2.10”
 ###步骤 9：启动 Cassandra
-登录到每个 VM，然后通过运行以下命令在后台启动 Cassandra：
-$CASS\_HOME/bin/cassandra
+登录到每个 VM，然后通过运行以下命令在后台启动 Cassandra：$CASS\_HOME/bin/cassandra
 
 ## 测试多区域群集
 到目前为止，Cassandra 已部署到 16 个节点，每个 Azure 区域 8 个节点。这些节点具有通用的群集名称和种子节点配置，因此属于同一群集。使用以下过程测试群集：
@@ -584,7 +582,7 @@ $CASS\_HOME/bin/cassandra
 
 
 ###步骤 3：登录到 hk-w1-east-us 以后，在东部地区执行以下命令：
-1.    执行 $CASS_HOME/bin/cqlsh 10.2.2.101 9160 
+1.    执行 $CASS\_HOME/bin/cqlsh 10.2.2.101 9160 
 2.	执行以下 CQL 命令：
 
 		USE customers_ks;
@@ -707,4 +705,4 @@ Windows Azure 是一个灵活的平台，你可以在其中运行本练习所演
 
  
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

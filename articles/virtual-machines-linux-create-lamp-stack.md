@@ -10,14 +10,15 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/10/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="12/15/2015"
+	wacn.date="01/29/2016"/>
 
 #如何使用 Windows Azure 创建 LAMP 堆栈
 
-“LAMP”堆栈是一组开源软件，通常一起安装，使服务器可以托管动态 Web 应用和 Web 应用。此术语实际上首字母缩写词，表示带 Apache Web 服务器的 Linux 操作系统。站点数据将存储在 MySQL 数据库中，而动态内容将由 PHP 进行处理。
+“LAMP”堆栈是一组开源软件，通常一起安装，使服务器可以托管动态网站和 Web 应用程序。此术语实际上首字母缩写词，表示带 Apache Web 服务器的 Linux 操作系统。站点数据将存储在 MySQL 数据库中，而动态内容将由 PHP 进行处理。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用资源管理器部署模型或经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+
 
 在本指南中，我们将获取 Linux 映像上安装的 LAMP 堆栈，并将其部署在 Windows Azure 上。
 
@@ -31,7 +32,6 @@
 
 如果你已有虚拟机，并且只想查找在不同 linux 分发上安装 LAMP 堆栈的基础知识，则除了本主题外，还可以参阅[在 Azure 中的 Linux 虚拟机上安装 LAMP 堆栈](/documentation/articles/virtual-machines-linux-install-lamp-stack)。
 
-你还可以部署 Azure 应用商店中预先配置的 LAMP 映像。下面的 10 分钟视频介绍了如何部署 Azure 应用商店中预建的 LAMP 映像：（Azure VM 上的 LAMP 堆栈](https://channel9.msdn.com/Shows/Azure-Friday/LAMP-stack-on-Azure-VMs-with-Guy-Bowerman)。
 
 ##阶段 1：创建映像
 在此阶段中，你将在 Azure 中使用 Linux 映像创建虚拟机。
@@ -41,11 +41,11 @@ SSH 是面向系统管理员的重要工具。但是，依赖于人工确定的�
 
 按照下列步骤进行操作可生成 SSH 身份验证密钥。
 
--	从以下位置下载并安装 puttygen：[http://www.chiark.greenend.org.uk/~sgtatham/](http://www.chiark.greenend.org.uk/~sgtatham/)putty/download.html
+-	从 [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) 下载并安装 puttygen
 -	运行 puttygen.exe。
--	单击**“生成”**按钮以生成密钥。在此过程中，可以通过将鼠标放在窗口中的空白区域上来增加随机性。
+-	单击**“生成”**按钮以生成密钥。在此过程中，可以通过将鼠标放在窗口中的空白区域上来增加随机性。  
 ![][1]
--	在生成过程结束后，Puttygen.exe 将显示生成的密钥。例如：
+-	在生成过程结束后，puttygen.exe 将显示生成的密钥。例如：  
 ![][2]
 -	在**“密钥”**中选择并复制公钥，并将它保存在一个名为 **publicKey.pem** 的文件中。不要单击**“保存公钥”**，因为保存的公钥的文件格式不同于我们所需的公钥。
 -	单击**“保存私钥”**，并将其保存到名为 **privateKey.ppk** 的文件中。
@@ -59,7 +59,7 @@ SSH 是面向系统管理员的重要工具。但是，依赖于人工确定的�
 
 对于**“用户名”**，选取稍后将用于登录到虚拟机的名称。
 
-对于**“SSH 身份验证密钥”**，选择并上传 **publicKey.pem** 文件。
+对于**“SSH 身份验证密钥”**，从 **publicKey.pem** 文件中复制密钥值，其中包含由 puttygen 生成的公钥。
 
 ![][4]
 
@@ -73,7 +73,7 @@ Azure 中的终结点由协议（TCP 或 UDP）以及公用和专用端口组成
 
 TCP 端口 80 是 Apache 侦听的默认端口号。使用 Azure 终结点打开此端口将允许你和其他 Internet 客户端访问 Apache Web 服务器。
 
-在 Azure 门户中，单击**“浏览”->“虚拟机”**，然后单击你创建的虚拟机。
+在 Azure 门户中，单击“浏览”->“虚拟机”，然后单击你创建的虚拟机。
 
 ![][5]
 
@@ -87,9 +87,7 @@ TCP 端口 80 是 Apache 侦听的默认端口号。使用 Azure 终结点打开
 
 1.	在**“终结点”**中键入终结点的名称。
 2.	在**“公用端口”**中键入 80。如果你更改了 Apache 的默认侦听端口，则应将专用端口更新为与 Apache 侦听端口相同。
-3.	在**“私用端口”**中键入 80。默认情况下，HTTP 通信使用端口 80
-如果将其设置为 80，则无需在 URL 中包括端口号即可允许你访问 Apache Web 服务。例如，http://lampdemo.chinacloudapp.cn。
-如果将 Apache 侦听端口设为另一个值（例如 81），则需要将端口号添加到 URL 中才能访问 Apache Web 服务。例如，http://lampdemo.chinacloudapp.cn:81/。
+3.	在**“公用端口”**中键入 80。默认情况下，HTTP 通信使用端口 80。如果将其设置为 80，则无需在 URL 中包括端口号即可允许你访问 Apache Web 服务。例如，http://lampdemo.chinacloudapp.cn。如果将 Apache 侦听端口设为另一个值（例如 81），则需要将端口号添加到 URL 中才能访问 Apache Web 服务。例如，http://lampdemo.chinacloudapp.cn:81/。
 
 ![][7]
 
@@ -146,7 +144,8 @@ TCP 端口 80 是 Apache 侦听的默认端口号。使用 Azure 终结点打开
 	sudo service httpd start
 
 ####测试 Apache
-若要检查 Apache 是否已成功安装，请浏览到 Apache 服务器的 DNS 名称（对于本文中的示例 URL，为 http://lampdemo.chinacloudapp.cn/)。该页应显示单词“It works!”![][14]
+若要检查 Apache 是否已成功安装，请浏览到 Apache 服务器的 DNS 名称（对于本文中的示例 URL，为 http://lampdemo.chinacloudapp.cn/)。 该页应显示单词“It works!”
+![][14]
 
 ####故障排除
 如果 Apache 正在运行，但你看不到上面的 Apache 默认页，则需要检查以下项：
@@ -166,7 +165,8 @@ TCP 端口 80 是 Apache 侦听的默认端口号。使用 Azure 终结点打开
 			……
 			……  
 
--	防火墙 iptables 配置，如果你可以在本地主机上看到 Apache 默认页，则问题可能出在 Apache 所侦听的端口被防火墙阻止。可以使用 w3m 工具来浏览 Apache 网页。以下命令安装 w3m 并浏览到 Apache 默认页：
+-	防火墙 iptables 配置，  
+如果你可以在本地主机上看到 Apache 默认页，则问题可能出在 Apache 所侦听的端口被防火墙阻止。可以使用 w3m 工具来浏览 Apache 网页。以下命令安装 w3m 并浏览到 Apache 默认页：
 
 		sudo yum  install w3m w3m-img  
 		w3m http://localhost
@@ -315,7 +315,7 @@ Tasksel 是一个 Debian/Ubuntu 工具，它将多个相关包作为协调任务
 
 ##附加步骤
 
-常规做法是，你将更改某些默认设置以准备进行 Web 应用部署。
+常规做法是，你将更改某些默认设置以准备进行 Web 应用程序部署。
 
 ###允许远程访问 MySQL
 如果你随 MySQL 一起安装了多个虚拟机，并且这些虚拟机需要交换数据，则应启用 MySQL 远程访问并授予相应权限。
@@ -339,8 +339,8 @@ Tasksel 是一个 Debian/Ubuntu 工具，它将多个相关包作为协调任务
 
 ![][17]
 
-###将 Web 应用部署到 Apache 服务器
-成功安装 LAMP 堆栈后，便可以将现有 Web 应用部署到 Apache Web 服务器（你的虚拟机）了。这些步骤与在物理 Web 服务器上部署现有 Web 应用的步骤相同。
+###将 Web 应用程序部署到 Apache 服务器
+成功安装 LAMP 堆栈后，便可以将现有 Web 应用程序部署到 Apache Web 服务器（你的虚拟机）了。这些步骤与在物理 Web 服务器上部署现有 Web 应用程序的步骤相同。
 
 -	Web 服务器的根位于 **/var/www/html**。你应向需要将文件上载到此文件夹的用户授予特权。以下示例演示如何将写权限添加到名为 lampappgroup 的组并在此组中放置 azureuser 用户名：  
 
@@ -350,7 +350,7 @@ Tasksel 是一个 Debian/Ubuntu 工具，它将多个相关包作为协调任务
 		sudo chmod g+w /var/www/html/                 # grant write permission to group lampappgroup
 
 	>[AZURE.NOTE]你可能需要重新登录才能修改 /var/www/html/ 中的文件。
--	使用任何 SFTP 客户端（例如 FileZilla）连接到你的虚拟机（例如，lampdemo.chinacloudapp.cn）的 DNS 名称，并导航到 /**var/www/html** 以发布站点。
+-	使用任何 SFTP 客户端（例如 FileZilla）连接到你的虚拟机（例如，lampdemo.chinacloudapp.cn）的 DNS 名称，并导航到 /**var/www/html** 以发布站点。  
 ![][18]
 
 
@@ -359,15 +359,14 @@ Tasksel 是一个 Debian/Ubuntu 工具，它将多个相关包作为协调任务
 
 ###无法通过 Internet 使用 Apache 和 Moodle 访问虚拟机
 
--	**症状**
-Apache 正在运行，但你使用浏览器看不到 Apache 默认页。
+-	**症状** Apache 正在运行，但你使用浏览器看不到 Apache 默认页。
 -	**可能的根本原因**
 	1.	Apache 侦听端口与用于 Web 通信的虚拟机终结点的专用端口不同。</br>
 	检查你的公用端口和专用端口终结点设置，并确保专用端口与 Apache 侦听端口相同。有关如何为你的虚拟机配置终结点的说明，请参阅“第 1 阶段：创建映像”。</br>
 	若要确定 Apache 侦听端口，请打开 /etc/httpd/conf/httpd.conf （Red Hat 发行版）或 /etc/apache2/ports.conf（Debian 发行版），搜索字符串“Listen”。默认端口为 80。
 
-	2.	防火墙已禁用 Apache 侦听端口。</br>
-	如果你可以在本地主机上看到 Apache 默认页，则问题很可能出在 Apache 所侦听的端口被防火墙阻止。可以使用 w3m 工具来浏览网页。以下命令安装 w3m 并浏览到 Apache 默认页：
+	2.	防火墙已禁用 Apache 侦听端口。</br>  
+	如果你可以在本地主机上看到 Apache 默认页，则问题很可能出在 Apache 所侦听的端口被防火墙阻止。可以使用 w3m 工具来浏览网页。以下命令安装 w3m 并浏览到 Apache 默认页：  
 
 			sudo yum  install w3m w3m-img
 			w3m http://localhost
@@ -394,15 +393,18 @@ Apache 正在运行，但你使用浏览器看不到 Apache 默认页。
 
 ###将项目文件上载到 /var/www/html/ 时，权限被拒绝  
 
--	**症状** 当你使用任何 SFTP 客户端（例如 FileZilla）连接到虚拟机并导航到 /var/www/html 来发布站点时，你收到如下错误消息：  
+-	**症状**  
+当你使用任何 SFTP 客户端（例如 FileZilla）连接到虚拟机并导航到 /var/www/html 来发布站点时，你收到如下错误消息：  
 
 		status:	Listing directory /var/www/html
 		Command:	put "C:\Users\liang\Desktop\info.php" "info.php"
 		Error:	/var/www/html/info.php: open for write: permission denied
 		Error:	File transfer failed
 
--	**可能的根本原因** 你无权访问 /var/www/html 文件夹。
--	**解决方案** 你需要获得根帐户权限。你可以将该文件夹的所有权从 root 更改为在设置计算机时使用的用户名。下面是使用 azureuser 帐户名称的示例：  
+-	**可能的根本原因**
+你无权访问 /var/www/html 文件夹。
+-	**解决方案**  
+你需要获得根帐户权限。你可以将该文件夹的所有权从 root 更改为在设置计算机时使用的用户名。下面是使用 azureuser 帐户名称的示例：  
 
 		sudo chown azureuser -R /var/www/html  
 
@@ -420,7 +422,7 @@ Apache 正在运行，但你使用浏览器看不到 Apache 默认页。
 
 ###无法可靠地确定服务器的完全限定域名
 
--	**症状** 
+-	**症状**  
 使用以下命令之一重启 Apache 服务器时：  
 
 		sudo /etc/init.d/apache2 restart  # Debian release  
@@ -437,10 +439,10 @@ Apache 正在运行，但你使用浏览器看不到 Apache 默认页。
 		Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName  
 
 -	**可能的根本原因**
-你尚未设置 Apache 的服务器名称。
+	你尚未设置 Apache 的服务器名称。
 
--	**解决方案**
-在 httpd.conf（Red Hat 发行版）或 apache2.conf（Debian 发行版）的 /etc/apache2 中插入“ServerName localhost”行，并重启 Apache。注意将消失。
+-	**解决方案**  
+	在 httpd.conf（Red Hat 发行版）或 apache2.conf（Debian 发行版）的 /etc/apache2 中插入“ServerName localhost”行，并重启 Apache。注意将消失。
 
 
 
@@ -462,6 +464,5 @@ Apache 正在运行，但你使用浏览器看不到 Apache 默认页。
 [16]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-16.png
 [17]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-17.png
 [18]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-18.jpg
- 
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->
