@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="09/01/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="12/01/2015"
+	wacn.date="01/29/2016"/>
 
 
 
@@ -79,15 +79,15 @@ Azure 模块将读取环境变量 `AZURE_STORAGE_ACCOUNT`、`AZURE_STORAGE_ACCES
 
 	blobSvc.createContainerIfNotExists('mycontainer', function(error, result, response){
       if(!error){
-        // Container exists and allows 
-        // anonymous read access to blob 
+        // Container exists and allows
+        // anonymous read access to blob
         // content and metadata within this container
       }
 	});
 
 如果该容器是新建的，则 `result` 为 true。如果容器已存在，`result` 将为 false。`response` 将包含有关操作的信息，包括容器的 [ETag](http://zh.wikipedia.org/wiki/HTTP_ETag) 信息。
 
-###容器安全性
+### 容器安全性
 
 默认情况下，新容器是私有的，不能匿名访问。若要使容器公开，以便能够对其进行匿名访问，可将容器的访问级别设置为“Blob”或“容器”。
 
@@ -113,7 +113,7 @@ Azure 模块将读取环境变量 `AZURE_STORAGE_ACCOUNT`、`AZURE_STORAGE_ACCES
 
 结果将包含有关操作的信息，包括容器的当前 **ETag**。
 
-###筛选器
+### 筛选器
 
 你可以向使用 **BlobService** 执行的操作应用可选的筛选操作。筛选操作可包括日志记录、自动重试等。筛选器是实现具有签名的方法的对象：
 
@@ -154,9 +154,9 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 	  }
 	});
 
-这些方法返回的  `result` 将包含有关操作的信息，例如 Blob 的 **ETag**。
+这些方法返回的 `result` 将包含有关操作的信息，例如 Blob 的 **ETag**。
 
-###页 Blob
+### 页 Blob
 
 若要将数据上传到页 Blob，可使用以下方法：
 
@@ -180,7 +180,7 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 
 > [AZURE.NOTE] 页 Blob 包含 512 字节的“页面”。当你上传大小不是 512 倍数的数据时，可能会收到错误。
 
-## 如何：列出容器中的 Blob
+## 列出容器中的 Blob
 
 若要列出容器中的 Blob，请使用 **listBlobsSegmented** 方法。如果您想要返回带特定前缀的 Blob，请使用 **listBlobsSegmentedWithPrefix**。
 
@@ -197,7 +197,7 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 
 若要从 Blob 下载数据，可使用以下方法：
 
-* **getBlobToFile** - 将 Blob 内容写入文件
+* **getBlobToLocalFile** - 将 Blob 内容写入文件
 
 * **getBlobToStream** - 将 Blob 内容写入流
 
@@ -207,7 +207,7 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 
 以下代码示例演示了如何使用 **getBlobToStream** 下载 **myblob** Blob 的内容，并使用一个流将其存储到 **output.txt** 文件：
 
-    var fs=require('fs');
+    var fs = require('fs');
 	blobSvc.getBlobToStream('mycontainer', 'myblob', fs.createWriteStream('output.txt'), function(error, result, response){
 	  if(!error){
 	    // blob retrieved
@@ -234,7 +234,7 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 
 * **租约** - 用于在某个时段内获取对 Blob 的独占式可续订写入或删除访问
 
-###ETag
+### ETag
 
 如果你需要允许多个客户端或实例同时写入该 Blob，请使用 ETag。ETag 用于确定自从你第一次读取或创建某个容器或 Blob 以来，该容器或 Blob 是否被修改，这样就可以避免覆盖其他客户端或进程提交的更改。
 
@@ -252,9 +252,9 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 
 2. 执行一个操作，查看 ETag 值是否尚未修改。
 
-如果值已修改，则表明在你获得 ETag 值后，其他客户端或实例已修改该 blob 或容器。
+如果值已修改，则表明在你获得 ETag 值后，其他客户端或实例已修改该 Blob 或容器。
 
-###租约
+### 租约
 
 新的租约可使用 **acquireLease** 方法获取，只需指定您希望获取其租约的 Blob 或容器即可。例如，以下代码将获取 **myblob** 的租约。
 
@@ -284,7 +284,7 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 	var expiryDate = new Date(startDate);
 	expiryDate.setMinutes(startDate.getMinutes() + 100);
 	startDate.setMinutes(startDate.getMinutes() - 100);
-	    
+
 	var sharedAccessPolicy = {
 	  AccessPolicy: {
 	    Permissions: azure.BlobUtilities.SharedAccessPermissions.READ,
@@ -292,7 +292,7 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 	    Expiry: expiryDate
 	  },
 	};
-	
+
 	var blobSAS = blobSvc.generateSharedAccessSignature('mycontainer', 'myblob', sharedAccessPolicy);
 	var host = blobSvc.host;
 
@@ -309,7 +309,7 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 
 由于共享访问签名在生成时具有只读访问权限，因此如果尝试修改 Blob，则会返回错误。
 
-###访问控制列表
+### 访问控制列表
 
 你还可以使用访问控制列表 (ACL) 为 SAS 设置访问策略。如果你希望允许多个客户端访问某个容器，但为每个客户端提供了不同的访问策略，则访问控制列表会很有用。
 
@@ -357,10 +357,10 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 有关详细信息，请参阅以下资源。
 
 -   [Azure Storage SDK for Node API 参考][]
--   MSDN 参考：[在 Azure 中存储和访问数据][]
 -   [Azure 存储团队博客][]
 -   GitHub 上的 [Azure Storage SDK for Node][] 存储库
 -   [Node.js 开发人员中心](/develop/nodejs/)
+-   [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
 
   [Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
   [创建 Node.js 应用程序并将其部署到 Azure Web 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
@@ -370,9 +370,8 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [使用 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx
   [Azure 管理门户]: http://manage.windowsazure.cn
   [Node.js 云服务]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app
-  [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Storage SDK for Node API 参考]: http://dl.windowsazure.com/nodestoragedocs/index.html
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

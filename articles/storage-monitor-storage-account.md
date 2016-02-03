@@ -9,16 +9,16 @@
 
 <tags
 	ms.service="storage"
-	ms.date="09/27/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="12/01/2015"
+	wacn.date="01/29/2016"/>
 
 # 监视 Azure 门户中的存储帐户
 
 ## 概述
 
-您可以从 Azure 管理门户监视您的存储帐户。在配置您的存储帐户用于通过门户进行监视时，Azure 存储空间使用[存储分析](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)跟踪帐户和日志请求数据的指标。
+你可以从 [Azure 管理门户](https://manage.windowsazure.cn)监视你的存储帐户。在配置您的存储帐户用于通过门户进行监视时，Azure 存储空间使用[存储分析](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)跟踪帐户和日志请求数据的指标。
 
-> [AZURE.NOTE] 在管理门户中查看监视数据会产生相关的额外费用。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/hh360997.aspx">存储分析和计费</a>。 
+> [AZURE.NOTE] 在 [Azure管理门户](https://manage.windowsazure.cn)中查看监视数据会产生相关的额外费用。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/azure/hh360997.aspx">存储分析和计费</a>。<br />
 
 > Azure 文件存储目前支持存储分析指标，但尚不支持日志记录。可以通过 [Azure 管理门户](https://manage.windowsazure.cn)为 Azure 文件存储启用指标。
 
@@ -35,11 +35,11 @@
 
 3. 在“监视”中，为每项服务设置监视级别和数据保留策略：
 
--  若要设置监视级别，请选择以下一项：
+	-  若要设置监视级别，请选择以下一项：
 
       **最少** - 收集经过汇总的有关 Blob、表和队列服务的入口/出口、可用性、延迟及成功百分比等度量值。
 
-      **详细** – 除最少监视度量值外，在 Azure 存储服务 API 中为每项存储操作收集一组相同的度量值。通过详细监视度量值可对应用程序运行期间出现的问题进行进一步分析。
+      **详细** - 除最少监视度量值外，在 Azure 存储服务 API 中为每项存储操作收集一组相同的度量值。通过详细监视度量值可对应用程序运行期间出现的问题进行进一步分析。
 
       **关闭** - 关闭监视。现有监视数据将一直保留到保留期结束。
 
@@ -51,9 +51,9 @@
 
 在您为存储帐户配置监视之前，不会收集任何监视数据，且仪表板和“监视”页上的度量值图表为空。
 
-在设置监视级别和保留策略后，你可以选择要在管理门户中监视哪些可用度量值，以及要在度量值图表上显示哪些度量值。将在每个监视级别显示一组默认度量值。你可以使用"添加度量值"在度量值列表中添加或删除度量值。
+在设置监视级别和保留策略后，你可以选择要在 [Azure 管理门户](https://manage.windowsazure.cn)中监视哪些可用度量值，以及要在度量值图表上显示哪些度量值。将在每个监视级别显示一组默认度量值。您可以使用“添加度量值”在度量值列表中添加或删除度量值。
 
-度量值存储在存储帐户中的以下 4 个表中：$MetricsTransactionsBlob、$MetricsTransactionsTable、$MetricsTransactionsQueue 和 $MetricsCapacityBlob。有关详细信息，请参阅[关于存储分析度量值](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh343258.aspx).
+度量值存储在存储帐户中的以下 4 个表中：$MetricsTransactionsBlob、$MetricsTransactionsTable、$MetricsTransactionsQueue 和 $MetricsCapacityBlob。有关详细信息，请参阅[关于存储分析度量值](http://msdn.microsoft.com/zh-cn/library/azure/hh343258.aspx)。
 
 
 ## 如何：针对监视功能自定义仪表板
@@ -69,11 +69,11 @@
 	- 要隐藏显示在图表上的某个度量值，请清除该度量值标题旁的彩色复选框。
 
 	![监视更多](./media/storage-monitor-storage-account/storage_Monitoring_nmore.png)
-  
-3. 默认情况下，该图表显示趋势，以便仅显示每个度量值的当前值（选择图表顶部的"相对"选项）。若要显示 Y 轴以便能够看到绝对值，请选择"绝对"。
+
+3. 默认情况下，该图表显示趋势，以便仅显示每个度量值的当前值（选择图表顶部的“相对”选项）。若要显示 Y 轴以便能够看到绝对值，请选择“绝对”。
 
 4. 若要更改度量值图表显示的时间范围，请在图表顶部选择 6 小时、24 小时或者 7 天。
-     
+
 
 ## 如何：自定义“监视”页
 
@@ -100,7 +100,7 @@
 
 3. 单击“添加度量值”。
 
-	最少监视中可用的汇总度量值位于列表顶部。如果选中该复选框，则度量值将显示在度量值列表中。 
+	最少监视中可用的汇总度量值位于列表顶部。如果选中该复选框，则度量值将显示在度量值列表中。
 
 	![添加度量值初始视图](./media/storage-monitor-storage-account/Storage_AddMetrics_InitialDisplay.png)
 
@@ -109,7 +109,7 @@
 	![添加度量值滚动条](./media/storage-monitor-storage-account/Storage_AddMetrics_Scrollbar.png)
 
 
-5. 单击度量值旁边的向下箭头，以展开该度量值范围内所包括的操作的列表。选择你要在管理门户中的度量值表中查看的每项操作。
+5. 单击度量值旁边的向下箭头，以展开该度量值范围内所包括的操作的列表。选择要在 [Azure 管理门户](https://manage.windowsazure.cn)的度量值表中查看的每项操作。
 
 	在下图中，“授权错误百分比”度量值已展开。
 
@@ -136,13 +136,13 @@
 
 对于您的存储帐户中提供的每项存储服务（Blob、表和队列），您可以保存“读取请求”、“写入请求”和/或“删除请求”的诊断日志，并且可以为其中每项服务设置数据保留策略。
 
-1. 在[管理门户](https://manage.windowsazure.cn)中操作, 单击“存储”，然后单击存储帐户名称以打开仪表板。
+1. 在[管理门户](https://manage.windowsazure.cn)中, 单击“存储”，然后单击存储帐户名称以打开仪表板。
 
 2. 单击“配置”，然后使用键盘上的向下箭头向下滚动到“日志记录”。
 
 	![存储日志记录](./media/storage-monitor-storage-account/Storage_LoggingOptions.png)
 
- 
+
 3. 为每项服务（Blob、表和队列）配置下列内容：
 
 	- 要记录的请求类型：“读取请求”、“写入请求”和“删除请求”。
@@ -153,4 +153,4 @@
 
 诊断日志保存在你的存储帐户下名为 $logs 的 Blob 容器中。有关访问 $logs 容器的信息，请参阅[关于存储分析日志记录](http://msdn.microsoft.com/zh-cn/library/azure/hh343262.aspx)。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

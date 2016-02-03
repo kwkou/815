@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="存储分析" 
+	pageTitle="存储分析 | Windows Azure"
 	description="如何管理 Blob、队列、表和文件服务的并发" 
 	services="storage" 
 	documentationCenter="" 
@@ -7,18 +7,9 @@
 	manager="adinah" 
 	editor=""/>
 <tags ms.service="storage"
-    ms.date="03/06/2015"
-    wacn.date="09/18/2015"
+	ms.date="09/03/2015"
+    wacn.date="01/29/2016"
     />
-
-
-
-
-
-
-
-
-
 
 # 存储分析
 
@@ -45,24 +36,24 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 
 将记录以下类型的已经过身份验证的请求：
 
-- 成功的请求
+- 成功的请求。
 
-- 失败的请求，包括超时、限制、网络、授权和其他错误
+- 失败的请求，包括超时、限制、网络、授权和其他错误。
 
-- 使用共享访问签名 (SAS) 的请求，包括失败和成功的请求
+- 使用共享访问签名 (SAS) 的请求，包括失败和成功的请求。
 
-- 对分析数据请求
+- 分析数据请求。
 
 不会记录存储分析本身发出的请求，如创建或删除日志。[存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/hh343260.aspx)及[存储分析日志格式](https://msdn.microsoft.com/zh-cn/library/hh343259.aspx)主题中提供了所记录数据的完整列表。
 
 ### 记录匿名请求
 将记录以下类型的匿名请求：
 
-- 成功的请求
+- 成功的请求。
 
-- 服务器错误
+- 服务器错误。
 
-- 客户端和服务器的超时错误
+- 客户端和服务器的超时错误。
 
 - 失败的 GET 请求，错误代码为 304（未修改）。
 
@@ -71,50 +62,50 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 ### 如何存储日志
 所有日志以块存储(block blob) 的形式存储在一个名为 $logs 的容器中，为存储帐户启用存储分析时将自动创建该容器。$logs 容器位于存储帐户的 blob 命名空间中，例如：`http://<accountname>.blob.core.chinacloudapi.cn/$logs`。在启用存储分析后，无法删除该容器，但可以删除其内容。
 
->[AZURE.NOTE] 在执行容器列出操作（例如 [ListContainers](https://msdn.microsoft.com/zh-cn/library/ee758348.aspx) 方法）时，不会显示 $logs 容器。必须直接访问该容器。例如，可以使用 [ListBlobs](https://msdn.microsoft.com/zh-cn/library/ee772878.aspx) 方法访问 `$logs` 容器中的 Blob。在记录请求时，存储分析将中间结果作为块进行上载。存储分析定期提交这些块，并将其作为 Blob 提供。
+>[Azure.NOTE] 在执行容器列出操作（例如 [ListContainers](https://msdn.microsoft.com/zh-cn/library/ee758348.aspx) 方法）时，不会显示 $logs 容器。必须直接访问该容器。例如，可以使用 [ListBlobs](https://msdn.microsoft.com/zh-cn/library/ee772878.aspx) 方法访问 `$logs` 容器中的 Blob。在记录请求时，存储分析将中间结果作为块进行上载。存储分析定期提交这些块，并将其作为 Blob 提供。
 
 在同一小时内创建的日志中可能存在重复的记录。可以通过检查 **RequestId** 和**操作**编号来确定记录是否为重复记录。
 
 ### 日志命名约定
-每个日志是使用以下格式写入的：
+每个日志是使用以下格式写入的。
 
-    <service-name>/YYYY/MM/DD/hhmm/<counter>.log 
+    <service-name>/YYYY/MM/DD/hhmm/<counter>.log
 
-下表说明了日志名称中的每个属性：
+下表说明了日志名称中的每个属性。
 
 | 属性 | 说明 |
 |----------------	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| <service-name> | 存储服务的名称例如：blob、table 或 queue |
-| YYYY | 用四位数表示的日志年份。例如：2011 |
-| MM | 用两位数表示的日志月份。例如：07 |
-| DD | 用两位数表示的日志月份。例如：07 |
-| hh | 用两位数表示的日志起始小时，采用 24 小时 UTC 格式。例如：18 |
-| mm | 用两位数表示的日志起始分钟。>[AZURE.NOTE]最新的存储分析版本中不支持该值，其值始终为 00。 |
-| <counter> | 从零开始且具有六位数字的计数器，表示在 1 小时内为存储服务生成的日志 Blob 数。此计数器从 000000 开始。例如：000001 |
+| <service-name> | 存储服务的名称例如：blob、table 或 queue。 |
+| YYYY | 用四位数表示的日志年份。例如：2011。 |
+| MM | 用两位数表示的日志月份。例如：07。 |
+| DD | 用两位数表示的日志月份。例如：07。 |
+| hh | 用两位数表示的日志起始小时，采用 24 小时 UTC 格式。例如：18。 |
+| mm | 用两位数表示的日志起始分钟。最新的存储分析版本中不支持该值，其值始终为 00。 |
+| <counter> | 从零开始且具有六位数字的计数器，表示在 1 小时内为存储服务生成的日志 Blob 数。此计数器从 000000 开始。例如：000001。 |
 
-下面是组合上述示例的完整示例日志名称：
+下面是组合前述示例的完整示例日志名称。
 
     blob/2011/07/31/1800/000001.log
 
-下面是一个可用于访问上述日志的示例 URI：
+下面是一个可用于访问前述日志的示例 URI。
 
     https://<accountname>.blob.core.chinacloudapi.cn/$logs/blob/2011/07/31/1800/000001.log 
 
 在记录存储请求时，生成的日志名称与完成请求的操作时间（小时）关联。例如，如果在 2011 年 7 月 31 日下午 6:30 完成 GetBlob 请求，则会写入具有以下前缀的日志：`blob/2011/07/31/1800/`
 
 ### 日志元数据
-所有日志 Blob 与可用于确定 Blob 包含哪些日志记录数据的元数据一起存储。下表说明了每个元数据属性：
+所有日志 Blob 与可用于确定 Blob 包含哪些日志记录数据的元数据一起存储。下表说明了每个元数据属性。
 
 | 属性 | 说明 |
 |------------	|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| LogType | 描述日志是否包含与读取、写入或删除操作有关的信息。该值可能包含一种类型，也可能包含所有三种类型的组合并用逗号隔开。示例 1：write 示例 2：read,write 示例 3：read,write,delete |
-| StartTime | 日志中的项的最早时间，采用 YYYY-MM-DDThh:mm:ssZ 形式。例如：2011-07-31T18:21:46Z |
-| EndTime | 日志中的项的最晚时间，采用 YYYY-MM-DDThh:mm:ssZ 形式。例如：2011-07-31T18:22:09Z |
-| LogVersion | 日志格式的版本。目前唯一支持的值是：1.0 |
+| LogType | 描述日志是否包含与读取、写入或删除操作有关的信息。该值可能包含一种类型，也可能包含所有三种类型的组合并用逗号隔开。示例 1：write 示例 2：read,write 示例 3：read,write,delete。 |
+| StartTime | 日志中的项的最早时间，采用 YYYY-MM-DDThh:mm:ssZ 形式。例如：2011-07-31T18:21:46Z。 |
+| EndTime | 日志中的项的最晚时间，采用 YYYY-MM-DDThh:mm:ssZ 形式。例如：2011-07-31T18:22:09Z。 |
+| LogVersion | 日志格式的版本。目前唯一支持的值是 1.0。 |
 
-下表显示了使用上述示例的完整示例元数据：
+下表显示了使用前述示例的完整示例元数据。
 
-- LogType=write 
+- LogType=write
 
 - StartTime=2011-07-31T18:21:46Z
 
@@ -128,7 +119,7 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 
 ## 关于存储分析度量值
 
-存储分析可存储一些度量值，这些度量值包括有关存储服务请求的整合事务统计信息和容量数据。在 API 操作级别以及存储服务级别报告事务，并在存储服务级别报告容量。度量值数据可用于分析存储服务使用情况，诊断对存储服务所发出请求的问题以及提高使用服务的应用程序的性能。
+存储分析可存储一些度量值，这些度量值包括有关存储服务请求的聚合事务统计信息和容量数据。在 API 操作级别以及存储服务级别报告事务，并在存储服务级别报告容量。度量值数据可用于分析存储服务使用情况，诊断对存储服务所发出请求的问题以及提高使用服务的应用程序的性能。
 
 若要使用存储分析，必须为每个要监视的服务单独启用它。可以从 [Azure 管理门户](https://manage.windowsazure.com/)启用它；有关详细信息，请参阅[如何监视存储帐户](/documentation/articles/how-to-monitor-a-storage-account)。还可以通过 REST API 或客户端库以编程方式启用存储分析。[使用获取 Blob 服务属性](https://msdn.microsoft.com/zh-cn/library/hh452239.aspx)、[获取队列服务属性和获取表服务属性操作为每个服务启用存储分析](https://msdn.microsoft.com/zh-cn/library/hh452238.aspx)。
 
@@ -154,7 +145,7 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 
 - **ObjectCount**：存储帐户的 Blob 服务中的提交和未提交的块或页 Blob 数量。
 
-有关容量度量值的详细信息，请参阅“存储分析度量值表结构”。
+有关容量度量值的详细信息，请参阅[存储分析度量值表结构](https://msdn.microsoft.com/zh-cn/library/hh343264.aspx)。
 
 ### 如何存储度量值
 
@@ -162,12 +153,12 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 
 | 度量值级别 | 表名 | 支持的版本 |
 |------------------------------------	|-----------------------------------------------------------------------------------------------------------------------------	|----------------------------------------------------------------------------------------------------------------------------------------------	|
-| 每小时度量值，主位置 | $MetricsTransactionsBlob <br/>$MetricsTransactionsTable <br/> $MetricsTransactionsQueue | 仅限 2013-08-15 之前的版本。虽然仍然支持这些名称，但还是建议您改为使用下面列出的表。 |
-| 每小时度量值，主位置 | $MetricsHourPrimaryTransactionsBlob <br/>$MetricsHourPrimaryTransactionsTable <br/>$MetricsHourPrimaryTransactionsQueue | 所有版本，包括 2013-08-15 |
-| 分钟度量值，主位置 | $MetricsMinutePrimaryTransactionsBlob <br/>$MetricsMinutePrimaryTransactionsTable <br/>$MetricsMinutePrimaryTransactionsQueue | 所有版本，包括 2013-08-15 |
+| 每小时度量值，主位置 | $MetricsTransactionsBlob <br/>$MetricsTransactionsTable <br/> $MetricsTransactionsQueue | 仅限 2013-08-15 之前的版本。虽然仍然支持这些名称，但还是建议你改为使用下面列出的表。 |
+| 每小时度量值，主位置 | $MetricsHourPrimaryTransactionsBlob <br/>$MetricsHourPrimaryTransactionsTable <br/>$MetricsHourPrimaryTransactionsQueue | 所有版本，包括 2013-08-15。 |
+| 分钟度量值，主位置 | $MetricsMinutePrimaryTransactionsBlob <br/>$MetricsMinutePrimaryTransactionsTable <br/>$MetricsMinutePrimaryTransactionsQueue | 所有版本，包括 2013-08-15。 |
 | 每小时度量值，辅助位置 | $MetricsHourSecondaryTransactionsBlob <br/>$MetricsHourSecondaryTransactionsTable <br/>$MetricsHourSecondaryTransactionsQueue | 所有版本，包括 2013-08-15。必须启用读访问的地域冗余复制。 |
 | 分钟度量值，辅助位置 | $MetricsMinuteSecondaryTransactionsBlob <br/>$MetricsMinuteSecondaryTransactionsTable <br/>$MetricsMinuteSecondaryTransactionsQueue | 所有版本，包括 2013-08-15。必须启用读访问的地域冗余复制。 |
-| 容量（仅限 Blob 服务） | $MetricsCapacityBlob | 所有版本，包括 2013-08-15 |
+| 容量（仅限 Blob 服务） | $MetricsCapacityBlob | 所有版本，包括 2013-08-15。 |
 
 
 为存储帐户启用存储分析时，将自动创建这些表。这些表通过存储帐户的命名空间进行访问，例如：`https://<accountname>.table.core.chinacloudapi.cn/Tables("$MetricsTransactionsBlob")`
@@ -182,9 +173,9 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 
 存储分析执行的以下操作都是计费的：
 
-- 为日志记录创建 Blob 的请求
+- 为日志记录创建 Blob 的请求。
 
-- 为度量创建表实体的请求
+- 为度量创建表实体的请求。
 
 如果你配置了数据保留策略，在存储分析删除以前的日志记录和度量数据时，不会对删除事务进行收费。不过，从客户端中删除事务是计费的。有关保留策略的详细信息，请参阅[设置存储分析数据保留策略](https://msdn.microsoft.com/zh-cn/library/azure/hh343263.aspx)。
 
@@ -192,7 +183,7 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 
 向帐户的存储服务发出的每个请求是应计费或不计费的。存储分析记录向服务发出的每个请求，包括指示如何处理请求的状态消息。同样，存储分析存储服务及其 API 操作的度量数据，包括某些状态消息的百分比和计数。总之，这些功能可以帮助分析你的计费请求，对你的应用程序进行改进，以及诊断向你的服务发出的请求的问题。有关计费的详细信息，请参阅[了解 Azure 存储计费 - 带宽、事务和容量](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx)。
 
-在查看存储分析数据时，你可以使用[存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/azure/hh343260.aspx)主题中的表来确定哪些请求是计费的。然后，你可以将日志和度量数据与状态消息进行比较，以查看是否对你的特定请求进行收费。也可以使用上述主题中的表来调查存储服务或各个 API 操作的可用性。
+在查看存储分析数据时，你可以使用[存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/azure/hh343260.aspx)主题中的表来确定哪些请求是计费的。然后，你可以将日志和度量数据与状态消息进行比较，以查看是否对你的特定请求进行收费。也可以使用前述主题中的表来调查存储服务或各个 API 操作的可用性。
 
 ## 后续步骤
 
@@ -210,4 +201,4 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 - [存储分析度量值表结构](https://msdn.microsoft.com/zh-cn/library/hh343264.aspx) 
 - [存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/hh343260.aspx)  
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_0118_2016-->
