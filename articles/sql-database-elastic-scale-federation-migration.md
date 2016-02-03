@@ -1,22 +1,22 @@
 <properties 
-    pageTitle="联合迁移" 
+    pageTitle="联合迁移 | Windows Azure" 
     description="概述了将使用“联合”功能构建的现有应用迁移到弹性数据库模型的步骤。" 
     services="sql-database" 
     documentationCenter="" 
     manager="jeffreyg" 
-    authors="sidneyh" 
+    authors="ddove" 
     editor=""/>
 
 <tags 
-    ms.service="sql-database" 
-    ms.date="08/14/2015" 
-    wacn.date="09/15/2015"/>
+    ms.service="sql-database"
+    ms.date="11/04/2015" 
+    wacn.date="01/05/2016"/>
 
 # 联合迁移 
 
 Azure SQL 数据库联合功能以及 Web/Business Edition 将于 2015 年 9 月停用。到那时，使用联合功能的应用程序将停止工作。为了确保迁移成功，强烈建议您尽快开始迁移工作，以便充分计划和执行。
 
-如果你的应用程序尚未做好失去联合功能的准备，请使用[此处](https://support.microsoft.com/kb/3087180)提到的说明联系 Microsoft 支持部门。
+如果你的应用程序尚未做好失去联合功能的准备，请使用[此处](https://support.microsoft.com/zh-cn/kb/3087180)提到的说明联系 Microsoft 支持部门。
 
 本文档提供了联合迁移实用工具的上下文、示例和介绍，说明了如何成功地将当前联合应用程序无缝迁移到用于分片的[弹性数据库客户端库](http://go.microsoft.com/?linkid=9862592) API。该文档的目标是引导您完成建议的步骤来迁移联合应用程序，而无需任何数据移动。
 
@@ -30,7 +30,7 @@ Azure SQL 数据库联合功能以及 Web/Business Edition 将于 2015 年 9 月
 ### 迁移示例工具
 为协助此过程，我们已创建[联合迁移实用工具](http://go.microsoft.com/?linkid=9862613)。该工具将完成步骤 1 和 3。
 
-## <a name="create-shard-map-manager"></a>从联合根创建分片映射管理器
+## 从联合根创建分片映射管理器
 迁移联合应用程序的第一步是将联合根的元数据克隆到分片映射管理器的结构中。
 
 ![将联合根克隆到分片映射管理器][1]
@@ -43,7 +43,7 @@ Azure SQL 数据库联合功能以及 Web/Business Edition 将于 2015 年 9 月
 
 ![迁移现有应用以使用弹性数据库工具 API][2]
 
-## <a name="Modify-the-Existing-Application"></a>修改现有应用程序 
+## 修改现有应用程序 
 
 在分片映射管理器到位且已使用分片映射管理器注册联合成员和范围（通过迁移实用工具完成）后，开发人员可以修改现有联合应用程序以使用弹性数据库客户端库。如上图所示，通过这些 API 的应用程序连接将通过分片映射管理器路由到相应的联合成员（现在也是分片）。将联合成员映射到分片映射管理器使一个应用程序的两个版本（一个使用联合，另一个使用弹性数据库客户端库）能够并行执行以验证功能。
 
@@ -65,7 +65,7 @@ Azure SQL 数据库联合功能以及 Web/Business Edition 将于 2015 年 9 月
 
     USE FEDERATION CustomerFederation(cid=100) WITH RESET, FILTERING=OFF`
 
-对于弹性数据库工具 API，将使用 **RangeShardMap** 类中的 **OpenConnectionForKey** 方法，通过[数据相关路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)建立与特定分片的连接。 
+对于弹性数据库工具 API，将使用 **RangeShardMap** 类中的 **OpenConnectionForKey** 方法，通过[数据相关路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)建立与特定分片的连接。
 
     //Connect and issue queries on the shard with key=100 
     using (SqlConnection conn = rangeShardMap.OpenConnectionForKey(100, csb))  
@@ -82,13 +82,13 @@ Azure SQL 数据库联合功能以及 Web/Business Edition 将于 2015 年 9 月
         } 
     }
 
-本部分中的这些步骤是必要的，但是可能不适用于出现的所有迁移方案。有关详细信息，请参阅[弹性缩放的概念性概述](/documentation/articles/sql-database-elastic-scale-introduction)和 [API 参考](http://msdn.microsoft.com/zh-cn/library/azure/dn765902.aspx)。
+本部分中的这些步骤是必要的，但是可能不适用于出现的所有迁移方案。有关详细信息，请参阅[弹性数据库工具的概念性概述](/documentation/articles/sql-database-elastic-scale-introduction)和 [API 参考](http://go.microsoft.com/?linkid=9862604)。
 
 ## 断开现有联合成员 
 
 ![断开分片的联合成员][3]
 
-将应用程序修改为包含弹性数据库工具 API 后，迁移联合应用程序的最后一步是 **SWITCH OUT** 联合成员（有关详细信息，请参阅 [ALTER FEDERATION（Azure SQL 数据库）](http://msdn.microsoft.com/zh-cn/library/dn269988(v=sql.120).aspx)) 的 MSDN 参考。针对特定联合成员发出 **SWITCH OUT** 的最终结果将导致删除所有联合约束和元数据，从而将联合成员呈现为常规 Azure SQL 数据库，与其他任何 Azure SQL 数据库无异。
+将应用程序修改为包含弹性数据库工具 API 后，迁移联合应用程序的最后一步是 **SWITCH OUT** 联合成员（有关详细信息，请参阅 [ALTER FEDERATION（Azure SQL 数据库）] 的 MSDN 参考(http://msdn.microsoft.com/zh-cn/library/dn269988(v=sql.120).aspx))。针对特定联合成员发出 **SWITCH OUT** 的最终结果将导致删除所有联合约束和元数据，从而将联合成员呈现为常规 Azure SQL 数据库，与其他任何 Azure SQL 数据库无异。
 
 请注意，针对联合成员发出 **SWITCH OUT** 是一个单向操作，无法撤消。执行后，无法将产生的数据库添加回联合，并且 USE FEDERATION 命令将不再适用于此数据库。
 
@@ -98,13 +98,13 @@ Azure SQL 数据库联合功能以及 Web/Business Edition 将于 2015 年 9 月
   
 联合迁移实用工具提供了以下功能：
 
-1.    执行联合根到分片映射管理器的克隆。开发人员可选择将现有的分片映射管理器放置在新 Azure SQL 数据库 上（推荐）或放置在现有联合根数据库上。
+1.    执行联合根到分片映射管理器的克隆。开发人员可选择将现有的分片映射管理器放置在新 Azure SQL 数据库上（推荐）或放置在现有联合根数据库上。
 2.    针对联合中的所有联合成员发出 SWITCH OUT。
 
 
 ## 功能比较
 
-虽然弹性数据库工具提供了许多附加功能（例如，[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying)、[拆分和合并分片](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)、[分片弹性](/documentation/articles/sql-database-elastic-scale-elasticity)、[客户端缓存](/documentation/articles/sql-database-elastic-scale-shard-map-management)等等），但是有几个在弹性数据库工具中不受支持的联合功能值得注意。
+虽然弹性数据库工具提供了许多附加功能（例如，[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying)、[拆分和合并分片](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)、分片弹性、[客户端缓存](/documentation/articles/sql-database-elastic-scale-shard-map-management)等），但是有几个在弹性数据库工具中不受支持的联合功能值得注意。
   
 - **FILTERING=ON** 的使用。建立使用行级安全性 (RLS) 来执行行筛选。与联合中的筛选一样，RLS 会自动将一个谓词添加到对分片表执行的所有查询。有关详细信息，请参阅[具有弹性数据库工具和行级安全性的多租户应用程序](/documentation/articles/sql-database-elastic-tools-multi-tenant-row-level-security)。 
  
@@ -125,24 +125,25 @@ Azure SQL 数据库联合功能以及 Web/Business Edition 将于 2015 年 9 月
 
 ## 其他注意事项
 
-* Web 版和企业版以及联合功能将于 2015 年秋季停用。作为联合应用程序迁移的一部分，强烈建议对基础版、标准版和高级版执行性能测试。 
+* Web 版和 Business Edition 以及联合功能将于 2015 年秋季停用。在联合应用程序迁移过程中，强烈建议对 Basic、Standard 和 Premium Edition 执行性能测试。 
 
-* 对联合成员执行 SWITCH OUT 语句将使生成的数据库能够利用所有 Azure SQL 数据库 功能（即新版本、备份、PITR、审核等）。 
+* 对联合成员执行 SWITCH OUT 语句将使生成的数据库能够利用所有 Azure SQL 数据库功能（即新版本、备份、PITR、审核等）。
 
 ##迁移需要更多时间吗？ 
-如果你的应用程序尚未做好失去联合功能的准备，请使用[此处](https://support.microsoft.com/kb/3087180)提到的说明联系 Microsoft 支持部门。
+如果你的应用程序尚未做好失去联合功能的准备，请使用[此处](https://support.microsoft.com/zh-cn/kb/3087180)提到的说明联系 Microsoft 支持部门。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Anchors-->
-[从联合根创建分片映射管理器]:#create-shard-map-manager
-[修改现有应用程序]:#Modify-the-Existing-Application
-[断开现有联合成员]:#Switch-Out-Existing-Federation-Members
+[Create Shard Map Manager from a Federation Root]: #create-shard-map-manager
+[Modify the Existing Application]: #Modify-the-Existing-Application
+[Switch Out Existing Federation Members]: #Switch-Out-Existing-Federation-Members
 
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-federation-migration/migrate-1.png
 [2]: ./media/sql-database-elastic-scale-federation-migration/migrate-2.png
 [3]: ./media/sql-database-elastic-scale-federation-migration/migrate-3.png
+ 
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1221_2015-->

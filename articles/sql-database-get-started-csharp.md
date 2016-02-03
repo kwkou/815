@@ -10,13 +10,14 @@
 <tags
    ms.service="sql-database"
    ms.date="09/01/2015"
-   wacn.date="10/17/2015"/>
+   wacn.date="01/05/2016"/>
 
 # 使用 C&#x23; 创建 SQL 数据库
 
 **单一数据库**
 
 > [AZURE.SELECTOR]
+- [Azure 经典门户](/documentation/articles/sql-database-get-started)
 - [C#](/documentation/articles/sql-database-get-started-csharp)
 - [PowerShell](/documentation/articles/sql-database-get-started-powershell)
 
@@ -24,7 +25,7 @@
 
 本文介绍使用[适用于 .NET 的 Azure SQL 数据库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)通过 C# 创建 Azure SQL 数据库的命令。
 
-本文介绍如何创建单一数据库。
+本文介绍如何创建单一数据库，若要创建弹性数据库，请参阅[创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal)。
 
 为简明起见，我们已分开列出各个代码段，并在本文底部的某个部分中提供了一个示例控制台应用程序，其中结合了所有命令。
 
@@ -38,7 +39,7 @@
 
 若要完成本文中的步骤，你需要以下各项：
 
-- Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“免费试用”，然后再回来完成本文的相关操作即可。
+- Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
 - Visual Studio。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
 
 
@@ -107,7 +108,7 @@
 
 代码中需要用到域名。轻松标识正确域名的一种方式是：
 
-1. 转到 [Azure 预览门户](https://manage.windowsazure.cn)。
+1. 转到 [Azure 经典门户](https://manage.windowsazure.cn)。
 2. 将鼠标悬停在右上角的名称上，并记下弹出窗口中显示的域。
 
     ![标识域名][3]
@@ -160,7 +161,7 @@
     // Resource group parameters
     ResourceGroup resourceGroupParameters = new ResourceGroup()
     {
-        Location = "South Central US"
+        Location = "China East"
     };
     
     //Create a resource group
@@ -179,7 +180,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
     // Create a server
     ServerCreateOrUpdateParameters serverParameters = new ServerCreateOrUpdateParameters()
     {
-        Location = "South Central US",
+        Location = "China East",
         Properties = new ServerCreateOrUpdateProperties()
         {
             AdministratorLogin = "ServerAdmin",
@@ -274,7 +275,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
         private static string resourcegroupName = "rg1";
 
-        private static string dataCenterLocation = "Japan West";
+        private static string dataCenterLocation = "China East";
 
         private static string databaseName = "newDatabaseName";
         private static string databaseEdition = "Standard";
@@ -293,7 +294,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
         private static string domainName = "microsoft.partner.onmschina.cn";
 
-        private static string serverLocation = "Japan West";
+        private static string serverLocation = "China East";
 
         #endregion
 
@@ -429,4 +430,4 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 [8]: ./media/sql-database-get-started-csharp/add-application2.png
 [9]: ./media/sql-database-get-started-csharp/clientid.png
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_1221_2015-->

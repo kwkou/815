@@ -9,7 +9,7 @@
 <tags 
    ms.service="sql-database"
    ms.date="09/30/2015"
-   wacn.date="11/27/2015" />
+   wacn.date="01/05/2016" />
 
 # Web 和 Business Edition 停用常见问题
 
@@ -19,7 +19,10 @@ Azure SQL Web 和企业数据库现已停用。基本、标准、高级和弹性
 
 **获取定价层建议：**
 
+- [使用 Azure 门户升级到 SQL 数据库 V12](/documentation/articles/sql-database-v12-upgrade)
 - [使用 PowerShell 升级到 SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server)
+- [更改 Web 或企业数据库的定价层](/documentation/articles/sql-database-service-tier-advisor)
+ 
 
 
 ## 为何 Azure 管理门户显示我的 Web 和 Business Edition 数据库已停用？
@@ -34,11 +37,11 @@ Azure SQL Web 和企业数据库现已停用。基本、标准、高级和弹性
 
 ## Microsoft 为何要引入新的服务层？
 
-根据客户反馈，Azure SQL 数据库将引入了新的服务层，以帮助客户更方便地为关系数据库工作负载提供支持。这些新层的设计能够以七个级别提供可预测的性能，以满足从轻型到重型事务应用程序的需求。此外，这些新层还提供一系列业务连续性功能、更有利的运行时间 SLA、成本更低但容量更大的数据库，以及改进的计费体验。
+根据客户反馈，Azure SQL 数据库将引入新的服务层，以帮助客户更方便地为关系数据库工作负载提供支持。这些新层的设计能够以七个级别提供可预测的性能，以满足从轻型到重型事务应用程序的需求。此外，这些新层还提供一系列业务连续性功能、更有利的运行时间 SLA、成本更低但容量更大的数据库，以及改进的计费体验。
 
 ## 我可以在哪里了解有关新服务层的详细信息？
 
-有关新服务层的详细定价信息，请参阅 [SQL 数据库定价](/pricing/details/sql-database/)。
+有关新服务层和性能模型的详细信息，请参阅[服务层](/documentation/articles/sql-database-service-tiers)。有关新服务层的详细定价信息，请参阅 [SQL 数据库定价](/home/features/sql-database/#price)。
 
 ## 基本、标准和高级版中将不会提供哪些特性或功能？
 
@@ -48,13 +51,15 @@ Azure SQL Web 和企业数据库现已停用。基本、标准、高级和弹性
 
 ## 基本、标准和高级版如何改进我的计费体验？
 
-基本、标准和高级版 Azure SQL 数据库按小时计费，在 24 小时内，你可以扩展或收缩每个数据库 4 次。我们将会根据你为每个小时选择的最高服务层和性能级别，以固定的费率向你计费。此外，帐单中会细分性能级别（例如：“基本”、“S1”和“P2”），让你更轻松地查看在单个月份中每个性能级别使用数据库天数/小时数。Web 和企业数据库仍然根据数据库大小，使用数据库单元进行计费。请访问 [SQL 数据库定价页](http://azure.microsoft.com/pricing/details/sql-database/)，以了解有关新服务层的定价及其差异的详细信息。
+基本、标准和高级版 Azure SQL 数据库按小时计费，在 24 小时内，你可以扩展或收缩每个数据库 4 次。我们将会根据你为每个小时选择的最高服务层和性能级别，以固定的费率向你计费。此外，帐单中会细分性能级别（例如：“基本”、“S1”和“P2”），让你更轻松地查看在单个月份中每个性能级别使用数据库天数/小时数。Web 和企业数据库仍然根据数据库大小，使用数据库单元进行计费。请访问 [SQL 数据库定价页](/home/features/sql-database/#price)，以了解有关新服务层的定价及其差异的详细信息。
 
 
 ## 另请参阅
 
-[Azure SQL 数据库](/services/sql-database/)
+[Azure SQL 数据库](/documentation/services/sql-databases)
+
+[服务层](/documentation/articles/sql-database-service-tiers)
 
 [将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-new-service-tiers)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

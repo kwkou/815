@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="06/30/2015"
-   wacn.date="11/27/2015"/>
+   ms.date="09/22/2015"
+   wacn.date="01/05/2016"/>
 
 # SQL 数据库索引顾问
 
@@ -18,7 +18,7 @@ Azure SQL 数据库索引顾问建议你为现有 SQL 数据库使用新索引�
 
 SQL 数据库服务通过分析 SQL 数据库的历史资源使用状况来评估索引性能，并提供最适合运行数据库的典型工作负荷的索引建议。
 
-索引顾问提供有关创建哪些索引的建议，使索引管理更容易。对于 V12 服务器，索引顾问还可以创建和验证索引，只需在 [Azure 门户](https://manage.windowsazure.cn/)中单击几下即可。创建索引后，SQL 数据库服务将分析数据库工作负荷的性能并提供有关新索引影响的详细信息。如果分析确定建议的索引对性能具有负面影响，则会自动还原索引。
+索引顾问提供有关创建哪些索引的建议，使索引管理更容易。对于 V12 服务器，索引顾问还可以创建和验证索引，只需在 [Azure 经典门户](https://manage.windowsazure.cn)中单击几下即可。创建索引后，SQL 数据库服务将分析数据库工作负荷的性能并提供有关新索引影响的详细信息。如果分析确定建议的索引对性能具有负面影响，则会自动还原索引。
 
 索引顾问可以花费更少的时间优化数据库性能。
 
@@ -35,7 +35,7 @@ SQL 数据库服务通过分析 SQL 数据库的历史资源使用状况来评�
 
 ## 先决条件
 
-若要查看和创建索引建议，需要 Azure 中正确的<!--[-->基于角色的访问控制<!--](/documentation/articles/role-based-access-control-configure)-->权限。
+若要查看和创建索引建议，需要 Azure 中正确的[基于角色的访问控制](/documentation/articles/role-based-access-control-configure)权限。
 
 - 查看建议需要“读者”、“SQL DB 参与者”权限。
 - 执行任何操作（如创建或删除索引、取消创建索引）需要“所有者”、“SQL DB 参与者”权限。
@@ -53,11 +53,11 @@ SQL 数据库服务通过分析 SQL 数据库的历史资源使用状况来评�
 
 ## 查看建议的索引
 
-索引顾问在 [Azure 门户](https://manage.windowsazure.cn/)中的数据库边栏选项卡上提供了索引建议列表。所选数据库的每个表中都显示了前几个常选的建议，在该数据库中创建新索引可能提供性能提升。
+索引顾问在 [Azure 经典门户](https://manage.windowsazure.cn)中的数据库边栏选项卡上提供了索引建议列表。所选数据库的每个表中都显示了前几个常选的建议，在该数据库中创建新索引可能提供性能提升。
 
 ### 若要查看当前可用索引建议：
 
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn/)。
+1. 登录 [Azure 经典门户](https://manage.windowsazure.cn)。
 2. 在左侧菜单中，单击“浏览”。
 3. 在“浏览”边栏选项卡中，单击“SQL 数据库”。
 4. 在“SQL 数据库”边栏选项卡中，单击想要查看其建议索引的数据库。
@@ -167,4 +167,4 @@ SQL 数据库服务通过分析 SQL 数据库的历史资源使用状况来评�
 [3]: ./media/sql-database-index-advisor/recommended-indexes.png
 [4]: ./media/sql-database-index-advisor/index-operations.png
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1221_2015-->

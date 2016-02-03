@@ -1,16 +1,16 @@
 <properties 
-	pageTitle="使用弹性数据库工具添加分片" 
+	pageTitle="使用弹性数据库工具添加分片 | Windows Azure" 
 	description="如何使用弹性缩放 API 将新分片添加到分片集。" 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
-	authors="sidneyh" 
+	authors="ddove" 
 	editor=""/>
 
 <tags 
-	ms.service="sql-database" 
-	ms.date="07/24/2015" 
-	wacn.date="09/15/2015"/>
+	ms.service="sql-database"
+	ms.date="11/04/2015"
+	wacn.date="01/05/2016"/>
 
 # 使用弹性数据库工具添加分片
 
@@ -37,6 +37,7 @@
                             (new Range<long>(300, 400), shard2, MappingStatus.Online)); 
 
 
+你可以使用 Powershell 作为替代方法来创建新的分片映射管理器。[此处](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db)提供了一个示例。
 ## 为现有范围的空部分添加分片  
 
 在某些情况下，你可能已将某个范围映射到某个分片，并在该分片中填充了部分数据，但是，你现在希望将后续数据定向到其他分片。例如，你以前按日期范围分片，并且已在某个分片中分配了 50 天的数据，但从第 24 天开始，你希望以后的数据驻留在其他分片中。弹性数据库[拆分/合并工具](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)可以执行此操作，但是，如果不需要数据移动（例如，[25, 50) 天范围的数据 - 即，从第 25 天（含）到第 50 天（不含）的数据尚不存在），你完全可以直接使用分片映射管理 API 执行此操作。
@@ -72,5 +73,6 @@
 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+ 
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1221_2015-->

@@ -1,19 +1,19 @@
 <properties
-	pageTitle="升级到最新的弹性数据库客户端库" 
-	description="使用 Nuget 升级应用和库" 
+	pageTitle="Upgrade to the latest elastic database client library | Windows Azure" 
+	description="Upgrade apps and libraries using Nuget" 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
-	authors="sidneyh"/>
+	authors="ddove"/>
 
 <tags 
-	ms.service="sql-database" 
-	ms.date="09/22/2015" 
-	wacn.date="11/12/2015" />
+	ms.service="sql-database"
+	ms.date="11/04/2015" 
+	wacn.date="01/05/2016" />
 
 # 升级到最新的弹性数据库客户端库
 
-可通过 [NuGet](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/) 和 Visual Studio 中的 NuGet 包管理器界面获取弹性数据库客户端库的新版本。升级包含客户端库的 bug 修复和新功能支持。
+可通过 [NuGet](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/) 和 Visual Studio 中的 NuGet 包管理器界面获取[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)的新版本。升级包含客户端库的 bug 修复和新功能支持。
 
 使用新库重新生成你的应用程序，以及更改 Azure SQL 数据库中存储的现有分片映射管理器元数据以支持新功能。
 
@@ -50,7 +50,7 @@
  
 ***选项 2：使用 C# 升级元数据***
 
-或者，创建一个 Visual Studio 应用程序，它打开 ShardMapManager，循环访问所有分片并通过调用 [UpgradeLocalStore](https://msdn.microsoft.com/zh-CN/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.upgradelocalstore.aspx) 和 [UpgradeGlobalStore](https://msdn.microsoft.com/zh-CN/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.upgradeglobalstore.aspx) 方法执行元数据升级，如此示例所示：
+或者，创建一个 Visual Studio 应用程序，它打开 ShardMapManager，循环访问所有分片并通过调用 [UpgradeLocalStore](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.upgradelocalstore.aspx) 和 [UpgradeGlobalStore](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.upgradeglobalstore.aspx) 方法执行元数据升级，如此示例所示：
 
 	ShardMapManager smm =
 	   ShardMapManagerFactory.GetSqlShardMapManager
@@ -92,4 +92,4 @@
 [1]: ./media/sql-database-elastic-scale-upgrade-client-library/nuget-upgrade.png
  
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->

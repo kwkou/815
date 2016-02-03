@@ -1,6 +1,6 @@
 <properties
-	pageTitle="将 BACPAC 导入 Azure SQL 数据库"
-	description="将 BACPAC 导入 Azure SQL 数据库"
+	pageTitle="导入 BACPAC 文件以创建新的 Azure SQL 数据库"
+	description="通过导入现有的 BACPAC 文件创建新的 Azure SQL 数据库。"
 	services="sql-database"
 	documentationCenter=""
 	authors="stevestein"
@@ -9,22 +9,23 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="09/05/2015"
-	wacn.date="10/17/2015"/>
+	ms.date="10/13/2015"
+	wacn.date="01/05/2016"/>
 
 
-# 将 BACPAC 导入 SQL 数据库
+# 导入 BACPAC 文件以创建新的 Azure SQL 数据库
+
 
 **单一数据库**
 
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/sql-database-import-powershell)
 
-本文介绍如何使用 [Azure 门户](https://manage.windowsazure.cn)通过导入 BACPAC 来创建 SQL 数据库。
+本文说明如何使用 [Azure 经典门户](https://manage.windowsazure.cn)通过 BACPAC 文件创建新的 Azure SQL 数据库。
 
 BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息，请参阅[数据层应用程序](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx)中的备份包 (.bacpac)。
 
-数据库是使用从 Azure 存储 blob 容器导入的 BACPAC 创建的。如果 Azure 存储中没有 .bacpac 文件，你可以按照<!--[-->创建和导出 Azure SQL 数据库的 BACPAC<!--](/documentation/articles/sql-database-backup) -->中的步骤创建一个。
+数据库是使用从 Azure 存储 blob 容器导入的 BACPAC 创建的。如果 Azure 存储空间中没有 .bacpac 文件，你可以按照[创建和导出 Azure SQL 数据库的 BACPAC](/documentation/articles/sql-database-export) 中的步骤创建一个。
 
 
 > [AZURE.NOTE]Azure SQL 数据库会自动为你可以还原的每个用户数据库创建和维护备份。有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
@@ -32,7 +33,7 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
 
 要从 .bacpac 导入 SQL 数据库，你需要以下各项：
 
-- Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“免费试用”，然后再回来完成本文的相关操作即可。
+- Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
 - Azure SQL 数据库 V12 服务器。如果你没有 V12 服务器，可以遵循本文中的以下步骤创建一个：[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)。
 - 要导入的数据库的 .bacpac 文件位于 [Azure 存储帐户（经典）](/documentation/articles/storage-create-storage-account)blob 容器中。
 
@@ -41,7 +42,7 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
 
 打开要导入的数据库的 SQL Server 边栏选项卡：
 
-1.	转到 [Azure 门户](https://manage.windowsazure.cn)。
+1.	转到 [Azure 经典门户](https://manage.windowsazure.cn)。
 2.	单击“浏览全部”。
 3.	单击“SQL Server”。
 2.	单击要将数据库还原到的服务器。
@@ -53,6 +54,7 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
 
     ![配置存储选项][2]
 
+1.  为新数据库选择定价层，然后单击“选择”。
 1.  输入“数据库名称”。
 2.  为要导入数据库的 Azure SQL 服务器输入“服务器管理员登录名”和“密码”。
 1.  单击“创建”以从 BACPAC 创建数据库。
@@ -93,4 +95,4 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
 [5]: ./media/sql-database-import/import-history.png
 [6]: ./media/sql-database-import/import-status.png
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_1221_2015-->
