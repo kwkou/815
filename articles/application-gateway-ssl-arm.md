@@ -1,35 +1,25 @@
 <properties 
-   pageTitle="使用 Azure 资源管理器创建、启动或删除应用程序网关 | Windows Azure"
-   description="本页提供有关使用 Azure 资源管理器创建、配置、启动和删除 Azure 应用程序网关的说明"
+   pageTitle="使用 Azure 资源管理器配置应用程序网关以进行 SSL 卸载 | Windows Azure"
+   description="本页提供有关使用 Azure 资源管理器创建支持 SSL 卸载的应用程序网关的说明"
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
    manager="jdial"
    editor="tysonn"/>
 <tags 
-   ms.service="application-gateway"
-   ms.date="11/10/2015"
-   wacn.date="01/04/2016"/>
+   ms.date="10/28/2015"
+   wacn.date="01/05/2016"/>
 
-
-# 使用 Azure 资源管理器创建、启动或删除应用程序网关
-
-应用程序网关是第 7 层负载平衡器。它在不同服务器之间提供故障转移和性能路由 HTTP 请求，而不管它们是在云中还是本地。应用程序网关具有以下应用程序传递功能：HTTP 负载平衡、基于 Cookie 的会话相关性和 SSL 卸载。
-
+# 使用 Azure 资源管理器配置应用程序网关以进行 SSL 卸载
 
 > [AZURE.SELECTOR]
-- [Azure classic steps](/documentation/articles/application-gateway-create-gateway)
-- [Resource Manager Powershell steps](/documentation/articles/application-gateway-create-gateway-arm)
-- [Azure Resource Manager template steps](/documentation/articles/application-gateway-create-gateway-arm-template)
+-[Azure Classic Powershell](/documentation/articles/application-gateway-ssl)
+-[Azure 资源管理器 PowerShell ](/documentation/articles/application-gateway-ssl-arm)
+
+ 可将应用程序网关配置为在网关上终止 SSL 会话，以避免 Web 场中发生开销较高的 SSL 解密。SSL 卸载还简化了网站的前端服务器设置与管理。
 
 
-<BR>
-
-
-本文将指导你完成创建、配置、启动和删除应用程序网关的步骤。
-
-
->[AZURE.IMPORTANT]在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文档将说明使用 Azure 资源管理器创建应用程序网关的方式。若要使用经典版本，请转到[使用 PowerShell 创建应用程序网关经典部署](/documentation/articles/application-gateway-create-gateway)。
+>[AZURE.IMPORTANT]在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文档将说明使用 Azure 资源管理器创建应用程序网关的方式。若要使用经典部署模型版本，请转到[使用 Azure 经典部署配置应用程序网关 SSL 卸载](/documentation/articles/application-gateway-ssl)。
 
 
 
@@ -48,11 +38,16 @@
 - **侦听器：**侦听器具有前端端口、协议（Http 或 Https，区分大小写）和 SSL 证书名称（如果要配置 SSL 卸载）。 
 - **规则：**规则将会绑定侦听器和后端服务器池，并定义当流量抵达特定侦听器时应定向到的后端服务器池。目前仅支持*基本*规则。*基本*规则是一种轮循负载分发模式。
 
+**其他配置说明：**
+
+对于 SSL 证书配置，**HttpListener** 中的协议应更改为 *Https*（区分大小写）。需要将 **SslCertificate** 元素添加到 **HttpListener**，后者包含针对 SSL 证书配置的变量值。前端端口应更新为 443。
+
+**启用基于 Cookie 的相关性**：可以配置应用程序网关，以确保来自客户端会话的请求始终定向到 Web 场中的同一 VM。这是通过注入允许网关适当定向流量的会话 Cookie 来实现的。若要启用基于 Cookie 的相关性，请在 **BackendHttpSettings** 元素中将 **CookieBasedAffinity** 设置为 *Enabled*。
 
  
 ## 创建新的应用程序网关
 
-使用 Azure 经典门户和 Azure 资源管理器的差别在于创建应用程序网关的顺序和需要配置的项。
+使用 Azure 经典部署模型和 Azure 资源管理器的差别在于创建应用程序网关的顺序和需要配置的项。
 
 使用资源管理器，组成应用程序网关的所有项都将分开配置，然后放在一起创建应用程序网关资源。
 
@@ -110,7 +105,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 	
 	$subnet = New-AzureVirtualNetworkSubnetConfig -Name subnet01 -AddressPrefix 10.0.0.0/24
 
-将地址范围 10.0.0.0/24 分配给用于创建虚拟网络的子网变量
+将地址范围 10.0.0.0/24 分配给用于创建虚拟网络的子网变量。
 
 ### 步骤 2	
 	$vnet = New-AzurevirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "China North" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
@@ -118,9 +113,11 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 使用前缀 10.0.0.0/16 和子网 10.0.0.0/24，在中国北部区域的“appw-rg”资源组中创建名为“appgwvnet”的虚拟网络
 
 ### 步骤 3
-	
+
 	$subnet=$vnet.Subnets[0]
 
+将子网对象分配到变量 $subnet 以完成后续步骤。
+	
 ## 创建前端配置的公共 IP 地址
 
 	$publicip = New-AzurePublicIpAddress -ResourceGroupName appgw-rg -name publicIP01 -location "China North" -AllocationMethod Dynamic
@@ -140,49 +137,56 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 	$pool = New-AzureApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 134.170.185.46, 134.170.188.221,134.170.185.50
 
-此步骤将配置名为“pool01”的后端 IP 地址池，其 IP 地址为“134.170.185.46、134.170.188.221、134.170.185.50”。这些 IP 地址将接收来自前端 IP 终结点的网络流量。你要替换上述 IP 地址，添加你自己的应用程序 IP 地址终结点。
+此步骤将配置名为“pool01”的后端 IP 地址池，其 IP 地址为“134.170.185.46, 134.170.188.221,134.170.185.50”。 这些 IP 地址将接收来自前端 IP 终结点的网络流量。将上述示例中的 IP 地址替换为你的网站终结点的 IP 地址。
 
 ### 步骤 3
 
-	$poolSetting = New-AzureApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol Http -CookieBasedAffinity Disabled
+	$poolSetting = New-AzureApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol Http -CookieBasedAffinity Enabled
 
 为后端池中负载平衡的网络流量配置应用程序网关设置“poolsetting01”。
 
 ### 步骤 4
 
-	$fp = New-AzureApplicationGatewayFrontendPort -Name frontendport01  -Port 80
+	$fp = New-AzureApplicationGatewayFrontendPort -Name frontendport01  -Port 443
 
-在本例中，为公共 IP 终结点配置名为“frontendport01”的前端 IP 端口。
+在本例中，将为公共 IP 终结点配置名为“frontendport01”的前端 IP 端口。
 
-### 步骤 5
+### 步骤 5 
+
+	$cert = New-AzureApplicationGatewaySslCertificate -Name cert01 -CertificateFile <full path for certificate file> -Password ‘<password>’
+
+配置用于 SSL 连接的证书。该证书需采用 .pfx 格式，并且密码为 4-12 个字符。
+
+### 步骤 6
 
 	$fipconfig = New-AzureApplicationGatewayFrontendIPConfig -Name fipconfig01 -PublicIPAddress $publicip
 
 创建名为“fipconfig01”的前端 IP 配置，并将公共 IP 地址与前端 IP 配置相关联。
 
-### 步骤 6
+### 步骤 7
 
-	$listener = New-AzureApplicationGatewayHttpListener -Name listener01  -Protocol Http -FrontendIPConfiguration $fipconfig -FrontendPort $fp
+	$listener = New-AzureApplicationGatewayHttpListener -Name listener01  -Protocol Https -FrontendIPConfiguration $fipconfig -FrontendPort $fp -SslCertificate $cert
 
-创建名为“listener01”的侦听器，并将前端端口与前端 IP 配置相关联。
 
-### 步骤 7 
+创建名为“listener01”的侦听器；将前端端口与前端 IP 配置和证书相关联。
+
+### 步骤 8 
 
 	$rule = New-AzureApplicationGatewayRequestRoutingRule -Name rule01 -RuleType Basic -BackendHttpSettings $poolSetting -HttpListener $listener -BackendAddressPool $pool
 
 创建名为“rule01”的负载平衡器路由规则，并配置负载平衡器的行为。
 
-### 步骤 8
+### 步骤 9
 
 	$sku = New-AzureApplicationGatewaySku -Name Standard_Small -Tier Standard -Capacity 2
 
-配置应用程序网关的实例大小
+配置应用程序网关的实例大小。
 
 >[AZURE.NOTE]*InstanceCount* 的默认值为 2，最大值为 10。*GatewaySize* 的默认值为 Medium。你可以在 Standard\_Small、Standard\_Medium 和 Standard\_Large 之间进行选择。
 
 ## 使用 New-AzureApplicationGateway 创建应用程序网关
 
-	$appgw = New-AzureApplicationGateway -Name appgwtest -ResourceGroupName appw-rg -Location "China North" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
+	$appgw = New-AzureApplicationGateway -Name appgwtest -ResourceGroupName appw-rg -Location "China North" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku -SslCertificates $cert
 
 创建包含上述步骤中所有配置项的应用程序网关。示例中的应用程序网关名为“appgwtest”。
 
@@ -215,7 +219,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 使用 `Get-AzureApplicationGateway` cmdlet 检查网关的状态。如果前一步骤中的 *Start-AzureApplicationGateway* 成功，则 State 应为 *Running*，Vip 和 DnsName 应包含有效的条目。
 
-此示例演示了一个正常运行并已准备好将流量定向到 `http://<generated-dns-name>.cloudapp.net` 的应用程序网关。
+此示例演示了一个正常运行并已准备好将流量定向到 `http://<generated-dns-name>.chinacloudapp.cn` 的应用程序网关。
 
 	Get-AzureApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
 
@@ -353,8 +357,8 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
                                       }
                                     ]
 	ResourceGroupName                 : appgw-rg
-	Location                          : chinanorth
-		Tag                               : {}
+	Location                          : ChinaNorth
+	Tag                               : {}
 	TagsTable                         : 
 	Name                              : appgwtest
 	Etag                              : W/"ddb0408e-a54c-4501-a7f8-8487c3530bd7"
@@ -363,55 +367,14 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 
 
-## 删除应用程序网关
-
-若要删除应用程序网关，需要按顺序执行以下操作：
-
-1. 使用 `Stop-AzureApplicationGateway` cmdlet 停止该网关。 
-2. 使用 `Remove-AzureApplicationGateway` cmdlet 删除该网关。
-3. 使用 `Get-AzureApplicationGateway` cmdlet 验证是否已删除该网关。
-
-
-### 步骤 1
-
-获取应用程序网关对象，并将其关联到变量“$getgw”：
- 
-	$getgw =  Get-AzureApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
-
-### 步骤 2
-	 
-使用 `Stop-AzureApplicationGateway` 停止应用程序网关：
-
-	Stop-AzureApplicationGateway -ApplicationGateway $getgw  
-
-
-应用程序网关进入停止状态后，请使用 `Remove-AzureApplicationGateway` cmdlet 删除该服务。
-
-
-	Remove-AzureApplicationGateway -Name $appgwtest -ResourceGroupName appgw-rg -Force
-
-	
-
->[AZURE.NOTE]可以使用“-force”开关来抑制删除确认消息
->
-
-若要验证是否已删除服务，可以使用 `Get-AzureApplicationGateway` cmdlet。此步骤不是必需的。
-
-
-	Get-AzureApplicationGateway -Name appgwtest-ResourceGroupName appgw-rg
-
-	
-
-
 ## 后续步骤
 
-如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](/documentation/articles/application-gateway-ssl)。
 
 如果你想要将应用程序网关配置为与 ILB 配合使用，请参阅[创建具有内部负载平衡器 (ILB) 的应用程序网关](/documentation/articles/application-gateway-ilb)。
 
 如需负载平衡选项的其他常规信息，请参阅：
 
-<!--- [Azure Load Balancer](/documentation/services/load-balancer/)-->
+- [Azure 负载平衡器](/documentation/services/load-balancer/)
 - [Azure 流量管理器](/documentation/services/traffic-manager/)
 
 <!---HONumber=Mooncake_1221_2015-->
