@@ -10,7 +10,7 @@
 <tags
 	ms.service="site-recovery"
 	ms.date="12/07/2015"
-	wacn.date="01/29/2019"/>
+	wacn.date="01/29/2016"/>
 
 # Azure Site Recovery 的工作原理
 
