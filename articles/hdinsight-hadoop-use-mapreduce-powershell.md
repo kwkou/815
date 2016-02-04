@@ -103,8 +103,6 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 MapRed
 
 	> [AZURE.NOTE]如果 **ExitCode** 的值不是 0，请参阅[故障排除](#troubleshooting)。
 
-    此示例还会将下载的文件存储到你从中运行脚本的目录中的 **example/data/WordCountOutput** 文件夹。
-
 ##查看输出
 
 MapReduce 作业已将操作结果存储到 Azure Blob 存储（位于指定为作业参数的 **wasb:///example/data/WordCountOutput** 路径中）。可以通过 Azure PowerShell 访问 Azure Blob 存储，但你必须知道存储帐户名称、密钥，以及 HDInsight 群集用来直接访问文件的容器。
@@ -133,7 +131,7 @@ MapReduce 作业已将操作结果存储到 Azure Blob 存储（位于指定为�
 		$clusterInfo = Get-AzureHDInsightCluster -ClusterName $clusterName
 
 		#Get the storage account information
-		$storageAccountName = $clusterInfo.DefaultStorageAccount.StorageAccountName
+		$storageAccountName = $clusterInfo.DefaultStorageAccount.StorageAccountName -replace ".blob.core.chinacloudapi.cn", ""
 		$storageAccountKey = $clusterInfo.DefaultStorageAccount.StorageAccountKey
 		$storageContainer = $clusterInfo.DefaultStorageAccount.StorageContainerName
 
