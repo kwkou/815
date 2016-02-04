@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="将自己的域名添加到 Azure AD | Windows Azure" 
-	description="本主题介绍如何将自己的域名添加到 Azure AD 及相关信息。" 
+	description="介绍如何将自己的域名添加到 Azure Active Directory，并提供其他相关信息。"
 	services="active-directory" 
 	documentationCenter="" 
 	authors="curtand"
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="08/14/2015"
-	wacn.date="01/21/2016" />
+	ms.date="12/01/2015"
+	wacn.date="01/29/2016" />
 
 # 将自己的域名添加到 Azure AD
 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="管理 Azure AD Connect" 
+	pageTitle="Azure AD Connect：后续步骤以及如何管理 Azure AD Connect | Windows Azure"
 	description="了解如何扩展 Azure AD Connect 的默认配置和操作任务。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -10,13 +10,10 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="10/01/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="01/09/2016"/>
 
-# 管理 Azure AD Connect 
-
-
-
-以下主题属于高级操作主题，介绍如何根据组织的需要和要求自定义 Azure Active Directory Connect。
+# 后续步骤以及如何管理 Azure AD Connect
+以下属于高级操作主题，介绍如何根据组织的需要和要求自定义 Azure Active Directory Connect。
 
 ## 向 Azure AD Premium 或企业移动套件用户分配许可证
 
@@ -26,23 +23,23 @@
 --------------------------------------------------------------------------------
 1. 以管理员身份登录到 Azure 门户。
 2. 在左侧选择“Active Directory”。
-3. 在“Active Directory”页上，双击包含你要启用的用户的目录。
+3. 在“Active Directory”页上，双击要分配许可证的用户所在的目录。
 4. 在“目录”页的顶部，选择“许可证”。
 5. 在“许可证”页上，选择“Active Directory Premium”或“企业移动套件”，然后单击“分配”。
 6. 在对话框中，选择要向其分配许可证的用户，然后单击复选标记图标以保存更改。
 
 
 ## 验证计划的同步任务
-如果你想要检查同步状态，可以在 Azure 门户执行此操作。
+如果想检查同步状态，可以在 Azure 门户执行此操作。
 
 ### 验证计划的同步任务
 --------------------------------------------------------------------------------
 
 1. 以管理员身份登录到 Azure 门户。
 2. 在左侧选择“Active Directory”。
-3. 在“Active Directory”页上，双击包含你要启用的用户的目录。
+3. 在“Active Directory”页上，双击要启用的用户所在的目录。
 4. 在“目录”页的顶部，选择“目录集成”。
-5. 在与本地 Active Directory 的集成下方，记下上次同步时间。
+5. 在与本地 Active Directory 的集成下方，注意上次同步时间。
 
 <center>![云](./media/active-directory-aadconnect-whats-next/verify.png)</center>
 
@@ -55,7 +52,7 @@
 
 
 ## Azure AD Connect 中提供的其他任务
-在完成 Azure AD Connect 的初始安装后，你随时可以从 Azure AD Connect 启动页或桌面快捷方式再次启动向导。在再次运行向导的过程中，你会发现，一些新选项以“其他任务”的形式提供。
+在完成 Azure AD Connect 的初始安装后，你随时可以从 Azure AD Connect 启动页或桌面快捷方式再次启动向导。在再次运行向导的过程中，你会发现，它会以“其他任务”的形式提供一些新选项。
 
 下表提供了这些任务的摘要和各个任务的简要描述。
 
@@ -73,4 +70,4 @@
 
  
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0118_2016-->
