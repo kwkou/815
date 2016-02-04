@@ -75,7 +75,7 @@ _图 1. - 基于分区键将数据水平分区（分片）_
 
 选择的分片键应该最大程度地减少将来把大分片拆分成较小片段、将小分片合并成较大分区，或者更改描述分区集中存储的数据的架构的要求。这些操作可能非常耗时，并且可能需要在执行时使一个或多个分片脱机。如果复制分片，则某些副本也许能够保持联机，而其他副本将被拆分、合并，或者重新配置，但当进行重新配置时，系统可能需要限制可对这些分片中的数据执行的操作。例如，副本中的数据可标记为只读以限制任何不一致的范围，否则在重新构建分片时可能会发生不一致性。
 
-> 有关其中许多考虑因素的详细信息和指导，以及设计实现水平分区的数据存储的最佳实践技巧，请参阅[分片模式](http://aka.ms/Sharding-Pattern)
+> 有关其中许多考虑因素的详细信息和指导，以及设计实现水平分区的数据存储的最佳实践技巧，请参阅[分片模式](https://msdn.microsoft.com/zh-cn/library/dn589797.aspx)
 
 ### 垂直分区
 
@@ -110,11 +110,11 @@ _图 3. - 按界限上下文或子域对数据进行功能分区_
 在针对缩放性设计分区时，请执行以下步骤：
 
 1. 分析应用程序以了解数据访问模式，例如每个查询返回的结果集大小、访问的频率、固有的延迟，以及服务器端计算处理要求。在许多情况下，一些主要实体需要大部分的处理资源。
-2. 基于分析，确定当前和将来的缩放性目标，例如数据大小和工作负荷，并将数据跨分区分布以符合缩放性目标。在水平分区策略中，选择适当的分片键对确保分布是否平均很重要。有关详细信息，请参阅[分片模式](http://aka.ms/Sharding-Pattern)。
+2. 基于分析，确定当前和将来的缩放性目标，例如数据大小和工作负荷，并将数据跨分区分布以符合缩放性目标。在水平分区策略中，选择适当的分片键对确保分布是否平均很重要。有关详细信息，请参阅[分片模式](https://msdn.microsoft.com/zh-cn/library/dn589797.aspx)。
 3. 确保每个分区的可用资源充足，在数据大小和吞吐量方面可以应对缩放性要求。例如，托管分区的节点可能对存储空间量、处理能力或它所提供的网络带宽施加了硬性限制。如果数据存储和处理要求可能会超过这些限制，则可能必须优化你的分区策略或进一步拆分数据。例如，实现可缩放性的方法之一是使用不同的数据存储来避免整个数据存储要求超过节点的缩放限制，从而将日志记录数据与核心应用程序功能相隔离。如果数据存储的总数超过节点限制，可能需要使用独立的存储节点。
 4. 监视使用中的系统以验证数据是否按预期分布，并且分区可以处理其上施加的负载。该用法可能不符合分析的预期，也就是它可以重新平衡分区。如果无法做到，可能需要重新设计系统的某些部件以获得所需的平衡。
 
-请注意，某些云环境会根据基础结构边界分配资源，你应该确保所选边界的限制可在数据存储、处理能力和带宽等方面提供足够的空间，以满足数据量的预期增长。例如，如果你使用 Azure 表存储，繁忙的分片所需的资源可能会超过可供单一分区处理请求的资源（单一分区在给定时间段内可处理的请求数量是有限制的 — 请参阅 Microsoft 网站上的 [Azure 存储缩放性和性能目标](https://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)页以了解详细信息）。在此情况下，可能需要对分片进行重新分区以分散负载。如果这些表的总大小或吞吐量超过存储帐户的容量，可能需要创建其他存储帐户并跨帐户分散表。如果存储帐户的数目超过订阅可用的帐户数目，可能需要使用多个订阅。
+请注意，某些云环境会根据基础结构边界分配资源，你应该确保所选边界的限制可在数据存储、处理能力和带宽等方面提供足够的空间，以满足数据量的预期增长。例如，如果你使用 Azure 表存储，繁忙的分片所需的资源可能会超过可供单一分区处理请求的资源（单一分区在给定时间段内可处理的请求数量是有限制的 — 请参阅 Microsoft 网站上的 [Azure 存储缩放性和性能目标](/documentation/articles/storage-scalability-targets)页以了解详细信息）。在此情况下，可能需要对分片进行重新分区以分散负载。如果这些表的总大小或吞吐量超过存储帐户的容量，可能需要创建其他存储帐户并跨帐户分散表。如果存储帐户的数目超过订阅可用的帐户数目，可能需要使用多个订阅。
 
 ## 针对查询性能设计分区
 
@@ -178,7 +178,7 @@ _图 3. - 按界限上下文或子域对数据进行功能分区_
 
 ## Azure SQL 数据库的分区策略
 
-Azure SQL 数据库是在云中运行的关系数据库即服务。它基于 Microsoft SQL Server。关系数据库将信息分割成表，每个表以一系列的行保存有关实体的信息。每个行包含的列保存实体各个字段的数据。Microsoft 网站上的 [Azure SQL 数据库](https://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx)页提供了有关创建和使用 SQL 数据库的详细文档。
+Azure SQL 数据库是在云中运行的关系数据库即服务。它基于 Microsoft SQL Server。关系数据库将信息分割成表，每个表以一系列的行保存有关实体的信息。每个行包含的列保存实体各个字段的数据。Microsoft 网站上的 [Azure SQL 数据库](/documentation/services/sql-database)页提供了有关创建和使用 SQL 数据库的详细文档。
 
 ## 使用弹性数据库进行水平分区
 
@@ -245,7 +245,7 @@ Azure 存储空间提供用于管理数据的三个抽象：
 - 区域冗余存储，可以维护在相同区域中跨不同数据中心（或跨两个地理位置靠近近的区域）分散的三个数据副本。这种形式的冗余可以防范单个数据中心发生的灾难，但无法防范影响整个区域的大规模网络中断。请注意，区域冗余存储目前仅适用于块 Blob。
 - 异地冗余存储，可维护六个数据副本。三个副本在一个区域中（你所在的区域），另外三个副本在远程区域中。这种形式的冗余提供最高级别的灾难保护。
 
-Microsoft 已发布 Azure 存储帐户的缩放性目标，请参阅 Microsoft 网站上的 [Azure 存储空间可缩放性和性能目标](https://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)页。目前，总存储帐户容量（保存在表存储、Blob 存储中的数据大小和保存在存储队列中的未处理消息大小）不能超过 500TB。请求速率上限（假设为 1KB 实体、Blob 或消息大小）为每秒 20K。如果系统可能会超过这些限制，请考虑跨多个存储帐户分散负载；单个 Azure 订阅可以创建多达 100 个存储帐户。但是，请注意这些限制会随时更改。
+Microsoft 已发布 Azure 存储帐户的缩放性目标，请参阅 [Azure 存储空间可缩放性和性能目标](/documentation/articles/storage-scalability-targets)页。目前，总存储帐户容量（保存在表存储、Blob 存储中的数据大小和保存在存储队列中的未处理消息大小）不能超过 500TB。请求速率上限（假设为 1KB 实体、Blob 或消息大小）为每秒 20K。如果系统可能会超过这些限制，请考虑跨多个存储帐户分散负载；单个 Azure 订阅可以创建多达 100 个存储帐户。但是，请注意这些限制会随时更改。
 
 ## 对 Azure 表存储分区
 
@@ -254,7 +254,7 @@ Azure 表存储是存储的键/值，专为分区而设计。所有实体都存�
 - 分区键。这是一个字符串值，确定 Azure 表存储将在哪个分区中放置实体。具有相同分区键的所有实体将存储在同一分区中。
 - 行键。这是另一个字符串值，用于标识分区中的实体。分区中的所有实体已按此键的词法升序排序。每个实体的分区键/行键组合必须是唯一的，且长度不能超过 1KB。
 
-实体数据的剩余部分由应用程序定义的字段组成。没有强制实施特定的架构，每个行可以包含一组不同的应用程序定义字段。唯一的限制是实体的大小上限（包括分区和行键）目前为 1MB。表的大小上限为 200TB，但是这些数字将来可能会更改（请查看 Microsoft 网站上的 [Azure 存储空间可缩放性和性能目标](https://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)页以了解有关这些限制的最新信息。如果尝试存储的实体超过此容量，请考虑将它们拆分成多个表；使用垂直分区，并将字段分割成很有可能一起访问的组。
+实体数据的剩余部分由应用程序定义的字段组成。没有强制实施特定的架构，每个行可以包含一组不同的应用程序定义字段。唯一的限制是实体的大小上限（包括分区和行键）目前为 1MB。表的大小上限为 200TB，但是这些数字将来可能会更改（请查看 [Azure 存储空间可缩放性和性能目标](/documentation/articles/storage-scalability-targets)页以了解有关这些限制的最新信息。如果尝试存储的实体超过此容量，请考虑将它们拆分成多个表；使用垂直分区，并将字段分割成很有可能一起访问的组。
 
 图 7 显示了一个虚构电子商务应用程序的示例存储帐户（Contoso 数据）的逻辑结构。存储帐户包含三个表（“客户信息”、“产品信息”和“订单信息”），每个表有多个分区。在“客户信息”表中，数据已根据客户所在的城市分区，行键包含客户 ID。在“产品信息”表中，产品已按产品类别分区，行键包含产品编号。在“订单信息”表中，订单已按下单日期分区，行键指定了收到订单的时间。请注意，所有数据都已按行键在每个分区中排序。
 
@@ -341,7 +341,7 @@ Redis 网站上的[分区：如何在多个 Redis 实例之间拆分数据]页�
 - Azure Redis 缓存并非旨在用作永久性的数据存储，因此无论实施哪种分区方案，应用程序代码都应该准备好接受在缓存中找不到数据，因而必须从其他位置检索数据的事实。
 - 将经常访问的数据一起保存在同一分区中。Redis 是一个功能强大的键/值存储，提供多种高度优化的机制用于建构数据：从简单字符串（实际上是长度最大为 512MB 的二进制数据）、聚合类型（例如列表（可充当队列和堆栈））、集（已排序和未排序）到哈希（可将相关的字段分组在一起，例如表示对象中字段的项）。聚合类型可让你将许多相关值与同一个键相关联；Redis 键标识列表、集或哈希，而不是它包含的数据项。可以在 Azure Redis 缓存中使用这些类型，Redis 网站上的[数据类型]页已提供了说明。例如，跟踪客户所下订单的电子商务系统部件中，每位客户的详细信息可能存储在 Redis 哈希中，使用客户 ID 键控。每个哈希可以保存该客户的订单 ID 集合。一个独立的 Redis 集可以保存订单（同样已结构化为哈希），使用订单 ID 键控。图 10 显示了此结构。请注意，Redis 不实施任何形式的引用完整性，因此开发人员需要负责维护客户与订单之间的关系。
 
-![](media/best-practices-data-partitioning/RedisCustomersandOrders.png)
+![](./media/best-practices-data-partitioning/RedisCustomersandOrders.png)
 
 _图 10. - 记录客户订单及其详细信息的 Redis 存储中的建议结构_
 
@@ -389,7 +389,7 @@ _图 10. - 记录客户订单及其详细信息的 Redis 存储中的建议结�
 
 执行联机迁移更复杂，但是用户比较不受干扰，因为数据在整个过程中保持可用。该过程与脱机迁移类似，不同之处在于，原始分片不会标记为脱机（步骤 1）。根据迁移过程的数据粒度（逐项或逐分片），客户端应用程序中的数据访问代码可能需要处理保存在两个位置（原始分片和新分片）的数据的读取和写入。
 
-有关支持联机迁移的解决方案示例，请参阅 Microsoft 网站上的在线文档[使用弹性数据库拆分/合并工具进行缩放]。
+有关支持联机迁移的解决方案示例，请参阅 Microsoft 网站上的在线文档[使用弹性缩放进行拆分和合并]。
 
 ## 相关模式和指南
 
@@ -420,13 +420,13 @@ _图 10. - 记录客户订单及其详细信息的 Redis 存储中的建议结�
 [为 Azure 表存储设计可缩放分区策略]: /documentation/articles/storage-table-design-guide
 [Building a Polyglot Solution]: https://msdn.microsoft.com/zh-cn/library/dn313279.aspx
 [Data Access for Highly-Scalable Solutions: Using SQL, NoSQL, and Polyglot Persistence]: https://msdn.microsoft.com/zh-cn/library/dn271399.aspx
-[数据一致性指南]: http://aka.ms/Data-Consistency-Primer
+[数据一致性指南]: https://msdn.microsoft.com/zh-cn/library/dn589800.aspx
 [数据分区指南]: https://msdn.microsoft.com/zh-cn/library/dn589795.aspx
 [数据类型]: http://redis.io/topics/data-types
 [Azure SQL 数据库弹性缩放概述]: /documentation/articles/sql-database-elastic-scale-introduction
 [Federations 迁移实用程序]: https://code.msdn.microsoft.com/vstudio/Federations-Migration-ce61e9c1
-[索引表模式]: http://aka.ms/Index-Table-Pattern
-[具体化视图模式]: http://aka.ms/Materialized-View-Pattern
+[索引表模式]: https://msdn.microsoft.com/zh-cn/library/dn589791.aspx
+[具体化视图模式]: https://msdn.microsoft.com/zh-cn/library/dn589782.aspx
 [多分片查询]: /documentation/articles/sql-database-elastic-scale-multishard-querying
 [分区：如何在多个 Redis 实例之间拆分数据]: http://redis.io/topics/partitioning
 [执行实体组事务]: https://msdn.microsoft.com/zh-cn/library/azure/dd894038.aspx
@@ -437,10 +437,10 @@ _图 10. - 记录客户订单及其详细信息的 Redis 存储中的建议结�
 [将 CDN 用于 Azure]: /documentation/articles/cdn-how-to-use-cdn
 [服务总线配额]: /documentation/articles/service-bus-quotas
 [Azure 搜索中的服务限制]: /documentation/articles/search-limits-quotas-capacity
-[分片模式]: http://aka.ms/Sharding-Pattern
+[分片模式]: https://msdn.microsoft.com/zh-cn/library/dn589797.aspx
 [支持的数据类型（Azure 搜索）]: https://msdn.microsoft.com/zh-cn/library/azure/dn798938.aspx
 [事务]: http://redis.io/topics/transactions
 [什么是 Azure 搜索]: /documentation/articles/search-what-is-azure-search
-[什么是 Azure SQL 数据库]: /documentation/articles/sql-database-technical-overview
+[Azure SQL 数据库]: /documentation/articles/sql-database-technical-overview
 
 <!---HONumber=Mooncake_0118_2016-->
