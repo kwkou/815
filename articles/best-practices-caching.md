@@ -233,7 +233,7 @@ Azure Redis 缓存提供对 Redis 服务器的访问权限，这些服务器在 
 
 > [AZURE.NOTE]不要针对在 Azure 环境外部运行的 ASP.NET 应用程序使用 Azure Redis 缓存的会话状态提供程序。从 Azure 外部访问缓存的延迟会抵消缓存数据带来的性能优势。
 
-同样地，Azure Redis 缓存的输出缓存提供程序可让你保存 ASP.NET Web 应用程序生成的 HTTP 响应。配合 Azure Redis 缓存使用输出缓存提供程序可以针对呈现复杂 HTML 输出的应用程序改善响应时间；生成类似响应的应用程序实例可以使用缓存中的共享输出段，而不用重新生成此 HTML 输出。有关详细信息，请访问 [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](redis-cache/cache-asp.net-output-cache-provider.md)页。
+同样地，Azure Redis 缓存的输出缓存提供程序可让你保存 ASP.NET Web 应用程序生成的 HTTP 响应。配合 Azure Redis 缓存使用输出缓存提供程序可以针对呈现复杂 HTML 输出的应用程序改善响应时间；生成类似响应的应用程序实例可以使用缓存中的共享输出段，而不用重新生成此 HTML 输出。有关详细信息，请访问 [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](/documentation/articles/cache-asp.net-output-cache-provider)页。
 
 ## 构建自定义 Redis 缓存
 
@@ -404,7 +404,7 @@ var customer1 = cache.Wait(task1);
 var customer2 = cache.Wait(task2);
 ```
 
-WindowsAzure.cn 网站上的 [Azure Redis 缓存文档](/documentation/services/cache/)页提供了有关如何编写可以使用 Azure Redis 缓存的客户端应用程序的详细信息。StackExchange.Redis 网站上的[基本用法页](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md)提供了更多信息；同一网站上的[管道与多路复用器](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/PipelinesMultiplexers.md)页提供了有关使用 Redis 和 StackExchange 库执行异步操作和管道传输的详细信息。本指南中后面“Redis 缓存用例”部分提供了一些更高级技巧的示例，你可以对 Redis 缓存中保存的数据运用这些技巧。
+WindowsAzure.cn 网站上的 [Azure Redis 缓存文档](/documentation/services/redis-cache/)页提供了有关如何编写可以使用 Azure Redis 缓存的客户端应用程序的详细信息。StackExchange.Redis 网站上的[基本用法页](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md)提供了更多信息；同一网站上的[管道与多路复用器](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/PipelinesMultiplexers.md)页提供了有关使用 Redis 和 StackExchange 库执行异步操作和管道传输的详细信息。本指南中后面“Redis 缓存用例”部分提供了一些更高级技巧的示例，你可以对 Redis 缓存中保存的数据运用这些技巧。
 
 ## Redis 缓存用例
 
@@ -776,7 +776,7 @@ subscriber.PublishAsync("messages:blogPosts", blogPost.Title);
 
 - [MemoryCache 类](http://msdn.microsoft.com/zh-cn/library/system.runtime.caching.memorycache.aspx)。
 - [Windows Azure 缓存](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg278356.aspx)。
-- [哪种 Azure Cache 产品/服务适合我？](http://msdn.microsoft.com/zh-cn/library/azure/dn766201.aspx)。
+- [哪种 Azure Cache 产品/服务适合我？](/documentation/articles/cache-faq/#which-azure-cache-offering-is-right-for-me)。
 - [配置模型](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh914149.aspx)。
 - [基于任务的异步模式](http://msdn.microsoft.com/zh-cn/library/hh873175.aspx)。
 - StackExchange.Redis GitHub 存储库上的[管道和多路复用器](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/PipelinesMultiplexers.md)。
@@ -788,8 +788,8 @@ subscriber.PublishAsync("messages:blogPosts", blogPost.Title);
 - Redis 网站上的[事务](http://redis.io/topics/transactions)。
 - Redis 网站上的 [Redis 安全性](http://redis.io/topics/security)。
 - [在 Azure 中的 CentOS Linux VM 上运行 Redis](http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx)。
-- [Azure Redis 缓存的 ASP.NET 会话状态提供程序](http://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx)。
-- [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](http://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx)。
+- [Azure Redis 缓存的 ASP.NET 会话状态提供程序](/documentation/articles/cache-asp.net-session-state-provider)。
+- [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](/documentation/articles/cache-asp.net-output-cache-provider)。
 - [Redis 数据类型和抽象简介](http://redis.io/topics/data-types-intro)。
 - StackExchange.Redis 网站上的[基本用法](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md)。
 - StackExchange.Redis 存储库上的 [Redis 中的事务](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Transactions.md)。
