@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="在 Azure 中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用" 
 	description="学习如何在使用 Azure Active Directory 进行身份验证的 Azure 中创建 ASP.NET MVC 业务线应用程序" 
 	services="app-service\web, active-directory" 
@@ -86,17 +86,9 @@
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/publish-app.png)
 
-2. 选择“Windows Azure Web 应用”。
+2. 单机“导入”，选择已下载的“发布配置文件”。
 
-3. 如果你尚未登录 Azure，请单击“添加帐户”，然后使用 Azure 订阅的 Microsoft 帐户进行登录。
-
-4. 登录后，单击“新建”，以在 Azure 中新建一个 Web 应用。
-
-5. 填写所有必填字段。你需要使用此应用程序的数据库连接来存储角色映射、缓存的令牌以及任何应用程序数据。
-
-	![](./media/web-sites-dotnet-lob-application-azure-ad/4-create-website.png)
-
-6. 单击“创建”。在你创建 Web 应用后，系统会打开“发布 Web”对话框。
+	如果还没有创建 Web 应用，可以登录 [Azure 管理门户](https://manage.windowsazure.cn/)创建一个，然后再“仪表板”的“速览”下，下载“发布配置文件”。
 
 7. 在“目标 URL”中，将 **http** 更改为 **https**。将整个 URL 复制到文本编辑器。稍后将要用到它。然后，单击“下一步”。
 
