@@ -10,7 +10,7 @@
 <tags
    ms.service="active-directory"
    ms.date="09/09/2015"
-   ms.author="01/29/2016"/>
+   wacn.date="01/29/2016"/>
 
 # 防止意外删除
 本主题说明 Azure AD Connect 中的防止意外删除功能。
