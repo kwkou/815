@@ -100,4 +100,4 @@
 * [在 AD FS 中使用 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-adfs)
 * [Azure AD Connect Health 操作](/documentation/articles/active-directory-aadconnect-health-operations)
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_1221_2015-->

@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="09/24/2015"
-   wacn.date="11/12/2015"/>
+   ms.date="11/17/2015"
+   wacn.date="01/29/2016" />
 
 # 与 Azure Active Directory 集成
 
@@ -66,8 +66,7 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 ### 高级安全功能
 
-**多因素身份验证。** Azure AD 提供本机多因素身份验证。IT 管理员可以要求访问应用程序之前经过多因素身份验证，因此你无需编写此项支持的代码。
-<!--Learn more about [Multi-Factor Authentication](/documentation/services/multi-factor-authentication/).-->
+**多因素身份验证。** Azure AD 提供本机多因素身份验证。IT 管理员可以要求访问应用程序之前经过多重身份验证，因此你无需编写此项支持的代码。了解有关 [Multi-Factor Authentication](/documentation/services/multi-factor-authentication/) 的详细信息。
 
 **异常登录检测。** Azure AD 每天要处理十亿次以上的登录，同时，使用机器学习算法来检测可疑活动，并通知 IT 管理员可能存在的问题。通过支持 Azure AD 登录，你的应用程序将从这种保护中受益。了解有关[查看 Azure Active Directory 访问报告](/documentation/articles/active-directory-view-access-usage-reports)的详细信息。
 
@@ -77,7 +76,7 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 **行业标准协议。** Microsoft 承诺支持行业标准。Azure AD 支持 SAML 2.0、OpenID Connect 1.0、OAuth 2.0 和 WS-Federation 1.2 身份验证协议。Graph API 符合 OData 4.0 规范。如果你的应用程序已支持使用 SAML 2.0 或 OpenID Connect 1.0 进行联合登录，则可以直接添加对 Azure AD 的支持。了解有关 [Azure AD 支持的身份验证协议](/documentation/articles/active-directory-authentication-protocols)的详细信息。
 
-**开放源代码库。** Microsoft 为主流语言和平台提供完全受支持的开放源代码库以加速开发。这些源代码已获 Apache 2.0 的授权，你可以在项目中任意衍生和改写。了解有关 [Azure AD 开放源代码库](/documentation/articles/active-directory-authentication-libraries/)的详细信息。
+**开放源代码库。** Microsoft 为主流语言和平台提供完全受支持的开放源代码库以加速开发。这些源代码已获 Apache 2.0 的授权，你可以在项目中任意衍生和改写。了解有关 [Azure AD 身份验证库](/documentation/articles/active-directory-authentication-libraries)的详细信息。
 
 ### 全球存在和高可用性
 
@@ -89,4 +88,4 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 [使用 Azure AD 登录用户](/documentation/articles/active-directory-authentication-scenarios)
 
-<!---HONumber=60-->
+<!---HONumber=Mooncake_0118_2016-->

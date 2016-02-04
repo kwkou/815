@@ -9,7 +9,6 @@
 
 <tags
    ms.service="active-directory"
-
    ms.date="09/09/2015"
    ms.author="01/29/2016"/>
 

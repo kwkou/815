@@ -61,6 +61,6 @@ Azure AD Connect 可让用户使用同一组密码登录云和本地资源。你
  
 
 ## 后续步骤
-了解有关[将本地标识与 Azure Active Directory 集成](active-directory-aadconnect.md)的详细信息。
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
 <!---HONumber=Mooncake_0118_2016-->

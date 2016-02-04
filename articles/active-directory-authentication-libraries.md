@@ -8,8 +8,8 @@
    editor="mbaldwin" />
 <tags
    ms.service="active-directory"
-   ms.date="08/11/2015"
-   wacn.date="01/21/2016" />
+   ms.date="11/17/2015"
+   wacn.date="01/29/2016" />
 
 # Azure Active Directory 身份验证库
 
@@ -59,4 +59,4 @@
 
 [Azure Active Directory 代码示例](/documentation/articles/active-directory-code-samples)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->
