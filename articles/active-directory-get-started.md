@@ -9,13 +9,8 @@
 
 <tags 
 	wacn.date="05/15/2015"
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="hero-article" 
 	ms.date="04/20/2015" 
-	ms.author="curtand"/>
+	wacn.date="01/29/2016"/>
 
 # 如何开始使用 Azure AD
 

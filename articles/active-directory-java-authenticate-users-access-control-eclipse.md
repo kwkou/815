@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="active-directory" 
-    ms.date="10/12/2015" 
+    	ms.date="10/12/2015" 
 	wacn.date="01/21/2016"/>
 
 # 如何使用 Eclipse 在 Azure Access Control 服务上对 Web 用户进行身份验证
@@ -305,4 +305,4 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 [create_acs_hello_world]: ./media/active-directory-java-authenticate-users-access-control-eclipse/CreateACSHelloWorld.png
 [add_token_signing_cert]: ./media/active-directory-java-authenticate-users-access-control-eclipse/AddTokenSigningCertificate.png
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

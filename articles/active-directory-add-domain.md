@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags 
-	ms.service="active-directory"  
+	ms.service="active-directory" 
 	ms.date="12/01/2015"
 	wacn.date="01/29/2016" />
 
@@ -166,11 +166,11 @@ Office 365 提供了[针对公共域注册机构的具体说明](https://support
 - 对于具有关联子域的任何顶级域，只有在删除这些子域后，才能删除这些顶级域。例如，如果 corp.adatum.com 或其他子域使用了顶级域名 adatum.com，则你无法删除该域名。有关详细信息，请参阅此[支持文章](https://support.microsoft.com/zh-cn/kb/2787792/)。
 - 是否已激活目录同步？ 如果已激活，则会将类似于下面的域自动添加到你的帐户：contoso.mail.partner.onmschina.cn。此域名不可删除。
 - 在删除某个域名之前，必须先从与该域关联的所有用户或电子邮件帐户中删除该域名。你可以删除所有帐户，或者批量编辑用户帐户以更改其域名信息和电子邮件地址。有关详细信息，请参阅[在 Azure AD 中创建或编辑用户](/documentation/articles/active-directory-create-users)。
-- 如果你在正用于 SharePoint Online Web 应用集的域名中托管 SharePoint Online 站点，则必须先删除 Web 应用集，然后才能删除该域名。
+- 如果你在正用于 SharePoint Online 网站集的域名中托管 SharePoint Online 站点，则必须先删除网站集，然后才能删除该域名。
 
 若要删除域名，请执行以下步骤：
 
-1. 在门户页的左窗格中，单击“域”。
+1. 在 Azure 经典门户左窗格中的“Azure AD”中，单击“域”。
 2. 在“域”页上，选择要删除的域名，然后单击“删除域”。
 3. 在“删除域”页上，单击“是”。
 
@@ -194,7 +194,7 @@ Office 365 提供了[针对公共域注册机构的具体说明](https://support
 
 ### 我无法验证我的域名。如何找出问题的原因？ 
 
-查明问题的方法之一是使用域故障排除向导。若要启动该向导，请执行以下操作：在云服务门户的“管理员”页上，单击“域”，然后双击要验证的域名。接下来，在“故障排除”下，单击“域故障排除”。
+查明问题的方法之一是使用域故障排除向导。若要启动该向导，请执行以下操作：在 Azure 管理门户的“管理员”页上，单击“域”，然后双击要验证的域名。接下来，在“故障排除”下，单击“域故障排除”。
 
 故障排除向导将要求你提供信息，说明自己处于验证过程中的哪个阶段，然后将向你提供相关信息以帮助你完成验证。
 
@@ -209,4 +209,4 @@ Office 365 提供了[针对公共域注册机构的具体说明](https://support
 - [以组织身份注册 Azure](/documentation/articles/sign-up-organization)
 - [在 Azure AD 中管理域](https://msdn.microsoft.com/zh-cn/library/azure/dn919677.aspx)
 
-<!---HONumber=60-->
+<!---HONumber=Mooncake_0118_2016-->

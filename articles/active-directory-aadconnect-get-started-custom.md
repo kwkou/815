@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory"   
-	ms.date="10/13/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="11/16/2015"
+	wacn.date="01/29/2016"/>
 
 # Azure AD Connect 的自定义安装
 
@@ -45,7 +45,7 @@ SQL Server 名称 | 用于指定 SQL Server 名称和实例名称。如果你已
 
 
 ## 用户登录
-安装所需的组件后，系统会要求你指定用户要使用的单一登录方法。下表提供了可用选项的简短说明。
+安装所需的组件后，系统会要求你指定用户要使用的单一登录方法。下表提供了可用选项的简短说明。有关登录方法的完整说明，请参阅[用户登录](/documentation/articles/active-directory-aadconnect-user-signin)。
 
 ![用户登录](./media/active-directory-aadconnect-get-started-custom/usersignin.png)
 
@@ -60,7 +60,8 @@ SQL Server 名称 | 用于指定 SQL Server 名称和实例名称。如果你已
 
 
 ## 连接到 Azure AD
-在“连接到 Azure AD”屏幕中，输入全局管理员的帐户和密码。请确保此帐户未启用 Multi-Factor Authentication。否则会导致身份验证失败。请注意，此帐户只会用于在 Azure AD 中创建服务帐户，在向导完成后将不会使用。
+在“连接到 Azure AD”屏幕中，输入全局管理员的帐户和密码。请确保此帐户未启用 Multi-Factor Authentication。否则会导致身份验证失败。
+此帐户只会用于在 Azure AD 中创建服务帐户，在向导完成后将不会使用。
 
 ![用户登录](./media/active-directory-aadconnect-get-started-custom/connectaad.png)
 
@@ -165,18 +166,21 @@ Azure AD 应用程序和属性筛选|通过启用 Azure AD 应用程序和属性
 ![AD FS 服务器](./media/active-directory-aadconnect-get-started-custom/adfs2.png)
 
 
- 
-### 指定 Web 应用代理服务器
-在此处输入你要用作 Web 应用代理服务器的特定服务器。 Web 应用代理服务器部署在你的外围网络中（面向 Extranet），支持来自 Extranet 的身份验证请求。你可以根据容量规划需求添加一个或多个服务器。我们建议安装一台用于测试和试验部署的 Web 应用代理服务器，并通过打开 Azure AD Connect 向其他服务器部署 Web 应用代理，来部署更多的服务器。我们通常建议使用数量相当的代理服务器，以满足来自 Intranet 的身份验证要求。
+
+### 指定 Web 应用程序代理服务器
+在此处输入你要用作 Web 应用程序代理服务器的特定服务器。Web 应用程序代理服务器部署在你的外围网络中（面向 Extranet），支持来自 Extranet 的身份验证请求。你可以根据容量规划需求添加一个或多个服务器。我们建议安装一台用于测试和试验部署的 Web 应用程序代理服务器，并通过打开 Azure AD Connect 向其他服务器部署 Web 应用程序代理，来部署更多的服务器。我们通常建议使用数量相当的代理服务器，以满足来自 Intranet 的身份验证要求。
 
 
-> [AZURE.NOTE]- 如果用于安装 Azure AD Connect 的帐户不是 AD FS 服务器上的本地管理员，则系统会提示你提供具有足够权限的帐户的凭据。- 在配置此步骤之前，请确保 Azure AD Connect 服务器与 Web 应用代理服务器之间已建立 HTTP/HTTPS 连接。- 此外，请确保 Web 应用服务器与 AD FS 服务器之间的 HTTP/HTTPS 连接允许通过身份验证请求。
+> [AZURE.NOTE]
+- 如果用于安装 Azure AD Connect 的帐户不是 AD FS 服务器上的本地管理员，则系统会提示你提供具有足够权限的帐户的凭据。
+- 在配置此步骤之前，请确保 Azure AD Connect 服务器与 Web 应用程序代理服务器之间已建立 HTTP/HTTPS 连接。
+- 此外，请确保 Web 应用程序服务器与 AD FS 服务器之间的 HTTP/HTTPS 连接允许通过身份验证请求。
 
 
-![ Web 应用](./media/active-directory-aadconnect-get-started-custom/adfs3.png)
- 
+![Web 应用](./media/active-directory-aadconnect-get-started-custom/adfs3.png)
 
-系统将提示你输入凭据，使 Web 应用服务器可以创建与 AD FS 服务器的安全连接。这些凭据需是 AD FS 服务器上的本地管理员。
+
+系统将提示你输入凭据，使 Web 应用程序服务器可以创建与 AD FS 服务器的安全连接。这些凭据需是 AD FS 服务器上的本地管理员。
 
 ![代理](./media/active-directory-aadconnect-get-started-custom/adfs4.png)
  
@@ -203,8 +207,8 @@ AD FS 服务需要域服务帐户来验证用户，以及在 Active Directory �
 需要完成以下附加任务才能完成联合配置。
 
 - 针对 Intranet（内部 DNS 服务器）和 Extranet（通过域注册机构注册的公共 DNS）设置 AD FS 联合身份验证服务名称（例如 adfs.contoso.com）的 DNS 记录。对于 Intranet 记录，请确保使用 A 记录而不是 CNAME 记录。只有这样，才能从加入域的计算机正常执行 Windows 身份验证。
-- 如果要部署多个 AD FS 服务器或 Web 应用代理服务器，请确保配置负载平衡器，以及指向负载平衡器的 AD FS 联合身份验证服务名称（例如 adfs.contoso.com）的 DNS 记录。
-- 如果要将 Windows 集成身份验证用于 Intranet 中使用 Internet Explorer 的浏览器应用程序，请确保已将 AD FS 联合身份验证服务名称（例如 adfs.contoso.com）添加到 IE 中的 Intranet 区域。此配置可以通过组策略进行控制，并可部署到所有已加入域的计算机中。 
+- 如果要部署多个 AD FS 服务器或 Web 应用程序代理服务器，请确保配置负载平衡器，以及指向负载平衡器的 AD FS 联合身份验证服务名称（例如 adfs.contoso.com）的 DNS 记录。
+- 如果要将 Windows 集成身份验证用于 Intranet 中使用 Internet Explorer 的浏览器应用程序，请确保已将 AD FS 联合身份验证服务名称（例如 adfs.contoso.com）添加到 IE 中的 Intranet 区域。此配置可以通过组策略进行控制，并可部署到所有已加入域的计算机中。
 
 
 ### AD FS 服务中的可选配置
@@ -240,8 +244,10 @@ AD FS 服务需要域服务帐户来验证用户，以及在 Active Directory �
 
 
 ## 后续步骤
+安装完成后，请注销并再次登录到 Windows，然后即可使用同步服务管理器或同步规则编辑器。
+
 安装 Azure AD Connect 后，可以[验证安装并分配许可证](/documentation/articles/active-directory-aadconnect-whats-next)。
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_0118_2016-->

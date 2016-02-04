@@ -1,11 +1,11 @@
 <properties
-                pageTitle="什么是 Azure Active Directory？"
-                description="使用 Azure Active Directory 将现有的本地标识扩展到云中，或开发 Azure AD 集成的应用程序。"
-                services="active-directory"
-                documentationCenter=""
-                authors="markusvi"
-                manager="swadhwa"
-                editor=""/>
+	pageTitle="什么是 Azure Active Directory？"
+        description="使用 Azure Active Directory 将现有的本地标识扩展到云中，或开发 Azure AD 集成的应用程序。"
+        services="active-directory"
+        documentationCenter=""
+        authors="markusvi"
+        manager="swadhwa"
+        editor=""/>
 <tags 
 	ms.service="active-directory"
         ms.date="10/30/2015"

@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="08/24/2015" 
-	wacn.date=""/>
+	wacn.date="01/29/2016"/>
 
 # Azure AD Connect 工作原理
 

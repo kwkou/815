@@ -1,33 +1,33 @@
 <properties
 	pageTitle="向'登录'和'访问面板'页添加公司品牌"
-	description="本主题介绍组织如何在它们管理的所有 Web 应用和服务上应用一致的外观，使得最终用户在使用这些站点时，不会感到困惑。"
-	services="active-directory"
-	documentationCenter=""
-	authors="MarkusVi"
+	description="本主题介绍组织如何在它们管理的所有网站和服务上应用一致的外观，使得最终用户在使用这些站点时，不会感到困惑。" 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="markusvi"
 	manager="stevenpo"
 	editor="LisaToft"/>
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="08/11/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="10/30/2015" 
+	wacn.date="01/29/2016"/>
 
-# 向"登录"和"访问面板"页添加公司品牌
+# 向“登录”和“访问面板”页添加公司品牌
 
 > [AZURE.NOTE]
 > 
 - 只有在升级到 Azure Active Directory 高级或基本版后，才可以使用公司品牌这一功能。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions)。
 - 在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国 21Vianet 运营的 Windows Azure 服务目前不支持 Azure Active Directory 高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](http://feedback.azure.com/forums/169401-azure-active-directory)与我们联系。
 
-许多公司想要在他们管理的所有 Web 应用和服务上应用一致的外观，使得最终用户在需要使用这些站点时，不会感到困惑。Azure Active Directory 提供了此功能，它允许你自定义以下面向最终用户的网页的外观，使其包含你公司的徽标和颜色方案：
+许多公司想要在他们管理的所有网站和服务上应用一致的外观，使得最终用户在需要使用这些站点时，不会感到困惑。Azure Active Directory 提供了此功能，它允许你自定义以下面向最终用户的网页的外观，使其包含你公司的徽标和颜色方案：
 
-- **"登录"页** - 当用户要登录到 Office 365 或其他使用 Azure AD 作为标识提供程序且基于 Web 的现代应用程序时，会将其重定向到此页面。大多数用户将与此页进行交互（无论是否要通过 Home Realm Discovery），这样一来，系统就可以将联合用户重定向到他们的本地 STS（如 AD FS），或输入其凭据。
+- “登录”页 - 当用户要登录到 Office 365 或其他使用 Azure AD 作为标识提供程序且基于 Web 的现代应用程序时，会将其重定向到此页面。大多数用户将与此页进行交互（无论是否要通过 Home Realm Discovery），这样一来，系统就可以将联合用户重定向到他们的本地 STS（如 AD FS），或输入其凭据。
 
-- **"访问面板"页** - 访问面板是一个基于 Web 的门户，它允许在 Azure AD 目录中拥有工作或学校帐户的最终用户查看和启动 Azure AD 管理员已向他们授予其访问权限的基于云的应用程序。你的组织在 myapps.microsoft.com 上的所有用户均可访问"访问面板"。
+- “访问面板”页 - 访问面板是一个基于 Web 的门户，它允许在 Azure AD 目录中拥有工作或学校帐户的最终用户查看和启动 Azure AD 管理员已向他们授予其访问权限的基于云的应用程序。你的组织在 myapps.microsoft.com 上的所有用户均可访问“访问面板”。
 
-## "登录"页自定义
+## “登录”页自定义
 
-"登录"页通常是需要以基于浏览器的方式访问你组织订阅的云应用程序和服务的最终用户最常用的网页，因此必须确保此页的外观良好。如果你要提供默认的未经品牌打造的"登录"页体验，则不需执行任何操作。
+“登录”页通常是需要以基于浏览器的方式访问你组织订阅的云应用程序和服务的最终用户最常用的网页，因此必须确保此页的外观良好。如果你要提供默认的未经品牌打造的“登录”页体验，则不需执行任何操作。
 
 ### 要多长时间才能在登录页上看到品牌变化？
 
@@ -35,16 +35,16 @@
 
 ### 用户何时将看到经过品牌打造的登录页？
 
-当用户使用租户特定的 URL（如 https://outlook.com/**contoso**.com 或 https://mail.**contoso**.com） （如果你已创建 CNAME）访问服务时，他们将看到经过品牌打造的登录页。
+当用户使用租户特定的 URL（如 https://outlook.com/**contoso**.com 或 https://mail.**contoso**.com ） （如果你已创建 CNAME）访问服务时，他们将看到经过品牌打造的登录页。
 
-如果他们使用非租户特定的 URL（如 https://partner.outlook.cn） 访问服务，则将看到未经品牌打造的登录页。用户输入了其用户 ID 或选择了用户磁贴后，登录页将进行刷新以显示你的品牌。
+如果他们使用非租户特定的 URL（如 https://mail.office365.com ） 访问服务，则将看到未经品牌打造的登录页。用户输入了其用户 ID 或选择了用户磁贴后，登录页将进行刷新以显示你的品牌。
 
 > [AZURE.NOTE]
 > 
-- 在已配置品牌的 Azure 管理门户的"Active Directory">"目录">"域"部分中，你的域名必须显示为"活动"。
+- 在已配置品牌的 Azure 管理门户的“Active Directory”>“目录”>“域”部分中，你的域名必须显示为“活动”。
 - 登录页品牌不会带到 Microsoft 的使用者登录页。这意味着，使用个人 Microsoft 帐户（以前称为 Windows Live ID）登录的用户可以看到 Azure AD 呈现的经过品牌打造的用户磁贴列表，但你组织的品牌将不会应用于 Microsoft 帐户登录页。
 
-### 我自定义了"登录"页后，我的最终用户将会看到什么？
+### 我自定义了“登录”页后，我的最终用户将会看到什么？
 
 如果你要在此页上显示你公司的品牌、颜色和其他可自定义元素，请参阅下图以了解两种体验之间的差异。
 
@@ -129,8 +129,8 @@
 
 从你的目录中删除公司品牌
 
-1. 在 [Azure 管理门户](https://manage.windowsazure.cn)的"配置"选项卡下，选择"自定义品牌"。
-2. 在"自定义品牌"页上，选择"编辑现有品牌设置"，然后转到下一页。
+1. 在 [Azure 管理门户](https://manage.windowsazure.cn)的“配置”选项卡下，选择“自定义品牌”。
+2. 在“自定义品牌”页上，选择“编辑现有品牌设置”，然后转到下一页。
 3. 根据要删除哪些元素，执行以下一项或多项操作：
 	1. 对于"横幅徽标"，单击"删除上载的徽标"复选框。
     2. 对于"磁贴徽标"，单击"删除上载的徽标"复选框。
@@ -183,4 +183,4 @@ Azure AD 中的某些可自定义的元素具有多个用例。公司徽标可�
 [7]: ./media/active-directory-add-company-branding/SignInPage_aftercustomization_croppedtop.png
 [8]: ./media/active-directory-add-company-branding/APBranding.png
 
-<!--HONumber=57-->
+<!---HONumber=Mooncake_1221_2015-->

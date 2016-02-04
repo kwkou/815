@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory"  
 	ms.date="10/13/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="01/29/2016"/>
 
 # 目录集成工具比较
 
@@ -88,4 +88,4 @@ PP = 公共预览版本</br>
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

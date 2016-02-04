@@ -9,11 +9,11 @@
 <tags
    ms.service="active-directory"
    ms.date="09/17/2015"
-   wacn.date="01/21/2016" />
+   wacn.date="01/29/2016" />
 
 # Azure Active Directory 图形 API
 
-> 直接转到<!-- [图形 API 快速入门指南](/documentation/articles/active-directory-graph-api-quickstart)和-->[交互式图形 API 参考文档](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog)。
+> [AZURE.IMPORTANT]也可以通过 [Microsoft Graph](https://graph.microsoft.io/) 访问 Azure AD 图形 API 功能。Microsoft Graph 是统一的 API，其中包含 Outlook、OneDrive、OneNote、Planner 和 Office Graph 等其他 Microsoft 服务中的 API，可通过单个终结点和单个访问令牌进行访问。
 
 Azure Active Directory 图形 API 通过 REST API 终结点提供对 Azure AD 的编程访问权限。应用程序可以使用图形 API 对目录数据和对象执行创建、读取、更新和删除 (CRUD) 操作。例如，图形 API 支持对用户对象执行以下常见操作：
 
@@ -62,4 +62,4 @@ Azure Active Directory 图形 API 通过 REST API 终结点提供对 Azure AD �
 
 [Azure Active Directory 开发人员指南](/documentation/articles/active-directory-developers-guide)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

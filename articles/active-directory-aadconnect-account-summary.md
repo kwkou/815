@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="有关 Azure AD Connect 凭据和权限的详细信息 | Microsoft Azure" 
+	pageTitle="有关 Azure AD Connect 凭据和权限的详细信息 | Windows Azure" 
 	description="Azure AD Connect 凭据和权限的自定义设置描述。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory"  
 	ms.date="10/13/2015"
-	wacn.date=""/>
+	wacn.date="01/29/2016"/>
 
 
 
