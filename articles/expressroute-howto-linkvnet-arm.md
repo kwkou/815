@@ -10,7 +10,7 @@
 <tags 
    ms.service="expressroute"
    ms.date="01/14/2016"
-   wacn.date="" />
+   wacn.date="01/29/2016" />
 
 # 将虚拟网络链接到 ExpressRoute 线路
 
