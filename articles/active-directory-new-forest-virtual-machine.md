@@ -4,14 +4,13 @@
 	services="active-directory, virtual-network" 
 	documentationCenter="" 
 	authors="markusvi" 
-	manager="TerryLan" 
-	editor="LisaToft"
-	tags="azure-classic-portal"/>
+	manager="stevenpo" 
+	tags=""/>
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="07/23/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="10/20/2015" 
+	wacn.date="01/29/2016"/>
 
 
 # 在 Azure 虚拟网络中安装新的 Active Directory 林
@@ -129,12 +128,10 @@
 -  [设置 Azure VM 静态 IP 地址](http://windowsitpro.com/windows-azure/set-azure-vm-static-ip-address)
 
 -  [如何向 Azure VM 分配静态 IP](http://www.bhargavs.com/index.php/2014/03/13/how-to-assign-static-ip-to-azure-vm/)
+-  [安装新的 Active Directory 林](https://technet.microsoft.com/library/jj574166.aspx)
+-  [介绍 Active Directory 域服务 (AD DS) 虚拟化（级别 100）](https://technet.microsoft.com/library/hh831734.aspx)
 
--  [安装新的 Active Directory 林](http://technet.microsoft.com/zh-cn/library/jj574166.aspx)
-
--  [介绍 Active Directory 域服务 (AD DS) 虚拟化（级别 100）](http://technet.microsoft.com/zh-cn/library/hh831734.aspx)
--  [测试实验室指南：Azure 中的 Windows Server 2012 R2 基本配置](http://www.microsoft.com/zh-CN/download/details.aspx?id=41684)
 <!--Image references-->
 [1]: ./media/active-directory-new-forest-virtual-machine/AD_Forest.png
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->

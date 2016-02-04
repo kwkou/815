@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="04/29/2015"
-   wacn.date="06/16/2015"/>
+   ms.date="09/17/2015"
+   wacn.date="01/29/2016"/>
 
 # “支持的令牌和声明类型”
 
@@ -37,7 +37,8 @@ Azure AD 不支持 SAML 令牌中的应用程序 ID 声明。
 ### 目标受众
 令牌的受众是令牌的预期接收者。接收令牌的应用程序必须验证受众值是否正确，并拒绝任何针对其他受众的令牌。
 
-受众值是一个字符串，通常为所访问资源的基址，如“https://contoso.com”。 在 Azure AD 令牌中，受众是请求该令牌的应用程序的应用程序 ID URI 。当应用程序（即受众）具有多个应用程序 ID URI 时，该令牌的 Audience 声明中的应用程序 ID URI 将与令牌请求中的应用程序 ID URI 相匹配。在 SAML 令牌中，Audience 声明在 AudienceRestriction 元素的 Audience 元素中定义。
+受众值是一个字符串，通常为所访问资源的基址，如“https://contoso.com”。在 Azure AD 令牌中，受众是请求该令牌的应用程序的应用程序 ID URI 。当应用程序（即受众）具有多个应用程序 ID URI 时，该令牌的 Audience 声明中的应用程序 ID URI 将与令牌请求中的应用程序 ID URI 相匹配。
+在 SAML 令牌中，Audience 声明在 AudienceRestriction 元素的 Audience 元素中定义。
 
     <AudienceRestriction>
     <Audience>https://contoso.com</Audience>
@@ -404,9 +405,8 @@ SubjectConfirmation 不是声明。它描述如何对令牌的使用者进行验
      acr: "1"
     }.
 
-## 另请参阅
-### 概念
+##另请参阅
 
 [Azure Active Directory 身份验证协议](/documentation/articles/active-directory-authentication-protocols)
 
-<!---HONumber=60-->
+<!---HONumber=Mooncake_1221_2015-->
