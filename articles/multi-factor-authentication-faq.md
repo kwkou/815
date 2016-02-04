@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Azure Multi-Factor Authentication 常见问题" 
-	description="Azure Multi-Factor Authentication 是要求使用多种方式（而不仅仅是用户名和密码）对你的身份进行验证的一种方法。它为用户登录和事务提供了额外的安全层。" 
+	description="提供与 Azure 多重身份验证 (MFA) 相关的常见问题与解答列表。MFA 是要求使用多种方式（而不仅仅是用户名和密码）对你的身份进行验证的一种方法。它为用户登录和事务提供了额外的安全层。" 
 	services="multi-factor-authentication" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="multi-factor-authentication" 
 	ms.date="11/20/2015" 
-	wacn.date="01/14/2016"/>
+	wacn.date="01/29/2016"/>
 
 # Azure 多重身份验证常见问题
 
@@ -99,4 +99,4 @@ Azure 多重身份验证服务通过短信聚合器发送短信。许多因素�
 - 从移动应用程序中删除现有帐户。
 - 单击“配置”，然后按照说明重新配置移动应用程序。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0118_2016-->

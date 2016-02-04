@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup" 
 	ms.date="10/01/2015"
-	wacn.date="01/16/2016"/>
+	wacn.date="01/29/2016"/>
 
 
 # 使用 Azure PowerShell 部署和管理 Windows Server/Windows 客户端的 Azure 备份
@@ -598,4 +598,4 @@ PS C:\> Invoke-Command -Session $s -Script { param($d, $a) Start-Process -FilePa
 - [Azure 备份简介](/documentation/articles/backup-configure-vault)
 - [备份 Windows Server](/documentation/articles/backup-azure-backup-windows-server)
 
-<!---HONumber=67-->
+<!---HONumber=82-->

@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="10/13/2015"
-   wacn.date="11/12/2015"/>
+   ms.date="12/02/2015"
+   wacn.date="01/29/2016"/>
 
 # Azure AD Connect：版本发布历史记录
 
@@ -18,7 +18,55 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 本文旨在帮助你跟踪已发布的版本，并了解你是否需要更新为最新版本。
 
-## 1.0.8667.0
+相关链接：
+
+- 有关应用更新时所需的权限，请参阅[帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions#upgrade)
+- [下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771)
+
+## 1\.0.9131.0
+发布日期：2015 年 12 月
+
+**已解决的问题：**
+
+- 更改 AD DS 中的密码时，密码同步可能不会正常工作，但设置密码时可以正常工作。
+- 如果你设置了代理服务器，在安装期间或在配置页上运行升级时，向 Azure AD 进行身份验证可能会失败。
+- 如果你不是 SQL 中的 SA，从装有完整 SQL 服务器的旧版 Azure AD Connect 更新将会失败。
+- 从装有远程 SQL 服务器的旧版 Azure AD Connect 更新时，将显示错误消息“无法访问 ADSync SQL 数据库”。
+
+## 1\.0.9125.0
+发布日期：2015 年 11 月
+
+**新功能：**
+
+- 可以将 ADFS 重新配置为 Azure AD 信任。
+- 可以刷新 Active Directory 架构和重新生成同步规则。
+- 可以禁用同步规则。
+- 可以将“AuthoritativeNull”定义为同步规则中的新文本。
+
+**新的预览功能：**
+
+- [用于同步的 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-sync)
+- 支持 [Azure AD 域服务](/documentation/articles/active-directory-ds-getting-started)密码同步。
+
+**新的受支持方案：**
+
+- 支持多个本地 Exchange 组织。有关详细信息，请参阅[包含多个 Active Directory 林的混合部署](https://technet.microsoft.com/zh-cn/library/jj873754.aspx)。
+
+**已解决的问题：**
+
+- 密码同步问题：
+    - 从范围外移到范围内的对象不会同步其密码。这包括 OU 和属性筛选。
+    - 选择要包含在同步中的新 OU 时不需要完全密码同步。
+    - 启用已禁用的用户时密码不会同步。
+    - 密码重试队列是无限的，以前实施的 5000 个对象限制已停用且已被删除。
+    - [改进了故障排除](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization#troubleshoot-password-synchronization)。
+- 无法连接到具有 Windows Server 2016 林功能级别的 Active Directory。
+- 初始安装后，无法更改用于组筛选的组。
+- 对于在启用密码写回的情况下执行密码更改的每个用户，不再能够在 Azure AD Connect 服务器上创建新的用户配置文件。
+- 无法在同步规则范围内使用长整数值。
+- 如果有无法访问的域控制器，“设备写回”复选框将保持禁用状态。
+
+## 1\.0.8667.0
 发布日期：2015 年 8 月
 
 **新功能：**
@@ -37,15 +85,36 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 - 如果添加了扩展属性，则无法启用和禁用“暂存模式”。
 - 由于 Active Directory 连接器上的密码不正确，某些配置中的密码写回失败。
 - 如果属性筛选中使用 dn，则无法升级 DirSync。
+- 使用密码重置时 CPU 使用率过高。
 
-## 1.0.8641.0
+**已删除的预览功能：**
+
+- 根据预览版客户的反馈，已暂时删除“[用户写回](/documentation/articles/active-directory-aadconnect-feature-preview#user-writeback)”预览功能。今后在解决所提供的反馈意见后，我们将重新添加此功能。
+
+## 1\.0.8641.0
 发布日期：2015 年 6 月
 
 **Azure AD Connect 的初始版本。**
 
 名称从 Azure AD Sync 更改为 Azure AD Connect。
 
-## 1.0.494.0501
+**新功能：**
+
+- [快速设置](/documentation/articles/active-directory-aadconnect-get-started-express)安装
+- 可以[配置 ADFS](/documentation/articles/active-directory-aadconnect-get-started-custom#configuring-federation-with-ad-fs)
+- 可以[从 DirSync 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started)
+- [防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes)
+- 引入了[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations#staging-mode)
+
+**新的预览功能：**
+
+- [用户写回](/documentation/articles/active-directory-aadconnect-feature-preview#user-writeback)
+- [组写回](/documentation/articles/active-directory-aadconnect-feature-preview#group-writeback)
+- [设备写回](/documentation/articles/active-directory-aadconnect-get-started-custom-device-writeback)
+- [目录扩展](/documentation/articles/active-directory-aadconnect-feature-preview#directory-extensions)
+
+
+## 1\.0.494.0501
 发布日期：2015 年 5 月
 
 **新要求：**
@@ -92,7 +161,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 **新功能：**
 
-- 现在支持使用基于属性的筛选执行密码同步。有关详细信息，请参阅“使用筛选进行密码同步”。
+- 现在支持使用基于属性的筛选执行密码同步。有关详细信息，请参阅[使用筛选进行密码同步](active-directory-aadconnectsync-configure-filtering.md)。
 - 属性 msDS-ExternalDirectoryObjectID 将写回 AD。这将添加对 Office 365 应用程序的支持，支持其使用 OAuth2 同时访问混合 Exchange 部署中的联机邮箱和本地邮箱。
 
 **修复了升级问题：**
@@ -136,4 +205,4 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0118_2016-->

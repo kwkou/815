@@ -36,6 +36,9 @@
 每个计算节点的任务数|4 x 节点核心数
 
 
+## 相关主题
+
+* [Azure Batch 功能概述](batch-api-basics.md)
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.PNG
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

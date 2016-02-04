@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Azure 批处理 ( Batch ) API 基础知识" 
-	description="向开发人员介绍 Azure 批处理 ( Batch ) API 和批处理 ( Batch ) 服务的概念" 
+	pageTitle="Azure Batch 功能概述 | Windows Azure"
+	description="从开发的角度了解 Batch 服务的功能及其 API。"
 	services="batch" 
 	documentationCenter=".net" 
 	authors="yidingzhou" 
@@ -9,14 +9,14 @@
 
 <tags 
 	ms.service="batch" 
-	ms.date="10/15/2015"
-	wacn.date="12/31/2015"/> 
+	ms.date="11/19/2015"
+	wacn.date="01/29/2016"/> 
 <!--The next line, with one pound sign at the beginning, is the page title-->
 # Azure 批处理 ( Batch ) 功能概述
 
 本文提供 Azure 批处理 ( Batch ) 服务的核心 API 功能的基本概述。无论是使用 [批处理 ( Batch ) REST][batch_rest_api] 还是 [批处理( Batch ) .NET][batch_net_api] API 来开发分布式计算解决方案，你都要使用下面讨论的许多实体和功能。
 
-> [AZURE.TIP]有关批处理 ( Batch ) 的更高级技术概述，请参阅 [Azure 批处理 ( Batch ) 技术概述](/documentation/articles/batch-technical-overview)。
+> [AZURE.TIP]有关 Batch 的更高级技术概述，请参阅 [Azure 批处理 ( Batch ) 基础知识](/documentation/articles/batch-technical-overview)。
 
 ## <a name="workflow"></a>批处理 ( Batch ) 服务的工作流
 
@@ -350,4 +350,4 @@ Azure 批处理 ( Batch ) 池构建在核心 Azure 计算平台的顶层；批�
 [rest_update_job]: https://msdn.microsoft.com/library/azure/dn820162.aspx
 [rest_rdp]: https://msdn.microsoft.com/library/azure/dn820120.aspx
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->
