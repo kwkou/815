@@ -1,49 +1,96 @@
-<properties 
-	linkid="manage-services-identity-what-is-windows-azure-AD" 
-	urlDisplayName="What is Azure AD?" 
-	pageTitle="什么是 Azure Active Directory？" 
-	metaKeywords="" 
-	description="使用 Azure Active Directory 将现有本地标识扩展到云中以便改进管理员和最终用户的体验，而 Microsoft 负责使 Active Directory 在云中运行时具有高缩放性、高可用性和集成灾难恢复。或者，为您的组织或其他组织开发 Azure AD 集成应用程序。" metaCanonical="" 
-	services="active-directory" 
-	documentationCenter="" 
-	title="什么是 Azure Active Directory？" 
-	authors="" 
-	solutions="" 
-	manager="" 
-	editor="" />
+<properties
+                pageTitle="什么是 Azure Active Directory？"
+                description="使用 Azure Active Directory 将现有的本地标识扩展到云中，或开发 Azure AD 集成的应用程序。"
+                services="active-directory"
+                documentationCenter=""
+                authors="markusvi"
+                manager="swadhwa"
+                editor=""/>
 <tags 
 	ms.service="active-directory"
- 	ms.date="03/03/2015"
+        ms.date="10/30/2015"
  	wacn.date="04/11/2015"/>
+
 
 # 什么是 Azure Active Directory？
 
-Azure Active Directory 是一项在云中提供标识和访问管理功能的服务。Active Directory 是通过 Server 操作系统提供的一项用于本地标识管理的服务，同样地，Azure Active Directory (Azure AD) 是通过 Azure 提供的一项用于基于云的标识管理的服务。[了解详细信息][了解详细信息]
 
-由于它是你组织的云目录，因此你可以决定你的用户的身份、在云中保留哪些信息、谁可以使用或管理该信息以及允许哪些应用程序或服务访问该信息。
 
-在使用 Azure AD 时，Microsoft 负责使 Active Directory 在云中运行时具有高缩放性、高可用性和集成灾难恢复，同时完全遵循有关你组织信息的私密性和安全性的要求。
 
-### 与本地 Active Directory 集成
 
-可将 Azure AD 用作您组织的单独云目录，也可将现有本地 Active Directory 与 Azure AD 集成。集成的一些功能包括目录同步和单一登录，这会进一步将现有本地标识扩展到云中，以便改进管理员和最终用户的体验。
-[了解详细信息][1]
+Azure Active Directory (Azure AD) 是 Microsoft 提供的基于多租户云的目录和标识管理服务。
 
-### 与您的应用程序集成
+对于 IT 管理员而言，Azure AD 提供经济实惠、易于使用的解决方案，使员工和业务合作伙伴能够使用单一登录 (SSO) 功能来访问[数千种云 SaaS 应用程序](http://blogs.technet.com/b/ad/archive/2014/09/03/50-saas-apps-now-support-federation-with-azure-ad.aspx)，例如 Office365、Salesforce.com、DropBox 和 Concur。
 
-应用程序开发人员可将其应用程序与 Azure AD 集成，以便为其用户提供单一登录功能。这将使企业应用程序能够承载于云中，并能够轻松使用企业凭据对用户进行身份验证。它还使软件即服务 (SaaS) 提供商能够在对其服务进行身份验证时对 Azure AD 组织中的用户进行身份验证。开发人员还可使用 Graph API 来查询用于管理实体（如用户或组）的目录数据。[了解详细信息][2]
+对于应用程序开发人员而言，Azure AD 可让你专注于构建应用程序，快速方便地集成数百万个全球各地组织所用的一流标识管理解决方案。
 
-**其他资源**
+Azure AD 还包含整套标识管理功能，例如多重身份验证、设备注册、自助密码管理、自助组管理、特权帐户管理、基于角色的访问控制、应用程序使用情况监视、多样化审核以及安全监视和警报。这些功能可以帮助保护基于云的应用程序的安全，简化 IT 流程，削减成本，以及确保实现公司的合规目标。
 
--   [作为组织注册 Azure][作为组织注册 Azure]
--   [Azure 标识][Azure 标识]
--   [TechNet 上的 Azure AD 库][TechNet 上的 Azure AD 库]
--   [MSDN 上的 Azure AD 库][MSDN 上的 Azure AD 库]
+此外，只需[单击四下](http://blogs.technet.com/b/ad/archive/2014/08/04/connecting-ad-and-azure-ad-only-4-clicks-with-azure-ad-connect.aspx)，Azure AD 就能与现有的 Windows Server Active Directory 集成，使组织能够运用现有的本地标识管理系统投资来管理对基于云的 SaaS 应用程序的访问。
 
-  [了解详细信息]: https://technet.microsoft.com/zh-CN/library/hh967611.aspx
-  [1]: https://technet.microsoft.com/zh-CN/library/jj573653
-  [2]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn151122.aspx
-  [作为组织注册 Azure]: /documentation/articles/sign-up-organization
-  [Azure 标识]: /documentation/articles/fundamentals-identity
-  [TechNet 上的 Azure AD 库]: http://technet.microsoft.com/zh-cn/library/hh967619.aspx
-  [MSDN 上的 Azure AD 库]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj673460.aspx
+如果你是 Office365、Azure 或 Dynamics CRM Online 的客户，你可能不知道自己已在使用 Azure AD。每个 Office365、Azure 和 Dynamics CRM 租户实际上都已经是 Azure AD 租户。每当有需要时，你就可以开始使用该租户来为 Azure AD 集成的其他数千种云应用程序管理访问权限！
+
+
+
+
+
+<center>![Azure AD Connect 堆栈](./media/active-directory-whatis/Azure_Active_Directory.png) </center>
+
+
+## Azure AD 的可靠性如何？
+
+Azure AD 的多租户、地理分布、高可用性设计意味着你可以依赖它来解决最关键的业务需求。在全球运转的 28 个可自动故障转移的数据中心使你能够体会到 Azure AD 的高度可靠，即使数据中心发生服务中断，你的目录数据也至少会在两个以上的地域分散的数据中心保留副本，而且可让你立即访问。
+
+有关详细信息，请参阅[服务级别协议](/support/legal/sla/)。
+
+
+
+## Azure AD 的优势是什么？
+
+组织可以使用 Azure AD 在许多方面提高员工生产力、简化 IT 流程、提高安全性并削减成本：
+
+-	快速采用云服务，为员工与合作伙伴提供简单的单一登录体验，这是由 Azure AD 提供的、完全自动化的 SaaS 应用程序访问管理和预配服务功能。
+-	使员工能够在任何位置，使用他们偏好的设备来工作，访问一流的云应用和服务，以及各种自助功能。
+-	轻松安全地管理员工和供应商对公司社交媒体帐户的访问。
+-	使用 Azure AD 多重身份验证和条件性访问提高应用程序安全性。
+-	实施一致性的自助应用程序访问管理，使企业主能够快速采取行动，同时降低 IT 成本和管理开销。
+-	利用安全报告和监视来监视应用程序使用情况并防止企业受到严重威胁。
+-	对本地应用程序进行安全的移动（远程）访问。
+
+
+
+
+
+
+## 如何入门？
+-	如果你是 IT 管理员：
+ - [立即试用！](/pricing/1rmb-trial/)- 你现在就可以使用此链接注册 30 天免费试用版，然后在不到 5 分钟内部署第一个云解决方案
+ - 阅读“Azure AD 入门”，获取有关如何设置和快速运行 Azure AD 租户的提示与技巧
+-	如果你是开发人员：
+ - 查看 Azure Active Directory 的[开发人员指南](/documentation/articles/active-directory-developers-guide) 
+ - [开始试用](/pricing/1rmb-trial/) – 立即注册 30 天免费试用版，开始将你的应用集成到 Azure AD
+
+
+
+## 可以从何处了解详细信息？
+
+我们提供了大量的有用在线资源，以帮助你了解 Azure AD 的方方面面。下面是一些可帮助你快速入门的佳作：
+
+
+- [使用 Azure AD Connect 启用目录的混合管理](/documentation/articles/active-directory-aadconnect)
+
+- [在互联世界中提高安全性](/documentation/articles/multi-factor-authentication)
+
+- [Azure Active Directory SaaS 应用程序的自动化用户设置和取消设置](/documentation/articles/active-directory-saas-app-provisioning)
+
+- [从任意位置管理密码](/documentation/articles/active-directory-passwords)
+
+- [Azure Active Directory 的应用程序访问与单一登录是什么？](/documentation/articles/active-directory-appssoaccess-whatis)
+
+- [Azure Active Directory SaaS 应用程序的自动化用户设置和取消设置](/documentation/articles/active-directory-saas-app-provisioning)
+
+- [使用 Azure Active Directory 组管理对资源的访问](/documentation/articles/active-directory-manage-groups)
+
+- [什么是 Microsoft Azure Active Directory 许可？](/documentation/articles/active-directory-licensing-what-is)
+
+<!---HONumber=Mooncake_1221_2015-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/10/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="11/16/2015"
+	wacn.date="01/29/2016"/>
 
 
 # 在 Azure Active Directory 中设置密码过期策略
@@ -60,4 +60,4 @@
 
 	- 若要将组织中所有用户的密码设置为永不过期，请运行以下 cmdlet：`Get-MSOLUser | Set-MsolUser -PasswordNeverExpires \$true`
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

@@ -9,10 +9,10 @@
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="06/08/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="11/16/2015" 
+	wacn.date="01/29/2016"/>
 
-# 如何使用密码管理报告获取操作见解
+# 如何使用密码管理报告获取 Operational Insights
 本部分介绍如何使用 Azure Active Directory 的密码管理报告来查看组织中用户对密码重置和更改的使用情况。
 
 - [**密码管理报告概述**](#overview-of-password-management-reports)
@@ -44,7 +44,17 @@
 
     ![][001]
 
-##  <a name="view-password-reset-registration-activity"></a>查看密码重置注册活动
+## 如何通过 API 访问密码管理报告
+从 2015 年 8 月开始，Azure AD 报告和事件支持检索密码重置和密码重置注册报告中包含的所有信息。
+
+若要访问此数据，你需要编写一个小型应用或脚本，以便从我们的服务器检索这些数据。[了解如何开始使用 Azure AD Reporting API](active-directory-reporting-api-getting-started.md)。
+
+编写有效的脚本后，接下来请根据你的方案，检查可以检索的密码重置和注册事件。
+
+- [SsprActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprActivityEvent)：列出密码重置事件可用的列
+- [SsprRegistrationActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprRegistrationActivityEvent)：列出密码重置注册事件可用的列
+
+## 查看密码重置注册活动
 
 密码重置注册活动报告显示你的组织中已发生的所有密码重置注册。对于已在密码重置注册门户 ([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)) 成功注册身份验证信息的所有用户，密码重置注册都显示在此报告中。
 
@@ -65,49 +75,11 @@
 ### 报告值的说明
 下表描述了每个列的不同允许值：
 
-<table>
-            <tbody><tr>
-              <td>
-                <p>
-                  <strong>列</strong>
-                </p>
-              </td>
-              <td>
-                <p>
-                  <strong>允许值及其含义</strong>
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>已注册数据</p>
-              </td>
-              <td>
-                <ul>
-                  <li class="unordered">
-                    <strong>备用电子邮件</strong> – 用户使用了备用电子邮件或身份验证电子邮件进行身份验证<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>办公电话</strong> – 用户使用了办公电话进行身份验证<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>移动电话</strong> – 用户使用了移动电话或身份验证电话进行身份验证<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>安全问题</strong> – 用户使用了安全问题进行身份验证<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>上述任一组合（例如，备用电子邮件 + 移动电话）</strong>– 指定两项关口策略时发生，并显示用户使用哪两种方法对其密码重置请求进行身份验证。<br><br></li>
-                </ul>
-              </td>
-            </tr>
-          </tbody></table>
+列|允许值及其含义
+---|---
+已注册数据| **备用电子邮件** – 用户使用了备用电子邮件或身份验证电子邮件进行身份验证<p><p>**办公电话** – 用户使用了办公室电话进行身份验证<p>**移动电话** – 用户使用了移动电话或身份验证电话进行身份验证<p>**安全问题** – 用户使用了安全问题进行身份验证<p>**上述任一组合（例如，备用电子邮件 + 移动电话）** – 指定双门槛策略时发生，并显示用户使用哪两种方法对其密码重置请求进行身份验证。
 
-##  <a name="view-password-reset-activity"></a>查看密码重置活动
+## 查看密码重置活动
 
 此报告显示你的组织中发生的所有密码重置尝试。
 
@@ -130,407 +102,64 @@
 ###  报告值的说明
 下表描述了每个列的不同允许值：
 
-<table>
-            <tbody><tr>
-              <td>
-                <p>
-                  <strong>列</strong>
-                </p>
-              </td>
-              <td>
-                <p>
-                  <strong>允许值及其含义</strong>
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>所用方法</p>
-              </td>
-              <td>
-                <ul>
-                  <li class="unordered">
-                    <strong>备用电子邮件</strong> – 用户使用了备用电子邮件或身份验证电子邮件进行身份验证<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>办公电话</strong> – 用户使用了办公电话进行身份验证<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>移动电话</strong> – 用户使用了移动电话或身份验证电话进行身份验证<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>安全问题</strong> – 用户使用了安全问题进行身份验证<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>上述任一组合（例如，备用电子邮件 + 移动电话）</strong>– 指定两项关口策略时发生，并显示用户使用哪两种方法对其密码重置请求进行身份验证。<br><br></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>结果</p>
-              </td>
-              <td>
-                <ul>
-                  <li class="unordered">
-                    <strong>已放弃</strong> – 用户启动了密码重置，但尚未完成便中途停止<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>已阻止</strong> – 用户帐户因在 24 小时内尝试使用密码重置页面或单个密码重置关口的次数过多而被禁止使用密码重置<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>已取消</strong> – 用户启动了密码重置，但却在中途单击取消按钮取消了会话 <br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>已联系管理员</strong> – 用户在会话期间遇到无法解决的问题，因此用户单击了“联系管理员”链接而不是完成密码重置流程<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>已失败</strong> – 用户无法重置密码，可能原因是用户未被配置为使用该功能（例如，无许可证、缺少身份验证信息、密码在本地管理但写回处于关闭状态）。<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>已成功</strong> – 密码重置成功。<br><br></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>详细信息</p>
-              </td>
-              <td>
-                <p>请参阅下表</p>
-              </td>
-            </tr>
-          </tbody></table>
+列|允许值及其含义
+---|---
+所用方法|**备用电子邮件** – 用户使用了备用电子邮件或身份验证电子邮件进行身份验证<p>**办公电话** – 用户使用了办公室电话进行身份验证<p>**移动电话** – 用户使用了移动电话或身份验证电话进行身份验证<p>**安全问题** – 用户使用了安全问题进行身份验证<p>**上述任一组合（例如，备用电子邮件 + 移动电话）** – 指定双门槛策略时发生，并显示用户使用哪两种方法对其密码重置请求进行身份验证。
+结果|**已放弃** – 用户启动了密码重置，但尚未完成便中途停止<p>**已阻止** – 用户帐户因在 24 小时内尝试使用密码重置页面或单个密码重置入口的次数过多而被禁止使用密码重置<p>**已取消** – 用户启动了密码重置，但却在中途单击取消按钮取消了会话<p>**已联系管理员** – 用户在会话期间遇到无法解决的问题，因此用户单击了“联系管理员”链接而不是完成密码重置流程<p>**已失败** – 用户无法重置密码，可能原因是用户未被配置为使用该功能（例如，无许可证、缺少身份验证信息、密码在本地管理但写回处于关闭状态）。<p>**已成功** – 密码重置成功。
+详细信息|请参阅下表
 
-###  详细信息列的允许值
+### 详细信息列的允许值
 下面是你在使用密码重置活动报告时可能会遇到的结果类型列表：
 
-<table>
-            <tbody><tr>
-              <td>
-                <p>
-                  <strong>详细信息</strong>
-                </p>
-              </td>
-              <td>
-                <p>
-                  <strong>结果类型</strong>
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在完成电子邮件验证选项后放弃</p>
-              </td>
-              <td>
-                <p>已放弃</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在完成手机短信验证选项后放弃</p>
-              </td>
-              <td>
-                <p>已放弃</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在完成移动语音呼叫验证选项后放弃</p>
-              </td>
-              <td>
-                <p>已放弃</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在完成办公室语音呼叫验证选项后放弃</p>
-              </td>
-              <td>
-                <p>已放弃</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在完成安全问题选项后放弃</p>
-              </td>
-              <td>
-                <p>已放弃</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在输入其用户 ID 后放弃</p>
-              </td>
-              <td>
-                <p>已放弃</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在启动电子邮件验证选项后放弃</p>
-              </td>
-              <td>
-                <p>已放弃</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在启动手机短信验证选项后放弃</p>
-              </td>
-              <td>
-                <p>已放弃</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在启动移动语音呼叫验证选项后放弃</p>
-              </td>
-              <td>
-                <p>已放弃</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在启动办公室语音呼叫验证选项后放弃</p>
-              </td>
-              <td>
-                <p>已放弃</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在启动安全问题选项后放弃</p>
-              </td>
-              <td>
-                <p>已放弃</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在选择新密码之前放弃</p>
-              </td>
-              <td>
-                <p>已放弃</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在选择新密码时放弃</p>
-              </td>
-              <td>
-                <p>已放弃</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户输入的无效电子邮件验证代码过多，被阻止 24 小时</p>
-              </td>
-              <td>
-                <p>已阻止</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户输入的无效短信验证代码过多，被阻止 24 小时</p>
-              </td>
-              <td>
-                <p>已阻止</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户尝试移动电话语音验证的次数过多，被阻止 24 小时</p>
-              </td>
-              <td>
-                <p>已阻止</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户尝试办公室电话语音验证的次数过多，被阻止 24 小时</p>
-              </td>
-              <td>
-                <p>已阻止</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户尝试回答安全问题的次数过多，被阻止 24 小时</p>
-              </td>
-              <td>
-                <p>已阻止</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户尝试电话号码验证的次数过多，被阻止 24 小时</p>
-              </td>
-              <td>
-                <p>已阻止</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在传递必需的身份验证方法之前取消</p>
-              </td>
-              <td>
-                <p>已取消</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在提交新密码之前取消</p>
-              </td>
-              <td>
-                <p>已取消</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在尝试电子邮件验证选项后联系了管理员</p>
-              </td>
-              <td>
-                <p>已联系管理员</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在尝试手机短信验证选项后联系了管理员</p>
-              </td>
-              <td>
-                <p>已联系管理员</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在尝试移动语音呼叫验证选项后联系了管理员</p>
-              </td>
-              <td>
-                <p>已联系管理员</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在尝试办公室语音呼叫验证选项后联系了管理员</p>
-              </td>
-              <td>
-                <p>已联系管理员</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户在尝试安全问题验证选项后联系了管理员</p>
-              </td>
-              <td>
-                <p>已联系管理员</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>未对此用户启用密码重置。启用配置选项卡下的密码重置以解决此问题</p>
-              </td>
-              <td>
-                <p>已失败</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户没有许可证。你可以将许可证添加到用户以解决此问题</p>
-              </td>
-              <td>
-                <p>已失败</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户试图在不启用 Cookie 的情况下从设备重置</p>
-              </td>
-              <td>
-                <p>已失败</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户帐户已定义足够的身份验证方法。添加身份验证信息以解决此问题</p>
-              </td>
-              <td>
-                <p>已失败</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户的密码在本地管理。你可以启用密码写回以解决此问题</p>
-              </td>
-              <td>
-                <p>已失败</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>我们无法访问你的本地密码重置服务。检查同步计算机的事件日志</p>
-              </td>
-              <td>
-                <p>已失败</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>我们在重置用户的本地密码时遇到问题。检查同步计算机的事件日志</p>
-              </td>
-              <td>
-                <p>已失败</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>此用户不是密码重置用户组的成员。将此用户添加到该组以解决此问题。</p>
-              </td>
-              <td>
-                <p>已失败</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>已对此租户完全禁用密码重置。请参阅 <a href="http://aka.ms/ssprtroubleshoot">http://aka.ms/ssprtroubleshoot</a> 来解决此问题。</p>
-              </td>
-              <td>
-                <p>已失败</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>用户已成功重置密码</p>
-              </td>
-              <td>
-                <p>已成功</p>
-              </td>
-            </tr>
-          </tbody></table>
+详细信息 | 结果类型
+----|----
+用户在完成电子邮件验证选项后放弃 | 已放弃
+用户在完成手机短信验证选项后放弃|已放弃
+用户在完成移动语音呼叫验证选项后放弃 | 已放弃
+用户在完成办公室语音呼叫验证选项后放弃 | 已放弃
+用户在完成安全问题选项后放弃|已放弃
+用户在输入其用户 ID 后放弃| 已放弃
+用户在启动电子邮件验证选项后放弃|已放弃
+用户在启动手机短信验证选项后放弃|已放弃
+用户在启动移动语音呼叫验证选项后放弃|已放弃
+用户在启动办公室语音呼叫验证选项后放弃|已放弃
+用户在启动安全问题选项后放弃| 已放弃
+用户在选择新密码之前放弃| 已放弃
+用户在选择新密码时放弃| 已放弃
+用户输入的无效短信验证代码过多，被阻止 24 小时|已阻止
+用户尝试移动电话语音验证的次数过多，被阻止 24 小时|已阻止
+用户尝试办公室电话语音验证的次数过多，被阻止 24 小时 |已阻止
+用户尝试回答安全问题的次数过多，被阻止 24 小时| 已阻止
+用户尝试电话号码验证的次数过多，被阻止 24 小时|已阻止
+用户在传递必需的身份验证方法之前取消|已取消
+用户在提交新密码之前取消|已取消
+用户在尝试电子邮件验证选项后联系了管理员 |已联系管理员
+用户在尝试手机短信验证选项后联系了管理员|已联系管理员
+用户在尝试移动语言呼叫验证选项后联系了管理员|已联系管理员
+用户在尝试办公室语言呼叫验证选项后联系了管理员 |已联系管理员
+用户在尝试安全问题验证选项后联系了管理员|已联系管理员
+未对此用户启用密码重置。启用配置选项卡下的密码重置以解决此问题| 已失败
+用户没有许可证。你可以将许可证添加到用户以解决此问题|已失败
+用户试图从设备重置而不启用 Cookie| 已失败
+用户帐户已定义足够的身份验证方法。添加身份验证信息以解决此问题|已失败
+用户的密码在本地管理。你可以启用密码写回以解决此问题|已失败
+我们无法访问你的本地密码重置服务。检查同步计算机的事件日志|已失败
+我们在重置用户的本地密码时遇到问题。检查同步计算机的事件日志 | 已失败
+此用户不是密码重置用户组的成员。将此用户添加到该组以解决此问题。|已失败
+已对此租户完全禁用密码重置。若要解决此问题，请参阅[此文](http://aka.ms/ssprtroubleshoot)。 | 已失败
+用户已成功重置密码|已成功
 
-<br/> <br/> <br/>
+## 密码重置文档的链接
+以下是所有 Azure AD 密码重置文档页面的链接：
 
-**其他资源**
-
-
-* [什么是密码管理](/documentation/articles/active-directory-passwords)
-* [密码管理的工作原理](/documentation/articles/active-directory-passwords-how-it-works)
-* [密码管理入门](/documentation/articles/active-directory-passwords-getting-started)
-* [自定义密码管理](/documentation/articles/active-directory-passwords-customize)
-* [密码管理最佳实践](/documentation/articles/active-directory-passwords-best-practices)
-* [密码管理常见问题](/documentation/articles/active-directory-passwords-faq)
-* [密码管理疑难解答](/documentation/articles/active-directory-passwords-troubleshoot)
-* [了解详细信息](/documentation/articles/active-directory-passwords-learn-more)
-* [MSDN 上的密码管理](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)
+* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password) - 了解如何以系统用户的身份重置或更改自己的密码
+* [**工作原理**](/documentation/articles/active-directory-passwords-how-it-works) - 了解六个不同的服务组件及其功能
+* [**入门**](/documentation/articles/active-directory-passwords-getting-started) - 了解如何让用户重置及更改云密码或本地密码
+* [**自定义**](/documentation/articles/active-directory-passwords-customize) - 了解如何根据组织的需求自定义服务的外观和行为
+* [**最佳实践**](/documentation/articles/active-directory-passwords-best-practices) - 了解如何快速部署且有效管理组织的密码
+* [**常见问题**](/documentation/articles/active-directory-passwords-faq) - 获取常见问题的解答
+* [**故障排除**](/documentation/articles/active-directory-passwords-troubleshoot) - 了解如何快速排查服务的问题
+* [**了解更多**](/documentation/articles/active-directory-passwords-learn-more) - 深入探索服务工作原理的技术细节
 
 
 
@@ -539,4 +168,4 @@
 [003]: ./media/active-directory-passwords-get-insights/003.jpg "Image_003.jpg"
  
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_0118_2016-->
