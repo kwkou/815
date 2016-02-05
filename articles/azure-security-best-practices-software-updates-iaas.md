@@ -95,7 +95,7 @@ Azure IaaS 的某些备份选项包括：
 
 -   [使用 Data Protection Manager 保护 Azure IaaS 工作负荷](https://azure.microsoft.com/blog/2014/09/08/azure-iaas-workload-protection-using-data-protection-manager/)
 
--   [备份 Azure 虚拟机](../backup/backup-azure-vms.md)
+-   [备份 Azure 虚拟机](/documentation/articles/backup-azure-vms)
 
 ### 监视
 
