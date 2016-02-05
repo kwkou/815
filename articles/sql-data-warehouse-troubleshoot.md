@@ -24,7 +24,7 @@
 ### 防火墙规则
 为了确保只有已知的 IP 地址可以访问数据库，Azure SQL 数据库受到服务器和数据库级别的防火墙保护。默认情况下，防火墙受到保护 - 这意味着，你必须允许你的 IP 地址访问数据库才能建立连接。
 
-若要设置防火墙的访问权限，请遵循[预配](/documentation/articles/sql-data-warehouse-get-started-provision)页上的[为客户端 IP 配置服务器防火墙访问权限](/documentation/articles/sql-data-warehouse-get-started-provision/#step-4-configure-server-firewall-access-for-your-client-ip)部分中所述的步骤。
+若要设置防火墙的访问权限，请遵循[预配](/documentation/articles/sql-data-warehouse-get-started-provision-powershell)页上的[为客户端 IP 配置服务器防火墙访问权限](/documentation/articles/sql-data-warehouse-get-started-provision-powershell/#step-4-configure-server-firewall-access-for-your-client-ip)部分中所述的步骤。
 
 ### 使用不支持的工具/协议
 SQL 数据仓库支持使用 [Visual Studio 2013/2015](/documentation/articles/sql-data-warehouse-get-started-connect) 作为开发环境，支持使用 [SQL Server Native Client 10/11 (ODBC)](https://msdn.microsoft.com/zh-cn/library/ms131415.aspx) 来连接客户端。
@@ -56,7 +56,7 @@ WHERE
 	AND st.[user_created] = 1;
 ```
 
-有关详细信息，请参阅我们的[统计信息](sql-data-warehouse-develop-statistics.md)页。
+有关详细信息，请参阅我们的[统计信息](/documentation/articles/sql-data-warehouse-develop-statistics)页。
 
 ## 关键性能概念
 
