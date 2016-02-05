@@ -58,8 +58,6 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 	![在 Azure 门户中，可以使用“快速创建”来设置新的存储帐户。][image-hdi-storageaccount-quickcreate]
 
->[AZURE.NOTE]确保在群集支持的位置中创建存储帐户。这些区域为：**亚洲东部**、**亚洲东南部**、**欧洲北部**、**欧洲西部**、**美国东部**、**美国西部**、**美国中北部**和**美国中南部**。
-
 从列表中选择新存储帐户，然后单击页面底部的“管理访问密钥”。记下“主访问密钥”（或“辅助访问密钥”- 任一密钥都有效）。本教程后面的步骤中将会用到此密钥。有关详细信息，请参阅[如何创建存储帐户][azure-create-storageaccount]。
 
 ##<a name="provision"></a>设置 Hadoop 群集
