@@ -1,10 +1,10 @@
-<properties linkid="" urlDisplayName="" pageTitle="Use Windows PowerShell to manage MySQL Database on Azure – Microsoft Azure cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, beginner’s guide, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, API, Azure MySQL Service, Azure RDS" description="This article explains how to use the API to carry out more operations for MySQL Database on Azure, including query, create, modify and delete operations." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="Use Windows PowerShell to manage MySQL Database on Azure – Microsoft Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, beginner’s guide, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, API, Azure MySQL Service, Azure RDS" description="This article explains how to use the API to carry out more operations for MySQL Database on Azure, including query, create, modify and delete operations." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="12/18/2015"/>
 
-# Deleting Users
+#Delete users
 
-## Request
+##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
   <th align="left"><strong>Method</strong>
     </td>
@@ -17,10 +17,10 @@
   </tr>
 </table>
 
-### URI parameters
+###URI parameter
 None
 
-### Request Header
+###Request header
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
   <th align="left"><strong>Request header</strong>
     </td>
@@ -33,16 +33,16 @@ None
   </tr>
 </table>
 
-### Request Body
+###Request Body
 None
 
-## Response
+##Response
 
-HTTPS responses are composed of a status code, response header and response body.
-### Status codes
-204 No Content - Indicates that the user has already been deleted.
+An HTTPS response comprises a status code, a response header and a response body.
+### Status code
+204 No Content: Indicates that the user has already been deleted.
 
-### Response Headers
+### Response header
 
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
   <th align="left"><strong>Request header</strong>
@@ -56,7 +56,7 @@ HTTPS responses are composed of a status code, response header and response body
   </tr>
 </table>
 
-### Response Body
+### Response body
 None
 
 <!---HONumber=Acom_0104_2016_MySql-->

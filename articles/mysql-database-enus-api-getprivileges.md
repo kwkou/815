@@ -1,10 +1,10 @@
-<properties linkid="" urlDisplayName="" pageTitle="Use Windows PowerShell to manage MySQL Database on Azure – Microsoft Azure cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, beginner’s guide, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, API, Azure MySQL Service, Azure RDS" description="This article explains how to use the API to carry out more operations for MySQL Database on Azure, including query, create, modify and delete operations." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="Use Windows PowerShell to manage MySQL Database on Azure – Microsoft Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, beginner’s guide, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, API, Azure MySQL Service, Azure RDS" description="This article explains how to use the API to carry out more operations for MySQL Database on Azure, including query, create, modify and delete operations." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="12/18/2015"/>
 
-# Viewing Database Access Permissions
+#View database access permissions
 
-## Request
+##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
   <th align="left"><strong>Method</strong>
     </td>
@@ -17,10 +17,10 @@
   </tr>
 </table>
 
-### URI parameters
+###URI parameters
 None
 
-### Request Header
+###Request header
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
   <th align="left"><strong>Request header</strong>
     </td>
@@ -33,16 +33,16 @@ None
   </tr>
 </table>
 
-### Request Body
+###Request body
 None
 
-## Response
+##Response
 
-HTTPS responses are composed of a status code, response header and response body.
-### Status codes
-200 OK - Indicates that the server has returned successfully.
+An HTTPS response comprises a status code, a response header and a response body.
+### Status code
+200 OK: Indicates that the server has returned successfully.
 
-### Response Headers
+### Response header
 
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
   <th align="left"><strong>Request header</strong>
@@ -56,8 +56,8 @@ HTTPS responses are composed of a status code, response header and response body
   </tr>
 </table>
 
-### Response Body
-A JSON example file is provided below:
+### Response body
+An example JavaScript Object Notation (JSON) file is provided below:
 
 ```
 {

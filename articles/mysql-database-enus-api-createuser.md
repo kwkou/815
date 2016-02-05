@@ -1,11 +1,12 @@
-<properties linkid="" urlDisplayName="" pageTitle="Use Windows PowerShell to manage MySQL Database on Azure – Microsoft Azure cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, beginner’s guide, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, API, Azure MySQL Service, Azure RDS" description="This article explains how to use the API to carry out more operations for MySQL Database on Azure, including query, create, modify and delete operations." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="Use Windows PowerShell to manage MySQL Database on Azure – Microsoft Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, beginner’s guide, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, API, Azure MySQL Service, Azure RDS" description="This article explains how to use the API to carry out more operations for MySQL Database on Azure, including query, create, modify and delete operations." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="12/18/2015"/>
 
-# Creating Users
+#Create users
 Create users and passwords.
 
-## Request
+
+##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
   <th align="left"><strong>Method</strong>
     </td>
@@ -18,10 +19,10 @@ Create users and passwords.
   </tr>
 </table>
 
-### URI parameters
+###URI parameter
 None
 
-### Request Header
+###Request eader
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
   <th align="left"><strong>Request header</strong>
     </td>
@@ -34,8 +35,8 @@ None
   </tr>
 </table>
 
-### Request Body
-Creating or updating MySQL on Azure servers requires writing the following parameters. A JSON example file is provided below:
+###Request body
+Creating or updating MySQL on Azure servers requires writing the following parameters. An example JavaScript Object Notation (JSON) file is provided below 
 ```
 {
   "properties": { "password": "password" }
@@ -43,7 +44,7 @@ Creating or updating MySQL on Azure servers requires writing the following param
 
 ```
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
-  <th align="left"><strong>Parameter name</strong>
+  <th align="left"><strong>Parameter name/strong>
     </td>
   <th align="left"><strong>Description</strong>
     </td>
@@ -54,13 +55,13 @@ Creating or updating MySQL on Azure servers requires writing the following param
   </tr>
 </table>
 
-## Response
+##Response
 
-An HTTPS response comprises a status code, response header and response body.
-### Status codes
-200 OK: This indicates that the server has returned successfully.
+An HTTPS response comprises a status code, a response header and a response body.
+### Status code
+200 OK: Indicates that the server has returned successfully.
 
-### Response Headers
+### Response header
 
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
   <th align="left"><strong>Request header</strong>
@@ -70,12 +71,12 @@ An HTTPS response comprises a status code, response header and response body.
   
   <tr>
     <td>x-ms-client-request-id</td>
-    <td>Can uniquely identify the database request value.The request ID is used to track the request information.</td>
+    <td>Can uniquely identify the database request value. The request ID is used to track the request information.</td>
   </tr>
 </table>
 
-### Response Body
-A JSON example file is provided below: 
+### Response body
+An example JavaScript Object Notation (JSON) file is provided below:
 ```
 
 {

@@ -1,10 +1,10 @@
-<properties linkid="" urlDisplayName="" pageTitle="Use Windows PowerShell to manage MySQL Database on Azure – Microsoft Azure cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, beginner’s guide, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, API, Azure MySQL Service, Azure RDS" description="This article explains how to use the API to carry out more operations for MySQL Database on Azure, including query, create, modify and delete operations." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="Use Windows PowerShell to manage MySQL Database on Azure – Microsoft Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, beginner’s guide, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, API, Azure MySQL Service, Azure RDS" description="This article explains how to use the API to carry out more operations for MySQL Database on Azure, including query, create, modify and delete operations." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="12/18/2015"/>
 
-# Creating Servers
+#Create servers
 
-## Request
+##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
   <th align="left"><strong>Method</strong>
     </td>
@@ -17,10 +17,10 @@
   </tr>
 </table>
 
-### URI parameters
+###URI parameter
 None
 
-### Request Header
+###Request header
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
   <th align="left"><strong>Request header</strong>
     </td>
@@ -33,8 +33,8 @@ None
   </tr>
 </table>
 
-### Request Body
-Creating or updating MySQL on Azure servers requires writing the following parameters. A JSON example file is provided below:
+###Request body
+Creating or updating MySQL on Azure servers requires writing the following parameters. An example JavaScript Object Notation (JSON) file is provided below 
 ```
 {
   "location":"chinaeast",
@@ -44,24 +44,24 @@ Creating or updating MySQL on Azure servers requires writing the following param
     "dailyBackupTimeInHour": 10
   }
 }
-```
-<table width="100%" border="1" cellspacing="0" cellpadding="0">
-  <th align="left"><strong>Parameter</strong>
-    </td>
-  <th align="left"><strong>Description</strong>
+``` 
+<table width="100%" border="1" cellspacing="0" cellpadding="0"> 
+  <th align="left"><strong>Parameter</strong> 
+    </td> 
+  <th align="left"><strong>Description</strong> 
     </td>
   
   <tr>
     <td>location </td>
-    <td>The location of the server</td>
+    <td>Location of the server</td>
   </tr>
   <tr>
     <td>SKU</td>
-    <td>The performance tier of the server</td>
+    <td>Performance tier of the server</td>
   </tr>
   <tr>
     <td>version </td>
-    <td>MySQL version (5.5 and 5.6 are currently supported)</td>
+    <td>MySQL version (5.5 and 5.6 currently supported)</td>
   </tr>
   <tr>
     <td>dailyBackupTimeInHour </td>
@@ -69,13 +69,13 @@ Creating or updating MySQL on Azure servers requires writing the following param
   </tr>
 </table>
 
-## Response
+##Response
 
-HTTPS responses are composed of a status code, response header and response body.
-### Status codes
-200 OK - Indicates that the server has returned successfully.
+An HTTPS response comprises a status code, a response header and a response body.
+### Status code
+200 OK: Indicates that the server has returned successfully.
 
-### Response Headers
+### Response header
 
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
   <th align="left"><strong>Request header</strong>
@@ -90,7 +90,7 @@ HTTPS responses are composed of a status code, response header and response body
 </table>
 
 ### Response Body
-A JSON example file is provided below:
+An example JSON file is provided below 
 ```
 {
   "id": "/subscriptions/{subID}/resourceGroups/DefaultResourceGroup/providers/Microsoft.MySql/servers/{server-name}",
@@ -104,16 +104,16 @@ A JSON example file is provided below:
     "provisioningState": "Creating"
   }
 }
-```
-<table width="100%" border="1" cellspacing="0" cellpadding="0">
-  <th align="left"><strong>Parameter name</strong>
-    </td>
-  <th align="left"><strong>Description</strong>
+``` 
+<table width="100%" border="1" cellspacing="0" cellpadding="0"> 
+  <th align="left"><strong>Parameter name</strong> 
+    </td> 
+  <th align="left"><strong>Description</strong> 
     </td>
   
   <tr>
     <td>name</td>
-    <td>server name</td>
+    <td>Server name</td>
   </tr>
   <tr>
     <td>provisioningState</td>

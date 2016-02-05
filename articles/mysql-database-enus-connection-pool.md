@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="" pageTitle="Connect efficiently to MySQL Database on Azure – Microsoft Azure cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, connection pool, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="Making sensible use of connection pooling to access MySQL Database on Azure will optimize performance. This article explains how to use connection pooling to more effectively access MySQL Database on Azure and provides sample code that uses Java and PHP as examples for your reference." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="Connect efficiently to MySQL Database on Azure – Microsoft Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, connection pool, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="Making sensible use of connection pooling to access MySQL Database on Azure will optimize performance. This article explains how to use connection pooling to more effectively access MySQL Database on Azure and provides sample code that uses Java and PHP as examples for your reference." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="12/28/2015"/>
 # Connect efficiently to MySQL Database on Azure<sup style="color: #a5ce00; font-weight: bold; text-transform: uppercase; font-family: '微软雅黑'; font-size: 20px;" class="wa-previewTag"></sup>
@@ -17,8 +17,7 @@ This article explains this further by providing a [piece of sample code that use
 ## Access databases that use persistent connections (recommended)##
 We recommend that you use persistent connections in PHP. The concept of persistent connections is similar to that of connection pooling. It is important to note that PHP currently has three types of drivers. While MySQLi does not support persistent connection, the other two types of drivers do.
 
-Read [Use PDO to Establish Persistent Connections](http://php.net/manual/en/pdo.connections.php);
-Read [Use MySQL Engines to Establish Persistent Connections](http://php.net/manual/en/function.mysql-pconnect.php).
+Read [Use PDO to establish persistent connections](http://php.net/manual/en/pdo.connections.php) and [Use MySQL engines to establish persistent connections](http://php.net/manual/en/function.mysql-pconnect.php).
 
 Replacing short connections with persistent connections requires only minor changes to the code, but has a major effect in terms of improving performance in many typical application scenarios.
 
