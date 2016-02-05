@@ -72,7 +72,7 @@
 
 ## 部署
 
-可以通过基于 Internet Information Services (IIS) 的 Web 应用所用的方法轻松地部署基于 Java 的 Web 应用。FTP、Git 和 Kudu 都是支持的部署机制，和 Web 应用集成的 SCM 功能一样。WebDeploy 可充当协议，但由于 Java 不是在 Visual Studio 中开发的，因此 WebDeploy 不适用于 Java Web 应用部署使用案例。
+可以通过基于 Internet Information Services (IIS) 的 Web 应用所用的方法轻松地部署基于 Java 的 Web 应用。FTP 和 Git 都是支持的部署机制，和 Web 应用集成的 SCM 功能一样。WebDeploy 可充当协议，但由于 Java 不是在 Visual Studio 中开发的，因此 WebDeploy 不适用于 Java Web 应用部署使用案例。
 
 ## 应用程序配置示例
 

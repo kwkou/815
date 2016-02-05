@@ -242,6 +242,5 @@
 -	[Azure PowerShell](/documentation/articles/powershell-install-configure)
 -	[Azure 跨平台命令行工具](/documentation/articles/xplat-cli-install)
 -	[在 Azure AD 中创建或编辑用户](https://msdn.microsoft.com/zh-cn/library/azure/hh967632.aspx#BKMK_1)
--	[项目 Kudu Wiki](https://github.com/projectkudu/kudu/wiki)
 
 <!---HONumber=Mooncake_0118_2016-->

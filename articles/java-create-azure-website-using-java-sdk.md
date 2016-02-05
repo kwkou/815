@@ -430,7 +430,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 
 ### 使用 FTP 部署 Hello World 应用程序
 
-选择第三方 FTP 客户端来发布应用程序。此过程将介绍两个选项：Azure 中内置的 Kudu 控制台；FileZilla，这是一个带有便捷式图形 UI 的常用工具。
+选择第三方 FTP 客户端来发布应用程序。此过程将介绍FileZilla，这是一个带有便捷式图形 UI 的常用工具。
 
 > **注意：**Azure Toolkit for Eclipse 支持部署到存储帐户和云服务，但当前不支持部署到 Web 应用。你可以使用 Azure 部署项目部署到存储帐户和云服务，但不能部署到 Web 应用。使用其他方法（例如 FTP 或 GitHub）将文件传输到 Web 应用。
 
