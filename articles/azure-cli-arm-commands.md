@@ -212,6 +212,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 **用于管理虚拟网络的命令**
 
 	network vnet create [options] <resource-group> <name> <location>
+
 用于创建新的虚拟网络。在以下示例中，我们将为中国北部区域的资源组 myresourcegroup 创建名为 newvnet 的虚拟网络。
 
 
@@ -352,6 +353,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 <BR>
 
 	network vnet delete [options] <resource-group> <name>
+
 该命令删除虚拟网络。
 
 	azure network vnet delete myresourcegroup newvnetX
@@ -376,6 +378,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 **用于管理虚拟网络子网的命令**
 
 	network vnet subnet create [options] <resource-group> <vnet-name> <name>
+
 该命令允许将另一个子网添加到现有的虚拟网络。
 
 	azure network vnet subnet create -g myresourcegroup --vnet-name newvnet -n subnet --address-prefix 10.0.1.0/24
@@ -445,6 +448,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 <BR>
 
 	network vnet subnet show [options] <resource-group> <vnet-name> <name>
+
 显示虚拟网络子网属性
 
 	azure network vnet subnet show -g myresourcegroup --vnet-name newvnet -n subnet1
@@ -471,6 +475,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 <BR>
 
 	network vnet subnet delete [options] <resource-group> <vnet-name> <subnet-name>
+
 从现有虚拟网络中删除子网。
 
 	azure network vnet subnet delete -g myresourcegroup --vnet-name newvnet -n subnet1
@@ -495,6 +500,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 **用于管理负载平衡器的命令**
 
 	network lb create [options] <resource-group> <name> <location>
+
 创建负载平衡器集。
 
 	azure network lb create -g myresourcegroup -n mylb -l chinanorth
@@ -525,6 +531,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 <BR>
 
 	network lb list [options] <resource-group>
+
 列出资源组中的负载平衡器资源。
 
 	azure network lb list myresourcegroup
@@ -675,6 +682,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 
 	network lb probe delete [options] <resource-group> <lb-name> <name>
+
 删除为负载平衡器创建的探测。
 
 	azure network lb probe delete -g myresourcegroup -l mylb -n mylbprobe
@@ -688,6 +696,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 **用于管理负载平衡器前端 IP 配置的命令**
 
 	network lb frontend-ip create [options] <resource-group> <lb-name> <name>
+
 为现有的负载平衡器集创建前端 IP 配置。
 
 	azure network lb frontend-ip create -g myresourcegroup --lb-name mylb -n myfrontendip -o Dynamic -e subnet -m newvnet
@@ -788,6 +797,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 <BR>
 
 	network lb frontend-ip delete [options] <resource-group> <lb-name> <name>
+
 删除与负载平衡器关联的前端 IP 对象
 
 	network lb frontend-ip delete -g myresourcegroup -l mylb -n myfrontendip
@@ -969,6 +979,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 **用于管理负载平衡器规则的命令**
 
 	network lb rule create [options] <resource-group> <lb-name> <name>
+
 创建负载平衡器规则。
 
 你可以创建负载平衡器规则，用于配置负载平衡器的前端终结点以及要接收传入网络流量的后端地址池范围。设置还包括前端 IP 终结点的端口，以及后端地址池范围的端口。
@@ -1092,6 +1103,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 **用于管理负载平衡器入站 NAT 规则的命令**
 
 	network lb inbound-nat-rule create [options] <resource-group> <lb-name> <name>
+
 为负载平衡器创建入站 NAT 规则。
 
 在以下示例中，我们从前端 IP（前面已定义。有关详细信息，请参阅“azure network frontend-ip”命令），使用入站侦听端口和负载平衡器要将网络流量发送到的出站端口，创建了一个 NAT 规则。
@@ -1137,6 +1149,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 <BR>
 
 	network lb inbound-nat-rule set [options] <resource-group> <lb-name> <name>
+
 更新现有的入站 NAT 规则。在以下示例中，我们已将入站侦听端口从 80 更改为 81。
 
 	azure network lb inbound-nat-rule set -g group-1 -l mylb -n myinboundnat -p tcp -f 81 -b 8080 -i myfrontendip
@@ -1229,6 +1242,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 **用于管理公共 IP 地址的命令**
 
 	network public-ip create [options] <resource-group> <name> <location>
+
 创建公共 IP 资源。你将要创建公共 IP 资源并将其关联到一个域名。
 
 	azure network public-ip create -g myresourcegroup -n mytestpublicip1 -l chinaeast -d azureclitest -a "Dynamic"
@@ -1269,6 +1283,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 <br>
 
 	network public-ip set [options] <resource-group> <name>
+
 更新现有的公共 IP 资源的属性。在以下示例中，我们已将公共 IP 地址从动态更改为静态。
 
 	azure network public-ip set -g group-1 -n mytestpublicip1 -d azureclitest -a "Static"
@@ -1310,6 +1325,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 <br>
 
 	network public-ip list [options] <resource-group>
+
 列出资源组中的所有公共 IP 资源。
 
 	azure network public-ip list -g myresourcegroup
@@ -1333,6 +1349,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 <BR>
 
 	network public-ip show [options] <resource-group> <name>
+
 显示资源组中公共 IP 资源的公共 IP 属性。 
 
 	azure network public-ip show -g myresourcegroup -n mytestpublicip
@@ -1386,6 +1403,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 **用于管理网络接口的命令**
 
 	network nic create [options] <resource-group> <name> <location>
+
 创建可用于负载平衡器或关联到虚拟机的名为网络接口 (NIC) 的资源。
 
 	azure network nic create -g myresourcegroup -l chinaeast -n testnic1 --subnet-name subnet-1 --subnet-vnet-name myvnet

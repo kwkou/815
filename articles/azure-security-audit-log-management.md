@@ -38,7 +38,7 @@ Windows 事件日志中引发了虚拟机中有关**系统**、**安全**和**�
 - Desired State Configuration (DSC)，以便推送和管理策略设置。有关详细信息，请参阅 [Azure PowerShell DSC](http://blogs.msdn.com/b/powershell/archive/2014/08/07/introducing-the-azure-powershell-dsc-desired-state-configuration-extension.aspx)。
 - 服务部署角色启动代码，以便为云服务（PaaS 方案）进行设置
 
-配置 Azure 角色启动任务可使代码在角色启动之前运行。可以通过将 **Startup** 元素添加到服务定义文件中的角色定义来定义角色的启动任务，如下面的示例中所示。有关详细信息，请参阅[在 Azure 中运行启动任务](http://msdn.microsoft.com/zh-cn/library/azure/hh180155.aspx)。
+配置 Azure 角色启动任务可使代码在角色启动之前运行。可以通过将 **Startup** 元素添加到服务定义文件中的角色定义来定义角色的启动任务，如下面的示例中所示。有关详细信息，请参阅[在 Azure 中运行启动任务](/documentation/articles/cloud-services-startup-tasks/)。
 
 要作为启动任务运行的任务文件（即以下示例中的 EnableLogOnAudit.cmd）需要包含在您的生成包中。如果您使用是的 Visual Studio，请将文件添加到您的云项目，右键单击该文件名，单击“属性”，然后将“复制到输出目录”设置为“始终复制”。
 
