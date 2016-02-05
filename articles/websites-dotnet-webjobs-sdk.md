@@ -162,8 +162,6 @@ WebJobs SDK 的触发器和绑定器功能可大幅简化所需编写的代码�
 
 使用 WebJobs SDK 的程序是指可在任意位置运行的标准控制台应用程序 - 它不一定要以 Web 作业的形式运行。你可以在开发计算机上本地测试程序，而在生产环境中，可以在云服务辅助角色或 Windows 服务中运行程序（如果你偏好其中一个环境）。
 
-但是，仪表板只能用作 Azure Web 应用的扩展。如果你想要在 Web 作业外部运行并且仍使用仪表板，可将 Web 应用配置为使用 WebJobs SDK 仪表板连接字符串所引用的同一存储帐户，然后， Web 应用的 WebJobs 仪表板将显示有关来自其他某处运行程序的函数执行数据。可以使用 URL https://*{webappname}*.scm.chinacloudsites.cn/azurejobs/#/functions 来访问仪表板。有关详细信息，请参阅[使用 WebJobs SDK 获取用于本地开发的仪表板](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx)，但请注意，此博客文章会显示旧的连接字符串名称。
-
 ## <a id="nostorage"></a>仪表板功能
 
 即使你不使用 WebJobs SDK 触发器或绑定器，WebJobs SDK 也提供了几个优点：

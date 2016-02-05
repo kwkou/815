@@ -129,16 +129,13 @@
 
 ### 从备份中排除文件
 
-若要从备份中排除文件和文件夹，在 Web 应用的 wwwroot 文件夹中创建 `_backup.filter` 文件，并指定要在该处排除的文件和文件夹列表。通过 [Kudu 控制台](https://github.com/projectkudu/kudu/wiki/Kudu-console)，即可轻松访问它。
+若要从备份中排除文件和文件夹，在 Web 应用的 wwwroot 文件夹中创建 `_backup.filter` 文件，并指定要在该处排除的文件和文件夹列表。通过 FTP，即可轻松访问它。
 
 假设你的 Web 应用中包含永远不会更改的历年的日志文件和静态图像。你已有包括旧图像的 Web 应用的完整备份。现在你想要每天都备份 Web 应用，但不想为存储永远不会更改的日志文件或静态图像文件支付费用。
-
-![日志文件夹][LogsFolder]
-![映像文件夹][ImagesFolder]
 	
 以下步骤展示了如何从备份中排除这些文件。
 
-1. 转到 `http://{yourapp}.scm.chinacloudsites.cn/DebugConsole` 并确定想要从备份中排除的文件夹。在此示例中，你想要排除该用户界面中所示的以下文件和文件夹：
+1. 确定想要从备份中排除的文件夹。在此示例中，你想要排除该用户界面中所示的以下文件和文件夹：
 
 		D:\home\site\wwwroot\Logs
 		D:\home\LogFiles
@@ -156,7 +153,7 @@
     	\\site\\wwwroot\\Images\\2014
     	\\site\\wwwroot\\Images\\brand.png
 
-3. 使用 [ftp](/documentation/articles/web-sites-deploy#ftp) 或任何其他方法将此文件上载到站点的 `D:\home\site\wwwroot` 目录。如果你愿意，则可以直接在 `http://{yourapp}.scm.chinacloudsites.cn/DebugConsole` 中创建文件并在那里插入内容。
+3. 使用 [ftp](/documentation/articles/web-sites-deploy#ftp) 或任何其他方法将此文件上载到站点的 `D:\home\site\wwwroot` 目录。
 
 4. 采用通常使用的相同方式运行备份，即[手动](#create-a-manual-backup)或[自动](#configure-automated-backups)。
 
