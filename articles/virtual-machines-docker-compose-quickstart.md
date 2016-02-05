@@ -23,7 +23,7 @@
 
 ## 步骤 1：将 Linux VM 设置为 Docker 主机
 
-可以使用各种 Azure 过程和 Azure 应用商店中提供的映像创建 Linux VM 并将其设置为 Docker 主机。有关示例，请参阅[从 Azure 命令行界面使用 Docker VM 扩展](/documentation/articles/virtual-machines-docker-with-xplat-cli)，了解使用 Docker VM 扩展创建 Ubuntu VM 的快速过程。使用 Docker VM 扩展时，你的 VM 将自动设置为 Docker 主机。该文中的示例演示如何在服务管理模式下使用[适用于 Mac、Linux 和 Windows 的 Azure 命令行界面](/documentation/articles/xplat-cli) (Azure CLI) 创建 VM。
+可以使用各种 Azure 过程和 Azure 应用商店中提供的映像创建 Linux VM 并将其设置为 Docker 主机。有关示例，请参阅[从 Azure 命令行界面使用 Docker VM 扩展](/documentation/articles/virtual-machines-docker-with-xplat-cli)，了解使用 Docker VM 扩展创建 Ubuntu VM 的快速过程。使用 Docker VM 扩展时，你的 VM 将自动设置为 Docker 主机。该文中的示例演示如何在服务管理模式下使用[适用于 Mac、Linux 和 Windows 的 Azure 命令行界面](/documentation/articles/xplat-cli-install) (Azure CLI) 创建 VM。
 
 ## 步骤 2：安装 Compose
 
