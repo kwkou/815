@@ -498,42 +498,6 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 
 4. 单击“保存”。
 
-
-#### 使用 Kudu 发布应用程序
-
-发布应用程序的一种方法是使用 Azure 中内置的 Kudu 调试控制台。已知 Kudu 很稳定并与 Azure Web 应用和 Tomcat 服务器一致。可以通过浏览到以下形式的 URL 来访问 Web 应用的控制台：
-
-`https://<webappname>.scm.chinacloudsites.cn/DebugConsole`
-
-1. 对于此过程，Kudu 控制台位于以下 URL 中；请浏览到此位置：
-
-    `https://webdemowebapp.scm.chinacloudsites.cn/DebugConsole`
-
-2. 从顶部菜单中，选择“调试控制台 > CMD”。
-
-3. 在控制台命令行中，导航到 `/site/wwwroot`（或单击 `site`，然后在页面顶部的目录视图中单击 `wwwroot`）：
-
-    `cd /site/wwwroot`
-
-4. 指定“Java 版本”后，Tomcat 服务器应会创建 webapps 目录。在控制台命令行中，导航到 webapps 目录：
-
-    `mkdir webapps`
-
-    `cd webapps`
-
-5. 将 JSPHello.war 从 `<project-path>/JSPHello/src/` 拖放到 Kudu 目录视图中的 `/site/wwwroot/webapps` 下。请不将它拖放到“拖到此处以上载和压缩”区域，因为 Tomcat 会将其解压缩。
-
-  ![][8]
-
-JSPHello.war 自身首先会显示在目录区域中：
-
-  ![][9]
-
-不久之后（可能小于 5 分钟），Tomcat 服务器会将 WAR 文件解压缩到解包的 JSPHello 目录中。单击根目录以查看 index.jsp 是否已解压缩并复制到此处。如果是，请导航回到 webapps 目录，查看是否已创建解包的 JSPHello 目录。如果你看不到这些项，请等待片刻后重复操作。
-
-  ![][10]
-
-
 #### 使用 FileZilla 发布应用程序（可选）
 
 可用于发布应用程序的另一个工具是 FileZilla，这是一个带有便捷式图形 UI 的常用第三方 FTP 客户端。如果尚未安装，则可以从 [http://filezilla-project.org/](http://filezilla-project.org/) 中下载并安装 FileZilla。有关使用客户端的详细信息，请参阅 [FileZilla 文档](https://wiki.filezilla-project.org/Documentation) 和 [FTP 客户端 - 第 4 部分：FileZilla](http://blogs.msdn.com/b/robert_mcmurray/archive/2008/12/17/ftp-clients-part-4-filezilla.aspx) 上的此博客条目。

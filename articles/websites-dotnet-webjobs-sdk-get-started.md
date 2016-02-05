@@ -775,14 +775,6 @@ Web 作业在 Web 应用的上下文中运行，并且不可单独缩放。例�
 
 若要确保 Web 作业始终在你的 Web 应用的所有实例上运行，你必须启用 [AlwaysOn](http://weblogs.asp.net/scottgu/archive/2014/01/16/windows-azure-staging-publishing-support-for-web-sites-monitoring-improvements-hyper-v-recovery-manager-ga-and-pci-compliance.aspx) 功能。
 
-### 在 Web 作业的外部使用 WebJobs SDK
-
-使用 WebJobs SDK 的程序无需在 Azure 中的 Web 作业内运行。它可以在本地运行，也可以在其他环境（例如云服务辅助角色或 Windows 服务）中运行。但是，你只能通过 Azure Web 应用访问 WebJobs SDK 仪表板。若要使用仪表板，必须通过在管理门户的“配置”选项卡上设置 AzureWebJobsDashboard 连接字符串，将 Web 应用连接到你所用的存储帐户。然后，可以使用以下 URL 访问仪表板：
-
-https://{webappname}.scm.chinacloudsites.cn/azurejobs/#/functions
-
-有关详细信息，请参阅[获取仪表板以使用 WebJobs SDK 进行本地开发](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx)，但请注意，其中显示了旧式连接字符串名称。
-
 ### 更多 Web 作业文档
 
 有关详细信息，请参阅[Azure Web 作业文档资源](/documentation/articles/websites-webjobs-resources/)。
