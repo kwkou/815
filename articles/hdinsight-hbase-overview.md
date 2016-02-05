@@ -29,7 +29,7 @@ HDInsight HBase 以集成到 Azure 环境中的托管群集形式提供。这些
 HDInsight 实施利用 HBase 的横向扩展架构来提供表自动分片、使读写操作保持高度的一致性，以及支持自动故障转移。性能可通过对读取使用内存中缓存并对写入使用高吞吐量流式处理来提高。可视化网络设置也适用于 HDInsight HBase。有关详细信息，请参阅[在 Azure 虚拟网络上预配 HDInsight 群集][hbase-provision-vnet]。
 
 ## 如何在 HDInsight HBase 中管理数据？
-数据可以在 HBase 中通过使用 HBase shell 中的 `create`、`get`、`put` 和 `scan` 命令来管理。数据通过使用 `put` 写入到数据库，并通过使用 `get` 读取。`scan` 命令用于从表中的多行获得数据。Data 也可以使用 HBase C# API 进行管理，该 API 在 HBase REST API 顶部提供客户端库。HBase 数据库还可以通过使用 Hive 进行查询。有关这些编程模型的简介，请参阅[开始在 HDInsight 中将 HBase 与 Hadoop 配合使用][hbase-get-started]。共同的处理器也适用，这样，便可在托管数据库的节点中处理数据。
+数据可以在 HBase 中通过使用 HBase shell 中的 **create**、**get**、**put** 和 **scan** 命令来管理。数据通过使用 **put** 写入到数据库，并通过使用 **get** 读取。**scan** 命令用于从表中的多行获得数据。Data 也可以使用 HBase C# API 进行管理，该 API 在 HBase REST API 顶部提供客户端库。HBase 数据库还可以通过使用 Hive 进行查询。有关这些编程模型的简介，请参阅[开始在 HDInsight 中将 HBase 与 Hadoop 配合使用][hbase-get-started]。共同的处理器也适用，这样，便可在托管数据库的节点中处理数据。
  
 
 ## 方案：HBase 用例
