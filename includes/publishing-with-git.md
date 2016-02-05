@@ -277,7 +277,6 @@
 * [如何使用适用于 Azure 的 PowerShell]
 * [如何使用针对 Mac 和 Linux 的 Azure 命令行工具]
 * [Git 文档]
-* [项目 Kudu](https://github.com/projectkudu/kudu/wiki)
 
 [Azure Developer Center]: /documentation/
 [Azure 管理门户]: https://manage.windowsazure.cn

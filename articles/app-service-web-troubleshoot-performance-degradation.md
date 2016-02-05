@@ -77,7 +77,7 @@
 
 ####	使用 FTP 诊断日志
 
-在你的网页的“仪表板”页面中，找到 FTP 诊断日志的链接，一般为 `ftp://********.ftp.chinacloudsites.chinacloudapi.cn/LogFiles`。点击进去，可以下载 eventlog.xml 以及 Kudu 日志流。
+在你的网页的“仪表板”页面中，找到 FTP 诊断日志的链接，一般为 `ftp://********.ftp.chinacloudsites.chinacloudapi.cn/LogFiles`。点击进去，可以下载 eventlog.xml。
 
 ##### Web 服务器诊断
 

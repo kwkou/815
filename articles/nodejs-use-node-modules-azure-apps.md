@@ -43,7 +43,7 @@
 Azure 网站不支持所有本机模块，并且在编译那要求具有非常特定的系统组建的模块时可能会失败。一些常用模块（如 MongoDB）需要的本机依赖项是可选的，如果没有这些依赖项可勉强正常工作。对于当今几乎所有的可用本机模块而言，有两种成功的解决方法：
 
 * 在安装了所有系统必备组件的 Windows 计算机运行 **npm install** 。然后，将创建的 **node\_modules** 文件夹作为 Azure 网站应用程序的一部分进行部署。
-* 可以将 Azure 网站配置为在部署期间执行自定义 bash 或 shell 脚本，从而使您能够执行自定义命令和精确地配置运行 **npm install** 的方式。有关说明如何执行此操作的视频，请参阅[使用 Kudu 自定义网站部署脚本]。
+* 可以将 Azure 网站配置为在部署期间执行自定义 bash 或 shell 脚本，从而使您能够执行自定义命令和精确地配置运行 **npm install** 的方式。
 
 ###使用 package.json 文件
 
@@ -87,6 +87,5 @@ Azure 网站不支持所有本机模块，并且在编译那要求具有非常�
 [Node.js Web Application with Storage on MongoDB (MongoLab)]: /documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb
 [Publishing with Git]: /documentation/articles/web-sites-publish-source-control
 [Build and deploy a Node.js application to an Azure Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
-[使用 Kudu 自定义网站部署脚本]: /documentation/videos/custom-web-site-deployment-scripts-with-kudu/
 
 <!---HONumber=Mooncake_0118_2016-->
