@@ -10,7 +10,7 @@
 <tags
    ms.service="azure-security"
    ms.date="12/10/2015"
-   wacn.date=""/>
+   wacn.date="01/29/2016"/>
 
 # Windows Azure 安全和审核日志管理
 
