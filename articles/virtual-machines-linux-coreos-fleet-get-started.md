@@ -15,7 +15,7 @@
 
 # 在 Azure 上的 CoreOS VM 群集上使用 Fleet 入门
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 本文提供两个在 [CoreOS] 虚拟机的群集上使用 [fleet](https://github.com/coreos/fleet) 和 [Docker](https://www.docker.com/) 运行应用程序的快速示例。
@@ -127,30 +127,30 @@ unit nginx@2.service launched on df85f2d1.../100.78.126.15
 你将看到从 nginx 服务器返回的默认文本类似于：
 
 ```
-<!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to nginx!</title>
-<style>
-    body {
-        width: 35em;
-        margin: 0 auto;
-        font-family: Tahoma, Verdana, Arial, sans-serif;
-    }
-</style>
-</head>
-<body>
-<h1>Welcome to nginx!</h1>
-<p>If you see this page, the nginx web server is successfully installed and working. Further configuration is required.</p>
-
-<p>For online documentation and support please refer to
-<a href="http://nginx.org/">nginx.org</a>.<br/>
-Commercial support is available at
-<a href="http://nginx.com/">nginx.com</a>.</p>
-
-<p><em>Thank you for using nginx.</em></p>
-</body>
-</html>
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<title>Welcome to nginx!</title>
+	<style>
+	    body {
+	        width: 35em;
+	        margin: 0 auto;
+	        font-family: Tahoma, Verdana, Arial, sans-serif;
+	    }
+	</style>
+	</head>
+	<body>
+	<h1>Welcome to nginx!</h1>
+	<p>If you see this page, the nginx web server is successfully installed and working. Further configuration is required.</p>
+	
+	<p>For online documentation and support please refer to
+	<a href="http://nginx.org/">nginx.org</a>.<br/>
+	Commercial support is available at
+	<a href="http://nginx.com/">nginx.com</a>.</p>
+	
+	<p><em>Thank you for using nginx.</em></p>
+	</body>
+	</html>
 ```
 
 你可以尝试关闭群集中的一个或多个虚拟机，以验证 Web 服务是否继续运行。

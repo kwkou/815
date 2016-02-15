@@ -38,7 +38,7 @@
 
 	![打开 PuTTY](./media/virtual-machines-linux-how-to-log-on/putty.png)
 
-4. 使用你在创建虚拟机时指定的帐户登录到虚拟机。有关如何使用用户名和密码创建虚拟机的详细信息，请参阅[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-tutorial)。
+4. 使用你在创建虚拟机时指定的帐户登录到虚拟机。有关如何使用用户名和密码创建虚拟机的详细信息，请参阅[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)。
 
 	![登录到虚拟机](./media/virtual-machines-linux-how-to-log-on/sshlogin.png)
 
