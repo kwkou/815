@@ -45,7 +45,7 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Windows Azure 上�
 
 ## 先决条件
 1. Windows Azure Linux Agent 2.0.6 版或更高版本。请注意，大部分 Azure VM Linux 库映像都包含 2.0.6 版本或更高版本。你可以运行 **WAAgent -version** 以确认 VM 中安装的版本。如果 VM 正在运行的版本早于 2.0.6，则可以按照以下[说明](https://github.com/Azure/WALinuxAgent "说明")进行更新。
-- [Azure CLI](/documentation/articles/xplat-cli)。请按照[此指南](/documentation/articles/xplat-cli-install)中的说明在计算机上设置 Azure CLI 环境。安装了 Azure CLI 之后，你可以从命令行界面（Bash、终端、命令提示符）使用 **azure** 命令访问 Azure CLI 命令。例如，运行 **azure vm extension set --help** 可以获取详细用法，运行 **azure login** 可以登录到 Azure，运行 **azure vm list** 可以列出你在 Azure 上拥有的所有虚拟机。
+- [Azure CLI](/documentation/articles/xplat-cli-install)。请按照[此指南](/documentation/articles/xplat-cli-install)中的说明在计算机上设置 Azure CLI 环境。安装了 Azure CLI 之后，你可以从命令行界面（Bash、终端、命令提示符）使用 **azure** 命令访问 Azure CLI 命令。例如，运行 **azure vm extension set --help** 可以获取详细用法，运行 **azure login** 可以登录到 Azure，运行 **azure vm list** 可以列出你在 Azure 上拥有的所有虚拟机。
 - 用于存储数据的存储帐户。你将需要以前创建的存储帐户名称和访问密钥，以将数据上载到存储中。
 
 
