@@ -1,8 +1,8 @@
-<properties linkid="" urlDisplayName="" pageTitle="Setting MySQL Database on Azure Server Parameters – Microsoft Azure Cloud" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,参数,定制,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL Database on Azure supports customizing some parameters to your own requirements. We will help you to understand the selectable ranges and intervals for different parameters." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="Setting MySQL Database on Azure Server Parameters – Microsoft Azure Cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, parameters, customization, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL Database on Azure supports customizing some parameters to your own requirements. We will help you to understand the selectable ranges and intervals for different parameters." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="08/26/2015"/>
 
-#Setting MySQL Database on Azure Server Parameters
+#Setting MySQL Database on Azure server parameters
 
 MySQL Database on Azure supports custom settings for some parameters. The table below lists the configurable parameters, default values, and selectable ranges.
 
@@ -70,7 +70,20 @@ MySQL Database on Azure supports custom settings for some parameters. The table 
   <tr>
     <td>sql_mode</td>
     <td>Empty</td>
-    <td>ALLOW_INVALID_DATES | ANSI_QUOTES | ERROR_FOR_DIVISION_BY_ZERO | HIGH_NOT_PRECEDENCE | IGNORE_SPACE | NO_AUTO_CREATE_USER | NO_AUTO_VALUE_ON_ZERO | NO_BACKSLASH_ESCAPES | NO_DIR_IN_CREATE | NO_ENGINE_SUBSTITUTION | NO_FIELD_OPTIONS | NO_KEY_OPTIONS | NO_TABLE_OPTIONS | NO_UNSIGNED_SUBTRACTION | NO_ZERO_DATE | NO_ZERO_IN_DATE | ONLY_FULL_GROUP_BY | PAD_CHAR_TO_FULL_LENGTH | PIPES_AS_CONCAT | REAL_AS_FLOAT | STRICT_ALL_TABLES | STRICT_TRANS_TABLES <a href="http://dev.mysql.com/doc/refman/5.5/en/sql-mode.html">http://dev.mysql.com/doc/refman/5.5/en/sql-mode.html</a></td>
+    <td>ALLOW_INVALID_DATES | ANSI_QUOTES
+    | ERROR_FOR_DIVISION_BY_ZERO
+    | HIGH_NOT_PRECEDENCE | IGNORE_SPACE 
+    | NO_AUTO_CREATE_USER | NO_AUTO_VALUE_ON_ZERO 
+    | NO_BACKSLASH_ESCAPES | NO_DIR_IN_CREATE
+    | NO_ENGINE_SUBSTITUTION | NO_FIELD_OPTIONS
+    | NO_KEY_OPTIONS | NO_TABLE_OPTIONS
+    | NO_UNSIGNED_SUBTRACTION | NO_ZERO_DATE
+    | NO_ZERO_IN_DATE | ONLY_FULL_GROUP_BY
+    | PAD_CHAR_TO_FULL_LENGTH | PIPES_AS_CONCAT
+    | REAL_AS_FLOAT | STRICT_ALL_TABLES
+    | STRICT_TRANS_TABLES
+    
+<a href="http://dev.mysql.com/doc/refman/5.5/en/sql-mode.html">http://dev.mysql.com/doc/refman/5.5/en/sql-mode.html</a></td>
   </tr>
   <tr>
     <td >wait_timeout</td>
@@ -78,4 +91,5 @@ MySQL Database on Azure supports custom settings for some parameters. The table 
     <td>[60-240] </td>
   </tr>
 </table>
->[AZURE.NOTE] **In view of the limitations of Traffic Manager, we have adjusted the default value for wait_timeout to 120s and the selectable range to 60-240s, but this adjustment only works on instances created after October. For earlier instances, please manually set the value of wait_timeout to any number between 60s and 240s. We recommend 120s.**
+>[AZURE.NOTE]**In view of the limitations of Azure Traffic Manager, we have adjusted the default value for wait\_timeout to 120 seconds (s) and the selectable range to 60s to 240s, but this adjustment only works on instances created after October 2015. For earlier instances, please manually set the value of wait\_timeout to any number between 60s and 240s. We recommend 120s. **
+<!--HONumber=81-->
