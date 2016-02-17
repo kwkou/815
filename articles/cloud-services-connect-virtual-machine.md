@@ -60,7 +60,7 @@
 
 创建虚拟机后，建议添加数据磁盘，你的服务和工作负荷才有地方存储数据。请参阅下列资源之一：
 
-[如何将数据磁盘附加到 Linux 虚拟机](/documentation/articles/virtual-machines/virtual-machines-linux-how-to-attach-disk)
+[如何将数据磁盘附加到 Linux 虚拟机](/documentation/articles/virtual-machines-linux-how-to-attach-disk)
 
 [如何将数据磁盘附加到 Windows 虚拟机](/documentation/articles/storage-windows-attach-disk)
 
