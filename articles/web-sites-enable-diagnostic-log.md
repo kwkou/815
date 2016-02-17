@@ -10,21 +10,13 @@
 <tags
 	ms.service="web-sites"
 	ms.date="10/20/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 在 Azure 中启用 Web 应用的诊断日志记录
 
 ## 概述
 
 Azure 提供内置的诊断以帮助调试 [Azure Web 应用](/documentation/services/web-sites/)。在本文中，你将了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。本文通过 [Azure 管理门户](https://manage.windowsazure.cn/)、Azure PowerShell 和 Azure 命令行界面 (Azure CLI) 来使用诊断日志。有关通过 Visual Studio 使用诊断日志的信息，请参阅[在 Visual Studio 中对 Azure 进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)。
-##目录##
-
-- [ Web 应用诊断是什么？](#whatisdiag)
-- [如何：启用诊断](#enablediag)
-- [如何：下载日志](#download)
-- [如何：流式传输日志](#streamlogs)
-- [如何：了解诊断日志](#understandlogs)
-- [后续步骤](#nextsteps)
 
 ## <a name="whatisdiag"></a>Web 服务器诊断和应用程序诊断
 

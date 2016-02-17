@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="12/08/2015"
-	wacn.date="01/29/2016"/>
+	wacn.date="02/17/2016"/>
 
 
 # 在 Azure Web 应用中使用 Azure CDN
@@ -38,7 +38,7 @@
 -	Visual Studio 2015 with the [Azure SDK for .NET](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)。如果你使用 Visual Studio 2013，步骤可能有所不同。
 
 > [AZURE.NOTE]完成本教程需要有一个 Azure 帐户：
-> + 你可以[免费建立一个 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - 获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web 应用）。
+> + 你可以[免费建立一个 Azure 帐户](/pricing/1rmb-trial/) - 获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web 应用）。
 
 
 ##<a name="deploy-a-web-app-to-azure-with-an-integrated-cdn-endpoint"></a> 将 Web 应用部署到具有集成 CDN 终结点的 Azure ##

@@ -10,7 +10,7 @@
 <tags 
 	ms.service="site-recovery" 
 	ms.date="12/01/2015" 
-	wacn.date="01/14/2016"/>
+	wacn.date="01/21/2016"/>
 
 # 可以通过 Azure Site Recovery 保护哪些工作负荷？
 

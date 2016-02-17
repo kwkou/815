@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="09/21/2015"
-	wacn.date="10/17/2015"/>
+	wacn.date="02/17/2016"/>
 
 
 # 在 Azure 虚拟网络中安装副本 Active Directory 域控制器
@@ -29,7 +29,7 @@
 在此案例中，外部用户需要访问在添加域的服务器上运行的应用程序。运行应用程序服务器和副本 DC 的 VM 安装在 Azure 虚拟网络中。虚拟网络可通过[站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create) 连接方式连接到本地网络，如下图中所示。
 <!--, or you can use [ExpressRoute](..//home/features/expressroute/) for a faster connection-->
 
-应用程序服务器和 DC 将部署在独立的[云服务](/documentation/articles/cloud-services-what-is)中以分散计算处理，并在[可用性集](/documentation/articles/virtual-machines-manage-availability)中改进容错功能。
+应用程序服务器和 DC 将部署在独立的云服务中以分散计算处理，并在[可用性集](/documentation/articles/virtual-machines-manage-availability)中改进容错功能。
 DC 将使用 Active Directory 复制功能在彼此之间以及与本地 DC 相互复制。不需要任何同步工具。
 
 ![][1]

@@ -87,6 +87,6 @@ DNS 区域具有一个名为记录集的子对象。记录集是按 DNS 区域�
 
 有关详细信息，请阅读 [DNS 区域的 REST API 文档](https://msdn.microsoft.com/zh-cn/library/azure/mt130626.aspx)。
 
-有关详细信息，请阅读 [DNS 记录集的 REST API 文档](https://msdn.microsoft.com/zh-cn/library/azure/mt130626.aspx)。
+有关详细信息，请阅读 [DNS 记录集的 REST API 文档](https://msdn.microsoft.com/zh-cn/library/azure/mt130627.aspx)。
 
 <!---HONumber=Mooncake_1221_2015-->

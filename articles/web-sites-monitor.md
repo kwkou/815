@@ -10,18 +10,11 @@
 <tags
 	ms.service="web-sites"
 	ms.date="10/14/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 #<a name="howtomonitor"></a>在 Azure 中监视 Web 应用
 
 [Azure Web 应用](/documentation/services/web-sites/)通过“监视”管理页对标准 App Service 提供监视功能。“监视”管理页按如下所述提供 Web 应用的性能统计信息。
-## 目录 ##
-- [如何：添加 Web 应用度量值](#websitemetrics)
-- [如何：接收来自 Web 应用度量值的警报](#howtoreceivealerts)
-- [如何：查看 Web 应用的使用率配额](#howtoviewusage)
-- [如何：避免超过配额](#resourceusage)
-- [如何：为 Web 应用配置诊断和下载日志](#howtoconfigdiagnostics)
-- [如何：监视 Web 终结点状态](#webendpointstatus)
 
 ##度量值保留策略
 
@@ -172,7 +165,7 @@
 
 **Azure PowerShell**
 
-1. 从“开始”屏幕或“开始”菜单，搜索 **Azure PowerShell**。右键单击“Azure PowerShell”项，并选择“以管理员身份运行”。
+1. 从“开始”屏幕或“开始”菜单，搜索 **Windows PowerShell**。右键单击“Windows PowerShell”项，并选择“以管理员身份运行”。
 
 	> [AZURE.NOTE]如果未安装 **Azure PowerShell**，请参阅 [Azure PowerShell Cmdlet 入门](http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)以了解安装和配置信息。
 

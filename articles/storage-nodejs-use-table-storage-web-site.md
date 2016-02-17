@@ -11,7 +11,7 @@
 <tags
 	ms.service="storage"
 	ms.date="11/20/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 
 
@@ -290,7 +290,7 @@
 		  },
 
 		  addTask: function(req,res) {
-		    var self = this      
+		    var self = this;
 		    var item = req.body.item;
 		    self.task.addItem(item, function itemAdded(error) {
 		      if(error) {
@@ -479,7 +479,7 @@
 
 本部分中的步骤使用 Azure 命令行工具在 Azure 中创建新的 Web 应用，然后使用 Git 部署应用程序。若要执行这些步骤，你必须具有 Azure 订阅。
 
-> [AZURE.NOTE]还可以使用 [Azure 门户](https://manage.windowsazure.cn)执行这些步骤。请参阅[在 Azure 中生成和部署 Node.js Web 应用]。
+> [AZURE.NOTE]还可以使用 [Azure 门户](https://manage.windowsazure.cn/)执行这些步骤。请参阅[在 Azure 中生成和部署 Node.js Web 应用]。
 >
 > 如果这是你创建的第一个 Web 应用，则你必须使用 Azure 门户部署此应用程序。
 

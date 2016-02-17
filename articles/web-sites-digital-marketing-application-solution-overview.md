@@ -10,7 +10,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="12/10/2015" 
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 在 Azure Web 应用上创建数字市场营销活动
 [Azure Web 应用](/documentation/services/web-sites/) Web 应用是数字市场营销活动的极佳选择。数字市场营销活动的持续时间通常较短，旨在促成短期市场营销目标。有两个要考虑的主要方案。在第一个方案中，第三方市场营销公司为其客户为促销期间创建并管理市场营销活动。第二个方案涉及市场营销公司创建数字市场营销活动资源，然后将资源的所有权转移给其客户。客户然后自己运行和管理数字市场营销活动。Azure Web 应用非常适合于这两种方案。
@@ -46,7 +46,6 @@ Azure 中的数字市场营销活动可以通过使用 Facebook 和 Twitter 等�
 使用其他 Azure 服务丰富你的数字市场营销活动：
 
 -  使用 [Azure 媒体服务]全局上载并流式处理视频
--  使用 [SendGrid 服务在 Azure 应用商店]将电子邮件发送给用户
 -  使用[移动服务]在Windows、iOS 和 Android 设备上建立状态
 -  使用[通知中心]向数百万台设备发送推送通知
 
@@ -92,7 +91,6 @@ Azure Web 应用的增加和扩大功能非常适用于不可预测的工作负�
 
 [创建包含身份验证和 SQL DB 的 ASP.NET MVC 应用并将其部署到 Azure Web 应用]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [Azure 媒体服务]: http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
-[SendGrid 服务在 Azure 应用商店]: /documentation/articles/sendgrid-dotnet-how-to-send-email
 [移动服务]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 [通知中心]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 [Azure 流量管理器]: http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx

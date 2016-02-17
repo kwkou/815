@@ -10,7 +10,7 @@
 <tags 
 	ms.service="web-sites" 
 	ms.date="12/11/2015" 
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 #还原 Windows Azure Web 应用
 
@@ -19,13 +19,6 @@
 利用 Web 应用还原功能，可将 Web 应用还原到以前某个你自己需要的状态，或基于原有 Web 应用备份之一创建新的 Web 应用。创建与最新版本并行运行的新 Web 应用对于 A/B 测试会很有用。
 
 Web 应用还原功能在 [Azure 门户](http://manage.windowsazure.cn)中的“备份”边栏选项卡上，只能用于“标准”模式。有关使用“标准”模式缩放应用的信息，请参阅[在 Azure 中缩放 Web 应用](/documentation/articles/web-sites-scale)。
-
-##本文内容
-- [从以前制作的备份中还原 Azure Web 应用](#PreviousBackup)
-- [直接从存储帐户还原 Azure Web 应用](#StorageAccount)
-- [选择 Web 应用还原设置并开始还原操作](#RestoreSettings)
-- [查看操作日志](#OperationLogs)
-
 
 <a name="PreviousBackup"></a>
 ## 从以前制作的备份中还原 Web 应用

@@ -11,7 +11,7 @@
 <tags 
 	ms.service="web-sites" 
 	ms.date="12/11/2015" 
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 
 # 在 Azure 中创建连接到虚拟机上运行的 MongoDB 的 Web 应用
@@ -19,18 +19,6 @@
 使用 Git，你可以将 ASP.NET 应用程序部署到 Azure Web 应用。在本教程中，你将构建一个简单的前端 ASP.NET MVC 任务列表应用程序，该程序将连接至在 Azure 内的虚拟机中运行的 MongoDB 数据库。[MongoDB][MongoDB] 是一个受欢迎的开源、高性能 NoSQL 数据库。在开发计算机上运行并测试了该 ASP.NET 应用程序后，可使用 Git 将其上载至 Azure Web 应用。
 
 [WACOM.INCLUDE [create-account-and-websites-and-vms-note](../includes/create-account-and-websites-and-vms-note.md)]
-
-
-
-##概述##
-
-在本教程中你将：
-
-- [创建虚拟机和安装 MongoDB](#virtualmachine)
-- [在开发计算机上开发并运行 My Task List ASP.NET 应用程序](#createapp)
-- [创建 Azure Web 应用](#createwebsite)
-- [使用 Git 将 ASP.NET 应用程序部署到 Web 应用](#deployapp)
-
 
 ##背景知识##
 

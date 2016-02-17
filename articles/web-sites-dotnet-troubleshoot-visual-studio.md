@@ -10,7 +10,7 @@
 <tags 
 	ms.service="web-sites" 
 	ms.date="09/16/2015" 
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 使用 Visual Studio 对 Azure Web 应用进行故障排除
 
@@ -28,24 +28,6 @@
 * 如何将诊断日志发送至 Azure 存储帐户并在其中进行查看。
 
 如果你有 Visual Studio Ultimate，则还可以使用 [IntelliTrace](http://msdn.microsoft.com/zh-cn/library/vstudio/dd264915.aspx) 进行调试。本教程未介绍 IntelliTrace。
-
-### 教程章节
-
-- [先决条件](#prerequisites)
-- [站点配置和管理](#sitemanagement)
-- [在服务器资源管理器中访问 Web 应用文件](#remoteview)
-- [远程调试](#remotedebug)
-	- 远程调试 Web 应用
-	- 远程调试 Web 作业
-	- 有关远程调试的说明 
-- [诊断日志概述](#logsoverview)
-- [创建并查看应用程序跟踪日志](#apptracelogs)
-- [查看 Web 服务器日志](#webserverlogs)
-- [查看详细的错误消息日志](#detailederrorlogs)
-- [下载文件系统日志](#downloadlogs)
-- [查看存储日志](#storagelogs)
-- [查看失败请求日志](#failedrequestlogs)
-- [后续步骤](#nextsteps)
 
 ## <a name="prerequisites"></a>先决条件
 

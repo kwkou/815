@@ -10,7 +10,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="12/10/2015" 
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 
 # 在 Azure Web 应用上打造全球网络影响力
@@ -83,12 +83,10 @@ Azure Web 应用具有[向上和向外缩放]功能，不论工作负荷的大�
 使用富媒体改进 .COM 站点的外观，例如：
 
 -  使用 [Azure 媒体服务]全局上载并流式处理视频
--  使用 [SendGrid 服务在 Azure 应用商店]将电子邮件发送给用户
 
 ## 更多资源
 
 - [Azure Web 应用文档](/home/features/web-site/)
-- [Azure Web 应用学习路线图](/documentation/articles/websites-learning-map)
 - [Azure Web 博客](/blog/tags/ Web 应用/)
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
@@ -129,7 +127,6 @@ Azure Web 应用具有[向上和向外缩放]功能，不论工作负荷的大�
 [如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
 
 [Azure 媒体服务]: http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
-[SendGrid 服务在 Azure 应用商店]: /documentation/articles/sendgrid-dotnet-how-to-send-email
 
  
 

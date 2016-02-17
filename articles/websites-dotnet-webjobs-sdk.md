@@ -10,18 +10,9 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="12/14/2015"
-	wacn.date="01/29/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 什么是 Azure WebJobs SDK
-
-## 目录
-
-- [概述](#overview)
-- [方案](#scenarios)
-- [代码示例](#code)
-- [在 Web 作业的外部使用 WebJobs SDK](#workerrole)
-- [使用 WebJobs SDK 调用任何函数](#nostorage)
-- [后续步骤](#nextsteps)
 
 ## <a id="overview"></a>概述
 

@@ -12,7 +12,7 @@
 
 4. 利用上述列表中的 Linux 映像，使用 `azure vm create` 创建新的虚拟机。此步骤将创建新的云服务以及新的存储帐户。你还可通过 `-c` 选项将此虚拟机连接到现有云服务。其还通过 `-e` 选项创建 SSH 终结点以登录到 Linux 虚拟机。
 
-        ~$ azure vm create "MyTestVM" b4590d9e3ed742e4a1d46e5424aa335e__suse-opensuse-13.1-20141216-x86-64 "adminUser" -z "Small" -e -l "West US"
+        ~$ azure vm create "MyTestVM" b4590d9e3ed742e4a1d46e5424aa335e__suse-opensuse-13.1-20141216-x86-64 "adminUser" -z "Small" -e -l "China North"
         info:    Executing command vm create
         + Looking up image b4590d9e3ed742e4a1d46e5424aa335e__suse-opensuse-13.1-20141216-x86-64
         Enter VM 'adminUser' password:*********

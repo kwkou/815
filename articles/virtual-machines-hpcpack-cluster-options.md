@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
  	ms.date="10/08/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="02/17/2016"/>
 
 # 使用 Microsoft HPC Pack 在 Azure 中创建和管理高性能计算 (HPC) 群集时可用的选项
 
@@ -46,8 +46,6 @@
 
 * [在 Azure 中管理 HPC Pack 群集的计算节点](/documentation/articles/virtual-machines-hpcpack-cluster-node-manage)
 
-* [将 Azure“突发”节点添加到 Azure 中的 HPC Pack 头节点](/documentation/articles/virtual-machines-hpcpack-cluster-node-burst)
-
 * [增加和减少 HPC Pack 群集中的 Azure 计算资源](/documentation/articles/virtual-machines-hpcpack-cluster-node-autogrowshrink)
 
 * [将作业提交到 Azure 中的 HPC Pack 群集](/documentation/articles/virtual-machines-hpcpack-cluster-submit-jobs)
@@ -70,6 +68,6 @@
 
 * [使用 HPC Pack 设置一个运行 MPI 应用程序的 Windows RDMA 群集](/documentation/articles/virtual-machines-windows-hpcpack-cluster-rdma)
 
-<!-- * [Set up a Linux RDMA cluster to run MPI applications](/documentation/articles/virtual-machines-linux-hpcpack-cluster-rdma) -->
+* [Set up a Linux RDMA cluster to run MPI applications](/documentation/articles/virtual-machines-linux-cluster-rdma)
 
 <!---HONumber=Mooncake_1207_2015-->

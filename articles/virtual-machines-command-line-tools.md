@@ -11,11 +11,11 @@
 <tags
 	ms.service="multiple"
 	ms.date="10/07/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 本文介绍如何在服务管理模式（asm 模式）下使用 Azure CLI 在 Mac、Linux 和 Windows 计算机的命令行中创建、管理和删除服务。你可以使用 Azure SDK 的各种库、Azure PowerShell 和 Azure 门户执行许多相同的任务。在服务管理模式下使用 Azure 服务从概念上讲类似于创建和管理各个 Azure 概念和服务（如 Web 应用、虚拟机、虚拟网络、存储器等）。

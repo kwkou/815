@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="09/10/2015"
-        wacn.date="01/21/2016"/>
+        wacn.date="02/17/2016"/>
 
 # 创建 Windows Server VHD 并将其上载到 Azure
 
@@ -195,10 +195,6 @@
 	![从自定义映像创建虚拟机](./media/virtual-machines-create-upload-vhd-windows-server/create_vm_custom_image.png)
 
 	> [AZURE.TIP]如果在你尝试创建 VM 时，收到带有此错误消息的错误：“VHD https://XXXXX.. 具有不支持的虚拟大小(YYYY 字节)。大小必须是整数(以 MB 为单位)”，这意味着你的 VHD 不是整数个 MB，需要为固定大小的 VHD。请尝试使用 **Add-AzureVMImage** PowerShell cmdlet（而不是Azure管理门户）来添加映像（请参阅上面的步骤 5）。Azure cmdlet 可确保 VHD 满足 Azure 要求。
-
-## 后续步骤 ##
-
-创建虚拟机后，尝试创建 SQL Server 虚拟机。有关说明，请参阅[在 Windows Azure 上预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server)。
 
 [Step 1: Prepare the image to be uploaded]: #prepimage
 [Step 2: Create a storage account in Azure]: #createstorage

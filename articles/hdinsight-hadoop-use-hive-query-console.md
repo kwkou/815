@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="12/04/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 使用查询控制台运行 Hive 查询
 
@@ -40,6 +40,7 @@
 
 	将文本 `Select * from hivesampletable` 替换为以下 HiveQL 语句：
 
+		set hive.execution.engine=tez;
         DROP TABLE log4jLogs;
         CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
         ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '

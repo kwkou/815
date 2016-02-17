@@ -10,23 +10,13 @@
 <tags
 	ms.service="web-sites"
 	ms.date="12/15/2015" 
-	wacn.date="01/29/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 在 Azure 中创建使用 AD FS 身份验证的 .NET MVC Web 应用
 
 在本文中，你将了解如何在使用本地 [Active Directory 联合身份验证服务](http://technet.microsoft.com/zh-cn/library/hh831502.aspx)作为标识提供者的 [Azure Web 应用](/documentation/services/web-sites/)中创建 ASP.NET MVC 业务线应用程序。当你想要在 Azure 中创建业务线应用程序，而你的组织要求在现场存储所有数据时，可以应用此方案。
 
 >[AZURE.NOTE]有关 Azure Web 应用支持的不同企业身份验证和授权选项的概述，请参阅[使用 Active Directory 在 Azure 中进行身份验证](/documentation/articles/web-sites-authentication-authorization)。
-
-- [要生成的项目](#bkmk_build)
-- [所需的项目](#bkmk_need)
-- [使用 LOB 模板的示例应用程序](#bkmk_sample)
-- [设置示例应用程序](#bkmk_setup)
-- [将示例应用程序部署到 Azure Web 应用](#bkmk_deploy)
-- [在 AD FS 管理中配置信赖方信任](#bkmk_rptrusts)
-- [为特定控制器或操作的用户授权](#bkmk_authorize)
-- [连接到本地数据](#bkmk_data)
-- [其他资源](#bkmk_resources)
 
 <a name="bkmk_build"></a>
 ## 要生成的项目 ##

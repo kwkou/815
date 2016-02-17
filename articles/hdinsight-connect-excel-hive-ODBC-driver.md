@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/15/2015"
-	wacn.date="01/07/2016"/>
+	wacn.date="02/17/2016"/>
 
 #使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 Hadoop
 
@@ -52,29 +52,29 @@ Microsoft 的大数据解决方案可将 Microsoft 商业智能 (BI) 组件与�
 
 5. 键入或选择以下值：
 
-属性|说明
----|---
-数据源名称|为你的数据源提供名称
-主机|输入 <HDInsightClusterName>.azurehdinsight.cn。例如 myHDICluster.azurehdinsight.cn
-端口|使用 <strong>443</strong>。（此端口已从 563 更改为 443。）
-数据库|使用“默认”。<strong></strong>
-Hive 服务器类型|选择“Hive Server 2”<strong></strong>
-机制|选择“Azure HDInsight 服务”<strong></strong>
-HTTP 路径|将此字段留空。
-用户名|输入 HDInsight 群集用户的用户名。这是在群集设置过程中创建的用户名。如果你使用了“快速创建”选项，则默认用户名是 <strong>admin</strong>。
-密码|输入 HDInsight 群集用户的密码。
-</table>
+	属性|说明
+	---|---
+	数据源名称|为你的数据源提供名称
+	主机|输入 <HDInsightClusterName>.azurehdinsight.cn。例如 myHDICluster.azurehdinsight.cn
+	端口|使用 <strong>443</strong>。（此端口已从 563 更改为 443。）
+	数据库|使用“默认”。<strong></strong>
+	Hive 服务器类型|选择“Hive Server 2”<strong></strong>
+	机制|选择“Azure HDInsight 服务”<strong></strong>
+	HTTP 路径|将此字段留空。
+	用户名|输入 HDInsight 群集用户的用户名。这是在群集设置过程中创建的用户名。如果你使用了“快速创建”选项，则默认用户名是 <strong>admin</strong>。
+	密码|输入 HDInsight 群集用户的密码。
+	</table>
 
-在单击“高级选项”时，有一些重要参数要注意：
+	在单击“高级选项”时，有一些重要参数要注意：
 
-参数|说明
----|---
-使用本机查询|选择此项时，ODBC 驱动程序将不会尝试将 TSQL 转换为 HiveQL。仅当你 100% 确定提交的是纯 HiveQL 语句时，才应使用此项。连接 SQL Server 或 Azure SQL 数据库时，应将此项保留为未选中状态。
-每块提取的行数|提取大量记录时，可能需要调整此参数以确保最佳性能。
-默认字符串列长度、二进制列长度、十进制列小数位数|数据类型长度和精度可能会影响返回数据的方式。由于精度损失和/或截断，可能会返回不正确的信息。
+	参数|说明
+	---|---
+	使用本机查询|选择此项时，ODBC 驱动程序将不会尝试将 TSQL 转换为 HiveQL。仅当你 100% 确定提交的是纯 HiveQL 语句时，才应使用此项。连接 SQL Server 或 Azure SQL 数据库时，应将此项保留为未选中状态。
+	每块提取的行数|提取大量记录时，可能需要调整此参数以确保最佳性能。
+	默认字符串列长度、二进制列长度、十进制列小数位数|数据类型长度和精度可能会影响返回数据的方式。由于精度损失和/或截断，可能会返回不正确的信息。
 
 
-![Advanced options][img-HiveOdbc-DataSource-AdvancedOptions]
+	![Advanced options][img-HiveOdbc-DataSource-AdvancedOptions]
 
 6. 单击“测试”以测试数据源。正确配置数据源时，将显示“测试成功完成!”。
 7. 单击“确定”关闭“测试”对话框。现在，新的数据源应该在“ODBC 数据源管理器”中列出。

@@ -10,7 +10,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="09/22/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="02/17/2016"/>
 
 # 如何通过 WebJobs SDK 使用 Azure 服务总线
 
@@ -28,14 +28,6 @@
 		    host.RunAndBlock();
 		}
 		
-## 目录
-
--   [先决条件](#prerequisites)
--   [如何在接收队列消息时触发函数](#trigger)
--   [如何创建队列消息](#create)
--   [如何使用服务总线主题](#topics)
--   [存储队列文章涵盖的相关主题](#queues)
--   [后续步骤](#nextsteps)
 ## <a id="prerequisites"></a>先决条件
 
 你必须先安装 [Microsoft.Azure.WebJobs.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus/) NuGet 包和其他 WebJobs SDK 包，然后才能使用服务总线。

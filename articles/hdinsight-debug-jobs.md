@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="09/22/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="02/17/2016"/>
 
 # 在 HDInsight 中调试 Hadoop：查看日志和解释错误消息
 
@@ -20,59 +20,6 @@
 ## <a id="hdi-error-codes"></a>HDInsight 错误代码
 
 用户在 Azure PowerShell 或管理门户中可能会遇到的错误在下面按名称的字母顺序列出。这些错误反过来又会链接到[错误描述和缓解](#discription-mitigation-errors)一节中提供该错误的以下信息的相应条目：
-
-- **说明**：用户看到的错误消息
-- **缓解**：从错误中恢复时可以执行的步骤。
-
-
-
-- [AtleastOneSqlMetastoreMustBeProvided](#AtleastOneSqlMetastoreMustBeProvided)
-- [AzureRegionNotSupported](#AzureRegionNotSupported)
-- [ClusterContainerRecordNotFound](#ClusterContainerRecordNotFound)
-- [ClusterDnsNameInvalidReservedWord](#ClusterDnsNameInvalidReservedWord)
-- [ClusterNameUnavailable](#ClusterNameUnavailable)
-- [ClusterUserNameInvalid](#ClusterUserNameInvalid)
-- [ClusterUserNameInvalidReservedWord](#ClusterUserNameInvalidReservedWord)
-- [ContainerNameMisMatchWithDnsName](#ContainerNameMisMatchWithDnsName)
-- [DataNodeDefinitionNotFound](#DataNodeDefinitionNotFound)
-- [DeploymentDeletionFailure](#DeploymentDeletionFailure)
-- [DnsMappingNotFound](#DnsMappingNotFound)
-- [DuplicateClusterContainerRequest](#DuplicateClusterContainerRequest)
-- [DuplicateClusterInHostedService](#DuplicateClusterInHostedService)
-- [FailureToUpdateDeploymentStatus](#FailureToUpdateDeploymentStatus)
-- [HdiRestoreClusterAltered](#HdiRestoreClusterAltered)
-- [HeadNodeConfigNotFound](#HeadNodeConfigNotFound)
-- [HeadNodeConfigNotFound](#HeadNodeConfigNotFound)
-- [HostedServiceCreationFailure](#HostedServiceCreationFailure)
-- [HostedServiceHasProductionDeployment](#HostedServiceHasProductionDeployment)
-- [HostedServiceNotFound](#HostedServiceNotFound)
-- [HostedServiceWithNoDeployment](#HostedServiceWithNoDeployment)
-- [InsufficientResourcesCores](#InsufficientResourcesCores)
-- [InsufficientResourcesHostedServices](#InsufficientResourcesHostedServices)
-- [InternalErrorRetryRequest](#InternalErrorRetryRequest)
-- [InvalidAzureStorageLocation](#InvalidAzureStorageLocation)
-- [InvalidNodeSizeForDataNode](#InvalidNodeSizeForDataNode)
-- [InvalidNodeSizeForHeadNode](#InvalidNodeSizeForHeadNode)
-- [InvalidRightsForDeploymentDeletion](#InvalidRightsForDeploymentDeletion)
-- [InvalidStorageAccountBlobContainerName](#InvalidStorageAccountBlobContainerName)
-- [InvalidStorageAccountConfigurationSecretKey](#InvalidStorageAccountConfigurationSecretKey)
-- [InvalidVersionHeaderFormat](#InvalidVersionHeaderFormat)
-- [MoreThanOneHeadNode](#MoreThanOneHeadNode)
-- [OperationTimedOutRetryRequest](#OperationTimedOutRetryRequest)
-- [ParameterNullOrEmpty](#ParameterNullOrEmpty)
-- [PreClusterCreationValidationFailure](#PreClusterCreationValidationFailure)
-- [RegionCapabilityNotAvailable](#RegionCapabilityNotAvailable)
-- [StorageAccountNotColocated](#StorageAccountNotColocated)
-- [SubscriptionIdNotActive](#SubscriptionIdNotActive)
-- [SubscriptionIdNotFound](#SubscriptionIdNotFound)
-- [UnableToResolveDNS](#UnableToResolveDNS)
-- [UnableToVerifyLocationOfResource](#UnableToVerifyLocationOfResource)
-- [VersionCapabilityNotAvailable](#VersionCapabilityNotAvailable)
-- [VersionNotSupported](#VersionNotSupported)
-- [VersionNotSupportedInRegion](#VersionNotSupportedInRegion)
-- [WasbAccountConfigNotFound](#WasbAccountConfigNotFound)
-
-
 
 ## <a id="discription-mitigation-errors"></a>错误的诊断和缓解措施
 
@@ -264,7 +211,7 @@
 
 * [Azure HDInsight SDK 文档][hdinsight-sdk-documentation]
 
-[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
+[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx
 
 [image-hdi-debugging-error-messages-portal]: ./media/hdinsight-debug-jobs/hdi-debug-errormessages-portal.png
 

@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="12/04/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 使用 HDInsight 上的 Storm 和 HBase 按时间对事件进行关联
 
@@ -91,7 +91,7 @@
 
 ## 下载项目
 
-可以从 [hdinsight-storm-eventcorrelation](https://github.com/Blackmist/hdinsight-storm-eventcorrelation) 下载示例项目。
+可以从 [https://github.com/Azure-Samples/hdinsight-storm-dotnet-event-correlation](https://github.com/Azure-Samples/hdinsight-storm-dotnet-event-correlation) 下载示例项目。
 
 此下载包含以下 C# 项目：
 

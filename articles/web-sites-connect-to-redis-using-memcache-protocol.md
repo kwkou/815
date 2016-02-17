@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="09/16/2015"
-	wacn.date="01/29/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 通过 Memcache 协议将 Azure 中的 Web 应用连接到 Redis 缓存
 
@@ -20,7 +20,7 @@ Azure 使用 Web Apps Memcache 填充码启用该应用程序方案，这是充�
 
 ## 先决条件
 
- Web Apps Memcache 填充码可以与任何应用程序一起使用，前提是使用 Memcached 协议通信。就此特定示例来说，引用应用程序是一个可缩放的 WordPress 站点，它可以从 Azure 应用商店设置。
+ Web Apps Memcache 填充码可以与任何应用程序一起使用，前提是使用 Memcached 协议通信。就此特定示例来说，引用应用程序是一个可缩放的 WordPress 站点。
 
 请按照以下文章中所述的步骤操作：
 

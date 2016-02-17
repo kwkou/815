@@ -9,13 +9,10 @@
 	tags="azure-resource-management"/>
 
 <tags ms.service="virtual-machines"
-	ms.date="07/13/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="10/21/2015"
+	wacn.date="02/17/2015"/>
 
 # 使用 Azure 门户创建运行 Linux 的虚拟机
-
-> [AZURE.SELECTOR]
-- [Azure Portal](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
 
 创建运行 Linux 的 Azure 虚拟机 (VM) 是一项很简单的操作。本教程演示如何使用 Azure 门户快速创建一个虚拟机，并使用SSH公钥文件来保护到 VM 的 **SSH** 连接。你也可以[将自己的映像作为模板](/documentation/articles/virtual-machines-linux-create-upload-vhd)来创建 Linux VM。
 

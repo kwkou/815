@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/15/2015"
-    wacn.date="12/17/2015"/>
+    wacn.date="02/17/2016"/>
 
 
 
@@ -52,6 +52,9 @@
 ![将虚拟机添加到现有云服务](./media/howto-connect-vm-cloud-service/Connect-VM-to-CS.png)
 
 ##资源
+[对虚拟机进行负载平衡](/documentation/articles/load-balance-virtual-machines)
+
+[管理虚拟机的可用性](/documentation/articles/virtual-machines-manage-availability)
 
 [虚拟网络配置任务](/documentation/services/virtual-machines/)
 

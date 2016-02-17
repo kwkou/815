@@ -10,7 +10,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="09/22/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="02/17/2016"/>
 
 # 如何通过 WebJobs SDK 使用 Azure Blob 存储
 
@@ -21,20 +21,6 @@
 有关演示如何创建 Blob 的代码示例，请参阅[如何通过 WebJobs SDK 使用 Azure 队列存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to)。
 		
 本指南假设您了解[如何使用指向存储帐户的连接字符串在 Visual Studio 中创建 WebJob 项目](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)。
-
-## 目录
-
--   [如何在创建或更新 Blob 后触发函数](#trigger)
-	- Blob 名称和扩展名的单个占位符
-	- 单独的 Blob 名称和扩展名占位符
--   [BlobTrigger 适用的类型](#types)
--   [通过绑定到字符串获取文本 Blob 内容](#string)
--   [使用 ICloudBlobStreamBinder 获取序列化 Blob 内容](#icbsb)
--   [如何处理有害 Blob](#poison)
--   [Blob 轮询算法](#polling)
--   [Blob 回执](#receipts)
--   [队列文章涵盖的相关主题](#queues)
--   [后续步骤](#nextsteps)
 
 ## <a id="trigger"></a> 如何在创建或更新 Blob 后触发函数
 

@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="12/14/2015"
-	wacn.date="01/29/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 在 Azure Web 应用中创建 .NET Web 作业
 
@@ -21,18 +21,6 @@
 示例应用程序是一个广告公告板。用户可以上载广告的图像，后端进程会将图像转换成缩略图。广告列表页将显示缩略图，而广告详细信息页则显示完整大小的图像。下面是屏幕快照：
 
 ![广告列表](./media/websites-dotnet-webjobs-sdk-get-started/list.png)
-
-
-## 目录
-
-- [先决条件](#prerequisites)
-- [学习内容](#learn)
-- [应用程序体系结构](#contosoads)
-- [设置开发环境](#setupdevenv)
-- [生成、运行并部署应用程序](#storage)
-- [从头开始创建应用程序](#create)
-- [查看应用程序代码](#code)
-- [后续步骤](#next-steps)
 
 ## <a id="prerequisites"></a>先决条件
 

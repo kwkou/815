@@ -11,7 +11,7 @@
 <tags 
 	ms.service="virtual-machines"
 	ms.date="11/13/2015"
-	wacn.date="12/31/2015" />
+	wacn.date="02/17/2016" />
 
 # 将本地 AlwaysOn 可用性组扩展到 Azure
 
@@ -21,7 +21,7 @@ AlwaysOn 可用性组通过添加辅助副本为数据库组提供高可用性�
 
 本文假设你符合以下条件：
 
-- 一个有效的 Azure 订阅。你可以注册[试用版](/pricing/1rmb-trial)。
+- 一个有效的 Azure 订阅。你可以注册[试用版](/pricing/1rmb-trial/)。
 
 - 本地现有 AlwaysOn 可用性组。有关可用性组的详细信息，请参阅 [AlwaysOn 可用性组](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx)。
 

@@ -10,7 +10,7 @@
 <tags 
 	ms.service="web-sites" 
 	ms.date="12/10/2015" 
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 
 # 创建包含成员资格、OAuth 和 SQL 数据库的安全 ASP.NET Web 窗体应用并部署到 Azure Web 应用
@@ -38,19 +38,6 @@
 ![联系人 - 编辑页](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms00.png)
 
 >[AZURE.NOTE]若要完成本教程，您需要一个 Azure 帐户。如果您没有帐户，则可以<a href="/pricing/1rmb-trial/" target="_blank">注册获取试用版</a>。
-
-本教程包含以下部分：
-
-- [设置开发环境](#set-up-the-development-environment)
-- [设置 Azure 环境](#Set-up-the-Azure-environment)
-- [创建 ASP.NET Web 窗体应用程序](#Create-an-ASP.NET-Web-Forms-Application)
-- [向应用程序添加数据库](#Add-a-Database-to-the-Application)
-- [为项目启用 SSL](#Enable-SSL-for-the-Project)
-- [添加 OAuth 2.0 提供程序](#Add-an-OAuth-2.0-Provider)
-- [使用成员资格 API 来限制访问](#Use-the-Membership-API-to-Restrict-Access)
-- [将包含数据库的应用程序部署到 Azure](#Deploy-the-Application-with-the-Database-to-Azure)
-- [查看数据库](#Review-the-Database)
-- [后续步骤](#Next-Steps)
 
 ##<a name="set-up-the-development-environment"></a>设置开发环境 
 若要开始，请通过安装 Visual Studio 2013 和 Azure SDK for .NET 来设置开发环境。

@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="12/04/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="02/17/2016"/>
 
 #在 HDInsight 上使用 Python 开发 Apache Storm 拓扑
 
@@ -21,6 +21,8 @@ Apache Storm 支持多种语言，甚至可让你将多种语言的组件合并�
 * Python 2.7 或更高版本
 
 * Java JDK 1.7 或更高版本
+
+* [Leiningen](http://leiningen.org/)
 
 ##Storm 多语言支持
 
@@ -48,7 +50,7 @@ Storm 模块 (https://github.com/apache/storm/blob/master/storm-multilang/python
 
 ##使用 Java 拓扑的 Python 组件
 
-> [AZURE.NOTE]此示例位于 https://github.com/Blackmist/hdinsight-python-storm-wordcount 上的 __JavaTopology__ 目录中。这是一个基于 Maven 的项目。如果你不熟悉 Maven，请参阅[在 HDInsight 上使用 Apache Storm 开发基于 Java 的拓扑](/documentation/articles/hdinsight-storm-develop-java-topology)，以获取有关如何为 Storm 拓扑创建 Maven 项目的详细信息。
+> [AZURE.NOTE]此示例位于 [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount) 上的 __JavaTopology__ 目录中。这是一个基于 Maven 的项目。如果你不熟悉 Maven，请参阅[在 HDInsight 上使用 Apache Storm 开发基于 Java 的拓扑](/documentation/articles/hdinsight-storm-develop-java-topology)，以获取有关如何为 Storm 拓扑创建 Maven 项目的详细信息。
 
 使用 Python（或其他 JVM 语言组件）的基于 Java 的拓朴乍看之下是使用了 Java 组件，但如果你仔细查看每个 Java Spout/Bolt，将看到类似于以下代码：
 
@@ -105,7 +107,7 @@ Java 在此处调用 Python，并运行包含实际 Blot 逻辑的脚本。Java 
 
 ##使用 Clojure 拓扑的 Python 组件
 
-> [AZURE.NOTE]此示例位于 https://github.com/Blackmist/hdinsight-python-storm-wordcount 上的 __ClojureTopology__ 目录中。
+> [AZURE.NOTE]此示例位于 [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount) 上的 __ClojureTopology__ 目录中。
 
 此拓扑是使用 [Leiningen](http://leiningen.org) 创建的，用于[创建新的 Clojure 项目](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md#creating-a-project)。之后，对基架项目做了以下修改：
 

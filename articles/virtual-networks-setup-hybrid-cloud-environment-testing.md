@@ -11,7 +11,7 @@
 <tags 
 	ms.service="virtual-network" 
 	ms.date="09/10/2015" 
-	wacn.date="11/02/2015"/>
+	wacn.date="02/17/2016"/>
 
 # 设置用于测试的混合云环境
 
@@ -43,7 +43,7 @@
 
 如果你还没有 Azure 订阅，可以在[试用 Azure](/pricing/1rmb-trial/) 中注册一个免费试用版。
 
->[AZURE.NOTE] Azure 中的虚拟机和虚拟网关在运行时会持续产生货币成本。此成本是针对你的免费试用版本、MSDN 订阅或付费订阅的。若要在不使用的情况下降低运行此测试环境的成本，请参阅本主题中的[最大程度地降低此环境的持续使用成本](#costs)，了解详细信息。
+>[AZURE.NOTE] Azure 中的虚拟机和虚拟网关在运行时会持续产生货币成本。此成本是针对你的免费试用版本。若要在不使用的情况下降低运行此测试环境的成本，请参阅本主题中的[最大程度地降低此环境的持续使用成本](#costs)，了解详细信息。
 
 此配置要求使用一个由最多四台计算机组成的测试子网，这些计算机使用公共 IP 地址直接连接到 Internet。如果没有这些资源，你也可以[设置用于测试的模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)。模拟混合云测试环境只需要 Azure 订阅。
 
