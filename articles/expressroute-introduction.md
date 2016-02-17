@@ -21,7 +21,6 @@ Windows Azure ExpressRoute 可让你通过连接服务提供商所提供的专�
 
 - 通过连接服务提供商在本地网络与 Windows Azure 云之间建立第 3 层连接。可以从任意位置之间的 (IPVPN) 网络、点到点以太网，或通过以太网交换经由虚拟交叉连接来建立这种连接。
 - 跨地缘政治区域中的所有区域连接到 Windows Azure 云服务。
-- 通过 ExpressRoute 高级版附加组件从全球连接到所有区域的 Windows Azure 服务。
 - 通过行业标准协议 (BGP) 在你的网络与 Windows Azure 之间进行动态路由。
 - 在每个对等位置提供内置冗余以提高可靠性。
 - 连接运行时间 [SLA](/support/legal/sla/)。
@@ -87,10 +86,6 @@ Windows Azure 采用行业标准动态路由协议 (BGP)，在本地网络、Azu
 
 - **无限制数据**。ExpressRoute 线路按月计费，所有入站和出站数据传输不收取费用。 
 - **计量数据**。ExpressRoute 线路按月计费。所有入站数据传输免费。出站数据传输按每 GB 数据传输计费。数据传输费率根据区域不同而异。
-- **ExpressRoute 高级版附加组件**。ExpressRoute 高级版是 ExpressRoute 线路上的附加组件。ExpressRoute 高级版附加组件提供以下功能： 
-	- 提高 Azure 公共和 Azure 专用对等互连的路由限制，从4,000 路由提升至 10,000 路由。
-	- 服务的全国连接。在任何区域创建的 ExpressRoute 线路都将能够访问位于全国其他区域的资源。例如，创建于北京的虚拟网络可以通过在上海设置的 ExpressRoute 线路进行访问。
-	- 增加了每个 ExpressRoute 线路的 VNet 链接数量，从 10 增加至更大的限制，具体取决于线路的带宽。
 
 ## 后续步骤
 
