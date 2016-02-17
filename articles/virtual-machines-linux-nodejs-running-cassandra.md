@@ -11,7 +11,7 @@
 <tags 
 	ms.service="virtual-machines"
 	ms.date="11/20/2015" 
-	wacn.date="01/29/2016"/>
+	wacn.date="02/17/2016"/>
 
 
 # 在 Azure 上将 Cassandra 与 Linux 一起运行以及通过 Node.js 对其进行访问 
@@ -300,7 +300,7 @@ sudo apt-get install libjna-java
 这将需要数秒钟的时间，然后映像就会出现在映像库中的“我的映像”部分。成功捕获映像后，将会自动删除源 VM。
 
 ##单区域部署过程
-**步骤 1：创建虚拟网络**登录到管理门户，然后使用下表中的属性创建虚拟网络。请参阅[在管理门户中配置只使用云的虚拟网络](/documentation/articles/virtual-networks-create-vnet)，以了解此过程的详细步骤。
+**步骤 1：创建虚拟网络**登录到管理门户，然后使用下表中的属性创建虚拟网络。请参阅[在管理门户中配置只使用云的虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal)，以了解此过程的详细步骤。
 
 <table>
 <tr><th>VM 属性名称</th><th>值</th><th>备注</th></tr>
@@ -467,7 +467,7 @@ sudo apt-get install libjna-java
 将利用已完成的单区域部署，并在安装第二个区域时重复相同的过程。单区域部署和多区域部署的主要区别是 VPN 隧道，设置该隧道是为了进行区域间通信；我们一开始将进行网络安装，并完成 VM 预配和 Cassandra 配置。
 
 ###步骤 1：在第二个区域创建虚拟网络
-登录到 Azure 门户，然后使用下表中的属性创建虚拟网络。请参阅[在管理门户中配置只使用云的虚拟网络](/documentation/articles/virtual-networks-create-vnet)，以了解此过程的详细步骤。
+登录到 Azure 门户，然后使用下表中的属性创建虚拟网络。请参阅[在管理门户中配置只使用云的虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal)，以了解此过程的详细步骤。
 
 <table>
 <tr><th>属性名称    </th><th>值	</th><th>备注</th></tr>

@@ -10,7 +10,7 @@
 <tags 
 	ms.service="web-sites" 
 	ms.date="12/08/2015" 
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 
 # 将 Azure 中的 Azure Redis 缓存用于会话状态
@@ -19,13 +19,6 @@
 本主题说明如何将 Azure Redis Cache 服务（预览版）用于会话状态。
 
 如果你的 ASP.NET Web 应用使用会话状态，则你需要设置外部会话状态提供程序（可为 Redis Cache 服务或 SQL Server 会话状态提供程序）。如果你使用会话状态，但未使用外部提供程序，则你的 Web 应用只能限定为一个实例。Redis Cache 服务是最快最简单的启用方式。
-
-将缓存服务（预览版）用于会话状态缓存的基本步骤包括：
-
-* [将 RedisSessionStateProvider NuGet 包添加到 Web 应用。](#configureproject)
-* [修改 Web.config 文件。](#configurewebconfig)
-* [使用会话对象存储和检索缓存项。](#usesessionobject)
-
 
 ## <a id="configureproject"></a>将 RedisSessionStateProvider NuGet 包添加到 Web 应用
 安装 NuGet `RedisSessionStateProvider` 包。从包管理器控制台（“工具”>“NuGet 包管理器”>“包管理器控制台”）使用以下命令进行安装：

@@ -10,7 +10,7 @@
 <tags 
 	ms.service="web-sites" 
 	ms.date="09/16/2015" 
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 
 # 在 Azure Web 应用上部署 ASP.NET MVC 5 移动 Web 应用
@@ -53,17 +53,6 @@
 
 -   [初学者项目下载][StarterProject]
 -   [已完成项目下载][CompletedProject]
-
-<h2>本教程中的步骤</h2>
-
-- [将初学者项目部署到 Windows Azure Web 应用][]
-- [Bootstrap CSS 框架][]
-- [重写视图、布局和分部视图][]
-- [改进发言人列表][]
-- [改进标签列表][]
-- [改进日期列表][]
-- [改进 SessionsTable 视图][]
-- [改进 SessionByCode 视图][]
 
 ##<a name="bkmk_DeployStarterProject"></a>将初学者项目部署到 Windows Azure Web 应用
 

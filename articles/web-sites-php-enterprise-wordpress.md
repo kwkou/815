@@ -10,7 +10,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="11/06/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 #Azure Web 应用上的企业级 WordPress
 
@@ -20,7 +20,7 @@ Azure Web 应用为大规模的关键任务 [WordPress][wordpress] Web 应用提
 
 基本的 WordPress 安装有只有两个要求。
 
-* **MySQL 数据库** - 可以在使用 [Windows][mysqlwindows] 或 [Linux][mysqllinux] 的 Azure 虚拟机上管理自己的 MySQL 安装。
+* **MySQL 数据库** - 可以在使用 [Windows][mysqlwindows] 或 [Linux][mysqllinux] 的 Azure 虚拟机上管理自己的 MySQL 安装，或者使用 “MySQL Database on Azure” 托管你的数据库。
 
 * **PHP 5.2.4 或更高版本** - Azure Web 应用目前提供 [PHP 5.4、 5.5 和 5.6 几个版本][phpwebsite]。
 
@@ -149,7 +149,7 @@ Azure Web 应用为大规模的关键任务 [WordPress][wordpress] Web 应用提
 
 3. 创建新的数据库并恢复备份。
 
-	1. 在 [Windows][mysqlwindows] 或 [Linux][mysqllinux] VM 上设置 MySQL 数据库。
+	1. 在 “MySQL Database on Azure” 新建一个数据库，或者在 [Windows][mysqlwindows] 或 [Linux][mysqllinux] VM 上设置 MySQL 数据库。
 
 	2. 使用 MySQL 客户端，如 [MySQL Workbench][workbench]，连接到新的数据库，然后导入您的 WordPress 数据库。
 
@@ -157,7 +157,7 @@ Azure Web 应用为大规模的关键任务 [WordPress][wordpress] Web 应用提
 
 4. 在 Azure 管理门户中创建新的 Web 应用并发布 WordPress 备份。
 
-	1. 使用“新建”->“Web 应用”->“Web 应用 + SQL”（或“Web 应用 + MySQL”）->“创建”通过数据库在 [Azure 管理门户][mgmtportal]中创建新的 Web 应用。配置所有所需的设置来创建空 Web 应用。
+	1. 使用“新建”->“计算”->“Web 应用”->“快速创建”通过数据库在 [Azure 管理门户][mgmtportal]中创建新的 Web 应用。配置所有所需的设置来创建空 Web 应用。
 
 	2. 在 WordPress 备份中，找到 **wp-config.php** 文件，并在编辑器中打开它。将以下项替换为新的 MySQL 数据库的信息。
 

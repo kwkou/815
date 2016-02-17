@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="10/16/2015"
-	wacn.date="01/29/2016"/>
+	wacn.date="02/17/2016"/>
 
 
 # 使用 Azure Web 应用进行灵便软件开发 #
@@ -66,7 +66,7 @@
 	-	[PowerShell](https://technet.microsoft.com/zh-cn/library/bb978526.aspx)
 
 > [AZURE.NOTE] 完成本教程需要有一个 Azure 帐户：
-> + 你可以[建立一个试用 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - 获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web 应用）。
+> + 你可以[建立一个试用 Azure 帐户](/pricing/1rmb-trial/) - 获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web 应用）。
 
 
 ## 设置生产环境 ##
@@ -113,7 +113,7 @@
 
 7.	脚本完成后，请返回浏览到前端的地址 (http://ToDoApp*&lt;unique_string>*master.chinacloudsites.cn/)，以查看在生产环境中运行的应用程序。
  
-5.	登录到 [Azure 管理门户](https://manage.windowsazure.cn)并查看创建的内容。
+5.	登录到 [Azure 管理门户](https://manage.windowsazure.cn/)并查看创建的内容。
 
 	你应该可以看到两个 Web 应用，其中一个 Web 应用的名称包含 `Api` 后缀。你还会看到 SQL 数据库和服务器、App Service 计划，以及 Web 应用的过渡槽。浏览不同的资源，并将它们与 *&lt;repository\_root>*\\ARMTemplates\\ProdAndStage.json 进行比较，以查看它们在模板中的配置方式。
 
@@ -222,9 +222,8 @@
 	git push origin :Dev
 	git branch -d NewUpdate
 	git push origin :NewUpdate
-	Switch-AzureMode AzureResourceManager
-	Remove-AzureResourceGroup -Name ToDoApp<unique_string>dev-group -Force -Verbose
-	Remove-AzureResourceGroup -Name ToDoApp<unique_string>newupdate-group -Force -Verbose
+	Remove-AzureRmResourceGroup -Name ToDoApp<unique_string>dev-group -Force -Verbose
+	Remove-AzureRmResourceGroup -Name ToDoApp<unique_string>newupdate-group -Force -Verbose
 
 ## 摘要 ##
 

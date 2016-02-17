@@ -10,7 +10,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="09/16/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 
 #保护 Azure Web 应用
@@ -18,12 +18,6 @@
 开发 Web 应用时所要面对的一大难题是，如何为您的客户提供安全服务。在本文中，你将了解到可以保护你的 [Azure Web 应用](/documentation/services/web-sites/)功能的相关信息。
 
 > [AZURE.NOTE] 关于基于 web 的应用程序安全注意事项的全面讨论超出了本文的范围。有关保护 Web 应用安全的更多指导，请参阅[打开 Web 应用安全项目 (OWASP)](https://www.owasp.org/index.php/Main_Page)（尤其是[前 10 大项目](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)），其中列出了前 10 大 Web 应用安全缺陷（由 OWASP 成员确定）。
-
-###目录
-
-* [安全通信](#https)
-* [安全开发](#develop)
-* [后续步骤](#next)
  
 ##<a name="https"></a>安全通信
 

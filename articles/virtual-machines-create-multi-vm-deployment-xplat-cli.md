@@ -11,11 +11,11 @@
    <tags
    ms.service="virtual-machines"
    ms.date="02/20/2015"
-   wacn.date="11/12/2015"/>
+   wacn.date="02/17/2016"/>
 
 # 使用 Azure CLI 创建多 VM 部署
 
-> [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+> [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]本文介绍如何使用经典部署模型创建资源。
 
 下面的脚本将向你展示如何使用 Azure 命令行界面 (Azure CLI) 在 VNET 中配置多 VM 多云服务部署。
 

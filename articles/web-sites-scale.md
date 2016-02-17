@@ -10,7 +10,7 @@
 <tags 
 	ms.service="web-sites" 
 	ms.date="12/10/2015" 
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 在 Azure 中缩放 Web 应用#
 
@@ -21,14 +21,6 @@
 可在管理门户的“缩放”选项卡中轻松地更改模式并进行配置。您可以根据需要向上或向下缩放。这些更改只需数秒即可生效，可影响 Web 托管计划中的所有 Web 应用。无需更改代码或重新部署应用程序。
 
 有关各个 Web 托管计划的定价和功能的信息，请参阅[ Web 应用定价详细信息](/home/features/web-site/#price)。
-
-本文内容：
-
-- [缩放到“共享”或“基本”计划模式](#scalingsharedorbasic)
-- [缩放到“标准”计划模式](#scalingstandard)
-- [缩放连接到您的 Web 应用的 SQL Server 数据库](#ScalingSQLServer)
-- [开发人员功能](#devfeatures)
-- [其他功能](#OtherFeatures)
 
 <a name="scalingsharedorbasic"></a>
 <!-- ===================================== -->
@@ -191,8 +183,6 @@
 	Windows Azure 的[虚拟机](/documentation/articles/virtual-machines-size-specs/)和[云服务](/documentation/articles/cloud-services-sizes-specs/)大小
 	
 	[ Web 应用定价详细信息](/home/features/web-site/#price)
-	
-	[ Web 应用定价详细信息 - SSL 连接](/zh-cn/home/features/web-site/#price)。
 
 <!-- LINKS -->
 [vmsizes]: http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx

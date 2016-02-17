@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="11/19/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 # Azure Web 应用、云服务和虚拟机比较
 
@@ -27,12 +27,6 @@ Azure Web 应用是大多数 Web 应用的最佳选择。部署和管理都已�
 下图针对 Azure 上各种 Web 托管选项，分别说明了它们之间相对的控制强度和易于使用程度。
 
 ![ChoicesDiagram][ChoicesDiagram]
-
-## 目录
-
-- [方案和建议](#scenarios)
-- [功能比较](#features)
-- [后续步骤](#nextsteps)
 
 ##<a name="scenarios"></a>方案和建议
 

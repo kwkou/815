@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="12/11/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 如何在 PowerShell 中创建 NSG（经典）
 
@@ -24,7 +24,7 @@
 下面的示例 PowerShell 命令需要一个已经基于上述方案创建的简单环境。如果你想要运行本文档中所显示的命令，首先通过[创建 VNet](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps) 构建测试环境。
 
 ## 如何为前端子网创建 NSG
-若要基于上述方案创建名为 *NSG-FrontEnd* 的 NSG，请执行下面的步骤：
+若要基于上述方案创建名为 **NSG-FrontEnd** 的 NSG，请执行下面的步骤：
 
 1. 如果你从未使用过 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)，并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
 

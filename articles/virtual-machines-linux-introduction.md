@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="11/13/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="02/17/2016"/>
 
 #Azure 上的 Linux 简介
 
@@ -25,7 +25,7 @@
 
 
  - 请参阅[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
-
+ - 请参阅[如何在 Azure 上将 SSH 用于 Linux 和 Mac](/documentation/articles/virtual-machines-linux-use-ssh-key)
 
 ## 使用 `sudo` 获取超级用户特权
 

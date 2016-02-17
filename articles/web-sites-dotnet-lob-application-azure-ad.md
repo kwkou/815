@@ -10,7 +10,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="12/10/2015" 
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 在 Azure 中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用#
 
@@ -19,14 +19,6 @@
 使用的 Azure Active Directory 租户可以是仅限 Azure 的目录，或者与本地 Active Directory (AD) 进行目录同步，以便为本地或远程的辅助角色创建单一登录体验。
 
 >[AZURE.NOTE]对于 Azure Web 应用，只需单击几下鼠标，就能配置针对 Azure Active Directory 租户的身份验证。有关详细信息，请参阅[使用 Active Directory 在 Azure 中进行身份验证](/documentation/articles/web-sites-authentication-authorization)。
-
-- [要生成的项目](#bkmk_build)
-- [所需的项目](#bkmk_need)
-- [使用 LOB 模板的示例应用程序](#bkmk_sample)
-- [运行示例应用程序](#bkmk_run)
-- [将示例应用程序部署到 Azure Web 应用](#bkmk_deploy)
-- [将 LOB 功能添加到示例应用程序](#bkmk_crud)
-- [其他资源](#bkmk_resources)
 
 <a name="bkmk_build"></a>
 ## 要生成的项目 ##

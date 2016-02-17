@@ -10,7 +10,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="09/22/2015"
-	wacn.date="01/29/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 使用 Web 作业运行后台任务
 
@@ -21,15 +21,6 @@
 本文说明如何使用 [Azure 管理门户](https://manage.windowsazure.cn)来部署 Web 作业。有关如何使用 Visual Studio 或连续交付过程进行部署的信息，请参阅[如何将 Azure Web 作业部署到 Web 应用](/documentation/articles/websites-dotnet-deploy-webjobs)。
 
 Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，请参阅[什么是 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk)。
-## 目录 ##
-- [可接受的脚本文件类型](#acceptablefiles)
-- [创建按需运行任务](#CreateOnDemand)
-- [创建连续运行任务](#CreateContinuous)
-- [创建计划任务](#CreateScheduled)
-	- [计划作业和 Azure 计划程序](#Scheduler)
-- [查看作业历史记录](#ViewJobHistory)
-- [说明](#WHPNotes)
-- [后续步骤](#NextSteps)
 
 ## <a name="acceptablefiles"></a>可接受的脚本或程序文件类型
 

@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="09/29/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 
 
@@ -25,7 +25,7 @@
 
 ##<a name="bottle-django-flask"></a> Bottle、Django 还是 Flask？
 
-Azure 应用商店包含用于 Bottle、Django 和 Flask 框架的模板。如果你正在 Azure 中开发第一个 Web 应用，或者你不熟悉 Git，我们建议你遵循以下教程之一，其中包括用于从 Windows 或 Mac 使用 Git 部署从库构建工作应用程序的分步说明：
+如果你正在 Azure 中开发第一个 Web 应用，或者你不熟悉 Git，我们建议你遵循以下教程之一，其中包括用于从 Windows 或 Mac 使用 Git 部署从库构建工作应用程序的分步说明：
 
 - [使用 Bottle 创建 Web 应用](/documentation/articles/web-sites-python-create-deploy-bottle-app)
 - [使用 Django 创建 Web 应用](/documentation/articles/web-sites-python-create-deploy-django-app)

@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="10/23/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 故障排除：HTTP 502/503 错误导致 Web 应用不可用
 
@@ -89,7 +89,7 @@ AutoHeal 会根据你选择的设置（例如配置更改、请求、基于内�
 
 ####	重新启动 Web 应用
 
-这通常是在发生一次性问题后进行恢复的最简单方式。[Azure 管理门户](https://manage.windowsazure.cn)上的 Web 应用边栏选项卡中提供了用于停止或重新启动应用程序的选项。
+这通常是在发生一次性问题后进行恢复的最简单方式。[Azure 管理门户](https://manage.windowsazure.cn/)上的 Web 应用边栏选项卡中提供了用于停止或重新启动应用程序的选项。
 
  ![](./media/app-service-web-troubleshoot-HTTP-502-503/2-restart.png)
 

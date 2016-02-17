@@ -12,7 +12,7 @@
 <tags
    ms.service="virtual-machines"
    ms.date="12/08/2015"
-   wacn.date="01/29/2016"/>
+   wacn.date="02/17/2016"/>
 
 # 使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像
 
@@ -68,7 +68,7 @@
 	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_10-amd64-server-20140826-beta1-en-us-30GB                     Public    Linux    Canonical
 	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-15_04-amd64-server-20150707-en-us-30GB                           Public    Linux    Canonical
 
-关于如何使用这些映像，请参阅[使用 Azure CLI 创建多 VM 部署](virtual-machines-create-multi-vm-deployment-xplat-cli)
+关于如何使用这些映像，请参阅[使用 Azure CLI 创建多 VM 部署](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli)
 
 
 ## PowerShell
@@ -87,7 +87,7 @@
 		}
 	}
 
-关于如何使用这些映像，请参阅[在 Azure 中创建 SQL Server 虚拟机 (PowerShell)](virtual-machines-sql-server-create-vm-with-powershell)
+关于如何使用这些映像，请参阅[在 Azure 中创建 SQL Server 虚拟机 (PowerShell)](/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell)
 
 
 <!--Image references-->

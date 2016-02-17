@@ -11,7 +11,7 @@
 <tags
    ms.service="virtual-machines"
    ms.date="09/22/2015"
-   wacn.date="12/16/2015"/>
+   wacn.date="02/17/2016"/>
 
 # 如何将 docker-machine 与 Azure 一起使用
 
@@ -197,7 +197,7 @@
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## 后续步骤
-转到 [Docker 用户指南](https://docs.docker.com/userguide/)并在 Windows Azure 上创建一些应用程序。或者，在 Azure 上玩 [**docker** 和 swarm](https://github.com/docker/swarm)](virtual-machines-docker-swarm)，并了解如何将 swarm 用于 docker 和 Azure。
+转到 [Docker 用户指南](https://docs.docker.com/userguide/)并在 Windows Azure 上创建一些应用程序。或者，在 Azure 上玩 [**docker**](/documentation/articles/virtual-machines-docker-swarm) 和 [swarm](https://github.com/docker/swarm)，并了解如何将 swarm 用于 docker 和 Azure。
 
 <!--Image references-->
 [nginx]: ./media/virtual-machines-docker-machine/nginxondocker.png

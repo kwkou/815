@@ -200,8 +200,6 @@
 
 -	将整个解决方案的目录树添加到你的存储库中，其中 .sln 文件位于存储库根中。
 
--	在 Visual Studio 解决方案中，[启用 NuGet 程序包还原](http://docs.nuget.org/Consume/Package-Restore)以使 Visual Studio 会自动还原丢失的包。
-
 你按照说明设置存储库并将 Azure 中的 Web 应用配置为从某个联机 Git 存储库连续发布后，你就可以在 Visual Studio 中从本地开发 ASP.NET 应用程序，并且只需通过将所做的更改推送到联机的 Git 存储库即可连续部署代码。
 
 ## 禁用连续部署

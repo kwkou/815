@@ -11,7 +11,7 @@
 <tags 
 	ms.service="virtual-machines"
 	ms.date="07/17/2015"
-	wacn.date="08/29/2015"/>
+	wacn.date="02/17/2016"/>
 
 # Azure 虚拟机 FAQ
 
@@ -68,7 +68,7 @@ Azure 支持固定的、VHD 格式的虚拟硬盘。如果想在 Azure 中使用
 
 如果遇到与远程桌面或 SSH 相关的问题，请安装并使用 [VMAccess](https://msdn.microsoft.com/zh-cn/library/azure/dn606308.aspx) 扩展来帮助修复此问题。对于 Windows VM，附加选项包括：
 
-- 在 Azure 预览门户中，找到 VM，然后从命令栏中单击“重置远程访问”。
+- 在 Azure 门户中，找到 VM，然后从命令栏中单击“重置远程访问”。
 - 查看[对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)。
 - 使用 Windows PowerShell 远程处理连接到 VM，或者为其他资源创建附加终结点以便连接到 VM。有关详细信息，请参阅[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-set-up-endpoints)。
 

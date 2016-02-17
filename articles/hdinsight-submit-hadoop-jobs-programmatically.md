@@ -11,13 +11,13 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/30/2015"
-	wacn.date="01/15/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 在 HDInsight 中提交 Hadoop 作业
 
 学习如何使用 Azure PowerShell 提交 MapReduce 和 Hive 作业，以及如何使用 HDInsight .NET SDK 提交 MapReduce、Hadoop 流式处理和 Hive 作业。
 
-##先决条件
+###先决条件
 
 在开始阅读本文前，你必须具有：
 

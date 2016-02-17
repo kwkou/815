@@ -10,7 +10,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="09/22/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="02/17/2016"/>
 
 # 如何通过 WebJobs SDK 使用 Azure 表存储
 
@@ -21,16 +21,6 @@
 本指南假设您了解[如何使用指向存储帐户的连接字符串在 Visual Studio 中创建 WebJob 项目](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)。
 		
 一些代码段显示用于[手动调用](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#manual)的函数中所使用的 `Table` 属性，即，不通过使用其中一个触发器属性。
-
-## 目录
-
--   [如何向表中添加实体](#ingress)
--   [实时监视](#monitor)
--   [如何从表中读取多个实体](#multiple)
--   [如何从表中读取单个实体](#readone)
--   [如何直接使用 .NET 存储 API 处理表](#readone)
--   [队列操作指南文章涵盖的相关主题](#queues)
--   [后续步骤](#nextsteps)
 
 ## <a id="ingress"></a>如何向表中添加实体
 

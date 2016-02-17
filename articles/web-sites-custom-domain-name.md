@@ -11,7 +11,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="10/23/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 在 Azure 中配置自定义域名
 
@@ -27,14 +27,6 @@
 
 [AZURE.INCLUDE [introfooter](../includes/custom-dns-web-site-intro-notes.md)]
 
-本文内容：
-
--   [概述]
--   [DNS 记录类型]
--   [查找虚拟 IP 地址]
--   [创建 DNS 记录]
--   [创建“awverify”记录（仅 A 记录）](#awverify)
--   [在 Web 应用上启用域名]
 ##<a name="overview"></a> 概述
 
 如果你已有域名，或想要保留来自其他域注册机构的域，以下是为 Web 应用引入自定义域的常规步骤：

@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="12/10/2015"
-	wacn.date="01/29/2016"/>
+	wacn.date="02/17/2016"/>
 
 # 在 Azure 中备份 Web 应用
 
@@ -18,15 +18,6 @@
 利用 [Azure Web 应用](/documentation/services/web-sites/)中的备份和还原功能，你可以轻松地手动或自动创建 Web 应用备份。你可以将 Web 应用还原到以前的状态，或者基于原始应用的备份之一创建新 Web 应用。
 
 有关从备份中还原 Azure Web 应用的信息，请参阅[还原 Web 应用](/documentation/articles/web-sites-restore)。
-##本文内容
-
-- [备份的内容](#whatsbackedup)
-- [要求和限制](#requirements)
-- [创建手动备份](#manualbackup)
-- [配置自动化的备份](#automatedbackups)
-- [如何存储备份](#aboutbackups)
-- [说明](#notes)
-- [后续步骤](#nextsteps)
 
 <a name="whatsbackedup"></a>
 ## 备份的内容 

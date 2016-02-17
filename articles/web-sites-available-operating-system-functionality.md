@@ -10,25 +10,12 @@
 <tags
 	ms.service="web-sites"
 	ms.date="09/29/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="02/17/2016"/>
 
 # Azure Web 应用上的操作系统功能 #
 
 本文介绍可用于在 [Azure Web 应用](/documentation/services/web-sites/) Web 应用上运行的所有应用程序的常见基准操作系统功能。这些功能包括文件、网络和注册表访问以及诊断日志和事件。
 
-##目录
-
-* [App Service 计划层](#tiers)
-* [开发框架](#developmentframeworks)
-* [文件访问](#FileAccess)
-	* [本地驱动器](#LocalDrives)
-	* [网络驱动器（即 UNC 共享）](#NetworkDrives)
-	* [跨多个实例的文件](#multipleinstances)
-	* [向 Web 应用授予的文件访问的类型](#TypesOfFileAccess)
-* [网络访问](#NetworkAccess)
-* [代码执行、进程和内存](#Code)
-* [诊断日志和事件](#Diagnostics)
-* [注册表访问](#RegistryAccess)
 <a id="tiers"></a>
 ## App Service 计划层
 

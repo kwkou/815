@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="08/31/2015"
-	wacn.date="12/17/2015"/>
+	wacn.date="02/17/2016"/>
 
 # 在 Azure 中运行 OpenSUSE Linux 的虚拟机上安装 MySQL
 
@@ -21,9 +21,6 @@
 
 
 <br>
-
-
-[AZURE.INCLUDE [free-trial-note](../includes/create-account-note.md)]
 
 ## 创建运行 OpenSUSE Linux 的虚拟机
 
