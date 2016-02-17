@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 通知中心 - 通知用户"
+	pageTitle="Azure 通知中心 - 使用 .NET 后端通知 iOS 用户"
 	description="了解如何向 Azure 中的用户发送推送通知。使用 Objective-C 和 .NET API 为后端编写的代码示例。"
 	documentationCenter="ios"
 	authors="wesmc7777"
@@ -9,10 +9,10 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="06/16/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="12/16/2015"
+	wacn.date="01/16/2016"/>
 
-#Azure 通知中心 - 通知用户
+#Azure 通知中心 - 使用 .NET 后端通知 iOS 用户
 
 [AZURE.INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
@@ -38,6 +38,7 @@
 	+ **密码**：包含占位符文本“输入密码”的 UITextField，直接位于用户名文本字段的下面并受左边距和右边距约束。选中属性检查器中“返回密钥”下的“安全文本输入”选项。
 	+ **登录**：在密码文本字段的直接下方标记的 UIButton 并取消选中属性检查器中“控件内容”下的“已启用”选项
 	+ **WNS**：标签和开关，用于已在中心设置 Windows 通知服务时，启用将通知发送到 Windows 通知服务。请参阅 [Windows 入门](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)教程。
+	+ **GCM**：标签和开关，用于已在中心设置 Google Cloud Messaging 时，启用将通知发送到 Google Cloud Messaging。请参阅 [Android 入门](/documentation/articles/notification-hubs-android-get-started)教程。
 	+ **APNS**：标签和开关，用于启用将通知发送到 Apple 平台通知服务。
 	+ **收件人用户名**：包含占位符文本“收件人用户名标记”的 UITextField，直接位于 GCM 标签的下面并受左边距和右边距约束。
 	
@@ -62,7 +63,7 @@
 
 		- (IBAction)LogInAction:(id)sender;		
 
-4. 在 ViewController.h 中，在 import 语句的正下方添加以下 `#define`。将 *<输入你的后端终结点>* 占位符替换为在上一节中用于部署应用后端的目标 URL。例如，*http://you_backend.chinacloudsites.cn*。
+4. 在 ViewController.h 中，在 import 语句的正下方添加以下 `#define`。将 *< 输入你的后端终结点>* 占位符替换为在上一节中用于部署应用后端的目标 URL。例如，*http://you_backend.chinacloudsites.cn*。
 
 		#define BACKEND_ENDPOINT @"<Enter Your Backend Endpoint>"
 
@@ -255,7 +256,7 @@
 
 		@end
 
-	上面的代码使用 NSURLSession 对应用后端执行 REST 调用并使用 NSUserDefaults 在本地存储通知中心返回的 registrationId，实现了指南文章[从应用后端注册](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx)中所述的逻辑。
+	上面的代码使用 NSURLSession 对应用后端执行 REST 调用并使用 NSUserDefaults 在本地存储通知中心返回的 registrationId，实现了指南文章[从应用后端注册](/documentation/articles/notification-hubs-registration-management#registration-management-from-a-backend)中所述的逻辑。
 
 	请注意，此类需要设置其属性 **authorizationHeader**，才能正常工作。登录后，由 **ViewController** 类设置此属性。
 
@@ -459,4 +460,4 @@
 [4]: ./media/notification-hubs-aspnet-backend-ios-notify-users/notification-hubs-ios-notify-users-enter-msg.png
  
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

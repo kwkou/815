@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure 通知中心 - 通知用户" 
+	pageTitle="Azure 通知中心 - 使用 .NET 后端通知用户"
 	description="了解如何在 Azure 中发送安全推送通知。代码示例是使用 .NET API 通过 C# 编写的。" 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
@@ -9,11 +9,10 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="06/16/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="11/09/2015"
+	wacn.date="01/14/2016"/>
 
-
-#Azure 通知中心 - 通知用户
+#Azure 通知中心 - 使用 .NET 后端通知用户
 
 [AZURE.INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
@@ -25,7 +24,18 @@
 此外，只有在学习本教程后，才可以学习[安全推送]教程。完成本教程中的步骤后，你可以继续学习[安全推送]教程，其中说明了如何修改本教程中的代码以安全地发送推送通知。
 
 
-##先决条件 
+
+
+
+## 开始之前
+
+我们非常重视你的反馈。如果你在完成本主题的过程中遇到任何难题，或者在改善内容方面有任何建议，请在页面底部提供反馈，我们将不胜感激。
+
+可以在 GitHub 上的[此处](https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet/NotifyUsers)找到本教程的已完成代码。
+
+
+
+##先决条件
 
 在开始本教程之前，必须已完成以下移动服务教程：
 
@@ -64,11 +74,11 @@
 
 9. 在 **MainPage.xaml** XML 代码中，将 `<Grid>` 节替换为以下代码：此代码将添加用户用来进行身份验证的用户名和密码文本框。它还会添加通知消息的文本框，以及应接收通知的用户名标记：
 
-		<Grid>
-	        <Grid.RowDefinitions>
-	            <RowDefinition Height="Auto"/>
-	            <RowDefinition Height="*"/>
-	        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Text="Notify Users" HorizontalAlignment="Center" FontSize="48"/>
 
@@ -108,7 +118,7 @@
                     <TextBox Name="ToUserTagTextBox" Grid.Row="7" Grid.ColumnSpan="3" Margin="20,0,20,0" TextWrapping="Wrap" />
                     <TextBlock Grid.Row="8" Grid.ColumnSpan="3" Text="Enter Notification Message" FontSize="24" Margin="20,0,20,0"/>
                     <TextBox Name="NotificationMessageTextBox" Grid.Row="9" Grid.ColumnSpan="3" Margin="20,0,20,0" TextWrapping="Wrap" />
-                    <Button Grid.Row="10" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="2. Send push" Click="PushClick" />
+                    <Button Grid.Row="10" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="2. Send push" Click="PushClick" Name="SendPushButton" />
                 </Grid>
             </StackPanel>
         </Grid>
@@ -127,7 +137,7 @@
 		using Windows.UI.Popups;
 		using System.Threading.Tasks;
 
-12. 在“(Windows 8.1)”和“(Windows 8.1)”项目的 **MainPage.xaml.cs** 中，将以下成员添加 `MainPage` 类。确保使用前面获取的实际后端终结点来替换 `<Enter Your Backend Endpoint>`。例如 `http://mybackend.azurewebsites.net`。
+12. 在“(Windows 8.1)”和“(Windows 8.1)”项目的 **MainPage.xaml.cs** 中，将以下成员添加 `MainPage` 类。确保使用前面获取的实际后端终结点来替换 `<Enter Your Backend Endpoint>`。例如，`http://mybackend.azurewebsites.net`。
 
         private static string BACKEND_ENDPOINT = "<Enter Your Backend Endpoint>";
 
@@ -190,6 +200,8 @@
             // The tag passed here can be whatever other tags you may want to use.
             try
             {
+				// The device handle used will be different depending on the device and PNS. 
+				// Windows devices use the channel uri as the PNS handle.
                 await new RegisterClient(BACKEND_ENDPOINT).RegisterAsync(channel.Uri, new string[] { "myTag" });
 
                 var dialog = new MessageDialog("Registered as: " + UsernameTextBox.Text);
@@ -251,7 +263,7 @@
 
         public RegisterClient(string backendEndpoint)
         {
-            PostURL = backendEndpoint + "/api/register";
+            POST_URL = backendEndpoint + "/api/register";
         }
 
         public async Task RegisterAsync(string handle, IEnumerable<string> tags)
@@ -279,6 +291,7 @@
             if (statusCode != HttpStatusCode.Accepted)
             {
                 // log or throw
+				throw new System.Net.WebException(statusCode.ToString());
             }
         }
 
@@ -315,7 +328,7 @@
                     }
                     else
                     {
-                        throw new Exception();
+						throw new System.Net.WebException(response.StatusCode.ToString());
                     }
                 }
             }
@@ -370,4 +383,4 @@
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="06/16/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="12/16/2015"
+	wacn.date="01/14/2016"/>
 
 # 通过使用 ASP.NET 注册推送通知的当前用户
 
@@ -223,7 +223,7 @@
 
 <!-- Anchors. -->  
 
-
+<!-- Images. -->
 [0]: ./media/notification-hubs-ios-aspnet-register-user-push-notifications/notification-hub-user-aspnet-ios1.png
 [1]: ./media/notification-hubs-ios-aspnet-register-user-push-notifications/notification-hub-user-aspnet-ios2.png
 
@@ -231,4 +231,4 @@
 [使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [通知中心入门]: /documentation/articles/notification-hubs-ios-get-started
-<!---HONumber=71-->
+<!---HONumber=82-->
