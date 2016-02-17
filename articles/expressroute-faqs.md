@@ -170,47 +170,6 @@ BGP 会话将被删除。当前缀计数低于限制后，将重置这些会话�
 ### 如何更改 ExpressRoute 线路的带宽？
 你可以使用“更新专用线路 API”和 PowerShell cmdlet 来更新 ExpressRoute 线路的带宽。
 
-## ExpressRoute 高级版
-
-### 什么是 ExpressRoute 高级版？
-ExpressRoute 高级版包括下面列出的功能集合。
-
- - 对于公共对等互连和专用对等互连，将路由表限制从 4000 个路由提升为 10,000 个路由。
- - 增加了可连接到 ExpressRoute 线路的 VNet 数量（默认数量为 10 个）。有关详细信息，请参阅下表。
- - 通过 Azure 核心网络建立全局连接。现在，你可以将一个服务区域中 VNet 链接到另一个区域中的 ExpressRoute 线路。**示例：**可以将中国北部创建的 VNet 链接到中国东部创建的 ExpressRoute 线路。
-
-### 如果启用 ExpressRoute 高级版，可将多少个 VNet 链接到一条 ExpressRoute 线路？
-下表列出了链接到 ExpressRoute 线路的 VNet 数的更高限制。默认限制为 10。
-
-**针对创建的线路的限制**
-
-| **线路大小** | **针对默认安装的 VNet 链接数** | **使用 ExpressRoute 高级版时的 VNet 链接数** |
-|--------------|-----------------------------------|------------------------------------------------|
-| 200 Mbps | 10 | 25 |
-| 500 Mbps | 10 | 40 |
-| 1 Gbps | 10 | 50 |
-| 2 Gbps | 10 | 60 |
-| 5 Gbps | 10 | 75 |
-| 10 Gbps | 10 | 100 |
-
-
-
-### 如何启用 ExpressRoute 高级版？
-在启用相应的功能后，将启用 ExpressRoute 高级功能；可以通过更新线路状态关闭高级功能。可以在创建线路时启用 ExpressRoute 高级版，或者通过调用“更新专用线路 API”/PowerShell cmdlet 来启用 ExpressRoute 高级版。
-
-### 如何禁用 ExpressRoute 高级版？
-你可以通过调用“更新专用线路 API”/PowerShell cmdlet 来禁用 ExpressRoute 高级版。在禁用 ExpressRoute 高级版之前，必须确保调整连接需求以满足默认限制。如果你的利用率级别超出了默认限制，我们将拒绝 ExpressRoute 禁用请求。
-
-### 我是否可以从高级功能集选择所需的功能？
-不可以。你无法选择所需的功能。如果你启用 ExpressRoute 高级版，我们会启用所有功能。
-
-### ExpressRoute 高级版的费用是多少？
-有关费用，请参阅[定价详细信息](/home/features/expressroute/#price)。
-
-### 除了支付 ExpressRoute 高级版费用以外，是否还要支付标准版 ExpressRoute 的费用？
-是的。ExpressRoute 高级版的费用是在 ExpressRoute 线路费用以及连接提供商所收费用的基础之上收取的。
-
-
 
 
 <!---HONumber=Mooncake_0104_2016-->
