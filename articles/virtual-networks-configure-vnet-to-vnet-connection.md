@@ -15,11 +15,6 @@
 
 # 在 Azure 经典门户中配置 VNet 到 VNet 连接
 
-> [AZURE.SELECTOR]
-- [Azure 经典门户](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)
-- [PowerShell - Azure Resource Manager](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps)
-
-
 本文将引导你执行相关步骤，以便使用经典部署模型（也称为服务管理）来创建虚拟网络并将其连接到一起。如果你想要适合此配置的其他部署模型，请使用上述选项卡选择所需文章。
 
 **关于 Azure 部署模型**
