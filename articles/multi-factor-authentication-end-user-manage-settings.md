@@ -9,8 +9,9 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="10/29/2015" 
-	wacn.date="01/21/2016"/>
+	ms.date="12/10/2015" 
+	wacn.date="01/14/2016"/>
+
 # 使用 Azure 多重身份验证时遇到问题
 以下信息旨在帮助你解决可能遇到的一些常见问题。
 
@@ -67,7 +68,7 @@
 如何使用多重身份验证|说明
 :------------- | :------------- | 
 [我要将它用于 Office 365](#changing-your-settings-with-office-365)| 这意味着你要通过 Office 365 门户更改设置。
-[我不知道](#changing-your-settings-with-the-myapps-portal)|这意味着你要登录 [http://myapps.microsoft.com](http://myapps.microsoft.com) 并在该 Web 应用上更改设置。
+[我不知道](#changing-your-settings-with-the-myapps-portal)|这意味着你要登录 [http://myapps.microsoft.com](http://myapps.microsoft.com) 并在该网站上更改设置。
 [我要将它用于 Microsoft Azure](#changing-your-settings-with-microsoft-azure)| 这意味着你要通过 Azure 门户更改设置。
 
 

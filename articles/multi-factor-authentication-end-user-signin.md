@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="10/15/2015" 
-	wacn.date="12/17/2015"/>
+	ms.date="11/19/2015" 
+	wacn.date="01/14/2016"/>
 
 # Azure 多重身份验证的登录体验
 > [AZURE.NOTE]本页提供的文档演示了一个典型的登录体验。有关登录的帮助，请参阅[使用 Azure 多重身份验证时遇到问题](/documentation/articles/multi-factor-authentication-end-user-manage-settings)
@@ -57,7 +57,7 @@
 ![Microsoft 发送通知](./media/multi-factor-authentication-end-user-signin-app-notify/notify.png)
 
 
-- 确认通知和点击确认按钮。
+- 请接听电话并按验证键。
 
 ![验证](./media/multi-factor-authentication-end-user-signin-app-notify/phone.png)
 
@@ -72,11 +72,11 @@
 ### 使用移动应用中的验证码登录
 
 - 使用你的用户名和密码登录到 Office 365 等应用程序或服务。
-- Microsoft 将发送一个通知。
+- Microsoft 将提示你输入验证码。
 
 ![输入验证码](./media/multi-factor-authentication-end-user-signin-app-verify/verify.png)
 
-- 确认通知和点击确认按钮。
+- 打开手机上的 Azure 验证器应用，然后在登录框中输入该代码。
 
 ![获取验证码](./media/multi-factor-authentication-end-user-signin-app-verify/phone.png)
 

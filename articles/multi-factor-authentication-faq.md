@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="08/24/2015" 
-	wacn.date="01/21/2016"/>
+	ms.date="11/20/2015" 
+	wacn.date="01/14/2016"/>
 
 # Azure 多重身份验证常见问题
 
@@ -37,7 +37,7 @@
 
 **问：如何对使用 Azure 多重身份验证的组织计费？**
 
-在 Azure 管理门户中创建 Multi-Factor Auth Provider 时，选择“按用户”或“按身份验证”计费/使用模式。这是基于消耗量并针对组织的 Azure 订阅计费的资源，就像虚拟机、 Web 应用等都是针对订阅计费。
+在 Azure 管理门户中创建 Multi-Factor Auth Provider 时，选择“按用户”或“按身份验证”计费/使用模式。这是基于消耗量并针对组织的 Azure 订阅计费的资源，就像虚拟机、网站等都是针对订阅计费。
 
 **问：“按用户”计费模式的收费是以启用多重身份验证的用户数目还是执行身份验证的用户数目为基础？**
 

@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="06/02/2015" 
-	wacn.date="12/17/2015"/>
+	ms.date="11/19/2015" 
+	wacn.date="01/14/2016"/>
 
 # 在 Azure 多重身份验证中使用通知登录到移动应用
 
