@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="site-recovery" 
-	ms.date="10/07/2015" 
-	wacn.date="12/15/2015"/>
+	ms.date="12/03/2015"
+	wacn.date="01/14/2016"/>
 
 
 # 设置本地 VMware 站点之间的保护
@@ -32,15 +32,15 @@ Azure Site Recovery 中的 InMage Scout 在本地 VMware 站点之间提供实�
 2. 单击“数据服务”>“恢复服务”>“Site Recovery 保管库”。
 3. 单击“新建”>“快速创建”。
 4. 在“名称”中，输入一个友好名称以标识此保管库。
-5. 在“区域”中，为保管库选择地理区域。若要查看受支持的区域，请参阅 Azure Site Recovery 价格详细信息中的“地域可用性”[](/home/features/site-recovery/#price)。
+5. 在“区域”中，为保管库选择地理区域。若要查看受支持的区域，请参阅 [Azure Site Recovery 价格详细信息](/home/features/site-recovery/#price)中的“地域可用性”。
 
-<P>检查状态栏以确认保管库已成功创建。保管库将以“活动”状态列在主要的“恢复服务”页上。<b></b></P>
+检查状态栏以确认保管库已成功创建。保管库将以“活动”形式列在主要的“恢复服务”页上。
 
 ## 步骤 2：配置保管库并下载 InMage Scout 组件
 
 1. 单击“创建保管库”。
 2. 在“恢复服务”页中，单击保管库以打开“快速启动”页。
-3. 在下拉列表中，选择“两个本地 VMware 站点之间”。
+3. 在下拉列表中，选择“两个本地 VMWare 站点之间”。
 4. 下载 InMage Scout。所有必需组件的安装程序文件都包含在下载的 zip 文件中。
 
 
@@ -51,28 +51,28 @@ Azure Site Recovery 中的 InMage Scout 在本地 VMware 站点之间提供实�
 1. RX 服务器（如果有）
 2. 配置服务器
 3. 进程服务器
-3. 主目标服务器
-4. vContinuum 服务器
+3. 主目标服务器。
+4. vContinuum 服务器。
 
 按如下所述安装：
 
 1. 下载 [更新](http://download.microsoft.com/download/9/F/D/9FDC6001-1DD0-4C10-BDDD-8A9EBFC57FDF/ASR Scout 8.0.1 Update1.zip) zip 文件。此 zip 文件包含以下文件：
 
 	-  RX_8.0.1.0_GA_Update_1_3279231_23Jun15.tar.gz
-	-  CX_Windows_8.0.1.0_GA_Update_1_3259146_23Jun15.exe
+	-  CX_Windows_8.0.2.0_GA_Update_2_4306954_21Aug15.exe
 	-  UA_Windows_8.0.1.0_GA_Update_1_3259401_23Jun15.exe
 	-  UA_RHEL6-64_8.0.1.0_GA_Update_1_3259401_23Jun15.tar.gz
 	-  vCon_Windows_8.0.1.0_GA_Update_1_3259523_23Jun15.exe
 2. 解压缩 zip 文件。
 2. **RX 服务器**：将 **RX_8.0.1.0_GA_Update_1_3279231_23Jun15.tar.gz** 复制到 RX 服务器并将其解压缩。在解压缩的文件夹中运行 **/Install**。
-2. **配置服务器/进程服务器**：将 **CX_Windows_8.0.1.0_GA_Update_1_3259146_23Jun15.exe** 复制到配置服务器和进程服务器。双击以运行该文件。
+2. **配置服务器/进程服务器**：将 **CX_Windows_8.0.2.0_GA_Update_2_4306954_21Aug15.exe** 复制到配置服务器和进程服务器。双击以运行该文件。
 3. **Windows 主目标服务器**：若要更新统一代理，请将 **UA_Windows_8.0.1.0_GA_Update_1_3259401_23Jun15.exe** 复制到主目标服务器。双击以运行该文件。请注意，适用于 Windows 的统一代理并不适用于源服务器。只能将它安装在 Windows 主目标服务器上。
 4. **Linux 主目标服务器**：若要更新统一代理，请将 **UA_RHEL6-64_8.0.1.0_GA_Update_1_3259401_23Jun15.tar.gz** 复制到主目标服务器并将它解压缩。在解压缩的文件夹中运行 **/Install**。
 5. **vContinuum 服务器**：将 **vCon_Windows_8.0.1.0_GA_Update_1_3259523_23Jun15.exe** 复制到 vContinuum 服务器。确保已关闭 vContinuum 向导。双击以运行该文件。
 
 ## 步骤 4：设置复制
 5. 设置源与目标 VMware 站点之间的复制。
-6. 有关指引，请使用随产品下载的 InMage Scout 文档。你也可以访问以下文档：
+6. 有关指导，请使用随产品下载的 InMage Scout 文档。你也可以访问以下文档：
 
 	- [发行说明](http://download.microsoft.com/download/4/5/0/45008861-4994-4708-BFCD-867736D5621A/InMage_Scout_Standard_Release_Notes.pdf)
 	- [兼容性对照表](http://download.microsoft.com/download/C/D/A/CDA1221B-74E4-4CCF-8F77-F785E71423C0/InMage_Scout_Standard_Compatibility_Matrix.pdf)
@@ -82,6 +82,18 @@ Azure Site Recovery 中的 InMage Scout 在本地 VMware 站点之间提供实�
 
 
 ##<a id="updates"></a> 更新
+### ASR Scout 8.0.1 Update 03Dec15
+
+Update 03-Dec-15 中的修复包括：
+
+- **配置服务器** — 修复了在 Site Recovery 中注册配置服务器时妨碍 31 天免费计量功能正常使用的问题。
+- **统一代理** — 修复了主目标的 Update 1 中的问题，该问题导致从版本 8.0 升级到 8.0.1 时，更新无法安装在主目标服务器上。
+
+>[AZURE.NOTE]
+>
+>-	所有 ASR 更新都是累积更新。
+>-	CS 和 RX 更新在应用到系统以后都无法回退。
+
 
 ### ASR Scout 8.0.1 Update 1
 
@@ -111,6 +123,6 @@ Azure Site Recovery 中的 InMage Scout 在本地 VMware 站点之间提供实�
 	
 ## 后续步骤
 
-请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)上发布你的任何问题。
+请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/forums/zh-cn/home?forum=hypervrecovmgr)上发布你的任何问题。
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0104_2016-->

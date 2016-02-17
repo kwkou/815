@@ -1,28 +1,27 @@
 <properties
-	pageTitle="Site Recovery 概述"
-	description="Azure Site Recovery 可以协调位于本地的虚拟机和物理服务器到 Azure 或辅助本地站点的复制、故障转移和恢复。"
-	services="site-recovery"
-	documentationCenter=""
-	authors="rayne-wiselman"
-	manager="jwhit"
+	pageTitle="什么是 Site Recovery？| Windows Azure" 
+	description="Azure Site Recovery 可以协调位于本地的虚拟机和物理服务器到 Azure 或辅助本地站点的复制、故障转移和恢复。" 
+	services="site-recovery" 
+	documentationCenter="" 
+	authors="rayne-wiselman" 
+	manager="jwhit" 
 	editor=""/>
 
 <tags
 	ms.service="site-recovery"
-	ms.date="08/05/2015" 
-	wacn.date="11/02/2015"/>
+	ms.date="12/14/2015" 
+	wacn.date="01/14/2016"/>
 
-#  Site Recovery 概述
+#  什么是 Site Recovery？
 
-Site Recovery 服务有助于构建稳健的业务连续性和灾难恢复 (BCDR) 解决方案，并通过协调和自动化到 Azure 或辅助本地数据中心的复制与故障转移，来保护本地物理服务器和虚拟机。
+Site Recovery 是有助于实现业务连续性和灾难恢复 (BCDR) 策略的 Azure 服务，因为它可以协调从本地服务器和虚拟机到辅助本地数据中心或 Azure 的复制。Site Recovery 负责进行复制，只需单击一下，即可开始故障转移和恢复操作。阅读在[常见问题](/documentation/articles/site-recovery-faq)中列出的常见问题
 
-- **简化** - 使用 Site Recovery 可以轻松配置复制并针对本地工作负载及应用程序运行故障转移和恢复，因此可帮助简化 BCDR 策略。
-- **复制** - 可将本地工作负载复制到 Azure 存储空间或辅助数据中心。
-- **保管库** - 若要管理复制，可在选择的 Azure 区域中设置一个 Site Recovery 保管库。所有元数据将保留在该区域。
-- **元数据** - 应用程序数据不会发送到 Azure。Site Recovery 只需要虚拟机名称和 VMM 云名称等元数据，以便协调复制和故障转移。
-- **与 Azure 建立连接** - 管理服务器根据你的部署方案与 Azure 通信。例如，如果你要复制位于本地 VMM 云中的虚拟机，则 VMM 服务器将通过加密的出站 HTTPS 连接来与 Site Recovery 通信。不需要从虚拟机或 Hyper-V 主机建立连接。
-- **Hyper-V 副本** - Azure Site Recovery 为复制过程使用 Hyper-V 副本；如果你要在两个本地 VMM 站点之间复制，则还可以使用 SAN 复制。执行初始复制时，Site Recovery 将使用智能复制 - 只复制数据块而不是整个 VHD。对于正在进行的复制，只会复制增量更改。Site Recovery 支持脱机数据传输，并可与 WAN 优化器配合工作。
-- **价格** - 可以[了解更多](/home/features/site-recovery/#price)有关 Site Recovery 价格的信息。
+
+## 为何使用 Site Recovery？ 
+
+- **简化 BCDR 操作** - Site Recovery 可以简化本地工作负荷和应用程序的复制、故障转移和恢复操作。
+- **增强复制的灵活性** - 你可以复制本地服务器、Hyper-V 虚拟机和 VMware 虚拟机。执行初始复制时，Site Recovery 将使用智能复制 - 只复制数据块而不是整个 VHD。对于正在进行的复制，只会复制增量更改。Site Recovery 支持脱机数据传输，并可与 WAN 优化器配合工作。 
+- **不再需要辅助数据中心** - Site Recovery 可以自动执行数据中心之间的复制，但它也允许你复制到 Azure，因此不需要辅助性的现场位置。复制的数据可以存储在 Azure 存储空间，可充分利用其所提供的弹性。
 
 
 ## 部署方案
@@ -31,44 +30,37 @@ Site Recovery 服务有助于构建稳健的业务连续性和灾难恢复 (BCDR
 
 **复制目标** | **复制源（本地）** | **详细信息** | **文章**
 ---|---|---|---
-Azure | Hyper-V 站点 | 将定义为 Hyper-V 站点的一个或多个本地 Hyper-V 主机服务器上的虚拟机复制到 Azure。不需要 VMM 服务器。 | [了解详细信息](/documentation/articles/site-recovery-hyper-v-site-to-azure)
-Azure| VMM 服务器 | 将 VMM 云中一个或多个本地 Hyper-V 主机服务器上的虚拟机复制到 Azure。 | [了解详细信息](/documentation/articles/site-recovery-vmm-to-azure)
-Azure | 物理 Windows 服务器 | 将物理 Windows 或 Linux 服务器复制到 Azure | [了解详细信息](/documentation/articles/site-recovery-vmware-to-azure)
-Azure | VMware 虚拟机 | 将 VMware 虚拟机复制到 Azure | [了解详细信息](/documentation/articles/site-recovery-vmware-to-azure)
-辅助数据中心 | VMM 服务器 | 将 VMM 云中本地 Hyper-V 主机服务器上的虚拟机复制到另一数据中心内的辅助 VMM 服务器 | [了解详细信息](/documentation/articles/site-recovery-vmm-to-vmm)
-辅助数据中心 | 使用 SAN 的 VMM 服务器 | 使用 SAN 复制将 VMM 云中本地 Hyper-V 主机服务器上的虚拟机复制到另一数据中心内的辅助 VMM 服务器| [了解详细信息](/documentation/articles/site-recovery-vmm-san)
-辅助数据中心 | 单个 VMM 服务器 | 将 VMM 云中本地 Hyper-V 主机服务器上的虚拟机复制到同一 VMM 服务器上的辅助云 | [了解详细信息](/documentation/articles/site-recovery-single-vmm)
+VMware 虚拟机 | 本地 VMware 服务器 | Azure 存储空间 | [部署](/documentation/articles/site-recovery-vmware-to-azure)
+Windows/Linux 物理服务器 | 本地物理服务器 | Azure 存储空间 | [部署](/documentation/articles/site-recovery-vmware-to-azure)
+Hyper-V 虚拟机 | VMM 云中的本地 Hyper-V 主机服务器 | Azure 存储空间 | [部署](/documentation/articles/site-recovery-vmm-to-azure)
+Hyper-V 虚拟机 | 本地 Hyper-V 站点（一个或多个 Hyper-V 主机服务器） | Azure 存储空间 | [部署](/documentation/articles/site-recovery-hyper-v-site-to-azure)
+本地 Hyper-V 虚拟机| VMM 云中的本地 Hyper-V 主机服务器 | VMM 云中的辅助数据中心的本地 Hyper-V 主机服务器 | [部署](/documentation/articles/site-recovery-vmm-to-vmm)
+Hyper-V 虚拟机 | 使用 SAN 存储的 VMM 云中的本地 Hyper-V 主机服务器| 使用 SAN 存储的 VMM 云中的辅助数据中心的本地 Hyper-V 主机服务器 | [部署](/documentation/articles/site-recovery-vmm-san)
+VMware 虚拟机 | 本地 VMware 服务器 | 运行 VMware 的辅助数据中心 | [部署](/documentation/articles/site-recovery-vmware-to-vmware) 
+Windows/Linux 物理服务器 | 本地物理服务器 | 辅助数据中心 | [部署](/documentation/articles/site-recovery-vmware-to-vmware) 
+
+以下关系图概述了这些内容。
+
+![本地到本地](./media/site-recovery-overview/asr-overview-graphic.png)
+
+## 我可以保护哪些工作负荷？
+
+Site Recovery 有助于实现设备感知型业务连续性。可以使用 Site Recovery 来协调 Windows 和第三方应用的灾难恢复。这种应用程序感知型保护提供以下功能：
 
 
-## 工作负载指南
+- 几乎同步的复制，Hyper-V 的 RPO 低至 30 秒，可以针对 VMware 持续进行复制，满足大多数关键应用程序的需要。
+- 针对单层或 N 层应用程序的应用程序一致快照
+- 集成 SQL Server AlwaysOn，纳入了其他应用程序级别的复制技术，包括 Active Directory 复制、Exchange DAGS 和 Oracle 数据防护。
+- 灵活的恢复计划，一次单击即可恢复整个应用程序堆栈，包括外部脚本或手动操作。 
+- Site Recovery 和 Azure 中的高级网络管理可以简化应用的网络要求，包括保留 IP 地址、配置负载平衡器或集成 Azure 流量管理器以降低 RTO 网络切换数。
+- 丰富的自动化库，提供特定于应用程序的生产就绪型脚本，可以下载并与 Site Recovery 集成。  
 
-请参阅[本文档](/documentation/articles/site-recovery-workload)，了解如何使用 Azure Site Recovery 来完成不同工作负荷。
 
-
-## 功能和要求
-
-下表汇总了 Site Recovery 的主要功能，以及在复制到 Azure 期间和使用默认 Hyper-V 副本复制与 SAN 复制到辅助站点期间，如何处理这些功能。
-
-功能|复制到 Azure|复制到辅助站点（Hyper-V 副本）|复制到辅助站点 (SAN)
----|---|---|---
-数据复制|有关本地服务器和虚拟机的元数据将存储在 Site Recovery 保管库中。</p> <p>复制的数据存储在 Azure 存储空间中。|有关本地服务器和虚拟机的元数据将存储在 Site Recovery 保管库中。</p> <p>复制的数据存储在目标 Hyper-V 服务器指定的位置。|有关本地服务器和虚拟机的元数据将存储在 Site Recovery 保管库中。</p> <p>复制的数据存储在目标数组存储中。
-保管库要求|支持 Site Recovery 服务的 Azure 帐户|支持 Site Recovery 服务的 Azure 帐户|支持 Site Recovery 服务的 Azure 帐户
-复制|将源 Hyper-V 主机中的虚拟机复制到 Azure 存储空间。故障回复到源位置。|将源 Hyper-V 主机中的虚拟机复制到目标 Hyper-V 主机。故障回复到源位置。|将源 SAN 存储设备中的虚拟机复制到目标 SAN 设备。故障回复到源位置。
-虚拟机|Azure 存储空间中存储的虚拟机硬盘|Hyper-V 主机上存储的虚拟机硬盘|SAN 存储阵列上存储的虚拟机硬盘
-Azure 存储空间|需要用来存储已复制的虚拟机硬盘|不适用|不适用
-SAN 存储阵列|不适用|不适用|SAN 存储阵列在源和目标站点中都必须可用，并且必须由 VMM 管理
-VMM 服务器|只要求源站点中有 VMM 服务器。|建议在源和目标站点中提供 VMM 服务器。可以在单个 VMM 服务器上的云之间复制。|要求源和目标 VMM 站点中有 VMM 服务器。云必须至少包含一个 Hyper-V 群集。
-VMM 版本|System Center 2012 R2<p>System Center 2012 SP1|System Center 2012 R2|带有 VMM 更新汇总 5.0 的 System Center 2012 R2
-VMM 配置|在源和目标站点中设置云</p><p>在源和目标站点中设置 VM 网络<p>在源和目标站点中设置存储分类<p>在源和目标 VMM 服务器上安装提供程序|在源站点中设置云</p><p>设置 SAN 存储</p><p>在源站点中设置 VM 网络</p><p>在源 VMM 服务器上安装提供程序</p><p>启用虚拟机保护|在源和目标站点中设置云</p><p>在源和目标站点中设置 VM 网络</p><p>在源和目标 VMM 服务器上安装提供程序</p><p>启用虚拟机保护
-Azure Site Recovery 提供程序</p><p>用于通过 HTTPS 连接到 Site Recovery|在源 VMM 服务器上安装|在源和目标 VMM 服务器上安装|在源和目标 VMM 服务器上安装
-Azure 恢复服务代理</p><p>用于通过 HTTPS 连接到 Site Recovery|在 Hyper-V 主机服务器上安装|不是必需|不是必需
-虚拟机恢复点|按时间设置恢复点。</p> <p>指定恢复点应保留多久（0-24 小时）|按数量设置恢复点。</p> <p>指定应保留多少个附加恢复点 (0-15)。默认情况下，每隔一小时创建一个恢复点|在阵列存储设置中配置
-网络映射|将 VM 网络映射到 Azure 网络。</p> <p>网络映射可确保在同一源 VM 网络中进行故障转移的所有虚拟机都可以在故障转移之后进行连接。另外，如果目标 Azure 网络上有网关，那么，虚拟机就可以连接到本地虚拟机。</p><p>如果不启用映射，则只有在同一恢复计划中进行故障转移的虚拟机可以在故障转移到 Azure 之后相互连接。|将源 VM 网络映射到目标 VM 网络。</p> <p>网络映射用于将复制的虚拟机置于最佳 Hyper-V 主机服务器上，并确保与源 VM 网络相关联的虚拟机在故障转移之后与映射的目标网络相关联。</p><p>如果不启用映射，则不会将复制的虚拟机连接到网络。|将源 VM 网络映射到目标 VM 网络。</p> <p>网络映射确保与源 VM 网络相关联的虚拟机在故障转移之后与映射的目标网络相关联。</p><p>如果不启用映射，则不会将复制的虚拟机连接到网络。
-存储映射|不适用|将源 VMM 服务器上的存储分类映射到目标 VMM 服务器上的存储分类。</p> <p>映射使得源存储分类中的虚拟机硬盘将来在故障转移之后能够位于目标存储分类中。</p><p>如果不启用存储映射，复制的虚拟硬盘将存储在目标 Hyper-V 主机服务器上的默认位置。|主辅站点中存储阵列和池之间的映射。
+详细信息请参阅 [Site Recovery 可以保护哪些工作负荷？](/documentation/articles/site-recovery-workload)。
 
 
 ## 后续步骤
 
-完成本概述后，请[阅读最佳实践](/documentation/articles/site-recovery-best-practices)，帮助开始进行部署规划。
+完成本概述后，可[详细了解](/documentation/articles/site-recovery-components) Site Recovery 体系结构。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0104_2016-->
