@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/22/2015"
-	wacn.date="12/31/2015"/>
+	wacn.date="02/17/2016"/>
 
 # 创建 Windows 虚拟机的不同方式
 
@@ -31,12 +31,12 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 
 有关 Azure CLI，请参阅：
 
-- [将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](virtual-machines-command-line-tools).
-- [使用 Azure CLI 创建多 VM 部署](virtual-machines-create-multi-vm-deployment-xplat-cli)
+- [将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools).
+- [使用 Azure CLI 创建多 VM 部署](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli)
 
 有关 Azure PowerShell，请参阅：
 
-- [在 Azure 中创建 SQL Server 虚拟机 (PowerShell)](virtual-machines-sql-server-create-vm-with-powershell)
+- [在 Azure 中创建 SQL Server 虚拟机 (PowerShell)](/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell)
 - [使用 PowerShell 来部署和管理虚拟机][]
 
 ## 操作系统和映像选项
