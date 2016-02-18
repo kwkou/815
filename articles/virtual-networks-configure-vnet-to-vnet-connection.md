@@ -17,10 +17,6 @@
 
 本文将引导你执行相关步骤，以便使用经典部署模型（也称为服务管理）来创建虚拟网络并将其连接到一起。如果你想要适合此配置的其他部署模型，请使用上述选项卡选择所需文章。
 
-**关于 Azure 部署模型**
-
-[AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)]如果你想要将经典部署模型中创建的 VNet 连接到通过资源管理器模型创建的 VNet。请参阅[将经典 VNet 连接到新 VNet](/documentation/articles/virtual-networks-arm-asm-s2s)。
-
 ## 关于 VNet 到 VNet 的连接
 
 将虚拟网络连接到虚拟网络（VNet 到 VNet）非常类似于将虚拟网络连接到本地站点位置。这两种连接类型都使用 VPN 网关来提供使用 IPsec/IKE 的安全隧道。你连接的 VNet 可位于不同的订阅和不同的区域中。你甚至可以将 VNet 到 VNet 通信与多站点配置组合使用。这样，便可以建立将跨界连接与虚拟网络间连接相结合的网络拓扑，如下图所示：
