@@ -124,8 +124,6 @@
 
 选择“加载项”可从列表中选择分析外接程序，目前 Azure 中国上不支持 Azure 应用商店。选择“自定义”可从列表中选择 New Relic 之类的分析提供程序。如果你使用某一自定义提供程序，则必须在“提供程序密钥”框中输入许可证密钥。
 
-有关 New Relic 与 Azure Web 应用配合使用的详细信息，请参阅 [Azure Web 应用上的 New Relic 应用程序性能管理](/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management)。
-
 ### 应用设置
 
 你的 Web 应用在启动时将加载的名称/值对。
