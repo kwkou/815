@@ -126,19 +126,19 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 **列出 Azure CLI 配置设置**
 
-	config list [options]
+	conconfig list [options]
 
 **删除配置设置**
 
-	config delete [options] <name>
+	conconfig delete [options] <name>
 
 **更新配置设置**
 
-	config set <name> <value>
+	conconfig set <name> <value>
 
-**将 Azure CLI 工作模式设置为 `arm` 或 `asm`**
+**将 Azure CLI 工作模式设置为 arm 或 asm**
 
-	config mode [options] <modename>
+	conconfig mode [options] <modename>
 
 
 ## azure feature：用于管理帐户功能的命令
