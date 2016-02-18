@@ -35,6 +35,7 @@
 
 可以选择使用 **sudo -s** 获取根 shell。
 
+- 请参阅[在 Azure 中对 Linux 虚拟机使用根特权](/documentation/articles/virtual-machines-linux-use-root-privileges)
 
 ## 防火墙配置
 

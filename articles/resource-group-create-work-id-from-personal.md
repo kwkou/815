@@ -47,7 +47,7 @@
 
 ## 在默认域中创建新用户
 
-单击“用户”，然后查找你的单个个人帐户。在“源自”列中，你应看到它是一个 **WindowsAzure.cn 帐户**。我们要在默认的 partner.onmschina.cn Azure Active Directory 域中创建用户。
+单击“用户”，然后查找你的单个个人帐户。在“源自”列中，你应看到它是一个 **Microsoft 帐户**。我们要在默认的 partner.onmschina.cn Azure Active Directory 域中创建用户。
 
 ![](./media/resource-group-create-work-id-from-personal/defaultdirectoryuserslisting.png)
 

@@ -106,8 +106,6 @@ Azure Web 应用为大规模的关键任务 [WordPress][wordpress] Web 应用提
 
 ###<a name="Migrate-an-existing-WordPress-site-to-Azure"></a> 将现有 WordPress Web 应用迁移到 Azure
 
-如[架构与规划](#planning)部分所述，有两种方法迁移 WordPress 网站。
-
 如[架构与规划](#planning)部分所述，有两种方法迁移 WordPress Web 应用。
 
 * **导出和导入** - 针对不含大量定制内容的 Web 应用，或者您只想要移动内容的位置。

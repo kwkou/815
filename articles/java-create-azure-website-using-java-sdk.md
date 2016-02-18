@@ -223,7 +223,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
         private static String keyStoreLocation = "<certificate-store-path>";
         private static String keyStorePassword = "<certificate-password>";
     
-        // Define Web 应用parameter values.
+        // Define Web app parameter values.
         private static String webAppName = "WebDemoWebApp";
         private static String domainName = ".chinacloudsites.cn";
         private static String webSpaceName = WebSpaceNames.WESTUSWEBSPACE;
@@ -262,7 +262,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
         // and pass it the Azure Websites management configuration object.
         WebSiteManagementClient webAppManagementClient = WebSiteManagementService.create(config);
 
-        // Create an App Service plan for the Web 应用with the specified parameters.
+        // Create an App Service plan for the Web app with the specified parameters.
         WebHostingPlanCreateParameters appServicePlanParams = new WebHostingPlanCreateParameters();
         appServicePlanParams.setName(appServicePlanName);
         appServicePlanParams.setSKU(SkuOptions.Free);
@@ -274,7 +274,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
         webSpaceDetails.setPlan(WebSpacePlanNames.VIRTUALDEDICATEDPLAN);
         webSpaceDetails.setName(webSpaceName);
 
-        // Set Web 应用parameters.
+        // Set Web app parameters.
         // Note that the server farm name takes the App Service plan name.
         WebSiteCreateParameters webAppCreateParameters = new WebSiteCreateParameters();
         webAppCreateParameters.setName(webAppName);
@@ -286,23 +286,23 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
         usageMetric.setSiteMode(WebSiteMode.Basic);
         usageMetric.setComputeMode(WebSiteComputeMode.Shared);
 
-        // Define the Web 应用object.
+        // Define the Web app object.
         ArrayList<String> fullWebAppName = new ArrayList<String>();
         fullWebAppName.add(webAppName + domainName);
         WebSite webApp = new WebSite();
         webApp.setHostNames(fullWebAppName);
 
-        // Create the Web 应用.
+        // Create the Web app.
         WebSiteCreateResponse webAppCreateResponse = webAppManagementClient.getWebSitesOperations().create(webSpaceName, webAppCreateParameters);
 
         // Output the HTTP status code of the response; 200 indicates the request succeeded; 4xx indicates failure.
         System.out.println("----------");
-        System.out.println(" Web 应用created - HTTP response " + webAppCreateResponse.getStatusCode() + "\n");
+        System.out.println(" Web app created - HTTP response " + webAppCreateResponse.getStatusCode() + "\n");
 
-        // Output the name of the Web 应用that this application created.
+        // Output the name of the Web app that this application created.
         String shinyNewWebAppName = webAppCreateResponse.getWebSite().getName();
         System.out.println("----------\n");
-        System.out.println("Name of Web 应用created: " + shinyNewWebAppName + "\n");
+        System.out.println("Name of Web app created: " + shinyNewWebAppName + "\n");
         System.out.println("----------\n");
     }
 
@@ -319,7 +319,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
             throws IOException, URISyntaxException, ServiceException,
             ParserConfigurationException, SAXException, Exception {
 
-            // Create Web 应用
+            // Create Web app
             createWebApp();
 
         }  // end of main()
@@ -332,11 +332,11 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 若要验证应用程序是否运行，请单击“运行 > 运行”。在应用程序完成运行后，你应该会在 Eclipse 控制台中看到以下输出：
 
     ----------
-   Web 应用created - HTTP response 200
+   Web app created - HTTP response 200
     
     ----------
     
-    Name of Web 应用created: WebDemoWebApp
+    Name of Web app created: WebDemoWebApp
     
     ----------
 
