@@ -97,6 +97,6 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 |VM 扩展名称|功能说明|更多信息|
 |---|---|---|
 |**BGInfo**|使用 RDP 时在桌面上显示有用服务器信息的合并图片。|[BGInfo 扩展](https://msdn.microsoft.com/zh-cn/library/dn606289.aspx)|
-|**HpcVmDrivers**|在运行 Windows Server 2012 R2 或 Windows Server 2012 的 A8 或 A9 VM 上，安装、配置和维护远程直接内存访问 (RDMA) 网络设备驱动程序。运行并行 MPI 应用程序时，支持群集 A8 或 A9 VM 使用 RDMA 网络。
+|**HpcVmDrivers**|在运行 Windows Server 2012 R2 或 Windows Server 2012 的 VM 上，安装、配置和维护远程直接内存访问 (RDMA) 网络设备驱动程序。运行并行 MPI 应用程序时，支持群集 VM 使用 RDMA 网络。
 
 <!---HONumber=Mooncake_0118_2016-->
