@@ -16,8 +16,7 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
-
-本文介绍如何在 Azure 经典（服务管理）部署模型中，使用 Azure 应用商店中的 <!--[-->Microsoft HPC Pack 虚拟机映像<!--](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/)-->创建 Windows HPC 群集的头节点。头节点需要加入到 Azure 虚拟网络的 Active Directory 域中。可以使用此头节点在 Azure 中进行 HPC Pack 概念验证部署，并将计算资源添加到该群集以运行 HPC 工作负荷。
+头节点需要加入到 Azure 虚拟网络的 Active Directory 域中。可以使用此头节点在 Azure 中进行 HPC Pack 概念验证部署，并将计算资源添加到该群集以运行 HPC 工作负荷。
 
 
 ![HPC Pack 头节点][headnode]
@@ -25,7 +24,7 @@
 >[AZURE.NOTE]目前，HPC Pack VM 映像为基于预安装了 HPC Pack 2012 R2 Update 2 的 Windows Server 2012 R2 Datacenter。还预安装了 Microsoft SQL Server 2014 Express。
 
 
-对于 Azure 中 HPC Pack 群集的生产部署，我们建议采用自动部署方法，如 <!--[-->HPC Pack IaaS 部署脚本<!--](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)-->或者 Azure 资源管理器<!--[-->快速入门模板<!--](https://azure.microsoft.com/documentation/templates/)-->。
+对于 Azure 中 HPC Pack 群集的生产部署，我们建议采用自动部署方法，如 [HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)。
 
 ## 规划注意事项
 
@@ -52,7 +51,7 @@
 
     * 对于简单的概念验证部署，可以忽略此步骤，稍后将头节点 VM 提升为域控制器。
 
-3. 在 Azure 管理门户或 Azure 预览门户中，通过从 Azure 应用商店中选择 HPC Pack 2012 R2 映像，创建一台经典 VM。（请参阅[此处](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)的管理门户步骤。）
+3. 在 Azure 管理门户中，通过从 Azure 库中选择 HPC Pack 2012 R2 映像，创建一台经典 VM。（请参阅[此处](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)的管理门户步骤。）
 
     **注意事项**
 

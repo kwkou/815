@@ -5,13 +5,13 @@
 
 Oracle Data Guard 支持对 Oracle Database 的数据保护和灾难恢复。它是针对整个的 Oracle Database 提供灾难恢复、数据保护和高可用性的简单、高性能、嵌入式解决方案。
 
-本教程假定你已具有 Oracle Database 的高可用性和灾难恢复概念的理论和实践知识。有关信息，请参阅 [Oracle 网站](http://www.oracle.com/technetwork/database/features/availability/index.html)以及<!-- [-->Oracle Data Guard 概念和管理指南<!--](http://docs.oracle.com/cd/E11882_01/server.112/e17022/create_ps.htm)-->。
+本教程假定你已具有 Oracle Database 的高可用性和灾难恢复概念的理论和实践知识。有关信息，请参阅 [Oracle 网站](http://www.oracle.com/technetwork/database/features/availability/index.html)以及 Oracle Data Guard 概念和管理指南.
 
 此外，本教程假定你已经实现了以下先决条件：
 
 - 已查看 [Oracle 虚拟机映像 - 其他注意事项](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)主题中的高可用性和灾难恢复注意事项部分。请注意，Azure 支持独立 Oracle Database 实例，但当前暂不支持 Oracle 实时应用集群 (Oracle RAC)。
 
-- 已使用 Windows Server 上 Oracle Enterprise Edition 映像所提供的相同平台在 Azure 中创建了两个虚拟机 (VM)。有关信息，请参阅[在 Azure 中创建 Oracle Database 12 c 虚拟机](/documentation/articles/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine)和 [Azure 虚拟机](http://www.windowsazure.cn/documentation/services/virtual-machines/)。确保这两个虚拟机在[相同的云服务](/documentation/articles/virtual-machines-load-balance)和相同的<!--[-->虚拟网络<!--](http://azure.microsoft.com/documentation/services/virtual-network/)-->中，以确保它们可以通过永久性专用 IP 地址相互进行访问。此外，建议将 VM 放在相同的[可用性集](/documentation/articles/virtual-machines-manage-availability)中，以便允许 Azure 将它们放入不同的容错域和升级域中。请注意，Oracle Data Guard 仅在 Oracle Database Enterprise Edition 中可用。每个虚拟机必须具有至少 2 GB 的内存和 5 GB 的磁盘空间。有关平台提供的 VM 大小的最新信息，请参阅 [Azure 的虚拟机大小](http://msdn.microsoft.com/zh-cn/library/dn197896.aspx)。如果自己的 VM 需要附加磁盘卷，则可以附加更多磁盘。有关信息，请参阅[如何将数据磁盘附加到虚拟机](/documentation/articles/storage-windows-attach-disk)。
+- 已使用 Windows Server 上 Oracle Enterprise Edition 映像所提供的相同平台在 Azure 中创建了两个虚拟机 (VM)。有关信息，请参阅[在 Azure 中创建 Oracle Database 12 c 虚拟机](/documentation/articles/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine)和 [Azure 虚拟机](http://www.windowsazure.cn/documentation/services/virtual-machines/)。确保这两个虚拟机在[相同的云服务](/documentation/articles/virtual-machines-load-balance)和相同的[虚拟网络](/documentation/services/networking/)中，以确保它们可以通过永久性专用 IP 地址相互进行访问。此外，建议将 VM 放在相同的[可用性集](/documentation/articles/virtual-machines-manage-availability)中，以便允许 Azure 将它们放入不同的容错域和升级域中。请注意，Oracle Data Guard 仅在 Oracle Database Enterprise Edition 中可用。每个虚拟机必须具有至少 2 GB 的内存和 5 GB 的磁盘空间。有关平台提供的 VM 大小的最新信息，请参阅 [Azure 的虚拟机大小](http://msdn.microsoft.com/zh-cn/library/dn197896.aspx)。如果自己的 VM 需要附加磁盘卷，则可以附加更多磁盘。有关信息，请参阅[如何将数据磁盘附加到虚拟机](/documentation/articles/storage-windows-attach-disk)。
 
 - 已将名称为“Machine1”的虚拟机设为主虚拟机，而名称为“Machine2”的虚拟机则设为 Azure 门户中的备用 VM。
 

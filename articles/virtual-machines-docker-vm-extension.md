@@ -27,8 +27,6 @@
 若要立即创建启用 Docker 的 VM，请参阅：
 
 + [如何从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展]
-<!-- + [如何在 Azure 门户中使用 Docker VM 扩展] -->
-<!-- + [如何在 Azure 应用商店中快速开始使用 Docker]-->
 
 若要了解有关该扩展及其工作原理的详细信息，请参阅 [Docker 扩展用户指南](https://github.com/Azure/azure-docker-extension/blob/master/README.md)。
 
@@ -65,7 +63,6 @@ Docker VM 扩展是在你创建的 VM 实例中安装的组件，它会自行安
 若要立即创建启用 Docker 的 VM，请参阅：
 
 + [如何从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展]
-<!-- + [如何在 Azure 门户中使用 Docker VM 扩展] -->
 
 ## 适用于 Linux 和 Windows 的虚拟机扩展
 [Azure 的 Docker VM 扩展](https://github.com/Azure/azure-docker-extension/blob/master/README.md)只是提供特殊行为的众多 VM 扩展之一，还有许多正在开发中。例如，许多 [Linux VM 代理扩展](/documentation/articles/virtual-machines-linux-agent-user-guide)功能可让你修改和管理虚拟机，包括安全功能、内核和网络功能，等等。例如，VMAccess 扩展可让你重置管理员密码或 SSH 密钥。
