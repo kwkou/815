@@ -34,7 +34,7 @@
 	- 若要启用端到端连接，必须配置 Azure 专用对等互连并运行你的网络和 Azure 之间的 BGP 对等互连。
 	- 必须已创建并完全预配一个虚拟网络和一个虚拟网络网关。遵照说明创建 [VPN 网关](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)
 
-最多可以将 10 个虚拟网络链接到一条 ExpressRoute 线路。所有 ExpressRoute 线路必须位于同一个地理政治区域。如果你启用了 ExpressRoute 高级版外接程序，则可将更多数量的虚拟网络连接到 ExpressRoute 线路。有关高级版外接程序的更多详细信息，请参阅[常见问题](/documentation/articles/expressroute-faqs)。
+最多可以将 10 个虚拟网络链接到一条 ExpressRoute 线路。所有 ExpressRoute 线路必须位于同一个地理政治区域。
 
 ## 将同一 Azure 订阅中的 VNet 连接到 ExpressRoute 线路
 

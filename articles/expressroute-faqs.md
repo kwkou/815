@@ -108,13 +108,13 @@ ExpressRoute 目前支持大多数 Windows Azure 服务。
 有关详细信息，请参阅 [ExpressRoute 线路预配工作流和线路状态](/documentation/articles/expressroute-workflows)。
 
 ### 我的 ExpressRoute 线路是否存在连接界限？
-是的。[ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)页概述了 ExpressRoute 线路的连接界限。一条 ExpressRoute 线路的连接范围限制为单个地缘政治区域。可以通过启用 ExpressRoute 高级功能，将连接扩展为跨服务区域。
+是的。[ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)页概述了 ExpressRoute 线路的连接界限。一条 ExpressRoute 线路的连接范围限制为单个地缘政治区域。
 
 ### 能否将多个虚拟网络链接到一条 ExpressRoute 线路？
 是的。最多可以将 10 个虚拟网络链接到一条 ExpressRoute 线路。
 
 ### 我有多个包含虚拟网络的 Azure 订阅。能否将不同订阅中的虚拟网络连接到单个 ExpressRoute 线路？
-是的。最多可以授权其他 10 个 Azure 订阅使用单条 ExpressRoute 线路。可以通过启用 ExpressRoute 高级功能来提高此限制。
+是的。最多可以授权其他 10 个 Azure 订阅使用单条 ExpressRoute 线路。
 
 <!--有关详细信息，请参阅[在多个订阅之间共享 ExpressRoute 线路](/documentation/articles/expressroute-share-circuit)。-->
 
@@ -143,7 +143,7 @@ ExpressRoute 目前支持大多数 Windows Azure 服务。
 你必须建立一条 ExpressRoute 线路并为公共对等互连配置路由。
 
 ### 对于我可以公布的路由数有限制吗？
-是的。对于专用对等互连和公共对等互连，我们最多接受 4000 个路由前缀。如果启用 ExpressRoute 高级功能，可以将此限制提高为 10,000 个路由。
+是的。对于专用对等互连和公共对等互连，我们最多接受 4000 个路由前缀。
 
 ### 对于我可以通过 BGP 会话公布的 IP 范围有限制吗？
 通过 BGP 公布的前缀必须为 /29 或更大（/28 到 /8）。
