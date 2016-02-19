@@ -18,7 +18,7 @@
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
 
 
-本文介绍 Azure 中基于 Oracle 软件映像的 Oracle 虚拟机的注意事项，这些映像由 Microsoft 提供，使用 Windows Server 作为操作系统。
+本文介绍 Azure 中基于 Oracle 软件映像的 Oracle 虚拟机的注意事项，这些映像用户可以自行上传，使用 Windows Server 作为操作系统。你也可以本地创建 VHD 然后上传到 Azure 来创建虚拟机。
 
 -  Oracle 数据库虚拟机映像
 -  Oracle WebLogic Server 虚拟机映像
