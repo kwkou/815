@@ -176,6 +176,5 @@ Azure 在设置的升级域数之间平均分配角色的实例，可以将升�
 ## 后续步骤
 [如何管理云服务](/documentation/articles/cloud-services-how-to-manage)<br>
 [如何监视云服务](/documentation/articles/cloud-services-how-to-monitor)<br>
-[如何配置云服务](/documentation/articles/cloud-services-how-to-cofigure)<br>
 
 <!---HONumber=Mooncake_0104_2016-->

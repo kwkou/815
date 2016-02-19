@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="11/16/2015"
-   wacn.date="12/22/2015"/>
+   ms.date="02/09/2016"
+   wacn.date="02/19/2016"/>
 
 # 业务连续性常见问题
 

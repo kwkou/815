@@ -8,8 +8,8 @@
 
 <tags 
 	ms.service="sql-database"
-	ms.date="11/04/2015" 
-	wacn.date="01/05/2016" />
+	ms.date="02/01/2016"
+	wacn.date="02/19/2016" />
 
 # 升级到最新的弹性数据库客户端库
 

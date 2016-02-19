@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="10/20/2015"
-   wacn.date="01/29/2016"/>
+   ms.date="12/01/2015"
+   wacn.date="02/19/2016"/>
 
 # SQL 数据库动态数据屏蔽入门（Azure 经典门户）
 

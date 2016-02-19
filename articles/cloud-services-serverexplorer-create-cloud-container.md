@@ -9,8 +9,8 @@
 
 <tags
    ms.service="cloud-services"
-   ms.date="10/14/2015"
-   wacn.date="11/12/2015"/>
+   ms.date="01/13/2016"
+   wacn.date="02/19/2016"/>
 
 # 如何使用 Visual Studio 创建云服务容器
 
