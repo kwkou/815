@@ -47,17 +47,10 @@
 
 如果从运行 Windows 8、Windows 8.1、Windows Server 2012 或 Windows Server 2012 R2 的计算机进行故障排除，则可以尝试运行 [Azure IaaS (Windows) 诊断程序包](http://support.microsoft.com/kb/2976864)。此程序包可以解决远程桌面存在的许多常见问题。
 
-- 重新启动虚拟机可解决其他启动问题。<br>
-	单击“浏览全部”>“虚拟机”> 你的 Windows 虚拟机 >“重新启动”。
-
-- 调整 VM 大小可修复任何主机问题。<br>
-	单击“浏览全部”>“虚拟机”> 你的 Windows 虚拟机 >“设置”>“大小”。有关详细步骤，请参阅[调整虚拟机的大小](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx)。
-
-- 查看 VM 的控制台日志或屏幕快照可更正启动问题。
-	单击“浏览全部”>“虚拟机”> 你的 Windows 虚拟机 >“启动诊断”
-
-- 检查 VM 的资源运行状况以了解是否有任何平台问题。
-	单击“浏览全部”>“虚拟机”> 你的 Windows 虚拟机 >“检查运行状况”
+1.	在[“支持诊断”](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864)页上单击“Windows Azure IaaS (Windows)诊断程序包”。单击“创建”以创建新的诊断会话。你可以将此会话与不同目标计算机**共享**，或者将它**下载**到本地计算机上。
+2.	**运行**此会话，**接受** Microsoft 许可协议，并**启动**诊断工具。
+3.	在弹出窗口中对你的 Azure 订阅进行身份验证并按照提示进行操作。
+4.	在“你遇到 Azure VM 的以下哪些问题?”页上，选择“与 Azure VM 的 RDP 连接(需要重启)”问题。
 
 ## 修复资源管理器部署模型中常见远程桌面错误的步骤
 
