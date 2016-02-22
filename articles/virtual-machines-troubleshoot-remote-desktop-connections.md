@@ -1,6 +1,7 @@
 <properties
-	pageTitle="对 Windows VM 的远程桌面连接进行故障排除 | Windows Azure"
-	description="查找并解决使用 RDP 连接到 Windows VM 的常见问题。获取快速缓解措施，根据错误消息获取特定帮助和进行详细的网络故障排除。"
+	pageTitle="对 Azure VM 的远程桌面连接进行故障排除 | Windows Azure"
+	description="对 Windows VM 的远程桌面连接错误进行故障排除。获取快速缓解措施，根据错误消息获取帮助和进行详细的网络故障排除。"
+	keywords="远程桌面错误,远程桌面连接错误,无法连接到 VM,远程桌面故障排除"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
@@ -15,14 +16,13 @@
 
 # 对运行 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除
 
+有许多原因可能会导致在尝试连接到基于 Windows 的 Azure 虚拟机时出现远程桌面 (RDP) 错误。问题可能出在 VM 上的 RDP 软件、基础主计算机、网络连接或发起连接的客户端上。本文将帮助你找出原因并更正它们。
+
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
+本文仅适用于运行 Windows 的 Azure 虚拟机。有关运行 Linux 的 Azure 虚拟机，请参阅[对 Azure VM 的 SSH 连接进行故障排除](/documentation/articles/virtual-machines-troubleshoot-ssh-connections)。
 
-有多种原因可能导致远程桌面 (RDP) 无法连接到运行 Windows 的 Azure 虚拟机。问题可能出在 VM 上的 RDP 软件、基础主计算机、网络连接或发起连接的客户端上。本文将帮助你找出原因并更正它们。
-
-本文仅适用于运行 Windows 的 Azure 虚拟机。有关对*运行 Linux 的 Azure 虚拟机*的连接进行故障排除，请参阅[此文](/documentation/articles/virtual-machines-troubleshoot-ssh-connections)。
-
-如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和CSDN](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。
+如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和 CSDN Azure](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。
 
 第一部分“基本步骤”列出了解决常见连接问题的步骤，第二部分按特定错误消息提供了解决方法步骤，最后一部分可帮助对每个网络组件执行详细的故障排除。
 
@@ -55,7 +55,7 @@
 如果 Azure IaaS 诊断程序包无法执行或不是很有帮助，则可以转到下一节来根据从远程桌面客户端获得的错误信息解决该问题。
 
 
-## 常见 RDP 错误
+## 对特定的远程桌面连接错误进行故障排除
 
 以下是在尝试通过远程桌面连接到 Azure 虚拟机时可能遇到的最常见错误：
 
@@ -137,7 +137,7 @@
 
 确保你用于连接的帐户具有远程桌面登录权限。一种解决方法是，使用域帐户或本地管理员帐户通过远程桌面连接，然后使用“计算机管理”管理单元（“系统工具”>“本地用户和组”>“组” > Remote Desktop Users）将所需的帐户添加到 Remote Desktop Users 本地组。
 
-## 详细的疑难解答
+## 远程桌面错误的详细故障排除
 
 如果未发生上述任何错误，而你仍无法通过远程桌面连接到 VM，请阅读[此文](/documentation/articles/virtual-machines-rdp-detailed-troubleshoot)以找出其他原因。
 
@@ -154,4 +154,4 @@
 
 [对在 Azure 虚拟机上运行的应用程序的访问进行故障排除](/documentation/articles/virtual-machines-troubleshoot-access-application)
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->
