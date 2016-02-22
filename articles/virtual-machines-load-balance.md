@@ -22,7 +22,7 @@
 
 ## 使用流量管理器针对云服务和 Web 应用实现负载平衡##
 
-使用流量管理器可以控制用户流量到终结点（可能包括云服务、 Web 应用、外部站点和其他流量管理器配置文件）的分发过程。流量管理器的工作方式是将智能策略引擎应用到对 Internet 资源域名的域名系统 \(DNS\) 查询。云服务或 Web 应用可以在世界上不同的数据中心中运行。
+使用流量管理器可以控制用户流量到终结点（可能包括云服务、 Web 应用、外部站点和其他流量管理器配置文件）的分发过程。流量管理器的工作方式是将智能策略引擎应用到对 Internet 资源域名的域名系统 (DNS) 查询。云服务或 Web 应用可以在世界上不同的数据中心中运行。
 
 必须使用 REST 或 Windows PowerShell 将外部终结点或流量管理器配置文件配置为终结点。
 
@@ -57,24 +57,16 @@
 
 ![loadbalancing](./media/virtual-machines-load-balance/LoadBalancing.png)
 
-有关详细信息，请参阅<!-- [-->Azure 负载平衡器<!--](/documentation/articles/load-balancer-overview)-->。有关创建负载平衡集的步骤，请参阅<!--[-->配置负载平衡集<!--](/documentation/articles/load-balancer-internet-getstarted)-->。
-
 Azure 还可以在云服务或虚拟网络内部实现负载平衡。这称为“内部负载平衡”并可以通过以下方式使用：
 
 - 在多层应用程序的不同层（例如，在 Web 层和数据库层之间）的服务器之间实现负载平衡。
-- 使托管在 Azure 中的业务线 \(LOB\) 应用程序实现负载平衡，而无需额外的负载平衡器硬件或软件。
+- 使托管在 Azure 中的业务线 (LOB) 应用程序实现负载平衡，而无需额外的负载平衡器硬件或软件。
 - 将本地服务器包含在一组流量已实现负载平衡的计算机中。
 
 与 Azure 负载平衡类似，可以通过配置内部负载平衡集来实现内部负载平衡。
 
-下图的示例显示了在外部/本地虚拟网络的三个虚拟机之中共享的业务线 \(LOB\) 应用程序的内部负载平衡终结点。
+下图的示例显示了在外部/本地虚拟网络的三个虚拟机之中共享的业务线 (LOB) 应用程序的内部负载平衡终结点。
 
 ![loadbalancing](./media/virtual-machines-load-balance/LOBServers.png)
-
-## 后续步骤
-
-有关创建负载平衡集的步骤，请参阅<!--[-->配置内部负载平衡集<!--](/documentation/articles/load-balancer-internal-getstarted)-->。
-
-有关负载平衡器的详细信息，请参阅<!--[-->内部负载平衡<!--](/documentation/articles/load-balancer-internal-overview)-->。
 
 <!-- LINKS -->

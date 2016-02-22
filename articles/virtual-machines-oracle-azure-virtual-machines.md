@@ -24,10 +24,6 @@
 
 请参阅 [Oracle 虚拟机映像的其他注意事项](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)，了解基于 Windows Server 的 Azure 虚拟机上的 Oracle 软件限制。
 
-## Oracle 数据库虚拟机
-
-[在 Azure 中创建 Oracle 数据库虚拟机](/documentation/articles/virtual-machines-creating-oracle-database-virtual-machine)将逐步引导你完成虚拟机创建、数据库创建和配置常用选项的过程。
-
 ## 准备 Oracle Linux 虚拟机
 
 [为 Azure 准备 Oracle Linux 虚拟机](/documentation/articles/virtual-machines-prepare-oracle-linux-virtual-machine)将逐步引导你满足先决条件，并为 Oracle Linux 6.4 + 和 Oracle Linux 7.0 + 创建虚拟机。

@@ -1,4 +1,4 @@
-﻿按照以下步骤操作可在运行 CentOS Linux 的虚拟机上安装和运行 MongoDB。
+按照以下步骤操作可在运行 CentOS Linux 的虚拟机上安装和运行 MongoDB。
 
 > [AZURE.WARNING]默认情况下，不启用 MongoDB 安全功能，例如身份验证和 IP 地址绑定。在将 MongoDB 部署到生产环境之前，应启用安全功能。有关详细信息，请参阅[安全性和身份验证](http://www.mongodb.org/display/DOCS/Security+and+Authentication)。
 

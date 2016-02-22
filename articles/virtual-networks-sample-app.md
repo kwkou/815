@@ -54,7 +54,7 @@
 		Write-Host "Installing IIS and .Net 4.5, this can take some time, like 15+ minutes..." -ForegroundColor Cyan
 		add-windowsfeature Web-Server, Web-WebServer, Web-Common-Http, Web-Default-Doc, Web-Dir-Browsing, Web-Http-Errors, Web-Static-Content, Web-Health, Web-Http-Logging, Web-Performance, Web-Stat-Compression, Web-Security, Web-Filtering, Web-App-Dev, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Net-Ext, Web-Net-Ext45, Web-Asp-Net45, Web-Mgmt-Tools, Web-Mgmt-Console
 		
-	# Create Web 应用Pages
+	# Create Web App Pages
 		Write-Host "Creating Web page and Web.Config file" -ForegroundColor Cyan
 		$MainPage = '<%@ Page Language="vb" AutoEventWireup="false" %>
 		<%@ Import Namespace="System.IO" %>
@@ -131,7 +131,7 @@
 		Restart-Service -Name W3SVC
 		
 		Write-Host
-		Write-Host " Web 应用Creation Successfull!" -ForegroundColor Green
+		Write-Host " Web App Creation Successfull!" -ForegroundColor Green
 		Write-Host
 
 

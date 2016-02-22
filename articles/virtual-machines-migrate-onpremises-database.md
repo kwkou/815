@@ -46,11 +46,11 @@
 | 方法 | 源数据库版本 | 目标数据库版本 | 源数据库备份大小限制 | 说明 |
 |---|---|---|---|---|
 | [使用“将 SQL Server 数据库部署到 Windows Azure VM”向导](#azure-vm-deployment-wizard-tutorial) | SQL Server 2005 或更高版本 | SQL Server 2014 或更高版本 | > 1 TB | 最简单快捷的方法，尽可能使用该方法迁移到 Azure 虚拟机中新的或现有的 SQL Server 实例 |
-| [使用压缩功能执行本地备份并将备份文件手动复制到 Azure 虚拟机中](#backup-to-file-and-copy-to-vm-and-restore) | SQL Server 2005 或更高版本 | SQL Server 2005 或更高版本 | <!--[-->Azure VM 存储限制<!--](https://azure.microsoft.com/zh-cn/documentation/articles/azure-subscription-service-limits/)--> | 仅在无法使用向导时使用，比如目标数据库版本低于 SQL Server 2012 SP1 CU2 或数据库备份大于 1 TB（SQL Server 2016 为 12.8 TB） |
+| [使用压缩功能执行本地备份并将备份文件手动复制到 Azure 虚拟机中](#backup-to-file-and-copy-to-vm-and-restore) | SQL Server 2005 或更高版本 | SQL Server 2005 或更高版本 | [Azure VM 存储限制](/documentation/articles/azure-subscription-service-limits/) | 仅在无法使用向导时使用，比如目标数据库版本低于 SQL Server 2012 SP1 CU2 或数据库备份大于 1 TB（SQL Server 2016 为 12.8 TB） |
 | [执行“备份到 URL”并从该 URL 还原到 Azure 虚拟机](#backup-to-url-and-restore) | SQL Server 2012 SP1 CU2 或更高版本 | SQL Server 2012 SP1 CU2 或更高版本 | > 1 TB（对于 SQL Server 2016，< 12.8 TB） | 一般来说，使用[备份到 URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx) 在性能上与使用向导等效，但操作不如后者简单 |
-| [拆离后，将数据和日志文件复制到 Azure blob 存储，然后从 URL 附加到 Azure 虚拟机中的 SQL Server](#detach-and-copy-to-url-and-attach-from-url) | SQL Server 2005 或更高版本 | SQL Server 2014 或更高版本 | <!--[-->Azure VM 存储限制<!--](https://azure.microsoft.com/zh-cn/documentation/articles/azure-subscription-service-limits/)--> | 在[使用 Azure Blob 存储服务存储数据库文件](https://msdn.microsoft.com/zh-cn/library/dn385720.aspx)并将这些文件附加到 Azure VM 中的 SQL Server 时使用，特别是对于非常大的数据库 |
-| [将本地计算机转换为 Hyper-V VHD，上载到 Azure Blob 存储，然后使用上载的 VHD 部署为新虚拟机](#convert-to-vm-and-upload-to-url-and-deploy-as-new-vm) | SQL Server 2005 或更高版本 | SQL Server 2005 或更高版本 | <!--[-->Azure VM 存储限制<!--](https://azure.microsoft.com/zh-cn/documentation/articles/azure-subscription-service-limits/)--> | 在以下场合使用：[使用你自己的 SQL Server 许可证](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas)时；迁移的数据库将在较旧版本的 SQL Server 上运行时；或者将系统数据库和用户数据库一起作为依赖于其他用户数据库和/或系统数据库的数据库的一部分进行迁移时。 |
-| [使用 Windows 导入/导出服务运送硬盘驱动器](#ship-hard-drive) | SQL Server 2005 或更高版本 | SQL Server 2005 或更高版本 | <!--[-->Azure VM 存储限制<!--](https://azure.microsoft.com/zh-cn/documentation/articles/azure-subscription-service-limits/)--> | 当手动复制方法速度太慢时使用 <!--[-->Windows 导入/导出服务<!--](/documentation/articles/storage-import-export-service)-->，比如复制非常大的数据库 |
+| [拆离后，将数据和日志文件复制到 Azure blob 存储，然后从 URL 附加到 Azure 虚拟机中的 SQL Server](#detach-and-copy-to-url-and-attach-from-url) | SQL Server 2005 或更高版本 | SQL Server 2014 或更高版本 | [Azure VM 存储限制](/documentation/articles/azure-subscription-service-limits/) | 在[使用 Azure Blob 存储服务存储数据库文件](https://msdn.microsoft.com/zh-cn/library/dn385720.aspx)并将这些文件附加到 Azure VM 中的 SQL Server 时使用，特别是对于非常大的数据库 |
+| [将本地计算机转换为 Hyper-V VHD，上载到 Azure Blob 存储，然后使用上载的 VHD 部署为新虚拟机](#convert-to-vm-and-upload-to-url-and-deploy-as-new-vm) | SQL Server 2005 或更高版本 | SQL Server 2005 或更高版本 | [Azure VM 存储限制](/documentation/articles/azure-subscription-service-limits/) | 在以下场合使用：[使用你自己的 SQL Server 许可证](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas)时；迁移的数据库将在较旧版本的 SQL Server 上运行时；或者将系统数据库和用户数据库一起作为依赖于其他用户数据库和/或系统数据库的数据库的一部分进行迁移时。 |
+| [使用 Windows 导入/导出服务运送硬盘驱动器](#ship-hard-drive) | SQL Server 2005 或更高版本 | SQL Server 2005 或更高版本 | [Azure VM 存储限制](/documentation/articles/azure-subscription-service-limits/) | 目前，Azure 中国暂时还不支持 "Windows 导入/导出服务" |
 
 ## Azure VM 部署向导教程
 
@@ -64,7 +64,7 @@
 
 如果要迁移到现有的 Azure VM，则需执行下列配置步骤：
 
-- 按照<!--[-->预配 Azure 上的 SQL Server 虚拟机<!--](/documentation/articles/virtual-machines-provision-sql-server#SSMS)-->的“在另一台计算机上从 SSMS 连接到 SQL Server VM 实例”一节中的步骤操作，将 Azure VM 和 SQL Server 实例配置为支持来自另一台计算机的连接。只有使用向导进行迁移时，才支持库中的 SQL Server 2014 和 SQL Server 2016 映像。
+- 按照[预配 Azure 上的 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server#SSMS)的“在另一台计算机上从 SSMS 连接到 SQL Server VM 实例”一节中的步骤操作，将 Azure VM 和 SQL Server 实例配置为支持来自另一台计算机的连接。只有使用向导进行迁移时，才支持库中的 SQL Server 2014 和 SQL Server 2016 映像。
 - 使用专用端口 11435 为 Windows Azure 网关上的 SQL Server 云适配器服务配置一个打开的终结点。此端口在 Windows Azure VM 上预配 SQL Server 2014 或 SQL Server 2016 时创建。云适配器还创建一项 Windows 防火墙规则，以允许其传入 TCP 连接在默认端口 11435 上通过。此终结点允许向导利用云适配器服务将本地实例中的备份文件复制到 Azure VM。有关详细信息，请参阅[用于 SQL Server 的云适配器](https://msdn.microsoft.com/zh-cn/library/dn169301.aspx)。
 
 	![创建云适配器终结点](./media/virtual-machines-migrate-onpremises-database/cloud-adapter-endpoint.png)
@@ -136,14 +136,14 @@
 
 ## 备份到 URL 并还原
 
-如果因为备份文件大于 1 TB 并且要在 SQL Server 2016 中来回迁移而无法使用“将 SQL Server 数据库部署到 Windows Azure VM”向导，可使用[备份到 URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx) 方法。对于小于 1 TB 或运行 SQL Server 2016 之前的 SQL Server 版本的数据库，建议使用向导。在 SQL Server 2016 中，条带备份集受到支持，出于性能考虑，建议使用条带备份集，但它们必须超出每个 blob 的大小限制。对于非常大的数据库，建议使用 <!--[-->Windows 导入/导出服务<!--](/documentation/articles/storage-import-export-service)-->。
+如果因为备份文件大于 1 TB 并且要在 SQL Server 2016 中来回迁移而无法使用“将 SQL Server 数据库部署到 Windows Azure VM”向导，可使用[备份到 URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx) 方法。对于小于 1 TB 或运行 SQL Server 2016 之前的 SQL Server 版本的数据库，建议使用向导。在 SQL Server 2016 中，条带备份集受到支持，出于性能考虑，建议使用条带备份集，但它们必须超出每个 blob 的大小限制。
 
 ## 拆离、复制到 URL 并从 URL 附加
 
 如果计划[使用 Azure Blob 存储服务存储这些文件](https://msdn.microsoft.com/zh-cn/library/dn385720.aspx)并将它们附加到 Azure VM 中运行的 SQL Server，尤其是对于非常大的数据库，可以使用此方法。使用此手动方法按照下列常规步骤迁移用户数据库：
 
 1.	从本地数据库实例拆离数据库文件。
-2.	使用 <!--[-->AZCopy 命令行实用工具<!--](/documentation/articles/storage-use-azcopy)-->将拆离的数据库文件复制到 Azure blob 存储。
+2.	使用 [AZCopy 命令行实用工具](/documentation/articles/storage-use-azcopy)将拆离的数据库文件复制到 Azure blob 存储。
 3.	从 Azure URL 将数据库文件附加到 Azure VM 中的 SQL Server 实例。
 
 ## 转换为 VM、上载到 URL 并部署为新的 VM
@@ -154,11 +154,7 @@
 2.	使用 [Add-AzureVHD cmdlet](https://msdn.microsoft.com/zh-cn/library/windowsazure/dn495173.aspx) 将 VHD 文件上载到 Azure 存储空间。
 3.	使用上载的 VHD 部署新的虚拟机。
 
-> [AZURE.NOTE]若要迁移整个应用程序，请考虑使用<!-- [-->Azure Site Recovery<!--](/documentation/articles/services/site-recovery)-->。
-
-## 运送硬盘驱动器
-
-在通过网络上载成本过高或不可行时，可以使用 [Windows 导入/导出服务方法](/documentation/articles/storage-import-export-service)将大量文件数据传输到 Azure Blob 存储中。借助此服务，可以将包含这些数据的一个或多个硬盘驱动器运送到 Azure 数据中心，在那里，你的数据将上载到你的存储帐户中。
+> [AZURE.NOTE]若要迁移整个应用程序，请考虑使用 [Azure Site Recovery](/documentation/articles/services/site-recovery)。
 
 ## 后续步骤
 

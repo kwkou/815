@@ -1,6 +1,6 @@
 <properties writer="kathydav" editor="tysonn" manager="timlt" />
 
-1. 登录到 [Azure 门户](http://manage.windowsazure.cn)。如果你尚未获取订阅，请查看[免费试用](/pricing/free-trial/)优惠产品。
+1. 登录到 [Azure 门户](http://manage.windowsazure.cn)。如果你尚未获取订阅，请查看[免费试用](/pricing/1rmb-trial/)优惠产品。
 
 2. 在窗口底部的命令栏上，单击“新建”。
 

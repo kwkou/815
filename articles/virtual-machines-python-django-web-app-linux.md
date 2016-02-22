@@ -9,14 +9,14 @@
 
 <tags 
 	ms.service="virtual-machines" 
-	ms.date="05/20/2015" 
+	ms.date="11/17/2015" 
 	wacn.date="01/21/2016"/>
 
 
 
 
 
-# Django Hello World Web 应用(mac-linux)
+# Django Hello World Web 应用程序(mac-linux)
 
 > [AZURE.SELECTOR]
 - [Windows](/documentation/articles/web-app-with-django)

@@ -12,6 +12,12 @@
 	ms.date="11/12/2015"
 	wacn.date="01/14/2016" />
 
+# Azure 虚拟机中 SQL Server 的自动修补
+
+自动修补将为运行 SQL Server 2012 或 2014 的 Azure 虚拟机建立一个维护时段。只能在此维护时段内安装自动更新。对于 SQL Server，这可以确保在数据库的最佳可能时间发生系统更新和任何关联的重新启动。具体的操作取决于 SQL Server IaaS 代理。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+
 ## 使用 PowerShell 配置自动修补
 
 你也可以使用 PowerShell 来配置自动修补。

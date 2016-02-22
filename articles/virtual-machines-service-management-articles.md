@@ -38,8 +38,6 @@
 
 [使用 Azure 命令行界面 (Azure CLI) 创建运行 Linux 的自定义 VM](/documentation/articles/virtual-machines-linux-create-custom)
 
-<!--[-->使用 Azure CLI 创建多 VM 部署<!--](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli-install)-->
-
 ## 计划
 
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
