@@ -18,8 +18,7 @@
 
 带有 SQL Server 的 Azure 虚拟机 (VM) 有助于降低高可用性和灾难恢复 (HADR) 数据库解决方案的成本。Azure 虚拟机支持大多数充当云解决方案和混合解决方案的 SQL Server HADR 解决方案。在仅包含 Azure 的解决方案中，整个 HADR 系统都在 Azure 中运行。而在混合配置中，解决方案的一部分在 Azure 中运行，另一部分则在组织的本地运行。Azure 环境具有灵活性，允许你部分或完全迁移至 Azure，以满足 SQL Server 数据库系统对于预算和 HADR 的要求。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
-
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 ## 了解对 HADR 解决方案的需求
 
@@ -54,7 +53,6 @@ Azure 支持的 SQL Server HADR 技术包括：
 |技术|示例体系结构|
 |---|---|
 |**AlwaysOn 可用性组**|可用性副本在 Azure VM 中跨越多个数据中心运行以实现灾难恢复。这种跨区域解决方案可以防止站点完全中断。<br/> ![AlwaysOn 可用性组](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_alwayson.png)<br/>在某个区域内，所有副本应该位于同一云服务和同一 VNet 中。由于每个区域将有单独的 VNet，因此这些解决方案需要 VNet 到 VNet 连接。
-
 |**数据库镜像**|主体和镜像以及服务器在不同数据库中运行以实现灾难恢复。必须使用服务器证书进行部署，因为 Active Directory 域不能跨越多个数据中心。<br/>![数据库镜像](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_dbmirroring.gif)|
 |**使用 Azure Blob 存储服务进行备份和还原**|生产数据库直接备份到不同数据中心内的 Blob 存储以实现灾难恢复。<br/>![备份和还原](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_backup_restore.gif)<br/>有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的备份和还原](/documentation/articles/virtual-machines-sql-server-backup-and-restore)。|
 

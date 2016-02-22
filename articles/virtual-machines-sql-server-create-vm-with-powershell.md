@@ -23,11 +23,11 @@
 
 本文提供了有关如何通过使用 PowerShell cmdlet 在 Azure 中创建 SQL Server 虚拟机的步骤。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 ## 安装和配置 PowerShell
 
-1. 如果你没有 Azure 帐户，请访问 [Azure 免费试用版](/pricing/free-trial/)。 
+1. 如果你没有 Azure 帐户，请访问 [Azure 免费试用版](/pricing/1rmb-trial/)。 
  
 2. [安装最新的 Azure PowerShell cmdlet](/documentation/articles/powershell-install-configure/#how-to-install-azure-powershell)。
 

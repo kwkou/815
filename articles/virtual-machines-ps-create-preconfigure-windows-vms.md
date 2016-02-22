@@ -250,7 +250,7 @@
 
 ## 其他资源
 
-[虚拟机文档](/services/virtual-machines/)
+[虚拟机文档](/documentation/services/virtual-machines/)
 
 [Azure 虚拟机常见问题](/documentation/articles/virtual-machines-questions/)
 

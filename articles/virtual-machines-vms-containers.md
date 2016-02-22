@@ -23,7 +23,7 @@ Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物�
 
 **但是，这个新闻已经过时了。** *最新* 的新闻是 Azure 可带来更多的 Docker 好处：
 
-- 提供[许多](/documentation/articles/virtual-machines-docker-with-xplat-cli)<!--[-->不同的<!--](/documentation/articles/virtual-machines-docker-with-portal)--><!--[-->方式<!--](/documentation/articles/virtual-machines-docker-ubuntu-quickstart)-->，可根据具体需求为容器[创建 Docker 主机](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu)
+- 可通过 Azure CLI [创建 Docker 主机](/documentation/articles/virtual-machines-docker-with-xplat-cli)。
 - 可与许多专有和开放源配置管理工具集成
 
 而且由于可通过编程方式在 Azure 上创建 VM 和 Linux 容器，因此还可以使用 VM 和容器*协调*工具来创建多组虚拟机 (VM)，并在 Linux 容器和很快即将支持的 [Windows 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)中部署应用程序。
@@ -56,7 +56,7 @@ Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物�
 
 ## 容器适合于哪些方面？
 
-它们适用于许多情况，但鼓励（正如执行 [Azure 云服务](http://www.windowsazure.cn/home/features/cloud-services/)<!--和 [Azure Service Fabric](/documentation/articles/service-fabric-overview)-->）创建单一服务、以[微服务]为导向的分布式应用程序，其中的应用程序设计是基于更多小规模的组合部件，而非基于更大规模、耦合更强的组件。
+它们适用于许多情况，但鼓励（正如执行 [Azure 云服务](http://www.windowsazure.cn/home/features/cloud-services/)）创建单一服务、以[微服务]为导向的分布式应用程序，其中的应用程序设计是基于更多小规模的组合部件，而非基于更大规模、耦合更强的组件。
 
 在公有云环境（例如 Azure）中尤其如此，你可随时随地租用 VM。你不仅能获得独立且快速的部署和协调工具，还能做出更高效的应用程序基础结构决策。
 
@@ -185,9 +185,6 @@ Linux 分发和 Azure 示例：
 
 - [CoreOS 上的 Fleet](/documentation/articles/virtual-machines-linux-coreos-fleet-get-started)
 
--	Deis
-	- [创建一个包含 3 个节点的 Azure VM 组、安装 Deis，并启动 Hello World Go 应用程序](/documentation/articles/virtual-machines-deis-cluster)
-	
 -	Kubernetes
 	- [使用 CoreOS 和 Weave 实现 Kubernetes 群集部署自动化的完整指南](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/coreos/azure/README.md#kubernetes-on-azure-with-coreos-and-weave)
 	- [Kubernetes 可视化工具](http://azure.microsoft.com/blog/2014/08/28/hackathon-with-kubernetes-on-azure)

@@ -408,7 +408,7 @@ Analysis Services 的**默认实例**侦听 TCP 端口 **2383**。在虚拟机�
 
 - [Azure 虚拟机中的 SQL Server 概述](/documentation/articles/virtual-machines-sql-server-infrastructure-services)
 
-- [虚拟机](/services/virtual-machines/)
+- [虚拟机](/documentation/services/virtual-machines/)
 
 - [在 Azure 上设置 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server)
 

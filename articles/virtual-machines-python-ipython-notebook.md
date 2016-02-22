@@ -39,10 +39,15 @@
 
 按照[此处][portal-vm-linux]提供的说明可创建 *Ubuntu* 分发的虚拟机。本教程使用 Ubuntu Server 14.04 LTS。我们将假定用户名为 *azureuser*。
 
-虚拟机部署后，我们需要在网络安全组中建立安全规则。从门户转到“网络安全组”，并打开你的 VM 所对应的安全组的选项卡。需要使用以下设置添加入站安全规则：协议为 **TCP**，源（公用）端口为 *****，目标（专用）端口为 **9999**。
+此步骤同时适用于 Linux 和 Windows VM。稍后我们将配置 Jupyter 以在端口 9999 上运行其 notebook 服务器。若要使此端口向公众提供的情况下，我们必须在 Azure 管理门户中创建一个终结点。此终结点打开 Azure 防火墙中的一个端口，并将公用端口 （HTTPS，443） 映射到虚拟机 (9999) 上的专用端口。
 
+若要创建一个终结点，请转到 VM 仪表板单击"终结点"，然后"添加终结点"，创建新的终结点 （在此示例中称为 ipython_nb）。对于协议，443 （对于公共端口和专用端口 9999 选取 TCP:
 
-在“网络安全组”中，单击“网络接口”并记下**公共 IP 地址**，因为下一步将需要它才能连接到你的 VM。
+![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-azure-linux-005.png)
+
+此步骤之后，"终结点"仪表板选项卡将如下所示：
+
+![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-azure-linux-006.png)
 
 ## 在 VM 上安装必需软件
 
@@ -186,7 +191,7 @@ Jupyter 不仅仅是字处理器，因为它允许混合计算和丰富媒体（
 
 Jupyter Notebook 为交互访问 Azure 上的 Python 生态系统的功能提供了强大接口。它涵盖范围广泛的用例，包括简单的探索和学习 Python、数据分析和可视化、模拟和并行计算。生成的 Notebook 文档包含所执行的可与其他 Jupyter 用户共享的计算的完整记录。Jupyter Notebook 可用作本地应用程序，但它非常适合 Azure 上的云部署
 
-还可通过 [Python Tools for Visual Studio][](/documentation/articles/PTVS) 在 Visual Studio 中使用 Jupyter 的核心功能。PTVS 是 Microsoft 提供的免费开放源代码插件，它可将 Visual Studio 转变为高级 Python 开发环境，其中包括具有 IntelliSense、调试、分析和并行计算集成功能的高级编辑器。
+还可通过 [Python Tools for Visual Studio][](PTVS) 在 Visual Studio 中使用 Jupyter 的核心功能。PTVS 是 Microsoft 提供的免费开放源代码插件，它可将 Visual Studio 转变为高级 Python 开发环境，其中包括具有 IntelliSense、调试、分析和并行计算集成功能的高级编辑器。
 
 ## 后续步骤
 

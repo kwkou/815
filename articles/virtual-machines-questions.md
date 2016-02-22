@@ -100,6 +100,13 @@ Azure 提供的映像没有预先配置的用户名和密码。在使用其中�
 - 对于 Linux 映像，如果你使用管理门户，系统将提供“azureuser”作为默认用户名，但你可以通过使用“从库中”而不是以“快速创建”的方式创建虚拟机来更改此用户名。通过使用“从库中”，你还可以决定是使用密码、SSH 密钥还是同时使用这两项来进行登录。该用户帐户是具有“sudo”访问权限来运行特权命令的非特权用户。“根”帐户被禁用。
 - 对于 Windows 映像，需要在创建 VM 时提供用户名和密码。该帐户将被添加到 Administrators 组中。
 
+## Azure 可以在我的虚拟机上运行防病毒软件吗？
+
+Azure 针对防病毒解决方案提供多个选项，但由你进行管理。例如，对于反恶意软件，你可能需要单独订阅，并且你需要决定何时运行扫描和安装更新。在创建 Windows 虚拟机时或在其后某个时间，可以通过使用适用于 Microsoft Antimalware 或 TrendMicro Deep Security Agent 的 VM 扩展，来添加防病毒支持。TrendMicro 扩展支持使用限时免费试用版订阅或现有的企业订阅。Microsoft Antimalware 是免费的。有关详细信息，请参阅：
+
+- [如何在 Azure VM 上安装和配置 Trend Micro Deep Security 即服务](/documentation/articles/virtual-machines-install-trend)
+- [在 Azure 虚拟机上部署反恶意软件解决方案](http://azure.microsoft.com/zh-cn/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/)
+
 ## 我的备份和恢复选项有哪些？
 
 某些地区提供 Azure 备份的预览版。有关详细信息，请参阅[备份 Azure 虚拟机](/documentation/articles/backup-azure-vms)。认证合作伙伴提供了其他解决方案。若要了解当前提供的选项，请搜索 Azure 应用商店。

@@ -15,7 +15,7 @@
 
 # 使用 D 盘作为 Windows VM 上的数据驱动器 
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 如果需要使用 D 盘存储数据，请遵循这些说明操作以使用其他驱动器号作为临时磁盘。切勿使用临时磁盘来存储需要保存的数据。

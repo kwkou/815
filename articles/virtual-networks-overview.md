@@ -39,6 +39,7 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 
 - **安全性**。进出虚拟网络的流量以及 VNet 中的 PaaS 角色实例都可使用网络安全组进行控制。
 
+- **连接**。VNet 通过使用 ExpressRoute 连接可以彼此连接，甚至可以连接到本地数据中心。若要了解有关 ExpressRoute 的详细信息，请访问 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction)。
 
     >[AZURE.NOTE]请确保在将任何 IaaS VM 或 PaaS 角色实例部署到 Azure 环境之前创建 VNet。基于 ARM 的 VM 需要 VNet，如果你未指定现有 VNet，Azure 将创建其 CIDR 地址块可能会与本地网络冲突的默认 VNet。使你无法将 VNet 连接到本地网络。
     

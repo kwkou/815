@@ -64,7 +64,6 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 |**TrendMicroDSA**|启用 TrendMicro 的 Deep Security 平台支持可提供入侵检测和防护、防火墙、防恶意软件、Web 信誉评估、日志检查和完整性监视。|[如何在 Azure VM 上安装和配置 Trend Micro Deep Security 即服务](/documentation/articles/virtual-machines-install-trend)|
 |**PortalProtectExtension**|防止对你的 Microsoft SharePoint 环境构成威胁。|[保护 Azure 上的 SharePoint 部署](http://blog.trendmicro.com/securing-sharepoint-deployment-azure/)|
 |**IaaSAntimalware**|用于 Azure 云服务和虚拟机的 Microsoft 反恶意软件是一种实时保护功能，当已知恶意软件或不需要的软件试图在你的系统上安装自身或运行时，它可使用可配置的警报帮助识别和删除病毒、间谍软件和其他恶意软件。|[下载反恶意软件文档](http://go.microsoft.com/fwlink/?linkid=398023&clcid=0x409)|
-|**SymantecEndpointProtection**|Symantec Endpoint Protection 12.1.4 实现了跨多个物理和虚拟系统的安全性和性能。|[如何在 Azure VM 上安装和配置 Symantec Endpoint Protection](/documentation/articles/virtual-machines-install-symantec)
 
 ##VM 操作和管理
 

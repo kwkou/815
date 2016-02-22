@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../includes/virtual-network-create-udr-scenario-include.md)]
 
-下面的示例 Azure CLI 命令需要一个已经基于上述方案创建的简单环境。
+下面的示例 Azure CLI 命令需要一个已经基于上述方案创建的简单环境。首先需要构建[使用 PowerShell 创建 VNet](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps) 中所述的环境。
 
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../includes/azure-ps-prerequisites-include.md)]
 
