@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/27/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="12/31/2015"/>
 
 # 对运行 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除
 
@@ -22,11 +22,11 @@
 
 本文仅适用于运行 Windows 的 Azure 虚拟机。有关运行 Linux 的 Azure 虚拟机，请参阅[对 Azure VM 的 SSH 连接进行故障排除](/documentation/articles/virtual-machines-troubleshoot-ssh-connections)。
 
-如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和CSDN](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。
+如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和 CSDN Azure](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。
 
 第一部分“基本步骤”列出了解决常见连接问题的步骤，第二部分按特定错误消息提供了解决方法步骤，最后一部分可帮助对每个网络组件执行详细的故障排除。
 
-## 修复经典部署模型中常见远程桌面错误的步骤
+## 基本步骤 - 经典部署模型
 
 这些基本步骤可帮助解决使用经典部署模型创建的虚拟机中的大部分常见远程桌面连接失败。在执行每个步骤之后，请尝试重新连接到 VM。
 
@@ -52,32 +52,7 @@
 3.	在弹出窗口中对你的 Azure 订阅进行身份验证并按照提示进行操作。
 4.	在“你遇到 Azure VM 的以下哪些问题?”页上，选择“与 Azure VM 的 RDP 连接(需要重启)”问题。
 
-## 修复资源管理器部署模型中常见远程桌面错误的步骤
-
-这些基本步骤可帮助解决使用资源管理器部署模型创建的虚拟机中的大部分常见远程桌面连接失败。在执行每个步骤之后，请尝试重新连接到 VM。
-
-- 使用 Powershell 重置远程访问<br>
-	a. 如果尚未安装 Azure PowerShell，请使用 Azure AD 方法[安装 Azure PowerShell 并连接到 Azure 订阅](/documentation/articles/powershell-install-configure)。
-
-	b.切换到资源管理器模式。
-
-	```
-	Switch-AzureMode -Name AzureResourceManager
-	```
-	c.运行 Set-AzureVMAccessExtension 命令重置 RDP 连接，如下面的示例所示。
-
-	```
-	Set-AzureVMExtension -ResourceGroupName "myRG" -VMName "myVM" -Name "myVMAccessExtension" -ExtensionType "VMAccessAgent" -Publisher "Microsoft.Compute" -typeHandlerVersion "2.0" -Location Westus
-	```
-
-- 重新启动虚拟机可解决其他启动问题。<br>
-	单击“浏览全部”>“虚拟机”> 你的 Windows 虚拟机 >“重新启动”。
-
-- 调整 VM 大小可修复任何主机问题。<br>
-	单击“浏览全部”>“虚拟机”> 你的 Windows 虚拟机 >“设置”>“大小”。
-
-- 查看 VM 的控制台日志或屏幕快照可更正启动问题。
-	单击“浏览全部”>“虚拟机”> 你的 Windows 虚拟机 >“启动诊断”
+如果 Azure IaaS 诊断程序包无法执行或不是很有帮助，则可以转到下一节来根据从远程桌面客户端获得的错误信息解决该问题。
 
 
 ## 对特定的远程桌面连接错误进行故障排除
@@ -99,7 +74,7 @@
 
 原因：用于远程桌面服务器角色的 120 天许可宽限期已过期，你需要安装许可证。
 
-一种解决方法是，从门户保存 RDP 文件的本地副本，然后在 Windows PowerShell 命令提示符下运行此命令以进行连接。
+一种解决方法是，从 Azure 门户保存 RDP 文件的本地副本，然后在 Windows PowerShell 命令提示符下运行此命令以进行连接。
 
 		mstsc <File name>.RDP /admin
 
@@ -117,7 +92,7 @@
 可能的解决方案：
 
 - 如果你在组织的 Intranet 上，请确保你的计算机有权访问代理服务器，并可以向其发送 HTTPS 流量。
-- 如果你使用的是本地存储的 RDP 文件，请尝试使用门户生成的 RDP 文件。这将确保你使用的是虚拟机或云服务的正确 DNS 名称以及虚拟机的终结点端口。下面是门户生成的示例 RDP 文件：
+- 如果你使用的是本地存储的 RDP 文件，请尝试使用 Azure 门户生成的 RDP 文件。这将确保你使用的是虚拟机或云服务的正确 DNS 名称以及虚拟机的终结点端口。下面是 Azure 门户生成的示例 RDP 文件：
 
 		full address:s:tailspin-azdatatier.chinacloudapp.cn:55919
 		prompt for credentials:i:1
