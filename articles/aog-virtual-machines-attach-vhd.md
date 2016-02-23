@@ -6,15 +6,15 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual machine" ms.date="" wacn.date="2/1/2016"/>
+<tags ms.service="virtual machine" ms.date="" wacn.date="02/01/2016"/>
 
 #如何为虚拟机附加磁盘
 
-关于如何在门户网站上附加磁盘请阅读[这篇文章](http://www.windowsazure.cn/documentation/articles/storage-windows-attach-disk/)
+关于如何在门户网站上附加磁盘请阅读[这篇文章](/documentation/articles/storage-windows-attach-disk)
 
->使用Powershell前有关Azure PowerShell的安装、配置和连接到订阅请阅读[这篇文章](http://www.windowsazure.cn/documentation/articles/powershell-install-configure)
+>使用Powershell前有关Azure PowerShell的安装、配置和连接到订阅请阅读[这篇文章](/documentation/articles/powershell-install-configure)
 
-相关PowerShell指令：[Get-AzureDataDisk](https://msdn.microsoft.com/en-us/library/azure/dn495197.aspx)、[Add-AzureDataDisk](https://msdn.microsoft.com/en-us/library/azure/dn495298.aspx)、[Remove-AzureDataDisk](https://msdn.microsoft.com/en-us/library/azure/dn495243.aspx)、[Update-AzureVM](https://msdn.microsoft.com/en-us/library/azure/dn495230.aspx?f=255&MSPPError=-2147217396)、[Get-AzureDisk](https://msdn.microsoft.com/en-us/library/azure/dn495125.aspx)
+相关PowerShell指令：[Get-AzureDataDisk](https://msdn.microsoft.com/zh-cn/library/azure/dn495197.aspx)、[Add-AzureDataDisk](https://msdn.microsoft.com/zh-cn/library/azure/dn495298.aspx)、[Remove-AzureDataDisk](https://msdn.microsoft.com/zh-cn/library/azure/dn495243.aspx)、[Update-AzureVM](https://msdn.microsoft.com/zh-cn/library/azure/dn495230.aspx?f=255&MSPPError=-2147217396)、[Get-AzureDisk](https://msdn.microsoft.com/zh-cn/library/azure/dn495125.aspx)
 
 ##通过PowerShell附加磁盘
 
@@ -42,7 +42,7 @@
 **注意：**
 
 - 附加磁盘不会引起虚拟机重启，也不需要虚拟机重启。
-- 根据虚拟机的尺寸，附加磁盘的个数也不一样。具体尺寸对应的附加磁盘数量请阅读[这篇文章](http://www.windowsazure.cn/documentation/articles/virtual-machines-size-specs)。
+- 根据虚拟机的尺寸，附加磁盘的个数也不一样。具体尺寸对应的附加磁盘数量请阅读[这篇文章](/documentation/articles/virtual-machines-size-specs)。
 - 如果磁盘已经被其他虚拟机附加，请首先分离磁盘，然后重新附加。
 - 附加磁盘的大小限制为：最小：1GB，最大1TB.
 
