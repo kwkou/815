@@ -1,12 +1,12 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Microsoft Azure CDN FAQs – Azure Feature Guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, cannot cache, cannot CNAME, origin rate high, cache refresh failed, CDN FAQ, CDN FAQS, CDN use failed, CDN service failure, CDN configuration error, speed slow, cannot open website, login exception, CNAME, CDN technical documentation, CDN help files" description="Find answers to common service consulting questions or inquiries related to the Microsoft Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
-    wacn.date="1/5/2016"
+    wacn.date="2/23/2016"
     />
 # FAQs - Service Issues
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/cdn-faq-service-issues)
+- [中文版](/documentation/articles/cdn-faq-service-issues)
 - [English Version](/documentation/articles/cdn-enus-faq-service-issues)
 
 + [Why can’t cache my origin URL?](#step1)

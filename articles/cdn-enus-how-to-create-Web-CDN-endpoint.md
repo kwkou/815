@@ -1,13 +1,13 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to Create Web Acceleration-Type CDNs – Azure Feature Guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN acceleration, CDN service, mainstream CDN, Web acceleration, Web, webpage acceleration, static acceleration, cache rules, image acceleration, CDN technical documentation, CDN help files, portal website acceleration" description="Learn how to create Web Acceleration-type CDNs on Microsoft Azure Management Portal, and learn about default caching rules for Web CDNs." metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
-    wacn.date="1/11/2016"
+    wacn.date="2/23/2016"
     />
 
 #Creating Web Acceleration CDN Nodes
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/cdn-how-to-create-Web-CDN-endpoint)
+- [中文版](/documentation/articles/cdn-how-to-create-Web-CDN-endpoint)
 - [English Version](/documentation/articles/cdn-enus-how-to-create-Web-CDN-endpoint)
 
 The Web Acceleration service is the most basic and most widely used CDN acceleration service, and is mainly intended to accelerate small files with low update frequencies, such as HTML files, CSS, images, JS, and Flash animation. Caching these small files on Azure CDN edge nodes reduces access pressure on source stations and meets users’ needs in terms of nearby website access, improving the website access experience and helping to boost user traffic on the website.

@@ -1,13 +1,13 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Microsoft Azure Content Delivery Network FAQs: Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN FAQs, CDN acceleration, CDN service, configuring CNAME, CNAME, CNAME record, cache refresh, cache rules, CDN edge node, CDN technical documentation, CDN help files" description="Find answers to service configuration questions related to Microsoft Azure Content Delivery Network" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
-    wacn.date="1/5/2016"
+    wacn.date="2/23/2016"
     />
 
 #FAQs: Service configuration
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/cdn-faq-service-config)
+- [中文版](/documentation/articles/cdn-faq-service-config)
 - [English Version](/documentation/articles/cdn-enus-faq-service-config)
 
 + [Configure CNAME](#step1)

@@ -1,13 +1,13 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to Create VOD Acceleration-Type CDNs – Azure Feature Guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN acceleration, CDN service, mainstream CDN, VOD, video on demand acceleration, VOD acceleration, cache rules, media service, Azure Media Service, CDN technical documentation, CDN help files" description="Learn how to create VOD Acceleration-type CDNs on Microsoft Azure Management Portal, and learn about default caching rules for VOD CDNs." metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
-    wacn.date="1/11/2016"
+    wacn.date="2/23/2016"
     />
 
 #Create video on demand (VOD) acceleration CDN nodes
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/cdn-how-to-create-VOD-CDN-endpoint)
+- [中文版](/documentation/articles/cdn-how-to-create-VOD-CDN-endpoint)
 - [English Version](/documentation/articles/cdn-enus-how-to-create-VOD-CDN-endpoint)
 
 The VOD (Video On Demand) Acceleration service is mainly intended to provide acceleration services for online video on demand. With the rise of online video and media services, more and more people are choosing to use Internet platforms to watch videos and listen to audio content. Given the limitations on the Internet environment in China, this places huge demands on the final delivery of audio and video content. The Microsoft Azure CDN delivers and caches streaming media content such as audio and video on to CDN edge nodes and directs user requests to the optimal node, reducing the load on source station servers and saving on bandwidth resources, thereby providing users with a high-speed, smooth, high-quality online video experience.
