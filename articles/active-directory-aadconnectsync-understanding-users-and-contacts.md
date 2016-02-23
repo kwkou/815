@@ -7,8 +7,8 @@
 	manager="swadhwa"
 	editor=""/>
 
-<tags ms.service="active-directory"
-
+<tags
+	ms.service="active-directory"
 	ms.date="07/27/2015"
 	wacn.date="01/29/2016"/>
 
@@ -26,13 +26,6 @@
 - 已禁用帐户会提供 userPrincipalName 和 sourceAnchor，除非该帐户为已链接邮箱。
 - 具有已链接邮箱的帐户永远不会用于 userPrincipalName 和 sourceAnchor。据推测，更高版本中将会找到有效帐户。
 - 可能为 Azure AD 设置联系人对象，作为联系人或用户。在处理完所有源 Active Directory 林之前，你确实不会知道。
-
-
-
-
-
-
-
 ## 联系人
 
 合并和收购之后，不同林中具有表示用户的联系人很常见，其中，GALSync 解决方案对两个或多个 Exchange 林桥接。联系人对象始终使用邮件属性从连接器空间联接到 metaverse。如果已存在具有相同邮件地址的联系人对象或用户对象，则会将这些对象联接在一起。这在规则 **In from AD – Contact Join** 中进行配置。另外，还有一条名为 **In from AD – Contact Common** 的规则，该规则具有到包含常量 **Contact** 的 metaverse 属性 **sourceObjectType** 的属性流。如果将任何用户对象联接到相同的 metaverse 对象，则此规则的优先级非常低，并且 In from AD – User Common 规则会为此属性提供值 User。在使用此规则的情况下，如果没有联接任何用户，此属性则会具有值 Contact，如果至少找到了一个用户，则会具有值 User。

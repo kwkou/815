@@ -9,7 +9,6 @@
 
 <tags
 	ms.service="active-directory"
-
 	ms.date="11/18/2015"
 	wacn.date="01/29/2016"/>
 
@@ -54,8 +53,7 @@ Azure Active Directory 目前支持 Azure AD 应用库中数千个预先集成�
 如果指定的用户没有针对选定属性存储的值，则不会在令牌中颁发该声明。
 
 **注意：**仅当在使用最新预览版的 AAD Connect 工具从本地 Active Directory 同步用户数据时，才支持 **user.onpremisesecurityidentifier** 和 **user.onpremisesamaccountname**。可以通过下面的链接下载 Connect 工具预览版：
-
-http://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=53949
+[http://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=53949](http://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=53949)
 	
 <!--Image references-->
 [1]: ./media/active-directory-saml-claims-customization/claimscustomization1.png

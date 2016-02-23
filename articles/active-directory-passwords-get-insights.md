@@ -47,14 +47,14 @@
 ## 如何通过 API 访问密码管理报告
 从 2015 年 8 月开始，Azure AD 报告和事件支持检索密码重置和密码重置注册报告中包含的所有信息。
 
-若要访问此数据，你需要编写一个小型应用或脚本，以便从我们的服务器检索这些数据。[了解如何开始使用 Azure AD Reporting API](active-directory-reporting-api-getting-started.md)。
+若要访问此数据，你需要编写一个小型应用或脚本，以便从我们的服务器检索这些数据。[了解如何开始使用 Azure AD Reporting API](/documentation/articles/active-directory-reporting-api-getting-started)。
 
 编写有效的脚本后，接下来请根据你的方案，检查可以检索的密码重置和注册事件。
 
 - [SsprActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprActivityEvent)：列出密码重置事件可用的列
 - [SsprRegistrationActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprRegistrationActivityEvent)：列出密码重置注册事件可用的列
 
-## 查看密码重置注册活动
+## <a name"password-writeback-component-of-azure-ad-connect"></a>查看密码重置注册活动
 
 密码重置注册活动报告显示你的组织中已发生的所有密码重置注册。对于已在密码重置注册门户 ([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)) 成功注册身份验证信息的所有用户，密码重置注册都显示在此报告中。
 

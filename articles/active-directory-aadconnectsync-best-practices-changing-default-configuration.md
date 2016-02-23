@@ -7,7 +7,8 @@
 	manager="swadhwa"
 	editor=""/>
 
-<tags   ms.service="active-directory"
+<tags   
+	ms.service="active-directory"
 	ms.date="07/27/2015"
 	wacn.date="01/29/2016"/>
 

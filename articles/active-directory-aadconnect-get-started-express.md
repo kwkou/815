@@ -16,7 +16,7 @@
 以下文档将会帮助你开始使用 Azure Active Directory Connect。本文档说明如何使用 Azure AD Connect 的快速安装。
 
 ## 相关文档
-如果你尚未阅读有关[将本地标识与 Azure Active Directory 集成](/documentation/articals/active-directory-aadconnect.md)的文档，下表提供了相关主题的链接。开始安装之前，需要完成以粗体显示的前两个主题。
+如果你尚未阅读有关[将本地标识与 Azure Active Directory 集成](/documentation/articals/active-directory-aadconnect)的文档，下表提供了相关主题的链接。开始安装之前，需要完成以粗体显示的前两个主题。
 
 | 主题 | |
 | --------- | --------- |

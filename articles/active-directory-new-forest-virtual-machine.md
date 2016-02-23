@@ -113,7 +113,6 @@
 
 -  [如何在 Azure 虚拟网络中安装新的 Active Directory 林](http://channel9.msdn.com/Series/Microsoft-Azure-Tutorials/How-to-install-a-new-Active-Directory-forest-on-an-Azure-virtual-network)
 -  [在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](https://msdn.microsoft.com/library/azure/jj156090.aspx)
--  [配置仅在云中的虚拟网络](/documentation/articles/virtual-networks-create-vnet)
 -  [配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create)
 -  [在 Azure 虚拟网络中安装副本 Active Directory 域控制器](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller)
 -  [Microsoft Azure IT Pro IaaS：(01) 虚拟机基础知识](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)

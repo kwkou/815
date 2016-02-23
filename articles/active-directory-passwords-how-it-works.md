@@ -19,10 +19,9 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 - [**用户注册门户**](#user-registration-portal) – 用户可以通过此网络门户自行注册以进行密码重置。
 - [**用户密码重置门户**](#user-password-reset-portal) – 用户可以使用一系列符合管理员控制的密码重置策略的质询来重置其自己的密码
 - [**用户密码更改门户**](#user-password-change-portal) – 用户可以通过使用此网络门户输入旧密码并选择一个新密码来随时更改其自己的密码
-- [**密码管理报告**](#password-management-reports) – 管理员可以通过导航到 [Azure 管理门户](https://manage.windowsazure.cn)中其目录的“报告”选项卡的“活动报告”部分来查看和分析其租户中的密码重置和注册活动
 - [**Azure AD Connect 的密码写回组件**](#password-writeback-component-of-azure-ad-connect) - 管理员可以选择在安装 Azure AD Connect 时启用“密码写回”功能，以便从云中管理联合或密码同步用户的密码。
 
-## 密码管理配置门户
+## <a name="password-management-configuration-portal"></a>密码管理配置门户
 你可以使用 [Azure 管理门户](https://manage.windowsazure.cn)为特定目录配置密码管理策略，此操作可通过导航到目录的“配置”选项卡中的“用户密码重置策略”部分来完成。从此配置页面，可以控制如何在你的组织中管理密码的许多方面，其中包括：
 
 - 针对目录中的所有用户启用和禁用密码重置
@@ -47,16 +46,16 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 
 若要详细了解有关在组织中配置密码管理的信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)。
 
-##用户注册门户
+## <a name="user-registration-portal"></a>用户注册门户
 在用户可以使用密码重置之前，必须使用正确的身份验证数据更新其云用户帐户，以确保他们可以通过其管理员定义的适当数量的密码重置质询。管理员还可以使用 Azure 或 Office 网络门户、DirSync/Azure AD Connect 或 Windows PowerShell 代表其用户定义此身份验证信息。
 
 然而，如果你更希望让你的用户注册其自己的数据，我们也可以提供一个网页，用户可以转至该网页以提供此信息。利用此页面，用户可以根据在其组织中启用的密码重置策略指定身份验证信息。一旦此数据通过验证，便会存储于其云用户帐户，以便日后进行帐户恢复。注册门户的外观如下：
 
   ![][001]
 
-有关详细信息，请参阅[入门：Azure AD 密码管理](active-directory-passwords-getting-started)和[最佳实践：Azure AD 密码管理](/documentation/articles/active-directory-passwords-best-practices)。
+有关详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)和[最佳实践：Azure AD 密码管理](/documentation/articles/active-directory-passwords-best-practices)。
 
-##用户密码重置门户
+## <a name="ser-password-reset-portal"></a> 用户密码重置门户
 一旦启用了自助密码重置、设置了你所在组织的自助密码重置策略并确保了你的用户在目录中具有适当的联系人数据，你所在组织中的用户将可以从使用工作或学校帐户进行登录的任何网页（如 [portal.microsoftonline.com](https://portal.partner.microsoftonline.cn)）自动重置他们自己的密码。在这些网页上，用户将看到“无法访问你的帐户?”链接。
 
   ![][002]
@@ -65,9 +64,9 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 
   ![][003]
 
-若要详细了解有关用户如何重置其密码的信息，请参阅[入门：Azure AD 密码管理](active-directory-passwords-getting-started)。
+若要详细了解有关用户如何重置其密码的信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)。
 
-##用户密码更改门户
+## <a name="user-password-change-portal"></a>用户密码更改门户
 如果用户想要更改其密码，可以随时使用密码更改门户实现此目的。用户可以通过访问面板配置文件页来访问密码更改门户，也可以通过单击 Office 365 应用程序内的“更改密码”链接进行访问。如果用户的密码过期，用户登录时会自动收到更改其密码的请求。
 
   ![][004]
@@ -78,14 +77,7 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 
 若要详细了解有关用户如何更改自己的本地 Active Directory 密码的信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)。
 
-##密码管理报告
-导航到“报告”选项卡并在“活动日志”部分下查找，将看到两个密码管理报告：“密码重置活动”和“密码重置注册活动”。使用这两个报告，可以查看在你的组织中注册和使用密码重置的用户。[Azure 管理门户](https://manage.windowsazure.cn)中的这些报告外观如下：
-
-  ![][006]
-
-有关详细信息，请参阅[深入分析：Azure AD 密码管理报告](active-directory-passwords-get-insights)。
-
-##Azure AD Connect 的密码写回组件
+## <a name="password-writeback-component-of-azure-ad-connect"></a>Azure AD Connect 的密码写回组件
 如果你所在组织中的用户密码源自你的本地环境（通过联合或密码同步），你可以安装 Azure AD Connect 的最新版本以便直接从云中更新这些密码。这意味着，当你的用户忘记或要修改其 AD 密码时，他们可以直接从 Web 执行此操作。密码写回在 Azure AD Connect 安装向导中的位置如下：
 
   ![][007]

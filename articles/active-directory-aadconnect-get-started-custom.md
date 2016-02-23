@@ -23,11 +23,11 @@
 | 主题 | |
 | --------- | --------- |
 | **下载 Azure AD Connect** | [下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) |
-| **硬件和先决条件** | [Azure AD Connect：硬件和先决条件](active-directory-aadconnect-prerequisites.md) |
-| **用于安装的帐户** | [Azure AD Connect 帐户和权限](active-directory-aadconnect-accounts-permissions.md) |
-| 使用快速设置安装 | [Azure AD Connect 的快速安装](active-directory-aadconnect-get-started-express.md) |
-| 从 DirSync 升级 | [从 Azure AD 同步工具 (DirSync) 升级](active-directory-aadconnect-dirsync-upgrade-get-started.md) |
-| 安装后 | [验证安装并分配许可证](active-directory-aadconnect-whats-next.md) |
+| **硬件和先决条件** | [Azure AD Connect：硬件和先决条件](/documentation/articles/active-directory-aadconnect-prerequisites) |
+| **用于安装的帐户** | [Azure AD Connect 帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions) |
+| 使用快速设置安装 | [Azure AD Connect 的快速安装](/documentation/articles/active-directory-aadconnect-get-started-express) |
+| 从 DirSync 升级 | [从 Azure AD 同步工具 (DirSync) 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started) |
+| 安装后 | [验证安装并分配许可证](/documentation/articles/active-directory-aadconnect-whats-next) |
 
 
 ## 安装所需的组件

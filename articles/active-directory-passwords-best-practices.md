@@ -53,7 +53,7 @@
 
 你也可以阅读[密码重置使用数据的方式](/documentation/articles/active-directory-passwords-learn-more#what-data-is-used-by-password-reset)和[如何使用 PowerShell 填充单个身份验证字段](/documentation/articles/active-directory-passwords-learn-more#how-to-access-password-reset-data-for-your-users)。
 
-## 为用户启用密码重置的最佳方式是什么？
+## <a name="what-is-the-best-way-to-roll-out-password-reset-for-users"></a>为用户启用密码重置的最佳方式是什么？
 密码重置的常规启用步骤如下：
 
 1.	转到 [Azure 管理门户](https://manage.windowsazure.cn)中的“配置”选项卡并针对“可进行密码重置的用户”选项选择“是”，在你的目录中启用密码重置。
@@ -72,7 +72,7 @@
 
 你可以[从此](http://1drv.ms/1xWFtQM)处下载电子邮件模板。
 
-### 创建自己的密码门户
+### <a name="creating-your-own-password-portal"></a>创建自己的密码门户
 对于部署密码管理功能的大型客户而言，一种策略是创建用户可在单个位置管理所有与其密码相关的事项的单一“密码门户”。
 
 我们的许多大客户都选择创建根 DNS 条目，例如 https://passwords.contoso.com ，其中包含 Azure AD 密码重置门户、密码重置注册门户和密码更改页面的链接。这样，你发出的任何电子邮件通信或传单都可以包含一个容易记住的，让用户在开始使用该服务时随时可以访问的 URL。
@@ -83,7 +83,7 @@
   
 你可以[在此处下载网站模板](https://github.com/kenhoff/password-reset-page)。我们建议你根据组织的需要自定义徽标和颜色。
 
-### 使用强制注册
+### <a name="using-enforced-registration"></a>使用强制注册
 如果希望你的用户自行注册密码重置，还可以强制他们在登录到访问面板（网址为 [http://myapps.microsoft.com](http://myapps.microsoft.com)）时注册。你可以启用“要求用户在登录到访问面板时注册”选项，从目录的“配置”选项卡启用此选项。
 
 也可以通过将“用户必须确认其联系人数据前的天数”选项修改为一个不是零的值，来定义在可配置的一段时间后是否要求用户重新注册。有关详细信息，请参阅[自定义用户密码管理行为](/documentation/articles/active-directory-passwords-customize#password-management-behavior)。
@@ -121,7 +121,7 @@
 
 请参阅[如何从 PowerShell 访问用户的密码重置数据](active-directory-passwords-learn-more#how-to-access-password-reset-data-for-your-users)，以了解如何使用 PowerShell 读取和设置此数据。
 
-## 示例培训材料
+## <a name="sample-training-materials"></a>示例培训材料
 我们正在准备示例培训材料，以帮助你的 IT 部门和用户快速了解如何部署及使用密码重置。敬请期待！
 
 

@@ -108,10 +108,10 @@ Azure Active Directory 可配置为将已分配的用户和组预配到实现[�
 3.	在此文件夹中，使用 Visual Studio 启动 FileProvisioningAgent 解决方案。
 4.	选择“工具”>“库包管理员”>“包管理员控制台”并执行以下命令，使 FileProvisioningAgent 项目解析解决方案引用：
 
-    Install-Package Microsoft.SystemForCrossDomainIdentityManagement
+    `Install-Package Microsoft.SystemForCrossDomainIdentityManagement
     Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
     Install-Package Microsoft.Owin.Diagnostics
-    Install-Package Microsoft.Owin.Host.SystemWeb
+    Install-Package Microsoft.Owin.Host.SystemWeb`
 
 5.	构建 FileProvisioningAgent 项目。
 6.	在 Windows 中启动命令提示符应用程序（以管理员身分），并使用 **cd** 命令将目录切换到 **\\AzureAD-BYOA-Provisioning-Samples\\ProvisioningAgent\\bin\\Debug** 文件夹。
@@ -679,7 +679,7 @@ Microsoft 提供的、用于实现 SCIM 服务的通用语言基础结构库将�
 
 下图显示了 Azure Active Directory 将发送到 SCIM 服务以管理组在其他标识存储中的生命周期的消息。这些消息在以下三个方面与用户相关的消息不同：
 
-* 组资源的架构标识为 http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group。  
+* 组资源的架构标识为 [http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group](http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group)。  
 * 检索组的请求规定将成员属性从请求响应中提供的任何资源中排除。  
 * 确定引用属性是否具有特定值的请求将是有关成员属性的请求。  
 

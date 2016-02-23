@@ -38,7 +38,6 @@
 
 | 主题 | |
 | --------- | --------- |
-| 支持的方案 | [Azure AD 密码重置有何用途？](/documentation/articles/#what-is-possible-with-azure-ad-password-reset) |
 | 为何要使用它？ | [为何使用 Azure AD 密码重置？](/documentation/articles/#why-use-azure-ad-password-reset) |
 | 定价和可用性 | [定价和可用性](/documentation/articles/#pricing-and-availability) |
 | 启用密码重置 | [为用户启用密码重置](/documentation/articles/#enable-password-reset-for-your-users) |
@@ -125,7 +124,6 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 | 可以在何处查看密码重置报告？ | [密码管理报告概述](/documentation/articles/active-directory-passwords-get-insights#overview-of-password-management-reports) |
 | 可以在何处查看用户在我的组织中使用密码重置的方式？ | [查看密码重置活动](/documentation/articles/active-directory-passwords-get-insights#view-password-reset-activity) |
 | 可以在何处查看有多少用户注册及其注册的项目？ | [查看密码重置注册活动](/documentation/articles/active-directory-passwords-get-insights#view-password-reset-registration-activity) |
-| 如何从 API 获取密码重置报告？ | [创建 Azure AD 应用程序以访问报告 API](/documentation/articles/active-directory-reporting-api-getting-started#creating-an-azure-ad-application-to-access-the-api) |
 | 通过 API 可获取哪种密码重置报告信息？ | [报告 API 提供的密码重置和注册事件](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-reports-and-events-preview#SsprActivityEvent) |
 
 

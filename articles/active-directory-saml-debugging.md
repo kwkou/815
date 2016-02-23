@@ -15,7 +15,7 @@
 
 ![][1]
 
-包含 SAML 令牌的 Azure AD 响应通常是在从 https://login.chinacloudapi.cn 发出 HTTP 302 重定向之后发生的响应，它将发送到应用程序的已配置**回复 URL**。
+包含 SAML 令牌的 Azure AD 响应通常是在从 [https://login.chinacloudapi.cn](https://login.chinacloudapi.cn) 发出 HTTP 302 重定向之后发生的响应，它将发送到应用程序的已配置**回复 URL**。
  
 你可以通过选择此行，然后在右窗格中选择“检查器”>“WebForms”，来查看 SAML 令牌。右键单击“SAMLResponse”值并选择“发送到 TextWizard”。然后在“转换”菜单中选择“从 Base64”以解码令牌并查看其内容。
  

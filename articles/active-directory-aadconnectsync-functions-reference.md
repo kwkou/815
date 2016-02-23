@@ -7,8 +7,8 @@
 	manager="swadhwa"
 	editor=""/>
 
-<tags ms.service="active-directory"
-
+<tags 
+	ms.service="active-directory"
 	ms.date="07/27/2015"
 	wacn.date="01/29/2016"/>
 
@@ -74,7 +74,7 @@
 [GUID](#guid) &nbsp;&nbsp;&nbsp;&nbsp; [InStr](#instr) &nbsp;&nbsp;&nbsp;&nbsp; [InStrRev](#instrrev) &nbsp;&nbsp;&nbsp;&nbsp; [LCase](#lcase) &nbsp;&nbsp;&nbsp;&nbsp; [Left](#left) &nbsp;&nbsp;&nbsp;&nbsp; [Len](#len) &nbsp;&nbsp;&nbsp;&nbsp; [LTrim](#ltrim) &nbsp;&nbsp;&nbsp;&nbsp; [Mid](#mid) &nbsp;&nbsp;&nbsp;&nbsp; [PadLeft](#padleft) &nbsp;&nbsp;&nbsp;&nbsp; [PadRight](#padright) &nbsp;&nbsp;&nbsp;&nbsp; [PCase](#pcase) &nbsp;&nbsp;&nbsp;&nbsp; [Replace](#replace) &nbsp;&nbsp;&nbsp;&nbsp; [ReplaceChars](#replacechars) &nbsp;&nbsp;&nbsp;&nbsp; [Right](#right) &nbsp;&nbsp;&nbsp;&nbsp; [RTrim](rtrim) &nbsp;&nbsp;&nbsp;&nbsp; [Trim](#trim) &nbsp;&nbsp;&nbsp;&nbsp; [UCase](#ucase) &nbsp;&nbsp;&nbsp;&nbsp; [Word](#word)
 
 ----------
-### BitAnd
+### <a name="bitand"></a>BitAnd
 
 **说明：** <br>BitAnd 函数设置值的指定位。
  
@@ -92,7 +92,7 @@
 **示例：**<br> `BitAnd(&HF, &HF7)`<br> 返回 7，因为十六进制“F”AND“F7”的计算结果为此值。
  
 ----------
-### BitOr
+### <a name="bitor"></a>BitOr
 
 **说明：** <br>BitOr 函数设置值的指定位。
 
@@ -103,7 +103,7 @@
 **备注：** <br>此函数将两个参数转换为二进制表示形式，并且当掩码和标志中相应位的其中一个或两个均为 1 时，将位设置为 1，当两个相应位均为 0 时，设置为 0。<br> 换而言之，除了当两个参数的相应位均为 0 时之外，所有情况下均返回 1。
 
 ----------
-### CBool
+### <a name="cbool"></a>CBool
 
 **说明：**<br>CBool 函数基于求值的表达式返回布尔值
 
@@ -120,7 +120,7 @@
 
 
 ----------
-### CDate
+### <a name="cdate"></a>CDate
 
 **说明：**<br>CDate 函数通过字符串返回 UTC DateTime。DateTime 不是 Sync 中的原生属性类型，但被某些函数使用。
 
@@ -138,7 +138,7 @@
 
 
 ----------
-### CGuid
+### <a name="cguid"></a>CGuid
 
 **说明：**<br>CGuid 函数将 GUID 的字符串表示转换为其二进制表示形式。
  
@@ -150,7 +150,7 @@
 
 
 ----------
-### Contains
+### <a name="contains"></a>Contains
 
 **说明：**<br>Contains 函数寻找多值属性内的字符串
  
@@ -171,7 +171,7 @@
 
 
 ----------
-### ConvertFromBase64
+### <a name="convertfrombase64"></a>ConvertFromBase64
 
 **说明：**<br>ConvertFromBase64 函数将指定的 base64 编码值转换为规则的字符串。
  
@@ -188,7 +188,7 @@
 
 
 ----------
-### ConvertFromUTF8Hex
+### <a name="convertfromutf8hex"></a>ConvertFromUTF8Hex
 
 **说明：**<br>ConvertFromUTF8Hex 函数将指定的 UTF8 Hex 编码值转换为字符串。
  
@@ -204,7 +204,7 @@
 
 
 ----------
-### ConvertToBase64
+### <a name="converttobase64"></a>ConvertToBase64
 
 **说明：** <br>ConvertToBase64 函数将字符串转换为 Unicode base64 字符串。<br> 将整数数组的值转换为其等效字符串表示形式，该表示形式使用 base 64 数字编码。
 
@@ -216,7 +216,7 @@
 
 
 ----------
-### ConvertToUTF8Hex
+### <a name="converttoutf8hex"></a>ConvertToUTF8Hex
 
 **说明：**<br>ConvertToUTF8Hex 函数将字符串转换为 UTF8 Hex 编码的值。
  
@@ -230,7 +230,7 @@
 
 
 ----------
-### 计数
+### <a name="count"></a>计数
 
 **说明：**<br>Count 函数返回多值属性中的元素数量
  
@@ -240,7 +240,7 @@
 
 
 ----------
-### CNum
+### <a name="cnum"></a>CNum
 
 **说明：** <br>CNum 函数使用字符串并返回数值数据类型。
  
@@ -250,7 +250,7 @@
 
 
 ----------
-### CRef
+### <a name="cref"></a>CRef
 
 **说明：** <br>将字符串转换为引用属性
  
@@ -262,7 +262,7 @@
 
 
 ----------
-### CStr
+### <a name="cstr"></a>CStr
 
 **说明：** <br>CStr 函数转换为字符串数据类型。
  
@@ -276,7 +276,7 @@
 
 
 ----------
-### DateAdd
+### <a name="dateadd"></a>DateAdd
 
 **说明：** <br>返回包含指定时间间隔已添加到其中的日期的日期。
  
@@ -302,7 +302,7 @@
 
 
 ----------
-### DateFromNum
+### <a name="datefromnum"></a>DateFromNum
 
 **说明：** <br>DateFromNum 函数将 AD 的日期格式的值转换为 DateTime 类型。
  
@@ -314,7 +314,7 @@
 
 
 ----------
-### DNComponent
+### <a name="dncomponent"></a>DNComponent
 
 **说明：** <br>DNComponent 函数返回从左边起的指定 DN 组件的值。
  
@@ -329,7 +329,7 @@
 
 
 ----------
-### DNComponentRev
+### <a name="dncomponentrev"></a>DNComponentRev
 
 **说明：** <br>DNComponentRev 函数返回从右边起（末尾）的指定 DN 组件的值。
  
@@ -345,7 +345,7 @@
 
 
 ----------
-### 错误
+### <a name="error"></a>错误
 
 **说明：** <br>Error 函数用于返回自定义错误。
  
@@ -357,7 +357,7 @@
 
 
 ----------
-### EscapeDNComponent
+### <a name="escapedncomponent"></a>EscapeDNComponent
 
 **说明：** <br>EscapeDNComponent 函数使用 DN 的一个组件，并对其进行转义，以便它可以在 LDAP 中表示。
  
@@ -369,7 +369,7 @@
 
 
 ----------
-### FormatDateTime
+### <a name="formatdatetime"></a>FormatDateTime
 
 **说明：** <br>FormatDateTime 函数用于为具有指定格式的字符串设置 DateTime 格式
  
@@ -390,7 +390,7 @@
 
 
 ----------
-### GUID
+### <a name="guid"></a>GUID
 
 **说明：** <br>函数 GUID 生成新的随机 GUID
  
@@ -400,7 +400,7 @@
 
 
 ----------
-### IIF
+### <a name="iif"></a>IIF
 
 **说明：** <br>IIF 函数基于指定的条件返回一组可能值中的其中一个值。
  
@@ -416,7 +416,7 @@
 
 
 ----------
-### InStr
+### <a name="instr"></a>InStr
 
 **说明：** <br>InStr 函数查找字符串中第一次出现的子字符串
  
@@ -439,7 +439,7 @@
 
 
 ----------
-### InStrRev
+### <a name="instrrev"></a>InStrRev
 
 **说明：** <br>InStrRev 函数查找字符串中最后一次出现的子字符串
  
@@ -458,7 +458,7 @@
 
 
 ----------
-### IsBitSet
+### <a name="isbitset"></a>IsBitSet
 
 **说明：** <br>函数 IsBitSet 测试是否设置了位
  
@@ -472,7 +472,7 @@
 
 
 ----------
-### IsDate
+### <a name="isdate"></a>IsDate
 
 **说明：** <br>如果表达式可以计算为 DateTime 类型，则 IsDate 函数计算结果为 True。
  
@@ -484,7 +484,7 @@
 
 
 ----------
-###IsEmpty
+### <a name="isempty"></a>IsEmpty
 
 **说明：** <br>如果属性是出现在 CS 或 MV 中，但计算结果为空字符串，则 IsEmpty 函数计算结果为 True。
  
@@ -494,7 +494,7 @@
 
 
 ----------
-###IsGuid
+### <a name="isguid"></a>IsGuid
 
 **说明：** <br>如果字符串可以转换为 GUID，则 IsGuid 函数计算结果为 true。
  
@@ -510,7 +510,7 @@
 
 
 ----------
-###IsNull
+### <a name="isnull"></a>IsNull
 
 **说明：** <br>如果表达式的计算结果为 Null，则 IsNull 函数返回 true。
  
@@ -524,7 +524,7 @@
 
 
 ----------
-###IsNullOrEmpty
+### <a name="bitand"></a>IsNullOrEmpty
 
 **说明：** <br>如果表达式为 null 或空字符串，则 IsNullOrEmpty 函数返回 true。
  
@@ -538,7 +538,7 @@
 
 
 ----------
-### IsNumeric
+### <a name="isnullorempty"></a>IsNumeric
 
 **说明：** <br>IsNumeric 函数返回布尔值，该值指示表达式是否可以计算为数字类型。
  
@@ -550,7 +550,7 @@
 
 
 ----------
-### IsString
+### <a name="isstring"></a>IsString
 
 **说明：** <br>如果表达式可以计算为字符串类型，则 IsString 函数计算结果为 True。
  
@@ -562,7 +562,7 @@
 
 
 ----------
-### IsPresent
+### <a name="ispresent"></a>IsPresent
 
 **说明：** <br>如果表达式的计算结果为字符串，该字符串不是 Null 且不为空，则 IsPresent 函数返回 true。
  
@@ -578,7 +578,7 @@
 
 
 ----------
-### 项目
+### <a name="item"></a>项目
 
 **说明：** <br>Item 函数返回多值字符串/属性中的一个项。
  
@@ -597,7 +597,7 @@
 
 
 ----------
-### ItemOrNull
+### <a name="itemornull"></a>ItemOrNull
 
 **说明：** <br>ItemOrNull 函数返回多值字符串/属性中的一个项。
  
@@ -614,7 +614,7 @@
 
 
 ----------
-### Join
+### <a name="join"></a>Join
 
 **说明：** <br>Join 函数使用多值字符串，并返回每个项之间插入指定分隔符的单值字符串。
  
@@ -631,7 +631,7 @@
 
 
 ----------
-### LCase
+### <a name="lcase"></a>LCase
 
 **说明：** <br>LCase 函数将字符串中的所有字符都转换为小写。
  
@@ -643,7 +643,7 @@
 
 
 ----------
-### Left
+### <a name="left"></a>Left
 
 **说明：** <br>Left 函数从字符串左侧起返回指定的字符数。
  
@@ -666,7 +666,7 @@
 
 
 ----------
-### Len
+### <a name="len"></a>Len
 
 **说明：** <br>Len 函数返回字符串中的字符数。
  
@@ -678,7 +678,7 @@
 
 
 ----------
-### LTrim
+### <a name="ltrim"></a>LTrim
 
 **说明：** <br>LTrim 函数从字符串中删除前导空格。
  
@@ -690,7 +690,7 @@
 
 
 ----------
-### Mid
+### <a name="mid"></a>Mid
 
 **说明：** <br>Mid 函数从字符串指定位置起返回指定的字符数。
  
@@ -721,7 +721,7 @@
 
 
 ----------
-### Now
+### <a name="now"></a>Now
 
 **说明：** <br>Now 函数根据计算机的系统日期和时间返回指定当前日期和时间的 DateTime。
  
@@ -731,7 +731,7 @@
 
 
 ----------
-### NumFromDate
+### <a name="numfromdate"></a>NumFromDate
 
 **说明：** <br>NumFromDate 函数返回 AD 的日期格式的日期。
  
@@ -744,7 +744,7 @@
 
 
 ----------
-### PadLeft
+### <a name="padleft"></a>PadLeft
 
 **说明：** <br>PadLeft 函数使用提供的填充字符将字符串从左侧填充到指定长度。
  
@@ -772,7 +772,7 @@
 
 
 ----------
-### PadRight
+### <a name="padright"></a>PadRight
 
 **说明：** <br>PadRight 函数使用提供的填充字符将字符串从右侧填充到指定长度。
  
@@ -798,7 +798,7 @@
 
 
 ----------
-### PCase
+### <a name="pcase"></a>PCase
 
 **说明：** <br>PCase 函数将字符串中每个空格分隔词的第一个字符转换为大写形式，并将所有其他字符都转换为小写形式。
  
@@ -810,7 +810,7 @@
 
 
 ----------
-### RandomNum
+### <a name="randomnum"></a>RandomNum
 
 **说明：** <br>RandomNum 函数返回指定间隔之间的随机数字。
  
@@ -825,7 +825,7 @@
 
 
 ----------
-### RemoveDuplicates
+### <a name="removeduplicates"></a>RemoveDuplicates
 
 **说明：** <br>RemoveDuplicates 函数使用多值字符串，并确保每个值都是唯一值。
  
@@ -837,7 +837,7 @@
 
 
 ----------
-### 将
+### <a name="replace"></a>Replace
 
 **说明：** <br>Replace 函数将所有出现的某一字符串替换为另一个字符串。
  
@@ -863,7 +863,7 @@
 
 
 ----------
-### ReplaceChars
+### <a name="replacechars"></a>ReplaceChars
 
 **说明：** <br>ReplaceChars 函数替换 ReplacePattern 字符串中找到的所有出现的字符。
 
@@ -897,7 +897,7 @@
 
 
 ----------
-### Right
+### <a name="right"></a>Right
 
 **说明：** <br>Right 函数从字符串右侧（末尾）起返回指定的字符数。
  
@@ -922,7 +922,7 @@
 
 
 ----------
-### RTrim
+### <a name="rtrim"></a>RTrim
 
 **说明：** <br>RTrim 函数从字符串中删除尾随空格。
  
@@ -934,7 +934,7 @@
 
 
 ----------
-### 拆分
+### <a name="split"></a>拆分
 
 **说明：** <br>Split 函数使用采用分隔符分隔的字符串，并使其成为多值字符串。
  
@@ -951,7 +951,7 @@
 
 
 ----------
-### StringFromGuid
+### <a name="StringFromGuid"></a>StringFromGuid
 
 **说明：** <br>StringFromGuid 函数使用二进制 GUID，并将其转换为字符串
  
@@ -961,7 +961,7 @@
 
 
 ----------
-### StringFromSid
+### <a name="stringfromsid"></a>StringFromSid
 
 **说明：** <br>StringFromSid 函数将字节数组或包含安全标识符的多值字节数组转换为字符串或多值字符串。
  
@@ -971,7 +971,7 @@
 
 
 ----------
-### Switch
+### <a name="switch"></a>Switch
 
 **说明：** <br>Switch 函数用于基于计算的条件返回单个值。
 
@@ -996,7 +996,7 @@ Switch 会对所有表达式计算结果，即使它只返回其中一个结果�
 
 
 ----------
-### Trim
+### <a name="trim"></a>Trim
 
 **说明：** <br>Trim 函数从字符串中删除前导空格和尾随空格。
  
@@ -1010,7 +1010,7 @@ Switch 会对所有表达式计算结果，即使它只返回其中一个结果�
 
 
 ----------
-### UCase
+### <a name="ucase"></a>UCase
 
 **说明：** <br>UCase 函数将字符串中的所有字符都转换为大写形式。
 
@@ -1022,7 +1022,7 @@ Switch 会对所有表达式计算结果，即使它只返回其中一个结果�
 
 
 ----------
-### Word
+### <a name="word"></a>Word
 
 **说明：** <br>基于描述要使用的分隔符与要返回的单词数的参数，Word 函数返回字符串中包含的单词。
  

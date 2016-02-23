@@ -67,7 +67,7 @@ Azure AD Connect 向导提供如何合并用户的多个选项，因此即使不
 
 不支持多个 Azure AD Connect 同步服务器连接到单个 Azure AD 目录（[暂存服务器](#staging-server)除外）。
 
-### 多个林 – 独立的拓扑
+### <a name="multiple-forests-separate-topologies"></a>多个林 – 独立的拓扑
 “所有目录中只会显示用户一次”
 
 ![MultiForestUsersOnce](./media/active-directory-aadconnect-topologies/MultiForestUsersOnce.png)
@@ -83,7 +83,7 @@ Azure AD Connect 向导提供如何合并用户的多个选项，因此即使不
 
 FSP 可在 ADDS 中用来代表安全组中来自其他林的成员。同步引擎将 FSP 解析为实际用户，并使用所有解析为实际对象的 FSP 安全组显示于 Azure AD 中。
 
-### 多个林 – 包含可选 GALSync 的完整网格
+### <a name="multiple-forests-full-mesh-with-optional-galsync"></a>多个林 – 包含可选 GALSync 的完整网格
 “用户标识存在于多个目录中。匹配方法：mail 属性”
 
 ![MultiForestUsersMail](./media/active-directory-aadconnect-topologies/MultiForestUsersMail.png)
@@ -96,7 +96,7 @@ FSP 可在 ADDS 中用来代表安全组中来自其他林的成员。同步引�
 
 在此方案中，标识对象使用 mail 属性进行联接。因此，一个林中具有邮箱的用户与其他林中的联系人进行联接。
 
-### 多个林 – 帐户资源林
+### <a name="multiple-forests-account-resource-forest"></a>多个林 – 帐户资源林
 “用户标识存在于多个目录中。匹配方法：ObjectSID 和 msExchMasterAccountSID 属性”
 
 ![MultiForestUsersObjectSID](./media/active-directory-aadconnect-topologies/MultiForestUsersObjectSID.png)
@@ -115,7 +115,7 @@ FSP 可在 ADDS 中用来代表安全组中来自其他林的成员。同步引�
 | Exchange Online |	如果有多个本地 Exchange 组织（即 Exchange 已部署到多个林），则必须使用 Exchange 2013 SP1 或更高版本。可以在此找到详细信息：[包含多个 Active Directory 林的混合部署](https://technet.microsoft.com/zh-cn/library/jj873754.aspx) |
 | Skype for Business | 使用多个本地林时，只支持帐户资源林拓扑。可以在此找到支持的拓扑的详细信息：[Skype for Business Server 2015 的环境要求](https://technet.microsoft.com/zh-cn/library/dn933910.aspx) |
 
-## 暂存服务器
+## <a name="staging-server"></a>暂存服务器
 ![StagingServer](./media/active-directory-aadconnect-topologies/MultiForestStaging.png)
 
 Azure AD Connect 支持以“暂存模式”安装第二个服务器。使用此模式的服务器只从所有已连接目录读取数据，因此具有标识数据的更新副本。在发生主服务器故障灾难时，使用 Azure AD Connect 向导可以轻松手动故障移转到第二个服务器。第二个服务器最好位于不同的数据中心，因为没有和主服务器共享基础结构。在主服务器上进行的任何配置更改都必须复制到第二个服务器。

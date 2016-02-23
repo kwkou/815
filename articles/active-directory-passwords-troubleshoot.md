@@ -98,7 +98,7 @@
             </td>
             <td>
               <p>UI 的许多元素都是隐藏的，直到需要它们时才会显示。如果你希望看到它们，请尝试启用页面上的所有选项。</p>
-              <p>有关可供你使用的所有控件的更多信息，请参阅<a href="active-directory-passwords-customize#password-management-behavior">自定义用户密码策重置略</a>。</p>
+              <p>有关可供你使用的所有控件的更多信息，请参阅<a href="/documentation/articles/active-directory-passwords-customize#password-management-behavior">自定义用户密码策重置略</a>。</p>
             </td>
           </tr>
           <tr>
@@ -285,7 +285,7 @@
               <p>如果你愿意，我们可以联系你所在组织的管理员为你重置密码。</p>
             </td>
             <td>
-              <p>确保用户在目录下的文件中有格式正确的联系人数据，然后继续。有关如何在目录中配置身份验证信息以避免用户遇到此错误的信息，请参阅<a href="active-directory-passwords-learn-more#what-data-is-used-by-password-reset">密码重置使用哪些数据</a>。</p>
+              <p>确保用户在目录下的文件中有格式正确的联系人数据，然后继续。有关如何在目录中配置身份验证信息以避免用户遇到此错误的信息，请参阅<a href="/documentation/articles/active-directory-passwords-learn-more#what-data-is-used-by-password-reset">密码重置使用哪些数据</a>。</p>
             </td>
           </tr>
           <tr>
@@ -301,7 +301,7 @@
               <p>如果你愿意，我们可以联系你所在组织的管理员为你重置密码。</p>
             </td>
             <td>
-              <p>确保用户至少有两个正确配置的联系方式（例如，移动电话和办公室电话），然后继续。有关如何在目录中配置身份验证信息以避免用户遇到此错误的信息，请参阅<a href="active-directory-passwords-learn-more#what-data-is-used-by-password-reset">密码重置使用哪些数据</a>。</p>
+              <p>确保用户至少有两个正确配置的联系方式（例如，移动电话和办公室电话），然后继续。有关如何在目录中配置身份验证信息以避免用户遇到此错误的信息，请参阅<a href="/documentation/articles/active-directory-passwords-learn-more#what-data-is-used-by-password-reset">密码重置使用哪些数据</a>。</p>
             </td>
           </tr>
           <tr>
@@ -634,7 +634,7 @@
               <p>尝试通过 Azure 管理门户代表用户重置密码时，你将看到一条消息：“在本地环境中运行的密码重置服务不支持管理员重置用户密码。请升级到最新版本的 AAD Sync 以解决此问题。”</p>
             </td>
             <td>
-              <p>当同步引擎的版本不支持所使用的特定密码写回操作时，将会发生这种情况。1.0.0419.0911 以上的 AAD Sync 版本支持所有密码管理操作，包括密码重置写回、密码更改写回，以及管理员通过 Azure 管理门户启动的密码重置写回。&#160; 1.0.6862 以上的 DirSync 版本仅支持密码重置写回。若要解决此问题，强烈建议你安装最新版本的 AAD Sync 或 Azure Active Directory Connect（有关详细信息，请参阅<a href="active-directory-aadconnect#download-azure-ad-connect">目录集成工具</a>），这样既能解决此问题，又可以在你的组织中充分利用密码写回功能。</p>
+              <p>当同步引擎的版本不支持所使用的特定密码写回操作时，将会发生这种情况。1.0.0419.0911 以上的 AAD Sync 版本支持所有密码管理操作，包括密码重置写回、密码更改写回，以及管理员通过 Azure 管理门户启动的密码重置写回。&#160; 1.0.6862 以上的 DirSync 版本仅支持密码重置写回。若要解决此问题，强烈建议你安装最新版本的 AAD Sync 或 Azure Active Directory Connect（有关详细信息，请参阅<a href="/documentation/articles/active-directory-aadconnect#download-azure-ad-connect">目录集成工具</a>），这样既能解决此问题，又可以在你的组织中充分利用密码写回功能。</p>
             </td>
           </tr>
         </tbody></table>

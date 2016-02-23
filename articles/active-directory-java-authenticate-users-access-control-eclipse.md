@@ -202,7 +202,7 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 
 1. 在 Eclipse 的项目资源管理器中，右键单击“MyACSHelloWorld”，单击“Azure”，然后单击“适用于 Azure 的包”。
 2. 对于“项目名称”，请键入 **MyAzureACSProject**，然后单击“下一步”。
-3. 选择一个 JDK 和一个应用程序服务器。（[在 Eclipse 中创建 Azure 的 Hello World 应用程序](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx)教程中将详细介绍这些步骤）。
+3. 选择一个 JDK 和一个应用程序服务器。（[在 Eclipse 中创建 Azure 的 Hello World 应用程序](/documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/)教程中将详细介绍这些步骤）。
 4. 单击“完成”。
 5. 单击“在 Azure 模拟器中运行”按钮。
 6. 当你的 Java Web 应用在计算模拟器中启动后，请关闭浏览器的所有实例（以便任何当前浏览器会话不会妨碍你的 ACS 登录测试）。

@@ -30,7 +30,7 @@
 
 - [将密码设置为永不过期](#set-a-password-not-to-expire)
 
-## 如何检查密码过期策略
+## <a name="how-to-check-expiration-policy-for-a-password"></a>如何检查密码过期策略
 
 1.  使用公司管理员凭据连接到 Windows PowerShell。
 
@@ -40,7 +40,7 @@
 
 	- 若要查看所有用户的“密码永不过期”设置，请运行以下 cmdlet：`Get-MSOLUser | Select UserPrincipalName, PasswordNeverExpires`
 
-## 设置密码过期
+## <a name="set-a-password-to-expire"></a>设置密码过期
 
 1.  使用公司管理员凭据连接到 Windows PowerShell。
 
@@ -50,7 +50,7 @@
   	
 	- 若要将组织中所有用户的密码设置为会过期，请使用以下 cmdlet：`Get-MSOLUser | Set-MsolUser -PasswordNeverExpires \$false`
 
-## 将密码设置为永不过期
+## <a name="set-a-password-not-to-expire"></a>将密码设置为永不过期
 
 1. 使用公司管理员凭据连接到 Windows PowerShell。
 
