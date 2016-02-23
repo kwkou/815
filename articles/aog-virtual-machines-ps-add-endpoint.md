@@ -6,11 +6,11 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual machine" ms.date="" wacn.date="2/1/2016"/>
+<tags ms.service="virtual machine" ms.date="" wacn.date="02/01/2016"/>
 
 #通过PowerShell的方式增加虚拟机终结点
 
-关于虚拟机终结点的概念请阅读：[如何设置虚拟机的终结点](http://www.windowsazure.cn/zh-cn/documentation/articles/virtual-machines-set-up-endpoints/)
+关于虚拟机终结点的概念请阅读：[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-set-up-endpoints)
 
 本文包含以下内容（本文在名称为"pstest"的虚拟机做测试）：
 
@@ -19,11 +19,11 @@
 
 ##通过PowerShell的方式增加终结点
 
->使用Powershell前有关Azure PowerShell的安装、配置和连接到订阅请阅读[这篇文章](http://www.windowsazure.cn/documentation/articles/powershell-install-configure)
+>使用Powershell前有关Azure PowerShell的安装、配置和连接到订阅请阅读[这篇文章](/documentation/articles/powershell-install-configure)
 
 ####查看当前虚拟机终结点
 
-相关指令：[Get-AzureVM](https://msdn.microsoft.com/en-us/library/azure/dn495236.aspx)、[Get-AzureEndpoint](https://msdn.microsoft.com/en-us/library/azure/dn495158.aspx)
+相关指令：[Get-AzureVM](https://msdn.microsoft.com/zh-cn/library/azure/dn495236.aspx)、[Get-AzureEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn495158.aspx)
 
 	#servicename 为虚拟机对应的云服务的名称
 	#name 为虚拟机的名称
@@ -35,7 +35,7 @@
 
 ####添加虚拟机终结点
 
-相关指令：[Add-AzureEndpoint](https://msdn.microsoft.com/en-us/library/azure/dn495300.aspx)、[Update-AzureVM](https://msdn.microsoft.com/en-us/library/azure/dn495230.aspx)
+相关指令：[Add-AzureEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn495300.aspx)、[Update-AzureVM](https://msdn.microsoft.com/zh-cn/library/azure/dn495230.aspx)
 
 	Get-AzureVM -ServiceName "pstest" -Name "pstest" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 | Update-AzureVM
 
@@ -45,7 +45,7 @@
 
 ##通过PowerShell脚本批量的增加终结点
 
-首先在Excel输入需要一次性添加的终结点，然后以csv文件格式导出。关于在PowerShell中导入.csv文件请阅读[这篇文章](https://technet.microsoft.com/en-us/library/ee176874.aspx).
+首先在Excel输入需要一次性添加的终结点，然后以csv文件格式导出。关于在PowerShell中导入.csv文件请阅读[这篇文章](https://technet.microsoft.com/zh-cn/library/ee176874.aspx).
 
 ![](./media/aog-virtual-machines-ps-add-endpoint/excel-input.PNG)
 
