@@ -1,14 +1,14 @@
-<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Overview of Windows Azure CDN in China - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN, CDN加速, CDN服务, 主流CDN, 多场景加速, 免费CDN, CDN Web 应用加速, Web 应用加速, 网页加速, 静态加速, 下载加速, VOD加速, 流媒体直播加速, 云服务,  存储账户,缓存刷新, 回源, 云加速, 加速效果, 节点, 流量, CNAME, 带宽, 网速, 防盗链,https加速, 低成本带宽, 访问加速, 小文件加速, 下载加速, 大文件加速, 流媒体加速, HTTPS安全加速, 缓存刷新, 内容预加载, 防盗链, 日志下载, CDN技术文档, CDN帮助文档, CDN FAQ" description="Learn the overview of WIndows Azure CDN, advantages, typical scenarios and key features." metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Overview of Windows Azure CDN in China - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN, CDN加速, CDN服务, 主流CDN, 多场景加速, 免费CDN, CDN网站加速, 网站加速, 网页加速, 静态加速, 下载加速, VOD加速, 流媒体直播加速, 云服务,  存储账户,缓存刷新, 回源, 云加速, 加速效果, 节点, 流量, CNAME, 带宽, 网速, 防盗链,https加速, 低成本带宽, 访问加速, 小文件加速, 下载加速, 大文件加速, 流媒体加速, HTTPS安全加速, 缓存刷新, 内容预加载, 防盗链, 日志下载, CDN技术文档, CDN帮助文档, CDN FAQ" description="Learn the overview of WIndows Azure CDN, advantages, typical scenarios and key features." metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
-    wacn.date="01/21/2016"
+    wacn.date="2/23/2016"
     />
 
 # Windows Azure CDN （内容交付网络）概述
 
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/cdn-overview)
-- [英文版](/documentation/articles/cdn-enus-overview)
+- [English Version](/documentation/articles/cdn-enus-overview)
 
 Windows Azure CDN （内容传送网络） 通过遍布在中国大陆的众多物理节点上缓存Azure平台上的Storage Blob，Cloud Service和WebSites的静态内容，以及为媒体服务提供流式内容分发提供加速，为开发人员提供一个传送高带宽内容的解决方案。目前本CDN服务也同时支持没有部署在Azure平台上的源站。
 
@@ -22,11 +22,11 @@ Windows Azure CDN （内容传送网络） 通过遍布在中国大陆的众多�
 
 ## 什么是CDN<a id="step1"></a>
 
-CDN 的全称是 Content Delivery Network，即内容传送网络。目前几乎所有大型 Web 应用都在使用这一技术，但该技术并非大型 Web 应用的专利。其基本思路是尽可能避开互联网上有可能 影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。通过在网络各处放置节点服务器，以互联网为基础构建一层更智能的虚拟网络，CDN 系统能够实时地根据网 络流量和各节点的连接、负载状况，以及到用户的距离和响应时间等综合信息，将用户的请 求重新导向距离用户最近的服务节点。
+CDN 的全称是 Content Delivery Network，即内容传送网络。目前几乎所有大型网站都在使用这一技术，但该技术并非大型网站的专利。其基本思路是尽可能避开互联网上有可能 影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。通过在网络各处放置节点服务器，以互联网为基础构建一层更智能的虚拟网络，CDN 系统能够实时地根据网 络流量和各节点的连接、负载状况，以及到用户的距离和响应时间等综合信息，将用户的请 求重新导向距离用户最近的服务节点。
  
-以微软公司的 Web 应用为例，微软是一家美国公司，但客户遍及全球。这也意味着全球各地都有 用户可能需要访问微软 Web 应用，或从 Microsoft Update 下载产品更新。如果只将 Web 应用服务器部署在美国的一个位置，该地区周围的用户访问时无疑可以获得满意的速度，毕竟距离近， 网络延迟也低。但如果中国的用户需要通过美国这一位置的服务器下载产品更新，就需要在中国和美国之间往返传输所有数据包。由于线路总长度高达数千公里，这会造成极大的延迟。
+以微软公司的网站为例，微软是一家美国公司，但客户遍及全球。这也意味着全球各地都有 用户可能需要访问微软网站，或从 Microsoft Update 下载产品更新。如果只将网站服务器部署在美国的一个位置，该地区周围的用户访问时无疑可以获得满意的速度，毕竟距离近， 网络延迟也低。但如果中国的用户需要通过美国这一位置的服务器下载产品更新，就需要在中国和美国之间往返传输所有数据包。由于线路总长度高达数千公里，这会造成极大的延迟。
 
-为了解决这个问题，可以在中国放置 CDN节点。CDN节点可以自动将数据缓存到全中国主要城市的数据中心内，让内容和用户之间的距离更短，进而降低传输数据所需的时间。通过 CDN 的缓存，用户可以就近获得所需内容，解决 Internet 网络拥挤的状况，提高用户访问 Web 应用和应用程序的响应速度。
+为了解决这个问题，可以在中国放置 CDN节点。CDN节点可以自动将数据缓存到全中国主要城市的数据中心内，让内容和用户之间的距离更短，进而降低传输数据所需的时间。通过 CDN 的缓存，用户可以就近获得所需内容，解决 Internet 网络拥挤的状况，提高用户访问网站和应用程序的响应速度。
 
 
 ![][4]
@@ -51,12 +51,12 @@ CDN 的全称是 Content Delivery Network，即内容传送网络。目前几乎
 
 ### 全网节点动态优化
 
-整合国内多家主流CDN服务，提供全面的静态网页加速，软件安装包、游戏客户端、应用程序、影音等大文件的下载分发，以及在线视频 Web 应用、在线教育 Web 应用等以流媒体为主的视频点播和直播等多种业务类型加速，满足不同类型资源的分发需求；提供包含电信、联通、移动等主流电信运营商，以及其他 ISP运营商，全地区的全网覆盖，根据网络实时状况，通过负载均衡技术和智能调度策略，将用户请求分配到最优节点。
+整合国内多家主流CDN服务，提供全面的静态网页加速，软件安装包、游戏客户端、应用程序、影音等大文件的下载分发，以及在线视频网站、在线教育网站等以流媒体为主的视频点播和直播等多种业务类型加速，满足不同类型资源的分发需求；提供包含电信、联通、移动等主流电信运营商，以及其他 ISP运营商，全地区的全网覆盖，根据网络实时状况，通过负载均衡技术和智能调度策略，将用户请求分配到最优节点。
 
 
 ### 节省成本
 
-依托和多家主流CDN服务的合作优势，Azure CDN可以给包括企业客户， Web 应用支付用户在内的所有Azure用户，提供质优价廉的CDN服务。让更多的用户可以享受到CDN服务所带来的红利。
+依托和多家主流CDN服务的合作优势，Azure CDN可以给包括企业客户，网站支付用户在内的所有Azure用户，提供质优价廉的CDN服务。让更多的用户可以享受到CDN服务所带来的红利。
 
 ## 多场景加速
 
@@ -64,9 +64,9 @@ Azure CDN服务支持下面描述的多种加速场景，为用户打造出全�
 
 ![][8]
 
-### Web 应用、小文件加速
+### 网站、小文件加速
 
-CDN的一个典型使用场景就是针对所谓的众多 Web 应用所使用的“小文件”（html网页文件，图片文件，JavaScript，CSS文件等）进行加速，使 Web 应用得到更好的用户体验，从而带来更多的用户访问量，最终带动整个业务的总体收入。典型的用户群体是面向互联网用户提供 Web 应用服务的众多大中小企业。
+CDN的一个典型使用场景就是针对所谓的众多网站所使用的“小文件”（html网页文件，图片文件，JavaScript，CSS文件等）进行加速，使网站得到更好的用户体验，从而带来更多的用户访问量，最终带动整个业务的总体收入。典型的用户群体是面向互联网用户提供网站服务的众多大中小企业。
 
 ### 大文件下载分发
 
@@ -74,7 +74,7 @@ CDN另外一个典型的应用场景就是针对大文件下载进行多节点�
 
 ### 流媒体加速
 
-近年来，随着网路视频媒体服务的增加，越来越多的人们习惯于使用网络平台来收听观看各种音视频。再加上国内网络环境的条件限制，这就对音视频内容的最终分发提出了非常高的要求。典型的用户群体是面向互联网用户提供服务的各类媒体 Web 应用，手机APP客户端。
+近年来，随着网路视频媒体服务的增加，越来越多的人们习惯于使用网络平台来收听观看各种音视频。再加上国内网络环境的条件限制，这就对音视频内容的最终分发提出了非常高的要求。典型的用户群体是面向互联网用户提供服务的各类媒体网站，手机APP客户端。
 
 ### HTTPS安全加速
 

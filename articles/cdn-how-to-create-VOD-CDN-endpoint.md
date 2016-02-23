@@ -1,20 +1,20 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to create VOD acceleration type CDN - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN加速,CDN服务,主流CDN, VOD, 视频点播加速, VOD加速, 缓存规则, 媒体服务, Azure Media Service, CDN技术文档, CDN帮助文档" description="Learn How to create VOD acceleration type CDN on Windows Azure Management Portal and default caching rules for VOD CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
-    wacn.date="01/21/2016"
+    wacn.date="2/23/2016"
     />
 
 #VOD视频点播加速CDN节点创建
 
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/cdn-how-to-create-VOD-CDN-endpoint)
-- [英文版](/documentation/articles/cdn-enus-how-to-create-VOD-CDN-endpoint)
+- [English Version](/documentation/articles/cdn-enus-how-to-create-VOD-CDN-endpoint)
 
 VOD视频点播加速服务主要针对在线音视频点播提供加速服务。随着网路视频媒体服务的兴起，越来越多的用户选择使用网络平台收听观看各种音视频。加之国内网络环境的限制，对音视频内容的最终分发提出了非常高的要求。Windows Azure CDN将音频、视频等流媒体内容分发缓存到CDN边缘节点，将用户请求指向最优节点，减少源站服务器的负载，节省带宽资源，给用户提供高速、流畅、高质量的在线视频体验。
 
 Windows Azure CDN VOD视频点播加速支持Windows Azure内置的[媒体服务](http://www.windowsazure.cn/home/features/media-services/)。
 
-VOD视频点播加速适用于各类在线音视频点播 Web 应用，如媒体类视频 Web 应用，在线教育 Web 应用，移动端APP客户端等。
+VOD视频点播加速适用于各类在线音视频点播网站，如媒体类视频网站，在线教育网站，移动端APP客户端等。
 
 本文是针对VOD视频点播加速域名创建，您也可以参考[使用Windows Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-how-to-use/)了解基本的Windows Azure CDN加速节点创建信息。
 

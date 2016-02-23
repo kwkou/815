@@ -1,14 +1,14 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to useWindows Azure CDN Management Portal advanced features - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, 缓存刷新, 内容预取, 日志下载, 缓存规则, CDN 助文档, CDN技术文档, CDN" description="Learn how to use advanced features of Windows Azure CDN management portal to manage CDN endpoint" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
-    wacn.date="01/21/2016"
+    wacn.date="2/23/2016"
     />
 
 # Windows Azure CDN 管理门户使用指南
 
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/cdn-management-portal-how-to-use)
-- [英文版](/documentation/articles/cdn-enus-management-portal-how-to-use)
+- [English Version](/documentation/articles/cdn-enus-management-portal-how-to-use)
 
 Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物理节点上缓存Azure平台上的Storage Blob，Cloud Service和WebSites的静态内容，为开发人员提供一个传送高带宽内容的解决方案。目前本CDN服务也同时支持没有部署在Azure平台上的源站。
 
@@ -63,7 +63,7 @@ Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物�
 -   加速域名，用于访问CDN缓存内容的域名，该域名必须有相应的ICP备案信息。
 -   CDN 域名，由Windows Azure CDN平台提供，都是以 **.mschcdn.com**结尾。
 -   源站地址，CDN所缓存内容的原始位置。
--   加速类型 （目前支持“ Web 应用加速”，“下载加速”，“HTTP点播加速”和“流媒体直播加速”）
+-   加速类型 （目前支持“网站加速”，“下载加速”，“HTTP点播加速”和“流媒体直播加速”）
 -   状态，开启或者关闭（包括ICP审核，需要CNAME配置，禁用等非**开启**状态）
 
 >**注意**
@@ -277,7 +277,7 @@ Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物�
 >如果CDN日志中未包括栏目内容，则相应记录标记为“-”，比如“c-referer”记录。此外，取决于边缘节点的日志配置，“rs-duration”、“hit-miss”、“s-ip”等记录也有可能为空。
 
 >**注意**
-> Web 应用通过CDN加速后，其访问记录多数来源于CDN边缘节点。CDN回源时，会在HTTP Header X-Forwarded-For 中填入原始IP，源站的Web服务器可以修改日志配置该信息。如果用户需要知道客户端原始IP地址，可以参考以下信息。
+>网站通过CDN加速后，其访问记录多数来源于CDN边缘节点。CDN回源时，会在HTTP Header X-Forwarded-For 中填入原始IP，源站的Web服务器可以修改日志配置该信息。如果用户需要知道客户端原始IP地址，可以参考以下信息。
 
 >以 Nginx 为例，其配置文件可以加入如下信息：
 
