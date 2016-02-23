@@ -42,7 +42,7 @@
 
 * **Azure 订阅** - 如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](http://www.windowsazure.cn/pricing/1rmb-trial/)。
 
-*   **内核配额** - 你可能需要增加内核配额才能部署 VM 的群集。例如，如果你要按本文所示部署 8 个 A9 VM，则至少需要 128 个内核。若要增加配额，可免费[建立联机客户支持请求](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。
+*   **内核配额** - 你可能需要增加内核配额才能部署 VM 的群集。例如，如果你要按本文所示部署 8 个 VM，则至少需要 128 个内核。若要增加配额，可免费[建立联机客户支持请求](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。
 
 *   **Azure CLI** - [安装](/documentation/articles/xplat-cli-install) Azure CLI 并[对其进行配置](/documentation/articles/xplat-cli-connect)，以从客户端计算机连接到你的 Azure 订阅。
 
@@ -76,10 +76,10 @@ azure vm image list | grep "suse.*hpc"
 
 >[AZURE.NOTE]已为 SLES 12 HPC 映像预配置了必需的用于 Azure 的 Linux RDMA 驱动程序。
 
-现在，通过运行如下命令使用提供的 SLES 12 HPC 映像预配 A9 大小 VM：
+现在，通过运行如下命令使用提供的 SLES 12 HPC 映像预配 VM：
 
 ```
-azure vm create -g <username> -p <password> -c <cloud-service-name> -l <location> -z A9 -n <vm-name> -e 22 b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708
+azure vm create -g <username> -p <password> -c <cloud-service-name> -l <location> -z A7 -n <vm-name> -e 22 b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708
 ```
 
 其中
@@ -168,7 +168,7 @@ sudo waagent -deprovision
 
 ### 使用映像部署群集
 
-使用你环境的相应值修改以下 Bash 脚本，并从客户端计算机运行它。由于服务管理部署方法将依次部署 VM，因此将需要几分钟时间才能部署此脚本中建议的 8 个 A9 VM。
+使用你环境的相应值修改以下 Bash 脚本，并从客户端计算机运行它。由于服务管理部署方法将依次部署 VM，因此将需要几分钟时间才能部署此脚本中建议的 8 个 VM。
 
 ```
 	#!/bin/bash -x
@@ -194,10 +194,10 @@ sudo waagent -deprovision
 	
 	portnumber=101
 	
-	# In this cluster there will be 8 size A9 nodes, named cluster11 to cluster18. Specify your captured image in <image-name>. Specify the username and password you used when creating the SSH keys.
+	# In this cluster there will be 8 nodes, named cluster11 to cluster18. Specify your captured image in <image-name>. Specify the username and password you used when creating the SSH keys.
 	
 	for (( i=11; i<19; i++ )); do
-	        azure vm create -g <username> -p <password> -c <cloud-service-name> -z A9 -n $vmname$i -e $portnumber$i -w <network-name> -b Subnet-1 <image-name>
+	        azure vm create -g <username> -p <password> -c <cloud-service-name> -z A7 -n $vmname$i -e $portnumber$i -w <network-name> -b Subnet-1 <image-name>
 	done
 	
 	# Save this script with a name like makecluster.sh and run it in your shell environnment to provision your cluster
