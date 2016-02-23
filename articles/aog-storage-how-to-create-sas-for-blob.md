@@ -258,5 +258,3 @@ PowerShell指令：[New-AzureStorageContainerSASToken](https://msdn.microsoft.co
             return sasURL;
         }
 
-**注意：**
-
