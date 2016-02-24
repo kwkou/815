@@ -149,7 +149,7 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
   [Azure SDK for Node.js GitHub repository]: https://github.com/WindowsAzure/azure-sdk-for-node
   [completed-app]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-10.png
   [Azure SDK for Node.js]: /develop/nodejs/
-  [Node.js Web 应用]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+  [Node.js Web Application]: /documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [Socket.IO GitHub 存储库]: https://github.com/LearnBoost/socket.io/tree/0.9.14
   [Azure Considerations]: #windowsazureconsiderations
   [Hosting the Chat Example in a Worker Role]: #hostingthechatexampleinawebrole

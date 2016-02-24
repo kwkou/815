@@ -12,7 +12,7 @@
    ms.date="09/17/2015"
    wacn.date="01/29/2016"/>
 
-# “支持的令牌和声明类型”
+# 支持的令牌和声明类型
 
 本主题旨在帮助你了解和评估 Azure Active Directory (Azure AD) 颁发的 SAML 2.0 令牌和 JSON Web 令牌 (JWT) 令牌中的声明。
 

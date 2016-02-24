@@ -8,17 +8,17 @@
 	editor=""/>
 
 <tags 
-	ms.service="sql-database"
+	ms.service="sql-database" 
 	ms.date="11/04/2015" 
-	wacn.date="01/05/2016"/>
+	wacn.date="01/29/2016"/>
 
 # 安装弹性数据库作业概述
-可以通过 PowerShell 或 Azure 门户安装[**弹性数据库作业**](/documentation/articles/sql-database-elastic-jobs-overview)。只有安装了 PowerShell 包，才能获取使用 PowerShell API 创建和管理作业的权限。此外，PowerShell API 目前提供的功能明显多于门户。
+可以通过 PowerShell 或 Azure 经典门户安装[**弹性数据库作业**](/documentation/articles/sql-database-elastic-jobs-overview)。只有安装了 PowerShell 包，才能获取使用 PowerShell API 创建和管理作业的权限。此外，PowerShell API 目前提供的功能明显多于门户。
 
 如果你从现有的**弹性数据库池**通过门户安装了**弹性数据库作业**，最新的 Powershell 预览包含用于升级现有安装的脚本。强烈建议将安装升级到最新的**弹性数据库作业**组件，以便利用通过 PowerShell API 公开的新功能。
 
 ## 先决条件
-* Azure 订阅。如需试用，请参阅[试用](/pricing/1rmb-trial/)。
+* Azure 订阅。若要获取试用版，请参阅[试用](/pricing/1rmb-trial)。
 * Azure PowerShell 版本为 0.8.16 或以上。通过 [Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376)安装最新版本 (0.9.5)。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 * [NuGet 命令行实用程序](https://nuget.org/nuget.exe)用于安装弹性数据库作业包。有关详细信息，请参阅 http://docs.nuget.org/docs/start-here/installing-nuget。
 
@@ -156,7 +156,7 @@
 3. 单击相应的复选框接受条款。
 4. 在“安装服务”视图中，单击“作业凭据”。
 
- 
+
 
 5. 键入数据库管理员的用户名和密码。安装过程中会创建新的 Azure SQL 数据库服务器。在新服务器中，创建了一个称为控制数据库的新数据库，用于包含弹性数据库作业的元数据。此处创建的用户名和密码用于登录控制数据库。单独的凭据用于对池中的数据库执行脚本。
 
@@ -167,13 +167,15 @@
 	![开始面板中的资源组][3]
 
 7. 如果你在安装弹性数据库作业时尝试创建或管理某个作业，则在提供**凭据**时，你将看到以下消息。
- 
+
+
 
 如果需要卸载，请删除资源组。请参阅[如何卸载弹性数据库作业组件](/documentation/articles/sql-database-elastic-jobs-uninstall)。
 
 ## 后续步骤
 
-确保已在组中的每个数据库上创建对脚本具有适当权限的凭据。有关详细信息，请[参阅如何将用户添加到数据库组中的所有数据库](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs)。请参阅[创建和管理弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-create-and-manage)入门主题。
+确保已在组中的每个数据库上创建对脚本具有适当权限的凭据。有关详细信息，请[参阅如何将用户添加到数据库组中的所有数据库](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs)。
+请参阅[创建和管理弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-create-and-manage)入门主题。
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-jobs-service-installation/screen-1.png
@@ -182,4 +184,4 @@
 [4]: ./media/sql-database-elastic-jobs-service-installation/incomplete.png
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

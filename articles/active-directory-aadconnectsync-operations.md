@@ -15,7 +15,7 @@
 # Azure AD Connect 同步：操作任务和注意事项
 本主题旨在介绍 Azure AD Connect 同步的操作任务。
 
-## 过渡模式
+## <a name="staging-mode"></a>过渡模式
 暂存模式可以用于许多方案，包括：
 
 -	高可用性。

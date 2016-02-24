@@ -76,7 +76,7 @@
 
 3. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。对于 **ServicePrincipalName** 参数，请提供你在创建应用程序时使用的 **ApplicationId** 或 **IdentifierUris**。<!--有关基于角色的访问控制的详细信息，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)-->
 
-        PS C:\> New-AzureRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
+        PS C:\> New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
 
 4. 检索在其中创建了角色分配的订阅。稍后将使用此订阅来获取服务主体角色分配所在租户的 **TenantId**。
 
@@ -84,7 +84,7 @@
 
      如果角色分配不是在当前选择的订阅中创建的，你可以指定 **SubscriptoinId** 或 **SubscriptionName** 参数来检索其他订阅。
 
-5. 运行 **Get-Credential** 命令，以创建包含你的凭据的新 **PSCredential** 对象。
+5. 若要通过 PowerShell 以服务主体的身份登录，请运行 **Get-Credential** 命令，以创建包含你的凭据的新 **PSCredential** 对象。
 
         PS C:\> $creds = Get-Credential
 

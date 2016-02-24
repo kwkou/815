@@ -11,6 +11,8 @@
 
 在开始之前，请确保已将 Azure PowerShell 准备就绪。
 
+注意：本文主要针对Azure PowerShell 0.9*版本，如果您使用1.0.0+版本，请参考[Azure PowerShell 1.0.0以上版本在中国Azure使用的注意事项](http://blogs.msdn.com/b/azchina/archive/2015/12/18/azure-powershell-1.0.0_e54e0a4e48722c6728572d4efd56_azure_7f4f28758476e86c0f618b4e7998_.aspx)。将下述命令当中AzureResource改为AzureRmResource运行。
+
 ###目录
 - [了解 Azure 资源模板和资源组](#gettoknow)
 - [创建操作](#creat)

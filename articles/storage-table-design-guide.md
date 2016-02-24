@@ -9,7 +9,7 @@
 
 <tags
    ms.service="storage"
-   ms.date="08/03/2015"
+   ms.date="12/03/2015"
    wacn.date="01/21/2016"/>
 
 # Azure 存储表设计指南：设计可伸缩的高性能表

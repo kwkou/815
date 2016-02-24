@@ -1,6 +1,6 @@
 <properties
-   pageTitle="SQL 数据库动态数据屏蔽（Azure 门户）入门"
-   description="如何开始在 Azure 门户中使用 SQL 数据库动态数据屏蔽"
+   pageTitle="SQL 数据库动态数据屏蔽入门（Azure 经典门户）"
+   description="如何开始在 Azure 经典门户中使用 SQL 数据库动态数据屏蔽"
    services="sql-database"
    documentationCenter=""
    authors="ronitr"
@@ -9,13 +9,13 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="10/20/2015"
-   wacn.date="01/05/2016"/>
+   ms.date="12/01/2015"
+   wacn.date="02/19/2016"/>
 
-# SQL 数据库动态数据屏蔽（Azure 门户）入门
+# SQL 数据库动态数据屏蔽入门（Azure 经典门户）
 
 > [AZURE.SELECTOR]
-- [Dynamic Data Masking - Azure Classical portal](/documentation/articles/sql-database-dynamic-data-masking-get-started)
+- [动态数据屏蔽 - Azure 门户](/documentation/articles/sql-database-dynamic-data-masking-get-started)
 
 ## 概述
 
@@ -27,10 +27,10 @@ SQL 数据库动态数据屏蔽通过向无特权用户屏蔽敏感数据来控�
 
 ## SQL 数据库动态数据屏蔽基础知识
 
-可以在 Azure 门户中数据库的“审核和安全性”选项卡下设置动态数据屏蔽策略。
+可以在 Azure 经典门户中数据库的“审核和安全性”选项卡下设置动态数据屏蔽策略。
 
 
-> [AZURE.NOTE]若要在 Azure 预览门户中设置动态数据屏蔽，请参阅 [SQL 数据库动态数据屏蔽入门（Azure 预览门户）](/documentation/articles/sql-database-dynamic-data-masking-get-started)。
+> [AZURE.NOTE] 若要在 Azure 门户中设置动态数据屏蔽，请参阅 [SQL 数据库动态数据屏蔽入门（Azure 门户）](/documentation/articles/sql-database-dynamic-data-masking-get-started)。
 
 
 ### 动态数据屏蔽权限
@@ -46,7 +46,7 @@ Azure 数据库管理员、服务器管理员或安全主管角色可以配置�
 * **屏蔽函数** - 一组方法，用于控制不同情况下的数据透露。
 
 | 屏蔽函数 | 屏蔽逻辑 |
-|----------------|---------------|
+|----------|---------------|
 | **默认** |**根据指定字段的数据类型完全屏蔽**<br/><br/>• 对于字符串数据类型（nchar、ntext、nvarchar），将使用 XXXX；如果字段大小小于 4 个字符，则使用更少的 X。<br/>• 对于数字数据类型（bigint、bit、decimal、int、money、numeric、smallint、smallmoney、tinyint、float、real），将使用零值。<br/>• 对于日期/时间数据类型（date、datetime2、datetime、datetimeoffset、smalldatetime、time），将使用 01-01-1900。<br/>• 对于 SQL 变体，将使用当前类型的默认值。<br/>• 对于 XML，将使用文档 <masked/>。<br/>• 对于特殊数据类型（timestamp、table、hierarchyid、GUID、binary、image、varbinary 空间类型），将使用空值。
 | **信用卡** |**公开指定字段的最后四位数**，并添加一个信用卡格式的常量字符串作为前缀的屏蔽方法。<br/><br/>XXXX-XXXX-XXXX-1234|
 | **身份证号** |**公开指定字段的最后四位数**，并添加一个中国身份证号格式的常量字符串作为前缀的屏蔽方法。<br/><br/>XXX-XX-1234 |
@@ -57,9 +57,9 @@ Azure 数据库管理员、服务器管理员或安全主管角色可以配置�
 
 <a name="Anchor1"></a>
 
-## 使用 Azure 门户为数据库设置动态数据屏蔽
+## 使用 Azure 经典门户为数据库设置动态数据屏蔽
 
-1. 启动 Azure 门户 ([https://manage.windowsazure.cn](https://manage.windowsazure.cn))。
+1. 启动 Azure 经典门户 ([https://manage.windowsazure.cn](https://manage.windowsazure.cn))。
 
 2. 单击要屏蔽的数据库，然后单击“审核和安全性”选项卡。
 
@@ -67,7 +67,7 @@ Azure 数据库管理员、服务器管理员或安全主管角色可以配置�
 
 4. 键入不应对其进行屏蔽的 SQL 用户或 AAD 标识，允许其访问未屏蔽的敏感数据。这些用户在键入时应该采用分号分隔用户列表的形式。请注意，拥有管理员权限的用户始终可以访问原始的未屏蔽数据。
 
-	>[AZURE.TIP]若要使应用程序层向应用程序特权用户显示敏感数据，请添加应用程序查询数据库时需要使用的 SQL 用户或 AAD 标识。强烈建议在此列表中包含最少量的特权用户，以最大程度地降低泄露敏感数据的风险。
+	>[AZURE.TIP] 若要使应用程序层向应用程序特权用户显示敏感数据，请添加应用程序查询数据库时需要使用的 SQL 用户或 AAD 标识。强烈建议在此列表中包含最少量的特权用户，以最大程度地降低泄露敏感数据的风险。
 
 	![导航窗格](./media/sql-database-dynamic-data-masking-get-started-portal/4_ddm_policy_classic_portal.png)
 
@@ -90,6 +90,6 @@ Azure 数据库管理员、服务器管理员或安全主管角色可以配置�
 
 ## 使用 REST API 为数据库设置动态数据屏蔽
 
-请参阅[对 Azure SQL 数据库的操作](https://msdn.microsoft.com/zh-cn/library/dn505719.aspx)。
+请参阅 [对 Azure SQL 数据库的操作](https://msdn.microsoft.com/zh-cn/library/dn505719.aspx)。
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

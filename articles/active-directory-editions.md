@@ -25,14 +25,6 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 
 > [AZURE.NOTE]有关这些版本的定价选项，请参阅 [Azure Active Directory 定价](https://azure.microsoft.com/zh-CN/pricing/details/active-directory/)。<br>中国地区目前不支持 Azure Active Directory Premium 和 Azure Active Directory 基本版。有关详细信息，请通过 Azure Active Directory 论坛与我们联系。
-<!--
-
-- **Azure Active Directory 基本版** - 面向具有云优先需求的任务工作者，此版本提供以云为中心的应用程序访问和自助标识管理解决方案。使用 Azure Active Directory 基本版，你可以增强工作效率并获得成本缩减功能，例如基于组的访问管理、用于云应用程序的自助密码重置、Azure Active Directory 应用程序代理（使用 Azure Active Directory 发布本地 Web 应用），以及 99.9％ 正常运行时间的企业级 SLA。
- 
-- **Azure Active Directory Premium** - Azure Active Directory Premium Edition 增加了丰富的企业级标识管理功能，并允许各类用户无缝访问本地与云功能，旨在满足组织更加严苛的标识和访问管理需求。此版本为混合环境中的信息工作者和标识管理员提供一切必要的功能，让他们执行应用程序访问、自助标识和访问管理 (IAM)、标识保护及实现云中的安全性。它支持动态组和自助服务组管理等高级管理与委派资源。它包含 Microsoft 标识管理器（一个本地标识与访问管理套件），并提供云写回功能，使本地用户能够使用自助密码重置等解决方案。
-
-若要立即注册并开始使用 Active Directory Premium，请参阅 [Azure Active Directory Premium 入门](/documentation/articles/active-directory-get-started-premium)。
--->
 
 > [AZURE.NOTE]
 > 许多 Azure Active Directory 功能以“即付即用”版本的形式提供：
@@ -47,22 +39,20 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 | 功能类型| 功能| 免费版| 基本版| Premium Edition| 仅限 Office 365 应用 |
 | --- | --- | --- | --- | --- | --- |
 | **常用功能**| 目录对象 [1]| 最多 500,000 个对象| 无对象限制| 无对象限制| Office 365 用户帐户没有对象限制|
-| | [用户和组管理（添加/更新/删除），基于用户的预配](/documentation/articles/active-directory-administer)，[设备注册](/documentation/articles/active-directory-conditional-access-device-registration-overview)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
-| | [对 SaaS 应用的 SSO/自定义应用，应用程序代理应用](/documentation/articles/active-directory-enable-sso-scenario)| 每个用户 10 个应用 [2]| 每个用户 10 个应用 [2]| 无限制| 每个用户 10 个应用 [2]|
+| | [用户和组管理（添加/更新/删除），基于用户的预配](/documentation/articles/active-directory-administer)，| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
+| | | 每个用户 10 个应用 [2]| 每个用户 10 个应用 [2]| 无限制| 每个用户 10 个应用 [2]|
 | | [云用户的自助密码更改](/documentation/articles/active-directory-passwords-update-your-own-password)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
 | | [Connect - 用于在本地目录与 Azure Active Directory 之间同步](/documentation/articles/active-directory-aadconnect)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
-| | **预览版**：[B2B 协作](/documentation/articles/active-directory-b2b-collaboration-overview)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
+| | | ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
 | | [安全性/使用情况报告](/documentation/articles/active-directory-view-access-usage-reports)| 基本报告| 基本报告| 高级报告| 基本报告|
-| **高级和基本版功能**| [基于组的应用程序访问管理和设置](/documentation/articles/active-directory-accessmanagement-group-saasapps)| | ![勾选标记][12]| ![勾选标记][12]| |
+| **高级和基本版功能**| 
 | | [云用户的自助密码重置](/documentation/articles/active-directory-passwords)| | ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
 | | [公司品牌（登录页和访问面板自定义）](/documentation/articles/active-directory-add-company-branding)| | ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
-| | [应用程序代理](/documentation/articles/active-directory-application-proxy-get-started)| | ![勾选标记][12]| ![勾选标记][12]| |
 | | [高可用性 SLA 运行时间 (99.9%)](https://azure.microsoft.com/support/legal/sla/)| | ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
 | **仅限高级版的功能**| 自助组管理/自助添加应用程序/动态组成员资格| | | ![勾选标记][12]| |
 | | [通过本地写回实现自助密码重置、更改、解锁](/documentation/articles/active-directory-passwords-getting-started/#enable-users-to-reset-or-change-their-ad-passwords)| | | ![勾选标记][12]| |
 | | [Multi-Factor Authentication（云和本地）](/documentation/articles/multi-factor-authentication)| | | ![勾选标记][12]| 对于 Office 365 应用限制为云|
 | | [Microsoft 标识管理器 (MIM) 用户许可证和 MIM 服务器 [3]](http://www.microsoft.com/server-cloud/products/microsoft-identity-manager/default.aspx)| | | ![勾选标记][12]| |
-| | [Cloud App Discovery](/documentation/articles/active-directory-cloudappdiscovery-whatis)| | | ![勾选标记][12]| |
 | | [Azure Active Directory Connect Health](/documentation/articles/active-directory-aadconnect-health)| | | ![勾选标记][12]| |
 | | 组帐户的自动密码滚动更新| | | ![勾选标记][12]| |
 | | **预览版**：条件性访问| | | ![勾选标记][12]| |

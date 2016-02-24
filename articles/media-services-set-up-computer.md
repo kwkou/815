@@ -10,15 +10,14 @@
 <tags
 	ms.service="media-services"
 	ms.date="12/05/2015"
-	wacn.date="01/18/2016"/>
+	wacn.date="01/14/2016"/>
 
 # 设置你的环境
 
-<div class="technical-azure-selector">
-<a href="/documentation/articles/media-services-create-account">门户</a>
-<a href="/documentation/articles/media-services-manage-with-powershell">PowerShell</a>
-<a href="https://msdn.microsoft.com/zh-cn/library/azure/dn167014.aspx">REST</a>
-</div>
+> [AZURE.SELECTOR]
+- [门户](/documentation/articles/media-services-create-account)
+- [PowerShell](/documentation/articles/media-services-manage-with-powershell)
+- [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn167014.aspx)
 <a id="create_account"></a>
 
 以下步骤描述使用 Azure 媒体服务进行开发所要满足的先决条件。
@@ -32,21 +31,13 @@
 
 为开发环境选择“.NET”或“REST API”。
 
-<div class="technical-azure-selector">
-<a href="/documentation/articles/media-services-dotnet-how-to-use">.NET</a>
-<a href="/documentation/articles/media-services-rest-how-to-use">REST API</a>
-</div>
-<!---HONumber=67-->
+[AZURE.INCLUDE [media-services-selector-setup](../includes/media-services-selector-setup.md)]
 
 <a id="connect"></a>
 ## 以编程方式连接
 
 选择“.NET”或“REST API”以编程方式连接到 Azure 媒体服务。
 
-<div class="technical-azure-selector">
-<a href="/documentation/articles/media-services-dotnet-connect_programmatically">.NET</a>
-<a href="/documentation/articles/media-services-rest-connect_programmatically">REST API</a>
-</div>
-<!---HONumber=67-->
+[AZURE.INCLUDE [media-services-selector-connect](../includes/media-services-selector-connect.md)]
 
 <!---HONumber=Mooncake_0104_2016-->

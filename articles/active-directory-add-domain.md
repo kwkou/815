@@ -87,7 +87,7 @@ Office 365 用户可能对下列相关主题感兴趣：
 
 若要查看域的状态，请在“域”页上单击该域，然后在“域属性”页上单击“域故障排除”。
 
-###<a name="verify-a-domain-at-any-domain-name-registrar" ></a> 在任一域名注册机构验证域
+###<a name="verify-a-domain-at-any-domain-name-registrar"></a> 在任一域名注册机构验证域
 
 如果你的域已在某个域名注册机构注册，并且你想要将它配置为用于 Azure AD，则需要进行域验证，以确认你拥有该域。若要验证你的域，请在域名注册机构或 DNS 托管商那里创建一条 DNS 记录，然后，Azure AD 将使用该记录来确认你拥有该域。
 
@@ -150,7 +150,7 @@ Office 365 提供了[针对公共域注册机构的具体说明](https://support
 
 在验证域后，可将你的域配置为用于你的帐户。
 
-## 如何更改用户的主域名？
+## <a name="how-can-i-change-the-primary-domain-name-for-users?"></a>如何更改用户的主域名？
 
 将域名添加到 Azure AD 后，可以更改当你创建新用户帐户时应显示为默认域名的域名。为此，请执行以下步骤：
 

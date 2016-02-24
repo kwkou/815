@@ -73,7 +73,7 @@
     </system.net>
 ```
 
-在 machine.config 中进行此更改之后，安装向导和同步引擎将响应来自代理服务器的身份验证请求。在所有安装向导页中（“配置”页除外）都使用了已登录用户的凭据。在安装向导结束时的“配置”页上，上下文将切换到已创建的[服务帐户](active-directory-aadconnect-accounts-permissions.md#azure-ad-connect-sync-service-accounts)。
+在 machine.config 中进行此更改之后，安装向导和同步引擎将响应来自代理服务器的身份验证请求。在所有安装向导页中（“配置”页除外）都使用了已登录用户的凭据。在安装向导结束时的“配置”页上，上下文将切换到已创建的[服务帐户](active-directory-aadconnect-accounts-permissions#azure-ad-connect-sync-service-account)。
 
 有关[默认代理元素](https://msdn.microsoft.com/library/kd3cf2ex.aspx)的详细信息，请参阅 MSDN。
 
@@ -115,7 +115,7 @@ Azure AD Connect 依赖于 PowerShell 和 .Net 4.5.1。请根据 Windows Server 
  		     - 服务器管理器中的“所有服务器”选项卡：右键单击 WAP 服务器并选择“以下列身份进行管理...”，然后输入 WAP 计算机的本地（非域）凭据
  		     - 若要验证远程 PSH 连接，请在服务器管理器的“所有服务器”选项卡中：右键单击 WAP 服务器，然后选择“Windows PowerShell”。此时应会打开远程 PSH 会话，以确保可以建立远程 PowerShell 会话。
 
-## SSL 证书要求
+## <a name="ssl-certificate-requirements"></a> SSL 证书要求
 
 **重要说明：**强烈建议在你的 AD FS 场的所有节点中以及所有 Web 应用程序代理服务器中使用相同的 SSL 证书。
 

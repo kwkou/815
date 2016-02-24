@@ -292,6 +292,7 @@ ADO.NET 4.5：
 
 在 Windows 上，[PortQry.exe](http://www.microsoft.com/zh-cn/download/details.aspx?id=17148) 实用程序可能很有用。以下是在 Azure SQL 数据库服务器上查询端口情况，以及在便携式计算机上运行的的示例执行：
  
+
 	[C:\Users\johndoe]
 	>> portqry.exe -n johndoesvr9.database.chinacloudapi.cn -p tcp -e 1433
 	
@@ -306,6 +307,7 @@ ADO.NET 4.5：
 	
 	[C:\Users\johndoe]
 	>>
+
 
 
 <a id="g-diagnostics-log-your-errors" name="g-diagnostics-log-your-errors"></a>
@@ -343,30 +345,30 @@ Enterprise Library 6 (EntLib60) 提供了 .NET 托管类来帮助进行日志记
 可以在 Azure SQL 数据库的日志中搜索有关问题事件的条目。在 **master** 数据库中尝试运行以下 Transact-SQL SELECT 语句：
 
 
-
-	SELECT
-	   object_name
-	  ,CAST(f.event_data as XML).value
-	      ('(/event/@timestamp)[1]', 'datetime2')                      AS [timestamp]
-	  ,CAST(f.event_data as XML).value
-	      ('(/event/data[@name="error"]/value)[1]', 'int')             AS [error]
-	  ,CAST(f.event_data as XML).value
-	      ('(/event/data[@name="state"]/value)[1]', 'int')             AS [state]
-	  ,CAST(f.event_data as XML).value
-	      ('(/event/data[@name="is_success"]/value)[1]', 'bit')        AS [is_success]
-	  ,CAST(f.event_data as XML).value
-	      ('(/event/data[@name="database_name"]/value)[1]', 'sysname') AS [database_name]
-	FROM
-	  sys.fn_xe_telemetry_blob_target_read_file('el', null, null, null) AS f
-	WHERE
-	  object_name != 'login_event'  -- Login events are numerous.
-	  and
-	  '2015-06-21' < CAST(f.event_data as XML).value
-	        ('(/event/@timestamp)[1]', 'datetime2')
-	ORDER BY
-	  [timestamp] DESC
-	;
-
+```
+SELECT
+   object_name
+  ,CAST(f.event_data as XML).value
+      ('(/event/@timestamp)[1]', 'datetime2')                      AS [timestamp]
+  ,CAST(f.event_data as XML).value
+      ('(/event/data[@name="error"]/value)[1]', 'int')             AS [error]
+  ,CAST(f.event_data as XML).value
+      ('(/event/data[@name="state"]/value)[1]', 'int')             AS [state]
+  ,CAST(f.event_data as XML).value
+      ('(/event/data[@name="is_success"]/value)[1]', 'bit')        AS [is_success]
+  ,CAST(f.event_data as XML).value
+      ('(/event/data[@name="database_name"]/value)[1]', 'sysname') AS [database_name]
+FROM
+  sys.fn_xe_telemetry_blob_target_read_file('el', null, null, null) AS f
+WHERE
+  object_name != 'login_event'  -- Login events are numerous.
+  and
+  '2015-06-21' < CAST(f.event_data as XML).value
+        ('(/event/@timestamp)[1]', 'datetime2')
+ORDER BY
+  [timestamp] DESC
+;
+```
 
 
 #### 将返回 sys.fn\_xe\_telemetry\_blob\_target\_read\_file 中的若干行
@@ -433,8 +435,6 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 以下是 EntLib60 相关信息的链接：
 
 - 免费[书籍下载：Microsoft Enterprise Library 版本 2 开发人员指南](http://www.microsoft.com/zh-cn/download/details.aspx?id=41145)
-
-- 最佳实践：[有关重试的一般性指南](/documentation/articles/best-practices-retry-general)深入探讨了重试逻辑。
 
 - [Enterprise Library - 暂时性故障处理应用程序块 6.0](http://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling) 的 NuGet 下载
 

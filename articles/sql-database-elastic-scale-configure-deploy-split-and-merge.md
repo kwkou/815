@@ -1,16 +1,16 @@
 <properties
-	title="Elastic database Split-Merge tool tutorial"
 	pageTitle="弹性数据库拆分/合并工具教程 | Windows Azure"
 	description="使用弹性数据库工具进行拆分与合并"
-	metaKeywords="elastic database tools, split and merge, Azure SQL Database sharding, elastic scale, splitting and merging elastic databases"
-	services="sql-database" documentationCenter=""  
+	services="sql-database"
+	documentationCenter=""
+	authors="sidneyh"
 	manager="jeffreyg"
-	authors="sidneyh"/>
+	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/14/2015"
-	wacn.date="09/15/2015"/>
+	ms.date="12/01/2015"
+	wacn.date="01/29/2016" />
 
 # 弹性数据库拆分/合并工具教程
 
@@ -29,9 +29,9 @@
 
     ![允许的服务][1]
 
-3. 创建将用于诊断输出的 Azure 存储帐户。转到 [Azure 管理门户](https://manage.windowsazure.cn)。在左下角单击“新建”，然后依次单击“数据服务”、“存储”和“快速创建”。
+3. 创建将用于诊断输出的 Azure 存储帐户。转到 Azure 门户。在左侧栏中，依次单击“新建”、“数据 + 存储”、“存储”。
 
-4. 创建将包含拆分/合并服务的 Azure 云服务。转到 [Azure 管理门户](https://manage.windowsazure.cn)。在左下角单击“新建”，然后依次单击“计算”、“云服务”和“快速创建”。
+4. 创建将包含拆分/合并服务的 Azure 云服务。转到 Azure 门户。在左侧栏中，依次单击“新建”、“计算”、“云服务”、“创建”。
 
 
 ## 配置您的拆分/合并服务
@@ -48,7 +48,7 @@
 
 	在 Azure SQL DB 中，连接字符串通常采用以下形式：
 
-        "Server=myservername.database.windows.net; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
+        "Server=myservername.database.chinacloudapi.cn; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
 4.    同时在 ElasticScaleMetadata 设置的 **SplitMergeWeb** 和 **SplitMergeWorker** 角色部分中，在 cscfg 文件内输入此连接字符串。
 
 5.    对于 **SplitMergeWorker** 角色，在 **WorkerRoleSynchronizationStorageAccountConnectionString** 设置中输入有效的连接字符串用于连接到 Azure 存储空间。
@@ -56,7 +56,7 @@
 ### 配置安全性
 有关配置服务安全性的详细说明，请参阅[拆分/合并安全配置](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration)。
 
-为了简单地测试部署是否适用于完成此教程，将执行一组步数最少的配置步骤来使服务正常工作。仅一个计算机/帐户可以执行这些步骤，以便与服务进行通信。
+为了针对本教程创建一个简单的测试部署，我们将执行少量的配置步骤来使服务正常运行。仅一个计算机/帐户可以执行这些步骤，以便与服务进行通信。
 
 ### 创建自签名证书
 
@@ -87,7 +87,7 @@
 
 ### 将 PFX 文件上载到云服务
 
-转到 [Azure 管理门户](https://manage.windowsazure.cn)。
+转到 [Azure 门户](https://manage.windowsazure.cn)。
 
 1. 选择“云服务”。
 2. 选择您之前为拆分/合并服务创建的云服务。
@@ -98,12 +98,12 @@
 
 ### 更新服务配置文件
 
-将之前复制的证书指纹粘贴到这些设置的指纹/值属性中。对于 Web 角色：
+将之前复制的证书指纹粘贴到这些设置的指纹/值属性中。对于辅助角色：
 
     <Setting name="DataEncryptionPrimaryCertificateThumbprint" value="" />
     <Certificate name="DataEncryptionPrimary" thumbprint="" thumbprintAlgorithm="sha1" />
 
-对于辅助角色：
+对于 Web 角色：
 
     <Setting name="AdditionalTrustedRootCertificationAuthorities" value="" />
     <Setting name="AllowedClientCertificateThumbprints" value="" />
@@ -117,7 +117,7 @@
 
 ### 部署你的拆分/合并服务
 
-1. 转到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 转到 [Azure 门户](https://manage.windowsazure.cn)。
 2. 单击左侧的“云服务”选项卡，然后选择你之前创建的云服务。
 3. 单击“仪表板”。
 4. 选择过渡环境，然后单击“上载新的过渡部署”。
@@ -128,7 +128,7 @@
 6. 确保选中标记为“即使一个或多个角色包含单个实例也部署”的复选框。
 7. 点击右下角的勾选按钮以开始部署。它预计需要几分钟的时间才能完成。
 
-![上载][4]
+	![上载][4]
 
 
 ## 部署故障排除
@@ -144,13 +144,13 @@
         "Server=myservername.database.chinacloudapi.cn; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
 
 * 确保服务器名称不以 **https://** 开头。
-* 确保您的 Azure SQL DB 服务器允许 Windows Azure 服务与其连接。若要执行此操作，请打开 https://manage.windowsazure.cn，依次单击左侧的“SQL 数据库s”和顶部的“服务器”，然后选择你的服务器。在顶部单击“配置”并确保将“Windows Azure 服务”设置为“是”。（请参阅此文章顶部的“先决条件”部分）。
+* 确保你的 Azure SQL DB 服务器允许 Azure 服务与其连接。若要执行此操作，请打开 https://manage.windowsazure.cn，依次单击左侧的“SQL 数据库s”和顶部的“服务器”，然后选择你的服务器。在顶部单击“配置”并确保将“Azure 服务”设置为“是”。（请参阅此文章顶部的“先决条件”部分）。
 
 ## 测试你的拆分/合并服务部署
 
 ### 使用 Web 浏览器建立连接
 
-确定您的拆分/合并服务的 Web 终结点。通过转到云服务的“仪表板”并在右侧的“站点 URL”下查找，你可以在 Azure 管理门户中找到此内容。由于默认的安全设置将禁用 HTTP 终结点，因此请将 **http://** 替换为 **https://**。将此 URL 的页面加载到您的浏览器中。
+确定您的拆分/合并服务的 Web 终结点。通过转到云服务的“仪表板”并在右侧的“站点 URL”下查找，你可以在 Azure 经典门户中找到此内容。由于默认的安全设置将禁用 HTTP 终结点，因此请将 **http://** 替换为 **https://**。将此 URL 的页面加载到您的浏览器中。
 
 ### 使用 PowerShell 脚本进行测试
 
@@ -211,7 +211,7 @@
 ##使用 PowerShell 验证你的部署
 
 1.    打开新的 PowerShell 窗口并导航到您下载拆分/合并包的目录，然后导航到“powershell”目录中。
-2.    创建将在其中创建分片映射管理器和分片的 Azure SQL 数据库 服务器（或选择现有服务器）。 
+2.    创建将在其中创建分片映射管理器和分片的 Azure SQL 数据库服务器（或选择现有服务器）。
 
     注意：默认情况下，SetupSampleSplitMergeEnvironment.ps1 脚本将在相同的服务器上创建所有这些数据库以简化脚本。这并不表示拆分/合并服务本身存在限制。
 
@@ -330,4 +330,4 @@
 [5]: ./media/sql-database-elastic-scale-configure-deploy-split-and-merge/storage.png
  
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_0118_2016-->

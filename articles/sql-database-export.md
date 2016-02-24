@@ -9,9 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/23/2015"
-	wacn.date="01/05/2016"/>
-
+	ms.date="12/01/2015"
+	wacn.date="01/29/2016"/>
 
 
 # 创建和导出 Azure SQL 数据库的 BACPAC
@@ -22,11 +21,11 @@
 - [Azure 门户](/documentation/articles/sql-database-export)
 - [PowerShell](/documentation/articles/sql-database-export-powershell)
 
-本文说明如何使用 [Azure 经典门户](https://manage.windowsazure.cn)导出 Azure SQL 数据库的 BACPAC。
+本文说明如何使用 [Azure 门户](https://manage.windowsazure.cn)导出 Azure SQL 数据库的 BACPAC。
 
 [BACPAC](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx#Anchor_4) 是包含数据库架构和数据的 .bacpac 文件。BACPAC 的主要用例是将数据库从一个服务器移到另一个服务器、[将本地数据库迁移到云](/documentation/articles/sql-database-cloud-migrate)，以及采用开放格式对现有数据库进行存档。
 
-> [AZURE.NOTE]BACPAC 不能用于备份和还原操作。Azure SQL 数据库会自动为每个用户数据库创建备份。有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
+> [AZURE.NOTE] BACPAC 不能用于备份和还原操作。Azure SQL 数据库会自动为每个用户数据库创建备份。有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
 
 
 BACPAC 导出到 Azure 存储 blob 容器中，你可以在操作成功完成后进行下载。
@@ -42,9 +41,9 @@ BACPAC 导出到 Azure 存储 blob 容器中，你可以在操作成功完成后
 
 打开要导出的数据库对应的 SQL 数据库边栏选项卡。
 
-> [AZURE.IMPORTANT]若要确保获得事务处理一致性 BACPAC 文件，应首先[创建数据库的副本](/documentation/articles/sql-database-copy)，然后导出该数据库副本。
+> [AZURE.IMPORTANT] 若要确保获得事务处理一致性 BACPAC 文件，应首先[创建数据库的副本](/documentation/articles/sql-database-copy)，然后导出该数据库副本。
 
-1.	转到 [Azure 经典门户](https://manage.windowsazure.cn)。
+1.	转到 [Azure 门户](https://manage.windowsazure.cn)。
 2.	单击“浏览全部”。
 3.	单击“SQL 数据库”。
 2.	单击要导出为 BACPAC 的数据库。
@@ -87,7 +86,7 @@ BACPAC 导出到 Azure 存储 blob 容器中，你可以在操作成功完成后
 
 - [业务连续性概述](/documentation/articles/sql-database-business-continuity)
 - [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills)
-- [SQL 数据库文档](/documentation/services/sql-databases/)
+- [SQL 数据库文档](/documentation/services/sql-databases)
 
 
 <!--Image references-->
@@ -97,4 +96,4 @@ BACPAC 导出到 Azure 存储 blob 容器中，你可以在操作成功完成后
 [4]: ./media/sql-database-export/export-status.png
 [5]: ./media/sql-database-export/bacpac-details.png
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

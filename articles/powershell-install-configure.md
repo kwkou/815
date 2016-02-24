@@ -10,7 +10,7 @@
 <tags
 	ms.service="multiple"
 	ms.date="01/06/2016"
-	wacn.date="0/29/2016"/>
+	wacn.date="01/29/2016"/>
 
 # 如何安装和配置 Azure PowerShell#
 

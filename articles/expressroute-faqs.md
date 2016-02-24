@@ -9,7 +9,7 @@
 <tags
    ms.service="expressroute"
    ms.date="10/20/2015"
-   wacn.date="01/21/2016"/>
+   wacn.date="01/14/2016"/>
 
 # ExpressRoute 常见问题
 
@@ -49,7 +49,7 @@ ExpressRoute 目前支持大多数 Windows Azure 服务。
 
 - 与虚拟机和虚拟网络中部署的云服务的连接通过私有对等互联路径提供支持。
 
-- 可通过公共对等路径访问 Azure Web 应用。
+- 可通过公共对等路径访问 Azure 网站。
 
 - 可通过公共对等路径访问所有其他服务。下面列出了例外情况 -
 

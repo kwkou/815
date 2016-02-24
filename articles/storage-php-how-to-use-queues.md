@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="09/23/2015"
+	ms.date="12/16/2015"
 	wacn.date="01/21/2016"/>
 
 # 如何通过 PHP 使用队列存储

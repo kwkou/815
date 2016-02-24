@@ -9,8 +9,8 @@
 
 <tags
    ms.service="multiple"
-   ms.date="12/01/2015"
-   wacn.date="01/15/2016"/>
+   ms.date="02/07/2016"
+   wacn.date="02/19/2016"/>
 
 # Azure 经典门户快捷键
 

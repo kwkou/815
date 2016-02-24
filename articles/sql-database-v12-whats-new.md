@@ -9,10 +9,25 @@
 
 
 <tags 
-	ms.service="sql-database"
+	ms.service="sql-database" 
 	ms.date="11/11/2015" 
-	wacn.date="01/06/2016"/>
+	wacn.date="01/29/2016"/>
 
+
+# SQL 数据库 V12 的新增功能
+
+
+本主题介绍 Azure SQL 数据库新版本 V12 相比版本 V11 具有的诸多优点。
+
+
+我们继续向 V12 添加功能。因此，我们鼓励你访问我们的针对 Azure 的服务更新网页并使用其筛选器：
+
+
+- 筛选为 [SQL 数据库服务](http://azure.microsoft.com/updates/?service=sql-database)。
+- 筛选为针对 SQL 数据库功能的正式发布 [(GA) 公告](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability)。
+
+
+有关 SQL 数据库资源限制的最新信息：<br/>[Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
 
 
 ## 提高了与 SQL Server 的应用程序兼容性
@@ -113,7 +128,7 @@ V12 提供大幅提高的恢复点目标 (RPO) 与预计恢复时间 (ERT)：
 执行以下操作可以轻松判断你是否在早期版本的 SQL 数据库服务上运行数据库或逻辑服务器：
 
 
-1. 转到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 转到 [Azure 门户](http://manage.windowsazure.cn)。
 2. 单击“浏览”。
 3. 单击“SQL Server”。
 4. 服务器或数据库旁边的图标会告知实情：
@@ -140,5 +155,4 @@ V12 数据库只能托管在 V12 逻辑服务器上。V12 服务器只能托管 
 - 2015 年 7 月 31，所有区域都已发布正式版 (GA)。
 - V12 已于 2014 年 12 月发布，但仅以预览版提供。
 
-
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

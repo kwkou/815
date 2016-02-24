@@ -10,9 +10,9 @@
 
 
 <tags 
-	ms.service="sql-database"
+	ms.service="sql-database" 
 	ms.date="10/22/2015" 
-	wacn.date="01/05/2016"/>
+	wacn.date="01/29/2016"/>
 
 
 # SQL 数据库中扩展事件的环形缓冲区目标代码
@@ -67,8 +67,8 @@
 
 - sys.dm\_xe**\_database**\_session\_targets
 - sys.dm\_xe\_session\_targets
-
-
+ 
+	
 		GO
 		----  Transact-SQL.
 		---- Step set 1.
@@ -211,6 +211,9 @@
 
 
 
+&nbsp;
+
+
 ## 环形缓冲区内容
 
 
@@ -222,9 +225,7 @@
 然后，在结果窗格中，我们单击了 **target\_data\_XML** 列标题下的单元格。这样就在 ssms.exe 中按结果单元格内容显示的顺序，以 XML 格式创建了另一个文件选项卡。
 
 
-输出显示在以下块中。结果看起来很长，但其实只是两个 **<event>** 元素。
-
-
+输出显示在以下块中。结果看起来很长，但其实只是两个 **<event\>** 元素。
 	
 	<RingBufferTarget truncated="0" processingTime="0" totalEventsProcessed="2" eventCount="2" droppedCount="0" memoryUsed="1728">
 	  <event name="sql_statement_starting" package="sqlserver" timestamp="2015-09-22T15:29:31.317Z">
@@ -329,7 +330,6 @@
 
 事件会话的定义将会更新，但不会删除。然后可以将环形缓冲区的另一个实例添加到事件会话：
 
-
 	
 	ALTER EVENT SESSION eventsession_gm_azuresqldb51
 		ON DATABASE
@@ -363,4 +363,4 @@
 - Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/zh-cn/library/bb630355.aspx)
 -->
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

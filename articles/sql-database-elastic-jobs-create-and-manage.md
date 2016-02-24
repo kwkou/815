@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="11/04/2015"
-	wacn.date="01/05/2016"/>
+	wacn.date="01/29/2016"/>
 
 # 使用门户创建和管理 SQL 数据库弹性作业（预览版）
 
@@ -23,7 +23,7 @@
 
 ## 先决条件
 
-* Azure 订阅。若要获取试用版，请参阅[试用](/pricing/1rmb-trial/)。
+* Azure 订阅。若要获取试用版，请参阅[试用](/pricing/1rmb-trial)。
 * 一个弹性数据库池。请参阅关于[弹性数据库池](/documentation/articles/sql-database-elastic-pool)
 * 安装弹性数据库作业服务组件。请参阅[安装弹性数据库作业服务](/documentation/articles/sql-database-elastic-jobs-service-installation)。
 
@@ -99,4 +99,4 @@
 
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0118_2016-->

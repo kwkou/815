@@ -60,7 +60,7 @@ Web 应用代理服务器 |对于列表中的每个服务器，如果运行向�
 代理信任凭据 |联合身份验证服务信任凭据（代理用来注册 FS 信任证书的凭据） |作为 AD FS 服务器本地管理员的域帐户|初始注册 FS-WAP 信任证书。
 “AD FS 服务帐户”页上的“使用域用户帐户选项”|AD 用户帐户凭据|域用户|提供了其凭据的 AD 用户帐户将用作 AD FS 服务的登录帐户。
 
-### 创建 AD DS 帐户
+### <a name="create-the-ad-ds-account"></a>创建 AD DS 帐户
 当你安装 Azure AD Connect 时，在“连接目录”页上指定的帐户必须存在于 Active Directory 中，并且已获所需的权限。安装向导不会验证权限，任何问题只能在同步期间发现。
 
 需要哪些权限取决于你启用的可选功能。如果你有多个域，则必须对林中的所有域授予权限。如果你未启用任何一项功能，则默认的**域用户**权限就已足够。
@@ -75,13 +75,13 @@ Web 应用代理服务器 |对于列表中的每个服务器，如果运行向�
 
 ## 有关所创建帐户的详细信息
 
-### Active Directory 帐户
+### <a name="active-directory-account"></a>Active Directory 帐户
 
 如果你使用快速设置，则会在 Active Directory 中创建用于同步的帐户。创建的帐户位于林根域的用户容器中，其名称带有 **MSOL\_** 前缀。该帐户带有永不过期的长复杂密码。如果域中有密码策略，请确保允许此帐户使用长密码和复杂密码。
 
 ![AD 帐户](./media/active-directory-aadconnect-accounts-permissions/adsyncserviceaccount.png)
 
-### Azure AD Connect 同步服务帐户
+### <a name="azure-ad-connect-sync-service-account"></a> Azure AD Connect 同步服务帐户
 本地服务帐户将由安装向导创建（除非你在自定义设置指定了要使用的帐户）。该帐户带有 **AAD\_** 前缀，用作实际同步服务的运行身份。如果你在域控制器上安装 Azure AD Connect，则会在该域中创建帐户。如果你在远程服务器上使用 SQL 服务器，该帐户必须位于域中。
 
 ![同步服务帐户](./media/active-directory-aadconnect-accounts-permissions/syncserviceaccount.png)
@@ -92,7 +92,7 @@ Web 应用代理服务器 |对于列表中的每个服务器，如果运行向�
 
 该帐户也会获取对文件、注册表项和与同步引擎相关的其他对象的权限。
 
-### Azure AD 服务帐户
+### <a name="azure-ad-service-account"></a>Azure AD 服务帐户
 将在 Azure AD 中创建帐户供同步服务使用。可以根据显示名称来识别此帐户。
 
 ![AD 帐户](./media/active-directory-aadconnect-accounts-permissions/aadsyncserviceaccount.png)

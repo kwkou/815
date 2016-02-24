@@ -1,21 +1,21 @@
 <properties 
-	pageTitle="使用引用数据 | Windows Azure" 
-	description="将引用数据用作输入流" 
-	keywords="大数据分析、云服务中、物联网、托管服务、流处理、流分析、流数据"
+	pageTitle="在流分析中使用引用数据和查找表 | Windows Azure" 
+	description="在流分析查询中使用引用数据" 
+	keywords="查找表, 引用数据"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
-	manager="paulettm" 
+	manager="paulettm"
 	editor="cgronlun"/>
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="11/09/2015" 
-	wacn.date="12/31/2015"/>
+	ms.date="12/04/2015" 
+	wacn.date="01/14/2016"/>
 
-# 将引用数据用作输入
+# 在流分析的输入流中使用引用数据或查找表
 
-引用数据是一个是静态的或本质上缓慢变化的有限数据集，用于执行查找或与你的数据流相关联。为了在 Azure 流分析作业中利用引用数据，你通常会在查询中使用[引用数据联合](https://msdn.microsoft.com/zh-cn/library/azure/dn949258.aspx)。流分析使用 Azure Blob 存储作为引用数据的存储层，并且通过 Azure 数据工厂，可以从<!--[-->基于云和本地的任意数量的数据存储区<!--](/documentation/articles/data-factory-data-movement-activities)-->将引用数据转换和/或复制到 Azure Blob 存储，以用作引用数据。
+引用数据（也称为查找表）是一个静态的或本质上缓慢变化的有限数据集，用于执行查找或与你的数据流相关联。为了在 Azure 流分析作业中利用引用数据，你通常会在查询中使用[引用数据联合](https://msdn.microsoft.com/zh-cn/library/azure/dn949258.aspx)。流分析使用 Azure Blob 存储作为引用数据的存储层，并且通过 Azure 数据工厂，可以从<!--[-->基于云和本地的任意数量的数据存储区<!--](/documentation/articles/data-factory-data-movement-activities)-->将引用数据转换和/或复制到 Azure Blob 存储，以用作引用数据。
 
 ## 配置引用数据
 
@@ -99,4 +99,4 @@
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->

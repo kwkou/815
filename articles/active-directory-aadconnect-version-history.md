@@ -43,10 +43,6 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 - 可以禁用同步规则。
 - 可以将“AuthoritativeNull”定义为同步规则中的新文本。
 
-**新的预览功能：**
-
-- [用于同步的 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-sync)
-- 支持 [Azure AD 域服务](/documentation/articles/active-directory-ds-getting-started)密码同步。
 
 **新的受支持方案：**
 
@@ -161,7 +157,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 **新功能：**
 
-- 现在支持使用基于属性的筛选执行密码同步。有关详细信息，请参阅[使用筛选进行密码同步](active-directory-aadconnectsync-configure-filtering.md)。
+- 现在支持使用基于属性的筛选执行密码同步。有关详细信息，请参阅[使用筛选进行密码同步](/documentation/articles/active-directory-aadconnectsync-configure-filtering)。
 - 属性 msDS-ExternalDirectoryObjectID 将写回 AD。这将添加对 Office 365 应用程序的支持，支持其使用 OAuth2 同时访问混合 Exchange 部署中的联机邮箱和本地邮箱。
 
 **修复了升级问题：**

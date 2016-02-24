@@ -22,7 +22,7 @@
 * [**如何解锁帐户**](#how-to-unlock-your-account)
 * [**常见问题及其解决方法**](#common-problems-and-their-solutions)
 
-## 如何注册密码重置
+## <a name="how-to-register-for-password-reset"></a>如何注册密码重置
 若要注册密码重置，最快的方法是转到 http://aka.ms/ssprsetup。
 
  1. 导航到 http://aka.ms/ssprsetup。
@@ -47,7 +47,7 @@
 
  >[AZURE.IMPORTANT]如果管理员允许你注册多个选项，我们强烈建议你注册一个备用选项，以便在丢失电话或访问电子邮件时使用。
 
-## 如何从 O365 更改密码
+## </a name="how-to-change-your-password-from-o365"></a>如何从 O365 更改密码
 请遵循以下步骤在 Office 365 中更改工作或学校帐户密码。如果你忘记了密码并想要重置，请遵循[此处](#how-to-reset-your-password)所述的步骤。
 
  1. 使用工作或学校帐户登录到 Office 365。
@@ -57,7 +57,7 @@
 
 可以在 [Office 365 文档中心](https://support.office.com/article/Change-my-password-in-Office-365-for-business-d1efbaee-63a7-4c08-ab1d-71bf932bbb5d)阅读更多相关信息。
 
-## 如何从访问面板更改密码
+## <a name="how-to-change-your-password-from-the-access-panel"></a>如何从访问面板更改密码
 请遵循以下步骤从[访问面板](https://myapps.microsoft.com)更改工作或学校帐户密码。如果你忘记了密码并想要重置，请遵循[此处](#how-to-reset-your-password)所述的步骤。
 
  1. 使用工作或学校帐户登录到 https://myapps.microsoft.com。
@@ -68,7 +68,7 @@
  
  更改密码时遇到问题？ 请阅读[常见问题及其解决方法](#common-problems-and-their-solutions)。
 
-## 如何重置密码
+## <a name="how-to-reset-your-password"></a>如何重置密码
 
 
 请遵循以下步骤，从任何工作或学校帐户登录屏幕更改工作或学校帐户密码。
@@ -118,7 +118,7 @@
  
 重置密码时遇到问题？ 请阅读[常见问题及其解决方法](#common-problems-and-their-solutions)。
 
-## 如何解锁帐户
+## <a name="how-to-unlock-your-account"></a>如何解锁帐户
 请遵循以下步骤，从任何工作或学校帐户登录屏幕解锁你的本地帐户。**注意：只能解锁本地锁定的帐户。**
 
  >[AZURE.IMPORTANT]仅当你的管理员启用了此功能时，你才可以使用此功能。如果未启用，你将看到一条消息，指出没有为你的帐户启用此功能。在此情况下，你可以使用“联系管理员”链接来与管理员联系，以解锁你的帐户。<br><br>如果管理员为你启用了此功能，则你首先需要注册才可使用它。可以在此处完成注册：http://aka.ms/ssprsetup。
@@ -164,7 +164,7 @@
  
 解锁帐户时遇到问题？ 请阅读[常见问题及其解决方法](#common-problems-and-their-solutions)。
 
-## 常见问题及其解决方法
+## <a name="common-problems-and-their-solutions"></a>常见问题及其解决方法
 以下是一些常见的错误案例及其解决方法：
 
 <table>

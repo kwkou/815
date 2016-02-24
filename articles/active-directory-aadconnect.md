@@ -100,9 +100,9 @@ Azure AD Connect 随附了多个可以选择启用或已按默认启用的功能
 ## 自定义 Azure AD Connect 同步
 Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配置。但总会有一些情况使得默认配置不适用，因此你必须进行调整。你可以根据本部分和链接主题中所述进行更改。
 
-如果你以前没有用过同步拓扑，请先了解[技术概念](/documentation/articles/active-directory-aadconnect-technical-concepts)中所述的基本概念和术语。Azure AD Connect 是在 MIIS2003、ILM2007 和 FIM2010 基础上演进而来的。即使有些功能相同，但改变的部分也有很多。
+。Azure AD Connect 是在 MIIS2003、ILM2007 和 FIM2010 基础上演进而来的。即使有些功能相同，但改变的部分也有很多。
 
-[默认配置](active-directory-aadconnectsync-understanding-default-configuration.md)假设配置中可能存在多个林。在这些拓扑中，用户对象可能表示为另一个林中的联系人。用户还可能在另一个资源林中具有链接的邮箱。[用户和联系人](/documentation/articles/active-directory-aadconnectsync-understanding-users-and-contacts)中介绍了默认配置的行为。
+[默认配置](/documentation/articles/active-directory-aadconnectsync-understanding-default-configuration)假设配置中可能存在多个林。在这些拓扑中，用户对象可能表示为另一个林中的联系人。用户还可能在另一个资源林中具有链接的邮箱。[用户和联系人](/documentation/articles/active-directory-aadconnectsync-understanding-users-and-contacts)中介绍了默认配置的行为。
 
 同步的配置模型称为[声明性预配](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions)。高级属性流程使用[函数](/documentation/articles/active-directory-aadconnectsync-functions-reference)来表示属性转换。你可以使用 Azure AD Connect 随附的工具来检查整个配置。如果需要对配置进行更改，请确保遵循[最佳实践](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration)，因为当有新版本可用时，可以更轻松地采用这些版本。
 
@@ -110,8 +110,6 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 
 | 主题 | |
 | --------- | --------- |
-| 技术概念 | [Azure AD Connect 同步：技术概念](/documentation/articles/active-directory-aadconnect-technical-concepts) |
-| 了解默认配置 | [Azure AD Connect 同步：了解默认配置](/documentation/articles/active-directory-aadconnectsync-understanding-default-configuration) |
 | 了解用户和联系人 | [Azure AD Connect 同步：了解用户和联系人](/documentation/articles/active-directory-aadconnectsync-understanding-users-and-contacts) |
 | 声明性预配 | [Azure AD Connect Sync：了解声明性设置表达式](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions) |
 | 声明性预配函数参考 | [Azure AD Connect 同步：函数参考](/documentation/articles/active-directory-aadconnectsync-functions-reference) |

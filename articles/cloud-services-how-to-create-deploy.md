@@ -150,4 +150,3 @@ Azure 经典门户为你提供两种创建和部署云服务的方法：“快�
 * 配置 [SSL 证书](/documentation/articles/cloud-services-configure-ssl-certificate)。
 
 <!---HONumber=Mooncake_0104_2016-->
-

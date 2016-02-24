@@ -37,9 +37,9 @@ Site Recovery 复制技术与虚拟机中运行的任何应用程序兼容。另
 **工作负荷** | <p>**复制 Hyper-V 虚拟机**</p> <p>**（到辅助站点）**</p> | <p>**复制 Hyper-V 虚拟机**</p> <p>**（到 Azure）**</p> | <p>**复制 VMware 虚拟机**</p> <p>**（到辅助站点）**</p> | <p>**复制 VMware 虚拟机**</p><p>**（到 Azure）**</p> 
 ---|---|---|---|---
 Active Directory、DNS | Y | Y | Y | Y 
-Web 应用（IIS、SQL） | Y | Y | Y | Y 
-SCOM | Y | Y | Y | Y 
-Sharepoint | Y | Y | Y | Y 
+网站（IIS、SQL） | Y | Y | Y | Y 
+SCOM | Y | Y | Y | Y
+Sharepoint | Y | Y | Y | Y
 <p>SAP</p><p>将非群集 SAP 站点复制到 Azure</p> | Y（Microsoft 已测试）| Y（Microsoft 已测试）| Y（Microsoft 已测试）| Y（Microsoft 已测试）
 Exchange（非 DAG）| Y | 即将支持 | Y | Y
 远程桌面/VDI | Y | Y | Y | N/A

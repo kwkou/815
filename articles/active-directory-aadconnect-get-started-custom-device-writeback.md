@@ -18,7 +18,7 @@
 
 对 ADFS（2012 R2 或更高版本）保护的应用程序（信赖方信任），启用基于设备的条件性访问。
 
-这可以提供额外的安全性，确保只有受信任的设备才能访问应用程序。有关条件性访问的详细信息，请参阅[使用条件性访问管理风险](/documentation/articles/active-directory-conditional-access)和[使用 Azure Active Directory Device Registration 设置本地的条件性访问](https://msdn.microsoft.com/library/azure/dn788908.aspx)。
+这可以提供额外的安全性，确保只有受信任的设备才能访问应用程序。有关条件性访问的详细信息，请参阅[使用条件性访问管理风险](/documentation/articles/active-directory-conditional-access)和[使用 Azure Active Directory Device Registration 设置本地的条件性访问](/documentation/articles/active-directory-conditional-access-on-premises-setup/?rnd=1)。
 
 >[AZURE.NOTE]设备写回需要 Azure AD Premium 订阅。
 
@@ -71,7 +71,7 @@
 ![设备写回](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback3.png)
 3.	在写回页中，你会看到提供的域是默认的设备写回林。
 ![自定义安装](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback4.png)
-4.	在向导中完成安装，不需要更改其他配置。如果需要，请参阅 [Azure AD Connect 的自定义安装](active-directory-aadconnect-get-started-custom.md)。
+4.	在向导中完成安装，不需要更改其他配置。如果需要，请参阅 [Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom)。
 
 
 
@@ -90,7 +90,7 @@
 
 ## 故障排除
 
-### 写回复选框仍处于禁用状态
+### <a name="the-writeback-checkbox-is-still-disabled"></a>写回复选框仍处于禁用状态
 如果未启用设备写回复选框，即使已遵循上述步骤，以下步骤还是会在启用此框之前引导你完成安装向导正在验证的程序。
 
 首先：
@@ -129,7 +129,7 @@
 ![Troubleshoot6](./media/active-directory-aadconnect-get-started-custom-device-writeback/troubleshoot6.png)
 
 ## 其他信息
-- [使用条件性访问管理风险](active-directory-conditional-access.md)
+- [使用条件性访问管理风险](/documentation/articles/active-directory-conditional-access)
 - [使用 Azure Active Directory Device Registration 设置本地条件性访问](https://msdn.microsoft.com/library/azure/dn788908.aspx)
 
 ## 后续步骤

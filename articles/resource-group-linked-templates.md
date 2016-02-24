@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="09/04/2015"
-   wacn.date="12/31/2015"/>
+   ms.date="12/07/2015"
+   wacn.date="01/14/2016"/>
 
 # 将已链接的模版与 Azure 资源管理器配合使用
 
@@ -98,6 +98,12 @@
         }
     }
 
+你还可以使用 [deployment()](../resource-group-template-functions/#deployment) 获取当前模板的基 URL，并使用该 URL 来获取同一位置其他模板的 URL。如果你的模板位置发生变化（原因可能是改版）或者你想要避免对模板文件中的 URL 进行硬编码，则此操作非常有用。
+
+    "variables": {
+        "sharedTemplateUrl": "[uri(deployment().properties.templateLink.uri, 'shared-resources.json')]"
+    }
+
 ## 将值传递回链接模板
 
 如果你需要将值从链接模板传递到主模板，则可以在链接模板的**输出**部分创建一个值。
@@ -106,4 +112,4 @@
 - [创作模板](/documentation/articles/resource-group-authoring-templates)
 - [部署模板](/documentation/articles/resource-group-template-deploy)
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0104_2016-->
