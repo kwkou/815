@@ -34,25 +34,6 @@ Azure Web 应用为大规模的关键任务 [WordPress][wordpress] Web 应用提
 
 尽管您可以通过创建多个 Web 应用实例扩展您的应用程序，但所有内容都托管在特定地理区域的数据中心中。此区域之外的访客在使用 Web 应用时，响应速度可能会很慢，如果此区域的数据中心停机，您的应用也将无法使用。
 
-
-###多区域部署
-
-通过使用 Azure [流量管理器][trafficmanager]，可以在多个地理地区扩展您的 WordPress Web 应用，同时仅为访客提供一个 URL。所有访客都通过流量管理器进来，然后基于负载平衡配置被路由到某一区域。
-
-![一个托管在多个区域的 Azure Web 应用，使用 CDBR 高可用性路由器跨区域路由到 MySQL][multi-region-diagram]
-
-在每个区域中，WordPress Web 应用仍会扩展到多个 Web 应用实例，但这种扩展是区域特定的；高流量区域的扩展方式可以与低流量区域不同。
-
-复制和路由到多个 MySQL 数据库的操作可以使用 ClearDB 的 [CDBR 高可用性路由器][cleardbscale]（左图所示）或 [MySQL 集群 CGE][cge] 来完成。
-
-###使用媒体存储和缓存的多区域部署
-
-如果该 Web 应用将接受上传或主机媒体文件，使用 Azure Blob 存储。如果你需要进行缓存，可考虑 [Redis 缓存][rediscache]。
-
-![一个托管在多个区域的 Azure Web 应用，使用面向 MySQL 的 CDBR 高可用性路由器，带托管缓存、Blob 存储和 CDN][performance-diagram]
-
-在默认情况下 Blob 存储分散在各个地区，因此无需担心跨所有站点复制文件的问题。您也可以为 Blob 存储启用 Azure [内容分发网络 (CDN)][cdn]，这样可以将文件分发至距离访客更近的终端节点。
-
 ###规划
 
 ####其他要求
@@ -82,7 +63,7 @@ Azure Web 应用为大规模的关键任务 [WordPress][wordpress] Web 应用提
 ------------------------|-----------
 **了解 Azure Web 应用实例功能** | [定价详细信息，其中包括 Azure Web 应用层的功能][websitepricing]
 **缓存资源** | [Redis 缓存][rediscache]
-**扩展您的应用程序** | [在 Azure 中扩展 Web 应用][websitescale]和 [ClearDB 高可用性路由][cleardbscale]。如果您选择托管和管理您自己的 MySQL 安装，应考虑使用 [MySQL 集群 CGE][cge] 进行横向扩展
+**扩展您的应用程序** | [在 Azure 中扩展 Web 应用][websitescale]。如果您选择托管和管理您自己的 MySQL 安装，应考虑使用 [MySQL 集群 CGE][cge] 进行横向扩展
 
 ####迁移
 
@@ -179,7 +160,7 @@ Azure Web 应用为大规模的关键任务 [WordPress][wordpress] Web 应用提
 ------------- | -----------
 **设置 App Service 计划模式、大小和启用缩放** | [在 Azure 中缩放 Web 应用][websitescale]
 <p>默认情况下**启用持久的数据库连接**，WordPress 不使用持久的数据库连接，这可能导致数据库的连接在多次连接后成为限制。</p> | <ol><li><p>编辑 <strong>wp-includes/wp-db.php</strong> 文件。</p></li><li><p>查找以下行。</p><code>$this->dbh = mysql\_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new\_link, $client\_flags )；</code></li><li><p>使用以下内容替换上一行。</p><code>$this->dbh = mysql\_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword, $client\_flags )；<br/>如果 ( false !== $error\_reporting ) { /br/>&nbsp;&nbsp;error\_reporting( $error\_reporting )；<br/>} </code></li><li><p>查找以下行。</p><code>$this->dbh = @mysql\_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new\_link, $client\_flags )；</code></li><li><p>使用以下内容替换上一行。</p><code>$this->dbh = @mysql\_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword, $client\_flags )；</code></li><li><p>保存文件 <strong>wp-includes/wp-db.php</strong> 文件并重新部署 Web 应用。</p></li></ol><div class="wa-note"><span class="wa-icon-bulb"></span><p>更新 WordPress 后，可以覆盖这些更改。</p><p>WordPress 默认自动更新，通过编辑 <strong>wp-config.php</strong> 文件并添加 <code>define ( 'WP\_AUTO\_UPDATE\_CORE', false ) 可以禁用；</code></p><p>处理更新的另一个方法是使用监视 <strong>wp-db.php</strong> 文件的 WebJob 并在每次更新文件时执行上述修改。有关详细信息，请参阅 <a href="http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx">WebJobs 简介</a>。</p></div>
-**提高性能** | <ul><li><p><a href="http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx">禁用 ARR cookie</a> - 在多个 Web 应用实例上运行 WordPress 时可以提高性能</p></li><li><p>启用缓存。<a href="/documentation/services/redis-cache">Redis 缓存</a>（预览）可以与 <a href="https://wordpress.org/plugins/redis-object-cache/">Redis 对象缓存 WordPress 插件</a>一起使用</p></li><li><p><a href="http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/">如何使用 Wincache 提高 WordPress 速度</a> - 对于 Web 应用，Wincache 默认处于启用状态</p></li><li><p><a href="/documentation/articles/web-sites-scale">在 Azure 中扩展 Web 应用</a>并用 <a href="http://www.cleardb.com/developers/cdbr/introduction">ClearDB 高可用性路由</a>或 <a href="http://www.mysql.com/products/cluster/">MySQL 群集 CGE</a></p></li></ul>
+**提高性能** | <ul><li><p><a href="http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx">禁用 ARR cookie</a> - 在多个 Web 应用实例上运行 WordPress 时可以提高性能</p></li><li><p>启用缓存。<a href="/documentation/services/redis-cache">Redis 缓存</a>（预览）可以与 <a href="https://wordpress.org/plugins/redis-object-cache/">Redis 对象缓存 WordPress 插件</a>一起使用</p></li><li><p><a href="http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/">如何使用 Wincache 提高 WordPress 速度</a> - 对于 Web 应用，Wincache 默认处于启用状态</p></li><li><p><a href="/documentation/articles/web-sites-scale">在 Azure 中扩展 Web 应用</a>并用 <a href="http://www.mysql.com/products/cluster/">MySQL 群集 CGE</a></p></li></ul>
 **使用 blob 进行存储处理** | <ol><li><p><a href="/documentation/articles/storage-create-storage-account">创建 Azure 存储帐户</a></p></li><li><p>了解如何<a href="/documentation/articles/cdn-how-to-use">使用内容分发网络 (CDN) </a>地理分配 Blob 中存储的数据。</p></li><li><p>安装和配置 <a href="https://wordpress.org/plugins/windows-azure-storage/">WordPress 插件的 Azure 存储</a>。</p><p>有关该插件的详细设置和配置信息，请参阅<a href="http://plugins.svn.wordpress.org/windows-azure-storage/trunk/UserGuide.docx">用户指南</a>。</p></li></ol>
 **配置自定义域名** | [在 Azure 中配置自定义域名][customdomain]
 **启用自定义域名的 HTTPS** | [在 Azure 中启用 Web 应用的 HTTPS][httpscustomdomain]
@@ -192,8 +173,6 @@ Azure Web 应用为大规模的关键任务 [WordPress][wordpress] Web 应用提
 * [WordPress 优化](http://codex.wordpress.org/WordPress_Optimization)
 
 * [在 Azure 中将 WordPress 转换为 Multisite](/documentation/articles/web-sites-php-convert-wordpress-multisite)
-
-* [面向 Azure 的 ClearDB 升级向导](http://www.cleardb.com/store/azure/upgrade)
 
 * [在 Azure Web 应用的子文件夹中托管 WordPress](http://blogs.msdn.com/b/webapps/archive/2013/02/13/hosting-wordpress-in-a-subfolder-of-your-windows-azure-web-site.aspx)
 
@@ -223,15 +202,12 @@ Azure Web 应用为大规模的关键任务 [WordPress][wordpress] Web 应用提
 
 * [在 Azure 上支持 WordPress](http://www.johnpapa.net/wordpress-on-azure/)
 
-* [在 Azure 上支持 WordPress 的技巧](http://www.johnpapa.net/azurecleardbmysql/)
-
 [performance-diagram]: ./media/web-sites-php-enterprise-wordpress/performance-diagram.png
 [basic-diagram]: ./media/web-sites-php-enterprise-wordpress/basic-diagram.png
 [multi-region-diagram]: ./media/web-sites-php-enterprise-wordpress/multi-region-diagram.png
 [wordpress]: http://www.microsoft.com/web/wordpress
 [officeblog]: http://blogs.office.com/
 [bingblog]: http://blogs.bing.com/
-[cdbnstore]: http://www.cleardb.com/store/azure
 [storageplugin]: https://wordpress.org/plugins/windows-azure-storage/
 [sendgridplugin]: http://wordpress.org/plugins/sendgrid-email-delivery-simplified/
 [phpwebsite]: /documentation/articles/web-sites-php-configure
@@ -243,7 +219,6 @@ Azure Web 应用为大规模的关键任务 [WordPress][wordpress] Web 应用提
 [managedcache]: http://msdn.microsoft.com/zh-cn/library/azure/dn386122.aspx
 [websitescale]: /documentation/articles/web-sites-scale
 [managedcachescale]: http://msdn.microsoft.com/zh-cn/library/azure/dn386113.aspx
-[cleardbscale]: http://www.cleardb.com/developers/cdbr/introduction
 [staging]: /documentation/articles/web-sites-staged-publishing
 [monitor]: /documentation/articles/web-sites-monitor
 [log]: /documentation/articles/web-sites-enable-diagnostic-log

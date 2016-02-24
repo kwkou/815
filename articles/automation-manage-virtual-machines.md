@@ -38,6 +38,7 @@ Azure 自动化提供高度可靠且高度可用的工作流执行引擎，它�
 
 在了解 Azure 自动化以及如何使用它来管理 Azure 虚拟机的基础知识后，请详细了解：
 
-[Azure Automation 入门](/documentation/articles/automation-create-runbook-from-samples)
+- [Azure 自动化概述](/documentation/articles/automation-intro)
+- [我的第一个 runbook](/documentation/articles/automation-first-runbook-textual)
 
 <!---HONumber=Mooncake_1207_2015-->
