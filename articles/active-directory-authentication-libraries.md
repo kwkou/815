@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Active Directory 身份验证库 | Windows Azure"
+   pageTitle="Azure Active Directory 身份验证库 | Microsoft Azure"
    description="通过 Azure AD 身份验证库 (ADAL)，客户端应用程序开发人员能够轻松利用云或本地 Active Directory (AD) 对用户进行身份验证，然后获取访问令牌，以进行安全的 API 调用。"
    services="active-directory"
    documentationCenter=""

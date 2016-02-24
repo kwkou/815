@@ -1,5 +1,5 @@
 <properties
-	pageTitle="将脱机数据同步添加到 Android 移动服务应用 | Windows Azure"
+	pageTitle="将脱机数据同步添加到 Android 移动服务应用 | Microsoft Azure"
 	description="了解如何使用 Azure 移动服务在 Android 应用程序中缓存和同步脱机数据"
 	documentationCenter="android"
 	authors="RickSaling"

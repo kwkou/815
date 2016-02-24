@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 SQL 数据仓库构建集成解决方案 | Windows Azure"
+   pageTitle="使用 SQL 数据仓库构建集成解决方案 | Microsoft Azure"
    description="用于集成 SQL 数据仓库的工具以及提供相应解决方案的合作伙伴。"
    services="sql-data-warehouse"
    documentationCenter="NA"

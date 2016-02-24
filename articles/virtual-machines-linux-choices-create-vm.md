@@ -1,5 +1,5 @@
 <properties
-	pageTitle="创建 Linux VM 的不同方式 | Windows Azure"
+	pageTitle="创建 Linux VM 的不同方式 | Microsoft Azure"
 	description="列出在 Azure 上创建 Linux 虚拟机的不同方式，并提供进一步说明链接。"
 	services="virtual-machines"
 	documentationCenter=""

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="大规模引入遥测数据和应用程序事件 | Windows Azure" 
+	pageTitle="大规模引入遥测数据和应用程序事件 | Microsoft Azure" 
 	description="了解如何在企业解决方案中大规模引入遥测数据和应用程序事件。" 
 	services="event-hubs,service-bus" 
 	documentationCenter=".net" 

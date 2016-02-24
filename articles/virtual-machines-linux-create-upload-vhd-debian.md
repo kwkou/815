@@ -1,5 +1,5 @@
 <properties
-	pageTitle="准备 Debian Linux VHD | Windows Azure"
+	pageTitle="准备 Debian Linux VHD | Microsoft Azure"
 	description="了解如何创建 Debian 7 和 8 的 VHD 文件，以便在 Azure 中进行部署。"
 	services="virtual-machines"
 	documentationCenter=""

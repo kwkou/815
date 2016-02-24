@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="五分钟内开始使用 Azure 存储空间 | Windows Azure" 
-	description="使用 Azure 存储快速启动、Visual Studio 和 Azure 存储模拟器快速掌握 Windows Azure Blob、表和队列。在五分钟内运行你的第一个 Azure 存储空间应用程序。" 
+	pageTitle="五分钟内开始使用 Azure 存储空间 | Microsoft Azure" 
+	description="使用 Azure 存储快速启动、Visual Studio 和 Azure 存储模拟器快速掌握 Microsoft Azure Blob、表和队列。在五分钟内运行你的第一个 Azure 存储空间应用程序。" 
 	services="storage" 
 	documentationCenter=".net" 
 	authors="tamram" 
@@ -32,9 +32,9 @@
 
 	如果你不确定计算机上安装了哪个版本的 .NET Framework，请参阅[如何：确定安装的 .NET Framework 版本](https://msdn.microsoft.com/zh-cn/vstudio/hh925568.aspx)。或者，按“开始”按钮或 Windows 键，并键入“控制面板”。然后，单击“程序” > “程序和功能”，然后在已安装程序中确定是否列出 .NET Framework 4.5。
 
-4. 你需要 Windows Azure 订阅和 Windows Azure 存储帐户。
+4. 你需要 Microsoft Azure 订阅和 Microsoft Azure 存储帐户。
 
-    - 若要获取 Windows Azure 订阅，请参阅 [1rmb 试用版](/pricing/1rmb-trial/)、[购买选项](/pricing/purchase-options/)。
+    - 若要获取 Microsoft Azure 订阅，请参阅 [1rmb 试用版](/pricing/1rmb-trial/)、[购买选项](/pricing/purchase-options/)。
     - 若要在 Azure 中创建一个存储帐户，请参阅[如何创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account)。
 
 ##<a id="run-your-first-azure-storage-application-against-azure-storage-in-the-cloud"></a> 使用 Azure 存储模拟器在云中运行你的第一个 Azure 存储空间应用程序
@@ -100,7 +100,7 @@
 
 若要了解有关 Azure 存储空间的详细信息，请参阅以下资源：
 
-* [Windows Azure 存储空间简介](/documentation/articles/storage-introduction)
+* [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction)
 * [如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)
 * [如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables)
 * [如何通过 .NET 使用队列存储](/documentation/articles/storage-dotnet-how-to-use-queues)

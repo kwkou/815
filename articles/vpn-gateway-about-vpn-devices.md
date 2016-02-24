@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="关于 Azure 虚拟网络的站点到站点 VPN 网关连接的 VPN 设备 | Windows Azure"
+   pageTitle="关于 Azure 虚拟网络的站点到站点 VPN 网关连接的 VPN 设备 | Microsoft Azure"
    description="了解用于 S2S VPN 网关连接的 VPN 设备和 IPsec 参数。站点到站点连接可以用于混合配置。本文包含指向配置说明以及 VPN 网关设备示例的链接。"
    services="vpn-gateway"
    documentationCenter="na"

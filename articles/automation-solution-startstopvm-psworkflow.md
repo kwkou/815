@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="通过 Azure 自动化启动和停止虚拟机 - PowerShell 工作流 | Windows Azure"
+	pageTitle="通过 Azure 自动化启动和停止虚拟机 - PowerShell 工作流 | Microsoft Azure"
 	description="Azure 自动化解决方案的 PowerShell 版本，包括启动和停止经典虚拟机所需的 Runbook。"
 	services="automation"
 	documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure VM 上的 SharePoint Server 2010 | Windows Azure"
+	pageTitle="Azure VM 上的 SharePoint Server 2010 | Microsoft Azure"
 	description="了解 Azure 虚拟机上 SharePoint 的值、分步流程和使用 SharePoint 2010 的支持方案。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -19,13 +19,13 @@
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
-Microsoft SharePoint Server 2010 提供了丰富的部署灵活性，可帮助组织确定合适的部署方案，以便与其业务需求和目标保持一致。Azure 虚拟机产品/服务通过 Windows Azure 进行托管和管理，它提供了完整、可靠且可用的基础结构，以便支持各种按需应用程序和数据库工作负荷（如 Microsoft SQL Server 和 SharePoint 部署）。
+Microsoft SharePoint Server 2010 提供了丰富的部署灵活性，可帮助组织确定合适的部署方案，以便与其业务需求和目标保持一致。Azure 虚拟机产品/服务通过 Microsoft Azure 进行托管和管理，它提供了完整、可靠且可用的基础结构，以便支持各种按需应用程序和数据库工作负荷（如 Microsoft SQL Server 和 SharePoint 部署）。
 
 虽然 Azure 虚拟机支持多种工作负荷，但是本文重点介绍 SharePoint 部署。利用 Azure 虚拟机，组织可以通过快速全局设置和访问几乎所有主机，创建和管理其 SharePoint 基础结构。这样，便可以完全控制和管理处理器、RAM、CPU 范围以及 SharePoint 虚拟机的其他资源。
 
 Azure 虚拟机减少了对硬件的需求，从而使组织能够将工作重心从处理较高的前期成本和复杂性转移到大规模构建和管理基础结构上。这意味着，组织只需几个小时的时间即可实现创新、试验和迭代，而通过传统部署做到这一点则需几天和几个星期的时间。
 
-> [AZURE.NOTE]有关在 Azure 中部署 SharePoint 2013 的信息，请参阅[适用于 SharePoint 2013 的 Windows Azure 体系结构](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)和 [Azure 基础结构服务中托管的 SharePoint 场](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)。
+> [AZURE.NOTE]有关在 Azure 中部署 SharePoint 2013 的信息，请参阅[适用于 SharePoint 2013 的 Microsoft Azure 体系结构](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)和 [Azure 基础结构服务中托管的 SharePoint 场](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)。
 
 ## Azure 虚拟机上的 SharePoint
 

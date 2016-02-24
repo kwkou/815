@@ -51,16 +51,16 @@
 
 ## <a id="note"></a>使用中的注意点
 
-1. Windows Azure平台默认是关闭固定内网IP功能的。如果您需要开启固定虚拟机内网IP的功能，需要将新建的虚拟机建立在虚拟机网络内，通过Windows Azure Powershell 命令语句设置静态IP，参见相关链接： [如何设置静态内部专用 IP](/documentation/articles/virtual-networks-reserved-private-ip)  
+1. Microsoft Azure平台默认是关闭固定内网IP功能的。如果您需要开启固定虚拟机内网IP的功能，需要将新建的虚拟机建立在虚拟机网络内，通过Microsoft Azure Powershell 命令语句设置静态IP，参见相关链接： [如何设置静态内部专用 IP](/documentation/articles/virtual-networks-reserved-private-ip)  
 2. 请您最好对您在虚拟机网络下的所有虚拟机均设置该功能。尽量不要混合使用该功能：比如对有些虚拟机设置了固定DIP，而有些则没有设置固定DIP功能。
 3. 当您在管理Portal中对虚拟机进行停机后，由于该虚拟机的资源被释放，该虚拟机的DIP地址可能会重新分配给您在该虚拟网络中新建的虚拟机。
-   - 如果您希望对虚拟机停机后，依然保留该虚拟机的DIP地址，请您在Windows Azure PowerShell 中使用`Stop-AzureVM -StayProvisioned –ServiceName`（注释：ServiceName指虚拟机所在的云服务的名称） `standard –name`（注释：name指该虚拟机的名称） standard2”命令对该虚拟机停机。如下图：
+   - 如果您希望对虚拟机停机后，依然保留该虚拟机的DIP地址，请您在Microsoft Azure PowerShell 中使用`Stop-AzureVM -StayProvisioned –ServiceName`（注释：ServiceName指虚拟机所在的云服务的名称） `standard –name`（注释：name指该虚拟机的名称） standard2”命令对该虚拟机停机。如下图：
  		![](./media/aog-virtual-network-how-to-use-internal-ip/stop-vm-stay.jpg)
 		停机后该虚拟机的状态在管理Portal上将显示为如下状态：
 		![](./media/aog-virtual-network-how-to-use-internal-ip/stop-vm-stay-status.gif)
  
 		**请注意**：由于资源不被释放，用这种方式停机将会对虚拟机继续收费。
-   - 如果您希望释放该虚拟机的DIP资源，您可以在Windows Azure PowerShell 中使用`Stop-AzureVM –ServiceName`（注释：ServiceName指虚拟机所在的云服务的名称） `standard –name`（注释：name指该虚拟机的名称） standard2”命令；或者在管理Portal,“虚拟机—仪表板”页面底部的“关闭”按钮，如下图所示：
+   - 如果您希望释放该虚拟机的DIP资源，您可以在Microsoft Azure PowerShell 中使用`Stop-AzureVM –ServiceName`（注释：ServiceName指虚拟机所在的云服务的名称） `standard –name`（注释：name指该虚拟机的名称） standard2”命令；或者在管理Portal,“虚拟机—仪表板”页面底部的“关闭”按钮，如下图所示：
  		![](./media/aog-virtual-network-how-to-use-internal-ip/stop-vm-shut.jpg)
 		关闭后，该虚拟机在管理Portal上将显示为如下状态：
 		![](./media/aog-virtual-network-how-to-use-internal-ip/stop-vm-shut-status.jpg)

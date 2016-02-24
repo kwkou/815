@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通知中心入门（Xamarin iOS 应用）| Windows Azure"
+	pageTitle="通知中心入门（Xamarin iOS 应用）| Microsoft Azure"
 	description="在本教程中，你将了解如何使用 Azure 通知中心将推送通知发送到 Xamarin iOS 应用程序。"
 	services="notification-hubs"
 	documentationCenter="xamarin"

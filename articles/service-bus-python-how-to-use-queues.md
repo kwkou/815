@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 Python 使用服务总线队列 | Windows Azure" 
+	pageTitle="如何通过 Python 使用服务总线队列 | Microsoft Azure" 
 	description="了解如何使用 Python 中的 Azure 服务总线队列" 
 	services="service-bus" 
 	documentationCenter="python" 

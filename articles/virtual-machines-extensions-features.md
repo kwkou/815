@@ -1,5 +1,5 @@
 <properties
- pageTitle="虚拟机扩展和功能 | Windows Azure"
+ pageTitle="虚拟机扩展和功能 | Microsoft Azure"
  description="了解可为 Azure 虚拟机提供哪些扩展，这些虚拟机扩展按它们提供或改进的功能进行分组。"
  services="virtual-machines"
  documentationCenter=""
@@ -14,7 +14,7 @@
  	wacn.date="01/29/2016"/>
 #关于虚拟机扩展和功能
 
-Windows Azure 提供由 Microsoft 和受信任的第三方提供商生成的 VM 扩展以实现安全性、运行时、调试、管理和其他功能，你可以在使用 Azure 虚拟机时利用这些功能提高工作效率。本主题介绍 Azure VM 扩展为 Windows 和 Linux 虚拟机提供的供你使用的各种功能并指向每个扩展的文档。
+Microsoft Azure 提供由 Microsoft 和受信任的第三方提供商生成的 VM 扩展以实现安全性、运行时、调试、管理和其他功能，你可以在使用 Azure 虚拟机时利用这些功能提高工作效率。本主题介绍 Azure VM 扩展为 Windows 和 Linux 虚拟机提供的供你使用的各种功能并指向每个扩展的文档。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
@@ -45,7 +45,7 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 |**Octopus Deploy**（基于 DSC 扩展）|支持自动将 ASP.NET Web 应用程序和 Windows 服务部署到开发、测试和生产环境。|[Octopus Deploy 入门](http://docs.octopusdeploy.com/display/OD/Getting%20started)|
 |**Visual Studio 发布管理器**（基于 DSC 扩展）|使用 Visual Studio 支持连续部署。|[使用 Release Management 自动进行部署](https://msdn.microsoft.com/Library/vs/alm/Release/overview)|
 |**CentosChefClient**|||
-|**ChefClient**|在 Windows 上创建 Chef 客户端。（也可以使用下面的 DSC 扩展。）|[Chef 与 Windows Azure](https://www.getchef.com/solutions/azure/)|
+|**ChefClient**|在 Windows 上创建 Chef 客户端。（也可以使用下面的 DSC 扩展。）|[Chef 与 Microsoft Azure](https://www.getchef.com/solutions/azure/)|
 |**LinuxChefClient**|||
 |**DockerExtension**|安装 Docker 后台程序以支持远程 Docker 命令。|[如何使用 Docker 虚拟机扩展](/documentation/articles/virtual-machines-docker-vm-extension)有关更广泛的信息，请参阅 [Docker VM 扩展用户指南](https://github.com/Azure/azure-docker-extension/blob/master/README.md)|
 |**DSC**|PowerShell DSC（所需状态配置）扩展。|[Azure PowerShell DSC（所需状态配置）扩展](http://blogs.msdn.com/b/powershell/archive/2014/08/07/introducing-the-azure-powershell-dsc-desired-state-configuration-extension.aspx)|
@@ -59,7 +59,7 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 
 |VM 扩展名称|功能说明|更多信息|
 |---|---|---|
-|**CloudLinkSecureVMWindowsAgent**|为 Windows Azure 客户提供在多租户共享的基础结构上加密其虚拟机数据的功能，并完全控制 Azure 存储基础结构上其加密数据的加密密钥。|[利用 BitLocker 和本机 OS 加密保护 Windows Azure 虚拟机](http://www.cloudlinktech.com/azure)|
+|**CloudLinkSecureVMWindowsAgent**|为 Microsoft Azure 客户提供在多租户共享的基础结构上加密其虚拟机数据的功能，并完全控制 Azure 存储基础结构上其加密数据的加密密钥。|[利用 BitLocker 和本机 OS 加密保护 Microsoft Azure 虚拟机](http://www.cloudlinktech.com/azure)|
 |**McAfeeEndpointSecurity**|保护 VM 免受恶意软件的威胁。|[McAfee](https://www.mcafeeasap.com/MarketingContent/default.aspx)|
 |**TrendMicroDSA**|启用 TrendMicro 的 Deep Security 平台支持可提供入侵检测和防护、防火墙、防恶意软件、Web 信誉评估、日志检查和完整性监视。|[如何在 Azure VM 上安装和配置 Trend Micro Deep Security 即服务](/documentation/articles/virtual-machines-install-trend)|
 |**PortalProtectExtension**|防止对你的 Microsoft SharePoint 环境构成威胁。|[保护 Azure 上的 SharePoint 部署](http://blog.trendmicro.com/securing-sharepoint-deployment-azure/)|
@@ -72,7 +72,7 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 |**VM 扩展名称**|功能说明|更多信息|
 |---|---|---|
 |**AzureVmLogCollector**|可以使用 **AzureVMLogCollector** 扩展按需从一个或多个云服务 VM（从 web 角色和辅助角色）执行一次性日志收集，并将收集到的文件传输到 Azure 存储帐户 - 所有这些操作都无需远程登录到任何 VM。 |[AzureLogCollector 扩展](/documentation/articles/virtual-machines-extensions-log-collector)|
-|**IaaSDiagnostics**|启用、禁用和配置 Azure 诊断，也可由 **AzureCATExtensionHandler** 用于支持 SAP 监视。|[使用 Azure 诊断扩展监视 Windows Azure 虚拟机](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/)|
+|**IaaSDiagnostics**|启用、禁用和配置 Azure 诊断，也可由 **AzureCATExtensionHandler** 用于支持 SAP 监视。|[使用 Azure 诊断扩展监视 Microsoft Azure 虚拟机](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/)|
 |**OSPatchingForLinux**|使 Azure VM 管理员能够使用自定义配置自动执行 VM OS 更新。可以使用 OSPatching 扩展为虚拟机配置 OS 更新，包括：指定安装 OS 修补程序的频率和时间，指定要安装哪些修补程序，并配置更新后的重新启动行为|[OS 修补扩展博客文章](http://azure.microsoft.com/blog/2014/10/23/automate-linux-vm-os-updates-using-ospatching-extension/)。另请参阅 Github 上 [OS 修补扩展](https://github.com/Azure/azure-linux-extensions)中的自述文件和源。|
 
 ##开发和调试

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="针对服务总线分区队列和主题的 AMQP 1.0 支持 | Windows Azure" 
+	pageTitle="针对服务总线分区队列和主题的 AMQP 1.0 支持 | Microsoft Azure" 
 	description="了解如何将高级消息队列协议 (AMQP) 1.0 用于服务总线分区队列和主题。" 
 	services="service-bus" 
 	documentationCenter=".net" 

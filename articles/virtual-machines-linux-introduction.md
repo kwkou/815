@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 中的 Linux 简介 | Windows Azure"
+	pageTitle="Azure 中的 Linux 简介 | Microsoft Azure"
 	description="了解如何在 Azure 上使用 Linux 虚拟机。"
 	services="virtual-machines"
 	documentationCenter="python"
@@ -62,7 +62,7 @@ Azure Linux 代理包含自动检测此名称更改的功能，并会相应地�
 **Ubuntu** 和 **CoreOS** 映像利用 cloud-init pn Azure 为启动虚拟机提供附加功能。
 
  - [如何插入自定义数据](/documentation/articles/virtual-machines-how-to-inject-custom-data)
- - [Windows Azure 上的自定义数据和 Cloud-Init](http://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/)
+ - [Microsoft Azure 上的自定义数据和 Cloud-Init](http://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/)
  - [使用 Cloud-Init 创建 Azure 交换分区](https://wiki.ubuntu.com/AzureSwapPartitions)
  - [如何在 Azure 上使用 CoreOS](/documentation/articles/virtual-machines-linux-coreos-how-to)
 

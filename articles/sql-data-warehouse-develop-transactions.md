@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库中的事务 | Windows Azure"
+   pageTitle="SQL 数据仓库中的事务 | Microsoft Azure"
    description="有关在开发解决方案时实现 Azure SQL 数据仓库中的事务的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"

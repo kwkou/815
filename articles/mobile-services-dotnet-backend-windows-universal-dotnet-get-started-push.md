@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="向通用 Windows 8.1 应用添加推送通知 | Windows Azure" 
+	pageTitle="向通用 Windows 8.1 应用添加推送通知 | Microsoft Azure" 
 	description="了解如何从 .NET 后端移动服务使用 Azure 通知中心向通用 Windows 8.1 应用发送推送通知。" 
 	services="mobile-services,notification-hubs" 
 	documentationCenter="windows" 

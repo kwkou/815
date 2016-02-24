@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库中的 PolyBase 教程 | Windows Azure"
+   pageTitle="SQL 数据仓库中的 PolyBase 教程 | Microsoft Azure"
    description="了解什么是 PolyBase，以及如何将其用于数据仓库方案。"
    services="sql-data-warehouse"
    documentationCenter="NA"

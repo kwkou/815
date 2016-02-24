@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 中的混合云测试环境 | Windows Azure"
+	pageTitle="Azure 中的混合云测试环境 | Microsoft Azure"
 	description="查找介绍如何构建适用于基于 Azure 的混合云的开发/测试或概念证明 IT 专业环境的文章。"
 	documentationCenter=""
 	services="virtual-machines"
@@ -49,7 +49,7 @@
 
 [Azure 基础结构服务中托管的 SharePoint 场](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 
-[在 Windows Azure 中部署 Office 365 目录同步 (DirSync)](https://technet.microsoft.com/zh-CN/library/dn635310.aspx)
+[在 Microsoft Azure 中部署 Office 365 目录同步 (DirSync)](https://technet.microsoft.com/zh-CN/library/dn635310.aspx)
 
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 

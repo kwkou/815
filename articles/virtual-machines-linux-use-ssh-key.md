@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Linux 和 Mac 上使用 SSH | Windows Azure" 
+	pageTitle="在 Linux 和 Mac 上使用 SSH | Microsoft Azure" 
 	description="在 Linux 和 Mac 上为 Azure 上的资源管理器和经典部署模型生成和使用 SSH 密钥。" 
 	services="virtual-machines" 
 	documentationCenter="" 

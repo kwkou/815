@@ -1,5 +1,5 @@
 <properties
-   pageTitle="ExpressRoute 客户路由器配置示例 | Windows Azure"
+   pageTitle="ExpressRoute 客户路由器配置示例 | Microsoft Azure"
    description="本页提供 Cisco 和 Juniper 路由器的路由器配置示例。"
    documentationCenter="na"
    services="expressroute"
@@ -15,7 +15,7 @@
 
 本页提供适用于 Cisco IOS XE 和 Juniper MX 系列路由器的接口与路由配置示例。这些示例仅供指导，不能按原样使用。你可以与你的供应商合作，以便为你的网络指定适当的配置。
 
->[AZURE.IMPORTANT]本页中的示例仅供指导。你必须与供应商的销售/技术团队和你的网络团队合作，以便指定符合需要的适当配置。对于本页中所列配置的相关问题，Windows Azure 将不提供支持。出现问题时，你必须联系设备供应商来获得支持。
+>[AZURE.IMPORTANT]本页中的示例仅供指导。你必须与供应商的销售/技术团队和你的网络团队合作，以便指定符合需要的适当配置。对于本页中所列配置的相关问题，Microsoft Azure 将不提供支持。出现问题时，你必须联系设备供应商来获得支持。
 
 以下路由器配置示例适用于所有对等互连互连。有关路由的详细信息，请查看 [ExpressRoute 对等互连](/documentation/articles/expressroute-circuit-peerings)和 [ExpressRoute 路由要求](/documentation/articles/expressroute-routing)。
 
@@ -25,7 +25,7 @@
 
 ### 1\.配置接口和子接口
 
-在连接到 Windows Azure 的每个路由器中，针对每个对等互连互连都需要有一个子接口。子接口可使用 VLAN ID 或一组堆栈的 VLAN ID 和 IP 地址来标识。
+在连接到 Microsoft Azure 的每个路由器中，针对每个对等互连互连都需要有一个子接口。子接口可使用 VLAN ID 或一组堆栈的 VLAN ID 和 IP 地址来标识。
 
 #### Dot1Q 接口定义
 
@@ -45,7 +45,7 @@
     
 ### 2\.设置 eBGP 会话
 
-必须针对每个对等互连设置与 Windows Azure 的 BGP 会话。以下示例可让你设置与 Windows Azure 的 BGP 会话。如果对子接口使用的 IPv4 地址是 a.b.c.d，则 BGP 邻居 (Windows Azure) 的 IP 地址将是 a.b.c.d+1。BGP 邻居 IPv4 地址的最后一个八位字节始终是偶数。
+必须针对每个对等互连设置与 Microsoft Azure 的 BGP 会话。以下示例可让你设置与 Microsoft Azure 的 BGP 会话。如果对子接口使用的 IPv4 地址是 a.b.c.d，则 BGP 邻居 (Microsoft Azure) 的 IP 地址将是 a.b.c.d+1。BGP 邻居 IPv4 地址的最后一个八位字节始终是偶数。
 
 	router bgp <Customer_ASN>
 	 bgp log-neighbor-changes
@@ -58,7 +58,7 @@
 
 ### 3\.将前缀设置为通过 BGP 会话播发
 
-你可以配置路由器，以将选定前缀播发给 Windows Azure。可以使用以下示例来执行此操作。
+你可以配置路由器，以将选定前缀播发给 Microsoft Azure。可以使用以下示例来执行此操作。
 
 	router bgp <Customer_ASN>
 	 bgp log-neighbor-changes
@@ -130,7 +130,7 @@
 
 ### 2\.设置 eBGP 会话
 
-必须针对每个对等互连设置与 Windows Azure 的 BGP 会话。以下示例可让你设置与 Windows Azure 的 BGP 会话。如果对子接口使用的 IPv4 地址是 a.b.c.d，则 BGP 邻居 (Windows Azure) 的 IP 地址将是 a.b.c.d+1。BGP 邻居 IPv4 地址的最后一个八位字节始终是偶数。
+必须针对每个对等互连设置与 Microsoft Azure 的 BGP 会话。以下示例可让你设置与 Microsoft Azure 的 BGP 会话。如果对子接口使用的 IPv4 地址是 a.b.c.d，则 BGP 邻居 (Microsoft Azure) 的 IP 地址将是 a.b.c.d+1。BGP 邻居 IPv4 地址的最后一个八位字节始终是偶数。
 
 	routing-options {
 	    autonomous-system <Customer_ASN>;
@@ -147,7 +147,7 @@
 
 ### 3\.将前缀设置为通过 BGP 会话播发
 
-你可以配置路由器，以将选定前缀播发给 Windows Azure。可以使用以下示例来执行此操作。
+你可以配置路由器，以将选定前缀播发给 Microsoft Azure。可以使用以下示例来执行此操作。
 
 	policy-options {
 	    policy-statement <Policy_Name> {

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 通知中心入门（Windows 应用商店应用）| Windows Azure"
+	pageTitle="Azure 通知中心入门（Windows 应用商店应用）| Microsoft Azure"
 	description="在本教程中，你将了解如何使用 Azure 通知中心将通知推送到 Windows 应用商店或 Windows Phone 8.1（非 Silverlight）应用程序。"
 	services="notification-hubs"
 	documentationCenter="windows"

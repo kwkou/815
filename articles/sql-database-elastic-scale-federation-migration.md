@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="联合迁移 | Windows Azure" 
+    pageTitle="联合迁移 | Microsoft Azure" 
     description="概述了将使用“联合”功能构建的现有应用迁移到弹性数据库模型的步骤。" 
     services="sql-database" 
     documentationCenter="" 

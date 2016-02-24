@@ -1,5 +1,5 @@
 <properties
-	pageTitle="HDInsight 的 Hadoop Emulator 入门 | Windows Azure"
+	pageTitle="HDInsight 的 Hadoop Emulator 入门 | Microsoft Azure"
 	description="使用安装的模拟器，参考 MapReduce 教程和其他示例来了解 Hadoop 生态系统。HDInsight Emulator 的工作原理类似于 Hadoop 沙盒。"
 	keywords="emulator,hadoop ecosystem,hadoop sandbox,mapreduce tutorial"
 	editor="cgronlun"

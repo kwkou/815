@@ -1,5 +1,5 @@
 <properties
-    pageTitle="如何使用服务总线队列 (.NET) | Windows Azure"
+    pageTitle="如何使用服务总线队列 (.NET) | Microsoft Azure"
     description="了解如何在 Azure 中使用 Service Bus 队列。代码示例是使用 .NET API 通过 C# 编写的。"
     services="service-bus"
     documentationCenter=".net"

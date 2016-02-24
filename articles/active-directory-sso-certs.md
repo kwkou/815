@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何在 Azure AD 中管理联合证书 | Windows Azure"
+	pageTitle="如何在 Azure AD 中管理联合证书 | Microsoft Azure"
 	description="了解如何自定义联合证书的过期日期，以及如何续订即将过期的证书。"
 	services="active-directory"
 	documentationCenter=""

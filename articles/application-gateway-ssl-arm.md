@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="使用 Azure 资源管理器配置应用程序网关以进行 SSL 卸载 | Windows Azure"
+   pageTitle="使用 Azure 资源管理器配置应用程序网关以进行 SSL 卸载 | Microsoft Azure"
    description="本页提供有关使用 Azure 资源管理器创建支持 SSL 卸载的应用程序网关的说明"
    documentationCenter="na"
    services="application-gateway"

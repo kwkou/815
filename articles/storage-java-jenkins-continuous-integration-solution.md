@@ -1,6 +1,6 @@
 <properties 
 	urlDisplayName="Jenkins Continuous Integration" 
-	pageTitle="将 Azure 存储用于 Jenkins 持续集成解决方案 | Windows Azure" 
+	pageTitle="将 Azure 存储用于 Jenkins 持续集成解决方案 | Microsoft Azure" 
 	metaKeywords="" 
 	description="本教程演示如何使用 Azure Blob 服务作为 Jenkins 持续集成解决方案创建的生成项目的存储库。" 
 	metaCanonical="" 
@@ -74,7 +74,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 1. 在 Jenkins 仪表板中，单击“管理 Jenkins”。
 2. 在“管理 Jenkins”页中，单击“管理插件”。
 3. 单击“可用”选项卡。
-4. 在“项目上载程序”部分，选中“Windows Azure 存储插件”。
+4. 在“项目上载程序”部分，选中“Microsoft Azure 存储插件”。
 5. 单击“安装而不重新启动”或“立即下载并在重新启动后安装”。
 6. 重新启动 Jenkins。
 
@@ -82,7 +82,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 
 1. 在 Jenkins 仪表板中，单击“管理 Jenkins”。
 2. 在“管理 Jenkins”页中，单击“配置系统”。
-3. 在“Windows Azure 存储帐户配置”部分：
+3. 在“Microsoft Azure 存储帐户配置”部分：
     1. 输入你的存储帐户名称，获取该帐户名称可以通过 Azure 门户 (<https://manage.windowsazure.cn>)。
     2. 输入你的存储帐户密钥，同样可以从 Azure 门户获取该密钥。
     3. 如果你在使用公共 Azure 云，对于“Blob 服务终结点 URL”，请使用默认值。如果你在使用其他 Azure 云，则使用在 Azure 管理门户中为你的存储帐户指定的终结点。 

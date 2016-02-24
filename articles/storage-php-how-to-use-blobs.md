@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 PHP 使用 Blob 存储 | Windows Azure"
+	pageTitle="如何通过 PHP 使用 Blob 存储 | Microsoft Azure"
 	description="了解如何使用 Azure Blob 服务上载、列出、下载和删除 Blob。通过 PHP 编写代码示例。"
 	documentationCenter="php"
 	services="storage"

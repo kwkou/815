@@ -19,7 +19,7 @@
 - [REST](/documentation/articles/media-services-rest-manage-entities)
 - [.NET](/documentation/articles/media-services-dotnet-manage-entities)
 
-Windows Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因此，你可以像在任何其他 OData 服务上一样添加、查询、更新和删除实体。适用时，将标注例外情况。有关 OData 的详细信息，请参阅[开放数据协议文档](http://www.odata.org/documentation/)。
+Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因此，你可以像在任何其他 OData 服务上一样添加、查询、更新和删除实体。适用时，将标注例外情况。有关 OData 的详细信息，请参阅[开放数据协议文档](http://www.odata.org/documentation/)。
 
 - 添加实体 
 - 查询实体 

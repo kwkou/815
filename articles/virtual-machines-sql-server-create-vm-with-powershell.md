@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 PowerShell 中创建 SQL Server 虚拟机 | Windows Azure"
+	pageTitle="在 PowerShell 中创建 SQL Server 虚拟机 | Microsoft Azure"
 	description="提供用于创建具有 SQL Server 虚拟机库映像的 Azure VM的步骤和 PowerShell 脚本。"
 	services="virtual-machines"
 	documentationCenter="na"

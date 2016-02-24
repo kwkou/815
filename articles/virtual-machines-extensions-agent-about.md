@@ -1,5 +1,5 @@
 <properties
- pageTitle="Azure VM 代理和扩展 | Windows Azure"
+ pageTitle="Azure VM 代理和扩展 | Microsoft Azure"
  description="提供了代理和扩展的概述以及如何使用经典部署模型安装代理。"
  services="virtual-machines"
  documentationCenter=""

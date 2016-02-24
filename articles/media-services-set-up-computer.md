@@ -1,5 +1,5 @@
 <properties
-	pageTitle="设置你的环境 | Windows Azure"
+	pageTitle="设置你的环境 | Microsoft Azure"
 	description="设置你的环境以使用 Azure 媒体服务进行开发。"
 	services="media-services"
 	documentationCenter=""

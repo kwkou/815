@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 SQL 数据仓库中重命名 | Windows Azure"
+   pageTitle="在 SQL 数据仓库中重命名 | Microsoft Azure"
    description="有关在开发解决方案时于 Azure SQL 数据仓库中重命名表的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"

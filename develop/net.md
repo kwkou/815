@@ -1,5 +1,5 @@
 <properties 
-pageTitle="Windows Azure 开发人员中心：.NET" 
+pageTitle="Microsoft Azure 开发人员中心：.NET" 
 metaKeywords=".NET" 
 description="" 
 services=".NET" 

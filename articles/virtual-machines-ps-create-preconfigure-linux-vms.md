@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure PowerShell 创建 Linux VM | Windows Azure"
+	pageTitle="使用 Azure PowerShell 创建 Linux VM | Microsoft Azure"
 	description="了解如何使用 Azure PowerShell 创建和预配置 Linux VM。"
 	services="virtual-machines"
 	documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="本地/云混合应用程序 (.NET) | Windows Azure"
+	pageTitle="本地/云混合应用程序 (.NET) | Microsoft Azure"
 	description="了解如何使用 Azure 服务总线中继创建 .NET 本地/云混合应用程序。"
 	services="service-bus"
 	documentationCenter=".net"
@@ -16,7 +16,7 @@
 
 ##介绍
 
-使用 Visual Studio 2013 和免费的 Azure SDK for .NET，可以轻松地开发针对 Windows Azure 的混合云应用程序。本文假设你之前未使用过 Azure。在不到 30 分钟的时间内，你就能让使用多个 Azure 资源的应用程序在云中启动并运行。
+使用 Visual Studio 2013 和免费的 Azure SDK for .NET，可以轻松地开发针对 Microsoft Azure 的混合云应用程序。本文假设你之前未使用过 Azure。在不到 30 分钟的时间内，你就能让使用多个 Azure 资源的应用程序在云中启动并运行。
 
 你将学习以下内容：
 
@@ -148,7 +148,7 @@
 
 9.  在“NuGet”对话框的左栏中，单击“联机”。
 
-10. 	在右栏中，单击“搜索”框，键入“**服务总线**”，然后选择“Windows Azure 服务总线”项。单击“安装”以完成安装，然后关闭此对话框。
+10. 	在右栏中，单击“搜索”框，键入“**服务总线**”，然后选择“Microsoft Azure 服务总线”项。单击“安装”以完成安装，然后关闭此对话框。
 
     ![][13]
 
@@ -286,7 +286,7 @@
 
 ### 创建项目
 
-1.  确保使用管理员权限运行 Visual Studio。若不能，要使用管理员权限启动 Visual Studio，请右键单击“Microsoft Visual Studio 2013”（或“Microsoft Visual Studio Express”），然后单击“以管理员身份运行”。Windows Azure 计算模拟器（本文后面会讨论）要求使用管理员权限启动 Visual Studio。
+1.  确保使用管理员权限运行 Visual Studio。若不能，要使用管理员权限启动 Visual Studio，请右键单击“Microsoft Visual Studio 2013”（或“Microsoft Visual Studio Express”），然后单击“以管理员身份运行”。Microsoft Azure 计算模拟器（本文后面会讨论）要求使用管理员权限启动 Visual Studio。
 
 2.  在 Visual Studio 的“文件”菜单中，单击“新建”，然后单击“项目”。
 
@@ -408,7 +408,7 @@
 
 若要将应用程序部署到云服务，需要在解决方案中添加一个云服务项目部署项目。该部署项目包含在云中正常运行应用程序所需的配置信息。
 
-1.  若要使应用程序能够部署到云中，请右键单击“解决方案资源管理器”中的 **ProductsPortal** 项目，再单击“转换”，然后单击“转换为 Windows Azure 云服务项目”。
+1.  若要使应用程序能够部署到云中，请右键单击“解决方案资源管理器”中的 **ProductsPortal** 项目，再单击“转换”，然后单击“转换为 Microsoft Azure 云服务项目”。
 
     ![][22]
 
@@ -428,7 +428,7 @@
 
 2.  采用与“创建本地服务器”部分类似的步骤，将 NuGet 包添加到项目“引用”中。在解决方案资源管理器中，右键单击“引用”，然后单击“管理 NuGet 包”。
 
-3.  搜索“服务总线”并选择“Windows Azure 服务总线”项。然后，完成安装过程并关闭此对话框。
+3.  搜索“服务总线”并选择“Microsoft Azure 服务总线”项。然后，完成安装过程并关闭此对话框。
 
 4.  在解决方案资源管理器中，右键单击“ProductsPortal”项目，然后单击“添加”，再单击“现有项”。
 
@@ -501,7 +501,7 @@
 
 ## 将你的应用程序部署到 Azure
 
-1.  在解决方案资源管理器中，右键单击“ProductsPortal”项目，然后单击“发布到 Windows Azure”。
+1.  在解决方案资源管理器中，右键单击“ProductsPortal”项目，然后单击“发布到 Microsoft Azure”。
 
 2.  你可能必须登录才能查看你的所有订阅。
 

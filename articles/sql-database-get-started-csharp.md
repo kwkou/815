@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="试用 SQL 数据库：使用 C# 创建 SQL 数据库 | Windows Azure" 
+	pageTitle="试用 SQL 数据库：使用 C# 创建 SQL 数据库 | Microsoft Azure" 
 	description="尝试使用 SQL 数据库开发 SQL 和 C# 应用，并使用适用于 .NET 的 SQL 数据库库以 C# 创建 Azure SQL 数据库。" 
 	keywords="试用 sql, sql c#"   
 	services="sql-database" 

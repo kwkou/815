@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="有关 Azure AD Connect 凭据和权限的详细信息 | Windows Azure" 
+	pageTitle="有关 Azure AD Connect 凭据和权限的详细信息 | Microsoft Azure" 
 	description="Azure AD Connect 凭据和权限的自定义设置描述。" 
 	services="active-directory" 
 	documentationCenter="" 

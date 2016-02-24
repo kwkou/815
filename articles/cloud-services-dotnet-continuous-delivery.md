@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure 中使用 TFS 持续交付云服务 | Windows Azure"
+	pageTitle="在 Azure 中使用 TFS 持续交付云服务 | Microsoft Azure"
 	description="了解如何设置 Azure 云应用程序的持续交付。MSBuild 命令行语句和 PowerShell 脚本的代码示例。"
 	services="cloud-services"
 	documentationCenter=""

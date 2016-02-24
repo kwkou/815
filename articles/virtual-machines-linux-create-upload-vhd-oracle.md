@@ -1,5 +1,5 @@
 <properties
-	pageTitle="创建和上载 Oracle Linux VHD | Windows Azure"
+	pageTitle="创建和上载 Oracle Linux VHD | Microsoft Azure"
 	description="了解如何创建和上载包含 Oracle Linux 操作系统的 Azure 虚拟硬盘 (VHD)。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -164,7 +164,7 @@
 		PEERDNS=yes
 		IPV6INIT=no
 
-5.	移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Windows Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
+5.	移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Microsoft Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
 
 		# sudo mkdir -m 0700 /var/lib/waagent
 		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/ 2>/dev/null

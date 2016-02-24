@@ -1,5 +1,5 @@
 <properties
-   pageTitle="数据仓库工作负荷 | Windows Azure"
+   pageTitle="数据仓库工作负荷 | Microsoft Azure"
    description="借助 SQL 数据仓库的弹性，你可以使用数据仓库单位 (DWU) 的可调缩放性扩大、收缩或暂停计算容量。本文介绍数据仓库指标以及它们如何与 DWU 相关。"
    services="sql-data-warehouse"
    documentationCenter="NA"

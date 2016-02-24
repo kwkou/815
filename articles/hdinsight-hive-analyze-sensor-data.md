@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Hive 和 Hadoop 分析传感器数据 |Windows Azure"
+	pageTitle="使用 Hive 和 Hadoop 分析传感器数据 |Microsoft Azure"
 	description="了解如何通过将 Hive 查询控制台与 HDInsight (Hadoop) 配合使用来分析传感器数据，然后通过 PowerView 在 Microsoft Excel 中可视化数据。"
 	services="hdinsight"
 	documentationCenter=""

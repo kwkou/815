@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SQL 数据库对审核的下层客户端支持 | Windows Azure" 
+	pageTitle="SQL 数据库对审核的下层客户端支持 | Microsoft Azure" 
 	description="了解 SQL 数据库对审核的下层客户端支持。" 
 	services="sql-database" 
 	documentationCenter="" 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 Python 使用队列存储 | Windows Azure" 
+	pageTitle="如何通过 Python 使用队列存储 | Microsoft Azure" 
 	description="了解如何通过 Python 使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。" 
 	services="storage" 
 	documentationCenter="python" 

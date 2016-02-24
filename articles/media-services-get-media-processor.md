@@ -45,7 +45,7 @@
 		<td><a href="/documentation/articles/media-services-index-content/">使用Azure 媒体索引器为媒体文件编制索引</a>。</td>
     </tr>
     <tr>
-        <td>Windows Azure 媒体包装器</td>
+        <td>Microsoft Azure 媒体包装器</td>
         <td>让你将媒体资产从 .mp4 格式转换为平滑流式处理格式。还可让你将媒体资产从平滑流式处理格式转换为 Apple HTTP 实时流 (HLS) 格式。</td>
 		<td><a href="http://msdn.microsoft.com/zh-cn/library/hh973635.aspx">Azure Media Packager 的任务预设字符串</a></td>
     </tr>

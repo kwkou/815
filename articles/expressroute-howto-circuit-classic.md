@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 PowerShell 配置 ExpressRoute 线路的步骤 | Windows Azure"
+   pageTitle="使用 PowerShell 配置 ExpressRoute 线路的步骤 | Microsoft Azure"
    description="本文将指导你完成创建和预配 ExpressRoute 线路的步骤。本文还介绍了如何检查状态，以及如何更新、删除和预配线路。"
    documentationCenter="na"
    services="expressroute"
@@ -207,7 +207,7 @@
 		Sku                              : Standard
 		Status                           : Enabled
 
-现已在 Windows Azure 一侧调整好线路的大小。你必须联系连接提供商，让他们在那一边根据此更改更新配置。请注意，我们将从现在开始按照已更新的带宽选项为你计费。
+现已在 Microsoft Azure 一侧调整好线路的大小。你必须联系连接提供商，让他们在那一边根据此更改更新配置。请注意，我们将从现在开始按照已更新的带宽选项为你计费。
 
 >[AZURE.IMPORTANT]但是，你无法在不中断的情况下降低 ExpressRoute 线路的带宽。带宽降级需要取消对 ExpressRoute 线路的预配，然后重新预配新的 ExpressRoute 线路。
 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 PHP 使用服务总线队列 | Windows Azure" 
+	pageTitle="如何通过 PHP 使用服务总线队列 | Microsoft Azure" 
 	description="了解如何在 Azure 中使用 Service Bus 队列。采用 PHP 编写的代码示例。" 
 	services="service-bus" 
 	documentationCenter="php" 

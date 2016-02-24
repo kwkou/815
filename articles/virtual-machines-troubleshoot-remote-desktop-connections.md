@@ -1,5 +1,5 @@
 <properties
-	pageTitle="对 Azure VM 的远程桌面连接进行故障排除 | Windows Azure"
+	pageTitle="对 Azure VM 的远程桌面连接进行故障排除 | Microsoft Azure"
 	description="对 Windows VM 的远程桌面连接错误进行故障排除。获取快速缓解措施，根据错误消息获取帮助和进行详细的网络故障排除。"
 	keywords="远程桌面错误,远程桌面连接错误,无法连接到 VM,远程桌面故障排除"
 	services="virtual-machines"
@@ -47,7 +47,7 @@
 
 如果从运行 Windows 8、Windows 8.1、Windows Server 2012 或 Windows Server 2012 R2 的计算机进行故障排除，则可以尝试运行 [Azure IaaS (Windows) 诊断程序包](http://support.microsoft.com/kb/2976864)。此程序包可以解决远程桌面存在的许多常见问题。
 
-1.	在[“支持诊断”](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864)页上单击“Windows Azure IaaS (Windows)诊断程序包”。单击“创建”以创建新的诊断会话。你可以将此会话与不同目标计算机**共享**，或者将它**下载**到本地计算机上。
+1.	在[“支持诊断”](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864)页上单击“Microsoft Azure IaaS (Windows)诊断程序包”。单击“创建”以创建新的诊断会话。你可以将此会话与不同目标计算机**共享**，或者将它**下载**到本地计算机上。
 2.	**运行**此会话，**接受** Microsoft 许可协议，并**启动**诊断工具。
 3.	在弹出窗口中对你的 Azure 订阅进行身份验证并按照提示进行操作。
 4.	在“你遇到 Azure VM 的以下哪些问题?”页上，选择“与 Azure VM 的 RDP 连接(需要重启)”问题。

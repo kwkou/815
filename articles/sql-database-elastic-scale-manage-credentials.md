@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="管理弹性数据库客户端库中的凭据 | Windows Azure" 
+	pageTitle="管理弹性数据库客户端库中的凭据 | Microsoft Azure" 
 	description="如何为弹性数据库应用设置正确的凭据级别（从管理员到只读权限）" 
 	services="sql-database" 
 	documentationCenter="" 

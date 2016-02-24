@@ -1,5 +1,5 @@
 <properties
-	pageTitle="服务总线消息传送概述 | Windows Azure"
+	pageTitle="服务总线消息传送概述 | Microsoft Azure"
 	description="服务总线消息传送：在云中灵活传送数据"
 	services="service-bus"
 	documentationCenter=".net"

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 HDInsight 中将 Hadoop Hive 与 Curl 配合使用 | Windows Azure"
+   pageTitle="在 HDInsight 中将 Hadoop Hive 与 Curl 配合使用 | Microsoft Azure"
    description="了解如何使用 Curl 向 HDInsight 远程提交 Pig 作业。"
    services="hdinsight"
    documentationCenter=""

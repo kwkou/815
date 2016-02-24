@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 PowerShell 监视和管理流分析作业 | Windows Azure" 
+	pageTitle="使用 PowerShell 监视和管理流分析作业 | Microsoft Azure" 
 	description="了解如何使用 Azure PowerShell 和 cmdlet 监视和管理流分析作业。" 
 	keywords="azure powershell,azure powershell cmdlet,powershell 命令,powershell 脚本"	
 	services="stream-analytics" 

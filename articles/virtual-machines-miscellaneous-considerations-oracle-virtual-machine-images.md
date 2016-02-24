@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Oracle VM 映像的注意事项 | Windows Azure"
+	pageTitle="使用 Oracle VM 映像的注意事项 | Microsoft Azure"
 	description="在部署之前，了解 Azure 中 Windows Server 上的 Oracle VM 支持的配置以及限制。"
 	services="virtual-machines"
 	documentationCenter=""

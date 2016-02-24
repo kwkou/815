@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 Azure 中实施公共 IP 和专用 IP 寻址（经典）| Windows Azure"
+   pageTitle="在 Azure 中实施公共 IP 和专用 IP 寻址（经典）| Microsoft Azure"
    description="了解如何在 Azure 中实施公共 IP 和专用 IP 寻址"
    services="virtual-network"
    documentationCenter="na"

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Visual Studio 和 C# 创建 Apache Storm 拓扑 | Windows Azure"
+   pageTitle="使用 Visual Studio 和 C# 创建 Apache Storm 拓扑 | Microsoft Azure"
    description="了解如何通过使用 HDInsight Tools for Visual Studio 创建一个简单的单词计数拓扑，来以 C# 语言创建一个 Storm 拓扑。"
    services="hdinsight"
    documentationCenter=""

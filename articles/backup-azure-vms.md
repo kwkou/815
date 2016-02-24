@@ -1,5 +1,5 @@
 <properties
-	pageTitle="备份 Azure 虚拟机 | Windows Azure"
+	pageTitle="备份 Azure 虚拟机 | Microsoft Azure"
 	description="使用本文中的 Azure 虚拟机备份过程来发现、注册和备份虚拟机。"
 	services="backup"
 	documentationCenter=""

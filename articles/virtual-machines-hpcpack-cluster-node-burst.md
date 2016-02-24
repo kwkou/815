@@ -1,5 +1,5 @@
 <properties
- pageTitle="将突发节点添加到 HPC Pack 群集 | Windows Azure"
+ pageTitle="将突发节点添加到 HPC Pack 群集 | Microsoft Azure"
  description="了解如何按需将云服务中运行的辅助角色实例作为计算资源添加到 Azure 中的 HPC Pack 头节点。"
  services="virtual-machines"
  documentationCenter=""

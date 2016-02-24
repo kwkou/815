@@ -1,5 +1,5 @@
 <properties
-   pageTitle="外围网络示例 – 构建外围网络以通过防火墙和 NSG 保护应用程序 | Windows Azure"
+   pageTitle="外围网络示例 – 构建外围网络以通过防火墙和 NSG 保护应用程序 | Microsoft Azure"
    description="使用防火墙和网络安全组 (NSG) 构建外围网络"
    services="virtual-network"
    documentationCenter="na"

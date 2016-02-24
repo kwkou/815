@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="入门：Azure AD 密码管理 | Windows Azure" 
+	pageTitle="入门：Azure AD 密码管理 | Microsoft Azure" 
 	description="使用户能够重置其自己的密码和了解密码重置先决条件，并启用密码写回来管理 Active Directory 中的本地密码。" 
 	services="active-directory" 
 	documentationCenter="" 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SQL 数据库审核入门 | Windows Azure"
+	pageTitle="SQL 数据库审核入门 | Microsoft Azure"
 	description="SQL 数据库审核入门"
 	services="sql-database"
 	documentationCenter=""

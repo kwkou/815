@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用标记来组织 Azure 资源 | Windows Azure"
+	pageTitle="使用标记来组织 Azure 资源 | Microsoft Azure"
 	description="演示如何应用标记来组织资源进行计费和管理。"
 	services="azure-resource-manager"
 	documentationCenter=""
@@ -151,9 +151,9 @@
 
 您还可以使用标记根据运行时环境对成本进行分类；例如，在生产环境中运行的虚拟机的计费使用情况。
 
-你可以通过 [Azure 资源使用情况与费率卡 API](/documentation/articles/billing-usage-rate-card-overview) 或者可从 [Azure 帐户门户](https://account.windowsazure.cn/)下载的使用情况逗号分隔值 (CSV) 文件来检索有关标记的信息。有关以编程方式访问计费信息的详细信息，请参阅[深入了解你的 Windows Azure 资源消耗](/documentation/articles/billing-usage-rate-card-overview)。有关 REST API 操作，请参阅 [Azure 计费 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c)。
+你可以通过 [Azure 资源使用情况与费率卡 API](/documentation/articles/billing-usage-rate-card-overview) 或者可从 [Azure 帐户门户](https://account.windowsazure.cn/)下载的使用情况逗号分隔值 (CSV) 文件来检索有关标记的信息。有关以编程方式访问计费信息的详细信息，请参阅[深入了解你的 Microsoft Azure 资源消耗](/documentation/articles/billing-usage-rate-card-overview)。有关 REST API 操作，请参阅 [Azure 计费 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c)。
 
-在你为支持标记和计费的服务下载使用情况 CSV 时，标记将显示在“标记”列中。有关更多详细信息，请参阅[了解 Windows Azure 的计费](/documentation/articles/billing-understand-your-bill)。
+在你为支持标记和计费的服务下载使用情况 CSV 时，标记将显示在“标记”列中。有关更多详细信息，请参阅[了解 Microsoft Azure 的计费](/documentation/articles/billing-understand-your-bill)。
 
 ![在计费中查看标记](./media/resource-group-using-tags/billing_csv.png)
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure VM 上的 Oracle | Windows Azure"
+	pageTitle="Azure VM 上的 Oracle | Microsoft Azure"
 	description="查找介绍如何在基于 Windows 或基于 Linux 的 Azure 虚拟机上设置 Oracle 软件的文章。"
 	services="virtual-machines"
 	documentationCenter=""

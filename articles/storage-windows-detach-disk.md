@@ -1,5 +1,5 @@
 <properties
-	pageTitle="从 Windows 虚拟机分离磁盘 | Windows Azure"
+	pageTitle="从 Windows 虚拟机分离磁盘 | Microsoft Azure"
 	description="了解如何从使用经典部署模型创建的 Azure 虚拟机分离磁盘。"
 	services="virtual-machines"
 	documentationCenter=""

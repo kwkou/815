@@ -1,5 +1,5 @@
 <properties
-    pageTitle="什么是云服务模型和包 | Windows Azure"
+    pageTitle="什么是云服务模型和包 | Microsoft Azure"
     description="描述 Azure 中的云服务模型（.csdef、.cscfg）和包 (.cspkg)"
     services="cloud-services"
     documentationCenter=""

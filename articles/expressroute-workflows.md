@@ -1,5 +1,5 @@
 <properties
-   pageTitle="ExpressRoute 线路配置工作流 | Windows Azure"
+   pageTitle="ExpressRoute 线路配置工作流 | Microsoft Azure"
    description="本页将指导你完成配置 ExpressRoute 线路和对等互连的工作流"
    documentationCenter="na"
    services="expressroute"
@@ -41,7 +41,7 @@
 - 服务提供商预配状态
 - 状态
 
-“状态”表示 Windows Azure 的预配状态。此属性可能是以下状态之一：*Enabled*、*Enabling* 或 *Disabling*。 ExpressRoute 线路必须处于 Enabled 状态才可供使用。
+“状态”表示 Microsoft Azure 的预配状态。此属性可能是以下状态之一：*Enabled*、*Enabling* 或 *Disabling*。 ExpressRoute 线路必须处于 Enabled 状态才可供使用。
 
 连接服务提供商预配状态表示连接服务提供商一端的状态。该状态可能是 *NotProvisioned*、*Provisioning* 或 *Provisioned*。ExpressRoute 线路必须处于 Provisioned 状态才可供使用。
 
@@ -74,14 +74,14 @@
 
 线路只有处于 Provisioned 和 Enabled 状态时才可供使用。如果你使用第 2 层服务提供商，则只有在线路处于此状态时才能配置路由。
 
-#### 如果先在 Windows Azure 端启动取消预配
+#### 如果先在 Microsoft Azure 端启动取消预配
 
 运行 PowerShell cmdlet 删除 ExpressRoute 线路后，你很快就会看到 ExpressRoute 线路处于以下所述状态。
 
 	ServiceProviderProvisioningState : Provisioning
 	Status                           : Disabling
 
-你必须联系你的连接服务提供商来取消预配 ExpressRoute 线路。**重要说明：**Windows Azure 将持续收取线路费用，直到你运行 PowerShell cmdlet 来取消预配线路为止。
+你必须联系你的连接服务提供商来取消预配 ExpressRoute 线路。**重要说明：**Microsoft Azure 将持续收取线路费用，直到你运行 PowerShell cmdlet 来取消预配线路为止。
 
 #### 如果已在服务提供商一端启动取消预配
 
@@ -91,14 +91,14 @@
 	ServiceProviderProvisioningState : NotProvisioned
 	Status                           : Enabled
 
-如果需要，你可以选择重新启用线路，或运行 PowerShell cmdlet 删除线路。**重要说明：**Windows Azure 将持续收取线路费用，直到你运行 PowerShell cmdlet 来取消预配线路为止。
+如果需要，你可以选择重新启用线路，或运行 PowerShell cmdlet 删除线路。**重要说明：**Microsoft Azure 将持续收取线路费用，直到你运行 PowerShell cmdlet 来取消预配线路为止。
 
 
 ## <a name="routing-session-configuration-state"></a>路由会话配置状态
 
-BGP 预配状态可让你知道 Windows Azure 边缘是否已启用 BGP 会话。必须处于已启用状态才能使用对等互连。
+BGP 预配状态可让你知道 Microsoft Azure 边缘是否已启用 BGP 会话。必须处于已启用状态才能使用对等互连。
 
-必须特意检查 Windows Azure 对等互连的 BGP 会话状态。除了 BGP 预配状态，还有另一个状态称为*播发的公共前缀状态*。播发的公共前缀状态必须是*已配置*状态，BGP 会话才能启动，才能进行端到端的路由。
+必须特意检查 Microsoft Azure 对等互连的 BGP 会话状态。除了 BGP 预配状态，还有另一个状态称为*播发的公共前缀状态*。播发的公共前缀状态必须是*已配置*状态，BGP 会话才能启动，才能进行端到端的路由。
 
 如果播发的公共前缀状态设置为*需要验证*状态，则不会启用 BGP 会话，因为播发的前缀不符合任何路由注册表中的 AS 编号。
 

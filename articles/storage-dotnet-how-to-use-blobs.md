@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 .NET 使用 Blob 存储 | Windows Azure"
+	pageTitle="如何通过 .NET 使用 Blob 存储 | Microsoft Azure"
 	description="了解 Azure Blob 存储以及如何创建容器，如何上载、下载、列出和删除 Blob 内容。"
 	services="storage"
 	documentationCenter=".net"

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure 中创建 Node.js Web 应用 | Windows Azure"
+	pageTitle="在 Azure 中创建 Node.js Web 应用 | Microsoft Azure"
 	description="学习如何将 Node.js 应用程序部署到 Azure 中的 Web 应用。"
 	services="app-service\web"
 	documentationCenter="nodejs"
@@ -36,7 +36,7 @@
 有关教程以及适用于更复杂 Node.js 应用程序的示例代码，或有关如何在 Azure 中使用 Node.js 的其他主题，请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
 
 > [AZURE.NOTE]
-> 若要完成本教程，你需要一个 Windows Azure 帐户。如果你没有帐户，可以[注册试用版](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
+> 若要完成本教程，你需要一个 Microsoft Azure 帐户。如果你没有帐户，可以[注册试用版](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 ## 创建 Web 应用并启用 Git 发布
 

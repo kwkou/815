@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 Ruby 使用 Blob 存储 | Windows Azure" 
+	pageTitle="如何通过 Ruby 使用 Blob 存储 | Microsoft Azure" 
 	description="了解如何使用 Azure Blob 服务上载、下载、列出和删除 Blob 内容。用 Ruby 编写的相关示例。" 
 	services="storage" 
 	documentationCenter="ruby" 

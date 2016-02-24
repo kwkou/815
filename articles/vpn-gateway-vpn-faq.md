@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="虚拟网络 VPN 网关常见问题 | Windows Azure"
-   description="VPN 网关常见问题。Windows Azure 虚拟网络跨界连接、混合配置连接和 VPN 网关的常见问题"
+   pageTitle="虚拟网络 VPN 网关常见问题 | Microsoft Azure"
+   description="VPN 网关常见问题。Microsoft Azure 虚拟网络跨界连接、混合配置连接和 VPN 网关的常见问题"
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
@@ -52,7 +52,7 @@
 
 ### 什么是 ExpressRoute？
 
-使用 ExpressRoute，可在 Azure 数据中心与你的本地环境或共同租用环境中的基础结构之间创建专用连接。使用 ExpressRoute，你可以在 ExpressRoute 合作伙伴共同租用的设施中建立与 Azure 的连接，也可以直接从现有的 WAN 网络（如网络服务提供商提供的 MPLS VPN）连接到 Microsoft 云服务（例如 Windows Azure 和 Office 365）。
+使用 ExpressRoute，可在 Azure 数据中心与你的本地环境或共同租用环境中的基础结构之间创建专用连接。使用 ExpressRoute，你可以在 ExpressRoute 合作伙伴共同租用的设施中建立与 Azure 的连接，也可以直接从现有的 WAN 网络（如网络服务提供商提供的 MPLS VPN）连接到 Microsoft 云服务（例如 Microsoft Azure 和 Office 365）。
 
 与通过 Internet 的典型连接相比，ExpressRoute 连接提供更好的安全性、更多的可靠性、更高的带宽和更少的延迟。在某些情况下，使用 ExpressRoute 连接在本地网络和 Azure 之间传输数据还可以产生显著的成本效益。如果你已创建从本地网络到 Azure 的跨界连接，则可以在不改动虚拟网络的情况下迁移到 ExpressRoute 连接。
 

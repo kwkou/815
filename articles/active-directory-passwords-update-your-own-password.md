@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何：更改或重置 Azure AD 密码 | Windows Azure" 
+	pageTitle="如何：更改或重置 Azure AD 密码 | Microsoft Azure" 
 	description="了解如何注册密码重置、更改自己的密码，以及在忘记密码的情况下重置密码。" 
 	services="active-directory" 
 	documentationCenter="" 

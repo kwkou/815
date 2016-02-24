@@ -1,6 +1,6 @@
 # 创建运行 Windows Server 的虚拟机 #
 
-本教程将向您演示使用 Windows Azure 在云中创建运行 Windows Server 的虚拟机的快速简单方法。我们将使用 Windows Azure 管理门户中的映像库，它包含各种不同映像，例如基于 Windows 的操作系统、基于 Linux 的操作系统、应用程序映像等。您无需具备 Windows Azure 使用经验即可使用本教程。 
+本教程将向您演示使用 Microsoft Azure 在云中创建运行 Windows Server 的虚拟机的快速简单方法。我们将使用 Microsoft Azure 管理门户中的映像库，它包含各种不同映像，例如基于 Windows 的操作系统、基于 Linux 的操作系统、应用程序映像等。您无需具备 Microsoft Azure 使用经验即可使用本教程。 
 
 您将了解到以下内容：
 
@@ -13,10 +13,10 @@
 
 ##<a id="createvirtualmachine"></a>如何创建虚拟机##
 
-本部分演示如何使用 Windows Azure 管理门户中的"从库中"方法创建自定义虚拟机。此方法提供比"快速创建"方法更多的选项，在您创建虚拟机时对其进行配置。
+本部分演示如何使用 Microsoft Azure 管理门户中的"从库中"方法创建自定义虚拟机。此方法提供比"快速创建"方法更多的选项，在您创建虚拟机时对其进行配置。
 
 
-1. 登录到 Windows Azure [管理门户](http://manage.windowsazure.cn). 如果你还没有订阅，请查看[试用版](http://www.windowsazure.cn/pricing/free-trial)。
+1. 登录到 Microsoft Azure [管理门户](http://manage.windowsazure.cn). 如果你还没有订阅，请查看[试用版](http://www.windowsazure.cn/pricing/free-trial)。
 
 2. 在屏幕底部的命令栏上，单击"新建"。
 
@@ -109,7 +109,7 @@
 
 	![指定空磁盘的大小](./media/CreateVirtualMachineWindowsTutorial/emptydisksize.png)	
 	
-	>[WACOM.NOTE] 所有磁盘都是从 Windows Azure 存储中的 VHD 文件创建的。在"文件名"下，您可以为添加到存储的 VHD 文件提供名称，但是 Azure 会自动生成磁盘名称。
+	>[WACOM.NOTE] 所有磁盘都是从 Microsoft Azure 存储中的 VHD 文件创建的。在"文件名"下，您可以为添加到存储的 VHD 文件提供名称，但是 Azure 会自动生成磁盘名称。
 
 6. 返回仪表板以验证空数据磁盘是否已成功附加到虚拟机。该磁盘将在"磁盘"列表中，作为第二个磁盘与操作系统磁盘一同列出。
 

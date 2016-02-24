@@ -14,9 +14,9 @@
 
 # 弹性数据库客户端库概述
 
-**弹性数据库客户端库**可帮助你使用 Windows Azure 上托管的数百甚至数千个 Azure SQL 数据库轻松开发分片应用程序。此类设计通常用于软件即服务 (SaaS) 应用程序，这种应用程序往往采用单租户体系结构 -- 其中的每个租户是使用数据库设置的。生成和管理此类应用程序就是该库的目标。
+**弹性数据库客户端库**可帮助你使用 Microsoft Azure 上托管的数百甚至数千个 Azure SQL 数据库轻松开发分片应用程序。此类设计通常用于软件即服务 (SaaS) 应用程序，这种应用程序往往采用单租户体系结构 -- 其中的每个租户是使用数据库设置的。生成和管理此类应用程序就是该库的目标。
 
-[GitHub](https://github.com/Azure/elastic-db-tools) 目前以开源软件的形式提供了弹性数据库客户端库。若要安装该库，请参阅 [Windows Azure SQL 数据库：弹性缩放](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/)。客户端库属于弹性数据库工具，具体而言，是一项[弹性数据库功能](/documentation/articles/sql-database-elastic-scale-introduction)。
+[GitHub](https://github.com/Azure/elastic-db-tools) 目前以开源软件的形式提供了弹性数据库客户端库。若要安装该库，请参阅 [Microsoft Azure SQL 数据库：弹性缩放](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/)。客户端库属于弹性数据库工具，具体而言，是一项[弹性数据库功能](/documentation/articles/sql-database-elastic-scale-introduction)。
 
 ## 客户端功能
 

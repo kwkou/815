@@ -1,5 +1,5 @@
 <properties
-	pageTitle="登录到 VM | Windows Azure"
+	pageTitle="登录到 VM | Microsoft Azure"
 	description="使用 Azure 门户登录到使用经典部署模型创建的 Windows 虚拟机。"
 	services="virtual-machines"
 	documentationCenter=""

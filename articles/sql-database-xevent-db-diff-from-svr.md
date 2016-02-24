@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SQL 数据库中的扩展事件 | Windows Azure" 
+	pageTitle="SQL 数据库中的扩展事件 | Microsoft Azure" 
 	description="介绍 Azure SQL 数据库中的扩展事件 (XEvents)，以及这些事件会话与 Microsoft SQL Server 中的事件会话有怎样的细微差别。" 
 	services="sql-database" 
 	documentationCenter="" 

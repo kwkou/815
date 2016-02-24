@@ -84,7 +84,7 @@ Azure 组件、服务或产品 | Rg 用于资源组，Svc 用于云服务，VNet
 
 ### 计算机名称
 
-当管理员创建虚拟机时，Windows Azure 将要求他们提供至多为 15 个字符的虚拟机名称。Azure 使用虚拟机名称作为 Azure 虚拟机资源名称。Azure 使用同一名称作为虚拟机上安装的操作系统的计算机名称。但是，这些名称可能并非始终相同。
+当管理员创建虚拟机时，Microsoft Azure 将要求他们提供至多为 15 个字符的虚拟机名称。Azure 使用虚拟机名称作为 Azure 虚拟机资源名称。Azure 使用同一名称作为虚拟机上安装的操作系统的计算机名称。但是，这些名称可能并非始终相同。
 
 如果使用已包含操作系统的 .vhd 映像文件创建虚拟机，Azure 中的虚拟机名称可能不同于虚拟机的操作系统计算机名称。这种情况可能会增加虚拟机管理难度，因此不建议使用这种方法。分配给 Azure 虚拟机资源的名称可以与分配给该虚拟机的操作系统的计算机名称相同。
 
@@ -157,7 +157,7 @@ Azure 存储空间是许多 Azure 解决方案不可或缺的组成部分。Azur
 
 Azure 提供两种类型的存储帐户。标准存储帐户可以访问 Blob 存储（用于存储 Azure 虚拟机磁盘）、表存储、队列存储和文件存储。高级存储专为高性能应用程序（例如 AlwaysOn 群集中的 SQL Server）设计，当前仅支持 Azure 虚拟机磁盘。
 
-存储帐户将绑定到可伸缩性目标。要熟悉当前 Azure 存储空间限制，请参阅 [Windows Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits#storage-limits)。另请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
+存储帐户将绑定到可伸缩性目标。要熟悉当前 Azure 存储空间限制，请参阅 [Microsoft Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits#storage-limits)。另请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
 
 Azure 使用一个操作系统磁盘、一个临时磁盘和零个或更多可选数据磁盘创建虚拟机。操作系统磁盘和数据磁盘是 Azure 页 blob，而临时磁盘则通过本地方式存储在计算机所在的节点上。这使得临时磁盘不适用于在系统回收过程中必须保留的数据，因为计算机可能会以无提示方式从一个节点迁移到另一个节点，从而丢失该磁盘中的任何数据。不要在临时驱动器上存储任何内容。
 
@@ -214,7 +214,7 @@ Azure 将对可用的数据磁盘量和带宽加以限制，具体取决于虚�
 
 Azure 将公开云服务名称，因为这些名称会关联到域“chinacloudapp.cn”中 VIP。为了改善应用程序的用户体验，应根据需要配置虚名称来替换完全限定的云服务名称。这通常使用公共 DNS 中将资源的公共 DNS 名称（例如，www.contoso.com）映射到托管资源的云服务（例如，托管 www.contoso.com 的 Web 服务器的云服务）的 DNS 名称的 CNAME 记录完成。
 
-此外，用于云服务的命名约定可能需要允许例外，因为云服务名称必须在所有其他 Windows Azure 云服务中唯一，而不考虑 Windows Azure 租户。
+此外，用于云服务的命名约定可能需要允许例外，因为云服务名称必须在所有其他 Microsoft Azure 云服务中唯一，而不考虑 Microsoft Azure 租户。
 
 对于云服务中的所有虚拟机来说，一项需要考虑的云服务限制是：一次只能执行一项虚拟机管理操作。当你在云服务中的一台虚拟机上执行虚拟机管理操作时，你必须等待该操作完成，然后才能在另一台虚拟机上执行新的管理操作。因此，云服务中虚拟机的数量应保持在较低的水平。
 
@@ -426,7 +426,7 @@ Contoso 决定将以下名称用于其 Azure 虚拟机：
 
 ## 其他资源
 
-[Windows Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits#storage-limits)
+[Microsoft Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits#storage-limits)
 
 [虚拟机的大小](/documentation/articles/virtual-machines-size-specs)
 

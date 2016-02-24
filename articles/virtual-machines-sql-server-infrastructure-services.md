@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="虚拟机上的 SQL Server 概述 | Windows Azure"
+	pageTitle="虚拟机上的 SQL Server 概述 | Microsoft Azure"
 	description="本文概述了 Azure 虚拟机上托管的 SQL Server。这包括深度内容的链接。" 
 	services="virtual-machines" 
 	documentationCenter="" 
@@ -56,7 +56,7 @@
 
 ## 高可用性
 
-如果你需要高可用性，请考虑配置 SQL Server AlwaysOn 可用性组。这涉及虚拟网络中的多个 Azure VM。Azure 预览版门户有一个模板为你设置了此配置。有关详细信息，请参阅 [Windows Azure 门户库中的 SQL Server AlwaysOn 产品](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx)。
+如果你需要高可用性，请考虑配置 SQL Server AlwaysOn 可用性组。这涉及虚拟网络中的多个 Azure VM。Azure 预览版门户有一个模板为你设置了此配置。有关详细信息，请参阅 [Microsoft Azure 门户库中的 SQL Server AlwaysOn 产品](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx)。
 
 如果你想要手动配置可用性组和关联的侦听器，请参阅以下文章：
 

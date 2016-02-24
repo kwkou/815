@@ -1,5 +1,5 @@
 <properties
-	pageTitle="将 VM 的 D 驱动器设为数据磁盘 | Windows Azure"
+	pageTitle="将 VM 的 D 驱动器设为数据磁盘 | Microsoft Azure"
 	description="说明如何更改使用经典部署模型创建的 Windows VM 的驱动器号，以便可以使用 D: 驱动器作为数据驱动器。"
 	services="virtual-machines"
 	documentationCenter=""

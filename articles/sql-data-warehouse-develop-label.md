@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 SQL 数据仓库中使用标签检测查询 | Windows Azure"
+   pageTitle="在 SQL 数据仓库中使用标签检测查询 | Microsoft Azure"
    description="有关在开发解决方案时于 Azure SQL 数据仓库中使用标签检测查询的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"

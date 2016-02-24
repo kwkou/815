@@ -1,5 +1,5 @@
 <properties
-	pageTitle="创建 Windows VM 的不同方式 | Windows Azure"
+	pageTitle="创建 Windows VM 的不同方式 | Microsoft Azure"
 	description="列出使用资源管理器创建 Windows 虚拟机的不同方式。"
 	services="virtual-machines"
 	documentationCenter=""

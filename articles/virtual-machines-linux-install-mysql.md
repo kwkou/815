@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Linux VM 上设置 MySQL | Windows Azure"
+	pageTitle="在 Linux VM 上设置 MySQL | Microsoft Azure"
 	description="了解如何在 Azure 中的 Linux 虚拟机（Ubuntu 或 RedHat 系列 OS）上安装 MySQL 堆栈"
 	services="virtual-machines"
 	documentationCenter=""

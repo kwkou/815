@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何使用服务总线主题 (Ruby) | Windows Azure"
+	pageTitle="如何使用服务总线主题 (Ruby) | Microsoft Azure"
 	description="了解如何在 Azure 中使用 Service Bus 主题和订阅。相关代码示例是针对 Ruby 应用程序编写的。"
 	services="service-bus"
 	documentationCenter="ruby"

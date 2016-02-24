@@ -152,7 +152,7 @@ cmdlet 需要使用你的订阅来管理你的服务。如果您还没有Azure�
 >
 > 5. 最后，从 Azure 门户注销，然后使用工作或学校帐户重新登录。如果这是使用此帐户首次登录，系统将提示更改密码。
 >
->有关使用工作或学校帐户注册 Windows Azure 的详细信息，请参阅[以组织身份注册 Windows Azure](/documentation/articles/sign-up-organization)。
+>有关使用工作或学校帐户注册 Microsoft Azure 的详细信息，请参阅[以组织身份注册 Microsoft Azure](/documentation/articles/sign-up-organization)。
 
 ### 查看帐户和订阅的详细信息
 

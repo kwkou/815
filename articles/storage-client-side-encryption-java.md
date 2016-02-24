@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Windows Azure 存储空间的使用 Java 客户端加密 | Windows Azure" 
+	pageTitle="Microsoft Azure 存储空间的使用 Java 客户端加密 | Microsoft Azure" 
 	description="用于 Java 的 Azure 存储客户端库支持客户端加密以及与 Azure 密钥保管库集成以实现 Azure 存储空间应用程序的最佳安全性。" 
 	services="storage" 
 	documentationCenter="java" 
@@ -13,7 +13,7 @@
 	wacn.date="11/02/2015"/>
 
 
-# Windows Azure 存储空间的使用 Java 客户端加密   
+# Microsoft Azure 存储空间的使用 Java 客户端加密   
 
 [AZURE.INCLUDE [storage-selector-client-side-encryption-include](../includes/storage-selector-client-side-encryption-include.md)]
 

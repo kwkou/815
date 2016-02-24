@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="创建 SAS 并将 SAS 用于 Blob 服务 | Windows Azure" 
+	pageTitle="创建 SAS 并将 SAS 用于 Blob 服务 | Microsoft Azure" 
 	description="了解如何通过 Blob 服务生成和使用共享访问签名" 
 	services="storage" 
 	documentationCenter="" 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="暂存云服务部署 (Node.js) | Windows Azure" 
+	pageTitle="暂存云服务部署 (Node.js) | Microsoft Azure" 
 	description="了解如何使用虚拟 IP (VIP) 交换将 Azure 应用程序部署到过渡环境，然后再将其部署到生产环境。" 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
@@ -22,7 +22,7 @@
 
 ## 步骤 1：暂存应用程序
 
-此任务包括如何使用 **Windows Azure PowerShell** 暂存应用程序。
+此任务包括如何使用 **Microsoft Azure PowerShell** 暂存应用程序。
 
 1.  在发布服务时，只需将 **-Slot** 参数传递给 **Publish-AzureServiceProject** cmdlet。
 

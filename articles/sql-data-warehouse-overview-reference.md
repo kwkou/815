@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库参考主题 | Windows Azure"
+   pageTitle="SQL 数据仓库参考主题 | Microsoft Azure"
    description="SQL 数据仓库的参考内容链接。"
    services="sql-data-warehouse"
    documentationCenter="NA"

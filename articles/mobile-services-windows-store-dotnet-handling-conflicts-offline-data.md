@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在通用 Windows 应用中处理与脱机数据的冲突 | Windows Azure" 
+	pageTitle="在通用 Windows 应用中处理与脱机数据的冲突 | Microsoft Azure" 
 	description="了解在通用 Windows 应用程序中同步脱机数据时如何使用 Azure 移动服务处理冲突" 
 	documentationCenter="windows" 
 	authors="wesmc7777" 

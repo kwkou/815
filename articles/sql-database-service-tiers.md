@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SQL 数据库性能和选项：服务层 | Windows Azure"
+	pageTitle="SQL 数据库性能和选项：服务层 | Microsoft Azure"
 	description="比较 SQL 数据库服务层的性能和业务连续性功能，以便在缩放的同时，在成本与功能之间找到平衡点。"
 	keywords="数据库选项,数据库性能,eDTU"
 	services="sql-database"
@@ -59,7 +59,7 @@
 ## 监视数据库性能
 若要监视 SQL 数据库的性能，首先需要监视所选数据库性能级别相关的资源利用率。通过以下方式公开这些相关数据：
 
-1.	Windows Azure 经典门户。
+1.	Microsoft Azure 经典门户。
 
 2.	用户数据库中以及包含用户数据库的服务器的 master 数据库中的动态管理视图。
 

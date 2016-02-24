@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure PowerShell 管理 Azure Redis 缓存 | Windows Azure"
+	pageTitle="使用 Azure PowerShell 管理 Azure Redis 缓存 | Microsoft Azure"
 	description="了解如何使用 Azure PowerShell 对 Azure Redis 缓存执行管理任务。"
 	services="redis-cache"
 	documentationCenter="" 
@@ -36,7 +36,7 @@
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
-在 Windows Azure 登录对话框中指定 Azure 帐户的电子邮件地址及其密码。
+在 Microsoft Azure 登录对话框中指定 Azure 帐户的电子邮件地址及其密码。
 
 接下来，如果你有多个 Azure 订阅，则需要设置你的 Azure 订阅。若要查看当前订阅的列表，请运行以下命令。
 

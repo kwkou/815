@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SQL 数据库的弹性数据库池 | Windows Azure"
+	pageTitle="SQL 数据库的弹性数据库池 | Microsoft Azure"
 	description="了解如何使用弹性数据库池（在多个数据库之间共享可用资源的一种方式）来顺应 SQL 数据库中的爆炸式数据增长。"
 	keywords="弹性数据库,sql 数据库"	
 	services="sql-database"
@@ -16,7 +16,7 @@
 
 # 使用弹性数据库池共享资源以顺应 SQL 数据库中的爆炸式数据增长
 
-如果你是 SaaS 开发人员，使用数十、数百甚至数千个 SQL 数据库，则可以通过弹性数据库池来简化这些数据库的创建、维护以及性能管理流程，将预算置于自己的控制之下。使用 Windows Azure 门户、PowerShell 或 C#，在几分钟内即可为 SQL 数据库[创建一个弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal)。
+如果你是 SaaS 开发人员，使用数十、数百甚至数千个 SQL 数据库，则可以通过弹性数据库池来简化这些数据库的创建、维护以及性能管理流程，将预算置于自己的控制之下。使用 Microsoft Azure 门户、PowerShell 或 C#，在几分钟内即可为 SQL 数据库[创建一个弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal)。
 
 常见的 SaaS 应用模式是，每一个数据库的客户各不相同，每一个的资源消耗（以 eDTU 汇总的 CPU/IO/内存）也各不相同且不可预知。对每个数据库的需求都存在这种高峰和低谷，因此很难预测和设置资源。你将面临两种选择，一种是基于高峰使用情况过度设置数据库资源，因此需要支付额外的费用；另一种是为了节省成本而采用低配，但在高峰期间会出现性能下降而导致客户满意度降低。
 

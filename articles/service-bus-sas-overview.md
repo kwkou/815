@@ -1,5 +1,5 @@
 <properties
-   pageTitle="共享访问签名概述 | Windows Azure"
+   pageTitle="共享访问签名概述 | Microsoft Azure"
    description="共享访问签名是什么，其工作原理是怎样的，以及如何在 Node、PHP 和 C# 编程中使用它们。"
    services="service-bus,event-hubs"
    documentationCenter="na"

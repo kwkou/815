@@ -1,5 +1,5 @@
 <properties
-   pageTitle="数据分区指南 | Windows Azure"
+   pageTitle="数据分区指南 | Microsoft Azure"
    description="有关如何隔离分区，以便单独进行管理和访问的指导。"
    services=""
    documentationCenter="na"

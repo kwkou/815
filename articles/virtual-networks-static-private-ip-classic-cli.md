@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="如何在经典模式下使用 CLI 设置静态专用 IP | Windows Azure"
+   pageTitle="如何在经典模式下使用 CLI 设置静态专用 IP | Microsoft Azure"
    description="了解静态专用 IP (DIP) 以及如何在经典模式下使用 CLI 对其进行管理"
    services="virtual-network"
    documentationCenter="na"

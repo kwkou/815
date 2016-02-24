@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SQL 数据库教程：创建 SQL 数据库 | Windows Azure"
+	pageTitle="SQL 数据库教程：创建 SQL 数据库 | Microsoft Azure"
 	description="使用示例数据和 Microsoft 的关系数据库管理系统 (RDBMS) 在 Azure 门户中快速创建第一个 SQL 数据库。"
 	keywords="sql 数据库教程,创建 sql 数据库"	
 	services="sql-database"

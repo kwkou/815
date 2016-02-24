@@ -1,5 +1,5 @@
 <properties
-   pageTitle="创建和上载 FreeBSD VM 映像 | Windows Azure"
+   pageTitle="创建和上载 FreeBSD VM 映像 | Microsoft Azure"
    description="了解如何创建和上载包含 FreeBSD 操作系统的虚拟硬盘 (VHD) 以创建 Azure 虚拟机。"
    services="virtual-machines"
    documentationCenter=""
@@ -24,7 +24,7 @@
 
 - **Azure 订阅** - 如果你没有帐户，只需花费几分钟就能创建一个帐户。请参阅[创建一个免费试用帐户](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/)。  
 
-- **Azure PowerShell 工具** - 已安装 Windows Azure PowerShell 模块并将其配置为使用你的订阅。若要下载该模块，请参阅 [Azure 下载](/downloads/)。可在此处获取安装和配置该模块的教程。你将使用 [Azure 下载](/downloads/) cmdlet 上载 VHD。
+- **Azure PowerShell 工具** - 已安装 Microsoft Azure PowerShell 模块并将其配置为使用你的订阅。若要下载该模块，请参阅 [Azure 下载](/downloads/)。可在此处获取安装和配置该模块的教程。你将使用 [Azure 下载](/downloads/) cmdlet 上载 VHD。
 
 - **安装在 .vhd 文件中的 FreeBSD 操作系统** - 你已将受支持的 FreeBSD 操作系统安装到虚拟硬盘。存在多种工具可创建 .vhd 文件，例如，可以使用虚拟化解决方案（例如 Hyper-V）创建 .vhd 文件并安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](https://technet.microsoft.com/zh-CN/library/hh846766.aspx)。
 
@@ -138,11 +138,11 @@
 
     > [AZURE.NOTE]默认情况下，该容器是专用容器，只能由帐户所有者访问。若要允许对容器中的 Blob 进行公共读取访问，但不允许对容器属性和元数据进行公共读取访问，请使用“公共 Blob”选项。若要允许对容器和 Blob 进行完全公共读取访问，请使用“公共容器”选项。
 
-## 步骤 3：准备连接到 Windows Azure ##
+## 步骤 3：准备连接到 Microsoft Azure ##
 
-你首先需要在计算机和 Azure 中的订阅之间建立一个安全连接，然后才能上载 .vhd 文件。你可以使用 Windows Azure Active Directory 方法或证书方法来进行此操作。
+你首先需要在计算机和 Azure 中的订阅之间建立一个安全连接，然后才能上载 .vhd 文件。你可以使用 Microsoft Azure Active Directory 方法或证书方法来进行此操作。
 
-###使用 Windows Azure AD 方法
+###使用 Microsoft Azure AD 方法
 
 1. 打开 Azure PowerShell 控制台。
 
@@ -160,7 +160,7 @@
 
 2. 键入：`Get-AzurePublishSettingsFile -Environment AzureChinaCloud`。
 
-3. 此时将打开一个浏览器窗口，并提示你下载 .publishsettings 文件。它包含 Windows Azure 订阅的信息和证书。
+3. 此时将打开一个浏览器窗口，并提示你下载 .publishsettings 文件。它包含 Microsoft Azure 订阅的信息和证书。
 
 	![浏览器下载页面](./media/virtual-machines-freebsd-create-upload-vhd/Browser_download_GetPublishSettingsFile.png)
 
@@ -170,9 +170,9 @@
 
 	其中 `<PathToFile>` 是 .publishsettings 文件的完整路径。
 
-   有关详细信息，请参阅 [Windows Azure Cmdlet 入门](https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554332.aspx)
+   有关详细信息，请参阅 [Microsoft Azure Cmdlet 入门](https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554332.aspx)
 
-   有关安装和配置 PowerShell 的详细信息，请参阅[如何安装和配置 Windows Azure PowerShell](/documentation/articles/powershell-install-configure)。
+   有关安装和配置 PowerShell 的详细信息，请参阅[如何安装和配置 Microsoft Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 ## 步骤 4：上载 .vhd 文件 ##
 

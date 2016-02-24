@@ -1,5 +1,5 @@
 <properties
-   pageTitle="大型计算：用于批处理和高性能计算 (HPC) 的技术资源 | Windows Azure"
+   pageTitle="大型计算：用于批处理和高性能计算 (HPC) 的技术资源 | Microsoft Azure"
    description="列出了旨在帮助你在 Azure 中运行大规模并行、批处理和 HPC 工作负荷的技术资源。"
    services="batch, cloud-services, virtual-machines"
    documentationCenter=""

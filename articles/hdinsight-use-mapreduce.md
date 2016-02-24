@@ -1,5 +1,5 @@
 <properties
-   pageTitle="将 MapReduce 与 HDInsight 上的 Hadoop 配合使用 | Windows Azure"
+   pageTitle="将 MapReduce 与 HDInsight 上的 Hadoop 配合使用 | Microsoft Azure"
    description="学习如何在 HDInsight 上的 Hadoop 群集中运行 MapReduce 作业。你将运行一个实现为 Java MapReduce 作业的基本单词计数操作。"
    services="hdinsight"
    documentationCenter=""

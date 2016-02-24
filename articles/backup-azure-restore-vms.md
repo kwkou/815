@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="从备份中还原虚拟机 | Windows Azure"
+	pageTitle="从备份中还原虚拟机 | Microsoft Azure"
 	description="了解如何恢复 Azure 虚拟机"
 	services="backup"
 	documentationCenter=""

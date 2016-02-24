@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线定价常见问题 | Windows Azure"
+   pageTitle="服务总线定价常见问题 | Microsoft Azure"
    description="回答了一些关于服务总线定价结构的常见问题。"
    services="service-bus"
    documentationCenter="na"

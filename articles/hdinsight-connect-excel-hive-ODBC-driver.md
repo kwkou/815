@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Hive ODBC 驱动程序将 Excel 连接到 Hadoop | Windows Azure"
+   pageTitle="使用 Hive ODBC 驱动程序将 Excel 连接到 Hadoop | Microsoft Azure"
    description="了解如何设置和使用针对 Excel 的 Microsoft Hive ODBC 驱动程序以在 HDInsight 群集中查询数据。"
    services="hdinsight"
    documentationCenter=""

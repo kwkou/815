@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="为 HDInsight 开发 C# Hadoop 流式处理程序 | Windows Azure"
+	pageTitle="为 HDInsight 开发 C# Hadoop 流式处理程序 | Microsoft Azure"
 	description="了解如何以 C# 语言开发 Hadoop 流式处理 MapReduce 程序，以及如何将这些程序部署到 Azure HDInsight。"
 	services="hdinsight"
 	documentationCenter=""

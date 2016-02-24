@@ -1,5 +1,5 @@
 <properties
-   pageTitle="云中的批处理( Batch )和 HPC 解决方案 | Windows Azure"
+   pageTitle="云中的批处理( Batch )和 HPC 解决方案 | Microsoft Azure"
    description="介绍 Azure 中的 批处理( Batch )和高性能计算（大型计算）应用方案和解决方案选项"
    services="batch, virtual-machines, cloud-services"
    documentationCenter=""

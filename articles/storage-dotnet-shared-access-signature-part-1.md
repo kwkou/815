@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="共享访问签名：了解 SAS 模型 | Windows Azure" 
+	pageTitle="共享访问签名：了解 SAS 模型 | Microsoft Azure" 
 	description="了解使用共享访问签名 (SAS) 委派对 Azure 存储空间资源（包括 Blob、队列、表和文件）的访问权限。使用共享访问签名，你可以保护你的存储帐户密钥，同时授权其他用户访问你的帐户中的资源。你可以控制你授予的权限以及 SAS 的有效期。如果你还建立存储访问策略，则在你担心你的帐户安全受到威胁时可以撤消该 SAS。" 
 	services="storage" 
 	documentationCenter="" 

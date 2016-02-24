@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 通知中心入门（Windows Phone）| Windows Azure"
+	pageTitle="Azure 通知中心入门（Windows Phone）| Microsoft Azure"
 	description="在本教程中，你将了解如何使用 Azure 通知中心将通知推送到 Windows Phone 8 或 Windows Phone 8.1 Silverlight 应用程序。"
 	services="notification-hubs"
 	documentationCenter="windows"

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="可伸缩性清单 | Windows Azure"
+   pageTitle="可伸缩性清单 | Microsoft Azure"
    description="Azure 自动缩放设计注意事项：可伸缩性清单指南。"
    services=""
    documentationCenter="na"

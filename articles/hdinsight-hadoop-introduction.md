@@ -1,5 +1,5 @@
 <properties
-	pageTitle="云中的 Hadoop 是什么？ HDInsight 简介 | Windows Azure"
+	pageTitle="云中的 Hadoop 是什么？ HDInsight 简介 | Microsoft Azure"
 	description="云中的 Hadoop 是什么，如何在 HDInsight 中管理它？ Hadoop 组件和大数据分析简介。"
 	keywords="大数据分析,hadoop 简介,什么是 hadoop,云中的 hadoop"
 	services="hdinsight"
@@ -33,7 +33,7 @@ Azure HDInsight 在云中部署并预配托管的 Apache Hadoop 群集，从而�
 
 ## <a name="overview"></a>HDInsight 中的 Hadoop 生态系统概述
 
-HDInsight 是在 Windows Azure 上快速扩展 Apache Hadoop 技术堆栈（作为大数据分析的首选解决方案）的云实现。它包括 Apache HBase、Storm、Pig、Hive、Sqoop、Oozie 等的实现。HDInsight 还可集成商业智能 (BI) 工具，例如 Power BI、Excel、SQL Server Analysis Services 和 SQL Server Reporting Services。
+HDInsight 是在 Microsoft Azure 上快速扩展 Apache Hadoop 技术堆栈（作为大数据分析的首选解决方案）的云实现。它包括 Apache HBase、Storm、Pig、Hive、Sqoop、Oozie 等的实现。HDInsight 还可集成商业智能 (BI) 工具，例如 Power BI、Excel、SQL Server Analysis Services 和 SQL Server Reporting Services。
 
 ### Windows 群集
 

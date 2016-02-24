@@ -1,5 +1,5 @@
 <properties
-	pageTitle="安装 Azure 命令行界面 | Windows Azure"
+	pageTitle="安装 Azure 命令行界面 | Microsoft Azure"
 	description="安装适用于 Mac、Linux 和 Windows 的 Azure CLI 即可使用 Azure 服务"
 	editor=""
 	manager="timlt"
@@ -15,7 +15,7 @@
 
 # 安装 Azure CLI
 
-本文介绍如何安装 Azure 命令行界面 (Azure CLI)。Azure CLI 提供一组基于 shell 的开源命令，用于在 Windows Azure 中创建和管理资源。
+本文介绍如何安装 Azure 命令行界面 (Azure CLI)。Azure CLI 提供一组基于 shell 的开源命令，用于在 Microsoft Azure 中创建和管理资源。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 

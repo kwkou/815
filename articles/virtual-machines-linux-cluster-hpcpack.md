@@ -1,5 +1,5 @@
 <properties
- pageTitle="在 HPC Pack 群集中使用 Linux 计算 VM | Windows Azure"
+ pageTitle="在 HPC Pack 群集中使用 Linux 计算 VM | Microsoft Azure"
  description="了解如何编写脚本以部署 Azure 中包含运行 Windows Server 的头节点和 Linux 计算节点的 HPC Pack 群集。"
  services="virtual-machines"
  documentationCenter=""
@@ -180,7 +180,7 @@ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文�
 
 [Azure 文件](/services/storage/)服务使用标准 SMB 2.1 协议公开文件共享。Azure VM 和云服务可通过装载的共享在应用程序组件之间共享文件数据，本地应用程序可通过文件存储 API 来访问共享中的文件数据。有关详细信息，请参阅[如何通过 PowerShell 和 .NET 使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)。
 
-若要创建 Azure 文件共享，请参阅 [Windows Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)中的详细步骤 。若要设置持久性连接，请参阅[将连接保存到 Windows Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)。
+若要创建 Azure 文件共享，请参阅 [Microsoft Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)中的详细步骤 。若要设置持久性连接，请参阅[将连接保存到 Microsoft Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)。
 
 在此示例中，我们将在存储帐户 allvhdsje 上创建一个名为 rdma 的 Azure 文件共享。为了在头节点上装载该共享，我们打开命令窗口并输入以下命令：
 

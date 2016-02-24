@@ -1,5 +1,5 @@
 <properties
-	pageTitle="准备站点恢复部署 | Windows Azure"
+	pageTitle="准备站点恢复部署 | Microsoft Azure"
 	description="Azure Site Recovery 可以协调位于本地服务器的虚拟机和物理服务器到 Azure 或辅助数据中心的复制、故障转移和恢复。"
 	services="site-recovery"
 	documentationCenter=""
@@ -27,7 +27,7 @@
 **VMM** | System Center 2012 R2 上运行的 VMM<br/><br/>至少一个 VMM 云，其中包含一个或多个 VMM 主机组。 | 不可用 | 至少在包含最新更新的 System Center 2012 SP1 上运行的主要和辅助站点中的 VMM 服务器。<br/><br/>每个 VMM 服务器上至少有一个云。云应该设置了 Hyper-V 容量配置文件。<br/><br/> 源云应至少有一个 VMM 主机组。 | 可选。无需部署 System Center VMM 即可将 Hyper-V 虚拟机复制到 Azure，但如果需要部署 VMM，则需要确保正确设置 VMM 服务器。这包括确保运行正确的 VMM 版本，且已设置云。
 **Hyper-V** | 本地数据中心至少有一个 Hyper-V 主机服务器运行 Windows Server 2012 R2 | 在源和目标站点中，至少有一个 Hyper-V 服务器至少运行 Windows Server 2012 R2 并已连接到 Internet。<br/><br/> Hyper-V 服务器必须位于 VMM 云中的主机组中。 | 在源和目标网站中，至少有一个 Hyper-V 服务器至少运行已安装最新更新的 Windows Server 2012，并已连接到 Internet。<br/><br/> Hyper-V 服务器必须位于 VMM 云中的主机组中。 | 
 **虚拟机** | 源 Hyper-V 主机服务器上至少有一个 VM | 源 VMM 云中的 Hyper-V 主机服务器上至少有一个 VM | 源 VMM 云中的 Hyper-V 主机服务器上至少有一个 VM。 | 复制到 Azure 的 VM 必须符合 [Azure 虚拟机先决条件](/documentation/articles/site-recovery-best-practices#virtual-machines)
-**Azure 帐户** | 需要一个 [Windows Azure](http://www.windowsazure.cn/) 帐户和站点恢复服务的订阅。 | 需要一个 [Windows Azure](http://www.windowsazure.cn/) 帐户和站点恢复服务的订阅。 | 不可用 | 如果没有帐户，请先使用 [1 元试用版](/pricing/1rmb-trial/)。阅读有关服务的[定价](/home/features/site-recovery#price)。
+**Azure 帐户** | 需要一个 [Microsoft Azure](http://www.windowsazure.cn/) 帐户和站点恢复服务的订阅。 | 需要一个 [Microsoft Azure](http://www.windowsazure.cn/) 帐户和站点恢复服务的订阅。 | 不可用 | 如果没有帐户，请先使用 [1 元试用版](/pricing/1rmb-trial/)。阅读有关服务的[定价](/home/features/site-recovery#price)。
 **Azure 存储空间** | 必须有已启用异地复制的 Azure 存储帐户的订阅。 | 必须有已启用异地复制的 Azure 存储帐户的订阅。 | 不可用 | 该帐户应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。[阅读有关存储空间的详细信息](/documentation/articles/storage-introduction)。
 **存储映射** | 不可用 | 不可用 | 你可以选择设置存储映射，以确保虚拟机在故障转移后以最佳方式连接到存储。在两个本地 VMM 站点之间复制时，默认情况下，副本虚拟机将存储在目标 Hyper-V 主机服务器上的指定位置。可以配置源和目标 VMM 服务器上的 VMM 存储分类之间的映射。 | 若要使用此功能，需要在开始部署之前设置存储分类。[了解详细信息](/documentation/articles/site-recovery-storage-mapping)。
 **SAN 复制** | 不可用 | 不可用 | 如果你要使用 SAN 复制在两个在本地 VMM 站点之间复制，可以使用现有的 SAN 环境。 | 需要使用[支持的 SAN 阵列](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx)，并且必须在 VMM 中发现和分类 SAN 存储。<br/><br/>如果当前没有复制，则需要创建 LUN 并在 VMM 控制台中配置存储。如果你已开始复制，则可以跳过此步骤。

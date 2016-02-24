@@ -74,8 +74,8 @@ Azure SDK for Python 包括允许您针对 Azure 开发、部署和管理 Python
 
 可以使用 Web 平台安装程序来简化安装。安装的项包括来自 [www.python.org][] 的 CPython。
 
-* [Windows Azure SDK for Python 2.7][]
-* [Windows Azure SDK for Python 3.4][]
+* [Microsoft Azure SDK for Python 2.7][]
+* [Microsoft Azure SDK for Python 3.4][]
 
 **注意：**在 Windows Server 上，若要下载 WebPI 安装程序，可能需要配置 IE ESC 设置（单击“开始”/“管理工具”/“服务器管理器”/“本地服务器”，然后单击 **IE 增强的安全配置**，将其设置为“关闭”）
 
@@ -131,7 +131,7 @@ WebPI 安装程序提供了开发 Python Azure 应用程序所需的所有内容
 
 是否使用 PTVS 是可选择的，但建议使用，因为它能够为您提供 Python 和 Web 项目/解决方案支持、调试、分析、交互式窗口、模板编辑和智能感知。
 
-PTVS 还可以轻松实现部署到 Windows Azure，同时支持部署到[云服务][]和[ Web 应用][]。
+PTVS 还可以轻松实现部署到 Microsoft Azure，同时支持部署到[云服务][]和[ Web 应用][]。
 
 PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关文档、下载和讨论的信息，请参阅 [Python Tools for Visual Studio]。
 
@@ -187,8 +187,8 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [GitHub 上的 Python Tools for Visual Studio]: http://microsoft.github.io/PTVS/
 [Python 包索引]: http://pypi.python.org/pypi
-[Windows Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?LinkId=254281&clcid=0x409
-[Windows Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?LinkID=516990&clcid=0x409
+[Microsoft Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?LinkId=254281&clcid=0x409
+[Microsoft Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?LinkID=516990&clcid=0x409
 [Setting up a Linux VM via the Azure portal]: /documentation/articles/create-and-configure-opensuse-vm-in-portal
 [How to use the Azure Command-Line Interface]: /documentation/articles/crossplat-cmd-tools
 [创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm

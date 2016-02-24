@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="管理和监视 Azure 虚拟机备份 | Windows Azure"
+	pageTitle="管理和监视 Azure 虚拟机备份 | Microsoft Azure"
 	description="了解如何管理和监视 Azure 虚拟机备份"
 	services="backup"
 	documentationCenter=""

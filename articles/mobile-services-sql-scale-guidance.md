@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="缩放 Azure SQL 数据库支持的移动服务 | Windows Azure" 
+	pageTitle="缩放 Azure SQL 数据库支持的移动服务 | Microsoft Azure" 
 	description="了解如何诊断和修复 SQL 数据库支持的移动服务中的可扩展性问题" 
 	services="mobile-services" 
 	documentationCenter="" 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="站点恢复：常见问题 | Windows Azure" 
+	pageTitle="站点恢复：常见问题 | Microsoft Azure" 
 	description="本文讨论了有关 Azure Site Recovery 的常见问题。" 
 	services="site-recovery" 
 	documentationCenter=""

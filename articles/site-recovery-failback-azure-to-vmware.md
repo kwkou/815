@@ -1,5 +1,5 @@
 ﻿<properties 
-   pageTitle="将 VMware 虚拟机和物理服务器从 Azure 故障回复到 VMware | Windows Azure" 
+   pageTitle="将 VMware 虚拟机和物理服务器从 Azure 故障回复到 VMware | Microsoft Azure" 
    description="本文介绍如何使用 Azure Site Recovery 来故障回复已复制到 Azure 的 VMware 虚拟机。" 
    services="site-recovery" 
    documentationCenter="" 

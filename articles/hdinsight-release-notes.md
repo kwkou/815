@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure HDInsight 上的 Hadoop 组件发行说明 | Windows Azure"
+	pageTitle="Azure HDInsight 上的 Hadoop 组件发行说明 | Microsoft Azure"
 	description="Azure HDInsight 的 Hadoop 组件的最新发行说明和版本。获取有关 Hadoop、Apache Storm 和 HBase 的开发技巧和详细信息。"
 	services="hdinsight"
 	documentationCenter=""

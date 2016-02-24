@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Azure Multi-Factor Authentication 时遇到问题 | Windows Azure" 
+	pageTitle="使用 Azure Multi-Factor Authentication 时遇到问题 | Microsoft Azure" 
 	description="本文档向用户提供有关如何解决 Azure Multi-Factor Authentication 问题的信息。" 
 	services="multi-factor-authentication" 
 	documentationCenter="" 

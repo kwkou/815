@@ -1,5 +1,5 @@
 <properties
-	pageTitle="数据连接：事件流中的数据流输入 | Windows Azure"
+	pageTitle="数据连接：事件流中的数据流输入 | Microsoft Azure"
 	description="了解如何设置连接到流分析的名为“输入”的数据连接。输入包括来自事件的数据流，也包括引用数据。"
 	keywords="数据流、数据连接、事件流"
 	services="stream-analytics"
@@ -96,7 +96,7 @@ FROM Input
 <tr>
 <td>存储容器
 </td>
-<td>容器对存储在 Windows Azure Blob 服务中的 blob 进行逻辑分组。将 blob 上载到 Blob 服务时，必须为该 blob 指定一个容器。</td>
+<td>容器对存储在 Microsoft Azure Blob 服务中的 blob 进行逻辑分组。将 blob 上载到 Blob 服务时，必须为该 blob 指定一个容器。</td>
 </tr>
 <tr>
 <td>路径前缀模式 [可选]</td>

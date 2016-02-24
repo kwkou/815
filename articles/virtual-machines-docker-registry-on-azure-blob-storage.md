@@ -1,5 +1,5 @@
 <properties 
-  pageTitle="在 Azure 上部署自己的私有 Docker 注册表 | Windows Azure"
+  pageTitle="在 Azure 上部署自己的私有 Docker 注册表 | Microsoft Azure"
   description="介绍如何使用 Docker 注册表在 Azure Blob 存储服务上托管你的容器映像。"
   services="virtual-machines"
   documentationCenter="virtual-machines"
@@ -18,7 +18,7 @@
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 
-本文档描述什么是 Docker 私有注册表，并说明如何使用 Azure Blob 存储将 Docker 注册表 2.0 容器映像部署到 Windows Azure 上的 Docker 私有注册表。
+本文档描述什么是 Docker 私有注册表，并说明如何使用 Azure Blob 存储将 Docker 注册表 2.0 容器映像部署到 Microsoft Azure 上的 Docker 私有注册表。
 
 本文档假设：
 
@@ -35,13 +35,13 @@
 
 ## 为何应在 Azure 上托管 Docker 注册表？
 
-通过在 Windows Azure 上托管 Docker 注册表实例并将映像存储在 Azure Blob 存储上，可以获得多种好处：
+通过在 Microsoft Azure 上托管 Docker 注册表实例并将映像存储在 Azure Blob 存储上，可以获得多种好处：
 
 **安全性：**Docker 映像不会离开 Azure 数据中心，因此它们不会像使用 Docker Hub 时一样跨公共 Internet。
   
 **性能：**Docker 映像存储在与应用程序相同的数据中心或区域内。这意味着，可以比 Docker Hub 更快、更可靠地提取映像。
 
-**可靠性：**通过使用 Windows Azure Blob 存储，你可以利用许多存储属性，例如高可用性、冗余、高级存储 (SSD) 等等。
+**可靠性：**通过使用 Microsoft Azure Blob 存储，你可以利用许多存储属性，例如高可用性、冗余、高级存储 (SSD) 等等。
 
 ## 将 Docker 注册表配置为使用 Azure Blob 存储
 

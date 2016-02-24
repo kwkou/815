@@ -1,6 +1,6 @@
 <properties
    pageTitle="使用 SqlPackage 从 BACPAC 文件导入到 SQL 数据库"
-   description="Windows Azure SQL 数据库, 数据库迁移, 导入数据库, 导入 BACPAC 文件, sqlpackage"
+   description="Microsoft Azure SQL 数据库, 数据库迁移, 导入数据库, 导入 BACPAC 文件, sqlpackage"
    services="sql-database"
    documentationCenter=""
    authors="carlrabeler"

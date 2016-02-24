@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通过堆转储调试和分析 Hadoop 服务 | Windows Azure"
+	pageTitle="通过堆转储调试和分析 Hadoop 服务 | Microsoft Azure"
 	description="自动收集 Hadoop 服务的堆转储并将其放置在用于调试和分析的 Azure Blob 存储帐户内。"
 	services="hdinsight"
 	documentationCenter=""

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将自己的域名添加到 Azure AD | Windows Azure" 
+	pageTitle="将自己的域名添加到 Azure AD | Microsoft Azure" 
 	description="介绍如何将自己的域名添加到 Azure Active Directory，并提供其他相关信息。"
 	services="active-directory" 
 	documentationCenter="" 

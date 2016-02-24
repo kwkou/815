@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库 Transact-SQL 参考 | Windows Azure"
+   pageTitle="SQL 数据仓库 Transact-SQL 参考 | Microsoft Azure"
    description="SQL 数据仓库使用的 Transact-SQL 主题参考内容的链接。"
    services="sql-data-warehouse"
    documentationCenter="NA"

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure 密钥保管库服务限制 | Windows Azure"
+   pageTitle="Azure 密钥保管库服务限制 | Microsoft Azure"
    description="了解适用于 Azure 密钥保管库的服务限制。"
    documentationCenter="dev-center-name"
    services="key-vault"  

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="将虚拟网络链接到 ExpressRoute 线路 | Windows Azure"
+   pageTitle="将虚拟网络链接到 ExpressRoute 线路 | Microsoft Azure"
    description="本文档概述了如何将虚拟网络 (VNet) 链接到 ExpressRoute 线路。"
    services="expressroute"
    documentationCenter="na"

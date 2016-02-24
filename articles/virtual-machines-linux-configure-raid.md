@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在运行 Linux 的虚拟机上配置软件 RAID | Windows Azure" 
+	pageTitle="在运行 Linux 的虚拟机上配置软件 RAID | Microsoft Azure" 
 	description="了解如何使用 mdadm 在 Azure 中的 Linux 上配置 RAID。" 
 	services="virtual-machines" 
 	documentationCenter="" 
@@ -23,9 +23,9 @@
  
 
 ## 附加数据磁盘
-配置 RAID 设备通常需要两个或更多的空数据磁盘。本文将不详细介绍如何为 Linux 虚拟机附加数据磁盘。请参阅 Windows Azure 文章[附加磁盘](/documentation/articles/storage-windows-attach-disk/#attachempty)，以详细了解如何在 Azure 上为 Linux 虚拟机附加空数据磁盘。
+配置 RAID 设备通常需要两个或更多的空数据磁盘。本文将不详细介绍如何为 Linux 虚拟机附加数据磁盘。请参阅 Microsoft Azure 文章[附加磁盘](/documentation/articles/storage-windows-attach-disk/#attachempty)，以详细了解如何在 Azure 上为 Linux 虚拟机附加空数据磁盘。
 
->[AZURE.NOTE]“特小型”VM 大小不支持将一个以上数据磁盘附加到虚拟机。请参阅 [Windows Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)，以了解有关 VM 大小和支持的数据磁盘数量的详细信息。
+>[AZURE.NOTE]“特小型”VM 大小不支持将一个以上数据磁盘附加到虚拟机。请参阅 [Microsoft Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)，以了解有关 VM 大小和支持的数据磁盘数量的详细信息。
 
 
 ## 安装 mdadm 实用程序

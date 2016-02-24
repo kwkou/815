@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何使用 SSMS 连接到 Azure SQL 数据库 | Windows Azure"
+	pageTitle="如何使用 SSMS 连接到 Azure SQL 数据库 | Microsoft Azure"
 	description="了解如何使用 SSMS 连接到 Azure SQL 数据库。"
 	metaCanonical=""
 	services="sql-database"
@@ -22,7 +22,7 @@
 
 本文介绍如何安装 SQL Server Management Studio (SSMS)，连接到 Azure 中的数据库服务器，然后使用 Transact-SQL 语句执行简单的查询。
 
-你首先需要有一个 Azure 中的 SQL 数据库。你可以按照 [Windows Azure SQL 数据库入门](/documentation/articles/sql-database-get-started)中的说明快速创建一个 SQL 数据库。此处的示例基于你参考该文章创建的 AdventureWorks 示例数据库，但直到执行查询前，这些步骤适用于任何 SQL 数据库。
+你首先需要有一个 Azure 中的 SQL 数据库。你可以按照 [Microsoft Azure SQL 数据库入门](/documentation/articles/sql-database-get-started)中的说明快速创建一个 SQL 数据库。此处的示例基于你参考该文章创建的 AdventureWorks 示例数据库，但直到执行查询前，这些步骤适用于任何 SQL 数据库。
 
 ## 安装并启动 SQL Server Management Studio (SSMS)
 
@@ -45,7 +45,7 @@
 
 ## 运行示例查询
 
-连接完成后，可以运行示例查询。如果没有使用 [Windows Azure SQL 数据库入门](/documentation/articles/sql-database-get-started)中的 AdventureWorks 示例创建数据库，此查询将不会正常工作。请直接跳到“后续步骤”以了解详细信息。
+连接完成后，可以运行示例查询。如果没有使用 [Microsoft Azure SQL 数据库入门](/documentation/articles/sql-database-get-started)中的 AdventureWorks 示例创建数据库，此查询将不会正常工作。请直接跳到“后续步骤”以了解详细信息。
 
 1. 在“对象资源管理器”中，导航到 **AdventureWorks** 数据库。
 2. 右键单击数据库，然后选择“新建查询”。

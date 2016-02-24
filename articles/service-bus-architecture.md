@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线体系结构 | Windows Azure"
+   pageTitle="服务总线体系结构 | Microsoft Azure"
    description="介绍 Azure 服务总线的消息处理体系结构。"
    services="service-bus"
    documentationCenter="na"

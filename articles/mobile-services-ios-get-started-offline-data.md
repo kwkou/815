@@ -1,5 +1,5 @@
 <properties
-	pageTitle="移动服务中的脱机数据同步入门 (iOS) | Windows Azure"
+	pageTitle="移动服务中的脱机数据同步入门 (iOS) | Microsoft Azure"
 	description="了解如何在 iOS 应用程序中使用 Azure 移动服务缓存和同步脱机数据"
 	documentationCenter="ios"
 	authors="krisragh"

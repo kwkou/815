@@ -1,6 +1,6 @@
 
 <properties 
-  pageTitle="在 Azure 存储空间中设置和检索对象的属性和元数据 | Windows Azure" 
+  pageTitle="在 Azure 存储空间中设置和检索对象的属性和元数据 | Microsoft Azure" 
   description="在 Azure 存储空间中存储对象的自定义元数据，并设置和检索系统属性。" 
   services="storage" 
   documentationCenter="" 

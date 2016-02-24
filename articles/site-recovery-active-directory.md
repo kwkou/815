@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure Site Recovery 保护 Active Directory 和 DNS | Windows Azure" 
+	pageTitle="使用 Azure Site Recovery 保护 Active Directory 和 DNS | Microsoft Azure" 
 	description="本文介绍如何使用 Azure Site Recovery 为 Active Directory 实现灾难恢复解决方案。" 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -41,7 +41,7 @@
 ## 先决条件
 
 - 已在本地部署 Active Directory 和 DNS 服务器。
-- Windows Azure 订阅中有一个 Azure Site Recovery 服务保管库 
+- Microsoft Azure 订阅中有一个 Azure Site Recovery 服务保管库 
 - 如果要复制到 Azure，请在 VM 上运行 Azure 虚拟机就绪状态评估工具，以确保这些 VM 与 Azure VM 和 Azure Site Recovery 服务兼容。
 
 

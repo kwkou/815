@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="利用乐观并发处理数据库写入冲突（Windows 应用商店）| Windows Azure" 
+	pageTitle="利用乐观并发处理数据库写入冲突（Windows 应用商店）| Microsoft Azure" 
 	description="了解如何处理服务器上和 Windows 应用商店应用程序中的数据库写入冲突。" 
 	documentationCenter="windows" 
 	authors="wesmc7777" 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通过 PowerShell 为 Azure VM 部署和管理备份 | Windows Azure"
+	pageTitle="通过 PowerShell 为 Azure VM 部署和管理备份 | Microsoft Azure"
 	description="了解如何使用 PowerShell 部署和管理 Azure 备份"
 	services="backup"
 	documentationCenter=""

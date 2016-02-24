@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 云服务和 ASP.NET 入门 | Windows Azure"
+	pageTitle="Azure 云服务和 ASP.NET 入门 | Microsoft Azure"
 	description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序运行在云服务中，带有 web 角色和辅助角色。它使用实体框架、SQL 数据库和 Azure 存储队列和 Blob。"
 	services="cloud-services, storage"
 	documentationCenter=".net"
@@ -361,7 +361,7 @@ Web 角色项目和辅助角色项目的 azure 存储帐户连接字符串存储
 
 1. 在 Visual Studio 中，从“文件”菜单中选择“新建项目”。
 
-2. 在“新建项目”对话框的左窗格中，展开“Visual C#”，选择“云”模板，然后选择“Windows Azure 云服务”模板。
+2. 在“新建项目”对话框的左窗格中，展开“Visual C#”，选择“云”模板，然后选择“Microsoft Azure 云服务”模板。
 
 3. 将项目和解决方案命名为 ContosoAdsCloudService，然后单击“确定”。
 
@@ -795,9 +795,9 @@ Contoso 广告应用程序有意保持入门教程的简单性。例如，它没
 
 * [PhluffyFotos](http://code.msdn.microsoft.com/PhluffyFotos-Sample-7ecffd31)。在概念上与 Contoso 广告类似，但实施更多的功能和详细的实际编码做法。
 * [带有表、队列和 Blob 的 Azure 云服务多层应用程序](http://code.msdn.microsoft.com/windowsazure/Windows-Azure-Multi-Tier-eadceb36)。介绍 Azure 存储表以及 blob 和队列，并附带[分步教程系列](/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview)。
-* [Windows Azure 中的云服务基础知识](http://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)。一个综合示例，演示各种最佳实践，由 Microsoft 模式和实践组生产。
+* [Microsoft Azure 中的云服务基础知识](http://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)。一个综合示例，演示各种最佳实践，由 Microsoft 模式和实践组生产。
 
-有关云开发的常规信息，请参阅[使用 Windows Azure 构建实际的云应用](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction)。
+有关云开发的常规信息，请参阅[使用 Microsoft Azure 构建实际的云应用](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction)。
 
 有关 Azure 存储最佳实践和模式的视频介绍，请参阅 [Microsoft Azure 存储 – 新增功能、最佳实践和模式](http://channel9.msdn.com/Events/Build/2014/3-628)。
 

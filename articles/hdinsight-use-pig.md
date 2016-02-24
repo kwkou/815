@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 HDInsight 中使用 Hadoop Pig | Windows Azure"
+   pageTitle="在 HDInsight 中使用 Hadoop Pig | Microsoft Azure"
    description="了解如何将 Pig 与 HDInsight 上的 Hadoop 配合使用。"
    services="hdinsight"
    documentationCenter=""

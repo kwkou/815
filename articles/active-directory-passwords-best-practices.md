@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="最佳做法：Azure AD 密码管理 |Windows Azure" 
+	pageTitle="最佳做法：Azure AD 密码管理 |Microsoft Azure" 
 	description="有关 Azure Active Directory 中密码管理的部署和使用最佳实践、示例最终用户文档和培训指南。" 
 	services="active-directory" 
 	documentationCenter="" 

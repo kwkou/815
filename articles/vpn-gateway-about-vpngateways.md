@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="关于虚拟网络跨界连接的 VPN 网关 | Windows Azure"
+   pageTitle="关于虚拟网络跨界连接的 VPN 网关 | Microsoft Azure"
    description="了解适用于混合配置的跨界连接的 VPN 网关。本文介绍了网关 SKU（基本、标准和高性能）、VPN 网关和 ExpressRoute 共存配置、网关路由类型（静态、动态、基于策略、基于路由），以及虚拟网络连接的网关要求。"
    services="vpn-gateway"
    documentationCenter="na"

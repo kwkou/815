@@ -1,5 +1,5 @@
 <properties
-	pageTitle="什么是 Site Recovery？| Windows Azure" 
+	pageTitle="什么是 Site Recovery？| Microsoft Azure" 
 	description="Azure Site Recovery 可以协调位于本地的虚拟机和物理服务器到 Azure 或辅助本地站点的复制、故障转移和恢复。" 
 	services="site-recovery" 
 	documentationCenter="" 

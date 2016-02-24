@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用资源管理器锁定资源 | Windows Azure" 
+	pageTitle="使用资源管理器锁定资源 | Microsoft Azure" 
 	description="通过对所有用户和角色应用限制，来防止用户更新或删除特定的资源。" 
 	services="azure-resource-manager" 
 	documentationCenter="" 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="通过使用 Visual Studio 连接服务添加移动服务后开始使用 Javascript 移动应用 | Windows Azure" 
+	pageTitle="通过使用 Visual Studio 连接服务添加移动服务后开始使用 Javascript 移动应用 | Microsoft Azure" 
 	description="如何在 Visual Studio 中的 JavaScript 项目内开始使用 Azure 移动服务" 
 	services="mobile-services" 
 	documentationCenter="" 

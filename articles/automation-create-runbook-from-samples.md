@@ -17,7 +17,7 @@
 
 ## 什么是 Azure 自动化？
 
-通过 Windows Azure 自动化，用户可以自动完成通常要在云环境中执行的手动、长时间进行、易出错且重复性高的任务。你可以使用 Runbook 来创建、监视、管理和部署 Azure 环境中的资源。所谓的 Runbook，基本上就是指 Windows PowerShell 工作流。在本文中，你将学习运行一个简单示例 Runbook 的教程。然后，你将查找用于浏览更高级服务功能的资源。
+通过 Microsoft Azure 自动化，用户可以自动完成通常要在云环境中执行的手动、长时间进行、易出错且重复性高的任务。你可以使用 Runbook 来创建、监视、管理和部署 Azure 环境中的资源。所谓的 Runbook，基本上就是指 Windows PowerShell 工作流。在本文中，你将学习运行一个简单示例 Runbook 的教程。然后，你将查找用于浏览更高级服务功能的资源。
 
 ## 教程
 本教程将逐步引导你完成创建自动化帐户、将一个示例“Hello World”Runbook 导入 Azure 自动化、执行该 Runbook 并查看其输出的过程。

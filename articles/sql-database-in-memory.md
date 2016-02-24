@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SQL In-Memory 入门 | Windows Azure"
+	pageTitle="SQL In-Memory 入门 | Microsoft Azure"
 	description="SQL In-Memory 技术大幅提升了事务和分析工作负荷的性能。了解如何利用这些技术。"
 	services="sql-database"
 	documentationCenter=""

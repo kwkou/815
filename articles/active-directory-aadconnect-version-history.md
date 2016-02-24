@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect：版本发布历史记录 | Windows Azure"
+   pageTitle="Azure AD Connect：版本发布历史记录 | Microsoft Azure"
    description="本主题列出 Azure AD Connect 和 Azure AD Sync 的所有版本"
    services="active-directory"
    documentationCenter=""

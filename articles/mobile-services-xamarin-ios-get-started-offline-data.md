@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在移动服务中使用脱机数据 (Xamarin iOS) | Windows Azure" 
+	pageTitle="在移动服务中使用脱机数据 (Xamarin iOS) | Microsoft Azure" 
 	description="了解如何使用 Azure 移动服务向 Xamarin iOS 应用程序中的缓存和同步离线数据" 
 	documentationCenter="xamarin" 
 	authors="lindydonna" 

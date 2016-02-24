@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Linux VM 上托管 Ruby on Rails Web 应用 | Windows Azure"
+	pageTitle="在 Linux VM 上托管 Ruby on Rails Web 应用 | Microsoft Azure"
 	description="在 Azure 上使用 Linux 虚拟机设置和托管基于 Ruby on Rails 的 Web 应用。"
 	services="virtual-machines"
 	documentationCenter="ruby"

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SQL (PaaS) 数据库与Azure 虚拟机 (IaaS) 上的云中 SQL Server | Windows Azure"
+	pageTitle="SQL (PaaS) 数据库与Azure 虚拟机 (IaaS) 上的云中 SQL Server | Microsoft Azure"
 	description="了解哪个云 SQL Server 选项适合你的应用程序：Azure SQL (PaaS) 数据库或 Azure 虚拟机上的云中 SQL Server。"
 	services="sql-database, virtual-machines"
 	keywords="SQL Server 云, 云中 SQL Server, SaaS 数据库, 云 SQL Server, DBaaS"
@@ -18,7 +18,7 @@
 Azure 提供两个选项用于在云中托管 SQL Server 工作负荷：
 
 * [Azure SQL 数据库](/home/features/sql-database)：云的本机 SQL 数据库，也称为平台即服务 (PaaS) 数据库或数据库即服务 (DBaaS)，它已针对软件即服务 (SaaS) 应用开发进行优化。Azure SQL 数据库与大多数 SQL Server 功能兼容。
-* [Azure 虚拟机上的 SQL Server](/home/features/virtual-machines#SQL)：在 Azure 上运行的云中 Windows Azure 虚拟机 (VM) 上安装并托管的 SQL Server，也称为基础结构即服务 (IaaS)。
+* [Azure 虚拟机上的 SQL Server](/home/features/virtual-machines#SQL)：在 Azure 上运行的云中 Microsoft Azure 虚拟机 (VM) 上安装并托管的 SQL Server，也称为基础结构即服务 (IaaS)。
 
 了解每个选项如何配合 Microsoft 数据平台一起运行，并在匹配适合业务要求的选项时获得帮助。无论你是以节省成本为优先考虑，还是将精简管理视为第一要素，本文都会帮助你确定哪种方法能够满足你最重视的业务要求。
 
@@ -193,6 +193,6 @@ Azure 提供两个选项用于在云中托管 SQL Server 工作负荷：
 
 若要开始，请参阅[在 Azure 中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server)。
 
-> [AZURE.NOTE]想要试用 SQL Server 2016 CTP2？ 请注册 Windows Azure，然后转到[此处](http://aka.ms/sql2016vm "此处")创建已经装有 SQL Server 2016 CTP2 的虚拟机。
+> [AZURE.NOTE]想要试用 SQL Server 2016 CTP2？ 请注册 Microsoft Azure，然后转到[此处](http://aka.ms/sql2016vm "此处")创建已经装有 SQL Server 2016 CTP2 的虚拟机。
 
 <!---HONumber=Mooncake_0104_2016-->

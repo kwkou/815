@@ -1,5 +1,5 @@
 <properties
-   pageTitle="AzureLogCollector VM 扩展 | Windows Azure"
+   pageTitle="AzureLogCollector VM 扩展 | Microsoft Azure"
    description="描述 AzureLogCollector VM 扩展，该扩展可以收集所有日志文件并将其置于 Azure 存储空间的一个位置。"
    services="virtual-machines"
    documentationCenter="virtual-machines"
@@ -15,7 +15,7 @@
 
 # AzureLogCollector 扩展
 
-若要诊断 Windows Azure 云服务的问题，需要在问题发生时收集虚拟机上该服务的日志文件。可以使用 AzureLogCollector 扩展按需从一个或多个云服务 VM（通过 Web 角色和辅助角色）执行一次性日志收集，并将收集到的文件传输到 Azure 存储帐户 - 所有这些操作都无需远程登录到任何 VM。
+若要诊断 Microsoft Azure 云服务的问题，需要在问题发生时收集虚拟机上该服务的日志文件。可以使用 AzureLogCollector 扩展按需从一个或多个云服务 VM（通过 Web 角色和辅助角色）执行一次性日志收集，并将收集到的文件传输到 Azure 存储帐户 - 所有这些操作都无需远程登录到任何 VM。
 > [AZURE.NOTE] 大多数日志信息的说明可以在 http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.asp 中找到。
 
 有两种模式的收集，其具体使用取决于要收集的文件的类型。
@@ -49,7 +49,7 @@
 
 ## 添加扩展
 
-你可以使用 [Windows Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/dn495240.aspx) cmdlet 或[服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/ee460799.aspx) 来添加 AzureLogCollector 扩展。
+你可以使用 [Microsoft Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/dn495240.aspx) cmdlet 或[服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/ee460799.aspx) 来添加 AzureLogCollector 扩展。
 
 对于云服务，可以使用现有的 Azure Powershell cmdlet **Set-AzureServiceExtension** 来启用云服务角色实例上的扩展。每次通过此 cmdlet 启用此扩展时，都会在所选角色的所选角色实例上触发日志收集。
 

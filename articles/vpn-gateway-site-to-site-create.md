@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure 经典门户创建具有站点到站点 VPN 网关连接的虚拟网络 | Windows Azure"
+   pageTitle="使用 Azure 经典门户创建具有站点到站点 VPN 网关连接的虚拟网络 | Microsoft Azure"
    description="创建使用 S2S VPN 网关连接的 VNet，以便通过经典部署模型进行跨界配置和混合配置。"
    services="vpn-gateway"
    documentationCenter=""

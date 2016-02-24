@@ -1,5 +1,5 @@
 <properties
-   pageTitle="连接到 SQL 数据仓库 | Windows Azure"
+   pageTitle="连接到 SQL 数据仓库 | Microsoft Azure"
    description="有关在开发解决方案时连接到 Azure SQL 数据仓库的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"

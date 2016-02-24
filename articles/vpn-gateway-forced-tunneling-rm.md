@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="使用资源管理器为 VPN 网关配置强制隧道 | Windows Azure"
+   pageTitle="使用资源管理器为 VPN 网关配置强制隧道 | Microsoft Azure"
    description="如果你的虚拟网络具有跨界 VPN 网关，你可以将全部 Internet 绑定流量重定向或强制返回到本地位置。本文适用于资源管理器部署模型。"
    services="vpn-gateway"
    documentationCenter="na"

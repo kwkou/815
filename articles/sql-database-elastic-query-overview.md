@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure SQL 数据库弹性数据库查询概述 | Windows Azure"
+    pageTitle="Azure SQL 数据库弹性数据库查询概述 | Microsoft Azure"
     description="弹性查询功能概述"    
     services="sql-database"
     documentationCenter=""  

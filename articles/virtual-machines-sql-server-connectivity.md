@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="连接到 SQL Server 虚拟机 | Windows Azure"
+	pageTitle="连接到 SQL Server 虚拟机 | Microsoft Azure"
 	description="本主题使用通过经典部署模型创建的资源并介绍了如何在 Azure 中连接到虚拟机上运行的 SQL Server。方案根据网络配置和客户端位置的不同而异。"
 	services="virtual-machines"
 	documentationCenter="na"

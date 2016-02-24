@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect 中的预览版功能 | Windows Azure"
+   pageTitle="Azure AD Connect 中的预览版功能 | Microsoft Azure"
    description="本主题详细介绍 Azure AD Connect 中以预览版形式提供的功能。"
    services="active-directory"
    documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure CLI 创建虚拟网络 | Windows Azure"
+   pageTitle="使用 Azure CLI 创建虚拟网络 | Microsoft Azure"
    description="了解如何在 ARM |资源管理器中使用 Azure CLI 创建虚拟网络。"
    services="virtual-network"
    documentationCenter=""

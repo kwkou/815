@@ -1,5 +1,5 @@
 <properties
-	pageTitle="站点恢复的工作原理 | Windows Azure"
+	pageTitle="站点恢复的工作原理 | Microsoft Azure"
 	description="本文提供站点恢复体系结构的概述"
 	services="site-recovery"
 	documentationCenter=""

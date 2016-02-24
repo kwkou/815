@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Windows Azure 存储中管理并发" 
+	pageTitle="在 Microsoft Azure 存储中管理并发" 
 	description="如何管理 Blob、队列、表和文件服务的并发" 
 	services="storage" 
 	documentationCenter="" 
@@ -14,7 +14,7 @@
 
 
 
-#在 Windows Azure 存储中管理并发
+#在 Microsoft Azure 存储中管理并发
 
 ## 概述 
 
@@ -268,7 +268,7 @@ customer.ETag = "*"；
 - [管理文件锁](http://msdn.microsoft.com/zh-cn/library/azure/dn194265.aspx)  
 
 ## 摘要和后续步骤
-经过精心设计，Windows Azure 存储服务可以满足最复杂的在线应用程序需要，而不会迫使开发人员对主要设计假设做出妥协或重新思考，例如他们视为理所当然的并发和数据一致性。
+经过精心设计，Microsoft Azure 存储服务可以满足最复杂的在线应用程序需要，而不会迫使开发人员对主要设计假设做出妥协或重新思考，例如他们视为理所当然的并发和数据一致性。
 
 对于本博客中引用的完整示例应用程序：  
 
@@ -276,9 +276,9 @@ customer.ETag = "*"；
 
 有关 Azure 存储的详细信息，请参阅：  
 
-- [Windows Azure 存储主页](/home/features/storage)
+- [Microsoft Azure 存储主页](/home/features/storage)
 - [Azure 存储简介](/zh-cn/documentation/articles/storage-introduction)
 - [Blob](/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs)、[表](/zh-cn/documentation/articles/storage-dotnet-how-to-use-tables)和[队列](/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues)的存储使用入门
-- 存储体系结构 - [Windows Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
+- 存储体系结构 - [Microsoft Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
 <!---HONumber=79-->

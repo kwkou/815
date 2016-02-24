@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="为云服务配置自动缩放 | Windows Azure" 
+	pageTitle="为云服务配置自动缩放 | Microsoft Azure" 
 	description="了解如何使用门户在 Azure 中为云服务和链接资源配置自动缩放规则。" 
 	services="cloud-services" 
 	documentationCenter="" 

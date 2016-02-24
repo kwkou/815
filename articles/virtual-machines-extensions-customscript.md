@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Windows VM 上的自定义脚本扩展 | Windows Azure"
+   pageTitle="Windows VM 上的自定义脚本扩展 | Microsoft Azure"
    description="通过使用自定义脚本扩展在远程 Windows VM 上运行 PowerShell 脚本自动执行 Azure VM 配置任务"
    services="virtual-machines"
    documentationCenter=""

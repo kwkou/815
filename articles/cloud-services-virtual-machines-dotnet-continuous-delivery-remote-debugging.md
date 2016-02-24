@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用连续交付启用远程调试 | Windows Azure"
+	pageTitle="使用连续交付启用远程调试 | Microsoft Azure"
 	description="了解在使用连续交付部署到 Azure 时如何启用远程调试"
 	services="cloud-services"
 	documentationCenter=".net"

@@ -15,7 +15,7 @@
 
 # Azure AD 服务限制和局限性
 
-以下是 Azure Active Directory 服务的使用限制和其他服务限制。如果你正查找 Windows Azure 服务限制全集，请参阅 <!--[-->Azure 订阅和服务限制、配额和约束<!--](/documentation/articles/azure-subscription-service-limits)-->。
+以下是 Azure Active Directory 服务的使用限制和其他服务限制。如果你正查找 Microsoft Azure 服务限制全集，请参阅 <!--[-->Azure 订阅和服务限制、配额和约束<!--](/documentation/articles/azure-subscription-service-limits)-->。
 
 ## 目录
 

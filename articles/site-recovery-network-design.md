@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Site Recovery 的网络基础结构注意事项 | Windows Azure" 
+	pageTitle="Site Recovery 的网络基础结构注意事项 | Microsoft Azure" 
 	description="本文讨论使用 Site Recovery 进行故障转移的切实可行的网络设计的注意事项。" 
 	services="site-recovery" 
 	documentationCenter="" 

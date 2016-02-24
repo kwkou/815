@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何使用访问控制 (Java) | Windows Azure" 
+	pageTitle="如何使用访问控制 (Java) | Microsoft Azure" 
 	description="了解如何在 Azure 中以 Java 开发和使用访问控制。" 
 	services="active-directory" 
 	documentationCenter="java" 

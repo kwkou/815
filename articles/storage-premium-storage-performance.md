@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure 高级存储：针对性能进行设计 | Windows Azure"
+    pageTitle="Azure 高级存储：针对性能进行设计 | Microsoft Azure"
     description="使用 Azure 高级存储设置高性能应用程序。高级存储为 Azure 虚拟机上运行的 I/O 密集型工作负载提供高性能、低延迟的磁盘支持。"
     services="storage"
     documentationCenter="na"

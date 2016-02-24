@@ -1,5 +1,5 @@
 <properties
-   pageTitle="将 MapReduce 和远程桌面与 HDInsight 中的 Hadoop 配合使用 | Windows Azure"
+   pageTitle="将 MapReduce 和远程桌面与 HDInsight 中的 Hadoop 配合使用 | Microsoft Azure"
    description="了解如何使用远程桌面连接到 HDInsight 上的 Hadoop 并运行 MapReduce 作业。"
    services="hdinsight"
    documentationCenter=""
