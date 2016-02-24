@@ -72,9 +72,18 @@ New-AzureResource -ResourceType "Microsoft.MySql/servers/databases/privileges" -
 New-AzureResource -ResourceType "Microsoft.MySql/servers/backups" -ResourceName testPSH/back1 -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{}
 ```
 
+###2.7 服务器备份恢复 （基于快照的恢复）
+编辑运行以下命令，通过制定快照来恢复服务器。
+其中，server和region的信息必填，backup不指定的情况下，默认通过最新的快照拷贝进行恢复。
+```
+New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testrestore -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -Location ChinaEast -Properties @{creationSource=@{server='testPSH';region='chinaEast' ; backup = 'testPSH/testpsh1b0a9038-6953-42ad-ac8e-42f73180825b'};version = '5.5'}
+```
+
 ## <a id="view"></a>3. 查看操作
 通过Get指令可以查看当前MySQL服务器、数据库、用户、用户权限、备份、防火墙规则等列表,也可以查看详细参数配置。
 ###3.1 查看服务器列表
+>[AZURE.NOTE] ** 注意:“在Azure管理门户上创建的实例，按照实例所处的区域分别在默认资源组：Default-MySql-ChinaEast以及Default-MySql-ChinaNorth**
+
 编辑运行以下命令，查看当前所有服务器列表
 
 ```
