@@ -277,13 +277,12 @@ CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Microsof
 
 * [创建新的云服务][vs_create]
 * [重新配置现有云服务][vs_reconfigure]
-* [部署云服务项目][vs_deploy]
+* 部署云服务项目
 * [为云服务实例设置远程桌面][vs_remote]
 
 
 [remotedesktop]: /documentation/articles/cloud-services-role-enable-remote-desktop
 [vs_remote]: https://msdn.microsoft.com/zh-cn/library/gg443832.aspx
-[vs_deploy]: https://msdn.microsoft.com/zh-cn/library/ee460772.aspx
 [vs_reconfigure]: https://msdn.microsoft.com/zh-cn/library/ee405486.aspx
 [vs_create]: https://msdn.microsoft.com/zh-cn/library/ee405487.aspx
 
