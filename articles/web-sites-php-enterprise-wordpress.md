@@ -34,6 +34,26 @@ Azure Web 应用为大规模的关键任务 [WordPress][wordpress] Web 应用提
 
 尽管您可以通过创建多个 Web 应用实例扩展您的应用程序，但所有内容都托管在特定地理区域的数据中心中。此区域之外的访客在使用 Web 应用时，响应速度可能会很慢，如果此区域的数据中心停机，您的应用也将无法使用。
 
+###多区域部署
+
+通过使用 Azure [流量管理器][trafficmanager]，可以在多个地理地区扩展您的 WordPress Web 应用，同时仅为访客提供一个 URL。所有访客都通过流量管理器进来，然后基于负载平衡配置被路由到某一区域。
+
+![一个托管在多个区域的 Azure Web 应用，使用 MySQL 集群 CGE][multi-region-diagram]
+
+在每个区域中，WordPress Web 应用仍会扩展到多个 Web 应用实例，但这种扩展是区域特定的；高流量区域的扩展方式可以与低流量区域不同。
+
+复制和路由到多个 MySQL 数据库的操作可以使用 [MySQL 集群 CGE][cge] 来完成。
+
+>[AZURE.NOTE] 要使用多区域部署，你需要在 IaaS 虚拟机中建立 MySQL 集群。MySQL Database on Azure 暂时还不支持多区域部署.
+
+###使用媒体存储和缓存的多区域部署
+
+如果该 Web 应用将接受上传或主机媒体文件，使用 Azure Blob 存储。如果你需要进行缓存，可考虑 [Redis 缓存][rediscache]。
+
+![一个托管在多个区域的 Azure Web 应用，使用 MySQL 集群 CGE，带托管缓存、Blob 存储和 CDN][performance-diagram]
+
+在默认情况下 Blob 存储分散在各个地区，因此无需担心跨所有站点复制文件的问题。您也可以为 Blob 存储启用 Azure [内容分发网络 (CDN)][cdn]，这样可以将文件分发至距离访客更近的终端节点。
+
 ###规划
 
 ####其他要求
@@ -63,7 +83,7 @@ Azure Web 应用为大规模的关键任务 [WordPress][wordpress] Web 应用提
 ------------------------|-----------
 **了解 Azure Web 应用实例功能** | [定价详细信息，其中包括 Azure Web 应用层的功能][websitepricing]
 **缓存资源** | [Redis 缓存][rediscache]
-**扩展您的应用程序** | [在 Azure 中扩展 Web 应用][websitescale]。如果您选择托管和管理您自己的 MySQL 安装，应考虑使用 [MySQL 集群 CGE][cge] 进行横向扩展
+**扩展您的应用程序** | [在 Azure 中扩展 Web 应用][websitescale] 和 [MySQL 集群 CGE][cge]
 
 ####迁移
 
