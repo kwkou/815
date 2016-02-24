@@ -36,27 +36,39 @@ ASDB基准的基本特性包括：
   </tr>
   <tr>
     <td width="47" valign="top"><p align="center"><strong>MS 1</strong></p></td>
-    <td width="195" valign="top"><p align="center">7.5</p></td>
-    <td width="122" valign="top"><p align="center">3GB</p></td>
-    <td width="113" valign="top"><p align="center">10</p></td>
+    <td width="195" valign="top"><p align="center">10</p></td>
+    <td width="122" valign="top"><p align="center">2.2GB</p></td>
+    <td width="113" valign="top"><p align="center">16</p></td>
   </tr>
   <tr>
     <td width="47" valign="top"><p align="center"><strong>MS 2</strong></p></td>
-    <td width="195" valign="top"><p align="center">15</p></td>
-    <td width="122" valign="top"><p align="center">3GB</p></td>
-    <td width="113" valign="top"><p align="center">17</p></td>
+    <td width="195" valign="top"><p align="center">25</p></td>
+    <td width="122" valign="top"><p align="center">3.6GB</p></td>
+    <td width="113" valign="top"><p align="center">26</p></td>
   </tr>
   <tr>
     <td width="47" valign="top"><p align="center"><strong>MS 3</strong></p></td>
-    <td width="195" valign="top"><p align="center">40</p></td>
-    <td width="122" valign="top"><p align="center">7.2GB</p></td>
-    <td width="113" valign="top"><p align="center">43</p></td>
+    <td width="195" valign="top"><p align="center">100</p></td>
+    <td width="122" valign="top"><p align="center">14.3GB</p></td>
+    <td width="113" valign="top"><p align="center">105</p></td>
   </tr>
   <tr>
     <td width="47" valign="top"><p align="center"><strong>MS 4</strong></p></td>
-    <td width="195" valign="top"><p align="center">120</p></td>
-    <td width="122" valign="top"><p align="center">28GB</p></td>
-    <td width="113" valign="top"><p align="center">140</p></td>
+    <td width="195" valign="top"><p align="center">200</p></td>
+    <td width="122" valign="top"><p align="center">28.6GB</p></td>
+    <td width="113" valign="top"><p align="center">210</p></td>
+  </tr>
+  <tr>
+    <td width="47" valign="top"><p align="center"><strong>MS 5</strong></p></td>
+    <td width="195" valign="top"><p align="center">300</p></td>
+    <td width="122" valign="top"><p align="center">43.6GB</p></td>
+    <td width="113" valign="top"><p align="center">320</p></td>
+  </tr>
+  <tr>
+    <td width="47" valign="top"><p align="center"><strong>MS 6</strong></p></td>
+    <td width="195" valign="top"><p align="center">400</p></td>
+    <td width="122" valign="top"><p align="center">57.2GB</p></td>
+    <td width="113" valign="top"><p align="center">420</p></td>
   </tr>
 </table>
 
