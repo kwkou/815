@@ -55,7 +55,7 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 
 有关详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)和[最佳实践：Azure AD 密码管理](/documentation/articles/active-directory-passwords-best-practices)。
 
-## <a name="ser-password-reset-portal"></a> 用户密码重置门户
+## <a name="user-password-reset-portal"></a> 用户密码重置门户
 一旦启用了自助密码重置、设置了你所在组织的自助密码重置策略并确保了你的用户在目录中具有适当的联系人数据，你所在组织中的用户将可以从使用工作或学校帐户进行登录的任何网页（如 [portal.microsoftonline.com](https://portal.partner.microsoftonline.cn)）自动重置他们自己的密码。在这些网页上，用户将看到“无法访问你的帐户?”链接。
 
   ![][002]

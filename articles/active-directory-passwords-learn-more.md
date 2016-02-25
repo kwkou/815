@@ -23,7 +23,7 @@
   - [密码重置使用哪些数据？](#what-data-is-used-by-password-reset)
   - [如何访问用户的密码重置数据](#how-to-access-password-reset-data-for-your-users)
 
-## 密码写回概述
+## <a name="password-writeback-overview"></a>密码写回概述
 密码写回是一个 [Azure Active Directory Connect](/documentation/articles/active-directory-aadconnect) 组件，Azure Active Directory Premium 的当前订户可以启用和使用该组件。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions)。
 
 使用此功能，你可将云租户配置为将密码写回本地 Active Directory。有了此功能，你无需再设置和管理复杂的本地自助服务密码重置解决方案。此功能提供了一种基于云的便利方法，让你的用户能够在任何位置重置本地密码。有关密码写回的一些主要功能，请继续阅读以下内容：
@@ -258,7 +258,7 @@
           </tr>
         </tbody></table>
 
-###如何访问用户的密码重置数据
+### <a name="how-to-access-password-reset-data-for-your-users"></a>如何访问用户的密码重置数据
 ####可通过同步设置的数据
 可以从本地同步以下字段：
 

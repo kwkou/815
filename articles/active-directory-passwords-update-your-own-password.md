@@ -47,7 +47,7 @@
 
  >[AZURE.IMPORTANT]如果管理员允许你注册多个选项，我们强烈建议你注册一个备用选项，以便在丢失电话或访问电子邮件时使用。
 
-## </a name="how-to-change-your-password-from-o365"></a>如何从 O365 更改密码
+## <a name="how-to-change-your-password-from-o365"></a>如何从 O365 更改密码
 请遵循以下步骤在 Office 365 中更改工作或学校帐户密码。如果你忘记了密码并想要重置，请遵循[此处](#how-to-reset-your-password)所述的步骤。
 
  1. 使用工作或学校帐户登录到 Office 365。
@@ -57,7 +57,7 @@
 
 可以在 [Office 365 文档中心](https://support.office.com/article/Change-my-password-in-Office-365-for-business-d1efbaee-63a7-4c08-ab1d-71bf932bbb5d)阅读更多相关信息。
 
-## <a name="how-to-change-your-password-from-the-access-panel"></a>如何从访问面板更改密码
+## <a name="how-to-change-your-password-from-the-access-panel"></a> 如何从访问面板更改密码
 请遵循以下步骤从[访问面板](https://myapps.microsoft.com)更改工作或学校帐户密码。如果你忘记了密码并想要重置，请遵循[此处](#how-to-reset-your-password)所述的步骤。
 
  1. 使用工作或学校帐户登录到 https://myapps.microsoft.com。
