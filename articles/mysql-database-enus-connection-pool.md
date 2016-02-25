@@ -1,6 +1,6 @@
-<properties linkid="" urlDisplayName="" pageTitle="Connect efficiently to MySQL Database on Azure – Microsoft Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, connection pool, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="Making sensible use of connection pooling to access MySQL Database on Azure will optimize performance. This article explains how to use connection pooling to more effectively access MySQL Database on Azure and provides sample code that uses Java and PHP as examples for your reference." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="Connect efficiently to MySQL Database on Azure – Microsoft Azure cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, connection pool, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="Making sensible use of connection pooling to access MySQL Database on Azure will optimize performance. This article explains how to use connection pooling to more effectively access MySQL Database on Azure and provides sample code that uses Java and PHP as examples for your reference." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date="12/28/2015"/>
+<tags ms.service="mysql" ms.date="" wacn.date="01/11/2015"/>
 # Connect efficiently to MySQL Database on Azure<sup style="color: #a5ce00; font-weight: bold; text-transform: uppercase; font-family: '微软雅黑'; font-size: 20px;" class="wa-previewTag"></sup>
 > [AZURE.SELECTOR]
 - [Chinese version](/documentation/articles/mysql-database-connection-pool)
@@ -14,14 +14,17 @@ As MySQL Database on Azure performs more authentication tasks when it establishe
 
 This article explains this further by providing a [piece of sample code that uses Java as an example](http://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/documents/MySQLConnectionPool.java) for your reference. You can also refer to [Apache common DBCP](http://commons.apache.org/proper/commons-dbcp/) to find out more.
 
+>[AZURE.NOTE]**The server will configure a timeout mechanism, so that the server will close a connection that has been in an idle state for some time, in order to free up resources that are being unnecessarily occupied. For this reason, please set up the authentication system to ensure the effectiveness of persistent connections when you are using them. See [How to configure authentication systems on the client side to ensure the effectiveness of persistent connections.](/documentation/articles/mysql-database-validationquery)**
+
 ## Access databases that use persistent connections (recommended)##
 We recommend that you use persistent connections in PHP. The concept of persistent connections is similar to that of connection pooling. It is important to note that PHP currently has three types of drivers. While MySQLi does not support persistent connection, the other two types of drivers do.
 
-Read [Use PDO to establish persistent connections](http://php.net/manual/en/pdo.connections.php) and [Use MySQL engines to establish persistent connections](http://php.net/manual/en/function.mysql-pconnect.php).
+See [Use PDO to create persistent connections](http://php.net/manual/en/pdo.connections.php);
+see [Use the MySQL engine to create persistent connections](http://php.net/manual/en/function.mysql-pconnect.php).
 
 Replacing short connections with persistent connections requires only minor changes to the code, but has a major effect in terms of improving performance in many typical application scenarios.
 
 ## Access databases by using wait and retry mechanisms with short connections##
 Given resource limitations, we strongly recommend that you use database pooling or persistent connections to access databases. However, if you do use short connections and experience connection failures when approaching the upper limit on the number of concurrent connections, we recommend that you try connecting multiple times. You can set an appropriate wait time, with a shorter wait time after the first attempt. After this, waiting for random events can be performed multiple times.
 
-<!---HONumber=Acom_0104_2016_MySql-->
+<!---HONumber=Acom_0218_2016_MySql-->
