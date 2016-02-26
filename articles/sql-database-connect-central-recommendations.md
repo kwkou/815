@@ -9,9 +9,9 @@
 
 
 <tags 
-	ms.service="sql-database"
-	ms.date="11/13/2015" 
-	wacn.date="12/22/2015"/>
+	ms.service="sql-database" 
+	ms.date="01/07/2016" 
+	wacn.date="02/26/2016"/>
 
 
 # 连接到 SQL 数据库：最佳实践和设计准则
@@ -20,7 +20,7 @@
 本主题能够很好地帮助你学习如何与 Azure SQL 数据库建立客户端连接。其中提供了你可以用来连接到 SQL 数据库以及与之进行交互的各种技术的代码示例的链接。这些技术包括企业库、JDBC、PHP，等等。无论你使用何种具体技术连接到 SQL 数据库，所提供的信息均适用。
 
 
-<a id="a-tech-independent-recommend" name="a-tech-independent-recommend"></a>
+<a id="a-tech-independent-recommend" name="a-tech-independent-recommend">
 
 ## 独立于技术的建议
 
@@ -28,7 +28,7 @@
 - [以编程方式连接到 Azure SQL 数据库时的准则](http://msdn.microsoft.com/zh-cn/library/azure/ee336282.aspx) - 讨论了以下内容：
  - [端口和防火墙](/documentation/articles/sql-database-configure-firewall-settings)
  - 连接字符串
-- [Azure SQL 数据库资源管理](https://msdn.microsoft.com/zh-cn/library/azure/dn338083.aspx) - 讨论了以下内容：
+- [Azure SQL 数据库资源管理](http://msdn.microsoft.com/zh-cn/library/azure/dn338083.aspx) - 讨论了以下内容：
  - 资源控制
  - 强制实施限制
  - 限制
@@ -99,7 +99,8 @@
 ### V12 中的非 1433 端口
 
 
-与 Azure SQL 数据库 V12 建立的客户端连接有时会绕过代理直接与数据库交互。除 1433 以外的端口变得非常重要。有关详细信息，请参阅：<br/>[用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)
+与 Azure SQL 数据库 V12 建立的客户端连接有时会绕过代理直接与数据库交互。除 1433 以外的端口变得非常重要。有关详细信息，请参阅：<br/>
+[用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)
 
 
 下一部分更详细说明了重试逻辑和暂时性故障处理。
@@ -108,6 +109,7 @@
 
 <a name="TransientFaultsAndRetryLogicGm" id="TransientFaultsAndRetryLogicGm"></a>
 
+&nbsp;
 
 ## 暂时性错误和重试逻辑
 
@@ -123,7 +125,8 @@ Azure 系统能够在 SQL 数据库服务中出现大量工作负载时动态地
 [SQL Server 连接池 (ADO.NET)](http://msdn.microsoft.com/zh-cn/library/8xx3tyca.aspx) 中提供了有关使用 ADO.NET 的客户端的*阻塞期*的说明。
 
 
-有关演示重试逻辑的代码示例，请参阅：
+如需演示重试逻辑的代码示例，请参阅：
+
 - [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
 
 
@@ -135,12 +138,16 @@ Azure 系统能够在 SQL 数据库服务中出现大量工作负载时动态地
 
 - [SQL 数据库客户端程序的错误消息](/documentation/articles/sql-database-develop-error-messages/#bkmk_connection_errors)
  - “暂时性错误”、“连接断开错误”部分是证明需要自动重试的暂时性错误的列表。
- - 例如，如果出现错误编号 40613，则应当重试，这表示类似于<br/>服务器“theserver”上的数据库“mydatabase”当前不可用。
+ - 例如，如果出现错误编号 40613，则应当重试，这表示类似于<br/>*服务器“theserver”上的数据库“mydatabase”当前不可用。*
 
 
 有关详细信息，请参阅：
+
 - [Azure SQL 数据库开发：操作指南主题](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
-- [Azure SQL 数据库连接问题故障排除](http://support.microsoft.com/zh-cn/kb/2980233/)
+
+<!--  (per Penny Lee, 2016/01/07.  MightyPen==GeneMi)
+- [Troubleshoot connection problems to Azure SQL Database](http://support.microsoft.com/zh-cn/kb/2980233)
+-->
 
 
 <a id="e-technologies" name="e-technologies"></a>
@@ -167,4 +174,4 @@ Azure 系统能够在 SQL 数据库服务中出现大量工作负载时动态地
 
 - [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0215_2016-->
