@@ -9,20 +9,20 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="11/20/2015"
-	wacn.date="01/15/2016"/>
+	ms.date="01/09/2016" 
+	wacn.date="02/26/2016"/>
 
 
 # 在 Azure 中启用远程桌面
 
 你可以通过远程桌面访问在 Azure 中运行的角色实例的桌面。您可以使用远程桌面连接配置虚拟机，或者排查应用程序问题。
 
-> [AZURE.NOTE]本文适用于托管为 Azure 云服务的 Node.js 应用程序。
+> [AZURE.NOTE] 本文适用于托管为 Azure 云服务的 Node.js 应用程序。
 
 
 ## 先决条件
 
-- 安装和配置 [Azure PowerShell](/documentation/articles/powershell-install-configure )。
+- 安装和配置 [Azure PowerShell](/documentation/articles/powershell-install-configure)。
 - 将 Node.js 应用部署到 Azure 云服务。有关详细信息，请参阅[生成 Node.js 应用程序并将其部署到 Azure 云服务](/documentation/articles/cloud-services-nodejs-develop-deploy-app)。
 
 
@@ -44,7 +44,7 @@
 
 	![enable-azureserviceprojectremotedesktop][enable-rdp]
 
-5.  输入以下 PowerShell cmdlet 以发布更改：
+3.  输入以下 PowerShell cmdlet 以发布更改：
 
     	Publish-AzureServiceProject
 
@@ -62,15 +62,15 @@
 
     ![实例页][3]
 
-3.  单击“连接”后，Web 浏览器会提示你保存.rdp 文件。打开此文件。（例如，如果你使用的是 Internet Explorer，请单击“打开”。）
+2.  单击“连接”后，Web 浏览器会提示你保存.rdp 文件。打开此文件。（例如，如果你使用的是 Internet Explorer，请单击“打开”。）
 
     ![提示打开或保存 .rdp 文件][4]
 
-4.  打开该文件时，会显示以下安全提示：
+3.  打开该文件时，会显示以下安全提示：
 
     ![Windows 安全性提示][5]
 
-5.  单击“连接”，将显示一个安全提示，要求输入访问该实例的凭据。输入你在 [步骤 1][步骤 1：使用 Azure PowerShell 配置服务以进行远程桌面访问] 中创建的密码，然后单击“确定”。
+4.  单击“连接”，将显示一个安全提示，要求输入访问该实例的凭据。输入你在 [步骤 1][步骤 1：使用 Azure PowerShell 配置服务以进行远程桌面访问] 中创建的密码，然后单击“确定”。
 
     ![用户名/密码提示][6]
 
@@ -111,4 +111,4 @@
   [远程访问 Azure 中的角色实例]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh124107.aspx
   [将远程桌面与 Azure 角色一起使用]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0215_2016-->
