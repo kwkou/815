@@ -9,18 +9,18 @@
 
 <tags
 	ms.service="key-vault"
-	ms.date="11/10/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="01/08/2016"
+	wacn.date="02/26/2016"/>
 
 # Azure 密钥保管库入门 #
-在大多数区域中提供了 Azure 密钥保管库。有关详细信息，请参阅[密钥保管库定价页](/home/features/key-vault#price)。
+在大多数区域中提供了 Azure 密钥保管库。有关详细信息，请参阅[密钥保管库定价页](/home/features/key-vault/#price)。
 
 ## 介绍  
 本教程将会帮助你开始使用 Azure 密钥保管库在 Azure 中创建强化容器（保管库），以存储和管理 Azure 中的加密密钥和机密。本教程将指导你完成使用 Azure PowerShell 创建包含密钥或密码（稍后可用于 Azure 应用程序）的保管库程序。然后，将会说明应用程序如何使用该密钥或密码。
 
 *估计完成时间：** 20 分钟
 
->[AZURE.NOTE]本教程未说明如何编写其中一个步骤所包括的 Azure 应用程序，但说明了如何授权应用程序使用密钥保管库中的密钥或机密。
+>[AZURE.NOTE]  本教程未说明如何编写其中一个步骤所包括的 Azure 应用程序，但说明了如何授权应用程序使用密钥保管库中的密钥或机密。
 >
 >目前，无法在 Azure 门户中配置 Azure 密钥保管库。请改用这些 Azure PowerShell 说明。或者，有关跨平台命令行接口说明，请参阅[此对应教程](/documentation/articles/key-vault-manage-with-cli)。
 
@@ -30,9 +30,9 @@
 
 若要完成本教程，你必须准备好以下各项：
 
-- Microsoft Azure 订阅。如果你没有订阅，可以注册[试用版](/pricing/1rmb-trial/)。
-- Azure PowerShell，**最低版本为 1.0.3**。若要安装 Azure PowerShell 并将其与 Azure 订阅相关联，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。安装地址：[https://github.com/Azure/azure-powershell/releases/tag/v1.1.0-January2016](https://github.com/Azure/azure-powershell/releases/tag/v1.1.0-January2016)。 如果你已安装了 Azure PowerShell，但不知道版本，请在 Azure PowerShell 控制台中键入 `(Get-Module azure -ListAvailable).Version`。如果已安装 Azure PowerShell 版本 0.9.1 到 0.9.8，仍可以使用本教程，但需要进行一些细微更改。例如，必须使用 `Switch-AzureMode AzureResourceManager` 命令，并且某些 Azure 密钥保管库命令已更改。有关版本 0.9.1 到 0.9.8 的密钥保管库 cmdlet 的列表，请参阅 [Azure 密钥保管库 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn868052(v=azure.98).aspx)。 
-- 配置为使用你在本教程中所创建的密钥或密码的应用程序。你可以从 [Microsoft 下载中心](https://www.microsoft.com/en-us/download/details.aspx?id=45343)获取示例应用程序。有关说明，请参阅随附的自述文件。
+- Microsoft Azure 订阅。如果你没有订阅，可以注册[试用版](/pricing/1rmb-trial)。
+- Azure PowerShell，**最低版本为 1.0**。若要安装 Azure PowerShell 并将其与 Azure 订阅相关联，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。如果你已安装了 Azure PowerShell，但不知道版本，请在 Azure PowerShell 控制台中键入 `(Get-Module azure -ListAvailable).Version`。如果已安装 Azure PowerShell 版本 0.9.1 到 0.9.8，仍可以使用本教程，但需要进行一些细微更改。例如，必须使用 `Switch-AzureMode AzureResourceManager` 命令，并且某些 Azure 密钥保管库命令已更改。有关版本 0.9.1 到 0.9.8 的密钥保管库 cmdlet 的列表，请参阅 [Azure 密钥保管库 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn868052(v=azure.98).aspx)。 
+- 配置为使用你在本教程中所创建的密钥或密码的应用程序。你可以从 [Microsoft 下载中心](http://www.microsoft.com/en-us/download/details.aspx?id=45343)获取示例应用程序。有关说明，请参阅随附的自述文件。
 
 
 本教程专为 Azure PowerShell 新手设计，但它假定你了解基本概念，如模块、cmdlet 和会话。有关详细信息，请参阅 [Windows PowerShell 入门](https://technet.microsoft.com/zh-cn/library/hh857337.aspx)。
@@ -107,7 +107,7 @@
     $key = Add-AzureKeyVaultKey -VaultName 'ContosoKeyVault' -Name 'ContosoFirstKey' -KeyFilePath 'c:\softkey.pfx' -KeyFilePassword $securepfxpwd
 
 
-现在，你可以通过使用密钥的 URI，引用已创建或上载到 Azure 密钥保管库的密钥。使用 ****https://ContosoKeyVault.vault.chinacloudapi.cn/keys/ContosoFirstKey** 可始终获取当前版本，而使用 ****https://ContosoKeyVault.vault.chinacloudapi.cn/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87** 可获取此特定版本。
+现在，你可以通过使用密钥的 URI，引用已创建或上载到 Azure 密钥保管库的密钥。使用 **https://ContosoKeyVault.vault.chinacloudapi.cn/keys/ContosoFirstKey** 可始终获取当前版本，而使用 **https://ContosoKeyVault.vault.chinacloudapi.cn/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87** 可获取此特定版本。
 
 若要显示此密钥的 URI，请键入：
 
@@ -121,7 +121,7 @@
 
 	$secret = Set-AzureKeyVaultSecret -VaultName 'ContosoKeyVault' -Name 'SQLPassword' -SecretValue $secretvalue
 
-现在，你可以通过使用密码的 URI，引用已添加到 Azure 密钥保管库的此密码。使用 ****https://ContosoVault.vault.chinacloudapi.cn/secrets/SQLPassword** 可始终获取当前版本，而使用 ****https://ContosoVault.vault.chinacloudapi.cn/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d** 可获取此特定版本。
+现在，你可以通过使用密码的 URI，引用已添加到 Azure 密钥保管库的此密码。使用 **https://ContosoVault.vault.chinacloudapi.cn/secrets/SQLPassword** 可始终获取当前版本，而使用 **https://ContosoVault.vault.chinacloudapi.cn/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d** 可获取此特定版本。
 
 若要显示此机密的 URI，请键入：
 
@@ -139,7 +139,7 @@
 此步骤通常由开发人员在独立的计算机上完成。这并非 Azure 密钥保管库的特有状况，在此列出是为了让过程完整。
 
 
->[AZURE.IMPORTANT]若要完成本教程，你的帐户、保管库以及将在本步骤中注册的应用程序全都必须位于相同的 Azure 目录中。
+>[AZURE.IMPORTANT] 若要完成本教程，你的帐户、保管库以及将在本步骤中注册的应用程序全都必须位于相同的 Azure 目录中。
 
 使用密钥保管库的应用程序必须使用 Azure Active Directory 的令牌进行身份验证。为此，应用程序的所有者首先必须在其 Azure Active Directory 中注册该应用程序。注册结束后，应用程序所有者将获得以下值：
 
@@ -153,7 +153,7 @@
 
 3. 单击“应用程序”。如果你的目录中尚未添加任何应用，则此页只会显示“添加应用”链接。单击该链接，或者单击命令栏上的“添加”。
 4.	在“添加应用程序”向导的“要执行什么操作?”页面上，单击“添加我的组织正在开发的应用程序”。
-5.	在“向我们说明你的应用程序”页上，指定应用程序名称，然后选择“Web 应用程序和/或 WEB API”（默认值）。单击“下一步”图标。
+5.	在“向我们说明你的应用程序”页上，指定应用程序名称，然后选择“WEB 应用程序和/或 WEB API”（默认值）。单击“下一步”图标。
 6.	在“应用程序属性”页上，为你的 Web 应用程序指定“登录 URL”和“应用程序ID URI”。如果你的应用程序没有这些值，可以在此步骤中虚构这些值（例如，可以在两个框中指定 http://test1.contoso.com）。这些 Web 应用是否存在并不重要；重要的是目录中每个应用程序的应用程序 ID URI 都不相同。目录会使用此字符串来识别你的应用程序。
 7.	单击“完成”图标以保存向导中的更改。
 8.	在“快速启动”页上，单击“配置”。
@@ -206,4 +206,4 @@
 
 有关编程参考，请参阅 [Azure 密钥保管库开发人员指南](/documentation/articles/key-vault-developers-guide)。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0215_2016-->

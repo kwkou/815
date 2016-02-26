@@ -10,7 +10,7 @@
 <tags
    ms.service="key-vault"
    ms.date="09/22/2015"
-   wacn.date="01/29/2016"/>
+   wacn.date="02/26/2016"/>
 
 # Azure 密钥保管库服务限制
 
