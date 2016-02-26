@@ -1,31 +1,26 @@
 <properties 
-	pageTitle="使用表存储构建 Web 应用(Node.js) | Microsoft Azure 教程" 
-	description="本教程以“使用 Express 构建 Web 应用”教程为基础，演示如何添加 Azure 存储服务和 Azure 模块。" 
+	pageTitle="使用表存储构建 Web 应用 (Node.js) | Microsoft Azure" 
+	description="本教程以“使用 Express 构建 Web 应用程序”教程为基础，演示如何添加 Azure 存储服务和 Azure 模块。" 
 	services="cloud-services, storage" 
 	documentationCenter="nodejs" 
-	authors="TomArcher" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags 
 	ms.service="storage" 
-	ms.date="09/01/2015" 
-	wacn.date="01/21/2016"/>
+	ms.date="01/09/2016" 
+	wacn.date="02/26/2016"/>
 
-
-
-
-
-
-# 使用存储构建 Node.js Web 应用
+# 使用存储构建 Node.js Web 应用程序
 
 ## 概述
 
-在本教程中，你将通过将用于 Node.js 的 Microsoft Azure 客户端库与数据管理服务结合使用，来扩展在[使用 Express 生成 Node.js Web 应用]教程中创建的应用程序。你将扩展你的应用程序以创建可部署到 Azure 的基于 Web 的任务列表应用程序。用户可以通过任务列表来检索任务、添加新任务以及将任务标记为已完成。
+在本教程中，你将通过将用于 Node.js 的 Microsoft Azure 客户端库与数据管理服务结合使用，来扩展在[使用 Express 生成 Node.js Web 应用程序]教程中创建的应用程序。你将扩展你的应用程序以创建可部署到 Azure 的基于 Web 的任务列表应用程序。用户可以通过任务列表来检索任务、添加新任务以及将任务标记为已完成。
 
 任务项存储在 Azure 存储空间中。Azure 存储空间提供了具有容错能力且可用性非常好的非结构化数据存储。Azure 存储空间包含一些可用来存储和访问数据的数据结构，你可以通过 Azure SDK for Node.js 中包含的 API 或通过 REST API 利用存储服务。有关详细信息，请参阅[在 Azure 中存储和访问数据]。
 
-本教程假定你已完成 [Node.js Web 应用]和[使用 Express 生成 Node.js][Node.js Web 应用lication using Express] 教程。
+本教程假定你已完成 [Node.js Web 应用程序]和[使用 Express 生成 Node.js][Node.js Web Application using Express] 教程。
 
 你将学习以下内容：
 
@@ -40,7 +35,7 @@
 
 若要访问 Azure 存储空间，你需要传入存储凭据。为此，您将使用 web.config 应用程序设置。这些设置将作为环境变量传递给 Node，然后再由 Azure SDK 进行读取。
 
-> [AZURE.NOTE]仅在将应用程序部署到 Azure 时才使用存储凭据。应用程序在模拟器中运行时将使用存储模拟器。
+> [AZURE.NOTE] 仅在将应用程序部署到 Azure 时才使用存储凭据。应用程序在模拟器中运行时将使用存储模拟器。
 
 执行下列步骤可检索存储帐户凭据并将这些凭据添加到 web.config 设置中：
 
@@ -54,7 +49,7 @@
 
 	这样可以检索与托管服务关联的存储帐户和帐户密钥的列表。
 
-	> [AZURE.NOTE]由于在你部署服务时 Azure SDK 会创建一个存储帐户，因此在前面的指南中部署你的应用程序之后应当已存在一个存储帐户。
+	> [AZURE.NOTE] 由于在你部署服务时 Azure SDK 会创建一个存储帐户，因此在前面的指南中部署你的应用程序之后应当已存在一个存储帐户。
 
 4.  打开 **ServiceDefinition.csdef** 文件，该文件包含将应用程序部署到 Azure 时所使用的环境设置：
 
@@ -80,23 +75,23 @@
 		node-uuid@1.4.1 node_modules\node-uuid
 
 		nconf@0.6.9 node_modules\nconf
-		+-- ini@1.1.0
-		+-- async@0.2.9
-		+-- optimist@0.6.0 (wordwrap@0.0.2, minimist@0.0.8)
+		├── ini@1.1.0
+		├── async@0.2.9
+		└── optimist@0.6.0 (wordwrap@0.0.2, minimist@0.0.8)
 
         azure-storage@0.1.0 node_modules\azure-storage
-		+-- extend@1.2.1
-		+-- xmlbuilder@0.4.3
-		+-- mime@1.2.11
-		+-- underscore@1.4.4
-		+-- validator@3.1.0
-		+-- node-uuid@1.4.1
-		+-- xml2js@0.2.7 (sax@0.5.2)
-		+-- request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
+		├── extend@1.2.1
+		├── xmlbuilder@0.4.3
+		├── mime@1.2.11
+		├── underscore@1.4.4
+		├── validator@3.1.0
+		├── node-uuid@1.4.1
+		├── xml2js@0.2.7 (sax@0.5.2)
+		└── request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
 
 ##在 Node 应用程序中使用表服务
 
-在本节中，你将通过添加一个包含你的任务模型的 **task.js** 文件来扩展 **express** 命令创建的基本应用程序。你还将修改现有 **app.js** 并创建使用该模型的新** tasklist.js** 文件。
+在本节中，你将通过添加一个包含你的任务模型的 **task.js** 文件来扩展 **express** 命令创建的基本应用程序。你还将修改现有 **app.js** 并创建使用该模型的新 **tasklist.js** 文件。
 
 ### 创建模型
 
@@ -177,7 +172,7 @@
 		  }
 		}
 
-6. 保存并关闭 **task.js **文件。
+6. 保存并关闭 **task.js** 文件。
 
 ### 创建控制器
 
@@ -268,7 +263,7 @@
 	
 4. 保存 **app.js** 文件。
 
-###修改索引视图
+### 修改索引视图
 
 1. 将目录更改为 **views** 目录并在文本编辑器中打开 **index.jade** 文件。
 
@@ -313,11 +308,11 @@
 
 3. 保存并关闭 **index.jade** 文件。
 
-###修改全局布局
+### 修改全局布局
 
 **views** 目录中的 **layout.jade** 文件用作其他 .**jade** 文件的全局模板。在此步骤中，你将对其进行修改以使用 [Twitter Bootstrap](https://github.com/twbs/bootstrap)（一个可以轻松设计美观 Web 应用的工具包）。
 
-1. 下载并提取 [Twitter Bootstrap](http://getbootstrap.com/) 的文件。将 **bootstrap.min.css** 文件从 **bootstrap\\dist\\css** 文件夹复制到你的 tasklist 应用程序的 **public\\stylesheets** 目录中。
+1. 下载并提取 [Twitter Bootstrap](http://getbootstrap.com) 的文件。将 **bootstrap.min.css** 文件从 **bootstrap\\dist\\css** 文件夹复制到你的 tasklist 应用程序的 **public\\stylesheets** 目录中。
 
 2. 从 **views** 文件夹中，用文本编辑器打开 **layout.jade** 并将其内容替换为以下代码：
 
@@ -354,11 +349,11 @@
 
     PS C:\node\tasklist\WebRole1> Publish-AzureServiceProject -name myuniquename -location datacentername -launch
 
-将 **myuniquename** 替换为此应用程序的唯一名称。将 **datacentername** 替换为 Azure 数据中心的名称，例如“美国西部”。
+将 **myuniquename** 替换为此应用程序的唯一名称。将 **datacentername** 替换为 Azure 数据中心的名称，例如“中国北部”。
 
 部署完成后，你将看到如下响应：
 
-	PS C:\node\tasklist> publish-azureserviceproject -servicename tasklist -location "West US"
+	PS C:\node\tasklist> publish-azureserviceproject -servicename tasklist -location "China North"
 	WARNING: Publishing tasklist to Microsoft Azure. This may take several minutes...
 	WARNING: 2:18:42 PM - Preparing runtime deployment for service 'tasklist'
 	WARNING: 2:18:42 PM - Verifying storage account 'tasklist'...
@@ -369,15 +364,15 @@
 	WARNING: 2:22:48 PM - Created Deployment ID: b7134ab29b1249ff84ada2bd157f296a.
 	WARNING: 2:22:48 PM - Initializing...
 	WARNING: 2:22:49 PM - Instance WebRole1_IN_0 of role WebRole1 is ready.
-	WARNING: 2:22:50 PM - Created  Website URL: http://tasklist.chinacloudapp.cn/.
+	WARNING: 2:22:50 PM - Created Website URL: http://tasklist.chinacloudapp.cn/.
 
-	As before, because you specified the **-launch** option, the browser opens and displays your application running in Azure when publishing is completed.
+与先前一样，由于你指定了 **-launch** 选项，因此在发布完成后，浏览器将打开并显示正在 Azure 中运行的应用程序。
 
 ![浏览器窗口中显示 My Task List 页面。URL 表明该页面现在托管在 Azure 上。](./media/storage-nodejs-use-table-storage-cloud-service-app/getting-started-1.png)
 
 ## 停止并删除应用程序
 
-在部署应用程序后，您可能希望禁用它，以避免在免费试用期内产生费用或生成和部署其他应用程序。
+在部署应用程序后，你可能希望禁用它，以避免在试用期内产生费用或生成和部署其他应用程序。
 
 Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用程序部署之后就会开始使用服务器时间，即使相关实例并未运行且处于停止状态也是如此。
 
@@ -389,7 +384,7 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
 
 	停止服务可能需要花费几分钟时间。在服务停止时，你会收到一条指示服务已停止的消息。
 
-2.  若要删除服务，请调用以下 cmdlet：
+3.  若要删除服务，请调用以下 cmdlet：
 
         PS C:\node\tasklist\WebRole1> Remove-AzureService contosotasklist
 
@@ -397,10 +392,10 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
 
 	删除服务可能需要花费几分钟时间。删除服务后，你将收到一条指示服务已被删除的消息。
 
-  [Node.js Web 应用lication using Express]: /develop/nodejs/
-  [使用 Express 生成 Node.js Web 应用]: /develop/nodejs/
-  [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433040.aspx
-  [Node.js Web 应用]: /develop/nodejs/
+  [Node.js Web Application using Express]: /documentation/articles/cloud-services-nodejs-develop-deploy-express-app/
+  [使用 Express 生成 Node.js Web 应用程序]: /documentation/articles/cloud-services-nodejs-develop-deploy-express-app/
+  [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+  [Node.js Web 应用程序]: /documentation/articles/cloud-services-nodejs-develop-deploy-app/
  
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0215_2016-->

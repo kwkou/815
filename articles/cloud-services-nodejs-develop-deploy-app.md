@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="11/20/2015"
-	wacn.date="01/15/2016"/>
+	ms.date="01/09/2016"
+	wacn.date="02/26/2016"/>
 
 
 # 生成 Node.js 应用程序并将其部署到 Azure 云服务
@@ -23,7 +23,7 @@
 
 有关云服务以及如何将它们与 Azure 网站和虚拟机进行比较的更多信息，请参阅 [Azure 网站、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm)。
 
->[AZURE.TIP]想要构建一个简单的网站？ 如果你的方案只涉及一个简单的网站前端，则可以考虑<a href="/documentation/articles/app-service-web/web-sites-nodejs-develop-deploy-mac">使用轻型网站</a>。 随着你的网站的不断扩大和你的需求的变化，你可以轻松升级到云服务。
+>[AZURE.TIP] 想要构建一个简单的网站？ 如果你的方案只涉及一个简单的网站前端，则可以考虑[使用轻型 Web 应用](/documentation/articles/web-sites-nodejs-develop-deploy-mac)。 随着你的 Web 应用的不断扩大和你的需求的变化，你可以轻松升级到云服务。
 
 
 通过学习本教程，你将可以生成一个托管在 Web 角色中的简单 Web 应用程序。你将使用计算模拟器在本地测试你的应用程序，然后使用 PowerShell 命令行工具来部署该应用程序。
@@ -34,10 +34,10 @@
 
 ## 先决条件
 
-> [AZURE.NOTE]本教程使用 Azure PowerShell，因此需要在 Windows 上运行。
+> [AZURE.NOTE] 本教程使用 Azure PowerShell，因此需要在 Windows 上运行。
 
-- 安装和配置 [Azure PowerShell](/documentation/articles/powershell-install-configure )。
-- 下载并安装 [Azure SDK for .NET 2.7](http://www.microsoft.com/zh-cn/download/details.aspx?id=48178)。在安装设置中，选择：
+- 安装和配置 [Azure PowerShell](/documentation/articles/powershell-install-configure)。
+- 下载并安装 [Azure SDK for .NET 2.7](http://www.microsoft.com/en-us/download/details.aspx?id=48178)。在安装设置中，选择：
     - MicrosoftAzureAuthoringTools
     - MicrosoftAzureComputeEmulator
 
@@ -72,7 +72,7 @@
 
 	**Add-azurenodewebrole** cmdlet 将创建一个基本 Node.js 应用程序。它还会修改 **.csfg** 和 **.csdef** 文件，以添加新角色的配置条目。
 
-	> [AZURE.NOTE]如果你不指定角色名称，将使用默认名称。可以提供一个名称作为第一个 cmdlet 参数：`Add-AzureNodeWebRole MyRole`
+	> [AZURE.NOTE] 如果你不指定角色名称，将使用默认名称。可以提供一个名称作为第一个 cmdlet 参数：`Add-AzureNodeWebRole MyRole`
 
 
 Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（默认为 **WebRole1**）的目录中。代码如下：
@@ -88,7 +88,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 
 ## 将应用程序部署到 Azure
 
-[AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
+	[AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 
 ### 下载 Azure 发布设置
@@ -108,7 +108,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
         Import-AzurePublishSettingsFile -Environment AzureChinaCloud [path to file]
 
 
-	> [AZURE.NOTE]导入发布设置之后，请考虑删除下载的 .publishSettings 文件，因为它包含了可供他人访问你帐户的信息。
+	> [AZURE.NOTE] 导入发布设置之后，请考虑删除下载的 .publishSettings 文件，因为它包含了可供他人访问你帐户的信息。
 
 
 ### 发布应用程序
@@ -129,7 +129,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 ![Publish-AzureService 命令的输出](./media/cloud-services-nodejs-develop-deploy-app/node19.png)
 
 > [AZURE.NOTE]
-> 部署应用程序并在首次发布该程序后使其可供使用可能需要花费几分钟时间。
+部署应用程序并在首次发布该程序后使其可供使用可能需要花费几分钟时间。
 
 在部署完成后，系统会打开一个浏览器窗口并导航到云服务。
 
@@ -172,7 +172,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 
 	![Remove-AzureService 命令的状态](./media/cloud-services-nodejs-develop-deploy-app/node49.png)
 
-	> [AZURE.NOTE]删除服务不会删除最初发布服务时所创建的存储帐户，并且你仍需为使用的存储付费。有关删除存储帐户的详细信息，请参阅[如何从 Azure 订阅中删除存储帐户](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh531562.aspx)。
+	> [AZURE.NOTE] 删除服务不会删除最初发布服务时所创建的存储帐户，并且你仍需为使用的存储付费。有关删除存储帐户的详细信息，请参阅[如何从 Azure 订阅中删除存储帐户](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh531562.aspx)。
 
 ## 后续步骤
 
@@ -190,8 +190,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 [Internet Explorer displaying the save as dialog for the publishSettings file.]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-14.png
 
 [The full status output of the Publish-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node20.png
-[How to Delete a Storage Account from an Azure Subscription]: /documentation/articles/storage-manage-storage-account/
 [powershell-menu]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png
  
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0215_2016-->

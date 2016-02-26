@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="为云服务配置 SSL | Microsoft Azure" 
+	pageTitle="为云服务配置 SSL（经典）| Microsoft Azure" 
 	description="了解如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护您的应用程序。" 
 	services="cloud-services" 
 	documentationCenter=".net" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="09/22/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="01/15/2016"
+	wacn.date="02/26/2016"/>
 
 
 
@@ -18,11 +18,12 @@
 # 在 Azure 中为应用程序配置 SSL
 
 > [AZURE.SELECTOR]
-- [Azure Portal](/documentation/articles/cloud-services-configure-ssl-certificate)
+- [Azure portal](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
+- [Azure classic portal](/documentation/articles/cloud-services-configure-ssl-certificate)
 
 安全套接字层 (SSL) 加密是用于保护通过 Internet 发送的数据的最常见方法。此常见任务讨论了如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护你的应用程序。
 
-> [AZURE.NOTE]本任务中的过程适用于 Azure 云服务；对于 Web 应用，请参阅[为 Azure Web 应用配置 SSL 证书](/documentation/articles/web-sites-configure-ssl-certificate)。
+> [AZURE.NOTE] 本任务中的过程适用于 Azure 云服务；对于应用程序服务，请参阅[此文章](/documentation/articles/web-sites-configure-ssl-certificate)。
 
 此任务将使用生产部署；本主题的末尾提供了有关如何使用过渡部署的信息。
 
@@ -39,7 +40,7 @@
 
 -   证书必须包含私钥。
 -   必须为密钥交换创建证书，并且该证书可导出到个人信息交换 (.pfx) 文件。
--   证书的使用者名称必须与用于访问云服务的域匹配。你无法从证书颁发机构 (CA) 处获取针对 chinacloudapp.cn 域的 SSL 证书。你必须获取在访问服务时要使用的自定义域名。在从 CA 处请求证书时，该证书的使用者名称必须与用于访问应用程序的自定义域名匹配。例如，如果自定义域名为 **contoso.com**，则将要从 CA 处请求用于 ****.contoso.com** 或 **www.contoso.com** 的证书。
+-   证书的使用者名称必须与用于访问云服务的域匹配。你无法从证书颁发机构 (CA) 处获取针对 chinacloudapp.cn 域的 SSL 证书。你必须获取在访问服务时要使用的自定义域名。在从 CA 处请求证书时，该证书的使用者名称必须与用于访问应用程序的自定义域名匹配。例如，如果自定义域名为 **contoso.com**，则将要从 CA 处请求用于 ***.contoso.com** 或 **www.contoso.com** 的证书。
 -   该证书必须使用至少 2048 位加密。
 
 出于测试目的，可以[创建](/documentation/articles/cloud-services-certs-create)并使用自签名证书。自签名证书不通过 CA 进行身份验证并可使用 chinacloudapp.cn 域作为 Web 应用 URL。例如，以下任务使用其公用名 (CN) 为 **sslexample.chinacloudapp.cn** 的自签名证书。
@@ -62,7 +63,7 @@
         ...
         </WebRole>
 
-    **Certificates** 节定义了我们的证书的名称、其位置及其所在存储的名称。我们已选择将此证书存储到 CA（证书颁发机构）存储中，但你也可以选择其他选项。有关详细信息，请参阅[如何将证书与服务关联][]。
+    **Certificates** 节定义了我们的证书的名称、其位置及其所在存储的名称。
 
 2.  在你的服务定义文件中，在 **Endpoints** 节中添加 **InputEndpoint** 元素以启用 HTTPS：
 
@@ -91,7 +92,7 @@
 
     对服务定义文件进行的所有必需更改已完成，但您仍需要将证书信息添加到服务配置文件中。
 
-4.  在你的服务配置文件 (CSCFG) ServiceConfiguration.Cloud.cscfg 中，在** Role** 节中添加 **Certificates **节，并将下面显示的示例指纹值替换为你的证书的指纹值：
+4.  在你的服务配置文件 (CSCFG) ServiceConfiguration.Cloud.cscfg 中，在 **Role** 节中添加 **Certificates** 节，并将下面显示的示例指纹值替换为你的证书的指纹值：
 
         <Role name="Deployment">
         ...
@@ -109,9 +110,9 @@
 
 ## 步骤 3：上载证书
 
-已将部署包更新为使用此证书，并且已添加 HTTPS 终结点。现在你可以使用管理门户将包和证书上载到 Azure。
+已将部署包更新为使用此证书，并且已添加 HTTPS 终结点。现在你可以使用 Azure 经典门户将包和证书上载到 Azure。
 
-1. 登录到 [Azure 管理门户][]。 
+1. 登录到 [Azure 经典门户][]。 
 2. 在左侧导航窗格中单击“云服务”。
 3. 单击所需的云服务。
 4. 单击“证书”选项卡。
@@ -128,7 +129,7 @@
 
 在 Azure 中启动并运行部署后，便可以使用 HTTPS 连接到该部署。
 
-1.  在管理门户中，选择你的部署，然后单击“站点 URL”下的链接。
+1.  在 Azure 经典门户中选择你的部署，然后单击“站点 URL”下的链接。
 
     ![确定 Web 应用 URL][2]
 
@@ -138,7 +139,7 @@
 
     ![SSL 示例 Web 应用][3]
 
-若要对过渡部署而非生产部署使用 SSL，你首先需要确定用于过渡部署的 URL。将云服务部署到过渡环境，而不包括证书或任何证书信息。部署后，你可以确定基于 GUID 的 URL，此 URL 将在管理门户的“ Web 应用 URL”字段中列出。使用等效于基于 GUID 的 URL（例如，**32818777-6e77-4ced-a8fc-57609d404462.chinacloudapp.cn**）的公用名 (CN) 创建一个证书，再使用管理门户将该证书添加到过渡云服务，将该证书的信息添加到你的 CSDEF 和 CSCFG 文件，重新打包你的应用程序，然后将过渡部署更新为使用新的包和 CSCFG 文件。
+若要对过渡部署而非生产部署使用 SSL，你首先需要确定用于过渡部署的 URL。将云服务部署到过渡环境，而不包括证书或任何证书信息。部署后，你可以确定基于 GUID 的 URL，此 URL 将在 Azure 经典门户的“Web 应用 URL”字段中列出。使用等效于基于 GUID 的 URL（例如，**32818777-6e77-4ced-a8fc-57609d404462.chinacloudapp.cn**）的公用名 (CN) 创建一个证书，再使用 Azure 经典门户将该证书添加到过渡云服务，将该证书的信息添加到你的 CSDEF 和 CSCFG 文件，重新打包你的应用程序，然后将过渡部署更新为使用新的包和 CSCFG 文件。
 
 ## 后续步骤
 
@@ -148,11 +149,11 @@
 * [管理云服务](/documentation/articles/cloud-services-how-to-manage)。
 
 
-  [Azure 管理门户]: http://manage.windowsazure.cn
+  [Azure 经典门户]: http://manage.windowsazure.cn
   [0]: ./media/cloud-services-configure-ssl-certificate/CreateCloudService.png
   [1]: ./media/cloud-services-configure-ssl-certificate/AddCertificate.png
   [2]: ./media/cloud-services-configure-ssl-certificate/CopyURL.png
   [3]: ./media/cloud-services-configure-ssl-certificate/SSLCloudService.png
   [4]: ./media/cloud-services-configure-ssl-certificate/AddCertificateComplete.png
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0215_2016-->
