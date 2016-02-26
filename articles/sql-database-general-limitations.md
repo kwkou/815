@@ -8,18 +8,18 @@
    editor="monicar" />
 <tags 
    ms.service="sql-database"
-   ms.date="11/16/2015"
-   wacn.date="12/22/2015" />
+   ms.date="01/15/2016"
+   wacn.date="02/26/2016" />
 
 # Azure SQL 数据库的一般性限制和指导原则
 
-本主题提供 Azure SQL 数据库的一般性限制与指导原则。若要全面了解配额、资源管理和支持，请参阅本主题末尾的[其他资源](/documentation/articles/#additional-guidelines)。
+本主题提供 Azure SQL 数据库的一般性限制与指导原则。若要全面了解配额、资源管理和支持，请参阅本主题末尾的[其他资源](#additional-guidelines)。
 
 ## 连接
 
- - 不支持 Windows 身份验证。请参阅[管理 Azure SQL 数据库的数据库和登录名](sql-database-manage-logins)。 
+ - 不支持 Windows 身份验证。请参阅[管理 Azure SQL 数据库的数据库和登录名](/documentation/articles/sql-database-manage-logins)。 
 
- - Microsoft Azure SQL 数据库支持表格格式数据流 (TDS) 协议客户端 7.3 版或更高版本。
+ - Microsoft Azure SQL 数据库支持表格格式数据流 (TDS) 协议客户端 7.3 或更高版本。
 
  - 只允许 TCP/IP 连接。
 
@@ -28,12 +28,6 @@
 ## SQL Server 代理/作业
 
 Microsoft Azure SQL 数据库不支持 SQL Server 代理或作业。不过，你可以在本地 SQL Server 上运行 SQL Server 代理并连接到 Microsoft Azure SQL 数据库。
-
-## 事务
-
-Microsoft Azure SQL 数据库不支持分布式事务，分布式事务是影响若干资源的事务。有关详细信息，请参阅[分布式事务 (ADO.NET)](https://msdn.microsoft.com/zh-cn/library/ms254973.aspx)。SQL 数据库可能不会跨故障转移保留当前数据库 (DBTS) 的未提交的 timestamp 值。
-
-> [AZURE.NOTE]在某些情况下，事务会自动升级为分布式事务。有关详细信息，请参阅[与 SQL Server 的系统事务集成](https://msdn.microsoft.com/zh-cn/library/ms172070.aspx)。
 
 ## SQL Server 排序规则支持
 
@@ -65,4 +59,4 @@ Microsoft Azure SQL 数据库使用的默认数据库排序规则是 **SQL\_LATI
 
 - 有关驱动程序可用性和 SQL 数据库支持的信息，请参阅 [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries)。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0215_2016-->

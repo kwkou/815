@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/10/2015"
-	wacn.date="01/15/2016"/>
+	ms.date="01/06/2016"
+	wacn.date="02/26/2016"/>
 
 
 # 对 SQL 数据库的暂时性故障和连接错误进行故障排除
@@ -113,11 +113,11 @@
 
 
 若要使此操作可行，请从网络中断开计算机的连接，再启动你的程序。然后，你的程序将识别导致它执行以下操作的运行时参数：
-1.暂时将 11001 添加到视为暂时性故障的错误列表。
-2.像往常一样尝试首次连接。
-3.在捕获该错误后，从列表中删除 11001。
-4.显示一条消息，提示用户将计算机接入网络。
- - 使用 **Console.ReadLine** 方法或包含“确定”按钮的对话框暂停进一步的执行。将计算机接入网络后，用户按 Enter 键
+1. 暂时将 11001 添加到视为暂时性故障的错误列表。
+2. 像往常一样尝试首次连接。
+3. 在捕获该错误后，从列表中删除 11001。
+4. 显示一条消息，提示用户将计算机接入网络。
+ - 使用 **Console.ReadLine** 方法或包含“确定”按钮的对话框暂停进一步的执行。将计算机接入网络后，用户按 Enter 键。
 5. 重新尝试连接，预期将会成功。
 
 
@@ -125,7 +125,7 @@
 
 
 在首次连接尝试之前，程序可以故意拼错用户名。错误将是：
-- **SqlException.Number** = 18456
+- **SqlException.Number** = 18456 
 - 消息：“用户 'WRONG\_MyUserName' 登录失败。”
 
 
@@ -133,11 +133,11 @@
 
 
 若要使此操作可行，你的程序可以识别导致它执行以下操作的运行时参数：
-1.暂时将 18456 添加到视为暂时性故障的错误列表。
-2.故意将“WRONG\_”添加到用户名。
-3.在捕获该错误后，从列表中删除 18456。
-4.从用户名中删除“WRONG\_”。
-5.重新尝试连接，预期将会成功。
+1. 暂时将 18456 添加到视为暂时性故障的错误列表。
+2. 故意将“WRONG\_”添加到用户名。
+3. 在捕获该错误后，从列表中删除 18456。
+4. 从用户名中删除“WRONG\_”。
+5. 重新尝试连接，预期将会成功。
 
 
 <a id="a-connection-connection-string" name="a-connection-connection-string"></a>
@@ -155,7 +155,7 @@
 ### 连接重试的 .NET SqlConnection 参数
 
 
-如果客户端程序使用 .NET Framework 类 **System.Data.SqlClient.SqlConnection** 连接 Azure SQL 数据库，应使用 .NET 4.5.1 或更高版本，以便可以利用其连接重试功能。该功能的详细信息在[此处](http://go.microsoft.com/fwlink/?linkid=393996)。
+如果客户端程序使用 .NET Framework 类 **System.Data.SqlClient.SqlConnection** 连接 Azure SQL 数据库，应使用 .NET 4.6.1 或更高版本，以便可以利用其连接重试功能。该功能的详细信息在[此处](http://go.microsoft.com/fwlink/?linkid=393996)。
 
 
 <!--
@@ -173,7 +173,6 @@
 具体而言，所选的值应使以下等式成立：
 
 - 连接超时值 = ConnectRetryCount * ConnectionRetryInterval
-
 
 例如，如果计数 = 3 且间隔 = 10 秒，超时值仅为 29 秒未给系统足够的时间进行其第三次也是最后一次连接重试，因为：29 < 3 * 10。
 
@@ -242,13 +241,13 @@
 
 <a id="d-connection-ado-net-4-5" name="d-connection-ado-net-4-5"></a>
 
-## 连接：ADO.NET 4.5
+## 连接：ADO.NET 4.6.1
 
 
-如果你的程序使用 **System.Data.SqlClient.SqlConnection** 等 ADO.NET 类来连接到 Azure SQL 数据库，我们建议使用 .NET Framework 4.5 或更高版本。
+如果你的程序使用 **System.Data.SqlClient.SqlConnection** 等 ADO.NET 类来连接到 Azure SQL 数据库，我们建议使用 .NET Framework 4.6.1 或更高版本。
 
 
-ADO.NET 4.5：
+ADO.NET 4.6.1：
 - 添加了对 TDS 7.4 协议的支持。这包括 4.0 所不具备的连接增强功能。
 - 支持连接池。这包括有效验证提供给程序的连接对象是否正常运行的功能。
 
@@ -257,7 +256,7 @@ ADO.NET 4.5：
 
 
 如果使用的是 ADO.NET 4.0 或更旧版本，我们建议升级到最新的 ADO.NET。
-- 从 2015年 7 月开始，你可以[下载 ADO.NET 4.6](http://blogs.msdn.com/b/dotnet/archive/2015/07/20/announcing-net-framework-4-6.aspx)。
+- 从 2015年 11 月开始，你可以[下载 ADO.NET 4.6.1](http://blogs.msdn.com/b/dotnet/archive/2015/11/30/net-framework-4-6-1-is-now-available.aspx)。
 
 
 <a id="e-diagnostics-test-utilities-connect" name="e-diagnostics-test-utilities-connect"></a>
@@ -290,7 +289,7 @@ ADO.NET 4.5：
 	将示例值更改为你的 IP 地址）。
 
 
-在 Windows 上，[PortQry.exe](http://www.microsoft.com/zh-cn/download/details.aspx?id=17148) 实用程序可能很有用。以下是在 Azure SQL 数据库服务器上查询端口情况，以及在便携式计算机上运行的的示例执行：
+在 Windows 上，[PortQry.exe](http://www.microsoft.com/en-us/download/details.aspx?id=17148) 实用程序可能很有用。以下是在 Azure SQL 数据库服务器上查询端口情况，以及在便携式计算机上运行的的示例执行：
  
 
 	[C:\Users\johndoe]
@@ -389,8 +388,7 @@ database_xml_deadlock_report  2015-10-16 20:28:01.0090000  NULL   NULL   NULL   
 ## Enterprise Library 6
 
 
-Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服务（包括 Azure SQL 数据库服务）的稳健客户端。首先，可以访问 
-- [Enterprise Library 6 – 2013年 4 月](http://msdn.microsoft.com/zh-cn/library/dn169621%28v=pandp.60%29.aspx)，找到 EntLib60 可以提供帮助的每个领域的相关专题
+Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服务（包括 Azure SQL 数据库服务）的稳健客户端。首先，可以访问 [Enterprise Library 6 – 2013年 4 月](http://msdn.microsoft.com/zh-cn/library/dn169621%28v=pandp.60%29.aspx)，找到 EntLib60 可以提供帮助的每个领域的相关专题
 
 
 处理暂时性故障的重试逻辑是 EntLib60 可以帮助的一个领域：
@@ -401,7 +399,7 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 - [代码示例：Enterprise Library 6 中用于连接到 SQL 数据库的 C# 重试逻辑](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows)
 
 
-> [AZURE.NOTE]EntLib60 的源代码可公开[下载](http://go.microsoft.com/fwlink/p/?LinkID=290898)。Microsoft 不打算对 EntLib 做进一步的功能或维护更新。
+> [AZURE.NOTE] EntLib60 的源代码可公开[下载](http://go.microsoft.com/fwlink/p/?LinkID=290898)。Microsoft 不打算对 EntLib 做进一步的功能或维护更新。
 
 
 ### 用于暂时性故障和重试的 EntLib60 类
@@ -409,7 +407,7 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 
 以下 EntLib60 类对重试逻辑特别有用。所有这些类都包含在 **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling** 命名空间或其子级中：
 
-在命名空间 **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling** 中：
+*在命名空间 **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling** 中：*
 
 - **RetryPolicy** 类
  - **ExecuteAction** 方法
@@ -434,7 +432,7 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 
 以下是 EntLib60 相关信息的链接：
 
-- 免费[书籍下载：Microsoft Enterprise Library 版本 2 开发人员指南](http://www.microsoft.com/zh-cn/download/details.aspx?id=41145)
+- 免费[书籍下载：Microsoft Enterprise Library 版本 2 开发人员指南](http://www.microsoft.com/en-us/download/details.aspx?id=41145)
 
 - [Enterprise Library - 暂时性故障处理应用程序块 6.0](http://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling) 的 NuGet 下载
 
@@ -451,7 +449,8 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 - 日志记录块可以从日志目标抽象化日志记录功能，使应用程序代码保持一致，无论目标日志记录存储的位置和类型为何。
 
 
-有关详细信息，请参阅：[5 - 像滚圆木一样容易：使用日志记录应用程序块](https://msdn.microsoft.com/zh-cn/library/dn440731%28v=pandp.60%29.aspx)
+有关详细信息，请参阅：
+[5 - 像滚圆木一样容易：使用日志记录应用程序块](https://msdn.microsoft.com/zh-cn/library/dn440731%28v=pandp.60%29.aspx)
 
 
 ### EntLib60 IsTransient 方法的源代码
@@ -536,4 +535,4 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 
 - [*重试*是 Apache 2.0 授权的通用重试库，它以 **Python** 编写，可以简化向几乎任何程序添加重试行为的任务。](https://pypi.python.org/pypi/retrying)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0215_2016-->

@@ -8,12 +8,14 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="11/09/2015"
-    wacn.date="01/05/2016" />
+    ms.date="01/06/2016"
+    wacn.date="02/26/2016" />
 
 # 适用于跨数据库查询的弹性数据库查询（垂直分区）
 
 本文档说明如何为跨数据库查询方案（垂直分区）设置弹性查询，以及如何执行查询。有关垂直分区方案的定义，请参阅 [Azure SQL 数据库弹性数据库查询概述（预览版）](/documentation/articles/sql-database-elastic-query-overview)。
+
+![跨不同数据库中的表进行查询][1]
 
 ## 创建数据库对象
 
@@ -46,7 +48,7 @@
     DROP MASTER KEY;   
 
  
-请确保 *< username>* 中不包括任何“@servername”后缀。
+请确保 *< username>* 中不包括任何 *“@servername”* 后缀。
 
 ### 1\.2 外部数据源
 
@@ -178,6 +180,9 @@ DATA\_SOURCE 子句定义用于外部表的外部数据源（即，在垂直分�
 
 
 <!--Image references-->
+[1]: ./media/sql-database-elastic-query-vertical-partitioning/verticalpartitioning.png
+
+
 <!--anchors-->
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0215_2016-->

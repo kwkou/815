@@ -10,8 +10,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="12/14/2015"
-   wacn.date="01/29/2016"/>
+   ms.date="01/15/2016"
+   wacn.date="02/26/2016"/>
 
 # Azure SQL 数据库 Transact-SQL 的差异
 
@@ -54,7 +54,6 @@ SQL 数据库 V12 支持相应 SQL Server 2016 Transact-SQL 语句中存在的�
 - 数据库关系图
 - 数据库邮件
 - DATABASEPROPERTY（改用 DATABASEPROPERTYEX）
-- 分布式事务
 - EXECUTE AS 登录名
 - 加密：可扩展密钥管理
 - 事件：事件、事件通知、查询通知
@@ -103,4 +102,4 @@ Transact-SQL 参考包含从 SQL Server 2008 到最新版本的相关主题。�
 
 在某些情况下，产品中可能使用了某个主题的常规主旨，但产品之间存在细微的差异。在适当的情况下，我们会在主题的中间位置指出差异。
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0215_2016-->

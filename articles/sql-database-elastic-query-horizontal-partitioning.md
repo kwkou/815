@@ -4,18 +4,20 @@
     services="sql-database"
     documentationCenter=""  
     manager="jeffreyg"
-    authors="sidneyh"/>
+    authors="torsteng"/>
 
 <tags
     ms.service="sql-database"
-    ms.date="10/15/2015"
-    wacn.date="12/22/2015" />
+    ms.date="01/06/2016"
+    wacn.date="02/26/2016" />
 
 # 用于分片的弹性数据库查询（水平分区）
 
 本文档说明如何为水平分区方案设置弹性数据库查询以及如何执行查询。有关水平分区方案的定义，请参阅[弹性数据库查询概述（预览版）](/documentation/articles/sql-database-elastic-query-overview)。
 
-该功能是 Azure SQL [数据库弹性数据库功能集](/documentation/articles/sql-database-elastic-scale)的一部分。
+![跨分片进行查询][1]
+
+该功能是 Azure SQL [数据库弹性数据库功能集](/documentation/articles/sql-database-elastic-scale-introduction)的一部分。
  
 ## 创建数据库对象
 
@@ -31,7 +33,7 @@
 
 * [CREATE/DROP EXTERNAL TABLE](https://msdn.microsoft.com/zh-cn/library/dn935021.aspx)
 
-### 1.1 数据库范围的主密钥和凭据 
+### 1\.1 数据库范围的主密钥和凭据 
 
 凭据表示弹性查询将用于连接到 Azure SQL 数据库中的远程数据库的用户 ID 和密码。若要创建所需的主密钥和凭据，请使用以下语法：
 
@@ -46,9 +48,9 @@
     DROP MASTER KEY;   
 
  
-**注意** 请确保 *< username>* 中不包括任何“@servername”后缀。
+**注意** 请确保 *< username>* 中不包括任何 *“@servername”* 后缀。
 
-### 1.2 外部数据源
+### 1\.2 外部数据源
 
 通过定义外部数据源提供有关分片映射和数据层的信息。外部数据源引用分片映射。然后，弹性查询使用外部数据源和基础分片映射枚举参与数据层的数据库。用于创建外部数据源的语法定义如下：
 
@@ -89,7 +91,7 @@
 
 请注意，在弹性查询处理过程中，相同的凭据用于读取分片映射和访问上分片的数据。
 
-### 1.3 外部表 
+### 1\.3 外部表 
  
 弹性查询将扩展外部表 DDL 以引用水平分区到多个数据库的外部表。外部表定义涵盖以下方面：
 
@@ -165,7 +167,7 @@ DISTRIBUTION 子句指定用于此表的数据分布：
 
 ## 查询 
 
-### 2.1 完全保真的 T-SQL 查询 
+### 2\.1 完全保真的 T-SQL 查询 
 
 定义外部数据源和外部表后，现在可以对外部表使用完整的 T-SQL。
 
@@ -186,7 +188,7 @@ DISTRIBUTION 子句指定用于此表的数据分布：
 	where w_id > 100 and w_id < 200 
 	group by w_id, o_c_id 
  
-### 2.2 存储过程 SP\_EXECUTE\_FANOUT 
+### 2\.2 存储过程 SP\_EXECUTE\_FANOUT 
 
 弹性查询还引入了一个存储过程，以便提供对分片的直接访问。该存储过程名为 sp\_execute\_fanout 并采用以下参数：
 
@@ -232,6 +234,7 @@ sp\_execute\_fanout 使用调用参数中提供的分片映射信息在注册到
 
 
 <!--Image references-->
+[1]: ./media/sql-database-elastic-query-horizontal-partitioning/horizontalpartitioning.png
 <!--anchors-->
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0215_2016-->

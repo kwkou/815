@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/11/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/11/2016"
+	wacn.date="02/26/2016"/>
 
 #排查常见的 Azure SQL 数据库权限和访问问题
 使用本主题了解授予和删除对 Azure SQL 数据库的访问权限的快速步骤。如需更完整的信息，请参阅：
@@ -33,4 +33,4 @@
 ## 在虚拟 master 数据库中为高权限用户创建其他登录名
 -使用 [CREATE LOGIN](https://msdn.microsoft.com/zh-cn/library/ms189751.aspx) 语句，并参阅[管理 Azure SQL 数据库中的数据库和登录名](/documentation/articles/sql-database-manage-logins)的“管理登录名”部分以了解详细信息。
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0215_2016-->
