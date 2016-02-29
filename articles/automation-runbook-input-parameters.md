@@ -130,22 +130,20 @@ Runbook 有多种启动方式：通过 Azure 门户 UI、PowerShell cmdlet、RES
 
     **示例：**
 
-      ```
         $params = @{“VMName”=”WSVMClassic”; ”ServiceName”=”WSVMClassicSG”}
 
         Start-AzureAutomationRunbook -AutomationAccountName “TestAutomation” -Name “Get-AzureVMGraphical” -Parameters $params
-      ```
+
 
     - **Azure 资源管理器 cmdlet：**可以使用 [Start-AzureRMAutomationRunbook](https://msdn.microsoft.com/zh-cn/library/mt603661.aspx) 启动在资源组中创建的自动化 Runbook。
 
 
     **示例：**
 
-      ```
         $params = @{“VMName”=”WSVMClassic”;”ServiceName”=”WSVMClassicSG”}
 
         Start-AzureRMAutomationRunbook -AutomationAccountName “TestAutomationRG” -Name “Get-AzureVMGraphical” –ResourceGroupName “RG1” -Parameters $params
-      ```
+
 
 >[AZURE.NOTE] 使用 PowerShell cmdlet 启动 Runbook 时，将创建值为 **PowerShell** 的默认参数 **MicrosoftApplicationManagementStartedBy**。可以在“作业详细信息”边栏选项卡中查看此参数。
 
@@ -153,47 +151,47 @@ Runbook 有多种启动方式：通过 Azure 门户 UI、PowerShell cmdlet、RES
 
     - **Azure 服务管理方法：**可以使用编程语言 SDK 来启动 Runbook。以下 C# 代码段用于在自动化帐户中启动 Runbook。可以在 [GitHub 存储库](https://github.com/Azure/azure-sdk-for-net/blob/master/src/ServiceManagement/Automation/Automation.Tests/TestSupport/AutomationTestBase.cs)中查看完整代码。  
 
-    ```      
-        public Job StartRunbook(string runbookName, IDictionary<string, string> parameters = null)
-        {
-            var response = AutomationClient.Jobs.Create(automationAccount, new JobCreateParameters
-            {
-                Properties = new JobCreateProperties
-                {
-                    Runbook = new RunbookAssociationProperty
-                    {
-                        Name = runbookName
-                    },
-                        Parameters = parameters
-                }
-            });
-            return response.Job;
-        }
-    ```
+	    ```      
+	        public Job StartRunbook(string runbookName, IDictionary<string, string> parameters = null)
+	        {
+	            var response = AutomationClient.Jobs.Create(automationAccount, new JobCreateParameters
+	            {
+	                Properties = new JobCreateProperties
+	                {
+	                    Runbook = new RunbookAssociationProperty
+	                    {
+	                        Name = runbookName
+	                    },
+	                        Parameters = parameters
+	                }
+	            });
+	            return response.Job;
+	        }
+	    ```
 
-    - **Azure 资源管理器方法：**可以使用编程 SDK 来启动 Runbook。以下 C# 代码段用于在自动化帐户中启动 Runbook。可以在 [GitHub 存储库](https://github.com/Azure/azure-sdk-for-net/blob/master/src/ResourceManagement/Automation/Automation.Tests/TestSupport/AutomationTestBase.cs)中查看完整代码。  phical-authoring-intro
-
-    ```
-        public Job StartRunbook(string runbookName, IDictionary<string, string> parameters = null)
-        {
-           var response = AutomationClient.Jobs.Create(resourceGroup, automationAccount, new JobCreateParameters
-           {
-               Properties = new JobCreateProperties
-               {
-                   Runbook = new RunbookAssociationProperty
-                   {
-                       Name = runbookName
-                   },
-                       Parameters = parameters
-               }
-           });
-        return response.Job;
-        }
-    ```
+    - **Azure 资源管理器方法：**可以使用编程 SDK 来启动 Runbook。以下 C# 代码段用于在自动化帐户中启动 Runbook。可以在 [GitHub 存储库](https://github.com/Azure/azure-sdk-for-net/blob/master/src/ResourceManagement/Automation/Automation.Tests/TestSupport/AutomationTestBase.cs)中查看完整代码。
+	
+	    ```
+	        public Job StartRunbook(string runbookName, IDictionary<string, string> parameters = null)
+	        {
+	           var response = AutomationClient.Jobs.Create(resourceGroup, automationAccount, new JobCreateParameters
+	           {
+	               Properties = new JobCreateProperties
+	               {
+	                   Runbook = new RunbookAssociationProperty
+	                   {
+	                       Name = runbookName
+	                   },
+	                       Parameters = parameters
+	               }
+	           });
+	        return response.Job;
+	        }
+	    ```
 
 若要启动此方法，请创建一个字典来存储 Runbook 参数、**VMName** 和 **ServiceName** 及其值。然后启动 Runbook。以下 C# 代码段用于调用上面定义的方法。
 
-```
+
     IDictionary<string, string> RunbookParameters = new Dictionary<string, string>();
 
     // Add parameters to the dictionary.
@@ -202,7 +200,7 @@ Runbook 有多种启动方式：通过 Azure 门户 UI、PowerShell cmdlet、RES
 
     //Call the StartRunbook method with parameters
     StartRunbook(“Get-AzureVMGraphical”, RunbookParameters);
-```
+
 
 - **使用 REST API 启动 Runbook 并分配参数**
 
@@ -224,7 +222,7 @@ Runbook 有多种启动方式：通过 Azure 门户 UI、PowerShell cmdlet、RES
 
 如果想要启动先前以 **VMName** 和 **ServiceName** 作为参数创建的 **Get-AzureVMTextual** Runbook，请使用以下 JSON 格式的请求正文。
 
-```
+
         {
            "properties":{
            "runbook":{
@@ -236,7 +234,7 @@ Runbook 有多种启动方式：通过 Azure 门户 UI、PowerShell cmdlet、RES
            }Add-AzureAccount
           }
        }
-```
+
 
 如果成功创建了作业，将返回 HTTP 状态代码 201。有关响应标头和响应正文的详细信息，请参阅有关如何[使用 REST API 创建 Runbook 作业](https://msdn.microsoft.com/zh-cn/library/azure/mt163849.aspx)的文章。
 
