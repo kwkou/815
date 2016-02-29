@@ -9,19 +9,12 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/17/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="01/05/2016"
+	wacn.date="02/26/2016"/>
 
 #  移动服务入门（.NET 项目）
 
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
-
-
-> [AZURE.SELECTOR]
-> - [入门](/documentation/articles/vs-mobile-services-dotnet-getting-started)
-> - [What Happened](/documentation/articles/vs-mobile-services-dotnet-what-happened)
 
 为了跟踪这些代码，您需要首先执行的步骤取决于您连接的移动服务类型。
 
@@ -29,7 +22,7 @@
 
 - 如果你使用的是 .NET 后端移动服务，那么 Visual Studio 为你创建的默认项目模板中已经有一个 TodoItem 表，但你需要将其发布到 Azure。发布方法：在解决方案资源管理器中打开移动服务项目的上下文菜单，然后选择**发布 Web**。接受默认设置，然后选择**发布**。
 
-#####获取对表的引用
+##获取对表的引用
 
 以下代码将创建对表（`todoTable`，其中包含 TodoItem 的数据）的引用，你可以将该引用用于后续操作以便读取和更新数据表。您将需要 TodoItem 类，并将其属性设置为解释移动服务为响应您的查询而发送的 JSON。
 
@@ -48,14 +41,14 @@
 
 如果您的表权限已设置为**具有应用程序密钥的任何人**，则此代码有效。如果您更改权限以保护您的移动服务，您将需要添加用户身份验证支持。请参阅[身份验证入门](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users)。
 
-##### 添加表项 
+##添加表项
 
 将新的项目插入数据表。
 
 	TodoItem todoItem = new TodoItem() { Text = "My first to do item", Complete = false };
 	await todoTable.InsertAsync(todoItem);
 
-##### 读取或查询表 
+##读取或查询表
 
 以下代码将查询表以获取所有项目。请注意，它仅返回数据的第一页，默认为 50 个项目。因为它是一个可选的参数，您可以传入所需的页大小。
 
@@ -71,13 +64,13 @@
     }
 
 
-##### 更新表项
+##更新表项
 
 更新数据表中的行。参数项是指要更新的 TodoItem 对象。
 
 	await todoTable.UpdateAsync(item);
 
-##### 删除表项
+##删除表项
 
 删除数据库中的行。参数项是指要删除的 TodoItem 对象。
 
@@ -86,4 +79,4 @@
 
 [详细了解移动服务](/documentation/services/mobile-services)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0215_2016-->

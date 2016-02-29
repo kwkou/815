@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/01/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/12/2016"
+	wacn.date="02/26/2016"/>
 
 #  如何使用适用于 Azure 移动服务的 iOS 客户端库
 
@@ -334,4 +334,4 @@ Azure 移动服务支持两种身份验证工作流：
 [冲突处理程序]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data/#add-conflict-handling
  
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0215_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/28/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/12/2016"
+	wacn.date="02/26/2016"/>
 
 
 # 向 iOS 应用和 .NET 后端添加推送通知
@@ -118,7 +118,6 @@
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
-[Azure Management Portal]: https://manage.windowsazure.cn/
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
@@ -127,4 +126,4 @@
 [Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-breaking-news
 [Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0215_2016-->

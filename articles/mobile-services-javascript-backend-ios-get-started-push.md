@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="09/28/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/12/2016"
+	wacn.date="02/26/2016"/>
 
 #  向 iOS 应用程序和 JavaScript 后端添加推送通知
 
@@ -113,4 +113,4 @@
 [Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news
 [Mobile Services Objective-C how-to conceptual reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0215_2016-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="10/05/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="01/13/2016"
+	wacn.date="02/26/2016"/>
 
 # 向经过身份验证的用户发送推送通知
 
@@ -62,6 +62,4 @@
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
 [推送通知入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
 
-[Azure classic portal]: https://manage.windowsazure.cn/
-
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0215_2016-->
