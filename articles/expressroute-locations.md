@@ -1,15 +1,15 @@
 <properties
-   pageTitle="ExpressRoute 位置 Microsoft Azure"
+   pageTitle="ExpressRoute 位置 | Microsoft Azure"
    description="本文详细说明了服务的上市区域，以及如何连接到 Azure 区域。"
    services="expressroute"
    documentationCenter="na"
    authors="cherylmc"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags
    ms.service="expressroute"
-   ms.date="12/02/2015"
-   wacn.date="01/14/2016" />
+   ms.date="01/15/2015"
+   wacn.date="02/26/2016" />
 
 # ExpressRoute 合作伙伴和对等位置
 本文中的表格提供有关 ExpressRoute 连接提供商、ExpressRoute 地理覆盖范围、通过 ExpressRoute 支持的 Microsoft Azure 服务以及 ExpressRoute 系统集成商 (SI) 的信息。

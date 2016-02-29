@@ -9,8 +9,8 @@
    tags="azure-service-management"/>
 <tags 
    ms.service="expressroute"
-   ms.date="01/14/2016"
-   wacn.date="01/29/2016" />
+   ms.date="01/07/2016"
+   wacn.date="02/26/2016" />
 
 # 将虚拟网络链接到 ExpressRoute 线路
 
@@ -19,7 +19,7 @@
 - [PowerShell - 资源管理器](/documentation/articles/expressroute-howto-linkvnet-arm)
 - [模板 - 资源管理器](https://github.com/Azure/azure-quickstart-templates/tree/ecad62c231848ace2fbdc36cbe3dc04a96edd58c/301-expressroute-circuit-vnet-connection)
 
-本文概述了如何将虚拟网络 (VNet) 链接到 ExpressRoute 线路。虚拟网络可以在同一个订阅中，也可以属于另一个订阅。本文适用于使用经典部署模型部署的 VNet。如果你想要链接使用 Azure 资源管理器部署方法部署的虚拟网络，可使用模板来完成此操作。查看上面的选项卡可导航到该模板。
+本文概述了如何将虚拟网络 (VNet) 链接到 ExpressRoute 线路。虚拟网络可以在同一个订阅中，也可以属于另一个订阅。本文适用于使用资源管理器部署模型部署的 VNet。如果你想要链接使用经典部署模型部署的虚拟网络，请参阅[将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)。
 
 [AZURE.INCLUDE [vpn-gateway-sm-rm](../includes/vpn-gateway-sm-rm-include.md)]
 
