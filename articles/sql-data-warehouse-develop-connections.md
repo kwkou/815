@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="10/21/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="02/26/2016"/>
 
 # 连接到 SQL 数据仓库 
 若要连接到 SQL 数据仓库，需要传入安全凭据进行身份验证。建立连接时，你还会看到特定的连接设置已配置为建立查询会话的一部分。
@@ -38,7 +38,7 @@
 1. 在 SSDT 或应用程序连接字符串中将你的服务器注册到 SQL Server 对象资源管理器时指定默认数据库。例如，包含 ODBC 连接的 InitialCatalog 参数。
 2. 在 SSDT 中创建会话之前先突出显示用户数据库。
 
-> [AZURE.NOTE]有关使用 SSDT 连接到 SQL 数据仓库的指导，请参阅[连接和查询][]入门文章。
+> [AZURE.NOTE] 有关使用 SSDT 连接到 SQL 数据仓库的指导，请参阅[连接和查询][]入门文章。
 
 再次强调，必须注意，不支持使用 Transact-SQL 语句 **USE<your DB>** 更改连接的数据库
 
@@ -154,4 +154,4 @@ WHERE   s.[session_id] <> SESSION_ID()
 
 <!--Other references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0215_2016-->
