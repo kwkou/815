@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-   ms.date="09/18/2015"
-   wacn.date="01/14/2016" />
+   ms.date="12/28/2015"
+   wacn.date="02/26/2016" />
 
 # 使用自动转发链接服务总线实体
 
@@ -65,4 +65,4 @@ namespaceManager.CreateSubscription(srcSubscription));
   [1]: ./media/service-bus-auto-forwarding/IC628632.gif
   [分区消息传送实体]: /documentation/articles/service-bus-partitioning
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0215_2016-->

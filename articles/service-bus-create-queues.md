@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-   ms.date="09/16/2015"
-   wacn.date="01/14/2016" />
+   ms.date="12/28/2015"
+   wacn.date="02/26/2016" />
 
 # 创建使用服务总线队列的应用程序
 
@@ -156,4 +156,4 @@ catch (Exception e)
 
 了解了有关队列的基础知识，即可参阅[创建使用服务总线主题和订阅的应用程序](/documentation/articles/service-bus-create-topics-subscriptions)，使用服务总线中转消息传送的发布/订阅功能继续这一讨论。
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0215_2016-->

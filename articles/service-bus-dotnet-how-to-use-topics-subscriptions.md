@@ -10,7 +10,7 @@
 <tags
     ms.service="service-bus"
     ms.date="10/15/2015"
-    wacn.date="01/21/2016"/>
+    wacn.date="02/26/2016"/>
 
 # 如何使用服务总线主题和订阅
 
@@ -44,7 +44,7 @@
 服务总线使用连接字符串来存储终结点和凭据。你可以将连接字符串置于配置文件中，而不是对其进行硬编码：
 
 - 当使用 Azure 云服务时，建议你使用 Azure 服务配置系统（.csdef 和 .cscfg 文件）来存储连接字符串。
-- 在使用 Azure Web 应用或 Azure 虚拟机时，建议使用 .NET 配置系统（如 Web.config 文件）来存储连接字符串。
+- 在使用 Azure 网站或 Azure 虚拟机时，建议使用 .NET 配置系统（如 Web.config 文件）来存储连接字符串。
 
 在上述两种情况下，你都可以使用 `CloudConfigurationManager.GetSetting` 方法检索连接字符串，本文稍后部分将对此进行介绍。
 
@@ -79,11 +79,11 @@
 </ServiceConfiguration>
 ```
 
-使用从 Azure 门户检索到的共享访问签名 (SAS) 密钥名称和密钥值，如上一部分中所述。
+使用从 Azure 经典门户检索到的共享访问签名 (SAS) 密钥名称和密钥值，如上一部分中所述。
 
-### 在使用 Azure Web 应用或 Azure 虚拟机时配置连接字符串
+### 在使用 Azure 网站或 Azure 虚拟机时配置连接字符串
 
-在使用 Web 应用或虚拟机时，建议你使用 .NET 配置系统（如 Web.config）。你可以使用 `<appSettings>` 元素存储连接字符串。
+在使用网站或虚拟机时，建议你使用 .NET 配置系统（如 Web.config）。你可以使用 `<appSettings>` 元素存储连接字符串。
 
 ```
 <configuration>
@@ -200,7 +200,7 @@ namespaceManager.CreateSubscription("TestTopic",
 
 ## 将消息发送到主题
 
-为向服务总线主题发送消息，你的应用程序需使用连接字符串创建 [`TopicClient`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx) 对象。
+若要向服务总线主题发送消息，你的应用程序需要使用连接字符串创建 [TopicClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx) 对象。
 
 以下代码演示了如何使用 [`CreateFromConnectionString`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.createfromconnectionstring.aspx) API 调用为以前创建的 **TestTopic** 主题创建 [TopicClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx) 对象。
 
@@ -238,7 +238,7 @@ for (int i=0; i<5; i++)
 
 从订阅接收消息的建议方法是使用 [SubscriptionClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.aspx) 对象。[SubscriptionClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.aspx) 对象可在两种不同模式下工作：[ReceiveAndDelete 和 PeekLock](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.receivemode.aspx)。
 
-当使用 **ReceiveAndDelete** 模式时，接收是一个单步操作，即，当服务总线接收订阅中的消息读取请求时，它会将消息标记为“正在使用”并将其返回给应用程序。**ReceiveAndDelete** 模式是最简单的模式，最适合应用程序允许出现故障时不处理消息的方案。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于服务总线会将消息标记为“已使用”，因此当应用程序重新启动并重新开始使用消息时，它会漏掉在发生崩溃前使用的消息。
+当使用 **ReceiveAndDelete** 模式时，接收是一个单步操作 - 即，当服务总线接收订阅中的消息读取请求时，它会将消息标记为“正在使用”并将其返回给应用程序。**ReceiveAndDelete** 模式是最简单的模式，最适合应用程序允许出现故障时不处理消息的方案。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于服务总线会将消息标记为“已使用”，因此当应用程序重新启动并重新开始使用消息时，它会漏掉在发生崩溃前使用的消息。
 
 在 **PeekLock** 模式（这是默认模式）下，接收过程变成了一个两阶段操作，这样就可以支持无法容忍遗漏消息的应用程序。当 Service Bus 收到请求时，它会查找下一条要使用的消息，锁定该消息以防其他使用者接收，然后将该消息返回到应用程序。应用程序完成消息处理（或可靠地存储消息以供将来处理）后，它将通过对收到的消息调用 [Complete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) 完成接收过程的第二个阶段。当服务总线发现 **Complete** 调用时，它会将消息标记为“正在使用”并将其从订阅中删除。
 
@@ -323,4 +323,4 @@ namespaceManager.DeleteSubscription("TestTopic", "HighMessages");
   [服务总线中转消息传送 .NET 教程]: /documentation/articles/service-bus-brokered-tutorial-dotnet
   [Azure 示例]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0215_2016-->
