@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/08/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="01/05/2016"
+	wacn.date="02/25/2016"/>
 
 
 #如何使用 Azure Media Encoder 对资产进行编码

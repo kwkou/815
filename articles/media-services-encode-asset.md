@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/29/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="01/05/2016"  
+	wacn.date="02/25/2016"/>
 
 #简要介绍并比较 Azure 按需媒体编码器
 
@@ -20,7 +20,7 @@ Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项�
 
 一开始使用媒体服务时，了解编解码器与文件格式之间的区别很重要。编解码器是实现压缩/解压缩算法的软件，而文件格式是用于保存压缩视频的容器。
 
-Media Services 所提供的动态打包可让你以 Media Services 支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
+媒体服务所提供的动态打包可让你以媒体服务支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
 
 若要使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)，必须执行下列操作：
 
@@ -66,15 +66,19 @@ Media Services 所提供的动态打包可让你以 Media Services 支持的流�
 
 编码器输入元数据在[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783120.aspx)说明。
 
-编码器输出元数据在[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx)说明。
+[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx)说明了编码器输出元数据。
 
-###缩略图
+###生成缩略图
 
-有关如何生成缩略图的信息，请参阅[如何使用媒体编码器标准版来生成缩略图](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes)。
+有关信息，请参阅[如何使用媒体编码器标准生成缩略图](/documentation/articles/media-services-custom-mes-presets-with-dotnet#thumbnails)。
 
-###音频和/或视频叠加
+###修剪视频（裁剪）
 
-目前不支持。
+有关信息，请参阅[如何使用媒体编码器标准修剪视频](/documentation/articles/media-services-custom-mes-presets-with-dotnet#trim_video)。
+
+###创建覆盖层
+
+有关信息，请参阅[如何使用媒体编码器标准创建覆盖层](/documentation/articles/media-services-custom-mes-presets-with-dotnet#overlay)。
 
 ###另请参阅
 
@@ -120,7 +124,17 @@ Azure 媒体编码器使用[此处](https://msdn.microsoft.com/zh-cn/library/azu
 
 [使用 Dolby Digital Plus 编码媒体](/documentation/articles/media-services-encode-with-dolby-digital-plus)
 
+##媒体编码器高级工作流
 
+###概述
+
+[在 Azure 媒体服务中引入高级编码](http://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services)
+
+###如何使用
+
+媒体编码器高级工作流使用复杂的工作流进行配置。可以使用[工作流设计器](/documentation/articles/media-services-workflow-designer)工具创建和更新工作流文件。
+
+[如何在 Azure 媒体服务中使用高级编码](http://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services)
 
 ##<a id="compare_encoders"></a>比较编码器
 
@@ -231,20 +245,37 @@ MP3 (MPEG-1 Audio Layer 3)|否|否|是
 Windows Media 音频|否|是|是
 
 
+##错误代码  
+
+下表列出了在执行编码任务期间发生错误的情况下可能返回的错误代码。若要获取 .NET 代码中的错误详细信息，请使用 [ErrorDetails](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mediaservices.client.errordetail.aspx) 类。若要获取 REST 代码中的错误详细信息，请使用 [ErrorDetail](https://msdn.microsoft.com/zh-cn/library/jj853026.aspx) REST API。
+
+ErrorDetail.Code|出错的可能原因
+-----|-----------------------
+Unknown| 执行任务期间发生未知的错误
+ErrorDownloadingInputAssetMalformedContent|涵盖下载输入资产时出错（例如，错误的文件名称、文件长度为零、格式不正确，等等）的错误类别。
+ErrorDownloadingInputAssetServiceFailure|涵盖服务端问题（例如，下载时发生网络或存储错误）的错误类别。
+ErrorParsingConfiguration|任务 <see cref="MediaTask.PrivateData"/>（配置）无效的错误类别，例如，配置不是有效的系统预设或包含无效的 XML。
+ErrorExecutingTaskMalformedContent|在执行任务期间因输入媒体文件内部问题导致失败的错误类别。
+ErrorExecutingTaskUnsupportedFormat|媒体处理器无法处理提供的文件（不支持的媒体格式或与配置不匹配）的错误类别。例如，尝试从只包含视频的资产生成只包含音频的输出
+ErrorProcessingTask|媒体处理器在处理与内容无关的任务时发生的其他错误类别。
+ErrorUploadingOutputAsset|上载输出资产时的错误类别
+ErrorCancelingTask|涵盖尝试取消任务时失败的错误类别
+TransientError|涵盖暂时性问题（例如 Azure 存储空间发生暂时性网络问题）的错误类别
 
 
 
-##提供反馈
 
-[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
+
 
 
 ##相关文章
 
+- [通过自定义媒体编码器标准预设执行高级编码任务](/documentation/articles/media-services-custom-mes-presets-with-dotnet)
 - [配额和限制](/documentation/articles/media-services-quotas-and-limitations)
 
  
 <!--Reference links in article-->
 [1]: /home/features/media-services/#price
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0215_2016-->
