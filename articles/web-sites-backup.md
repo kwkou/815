@@ -137,11 +137,11 @@ Web Apps 可以备份以下信息：
 
 2. 创建名为 `_backup.filter` 的文件并将上述列表放在文件中，但请删除 `D:\home`。每行列出一个目录或文件。文件的内容应为：
 
-    \site\wwwroot\Logs
-    \LogFiles
-    \site\wwwroot\Images\2013
-    \site\wwwroot\Images\2014
-    \site\wwwroot\Images\brand.png
+		\site\wwwroot\Logs
+		\LogFiles
+		\site\wwwroot\Images\2013
+		\site\wwwroot\Images\2014
+		\site\wwwroot\Images\brand.png
 
 3. 使用 [ftp](/documentation/articles/web-sites-deploy#ftp) 或任何其他方法将此文件上载到站点的 `D:\home\site\wwwroot` 目录。
 

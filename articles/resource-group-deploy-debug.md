@@ -375,7 +375,7 @@
 
 不过，创建自定义模板的自定义脚本（例如，使用 [CustomScriptExtension](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/)），即可防止 Azure 报告部署成功，而此自定义脚本知道如何监视整个部署以了解系统是否准备就绪，并只在用户可以与整个部署交互时才会成功返回。如果你想要确保最后才运行你的扩展，请在模板中使用 **dependsOn** 属性。[创建模板部署](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx)时可以查看一个示例。
 
-## 与 Azure 交互的有用工具
+##<a name="useful-tools-to-interact-with-azure"></a> 与 Azure 交互的有用工具
 当你从命令行处理你的 Azure 资源时，你需要收集帮助你完成工作的工具。Azure 资源组模板为 JSON 文件，而 Azure 资源管理器 API 接受并返回 JSON，因此 JSON 解析工具是帮助你浏览资源的相关信息，以及设计模板和模板参数文件或与之交互的首选工具。
 
 ### Mac、Linux 和 Windows 工具

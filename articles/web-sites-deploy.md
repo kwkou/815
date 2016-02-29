@@ -23,14 +23,11 @@
 由于你无需担心 Web 服务器或应用程序框架，因此将你的应用部署到 Azure 只需将你的代码、二进制文件、内容文件及其各自的目录结构部署到 [**Azure 中的 /site/wwwroot** 目录](https://github.com/projectkudu/kudu/wiki/File-structure-on-azure)（或将 Web 作业部署到 **/Data/Jobs** 目录）。Azure 支持以下三种部署进程。
 
 - [FTP 或 FTPS](https://en.wikipedia.org/wiki/File_Transfer_Protocol)：使用你常用的支持 FTP 或 FTPS 的工具将文件移至 Azure，该工具可以是 [FileZilla](https://filezilla-project.org) 到功能齐全的 IDE（如 [NetBeans](https://netbeans.org)）。这完全是文件上载进程。Azure Web 应用不提供任何附加服务，例如版本控制、文件结构管理等。 
-- [Kudu (Git/Mercurial)](https://github.com/projectkudu/kudu/wiki/Deployment)：Azure Web 应用中的[部署引擎](https://github.com/projectkudu/kudu/wiki)。从任何存储库将你的代码直接推送到 Kudu。只要代码推送到 Kudu，Kudu 还提供附加服务，包括版本控制、程序包还原、MSBuild 和 [Web 挂钩](https://github.com/projectkudu/kudu/wiki/Web-hooks)以用于连续部署和其他自动化任务。所有这些服务都可以自定义和触发 
-    - 每次 **git push** 从配置的 Git 存储库执行，
-	- 每次 **hg push** 从配置的 Mercurial 存储库执行，或者 
-- [Web 部署](http://www.iis.net/learn/publish/using-web-deploy/introduction-to-web-deploy)：自动部署到 IIS 服务器的相同工具。将代码直接从你常用的 Microsoft 工具（如 Visual Studio、WebMatrix 和 Visual Studio Team Services）部署到 Azure。此工具支持仅差异部署、创建数据库、连接字符串转换等操作。Web 部署与 Kudu 的不同之处在于，应用程序二进制文件在部署到 Azure 之前生成。与 FTP 类似，Azure Web 应用不提供任何附加服务。
+- [Web 部署](http://www.iis.net/learn/publish/using-web-deploy/introduction-to-web-deploy)：自动部署到 IIS 服务器的相同工具。将代码直接从你常用的 Microsoft 工具（如 Visual Studio、WebMatrix 和 Visual Studio Team Services）部署到 Azure。此工具支持仅差异部署、创建数据库、连接字符串转换等操作。与 FTP 类似，Azure Web 应用不提供任何附加服务。
 
-常用的 Web 开发工具支持其中的一个或多个部署进程。虽然你选择的工具确定了你可以利用的部署进程，但是由你支配的实际 DevOps 功能取决于部署进程和你选择的特定工具的组合。例如，如果你从[包含 Azure SDK 的 Visual Studio](#vspros) 执行 Web 部署，即使你未从 Kudu 自动执行，你也会在 Visual Studio 中自动执行程序包还原和 MSBuild。Azure SDK 还在 Visual Studio 界面中提供了易用的向导，以帮助你直接创建所需的 Azure 资源。
+常用的 Web 开发工具支持其中的一个或多个部署进程。虽然你选择的工具确定了你可以利用的部署进程，但是由你支配的实际 DevOps 功能取决于部署进程和你选择的特定工具的组合。例如，如果你从[包含 Azure SDK 的 Visual Studio](#vspros) 执行 Web 部署，你会在 Visual Studio 中自动执行程序包还原和 MSBuild。Azure SDK 还在 Visual Studio 界面中提供了易用的向导，以帮助你直接创建所需的 Azure 资源。
 
->[AZURE.NOTE] 这些部署进程并未实际[预配你的应用可能需要的 Azure 资源](/documentation/articles/resource-group-portal)，如 App Service 计划、Azure Web 应用和 SQL 数据库。但是，大多数链接的操作方法文章会向你展示如何预配应用并端到端地将代码部署到该应用。你还可以在[使用命令行工具自动部署](#automate)部分中找到用于预配 Azure 资源的其他选项。
+>[AZURE.NOTE] 这些部署进程并未实际预配你的应用可能需要的 Azure 资源，如 App Service 计划、Azure Web 应用和 SQL 数据库。但是，大多数链接的操作方法文章会向你展示如何预配应用并端到端地将代码部署到该应用。你还可以在[使用命令行工具自动部署](#automate)部分中找到用于预配 Azure 资源的其他选项。
 
 ## <a name="ftp"></a>通过将文件手动复制到 Azure 来进行部署
 如果你习惯于手动将 Web 内容复制到 Web 宿主（对于 PHP 开发人员来说常见的工作流程），可以使用 [FTP](http://en.wikipedia.org/wiki/File_Transfer_Protocol) 实用工具来复制文件，如 Windows 资源管理器或 [FileZilla](https://filezilla-project.org/)。
@@ -105,8 +102,6 @@ Visual Studio 支持所有这三种部署进程（FTP、Git 和 Web 部署），
 
 如果你在任意规模的开发团队中工作并使用本地源代码管理 (SCM) 系统（如 [Team Foundation Server](https://www.visualstudio.com/products/tfs-overview-vs.aspx) (TFS)、[Git](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#gittfs) 或 [Mercurial](http://mercurial.selenic.com/)），你可以将 Azure 配置为与你的存储库集成，并在源代码管理工作流中直接部署到 Azure。如果你使用 TFS，还可以将它配置为连续部署至 Azure Web 应用。
 
-TFS 使用 Web 部署部署到 Azure Web 应用，而从 Git/Mercurial 存储库部署使用 Kudu（请参阅[部署进程概述](#overview)）。
-
 从本地源代码管理系统部署的优点是：
 
 - 支持从任何语言框架或者 Git 或 Mercurial 客户端（包括 [Xcode](https://developer.apple.com/xcode/) 和 [Eclipse](https://www.eclipse.org)）进行部署。
@@ -125,7 +120,7 @@ TFS 使用 Web 部署部署到 Azure Web 应用，而从 Git/Mercurial 存储库
 - 适用于现有 IDE 或编辑器的内置协作工具。
 - 支持 Git 进行分布式版本控制或支持 Team Foundation 版本控制 (TFVC) 进行集中的版本控制。 
 - 敏捷部署的丰富工具。
-- 实现 [Jenkins](https://jenkins-ci.org)、[Slack](https://slack.com)、[ZenDesk](https://www.zendesk.com)、[Trello](https://trello.com)、[Azure 服务总线](/home/features/service-bus/)等的现成集成。 
+- 实现 [Jenkins](https://jenkins-ci.org)、[Slack](https://slack.com)、[ZenDesk](https://www.zendesk.com)、[Trello](https://trello.com)、[Azure 服务总线](/home/features/messaging/)等的现成集成。 
 - [Team Foundation Server Express](https://www.microsoft.com/download/details.aspx?id=48259) 对于最多包含 5 个开发人员的团队是免费的。
 
 ###<a name="tfs"></a>如何使用 TFS 进行连续部署
@@ -157,7 +152,6 @@ TFS 使用 Web 部署部署到 Azure Web 应用，而从 Git/Mercurial 存储库
 ###<a name="cloudgitmercurial"></a>如何从基于云的 Git 或 Mercurial 存储库部署
 
 - [从源代码管理发布到使用 Git 的 Web Apps](/documentation/articles/web-sites-publish-source-control)。如何启用从 GitHub、CodePlex 或 BitBucket 进行存储库的连续部署。尽管本教程演示的是如何发布 Git 存储库，但 CodePlex 或 BitBucket 中托管的 Mercurial 存储库的发布过程与此类似。
-- [使用 Kudu 部署到具有 GitHub 的 Web Apps](http://azure.microsoft.com/documentation/videos/deploying-to-azure-from-github/)。Scott Hanselman 和 David Ebbo 制作的视频，演示如何将 Web 应用直接从 GitHub 部署到 Azure Web 应用。
 - [Web Apps 的“部署到 Azure”按钮](http://azure.microsoft.com/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/)。有关用于触发从 Git 存储库的部署方法的博客。
 - [Git 和 Mercurial 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchshome?forum=azuregit)。
 
@@ -192,7 +186,6 @@ TFS 使用 Web 部署部署到 Azure Web 应用，而从 Git/Mercurial 存储库
 
 有关详细信息，请参阅以下资源：
 * [使用 Azure 构建真实世界云应用 – 使一切自动化](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything)。电子书章节，其中介绍电子书中所示的示例应用程序如何使用 Windows PowerShell 脚本来创建 Azure 测试环境并部署到该环境中。请参阅[资源](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything#resources)部分以获取指向其他 Azure PowerShell 文档的链接。
-* [使用 Windows PowerShell 脚本发布到开发和测试环境](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts)。如何使用 Visual Studio 生成的 Windows PowerShell 部署脚本。
 
 ###<a name="api"></a>使用 .NET 管理 API 自动进行部署
 

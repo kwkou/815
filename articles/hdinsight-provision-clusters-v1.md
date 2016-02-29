@@ -223,7 +223,7 @@
 >
 > 强烈建议为一个群集指定一个子网。
 
-## 预配工具
+##<a name="cluster-creation-methods"></a> 预配工具
 
 - Azure 门户
 - Azure PowerShell

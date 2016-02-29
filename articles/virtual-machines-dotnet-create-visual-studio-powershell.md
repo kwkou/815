@@ -49,10 +49,6 @@
 11. 选择“导入”，然后选择从服务器复制的文件。然后输入密码，并选中“保存密码”。现在，你便可以将 Web 应用发布到 VM 了。
 
 
-## 后续步骤
-
-如果你要自定义所创建的发布脚本，请阅读[使用 Windows PowerShell 脚本发布到开发和测试环境](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts)了解更深入的信息。
-
 [0]: ./media/virtual-machines-dotnet-create-visual-studio-powershell/CreateVM_NewProject.PNG
 [1]: ./media/dotnet-visual-studio-create-virtual-machine/CreateVM_SignIn.PNG
 [2]: ./media/virtual-machines-dotnet-create-visual-studio-powershell/CreateVM_CreateVM.PNG

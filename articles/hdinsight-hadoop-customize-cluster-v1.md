@@ -75,6 +75,7 @@ Name | 脚本
 
 3. 单击复选标记以开始设置群集。
   
+<a name="call-scripts-using-azure-powershell"></a>
 **从 Azure PowerShell cmdlet**
 
 使用 Azure PowerShell 命令来运行单个脚本操作或多个脚本操作。你可以使用 **<a href = "http://msdn.microsoft.com/zh-cn/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet 调用自定义脚本。若要使用这些 cmdlet，你必须已安装并设置 Azure PowerShell。有关配置工作站以运行适用于 HDInsight 的 Azure Powershell cmdlet 的信息，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。

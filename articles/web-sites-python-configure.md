@@ -37,7 +37,7 @@ Azure 应用商店包含用于 Bottle、Django 和 Flask 框架的模板。如�
 
 如果你没有现成的 Web 应用，则可从 [Azure 管理门户](https://manage.windowsazure.cn)创建一个。单击左下角的“新建”按钮。将出现一个窗口。依次单击“计算”、“Web 应用”和“快速创建”。
 
-![](./media/web-sites-python-configure/configure-python-create-Website.png)
+![](./media/web-sites-python-configure/configure-python-create-website.png)
 
 ##<a name="git-publishing"></a> Git 发布
 

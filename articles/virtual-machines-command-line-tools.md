@@ -185,7 +185,7 @@
 
 此命令从帐户中删除指定的环境
 
-## 用于管理 Azure 虚拟机的命令
+##<a name="commands-to-manage-your-azure-virtual-machine-data-disks"></a> 用于管理 Azure 虚拟机的命令
 下图显示了如何在 Azure 云服务的生产部署环境中托管 Azure 虚拟机。
 
 ![Azure 技术图表](./media/virtual-machines-command-line-tools/architecturediagram.jpg)

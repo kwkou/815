@@ -91,7 +91,6 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 ## 基础知识
 
 1. [基础知识：Azure 命令行界面 (Azure CLI)](/documentation/articles/xplat-cli-install)
-<!-- 4. [The basics: Certificate Use and Management](http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx)-->
 5. [基础知识：选择 Linux 用户名](/documentation/articles/virtual-machines-linux-usernames)
 6. [基础知识：使用 Azure 管理门户登录到 Linux VM](/documentation/articles/virtual-machines-linux-how-to-log-on)
 7. [基础知识：SSH](/documentation/articles/virtual-machines-linux-use-ssh-key)
@@ -194,7 +193,6 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 
 身份验证和加密是软件开发中的重要主题，并且网上有很多很多主题介绍了如何针对这两者使用合适的安全技术。我们将介绍一些基本的用法来快速启动和运行 Linux 和开源工作负荷，并指出用来重置或删除 Azure 上的远程安全功能的工具。这些是基本过程，我们很快将添加更复杂的方案。
 
-4. [基础知识：证书的使用和管理](http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx)
 7. [基础知识：SSH](/documentation/articles/virtual-machines-linux-use-ssh-key)
 8. [基础知识：如何为 Linux 重置密码或 SSH 属性](/documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh)
 9. [基础知识：使用 Root](/documentation/articles/virtual-machines-linux-use-root-privileges)

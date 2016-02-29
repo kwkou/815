@@ -21,7 +21,7 @@
 当 Visual Studio 部署启用 Web 作业的控制台应用程序项目时，它会执行两个任务：
 
 * 将运行时文件复制到 Web 应用中的相应文件夹（对于连续 Web 作业，该文件夹为 *App\_Data/jobs/continuous*，对于计划的按需 Web 作业，则为 *App\_Data/jobs/triggered*）。
-* 为已计划在特定时间运行的 Web 作业设置 [Azure 计划程序作业](#scheduler)。（无需为连续 Web 作业执行此操作。）
+* 为已计划在特定时间运行的 Web 作业设置 Azure 计划程序作业。（无需为连续 Web 作业执行此操作。）
 
 已启用 Web 作业的项目中添加了以下项：
 
@@ -80,7 +80,7 @@
 	
 	此时将显示“[添加 Azure Web 作业](#configure)”对话框，其“项目名称”框中已选中该项目。
 
-2.  完成“[添加 Azure Web 作业](#configure”对话框，然后单击“确定”。)
+2.  完成“[添加 Azure Web 作业](#configure)对话框，然后单击“确定”。
 
 	此时将显示“发布 Web”向导。如果你不打算立即发布，请关闭向导。输入的设置将会保存，以便在[部署项目](#deploy)时使用。
 

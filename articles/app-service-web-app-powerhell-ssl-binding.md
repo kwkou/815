@@ -54,7 +54,6 @@
 	Remove-AzureRmWebAppSSLBinding -ResourceGroupName myresourcegroup -WebAppName mytestapp -Name www.contoso.com -DeleteCertificate $false
 
 ### 参考 ###
-- [Azure 环境简介](/documentation/articles/app-service-app-service-environment-intro)
 - [将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)
 
 <!---HONumber=Mooncake_0215_2016-->

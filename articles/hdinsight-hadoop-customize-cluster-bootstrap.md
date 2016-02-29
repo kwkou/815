@@ -82,21 +82,19 @@ Bootstrap 的使用方式有 2 种：
 
 - [在 HDInsight 中创建 Hadoop 群集][hdinsight-provision-cluster]说明了如何使用其他自定义选项来创建 HDInsight 群集。
 - [为 HDInsight 开发脚本操作脚本][hdinsight-write-script]
-- [在 HDInsight 群集上安装并使用 Spark][hdinsight-install-spark]
 - [在 HDInsight 群集上安装并使用 R][hdinsight-install-r]
 - [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1)
 - [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)
 
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install.md
-[hdinsight-install-r]: hdinsight-hadoop-r-scripts.md
-[hdinsight-write-script]: hdinsight-hadoop-script-actions.md
-[hdinsight-provision-cluster]: hdinsight-provision-clusters-v1.md
-[powershell-install-configure]: ../install-configure-powershell.md
+[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
+[hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions
+[hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters-v1
+[powershell-install-configure]: /documentation/articles/install-configure-powershell
 
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-v1/HDI-Cluster-state.png "群集创建过程中的阶段"
 
-## 附录 A：PowerShell 示例
+##<a name="appx-a:-powershell-sample"></a> 附录 A：PowerShell 示例
 
 此 PowerShell 脚本将创建一个 HDInsight 群集并自定义 Hive 设置：
 

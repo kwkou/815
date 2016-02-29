@@ -81,11 +81,11 @@
 * 如果你想要安装其他软件或配置其他设置，该脚本可以选择在头节点上运行自定义的配置前和配置后脚本。
 
 
-## 配置文件
+##<a name="Configuration-file"></a> 配置文件
 
 部署脚本的配置文件是一个 XML 文件。架构文件 HPCIaaSClusterConfig.xsd 位于 HPC Pack IaaS 部署脚本文件夹中。**IaaSClusterConfig** 是配置文件的根元素，其中包含部署脚本文件夹中 Manual.rtf 文件详细描述的子元素。有关不同方案的示例文件，请参阅本文中的[示例配置文件](#Example-configuration-files)。
 
-## 示例配置文件
+##<a name="Example-configuration-files"></a> 示例配置文件
 
 ### 示例 1
 
@@ -367,7 +367,7 @@
 
 * 尝试在群集上运行测试工作负荷。例如，请参阅 HPC Pack [入门指南](https://technet.microsoft.com/zh-cn/library/jj884144)。
 
-* 有关使用脚本创建群集和运行 HPC 工作负荷的教程，请参阅[开始使用 Azure 中的 HPC Pack 群集运行 Excel 和 SOA 工作负荷](/documentation/articles/virtual-machines-excel-cluster-hpcpac)、[在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd) 或[在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 OpenFOAM](/documentation/articles/virtual-machines-linux-cluster-hpcpack-openfoam)。
+* 有关使用脚本创建群集和运行 HPC 工作负荷的教程，请参阅[开始使用 Azure 中的 HPC Pack 群集运行 Excel 和 SOA 工作负荷](/documentation/articles/virtual-machines-excel-cluster-hpcpack)、[在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd) 或[在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 OpenFOAM](/documentation/articles/virtual-machines-linux-cluster-hpcpack-openfoam)。
 
 * 尝试使用 HPC Pack 的工具来启动、停止、添加和删除所创建群集中的计算节点。请参阅[在 Azure 中管理 HPC Pack 群集的计算节点](/documentation/articles/virtual-machines-hpcpack-cluster-node-manage)
 
