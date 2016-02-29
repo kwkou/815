@@ -9,8 +9,8 @@
    tags="azure-resource-manager"/>
 <tags
    ms.service="expressroute"
-   ms.date="12/04/2015"
-   wacn.date="01/14/2016"/>
+   ms.date="01/12/2016"
+   wacn.date="02/26/2016"/>
 
 # 使用 Azure 资源管理器和 PowerShell 创建和修改 ExpressRoute 线路
 
@@ -59,7 +59,7 @@
 
 	在创建 ExpressRoute 线路之前，你需要连接提供商、支持的位置和带宽选项的列表。PowerShell cmdlet *Get-AzureRmExpressRouteServiceProvider* 会返回此信息，你将在后续步骤中使用此信息。
 
-		PS C:\> Get-AzureRmExpressRouteServiceProvider
+		Get-AzureRmExpressRouteServiceProvider
 
 	检查连接服务提供商是否已在该处列出。记下以下信息，因为你在创建线路时将需要这些信息。
 	
@@ -89,13 +89,13 @@
 
 	响应将包含服务密钥。你可以通过运行以下命令获取所有这些参数的详细说明。
 
-		get-help New-AzureRmExpressRouteCircuit -detailed 
+		Get-Help New-AzureRmExpressRouteCircuit -detailed 
 
 4. **列出所有 ExpressRoute 线路。**
 
 	你可以运行 *Get-AzureRmExpressRouteCircuit* 命令，以获取你所创建的所有 ExpressRoute 线路的列表。
 
-		#Getting service key
+		
 		Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
 	响应将如下例所示：
@@ -155,7 +155,7 @@
 
 	你可以通过运行以下命令获取所有这些参数的详细说明。
 
-		get-help Get-AzureRmExpressRouteCircuit -detailed 
+		Get-Help Get-AzureRmExpressRouteCircuit -detailed 
 
 5. **将服务密钥发送给连接提供商进行预配。**
 
@@ -211,17 +211,21 @@
 
 6. **创建路由配置。**
 	
-	如需分步说明，请参阅 [ExpressRoute 线路路由配置（创建和修改线路对等互连）](/documentation/articles/expressroute-howto-routing-arm)页。
+	有关分步说明，请参阅[创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-arm)。
 
-7. **将 VNet 链接到 ExpressRoute 线路。**
+	>[AZURE.IMPORTANT] 这些说明只适用于由提供第 2 层连接服务的服务提供商创建的线路。如果你的服务提供商提供第 3 层托管服务（通常是 IPVPN，如 MPLS），则连接服务提供商将为你设置和管理路由。在此情况下，你无法创建或管理对等互连。  
 
-	接下来，将 VNet 链接到 ExpressRoute 线路。使用 Azure 资源管理器部署模式时，你可以使用[此模板](https://github.com/Azure/azure-quickstart-templates/tree/ecad62c231848ace2fbdc36cbe3dc04a96edd58c/301-expressroute-circuit-vnet-connection)。我们目前正在致力于 PowerShell 步骤。
+8. **将 VNet 链接到 ExpressRoute 线路。**
+
+	接下来，将 VNet 链接到 ExpressRoute 线路。有关分步操作说明，请参考 [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)。
 
 ##  获取 ExpressRoute 线路的状态
 
 你可以随时使用 *Get-AzureRmExpressRouteCircuit* cmdlet 检索此信息。进行不带任何参数的调用将列出所有线路。
 
 		Get-AzureRmExpressRouteCircuit
+
+响应将如下例所示：
 
 		Name                             : ExpressRouteARMCircuit
 		ResourceGroupName                : ExpressRouteResourceGroup
@@ -275,7 +279,7 @@
 
 你可以通过运行以下命令获取所有这些参数的详细说明。
 
-		get-help get-azurededicatedcircuit -detailed 
+		Get-Help Get-azurededicatedcircuit -detailed 
 
 ## 修改 ExpressRoute 线路
 
@@ -317,6 +321,5 @@
 ## 后续步骤
 
 - [配置路由](/documentation/articles/expressroute-howto-routing-arm)
-- [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm) 
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0215_2016-->
