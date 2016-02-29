@@ -9,20 +9,20 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="11/20/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/09/2016"
+	wacn.date="02/26/2016"/>
 
 # 在 Azure 应用程序中指定 Node.js 版本
 
 托管 Node.js 应用程序时，您可能希望确保您的应用程序使用特定版本的 Node.js。有几种方法可为托管在 Azure 上的应用程序完成此操作。
 
-##默认版本
+## 默认版本
 
 由 Azure 提供的 Node.js 版本会不断更新。除非另行指定，否则将使用最新可用版本。
 
-> [AZURE.NOTE]如果你在 Azure 云服务（Web 角色或辅助角色）中托管应用程序，并且这是你首次部署应用程序，Azure 将尝试使用你在部署环境中所安装的 Node.js 的版本（如果该版本与 Azure 中提供的默认版本之一相匹配）。
+> [AZURE.NOTE] 如果你在 Azure 云服务（Web 角色或辅助角色）中托管应用程序，并且这是你首次部署应用程序，Azure 将尝试使用你在部署环境中所安装的 Node.js 的版本（如果该版本与 Azure 中提供的默认版本之一相匹配）。
 
-##使用 package.json 进行版本控制
+## 使用 package.json 进行版本控制
 
 可通过将以下内容添加到你的 **package.json** 文件中来指定要使用的 Node.js 的版本：
 
@@ -34,10 +34,10 @@
 
 由于 0.6.22 不是托管环境中提供的版本之一，将改为使用 0.8 系列中的最高版本 - 0.8.4。
 
-##使用应用设置对网站进行版本控制
+## 使用应用设置对网站进行版本控制
 如果你在网站中托管应用程序，则可以将环境变量 **WEBSITE\_NODE\_DEFAULT\_VERSION** 设置为所需版本。
 
-##使用 PowerShell 对云服务进行版本控制
+## 使用 PowerShell 对云服务进行版本控制
 
 如果你在云服务中托管应用程序，并且使用 Microsoft Azure PowerShell 部署该应用程序，则可使用 **Set-AzureServiceProjectRole** PowerShell cmdlet 替代默认的 Node.js 版本。例如：
 
@@ -47,7 +47,7 @@
 
 你还可使用 **Get-AzureServiceProjectRoleRuntime** 检索托管为云服务的应用程序可用的 Node.js 版本的列表。始终确认你的项目所依赖的 Node.js 版本是否在此列表中。
 
-##对 Azure 网站使用自定义版本
+## 对 Azure 网站使用自定义版本
 
 虽然 Azure 提供了 Node.js 的几个默认版本，但你可能希望使用并非默认提供的版本。如果你的应用程序托管为 Azure 网站，则可以使用 **iisnode.yml** 文件完成此操作。以下步骤演练了对 Azure 网站使用自定义版本的 Node.Js 的过程：
 
@@ -87,7 +87,7 @@
 
 	发布应用程序后，在浏览器中打开该网站。您应看到一则指示“Hello from Azure running node version: v0.8.1”的消息。
 
-##后续步骤
+## 后续步骤
 
 了解如何指定应用程序使用的 Node.js 版本后，请学习[如何使用模块]、[生成和部署 Node.js 网站]以及[如何使用适用于 Mac 和 Linux 的 Azure 命令行工具]。
 
@@ -98,4 +98,4 @@
 [如何使用模块]: /documentation/articles/nodejs-use-node-modules-azure-apps
 [生成和部署 Node.js 网站]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0215_2016-->

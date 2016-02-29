@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="azure-resource-manager" 
-	ms.date="12/18/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="01/04/2016" 
+	wacn.date="02/26/2016"/>
 
 # 将资源移动到新的资源组或订阅中
 
@@ -99,4 +99,4 @@
 - [将 Azure CLI 用于资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)
 - [使用标记来组织资源](/documentation/articles/resource-group-using-tags)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0215_2016-->

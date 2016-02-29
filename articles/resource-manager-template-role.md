@@ -1,6 +1,6 @@
 <properties
    pageTitle="用于角色分配的资源管理器模板 | Microsoft Azure"
-   description="说明用于在部署过程中创建角色分配的资源管理器架构。"
+   description="介绍用于通过模板部署角色分配的资源管理器架构。"
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
@@ -9,10 +9,10 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="11/10/2015"
-   wacn.date="12/17/2015"/>
+   ms.date="01/04/2016"
+   wacn.date="02/26/2016"/>
 
-# 角色分配 - 模板架构
+# 角色分配模板架构
 
 将用户、组或服务主体分配给指定作用域中的角色。
 
@@ -54,7 +54,7 @@
 | 作用域 | 字符串 | 是 | 对于资源组：<br />**/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}**<br /><br />对于资源：<br />**/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{provider-namespace}/{resource-type}/{resource-name}** | 此角色分配适用的作用域。 |
 
 
-## 如何使用锁资源
+## 如何使用角色分配资源
 
 当你需要在部署期间向角色添加用户、组或服务主体时，就会将角色分配添加到模板。角色分配从更高级别的作用域继承，因此如果你已向订阅级别的角色添加主体，则不需要为资源组或资源重新分配它。
 
@@ -119,5 +119,6 @@
 ## 后续步骤
 
 - 有关模板结构的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
+- 有关基于角色的访问控制的详细信息，请参阅 [Azure Active Directory 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0215_2016-->

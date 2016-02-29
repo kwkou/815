@@ -1,5 +1,5 @@
 <properties
-   pageTitle="资源管理器模板表达式 | Microsoft Azure"
+   pageTitle="资源管理器模板函数 | Microsoft Azure"
    description="介绍在 Azure 资源管理器模板中检索值、处理字符串和数字以及检索部署信息时所用的函数。"
    services="azure-resource-manager"
    documentationCenter="na"
@@ -9,18 +9,18 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="12/07/2015"
-   wacn.date="01/14/2016"/>
+   ms.date="01/15/2016"
+   wacn.date="02/26/2016"/>
 
-# Azure 资源管理器模板表达式
+# Azure 资源管理器模板函数
 
-本主题介绍你可以在 Azure 资源管理器模板中使用的所有表达式。
+本主题介绍你可以在 Azure 资源管理器模板中使用的所有函数。
 
-模板表达式及其参数不区分大小写。例如，资源管理器将 **variables('var1')** 和 **VARIABLES('VAR1')** 视为相同。在求值时，除非表达式明确修改大小与（例如，使用 toUpper 或 toLower），否则表达式将保留大小写。某些资源类型可能会提出大小写要求，而不考虑表达式求值方式。
+模板函数及其参数不区分大小写。例如，资源管理器将 **variables('var1')** 和 **VARIABLES('VAR1')** 视为相同。在求值时，除非函数明确修改大小与（例如，使用 toUpper 或 toLower），否则函数将保留大小写。某些资源类型可能会提出大小写要求，而不考虑函数求值方式。
 
-## 数字表达式
+## 数值函数
 
-资源管理器提供以下表达式用于处理整数：
+资源管理器提供以下用于处理整数的函数：
 
 - [添加](#add)
 - [copyIndex](#copyindex)
@@ -32,7 +32,7 @@
 - [sub](#sub)
 
 
-<a id="add" />
+<a id="add" /></a>
 ### 添加
 
 **add(operand1, operand2)**
@@ -45,17 +45,17 @@
 | operand2 | 是 | 要使用的第二个操作数。
 
 
-<a id="copyindex" />
+<a id="copyindex" /></a>
 ### copyIndex
 
 **copyIndex(offset)**
 
 返回一个迭代循环的当前索引。
 
-此表达式始终配合 **copy** 对象使用。有关使用 **copyIndex** 的示例，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)。
+此函数始终配合 **copy** 对象使用。有关使用 **copyIndex** 的示例，请参阅[在 Azure 资源管理器中创建多个资源实例](resource-group-create-multiple.md)。
 
 
-<a id="div" />
+<a id="div" /></a>
 ### div
 
 **div(operand1, operand2)**
@@ -68,7 +68,7 @@
 | operand2 | 是 | 除数，不得为 0。
 
 
-<a id="int" />
+<a id="int" /></a>
 ### int
 
 **int(valueToConvert)**
@@ -89,7 +89,7 @@
     }
 
 
-<a id="length" />
+<a id="length" /></a>
 ### length
 
 **length(array 或 string)**
@@ -113,7 +113,7 @@
     }
 
 
-<a id="mod" />
+<a id="mod" /></a>
 ### mod
 
 **mod(operand1, operand2)**
@@ -127,7 +127,7 @@
 
 
 
-<a id="mul" />
+<a id="mul" /></a>
 ### mul
 
 **mul(operand1, operand2)**
@@ -140,7 +140,7 @@
 | operand2 | 是 | 要使用的第二个操作数。
 
 
-<a id="sub" />
+<a id="sub" /></a>
 ### sub
 
 **sub(operand1, operand2)**
@@ -153,9 +153,9 @@
 | operand2 | 是 | 被减数。
 
 
-## 字符串表达式
+## 字符串函数
 
-资源管理器提供以下表达式用于处理字符串：
+资源管理器提供以下用于处理字符串的函数：
 
 - [base64](#base64)
 - [concat](#concat)
@@ -163,6 +163,7 @@
 - [replace](#replace)
 - [split](#split)
 - [字符串](#string)
+- [substring](#substring)
 - [toLower](#tolower)
 - [toUpper](#toupper)
 - [trim](#trim)
@@ -171,7 +172,7 @@
 
 若要获取字符串或数组中的字符数，请参阅 [length](#length)。
 
-<a id="base64" />
+<a id="base64" /></a>
 ### base64
 
 **base64 (inputString)**
@@ -189,23 +190,38 @@
       "authorizationHeader": "[concat('Basic ', base64(variables('usernameAndPassword')))]"
     }
 
-<a id="concat" />
+<a id="concat" /></a>
 ### concat
 
 **concat (arg1, arg2, arg3, ...)**
 
-组合多个字符串值，并返回生成的字符串值。此函数可以结合任意数目的参数。
+组合多个值并返回串联的结果。此函数可以使用任意数量的参数，并可接受字符串或数组作为参数。
 
-以下示例演示了如何组合多个值以返回一个值。
+以下示例演示了如何组合多个字符串值以返回串联的字符串。
 
     "outputs": {
         "siteUri": {
           "type": "string",
-          "value": "[concat('http://',reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]"
+          "value": "[concat('http://', reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]"
         }
     }
 
-<a id="padleft" />
+接下来的示例演示了如何组合两个数组。
+
+    "parameters": {
+        "firstarray": {
+            type: "array"
+        }
+        "secondarray": {
+            type: "array"
+        }
+     },
+     "variables": {
+         "combinedarray": "[concat(parameters('firstarray'), parameters('secondarray'))]
+     }
+        
+
+<a id="padleft" /></a>
 ### padLeft
 
 **padLeft(stringToPad, totalLength, paddingCharacter)**
@@ -227,7 +243,7 @@
         "paddedAppName": "[padLeft(parameters('appName'),10,'0')]"
     }
 
-<a id="replace" />
+<a id="replace" /></a>
 ### replace
 
 **replace(originalString, oldCharacter, newCharacter)**
@@ -249,7 +265,7 @@
         "newidentifier": "[replace(parameters('identifier'),'-','')]"
     }
 
-<a id="split" />
+<a id="split" /></a>
 ### split
 
 **split(inputString, delimiter)**
@@ -271,7 +287,7 @@
         "stringPieces": "[split(parameters('inputString'), ',')]"
     }
 
-<a id="string" />
+<a id="string" /></a>
 ### 字符串
 
 **string(valueToConvert)**
@@ -291,7 +307,29 @@
         "stringValue": "[string(parameters('appId'))]"
     }
 
-<a id="tolower" />
+<a id="substring" /></a>
+### substring
+
+**substring(stringToParse, startIndex, length)**
+
+返回从指定的字符位置开始且包含指定数量的字符的子字符串。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| stringToParse | 是 | 从中提取子字符串的原始字符串。
+| startIndex | 否 | 子字符串的从零开始的字符位置。
+| length | 否 | 子字符串的字符数。
+
+以下示例提取参数中的前三个字符。
+
+    "parameters": {
+        "inputString": { "type": "string" }
+    },
+    "variables": { 
+        "prefix": "[substring(parameters('inputString'), 0, 3)]"
+    }
+
+<a id="tolower" /></a>
 ### toLower
 
 **toLower(stringToChange)**
@@ -311,7 +349,7 @@
         "lowerCaseAppName": "[toLower(parameters('appName'))]"
     }
 
-<a id="toupper" />
+<a id="toupper" /></a>
 ### toUpper
 
 **toUpper(stringToChange)**
@@ -331,7 +369,7 @@
         "upperCaseAppName": "[toUpper(parameters('appName'))]"
     }
 
-<a id="trim" />
+<a id="trim" /></a>
 ### trim
 
 **trim (stringToTrim)**
@@ -351,7 +389,7 @@
         "trimAppName": "[trim(parameters('appName'))]"
     }
 
-<a id="uniquestring" />
+<a id="uniquestring" /></a>
 ### uniqueString
 
 **uniqueString (stringForCreatingUniqueString, ...)**
@@ -382,11 +420,11 @@
 以下示例演示显示如何根据资源组创建存储帐户的唯一名称。
 
     "resources": [{ 
-        "name": "[concat('ContosoStorage', uniqueString(resourceGroup().id))]", 
+        "name": "[concat('contosostorage', uniqueString(resourceGroup().id))]", 
         "type": "Microsoft.Storage/storageAccounts", 
         ...
 
-<a id="uri" />
+<a id="uri" /></a>
 ### uri
 
 **uri (baseUri, relativeUri)**
@@ -404,26 +442,34 @@
 
     "templateLink": "[uri(deployment().properties.templateLink.uri, 'nested/azuredeploy.json')]"
 
+## 数组函数
 
+资源管理器提供以下用于处理数组值的函数。
 
-## 部署值表达式
+若要将多个数组组合成单个数组，请使用 [concat](#concat)。
 
-资源管理器提供以下表达式，用于从与部署相关的模板和值部分获取值：
+若要获取数组中的元素数，请使用 [length](#length)。
+
+若要将一个字符串值分割成字符串值的数组，请使用 [split](#split)。
+
+## 部署值函数
+
+资源管理器提供以下函数，用于从与部署相关的模板和值部分获取值：
 
 - [部署](#deployment)
 - [参数](#parameters)
 - [variables](#variables)
 
-若要从资源、资源组或订阅获取值，请参阅[资源表达式](#resource-expressions)。
+若要从资源、资源组或订阅获取值，请参阅[资源函数](#resource-functions)。
 
-<a id="deployment" />
+<a id="deployment" /></a>
 ### 部署
 
 **deployment()**
 
 返回有关当前部署操作的信息。
 
-此表达式返回部署期间传递的对象。根据部署对象是作为链接还是内联对象传递的，所返回对象中的属性将有所不同。如果部署对象是以内联形式传递的（例如使用 Azure PowerShell 中的 **-TemplateFile** 参数指向本地文件时），所返回的对象采用以下格式：
+此函数返回部署期间传递的对象。根据部署对象是作为链接还是内联对象传递的，所返回对象中的属性将有所不同。如果部署对象是以内联形式传递的（例如使用 Azure PowerShell 中的 **-TemplateFile** 参数指向本地文件时），所返回的对象采用以下格式：
 
     {
         "name": "",
@@ -462,7 +508,7 @@
     }  
 
 
-<a id="parameters" />
+<a id="parameters" /></a>
 ### 参数
 
 **parameters (parameterName)**
@@ -489,7 +535,7 @@
        }
     ]
 
-<a id="variables" />
+<a id="variables" /></a>
 ### variables
 
 **variables (variableName)**
@@ -502,9 +548,9 @@
 
 
 
-## 资源表达式
+## 资源函数
 
-资源管理器提供以下表达式用于获取资源值：
+资源管理器提供以下用于获取资源值的函数：
 
 - [listkeys](#listkeys)
 - [providers](#providers)
@@ -513,9 +559,9 @@
 - [resourceId](#resourceid)
 - [订阅](#subscription)
 
-若要从参数、变量或当前部署获取值，请参阅[部署值表达式](#deployment-value-expressions)。
+若要从参数、变量或当前部署获取值，请参阅[部署值函数](#deployment-value-functions)。
 
-<a id="listkeys" />
+<a id="listkeys" /></a>
 ### listKeys
 
 **listKeys (resourceName or resourceIdentifier, apiVersion)**
@@ -536,7 +582,7 @@
       } 
     } 
 
-<a id="providers" />
+<a id="providers" /></a>
 ### providers
 
 **providers (providerNamespace, [resourceType])**
@@ -565,7 +611,7 @@
 	    }
     }
 
-<a id="reference" />
+<a id="reference" /></a>
 ### reference
 
 **reference (resourceName or resourceIdentifier, [apiVersion])**
@@ -579,7 +625,7 @@
 
 **reference** 函数从运行时状态派生其值，因此不能在 variables 节中使用。可以在模板的 outputs 节中使用它。
 
-如果在相同的模板内设置了引用的资源，则可使用 reference 表达式来隐式声明一个资源依赖于另一个资源。另外，不需要使用 **dependsOn** 属性。只有当引用的资源已完成部署后，才会对表达式进行计算。
+如果在相同的模板内设置了引用的资源，则可使用 reference 函数来隐式声明一个资源依赖于另一个资源。另外，不需要使用 **dependsOn** 属性。只有当引用的资源已完成部署后，才会对函数求值。
 
 以下示例引用同一模板中部署的存储帐户。
 
@@ -608,7 +654,7 @@
 		}
 	}
 
-如果你现在想要直接在模板中指定 API 版本，可以使用 **providers** 表达式并检索一个值（例如最新版本），如下所示。
+如果你现在想要直接在模板中指定 API 版本，可以使用 [providers](#providers) 函数并检索一个值（例如最新版本），如下所示。
 
     "outputs": {
 		"BlobUri": {
@@ -626,7 +672,7 @@
 		}
 	}
 
-<a id="resourcegroup" />
+<a id="resourcegroup" /></a>
 ### resourceGroup
 
 **resourceGroup()**
@@ -651,7 +697,7 @@
        }
     ]
 
-<a id="resourceid" />
+<a id="resourceid" /></a>
 ### resourceId
 
 **resourceId ([resourceGroupName], resourceType, resourceName1, [resourceName2]...)**
@@ -715,7 +761,7 @@
       }]
     }
 
-<a id="subscription" />
+<a id="subscription" /></a>
 ### 订阅
 
 **subscription()**
@@ -743,4 +789,4 @@
 - 若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)
 - 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0215_2016-->
