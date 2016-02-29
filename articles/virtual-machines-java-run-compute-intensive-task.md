@@ -5,22 +5,21 @@
 	documentationCenter="java"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe"
+	editor=""
 	tags="azure-service-management,azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="11/19/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/09/2016"
+	wacn.date=""/>
 
 # 如何在虚拟机上通过 Java 运行需要进行大量计算的任务
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
- 
 
 借助 Azure，您可以使用虚拟机来处理需要进行大量计算的任务。例如，虚拟机可以处理任务并将结果传送给客户端计算机或移动应用程序。阅读完本文后，你将了解如何创建运行可由其他 Java 应用程序监视的、需要进行大量计算的 Java 应用程序的虚拟机。
 
-本教程假定你知道如何创建 Java 控制台应用程序，而且你可以将库导入 Java 应用程序并生成 Java 存档 (JAR)。本教程并不假定你了解 Microsoft Azure。
+本教程假定你知道如何创建 Java 控制台应用程序，而且你可以将库导入 Java 应用程序并生成 Java 存档 (JAR)。假定你不了解 Microsoft Azure。
 
 你将学习以下内容：
 
@@ -44,7 +43,7 @@
 
 ## 创建虚拟机
 
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
 2. 依次单击“新建”、“计算”、“虚拟机”和“从库中”。
 3. 在“虚拟机映像选择”对话框中，选择“JDK 7 Windows Server 2012”。请注意，万一你安装的是还不能在 JDK 7 中运行的旧应用程序，可选择 **JDK 6 Windows Server 2012**。
 4. 单击**“下一步”**。
@@ -57,7 +56,7 @@
 5. 在下一个“虚拟机配置”对话框中：
     1. 对于“云服务”，使用默认的“创建新云服务”。
     2. “云服务 DNS 名称”的值在 chinacloudapp.cn 中必须唯一。如有必要，请修改此值，这样 Azure 就会将其指示为唯一值。
-    2. 指定区域、地缘组或虚拟网络。在本教程中，请指定区域，如“美国西部”。
+    2. 指定区域、地缘组或虚拟网络。出于本教程的目的，请指定区域，如“中国北部”。
     2. 对于“存储帐户”框，请选择“使用自动生成的存储帐户”。
     3. 对于“可用性集”，请选择“(无)”。
     4. 单击**“下一步”**。
@@ -67,7 +66,7 @@
 
 ## 远程登录到虚拟机
 
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
 2. 单击“虚拟机”。
 3. 单击你要登录的虚拟机名称。
 4. 单击“连接”。
@@ -81,37 +80,35 @@
 
 创建服务命名空间：
 
-1.  登录到 [Azure 门户](https://manage.windowsazure.cn)。
-2.  在 Azure 门户的左下方导航窗格中，单击“服务总线、访问控制和 Caching”。
-3.  在 Azure 门户的左上方窗格中，单击“服务总线”节点，然后单击“新建”按钮。
-	![“Service Bus 节点”屏幕快照][svc_bus_node]
+1.  登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
+2.  在 Azure 管理门户的左下方导航窗格中，单击“服务总线、访问控制和 Caching”。
+3.  在 Azure 管理门户的左上方窗格中，单击“服务总线”节点，然后单击“新建”按钮。
+    ![“Service Bus 节点”屏幕快照][svc_bus_node]
 4.  在“新建服务命名空间”对话框中，输入一个命名空间，然后单击“检查可用性”按钮以确保该命名空间是唯一的。
-	![“创建新的命名空间”屏幕快照][create_namespace]
+    ![“创建新的命名空间”屏幕快照][create_namespace]
 5.  确保该命名空间名称可用之后，选择应该承载你的命名空间的国家或地区，然后单击“创建命名空间”按钮。  
 
-    你创建的命名空间随后将显示在 Azure 门户中，然后要花费一段时间来激活。请等到状态变为“活动”后再继续下一步。
+    你创建的命名空间随后将显示在 Azure 管理门户中，然后要花费一段时间来激活。请等到状态变为“活动”后再继续下一步。
 
 ## 获取命名空间的默认管理凭据
 
 若要在新命名空间上执行管理操作（如创建队列），则需要获取该命名空间的管理凭据。
 
 1.  在左侧导航窗格中，单击“Service Bus”节点以显示可用命名空间的列表。
-	![“可用命名空间”屏幕快照][avail_namespaces]
+    ![“可用命名空间”屏幕快照][avail_namespaces]
 2.  从显示的列表中选择刚刚创建的命名空间。
-	![“命名空间列表”屏幕快照][namespace_list]
+    ![“命名空间列表”屏幕快照][namespace_list]
 3.  右侧的“属性”窗格将列出新命名空间的属性。
-	![“属性窗格”屏幕快照][properties_pane]
+    ![“属性窗格”屏幕快照][properties_pane]
 4.  将隐藏“默认密钥”。单击“查看”按钮以显示安全凭据。
-	![“默认密钥”屏幕快照][default_key]
-5.  记下默认颁发者和默认密钥，因为你将在下面使用此信息来对命名空间执行操作。
+    ![“默认密钥”屏幕快照][default_key]
+5.  记下“默认颁发者”和“默认密钥”，因为你将在下面使用此信息来对命名空间执行操作。
 
 ## 如何创建 Java 应用程序来执行需要进行大量计算的任务
 
 1. 在你的开发计算机（不必是你创建的虚拟机）上，下载 [Azure SDK for Java](/develop/java/)。
 2. 使用本节末尾的示例代码创建 Java 控制台应用程序。在本教程中，我们将使用 **TSPSolver.java** 作为 Java 文件名。将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符修改为分别使用你的 Service Bus 的“命名空间”、“默认颁发者”和“默认密钥”值。
 3. 编码后，将应用程序导出至可运行的 Java 存档 (JAR)，并将所需的库打包到生成的 JAR 中。在本教程中，我们将使用 **TSPSolver.jar** 作为生成的 JAR 名称。
-
-<p/>
 
 	// TSPSolver.java
 
@@ -301,8 +298,6 @@
 1. 在开发计算机上，使用本节末尾的示例代码创建 Java 控制台应用程序。在本教程中，我们将使用 **TSPClient.java** 作为 Java 文件名。如前所述，将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符修改为分别使用你的 Service Bus 的“命名空间”、“默认颁发者”和“默认密钥”值。
 2. 将应用程序导出至可运行的 JAR，并将所需的库打包到生成的 JAR 中。在本教程中，我们将使用 **TSPClient.jar** 作为生成的 JAR 名称。
 
-<p/>
-
 	// TSPClient.java
 
 	import java.util.Date;
@@ -486,7 +481,8 @@
 
  如果您没有指定数字，则它将对 10 个城市运行。在解算器找到当前最短的路线后，它会将这些路线添加到该队列中。
 
-> [AZURE.NOTE]您指定的数字越大，解算器运行的时间将越长。例如，对 14 个城市运行可能需要几分钟时间，而对 15 个城市运行可能需要几小时时间。增加到 16 个或更多个城市可能需要数天的运行时间（最终数周、数月和数年时间）。这是因为，随着城市数量的增加，解算器评估的排列数会迅速增加。
+> [AZURE.NOTE]
+您指定的数字越大，解算器运行的时间将越长。例如，对 14 个城市运行可能需要几分钟时间，而对 15 个城市运行可能需要几小时时间。增加到 16 个或更多个城市可能需要数天的运行时间（最终数周、数月和数年时间）。这是因为，随着城市数量的增加，解算器评估的排列数会迅速增加。
 
 ### 如何运行监视客户端应用程序
 1. 登录到您要在其中运行客户端应用程序的计算机。虽然不需要是运行 **TSPSolver** 应用程序的同一计算机，但也可以是同一计算机。
@@ -522,4 +518,4 @@
 [default_key]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_07_DefaultKey.jpg
 [add_ca_cert]: /documentation/articles/java-add-certificate-ca-store
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0215_2016-->

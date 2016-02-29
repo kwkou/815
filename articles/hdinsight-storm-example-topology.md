@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="01/15/2016"
+	wacn.date=""/>
 
 # Apache Storm on HDInsight 的示例 Storm 拓扑和组件
 
@@ -54,4 +54,4 @@
   [ce0c02a2]: https://github.com/hdinsight/hdinsight-storm-examples/tree/master/templates/HDInsightStormExamples "此项目包含用来与各种 Azure 服务（例如事件中心、DocumentDB 和 SQL 数据库）进行交互的 spout、bolt 和拓扑的模板。"
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0215_2016-->

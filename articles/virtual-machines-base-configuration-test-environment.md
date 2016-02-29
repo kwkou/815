@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/05/2015"
-    	wacn.date="12/17/2015"/>
+	ms.date="01/12/2016"
+	wacn.date=""/>
 
 # 基本配置测试环境
 
@@ -49,13 +49,13 @@
 
 如果你还没有 Azure 帐户，可以在[试用 Azure](/pricing/1rmb-trial) 中注册一个免费试用版。
 
-> [AZURE.NOTE] Azure 中的虚拟机在运行时会持续产生货币成本。此成本是针对你的免费试用版本、MSDN 订阅或付费订阅的。有关正在运行的 Azure 虚拟机的成本的详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/#price)和 [Azure 定价计算器](/pricing/calculator)。若要控制成本，请参阅[将 Azure 中的测试环境虚拟机的成本降至最低](#costs)。
+> [AZURE.NOTE] Azure 中的虚拟机在运行时会持续产生货币成本。此成本是针对你的试用或付费订阅进行计费的。有关正在运行的 Azure 虚拟机的成本的详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/#price)和 [Azure 定价计算器](/pricing/calculator/)。若要控制成本，请参阅[将 Azure 中的测试环境虚拟机的成本降至最低](#costs)。
 
 ## 阶段 1：创建虚拟网络
 
 首先，你可以创建将托管基本配置的公司网络子网的 TestLab 虚拟网络。
 
-1.	在 [Azure 门户](https://manage.windowsazure.cn)的任务栏中，单击“新建”>“网络服务”>“虚拟网络”>“自定义创建”。
+1.	在 [Azure 管理门户](https://manage.windowsazure.cn)的任务栏中，单击“新建”>“网络服务”>“虚拟网络”>“自定义创建”。
 2.	在“虚拟网络详细信息”页的**“名称”**中键入 **TestLab**。
 3.	在**“位置”**中，选择相应的区域。
 4.	单击“下一步”箭头。
@@ -69,7 +69,7 @@
 首先，使用以下命令选择相应的 Azure 订阅。将引号内的所有内容（包括 < and > 字符）替换为相应的名称。
 
 	$subscr="<Subscription name>"
-	Select-AzureSubscription -SubscriptionName $subscr –Current
+	Select-AzureSubscription -SubscriptionName $subscr -Current
 
 你可以从 **Get-AzureSubscription** 命令显示的 **SubscriptionName** 属性获取订阅名称。
 
@@ -111,14 +111,14 @@ DC1 是 corp.contoso.com Active Directory 域服务 (AD DS) 域的域控制器�
 首先，填写云服务的名称，并在本地计算机上的 Azure PowerShell 命令提示符下运行这些命令以为 DC1 创建 Azure 虚拟机。
 
 	$serviceName="<your cloud service name>"
-	$cred=Get-Credential –Message "Type the name and password of the local administrator account for DC1."
+	$cred=Get-Credential -Message "Type the name and password of the local administrator account for DC1."
 	$image= Get-AzureVMImage | where { $_.ImageFamily -eq "Windows Server 2012 R2 Datacenter" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name DC1 -InstanceSize Small -ImageName $image
 	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
 	$vm1 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 20 -DiskLabel "AD" -LUN 0 -HostCaching None
 	$vm1 | Set-AzureSubnet -SubnetNames Corpnet
 	$vm1 | Set-AzureStaticVNetIP -IPAddress 10.0.0.4
-	New-AzureVM –ServiceName $serviceName -VMs $vm1 -VNetName TestLab
+	New-AzureVM -ServiceName $serviceName -VMs $vm1 -VNetName TestLab
 
 接下来，连接到 DC1 虚拟机。
 
@@ -184,13 +184,13 @@ APP1 提供 Web 服务和文件共享服务。
 首先，填写云服务的名称，并在本地计算机上的 Azure PowerShell 命令提示符下运行这些命令以为 APP1 创建 Azure 虚拟机。
 
 	$serviceName="<your cloud service name>"
-	$cred1=Get-Credential –Message "Type the name and password of the local administrator account for APP1."
-	$cred2=Get-Credential –UserName "CORP\User1" –Message "Now type the password for the CORP\User1 account."
+	$cred1=Get-Credential -Message "Type the name and password of the local administrator account for APP1."
+	$cred2=Get-Credential -UserName "CORP\User1" -Message "Now type the password for the CORP\User1 account."
 	$image= Get-AzureVMImage | where { $_.ImageFamily -eq "Windows Server 2012 R2 Datacenter" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name APP1 -InstanceSize Small -ImageName $image
 	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.GetNetworkCredential().Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain "CORP" -DomainUserName "User1" -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain "corp.contoso.com"
 	$vm1 | Set-AzureSubnet -SubnetNames Corpnet
-	New-AzureVM –ServiceName $serviceName -VMs $vm1 -VNetName TestLab
+	New-AzureVM -ServiceName $serviceName -VMs $vm1 -VNetName TestLab
 
 接下来，使用 CORP\\User1 凭据连接到 APP1 虚拟机，然后打开管理员级别的 Windows PowerShell 命令提示符。
 
@@ -198,7 +198,7 @@ APP1 提供 Web 服务和文件共享服务。
 
 接下来，在 Windows PowerShell 命令提示符下使用此命令将 APP1 设为 Web 服务器。
 
-	Install-WindowsFeature Web-WebServer –IncludeManagementTools
+	Install-WindowsFeature Web-WebServer -IncludeManagementTools
 
 接下来，使用以下命令在 APP1 上的文件夹中创建共享文件夹和文本文件。
 
@@ -217,13 +217,13 @@ CLIENT1 在 Contoso Intranet 中充当典型笔记本电脑、平板电脑或台
 首先，填写云服务的名称，并在本地计算机上的 Azure PowerShell 命令提示符下运行这些命令以为 CLIENT1 创建 Azure 虚拟机。
 
 	$serviceName="<your cloud service name>"
-	$cred1=Get-Credential –Message "Type the name and password of the local administrator account for CLIENT1."
-	$cred2=Get-Credential –UserName "CORP\User1" –Message "Now type the password for the CORP\User1 account."
+	$cred1=Get-Credential -Message "Type the name and password of the local administrator account for CLIENT1."
+	$cred2=Get-Credential -UserName "CORP\User1" -Message "Now type the password for the CORP\User1 account."
 	$image= Get-AzureVMImage | where { $_.ImageFamily -eq "Windows Server 2012 R2 Datacenter" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name CLIENT1 -InstanceSize Small -ImageName $image
 	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.GetNetworkCredential().Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain "CORP" -DomainUserName "User1" -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain "corp.contoso.com"
 	$vm1 | Set-AzureSubnet -SubnetNames Corpnet
-	New-AzureVM –ServiceName $serviceName -VMs $vm1 -VNetName TestLab
+	New-AzureVM -ServiceName $serviceName -VMs $vm1 -VNetName TestLab
 
 接下来，使用 CORP\\User1 凭据连接到 CLIENT1 虚拟机。
 
@@ -246,13 +246,11 @@ CLIENT1 在 Contoso Intranet 中充当典型笔记本电脑、平板电脑或台
 
 ![](./media/virtual-machines-base-configuration-test-environment/BC_TLG04.png)
 
-Azure 中的基本配置现已可用于应用程序开发和测试或其他测试环境，如[模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)。
+Azure 中的基本配置现已可用于应用程序开发和测试或其他测试环境。
 
-## 其他资源
+## 后续步骤
 
-[Azure 测试实验室](http://social.technet.microsoft.com/wiki/contents/articles/24092.azure-test-lab.aspx)
-
-[混合云测试环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)
+- 设置[模拟的混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)以测试混合配置。
 
 ## <a id="costs"></a>将 Azure 中的测试环境虚拟机的成本降至最低
 
@@ -282,4 +280,4 @@ Azure 中的基本配置现已可用于应用程序开发和测试或其他测�
 	Start-AzureVM -ServiceName $serviceName -Name "APP1"
 	Start-AzureVM -ServiceName $serviceName -Name "CLIENT1"
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0215_2016-->

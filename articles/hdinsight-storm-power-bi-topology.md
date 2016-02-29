@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="01/08/2016"
+	wacn.date=""/>
 
 # 使用 Power BI（预览版）从 Apache Storm 拓扑可视化数据
 
@@ -45,17 +45,15 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 * **Data.cs**：描述要发送到 Power BI 的数据对象/行
 
-> [AZURE.WARNING]Power BI 似乎允许多个同名的数据集。如果数据集不存在，并且你的拓扑结构会创建 Power BI Bolt 的多个实例，则可能会发生这种情况。若要避免此问题，请将 Bolt 的并行性提示设置为 1（如本示例中所示），或在部署拓扑之前创建数据集。
+> [AZURE.WARNING] Power BI 似乎允许多个同名的数据集。如果数据集不存在，并且你的拓扑结构会创建 Power BI Bolt 的多个实例，则可能会发生这种情况。若要避免此问题，请将 Bolt 的并行性提示设置为 1（如本示例中所示），或在部署拓扑之前创建数据集。
 >
 > 此解决方案中包含的 **CreateDataset** 控制台应用程序是作为示例提供的，介绍如何在拓扑结构外部创建数据集。
 
 ## 注册 Power BI 应用程序
 
-1. 遵循 [Power BI 快速入门](https://powerbi.microsoft.com/en-us/documentation/powerbi-developer-introduction-to-creating-a-power-bi-app/)中的步骤注册 Power BI。
+遵循[注册应用](https://powerbi.microsoft.com/en-us/documentation/powerbi-developer-register-a-client-app/)中的步骤创建应用程序注册。在访问 Power BI REST API 时将要用到此注册信息。
 
-2. 遵循[注册应用](https://powerbi.microsoft.com/en-us/documentation/powerbi-developer-register-a-client-app/)中的步骤创建应用程序注册。在访问 Power BI REST API 时将要用到此注册信息。
-
-    > [AZURE.IMPORTANT]保存应用程序注册的“客户端 ID”。
+    > [AZURE.IMPORTANT] 保存应用程序注册的“客户端 ID”。
 
 ## 下载示例
 
@@ -63,7 +61,7 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 ## 配置示例
 
-1. 在 Visual Studio 中打开该示例。在“解决方案资源管理器”中，打开“SCPHost.exe.config”文件，然后找到 **<OAuth .../>** 元素。输入此元素的以下属性的值。
+1. 在 Visual Studio 中打开该示例。在“解决方案资源管理器”中，打开“App.config”文件，然后找到 **<OAuth .../>** 元素。输入此元素的以下属性的值。
 
     * **客户端**：先前创建的应用程序注册的客户端 ID。
 
@@ -79,7 +77,7 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 1. 在“解决方案资源管理器”中，右键单击“WordCount”项目，然后选择“提交到 Storm on HDInsight”。从“Storm 群集”下拉对话框中选择 选择 HDInsight 群集。
 
-    > [AZURE.NOTE]可能需要在几秒钟后，“Storm 群集”下拉对话框中才会填充服务器名称。
+    > [AZURE.NOTE] 可能需要在几秒钟后，“Storm 群集”下拉对话框中才会填充服务器名称。
     >
     > 如果出现提示，请输入你 Azure 订阅的登录凭据。如果你有多个订阅，请登录包含 Storm on HDInsight 群集的订阅。
 
@@ -87,7 +85,7 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
     ![拓扑，已选择 WordCount 拓扑](./media/hdinsight-storm-power-bi-topology/topologysummary.png)
 
-    > [AZURE.NOTE]你也可以展开“Azure”>“HDInsight”，右键单击 Storm on HDInsight 群集，然后选择“查看 Storm 拓扑”，来从“服务器资源管理器”查看“Storm 拓扑”。
+    > [AZURE.NOTE] 你也可以展开“Azure”>“HDInsight”，右键单击 Storm on HDInsight 群集，然后选择“查看 Storm 拓扑”，来从“服务器资源管理器”查看“Storm 拓扑”。
 
 3. 在查看“拓扑摘要”时不断滚动，直到看到“Bolt”部分。在此部分中，注意 **PowerBI** Bolt 的 **Executed** 列。使用页面顶部的刷新按钮刷新，直到值更改为非零值。当此数字开始递增时，即表示正在将项写入 Power BI。
 
@@ -135,4 +133,4 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 * [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0215_2016-->

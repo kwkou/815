@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/03/2015"
-	wacn.date="01/07/2016"/>
+	ms.date="01/08/2016"
+	wacn.date=""/>
 
 #将 Apache Mahout 与 HDInsight 中的 Hadoop 配合使用以生成电影推荐
 
@@ -30,18 +30,17 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 
 * 如何在 HDInsight 3.0 和 HDInsight 2.0 群集上安装 Mahout
 
-	> [AZURE.NOTE]Mahout 是随 HDInsight 3.1 版本的群集一起提供的。如果你使用的是早期版本的 HDInsight，请在继续操作之前参阅[安装 Mahout](#install)。
+	> [AZURE.NOTE] Mahout 是随 HDInsight 3.1 版本的群集一起提供的。如果你使用的是早期版本的 HDInsight，请在继续操作之前参阅[安装 Mahout](#install)。
 
 ##先决条件
 
-* **HDInsight 中基于 Windows 的 Hadoop 群集**。有关创建该群集的信息，请参阅[开始使用 HDInsight 中的 Hadoop][getstarted]。
-
-- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+- **HDInsight 中基于 Windows 的 Hadoop 群集**。有关创建该群集的信息，请参阅[开始使用 HDInsight 中的 Hadoop][getstarted]。
+- **配备 Azure PowerShell 的工作站**。请参阅[安装 Azure PowerShell 1.0 和更高版本](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater)。
 
 
 ##<a name="recommendations"></a>使用 Windows PowerShell 生成推荐
 
-> [AZURE.NOTE]尽管在本部分中使用的作业使用 Windows PowerShell 执行，但是，随 Mahout 一起提供的很多类当前不使用 Windows PowerShell，并且它们必须通过使用 Hadoop 命令行来运行。有关不使用 Windows PowerShell 的类的列表，请参阅[故障排除](#troubleshooting)部分。
+> [AZURE.NOTE] 尽管在本部分中使用的作业使用 Windows PowerShell 执行，但是，随 Mahout 一起提供的很多类当前不使用 Windows PowerShell，并且它们必须通过使用 Hadoop 命令行来运行。有关不使用 Windows PowerShell 的类的列表，请参阅[故障排除](#troubleshooting)部分。
 >
 > 有关使用 Hadoop 命令行运行 Mahout 作业的示例，请参阅[使用 Hadoop 命令行对数据分类](#classify)。
 
@@ -71,10 +70,10 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 		166	346	1	886397596
 
 
-3. 将 __u.data__ 文件上载到 HDInsight 群集中的 __example/data/u.data__。如果你安装了 [Azure PowerShell][aps]，则可以使用 [HDInsight-Tools][tools] 模块上载该文件。有关上载文件的其他方法，请参阅[在 HDInsight 中上载 Hadoop 作业的数据][upload]。以下命令使用 `Add-HDInsightFile` 来上载该文件：
+3.  将 __u.data__ 文件上载到 HDInsight 群集中的 __example/data/u.data__。如果你安装了 [Azure PowerShell][aps]，则可以使用 [HDInsight-Tools][tools] 模块上载该文件。有关上载文件的其他方法，请参阅[在 HDInsight 中上载 Hadoop 作业的数据][upload]。以下命令使用 `Add-HDInsightFile` 来上载该文件：
 
-    	PS C:\> Add-HDInsightFile -LocalPath "path\to\u.data" -DestinationPath "example/data/u.data" -ClusterName "your cluster name"
-
+        PS C:\> Add-HDInsightFile -LocalPath "path\to\u.data" -DestinationPath "example/data/u.data" -ClusterName "your cluster name"
+    
     这样就会将 __u.data__ 文件上载到群集的默认存储中的 __example/data/u.data__。然后，你可以通过使用 \_\___wasb:///example/data/u.data__ URI 从 HDInsight 作业访问此数据。
 
 ###运行作业
@@ -83,7 +82,6 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 
 	# The HDInsight cluster name.
 	$clusterName = "the cluster name"
-
 	# NOTE: The version number portion of the file path
 	# may change in future versions of HDInsight.
 	# So dynamically grab it using Hive.
@@ -124,7 +122,7 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 	Write-Host "STDERR"
 	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardError
 
-> [AZURE.NOTE]Mahout 作业不删除在处理作业时创建的临时数据。在示例作业中指定 `--tempDir` 参数，以将临时文件隔离到特定目录中。
+> [AZURE.NOTE] Mahout 作业不删除在处理作业时创建的临时数据。在示例作业中指定 `--tempDir` 参数，以将临时文件隔离到特定目录中。
 
 Mahout 作业不会将输出返回到 STDOUT。而是会将其作为 __part-r-00000__ 存储在指定的输出目录中。该脚本将此文件下载到你工作站上的当前目录中的 __output.txt__ 中。
 
@@ -284,19 +282,19 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 3. 使用以下命令生成文件描述符 (__KDDTrain+.info__)，该描述符使用 Mahout。
 
-		hadoop jar "c:/apps/dist/mahout-0.9.0.2.1.3.0-1887/examples/target/mahout-examples-0.9.0.2.1.3.0-1887-job.jar" org.apache.mahout.classifier.df.tools.Describe -p "wasb:///example/data/KDDTrain+.arff" -f "wasb:///example/data/KDDTrain+.info" -d N 3 C 2 N C 4 N C 8 N 2 C 19 N L
+		hadoop jar "c:/apps/dist/mahout-0.9.0.2.2.7.1-37/examples/target/mahout-examples-0.9.0.2.2.7.1-37-job.jar" org.apache.mahout.classifier.df.tools.Describe -p "wasb:///example/data/KDDTrain+.arff" -f "wasb:///example/data/KDDTrain+.info" -d N 3 C 2 N C 4 N C 8 N 2 C 19 N L
 
 	`N 3 C 2 N C 4 N C 8 N 2 C 19 N L` 描述文件中数据的属性。例如，L 指示标签。
 
 4. 通过使用以下命令生成决策树的林：
 
-		hadoop jar c:/apps/dist/mahout-0.9.0.2.1.3.0-1887/examples/target/mahout-examples-0.9.0.2.1.3.0-1887-job.jar org.apache.mahout.classifier.df.mapreduce.BuildForest -Dmapred.max.split.size=1874231 -d wasb:///example/data/KDDTrain+.arff -ds wasb:///example/data/KDDTrain+.info -sl 5 -p -t 100 -o nsl-forest
+		hadoop jar c:/apps/dist/mahout-0.9.0.2.2.7.1-37/examples/target/mahout-examples-0.9.0.2.2.7.1-37-job.jar org.apache.mahout.classifier.df.mapreduce.BuildForest -Dmapred.max.split.size=1874231 -d wasb:///example/data/KDDTrain+.arff -ds wasb:///example/data/KDDTrain+.info -sl 5 -p -t 100 -o nsl-forest
 
-    此操作的输出存储在 __nsl-forest__ 目录中，该目录位于 HDInsight 群集的存储中的 \_\___wasb://user/&lt;username>/nsl-forest/nsl-forest.seq 处。&lt;用户名> 是你用于远程桌面会话的用户名。此文件对用户不可读。
+    此操作的输出存储在 __nsl-forest__ 目录中，该目录位于 HDInsight 群集的存储中的 __wasb://user/&lt;username>/nsl-forest/nsl-forest.seq__ 处。&lt;用户名> 是你用于远程桌面会话的用户名。此文件对用户不可读。
 
 5. 通过为 __KDDTest+.arff__ 数据集分类来测试该林。请使用以下命令：
 
-    	hadoop jar c:/apps/dist/mahout-0.9.0.2.1.3.0-1887/examples/target/mahout-examples-0.9.0.2.1.3.0-1887-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i wasb:///example/data/KDDTest+.arff -ds wasb:///example/data/KDDTrain+.info -m nsl-forest -a -mr -o wasb:///example/data/predictions
+    	hadoop jar c:/apps/dist/mahout-0.9.0.2.2.7.1-37/examples/target/mahout-examples-0.9.0.2.2.7.1-37-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i wasb:///example/data/KDDTest+.arff -ds wasb:///example/data/KDDTrain+.info -m nsl-forest -a -mr -o wasb:///example/data/predictions
 
     此命令返回如下有关分类过程的摘要信息：
 
@@ -324,9 +322,9 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 	    Reliability                                53.4921%
 	    Reliability (standard deviation)            0.4933
 
-  此作业还将生成位于 \_\___wasb:///example/data/predictions/KDDTest+.arff.out__ 的文件。但是，此文件对用户不可读。
+  此作业还将生成位于 __wasb:///example/data/predictions/KDDTest+.arff.out__ 的文件。但是，此文件对用户不可读。
 
-> [AZURE.NOTE]Mahout 作业不会覆盖文件。如果要再次运行这些作业，则必须删除由以前的作业创建的文件。
+> [AZURE.NOTE] Mahout 作业不会覆盖文件。如果要再次运行这些作业，则必须删除由以前的作业创建的文件。
 
 ##<a name="troubleshooting"></a>故障排除
 
@@ -351,6 +349,7 @@ Mahout 安装在 HDInsight 3.1 群集上，它可以通过使用以下步骤手�
 2. 将该 jar 文件上载到群集默认存储的 __example/jars__ 中。以下示例使用 [HDInsight-Tools][tools] 中的 add-hdinsightfile 来上载文件：
 
     	PS C:\> .\Add-HDInsightFile -LocalPath "path\to\mahout-core-0.9-job.jar" -DestinationPath "example/jars/mahout-core-0.9-job.jar" -ClusterName "your cluster name"
+
 
 ###无法覆盖文件
 
@@ -411,4 +410,4 @@ Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些�
 [tools]: https://github.com/Blackmist/hdinsight-tools
  
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0215_2016-->

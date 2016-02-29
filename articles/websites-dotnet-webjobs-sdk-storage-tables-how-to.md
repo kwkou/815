@@ -8,9 +8,9 @@
 	editor="jimbe"/>
 
 <tags
-	ms.service="web-sites"
-	ms.date="09/22/2015"
-	wacn.date="02/17/2016"/>
+	ms.service="app-service-web"
+	ms.date="12/14/2015"
+	wacn.date=""/>
 
 # 如何通过 WebJobs SDK 使用 Azure 表存储
 
@@ -18,9 +18,9 @@
 
 本指南提供了 C# 代码示例，用于演示如何使用 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk) 版本 1.x 读取和写入 Azure 存储表。
 
-本指南假设您了解[如何使用指向存储帐户的连接字符串在 Visual Studio 中创建 WebJob 项目](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)。
+本指南假设你了解[如何使用指向存储帐户的连接字符串在 Visual Studio 中创建 WebJob 项目](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)或创建[多个存储帐户](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/MultipleStorageAccountsEndToEndTests.cs)。
 		
-一些代码段显示用于[手动调用](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#manual)的函数中所使用的 `Table` 属性，即，不通过使用其中一个触发器属性。
+一些代码段显示了[手动调用](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#manual)（即：不是使用触发器属性之一调用）的函数中使用的 `Table` 属性。
 
 ## <a id="ingress"></a>如何向表中添加实体
 
@@ -95,7 +95,7 @@
 
 通过包含两个其他参数的 `Table` 属性构造函数，您可以在想要绑定到单个表实体时，指定分区键和行键。
 
-下面的代码示例基于队列消息中接收到的分区键和行键，读取 `Person` 实体的表行：
+下面的代码示例基于队列消息中接收的分区键和行键值读取 `Person` 实体的表行：
 
 		public static void ReadTableEntity(
 		    [QueueTrigger("inputqueue")] Person personInQueue,
@@ -159,4 +159,4 @@
 本指南提供的代码示例演示了如何处理常见方案以操作 Azure 表。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 推荐资源](/documentation/articles/websites-webjobs-resources/)。
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0215_2016-->

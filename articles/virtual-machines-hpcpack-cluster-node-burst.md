@@ -9,25 +9,25 @@
  tags="azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/28/2015"
-	wacn.date="12/17/2015" />
+	ms.date="01/08/2016"
+	wacn.date=""/>
 
 # 将按需“突发”节点（辅助角色实例）作为计算资源添加到 Azure 中的 HPC Pack 群集
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
-本文介绍如何按需将 Azure“突发”节点（在云服务中运行的辅助角色实例）作为计算资源添加到 Azure 的现有 HPC Pack 头节点。这可让你增加 Azure 的 HPC 群集的计算能力，无需维护一组预配置计算节点 VM。
+本文介绍如何按需将 Azure“突发”节点（在云服务中运行的辅助角色实例）作为计算资源添加到 Azure 的现有 HPC Pack 头节点。这可让你按需增加 Azure 中 HPC 群集的计算能力，而无需维护一组预配置的计算节点 VM。
 
 ![突发节点][burst]
 
->[AZURE.TIP]如果使用 [HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)在 Azure 中创建群集，则可以在自动化部署中包含 Azure 突发节点。
+>[AZURE.TIP] 如果使用 [HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)在 Azure 中创建群集，则可以在自动化部署中包含 Azure 突发节点。请参阅该文中的示例。
 
-本文中的步骤有助于你将 Azure 节点快速添加到基于云的 HPC Pack 头节点 VM，进行测试或概念证明部署。此程序实质上与“迸发到 Azure”的程序相同，可将云计算能力添加到本地 HPC Pack 群集。有关教程，请参阅[使用 Microsoft HPC Pack 设置混合计算群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster)。有关生产部署的详细指南和注意事项，请参阅[使用 Microsoft HPC Pack 迸发到 Azure ](http://go.microsoft.com/fwlink/p/?LinkID=200493)。
+本文中的步骤有助于你将 Azure 节点快速添加到基于云的 HPC Pack 头节点 VM，进行测试或概念证明部署。此过程实质上与“迸发到 Azure”的过程相同，用于为本地 HPC Pack 群集添加云计算能力。有关教程，请参阅[使用 Microsoft HPC Pack 设置混合计算群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster)。有关生产部署的详细指南和注意事项，请参阅[使用 Microsoft HPC Pack 迸发到 Azure ](https://technet.microsoft.com/zh-cn/library/gg481749.aspx)。
 
 ## 先决条件
 
-* **Azure VM 中部署的 HPC Pack 头节点** - 请参阅[在 Azure VM 中部署 HPC Pack 头节点](/documentation/articles/virtual-machines-hpcpack-cluster-headnode)，了解在经典（服务管理）部署模型中创建群集头节点的步骤。
+* **Azure VM 中部署的 HPC Pack 头节点** — 请参阅[在 Azure VM 中部署 HPC Pack 头节点](/documentation/articles/virtual-machines-hpcpack-cluster-headnode)，了解在经典（服务管理）部署模型中创建群集头节点的步骤。
 
 * **Azure 订阅** — 若要添加 Azure 节点，可以选择与用来部署头节点 VM 的订阅相同的订阅，也可以选择一个（或多个）不同的订阅。
 
@@ -35,12 +35,12 @@
 
 ## 步骤 1：创建云服务和存储帐户，以添加 Azure 节点
 
-使用 Azure 门户或同类工具配置部署 Azure 节点所需的以下各项：
+使用 Azure 管理门户或等效工具配置部署 Azure 节点所需的以下项：
 
 * 新的 Azure 云服务
 * 新的 Azure 存储帐户
 
->[AZURE.NOTE]请勿重复使用订阅中的现有云服务。还请不要为此云服务部署单独的自定义云服务包。启动（设置）Azure 节点时，HPC Pack 会自动部署一个云服务包。
+>[AZURE.NOTE] 请勿重复使用订阅中的现有云服务。还请不要为此云服务部署单独的自定义云服务包。启动（设置）Azure 节点时，HPC Pack 会自动部署一个云服务包。
 
 **注意事项**
 
@@ -57,13 +57,13 @@
 
 对于此案例，可以选择 HPC Pack 在头节点上自动安装和配置的**默认 HPC Azure 管理证书**。此证书对进行测试和概念证明部署很有用。若要使用此证书，只需从头节点 VM 将文件 C:\\Program Files\\Microsoft HPC Pack 2012\\Bin\\hpccert.cer 上载到订阅即可。
 
-有关配置管理证书的其他选项，请参阅[为 Azure 突发部署配置 Azure 管理证书的方案](http://technet.microsoft.com/library/gg481759.aspx)。
+有关配置管理证书的其他选项，请参阅[为 Azure 突发部署配置 Azure 管理证书的方案](http://technet.microsoft.com/zh-cn/library/gg481759.aspx)。
 
 ## 步骤 3：向群集部署 Azure 节点
 
 
 
-本方案中添加和启动 Azure 节点的步骤通常与本地头节点使用的步骤相同。有关详细信息，请参阅[使用 Microsoft HPC Pack 部署 Azure 节点的步骤]((https://technet.microsoft.com/library/gg481758(v=ws.10).aspx)中的以下部分：
+本方案中添加和启动 Azure 节点的步骤通常与本地头节点使用的步骤相同。有关详细信息，请参阅[使用 Microsoft HPC Pack 部署 Azure 节点的步骤](https://technet.microsoft.com/zh-cn/library/gg481758.aspx)中的以下部分：
 
 * 创建 Azure 节点模板
 
@@ -73,13 +73,13 @@
 
 添加和启动节点后，它们就已准备好用于运行群集作业。
 
-如果部署 Azure 节点时遇到问题，请参阅[排除使用 Microsoft HPC Pack 部署 Azure 节点时发生的故障](http://technet.microsoft.com/library/jj159097(v=ws.10).aspx)。
+如果部署 Azure 节点时遇到问题，请参阅[排除使用 Microsoft HPC Pack 部署 Azure 节点时发生的故障](http://technet.microsoft.com/zh-cn/library/jj159097(v=ws.10).aspx)。
 
 ## 后续步骤
 
-* 如果你想要有一种方法能够根据群集上作业及任务的当前工作负荷自动增加或减少 Azure 计算资源，请参阅[增加和减少 HPC Pack 群集中的 Azure 计算资源](/documentation/articles/virtual-machines-hpcpack-cluster-node-autogrowshrink)。
+* 如果你想要有一种方法能够根据群集上作业及任务的当前工作负荷自动增加或减少 Azure 计算资源，请参阅[自动增加和减少 HPC Pack 群集中的 Azure 计算资源](/documentation/articles/virtual-machines-hpcpack-cluster-node-autogrowshrink)。
 
 <!--Image references-->
 [burst]: ./media/virtual-machines-hpcpack-cluster-node-burst/burst.png
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0215_2016-->

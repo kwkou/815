@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/01/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="01/04/2016"
+	wacn.date=""/>
 
 # 使用 Azure PowerShell 管理 HDInsight 中的 Hadoop 群集
 
@@ -26,12 +26,36 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
 在开始阅读本文前，你必须具有：
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
+##<a id="install-azure-powershell-10-and-greater"></a>安装 Azure PowerShell 1.0 和更高版本
+
+首先，必须卸载 0.9x 版本。
+
+若要检查所安装的 PowerShell 版本，请执行以下操作：
+
+	Get-Module *azure*
+	
+若要卸载旧版本，请运行控制面板中的“程序和功能”。
+
+有两个主要选项用于安装 Azure PowerShell。
+
+- [PowerShell 库](https://www.powershellgallery.com/)。在已提升权限的 PowerShell ISE 或已提升权限的 Windows PowerShell 控制台中运行以下命令：
+		
+		# Install the Azure Service Management module from PowerShell Gallery
+		Install-Module Azure
+		
+		# Import Azure Service Management module
+		Import-Module Azure
+
+	有关详细信息，请参阅 [PowerShell 库](https://www.powershellgallery.com/)。
+
+- [Microsoft Web 平台安装程序 (WebPI)](http://aka.ms/webpi-azps)。如果你已安装 Azure PowerShell 0.9.x，系统将提示你卸载 0.9.x。如果你从 PowerShell 库安装了 Azure PowerShell 模块，安装程序将要求你在安装之前删除该模块，以确保 Azure PowerShell 环境一致。有关说明，请参阅[通过 WebPI 安装 Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/)。
+
+WebPI 将每月接收更新。PowerShell 库将持续接收更新。如果你能够熟练地从 PowerShell 库安装，则该库就是在 Azure PowerShell 中获得最新、最完善更新的首要途径。
 
 ##创建群集
 
-HDInsight 群集在 Azure 存储帐户上需要 Blob 容器：
+HDInsight 群集要求在 Azure 存储帐户中创建 Blob 容器：
 
 - HDInsight 使用 Azure 存储帐户的 Blob 容器作为默认文件系统。你需要先拥有 Azure 存储帐户和存储容器，然后才能创建 HDInsight 群集。默认存储帐户和 HDInsight 群集必须位于同一位置。
 
@@ -39,10 +63,14 @@ HDInsight 群集在 Azure 存储帐户上需要 Blob 容器：
 
 **连接到 Azure**
 
-	Add-AzureAccount -Environment AzureChinaCloud
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
 
-当你有多个 Azure 订阅时，将调用 **Select-AzureSubscription**。
-	
+	Add-AzureAccount -Environment AzureChinaCloud
+	Get-AzureSubscription  # list your subscriptions and get your subscription ID
+	Select-AzureSubscription -SubscriptionId "<Your Azure Subscription ID>"
+
+如果你有多个 Azure 订阅，将调用 **Select-AzureSubscription**。
+
 **创建 Azure 存储帐户**
 
 	New-AzureStorageAccount -StorageAccountName <Azure Storage Account Name> -Location "<Azure Location>" -Type <AccountType> # account type example: Standard_LRS for zero redundancy storage
@@ -55,7 +83,7 @@ HDInsight 群集在 Azure 存储帐户上需要 Blob 容器：
 	# List Storage accounts for the current subscription
 	Get-AzureStorageAccount
 	# List the keys for a Storage account
-	Get-AzureStorageKey -StorageAccountName $storageAccountName <Azure Storage Account Name>
+	Get-AzureStorageKey -StorageAccountName $storageAccountName
 
 有关使用门户获取信息的详细信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)的“查看、复制和重新生成存储访问密钥”部分。
 
@@ -64,7 +92,7 @@ HDInsight 群集在 Azure 存储帐户上需要 Blob 容器：
 Azure PowerShell 无法在 HDInsight 创建过程中创建 Blob 容器。你可以使用以下脚本创建一个容器：
 
 	$storageAccountName = "<Azure Storage Account Name>"
-	$storageAccountKey = Get-AzureStorageKey -StorageAccountName $defaultStorageAccount |  %{ $_.Primary }
+	$storageAccountKey = Get-AzureStorageKey -StorageAccountName $storageAccountName |  %{ $_.Primary }
 	$containerName="<AzureBlobContainerName>"
 
 	# Create a storage context object
@@ -114,7 +142,7 @@ Azure PowerShell 无法在 HDInsight 创建过程中创建 Blob 容器。你可�
 ##缩放群集
 群集缩放功能可让你更改 Azure HDInsight 中运行的群集使用的辅助节点数，而无需重新创建群集。
 
->[AZURE.NOTE]只支持使用 HDInsight 3.1.3 或更高版本的群集。如果你不确定群集的版本，可以查看“属性”页。请参阅[熟悉群集门户界面](/documentation/articles/hdinsight-administer-use-management-portal-v1#Get-familiar-with-the-cluster-portal-interface)。
+>[AZURE.NOTE] 只支持使用 HDInsight 3.1.3 或更高版本的群集。如果你不确定群集的版本，可以查看“属性”页。请参阅[熟悉群集门户界面](/documentation/articles/hdinsight-administer-use-management-portal-v1#Get-familiar-with-the-cluster-portal-interface)。
 
 更改 HDInsight 支持的每种类型的群集所用数据节点数的影响：
 
@@ -181,7 +209,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 	# Credential option 1
 	$hadoopUserName = "admin"
-	$hadoopUserPassword = "Pass@word123"
+	$hadoopUserPassword = "<Enter the Password>"
 	$hadoopUserPW = ConvertTo-SecureString -String $hadoopUserPassword -AsPlainText -Force
 	$credential = New-Object System.Management.Automation.PSCredential($hadoopUserName,$hadoopUserPW)
 
@@ -190,7 +218,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 	
 	Grant-AzureHDInsightHttpServicesAccess -Name $clusterName -HttpCredential $credential
 
->[AZURE.NOTE]授予/撤消访问权限时，你将重设群集用户的用户名和密码。
+>[AZURE.NOTE] 授予/撤消访问权限时，你将重设群集用户的用户名和密码。
 
 也可以使用门户完成此操作。请参阅[使用 Azure 管理门户管理 HDInsight][hdinsight-admin-portal]。
 
@@ -271,4 +299,4 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0215_2016-->
