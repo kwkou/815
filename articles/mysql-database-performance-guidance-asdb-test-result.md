@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="了解服务层和版本 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,性能,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS,ASDB基准" description="针对服务层和不同版本的性能介绍,为您选择MySQL 数据库 on Azure提供了详细的参考。我们按照ASDB基准,提供了不同版本的测试数据供您参考。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date="12/28/2015"/>
+<tags ms.service="mysql" ms.date="" wacn.date="02/29/2016"/>
 
 #了解服务层和版本
 > [AZURE.SELECTOR]
@@ -37,20 +37,20 @@ ASDB基准的基本特性包括：
   <tr>
     <td width="47" valign="top"><p align="center"><strong>MS 1</strong></p></td>
     <td width="195" valign="top"><p align="center">10</p></td>
-    <td width="122" valign="top"><p align="center">2.2GB</p></td>
-    <td width="113" valign="top"><p align="center">16</p></td>
+    <td width="122" valign="top"><p align="center">1.7GB</p></td>
+    <td width="113" valign="top"><p align="center">12</p></td>
   </tr>
   <tr>
     <td width="47" valign="top"><p align="center"><strong>MS 2</strong></p></td>
-    <td width="195" valign="top"><p align="center">25</p></td>
-    <td width="122" valign="top"><p align="center">3.6GB</p></td>
-    <td width="113" valign="top"><p align="center">26</p></td>
+    <td width="195" valign="top"><p align="center">20</p></td>
+    <td width="122" valign="top"><p align="center">3.0GB</p></td>
+    <td width="113" valign="top"><p align="center">22</p></td>
   </tr>
   <tr>
     <td width="47" valign="top"><p align="center"><strong>MS 3</strong></p></td>
-    <td width="195" valign="top"><p align="center">100</p></td>
-    <td width="122" valign="top"><p align="center">14.3GB</p></td>
-    <td width="113" valign="top"><p align="center">105</p></td>
+    <td width="195" valign="top"><p align="center">60</p></td>
+    <td width="122" valign="top"><p align="center">8.9GB</p></td>
+    <td width="113" valign="top"><p align="center">65</p></td>
   </tr>
   <tr>
     <td width="47" valign="top"><p align="center"><strong>MS 4</strong></p></td>
@@ -66,9 +66,9 @@ ASDB基准的基本特性包括：
   </tr>
   <tr>
     <td width="47" valign="top"><p align="center"><strong>MS 6</strong></p></td>
-    <td width="195" valign="top"><p align="center">400</p></td>
-    <td width="122" valign="top"><p align="center">57.2GB</p></td>
-    <td width="113" valign="top"><p align="center">420</p></td>
+    <td width="195" valign="top"><p align="center">450</p></td>
+    <td width="122" valign="top"><p align="center">73.6GB</p></td>
+    <td width="113" valign="top"><p align="center">470</p></td>
   </tr>
 </table>
 

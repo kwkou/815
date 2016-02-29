@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="Understanding Service Layers and Versions – Microsoft Azure Cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, performance, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS, ASDB benchmark" description="Explains service tiers and the performance of different versions, and provides you with a detailed reference for choosing MySQL Database on Azure. Based on the Azure SQL Database Benchmark, we have provided test data for different versions for your reference." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date="12/28/2015"/>
+<tags ms.service="mysql" ms.date="" wacn.date="02/29/2016"/>
 
 #Understanding Service Tiers and Versions
 > [AZURE.SELECTOR]
@@ -37,27 +37,39 @@ The table below shows the level of stable performance that can be maintained by 
   </tr>
   <tr>
     <td width="47" valign="top"><p align="center"><strong>MS 1</strong></p></td>
-    <td width="195" valign="top"><p align="center">7.5</p></td>
-    <td width="122" valign="top"><p align="center">3GB</p></td>
-    <td width="113" valign="top"><p align="center">10</p></td>
+    <td width="195" valign="top"><p align="center">10</p></td>
+    <td width="122" valign="top"><p align="center">1.7GB</p></td>
+    <td width="113" valign="top"><p align="center">12</p></td>
   </tr>
   <tr>
     <td width="47" valign="top"><p align="center"><strong>MS 2</strong></p></td>
-    <td width="195" valign="top"><p align="center">15</p></td>
-    <td width="122" valign="top"><p align="center">3GB</p></td>
-    <td width="113" valign="top"><p align="center">17</p></td>
+    <td width="195" valign="top"><p align="center">20</p></td>
+    <td width="122" valign="top"><p align="center">3.0GB</p></td>
+    <td width="113" valign="top"><p align="center">22</p></td>
   </tr>
   <tr>
     <td width="47" valign="top"><p align="center"><strong>MS 3</strong></p></td>
-    <td width="195" valign="top"><p align="center">40</p></td>
-    <td width="122" valign="top"><p align="center">7.2GB</p></td>
-    <td width="113" valign="top"><p align="center">43</p></td>
+    <td width="195" valign="top"><p align="center">60</p></td>
+    <td width="122" valign="top"><p align="center">8.9GB</p></td>
+    <td width="113" valign="top"><p align="center">65</p></td>
   </tr>
   <tr>
     <td width="47" valign="top"><p align="center"><strong>MS 4</strong></p></td>
-    <td width="195" valign="top"><p align="center">120</p></td>
-    <td width="122" valign="top"><p align="center">28GB</p></td>
-    <td width="113" valign="top"><p align="center">140</p></td>
+    <td width="195" valign="top"><p align="center">200</p></td>
+    <td width="122" valign="top"><p align="center">28.6GB</p></td>
+    <td width="113" valign="top"><p align="center">210</p></td>
+  </tr>
+  <tr>
+    <td width="47" valign="top"><p align="center"><strong>MS 5</strong></p></td>
+    <td width="195" valign="top"><p align="center">300</p></td>
+    <td width="122" valign="top"><p align="center">43.6GB</p></td>
+    <td width="113" valign="top"><p align="center">320</p></td>
+  </tr>
+  <tr>
+    <td width="47" valign="top"><p align="center"><strong>MS 6</strong></p></td>
+    <td width="195" valign="top"><p align="center">450</p></td>
+    <td width="122" valign="top"><p align="center">73.6GB</p></td>
+    <td width="113" valign="top"><p align="center">470</p></td>
   </tr>
 </table>
 
