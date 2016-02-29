@@ -8,9 +8,10 @@
 	editor="jimbe" />
 
 <tags 
-	ms.service="storage" 
-	ms.date="10/26/2015" 
-	wacn.date="12/17/2015"/>
+	ms.service="storage"
+
+	ms.date="01/11/2016"
+	wacn.date="02/25/2016"/>
 
 # 如何通过 Java 使用文件存储
 
@@ -44,8 +45,8 @@
 	public static final String storageConnectionString = 
 	    "DefaultEndpointsProtocol=http;" + 
 	    "AccountName=your_storage_account_name;" + 
-	    "AccountKey=your_storage_account_key;"+
-		"EndpointSuffix=core.Chinacloudapi.cn";
+	    "AccountKey=your_storage_account_key;" +
+	    "EndpointSuffix=core.Chinacloudapi.cn";
 
 > [AZURE.NOTE]将 your_storage_account_name 和 your_storage_account_key 替换为你的存储帐户的实际值。
 
@@ -72,7 +73,7 @@
 使用文件存储客户端以后，你就可以获得对共享的引用。
 
 	// Get a reference to the file share
-	CloudFileShare share = fileClient.getShareReference("sampleshare"); 
+	CloudFileShare share = fileClient.getShareReference("sampleshare");
 
 实际创建共享时，请使用 CloudFileShare 对象的 **createIfNotExists** 方法。
 
@@ -106,9 +107,9 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 	//Get a reference to the root directory for the share.
 	CloudFileDirectory rootDir = share.getRootDirectoryReference();
 
-	//Get a reference to the sampledir directory 
+	//Get a reference to the sampledir directory
 	CloudFileDirectory sampleDir = rootDir.getDirectoryReference("sampledir");
-			    
+
 	if (sampleDir.createIfNotExists()) {
 		System.out.println("sampledir created");
 	} else {
@@ -121,7 +122,7 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 
 	//Get a reference to the root directory for the share.
 	CloudFileDirectory rootDir = share.getRootDirectoryReference();
-		   
+
 	for ( ListFileItem fileItem : rootDir.listFilesAndDirectories() ) {
 		System.out.println(fileItem.getUri());
 	}
@@ -133,10 +134,10 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 
 	//Get a reference to the root directory for the share.
 	CloudFileDirectory rootDir = share.getRootDirectoryReference();
-	
+
 	//Get a reference to the directory that contains the file
 	CloudFileDirectory sampleDir = rootDir.getDirectoryReference("sampledir");
-			    
+
 	//Get a reference to the file you want to download
 	CloudFile file = sampleDir.getFileReference("SampleFile.txt");
 
@@ -153,7 +154,7 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 
 	// Get a reference to the directory where the file to be deleted is in
 	CloudFileDirectory containerDir = rootDir.getDirectoryReference("sampledir");
-	
+
 	String filename = "SampleFile.txt"
 	CloudFile file;
 
@@ -171,7 +172,7 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 	CloudFileDirectory rootDir = share.getRootDirectoryReference();
 
 	// Get a reference to the directory you want to delete
-	CloudFileDirectory containerDir = rootDir.getDirectoryReference("sampledir");	
+	CloudFileDirectory containerDir = rootDir.getDirectoryReference("sampledir");
 
 	// Delete the directory
 	if ( containerDir.deleteIfExists() ) {
@@ -193,10 +194,10 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 
 	   // Get a reference to the file share
 	   CloudFileShare share = fileClient.getShareReference("sampleshare");
-	   
+
 	   if (share.deleteIfExists()) {
 		   System.out.println("sampleshare deleted");
-	   } 
+	   }
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
@@ -209,13 +210,14 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 - [Azure 存储客户端 SDK 参考]
 - [Azure 存储 REST API]
 - [Azure 存储团队博客]
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
 
 [Azure SDK for Java]: http://azure.microsoft.com/zh-cn/develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
 [Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
-[Azure 存储 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+[Azure 存储 REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
  
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0215_2016-->

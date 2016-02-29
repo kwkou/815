@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="12/01/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/12/2016"
+	wacn.date="02/25/2016"/>
 
 # 监视、诊断和排查 Microsoft Azure 存储空间问题 
 
@@ -117,7 +117,7 @@
 
 ### <a name="monitoring-service-health"></a>监视服务运行状况
 
-可以使用 Microsoft Azure 门户（网址为 <a href="https://manage.windowsazure.cn" target="_blank">https://manage.windowsazure.cn</a>）查看全球所有 Azure 区域中的存储服务（及其他 Azure 服务）的运行状况。这使你可以立即了解是否有不受你控制的问题正在影响你的应用程序所使用的区域中的存储服务。 
+可以使用 Microsoft Azure 门户（网址为 <a href="https://manage.windowsazure.cn" target="_blank">https://manage.windowsazure.cn</a>）查看全球所有 Azure 区域中的存储服务（及其他 Azure 服务）的运行状况。这使你可以立即了解是否有不受你控制的问题正在影响你的应用程序所使用的区域中的存储服务。
 
 此外，[Azure 管理门户](https://manage.windowsazure.cn)还可以提供影响各种 Azure 服务的事件的通知。
 注意：此信息以前未在 Azure 服务仪表板（网址为：<a href="http://www.windowsazure.cn/support/service-dashboard/" target="_blank">http://www.windowsazure.cn/support/service-dashboard/</a>）上与历史数据一起提供。
@@ -923,4 +923,4 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 [9]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-1.png
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-2.png
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0215_2016-->

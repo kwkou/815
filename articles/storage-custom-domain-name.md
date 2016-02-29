@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="配置存储帐户中 Blob 数据的域名 | Microsoft Azure" 
-	description="了解如何配置自定义域以便访问 Azure 存储帐户中的 Blob 数据。" 
+	pageTitle="为 Blob 存储终结点配置域名 | Microsoft Azure"
+	description="了解如何将自定义用户域映射到 Azure 存储帐户的 Blob 存储终结点。"
 	services="storage" 
 	documentationCenter="" 
 	authors="tamram" 
@@ -9,15 +9,15 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="09/03/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="01/07/2015"
+	wacn.date="02/25/2016"/>
 
 
-# 为 Azure 存储帐户中的 Blob 数据配置自定义域名
+# 为 Blob 存储终结点配置自定义域名
 
 ## 概述
 
-你可以配置自定义域以便访问 Azure 存储帐户中的 Blob 数据。Blob 服务的默认终结点为 https://<*mystorageaccount*>.blob.core.chinacloudapi.cn。如果你将自定义域和子域（例如 **www.contoso.com**）映射到你的存储帐户的 Blob 终结点，则你的用户也可以使用该域访问你的存储帐户中的 Blob 数据。
+你可以配置自定义域以便访问 Azure 存储帐户中的 Blob 数据。Blob 存储的默认终结点为 https://<*mystorageaccount*>.blob.core.chinacloudapi.cn。如果你将自定义域和子域（例如 **www.contoso.com**）映射到你的存储帐户的 Blob 终结点，则你的用户也可以使用该域访问你的存储帐户中的 Blob 数据。 
 
 
 > [AZURE.NOTE]	此任务中的过程适用于 Azure 存储帐户。对于云服务，请参阅<a href = "/documentation/articles/cloud-services-custom-domain-name/">为 Azure 云服务配置自定义域名</a>；对于 Web 应用，请参阅<a href="/documentation/articles/web-sites-custom-domain-name/">为 Azure Web 应用配置自定义域名</a>。 
@@ -40,7 +40,7 @@ Blob|**默认 URL：** http://mystorageaccount.blob.core.chinacloudapi.cn/mycont
 
 如果你的自定义域目前在支持不能有任何停机时间的应用程序，则使用在<a href="#register-asverify">使用中间 asverify 子域为你的存储帐户注册自定义域</a>中介绍的过程。
 
-若要配置自定义域名，必须通过你的域注册机构创建一个新的 CNAME 记录。该 CNAME 记录为域名指定别名；在这个例子中，它将您的自定义域的地址映射到您的存储帐户的 Blob 服务终结点。
+若要配置自定义域名，必须通过你的域注册机构创建一个新的 CNAME 记录。该 CNAME 记录为域名指定别名；在这个例子中，它将自定义域的地址映射到你的存储帐户的 Blob 存储终结点。
 
 每个注册机构指定 CNAME 记录的方法类似但略有不同，但概念是相同的。请注意，许多基本域注册程序包不提供 DNS 配置，因此，您可能需要首先升级您的域注册程序包，然后才能创建 CNAME 记录。
 
@@ -113,4 +113,4 @@ Blob|**默认 URL：** http://mystorageaccount.blob.core.chinacloudapi.cn/mycont
 -   <a href="http://msdn.microsoft.com/zh-cn/library/azure/gg680307.aspx">如何将 CDN 内容映射到自定义域</a>
  
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0215_2016-->

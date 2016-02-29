@@ -1,17 +1,17 @@
 
 <properties 
-  pageTitle="在 Azure 存储空间中设置和检索对象的属性和元数据 | Microsoft Azure" 
-  description="在 Azure 存储空间中存储对象的自定义元数据，并设置和检索系统属性。" 
-  services="storage" 
-  documentationCenter="" 
-  authors="tamram" 
-  manager="adinah" 
+  pageTitle="在 Azure 存储空间中设置和检索对象的属性和元数据 | Microsoft Azure" 
+  description="在 Azure 存储空间中存储对象的自定义元数据，并设置和检索系统属性。" 
+  services="storage" 
+  documentationCenter="" 
+  authors="tamram" 
+  manager="adinah" 
   editor=""/>
 
 <tags 
-  ms.service="storage" 
-  ms.date="10/26/2015" 
-  wacn.date="12/31/2015"/>
+  ms.service="storage" 
+  ms.date="01/05/2016" 
+  wacn.date="02/25/2016"/>
 
 
 # 设置和检索属性与元数据 #
@@ -20,9 +20,9 @@
 
 Azure 存储中的对象支持系统属性和用户定义的元数据，除了该数据以外，它们还包含：
 
-*   **系统属性**。 系统属性存在于每个存储资源上。其中一些属性是可以读取或设置的，而另一些属性是只读的。事实上，有些系统属性与某些标准 HTTP 标头对应。Azure 存储客户端库为您维护这些内容。  
+*   **系统属性。** 系统属性存在于每个存储资源上。其中一些属性是可以读取或设置的，而另一些属性是只读的。事实上，有些系统属性与某些标准 HTTP 标头对应。Azure 存储客户端库为您维护这些内容。  
 
-*   **用户定义的元数据**。 用户定义的元数据是在给定资源上以名称/值对的形式指定的元数据。您可以使用元数据来存储存储资源其他值；这些值仅用于您个人目的，不会影响资源的行为方式。
+*   **用户定义的元数据。** 用户定义的元数据是在给定资源上以名称/值对的形式指定的元数据。您可以使用元数据来存储存储资源其他值；这些值仅用于您个人目的，不会影响资源的行为方式。
 
 检索资源的属性和元数据值的过程分为两步。在可以读取这些值之前，你必须通过调用 **FetchAttributes** 方法显式获取它们。
 
@@ -46,8 +46,8 @@ Azure 存储中的对象支持系统属性和用户定义的元数据，除了�
     // Retrieve a reference to a container. 
     CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");
 
-	// Create the container if it does not already exist.
-	container.CreateIfNotExists();
+    // Create the container if it does not already exist.
+    container.CreateIfNotExists();
 
     // Fetch container properties and write out their values.
     container.FetchAttributes();
@@ -95,4 +95,4 @@ Azure 存储中的对象支持系统属性和用户定义的元数据，除了�
 - [适用于 .NET 的 Azure 存储客户端库参考](http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx)
 - [适用于 .NET 的 Azure 存储客户端库包](https://www.nuget.org/packages/WindowsAzure.Storage/)  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0215_2016-->

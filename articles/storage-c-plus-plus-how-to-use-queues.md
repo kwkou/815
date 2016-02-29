@@ -9,15 +9,15 @@
 
 <tags 
     ms.service="storage" 
-	ms.date="09/23/2015" 
-    wacn.date="11/02/2015"/>
+    ms.date="01/05/2016"
+    wacn.date="02/25/2016"/>
 
 # 如何通过 C++ 使用队列存储  
 
 [AZURE.INCLUDE [storage-selector-queue-include](../includes/storage-selector-queue-include.md)]
 
 ## 概述
-本指南将演示如何使用 Azure 队列存储服务执行常见方案。示例用 C++ 编写，并使用[适用于 C++ 的 Azure 存储空间客户端库](https://github.com/Azure/azure-storage-cpp/blob/v1.0.0/README.md)。介绍的方案包括“插入”、“查看”、“获取”和“删除”队列消息以及“创建和删除队列”。
+本指南将演示如何使用 Azure 队列存储服务执行常见方案。示例用 C++ 编写，并使用[适用于 C++ 的 Azure 存储空间客户端库](https://github.com/Azure/azure-storage-cpp/blob/v1.0.0/README.md)。介绍的方案包括“插入”、“查看”、“获取”和“删除”队列消息以及“创建和删除队列”。  
 
 >[AZURE.NOTE] 本指南主要面向适用于 C++ 的 Azure 存储空间客户端库 1.0.0 版及更高版本。建议的版本是存储空间客户端库 1.0.0，它可以通过 [NuGet](http://www.nuget.org/packages/wastorage) 或 [GitHub](https://github.com/) 获得。
 
@@ -25,17 +25,17 @@
 [AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
 ## 创建 C++ 应用程序  
-在本指南中，你将使用存储功能，这些功能可以在 C++ 应用程序中运行。  
+在本指南中，你将使用存储功能，这些功能可以在 C++ 应用程序中运行。
 
-为此，你将需要安装适用于 C++ 的 Azure 存储客户端库，并在你的 Azure 订阅中创建 Azure 存储帐户。  
+为此，你将需要安装适用于 C++ 的 Azure 存储客户端库，并在你的 Azure 订阅中创建 Azure 存储帐户。
 
 若要安装适用于 C++ 的 Azure 存储客户端库，你可以使用以下方法：
 
 -	**Linux：**按照[适用于 C++ 的 Azure 存储空间客户端库自述文件](https://github.com/Azure/azure-storage-cpp/blob/master/README.md)页中提供的说明操作。  
 -	**Windows：**在 Visual Studio 主菜单中，单击“工具”->“NuGet 程序包管理器”->“程序包管理器控制台”。在 [NuGet 程序包管理器控制台](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)窗口中输入以下命令，然后按 **ENTER**。  
 
-		Install-Package wastorage 
- 
+		Install-Package wastorage
+
 ## 配置应用程序以访问队列存储
 将以下 include 语句添加到 C++ 文件的顶部，你要在此使用 Azure 存储 API 来访问队列：
 
@@ -44,19 +44,19 @@
 
 ## 设置 Azure 存储连接字符串
 
-Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，必须提供以下格式的存储连接字符串，并对 *AccountName* 和 *AccountKey* 值使用管理门户中列出的存储帐户的名称和存储帐户的存储访问密钥。有关存储帐户和访问密钥的信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)。此示例演示如何声明一个静态字段以保存连接字符串：
+Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，必须提供以下格式的存储连接字符串，并使用[管理门户](https://manage.windowsazure.cn)中列出的存储帐户的存储帐户名称和存储访问密钥作为 *AccountName* 和 *AccountKey* 值。有关存储帐户和访问密钥的信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)。此示例演示如何声明一个静态字段以保存连接字符串：
 
 	// Define the connection-string with your values.
-	const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key"));
+	const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key;EndpointSuffix=core.chinacloudapi.cn"));
 
-若要在本地 Windows 计算机中测试您的应用程序，可以使用随 [Azure SDK](/downloads/) 一起安装的 Microsoft Azure [存储模拟器](https://msdn.microsoft.com/zh-CN/library/azure/hh403989.aspx)。存储模拟器是一种用于模拟本地开发计算机上 Azure 中可用的 Blob、队列和表服务的实用程序。以下示例演示如何声明一个静态字段以将连接字符串保存到你的本地存储模拟器：
+若要在本地 Windows 计算机中测试你的应用程序，可以使用随 [Azure SDK](/downloads/) 一起安装的 Microsoft Azure [存储模拟器](https://msdn.microsoft.com/zh-CN/library/azure/hh403989.aspx)。存储模拟器是一种用于模拟本地开发计算机上 Azure 中可用的 Blob、队列和表服务的实用程序。以下示例演示如何声明一个静态字段以将连接字符串保存到你的本地存储模拟器：
 
 	// Define the connection-string with Azure Storage Emulator.
 	const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  
 
 若要启动 Azure 存储模拟器，请选择“开始”按钮或按 **Windows** 键。开始键入“Azure 存储模拟器”，然后从应用程序列表中选择“Microsoft Azure 存储模拟器”。
 
-下面的示例假定你使用了这两个方法之一来获取存储连接字符串。  
+下面的示例假定你使用了这两个方法之一来获取存储连接字符串。
 
 ## 检索你的连接字符串
 可以使用 **cloud_storage_account** 类来表示您的存储帐户信息。若要从存储连接字符串中检索您的存储帐户信息，您可以使用 **parse** 方法。 
@@ -119,7 +119,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 	std::wcout << U("Peeked message content: ") << peeked_message.content_as_string() << std::endl;
 
 ## 如何：更改已排队消息的内容
-你可以更改队列中现有消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 n，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。  
+你可以更改队列中现有消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 n，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。
 
 	// Retrieve storage account from connection-string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_conection_string);
@@ -129,10 +129,10 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 	// Retrieve a reference to a queue.
 	azure::storage::cloud_queue queue = queue_client.get_queue_reference(U("my-sample-queue"));
-		
+
 	// Get the message from the queue and update the message contents.
 	// The visibility timeout "0" means make it visible immediately.
-	// The visibility timeout "60" means the client can get another minute to continue 
+	// The visibility timeout "60" means the client can get another minute to continue
 	// working on the message.
 	azure::storage::cloud_queue_message changed_message = queue.get_message();
 
@@ -159,8 +159,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 	std::wcout << U("Dequeued message: ") << dequeued_message.content_as_string() << std::endl;
 
 	// Delete the message.
-	queue.delete_message(dequeued_message);  
-
+	queue.delete_message(dequeued_message);
 
 ## 如何：使用其他方法取消对消息的排队
 你可以通过两种方式自定义队列中的消息检索。首先，你可以获取一批消息（最多 32 个）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。以下代码示例使用 **get_messages** 方法来在一次调用中获取 20 条消息。然后，它会使用 **for** 循环处理每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。请注意，将对所有消息同时启动 5 分钟的超时设置，因此调用 **get_messages** 的 5 分钟后，任何尚未删除的消息都将再次可见。  
@@ -174,14 +173,14 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 	// Retrieve a reference to a queue.
 	azure::storage::cloud_queue queue = queue_client.get_queue_reference(U("my-sample-queue"));
 
-	// Dequeue some queue messages (maximum 32 at a time) and set their visibility timeout to 
+	// Dequeue some queue messages (maximum 32 at a time) and set their visibility timeout to
 	// 5 minutes (300 seconds).
 	azure::storage::queue_request_options options;
 	azure::storage::operation_context context;
 
 	// Retrieve 20 messages from the queue with a visibility timeout of 300 seconds.
 	std::vector<azure::storage::cloud_queue_message> messages = queue.get_messages(20, std::chrono::seconds(300), options, context);
-		
+
 	for (auto it = messages.cbegin(); it != messages.cend(); ++it)
 	{
 		// Display the contents of the message.
@@ -225,7 +224,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 	queue.delete_queue_if_exists();  
 
 ## 后续步骤
-既然你已了解队列存储的基本知识，就可以按照以下链接了解有关 Azure 存储的详细信息。  
+既然你已了解队列存储的基本知识，就可以按照以下链接了解有关 Azure 存储的详细信息。
 
 -	[如何通过 C++ 使用 Blob 存储](/documentation/articles/storage-c-plus-plus-how-to-use-blobs)
 -	[如何通过 C++ 使用表存储](/documentation/articles/storage-c-plus-plus-how-to-use-tables)
@@ -233,5 +232,6 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 -	[适用于 C++ 的存储空间客户端库参考](http://azure.github.io/azure-storage-cpp)
 -	[Azure 存档文档](/documentation/services/storage/)
 
+ 
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0215_2016-->

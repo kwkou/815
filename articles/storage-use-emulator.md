@@ -8,8 +8,8 @@
 	editor=""/>
 <tags 
 	ms.service="storage" 
-	ms.date="09/23/2015" 
-	wacn.date="12/11/2015"/>
+	ms.date="01/05/2016" 
+	wacn.date="02/25/2016"/>
 
 # 使用 Azure 存储模拟器进行开发和测试
 
@@ -228,4 +228,4 @@ Microsoft Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表�
 
 - 现在完全支持版本 2013年-08-15 的 Azure 存储服务。（以前仅存储模拟器 2.2.1 预览版本支持此版本。）
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0215_2016-->

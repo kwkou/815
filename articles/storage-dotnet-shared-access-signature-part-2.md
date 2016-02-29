@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="创建 SAS 并将 SAS 用于 Blob 服务 | Microsoft Azure" 
-	description="了解如何通过 Blob 服务生成和使用共享访问签名" 
+	pageTitle="创建 SAS 并将 SAS 用于 Blob 存储 | Microsoft Azure" 
+	description="本教程演示如何创建共享访问签名以用于 Blob 存储，以及如何从客户端应用程序使用这些签名。"
 	services="storage" 
 	documentationCenter="" 
 	authors="tamram" 
@@ -9,12 +9,12 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="06/08/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="01/07/2016"
+	wacn.date="02/25/2016"/>
 
 
 
-# 共享访问签名，第 2 部分：创建 SAS 并将 SAS 用于 Blob 服务
+# 共享访问签名，第 2 部分：创建 SAS 并将 SAS 用于 Blob 存储
 
 ## 概述
 
@@ -26,17 +26,18 @@
 - 从客户端应用程序测试共享访问签名
 
 ## 关于本教程
+
 在本教程中，我们将通过创建两个控制台应用程序重点说明如何为容器和 Blob 创建共享访问签名。第一个控制台应用程序将在一个容器和 Blob 上生成共享访问签名。该应用程序知道存储帐户密钥。第二个控制台应用程序（将充当客户端应用程序）使用第一个应用程序创建的共享访问签名访问容器和 Blob 资源。该应用程序仅使用共享访问签名验证其对容器和 Blob 资源的访问 – 它不知道帐户密钥。
 
 ## 第 1 部分：创建控制台应用程序以便生成共享访问签名
 
-首先，确保你安装了 Azure .NET 存储客户端库。你可以安装包含该客户端库的最新程序集的 [NuGet 程序包](http://nuget.org/packages/WindowsAzure.Storage/ "NuGet 包") ；这是确保你具有最新修补程序的建议方法。你还可以通过下载包含该客户端库的最新 [Azure SDK for .NET](/zh-cn/downloads) 版本来下载该客户端库。
+首先，确保你安装了 Azure .NET 存储客户端库。你可以安装包含该客户端库的最新程序集的 [NuGet 程序包](http://nuget.org/packages/WindowsAzure.Storage/ "NuGet 包")；这是确保你具有最新修补程序的建议方法。你还可以通过下载包含该客户端库的最新 [Azure SDK for .NET](/downloads/) 版本来下载该客户端库。
 
 在 Visual Studio 中，创建一个新的 Windows 控制台应用程序并将其命名为 **GenerateSharedAccessSignatures**。使用以下方法之一添加对 **Microsoft.WindowsAzure.Configuration.dll** 和 **Microsoft.WindowsAzure.Storage.dll** 的引用：
 
 - 	如果你想要安装 NuGet 程序包，请首先安装 [NuGet Package Manager Extension for Visual Studio](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c)。在 Visual Studio 中，选择“项目”|“管理 NuGet 包”，在线搜索“Azure 存储空间”，然后按照说明进行安装。
 - 	另外，还可以在你安装的 Azure SDK 中找到这些程序集，然后添加对它们的引用。
- 
+
 在 Program.cs 文件的顶部，添加以下 **using** 语句：
 
     using System.IO;    
@@ -47,12 +48,12 @@
 编辑 app.config 文件，使其所含配置设置中的连接字符串指向你的存储帐户。你的 app.config 文件应如下所示：
 
     <configuration>
-      <startup> 
+      <startup>
         <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
       </startup>
       <appSettings>
-        <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=mykey;EndpointSuffix=core.Chinacloudapi.cn"/>
-      </appSettings> 
+        <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=mykey;EndpointSuffix=core.chinacloudapi.cn"/>
+      </appSettings>
     </configuration>
 
 ### 为容器生成共享访问签名 URI
@@ -65,16 +66,16 @@
     {
 	    //Parse the connection string and return a reference to the storage account.
 	    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
-	    
+
 	    //Create the blob client object.
 	    CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
-	    
+
 	    //Get a reference to a container to use for the sample code, and create it if it does not exist.
 	    CloudBlobContainer container = blobClient.GetContainerReference("sascontainer");
 	    container.CreateIfNotExists();
-	    
+
 	    //Insert calls to the methods created below here...
-	    
+
 	    //Require user input before closing the console window.
 	    Console.ReadLine();
     }
@@ -88,10 +89,10 @@
 	    SharedAccessBlobPolicy sasConstraints = new SharedAccessBlobPolicy();
 	    sasConstraints.SharedAccessExpiryTime = DateTime.UtcNow.AddHours(24);
 	    sasConstraints.Permissions = SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.List;
-	    
+
 	    //Generate the shared access signature on the container, setting the constraints directly on the signature.
 	    string sasContainerToken = container.GetSharedAccessSignature(sasConstraints);
-	    
+
 	    //Return the URI string for the container, including the SAS token.
 	    return container.Uri + sasContainerToken;
     }
@@ -102,9 +103,9 @@
     Console.WriteLine("Container SAS URI: " + GetContainerSasUri(container));
     Console.WriteLine();
 
-编译并且运行以输出新容器的共享访问签名 URI。该 URI 将类似以下 URI：       
+编译并且运行以输出新容器的共享访问签名 URI。该 URI 将类似以下 URI：
 
-https://storageaccount.blob.core.chinacloudapi.cn/sascontainer?sv=2012-02-12&se=2013-04-13T00%3A12%3A08Z&sr=c&sp=wl&sig=t%2BbzU9%2B7ry4okULN9S0wst%2F8MCUhTjrHyV9rDNLSe8g%3D
+	https://storageaccount.blob.core.chinacloudapi.cn/sascontainer?sv=2012-02-12&se=2013-04-13T00%3A12%3A08Z&sr=c&sp=wl&sig=t%2BbzU9%2B7ry4okULN9S0wst%2F8MCUhTjrHyV9rDNLSe8g%3D
 
 在你运行代码后，你在容器上创建的共享访问签名将在接下来的 24 个小时内有效。该签名向客户端授予列出容器中的 Blob 以及将新 Blob 写入容器的权限。
 
@@ -118,8 +119,8 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer?sv=2012-02-12&se=
     {
 	    //Get a reference to a blob within the container.
 	    CloudBlockBlob blob = container.GetBlockBlobReference("sasblob.txt");
-	    
-	    //Upload text to the blob. If the blob does not yet exist, it will be created. 
+
+	    //Upload text to the blob. If the blob does not yet exist, it will be created.
 	    //If the blob does exist, its existing content will be overwritten.
 	    string blobContent = "This blob will be accessible to clients via a Shared Access Signature.";
 	    MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(blobContent));
@@ -128,7 +129,7 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer?sv=2012-02-12&se=
 	    {
 		    blob.UploadFromStream(ms);
 	    }
-	    
+
 	    //Set the expiry time and permissions for the blob.
 	    //In this case the start time is specified as a few minutes in the past, to mitigate clock skew.
 	    //The shared access signature will be valid immediately.
@@ -136,24 +137,24 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer?sv=2012-02-12&se=
 	    sasConstraints.SharedAccessStartTime = DateTime.UtcNow.AddMinutes(-5);
 	    sasConstraints.SharedAccessExpiryTime = DateTime.UtcNow.AddHours(24);
 	    sasConstraints.Permissions = SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.Write;
-	    
+
 	    //Generate the shared access signature on the blob, setting the constraints directly on the signature.
 	    string sasBlobToken = blob.GetSharedAccessSignature(sasConstraints);
-	    
+
 	    //Return the URI string for the container, including the SAS token.
 	    return blob.Uri + sasBlobToken;
     }
 
 在 **Main()** 方法的底部，在调用 **Console.ReadLine()** 之前，添加以下代码行以调用 **GetBlobSasUri()**，并将共享访问签名 URI 写入控制台窗口：
-    
+
     //Generate a SAS URI for a blob within the container, without a stored access policy.
     Console.WriteLine("Blob SAS URI: " + GetBlobSasUri(container));
     Console.WriteLine();
-    
+
 
 编译并且运行以输出新 Blob 的共享访问签名 URI。该 URI 将类似以下 URI：
 
-https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=2012-02-12&st=2013-04-12T23%3A37%3A08Z&se=2013-04-13T00%3A12%3A08Z&sr=b&sp=rw&sig=dF2064yHtc8RusQLvkQFPItYdeOz3zR8zHsDMBi4S30%3D
+	https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=2012-02-12&st=2013-04-12T23%3A37%3A08Z&se=2013-04-13T00%3A12%3A08Z&sr=b&sp=rw&sig=dF2064yHtc8RusQLvkQFPItYdeOz3zR8zHsDMBi4S30%3D
 
 ### 在容器上创建存储访问策略
 
@@ -167,7 +168,7 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
 
 添加一个新方法，该方法在窗口上创建一个新的存储访问策略并返回该策略的名称：
 
-    static void CreateSharedAccessPolicy(CloudBlobClient blobClient, CloudBlobContainer container, 
+    static void CreateSharedAccessPolicy(CloudBlobClient blobClient, CloudBlobContainer container,
 		string policyName)
     {
         //Create a new shared access policy and define its constraints.
@@ -192,7 +193,7 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
     perms.SharedAccessPolicies.Clear();
     container.SetPermissions(perms);
 
-    //Create a new access policy on the container, which may be optionally used to provide constraints for 
+    //Create a new access policy on the container, which may be optionally used to provide constraints for
     //shared access signatures on the container and the blob.
     string sharedAccessPolicyName = "tutorialpolicy";
     CreateSharedAccessPolicy(blobClient, container, sharedAccessPolicyName);
@@ -207,14 +208,14 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
 
     static string GetContainerSasUriWithPolicy(CloudBlobContainer container, string policyName)
     {
-	    //Generate the shared access signature on the container. In this case, all of the constraints for the 
+	    //Generate the shared access signature on the container. In this case, all of the constraints for the
 	    //shared access signature are specified on the stored access policy.
 	    string sasContainerToken = container.GetSharedAccessSignature(null, policyName);
-	    
+
 	    //Return the URI string for the container, including the SAS token.
 	    return container.Uri + sasContainerToken;
     }
-    
+
 在 **Main()** 方法的底部，在调用 **Console.ReadLine()** 之前，添加以下代码行以调用 **GetContainerSasUriWithPolicy** 方法：
 
     //Generate a SAS URI for the container, using a stored access policy to set constraints on the SAS.
@@ -231,10 +232,10 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
     {
 	    //Get a reference to a blob within the container.
 	    CloudBlockBlob blob = container.GetBlockBlobReference("sasblobpolicy.txt");
-	    
-	    //Upload text to the blob. If the blob does not yet exist, it will be created. 
+
+	    //Upload text to the blob. If the blob does not yet exist, it will be created.
 	    //If the blob does exist, its existing content will be overwritten.
-	    string blobContent = "This blob will be accessible to clients via a shared access signature. " + 
+	    string blobContent = "This blob will be accessible to clients via a shared access signature. " +
 	    "A stored access policy defines the constraints for the signature.";
 	    MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(blobContent));
 	    ms.Position = 0;
@@ -242,10 +243,10 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
 	    {
 		    blob.UploadFromStream(ms);
 	    }
-	    
+
 	    //Generate the shared access signature on the blob.
 	    string sasBlobToken = blob.GetSharedAccessSignature(null, policyName);
-	    
+
 	    //Return the URI string for the container, including the SAS token.
 	    return blob.Uri + sasBlobToken;
     }
@@ -262,40 +263,40 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
     {
 	    //Parse the connection string and return a reference to the storage account.
 	    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
-	    
+
 	    //Create the blob client object.
 	    CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
-	    
+
 	    //Get a reference to a container to use for the sample code, and create it if it does not exist.
 	    CloudBlobContainer container = blobClient.GetContainerReference("sascontainer");
 	    container.CreateIfNotExists();
-	    
+
 	    //Generate a SAS URI for the container, without a stored access policy.
 	    Console.WriteLine("Container SAS URI: " + GetContainerSasUri(container));
 	    Console.WriteLine();
-	    
+
 	    //Generate a SAS URI for a blob within the container, without a stored access policy.
 	    Console.WriteLine("Blob SAS URI: " + GetBlobSasUri(container));
 	    Console.WriteLine();
-	    
+
         //Clear any existing access policies on container.
         BlobContainerPermissions perms = container.GetPermissions();
         perms.SharedAccessPolicies.Clear();
         container.SetPermissions(perms);
 
-        //Create a new access policy on the container, which may be optionally used to provide constraints for 
+        //Create a new access policy on the container, which may be optionally used to provide constraints for
         //shared access signatures on the container and the blob.
 	    string sharedAccessPolicyName = "tutorialpolicy";
 	    CreateSharedAccessPolicy(blobClient, container, sharedAccessPolicyName);
-	    
+
 	    //Generate a SAS URI for the container, using a stored access policy to set constraints on the SAS.
 	    Console.WriteLine("Container SAS URI using stored access policy: " + GetContainerSasUriWithPolicy(container, sharedAccessPolicyName));
 	    Console.WriteLine();
-	    
+
 	    //Generate a SAS URI for a blob within the container, using a stored access policy to set constraints on the SAS.
 	    Console.WriteLine("Blob SAS URI using stored access policy: " + GetBlobSasUriWithPolicy(container, sharedAccessPolicyName));
 	    Console.WriteLine();
-	    
+
 	    Console.ReadLine();
     }
 
@@ -316,7 +317,7 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
     using System.IO;
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Blob;
-    
+
 在 **Main()** 方法的主体中，添加以下约束，并且将其值更新为你在本教程的第 1 部分中生成的共享访问签名。
 
     static void Main(string[] args)
@@ -326,7 +327,7 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
 	    string containerSASWithAccessPolicy = "<your container SAS with access policy>";
 	    string blobSASWithAccessPolicy = "<your blob SAS with access policy>";
     }
-    
+
 ### 添加方法以便尝试使用共享访问签名执行容器操作
 
 接下来，我们将添加一个方法，该方法将在容器上使用共享访问签名测试一些有代表性的容器操作。请注意，使用共享访问签名返回对容器的引用，并且单独基于该签名验证对容器的访问。
@@ -343,7 +344,7 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
         //Create a list to store blob URIs returned by a listing operation on the container.
         List<ICloudBlob> blobList = new List<ICloudBlob>();
 
-        //Write operation: write a new blob to the container. 
+        //Write operation: write a new blob to the container.
         try
         {
             CloudBlockBlob blob = container.GetBlockBlobReference("blobCreatedViaSAS.txt");
@@ -381,7 +382,7 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
             Console.WriteLine();
         }
 
-        //Read operation: Get a reference to one of the blobs in the container and read it. 
+        //Read operation: Get a reference to one of the blobs in the container and read it.
         try
         {
             CloudBlockBlob blob = container.GetBlockBlobReference(blobList[0].Name);
@@ -428,10 +429,11 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
 	    string blobSAS = "<your blob SAS>";
 	    string containerSASWithAccessPolicy = "<your container SAS with access policy>";
 	    string blobSASWithAccessPolicy = "<your blob SAS with access policy>";
-	
+
 	    //Call the test methods with the shared access signatures created on the container, with and without the access policy.
 	    UseContainerSAS(containerSAS);
-	    UseContainerSAS(containerSASWithAccessPolicy); 
+	    UseContainerSAS(containerSASWithAccessPolicy);
+
 	    Console.ReadLine();
 	}
 
@@ -449,7 +451,7 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
         //Return a reference to the blob using the SAS URI.
         CloudBlockBlob blob = new CloudBlockBlob(new Uri(sas));
 
-        //Write operation: Write a new blob to the container. 
+        //Write operation: Write a new blob to the container.
         try
         {
             string blobContent = "This blob was created with a shared access signature granting write permissions to the blob. ";
@@ -520,15 +522,15 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
 	    string blobSAS = "<your blob SAS>";
 	    string containerSASWithAccessPolicy = "<your container SAS with access policy>";
 	    string blobSASWithAccessPolicy = "<your blob SAS with access policy>";
-	
+
 	    //Call the test methods with the shared access signatures created on the container, with and without the access policy.
 	    UseContainerSAS(containerSAS);
-	    UseContainerSAS(containerSASWithAccessPolicy); 
-	    
+	    UseContainerSAS(containerSASWithAccessPolicy);
+
 	    //Call the test methods with the shared access signatures created on the blob, with and without the access policy.
 	    UseBlobSAS(blobSAS);
 	    UseBlobSAS(blobSASWithAccessPolicy);
-	
+
 	    Console.ReadLine();
 	}
 
@@ -538,7 +540,7 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
 
 ## 后续步骤
 
-[共享访问签名，第 1 部分：了解 SAS 模型](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-1)
+[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)
 
 [管理对 Azure 存储资源的访问](http://msdn.microsoft.com/zh-cn/library/azure/ee393343.aspx)
 
@@ -549,4 +551,4 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
 [sas-console-output-1]: ./media/storage-dotnet-shared-access-signature-part-2/sas-console-output-1.PNG
 [sas-console-output-2]: ./media/storage-dotnet-shared-access-signature-part-2/sas-console-output-2.PNG
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_0215_2016-->
