@@ -15,7 +15,7 @@
 # 后续步骤以及如何管理 Azure AD Connect
 以下属于高级操作主题，介绍如何根据组织的需要和要求自定义 Azure Active Directory Connect。
 
-## 向 Azure AD Premium 或企业移动套件用户分配许可证
+## 向 Azure AD Premium 和企业移动性套件用户分配许可证
 
 将用户同步到云后，你需要向他们分配许可证，以便他们可以继续使用云应用（例如 Office 365）。
 

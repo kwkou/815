@@ -138,7 +138,7 @@ Microsoft 建议组织在 Azure AD 中部署单个目录。
 
 Azure AD Connect 同步服务器与 Azure AD 目录之间不存在一对一的关系。在每个 Azure AD 目录中，你需要一个 Azure AD Connect 同步服务器安装。Azure AD 目录实例在设计上是隔离的，其中一个目录中的用户看不到另一个目录中的用户。如果这是预期的情况，就是受支持的配置，否则应该使用上述单一 Azure AD 目录模型。
 
-### 每个对象只在 Azure AD 目录中运行一次
+### <a name="each-object-only-once-in-an-azure-ad-directory"></a>每个对象只在 Azure AD 目录中运行一次
 ![SingleForestFiltered](./media/active-directory-aadconnect-topologies/SingleForestFiltered.png)
 
 在此拓扑中，一个 AAD Connect 同步服务器连接到每个 Azure AD 目录。Azure AD Connect 同步服务器必须设置筛选，让它们都有一组对象的互斥集可运行，例如将每个服务器的范围设置为特定域或 OU。DNS 域只能在单个 Azure AD 目录中注册，因此本地 AD 中的用户 UPN 也必须使用独立的命名空间。例如，在以上三个独立 UPN 的图片中，后缀都注册在本地 AD 中：contoso.com、fabrikam.com 和 wingtiptoys.com。每个本地 AD 域中的用户使用不同的命名空间。

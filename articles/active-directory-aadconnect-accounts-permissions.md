@@ -9,13 +9,13 @@
 
 <tags
    ms.service="active-directory"  
-   ms.date="10/13/2015"
+   ms.date="11/02/2015"
    wacn.date="01/21/2016"/>
 
 
 # Azure AD Connect 所需的帐户和权限
 
-Azure AD Connect 安装向导提供提供两种不同的路径：
+<a name="create-the-ad-ds-account"></a>Azure AD Connect 安装向导提供提供两种不同的路径：
 
 - 在“快速设置”中，我们需要更多权限，以便轻松设置配置，而无需创建用户或单独配置权限。
 
@@ -46,7 +46,7 @@ Azure AD Connect 安装向导提供提供两种不同的路径：
 ### 全局管理员凭据
 这些凭据只能在安装期间使用，而不能在安装完成后使用。它用于创建 [Azure AD 帐户](#azure-ad-service-account)，以便将更改同步到 Azure AD。该帐户还会在 Azure AD 中启用同步作为功能。使用的帐户不能启用 MFA。
 
-## 自定义设置安装
+## <a name="#custom-settings-installation"></a>自定义设置安装
 使用自定义设置时，必须在安装之前创建用于连接 Active Directory 的帐户。
 
 向导页 | 收集的凭据 | 所需的权限| 用途
@@ -72,6 +72,14 @@ Web 应用代理服务器 |对于列表中的每个服务器，如果运行向�
 | 设备写回 | [设备写回](/documentation/articles/active-directory-aadconnect-get-started-custom-device-writeback)中叙述了如何使用 PowerShell 脚本授予权限。|
 | 组写回 | 在分发组应该放置到的 OU 中读取、创建、更新和删除组对象。|
 
+## 升级
+从 Azure AD Connect 的一个版本升级到新版本时，你需要拥有以下权限：
+
+| 主体 | 所需的权限 | 用途 |
+| ---- | ---- | ---- |
+| 运行安装向导的用户 | 本地服务器的管理员 | 更新二进制文件 |
+| 运行安装向导的用户 | ADSyncAdmins 的成员 | 对同步规则和其他配置进行更改。 |
+| 运行安装向导的用户 | 如果使用完整 SQL 服务器：需有同步引擎数据库的 DBO 权限（或类似权限） | 进行数据库级别的更改，例如使用新列更新表。 |
 
 ## 有关所创建帐户的详细信息
 
@@ -82,11 +90,13 @@ Web 应用代理服务器 |对于列表中的每个服务器，如果运行向�
 ![AD 帐户](./media/active-directory-aadconnect-accounts-permissions/adsyncserviceaccount.png)
 
 ### <a name="azure-ad-connect-sync-service-account"></a> Azure AD Connect 同步服务帐户
-本地服务帐户将由安装向导创建（除非你在自定义设置指定了要使用的帐户）。该帐户带有 **AAD\_** 前缀，用作实际同步服务的运行身份。如果你在域控制器上安装 Azure AD Connect，则会在该域中创建帐户。如果你在远程服务器上使用 SQL 服务器，该帐户必须位于域中。
+安装向导将创建两个本地服务帐户（除非你在自定义设置指定了要使用的帐户）。具有 **AAD\_** 前缀的帐户用作实际同步服务的运行身份。如果你在域控制器上安装 Azure AD Connect，则会在该域中创建这些帐户。如果你在远程服务器上使用 SQL 服务器，**AAD\_** 服务帐户必须位于域中。具有 **AADSyncSched\_** 前缀的帐户用于运行同步引擎的计划任务。
 
 ![同步服务帐户](./media/active-directory-aadconnect-accounts-permissions/syncserviceaccount.png)
 
-该帐户带有永不过期的长复杂密码。此帐户将由 Windows 用于存储加密密钥，使得此帐户的密码不被重置或更改。
+这些帐户带有永不过期的长复杂密码。
+
+Windows 使用同步引擎服务帐户来存储加密密钥，使得此帐户的密码不被重置或更改。
 
 如果你使用完整的 SQL Server，则服务帐户将是为同步引擎创建的数据库的 DBO。如果使用其他权限，服务将无法按预期工作。还会创建 SQL 登录名。
 
@@ -107,4 +117,4 @@ Web 应用代理服务器 |对于列表中的每个服务器，如果运行向�
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->
