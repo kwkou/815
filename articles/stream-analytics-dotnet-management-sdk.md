@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="11/23/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/11/2016"
+	wacn.date="02/26/2016"/>
 
 
 # 管理 .NET SDK：设置和运行使用 .NET 版 Azure 流分析 API 的分析作业
@@ -146,6 +146,8 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 	StreamAnalyticsManagementClient client = new StreamAnalyticsManagementClient(aadTokenCredentials);
 
 **resourceGroupName** 变量的值应该与你在先决条件步骤中创建或选取的资源组的名称相同。
+
+若要自动执行凭据演示方面的作业创建，请参阅[使用 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)。
 
 本文的剩余部分假定此代码位于 **Main** 方法的开头。
 
@@ -359,6 +361,5 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 [stream.analytics.scale.jobs]: /documentation/articles/stream-analytics-scale-jobs
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
- 
 
 <!---HONumber=Mooncake_0118_2016-->
