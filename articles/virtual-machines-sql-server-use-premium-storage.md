@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/06/2015"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 # 将 Azure 高级存储用于虚拟机上的 SQL Server
 

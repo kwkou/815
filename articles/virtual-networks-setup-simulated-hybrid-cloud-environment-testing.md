@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="01/14/2016"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 # 设置用于测试的模拟混合云环境
 

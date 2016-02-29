@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/07/2016"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 # 如何在经典部署模型中为虚拟机配置可用性集
 

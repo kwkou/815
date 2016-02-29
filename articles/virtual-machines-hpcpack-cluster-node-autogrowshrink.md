@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/07/2016"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 # 在 HPC Pack 群集中根据群集工作负荷自动增加和减少 Azure 计算资源
 

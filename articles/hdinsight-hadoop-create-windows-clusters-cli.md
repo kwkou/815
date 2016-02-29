@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="01/04/2016"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 # 使用 Azure CLI 在 HDInsight 中创建基于 Windows 的 Hadoop 群集
 

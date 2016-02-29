@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/09/2016"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 # 如何在虚拟机上通过 Java 运行需要进行大量计算的任务
 

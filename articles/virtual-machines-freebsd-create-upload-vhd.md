@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/12/2016"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 # 创建 FreeBSD VHD 并将其上载到 Azure
 

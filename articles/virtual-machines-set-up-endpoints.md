@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/06/2016"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 # 如何在经典 Azure 虚拟机上设置终结点
 
