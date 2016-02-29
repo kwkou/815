@@ -30,8 +30,6 @@
 ## VM 任务
 下表比较了你可以在服务管理和资源管理器中使用 Azure CLI 命令执行的常见 VM 任务。使用许多资源管理器命令时，你需要传递现有资源组的名称。
 
-> [AZURE.NOTE] 这些示例不包括通常为资源管理器中的 VM 部署建议的基于模板的操作。有关信息，请参阅[将 Azure CLI 与 Azure 资源管理器配合使用](/documentation/articles/xplat-cli-azure-resource-manager)和[使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)。
-
 任务 | 服务管理 | 资源管理器
 -------------- | ----------- | -------------------------
 创建最基本的 VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>`<br/><br/>（从 `azure vm image list` 命令获取 `image-urn`。有关示例，请参阅[本文](/documentation/articles/resource-groups-vm-searching)。）

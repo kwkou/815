@@ -1,4 +1,4 @@
-### 为虚拟机创建 TCP 终结点
+###<a name="create-a-tcp-endpoint-for-the-virtual-machine"></a> 为虚拟机创建 TCP 终结点
 
 要从 Internet 访问 SQL Server，虚拟机必须具有终结点以侦听传入的 TCP 通信。此 Azure 配置步骤将传入 TCP 端口通信定向到虚拟机可以访问的 TCP 端口。
 

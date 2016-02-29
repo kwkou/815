@@ -32,7 +32,7 @@ Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以�
 * [完成配置步骤以便在另一台计算机上使用 SQL Server Management Studio 连接到虚拟机](#SSMS)
 * [后续步骤](#Optional)
 
-##<a id="Provision">从库预配 SQL Server 虚拟机</a>
+##<a id="Provision"></a>从库预配 SQL Server 虚拟机
 
 1. 使用你的帐户登录到 [Azure 管理门户](http://manage.windowsazure.cn)。如果你没有 Azure 帐户，请访问 [Azure 试用](/pricing/1rmb-trial/)。
 
@@ -110,7 +110,7 @@ Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以�
 
 ##<a id="SSMS"></a>从另一台计算机上的 SSMS 连接到 SQL Server VM 实例
 
-以下步骤演示如何使用 SQL Server Management Studio (SSMS) 通过 Internet 连接到 SQL Server 实例。但是，这些步骤同样适用于使你的 SQL Server 虚拟机可以通过本地和 Azure 经典部署模型中运行的应用程序访问。如果你的虚拟机部署在资源管理器模型中，请参阅[在 Azure 上连接到 SQL Server 虚拟机（资源管理器）](/documentation/articles/virtual-machines-sql-server-connectivity-resource-manager)
+以下步骤演示如何使用 SQL Server Management Studio (SSMS) 通过 Internet 连接到 SQL Server 实例。但是，这些步骤同样适用于使你的 SQL Server 虚拟机可以通过本地和 Azure 经典部署模型中运行的应用程序访问。
 
 你必须先完成下列各部分中描述的下列任务，然后才能从其他 VM 或 Internet 连接到 SQL Server 的实例：
 

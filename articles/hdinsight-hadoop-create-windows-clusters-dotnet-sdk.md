@@ -146,7 +146,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 [ssisclusterdelete]: http://msdn.microsoft.com/zh-cn/library/mt146778(v=sql.120).aspx
 
 
-##附录 A：创建依赖组件
+##<a name="appx-a-create-dependent-components"></a>附录 A：创建依赖组件
 
 以下 Azure PowerShell 脚本可用于创建本教程中的 .NET 应用程序所需的依赖组件。
 

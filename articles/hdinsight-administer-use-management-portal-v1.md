@@ -73,7 +73,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在
 8. 单击“保存”。
 
 
-##<a name="rdp" id="connect-to-hdinsight-clusters-by-using-rdp"></a> 使用 RDP 连接到 HDInsight 群集
+##<a name="rdp" id="connect-to-hdinsight-clusters-by-using-rdp"></a><a name="connect-to-clusters-using-rdp"></a> 使用 RDP 连接到 HDInsight 群集
 
 通过你在创建群集时提供的凭据，可以访问群集上的服务，但无法通过远程桌面访问群集本身。远程桌面访问默认情况下处于关闭状态，因此，使用它来直接访问群集时，要求一些其他的创建后配置。
 

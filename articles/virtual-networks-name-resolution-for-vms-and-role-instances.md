@@ -36,7 +36,7 @@
 | 位于不同云服务（而非虚拟网络）中的角色实例之间的名称解析| 不适用。不同云服务中的 VM 和角色实例之间的连接在虚拟网络外部不受支持。| 不适用。|
 
 
-## Azure 提供的名称解析
+##<a name="azure-provided-name-resolution"></a> Azure 提供的名称解析
 
 除公共 DNS 名称解析之外，Azure 还为驻留在相同虚拟网络或云服务中的 VM 和角色实例提供内部名称解析。一个云服务中的 VM/实例共享同一个 DNS 后缀，因此只需主机名就足够了。在经典虚拟网络中，不同云服务具有不同的 DNS 后缀，因此需要 FQDN。在基于 ARM 的虚拟网络中，整个虚拟网络的 DNS 后缀是相同的，因此不需要 FQDN，并且可以将 DNS 名称分配到 NIC 或虚拟机。虽然 Azure 提供的名称解析不需要任何配置，但并不适合所有部署方案，如上表所示。
 
@@ -120,7 +120,7 @@ resolv.conf 文件通常是自动生成的，不应进行编辑。添加“optio
 	- 将“echo "options timeout:1 attempts:5"”添加到“/etc/NetworkManager/dispatcher.d/11-dhclient” 
 	- 运行“service network restart”以更新
 
-## 使用你自己的 DNS 服务器的名称解析
+##<a name="name-resolution-using-your-own-dns-server"></a> 使用你自己的 DNS 服务器的名称解析
 
 如果名称解析要求超出 Azure 提供的功能，则可以选择使用你自己的 DNS 服务器。当你使用自己的 DNS 服务器时，你负责管理 DNS 记录。
 

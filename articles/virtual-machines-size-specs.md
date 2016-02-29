@@ -65,7 +65,7 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 
 <br>
 
-## 标准层：A 系列
+##<a name="standard-tier-a-series"></a> 标准层：A 系列
 
 在经典部署模型中，某些 VM 大小在 Powershell 和 CLI 中稍有不同。
 
@@ -88,7 +88,7 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 |Standard\_A6|4|28 GB|2|临时磁盘 = 285 GB |8|8x500|
 |Standard\_A7|8|56 GB|4|临时磁盘 = 605 GB |16|16x500|
 
-## 标准层：D 系列
+##<a name="standard-tier-d-series"></a> 标准层：D 系列
 
 |大小 |CPU 核心数|内存|NIC 数（最大值）|最大磁盘大小|最大数据磁盘（每个 1023 GB）|最大IOPS（每个磁盘 500 次）|
 |---|---|---|---|---|---|---|
@@ -101,7 +101,7 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 |Standard\_D13 |8|56 GB|8|临时磁盘 (SSD) = 400 GB |16|16x500|
 |Standard\_D14 |16|112 GB|8|临时磁盘 (SSD) = 800 GB |32|32x500|
 
-## 标准层：DS 系列*
+##<a name="standard-tier-ds-series"></a> 标准层：DS 系列*
 
 |大小 |CPU 核心数|内存|NIC 数（最大值）|最大磁盘大小|最大数据磁盘（每个 1023 GB）|高速缓存大小 (GB)|最大磁盘 IOPS 和带宽|
 |---|---|---|---|---|---|---|---|

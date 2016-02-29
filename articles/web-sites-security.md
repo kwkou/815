@@ -43,12 +43,6 @@ Azure 负责保护运行应用程序的基础结构和平台，而你负责保�
 
 关于基于 web 的应用程序安全注意事项的全面讨论超出了本文的范围。作为保护应用程序安全的更多指导的起点，请参阅[打开 Web 应用程序安全项目 (OWASP)](https://www.owasp.org/index.php/Main_Page)（尤其是[前 10 大项目](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)），其中列出了当前前 10 大 Web 应用程序安全缺陷（由 OWASP 成员确定）。
 
-## 对你的应用执行渗透测试
-
-开始对 Azure Web 应用测试漏洞的最简单方法之一是使用[与 Tinfoil Security 集成](/blog/web-vulnerability-scanning-for-azure-app-service-powered-by-tinfoil-security/)对你的应用执行一键式漏洞扫描。你可以查看易于理解的报告中的测试结果，并了解如何按照分步说明修复每个安全漏洞。
-
-如果你想要执行自己的渗透测试，或者想要使用其他扫描程序套件或提供程序，则必须执行 [Azure 渗透测试审批流程](https://security-forms.azure.com/penetration-testing/terms)并获得事先批准才能执行所需的渗透测试。
-
 ##<a name="https"></a> 保护与客户的通信
 
 如果你使用为 Azure Web 应用创建的 **\*.chinacloudsites.cn** 域名，则可以立即使用 HTTPS，因为 SSL 证书是针对所有 **\*.chinacloudsites.cn** 域名提供的。如果您的网站使用[自定义域名](/documentation/articles/web-sites-custom-domain-name)，则可以上载 SSL 证书，为自定义域[启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)。

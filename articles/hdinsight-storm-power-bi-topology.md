@@ -46,14 +46,13 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 * **Data.cs**：描述要发送到 Power BI 的数据对象/行
 
 > [AZURE.WARNING] Power BI 似乎允许多个同名的数据集。如果数据集不存在，并且你的拓扑结构会创建 Power BI Bolt 的多个实例，则可能会发生这种情况。若要避免此问题，请将 Bolt 的并行性提示设置为 1（如本示例中所示），或在部署拓扑之前创建数据集。
->
-> 此解决方案中包含的 **CreateDataset** 控制台应用程序是作为示例提供的，介绍如何在拓扑结构外部创建数据集。
+> <p>此解决方案中包含的 **CreateDataset** 控制台应用程序是作为示例提供的，介绍如何在拓扑结构外部创建数据集。
 
 ## 注册 Power BI 应用程序
 
 遵循[注册应用](https://powerbi.microsoft.com/en-us/documentation/powerbi-developer-register-a-client-app/)中的步骤创建应用程序注册。在访问 Power BI REST API 时将要用到此注册信息。
 
-    > [AZURE.IMPORTANT] 保存应用程序注册的“客户端 ID”。
+> [AZURE.IMPORTANT] 保存应用程序注册的“客户端 ID”。
 
 ## 下载示例
 

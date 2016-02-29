@@ -109,7 +109,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 5. 在“解决方案资源管理器”中，请确保选择“ContosoAdsWeb”作为启动项目。
 
-## <a id="configure-storage"></a>将应用程序配置为使用你的存储帐户
+## <a name="configure-storage" id="onfigure-the-web-app-to-use-your-azure-sql-database-and-storage-account"></a>将应用程序配置为使用你的存储帐户
 
 1. 打开 ContosoAdsWeb 项目中的应用程序 *Web.config* 文件。
 
