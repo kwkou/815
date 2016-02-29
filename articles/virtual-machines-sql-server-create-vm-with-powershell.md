@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/06/2015"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 # 在 Azure 中创建 SQL Server 虚拟机 (PowerShell)
 

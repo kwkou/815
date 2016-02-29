@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="12/22/2015"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 # SQL Server 在 Azure 虚拟机中的性能最佳实践
 

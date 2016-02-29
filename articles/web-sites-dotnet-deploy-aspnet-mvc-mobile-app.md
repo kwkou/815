@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="01/12/2016"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 
 # 在 Azure 上部署 ASP.NET MVC 5 移动 Web 应用

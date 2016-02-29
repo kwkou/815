@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="12/14/2015"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 
 # 适合使用 Azure 命令行界面执行 VM 任务的等效资源管理器和服务管理命令

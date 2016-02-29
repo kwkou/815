@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="12/17/2015"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 # 如何为 Web 应用配置 TLS 相互身份验证
 

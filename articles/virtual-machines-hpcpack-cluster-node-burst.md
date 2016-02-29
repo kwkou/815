@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/08/2016"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 # 将按需“突发”节点（辅助角色实例）作为计算资源添加到 Azure 中的 HPC Pack 群集
 

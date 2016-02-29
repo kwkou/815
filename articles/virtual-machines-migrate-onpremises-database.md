@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/05/2016"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 
 # 将 SQL Server 数据库迁移到 Azure VM 中的 SQL Server

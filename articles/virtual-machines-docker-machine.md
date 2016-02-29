@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/04/2016"
-	wacn.date=""/>
+	wacn.date="02/26/2016"/>
 
 # 如何将 docker-machine 与 Azure 一起使用
 
