@@ -10,7 +10,7 @@
 <tags
    ms.service="multiple"
    ms.date="09/29/2015"
-   wacn.date="12/31/2015"/>
+   wacn.date="02/25/2016"/>
 
 # Azure 中的大型计算：用于批处理和高性能计算 (HPC) 的技术资源
 这是一份技术资源指南，旨在帮助你在 Azure 中运行大规模并行、批处理和 HPC 工作负荷。在 Azure 中，可以使用各种 Azure 服务将现有的批处理或 HPC 工作负荷扩展到 Azure 云，或者生成新的大型计算解决方案。
@@ -79,13 +79,12 @@ Azure 提供[不同的大小](/documentation/articles/virtual-machines-size-spec
 
 ## 体系结构蓝图
 
-* [大规模计算 - 金融服务](http://go.microsoft.com/fwlink/?LinkId=536378) (PDF) 说明了如何使风险管理、报告和仿真在云具有可操作性，以及协调大规模计算与数据分析。
+* Microsoft Azure Batch 和 Azure 数据工厂：大规模数据处理体系结构（[PDF](http://go.microsoft.com/fwlink/?linkid=717686) 和[文章](/documentation/articles/data-factory-data-processing-using-batch.md)）演示了数据工厂如何协调数据的移动和处理，以及 Azure Batch 如何并行处理数据。
 
 ## 示例和演示
 
 * [Azure Batch 代码示例](https://github.com/Azure/azure-batch-samples)
 
-* [Batch Apps Blender 示例](https://github.com/Azure/azure-batch-apps-blender)
 ## 相关的 Azure 服务
 
 * [HDInsight](/documentation/services/hdinsight/)
@@ -101,5 +100,6 @@ Azure 提供[不同的大小](/documentation/articles/virtual-machines-size-spec
 ## 后续步骤
 
 * 有关最新通告，请参阅 [Microsoft HPC 和批处理团队博客](http://blogs.technet.com/b/windowshpc/)与 [Azure 博客](http://azure.microsoft.com/blog/tag/hpc/)。
+* 另请参阅 [Batch 中的新增功能](/updates/?service=batch)或订阅 [RSS 源](/updates/feed/?service=batch)。
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0215_2016-->
