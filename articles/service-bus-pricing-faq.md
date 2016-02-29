@@ -9,14 +9,14 @@
 
 <tags 
    ms.service="service-bus"
-   ms.date="09/09/2015"
-   wacn.date="01/14/2016" />
+   ms.date="12/28/2015"
+   wacn.date="02/26/2016" />
 
 # 服务总线定价常见问题
 
 本部分回答了一些关于服务总线定价结构的常见问题。你还可以访问 [Azure 支持常见问题](http://go.microsoft.com/fwlink/?LinkID=185083)了解一般的 Microsoft Azure 定价信息。有关服务总线定价的完整信息，请参阅[服务总线定价](/pricing/details/service-bus/)。
 
->[AZURE.NOTE]有关事件中心的定价结构，请参阅[事件中心的可用性和支持常见问题](/pricing/details/service-bus/)主题，有关其详细信息，请参阅[事件中心定价](/pricing/details/event-hubs/) 主题。
+>[AZURE.NOTE] 有关事件中心的定价结构，请参阅[事件中心的可用性和支持常见问题](/pricing/details/service-bus/event-hubs-availability-and-support-faq)主题，有关其详细信息，请参阅[事件中心定价](/pricing/details/event-hubs/)主题。
 
 - [服务总线如何收取费用？](#how-do-you-charge-for-service-bus)
 - [服务总线的哪些使用情况受数据传输限制？ 哪些不受其限制？](#what-usage-of-service-bus-is-subject-to-data-transfer-what-is-not)
@@ -108,8 +108,8 @@
 - [Azure 服务总线高级消息传送简介（博客文章）](http://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/)
 - [Azure 服务总线高级消息传送简介（Channel9）](https://channel9.msdn.com/Blogs/Subscribe/Introducing-Azure-Service-Bus-Premium-Messaging)
 - [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview)
-- [Azure 服务总线体系结构概述](/documentation/articles/fundamentals-service-bus-hybrid-solutions)
+- [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 - [如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues) 
 [Azure 经典门户]: http://manage.windowsazure.cn
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0215_2016-->
