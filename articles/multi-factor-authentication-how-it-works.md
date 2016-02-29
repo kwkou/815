@@ -4,12 +4,12 @@
 	services="multi-factor-authentication" 
 	documentationCenter="" 
 	authors="billmath" 
-	manager="terrylan" 
-	editor="bryanla"/>
+	manager="stevenpo" 
+	editor="curtland"/>
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="11/19/2015" 
+	ms.date="01/11/2016" 
 	wacn.date="01/14/2016"/>
 
 #Azure 多重身份验证的工作原理
@@ -163,4 +163,4 @@ Azure 多重身份验证有两个不同的版本。下表较详细地描述了�
 
  
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_0215_2016-->

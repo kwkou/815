@@ -1,16 +1,17 @@
 <properties 
 	pageTitle="什么是 Azure Multi-Factor Authentication？" 
 	description="Azure Multi-Factor Authentication 是要求使用多种方式（而不仅仅是用户名和密码）对你的身份进行验证的一种方法。它为用户登录和事务提供了额外的安全层。" 
+	keywords="MFA 简介, mfa 概述"
 	services="multi-factor-authentication" 
 	documentationCenter="" 
 	authors="billmath" 
-	manager="swadwha" 
-	editor="curtand"/>
+	manager="stevenpo" 
+	editor="curtland"/>
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="11/20/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="01/11/2016" 
+	wacn.date="02/25/2016"/>
 
 # 什么是 Azure 多重身份验证？
 MFA(多重身份验证)是需要使用多个验证方法的身份验证方法，为用户登录和事务额外提供一层重要的安全保障。它需要以下验证方法中的两种或更多种来进行工作：
@@ -53,4 +54,4 @@ Azure 多重身份验证是一个易于使用、可缩放且可靠的解决方�
 * [为 Office 365 设置多重身份验证](https://support.office.com/zh-cn/article/%e8%ae%be%e7%bd%ae-Office-365-%e7%9a%84%e5%a4%9a%e5%9b%a0%e7%b4%a0%e8%ba%ab%e4%bb%bd%e9%aa%8c%e8%af%81-8f0454b2-f51a-4d9c-bcde-2c48e41621c6?omkt=zh-CN&ui=zh-CN&rs=zh-CN&ad=CN)
 * [多重身份验证对我而言有什么用途？](/documentation/articles/multi-factor-authentication-end-user)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0215_2016-->
