@@ -4,16 +4,18 @@
 	documentationCenter="windows"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe"
+	editor=""
 	services="mobile-services"/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/19/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/09/2016"
+	wacn.date="02/26/2016"/>
 
 # 使用 Azure 移动服务 .NET 后端创建排行榜应用程序
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 
 本教程将说明如何使用具有 .NET 后端的 Azure 移动服务生成 Windows 应用商店应用程序。Azure 移动服务提供可缩放且安全的后端，具有内置身份验证、监视、推送通知和其他功能，以及用来生成移动应用程序的跨平台客户端库。移动服务的 .NET 后端基于 [ASP.NET Web API](http://asp.net/web-api)，可为 .NET 开发人员提供创建 REST API 的绝佳途径。
 
@@ -758,4 +760,4 @@ DTO 是定义如何通过网络发送数据的对象。如果你希望有线格�
 [添加推送通知]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [身份验证入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0215_2016-->

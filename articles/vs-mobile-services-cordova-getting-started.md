@@ -1,27 +1,20 @@
-<properties 
-	pageTitle="Cordova 移动服务项目（Visual Studio 连接服务）入门" 
-	description="描述使用 Visual Studio 连接服务将 Cordova 项目连接到 Azure 移动服务后可以执行的前几个步骤。" 
-	services="mobile-services" 
-	documentationCenter="" 
+<properties
+	pageTitle="Cordova 移动服务项目（Visual Studio 连接服务）入门 | Microsoft Azure"
+	description="描述使用 Visual Studio 连接服务将 Cordova 项目连接到 Azure 移动服务后可以执行的前几个步骤。"
+	services="mobile-services"
+	documentationCenter=""
 	authors="TomArcher"
 	manager="douge" 
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/17/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="01/05/2016"
+	wacn.date="02/26/2016"/>
 
 #  移动服务入门（Cordova 项目）
 
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
-
-
-> [AZURE.SELECTOR]
-> - [入门](/documentation/articles/vs-mobile-services-cordova-getting-started)
-> - [What Happened](/documentation/articles/vs-mobile-services-cordova-what-happened)
 
 ##前几个步骤
 为了跟踪这些代码，您需要首先执行的步骤取决于您连接的移动服务类型。
@@ -42,7 +35,7 @@ var todoTable = mobileServiceClient.getTable('TodoItem');
 
 ##向表中添加项
 
-将新的项目插入数据表。ID（类型字符串的 GUID）将自动创建为新行的主密钥。对返回的 [**Promise**](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx)对象调用 [done] 方法以获取插入对象的副本并处理任何错误。
+将新的项目插入数据表。ID（类型字符串的 GUID）将自动创建为新行的主密钥。对返回的 [Promise](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 对象调用 **done** 方法以获取插入对象的副本并处理任何错误。
 
     function TodoItem(text) {
         this.text = text;
@@ -78,7 +71,7 @@ var todoTable = mobileServiceClient.getTable('TodoItem');
 
 ##更新表项
 
-更新数据表中的行。在此代码中，当移动服务响应时，将从列表中删除项目。对返回的 [**Promise**](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx)对象调用 [done] 方法以获取插入对象的副本并处理任何错误。
+更新数据表中的行。在此代码中，当移动服务响应时，将从列表中删除项目。对返回的 [Promise](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 对象调用 **done** 方法以获取插入对象的副本并处理任何错误。
 
     todoTable.update(todoItem).done(function (item) {
         // Update a local collection of items.
@@ -87,7 +80,7 @@ var todoTable = mobileServiceClient.getTable('TodoItem');
 
 ##删除表项
 
-使用 **del** 方法删除数据表中的行。对返回的 [**Promise**](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 对象调用 [done] 方法以获取插入对象的副本并处理任何错误。
+使用 **del** 方法删除数据表中的行。对返回的 [Promise](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 对象调用 **done** 方法以获取插入对象的副本并处理任何错误。
 
     todoTable.del(todoItem).done(function (item) {
         items.splice(items.indexOf(todoItem), 1);
@@ -95,4 +88,4 @@ var todoTable = mobileServiceClient.getTable('TodoItem');
 
 [详细了解移动服务](/documentation/services/mobile-services)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0215_2016-->

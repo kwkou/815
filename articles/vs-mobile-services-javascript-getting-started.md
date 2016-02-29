@@ -9,14 +9,10 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/17/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="01/05/2016" 
+	wacn.date="02/26/2016"/>
 
 # 通过使用 Visual Studio 连接服务添加 Azure 移动服务后开始使用 Javascript 移动应用
-
-> [AZURE.SELECTOR]
-> - [入门](/documentation/articles/vs-mobile-services-javascript-getting-started)
-> - [What Happened](/documentation/articles/vs-mobile-services-javascript-what-happened)
 
 为了跟踪这些代码，您需要首先执行的步骤取决于您连接的移动服务类型。
 
@@ -76,7 +72,7 @@
             todoItems.splice(todoItems.indexOf(item), 1, item);
         });
 
-##### 删除条目
+##删除条目
 
 删除数据表中的行。对返回的 [Promise]() 对象调用 [done](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 方法以获取插入对象的副本并处理任何错误。
 
@@ -88,4 +84,4 @@
 
 [详细了解移动服务](/documentation/services/mobile-services)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0215_2016-->
