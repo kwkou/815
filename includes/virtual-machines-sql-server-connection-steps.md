@@ -1,40 +1,3 @@
-以下步骤演示如何使用 SQL Server Management Studio (SSMS) 通过 Internet 连接到 SQL Server 实例。但是，这些步骤同样适用于使你的 SQL Server 虚拟机可以通过本地和 Azure 中运行的应用程序访问。
-
-你必须先完成下列各部分中描述的下列任务，然后才能从其他 VM 或 Internet 连接到 SQL Server 的实例：
-
-- [为虚拟机创建 TCP 终结点](#create-a-tcp-endpoint-for-the-virtual-machine)
-- [在 Windows 防火墙中打开 TCP 端口](#open-tcp-ports-in-the-windows-firewall-for-the-default-instance-of-the-database-engine)
-- [将 SQL Server 配置为侦听 TCP 协议](#configure-sql-server-to-listen-on-the-tcp-protocol)
-- [配置混合模式的 SQL Server 身份验证](#configure-sql-server-for-mixed-mode-authentication)
-- [创建 SQL Server 身份验证登录名](#create-sql-server-authentication-logins)
-- [确定虚拟机的 DNS 名称](#determine-the-dns-name-of-the-virtual-machine)
-- [从其他计算机连接到数据库引擎](#connect-to-the-database-engine-from-another-computer)
-
-下图中概述了此连接路径：
-
-![连接到 SQL Server 虚拟机](./media/virtual-machines-sql-server-connection-steps/SQLServerinVMConnectionMap.png)
-
-### 为虚拟机创建 TCP 终结点
-
-要从 Internet 访问 SQL Server，虚拟机必须具有终结点以侦听传入的 TCP 通信。此 Azure 配置步骤将传入 TCP 端口通信定向到虚拟机可以访问的 TCP 端口。
-
->[AZURE.NOTE]如果你在同一云服务或虚拟网络中连接，则不需要创建一个公开访问的终结点。在这种情况下，你可以继续执行下一步。有关详细信息，请参阅 [Azure 虚拟机中的 SQL Server 的连接注意事项](/documentation/articles/virtual-machines-sql-server-connectivity)。
-
-1. 在 Azure 管理门户上，单击“虚拟机”。
-	
-2. 单击你新创建的虚拟机。将显示有关你的虚拟机的信息。
-	
-3. 在靠近页面顶部的位置，选择“终结点”页面，然后在页面底部单击“添加”。
-	
-4. 在“将终结点添加到虚拟机”页面中，单击“添加独立终结点”，然后单击“下一步”箭头以继续。
-	
-5. 在“指定终结点的详细信息”页面中，提供以下信息。
-
-	- 在“名称”框中，为终结点提供名称。
-	- 在“协议”框中，选择“TCP”。你可以在“公用端口”框中键入“57500”。同样，可在“专用端口”框中键入 SQL Server 的默认侦听端口“1433”。注意，许多组织选择其他端口号以避免恶意的安全攻击。 
-
-6. 单击复选标记以继续。终结点创建完成。
-
 ### 在 Windows 防火墙中为数据库引擎的默认实例打开 TCP 端口
 
 1. 通过 Windows 远程桌面连接到虚拟机。登录后，在开始屏幕中，键入“WF.msc”，然后按 ENTER。 
@@ -95,7 +58,7 @@
 
 在没有域环境的情况下，SQL Server 数据库引擎无法使用 Windows 身份验证。若要从其他计算机连接到数据库引擎，请将 SQL Server 的身份验证模式配置为混合。混合模式身份验证同时允许 SQL Server 身份验证和 Windows 身份验证。
 
->[AZURE.NOTE]如果你已使用配置的域环境配置了 Azure 虚拟网络，可能没有必要配置混合模式身份验证。
+>[AZURE.NOTE] 如果你已使用配置的域环境配置了 Azure 虚拟网络，可能没有必要配置混合模式身份验证。
 
 1. 在连接到虚拟机时，在开始页面中，键入“SQL Server 2014 Management Studio”，然后单击勾选图标。
 
@@ -161,26 +124,4 @@
 
 有关 SQL Server 登录名的详细信息，请参阅[创建登录名](http://msdn.microsoft.com/zh-cn/library/aa337562.aspx)。
 
-### 确定虚拟机的 DNS 名称
-
-若要从另一台计算机连接到 SQL Server 数据库引擎，必须知道虚拟机的域名系统 (DNS) 名称。（这是 Internet 用于识别虚拟机的名称）。可以使用 IP 地址，但 IP 地址在 Azure 为冗余或维护而移动资源时可能会变更。DNS 名称将保持不变，因为可将该名称重定向到新的 IP 地址。）
-
-1. 在 Azure 管理门户（或在完成前一步后），选择“虚拟机”。 
-
-2. 在“虚拟机实例”页面上的“速览”列中，找到并复制虚拟机的 DNS 名称。
-
-	![DNS 名称](./media/virtual-machines-sql-server-connection-steps/sql-vm-dns-name.png)
-	
-
-### 从其他计算机连接到数据库引擎
- 
-1. 在连接到 Internet 的计算机上，打开 SQL Server Management Studio。
-2. 在“连接到服务器”或“连接到数据库引擎”对话框的“服务器名称”框中，输入虚拟机的 DNS 名称（在以前的任务中确定）和 *DNSName,portnumber* 格式的公共终结点端口号（例如“tutorialtestVM.cloudapp.net,57500”）。若要获取端口号，请登录到 Azure 管理门户并找到虚拟机。在仪表板中，单击“终结点”并使用分配给“MSSQL”的“公用端口”。![公用端口](./media/virtual-machines-sql-server-connection-steps/sql-vm-port-number.png)
-3. 在“身份验证”框中，选择“SQL Server 身份验证”。
-5. 在“登录名”框中，键入你在前面的任务中创建的登录名。
-6. 在“密码”框中，键入你在前面的任务中创建的登录名的密码。
-7. 单击“连接”。
-
-	![使用 SSMS 进行连接](./media/virtual-machines-sql-server-connection-steps/33Connect-SSMS.png)
-
-<!---HONumber=70-->
+<!---HONumber=Mooncake_0215_2016-->

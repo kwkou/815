@@ -5,18 +5,17 @@
 	documentationCenter="java"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe"
+	editor=""
     tags="azure-service-management" />
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="11/19/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/09/2016"
+	wacn.date=""/>
 
 # 如何在使用经典部署模型创建的虚拟机上运行 Java 应用程序服务器
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
-
 
 通过 Azure，你可使用虚拟机提供服务器功能。例如，在 Azure 上运行的虚拟机可配置为托管 Java 应用程序服务器，如 Apache Tomcat。完成本指南之后，你将会了解如何创建在 Azure 上运行的虚拟机并将其配置为运行 Java 应用程序服务器。
 
@@ -36,7 +35,7 @@
 
 ## 创建虚拟机
 
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
 2. 依次单击“新建”、“计算”、“虚拟机”和“从库中”。
 3. 在“虚拟机映像选择”对话框中，选择“JDK 7 Windows Server 2012”。请注意，万一你安装的是还不能在 JDK 7 中运行的旧应用程序，可选择 **JDK 6 Windows Server 2012**。
 4. 单击**“下一步”**。
@@ -49,7 +48,7 @@
 6. 在下一个“虚拟机配置”对话框中：
     1. 对于“云服务”，使用默认的“创建新云服务”。
     2. “云服务 DNS 名称”的值在 chinacloudapp.cn 中必须唯一。如有必要，请修改此值，这样 Azure 就会将其指示为唯一值。
-    2. 指定区域、地缘组或虚拟网络。在本教程中，请指定区域，如“美国西部”。
+    2. 指定区域、地缘组或虚拟网络。出于本教程的目的，请指定区域，如“中国北部”。
     2. 对于“存储帐户”框，请选择“使用自动生成的存储帐户”。
     3. 对于“可用性集”，请选择“(无)”。
     4. 单击**“下一步”**。
@@ -59,7 +58,7 @@
 
 ## 远程登录到虚拟机的步骤
 
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
 2. 单击“虚拟机”。
 3. 单击你要登录到的虚拟机的名称。
 4. 启动虚拟机后，可以使用页面底部的弹出菜单来进行连接。
@@ -85,7 +84,7 @@
 若要从外部计算机查看 Tomcat 的运行，则需要创建一个终结点并开放一个端口。
 
 ## 为虚拟机创建终结点
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
 2. 单击“虚拟机”。
 3. 单击正在运行 Java 应用程序服务器的虚拟机的名称。
 4. 单击“终结点”。
@@ -148,4 +147,4 @@
 [NewRuleName]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
 [NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0215_2016-->

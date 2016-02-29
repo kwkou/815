@@ -8,9 +8,9 @@
 	editor="jimbe"/>
 
 <tags
-	ms.service="web-sites"
-	ms.date="09/22/2015"
-	wacn.date="02/17/2016"/>
+	ms.service="app-service-web"
+	ms.date="12/14/2015"
+	wacn.date=""/>
 
 # 如何通过 WebJobs SDK 使用 Azure Blob 存储
 
@@ -20,7 +20,7 @@
 
 有关演示如何创建 Blob 的代码示例，请参阅[如何通过 WebJobs SDK 使用 Azure 队列存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to)。
 		
-本指南假设您了解[如何使用指向存储帐户的连接字符串在 Visual Studio 中创建 WebJob 项目](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)。
+本指南假设你了解[如何使用指向存储帐户的连接字符串在 Visual Studio 中创建 WebJob 项目](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)或创建[多个存储帐户](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/MultipleStorageAccountsEndToEndTests.cs)。
 
 ## <a id="trigger"></a> 如何在创建或更新 Blob 后触发函数
 
@@ -30,7 +30,7 @@
 
 ### Blob 名称和扩展名的单个占位符  
 
-以下代码示例将*输入*容器中显示的文本 blob 复制到*输出*容器中：
+以下代码示例将 *输入* 容器中显示的文本 blob 复制到 *输出* 容器中：
 
 		public static void CopyBlob([BlobTrigger("input/{name}")] TextReader input,
 		    [Blob("output/{name}")] out string output)
@@ -38,7 +38,7 @@
 		    output = input.ReadToEnd();
 		}
 
-属性构造函数采用指定容器名称的字符串参数和 Blob 名称的占位符。在此示例中，如果在*输入*容器中创建了名为 *Blob1.txt* 的 blob，则该函数将在*输出*容器中创建名为 *Blob1.txt* 的 blob。
+属性构造函数采用指定容器名称的字符串参数和 Blob 名称的占位符。在此示例中，如果在 *输入* 容器中创建了名为 *Blob1.txt* 的 blob，则该函数将在 *输出* 容器中创建名为 *Blob1.txt* 的 blob。
 
 你可以指定包含 Blob 名称占位符的名称模式，如以下代码示例中所示：
 
@@ -48,9 +48,9 @@
 		    output = input.ReadToEnd();
 		}
 
-此代码只会复制名称以“original-”开头的 Blob。例如，将*输入*容器中的 *original-Blob1.txt* 复制到*输出*容器中的 *copy-Blob1.txt*。
+此代码只会复制名称以“original-”开头的 Blob。例如，将 *输入* 容器中的 *original-Blob1.txt* 复制到 *输出* 容器中的 *copy-Blob1.txt*。
 
-如果你需要指定的名称中包含大括号的 Blob 名称的名称模式，增加大括号。例如，如果你想要在*映像*容器中查找具有以下类似名称的 blob：
+如果你需要指定的名称中包含大括号的 Blob 名称的名称模式，增加大括号。例如，如果你想要在 *映像* 容器中查找具有以下类似名称的 blob：
 
 		{20140101}-soundfile.mp3
 
@@ -58,11 +58,11 @@
 
 		images/{{20140101}}-{name}
 
-在示例中，*名称*占位符值将为 *soundfile.mp3*。
+在示例中， *名称* 占位符值将为 *soundfile.mp3*。
 
 ### 单独的 Blob 名称和扩展名占位符
 
-以下代码示例在将*输入*容器中显示的 blob 复制到*输出*容器中时更改文件扩展名。该代码将记录*输入* blob 的扩展名，并将*输出* blob 的扩展名设置为 *.txt*。
+以下代码示例在将 *输入* 容器中显示的 blob 复制到 *输出* 容器中时更改文件扩展名。该代码将记录 *输入* blob 的扩展名，并将 *输出* blob 的扩展名设置为 *.txt*。
 
 		public static void CopyBlobToTxtFile([BlobTrigger("input/{name}.{ext}")] TextReader input,
 		    [Blob("output/{name}.txt")] out string output,
@@ -85,9 +85,15 @@
 * `ICloudBlob`
 * `CloudBlockBlob`
 * `CloudPageBlob`
+* `CloudBlobContainer`
+* `CloudBlobDirectory`
+* `IEnumerable<CloudBlockBlob>`
+* `IEnumerable<CloudPageBlob>`
 * [ICloudBlobStreamBinder](#icbsb) 反序列化的其他类型 
 
 如果你想要直接使用 Azure 存储帐户，则还可以向方法签名添加 `CloudStorageAccount` 参数。
+
+有关示例，请参阅 [GitHub.com 上 azure-webjobs-sdk 存储库中的 blob 绑定代码](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/BlobBindingEndToEndTests.cs)。
 
 ## <a id="string"></a> 通过绑定到字符串获取文本 blob 内容
 
@@ -228,4 +234,4 @@ Blob 回执在 AzureWebJobsStorage 连接字符串指定的 Azure 存储帐户�
 本指南提供的代码示例演示了如何处理常见方案以操作 Azure Blob。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 推荐资源](/documentation/articles/websites-webjobs-resources/)。
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0215_2016-->

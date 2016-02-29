@@ -1,5 +1,5 @@
 <properties
-	pageTitle="从 Linux 虚拟机分离磁盘 | Microsoft Azure "
+	pageTitle="从 Linux VM 分离磁盘 | Microsoft Azure"
 	description="了解如何从使用经典部署模型创建的 Azure 虚拟机分离数据磁盘。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,12 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/11/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="01/07/2016"
+	wacn.date=""/>
 
 # 如何从 Linux 虚拟机分离磁盘
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 [AZURE.INCLUDE [howto-detach-disk-windows-linux](../includes/howto-detach-disk-linux.md)]
 
@@ -25,4 +25,4 @@
 
 [使用带服务管理 API 的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0215_2016-->

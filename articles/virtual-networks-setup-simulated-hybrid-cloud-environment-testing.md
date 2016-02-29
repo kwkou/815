@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="设置用于测试的模拟混合云环境" 
-	description="了解如何使用两个 Azure 虚拟网络和 VNet 到 VNet 连接创建模拟的混合云环境，以便进行 IT 专业人员测试或开发测试。" 
+	pageTitle="模拟的混合云测试环境 | Microsoft Azure" 
+	description="使用两个 Azure 虚拟网络和 VNet 到 VNet 连接创建模拟的混合云环境，以便进行 IT 专业人员测试或开发测试。" 
 	services="virtual-network" 
 	documentationCenter="" 
 	authors="JoeDavies-MSFT" 
@@ -8,16 +8,16 @@
 	editor=""
 	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-network" 
-	ms.date="09/10/2015" 
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="virtual-network"
+	ms.date="01/14/2016"
+	wacn.date=""/>
 
 # 设置用于测试的模拟混合云环境
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
-本主题将指导你逐步使用 Microsoft Azure 创建模拟混合云环境，以便使用两个独立的 Azure 虚拟网络进行测试。当你没有直接的 Internet 连接和可用的公共 IP 地址时，可使用此配置作为[设置用于测试的混合云环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)的替代方法。这是生成的配置。
+本文将指导你逐步使用 Microsoft Azure 创建模拟混合云环境，以便使用两个独立的 Azure 虚拟网络进行测试。当你没有直接的 Internet 连接和可用的公共 IP 地址时，可使用此配置作为[设置用于测试的混合云环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)的替代方法。这是生成的配置。
 
 ![](./media/virtual-networks-setup-simulated-hybrid-cloud-environment-testing/CreateSimHybridCloud_4.png)
 
@@ -40,9 +40,9 @@
 3.	创建 VNet 到 VNet 的 VPN 连接。
 4.	配置 DC2。 
 
-如果你还没有 Azure 订阅，可以在[试用 Azure](/pricing/1rmb-trial/) 中注册一个免费试用版。
+如果你还没有 Azure 订阅，可以通过[试用 Azure](/pricing/1rmb-trial/) 注册试用版。
 
->[AZURE.NOTE] Azure 中的虚拟机和虚拟网关在运行时会持续产生货币成本。此成本是针对你的免费试用版本、MSDN 订阅或付费订阅的。若要在不使用的情况下降低运行此测试环境的成本，请参阅本主题中的[最大程度地降低此环境的持续使用成本](#costs)，了解详细信息。
+>[AZURE.NOTE] Azure 中的虚拟机和虚拟网关在运行时会持续产生货币成本。此成本是针对你的试用或付费订阅进行计费的。若要在不使用的情况下降低运行此测试环境的成本，请参阅本文中的[最大程度地降低此环境的持续使用成本](#costs)，了解详细信息。
 
 
 ## 阶段 1：配置 TestLab 虚拟网络
@@ -183,10 +183,10 @@
 接下来，将额外的数据磁盘添加为驱动器盘符为 F: 的新卷。
 
 1.	在服务器管理器的左窗格中，单击**“文件和存储服务”**，然后单击**“磁盘”**。
-2.	在内容窗格的“磁盘”组中，单击“磁盘 2”（其“分区”设置为“未知”）。
+2.	在内容窗格的**“磁盘”**组中，单击**“磁盘 2”**（其**“分区”**设置为**“未知”**）。
 3.	单击**“任务”**，然后单击**“新建卷”**。
 4.	在新建卷向导的“开始之前”页上，单击**“下一步”**。
-5.	在“选择服务器和磁盘”页上，单击“磁盘 2”，然后单击“下一步”。出现提示时，单击“确定”。
+5.	在“选择服务器和磁盘”页上，单击**“磁盘 2”**，然后单击**“下一步**”。出现提示时，单击**“确定”**。
 6.	在“指定卷的大小”页上，单击**“下一步”**。
 7.	在“分配到驱动器号或文件夹”页上，单击**“下一步”**。
 8.	在“选择文件系统设置”页上，单击**“下一步”**。
@@ -203,7 +203,7 @@
 由于 TestVNET 虚拟网络有自己的 DNS 服务器 (DC2)，因此必须将 TestVNET 虚拟网络配置为使用此 DNS 服务器。
 
 1.	在 Azure 管理门户的左窗格中，单击“网络”，然后单击“TestVNET”。
-2.	单击**“配置”**。
+2.	单击“配置”。
 3.	在“DNS 服务器”中，删除“10.0.0.4”条目。
 4.	在“DNS 服务器”中添加一个条目，该条目使用“DC2”作为名称，使用“192.168.0.4”作为 IP 地址。 
 5.	在底部的命令栏中，单击“保存”，然后在出现提示时单击“是”。等待，直到已完成对 TestVNet 网络的更新。
@@ -214,29 +214,20 @@
  
 现在，你的模拟混合云环境已准备好进行测试。
 
-你还可以在此测试环境中生成以下配置：
+## 后续步骤
+
+在 TestVNET 虚拟网络中设置以下工作负荷：
 
 - [SharePoint Intranet 场](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
-- [基于 Web 的 LOB 应用程序](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
+- [基于 Web 的业务线应用程序](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
 - [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing)
 
-## 其他资源
-
-[设置用于测试的混合云环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)
-
-[配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)
-
-[基本配置测试环境](/documentation/articles/virtual-machines-base-configuration-test-environment)
-
-[Azure 混合云测试环境](/documentation/articles/virtual-machines-hybrid-cloud-test-environments)
-
-[Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
 ## <a id="costs"></a>最大程度地降低此环境的持续使用成本
 
 若要将在此环境中运行虚拟机的成本降到最低，请尽快执行所需的测试和演示，然后删除它们或关闭虚拟机（在不使用时进行）。例如，你可以在每个营业日结束时使用 Azure 自动化和 Runbook 来自动关闭 TestLab 和 Test\_VNET 虚拟网络中的虚拟机。有关详细信息，请参阅 [Azure 自动化入门](/documentation/articles/automation-create-runbook-from-samples)。当你在 Corpnet 子网上再次启动虚拟机时，请先启动 DC1。
 
-在实施时，Azure VPN 网关将由两台 Azure 虚拟机组成，因此会产生持续的货币成本。有关详细信息，请参阅[定价 - 虚拟网络](/home/features/networking/#home_net_pri)。若要将这两个 VPN 网关（一个用于 TestLab，一个用于 TestVNET）的成本降到最低，请创建测试环境并尽快执行所需测试和演示，或者通过这些步骤删除该网关。
+在实施时，Azure VPN 网关将由两台 Azure 虚拟机组成，因此会产生持续的货币成本。有关详细信息，请参阅[定价 - 虚拟网络](/home/features/networking/#price)。若要将这两个 VPN 网关（一个用于 TestLab，一个用于 TestVNET）的成本降到最低，请创建测试环境并尽快执行所需测试和演示，或者通过这些步骤删除该网关。
  
 1.	在本地计算机上的 Azure 管理门户中，依次单击左窗格中的“网络”、“TestLab”、“仪表板”。
 2.	在任务栏中，单击“删除网关”。出现提示时单击“是”。等待，直到网关删除完毕且其状态更改为“未创建网关”。
@@ -269,5 +260,6 @@
 	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet -SharedKey $preSharedKey
 
 接下来，在 Azure 管理门户的“网络”页上，单击任务栏中的“TestLab”虚拟网络，然后单击“连接”。等待，直到 TestLab 虚拟网络显示状态为“已连接”，即已连接到 TestVNET 本地网络。
+ 
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0215_2016-->

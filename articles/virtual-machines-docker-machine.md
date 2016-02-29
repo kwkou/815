@@ -1,5 +1,5 @@
 <properties
-   pageTitle="将 docker-machine 与 Azure 起使用 | Microsoft Azure"
+   pageTitle="将 docker-machine 与 Azure 一起使用 | Microsoft Azure"
    description="演示如何使用经典部署模型在 Azure 上启动和运行 Ubuntu 上的 Docker 计算机。"
    services="virtual-machines"
    documentationCenter="virtual-machines"
@@ -9,9 +9,9 @@
    tags="azure-service-management"/>
 
 <tags
-   ms.service="virtual-machines"
-   ms.date="09/22/2015"
-   wacn.date="02/17/2016"/>
+	ms.service="virtual-machines"
+	ms.date="01/04/2016"
+	wacn.date=""/>
 
 # 如何将 docker-machine 与 Azure 一起使用
 
@@ -31,21 +31,21 @@
 
 ## 获取 docker-machine - 或生成它
 
-熟悉 **docker-machine** 的最快方法是直接从[版本共享](https://github.com/docker/machine/releases)下载相应的发行版。本教程中的客户端计算机在 x64 计算机上运行 Ubuntu，因此 **docker-machine_linux amd64** 映像是所使用的那一个。
+熟悉 **docker-machine** 的最快方法是直接从[版本共享](https://github.com/docker/machine/releases)下载相应的发行版。本教程中的客户端计算机在 x64 计算机上运行 Ubuntu，因此 **docker-machine\_linux amd64** 映像是所使用的那一个。
 
 你还可以按照[提供给虚拟机](https://github.com/docker/machine#contributing)的步骤自己构建 **docker-machine**。为执行此生成你应准备好下载多达 1 GB 或更多的内容，但通过这样做你可以按所需方式准确地自定义自己的体验。
 
-> [AZURE.NOTE]你或许可以创建指向它的平台版本的[符号链接](http://zh.wikipedia.org/wiki/Symbolic_link)，但本教程使用二进制文件直接非常清楚地演示行为。结果是，不是使用 **docker-machine** 文档所演示的 `docker-machine env` 等命令，本教程改用 `docker-machine_linux-amd64 env`。是创建符号链接还是直接使用二进制文件名称直接取决于你，但如果你更改所用的名称，请记得修改下面的说明中的名称。
+> [AZURE.NOTE] 你或许可以创建指向它的平台版本的[符号链接](http://en.wikipedia.org/wiki/Symbolic_link)，但本教程使用二进制文件直接非常清楚地演示行为。结果是，不是使用 **docker-machine** 文档所演示的 `docker-machine env` 等命令，本教程改用 `docker-machine_linux-amd64 env`。是创建符号链接还是直接使用二进制文件名称直接取决于你，但如果你更改所用的名称，请记得修改下面的说明中的名称。
 
 <br />
 
->  无论你使用哪种方法，你都必须直接在命令行上调用二进制文件或将二进制文件放在路径（例如 **/usr/local/bin**）上。请记住，确保通过键入 `chmod +x` &lt;*`binaryName`*&gt; 将它标记为可执行文件，其中 &lt;*`binaryName`*&gt; 是 Docker 计算机可执行文件的名称。本教程使用 **docker-machine_linux-amd64**。
+>  无论你使用哪种方法，你都必须直接在命令行上调用二进制文件或将二进制文件放在路径（例如 **/usr/local/bin**）上。请记住，确保通过键入 `chmod +x` &lt;*`binaryName`*&gt; 将它标记为可执行文件，其中 &lt;*`binaryName`*&gt; 是 Docker 计算机可执行文件的名称。本教程使用 **docker-machine\_linux-amd64**。
 
 ## 为 docker、计算机和 Azure 创建证书和密钥文件
 
 现在，你必须创建 Azure 需要用来确认你的身份和权限的证书和密钥文件，以及 **docker-machine** 需要用来与 Azure 虚拟机进行通信以远程创建和管理容器的证书和密钥文件。如果你的目录中已有这些文件 - 可能用于 docker - 你可以重复使用它们。但是，测试 **docker-machine** 的最佳做法是在一个单独的目录中创建它们，并使 docker-machine 指向它们。
 
-> [AZURE.NOTE]如果你结果是反复试用 **docker-machine**，请务必重复使用相同的证书和密钥文件。**docker-machine** 也创建一组客户端证书（它创建的所有内容都可以在 `~/.docker/machine` 中查看）。如果将这些证书移到另一台计算机，你也需要移动 **docker-machine** 证书文件夹。如果要在另一个平台上使用 **docker-machine**（例如，只为了解其所有工作原理），这会有所不同。
+> [AZURE.NOTE] 如果你结果是反复试用 **docker-machine**，请务必重复使用相同的证书和密钥文件。**docker-machine** 也创建一组客户端证书（它创建的所有内容都可以在 `~/.docker/machine` 中查看）。如果将这些证书移到另一台计算机，你也需要移动 **docker-machine** 证书文件夹。如果要在另一个平台上使用 **docker-machine**（例如，只为了解其所有工作原理），这会有所不同。
 
 如果你有 Linux 分发的经验，则可能已将这些文件提供给特定位置中的计算机使用，[Docker HTTPS 文档很好地说明了这些步骤](https://docs.docker.com/articles/https/)。但是，以下是此步骤的最简单形式。
 
@@ -58,7 +58,7 @@
 
 		openssl x509 -inform pem -in mycert.pem -outform der -out mycert.cer
 
-2. 将证书的 .cer 文件上载到 Azure。在 [Azure 门户](https://manage.windowsazure.cn)中，单击服务区域左下角的**“设置”**（下面显示）
+2. 将证书的 .cer 文件上载到 Azure。在 [Azure 管理门户](https://manage.windowsazure.cn)中，单击服务区域左下角的“设置”（下面显示）
 
 	![][portalsettingsitem]
 
@@ -102,7 +102,7 @@
 	    INFO[0368] "machine-name" has been created and is now the active machine.
 	    INFO[0368] To point your Docker client at it, run this in your shell: $(docker-machine_linux-amd64 env machine-name)
 
-    > [AZURE.NOTE]由于正在创建 VM，它可能需要几分钟才能处于就绪状态。在等待时，你可以通过使用 Azure CLI 键入 `azure vm list` 来查看新 Docker 主机的状态，直到你看到具有 **ReadyRole** 状态的 VM。
+    > [AZURE.NOTE] 由于正在创建 VM，它可能需要几分钟才能处于就绪状态。在等待时，你可以通过使用 Azure CLI 键入 `azure vm list` 来查看新 Docker 主机的状态，直到你看到具有 **ReadyRole** 状态的 VM。
 
 5. 为终端会话设置 docker 和计算机环境变量。反馈的最后一行建议你立即运行 **env** 命令以导出直接在特定计算机上使用 docker 客户端所必需的环境变量。
 
@@ -136,7 +136,7 @@
 	    ID: W3FZ:BCZW:UX24:GDSV:FR4N:N3JW:XOC2:RI56:IWQX:LRTZ:3G4P:6KJK
 	    WARNING: No swap limit support
 
-> [AZURE.NOTE]本教程演示创建一个 VM 的 **docker-machine**。但是，你可以重复执行这些步骤创建所需的任意数量的虚拟机。如果这样做，则使用 docker 切换 VM 的最佳方式是以内联方式使用 **env** 命令，以便为每个单独的命令设置 **docker** 环境变量。例如，若要对不同 VM 使用 **docker info**，可以键入 `docker $(docker-machine env <VM name>) info`，**env** 命令会填写要用于该 VM 的 docker 连接信息。
+> [AZURE.NOTE] 本教程演示创建一个 VM 的 **docker-machine**。但是，你可以重复执行这些步骤创建所需的任意数量的虚拟机。如果这样做，则使用 docker 切换 VM 的最佳方式是以内联方式使用 **env** 命令，以便为每个单独的命令设置 **docker** 环境变量。例如，若要对不同 VM 使用 **docker info**，可以键入 `docker $(docker-machine env <VM name>) info`，**env** 命令会填写要用于该 VM 的 docker 连接信息。
 
 ## 至此已完成。让我们来使用 docker 和 Docker Hub 映像远程运行一些应用程序。
 
@@ -154,7 +154,7 @@
 
 但是，你可能想要创建可立即在 Internet 上看到的应用程序，例如 [Docker Hub](https://registry.hub.docker.com/) 中的 [nginx](https://registry.hub.docker.com/_/nginx/)。
 
-> [AZURE.NOTE]请记住使用 **-P** 选项让 **docker** 随机将端口分配给该映像，并使用 **-d** 以确保该容器在后台继续运行。（如果你忘记，你将启动 nginx，然后它将立即关闭。不要忘记！）
+> [AZURE.NOTE] 请记住使用 **-P** 选项让 **docker** 随机将端口分配给该映像，并使用 **-d** 以确保该容器在后台继续运行。（如果你忘记，你将启动 nginx，然后它将立即关闭。不要忘记！）
 
 	$ docker run --name machinenginx -P -d nginx
     Unable to find image 'nginx:latest' locally
@@ -211,4 +211,4 @@
 [Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
  
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0215_2016-->

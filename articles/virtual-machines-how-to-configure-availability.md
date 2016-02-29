@@ -1,6 +1,6 @@
 <properties
-	pageTitle="为 VM 配置可用性集 | Microsoft Azure"
-	description="在经典部署模型中，使用 Azure 门户和 Azure PowerShell，为新的或现有的虚拟机配置可用性集。"
+	pageTitle="为经典 VM 配置可用性集 | Microsoft Azure"
+	description="在经典部署模型中，使用 Azure 管理门户和 Azure PowerShell，为新的或现有的虚拟机配置可用性集。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/10/2015"
-	wacn.date="12/16/2015"/>
+	ms.date="01/07/2016"
+	wacn.date=""/>
 
 # 如何在经典部署模型中为虚拟机配置可用性集
 
@@ -21,20 +21,20 @@
 
 同时使用可用性集和负载平衡终结点是帮助确保应用程序一直可用并有效运行的最佳实践。有关负载平衡终结点的详细信息，请参阅 [Azure 基础结构服务的负载平衡][]。
 
-可以使用以下两个选项中的一个，将虚拟机放入可用性集：
+在经典部署模型中，可以使用以下两个选项中的一个，将虚拟机放入可用性集：
 
 - [选项 1：同时创建虚拟机和可用性集][]。然后，在创建新的虚拟机时将虚拟机添加到该集。
 - [选项 2：将现有虚拟机添加到可用性集][]。
 
->[AZURE.NOTE]要放入相同可用性集的虚拟机必须属于相同的云服务。
+>[AZURE.NOTE] 在经典模型中，要放入同一可用性集的虚拟机必须属于同一云服务。
 
 ## <a id="createset"> </a>选项 1：同时创建虚拟机和可用性集##
 
-可以使用 Azure 门户或 Azure PowerShell 命令来执行此操作。
+可以使用 Azure 管理门户或 Azure PowerShell 命令来执行此操作。
 
-若要使用该门户，请执行以下操作：
+要使用 Azure 管理门户，请执行以下操作：
 
-1. 如果你尚未登录[门户](http://manage.windowsazure.cn)，请先登录。
+1. 登录到 Azure 管理门户（如果你尚未这么做）。
 
 2. 在命令栏上，单击“新建”。
 
@@ -67,9 +67,9 @@
 
 ## <a id="addmachine"> </a>选项 2：将现有虚拟机添加到可用性集##
 
-在门户中，可以将现有虚拟机添加到现有可用性集，或为现有虚拟机创建新的可用性集。（请记住，同一可用性集中的虚拟机必须属于同一云服务。） 步骤几乎完全相同。使用 Azure PowerShell 时，可以将虚拟机添加到现有可用性集。
+在 Azure 管理门户中，可以将现有虚拟机添加到现有可用性集，或为现有虚拟机创建新的可用性集。（请记住，同一可用性集中的虚拟机必须属于同一云服务。） 步骤几乎完全相同。使用 Azure PowerShell 时，可以将虚拟机添加到现有可用性集。
 
-1. 如果你尚未登录[门户](http://manage.windowsazure.cn)，请先登录。
+1. 如果您尚未这么做，请登录到 Azure 管理门户。
 
 2. 在命令栏中，单击“虚拟机”。
 
@@ -91,7 +91,7 @@
 
 	Get-AzureVM -ServiceName "<VmCloudServiceName>" -Name "<VmName>" | Set-AzureAvailabilitySet -AvailabilitySetName "<AvSetName>" | Update-AzureVM
 
->[AZURE.NOTE]虚拟机可能必须重新启动，以完成将其添加到可用性集的操作。
+>[AZURE.NOTE] 虚拟机可能必须重新启动，以完成将其添加到可用性集的操作。
 
 ## 其他资源
 
@@ -107,4 +107,4 @@
 [虚拟网络概述]: /documentation/articles/virtual-networks-overview
 [有关服务管理中虚拟机的文章]: /documentation/articles/virtual-machines-service-management-articles
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0215_2016-->

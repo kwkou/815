@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/28/2015"
-	wacn.date="01/15/2016"/>
+	ms.date="12/29/2015"
+	wacn.date=""/>
 
 
 
@@ -52,17 +52,17 @@ Microsoft 提供了以下实用程序让你使用 Azure Blob 存储：
 | [AzCopy][azure-azcopy] | | | ✔ |
 | [Hadoop 命令](#commandline) | ✔ | ✔ | ✔ |
 
-> [AZURE.NOTE]尽管 Azure CLI、Azure PowerShell 和 AzCopy 都可从 Azure 外部使用，但是 Hadoop 命令只能在 HDInsight 群集上使用，而且只能将数据从本地文件系统加载到 Azure Blob 存储。
+> [AZURE.NOTE] 尽管 Azure CLI、Azure PowerShell 和 AzCopy 都可从 Azure 外部使用，但是 Hadoop 命令只能在 HDInsight 群集上使用，而且只能将数据从本地文件系统加载到 Azure Blob 存储。
 
 ###<a id="xplatcli"></a>Azure CLI
 
 Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下步骤将数据上载到 Azure Blob 存储：
 
-1. [安装并配置 Azure CLI](/documentation/articles/xplat-cli-install)。
+1. [安装和配置适用于 Mac、Linux 和 Windows 的 Azure CLI](/documentation/articles/xplat-cli-install)。
 
 2. 打开命令提示符、bash 或其他 shell，然后使用以下方法对 Azure 订阅进行身份验证。
 
-		azure login -e AzureChinaCloud
+		azure login -e AzureChinaCloud -u <your account>
 
 	出现提示时，输入订阅的用户名和密码。
 
@@ -90,7 +90,7 @@ Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下
 
 			azure storage blob download -a <storage-account-name> -k <primary-key> <container-name> <blob-name> <destination-file>
 
-> [AZURE.NOTE]如果你始终使用同一个存储帐户，可以设置以下环境变量，而无需为每条命令指定帐户和密钥：
+> [AZURE.NOTE] 如果你始终使用同一个存储帐户，可以设置以下环境变量，而无需为每条命令指定帐户和密钥：
 >
 > * **AZURE\_STORAGE\_ACCOUNT**：存储帐户名称
 >
@@ -271,4 +271,4 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
 [image-ase-addaccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png
 [image-ase-blob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0215_2016-->

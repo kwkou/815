@@ -3,21 +3,21 @@
 	description="在 Azure 上使用 Linux 虚拟机设置和托管基于 Ruby on Rails 的 Web 应用。"
 	services="virtual-machines"
 	documentationCenter="ruby"
-	authors="MikeWasson"
+	authors="rmcmurray"
 	manager="wpickett"
 	editor=""
 	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="06/09/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="01/09/2016"
+	wacn.date=""/>
 
 
 
 
 
-#Azure VM 上的 Ruby on Rails Web 应用
+#Azure 虚拟机上的 Ruby on Rails Web 应用程序
 
 本教程介绍如何在 Azure 中使用 Linux 虚拟机托管 Ruby on Rails Web 应用。
 
@@ -171,4 +171,4 @@
 
 [new-endpoint1]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint1.png
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0215_2016-->

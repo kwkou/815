@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/06/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="01/08/2016"
+	wacn.date=""/>
 
 #Apache Storm on HDInsight 简介：面向 Hadoop 的实时分析
 
@@ -47,7 +47,7 @@ Apache Storm on HDInsight 是已集成到 Azure 环境中的托管群集。它�
 
 你可以在分钟数设置好新的 Storm on HDInsight 群集。指定群集名称、大小、管理员帐户和存储帐户。Azure 将创建该群集，包括示例拓扑和 Web 管理仪表板。
 
-> [AZURE.NOTE]你也可以使用 [Azure CLI](/documentation/articles/xplat-cli-install) 或 [Azure PowerShell](/documentation/articles/powershell-install-configure) 预配 Storm 群集。
+> [AZURE.NOTE] 你也可以使用 [Azure CLI](/documentation/articles/xplat-cli-install) 或 [Azure PowerShell](/documentation/articles/powershell-install-configure) 预配 Storm 群集。
 
 在提交请求后的 15 分钟内，你就可以运行新的 Storm 群集，并准备好建立第一个实时分析管道。
 
@@ -91,7 +91,7 @@ Apache Storm 的默认配置是只能有一个 Nimbus 节点。Storm on HDInsigh
 
 虽然可以在创建过程中指定群集中的节点数，但你可能需要扩大或收缩群集以匹配工作负载。所有 HDInsight 群集允许你更改群集中的节点数，即使在处理数据时。
 
-> [AZURE.NOTE]若要利用通过缩放添加的新节点，你需要重新平衡在增加大小之前启动的拓扑。
+> [AZURE.NOTE] 若要利用通过缩放添加的新节点，你需要重新平衡在增加大小之前启动的拓扑。
 
 ###支持
 
@@ -156,7 +156,7 @@ HDInsight Tools for Visual Studio 允许 .NET 开发人员以 C# 语言设计和
 
 有关 Java 和 Trident 拓扑的示例，请参阅 [Storm 拓扑示例列表](/documentation/articles/hdinsight-storm-example-topology)或 HDInsight 群集上的 storm-starter 示例。
 
-基于 Windows 的群集上的 **%storm\_home%\\contrib\\storm-starter** 目录。
+storm-starter 示例位于基于 Windows 的群集上的 **%storm\_home%\\contrib\\storm-starter** 目录中。
 
 ##常见的开发模式有哪些？
 
@@ -168,7 +168,7 @@ Storm 可以提供不同级别的有保证的消息处理。例如，基本的 S
 
 ###IBasicBolt
 
-读取输入元组，发出零个或更多元组，然后在执行方法结束时立即确认输入元组，这种模式非常常见，以至 Storm 提供 [IBasicBolt](https://storm.apache.org/apidocs/backtype/storm/topology/IBasicBolt.html) 接口来自动执行这种模式。
+读取输入元组，发出零个或多个元组，然后在执行方法结束时立即询问输入元组，这种模式非常普通，以至 Storm 提供 [IBasicBolt](https://storm.apache.org/apidocs/backtype/storm/topology/IBasicBolt.html) 接口来自动执行这种模式。
 
 ###联接
 
@@ -209,4 +209,4 @@ Storm 可以提供不同级别的有保证的消息处理。例如，基本的 S
 [apachetutorial]: https://storm.incubator.apache.org/documentation/Tutorial.html
 [gettingstarted]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0215_2016-->
