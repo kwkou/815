@@ -39,60 +39,59 @@
 
 2.  安装必备组件包：
 
-	```
-	# required dependencies 
-	yum install gcc cmake libuuid-devel
-	
-	# dependencies needed for ssl support
-	yum install openssl-devel
-	
-	# dependencies needed for bindings
-	yum install swig python-devel ruby-devel php-devel java-1.6.0-openjdk
-	
-	# dependencies needed for python docs
-	yum install epydoc
-	```
+		# required dependencies 
+		yum install gcc cmake libuuid-devel
+		
+		# dependencies needed for ssl support
+		yum install openssl-devel
+		
+		# dependencies needed for bindings
+		yum install swig python-devel ruby-devel php-devel java-1.6.0-openjdk
+		
+		# dependencies needed for python docs
+		yum install epydoc
+
 
 1.  下载 Proton 库：
 
-	```
-	[azureuser@this-user ~]$ wget http://www.bizdirusa.com/mirrors/apache/qpid/proton/0.4/qpid-proton-0.4.tar.gz 
-		--2013-05-23 21:27:55-- http://www.bizdirusa.com/mirrors/apache/qpid/proton/0.4/qpid-proton-0.4.tar.gz 
-		Resolving www.bizdirusa.com... 205.186.175.195 
-		Connecting to www.bizdirusa.com|205.186.175.195|:80... connected. 
-		HTTP request sent, awaiting response... 200 OK 
-		Length: 456693 (446K) [application/x-gzip] 
-		Saving to: âqpid-proton-0.4.tar.gzâ
 
-		100%[======================================>] 456,693 --.-K/s in 0.06s
+		[azureuser@this-user ~]$ wget http://www.bizdirusa.com/mirrors/apache/qpid/proton/0.4/qpid-proton-0.4.tar.gz 
+			--2013-05-23 21:27:55-- http://www.bizdirusa.com/mirrors/apache/qpid/proton/0.4/qpid-proton-0.4.tar.gz 
+			Resolving www.bizdirusa.com... 205.186.175.195 
+			Connecting to www.bizdirusa.com|205.186.175.195|:80... connected. 
+			HTTP request sent, awaiting response... 200 OK 
+			Length: 456693 (446K) [application/x-gzip] 
+			Saving to: âqpid-proton-0.4.tar.gzâ
+	
+			100%[======================================>] 456,693 --.-K/s in 0.06s
+	
+			2015-05-23 21:27:55 (6.84 MB/s) - qpid-proton-0.4.tar.gz
 
-		2015-05-23 21:27:55 (6.84 MB/s) - qpid-proton-0.4.tar.gz
-	```
 
 1.  从分发存档中提取 Proton 代码：
 
-	```
-	tar xvfz qpid-proton-0.4.tar.gz
-	```
+
+		tar xvfz qpid-proton-0.4.tar.gz
+
 
 1.  使用从自述文件中获取的以下步骤生成并安装代码：
 
-	```
-	From the directory where you found this README file:	
-	
-	mkdir build cd build
-			
-	# Set the install prefix. You may need to adjust depending on your		
-	# system.		
-	cmake -DCMAKE\_INSTALL\_PREFIX=/usr ..
-			
-	# Omit the docs target if you do not wish to build or install		
-	# documentation.		
-	make all docs
-			
-	# Note that this step will require root privileges.		
-	make install
-	```
+
+		From the directory where you found this README file:	
+		
+		mkdir build cd build
+				
+		# Set the install prefix. You may need to adjust depending on your		
+		# system.		
+		cmake -DCMAKE\_INSTALL\_PREFIX=/usr ..
+				
+		# Omit the docs target if you do not wish to build or install		
+		# documentation.		
+		make all docs
+				
+		# Note that this step will require root privileges.		
+		make install
+
 
 执行这些步骤后，Proton 将安装在计算机上并可供使用。
 
