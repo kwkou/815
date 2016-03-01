@@ -16,7 +16,7 @@
 
 6. 在创建备份保管库后，将显示一条消息通知你已成功创建保管库。该保管库还会在恢复服务的资源中列出为“活动”。
 
-### <a name="azure-backup---storage-redundancy-options"></a>Azure 备份 - 存储冗余选项
+### <a name="azure-backu-storage-redundancy-options"></a>Azure 备份 - 存储冗余选项
 
 > [AZURE.IMPORTANT]确定存储冗余选项的最佳时机是在创建保管库之后、将任何计算机注册到保管库之前。将某个项注册到保管库后，存储冗余选项将会锁定且不能修改。
 

@@ -126,8 +126,6 @@ PowerShell 能够只从备份还原 VM 磁盘，而不建立虚拟机。当还�
 1. 使用 [Azure 备份 PowerShell](/documentation/articles/backup-azure-vms-automation#restore-an-azure-vm) 从备份保管库还原磁盘
 
 2. 使用 PowerShell cmdlet 创建负载平衡器/多个 NIC/多个保留 IP 所需的 VM 配置，并使用该配置创建具有所需配置的 VM。
-	- 使用[内部负载平衡器](/documentation/articles/load-balancer-internal-getstarted/)在云服务中创建 VM
-	- 创建 VM 以连接到[面向 Internet 的负载平衡器](/documentation/articles/load-balancer-internet-getstarted)
 	- 创建具有[多个 NIC](/documentation/articles/virtual-networks-multiple-nics) 的 VM
 	- 具有[多个保留 IP](/documentation/articles/virtual-networks-reserved-public-ip/) 的 VM
   

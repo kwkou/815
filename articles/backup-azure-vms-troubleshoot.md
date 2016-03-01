@@ -58,7 +58,7 @@
 | 取消作业 | 无法取消作业 - 请等待作业完成。 | 无 |
 
 
-## 还原
+## <a name="restore"></a>还原
 | 操作 | 错误详细信息 | 解决方法 |
 | -------- | -------- | -------|
 | 还原 | 发生云内部错误，还原失败 | <ol><li>使用 DNS 设置配置了你正在尝试还原的云服务。你可以检查 <br>$deployment = Get-AzureDeployment -ServiceName "ServiceName" -Slot "Production" Get-AzureDns -DnsSettings $deployment.DnsSettings<br>如果配置了地址，则表示配置了 DNS 设置。<br> <li>尝试还原的云服务配置了 ReservedIP，且云服务中现有的 VM 处于停止状态。<br>可以使用以下 PowerShell cmdlet 检查云服务是否有保留的 IP：<br>$deployment = Get-AzureDeployment -ServiceName "servicename" -Slot "Production" $dep.ReservedIPName <br><li>你正在尝试将具有以下特殊网络配置的虚拟机还原到同一个云服务中。<br>- 虚拟机采用负载平衡器配置（内部和外部）<br>- 虚拟机具有多个保留 IP<br>- 虚拟机具有多个 NIC<br>请在 UI 中选择新的云服务，或者参阅[还原注意事项](/documentation/articles/backup-azure-restore-vms#restoring-vms-with-special-network-configurations)了解具有特殊网络配置的 VM</ol> |
@@ -110,6 +110,27 @@
 
 1. 登录 Azure 虚拟机并导航到 *C:\\WindowsAzure\\Packages* 文件夹。你应会发现 WaAppAgent.exe 文件已存在。
 2. 右键单击该文件，转到“属性”，然后选择“详细信息”选项卡。“产品版本”字段应为 2.6.1198.718 或更高
+
+## <a name="Troubleshoot-VM-Snapshot-Issues"></a>排查 VM 快照问题
+VM 备份依赖于向底层存储发出快照命令。如果无法访问存储或者快照任务执行延迟，则备份可能会失败。以下因素可能会导致快照任务失败。
+
+1. 使用 NSG 阻止对存储进行网络访问<br>
+	详细了解如何使用 IP 允许列表或通过代理服务器对存储[启用网络访问](/documentation/articles/backup-azure-vms-prepare#2-network-connectivity)。
+2.  配置了 SQL Server 备份的 VM 造成快照任务延迟<br>
+	默认情况下，VM 备份将在 Windows VM 上发出 VSS 完整备份命令。在运行 SQL Server 且已配置 SQL Server 备份的 VM 上，这可能会造成快照执行延迟。如果由于快照问题而导致备份失败，请设置以下注册表项。
+
+	```
+	[HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\BCDRAGENT]
+	"USEVSSCOPYBACKUP"="TRUE"
+	```
+3.  由于在 RDP 中关闭了 VM，VM 状态报告不正确。<br>
+	如果你在 RDP 中关闭了虚拟机，请返回门户检查是否正确反映了 VM 的状态。如果没有，请在门户中使用 VM 仪表板上的“关机”选项关闭 VM。
+4.  同一个云服务中的许多 VM 配置为同时备份。<br>
+	最佳做法是使同一云服务中的 VM 分开执行不同的备份计划。
+5.  VM 在运行时使用了很高的 CPU/内存。<br>
+	如果虚拟机在运行时使用了很高的 CPU（使用率超过 90%）或内存，快照任务将排入队列、延迟并最终超时。在这种情况下，请尝试进行按需备份。
+
+<br>
 
 ## <a name="networking"></a>联网
 与所有扩展一样，备份扩展也需要访问公共 Internet 才能工作。无法访问公共 Internet 可能会出现以下各种情况：
