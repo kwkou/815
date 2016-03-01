@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 HDInsight 中调试 Hadoop：查看日志和解释错误消息 | Windows Azure"
+	pageTitle="在 HDInsight 中调试 Hadoop：查看日志和解释错误消息 | Microsoft Azure"
 	description="了解你在使用 PowerShell 管理 HDInsight 时可能会收到的错误消息，以及恢复正常的步骤。"
 	services="hdinsight"
 	tags="azure-portal"

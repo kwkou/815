@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在备份保管库中恢复另一 DPM 服务器中的数据 | Windows Azure"
+	pageTitle="在备份保管库中恢复另一 DPM 服务器中的数据 | Microsoft Azure"
 	description="将所保护的数据从任意 DPM 服务器恢复到 Azure 备份保管库，前提是服务器已注册到该保管库。"
 	services="backup"
 	documentationCenter=""

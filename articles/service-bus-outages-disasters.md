@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="使服务总线应用程序免受服务总线中断和灾难影响 | Windows Azure"
+   pageTitle="使服务总线应用程序免受服务总线中断和灾难影响 | Microsoft Azure"
    description="介绍可用于保护应用程序免受潜在服务总线中断影响的技术。"
    services="service-bus"
    documentationCenter="na"

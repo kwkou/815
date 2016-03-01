@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure 备份来取代磁带基础结构 | Windows Azure"
+   pageTitle="使用 Azure 备份来取代磁带基础结构 | Microsoft Azure"
    description="了解如何 Azure 备份如何提供类似于磁带的语义，让你在 Azure 中备份和还原数据"
    services="backup"
    documentationCenter=""

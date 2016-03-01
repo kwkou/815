@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure Active Directory 中设置密码过期策略 | Windows Azure"
+	pageTitle="在 Azure Active Directory 中设置密码过期策略 | Microsoft Azure"
 	description="了解如何检查 Azure Active Directory 密码的过期策略，以及如何逐个或批量更改用户密码过期策略"
 	services="active-directory"
 	documentationCenter=""

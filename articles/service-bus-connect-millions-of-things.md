@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将无以数计的事物连接到云中 | Windows Azure" 
+	pageTitle="将无以数计的事物连接到云中 | Microsoft Azure" 
 	description="了解如何使用 Microsoft Azure 将无以数计的事物连接到云中。" 
 	services="service-bus,event-hubs" 
 	documentationCenter=".net" 
@@ -14,7 +14,7 @@
 
 # 将无以数计的事物连接到云中
  
-智能物联网在现代技术生态系统中的地位日益重要。汽车、家庭、基础设施和设备中的传感器提供了新的机会让你改进产品质量、增加服务种类和建立新的客户参与模式。Windows Azure 服务总线可帮助你连接这种新兴的“物联网”。
+智能物联网在现代技术生态系统中的地位日益重要。汽车、家庭、基础设施和设备中的传感器提供了新的机会让你改进产品质量、增加服务种类和建立新的客户参与模式。Microsoft Azure 服务总线可帮助你连接这种新兴的“物联网”。
 
 ## 探究
 

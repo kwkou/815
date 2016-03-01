@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 批处理 ( Batch ) 服务基础知识 | Windows Azure"
+	pageTitle="Azure 批处理 ( Batch ) 服务基础知识 | Microsoft Azure"
 	description="了解适用于大规模并发工作负荷与 HPC 工作负荷的 Azure 批处理 ( Batch ) 服务的概念、工作流和方案"
 	services="batch"
 	documentationCenter=""

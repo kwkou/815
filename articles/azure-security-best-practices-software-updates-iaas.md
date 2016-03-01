@@ -1,6 +1,6 @@
 <properties
-   pageTitle="有关 Windows Azure IaaS 上软件更新的最佳实践 | Windows Azure"
-   description="本文提供了有关 Windows Azure IaaS 环境中软件更新的最佳实践集合。本文面向每天要进行变更控制、软件更新和资产管理的 IT 专业人员和安全分析人员（包括负责其组织安全和合规性工作的人员）。"
+   pageTitle="有关 Microsoft Azure IaaS 上软件更新的最佳实践 | Microsoft Azure"
+   description="本文提供了有关 Microsoft Azure IaaS 环境中软件更新的最佳实践集合。本文面向每天要进行变更控制、软件更新和资产管理的 IT 专业人员和安全分析人员（包括负责其组织安全和合规性工作的人员）。"
    services="virtual-machines, cloud-services, storage"
    documentationCenter="na"
    authors="YuriD"
@@ -13,7 +13,7 @@
    ms.date="12/10/2015"
    wacn.date="01/29/2016"/>
 
-#有关 Windows Azure IaaS 上软件更新的最佳实践
+#有关 Microsoft Azure IaaS 上软件更新的最佳实践
 
 在学习 Azure IaaS 环境的任何最佳实践深入探讨之前，请务必了解用于管理软件更新的方案。下图可帮助你了解这些方案：
 
@@ -25,7 +25,7 @@
 
 这些原则在混合方案中同样适用。在混合方案中，公司将使用 Azure IaaS VM 与本地资源通信，如下图所示。
 
-![使用 Windows Azure 的典型混合方案](./media/azure-security-best-practices-software-updates-iaas/sec-azconnectonpre.png)
+![使用 Microsoft Azure 的典型混合方案](./media/azure-security-best-practices-software-updates-iaas/sec-azconnectonpre.png)
 
 ## 初始评估
 
@@ -83,7 +83,7 @@
 
 -   **创建包含参考计算机的预生产集合**：预生产集合应该包含操作系统版本、业务线软件以及企业中运行的其他软件的代表性配置。
 
-还应该考虑软件更新服务器的位置：位于云上的 Azure IaaS 基础结构中还是在本地。这是一项重要决策，因为你需要评估本地资源与 Azure 基础结构之间的流量。有关如何将本地基础结构连接到 Azure 的详细信息，请阅读[将本地网络连接到 Windows Azure 虚拟网络](https://technet.microsoft.com/zh-CN/library/Dn786406.aspx)。
+还应该考虑软件更新服务器的位置：位于云上的 Azure IaaS 基础结构中还是在本地。这是一项重要决策，因为你需要评估本地资源与 Azure 基础结构之间的流量。有关如何将本地基础结构连接到 Azure 的详细信息，请阅读[将本地网络连接到 Microsoft Azure 虚拟网络](https://technet.microsoft.com/zh-CN/library/Dn786406.aspx)。
 
 根据当前的基础结构以及当前使用的软件更新系统，用于确定更新服务器位置的设计选项会有所不同。对于 WSUS，请参阅[在组织中部署 Windows Server Update Services](https://technet.microsoft.com/zh-cn/library/hh852340.aspx)，对于 System Center Configuration Manager，请参阅[在 Configuration Manager 中规划站点和层次结构](https://technet.microsoft.com/zh-cn/library/Gg712681.aspx)。
 

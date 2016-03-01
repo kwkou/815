@@ -1,5 +1,5 @@
 <properties
-	pageTitle="将图像从通用 Windows 应用上载到 Azure Blob 存储 | Windows Azure"
+	pageTitle="将图像从通用 Windows 应用上载到 Azure Blob 存储 | Microsoft Azure"
 	description="了解如何使用 .NET 后端移动服务将图像上载到 Azure Blob 存储和从通用 Windows 应用访问图像。"
 	documentationCenter="windows"
 	authors="ggailey777"

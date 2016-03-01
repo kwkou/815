@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure 批处理( Batch ) PowerShell cmdlet 入门 | Windows Azure"
+   pageTitle="Azure 批处理( Batch ) PowerShell cmdlet 入门 | Microsoft Azure"
    description="介绍用于管理 Azure 批处理( Batch )服务的 Azure PowerShell cmdlet"
    services="batch"
    documentationCenter=""

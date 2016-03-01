@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SQL Server 虚拟机的自动备份 | Windows Azure"
+	pageTitle="SQL Server 虚拟机的自动备份 | Microsoft Azure"
 	description="介绍 Azure 虚拟机中运行的 SQL Server 的自动备份功能。"
 	services="virtual-machines"
 	documentationCenter="na"
@@ -15,7 +15,7 @@
 
 # Azure 虚拟机中 SQL Server 的自动备份
 
-自动备份将在运行 SQL Server 2014 Standard 或 Enterprise 的 Azure VM 上，自动为所有现有数据库和新数据库配置[向 Windows Azure 的托管备份](https://msdn.microsoft.com/zh-cn/library/dn449496.aspx)。这样，你便可以配置使用持久 Azure Blob 存储的定期数据库备份。
+自动备份将在运行 SQL Server 2014 Standard 或 Enterprise 的 Azure VM 上，自动为所有现有数据库和新数据库配置[向 Microsoft Azure 的托管备份](https://msdn.microsoft.com/zh-cn/library/dn449496.aspx)。这样，你便可以配置使用持久 Azure Blob 存储的定期数据库备份。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
 

@@ -1,4 +1,4 @@
-<properties title="Prepare an Oracle Linux Virtual Machine for Azure" pageTitle="为 Azure 准备 Oracle Linux 虚拟机" description="逐步完成在 Windows Azure 中配置运行 Linux 的 Oracle 虚拟机。" services="virtual-machines" authors="bbenz" documentationCenter=""/>
+<properties title="Prepare an Oracle Linux Virtual Machine for Azure" pageTitle="为 Azure 准备 Oracle Linux 虚拟机" description="逐步完成在 Microsoft Azure 中配置运行 Linux 的 Oracle 虚拟机。" services="virtual-machines" authors="bbenz" documentationCenter=""/>
 <tags ms.service="virtual-machines" ms.date="06/22/2015" wacn.date="09/18/2015" />
 #为 Azure 准备 Oracle Linux 虚拟机
 -   [为 Azure 准备 Oracle Linux 6.4+ 虚拟机](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)
@@ -144,7 +144,7 @@
 			PEERDNS=yes
 		IPV6INIT=no
 
-5.  移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Windows Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题。
+5.  移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Microsoft Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题。
 
 		# sudo mkdir -m 0700 /var/lib/waagent
 		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/ 2>/dev/null

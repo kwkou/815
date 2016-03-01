@@ -1,5 +1,5 @@
 <properties 
-pageTitle="Windows Azure 开发人员中心：RUBY" 
+pageTitle="Microsoft Azure 开发人员中心：RUBY" 
 description="" 
 services="RUBY" 
 documentationCenter="Develop" 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure Web 应用中配置 PHP | Windows Azure"
+	pageTitle="在 Azure Web 应用中配置 PHP | Microsoft Azure"
 	description="了解如何在 Azure 中为 Web 应用配置默认 PHP 安装或添加自定义 PHP 安装。"
 	services="app-service"
 	documentationCenter="php"

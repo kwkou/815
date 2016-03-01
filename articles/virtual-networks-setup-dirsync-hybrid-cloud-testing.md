@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Office 365 DirSync 测试环境 | Windows Azure" 
+	pageTitle="Office 365 DirSync 测试环境 | Microsoft Azure" 
 	description="了解如何在混合云中配置 Office 365 目录同步 (DirSync) 服务器，以便进行 IT 专业人员测试或开发测试。" 
 	services="virtual-network" 
 	documentationCenter="" 
@@ -18,7 +18,7 @@
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
  
 
-本主题将指导你逐步创建混合云环境，以便测试在 Windows Azure 中托管的带密码同步的 Office 365 目录同步 (DirSync)。这是生成的配置。
+本主题将指导你逐步创建混合云环境，以便测试在 Microsoft Azure 中托管的带密码同步的 Office 365 目录同步 (DirSync)。这是生成的配置。
 
 ![](./media/virtual-networks-setup-dirsync-hybrid-cloud-testing/CreateDirSyncHybridCloud_3.png)
  
@@ -129,7 +129,7 @@
 接下来，在 DS1 上安装并配置 Azure AD Connect 工具。
 
 1.	运行 Internet Explorer，在**地址**栏中键入 **https://www.microsoft.com/download/details.aspx?id=47594**，然后按 Enter。
-2.	运行 Windows Azure AD Connect 安装程序。
+2.	运行 Microsoft Azure AD Connect 安装程序。
 3.	从桌面上双击“Azure AD Connect”。
 4.	在“欢迎使用”页上，选择“我同意许可条款和隐私声明”，然后单击“继续”。
 5.	在“快速设置”页上，单击“使用快速设置”。
@@ -165,7 +165,7 @@
 
 ## 其他资源
 
-[在 Windows Azure 中部署 Office 365 目录同步 (DirSync)](http://technet.microsoft.com/zh-cn/library/dn635310.aspx)
+[在 Microsoft Azure 中部署 Office 365 目录同步 (DirSync)](http://technet.microsoft.com/zh-cn/library/dn635310.aspx)
 
 [使用 Office 服务器和云的解决方案](http://technet.microsoft.com/zh-cn/library/dn262744.aspx)
 

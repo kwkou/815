@@ -104,7 +104,7 @@
 
 ##<a id="check_progress_with_queues"></a>使用 Azure 队列存储监视媒体服务作业通知
 
-Windows Azure 媒体服务可以在处理媒体作业时向 [Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues#what-is)发送通知消息。本主题说明如何从队列存储获取这些通知消息。
+Microsoft Azure 媒体服务可以在处理媒体作业时向 [Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues#what-is)发送通知消息。本主题说明如何从队列存储获取这些通知消息。
 
 用户可以从任何位置访问已传给到队列存储中的消息。Azure 队列消息体系结构十分可靠，而且具有高度可缩放性。建议使用其他方法轮询队列存储。
 

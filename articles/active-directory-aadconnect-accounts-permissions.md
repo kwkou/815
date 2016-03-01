@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect 帐户和权限 | Windows Azure"
+   pageTitle="Azure AD Connect 帐户和权限 | Microsoft Azure"
    description="本主题介绍使用和创建的帐户以及所需的权限。"
    services="active-directory"
    documentationCenter=""

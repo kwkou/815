@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure 自动化管理 Azure 密钥保管库 | Windows Azure"
+	pageTitle="使用 Azure 自动化管理 Azure 密钥保管库 | Microsoft Azure"
 	description="了解如何使用 Azure Automation 服务来管理 Azure 密钥保管库。"
 	services="Key-Vault, automation"
 	documentationCenter=""

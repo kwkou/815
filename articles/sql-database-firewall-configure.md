@@ -1,5 +1,5 @@
 <properties
-   pageTitle="配置 SQL 数据库防火墙 | Windows Azure"
+   pageTitle="配置 SQL 数据库防火墙 | Microsoft Azure"
    description="了解如何配置使用服务器级和数据库级防火墙规则的 SQL 数据库防火墙以管理访问权限。"
    keywords="数据库防火墙"
    services="sql-database"
@@ -16,7 +16,7 @@
 
 # 如何配置 Azure SQL 数据库防火墙
 
-Windows Azure SQL 数据库为 Azure 和其他基于 Internet 的应用程序提供关系数据库服务。为了帮助保护你的数据，在你指定哪些计算机具有访问权限之前，SQL 数据库防火墙将禁止所有对 SQL 数据库服务器的访问。数据库防火墙基于每个请求的起始 IP 地址授予访问权限。
+Microsoft Azure SQL 数据库为 Azure 和其他基于 Internet 的应用程序提供关系数据库服务。为了帮助保护你的数据，在你指定哪些计算机具有访问权限之前，SQL 数据库防火墙将禁止所有对 SQL 数据库服务器的访问。数据库防火墙基于每个请求的起始 IP 地址授予访问权限。
 
 若要配置你的数据库防火墙，请创建防火墙规则，以指定可接受的 IP 地址的范围。可以在服务器和数据库级别上创建防火墙规则。
 
@@ -58,9 +58,9 @@ Windows Azure SQL 数据库为 Azure 和其他基于 Internet 的应用程序提
 
 你可通过两种方式在[经典门户](https://manage.windowsazure.cn)中启用从 Azure 的连接：
 
-- 在创建新服务器时选中复选框“允许 Windows Azure 服务访问服务器”。
+- 在创建新服务器时选中复选框“允许 Microsoft Azure 服务访问服务器”。
 
-- 在服务器上的“配置”选项卡中，在“允许的服务”部分下，单击“Windows Azure 服务”对应的“是”。
+- 在服务器上的“配置”选项卡中，在“允许的服务”部分下，单击“Microsoft Azure 服务”对应的“是”。
 
 ## 创建第一个服务器级防火墙规则
 
@@ -109,7 +109,7 @@ Windows Azure SQL 数据库为 Azure 和其他基于 Internet 的应用程序提
 
 ## 数据库防火墙故障排除
 
-在对 Windows Azure SQL 数据库服务的访问与你的期望不符时，请考虑以下几点：
+在对 Microsoft Azure SQL 数据库服务的访问与你的期望不符时，请考虑以下几点：
 
 - **本地防火墙配置：**在你的计算机可以访问 Azure SQL 数据库之前，可能需要在你的计算机上创建针对 TCP 端口 1433 的防火墙例外。如果要在 Azure 云边界内部建立连接，可能需要打开其他端口。有关详细信息，请参阅[用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)中的 **SQL 数据库 V12：内部与外部**部分。
 

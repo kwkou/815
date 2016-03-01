@@ -1,5 +1,5 @@
 <properties
-	pageTitle="有关服务管理中虚拟机的文章 | Windows Azure"
+	pageTitle="有关服务管理中虚拟机的文章 | Microsoft Azure"
 	description="本文列出了能帮助你在 Azure 服务管理中创建和管理虚拟机的资源。"
 	services="virtual-machines"
 	documentationCenter=""

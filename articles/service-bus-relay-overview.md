@@ -1,5 +1,5 @@
 <properties
-	pageTitle="服务总线中继消息传送概述 | Windows Azure"
+	pageTitle="服务总线中继消息传送概述 | Microsoft Azure"
 	description="服务总线中继的概述。"
 	services="service-bus"
 	documentationCenter=".net"

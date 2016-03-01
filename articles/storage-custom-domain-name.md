@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="配置存储帐户中 Blob 数据的域名 | Windows Azure" 
+	pageTitle="配置存储帐户中 Blob 数据的域名 | Microsoft Azure" 
 	description="了解如何配置自定义域以便访问 Azure 存储帐户中的 Blob 数据。" 
 	services="storage" 
 	documentationCenter="" 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle=".NET 多层应用程序 | Windows Azure"
+	pageTitle=".NET 多层应用程序 | Microsoft Azure"
 	description="本 .NET 教程可帮助你在 Azure 中开发使用服务总线队列在各层之间进行通信的多层应用。"
 	services="service-bus"
 	documentationCenter=".net"
@@ -16,7 +16,7 @@
 
 ## 介绍
 
-使用 Visual Studio 和免费的 Azure SDK for .NET，可以轻松针对 Windows Azure 进行开发。如果你还没有 Visual Studio，则此 SDK 将自动安装 Visual Studio Express，以便你能完全免费地开始针对 Azure 进行开发。本文假设你之前未使用过 Azure。完成本教程之后，你将拥有使用多项 Azure 资源的应用程序，该应用程序在本地环境中运行并演示多层应用程序的工作方式。
+使用 Visual Studio 和免费的 Azure SDK for .NET，可以轻松针对 Microsoft Azure 进行开发。如果你还没有 Visual Studio，则此 SDK 将自动安装 Visual Studio Express，以便你能完全免费地开始针对 Azure 进行开发。本文假设你之前未使用过 Azure。完成本教程之后，你将拥有使用多项 Azure 资源的应用程序，该应用程序在本地环境中运行并演示多层应用程序的工作方式。
 
 你将学习以下内容：
 

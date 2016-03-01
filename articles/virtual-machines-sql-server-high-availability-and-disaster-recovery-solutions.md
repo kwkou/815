@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SQL Server 的高可用性和灾难恢复 | Windows Azure"
+	pageTitle="SQL Server 的高可用性和灾难恢复 | Microsoft Azure"
 	description="本教程中使用通过经典部署模型创建的资源，并且讨论适用于在 Azure 虚拟机中运行的 SQL Server 的各种类型 HADR 策略。"
 	services="virtual-machines"
 	documentationCenter="na"

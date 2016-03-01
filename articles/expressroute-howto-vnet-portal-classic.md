@@ -1,5 +1,5 @@
 <properties
-   pageTitle="为 ExpressRoute 配置虚拟网络和网关 | Windows Azure"
+   pageTitle="为 ExpressRoute 配置虚拟网络和网关 | Microsoft Azure"
    description="本文将指导你完成为 ExpressRoute 设置虚拟网络 (VNet)"
    documentationCenter="na"
    services="expressroute"

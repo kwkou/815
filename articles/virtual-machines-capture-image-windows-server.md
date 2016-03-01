@@ -1,5 +1,5 @@
 <properties
-	pageTitle="捕获 Azure Windows VM 的映像| Windows Azure"
+	pageTitle="捕获 Azure Windows VM 的映像| Microsoft Azure"
 	description="捕获使用经典部署模型创建的 Azure Windows 虚拟机的映像。"
 	services="virtual-machines"
 	documentationCenter=""

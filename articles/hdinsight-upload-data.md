@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 HDInsight 中上载 Hadoop 作业的数据 | Windows Azure"
+	pageTitle="在 HDInsight 中上载 Hadoop 作业的数据 | Microsoft Azure"
 	description="了解如何使用 Azure CLI、Azure 存储资源管理器、Azure PowerShell、Hadoop 命令行或 Sqoop 在 HDInsight 中上载和访问 Hadoop 作业的数据。"
 	services="hdinsight,storage"
 	documentationCenter=""

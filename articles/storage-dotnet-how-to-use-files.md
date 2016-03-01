@@ -1,5 +1,5 @@
 <properties
-			pageTitle="如何通过 Windows 使用 Azure 文件存储 | Windows Azure"
+			pageTitle="如何通过 Windows 使用 Azure 文件存储 | Microsoft Azure"
             description="按照此分步教程中的说明，在云中创建 Azure 文件共享。管理文件共享内容，并从 Azure 虚拟机 (VM) 或本地应用程序装载文件共享。"
             services="storage"
             documentationCenter=".net"
@@ -34,7 +34,7 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。使用 Az
 
 ## 关于本教程
 
-此入门教程演示使用 Windows Azure 文件存储的基础知识。在本教程中，我们将：
+此入门教程演示使用 Microsoft Azure 文件存储的基础知识。在本教程中，我们将：
 
 - 使用 Azure PowerShell 来演示如何创建新的 Azure 文件共享、如何添加目录、如何将本地文件上载到该共享，以及如何列出该目录中的文件。
 - 从 Azure 虚拟机装载文件共享，就像装载任何 SMB 共享一样。
@@ -225,7 +225,7 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 ### 以编程方式检索连接字符串
 
-可以使用 `Microsoft.WindowsAzure.CloudConfigurationManager` 类或 `System.Configuration.ConfigurationManager ` 类从 app.config 文件中检索保存的凭据。Windows Azure 配置管理器包，其中包括 `Microsoft.WindowsAzure.CloudConfigurationManager` 类，可从 [Nuget](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager) 获得。
+可以使用 `Microsoft.WindowsAzure.CloudConfigurationManager` 类或 `System.Configuration.ConfigurationManager ` 类从 app.config 文件中检索保存的凭据。Microsoft Azure 配置管理器包，其中包括 `Microsoft.WindowsAzure.CloudConfigurationManager` 类，可从 [Nuget](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager) 获得。
 
 此处的示例显示如何使用 `CloudConfigurationManager` 类检索凭据，并使用 `CloudStorageAccount` 类封装这些凭据。将以下代码添加到 Program.cs 的 `Main()` 方法中：
 
@@ -358,7 +358,7 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 从 Azure 存储空间客户端库的 5.x 版开始，可以将一个文件复制到另一个文件，将一个文件复制到一个 Blob，或将一个 Blob 复制到一个文件。在后续部分中，我们将演示如何以编程方式执行这些复制操作。
 
-还可以使用 AzCopy 将一个文件复制到另一个文件或将一个 Blob 复制到一个文件，反之亦然。请参阅[如何将 AzCopy 与 Windows Azure 存储空间一起使用](/documentation/articles/storage-use-azcopy#copy-files-in-azure-file-storage-with-azcopy-preview-version-only)以了解有关用 AzCopy 复制文件的详细信息。
+还可以使用 AzCopy 将一个文件复制到另一个文件或将一个 Blob 复制到一个文件，反之亦然。请参阅[如何将 AzCopy 与 Microsoft Azure 存储空间一起使用](/documentation/articles/storage-use-azcopy#copy-files-in-azure-file-storage-with-azcopy-preview-version-only)以了解有关用 AzCopy 复制文件的详细信息。
 
 > [AZURE.NOTE] 如果将一个 Blob 复制到一个文件，或将一个文件复制到一个 Blob，必须使用共享访问签名 (SAS) 对源对象进行身份验证，即使你在同一存储帐户内进行复制。
 
@@ -525,7 +525,7 @@ Azure 存储服务分析现在支持用于文件存储的指标。使用指标�
 ### 文件存储的工具支持
 
 - [对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full)
-- [如何对 Windows Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy)
+- [如何对 Microsoft Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy)
 - [将 Azure CLI 用于 Azure 存储空间](/documentation/articles/storage-azure-cli#create-and-manage-file-shares)
 
 ### 引用
@@ -537,8 +537,8 @@ Azure 存储服务分析现在支持用于文件存储的指标。使用指标�
 
 - [Azure 文件存储现已正式发布](/zh-cn/blog)
 - [深入了解 Azure 文件存储](/home/features/storage) 
-<!--- [Windows Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
-- [将连接保存到 Windows Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)-->
+<!--- [Microsoft Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
+- [将连接保存到 Microsoft Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)-->
  
 
 <!---HONumber=Mooncake_0118_2016-->

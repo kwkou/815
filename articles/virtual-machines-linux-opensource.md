@@ -17,7 +17,7 @@
 
 # Azure 上的 Linux 和开源计算
 
-本文档尝试在一个位置列出由 Microsoft 及其合作伙伴编写的关于在 Windows Azure 上运行基于 Linux 的虚拟机以及其他开源计算环境和应用程序的所有主题。因为 Azure 和开源计算都在快速发展，所以几乎可以肯定地说，本文档已过时了，*尽管*我们将尽最大努力来持续添加更新的主题并删除过时的主题。如果我们有遗漏，请在评论中告诉我们，或者向我们的 [GitHub 存储库](https://github.com/Azure/azure-content/)提交一个拉取请求。
+本文档尝试在一个位置列出由 Microsoft 及其合作伙伴编写的关于在 Microsoft Azure 上运行基于 Linux 的虚拟机以及其他开源计算环境和应用程序的所有主题。因为 Azure 和开源计算都在快速发展，所以几乎可以肯定地说，本文档已过时了，*尽管*我们将尽最大努力来持续添加更新的主题并删除过时的主题。如果我们有遗漏，请在评论中告诉我们，或者向我们的 [GitHub 存储库](https://github.com/Azure/azure-content/)提交一个拉取请求。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
@@ -186,7 +186,7 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
     - [如何：使用应用商店创建 MySQL 数据库](/documentation/articles/store-php-create-mysql-database)
     - [如何：具有 Python 和 Visual Studio 的 Azure Web 应用上的 Django 和 MySQL](/documentation/articles/web-sites-python-ptvs-django-mysql)
     - [如何：具有 WebMatrix 的 Azure Web 应用上的 PHP 和 MySQL](/documentation/articles/web-sites-php-mysql-use-webmatrix)
-    - [在 Windows Azure 中的 MySQL 高可用性体系结构](http://download.microsoft.com/download/6/1/C/61C0E37C-F252-4B33-9557-42B90BA3E472/MySQL_HADR_solution_in_Azure.pdf)
+    - [在 Microsoft Azure 中的 MySQL 高可用性体系结构](http://download.microsoft.com/download/6/1/C/61C0E37C-F252-4B33-9557-42B90BA3E472/MySQL_HADR_solution_in_Azure.pdf)
 7. MariaDB
     - [如何：创建多主的 MariaDb 群集](/documentation/articles/virtual-machines-mariadb-cluster)
 8. [使用 ILB 通过 corosync、pg\_bouncer 安装 Postgres](https://github.com/chgeuer/postgres-azure)
@@ -243,7 +243,7 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 ## 支持、故障排除以及“它就是不工作”
 
 1. Microsoft 支持文档
-	- [支持：支持 Windows Azure 上的 Linux 映像](http://support2.microsoft.com/kb/2941892)
+	- [支持：支持 Microsoft Azure 上的 Linux 映像](http://support2.microsoft.com/kb/2941892)
 
 <!--Anchors-->
 [Distros]: #distros

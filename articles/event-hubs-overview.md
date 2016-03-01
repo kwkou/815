@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="事件中心概述 | Windows Azure"
+   pageTitle="事件中心概述 | Microsoft Azure"
    description="Azure 事件中心的简介和概述。"
    services="event-hubs"
    documentationCenter="na"

@@ -34,7 +34,7 @@
 
 本教程设置了以下前提条件：
 
--	[有效的 Windows Azure 帐户](/pricing/1rmb-trial/)
+-	[有效的 Microsoft Azure 帐户](/pricing/1rmb-trial/)
 -	Visual Studio 2015 with the [Azure SDK for .NET](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)。如果你使用 Visual Studio 2013，步骤可能有所不同。
 
 > [AZURE.NOTE]完成本教程需要有一个 Azure 帐户：
@@ -53,7 +53,7 @@
 
 	![](./media/cdn-websites-with-cdn/2-webapp-template.png)
 
-	Windows Azure 中国区目前不支持在 Visual Studio 中创建或管理 Web 应用。因此，你需要转到[管理门户](https://manage.windowsazure.cn/)创建新的 Azure Web 应用
+	Microsoft Azure 中国区目前不支持在 Visual Studio 中创建或管理 Web 应用。因此，你需要转到[管理门户](https://manage.windowsazure.cn/)创建新的 Azure Web 应用
 	
 3. 在管理门户中创建 Web 应用后，单击 Web 应用的“仪表板”。在“速览”下，单击“下载发布配置文件”。
 

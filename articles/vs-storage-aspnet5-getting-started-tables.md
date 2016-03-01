@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何开始使用表存储和 Visual Studio 连接服务 (ASP.NET 5) | Windows Azure"
+	pageTitle="如何开始使用表存储和 Visual Studio 连接服务 (ASP.NET 5) | Microsoft Azure"
 	description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的 ASP.NET 5 项目中使用 Azure 表存储"
 	services="storage"
 	documentationCenter=""

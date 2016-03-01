@@ -1,6 +1,6 @@
 ## 了解 Azure 资源模板和资源组
 
-大多数部署和运行在 Windows Azure 中的应用程序是通过不同云资源类型的组合（例如，一个或多个 VM 和存储帐户、一个 SQL 数据库、一个虚拟网络、一个 CDN，等等）生成的。[Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)使你能够集中部署和管理这些不同的资源，只需对资源和关联的配置及部署参数进行 JSON 描述即可。
+大多数部署和运行在 Microsoft Azure 中的应用程序是通过不同云资源类型的组合（例如，一个或多个 VM 和存储帐户、一个 SQL 数据库、一个虚拟网络、一个 CDN，等等）生成的。[Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)使你能够集中部署和管理这些不同的资源，只需对资源和关联的配置及部署参数进行 JSON 描述即可。
 
 订阅基于 JSON 的资源模板之后，你就可以执行它，并使用 PowerShell 命令将其中定义的资源部署到 Azure 中。你可以在 PowerShell 命令外壳中单独运行此 PowerShell 命令，也可以将其集成到包含其他自动化逻辑的 PowerShell 脚本中。
 

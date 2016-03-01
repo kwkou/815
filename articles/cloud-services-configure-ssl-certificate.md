@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="为云服务配置 SSL | Windows Azure" 
+	pageTitle="为云服务配置 SSL | Microsoft Azure" 
 	description="了解如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护您的应用程序。" 
 	services="cloud-services" 
 	documentationCenter=".net" 

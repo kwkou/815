@@ -12,9 +12,9 @@
 	ms.date="12/11/2015" 
 	wacn.date="02/17/2016"/>
 
-#还原 Windows Azure Web 应用
+#还原 Microsoft Azure Web 应用
 
-本文介绍如何通过使用 Azure Web 应用备份功能来还原你先前备份的 Web 应用。有关详细信息，请参阅 [Windows Azure Web 应用备份](/documentation/articles/web-sites-backup/)。
+本文介绍如何通过使用 Azure Web 应用备份功能来还原你先前备份的 Web 应用。有关详细信息，请参阅 [Microsoft Azure Web 应用备份](/documentation/articles/web-sites-backup/)。
 
 利用 Web 应用还原功能，可将 Web 应用还原到以前某个你自己需要的状态，或基于原有 Web 应用备份之一创建新的 Web 应用。创建与最新版本并行运行的新 Web 应用对于 A/B 测试会很有用。
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure 诊断跟踪云服务应用程序中的流 | Windows Azure"
+	pageTitle="使用 Azure 诊断跟踪云服务应用程序中的流 | Microsoft Azure"
 	description="将跟踪消息添加到 Azure 应用程序中，以协作进行调试、性能度量、监视、流量分析等。"
 	services="cloud-services"
 	documentationCenter=".net"
@@ -31,7 +31,7 @@
 
 Trace、Debug 和 TraceSource 都要求你设置“侦听器”来收集和记录已发送的消息。侦听器将收集、存储和路由跟踪消息。它们会将跟踪输出传输到适当的目标，如日志、窗口或文本文件。Azure 诊断使用 [DiagnosticMonitorTraceListener](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.diagnostics.diagnosticmonitortracelistener.aspx) 类。
 
-完成以下过程之前，必须初始化 Azure 诊断监视器。若要执行此操作，请参阅[在 Windows Azure 中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)。
+完成以下过程之前，必须初始化 Azure 诊断监视器。若要执行此操作，请参阅[在 Microsoft Azure 中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)。
 
 请注意，如果你使用的模板是 Visual Studio 提供的，则会自动为你添加侦听器的配置。
 

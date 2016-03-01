@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 PowerShell 创建具有本机模式报表服务器的虚拟机 |Windows Azure"
+	pageTitle="使用 PowerShell 创建具有本机模式报表服务器的虚拟机 |Microsoft Azure"
 	description="本主题说明并指导你完成 SQL Server Reporting Services 本机模式报表服务器在 Azure 虚拟机中的部署和配置。"
 	services="virtual-machines"
 	documentationCenter="na"
@@ -43,7 +43,7 @@
 
 1. 单击左侧窗格中的“虚拟机”。
 
-	![Windows Azure 虚拟机](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC660124.gif)
+	![Microsoft Azure 虚拟机](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC660124.gif)
 
 1. 单击“新建”。
 
@@ -649,9 +649,9 @@
 
 ## 创建报表并将其发布到 Azure 虚拟机
 
-下表汇总一些选项，可用于将现有报表从本地计算机发布到 Windows Azure 虚拟机上托管的报表服务器：
+下表汇总一些选项，可用于将现有报表从本地计算机发布到 Microsoft Azure 虚拟机上托管的报表服务器：
 
-- **RS.exe 脚本**：使用 RS.exe 脚本将报表项从现有报表服务器复制到你的 Windows Azure 虚拟机。有关详细信息，请参阅[用示例 Reporting Services rs.exe 脚本在报表服务器之间迁移内容](https://msdn.microsoft.com/library/dn531017.aspx)中的“本机模式到本机模式 – Windows Azure 虚拟机”部分。
+- **RS.exe 脚本**：使用 RS.exe 脚本将报表项从现有报表服务器复制到你的 Microsoft Azure 虚拟机。有关详细信息，请参阅[用示例 Reporting Services rs.exe 脚本在报表服务器之间迁移内容](https://msdn.microsoft.com/library/dn531017.aspx)中的“本机模式到本机模式 – Microsoft Azure 虚拟机”部分。
 
 - **报表生成器**：虚拟机包括 Microsoft SQL Server 报表生成器的单击一次版本。若要首次在虚拟机上启动报表生成器：
 

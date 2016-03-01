@@ -19,7 +19,7 @@
 &nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]&nbsp;
 
->[AZURE.TIP]如果你不熟悉如何使用 Windows Azure 进行移动开发，请[开始使用 Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-ios-get-started-preview) 而不是 Azure 移动服务；Mobile Apps 提供[更多的优势](/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services-preview)。
+>[AZURE.TIP]如果你不熟悉如何使用 Microsoft Azure 进行移动开发，请[开始使用 Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-ios-get-started-preview) 而不是 Azure 移动服务；Mobile Apps 提供[更多的优势](/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services-preview)。
 
 本教程说明如何使用 Azure 移动服务向 iOS 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单_待办事项列表_应用程序。移动服务为服务器端业务逻辑使用 .NET 和 Visual Studio。若要以 JavaScript 创建包含服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本]。
 

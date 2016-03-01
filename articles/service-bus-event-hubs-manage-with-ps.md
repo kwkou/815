@@ -14,7 +14,7 @@
 
 # 使用 PowerShell 管理 Service Bus 和事件中心资源
 
-Windows Azure PowerShell 是一个脚本编写环境，可用于控制和自动执行 Azure 服务的部署和管理。本文介绍如何通过本地 Azure PowerShell 控制台使用 PowerShell 来设置和管理 Service Bus 实体（如命名空间、队列和事件中心）。
+Microsoft Azure PowerShell 是一个脚本编写环境，可用于控制和自动执行 Azure 服务的部署和管理。本文介绍如何通过本地 Azure PowerShell 控制台使用 PowerShell 来设置和管理 Service Bus 实体（如命名空间、队列和事件中心）。
 
 ## 先决条件
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Windows VM 上安装 MongoDB | Windows Azure"
+	pageTitle="在 Windows VM 上安装 MongoDB | Microsoft Azure"
 	description="了解如何在使用经典部署模型创建的运行 Windows Server 的 Azure VM 上安装 MongoDB。"
 	services="virtual-machines"
 	documentationCenter=""

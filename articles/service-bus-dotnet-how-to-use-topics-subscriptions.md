@@ -1,5 +1,5 @@
 <properties
-    pageTitle="通过 .NET 使用服务总线主题 | Windows Azure"
+    pageTitle="通过 .NET 使用服务总线主题 | Microsoft Azure"
     description="了解如何在 Azure 中通过 .NET 使用服务总线主题和订阅。代码示例是针对 .NET 应用程序编写的。"
     services="service-bus"
     documentationCenter=".net"
@@ -33,7 +33,7 @@
 要在你的应用程序中安装 NuGet 包，请执行以下操作：
 
 1.  在解决方案资源管理器中，右键单击“引用”，然后单击“管理 NuGet 包”。
-2.  搜索“服务总线”并选择“Windows Azure 服务总线”项。单击“安装”以完成安装，然后关闭以下对话框。
+2.  搜索“服务总线”并选择“Microsoft Azure 服务总线”项。单击“安装”以完成安装，然后关闭以下对话框。
 
     ![][7]
 

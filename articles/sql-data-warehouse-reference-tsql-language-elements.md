@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库 Transact-SQL 语言元素 | Windows Azure"
+   pageTitle="SQL 数据仓库 Transact-SQL 语言元素 | Microsoft Azure"
    description="用于 SQL 数据仓库的 Transact-SQL 语言元素的参考内容链接列表。"
    services="sql-data-warehouse"
    documentationCenter="NA"

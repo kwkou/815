@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用资源管理器执行审核操作 | Windows Azure" 
+	pageTitle="使用资源管理器执行审核操作 | Microsoft Azure" 
 	description="使用资源管理器中的审核日志查看用户操作和错误。显示 PowerShell、Azure CLI 和 REST。" 
 	services="azure-resource-manager" 
 	documentationCenter="" 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="了解如何使用 Visual Studio Hadoop Tools for HDInsight | Windows Azure"
+	pageTitle="了解如何使用 Visual Studio Hadoop Tools for HDInsight | Microsoft Azure"
 	description="了解如何安装和使用 Visual Studio Hadoop tools for HDInsight 连接到 Hadoop 群集及运行 Hive 查询。"
 	keywords="hadoop 工具,hive 查询,visual studio"
 	services="HDInsight"

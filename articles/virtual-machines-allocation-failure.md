@@ -1,5 +1,5 @@
 <properties
-	pageTitle="排除 VM 分配故障 | Windows Azure"
+	pageTitle="排除 VM 分配故障 | Microsoft Azure"
 	description="在 Azure 中创建、重新启动或重设 VM 大小时排除分配故障"
 	services="virtual-machines, azure-resource-manager"
 	documentationCenter=""
@@ -17,7 +17,7 @@
 
 # 在 Azure 中创建、重新启动或重设 VM 大小时排除分配故障
 
-创建 VM、重新启动已停止（解除分配）的 VM 和重设 VM 大小时，Windows Azure 会为你的订阅分配计算资源。执行这些操作时，即使尚未达到 Azure 订阅限制，也可能偶尔发生错误。本文说明一些常见分配故障的原因，并建议可能的补救方法。规划服务的部署时，本信息可能也有用。
+创建 VM、重新启动已停止（解除分配）的 VM 和重设 VM 大小时，Microsoft Azure 会为你的订阅分配计算资源。执行这些操作时，即使尚未达到 Azure 订阅限制，也可能偶尔发生错误。本文说明一些常见分配故障的原因，并建议可能的补救方法。规划服务的部署时，本信息可能也有用。
 
 如果在本文中有任何需要协助的地方，你可以联系 [MSDN Azure 和CSDN论坛](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。
 
@@ -220,6 +220,6 @@ GeneralError*
 ### 与 Azure 客户支持联系
 
 如果本文无助于解决你的 Azure 问题，请浏览 [MSDN 和 CSDN](/support/forums/)上的 Azure 论坛。也可以就你的问题提出 Azure 支持事件。
-请转到 [Azure 支持](/support/options/)站点并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Windows Azure 支持 FAQ](/support/faq/)。
+请转到 [Azure 支持](/support/options/)站点并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Microsoft Azure 支持 FAQ](/support/faq/)。
 
 <!---HONumber=Mooncake_1207_2015-->

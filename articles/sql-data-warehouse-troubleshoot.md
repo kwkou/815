@@ -1,5 +1,5 @@
 <properties
-   pageTitle="故障排除 | Windows Azure"
+   pageTitle="故障排除 | Microsoft Azure"
    description="排查 SQL 数据仓库问题。"
    services="sql-data-warehouse"
    documentationCenter="NA"

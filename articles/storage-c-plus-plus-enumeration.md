@@ -1,6 +1,6 @@
 <properties 
-    pageTitle="使用用于 C++ 的 Windows Azure 存储客户端库列出 Azure 存储资源 | Windows Azure" 
-    description="了解如何在用于 C++ 的 Windows Azure 存储客户端库中使用列表 API 来枚举容器、blob、队列、表和实体。" 
+    pageTitle="使用用于 C++ 的 Microsoft Azure 存储客户端库列出 Azure 存储资源 | Microsoft Azure" 
+    description="了解如何在用于 C++ 的 Microsoft Azure 存储客户端库中使用列表 API 来枚举容器、blob、队列、表和实体。" 
     documentationCenter=".net" 
     services="storage"
     authors="tamram" 
@@ -13,7 +13,7 @@
 
 # 使用 C++ 列出 Azure 存储资源
 
-使用 Azure 存储空间进行开发时，很多情况下列表操作很重要。本文介绍如何使用用于 C++ 的 Windows Azure 存储客户端库中提供的列表 API 最有效率地枚举 Azure 存储空间中的对象。
+使用 Azure 存储空间进行开发时，很多情况下列表操作很重要。本文介绍如何使用用于 C++ 的 Microsoft Azure 存储客户端库中提供的列表 API 最有效率地枚举 Azure 存储空间中的对象。
 
 >[AZURE.NOTE]本指南主要面向适用于 C++ 版本 1.x 的 Azure 存储客户端库，该库可通过 [NuGet](http://www.nuget.org/packages/wastorage) 或 [GitHub](https://github.com/Azure/azure-storage-cpp) 获取。
 

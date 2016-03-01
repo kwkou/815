@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="使用 Azure 资源管理器创建和配置具有内部负载平衡器 (ILB) 的应用程序网关 | Windows Azure"
+   pageTitle="使用 Azure 资源管理器创建和配置具有内部负载平衡器 (ILB) 的应用程序网关 | Microsoft Azure"
    description="本页提供有关使用 Azure 资源管理器创建、配置、启动和删除具有内部负载平衡器 (ILB) 的 Azure 应用程序网关的说明"
    documentationCenter="na"
    services="application-gateway"

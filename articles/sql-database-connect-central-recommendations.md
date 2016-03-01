@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="连接到 SQL 数据库：最佳实践 | Windows Azure" 
+	pageTitle="连接到 SQL 数据库：最佳实践 | Microsoft Azure" 
 	description="一个入门主题，其中收集了通过 ADO.NET 和 PHP 等技术连接到 Azure SQL 数据库的客户端程序的相关链接和最佳实践建议。" 
 	services="sql-database" 
 	documentationCenter="" 

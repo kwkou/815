@@ -52,7 +52,7 @@
 - 你希望充分利用 Azure 环境的功能，但 Azure SQL 数据库不支持你的应用程序需要的全部功能。这可能包括以下方面：
 
 	- **数据库大小**：在更新这篇文章时，SQL 数据库支持最多包含 500 GB 数据的数据库。如果你的应用程序需要 500 GB 以上的数据，但你不希望实现自定义分片解决方案，则建议你在 Azure 虚拟机中使用 SQL Server。有关最新信息，请参阅[向外缩放 Azure SQL 数据库](https://msdn.microsoft.com/zh-cn/library/azure/dn495641.aspx)和 [Azure SQL 数据库服务层和性能级别](https://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx)。
-	- **HIPAA 合规性**：医疗保健客户和独立软件供应商 (ISV) 可能选择 [Azure 虚拟机中的 SQL Server](/documentation/articles/virtual-machines-sql-server-infrastructure-services) 而不选择 [Azure SQL 数据库](/documentation/articles/sql-database-technical-overview)，原因是 Azure 虚拟机中的 SQL Server 已纳入 HIPAA 商业伙伴协议 (BAA)。有关合规性的信息，请参阅 [Windows Azure 信任中心：合规性](/support/trust-center/compliance/)。
+	- **HIPAA 合规性**：医疗保健客户和独立软件供应商 (ISV) 可能选择 [Azure 虚拟机中的 SQL Server](/documentation/articles/virtual-machines-sql-server-infrastructure-services) 而不选择 [Azure SQL 数据库](/documentation/articles/sql-database-technical-overview)，原因是 Azure 虚拟机中的 SQL Server 已纳入 HIPAA 商业伙伴协议 (BAA)。有关合规性的信息，请参阅 [Microsoft Azure 信任中心：合规性](/support/trust-center/compliance/)。
 	- **实例级功能**：目前，SQL 数据库不支持数据库外部的功能（如链接服务器、代理作业，FileStream、Service Broker 等）。有关详细信息，请参阅 [Azure SQL 数据库指导原则和限制](https://msdn.microsoft.com/zh-cn/library/azure/ff394102.aspx)。
 
 ## 1 层（简单）：单虚拟机

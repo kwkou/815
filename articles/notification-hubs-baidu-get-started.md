@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通过百度开始使用 Azure 通知中心 | Windows Azure"
+	pageTitle="通过百度开始使用 Azure 通知中心 | Microsoft Azure"
 	description="在本教程中，你将了解如何通过百度使用 Azure 通知中心将通知推送到 Android 设备。"
 	services="notification-hubs"
 	documentationCenter="android"

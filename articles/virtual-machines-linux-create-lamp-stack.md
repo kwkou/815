@@ -1,6 +1,6 @@
 <properties
-	pageTitle="使用 Azure 创建 LAMP 堆栈 | Windows Azure"
-	description="了解如何在 Windows Azure 中使用运行 Linux 的 Azure 虚拟机 (VM) 创建 LAMP 堆栈。"
+	pageTitle="使用 Azure 创建 LAMP 堆栈 | Microsoft Azure"
+	description="了解如何在 Microsoft Azure 中使用运行 Linux 的 Azure 虚拟机 (VM) 创建 LAMP 堆栈。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="NingKuang"
@@ -13,14 +13,14 @@
 	ms.date="12/15/2015"
 	wacn.date="01/29/2016"/>
 
-#如何使用 Windows Azure 创建 LAMP 堆栈
+#如何使用 Microsoft Azure 创建 LAMP 堆栈
 
 “LAMP”堆栈是一组开源软件，通常一起安装，使服务器可以托管动态网站和 Web 应用程序。此术语实际上首字母缩写词，表示带 Apache Web 服务器的 Linux 操作系统。站点数据将存储在 MySQL 数据库中，而动态内容将由 PHP 进行处理。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 
-在本指南中，我们将获取 Linux 映像上安装的 LAMP 堆栈，并将其部署在 Windows Azure 上。
+在本指南中，我们将获取 Linux 映像上安装的 LAMP 堆栈，并将其部署在 Microsoft Azure 上。
 
 你将学习以下内容：
 

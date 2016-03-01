@@ -1,5 +1,5 @@
 <properties
-   pageTitle="将公司 Internet 域指向流量管理器域 | Windows Azure"
+   pageTitle="将公司 Internet 域指向流量管理器域 | Microsoft Azure"
    description="本文将帮助你将公司域名指向流量管理器域名。"
    services="traffic-manager"
    documentationCenter=""

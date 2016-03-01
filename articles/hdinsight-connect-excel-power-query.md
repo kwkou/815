@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Power Query 将 Excel 连接到 Hadoop | Windows Azure"
+	pageTitle="使用 Power Query 将 Excel 连接到 Hadoop | Microsoft Azure"
 	description="了解如何利用商业智能组件和使用 Power Query for Excel 访问 HDInsight 上的 Hadoop 中存储的数据。"
 	services="hdinsight"
 	documentationCenter=""
@@ -44,7 +44,7 @@ Microsoft 大数据解决方案的一个关键功能是，将 Microsoft 商业�
 
 2. 创建一个新的空白工作簿。
 
-3. 依次单击“Power Query”菜单、“来自 Azure”和“来自 Windows Azure HDInsight”。
+3. 依次单击“Power Query”菜单、“来自 Azure”和“来自 Microsoft Azure HDInsight”。
 
 	![HDI.PowerQuery.SelectHdiSource][image-hdi-powerquery-hdi-source]
 
@@ -52,7 +52,7 @@ Microsoft 大数据解决方案的一个关键功能是，将 Microsoft 商业�
 
 	**注意：**Power Query 还允许你通过单击“从其他源”从 HDFS 中导入数据。
 
-3. 对于“帐户名称”，请输入与你的群集相关联的 Azure Blob 存储帐户的名称，然后单击“确定”。(在 Windows Azure 中国，“账户名称”必须填完整的 url，例如：https://<your account name\>.blob.core.chinacloudapi.cn/)
+3. 对于“帐户名称”，请输入与你的群集相关联的 Azure Blob 存储帐户的名称，然后单击“确定”。(在 Microsoft Azure 中国，“账户名称”必须填完整的 url，例如：https://<your account name\>.blob.core.chinacloudapi.cn/)
 
 4. 对于“帐户密钥”，请输入 Blob 存储帐户的密钥，然后单击“保存”。（你仅需要在首次访问该存储时执行此操作。）
 

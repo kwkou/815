@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 Linux 使用 Azure 文件存储 | Windows Azure"
+	pageTitle="如何通过 Linux 使用 Azure 文件存储 | Microsoft Azure"
         description="在云中创建文件共享，然后从 Azure VM 或在 Linux 上运行的本地应用程序装载它。"
         services="storage"
         documentationCenter="na"
@@ -115,7 +115,7 @@ Linux 用户，我们希望倾听你的意见！
 
 ### 文件存储的工具支持
 
-- [如何将 AzCopy 与 Windows Azure 存储一起使用](/documentation/articles/storage-use-azcopy)
+- [如何将 AzCopy 与 Microsoft Azure 存储一起使用](/documentation/articles/storage-use-azcopy)
 - [将 Azure CLI 用于 Azure 存储空间](/documentation/articles/storage-azure-cli#create-and-manage-file-shares)
 
 ### 引用
@@ -126,7 +126,7 @@ Linux 用户，我们希望倾听你的意见！
 
 - [Azure 文件存储现已正式发布](/zh-cn/blog/)
 - [深入了解 Azure 文件存储](/home/features/storage) 
-- [Windows Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
-- [将连接保存到 Windows Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
+- [Microsoft Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
+- [将连接保存到 Microsoft Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
 <!---HONumber=Mooncake_0118_2016-->

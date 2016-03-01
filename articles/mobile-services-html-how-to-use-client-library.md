@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何使用 HTML 客户端 | Windows Azure"
+	pageTitle="如何使用 HTML 客户端 | Microsoft Azure"
 	description="了解如何使用适用于 Azure 移动服务的 HTML 客户端。"
 	services="mobile-services"
 	documentationCenter=""

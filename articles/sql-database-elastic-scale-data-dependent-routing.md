@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="数据相关的路由 | Windows Azure" 
+	pageTitle="数据相关的路由 | Microsoft Azure" 
 	description="如何将 ShardMapManager 用于数据相关的路由（Azure SQL 数据库弹性数据库的一项功能）" 
 	services="sql-database" 
 	documentationCenter="" 

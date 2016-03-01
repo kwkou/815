@@ -1,5 +1,5 @@
 <properties
-   pageTitle="将示例数据载入 SQL 数据仓库 | Windows Azure"
+   pageTitle="将示例数据载入 SQL 数据仓库 | Microsoft Azure"
    description="将示例数据载入 SQL 数据仓库"
    services="sql-data-warehouse"
    documentationCenter="NA"

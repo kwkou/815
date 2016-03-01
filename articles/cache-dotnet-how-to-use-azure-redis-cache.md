@@ -20,9 +20,9 @@
 - [Java](/documentation/articles/cache-java-get-started)
 - [Python](/documentation/articles/cache-python-get-started)
 
-本指南说明如何开始使用 **Azure Redis 缓存**。Windows Azure Redis 缓存基于流行的开放源代码 Redis 缓存。它让您访问 WindowsAzure.cn 管理的安全专用的 Redis 缓存。使用 Azure Redis 缓存创建的缓存可从 Windows Azure 内的任何应用程序进行访问。
+本指南说明如何开始使用 **Azure Redis 缓存**。Microsoft Azure Redis 缓存基于流行的开放源代码 Redis 缓存。它让您访问 WindowsAzure.cn 管理的安全专用的 Redis 缓存。使用 Azure Redis 缓存创建的缓存可从 Microsoft Azure 内的任何应用程序进行访问。
 
-Windows Azure Redis 缓存提供以下层：
+Microsoft Azure Redis 缓存提供以下层：
 
 -	**基本** - 单个节点。多种大小，最大 53 GB。
 -	**标准** - 双节点主/副本配置。多种大小，最大 53 GB。99.9% SLA。
@@ -41,7 +41,7 @@ Azure Redis Cache 非常容易上手。若要开始使用，需要首先设置�
 
 ##<a name="create-cache" id="create-a-cache"></a>创建缓存
 
-在 Windows Azure 中国区，只能通过 Azure PowerShell 或 Azure CLI 管理 Redis 缓存
+在 Microsoft Azure 中国区，只能通过 Azure PowerShell 或 Azure CLI 管理 Redis 缓存
 
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用现有的 SQL 数据库和移动服务 .NET 后端生成服务 | Windows Azure" 
+	pageTitle="使用现有的 SQL 数据库和移动服务 .NET 后端生成服务 | Microsoft Azure" 
 	description="了解如何将现有的云或本地 SQL 数据库与基于 .NET 的移动服务结合使用" 
 	services="mobile-services" 
 	documentationCenter="" 

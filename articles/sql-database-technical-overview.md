@@ -1,5 +1,5 @@
 <properties
-   pageTitle="什么是 SQL 数据库 | Windows Azure"
+   pageTitle="什么是 SQL 数据库 | Microsoft Azure"
    description="了解 Azure SQL 数据库、Microsoft 的关系数据库管理系统 (RDBMS) 和云中 PaaS 解决方案的技术详细信息与功能。"
    services="sql-database"
    documentationCenter=""

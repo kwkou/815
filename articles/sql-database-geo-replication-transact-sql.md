@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Transact-SQL 为 Azure SQL 数据库配置异地复制 | Windows Azure"
+    pageTitle="使用 Transact-SQL 为 Azure SQL 数据库配置异地复制 | Microsoft Azure"
     description="使用 Transact-SQL 为 Azure SQL 数据库配置异地复制"
     services="sql-database"
     documentationCenter=""

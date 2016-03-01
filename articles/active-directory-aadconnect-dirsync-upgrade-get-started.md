@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Windows Azure AD Connect - 从 Windows Azure AD 同步工具 (DirSync) 升级" 
-   description="了解如何从 DirSync 升级到 Azure AD Connect。本文介绍将当前 Windows Azure AD 同步工具 (DirSync) 升级到 Azure AD Connect 的步骤。" 
+   pageTitle="Microsoft Azure AD Connect - 从 Microsoft Azure AD 同步工具 (DirSync) 升级" 
+   description="了解如何从 DirSync 升级到 Azure AD Connect。本文介绍将当前 Microsoft Azure AD 同步工具 (DirSync) 升级到 Azure AD Connect 的步骤。" 
    services="active-directory" 
    documentationCenter="" 
    authors="shoatman" 
@@ -12,7 +12,7 @@
    ms.date="09/02/2015" 
    wacn.date="11/02/2015"/>
 
-# 将 Windows Azure Active Directory 同步功能 (DirSync) 升级到 Azure Active Directory Connect
+# 将 Microsoft Azure Active Directory 同步功能 (DirSync) 升级到 Azure Active Directory Connect
 
 以下文档可帮助你将现有 DirSync 安装升级到 Azure AD Connect
 

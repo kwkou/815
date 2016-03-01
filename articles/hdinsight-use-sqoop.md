@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 HDInsight 中使用 Hadoop Sqoop | Windows Azure"
+	pageTitle="在 HDInsight 中使用 Hadoop Sqoop | Microsoft Azure"
 	description="学习如何从工作站使用 Azure PowerShell 在 Hadoop 群集和 Azure SQL 数据库之间运行 Sqoop 导入和导出。"
 	editor="cgronlun"
 	manager="paulettm"

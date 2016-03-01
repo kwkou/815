@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="注册以进行 Microsoft 身份验证 | Windows Azure" 
+	pageTitle="注册以进行 Microsoft 身份验证 | Microsoft Azure" 
 	description="了解如何在 Azure 移动服务应用程序中注册以进行 Microsoft 身份验证。" 
 	authors="ggailey777" 
 	services="mobile-services" 

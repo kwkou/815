@@ -1,6 +1,6 @@
 ## Azure DNS
 
-Azure DNS 是 DNS 域的托管服务，它使用 Windows Azure 基础结构提供名称解析。
+Azure DNS 是 DNS 域的托管服务，它使用 Microsoft Azure 基础结构提供名称解析。
 
 
 | 属性 | 说明 | 示例值 |

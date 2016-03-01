@@ -161,7 +161,7 @@ Azure 将创建并激活该命名空间。
 
     ![][4]
 
-2.  在**提供程序**选项卡上，选择**使用 Windows Azure Access Control 服务**。
+2.  在**提供程序**选项卡上，选择**使用 Microsoft Azure Access Control 服务**。
 
     ![][5]
 

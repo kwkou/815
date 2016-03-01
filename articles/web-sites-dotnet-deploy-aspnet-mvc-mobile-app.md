@@ -15,7 +15,7 @@
 
 # 在 Azure Web 应用上部署 ASP.NET MVC 5 移动 Web 应用
 
-本教程介绍有关生成一个方便移动的 ASP.NET MVC 5 Web 应用并将其部署到 Windows Azure 的基础知识。对于本教程中，你需要 [Visual Studio Express 2013 for Web][Visual Studio Express 2013] 或者 Visual Studio 专业版（如果你已具有）。你可以使用 [Visual Studio 2015]，但屏幕快照将会有所不同并且你必须使用 ASP.NET 4.x 模板。
+本教程介绍有关生成一个方便移动的 ASP.NET MVC 5 Web 应用并将其部署到 Microsoft Azure 的基础知识。对于本教程中，你需要 [Visual Studio Express 2013 for Web][Visual Studio Express 2013] 或者 Visual Studio 专业版（如果你已具有）。你可以使用 [Visual Studio 2015]，但屏幕快照将会有所不同并且你必须使用 ASP.NET 4.x 模板。
 
 [WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -31,7 +31,7 @@
 
 学习内容：
 
--	如何使用 Visual Studio 2013 将 Web 应用直接发布到 Windows Azure Web 应用。
+-	如何使用 Visual Studio 2013 将 Web 应用直接发布到 Microsoft Azure Web 应用。
 -   ASP.NET MVC 5 模板如何使用 CSS Bootstrap 框架来改善在移动设备上的显示。
 -   如何创建面向特定移动浏览器（如 iPhone 和 Android）的移动视图
 -   如何创建响应式视图（跨设备响应不同浏览器的视图）
@@ -54,7 +54,7 @@
 -   [初学者项目下载][StarterProject]
 -   [已完成项目下载][CompletedProject]
 
-##<a name="bkmk_DeployStarterProject"></a>将初学者项目部署到 Windows Azure Web 应用
+##<a name="bkmk_DeployStarterProject"></a>将初学者项目部署到 Microsoft Azure Web 应用
 
 1.	下载会议列表应用程序[初学者项目][StarterProject]。
 
@@ -86,7 +86,7 @@
 
 	![][AllTags]
 
->[AZURE.NOTE]虽然可以从 Visual Studio 内部调试 MVC 5 应用程序，但可以再次将 Web 应用发布到 Windows Azure，以直接从移动浏览器或浏览器模拟器验证实时 Web 应用。
+>[AZURE.NOTE]虽然可以从 Visual Studio 内部调试 MVC 5 应用程序，但可以再次将 Web 应用发布到 Microsoft Azure，以直接从移动浏览器或浏览器模拟器验证实时 Web 应用。
 
 显示内容在移动设备上一目了然。你可能还看到了 Bootstrap CSS 框架应用的一些视觉效果。单击“ASP.NET”链接。
 
@@ -510,7 +510,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 
 本教程说明如何使用 ASP.NET MVC 5 开发适合移动应用的 Web 应用。其中包括：
 
--	将 ASP.NET MVC 5 应用程序部署到 Windows Azure Web 应用
+-	将 ASP.NET MVC 5 应用程序部署到 Microsoft Azure Web 应用
 -   使用 Bootstrap 在 MVC 5 应用程序中创建响应式 Web 布局
 -   在全局以及针对单个视图重写布局、视图和分部视图
 -   使用 `RequireConsistentDisplayMode` 属性控制布局和分步重写的实施
@@ -528,7 +528,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 -   [用于媒体查询的 W3C 候选建议方案][]
 
 <!-- Internal Links -->
-[将初学者项目部署到 Windows Azure Web 应用]: #bkmk_DeployStarterProject
+[将初学者项目部署到 Microsoft Azure Web 应用]: #bkmk_DeployStarterProject
 [Bootstrap CSS 框架]: #bkmk_bootstrap
 [重写视图、布局和分部视图]: #bkmk_overrideviews
 [Create Browser-Specific Views]: #bkmk_browserviews

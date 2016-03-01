@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure 中创建 Java Web 应用 | Windows Azure"
+	pageTitle="在 Azure 中创建 Java Web 应用 | Microsoft Azure"
 	description="本教程演示了如何将 Java Web 应用部署到 Azure Web 应用。"
 	services="app-service\web"
 	documentationCenter="java"
@@ -23,7 +23,7 @@
 
 本教程演示如何通过 [Azure 管理门户](https://manage.windowsazure.cn)在 [Azure Web 应用](/documentation/services/web-sites/)中创建 Java Web 应用。
 
-> [AZURE.NOTE]若要完成本教程，您需要一个 Windows Azure 帐户。如果你没有帐户，可以[注册试用版][]。
+> [AZURE.NOTE]若要完成本教程，您需要一个 Microsoft Azure 帐户。如果你没有帐户，可以[注册试用版][]。
 > 
 
 ## Java 应用程序选项
@@ -49,7 +49,7 @@
 
 此信息讲解如何使用 Azure 配置 UI 为你的 Web 应用选择 Java 应用程序容器（Apache Tomcat 或 Jetty）。
 
-1. 登录到 Windows Azure [管理门户](https://manage.windowsazure.cn/)。
+1. 登录到 Microsoft Azure [管理门户](https://manage.windowsazure.cn/)。
 2. 依次单击“新建”、“计算”、“ Web 应用”和“快速创建”。
 3. 指定 URL 名称。
 4. 选择区域。例如“中国东部”。

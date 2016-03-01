@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Windows Azure 安全入门 | Windows Azure"
-   description="本文概述了 Windows Azure 安全功能，以及组织在将其资产迁移到云提供商处时需要注意的一般性注意事项。"
+   pageTitle="Microsoft Azure 安全入门 | Microsoft Azure"
+   description="本文概述了 Microsoft Azure 安全功能，以及组织在将其资产迁移到云提供商处时需要注意的一般性注意事项。"
    services="virtual-machines, cloud-services, storage"
    documentationCenter="na"
    authors="YuriDio"
@@ -12,7 +12,7 @@
    ms.date="12/10/2015"
    wacn.date="01/29/2016"/>
 
-#Windows Azure 安全入门
+#Microsoft Azure 安全入门
 
 当你生成 IT 资产或将其迁移到云提供商处时，你需要依赖该组织来保护你委托给该组织服务的应用程序和数据，并且需要依赖该组织提供给你的安全控制来控制基于云的资产的安全性。
 
@@ -27,7 +27,7 @@ Azure 的基础结构（从设备到应用程序）经过设计，可同时托�
 ##标识和访问管理
 
 
-控制对 IT 基础结构、数据和应用程序的访问很重要。在 Windows Azure 中，这些功能是通过 Azure Active Directory、Azure 存储空间、对各种标准和 API 的支持之类的服务提供的。
+控制对 IT 基础结构、数据和应用程序的访问很重要。在 Microsoft Azure 中，这些功能是通过 Azure Active Directory、Azure 存储空间、对各种标准和 API 的支持之类的服务提供的。
 
 [Azure Active Directory](/documentation/articles/active-directory-whatis) (Azure AD) 是一个标识存储库和引擎，可以为组织的用户、小组和对象提供身份验证、授权和访问控制。Azure AD 还为开发人员提供了在其应用程序中集成标识管理的有效方法。通过支持行业标准协议（例如 [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0)、[WS-Federation](https://msdn.microsoft.com/zh-cn/library/bb498017.aspx) 和 [OpenID Connect](http://openid.net/connect/)），能够在多种平台（例如 .NET、Java、Node.js 和 PHP）上进行登录。
 
@@ -199,7 +199,7 @@ Azure 管理员通过 Web 门户访问日志，对日志进行的访问必须经
 
 Microsoft 使用 Syslog 协议从网络设备收集日志，使用 Microsoft 审核收集服务 (ACS) 从主机服务器收集日志。这些日志放置在日志数据库中，发生可疑事件时，就会生成直接发送给 Microsoft 管理员的警报。管理员可以访问并分析这些日志。
 
-[Azure 诊断](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx)是 Azure 的一项功能，你可以通过它从运行在 Azure 中的应用程序收集诊断数据。可以将这些诊断数据用于调试和故障排除、度量性能、监视资源使用状况、进行流量分析和容量规划以及进行审核。收集诊断数据后，可以将其传输到 Azure 存储帐户进行永久保存。可以按计划传输，也可以按需传输。[Windows Azure 安全和审核日志管理](/documentation/articles/azure-security-audit-log-management)这篇文章详细介绍了如何收集此类信息以及如何对其进行分析。
+[Azure 诊断](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx)是 Azure 的一项功能，你可以通过它从运行在 Azure 中的应用程序收集诊断数据。可以将这些诊断数据用于调试和故障排除、度量性能、监视资源使用状况、进行流量分析和容量规划以及进行审核。收集诊断数据后，可以将其传输到 Azure 存储帐户进行永久保存。可以按计划传输，也可以按需传输。[Microsoft Azure 安全和审核日志管理](/documentation/articles/azure-security-audit-log-management)这篇文章详细介绍了如何收集此类信息以及如何对其进行分析。
 
 ##威胁缓解措施
 

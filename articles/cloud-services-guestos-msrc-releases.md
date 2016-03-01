@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="适用于 Azure 来宾 OS 的更新列表 | Windows Azure" 
+   pageTitle="适用于 Azure 来宾 OS 的更新列表 | Microsoft Azure" 
    description="适用于 Azure 来宾 OS 版本的更新列表" 
    services="cloud-services" 
    documentationCenter="na" 

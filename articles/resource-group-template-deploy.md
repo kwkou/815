@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用资源管理器模板部署资源 | Windows Azure"
+   pageTitle="使用资源管理器模板部署资源 | Microsoft Azure"
    services="azure-resource-manager"
    description="使用 Azure 资源管理器将资源部署到 Azure。模板是一个 JSON 文件，可以从门户、PowerShell、适用于 Mac、Linux 和 Windows 的 Azure 命令行界面以及 REST 使用。"
    documentationCenter="na"
@@ -14,7 +14,7 @@
 
 # 使用 Azure 资源管理器模板部署应用程序
 
-本主题介绍如何使用 Azure 资源管理器模板向 Azure 部署应用程序。它将说明如何使用 Azure PowerShell、Azure CLI、REST API 或 Windows Azure 门户部署应用程序。
+本主题介绍如何使用 Azure 资源管理器模板向 Azure 部署应用程序。它将说明如何使用 Azure PowerShell、Azure CLI、REST API 或 Microsoft Azure 门户部署应用程序。
 
 有关资源管理器的简介，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。若要了解有关创建模板的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
 

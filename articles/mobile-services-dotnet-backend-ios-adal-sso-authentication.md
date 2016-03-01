@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Active Directory 身份验证库单一登录对应用进行身份验证 (iOS) | Windows Azure"
+	pageTitle="使用 Active Directory 身份验证库单一登录对应用进行身份验证 (iOS) | Microsoft Azure"
 	description="了解如何使用 iOS 应用程序中的 ADAL 对单一登录用户进行身份验证。"
 	documentationCenter="ios"
 	authors="mattchenderson"

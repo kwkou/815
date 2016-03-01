@@ -1,6 +1,6 @@
 <properties 
- pageTitle="计划程序的概念、术语和实体 | Windows Azure"
- description="Windows Azure 计划程序的概念、术语和实体层次结构，包括作业和作业集合。显示了一个计划作业的综合示例。"
+ pageTitle="计划程序的概念、术语和实体 | Microsoft Azure"
+ description="Microsoft Azure 计划程序的概念、术语和实体层次结构，包括作业和作业集合。显示了一个计划作业的综合示例。"
  services="scheduler" 
  documentationCenter=".NET" 
  authors="krisragh" 

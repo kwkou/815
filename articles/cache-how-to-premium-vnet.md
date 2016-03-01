@@ -24,7 +24,7 @@ Azure Redis 缓存高级层包括群集、暂留和虚拟网络 (VNET) 支持。
 
 ## 虚拟网络支持
 
-在 Windows Azure 中国区，只能通过 Azure PowerShell 或 Azure CLI 管理 Redis 缓存
+在 Microsoft Azure 中国区，只能通过 Azure PowerShell 或 Azure CLI 管理 Redis 缓存
 
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]

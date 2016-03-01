@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure 管理门户创建从本地编码器接收多比特率实时流的通道 | Windows Azure"
+	pageTitle="使用 Azure 管理门户创建从本地编码器接收多比特率实时流的通道 | Microsoft Azure"
 	description="本教程将指导你完成实施一个基本媒体服务实时传送视频流应用程序的步骤，在该应用程序中，某个通道将从本地实时编码器接收多比特率实时流。"
 	services="media-services"
 	documentationCenter=""

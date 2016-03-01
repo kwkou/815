@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure 资源管理器概述 | Windows Azure"
+   pageTitle="Azure 资源管理器概述 | Microsoft Azure"
    description="介绍如何使用 Azure 资源管理器在 Azure 上部署和管理资源以及对其进行访问控制。"
    services="azure-resource-manager"
    documentationCenter="na"
@@ -93,7 +93,7 @@
 
 资源管理器会自动记录用户操作以供审核。有关使用审核日志的信息，请参阅[使用资源管理器执行审核操作](/documentation/articles/resource-group-audit)。
 
-<!--有关基于角色的访问控制的详细信息，请参阅 [Windows Azure 预览版门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。-->此主题包含内置角色和允许的操作的列表。内置角色包括“所有者”、“读取者”和“参与者”等普通角色，以及“虚拟机参与者”、“虚拟网络参与者”和“SQL 安全管理员”等服务特定角色（这里只是列举了几个可用的角色）。
+<!--有关基于角色的访问控制的详细信息，请参阅 [Microsoft Azure 预览版门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。-->此主题包含内置角色和允许的操作的列表。内置角色包括“所有者”、“读取者”和“参与者”等普通角色，以及“虚拟机参与者”、“虚拟网络参与者”和“SQL 安全管理员”等服务特定角色（这里只是列举了几个可用的角色）。
 
 有关分配角色的示例，请参阅[管理对资源的访问权限](/documentation/articles/resource-group-rbac)。
 

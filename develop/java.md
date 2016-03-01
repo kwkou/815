@@ -1,5 +1,5 @@
 <properties 
-pageTitle="Windows Azure 开发人员中心：JAVA" 
+pageTitle="Microsoft Azure 开发人员中心：JAVA" 
 description="" 
 services="JAVA" 
 documentationCenter="Develop" 

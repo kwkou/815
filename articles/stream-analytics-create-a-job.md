@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何为流分析创建数据分析处理作业 | Windows Azure" 
+	pageTitle="如何为流分析创建数据分析处理作业 | Microsoft Azure" 
 	description="为流分析创建数据分析处理作业 | 学习路径段。"
 	keywords="数据分析处理"
 	documentationCenter=""
@@ -18,7 +18,7 @@
 
 若要开始使用流分析，请创建一个新的流分析作业。请注意，该操作直到作业启动后才对计费产生影响。
 
-1.  登录在线 [Windows Azure 门户](http://manage.windowsazure.cn)。
+1.  登录在线 [Microsoft Azure 门户](http://manage.windowsazure.cn)。
 2.  在 Azure 门户中：依次单击“新建”、“数据服务”，再单击“流分析”和“快速创建”。
 
     ![数据分析处理作业向导](./media/stream-analytics-create-a-job/1-stream-analytics-create-a-job.png)

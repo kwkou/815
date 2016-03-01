@@ -1,5 +1,5 @@
 <properties
-	pageTitle="监视 XTP 内存中存储 | Windows Azure"
+	pageTitle="监视 XTP 内存中存储 | Microsoft Azure"
 	description="估算和监视 XTP 内存中存储用量与容量；解决容量错误 41805"
 	services="sql-database"
 	documentationCenter=""

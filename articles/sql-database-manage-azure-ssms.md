@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 SSMS 管理 SQL 数据库 | Windows Azure" 
+	pageTitle="使用 SSMS 管理 SQL 数据库 | Microsoft Azure" 
 	description="了解如何使用 SQL Server Management Studio 管理 SQL 数据库服务器和数据库。" 
 	services="sql-database" 
 	documentationCenter=".net" 

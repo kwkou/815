@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Azure 来宾 OS 可支持性和停用策略指南 | Windows Azure" 
+   pageTitle="Azure 来宾 OS 可支持性和停用策略指南 | Microsoft Azure" 
    description="介绍有关 Microsoft 对云服务使用的 Azure 来宾 OS 提供的支持的信息。" 
    services="cloud-services" 
    documentationCenter="na" 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect：开始使用快速设置 | Windows Azure"
+	pageTitle="Azure AD Connect：开始使用快速设置 | Microsoft Azure"
 	description="了解如何下载、安装和运行 Azure AD Connect 的设置向导。"
 	services="active-directory"
 	documentationCenter=""

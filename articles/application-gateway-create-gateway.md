@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="创建、启动或删除应用程序网关 | Windows Azure"
+   pageTitle="创建、启动或删除应用程序网关 | Microsoft Azure"
    description="此页提供有关创建、配置、启动和删除 Azure 应用程序网关的说明"
    documentationCenter="na"
    services="application-gateway"

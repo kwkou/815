@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Azure 自动化中的子 Runbook | Windows Azure"
+   pageTitle="Azure 自动化中的子 Runbook | Microsoft Azure"
    description="介绍从 Azure 自动化中的一个 Runbook 启动另一个 Runbook 并在它们之间共享信息的不同方法。"
    services="automation"
    documentationCenter=""

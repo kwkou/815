@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="事件中心身份验证和安全模型概述 | Windows Azure"
+   pageTitle="事件中心身份验证和安全模型概述 | Microsoft Azure"
    description="事件中心常见问题"
    services="event-hubs"
    documentationCenter="na"

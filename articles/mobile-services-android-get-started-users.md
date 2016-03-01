@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Android 上的身份验证入门（JavaScript 后端）| Windows Azure"
+	pageTitle="Android 上的身份验证入门（JavaScript 后端）| Microsoft Azure"
 	description="了解如何使用移动服务通过提供各种标识提供程序（包括 Microsoft 和 Azure Active Directory）对 Android 应用程序的用户进行身份验证（JavaScript 后端）。"
 	services="mobile-services"
 	documentationCenter="android"

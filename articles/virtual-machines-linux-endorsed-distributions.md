@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Linux 的认可分发 | Windows Azure"
+	pageTitle="Linux 的认可分发 | Microsoft Azure"
 	description="了解 Azure 认可的分发中的 Linux，包括 Ubuntu、OpenLogic、Oracle 和 SUSE 的指南。"
 	services="virtual-machines"
 	documentationCenter=""

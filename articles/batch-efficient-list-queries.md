@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 批处理( batch ) 中的有效列表查询 | Windows Azure"
+	pageTitle="Azure 批处理( batch ) 中的有效列表查询 | Microsoft Azure"
 	description="在查询 Azure 批处理( batch ) 实体（例如池、作业、任务和计算节点）时通过减少返回的数据量来提高性能。"
 	services="batch"
 	documentationCenter=".net"

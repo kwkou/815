@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="多分片查询 |Windows Azure" 
+	pageTitle="多分片查询 |Microsoft Azure" 
 	description="使用弹性数据库客户端库运行跨分片查询。" 
 	services="sql-database" 
 	documentationCenter="" 

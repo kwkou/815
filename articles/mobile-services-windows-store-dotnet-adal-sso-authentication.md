@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Active Directory 身份验证库单一登录对应用进行身份验证（Windows 应用商店）| Windows Azure"
+	pageTitle="使用 Active Directory 身份验证库单一登录对应用进行身份验证（Windows 应用商店）| Microsoft Azure"
 	description="了解如何在 Windows 应用商店应用程序中使用 ADAL 对用户进行单一登录身份验证。"
 	documentationCenter="windows"
 	authors="wesmc7777"

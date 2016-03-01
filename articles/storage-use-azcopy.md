@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 AzCopy 将数据复制或移动到存储 | Windows Azure" 
+	pageTitle="使用 AzCopy 将数据复制或移动到存储 | Microsoft Azure" 
 	description="使用 AzCopy 实用程序将数据移动或复制到 blob、表和文件内容或从 blob、表和文件内容移动或复制数据。从本地文件将数据复制到 Azure 存储空间，或者在存储帐户中或存储帐户之间复制数据。轻松地将数据迁移到 Azure 存储空间。" 
 	services="storage" 
 	documentationCenter="" 
@@ -16,7 +16,7 @@
 
 ## 概述
 
-AzCopy 是一个命令行实用程序，专用于将数据复制到 Windows Azure Blob、文件和表存储以及从其中复制数据。使用 AzCopy，你可以使用简单的命令并以最佳性能将数据从文件系统迁移到 Azure 存储空间，反之亦然。还可以在存储帐户中将一个对象的数据复制到另一个对象，或者在存储帐户之间复制数据。
+AzCopy 是一个命令行实用程序，专用于将数据复制到 Microsoft Azure Blob、文件和表存储以及从其中复制数据。使用 AzCopy，你可以使用简单的命令并以最佳性能将数据从文件系统迁移到 Azure 存储空间，反之亦然。还可以在存储帐户中将一个对象的数据复制到另一个对象，或者在存储帐户之间复制数据。
 
 > [AZURE.NOTE]本指南假定你已安装了 AzCopy 5.0 或更高版本。
 
@@ -970,10 +970,10 @@ AzCopy 旨在最大限度地利用计算机资源来加快数据传输，如果�
 - [AzCopy：引入了同步复制和自定义内容类型](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx)
 - [AzCopy：支持表和文件的 AzCopy 3.0 增强预览版本 AzCopy 4.0 宣布公开发行](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx)
 - [AzCopy：针对大规模复制方案进行了优化](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/08/08/azcopy-2-5-release.aspx)
-- [Windows Azure 文件（File）存储服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
+- [Microsoft Azure 文件（File）存储服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [AzCopy：支持读取访问异地冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/04/07/azcopy-support-for-read-access-geo-redundant-account.aspx)
 - [AzCopy：使用可重新启动的模式和 SAS 令牌传输数据](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/09/07/azcopy-transfer-data-with-re-startable-mode-and-sas-token.aspx)
 - [AzCopy：使用跨帐户复制 Blob](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)
-- [AzCopy：为 Windows Azure Blob 上载/下载文件](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)
+- [AzCopy：为 Microsoft Azure Blob 上载/下载文件](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)
 
 <!---HONumber=Mooncake_0104_2016-->

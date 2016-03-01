@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 PowerShell 创建 SQL 数据仓库 | Windows Azure"
+   pageTitle="使用 PowerShell 创建 SQL 数据仓库 | Microsoft Azure"
    description="使用 PowerShell 创建 SQL 数据仓库"
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -18,13 +18,13 @@
 - [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-database-tsql)
 - [PowerShell](/documentation/articles/sql-data-warehouse-get-started-provision-powershell)
 
-> [AZURE.NOTE]若要将 Windows Azure Powershell 与 SQL 数据仓库配合使用，需要 1.0.2 或更高版本。可以在 Powershell 中运行 (Get-Module Azure).Version 来检查你的版本。
+> [AZURE.NOTE]若要将 Microsoft Azure Powershell 与 SQL 数据仓库配合使用，需要 1.0.2 或更高版本。可以在 Powershell 中运行 (Get-Module Azure).Version 来检查你的版本。
 
 ## 获取和运行 Azure PowerShell cmdlet
 如果尚未安装 PowerShell，你可以：
 
 1. 若要下载 Azure PowerShell 模块，请运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)。
-2. 若要运行该模块，请在开始窗口中键入 **Windows Azure PowerShell**。
+2. 若要运行该模块，请在开始窗口中键入 **Microsoft Azure PowerShell**。
 3. 如果尚未将你的帐户添加到计算机，请运行以下 cmdlet。（有关详细信息，请参阅[如何安装和配置 Azure PowerShell][]）：
 
             Add-AzureRmAccount –EnvironmentName AzureChinaCloud

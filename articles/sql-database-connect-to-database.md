@@ -1,5 +1,5 @@
 <properties
-   pageTitle="如何使用 SSMS 连接到 Azure SQL 数据库 | Windows Azure"
+   pageTitle="如何使用 SSMS 连接到 Azure SQL 数据库 | Microsoft Azure"
    description="了解如何使用 SSMS 连接到 Azure SQL 数据库。"
    services="sql-database"
    documentationCenter=""

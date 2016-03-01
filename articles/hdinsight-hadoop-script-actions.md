@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 HDInsight 进行脚本操作开发 | Windows Azure"
+	pageTitle="使用 HDInsight 进行脚本操作开发 | Microsoft Azure"
 	description="了解如何使用脚本操作自定义 Hadoop 群集。"
 	services="hdinsight"
 	documentationCenter=""
@@ -280,7 +280,7 @@ Name | 脚本
 
 1. 打开 Visual Studio。
 2. 单击“视图”，然后单击“服务器资源管理器”。
-3. 右键单击“Azure”，单击“连接到 Windows Azure 订阅”，然后输入你的凭据。
+3. 右键单击“Azure”，单击“连接到 Microsoft Azure 订阅”，然后输入你的凭据。
 4. 依次展开“存储”、用作默认文件系统的 Azure 存储帐户、“表”，然后双击表名。
 
 

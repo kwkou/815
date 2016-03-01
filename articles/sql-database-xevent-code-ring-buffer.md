@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SQL 数据库的 XEvent 环形缓冲区代码 | Windows Azure" 
+	pageTitle="SQL 数据库的 XEvent 环形缓冲区代码 | Microsoft Azure" 
 	description="提供一个 Transact-SQL 代码示例，以帮助你快速轻松地在 Azure SQL 数据库中使用环形缓存区目标。" 
 	services="sql-database" 
 	documentationCenter="" 

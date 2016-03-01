@@ -1,6 +1,6 @@
 
 <properties 
-   pageTitle="使用 Azure 资源管理器模板创建应用程序网关 | Windows Azure"
+   pageTitle="使用 Azure 资源管理器模板创建应用程序网关 | Microsoft Azure"
    description="本页提供有关使用 Azure 资源管理器模板创建 Azure 应用程序网关的说明"
    documentationCenter="na"
    services="application-gateway"

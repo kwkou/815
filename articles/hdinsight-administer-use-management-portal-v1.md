@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集 | Windows Azure"
+	pageTitle="使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集 | Microsoft Azure"
 	description="了解如何管理 HDInsight 服务。创建 HDInsight 群集，打开交互式 JavaScript 控制台，然后打开 Hadoop 命令控制台。"
 	services="hdinsight"
 	documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="将数据从 Azure 还原到 Windows Server 或 Windows 客户端 | Windows Azure"
+   pageTitle="将数据从 Azure 还原到 Windows Server 或 Windows 客户端 | Microsoft Azure"
    description="了解如何从 Windows Server 或 Windows 客户端还原。"
    services="backup"
    documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="禁用或启用流量管理器终结点 | Windows Azure"
+   pageTitle="禁用或启用流量管理器终结点 | Microsoft Azure"
    description="本文将帮助你禁用或启用流量管理器配置文件终结点。"
    services="traffic-manager"
    documentationCenter="na"

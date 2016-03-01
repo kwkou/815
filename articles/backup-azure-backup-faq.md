@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure 备份常见问题 | Windows Azure"
+   pageTitle="Azure 备份常见问题 | Microsoft Azure"
    description="有关 Azure 备份服务的常见问题"
    services="backup"
    documentationCenter=""
@@ -204,8 +204,8 @@
 
 	| 注册表路径 | 注册表项 | 值 |
 	| ------ | ------- | ------ |
-	| HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows Azure Backup\\Config | ScratchLocation | <i>新的缓存文件夹位置</i> |
-	| HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows Azure Backup\\Config\\CloudBackupProvider | ScratchLocation | <i>新的缓存文件夹位置</i> |
+	| HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Microsoft Azure Backup\\Config | ScratchLocation | <i>新的缓存文件夹位置</i> |
+	| HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Microsoft Azure Backup\\Config\\CloudBackupProvider | ScratchLocation | <i>新的缓存文件夹位置</i> |
 
 
 + 通过在权限提升的命令提示符下运行以下命令来启动 OBEngine：

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure AD Connect：后续步骤以及如何管理 Azure AD Connect | Windows Azure"
+	pageTitle="Azure AD Connect：后续步骤以及如何管理 Azure AD Connect | Microsoft Azure"
 	description="了解如何扩展 Azure AD Connect 的默认配置和操作任务。" 
 	services="active-directory" 
 	documentationCenter="" 

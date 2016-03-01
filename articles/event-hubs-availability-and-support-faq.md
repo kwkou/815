@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="事件中心可用性和支持常见问题 | Windows Azure"
+   pageTitle="事件中心可用性和支持常见问题 | Microsoft Azure"
    description="事件中心定价和常见问题。"
    services="event-hubs"
    documentationCenter="na"

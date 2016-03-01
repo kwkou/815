@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 HDInsight 中的 Hive 分析和处理 JSON 文档 | Windows Azure"
+   pageTitle="使用 HDInsight 中的 Hive 分析和处理 JSON 文档 | Microsoft Azure"
    description="了解如何使用 JSON 文档，以及如何使用 HDInsight 中的 Hive 来分析这些文档。"
    services="hdinsight"
    documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="我在 Azure 自动化中的第一个 PowerShell 工作流 Runbook | Windows Azure"
+	pageTitle="我在 Azure 自动化中的第一个 PowerShell 工作流 Runbook | Microsoft Azure"
 	description="本教程指导你使用 PowerShell 工作流创建、测试和发布一个简单的文本 Runbook。文中涵盖了多个概念，例如，对 Azure 资源进行身份验证和输入参数。"
 	services="automation"
 	documentationCenter=""

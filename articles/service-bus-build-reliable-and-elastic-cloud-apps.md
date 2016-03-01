@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用消息传送构建可靠弹性的云应用 | Windows Azure" 
-	description="了解如何使用 Windows Azure 中的消息传送构建可靠弹性的云应用程序。" 
+	pageTitle="使用消息传送构建可靠弹性的云应用 | Microsoft Azure" 
+	description="了解如何使用 Microsoft Azure 中的消息传送构建可靠弹性的云应用程序。" 
 	services="service-bus" 
 	authors="sethmanheim" 
 	manager="timlt" 
@@ -18,7 +18,7 @@
  
 ## 探究
 
-- [Windows Azure 服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
+- [Microsoft Azure 服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 - [基于队列的负载调节模式](http://msdn.microsoft.com/zh-cn/library/dn589783.aspx)
 - [让使用者竞争](http://msdn.microsoft.com/zh-cn/library/dn568101.aspx)
 - [客户案例](https://customers.microsoft.com/Pages/Home.aspx)

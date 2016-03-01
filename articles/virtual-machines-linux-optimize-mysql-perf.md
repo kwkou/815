@@ -1,5 +1,5 @@
 <properties
-	pageTitle="优化 Linux VM 上的 MySQL 性能 | Windows Azure"
+	pageTitle="优化 Linux VM 上的 MySQL 性能 | Microsoft Azure"
 	description="了解如何优化运行 Linux 的 Azure 虚拟机 (VM) 上运行的 MySQL。"
 	services="virtual-machines"
 	documentationCenter=""

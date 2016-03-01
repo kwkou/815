@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect 设计概念 | Windows Azure"
+   pageTitle="Azure AD Connect 设计概念 | Microsoft Azure"
    description="本主题详细说明某些实现设计方面的问题"
    services="active-directory"
    documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="身份验证入门 (Android) | Windows Azure"
+	pageTitle="身份验证入门 (Android) | Microsoft Azure"
 	description="了解如何使用移动服务通过提供各种标识提供程序（包括 Google和 Microsoft）对 Windows 应用商店应用程序的用户进行身份验证。"
 	services="mobile-services"
 	documentationCenter="android"

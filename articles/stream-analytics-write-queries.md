@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何使用流分析编写查询 | Windows Azure" 
+	pageTitle="如何使用流分析编写查询 | Microsoft Azure" 
 	description="使用流分析编写查询和查询数据 | 学习路径段。"
 	keywords="如何编写查询, 查询数据, 编写查询, 正在编写查询"
 	documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="将 Windows Server 或 Windows 客户端文件和文件夹备份到 Azure | Windows Azure"
+   pageTitle="将 Windows Server 或 Windows 客户端文件和文件夹备份到 Azure | Microsoft Azure"
    description="使用这个简单的过程将 Windows Server 或 Windows 客户端备份到 Azure。只需执行几个简单的步骤，就能将 Windows 文件和文件夹备份到云中。"
    services="backup"
    documentationCenter=""

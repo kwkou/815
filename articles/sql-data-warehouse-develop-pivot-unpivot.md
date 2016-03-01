@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 SQL 数据仓库中透视和逆透视数据 | Windows Azure"
+   pageTitle="在 SQL 数据仓库中透视和逆透视数据 | Microsoft Azure"
    description="有关在开发解决方案时于 Azure SQL 数据仓库中透视和逆透视数据的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"

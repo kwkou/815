@@ -1,5 +1,5 @@
 <properties
-	pageTitle="了解什么是 Hive 以及如何使用 HiveQL | Windows Azure"
+	pageTitle="了解什么是 Hive 以及如何使用 HiveQL | Microsoft Azure"
 	description="了解 Apache Hive 以及如何将它与 HDInsight 中的 Hadoop 配合使用。选择如何运行 Hive 作业，以及如何使用 HiveQL 来分析示例 Apache log4j 文件。"
 	keywords="hiveql,什么是 hive"
 	services="hdinsight"

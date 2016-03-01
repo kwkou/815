@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何配置云服务 | Windows Azure" 
+	pageTitle="如何配置云服务 | Microsoft Azure" 
 	description="了解如何在 Azure 中配置云服务。了解如何更新云服务配置以及配置对角色实例的远程访问。" 
 	services="cloud-services" 
 	documentationCenter="" 

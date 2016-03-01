@@ -1,5 +1,5 @@
 <properties
- pageTitle="自动缩放 HPC 群集中的计算资源 | Windows Azure"
+ pageTitle="自动缩放 HPC 群集中的计算资源 | Microsoft Azure"
  description="了解自动增加和减少 Azure 的 HPC Pack 群集中的计算资源的方法"
  services="virtual-machines"
  documentationCenter=""

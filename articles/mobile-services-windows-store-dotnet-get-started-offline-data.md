@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在通用 Windows 应用中使用脱机数据 | Windows Azure" 
+	pageTitle="在通用 Windows 应用中使用脱机数据 | Microsoft Azure" 
 	description="了解如何在通用 Windows 应用中使用 Azure 移动服务缓存和同步脱机数据" 
 	documentationCenter="mobile-services" 
 	authors="lindydonna" 

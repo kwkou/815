@@ -1,5 +1,5 @@
 <properties
-   pageTitle="用于角色分配的资源管理器模板 | Windows Azure"
+   pageTitle="用于角色分配的资源管理器模板 | Microsoft Azure"
    description="说明用于在部署过程中创建角色分配的资源管理器架构。"
    services="azure-resource-manager"
    documentationCenter="na"

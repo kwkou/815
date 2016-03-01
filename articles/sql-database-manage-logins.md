@@ -1,5 +1,5 @@
 <properties
-   pageTitle="管理 Azure SQL 数据库的数据库和登录名 | Windows Azure"
+   pageTitle="管理 Azure SQL 数据库的数据库和登录名 | Microsoft Azure"
    description="如何使用服务器级别主体和其他帐户以便在 SQL 数据库中管理登录名和数据库"
    services="sql-database"
    documentationCenter=""
@@ -15,7 +15,7 @@
 
 # 管理 Azure SQL 数据库的数据库和登录名
 
-在 Windows Azure SQL 数据库中，当你注册该服务时，预配过程将创建一个 Azure SQL 数据库服务器、一个名为 **master** 的数据库以及作为你的 Azure SQL 数据库服务器的服务器级别主体的登录名。该登录名与你的本地 SQL Server 实例的服务器级别主体 **sa** 类似。
+在 Microsoft Azure SQL 数据库中，当你注册该服务时，预配过程将创建一个 Azure SQL 数据库服务器、一个名为 **master** 的数据库以及作为你的 Azure SQL 数据库服务器的服务器级别主体的登录名。该登录名与你的本地 SQL Server 实例的服务器级别主体 **sa** 类似。
 
 Azure SQL 数据库服务器级别主体帐户始终有权管理所有服务器级别和数据库级别的安全性。本主题介绍如何使用服务器级别主体和其他帐户以便在 SQL 数据库中管理登录名和数据库。
 
@@ -75,23 +75,23 @@ CREATE LOGIN login1 WITH password='<ProvidePassword>';
 
 #### 使用新登录名
 
-为了使用你创建的登录名连接到 Windows Azure SQL 数据库，你必须首先通过使用 ``CREATE USER`` 语句为每个登录名授予数据库级别权限。有关详细信息，请参阅[向登录名授予数据库级别权限](https://msdn.microsoft.com/zh-cn/library/ee336235.aspx#DatabasePerms)。
+为了使用你创建的登录名连接到 Microsoft Azure SQL 数据库，你必须首先通过使用 ``CREATE USER`` 语句为每个登录名授予数据库级别权限。有关详细信息，请参阅[向登录名授予数据库级别权限](https://msdn.microsoft.com/zh-cn/library/ee336235.aspx#DatabasePerms)。
 
 因为某些工具以不同方式实现表格格式数据流 (TDS)，所以，你可能需要使用 ``<login>@<server>`` 表示法将 Azure SQL 数据库服务器名称追加到连接字符串中的登录名。在这些情况下，使用 ``@`` 符号分隔登录名和 Azure SQL 数据库服务器名称。例如，如果你的登录名为 **login1**，并且你的 Azure SQL 数据库服务器的完全限定名称为 **servername.database.chinacloudapi.cn**，则你的连接字符串的用户名参数应为：**login1@servername**。此限制将限制你可为登录名选择的文本。有关详细信息，请参阅 [CREATE LOGIN (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms189751.aspx)。
 
 ## 向登录名授予服务器级别权限
 
-为了让你使用除服务器级主体以外的登录名来管理服务器级安全，Windows Azure SQL 数据库提供了两个安全角色：用于创建登录名的 **loginmanager**，以及用于创建数据库的 **dbmanager**。只有 **master** 数据库中的用户才能添加到这些数据库角色中。
+为了让你使用除服务器级主体以外的登录名来管理服务器级安全，Microsoft Azure SQL 数据库提供了两个安全角色：用于创建登录名的 **loginmanager**，以及用于创建数据库的 **dbmanager**。只有 **master** 数据库中的用户才能添加到这些数据库角色中。
 
 > [AZURE.NOTE]若要创建登录名或数据库，你必须连接到 **master** 数据库（这是 **master** 的逻辑表示形式）。
 
 ### loginmanager 角色
 
-与用于 SQL Server 的本地实例的 **securityadmin** 固定服务器角色相似，Windows Azure SQL 数据库中的 **loginmanager** 数据库角色有权创建登录名。只有服务器级别主体登录名（由预配过程创建）或 **loginmanager** 数据库角色的成员才能创建新的登录名。
+与用于 SQL Server 的本地实例的 **securityadmin** 固定服务器角色相似，Microsoft Azure SQL 数据库中的 **loginmanager** 数据库角色有权创建登录名。只有服务器级别主体登录名（由预配过程创建）或 **loginmanager** 数据库角色的成员才能创建新的登录名。
 
 ### dbmanager 角色
 
-Windows Azure SQL 数据库 **dbmanager** 数据库角色与用于 SQL Server 的本地实例的 **dbcreator** 固定服务器角色相似。只有服务器级别主体登录名（由预配过程创建）或 **dbmanager** 数据库角色的成员才能创建数据库。某个用户成为 **dbmanager** 数据库角色的成员后，可以使用 Azure SQL 数据库 ``CREATE DATABASE`` 命令创建数据库，但该命令必须在 master 数据库中执行。有关详细信息，请参阅 [CREATE DATABASE (Azure Server Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms176061.aspx)。
+Microsoft Azure SQL 数据库 **dbmanager** 数据库角色与用于 SQL Server 的本地实例的 **dbcreator** 固定服务器角色相似。只有服务器级别主体登录名（由预配过程创建）或 **dbmanager** 数据库角色的成员才能创建数据库。某个用户成为 **dbmanager** 数据库角色的成员后，可以使用 Azure SQL 数据库 ``CREATE DATABASE`` 命令创建数据库，但该命令必须在 master 数据库中执行。有关详细信息，请参阅 [CREATE DATABASE (Azure Server Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms176061.aspx)。
 
 ### 如何分配 SQL 数据库服务器级别角色
 
@@ -116,7 +116,7 @@ EXEC sp_addrolemember 'loginmanager', 'login1User';
 
 ## 授予对登录名的数据库访问权限
 
-所有登录名都必须在 master 数据库中创建。在创建一个登录名后，你可以为该登录名在另一个数据库中创建用户帐户。Windows Azure SQL 数据库通过与 SQL Server 的本地实例中相同的方式支持数据库角色。
+所有登录名都必须在 master 数据库中创建。在创建一个登录名后，你可以为该登录名在另一个数据库中创建用户帐户。Microsoft Azure SQL 数据库通过与 SQL Server 的本地实例中相同的方式支持数据库角色。
 
 若要在其他数据库中创建用户帐户，并且假设你尚未创建登录名或数据库，请执行以下步骤：
 

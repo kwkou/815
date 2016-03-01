@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在命令行管理移动服务 | Windows Azure" 
+	pageTitle="在命令行管理移动服务 | Microsoft Azure" 
 	description="了解如何使用命令行工具创建、 部署和管理您的 Azure 移动服务。" 
 	services="mobile-services" 
 	documentationCenter="Mobile" 

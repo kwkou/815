@@ -1,5 +1,5 @@
 <properties
-   pageTitle="哈希分布及其对 SQL 数据仓库中查询性能的影响 | Windows Azure"
+   pageTitle="哈希分布及其对 SQL 数据仓库中查询性能的影响 | Microsoft Azure"
    description="在开发解决方案之前，了解哈希分布表及其如何影响 Azure SQL 数据仓库中的查询性能。"
    services="sql-data-warehouse"
    documentationCenter="NA"

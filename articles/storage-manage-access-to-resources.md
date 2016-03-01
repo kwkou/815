@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="管理对容器和 blob 的匿名读取访问 |Windows Azure" 
+	pageTitle="管理对容器和 blob 的匿名读取访问 |Microsoft Azure" 
 	description="了解如何使容器和 blob 可供匿名访问，以及如何对其进行程序式访问。" 
 	services="storage" 
 	documentationCenter="" 

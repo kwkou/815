@@ -1,5 +1,5 @@
 <properties
-	pageTitle="开始使用 Azure 管理门户按需传送内容 | Windows Azure"
+	pageTitle="开始使用 Azure 管理门户按需传送内容 | Microsoft Azure"
 	description="本教程将引导你完成使用 Azure 媒体服务和 Azure 管理门户实施视频点播 (VoD) 内容传送应用程序的步骤。"
 	services="media-services"
 	documentationCenter=""

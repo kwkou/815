@@ -1,5 +1,5 @@
 <properties
- pageTitle="使用 Apache Storm on HDInsight 处理车辆传感器数据 | Windows Azure"
+ pageTitle="使用 Apache Storm on HDInsight 处理车辆传感器数据 | Microsoft Azure"
  description="了解如何使用 Apache Storm on HDInsight 处理事件中心的车辆传感器数据。添加 DocumentDB 提供的车型数据，然后将输出存储到存储空间。"
  services="hdinsight,documentdb,notification-hubs"
  documentationCenter=""

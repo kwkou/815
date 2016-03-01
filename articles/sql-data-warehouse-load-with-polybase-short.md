@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 PolyBase 加载数据教程 | Windows Azure"
+   pageTitle="使用 PolyBase 加载数据教程 | Microsoft Azure"
    description="了解如何使用 PolyBase 将数据载入 SQL 数据仓库。"
    services="sql-data-warehouse"
    documentationCenter="NA"

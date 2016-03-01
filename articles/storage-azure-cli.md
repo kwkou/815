@@ -1,5 +1,5 @@
 <properties
-    pageTitle="将 Azure CLI 用于 Azure 存储服务 | Windows Azure"
+    pageTitle="将 Azure CLI 用于 Azure 存储服务 | Microsoft Azure"
     description="了解如何将 Azure 命令行界面 (Azure CLI) 用于 Azure 存储服务，以便创建和管理存储帐户并处理 Azure blob 和文件。"
     services="storage"
     documentationCenter="na"
@@ -26,11 +26,11 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
 本指南使用 Ubuntu 作为示例，但其他 OS 平台的操作应与此类似。
 
-**Azure 新用户：**获取一个 Windows Azure 订阅以及与该订阅关联的 Microsoft 帐户。有关 Azure 购买选项的信息，请参阅[免费试用](http://www.windowsazure.cn/pricing/1rmb-trial/)、[购买选项](/pricing/pia/)<!--、和[成员优惠](http://azure.microsoft.com/pricing/member-offers/)（适用于 MSDN、Microsoft 合作伙伴网络和 BizSpark 以及其他 Microsoft 计划的成员）-->。
+**Azure 新用户：**获取一个 Microsoft Azure 订阅以及与该订阅关联的 Microsoft 帐户。有关 Azure 购买选项的信息，请参阅[免费试用](http://www.windowsazure.cn/pricing/1rmb-trial/)、[购买选项](/pricing/pia/)<!--、和[成员优惠](http://azure.microsoft.com/pricing/member-offers/)（适用于 MSDN、Microsoft 合作伙伴网络和 BizSpark 以及其他 Microsoft 计划的成员）-->。
 
 有关 Azure 订阅的详细信息，请参阅[管理帐户、订阅和管理角色](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx)。
 
-**创建 Windows Azure 订阅和帐户之后：**
+**创建 Microsoft Azure 订阅和帐户之后：**
 
 1. 按照[安装 Azure CLI](/documentation/articles/xplat-cli-install) 中概述的说明，下载和安装 Azure CLI。
 2. 安装了 Azure CLI 之后，你将可以从命令行界面（Bash、终端、命令提示符）使用 azure 命令访问 Azure CLI 命令。输入 `azure` 命令，你应该会看到以下输出：
@@ -164,7 +164,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。有关详细信息，请参阅[了
 
 ##<a id="create-and-manage-file-shares"></a> 创建和管理文件共享
 
-Azure 文件存储使用标准 SMB 协议为应用程序提供共享存储。Windows Azure 虚拟机和云服务以及本地应用程序可以通过装载的共享来共享文件数据。你可以通过 Azure CLI 管理文件共享和文件数据。有关 Azure 文件存储的详细信息，请参阅[如何通过 Windows 使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)或[如何通过 Linux 使用 Azure 文件存储](/documentation/articles/storage-how-to-use-files-linux)。
+Azure 文件存储使用标准 SMB 协议为应用程序提供共享存储。Microsoft Azure 虚拟机和云服务以及本地应用程序可以通过装载的共享来共享文件数据。你可以通过 Azure CLI 管理文件共享和文件数据。有关 Azure 文件存储的详细信息，请参阅[如何通过 Windows 使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)或[如何通过 Linux 使用 Azure 文件存储](/documentation/articles/storage-how-to-use-files-linux)。
 
 ### 创建文件共享
 

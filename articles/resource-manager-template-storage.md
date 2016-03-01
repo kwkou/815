@@ -1,5 +1,5 @@
 <properties
-   pageTitle="用于存储的资源管理器模板 | Windows Azure"
+   pageTitle="用于存储的资源管理器模板 | Microsoft Azure"
    description="说明存储帐户的资源管理器架构。"
    services="azure-resource-manager,storage"
    documentationCenter="na"
@@ -76,6 +76,6 @@
 
 ## 后续步骤
 
-- 有关存储的常规信息，请参阅 [Windows Azure 存储空间简介](/documentation/articles/storage-introduction)。
+- 有关存储的常规信息，请参阅 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction)。
 
 <!---HONumber=Mooncake_1207_2015-->

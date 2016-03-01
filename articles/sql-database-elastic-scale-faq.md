@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure SQL 弹性缩放常见问题 | Windows Azure" 
+	pageTitle="Azure SQL 弹性缩放常见问题 | Microsoft Azure" 
 	description="有关 Azure SQL 数据库弹性缩放的常见问题。" 
 	services="sql-database" 
 	documentationCenter="" 

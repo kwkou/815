@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用流分析中的操作和服务日志 | Windows Azure" 
+	pageTitle="使用流分析中的操作和服务日志 | Microsoft Azure" 
 	description="如何使用流分析操作日志" 
 	keywords="服务日志"
 	services="stream-analytics" 

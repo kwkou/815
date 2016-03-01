@@ -1,5 +1,5 @@
 <properties
-	pageTitle="PHP Web 角色和辅助角色 | Windows Azure"
+	pageTitle="PHP Web 角色和辅助角色 | Microsoft Azure"
 	description="有关如何在 Azure 云服务中创建 PHP Web 和辅助角色以及配置 PHP 运行时的指南。"
 	services=""
 	documentationCenter="php"

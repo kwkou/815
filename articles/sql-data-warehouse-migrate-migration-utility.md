@@ -1,5 +1,5 @@
 <properties
-   pageTitle="迁移：数据仓库迁移实用程序 | Windows Azure"
+   pageTitle="迁移：数据仓库迁移实用程序 | Microsoft Azure"
    description="迁移到 SQL 数据仓库。"
    services="sql-data-warehouse"
    documentationCenter="NA"

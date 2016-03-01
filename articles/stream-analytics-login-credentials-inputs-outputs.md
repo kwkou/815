@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="流分析：轮转输入和输出的登录凭据 | Windows Azure" 
+	pageTitle="流分析：轮转输入和输出的登录凭据 | Microsoft Azure" 
 	description="了解如何更新流分析输入和输出的凭据。"
 	keywords="登录凭据"
 	services="stream-analytics" 

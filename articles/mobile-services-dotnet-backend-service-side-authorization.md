@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 .NET 后端移动服务中对用户进行服务端授权 | Windows Azure"
+	pageTitle="在 .NET 后端移动服务中对用户进行服务端授权 | Microsoft Azure"
 	description="了解如何在 .NET 后端移动服务中限制已授权用户的访问权限"
 	services="mobile-services"
 	documentationCenter="windows"

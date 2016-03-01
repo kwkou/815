@@ -1,6 +1,6 @@
 <properties
-   pageTitle="使用 Chef 部署 Azure 虚拟机 | Windows Azure"
-   description="了解如何使用 Chef 在 Windows Azure 中自动执行虚拟机的部署和配置"
+   pageTitle="使用 Chef 部署 Azure 虚拟机 | Microsoft Azure"
+   description="了解如何使用 Chef 在 Microsoft Azure 中自动执行虚拟机的部署和配置"
    services="virtual-machines"
    documentationCenter=""
    authors="diegoviso"

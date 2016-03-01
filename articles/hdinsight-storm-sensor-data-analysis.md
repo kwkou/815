@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Apache Storm 和 HBase 分析传感器数据 | Windows Azure"
+   pageTitle="使用 Apache Storm 和 HBase 分析传感器数据 | Microsoft Azure"
    description="了解如何使用虚拟网络连接到 Apache Storm。了解如何使用 Storm 和 HBase 处理来自 Azure 事件中心的传感器数据，然后使用 D3.js 来可视化这些数据。"
    services="hdinsight"
    documentationCenter=""

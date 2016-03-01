@@ -1,5 +1,5 @@
 <properties
- pageTitle="管理 HPC Pack 群集计算节点 | Windows Azure"
+ pageTitle="管理 HPC Pack 群集计算节点 | Microsoft Azure"
  description="了解 PowerShell 脚本工具如何添加、删除、启动和停止 Azure 的 HPC Pack 群集计算节点"
  services="virtual-machines"
  documentationCenter=""

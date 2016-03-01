@@ -1,5 +1,5 @@
 <properties
-   pageTitle="性能和缩放性概述 | Windows Azure"
+   pageTitle="性能和缩放性概述 | Microsoft Azure"
    description="介绍 SQL 数据仓库的性能与缩放性功能。"
    services="sql-data-warehouse"
    documentationCenter="NA"

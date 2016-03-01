@@ -1,5 +1,5 @@
 <properties
-	pageTitle="创建可缩放的弹性数据库池 | Windows Azure"
+	pageTitle="创建可缩放的弹性数据库池 | Microsoft Azure"
 	description="如何将可缩放的弹性数据库池添加到 SQL 数据库配置，以简化多个数据库的管理和资源共享。"
 	keywords="可缩放的数据库,数据库配置"
 	services="sql-database"

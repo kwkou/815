@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Django 创建 Python Web 应用| Windows Azure"
+	pageTitle="使用 Django 创建 Python Web 应用| Microsoft Azure"
 	description="本教程演示如何在 Azure 中使用 Windows Server 2012 R2 Datacenter 虚拟机托管基于 Django 的 Web 应用。"
 	services="virtual-machines"
 	documentationCenter="python"
@@ -22,7 +22,7 @@
 - [Windows](/documentation/articles/virtual-machines-python-django-web-app-windows-server)
 - [Mac/Linux](/documentation/articles/virtual-machines-python-django-web-app-linux)
 
-本教程介绍如何在 Windows Azure 中使用 Windows Server 虚拟机托管基于 Django 的 Web 应用。本教程假定您之前未使用过 Azure。完成本教程之后，你将能够在云中启动和运行基于 Django 的应用程序。
+本教程介绍如何在 Microsoft Azure 中使用 Windows Server 虚拟机托管基于 Django 的 Web 应用。本教程假定您之前未使用过 Azure。完成本教程之后，你将能够在云中启动和运行基于 Django 的应用程序。
 
 你将了解如何执行以下操作：
 

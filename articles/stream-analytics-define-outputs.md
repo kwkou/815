@@ -1,5 +1,5 @@
 <properties
-	pageTitle="数据转换输出：针对存储、分析的选项 | Windows Azure"
+	pageTitle="数据转换输出：针对存储、分析的选项 | Microsoft Azure"
 	description="了解如何使流分析数据转换输出输出到数据存储选项。另外，请使用 Power BI 来获取分析结果。"
 	keywords="数据转换、分析结果、数据存储选项"
 	services="stream-analytics,documentdb,sql-database,event-hubs,service-bus,storage"
@@ -58,7 +58,7 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 </tr>
 <tr>
 <td>存储容器</td>
-<td>容器对存储在 Windows Azure Blob 服务中的 blob 进行逻辑分组。将 blob 上载到 Blob 服务时，必须为该 blob 指定一个容器。</td>
+<td>容器对存储在 Microsoft Azure Blob 服务中的 blob 进行逻辑分组。将 blob 上载到 Blob 服务时，必须为该 blob 指定一个容器。</td>
 </tr>
 <tr>
 <td>路径前缀模式 [可选]</td>

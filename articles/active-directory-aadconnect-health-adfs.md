@@ -1,6 +1,6 @@
 
 <properties 
-	pageTitle="在 AD FS 中使用 Azure AD Connect Health | Windows Azure" 
+	pageTitle="在 AD FS 中使用 Azure AD Connect Health | Microsoft Azure" 
 	description="本页与 Azure AD Connect Health 相关，介绍如何监视本地 AD FS 基础结构。" 
 	services="active-directory" 
 	documentationCenter="" 

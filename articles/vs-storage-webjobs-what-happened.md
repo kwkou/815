@@ -1,5 +1,5 @@
 <properties
-	pageTitle="我的 WebJob 项目（Visual Studio Azure 存储连接服务）发生了什么情况？| Windows Azure"
+	pageTitle="我的 WebJob 项目（Visual Studio Azure 存储连接服务）发生了什么情况？| Microsoft Azure"
 	description="介绍使用 Visual Studio 连接服务连接到存储帐户后 Azure WebJob 项目中会发生什么情况" 
 	services="storage"
 	documentationCenter=""

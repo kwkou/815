@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何创建媒体处理器 | Windows Azure" 
+	pageTitle="如何创建媒体处理器 | Microsoft Azure" 
 	description="了解如何创建一个媒体处理器组件用来为 Azure 媒体服务编码、转换格式、加密或解密媒体内容。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -33,8 +33,8 @@ Azure Media Encoder|让你使用 Azure 媒体编码器运行编码任务。|[Azu
 Azure Media Indexer| 使媒体文件和内容可搜索，以及生成隐藏字幕跟踪和关键字。|[使用 Azure Media Indexer 为媒体文件编制索引](/documentation/articles/media-services-index-content)。
 Azure Media Hyperlapse（预览）|使你能够通过视频防抖动功能消除视频中的“晃动”。也可使将内容制作为可用剪辑的速度加快。|		[Azure Media Hyperlapse](http://azure.microsoft.com/blog/?p=286281&preview=1&_ppp=61e1a0b3db)</a>
 存储解密| 让你解密使用存储加密技术加密的媒体资产。|不适用
-Windows Azure Media Packager|让你将媒体资产从 .mp4 格式转换为平滑流式处理格式。还可让你将媒体资产从平滑流式处理格式转换为 Apple HTTP 实时流 (HLS) 格式。|[Azure Media Packager 的任务预设字符串](http://msdn.microsoft.com/zh-cn/library/hh973635.aspx)
-Windows Azure Media Encryptor|让你使用 PlayReady 保护加密媒体资产。|[Azure Media Packager 的任务预设字符串](http://msdn.microsoft.com/zh-cn/library/hh973610.aspx)
+Microsoft Azure Media Packager|让你将媒体资产从 .mp4 格式转换为平滑流式处理格式。还可让你将媒体资产从平滑流式处理格式转换为 Apple HTTP 实时流 (HLS) 格式。|[Azure Media Packager 的任务预设字符串](http://msdn.microsoft.com/zh-cn/library/hh973635.aspx)
+Microsoft Azure Media Encryptor|让你使用 PlayReady 保护加密媒体资产。|[Azure Media Packager 的任务预设字符串](http://msdn.microsoft.com/zh-cn/library/hh973610.aspx)
 
 ##获取 MediaProcessor
 

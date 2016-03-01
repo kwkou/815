@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="用于 Xamarin iOS 应用的移动服务入门 | Windows Azure" 
+	pageTitle="用于 Xamarin iOS 应用的移动服务入门 | Microsoft Azure" 
 	description="了解如何使用 Azure 移动服务和通知中心将推送通知发送到 Xamarin iOS 应用程序" 
 	services="mobile-services" 
 	documentationCenter="xamarin" 

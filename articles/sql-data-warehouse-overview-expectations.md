@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库预览版的预期功能 | Windows Azure"
+   pageTitle="SQL 数据仓库预览版的预期功能 | Microsoft Azure"
    description="SQL 数据仓库公共预览版功能摘要，以及正式版的目标。"
    services="sql-data-warehouse"
    documentationCenter="NA"

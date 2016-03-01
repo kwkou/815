@@ -1,5 +1,5 @@
 <properties
-	pageTitle="适用于 HTML/JavaScript 应用的 Azure 移动服务入门 | Windows Azure"
+	pageTitle="适用于 HTML/JavaScript 应用的 Azure 移动服务入门 | Microsoft Azure"
 	description="按照本教程进行操作，开始使用 Azure 移动服务进行 HTML 开发。"
 	services="mobile-services"
 	documentationCenter=""

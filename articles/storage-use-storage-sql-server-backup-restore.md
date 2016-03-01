@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何使用 Azure 存储空间执行 SQL Server 备份和还原 | Windows Azure"
+	pageTitle="如何使用 Azure 存储空间执行 SQL Server 备份和还原 | Microsoft Azure"
 	description="将 SQL Server 和 SQL 数据库备份到 Azure 存储空间。介绍了将 SQL 数据库备份到 Azure 存储空间的好处，以及需要哪些 SQL Server 和 Azure 存储空间组件"
 	services="sql-database, virtual-machines"
 	documentationCenter=""
@@ -36,7 +36,7 @@ SQL Server 2012 SP1 CU2 中发布了可将 SQL Server 备份写入 Azure Blob �
 
 以下两部分介绍了 Azure Blob 存储服务，以及备份到 Azure Blob 存储服务或从中进行还原时使用的 SQL Server 组件。了解这些组件以及它们之间的交互对备份到 Azure Blob 存储服务或从中进行还原来说至关重要。
 
-创建 Azure 帐户是这个过程的第一步。有关使用 SQL Server 2014 创建存储帐户和执行简单还原操作的完整演练，请参阅[开始使用 Azure 存储服务执行 SQL Server 备份和还原](https://msdn.microsoft.com/zh-cn/library/jj720558(v=sql.120).aspx)。有关使用 SQL Server 2014 创建存储帐户和执行简单还原操作的完整演练，请参阅[教程：将 Windows Azure Blob 存储服务用于 SQL Server 2016 数据库](https://msdn.microsoft.com/zh-cn/library/dn466438.aspx)。
+创建 Azure 帐户是这个过程的第一步。有关使用 SQL Server 2014 创建存储帐户和执行简单还原操作的完整演练，请参阅[开始使用 Azure 存储服务执行 SQL Server 备份和还原](https://msdn.microsoft.com/zh-cn/library/jj720558(v=sql.120).aspx)。有关使用 SQL Server 2014 创建存储帐户和执行简单还原操作的完整演练，请参阅[教程：将 Microsoft Azure Blob 存储服务用于 SQL Server 2016 数据库](https://msdn.microsoft.com/zh-cn/library/dn466438.aspx)。
 
 ## Azure Blob 存储服务组件
 
@@ -67,7 +67,7 @@ SQL Server 2012 SP1 CU2 中发布了可将 SQL Server 备份写入 Azure Blob �
 
 **教程入门：**
 
-[教程：将 Windows Azure Blob 存储服务用于 SQL Server 2016 数据库](https://msdn.microsoft.com/zh-cn/library/dn466438.aspx)
+[教程：将 Microsoft Azure Blob 存储服务用于 SQL Server 2016 数据库](https://msdn.microsoft.com/zh-cn/library/dn466438.aspx)
 
 **最佳实践、疑难解答：**
 

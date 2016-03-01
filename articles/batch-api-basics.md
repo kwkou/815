@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure Batch 功能概述 | Windows Azure"
+	pageTitle="Azure Batch 功能概述 | Microsoft Azure"
 	description="从开发的角度了解 Batch 服务的功能及其 API。"
 	services="batch" 
 	documentationCenter=".net" 

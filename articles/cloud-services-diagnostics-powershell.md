@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 PowerShell 在 Azure 云服务中启用诊断 | Windows Azure" 
+	pageTitle="使用 PowerShell 在 Azure 云服务中启用诊断 | Microsoft Azure" 
 	description="了解如何使用 PowerShell 为云服务启用诊断" 
 	services="cloud-services" 
 	documentationCenter=".net" 

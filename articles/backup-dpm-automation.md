@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 备份 - 使用 PowerShell 部署和管理 DPM 的备份 | Windows Azure"
+	pageTitle="Azure 备份 - 使用 PowerShell 部署和管理 DPM 的备份 | Microsoft Azure"
 	description="了解如何使用 PowerShell 部署和管理 Data Protection Manager (DPM) 的 Azure 备份"
 	services="backup"
 	documentationCenter=""
@@ -91,11 +91,11 @@ PS C:\> MARSAgentInstaller.exe /?
 | 选项 | 详细信息 | 默认 |
 | ---- | ----- | ----- |
 | /q | 静默安装 | - |
-| /p:"location" | Azure 备份代理的安装文件夹路径。| C:\Program Files\\Windows Azure Recovery Services Agent |
-| /s:"location" | Azure 备份代理的快取文件夹路径。| C:\Program Files\\Windows Azure Recovery Services Agent\\Scratch |
+| /p:"location" | Azure 备份代理的安装文件夹路径。| C:\Program Files\\Microsoft Azure Recovery Services Agent |
+| /s:"location" | Azure 备份代理的快取文件夹路径。| C:\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch |
 | /m | 选择启用 Microsoft Update | - |
 | /nu | 安装完成后不要检查更新 | - |
-| /d | 卸载 Windows Azure 恢复服务代理 | - |
+| /d | 卸载 Microsoft Azure 恢复服务代理 | - |
 | /ph | 代理主机地址 | - |
 | /po | 代理主机端口号 | - |
 | /pu | 代理主机用户名 | - |
@@ -123,7 +123,7 @@ PS C:\> $cred = $credspath + $credsfilename
 PS C:\> Start-DPMCloudRegistration -DPMServerName "TestingServer" -VaultCredentialsFilePath $cred
 ```
 
-这将使用指定的保管库凭据向 Windows Azure 保管库注册名为“TestingServer”的 DPM 服务器。
+这将使用指定的保管库凭据向 Microsoft Azure 保管库注册名为“TestingServer”的 DPM 服务器。
 
 > [AZURE.IMPORTANT]请勿使用相对路径来指定保管库凭据文件。必须提供绝对路径作为 cmdlet 的输入。
 

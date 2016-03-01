@@ -175,7 +175,7 @@
  
 ##<a id="ingest_in_bulk"></a>使用媒体服务 .NET SDK 批量引入资产 
 
-上载大型资产文件可能在资产创建过程中形成瓶颈。批量引入资产（简称“批量引入”）涉及到将资产创建过程与上载过程分离。若要使用批量引入方法，请创建一个描述资产及其关联文件的清单 (IngestManifest)。然后，你可以使用所选上载方法将关联的文件上载到该清单的 Blob 容器。Windows Azure 媒体服务将会监视与清单关联的 Blob 容器。文件上载到 Blob 容器后，Windows Azure 媒体服务将基于清单 (IngestManifestAsset) 中资产的配置完成资产创建过程。
+上载大型资产文件可能在资产创建过程中形成瓶颈。批量引入资产（简称“批量引入”）涉及到将资产创建过程与上载过程分离。若要使用批量引入方法，请创建一个描述资产及其关联文件的清单 (IngestManifest)。然后，你可以使用所选上载方法将关联的文件上载到该清单的 Blob 容器。Microsoft Azure 媒体服务将会监视与清单关联的 Blob 容器。文件上载到 Blob 容器后，Microsoft Azure 媒体服务将基于清单 (IngestManifestAsset) 中资产的配置完成资产创建过程。
 
 
 若要创建新的 IngestManifest，请调用通过 CloudMediaContext 中的 IngestManifests 集合公开的 Create 方法。此方法将使用你提供的清单名称创建一个新的 IngestManifest。

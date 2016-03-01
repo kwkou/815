@@ -1,5 +1,5 @@
 <properties
-   pageTitle="用于部署 HPC Pack 群集的 PowerShell 脚本 | Windows Azure"
+   pageTitle="用于部署 HPC Pack 群集的 PowerShell 脚本 | Microsoft Azure"
    description="运行 Windows PowerShell 脚本，以在 Azure 基础结构服务中部署完整的 HPC Pack 群集"
    services="virtual-machines"
    documentationCenter=""

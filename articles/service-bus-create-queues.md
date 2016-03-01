@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="编写使用服务总线队列的应用程序 | Windows Azure"
+   pageTitle="编写使用服务总线队列的应用程序 | Microsoft Azure"
    description="如何编写一个基于队列的、使用服务总线的简单应用程序。"
    services="service-bus"
    documentationCenter="na"

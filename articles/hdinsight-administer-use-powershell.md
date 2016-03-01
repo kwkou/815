@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 PowerShell 管理 HDInsight 中的 Hadoop 群集 | Windows Azure"
+	pageTitle="使用 PowerShell 管理 HDInsight 中的 Hadoop 群集 | Microsoft Azure"
 	description="了解如何使用 Azure PowerShell 执行针对 HDInsight 中 Hadoop 的管理任务。"
 	services="hdinsight"
 	editor="cgronlun"

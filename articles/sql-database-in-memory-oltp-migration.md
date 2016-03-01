@@ -1,5 +1,5 @@
 <properties
-	pageTitle="In-Memory OLTP 改善 SQL 事务性能 | Windows Azure"
+	pageTitle="In-Memory OLTP 改善 SQL 事务性能 | Microsoft Azure"
 	description="利用 In-Memory OLTP 改善现有 SQL 数据库中的事务性能。"
 	services="sql-database"
 	documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="将架构迁移到 SQL 数据仓库 | Windows Azure"
+   pageTitle="将架构迁移到 SQL 数据仓库 | Microsoft Azure"
    description="有关在开发解决方案时将架构迁移到 Azure SQL 数据仓库的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"

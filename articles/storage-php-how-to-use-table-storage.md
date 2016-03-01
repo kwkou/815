@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 PHP 使用表存储 | Windows Azure"
+	pageTitle="如何通过 PHP 使用表存储 | Microsoft Azure"
 	description="了解如何通过 PHP 使用表服务来创建和删除表以及插入、删除和查询表。"
 	services="storage"
 	documentationCenter="php"

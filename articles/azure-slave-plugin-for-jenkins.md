@@ -1,5 +1,5 @@
 <properties
-    pageTitle="如何在 Jenkins 持续集成中使用 Azure Slave 插件 | Windows Azure"
+    pageTitle="如何在 Jenkins 持续集成中使用 Azure Slave 插件 | Microsoft Azure"
     description="介绍如何在 Jenkins 持续集成中使用 Azure Slave 插件。"
 	services="storage" 
 	documentationCenter="java" 

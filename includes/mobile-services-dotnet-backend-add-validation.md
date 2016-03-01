@@ -29,7 +29,7 @@
 
    	![](./media/mobile-services-dotnet-backend-add-validation/mobile-services-build-dotnet-service.png)
 
-5. 右键单击服务项目并单击“发布”。使用你以前在[入门]或[数据处理入门](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/)教程中使用的发布设置，将移动服务发布到你的 Windows Azure 帐户。
+5. 右键单击服务项目并单击“发布”。使用你以前在[入门]或[数据处理入门](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/)教程中使用的发布设置，将移动服务发布到你的 Microsoft Azure 帐户。
  
      >[AZURE.NOTE]或者也可使用在 IIS Express 中本地托管的服务进行测试。有关更多信息，请参阅[数据处理入门](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/)教程。
 

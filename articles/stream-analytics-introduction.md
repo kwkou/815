@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="流分析简介 | Windows Azure" 
+	pageTitle="流分析简介 | Microsoft Azure" 
 	description="了解流分析，这是一种托管的服务，可以帮助你分析物联网 (IoT) 实时提供的流式数据。" 
 	keywords="分析即服务、托管服务、流处理、流式分析、什么是流分析"
 	services="stream-analytics" 

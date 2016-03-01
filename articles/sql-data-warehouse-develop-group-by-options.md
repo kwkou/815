@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库中的 Group By 选项 | Windows Azure"
+   pageTitle="SQL 数据仓库中的 Group By 选项 | Microsoft Azure"
    description="有关在开发解决方案时实现 Azure SQL 数据仓库中的 Group By 选项的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"

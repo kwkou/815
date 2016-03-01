@@ -33,7 +33,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 ## 如何自动执行缩放操作
 
-你可以使用 Azure Redis 缓存 PowerShell cmdlet、Azure CLI 和 Windows Azure 管理库 (MAML) 进行缩放。
+你可以使用 Azure Redis 缓存 PowerShell cmdlet、Azure CLI 和 Microsoft Azure 管理库 (MAML) 进行缩放。
 
 ### 使用 PowerShell 进行缩放
 
@@ -51,7 +51,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 ### 使用 MAML 进行缩放
 
-若要使用 [Windows Azure 管理库 (MAML)](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/) 缩放 Azure Redis 缓存实例，请调用 `IRedisOperations.CreateOrUpdate` 并传入 `RedisProperties.SKU.Capacity` 的新大小。
+若要使用 [Microsoft Azure 管理库 (MAML)](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/) 缩放 Azure Redis 缓存实例，请调用 `IRedisOperations.CreateOrUpdate` 并传入 `RedisProperties.SKU.Capacity` 的新大小。
 
     static void Main(string[] args)
     {
@@ -132,7 +132,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 ## 如何判断缩放何时完成
 
-在 Windows Azure 中国区，目前无法在管理门户中管理 Redis 缓存，因此无法在门户中查看缩放状态。但是，可以使用以下 PowerShell 命令来获取缓存的状态：
+在 Microsoft Azure 中国区，目前无法在管理门户中管理 Redis 缓存，因此无法在门户中查看缩放状态。但是，可以使用以下 PowerShell 命令来获取缓存的状态：
 
 	Get-AzureRmRedisCache -ResourceGroupName myGroup -Name myRedisCache
 

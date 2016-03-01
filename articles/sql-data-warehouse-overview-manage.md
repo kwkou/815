@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库的管理工具 | Windows Azure"
+   pageTitle="SQL 数据仓库的管理工具 | Microsoft Azure"
    description="SQL 数据仓库的管理工具简介"
    services="sql-data-warehouse"
    documentationCenter="NA"

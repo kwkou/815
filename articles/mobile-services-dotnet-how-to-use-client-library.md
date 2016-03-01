@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用移动服务托管客户端库 (Windows | Xamarin) | Windows Azure"
+	pageTitle="使用移动服务托管客户端库 (Windows | Xamarin) | Microsoft Azure"
 	description="了解如何在 Windows 和 Xamarin 应用中使用 Azure 移动服务的 .NET 客户端。"
 	services="mobile-services"
 	documentationCenter=""

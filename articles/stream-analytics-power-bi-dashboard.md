@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="流分析的上的 Power BI 仪表板 | Windows Azure" 
+	pageTitle="流分析的上的 Power BI 仪表板 | Microsoft Azure" 
 	description="使用实时流式处理 Power BI 仪表板来采集商业智能信息，并分析流分析作业中的大量数据。" 
 	keywords="business intelligence tools,power bi,streaming data,power bi dashboard"	
 	services="stream-analytics" 
