@@ -109,7 +109,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 5. 在“解决方案资源管理器”中，请确保选择“ContosoAdsWeb”作为启动项目。
 
-## <a name="configure-storage" id="onfigure-the-web-app-to-use-your-azure-sql-database-and-storage-account"></a>将应用程序配置为使用你的存储帐户
+## <a name="configure-storage"></a><a name="configure-the-web-app-to-use-your-azure-sql-database-and-storage-account"></a>将应用程序配置为使用你的存储帐户
 
 1. 打开 ContosoAdsWeb 项目中的应用程序 *Web.config* 文件。
 
@@ -291,7 +291,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 	如果未显示缩略图，你可能需要等待一分钟左右，让 Web 作业重新启动。如果经过一段时间后刷新页面时仍未显示缩略图，原因可能是 Web 作业未自动启动。在此情况下，转到 Web 应用的“[管理门户](https://manage.windowsazure.cn)”页中的“Web 作业”选项卡，然后单击“启动”。
 
-### “Web 作业”选项卡
+###<a name="view-the-webjobs-sdk-dashboard"></a> “Web 作业”选项卡
 
 1. 在[管理门户](https://manage.windowsazure.cn)中，选择你的 Web 应用。
 

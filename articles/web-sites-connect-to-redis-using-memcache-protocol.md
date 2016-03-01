@@ -25,7 +25,6 @@ Web Apps Memcache 填充码可以与任何应用程序一起使用，前提是�
 请按照以下文章中所述的步骤操作：
 
 * [设置 Azure Redis Cache Service 的实例][0]
-* [在 Azure 中部署可缩放的 WordPress 站点][1]
 
 部署可缩放的 WordPress 站点并预配 Redis 缓存实例后，你随时可以启用 Azure Web Apps 中的 Memcache 填充码。
 

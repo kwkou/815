@@ -37,7 +37,7 @@ Bootstrap 的使用方式有 2 种：
 
 - [使用脚本操作自定义 HDInsight 群集 (Windows)](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)
 
-## 使用 Azure PowerShell
+##<a name="use-azure-powershell"></a> 使用 Azure PowerShell
 
 以下 PowerShell 代码将自定义 Hive 配置：
 
@@ -84,7 +84,7 @@ Bootstrap 的使用方式有 2 种：
 - [为 HDInsight 开发脚本操作脚本][hdinsight-write-script]
 - [在 HDInsight 群集上安装并使用 R][hdinsight-install-r]
 - [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1)
-- [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)
+- [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-v1)
 
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
 [hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions
