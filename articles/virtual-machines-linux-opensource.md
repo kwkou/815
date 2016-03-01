@@ -19,7 +19,7 @@
 
 本文档尝试在一个位置列出由 Microsoft 及其合作伙伴编写的关于在 Microsoft Azure 上运行基于 Linux 的虚拟机以及其他开源计算环境和应用程序的所有主题。
 
-因为 Azure 和开源计算都在快速发展，所以几乎可以肯定地说，本文档已过时了，*尽管*我们将尽最大努力来持续添加更新的主题并删除过时的主题。如果我们有遗漏，请在评论中告诉我们，或者向我们的 [GitHub 存储库](https://github.com/Azure/azure-content/)提交一个拉取请求。
+因为 Azure 和开源计算都在快速发展，所以几乎可以肯定地说，本文档已过时了，*尽管*我们将尽最大努力来持续添加更新的主题并删除过时的主题。如果我们有遗漏，请在评论中告诉我们，或者向我们的 [GitHub 存储库](https://github.com/wacn/techcontent/)提交一个拉取请求。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
@@ -181,7 +181,6 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
     - [如何：安装和运行 MySQL](/documentation/articles/virtual-machines-linux-mysql-use-opensuse)
     - [如何：优化 Azure 上的 MySQL 的性能](/documentation/articles/virtual-machines-linux-optimize-mysql-perf)
     - [如何：MySQL 群集](/documentation/articles/virtual-machines-linux-mysql-cluster)
-    - [如何：使用应用商店创建 MySQL 数据库](/documentation/articles/store-php-create-mysql-database)
     - [如何：具有 Python 和 Visual Studio 的 Azure Web 应用上的 Django 和 MySQL](/documentation/articles/web-sites-python-ptvs-django-mysql)
     - [Microsoft Azure 中的 MySQL 高可用性体系结构](http://download.microsoft.com/download/6/1/C/61C0E37C-F252-4B33-9557-42B90BA3E472/MySQL_HADR_solution_in_Azure.pdf)
 7. MariaDB

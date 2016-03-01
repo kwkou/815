@@ -42,7 +42,7 @@
 
 * **Azure 订阅** - 如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](http://www.windowsazure.cn/pricing/1rmb-trial/)。
 
-*   **内核配额** - 你可能需要增加内核配额才能部署 VM 的群集。例如，如果你要按本文所示部署 8 个 VM，则至少需要 128 个内核。若要增加配额，可免费[建立联机客户支持请求](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。
+*   **内核配额** - 你可能需要增加内核配额才能部署 VM 的群集。例如，如果你要按本文所示部署 8 个 VM，则至少需要 128 个内核。
 
 *   **Azure CLI** - [安装](/documentation/articles/xplat-cli-install) Azure CLI 并[对其进行配置](/documentation/articles/xplat-cli-connect)，以从客户端计算机连接到你的 Azure 订阅。
 

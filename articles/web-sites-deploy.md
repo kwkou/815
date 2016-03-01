@@ -95,7 +95,6 @@ Visual Studio 支持所有这三种部署进程（FTP、Git 和 Web 部署），
 ###<a name="webmatrix"></a>如何从 WebMatrix 直接进行部署
 
 * [使用 WebMatrix 构建 Node.js 网站并将其部署到 Azure](/documentation/articles/web-sites-nodejs-use-webmatrix)。
-* [使用 WebMatrix 创建和部署 PHP-MySQL Web 应用](/documentation/articles/web-sites-php-mysql-use-webmatrix)。
 * [WebMatrix 3：集成 Git 与到 Azure 的部署](http://www.codeproject.com/Articles/577581/Webmatrixplus3-3aplusIntegratedplusGitplusandplusD)。如何使用 WebMatrix 从 Git 源代码管理存储库进行部署。
 
 ## <a name="onprem"></a>从本地源代码管理系统进行部署
@@ -219,8 +218,6 @@ Visual Studio 支持所有这三种部署进程（FTP、Git 和 Web 部署），
 在某些情况下，你可能想要能够轻松地在 Web 应用的过渡版本和生产版本之间来回切换。有关详细信息，请参阅 [Web Apps 上的过渡部署](/documentation/articles/web-sites-staged-publishing)。
 
 准备好备份和还原计划是任何部署工作流的一个重要部分。有关 Web Apps 的备份和还原功能的信息，请参阅 [Web Apps 备份](/documentation/articles/web-sites-backup)。
-
-有关如何使用 Azure 的基于角色的访问控制来管理 Web Apps 部署访问权限的信息，请参阅 [RBAC 和 Web App 发布](http://azure.microsoft.com/blog/2015/01/05/rbac-and-azure-websites-publishing)。
 
 有关其他部署主题的信息，请参阅 [Web Apps 文档](/documentation/services/web-sites/)中的“部署”部分。
 
