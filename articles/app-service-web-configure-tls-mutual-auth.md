@@ -29,7 +29,7 @@
 将 {} 中的所有内容替换为 Web 应用的信息，并创建包含以下 JSON 内容的 enableclientcert.json 文件：
 
 	{
-	   "location": "My web site Location",   
+	   "location": "My Web App Location",   
 	   "properties": 
 	   {  
 	     "clientCertEnabled": true

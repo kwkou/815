@@ -43,9 +43,9 @@
 
 ### 语法
 
-	Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
-	[-Quantity] <Int32> [-InstanceSize] <String> [-DomainUserName] <String> [[-DomainUserPassword] <String>]
-	[[-NodeNameSeries] <String>] [<CommonParameters>]
+	Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String> `
+		[-Quantity] <Int32> [-InstanceSize] <String> [-DomainUserName] <String> `
+		[[-DomainUserPassword] <String>] [[-NodeNameSeries] <String>] [<CommonParameters>]
 
 ### Parameters
 
