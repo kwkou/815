@@ -260,15 +260,15 @@
 - StorageAccountKey：Azure 存储帐户密钥的名称。
 
 - AdditionalDataLocationList：以下结构的列表：
-      
-```
-      {
-        String Name,
-        String Location,
-        String SearchPattern,
-        Bool   Recursive  
-      }
-```
+
+	
+	      {
+	        String Name,
+	        String Location,
+	        String SearchPattern,
+	        Bool   Recursive  
+	      }
+	
 
 ## 扩展 PowerShell 脚本文件
 

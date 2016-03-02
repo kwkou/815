@@ -35,13 +35,13 @@
 
 当前仅在 [Azure 命令行界面](https://github.com/Azure/azure-xplat-cli)上支持此功能。尽管你可以使用 `azure vm create` 命令的任何选项，但以下内容演示的是一个非常基本的方法。
 
-```
-    PASSWORD='AcceptablePassword -- more than 8 chars, a cap, a num, a special'
-    VMNAME=mycustomdataubuntu
-    USERNAME=username
-    VMIMAGE= An image chosen from among those listed by azure vm image list
-    azure vm create $VMNAME $VMIMAGE $USERNAME $PASSWORD --location "China North" --json -d ./custom-data.txt -e 22
-```
+	
+	    PASSWORD='AcceptablePassword -- more than 8 chars, a cap, a num, a special'
+	    VMNAME=mycustomdataubuntu
+	    USERNAME=username
+	    VMIMAGE= An image chosen from among those listed by azure vm image list
+	    azure vm create $VMNAME $VMIMAGE $USERNAME $PASSWORD --location "China North" --json -d ./custom-data.txt -e 22
+	
 
 
 ## 在虚拟机中使用自定义数据

@@ -153,23 +153,23 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 
 2. 若要估计 4 节点的 Azure 迸发部署中节点对之间的延迟时间，请键入以下命令提交使用小数据包大小和大量迭代来运行 mpipingpong 的作业：
 
-    ```
-    job submit /nodegroup:azurenodes /numnodes:4 mpiexec -c 1 -affinity mpipingpong -p 1:100000 -op -s nul
-    ```
+	
+	    job submit /nodegroup:azurenodes /numnodes:4 mpiexec -c 1 -affinity mpipingpong -p 1:100000 -op -s nul
+	    
 
     该命令将返回提交的作业的 ID。
 
     如果你在 Azure VM 上部署了 HPC Pack 群集，请指定包含单个云服务中部署的计算节点 VM 的节点组，并按如下所示修改 **mpiexec** 命令：
 
-  ```
-  job submit /nodegroup:vmcomputenodes /numnodes:4 mpiexec -c 1 -affinity -env MSMPI\_DISABLE\_SOCK 1 -env MSMPI\_PRECONNECT all -env MPICH_NETMASK 172.16.0.0/255.255.0.0 mpipingpong -p 1:100000 -op -s nul
-  ```
+	
+	  job submit /nodegroup:vmcomputenodes /numnodes:4 mpiexec -c 1 -affinity -env MSMPI\_DISABLE\_SOCK 1 -env MSMPI\_PRECONNECT all -env MPICH_NETMASK 172.16.0.0/255.255.0.0 mpipingpong -p 1:100000 -op -s nul
+	  
 
 3. 完成该作业后，如果要查看输出（在此例中为作业的任务 1 的输出），请键入以下命令：
 
-    ```
-    task view <JobID>.1
-    ```
+	
+	    task view <JobID>.1
+	    
 
     其中 &lt;*JobID*&gt; 为已提交作业的 ID。
 
@@ -179,9 +179,9 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 
 4. 若要估计 Azure 迸发节点对之间的吞吐量，请键入以下命令提交使用小数据包和大量迭代来运行 **mpipingpong** 的作业：
 
-    ```
-    job submit /nodegroup:azurenodes /numnodes:4 mpiexec -c 1 -affinity mpipingpong -p 4000000:1000 -op -s nul
-    ```
+	
+	    job submit /nodegroup:azurenodes /numnodes:4 mpiexec -c 1 -affinity mpipingpong -p 4000000:1000 -op -s nul
+	    
 
     该命令将返回提交的作业的 ID。
 

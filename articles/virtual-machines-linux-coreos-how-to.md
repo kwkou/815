@@ -67,9 +67,9 @@ CoreOS 是 Linux 的轻量级版本，旨在支持快速创建使用 Linux 容�
 
 CoreOS 的 `etcd` 守护程序需要发现 ID，以自动查询群集中的所有节点。若要检索你的发现 ID 并将其保存到 `etcdid` 文件，请键入
 
-```
-curl https://discovery.etcd.io/new | grep ^http.* > etcdid
-```
+	
+	curl https://discovery.etcd.io/new | grep ^http.* > etcdid
+	
 
 ### 创建 cloud-config 文件
 
@@ -77,22 +77,22 @@ curl https://discovery.etcd.io/new | grep ^http.* > etcdid
 
 > [AZURE.NOTE]请记得键入 `cat etcdid`，以从之前创建的 `etcdid` 文件中检索 etcd 发现 id，并使用 `etcdid` 文件生成的数字替换以下 `cloud-config.yaml` 文件中的 `<token>`。如果最后无法验证群集，这可能会是你忽略了的其中一个步骤！
 
-```
-#cloud-config
-
-coreos:
-  etcd:
-    # generate a new token for each unique cluster from https://discovery.etcd.io/new
-    discovery: https://discovery.etcd.io/<token>
-    # deployments across multiple cloud services will need to use $public_ipv4
-    addr: $private_ipv4:4001
-    peer-addr: $private_ipv4:7001
-  units:
-    - name: etcd.service
-      command: start
-    - name: fleet.service
-      command: start
-```
+	
+	#cloud-config
+	
+	coreos:
+	  etcd:
+	    # generate a new token for each unique cluster from https://discovery.etcd.io/new
+	    discovery: https://discovery.etcd.io/<token>
+	    # deployments across multiple cloud services will need to use $public_ipv4
+	    addr: $private_ipv4:4001
+	    peer-addr: $private_ipv4:7001
+	  units:
+	    - name: etcd.service
+	      command: start
+	    - name: fleet.service
+	      command: start
+	
 
 （有关 cloud-config 文件更完整的信息，请参阅 CoreOS 文档中的[使用 Cloud-Config](https://coreos.com/docs/cluster-management/setup/cloudinit-cloud-config/)。）
 
@@ -108,9 +108,9 @@ coreos:
 
 4. 使用 **azure vm create** 命令可连接到你的云服务，并可在其中创建新的 CoreOS VM。你将在 **--ssh-cert** 选项中传递 X.509 证书的位置。通过键入以下命令创建你的第一个 VM 映像，请记得使用你创建的云服务名称替换 **coreos-cluster**：
 
-```
-azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem --no-ssh-password --vm-name=node-1 --connect=coreos-cluster --location='China East' 2b171e93f07c4903bcad35bda10acf22__CoreOS-Stable-522.6.0 core
-```
+	
+	azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem --no-ssh-password --vm-name=node-1 --connect=coreos-cluster --location='China East' 2b171e93f07c4903bcad35bda10acf22__CoreOS-Stable-522.6.0 core
+	
 
 5. 通过重复步骤 4 中的命令来创建第二个节点，使用 **node-2** 替换 **--vm-name** 值，并使用 2022 替换 **--ssh** 端口值。
 

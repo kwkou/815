@@ -29,59 +29,58 @@
 
 在 Linux 客户端计算机上，使用你最喜欢的文本编辑器创建以下 **systemd** 单元文件并将其命名为 `helloworld.service`。（有关语法的详细信息，请参阅[单元文件]。）
 
-```
-[Unit]
-Description=HelloWorld
-After=docker.service
-Requires=docker.service
-
-[Service]
-
-TimeoutStartSec=0
-ExecStartPre=-/usr/bin/docker kill busybox1
-ExecStartPre=-/usr/bin/docker rm busybox1
-ExecStartPre=/usr/bin/docker pull busybox
-ExecStart=/usr/bin/docker run --name busybox1 busybox /bin/sh -c "while true; do echo Hello World; sleep 1; done"
-ExecStop=/usr/bin/docker stop busybox1
-
-```
+	
+	[Unit]
+	Description=HelloWorld
+	After=docker.service
+	Requires=docker.service
+	
+	[Service]
+	
+	TimeoutStartSec=0
+	ExecStartPre=-/usr/bin/docker kill busybox1
+	ExecStartPre=-/usr/bin/docker rm busybox1
+	ExecStartPre=/usr/bin/docker pull busybox
+	ExecStart=/usr/bin/docker run --name busybox1 busybox /bin/sh -c "while true; do echo Hello World; sleep 1; done"
+	ExecStop=/usr/bin/docker stop busybox1
+	
+	
 
 现在连接到 CoreOS 群集，并通过运行以下 **fleetctl** 命令启动单元。输出将显示单元已启动以及它所在的位置。
 
-
-```
-fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 start helloworld.service
-
-
-Unit helloworld.service launched on 62f0f66e.../100.79.86.62
-```
+	
+	fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 start helloworld.service
+	
+	
+	Unit helloworld.service launched on 62f0f66e.../100.79.86.62
+	
 
 >[AZURE.NOTE]若要运行不带 **--tunnel** 参数的远程 **fleetctl** 命令，可以选择设置 FLEETCTL\_TUNNEL 环境变量以通过隧道传送请求。例如：`export FLEETCTL_TUNNEL=coreos-cluster.chinacloudapp.cn:22`。
 
 
 你可以连接到容器，以查看服务的输出：
 
-```
-fleetctl --tunnel coreos-cloudapp.cluster.net:22 journal helloworld.service
-
-Mar 04 21:29:26 node-1 docker[57876]: Hello World
-Mar 04 21:29:27 node-1 docker[57876]: Hello World
-Mar 04 21:29:28 node-1 docker[57876]: Hello World
-Mar 04 21:29:29 node-1 docker[57876]: Hello World
-Mar 04 21:29:30 node-1 docker[57876]: Hello World
-Mar 04 21:29:31 node-1 docker[57876]: Hello World
-Mar 04 21:29:32 node-1 docker[57876]: Hello World
-Mar 04 21:29:33 node-1 docker[57876]: Hello World
-Mar 04 21:29:34 node-1 docker[57876]: Hello World
-Mar 04 21:29:35 node-1 docker[57876]: Hello World
-```
+	
+	fleetctl --tunnel coreos-cloudapp.cluster.net:22 journal helloworld.service
+	
+	Mar 04 21:29:26 node-1 docker[57876]: Hello World
+	Mar 04 21:29:27 node-1 docker[57876]: Hello World
+	Mar 04 21:29:28 node-1 docker[57876]: Hello World
+	Mar 04 21:29:29 node-1 docker[57876]: Hello World
+	Mar 04 21:29:30 node-1 docker[57876]: Hello World
+	Mar 04 21:29:31 node-1 docker[57876]: Hello World
+	Mar 04 21:29:32 node-1 docker[57876]: Hello World
+	Mar 04 21:29:33 node-1 docker[57876]: Hello World
+	Mar 04 21:29:34 node-1 docker[57876]: Hello World
+	Mar 04 21:29:35 node-1 docker[57876]: Hello World
+	
 
 若要清理，请停止并卸载单元。
 
-```
-fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 stop helloworld.service
-fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 unload helloworld.service
-```
+	
+	fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 stop helloworld.service
+	fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 unload helloworld.service
+	
 
 
 ## <a id='highavail'>示例 2：高度可用的 nginx 服务器</a>
@@ -92,76 +91,76 @@ fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 unload helloworld.service
 
 在客户端计算机上，使用你最喜欢的文本编辑器创建名为 nginx@.service 的 **systemd** 模板单元文件。你将使用这个简单的模板来启动名为 nginx@1.service、nginx@2.service 和 nginx@3.service 的三个单独实例：
 
-```
-[Unit]
-Description=High Availability Nginx
-After=docker.service
-Requires=docker.service
-
-[Service]
-TimeoutStartSec=0
-ExecStartPre=/usr/bin/docker pull nginx
-ExecStart=/usr/bin/docker run --rm --name nginx1 -p 80:80 nginx
-ExecStop=/usr/bin/docker stop nginx1
-
-[X-Fleet]
-X-Conflicts=nginx@*.service
-```
+	
+	[Unit]
+	Description=High Availability Nginx
+	After=docker.service
+	Requires=docker.service
+	
+	[Service]
+	TimeoutStartSec=0
+	ExecStartPre=/usr/bin/docker pull nginx
+	ExecStart=/usr/bin/docker run --rm --name nginx1 -p 80:80 nginx
+	ExecStop=/usr/bin/docker stop nginx1
+	
+	[X-Fleet]
+	X-Conflicts=nginx@*.service
+	
 
 >[AZURE.NOTE]`X-Conflicts` 属性告知 CoreOS 只有此容器的一个实例可以在给定的 CoreOS 主机上运行。有关详细信息，请参阅[单元文件]。
 
 现在启动 CoreOS 群集中的单元实例。你应看到这三个实例在三个不同的计算机上运行：
 
-```
-fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 start nginx@{1,2,3}.service
-
-unit nginx@3.service launched on 00c927e4.../100.79.62.16
-unit nginx@1.service launched on 62f0f66e.../100.79.86.62
-unit nginx@2.service launched on df85f2d1.../100.78.126.15
-
-```
+	
+	fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 start nginx@{1,2,3}.service
+	
+	unit nginx@3.service launched on 00c927e4.../100.79.62.16
+	unit nginx@1.service launched on 62f0f66e.../100.79.86.62
+	unit nginx@2.service launched on df85f2d1.../100.78.126.15
+	
+	
 若要访问运行其中一个单元的 Web 服务器，请向托管 CoreOS 群集的云服务发送一个简单请求。
 
 `curl http://coreos-cluster.chinacloudapp.cn`
 
 你将看到从 nginx 服务器返回的默认文本类似于：
 
-```
-	<!DOCTYPE html>
-	<html>
-	<head>
-	<title>Welcome to nginx!</title>
-	<style>
-	    body {
-	        width: 35em;
-	        margin: 0 auto;
-	        font-family: Tahoma, Verdana, Arial, sans-serif;
-	    }
-	</style>
-	</head>
-	<body>
-	<h1>Welcome to nginx!</h1>
-	<p>If you see this page, the nginx web server is successfully installed and working. Further configuration is required.</p>
 	
-	<p>For online documentation and support please refer to
-	<a href="http://nginx.org/">nginx.org</a>.<br/>
-	Commercial support is available at
-	<a href="http://nginx.com/">nginx.com</a>.</p>
+		<!DOCTYPE html>
+		<html>
+		<head>
+		<title>Welcome to nginx!</title>
+		<style>
+		    body {
+		        width: 35em;
+		        margin: 0 auto;
+		        font-family: Tahoma, Verdana, Arial, sans-serif;
+		    }
+		</style>
+		</head>
+		<body>
+		<h1>Welcome to nginx!</h1>
+		<p>If you see this page, the nginx web server is successfully installed and working. Further configuration is required.</p>
+		
+		<p>For online documentation and support please refer to
+		<a href="http://nginx.org/">nginx.org</a>.<br/>
+		Commercial support is available at
+		<a href="http://nginx.com/">nginx.com</a>.</p>
+		
+		<p><em>Thank you for using nginx.</em></p>
+		</body>
+		</html>
 	
-	<p><em>Thank you for using nginx.</em></p>
-	</body>
-	</html>
-```
 
 你可以尝试关闭群集中的一个或多个虚拟机，以验证 Web 服务是否继续运行。
 
 完成后，请停止并卸载单元。
 
-```
-fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 stop nginx@{1,2,3}.service
-fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 unload nginx@{1,2,3}.service
-
-```
+	
+	fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 stop nginx@{1,2,3}.service
+	fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 unload nginx@{1,2,3}.service
+	
+	
 
 ## 后续步骤
 
