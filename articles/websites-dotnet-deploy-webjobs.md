@@ -151,8 +151,7 @@
 你可以编辑此文件目录，Visual Studio 将提供 IntelliSense。文件架构存储在 [http://schemastore.org](http://schemastore.org/schemas/json/webjob-publish-settings.json) 中，你可以在那里查看。
 
 >[AZURE.NOTE]
->
->* 如果你配置了“定期作业”，并将周期频率设置为某个分钟数，则 Azure 计划程序不是免费的。其他频率（小时数、天数等）是免费的。
+><p>* 如果你配置了“定期作业”，并将周期频率设置为某个分钟数，则 Azure 计划程序不是免费的。其他频率（小时数、天数等）是免费的。
 
 ## <a id="webjobslist"></a>webjobs-list.json
 

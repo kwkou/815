@@ -92,8 +92,7 @@ CLI 版本 0.9.9 及更高版本支持多重身份验证。
 这将会打开默认浏览器，并提示你登录到 [Azure 门户][portal]。登录后，将下载 `.publishsettings` 文件。记下此文件的保存位置。
 
 > [AZURE.NOTE]如果你的帐户与多个 Azure Active Directory 租户关联，系统将提示你选择要为哪个 Active Directory 下载发布设置文件。
->
-> 使用下载页面进行选择或通过访问 Azure 门户进行选择之后，所选的 Active Directory 将成为门户和下载页面使用的默认值。设立默认值之后，你将在下载页面的顶部看到文本“__若要返回选择页面，请单击此处__”。使用提供的链接返回选择页面。
+> <p>使用下载页面进行选择或通过访问 Azure 门户进行选择之后，所选的 Active Directory 将成为门户和下载页面使用的默认值。设立默认值之后，你将在下载页面的顶部看到文本“__若要返回选择页面，请单击此处__”。使用提供的链接返回选择页面。
 
 
 		azure account import <path to your .publishsettings file>

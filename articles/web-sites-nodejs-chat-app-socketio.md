@@ -99,10 +99,8 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 
 	>[AZURE.NOTE]
 	“azure site set -w”命令仅适用于 Azure 命令行界面 0.7.4 或更高版本。你还可以使用 [Azure 管理门户](https://manage.windowsazure.cn)启用 WebSocket 支持。
-	>
-	>若要使用 [Azure 管理门户](https://manage.windowsazure.cn)启用 WebSocket，请选择你的 Web 应用的“配置”页，针对 Web 套接字条目选择“ON”，然后单击“保存”。
-	>	
-	>![websockets](./media/web-sites-nodejs-chat-app-socketio/websockets.png)
+	><p>若要使用 [Azure 管理门户](https://manage.windowsazure.cn)启用 WebSocket，请选择你的 Web 应用的“配置”页，针对 Web 套接字条目选择“ON”，然后单击“保存”。
+	><p>![websockets](./media/web-sites-nodejs-chat-app-socketio/websockets.png)
 	
 5. 要查看 Azure 上的 Web 应用，请使用以下命令启动 Web 浏览器并导航到托管的 Web 应用：
 
@@ -143,8 +141,7 @@ Socket.IO 应用程序可通过__适配器__实现向外扩展，以在多个应
 	这将创建到之前创建的 Redis 缓存的发布和订阅客户端。客户端然后与适配器一同使用，以配置 Socket.IO 将 Redis 缓存用于在应用程序的实例之间传递消息和事件
 
 	> [AZURE.NOTE]尽管 __socket.io redis__ 适配器能够与 Redis 直接通信，但当前版本不支持 Azure Redis 缓存所需的身份验证。因此需使用 __redis__ 模块创建初始连接，将客户端传递给 __socket.io redis__ 适配器。
-	>
-	> 尽管 Azure Redis Cache 支持使用端口 6380 进行安全连接，但此示例中使用的模块不支持自 2014 年 7 月 14 日起的安全连接。上述代码使用默认的 6379 非安全端口。
+	> <p>尽管 Azure Redis Cache 支持使用端口 6380 进行安全连接，但此示例中使用的模块不支持自 2014 年 7 月 14 日起的安全连接。上述代码使用默认的 6379 非安全端口。
 
 3. 保存已修改的 __app.js__
 

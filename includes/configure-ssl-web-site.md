@@ -165,13 +165,8 @@ Certreq.exe 是用于创建证书请求的 Windows 实用程序。它已成为�
 	在系统提示后，输入一个密码以便保护该 .pfx 文件。
 
 	> [AZURE.NOTE]如果您的 CA 使用中间证书，则必须先安装这些证书，才能在下一步中导出证书。通常这些证书作为来自您的 CA 的单独下载提供，并且针对不同的 Web 服务器类型以几种格式提供。选择作为 PEM 文件（.pem 文件扩展名）提供的版本。
-	>
-	> 以下命令演示如何创建包含中间证书的 .pfx 文件，这些中间证书包含在 **intermediate-cets.pem** 文件中：
-	>
-	>
-	`````
-	openssl pkcs12 -chain -export -out myserver.pfx -inkey myserver.key -in myserver.crt -certfile intermediate-cets.pem
-	`````
+	> <p>以下命令演示如何创建包含中间证书的 .pfx 文件，这些中间证书包含在 **intermediate-cets.pem** 文件中：
+	> <p>`openssl pkcs12 -chain -export -out myserver.pfx -inkey myserver.key -in myserver.crt -certfile intermediate-cets.pem`
 
 	运行此命令后，你应该具有适用于 Azure Web 应用的 **myserver.pfx** 文件。
 
@@ -283,13 +278,8 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 	在系统提示后，输入一个密码以便保护该 .pfx 文件。
 
 	> [AZURE.NOTE]如果您的 CA 使用中间证书，则必须先安装这些证书，才能在下一步中导出证书。通常这些证书作为来自您的 CA 的单独下载提供，并且针对不同的 Web 服务器类型以几种格式提供。选择作为 PEM 文件（.pem 文件扩展名）提供的版本。
-	>
-	> 以下命令演示如何创建包含中间证书的 .pfx 文件，这些中间证书包含在 **intermediate-cets.pem** 文件中：
-	>
-	>
-	`````
-	openssl pkcs12 -chain -export -out myserver.pfx -inkey myserver.key -in myserver.crt -certfile intermediate-cets.pem
-	`````
+	> <p>以下命令演示如何创建包含中间证书的 .pfx 文件，这些中间证书包含在 **intermediate-cets.pem** 文件中：
+	> <p>`openssl pkcs12 -chain -export -out myserver.pfx -inkey myserver.key -in myserver.crt -certfile intermediate-cets.pem`
 
 	运行此命令后，你应该具有适用于 Azure Web 应用的 **myserver.pfx** 文件。
 
@@ -438,8 +428,7 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 Azure Web 应用*不*强制实施 HTTPS。访问者可能仍使用 HTTP 访问应用，这可能危及应用的安全。如果想为应用强制实施 HTTPS，可以使用 **URL 重写**模块。Azure Web 应用随附了 URL 重写模块，此模块可让你定义传入请求在送达应用程序之前要应用的规则。**该模块可用于以 Azure 支持的任何编程语言编写的应用程序。**
 
 > [AZURE.NOTE].NET MVC 应用程序应使用 [RequireHttps](http://msdn.microsoft.com/zh-cn/library/system.web.mvc.requirehttpsattribute.aspx) 筛选器而不是 URL 重写。有关使用 RequireHttps 的详细信息，请参阅[将安全的 ASP.NET MVC 5 应用部署到 Web 应用](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
->
-> 有关使用其他编程语言和框架以编程方式重定向请求的信息，请参阅这些技术的文档。
+> <p>有关使用其他编程语言和框架以编程方式重定向请求的信息，请参阅这些技术的文档。
 
 URL 重写规则在存储于应用程序根目录中的 **web.config** 文件内定义。以下示例包含可强制所有传入流量使用 HTTPS 的基本 URL 重写规则。
 

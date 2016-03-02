@@ -20,8 +20,7 @@
 本主题说明并指导你完成 SQL Server Reporting Services 本机模式报表服务器在 Azure 虚拟机中的部署和配置。本文档中的步骤使用一系列手动步骤来创建虚拟机以及用于在 VM 上配置 Reporting Services 的 Windows PowerShell 脚本。配置脚本包括为 HTTP 或 HTTPs 打开防火墙端口。
 
 >[AZURE.NOTE]如果在报表服务器上不需要 **HTTPS**，请**跳过步骤 2**。
->
->在步骤 1 中创建 VM 后，转到使用脚本部分配置报表服务器和 HTTP。在你运行该脚本后，报表服务器便可以使用。
+><p>在步骤 1 中创建 VM 后，转到使用脚本部分配置报表服务器和 HTTP。在你运行该脚本后，报表服务器便可以使用。
 
 ## 前提条件和假设
 

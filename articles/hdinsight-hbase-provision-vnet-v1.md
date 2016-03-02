@@ -298,8 +298,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 		这将返回 DNS 后缀。例如 **yourclustername.b4.internal.chinacloudapp.cn**。
 
 	> [AZURE.NOTE]你还可以使用远程桌面来连接到 HBase 群集（你将连接到头节点），并从命令提示符运行 **ipconfig** 来获取 DNS 后缀。有关启用远程桌面协议 (RDP) 并使用 RDP 连接到群集的说明，请参阅[使用 Azure 门户在 HDInsight 中管理 Hadoop 群集][hdinsight-admin-portal]。
-	>
-	> ![hdinsight.hbase.dns.surffix][img-dns-surffix]
+	> <p>![hdinsight.hbase.dns.surffix][img-dns-surffix]
 
 
 <!--
