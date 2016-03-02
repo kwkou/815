@@ -41,8 +41,7 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 ##<a name="recommendations"></a>使用 Windows PowerShell 生成推荐
 
 > [AZURE.NOTE] 尽管在本部分中使用的作业使用 Windows PowerShell 执行，但是，随 Mahout 一起提供的很多类当前不使用 Windows PowerShell，并且它们必须通过使用 Hadoop 命令行来运行。有关不使用 Windows PowerShell 的类的列表，请参阅[故障排除](#troubleshooting)部分。
->
-> 有关使用 Hadoop 命令行运行 Mahout 作业的示例，请参阅[使用 Hadoop 命令行对数据分类](#classify)。
+> <p>有关使用 Hadoop 命令行运行 Mahout 作业的示例，请参阅[使用 Hadoop 命令行对数据分类](#classify)。
 
 由 Mahout 提供的功能之一是推荐引擎。此引擎接受 `userID`、`itemId` 和 `prefValue` 格式（项的用户首选项）的数据。然后，Mahout 将执行共现分析，以确定：_偏好某个项的用户也偏好其他类似项_。Mahout 然后确定拥有类似项首选项的用户，这些首选项可用于做出推荐。
 

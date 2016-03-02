@@ -1,8 +1,7 @@
 在域名的记录已传播后，必须将其与您的 Web 应用关联。通过以下步骤使用 Web 浏览器启用域名。
 
 > [WACOM.NOTE] 在之前的步骤中创建的 CNAME 记录通过 DNS 系统向外传播可能需要一段时间。在 CNAME 传播之前，无法将域名添加到您的 Azure Web 应用。如果您使用的是 A 记录，则在之前的步骤中创建的 **awverify** CNAME 传播之前，您无法将 A 记录域名添加到您的 Azure Web 应用。
-> 
-> 可使用 <a href="http://www.digwebinterface.com/">http://www.digwebinterface.com/</a> 之类的服务确认该 CNAME 是否可用。
+> <p>可使用 <a href="http://www.digwebinterface.com/">http://www.digwebinterface.com/</a> 之类的服务确认该 CNAME 是否可用。
 
 1. 在您的浏览器中，打开 [Azure 管理门户](https://manage.windowsazure.cn)。
 

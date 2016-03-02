@@ -20,9 +20,8 @@
 脚本操作可用于安装运行在 Hadoop 群集上的其他软件，或更改安装在群集上的应用程序的配置。脚本操作是在部署 HDInsight 群集时运行在群集节点上的脚本，这些脚本在群集中的节点完成 HDInsight 配置后执行。脚本操作根据系统管理员帐户权限执行，提供对群集节点的完全访问权限。每个群集可能都提供有要按指定顺序执行的脚本操作的列表。
 
 > [AZURE.NOTE]如果你遇到以下错误消息：
-> 
->     System.Management.Automation.CommandNotFoundException; ExceptionMessage : The term 'Save-HDIFile' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
-> 这是因为你没有包括帮助器方法。请参阅[自定义脚本的帮助器方法](/documentation/articles/hdinsight-hadoop-script-actions#helper-methods-for-custom-scripts)。
+> <p>`System.Management.Automation.CommandNotFoundException; ExceptionMessage : The term 'Save-HDIFile' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.`
+> <p>这是因为你没有包括帮助器方法。请参阅[自定义脚本的帮助器方法](/documentation/articles/hdinsight-hadoop-script-actions#helper-methods-for-custom-scripts)。
 
 ## 示例脚本
 

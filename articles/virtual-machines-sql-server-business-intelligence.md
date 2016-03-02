@@ -312,8 +312,7 @@ SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式�
 或运行 C:\\SQLServer\_12.0\_full\\setup.exe 或 C:\\SQLServer\_11.0\_full\\setup.exe
 
 >[AZURE.NOTE]首次运行 SQL Server 安装程序时可能会下载更多安装文件并需要重新启动虚拟机和重新启动 SQL Server 安装程序。
->
->如果需要反复自定义从 Microsoft Azure 虚拟机中选择的映像，请考虑创建您自己的 SQL Server 映像。Analysis Services SysPrep 功能在 SQL Server 2012 SP1 CU2 中已启用。有关详细信息，请参阅[使用 SysPrep 安装 SQL Server 的注意事项](https://msdn.microsoft.com/library/ee210754.aspx)。
+><p>如果需要反复自定义从 Microsoft Azure 虚拟机中选择的映像，请考虑创建您自己的 SQL Server 映像。Analysis Services SysPrep 功能在 SQL Server 2012 SP1 CU2 中已启用。有关详细信息，请参阅[使用 SysPrep 安装 SQL Server 的注意事项](https://msdn.microsoft.com/library/ee210754.aspx)。
 
 ### 若要安装 Analysis Services 表格模式
 

@@ -21,8 +21,7 @@
 	- 对于“区域/地缘组/虚拟网络”，请使用适合你所在位置的区域。您也可以选择指定一个虚拟网络。
 
 	>[AZURE.NOTE] 如果你希望虚拟机使用虚拟网络，则**必须**在创建虚拟机时指定虚拟网络。创建虚拟机后，不能将它加入虚拟网络。有关详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview)。
-	>
-	> 有关配置终结点的详细信息，请参阅[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-set-up-endpoints)。
+	> <p>有关配置终结点的详细信息，请参阅[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-set-up-endpoints)。
 
 7. 第四个配置屏幕可让你安装 VM 代理，以及配置某些可用的扩展。
 

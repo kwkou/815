@@ -103,8 +103,7 @@
 3. 单击“下一步”两次。
 4. 指定你具有写入权限的路径，然后单击“下一步”。
 	>[AZURE.NOTE]默认的安装文件夹为 C:\\Program Files\\squirrel-sql-3.6 文件夹。若要写入此路径，必须为安装程序授予管理员权限。你可以管理员身份打开命令提示符，导航到 Java 的 bin 文件夹，然后运行
-	>
-	>     java.exe -jar [the path of the SQuirrel jar file] 
+	><p>`java.exe -jar [the path of the SQuirrel jar file]`
 5. 单击“确定”确认创建目标目录。
 6. 默认设置是安装基本和标准程序包。单击**“下一步”**。
 7. 单击“下一步”两次，然后单击“完成”。
