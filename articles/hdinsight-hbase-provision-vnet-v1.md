@@ -125,8 +125,8 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 	<tr><td>头节点大小</td><td><p>为头节点选择 VM 大小。</p></td></tr>
 	<tr><td>数据节点大小</td><td><p>为数据节点选择 VM 大小。</p></td></tr>
 	<tr><td>Zookeeper 大小</td><td><p>为 Zookeeper 节点选择 VM 大小。</p></td></tr>
-</table>
->[AZURE.NOTE]根据所选的 VM，你的成本可能会有所不同。HDInsight 对群集节点使用所有标准层 VM。有关 VM 大小如何影响价格的信息，请参阅 <a href="/home/features/hdinsight/#price" target="_blank">HDInsight 价格</a>。
+	</table>
+	>[AZURE.NOTE]根据所选的 VM，你的成本可能会有所不同。HDInsight 对群集节点使用所有标准层 VM。有关 VM 大小如何影响价格的信息，请参阅 <a href="/home/features/hdinsight/#price" target="_blank">HDInsight 价格</a>。
 
 	单击右侧按钮。
 
@@ -142,7 +142,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 		<td>指定 HDInsight 群集用户密码。</td></tr>
 	<tr><td>为群集启用远程桌面</td>
 		<td>在设置后，选中此复选框，以为可远程连接到群集节点的远程桌面用户指定用户名、密码和到期日期。稍后，你还可以在设置了群集后启用远程桌面。有关说明，请参阅<a href="hdinsight-administer-use-management-portal-v1/#rdp" target="_blank">使用 RDP 连接到 HDInsight 群集</a>。</td></tr>
-</table>
+	</table>
 
 6. 在“存储帐户”页上提供以下值：
 
@@ -171,7 +171,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
     </td></tr>
 	<tr><td>其他存储帐户</td>
 		<td>如果需要，请为群集指定其他存储帐户。HDInsight 支持多个存储帐户。一个群集可以使用的其他存储帐户数没有限制。但是，如果你通过使用 Azure 门户创建群集，则由于 UI 限制，你最多只能创建七个存储帐户。指定的每个其他存储帐户将在向导中添加一个额外的“存储帐户”页，以便你在此指定帐户信息。<strong></strong>例如，在以上屏幕截图中，未选择其他存储帐户，因此，不会将额外的页添加到向导中。</td></tr>
-</table>单击右箭头。
+	</table>单击右箭头。
 
 7. 在“脚本操作”页上，选中右下角的复选标记。请勿单击“添加脚本操作”按钮，因为本教程不需要自定义群集安装程序。
 
