@@ -62,12 +62,12 @@ Java 在此处调用 Python，并运行包含实际 Blot 逻辑的脚本。Java 
 
 在本示例中，实际 Python 文件存储在 `/multilang/resources` 目录中。`/multilang` 目录在 __pom.xml__ 中引用：
 
-<resources>
-    <resource>
-        <!-- Where the Python bits are kept -->
-        <directory>${basedir}/multilang</directory>
-    </resource>
-</resources>
+	<resources>
+	    <resource>
+	        <!-- Where the Python bits are kept -->
+	        <directory>${basedir}/multilang</directory>
+	    </resource>
+	</resources>
 
 这会将 `/multilang` 文件夹中的所有文件包含在基于此项目构建的 jar 中。
 
