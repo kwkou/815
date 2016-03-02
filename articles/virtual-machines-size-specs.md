@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/05/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="03/02/2016"/>
 
 # 虚拟机的大小
 
@@ -23,18 +23,24 @@
 
 若要查看 Azure VM 的一般限制，请参阅 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)。
 
-标准大小由几个系列组成：A 和 D。其中某些大小的注意事项包括：
+标准大小由几个系列组成：A，D 和 DS。其中某些大小的注意事项包括：
 
 *   D 系列的 VM 旨在运行需要更高计算能力和临时磁盘性能的应用程序。D 系列 VM 为临时磁盘提供更快的处理器、更高的内存内核比和固态驱动器 (SSD)。
 
+*   Dv2 系列，原 D 系列的后续，拥有更加强大的 CPU。Dv2 系列的 CPU 大概比 D 系列的快 35%。它是基于最新一代 2.4 GHz Intel Xeon® E5-2673 v3 (Haswell) 处理器， 且使用了 Intel Turbo Boost Technology 2.0，最高可达 3.2 GHz。Dv2 系列拥有和 D 系列一样的内存以及硬盘设置。
+
 *   DS 系列的 VM 可使用高级存储，从而为 I/O 密集型工作负荷提供高性能、低延迟的存储。这些 VM 使用固态硬盘 (SSD) 托管虚拟机的磁盘，而且还提供本地 SSD 磁盘高速缓存。高级存储只在某些区域可用。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)。
+
+*   A 系列 VMs 可能会被发布到各种硬件类型和处理器上。根据硬件的不同，大小会被压制，以提供持续的处理器性能给运行中的示例。想知道物理硬件的情况，可以在虚拟机中查询。
 
 虚拟机的大小会影响定价。大小还会影响虚拟机的处理、内存和存储容量。存储成本是基于存储帐户中的已使用页数进行单独计算。有关详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/#price)和 [Azure 存储定价](/home/features/storage/#price)。有关 VM 的存储的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-disks-vhds)。
 
 以下注意事项可能会帮助你决定大小：
 
 
-*   Azure 数据中心内的一些物理主机可能不支持更大的虚拟机大小，例如 A5 - A11。因此，在以下情况下，可能会显示错误消息**<machine name>**“未能配置虚拟机”或**<machine name>**“未能创建虚拟机”：将现有虚拟机的大小调整为新的大小时；在 2013 年 4 月 16 日之前创建的虚拟网络中创建新的虚拟机时；或者向现有的云服务中添加新的虚拟机时。有关每个部署方案的解决方法，请参阅支持论坛上的[错误：“未能配置虚拟机”](https://social.msdn.microsoft.com/Forums/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows)。  
+*	Dv2 系列，D 系列和 DS 系列非常适合需要更快 CPU，更好本地硬盘性能，或者更高内存需求的应用程序。他们提供许多企业级应用程序的强大组合。
+
+*   Azure 数据中心内的一些物理主机可能不支持更大的虚拟机大小，例如 A5 - A7。因此，在以下情况下，可能会显示错误消息**<machine name>**“未能配置虚拟机”或**<machine name>**“未能创建虚拟机”：将现有虚拟机的大小调整为新的大小时；在 2013 年 4 月 16 日之前创建的虚拟网络中创建新的虚拟机时；或者向现有的云服务中添加新的虚拟机时。有关每个部署方案的解决方法，请参阅支持论坛上的[错误：“未能配置虚拟机”](https://social.msdn.microsoft.com/Forums/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows)。  
 
 
 ## 性能注意事项
@@ -51,6 +57,7 @@
 |[Standard\_A1-4（小型 - 大型）](#standard-tier-a-series) |100 |
 |[Standard\_A5-7](#standard-tier-a-series) |100 |
 |[D1-14](#standard-tier-d-series) |160 |
+|[D1-14v2](#standard-tier-dv2-series)	|210 - 250 *|
 |[DS1-14](#standard-tier-ds-series) |160 |
 
 ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。提升量可能因 VM 大小、工作负荷和同一主机上运行的其他工作负荷而有所不同。
@@ -100,6 +107,20 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 |Standard\_D12 |4|28 GB|4|临时磁盘 (SSD) = 200 GB |8|8x500|
 |Standard\_D13 |8|56 GB|8|临时磁盘 (SSD) = 400 GB |16|16x500|
 |Standard\_D14 |16|112 GB|8|临时磁盘 (SSD) = 800 GB |32|32x500|
+
+##<a name="standard-tier-dv2-series"></a> 标准层：Dv2 系列
+
+|大小 |CPU 核心数|内存|NIC 数（最大值）|最大磁盘大小|最大数据磁盘（每个 1023 GB）|最大IOPS（每个磁盘 500 次）|
+|---|---|---|---|---|---|---|
+|Standard_D1_v2 |1|3.5 GB|1|临时磁盘 (SSD) =50 GB |2|2x500|
+|Standard_D2_v2 |2|7 GB|2|临时磁盘 (SSD) =100 GB |4|4x500|
+|Standard_D3_v2 |4|14 GB|4|临时磁盘 (SSD) =200 GB |8|8x500|
+|Standard_D4_v2 |8|28 GB|8|临时磁盘 (SSD) =400 GB |16|16x500|
+|Standard_D5_v2 |16|56 GB|8|临时磁盘 (SSD) =800 GB |32|32x500|
+|Standard_D11_v2 |2|14 GB|2|临时磁盘 (SSD) =100 GB |4|4x500|
+|Standard_D12_v2 |4|28 GB|4|临时磁盘 (SSD) =200 GB |8|8x500|
+|Standard_D13_v2 |8|56 GB|8|临时磁盘 (SSD) =400 GB |16|16x500|
+|Standard_D14_v2 |16|112 GB|8|临时磁盘 (SSD) =800 GB |32|32x500|
 
 ##<a name="standard-tier-ds-series"></a> 标准层：DS 系列*
 
