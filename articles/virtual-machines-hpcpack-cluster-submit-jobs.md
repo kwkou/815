@@ -54,14 +54,14 @@
 
 2. 若要将目录切换到配置脚本所在的位置，请键入以下命令：
 
-    ```
-    cd $env:CCP_HOME\bin
-    ```
+	
+	    cd $env:CCP_HOME\bin
+	    
 3. 若要配置 REST 接口并启动 HPC Web 服务，请键入以下命令：
 
-    ```
-    .\Set-HPCWebComponents.ps1 –Service REST –enable
-    ```
+	
+	    .\Set-HPCWebComponents.ps1 –Service REST –enable
+	    
 
 4. 在系统提示你选择证书时，请选择与头节点的云服务的公共 DNS 名称对应的证书 (CN=&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn)。
 
@@ -69,15 +69,15 @@
 
 5. 若要配置用于作业提交的 Web 门户，请键入以下命令：
 
-    ```
-    .\Set-HPCWebComponents.ps1 –Service Portal -enable
-    ```
+	
+	    .\Set-HPCWebComponents.ps1 –Service Portal -enable
+	    
 6. 脚本完成后，请通过键入以下命令停止并重新启动 HPC 作业计划程序服务：
 
-    ```
-    net stop hpcscheduler
-net start hpcscheduler
-    ```
+	
+	    net stop hpcscheduler
+	net start hpcscheduler
+	    
 
 ## 步骤 2：在本地计算机上安装 HPC Pack 客户端实用工具
 
@@ -127,9 +127,9 @@ net start hpcscheduler
 
 2. 键入示例命令。例如，若要列出群集上的所有作业，请键入以下命令：
 
-    ```
-    job list /scheduler:https://<HeadNodeDnsName>.chinacloudapp.cn /all
-    ```
+	
+	    job list /scheduler:https://<HeadNodeDnsName>.chinacloudapp.cn /all
+	    
     >[AZURE.TIP]请在计划程序 URL 中使用头节点的完整 DNS 名称，而不是 IP 地址。如果你指定 IP 地址，将会看到类似于下面的错误：“服务器证书必须具有有效的信任链，或放置在受信任的根存储区中”。
 
 3. 出现提示时，请键入 HPC 群集管理员或你配置的另一群集用户的用户名（格式为 &lt;DomainName&gt;&lt;UserName&gt;）和密码。你可以选择在本地存储凭据以执行更多作业操作。
@@ -156,9 +156,10 @@ net start hpcscheduler
 **在头节点上使用基于 Web 的作业门户**
 
 1. 在客户端计算机上启动 Web 浏览器并键入以下地址：
-    ```
-    https://HeadNodeDnsName.chinacloudapp.cn/HpcPortal
-    ```
+
+	
+	    https://HeadNodeDnsName.chinacloudapp.cn/HpcPortal
+	    
 2. 在出现的安全性对话框中，键入 HPC 群集管理员的域凭据。（你还可以添加具有不同角色的其他群集用户。有关详细信息，请参阅[管理群集用户](https://technet.microsoft.com/zh-cn/library/ff919335.aspx)。）
 
     门户将会打开并显示作业列表视图。

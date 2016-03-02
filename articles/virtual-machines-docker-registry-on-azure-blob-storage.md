@@ -61,23 +61,23 @@
 
 需要在 bash 终端中运行以下 Docker 命令（将 `<storage-account>` 和 `<storage-key>` 和替换为你的凭据）：
 
-```sh
-$ docker run -d -p 5000:5000 \
-     -e REGISTRY_STORAGE=azure \
-     -e REGISTRY_STORAGE_AZURE_ACCOUNTNAME="<storage-account>" \
-     -e REGISTRY_STORAGE_AZURE_ACCOUNTKEY="<storage-key>" \
-     -e REGISTRY_STORAGE_AZURE_CONTAINER="registry" \
-     --name=registry \
-     registry:2
-```
+
+	$ docker run -d -p 5000:5000 \
+	     -e REGISTRY_STORAGE=azure \
+	     -e REGISTRY_STORAGE_AZURE_ACCOUNTNAME="<storage-account>" \
+	     -e REGISTRY_STORAGE_AZURE_ACCOUNTKEY="<storage-key>" \
+	     -e REGISTRY_STORAGE_AZURE_CONTAINER="registry" \
+	     --name=registry \
+	     registry:2
+	
 
 命令退出后，你可以通过在主机上运行 `docker ps` 命令，查看托管私有 Docker 注册表实例的容器：
 
-```sh
-$ docker ps
-CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                    NAMES
-3698ddfebc6f        registry:2          "registry cmd/regist   2 seconds ago       Up 1 seconds        0.0.0.0:5000->5000/tcp   registry
-```
+
+	$ docker ps
+	CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                    NAMES
+	3698ddfebc6f        registry:2          "registry cmd/regist   2 seconds ago       Up 1 seconds        0.0.0.0:5000->5000/tcp   registry
+	
 
 > [AZURE.IMPORTANT]本文档未涵盖配置 Docker 注册表安全性的操作，如果打开连接到虚拟机终结点上注册表端口的端口，则默认情况下，任何未经身份验证的用户都可以访问注册表；如果使用上述部署命令，则可以访问负载平衡器。
 > <p>请参阅[配置 Docker 注册表][registry-config]文档，以了解如何保护注册表实例和映像。

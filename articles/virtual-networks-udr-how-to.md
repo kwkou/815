@@ -21,11 +21,11 @@
 ### 如何创建路由表
 若要创建名为 *FrontEndSubnetRouteTable* 的路由表，请运行以下 PowerShell 命令：
 
-```powershell
-New-AzureRouteTable -Name FrontEndSubnetRouteTable `
-	-Location uscentral `
-	-Label "Route table for frontend subnet"
-```
+
+	New-AzureRouteTable -Name FrontEndSubnetRouteTable `
+		-Location uscentral `
+		-Label "Route table for frontend subnet"
+
 
 以上命令的输出应如下所示：
 
@@ -39,12 +39,12 @@ New-AzureRouteTable -Name FrontEndSubnetRouteTable `
 ### 如何将路由添加到路由表
 若要在上面创建的路由表中添加一个将 *10.1.1.10* 设置为 *10.2.0.0/16* 子网的下一跃点的路由，请运行以下 PowerShell 命令：
 
-```powershell
-Get-AzureRouteTable FrontEndSubnetRouteTable `
-	|Set-AzureRoute -RouteName FirewallRoute -AddressPrefix 10.2.0.0/16 `
-	-NextHopType VirtualAppliance `
-	-NextHopIpAddress 10.1.1.10
-```
+
+	Get-AzureRouteTable FrontEndSubnetRouteTable `
+		|Set-AzureRoute -RouteName FirewallRoute -AddressPrefix 10.2.0.0/16 `
+		-NextHopType VirtualAppliance `
+		-NextHopIpAddress 10.1.1.10
+
 
 以上命令的输出应如下所示：
 
@@ -59,21 +59,21 @@ Get-AzureRouteTable FrontEndSubnetRouteTable `
 ### 如何将路由关联到子网
 路由表必须与一个或多个子网相关联才能使用。若要将 *FrontEndSubnetRouteTable* 路由表关联到虚拟网络 *ProductionVnet* 中名为 *FrontEndSubnet* 的子网，请运行以下 PowerShell 命令：
 
-```powershell
-Set-AzureSubnetRouteTable -VirtualNetworkName ProductionVnet `
-	-SubnetName FrontEndSubnet `
-	-RouteTableName FrontEndSubnetRouteTable
-```
+
+	Set-AzureSubnetRouteTable -VirtualNetworkName ProductionVnet `
+		-SubnetName FrontEndSubnet `
+		-RouteTableName FrontEndSubnetRouteTable
+
 
 ### 如何查看在 VM 中应用的路由
 你可以通过查询 Azure 来了解针对特定 VM 或角色实例应用的实际路由。所示路由包括 Azure 提供的默认路由，以及 VPN 网关所公布的路由。所示路由数目限制为 800。
 
 若要查看与名为 *FWAppliance1* 的 VM 上的主 NIC 关联的路由，请运行以下 PowerShell 命令：
 
-```powershell
-Get-AzureVM -Name FWAppliance1 -ServiceName ProductionVMs `
-	| Get-AzureEffectiveRouteTable
-```
+
+	Get-AzureVM -Name FWAppliance1 -ServiceName ProductionVMs `
+		| Get-AzureEffectiveRouteTable
+
 
 以上命令的输出应如下所示：
 
@@ -90,17 +90,17 @@ Get-AzureVM -Name FWAppliance1 -ServiceName ProductionVMs `
 
 若要查看与名为 *FWAppliance1* 的 VM 上名为 *backendnic* 的辅助 NIC 关联的路由，请运行以下 PowerShell 命令：
 
-```powershell
-Get-AzureVM -Name FWAppliance1 -ServiceName ProductionVMs `
-	| Get-AzureEffectiveRouteTable -NetworkInterfaceName backendnic
-```
+
+	Get-AzureVM -Name FWAppliance1 -ServiceName ProductionVMs `
+		| Get-AzureEffectiveRouteTable -NetworkInterfaceName backendnic
+
 
 若要查看与名为 *myRole* 的角色实例（属于名为 *ProductionVMs* 的云服务的一部分）上的主 NIC 关联的路由，请运行以下 PowerShell 命令：
 
-```powershell
-Get-AzureEffectiveRouteTable -ServiceName ProductionVMs `
-	-RoleInstanceName myRole
-```
+
+	Get-AzureEffectiveRouteTable -ServiceName ProductionVMs `
+		-RoleInstanceName myRole
+
 
 ## 如何管理 IP 转发
 如前所述，你需要在任何 VM 或将要充当虚拟设备的角色实例上启用 IP 转发。
@@ -108,39 +108,39 @@ Get-AzureEffectiveRouteTable -ServiceName ProductionVMs `
 ### 如何启用 IP 转发
 若要在名为 *FWAppliance1* 的 VM 中启用 IP 转发，请运行以下 PowerShell 命令：
 
-```powershell
-Get-AzureVM -Name FWAppliance1 -ServiceName ProductionVMs `
-	| Set-AzureIPForwarding -Enable
-```
+
+	Get-AzureVM -Name FWAppliance1 -ServiceName ProductionVMs `
+		| Set-AzureIPForwarding -Enable
+
 
 若要在名为 *FWAppliance* 的角色实例（位于名为 *DMZService* 的云服务中）中启用 IP 转发，请运行以下 PowerShell 命令：
 
-```powershell
-Set-AzureIPForwarding -ServiceName DMZService `
-	-RoleName FWAppliance -Enable
-```
+
+	Set-AzureIPForwarding -ServiceName DMZService `
+		-RoleName FWAppliance -Enable
+
 
 ### 如何禁用 IP 转发
 若要在名为 *FWAppliance1* 的 VM 中禁用 IP 转发，请运行以下 PowerShell 命令：
 
-```powershell
-Get-AzureVM -Name FWAppliance1 -ServiceName ProductionVMs `
-	| Set-AzureIPForwarding -Disable
-```
+
+	Get-AzureVM -Name FWAppliance1 -ServiceName ProductionVMs `
+		| Set-AzureIPForwarding -Disable
+
 
 若要在名为 *FWAppliance* 的角色实例（位于名为 *DMZService* 的云服务中）中禁用 IP 转发，请运行以下 PowerShell 命令：
 
-```powershell
-Set-AzureIPForwarding -ServiceName DMZService `
-	-RoleName FWAppliance -Disable
-```
+
+	Set-AzureIPForwarding -ServiceName DMZService `
+		-RoleName FWAppliance -Disable
+
 
 ### 如何查看 IP 转发的状态
 若要在名为 *FWAppliance1* 的 VM 中查看 IP 转发的状态，请运行以下 PowerShell 命令：
 
-```powershell
-Get-AzureVM -Name FWAppliance1 -ServiceName ProductionVMs `
-	| Get-AzureIPForwarding
-``` 
+
+	Get-AzureVM -Name FWAppliance1 -ServiceName ProductionVMs `
+		| Get-AzureIPForwarding
+
 
 <!---HONumber=70-->

@@ -66,9 +66,9 @@
 
 选择其中一个映像名称（例如 `b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB`），然后使用以下命令创建使用该映像的新 VM。
 
-```
-azure vm docker create -e 22 -l "China North" <vm-cloudservice name> "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB" <username> <password>
-```
+	
+	azure vm docker create -e 22 -l "China North" <vm-cloudservice name> "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB" <username> <password>
+	
 
 其中：
 
@@ -140,10 +140,10 @@ azure vm docker create -e 22 -l "China North" <vm-cloudservice name> "b39f27a8b8
 
 默认情况下，证书放置在 `~/.docker` 中，而 Docker 将配置为在端口 **2376** 上运行。如果你要使用不同的端口或目录，则可以使用下列其中一个 `azure vm docker create` 命令行选项将 Docker 容器主机 VM 配置为使用不同端口或不同证书来连接客户端：
 
-```
--dp, --docker-port [port]              Port to use for docker [2376]
--dc, --docker-cert-dir [dir]           Directory containing docker certs [.docker/]
-```
+	
+	-dp, --docker-port [port]              Port to use for docker [2376]
+	-dc, --docker-cert-dir [dir]           Directory containing docker certs [.docker/]
+	
 
 主机上的 Docker 守护程序配置为使用由 `azure vm docker create` 命令生成的证书侦听和验证指定端口上的客户端连接。客户端计算机必须使用这些证书来获取对 Docker 主机的访问权限。
 

@@ -589,19 +589,19 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 
 WebJobs SDK 还包括 [Timeout](http://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/MiscOperations/Functions.cs) 属性，可用于在函数未在指定的时间内完成时取消函数。而且，如果你想要在指定的时间段内发生太多错误时引发警报，可以使用 `ErrorTrigger` 属性。下面是 [ErrorTrigger 示例](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Error-Monitoring)。
 
-```
-public static void ErrorMonitor(
-[ErrorTrigger("00:01:00", 1)] TraceFilter filter, TextWriter log,
-[SendGrid(
-    To = "admin@emailaddress.com",
-    Subject = "Error!")]
- SendGridMessage message)
-{
-    // log last 5 detailed errors to the Dashboard
-   log.WriteLine(filter.GetDetailedMessage(5));
-   message.Text = filter.GetDetailedMessage(1);
-}
-```
+	
+	public static void ErrorMonitor(
+	[ErrorTrigger("00:01:00", 1)] TraceFilter filter, TextWriter log,
+	[SendGrid(
+	    To = "admin@emailaddress.com",
+	    Subject = "Error!")]
+	 SendGridMessage message)
+	{
+	    // log last 5 detailed errors to the Dashboard
+	   log.WriteLine(filter.GetDetailedMessage(5));
+	   message.Text = filter.GetDetailedMessage(1);
+	}
+	
 
 你还可以使用配置开关（可以是应用设置或环境变量名称）动态地禁用和启用函数以控制是否可以触发它们。有关示例代码，请参阅 [WebJobs SDK 示例存储库](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/MiscOperations/Functions.cs)中的 `Disable` 属性。
 

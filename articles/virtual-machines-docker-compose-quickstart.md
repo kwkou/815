@@ -40,9 +40,9 @@ $ chmod +x /usr/local/bin/docker-compose
 
 若要测试 Compose 安装，请运行以下命令。
 
-```
-$ docker-compose --version
-```
+	
+	$ docker-compose --version
+	
 
 你将看到与 `docker-compose 1.4.1` 类似的输出。
 
@@ -53,57 +53,57 @@ $ docker-compose --version
 
 在 VM 上创建工作目录，并使用你最喜欢的文本编辑器创建 `docker-compose.yml`。若要试用一个简单示例，请将以下文本复制到该文件中。此配置将使用 [DockerHub 注册表](https://registry.hub.docker.com/_/wordpress/)中的映像安装 WordPress（开源博客和内容管理系统）和链接的后端 MariaDB 数据库。
 
- ```
- wordpress:
-  image: wordpress
-  links:
-    - db:mysql
-  ports:
-    - 8080:80
-
-db:
-  image: mariadb
-  environment:
-    MYSQL_ROOT_PASSWORD: <your password>
-
-```
+	
+	 wordpress:
+	  image: wordpress
+	  links:
+	    - db:mysql
+	  ports:
+	    - 8080:80
+	
+	db:
+	  image: mariadb
+	  environment:
+	    MYSQL_ROOT_PASSWORD: <your password>
+	
+	
 
 ## 步骤 4: 使用“撰写”启动容器
 
 在 VM 上的工作目录中，直接运行以下命令。
 
-```
-$ docker-compose up -d
-
-```
+	
+	$ docker-compose up -d
+	
+	
 
 这将启动“docker-compose.yml”中指定的 Docker 容器。你将看到类似于以下内容的输出：
 
-```
-Creating wordpress\_db\_1...
-Creating wordpress\_wordpress\_1...
-```
+	
+	Creating wordpress\_db\_1...
+	Creating wordpress\_wordpress\_1...
+	
 
 >[AZURE.NOTE] 启动时请务必使用 **-d** 选项，以使容器在后台继续运行。
 
 若要验证容器是否已启动，请键入 `docker-compose ps`。你应看到类似如下的内容：
 
-```
-Name             Command             State              Ports
--------------------------------------------------------------------------
-wordpress_db_1     /docker-           Up                 3306/tcp
-             entrypoint.sh
-             mysqld
-wordpress_wordpr   /entrypoint.sh     Up                 0.0.0.0:8080->80
-ess_1              apache2-for ...                       /tcp
-```
+	
+	Name             Command             State              Ports
+	-------------------------------------------------------------------------
+	wordpress_db_1     /docker-           Up                 3306/tcp
+	             entrypoint.sh
+	             mysqld
+	wordpress_wordpr   /entrypoint.sh     Up                 0.0.0.0:8080->80
+	ess_1              apache2-for ...                       /tcp
+	
 
 现在可以通过浏览到 `http://localhost:8080` 在 VM 上直接连接到 WordPress。如果要通过 Internet 连接到 VM，请先在 VM 上配置 HTTP 终结点，以便将公共端口 80 映射到专用端口 8080。例如，在 Azure 服务管理部署中，运行以下 Azure CLI 命令：
 
-```
-$ azure vm endpoint create <machine-name> 80 8080
-
-```
+	
+	$ azure vm endpoint create <machine-name> 80 8080
+	
+	
 
 现在，你应看到 WordPress 开始屏幕，你可以在其中完成安装并开始使用应用程序。
 

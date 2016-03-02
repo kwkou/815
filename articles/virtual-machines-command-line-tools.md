@@ -321,11 +321,11 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
 此命令关闭 Azure 虚拟机。可以使用 -p 选项指定在关闭时不释放计算资源。
 
-```
-~$ azure vm shutdown my-vm
-info:   Executing command vm shutdown
-info:   vm shutdown command OK  
-```
+	
+	~$ azure vm shutdown my-vm
+	info:   Executing command vm shutdown
+	info:   vm shutdown command OK  
+	
 
 **vm capture &lt;vm-name> &lt;target-image-name>**
 

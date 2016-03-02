@@ -195,17 +195,17 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 按 **F5** 启动应用程序。出现提示时，请输入“订阅 ID”、“证书友好名称”和“HDInsight 群集名称”。应用程序将在运行时生成几行信息，末尾是与下面类似的内容。
 
-```
------ The Pig job output log.
-(TRACE,816)
-(DEBUG,434)
-(INFO,96)
-(WARN,11)
-(ERROR,6)
-(FATAL,2)
-
------ Press ENTER to continue.
-```
+	
+	----- The Pig job output log.
+	(TRACE,816)
+	(DEBUG,434)
+	(INFO,96)
+	(WARN,11)
+	(ERROR,6)
+	(FATAL,2)
+	
+	----- Press ENTER to continue.
+	
 
 按 **ENTER** 退出应用程序。
 

@@ -45,41 +45,41 @@
 
 HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文件作为输入。若要部署由一个头节点和 2 个 Linux 计算节点组成的小群集，请将你环境的值代入下面的示例配置文件。有关配置文件的详细信息，请参阅脚本文件夹中的 Manual.rtf 文件和[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)。
 
-```
-<?xml version="1.0" encoding="utf-8" ?>
-<IaaSClusterConfig>
-  <Subscription>
-    <SubscriptionName>Subscription-1</SubscriptionName>
-    <StorageAccount>allvhdsje</StorageAccount>
-  </Subscription>
-  <Location>Japan East</Location>  
-  <VNet>
-    <VNetName>centos7rdmavnetje</VNetName>
-    <SubnetName>CentOS7RDMACluster</SubnetName>
-  </VNet>
-  <Domain>
-    <DCOption>HeadNodeAsDC</DCOption>
-    <DomainFQDN>hpc.local</DomainFQDN>
-  </Domain>
-  <Database>
-    <DBOption>LocalDB</DBOption>
-  </Database>
-  <HeadNode>
-    <VMName>CentOS7RDMA-HN</VMName>
-    <ServiceName>centos7rdma-je</ServiceName>
-  <VMSize>A4</VMSize>
-  <EnableRESTAPI />
-  <EnableWebPortal />
-  </HeadNode>
-  <LinuxComputeNodes>
-    <VMNamePattern>CentOS7RDMA-LN%1%</VMNamePattern>
-    <ServiceName>centos7rdma-je</ServiceName>
-    <VMSize>A7</VMSize>
-    <NodeCount>2</NodeCount>
-    <ImageName>5112500ae3b842c8b9c604889f8753c3__OpenLogic-CentOS-70-20150325</ImageName>
-  </LinuxComputeNodes>
-</IaaSClusterConfig>
-```
+	
+	<?xml version="1.0" encoding="utf-8" ?>
+	<IaaSClusterConfig>
+	  <Subscription>
+	    <SubscriptionName>Subscription-1</SubscriptionName>
+	    <StorageAccount>allvhdsje</StorageAccount>
+	  </Subscription>
+	  <Location>Japan East</Location>  
+	  <VNet>
+	    <VNetName>centos7rdmavnetje</VNetName>
+	    <SubnetName>CentOS7RDMACluster</SubnetName>
+	  </VNet>
+	  <Domain>
+	    <DCOption>HeadNodeAsDC</DCOption>
+	    <DomainFQDN>hpc.local</DomainFQDN>
+	  </Domain>
+	  <Database>
+	    <DBOption>LocalDB</DBOption>
+	  </Database>
+	  <HeadNode>
+	    <VMName>CentOS7RDMA-HN</VMName>
+	    <ServiceName>centos7rdma-je</ServiceName>
+	  <VMSize>A4</VMSize>
+	  <EnableRESTAPI />
+	  <EnableWebPortal />
+	  </HeadNode>
+	  <LinuxComputeNodes>
+	    <VMNamePattern>CentOS7RDMA-LN%1%</VMNamePattern>
+	    <ServiceName>centos7rdma-je</ServiceName>
+	    <VMSize>A7</VMSize>
+	    <NodeCount>2</NodeCount>
+	    <ImageName>5112500ae3b842c8b9c604889f8753c3__OpenLogic-CentOS-70-20150325</ImageName>
+	  </LinuxComputeNodes>
+	</IaaSClusterConfig>
+	
 
 以下是配置文件中的元素的简要说明。
 
@@ -87,9 +87,9 @@ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文�
 
 * **Subscription** - 用于部署 HPC Pack 群集的 Azure 订阅。使用以下命令确保 Azure 订阅名称已配置并且在客户端计算机中唯一。在此示例中，我们使用 Azure 订阅“Subscription-1”。
 
-    ```
-    PS > Get-AzureSubscription –SubscriptionName <SubscriptionName>
-    ```
+	
+	    PS > Get-AzureSubscription –SubscriptionName <SubscriptionName>
+	    
 
     >[AZURE.NOTE]或者，使用订阅 ID 指定要使用的订阅。请参阅脚本文件夹中的 Manual.rtf 文件。
 
@@ -113,9 +113,9 @@ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文�
 
 * 本文中的示例使用 Azure 应用商店中提供的特定 CentOS 版本来创建群集。如果要使用其他可用映像，请使用 **get-azurevmimage** Azure PowerShell cmdlet 查找所需的映像。例如，若要列出所有 CentOS 7.0 映像，请运行以下命令：
 
-    ```
-    get-azurevmimage | ?{$_.Label -eq "OpenLogic 7.0"}
-    ```
+	
+	    get-azurevmimage | ?{$_.Label -eq "OpenLogic 7.0"}
+	    
 
     找到所需的映像，然后替换配置文件中的 **ImageName** 值。
 
@@ -132,15 +132,15 @@ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文�
 
 2. 将目录更改到脚本文件夹（在此示例中为 E:\\IaaSClusterScript）。
 
-    ```
-    cd E:\IaaSClusterScript
-    ```
+	
+	    cd E:\IaaSClusterScript
+	    
 
 3. 运行以下命令以部署 HPC Pack 群集。本示例假定配置文件位于 E:\\HPCDemoConfig.xml。
 
-    ```
-    .\New-HpcIaaSCluster.ps1 –ConfigFile E:\HPCDemoConfig.xml –AdminUserName MyAdminName
-    ```
+	
+	    .\New-HpcIaaSCluster.ps1 –ConfigFile E:\HPCDemoConfig.xml –AdminUserName MyAdminName
+	    
 
     由于未指定 **-LogFile** 参数，此脚本将自动生成日志文件。日志不是实时写入，而是在验证和部署结束时收集，因此如果在运行此脚本时停止了 PowerShell 进程，则某些日志将丢失。
 
@@ -184,10 +184,10 @@ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文�
 
 在此示例中，我们将在存储帐户 allvhdsje 上创建一个名为 rdma 的 Azure 文件共享。为了在头节点上装载该共享，我们打开命令窗口并输入以下命令：
 
-```
-> cmdkey /add:allvhdsje.file.core.chinacloudapi.cn /user:allvhdsje /pass:<storageaccountkey>
-> net use Z: \\allvhdje.file.core.chinacloudapi.cn\rdma /persistent:yes
-```
+	
+	> cmdkey /add:allvhdsje.file.core.chinacloudapi.cn /user:allvhdsje /pass:<storageaccountkey>
+	> net use Z: \\allvhdje.file.core.chinacloudapi.cn\rdma /persistent:yes
+	
 
 在此示例中，allvhdsje 是存储帐户名称，storageaccountkey 是存储帐户密钥，rdma 是 Azure 文件共享名称。该 Azure 文件共享将装载到头节点的 Z: 上。
 
@@ -246,10 +246,10 @@ NFS 服务使用户能够在运行 Windows Server 2012 操作系统的计算机�
 
 2. 打开 Windows PowerShell 窗口并运行以下命令来装载 NFS 共享。
 
-  ```
-  PS > clusrun /nodegroup:LinuxNodes mkdir -p /nfsshare
-  PS > clusrun /nodegroup:LinuxNodes mount CentOS7RDMA-HN:/nfs /nfsshared
-  ```
+	
+	  PS > clusrun /nodegroup:LinuxNodes mkdir -p /nfsshare
+	  PS > clusrun /nodegroup:LinuxNodes mount CentOS7RDMA-HN:/nfs /nfsshared
+	  
 
   第一个命令在 LinuxNodes 组中的所有节点上创建名为 /nfsshared 的文件夹。第二个命令将 NFS 共享 CentOS7RDMA-HN:/nfs 装载到该文件夹上。在此处，CentOS7RDMA-HN:/nfs 是 NFS 共享的远程路径。
 
@@ -272,21 +272,21 @@ HPC Pack **clusrun** 工具可用于通过命令提示符或 HPC 群集管理器
 
 * 显示群集中所有节点的当前用户名。
 
-    ```
-    > clusrun whoami
-    ```
+	
+	    > clusrun whoami
+	    
 
 * 在 linuxnodes 组中的所有节点上安装 **gdb** 调试器工具与 **yum**，然后在 10 分钟后重启节点。
 
-    ```
-    > clusrun /nodegroup:linuxnodes yum install gdb –y; shutdown –r 10
-    ```
+	
+	    > clusrun /nodegroup:linuxnodes yum install gdb –y; shutdown –r 10
+	    
 
 * 创建一个在群集的每个 Linux 节点上每秒显示 1 到 10 中的一个数字的 shell 脚本，运行该脚本并立即显示节点的输出。
 
-    ```
-    > clusrun /interleaved /nodegroup:linuxnodes echo "for i in {1..10}; do echo \\"\$i\\"; sleep 1; done" ^> script.sh; chmod +x script.sh; ./script.sh
-    ```
+	
+	    > clusrun /interleaved /nodegroup:linuxnodes echo "for i in {1..10}; do echo \\"\$i\\"; sleep 1; done" ^> script.sh; chmod +x script.sh; ./script.sh
+	    
 
 >[AZURE.NOTE]在 **clusrun** 命令中可能需要使用某些转义符。如此示例中所示，在命令窗口中使用 ^ 以转义 ">" 符号。
 
