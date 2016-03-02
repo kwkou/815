@@ -185,7 +185,7 @@
 
 此命令从帐户中删除指定的环境
 
-##<a name="commands-to-manage-your-azure-virtual-machine-data-disks"></a> 用于管理 Azure 虚拟机的命令
+## 用于管理 Azure 虚拟机的命令
 下图显示了如何在 Azure 云服务的生产部署环境中托管 Azure 虚拟机。
 
 ![Azure 技术图表](./media/virtual-machines-command-line-tools/architecturediagram.jpg)
@@ -494,7 +494,7 @@ info:   vm shutdown command OK
 	info:   http://myaccount.blob.core.azure.com/vm-images/Sample.vhd is uploaded successfully
 	info:   vm image create command OK
 
-## 用于管理 Azure 虚拟机数据磁盘的命令
+##<a name="commands-to-manage-your-azure-virtual-machine-data-disks"></a> 用于管理 Azure 虚拟机数据磁盘的命令
 
 数据磁盘是 Blob 存储中可供虚拟机使用的 .vhd 文件。有关如何将数据磁盘部署到 Blob 存储的详细信息，请参阅前面所示的 Azure 技术图表。
 
