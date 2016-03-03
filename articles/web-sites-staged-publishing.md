@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="web-sites"
-	ms.date="09/21/2015"
+	ms.date="01/12/2016"
 	wacn.date="01/21/2016"/>
 
 # 为 Azure Web 应用设置过渡环境
