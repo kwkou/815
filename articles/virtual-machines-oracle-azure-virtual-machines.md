@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/05/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="01/12/2016"
+	wacn.date="03/03/2016"/>
 
 # 在 Azure 虚拟机上托管的 Oracle 软件
 

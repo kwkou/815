@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/01/2015"
-	wacn.date="12/16/2015"/>
+	ms.date="11/12/2015"
+	wacn.date="03/03/2016"/>
 
 # Azure 虚拟机中的 SQL Server 概述
 
