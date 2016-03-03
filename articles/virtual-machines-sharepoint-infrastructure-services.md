@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/08/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="10/20/2015"
+	wacn.date="03/03/2016"/>
 
 # Azure 基础结构服务中托管的 SharePoint 场
 
