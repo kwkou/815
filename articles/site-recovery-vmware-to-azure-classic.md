@@ -723,15 +723,16 @@ vCenter 用户角色 | 故障转移和故障回复 | 为 v-Center 服务器分�
 
 ## 第三方软件通知和信息
 
-Do Not Translate or Localize
+请勿翻译或本地化
 
-The software and firmware running in the Microsoft product or service is based on or incorporates material from the projects listed below (collectively, “Third Party Code”).Microsoft is the not original author of the Third Party Code.The original copyright notice and license, under which Microsoft received such Third Party Code, are set forth below.
+Microsoft 产品或服务中运行的软件和固件基于或包含下列项目中的材料（统称为“第三方代码”）。Microsoft 不是“第三方代码”的原创作者。Microsoft 获取此类“第三方代码”依据的原始版权声明和许可证如下文所述。
 
-The information in Section A is regarding Third Party Code components from the projects listed below.Such licenses and information are provided for informational purposes only.This Third Party Code is being relicensed to you by Microsoft under Microsoft's software licensing terms for the Microsoft product or service.
+A 部分中的信息与下列项目中的“第三方代码”组件相关。提供的此类许可证和信息仅供参考。本“第三方代码”将由 Microsoft 依据 Microsoft 产品或服务的 Microsoft 软件许可条款重新许可给你。
 
-The information in Section B is regarding Third Party Code components that are being made available to you by Microsoft under the original licensing terms.
+B 部分中的信息与 Microsoft 要依据原始许可条款提供给你的“第三方代码”组件相关。
 
-The complete file may be found on the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428).Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
+完整文件可以在 [Microsoft 下载中心](http://go.microsoft.com/fwlink/?linkid=529428&clcid=0x409)找到。Microsoft 保留未在此处明确授予的所有权利，无论是暗示、禁止或其他方式。
+
 
 ## 后续步骤
 
