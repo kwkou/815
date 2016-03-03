@@ -8,8 +8,8 @@
 	editor="jimbe"/>
 <tags
 	ms.service="web-sites"
-	ms.date="10/20/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="01/09/2016"
+	wacn.date="03/03/2016"/>
 
 # 在 Azure 中创建 Java Web 应用
 

@@ -2,8 +2,8 @@
 
 <tags 
 	ms.service="web-sites" 
-	ms.date="11/18/2015" 
-	wacn.date="01/21/2016"/>
+	ms.date="01/09/2016" 
+	wacn.date="03/03/2016"/>
 #为使用流量管理器的 Azure Web 应用配置自定义域名
 
 [AZURE.INCLUDE [web-selector](../includes/websites-custom-domain-selector.md)]
