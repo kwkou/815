@@ -208,7 +208,7 @@ Azure 基础结构中的虚拟机将进行验证，并能够与其他 Microsoft 
 
 此方案介绍组织如何使用 Azure 虚拟机来托管任务关键型 BI 应用程序。组织可在 Azure 虚拟机中部署 SharePoint 场，并向外扩展应用程序服务器虚拟机的 BI 组件，如 SSRS 或 Excel Services。通过在云中缩放资源密集型组件，组织可以更轻松地为专用工作负荷提供更佳支持。请注意，Azure 虚拟机中的 SQL Server 可正常运行，因为可轻松缩放 SQL Server 实例（范围从小型安装到超大型安装）。这将为组织提供灵活性，使其能够基于即时工作负荷要求动态设置（扩展）或取消设置（缩小）BI 实例。
 
-将现有 BI 应用程序迁移到 Azure 可提供更佳的缩放能力。借助 SQL Server Analysis Services (SSAS)、SQL Server Reporting Service (SSRS) 和 SharePoint Server 的功能，组织可创建可向上或向下扩展的且功能强大的商业智能应用程序、报告应用程序和仪表板。这些应用程序和仪表板还可与本地数据和应用程序更安全地集成。Azure 支持 ISO 27001，从而可以确保数据中心的合规性。有关详细信息，请转到 [Azure 信任中心](http://www.windowsazure.cn/support/trust-center/compliance/)。
+将现有 BI 应用程序迁移到 Azure 可提供更佳的缩放能力。借助 SQL Server Analysis Services (SSAS)、SQL Server Reporting Service (SSRS) 和 SharePoint Server 的功能，组织可创建可向上或向下扩展的且功能强大的商业智能应用程序、报告应用程序和仪表板。这些应用程序和仪表板还可与本地数据和应用程序更安全地集成。Azure 支持 ISO 27001，从而可以确保数据中心的合规性。有关详细信息，请转到 [Azure 信任中心](/support/trust-center/compliance/)。
 
 若要向外扩展 BI 组件的部署，则必须安装带 PowerPivot、Power View、Excel Services 或 PerformancePoint Services 等服务的新应用程序服务器。或者，必须将 SQL Server 商业智能实例（如 SSAS 或 SSRS）添加到现有场以支持其他查询处理。此服务器可作为安装了 SharePoint 2010 Server 或 SQL Server 的新 Azure 虚拟机添加。然后，可在该服务器上安装、部署和配置 BI 组件（图 5）。
 

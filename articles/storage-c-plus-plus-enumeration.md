@@ -179,6 +179,6 @@ SDK 中的此类贪婪列表 API 在 C#、Java 或 JavaScript Node.js 环境中�
 -	[如何通过 C++ 使用队列存储](/documentation/articles/storage-c-plus-plus-how-to-use-queues)
 -	[适用于 C++ 的 Azure 存储客户端库 API 文档。](http://azure.github.io/azure-storage-cpp/)
 -	[Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
--	[Azure 存档文档](http://www.windowsazure.cn/documentation/services/storage/)
+-	[Azure 存档文档](/documentation/services/storage/)
 
 <!---HONumber=Mooncake_0215_2016-->

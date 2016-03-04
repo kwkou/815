@@ -197,7 +197,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 **组件** | **要求** | **详细信息**
 --- | --- | --- 
-**Azure 帐户** | 需要一个 [Microsoft Azure](http://www.windowsazure.cn/) 帐户。你可以从 [1rmb 试用版](/pricing/1rmb-trial/)开始。
+**Azure 帐户** | 需要一个 [Microsoft Azure](/) 帐户。你可以从 [1rmb 试用版](/pricing/1rmb-trial/)开始。
 **Azure 存储空间** | <p>需要使用 Azure 存储帐户来存储复制的数据</p><p>该帐户应该是[标准异地冗余存储帐户](/documentation/articles/storage-redundancy#geo-redundant-storage)或[高级存储帐户](/documentation/articles/storage-premium-storage-preview-portal)。</p><p>它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。</p><p>若要了解详细信息，请阅读 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction)</p>
 **Azure 虚拟网络** | 你将需要 Azure 虚拟网络，配置服务器和主目标服务器将部署在该网络上。它应该位于 Azure Site Recovery 保管库所在的订阅和区域中。如果你要通过 ExpressRoute 或 VPN 连接复制数据，Azure 虚拟网络必须通过 ExpressRoute 连接或站点到站点 VPN 连接到本地网络。
 **Azure 资源** | 确保你有足够的 Azure 资源用于部署所有组件。在 [Azure 订阅限制](/documentation/articles/azure-subscription-service-limits)中阅读更多内容。

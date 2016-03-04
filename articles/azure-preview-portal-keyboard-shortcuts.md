@@ -44,6 +44,6 @@
 
 ## 后续步骤
 
-更好地了解 Azure 经典门户：http://www.windowsazure.cn/。
+更好地了解 Azure 经典门户：https://www.azure.cn/。
 
 <!---HONumber=Mooncake_0104_2016-->

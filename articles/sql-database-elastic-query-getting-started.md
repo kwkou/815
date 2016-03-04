@@ -126,7 +126,7 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 ### 成本
 使用弹性数据库查询功能不会产生额外的费用。但是，目前此功能只能在用作终结点的高级数据库上使用，但分片可以是任何服务层。
 
-有关价格信息，请参阅 [SQL 数据库定价详细信息](http://www.windowsazure.cn/home/features/sql-database/#price)。
+有关价格信息，请参阅 [SQL 数据库定价详细信息](/home/features/sql-database/#price)。
 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]

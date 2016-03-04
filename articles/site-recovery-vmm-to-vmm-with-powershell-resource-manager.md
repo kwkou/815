@@ -34,7 +34,7 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 
 确保已满足以下先决条件：
 
-- 需要一个 [Microsoft Azure](http://www.windowsazure.cn/) 帐户。你可以从[免费试用版](/pricing/free-trial/)开始。此外，你可以阅读 [Azure 站点恢复管理器定价](/pricing/details/site-recovery/)。
+- 需要一个 [Microsoft Azure](/) 帐户。你可以从[免费试用版](/pricing/free-trial/)开始。此外，你可以阅读 [Azure 站点恢复管理器定价](/pricing/details/site-recovery/)。
 - 你需要在运行于 System Center 2012 R2 的主站点和辅助站点中有一个 VMM 服务器。
 - 每个 VMM 服务器应至少有一个包含以下各项的云：
 	- 一个或多个 VMM 主机组。

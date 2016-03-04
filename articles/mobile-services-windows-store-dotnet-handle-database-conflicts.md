@@ -369,7 +369,7 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 <!-- URLs. -->
 [乐观并发控制]: http://go.microsoft.com/fwlink/?LinkId=330935
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
-[Azure 帐户]: http://www.windowsazure.cn/pricing/1rmb-trial/
+[Azure 帐户]: /pricing/1rmb-trial/
 [Validate and modify data with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts
 [Refine queries with paging]: /documentation/articles/mobile-services-windows-store-dotnet-add-paging-data
 [完成移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started

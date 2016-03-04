@@ -177,7 +177,7 @@ Set-AzureResource -ResourceType "Microsoft.MySql/servers/firewallRules" -Resourc
 ```
 Set-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{options=@{wait_timeout=70}} -UsePatchSemantics
 ```
-对其他参数的修改，可以参考下面Json文件的定义，参数的有效值范围可参考[定制MySQL Database on Azure服务器参数](http://www.windowsazure.cn/documentation/articles/mysql-database-advanced-settings)：
+对其他参数的修改，可以参考下面Json文件的定义，参数的有效值范围可参考[定制MySQL Database on Azure服务器参数](/documentation/articles/mysql-database-advanced-settings)：
 
 ```
 	"options": {

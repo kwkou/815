@@ -25,7 +25,7 @@
 
 • 对于 Windows VM — [Azure 虚拟机的 Microsoft 服务器软件支持](https://support.microsoft.com/zh-cn/kb/2721672)
 
-• 对于 Linux VM — [Azure 上的 Linux — 认可的分发版](http://www.windowsazure.cn/documentation/articles/virtual-machines-linux-endorsed-distributions/)
+• 对于 Linux VM — [Azure 上的 Linux — 认可的分发版](/documentation/articles/virtual-machines-linux-endorsed-distributions/)
 
 对于 Windows 客户端映像，可为 MSDN Azure 权益订户以及 MSDN 即用即付开发和测试订户提供 Windows 7 和 Windows 8.1 的特定版本，用于各种开发和测试任务。有关详细信息，包括说明和限制，请参阅[面向 MSDN 订户的 Windows 客户端映像](http://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/)。
 
@@ -33,7 +33,7 @@
 
 每个数据磁盘可高达 1 TB。可使用的数据磁盘数取决于虚拟机的大小。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
 
-Azure 存储空间帐户为操作系统磁盘和任何数据磁盘提供存储。每个磁盘就是一个存储为页 blob 的 .vhd 文件。有关定价详细信息，请参阅[存储定价详细信息](http://www.windowsazure.cn/home/features/storage/#price)。
+Azure 存储空间帐户为操作系统磁盘和任何数据磁盘提供存储。每个磁盘就是一个存储为页 blob 的 .vhd 文件。有关定价详细信息，请参阅[存储定价详细信息](/home/features/storage/#price)。
 
 ## 可以使用哪些虚拟硬盘类型？
 
@@ -123,7 +123,7 @@ VM 的状态为“正在运行”或“已停止”时计费，VM 的状态为�
 - 使用 Azure PowerShell 模块中提供的 Stop-AzureVM cmdlet。
 - 在服务管理 REST API 中使用“关闭角色”操作并为 PostShutdownAction 元素指定 StoppedDeallocated。
 
-有关更多详细信息，请参阅[虚拟机定价](http://www.windowsazure.cn/home/features/virtual-machines/#price)。
+有关更多详细信息，请参阅[虚拟机定价](/home/features/virtual-machines/#price)。
 
 ## Azure 在执行维护时会重新启动我的 VM 吗？
 

@@ -12,11 +12,11 @@
 
 The Live Streaming Acceleration service is mainly intended to provide acceleration services for online audio and video live broadcasting. The high-speed, real-time properties of online live broadcasting are very popular with users and leads to huge numbers of users accessing services concurrently, putting enormous strain on source station and bandwidth. Such services are also subject to Chinese restrictions on cross-region or cross-carrier traffic, which impose significant requirements on high-quality, high-speed streaming media direct broadcasts. The Microsoft Azure CDN Live Streaming Acceleration service acquires the source station video stream in real time and delivers it to the CDN edge node closest to the user. It uses intelligent caching and scheduling strategies to calculate and provide the optimal node for the user, reducing the lag and bandwidth pressures caused by link transmissions. It is charged on the basis of data usage, providing users with a high-speed, smooth, high-quality live-streaming real-time viewing experience.
 
-Microsoft Azure CDN Live Streaming Acceleration is principally based on the HTTP Live Streaming (HLS) protocol and supports Microsoft Azure’s built-in [Media Services](http://www.windowsazure.cn/home/features/media-services/).
+Microsoft Azure CDN Live Streaming Acceleration is principally based on the HTTP Live Streaming (HLS) protocol and supports Microsoft Azure’s built-in [Media Services](/home/features/media-services/).
 
 Live Streaming Acceleration is suitable for use with all types of live broadcasting websites, such as online television broadcasts and direct broadcasts of sporting events or major public events.
 
-This article is about creating domain names for Streaming Media Acceleration. You can also refer to [Using Microsoft Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-enus-how-to-use/) to find out about the basics of creating Microsoft Azure CDN acceleration nodes.
+This article is about creating domain names for Streaming Media Acceleration. You can also refer to [Using Microsoft Azure CDN](/documentation/articles/cdn-enus-how-to-use/) to find out about the basics of creating Microsoft Azure CDN acceleration nodes.
 
 ###**Default cache rules for live streaming acceleration**
 The Microsoft Azure CDN sets default cache rules (see below) for Live Streaming Acceleration. You can also set custom cache rules according to your own requirements. For specific details, see the Microsoft Azure CDN Management Portal advanced management help file on “Domain Management.” If the source station content changes or is updated, but the cache time to live (TTL) has not yet expired, you can manually refresh the CDN cache files to synchronize the updated source station content in real time. For specific details, see the Microsoft Azure CDN Management Portal advanced management help file on “Cache Refresh.”
@@ -61,6 +61,6 @@ The Microsoft Azure CDN sets default cache rules (see below) for Live Streaming 
 Once the endpoint has been created, it will appear in the list of subscribed endpoints. The list view shows the custom domains used to access cached content, as well as the origin domains. 
 The origin domain is the original location of the content cached on the CDN. Custom domains are URLs used to access CDN cache content.
 
->**Note** that configurations created for endpoints cannot be used immediately; they must first pass checks to confirm that the ICP custom domain name matches the ICP number. For more details, see the second half of Step 2: Create new CDN endpoints in [Using Microsoft Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-enus-how-to-use/).
+>**Note** that configurations created for endpoints cannot be used immediately; they must first pass checks to confirm that the ICP custom domain name matches the ICP number. For more details, see the second half of Step 2: Create new CDN endpoints in [Using Microsoft Azure CDN](/documentation/articles/cdn-enus-how-to-use/).
 
 <!---HONumber=CDN_1201_2015-->

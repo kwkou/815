@@ -23,7 +23,7 @@
 ## 先决条件
 使用 Powershell cmdlet 的要求：
 
-- [此处提供](http://www.windowsazure.cn/downloads/)最新的 Azure 命令行 SDK
+- [此处提供](/downloads/)最新的 Azure 命令行 SDK
 
 在 VM 上使用扩展的要求：
 

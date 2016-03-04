@@ -165,7 +165,7 @@ Using the wait\_timeout parameter as an example, edit and run the following comm
 ```
 Set-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{options=@{wait_timeout=70}} -UsePatchSemantics
 ```
-Refer to the JSON file definitions below for details of how to modify other parameters. See [Setting MySQL Database on Azure server parameters](http://www.windowsazure.cn/documentation/articles/mysql-database-advanced-settings) for details of valid parameter ranges:
+Refer to the JSON file definitions below for details of how to modify other parameters. See [Setting MySQL Database on Azure server parameters](/documentation/articles/mysql-database-advanced-settings) for details of valid parameter ranges:
 
 ```
 	"options": {
