@@ -120,7 +120,7 @@
 可以使用 Microsoft Azure 门户（网址为 <a href="https://manage.windowsazure.cn" target="_blank">https://manage.windowsazure.cn</a>）查看全球所有 Azure 区域中的存储服务（及其他 Azure 服务）的运行状况。这使你可以立即了解是否有不受你控制的问题正在影响你的应用程序所使用的区域中的存储服务。 
 
 此外，[Azure 管理门户](https://manage.windowsazure.cn)还可以提供影响各种 Azure 服务的事件的通知。
-注意：此信息以前未在 Azure 服务仪表板（网址为：<a href="http://www.windowsazure.cn/support/service-dashboard/" target="_blank">http://www.windowsazure.cn/support/service-dashboard/</a>）上与历史数据一起提供。
+注意：此信息以前未在 Azure 服务仪表板（网址为：<a href="/support/service-dashboard/" target="_blank">https://www.azure.cn/support/service-dashboard/</a>）上与历史数据一起提供。
 
 虽然此[管理门户](https://manage.windowsazure.cn)从 Azure 数据中心内部收集运行状况信息（由内而外监视），但你也可以考虑采用由外而内方法来生成定期从多个位置访问 Azure 托管的 Web 应用的综合事务。<a href="http://www.keynote.com/solutions/monitoring/web-monitoring" target="_blank">Keynote</a>、<a href="https://www.gomeznetworks.com/?g=1" target="_blank">Gomez</a> 和 Application Insights for Visual Studio Online 提供的服务是这种由外而内方法的示例。有关 Application Insights for Visual Studio Team Services 的详细信息，请参阅附录“[附录 5：使用 Application Insights for Visual Studio Team Services 进行监视]”。
 

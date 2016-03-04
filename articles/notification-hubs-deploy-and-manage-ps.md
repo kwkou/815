@@ -159,7 +159,7 @@ else
 - [服务总线 PowerShell 脚本](https://code.msdn.microsoft.com/windowsazure/Service-Bus-PowerShell-a46b7059)
  
 
-[购买选项]: http://www.windowsazure.cn/pricing/overview/
+[购买选项]: /pricing/overview/
 [成员优惠]: http://azure.microsoft.com/pricing/member-offers/
 [免费试用]: /pricing/1rmb-trial/
 [安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure

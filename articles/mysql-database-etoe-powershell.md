@@ -21,7 +21,7 @@ Azure 资源管理器 (ARM) 是适用于 Azure 服务的全新管理框架。现
 - [步骤9：添加用户权限](#step9)
 
 ##<a id="step1"></a>步骤1： 安装Azure PowerShell
-运行脚本前，您需要安装并运行Azure PowerShell。您可以通过[运行Microsft Web平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)下载并安装最新版本Azure PowerShell 。可参阅[如何安装和配置Azure PowerShell](http://www.windowsazure.cn/documentation/articles/powershell-install-configure)来了解更多详细步骤。
+运行脚本前，您需要安装并运行Azure PowerShell。您可以通过[运行Microsft Web平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)下载并安装最新版本Azure PowerShell 。可参阅[如何安装和配置Azure PowerShell](/documentation/articles/powershell-install-configure)来了解更多详细步骤。
 用于创建和管理MySQL Database on Azure 数据库的cmdlet位于Azure资源管理器模块中。启动Azure PowerShell时，默认情况下将导入Azure模块中的cmdlet。
 请先确认Azure PowerShell版本， 可在控制台运行以下命令：
 ```

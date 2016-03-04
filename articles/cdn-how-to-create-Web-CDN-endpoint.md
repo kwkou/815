@@ -14,7 +14,7 @@ WEB加速服务是最基本也是应用最广泛的CDN加速服务，主要针�
 
 Web加速CDN节点适用于面向访问量较大的大中小企业门户类网站。如政府机构网站，企业门户网站等。
 
-本文是针对Web类型加速域名创建，请参考[使用Microsoft Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-how-to-use/)了解基本的Microsoft Azure CDN加速节点创建信息。
+本文是针对Web类型加速域名创建，请参考[使用Microsoft Azure CDN](/documentation/articles/cdn-how-to-use/)了解基本的Microsoft Azure CDN加速节点创建信息。
 
 ###**Web加速默认缓存规则**
 Microsoft Azure CDN针对Web加速设置了默认缓存规则（见下文）。您也可以根据需求自定义设置缓存规则，具体请参考Microsoft Azure CDN管理门户高级管理的帮助文档“域名管理”。如果源站内容更改或者更新，同时设置的缓存生存时间未到期，可以通过手动刷新CDN缓存文件实时同步源站更新的内容，具体请参考Microsoft Azure CDN管理门户高级管理的帮助文档“缓存刷新”。
@@ -64,4 +64,4 @@ Microsoft Azure CDN针对Web加速设置了默认缓存规则（见下文）。�
 
    ![004](./media/cdn-doc/004.png)
 
->**注意** 为终结点创建的配置将不能立即可用，需要审核所提供的ICP自定义域名和ICP编号是否匹配，详情请参考[使用Microsoft Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-how-to-use/)中步骤2：创建新的CDN终结点的后半部分。
+>**注意** 为终结点创建的配置将不能立即可用，需要审核所提供的ICP自定义域名和ICP编号是否匹配，详情请参考[使用Microsoft Azure CDN](/documentation/articles/cdn-how-to-use/)中步骤2：创建新的CDN终结点的后半部分。

@@ -12,11 +12,11 @@
 
 流媒体直播加速服务主要针对在线视音频播提供加速服务。网络直播服务快速、实时的特性备受广大用户青睐。直播的实时性导致海量用户并发访问，给源站和带宽资源带来巨大压力，同时受国内网络跨地域跨运营商的限制，对高质量、快速的流媒体直播提出了较高的要求。Microsoft Azure CDN流媒体加速服务通过实时采集源站视频流并分发到距离用户最近的CDN边缘节点，通过智能缓存和调度策略，为用户提供计算最优节点，减少链路传输造成的延迟和带宽压力，且按使用量付费，给用户提供高速、流畅、高质量的直播观看体验。
 
-Microsoft Azure CDN 流媒体直播加速主要基于HTTP Live Streaming(HLS)协议，且支持Microsoft Azure内置的[媒体服务](http://www.windowsazure.cn/home/features/media-services/)。
+Microsoft Azure CDN 流媒体直播加速主要基于HTTP Live Streaming(HLS)协议，且支持Microsoft Azure内置的[媒体服务](/home/features/media-services/)。
 
 流媒体直播加速适用于各类流媒体直播网站，如网络电视直播，体育赛事，盛典赛事直播等。
 
-本文是针对流媒体直播加速域名创建，您也可以参考[使用Microsoft Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-how-to-use/)了解基本的Microsoft Azure CDN加速节点创建信息。
+本文是针对流媒体直播加速域名创建，您也可以参考[使用Microsoft Azure CDN](/documentation/articles/cdn-how-to-use/)了解基本的Microsoft Azure CDN加速节点创建信息。
 
 ###**流媒体直播加速默认缓存规则**
 Microsoft Azure CDN针对流媒体直播加速设置了默认缓存规则（见下文）。您也可以根据需求自定义设置缓存规则，具体请参考Microsoft Azure CDN管理门户高级管理的帮助文档“域名管理”。如果源站内容更改或者更新，同时设置的缓存生存时间未到期，可以通过手动刷新CDN缓存文件实时同步源站更新的内容，具体请参考Microsoft Azure CDN管理门户高级管理的帮助文档“缓存刷新”。
@@ -66,5 +66,5 @@ Microsoft Azure CDN针对流媒体直播加速设置了默认缓存规则（见�
 
    ![031](./media/cdn-doc/031.png)
 
->**注意** 为终结点创建的配置将不能立即可用，需要审核所提供的ICP自定义域名和ICP编号是否匹配，详情请参考[使用Microsoft Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-how-to-use/)中步骤2：创建新的CDN终结点的后半部分。
+>**注意** 为终结点创建的配置将不能立即可用，需要审核所提供的ICP自定义域名和ICP编号是否匹配，详情请参考[使用Microsoft Azure CDN](/documentation/articles/cdn-how-to-use/)中步骤2：创建新的CDN终结点的后半部分。
 

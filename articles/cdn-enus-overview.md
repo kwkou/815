@@ -12,9 +12,9 @@
 
 The Microsoft Azure Content Delivery Network caches static content in storage blobs, cloud services, and websites on the Azure platform by using large numbers of physical nodes distributed across Mainland China. This provides media services with acceleration for streaming content delivery and offers developers solutions for delivering high-bandwidth content. This service also currently supports the use of origins that have not been deployed on the Azure platform.
 
-For more details and pricing for Content Delivery Network, see [Introduction to the Microsoft Azure Content Delivery Network service](http://www.windowsazure.cn/home/features/cdn/).
+For more details and pricing for Content Delivery Network, see [Introduction to the Microsoft Azure Content Delivery Network service](/home/features/cdn/).
 
-If you are an existing user of the CDN, visit the [Microsoft Azure Content Delivery Network management portal](https://manage.windowsazure.cn) to manage your CDN domains. See [Using Microsoft Azure Content Delivery Network](http://www.windowsazure.cn/documentation/articles/cdn-enus-how-to-use/) for a more specific user guide.
+If you are an existing user of the CDN, visit the [Microsoft Azure Content Delivery Network management portal](https://manage.windowsazure.cn) to manage your CDN domains. See [Using Microsoft Azure Content Delivery Network](/documentation/articles/cdn-enus-how-to-use/) for a more specific user guide.
 
 + [What is a Content Delivery Network?](#step1)
 + [Advantages of Content Delivery Network](#step2)

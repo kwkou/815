@@ -166,7 +166,7 @@ SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式�
 		
 		Myservice.chinacloudapp.cn:63133
 		
-		有关详细信息，请参阅[什么是云服务？](http://www.windowsazure.cn/manage/services/cloud-services/what-is-a-cloud-service/)。
+		有关详细信息，请参阅[什么是云服务？](/manage/services/cloud-services/what-is-a-cloud-service/)。
 
 **启动 Reporting Services 配置管理器。**
 

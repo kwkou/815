@@ -568,7 +568,7 @@ Microsoft Azure 诊断使用开发计算机上的本地存储或中国服务存�
     <tr>
       <td width="130" valign="top"> 中国案例研究 </td>
       <td width="180" valign="top"> 是 </td>
-      <td><a href="http://www.windowsazure.cn/zh-cn/home/case-studies/">http://www.windowsazure.cn/zh-cn/home/case-studies/</a></td>
+      <td><a href="/zh-cn/home/case-studies/">https://www.azure.cn/zh-cn/home/case-studies/</a></td>
     </tr>
     <tr>
       <td width="130" valign="top"> P&amp;P 丛书 </td>

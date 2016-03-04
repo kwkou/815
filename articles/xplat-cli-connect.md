@@ -141,7 +141,7 @@ CLI 版本 0.9.9 及更高版本支持多重身份验证。
 * 如果你在使用 Azure CLI 或 Azure 时遇到问题，请访问 [Azure 论坛](http://social.msdn.microsoft.com/Forums/windowsazure/home)。
 
 
-[free-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
+[free-trial]: /pricing/1rmb-trial/
 [portal]: https://manage.windowsazure.cn
 [signuporg]: /documentation/articles/sign-up-organization
 [cliasm]: /documentation/articles/virtual-machines-command-line-tools

@@ -16,7 +16,7 @@
 本部分演示如何使用 Microsoft Azure 管理门户中的"从库中"方法创建自定义虚拟机。此方法提供比"快速创建"方法更多的选项，在您创建虚拟机时对其进行配置。
 
 
-1. 登录到 Microsoft Azure [管理门户](http://manage.windowsazure.cn). 如果你还没有订阅，请查看[试用版](http://www.windowsazure.cn/pricing/free-trial)。
+1. 登录到 Microsoft Azure [管理门户](http://manage.windowsazure.cn). 如果你还没有订阅，请查看[试用版](/pricing/free-trial)。
 
 2. 在屏幕底部的命令栏上，单击"新建"。
 

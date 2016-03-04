@@ -112,8 +112,8 @@
 
 如果已执行本文中的上述步骤，并且需要更多帮助更正问题，则可以：
 
-- 从世界各地的 Azure 专家那里获取帮助。向 MSDN Azure 或 CSDN 论坛提交问题。有关详细信息，请参阅 [Microsoft Azure 论坛](http://www.windowsazure.cn/support/forums/)。
-- 提出 Azure 支持事件。转到[](http://www.windowsazure.cn/support/contact/)“Azure 支持站点”，单击“技术和帐单支持”下的“获得支持”。
+- 从世界各地的 Azure 专家那里获取帮助。向 MSDN Azure 或 CSDN 论坛提交问题。有关详细信息，请参阅 [Microsoft Azure 论坛](/support/forums/)。
+- 提出 Azure 支持事件。转到[](/support/contact/)“Azure 支持站点”，单击“技术和帐单支持”下的“获得支持”。
 
 ## 其他资源
 

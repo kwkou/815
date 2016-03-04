@@ -14,7 +14,7 @@ The Web Acceleration service is the most basic and most widely used CDN accelera
 
 Web Acceleration CDN nodes are suitable for use with portal-type websites with large amounts of visits, such as those belonging to small, medium or large enterprises, or government agency or corporate websites.
 
-This article is about creating domain names for Web Acceleration. You can also refer to [Using Microsoft Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-enus-how-to-use/) to find out about the basics of creating Microsoft Azure CDN acceleration nodes.
+This article is about creating domain names for Web Acceleration. You can also refer to [Using Microsoft Azure CDN](/documentation/articles/cdn-enus-how-to-use/) to find out about the basics of creating Microsoft Azure CDN acceleration nodes.
 
 ###**Default cache rules for Web Acceleration**
 
@@ -60,6 +60,6 @@ The Azure CDN sets default cache rules (see below) for web acceleration. You can
 Once the endpoint has been created, it will appear in the list of subscribed endpoints. The list view shows the custom domains used to access cached content, as well as the origin domains.
  The origin domain is the original location of the content cached on the CDN. Custom domains are URLs used to access CDN cache content.
 
->**Note** that configurations created for endpoints cannot be used immediately; they must first pass checks to confirm that the ICP custom domain name matches the ICP number. For more details, see the second half of Step 2: Create new CDN endpoints in [Using Microsoft Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-enus-how-to-use/).
+>**Note** that configurations created for endpoints cannot be used immediately; they must first pass checks to confirm that the ICP custom domain name matches the ICP number. For more details, see the second half of Step 2: Create new CDN endpoints in [Using Microsoft Azure CDN](/documentation/articles/cdn-enus-how-to-use/).
 
 <!---HONumber=CDN_1201_2015-->

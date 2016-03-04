@@ -260,7 +260,7 @@
 
 <!-- Links -->
 [通知中心示例]: https://github.com/Azure/azure-notificationhubs-samples
-[Azure 移动服务]: http://www.windowsazure.cn/home/features/mobile-services/
+[Azure 移动服务]: /home/features/mobile-services/
 [Azure 服务总线]: /documentation/articles/service-bus-fundamentals-hybrid-solutions
 [服务总线 Pub/Sub 编程]: /documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions
 [Azure WebJob]: /documentation/articles/web-sites-create-web-jobs

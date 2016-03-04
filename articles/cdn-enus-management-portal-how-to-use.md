@@ -12,7 +12,7 @@
 
 The Microsoft Azure CDN caches static content in storage blobs, cloud services, and websites on the Azure platform by using large numbers of physical nodes distributed across Mainland China. These nodes provide developers with a solution for delivering high-bandwidth content. This service also currently supports the use of source stations that have not been deployed on the Azure platform.
 
-For more details and pricing for Content Delivery Network, see [Introduction to the Microsoft Azure Content Delivery Network service](http://www.windowsazure.cn/home/features/cdn/).
+For more details and pricing for Content Delivery Network, see [Introduction to the Microsoft Azure Content Delivery Network service](/home/features/cdn/).
 
 + [Overview](#step1)
 + [Domain name management](#step2)

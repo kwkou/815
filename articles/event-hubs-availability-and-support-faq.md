@@ -85,9 +85,9 @@
 
 ## 支持和 SLA
 
-事件中心的技术支持可通过[社区论坛](http://www.windowsazure.cn/support/forums/)获得。我们免费提供计费和订阅管理支持。
+事件中心的技术支持可通过[社区论坛](/support/forums/)获得。我们免费提供计费和订阅管理支持。
 
-若要详细了解我们的 SLA，请访问[服务级别协议](http://www.windowsazure.cn/support/legal/sla)页面。
+若要详细了解我们的 SLA，请访问[服务级别协议](/support/legal/sla)页面。
 
 ## 后续步骤
 

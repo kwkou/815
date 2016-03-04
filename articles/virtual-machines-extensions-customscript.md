@@ -28,7 +28,7 @@
 
 ### 运行自定义脚本扩展的先决条件
 
-1. 从<a href="http://www.windowsazure.cn/downloads" target="_blank">此处</a>安装 Azure PowerShell Cmdlet 版本 0.8.0 或更高版本。
+1. 从<a href="/downloads" target="_blank">此处</a>安装 Azure PowerShell Cmdlet 版本 0.8.0 或更高版本。
 2. 如果脚本将在现有 VM 上运行，请确保已在该 VM 上启用了 VM 代理，如果没有启用，请按照<a href="https://msdn.microsoft.com/zh-cn/library/azure/dn832621.aspx" target="_blank">此文</a>来安装一个。
 3. 将你要在 VM 上运行的脚本上载到 Azure 存储。脚本可以来自单个容器或多个存储容器。
 4. 脚本应当以下述方式编写：使用扩展启动入口脚本，然后入口脚本再启动其他脚本。

@@ -19,7 +19,7 @@
 
 ## 探究
 - [事件中心](/documentation/articles/event-hubs-overview)
-- [事件中心定价详细信息](http://www.windowsazure.cn/home/features/event-hubs/#price)
+- [事件中心定价详细信息](/home/features/event-hubs/#price)
 - [事件中心可用性和支持常见问题](/documentation/articles/event-hubs-availability-and-support-faq)
 - [事件寻源模式](http://msdn.microsoft.com/zh-cn/library/dn589792.aspx)
  
@@ -28,8 +28,8 @@
 - [事件中心代码示例](https://code.msdn.microsoft.com/windowsazure/site/search?query=event%20hubs&f%5B0%5D.Value=event%20hubs&f%5B0%5D.Type=SearchText&ac=5)
  
 ## 相关服务
-- [Azure 存储空间](http://www.windowsazure.cn/documentation/services/storage/)
-- [HDInsight](http://www.windowsazure.cn/documentation/services/hdinsight/)
+- [Azure 存储空间](/documentation/services/storage/)
+- [HDInsight](/documentation/services/hdinsight/)
  
 
 <!---HONumber=66-->

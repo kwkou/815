@@ -17,10 +17,10 @@ MySQL Database on Azure兼容MySQL 5.5 和 MySQL 5.6，所以绝大部分应用�
 如果您的系统可以接受较长时间（比如一二个小时）因系统迁移导致的downtime，您可以用比较简单的数据库导出和导入的方式进行数据库的迁移。
 具体步骤：
 
-1.登录Azure管理门户，在MySQL　Database on Azure上创建一个新的MySQL服务器并进行必要的配置比如每天的备份时间，具体步骤可以参考http://www.windowsazure.cn/documentation/articles/mysql-database-get-started#step1 。 
+1.登录Azure管理门户，在MySQL　Database on Azure上创建一个新的MySQL服务器并进行必要的配置比如每天的备份时间，具体步骤可以参考https://www.azure.cn/documentation/articles/mysql-database-get-started#step1 。 
 
 
-2.通过Azure管理门户在新创建的MySQL服务器上创建要迁移的目标数据库。具体步骤可以参考http://www.windowsazure.cn/documentation/articles/mysql-database-get-started#step4 。 
+2.通过Azure管理门户在新创建的MySQL服务器上创建要迁移的目标数据库。具体步骤可以参考https://www.azure.cn/documentation/articles/mysql-database-get-started#step4 。 
 
 
 3.如果有多个数据库账号需要访问原数据库，您需要通过Azure管理门户在新的数据库服务器上创建对应的账号。 
@@ -92,7 +92,7 @@ MySQL Database on Azure兼容MySQL 5.5 和 MySQL 5.6，所以绝大部分应用�
 
 ## 关于数据库迁移的常见问题：
 ###导入TRIGGER, PROCEDURE, VIEW, FUNCTION, 或EVENT过程中报”Access denied; you need (at least one of) the SUPER privilege(s) for this operation” 错误。
-检查报错的语句有否使用DEFINER并使用非当前用户，比如DEFINER=user@host， 如果这样的话MySQL是要求SUPER权限来执行该语句，由于MySQL Database on Azure不提供用户SUPER权限（参考[服务限制](http://www.windowsazure.cn/documentation/articles/mysql-database-operation-limitation) ），导致运行该语句失败。您只需要把DEFINER从该语句删掉而使用缺省的当前用户就可以了。
+检查报错的语句有否使用DEFINER并使用非当前用户，比如DEFINER=user@host， 如果这样的话MySQL是要求SUPER权限来执行该语句，由于MySQL Database on Azure不提供用户SUPER权限（参考[服务限制](/documentation/articles/mysql-database-operation-limitation) ），导致运行该语句失败。您只需要把DEFINER从该语句删掉而使用缺省的当前用户就可以了。
 
 ###MYSQL Database on Azure 的管理门户只支持对用户设置整个数据库的读写权限，如果我现在的数据库有对用户权限更细化的设置，迁移会成功吗？
 没有问题，虽然我们的管理门户 以及PowerShell /REST API在创建用户或数据库时只支持对整个数据库设置读写权限，但您可以用“grant”语句对用户权限进行更细化的设置。

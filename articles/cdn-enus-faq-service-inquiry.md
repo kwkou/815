@@ -44,7 +44,7 @@ No, this is not included. When Content Delivery Network receives a request for a
 
 ### **How are Content Delivery Network fees calculated?**
 
-Fees for Content Delivery Network are currently calculated on the basis of traffic. Charging by bandwidth is not supported at the moment. For more specific information on pricing, refer to [Pricing details](http://www.windowsazure.cn/home/features/cdn/#price).
+Fees for Content Delivery Network are currently calculated on the basis of traffic. Charging by bandwidth is not supported at the moment. For more specific information on pricing, refer to [Pricing details](/home/features/cdn/#price).
 
 ## **The concept and role of Azure Content Delivery Network**<a id="step2"></a>
 
@@ -153,7 +153,7 @@ When you create CDN in the Azure CDN portal, enter the return-to-source access h
 
 ## **What are the differences between the Standard and Premium version of CDN?**<a id="step18"></a>
      
-First, the pricing is different. See [Pricing details](http://www.windowsazure.cn/home/features/cdn/#price) for specifics. Second, the current premium CDN service includes only HTTPS acceleration services, although other advanced acceleration services will gradually be added in the future. If you wish to use HTTPS acceleration services at this time, use the support page to contact the Azure support team to enable HTTPS acceleration services.
+First, the pricing is different. See [Pricing details](/home/features/cdn/#price) for specifics. Second, the current premium CDN service includes only HTTPS acceleration services, although other advanced acceleration services will gradually be added in the future. If you wish to use HTTPS acceleration services at this time, use the support page to contact the Azure support team to enable HTTPS acceleration services.
 
 ## **If I use Content Delivery Network acceleration with a blob, do I directly use the blob address, rather than the custom domain name? Does it need ICP number and why?**<a id="step19"></a>
 

@@ -12,9 +12,9 @@
 
 Microsoft Azure CDN （内容传送网络） 通过遍布在中国大陆的众多物理节点上缓存Azure平台上的Storage Blob，Cloud Service和WebSites的静态内容，以及为媒体服务提供流式内容分发提供加速，为开发人员提供一个传送高带宽内容的解决方案。目前本CDN服务也同时支持没有部署在Azure平台上的源站。
 
-有关 Microsoft Azure CDN 的详细信息和价格，请参阅 [Microsoft Azure CDN服务介绍](http://www.windowsazure.cn/home/features/cdn/)。
+有关 Microsoft Azure CDN 的详细信息和价格，请参阅 [Microsoft Azure CDN服务介绍](/home/features/cdn/)。
 
-如果您已经是Microsoft Azure CDN的现有用户，请访问[Microsoft Azure CDN管理门户](https://manage.windowsazure.cn)来管理CDN加速域名。具体使用指南请参见[使用 Microsoft Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-how-to-use/)
+如果您已经是Microsoft Azure CDN的现有用户，请访问[Microsoft Azure CDN管理门户](https://manage.windowsazure.cn)来管理CDN加速域名。具体使用指南请参见[使用 Microsoft Azure CDN](/documentation/articles/cdn-how-to-use/)
 
 + [什么是CDN](#step1)
 + [Microsoft Azure CDN优势](#step2)

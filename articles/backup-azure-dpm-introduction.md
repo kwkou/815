@@ -64,7 +64,7 @@ System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可
 - DPM 服务器上应已安装 Windows PowerShell 和 .NET Framework 4.5。
 - DPM 可将大多数工作负载备份到 Azure 备份。有关所支持内容的完整列表，请参阅下面的 Azure 备份支持项。
 - 使用“复制到磁带”选项无法恢复存储在 Azure 备份中的数据。
-- 你需要一个启用了 Azure 备份功能的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。阅读 [Azure 备份定价](http://www.windowsazure.cn/home/features/back-up/#price)的相关信息。
+- 你需要一个启用了 Azure 备份功能的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。阅读 [Azure 备份定价](/home/features/back-up/#price)的相关信息。
 - 若要使用 Azure 备份，应在要备份的服务器上安装 Azure 备份代理。服务器必须至少为缓存位置提供 2.5 GB 的本地可用存储空间，但建议为缓存位置提供 15 GB 的本地可用存储空间。
 - 数据将存储在 Azure 保管库存储中。你可以备份到 Azure 备份保管库的数据量没有限制，但数据源（例如虚拟机或数据库）的大小不应超过 54400 GB。
 
