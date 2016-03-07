@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 Node.js 使用队列存储 | Microsoft Azure" 
+	pageTitle="如何通过 Node.js 使用队列存储 | Azure" 
 	description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。相关示例是使用 Node.js 编写的。" 
 	services="storage" 
 	documentationCenter="nodejs" 
@@ -19,7 +19,7 @@
 
 ## 概述
 
-本指南将演示如何使用 Microsoft Azure 队列服务执行常见方案。相关示例是使用 Node.js API 编写的。介绍的方案包括“插入”、“扫视”、“获取”和“删除”队列消息以及“创建”和“删除”队列。
+本指南将演示如何使用 Azure 队列服务执行常见方案。相关示例是使用 Node.js API 编写的。介绍的方案包括“插入”、“扫视”、“获取”和“删除”队列消息以及“创建”和“删除”队列。
 
 [AZURE.INCLUDE [storage-queue-concepts-include](../includes/storage-queue-concepts-include.md)]
 

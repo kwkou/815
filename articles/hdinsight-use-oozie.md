@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 HDInsight 中使用 Hadoop Oozie | Microsoft Azure"
+	pageTitle="在 HDInsight 中使用 Hadoop Oozie | Azure"
 	description="在 HDInsight 中使用大数据服务 Hadoop Oozie。了解如何定义 Oozie 工作流，并提交 Oozie 作业。"
 	services="hdinsight"
 	documentationCenter=""

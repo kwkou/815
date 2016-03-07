@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 HDInsight 中提交 Hadoop 作业 | Microsoft Azure"
+	pageTitle="在 HDInsight 中提交 Hadoop 作业 | Azure"
 	description="了解如何将 Hadoop 作业提交到 Azure HDInsight Hadoop。"
 	editor="cgronlun"
 	manager="paulettm"

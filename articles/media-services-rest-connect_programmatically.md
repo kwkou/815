@@ -18,9 +18,9 @@
 - [.NET](/documentation/articles/media-services-dotnet-connect_programmatically)
 - [REST](/documentation/articles/media-services-rest-connect_programmatically)
 
-本主题介绍如何在使用媒体服务 REST API 编程时获取与 Microsoft Azure 媒体服务的编程连接。
+本主题介绍如何在使用媒体服务 REST API 编程时获取与 Azure 媒体服务的编程连接。
 
-访问 Microsoft Azure 媒体服务时需要以下两项内容：由 Azure 访问控制服务 (ACS) 提供的访问令牌和媒体服务本身的 URI。在创建这些请求时，可以使用任何想要的方法，前提是在调用媒体服务时指定了正确的标头值，并且正确地传入了访问令牌。
+访问 Azure 媒体服务时需要以下两项内容：由 Azure 访问控制服务 (ACS) 提供的访问令牌和媒体服务本身的 URI。在创建这些请求时，可以使用任何想要的方法，前提是在调用媒体服务时指定了正确的标头值，并且正确地传入了访问令牌。
 
 以下步骤描述了在使用媒体服务 REST API 连接到媒体服务时运用的最常见工作流：
 

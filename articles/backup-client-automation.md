@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure PowerShell 部署和管理 Windows Server/客户端的备份 | Microsoft Azure"
+	pageTitle="使用 Azure PowerShell 部署和管理 Windows Server/客户端的备份 | Azure"
 	description="了解如何使用 Azure PowerShell 部署和管理 Azure 备份"
 	services="backup"
 	documentationCenter=""
@@ -78,11 +78,11 @@ PS C:\> MARSAgentInstaller.exe /?
 | 选项 | 详细信息 | 默认 |
 | ---- | ----- | ----- |
 | /q | 静默安装 | - |
-| /p:"location" | Azure 备份代理的安装文件夹路径。| C:\Program Files\\Microsoft Azure Recovery Services Agent |
-| /s:"location" | Azure 备份代理的快取文件夹路径。| C:\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch |
+| /p:"location" | Azure 备份代理的安装文件夹路径。| C:\Program Files\\Azure Recovery Services Agent |
+| /s:"location" | Azure 备份代理的快取文件夹路径。| C:\Program Files\\Azure Recovery Services Agent\\Scratch |
 | /m | 选择启用 Microsoft Update | - |
 | /nu | 安装完成后不要检查更新 | - |
-| /d | 卸载 Microsoft Azure 恢复服务代理 | - |
+| /d | 卸载 Azure 恢复服务代理 | - |
 | /ph | 代理主机地址 | - |
 | /po | 代理主机端口号 | - |
 | /pu | 代理主机用户名 | - |
@@ -316,14 +316,14 @@ PolicyState     : Valid
 
 ```
 PS C:\> Get-OBPolicy | Remove-OBPolicy
-Microsoft Azure Backup Are you sure you want to remove this backup policy? This will delete all the backed up data. [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "Y"):
+Azure Backup Are you sure you want to remove this backup policy? This will delete all the backed up data. [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "Y"):
 ```
 
 使用 [Set-OBPolicy](https://technet.microsoft.com/zh-cn/library/hh770421) cmdlet 可以提交策略对象。系统将提示你确认。若要跳过确认，请在 cmdlet 中请使用 ```-Confirm:$false``` 标志。
 
 ```
 PS C:\> Set-OBPolicy -Policy $newpolicy
-Microsoft Azure Backup Do you want to save this backup policy ? [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "Y"):
+Azure Backup Do you want to save this backup policy ? [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "Y"):
 BackupSchedule : 4:00 PM Saturday, Sunday, Every 1 week(s)
 DsList : {DataSource
          DatasourceId:4508156004108672185

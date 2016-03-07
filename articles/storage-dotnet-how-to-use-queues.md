@@ -1,6 +1,6 @@
 <properties
-	pageTitle="如何通过 .NET 使用队列存储 | Microsoft Azure"
-	description="了解如何使用 Microsoft Azure 队列存储创建和删除队列，以及插入、扫视、获取和删除队列消息。"
+	pageTitle="如何通过 .NET 使用队列存储 | Azure"
+	description="了解如何使用 Azure 队列存储创建和删除队列，以及插入、扫视、获取和删除队列消息。"
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Windows 应用商店应用程序中使用 Azure 存储空间 | Microsoft Azure" 
+	pageTitle="在 Windows 应用商店应用程序中使用 Azure 存储空间 | Azure" 
 	description="了解如何使用 Azure Blob、队列和表为 Windows 应用商店应用程序存储数据。" 
 	services="storage" 
 	documentationCenter="" 
@@ -26,7 +26,7 @@
 ## 下载所需工具 ##
 
 - [Visual Studio 2012](http://msdn.microsoft.com/zh-cn/library/windows/apps/br211384) 便于生成、调试、本地化、包装和部署 Windows 应用商店应用程序。
-- [适用于 Windows 运行时的 Microsoft Azure 存储客户端库](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/05/windows-azure-storage-client-library-for-windows-runtime.aspx) 提供用于使用 Azure 存储空间的类库。
+- [适用于 Windows 运行时的 Azure 存储客户端库](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/05/windows-azure-storage-client-library-for-windows-runtime.aspx) 提供用于使用 Azure 存储空间的类库。
 - [适用于 Windows 应用商店应用程序的 WCF 数据服务工具](http://www.microsoft.com/zh-cn/download/details.aspx?id=30714)利用 Visual Studio 2012 及更高版本中对 Windows 应用商店应用程序的客户端 OData 支持，扩展了"添加服务引用"体验。
 
 ## 开发应用程序 ##

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="使用经典部署配置应用程序网关以进行 SSL 卸载 | Microsoft Azure"
+   pageTitle="使用经典部署配置应用程序网关以进行 SSL 卸载 | Azure"
    description="本文提供有关使用 Azure 经典部署模型创建支持 SSL 卸载的应用程序网关的说明。"
    documentationCenter="na"
    services="application-gateway"

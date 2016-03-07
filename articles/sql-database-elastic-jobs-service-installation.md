@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="安装弹性数据库作业 | Microsoft Azure" 
+	pageTitle="安装弹性数据库作业 | Azure" 
 	description="演练如何安装弹性作业功能。" 
 	services="sql-database" 
 	documentationCenter="" 
@@ -23,7 +23,7 @@
 * [NuGet 命令行实用程序](https://nuget.org/nuget.exe)用于安装弹性数据库作业包。有关详细信息，请参阅 http://docs.nuget.org/docs/start-here/installing-nuget。
 
 ## 下载并导入弹性数据库作业 PowerShell 包
-1. 启动 Microsoft Azure PowerShell 命令窗口，并导航到 NuGet 命令行实用程序 (nuget.exe) 所下载到的目录。
+1. 启动 Azure PowerShell 命令窗口，并导航到 NuGet 命令行实用程序 (nuget.exe) 所下载到的目录。
 
 2. 使用以下命令，将**弹性数据库作业**包下载并导入到当前目录：
 
@@ -41,7 +41,7 @@
 		PS C:*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>.\InstallElasticDatabaseJobsCmdlets.ps1
 
 ## 使用 PowerShell 安装弹性数据库作业组件
-1.	启动 Microsoft Azure PowerShell 命令窗口，并导航到 Microsoft.Azure.SqlDatabase.Jobs.x.x.xxx.x 文件夹下的 \\tools 子目录：键入 cd \\tools
+1.	启动 Azure PowerShell 命令窗口，并导航到 Microsoft.Azure.SqlDatabase.Jobs.x.x.xxx.x 文件夹下的 \\tools 子目录：键入 cd \\tools
 
 		PS C:*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*>cd tools
 

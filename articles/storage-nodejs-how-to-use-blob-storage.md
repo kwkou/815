@@ -1,5 +1,5 @@
 ﻿<properties 
-	pageTitle="如何通过 Node.js 使用 Blob 存储 | Microsoft Azure" 
+	pageTitle="如何通过 Node.js 使用 Blob 存储 | Azure" 
 	description="了解如何使用 Azure Blob 服务上载、下载、列出和删除 Blob 内容。示例用 Node.js 编写。"
 	services="storage" 
 	documentationCenter="nodejs" 

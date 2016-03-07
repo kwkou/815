@@ -1,5 +1,5 @@
 <properties
-	pageTitle="虚拟机上的 Tomcat | Microsoft Azure"
+	pageTitle="虚拟机上的 Tomcat | Azure"
 	description="本教程利用使用经典部署模型创建的资源，显示如何创建 Windows 虚拟机并将其配置为运行 Apache Tomcat 应用程序服务器。"
 	services="virtual-machines"
 	documentationCenter="java"

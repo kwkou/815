@@ -124,7 +124,7 @@ Azure PowerShell 是一个模块，可提供通过 Windows PowerShell 管理 Azu
 
 [AZURE.INCLUDE [AzureRm PowerShell 中国云环境](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
-- 有关安装和配置 Azure PowerShell 的信息以及使用 Azure 订阅对 Azure PowerShell 进行身份验证的信息，请参阅[如何安装和配置 Microsoft Azure PowerShell](/documentation/articles/powershell-install-configure)。  
+- 有关安装和配置 Azure PowerShell 的信息以及使用 Azure 订阅对 Azure PowerShell 进行身份验证的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。  
 
 - 若要对 PowerShell cmdlet 使用新的 Azure 资源管理器模式，首先请执行以下命令：`Switch-AzureMode -Name AzureResourceManager`
 
@@ -212,7 +212,7 @@ Azure CLI 提供了适用于 Azure 的跨平台命令，包括对 Web 应用部�
 ## 后续步骤 ##
 [Azure Web 应用– 阻止对非生产部署槽的 Web 访问](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
 
-[Microsoft Azure 试用](/pricing/1rmb-trial/)
+[Azure 试用](/pricing/1rmb-trial/)
 
 <!-- IMAGES -->
 [QGAddNewDeploymentSlot]: ./media/web-sites-staged-publishing/QGAddNewDeploymentSlot.png

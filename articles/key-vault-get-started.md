@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 密钥保管库入门 | Microsoft Azure"
+	pageTitle="Azure 密钥保管库入门 | Azure"
 	description="本教程将会帮助你开始使用 Azure 密钥保管库在 Azure 中创建强化容器，以存储和管理 Azure 中的加密密钥和机密。"
 	services="key-vault"
 	documentationCenter=""
@@ -30,7 +30,7 @@
 
 若要完成本教程，你必须准备好以下各项：
 
-- Microsoft Azure 订阅。如果你没有订阅，可以注册[试用版](/pricing/1rmb-trial)。
+- Azure 订阅。如果你没有订阅，可以注册[试用版](/pricing/1rmb-trial)。
 - Azure PowerShell，**最低版本为 1.0**。若要安装 Azure PowerShell 并将其与 Azure 订阅相关联，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。如果你已安装了 Azure PowerShell，但不知道版本，请在 Azure PowerShell 控制台中键入 `(Get-Module azure -ListAvailable).Version`。如果已安装 Azure PowerShell 版本 0.9.1 到 0.9.8，仍可以使用本教程，但需要进行一些细微更改。例如，必须使用 `Switch-AzureMode AzureResourceManager` 命令，并且某些 Azure 密钥保管库命令已更改。有关版本 0.9.1 到 0.9.8 的密钥保管库 cmdlet 的列表，请参阅 [Azure 密钥保管库 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn868052(v=azure.98).aspx)。 
 - 配置为使用你在本教程中所创建的密钥或密码的应用程序。你可以从 [Microsoft 下载中心](http://www.microsoft.com/en-us/download/details.aspx?id=45343)获取示例应用程序。有关说明，请参阅随附的自述文件。
 

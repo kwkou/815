@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用移动服务注册推送通知的当前用户 | Microsoft Azure" 
+	pageTitle="使用移动服务注册推送通知的当前用户 | Azure" 
 	description="了解在 Azure 移动服务执行注册时如何在 iOS 应用程序中请求向 Azure 通知中心注册推送通知。" 
 	services="notification-hubs" 
 	documentationCenter="ios" 

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="流量管理器 - 流量路由方法 | Microsoft Azure"
+   pageTitle="流量管理器 - 流量路由方法 | Azure"
    description="本文将帮助你了解流量管理器使用的各种流量路由方法。"
    services="traffic-manager"
    documentationCenter=""

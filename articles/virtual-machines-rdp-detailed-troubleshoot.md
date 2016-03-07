@@ -1,5 +1,5 @@
 <properties
-	pageTitle="对远程桌面进行详细故障排除 | Microsoft Azure"
+	pageTitle="对远程桌面进行详细故障排除 | Azure"
 	description="对运行 Windows 的 Azure 虚拟机的 RDP 连接进行详细故障排除的步骤。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -23,7 +23,7 @@
 
 如果你收到的远程桌面错误消息与[基本远程桌面故障排除指南](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)中所述的任何特定错误消息都不相似，可以按照这些步骤操作并尝试找出远程桌面（或 [RDP](https://en.wikipedia.org/wiki/Remote_Desktop_Protocol)）客户端无法连接到 Azure VM 上的 RDP 服务的原因。
 
-如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和 CSDN 论坛](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Microsoft Azure 支持常见问题](/support/faq/)。
+如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和 CSDN 论坛](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Azure 支持常见问题](/support/faq/)。
 
 
 ## 远程桌面连接的组件

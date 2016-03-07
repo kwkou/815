@@ -1,5 +1,5 @@
 <properties
-	pageTitle="VM 中的 SQL Server 自动修补 | Microsoft Azure"
+	pageTitle="VM 中的 SQL Server 自动修补 | Azure"
 	description="介绍 Azure 中运行的 SQL Server 虚拟机的自动修补功能。"
 	services="virtual-machines"
 	documentationCenter="na"

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Microsoft Azure 存储性能和可伸缩性清单"
+	pageTitle="Azure 存储性能和可伸缩性清单"
 	description="在开发使用 Azure 存储的高性能应用程序时，一个经过验证的检查表。"
 	services="storage"
 	documentationCenter=""
@@ -12,10 +12,10 @@
 	ms.date="12/04/2015" 
 	wacn.date="01/29/2016"/>
 
-# Microsoft Azure 存储性能和可伸缩性清单
+# Azure 存储性能和可伸缩性清单
 
 ## 概述
-自从 Microsoft Azure 存储服务发布以来，Microsoft 已经形成了大量的经过验证的做法，目的是提高这些服务的使用效率。本文将其中最重要的一些做法进行了总结，并以“清单”形式列出。本文的目的是确保应用程序开发人员在使用 Azure 存储空间时，采用的是经过验证的做法，并帮助他们确认其他经过验证的、可以考虑采用的做法。本文不会全盘介绍所有可能的性能与伸缩性优化内容，那些影响不大或适用范围不广的内容不在本文讲解之列。必须在设计过程中确保应用程序的行为是可预测到的，因此应早些了解这些经过验证的做法，避免进行那些会引发性能问题的设计。
+自从 Azure 存储服务发布以来，Microsoft 已经形成了大量的经过验证的做法，目的是提高这些服务的使用效率。本文将其中最重要的一些做法进行了总结，并以“清单”形式列出。本文的目的是确保应用程序开发人员在使用 Azure 存储空间时，采用的是经过验证的做法，并帮助他们确认其他经过验证的、可以考虑采用的做法。本文不会全盘介绍所有可能的性能与伸缩性优化内容，那些影响不大或适用范围不广的内容不在本文讲解之列。必须在设计过程中确保应用程序的行为是可预测到的，因此应早些了解这些经过验证的做法，避免进行那些会引发性能问题的设计。
 
 每一位使用 Azure 存储空间的应用程序开发人员都应抽时间阅读本文，确保其应用程序的设计遵循下面列出的每一项经过验证的做法。
 
@@ -104,7 +104,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 ####有用的资源
 下面的链接提供有关可伸缩性目标的其他详细信息：
 -	有关可伸缩性目标的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
--	有关存储冗余选项的信息，请参阅 [Azure 存储空间复制](/documentation/articles/storage-redundancy)和博客文章 [Microsoft Azure 存储冗余选项和读取访问地域冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)。
+-	有关存储冗余选项的信息，请参阅 [Azure 存储空间复制](/documentation/articles/storage-redundancy)和博客文章 [Azure 存储冗余选项和读取访问地域冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)。
 -	有关 Azure 服务价格的最新信息，请参阅 [Azure 定价](/pricing/overview/)。
 
 ###联网
@@ -197,7 +197,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 客户端库了解哪些错误可以重试，哪些不能。不过，如果你是针对存储 REST API 编写的自己的代码，则应记住某些错误不应重试：例如，400（请求错误）响应表示客户端应用程序发送的请求因格式不正常而无法处理。重新发送此请求每次都会导致相同的响应，因此没必要重试。如果你是针对存储 REST API 编写自己的代码，则需了解错误代码的意义，以及每个错误代码的合适重试方式（或者不进行重试）。
 
 ####有用的资源
-有关存储错误代码的详细信息，请参阅 Microsoft Azure Web 应用上的[状态和错误代码](http://msdn.microsoft.com/zh-cn/library/azure/dd179382.aspx)。
+有关存储错误代码的详细信息，请参阅 Azure Web 应用上的[状态和错误代码](http://msdn.microsoft.com/zh-cn/library/azure/dd179382.aspx)。
 
 ##Blob
 除了前面所述的适用于[所有服务](#allservices)的经过验证的做法，此外还有以下经过验证的做法，这些做法尤其适用于 Blob 服务。
@@ -266,7 +266,7 @@ Azure 存储空间支持两种类型的 Blob：*页* Blob 和*块* Blob。在使
 ####<a name="subheading25"></a>使用 JSON
 从存储服务 2013-08-15 版开始，表服务就支持使用 JSON 而非基于 XML 的 AtomPub 格式来传输表数据。这最多可以减少 75% 的负载大小，显著改进应用程序的性能。
 
-有关详细信息，请参阅文章 [Microsoft Azure 表：JSON 简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/05/windows-azure-tables-introducing-json.aspx)和[表服务操作的负载格式](http://msdn.microsoft.com/zh-cn/library/azure/dn535600.aspx)。
+有关详细信息，请参阅文章 [Azure 表：JSON 简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/05/windows-azure-tables-introducing-json.aspx)和[表服务操作的负载格式](http://msdn.microsoft.com/zh-cn/library/azure/dn535600.aspx)。
 
 ####<a name="subheading26"></a>关闭 Nagle
 Nagle 的算法已跨 TCP/IP 网络进行了广泛的实施，是一种改进网络性能的方法。不过，该方法并非适用于所有情况（例如交互性很强的环境）。就 Azure 存储空间来说，Nagle 的算法会对表请求和队列服务请求的执行造成负面影响，应尽可能禁用。

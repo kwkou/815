@@ -197,8 +197,8 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 **组件** | **要求** | **详细信息**
 --- | --- | --- 
-**Azure 帐户** | 需要一个 [Microsoft Azure](/) 帐户。你可以从 [1rmb 试用版](/pricing/1rmb-trial/)开始。
-**Azure 存储空间** | <p>需要使用 Azure 存储帐户来存储复制的数据</p><p>该帐户应该是[标准异地冗余存储帐户](/documentation/articles/storage-redundancy#geo-redundant-storage)或[高级存储帐户](/documentation/articles/storage-premium-storage-preview-portal)。</p><p>它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。</p><p>若要了解详细信息，请阅读 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction)</p>
+**Azure 帐户** | 需要一个 [Azure](/) 帐户。你可以从 [1rmb 试用版](/pricing/1rmb-trial/)开始。
+**Azure 存储空间** | <p>需要使用 Azure 存储帐户来存储复制的数据</p><p>该帐户应该是[标准异地冗余存储帐户](/documentation/articles/storage-redundancy#geo-redundant-storage)或[高级存储帐户](/documentation/articles/storage-premium-storage-preview-portal)。</p><p>它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。</p><p>若要了解详细信息，请阅读 [Azure 存储空间简介](/documentation/articles/storage-introduction)</p>
 **Azure 虚拟网络** | 你将需要 Azure 虚拟网络，配置服务器和主目标服务器将部署在该网络上。它应该位于 Azure Site Recovery 保管库所在的订阅和区域中。如果你要通过 ExpressRoute 或 VPN 连接复制数据，Azure 虚拟网络必须通过 ExpressRoute 连接或站点到站点 VPN 连接到本地网络。
 **Azure 资源** | 确保你有足够的 Azure 资源用于部署所有组件。在 [Azure 订阅限制](/documentation/articles/azure-subscription-service-limits)中阅读更多内容。
 **Azure 虚拟机** | <p>要保护的虚拟机应该符合 [Azure 先决条件](/documentation/articles/site-recovery-best-practices)。</p><p>**磁盘计数** — 单个受保护的服务器最多可以支持 31 个磁盘</p><p>**磁盘大小** — 单个磁盘的容量不能超过 1023 GB</p><p>**群集** — 不支持群集服务器</p><p>**启动** — 不支持统一可扩展固件接口 (UEFI)/可扩展固件接口 (EFI)</p><p>**卷** — 不支持 Bitlocker 加密卷</p><p>**服务器名称** — 名称应包含 1 到 63 个字符（字母、数字和连字符）。名称必须以字母或数字开头，并以字母或数字结尾。在计算机受到保护后，你可以修改 Azure 名称。</p>
@@ -647,7 +647,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 1. 将通行短语从 CX 复制到服务器上的“C:\\connection.passphrase”文件中，然后运行此命令。在本示例中，CX 是 104.40.75.37，HTTPS 端口是 62519：
 
-    `C:\Microsoft-ASR_UA_8.2.0.0_Windows_PREVIEW_20Mar2015_Release.exe" -ip 104.40.75.37 -port 62519 -mode UA /LOG="C:\stdout.txt" /DIR="C:\Program Files (x86)\Microsoft Azure Site Recovery" /VERYSILENT  /SUPPRESSMSGBOXES /norestart  -usesysvolumes  /CommunicationMode https /PassphrasePath "C:\connection.passphrase"`
+    `C:\Microsoft-ASR_UA_8.2.0.0_Windows_PREVIEW_20Mar2015_Release.exe" -ip 104.40.75.37 -port 62519 -mode UA /LOG="C:\stdout.txt" /DIR="C:\Program Files (x86)\Azure Site Recovery" /VERYSILENT  /SUPPRESSMSGBOXES /norestart  -usesysvolumes  /CommunicationMode https /PassphrasePath "C:\connection.passphrase"`
 
 **在 Linux 服务器上手动安装移动服务**：
 

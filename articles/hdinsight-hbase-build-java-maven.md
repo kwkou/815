@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Maven 构建 HBase 应用程序并将其部署到基于 Windows 的 HDInsight | Microsoft Azure"
+	pageTitle="使用 Maven 构建 HBase 应用程序并将其部署到基于 Windows 的 HDInsight | Azure"
 	description="了解如何使用 Apache Maven 构建基于 Java 的 Apache HBase 应用程序，然后将其部署到基于 Windows 的 Azure HDInsight 群集。"
 	services="hdinsight"
 	documentationCenter=""

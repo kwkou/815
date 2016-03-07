@@ -684,7 +684,7 @@ Azure Web 应用使用 IIS 7.0 及更高版本中提供的相同的失败请求�
 
 * [如何监视 Web 应用](/documentation/articles/web-sites-monitor/)
 * [使用 Visual Studio 2013 在 Azure 中调查内存泄漏](http://blogs.msdn.com/b/visualstudioalm/archive/2013/12/20/investigating-memory-leaks-in-azure-web-sites-with-visual-studio-2013.aspx)。有关用于分析托管内存问题的 Visual Studio 功能的 Microsoft ALM 博客文章。
-* [你应该了解的 Microsoft Azure Web 应用联机工具](http://azure.microsoft.com/blog/2014/03/28/windows-azure-websites-online-tools-you-should-know-about-2/)。Amit Apple 发表的博客文章。
+* [你应该了解的 Azure Web 应用联机工具](http://azure.microsoft.com/blog/2014/03/28/windows-azure-websites-online-tools-you-should-know-about-2/)。Amit Apple 发表的博客文章。
 
 若要针对特定故障排除问题寻求帮助，可在以下论坛之一开启话题讨论：
 

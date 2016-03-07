@@ -1,5 +1,5 @@
 <properties
-    pageTitle="我的云服务项目发生了什么情况？| Microsoft Azure | Visual Studio 连接服务"
+    pageTitle="我的云服务项目发生了什么情况？| Azure | Visual Studio 连接服务"
 	description="介绍使用 Visual Studio 连接服务连接到 Azure 存储帐户后云服务项目中会发生什么情况"
     services="storage"
 	documentationCenter=""

@@ -34,7 +34,7 @@
 
 - NuGet 程序集：
 
-	1. 在 Visual Studio 中创建项目后，可在“解决方案资源管理器”中右键单击该项目，然后选择“管理 NuGet 包”。在线搜索 **Azure.批处理**，然后单击“安装”以安装 Microsoft Azure 批处理包和依赖项。
+	1. 在 Visual Studio 中创建项目后，可在“解决方案资源管理器”中右键单击该项目，然后选择“管理 NuGet 包”。在线搜索 **Azure.批处理**，然后单击“安装”以安装 Azure 批处理包和依赖项。
 
 	2. 在线搜索 **WindowsAzure.Storage**，然后单击“安装”以安装 Azure 存储包和依赖项。
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用 | Microsoft Azure"
+	pageTitle="在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用 | Azure"
 	description="了解如何在 HDInsight（Azure 上的 Hadoop 技术堆栈）中通过 Hive 和 Pig 使用 Python 用户定义的函数 (UDF)。"
 	services="hdinsight"
 	documentationCenter=""

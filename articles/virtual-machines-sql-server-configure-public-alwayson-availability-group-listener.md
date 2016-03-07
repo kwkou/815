@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="为 AlwaysOn 可用性组配置外部侦听器 | Microsoft Azure"
+	pageTitle="为 AlwaysOn 可用性组配置外部侦听器 | Azure"
 	description="本教程指导你完成在 Azure 中创建一个可以使用关联云服务公共虚拟 IP 地址从外部访问的 AlwaysOn 可用性组侦听器。"
 	services="virtual-machines"
 	documentationCenter="na"

@@ -1,7 +1,7 @@
 ﻿
 可按照以下步骤附加数据磁盘：
 
-1. 在 [Microsoft Azure 管理门户][AzurePreviewPortal]中，单击“虚拟机”，然后选择刚才创建的虚拟机 (testwinvm)。
+1. 在 [Azure 管理门户][AzurePreviewPortal]中，单击“虚拟机”，然后选择刚才创建的虚拟机 (testwinvm)。
 
 2. 在命令栏上，单击“附加”，然后单击“附加空磁盘”。
 	
@@ -12,7 +12,7 @@
 
 	![附加空磁盘][Image2]
 
-	**注意**：所有磁盘都是从 Microsoft Azure 存储中的 VHD 文件创建的。您可以为添加到存储的 VHD 文件提供名称，但 Microsoft Azure 会自动生成磁盘名称。
+	**注意**：所有磁盘都是从 Azure 存储中的 VHD 文件创建的。您可以为添加到存储的 VHD 文件提供名称，但 Azure 会自动生成磁盘名称。
 
 4. 单击复选标记以将数据磁盘附加到虚拟机。
 

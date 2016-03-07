@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="向移动服务应用添加推送通知 (Windows Phone) | Microsoft Azure" 
+	pageTitle="向移动服务应用添加推送通知 (Windows Phone) | Azure" 
 	description="了解如何使用 Azure 移动服务和通知中心将推送通知发送到 Windows Phone 应用。" 
 	services="mobile-services,notification-hubs" 
 	documentationCenter="windows" 

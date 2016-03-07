@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="在 HDInsight 中预配自定义 Hadoop 群集 | Microsoft Azure" 
+   pageTitle="在 HDInsight 中预配自定义 Hadoop 群集 | Azure" 
    description="了解如何通过使用 Azure 门户、Azure PowerShell、命令行或 .NET SDK 预配自定义的 Azure HDInsight 群集。" 
    services="hdinsight" 
    documentationCenter="" 
@@ -56,7 +56,7 @@
 
 	![HDInsight 群集](./media/hdinsight-provision-clusters-v1/hdinsight.clusters.png)
  
-	> [AZURE.NOTE]*Azure HDInsight 群集*也称为 *HDInsight 中的 Hadoop 群集*或者 *HDInsight 群集*。有时，该术语可与 *Hadoop 群集*换用。它们都代表托管在 Microsoft Azure 环境中的 Hadoop 群集。
+	> [AZURE.NOTE]*Azure HDInsight 群集*也称为 *HDInsight 中的 Hadoop 群集*或者 *HDInsight 群集*。有时，该术语可与 *Hadoop 群集*换用。它们都代表托管在 Azure 环境中的 Hadoop 群集。
 
 	在给定的群集类型中，各节点有不同的角色，使客户能够针对特定角色，根据适合其工作负荷的详细信息来调整节点的大小。例如，如果执行的分析作业类型会消耗大量内存，Hadoop 群集可以使用大量内存来预配辅助节点。
 

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Microsoft Azure 服务总线配额和限制 | Microsoft Azure"
+   pageTitle="Azure 服务总线配额和限制 | Azure"
    description="Azure 服务总线的限制和配额"
    services="service-bus"
    documentationCenter="na"
@@ -13,7 +13,7 @@
 
 # 服务总线配额
 
-本部分列出了 Microsoft Azure 服务总线消息传送的基本配额和限制阈值。
+本部分列出了 Azure 服务总线消息传送的基本配额和限制阈值。
 
 ## 消息传送配额
 

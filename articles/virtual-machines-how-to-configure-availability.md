@@ -1,5 +1,5 @@
 <properties
-	pageTitle="为经典 VM 配置可用性集 | Microsoft Azure"
+	pageTitle="为经典 VM 配置可用性集 | Azure"
 	description="在经典部署模型中，使用 Azure 管理门户和 Azure PowerShell，为新的或现有的虚拟机配置可用性集。"
 	services="virtual-machines"
 	documentationCenter=""

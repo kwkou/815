@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Visual Studio 连接到 SQL 数据仓库 | Microsoft Azure"
+   pageTitle="使用 Visual Studio 连接到 SQL 数据仓库 | Azure"
    description="开始连接到 SQL 数据仓库并运行一些查询。"
    services="sql-data-warehouse"
    documentationCenter="NA"

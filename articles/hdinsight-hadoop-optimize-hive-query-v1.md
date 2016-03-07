@@ -1,5 +1,5 @@
 <properties
-   pageTitle="优化 Hive 查询以便在 HDInsight 中更快地执行 | Microsoft Azure"
+   pageTitle="优化 Hive 查询以便在 HDInsight 中更快地执行 | Azure"
    description="了解如何在 HDInsight 中优化 Hive 查询"
    services="hdinsight"
    documentationCenter=""

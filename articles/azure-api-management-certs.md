@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="将 Microsoft Azure Management API 证书上载到门户" 
-	description="了解如何将 Management API 证书上载到 Microsoft Azure 中" 
+	pageTitle="将 Azure Management API 证书上载到门户" 
+	description="了解如何将 Management API 证书上载到 Azure 中" 
 	services="cloud-services" 
 	documentationCenter=".net" 
 	authors="Thraka" 

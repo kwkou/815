@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线 和 PHP 与 AMQP 1.0 | Microsoft Azure"
+   pageTitle="服务总线 和 PHP 与 AMQP 1.0 | Azure"
    description="使用 AMQP 通过 PHP 使用服务总线。"
    services="service-bus"
    documentationCenter="na"

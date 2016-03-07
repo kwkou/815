@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Blob 存储的本地应用程序 (Java) | Microsoft Azure"
+	pageTitle="使用 Blob 存储的本地应用程序 (Java) | Azure"
 	description="了解如何创建将图像上载到 Azure 并在浏览器中显示图像的控制台应用程序。使用 Java 的代码示例。"
 	services="storage"
 	documentationCenter="java"

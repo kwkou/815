@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="创建使用服务总线主题和订阅的应用程序 | Microsoft Azure"
+   pageTitle="创建使用服务总线主题和订阅的应用程序 | Azure"
    description="服务总线主题和订阅提供的发布-订阅功能简介。"
    services="service-bus"
    documentationCenter="na"

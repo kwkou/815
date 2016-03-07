@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Powershell 创建 Windows VM | Microsoft Azure"
+	pageTitle="使用 Powershell 创建 Windows VM | Azure"
 	description="使用 Azure PowerShell 和经典部署模型创建 Windows 虚拟机。"
 	services="virtual-machines"
 	documentationCenter=""

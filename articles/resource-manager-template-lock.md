@@ -1,5 +1,5 @@
 <properties
-   pageTitle="资源锁的资源管理器模板 | Microsoft Azure"
+   pageTitle="资源锁的资源管理器模板 | Azure"
    description="显示资源锁的资源管理器架构。"
    services="azure-resource-manager"
    documentationCenter="na"

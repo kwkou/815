@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将移动服务添加到现有应用 (WP8) | Microsoft Azure" 
+	pageTitle="将移动服务添加到现有应用 (WP8) | Azure" 
 	description="了解如何使用来自 Azure 移动服务 Windows Phone 8 应用程序的数据。" 
 	services="mobile-services" 
 	documentationCenter="windows" 

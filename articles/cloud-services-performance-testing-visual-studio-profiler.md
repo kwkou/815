@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在计算模拟器中本地分析云服务 | Microsoft Azure" 
+	pageTitle="在计算模拟器中本地分析云服务 | Azure" 
 	services="cloud-services"
 	description="使用 Visual Studio 探查器调查云服务中的性能问题" 
 	documentationCenter=""

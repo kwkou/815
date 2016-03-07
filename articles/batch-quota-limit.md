@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Batch 服务配额和限制 | Microsoft Azure"
+	pageTitle="Batch 服务配额和限制 | Azure"
 	description="了解使用 Azure Batch 服务时的配额、限制和约束"
 	services="batch"
 	documentationCenter=""

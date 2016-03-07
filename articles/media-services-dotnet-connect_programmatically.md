@@ -20,7 +20,7 @@
 - [.NET](/documentation/articles/media-services-dotnet-connect_programmatically)
 
 
-本主题介绍如何在使用 Media Services SDK for .NET 编程时获取与 Microsoft Azure 媒体服务的编程连接。
+本主题介绍如何在使用 Media Services SDK for .NET 编程时获取与 Azure 媒体服务的编程连接。
 
 
 ## 连接到媒体服务
@@ -60,7 +60,7 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 本部分说明如何通过使用以 MediaServicesCredentials 为参数的 CloudMediaContext 构造函数重复使用访问控制服务令牌。
 
 
-[Azure Active Directory 访问控制](https://msdn.microsoft.com/zh-cn/library/hh147631.aspx)（也称为访问控制服务或 ACS）是一个基于云的服务，可轻松对用户进行身份验证和授权以使用户获得访问其 Web 应用的权限。Microsoft Azure 媒体服务通过需要 ACS 令牌的 OAuth 协议控制对其服务的访问。媒体服务从授权服务器接收 ACS 令牌。
+[Azure Active Directory 访问控制](https://msdn.microsoft.com/zh-cn/library/hh147631.aspx)（也称为访问控制服务或 ACS）是一个基于云的服务，可轻松对用户进行身份验证和授权以使用户获得访问其 Web 应用的权限。Azure 媒体服务通过需要 ACS 令牌的 OAuth 协议控制对其服务的访问。媒体服务从授权服务器接收 ACS 令牌。
 
 使用 Media Services SDK 进行开发时，可选择不处理令牌，而是由 SDK 代码为你进行管理。不过，将 ACS 令牌完全交由 SDK 管理会导致不必要的令牌请求。请求令牌将耗用一定的时间并消耗客户端和服务器资源。此外，如果速度过快，ACS 服务器还会限制请求。上限为每秒钟 30 条请求，请参阅 [ACS 服务限制](https://msdn.microsoft.com/zh-cn/library/gg185909.aspx)了解更多详细信息。
 

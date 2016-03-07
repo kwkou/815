@@ -1,5 +1,5 @@
 ﻿<properties 
-	pageTitle="配置 Azure Storage | Microsoft Azure 的连接字符串" 
+	pageTitle="配置 Azure Storage | Azure 的连接字符串" 
 	description="了解如何配置 Azure 存储帐户的连接字符串。连接字符串包含对以编程方式访问存储帐户中的资源进行身份验证所需的信息。连接字符串可以为您自己的一个帐户封装您的帐户访问密钥，也可以包含一个共享访问签名，用于在没有访问密钥的情况下访问某个帐户中的资源。" 
 	services="storage" 
 	documentationCenter="" 

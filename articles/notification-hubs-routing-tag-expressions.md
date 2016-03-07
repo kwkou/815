@@ -37,7 +37,7 @@
 
 有关针对标记创建注册的详细信息，请参阅[注册管理](/documentation/articles/notification-hubs-registration-management)。
 
-你可以使用 [Microsoft Azure 通知中心](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/) SDK 中 `Microsoft.Azure.NotificationHubs.NotificationHubClient` 类的 send notifications 方法将通知发送到标记。你还可以使用 Node.js 或推送通知 REST API。下面是使用 SDK 的示例。
+你可以使用 [Azure 通知中心](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/) SDK 中 `Microsoft.Azure.NotificationHubs.NotificationHubClient` 类的 send notifications 方法将通知发送到标记。你还可以使用 Node.js 或推送通知 REST API。下面是使用 SDK 的示例。
 
 
 	Microsoft.Azure.NotificationHubs.NotificationOutcome outcome = null;

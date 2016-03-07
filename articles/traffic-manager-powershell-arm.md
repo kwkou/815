@@ -1,5 +1,5 @@
 <properties
-   pageTitle="流量管理器的 Azure 资源管理器支持预览版 | Microsoft Azure"
+   pageTitle="流量管理器的 Azure 资源管理器支持预览版 | Azure"
    description="使用包含 Azure 资源管理器 (ARM) 预览版的流量管理器 PowerShell"
    services="traffic-manager"
    documentationCenter="na"
@@ -51,7 +51,7 @@ Azure 流量管理器是使用名为流量管理器配置文件的一系列设�
 
 ## 设置 Azure PowerShell
 
-这些说明使用了需要通过以下步骤进行配置的 Microsoft Azure PowerShell。
+这些说明使用了需要通过以下步骤进行配置的 Azure PowerShell。
 
 非 PowerShell 用户或非 Windows 用户可以通过 Azure CLI 执行类似操作。
 

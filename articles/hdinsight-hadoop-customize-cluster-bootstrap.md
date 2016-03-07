@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Bootstrap 自定义 HDInsight 群集 | Microsoft Azure"
+	pageTitle="使用 Bootstrap 自定义 HDInsight 群集 | Azure"
 	description="了解如何使用 Bootstrap 自定义 HDInsight 群集。"
 	services="hdinsight"
 	documentationCenter=""

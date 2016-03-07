@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何使用 CoreOS | Microsoft Azure"
+	pageTitle="如何使用 CoreOS | Azure"
 	description="介绍 CoreOS、如何在 Azure 上使用经典部署模型创建 CoreOS 虚拟机群集及其基本用法。"
 	services="virtual-machines"
 	documentationCenter=""

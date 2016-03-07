@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="在经典部署模型中使用 Azure CLI 部署多 NIC VM | Microsoft Azure"
+   pageTitle="在经典部署模型中使用 Azure CLI 部署多 NIC VM | Azure"
    description="了解如何在经典部署模型中使用 Azure CLI 部署多 NIC VM"
    services="virtual-network"
    documentationCenter="na"

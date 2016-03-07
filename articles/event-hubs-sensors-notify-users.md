@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="通知用户已收到传感器或其他系统发出的数据 | Microsoft Azure"
+   pageTitle="通知用户已收到传感器或其他系统发出的数据 | Azure"
    description="介绍如何使用事件中心来通知用户已收到传感器数据。"
    services="event-hubs"
    documentationCenter="na"

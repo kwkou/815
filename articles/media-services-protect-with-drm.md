@@ -1,6 +1,6 @@
 <properties
 	pageTitle="使用 PlayReady 和/或 Widevine DRM 动态通用加密"
-	description="Microsoft Azure 媒体服务允许你传送受 Microsoft PlayReady DRM 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。它还允许你传送通过 Widevine DRM 加密的 DASH。本主题说明如何使用 PlayReady 和 Widevine DRM 动态加密。"
+	description="Azure 媒体服务允许你传送受 Microsoft PlayReady DRM 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。它还允许你传送通过 Widevine DRM 加密的 DASH。本主题说明如何使用 PlayReady 和 Widevine DRM 动态加密。"
 	services="media-services"
 	documentationCenter=""
 	authors="Juliako,Mingfeiy"
@@ -20,7 +20,7 @@
 - [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 - [PHP](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)
 
-Microsoft Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://www.microsoft.com/playready/overview/) 许可证保护的加密 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。它还允许你传送通过 Widevine DRM 许可证加密的 DASH 流。PlayReady 和 Widevine 都是按通用加密 (ISO/IEC 23001-7 CENC) 规范加密的。你可以通过 [AMS .NET SDK](https://www.nuget.org/packages/windowsazure.mediaservices/)（从版本 3.5.1 开始）或 REST API 来配置 AssetDeliveryConfiguration 以使用 Widevine。
+Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://www.microsoft.com/playready/overview/) 许可证保护的加密 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。它还允许你传送通过 Widevine DRM 许可证加密的 DASH 流。PlayReady 和 Widevine 都是按通用加密 (ISO/IEC 23001-7 CENC) 规范加密的。你可以通过 [AMS .NET SDK](https://www.nuget.org/packages/windowsazure.mediaservices/)（从版本 3.5.1 开始）或 REST API 来配置 AssetDeliveryConfiguration 以使用 Widevine。
 
 媒体服务提供有用于传送 Microsoft PlayReady 许可证的服务。媒体服务还提供用于配置所需权限和限制的 API，这样当用户播放受保护的内容时，PlayReady DRM 运行时便会强制实施这些权限和限制。当用户请求受 PlayReady 保护的内容时，播放器应用程序将从 AMS 许可证服务请求许可证。如果播放器已获授权，AMS 许可证服务将向播放器颁发许可证。PlayReady 许可证包含客户端播放器用来对内容进行解密和流式传输的解密密钥。
 
@@ -67,7 +67,7 @@ Microsoft Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https:/
 
 ##创建资产并将文件上载到资产
 
-为了对视频进行管理、编码和流式处理，必须首先将内容上载到 Microsoft Azure 媒体服务中。上载完成后，相关内容即安全地存储在云中供后续处理和流式处理。
+为了对视频进行管理、编码和流式处理，必须首先将内容上载到 Azure 媒体服务中。上载完成后，相关内容即安全地存储在云中供后续处理和流式处理。
 
 有关详细信息，请参阅[将文件上载到媒体服务帐户](/documentation/articles/media-services-dotnet-upload-files)。
 

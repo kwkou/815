@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将 Azure PowerShell 与资源管理器配合使用 | Microsoft Azure" 
+	pageTitle="将 Azure PowerShell 与资源管理器配合使用 | Azure" 
 	description="介绍如何使用 Azure PowerShell 将作为资源组的多个资源部署到 Azure。" 
 	services="azure-resource-manager" 
 	documentationCenter="" 

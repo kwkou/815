@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure 中的 SQL Server 的安全注意事项 | Microsoft Azure"
+	pageTitle="Azure 中的 SQL Server 的安全注意事项 | Azure"
 	description="本主题适用于使用经典部署模型创建的资源，并提供了有关保护 Azure 虚拟机中运行的 SQL Server 的一般指南。"
 	services="virtual-machines"
 	documentationCenter="na"

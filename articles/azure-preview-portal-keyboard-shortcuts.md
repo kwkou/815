@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure 经典门户快捷键 | Microsoft Azure"
+   pageTitle="Azure 经典门户快捷键 | Azure"
    description="本文始终列出可在整个 Azure 经典门户中使用的最新快捷键。单个服务可能有其自身的专用快捷键。"
    services="cloud-services"
    documentationCenter=""

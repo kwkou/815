@@ -1,5 +1,5 @@
 <properties
-	pageTitle="什么是 SQL 数据库？ SQL 数据库简介 | Microsoft Azure"
+	pageTitle="什么是 SQL 数据库？ SQL 数据库简介 | Azure"
 	description="获取 SQL 数据库简介：Microsoft 在云中的关系数据库管理系统 (RDBMS) 的技术详细信息与功能。"
 	keywords="sql 简介,什么是 sql 数据库,DTU"
 	services="sql-database"

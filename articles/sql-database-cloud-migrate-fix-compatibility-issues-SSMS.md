@@ -1,6 +1,6 @@
 <properties
    pageTitle="在迁移到 SQL 数据库之前，修复 SQL Server 数据库兼容性问题"
-   description="Microsoft Azure SQL 数据库, 数据库迁移, 兼容性, SQL Azure 迁移向导"
+   description="Azure SQL 数据库, 数据库迁移, 兼容性, SQL Azure 迁移向导"
    services="sql-database"
    documentationCenter=""
    authors="carlrabeler"

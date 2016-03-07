@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 PHP 使用队列存储 | Microsoft Azure"
+	pageTitle="如何通过 PHP 使用队列存储 | Azure"
 	description="了解如何使用 Azure 队列存储服务创建和删除队列，以及插入、获取和删除消息。示例用 PHP 编写。"
 	documentationCenter="php"
 	services="storage"

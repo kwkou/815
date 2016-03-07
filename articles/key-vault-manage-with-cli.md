@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 CLI 管理密钥保管库 | Microsoft Azure"
+	pageTitle="使用 CLI 管理密钥保管库 | Azure"
 	description="使用本教程通过 CLI 自动执行密钥保管库中的常见任务"
 	services="key-vault"
 	documentationCenter=""
@@ -30,7 +30,7 @@
 
 若要完成本教程，你必须准备好以下各项：
 
-- Microsoft Azure 订阅。如果你没有订阅，可以注册[试用版](/pricing/1rmb-trial)。
+- Azure 订阅。如果你没有订阅，可以注册[试用版](/pricing/1rmb-trial)。
 - 命令行接口版本 0.9.1 或更高版本。若要安装最新版本并连接到 Azure 订阅，请参阅[安装和配置 Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install)。
 - 配置为使用你在本教程中所创建的密钥或密码的应用程序。你可以从 [Microsoft 下载中心](http://www.microsoft.com/en-us/download/details.aspx?id=45343)获取示例应用程序。有关说明，请参阅随附的自述文件。
 
@@ -75,7 +75,7 @@
 4.	从门户中，选择“设置”，然后选择“管理员”。选择“添加”，并将新用户添加为共同管理员。这样组织帐户即可管理 Azure 订阅。
 5.	最后，从 Azure 门户注销，然后使用新的组织帐户重新登录。如果这是使用此帐户首次登录，系统将提示更改密码。
 
-有关在 Microsoft Azure 中使用组织帐户的详细信息，请参阅[以组织身份注册 Microsoft Azure](/documentation/articles/sign-up-organization)。
+有关在 Azure 中使用组织帐户的详细信息，请参阅[以组织身份注册 Azure](/documentation/articles/sign-up-organization)。
 
 如果你有多个订阅，并想要指定其中一个订阅供 Azure 密钥保管库使用，请键入以下内容以查看帐户的订阅：
 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="为 AlwaysOn 可用性组配置 ILB 侦听器 | Microsoft Azure"
+	pageTitle="为 AlwaysOn 可用性组配置 ILB 侦听器 | Azure"
 	description="本教程使用通过经典部署模型创建的资源，并使用内部负载平衡器 (ILB) 在 Azure 中创建 AlwaysOn 可用性组侦听器。"
 	services="virtual-machines"
 	documentationCenter="na"

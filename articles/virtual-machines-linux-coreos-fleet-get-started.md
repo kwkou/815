@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 CoreOS 上开始使用 Fleet | Microsoft Azure"
+	pageTitle="在 CoreOS 上开始使用 Fleet | Azure"
 	description="提供使用经典部署模型在 Azure 上创建的 CoreOS Linux 虚拟机上使用 Fleet 和 Docker 的基本示例。"
 	services="virtual-machines"
 	documentationCenter=""

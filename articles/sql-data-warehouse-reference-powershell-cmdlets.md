@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库中的 cmdlet 入门 | Microsoft Azure"
+   pageTitle="SQL 数据仓库中的 cmdlet 入门 | Azure"
    description="使用 PowerShell cmdlet 暂停和重新启动 SQL 数据仓库"
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -23,7 +23,7 @@
 ## 获取和运行 Azure PowerShell cmdlet
 
 1. 若要下载 Azure PowerShell 模块，请运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)。 
-2. 若要运行该模块，请在开始窗口中键入 **Microsoft Azure PowerShell**。
+2. 若要运行该模块，请在开始窗口中键入 **Azure PowerShell**。
 3. 如果尚未将你的帐户添加到计算机，请运行以下 cmdlet。有关详细信息，请参阅[如何安装和配置 Azure PowerShell]()：
 
 ```

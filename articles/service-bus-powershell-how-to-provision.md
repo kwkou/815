@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 PowerShell 管理服务总线 | Microsoft Azure"
+	pageTitle="使用 PowerShell 管理服务总线 | Azure"
 	description="使用 PowerShell 脚本而不是 .NET 来管理服务总线"
 	services="service-bus"
 	documentationCenter=".net"
@@ -16,7 +16,7 @@
 
 ## 概述
 
-Microsoft Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。本文介绍如何通过本地 Azure PowerShell 控制台使用 PowerShell 来设置和管理 Service Bus 实体（如命名空间、队列和事件中心）。
+Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。本文介绍如何通过本地 Azure PowerShell 控制台使用 PowerShell 来设置和管理 Service Bus 实体（如命名空间、队列和事件中心）。
 
 ## 先决条件
 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure AD Connect：将本地标识与 Azure Active Directory 集成 | Microsoft Azure" 
+	pageTitle="Azure AD Connect：将本地标识与 Azure Active Directory 集成 | Azure" 
 	description="本页介绍 Azure AD Connect 是什么，以及为何要使用它。" 
 	services="active-directory" 
 	documentationCenter="" 

@@ -1,5 +1,5 @@
 <properties 
- pageTitle="开始在管理门户中使用计划程序 | Microsoft Azure"
+ pageTitle="开始在管理门户中使用计划程序 | Azure"
  description="" 
  services="scheduler" 
  documentationCenter=".NET" 

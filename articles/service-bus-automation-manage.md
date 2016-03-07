@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure 自动化管理 Azure 服务总线 | Microsoft Azure"
+	pageTitle="使用 Azure 自动化管理 Azure 服务总线 | Azure"
 	description="了解如何使用 Azure 自动化服务来管理 Azure Service Bus。"
 	services="service-bus, automation"
 	documentationCenter=""

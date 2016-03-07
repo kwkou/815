@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Azure 存储表设计指南 |Microsoft Azure" 
+   pageTitle="Azure 存储表设计指南 |Azure" 
    description="在 Azure 表存储中设计可伸缩的高性能表"
    services="storage"
    documentationCenter="na"
@@ -20,7 +20,7 @@
 
 ## 关于 Azure 表服务
 
-本部分重点介绍表服务的一些主要功能，这些功能尤其与设计性能和可伸缩性相关。如果你不熟悉 Azure 存储和表服务，在阅读本文的其他部分之前，请先阅读 [Microsoft Azure 存储简介](/documentation/articles/storage-introduction) 和[如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables)。尽管本指南的重点是介绍表服务，但它也将包括 Azure 队列和 Blob 服务的一些讨论，并介绍如何在解决方案中将这些 Azure 队列和 Blob 服务与表服务一起使用。  
+本部分重点介绍表服务的一些主要功能，这些功能尤其与设计性能和可伸缩性相关。如果你不熟悉 Azure 存储和表服务，在阅读本文的其他部分之前，请先阅读 [Azure 存储简介](/documentation/articles/storage-introduction) 和[如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables)。尽管本指南的重点是介绍表服务，但它也将包括 Azure 队列和 Blob 服务的一些讨论，并介绍如何在解决方案中将这些 Azure 队列和 Blob 服务与表服务一起使用。  
 
 什么是表服务？ 从名称可以推测出，表服务将使用表格格式来存储数据。在标准术语中，表的每一行表示一个实体，而列存储该实体的各种属性。每个实体都有一对密钥来唯一标识它，并具有一个时间戳列，表服务使用该列来跟踪上次更新实体的时间（此操作是自动发生的，无法手动使用任意值来覆盖时间戳）。表服务使用此上次修改时间戳 (LMT) 来管理开放式并发。
 
@@ -127,7 +127,7 @@
 
 在表服务中，单个节点为一个或多个完整的分区提供服务，并且该服务可通过对节点上的分区进行动态负载平衡来进行缩放。如果某个节点负载过轻，表服务可以将该节点提供服务的分区范围*拆分*为不同节点；当流量下降时，该服务可将无操作的节点的分区范围*合并*为单个节点。
 
-有关表服务内部细节的详细信息（特别是该服务如何管理分区），请参阅文章 [Microsoft Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)。
+有关表服务内部细节的详细信息（特别是该服务如何管理分区），请参阅文章 [Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)。
 
 ###<a id="entity-group-transactions"></a> 实体组事务
 在表服务中，实体组事务 (EGT) 是唯一内置机制，用于对多个实体执行原子更新。在一些文档中，EGT 也称为*批处理事务*。EGT 只能应用于存储在同一分区（共享给定表中的同一分区键）的实体，因此每当你需要对多个实体执行原子事务行为时，都需要确保这些实体位于同一分区。这通常是将多个实体类型保存在同一个表（和分区）中，而不是对不同实体类型使用多个表的原因。单个 EGT 最多可应用于 100 个实体。如果你提交多个用于处理的并发 EGT，请确保不在 EGT 共用实体上操作这些 EGT，这一点很重要，否则处理会延迟。
@@ -153,7 +153,7 @@ EGT 还为你引入了潜在的权衡以便在设计中进行评估：使用更�
 表存储的价格相对便宜，但在评估任何使用表服务的解决方案时，应同时针对容量使用情况和事务数量进行成本估算。但是，在许多情况下，为提高解决方案的性能或可伸缩性，存储非规范化或重复的数据是可采取的有效方法。有关定价的详细信息，请参阅[存储定价详细信息](/home/features/storage/#price)。
 
 ### 比较 Azure 表和 SQL Azure  
-有关 Azure SQL 数据库（关系数据库服务）与表服务之间的比较，请参阅 MSDN 上的 [Microsoft Azure 表存储和 Microsoft Azure SQL 数据库 - 比较和对照](http://msdn.microsoft.com/zh-cn/library/azure/jj553018.aspx)。  
+有关 Azure SQL 数据库（关系数据库服务）与表服务之间的比较，请参阅 MSDN 上的 [Azure 表存储和 Azure SQL 数据库 - 比较和对照](http://msdn.microsoft.com/zh-cn/library/azure/jj553018.aspx)。  
 
 ## 表设计准则  
 这些列表汇总了一些设计表时需要牢记的重要原则，本指南稍后会更详细地对其进行解释。本指南的内容与设计关系数据库通常所遵循的指导原则大不相同。
@@ -301,7 +301,7 @@ EGT 还为你引入了潜在的权衡以便在设计中进行评估：使用更�
 
 请注意，当前不支持合并。由于属性的子集可能以前已使用不同的密钥加密，因此只合并新属性和更新元数据将导致数据丢失。合并需要进行额外的服务调用以从服务中读取预先存在的实体，或者需要为属性使用一个新密钥，由于性能方面的原因，这两种方案都不适用。
 
-有关对表数据进行加密的信息，请参阅 [Microsoft Azure 存储空间的客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption)。
+有关对表数据进行加密的信息，请参阅 [Azure 存储空间的客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption)。
 
 ##<a id="modelling-relationships"></a> 为关系建模
 
@@ -1129,7 +1129,7 @@ Storage Analytics 在内部缓存日志消息，然后定期更新相应的 blob
 
 #### 管理并发  
 
-默认情况下，表服务在单个实体级别实现针对 **Insert**、**Merge** 和 **Delete** 操作的开放式并发检查，尽管客户端可以强制表服务跳过这些检查。有关表服务如何管理并发的详细信息，请参阅 Microsoft Azure Web 应用上的[在 Microsoft Azure 存储空间中管理并发](/documentation/articles/storage-concurrency) 。  
+默认情况下，表服务在单个实体级别实现针对 **Insert**、**Merge** 和 **Delete** 操作的开放式并发检查，尽管客户端可以强制表服务跳过这些检查。有关表服务如何管理并发的详细信息，请参阅 Azure Web 应用上的[在 Azure 存储空间中管理并发](/documentation/articles/storage-concurrency) 。  
 
 ####<a id="merge-or-replace"></a> 合并或替换  
 

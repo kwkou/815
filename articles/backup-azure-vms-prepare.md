@@ -1,5 +1,5 @@
 <properties
-	pageTitle="进行备份 Azure 虚拟机所需的环境准备 | Microsoft Azure"
+	pageTitle="进行备份 Azure 虚拟机所需的环境准备 | Azure"
 	description="确保进行备份 Azure 虚拟机所需的环境准备"
 	services="backup"
 	documentationCenter=""

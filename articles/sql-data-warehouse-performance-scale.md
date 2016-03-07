@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库的弹性性能与缩放性 | Microsoft Azure"
+   pageTitle="SQL 数据仓库的弹性性能与缩放性 | Azure"
    description="了解 SQL 数据仓库的弹性，介绍如何使用数据仓库单位来向上或向下缩放计算资源。提供了代码示例。"
    services="sql-data-warehouse"
    documentationCenter="NA"

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="角色的默认 TEMP 文件夹大小太小 | Microsoft Azure"
+   pageTitle="角色的默认 TEMP 文件夹大小太小 | Azure"
    description="云服务角色的 TEMP 文件夹的空间有限。本文针对如何避免磁盘空间不足的问题提供了一些建议。"
    services="cloud-services"
    documentationCenter=""
@@ -22,7 +22,7 @@
 
 如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和CSDN论坛](/support/forums/)上的 Azure 专家。
 
-或者，你也可以提出 Azure 支持事件。转至 [Azure 支持站点](/support/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Microsoft Azure 支持常见问题](/support/faq/)。
+或者，你也可以提出 Azure 支持事件。转至 [Azure 支持站点](/support/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Azure 支持常见问题](/support/faq/)。
 
 
 ## 为什么空间会不足？

@@ -80,7 +80,7 @@
 <a name="cache-monitor"></a>
 ## 如何监视缓存的运行状况和性能？
 
-目前，Microsoft Azure 中国区仅支持使用 Azure PowerShell 和 Azure CLI 管理 Redis 缓存。因此，你无法以图形方式监视缓存。
+目前，Azure 中国区仅支持使用 Azure PowerShell 和 Azure CLI 管理 Redis 缓存。因此，你无法以图形方式监视缓存。
 
 <a name="cache-disconnect"></a>
 ## 客户端为何与缓存断开连接？
@@ -182,7 +182,7 @@ Redis 服务器不能现成地支持 SSL，但 Azure Redis 缓存可提供此支
 <a name="cache-reference"></a>
 ## Azure Redis 缓存为何不像某些其他 Azure 服务一样提供 MSDN 类库参考？
 
-Microsoft Azure Redis 缓存基于主流开源 Redis 缓存，让你能够访问由 WindowsAzure.cn 管理的安全专用 Redis 缓存。我们针对许多编程语言提供各种 [Redis 客户端](http://redis.io/clients)。每个客户端有自身的 API，用于通过 [Redis 命令](http://redis.io/commands)调用 Redis 缓存实例。
+Azure Redis 缓存基于主流开源 Redis 缓存，让你能够访问由 WindowsAzure.cn 管理的安全专用 Redis 缓存。我们针对许多编程语言提供各种 [Redis 客户端](http://redis.io/clients)。每个客户端有自身的 API，用于通过 [Redis 命令](http://redis.io/commands)调用 Redis 缓存实例。
 
 由于客户端各不相同，因此 MSDN 上未提供统一的类参考；而是每个客户端都在维护其自身的参考文档。除了参考文档以外，Azure.com 的 [Redis 缓存文档](/documentation/services/redis-cache/)页上提供了许多教程，说明如何使用不同的语言和缓存客户端开始使用 Azure Redis 缓存。
 

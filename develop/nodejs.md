@@ -1,5 +1,5 @@
 <properties 
-pageTitle="Microsoft Azure 开发人员中心：NODEJS" 
+pageTitle="Azure 开发人员中心：NODEJS" 
 description="" 
 services="NODEJS" 
 documentationCenter="Develop" 

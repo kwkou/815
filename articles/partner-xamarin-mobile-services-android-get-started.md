@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="适用于 Xamarin.Android 的移动服务入门 | Microsoft Azure" 
+	pageTitle="适用于 Xamarin.Android 的移动服务入门 | Azure" 
 	writer="craigd" 
 	description="了解如何对 Xamarin.Android 应用程序使用 Azure 移动服务。" 
 	documentationCenter="xamarin" 

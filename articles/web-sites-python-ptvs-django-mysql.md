@@ -162,7 +162,7 @@
 - [Python Tools for Visual Studio 文档]
   - [Web 项目]
   - [云服务项目]
-  - [在 Microsoft Azure 上进行远程调试]
+  - [在 Azure 上进行远程调试]
 - [Django 文档]
 - [MySQL]
 
@@ -179,7 +179,7 @@
 [Azure SDK Tools for VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
 [Python 2.7（32 位）]: http://go.microsoft.com/fwlink/?LinkId=517190
 [Python Tools for Visual Studio 文档]: http://pytools.codeplex.com/documentation
-[在 Microsoft Azure 上进行远程调试]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
+[在 Azure 上进行远程调试]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
 [Web 项目]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
 [云服务项目]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
 [Django 文档]: https://www.djangoproject.com/

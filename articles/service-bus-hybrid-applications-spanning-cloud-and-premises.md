@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="启用跨云和本地的混合应用程序 | Microsoft Azure" 
+	pageTitle="启用跨云和本地的混合应用程序 | Azure" 
 	description="了解如何构建跨云和本地的混合应用程序。" 
 	services="service-bus" 
 	documentationCenter=".net" 
@@ -14,7 +14,7 @@
 
 # 启用跨云和本地的混合应用程序
 
-混合云/本地应用程序在现代 IT 环境中已成为现实。Microsoft Azure 服务总线可帮助你利用现有本地资产，创建安全可靠的解决方案来补充和扩展当前的基础结构。
+混合云/本地应用程序在现代 IT 环境中已成为现实。Azure 服务总线可帮助你利用现有本地资产，创建安全可靠的解决方案来补充和扩展当前的基础结构。
 
 
 ## 探究

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="EntLib 重试连接到 SQL 数据库 | Microsoft Azure"
+	pageTitle="EntLib 重试连接到 SQL 数据库 | Azure"
 	description="Enterprise Library 旨在简化云服务的客户端程序的多个任务，包括集成暂时性故障的重试逻辑。"
 	services="sql-database"
 	documentationCenter=""

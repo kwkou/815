@@ -1,5 +1,5 @@
 <properties
-	pageTitle="关于磁盘和 VHD | Microsoft Azure"
+	pageTitle="关于磁盘和 VHD | Azure"
 	description="了解 Azure 中虚拟机磁盘和 VHD 的基础知识。"
 	services="virtual-machines"
 	documentationCenter=""

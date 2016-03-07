@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在管理门户中创建运行 Windows 的 VM | Microsoft Azure"
+	pageTitle="在管理门户中创建运行 Windows 的 VM | Azure"
 	description="在 Azure 管理门户中创建 Windows 虚拟机。"
 	services="virtual-machines"
 	documentationCenter=""

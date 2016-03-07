@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="配置性能流量路由方法 | Microsoft Azure"
+   pageTitle="配置性能流量路由方法 | Azure"
    description="本文将帮助你在流量管理器中配置性能流量路由方法"
    services="traffic-manager"
    documentationCenter=""

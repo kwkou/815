@@ -16,7 +16,7 @@
 # Azure SQL 数据库基准检验概述
 
 ## 概述
-Microsoft Azure SQL 数据库提供了三个具有多个性能级别的[服务层](/documentation/articles/sql-database-service-tiers)。每个性能级别均提供不断增加的资源集或“能力”，旨在递增地提供更高的吞吐量。
+Azure SQL 数据库提供了三个具有多个性能级别的[服务层](/documentation/articles/sql-database-service-tiers)。每个性能级别均提供不断增加的资源集或“能力”，旨在递增地提供更高的吞吐量。
 
 能够量化每个性能级别的递增能力如何转换为更高的数据库性能至关重要。为此，Microsoft 开发了 Azure SQL 数据库基准检验 (ASDB)。基准检验将执行在所有 OLTP 工作负荷中找到的基本操作组合。我们会度量为每个性能级别下运行的数据库实现的吞吐量。
 

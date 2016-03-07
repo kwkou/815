@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 DMV 监视工作负荷 | Microsoft Azure"
+   pageTitle="使用 DMV 监视工作负荷 | Azure"
    description="了解如何使用 DMV 监视工作负荷。"
    services="sql-data-warehouse"
    documentationCenter="NA"

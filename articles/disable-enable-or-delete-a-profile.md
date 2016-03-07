@@ -1,5 +1,5 @@
 <properties
-   pageTitle="禁用、启用或删除流量管理器配置文件 | Microsoft Azure"
+   pageTitle="禁用、启用或删除流量管理器配置文件 | Azure"
    description="本文将帮助你使用流量管理器配置文件。"
    services="traffic-manager"
    documentationCenter="na"

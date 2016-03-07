@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="开始使用队列存储和 Visual Studio 连接服务（WebJob 项目）| Microsoft Azure"
+	pageTitle="开始使用队列存储和 Visual Studio 连接服务（WebJob 项目）| Azure"
 	description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始使用 WebJob 项目中的 Azure 队列存储"
 	services="storage"
 	documentationCenter=""

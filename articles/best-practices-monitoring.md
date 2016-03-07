@@ -1,5 +1,5 @@
 <properties
-   pageTitle="监视和诊断指南 | Microsoft Azure"
+   pageTitle="监视和诊断指南 | Azure"
    description="有关在云中监视分布式应用程序的最佳实践。"
    services=""
    documentationCenter="na"
@@ -603,7 +603,7 @@ _图 6.
 - [优先级队列](https://msdn.microsoft.com/zh-cn/library/dn589794.aspx)模式说明如何排定队列消息的优先级，以便在较不紧急的消息之前接收和处理紧急请求。
 
 ## 详细信息
-- Windowsazure.cn 网站上的[监视、诊断和排查 Microsoft Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)一文。
+- Windowsazure.cn 网站上的[监视、诊断和排查 Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)一文。
 - Microsoft 网站上的 [Azure：遥测基础知识和疑难解答](http://social.technet.microsoft.com/wiki/contents/articles/18146.windows-azure-telemetry-basics-and-troubleshooting.aspx)一文。
 - Microsoft 网站上的[使用 Azure 诊断收集日志记录数据](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx)页。
 

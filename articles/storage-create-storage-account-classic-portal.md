@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何创建、管理或删除存储帐户 | Microsoft Azure"
+	pageTitle="如何创建、管理或删除存储帐户 | Azure"
 	description="了解如何在 Azure 经典门户中创建、管理或删除存储帐户。"
 	services="storage"
 	documentationCenter=""

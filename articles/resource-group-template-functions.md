@@ -1,5 +1,5 @@
 <properties
-   pageTitle="资源管理器模板表达式 | Microsoft Azure"
+   pageTitle="资源管理器模板表达式 | Azure"
    description="介绍在 Azure 资源管理器模板中检索值、处理字符串和数字以及检索部署信息时所用的函数。"
    services="azure-resource-manager"
    documentationCenter="na"

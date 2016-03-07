@@ -1,5 +1,5 @@
 ﻿<properties 
-	pageTitle="如何使用 SQL 数据库 (.NET) - Microsoft Azure" 
+	pageTitle="如何使用 SQL 数据库 (.NET) - Azure" 
 	description="SQL Database 入门。了解如何创建 SQL Database 实例，以及如何使用 ADO.NET、ODBC 和 EntityClient Provider 与该实例建立连接。" 
 	services="sql-database" 
 	documentationCenter=".net" 

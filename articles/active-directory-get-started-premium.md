@@ -17,7 +17,7 @@
 Azure Active Directory 有三个版本：免费版 (Free)、基本版 (Basic) 和高级版 (Premium)。Azure 或 Office 365 订阅随附了免费版。可以通过 [Microsoft 企业协议](https://www.microsoft.com/zh-cn/licensing/licensing-programs/enterprise.aspx)或[开放批量许可](https://www.microsoft.com/zh-cn/licensing/licensing-programs/open-license.aspx)计划获取基本和高级版。Azure 和 Office 365 订阅者还可以在线购买 Active Directory Premium。[在此处登录](https://portal.office.com/Commerce/Catalog.aspx)进行购买。
 
 > [AZURE.NOTE]
-在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国 21Vianet 运营的 Microsoft Azure 服务目前不支持 Azure Active Directory 高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](http://feedback.azure.com/forums/169401-azure-active-directory)与我们联系。
+在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国 21Vianet 运营的 Azure 服务目前不支持 Azure Active Directory 高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](http://feedback.azure.com/forums/169401-azure-active-directory)与我们联系。
 
 **企业移动套件**中也包含了 Azure Active Directory Premium。通过企业移动套件，组织能够根据一个许可计划，以经济高效的方式结合使用 Windows Intune、Azure 权限管理和 Active Directory Premium 服务。有关详细信息，请参阅[企业移动套件](https://www.microsoft.com/zh-cn/server-cloud/enterprise-mobility/overview.aspx)网站。
 
@@ -45,7 +45,7 @@ Azure Active Directory 有三个版本：免费版 (Free)、基本版 (Basic) �
 
 ## 步骤 3：激活 Azure Active Directory 访问权限
 
-将许可证设置到目录中后，你将会收到一封欢迎电子邮件（参阅下图），其中确认你可以开始管理 Azure Active Directory Premium 或企业移动套件的许可证和功能。如果你以前用过 Microsoft Azure，则可以转到 http://manage.windowsazure.cn 以分配新的许可证（有关更多说明，请参阅下面的“步骤 4”）。如果你是 Microsoft Azure 的新手，则选择电子邮件中的“登录”链接或转到[“Azure Active Directory 访问权限激活”页](https://account.windowsazure.cn/signup?offer=MS-AZR-0110P)时，系统将引导你完成一系列步骤，以帮助你通过 Azure 管理门户访问目录。
+将许可证设置到目录中后，你将会收到一封欢迎电子邮件（参阅下图），其中确认你可以开始管理 Azure Active Directory Premium 或企业移动套件的许可证和功能。如果你以前用过 Azure，则可以转到 http://manage.windowsazure.cn 以分配新的许可证（有关更多说明，请参阅下面的“步骤 4”）。如果你是 Azure 的新手，则选择电子邮件中的“登录”链接或转到[“Azure Active Directory 访问权限激活”页](https://account.windowsazure.cn/signup?offer=MS-AZR-0110P)时，系统将引导你完成一系列步骤，以帮助你通过 Azure 管理门户访问目录。
 
 ![][4]
 

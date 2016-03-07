@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用弹性数据库工具添加分片 | Microsoft Azure" 
+	pageTitle="使用弹性数据库工具添加分片 | Azure" 
 	description="如何使用弹性缩放 API 将新分片添加到分片集。" 
 	services="sql-database" 
 	documentationCenter="" 

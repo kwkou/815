@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure DPM 备份简介 | Microsoft Azure"
+	pageTitle="Azure DPM 备份简介 | Azure"
 	description="使用 Azure 备份服务备份 DPM 服务器的简介"
 	services="backup"
 	documentationCenter=""
@@ -17,14 +17,14 @@
 > [AZURE.SELECTOR]
 - [SCDPM](/documentation/articles/backup-azure-dpm-introduction)
 
-本文介绍如何使用 Microsoft Azure 备份来保护 System Center Data Protection Manager (DPM) 服务器和工作负载。通过阅读本文，你将会了解：
+本文介绍如何使用 Azure 备份来保护 System Center Data Protection Manager (DPM) 服务器和工作负载。通过阅读本文，你将会了解：
 
 - Azure DPM 服务器备份的工作原理
 - 实现顺畅备份体验的先决条件
 - 遇到的典型错误以及如何处理它们
 - 支持的方案
 
-System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可以存储在磁带、磁盘上，或者使用 Microsoft Azure Backup 备份到 Azure。DPM 可与 Azure 备份交互，如下所述：
+System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可以存储在磁带、磁盘上，或者使用 Azure Backup 备份到 Azure。DPM 可与 Azure 备份交互，如下所述：
 
 - **部署为物理服务器或本地虚拟机的 DPM** — 如果 DPM 部署为物理服务器或本地 Hyper-V 虚拟机，则你除了磁盘和磁带备份外，还可以将数据备份到 Azure 备份保管库。
 - **部署为 Azure 虚拟机的 DPM** — 通过 System Center 2012 R2 Update 3，可以将 DPM 部署为 Azure 虚拟机。如果 DPM 部署为 Azure 虚拟机部署，则你可以将数据备份到附加到 DPM Azure 虚拟机的 Azure 磁盘，也可以通过将数据备份到 Azure 备份保管库来卸载数据存储。
@@ -85,6 +85,6 @@ System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可
 - 压缩流
 - 稀疏流
 
->[AZURE.NOTE]从 System Center 2012 DPM SP1 开始，你可以使用 Microsoft Azure 备份将 DPM 保护的工作负载备份到 Azure。
+>[AZURE.NOTE]从 System Center 2012 DPM SP1 开始，你可以使用 Azure 备份将 DPM 保护的工作负载备份到 Azure。
 
 <!---HONumber=82-->

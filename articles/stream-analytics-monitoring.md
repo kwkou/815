@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="了解流分析作业监视 | Microsoft Azure" 
+	pageTitle="了解流分析作业监视 | Azure" 
 	description="了解流分析作业监视" 
 	keywords="大数据分析、云服务中、物联网、托管服务、流处理、流分析、流数据"
 	services="stream-analytics" 

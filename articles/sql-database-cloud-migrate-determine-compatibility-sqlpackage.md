@@ -1,6 +1,6 @@
 <properties
    pageTitle="使用 SqlPackage.exe 确定 SQL 数据库兼容性"
-   description="Microsoft Azure SQL 数据库, 数据库迁移, SQL 数据库兼容性, SqlPackage"
+   description="Azure SQL 数据库, 数据库迁移, SQL 数据库兼容性, SqlPackage"
    services="sql-database"
    documentationCenter=""
    authors="carlrabeler"

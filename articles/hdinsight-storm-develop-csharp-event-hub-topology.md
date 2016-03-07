@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Storm on HDInsight 从事件中心处理事件 | Microsoft Azure"
+   pageTitle="使用 Storm on HDInsight 从事件中心处理事件 | Azure"
    description="了解如何使用在 Visual Studio 中通过 HDInsight Tools for Visual Studio 创建的 C# Storm 拓扑处理事件中心数据。"
    services="hdinsight,notification hubs"
    documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="开始使用 blob 存储和 Visual Studio 连接服务（WebJob 项目）| Microsoft Azure"
+	pageTitle="开始使用 blob 存储和 Visual Studio 连接服务（WebJob 项目）| Azure"
 	description="在使用 Visual Studio 连接服务连接到 Azure 存储后，如何开始使用 WebJob 项目中的 Blob 存储"
 	services="storage"
 	documentationCenter=""

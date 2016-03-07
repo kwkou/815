@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="用于连接到 SQL 数据库的 C# 重试逻辑 | Microsoft Azure" 
+	pageTitle="用于连接到 SQL 数据库的 C# 重试逻辑 | Azure" 
 	description="C# 示例包含用于与 Azure SQL 数据库可靠交互的重试逻辑。" 
 	services="sql-database" 
 	documentationCenter="" 

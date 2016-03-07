@@ -1,5 +1,5 @@
 <properties
-   pageTitle="大型计算：用于批处理和高性能计算 (HPC) 的技术资源 | Microsoft Azure"
+   pageTitle="大型计算：用于批处理和高性能计算 (HPC) 的技术资源 | Azure"
    description="列出了旨在帮助你在 Azure 中运行大规模并行、批处理和 HPC 工作负荷的技术资源。"
    services="batch, cloud-services, virtual-machines"
    documentationCenter=""
@@ -40,7 +40,7 @@
 
 ### Microsoft HPC Pack
 
-HPC Pack 是在 Microsoft Azure 和 Windows Server 技术基础之上构建的 Microsoft 免费 HPC 解决方案，它能够运行 Windows 和 Linux HPC 工作负荷。
+HPC Pack 是在 Azure 和 Windows Server 技术基础之上构建的 Microsoft 免费 HPC 解决方案，它能够运行 Windows 和 Linux HPC 工作负荷。
 
 * [下载 HPC Pack 2012 R2 Update 3](https://www.microsoft.com/zh-cn/download/details.aspx?id=49922)
 

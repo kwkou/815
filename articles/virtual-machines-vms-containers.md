@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="虚拟机和容器 | Microsoft Azure" 
+	pageTitle="虚拟机和容器 | Azure" 
 	description="介绍虚拟机、Docker 和 Linux 容器及其在 Azure 中各自组的使用情况，包括各自的好处以及每种方法的适用情况。" 
 	services="virtual-machines" 
 	documentationCenter="virtual-machines" 
@@ -166,7 +166,7 @@ Docker 工具：
 	- [Docker 安装说明](https://docs.docker.com/installation/#installation)
 
 
-Microsoft Azure 上的 Docker：
+Azure 上的 Docker：
 
 - [适用于 Azure 上 的 Linux 的 Docker VM 扩展](/documentation/articles/virtual-machines-docker-vm-extension)
 - [Azure Docker VM 扩展用户指南](https://github.com/Azure/azure-docker-extension/blob/master/README.md)

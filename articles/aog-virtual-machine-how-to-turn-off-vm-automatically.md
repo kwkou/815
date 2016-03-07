@@ -18,7 +18,7 @@
 
  
 ## <a id="prerequisite"></a>前提条件
-Controller机器上必须安装 Microsoft Azure PowerShell，并且要在PowerShell里登录一次Azure, 请参见： [如何安装和配置 Microsoft Azure PowserShell](/documentation/articles/powershell-install-configure)
+Controller机器上必须安装 Azure PowerShell，并且要在PowerShell里登录一次Azure, 请参见： [如何安装和配置 Azure PowserShell](/documentation/articles/powershell-install-configure)
 
 ## <a id="operation"></a>如何实现定时关闭虚拟机
 配好Azure PowerShell以后，就可以用下面这个脚本创建定时关机任务。把下面的代码另存为一个 PowerShell 脚本保存到本地磁盘，比如叫`Stop-AzureVMsOnSchedule.ps1`
@@ -59,10 +59,10 @@ Set-StrictMode -Version 3
 # Following modifies the Write-Verbose behavior to turn the messages on globally for this session
 $VerbosePreference = "Continue"
 
-# Check if Microsoft Azure Powershell is avaiable
+# Check if Azure Powershell is avaiable
 if ((Get-Module -ListAvailable Azure) -eq $null)
 {
-  throw "Microsoft Azure Powershell not found! Please install from http://www.windowsazure.com/en-us/downloads/#cmd-line-tools"
+  throw "Azure Powershell not found! Please install from http://www.windowsazure.com/en-us/downloads/#cmd-line-tools"
 }
 
 # Define a scheduled task to stop the VM(s) on a schedule.

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何：配置防火墙设置 | Microsoft Azure"
+	pageTitle="如何：配置防火墙设置 | Azure"
 	description="了解如何配置防火墙以允许 IP 地址访问 Azure SQL 数据库。"
 	services="sql-database"
 	documentationCenter=""

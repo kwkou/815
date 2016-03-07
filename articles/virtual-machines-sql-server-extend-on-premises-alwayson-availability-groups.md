@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将本地 AlwaysOn 可用性组扩展到 Azure | Microsoft Azure"
+	pageTitle="将本地 AlwaysOn 可用性组扩展到 Azure | Azure"
 	description="本教程使用通过经典部署模型创建的资源，并介绍如何使用 SQL Server Management Studio (SSMS) 中的“添加副本”向导将 AlwaysOn 可用性组副本添加到 Azure 中。"
 	services="virtual-machines"
 	documentationCenter="na"
@@ -17,7 +17,7 @@
 
 AlwaysOn 可用性组通过添加辅助副本为数据库组提供高可用性。在发生故障时，可以使用这些副本来故障转移数据库。此外，它们还可用于卸载读取工作负荷或备份任务。
 
-可以通过预配包含 SQL Server 的一个或多个 Azure VM 并将其作为副本添加到本地可用性组，将本地可用性组扩展到 Microsoft Azure。
+可以通过预配包含 SQL Server 的一个或多个 Azure VM 并将其作为副本添加到本地可用性组，将本地可用性组扩展到 Azure。
 
 本文假设你符合以下条件：
 

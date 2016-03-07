@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 Node.js 使用服务总线队列 | Microsoft Azure" 
+	pageTitle="如何通过 Node.js 使用服务总线队列 | Azure" 
 	description="了解如何在来自 Node.js 应用程序的 Azure 中使用服务总线队列。" 
 	services="service-bus" 
 	documentationCenter="nodejs" 

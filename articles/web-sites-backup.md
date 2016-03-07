@@ -166,7 +166,7 @@ Web 应用的数据库备份存储在 .zip 文件的根目录中。对于 SQL �
 ## 后续步骤
 有关从备份中还原 Web 应用的信息，请参阅[在 Azure 中还原 Web 应用](/documentation/articles/web-sites-restore)。你还可以使用 REST API 备份和还原 Azure Web Apps（请参阅[使用 REST 备份和还原 Azure Web Apps](/documentation/articles/websites-csm-backup)）。
 
-若要开始使用 Azure，请参阅 [Microsoft Azure 试用版](/pricing/1rmb-trial/)。
+若要开始使用 Azure，请参阅 [Azure 试用版](/pricing/1rmb-trial/)。
 
 
 <!-- IMAGES -->

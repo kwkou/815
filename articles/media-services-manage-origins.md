@@ -20,7 +20,7 @@
 - [门户](/documentation/articles/media-services-manage-origins)
 - [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 
-在 Microsoft Azure 媒体服务中，**流式处理终结点**表示一个流服务，该服务可以直接将内容传递给客户端播放器应用程序，也可以传递给内容传送网络 (CDN) 以进一步分发。媒体服务还提供无缝 Azure CDN 集成。StreamingEndpoint 服务的出站流可以是实时流，也可以是媒体服务帐户中的视频点播资产。
+在 Azure 媒体服务中，**流式处理终结点**表示一个流服务，该服务可以直接将内容传递给客户端播放器应用程序，也可以传递给内容传送网络 (CDN) 以进一步分发。媒体服务还提供无缝 Azure CDN 集成。StreamingEndpoint 服务的出站流可以是实时流，也可以是媒体服务帐户中的视频点播资产。
 
 此外，还可以通过调整扩展单元（也称为流单元）来控制流式处理终结点服务处理不断增长的带宽需求的能力。建议为生产环境中的应用程序分配一个或多个扩展单元。缩放单位为你提供了可按照 200 Mbps 的增量购买的专用出口容量和包括[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)、CDN 集成和高级配置在内的其他功能。
 

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线配对命名空间 |Microsoft Azure"
+   pageTitle="服务总线配对命名空间 |Azure"
    description="配对命名空间实现的详细信息和成本"
    services="service-bus"
    documentationCenter="na"

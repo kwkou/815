@@ -1,5 +1,5 @@
 <properties
-	pageTitle="HDInsight 中 Hadoop 群集的可用性 | Microsoft Azure"
+	pageTitle="HDInsight 中 Hadoop 群集的可用性 | Azure"
 	description="HDInsight 可部署包含附加头节点的高度可用且可靠的群集。"
 	services="hdinsight"
 	tags="azure-portal"

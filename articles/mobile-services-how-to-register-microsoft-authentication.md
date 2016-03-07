@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="注册以进行 Microsoft 身份验证 | Microsoft Azure" 
+	pageTitle="注册以进行 Microsoft 身份验证 | Azure" 
 	description="了解如何在 Azure 移动服务应用程序中注册以进行 Microsoft 身份验证。" 
 	authors="ggailey777" 
 	services="mobile-services" 
@@ -41,7 +41,7 @@
 
 6. 回到新应用的“Windows 开发人员中心”页，单击“服务”>“推送通知”。
 
-7. 在“推送通知”页中，在“Windows 推送通知服务(WNS)和 Microsoft Azure 移动服务”下面单击“Live Services 站点”。
+7. 在“推送通知”页中，在“Windows 推送通知服务(WNS)和 Azure 移动服务”下面单击“Live Services 站点”。
 
 此时将显示应用程序的 Microsoft 帐户页。接下来，你将获得身份验证凭据，Azure 需要使用这些凭据来对你的应用进行 Microsoft 身份验证。
 

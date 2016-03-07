@@ -1,5 +1,5 @@
 <properties
-	pageTitle="适用于 Windows 应用商店应用的移动服务入门 (C#) | Microsoft Azure"
+	pageTitle="适用于 Windows 应用商店应用的移动服务入门 (C#) | Azure"
 	description="按照本教程开始使用 Azure 移动服务通过 C# 进行 Windows 应用商店开发。"
 	services="mobile-services"
 	documentationCenter="windows"

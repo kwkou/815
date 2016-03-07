@@ -1,5 +1,5 @@
 <properties 
-pageTitle="Microsoft Azure 开发人员中心：PHP" 
+pageTitle="Azure 开发人员中心：PHP" 
 description="" 
 services="PHP" 
 documentationCenter="Develop" 

@@ -23,7 +23,7 @@
 
 <!--如果您还需要为通知中心创建新的服务总线命名空间，请参阅[使用 PowerShell 管理服务总线](/documentation/articles/service-bus-powershell-how-to-provision)。-->
 
-不支持直接使用 Azure PowerShell 随附的 cmdlet 来管理通知中心。在 PowerShell 中，最佳方法是引用 Microsoft.Azure.NotificationHubs.dll 程序集。该程序集是随 [Microsoft Azure 通知中心 NuGet 包](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)一起分发的。
+不支持直接使用 Azure PowerShell 随附的 cmdlet 来管理通知中心。在 PowerShell 中，最佳方法是引用 Microsoft.Azure.NotificationHubs.dll 程序集。该程序集是随 [Azure 通知中心 NuGet 包](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)一起分发的。
 
 
 ## 先决条件
@@ -39,7 +39,7 @@
 
 ## 包含对适用于服务总线的 .NET 程序集的引用
 
-Azure PowerShell 中的 PowerShell cmdlet 尚不支持管理 Azure 通知中心。若要预配通知中心，可以使用 [Microsoft Azure 通知中心 NuGet 包](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)中提供的 .NET 客户端。
+Azure PowerShell 中的 PowerShell cmdlet 尚不支持管理 Azure 通知中心。若要预配通知中心，可以使用 [Azure 通知中心 NuGet 包](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)中提供的 .NET 客户端。
 
 首先，请确保脚本可以找到 **Microsoft.Azure.NotificationHubs.dll** 程序集，该程序集在 Visual Studio 项目中以 NuGet 包的形式安装。为了灵活起见，该脚本执行以下步骤：
 

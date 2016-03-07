@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 SQL Server 灾难恢复和 Azure Site Recovery 来保护 SQL Server | Microsoft Azure" 
+	pageTitle="使用 SQL Server 灾难恢复和 Azure Site Recovery 来保护 SQL Server | Azure" 
 	description="Azure Site Recovery 可以协调 SQL Server 到辅助本地站点或 Azure 的复制、故障转移和恢复。" 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -169,7 +169,7 @@ SQL 可用性组可以复制到 Azure 中的一个或多个虚拟机。添加 SQ
 
 #### 3.创建恢复计划
 
-下一步是使用虚拟机和可用性组创建恢复计划。选择在步骤 1 中所用的同一 VMM 服务器作为源，并选择 Microsoft Azure 作为目标。
+下一步是使用虚拟机和可用性组创建恢复计划。选择在步骤 1 中所用的同一 VMM 服务器作为源，并选择 Azure 作为目标。
 
 ![创建恢复计划](./media/site-recovery-sql/create-rp1.png)
 
@@ -213,7 +213,7 @@ SQL 可用性组可以复制到 Azure 中的一个或多个虚拟机。添加 SQ
 
 #### 故障回复
 
-如果你想要再次在本地 SQL Server 上使可用性组成为主节点，可以通过在恢复计划上触发计划的故障转移，并选择从 Microsoft Azure 到本地 VMM 服务器的方向来实现
+如果你想要再次在本地 SQL Server 上使可用性组成为主节点，可以通过在恢复计划上触发计划的故障转移，并选择从 Azure 到本地 VMM 服务器的方向来实现
 
 #### 反向复制
 

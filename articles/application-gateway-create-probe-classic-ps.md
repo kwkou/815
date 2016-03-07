@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在经典部署模型中使用 PowerShell 创建应用程序网关的自定义探测 | Microsoft Azure"
+   pageTitle="在经典部署模型中使用 PowerShell 创建应用程序网关的自定义探测 | Azure"
    description="了解如何使用经典部署模型中的 PowerShell 创建应用程序网关的自定义探测"
    services="application-gateway"
    documentationCenter="na"

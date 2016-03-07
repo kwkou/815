@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SQL Server IaaS 代理扩展 | Microsoft Azure" 
+	pageTitle="SQL Server IaaS 代理扩展 | Azure" 
 	description="本主题使用通过经典部署模型创建的资源并介绍可使 Azure 上运行 SQL Server 的 VM 使用自动化功能的 SQL Server 代理扩展。" 
 	services="virtual-machines" 
 	documentationCenter="" 

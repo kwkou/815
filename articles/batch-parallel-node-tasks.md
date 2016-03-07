@@ -1,5 +1,5 @@
 <properties
-   pageTitle="通过并行任务最大限度地使用批处理 ( Batch ) 节点 | Microsoft Azure"
+   pageTitle="通过并行任务最大限度地使用批处理 ( Batch ) 节点 | Azure"
    description="在 Azure Batch 池的每个节点上运行并发任务时，通过减少所使用的计算节点数来提高效率并降低成本"
    services="batch"
    documentationCenter=".net"

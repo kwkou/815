@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="云服务和管理证书 | Microsoft Azure" 
-	description="了解如何在 Microsoft Azure 中创建和使用证书" 
+	pageTitle="云服务和管理证书 | Azure" 
+	description="了解如何在 Azure 中创建和使用证书" 
 	services="cloud-services" 
 	documentationCenter=".net" 
 	authors="Thraka" 

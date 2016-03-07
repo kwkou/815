@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 Python 使用表存储 | Microsoft Azure"
+	pageTitle="如何通过 Python 使用表存储 | Azure"
 	description="了解如何通过 Python 使用表服务来创建和删除表，以及插入和查询表。"
 	services="storage"
 	documentationCenter="python"

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="创建和管理弹性数据库作业 | Microsoft Azure"
+	pageTitle="创建和管理弹性数据库作业 | Azure"
 	description="演练如何创建和管理弹性数据库作业。"
 	services="sql-database"
 	documentationCenter=""

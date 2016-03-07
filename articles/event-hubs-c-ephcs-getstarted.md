@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通过 C 和 C# 使用事件中心入门 | Microsoft Azure"
+	pageTitle="通过 C 和 C# 使用事件中心入门 | Azure"
 	description="遵循本教程开始使用 Azure 事件中心，以通过 C 发送事件，并使用 EventProcessorHost 通过 C# 接收事件。"
 	services="event-hubs"
 	documentationCenter=""

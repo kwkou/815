@@ -1,5 +1,5 @@
 ﻿<properties 
-pageTitle="Microsoft Azure 开发人员中心：Media Services" 
+pageTitle="Azure 开发人员中心：Media Services" 
 description="" 
 services="Media Services" 
 documentationCenter="Develop" 

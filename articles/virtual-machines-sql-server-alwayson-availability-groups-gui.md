@@ -15,7 +15,7 @@
 
 本端到端教程介绍如何使用 Azure 虚拟机上运行的 SQL Server AlwaysOn 实施可用性组。
 
->[AZURE.NOTE]在 Azure 管理门户中，为包含 AlwaysOn 可用性组设置了一个包含侦听器的新库。该库可自动为你配置 AlwaysOn 可用性组的所有设置。有关详细信息，请参阅 [Microsoft Azure 门户库中的 SQL Server AlwaysOn 产品](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx)。若要使用 PowerShell，请参阅同一方案的[教程：Azure 中的 AlwaysOn 可用性组 (PowerShell)](https://msdn.microsoft.com/zh-cn/library/azure/jj870963.aspx)。
+>[AZURE.NOTE]在 Azure 管理门户中，为包含 AlwaysOn 可用性组设置了一个包含侦听器的新库。该库可自动为你配置 AlwaysOn 可用性组的所有设置。有关详细信息，请参阅 [Azure 门户库中的 SQL Server AlwaysOn 产品](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx)。若要使用 PowerShell，请参阅同一方案的[教程：Azure 中的 AlwaysOn 可用性组 (PowerShell)](https://msdn.microsoft.com/zh-cn/library/azure/jj870963.aspx)。
 
 完成本教程后，Azure 中的 SQL Server AlwaysOn 解决方案将包括以下要素：
 

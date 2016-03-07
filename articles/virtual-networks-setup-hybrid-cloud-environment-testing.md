@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
-本主题将指导你逐步使用 Microsoft Azure 创建混合云环境，以便进行测试。这是生成的配置。
+本主题将指导你逐步使用 Azure 创建混合云环境，以便进行测试。这是生成的配置。
 
 ![](./media/virtual-networks-setup-hybrid-cloud-environment-testing/CreateHybridCloudVNet_5.png)
 

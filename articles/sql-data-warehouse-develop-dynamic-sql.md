@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库中的动态 SQL | Microsoft Azure"
+   pageTitle="SQL 数据仓库中的动态 SQL | Azure"
    description="有关在开发解决方案时使用 Azure SQL 数据仓库中的动态 SQL 的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"

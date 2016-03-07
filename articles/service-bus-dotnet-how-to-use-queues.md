@@ -1,5 +1,5 @@
 <properties
-    pageTitle="如何使用服务总线队列 (.NET) | Microsoft Azure"
+    pageTitle="如何使用服务总线队列 (.NET) | Azure"
     description="了解如何在 Azure 中使用 Service Bus 队列。代码示例是使用 .NET API 通过 C# 编写的。"
     services="service-bus"
     documentationCenter=".net"
@@ -33,7 +33,7 @@
 要在你的应用程序中安装 NuGet 包，请执行以下操作：
 
 1.  在解决方案资源管理器中，右键单击“引用”，然后单击“管理 NuGet 包”。
-2.  搜索“服务总线”并选择“Microsoft Azure 服务总线”项。单击“安装”以完成安装，然后关闭此对话框。
+2.  搜索“服务总线”并选择“Azure 服务总线”项。单击“安装”以完成安装，然后关闭此对话框。
 
     ![][7]
 

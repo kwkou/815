@@ -1,5 +1,5 @@
 <properties
-	pageTitle="创建和上载 Linux VHD | Microsoft Azure"
+	pageTitle="创建和上载 Linux VHD | Azure"
 	description="使用包含 Linux 操作系统的经典部署模型创建并上载 Azure 虚拟硬盘 (VHD)。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -47,7 +47,7 @@ Azure 中的虚拟机所运行的操作系统基于你在创建虚拟机时选�
 <a id="prepimage"> </a>
 ## 步骤 1：准备要上载的映像
 
-Microsoft Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distributions)）。以下文章将指导你完成如何准备 Azure 上支持的各种 Linux 分发：
+Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distributions)）。以下文章将指导你完成如何准备 Azure 上支持的各种 Linux 分发：
 
 - **[基于 CentOS 的分发](/documentation/articles/virtual-machines-linux-create-upload-vhd-centos)**
 - **[Oracle Linux](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)**

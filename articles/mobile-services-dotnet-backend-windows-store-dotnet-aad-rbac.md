@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 .NET 的移动服务和 Azure Active Directory 中基于角色的访问控制（Windows 应用商店）| Microsoft Azure"
+	pageTitle="使用 .NET 的移动服务和 Azure Active Directory 中基于角色的访问控制（Windows 应用商店）| Azure"
 	description="了解如何使用 .NET 后端通过移动服务基于 Windows 应用商店应用程序中的 Azure Active Directory 角色控制访问。"
 	documentationCenter="windows"
 	authors="wesmc7777"

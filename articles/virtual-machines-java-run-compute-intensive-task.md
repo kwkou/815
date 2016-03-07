@@ -1,5 +1,5 @@
 <properties
-	pageTitle="VM 上需要进行大量计算的 Java 应用程序 | Microsoft Azure"
+	pageTitle="VM 上需要进行大量计算的 Java 应用程序 | Azure"
 	description="了解如何创建运行可由其他 Java 应用程序监视的、需要进行大量计算的 Java 应用程序的 Azure 虚拟机。"
 	services="virtual-machines"
 	documentationCenter="java"
@@ -19,7 +19,7 @@
 
 借助 Azure，您可以使用虚拟机来处理需要进行大量计算的任务。例如，虚拟机可以处理任务并将结果传送给客户端计算机或移动应用程序。阅读完本文后，你将了解如何创建运行可由其他 Java 应用程序监视的、需要进行大量计算的 Java 应用程序的虚拟机。
 
-本教程假定你知道如何创建 Java 控制台应用程序，而且你可以将库导入 Java 应用程序并生成 Java 存档 (JAR)。假定你不了解 Microsoft Azure。
+本教程假定你知道如何创建 Java 控制台应用程序，而且你可以将库导入 Java 应用程序并生成 Java 存档 (JAR)。假定你不了解 Azure。
 
 你将学习以下内容：
 

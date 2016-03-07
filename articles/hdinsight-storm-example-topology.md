@@ -1,5 +1,5 @@
 <properties
- pageTitle="HDInsight 上的示例 Apache Storm 拓扑 | Microsoft Azure"
+ pageTitle="HDInsight 上的示例 Apache Storm 拓扑 | Azure"
  description="使用 Apache Storm on HDInsight 创建和测试的示例 Storm 拓扑列表，包括基本 C# 和 Java 拓扑，以及事件中心的用法。"
  services="hdinsight"
  documentationCenter=""

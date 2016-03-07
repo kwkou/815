@@ -1,6 +1,6 @@
 <properties
    pageTitle="将 SQL Server 数据库迁移到 Azure SQL 数据库"
-   description="Microsoft Azure SQL 数据库, 数据库部署, 数据库迁移, 导入数据库, 导出数据库, 迁移向导"
+   description="Azure SQL 数据库, 数据库部署, 数据库迁移, 导入数据库, 导出数据库, 迁移向导"
    services="sql-database"
    documentationCenter=""
    authors="carlrabeler"
@@ -39,7 +39,7 @@
 
 ## 将兼容的 SQL Server 数据库迁移到 SQL 数据库
 
-为了迁移兼容的 SQL Server 数据库，Microsoft 针对各种方案提供了多个迁移方法。所选择的方法取决于你对停机时间的容忍程度、SQL Server 数据库的大小和复杂性，以及与 Microsoft Azure 云的连接。
+为了迁移兼容的 SQL Server 数据库，Microsoft 针对各种方案提供了多个迁移方法。所选择的方法取决于你对停机时间的容忍程度、SQL Server 数据库的大小和复杂性，以及与 Azure 云的连接。
 
 > [AZURE.SELECTOR]
 - [SSMS 迁移向导](/documentation/articles/sql-database-cloud-migrate-compatible-using-ssms-migration-wizard)
@@ -51,7 +51,7 @@
 
 若要使迁移时停机时间最短，请使用 [SQL Server 事务复制](/documentation/articles/sql-database-cloud-migrate-compatible-using-transactional-replication)（如果你的数据库满足事务复制的要求）。如果可以承受一定的停机时间，或者正在针对以后的迁移执行生产数据库的测试迁移，请考虑以下三种方法之一：
 
-- [SSMS 迁移向导](/documentation/articles/sql-database-cloud-migrate-compatible-using-ssms-migration-wizard)：对于小型到中型数据库，迁移兼容的 SQL Server 2005 或更高版本数据库只需运行 SQL Server Management Studio 中的[“将数据库部署到 Microsoft Azure 数据库”向导](/documentation/articles/sql-database-cloud-migrate-compatible-using-ssms-migration-wizard)即可。 
+- [SSMS 迁移向导](/documentation/articles/sql-database-cloud-migrate-compatible-using-ssms-migration-wizard)：对于小型到中型数据库，迁移兼容的 SQL Server 2005 或更高版本数据库只需运行 SQL Server Management Studio 中的[“将数据库部署到 Azure 数据库”向导](/documentation/articles/sql-database-cloud-migrate-compatible-using-ssms-migration-wizard)即可。 
 - [导出到 BACPAC 文件](/documentation/articles/sql-database-cloud-migrate-compatible-export-bacpac-ssms)，然后[从 BACPAC 文件导入](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-ssms)：如果你遇到连接问题（无连接、低带宽或超时问题）并且对于中型到大型数据库，请使用 [BACPAC](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx#Anchor_4) 文件。使用此方法，可通过 SQL Server Management Studio 中的导出数据层应用程序向导或 [SqlPackage](https://msdn.microsoft.com/zh-cn/library/hh550080.aspx) 命令提示实用工具将 SQL Server 架构和数据导出到 BACPAC 文件，然后将 BACPAC 文件导入到 SQL 数据库中。
 - 将 BACPAC 和 BCP 一起使用：对于非常大的数据库使用 [BACPAC](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx#Anchor_4) 文件和 [BCP](https://msdn.microsoft.com/zh-cn/library/ms162802.aspx) 可实现更高的并行化以提高性能，虽然会具有更高的复杂性。使用此方法，分别迁移架构和数据。 
  - [仅将架构导出到 BACPAC 文件](/documentation/articles/sql-database-cloud-migrate-compatible-export-bacpac-ssms)。

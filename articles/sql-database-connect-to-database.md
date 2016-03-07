@@ -1,5 +1,5 @@
 <properties
-   pageTitle="如何使用 SSMS 连接到 Azure SQL 数据库 | Microsoft Azure"
+   pageTitle="如何使用 SSMS 连接到 Azure SQL 数据库 | Azure"
    description="了解如何使用 SSMS 连接到 Azure SQL 数据库。"
    services="sql-database"
    documentationCenter=""
@@ -19,7 +19,7 @@
 ## 先决条件
 
 * SQL Server Management Studio (SSMS) - 若要下载最新版本的 SSMS，请参阅[下载 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
-* [Microsoft Azure SQL 数据库入门](/documentation/articles/sql-database-get-started)中所述的 AdventureWorks 示例数据库。
+* [Azure SQL 数据库入门](/documentation/articles/sql-database-get-started)中所述的 AdventureWorks 示例数据库。
 
 
 ## 获取完全限定的 Azure SQL 服务器名称

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="安装适用于 SQL 数据仓库的 Visual Studio 和/或 SSDT | Microsoft Azure"
+   pageTitle="安装适用于 SQL 数据仓库的 Visual Studio 和/或 SSDT | Azure"
    description="安装适用于 Azure SQL 数据仓库的 Visual Studio 和/或 SSDT 开发工具"
    services="sql-data-warehouse"
    documentationCenter="NA"

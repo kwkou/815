@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 .NET 使用服务总线中继 | Microsoft Azure"
+	pageTitle="如何通过 .NET 使用服务总线中继 | Azure"
 	description="了解如何使用 Azure 服务总线中继服务连接两个托管于不同位置的应用程序。"
 	services="service-bus"
 	documentationCenter=".net"
@@ -15,7 +15,7 @@
 
 # 如何使用 Azure 服务总线中继服务
 
-本文介绍如何使用服务总线中继服务。相关示例用 C# 编写并使用服务总线程序集（服务总线程序集是 Microsoft Azure .NET SDK 的一部分）中包含的 Windows Communication Foundation (WCF) API 及扩展。有关服务总线中继的详细信息，请参阅[服务总线中继消息传送](/documentation/articles/service-bus-relay-overview)概述。
+本文介绍如何使用服务总线中继服务。相关示例用 C# 编写并使用服务总线程序集（服务总线程序集是 Azure .NET SDK 的一部分）中包含的 Windows Communication Foundation (WCF) API 及扩展。有关服务总线中继的详细信息，请参阅[服务总线中继消息传送](/documentation/articles/service-bus-relay-overview)概述。
 
 [AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
@@ -81,7 +81,7 @@
 要在你的应用程序中安装 NuGet 包，请执行以下操作：
 
 1.  在解决方案资源管理器中，右键单击“引用”，然后单击“管理 NuGet 包”。
-2.  搜索“服务总线”并选择“Microsoft Azure 服务总线”项。单击“安装”以完成安装，然后关闭以下对话框。
+2.  搜索“服务总线”并选择“Azure 服务总线”项。单击“安装”以完成安装，然后关闭以下对话框。
 
 	![](./media/service-bus-dotnet-how-to-use-relay/getting-started-multi-tier-13.png)
   
@@ -95,7 +95,7 @@
 在开始下面的步骤之前，请完成以下过程以设置你的环境：
 
 1.  在 Visual Studio 中，在解决方案内创建一个包含以下两个项目的控制台应用程序：“客户端”和“服务”。
-2.  向这两个项目添加 Microsoft Azure Service Bus NuGet 包。这会向您的项目添加所有必需的程序集引用。
+2.  向这两个项目添加 Azure Service Bus NuGet 包。这会向您的项目添加所有必需的程序集引用。
 
 ### 如何创建服务
 

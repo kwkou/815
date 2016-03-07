@@ -21,7 +21,7 @@ Azure Automation 中的 Runbook 作为 Windows PowerShell 工作流实现。Wind
 
 ## Runbook 类型
 
-Microsoft Azure 中国目前仅支持文本 Runbook。
+Azure 中国目前仅支持文本 Runbook。
 
 ## 工作流的基本结构
 

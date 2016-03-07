@@ -1,6 +1,6 @@
 <properties
-	pageTitle="如何通过 .NET 使用表存储 | Microsoft Azure"
-	description="了解如何使用 Microsoft Azure 表存储来创建和删除表，以及在表中插入和查询实体。"
+	pageTitle="如何通过 .NET 使用表存储 | Azure"
+	description="了解如何使用 Azure 表存储来创建和删除表，以及在表中插入和查询实体。"
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"

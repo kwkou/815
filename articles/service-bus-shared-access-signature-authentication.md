@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线的共享访问签名身份验证 | Microsoft Azure"
+   pageTitle="服务总线的共享访问签名身份验证 | Azure"
    description="关于服务总线的 SAS 身份验证的详细信息。"
    services="service-bus"
    documentationCenter="na"

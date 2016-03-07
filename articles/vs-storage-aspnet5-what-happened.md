@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="我的 ASP.NET 5 项目（Visual Studio 连接服务）发生了什么情况？| Microsoft Azure 存储空间"
+	pageTitle="我的 ASP.NET 5 项目（Visual Studio 连接服务）发生了什么情况？| Azure 存储空间"
 	description="介绍在 Visual Studio ASP.NET 5 项目中使用 Visual Studio 连接服务连接到 Azure 存储帐户后会发生什么情况"
 	services="storage"
 	documentationCenter=""

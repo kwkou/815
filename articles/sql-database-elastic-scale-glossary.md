@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="弹性数据库工具词汇表 | Microsoft Azure" 
+    pageTitle="弹性数据库工具词汇表 | Azure" 
     description="弹性数据库工具所用术语的解释" 
     services="sql-database" 
     documentationCenter="" 

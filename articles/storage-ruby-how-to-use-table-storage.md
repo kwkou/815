@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 Ruby 使用表存储 | Microsoft Azure" 
+	pageTitle="如何通过 Ruby 使用表存储 | Azure" 
 	description="了解如何使用 Azure 中的 Azure 表存储。相关代码示例是使用 Ruby API 编写的。"
 	services="storage"
 	documentationCenter="ruby"
@@ -19,7 +19,7 @@
 
 ## 概述
 
-本指南演示如何使用 Microsoft Azure 表服务执行常见任务。相关示例是使用 Ruby API 编写的。涉及的方案包括“创建和删除表、在表中插入和查询实体”。
+本指南演示如何使用 Azure 表服务执行常见任务。相关示例是使用 Ruby API 编写的。涉及的方案包括“创建和删除表、在表中插入和查询实体”。
 
 [AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
 

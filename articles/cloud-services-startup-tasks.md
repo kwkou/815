@@ -1,5 +1,5 @@
 <properties 
-pageTitle="在 Azure 云服务中运行启动任务 | Microsoft Azure" 
+pageTitle="在 Azure 云服务中运行启动任务 | Azure" 
 description="启动任务可帮助为你的应用准备云服务环境。这将讲授启动任务的工作方式以及如何生成启动任务" 
 services="cloud-services" 
 documentationCenter="" 

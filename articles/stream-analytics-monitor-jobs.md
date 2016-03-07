@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="以编程方式监视流分析的作业 | Microsoft Azure" 
+	pageTitle="以编程方式监视流分析的作业 | Azure" 
 	description="了解如何以编程方式监视通过 REST API、Azure SDK 或 Powershell 创建的流分析作业。"
 	keywords=".net 监视器, 作业监视器, 监视应用"
 	services="stream-analytics" 

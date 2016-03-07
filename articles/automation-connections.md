@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Azure 自动化中的连接资产 | Microsoft Azure"
+   pageTitle="Azure 自动化中的连接资产 | Azure"
    description="Azure 自动化中的连接资产包含从 Runbook 连接到外部服务或应用程序所需的信息。本文介绍了有关连接的详细信息，以及如何在文本和图形创作中使用连接。"
    services="automation"
    documentationCenter=""

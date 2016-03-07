@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库中用户定义的架构 | Microsoft Azure"
+   pageTitle="SQL 数据仓库中用户定义的架构 | Azure"
    description="有关在开发解决方案时使用 Azure SQL 数据仓库中的 Transact-SQL 架构的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"

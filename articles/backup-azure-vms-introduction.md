@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure 中计划 VM 备份基础结构 | Microsoft Azure"
+	pageTitle="在 Azure 中计划 VM 备份基础结构 | Azure"
 	description="在 Azure 中计划 VM 备份基础结构时需要注意的重要事项"
 	services="backup"
 	documentationCenter=""

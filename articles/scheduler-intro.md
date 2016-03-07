@@ -1,6 +1,6 @@
 <properties 
- pageTitle="什么是 Azure 计划程序？| Microsoft Azure"
- description="Microsoft Azure 计划程序允许你以声明方式描述要在云中运行的操作。然后，它自动计划并运行这些操作。"
+ pageTitle="什么是 Azure 计划程序？| Azure"
+ description="Azure 计划程序允许你以声明方式描述要在云中运行的操作。然后，它自动计划并运行这些操作。"
  services="scheduler" 
  documentationCenter=".NET" 
  authors="krisragh" 

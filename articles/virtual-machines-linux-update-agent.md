@@ -1,5 +1,5 @@
 <properties
-	pageTitle="从 GitHub 更新 Azure Linux 代理 | Microsoft Azure"
+	pageTitle="从 GitHub 更新 Azure Linux 代理 | Azure"
 	description="了解如何从 Github 将 Azure 中 Linux VM 的 Azure Linux 代理更新到最新版本"
 	services="virtual-machines"
 	documentationCenter=""

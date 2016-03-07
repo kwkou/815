@@ -1,5 +1,5 @@
 <properties
-	pageTitle="了解如何使用 Visual Studio Hadoop Tools for HDInsight | Microsoft Azure"
+	pageTitle="了解如何使用 Visual Studio Hadoop Tools for HDInsight | Azure"
 	description="了解如何安装和使用 Visual Studio Hadoop tools for HDInsight 连接到 Hadoop 群集及运行 Hive 查询。"
 	keywords="hadoop 工具,hive 查询,visual studio"
 	services="HDInsight"
@@ -37,12 +37,12 @@
 
 ##<a name="installation" id="install-hdinsight-tools-for-visual-studio"></a>安装 HDInsight Tools for Visual Studio
 
-适用于 Visual Studio 的 HDInsight 工具和 Microsoft Hive ODBC Driver 是随同 Microsoft Azure SDK for .NET 2.5.1 或更高版本一起打包的。你可以使用 [Web 平台安装程序](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe)安装它。你必须选择与你的 Visual Studio 版本匹配的版本。如果你尚未安装 Visual Studio，则可使用 [Web 平台安装程序](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe)或以下链接安装最新 Visual Studio Community 和 Azure SDK：
+适用于 Visual Studio 的 HDInsight 工具和 Microsoft Hive ODBC Driver 是随同 Azure SDK for .NET 2.5.1 或更高版本一起打包的。你可以使用 [Web 平台安装程序](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe)安装它。你必须选择与你的 Visual Studio 版本匹配的版本。如果你尚未安装 Visual Studio，则可使用 [Web 平台安装程序](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe)或以下链接安装最新 Visual Studio Community 和 Azure SDK：
 
-- [Visual Studio Community 2015 with Microsoft Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2015CommunityAzurePack.appids) 
-- [Visual Studio Community 2013 with Microsoft Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2013CommunityAzurePack.appids) 
-- [Microsoft Azure SDK for .NET (VS 2015)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2015AzurePack.appids) 
-- [Microsoft Azure SDK for .NET (VS 2013)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) 
+- [Visual Studio Community 2015 with Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2015CommunityAzurePack.appids) 
+- [Visual Studio Community 2013 with Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2013CommunityAzurePack.appids) 
+- [Azure SDK for .NET (VS 2015)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2015AzurePack.appids) 
+- [Azure SDK for .NET (VS 2013)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) 
 
 ![Hadoop 工具：HDInsight Tools for Visual Studio Web 平台安装程序。][1]
 

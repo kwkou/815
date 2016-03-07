@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="自动转发服务总线消息传送实体 | Microsoft Azure"
+   pageTitle="自动转发服务总线消息传送实体 | Azure"
    description="介绍如何将队列或订阅链接到属于同一命名空间的另一个队列或主题。"
    services="service-bus"
    documentationCenter="na"

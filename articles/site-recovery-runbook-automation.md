@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="将 Azure 自动化 Runbook 添加到恢复计划 | Microsoft Azure" 
+   pageTitle="将 Azure 自动化 Runbook 添加到恢复计划 | Azure" 
    description="本指南介绍了如何借助 Azure Site Recovery，在恢复到 Azure 期间使用 Azure 自动化完成复杂任务，从而扩展恢复计划" 
    services="site-recovery" 
    documentationCenter="" 

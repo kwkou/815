@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 资源管理器策略 | Microsoft Azure"
+	pageTitle="Azure 资源管理器策略 | Azure"
 	description="介绍如何使用 Azure 资源管理器策略来防止订阅、资源组或单个资源等不同的范围发生冲突。"
 	services="azure-resource-manager"
 	documentationCenter="na"

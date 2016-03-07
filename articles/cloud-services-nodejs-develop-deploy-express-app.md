@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Express (Node.js) 构建 Web 应用 | Microsoft Azure" 
+	pageTitle="使用 Express (Node.js) 构建 Web 应用 | Azure" 
 	description="本教程以云服务教程为基础，演示如何使用 Express 模块。" 
 	services="cloud-services" 
 	documentationCenter="nodejs" 

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Azure 自动化中的计划 | Microsoft Azure"
+   pageTitle="Azure 自动化中的计划 | Azure"
    description="自动化计划用于安排自动启动 Azure 自动化中的 Runbook。本文介绍如何创建计划。"
    services="automation"
    documentationCenter=""

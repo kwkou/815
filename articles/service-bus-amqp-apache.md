@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="如何在 Linux VM 上安装 Apache Qpid Proton-C | Microsoft Azure"
+   pageTitle="如何在 Linux VM 上安装 Apache Qpid Proton-C | Azure"
    description="如何使用 Azure 虚拟机创建 CentOS Linux VM 以及如何生成和安装 Apache Qpid Proton-C 库。"
    services="service-bus"
    documentationCenter="na"

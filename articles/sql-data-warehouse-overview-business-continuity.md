@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 SQL 数据仓库中规划业务连续性 | Microsoft Azure"
+   pageTitle="在 SQL 数据仓库中规划业务连续性 | Azure"
    description="SQL 数据仓库中的业务连续性概述"
    services="sql-data-warehouse"
    documentationCenter="NA"

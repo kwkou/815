@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="什么是流量管理器 | Microsoft Azure"
+   pageTitle="什么是流量管理器 | Azure"
    description="本文将帮助你理解什么是流量管理器及其工作方式。"
    services="traffic-manager"
    documentationCenter=""
@@ -13,7 +13,7 @@
 
 # 什么是流量管理器？
 
-使用 Microsoft Azure 流量管理器可以控制向指定的终结点（可能包括 Azure 云服务、 Web 应用和其他终结点）分配用户流量。流量管理器的工作方式是将智能策略引擎应用到对 Internet 资源域名的域名系统 (DNS) 查询。Azure 云服务或 Web 应用可以在世界各地不同的数据中心内运行。
+使用 Azure 流量管理器可以控制向指定的终结点（可能包括 Azure 云服务、 Web 应用和其他终结点）分配用户流量。流量管理器的工作方式是将智能策略引擎应用到对 Internet 资源域名的域名系统 (DNS) 查询。Azure 云服务或 Web 应用可以在世界各地不同的数据中心内运行。
 
 流量管理器可帮助你：
 

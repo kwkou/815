@@ -1,5 +1,5 @@
 <properties
-	pageTitle="配合使用 Azure CLI 和资源管理器 | Microsoft Azure"
+	pageTitle="配合使用 Azure CLI 和资源管理器 | Azure"
 	description="了解如何使用适用于 Mac、Linux 和 Windows 的 Azure CLI，在 Azure 资源管理器模式下管理 Azure 资源。"
 	services="virtual-machines,virtual-network,mobile-services,cloud-services"
 	documentationCenter=""
@@ -209,7 +209,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 ## azure network：用于管理网络资源的命令
 
-在 Microsoft Azure 中国，VNet 还不能用 ARM 进行管理。有关 VNet 的 Azure CLI ASM 命令，请阅读以下的文章：
+在 Azure 中国，VNet 还不能用 ARM 进行管理。有关 VNet 的 Azure CLI ASM 命令，请阅读以下的文章：
 
 - [使用 Azure CLI 创建虚拟网络（经典）](/documentation/articles/virtual-networks-create-vnet-classic-cli)
 - [如何在 Azure CLI 中创建 NSG（经典）](/documentation/articles/virtual-networks-create-nsg-classic-cli)
@@ -275,7 +275,7 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 ## azure storage：用于管理存储对象的命令
 
-在 Microsoft Azure 中国，Azure 存储还不能用 ARM 进行管理。有关 Azure 存储的 Azure CLI ASM 命令，请阅读[使用 Azure CLI 管理 Azure 存储服务](/documentation/articles/storage-azure-cli)
+在 Azure 中国，Azure 存储还不能用 ARM 进行管理。有关 Azure 存储的 Azure CLI ASM 命令，请阅读[使用 Azure CLI 管理 Azure 存储服务](/documentation/articles/storage-azure-cli)
 
 ## azure tag：用于管理资源管理器标记的命令
 
@@ -297,10 +297,10 @@ Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据�
 
 ## azure vm：用于管理 Azure 虚拟机的命令
 
-在 Microsoft Azure 中国，Azure 虚拟机还不能用 ARM 进行管理。有关 Azure 虚拟机的 Azure CLI ASM 命令，请阅读[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools)
+在 Azure 中国，Azure 虚拟机还不能用 ARM 进行管理。有关 Azure 虚拟机的 Azure CLI ASM 命令，请阅读[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools)
 
 ## azure hdinsight：用于管理 HDInsight 群集的命令
 
-在 Microsoft Azure 中国，Azure HDInsight 还不能用 ARM 进行管理。有关 Azure HDInsight 的 Azure CLI ASM 命令，请阅读[使用 Azure CLI 管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-command-line)
+在 Azure 中国，Azure HDInsight 还不能用 ARM 进行管理。有关 Azure HDInsight 的 Azure CLI ASM 命令，请阅读[使用 Azure CLI 管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-command-line)
 
 <!---HONumber=Mooncake_0118_2016-->

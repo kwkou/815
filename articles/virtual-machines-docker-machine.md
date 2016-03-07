@@ -1,5 +1,5 @@
 <properties
-   pageTitle="将 docker-machine 与 Azure 一起使用 | Microsoft Azure"
+   pageTitle="将 docker-machine 与 Azure 一起使用 | Azure"
    description="演示如何使用经典部署模型在 Azure 上启动和运行 Ubuntu 上的 Docker 计算机。"
    services="virtual-machines"
    documentationCenter="virtual-machines"
@@ -197,7 +197,7 @@
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## 后续步骤
-转到 [Docker 用户指南](https://docs.docker.com/userguide/)并在 Microsoft Azure 上创建一些应用程序。或者，在 Azure 上玩 [**docker**](/documentation/articles/virtual-machines-docker-swarm) 和 [swarm](https://github.com/docker/swarm)，并了解如何将 swarm 用于 docker 和 Azure。
+转到 [Docker 用户指南](https://docs.docker.com/userguide/)并在 Azure 上创建一些应用程序。或者，在 Azure 上玩 [**docker**](/documentation/articles/virtual-machines-docker-swarm) 和 [swarm](https://github.com/docker/swarm)，并了解如何将 swarm 用于 docker 和 Azure。
 
 <!--Image references-->
 [nginx]: ./media/virtual-machines-docker-machine/nginxondocker.png

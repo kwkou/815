@@ -1,5 +1,5 @@
 <properties
-   pageTitle="配置可共存的 ExpressRoute 连接和站点到站点 VPN 连接 | Microsoft Azure"
+   pageTitle="配置可共存的 ExpressRoute 连接和站点到站点 VPN 连接 | Azure"
    description="本教程将指导你配置可共存的 ExpressRoute 连接和站点到站点 VPN 连接。"
    documentationCenter="na"
    services="expressroute"

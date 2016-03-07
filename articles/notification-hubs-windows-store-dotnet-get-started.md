@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 通知中心入门（Windows 应用商店应用）| Microsoft Azure"
+	pageTitle="Azure 通知中心入门（Windows 应用商店应用）| Azure"
 	description="在本教程中，你将了解如何使用 Azure 通知中心将通知推送到 Windows 应用商店或 Windows Phone 8.1（非 Silverlight）应用程序。"
 	services="notification-hubs"
 	documentationCenter="windows"
@@ -74,7 +74,7 @@
 
 7. （可选）对 Windows Phone 应用商店应用项目重复步骤 4-6。
 
-8. 返回新应用的 Windows 开发人员中心页，单击“服务”，单击“推送通知”，然后在“Windows 推送通知服务(WNS)和 Microsoft Azure 移动服务”下面单击“Live 服务站点”。
+8. 返回新应用的 Windows 开发人员中心页，单击“服务”，单击“推送通知”，然后在“Windows 推送通知服务(WNS)和 Azure 移动服务”下面单击“Live 服务站点”。
 
    	![][17]
 
@@ -176,7 +176,7 @@
 
 * **REST 接口**：可以使用 [REST 接口](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx)在任何后端平台上支持通知。
 
-* **Microsoft Azure 通知中心 .NET SDK**：在 Visual Studio 的 Nuget 包管理器中，运行 [Install-Package Microsoft.Azure.NotificationHubs](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)。
+* **Azure 通知中心 .NET SDK**：在 Visual Studio 的 Nuget 包管理器中，运行 [Install-Package Microsoft.Azure.NotificationHubs](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)。
 
 * **Node.js**：[如何通过 Node.js 使用通知中心](notification-hubs-nodejs-how-to-use-notification-hubs.md)。
 

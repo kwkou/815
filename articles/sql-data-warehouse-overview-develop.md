@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库开发的设计决策和编程技术 | Microsoft Azure"
+   pageTitle="SQL 数据仓库开发的设计决策和编程技术 | Azure"
    description="SQL 数据仓库的开发概念、设计决策、建议和编程技术。"
    services="sql-data-warehouse"
    documentationCenter="NA"

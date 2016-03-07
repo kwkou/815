@@ -39,7 +39,7 @@
 
 ##使用 PowerShell 对云服务进行版本控制
 
-如果你在云服务中托管应用程序，并且使用 Microsoft Azure PowerShell 部署该应用程序，则可使用 **Set-AzureServiceProjectRole** PowerShell cmdlet 替代默认的 Node.js 版本。例如：
+如果你在云服务中托管应用程序，并且使用 Azure PowerShell 部署该应用程序，则可使用 **Set-AzureServiceProjectRole** PowerShell cmdlet 替代默认的 Node.js 版本。例如：
 
 	Set-AzureServiceProjectRole WebRole1 Node 0.8.4
 

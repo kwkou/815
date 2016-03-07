@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在经典 Azure 虚拟机上设置终结点 | Microsoft Azure"
+	pageTitle="在经典 Azure 虚拟机上设置终结点 | Azure"
 	description="了解如何在 Azure 管理门户中设置终结点以允许与 Azure 中的虚拟机通信。"
 	services="virtual-machines"
 	documentationCenter=""

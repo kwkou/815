@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通过使用 Web API 注册推送通知的当前用户 | Microsoft Azure"
+	pageTitle="通过使用 Web API 注册推送通知的当前用户 | Azure"
 	description="了解在 ASP.NET Web API 执行注册时如何在 iOS 应用程序中请求向 Azure 通知中心注册推送通知。"
 	services="notification-hubs"
 	documentationCenter="ios"

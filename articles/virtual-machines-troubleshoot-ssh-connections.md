@@ -1,5 +1,5 @@
 <properties
-	pageTitle="对通过 SSH 连接到 Azure VM 进行故障排除 | Microsoft Azure"
+	pageTitle="对通过 SSH 连接到 Azure VM 进行故障排除 | Azure"
 	description="对运行 Linux 的 Azure 虚拟机的安全外壳 (SSH) 连接进行故障排除。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -27,7 +27,7 @@
 
 如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和 CSDN 论坛](/support/forums/)上的 Azure 专家。
 
-或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Microsoft Azure 支持常见问题](/support/faq/)。
+或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Azure 支持常见问题](/support/faq/)。
 
 
 ## 基本步骤 - 经典部署模型

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="配置 Azure 备份服务以准备备份 Windows Server | Microsoft Azure"
+	pageTitle="配置 Azure 备份服务以准备备份 Windows Server | Azure"
 	description="使用本教程可了解如何在 Microsoft 的 Azure 云产品/服务中使用备份服务来将 Windows Server 备份到云中。"
 	services="backup"
 	documentationCenter=""

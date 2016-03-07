@@ -29,7 +29,7 @@
       </DnsServers>
     </Dns>
 
->[AZURE.WARNING] **DnsServer** 元素中的 **name** 属性仅用作 **DnsServerRef** 元素的引用。它不表示 DNS 服务器的主机名。每个 **DnsServer** 属性值必须在整个 Microsoft Azure 订阅中是唯一的
+>[AZURE.WARNING] **DnsServer** 元素中的 **name** 属性仅用作 **DnsServerRef** 元素的引用。它不表示 DNS 服务器的主机名。每个 **DnsServer** 属性值必须在整个 Azure 订阅中是唯一的
 
 [虚拟网络站点元素](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 

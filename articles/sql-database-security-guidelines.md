@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Azure SQL 数据库安全指导原则和限制 | Microsoft Azure"
-   description="了解与安全性相关的 Microsoft Azure SQL 数据库指导原则和限制。"
+   pageTitle="Azure SQL 数据库安全指导原则和限制 | Azure"
+   description="了解与安全性相关的 Azure SQL 数据库指导原则和限制。"
    services="sql-database"
    documentationCenter=""
    authors="BYHAM"
@@ -15,7 +15,7 @@
 
 # Azure SQL 数据库安全指导原则和限制
 
-本主题介绍与安全性相关的 Microsoft Azure SQL 数据库指导原则和限制。在管理你的 Azure SQL 数据库的安全性时应考虑以下几点：
+本主题介绍与安全性相关的 Azure SQL 数据库指导原则和限制。在管理你的 Azure SQL 数据库的安全性时应考虑以下几点：
 
 ## 防火墙
 

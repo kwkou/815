@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="发行说明：Microsoft HDInsight Emulator for Azure | Microsoft Azure" 
+	pageTitle="发行说明：Microsoft HDInsight Emulator for Azure | Azure" 
 	description="获取有关最新版 HDInsight Hadoop Emulator、Hadoop 沙盒环境的最新信息。" 
 	editor="cgronlun" 
 	manager="paulettm" 

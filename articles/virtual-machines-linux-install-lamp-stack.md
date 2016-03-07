@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Linux 虚拟机上安装 LAMP 堆栈 | Microsoft Azure"
+	pageTitle="在 Linux 虚拟机上安装 LAMP 堆栈 | Azure"
 	description="了解如何在 Azure 中的 Linux 虚拟机 (VM) 上安装 LAMP 堆栈。"
 	services="virtual-machines"
 	documentationCenter=""

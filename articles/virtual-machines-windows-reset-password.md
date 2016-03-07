@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Windows VM 上重置密码或远程桌面 | Microsoft Azure"
+	pageTitle="在 Windows VM 上重置密码或远程桌面 | Azure"
 	description="在使用资源管理器部署模型创建的 Windows VM 上重置管理员密码或远程桌面服务。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -83,7 +83,7 @@ VMAccess 扩展在虚拟机上运行这两个命令：
 
 如果这未解决你的远程桌面访问问题，请运行 [Azure IaaS (Windows) 诊断程序包](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864)。
 
-1.	在诊断程序包中，单击“Microsoft Azure IaaS (Windows)诊断程序包”以创建新的诊断会话。
+1.	在诊断程序包中，单击“Azure IaaS (Windows)诊断程序包”以创建新的诊断会话。
 2.	在“你遇到 Azure VM 的以下哪些问题?”页上，选择“与 Azure VM 的 RDP 连接(需要重启)”问题。
 
 有关详细信息，请参阅 [Azure IaaS (Windows) 诊断程序包](http://support.microsoft.com/kb/2976864)知识库文章。

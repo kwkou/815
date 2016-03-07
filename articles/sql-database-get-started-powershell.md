@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="使用 PowerShell 新建 SQL 数据库设置 | Microsoft Azure" 
+    pageTitle="使用 PowerShell 新建 SQL 数据库设置 | Azure" 
     description="了解如何使用 PowerShell 创建新的 SQL 数据库。可以通过 PowerShell cmdlet 管理常见的数据库设置任务。" 
     keywords="新建 sql 数据库,数据库设置"
 	services="sql-database" 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Azure Active Directory 组管理对资源的访问 | Microsoft Azure" 
+	pageTitle="使用 Azure Active Directory 组管理对资源的访问 | Azure" 
 	description="如何在 Azure Active Directory 中使用组来管理对本地和云应用程序与资源的访问。"
 	services="active-directory" 
 	documentationCenter="" 

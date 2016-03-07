@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="流分析的上的 Power BI 仪表板 | Microsoft Azure" 
+	pageTitle="流分析的上的 Power BI 仪表板 | Azure" 
 	description="使用实时流式处理 Power BI 仪表板来采集商业智能信息，并分析流分析作业中的大量数据。" 
 	keywords="business intelligence tools,power bi,streaming data,power bi dashboard"	
 	services="stream-analytics" 
@@ -25,7 +25,7 @@ Azure 流分析允许你利用领先的商业智能工具 Microsoft Power BI。�
 
 ## 先决条件 ##
 
-* Microsoft Azure 帐户
+* Azure 帐户
 * 流分析作业的输入，提供可用的流式数据。流分析接受 Azure 事件中心或 Azure Blob 存储提供的输入。  
 * 用于 Power BI 的工作或学校帐户
 

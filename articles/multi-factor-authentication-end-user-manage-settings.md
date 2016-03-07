@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Azure Multi-Factor Authentication 时遇到问题 | Microsoft Azure" 
+	pageTitle="使用 Azure Multi-Factor Authentication 时遇到问题 | Azure" 
 	description="本文档向用户提供有关如何解决 Azure Multi-Factor Authentication 问题的信息。" 
 	services="multi-factor-authentication" 
 	documentationCenter="" 
@@ -69,7 +69,7 @@
 :------------- | :------------- | 
 [我要将它用于 Office 365](#changing-your-settings-with-office-365)| 这意味着你要通过 Office 365 门户更改设置。
 [我不知道](#changing-your-settings-with-the-myapps-portal)|这意味着你要登录 [http://myapps.microsoft.com](http://myapps.microsoft.com) 并在该网站上更改设置。
-[我要将它用于 Microsoft Azure](#changing-your-settings-with-microsoft-azure)| 这意味着你要通过 Azure 门户更改设置。
+[我要将它用于 Azure](#changing-your-settings-with-microsoft-azure)| 这意味着你要通过 Azure 门户更改设置。
 
 
  
@@ -100,7 +100,7 @@
 
 ![验证](./media/multi-factor-authentication-end-user-manage-myapps/proofup.png)
 
-### 使用 Microsoft Azure 更改设置
+### 使用 Azure 更改设置
 
 如果你在 Azure 上使用多重身份验证，则需要通过 Azure 门户更改设置。
 

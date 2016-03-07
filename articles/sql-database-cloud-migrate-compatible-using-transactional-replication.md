@@ -1,6 +1,6 @@
 <properties
    pageTitle="使用事务复制迁移到 SQL 数据库"
-   description="Microsoft Azure SQL 数据库, 数据库迁移, 导入数据库, 事务复制"
+   description="Azure SQL 数据库, 数据库迁移, 导入数据库, 事务复制"
    services="sql-database"
    documentationCenter=""
    authors="carlrabeler"

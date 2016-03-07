@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="工作原理：Azure AD 密码管理 |Microsoft Azure" 
+	pageTitle="工作原理：Azure AD 密码管理 |Azure" 
 	description="了解 Azure AD 密码管理的不同组件，其中包括用户注册、重置和更改其密码的位置以及管理员配置、报表本地 Active Directory 密码并启用对其的管理的位置。" 
 	services="active-directory" 
 	documentationCenter="" 

@@ -36,7 +36,7 @@
 
 - 在 Microsoft 知识库 (KB) 中搜索有关 Azure AD Connect 支持的常见故障维修服务问题的技术解决方案。
 
-[Microsoft Azure Active Directory 论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=WindowsAzureAD)
+[Azure Active Directory 论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=WindowsAzureAD)
 
 - 单击[此处](https://social.msdn.microsoft.com/Forums/azure/zh-cn/newthread?category=windowsazureplatform&forum=WindowsAzureAD&prof=required)，在社区中搜索和浏览技术问题与答案，或提出自己的问题。
 

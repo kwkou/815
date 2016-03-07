@@ -1,5 +1,5 @@
 <properties
-	pageTitle="关于 Azure 虚拟机 | Microsoft Azure"
+	pageTitle="关于 Azure 虚拟机 | Azure"
 	description="了解使用两种部署模型的 Azure 中虚拟机的基本信息。"
 	services="virtual-machines"
 	documentationCenter=""

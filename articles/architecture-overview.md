@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Microsoft Azure 上的应用程序体系结构" 
+	pageTitle="Azure 上的应用程序体系结构" 
 	description="包括常见设计模式的体系结构概述" 
 	services="" 
 	documentationCenter="" 
@@ -12,13 +12,13 @@
 	ms.date="10/16/2015" 
 	wacn.date="12/17/2015"/>
 
-#Microsoft Azure 上的应用程序体系结构
-用于构建使用 Microsoft Azure 的应用程序的资源。这包括一些工具，帮助您画图以直观地描述软件系统。
+#Azure 上的应用程序体系结构
+用于构建使用 Azure 的应用程序的资源。这包括一些工具，帮助您画图以直观地描述软件系统。
 
 
 
 ##Azure 体系结构设计模式
-Microsoft 发布一系列体系结构设计模式，以帮助您编写自己的自定义设计。这些模式都应是简洁的体系结构指南，可以按顺序组合在一起，为如何充分利用 Microsoft Azure 平台提供指导，以满足您组织的业务需求。
+Microsoft 发布一系列体系结构设计模式，以帮助您编写自己的自定义设计。这些模式都应是简洁的体系结构指南，可以按顺序组合在一起，为如何充分利用 Azure 平台提供指导，以满足您组织的业务需求。
 
 
 [概述](/documentation/articles/azure-architectures-cpif-overview) -

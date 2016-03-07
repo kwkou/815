@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SQL 数据库的 XEvent 事件文件代码 | Microsoft Azure" 
+	pageTitle="SQL 数据库的 XEvent 事件文件代码 | Azure" 
 	description="提供一个双阶段代码示例的 PowerShell 和 Transact-SQL，该示例演示 Azure SQL 数据库的扩展事件中的事件文件目标。完成此方案部分必须用到 Azure 存储空间。" 
 	services="sql-database" 
 	documentationCenter="" 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何使用诊断 (.NET) | Microsoft Azure" 
+	pageTitle="如何使用诊断 (.NET) | Azure" 
 	description="了解如何在 Azure 中使用诊断数据进行调试、度量性能、进行监视以及流量分析等操作。" 
 	services="cloud-services" 
 	documentationCenter=".net" 
@@ -56,7 +56,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 
 ### 步骤 1：创建辅助角色
 1.	启动 **Visual Studio 2013**。
-2.	从面向 .NET Framework 4.5 的**云**模板创建一个新的 **Microsoft Azure 云服务**项目。将该项目命名为“WadExample”。
+2.	从面向 .NET Framework 4.5 的**云**模板创建一个新的 **Azure 云服务**项目。将该项目命名为“WadExample”。
 3.	选择“辅助角色”并单击“确定”。随后将创建该项目。 
 4.	在“解决方案资源管理器”中，双击 **WorkerRole1** properties 文件。
 5.	在“配置”选项卡中，取消选中“启用诊断”以禁用 Diagnostics 1.0（Azure SDK 2.4 和更低版本）。
@@ -147,7 +147,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 ### 步骤 3：部署辅助角色
 1.	从 Visual Studio 中选择 **WadExample** 项目，然后从“生成”菜单中选择“发布”，以将辅助角色部署到 Azure。
 2.	选择你的订阅。
-3.	在“Microsoft Azure 发布设置”对话框中，选择“新建...”。
+3.	在“Azure 发布设置”对话框中，选择“新建...”。
 4.	在“创建云服务和存储帐户”对话框中输入一个名称（例如“WadExample”），然后选择区域或地缘组。
 5.	将“环境”设置为“过渡”。
 6.	适当地修改任何其他设置，然后单击“发布”。
@@ -191,7 +191,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 ### 步骤 5：在辅助角色上安装 Diagnostics
 用于在 Web 或辅助角色上管理 Diagnostics 的 PowerShell cmdlet 为：Set-AzureServiceDiagnosticsExtension、Get-AzureServiceDiagnosticsExtension 和 Remove-AzureServiceDiagnosticsExtension。
 
-1.	打开 Microsoft Azure PowerShell。
+1.	打开 Azure PowerShell。
 2.	执行脚本以在辅助角色上安装 Diagnostics（将 *StorageAccountKey* 替换为 wadexample 存储帐户的存储帐户密钥）：
 
 		$storage_name = "wadexample"
@@ -340,7 +340,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 ### 步骤 5：将 Diagnostics 远程安装到 Azure 虚拟机上
 用于在 VM 上管理 Diagnostics 的 PowerShell cmdlet 为：Set-AzureVMDiagnosticsExtension、Get-AzureVMDiagnosticsExtension 和 Remove-AzureVMDiagnosticsExtension。
 
-1.	在开发人员计算机上，打开 Microsoft Azure PowerShell。
+1.	在开发人员计算机上，打开 Azure PowerShell。
 2.	执行脚本以在 VM 上远程安装 Diagnostics（将 *StorageAccountKey* 替换为 wadexamplevm 存储帐户的存储帐户密钥）：
 
 		$storage_name = "wadexamplevm"

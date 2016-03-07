@@ -1,5 +1,5 @@
 <properties
-   pageTitle="虚拟机上的 Docker 和 Compose | Microsoft Azure"
+   pageTitle="虚拟机上的 Docker 和 Compose | Azure"
    description="在 Azure 虚拟机上使用 Compose 和 Docker 的快速简介。"
    services="virtual-machines"
    documentationCenter=""

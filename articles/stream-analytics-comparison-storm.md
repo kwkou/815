@@ -1,5 +1,5 @@
 <properties
-	pageTitle="比较：Apache Storm 和Azure 流分析 | Microsoft Azure"
+	pageTitle="比较：Apache Storm 和Azure 流分析 | Azure"
 	description="了解如何使用流分析进行实时 Twitter 观点分析。在实时仪表板上提供从事件生成到数据的分步指南。"
 	keywords="实时 twitter,观点分析,社交媒体分析,社交媒体分析工具"
 	services="stream-analytics"

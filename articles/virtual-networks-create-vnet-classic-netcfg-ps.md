@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 Azure 门户中使用网络配置文件创建虚拟网络 | Microsoft Azure"
+   pageTitle="在 Azure 门户中使用网络配置文件创建虚拟网络 | Azure"
    description="了解如何在 Azure 门户中使用网络配置文件创建虚拟网络。"
    services="virtual-network"
    documentationCenter=""

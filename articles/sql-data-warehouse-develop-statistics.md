@@ -1,5 +1,5 @@
 <properties
-   pageTitle="管理 SQL 数据仓库中的统计信息 | Microsoft Azure"
+   pageTitle="管理 SQL 数据仓库中的统计信息 | Azure"
    description="有关在开发解决方案时于 Azure SQL 数据仓库中管理统计信息的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"

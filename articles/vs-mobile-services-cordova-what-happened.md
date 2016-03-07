@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="我的 Cordova 项目发生了什么情况（Visual Studio 连接服务）| Microsoft Azure" 
+	pageTitle="我的 Cordova 项目发生了什么情况（Visual Studio 连接服务）| Azure" 
 	description="描述使用 Visual Studio 连接服务添加 Azure 移动服务后，Azure Cordova 项目发生了什么情况" 
 	services="mobile-services" 
 	documentationCenter="na" 

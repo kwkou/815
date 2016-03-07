@@ -24,7 +24,7 @@
 
 	![][B2]
 
-4. 在“配置 Microsoft Azure Web 应用”对话框中，选择订阅和你已创建的 **App Service 计划**。你也可以选择“创建新的 App Service 计划”，并通过对话框创建一个计划。在本教程中，你不需要使用数据库。选择 App Service 计划后，单击“确定”以创建项目。
+4. 在“配置 Azure Web 应用”对话框中，选择订阅和你已创建的 **App Service 计划**。你也可以选择“创建新的 App Service 计划”，并通过对话框创建一个计划。在本教程中，你不需要使用数据库。选择 App Service 计划后，单击“确定”以创建项目。
 
 	![][B5]
 
@@ -123,7 +123,7 @@
 
 2. 在左侧，单击“联机”，然后在“搜索”框中搜索 **Microsoft.Azure.NotificationHubs**。
 
-3. 在结果列表中，单击“Microsoft Azure 通知中心”，然后单击“安装”。完成安装后，关闭“NuGet 程序包管理器”窗口。
+3. 在结果列表中，单击“Azure 通知中心”，然后单击“安装”。完成安装后，关闭“NuGet 程序包管理器”窗口。
 
 	这将使用 <a href="http://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/">Microsoft.Azure.Notification Hubs NuGet 程序包</a>添加对 Azure 通知中心 SDK 的引用。
 
@@ -341,7 +341,7 @@
 
 1. 现在，我们将此应用部署到 Azure Web 应用，以便可以从任意设备访问它。右键单击 **AppBackend** 项目，然后选择“发布”。
 
-2. 选择“Microsoft Azure Web Apps”作为发布目标。
+2. 选择“Azure Web Apps”作为发布目标。
 
     ![][B15]
 

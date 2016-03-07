@@ -1,5 +1,5 @@
 <properties
-	pageTitle="什么是 Azure 密钥保管库？| Microsoft Azure"
+	pageTitle="什么是 Azure 密钥保管库？| Azure"
 	description="Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密钥和机密。通过 Azure 密钥保管库，客户可以使用受硬件安全模块 (HSM) 保护的密钥，来加密密钥和机密（例如身份验证密钥、存储帐户密钥、数据加密密钥、.PFX 文件和密码）。"
 	services="key-vault"
 	documentationCenter=""

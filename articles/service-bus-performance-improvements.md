@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="使用服务总线提高性能的最佳实践 | Microsoft Azure"
+   pageTitle="使用服务总线提高性能的最佳实践 | Azure"
    description="介绍如何使用 Azure 服务总线在交换中转消息时优化性能。"
    services="service-bus"
    documentationCenter="na"

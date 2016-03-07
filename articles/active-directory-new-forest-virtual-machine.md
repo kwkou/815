@@ -115,8 +115,8 @@
 -  [在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](https://msdn.microsoft.com/library/azure/jj156090.aspx)
 -  [配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create)
 -  [在 Azure 虚拟网络中安装副本 Active Directory 域控制器](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller)
--  [Microsoft Azure IT Pro IaaS：(01) 虚拟机基础知识](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
--  [Microsoft Azure IT Pro IaaS：(05) 创建虚拟网络和跨界连接](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
+-  [Azure IT Pro IaaS：(01) 虚拟机基础知识](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
+-  [Azure IT Pro IaaS：(05) 创建虚拟网络和跨界连接](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
 -  [虚拟网络概述](/documentation/articles/virtual-networks-overview)
 -  [如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 

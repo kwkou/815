@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Azure SQL 数据库 Web 和 Business Edition 版停用常见问题 | Microsoft Azure"
+   pageTitle="Azure SQL 数据库 Web 和 Business Edition 版停用常见问题 | Azure"
    description="了解 Azure SQL Web 和企业数据库何时停用，并了解新服务层的特性和功能。"
    services="sql-database"
    documentationCenter="na"

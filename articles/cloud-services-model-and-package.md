@@ -1,5 +1,5 @@
 <properties
-    pageTitle="什么是云服务模型和包 | Microsoft Azure"
+    pageTitle="什么是云服务模型和包 | Azure"
     description="描述 Azure 中的云服务模型（.csdef、.cscfg）和包 (.cspkg)"
     services="cloud-services"
     documentationCenter=""
@@ -226,7 +226,7 @@ Azure 仅允许 Web 角色有一个入口点。这意味着所有通信都通过
 | &lt;1.6 | C:\Program Files\Azure SDK\[sdk-version]\bin\ |
 
 >[AZURE.NOTE]
-CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Microsoft Azure 命令提示符”快捷方式使用。
+CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Azure 命令提示符”快捷方式使用。
 >  
 >运行 CSPack.exe 程序来查看有关所有可能的开关和命令的文档。
 

@@ -1,5 +1,5 @@
 ﻿<properties 
-   pageTitle="将 VMware 虚拟机和物理服务器从 Azure 故障回复到 VMware | Microsoft Azure" 
+   pageTitle="将 VMware 虚拟机和物理服务器从 Azure 故障回复到 VMware | Azure" 
    description="本文介绍如何使用 Azure Site Recovery 来故障回复已复制到 Azure 的 VMware 虚拟机。" 
    services="site-recovery" 
    documentationCenter="" 
@@ -260,7 +260,7 @@ wget-1.12-5.el6\_6.1.x86\_64.rpm
 3. 单击“新建保护”并选择操作系统类型。
 
 4.  在打开的新窗口中，选择你要故障回复的 VM 对应的“操作系统类型”>“获取详细信息”。在“主服务器详细信息”中，找到并选择你要保护的虚拟机。VM 将按照其在故障转移之前的 vCenter 主机名列出。
-5.  在选择要保护的虚拟机时（该虚拟机已故障转移到 Azure），会显示一个弹出窗口，其中提供了该虚拟机的两个条目。这是因为，配置服务器已检测到其中注册的虚拟机的两个实例。你需要删除本地 VM 的条目，以便可以保护正确的 VM。若要在此处标识正确的 Azure VM 条目，可先登录到 Azure VM，然后转到 C:\\Program Files (x86)\\Microsoft Azure Site Recovery\\Application Data\\etc。在文件 drscout.conf 中，找到主机 ID。在 vContinuum 对话框中，保留在 VM 中发现其主机 ID 的条目。删除所有其他条目。若要选择正确的 VM，你可以参考其 IP 地址。本地 IP 地址范围将是本地 VM。
+5.  在选择要保护的虚拟机时（该虚拟机已故障转移到 Azure），会显示一个弹出窗口，其中提供了该虚拟机的两个条目。这是因为，配置服务器已检测到其中注册的虚拟机的两个实例。你需要删除本地 VM 的条目，以便可以保护正确的 VM。若要在此处标识正确的 Azure VM 条目，可先登录到 Azure VM，然后转到 C:\\Program Files (x86)\\Azure Site Recovery\\Application Data\\etc。在文件 drscout.conf 中，找到主机 ID。在 vContinuum 对话框中，保留在 VM 中发现其主机 ID 的条目。删除所有其他条目。若要选择正确的 VM，你可以参考其 IP 地址。本地 IP 地址范围将是本地 VM。
 
 	![](./media/site-recovery-failback-azure-to-vmware/image22.png)
 
