@@ -1,6 +1,6 @@
 <properties
-   pageTitle="使用动态管理视图监视 Azure SQL 数据库 | Microsoft Azure"
-   description="了解如何通过使用动态管理视图检测常见性能问题来监视 Microsoft Azure SQL 数据库。"
+   pageTitle="使用动态管理视图监视 Azure SQL 数据库 | Azure"
+   description="了解如何通过使用动态管理视图检测常见性能问题来监视 Azure SQL 数据库。"
    services="sql-database"
    documentationCenter=""
    authors="BYHAM"
@@ -15,7 +15,7 @@
 
 # 使用动态管理视图监视 Azure SQL 数据库
 
-Microsoft Azure SQL 数据库支持通过一部分动态管理视图来诊断性能问题，这些问题可能由查询受阻或长时间运行、资源瓶颈、不良查询计划等原因造成。本主题提供有关如何通过使用动态管理视图检测常见性能问题的信息。
+Azure SQL 数据库支持通过一部分动态管理视图来诊断性能问题，这些问题可能由查询受阻或长时间运行、资源瓶颈、不良查询计划等原因造成。本主题提供有关如何通过使用动态管理视图检测常见性能问题的信息。
 
 SQL 数据库部分支持三种类别的动态管理视图：
 

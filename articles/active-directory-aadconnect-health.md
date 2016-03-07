@@ -58,7 +58,7 @@ Azure AD Connect Health 可帮助你监视和深入了解本地标识基础结�
 ## 在 Azure 门户中开始
 若要开始使用 Azure Active Directory Connect Health，请按以下步骤操作。
 
-1. 登录到 [Microsoft Azure 门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 门户](https://manage.windowsazure.cn/)。
 2. 可以通过转到“应用商店”并进行搜索的方式来访问 Azure Active Directory Connect Health，也可以通过先选择“应用商店”，然后再选择“安全性 + 标识”的方式来访问它。
 3. 在介绍性边栏选项卡（边栏选项卡是一种概述视图。你可以将边栏选项卡视为窗口或弹出式窗口）中，单击“创建”。此时会打开另一个包含目录信息的边栏选项卡。
 4. 在目录边栏选项卡中，单击“创建”。如果你没有 Azure Active Directory Premium 许可证，则需获得一个才能使用 Azure AD Connect Health。有关 Azure AD Premium 的信息，请参阅“Azure AD Premium 入门”。

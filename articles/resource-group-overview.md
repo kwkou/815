@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure 资源管理器概述 | Microsoft Azure"
+   pageTitle="Azure 资源管理器概述 | Azure"
    description="介绍如何使用 Azure 资源管理器在 Azure 上部署和管理资源以及对其进行访问控制。"
    services="azure-resource-manager"
    documentationCenter="na"

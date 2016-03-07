@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SQL 数据仓库透明数据加密 (TDE) TSQL 入门 | Microsoft Azure" 
+	pageTitle="SQL 数据仓库透明数据加密 (TDE) TSQL 入门 | Azure" 
 	description="SQL 数据仓库透明数据加密 (TDE) TSQL 入门" 
 	services="sql-data-warehouse" 
 	documentationCenter="" 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="预配 SQL Server 虚拟机 | Microsoft Azure"
+	pageTitle="预配 SQL Server 虚拟机 | Azure"
 	description="本教程教你如何在 Azure 上创建和配置 SQL Server VM。"
 	services="virtual-machines"
 	documentationCenter=""

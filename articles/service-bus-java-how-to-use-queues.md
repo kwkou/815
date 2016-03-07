@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 Java 使用服务总线队列 | Microsoft Azure"
+	pageTitle="如何通过 Java 使用服务总线队列 | Azure"
 	description="了解如何在 Azure 中使用 Service Bus 队列。用 Java 编写的代码示例。"
 	services="service-bus"
 	documentationCenter="java"
@@ -22,7 +22,7 @@
 
 ## 配置应用程序以使用 Service Bus
 
-在生成本示例之前，请确保已安装 [Azure SDK for Java][]。如果你使用 Eclipse，则可以安装包含 Azure SDK for Java 的 [Azure Toolkit for Eclipse][]。然后，你可以将 **Microsoft Azure Libraries for Java** 添加到你的项目：
+在生成本示例之前，请确保已安装 [Azure SDK for Java][]。如果你使用 Eclipse，则可以安装包含 Azure SDK for Java 的 [Azure Toolkit for Eclipse][]。然后，你可以将 **Azure Libraries for Java** 添加到你的项目：
 
 ![](./media/service-bus-java-how-to-use-queues/eclipselibs.png)
 

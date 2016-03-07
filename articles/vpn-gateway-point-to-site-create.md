@@ -1,5 +1,5 @@
 <properties
-   pageTitle="配置与 Azure 虚拟网络的点到站点 VPN 连接 | Microsoft Azure"
+   pageTitle="配置与 Azure 虚拟网络的点到站点 VPN 连接 | Azure"
    description="通过创建点到站点 VPN 连接安全地连接到 Azure 虚拟网络。使用服务管理（经典）部署模型创建的 VNet 的说明。"
    services="vpn-gateway"
    documentationCenter="na"

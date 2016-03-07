@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure PowerShell 在 HDInsight 中创建基于 Windows 的 Hadoop 群集 | Microsoft Azure"
+   pageTitle="使用 Azure PowerShell 在 HDInsight 中创建基于 Windows 的 Hadoop 群集 | Azure"
    	description="了解如何使用 Azure PowerShell 创建 Azure HDInsight 的群集。"
    services="hdinsight"
    documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Active Directory 的自助应用程序访问和委派管理 | Microsoft Azure"
+	pageTitle="Azure Active Directory 的自助应用程序访问和委派管理 | Azure"
 	description="本文介绍如何使用 Azure Active Directory 启用自助应用程序访问和委派管理"
 	services="active-directory"
 	documentationCenter=""

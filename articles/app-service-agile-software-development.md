@@ -93,7 +93,7 @@
 	> 2. 在块和 fater `"branch": "[parameters('branch')]"` 中添加 `"IsManualIntegration": true`
 	> 3. 在“ProdAndStage.json”和“deploy.ps1”中，将“West US”或“East US”替换为“China East”或“China North”
 
-	> 由于 Ibiza 门户尚未在 Microsoft Azure 中国区推出，因此我们无法设置 GitHub 凭据。
+	> 由于 Ibiza 门户尚未在 Azure 中国区推出，因此我们无法设置 GitHub 凭据。
 
 4.	出现提示时，键入所需的用户名和密码来访问数据库。
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Site Recovery 进行本地到本地 Hyper-V 复制的性能测试和缩放结果 | Microsoft Azure"
+	pageTitle="使用 Site Recovery 进行本地到本地 Hyper-V 复制的性能测试和缩放结果 | Azure"
 	description="本文介绍了使用 Azure Site Recovery 进行本地到本地复制时的性能测试。"
 	services="site-recovery"
 	documentationCenter=""
@@ -14,7 +14,7 @@
 
 # 使用 Site Recovery 进行本地到本地 Hyper-V 复制的性能测试和缩放结果
 
-你可以使用 Microsoft Azure Site Recovery 来协调和管理从虚拟机和物理服务器到 Azure 或辅助数据中心的复制。本文提供了我们在两个本地数据中心之间进行 Hyper-V 虚拟机复制时执行的性能测试的结果。
+你可以使用 Azure Site Recovery 来协调和管理从虚拟机和物理服务器到 Azure 或辅助数据中心的复制。本文提供了我们在两个本地数据中心之间进行 Hyper-V 虚拟机复制时执行的性能测试的结果。
 
 
 

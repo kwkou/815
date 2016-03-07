@@ -1,4 +1,4 @@
-<properties linkid="downloads" urlDisplayName="下载和安装 Azure SDK工具" pageTitle="Microsoft Azure 服务管理" metaKeywords="下载和安装 Azure SDK工具" description="下载和安装 Azure SDK、Azure PowerShell 和用于管理和部署的命令行工具" metaCanonical="" services="downloads" documentationCenter="downloads" title="下载和安装 Azure SDK工具" authors="ACom" solutions="" manager="" editor="Haifeng Liu" />
+<properties linkid="downloads" urlDisplayName="下载和安装 Azure SDK工具" pageTitle="Azure 服务管理" metaKeywords="下载和安装 Azure SDK工具" description="下载和安装 Azure SDK、Azure PowerShell 和用于管理和部署的命令行工具" metaCanonical="" services="downloads" documentationCenter="downloads" title="下载和安装 Azure SDK工具" authors="ACom" solutions="" manager="" editor="Haifeng Liu" />
 <div>
   <h2>SDK</h2>
   <p>为所选平台下载并安装语言特定的 SDK 和工具。</p>

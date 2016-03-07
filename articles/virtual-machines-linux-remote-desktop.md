@@ -1,6 +1,6 @@
 <properties
-	pageTitle="远程桌面到 Linux VM | Microsoft Azure"
-	description="了解如何安装和配置远程桌面以连接到 Microsoft Azure Linux VM"
+	pageTitle="远程桌面到 Linux VM | Azure"
+	description="了解如何安装和配置远程桌面以连接到 Azure Linux VM"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="SuperScottz"
@@ -14,7 +14,7 @@
 	wacn.date="11/12/2015"/>
 
 
-#使用远程桌面连接到 Microsoft Azure Linux VM
+#使用远程桌面连接到 Azure Linux VM
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
@@ -22,12 +22,12 @@
 
 RDP（远程桌面协议）是用于 Windows 的专用协议。我们如何使用 RDP 远程连接至 Linux VM（虚拟机）？
 
-此指南将为你提供答案！ 它将帮助你在 Microsoft Azure Linux VM 上安装和配置 xrdp，并且你能够从一台 Windows 计算机通过远程桌面连接与其连接。在本指南中，我们将使用运行 Ubuntu 或 OpenSUSE 的 Linux VM 作为示例。
+此指南将为你提供答案！ 它将帮助你在 Azure Linux VM 上安装和配置 xrdp，并且你能够从一台 Windows 计算机通过远程桌面连接与其连接。在本指南中，我们将使用运行 Ubuntu 或 OpenSUSE 的 Linux VM 作为示例。
 
 Xrdp 是一个开源 RDP 服务器，支持你从 Windows 计算机通过远程桌面连接连接到 Linux 服务器。它比 VNC（虚拟网络计算）表现得更好。VNC 具有“JPEG”质量和行为慢的特征，而 RDP 则快速清晰。
 
 
-> [AZURE.NOTE]你必须已有运行 Linux 的 Microsoft Azure VM。
+> [AZURE.NOTE]你必须已有运行 Linux 的 Azure VM。
 
 
 ##为远程桌面创建终结点
@@ -105,7 +105,7 @@ Xrdp 是一个开源 RDP 服务器，支持你从 Windows 计算机通过远程�
 
 ![图像](./media/virtual-machines-linux-remote-desktop/no2.png)
 
-使用你的 Linux VM 的 `user` 和 `password` 登录，立即从你的 Microsoft Azure Linux VM 使用远程桌面！
+使用你的 Linux VM 的 `user` 和 `password` 登录，立即从你的 Azure Linux VM 使用远程桌面！
 
 
 ##下一步

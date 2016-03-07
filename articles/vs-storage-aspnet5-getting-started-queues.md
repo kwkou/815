@@ -1,5 +1,5 @@
 <properties
-	pageTitle="开始使用队列存储和 Visual Studio 连接服务 (ASP.NET 5) | Microsoft Azure"
+	pageTitle="开始使用队列存储和 Visual Studio 连接服务 (ASP.NET 5) | Azure"
 	description="如何开始在 Visual Studio 中的 ASP.NET 5 项目中使用 Azure 队列存储"
 	services="storage"
 	documentationCenter=""

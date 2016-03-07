@@ -26,15 +26,15 @@ Azure SDK for .NET 将安装以下产品：
 
 - [Visual Studio Express for Web](#vwd)
 - [Microsoft ASP.NET 和 Web Tools for Visual Studio](#wte)
-- [Microsoft Azure Tools for Microsoft Visual Studio](#tools)
-- [Microsoft Azure 创作工具](#auth)
-- [Microsoft Azure 模拟器](#emulator)
-- [Microsoft Azure 存储模拟器](#stgemulator)
-- [Microsoft Azure 存储空间工具](#stgtools)
-- [Microsoft Azure Libraries for .NET](#libraries)
+- [Azure Tools for Microsoft Visual Studio](#tools)
+- [Azure 创作工具](#auth)
+- [Azure 模拟器](#emulator)
+- [Azure 存储模拟器](#stgemulator)
+- [Azure 存储空间工具](#stgtools)
+- [Azure Libraries for .NET](#libraries)
 - [HDInsight Tools for Visual Studio](#hdinsight) 和 [Microsoft Hive ODBC 驱动程序](#hdinsight)
-- [Microsoft Azure Mobile App SDK V1.0](#mobile)
-- [Microsoft Azure PowerShell](#ps)
+- [Azure Mobile App SDK V1.0](#mobile)
+- [Azure PowerShell](#ps)
 
 ### <a id="vwd"></a>Visual Studio Express for Web
 
@@ -53,7 +53,7 @@ Azure SDK for .NET 将安装以下产品：
 
 >[AZURE.NOTE] 无需安装 Azure SDK for .NET 即可使用这些功能；它们还包括在 Visual Studio 更新中。
 
-### <a id="tools"></a>Microsoft Azure Tools for Microsoft Visual Studio
+### <a id="tools"></a>Azure Tools for Microsoft Visual Studio
 
 这使您可以使用 Azure 资源，主要是云服务和虚拟机：
 
@@ -66,7 +66,7 @@ Azure SDK for .NET 将安装以下产品：
 * [针对云服务和虚拟机在调试模式下远程运行](http://msdn.microsoft.com/zh-cn/library/ff683670.aspx)。
 * [使用 Azure 资源组部署项自动执行资源预配](https://msdn.microsoft.com/zh-cn/library/dn872471.aspx)
 
-### <a id="auth"></a>Microsoft Azure 创作工具
+### <a id="auth"></a>Azure 创作工具
 
 其中包括：
 
@@ -74,19 +74,19 @@ Azure SDK for .NET 将安装以下产品：
 * [CSEncrypt 命令行工具](http://msdn.microsoft.com/zh-cn/library/hh404001.aspx)，用于加密密码，以便使用密码通过远程桌面连接访问云服务角色实例。
 * 运行时二进制文件，云服务项目需要使用该文件与运行时环境通信以及进行诊断。这些二进制文件在 NuGet 包中不提供。
 
-### <a id="emulator"></a>Microsoft Azure 模拟器
+### <a id="emulator"></a>Azure 模拟器
 
 [Azure 模拟器](http://msdn.microsoft.com/zh-cn/library/dn339018.aspx)模拟云服务环境，这样您就可以先在本地计算机上测试云服务项目，然后再将其部署到 Azure。
 
-### <a id="stgemulator"></a>Microsoft Azure 存储模拟器
+### <a id="stgemulator"></a>Azure 存储模拟器
 
 [Azure 存储模拟器](http://msdn.microsoft.com/zh-cn/library/hh403989.aspx)使用 SQL Server 实例和本地文件系统来模拟 Azure 存储空间（队列、表、Blob），以便在本地进行测试。
 
-### <a id="stgtools"></a>Microsoft Azure 存储空间工具
+### <a id="stgtools"></a>Azure 存储空间工具
 
 这将安装命令行工具 [AzCopy](http://aka.ms/AzCopy)，可以使用它将数据传入和传出 Azure 存储帐户。
 
-### <a id="libraries"></a>Microsoft Azure Libraries for .NET
+### <a id="libraries"></a>Azure Libraries for .NET
 
 其中包括：
 
@@ -97,11 +97,11 @@ Azure SDK for .NET 将安装以下产品：
 
 在服务器资源管理器中的 HDInsight 工具，可以导航 Hive 数据库和 HDInsight 群集的链接存储帐户、创建表，并创建和提交 Hive 查询。有关详细信息，请参阅 [HDInsight Hadoop Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)。
 
-### <a id="mobile">Microsoft Azure Mobile App SDK
+### <a id="mobile">Azure Mobile App SDK
 
 用于 [Azure App Service Mobile Apps](/documentation/articles/app-service-mobile-value-prop-preview) 的工具。
 
-### <a id="ps"></a>Microsoft Azure PowerShell
+### <a id="ps"></a>Azure PowerShell
 
 使用 Azure PowerShell，您可以 [自动化 Azure 环境的创建和部署](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything)。
 
@@ -148,7 +148,7 @@ Azure SDK for .NET 将安装以下产品：
 
 ### <a id="lifecycle"></a>Azure SDK for .NET 版本的生命周期策略是什么？
 
-请参阅 [Microsoft Azure 云服务支持生命周期策略](http://support.microsoft.com/gp/azure-cloud-lifecycle-faq)。
+请参阅 [Azure 云服务支持生命周期策略](http://support.microsoft.com/gp/azure-cloud-lifecycle-faq)。
 
 ### 哪些来宾操作系统版本是 Azure SDK for .NET 兼容的？
 
@@ -160,7 +160,7 @@ Azure SDK for .NET 将安装以下产品：
 
 如果您已经安装了 Azure SDK for.NET，在安装新版本时，通常无需卸载旧版本。在大多数情况下，SDK 安装会更新现有程序，而不是添加一个新程序并保留旧程序。
 
-但是，如果您想要删除不再需要的早期版本的残留文件，只有在显示存在同一程序的更新版本时才能进行卸载，并且只能卸载指明了较旧版本号的程序。例如，在从 2.5 版本更新到 2.6 后，你可能会同时看到“Micrsoft Azure Tools for Microsoft Visual Studio 2013”存在 2.5 和 2.6 两个版本。在此情况下，你可以卸载 2.5 版本。但是，你也可能只看到“Microsoft Azure 创作工具”的 2.5 版本。在此情况下，卸载程序则是不安全的。
+但是，如果您想要删除不再需要的早期版本的残留文件，只有在显示存在同一程序的更新版本时才能进行卸载，并且只能卸载指明了较旧版本号的程序。例如，在从 2.5 版本更新到 2.6 后，你可能会同时看到“Micrsoft Azure Tools for Microsoft Visual Studio 2013”存在 2.5 和 2.6 两个版本。在此情况下，你可以卸载 2.5 版本。但是，你也可能只看到“Azure 创作工具”的 2.5 版本。在此情况下，卸载程序则是不安全的。
 
 请注意，在**程序和功能**中所显示的程序版本号可能会产生误导。例如，SDK 2.6 版包括“Micrsoft Azure Mobile App SDK V1.0”。如果你安装了适用于 Visual Studio 2013 的 SDK 和适用于 Visual Studio 2015 的”Micrsoft Azure Mobile App SDK V2.0”，在此情况下，显示的版本号并非 SDK 版本号，而是该程序适用的 Visual Studio 版本号。
 

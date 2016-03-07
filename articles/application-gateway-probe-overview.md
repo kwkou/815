@@ -1,7 +1,7 @@
 
 
 <properties
-   pageTitle="Azure 应用程序网关的运行状况监视概述 | Microsoft Azure"
+   pageTitle="Azure 应用程序网关的运行状况监视概述 | Azure"
    description="了解 Azure 应用程序网关中的监视功能"
    services="application-gateway"
    documentationCenter="na"

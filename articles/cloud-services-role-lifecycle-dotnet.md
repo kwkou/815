@@ -1,5 +1,5 @@
 <properties 
-pageTitle="处理云服务生命周期事件 | Microsoft Azure" 
+pageTitle="处理云服务生命周期事件 | Azure" 
 description="了解如何在 .NET 中使用云服务角色的生命周期方法" 
 services="cloud-services" 
 documentationCenter=".net" 

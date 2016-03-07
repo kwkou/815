@@ -1,5 +1,5 @@
 <properties
-	pageTitle="准备网络映射，以便在 Azure Site Recovery 中通过 VMM 进行 Hyper-V 虚拟机保护 | Microsoft Azure"
+	pageTitle="准备网络映射，以便在 Azure Site Recovery 中通过 VMM 进行 Hyper-V 虚拟机保护 | Azure"
 	description="设置网络映射，以便进行从本地数据中心到 Azure 或者到辅助站点的 Hyper-V 虚拟机复制。"
 	services="site-recovery"
 	documentationCenter=""

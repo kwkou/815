@@ -243,7 +243,7 @@ Azure AD Connect 只删除其曾经认为在范围中的对象。如果 Azure AD
 
 同步后，将暂存所有更改以便导出。在 Azure AD 中实际进行更改之前，请验证所有更改是否正确。
 
-1. 启动 cmd 提示符并转到 `%Program Files%\Microsoft Azure AD Sync\bin`
+1. 启动 cmd 提示符并转到 `%Program Files%\Azure AD Sync\bin`
 2. 运行：`csexport "Name of Connector" %temp%\export.xml /f:x`  
 连接器名称可以在同步服务中找到。它的名称类似于“contoso.com – AAD”（表示 Azure AD）。
 3. 运行：`CSExportAnalyzer %temp%\export.xml > %temp%\export.csv`

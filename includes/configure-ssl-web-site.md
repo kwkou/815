@@ -492,7 +492,7 @@ URL 重写规则在存储于应用程序根目录中的 **web.config** 文件内
 有关 IIS URL 重写模块的详细信息，请参阅 [URL 重写](http://www.iis.net/downloads/microsoft/url-rewrite)文档。
 
 ## 更多资源 ##
-- [Microsoft Azure 信任中心](/support/trust-center/security/)
+- [Azure 信任中心](/support/trust-center/security/)
 - [Azure Web 应用中解锁的设置选项](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)
 - [启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)
 - [在 Azure 中配置 Web 应用](/documentation/articles/web-sites-configure)

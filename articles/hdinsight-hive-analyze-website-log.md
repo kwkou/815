@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将 Hive 用于 Hadoop 以进行 Web 应用日志分析| Microsoft Azure" 
+	pageTitle="将 Hive 用于 Hadoop 以进行 Web 应用日志分析| Azure" 
 	description="了解如何通过将 Hive 与 HDInsight 配合使用来分析 Web 应用日志。我们将使用日志文件作为 HDInsight 表的输入，并使用 HiveQL 来查询数据。" 
 	services="hdinsight" 
 	documentationCenter="" 

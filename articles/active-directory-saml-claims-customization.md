@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure Active Directory 中为预先集成的应用自定义 SAML 令牌中颁发的声明 | Microsoft Azure"
+	pageTitle="在 Azure Active Directory 中为预先集成的应用自定义 SAML 令牌中颁发的声明 | Azure"
 	description="了解如何在 Azure Active Directory 中为预先集成的应用自定义 SAML 令牌中颁发的声明"
 	services="active-directory"
 	documentationCenter=""

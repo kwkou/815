@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SQL 数据库 V12 的新增功能 | Microsoft Azure" 
+	pageTitle="SQL 数据库 V12 的新增功能 | Azure" 
 	description="介绍云中使用 Azure SQL 数据库的业务系统在升级到版本 V12 后为何能够受益。" 
 	services="sql-database" 
 	documentationCenter="" 

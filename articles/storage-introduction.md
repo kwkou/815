@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="存储简介 | Microsoft Azure" 
-	description="Microsoft Azure 存储空间概述。" 
+	pageTitle="存储简介 | Azure" 
+	description="Azure 存储空间概述。" 
 	services="storage" 
 	documentationCenter="" 
 	authors="tamram" 
@@ -12,11 +12,11 @@
 	ms.date="01/05/2016" 
 	wacn.date="02/25/2016"/>
 
-# Microsoft Azure 存储服务简介
+# Azure 存储服务简介
 
 ## 概述
 
-本文面向开发人员、IT 专业人员和业务决策者深入介绍了 Microsoft Azure 存储服务。通过阅读本文，你将会了解：
+本文面向开发人员、IT 专业人员和业务决策者深入介绍了 Azure 存储服务。通过阅读本文，你将会了解：
 
 - 什么是 Azure 存储服务，以及如何在你的云、移动、服务器和桌面应用程序中利用它
 - 你可以使用 Azure 存储服务存储什么类型的数据：Blob、表、队列和文件存储
@@ -149,7 +149,7 @@ Azure 文件存储提供了基于云的 SMB 文件共享，这样你可以将依
 
 根据以下四个因素向使用 Azure 存储服务的客户收费：使用的存储容量、选择的复制选项、对服务发出的请求数，以及数据流出量。 
 
-存储容量指的是存储帐户中用来存储数据的配额。对数据进行简单存储时，其成本取决于存储的数据量和数据复制方式。针对 Azure 存储服务的每个读取和写入操作还将针对服务发出一个请求。数据流出量是指从某个 Microsoft Azure 区域传出的数据。当不在同一区域中的应用程序访问你的存储帐户中的数据时，无论该应用程序是云服务还是某个其他类型的应用程序，都将会针对数据流出量向你收费。（对于 Microsoft Azure 服务，你可以采取措施将数据和服务分组到同一数据中心内，从而降低或避免处理和数据流出量费用。） 
+存储容量指的是存储帐户中用来存储数据的配额。对数据进行简单存储时，其成本取决于存储的数据量和数据复制方式。针对 Azure 存储服务的每个读取和写入操作还将针对服务发出一个请求。数据流出量是指从某个 Azure 区域传出的数据。当不在同一区域中的应用程序访问你的存储帐户中的数据时，无论该应用程序是云服务还是某个其他类型的应用程序，都将会针对数据流出量向你收费。（对于 Azure 服务，你可以采取措施将数据和服务分组到同一数据中心内，从而降低或避免处理和数据流出量费用。） 
 
 [存储定价详细信息](/home/features/storage/#price)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/zh-cn/pricing/details/data-transfer)提供了针对数据流出量的详细定价信息。你可以使用 [Azure 存储服务定价计算器](/zh-cn/pricing/calculator/?scenario=data-management)来帮助估算成本。
 
@@ -179,7 +179,7 @@ Azure 存储服务通过一个 [REST API](https://msdn.microsoft.com/zh-CN/libra
 
 ### 源代码
 
-- [适用于 .NET 的 Microsoft Azure 存储库](https://github.com/Azure/azure-storage-net)
+- [适用于 .NET 的 Azure 存储库](https://github.com/Azure/azure-storage-net)
 
 ### 文档
 

@@ -55,7 +55,7 @@
 
 **验证**
 
-1. 启动 cmd 提示符并转到 `%Program Files%\Microsoft Azure AD Sync\bin`
+1. 启动 cmd 提示符并转到 `%Program Files%\Azure AD Sync\bin`
 2. 运行：`csexport "Name of Connector" %temp%\export.xml /f:x`<BR/> 
 连接器名称可以在同步服务中找到。它的名称类似于“contoso.com – AAD”（表示 Azure AD）。
 3. 运行：`CSExportAnalyzer %temp%\export.xml > %temp%\export.csv`

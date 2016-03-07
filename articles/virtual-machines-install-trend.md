@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 VM 上安装 Trend Micro Deep Security | Microsoft Azure"
+	pageTitle="在 VM 上安装 Trend Micro Deep Security | Azure"
 	description="本文介绍如何在 Azure 中使用经典部署模型创建的 VM 上安装和配置 Trend Micro Deep Security。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -23,7 +23,7 @@
 
 该客户端通过 VM 代理作为安全扩展插件进行安装。在新虚拟机上，将随 Deep Security Agent 一起安装 VM 代理。在未安装 VM 代理的现有虚拟机上，将需要先下载并安装 VM 代理。本文介绍这两种情况。
 
-如果你拥有针对本地解决方案的 Trend Micro 现有订阅，那么可以用它来帮助保护你的 Azure 虚拟机。如果你还不是 Trend Micro 的客户，那么可以注册试用订阅。有关此解决方案的详细信息，请参阅 Trend Micro 博客文章[用于 Deep Security 的 Microsoft Azure VM 代理扩展](http://go.microsoft.com/fwlink/p/?LinkId=403945)。
+如果你拥有针对本地解决方案的 Trend Micro 现有订阅，那么可以用它来帮助保护你的 Azure 虚拟机。如果你还不是 Trend Micro 的客户，那么可以注册试用订阅。有关此解决方案的详细信息，请参阅 Trend Micro 博客文章[用于 Deep Security 的 Azure VM 代理扩展](http://go.microsoft.com/fwlink/p/?LinkId=403945)。
 
 ## 在新虚拟机上安装 Deep Security Agent
 
@@ -68,7 +68,7 @@
 
 安装后，代理需要几分钟时间才会开始运行。之后，你必须在虚拟机上激活 Deep Security，然后才能通过 Deep Security Manager 进行管理。有关其他说明，请参阅以下内容：
 
-- 有关此解决方案的 Trend 文章：[用于 Microsoft Azure 的 Instant-On Cloud Security](http://go.microsoft.com/fwlink/?LinkId=404101)
+- 有关此解决方案的 Trend 文章：[用于 Azure 的 Instant-On Cloud Security](http://go.microsoft.com/fwlink/?LinkId=404101)
 - 用于配置虚拟机的 [Windows PowerShell 脚本示例](http://go.microsoft.com/fwlink/?LinkId=404100)
 - 示例的[说明](http://go.microsoft.com/fwlink/?LinkId=404099)
 

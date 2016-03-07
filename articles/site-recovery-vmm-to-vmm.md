@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将 Hyper-V 虚拟机（位于 VMM 云中）复制到辅助 VMM 站点 | Microsoft Azure"
+	pageTitle="将 Hyper-V 虚拟机（位于 VMM 云中）复制到辅助 VMM 站点 | Azure"
 	description="了解如何通过 Azure Site Recovery 将 VMM 云中的 Hyper-V VM 复制到辅助 VMM 站点。"
 	services="site-recovery" 
 	documentationCenter="" 
@@ -35,7 +35,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 **先决条件** | **详细信息** 
 --- | ---
-**Azure**| 需要一个 [Microsoft Azure](/) 帐户。你可以从 [1rmb 试用版](/pricing/1rmb-trial/)开始。[详细了解](/home/features/site-recovery#price) Site Recovery 定价。 
+**Azure**| 需要一个 [Azure](/) 帐户。你可以从 [1rmb 试用版](/pricing/1rmb-trial/)开始。[详细了解](/home/features/site-recovery#price) Site Recovery 定价。 
 **VMM** | 你将需要至少一个 VMM 服务器。<br/><br/>VMM 服务器应至少运行安装了最新累积更新的 System Center 2012 SP1。<br/><br/>如果你需要对单个 VMM 服务器设置保护，则需在服务器上至少配置两个云。<br/><br/>如果你需要为两个 VMM 服务器部署保护，则每个服务器都必须将至少一个云配置在所要保护的主 VMM 服务器上，一个云配置在需要用于保护和恢复的辅助 VMM 服务器上<br/><br/>所有 VMM 云都必须设置 Hyper-V 容量配置文件。<br/><br/>要保护的源云必须包含一个或多个 VMM 主机组。<br/><br/>若要详细了解如何设置 VMM 云，请参阅[配置 VMM 云结构](/documentation/articles/site-recovery-best-practices)和[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)。
 **Hyper-V** | 你需要在主 VMM 主机组和辅助 VMM 主机组中有一个或多个 Hyper-V 主机服务器，在每个 Hyper-V 主机服务器中有一个或多个虚拟机。<br/><br/>主机和目标 Hyper-V 服务器必须至少运行包含 Hyper-V 角色的 Windows Server 2012，并安装了最新更新。<br/><br/>任何包含你所要保护的 VM 的 Hyper-V 服务器都必须位于 VMM 云中。<br/><br/>如果你要在群集中运行 Hyper-V，请注意，如果你的群集是静态的基于 IP 地址的群集，则不会自动创建群集代理。你需要手动配置群集代理。[了解详细信息](http://social.technet.microsoft.com/wiki/contents/articles/18792.configure-replica-broker-role-cluster-to-cluster-replication.aspx)。
 **网络映射** | 你可以配置网络映射，以确保在故障转移后以最佳方式将复制的虚拟机放置在辅助 Hyper-V 主机服务器上，并确保它们连接到适当的 VM 网络。如果不配置网络映射，则在故障转移后，副本 VM 将不会连接到任何网络。<br/><br/>若要在部署期间设置网络映射，请确保源 Hyper-V 主机服务器上的虚拟机连接到 VMM VM 网络。该网络应链接到与云关联的逻辑网络。<br/<br/>辅助 VMM 服务器上用于恢复的目标云应当配置了相应的 VM 网络，并且该网络应当链接到与目标云关联的相应逻辑网络。<br/><br/>[详细了解](/documentation/articles/site-recovery-network-mapping)网络映射。
@@ -74,7 +74,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 	
 ##<a id="step-3-install-the-azure-site-recovery-provider"></a> 步骤 3：安装 Azure 站点恢复 提供程序	
 
-4. 在“快速启动”页面上的“准备 VMM 服务器”中，单击“下载用于在 VMM 服务器上安装的 Microsoft Azure Site Recovery 提供程序”来获取最新版本的提供程序安装文件。
+4. 在“快速启动”页面上的“准备 VMM 服务器”中，单击“下载用于在 VMM 服务器上安装的 Azure Site Recovery 提供程序”来获取最新版本的提供程序安装文件。
 
 2. 在源 VMM 服务器上运行此文件。如果 VMM 部署到群集中并且你是首次安装该提供程序，请将其安装在一个活动节点上并完成安装以在保管库中注册 VMM 服务器。然后在其他节点上安装该提供程序。请注意，如果你是在升级提供程序，则需要在所有节点上进行升级，因为所有节点都应当运行相同的提供程序版本。
 
@@ -310,7 +310,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 <a name="privacy"></a><h2>站点恢复的隐私信息</h2>
 
-本部分提供了 Microsoft Azure Site Recovery 服务（“服务”）的更多隐私信息。若要查看 Microsoft Azure 服务的隐私声明，请参阅 [Azure 隐私声明](/support/legal/privacy-statement/)
+本部分提供了 Azure Site Recovery 服务（“服务”）的更多隐私信息。若要查看 Azure 服务的隐私声明，请参阅 [Azure 隐私声明](/support/legal/privacy-statement/)
 
 **功能：注册**
 

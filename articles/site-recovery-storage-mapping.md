@@ -1,5 +1,5 @@
 <properties
-	pageTitle="映射 Azure Site Recovery 中的存储，以便在本地数据中心之间进行 Hyper-V 虚拟机复制 | Microsoft Azure"
+	pageTitle="映射 Azure Site Recovery 中的存储，以便在本地数据中心之间进行 Hyper-V 虚拟机复制 | Azure"
 	description="准备存储映射，以便通过 Azure Site Recovery 在两个本地数据中心之间进行 Hyper-V 虚拟机复制。"
 	services="site-recovery"
 	documentationCenter=""

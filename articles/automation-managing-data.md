@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="管理 Azure 自动化数据 | Microsoft Azure"
+   pageTitle="管理 Azure 自动化数据 | Azure"
    description="本文包含有关管理 Azure 自动化环境的多个主题。Azure 自动化目前包括数据保留和备份 Azure 自动化灾难恢复。"
    services="automation"
    documentationCenter=""
@@ -37,7 +37,7 @@ Azure 自动化会自动删除并永久移除 90 天之前的作业。
 
 ## 备份 Azure 自动化
 
-当你删除 Microsoft Azure 中的某个自动化帐户时，该帐户中的所有对象都将被删除，包括 Runbook、模块、配置、设置、作业和资产。在删除帐户后，这些对象不可恢复。在删除自动化帐户之前，你可以参考以下信息来备份该帐户的内容。
+当你删除 Azure 中的某个自动化帐户时，该帐户中的所有对象都将被删除，包括 Runbook、模块、配置、设置、作业和资产。在删除帐户后，这些对象不可恢复。在删除自动化帐户之前，你可以参考以下信息来备份该帐户的内容。
 
 ### Runbook
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库中的表设计 | Microsoft Azure"
+   pageTitle="SQL 数据仓库中的表设计 | Azure"
    description="有关在开发解决方案时于 Azure SQL 数据仓库中设计表的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"

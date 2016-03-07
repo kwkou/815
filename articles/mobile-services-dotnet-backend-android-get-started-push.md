@@ -1,5 +1,5 @@
 <properties
-	pageTitle="推送入门 (Android) | Microsoft Azure"
+	pageTitle="推送入门 (Android) | Azure"
 	description="了解如何使用 Azure 移动服务将推送通知发送到 Android .Net 应用程序。"
 	services="mobile-services, notification-hubs"
 	documentationCenter="android"

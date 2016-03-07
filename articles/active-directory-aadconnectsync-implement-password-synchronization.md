@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect 同步 - 实现密码同步 | Microsoft Azure"
+	pageTitle="Azure AD Connect 同步 - 实现密码同步 | Azure"
 	description="为你提供需要了解密码同步的工作原理以及如何在你的环境中启用它的信息。"
 	services="active-directory"
 	documentationCenter=""

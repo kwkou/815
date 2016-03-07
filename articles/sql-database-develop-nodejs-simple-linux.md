@@ -63,7 +63,7 @@
 		userName: 'yourusername',
 		password: 'yourpassword',
 		server: 'yourserver.database.chinacloudapi.cn',
-		// If you are on Microsoft Azure, you need this:
+		// If you are on Azure, you need this:
 		options: {encrypt: true, database: 'AdventureWorks'}
 	};
 	var connection = new Connection(config);

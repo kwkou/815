@@ -1,5 +1,5 @@
 <properties 
-pageTitle="Microsoft Azure 开发人员中心：PYTHON" 
+pageTitle="Azure 开发人员中心：PYTHON" 
 description="" 
 services="PYTHON" 
 documentationCenter="Develop" 

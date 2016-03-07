@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="将 VMware 虚拟机和物理服务器故障回复到本地站点 | Microsoft Azure"
+   pageTitle="将 VMware 虚拟机和物理服务器故障回复到本地站点 | Azure"
    description="了解在将 VMware VM 和物理服务器故障转移到 Azure 后，如何故障回复到本地站点。" 
    services="site-recovery" 
    documentationCenter="" 

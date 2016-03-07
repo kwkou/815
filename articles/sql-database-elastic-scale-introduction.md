@@ -1,5 +1,5 @@
 <properties
-    pageTitle="弹性数据库工具功能概述 | Microsoft Azure"
+    pageTitle="弹性数据库工具功能概述 | Azure"
     description="软件即服务 (SaaS) 开发人员可以使用这些工具轻松地在云中创建可缩放的弹性数据库"
     services="sql-database"
     documentationCenter=""

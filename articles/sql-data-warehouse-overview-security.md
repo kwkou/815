@@ -1,5 +1,5 @@
 <properties
-   pageTitle="保护 SQL 数据仓库中的数据库 | Microsoft Azure"
+   pageTitle="保护 SQL 数据仓库中的数据库 | Azure"
    description="有关在开发解决方案时保护 Azure SQL 数据仓库中的数据库的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"

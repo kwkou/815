@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库中的 Create Table As Select (CTAS) | Microsoft Azure"
+   pageTitle="SQL 数据仓库中的 Create Table As Select (CTAS) | Azure"
    description="有关在开发解决方案时使用 Azure SQL 数据仓库中的 create table as select (CTAS) 语句编写代码的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 C# 查询 SQL 数据库 | Microsoft Azure"
+	pageTitle="使用 C# 查询 SQL 数据库 | Azure"
 	description="有关使用 IP 地址、连接字符串、安全登录配置文件和免费 Visual Studio 让 C# 程序能够使用 ADO.NET 连接到云中的 Azure SQL 数据库的详细信息。"
 	services="sql-database"
 	documentationCenter=""

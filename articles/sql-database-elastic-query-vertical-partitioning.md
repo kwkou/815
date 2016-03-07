@@ -1,5 +1,5 @@
 <properties
-    pageTitle="适用于跨数据库查询的弹性数据库查询（垂直分区）| Microsoft Azure"
+    pageTitle="适用于跨数据库查询的弹性数据库查询（垂直分区）| Azure"
     description="如何在垂直分区上设置跨数据库查询"    
     services="sql-database"
     documentationCenter=""  

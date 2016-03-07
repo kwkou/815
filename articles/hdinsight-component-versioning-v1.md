@@ -1,5 +1,5 @@
 <properties
-	pageTitle="HDInsight 的 Hadoop 群集版本有哪些新功能？| Microsoft Azure"
+	pageTitle="HDInsight 的 Hadoop 群集版本有哪些新功能？| Azure"
 	description="HDInsight 支持多个可部署的 Hadoop 群集版本。请参见“支持的 Hadoop 和 HortonWorks 数据平台 (HDP) 版本”。"
 	services="hdinsight"
 	editor="cgronlun"

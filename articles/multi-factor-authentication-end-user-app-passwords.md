@@ -43,7 +43,7 @@
 :------------- | :------------- | 
 [我要将它用于 Office 365](#creating-and-deleting-app-passwords-with-office-365)| 这意味着你要通过 Office 365 门户创建应用密码。
 [我不知道](#creating-and-deleting-app-passwords-with-myapps-portal)|这意味着你要通过 [https://myapps.microsoft.com](https://myapps.microsoft.com) 创建应用密码
-[我要将它用于 Microsoft Azure](#create-app-passwords-in-the-azure-portal)| 这意味着你要通过 Azure 门户创建应用密码。
+[我要将它用于 Azure](#create-app-passwords-in-the-azure-portal)| 这意味着你要通过 Azure 门户创建应用密码。
 
 
 

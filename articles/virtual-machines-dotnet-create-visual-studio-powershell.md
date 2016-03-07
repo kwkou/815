@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Visual Studio 创建用于 Web 项目的 VM | Microsoft Azure"
+	pageTitle="使用 Visual Studio 创建用于 Web 项目的 VM | Azure"
 	description="为 Web 应用程序创建虚拟机"
 	services="virtual-machines"
 	documentationCenter=""
@@ -26,7 +26,7 @@
 
 	![][0]
 
-3. 对于此示例，在 Microsoft Azure 下的下拉列表中，选择“虚拟机(v1)”，然后单击“确定”按钮。
+3. 对于此示例，在 Azure 下的下拉列表中，选择“虚拟机(v1)”，然后单击“确定”按钮。
 
 4. 单击“视图”，打开“服务器资源管理器”，然后右键单击 **Azure**，选择“管理和筛选订阅...”。单击标记“证书”。现在，你可以为 Azure 订阅添加证书。
 

@@ -1,5 +1,5 @@
 <properties
- pageTitle="Linux RDMA 群集运行 MPI 应用程序 | Microsoft Azure"
+ pageTitle="Linux RDMA 群集运行 MPI 应用程序 | Azure"
  description="创建 A8 或 A9 大小 VM 的 Linux 群集以使用 RDMA 运行 MPI 应用。"
  services="virtual-machines"
  documentationCenter=""
@@ -94,7 +94,7 @@
 
 在 VM 完成预配后，使用 VM 的外部 IP 地址（或 DNS 名称）和你配置的外部端口号通过 SSH 登录到 VM，然后对其进行自定义。有关连接详细信息，请参阅[如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-how-to-log-on)。你必须以 VM 上配置的用户身份执行命令，除非必须要根访问权限才能完成步骤。
 
->[AZURE.IMPORTANT]Microsoft Azure 不提供对 Linux VM 的根访问权限。若要在以用户身份连接至 VM 时获得管理访问权限，使用 `sudo` 运行命令。
+>[AZURE.IMPORTANT]Azure 不提供对 Linux VM 的根访问权限。若要在以用户身份连接至 VM 时获得管理访问权限，使用 `sudo` 运行命令。
 
 *   **更新** - 使用 **zypper** 安装更新。你可能想要安装 NFS 实用工具。  
 

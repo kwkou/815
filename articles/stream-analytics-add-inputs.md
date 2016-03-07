@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何将数据输入添加到流分析作业中 | Microsoft Azure" 
+	pageTitle="如何将数据输入添加到流分析作业中 | Azure" 
 	description="添加流分析作业的输入 | 学习路径段。"
 	keywords="数据输入、流式数据"
 	documentationCenter=""

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Azure 自动化中的 Runbook 输出和消息 | Microsoft Azure"
+   pageTitle="Azure 自动化中的 Runbook 输出和消息 | Azure"
    description="介绍如何创建和检索 Azure 自动化中 Runbook 的输出和错误消息。"
    services="automation"
    documentationCenter=""

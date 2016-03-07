@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="使用弹性数据库池向外缩放资源 | Microsoft Azure" 
+    pageTitle="使用弹性数据库池向外缩放资源 | Azure" 
     description="了解如何通过创建弹性数据库池，使用 PowerShell 向外缩放 Azure SQL 数据库资源以管理多个数据库。" 
 	keywords="多个数据库,向外缩放"    
 	services="sql-database" 

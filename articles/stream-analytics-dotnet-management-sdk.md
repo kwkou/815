@@ -1,5 +1,5 @@
 <properties
-	pageTitle="流分析的管理 .NET SDK | Microsoft Azure"
+	pageTitle="流分析的管理 .NET SDK | Azure"
 	description="流分析管理 .NET SDK 入门。了解如何设置和运行分析作业：创建项目、输入、输出和转换。"
 	keywords=".net SDK、分析 API"
 	services="stream-analytics"

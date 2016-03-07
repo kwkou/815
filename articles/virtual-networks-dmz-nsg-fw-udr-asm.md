@@ -1,5 +1,5 @@
 <properties
-   pageTitle="外围网络示例 – 构建外围网络以通过防火墙、UDR 和 NSG 保护网络 | Microsoft Azure"
+   pageTitle="外围网络示例 – 构建外围网络以通过防火墙、UDR 和 NSG 保护网络 | Azure"
    description="构建包含防火墙、用户定义的路由 (UDR) 和网络安全组 (NSG) 的外围网络"
    services="virtual-network"
    documentationCenter="na"

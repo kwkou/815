@@ -22,7 +22,7 @@
 
 你可以免费注册一个 Azure 帐户，而且，如果你还没有 Visual Studio 2013，则此 SDK 会自动安装 Visual Studio 2013 for Web Express。你可以免费开始针对 Azure 进行开发。
 
-本教程假定你之前未使用过 Microsoft Azure。完成本教程之后，你将能够在云中启动并运行使用云数据库的 Web 应用。
+本教程假定你之前未使用过 Azure。完成本教程之后，你将能够在云中启动并运行使用云数据库的 Web 应用。
 
 学习内容：
 
@@ -664,7 +664,7 @@ Update-Database
 2. 在“服务器资源管理器”中，导航到“ Web 应用”。
 3. 右键单击每个 Web 应用实例并选择“停止 Web 应用”。![停止 Web 应用菜单项](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26a.png)  
 
-	或者，也可以从 Microsoft Azure 管理门户中选择该 Web 应用，然后单击页面底部的“停止”图标。![添加新联系人页](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26b.png)
+	或者，也可以从 Azure 管理门户中选择该 Web 应用，然后单击页面底部的“停止”图标。![添加新联系人页](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26b.png)
 
 ##<a name="Review-the-Database"></a>查看数据库 
 必须知道如何直接查看和修改数据库。如果知道如何直接处理数据库，就可以确认数据库中的数据，同时了解数据在每个表中的存储方式。
@@ -690,7 +690,7 @@ Update-Database
 >[AZURE.NOTE]我们正在开发可显著简化用户和角色管理的工具。
 
 ##<a name="Next-Steps"></a>后续步骤
-有关 ASP.NET Web 窗体的详细信息，请参阅 ASP.NET Web 应用上的 [了解 ASP.NET Web 窗体](http://www.asp.net/web-forms)和 [Microsoft Azure 教程和指南](/documentation/services/web-sites/#net)。
+有关 ASP.NET Web 窗体的详细信息，请参阅 ASP.NET Web 应用上的 [了解 ASP.NET Web 窗体](http://www.asp.net/web-forms)和 [Azure 教程和指南](/documentation/services/web-sites/#net)。
 
 本教程基于 Rick Anderson 在 Tom Dykstra 和 Barry Dorrans 的帮助下编写的 MVC 教程[创建包含身份验证和 SQL 数据库的 ASP.NET MVC 应用并部署到 Azure  Web 应用](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
 

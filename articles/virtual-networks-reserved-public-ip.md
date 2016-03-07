@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="保留 IP | Microsoft Azure"
+   pageTitle="保留 IP | Azure"
    description="了解保留 IP 以及如何对其进行管理"
    services="virtual-network"
    documentationCenter="na"

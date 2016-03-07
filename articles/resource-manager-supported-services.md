@@ -1,5 +1,5 @@
 <properties
-   pageTitle="资源管理器支持的服务、区域、架构和版本 | Microsoft Azure"
+   pageTitle="资源管理器支持的服务、区域、架构和版本 | Azure"
    description="介绍支持资源管理器的资源提供程序及其架构和可用 API 版本，以及可托管资源的区域。"
    services="azure-resource-manager"
    documentationCenter="na"

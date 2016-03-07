@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 HDinsight 上的 Storm 拓扑中使用 Python 组件 | Microsoft Azure"
+   pageTitle="在 HDinsight 上的 Storm 拓扑中使用 Python 组件 | Azure"
    description="了解如何在 Azure HDInsight 上的 Apache Storm 中使用 Python 组件。你将学习如何通过基于 Java 和 Clojure 的 Storm 拓扑使用 Python 组件。"
    services="hdinsight"
    documentationCenter=""

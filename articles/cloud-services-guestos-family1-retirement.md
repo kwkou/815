@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="来宾 OS 系列 1 停用通知 | Microsoft Azure" 
+   pageTitle="来宾 OS 系列 1 停用通知 | Azure" 
    description="提供有关 Azure 来宾 OS 系列 1 何时停用以及如何判断你是否受影响的信息" 
    services="cloud-services" 
    documentationCenter="na" 

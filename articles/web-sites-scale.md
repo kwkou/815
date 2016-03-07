@@ -14,7 +14,7 @@
 
 # 在 Azure 中缩放 Web 应用#
 
-为提高你的 Web 应用在 Microsoft Azure 上的性能和吞吐量，你可以使用 Azure 管理门户将 Web 托管计划模式从“免费”缩放为“共享”、“基本”或“标准”。
+为提高你的 Web 应用在 Azure 上的性能和吞吐量，你可以使用 Azure 管理门户将 Web 托管计划模式从“免费”缩放为“共享”、“基本”或“标准”。
 
 在 Azure Web 应用上放大包括两个相关操作：将您的 Web 托管计划模式更改为更高服务级别，以及切换到更高服务级别后配置某些设置。本文将介绍这两个主题。更高的服务层（如“标准”模式）在确定如何使用 Azure 上的资源方面可提供更高的可靠性和灵活性。
 
@@ -43,7 +43,7 @@
 	
 	“Web 托管计划站点”部分将介绍当前计划中的简短站点列表。当前计划中的所有站点都将更改为您选择的 Web 托管计划模式。
 	
-5. 在“容量”部分，选择“实例大小”。可用的选项包括“小”、“中”或“大”。在“共享”模式下，实例大小选项不可用。有关这些实例大小的详细信息，请参阅 Microsoft Azure [虚拟机](/documentation/articles/virtual-machines-size-specs)和[云服务大小](/documentation/articles/cloud-services-sizes-specs)。
+5. 在“容量”部分，选择“实例大小”。可用的选项包括“小”、“中”或“大”。在“共享”模式下，实例大小选项不可用。有关这些实例大小的详细信息，请参阅 Azure [虚拟机](/documentation/articles/virtual-machines-size-specs)和[云服务大小](/documentation/articles/cloud-services-sizes-specs)。
 	
 	![“基本”模式的实例大小][ChooseBasicInstanceSize]
 	
@@ -68,7 +68,7 @@
 ## 缩放到“标准”计划模式
 <!-- ================================= -->
 
-> [AZURE.NOTE] 在将 Web 托管计划切换到“标准”模式之前，必须先取消 Microsoft Azure Web 应用订阅已有的支出上限。否则，如果在计费期结束之前达到上限，您的 Web 应用将有不可用的风险。若要查看或更改针对你的 Microsoft Azure Web 应用订阅的选项，请参阅 [Microsoft Azure 订阅][azuresubscriptions]。
+> [AZURE.NOTE] 在将 Web 托管计划切换到“标准”模式之前，必须先取消 Azure Web 应用订阅已有的支出上限。否则，如果在计费期结束之前达到上限，您的 Web 应用将有不可用的风险。若要查看或更改针对你的 Azure Web 应用订阅的选项，请参阅 [Azure 订阅][azuresubscriptions]。
 
 1. 若要缩放到“标准”模式，请按照缩放到“共享”或“基本”模式时采用的初始步骤进行操作，然后为 Web 托管计划模式选择“标准”。 
 	
@@ -84,7 +84,7 @@
 	
 	![选择实例大小][ChooseInstanceSize]
 	
-	有关这些实例大小的详细信息，请参阅 [Microsoft Azure 虚拟机和云服务大小][vmsizes]。
+	有关这些实例大小的详细信息，请参阅 [Azure 虚拟机和云服务大小][vmsizes]。
 	
 4. 如果要根据白天与夜间、工作日与周末和/或特定日期与时间对资源进行自动缩放，请在“针对时间表编辑缩放设置”选项下选择“设置计划时间”。
 	
@@ -120,11 +120,11 @@
 	
 	![实例数][InstanceCount]
 	
-13. “按度量值缩放”还会启用“目标 CPU”选项，以便你指定 CPU 使用率的目标范围。此范围表示 Web 应用的平均 CPU 使用率。Microsoft Azure 将添加或删除标准实例以使 Web 应用保持在这个范围内。
+13. “按度量值缩放”还会启用“目标 CPU”选项，以便你指定 CPU 使用率的目标范围。此范围表示 Web 应用的平均 CPU 使用率。Azure 将添加或删除标准实例以使 Web 应用保持在这个范围内。
 	
 	![目标 CPU][TargetCPU]
 	
-	**注意**：在启用了“按度量值缩放”后，Microsoft Azure 每隔 5 分钟就会检查你的 Web 应用的 CPU，并且在该时间点根据需要添加实例。如果 CPU 使用率较低，Microsoft Azure 将每两小时删除一次实例，以便确保你的 Web 应用保持高性能。通常，将最小实例计数设为 1 是适合的。但是，如果您的 Web 应用使用率突然增加，则必须确保您具有足够的最小实例数目来处理负载。例如，如果在 Microsoft Azure 检查您的 CPU 使用率之前的 5 分钟时间间隔中遇到了流量突增，则您的 Web 应用在该时间段可能无法响应。如果您遇到突增的大量流量，请将该最小实例数设为更高的值以便应对这些突增。
+	**注意**：在启用了“按度量值缩放”后，Azure 每隔 5 分钟就会检查你的 Web 应用的 CPU，并且在该时间点根据需要添加实例。如果 CPU 使用率较低，Azure 将每两小时删除一次实例，以便确保你的 Web 应用保持高性能。通常，将最小实例计数设为 1 是适合的。但是，如果您的 Web 应用使用率突然增加，则必须确保您具有足够的最小实例数目来处理负载。例如，如果在 Azure 检查您的 CPU 使用率之前的 5 分钟时间间隔中遇到了流量突增，则您的 Web 应用在该时间段可能无法响应。如果您遇到突增的大量流量，请将该最小实例数设为更高的值以便应对这些突增。
 	
 14. 在你完成了对“针对时间表编辑缩放设置”列表中项目的更改之后，单击页面底部命令栏中的“保存”图标可同时保存所有计划设置（无需单独保存每个计划）。
 
@@ -142,7 +142,7 @@
 	
 	对于“版本”，可选择“基本”、“标准”或“高级”，具体取决于你需要的存储容量。对于“Web”和“企业”版本的未来情况，请参阅 [Web 和企业版停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq/)。
 	
-	你为“最大大小”选择的值将指定数据库的上限。数据库费用取决于你实际存储的数据量，因此更改“最大大小”属性本身不会影响你的数据库费用。有关详细信息，请参阅 [Microsoft Azure SQL 数据库中的帐户和结算][SQLaccountsbilling]。
+	你为“最大大小”选择的值将指定数据库的上限。数据库费用取决于你实际存储的数据量，因此更改“最大大小”属性本身不会影响你的数据库费用。有关详细信息，请参阅 [Azure SQL 数据库中的帐户和结算][SQLaccountsbilling]。
 
 <a name="devfeatures"></a>
 ## 开发人员功能
@@ -170,7 +170,7 @@
 <a name="Next Steps"></a>
 ## 后续步骤
 
-- 若要开始使用 Azure，请参阅 [Microsoft Azure 免费试用版](/zh-cn/pricing/1rmb-trial/)。
+- 若要开始使用 Azure，请参阅 [Azure 免费试用版](/zh-cn/pricing/1rmb-trial/)。
 
 - 有关定价、支持和 SLA 的信息，请访问以下链接。
 	
@@ -180,7 +180,7 @@
 	
     [SQL 数据库定价详细信息](/home/features/sql-database/#price)
 	
-	Microsoft Azure 的[虚拟机](/documentation/articles/virtual-machines-size-specs/)和[云服务](/documentation/articles/cloud-services-sizes-specs/)大小
+	Azure 的[虚拟机](/documentation/articles/virtual-machines-size-specs/)和[云服务](/documentation/articles/cloud-services-sizes-specs/)大小
 	
 	[ Web 应用定价详细信息](/home/features/web-site/#price)
 

@@ -13,7 +13,7 @@
    wacn.date="02/26/2016"/>
 
 # 如何使用 Azure PowerShell 命令创建一个空的云服务容器
-1. 从[下载 Azure PowerShell](http://aka.ms/webpi-azps) 安装 Microsoft Azure PowerShell cmdlet。打开 PowerShell 命令提示符。使用 [Add-AzureAccount](https://msdn.microsoft.com/zh-cn/library/dn495128.aspx) 登录
+1. 从[下载 Azure PowerShell](http://aka.ms/webpi-azps) 安装 Azure PowerShell cmdlet。打开 PowerShell 命令提示符。使用 [Add-AzureAccount](https://msdn.microsoft.com/zh-cn/library/dn495128.aspx) 登录
 
 > [AZURE.NOTE] 有关安装 Azure PowerShell cmdlet 和连接到 Azure 订阅的更多说明，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 

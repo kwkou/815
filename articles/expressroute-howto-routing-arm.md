@@ -1,5 +1,5 @@
 <properties
-   pageTitle="如何配置 ExpressRoute 线路的路由 | Microsoft Azure"
+   pageTitle="如何配置 ExpressRoute 线路的路由 | Azure"
    description="本文将指导你完成创建和预配 ExpressRoute 线路的专用、公共和 Microsoft 对等互连的步骤。本文还介绍了如何检查状态，以及如何更新或删除线路的对等互连。"
    documentationCenter="na"
    services="expressroute"

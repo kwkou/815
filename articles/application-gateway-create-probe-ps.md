@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用资源管理器中的 PowerShell 创建应用程序网关的自定义探测 | Microsoft Azure"
+   pageTitle="使用资源管理器中的 PowerShell 创建应用程序网关的自定义探测 | Azure"
    description="了解如何使用资源管理器中的 PowerShell 创建应用程序网关的自定义探测"
    services="application-gateway"
    documentationCenter="na"

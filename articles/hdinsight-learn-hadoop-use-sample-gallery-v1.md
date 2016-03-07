@@ -17,8 +17,8 @@
 借助 HDInsight 入门库，你可以通过在 HDInsight 中运行示例应用程序快速轻松地了解 Hadoop。某些示例随附了示例数据。你可以为其余示例提供自己的数据。目前，有下面六个示例（还会有更多）：
 
 - 包含 Azure 数据的解决方案
-	- Microsoft Azure Web 应用日志分析
-	- Microsoft Azure 存储分析
+	- Azure Web 应用日志分析
+	- Azure 存储分析
 - 包含示例数据的解决方案
 	- 传感器数据分析
 	- Twitter 趋势分析

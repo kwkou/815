@@ -17,11 +17,11 @@
 * [常用命令](#common)
  
 ## <a id="related"></a>相关概念
-<b> Azcopy</b>： AzCopy是一个高性能的命令行实用程序，用于将数据上载、复制到 Microsoft Azure 二进制存储（Blob）、文件存储（File）和表存储（Table）以及从其中下载和复制数据。如何下载，安装以及更多的AzCopy命令请参见： [AzCopy命令行实用程序入门](/documentation/articles/storage-use-azcopy) 
+<b> Azcopy</b>： AzCopy是一个高性能的命令行实用程序，用于将数据上载、复制到 Azure 二进制存储（Blob）、文件存储（File）和表存储（Table）以及从其中下载和复制数据。如何下载，安装以及更多的AzCopy命令请参见： [AzCopy命令行实用程序入门](/documentation/articles/storage-use-azcopy) 
 
 
 ## <a id="operation"></a>详细步骤
-1.	打开Microsoft Azure Command Prompt.
+1.	打开Azure Command Prompt.
  
 	![](./media/aog-storage-how-to-use-azcopy/azure-command-prompt-tool.png)
 

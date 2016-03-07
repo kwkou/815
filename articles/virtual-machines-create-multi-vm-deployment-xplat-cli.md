@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure CLI 创建多 VM 部署 | Microsoft Azure"
+   pageTitle="使用 Azure CLI 创建多 VM 部署 | Azure"
    description="了解如何使用经典部署模型和 Azure CLI 创建多 VM 部署。"
    services="virtual-machines"
    documentationCenter="nodejs"

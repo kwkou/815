@@ -29,7 +29,7 @@ Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供�
 
 ## 创建高级缓存
 
-在 Microsoft Azure 中国区，只能通过 Azure PowerShell 或 Azure CLI 管理 Redis 缓存
+在 Azure 中国区，只能通过 Azure PowerShell 或 Azure CLI 管理 Redis 缓存
 
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
@@ -58,7 +58,7 @@ Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供�
 
 若要配置备份间隔，可以将“rdb-backup-frequency”设置为 15（表示 **15 分钟**）、30（表示 **30 分钟**）、60（表示 **60 分钟**）、360（表示 **6 小时**）、720（表示 **12 小时**）或 1440（表示 **24 小时**）。在上一个备份操作成功完成以后，此时间间隔就会开始倒计时，同时会启动新的备份。
 
-若要配置存储帐户，可以将“rdb-storage-connection-string”设置为 Microsoft Azure 中国区的某个连接字符串。在上述命令中可以看到，你需要在连接字符串中指定 BlobEndpoint、QueueEndpoint 和 TableEndpoint。
+若要配置存储帐户，可以将“rdb-storage-connection-string”设置为 Azure 中国区的某个连接字符串。在上述命令中可以看到，你需要在连接字符串中指定 BlobEndpoint、QueueEndpoint 和 TableEndpoint。
 
 >[AZURE.IMPORTANT]如果重新生成了持久性帐户的存储密钥，则必须更新“rdb-backup-frequency”。
 

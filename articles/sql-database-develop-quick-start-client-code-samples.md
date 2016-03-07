@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SQL 数据库的客户端快速入门代码示例 | Microsoft Azure" 
+	pageTitle="SQL 数据库的客户端快速入门代码示例 | Azure" 
 	description="提供 Node.js on Linux、Python on Mac OS、Java 和 Windows、Enterprise Library 和其他许多平台上的 Azure SQL 数据库客户端的代码示例与驱动程序。"
 	services="sql-database" 
 	documentationCenter="" 

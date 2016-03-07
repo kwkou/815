@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Active Directory 代码示例 | Microsoft Azure"
+   pageTitle="Azure Active Directory 代码示例 | Azure"
    description="Azure Active Directory 代码示例的索引，按方案进行了组织。"
    services="active-directory"
    documentationCenter="dev-center-name"
@@ -16,7 +16,7 @@
 
 [AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
-你可以使用 Microsoft Azure Active Directory (Azure AD) 向你的 Web 应用和 web API 添加身份验证和授权。本部分提供了指向代码示例的链接，这些代码示例将向你展示它的工作原理以及你可以在你的应用程序中使用的代码片段。在代码示例页上，你可以找到在要求、安装和设置方面提供了帮助的详细自述主题。并且代码带有注释，可以帮助你理解关键部分。
+你可以使用 Azure Active Directory (Azure AD) 向你的 Web 应用和 web API 添加身份验证和授权。本部分提供了指向代码示例的链接，这些代码示例将向你展示它的工作原理以及你可以在你的应用程序中使用的代码片段。在代码示例页上，你可以找到在要求、安装和设置方面提供了帮助的详细自述主题。并且代码带有注释，可以帮助你理解关键部分。
 
 若要了解每个示例类型的基本方案，请参阅"Azure AD 的身份验证方案"。
 
@@ -117,7 +117,7 @@
 
 | 语言/平台 | 示例 | 说明
 | ----------------- | ------ | -----------
-| C#/.NET | [Microsoft Azure AD 应用程序中基于角色的和基于 ACL 的授权](http://code.msdn.microsoft.com/Role-Based-and-ACL-Based-86ad71a1) | 在与 Azure AD 集成的应用程序中执行基于角色的授权 (RBAC) 和基于 ACL 的授权。
+| C#/.NET | [Azure AD 应用程序中基于角色的和基于 ACL 的授权](http://code.msdn.microsoft.com/Role-Based-and-ACL-Based-86ad71a1) | 在与 Azure AD 集成的应用程序中执行基于角色的授权 (RBAC) 和基于 ACL 的授权。
 | C#/.NET | [AAL - Windows 应用商店应用到 REST 服务 - 身份验证](http://code.msdn.microsoft.com/windowsapps/AAL-Windows-Store-app-to-2430e331) | 使用适用于 Windows 应用商店 Beta 版的 [Azure AD 身份验证库 (ADAL)](https://msdn.microsoft.com/zh-CN/library/jj573266)（以前称为 AAL）向 Windows 应用商店应用添加用户身份验证功能。
 | C#/.NET | [ADAL - 调用 REST 服务的本机应用 - 通过浏览器对话框使用 AAD 进行身份验证](http://code.msdn.microsoft.com/AAL-Native-Application-to-fd648dcf) | 使用 [Azure AD 身份验证库 (ADAL)](https://msdn.microsoft.com/zh-CN/library/jj573266) 向 WPF 客户端添加用户身份验证功能。
 | C#/.NET | [ADAL - 调用 REST 服务的本机应用 - 通过浏览器对话框使用 ACS 进行身份验证](http://code.msdn.microsoft.com/AAL-Native-App-to-REST-de57f2cc) | 使用 [Azure AD 身份验证库 (ADAL)](https://msdn.microsoft.com/zh-CN/library/jj573266) 和[访问控制服务 2.0 (ACS)](https://msdn.microsoft.com/zh-CN/library/azure/hh147631.aspx) 向 WPF 客户端添加用户身份验证功能。

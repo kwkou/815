@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Windows 应用商店应用中使用 Azure 存储 | Microsoft Azure" 
+	pageTitle="在 Windows 应用商店应用中使用 Azure 存储 | Azure" 
 	description="了解如何创建使用 Azure Blob、队列、表或文件存储的 Windows 应用商店应用。"
 	services="storage" 
 	documentationCenter="" 

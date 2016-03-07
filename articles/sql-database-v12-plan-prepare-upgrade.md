@@ -1,5 +1,5 @@
 <properties
-	pageTitle="计划升级到 SQL 数据库 V12 | Microsoft Azure"
+	pageTitle="计划升级到 SQL 数据库 V12 | Azure"
 	description="介绍升级到 Azure SQL 数据库 V12 版本所涉及的准备工作和限制。"
 	services="sql-database"
 	documentationCenter=""
@@ -20,7 +20,7 @@
 本主题介绍将 Azure SQL 数据库从 V11 版本升级到 V12 时必须执行的规划和准备工作。
 
 
-我们提供了新的 [Microsoft Azure 门户](https://manage.windowsazure.cn)来支持你升级到 V12。
+我们提供了新的 [Azure 门户](https://manage.windowsazure.cn)来支持你升级到 V12。
 
 
 下表列出了有关 V12 的其他帮助主题。
@@ -40,7 +40,7 @@
 ### 版本说明
 
 
-本文档涉及从 Microsoft Azure SQL 数据库版本 V11 到 V12 的升级。更准确地讲，版本号非常类似于 Transact-SQL 语句 **SELECT @@version;** 报告的以下两个值：
+本文档涉及从 Azure SQL 数据库版本 V11 到 V12 的升级。更准确地讲，版本号非常类似于 Transact-SQL 语句 **SELECT @@version;** 报告的以下两个值：
 
 
 - 12\.0.2000.8 *(or a bit higher, V12)*
@@ -87,7 +87,7 @@ V12 不支持 Web 和企业服务定价层。
 如果你的 V11 Azure SQL 数据库是 Web 或企业数据库，则升级过程允许你将数据库切换到受支持的层。升级过程会根据你的数据库工作负载历史记录推荐一个层。但是，你可以根据需要选择任何受支持的层。
 
 
-在开始升级之前，通过将 V11 数据库从 Web 和企业层切换到其他层，可以减少升级过程中需要执行的步骤数。可以使用新的 [Microsoft Azure 门户](https://manage.windowsazure.cn)来实现此目的。
+在开始升级之前，通过将 V11 数据库从 Web 和企业层切换到其他层，可以减少升级过程中需要执行的步骤数。可以使用新的 [Azure 门户](https://manage.windowsazure.cn)来实现此目的。
 
 
 如果不确定要切换到哪个服务层，标准层的 S2 级别可能是合理的初始选择。更低的任何层具有的资源比 Web 和企业层要少。
@@ -120,7 +120,7 @@ V12 不支持 Web 和企业服务定价层。
 ### V12 的门户
 
 
-Microsoft Azure 有两个门户，每个门户针对 SQL 数据库 V12 提供不同的功能。
+Azure 有两个门户，每个门户针对 SQL 数据库 V12 提供不同的功能。
 
 - [http://manage.windowsazure.cn/](http://manage.windowsazure.cn/)<br/>此 Azure 门户最终可能会淘汰。此门户：
  - 可以管理 V12 服务器和数据库。
@@ -174,7 +174,7 @@ Microsoft Azure 有两个门户，每个门户针对 SQL 数据库 V12 提供不
 ### 升级到 V12 *之后*的导出和导入操作
 
 
-你可以使用 [Microsoft Azure 门户](https://manage.windowsazure.cn)导出或导入 V12 数据库。或者使用下列任一工具进行导出或导入：
+你可以使用 [Azure 门户](https://manage.windowsazure.cn)导出或导入 V12 数据库。或者使用下列任一工具进行导出或导入：
 
 
 - SQL Server Management Studio (SSMS)

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Socket.io 构建 Node.js 应用程序 | Microsoft Azure" 
+	pageTitle="使用 Socket.io 构建 Node.js 应用程序 | Azure" 
 	description="了解如何在 Azure 上托管的 node.js 应用程序中使用 socket.io。" 
 	services="cloud-services" 
 	documentationCenter="nodejs" 

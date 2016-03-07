@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 bcp 将数据载入 SQL 数据仓库 | Microsoft Azure"
+   pageTitle="使用 bcp 将数据载入 SQL 数据仓库 | Azure"
    description="了解什么是 bcp，以及如何将它用于数据仓库方案。"
    services="sql-data-warehouse"
    documentationCenter="NA"

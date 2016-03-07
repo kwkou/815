@@ -33,7 +33,7 @@
 <!--For more information, see [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium).-->
 
 > [AZURE.NOTE] 
-> Azure AD 高级版适用于使用世界范围的 Azure AD 实例的中国客户。由中国的 21Vianet 运营的 Microsoft Azure 服务目前不支持 Azure AD 高级版。有关详细信息，请在 [Azure Active Directory 论坛](http://feedback.azure.com/forums/169401-azure-active-directory)与我们联系。 
+> Azure AD 高级版适用于使用世界范围的 Azure AD 实例的中国客户。由中国的 21Vianet 运营的 Azure 服务目前不支持 Azure AD 高级版。有关详细信息，请在 [Azure Active Directory 论坛](http://feedback.azure.com/forums/169401-azure-active-directory)与我们联系。 
 
 使用以下链接可跳转至你最感兴趣的文档：
 

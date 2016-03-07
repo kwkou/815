@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Batch 服务基础知识 | Microsoft Azure"
+	pageTitle="Azure Batch 服务基础知识 | Azure"
 	description="了解如何使用 Azure Batch 服务执行大规模并发工作负荷与 HPC 工作负荷"
 	services="batch"
 	documentationCenter=""

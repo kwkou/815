@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Microsoft Azure 订阅和服务限制、配额和约束"
+	pageTitle="Azure 订阅和服务限制、配额和约束"
 	description="提供常见的 Azure 订阅和服务限制、配额和约束的列表。这包括有关如何增加限制以及最大值的信息。"
 	services=""
 	documentationCenter=""
@@ -16,7 +16,7 @@
 
 ## 概述
 
-本文档指定一些最常见的 Microsoft Azure 限制。请注意，本文档目前未涵盖所有 Azure 服务。一段时间后，将展开并更新这些限制以包含多个平台。
+本文档指定一些最常见的 Azure 限制。请注意，本文档目前未涵盖所有 Azure 服务。一段时间后，将展开并更新这些限制以包含多个平台。
 
 > [AZURE.NOTE]如果想要提高**默认限制**之上的限制，可以[打开免费的联机客户支持请求](/support/support-ticket-form/?l=zh-cn)。无法将这些限制提高到超过下表中的**最大限制**值。如果没有任何**最大限制**列，则指定的资源不具有可调整的限制。
 

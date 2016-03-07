@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure 流量管理器性能注意事项 | Microsoft Azure"
+   pageTitle="Azure 流量管理器性能注意事项 | Azure"
    description="了解流量管理器的性能以及如何测试使用流量管理器时的 Web 应用性能"
    services="traffic-manager"
    documentationCenter=""

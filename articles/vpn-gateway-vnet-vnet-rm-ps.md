@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure 资源管理器和 PowerShell 为同一订阅中存在的 VNet 创建 VNet 到 VNet VPN 网关连接 | Microsoft Azure"
+   pageTitle="使用 Azure 资源管理器和 PowerShell 为同一订阅中存在的 VNet 创建 VNet 到 VNet VPN 网关连接 | Azure"
    description="本文指导你使用 Azure 资源管理器和 PowerShell 将虚拟网络连接在一起。"
    services="vpn-gateway"
    documentationCenter="na"

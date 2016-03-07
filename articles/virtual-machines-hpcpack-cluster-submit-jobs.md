@@ -1,5 +1,5 @@
 <properties
- pageTitle="向 Azure 中的 HPC 群集提交作业 | Microsoft Azure"
+ pageTitle="向 Azure 中的 HPC 群集提交作业 | Azure"
  description="了解如何设置本地计算机，以将作业提交到 Azure 中的 HPC Pack 群集"
  services="virtual-machines"
  documentationCenter=""

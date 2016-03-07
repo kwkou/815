@@ -26,7 +26,7 @@ Site Recovery 集成 Microsoft 应用程序，其中包括 SharePoint、Exchange
 - 针对单层或 N 层应用程序的应用一致性快照。
 - 集成 SQL Server AlwaysOn，纳入了其他应用程序级复制技术，其中包括 AD 复制、SQL AlwaysOn、Exchange 数据库可用性组 (DAG) 和 Oracle 数据防护。
 - 灵活的恢复计划，一次单击即可恢复整个应用程序堆栈，包括外部脚本或手动操作。 
-- Site Recovery 和 Microsoft Azure 中的高级网络管理可以简化应用的网络要求，包括保留 IP 地址、配置负载平衡器或集成 Microsoft Azure 流量管理器以降低 RTO 网络切换数。
+- Site Recovery 和 Azure 中的高级网络管理可以简化应用的网络要求，包括保留 IP 地址、配置负载平衡器或集成 Azure 流量管理器以降低 RTO 网络切换数。
 -  丰富的自动化库，提供特定于应用程序的生产就绪型脚本，可以下载并与 Site Recovery 集成。
 
 
@@ -92,7 +92,7 @@ Azure Site Recovery 可以帮助你保护 Dynamics AX ERP 解决方案：
 [了解详细信息](https://gallery.technet.microsoft.com/Dynamics-AX-DR-Solution-b2a76281)
 
 ##<a id="rds"></a>保护 RDS 
-远程桌面服务允许虚拟桌面基础结构 (VDI)、基于会话的桌面和应用程序，让用户能够在任何地方工作。使用 Site Recovery，你可以启用托管或非托管池虚拟桌面到辅助站点以及远程应用程序和会话到辅助站点或 Microsoft Azure 的保护。
+远程桌面服务允许虚拟桌面基础结构 (VDI)、基于会话的桌面和应用程序，让用户能够在任何地方工作。使用 Site Recovery，你可以启用托管或非托管池虚拟桌面到辅助站点以及远程应用程序和会话到辅助站点或 Azure 的保护。
 
 [了解详细信息](https://gallery.technet.microsoft.com/Remote-Desktop-DR-Solution-bdf6ddcb)
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="将 SQL Server 数据库迁移到 VM 上的 SQL Server | Microsoft Azure"
+	pageTitle="将 SQL Server 数据库迁移到 VM 上的 SQL Server | Azure"
 	description="了解如何将本地用户数据库迁移到 Azure 虚拟机中的 SQL Server。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -17,13 +17,13 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
-将本地 SQL Server 用户数据库迁移到 Azure VM 中的 SQL Server 的方法有很多。本文将简要讨论各种方法，针对各种情况推荐最佳方法，并提供一个[教程](#azure-vm-deployment-wizard-tutorial)，指导你使用**将 SQL Server 数据库部署到 Microsoft Azure VM** 向导。
+将本地 SQL Server 用户数据库迁移到 Azure VM 中的 SQL Server 的方法有很多。本文将简要讨论各种方法，针对各种情况推荐最佳方法，并提供一个[教程](#azure-vm-deployment-wizard-tutorial)，指导你使用**将 SQL Server 数据库部署到 Azure VM** 向导。
 
 ## 主要迁移方法有哪些？
 
 主要迁移方法包括：
 
-- 使用“将 SQL Server 数据库部署到 Microsoft Azure VM”向导
+- 使用“将 SQL Server 数据库部署到 Azure VM”向导
 - 使用压缩功能执行本地备份并将备份文件手动复制到 Azure 虚拟机中
 - 执行“备份到 URL”并从该 URL 还原到 Azure 虚拟机
 - 拆离后，将数据和日志文件复制到 Azure blob 存储，然后从 URL 附加到 Azure VM 中的 SQL Server
@@ -36,7 +36,7 @@
 
 ## 选择迁移方法
 
-若要获得最出色的数据传输性能，使用压缩后的备份文件将数据库文件迁移到 Azure VM 通常是最好的方法。这是[“将 SQL Server 数据库部署到 Microsoft Azure VM”向导](#azure-vm-deployment-wizard-tutorial)所使用的方法。如果要将 SQL Server 2005 或更高版本上运行的本地用户数据库迁移到 SQL Server 2014 或更高版本，并且压缩后的数据库备份文件小于 1 TB，则建议使用此向导。
+若要获得最出色的数据传输性能，使用压缩后的备份文件将数据库文件迁移到 Azure VM 通常是最好的方法。这是[“将 SQL Server 数据库部署到 Azure VM”向导](#azure-vm-deployment-wizard-tutorial)所使用的方法。如果要将 SQL Server 2005 或更高版本上运行的本地用户数据库迁移到 SQL Server 2014 或更高版本，并且压缩后的数据库备份文件小于 1 TB，则建议使用此向导。
 
 若要在数据库迁移过程中最大限度地减少停机时间，请使用 AlwaysOn 选项或事务复制选项。
 
@@ -48,7 +48,7 @@
 
 | 方法 | 源数据库版本 | 目标数据库版本 | 源数据库备份大小限制 | 说明 |
 |---|---|---|---|---|
-| [使用“将 SQL Server 数据库部署到 Microsoft Azure VM”向导](#azure-vm-deployment-wizard-tutorial) | SQL Server 2005 或更高版本 | SQL Server 2014 或更高版本 | > 1 TB | 最简单快捷的方法，尽可能使用该方法迁移到 Azure 虚拟机中新的或现有的 SQL Server 实例 | 
+| [使用“将 SQL Server 数据库部署到 Azure VM”向导](#azure-vm-deployment-wizard-tutorial) | SQL Server 2005 或更高版本 | SQL Server 2014 或更高版本 | > 1 TB | 最简单快捷的方法，尽可能使用该方法迁移到 Azure 虚拟机中新的或现有的 SQL Server 实例 | 
 | [使用“添加 Azure 副本”向导](/documentation/articles/virtual-machines-sql-server-extend-on-premises-alwayson-availability-groups) | SQL Server 2012 或更高版本 | SQL Server 2012 或更高版本 | [Azure VM 存储限制](/documentation/articles/azure-subscription-service-limits/) | 最大限度地减少停机时间，在你有 AlwaysOn 本地部署时使用 |
 | [使用 SQL Server 事务复制](https://msdn.microsoft.com/zh-cn/library/ms151176.aspx) | SQL Server 2005 或更高版本 | SQL Server 2005 或更高版本 | [Azure VM 存储限制](/documentation/articles/azure-subscription-service-limits/) | 在需要最大限度地减少停机时间，但没有 AlwaysOn 本地部署时使用 |
 | [使用压缩功能执行本地备份并将备份文件手动复制到 Azure 虚拟机中](#backup-to-file-and-copy-to-vm-and-restore) | SQL Server 2005 或更高版本 | SQL Server 2005 或更高版本 | [Azure VM 存储限制](/documentation/articles/azure-subscription-service-limits/) | 仅在无法使用向导时使用，比如目标数据库版本低于 SQL Server 2012 SP1 CU2 或数据库备份大于 1 TB（SQL Server 2016 为 12.8 TB） |
@@ -59,25 +59,25 @@
 
 ##<a name="azure-vm-deployment-wizard-tutorial"></a> Azure VM 部署向导教程
 
-使用 Microsoft SQL Server Management Studio 中的“将 SQL Server 数据库部署到 Microsoft Azure VM”向导可将 SQL Server 2005、SQL Server 2008、SQL Server 2008 R2、SQL Server 2012、SQL Server 2014 或 SQL Server 2016 本地用户数据库（最多为 1 TB）迁移到 Azure 虚拟机中的 SQL Server 2014 或 SQL Server 2016。使用此向导可将用户数据库迁移到现有的 Azure 虚拟机或在迁移过程中由向导创建的带有 SQL Server 的 Azure VM。将数据库迁移到较新版本的 SQL Server 时，会在该过程中自动升级数据库。
+使用 Microsoft SQL Server Management Studio 中的“将 SQL Server 数据库部署到 Azure VM”向导可将 SQL Server 2005、SQL Server 2008、SQL Server 2008 R2、SQL Server 2012、SQL Server 2014 或 SQL Server 2016 本地用户数据库（最多为 1 TB）迁移到 Azure 虚拟机中的 SQL Server 2014 或 SQL Server 2016。使用此向导可将用户数据库迁移到现有的 Azure 虚拟机或在迁移过程中由向导创建的带有 SQL Server 的 Azure VM。将数据库迁移到较新版本的 SQL Server 时，会在该过程中自动升级数据库。
 
-### 获取“将 SQL Server 数据库部署到 Microsoft Azure VM”向导的最新版本
+### 获取“将 SQL Server 数据库部署到 Azure VM”向导的最新版本
 
-使用 Microsoft SQL Server Management Studio for SQL Server 的最新版本，以确保具有“将 SQL Server 数据库部署到 Microsoft Azure VM”向导的最新版本。此向导的最新版本包含对 Azure 管理门户的最新更新，并且支持库中最新的 Azure VM 映像（此向导的较旧版本可能不支持）。若要获取 Microsoft SQL Server Management Studio for SQL Server 的最新版本，请[下载它](http://download.microsoft.com/download/0/6/4/06471151-0668-485E-8CD0-D7D8297EE357/SSMS_BurnInstaller_June2015/SSMS-Web-Setup.exe)并将其安装在与计划迁移的数据库和 Internet 建立了连接的客户端计算机上。
+使用 Microsoft SQL Server Management Studio for SQL Server 的最新版本，以确保具有“将 SQL Server 数据库部署到 Azure VM”向导的最新版本。此向导的最新版本包含对 Azure 管理门户的最新更新，并且支持库中最新的 Azure VM 映像（此向导的较旧版本可能不支持）。若要获取 Microsoft SQL Server Management Studio for SQL Server 的最新版本，请[下载它](http://download.microsoft.com/download/0/6/4/06471151-0668-485E-8CD0-D7D8297EE357/SSMS_BurnInstaller_June2015/SSMS-Web-Setup.exe)并将其安装在与计划迁移的数据库和 Internet 建立了连接的客户端计算机上。
 
 ### 配置现有的 Azure 虚拟机和 SQL Server 实例（如果适用）
 
 如果要迁移到现有的 Azure VM，则需执行下列配置步骤：
 
 - 按照[预配 Azure 上的 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server#SSMS)的“在另一台计算机上从 SSMS 连接到 SQL Server VM 实例”一节中的步骤操作，将 Azure VM 和 SQL Server 实例配置为支持来自另一台计算机的连接。只有使用向导进行迁移时，才支持库中的 SQL Server 2014 和 SQL Server 2016 映像。
-- 使用专用端口 11435 为 Microsoft Azure 网关上的 SQL Server 云适配器服务配置一个打开的终结点。此端口在 Microsoft Azure VM 上预配 SQL Server 2014 或 SQL Server 2016 时创建。云适配器还创建一项 Windows 防火墙规则，以允许其传入 TCP 连接在默认端口 11435 上通过。此终结点允许向导利用云适配器服务将本地实例中的备份文件复制到 Azure VM。有关详细信息，请参阅[用于 SQL Server 的云适配器](https://msdn.microsoft.com/zh-cn/library/dn169301.aspx)。
+- 使用专用端口 11435 为 Azure 网关上的 SQL Server 云适配器服务配置一个打开的终结点。此端口在 Azure VM 上预配 SQL Server 2014 或 SQL Server 2016 时创建。云适配器还创建一项 Windows 防火墙规则，以允许其传入 TCP 连接在默认端口 11435 上通过。此终结点允许向导利用云适配器服务将本地实例中的备份文件复制到 Azure VM。有关详细信息，请参阅[用于 SQL Server 的云适配器](https://msdn.microsoft.com/zh-cn/library/dn169301.aspx)。
 
 	![创建云适配器终结点](./media/virtual-machines-migrate-onpremises-database/cloud-adapter-endpoint.png)
 
-### 运行“将 SQL Server 数据库部署到 Microsoft Azure VM”向导
+### 运行“将 SQL Server 数据库部署到 Azure VM”向导
 
 1. 打开 Microsoft SQL Server Management Studio for Microsoft SQL Server 2016，并连接到包含将迁移到 Azure VM 的用户数据库的 SQL Server 实例。
-2. 右键单击要迁移的数据库，指向“任务”，然后单击“部署到 Microsoft Azure VM”。
+2. 右键单击要迁移的数据库，指向“任务”，然后单击“部署到 Azure VM”。
 
 	![启动向导](./media/virtual-machines-migrate-onpremises-database/start-wizard.png)
 
@@ -88,7 +88,7 @@
 	![源设置](./media/virtual-machines-migrate-onpremises-database/source-settings.png)
 
 6. 单击“下一步”。
-7. 在“Microsoft Azure 登录”页上，单击“登录”以登录到你的 Azure 帐户。
+7. 在“Azure 登录”页上，单击“登录”以登录到你的 Azure 帐户。
 8. 选择要使用的订阅并单击“下一步”。
 
 	![Azure 登录](./media/virtual-machines-migrate-onpremises-database/azure-signin.png)
@@ -118,7 +118,7 @@
 		- 确认密码
 		- 位置
 		- 大小。
- 	- 此外，单击接受此新 Microsoft Azure 虚拟机自行生成的证书，然后单击“确定”。
+ 	- 此外，单击接受此新 Azure 虚拟机自行生成的证书，然后单击“确定”。
 
 	![Azure 新计算机设置](./media/virtual-machines-migrate-onpremises-database/azure-new-machine-settings.png)
 
@@ -132,7 +132,7 @@
 
 ##<a name="backup-to-file-and-copy-to-vm-and-restore"></a> 备份到文件、复制到 VM 并还原
 
-如果因为要迁移到 SQL Server 2014 之前的 SQL Server 版本或者备份文件大于 1 TB 而无法使用“将 SQL Server 数据库部署到 Microsoft Azure VM”向导，可使用此方法。如果备份文件大于 1 TB，则必须对其进行条带化，因为 VM 磁盘的最大大小是 1 TB。使用此手动方法按照下列常规步骤迁移用户数据库：
+如果因为要迁移到 SQL Server 2014 之前的 SQL Server 版本或者备份文件大于 1 TB 而无法使用“将 SQL Server 数据库部署到 Azure VM”向导，可使用此方法。如果备份文件大于 1 TB，则必须对其进行条带化，因为 VM 磁盘的最大大小是 1 TB。使用此手动方法按照下列常规步骤迁移用户数据库：
 
 1.	执行到本地位置的完整数据库备份。
 2.	创建或上载具有所需 SQL Server 版本的虚拟机。
@@ -141,7 +141,7 @@
 
 ##<a name="backup-to-url-and-restore"></a> 备份到 URL 并还原
 
-如果因为备份文件大于 1 TB 并且要在 SQL Server 2016 中来回迁移而无法使用“将 SQL Server 数据库部署到 Microsoft Azure VM”向导，可使用[备份到 URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx) 方法。对于小于 1 TB 或运行 SQL Server 2016 之前的 SQL Server 版本的数据库，建议使用向导。在 SQL Server 2016 中，条带备份集受到支持，出于性能考虑，建议使用条带备份集，但它们必须超出每个 blob 的大小限制。
+如果因为备份文件大于 1 TB 并且要在 SQL Server 2016 中来回迁移而无法使用“将 SQL Server 数据库部署到 Azure VM”向导，可使用[备份到 URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx) 方法。对于小于 1 TB 或运行 SQL Server 2016 之前的 SQL Server 版本的数据库，建议使用向导。在 SQL Server 2016 中，条带备份集受到支持，出于性能考虑，建议使用条带备份集，但它们必须超出每个 blob 的大小限制。
 
 ##<a name="detach-and-copy-to-url-and-attach-from-url"></a> 拆离、复制到 URL 并从 URL 附加
 

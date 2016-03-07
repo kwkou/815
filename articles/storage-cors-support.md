@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="跨域资源共享 (CORS) 支持 | Microsoft Azure" 
-	description="了解如何为 Microsoft Azure 存储服务启用 CORS 支持。" 
+	pageTitle="跨域资源共享 (CORS) 支持 | Azure" 
+	description="了解如何为 Azure 存储服务启用 CORS 支持。" 
 	services="storage" 
 	documentationCenter=".net" 
 	authors="andtyler" 

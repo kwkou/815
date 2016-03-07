@@ -1,5 +1,5 @@
 <properties
-   pageTitle="配置 VNet 到 VNet 连接 | Microsoft Azure"
+   pageTitle="配置 VNet 到 VNet 连接 | Azure"
    description="如何使用 PowerShell 和 Azure 经典门户在相同或不同的订阅或区域中将 Azure 虚拟网络连接在一起。本文适用于使用经典部署模型创建的 VNet。"
    services="vpn-gateway"
    documentationCenter="na"
@@ -66,7 +66,7 @@
 
 在此过程中，我们将指导你完成连接两个虚拟网络：VNet1 和 VNet2。你需要具有丰富的网络知识，以便能够改用与你的网络设计要求相符的 IP 地址范围。将一个 Azure 虚拟网络连接到另一个 Azure 虚拟网络的操作与通过站点到站点 (S2S) VPN 连接到本地网络的操作相同。
 
-此过程主要使用 Azure 经典门户，但必须使用 Microsoft Azure PowerShell cmdlet 来连接 VPN 网关。
+此过程主要使用 Azure 经典门户，但必须使用 Azure PowerShell cmdlet 来连接 VPN 网关。
 
 ![将 VNet 连接到 VNet](./media/virtual-networks-configure-vnet-to-vnet-connection/IC727361.png)
 
@@ -185,7 +185,7 @@ VNet2：地址空间 = 10.2.0.0/16；区域 = 中国北部
 
 ## 步骤 7 - 连接 VPN 网关
 
-完成前面的所有步骤后，需要将 IPsec/IKE 预共享密钥设置为相同。你可以使用 REST API 或 PowerShell cmdlet 完成此操作。如果使用 PowerShell，请确认你使用的是[最新版本](/downloads)的 Microsoft Azure PowerShell cmdlet。以下示例使用 PowerShell cmdlet 将密钥值设置为 A1b2C3D4。请注意，两个 VNet 应使用相同的密钥值。请编辑以下示例，使之反映你自己的值。
+完成前面的所有步骤后，需要将 IPsec/IKE 预共享密钥设置为相同。你可以使用 REST API 或 PowerShell cmdlet 完成此操作。如果使用 PowerShell，请确认你使用的是[最新版本](/downloads)的 Azure PowerShell cmdlet。以下示例使用 PowerShell cmdlet 将密钥值设置为 A1b2C3D4。请注意，两个 VNet 应使用相同的密钥值。请编辑以下示例，使之反映你自己的值。
 
 对于 VNet1
 

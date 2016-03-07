@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="分片映射管理 | Microsoft Azure" 
+	pageTitle="分片映射管理 | Azure" 
 	description="如何使用弹性数据库客户端库 ShardMapManager" 
 	services="sql-database" 
 	documentationCenter="" 

@@ -30,7 +30,7 @@ Azure 管理门户中的 Web 作业仪表板提供了强大的管理功能，可
 * [Azure Web 作业功能很强大，快来试试吧！](http://www.troyhunt.com/2015/01/azure-webjobs-are-awesome-and-you.html) （Troy Hunt 的博客文章。）
 * [Azure Web 作业功能](https://azure.microsoft.com/zh-cn/blog/webjobs-goes-into-full-production/)
 * [什么是 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk)
-* [宣布推出 Microsoft Azure WebJobs SDK 1.0.0 RTM](https://azure.microsoft.com/zh-cn/blog/2014/10/25/announcing-the-1-0-0-rtm-of-microsoft-azure-webjobs-sdk/)
+* [宣布推出 Azure WebJobs SDK 1.0.0 RTM](https://azure.microsoft.com/zh-cn/blog/2014/10/25/announcing-the-1-0-0-rtm-of-microsoft-azure-webjobs-sdk/)
 * [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)
 * [如何通过 WebJobs SDK 使用 Azure 队列存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to)
 * [如何通过 WebJobs SDK 使用 Azure Blob 存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to)
@@ -69,7 +69,7 @@ Azure 管理门户中的 Web 作业仪表板提供了强大的管理功能，可
 * [谁写入了 Blob？](http://blogs.msdn.com/b/jmstall/archive/2014/02/19/who-wrote-that-blob.aspx) 
 * [在云中托管交互式代码](http://blogs.msdn.com/b/jmstall/archive/2014/04/26/hosting-interactive-code-in-the-cloud.aspx)
 * [在 Azure Web 作业中添加跟踪](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)
-* [监视、诊断和排查 Microsoft Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)
+* [监视、诊断和排查 Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)
 
 ##<a name="scale"></a>缩放 Web 作业
 

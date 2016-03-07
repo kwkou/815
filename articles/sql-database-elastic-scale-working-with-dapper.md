@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将弹性数据库客户端库与 Dapper 配合使用 | Microsoft Azure" 
+	pageTitle="将弹性数据库客户端库与 Dapper 配合使用 | Azure" 
 	description="将弹性数据库客户端库与 Dapper 配合使用。" 
 	services="sql-database" 
 	documentationCenter="" 

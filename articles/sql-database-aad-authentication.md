@@ -1,5 +1,5 @@
 <properties
-   pageTitle="通过使用 Azure Active Directory 身份验证连接到 SQL 数据库 | Microsoft Azure"
+   pageTitle="通过使用 Azure Active Directory 身份验证连接到 SQL 数据库 | Azure"
    description="了解如何通过使用 Azure Active Directory 身份验证连接到 SQL 数据库"
    services="sql-database"
    documentationCenter=""
@@ -15,7 +15,7 @@
 
 # 通过使用 Azure Active Directory 身份验证连接到 SQL 数据库 
 
-Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) 中的标识连接到 Microsoft Azure SQL 数据库的一种机制。通过 Azure Active Directory 身份验证，可以在一个中心位置中集中管理数据库用户和其他 Microsoft 服务的标识。集中 ID 管理提供一个单一位置来管理 SQL 数据库用户，并简化权限管理。包括如下优点：
+Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) 中的标识连接到 Azure SQL 数据库的一种机制。通过 Azure Active Directory 身份验证，可以在一个中心位置中集中管理数据库用户和其他 Microsoft 服务的标识。集中 ID 管理提供一个单一位置来管理 SQL 数据库用户，并简化权限管理。包括如下优点：
 
 - 提供一个 SQL Server 身份验证的替代方法。
 - 帮助阻止用户标识在数据库服务器之间激增。
@@ -24,7 +24,7 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 - 它可以通过启用集成的 Windows 身份验证和 Azure Active Directory 支持的其他形式的身份验证来消除存储密码。
 - Azure Active Directory 身份验证使用包含的数据库用户以数据库级别对标识进行身份验证。
 
-> [AZURE.IMPORTANT]Azure Active Directory 身份验证是一个预览功能，并遵守许可协议（例如，企业协议、Microsoft Azure 协议或 Microsoft 在线订阅协议）中的预览条款以及任何适用的[ Microsoft Azure 预览版补充使用条款](http://azure.microsoft.com/support/legal/preview-supplemental-terms/)。
+> [AZURE.IMPORTANT]Azure Active Directory 身份验证是一个预览功能，并遵守许可协议（例如，企业协议、Azure 协议或 Microsoft 在线订阅协议）中的预览条款以及任何适用的[ Azure 预览版补充使用条款](http://azure.microsoft.com/support/legal/preview-supplemental-terms/)。
 
 配置步骤包括配置和使用 Azure Active Directory 身份验证的以下过程。
 
@@ -63,7 +63,7 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 
 可以在 Azure SQL Server 中设置以下 Azure Active Directory 成员：
 - 本机成员：在托管域或客户域中的 Azure AD 中创建的成员。有关详细信息，请参阅[将自己的域名添加到 Azure AD](/documentation/articles/active-directory-add-domain)。
-- 联合域成员：在联合域的 Azure AD 中创建的成员。有关详细信息，请参阅 [Microsoft Azure 现在支持与 Windows Server Active Directory 联合](http://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/)。
+- 联合域成员：在联合域的 Azure AD 中创建的成员。有关详细信息，请参阅 [Azure 现在支持与 Windows Server Active Directory 联合](http://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/)。
 - 作为本机或联合域成员从其他 Azure Active Directory 导入的成员。
 - 以安全组形式创建的 Active Directory 组。
 
@@ -87,7 +87,7 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 - 创建初始域 Azure AD 托管的域。
 - 将本地 Active Directory 域服务与 Azure Active Directory 联合。
 
-有关详细信息，请参阅[将自己的域名添加到 Azure AD](/documentation/articles/active-directory-add-domain)、[Microsoft Azure 现在支持与 Windows Server Active Directory 联合](http://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/)、[管理 Azure AD 目录](https://msdn.microsoft.com/zh-cn/library/azure/hh967611.aspx)和[使用 Windows PowerShell 管理 Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx)。
+有关详细信息，请参阅[将自己的域名添加到 Azure AD](/documentation/articles/active-directory-add-domain)、[Azure 现在支持与 Windows Server Active Directory 联合](http://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/)、[管理 Azure AD 目录](https://msdn.microsoft.com/zh-cn/library/azure/hh967611.aspx)和[使用 Windows PowerShell 管理 Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx)。
 
 ## 2\.确保你的数据库位于 Azure SQL 数据库 V12 中
  

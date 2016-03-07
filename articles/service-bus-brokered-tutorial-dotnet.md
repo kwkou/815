@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线中转消息传送 .NET 教程 | Microsoft Azure"
+   pageTitle="服务总线中转消息传送 .NET 教程 | Azure"
    description="中转消息传送 .NET 教程。"
    services="service-bus"
    documentationCenter="na"

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Active Directory 身份验证库单一登录对应用进行身份验证 (iOS) | Microsoft Azure"
+	pageTitle="使用 Active Directory 身份验证库单一登录对应用进行身份验证 (iOS) | Azure"
 	description="了解如何使用 iOS 应用程序中的 ADAL 对单一登录用户进行身份验证。"
 	documentationCenter="ios"
 	authors="mattchenderson"
@@ -37,7 +37,7 @@
 * XCode 4.5 和 iOS 6.0（或更高版本）
 * 完成[移动服务入门]教程。
 * 完成[注册应用以使用 Azure Active Directory 帐户登录]
-* Microsoft Azure 移动服务 SDK
+* Azure 移动服务 SDK
 * [适用于 iOS 的 Active Directory 身份验证库]
 
 [AZURE.INCLUDE [mobile-services-dotnet-adal-register-client](../includes/mobile-services-dotnet-adal-register-client.md)]

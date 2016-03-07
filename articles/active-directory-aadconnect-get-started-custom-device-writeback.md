@@ -40,7 +40,7 @@
 
 3.	使用企业管理员凭据运行以下命令，然后退出 PowerShell。
 
-	`Import-Module 'C:\Program Files\Microsoft Azure Active Directory Connect\AdPrep\AdSyncPrep.psm1'`
+	`Import-Module 'C:\Program Files\Azure Active Directory Connect\AdPrep\AdSyncPrep.psm1'`
 
 	`Initialize-ADSyncDeviceWriteback {Optional:–DomainName [name] Optional:-AdConnectorAccount [account]}`
 

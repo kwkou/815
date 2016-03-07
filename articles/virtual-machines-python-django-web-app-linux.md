@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Mac 上使用 Django 的 Python Web 应用| Microsoft Azure" 
+	pageTitle="在 Mac 上使用 Django 的 Python Web 应用| Azure" 
 	description="本教程演示如何在 Azure 中使用 Linux 虚拟机托管基于 Django 的 Web 应用。" 
 	services="virtual-machines" 
 	documentationCenter="python" 
@@ -22,7 +22,7 @@
 - [Windows](/documentation/articles/web-app-with-django)
 - [Mac/Linux](/documentation/articles/django-hello-world-(maclinux))
 
-本教程介绍如何在 Microsoft Azure 中使用 Linux 虚拟机托管基于 Django 的 Web 应用。本教程假定您之前未使用过 Azure。完成本指南之后，你将能够在云中启动和运行基于 Django 的应用程序。
+本教程介绍如何在 Azure 中使用 Linux 虚拟机托管基于 Django 的 Web 应用。本教程假定您之前未使用过 Azure。完成本指南之后，你将能够在云中启动和运行基于 Django 的应用程序。
 
 你将了解如何执行以下操作：
 

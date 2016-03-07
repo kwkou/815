@@ -1,5 +1,5 @@
 <properties
-   pageTitle="导航和选择 VM 映像 | Microsoft Azure"
+   pageTitle="导航和选择 VM 映像 | Azure"
    description="了解在使用资源管理器部署模型创建 Azure 虚拟机时如何确定映像的确定发布者、产品和 SKU。"
    services="virtual-machines"
    documentationCenter=""

@@ -54,7 +54,7 @@
 -   [初学者项目下载][StarterProject]
 -   [已完成项目下载][CompletedProject]
 
-##<a name="bkmk_DeployStarterProject"></a>将初学者项目部署到 Microsoft Azure Web 应用
+##<a name="bkmk_DeployStarterProject"></a>将初学者项目部署到 Azure Web 应用
 
 1.	下载会议列表应用程序[初学者项目][StarterProject]。
 

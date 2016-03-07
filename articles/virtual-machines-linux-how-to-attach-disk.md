@@ -1,5 +1,5 @@
 <properties
-	pageTitle="将磁盘附加到 Linux VM | Microsoft Azure"
+	pageTitle="将磁盘附加到 Linux VM | Azure"
 	description="了解如何将数据磁盘附加到运行 Linux 的 Azure 虚拟机并将其初始化，以便它可供使用。"
 	services="virtual-machines"
 	documentationCenter=""

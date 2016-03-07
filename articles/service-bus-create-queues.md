@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="编写使用服务总线队列的应用程序 | Microsoft Azure"
+   pageTitle="编写使用服务总线队列的应用程序 | Azure"
    description="如何编写一个基于队列的、使用服务总线的简单应用程序。"
    services="service-bus"
    documentationCenter="na"
@@ -59,7 +59,7 @@
 
 ### 安装 NuGet 包
 
-若要使用服务总线服务命名空间，应用程序必须引用服务总线程序集，特别是 Microsoft.ServiceBus.dll。你可以在 Microsoft Azure SDK 的一部分中找到此程序集，也可在 [Azure SDK 下载页](/downloads/)下载。但是，服务总线 NuGet 包是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。有关使用 NuGet 和服务总线包的详细信息，请参阅[使用 NuGet 服务总线包](https://msdn.microsoft.com/zh-cn/library/dn741354.aspx)。
+若要使用服务总线服务命名空间，应用程序必须引用服务总线程序集，特别是 Microsoft.ServiceBus.dll。你可以在 Azure SDK 的一部分中找到此程序集，也可在 [Azure SDK 下载页](/downloads/)下载。但是，服务总线 NuGet 包是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。有关使用 NuGet 和服务总线包的详细信息，请参阅[使用 NuGet 服务总线包](https://msdn.microsoft.com/zh-cn/library/dn741354.aspx)。
 
 ### 创建队列
 

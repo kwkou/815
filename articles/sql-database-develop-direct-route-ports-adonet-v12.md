@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="用于 SQL 数据库的非 1433 端口 | Microsoft Azure"
+	pageTitle="用于 SQL 数据库的非 1433 端口 | Azure"
 	description="从 ADO.NET 到 Azure SQL 数据库 V12 的客户端连接有时会绕过代理直接与数据库交互。除 1433 以外的端口变得非常重要。"
 	services="sql-database"
 	documentationCenter=""

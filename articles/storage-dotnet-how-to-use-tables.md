@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 .NET 使用表存储 | Microsoft Azure"
+	pageTitle="如何通过 .NET 使用表存储 | Azure"
 	description="使用表存储来存储非结构化、无架构数据。表存储是 NoSQL 键/属性存储。适用于 .NET 的存储客户端库提供了用于创建和删除表以及用于插入、更新、删除和查询数据的 API。"
 	services="storage"
 	documentationCenter=".net"

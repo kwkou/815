@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Python Tools 2.2 for Visual Studio 中的 Python Web 角色和辅助角色 | Microsoft Azure"
+	pageTitle="Python Tools 2.2 for Visual Studio 中的 Python Web 角色和辅助角色 | Azure"
 	description="有关使用 Python Tools for Visual Studio 来创建包括 Web 角色和辅助角色的 Azure 云服务的概述。"
 	services=""
 	documentationCenter="python"
@@ -71,11 +71,11 @@ Azure 提供了三种计算模型用于运行应用程序：[Azure App Service �
 
 若要进行发布，请右键单击解决方案中的云服务项目，然后选择“发布”。
 
-![Microsoft Azure 发布登录](./media/cloud-services-python-ptvs/publish-sign-in.png)
+![Azure 发布登录](./media/cloud-services-python-ptvs/publish-sign-in.png)
 
 在设置页中，选择要发布到的云服务。
 
-![Microsoft Azure 发布设置](./media/cloud-services-python-ptvs/publish-settings.png)
+![Azure 发布设置](./media/cloud-services-python-ptvs/publish-settings.png)
 
 如果您尚无云服务，可以创建一个新的云服务。
 
@@ -87,9 +87,9 @@ Azure 提供了三种计算模型用于运行应用程序：[Azure App Service �
 
 完成配置设置后，单击**发布**。
 
-某些进度将显示在输出窗口中，然后您将看到“Microsoft Azure 活动日志”窗口。
+某些进度将显示在输出窗口中，然后您将看到“Azure 活动日志”窗口。
 
-![Microsoft Azure 活动日志窗口](./media/cloud-services-python-ptvs/publish-activity-log.png)
+![Azure 活动日志窗口](./media/cloud-services-python-ptvs/publish-activity-log.png)
 
 部署将需要几分钟才能完成，然后您的 Web 和/或辅助角色将在 Azure 上运行！
 

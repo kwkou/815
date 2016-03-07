@@ -1,5 +1,5 @@
 <properties
- pageTitle="用于 Excel 和 SOA 的 HPC Pack 群集 | Microsoft Azure"
+ pageTitle="用于 Excel 和 SOA 的 HPC Pack 群集 | Azure"
  description="使用资源管理器部署模型运行 Excel 和 SOA 工作负荷的 HPC Pack 群集入门。"
  services="virtual-machines"
  documentationCenter=""

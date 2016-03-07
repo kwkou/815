@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何使用 HTML 客户端 | Microsoft Azure"
+	pageTitle="如何使用 HTML 客户端 | Azure"
 	description="了解如何使用适用于 Azure 移动服务的 HTML 客户端。"
 	services="mobile-services"
 	documentationCenter=""
@@ -523,7 +523,7 @@ In some cases, the call to the login method can be avoided after the first time 
 
 ## <a name="push-notifications"></a>如何：注册推送通知
 
-如果你的应用程序是 PhoneGap 或 Apache Cordova HTML/JavaScript 应用程序，则你可以使用本机移动平台在设备上接收推送通知。[Azure 移动服务的 Apache Cordova 插件](https://github.com/Azure/azure-mobile-services-cordova)可让你向 Azure 通知中心注册推送通知。使用的具体通知服务取决于执行代码的本机设备平台。有关如何执行此操作的示例，请参阅[使用 Microsoft Azure 将通知推送到 Cordova 应用程序](https://github.com/Azure/mobile-services-samples/tree/master/CordovaNotificationsArticle)。
+如果你的应用程序是 PhoneGap 或 Apache Cordova HTML/JavaScript 应用程序，则你可以使用本机移动平台在设备上接收推送通知。[Azure 移动服务的 Apache Cordova 插件](https://github.com/Azure/azure-mobile-services-cordova)可让你向 Azure 通知中心注册推送通知。使用的具体通知服务取决于执行代码的本机设备平台。有关如何执行此操作的示例，请参阅[使用 Azure 将通知推送到 Cordova 应用程序](https://github.com/Azure/mobile-services-samples/tree/master/CordovaNotificationsArticle)。
 
 >[AZURE.NOTE]此插件目前仅支持 iOS 和 Android 设备。有关也包含 Windows 设备的解决方案，请参阅文章[使用通知中心集成将通知推送到 PhoneGap 应用程序](http://blogs.msdn.com/b/azuremobile/archive/2014/06/17/push-notifications-to-phonegap-apps-using-notification-hubs-integration.aspx)。
 

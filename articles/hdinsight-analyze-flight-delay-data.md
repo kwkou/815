@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 HDInsight 中的 Hadoop 分析航班延误数据 | Microsoft Azure"
+	pageTitle="使用 HDInsight 中的 Hadoop 分析航班延误数据 | Azure"
 	description="了解如何使用一个 Windows PowerShell 脚本来创建 HDInsight 群集、运行 Hive 作业、运行 Sqoop 作业和删除群集。"
 	services="hdinsight"
 	documentationCenter=""

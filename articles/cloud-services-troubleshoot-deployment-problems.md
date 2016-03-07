@@ -1,5 +1,5 @@
 <properties
- pageTitle="排查云服务部署问题 | Microsoft Azure"
+ pageTitle="排查云服务部署问题 | Azure"
  description="将云服务部署到 Azure 时，你可能会遇到几个常见问题。本文提供了部分问题的解决方案。"
    services="cloud-services"
    documentationCenter=""
@@ -27,7 +27,7 @@
 
 如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和堆栈溢出论坛](/support/forums)上的 Azure 专家。
 
-或者，你也可以提出 Azure 支持事件。转到 [Azure 支持站点](/support/contact)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Microsoft Azure 支持常见问题](/support/faq)。
+或者，你也可以提出 Azure 支持事件。转到 [Azure 支持站点](/support/contact)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Azure 支持常见问题](/support/faq)。
 
 
 

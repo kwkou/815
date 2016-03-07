@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 Azure 流量管理器中管理终结点 | Microsoft Azure"
+   pageTitle="在 Azure 流量管理器中管理终结点 | Azure"
    description="本文将帮助你从 Azure 流量管理器中添加、删除、启用和禁用终结点。"
    services="traffic-manager"
    documentationCenter=""

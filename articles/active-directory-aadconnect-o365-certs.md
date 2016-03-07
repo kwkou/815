@@ -80,7 +80,7 @@ https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
 
 ### 手动更新 Office 365 联合身份验证信任属性，按以下步骤操作。
 
-1.	打开用于 Windows PowerShell 的 Microsoft Azure Active Directory 模块。
+1.	打开用于 Windows PowerShell 的 Azure Active Directory 模块。
 2.	运行 $cred=Get-Credential。当此 cmdlet 提示你输入凭据时，键入你的云服务管理员帐户凭据。
 3.	运行 Connect-MsolService –Credential $cred。此 cmdlet 会将你连接到云服务。通过工具运行任何其他已安装的 cmdlet 之前，必须创建将你连接到云服务的上下文。
 4.	如果你在并非用作 AD FS 主联合服务器的计算机上运行这些命令，请运行 Set-MSOLAdfscontext -Computer <AD FS primary server>，其中 <AD FS primary server> 是主 AD FS 服务器的内部 FQDN 名称。此 cmdlet 生成将你连接到 AD FS 的上下文。 

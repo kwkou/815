@@ -1,6 +1,6 @@
 <properties
-   pageTitle="密钥保管库开发人员指南 | Microsoft Azure"
-   description="开发人员可以使用 Azure 密钥保管库来管理 Microsoft Azure 环境中的加密密钥。"
+   pageTitle="密钥保管库开发人员指南 | Azure"
+   description="开发人员可以使用 Azure 密钥保管库来管理 Azure 环境中的加密密钥。"
    services="key-vault"
    documentationCenter=""
    authors="BrucePerlerMS"
@@ -13,7 +13,7 @@
 
 # Azure 密钥保管库开发人员指南
 
-开发人员可以使用 Azure 密钥保管库来管理 Microsoft Azure 环境中的加密密钥。密钥保管库支持多种密钥类型和高价值客户密钥算法。此外，你还可以使用密钥保管库安全地存储机密，后者是大小受限且不含任何特定语义的八位字节对象。密钥保管库可以包含混合在一起的密钥和机密。独立管理对象类型的访问控制。
+开发人员可以使用 Azure 密钥保管库来管理 Azure 环境中的加密密钥。密钥保管库支持多种密钥类型和高价值客户密钥算法。此外，你还可以使用密钥保管库安全地存储机密，后者是大小受限且不含任何特定语义的八位字节对象。密钥保管库可以包含混合在一起的密钥和机密。独立管理对象类型的访问控制。
 
 获得成功授权的用户可以执行以下操作：
 
@@ -51,8 +51,8 @@
 
 ## 支持库
 
-- [Microsoft Azure 密钥保管库核心库](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/1.0.0)提供 IKey 和 IKeyResolver 接口，用于通过标识符查找密钥，以及使用密钥执行操作。
+- [Azure 密钥保管库核心库](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/1.0.0)提供 IKey 和 IKeyResolver 接口，用于通过标识符查找密钥，以及使用密钥执行操作。
 
-- [Microsoft Azure 密钥保管库扩展](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/1.0.0)为 Azure 密钥保管库提供扩展功能。
+- [Azure 密钥保管库扩展](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/1.0.0)为 Azure 密钥保管库提供扩展功能。
 
 <!---HONumber=Mooncake_1207_2015-->

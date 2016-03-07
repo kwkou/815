@@ -1,5 +1,5 @@
 <properties
-   pageTitle="将 MapReduce 和 PowerShell 与 Hadoop 配合使用 | Microsoft Azure"
+   pageTitle="将 MapReduce 和 PowerShell 与 Hadoop 配合使用 | Azure"
    description="了解如何使用 PowerShell 在 HDInsight 上的 Hadoop 上远程运行 MapReduce 作业。"
    services="hdinsight"
    documentationCenter=""

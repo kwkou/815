@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Application Insights 排查云服务问题 | Microsoft Azure"
+   pageTitle="使用 Application Insights 排查云服务问题 | Azure"
    description="了解如何通过使用 Application Insights 来处理 Azure 诊断发送的数据，以便排查云服务问题。"
    services="cloud-services"
    documentationCenter=".net"

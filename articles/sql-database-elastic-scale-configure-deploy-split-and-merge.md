@@ -1,5 +1,5 @@
 <properties
-	pageTitle="弹性数据库拆分/合并工具教程 | Microsoft Azure"
+	pageTitle="弹性数据库拆分/合并工具教程 | Azure"
 	description="使用弹性数据库工具进行拆分与合并"
 	services="sql-database"
 	documentationCenter=""

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在流分析中使用引用数据和查找表 | Microsoft Azure" 
+	pageTitle="在流分析中使用引用数据和查找表 | Azure" 
 	description="在流分析查询中使用引用数据" 
 	keywords="查找表, 引用数据"
 	services="stream-analytics" 
@@ -41,7 +41,7 @@
 </tr>
 <tr>
 <td>存储容器</td>
-<td>容器对存储在 Microsoft Azure Blob 服务中的 blob 进行逻辑分组。将 blob 上载到 Blob 服务时，必须为该 blob 指定一个容器。</td>
+<td>容器对存储在 Azure Blob 服务中的 blob 进行逻辑分组。将 blob 上载到 Blob 服务时，必须为该 blob 指定一个容器。</td>
 </tr>
 <tr>
 <td>路径模式</td>

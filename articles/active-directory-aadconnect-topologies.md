@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect：支持的拓扑 | Microsoft Azure"
+   pageTitle="Azure AD Connect：支持的拓扑 | Azure"
    description="本主题详细说明 Azure AD Connect 的受支持和不受支持的拓扑"
    services="active-directory"
    documentationCenter=""

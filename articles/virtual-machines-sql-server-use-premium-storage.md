@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 SQL Server 上使用 Azure 高级存储 | Microsoft Azure"
+	pageTitle="在 SQL Server 上使用 Azure 高级存储 | Azure"
 	description="本文使用通过经典部署模型创建的资源并介绍如何对 Azure 虚拟机上运行的 SQL Server 使用 Azure 高级存储。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -366,7 +366,7 @@
  
 ![DeploymentsUseAlwaysOn][6]
 
-在 Microsoft Azure 中，只能将一个 IP 地址分配给 VM 上的 NIC，因此，为了实现与本地相同的抽象层，Azure 将利用分配给内部/外部负载平衡器 (ILB/ELB) 的 IP 地址。在服务器间共享的 IP 资源将设置为与 ILB/ELB 相同的 IP。此 IP 在 DNS 中发布，客户端流量将通过 ILB/ELB 传递到主 SQL Server 副本。ILB/ELB 知道哪个 SQL Server 为主，因为它使用探测器来探测 AlwaysOn IP 资源。在前面的示例中，它会探测包含 ELB/ILB 引用的终结点的每个节点，做出响应的则是主 SQL Server。
+在 Azure 中，只能将一个 IP 地址分配给 VM 上的 NIC，因此，为了实现与本地相同的抽象层，Azure 将利用分配给内部/外部负载平衡器 (ILB/ELB) 的 IP 地址。在服务器间共享的 IP 资源将设置为与 ILB/ELB 相同的 IP。此 IP 在 DNS 中发布，客户端流量将通过 ILB/ELB 传递到主 SQL Server 副本。ILB/ELB 知道哪个 SQL Server 为主，因为它使用探测器来探测 AlwaysOn IP 资源。在前面的示例中，它会探测包含 ELB/ILB 引用的终结点的每个节点，做出响应的则是主 SQL Server。
 
 > [AZURE.NOTE] ILB 和 ELB 都分配给特定 Azure 云服务，因此 Azure 中的任何云迁移都很可能意味着负载平衡器 IP 将更改。
 

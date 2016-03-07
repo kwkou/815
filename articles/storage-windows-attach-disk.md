@@ -1,5 +1,5 @@
 <properties
-	pageTitle="将磁盘附加到虚拟机 | Microsoft Azure"
+	pageTitle="将磁盘附加到虚拟机 | Azure"
 	description="将数据磁盘附加到使用经典部署模型创建的 Windows 虚拟机并进行初始化。"
 	services="virtual-machines, storage"
 	documentationCenter=""

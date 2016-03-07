@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Upgrade to the latest elastic database client library | Microsoft Azure" 
+	pageTitle="Upgrade to the latest elastic database client library | Azure" 
 	description="Upgrade apps and libraries using Nuget" 
 	services="sql-database" 
 	documentationCenter="" 

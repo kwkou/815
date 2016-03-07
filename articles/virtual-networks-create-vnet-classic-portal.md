@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure 门户创建虚拟网络 | Microsoft Azure"
+   pageTitle="使用 Azure 门户创建虚拟网络 | Azure"
    description="了解如何使用 Azure 门户创建虚拟网络。"
    services="virtual-network"
    documentationCenter=""

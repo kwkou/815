@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 SCIM 启用从 Azure Active Directory 到应用程序的用户和组自动预配 | Microsoft Azure"
+	pageTitle="使用 SCIM 启用从 Azure Active Directory 到应用程序的用户和组自动预配 | Azure"
 	description="Azure Active Directory 可以使用 SCIM 协议规范中定义的接口，自动将用户和组预配到以 Web 服务为前端的任何应用程序或标识存储"
 	services="active-directory"
 	documentationCenter=""

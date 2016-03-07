@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure Site Recovery 和 PowerShell 在 VMM 云中复制 Hyper-V 虚拟机 | Microsoft Azure"
+	pageTitle="使用 Azure Site Recovery 和 PowerShell 在 VMM 云中复制 Hyper-V 虚拟机 | Azure"
 	description="了解如何使用站点恢复和 PowerShell 在 VMM 云中自动复制 Hyper-V 虚拟机。"
 	services="site-recovery"
 	documentationCenter=""
@@ -32,7 +32,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 ### Azure 先决条件
 
-- 需要一个 [Microsoft Azure](http://www.windowsazure.cn) 帐户。你可以从[试用版](/price/1rmb-trial)开始。
+- 需要一个 [Azure](http://www.windowsazure.cn) 帐户。你可以从[试用版](/price/1rmb-trial)开始。
 - 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。[了解有关 Azure 存储空间的详细信息](/documentation/articles/storage-introduction)。
 - 需要确保你要保护的虚拟机符合 [Azure 虚拟机先决条件](/documentation/articles/site-recovery-best-practices#virtual-machines)。
 
@@ -260,7 +260,7 @@ New-AzureStorageAccount -StorageAccountName $StorageAccountName -Label $StorageA
 
 请注意，如果目标网络具有多个子网，并且其中一个子网与源虚拟机所在的子网同名，则在故障转移后副本虚拟机将连接到该目标子网。如果没有具有匹配名称的目标子网，则虚拟机将连接到网络中的第一个子网。
 
-第一条命令将获取当前 Azure Site Recovery 保管库的服务器。该命令将 Microsoft Azure Site Recovery 服务器存储在 $Servers 数组变量中。
+第一条命令将获取当前 Azure Site Recovery 保管库的服务器。该命令将 Azure Site Recovery 服务器存储在 $Servers 数组变量中。
 
 
 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用恢复管理器解决分片映射问题 | Microsoft Azure" 
+	pageTitle="使用恢复管理器解决分片映射问题 | Azure" 
 	description="使用 RecoveryManager 类解决分片映射问题" 
 	services="sql-database" 
 	documentationCenter=""  

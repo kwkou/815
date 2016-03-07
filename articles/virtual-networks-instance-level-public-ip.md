@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="实例级公共 IP (ILPIP) | Microsoft Azure"
+   pageTitle="实例级公共 IP (ILPIP) | Azure"
    description="了解 ILPIP (PIP) 以及如何对其进行管理"
    services="virtual-network"
    documentationCenter="na"

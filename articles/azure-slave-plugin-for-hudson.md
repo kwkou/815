@@ -56,7 +56,7 @@
 1. 在 Hudson 仪表板中，单击“管理 Hudson”。
 2. 单击“配置系统”。
 3. 向下滚动页面以找到“云”部分。
-4. 单击“添加新云”>“Microsoft Azure”。
+4. 单击“添加新云”>“Azure”。
 
 	![添加新的云](./media/azure-slave-plugin-for-hudson/hudson-setup-addcloud.png)
 

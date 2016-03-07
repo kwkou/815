@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 PowerShell 监视和管理流分析作业 | Microsoft Azure" 
+	pageTitle="使用 PowerShell 监视和管理流分析作业 | Azure" 
 	description="了解如何使用 Azure PowerShell 和 cmdlet 监视和管理流分析作业。" 
 	keywords="azure powershell,azure powershell cmdlet,powershell 命令,powershell 脚本"	
 	services="stream-analytics" 
@@ -135,7 +135,7 @@
 此 PowerShell 命令会使用文件中的定义来替换名为 EntryStream 的现有输入源的定义。
 
 ### New-AzureStreamAnalyticsJob
-在 Microsoft Azure 中创建新的流分析作业，或者更新现有的指定作业的定义。
+在 Azure 中创建新的流分析作业，或者更新现有的指定作业的定义。
 
 作业的名称可以在 .json 文件中指定，也可以在命令行中指定。如果在两处同时指定，则命令行的名称必须与文件中的名称相同。
 
@@ -198,7 +198,7 @@
  此 PowerShell 命令替换作业 StreamingJob 中 StreamingJobTransform 的定义。
 
 ### Remove-AzureStreamAnalyticsInput
-以异步方式从 Microsoft Azure 的流分析作业中删除特定的输入。  
+以异步方式从 Azure 的流分析作业中删除特定的输入。  
 如果指定 -Force 参数，则会在不确认的情况下删除输入。
 
 **示例 1**
@@ -207,7 +207,7 @@
 此 PowerShell 命令删除作业 StreamingJob 中的输入 EventStream。
 
 ### Remove-AzureStreamAnalyticsJob
-以异步方式删除 Microsoft Azure 中的特定流分析作业。  
+以异步方式删除 Azure 中的特定流分析作业。  
 如果指定 -Force 参数，则会在不确认的情况下删除作业。
 
 **示例 1**
@@ -216,7 +216,7 @@
 此 PowerShell 命令删除作业 StreamingJob。
 
 ### Remove-AzureStreamAnalyticsOutput
-以异步方式从 Microsoft Azure 的流分析作业中删除特定的输出。  
+以异步方式从 Azure 的流分析作业中删除特定的输出。  
 如果指定 -Force 参数，则会在不确认的情况下删除输出。
 
 **示例 1**
@@ -225,7 +225,7 @@
 此 PowerShell 命令删除作业 StreamingJob 中的输出 Output。
 
 ### Start-AzureStreamAnalyticsJob
-以异步方式部署和启动 Microsoft Azure 中的流分析作业。
+以异步方式部署和启动 Azure 中的流分析作业。
 
 **示例 1**
 
@@ -235,7 +235,7 @@
 
 
 ### Stop-AzureStreamAnalyticsJob
-以异步方式停止流分析作业在 Microsoft Azure 中的运行，并取消分配所使用的资源。在订阅中，你将始终可以通过 Azure 门户和管理 API 来使用作业定义和元数据，方便你编辑和重新启动该作业。处于停止状态的作业不收费。
+以异步方式停止流分析作业在 Azure 中的运行，并取消分配所使用的资源。在订阅中，你将始终可以通过 Azure 门户和管理 API 来使用作业定义和元数据，方便你编辑和重新启动该作业。处于停止状态的作业不收费。
 
 **示例 1**
 

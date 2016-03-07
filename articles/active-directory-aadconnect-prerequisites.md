@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect：先决条件和硬件 | Microsoft Azure"
+   pageTitle="Azure AD Connect：先决条件和硬件 | Azure"
    description="本主题介绍 Azure AD Connect 的先决条件和硬件要求"
    services="active-directory"
    documentationCenter=""

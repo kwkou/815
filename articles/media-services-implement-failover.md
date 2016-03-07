@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="实现故障转移流式处理方案 | Microsoft Azure" 
+	pageTitle="实现故障转移流式处理方案 | Azure" 
 	description="本主题演示如何实现故障转移流式处理方案。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -14,7 +14,7 @@
 
 #实现故障转移流式处理方案
 
-本演练演示如何将内容 (blob) 从一个资产复制到另一个资产，以便处理按需流式处理的冗余。此方案适用于想要将其 CDN 设置为当我们的某个数据中心出现中断时，在两个数据中心之间进行故障转移的客户。本演练使用 Microsoft Azure 媒体服务 SDK、Microsoft Azure 媒体服务 REST API 和 Azure 存储空间 SDK 来演示以下任务。
+本演练演示如何将内容 (blob) 从一个资产复制到另一个资产，以便处理按需流式处理的冗余。此方案适用于想要将其 CDN 设置为当我们的某个数据中心出现中断时，在两个数据中心之间进行故障转移的客户。本演练使用 Azure 媒体服务 SDK、Azure 媒体服务 REST API 和 Azure 存储空间 SDK 来演示以下任务。
 
 1. 在“数据中心 A”中设置一个媒体服务帐户。
 1. 将一个夹层文件上载到源资产中。

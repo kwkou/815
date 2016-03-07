@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将弹性数据库客户端库与实体框架配合使用 | Microsoft Azure" 
+	pageTitle="将弹性数据库客户端库与实体框架配合使用 | Azure" 
 	description="将弹性数据库客户端库和实体框架用于数据库编码" 
 	services="sql-database" 
 	documentationCenter="" 

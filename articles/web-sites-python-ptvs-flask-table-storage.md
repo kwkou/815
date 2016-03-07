@@ -108,7 +108,7 @@
 
 很容易地使用 Visual Studio 中的 Server Explorer 查看和编辑存储表。本部分中，我们将使用 Server Explorer 查看轮询应用程序表的内容。
 
-> [AZURE.NOTE] 这要求安装 Microsoft Azure 工具，作为 [Azure SDK for .NET] 的一部分。
+> [AZURE.NOTE] 这要求安装 Azure 工具，作为 [Azure SDK for .NET] 的一部分。
 
 1.  打开**服务器资源管理器**。展开 **Azure**、**存储**、您的存储帐户，然后展开**表**。
 
@@ -169,7 +169,7 @@ PTVS 提供了将 Web 应用部署到 Azure Web 应用的方便方法。
 - [Python Tools for Visual Studio 文档]
   - [Web 项目]
   - [云服务项目]
-  - [在 Microsoft Azure 上进行远程调试]
+  - [在 Azure 上进行远程调试]
 - [Flask 文档]
 - [Azure 存储空间]
 - [Azure SDK for Python]
@@ -194,7 +194,7 @@ PTVS 提供了将 Web 应用部署到 Azure Web 应用的方便方法。
 [Python 3.4（32 位）]: http://go.microsoft.com/fwlink/?LinkId=517191
 [Python Tools for Visual Studio 文档]: http://pytools.codeplex.com/documentation
 [Flask 文档]: http://flask.pocoo.org/
-[在 Microsoft Azure 上进行远程调试]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
+[在 Azure 上进行远程调试]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
 [Web 项目]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
 [云服务项目]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
 [Azure 存储空间]: /documentation/services/storage/

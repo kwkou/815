@@ -1,5 +1,5 @@
 <properties
-   pageTitle="部署多个资源实例 | Microsoft Azure"
+   pageTitle="部署多个资源实例 | Azure"
    description="在部署资源时使用 Azure 资源管理器模板中的复制操作和数组执行多次迭代。"
    services="azure-resource-manager"
    documentationCenter="na"

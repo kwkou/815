@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="媒体服务配额和限制" 
-	description="本主题介绍与 Microsoft Azure 媒体服务关联的配额和限制。" 
+	description="本主题介绍与 Azure 媒体服务关联的配额和限制。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
@@ -15,7 +15,7 @@
 
 #配额和限制
 
-本主题介绍与 Microsoft Azure 媒体服务关联的配额和限制。
+本主题介绍与 Azure 媒体服务关联的配额和限制。
 
 [AZURE.INCLUDE [azure-mediaservices-limits](../includes/azure-mediaservices-limits.md)]
 

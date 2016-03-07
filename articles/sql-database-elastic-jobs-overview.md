@@ -1,5 +1,5 @@
 <properties
-	pageTitle="弹性数据库作业概述 | Microsoft Azure" 
+	pageTitle="弹性数据库作业概述 | Azure" 
 	description="安装弹性数据库作业服务" 
 	metaKeywords="Azure SQL 数据库弹性数据库" 
 	services="sql-database" documentationCenter=""  
@@ -84,7 +84,7 @@
 ## 组件和定价 
 以下组件配合工作可以创建支持即席执行管理作业的 Azure 云服务。在安装期间，这些组件将自动在你的订阅中安装和配置。你可以识别这些服务，因为它们具有相同的自动生成名称。名称是唯一的，包括前缀“edj”后接 21 个随机生成的字符。
 
-* **Azure 云服务**：弹性数据库作业（预览版）以客户托管的 Azure 云服务交付，可执行请求的任务。服务可从门户部署，并托管在你的 Microsoft Azure 订阅中。默认部署的服务将结合最少两个辅助角色运行，以实现高可用性。每个默认大小的辅助角色 (ElasticDatabaseJobWorker) 在 A0 实例上运行。有关价格，请参阅[云服务定价](/home/features/cloud-services/#price)。 
+* **Azure 云服务**：弹性数据库作业（预览版）以客户托管的 Azure 云服务交付，可执行请求的任务。服务可从门户部署，并托管在你的 Azure 订阅中。默认部署的服务将结合最少两个辅助角色运行，以实现高可用性。每个默认大小的辅助角色 (ElasticDatabaseJobWorker) 在 A0 实例上运行。有关价格，请参阅[云服务定价](/home/features/cloud-services/#price)。 
 * **Azure SQL 数据库**：服务使用名为**控制数据库**的 Azure SQL 数据库来存储所有的作业元数据。默认的服务层是 S0。有关价格，请参阅 [SQL 数据库定价](/home/features/sql-database/#price)。
 * **Azure Service Bus**：Azure Service Bus 用于协调 Azure 云服务中的工作。请参阅 [Service Bus 定价](/home/features/messaging/#price)。
 * **Azure 存储空间**：在某个问题需要进一步调试时，将使用 Azure 存储帐户来存储诊断输出（[Azure 诊断](/documentation/articles/cloud-services-dotnet-diagnostics)的常见做法）。有关价格，请参阅 [Azure 存储空间定价](/home/features/storage/#price)。

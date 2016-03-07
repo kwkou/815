@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="关于虚拟网络的安全跨界连接 | Microsoft Azure"
+   pageTitle="关于虚拟网络的安全跨界连接 | Azure"
    description="了解虚拟网络的安全跨界连接类型，包括站点到站点连接、点到站点连接和 ExpressRoute 连接。"
    services="vpn-gateway"
    documentationCenter="na"

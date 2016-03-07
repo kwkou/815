@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="使用弹性数据库拆分/合并工具进行缩放 | Microsoft Azure" 
+    pageTitle="使用弹性数据库拆分/合并工具进行缩放 | Azure" 
     description="介绍如何使用弹性数据库 API 通过自托管服务来操作分片和移动数据。" 
     services="sql-database" 
     documentationCenter="" 
@@ -63,7 +63,7 @@
 
 ## 概念和主要功能
 
-**客户托管服务**：拆分/合并将作为客户托管服务交付。你必须在 Microsoft Azure 订阅中部署并托管该服务。您从 NuGet 下载的程序包将包含一个要使用您的特定部署信息完成的配置模板。有关详细信息，请参阅[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。由于服务在您的 Azure 订阅中运行，因此您可以控制和配置该服务的大多数安全设置。默认模板包括配置 SSL 的选项、基于证书的客户端身份验证、存储凭据的加密、DoS 防护和 IP 限制。你可以在以下[拆分/合并安全配置](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration)文档中找到有关安全方面的详细信息。
+**客户托管服务**：拆分/合并将作为客户托管服务交付。你必须在 Azure 订阅中部署并托管该服务。您从 NuGet 下载的程序包将包含一个要使用您的特定部署信息完成的配置模板。有关详细信息，请参阅[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。由于服务在您的 Azure 订阅中运行，因此您可以控制和配置该服务的大多数安全设置。默认模板包括配置 SSL 的选项、基于证书的客户端身份验证、存储凭据的加密、DoS 防护和 IP 限制。你可以在以下[拆分/合并安全配置](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration)文档中找到有关安全方面的详细信息。
 
 默认部署的服务可与一个辅助角色和一个 Web 角色同时运行。在 Azure 云服务中，每个角色都使用 A1 VM 大小。虽然您无法在部署程序包时修改这些设置，但是您可以在运行的云服务中成功进行部署之后更改它们（通过 Azure 门户）。请注意，出于技术方面的原因，不得为多个实例配置辅助角色。
 
@@ -149,7 +149,7 @@
 
 ## 计费 
 
-拆分/合并服务在你的 Microsoft Azure 订阅中作为云服务运行。因此将对你的服务实例收取云服务费用。除非你频繁地执行拆分/合并/移动操作，否则建议删除你的拆分/合并云服务。这可以节省用于运行中的或已部署的云服务实例的成本。只要你需要执行拆分或合并操作，你就可以重新部署和启用已准备好的可运行配置。
+拆分/合并服务在你的 Azure 订阅中作为云服务运行。因此将对你的服务实例收取云服务费用。除非你频繁地执行拆分/合并/移动操作，否则建议删除你的拆分/合并云服务。这可以节省用于运行中的或已部署的云服务实例的成本。只要你需要执行拆分或合并操作，你就可以重新部署和启用已准备好的可运行配置。
  
 ## 监视 
 ### 状态表 
@@ -171,7 +171,7 @@
 
 ### Azure 诊断
 
-拆分/合并服务使用基于 Azure SDK 2.5 的 Azure Diagnostics 进行监视与诊断。可以根据此处所述控制诊断配置：[在 Azure 云服务和虚拟机器中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)。下载包包含两个诊断配置 – 一个用于 Web 角色，另一个用于辅助角色。这些服务诊断配置遵循 [Microsoft Azure 中的云服务基础知识](https://code.msdn.microsoft.com/windowsazure/Cloud-Service-Fundamentals-4ca72649)中的指导原则。它包括用于记录性能计数器、IIS 日志、Windows 事件日志和拆分/合并应用程序事件日志的定义。
+拆分/合并服务使用基于 Azure SDK 2.5 的 Azure Diagnostics 进行监视与诊断。可以根据此处所述控制诊断配置：[在 Azure 云服务和虚拟机器中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)。下载包包含两个诊断配置 – 一个用于 Web 角色，另一个用于辅助角色。这些服务诊断配置遵循 [Azure 中的云服务基础知识](https://code.msdn.microsoft.com/windowsazure/Cloud-Service-Fundamentals-4ca72649)中的指导原则。它包括用于记录性能计数器、IIS 日志、Windows 事件日志和拆分/合并应用程序事件日志的定义。
 
 ## 部署诊断 
 

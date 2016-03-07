@@ -100,7 +100,7 @@ Azure 通过 **FTPS** 提供对你的应用文件系统的安全 FTP 访问。�
 
 ##<a name="next"></a>后续步骤
 
-若要详细了解 Azure 平台安全、如何举报**安全事件或滥用行为**，或者如何通知 Microsoft 你将对站点执行**渗透测试**，请参阅 [Microsoft Azure 信任中心](/support/trust-center/security/)的安全部分。
+若要详细了解 Azure 平台安全、如何举报**安全事件或滥用行为**，或者如何通知 Microsoft 你将对站点执行**渗透测试**，请参阅 [Azure 信任中心](/support/trust-center/security/)的安全部分。
 
 有关 Azure Web 应用中 **web.config** 或 **applicationhost.config** 文件的更多信息，请参阅 [Azure Web 应用中解锁的配置选项](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)。
 

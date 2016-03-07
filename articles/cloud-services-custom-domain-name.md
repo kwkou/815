@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在云服务中配置自定义域名 | Microsoft Azure"
+	pageTitle="在云服务中配置自定义域名 | Azure"
 	description="了解如何通过配置 DNS 设置在自定义域上公开你的 Azure 应用程序或数据。"
 	services="cloud-services"
 	documentationCenter=".net"

@@ -14,7 +14,7 @@
 
 # Azure Active Directory 版本
 
-所有 Microsoft Online 业务服务都依赖于 Azure Active Directory 进行登录和满足其他身份识别需求。如果你订阅了任何 Microsoft Online 业务服务（例如 Office 365、Microsoft Azure 等），则表示已获得了 Azure Active Directory (Azure AD)，你可以用它来访问下述所有免费功能。
+所有 Microsoft Online 业务服务都依赖于 Azure Active Directory 进行登录和满足其他身份识别需求。如果你订阅了任何 Microsoft Online 业务服务（例如 Office 365、Azure 等），则表示已获得了 Azure Active Directory (Azure AD)，你可以用它来访问下述所有免费功能。
 
 Azure Active Directory 是在云中为员工、合作伙伴和客户提供全面标识和访问管理功能的服务。它为开发人员整合了目录服务、高级标识管理和一个基于标准的多功能平台，并可让你针对自己的应用程序或数千个预先集成应用程序中的任何一个进行访问管理。使用 Azure Active Directory 免费版，你可以管理用户和组、与本地目录同步，以及在 Azure、Office 365 和数千种主流 SaaS 应用程序（如 Salesforce、Workday、Concur、DocuSign、Google Apps、Box、ServiceNow、Dropbox 等）上单一登录。若要了解有关 Azure Active Directory 的详细信息，请阅读[什么是 Azure AD](/documentation/articles/active-directory-whatis)。
 

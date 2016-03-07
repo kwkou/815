@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 HDInsight 中的 Hadoop 群集上安装和使用 Giraph | Microsoft Azure" 
+	pageTitle="在 HDInsight 中的 Hadoop 群集上安装和使用 Giraph | Azure" 
 	description="了解如何使用 Giraph 自定义 HDInsight 群集。你将使用“脚本操作”配置选项，通过一个脚本来安装 Giraph。" 
 	services="hdinsight" 
 	documentationCenter="" 

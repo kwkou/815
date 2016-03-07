@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="服务总线 AMQP 概述 | Microsoft Azure" 
+	pageTitle="服务总线 AMQP 概述 | Azure" 
 	description="了解如何在 Azure 中使用高级消息队列协议 (AMQP) 1.0。" 
 	services="service-bus" 
 	documentationCenter=".net" 

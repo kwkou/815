@@ -1,5 +1,5 @@
 <properties
-   pageTitle="将 Azure 流分析与 SQL 数据仓库配合使用 | Microsoft Azure"
+   pageTitle="将 Azure 流分析与 SQL 数据仓库配合使用 | Azure"
    description="有关在开发解决方案时将 Azure 流分析与 Azure SQL 数据仓库配合使用的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="什么是 Azure SQL 数据仓库 | Microsoft Azure"
+   pageTitle="什么是 Azure SQL 数据仓库 | Azure"
    description="企业级分布式数据库，可处理 PB 量级的关系数据和非关系数据。它是行业首个云数据仓库，可以在数秒内增长、收缩和暂停。"
    services="sql-data-warehouse"
    documentationCenter="NA"

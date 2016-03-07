@@ -1,5 +1,5 @@
 <properties
-	pageTitle="创建自定义 Windows 虚拟机 | Microsoft Azure"
+	pageTitle="创建自定义 Windows 虚拟机 | Azure"
 	description="了解如何从 Azure 管理门户使用经典部署模型创建自定义 Windows 虚拟机。"
 	services="virtual-machines"
 	documentationCenter=""

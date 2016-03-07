@@ -1,5 +1,5 @@
 <properties
-	pageTitle="创建 Jupyter/IPython Notebook | Microsoft Azure"
+	pageTitle="创建 Jupyter/IPython Notebook | Azure"
 	description="了解如何在使用 Azure 中的资源管理器部署模型创建的 Linux 虚拟机上部署 Jupyter/IPython Notebook。"
 	services="virtual-machines"
 	documentationCenter="python"
@@ -25,7 +25,7 @@
 ## Jupyter 的两种方法：Azure Notebook 或自定义部署
 可以使用 Azure 提供的服务[快速开始使用 Jupyter](http://blogs.technet.com/b/machinelearning/archive/2015/07/24/introducing-jupyter-notebooks-in-azure-ml-studio.aspx)。通过使用 Azure Notebook 服务，你可以轻松访问 Jupyter 的可缩放计算资源（包含 Python 的所有功能及其许多库）的可 Web 访问接口。由于安装由该服务处理，用户无需管理和用户配置即可访问这些资源。
 
-如果 Notebook 服务不适用于你的方案，请继续阅读本文，它将会说明如何在 Microsoft Azure 上使用 Linux 虚拟机 (VM) 部署 Jupyter Notebook。
+如果 Notebook 服务不适用于你的方案，请继续阅读本文，它将会说明如何在 Azure 上使用 Linux 虚拟机 (VM) 部署 Jupyter Notebook。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
 

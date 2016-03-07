@@ -1,5 +1,5 @@
 <properties
-    pageTitle="如何在 Jenkins 持续集成中使用 Azure Slave 插件 | Microsoft Azure"
+    pageTitle="如何在 Jenkins 持续集成中使用 Azure Slave 插件 | Azure"
     description="介绍如何在 Jenkins 持续集成中使用 Azure Slave 插件。"
 	services="storage" 
 	documentationCenter="java" 
@@ -55,7 +55,7 @@
 1. 在 Jenkins 仪表板中，单击“管理 Jenkins”。
 2. 单击“配置系统”。
 3. 向下滚动页面以找到“云”部分。
-4. 单击“添加新云”>“Microsoft Azure”。
+4. 单击“添加新云”>“Azure”。
 
 	![云部分](./media/azure-slave-plugin-for-jenkins/jenkins-cloud-section.png)
 

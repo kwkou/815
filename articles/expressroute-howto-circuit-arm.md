@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure 资源管理器和 PowerShell 配置 ExpressRoute 线路 | Microsoft Azure"
+   pageTitle="使用 Azure 资源管理器和 PowerShell 配置 ExpressRoute 线路 | Azure"
    description="本文将指导你完成创建和预配 ExpressRoute 线路的步骤。本文还介绍了如何检查状态，以及如何更新、删除和预配线路。"
    documentationCenter="na"
    services="expressroute"

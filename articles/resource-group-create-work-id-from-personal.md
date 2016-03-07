@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 AAD 中创建工作或学校标识 | Microsoft Azure"
+   pageTitle="在 AAD 中创建工作或学校标识 | Azure"
    description="了解如何在 Azure Active Directory 中创建工作或学校标识以配合使用资源管理器和经典部署模型。"
    services="virtual-machines"
    documentationCenter=""

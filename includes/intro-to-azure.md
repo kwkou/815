@@ -1,6 +1,6 @@
-# Microsoft Azure 简介
+# Azure 简介
 
-Microsoft Azure 是 Microsoft 为公有云提供的应用程序平台。本文的目的是为你提供了解 Azure 基本功能所需的基础知识，即使你对云计算一无所知也没有关系。
+Azure 是 Microsoft 为公有云提供的应用程序平台。本文的目的是为你提供了解 Azure 基本功能所需的基础知识，即使你对云计算一无所知也没有关系。
 
 **如何阅读本文**
 

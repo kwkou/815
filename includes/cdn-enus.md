@@ -1,11 +1,11 @@
-# Use Microsoft Azure Content Delivery Network
+# Use Azure Content Delivery Network
 
 > [AZURE.SELECTOR]
 - [Chinese Version](/documentation/articles/cdn-how-to-use)
 - [English Version](/documentation/articles/cdn-enus-how-to-use)
 
 
-Microsoft Azure Content Delivery Network caches static content in storage blobs, cloud services, and websites on the Azure platform by using large numbers of physical nodes that are distributed across mainland China to provide developers with a solution for delivering high-bandwidth content. This network also currently supports the use of origins that are not deployed on the Azure platform.
+Azure Content Delivery Network caches static content in storage blobs, cloud services, and websites on the Azure platform by using large numbers of physical nodes that are distributed across mainland China to provide developers with a solution for delivering high-bandwidth content. This network also currently supports the use of origins that are not deployed on the Azure platform.
 
 This task includes the steps listed below:
 
@@ -34,7 +34,7 @@ Refer to [How to create and deploy cloud services](/zh-cn/documentation/articles
 ### Create a website for Azure subscriptions
 Refer to [How to create and deploy websites](/zh-cn/documentation/articles/web-sites-create-deploy/)
 
-### Create a media service for Microsoft Azure subscriptions
+### Create a media service for Azure subscriptions
 Refer to [How to create and deploy media services](/documentation/articles/media-services-create-account/)
 
 ## Step 2: Create a new Content Delivery Network endpoint<a id="step2"></a>

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 Java 使用表存储 | Microsoft Azure" 
+	pageTitle="如何通过 Java 使用表存储 | Azure" 
 	description="了解如何在 Azure 中使用表存储服务。代码示例用 Java 代码编写。" 
 	services="storage" 
 	documentationCenter="java" 
@@ -35,7 +35,7 @@
 
 ## 配置应用程序以访问表存储
 
-将以下导入语句添加到要在其中使用 Microsoft Azure 存储 API 访问表的 Java 文件的顶部：
+将以下导入语句添加到要在其中使用 Azure 存储 API 访问表的 Java 文件的顶部：
 
     // Include the following imports to use table APIs
     import com.microsoft.azure.storage.*;
@@ -53,7 +53,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
         "AccountKey=your_storage_account_key;" +
 	"EndpointSuffix=core.chinacloudapi.cn";
 
-在 Microsoft Azure 的角色中运行的应用程序中，此字符串可存储在服务配置文件 *ServiceConfiguration.cscfg* 中，并可通过调用 **RoleEnvironment.getConfigurationSettings** 方法进行访问。下面是从服务配置文件中名为 *StorageConnectionString* 的 **Setting** 元素中获取连接字符串的示例：
+在 Azure 的角色中运行的应用程序中，此字符串可存储在服务配置文件 *ServiceConfiguration.cscfg* 中，并可通过调用 **RoleEnvironment.getConfigurationSettings** 方法进行访问。下面是从服务配置文件中名为 *StorageConnectionString* 的 **Setting** 元素中获取连接字符串的示例：
 
     // Retrieve storage account from connection-string.
     String storageConnectionString = 

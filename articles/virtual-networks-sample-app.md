@@ -1,5 +1,5 @@
 <properties
-   pageTitle="与安全边界环境配合使用的示例应用程序 | Microsoft Azure"
+   pageTitle="与安全边界环境配合使用的示例应用程序 | Azure"
    description="创建外围网络以测试流量传送方案后，请部署这个简单的 Web 应用"
    services="virtual-network"
    documentationCenter="na"

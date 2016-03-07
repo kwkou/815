@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="使用 Azure 门户为 Azure SQL 数据库配置异地复制 | Microsoft Azure" 
+    pageTitle="使用 Azure 门户为 Azure SQL 数据库配置异地复制 | Azure" 
     description="使用 Azure 门户为 Azure SQL 数据库配置异地复制" 
     services="sql-database" 
     documentationCenter="" 

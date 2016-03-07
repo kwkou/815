@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Azure RemoteApp 中使用 SQL Server Management Studio 连接到 SQL 数据库 | Microsoft Azure" 
+	pageTitle="在 Azure RemoteApp 中使用 SQL Server Management Studio 连接到 SQL 数据库 | Azure" 
 	description="通过本教程学习在连接到 SQL 数据库时，如何在 Azure RemoteApp 中使用 SQL Server Management Studio 来提高安全性和性能" 
 	services="sql-database" 
 	documentationCenter="" 
@@ -123,7 +123,7 @@ sysprep 在完成后会关闭 VM。
 
 ## Multi-Factor Authentication (MFA)
 
-可以为此应用程序专门启用 MFA。转到 Azure Active Directory 的“应用程序”选项卡。你会发现 Microsoft Azure RemoteApp 的一个条目。如果你单击该应用程序然后进行配置，则会看到以下页面，你可以在其中针对此应用程序启用 MFA。
+可以为此应用程序专门启用 MFA。转到 Azure Active Directory 的“应用程序”选项卡。你会发现 Azure RemoteApp 的一个条目。如果你单击该应用程序然后进行配置，则会看到以下页面，你可以在其中针对此应用程序启用 MFA。
 
 ![启用 MFA][3]
 

@@ -1,5 +1,5 @@
 <properties
- pageTitle="虚拟机大小 | Microsoft Azure"
+ pageTitle="虚拟机大小 | Azure"
  description="列出虚拟机的不同大小及其容量。"
  services="virtual-machines"
  documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="为解决暂时性连接断开而采取的措施 | Microsoft Azure"
+	pageTitle="为解决暂时性连接断开而采取的措施 | Azure"
 	description="在与 Azure SQL 数据库交互时，为了排查、诊断和防止连接错误及其他暂时性故障而采取的措施。"
 	services="sql-database"
 	documentationCenter=""

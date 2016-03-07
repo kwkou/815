@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="如何使用 PowerShell 在经典模式下创建 NSG | Microsoft Azure"
+   pageTitle="如何使用 PowerShell 在经典模式下创建 NSG | Azure"
    description="了解如何使用 PowerShell 在经典模式下创建和部署 NSG"
    services="virtual-network"
    documentationCenter="na"

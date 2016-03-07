@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="从 Web 应用程序使用 Azure 密钥保管库 | Microsoft Azure" 
+	pageTitle="从 Web 应用程序使用 Azure 密钥保管库 | Azure" 
 	description="本教程帮助你了解如何从 Web 应用程序使用 Azure 密钥保管库。" 
 	services="key-vault" 
 	documentationCenter="" 

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="事件中心 API 概述 | Microsoft Azure"
+   pageTitle="事件中心 API 概述 | Azure"
    description="汇总了一些重要的事件中心 .NET 客户端 API。"
    services="event-hubs"
    documentationCenter="na"

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 中的混合云测试环境 | Microsoft Azure"
+	pageTitle="Azure 中的混合云测试环境 | Azure"
 	description="查找介绍如何构建适用于基于 Azure 的混合云的开发/测试或概念证明 IT 专业环境的文章。"
 	documentationCenter=""
 	services="virtual-machines"

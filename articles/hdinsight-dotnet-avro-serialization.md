@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Microsoft Avro Library 序列化数据 | Microsoft Azure"
+	pageTitle="使用 Microsoft Avro Library 序列化数据 | Azure"
 	description="了解 Azure HDInsight 如何使用 Avro 来序列化大数据。"
 	services="hdinsight"
 	documentationCenter=""
@@ -48,7 +48,7 @@ Microsoft Avro Library 以 NuGet 包发行，你可以使用以下过程在 Visu
 
 1. 选择“项目”选项卡->“管理 NuGet 包...”
 2. 在“联机搜索”框中，搜索“Microsoft.Hadoop.Avro”。
-3. 单击“Microsoft Azure HDInsight Avro Library”旁边的“安装”按钮。 
+3. 单击“Azure HDInsight Avro Library”旁边的“安装”按钮。 
 
 请注意，Newtonsoft.Json.dll (>= 6.0.4) 依赖项也将随 Microsoft Avro Library 一起自动下载。
 
@@ -105,7 +105,7 @@ Microsoft Avro Library 包含代码生成实用工具，可让你自动根据先
  * <a href="#Scenario3">**使用对象容器文件与反射进行序列化**</a> - JSON 架构自动生成并使用 Avro 对象容器文件随着序列化的数据共享。
  * <a href="#Scenario4">**使用对象容器文件与通用记录进行序列化**</a> - JSON 架构是在序列化前显式指定的，并使用 Avro 对象容器文件随着序列化的数据共享。
  * <a href="#Scenario5">**使用对象容器文件和自定义压缩编解码器进行序列化**</a> - 该示例演示如何使用 Deflate 数据压缩编解码器的自定义 .NET 实现，来创建 Avro 对象容器文件。
- * <a href="#Scenario6">**使用 Avro 来上载 Microsoft Azure HDInsight 服务的数据**</a> - 该示例演示 Avro 序列化如何与 HDInsight 服务交互。要运行此示例，你必须具备有效的 Azure 订阅并且可以访问 Microsoft Azure HDInsight 群集。
+ * <a href="#Scenario6">**使用 Avro 来上载 Azure HDInsight 服务的数据**</a> - 该示例演示 Avro 序列化如何与 HDInsight 服务交互。要运行此示例，你必须具备有效的 Azure 订阅并且可以访问 Azure HDInsight 群集。
 
 ###<a name="Scenario1"></a>示例 1：通过反射进行序列化
 
@@ -1361,9 +1361,9 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
     // ----------------------------------------
     // Press any key to exit.
 
-###<a name="Scenario6"></a>示例 6：使用 Avro 上载 Microsoft Azure HDInsight 服务的数据
+###<a name="Scenario6"></a>示例 6：使用 Avro 上载 Azure HDInsight 服务的数据
 
-第六个示例演示与 Microsoft Azure HDInsight 服务交互相关的一些编程技巧。包含此示例代码的样例可以从 [Azure 代码示例](https://code.msdn.microsoft.com/windowsazure/Using-Avro-to-upload-data-ae81b1e3)站点下载。
+第六个示例演示与 Azure HDInsight 服务交互相关的一些编程技巧。包含此示例代码的样例可以从 [Azure 代码示例](https://code.msdn.microsoft.com/windowsazure/Using-Avro-to-upload-data-ae81b1e3)站点下载。
 
 该示例将执行以下操作：
 
@@ -1376,7 +1376,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
 
 该示例要求满足以下先决条件：
 
-* 有效的 Microsoft Azure 订阅及其订阅 ID。
+* 有效的 Azure 订阅及其订阅 ID。
 * 包含相应私钥的订阅管理证书。该证书应安装在用于运行示例的计算机上的当前用户私用存储中。
 * 活动的 HDInsight 群集。
 * 在先前的必要条件中链接到 HDInsight 群集的 Azure 存储帐户，以及相应的主要或辅助访问密钥。

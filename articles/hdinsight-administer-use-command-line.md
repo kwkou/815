@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure CLI 管理 Hadoop 群集 | Microsoft Azure"
+	pageTitle="使用 Azure CLI 管理 Hadoop 群集 | Azure"
 	description="如何使用 Azure CLI 管理 HDInsight 中的 Hadoop 群集"
 	services="hdinsight"
 	editor="cgronlun"

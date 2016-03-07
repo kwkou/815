@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 PHP 使用服务总线主题 | Microsoft Azure" 
+	pageTitle="如何通过 PHP 使用服务总线主题 | Azure" 
 	description="了解如何通过 PHP 使用 Azure 中的服务总线主题。" 
 	services="service-bus" 
 	documentationCenter="php" 

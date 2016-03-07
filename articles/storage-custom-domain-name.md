@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="为 Blob 存储终结点配置域名 | Microsoft Azure"
+	pageTitle="为 Blob 存储终结点配置域名 | Azure"
 	description="了解如何将自定义用户域映射到 Azure 存储帐户的 Blob 存储终结点。"
 	services="storage" 
 	documentationCenter="" 

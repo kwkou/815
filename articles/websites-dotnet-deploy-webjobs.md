@@ -100,7 +100,7 @@
 
 ### <a id="createnolink"></a>为独立的 Web 作业使用 Web 作业新建项目模板
   
-1. 单击“文件”>“新建项目”，然后在“新建项目”对话框中，单击“云”>“Microsoft Azure Web 作业”。
+1. 单击“文件”>“新建项目”，然后在“新建项目”对话框中，单击“云”>“Azure Web 作业”。
 
 	![显示了 Web 作业模板的“新建项目”对话框](./media/websites-dotnet-deploy-webjobs/np.png)
 	

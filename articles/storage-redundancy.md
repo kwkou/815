@@ -1,7 +1,7 @@
 
 <properties 
-  pageTitle="Azure 存储复制 | Microsoft Azure" 
-  description="复制 Microsoft Azure 存储帐户中的数据以实现持久性和高可用性。复制选项包括本地冗余存储 (LRS)、异地冗余存储 (GRS) 和读取访问异地冗余存储 (RA-GRS)。" 
+  pageTitle="Azure 存储复制 | Azure" 
+  description="复制 Azure 存储帐户中的数据以实现持久性和高可用性。复制选项包括本地冗余存储 (LRS)、异地冗余存储 (GRS) 和读取访问异地冗余存储 (RA-GRS)。" 
   services="storage" 
   documentationCenter="" 
   authors="tamram" 
@@ -15,7 +15,7 @@
 
 # Azure 存储复制
 
-始终复制 Microsoft Azure 存储帐户中的数据以确保持久性和高可用性，并且即使在遇到临时硬件故障时也符合 [Azure 存储 SLA 要求](/support/legal/sla/)。
+始终复制 Azure 存储帐户中的数据以确保持久性和高可用性，并且即使在遇到临时硬件故障时也符合 [Azure 存储 SLA 要求](/support/legal/sla/)。
 
 创建存储帐户时，必须选择以下复制选项之一：
 
@@ -70,8 +70,8 @@
 ## 后续步骤
 
 - [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets) 
-- [Microsoft Azure 存储冗余选项和读取访问异地冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)  
-- [使用 RA-GRS 的 Microsoft Azure 存储模拟器 3.1](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/08/microsoft-azure-storage-emulator-3-1-with-ra-grs.aspx)
+- [Azure 存储冗余选项和读取访问异地冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)  
+- [使用 RA-GRS 的 Azure 存储模拟器 3.1](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/08/microsoft-azure-storage-emulator-3-1-with-ra-grs.aspx)
 - [Azure 存储 SOSP 论文](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)  
  
 

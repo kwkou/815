@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用中继消息传送的服务总线 REST 教程 | Microsoft Azure"
+   pageTitle="使用中继消息传送的服务总线 REST 教程 | Azure"
    description="生成一个简单的服务总线中继主机应用程序来公开基于 REST 的接口。"
    services="service-bus"
    documentationCenter="na"

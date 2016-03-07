@@ -19,19 +19,19 @@
 
  - 不支持 Windows 身份验证。请参阅[管理 Azure SQL 数据库的数据库和登录名](/documentation/articles/sql-database-manage-logins)。 
 
- - Microsoft Azure SQL 数据库支持表格格式数据流 (TDS) 协议客户端 7.3 或更高版本。
+ - Azure SQL 数据库支持表格格式数据流 (TDS) 协议客户端 7.3 或更高版本。
 
  - 只允许 TCP/IP 连接。
 
- - 不支持 SQL Server 2008 SQL Server 浏览器，因为 Microsoft Azure SQL 数据库没有动态端口，只有端口 1433。
+ - 不支持 SQL Server 2008 SQL Server 浏览器，因为 Azure SQL 数据库没有动态端口，只有端口 1433。
 
 ## SQL Server 代理/作业
 
-Microsoft Azure SQL 数据库不支持 SQL Server 代理或作业。不过，你可以在本地 SQL Server 上运行 SQL Server 代理并连接到 Microsoft Azure SQL 数据库。
+Azure SQL 数据库不支持 SQL Server 代理或作业。不过，你可以在本地 SQL Server 上运行 SQL Server 代理并连接到 Azure SQL 数据库。
 
 ## SQL Server 排序规则支持
 
-Microsoft Azure SQL 数据库使用的默认数据库排序规则是 **SQL\_LATIN1\_GENERAL\_CP1\_CI\_AS**。其中，**LATIN1\_GENERAL** 是英语（美国），**CP1** 是代码页 1252，**CI** 是不区分大小写，**AS** 是区分重音。可以使用 Transact-SQL 改变 V12 数据库的排序规则。有关如何设置定序的详细信息，请参阅 [COLLATE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms184391.aspx)。
+Azure SQL 数据库使用的默认数据库排序规则是 **SQL\_LATIN1\_GENERAL\_CP1\_CI\_AS**。其中，**LATIN1\_GENERAL** 是英语（美国），**CP1** 是代码页 1252，**CI** 是不区分大小写，**AS** 是区分重音。可以使用 Transact-SQL 改变 V12 数据库的排序规则。有关如何设置定序的详细信息，请参阅 [COLLATE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms184391.aspx)。
 
 ## 命名要求
 

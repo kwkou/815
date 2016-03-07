@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="使用 Azure 资源管理器创建、启动或删除应用程序网关 | Microsoft Azure"
+   pageTitle="使用 Azure 资源管理器创建、启动或删除应用程序网关 | Azure"
    description="本页提供有关使用 Azure 资源管理器创建、配置、启动和删除 Azure 应用程序网关的说明"
    documentationCenter="na"
    services="application-gateway"

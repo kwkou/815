@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通过 Azure Site Recovery 将 VMware 虚拟机和物理服务器复制到 Azure | Microsoft Azure" 
+	pageTitle="通过 Azure Site Recovery 将 VMware 虚拟机和物理服务器复制到 Azure | Azure" 
 	description="介绍如何通过部署 Azure Site Recovery 来协调本地 VMware 虚拟机和 Windows/Linux 物理服务器到 Azure 的复制、故障转移和恢复。" 
 	services="site-recovery"
 	documentationCenter=""
@@ -115,7 +115,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 复制到 Azure 的 VMware 流量会经过特定的进程服务器。你可以在该服务器上限制用于 Site Recovery 复制的带宽，如下所示：
 
-1. 在主管理服务器或运行其他预配的进程服务器的管理服务器上打开 Microsoft Azure 备份 MMC 管理单元。默认情况下，会在桌面上创建 Microsoft Azure 备份的快捷方式，你也可以在 C:\\Program Files\\Microsoft Azure Recovery Services Agent\\bin\\wabadmin 中找到它。
+1. 在主管理服务器或运行其他预配的进程服务器的管理服务器上打开 Azure 备份 MMC 管理单元。默认情况下，会在桌面上创建 Azure 备份的快捷方式，你也可以在 C:\\Program Files\\Azure Recovery Services Agent\\bin\\wabadmin 中找到它。
 2. 在管理单元中，单击“更改属性”。
 
 	![限制带宽](./media/site-recovery-vmware-to-azure-classic/throttle1.png)
@@ -133,7 +133,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 以下项控制进行复制时每个复制磁盘所使用的线程数
 
-    HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Azure Backup\Replication\UploadThreadsPerVM
+    HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Azure Backup\Replication\UploadThreadsPerVM
 
  在“过度预配型”网络中，此注册表项需要更改，不能使用默认值。我们支持的最大数为 32。
 
@@ -178,7 +178,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 **先决条件** | **详细信息**
 --- | ---
-**Azure 帐户**| 需要一个 [Microsoft Azure](/) 帐户。你可以从 [1rmb 试用版](/pricing/1rmb-trial/)开始。[详细了解](/home/features/site-recovery#price) Site Recovery 定价。 
+**Azure 帐户**| 需要一个 [Azure](/) 帐户。你可以从 [1rmb 试用版](/pricing/1rmb-trial/)开始。[详细了解](/home/features/site-recovery#price) Site Recovery 定价。 
 **Azure 存储空间** | 你将需要使用 Azure 存储帐户来存储复制的数据。复制的数据存储在 Azure 空间，Azure VM 在发生故障转移时启动。<br/><br/>你需要一个[标准地域冗余存储帐户](/documentation/articles/storage-redundancy#geo-redundant-storage)或[高级存储帐户](/documentation/articles/storage-premium-storage-preview-portal)，具体取决于你的需求。该帐户必须位于 Site Recovery 服务所在的同一区域，并与同一订阅相关联。请注意，目前不支持复制到高级存储帐户，因此不应使用该功能。<br/><br/>[阅读](/documentation/articles/storage-introduction)有关 Azure 存储空间的信息。
 **Azure 网络** | 你需要一个 Azure 虚拟网络，以便发生故障转移时 Azure VM 能够连接到其中。Azure 虚拟网络所在的区域必须与 Site Recovery 保管库所在的区域相同。<br/><br/>请注意，若要在故障转移到 Azure 后进行故障回复，你需要设置一个 VPN 连接（或 Azure ExpressRoute），以便从 Azure 网络连接到本地站点。 
 
@@ -438,7 +438,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 ### 手动安装移动服务
 
-C:\\Program Files (x86)\\Microsoft Azure Site Recovery\\home\\svsystems\\pushinstallsvc\\repository 中提供了安装程序。
+C:\\Program Files (x86)\\Azure Site Recovery\\home\\svsystems\\pushinstallsvc\\repository 中提供了安装程序。
 
 源操作系统 | 移动服务安装文件
 --- | ---
@@ -489,7 +489,7 @@ UnifiedAgent.exe [/Role <Agent/MasterTarget>] [/InstallLocation <安装目录>] 
 
 1. 根据上表，将相应的 tar 存档复制到要保护的 Linux 计算机。
 2. 打开 shell 程序，并通过运行 `tar -xvzf Microsoft-ASR_UA_8.5.0.0*` 将压缩的 tar 存档解压缩到本地路径
-3. 在 tar 存档内容解压缩到的本地目录中创建 passphrase.txt 文件。为此，请在管理服务器上从 C:\\ProgramData\\Microsoft Azure Site Recovery\\private\\connection.passphrase 复制通行短语，然后通过在 shell 中运行 *`echo <passphrase> >passphrase.txt`*，将其保存在 passphrase.txt 中。
+3. 在 tar 存档内容解压缩到的本地目录中创建 passphrase.txt 文件。为此，请在管理服务器上从 C:\\ProgramData\\Azure Site Recovery\\private\\connection.passphrase 复制通行短语，然后通过在 shell 中运行 *`echo <passphrase> >passphrase.txt`*，将其保存在 passphrase.txt 中。
 4. 输入 *`sudo ./install -t both -a host -R Agent -d /usr/local/ASR -i <IP address> -p <port> -s y -c https -P passphrase.txt`* 以安装移动服务。
 5. 指定管理服务器的内部 IP 地址，确保选择端口 443。
 

@@ -105,7 +105,7 @@
 
 很容易地使用 Visual Studio 中的 Server Explorer 查看和编辑存储表。本部分中，我们将使用 Server Explorer 查看轮询应用程序表的内容。
 
-> [AZURE.NOTE] 这要求安装 Microsoft Azure 工具，作为 [Azure SDK for .NET] 的一部分。
+> [AZURE.NOTE] 这要求安装 Azure 工具，作为 [Azure SDK for .NET] 的一部分。
 
 1.  打开**服务器资源管理器**。展开 **Azure**、**存储**、您的存储帐户，然后展开**表**。
 
@@ -123,7 +123,7 @@
 
   	<!-- ![Publish Web Dialog](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonPublishWebSiteDialog.png) -->
 
-1.  单击“Microsoft Azure Web 应用”。
+1.  单击“Azure Web 应用”。
 
 1.  单击“新建”，新建一个 Web 应用。
 
@@ -133,7 +133,7 @@
 	-	**区域**
 	-	保持“数据库服务器”的“无数据库”设置不变
 
-  	<!-- ![Create Web 应用on Microsoft Azure Dialog](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonCreateWebSite.png) -->
+  	<!-- ![Create Web 应用on Azure Dialog](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonCreateWebSite.png) -->
 
 1.  接受其他所有默认值，然后单击**发布**。
 
@@ -172,7 +172,7 @@
 - [Python Tools for Visual Studio 文档]
   - [Web 项目]
   - [云服务项目]
-  - [在 Microsoft Azure 上进行远程调试]
+  - [在 Azure 上进行远程调试]
 - [Bottle 文档]
 - [Azure 存储空间]
 - [Azure SDK for Python]
@@ -200,7 +200,7 @@
 [Python 3.4（32 位）]: http://go.microsoft.com/fwlink/?LinkId=517191
 [Python Tools for Visual Studio 文档]: http://pytools.codeplex.com/documentation
 [Bottle 文档]: http://bottlepy.org/docs/dev/index.html
-[在 Microsoft Azure 上进行远程调试]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
+[在 Azure 上进行远程调试]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
 [Web 项目]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
 [云服务项目]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
 [Azure 存储空间]: /documentation/services/storage

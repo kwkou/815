@@ -24,7 +24,7 @@
 
 ## 介绍 ##
 
-Azure Web 应用是一款理想的平台，可用于托管外部和内部 Web 应用和服务，因为它提供了一款经济高效、高度可扩展、托管的解决方案，使你能够集中精力为用户创造商业价值，而不用耗费大量时间和资金维护和支持单独的环境。Azure Web 应用提供了一款灵活的平台，可用于部署企业 Web 应用，从而提供能够通过与 Microsoft Azure Active Directory 集成继续按照本地 Active Directory 进行身份验证的能力；支持利用内部连续集成和部署实践轻松、快速地进行部署，同时自动进行扩展来满足业务需求 - 所有这些都在一个托管平台上实现，使你能够专注于你的应用程序，而不是你的基础架构。
+Azure Web 应用是一款理想的平台，可用于托管外部和内部 Web 应用和服务，因为它提供了一款经济高效、高度可扩展、托管的解决方案，使你能够集中精力为用户创造商业价值，而不用耗费大量时间和资金维护和支持单独的环境。Azure Web 应用提供了一款灵活的平台，可用于部署企业 Web 应用，从而提供能够通过与 Azure Active Directory 集成继续按照本地 Active Directory 进行身份验证的能力；支持利用内部连续集成和部署实践轻松、快速地进行部署，同时自动进行扩展来满足业务需求 - 所有这些都在一个托管平台上实现，使你能够专注于你的应用程序，而不是你的基础架构。
 
 ## 问题定义 ##
 
@@ -39,7 +39,7 @@ IT 环境正在快速变化，从在资本成本高、前置时间长的传统�
 
 Web 平台和框架越来越多地被用于开发、测试和托管业务线应用程序。就典型的业务线应用程序而言（例如内部员工支出系统），通常仅包含一个带有用于存储与应用程序相关数据的支持数据库的 Web 应用。
 
-Azure Web 应用是托管此类应用程序一个不错的选择，提供可扩展且可靠的基础架构，后者的管理和修补具有接近零的人工干预和停机时间。Microsoft Azure 平台提供了许多数据存储选项来支持在 Azure Web 应用上托管的 Web 应用，从托管的可扩展关系型数据库即服务 Microsoft Azure SQL 数据库，到我们的 ClearDB MySQL 数据库和 MongoDB 等合作伙伴提供的热门服务，不一而足。
+Azure Web 应用是托管此类应用程序一个不错的选择，提供可扩展且可靠的基础架构，后者的管理和修补具有接近零的人工干预和停机时间。Azure 平台提供了许多数据存储选项来支持在 Azure Web 应用上托管的 Web 应用，从托管的可扩展关系型数据库即服务 Azure SQL 数据库，到我们的 ClearDB MySQL 数据库和 MongoDB 等合作伙伴提供的热门服务，不一而足。
 
 下图是一个具有适用于本地资源的连接选项的高级解决方案示例。
 
@@ -69,7 +69,7 @@ Azure Web 应用构建于一种平台即服务的模型之上，可提供大量�
 
 Azure Web 应用提供了一个稳定、可靠的平台，后者已被证实能够满足从小型内部开发和测试工作负荷到高度可扩展的高流量 Web 应用的各种业务需求。通过使用 Azure Web 应用，您可以使用与 Microsoft 公司用于处理高价值 Web 工作负荷相同的企业类托管平台。Azure Web 应用以及 Azure 平台上的所有服务均符合安全要求和遵从法规要求，如 ISO (ISO/IEC 27001:2005）；SOC1 和 SOC2 SSAE 16/ISAE 3402 Attestations、HIPAA BAA、PCI 和 Fedramp，是每个元素和功能的核心，有关详细信息，请参阅[http://aka.ms/azurecompliance](/support/trust-center/compliance/)。
 
-Microsoft Azure 平台支持基于角色的身份验证控制，从而支持对 Azure Web 应用内的资源进行企业级别控制。RBAC 支持企业在 Azure 环境中为其所有资产实施自己的访问管理策略，将用户分配到组并反过来根据 Web 应用等资产将所需的权限分配给这些组。通过利用 Azure Web 应用，您可以确保将 Web 应用部署在安全可靠的环境中，并完全地控制要将资产部署到的区域。
+Azure 平台支持基于角色的身份验证控制，从而支持对 Azure Web 应用内的资源进行企业级别控制。RBAC 支持企业在 Azure 环境中为其所有资产实施自己的访问管理策略，将用户分配到组并反过来根据 Web 应用等资产将所需的权限分配给这些组。通过利用 Azure Web 应用，您可以确保将 Web 应用部署在安全可靠的环境中，并完全地控制要将资产部署到的区域。
 ## 解决方案详细信息 ##
 
 让我们看一个应用程序迁移方案的示例。这概述了 Azure Web 应用功能如何共同来提供出色解决方案和业务价值的详细信息。
@@ -95,7 +95,7 @@ Microsoft Azure 平台支持基于角色的身份验证控制，从而支持对 
 
 考虑完这些主题之后，您的 Web 应用已准备好支持云。如果一些主题没有完全被满足也不用担心，迁移工具将为迁移提供最佳支持。
 
-迁移流程中的后续步骤是创建 Azure Web 应用和 Azure SQL 数据库。有多个具有不同 CPU 内核数量和 RAM 数量的各种规模的 Azure Web 应用实例可供您根据 Web 应用需求选择。有关详细信息和定价，请参阅 [http://aka.ms/azurewebsitesskus](/home/features/web-site/#price)。同样，Microsoft Azure SQL 数据库适用于所有业务需求，可提供各种服务层和性能级别来满足需求。更多信息可访问 [http://aka.ms/azuresqldbskus](/home/features/sql-database/#price)。创建完成后，应用程序被上传到 Azure Web 应用（通过 FTP 或 WebDeploy），然后再迁移到数据库。
+迁移流程中的后续步骤是创建 Azure Web 应用和 Azure SQL 数据库。有多个具有不同 CPU 内核数量和 RAM 数量的各种规模的 Azure Web 应用实例可供您根据 Web 应用需求选择。有关详细信息和定价，请参阅 [http://aka.ms/azurewebsitesskus](/home/features/web-site/#price)。同样，Azure SQL 数据库适用于所有业务需求，可提供各种服务层和性能级别来满足需求。更多信息可访问 [http://aka.ms/azuresqldbskus](/home/features/sql-database/#price)。创建完成后，应用程序被上传到 Azure Web 应用（通过 FTP 或 WebDeploy），然后再迁移到数据库。
 
 在创建 Azure SQL 数据库时，可使用多种方法从本地服务器中导入现有数据库，从生成现有数据库的脚本到使用[数据层应用程序导出和导入](/documentation/articles/sql-database-cloud-migrate)。
 

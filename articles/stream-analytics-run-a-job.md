@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何在流分析中启动流式处理作业 | Microsoft Azure" 
+	pageTitle="如何在流分析中启动流式处理作业 | Azure" 
 	description="如何在 Azure 流分析中运行流式处理作业 | 学习路径段。"
     keywords="流式处理作业"
 	documentationCenter=""

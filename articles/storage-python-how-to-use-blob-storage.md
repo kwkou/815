@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 Python 使用 Azure Blob 存储 | Microsoft Azure"
+	pageTitle="如何通过 Python 使用 Azure Blob 存储 | Azure"
 	description="了解如何通过 Python 使用 Azure Blob 服务上载、列出、下载和删除 Blob。"
 	services="storage"
 	documentationCenter="python"

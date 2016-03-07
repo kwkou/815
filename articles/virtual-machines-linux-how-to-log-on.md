@@ -1,5 +1,5 @@
 <properties
-	pageTitle="登录到 Azure 中的 Linux VM | Microsoft Azure"
+	pageTitle="登录到 Azure 中的 Linux VM | Azure"
 	description="了解如何使用安全外壳 (SSH) 客户端登录到运行 Linux 的 Azure 虚拟机。"
 	services="virtual-machines"
 	documentationCenter=""

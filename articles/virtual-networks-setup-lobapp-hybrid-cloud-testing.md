@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
-本主题将指导你逐步创建混合云环境，以便测试在 Microsoft Azure 中托管的 Intranet 业务线 (LOB) 应用程序。这是生成的配置。
+本主题将指导你逐步创建混合云环境，以便测试在 Azure 中托管的 Intranet 业务线 (LOB) 应用程序。这是生成的配置。
 
 ![](./media/virtual-networks-setup-lobapp-hybrid-cloud-testing/CreateLOBAppHybridCloud_3.png)
 

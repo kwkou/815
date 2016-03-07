@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Visual Studio 连接服务添加移动服务后，我的 .NET 项目发生了什么情况 | Microsoft Azure" 
+	pageTitle="使用 Visual Studio 连接服务添加移动服务后，我的 .NET 项目发生了什么情况 | Azure" 
 	description="描述使用“连接服务”添加 Azure 移动服务后，Visual Studio .NET 项目发生了什么情况" 
 	services="mobile-services" 
 	documentationCenter="" 

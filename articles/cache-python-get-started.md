@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何将 Azure Redis 缓存与 Python 配合使用 | Microsoft Azure"
+	pageTitle="如何将 Azure Redis 缓存与 Python 配合使用 | Azure"
 	description="开始将 Azure Redis 缓存与 Python 配合使用"
 	services="redis-cache"
 	documentationCenter=""
@@ -24,7 +24,7 @@
 
 ## 在 Azure 上创建 Redis 缓存
 
-Microsoft Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存进行管理。
+Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存进行管理。
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 

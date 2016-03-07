@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Microsoft Azure 存储空间的使用 .NET 客户端加密 | Microsoft Azure" 
+	pageTitle="Azure 存储空间的使用 .NET 客户端加密 | Azure" 
 	description="用于 .NET 的 Azure 存储客户端库支持客户端加密以及与 Azure 密钥保管库集成以实现 Azure 存储空间应用程序的最佳安全性。"
 	services="storage" 
 	documentationCenter=".net" 
@@ -13,7 +13,7 @@
 	wacn.date="02/25/2016"/>
 
 
-# Microsoft Azure 存储空间的客户端加密和 Azure 密钥保管库
+# Azure 存储空间的客户端加密和 Azure 密钥保管库
 
 [AZURE.INCLUDE [storage-selector-client-side-encryption-include](../includes/storage-selector-client-side-encryption-include.md)]
 
@@ -21,7 +21,7 @@
 
 [用于 .NET 的 Azure 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage)支持在上载到 Azure 存储空间之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。此库还支持与 Azure [密钥保管库](/home/features/key-vault)集成，以便管理存储帐户密钥。
 
-有关使用 Java 的客户端加密，请参阅 [Microsoft Azure 存储空间的使用 Java 客户端加密](/documentation/articles/storage-client-side-encryption-java)。
+有关使用 Java 的客户端加密，请参阅 [Azure 存储空间的使用 Java 客户端加密](/documentation/articles/storage-client-side-encryption-java)。
 
 ## 通过信封技术加密和解密
 

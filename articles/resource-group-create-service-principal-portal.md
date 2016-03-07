@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在门户中创建 AD 应用程序和服务主体 | Microsoft Azure"
+   pageTitle="在门户中创建 AD 应用程序和服务主体 | Azure"
    description="介绍如何创建新的 Active Directory 应用程序和服务主体，在 Azure 资源管理器中将此服务主体与基于角色的访问控制配合使用可以管理对资源的访问权限。"
    services="azure-resource-manager"
    documentationCenter="na"

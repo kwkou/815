@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="测试流量管理器设置 | Microsoft Azure"
+   pageTitle="测试流量管理器设置 | Azure"
    description="本文将帮助你测试流量管理器设置"
    services="traffic-manager"
    documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="用于分片的弹性数据库查询（水平分区）| Microsoft Azure"
+    pageTitle="用于分片的弹性数据库查询（水平分区）| Azure"
     description="如何对水平分区设置弹性查询"    
     services="sql-database"
     documentationCenter=""  

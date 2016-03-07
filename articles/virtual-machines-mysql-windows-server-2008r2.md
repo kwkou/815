@@ -1,5 +1,5 @@
 <properties
-	pageTitle="创建运行 MySQL 的 VM | Microsoft Azure"
+	pageTitle="创建运行 MySQL 的 VM | Azure"
 	description="使用经典部署模型创建运行 Windows Server 2012 R2 的 Azure 虚拟机，然后在其上安装并配置 MySQL 数据库。"
 	services="virtual-machines"
 	documentationCenter=""

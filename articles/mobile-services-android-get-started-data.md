@@ -1,5 +1,5 @@
 <properties
-	pageTitle="开始使用 Android 上的数据（JavaScript 后端）| Microsoft Azure"
+	pageTitle="开始使用 Android 上的数据（JavaScript 后端）| Azure"
 	description="了解如何开始使用移动服务来利用 Android 应用中的数据（JavaScript 后端）。"
 	services="mobile-services"
 	documentationCenter="android"

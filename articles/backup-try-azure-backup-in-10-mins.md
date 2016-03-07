@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure 备份 10 分钟入门 | Microsoft Azure"
+   pageTitle="Azure 备份 10 分钟入门 | Azure"
    description="Azure 备份 10 分钟入门"
    services="backup"
    documentationCenter=""

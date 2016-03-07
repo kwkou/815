@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="监视、诊断和排查存储空间问题 | Microsoft Azure" 
+	pageTitle="监视、诊断和排查存储空间问题 | Azure" 
 	description="使用存储分析、客户端日志记录等功能及其他第三方工具来确定、诊断和排查与 Azure 存储空间相关的问题。" 
 	services="storage" 
 	documentationCenter="" 
@@ -12,13 +12,13 @@
 	ms.date="01/12/2016"
 	wacn.date="02/25/2016"/>
 
-# 监视、诊断和排查 Microsoft Azure 存储空间问题 
+# 监视、诊断和排查 Azure 存储空间问题 
 
 [AZURE.INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
 
 ## 概述
 
-诊断和排查在云环境中托管的分布式应用程序中的问题可能会比在传统环境中更复杂。应用程序可以部署在 PaaS 或 IaaS 基础结构、本地、移动设备，或这些项的某种组合中。通常，应用程序的网络流量可能会经过公用和专用网络，你的应用程序可以使用多种存储技术（如 Microsoft Azure 存储表、Blob、队列或文件）以及其他数据存储（如关系数据库和文档数据库）。
+诊断和排查在云环境中托管的分布式应用程序中的问题可能会比在传统环境中更复杂。应用程序可以部署在 PaaS 或 IaaS 基础结构、本地、移动设备，或这些项的某种组合中。通常，应用程序的网络流量可能会经过公用和专用网络，你的应用程序可以使用多种存储技术（如 Azure 存储表、Blob、队列或文件）以及其他数据存储（如关系数据库和文档数据库）。
 
 若要成功管理此类应用程序，应主动监视这些应用程序，并了解如何诊断和排查这些应用程序及其相关技术的所有方面的问题。作为 Azure 存储服务的用户，你应持续监视你的应用程序所用的存储服务是否出现任何意外的行为更改（如比正常响应时间慢），并使用日志记录收集更详细的数据并深入地分析问题。从监视和日志记录获取的诊断信息将有助于确定应用程序所遇到问题的根本原因。然后，你可以排查该问题，并确定可以执行以更正该问题的相应步骤。Azure 存储空间是一项核心 Azure 服务，它是客户部署到 Azure 基础结构的大多数解决方案的重要组成部分。Azure 存储空间提供的功能可以简化监视、诊断和排查基于云的应用程序中的存储问题的过程。
 
@@ -117,7 +117,7 @@
 
 ### <a name="monitoring-service-health"></a>监视服务运行状况
 
-可以使用 Microsoft Azure 门户（网址为 <a href="https://manage.windowsazure.cn" target="_blank">https://manage.windowsazure.cn</a>）查看全球所有 Azure 区域中的存储服务（及其他 Azure 服务）的运行状况。这使你可以立即了解是否有不受你控制的问题正在影响你的应用程序所使用的区域中的存储服务。
+可以使用 Azure 门户（网址为 <a href="https://manage.windowsazure.cn" target="_blank">https://manage.windowsazure.cn</a>）查看全球所有 Azure 区域中的存储服务（及其他 Azure 服务）的运行状况。这使你可以立即了解是否有不受你控制的问题正在影响你的应用程序所使用的区域中的存储服务。
 
 此外，[Azure 管理门户](https://manage.windowsazure.cn)还可以提供影响各种 Azure 服务的事件的通知。
 注意：此信息以前未在 Azure 服务仪表板（网址为：<a href="/support/service-dashboard/" target="_blank">https://www.azure.cn/support/service-dashboard/</a>）上与历史数据一起提供。
@@ -130,7 +130,7 @@
 
 > [AZURE.NOTE] 你应监视这些值以便获取“你已接近存储帐户的容量限制”的早期警告。在管理门户中，你可以添加警报规则，以便在聚合存储使用量超过或低于指定阈值时通知你。
 
-若要帮助估算各种存储对象（如 Blob）的大小，请参阅博客文章<a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx" target="_blank">了解 Microsoft Azure 存储空间计费 - 带宽、事务和容量</a>。
+若要帮助估算各种存储对象（如 Blob）的大小，请参阅博客文章<a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx" target="_blank">了解 Azure 存储空间计费 - 带宽、事务和容量</a>。
 
 ### <a name="monitoring-availability"></a>监视可用性
 
@@ -369,7 +369,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 客户端响应速度慢的可能原因包括：可用连接数或可用线程数有限，或者 CPU、内存或网络带宽等资源不足。你可以通过以下方式解决此问题：修改客户端代码使其更高效（例如，对存储服务使用异步调用），或者使用更大的虚拟机（包含更多内核和更多内存）。
 
-对于表和队列服务，Nagle 算法也可能会导致高 **AverageE2ELatency**（与 **AverageServerLatency** 相比）：有关详细信息，请参阅 Microsoft Azure 存储空间团队博客上的文章 <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2010/06/25/nagle-s-algorithm-is-not-friendly-towards-small-requests.aspx" target="_blank">Nagle 算法对小请求不友好</a>。你可以通过使用 **System.Net** 命名空间中的 **ServicePointManager** 类在代码中禁用 Nagle 算法。应在应用程序中调用表或队列服务之前执行此操作，因为这样做不会影响已打开的连接。下面的示例来自辅助角色中的 **Application_Start** 方法。
+对于表和队列服务，Nagle 算法也可能会导致高 **AverageE2ELatency**（与 **AverageServerLatency** 相比）：有关详细信息，请参阅 Azure 存储空间团队博客上的文章 <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2010/06/25/nagle-s-algorithm-is-not-friendly-towards-small-requests.aspx" target="_blank">Nagle 算法对小请求不友好</a>。你可以通过使用 **System.Net** 命名空间中的 **ServicePointManager** 类在代码中禁用 Nagle 算法。应在应用程序中调用表或队列服务之前执行此操作，因为这样做不会影响已打开的连接。下面的示例来自辅助角色中的 **Application_Start** 方法。
 
     var storageAccount = CloudStorageAccount.Parse(connStr);
     ServicePoint tableServicePoint = ServicePointManager.FindServicePoint(storageAccount.TableEndpoint);
@@ -413,7 +413,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 较高的 **AverageServerLatency** 值也可能是设计欠佳的表或查询的症状，它会导致扫描操作或执行追加/前面预置反模式。有关详细信息，请参阅“[度量值显示 PercentThrottlingError 增加]”。
 
-> [AZURE.NOTE] 你可以找到一份包括此处应注意的其他问题的全面的核对清单：[Microsoft Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist)。
+> [AZURE.NOTE] 你可以找到一份包括此处应注意的其他问题的全面的核对清单：[Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist)。
 
 ### <a name="you-are-experiencing-unexpected-delays-in-message-delivery"></a>队列上的消息传递出现意外的延迟
 
@@ -491,7 +491,7 @@ Microsoft.WindowsAzure.Storage|错误|1|85d077ab -…|重试策略不允许重�
 
 - 通常，当你创建 SAS 供客户端立即使用时，不应设置开始时间。如果使用当前时间生成 SAS 的主机与存储服务之间存在较小的时钟差异，则存储服务有可能收到尚未生效的 SAS。
 - 不应在 SAS 上设置太短的到期时间。同样，生成 SAS 的主机与存储服务之间的较小时钟差异可能会导致 SAS 似乎早于预期到期。
-- SAS 密钥中的版本参数（例如 **sv=2015-04-05**）是否与您正在使用的存储客户端库的版本匹配？ 我们建议你始终使用最新版的[存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)。有关 SAS 令牌版本控制及客户端库版本的依赖项的详细信息，请参阅 [Microsoft Azure 存储空间的新增功能](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/14/what-s-new-for-microsoft-azure-storage-at-teched-2014.aspx)。
+- SAS 密钥中的版本参数（例如 **sv=2015-04-05**）是否与您正在使用的存储客户端库的版本匹配？ 我们建议你始终使用最新版的[存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)。有关 SAS 令牌版本控制及客户端库版本的依赖项的详细信息，请参阅 [Azure 存储空间的新增功能](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/14/what-s-new-for-microsoft-azure-storage-at-teched-2014.aspx)。
 - 如果你重新生成存储访问密钥，则可能会使任何现有的 SAS 令牌无效。如果你生成的 SAS 令牌具有较长的到期时间供客户端应用程序缓存，这可能是个问题。
 
 如果你使用存储客户端库生成 SAS 令牌，则可轻松生成有效令牌。但是，如果您使用的是存储 REST API 并手动构造 SAS 令牌，则应仔细阅读 MSDN 上的主题<a href="http://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx" target="_blank">使用共享访问签名委托访问</a>。
@@ -750,7 +750,7 @@ Timestamp|操作|结果|容器名称|客户端请求 ID
 
 ## <a name="appendices"></a>附录
 
-附录介绍几种在诊断和排查 Azure 存储空间（及其他服务）问题时你可能会发现很有用的工具。这些工具不属于 Azure 存储空间，有些工具是第三方产品。因此，这些附录中介绍的工具可能在你与 Microsoft Azure 或 Azure 存储空间签订的任何支持协议中均未涉及，因此，你在评估过程中，应查看这些工具的提供者提供的许可和支持选项。
+附录介绍几种在诊断和排查 Azure 存储空间（及其他服务）问题时你可能会发现很有用的工具。这些工具不属于 Azure 存储空间，有些工具是第三方产品。因此，这些附录中介绍的工具可能在你与 Azure 或 Azure 存储空间签订的任何支持协议中均未涉及，因此，你在评估过程中，应查看这些工具的提供者提供的许可和支持选项。
 
 ### <a name="appendix-1"></a>附录 1：使用 Fiddler 捕获 HTTP 和 HTTPS 通信
 

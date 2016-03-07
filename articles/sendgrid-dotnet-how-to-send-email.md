@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何使用 SendGrid 电子邮件服务 (.NET) | Microsoft Azure" 
+	pageTitle="如何使用 SendGrid 电子邮件服务 (.NET) | Azure" 
 	description="了解如何在 Azure 上使用 SendGrid 电子邮件服务发送电子邮件。代码示例用 C# 编写且使用 .NET API。" 
 	services="app-service\web" 
 	documentationCenter=".net" 

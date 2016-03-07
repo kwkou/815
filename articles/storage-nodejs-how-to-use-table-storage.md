@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 Node.js 使用表存储 | Microsoft Azure" 
+	pageTitle="如何通过 Node.js 使用表存储 | Azure" 
 	description="了解如何使用 Azure 表存储。代码示例使用 Node.js API 编写。" 
 	services="storage" 
 	documentationCenter="nodejs" 

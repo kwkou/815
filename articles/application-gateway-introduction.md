@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="应用程序网关简介 | Microsoft Azure"
+   pageTitle="应用程序网关简介 | Azure"
    description="此页提供第 7 层负载平衡的应用程序网关服务概述，包括网关的大小、HTTP 负载平衡、基于 Cookie 的会话相关性和 SSL 卸载。"
    documentationCenter="na"
    services="application-gateway"
@@ -14,7 +14,7 @@
 # 什么是应用程序网关？
 
 
-Microsoft Azure 应用程序网关提供基于第 7 层负载平衡的 Azure 托管 HTTP 负载平衡解决方案。
+Azure 应用程序网关提供基于第 7 层负载平衡的 Azure 托管 HTTP 负载平衡解决方案。
 
 应用程序负载平衡使 IT 管理员和开发人员能够基于 HTTP 为网络流量创建路由规则。应用程序网关服务高度可用，并附带计量功能。有关 SLA 和定价，请参阅 [SLA](/support/legal/sla/) 和[定价](/home/features/application-gateway/#price/)页。
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SQL 数据库教程：通过“始终加密”保护敏感数据 | Microsoft Azure"
+	pageTitle="SQL 数据库教程：通过“始终加密”保护敏感数据 | Azure"
 	description="在数分钟内保护 SQL 数据库中的敏感数据。"
 	keywords="sql 数据库教程, 加密 sql 数据库中的数据"	
 	services="sql-database"

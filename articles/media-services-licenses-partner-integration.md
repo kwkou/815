@@ -16,7 +16,7 @@
 
 ##概述
 
-Microsoft Azure 媒体服务可让你传送使用 Widevine DRM 保护的 MPEG DASH，这些内容已根据通用加密 (CENC) 规范加密。
+Azure 媒体服务可让你传送使用 Widevine DRM 保护的 MPEG DASH，这些内容已根据通用加密 (CENC) 规范加密。
 
 >[AZURE.NOTE]目前，媒体服务不提供 Widevine 许可证服务器。你可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)
 

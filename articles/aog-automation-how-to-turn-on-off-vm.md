@@ -136,5 +136,5 @@ JOB执行结束后，可以看到我们的虚拟机已经成功启动了。
 - [变量（Variable）](https://technet.microsoft.com/zh-cn/library/dn919925.aspx)
 - [计划（Schedule）](https://technet.microsoft.com/zh-cn/library/dn919914.aspx)
 - [创作自动化 Runbook](https://technet.microsoft.com/zh-cn/library/dn469262.aspx)
-- [Getting Started with NEW Microsoft Azure Automation preview feature](http://blogs.technet.com/b/keithmayer/archive/2014/04/04/step-by-step-getting-started-with-windows-azure-automation.aspx)
+- [Getting Started with NEW Azure Automation preview feature](http://blogs.technet.com/b/keithmayer/archive/2014/04/04/step-by-step-getting-started-with-windows-azure-automation.aspx)
 - [面向 IT 专业人员的脚本资源](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=User&f%5B0%5D.Value=SC%20Automation%20Product%20Team&f%5B0%5D.Text=SC%20Automation%20Product%20Team&f%5B1%5D.Type=RootCategory&f%5B1%5D.Value=WindowsAzure&f%5B1%5D.Text=Windows%20Azure)

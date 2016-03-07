@@ -1,5 +1,5 @@
 <properties
- pageTitle="在 Linux VM 上运行 OpenFOAM 与 HPC Pack | Microsoft Azure"
+ pageTitle="在 Linux VM 上运行 OpenFOAM 与 HPC Pack | Azure"
  description="在 Azure 上部署 Microsoft HPC Pack 群集，并在多个 Linux 计算节点上跨 RDMA 网络运行 OpenFOAM 作业。"
  services="virtual-machines"
  documentationCenter=""
@@ -20,7 +20,7 @@
 
 OpenFOAM（Open Field Operation and Manipulation 的缩写）是免费提供的开源计算流体动力学 (CFD) 软件包，广泛用于商业和学术组织的工程和科学项目中。它包括各种网格工具，最主要的工具是 snappyHexMesh，这是一个并行处理式网格器，适用于复杂的 CAD 几何以及预处理和后处理。几乎所有进程都是并行运行的，因此用户可以根据自己的需要充分利用计算机硬件。
 
-Microsoft HPC Pack 可提供在 Microsoft Azure 虚拟机群集上运行各种大型 HPC 和并行应用程序的功能，包括 MPI 应用程序。从 Microsoft HPC Pack 2012 R2 Update 2 开始，HPC Pack 还支持在 HPC Pack 群集中部署的 Linux 计算节点 VM 上运行 Linux HPC 应用程序。有关将 Linux 计算节点与 HPC Pack 一起使用的简介，请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)。
+Microsoft HPC Pack 可提供在 Azure 虚拟机群集上运行各种大型 HPC 和并行应用程序的功能，包括 MPI 应用程序。从 Microsoft HPC Pack 2012 R2 Update 2 开始，HPC Pack 还支持在 HPC Pack 群集中部署的 Linux 计算节点 VM 上运行 Linux HPC 应用程序。有关将 Linux 计算节点与 HPC Pack 一起使用的简介，请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)。
 
 >[AZURE.NOTE]本文假设你已对 Linux 系统管理以及如何在 Linux HPC 群集上运行 MPI 工作负荷有所了解。
 

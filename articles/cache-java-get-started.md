@@ -14,7 +14,7 @@
 
 # 如何将 Azure Redis 缓存与 Java 配合使用
 
-Azure Redis 缓存可让你访问 WindowsAzure.cn 管理的、专用安全的 Redis 缓存。可从 Microsoft Azure 内部的任何应用程序访问你的缓存。
+Azure Redis 缓存可让你访问 WindowsAzure.cn 管理的、专用安全的 Redis 缓存。可从 Azure 内部的任何应用程序访问你的缓存。
 
 本主题说明如何开始将 Azure Redis 缓存与 Java 配合使用。
 
@@ -28,7 +28,7 @@ Azure Redis 缓存可让你访问 WindowsAzure.cn 管理的、专用安全的 Re
 
 ## 在 Azure 上创建 Redis 缓存
 
-Microsoft Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存进行管理。
+Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存进行管理。
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 

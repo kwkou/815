@@ -1,5 +1,5 @@
 <properties
-   pageTitle="资源组部署故障排除 | Microsoft Azure"
+   pageTitle="资源组部署故障排除 | Azure"
    description="描述部署使用资源管理器部署模型创建的资源时出现的常见问题，并说明如何检测和修复这些问题。"
    services="azure-resource-manager,virtual-machines"
    documentationCenter=""

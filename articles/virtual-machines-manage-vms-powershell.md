@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure PowerShell 管理虚拟机 | Microsoft Azure"
+   pageTitle="使用 Azure PowerShell 管理虚拟机 | Azure"
    description="了解可用于在虚拟机管理过程中自动执行任务的命令。"
    services="virtual-machines"
    documentationCenter="windows"

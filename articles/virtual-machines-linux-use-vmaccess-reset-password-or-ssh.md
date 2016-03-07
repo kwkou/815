@@ -21,7 +21,7 @@
 
 你将需要以下各项：
 
-- Microsoft Azure Linux 代理 2.0.5 版或更高版本。虚拟机库中的大多数 Linux 映像都包含版本 2.0.5。若要了解所安装的版本，请运行 **waagent -version**。若要更新代理，请按照 [Azure Linux 代理用户指南]中的说明操作。
+- Azure Linux 代理 2.0.5 版或更高版本。虚拟机库中的大多数 Linux 映像都包含版本 2.0.5。若要了解所安装的版本，请运行 **waagent -version**。若要更新代理，请按照 [Azure Linux 代理用户指南]中的说明操作。
 - Azure 命令行界面 (CLI)。有关设置 Azure CLI 的详细信息，请参阅[安装和配置 Azure 命令行界面](/documentation/articles/xplat-cli)。
 - Azure PowerShell。你将使用 Set-AzureVMExtension cmdlet 中的命令自动加载和配置 VMAccessForLinux 扩展。有关设置 Azure PowerShell 的详细信息，请参阅[如何安装和配置 Azure PowerShell]。
 - 一个新密码或一组新 SSH 密钥（如果想要重置任一项）。如果想要重置 SSH 配置，则不需要这些。

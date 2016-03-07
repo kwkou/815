@@ -1,5 +1,5 @@
 <properties
-   pageTitle="用于链接资源的资源管理器模板 | Microsoft Azure"
+   pageTitle="用于链接资源的资源管理器模板 | Azure"
    description="介绍用于通过模板在相关资源之间部署链接的资源管理器架构。"
    services="azure-resource-manager"
    documentationCenter="na"

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="缓存指南 | Microsoft Azure"
+   pageTitle="缓存指南 | Azure"
    description="有关配置缓存以提高性能和可缩放性的指南。"
    services=""
    documentationCenter="na"
@@ -775,7 +775,7 @@ subscriber.PublishAsync("messages:blogPosts", blogPost.Title);
 ## 更多信息
 
 - [MemoryCache 类](http://msdn.microsoft.com/zh-cn/library/system.runtime.caching.memorycache.aspx)。
-- [Microsoft Azure 缓存](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg278356.aspx)。
+- [Azure 缓存](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg278356.aspx)。
 - [哪种 Azure Cache 产品/服务适合我？](/documentation/articles/cache-faq/#which-azure-cache-offering-is-right-for-me)。
 - [配置模型](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh914149.aspx)。
 - [基于任务的异步模式](http://msdn.microsoft.com/zh-cn/library/hh873175.aspx)。

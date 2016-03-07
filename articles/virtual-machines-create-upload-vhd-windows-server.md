@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Powershell 创建和上载 Windows Server VHD | Microsoft Azure"
+	pageTitle="使用 Powershell 创建和上载 Windows Server VHD | Azure"
 	description="了解如何使用经典部署模型和 Azure Powershell 创建和上载基于 Windows Server 的虚拟硬盘 (VHD)。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -18,7 +18,7 @@
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
-本文介绍如何上载包含操作系统的虚拟硬盘 (VHD)，以便可以使用它作为映像来基于该映像创建虚拟机。有关 Microsoft Azure 中的磁盘和 VHD 的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-disks-vhds)。
+本文介绍如何上载包含操作系统的虚拟硬盘 (VHD)，以便可以使用它作为映像来基于该映像创建虚拟机。有关 Azure 中的磁盘和 VHD 的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-disks-vhds)。
 
 
 
@@ -28,11 +28,11 @@
 
 1. **Azure 订阅** - 如果你还没有，可以[建立一个 1 RMB 的 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用 1 RMB 的 Azure 服务（如 Web 应用）。你的信用卡不会付费，除非你显式更改设置并要求付费。<!--你还可以[激活 MSDN 订户权益](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)：MSDN 订阅每月为你提供可用来试用付费版 Azure 服务的信用额度。-->
 
-2. **Microsoft Azure PowerShell** - 已安装 Microsoft Azure PowerShell 模块并将其配置为使用你的订阅。若要下载该模块，请参阅 [Microsoft Azure 下载](/downloads/)。可在[此处](/documentation/articles/powershell-install-configure)获取安装和配置该模块的教程。可使用 [Add-AzureVHD](http://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx) cmdlet 上载 VHD。
+2. **Azure PowerShell** - 已安装 Azure PowerShell 模块并将其配置为使用你的订阅。若要下载该模块，请参阅 [Azure 下载](/downloads/)。可在[此处](/documentation/articles/powershell-install-configure)获取安装和配置该模块的教程。可使用 [Add-AzureVHD](http://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx) cmdlet 上载 VHD。
 
-3. **存储在 .vhd 文件中并附加到虚拟机的受支持的 Windows 操作系统** - 存在可创建 .vhd 文件的多种工具。例如，你可以使用 Hyper-V 创建虚拟机并安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。有关操作系统的详细信息，请参阅[对 Microsoft Azure 虚拟机支持的 Microsoft 服务器软件](http://go.microsoft.com/fwlink/p/?LinkId=393550)。
+3. **存储在 .vhd 文件中并附加到虚拟机的受支持的 Windows 操作系统** - 存在可创建 .vhd 文件的多种工具。例如，你可以使用 Hyper-V 创建虚拟机并安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。有关操作系统的详细信息，请参阅[对 Azure 虚拟机支持的 Microsoft 服务器软件](http://go.microsoft.com/fwlink/p/?LinkId=393550)。
 
-> [AZURE.IMPORTANT]Microsoft Azure 不支持 VHDX 格式。可使用 Hyper-V 管理器或 [Convert-VHD cmdlet](http://technet.microsoft.com/zh-cn/library/hh848454.aspx) 将磁盘转换为 VHD 格式。有关详细信息，请参阅此 [blogpost](http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/10/03/using-powershell-to-convert-a-vhd-to-a-vhdx.aspx)。
+> [AZURE.IMPORTANT]Azure 不支持 VHDX 格式。可使用 Hyper-V 管理器或 [Convert-VHD cmdlet](http://technet.microsoft.com/zh-cn/library/hh848454.aspx) 将磁盘转换为 VHD 格式。有关详细信息，请参阅此 [blogpost](http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/10/03/using-powershell-to-convert-a-vhd-to-a-vhdx.aspx)。
 
 ## 步骤 1：准备 VHD ##
 
@@ -108,11 +108,11 @@
 
 ## 步骤 3：从 Azure PowerShell 连接到你的订阅
 
-你首先需要在计算机和 Azure 中的订阅之间建立一个安全连接，然后才能上载 .vhd 文件。你可以使用 Microsoft Azure Active Directory 方法或证书方法来执行此操作。
+你首先需要在计算机和 Azure 中的订阅之间建立一个安全连接，然后才能上载 .vhd 文件。你可以使用 Azure Active Directory 方法或证书方法来执行此操作。
 
-> [AZURE.TIP]若要开始使用 Azure PowerShell，请参阅[如何安装和配置 Microsoft Azure PowerShell](/documentation/articles/powershell-install-configure)。有关常规信息，请参阅 [Microsoft Azure Cmdlet 入门](https://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)。
+> [AZURE.TIP]若要开始使用 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。有关常规信息，请参阅 [Azure Cmdlet 入门](https://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)。
 
-### 方法 1：使用 Microsoft Azure AD
+### 方法 1：使用 Azure AD
 
 1. 打开 Azure PowerShell 控制台。
 
@@ -129,7 +129,7 @@
 2.	键入：
 		`Get-AzurePublishSettingsFile -Environment AzureChinaCloud`。
 
-3. 此时将打开一个浏览器窗口，并提示你下载 .publishsettings 文件。它包含 Microsoft Azure 订阅的信息和证书。
+3. 此时将打开一个浏览器窗口，并提示你下载 .publishsettings 文件。它包含 Azure 订阅的信息和证书。
 
 	![浏览器下载页面](./media/virtual-machines-create-upload-vhd-windows-server/Browser_download_GetPublishSettingsFile.png)
 

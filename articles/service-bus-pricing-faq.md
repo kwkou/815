@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线定价常见问题 | Microsoft Azure"
+   pageTitle="服务总线定价常见问题 | Azure"
    description="回答了一些关于服务总线定价结构的常见问题。"
    services="service-bus"
    documentationCenter="na"
@@ -14,7 +14,7 @@
 
 # 服务总线定价常见问题
 
-本部分回答了一些关于服务总线定价结构的常见问题。你还可以访问 [Azure 支持常见问题](http://go.microsoft.com/fwlink/?LinkID=185083)了解一般的 Microsoft Azure 定价信息。有关服务总线定价的完整信息，请参阅[服务总线定价](/pricing/details/service-bus/)。
+本部分回答了一些关于服务总线定价结构的常见问题。你还可以访问 [Azure 支持常见问题](http://go.microsoft.com/fwlink/?LinkID=185083)了解一般的 Azure 定价信息。有关服务总线定价的完整信息，请参阅[服务总线定价](/pricing/details/service-bus/)。
 
 >[AZURE.NOTE] 有关事件中心的定价结构，请参阅[事件中心的可用性和支持常见问题](/pricing/details/service-bus/event-hubs-availability-and-support-faq)主题，有关其详细信息，请参阅[事件中心定价](/pricing/details/event-hubs/)主题。
 

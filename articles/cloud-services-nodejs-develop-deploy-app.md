@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Node.js 入门指南 | Microsoft Azure"
+	pageTitle="Node.js 入门指南 | Azure"
 	description="了解如何创建简单的 Node.js Web 应用程序并将其部署到 Azure 云服务。"
 	services="cloud-services"
 	documentationCenter="nodejs"

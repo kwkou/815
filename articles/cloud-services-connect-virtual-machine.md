@@ -1,5 +1,5 @@
 <properties
-	pageTitle="连接云服务中的虚拟机 | Microsoft Azure"
+	pageTitle="连接云服务中的虚拟机 | Azure"
 	description="将使用经典部署模型创建的虚拟机连接到 Azure 云服务或虚拟网络。"
 	services="virtual-machines"
 	documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure 资源管理器和 PowerShell 创建具有站点到站点 VPN 连接的虚拟网络 | Microsoft Azure"
+   pageTitle="使用 Azure 资源管理器和 PowerShell 创建具有站点到站点 VPN 连接的虚拟网络 | Azure"
    description="本文将指导你完成使用资源管理器模型创建 VNet 并使用 S2S VPN 网关连接将其连接到你的本地网络。站点到站点连接可以用于混合配置。包括用于修改现有本地站点 IP 地址前缀的其他步骤。"
    services="vpn-gateway"
    documentationCenter="na"

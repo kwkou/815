@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将移动服务添加到现有的通用 Windows 应用商店应用 | Microsoft Azure" 
+	pageTitle="将移动服务添加到现有的通用 Windows 应用商店应用 | Azure" 
 	description="了解如何开始使用移动服务来利用 Windows 应用商店应用程序中的数据。" 
 	services="mobile-services" 
 	documentationCenter="windows" 

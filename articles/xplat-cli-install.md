@@ -1,5 +1,5 @@
 <properties
-	pageTitle="安装 Azure 命令行界面 | Microsoft Azure"
+	pageTitle="安装 Azure 命令行界面 | Azure"
 	description="安装适用于 Mac、Linux 和 Windows 的 Azure CLI 即可使用 Azure 服务"
 	editor=""
 	manager="timlt"
@@ -15,7 +15,7 @@
 
 # 安装 Azure CLI
 
-快速安装 Azure 命令行界面 (Azure CLI)，以便使用一组基于 shell 的开源命令在 Microsoft Azure 中创建和管理资源。使用提供的安装程序包之一在操作系统上安装 Azure CLI，安装使用 Node.js 和 **npm** 的 CLI，或者安装 Azure CLI 作为 Docker 主机中的容器。有关更多选项和背景信息，请参阅 [GitHub](https://github.com/azure/azure-xplat-cli) 上的项目存储库。
+快速安装 Azure 命令行界面 (Azure CLI)，以便使用一组基于 shell 的开源命令在 Azure 中创建和管理资源。使用提供的安装程序包之一在操作系统上安装 Azure CLI，安装使用 Node.js 和 **npm** 的 CLI，或者安装 Azure CLI 作为 Docker 主机中的容器。有关更多选项和背景信息，请参阅 [GitHub](https://github.com/azure/azure-xplat-cli) 上的项目存储库。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 

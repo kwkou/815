@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure Active Directory 中设置密码过期策略 | Microsoft Azure"
+	pageTitle="在 Azure Active Directory 中设置密码过期策略 | Azure"
 	description="了解如何检查 Azure Active Directory 密码的过期策略，以及如何逐个或批量更改用户密码过期策略"
 	services="active-directory"
 	documentationCenter=""
@@ -14,9 +14,9 @@
 
 
 # 在 Azure Active Directory 中设置密码过期策略
-> [AZURE.NOTE]本主题为依赖于 Microsoft Azure Active Directory 提供标识和目录服务的云服务（如 Microsoft Intune 和 Office 365）提供联机帮助内容。
+> [AZURE.NOTE]本主题为依赖于 Azure Active Directory 提供标识和目录服务的云服务（如 Microsoft Intune 和 Office 365）提供联机帮助内容。
 
-作为 Microsoft 云服务的全局管理员，你可以使用适用于 Windows PowerShell 的 Microsoft Azure Active Directory 模块将用户密码设置为永不过期。你还可以使用 Windows PowerShell cmdlet 删除永不过期配置，或者查看已将哪些用户密码设置为永不过期。
+作为 Microsoft 云服务的全局管理员，你可以使用适用于 Windows PowerShell 的 Azure Active Directory 模块将用户密码设置为永不过期。你还可以使用 Windows PowerShell cmdlet 删除永不过期配置，或者查看已将哪些用户密码设置为永不过期。
 
   >[AZURE.NOTE]只能将未通过目录同步进行同步的用户帐户的密码配置为永不过期。有关目录同步的详细信息，请参阅[目录同步路线图](https://msdn.microsoft.com/library/azure/hh967642.aspx)中的主题列表。
 
