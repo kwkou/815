@@ -469,9 +469,7 @@ ServerName : myserver.microsoft.com
 ItemSize :
 ItemLastModifiedTime :
 ```
-
 对象 ```$rps``` 是备份点数组。第一个元素是最新备份点，第 N 个元素是最旧的备份点。为了选择最新的点，我们将使用 ```$rps[0]```。
-
 
 ### 选择要还原的项
 为了识别要还原的确切文件或文件夹，请以递归方式使用 [Get-OBRecoverableItem](https://technet.microsoft.com/zh-cn/library/hh770399.aspx) cmdlet。这样，只需使用 ```Get-OBRecoverableItem``` 便可浏览文件夹层次结构。
