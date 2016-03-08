@@ -573,40 +573,36 @@ pool.Commit();
 在这个使用 [Batch .NET][net_api] 库的代码段中，我们先对公式进行评估，然后将其应用到 [CloudPool][net_cloudpool]。
 
 ```
-// First obtain a reference to the existing pool
-CloudPool pool = myBatchClient.PoolOperations.GetPool("mypool");
-
-// We must ensure that autoscaling is enabled on the pool prior to evaluating a formula
-if (pool.AutoScaleEnabled.HasValue && pool.AutoScaleEnabled.Value)
-{
-	// The formula to evaluate - adjusts target number of nodes based on day of week and time of day
-	string myFormula = @"
-		$CurTime=time();
-		$WorkHours=$CurTime.hour>=8 && $CurTime.hour<18;
-		$IsWeekday=$CurTime.weekday>=1 && $CurTime.weekday<=5;
-		$IsWorkingWeekdayHour=$WorkHours && $IsWeekday;
-		$TargetDedicated=$IsWorkingWeekdayHour?20:10;
-	";
-
-	// Perform the autoscale formula evaluation. Note that this does not actually apply the formula to
-	// the pool.
-	AutoScaleEvaluation eval = client.PoolOperations.EvaluateAutoScale(pool.Id, myFormula);
-
-	if (eval.AutoScaleRun.Error == null)
-	{
-		// Evaluation success - print the results of the AutoScaleRun. This will display the values of each
-		// variable as evaluated by the the autoscaling formula.
-		Console.WriteLine("AutoScaleRun.Results: " + eval.AutoScaleRun.Results);
-
-		// Apply the formula to the pool since it evaluated successfully
-		client.PoolOperations.EnableAutoScale(pool.Id, myFormula);
-	}
-	else
-	{
-		// Evaluation failed, output the message associated with the error
-		Console.WriteLine("AutoScaleRun.Error.Message: " + eval.AutoScaleRun.Error.Message);
-	}
-}
+		// First obtain a reference to the existing pool
+		CloudPool pool = myBatchClient.PoolOperations.GetPool("mypool");
+		// We must ensure that autoscaling is enabled on the pool prior to evaluating a formula
+		if (pool.AutoScaleEnabled.HasValue && pool.AutoScaleEnabled.Value)
+		{
+			// The formula to evaluate - adjusts target number of nodes based on day of week and time of day
+			string myFormula = @"
+				$CurTime=time();
+				$WorkHours=$CurTime.hour>=8 && $CurTime.hour<18;
+				$IsWeekday=$CurTime.weekday>=1 && $CurTime.weekday<=5;
+				$IsWorkingWeekdayHour=$WorkHours && $IsWeekday;
+				$TargetDedicated=$IsWorkingWeekdayHour?20:10;
+			";
+			// Perform the autoscale formula evaluation. Note that this does not actually apply the formula to
+			// the pool.
+			AutoScaleEvaluation eval = client.PoolOperations.EvaluateAutoScale(pool.Id, myFormula);
+			if (eval.AutoScaleRun.Error == null)
+			{
+				// Evaluation success - print the results of the AutoScaleRun. This will display the values of each
+				// variable as evaluated by the the autoscaling formula.
+				Console.WriteLine("AutoScaleRun.Results: " + eval.AutoScaleRun.Results);
+				// Apply the formula to the pool since it evaluated successfully
+				client.PoolOperations.EnableAutoScale(pool.Id, myFormula);
+			}
+			else
+			{
+				// Evaluation failed, output the message associated with the error
+				Console.WriteLine("AutoScaleRun.Error.Message: " + eval.AutoScaleRun.Error.Message);
+			}
+		}
 ```
 
 成功对此代码段中的公式进行评估以后，将生成如下所示的输出：
@@ -686,13 +682,11 @@ $NodeDeallocationOption = taskcompletion;
 ```
 string now = DateTime.UtcNow.ToString("r");
 string formula = string.Format(@"
-
 	$TargetDedicated = {1};
 	lifespan         = time() - time(""{0}"");
 	span             = TimeInterval_Minute * 60;
 	startup          = TimeInterval_Minute * 10;
 	ratio            = 50;
-
 	$TargetDedicated = (lifespan > startup ? (max($RunningTasks.GetSample(span, ratio), $ActiveTasks.GetSample(span, ratio)) == 0 ? 0 : $TargetDedicated) : {1});
 	", now, 4);
 ```

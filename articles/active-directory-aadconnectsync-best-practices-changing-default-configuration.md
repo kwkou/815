@@ -7,10 +7,10 @@
 	manager="stevenpo"
 	editor=""/>
 
-<tags   
+<tags 
 	ms.service="active-directory"
 	ms.date="12/28/2015"
-	wacn.date="0/25/2016"/>
+	wacn.date="02/25/2016"/>
 
 
 # Azure AD Connect 同步：有关更改默认配置的最佳实践
