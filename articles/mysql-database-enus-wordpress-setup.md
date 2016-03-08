@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="" pageTitle="Use MySQL Database on Azure to configure WordPress websites – Microsoft Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, Wordpress, website configuration, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="WordPress is a very widely used CMS. This article explains how to use MySQL Database on Azure and Azure Web Apps to install and configure WordPress." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor=""/>
+<properties linkid="" urlDisplayName="" pageTitle="Use MySQL Database on Azure to configure WordPress websites – Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, Wordpress, website configuration, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="WordPress is a very widely used CMS. This article explains how to use MySQL Database on Azure and Azure Web Apps to install and configure WordPress." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor=""/>
 
 <tags ms.service="mysql" ms.date="" wacn.date="12/28/2015"/>
 
@@ -15,7 +15,7 @@ Download the latest version of the installation package to your local storage di
 
 ## Step 2: Create a MySQL Database on the Azure server  
 
-Use the [Microsoft Azure portal](https://manage.windowsazure.cn) to create your MySQL server.
+Use the [Azure portal](https://manage.windowsazure.cn) to create your MySQL server.
 
 ![Creating MySQL Servers][1]
 

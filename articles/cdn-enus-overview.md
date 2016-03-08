@@ -1,20 +1,20 @@
-<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Overview of Microsoft Azure Content Delivery Network in China: Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN, CDN acceleration, CDN service, mainstream CDN, multi-scenario acceleration, free CDN, CDN website acceleration, website acceleration, webpage acceleration, static acceleration, download acceleration, VOD acceleration, streaming media webcast acceleration, cloud service,  storage account, cache refresh, return to origin, cloud acceleration, acceleration results, node, traffic, CNAME, bandwidth, network speed, anti-theft chain, https acceleration, low-cost bandwidth, access acceleration, small file acceleration, download acceleration, large file acceleration, streaming media acceleration, HTTPS secure acceleration, cache refresh, content pre-loading, anti-theft chain, log download, CDN technical documentation, CDN help files, CDN FAQs" description="Get an overview of Microsoft Azure Content Delivery Network and its advantages, typical scenarios and key features." metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Overview of Azure Content Delivery Network in China: Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN, CDN acceleration, CDN service, mainstream CDN, multi-scenario acceleration, free CDN, CDN website acceleration, website acceleration, webpage acceleration, static acceleration, download acceleration, VOD acceleration, streaming media webcast acceleration, cloud service,  storage account, cache refresh, return to origin, cloud acceleration, acceleration results, node, traffic, CNAME, bandwidth, network speed, anti-theft chain, https acceleration, low-cost bandwidth, access acceleration, small file acceleration, download acceleration, large file acceleration, streaming media acceleration, HTTPS secure acceleration, cache refresh, content pre-loading, anti-theft chain, log download, CDN technical documentation, CDN help files, CDN FAQs" description="Get an overview of Azure Content Delivery Network and its advantages, typical scenarios and key features." metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date=""
     wacn.date="2/23/2016"
     />
 
-# Overview of Microsoft Azure Content Delivery Network
+# Overview of Azure Content Delivery Network
 
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/cdn-overview)
 - [English Version](/documentation/articles/cdn-enus-overview)
 
-The Microsoft Azure Content Delivery Network caches static content in storage blobs, cloud services, and websites on the Azure platform by using large numbers of physical nodes distributed across Mainland China. This provides media services with acceleration for streaming content delivery and offers developers solutions for delivering high-bandwidth content. This service also currently supports the use of origins that have not been deployed on the Azure platform.
+The Azure Content Delivery Network caches static content in storage blobs, cloud services, and websites on the Azure platform by using large numbers of physical nodes distributed across Mainland China. This provides media services with acceleration for streaming content delivery and offers developers solutions for delivering high-bandwidth content. This service also currently supports the use of origins that have not been deployed on the Azure platform.
 
-For more details and pricing for Content Delivery Network, see [Introduction to the Microsoft Azure Content Delivery Network service](/home/features/cdn/).
+For more details and pricing for Content Delivery Network, see [Introduction to the Azure Content Delivery Network service](/home/features/cdn/).
 
-If you are an existing user of the CDN, visit the [Microsoft Azure Content Delivery Network management portal](https://manage.windowsazure.cn) to manage your CDN domains. See [Using Microsoft Azure Content Delivery Network](/documentation/articles/cdn-enus-how-to-use/) for a more specific user guide.
+If you are an existing user of the CDN, visit the [Azure Content Delivery Network management portal](https://manage.windowsazure.cn) to manage your CDN domains. See [Using Azure Content Delivery Network](/documentation/articles/cdn-enus-how-to-use/) for a more specific user guide.
 
 + [What is a Content Delivery Network?](#step1)
 + [Advantages of Content Delivery Network](#step2)
@@ -34,9 +34,9 @@ However, this problem can be solved by placing CDN nodes in China. The nodes aut
 
 ## Advantages<a id="step2"></a>
 
-### Built-in Microsoft Azure services
+### Built-in Azure services
 
-Azure CDN supports a number of different Microsoft Azure services, including storage blobs, cloud services, websites, and media services, providing the user with comprehensive, one-stop cloud service support.
+Azure CDN supports a number of different Azure services, including storage blobs, cloud services, websites, and media services, providing the user with comprehensive, one-stop cloud service support.
 
 ![][2]
 

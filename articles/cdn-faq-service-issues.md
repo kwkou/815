@@ -1,4 +1,4 @@
-<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Microsoft Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, 不能缓存, 不能CNAME, 回源比例大, 缓存刷新失败, CDN FAQ, CDN常见问题, CDN使用故障, CDN服务故障, CDN配置错误, 速度慢, 网站打不开, 登录异常, CNAME, CDN技术文档, CDN帮助文档" description="Find answers to common service consulting or inquiries related to Microsoft Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, 不能缓存, 不能CNAME, 回源比例大, 缓存刷新失败, CDN FAQ, CDN常见问题, CDN使用故障, CDN服务故障, CDN配置错误, 速度慢, 网站打不开, 登录异常, CNAME, CDN技术文档, CDN帮助文档" description="Find answers to common service consulting or inquiries related to Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
     wacn.date="2/23/2016"
@@ -94,7 +94,7 @@ URL不能被缓存，通常有以下几个原因： 
 
 ## **为什么没有CNAME到Azure CDN却消耗CDN流量**<a id="step9"></a>
 
-有可能，因为只要加速域名的服务状态是开启的，即便没有CNAME到Microsoft Azure CDN， 我们的探测设备都会通过监控url探测原站和加速情况，这个也是为什么我们建议您选择监控url尽可能选择小一些的文件，如果您不想未CNAME的加速域名消耗流量可以将服务切换至关闭状态。
+有可能，因为只要加速域名的服务状态是开启的，即便没有CNAME到Azure CDN， 我们的探测设备都会通过监控url探测原站和加速情况，这个也是为什么我们建议您选择监控url尽可能选择小一些的文件，如果您不想未CNAME的加速域名消耗流量可以将服务切换至关闭状态。
 
 [1]: ./media/cdn-doc/032.png
 [2]: ./media/cdn-doc/033.png

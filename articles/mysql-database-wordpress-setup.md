@@ -15,7 +15,7 @@ WordPress是一种使用非常广泛的CMS系统。本文介绍如何使用 MySQ
 
 ## 步骤 2：新建MySQL 数据库 on Azure的服务器  
 
-您可以通过[Microsoft Azure管理门户](https://manage.windowsazure.cn)创建您的MySQL服务器。  
+您可以通过[Azure管理门户](https://manage.windowsazure.cn)创建您的MySQL服务器。  
 
 ![创建MySQL服务器][1]
 

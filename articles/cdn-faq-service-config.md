@@ -1,4 +1,4 @@
-<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Microsoft Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN常见问题, CDN加速, CDN服务, 配置CNAME, CNAME, CNAME记录, 缓存刷新, 缓存规则, CDN边缘节点, CDN技术文档, CDN帮助文档" description="Find answers to service configuration related to Microsoft Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN常见问题, CDN加速, CDN服务, 配置CNAME, CNAME, CNAME记录, 缓存刷新, 缓存规则, CDN边缘节点, CDN技术文档, CDN帮助文档" description="Find answers to service configuration related to Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
     wacn.date="2/23/2016"
@@ -29,7 +29,7 @@
 
 - 设置缓存规则，针对不同的内容设置不同的缓存刷新规则，对更新频繁的内容，可以设置较短的缓存时间； 对于不经常更新的内容，可以设置较长的缓存时间，从而减小源站压力。
       
-- 若设置的缓存刷新周期未到，但是有新内容发布或者删除部分内容，可以使用Microsoft Azure CDN管理平台提供的缓存刷新功能，进行手动强行刷新。
+- 若设置的缓存刷新周期未到，但是有新内容发布或者删除部分内容，可以使用Azure CDN管理平台提供的缓存刷新功能，进行手动强行刷新。
 
 >**注意**
 >如果只更新某个文件，建议使用文件刷新对更新的文件进行刷新。目录刷新会针对目录下所有文件进行刷新，生效时间比较慢。
@@ -42,7 +42,7 @@
 
 ## **如何更改源站地址？**<a id="step4"></a>
 
-首先要确保新的源站能正常服务，然后在Microsoft Azure CDN高级管理平台—域名管理中将原站地址变更为新的地址，保存即可。
+首先要确保新的源站能正常服务，然后在Azure CDN高级管理平台—域名管理中将原站地址变更为新的地址，保存即可。
 
 >**注意**
 >源站真实IP有变更的话，尽可能等配置都生效以后，再撤掉旧的IP。
@@ -84,7 +84,7 @@ access_log /var/log/nginx/access.log logCDN;
 >Windows下，hosts文件的路径为 C:\Windows\System32\drivers\etc\hosts。     
 >Linux、BSD等UNIX类操作系统下该文件路径为 /etc/hosts。修改该文件需要管理员权限。
 >**注意**
->对于Microsoft Azure Blob 和 Cloud Service，直接访问域名会得到404。此时可以通过访问一个有效URI来排查。
+>对于Azure Blob 和 Cloud Service，直接访问域名会得到404。此时可以通过访问一个有效URI来排查。
 
 
 
