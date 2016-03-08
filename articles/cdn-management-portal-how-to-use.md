@@ -1,18 +1,18 @@
-<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to useMicrosoft Azure CDN Management Portal advanced features - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, 缓存刷新, 内容预取, 日志下载, 缓存规则, CDN 助文档, CDN技术文档, CDN" description="Learn how to use advanced features of Microsoft Azure CDN management portal to manage CDN endpoint" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to useAzure CDN Management Portal advanced features - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, 缓存刷新, 内容预取, 日志下载, 缓存规则, CDN 助文档, CDN技术文档, CDN" description="Learn how to use advanced features of Azure CDN management portal to manage CDN endpoint" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
     wacn.date="2/23/2016"
     />
 
-# Microsoft Azure CDN 管理门户使用指南
+# Azure CDN 管理门户使用指南
 
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/cdn-management-portal-how-to-use)
 - [English Version](/documentation/articles/cdn-enus-management-portal-how-to-use)
 
-Microsoft Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物理节点上缓存Azure平台上的Storage Blob，Cloud Service和WebSites的静态内容，为开发人员提供一个传送高带宽内容的解决方案。目前本CDN服务也同时支持没有部署在Azure平台上的源站。
+Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物理节点上缓存Azure平台上的Storage Blob，Cloud Service和WebSites的静态内容，为开发人员提供一个传送高带宽内容的解决方案。目前本CDN服务也同时支持没有部署在Azure平台上的源站。
 
-有关 Microsoft Azure CDN 的详细信息和价格，请参阅 [Microsoft Azure CDN服务介绍](/home/features/cdn/)。
+有关 Azure CDN 的详细信息和价格，请参阅 [Azure CDN服务介绍](/home/features/cdn/)。
 
 + [概览](#step1)
 + [域名管理](#step2)
@@ -23,7 +23,7 @@ Microsoft Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物
 + [日志下载](#step7)
 + [服务检查](#step8)
 
-## **Microsoft Azure CDN管理页面概览**<a id="step1"></a>
+## **Azure CDN管理页面概览**<a id="step1"></a>
 
 本页面显示了您的CDN订阅账号的基本信息。
 
@@ -61,7 +61,7 @@ Microsoft Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物
 #### **域名列表视图包括：**
 
 -   加速域名，用于访问CDN缓存内容的域名，该域名必须有相应的ICP备案信息。
--   CDN 域名，由Microsoft Azure CDN平台提供，都是以 **.mschcdn.com**结尾。
+-   CDN 域名，由Azure CDN平台提供，都是以 **.mschcdn.com**结尾。
 -   源站地址，CDN所缓存内容的原始位置。
 -   加速类型 （目前支持“网站加速”，“下载加速”，“HTTP点播加速”和“流媒体直播加速”）
 -   状态，开启或者关闭（包括ICP审核，需要CNAME配置，禁用等非**开启**状态）

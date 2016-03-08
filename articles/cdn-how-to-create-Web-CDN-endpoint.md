@@ -1,4 +1,4 @@
-<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to create Web acceleration type CDN - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN加速, CDN服务, 主流CDN, Web加速, Web, 网页加速, 静态加速, 缓存规则, 图片加速, CDN技术文档, CDN帮助文档, 门户网站加速" description="Learn How to create Web acceleration type CDN on Microsoft Azure Management Portal and default caching rules for Web CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to create Web acceleration type CDN - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN加速, CDN服务, 主流CDN, Web加速, Web, 网页加速, 静态加速, 缓存规则, 图片加速, CDN技术文档, CDN帮助文档, 门户网站加速" description="Learn How to create Web acceleration type CDN on Azure Management Portal and default caching rules for Web CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
     wacn.date="2/23/2016"
@@ -10,14 +10,14 @@
 - [中文版 ](/documentation/articles/cdn-how-to-create-Web-CDN-endpoint)
 - [English Version](/documentation/articles/cdn-enus-how-to-create-Web-CDN-endpoint)
 
-WEB加速服务是最基本也是应用最广泛的CDN加速服务，主要针对html文件，CSS，图片，JS，flash动画等更新频率低的小文件加速。通过将这些小文件缓存到Microsoft Azure CDN的边缘节点，减少源站的访问压力，同时满足用户就近访问网站的需求，提高网站的访问体验，进而带动网站的用户访问量。
+WEB加速服务是最基本也是应用最广泛的CDN加速服务，主要针对html文件，CSS，图片，JS，flash动画等更新频率低的小文件加速。通过将这些小文件缓存到Azure CDN的边缘节点，减少源站的访问压力，同时满足用户就近访问网站的需求，提高网站的访问体验，进而带动网站的用户访问量。
 
 Web加速CDN节点适用于面向访问量较大的大中小企业门户类网站。如政府机构网站，企业门户网站等。
 
-本文是针对Web类型加速域名创建，请参考[使用Microsoft Azure CDN](/documentation/articles/cdn-how-to-use/)了解基本的Microsoft Azure CDN加速节点创建信息。
+本文是针对Web类型加速域名创建，请参考[使用Azure CDN](/documentation/articles/cdn-how-to-use/)了解基本的Azure CDN加速节点创建信息。
 
 ###**Web加速默认缓存规则**
-Microsoft Azure CDN针对Web加速设置了默认缓存规则（见下文）。您也可以根据需求自定义设置缓存规则，具体请参考Microsoft Azure CDN管理门户高级管理的帮助文档“域名管理”。如果源站内容更改或者更新，同时设置的缓存生存时间未到期，可以通过手动刷新CDN缓存文件实时同步源站更新的内容，具体请参考Microsoft Azure CDN管理门户高级管理的帮助文档“缓存刷新”。
+Azure CDN针对Web加速设置了默认缓存规则（见下文）。您也可以根据需求自定义设置缓存规则，具体请参考Azure CDN管理门户高级管理的帮助文档“域名管理”。如果源站内容更改或者更新，同时设置的缓存生存时间未到期，可以通过手动刷新CDN缓存文件实时同步源站更新的内容，具体请参考Azure CDN管理门户高级管理的帮助文档“缓存刷新”。
 
 **Web加速系统默认缓存规则**
 
@@ -27,7 +27,7 @@ Microsoft Azure CDN针对Web加速设置了默认缓存规则（见下文）。�
 
 ###**创建Web加速域名**
 
-1. 在 Microsoft Azure 管理门户的导航窗格中，单击“CDN”。
+1. 在 Azure 管理门户的导航窗格中，单击“CDN”。
 2. 在功能区上，单击“新建”。在“新建”对话框上，依次选择“应用服务”、“CDN”和“快速创建”。
 
     ![001](./media/cdn-doc/001.png)
@@ -64,4 +64,4 @@ Microsoft Azure CDN针对Web加速设置了默认缓存规则（见下文）。�
 
    ![004](./media/cdn-doc/004.png)
 
->**注意** 为终结点创建的配置将不能立即可用，需要审核所提供的ICP自定义域名和ICP编号是否匹配，详情请参考[使用Microsoft Azure CDN](/documentation/articles/cdn-how-to-use/)中步骤2：创建新的CDN终结点的后半部分。
+>**注意** 为终结点创建的配置将不能立即可用，需要审核所提供的ICP自定义域名和ICP编号是否匹配，详情请参考[使用Azure CDN](/documentation/articles/cdn-how-to-use/)中步骤2：创建新的CDN终结点的后半部分。

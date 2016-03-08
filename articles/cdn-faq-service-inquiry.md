@@ -1,4 +1,4 @@
-<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Microsoft Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN常见问题, 回源流量, ICP备案号, CDN默认缓存规则, 回源域名, 订阅, CNAME, 下载加速, Web加速, 网站加速, 流媒体直播加速, VOD加速, 视频点播加速, CDN价格, CDN收费, 技术文档, 帮助文档" description="Find answers to common service consulting or inquiries related to Microsoft Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN常见问题, 回源流量, ICP备案号, CDN默认缓存规则, 回源域名, 订阅, CNAME, 下载加速, Web加速, 网站加速, 流媒体直播加速, VOD加速, 视频点播加速, CDN价格, CDN收费, 技术文档, 帮助文档" description="Find answers to common service consulting or inquiries related to Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
     wacn.date="2/23/2016"
@@ -18,9 +18,9 @@
 + [二级域名需要备案吗？](#step8)
 + [备案号失效后，CDN服务还可以用多久？](#step26)
 + [如果域名有跳转是否可以使用CDN？](#step9)
-+ [Microsoft Azure CDN支持哪些类型的加速？](#step11)
++ [Azure CDN支持哪些类型的加速？](#step11)
 + [CDN加速类型中的“WEB加速”、“下载加速”、“VOD加速”、“流媒体直播加速”、“HTTPS加速”具体有什么区别？](#step12)
-+ [Microsoft Azure CDN默认的缓存规则是什么？](#step13)
++ [Azure CDN默认的缓存规则是什么？](#step13)
 + [CDN节点上的文件最大缓存时长是多少？](#step23)
 + [CDN节点的缓存规则同步时间和缓存文件同步时间是多久？](#step24)
 + [如何让新提交的URL起到提前缓存的效果？](#step27)
@@ -82,9 +82,9 @@ CNAME(Canonical Name record)，通常是别名指向。例如，假设用户自�
 
 可以，不过建议给跳转后的域名加速，跳转前的域名加速没有必要。
    
-## **Microsoft Azure CDN支持哪些类型的加速？**<a id="step11"></a>
+## **Azure CDN支持哪些类型的加速？**<a id="step11"></a>
   
-Microsoft Azure CDN支持的加速类型包括：Web加速，下载加速，VOD加速，流媒体直播加速和HTTPS加速。
+Azure CDN支持的加速类型包括：Web加速，下载加速，VOD加速，流媒体直播加速和HTTPS加速。
 
 现阶段提供的CDN主要是静态加速，包含一部分动态加速技术。比如：通过多线路节点回源，TCP优化等。不支持对PHP，ASP.NET，JSP等动态网页的加速，后续会逐步增加更多对动态页面的加速。
 	
@@ -104,7 +104,7 @@ Microsoft Azure CDN支持的加速类型包括：Web加速，下载加速，VOD�
 
 对应到后端CDN的不同之处主要在于，不同的加速类型由不同的CDN节点设备来支撑，您无需做额外配置。
 
-## **Microsoft Azure CDN默认的缓存规则是什么？**<a id="step13"></a>  
+## **Azure CDN默认的缓存规则是什么？**<a id="step13"></a>  
 
 - **Web加速类型，系统默认的缓存规则：**
   1. 对php、aspx、asp、 jsp、 do、 dwr、cgi、 fcgi、action、ashx、axd、json等动态文件不缓存
@@ -141,7 +141,7 @@ CDN节点上的文件最大缓存时长，是根据用户的缓存规则设置�
 
 ## **如何让新提交的URL起到提前缓存的效果？**<a id="step27"></a>
 
-CDN不会去主动缓存文件，有用户请求那么节点才会去缓存，如果有些节点一直没有用户去请求的话，那么该部分节点是一直没有缓存的。如果想让新提交的URL起到提前缓存的效果，建议使用Microsoft Azure CDN管理界面的“内容预取”功能。
+CDN不会去主动缓存文件，有用户请求那么节点才会去缓存，如果有些节点一直没有用户去请求的话，那么该部分节点是一直没有缓存的。如果想让新提交的URL起到提前缓存的效果，建议使用Azure CDN管理界面的“内容预取”功能。
 
 ## **可以给泛域名配置缓存规则吗？**<a id="step14"></a>
 
@@ -176,7 +176,7 @@ CDN（内容分发网络）说白了就是一组网络内容缓存节点，和�
 
 ## **是否支持HTTP标头gzip功能？**<a id="step25"></a>
 
-Microsoft Azure CDN支持HTTP标头的gzip功能，需要客户提交工单开通该功能。提交工单时请提供加速域名，源站域名，以及需要加速的文件类型。
+Azure CDN支持HTTP标头的gzip功能，需要客户提交工单开通该功能。提交工单时请提供加速域名，源站域名，以及需要加速的文件类型。
 
 ## **如果有多个订阅，如何在不同的订阅间切换？**<a id="step21"></a>
    
@@ -190,4 +190,4 @@ Microsoft Azure CDN支持HTTP标头的gzip功能，需要客户提交工单开�
     
 ##**一个账户内是否对本账户添加的加速域名个数有限制？**<a id="step10"></a>
 
-Microsoft Azure CDN对每个账户的加速域名个数没有做限制。
+Azure CDN对每个账户的加速域名个数没有做限制。

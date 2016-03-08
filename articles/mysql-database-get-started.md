@@ -36,7 +36,7 @@
 
 ![配置MySQL服务器](./media/mysql-database-get-started/config-mysql-server.png) 
 
-默认您在Azure上的其他服务（包括在Azure上的VM）允许访问您的MySQL数据库，您无需再手动添加IP地址。您也可以更改此默认功能，在“允许的服务”中，“Microsoft Azure 服务”一项选择“否”
+默认您在Azure上的其他服务（包括在Azure上的VM）允许访问您的MySQL数据库，您无需再手动添加IP地址。您也可以更改此默认功能，在“允许的服务”中，“Azure 服务”一项选择“否”
 
 ##<a id="step3"></a>步骤三：设置备份时间
 MySQL 数据库 on Azure支持两种备份形式：按需备份和每日定时备份。您可以选中您的MySQL服务器，点击“配置”进行每日备份时间的设置。您可以通过下拉菜单选择自动备份时间。

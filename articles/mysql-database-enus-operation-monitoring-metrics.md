@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="" pageTitle="Monitoring MySQL Database on Azure databases – Microsoft Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, monitoring, performance metrics, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL Database on Azure provides users with the ability to monitor key performance metrics, which you can check on the dashboard in the Microsoft Azure management portal." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="Monitoring MySQL Database on Azure databases – Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, monitoring, performance metrics, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL Database on Azure provides users with the ability to monitor key performance metrics, which you can check on the dashboard in the Azure management portal." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="12/28/2015"/>
 
@@ -7,7 +7,7 @@
 - [Chinese Version](/documentation/articles/mysql-database-operation-monitoring-metrics)
 - [English Version](/documentation/articles/mysql-database-enus-operation-monitoring-metrics)
 
-that use the Microsoft Azure portal -> MySQL Database on Azure. Select the required performance metrics from the list, and click “Dashboard” to implement real-time monitoring and control.
+that use the Azure portal -> MySQL Database on Azure. Select the required performance metrics from the list, and click “Dashboard” to implement real-time monitoring and control.
 
 <table border="1" cellspacing="0" cellpadding="0">
   <tr>
