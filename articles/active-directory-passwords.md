@@ -15,13 +15,13 @@
 # 从任意位置管理密码
 # 用户和管理员的 Azure AD 密码重置
 
-  >[AZURE.IMPORTANT]你是因为想要重置 Azure 或 O365 密码而来到这里吗？ 如果是这样，请[跳到此部分](/documentation/articles/#users-how-to-manage-your-own-password)。
+  >[AZURE.IMPORTANT]你是因为想要重置 Azure 或 O365 密码而来到这里吗？ 如果是这样，请[跳到此部分](#users-how-to-manage-your-own-password)。
   
 利用自助服务降低成本和节省人力，一直以来都是世界各地 IT 部门追求的主要目标。事实上，市场中充斥着各种产品，让你能够从云或本地管理本地组、密码或用户配置文件。独树一帜的 Azure AD 提供一些现今市场上最容易使用且最强大的自助服务功能。
 
 **Azure AD 密码管理**提供一组让用户随时随地从任何设备管理密码的功能，同时还能遵循你定义的安全策略。
 
-##用户：如何管理自己的密码
+## <a name="users-how-to-manage-your-own-password"></a>用户：如何管理自己的密码
 如果你是组织中使用 Office 365 或 Microsoft 帐户访问工作资源的用户（不是管理员），请单击以下链接，了解如何解决常见密码问题。
 
 | 主题 | |
@@ -33,24 +33,24 @@
 | 我无法登录，想要解锁我的帐户 | [如何解锁本地帐户](/documentation/articles/active-directory-passwords-update-your-own-password#how-to-unlock-your-account) |
 | 我希望你们帮助我排查密码重置失败的原因 | [常见问题及其解决方法](/documentation/articles/active-directory-passwords-update-your-own-password#common-problems-and-their-solutions) |
 
-##管理员：了解如何开始使用 Azure AD 密码重置
+## 管理员：了解如何开始使用 Azure AD 密码重置
 如果你是一名管理员，想要启用 Azure AD 密码重置或只是想详细了解此功能，请使用以下链接阅读你感兴趣的内容。
 
 | 主题 | |
 | --------- | --------- |
-| 为何要使用它？ | [为何使用 Azure AD 密码重置？](/documentation/articles/#why-use-azure-ad-password-reset) |
-| 定价和可用性 | [定价和可用性](/documentation/articles/#pricing-and-availability) |
-| 启用密码重置 | [为用户启用密码重置](/documentation/articles/#enable-password-reset-for-your-users) |
-| 自定义密码重置的工作方式 | [自定义密码重置行为](/documentation/articles/#customize-password-reset-behavior) |
-| 为用户启用密码重置 | [将用户配置为使用密码重置](/documentation/articles/#configure-your-users-to-use-password-reset) |
-| 查看报告 | [使用集成式报告查看密码重置活动](/documentation/articles/#view-password-reset-activity-with-integrated-reports) |
-| 重置用户密码 | [管理用户的密码](/documentation/articles/#manage-your-users-passwords) |
-| 设置组织的密码策略 | [设置密码策略](/documentation/articles/#set-password-policies) |
-| 排查问题 | [排查问题](/documentation/articles/#troubleshoot-a-problem) |
-| 常见问题 | [阅读常见问题](/documentation/articles/#read-a-faq) |
-| 技术详细信息 | [了解技术详细信息](/documentation/articles/#understand-the-technical-details) |
-| 新发布的功能 | [最新服务更新](/documentation/articles/#recent-service-updates) |
-| 其他文档的链接 | [密码重置文档的链接](/documentation/articles/#links-to-password-reset-documentation) |
+| 为何要使用它？ | [为何使用 Azure AD 密码重置？](#why-use-azure-ad-password-reset) |
+| 定价和可用性 | [定价和可用性](#pricing-and-availability) |
+| 启用密码重置 | [为用户启用密码重置](#enable-password-reset-for-your-users) |
+| 自定义密码重置的工作方式 | [自定义密码重置行为](#customize-password-reset-behavior) |
+| 为用户启用密码重置 | [将用户配置为使用密码重置](#configure-your-users-to-use-password-reset) |
+| 查看报告 | [使用集成式报告查看密码重置活动](#view-password-reset-activity-with-integrated-reports) |
+| 重置用户密码 | [管理用户的密码](#manage-your-users-passwords) |
+| 设置组织的密码策略 | [设置密码策略](#set-password-policies) |
+| 排查问题 | [排查问题](#troubleshoot-a-problem) |
+| 常见问题 | [阅读常见问题](#read-a-faq) |
+| 技术详细信息 | [了解技术详细信息](#understand-the-technical-details) |
+| 新发布的功能 | [最新服务更新](#recent-service-updates) |
+| 其他文档的链接 | [密码重置文档的链接](#links-to-password-reset-documentation) |
 
 ## Azure AD 密码管理有何用途？
 以下是使用 Azure AD 密码管理功能可实现的某些目的。
@@ -61,7 +61,7 @@
 - **密码管理活动报告**：管理员可以深入了解发生在其组织中的密码重置和注册活动。 
 - **密码写回**：从云管理本地密码，因此，所有上述方案都可以由经过联合身份验证的或密码同步的用户本人或其代表来执行。密码写回功能需要 Azure AD Premium。有关详细信息，请参阅“Azure AD Premium 入门”。
 
-## 为何使用 Azure AD 密码管理？
+## <a name="why-use-azure-ad-password-reset"></a>为何使用 Azure AD 密码管理？
 以下是应该使用 Azure AD 密码管理功能的某些原因
 
 - **降低成本** - 支持人员辅助的密码重置通常占组织 IT 部门 20% 的费用
@@ -69,7 +69,7 @@
 - **减少技术支持人力** - 密码管理是大部分组织设立技术支持的最重要因素
 - **实现移动** - 用户可随时随地重置密码
 
-### 定价和可用性
+### <a name="pricing-and-availability"></a>定价和可用性
 Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 
 - **Azure AD 免费版** - 仅限云的管理员可以重置自己的密码
@@ -78,7 +78,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 
 有关关于 Azure AD 高级版或基本版定价的详细信息，请访问 [Active Directory 定价详细信息](https://azure.microsoft.com/pricing/details/active-directory/)页。
 
-##为用户启用密码重置
+## <a name="enable-password-reset-for-your-users"></a>为用户启用密码重置
 | 主题 | |
 | --------- | --------- |
 | 如何为云用户启用密码重置？ | [让用户重置其云 Azure Active Directory 密码](/documentation/articles/active-directory-passwords-getting-started#enable-users-to-reset-their-azure-ad-passwords) |
@@ -89,7 +89,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 | 以后如何禁用密码重置？ | [设置：为用户启用了密码重置](/documentation/articles/active-directory-passwords-customize#users-enabled-for-password-reset) |
 
 
-##自定义密码重置行为
+## <a name="customize-password-reset-behavior"></a>自定义密码重置行为
 | 主题 | |
 | --------- | --------- |
 | 如何更改支持的身份验证方法？ | [设置：用户可用的身份验证方法](/documentation/articles/active-directory-passwords-customize#authentication-methods-available-to-users) |
@@ -104,7 +104,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 | 如何自定义密码重置的外观？ | [设置：公司名称、品牌和徽标](/documentation/articles/active-directory-passwords-customize#password-managment-look-and-feel) |
 
 
-##将用户配置为使用密码重置
+## <a name="configure-your-users-to-use-password-reset"></a>将用户配置为使用密码重置
 | 主题 | |
 | --------- | --------- |
 | 如何知道某个帐户是否已设置密码重置？ | [如何为密码重置配置帐户？](/documentation/articles/active-directory-passwords-best-practices#what-makes-an-account-configured) |
@@ -118,7 +118,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 | 将密码重置传达给最终用户的最佳做法是什么？ | [创建自己的密码门户供用户使用](/documentation/articles/active-directory-passwords-best-practices#creating-your-own-password-portal) |
 
 
-##使用集成式报告查看密码重置活动
+## <a name="view-password-reset-activity-with-integrated-reports"></a>使用集成式报告查看密码重置活动
 | 主题 | |
 | --------- | --------- |
 | 可以在何处查看密码重置报告？ | [密码管理报告概述](/documentation/articles/active-directory-passwords-get-insights#overview-of-password-management-reports) |
@@ -127,14 +127,14 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 | 通过 API 可获取哪种密码重置报告信息？ | [报告 API 提供的密码重置和注册事件](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-reports-and-events-preview#SsprActivityEvent) |
 
 
-##管理用户的密码
+## <a name="manage-your-users-passwords"></a>管理用户的密码
 | 主题 | |
 | --------- | --------- |
 | 如何从 O365 管理门户重置用户的密码？ | [在 Office 365 中重置用户的密码](https://support.office.com/article/Reset-a-user-s-password-7A5D073B-7FAE-4AA5-8F96-9ECD041ABA9C) |
 | 如何使用 PowerShell 重置用户的密码？ | [使用 Set-MsolUserPassword 重置用户的密码](https://msdn.microsoft.com/library/azure/dn194140.aspx) |
 
 
-##设置密码策略
+## <a name="set-password-policies"></a>设置密码策略
 | 主题 | |
 | --------- | --------- |
 | 如何从 Office 365 设置组织密码过期策略？ | [设置密码过期策略](https://support.office.com/article/Set-a-user-s-password-expiration-policy-0f54736f-eb22-414c-8273-498a0918678f) |
@@ -142,7 +142,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 | 如何使用 PowerShell 确定用户的密码是否设置为永不过期 | [使用 PowerShell 检查单个用户的密码过期状态](https://support.office.com/article/Set-an-individual-user-s-password-to-never-expire-f493e3af-e1d8-4668-9211-230c245a0466#__toc378845827) |
 
 
-##排查问题
+## <a name="troubleshoot-a-problem"></a>排查问题
 | 主题 | |
 | --------- | --------- |
 | 我需要帮助时应向支持人员提供哪些信息？ | [你需要帮助时应包含的信息](/documentation/articles/active-directory-passwords-troubleshoot#information-to-include-when-you-need-help) |
@@ -155,7 +155,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 | 密码写回事件日志错误代码 | [密码写回事件日志错误代码](/documentation/articles/active-directory-passwords-troubleshoot#password-writeback-event-log-error-codes) |
 
 
-##阅读常见问题
+## <a name="read-a-faq"></a>阅读常见问题
 | 主题 | |
 | --------- | --------- |
 | 我想要阅读关于密码重置注册的常见问题 | [密码重置注册常见问题](/documentation/articles/active-directory-passwords-faq#password-reset-registration) |
@@ -164,7 +164,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 | 我想要阅读关于密码写回的常见问题 | [密码写回常见问题](/documentation/articles/active-directory-passwords-faq#password-writeback) |
 
 
-##了解技术详细信息
+## <a name="understand-the-technical-details"></a>了解技术详细信息
 
 | 主题 | |
 | --------- | --------- |
@@ -175,7 +175,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 | 我想要了解密码重置门户的工作原理 | [密码重置门户的工作原理](/documentation/articles/active-directory-passwords-learn-more#how-does-the-password-reset-portal-work) |
 | 我想要了解密码重置使用的数据 | [密码重置使用哪些数据？](/documentation/articles/active-directory-passwords-learn-more#what-data-is-used-by-password-reset) |
 
-## 最新服务更新
+## <a name="recent-service-updates"></a>最新服务更新
 
 ####在登录 Office 365 应用时强制密码重置注册 - 2015 年 11 月
 
@@ -233,7 +233,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 
 - 目前，我们支持在访问 myapps.microsoft.com 时提醒用户更新其注册的数据，但我们正努力实现对所有登录使用此功能。
 
-## 密码重置文档的链接
+## <a name="links-to-password-reset-documentation"></a>密码重置文档的链接
 以下是所有 Azure AD 密码重置文档页面的链接：
 
 * [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password) - 了解如何以系统用户的身份重置或更改自己的密码

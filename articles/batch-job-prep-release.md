@@ -37,7 +37,7 @@ Azure 批处理( Batch ) 任务在执行之前通常需要进行某种形式的�
 
 作业准备任务只会在计划运行任务的节点上运行。例如，这可以防止未分配任务的节点不必要地执行准备任务，从而节省数据传输费用。当作业的任务数小于池中的节点数，或者在任务计数小于可能的并行任务总数的情况下启用了[并行任务执行](/documentation/articles/batch-parallel-node-tasks)，从而留出一些空闲节点时，便可以实现上述目的。
 
-> [AZURE.NOTE][JobPreparationTask][net_job_prep_cloudjob] 与 [CloudPool.StartTask][pool_starttask] 的不同之处在于，JobPreparationTask 在每个作业启动时执行，而 StartTask 只在计算节点首次加入池或重新启动时执行。
+> [AZURE.NOTE] [JobPreparationTask][net\_job\_prep\_cloudjob] 与 [CloudPool.StartTask][pool_starttask] 的不同之处在于，JobPreparationTask 在每个作业启动时执行，而 StartTask 只在计算节点首次加入池或重新启动时执行。
 
 ## 作业释放任务
 
@@ -45,11 +45,11 @@ Azure 批处理( Batch ) 任务在执行之前通常需要进行某种形式的�
 
 > [AZURE.NOTE]作业删除操作也会执行作业释放任务。但是，如果以前终止了某个作业，则以后删除该作业时，释放任务不会再次运行。
 
-## Batch .NET 中的作业准备和释放任务
+## Batch .NET API 中的作业准备和释放任务
 
-可以通过创建并配置 [JobPreparationTask][net_job_prep]，然后将它分配到作业的 [CloudJob.JobPreparationTask][net_job_prep_cloudjob] 属性，来指定作业准备任务。同样，初始化 [JobReleaseTask][net_job_release] 并将它分配到作业的 [CloudJob.JobReleaseTask][net_job_prep_cloudjob] 属性可以设置作业的释放任务。
+若要指定作业准备任务，可以创建并配置 [JobPreparationTask][net_job_prep] 对象，然后将它分配到作业的 [CloudJob.JobPreparationTask][net_job_prep_cloudjob] 属性。同样，初始化 [JobReleaseTask][net_job_release] 并将它分配到作业的 [CloudJob.JobReleaseTask][net_job_prep_cloudjob] 属性可以设置作业的释放任务。
 
-在此代码段中，`myBatchClient` 是完全初始化的 [BatchClient][net_batch_client] 实例，`myPool` 是批处理( Batch ) 帐户中的现有池。
+在此代码段中，`myBatchClient` 是完全初始化的 [BatchClient][net_batch_client] 实例，`myPool` 是 Batch 帐户中的现有池。
 
 		// Create the CloudJob for CloudPool "myPool"
 		CloudJob myJob = myBatchClient.JobOperations.CreateJob("JobPrepReleaseSampleJob",
@@ -67,7 +67,7 @@ Azure 批处理( Batch ) 任务在执行之前通常需要进行某种形式的�
 
 		await myJob.CommitAsync();
 
-如上所述，终止或删除作业时会执行释放任务。可以通过调用 [PoolOperations.TerminateJobAsync][net_job_terminate] 使用 Batch .NET API 终止作业，可以使用 [PoolOperations.DeleteJobAsync][net_job_delete] 来删除作业，这两项操作通常都是在作业的任务已完成或者达到了你定义的超时时完成。
+如上所述，终止或删除作业时会执行释放任务。可以通过调用 [PoolOperations.TerminateJobAsync][net_job_terminate] 使用 Batch .NET API 终止作业。可以使用 [PoolOperations.DeleteJobAsync][net_job_delete] 删除作业。这两项操作通常都是在作业的任务已完成或者达到了你定义的超时时完成。
 
 		// Terminate the job to mark it as Completed; this will initiate the Job Release Task on any node
 		// that executed job tasks. Note that the Job Release Task is also executed when a job is deleted,
@@ -91,48 +91,48 @@ Azure 批处理( Batch ) 任务在执行之前通常需要进行某种形式的�
 
 示例应用程序的输出类似于：
 
-	
-	Attempting to create pool: JobPrepReleaseSamplePool
-	The pool already existed when we tried to create it
-	Checking for existing job JobPrepReleaseSampleJob...
-	Job JobPrepReleaseSampleJob not found, creating...
-	Submitting tasks and awaiting completion...
-	All tasks completed.
-	
-	Contents of shared\job_prep_and_release.txt on tvm-3105992504_1-20151015t150030z:
-	-------------------------------------------
-	tvm-3105992504_1-20151015t150030z tasks:
-	  task001
-	  task002
-	  task006
-	  task007
-	
-	Contents of shared\job_prep_and_release.txt on tvm-3105992504_2-20151015t150030z:
-	-------------------------------------------
-	tvm-3105992504_2-20151015t150030z tasks:
-	  task003
-	  task005
-	  task004
-	  task008
-	
-	Waiting for job JobPrepReleaseSampleJob to reach state Completed
-	....
-	
-	tvm-3105992504_1-20151015t150030z:
-	  Prep task exit code:    0
-	  Release task exit code: 0
-	
-	tvm-3105992504_2-20151015t150030z:
-	  Prep task exit code:    0
-	  Release task exit code: 0
-	
-	Delete job? [yes] no
-	yes
-	Delete pool? [yes] no
-	no
-	
-	Sample complete, hit ENTER to exit...
-	
+```
+Attempting to create pool: JobPrepReleaseSamplePool
+The pool already existed when we tried to create it
+Checking for existing job JobPrepReleaseSampleJob...
+Job JobPrepReleaseSampleJob not found, creating...
+Submitting tasks and awaiting completion...
+All tasks completed.
+
+Contents of shared\job_prep_and_release.txt on tvm-3105992504_1-20151015t150030z:
+-------------------------------------------
+tvm-3105992504_1-20151015t150030z tasks:
+  task001
+  task002
+  task006
+  task007
+
+Contents of shared\job_prep_and_release.txt on tvm-3105992504_2-20151015t150030z:
+-------------------------------------------
+tvm-3105992504_2-20151015t150030z tasks:
+  task003
+  task005
+  task004
+  task008
+
+Waiting for job JobPrepReleaseSampleJob to reach state Completed
+....
+
+tvm-3105992504_1-20151015t150030z:
+  Prep task exit code:    0
+  Release task exit code: 0
+
+tvm-3105992504_2-20151015t150030z:
+  Prep task exit code:    0
+  Release task exit code: 0
+
+Delete job? [yes] no
+yes
+Delete pool? [yes] no
+no
+
+Sample complete, hit ENTER to exit...
+```
 
 ### 使用 Batch 资源管理器检查作业准备和释放任务
 
@@ -155,6 +155,7 @@ Azure 批处理( Batch ) 任务在执行之前通常需要进行某种形式的�
 [net_cloudjob]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.aspx
 [net_job_prep]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.jobpreparationtask.aspx
 [net_job_prep_cloudjob]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.jobpreparationtask.aspx
+[net\_job\_prep\_cloudjob]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.jobpreparationtask.aspx
 [net_job_delete]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.deletejobasync.aspx
 [net_job_terminate]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.terminatejobasync.aspx
 [net_job_release]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.jobreleasetask.aspx
@@ -175,4 +176,4 @@ Azure 批处理( Batch ) 任务在执行之前通常需要进行某种形式的�
 [1]: ./media/batch-job-prep-release/batchexplorer-01.png
 [2]: ./media/batch-job-prep-release/batchexplorer-02.png
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0215_2016-->

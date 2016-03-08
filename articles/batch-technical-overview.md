@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure 批处理 ( Batch ) 服务基础知识 | Azure"
-	description="了解适用于大规模并发工作负荷与 HPC 工作负荷的 Azure 批处理 ( Batch ) 服务的概念、工作流和方案"
+	pageTitle="Azure Batch 服务基础知识 | Azure"
+	description="了解如何使用 Azure Batch 服务执行大规模并发工作负荷与 HPC 工作负荷"
 	services="batch"
 	documentationCenter=""
 	authors="dlepow"
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="batch"
-	ms.date="10/26/2015"
+	ms.date="11/19/2015"
 	wacn.date="01/15/2016"/>
 
 # Azure 批处理 ( Batch ) 基础知识
@@ -34,9 +34,9 @@ Azure 批处理 ( Batch )可帮助你在云中有效运行大规模并行和高�
 * 基因序列分析
 * 软件测试
 
-你还可以使用批处理 ( Batch ) 来执行并行计算（最后加上归纳步骤），以及其他更复杂的并行工作负荷。
+你还可以使用批处理 ( Batch ) 来执行并行计算（最后加上归纳步骤），以及其他更复杂的 HPC 工作负荷，例如消息传递接口 (MPI) 应用程序。
 
->[AZURE.NOTE]目前批处理 ( Batch ) 仅支持基于 Windows Server 的虚拟机上运行的工作负荷。此外，批处理 ( Batch ) 目前不支持消息传递接口 (MPI) 应用程序。
+>[AZURE.NOTE]目前，批处理 ( Batch ) 仅支持基于 Windows Server 的虚拟机上运行的工作负荷。
 
 有关批处理 ( Batch ) 与 Azure 中其他 HPC 解决方案选项的比较，请参阅 [Batch 和 HPC 解决方案](/documentation/articles/batch-hpc-solutions)。
 
@@ -48,7 +48,7 @@ Azure 批处理 ( Batch )可帮助你在云中有效运行大规模并行和高�
 
 ### 所需的帐户
 
-+ **Azure 帐户和订阅** - 如果你没有帐户，可以注册获取[免费试用版](/pricing/free-trial/)。
++ **Azure 帐户和订阅** - 如果你没有帐户，可以激活 [MSDN 订户权益](/pricing/member-offers/msdn-benefits-details/)或注册获取[免费试用版](/pricing/free-trial/)。
 
 + **批处理 ( Batch ) 帐户** - 在进行批处理 ( Batch ) API 调用时，应使用批处理 ( Batch ) 帐户的名称和 URL 以及访问密钥作为凭据。所有批处理 ( Batch ) 资源（如计算节点、池、作业和任务）都与批处理 ( Batch ) 帐户关联。
 
@@ -99,4 +99,4 @@ Azure 批处理 ( Batch )可帮助你在云中有效运行大规模并行和高�
 [parallel]: ./media/batch-technical-overview/parallel.png
 [work_item_workflow]: ./media/batch-technical-overview/work_item_workflow.png
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0215_2016-->

@@ -54,7 +54,7 @@
 - [SsprActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprActivityEvent)：列出密码重置事件可用的列
 - [SsprRegistrationActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprRegistrationActivityEvent)：列出密码重置注册事件可用的列
 
-## <a name"password-writeback-component-of-azure-ad-connect"></a>查看密码重置注册活动
+## <a name"view-password-reset-registration-activity"></a>查看密码重置注册活动
 
 密码重置注册活动报告显示你的组织中已发生的所有密码重置注册。对于已在密码重置注册门户 ([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)) 成功注册身份验证信息的所有用户，密码重置注册都显示在此报告中。
 
@@ -79,7 +79,7 @@
 ---|---
 已注册数据| **备用电子邮件** – 用户使用了备用电子邮件或身份验证电子邮件进行身份验证<p><p>**办公电话** – 用户使用了办公室电话进行身份验证<p>**移动电话** – 用户使用了移动电话或身份验证电话进行身份验证<p>**安全问题** – 用户使用了安全问题进行身份验证<p>**上述任一组合（例如，备用电子邮件 + 移动电话）** – 指定双门槛策略时发生，并显示用户使用哪两种方法对其密码重置请求进行身份验证。
 
-## 查看密码重置活动
+## <a name="view-password-reset-activity"></a> 查看密码重置活动
 
 此报告显示你的组织中发生的所有密码重置尝试。
 

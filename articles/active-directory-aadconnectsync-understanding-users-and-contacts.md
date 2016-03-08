@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="07/27/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="11/09/2015"
+	wacn.date="02/25/2016"/>
 
 
 # Azure AD Connect Sync：了解用户和联系人
@@ -21,16 +21,17 @@
 
 有几个配置假定的一般规则：
 
-- 不管按什么顺序读取源 Active Directory，最终结果应始终相同。
+- 不管按什么顺序从源 Active Directory 导入，最终结果始终相同。
 - 有效帐户会始终提供登录信息，包括 **userPrincipalName** 和 **sourceAnchor**。
-- 已禁用帐户会提供 userPrincipalName 和 sourceAnchor，除非该帐户为已链接邮箱。
+- 如果找不到活动的帐户，已禁用帐户会提供 userPrincipalName 和 sourceAnchor，除非该帐户为已链接邮箱。
 - 具有已链接邮箱的帐户永远不会用于 userPrincipalName 和 sourceAnchor。据推测，更高版本中将会找到有效帐户。
 - 可能为 Azure AD 设置联系人对象，作为联系人或用户。在处理完所有源 Active Directory 林之前，你确实不会知道。
 ## 联系人
 
-合并和收购之后，不同林中具有表示用户的联系人很常见，其中，GALSync 解决方案对两个或多个 Exchange 林桥接。联系人对象始终使用邮件属性从连接器空间联接到 metaverse。如果已存在具有相同邮件地址的联系人对象或用户对象，则会将这些对象联接在一起。这在规则 **In from AD – Contact Join** 中进行配置。另外，还有一条名为 **In from AD – Contact Common** 的规则，该规则具有到包含常量 **Contact** 的 metaverse 属性 **sourceObjectType** 的属性流。如果将任何用户对象联接到相同的 metaverse 对象，则此规则的优先级非常低，并且 In from AD – User Common 规则会为此属性提供值 User。在使用此规则的情况下，如果没有联接任何用户，此属性则会具有值 Contact，如果至少找到了一个用户，则会具有值 User。
+合并和收购之后，不同林中具有表示用户的联系人很常见，其中，GALSync 解决方案对两个或多个 Exchange 林桥接。联系人对象始终使用邮件属性从连接器空间联接到 metaverse。如果已存在具有相同邮件地址的联系人对象或用户对象，则会将这些对象联接在一起。这在规则 **In from AD – Contact Join** 中进行配置。另外，还有一条名为 **In from AD – Contact Common** 的规则，该规则具有到包含常量 **Contact** 的 metaverse 属性 **sourceObjectType** 的属性流。如果将任何用户对象联接到相同的 metaverse 对象，则此规则的优先级非常低，并且 **In from AD – User Common** 规则会为此属性提供值 User。在使用此规则的情况下，如果没有联接任何用户，此属性则会具有值 Contact，如果至少找到了一个用户，则会具有值 User。
 
-对于为 Azure AD 设置对象，如果将 metaverse 属性 **sourceObjectType** 设置为 **Contact**，出站规则 **Out to AAD – Contact Join** 则会创建联系人对象。如果将此属性设置为 **User**，**Out to AAD – User Join** 规则则会改为创建用户对象。当导入和同步更多源 Active Directory 时，对象很可能由 Contact 提升为 User。
+对于为 Azure AD 设置对象，如果将 metaverse 属性 **sourceObjectType** 设置为 **Contact**，出站规则 **Out to AAD – Contact Join** 则会创建联系人对象。如果将此属性设置为 **User**，**Out to AAD – User Join** 规则则会改为创建用户对象。
+当导入和同步更多源 Active Directory 时，对象很可能由 Contact 提升为 User。
 
 例如，在 GALSync 拓扑中，当我们导入第一个林时，我们会在第二个林中发现每个的联系人对象。这将会在 AAD 连接器中暂存新的联系人对象。当我们之后导入并同步第二个林时，我们会找到实际用户并将他们联接到现有的 metaverse 对象。然后我们会删除 AAD 中的联系人对象，并改为创建新的用户对象。
 
@@ -64,4 +65,4 @@
  
 <!--Image references-->
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0215_2016-->

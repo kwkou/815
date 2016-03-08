@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup"
 	ms.date="10/29/2015"
-	wacn.date="01/26/2016"/>
+	wacn.date="02/25/2016"/>
 # 在 Azure 中计划 VM 备份基础结构
 本文介绍在计划虚拟机 (VM) 备份基础结构时应牢记的重要注意事项。如果你已[进行环境准备](/documentation/articles/backup-azure-vms-prepare)，则在你开始[备份 VM](/documentation/articles/backup-azure-vms) 之前，下一步就是执行此操作。如果你需要有关 Azure 虚拟机的详细信息，请参阅[虚拟机文档](/documentation/services/virtual-machines/)。
 
@@ -46,7 +46,7 @@ Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完
 
 
 ## 性能和资源利用率
-与本地部署的备份软件一样，Azure 中 VM 的备份也需要在容量和资源利用率方面进行规划。[Azure 存储空间限制](/documentation/articles/azure-subscription-service-limits)定义如何构建 VM 部署，以获得最大性能，同时对运行中的工作负荷造成最小的影响。
+与本地部署的备份软件一样，Azure 中 VM 的备份也需要在容量和资源利用率方面进行规划。[Azure 存储空间限制](/documentation/articles/azure-subscription-service-limits#storage-limits)定义如何构建 VM 部署，以获得最大性能，同时对运行中的工作负荷造成最小的影响。
 
 有两个主要 Azure 存储空间限制会影响备份性能：
 
@@ -86,7 +86,9 @@ Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完
 
 
 ## 如何计算受保护的实例？
-通过 Azure 备份进行备份的 Azure 虚拟机的收费依据 [Azure 备份定价](/home/features/back-up/#price)。受保护的实例计算基于虚拟机的*实际*大小，即虚拟机中除“资源磁盘”外的所有数据之和。
+通过 Azure 备份进行备份的 Azure 虚拟机的收费依据 [Azure 备份定价](/home/features/back-up/#price)。受保护的实例计算基于虚拟机的 *实际* 大小，即虚拟机中除“资源磁盘”外的所有数据之和。
+
+*不是* 按连接到虚拟机的每个受支持数据磁盘的最大大小对你收费，而是按存储在数据磁盘中的实际数据收费。与此类似，备份存储空间的收费是根据通过 Azure 存储空间存储的数据容量，即每个恢复点中实际数据之和。
 
 以 A2 标准大小的虚拟机为例，该虚拟机有两个额外的数据磁盘，总大小为 1TB。下表提供了每个这样的磁盘上存储的实际数据：
 
@@ -113,4 +115,4 @@ Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完
 - [恢复虚拟机](/documentation/articles/backup-azure-restore-vms)
 - [解决 VM 备份问题](/documentation/articles/backup-azure-vms-troubleshoot)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0215_2016-->
