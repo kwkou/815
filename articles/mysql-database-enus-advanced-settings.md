@@ -2,13 +2,13 @@
 
 <tags ms.service="mysql" ms.date="" wacn.date="01/11/2015"/>
 
-#Setting MySQL Database on Azure server parameters
+# Setting MySQL Database on Azure server parameters
 
 > [AZURE.SELECTOR]
 - [Chinese version](/documentation/articles/mysql-database-advanced-settings)
 - [English version](/documentation/articles/mysql-enus-database-advanced-settings)
 
-MySQL Database on Azure supports custom settings for some parameters. The table below lists the configurable parameters, default values, and selectable ranges.
+MySQL Database on Azure supports custom settings for some parameters. The following table lists these parameters, their default values, and their selectable ranges.
 
 [Find out more about MySQL parameters](http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html).
 
@@ -23,7 +23,7 @@ MySQL Database on Azure supports custom settings for some parameters. The table 
   <tr>
     <td>Event_scheduler</td>
     <td>OFF</td>
-    <td>ON|OFF|DISABLED</td>
+    <td>[ON|OFF|DISABLED]</td>
   </tr>
   <tr>
     <td>div_precision_increment</td>
@@ -38,7 +38,7 @@ MySQL Database on Azure supports custom settings for some parameters. The table 
   <tr>
     <td>Innodb_adaptive_hash_index</td>
     <td>ON</td>
-    <td>ON|OFF</td>
+    <td>[ON|OFF]</td>
   </tr>
   <tr>
     <td>innodb_lock_wait_timeout</td>
@@ -86,8 +86,8 @@ MySQL Database on Azure supports custom settings for some parameters. The table 
     <td>System, [-12:00 to +12:00] </td>
   </tr>
 </table>
->[AZURE.NOTE] **Taking into account the limitations of the Traffic Manager, we have set the default value for wait\_timeout to 120 s and the selectable range from 60 s to 240 s, but the above adjustment is only effective for instances created from October onward. For earlier instances, please manually set the value of wait\_timeout to any number between 60 s and 240 s. We recommend 120 s.**
+>[AZURE.NOTE] **Due to limitations of the Traffic Manager, the default value for wait\_timeout is 120 seconds and the selectable range is 60-240 seconds. This only applies for instances created from October 2015 onward. For earlier instances, please manually set the value of wait\_timeout to any number between 60-240 (120 recommended).**
 
->[AZURE.NOTE] **For details regarding the configuration of time zones, refer to [Configuring time zones on MySQL on Azure](/documentation/articles/mysql-database-timezone-config).**
+>[AZURE.NOTE] **For details regarding the configuration of time zones, see [Configuring time zones on MySQL on Azure](/documentation/articles/mysql-database-timezone-config).**
 
 <!---HONumber=Acom_0218_2016_MySql-->
