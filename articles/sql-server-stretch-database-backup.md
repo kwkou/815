@@ -19,7 +19,7 @@
 
 对已启用延伸的数据库进行的备份是一种浅表备份，这种备份不包括将数据迁移到远程服务器。
 
-延伸数据库完全支持时间点还原。将 SQL Server 数据库还原到某个时间点并重新授权与 Azure 的连接之后，延伸数据库会将远程数据协调到同一个时间点。有关 SQL Server 中的时间点还原的详细信息，请参阅[将 SQL Server 数据库还原到某个时间点（完全恢复模型）](https://msdomn.microsoft.c/zh-cn/library/ms179451.aspx)。有关在还原之后重新授权与 Azure 的连接时所要运行的存储过程的信息，请参阅 [sys.sp\_rda\_reauthorize\_db (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt131016.aspx)。
+延伸数据库完全支持时间点还原。将 SQL Server 数据库还原到某个时间点并重新授权与 Azure 的连接之后，延伸数据库会将远程数据协调到同一个时间点。有关 SQL Server 中的时间点还原的详细信息，请参阅[将 SQL Server 数据库还原到某个时间点（完全恢复模型）](https://msdn.microsoft.com/zh-cn/library/ms179451.aspx)。有关在还原之后重新授权与 Azure 的连接时所要运行的存储过程的信息，请参阅 [sys.sp\_rda\_reauthorize\_db (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt131016.aspx)。
 
 ## <a name="Reconnect"></a>从备份中还原已启用延伸的数据库
 
