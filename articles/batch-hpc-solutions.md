@@ -96,8 +96,6 @@ Azure 提供一系列的计算、数据、网络和相关服务，你可将其�
 
 Azure 中的计算服务是大计算解决方案的核心。下表是经常使用的计算服务，它们能够为各种方案带来优势。在基本级别中，这些服务为使用 Windows Server Hyper-V 技术，由 Azure 提供的基于虚拟机的计算实例上运行的应用程序提供不同模式。根据具体的服务，这些实例可以运行各种标准和自定义的 Linux 和 Windows 操作系统与工具。Azure 提供[各种实例大小](/documentation/articles/virtual-machines-size-specs)，对 CPU 核心、内存、磁盘容量和其他特征进行了不同的配置。你可以根据需要将实例扩展到数千个核心，并在需要较少的资源时相应减少。
 
->[AZURE.NOTE] 你可以利用 A8-A11 实例改善某些大型计算任务负荷的性能，包括需要低延迟、高吞吐量应用程序网络的并行 MPI 应用程序。请参阅[关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)。
-
 服务 | 说明
 ------------- | -----------
 **[云服务](/documentation/services/cloud-services)**<br/><br/> |• 可以在辅助角色实例中运行大型计算应用程序，辅助角色实例是运行某个 Windows Server 版本的虚拟机并且完全由 Azure 托管<br/><br/>• 可以较低的管理开销支持运行在平台即服务 (PaaS) 模型中的可缩放的可靠应用程序<br/><br/>• 可能需要额外的工具或开发来与现有的本地 HPC 群集解决方案进行集成
@@ -110,27 +108,22 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 
 * [Blob、表和队列存储](/documentation/services/storage) - 分别管理大量非结构化数据、NoSQL 数据，以及有关工作流和通信的消息。例如，你可以为大型技术数据集或应用程序处理的输入图像或媒体文件使用 Blob 存储。可以在解决方案中使用队列以进行异步通信。有关这些存储解决方案的详细信息，请参阅 [Azure 存储空间简介](/documentation/articles/storage-introduction)。
 
-<!-- * [Azure 文件存储](/services/storage/files/) - 在 Azure 中使用标准 SMB 通信协议（某些 HPC 群集解决方案需要这种协议）来共享公用文件和数据。-->
+
 
 ### 数据和分析服务
 
 某些大型计算方案涉及到大规模数据流，或者会生成需要进一步处理或分析的数据。为了应对这种情况，Azure 提供了许多数据和分析服务，包括：
 
-<!--* [Data Factory](/documentation/services/data-factory) - Builds data-driven workflows (pipelines) that join, aggregate, and transform data sourced from on-premises, cloud-based, and Internet data stores.-->
-
 * [SQL 数据库](/documentation/services/sql-databases) - 提供托管平台服务中 Microsoft SQL Server 关系数据库管理系统的主要功能。
 
 * [HDInsight](/documentation/services/hdinsight) - 在云中部署和设置基于 Windows Server 或 Linux 的 Apache Hadoop 群集，用于管理、分析和报告具有高可靠性与可用性的大数据。
 
-<!--* [Machine Learning](/documentation/services/machine-learning) - Helps you create, test, operate, and manage predictive analytic solutions in a fully managed platform service.-->
 
 ### 其他服务
 
 大型计算解决方案可能需要包含其他 Azure 基础结构和平台服务，才能连接到本地或其他环境中的资源。示例包括：
 
 * [虚拟网络](/documentation/services/networking) - 在 Azure 中创建逻辑隔离的区段，以使用 IPSec 将 Azure 资源连接到本地数据中心或单个客户端计算机；可让大型计算应用程序访问本地数据、Active Directory 服务和许可证服务器
-
-<!--* [ExpressRoute](/documentation/services/expressroute) - Creates a private connection between Microsoft data centers and infrastructure that’s on-premises or in a co-location environment, with higher security, more reliability, faster speeds, and lower latencies than typical connections over the Internet.-->
 
 * [服务总线](/documentation/services/service-bus) - 提供多种机制让应用程序进行通信或交换数据，无论这些应用程序位于 Azure、另一个云平台还是数据中心。
 
