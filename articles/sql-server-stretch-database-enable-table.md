@@ -1,6 +1,6 @@
 <properties
-	pageTitle="为表启用延伸数据库 | Microsoft Azure"
-	description="了解如何为延伸数据库配置表。"
+	pageTitle="为表启用SQL Server Stretch Database | Azure"
+	description="了解如何为SQL Server Stretch Database配置表。"
 	services="sql-server-stretch-database"
 	documentationCenter=""
 	authors="douglasl"
@@ -12,19 +12,19 @@
 	ms.date="02/26/2016"
 	wacn.date="03/10/2016"/>
 
-# 为表启用延伸数据库
+# 为表启用SQL Server Stretch Database
 
-若要为延伸数据库配置某个表，请在 SQL Server Management Studio 中选择该表对应的“延伸 | 启用”，打开“为表启用延伸”向导。也可以使用 Transact-SQL 对表启用延伸数据库。
+若要为SQL Server Stretch Database配置某个表，请在 SQL Server Management Studio 中选择该表对应的“延伸 | 启用”，打开“为表启用延伸”向导。也可以使用 Transact-SQL 对表启用SQL Server Stretch Database。
 
 -   如果在单独的某个表中存储了历史数据，你可以迁移整个表。
 
--   如果表包含历史数据和当前数据，你可以指定筛选器谓词来选择要迁移的行。在 CTP 3.1 到 RC0 版本中，用于指定筛选器谓词的选项在“为数据库启用延伸”向导中不可用。必须将 ALTER TABLE 语句与此选项结合使用才能为延伸数据库配置表。有关详细信息，请参阅 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms190273.aspx)。
+-   如果表包含历史数据和当前数据，你可以指定筛选器谓词来选择要迁移的行。在 CTP 3.1 到 RC0 版本中，用于指定筛选器谓词的选项在“为数据库启用延伸”向导中不可用。必须将 ALTER TABLE 语句与此选项结合使用才能为SQL Server Stretch Database配置表。有关详细信息，请参阅 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms190273.aspx)。
 
-**先决条件**。如果你针对某个表选择了“延伸 | 启用”但尚未为数据库启用延伸数据库，该向导将先为延伸数据库配置数据库。请遵循[为数据库启用延伸向导](/documentation/articles/sql-server-stretch-database-wizard)中的步骤，而不要遵循本主题中的步骤。
+**先决条件**。如果你针对某个表选择了“延伸 | 启用”但尚未为数据库启用SQL Server Stretch Database，该向导将先为SQL Server Stretch Database配置数据库。请遵循[为数据库启用延伸向导](/documentation/articles/sql-server-stretch-database-wizard)中的步骤，而不要遵循本主题中的步骤。
 
-**权限**。对数据库或表启用延伸数据库需要有 db\_owner 权限。对某个表启用延伸数据库还要求对该表拥有 ALTER 权限。
+**权限**。对数据库或表启用SQL Server Stretch Database需要有 db\_owner 权限。对某个表启用SQL Server Stretch Database还要求对该表拥有 ALTER 权限。
 
-## <a name="EnableWizardTable"></a>使用向导来对表启用延伸数据库
+## <a name="EnableWizardTable"></a>使用向导来对表启用SQL Server Stretch Database
 **启动向导**
 1.  在 SQL Server Management Studio 的对象资源管理器中，选择你要为其启用延伸的表。
 
@@ -44,15 +44,15 @@
 **结果**
 查看结果。
 
-## <a name="EnableTSQLTable"></a>使用 Transact-SQL 对表启用延伸数据库
-若要为延伸数据库配置表，请运行 ALTER TABLE 命令。
+## <a name="EnableTSQLTable"></a>使用 Transact-SQL 对表启用SQL Server Stretch Database
+若要为SQL Server Stretch Database配置表，请运行 ALTER TABLE 命令。
 
-1.  （可选）如果表包含历史数据和当前数据，请使用 `FILTER_PREDICATE = <predicate>` 子句指定一个谓词来选择要迁移的行。该谓词必须调用内联表值函数。有关详细信息，请参阅[编写内联表值函数以选择行（延伸数据库）](/documentation/articles/sql-server-stretch-database-predicate-function)。如果未指定筛选器谓词，则会迁移整个表。
+1.  （可选）如果表包含历史数据和当前数据，请使用 `FILTER_PREDICATE = <predicate>` 子句指定一个谓词来选择要迁移的行。该谓词必须调用内联表值函数。有关详细信息，请参阅[编写内联表值函数以选择行（SQL Server Stretch Database）](/documentation/articles/sql-server-stretch-database-predicate-function)。如果未指定筛选器谓词，则会迁移整个表。
 
     > [!IMPORTANT]
-    > 如果提供的筛选器谓词性能不佳，则数据迁移的性能也会不佳。延伸数据库将使用 CROSS APPLY 运算符对表应用筛选器谓词。
+    > 如果提供的筛选器谓词性能不佳，则数据迁移的性能也会不佳。SQL Server Stretch Database将使用 CROSS APPLY 运算符对表应用筛选器谓词。
 
-    在 CTP 3.1 到 RC0 版本中，此选项在“为数据库启用延伸”向导中不可用。必须将 ALTER TABLE 语句与此选项结合使用才能为延伸数据库配置表。有关详细信息，请参阅 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/library/ms190273.aspx)。
+    在 CTP 3.1 到 RC0 版本中，此选项在“为数据库启用延伸”向导中不可用。必须将 ALTER TABLE 语句与此选项结合使用才能为SQL Server Stretch Database配置表。有关详细信息，请参阅 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/library/ms190273.aspx)。
 
 2.  指定 `MIGRATION_STATE = OUTBOUND` 立即开始数据迁移，或指定 `MIGRATION_STATE = PAUSED` 推迟数据迁移的开始时间。
 
@@ -63,7 +63,7 @@ ALTER TABLE <table name>
     SET ( REMOTE_DATA_ARCHIVE = ON ( MIGRATION_STATE = OUTBOUND ) ) ;
 GO;
 ```
-以下示例只会迁移 `dbo.fn_stretchpredicate` 内联表值函数识别的行，并推迟数据迁移。有关筛选器谓词的详细信息，请参阅[编写内联表值函数以选择行（延伸数据库）](/documentation/articles/sql-server-stretch-database-predicate-function)。
+以下示例只会迁移 `dbo.fn_stretchpredicate` 内联表值函数识别的行，并推迟数据迁移。有关筛选器谓词的详细信息，请参阅[编写内联表值函数以选择行（SQL Server Stretch Database）](/documentation/articles/sql-server-stretch-database-predicate-function)。
 
 ```tsql
 ALTER TABLE <table name>

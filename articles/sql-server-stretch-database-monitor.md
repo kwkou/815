@@ -1,5 +1,5 @@
 <properties
-	pageTitle="数据迁移的监视和故障排除（延伸数据库）| Microsoft Azure"
+	pageTitle="数据迁移的监视和故障排除（SQL Server Stretch Database）| Azure"
 	description="了解如何监视数据迁移状态。"
 	services="sql-server-stretch-database"
 	documentationCenter=""
@@ -12,18 +12,18 @@
 	ms.date="02/26/2016"
 	wacn.date="03/10/2016"/>
 
-# 数据迁移的监视和故障排除（延伸数据库）
+# 数据迁移的监视和故障排除（SQL Server Stretch Database）
 
-若要在延伸数据库监视器中监视数据迁移，请在 SQL Server Management Studio 中选择数据库对应的“任务 | 延伸 | 监视”。
+若要在SQL Server Stretch Database监视器中监视数据迁移，请在 SQL Server Management Studio 中选择数据库对应的“任务 | 延伸 | 监视”。
 
-## 在延伸数据库监视器中检查数据迁移状态
-在 SQL Server Management Studio 中选择数据库对应的“任务 | 延伸 | 监视”，以打开延伸数据库监视器并监视数据迁移。
+## 在SQL Server Stretch Database监视器中检查数据迁移状态
+在 SQL Server Management Studio 中选择数据库对应的“任务 | 延伸 | 监视”，以打开SQL Server Stretch Database监视器并监视数据迁移。
 
 -   监视器的上半部分显示有关已启用延伸的 SQL Server 数据库和远程 Azure 数据库的一般信息。
 
 -   监视器的下半部分显示数据库中每个已启用延伸的表的数据迁移状态。
 
-![延伸数据库监视器][StretchMonitorImage1]
+![SQL Server Stretch Database监视器][StretchMonitorImage1]
 
 ## <a name="Migration"></a>在动态管理视图中检查数据迁移状态
 打开动态管理视图 **sys.dm\_db\_rda\_migration\_status** 查看已迁移的数据批数与行数。有关详细信息，请参阅 [sys.dm\_db\_rda\_migration\_status (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/dn935017.aspx)。
@@ -40,7 +40,7 @@
     -   有关 SQL Server 错误消息内容的详细信息，请参阅 [sys.messages (Transact-SQL)](https://msdn.microsoft.com/library/ms187382.aspx)。
 
 ## 另请参阅
-[延伸数据库的管理和故障排除](/documentation/articles/sql-server-stretch-database-manage)
+[SQL Server Stretch Database的管理和故障排除](/documentation/articles/sql-server-stretch-database-manage)
 
 <!--Image references-->
 [StretchMonitorImage1]: ./media/sql-server-stretch-database-monitor/StretchDBMonitor.png

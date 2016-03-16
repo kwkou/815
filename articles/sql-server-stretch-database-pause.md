@@ -1,5 +1,5 @@
 <properties
-	pageTitle="暂停和恢复数据迁移（延伸数据库）| Microsoft Azure"
+	pageTitle="暂停和恢复数据迁移（SQL Server Stretch Database）| Azure"
 	description="了解如何暂停或继续将数据迁移到 Azure。"
 	services="sql-server-stretch-database"
 	documentationCenter=""
@@ -12,7 +12,7 @@
 	ms.date="02/26/2016"
 	wacn.date="03/10/2016"/>
 
-# 暂停和恢复数据迁移（延伸数据库）
+# 暂停和恢复数据迁移（SQL Server Stretch Database）
 
 若要暂停或继续将数据迁移到 Azure，请在 SQL Server Management Studio 中选择某个表对应的“延伸”，然后选择“暂停”以暂停数据迁移，或选择“恢复”以恢复数据迁移。也可以使用 Transact-SQL 来暂停或恢复数据迁移。
 

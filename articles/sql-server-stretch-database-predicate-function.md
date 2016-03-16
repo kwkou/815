@@ -1,5 +1,5 @@
 <properties
-	pageTitle="编写内联表值函数以选择要迁移的行（延伸数据库）| Microsoft Azure"
+	pageTitle="编写内联表值函数以选择要迁移的行（SQL Server Stretch Database）| Azure"
 	description="了解如何创建筛选器谓词以选择要迁移的行。"
 	services="sql-server-stretch-database"
 	documentationCenter=""
@@ -12,19 +12,19 @@
 	ms.date="02/26/2016"
 	wacn.date="03/10/2016"/>
 
-# 编写内联表值函数以选择要迁移的行（延伸数据库）
+# 编写内联表值函数以选择要迁移的行（SQL Server Stretch Database）
 
-如果在单独的某个表中存储了历史数据，则你可以将延伸数据库配置为迁移整个表。另一方面，如果表包含历史数据和当前数据，则你可以指定筛选器谓词来选择要迁移的行。该筛选器谓词必须调用内联表值函数。本主题介绍如何编写内联表值函数用于选择要迁移的行。
+如果在单独的某个表中存储了历史数据，则你可以将SQL Server Stretch Database配置为迁移整个表。另一方面，如果表包含历史数据和当前数据，则你可以指定筛选器谓词来选择要迁移的行。该筛选器谓词必须调用内联表值函数。本主题介绍如何编写内联表值函数用于选择要迁移的行。
 
-在 CTP 3.1 到 RC0 版本中，用于指定谓词的选项在“为数据库启用延伸”向导中不可用。必须将 ALTER TABLE 语句与此选项结合使用才能配置延伸数据库。有关详细信息，请参阅 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms190273.aspx)。
+在 CTP 3.1 到 RC0 版本中，用于指定谓词的选项在“为数据库启用延伸”向导中不可用。必须将 ALTER TABLE 语句与此选项结合使用才能配置SQL Server Stretch Database。有关详细信息，请参阅 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms190273.aspx)。
 
 如果未指定筛选器谓词，则会迁移整个表。
 
 > [!IMPORTANT]
-> 如果提供的筛选器谓词性能不佳，则数据迁移的性能也会不佳。延伸数据库将使用 CROSS APPLY 运算符对表应用筛选器谓词。
+> 如果提供的筛选器谓词性能不佳，则数据迁移的性能也会不佳。SQL Server Stretch Database将使用 CROSS APPLY 运算符对表应用筛选器谓词。
 
 ## 内联表值函数的基本要求
-延伸数据库筛选器函数所需的内联表值函数类似于以下示例。
+SQL Server Stretch Database筛选器函数所需的内联表值函数类似于以下示例。
 
 ```tsql
 CREATE FUNCTION dbo.fn_stretchpredicate(@column1 datatype1, @column2 datatype2 [, ...n])
@@ -278,8 +278,8 @@ RETURN	SELECT 1 AS is_eligible
     GO
     ```
 
-## 延伸数据库如何应用筛选器谓词
-延伸数据库使用 CROSS APPLY 运算符对表应用筛选器谓词并确定符合条件的行。例如：
+## SQL Server Stretch Database如何应用筛选器谓词
+SQL Server Stretch Database使用 CROSS APPLY 运算符对表应用筛选器谓词并确定符合条件的行。例如：
 
 ```tsql
 SELECT * FROM stretch_table_name CROSS APPLY fn_stretchpredicate(column1, column2)
