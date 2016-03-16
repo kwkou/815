@@ -1,6 +1,6 @@
 <properties
-	pageTitle="延伸数据库的外围应用限制与阻碍性问题 | Microsoft Azure"
-	description="了解启用延伸数据库之前必须解决的阻碍性问题。"
+	pageTitle="SQL Server Stretch Database的外围应用限制与阻碍性问题 | Azure"
+	description="了解启用SQL Server Stretch Database之前必须解决的阻碍性问题。"
 	services="sql-server-stretch-database"
 	documentationCenter=""
 	authors="douglasl"
@@ -12,9 +12,9 @@
 	ms.date="02/26/2016"
 	wacn.date="03/10/2016"/>
 
-# 延伸数据库的外围应用限制与阻碍性问题
+# SQL Server Stretch Database的外围应用限制与阻碍性问题
 
-了解启用延伸数据库之前必须解决的阻碍性问题。
+了解启用SQL Server Stretch Database之前必须解决的阻碍性问题。
 
 ## <a name="Limitations"></a>阻碍性问题
 在当前的 SQL Server 2016 预览版中，以下各项会使表不符合延伸的条件。
@@ -86,8 +86,8 @@
 -   对索引创建的筛选器不会传播到远程表。
 
 ## 另请参阅
-[通过运行延伸数据库顾问识别延伸数据库的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases)
-[为数据库启用延伸数据库](/documentation/articles/sql-server-stretch-database-enable-database)
-[为表启用延伸数据库](/documentation/articles/sql-server-stretch-database-enable-table)
+[通过运行SQL Server Stretch Database顾问识别SQL Server Stretch Database的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases)
+[为数据库启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-database)
+[为表启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table)
 
 <!---HONumber=Mooncake_0307_2016-->
