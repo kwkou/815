@@ -125,7 +125,7 @@
     Set-AzureRmSqlElasticPool –ResourceGroupName “resourcegroup1” –ServerName “server1” –ElasticPoolName “elasticpool1” –Dtu 1200 –DatabaseDtuMax 100 –DatabaseDtuMin 50 
 
 
-## 监视弹性数据库和弹性数据库池
+## 监视弹性数据库池
 弹性数据库池提供度量值报告以帮助你向外缩放资源来管理多个数据库。
 
 
@@ -134,11 +134,6 @@
 你可以跟踪弹性数据库池的操作（包括创建和更新）状态。
 
 	Get-AzureRmSqlElasticPoolActivity –ResourceGroupName “resourcegroup1” –ServerName “server1” –ElasticPoolName “elasticpool1” 
-
-
-### 获取将弹性数据库移入和移出弹性数据库池的状态
-
-	Get-AzureRmSqlElasticPoolDatabaseActivity -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
 
 ### 获取弹性数据库池的资源消耗度量值
 
