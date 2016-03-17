@@ -11,7 +11,7 @@
 <tags
     ms.service="sql-database"
     ms.date="12/01/2015"
-    wacn.date="01/29/2016"/>
+    wacn.date="03/17/2016"/>
 
 # 使用 PowerShell 创建弹性数据库池以便向外缩放多个 SQL 数据库的资源 
 
