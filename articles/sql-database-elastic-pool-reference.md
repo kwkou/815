@@ -154,7 +154,7 @@ Azure SQL 数据库 V12 服务器位于资源组中。
 | [Get-AzureRMSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt603517.aspx) | [获取弹性数据库池及其属性值](https://msdn.microsoft.com/zh-cn/library/mt163646.aspx) |
 | [Get-AzureRmSqlElasticPoolActivity](https://msdn.microsoft.com/zh-cn/library/azure/mt603812.aspx) | [获取弹性数据库池的操作状态](https://msdn.microsoft.com/zh-cn/library/mt163669.aspx) |
 | [Get-AzureRmSqlElasticPoolDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619484.aspx) | [获取弹性数据库池中的数据库](https://msdn.microsoft.com/zh-cn/library/mt163646.aspx) |
-| [Get-AzureRmSqlElasticPoolDatabaseActivity]() | [获取将数据库移入和移出池的状态](https://msdn.microsoft.com/zh-cn/library/mt163669.aspx) |
+
 
 ## Transact-SQL
 
