@@ -8,22 +8,23 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/11/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/11/2016"
+	wacn.date="03/17/2016"/>
 
 # 什么是网络安全组 (NSG)？
 
-网络安全组 (NSG) 包含一系列访问控制列表 (ACL) 规则，这些规则可以允许\\拒绝虚拟网络中流向 VM 实例的网络流量。NSG 可以与子网或该子网中的各个 VM 实例相关联。当 NSG 与某个子网相关联时，ACL 规则适用于该子网中的所有 VM 实例。另外，可以进一步通过将 NSG 直接关联到单个 VM 对流向该 VM 的流量进行限制。
+网络安全组 (NSG) 包含一系列访问控制列表 (ACL) 规则，这些规则可以允许或拒绝虚拟网络中流向 VM 实例的网络流量。NSG 可以与子网或该子网中的各个 VM 实例相关联。当 NSG 与某个子网相关联时，ACL 规则适用于该子网中的所有 VM 实例。另外，可以进一步通过将 NSG 直接关联到单个 VM 对流向该 VM 的流量进行限制。
+
+## NSG 资源
 
 NSG 包含以下属性。
 
 |属性|说明|约束|注意事项|
 |---|---|---|---|
 |Name|NSG 的名称|必须在区域内唯一<br/>可以包含字母、数字、下划线、句点和连字符<br/>必须以字母或数字开头<br/>必须以字母、数字或下划线结尾<br/>最多可以有 80 个字符|由于你可能需要创建多个 NSG，因此请确保设置命名约定，以便轻松标识 NSG 的功能。|
-|区域|托管 NSG 的 Azure 区域|只能将 NSG 应用于区域内已创建的资源|请参阅下面的[限制](#Limits)，了解一个区域内可以有多少 NSG|
 |规则|规则用于定义允许或拒绝的具体流量||请参阅下面的 [NSG 规则](#Nsg-rules)| 
 
->[AZURE.NOTE]不支持将基于终结点的 ACL 和网络安全组置于相同 VM 实例上。如果你想要使用 NSG，但已有了终结点 ACL，则请先删除该终结点 ACL。有关如何执行此操作的信息，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl-powershell)。
+>[AZURE.NOTE] 不支持将基于终结点的 ACL 和网络安全组置于相同 VM 实例上。如果你想要使用 NSG，但已有了终结点 ACL，则请先删除该终结点 ACL。有关如何执行此操作的信息，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl-powershell)。
 
 ### NSG 规则
 
@@ -40,6 +41,12 @@ NSG 规则包含以下属性。
 |**Direction**|要与规则匹配的流量方向|入站或出站|入站和出站规则将根据方向分别处理|
 |**Priority**|按优先顺序检查规则，只要应用了一个规则，就不会测试其他规则来进行匹配|介于 100 到 65535 之间的数字|可考虑创建规则跳转优先级（每个规则 100），以便在现有规则之间插入新规则|
 |**Access**|规则匹配时要应用的访问类型|允许或拒绝|请记住，如果找不到某个数据包的允许规则，则丢弃该数据包|
+
+NSG 包含两种类型的规则：入站规则和出站规则。在每组中，规则的优先级必须保持唯一。
+
+![NSG 规则处理](./media/virtual-network-nsg-overview/figure3.png)
+
+上图显示如何处理 NSG 规则。
 
 ### 默认标记
 
@@ -75,7 +82,7 @@ NSG 规则包含以下属性。
 
 ## 将 NSG 相关联
 
-可以将 NSG 关联到 VM 和子网，具体取决于所使用的部署模型。
+可以将 NSG 关联到 VM 和子网，具体取决于你使用的部署模型。
 
 [AZURE.INCLUDE [learn-about-deployment-models-both-include.md](../includes/learn-about-deployment-models-both-include.md)]
  
@@ -83,28 +90,40 @@ NSG 规则包含以下属性。
 
 - **将 NSG 关联到子网（所有部署）**。将 NSG 关联到子网时，NSG 中的网络访问规则将应用到子网中的所有 IaaS 和 PaaS 资源。
 
-你可以将不同的 NSG 关联到 VM 以及 VM 绑定到的子网。如果发生这种情况，所有网络访问规则将按以下顺序应用到流量：
+可以将不同的 NSG 关联到 VM 以及 VM 所绑定到的子网。如果发生这种情况，所有网络访问规则将按以下顺序应用到流量：
 
 - **入站流量**
 	1. 应用到子网的 NSG。
-	2. 应用到 VM（经典）的 NSG。
+	2. 应用到 VM的 NSG（经典）。
 - **出站流量**
-	1. 应用到 VM（经典）的 NSG。
-	3. 应用到子网的 NSG。
+	1. 应用到 VM的 NSG（经典）。
+	2. 应用到子网的 NSG。
 
 ![NSG ACL](./media/virtual-network-nsg-overview/figure2.png)
 
->[AZURE.NOTE]尽管你只能将一个 NSG 关联到一个子网、VM，但可以将同一个 NSG 关联到任意数量的资源。
+>[AZURE.NOTE] 尽管你只能将一个 NSG 关联到一个子网、VM，但你可以将同一 NSG 关联到任意数量的资源。
+
+## 实现
+你可以使用下列各种工具来实现经典 NSG。
+
+|部署工具|经典|
+|---|---|---|
+|管理门户|![否][red]|
+|PowerShell|<a href="/documentation/articles/virtual-networks-create-nsg-classic-ps">![是][green]</a>|
+|Azure CLI|<a href="/documentation/articles/virtual-networks-create-nsg-classic-cli">![是][green]</a>|
+
+|**键**|支持 ![是][green]。单击项目。|不支持 ![否][red]。|
+|---|---|---|
 
 ## 规划
 
 在实施 NSG 之前，你需要回答以下问题：
 
-1. 你想要筛选哪些类型的资源的进出流量（同一 VM、多个 VM 或其他资源）？
+1. 你想要筛选哪些类型资源的进出流量，VM、多个 VM 还是他资源（例如连接到同一子网的云服务或应用程序服务环境，或者连接到不同子网的资源）？
 
 2. 你要过滤其进出流量的资源是连接到现有 VNet 中的子网，还是连接到新的 VNet 或其子网？
  
-<!-- 有关如何针对 Azure 中的网络安全进行规划的详细信息，请参阅[云服务和网络安全最佳实践](/documentation/articles/best-practices-network-security)。-->
+有关如何针对 Azure 中的网络安全进行规划的详细信息，请参阅[云服务和网络安全最佳实践](/documentation/articles/best-practices-network-security)。
 
 ## 设计注意事项
 
@@ -120,7 +139,7 @@ NSG 规则包含以下属性。
 |每个区域每个订阅的 NSG 数目|100|默认情况下，你在 Azure 管理门户中创建的每个 VM 都会创建一个新的 NSG。如果你允许此默认行为，则会很快用光 NSG。请确保在设计时牢记此限制，根据需要将资源分成多个区域或订阅。 |
 |每个 NSG 的 NSG 规则数|200|使用各种 IP 和端口，确保不超过此限制。 |
 
->[AZURE.IMPORTANT]在设计解决方案之前，请确保查看所有[与 Azure 中的网络服务相关的限制](/documentation/articles/azure-subscription-service-limits#networking-limits)。可以通过开具支持票证增加某些限制。
+>[AZURE.IMPORTANT] 在设计解决方案之前，请确保查看所有[与 Azure 中的网络服务相关的限制](/documentation/articles/azure-subscription-service-limits#networking-limits)。可以通过开具支持票证增加某些限制。
 
 ### VNet 和子网设计
 
@@ -207,10 +226,15 @@ NSG 规则包含以下属性。
 |---|---|---|---|---|---|---|---|
 |允许来自 Internet 的 RDP|允许|100|INTERNET|**|*|3389|TCP|
 
->[AZURE.NOTE]请注意，此规则的源地址范围是 **Internet**，不是负载平衡器的 VIP；源端口是 **\***，不是 500001。请勿混淆 NAT 规则/负载平衡规则和 NSG 规则。NSG 规则始终与流量的最初源和最终目标相关，与二者之间的负载平衡器**无关**。
+>[AZURE.NOTE] 请注意，此规则的源地址范围是 **Internet**，不是负载平衡器的 VIP；源端口是 **\***，不是 500001。请勿混淆 NAT 规则/负载平衡规则和 NSG 规则。NSG 规则始终与流量的最初源和最终目标相关，与二者之间的负载平衡器**无关**。
 
 ## 后续步骤
 
 - [在经典部署模型中部署 NSG](/documentation/articles/virtual-networks-create-nsg-classic-ps)。
+- [管理 NSG 日志](/documentation/articles/virtual-network-nsg-manage-log)。
 
-<!---HONumber=Mooncake_0104_2016-->
+[green]: ./media/virtual-network-nsg-overview/green.png
+[yellow]: ./media/virtual-network-nsg-overview/yellow.png
+[red]: ./media/virtual-network-nsg-overview/red.png
+
+<!---HONumber=Mooncake_0307_2016-->

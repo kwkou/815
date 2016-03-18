@@ -10,16 +10,21 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/10/2016"
+	wacn.date="03/17/2016"/>
 
 #在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用
 
 Hive 和 Pig 非常适用于在 HDInsight 中处理数据，但有时你需要一种更通用的语言。Hive 和 Pig 都可让你使用各种编程语言创建用户定义的功能 (UDF)。在本文中，你将了解如何通过 Hive 和 Pig 使用 Python UDF。
 
-> [AZURE.NOTE]本文中的步骤适用于 HDInsight 群集版本 2.1、3.0、3.1 和 3.2。
+> [AZURE.NOTE] 本文中的步骤适用于 HDInsight 群集版本 2.1、3.0、3.1 和 3.2。
 
+##要求
 
+* HDInsight 群集（基于 Windows）
+
+* 文本编辑器
+ 
 ##<a name="python"></a>HDInsight 上的 Python
 
 默认情况下，Python2.7 安装在 HDInsight 3.0 和更高版本的群集上。可以将 Hive 与此版本的 Python 配合使用，以进行流式处理（使用 STDOUT/STDIN 在 Hive 和 Python 之间传递数据）。
@@ -40,7 +45,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 	FROM hivesampletable
 	ORDER BY clientid LIMIT 50;
 
-> [AZURE.NOTE]在基于 Windows 的 HDInsight 群集上，**USING** 子句必须指定 python.exe 的完整路径。这始终是 `D:\Python27\python.exe`。
+> [AZURE.NOTE] 在基于 Windows 的 HDInsight 群集上，**USING** 子句必须指定 python.exe 的完整路径。这始终是 `D:\Python27\python.exe`。
 
 下面是本示例执行的操作：
 
@@ -164,7 +169,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 ####Pig
 
-1. 使用 `pig` 命令来启动 shell。在 shell 加载后，你应会看到 `grunt>` 提示符。
+1. 使用 `pig` 命令来启动该 shell。在 shell 加载后，你应会看到 `grunt>` 提示符。
 
 2. 在 `grunt>` 提示符下输入以下语句。
 
@@ -205,7 +210,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 	此脚本将检索 HDInsight 群集的信息，然后提取默认存储帐户的名称和密钥，并将文件上载到容器的根目录。
 
-	> [AZURE.NOTE][在 HDInsight 中上载 Hadoop 作业的数据](/documentation/articles/hdinsight-upload-data)文档中介绍了上载脚本的其他方法。
+	> [AZURE.NOTE] [在 HDInsight 中上载 Hadoop 作业的数据](/documentation/articles/hdinsight-upload-data)文档中介绍了上载脚本的其他方法。
 
 上载文件后，使用以下 PowerShell 脚本启动作业。在完成作业时，会将输出写入到 PowerShell 控制台。
 
@@ -213,7 +218,6 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
     # Replace 'YourHDIClusterName' with the name of your cluster
 	$clusterName = YourHDIClusterName
-
 	$HiveQuery = "add file wasb:///streaming.py;" +
 	             "SELECT TRANSFORM (clientid, devicemake, devicemodel) " +
 	               "USING 'D:\Python27\python.exe streaming.py' AS " +
@@ -243,7 +247,6 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 	# Replace 'YourHDIClusterName' with the name of your cluster
 	$clusterName = YourHDIClusterName
-     
 	$PigQuery = "Register wasb:///jython.py using jython as myfuncs;" +
 	            "LOGS = LOAD 'wasb:///example/data/sample.log' as (LINE:chararray);" +
 	            "LOG = FILTER LOGS by LINE is not null;" +
@@ -270,6 +273,22 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 ##<a name="troubleshooting"></a>故障排除
 
+###运行作业时出现错误
+
+在运行 hive 作业时，你可能会遇到如下错误：
+
+    Caused by: org.apache.hadoop.hive.ql.metadata.HiveException: [Error 20001]: An error occurred while reading or writing to your custom script. It may have crashed with an error.
+    
+此问题可能是由 streaming.py 文件中的行尾结束符号导致的。许多 Windows 编辑器默认为使用 CRLF 作为行尾结束符号，但 Linux 应用程序通常应使用 LF。
+
+如果你使用的编辑器无法创建 LF 行尾结束符号，或者不确定要使用什么行尾结束符号，在将文件上载到 HDInsight 之前，请使用以下 PowerShell 语句删除 CR 字符：
+
+    $original_file ='c:\path\to\streaming.py'
+    $text = [IO.File]::ReadAllText($original_file) -replace "`r`n", "`n"
+    [IO.File]::WriteAllText($original_file, $text)
+
+###PowerShell 脚本
+
 用于运行示例的两个示例 PowerShell 脚本都包含一个带注释的行，该行将显示作业的错误输出。如果你未看到作业的预期输出，请取消注释以下行，并查看错误信息中是否指明了问题。
 
 	# Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
@@ -293,4 +312,4 @@ Pig|/PigPython/stderr<p>/PigPython/stdout
 
 * [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

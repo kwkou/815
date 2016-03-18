@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/29/2015"
-	wacn.date="01/15/2016"/>
+	ms.date="02/04/2016"
+	wacn.date="03/17/2016"/>
 
 
 #HDInsight 中 Hadoop 群集的可用性和可靠性
@@ -50,7 +50,7 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 
 ![](./media/hdinsight-high-availability/Hadoop.Service.Availability.Status.png)
 
-在屏幕截图中，活动头节点是 *headnode0*。
+在屏幕截图中，活动头节点是 *headnode0* 。
 
 ## 访问辅助头节点上的日志文件
 
@@ -59,7 +59,7 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 ![](./media/hdinsight-high-availability/Hadoop.Head.Node.Log.Files.png)
 
 
-## 配置头节点的大小
+## 配置头节点大小
 默认情况下，头节点分配作为大型虚拟机 (VM)。管理在群集上运行的大多数 Hadoop 作业只需要这种大小。但是有时，头节点可能需要超大 VM。例如，当群集需要管理大量的小型 Oozie 作业时。
 
 超大 VM 可通过使用 Azure PowerShell cmdlet 或 HDInsight SDK 来配置。
@@ -96,10 +96,10 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
     };
 
 
-**参考**
+## 后续步骤
 
-- [ZooKeeper](http://zookeeper.apache.org/ )
+- [Apache ZooKeeper](http://zookeeper.apache.org/)
 - [使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)
 - [使用 HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters-v1#sdk)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

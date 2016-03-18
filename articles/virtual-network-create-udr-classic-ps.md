@@ -4,14 +4,14 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-service-management"
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/11/2015"
-	wacn.date="02/17/2016"/>
+	ms.date="02/02/2016"
+	wacn.date="03/17/2016"/>
 
 #使用 PowerShell 控制路由和使用虚拟设备（经典）
 
@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../includes/virtual-network-create-udr-scenario-include.md)]
 
-下面的示例 Azure CLI 命令需要一个已经基于上述方案创建的简单环境。首先需要构建[使用 PowerShell 创建 VNet](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps) 中所述的环境。
+下面的示例 Azure PowerShell 命令需要一个已经基于上述方案创建的简单环境。如果你想要运行本文档中所显示的命令，首先需要构建[使用 PowerShell 创建 VNet](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps) 中所述的环境。
 
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../includes/azure-ps-prerequisites-include.md)]
 
@@ -102,4 +102,4 @@
 		Get-AzureVM -Name FW1 -ServiceName TestRGFW `
 			| Set-AzureIPForwarding -Enable
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0307_2016-->

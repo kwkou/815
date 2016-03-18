@@ -8,13 +8,17 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/11/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/10/2016"
+	wacn.date="03/17/2016"/>
 
 # 实例级公共 IP 概述
 实例级公共 IP (ILPIP) 是可直接向 VM 或角色实例而非 VM 或角色实例所在的云服务分配的公共 IP 地址。它不是用来代替分配给云服务的 VIP（虚拟 IP），而是可以用来直接连接到 VM 或角色实例的其他 IP 地址。
 
->[AZURE.NOTE]在过去，ILPIP 称为 PIP，表示公共 IP。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+
+请确保你了解 [IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-classic)在 Azure 中的工作原理。
+
+>[AZURE.NOTE] 在过去，ILPIP 称为 PIP，表示公共 IP。
 
 ![ILPIP 和 VIP 之间的差异](./media/virtual-networks-instance-level-public-ip/Figure1.png)
 
@@ -25,7 +29,7 @@
 - contosoweb\_IN\_0.contosoadservice.chinacloudapp.cn
 - contosoweb\_IN\_1.contosoadservice.chinacloudapp.cn 
 
->[AZURE.NOTE]你只能为每个 VM 或角色实例分配一个 ILPIP。每个订阅最多可使用 5 个 ILPIP。多 NIC VM 目前不支持 ILPIP。
+>[AZURE.NOTE] 你只能为每个 VM 或角色实例分配一个 ILPIP。每个订阅最多可使用 5 个 ILPIP。多 NIC VM 目前不支持 ILPIP。
 
 ## 为什么应请求 ILPIP？
 如果你希望能够通过直接分配的 IP 地址而非云服务 VIP:&lt;端口号&gt; 连接到 VM 或角色实例，则可为 VM 或角色实例请求 ILPIP。
@@ -116,9 +120,9 @@
 
 ## 后续步骤
 
-[保留 IP](/documentation/articles/virtual-networks-reserved-public-ip)
+- 了解 [IP 寻址](/documentation/articles/virtual-network-ip-addresses-overview-classic)在经典部署模型中的工作原理。
 
-[保留 IP REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx)
+- 了解[保留 IP](/documentation/articles/virtual-networks-reserved-public-ip)。
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0307_2016-->
