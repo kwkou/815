@@ -1,5 +1,5 @@
 <properties 
- pageTitle="开始在管理门户中使用计划程序 | Azure"
+ pageTitle="开始在管理门户中使用 Azure 计划程序 | Azure"
  description="" 
  services="scheduler" 
  documentationCenter=".NET" 
@@ -8,8 +8,8 @@
  editor=""/>
 <tags
  ms.service="scheduler"
- ms.date="12/04/2015"
- wacn.date="01/14/2016"/>
+ ms.date="02/12/2016"
+ wacn.date="03/17/2016"/>
 
 # 在管理门户中开始使用计划程序
 
@@ -17,7 +17,7 @@
 
 ## 入门
 
-使用 Azure 管理门户在 Azure 计划程序中可以轻松创建作业和作业集合。本教程将引导你创建用于存储作业的作业集合，在作业集合中创建作业，并概述可执行的作业监视和管理任务。使用本教程要求你以前使用过 Azure。
+在 Azure 计划程序中可以轻松创建作业和作业集合。本教程将引导你创建用于存储作业的作业集合，在作业集合中创建作业，并概述可执行的作业监视和管理任务。使用本教程要求你以前使用过 Azure。
 
 首次打开 Azure 管理门户时，系统会自动为你打开“所有项目”选项卡。可以对“所有项目”选项卡上的列进行排序。要查看计划程序作业和作业集合，请单击“计划程序”选项卡。
 
@@ -35,7 +35,7 @@
 
 5.  单击箭头键以创建作业集合并转到下一阶段 – 创建作业。
 
-6.  让我们来创建一个作业，这只需要使用 GET 请求访问 http://www.microsoft.com/ 。在“作业操作”屏幕中，为请求的表单字段定义以下值：
+6.  让我们来创建一个作业，这只需要使用 GET 请求访问 http://www.microsoft.com/。在“作业操作”屏幕中，为请求的表单字段定义以下值：
 
     1.  **名称：**` getmicrosoft`  
 
@@ -256,4 +256,4 @@ Azure 计划程序基于几个条件实施配额。本节列出了配额阈值�
 [14]: ./media/scheduler-get-started-portal/scheduler-get-started-portal014.png
 [15]: ./media/scheduler-get-started-portal/scheduler-get-started-portal015.png
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->
