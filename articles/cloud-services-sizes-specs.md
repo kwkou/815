@@ -51,15 +51,7 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 |Standard\_D12|4|28 GB|OS = 来宾 OS 大小<br/>本地资源 = 199704 MB<br/>应用 = 约 1.5 GB|
 |Standard\_D13|8|56 GB|OS = 来宾 OS 大小<br/>本地资源 = 404504 MB<br/>应用 = 约 1.5 GB|
 |Standard\_D14|16|112 GB|OS = 来宾 OS 大小<br/>本地资源 = 814104 MB<br/>应用 = 约 1.5 GB|
-|Standard\_D1\_v2|1|3\.5 GB|OS = 来宾 OS 大小<br/>本地资源 = 46104 MB<br/>应用 = 约 1.5 GB|
-|Standard\_D2\_v2|2|7 GB|OS = 来宾 OS 大小<br/>本地资源 = 97304 MB<br/>应用 = 约 1.5 GB|
-|Standard\_D3\_v2|4|14 GB|OS = 来宾 OS 大小<br/>本地资源 = 199704 MB<br/>应用 = 约 1.5 GB|
-|Standard\_D4\_v2|8|28 GB|OS = 来宾 OS 大小<br/>本地资源 = 404504 MB<br/>应用 = 约 1.5 GB|
-|Standard\_D5\_v2|16|56 GB|OS = 来宾 OS 大小<br/>本地资源 = 814104 MB<br/>应用 = 约 1.5 GB|
-|Standard\_D11\_v2|2|14 GB|OS = 来宾 OS 大小<br/>本地资源 = 97304 MB<br/>应用 = 约 1.5 GB|
-|Standard\_D12\_v2|4|28 GB|OS = 来宾 OS 大小<br/>本地资源 = 199704 MB<br/>应用 = 约 1.5 GB|
-|Standard\_D13\_v2|8|56 GB|OS = 来宾 OS 大小<br/>本地资源 = 404504 MB<br/>应用 = 约 1.5 GB|
-|Standard\_D14\_v2|16|112 GB|OS = 来宾 OS 大小<br/>本地资源 = 814104 MB<br/>应用 = 约 1.5 GB|
+
 ## 配置云服务的大小
 
 你可以指定角色实例的虚拟机大小作为服务定义文件描述的服务模型的一部分。角色大小确定了 CPU 核心数目、内存容量，以及分配给正在运行的实例的本地文件系统大小。根据应用程序的资源要求选择角色大小。
