@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/02/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="01/27/2016"
+	wacn.date="03/17/2016"/>
 
 
 # 云中的 Hadoop 是什么？ 介绍如何使用 HDInsight 中的 Hadoop 组件进行大数据分析
@@ -41,11 +41,11 @@ Azure HDInsight 使用 **Windows** 作为基础操作系统，在云中部署并
 
 类别 | Windows 上的 Hadoop
 ---------| --------------------
-**群集 OS** | Windows Server 2012 R2
-**群集类型** | Hadoop、HBase、Storm
-**部署** | Azure CLI、Azure PowerShell
-**群集 UI** | 群集仪表板
-**远程访问** | 远程桌面协议 (RDP)、REST API、ODBC、JDBC
+ **群集 OS** | Windows Server 2012 R2
+ **群集类型** | Hadoop、HBase、Storm
+ **部署** | Azure CLI、Azure PowerShell
+ **群集 UI** | 群集仪表板 
+ **远程访问** | 远程桌面协议 (RDP)、REST API、ODBC、JDBC
 
 
 
@@ -69,7 +69,7 @@ HDInsight 群集包含以下组件和实用程序。
 
 * **[Mahout](#mahout)**：机器学习。
 
-* **[MapReduce 和 YARN](#mapreduce)**：分布式处理和资源管理。
+* **[MapReduce](#mapreduce)**：用于 Hadoop 分布式处理和资源管理的旧框架。请参阅 [YARN](#yarn)，它是下一代资源框架。
 
 * **[Oozie](#oozie)**：工作流管理。
 
@@ -81,14 +81,16 @@ HDInsight 群集包含以下组件和实用程序。
 
 * **[Tez](#tez)**：允许数据密集型进程大规模地高效运行。
 
+* **[YARN](#yarn)**：是 Hadoop 核心库和下一代 MapReduce 软件框架的一部分。
+
 * **[ZooKeeper](#zookeeper)**：协调分布式系统中的进程。
 
-> [AZURE.NOTE]有关特定组件的信息和版本信息，请参阅 [HDInsight 提供的 Hadoop 群集版本有哪些新功能？][component-versioning]
+> [AZURE.NOTE] 有关特定组件的信息和版本信息，请参阅 [HDInsight 提供的 Hadoop 群集版本有哪些新功能？][component-versioning]
 
 ### <a name="avro"></a>Avro (Microsoft .NET Library for Avro)
 
 Microsoft .NET Library for Avro 针对 Microsoft.NET 环境序列化实现了 Apache Avro 紧凑的二进制数据交换格式。它使用 <a target="_blank" href="http://www.json.org/">JavaScript 对象表示法 (JSON)</a> 定义与语言无关的架构，以支持语言互操作性，这意味着以一种语言序列化的数据可以用另一种语言读取。有关格式的详细信息可以在 <a target=_"blank" href="http://avro.apache.org/docs/current/spec.html">Apache Avro 规范</a>中找到。
-Avro 文件格式支持分布式 MapReduce 编程模型。文件是“可拆分的”，也就是说，你可以在文件中任意设置一个点，然后即可从某一特定块开始读取。若要了解相关方法，请参阅[使用 Microsoft .NET Library for Avro 序列化数据](/documentation/articles/hdinsight-dotnet-avro-serialization)。
+Avro 文件格式支持分布式 MapReduce 编程模型。文件是“可拆分的”，意味着你可以在文件中搜寻任一点，然后即可从某一特定块开始读取。若要了解相关方法，请参阅[使用 Microsoft .NET Library for Avro 序列化数据](/documentation/articles/hdinsight-dotnet-avro-serialization)。
 
 
 ### <a name="HDFS"></a>HDFS
@@ -105,12 +107,12 @@ Hadoop 分布式文件系统 (HDFS) 是一种分布式文件系统，采用 MapR
 
 <a target="_blank" href="https://mahout.apache.org/">Apache Mahout</a> 是在 Hadoop 上运行的一种可缩放的机器学习算法库。计算机学习应用程序采用统计学原理，使系统学习数据并使用以往的结果来确定将来的行为。请参阅[使用 Hadoop 上的 Mahout 生成电影推荐](/documentation/articles/hdinsight-mahout)。
 
-### <a name="mapreduce"></a>MapReduce 和 YARN
-Hadoop MapReduce 是一个用于编写并行处理大数据集的应用程序的软件框架。MapReduce 作业将分割大型数据集并将数据组织成键值对进行处理。
+### <a name="mapreduce"></a>MapReduce
+MapReduce 是一个旧软件框架，用于编写并行批量处理大数据集的应用程序。MapReduce 作业将分割大型数据集并将数据组织成键值对进行处理。
 
-Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTracker 的两个主要任务（资源管理和作业计划/监视）分割成单独的实体。
+[YARN](#yarn) 是 Hadoop 下一代资源管理器和应用程序框架，也称为 MapReduce 2.0。MapReduce 作业将在 YARN 上运行。
 
-有关 MapReduce 的详细信息，请参阅 Hadoop Wiki 中的 <a target="_blank" href="http://wiki.apache.org/hadoop/MapReduce">MapReduce</a>。若要了解 YARN，请参阅 <a target="_blank" href="http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">Apache Hadoop 下一代 MapReduce (YARN)</a>。
+有关 MapReduce 的详细信息，请参阅 Hadoop Wiki 中的 <a target="_blank" href="http://wiki.apache.org/hadoop/MapReduce">MapReduce</a>。
 
 ### <a name="oozie"></a>Oozie
 <a target="_blank" href="http://oozie.apache.org/">Apache Oozie</a> 是一个管理 Hadoop 作业的工作流协调系统。它与 Hadoop 堆栈集成，支持 MapReduce、Pig、Hive 和 Sqoop 的 Hadoop 作业。它也能用于安排特定于某系统的作业，例如 Java 程序或 shell 脚本。请参阅[将基于时间的 Oozie 协调器与 Hadoop 配合使用](/documentation/articles/hdinsight-use-oozie-coordinator-time)。
@@ -128,9 +130,49 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 ### <a name="tez"></a>Tez
 <a  target="_blank" href="http://tez.apache.org/">Apache Tez</a> 是一个构建于 Hadoop YARN 之上的应用程序框架，用于执行复杂的非循环常规图形数据处理。它是 MapReduce 框架的更灵活、功能更强大的后继，允许数据密集型进程（如 Hive）更高效地大规模运行。请参阅[“使用 Hive 和 HiveQL”中的“使用 Apache Tez 提高性能”](/documentation/articles/hdinsight-use-hive#usetez)。
 
+### <a name="yarn"></a>YARN
+Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），它具有更大的可伸缩性和实时处理，支持超越 MapReduce 批处理的数据处理方案。YARN 提供资源管理和分布式应用程序框架。MapReduce 作业将在 YARN 上运行。
+
+若要了解 YARN，请参阅 <a target="_blank" href="http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">Apache Hadoop 下一代 MapReduce (YARN)</a>。
+
 
 ### <a name="zookeeper"></a>ZooKeeper
 <a  target="_blank" href="http://zookeeper.apache.org/">Apache ZooKeeper</a> 通过数据寄存器的共享层次结构命名空间 (znode) 协调大型分布式系统中的进程。Znode 包含协调流程所需的少量元数据信息：状态、位置、配置，等等。
+
+## HDInsight 上的编程语言
+
+HDInsight 群集（Hadoop、HBase、Storm 和 Spark 群集）支持多种编程语言，但某些编程语言默认情况下未安装。对于默认情况下未安装的库、模块或程序包，请使用脚本操作来安装组件。请参阅[使用 HDInsight 进行脚本操作开发](/documentation/articles/hdinsight-hadoop-script-actions-linux)。
+
+### 默认编程语言支持
+
+默认情况下，HDInsight 群集支持：
+
+* Java
+
+* Python
+
+可以使用脚本操作安装其他语言：[使用 HDInsight 进行脚本操作开发](/documentation/articles/hdinsight-hadoop-script-actions-linux)。
+
+### Java 虚拟机 (JVM) 语言
+
+除了 Java 外，许多语言可以使用 Java 虚拟机 (JVM) 运行；但是，运行其中某些语言可能需要在群集上安装其他组件。
+
+HDInsight 群集支持以下基于 JVM 的语言：
+
+* Clojure
+
+* Jython (Python for Java)
+
+* Scala
+
+### Hadoop 特定的语言
+
+HDInsight 群集为以下特定于 Hadoop 生态系统的语言提供支持：
+
+* 用于 Pig 作业的 Pig Latin
+
+* 用于 Hive 作业的 HiveQL 和 SparkSQL
+
 
 ## <a name="advantage"></a>Hadoop 在云中的优势
 
@@ -144,7 +186,7 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 * 使用 Azure Blob 存储（一种与 Hadoop 兼容的选项），数据存储高效又经济。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。
 
-* 与其他 Azure 服务集成，包括[ Web 应用](/documentation/services/web-sites/)和 [SQL 数据库](/documentation/services/sql-databases/)。
+* 与其他 Azure 服务集成，包括 [Web 应用](/documentation/services/web-sites/)和 [SQL 数据库](/documentation/services/sql-databases/)。
 
 * 进入成本低。开始[试用](/pricing/1rmb-trial/)或查阅 [HDInsight 定价详细信息](/home/features/hdinsight/#price)。
 
@@ -188,8 +230,6 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 * [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 Hadoop](/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver)：了解如何使用 Microsoft Hive ODBC 驱动程序从 HDInsight 导入数据。
 
-* [Microsoft 云平台](https://www.microsoft.com/zh-cn/server-cloud/)：了解有关 Power BI for Office 365、下载 SQL Server 试用版，以及设置 SharePoint Server 2013 和 SQL Server BI 的信息。
-
 * <a target="_blank" href="http://msdn.microsoft.com/zh-cn/library/hh231701.aspx">详细了解 SQL Server Analysis Services</a>。
 
 * <a target="_blank" href="http://msdn.microsoft.com/zh-cn/library/ms159106.aspx">了解 SQL Server Reporting Services</a>。
@@ -201,7 +241,7 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 * [分析 HVAC 传感器数据](/documentation/articles/hdinsight-hive-analyze-sensor-data)：了解如何通过将 Hive 与 HDInsight (Hadoop) 配合使用来分析传感器数据，然后在 Microsoft Excel 中实现数据的可视化。在此例中，你将使用 Hive 处理 HVAC 系统生成的历史数据，从而了解哪些系统无法可靠地维持设定的温度。
 
-* [将 Hive 与 HDInsight 配合使用来分析 Web 应用日志](/documentation/articles/hdinsight-hive-analyze-website-log)：了解如何使用 HDInsight 中的 HiveQL 来分析 Web 应用日志，从而了解来自外部 Web 应用的一天访问次数以及用户遇到的 Web 应用错误摘要。
+* [将 Hive 与 HDInsight 配合使用来分析网站日志](/documentation/articles/hdinsight-hive-analyze-website-log)：了解如何使用 HDInsight 中的 HiveQL 来分析网站日志，从而了解来自外部网站的一天访问次数以及用户遇到的网站错误摘要。
 
 * [使用 HDInsight (Hadoop) 中的 Storm 和 HBase 实时分析传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis)：了解如何构建一个解决方案，使用 HDInsight 中的 Storm 群集处理 Azure 事件中心的传感器数据，然后将处理后的传感器数据以近乎实时的信息显示在基于 Web 的仪表板上。
 
@@ -210,4 +250,4 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 [component-versioning]: /documentation/articles/hdinsight-component-versioning-v1
 [zookeeper]: http://zookeeper.apache.org/
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->

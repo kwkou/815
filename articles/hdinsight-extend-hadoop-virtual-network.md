@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/13/2015"
-	wacn.date="02/26/2016"/>
+	ms.date="01/29/2016"
+	wacn.date="03/17/2016"/>
 
 
 #使用 Azure 虚拟网络扩展 HDInsight 功能
@@ -30,7 +30,7 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 	使用虚拟网络链接 Azure 服务与 HDInsight 可实现以下方案：
 
-	* 从 Azure 虚拟机中运行的 Azure Web 应用或服务**调用 HDInsight 服务或作业**。
+	* 从 Azure 虚拟机中运行的 Azure 网站或服务**调用 HDInsight 服务或作业**。
 
 	* 在 HDInsight 与 SQL 数据库或 SQL Server 或其他运行于虚拟机的数据存储解决方案之间**直接传输数据**。
 
@@ -60,30 +60,23 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 > [AZURE.IMPORTANT] 在虚拟网络上创建 HDInsight 群集需要本部分中所述的特定虚拟网络配置。
 
-* Azure HDInsight 仅支持基于位置的虚拟网络，目前无法处理基于地缘的虚拟网络。 
+###基于位置的虚拟网络
 
-* 强烈建议针对每个 HDInsight 群集创建一个子网。
+Azure HDInsight 仅支持基于位置的虚拟网络，目前无法处理基于地缘的虚拟网络。
 
-* 明确限制与 Internet 相互访问的 Azure 虚拟网络不支持 HDInsight。例如，使用网络安全组或 ExpressRoute 阻止 Internet 流量进入虚拟网络中的资源。HDInsight 服务是一个托管的服务，需要在预配期间和运行时访问 Internet，以便 Azure 能够监视群集的运行状况、启动群集资源故障转移，以及执行其他自动化管理任务。
+###子网
 
-    如果想要在阻止 Internet 流量的虚拟网络上使用 HDInsight，可以执行以下步骤：
+强烈建议针对每个 HDInsight 群集创建一个子网。
 
-    1. 在虚拟网络中创建新的子网。默认情况下，新子网能够与 Internet 通信。这样就可以在此子网上安装 HDInsight。由于新子网与受保护子网位于同一虚拟网络中，因此它也可以与受保护子网中安装的资源通信。
-    
-    2. 可以使用以下 PowerShell 语句来确认是否没有将特定的网络安全组或路由表附加到子网。将 __VIRTUALNETWORKNAME__ 替换你的虚拟网络名称，将 __SUBNET__ 替换为子网的名称。
-        
-            $vnet = Get-AzureVirtualNetwork -Name VIRTUALNETWORKNAME
-            $vnet.Subnets | Where-Object Name -eq "SUBNET"
-            
-        在结果中，请注意 __NetworkSecurityGroup__ 和 __RouteTable__ 均为 `null`。
-    
-    2. 创建 HDInsight 群集。为群集配置虚拟网络设置时，请选择步骤 1 中创建的子网。
+###受保护的虚拟网络
 
-    > [AZURE.NOTE] 上述步骤假设未将通信限制为_虚拟网络 IP 地址范围中_的 IP 地址。如果已限制，则可能需要修改这些限制，以允许与新子网进行通信。
+明确限制与 Internet 相互访问的 Azure 虚拟网络不支持 HDInsight。例如，使用网络安全组或 ExpressRoute 阻止 Internet 流量进入虚拟网络中的资源。HDInsight 服务是一个托管的服务，需要在预配期间和运行时访问 Internet，以便 Azure 能够监视群集的运行状况、启动群集资源故障转移，以及执行其他自动化管理任务。
 
-    有关网络安全组的详细信息，请参阅[网络安全组概述](/documentation/articles/virtual-networks-nsg)。有关在 Azure 虚拟网络中控制路由的详细信息，请参阅[用户定义的路由和 IP 转发](/documentation/articles/virtual-networks-udr-overview)。
+如果想要在阻止 Internet 流量的虚拟网络上使用 HDInsight，可以执行以下步骤：
 
-有关如何在虚拟网络中设置 HDInsight 群集的详细信息，请参阅[在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)。
+1. 在虚拟网络中创建新的子网。默认情况下，新子网能够与 Internet 通信。这样就可以在此子网上安装 HDInsight。由于新子网与受保护子网位于同一虚拟网络中，因此它也可以与受保护子网中安装的资源通信。
+
+2. 创建 HDInsight 群集。为群集配置虚拟网络设置时，请选择步骤 1 中创建的子网。
 
 ##<a id="tasks"></a>任务和信息
 
@@ -107,4 +100,4 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 若要了解有关 Azure 虚拟网络的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview)。
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0307_2016-->
