@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="设置用于测试的混合云环境" 
-	description="了解如何创建混合云环境，以便进行 IT 专业人员测试或开发测试。" 
+	pageTitle="混合云测试环境 | Azure" 
+	description="了解如何创建混合云环境，以便 IT 专业人员或开发人员使用简化的本地网络完成测试。" 
 	services="virtual-network" 
 	documentationCenter="" 
 	authors="JoeDavies-MSFT" 
@@ -8,14 +8,15 @@
 	editor=""
 	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-network" 
-	ms.date="09/10/2015" 
-	wacn.date="02/17/2016"/>
+<tags
+	ms.service="virtual-network"
+	ms.date="01/28/2016"
+	wacn.date="03/17/2016"/>
 
 # 设置用于测试的混合云环境
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+ 
 
 本主题将指导你逐步使用 Azure 创建混合云环境，以便进行测试。这是生成的配置。
 
@@ -41,15 +42,15 @@
 4.	创建站点到站点 VPN 连接。
 5.	配置 DC2。 
 
-如果你还没有 Azure 订阅，可以在[试用 Azure](/pricing/1rmb-trial/) 中注册一个免费试用版。
+如果你还没有 Azure 订阅，可以通过[试用 Azure](/pricing/1rmb-trial/) 注册试用版。
 
->[AZURE.NOTE] Azure 中的虚拟机和虚拟网关在运行时会持续产生货币成本。此成本是针对你的免费试用版本。若要在不使用的情况下降低运行此测试环境的成本，请参阅本主题中的[最大程度地降低此环境的持续使用成本](#costs)，了解详细信息。
+>[AZURE.NOTE] Azure 中的虚拟机和虚拟网关在运行时会持续产生货币成本。此成本是针对你的试用版。若要在不使用的情况下降低运行此测试环境的成本，请参阅本主题中的[最大程度地降低此环境的持续使用成本](#costs)，了解详细信息。
 
 此配置要求使用一个由最多四台计算机组成的测试子网，这些计算机使用公共 IP 地址直接连接到 Internet。如果没有这些资源，你也可以[设置用于测试的模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)。模拟混合云测试环境只需要 Azure 订阅。
 
 ## 阶段 1：在 Corpnet 子网上配置计算机
 
-按照[测试实验室指南：Windows Server 2012 R2 的基本配置](https://www.microsoft.com/download/details.aspx?id=39638)的“配置 Corpnet 子网的步骤”一节中的说明，在名为 Corpnet 的子网上配置 DC1、APP1 和 CLIENT1 计算机。**此子网必须与组织网络隔离，因为它将通过 RRAS1 计算机直接连接到 Internet。**
+按照[测试实验室指南：Windows Server 2012 R2 的基本配置](http://www.microsoft.com/download/details.aspx?id=39638)的“配置 Corpnet 子网的步骤”一节中的说明，在名为 Corpnet 的子网上配置 DC1、APP1 和 CLIENT1 计算机。**此子网必须与组织网络隔离，因为它将通过 RRAS1 计算机直接连接到 Internet。**
 
 接下来，使用 CORP\\User1 凭据登录到 DC1。若要配置 CORP 域，以便计算机和用户使用其本地域控制器进行身份验证，请从管理员级 Windows PowerShell 命令提示符运行这些命令。
 
@@ -286,25 +287,11 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
  
 现在，你的混合云环境已准备好进行测试。
 
-## 其他资源
+##<a id="costs"></a> 最大程度地降低此环境的持续使用成本
 
-[在混合云中设置 SharePoint Intranet 场用于测试](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
+若要将在此环境中运行虚拟机的成本降到最低，请尽快执行所需的测试和演示，然后删除它们或关闭虚拟机（在不使用时进行）。例如，你可以在每个营业日结束时使用 Azure 自动化和 Runbook 来自动关闭 Test\_VNET 虚拟网络中的虚拟机。有关详细信息，请参阅 [Azure 自动化入门](/documentation/articles/automation-create-runbook-from-samples)。
 
-[在混合云中设置用于测试且基于 Web 的 LOB 应用程序](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
-
-[在混合云中设置 Office 365 目录同步 (DirSync) 以便进行测试](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing)
-
-[设置用于测试的模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)
-
-[Azure 混合云测试环境](/documentation/articles/virtual-machines-hybrid-cloud-test-environments)
-
-[Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
-
-## <a id="costs"></a> 最大程度地降低此环境的持续使用成本
-
-若要将在此环境中运行虚拟机的成本降到最低，请尽快执行所需的测试和演示，然后删除它们或关闭虚拟机（在不使用时进行）。例如，你可以在每个营业日结束时使用 Azure 自动化和 Runbook 来自动关闭 Test_VNET 虚拟网络中的虚拟机。有关详细信息，请参阅 [Azure 自动化入门](/documentation/articles/automation-create-runbook-from-samples)。
-
-在实施时，Azure VPN 网关将由两台 Azure 虚拟机组成，因此会产生持续的货币成本。有关详细信息，请参阅[定价 - 虚拟网络](/home/features/networking/#home_net_pri)。若要将 VPN 网关的成本降到最低，请创建测试环境并尽快执行所需测试和演示，或者通过这些步骤删除该网关。
+在实施时，Azure VPN 网关将由两台 Azure 虚拟机组成，因此会产生持续的货币成本。有关详细信息，请参阅[定价 - 虚拟网络](/home/features/networking/#price)。若要将 VPN 网关的成本降到最低，请创建测试环境并尽快执行所需测试和演示，或者通过这些步骤删除该网关。
 
 1.	在本地计算机上的 Azure 管理门户中，依次单击左窗格中的“网络”、“TestVNET”、“仪表板”。
 2.	在任务栏中，单击“删除网关”。出现提示时单击“是”。等待，直到网关删除完毕且其状态更改为“未创建网关”。
@@ -323,5 +310,8 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
 
 接下来，请转到本地计算机上的 Azure 管理门户中等待，一直等到 TestVNET 虚拟网络显示状态为“已连接”。
  
+## 后续步骤
 
-<!---HONumber=76-->
+- 在此环境中设置 [SharePoint intranet 场](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)、[基于 Web 的 LOB 应用程序](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)或者 [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing)。
+
+<!---HONumber=Mooncake_0307_2016-->

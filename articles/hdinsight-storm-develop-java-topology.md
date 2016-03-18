@@ -10,14 +10,16 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="01/29/2016"
+	wacn.date="03/17/2016"/>
 
 #使用 Apache Storm 和 HDInsight 上的 Maven 为基本的单词计数应用程序开发基于 Java 的拓扑
 
 了解使用 Maven 为 Apache Storm on HDInsight 创建基于 Java 的拓扑的基本过程。将会演练使用 Maven 和 Java 创建基本单词计数应用程序的过程。虽然本文提供了有关使用 Eclipse 的说明，但你也可以使用所选的文本编辑器。
 
 完成本文档中的步骤之后，你将会获得一个用于部署到 Apache Storm on HDInsight 的基本拓扑。
+
+> [AZURE.NOTE]：此拓扑的完整版本在 [https://github.com/Azure-Samples/hdinsight-java-storm-wordcount](https://github.com/Azure-Samples/hdinsight-java-storm-wordcount) 中提供。
 
 ##先决条件
 
@@ -27,7 +29,7 @@
 
 * 文本编辑器，例如记事本、<a href="http://www.gnu.org/software/emacs/" target="_blank">Emacs<a>、<a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a>、<a href="https://atom.io/" target="_blank">Atom.io</a>、<a href="http://brackets.io/" target="_blank">Brackets.io</a>。或者使用集成开发环境 (IDE)，例如 <a href="https://eclipse.org/" target="_blank">Eclipse</a>（Luna 或更高版本）。
 
-	> [AZURE.NOTE]你的编辑器或 IDE 可能具有处理 Maven 的特定功能，但本文档中未提供说明。有关环境编辑功能的详细信息，请参阅所使用产品的文档。
+	> [AZURE.NOTE] 你的编辑器或 IDE 可能具有处理 Maven 的特定功能，但本文档中未提供说明。有关环境编辑功能的详细信息，请参阅所使用产品的文档。
 
 ##配置环境变量
 
@@ -81,7 +83,7 @@
 
 在编译时，Maven 会使用此信息来查找 Maven 存储库中的 **storm-core**。它会先查找本地计算机上的存储库。如果文件不存在，它会从公共 Maven 存储库下载这些文件，并将其存储在本地存储库中。
 
-> [AZURE.NOTE]请注意我们在该节中添加的 `<scope>provided</scope>` 行。这会告诉 Maven 从我们创建的任何 JAR 文件中排除 **storm-core**，因为系统将会予以提供。这样，便可以稍微减小所创建的包，并确保它们使用 Storm on HDInsight 群集中包含的 **storm-core** 位。
+> [AZURE.NOTE] 请注意我们在该节中添加的 `<scope>provided</scope>` 行。这会告诉 Maven 从我们创建的任何 JAR 文件中排除 **storm-core**，因为系统将会予以提供。这样，便可以稍微减小所创建的包，并确保它们使用 Storm on HDInsight 群集中包含的 **storm-core** 位。
 
 ##生成配置
 
@@ -144,7 +146,7 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
 
 为了降低设置外部数据源的要求，以下 Spout 只会发出随机句子。它是 <a href="https://github.com/apache/storm/blob/master/examples/storm-starter/" target="_blank">Storm-Starter 示例</a>随附的 Spout 的修改版本。
 
-> [AZURE.NOTE]有关从外部数据源读取的 Spout 的示例，请参阅以下示例之一：<ul><li> <a href="https://github.com/apache/storm/blob/master/examples/storm-starter/src/jvm/org/apache/storm/starter/spout/TwitterSampleSpout.java" target="_blank">TwitterSampleSpout</a>：从Twitter 读取数据的示例 Spout</li><li><a href="https://github.com/apache/storm/tree/master/external/storm-kafka" target="_blank">Storm-Kafka</a>：从 Kafka 读取数据的 Spout</li></ul>
+> [AZURE.NOTE] 有关从外部数据源读取的 Spout 的示例，请参阅以下示例之一：<ul><li> <a href="https://github.com/apache/storm/blob/master/examples/storm-starter/src/jvm/storm/starter/spout/TwitterSampleSpout.java" target="_blank">TwitterSampleSpout</a>：从Twitter 读取数据的示例 Spout</li><li><a href="https://github.com/apache/storm/tree/master/external/storm-kafka" target="_blank">Storm-Kafka</a>：从 Kafka 读取数据的 Spout</li></ul>
 
 对于 Spout，在 **src\\main\\java\\com\\microsoft\\example** 目录中创建名为 **RandomSentenceSpout.java** 的新文件，并使用以下内容做为内容：
 
@@ -232,7 +234,7 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
 
 请花费片刻时间通读代码注释，以了解此 Spout 的工作原理。
 
-> [AZURE.NOTE]虽然此拓扑只使用一个 Spout，但其他拓扑可能存在将数据从不同源送入拓扑的多个 Spout。
+> [AZURE.NOTE] 虽然此拓扑只使用一个 Spout，但其他拓扑可能存在将数据从不同源送入拓扑的多个 Spout。
 
 ###创建 Bolt
 
@@ -242,7 +244,7 @@ Bolt 用于处理数据。此拓扑有两个 Bolt：
 
 * **WordCount**：统计每个单词的出现次数。
 
-> [AZURE.NOTE]Bolt 几乎可以执行任何操作，例如，计算、保存，或者与外部组件通信。
+> [AZURE.NOTE] Bolt 几乎可以执行任何操作，例如，计算、保存，或者与外部组件通信。
 
 在 **src\\main\\java\\com\\microsoft\\example** 目录中创建两个新文件：**SplitSentence.java** 和 **WordCount.Java**。将以下内容用作这些文件的内容：
 
@@ -457,4 +459,4 @@ Trident 是 Storm 提供的高级抽象。它支持有状态处理。Trident 的
 
 如需更多 Storm 拓扑示例，请访问 [Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology)。
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0307_2016-->

@@ -10,14 +10,14 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="01/14/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="02/03/2016"
+	wacn.date="03/17/2016"/>
 
-# 设置用于测试的模拟混合云环境
+# 设置用于测试的模拟混合云环境（经典部署模式）
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
-本文将指导你逐步使用 Azure 创建模拟混合云环境，以便使用两个独立的 Azure 虚拟网络进行测试。当你没有直接的 Internet 连接和可用的公共 IP 地址时，可使用此配置作为[设置用于测试的混合云环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)的替代方法。这是生成的配置。
+本文将指导你通过两个独立的 Azure 虚拟网络，逐步使用Azure 创建用于测试的模拟混合云环境。当你没有直接的 Internet 连接和可用的公共 IP 地址时，可使用此配置作为[设置用于测试的混合云环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)的替代方法。这是生成的配置。
 
 ![](./media/virtual-networks-setup-simulated-hybrid-cloud-environment-testing/CreateSimHybridCloud_4.png)
 
@@ -183,10 +183,10 @@
 接下来，将额外的数据磁盘添加为驱动器盘符为 F: 的新卷。
 
 1.	在服务器管理器的左窗格中，单击**“文件和存储服务”**，然后单击**“磁盘”**。
-2.	在内容窗格的**“磁盘”**组中，单击**“磁盘 2”**（其**“分区”**设置为**“未知”**）。
+2.	在内容窗格的“磁盘”组中，单击“磁盘 2”（其“分区”设置为“未知”）。
 3.	单击**“任务”**，然后单击**“新建卷”**。
 4.	在新建卷向导的“开始之前”页上，单击**“下一步”**。
-5.	在“选择服务器和磁盘”页上，单击**“磁盘 2”**，然后单击**“下一步**”。出现提示时，单击**“确定”**。
+5.	在“选择服务器和磁盘”页上，单击“磁盘 2”，然后单击“下一步”。出现提示时，单击“确定”。
 6.	在“指定卷的大小”页上，单击**“下一步”**。
 7.	在“分配到驱动器号或文件夹”页上，单击**“下一步”**。
 8.	在“选择文件系统设置”页上，单击**“下一步”**。
@@ -216,11 +216,7 @@
 
 ## 后续步骤
 
-在 TestVNET 虚拟网络中设置以下工作负荷：
-
-- [SharePoint Intranet 场](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
-- [基于 Web 的业务线应用程序](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
-- [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing)
+- 在 TestVNET 虚拟网络中设置 [SharePoint intranet 场](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)、[基于 Web 的业务线应用程序](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)或 [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing)。
 
 
 ## <a id="costs"></a>最大程度地降低此环境的持续使用成本
@@ -260,6 +256,5 @@
 	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet -SharedKey $preSharedKey
 
 接下来，在 Azure 管理门户的“网络”页上，单击任务栏中的“TestLab”虚拟网络，然后单击“连接”。等待，直到 TestLab 虚拟网络显示状态为“已连接”，即已连接到 TestVNET 本地网络。
- 
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0307_2016-->
