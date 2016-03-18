@@ -122,7 +122,7 @@ Azure [应用程序网关](/documentation/articles/application-gateway-introduct
 
 ## 限制
 
-下表显示适用于 Azure 中每个订阅的 IP 寻址的限制。你可以[与支持人员联系](https://manage.windowsazure.cn/#blade/Microsoft_Azure_Support/HelpAndSupportBlade)，以便根据你的业务需求将默认限制增加到最大限制。
+下表显示适用于 Azure 中每个订阅的 IP 寻址的限制。你可以[与支持人员联系](http://wacn-ppe.chinacloudsites.cn/support/support-ticket-form/?l=zh-cn)，以便根据你的业务需求将默认限制增加到最大限制。
 
 |默认限制|最大限制|
 |---|---|---|

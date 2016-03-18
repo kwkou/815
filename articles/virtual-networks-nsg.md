@@ -26,7 +26,7 @@ NSG 包含以下属性。
 
 >[AZURE.NOTE] 不支持将基于终结点的 ACL 和网络安全组置于相同 VM 实例上。如果你想要使用 NSG，但已有了终结点 ACL，则请先删除该终结点 ACL。有关如何执行此操作的信息，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl-powershell)。
 
-### NSG 规则
+###<a name="Nsg-rules"></a> NSG 规则
 
 NSG 规则包含以下属性。
 
@@ -48,7 +48,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 
 上图显示如何处理 NSG 规则。
 
-### 默认标记
+###<a name="Default-Tags"></a> 默认标记
 
 默认标记是系统提供的针对某类 IP 地址的标识符。你可以使用任何规则的 **source address prefix** 和 **destination address prefix** 属性中的默认标记。有三个可使用的默认标记。
 
@@ -115,7 +115,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 |**键**|支持 ![是][green]。单击项目。|不支持 ![否][red]。|
 |---|---|---|
 
-## 规划
+##<a name="Planning"></a> 规划
 
 在实施 NSG 之前，你需要回答以下问题：
 
