@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="01/05/2016"  
-	wacn.date="02/25/2016"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/17/2016"/>
 
 #简要介绍并比较 Azure 按需媒体编码器
 
@@ -29,8 +29,8 @@ Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项�
 
 媒体服务支持将在本文中介绍的以下按需编码器：
 
-- **媒体编码器标准版**
-- **Azure 媒体编码器** 
+- [媒体编码器标准版](/documentation/articles/media-services-encode-asset.md#media-encoder-standard)
+- [Azure Media Encoder](/documentation/articles/media-services-encode-asset.md#azure-media-encoder)
 
 本文简要概述了按需媒体编码器，并提供了指向介绍更多详细信息的文章的链接。本主题还提供了编码器的比较。
 
@@ -134,7 +134,12 @@ Azure 媒体编码器使用[此处](https://msdn.microsoft.com/zh-cn/library/azu
 
 媒体编码器高级工作流使用复杂的工作流进行配置。可以使用[工作流设计器](/documentation/articles/media-services-workflow-designer)工具创建和更新工作流文件。
 
-[如何在 Azure 媒体服务中使用高级编码](http://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services)
+[如何在 Azure 媒体服务中使用高级编码](https://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services/)
+
+###已知问题
+
+如果输入视频不包含隐藏式字幕，输出资产仍将包含一个空的 TTML 文件。
+
 
 ##<a id="compare_encoders"></a>比较编码器
 
@@ -278,4 +283,4 @@ TransientError|涵盖暂时性问题（例如 Azure 存储空间发生暂时性�
 <!--Reference links in article-->
 [1]: /home/features/media-services/#price
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0307_2016-->

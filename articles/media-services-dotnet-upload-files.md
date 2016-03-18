@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/17/2015"
-	wacn.date="11/12/2015"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/17/2016"/>
 
 
 
@@ -35,11 +35,11 @@
 
 如果指定使用 **CommonEncrypted** 选项或 **EnvelopeEncypted** 选项加密资产，则需要将资产关联到 **ContentKey**。有关详细信息，请参阅[如何创建 ContentKey](/documentation/articles/media-services-dotnet-create-contentkey)。
 
-如果指定使用 **StorageEncrypted** 选项加密资产，Media Services SDK for .NET 将为资产创建 **StorateEncrypted** **ContentKey**。
+如果指定使用 **StorageEncrypted** 选项加密资产，适用于 .NET 的媒体服务 SDK 将为资产创建 **StorateEncrypted** **ContentKey**。
 
->[AZURE.NOTE]构建流内容的 URL 时，媒体服务会使用 IAssetFile.Name 属性的值（如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于这个原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下保留的[百分号编码字符](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters)：!*'();:@&=+$,/?%#[]"。此外，文件扩展名中只能含有一个“.”。
+>[AZURE.NOTE]构建流内容的 URL 时，媒体服务会使用 IAssetFile.Name 属性的值（如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于这个原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下保留的[百分号编码字符](http://zh.wikipedia.org/wiki/百分号编码#.E4.BF.9D.E7.95.99.E5.AD.97.E7.AC.A6.E7.9A.84.E7.99.BE.E5.88.86.E5.8F.B7.E7.BC.96.E7.A0.81)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
 
-本主题说明如何使用 Media Services .NET SDK 以及 Media Services .NET SDK Extensions 将文件上载到媒体服务资产中。
+本主题说明如何使用媒体服务.NET SDK 以及媒体服务.NET SDK Extensions 将文件上载到媒体服务资产中。
 
  
 ## 使用媒体服务 .NET SDK 上载单个文件 
@@ -104,7 +104,7 @@
  	
 - 	使用 **UploadAsync** 方法将文件上载到媒体服务中。
  	
->[AZURE.NOTE]使用 UploadAsync 方法可确保调用不会阻塞并且文件并行上载。
+>[AZURE.NOTE] 使用 UploadAsync 方法可确保调用不会阻塞并且文件并行上载。
  	
  	
         static public IAsset CreateAssetAndUploadMultipleFiles(AssetCreationOptions assetCreationOptions, string folderPath)
@@ -295,9 +295,12 @@
 	var asset = UploadFile(@"C:\VideoFiles\BigBuckBunny.mp4", AssetCreationOptions.StorageEncrypted);
 
 
+
+
 ##后续步骤
 将资产上载到媒体服务后，请转到[如何获取媒体处理器][]主题。
 
 [如何获取媒体处理器]: /documentation/articles/media-services-get-media-processor
+ 
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0307_2016-->

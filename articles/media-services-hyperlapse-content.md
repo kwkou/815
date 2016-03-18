@@ -9,15 +9,15 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/19/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="02/12/2015"   
+	wacn.date="03/17/2016"/>
 
 
 # Hyperlapse 媒体文件与 Azure Media Hyperlapse
 
 Azure Media Hyperlapse 是可以使用第一人称视角或运动相机内容创建流畅缩时视频的媒体处理器 (MP)。Azure 媒体服务的基于云的 Microsoft Hyperlapse 与 [Microsoft Research 的桌面 Hyperlapse Pro 和手机版 Hyperlapse Mobile](http://aka.ms/hyperlapse) 相似，它运用大规模的 Azure 媒体服务媒体处理平台来实现水平缩放，以及并行化批量 Hyperlapse 处理。
 
->[AZURE.IMPORTANT]Azure 媒体服务的 Microsoft Hyperlapse 目前以免费公开预览版提供。作业限制为输入资产的前 10,000 帧。
+>[AZURE.IMPORTANT] Azure 媒体服务的 Microsoft Hyperlapse 目前以免费公开预览版提供。作业限制为输入资产的前 10,000 帧。
 
 
 > Microsoft Hyperlapse 最适合用于通过移动相机拍摄第一人称视角内容。尽管在静态相机中也能运行，但 Azure 媒体 Hyperlapse 媒体处理器无法保证其他类型内容的性能及质量。若要深入了解 Azure 媒体服务的 Microsoft Hyperlapse 并观看一些示例视频，请查看公开预览版的[简介博客文章](http://aka.ms/azurehyperlapseblog)。
@@ -45,7 +45,7 @@ Speed|用于加速输入视频的倍数。
 **XML 预设：**
 
 	<?xml version="1.0" encoding="utf-16"?>
-	<Preset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0" xmlns="http://azure.microsoft.com/media/encoding/Preset/2014/03">
+	<Preset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0" xmlns="http://www.windowsazure.com/media/encoding/Preset/2014/03">
 		<Sources>
 			<Source StartFrame="0" NumFrames="10000" />
 		</Sources>
@@ -74,9 +74,9 @@ Speed|用于加速输入视频的倍数。
 
 以下方法将媒体文件上载为资产，然后使用 Azure Media Hyperlapse 媒体处理器来创建作业。
 
-> [AZURE.NOTE]为了使代码正常工作，你应该事先在名为“context”的作用域中创建 CloudMediaContext。若要了解详细信息，请阅读[内容管理文章](/documentation/articles/media-services-manage-content)。
+> [AZURE.NOTE] 为了使代码正常工作，你应该事先在名为“context”的作用域中创建 CloudMediaContext。若要了解详细信息，请阅读[内容管理文章](/documentation/articles/media-services-manage-content)。
 
-> [AZURE.NOTE]字符串参数“hyperConfig”应是上述采用 JSON 或 XML 格式且符合要求的配置预设。
+> [AZURE.NOTE] 字符串参数“hyperConfig”应是上述采用 JSON 或 XML 格式且符合要求的配置预设。
 
 	static bool RunHyperlapseJob(string input, string output, string hyperConfig)
 	{
@@ -199,9 +199,9 @@ Speed|用于加速输入视频的倍数。
 
 
 
-##提供反馈
 
-[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
+
 
 
 
@@ -213,4 +213,4 @@ Speed|用于加速输入视频的倍数。
 
 <!-- URLs. -->
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0307_2016-->

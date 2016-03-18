@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/17/2015"
-	wacn.date="01/14/2016"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/17/2016"/>
 
 #实现故障转移流式处理方案
 
@@ -182,7 +182,7 @@
 		        CopyBlobsFromDifferentStorage(containerName, targetContainerName, StorageNameSource, StorageKeySource, StorageNameTarget, StorageKeyTarget);
 		
 		
-		        // 6.Use the CreateFileInfos Media Services REST API to automatically generate all the IAssetFile’s for the target asset. 
+		        // 6.Use the CreateFileInfos Media Services REST API to automatically generate all the IAssetFile's for the target asset. 
 		        //      This API call is not supported in the current Media Services SDK for .NET. 
 		        CreateFileInfosForAssetWithRest(_contextTarget, targetAsset, MediaServicesAccountNameTarget, MediaServicesAccountKeyTarget);
 		
@@ -310,6 +310,8 @@
 		    IAssetFile manifestFile = GetPrimaryFile(assetToStream);
 		
 		    // Create a 30-day readonly access policy. 
+        	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
+        
 		    IAccessPolicy policy = context.AccessPolicies.Create("Streaming policy",
 		        TimeSpan.FromDays(30),
 		        AccessPermissions.Read);
@@ -391,7 +393,8 @@
 		    if (!string.IsNullOrEmpty(acsToken))
 		    {
 		        var asset = context.Assets.Where(a => a.Id == targetAssetId).FirstOrDefault();
-		
+
+            	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
 		        var accessPolicy = context.AccessPolicies.Create("RestTest", TimeSpan.FromDays(100),
 		                                                            AccessPermissions.Read);
 		        if (asset != null)
@@ -956,4 +959,4 @@
 
 现在，你可以使用流量管理器在两个数据中心之间路由请求，因此可在任何中断情况下进行故障转移。
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0307_2016-->

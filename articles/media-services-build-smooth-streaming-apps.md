@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/16/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/03/2016" 
+	wacn.date="03/17/2016"/>
 
 
 
@@ -27,7 +27,7 @@
 
 ##先决条件
 
-- Windows 8 32 位或 64 位。你可以从 MSDN 获取 [Windows 8 企业评估版](http://msdn.microsoft.com/evalcenter/jj554510.aspx)。
+- Windows 8 32 位或 64 位。
 - Visual Studio 2012 或 Visual Studio Express 2012（或更高版本）。你可以从[此处](http://www.microsoft.com/visualstudio/11/downloads)获取试用版。
 - [适用于 Windows 8 的 Microsoft 平滑流式处理客户端 SDK](http://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Homehttp://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Home)。
 
@@ -45,7 +45,8 @@
 
 ![平滑流式处理 Windows 应用商店应用程序示例][PlayerApplication]
  
-有关开发 Windows 应用商店应用程序的详细信息，请参阅[开发适用于 Windows 8 的极佳应用](http://msdn.microsoft.com/windows/apps/br229512.aspx)。本课包含以下过程：
+有关开发 Windows 应用商店应用程序的详细信息，请参阅[开发适用于 Windows 8 的极佳应用](https://dev.windows.com/zh-cn/)。 
+本课包含以下过程：
 
 1.	创建 Windows 应用商店项目
 2.	设计用户界面 (XAML)
@@ -58,11 +59,11 @@
 2.	在“文件”菜单中，单击“新建”，然后单击“项目”。
 3.	在“新建项目”对话框中，键入或选择以下值：
 
-Name|值
+名称|值
 ---|---
 模板组|已安装/模板/Visual C#/Windows 应用商店
 模板|空白应用程序(XAML)
-Name|SSPlayer
+名称|SSPlayer
 位置|C:\\SSTutorials
 解决方案名称|SSPlayer
 创建解决方案的目录|(选定)
@@ -74,7 +75,7 @@ Name|SSPlayer
 1.	在解决方案资源管理器中，右键单击“SSPlayer”，然后单击“添加引用”。
 2.	键入或选择以下值：
 
-Name|值
+名称|值
 ---|---
 引用组|Windows/扩展
 引用|选择适用于 Windows 8 和 Microsoft Visual C++ 运行时程序包的 Microsoft 平滑流式处理客户端 SDK
@@ -289,7 +290,8 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 4.	在 **MainPage** 构造函数的末尾，添加以下行以订阅自适应源打开事件：
 	
-	adaptiveSourceManager.AdaptiveSourceOpenedEvent += new AdaptiveSourceOpenedEventHandler(mediaElement\_AdaptiveSourceOpened);
+	adaptiveSourceManager.AdaptiveSourceOpenedEvent += 
+	    new AdaptiveSourceOpenedEventHandler(mediaElement\_AdaptiveSourceOpened);
 
 5.	按 **CTRL+S** 保存文件。
 
@@ -544,8 +546,8 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 1. 在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看代码”。
 2. 在 SSPlayer 命名空间中添加一个新类：
+
 		#region class Stream
-	
 	    public class Stream
 	    {
 	        private IManifestStream stream;
@@ -978,4 +980,4 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 [CodeViewPic]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-2.png
  
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->

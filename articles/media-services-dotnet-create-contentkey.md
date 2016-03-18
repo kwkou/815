@@ -3,14 +3,14 @@
 	description="了解如何创建提供对资产进行安全访问的内容密钥。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="Juliako" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/03/2016"
+	wacn.date="03/17/2016"/>
 
 
 #使用 .NET 创建内容密钥
@@ -27,15 +27,12 @@
 
 加密的资产必须与 **ContentKey** 关联。本文介绍如何创建内容密钥。
 
->[AZURE.NOTE]在使用媒体服务 .NET SDK 创建新的 **StorageEncrypted** 资产时，会自动创建 **ContentKey** 并将其链接到资产。
+>[AZURE.NOTE] 在使用媒体服务 .NET SDK 创建新的 **StorageEncrypted** 资产时，会自动创建 **ContentKey** 并将其链接到资产。
 
 ##ContentKeyType
 
 创建内容密钥时必须设置的值之一是内容密钥类型。选择以下值之一。
 
-    /// <summary>
-    /// Specifies the type of a content key.
-    /// </summary>
     public enum ContentKeyType
     {
         /// <summary>
@@ -50,9 +47,14 @@
         StorageEncryption = 1,
 
         /// <summary>
-        /// Specifies a content key for encrypting encoding configuration data that may contain sensitive preset information. 
+        /// Specifies a content key for configuration encryption.
         /// </summary>
         ConfigurationEncryption = 2,
+
+        /// <summary>
+        /// Specifies a content key for Envelope encryption.  Only used internally.
+        /// </summary>
+        EnvelopeEncryption = 4
     }
 
 ##<a id="envelope_contentkey"></a>创建信封类型 ContentKey
@@ -129,6 +131,6 @@ call
     }
 call
 
-	IContentKey key = CreateCommonTypeContentKey(encryptedsset);
+	IContentKey key = CreateCommonTypeContentKey(encryptedsset); 
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0307_2016-->

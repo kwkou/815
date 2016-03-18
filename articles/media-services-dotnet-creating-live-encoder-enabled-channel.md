@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/17/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="02/03/2016"
+	wacn.date="03/17/2016"/>
 
 
 #使用 .NET SDK 创建频道，以执行从单比特率流到多比特率流的实时编码
@@ -20,7 +20,8 @@
 - [.NET](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
+>[AZURE.NOTE]
+若要完成本教程，你需要一个 Azure 帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 ##概述
 
@@ -33,7 +34,7 @@
 
 以下步骤介绍创建常见的实时流式处理应用程序时涉及的任务。
 
->[AZURE.NOTE]目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 WindowsAzure.cn 联系 amslived。
+>[AZURE.NOTE] 目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 WindowsAzure.cn 联系 amslived。
 
 1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出单比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/)。
 
@@ -66,7 +67,7 @@
 
 ## 学习内容
 
-本主题演示如何使用媒体服务 .NET SDK 对频道和节目执行不同操作。由于许多操作都长时间运行，因此将使用管理长时间运行的操作的 .NET API。
+本主题演示如何使用适用于 .NET 的媒体服务 SDK 对频道和节目执行不同操作。由于许多操作都长时间运行，因此将使用管理长时间运行的操作的 .NET API。
 
 本主题说明如何执行以下任务：
 
@@ -89,7 +90,7 @@
 	如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留该帐户，使用那些免费的 Azure 服务和功能，例如 Azure 中的 Web 应用功能。
 - 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
 - Visual Studio 2010 SP1（Professional、Premium、Ultimate 或 Express）或更高版本。
-- 必须使用媒体服务 .NET SDK 版本 3.2.0.0 或更高版本。
+- 必须使用适用于 .NET 的媒体服务 SDK 版本 3.2.0.0 或更高版本。
 - 可以发送单比特率实时流的摄像头和编码器。
 
 ##注意事项
@@ -101,7 +102,7 @@
 ##使用用于 .NET 的媒体服务 SDK 进行开发设置
 
 1. 使用 Visual Studio 创建控制台应用程序。
-1. 使用媒体服务 NuGet 包将用于 .NET 的媒体服务 SDK 添加到控制台应用程序。
+1. 使用媒体服务 NuGet 包将适用于 .NET 的媒体服务 SDK 添加到控制台应用程序。
 
 ##连接到媒体服务
 最佳做法是，应使用 app.config 文件来存储媒体服务名称和帐户密钥。
@@ -515,4 +516,4 @@
 
 如果本主题不包含你所期待的内容、缺少某些内容，或在其他方面不符合你的需求，请使用下面的 Disqus 会话向我们提供反馈。
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->

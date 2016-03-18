@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="如何创建媒体处理器 - Azure" 
-	description="了解如何创建一个媒体处理器组件用来为 Azure 媒体服务编码、转换格式、加密或解密媒体内容。代码示例用 C# 编写且使用 Media Services SDK for .NET。" 
+	pageTitle="如何创建媒体处理器 | Azure" 
+	description="了解如何创建一个媒体处理器组件用来为 Azure 媒体服务编码、转换格式、加密或解密媒体内容。代码示例用 C# 编写且使用适用于 .NET 的媒体服务 SDK。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/14/2016" 
+	wacn.date="03/17/2016"/>
 
 
 #如何：获取媒体处理器实例
@@ -18,6 +18,7 @@
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/media-services-get-media-processor)
 - [REST](/documentation/articles/media-services-rest-get-media-processor)
+ 
 
 ##概述
 
@@ -83,6 +84,8 @@
 	    return processor;
 	}
 
+
+
 ##后续步骤
 了解如何获取媒体处理器实例后，请转到[如何对资产进行编码][]主题，其中说明了如何使用 Azure 媒体编码器对资产进行编码。
 
@@ -90,4 +93,4 @@
 [Task Preset Strings for the Azure Media Encoder]: http://msdn.microsoft.com/zh-cn/library/jj129582.aspx
 [如何：以编程方式连接到媒体服务]: /documentation/articles/media-services-set-up-computer
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0307_2016-->

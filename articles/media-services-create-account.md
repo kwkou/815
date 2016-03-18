@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/08/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/03/2016"
+	wacn.date="03/17/2016"/>
 
 
 # 创建 Azure 媒体服务帐户
@@ -21,7 +21,7 @@
 - [REST](http://msdn.microsoft.com/zh-cn/library/azure/dn194267.aspx)
 
 
-> [AZURE.NOTE]若要创建 Azure 媒体服务帐户，你必须有一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/?WT.mc_id=A8A8397B5" target="_blank">Azure 试用</a>。
+> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。有关详细信息，请参阅 [ 1 元试用](/pricing/free-trial/?WT.mc_id=A261C142F)。
  
 使用 Azure 管理门户，你可以快速创建 Azure 媒体服务帐户。你可以使用自己的帐户访问媒体服务，这些服务使你能够在 Azure 中存储、加密、编码、管理和流式传输媒体内容。创建媒体服务帐户时，你还将在此帐户所在的地理区域内创建一个关联的媒体服务帐户（或使用现有存储帐户）。
 
@@ -44,7 +44,7 @@
 
 1. 在 [Azure 管理门户][]中，依次单击“新建”、“媒体服务”和“快速创建”。
 
-![Media Services 快速创建](./media/media-services-create-account/wams-QuickCreate.png)
+![媒体服务快速创建](./media/media-services-create-account/wams-QuickCreate.png)
 
 2. 在“名称”中，输入新帐户的名称。媒体服务帐户名称由小写字母或数字构成（不含空格），长度为 3 到 24 个字符。
 
@@ -62,7 +62,7 @@
 
 在页面底部，将出现“管理密钥”按钮。当你单击此按钮时，将会显示一个页面，其中包含媒体服务帐户名以及主密钥和辅助密钥。你必须要有帐户名和主要密钥信息，才能以编程方式访问媒体服务帐户。
 
-![“Media Services”页](./media/media-services-create-account/wams-mediaservices-page.png)
+![“媒体服务”页](./media/media-services-create-account/wams-mediaservices-page.png)
 
 当你双击帐户名时，默认情况下将显示“快速启动”页。可从此页执行某些管理任务，而这些管理任务也可从该门户的其他页执行。例如，你可以从此页上载视频文件，也可以从“内容”页执行此操作。
 
@@ -89,4 +89,4 @@
 
   [Azure 管理门户]: http://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->

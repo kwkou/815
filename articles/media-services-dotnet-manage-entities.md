@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
-	wacn.date="01/14/2016"/>
+ 	ms.date="02/11/2016"  
+	wacn.date="03/17/2016"/>
 
 
 #使用媒体服务 .NET SDK 管理资产和相关的实体
@@ -30,6 +30,7 @@
 - [列出作业和资产](#List-jobs-and-assets) 
 - [列出所有访问策略](#List-all-access-policies) 
 - [列出所有定位符](#List-All-Locators) 
+- 枚举大型实体集合
 - [删除资产](#Delete-an-asset) 
 - [删除作业](#Delete-a-job) 
 - [删除访问策略](#Delete-an-access-policy) 
@@ -242,7 +243,47 @@
 	    }
 	}
 
+## 枚举大型实体集合
 
+查询实体时，一次返回的实体数限制为 1000 个，因为公共 REST v2 将查询结果数限制为 1000 个。枚举大型实体集合时，需要使用 Skip 和 Take。
+	
+以下函数将循环访问所提供的媒体服务帐户中的所有作业。媒体服务将在作业集合中返回 1000 个作业。该函数使用 Skip 和 Take 来确保枚举所有作业（如果你帐户中的作业超过 1000 个）。
+	
+	static void ProcessJobs()
+	{
+	    try
+	    {
+	
+	        int skipSize = 0;
+	        int batchSize = 1000;
+	        int currentBatch = 0;
+	
+	        while (true)
+	        {
+	            // Loop through all Jobs (1000 at a time) in the Media Services account
+	            IQueryable _jobsCollectionQuery = _context.Jobs.Skip(skipSize).Take(batchSize);
+	            foreach (IJob job in _jobsCollectionQuery)
+	            {
+	                currentBatch++;
+	                Console.WriteLine("Processing Job Id:" + job.Id);
+	            }
+	
+	            if (currentBatch == batchSize)
+	            {
+	                skipSize += batchSize;
+	                currentBatch = 0;
+	            }
+	            else
+	            {
+	                break;
+	            }
+	        }
+	    }
+	    catch (Exception ex)
+	    {
+	        Console.WriteLine(ex.Message);
+	    }
+	}
 ##<a id="Delete-an-asset"></a>删除资产
 
 以下示例删除了一个资产。
@@ -327,4 +368,4 @@
 	}
 	
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0307_2016-->

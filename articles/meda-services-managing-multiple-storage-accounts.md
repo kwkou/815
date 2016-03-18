@@ -9,17 +9,18 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="01/28/2016" 
+	wacn.date="03/17/2016"/>
 
 
 #跨多个存储帐户管理媒体服务资产
 
-从 Azure媒体服务2.2 开始，可以将多个存储帐户附加到一个媒体服务帐户。将多个存储帐户附加到一个媒体服务帐户这一功能具有以下优势：使多个存储帐户之间的资产实现负载平衡。
+从 Azure媒体服务2.2 开始，可以将多个存储帐户附加到一个媒体服务帐户。将多个存储帐户附加到一个媒体服务帐户这一功能具有以下优势：
 
-缩放媒体服务以处理大量内容（目前，单个存储帐户的上限为 500 TB）。
+- 使多个存储帐户之间的资产实现负载平衡。
+- 缩放媒体服务以处理大量内容（目前，单个存储帐户的上限为 500 TB）。 
 
-本主题演示如何使用 [Azure 服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 将多个存储帐户附加到一个媒体服务帐户，此外还说明如何在使用媒体服务 SDK 创建资产时指定不同的存储帐户。
+本主题演示如何使用 Azure 服务管理 REST API 将多个存储帐户附加到一个媒体服务帐户，此外还说明如何在使用媒体服务 SDK 创建资产时指定不同的存储帐户。
 
 ##注意事项
 
@@ -35,7 +36,7 @@
 
 ##使用 Azure 服务管理 REST API 附加存储帐户
 
-目前，只能使用 [Azure 服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 附加多个存储帐户。[如何：使用媒体服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn167656.aspx) 主题中的代码示例定义了将存储帐户附加到指定媒体服务帐户的 **AttachStorageAccountToMediaServiceAccount** 方法。此主题中的代码定义了列出已附加到指定媒体服务帐户的所有存储帐户的 **ListStorageAccountDetails** 方法。
+目前，只能使用 [Azure 服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn167014.aspx) 附加多个存储帐户。[如何：使用媒体服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn167656.aspx) 主题中的代码示例定义了将存储帐户附加到指定媒体服务帐户的 **AttachStorageAccountToMediaServiceAccount** 方法。此主题中的代码定义了列出已附加到指定媒体服务帐户的所有存储帐户的 **ListStorageAccountDetails** 方法。
 
 
 ##跨多个存储帐户管理媒体服务资产
@@ -46,7 +47,7 @@
 1. 检索默认存储帐户的名称。
 1. 在默认存储帐户中创建一个新资产。
 1. 在指定存储帐户中创建编码作业的输出资产。
-
+	
 		using Microsoft.WindowsAzure.MediaServices.Client;
 		using System;
 		using System.Collections.Generic;
@@ -56,7 +57,7 @@
 		using System.Text;
 		using System.Threading;
 		using System.Threading.Tasks;
-	
+		
 		namespace MultipleStorageAccounts
 		{
 		    class Program
@@ -258,4 +259,4 @@
 		}
  
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0307_2016-->
