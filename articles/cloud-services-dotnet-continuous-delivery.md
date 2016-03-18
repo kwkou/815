@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="11/18/2015"
-	wacn.date="01/15/2016"/>
+	ms.date="02/03/2016"
+	wacn.date="03/18/2016"/>
 
 # 在 Azure 中持续交付云服务
 
 本文中所述过程向你演示如何设置对 Azure 云应用程序的持续交付。此过程使你能够在签入每个代码后，自动创建服务包并将其部署到 Azure。本文中介绍的包生成过程与 Visual Studio 中的 **Package** 命令等效，而发布步骤与 Visual Studio 中的 **Publish** 命令等效。本文包含用于创建生成服务器的方法以及 MSBuild 命令行语句和 Windows PowerShell 脚本，并演示了如何选择性地配置 Visual Studio Team Foundation Server - Team Build 定义以使用 MSBuild 命令和 PowerShell 脚本。可针对你的生成环境和 Azure 目标环境自定义此过程。
 
-你也可以使用 Visual Studio Team Services（Azure 中托管的 TFS 版本）更轻松地实现此目的。有关详细信息，请参阅[使用 Visual Studio Team Services 向 Azure 持续传送项目][]。
+你也可以使用 Visual Studio Team Services（Azure 中托管的 TFS 版本）更轻松地实现此目的。有关详细信息，请参阅 [使用 Visual Studio Team Services 向 Azure 持续交付][]。
 
 开始之前，您应从 Visual Studio 中发布应用程序。这将确保所有资源在您尝试实现发布过程的自动化时可用并进行初始化。
 
@@ -54,7 +54,7 @@
 
     您也可以将项目名称指定为 MSBuild 参数。如果未指定，则将使用当前目录。有关 MSBuild 命令行选项的详细信息，请参阅 [MSBuild 命令行参考][1]。
 
-4.  查找输出。默认情况下，此命令将创建与项目的根文件夹相关的目录，例如 *ProjectDir*\\bin\\*Configuration*\\app.publish\\。在生成 Azure 项目时，将生成两个文件，即包文件本身和附带的配置文件：
+4.  查找输出。默认情况下，此命令将创建与项目的根文件夹相关的目录，例如 *ProjectDir*\\bin\*Configuration*\\app.publish\\。在生成 Azure 项目时，将生成两个文件，即包文件本身和附带的配置文件：
 
     -   Project.cspkg
     -   ServiceConfiguration.*TargetProfile*.cscfg
@@ -127,15 +127,15 @@
 
     -   若要创建新的云服务，你可调用此脚本或使用 Azure 管理门户。云服务名称将用作完全限定域名中的前缀，因此该名称必须是唯一的。
 
-            New-AzureService -ServiceName "mytestcloudservice" -Location "China East" -Label "mytestcloudservice"
+            New-AzureService -ServiceName "mytestcloudservice" -Location "China North" -Label "mytestcloudservice"
 
     -   若要创建新的存储帐户，你可调用此脚本或使用 Azure 管理门户。存储帐户名称将用作完全限定域名中的前缀，因此该名称必须是唯一的。您可尝试使用与云服务相同的名称。
 
-            New-AzureStorageAccount -ServiceName "mytestcloudservice" -Location "China East" -Label "mytestcloudservice"
+            New-AzureStorageAccount -ServiceName "mytestcloudservice" -Location "China North" -Label "mytestcloudservice"
 
 7.  直接从 Azure PowerShell 调用脚本，或将此脚本连接到在包生成后进行的主机生成自动化。
 
-    >[AZURE.IMPORTANT]默认情况下，此脚本将始终删除或替换现有部署（如果检测到这些部署）。这对于从没有用户提示的自动化中启用持续集成是必需的。
+    >[AZURE.IMPORTANT] 默认情况下，此脚本将始终删除或替换现有部署（如果检测到这些部署）。这对于从没有用户提示的自动化中启用持续集成是必需的。
 
     **示例方案 1：**对服务的过渡环境进行持续部署：
 
@@ -173,7 +173,7 @@
 
     可使用脚本 ($enableDeploymentUpgrade = 0) 或将 *-enableDeploymentUpgrade 0* 作为参数传递（这会将脚本行为更改为首先删除任何现有部署，然后创建新的部署）来禁用升级部署。
 
-    >[AZURE.IMPORTANT]默认情况下，此脚本将始终删除或替换现有部署（如果检测到这些部署）。这对于从没有用户/操作员提示的自动化中启用持续集成是必需的。
+    >[AZURE.IMPORTANT] 默认情况下，此脚本将始终删除或替换现有部署（如果检测到这些部署）。这对于从没有用户/操作员提示的自动化中启用持续集成是必需的。
 
 ## 步骤 5：使用 TFS Team Build 发布包
 
@@ -323,25 +323,19 @@
 
 9.  在“杂项”部分中设置参数属性，如下所示：
 
-    1.  CloudConfigLocation ='c:\\drops\\app.publish\\ServiceConfiguration.Cloud.cscfg' 
-        *此值派生自：
-        ($PublishDir)ServiceConfiguration.Cloud.cscfg*
+    1.  CloudConfigLocation ='c:\\drops\\app.publish\\ServiceConfiguration.Cloud.cscfg' *此值派生自：($PublishDir)ServiceConfiguration.Cloud.cscfg*
 
-    2.  PackageLocation = 'c:\\drops\\app.publish\\ContactManager.Azure.cspkg'
-        *此值派生自：($PublishDir)($ProjectName).cspkg*
+    2.  PackageLocation = 'c:\\drops\\app.publish\\ContactManager.Azure.cspkg' *此值派生自：($PublishDir)($ProjectName).cspkg*
 
     3.  PublishScriptLocation = 'c:\\scripts\\WindowsAzure\\PublishCloudService.ps1'
 
-    4.  ServiceName = 'mycloudservicename'
-        *在此处使用适当的云服务名称*
+    4.  ServiceName = 'mycloudservicename' *在此处使用适当的云服务名称*
 
     5.  Environment = 'Staging'
 
-    6.  StorageAccountName = 'mystorageaccountname'
-        *在此处使用适当的存储帐户名称*
+    6.  StorageAccountName = 'mystorageaccountname' *在此处使用适当的存储帐户名称*
 
-    7.  SubscriptionDataFileLocation =
-        'c:\\scripts\\WindowsAzure\\Subscription.xml'
+    7.  SubscriptionDataFileLocation = 'c:\\scripts\\WindowsAzure\\Subscription.xml'
 
     8.  SubscriptionName = 'default'
 
@@ -557,11 +551,10 @@
 
 若要在使用持续交付时启用远程调试，请参阅[使用连续交付功能发布到 Azure 时如何启用远程调试](/documentation/articles/cloud-services-virtual-machines-dotnet-continuous-delivery-remote-debugging)。
 
-  [使用 Visual Studio Team Services 向 Azure 持续传送项目]: /documentation/articles/cloud-services-continuous-delivery-use-vso
   [Team Foundation 生成服务]: https://msdn.microsoft.com/zh-cn/library/ee259687.aspx
-  [.NET Framework 4]: http://www.microsoft.com/zh-cn/download/details.aspx?id=17851
-  [.NET Framework 4.5]: http://www.microsoft.com/zh-cn/download/details.aspx?id=30653
-  [.NET Framework 4.5.2]: http://www.microsoft.com/zh-cn/download/details.aspx?id=42643
+  [.NET Framework 4]: https://www.microsoft.com/zh-cn/download/details.aspx?id=17851
+  [.NET Framework 4.5]: https://www.microsoft.com/zh-cn/download/details.aspx?id=30653
+  [.NET Framework 4.5.2]: https://www.microsoft.com/zh-cn/download/details.aspx?id=42643
   [扩大生成系统]: https://msdn.microsoft.com/zh-cn/library/dd793166.aspx
   [部署和配置生成服务器]: https://msdn.microsoft.com/zh-cn/library/ms181712.aspx
   [Azure PowerShell cmdlet]: /documentation/articles/powershell-install-configure
@@ -573,4 +566,4 @@
   [5]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-05.png
   [6]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-06.png
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->

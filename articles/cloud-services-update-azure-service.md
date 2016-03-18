@@ -1,15 +1,15 @@
 <properties
-    pageTitle="如何更新云服务 | Azure"
-    description="了解如何在 Azure 中更新云服务。了解如何云服务上进行更新以确保可用性。"
-    services="cloud-services"
-    documentationCenter=""
-    authors="kenazk"
-    manager="timlt"
-    editor=""/>
+pageTitle="如何更新云服务 | Azure"
+description="了解如何在 Azure 中更新云服务。了解如何云服务上进行更新以确保可用性。"
+services="cloud-services"
+documentationCenter=""
+authors="kenazk"
+manager="timlt"
+editor=""/>
 <tags
-    ms.service="cloud-services"
-    ms.date="10/26/2015"
-    wacn.date="01/15/2016"/>
+ms.service="cloud-services"
+ms.date="10/26/2015"
+wacn.date="03/18/2016"/>
 
 # 如何更新云服务
 
@@ -176,5 +176,6 @@ Azure 在设置的升级域数之间平均分配角色的实例，可以将升�
 ## 后续步骤
 [如何管理云服务](/documentation/articles/cloud-services-how-to-manage)<br>
 [如何监视云服务](/documentation/articles/cloud-services-how-to-monitor)<br>
+[如何配置云服务](/documentation/articles/cloud-services-how-to-cofigure)<br>
 
 <!---HONumber=Mooncake_0104_2016-->

@@ -9,9 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="01/09/2016" 
-	wacn.date="02/26/2016"/>
-
+	ms.date="02/04/2016" 
+	wacn.date="03/18/2016"/>
 
 # 在 Azure 中启用远程桌面
 
@@ -32,7 +31,7 @@
 
 在包含应用源文件的计算机上执行以下步骤。
 
-1. 以管理员身份运行 **Azure PowerShell**。（在“开始”菜单或“开始”屏幕中，搜索 **Azure PowerShell**。）
+1. 以管理员身份运行 **Windows PowerShell**。（在“开始”菜单或“开始”屏幕中，搜索 **Windows PowerShell**。）
 
 2.  导航到包含服务定义 (.csdef) 文件和服务配置 (.cscfg) 文件的目录。
 
@@ -102,13 +101,13 @@
 [publish-project]: ./media/cloud-services-nodejs-enable-remote-desktop/publish-rdp.png
 [enable-rdp]: ./media/cloud-services-nodejs-enable-remote-desktop/enable-rdp.png
 [cloud-services]: ./media/cloud-services-nodejs-enable-remote-desktop/cloud-services-remote.png
-  [3]: ./media/cloud-services-nodejs-enable-remote-desktop/cloud-service-instance.png
-  [4]: ./media/cloud-services-nodejs-enable-remote-desktop/rdp-open.png
-  [5]: ./media/cloud-services-nodejs-enable-remote-desktop/remote-desktop-12.png
-  [6]: ./media/cloud-services-nodejs-enable-remote-desktop/remote-desktop-13.png
-  [7]: ./media/cloud-services-nodejs-enable-remote-desktop/remote-desktop-14.png
+[3]: ./media/cloud-services-nodejs-enable-remote-desktop/cloud-service-instance.png
+[4]: ./media/cloud-services-nodejs-enable-remote-desktop/rdp-open.png
+[5]: ./media/cloud-services-nodejs-enable-remote-desktop/remote-desktop-12.png
+[6]: ./media/cloud-services-nodejs-enable-remote-desktop/remote-desktop-13.png
+[7]: ./media/cloud-services-nodejs-enable-remote-desktop/remote-desktop-14.png
   
-  [远程访问 Azure 中的角色实例]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh124107.aspx
-  [将远程桌面与 Azure 角色一起使用]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx
+[远程访问 Azure 中的角色实例]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh124107.aspx
+[将远程桌面与 Azure 角色一起使用]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0307_2016-->

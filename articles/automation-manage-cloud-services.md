@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="11/03/2015"
-	wacn.date="01/15/2016"/>
+	ms.date="01/19/2016"
+	wacn.date="03/18/2016"/>
 
 
 
@@ -36,6 +36,6 @@ Azure 自动化提供高度可靠且高度可用的工作流执行引擎，它�
 
 在了解 Azure 自动化以及如何使用它来管理 Azure 云服务的基础知识后，请使用以下链接了解有关 Azure 自动化的更多信息。
 
-请参阅 Azure 自动化[入门教程](/documentation/articles/automation-create-runbook-from-samples)
+- [Azure 自动化概述](/documentation/articles/automation-intro) 
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->

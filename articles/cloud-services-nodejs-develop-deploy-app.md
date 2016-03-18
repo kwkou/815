@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="01/09/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="02/04/2016" 
+	wacn.date="03/18/2016"/>
 
 
 # 生成 Node.js 应用程序并将其部署到 Azure 云服务
@@ -23,7 +23,7 @@
 
 有关云服务以及如何将它们与 Azure 网站和虚拟机进行比较的更多信息，请参阅 [Azure 网站、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm)。
 
->[AZURE.TIP] 想要构建一个简单的网站？ 如果你的方案只涉及一个简单的网站前端，则可以考虑[使用轻型 Web 应用](/documentation/articles/web-sites-nodejs-develop-deploy-mac)。 随着你的 Web 应用的不断扩大和你的需求的变化，你可以轻松升级到云服务。
+>[AZURE.TIP] 想要构建一个简单的网站？ 如果你的方案只涉及一个简单的网站前端，则可以考虑[使用轻型 Web 应用](/documentation/articles/web-sites-nodejs-develop-deploy-mac)。随着你的 Web 应用的不断扩大和你的需求的变化，你可以轻松升级到云服务。
 
 
 通过学习本教程，你将可以生成一个托管在 Web 角色中的简单 Web 应用程序。你将使用计算模拟器在本地测试你的应用程序，然后使用 PowerShell 命令行工具来部署该应用程序。
@@ -47,7 +47,7 @@
 执行以下任务可创建一个新的 Azure 云服务项目以及基本的 Node.js 基架：
 
 
-1. 以管理员身份运行 **Azure PowerShell**。（在“开始”菜单或“开始”屏幕中，搜索 **Azure PowerShell**。）
+1. 以管理员身份运行 **Windows PowerShell**。（在“开始”菜单或“开始”屏幕中，搜索 **Windows PowerShell**。）
 
 2.  [将 PowerShell 连接](/documentation/articles/powershell-install-configure/#how-to-connect-to-your-subscription)到订阅。
 3.  输入以下 PowerShell cmdlet 来创建项目：
@@ -60,7 +60,11 @@
 
 	该 cmdlet 将创建以下文件：
 
-	-   **ServiceConfiguration.Cloud.cscfg**、**ServiceConfiguration.Local.cscfg** 和 **ServiceDefinition.csdef**：发布应用程序所需的特定于 Azure 的文件。有关详细信息，请参阅[创建 Azure 托管服务概述][]。
+	-   **ServiceConfiguration.Cloud.cscfg**、
+        **ServiceConfiguration.Local.cscfg** 和 **ServiceDefinition.csdef**：
+        发布应用程序所需的特定于 Azure 的文件。
+        有关详细信息，请参阅
+        [创建 Azure 托管服务概述][]。
 
 	-   **deploymentSettings.json**：存储供 Azure PowerShell 部署 cmdlet 使用的本地设置。
 
@@ -185,12 +189,13 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 [创建 Azure 托管服务概述]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj155995.aspx
 [A directory listing of the WebRole1 folder]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-8.png
 [The menu displayed when right-clicking the Azure emulator from the task bar.]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-11.png
-[A browser window displaying https://www.azure.cn/ with the Trial link highlighted]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-12.png
+[A browser window displaying http://www.azure.cn/ with the Trial link highlighted]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-12.png
 [A browser window displaying the liveID sign in page]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-13.png
 [Internet Explorer displaying the save as dialog for the publishSettings file.]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-14.png
 
 [The full status output of the Publish-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node20.png
+[How to Delete a Storage Account from an Azure Subscription]: /documentation/articles/storage-manage-storage-account/
 [powershell-menu]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png
  
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0307_2016-->
