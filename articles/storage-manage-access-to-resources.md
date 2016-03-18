@@ -1,5 +1,5 @@
-<properties 
-	pageTitle="管理对容器和 blob 的匿名读取访问 |Azure" 
+<properties
+	pageTitle="管理对容器和 blob 的匿名读取访问 | Azure"
 	description="了解如何使容器和 blob 可供匿名访问，以及如何对其进行程序式访问。" 
 	services="storage" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="10/26/2015" 
-	wacn.date="12/17/2015"/>
+	ms.date="01/05/2016" 
+	wacn.date="02/25/2016"/>
 
 # 管理对容器和 blob 的匿名读取访问
 
@@ -142,6 +142,7 @@
 | 租赁 Blob | 仅所有者 | 仅所有者 |
 | 放置页面 | 仅所有者 | 仅所有者 |
 | 获取页面范围 | 全部 | 全部 |
+| 追加 Blob | 仅所有者 | 仅所有者 |
 
 
 ## 另请参阅
@@ -150,4 +151,4 @@
 - [共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)
 - [使用共享的访问签名委托访问](https://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx) 
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0215_2016-->

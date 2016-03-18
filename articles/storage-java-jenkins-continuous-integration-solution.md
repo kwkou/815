@@ -1,29 +1,22 @@
-<properties 
-	urlDisplayName="Jenkins Continuous Integration" 
-	pageTitle="将 Azure 存储用于 Jenkins 持续集成解决方案 | Azure" 
-	metaKeywords="" 
+<properties
+	pageTitle="将 Azure 存储用于 Jenkins 持续集成解决方案 | Azure"
 	description="本教程演示如何使用 Azure Blob 服务作为 Jenkins 持续集成解决方案创建的生成项目的存储库。" 
-	metaCanonical="" 
 	services="storage" 
 	documentationCenter="java" 
-	title="" 
 	authors="rmcmurray" 
-	solutions="" 
 	manager="wpickett" 
-	editor="jimbe" 
-	scriptId="" 
-	videoId=""/>
+	editor=""/>
 
 <tags 
 	ms.service="storage" 
-	ms.date="10/12/2015" 
-	wacn.date="11/02/2015"/>
+	ms.date="01/09/2016" 
+	wacn.date="02/25/2016"/>
 
-#将 Azure 存储空间用于 Jenkins 持续集成解决方案
+# 将 Azure 存储空间用于 Jenkins 持续集成解决方案
 
 ## 概述
 
-下列信息演示了如何将 Azure Blob 服务用作 Jenkins 持续集成 (CI) 解决方案创建的生成项目的存储库，或者用作要在生成过程中使用的可下载文件的源。在以下情况中你将会发现这一做法很有用：你在敏捷开发环境进行编码（使用 Java 或其他语言），生成是基于持续集成运行的并且你需要一个适用于生成项目的存储库，以便（举例来说）你能与其他组织成员、你的客户共享生成项目或维护存档。另一种情况是，当你的生成作业本身需要其他文件时，例如需要下载依赖项作为生成输入的一部分时。
+下列信息演示了如何将 Blob 存储用作 Jenkins 持续集成 (CI) 解决方案创建的生成项目的存储库，或者用作要在生成过程中使用的可下载文件的源。在以下情况中你将会发现这一做法很有用：你在敏捷开发环境进行编码（使用 Java 或其他语言），生成是基于持续集成运行的并且你需要一个适用于生成项目的存储库，以便（举例来说）你能与其他组织成员、你的客户共享生成项目或维护存档。另一种情况是，当你的生成作业本身需要其他文件时，例如需要下载依赖项作为生成输入的一部分时。
 
 在本教程中，你将使用 Microsoft 提供的适用于 Jenkins CI 的 Azure 存储插件。
 
@@ -74,7 +67,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 1. 在 Jenkins 仪表板中，单击“管理 Jenkins”。
 2. 在“管理 Jenkins”页中，单击“管理插件”。
 3. 单击“可用”选项卡。
-4. 在“项目上载程序”部分，选中“Azure 存储插件”。
+4. 在“项目上载程序”部分中，选中“ Azure 存储插件”。
 5. 单击“安装而不重新启动”或“立即下载并在重新启动后安装”。
 6. 重新启动 Jenkins。
 
@@ -140,7 +133,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 
 如果你还希望从 Azure Blob 存储下载其他项，可以创建其他生成步骤。
 
-在运行生成后，你可以检查生成历史记录控制台输出或你的下载位置，看是否成功下载了你需要的 Blob。  
+在运行生成后，你可以检查生成历史记录控制台输出或你的下载位置，看是否成功下载了你需要的 Blob。
 
 ## Blob 服务使用的组件 ##
 
@@ -155,14 +148,14 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
     
     （以上格式适用于公共 Azure 云。如果你在使用其他 Azure 云，请使用 Azure 管理门户中的终结点来确定你的 URL 终结点。）
 
-    在以上格式中，`storageaccount` 表示存储帐户的名称，`container_name` 表示容器的名称，而 `blob_name` 表示 Blob 的名称。在容器名称中，你可具有多个由正斜杠 ** /** 分隔的路径。本教程的示例容器名称为 **MyJob**，**${BUILD\_ID}/${BUILD\_NUMBER}** 用于通用虚拟路径，从而导致 Blob 具有以下格式的 URL：
+    在以上格式中，`storageaccount` 表示存储帐户的名称，`container_name` 表示容器的名称，而 `blob_name` 表示 Blob 的名称。在容器名称中，你可具有多个由正斜杠 **/** 分隔的路径。本教程的示例容器名称为 **MyJob**，**${BUILD\_ID}/${BUILD\_NUMBER}** 用于通用虚拟路径，从而导致 Blob 具有以下格式的 URL：
 
     `http://example.blob.core.chinacloudapi.cn/myjob/2014-04-14_23-57-00/1/hello.txt`
 
 ## 后续步骤
 
-  [如何创建存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account/
+  [如何创建存储帐户]: /documentation/articles/storage-create-storage-account
   [Jenkins 概览]: https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins
  
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0215_2016-->

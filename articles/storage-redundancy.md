@@ -9,9 +9,9 @@
   editor=""/>
 
 <tags 
-  ms.service="storage" 
-  ms.date="10/20/2015" 
-  wacn.date="01/25/2016"/>
+  ms.service="storage" 
+  ms.date="01/05/2016" 
+  wacn.date="02/25/2016"/>
 
 # Azure 存储复制
 
@@ -51,15 +51,15 @@
 
 对于启用了 GRS 的存储帐户，更新将首先提交到主区域，并在主区域复制三次。然后，更新将复制到辅助区域（也是复制三次），并且是在不同的容错域和升级域之间复制。
 
- 
+
 > [AZURE.NOTE] 使用 GRS 时，写入数据请求将异步复制到辅助区域。请务必注意，选择 GRS 不会影响针对主区域发出的请求的延迟。但是，由于异步复制涉及延迟，遇到区域性灾难时，如果无法将数据从主区域中恢复，则尚未复制到辅助区域的更改可能会丢失。
- 
+
 创建存储帐户时，可以为帐户选择主区域。辅助区域是根据主区域确定的且无法更改。下表显示了配对的主要区域和次要区域。
 
-|主要 |辅助        
+|主要 |辅助
 | ---------------   |----------------
-|中国北部   |中国东部
-|中国东部   |中国北部 
+|中国北部 |中国东部
+|中国东部 |中国北部
  
 ##<a id="read-access-geo-redundant-storage"></a> 读取访问异地冗余存储
 
@@ -69,10 +69,10 @@
 
 ## 后续步骤
 
-- [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)
+- [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets) 
 - [Azure 存储冗余选项和读取访问异地冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)  
-- [使用 RA-GRS 的 Azure 存储模拟器 3.1](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/08/microsoft-azure-storage-emulator-3-1-with-ra-grs.aspx)
+- [使用 RA-GRS 的  Azure 存储模拟器 3.1](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/08/microsoft-azure-storage-emulator-3-1-with-ra-grs.aspx)
 - [Azure 存储 SOSP 论文](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)  
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0215_2016-->

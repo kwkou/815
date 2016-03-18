@@ -9,16 +9,15 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="10/07/2015" 
-	wacn.date="11/02/2015"/>
-
+	ms.date="01/13/2016"
+	wacn.date="02/25/2016"/>
 
 # Azure 存储空间的使用 Java 客户端加密   
 
 [AZURE.INCLUDE [storage-selector-client-side-encryption-include](../includes/storage-selector-client-side-encryption-include.md)]
 
 ## 概述  
-[用于 Java 的 Azure 存储空间客户端库](https://www.nuget.org/packages/WindowsAzure.Storage)支持在上载到 Azure 存储空间之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。此库还支持与 Azure 密钥保管库集成，以便管理存储帐户密钥。
+[用于 Java 的 Azure 存储空间客户端库](https://www.nuget.org/packages/WindowsAzure.Storage)支持在上载到 Azure 存储空间之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。此库还支持与 [Azure 密钥保管库](/home/features/key-vault)集成，以便管理存储帐户密钥。
 
 ## 通过信封技术加密和解密    
 加密和解密的过程遵循信封技术。
@@ -53,8 +52,7 @@
 
 在加密过程中，客户端库将生成 16 字节的随机初始化向量 (IV) 和 32 字节的随机内容加密密钥 (CEK) 并将使用此信息对 Blob 数据执行信封加密。然后，已包装的 CEK 和一些附加加密元数据将与服务上的已加密 Blob 一起存储为 Blob 元数据。
 
->**警告：**
->
+>**警告：**  
 >如果你要针对 Blob 编辑或上载自己的元数据，需要确保此元数据已保留。如果您在没有此元数据的情况下上载新元数据，则已包装的 CEK、IV 和其他元数据将丢失，而 Blob 内容将永远无法再检索。
 
 下载已加密的 Blob 需要使用 **download*/openInputStream** 便捷方法检索整个 Blob 的内容。将已包装的 CEK 解包，与 IV（在本示例中存储为 Blob 元数据）一起使用将解密后的数据返回给用户。
@@ -75,8 +73,7 @@
 ### 表  
 客户端库支持对插入和替换操作的实体属性进行加密。
 
->**注意：**
->
+>**注意：**  
 >当前不支持合并。由于属性的子集可能以前已使用不同的密钥加密，因此只合并新属性和更新元数据将导致数据丢失。合并需要进行额外的服务调用以从服务中读取预先存在的实体，或者需要为属性使用一个新密钥，由于性能方面的原因，这两种方案都不适用。
 
 表数据加密的工作方式如下：
@@ -105,24 +102,27 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 存储客户端库使用密钥保管库核心库，以便在整个 Azure 上提供一个通用框架进行管理密钥。用户还可以从使用密钥保管库扩展库中获得其他好处。扩展库围绕简单无缝的对称/RSA 本地和云密钥提供程序以及使用聚合和缓存提供有用的功能。
 
 ### 接口和依赖项  
-有三个密钥保管库包：- azure-keyvault-core 包含 IKey 和 IKeyResolver。它是没有依赖项的小型包。用于 Java 的存储空间客户端库将其定义为一个依赖项。
+有三个密钥保管库包：  
+- azure-keyvault-core 包含 IKey 和 IKeyResolver。它是没有依赖项的小型包。用于 Java 的存储空间客户端库将其定义为一个依赖项。  
 
 - azure-keyvault 包含密钥保管库 REST 客户端。  
 
-- azure-keyvault-extensions 包含扩展代码，其中包括加密算法和 RSAKey 和 SymmetricKey 的实现。它依赖于 Core 和 KeyVault 命名空间，并提供用于定义聚合解析程序（在用户想要使用多个密钥提供程序时）和缓存密钥解析程序的功能。虽然存储客户端库不直接依赖于此包，但是如果用户想要使用 Azure 密钥保管库来存储其密钥或通过密钥保管库扩展来使用本地和云加密提供程序，则他们将需要此包。
+- azure-keyvault-extensions 包含扩展代码，其中包括加密算法和 RSAKey 和 SymmetricKey 的实现。它依赖于 Core 和 KeyVault 命名空间，并提供用于定义聚合解析程序（在用户想要使用多个密钥提供程序时）和缓存密钥解析程序的功能。虽然存储客户端库不直接依赖于此包，但是如果用户想要使用 Azure 密钥保管库来存储其密钥或通过密钥保管库扩展来使用本地和云加密提供程序，则他们将需要此包。  
 
-  密钥保管库专为高价值主密钥设计，每个密钥保管库的限流限制的设计也考虑了这一点。使用密钥保管库执行客户端加密时，首选模型是使用在密钥保管库中作为机密存储并在本地缓存的对称主密钥。用户必须执行以下操作：
+  密钥保管库专为高价值主密钥设计，每个密钥保管库的限流限制的设计也考虑了这一点。使用密钥保管库执行客户端加密时，首选模型是使用在密钥保管库中作为机密存储并在本地缓存的对称主密钥。用户必须执行以下操作：  
 
 1.	脱机创建一个机密并将其上载到密钥保管库。  
 
 2.	使用机密的基标识符作为参数来解析机密的当前版本进行加密，并在本地缓存此信息。使用 CachingKeyResolver 进行缓存；用户不需要实现自己的缓存逻辑。
 
-3.	创建加密策略时，使用缓存解析程序作为输入。有关密钥保管库用法的详细信息，请查看加密代码示例。<fix URL>
+3.	创建加密策略时，使用缓存解析程序作为输入。
+有关密钥保管库用法的详细信息，请查看加密代码示例。<fix URL>
 
 ## 最佳实践  
 仅在用于 Java 的存储空间客户端库中提供加密支持。
 
->**重要提示：**使用客户端加密时，请注意以下要点：
+>**重要提示：**  
+>使用客户端加密时，请注意以下要点：
 >  
 >- 读取或写入到已加密的 Blob 时，请使用完整 Blob 上载命令和范围/完整 Blob 下载命令。避免使用协议操作（如“放置块”、“放置块列表”、“写入页”、“清除页”或“追加块”）写入到已加密的 Blob，否则可能会损坏已加密的 Blob 并使其不可读。  
 >
@@ -133,9 +133,11 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 >- 对于应仅使用加密数据的用户，在默认请求选项中启用 **requireEncryption** 标志。有关详细信息，请参阅下文。
 
 ## 客户端 API/接口  
-在创建 EncryptionPolicy 对象时，用户可以只提供密钥（实现了 IKey）、只提供解析程序（实现了 IKeyResolver），或两者都提供。IKey 是使用密钥标识符标识的基本密钥类型，它提供了包装/解包逻辑。IKeyResolver 用于在解密过程中解析密钥。它定义了 ResolveKey 方法，该方法根据给定的密钥标识符返回 IKey。由此，用户能够在多个位置中托管的多个密钥之间进行选择。- 对于加密，始终使用该密钥，而没有密钥将导致错误。
-- 对于解密：- 如果指定为获取密钥，则将调用密钥解析程序。如果指定了解析程序，但该解析程序不具有密钥标识符的映射，则将引发错误。
-- 如果未指定解析程序，但指定了密钥，则在该密钥的标识符与所需密钥标识符匹配时使用该密钥。如果标识符不匹配，则将引发错误。
+在创建 EncryptionPolicy 对象时，用户可以只提供密钥（实现了 IKey）、只提供解析程序（实现了 IKeyResolver），或两者都提供。IKey 是使用密钥标识符标识的基本密钥类型，它提供了包装/解包逻辑。IKeyResolver 用于在解密过程中解析密钥。它定义了 ResolveKey 方法，该方法根据给定的密钥标识符返回 IKey。由此，用户能够在多个位置中托管的多个密钥之间进行选择。  
+- 对于加密，始终使用该密钥，而没有密钥将导致错误。  
+- 对于解密：  
+	- 如果指定为获取密钥，则将调用密钥解析程序。如果指定了解析程序，但该解析程序不具有密钥标识符的映射，则将引发错误。  
+	- 如果未指定解析程序，但指定了密钥，则在该密钥的标识符与所需密钥标识符匹配时使用该密钥。如果标识符不匹配，则将引发错误。  
 
 	  [加密示例](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/EncryptionSamples) <fix URL>演示了针对 Blob、队列和表的更详细端到端方案，以及密钥保管库集成。
 
@@ -152,32 +154,33 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 
 	// Create the encryption policy to be used for upload and download.
 	BlobEncryptionPolicy policy = new BlobEncryptionPolicy(key, null);
-	
+
 	// Set the encryption policy on the request options.
 	BlobRequestOptions options = new BlobRequestOptions();
 	options.setEncryptionPolicy(policy);
-	
+
 	// Upload the encrypted contents to the blob.
 	blob.upload(stream, size, null, options, null);
-	
+
 	// Download and decrypt the encrypted contents from the blob.
-	ByteArrayOutputStream outputStream = new ByteArrayOutputStream(); blob.DownloadToStream(outputStream, null, options, null);
+	ByteArrayOutputStream outputStream = new ByteArrayOutputStream(); 
+	blob.download(outputStream, null, options, null);
 
 ### 队列服务加密  
 创建 **QueueEncryptionPolicy** 对象并在请求选项中设置它（使用 API 或通过使用 **DefaultRequestOptions** 在客户端级别设置）。其他所有事项均由客户端库在内部处理。
 
 	// Create the IKey used for encryption.
 	RsaKey key = new RsaKey("private:key1" /* key identifier */);
-	
+
 	// Create the encryption policy to be used for upload and download.
 	QueueEncryptionPolicy policy = new QueueEncryptionPolicy(key, null);
-	
+
 	// Add message
 	QueueRequestOptions options = new QueueRequestOptions();
 	options.setEncryptionPolicy(policy);
-	
+
 	queue.addMessage(message, 0, 0, options, null);
-	
+
 	// Retrieve message
 	CloudQueueMessage retrMessage = queue.retrieveMessage(30, options, null);
 
@@ -188,11 +191,11 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 
 	// Create the IKey used for encryption.
 	RsaKey key = new RsaKey("private:key1" /* key identifier */);
-	
+
 	// Create the encryption policy to be used for upload and download.
 	TableEncryptionPolicy policy = new TableEncryptionPolicy(key, null);
-	
-	TableRequestOptions options = new TableRequestOptions() 
+
+	TableRequestOptions options = new TableRequestOptions()
 	options.setEncryptionPolicy(policy);
 	options.setEncryptionResolver(new EncryptionResolver() {
 	    public boolean encryptionResolver(String pk, String rk, String key) {
@@ -203,15 +206,15 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
         	return false;
     	}
 	});
-	
+
 	// Insert Entity
 	currentTable.execute(TableOperation.insert(ent), options, null);
-	
+
 	// Retrieve Entity
 	// No need to specify an encryption resolver for retrieve
-	TableRequestOptions retrieveOptions = new TableRequestOptions() 
+	TableRequestOptions retrieveOptions = new TableRequestOptions()
 	retrieveOptions.setEncryptionPolicy(policy);
-	
+
 	TableOperation operation = TableOperation.retrieve(ent.PartitionKey, ent.RowKey, DynamicTableEntity.class);
 	TableResult result = currentTable.execute(operation, retrieveOptions, null);
 
@@ -224,7 +227,7 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 	public String getEncryptedProperty1 () {
 	    return this.encryptedProperty1;
 	}
-	
+
 	@Encrypt
 	public void setEncryptedProperty1(final String encryptedProperty1) {
 	    this.encryptedProperty1 = encryptedProperty1;
@@ -234,9 +237,10 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 注意，加密您的存储数据会导致额外的性能开销。必须生成内容密钥和 IV，内容本身必须进行加密，并且其他元数据必须进行格式化并上载。此开销将因所加密的数据量而有所变化。我们建议客户在开发过程中始终测试其应用程序的性能。
 
 ## 后续步骤  
-<!--下载 [用于 Java 的 Azure 存储空间客户端库 Maven 程序包](<fix URL>)  -->
-从 GitHub 下载 [用于 Java 的 Azure 存储空间客户端库源代码](https://github.com/Azure/azure-storage-java)  
-下载 Azure 密钥保管库 Maven [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/)、[Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) 和 [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) 程序包   
-查看 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis)
+下载[用于 Java 的 Azure 存储空间客户端库 Maven 程序包](http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/4.0.0)  
+从 GitHub 下载 [用于 Java 的 Azure 存储空间客户端库源代码](https://github.com/Azure/azure-storage-java)   
+下载 Azure 密钥保管库 Maven [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/)、[Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) 和 [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) 程序包
 
-<!---HONumber=79-->
+访问 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis)  
+
+<!---HONumber=Mooncake_0215_2016-->

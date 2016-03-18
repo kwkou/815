@@ -1,5 +1,5 @@
-﻿<properties 
-	pageTitle="配置 Azure Storage | Azure 的连接字符串" 
+﻿<properties
+	pageTitle="配置 Azure 存储空间的连接字符串 | Azure"
 	description="了解如何配置 Azure 存储帐户的连接字符串。连接字符串包含对以编程方式访问存储帐户中的资源进行身份验证所需的信息。连接字符串可以为您自己的一个帐户封装您的帐户访问密钥，也可以包含一个共享访问签名，用于在没有访问密钥的情况下访问某个帐户中的资源。" 
 	services="storage" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="09/23/2015" 
-	wacn.date="11/02/2015"/>
+	ms.date="01/05/2016"
+	wacn.date="02/25/2016"/>
 
 # 配置 Azure 存储空间连接字符串
 
@@ -43,15 +43,16 @@
 
 ## 创建 Azure 存储帐户的连接字符串
 
-若要创建 Azure 存储帐户的连接字符串，请使用下面的连接字符串格式。指示要通过 HTTP 还是 HTTPS 连接到存储帐户，将  `myAccountName` 替换为存储帐户的名称，将  `myAccountKey` 替换为帐户访问密钥：
+若要创建 Azure 存储帐户的连接字符串，请使用下面的连接字符串格式。指示要通过 HTTP 还是 HTTPS 连接到存储帐户，将 `myAccountName` 替换为存储帐户的名称，将 `myAccountKey` 替换为帐户访问密钥：
 
     DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.chinacloudapi.cn
 
 例如，你的连接字符串将类似于以下示例连接字符串：
-
-```        
-	DefaultEndpointsProtocol=https;AccountName=storagesample;AccountKey=KWPLd0rpW2T0U7K2pVpF8rYr1BgYtB7wYQw33AYiXeUoquiaY6o0TWqduxmPHlqeCNZ3LU0DHptbeIAy5l/Yhg==;EndpointSuffix=core.chinacloudapi.cn
-```
+ 
+	DefaultEndpointsProtocol=https;
+	AccountName=storagesample;
+	AccountKey=<account-key>;
+	EndpointSuffix=core.chinacloudapi.cn
 
 > [AZURE.NOTE] Azure 存储空间连接字符串同时支持 HTTP 和 HTTPS，但强烈建议使用 HTTPS。
     
@@ -64,30 +65,35 @@
 
 若要创建指定显式 Blob 终结点的连接字符串，请使用以下格式为每个服务指定完整的服务终结点，包括协议规范（HTTP 或 HTTPS）：
 
-``` 
-	BlobEndpoint=myBlobEndpoint;QueueEndpoint=myQueueEndpoint;TableEndpoint=myTableEndpoint;FileEndpoint=myFileEndpoint;EndpointSuffix=core.chinacloudapi.cn;[credentials]
-```
+	BlobEndpoint=myBlobEndpoint;
+	QueueEndpoint=myQueueEndpoint;
+	TableEndpoint=myTableEndpoint;
+	FileEndpoint=myFileEndpoint;
+	[credentials]
+
 
 你必须至少指定一个服务终结点，但无需指定所有终结点。例如，如果要创建一个连接字符串以用于自定义 Blob 终结点，则可以选择指定队列和表终结点。请注意，如果你选择在连接字符串中省略队列和表终结点，则将无法使用该连接字符串从代码访问队列和表服务。
 
-在连接字符串中显式指定服务终结点时，你有两个选项可在上述字符串中指定 `凭据`：
+在连接字符串中显式指定服务终结点时，您有两个选项可在上述字符串中指定`credentials`：
 
-- 可以指定帐户名称和密钥： `AccountName=myAccountName;AccountKey=myAccountKey` 
-- 可以指定共享访问签名： `SharedAccessSignature=base64Signature`
+- 可以指定帐户名称和密钥：`AccountName=myAccountName;AccountKey=myAccountKey` 
+- 可以指定共享访问签名：`SharedAccessSignature=base64Signature`
 
 ### 使用自定义域名指定 Blob 终结点 
 
-如果你注册了一个自定义域名以用于 BLOB 服务，则可能希望显式配置连接字符串中的 Blob 终结点。连接字符串中列出的终结点值用于构造 BLOB 服务的请求 URI，还指示返回到代码的任何 URI 形式。 
+如果你注册了一个自定义域名以用于 BLOB 服务，则可能希望显式配置连接字符串中的 Blob 终结点。连接字符串中列出的终结点值用于构造 BLOB 服务的请求 URI，还指示返回到代码的任何 URI 形式。
 
 例如，自定义域上的 Blob 终结点的连接字符串可能类似于：
 
-```
-	DefaultEndpointsProtocol=https;BlobEndpoint=www.mydomain.com;AccountName=storagesample;AccountKey=KWPLd0rpW2T0U7K2pVpF8rYr1BgYtB7wYQw33AYiXeUoquiaY6o0TWqduxmPHlqeCNZ3LU0DHptbeIAy5l/Yhg==;EndpointSuffix=core.chinacloudapi.cn
-```
+	DefaultEndpointsProtocol=https;
+	BlobEndpoint=www.mydomain.com;
+	AccountName=storagesample;
+	AccountKey=<account-key> 
+
 
 ### 使用共享访问签名指定 Blob 终结点 
 
-你可以使用显式终结点创建连接字符串，以便通过共享访问签名访问存储资源。在这种情况下，你可以指定共享访问签名作为连接字符串的一部分，而不是指定帐户名称和密钥凭据。共享访问签名令牌将封装要访问的资源的相关信息、该签名可用的时间期限以及授予的权限。有关共享访问签名的详细信息，请参阅[使用共享访问签名委托访问权限](https://msdn.microsoft.com/zh-CN/library/ee395415.aspx)。
+你可以使用显式终结点创建连接字符串，以便通过共享访问签名访问存储资源。在这种情况下，你可以指定共享访问签名作为连接字符串的一部分，而不是指定帐户名称和密钥凭据。共享访问签名令牌将封装要访问的资源的相关信息、该签名可用的时间期限以及授予的权限。有关共享访问签名的详细信息，请参阅[使用共享访问签名委托访问权限](https://msdn.microsoft.com/zh-cn/library/ee395415.aspx)。
 
 若要创建包含共享访问签名的连接字符串，请按以下格式指定该字符串：
 
@@ -95,7 +101,7 @@
     BlobEndpoint=myBlobEndpoint; QueueEndpoint=myQueueEndpoint;TableEndpoint=myTableEndpoint;SharedAccessSignature=base64Signature;EndpointSuffix=core.chinacloudapi.cn
 ```
 
-终结点可以是默认服务终结点或自定义终结点。 `base64Signature` 与共享访问签名的签名部分对应。该签名是利用 SHA256 算法通过有效的"字符串到签名"和密钥计算的 HMAC，计算结果随后进行 Base64 编码。
+终结点可以是默认服务终结点或自定义终结点。`base64Signature`与共享访问签名的签名部分对应。该签名是利用 SHA256 算法通过有效的“字符串到签名”和密钥计算的 HMAC，计算结果随后进行 Base64 编码。
 
 ### 创建含终结点后缀的连接字符串
 
@@ -115,4 +121,4 @@
 
  
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0215_2016-->

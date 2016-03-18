@@ -1,6 +1,6 @@
 <properties
     pageTitle="将 Azure CLI 用于 Azure 存储服务 | Azure"
-    description="了解如何将 Azure 命令行界面 (Azure CLI) 用于 Azure 存储服务，以便创建和管理存储帐户并处理 Azure blob 和文件。"
+    description="了解如何将 Azure 命令行界面 (Azure CLI) 用于 Azure 存储服务，以便创建和管理存储帐户并处理 Azure blob 和文件。Azure CLI 是一个跨平台工具"
     services="storage"
     documentationCenter="na"
     authors="tamram"
@@ -8,20 +8,22 @@
 
 <tags
     ms.service="storage"
-    ms.date="09/28/2015"
-    wacn.date="01/11/2016"/>
+   
+    ms.date="01/05/2016"
+    wacn.date="02/25/2016"/>
 
-# 使用 Azure CLI 管理 Azure 存储服务
+# 将 Azure CLI 用于 Azure 存储服务
 
 ## 概述
 
-Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 Azure 平台。它提供 Azure 管理门户所能提供的相同功能，此外还有各种数据访问功能。
+Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 Azure 平台。它提供了[管理门户](https://manage.windowsazure.cn)所提供的很多相同功能，以及各种数据访问功能。
 
-在本指南中，我们将探讨如何使用 [Azure 命令行界面 (Azure CLI)](/documentation/articles/xplat-cli)，以便针对 Azure 存储服务执行各种开发和管理任务。在使用本指南之前，我们建议你下载和安装或者升级到最新版 Azure CLI。
+在本指南中，我们将探讨如何使用 [Azure 命令行界面 (Azure CLI)](/documentation/articles/xplat-cli-install)，以便通过 Azure 存储空间执行各种开发和管理任务。在使用本指南之前，我们建议你下载和安装或者升级到最新版 Azure CLI。
 
 本指南假定你了解 Azure 存储服务的基本概念。本指南提供了大量的脚本，用于演示 Azure CLI 与 Azure 存储服务的用法。在运行每个脚本之前，请确保根据配置更新脚本变量。
 
-> [AZURE.NOTE]本指南提供在 Azure 服务管理 (ASM) 模式下运行的 Azure CLI 命令和脚本的示例。若要了解如何使用 Azure CLI 命令在 Azure 资源管理 (ARM) 模式下进行存储，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/azure-cli-arm-commands#azure-storage-commands-to-manage-your-storage-objects)。
+> [AZURE.NOTE] 本指南提供在 Azure 服务管理 (ASM) 模式下运行的 Azure CLI 命令和脚本的示例。若要了解如何使用 Azure CLI 命令在 Azure 资源管理 (ARM) 模式下进行存储，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/azure-cli-arm-commands#azure-storage-commands-to-manage-your-storage-objects)。
+
 ## 在 5 分钟内开始使用 Azure 存储服务和 Azure CLI
 
 本指南使用 Ubuntu 作为示例，但其他 OS 平台的操作应与此类似。
@@ -89,7 +91,7 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
 ### 连接到你的 Azure 订阅
 
-大多数存储命令没有 Azure 订阅也可以使用，不过我们仍建议你通过 Azure CLI 连接到你的订阅。若要配置 Azure CLI 以使用你的订阅，请遵循[如何连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)中的步骤。
+大多数存储命令没有 Azure 订阅也可以使用，不过我们仍建议你通过 Azure CLI 连接到你的订阅。若要配置 Azure CLI 以使用你的订阅，请遵循[如何连接到 Azure 订阅](/documentation/articles/xplat-cli-install#how-to-connect-to-your-azure-subscription)中的步骤。
 
 ### 新建存储帐户
 
@@ -215,6 +217,5 @@ Azure 文件共享是 Azure 中的 SMB 文件共享。所有目录和文件都�
 
 
 [Image1]: ./media/storage-azure-cli/azure_command.png
- 
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0215_2016-->

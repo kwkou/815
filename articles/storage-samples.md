@@ -1,4 +1,5 @@
-<properties
+<<<<<<< HEAD
+<properties 
    pageTitle="Azure 存储空间示例 | Azure"
    description="查看、下载和试用 Azure 存储空间示例。发现使用 .NET、Java、Node.js 和 c + +的存储客户端库的 blob、队列、表和文件的入门示例。"
    services="storage"
@@ -8,8 +9,8 @@
    editor="na" />
 <tags 
    ms.service="storage"
-   ms.date="05/27/2015"
-   wacn.date="09/18/2015" />
+   ms.date="01/06/2016"
+   wacn.date="02/25/2016" />
 
 # Azure 存储空间示例
 
@@ -18,7 +19,7 @@
 
 ## .NET 示例
 
-若要浏览 .NET 示例，请从 NuGet 下载 [.NET 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)。同时也在 [Azure SDK for.NET](/downloads/) 中提供 .NET 存储客户端库。
+若要浏览 .NET 示例，请从 NuGet 下载 [.NET 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)。同时也在 [Azure SDK for.NET](/downloads/) 中提供 .NET 存储客户端库。 
 
 * [在 5 分钟内开始使用 Azure Blob、表和队列](/documentation/articles/storage-getting-started-guide)
 * [使用 Azure 存储管理并发 - 示例应用程序](https://code.msdn.microsoft.com/Managing-Concurrency-using-56018114)
@@ -75,6 +76,6 @@
 ### C++ 资源
 
 - [C++ 存储客户端库的源代码](https://github.com/Azure/azure-storage-cpp)
-- [C++ 客户端库参考](http://azure.github.io/azure-storage-cpp/) 
+- [C++ 客户端库参考](http://azure.github.io/azure-storage-cpp/)
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_0215_2016-->
