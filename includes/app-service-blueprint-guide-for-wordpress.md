@@ -1,17 +1,12 @@
 ## WordPress 和 Azure App Service
 
 * [WordPress 是什么？](https://wordpress.org/)
-* [如何设置企业级 WordPress Web 应用](web-sites-php-enterprise-wordpress.md)
-* [部署由 MySQL 复制群集支持的 WordPress Web 应用](/documentation/templates/wordpress-mysql-replication/)
-* [使用 Percona 群集构建你自己的双主 MySQL 群集](/documentation/templates/mysql-ha-pxc/)并[了解关于如何管理群集的更多信息](https://github.com/fanjeffrey/axiom.articles/tree/master/pxc)
-* [部署由具有主从配置的 MySQL 复制群集支持的 WordPress](/documentation/templates/mysql-replication/)
+* [如何设置企业级 WordPress Web 应用](/documentation/articles/web-sites-php-enterprise-wordpress)
+* [了解关于如何管理群集的更多信息](https://github.com/fanjeffrey/axiom.articles/tree/master/pxc)
   
 ## 第 2 章：WordPress 应用程序故障排除
 
 * [如何排除你的 WordPress 应用故障](https://sunithamk.wordpress.com/2014/09/04/wordpress-troubleshooting-techniques-on-azure-websites/)
-* [使用 Azure Application Insights 服务收集使用遥测数据](https://azure.microsoft.com/blog/usage-analytics-for-wordpress-with-azure-app-insights/)
-* [对 Web 应用运行 Zend Zray 探查器以诊断问题和性能](https://sunithamk.wordpress.com/2015/08/04/profiling-php-application-on-azure-web-apps/)
-* [使用 Kudu 支持门户实时诊断和解决问题](https://sunithamk.wordpress.com/2015/11/04/diagnose-and-mitigate-issues-with-azure-web-apps-support-portal/)
 * [使用各种自动修复规则来自动解决实时事件](http://microsoftazurewebsitescheatsheet.info/#auto-heal)
 * [如何备份 Web 应用](/documentation/articles/web-sites-backup)和[如何还原 Web 应用](/documentation/articles/web-sites-restore)
 

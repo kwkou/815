@@ -94,11 +94,11 @@ Microsoft Avro Library 包含代码生成实用工具，可让你自动根据先
 
 第三和第四个示例说明如何使用 Avro 对象容器文件，将数据序列化与反序列化。当数据存储在 Avro 容器文件中时，其架构始终随之一起存储，因为必须共享架构才能进行反序列化。
 
-包含前四个示例的样例可以从 <a href="http://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-86055923" target="_blank">Azure 代码示例</a>站点下载。
+包含前四个示例的样例可以从 <a href="https://github.com/Azure-Samples" target="_blank">Azure 代码示例</a>站点下载。
 
-第五个示例演示如何将自定义压缩编解码器用于 Avro 对象容器文件。包含此示例代码的样例可以从 <a href="http://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-67159111" target="_blank">Azure 代码示例</a>站点下载。
+第五个示例演示如何将自定义压缩编解码器用于 Avro 对象容器文件。包含此示例代码的样例可以从 <a href="https://github.com/Azure-Samples" target="_blank">Azure 代码示例</a>站点下载。
 
-第六个示例显示如何使用 Avro 序列化来上载数据到 Azure Blob 存储，然后使用具有 HDInsight (Hadoop) 群集的 Hive 加以分析。可以从 <a href="https://code.msdn.microsoft.com/windowsazure/Using-Avro-to-upload-data-ae81b1e3" target="_blank">Azure 代码示例</a>站点下载该示例。
+第六个示例显示如何使用 Avro 序列化来上载数据到 Azure Blob 存储，然后使用具有 HDInsight (Hadoop) 群集的 Hive 加以分析。可以从 <a href="https://github.com/Azure-Samples" target="_blank">Azure 代码示例</a>站点下载该示例。
 
 以下是本主题所讨论的六个示例的链接：
 
@@ -867,7 +867,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
 
 ###<a name="Scenario5"></a>示例 5：使用对象容器文件通过自定义压缩编解码器进行序列化
 
-第五个示例演示如何将自定义压缩编解码器用于 Avro 对象容器文件。包含此示例代码的样例可以从 [Azure 代码示例](http://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-67159111)站点下载。
+第五个示例演示如何将自定义压缩编解码器用于 Avro 对象容器文件。包含此示例代码的样例可以从 [Azure 代码示例](https://github.com/Azure-Samples)站点下载。
 
 [Avro 规范](http://avro.apache.org/docs/current/spec.html#Required+Codecs)允许使用可选的压缩编解码器（除了 **Null** 和 **Deflate** 默认压缩编解码器外）。此示例未完全实现类似 Snappy（在 [Avro 规范](http://avro.apache.org/docs/current/spec.html#snappy)中作为支持的可选编解码器提及）的新编解码器。它演示如何使用 [**Deflate**][deflate-110] 编解码器的 .NET Framework 4.5 实现，后者基于 [zlib](http://zlib.net/) 压缩库提供比默认的 .NET Framework 4.0 版本更好的压缩算法。
 
@@ -1365,7 +1365,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
 
 ###<a name="Scenario6"></a>示例 6：使用 Avro 上载 Azure HDInsight 服务的数据
 
-第六个示例演示与 Azure HDInsight 服务交互相关的一些编程技巧。包含此示例代码的样例可以从 [Azure 代码示例](https://code.msdn.microsoft.com/windowsazure/Using-Avro-to-upload-data-ae81b1e3)站点下载。
+第六个示例演示与 Azure HDInsight 服务交互相关的一些编程技巧。包含此示例代码的样例可以从 [Azure 代码示例](https://github.com/Azure-Samples)站点下载。
 
 该示例将执行以下操作：
 
