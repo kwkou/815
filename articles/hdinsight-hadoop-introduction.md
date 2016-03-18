@@ -141,7 +141,7 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），它具有更大
 
 ## HDInsight 上的编程语言
 
-HDInsight 群集（Hadoop、HBase、Storm 和 Spark 群集）支持多种编程语言，但某些编程语言默认情况下未安装。对于默认情况下未安装的库、模块或程序包，请使用脚本操作来安装组件。请参阅[使用 HDInsight 进行脚本操作开发](/documentation/articles/hdinsight-hadoop-script-actions-linux)。
+HDInsight 群集（Hadoop、HBase 和 Storm 群集）支持多种编程语言，但某些编程语言默认情况下未安装。对于默认情况下未安装的库、模块或程序包，请使用脚本操作来安装组件。请参阅[使用 HDInsight 进行脚本操作开发](/documentation/articles/hdinsight-hadoop-script-actions)。
 
 ### 默认编程语言支持
 
@@ -151,7 +151,7 @@ HDInsight 群集（Hadoop、HBase、Storm 和 Spark 群集）支持多种编程�
 
 * Python
 
-可以使用脚本操作安装其他语言：[使用 HDInsight 进行脚本操作开发](/documentation/articles/hdinsight-hadoop-script-actions-linux)。
+可以使用脚本操作安装其他语言：[使用 HDInsight 进行脚本操作开发](/documentation/articles/hdinsight-hadoop-script-actions)。
 
 ### Java 虚拟机 (JVM) 语言
 

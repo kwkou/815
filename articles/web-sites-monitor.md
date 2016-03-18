@@ -42,7 +42,7 @@
 
 ##<a name="howtoreceivealerts"></a>如何：接收来自 Web 应用度量值的警报
 
-在“标准”Web 应用模式中，可以收到基于 Web 应用监视度量值的警报。该警报功能要求你首先配置用于监视的 Web 终结点，你可以在“配置”页的“监视”部分中进行此配置。你还可以选择当所选度量值达到指定的值时发送电子邮件。有关详细信息，请参阅[如何：在 Azure 中接收警报通知和管理警报规则](https://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx)。
+在“标准”Web 应用模式中，可以收到基于 Web 应用监视度量值的警报。该警报功能要求你首先配置用于监视的 Web 终结点，你可以在“配置”页的“监视”部分中进行此配置。你还可以选择当所选度量值达到指定的值时发送电子邮件。
 
 ##<a name="howtoviewusage"></a>如何：查看 Web 应用的使用率配额
 
@@ -252,7 +252,7 @@
 2.	单击“配置”选项卡。
 3.     转到“监视”部分以便输入你的终结点设置。
 4.	输入终结点的名称。
-5.	输入你想要监视的 Web 应用一部分的 URL。例如，[http://contoso.chinacloudsites.cn/archive](http://contoso.chinacloudsites.cn/archive)。
+5.	输入你想要监视的 Web 应用一部分的 URL。例如，http://contoso.chinacloudsites.cn/archive。
 6.	从列表中选择一个或多个地理位置。
 7.	（可选）重复之前的步骤以创建第二个终结点。
 8.	单击“保存”。Web 终结点监视数据可能需要一段时间后才在“仪表板”和“监视器”选项卡上显示。

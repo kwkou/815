@@ -191,8 +191,4 @@
  
 你在混合云环境中的 SharePoint Intranet 场现已准备好进行测试。
 
-## 后续步骤
-
-- 设置[生产工作负荷](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview)。
-
 <!---HONumber=Mooncake_0307_2016-->
