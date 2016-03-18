@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="12/08/2015"
-	wacn.date=""/>
+	wacn.date="03/17/2016"/>
 
 # 在 Azure 上开发 WordPress
 
