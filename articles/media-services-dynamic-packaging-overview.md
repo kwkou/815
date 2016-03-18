@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="动态打包概述" 
-	description="主题提供动态打包的概述。" 
-	authors="Juliako" 
-	manager="dwrede" 
-	editor="" 
-	services="media-services" 
+<properties
+	pageTitle="动态打包概述"
+	description="主题提供动态打包的概述。"
+	authors="Juliako"
+	manager="dwrede"
+	editor=""
+	services="media-services"
 	documentationCenter=""/>
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
-	wacn.date="01/18/2016"/>
+	ms.date="01/28/2016"
+	wacn.date="03/17/2016"/>
 
 
-#动态打包 
+#动态打包
 
 ##概述
 
@@ -34,83 +34,38 @@ Azure 媒体服务可用于向多种客户端技术（例如，iOS、XBOX、Silv
 
 ##常见方案
 
-1. 上载一个输入文件（称为夹层文件）。例如，H.264、MP4 或 WMV（有关受支持格式的列表，请参阅[媒体服务编码器支持的格式](/documentation/articles/media-services-azure-media-encoder-formats)）。
+1. 上载一个输入文件（称为夹层文件）。例如，H.264、MP4 或 WMV（有关受支持格式的列表，请参阅[媒体编码器标准支持的格式](/documentation/articles/media-services-media-encoder-standard-formats)）。
 
 1. 将夹层文件编码为 H.264 MP4 自适应比特率集。
- 
+
 1. 通过创建点播定位符来发布包含自适应比特率 MP4 集的资产。
- 
+
 1. 生成用于访问和流式传输内容的流 URL。
- 
->[AZURE.NOTE]动态打包并非支持所有 MP4 文件格式，有关详细信息，请参阅[动态打包不支持的格式](/documentation/articles/media-services-dynamic-packaging-overview#unsupported_formats)。
+
 
 ##准备用于动态流式传输的资产
 
 若要准备用于动态流式传输的资产，可以使用两个选项：
 
-- 上载主文件并使用 Azure Media Encoder 生成 H.264 MP4 自适应比特率集。
-- 使用 Media Packager 上载现有的自适应比特率集并对其进行验证。
+1. [上载主文件](/documentation/articles/media-services-dotnet-upload-files)。
+2. [使用标准编码器标准编码器生成 H.264 MP4 自适应比特率集](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard)。
+3. [Stream your content]/documentation/articles/(media-services-deliver-content-overview).
 
-###上载主文件并使用 Azure Media Encoder 生成 H.264 MP4 自适应比特率集
-
-有关如何上载和编码资产的信息，请参阅以下文章：
-
-
-使用 **Azure 管理门户**、**.NET** 或 **REST API** 上载文件。
-
-<div class="technical-azure-selector">
-<a href="/documentation/articles/media-services-manage-content">Portal</a>
-<a href="/documentation/articles/media-services-dotnet-upload-files">.NET</a>
-<a href="/documentation/articles/media-services-rest-upload-files">REST API</a>
-</div>
-<!---HONumber=67-->
-
-使用 **Azure 管理门户**、**.NET** 或 **REST API** 通过 **Azure 媒体编码器**进行编码。
+- 或 -
  
-<div class="technical-azure-selector">
-<a href="/documentation/articles/media-services-manage-content#encode">Portal</a>
-<a href="/documentation/articles/media-services-dotnet-encode-asset">.NET</a>
-<a href="/documentation/articles/media-services-rest-encode-asset">REST API</a>
-</div>
-<!---HONumber=67-->
+1. 上载预先编码的 MP4 文件。 
 
-
-###使用 Media Packager 上载现有的自适应比特率集并对其进行验证
-
-如果你上载的是一组未使用媒体服务编码器编码的自适应比特率 MP4 文件，则通常需要执行此任务。[验证使用外部编码器编码的自适应比特率 MP4](https://msdn.microsoft.com/zh-CN/library/azure/dn750842.aspx) 主题说明了如何完成此任务。
-
-##将内容流式传输到客户端
-
-在获取自适应比特率集后，可以通过创建 On-Demand 定位符发布资产，并编写用于平滑流、MPEG DASH、HLS 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）的流 URL。
-
-有关如何创建定位符和使用动态打包来流式传输内容的信息，请参阅以下主题：
-
-[将内容传送到客户概述](/documentation/articles/media-services-deliver-content-overview)。
-
-使用 **.NET** 或 **REST API** 配置资源传送策略。
-
-<div class="technical-azure-selector">
-<a href="/documentation/articles/media-services-dotnet-configure-asset-delivery-policy">.NET</a>
-<a href="/documentation/articles/media-services-rest-configure-asset-delivery-policy">REST API</a>
-<a href="https://github.com/southworkscom/azure-sdk-for-media-services-java-samples">Java</a>
-</div>
-<!---HONumber=67-->
-
-使用 **Azure 管理门户**或 **.NET** 发布资源（通过创建定位符）。
-
-<div class="technical-azure-selector">
-<a href="/documentation/articles/media-services-manage-content#publish">Portal</a>
-<a href="/documentation/articles/media-services-deliver-streaming-content">.NET</a>
-<a href="/documentation/articles/media-services-rest-deliver-streaming-content">REST API</a>
-</div>
-<!---HONumber=67-->
+	>[AZURE.NOTE] 不建议使用此选项。
+	
+2. [验证预先编码的文件](media-services-static-packaging.md#validating-adaptive-bitrate-mp4s-encoded-with-external-encoders)。
+3. [流式传输内容](media-services-deliver-content-overview.md)。
 
 
 ##<a id="unsupported_formats"></a>动态打包不支持的格式
 
 动态打包不支持以下源文件格式。
 
-- Dolby Digital Plus MP4 文件。
-- Dolby Digital Plus 平滑流文件。 
+- Dolby Digital MP4 文件。
+- Dolby Digital 平滑流文件。
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0307_2016-->

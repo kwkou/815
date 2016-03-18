@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="02/03/2016"   
+	wacn.date="03/17/2016"/>
 
 #使用 NewTek TriCaster 编码器发送单比特率实时流
 
@@ -18,7 +18,7 @@
 - [Tricaster](/documentation/articles/media-services-configure-tricaster-live-encoder)
 - [Elemental Live](/documentation/articles/media-services-configure-elemental-live-encoder)
 - [Wirecast](/documentation/articles/media-services-configure-wirecast-live-encoder)
-- [FMLE](/documentation/articles/media-services-configure-fmle-live-encoder) 
+- [FMLE](/documentation/articles/media-services-configure-fmle-live-encoder)
 
 本主题说明了如何配置 [NewTek TriCaster](http://newtek.com/products/tricaster-40.html) 实时编码器，以便将单比特率流发送到 AMS 频道进行实时编码。有关详细信息，请参阅[使用能够通过 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
 
@@ -27,36 +27,36 @@
 ##先决条件
 
 - [创建 Azure 媒体服务帐户](/documentation/articles/media-services-create-account)
-- 确保在运行流式处理终结点时，至少为其分配了一个流式处理单元。有关详细信息，请参阅[在媒体服务帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins) 
-- 安装最新版本的 [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer) 工具。 
+- 确保在运行流式处理终结点时，至少为其分配了一个流式处理单元。有关详细信息，请参阅[在媒体服务帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins)
+- 安装最新版本的 [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer) 工具。
 - 启动该工具并连接到你的 AMS 帐户。
 
 ##提示
 
-- 尽可能使用硬编码的 Internet 连接。 
-- 在确定带宽要求时，可以认为它就是将流式处理比特率翻倍。虽然此要求不是强制性要求，但它可以减轻网络拥塞的影响。  
+- 尽可能使用硬编码的 Internet 连接。
+- 在确定带宽要求时，可以认为它就是将流式处理比特率翻倍。虽然此要求不是强制性要求，但它可以减轻网络拥塞的影响。
 - 使用基于软件的编码器时，请关闭任何不需要的程序。
- 
+
 ## 创建通道
 
-1.  在 AMSE 工具中，导航到“实时”选项卡，然后右键单击频道区域。从菜单中选择“创建频道…”。  
+1.  在 AMSE 工具中，导航到“实时”选项卡，然后右键单击频道区域。从菜单中选择“创建频道…”。
 
-	![tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster1.png)
+![tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster1.png)
 
 2. 指定频道名称，说明字段为可选字段。在“频道设置”下针对“实时编码”选项选择“标准”，将“输入协议”设置为“RTMP”。所有其他设置可保留原样。
 
 
-	 确保选中“立即启动新频道”。
- 
-3. 单击“创建频道”。  
-	![tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster2.png)
+确保选中“立即启动新频道”。
 
->[AZURE.NOTE]启动频道可能需要长达 20 分钟的时间。
+3. 单击“创建频道”。
+![tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster2.png)
+
+>[AZURE.NOTE] 启动频道可能需要长达 20 分钟的时间。
 
 
 在启动频道时，你可以[配置编码器](/documentation/articles/media-services-configure-tricaster-live-encoder#configure_tricaster_rtmp)。
 
->[AZURE.IMPORTANT]请注意，只要频道进入就绪状态，就会开始计费。有关详细信息，请参阅[频道的状态](/documentation/articles/media-services-manage-live-encoder-enabled-channels#states)。
+>[AZURE.IMPORTANT] 请注意，只要频道进入就绪状态，就会开始计费。有关详细信息，请参阅[频道的状态](/documentation/articles/media-services-manage-live-encoder-enabled-channels#states)。
 
 ##<a id=configure_tricaster_rtmp></a>配置 NewTek TriCaster 编码器
 
@@ -116,7 +116,8 @@
 
 	![tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster11.png)
 
->[AZURE.IMPORTANT]在单击“流”之前，**必须**确保频道已就绪。另外，请确保不要让频道在没有一个输入/贡献源的情况下处于就绪状态的时间超出 15 分钟。
+>[AZURE.IMPORTANT] 在单击“流”之前，**必须**确保频道已就绪。 
+>另外，请确保不要让频道在没有一个输入/贡献源的情况下处于就绪状态的时间超出 15 分钟。
 
 ##测试播放
   
@@ -126,7 +127,7 @@
 
 如果流出现在播放器中，则编码器已正确配置，可以连接到 AMS。
 
-如果收到错误，则需重置频道并调整编码器设置。
+如果收到错误，则需重置频道并调整编码器设置。请参阅[故障排除](/documentation/articles/media-services-troubleshooting-live-streaming)主题以获取相关指导。
 
 ##创建节目
 
@@ -146,4 +147,8 @@
 现在可以将流嵌入到播放器中，也可将其分发给受众进行实时观看。
 
 
-<!---HONumber=79-->
+## 故障排除
+
+请参阅[故障排除](/documentation/articles/media-services-troubleshooting-live-streaming)主题以获取相关指导。
+
+<!---HONumber=Mooncake_0307_2016-->

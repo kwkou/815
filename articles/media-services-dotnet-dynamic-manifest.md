@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/18/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="02/03/2016"
+	wacn.date="03/17/2016"/>
 
 
 #使用 Azure 媒体服务 .NET SDK 创建筛选器
@@ -131,16 +131,9 @@
 
 
 
-##媒体服务学习路径
-
-你可以在此处查看 AMS 学习路径：
-
-- [AMS 实时流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS 按需流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
-
 ##另请参阅 
 
 [动态清单概述](/documentation/articles/media-services-dynamic-manifest-overview)
  
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0307_2016-->

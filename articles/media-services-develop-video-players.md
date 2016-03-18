@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="11/02/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="02/03/2016"
+	wacn.date="03/17/2016"/>
 
 
 #开发视频播放器应用程序
@@ -18,7 +18,6 @@
 ##概述
 
 Azure 媒体服务提供你所需的工具，以便你创建适用于大多数平台的丰富、动态的客户端播放器应用程序，这些平台包括：iOS 设备、Android 设备、Windows、Windows Phone、Xbox 和机顶盒。本主题还提供了可用来开发自己的客户端应用程序（这些应用程序使用 Azure 媒体服务中的流媒体）的 SDK 和播放器框架的链接。
-
 
 ##Azure 媒体播放器
 
@@ -73,4 +72,4 @@ Azure 媒体服务通过“Windows 媒体平台：播放器框架”提供广告
 [GitHub dash.js 存储库](https://github.com/Dash-Industry-Forum/dash.js)
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0307_2016-->

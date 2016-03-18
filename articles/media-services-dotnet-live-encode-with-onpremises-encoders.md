@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/17/2015"
-	wacn.date="01/14/2016"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/17/2016"/>
 
 #如何使用本地编码器进行实时编码
 
@@ -19,13 +19,13 @@
 以下是完成本教程所需具备的条件：
 
 - 一个 Azure 帐户。
-- 一个 Media Services 帐户。若要创建媒体服务帐户，请参阅[如何创建媒体服务帐户](/documentation/articles/media-services-create-account)。
+- 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[如何创建媒体服务帐户](/documentation/articles/media-services-create-account)。
 - 设置开发环境。有关详细信息，请参阅[设置环境](/documentation/articles/media-services-set-up-computer)。
 - 网络摄像机。例如，[Telestream Wirecast 编码器](http://www.telestream.net/wirecast/overview.htm)。 
 
 建议阅读以下文章：
 
-- [Azure 媒体服务 RTMP 支持和实时编码器](http://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)
+- [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)
 - [使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-manage-channels-overview)
  
 
@@ -33,7 +33,7 @@
 	
 下面的代码示例演示如何完成以下任务：
 
-- 连接到 Media Services
+- 连接到媒体服务
 - 创建通道
 - 更新通道
 - 检索通道的输入终结点。应将输入终结点提供给本地实时编码器。实时编码器将相机的信号转换为流，以便发送到通道的输入（插入）终结点。
@@ -45,7 +45,7 @@
 - 获取所有流式处理终结点的定位符
 - 关闭资源
 	
-有关如何配置实时编码器的信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](http://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)。
+有关如何配置实时编码器的信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)。
 	
 		using System;
 		using System.Collections.Generic;
@@ -67,13 +67,13 @@
 		        private const string ChannelName = "channel001";
 		        private const string AssetlName = "asset001";
 		        private const string ProgramlName = "program001";
-
+		
 				private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
 
 				// Azure China uses a different API server and a different ACS Base Address from the Global.
 				private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
 				private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
-		
+
 		        // Read values from the App.config file.
 		        private static readonly string _mediaServicesAccountName =
 		            ConfigurationManager.AppSettings["MediaServicesAccountName"];
@@ -222,6 +222,8 @@
 		
 		        public static ILocator CreateLocatorForAsset(IAsset asset, TimeSpan ArchiveWindowLength)
 		        {
+                	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
+
 		            var locator = _context.Locators.CreateLocator
 		                (
 		                    LocatorType.OnDemandOrigin,
@@ -383,4 +385,4 @@
 		    }
 		}
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0307_2016-->

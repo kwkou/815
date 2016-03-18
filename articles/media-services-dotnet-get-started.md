@@ -9,11 +9,12 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/17/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="02/03/2016" 
+	wacn.date="03/17/2016"/>
 
 
 # 使用 .NET SDK 开始传送点播内容
+
 
 [AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started.md)]
 
@@ -52,11 +53,16 @@
 - .NET Framework 4.0 或更高版本
 - Visual Studio 2010 SP1（Professional、Premium、Ultimate 或 Express）或更高版本。
 
+
+##下载示例
+
+从[此处](http://azure.microsoft.com/documentation/samples/media-services-dotnet-on-demand-encoding-with-media-encoder-standard/)获取并运行示例。
+
 ##使用门户创建媒体服务帐户
 
 1. 在 Azure 管理门户中，依次单击“新建”、“媒体服务”和“快速创建”。
 
-![Media Services 快速创建](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
+	![媒体服务快速创建](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
 
 2. 在“名称”中，输入新帐户的名称。媒体服务帐户名称由小写字母或数字构成（不含空格），长度为 3 - 24 个字符。
 
@@ -74,7 +80,7 @@
 
 在页面底部，将出现“管理密钥”按钮。当你单击此按钮时，将会显示一个对话框，其中包含媒体服务帐户名以及主密钥和辅助密钥。你必须要有帐户名和主要密钥信息，才能以编程方式访问媒体服务帐户。
 
-![“Media Services”页](./media/media-services-dotnet-get-started/wams-mediaservices-page.png)
+![“媒体服务”页](./media/media-services-dotnet-get-started/wams-mediaservices-page.png)
 
 当你双击帐户名时，默认情况下将显示“快速启动”页。可从此页执行某些管理任务，而这些管理任务也可从该门户的其他页执行。例如，你可以从此页上载视频文件，也可以从“内容”页执行此操作。
 
@@ -99,13 +105,13 @@
 
 3. 若要指定流式处理单元数，请单击“缩放”选项卡，然后移动“保留容量”滑块。
 
-![“缩放”页](./media/media-services-dotnet-get-started/media-services-origin-scale.png)
+	![“缩放”页](./media/media-services-dotnet-get-started/media-services-origin-scale.png)
 
 4. 按“保存”以保存更改。
 
 分配所有新的单元大约需要 20 分钟才能完成。
 
->[AZURE.NOTE]当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
+>[AZURE.NOTE] 当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
 >
 > 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅[媒体服务定价详细信息](/home/features/media-services/#price)。
 
@@ -141,7 +147,7 @@
 		using System.Threading;
 		using System.IO;
 		using Microsoft.WindowsAzure.MediaServices.Client;
-		using Microsoft.WindowsAzure.MediaServices.Client.DynamicEncryption;
+		
 
 6. 在 projects 目录下创建新的文件夹，然后复制你要编码和流处理或渐进式下载的 .mp4 或 .wmv 文件。在此示例中，我们使用了“C:\\VideoFiles”路径。
 
@@ -149,11 +155,11 @@
 
 使用采用 .NET 的媒体服务时，你必须将 **CloudMediaContext** 类用于大多数媒体服务编程任务：连接到媒体服务帐户；创建、更新、访问和删除以下对象：资产、资产文件、作业、访问策略、定位符等等。
 
-使用以下代码覆盖默认程序类。该代码演示如何从 App.config 文件中读取连接值，以及如何创建 **CloudMediaContext** 对象以连接到媒体服务。有关连接到媒体服务的详细信息，请参阅[使用用于 .NET 的媒体服务 SDK 连接到媒体服务](/documentation/articles/media-services-dotnet-connect_programmatically)。
+使用以下代码覆盖默认程序类。该代码演示如何从 App.config 文件中读取连接值，以及如何创建 **CloudMediaContext** 对象以连接到媒体服务。有关连接到媒体服务的详细信息，请参阅[使用适用于 .NET 的媒体服务 SDK 连接到媒体服务](/documentation/articles/media-services-dotnet-connect_programmatically)。
 
 **Main** 函数调用将在本部分中进一步定义的方法。
 
-    claclass Program
+    class Program
     {
         // Read values from the App.config file.
         private static readonly string _mediaServicesAccountName =
@@ -161,7 +167,7 @@
         private static readonly string _mediaServicesAccountKey =
             ConfigurationManager.AppSettings["MediaServicesAccountKey"];
 
-		private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+        private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
 
 		// Azure China uses a different API server and a different ACS Base Address from the Global.
 		private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
@@ -171,7 +177,6 @@
         private static CloudMediaContext _context = null;
 		private static MediaServicesCredentials _cachedCredentials = null;
 		private static Uri _apiServer = null;
-		
 
         static void Main(string[] args)
         {
@@ -451,4 +456,4 @@ MPEG DASH
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
   [Portal]: http://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->

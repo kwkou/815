@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/05/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="02/03/2016" 
+	wacn.date="03/17/2016"/>
 
 #将现有 Blob 复制到媒体服务资产中
 
@@ -18,7 +18,7 @@
 
 Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存在于不与媒体服务帐户关联的存储帐户中。本主题演示如何将 Blob 从存储帐户复制到媒体服务资产中。请注意，你还可以跨数据中心复制。但是，这样做可能会产生费用。有关定价的详细信息，请参阅[数据传输](/pricing/#header-11)。
 
->[AZURE.NOTE]在不使用 Media Service API 的情况下，你不应该尝试更改媒体服务生成的 BLOB 容器内容。
+>[AZURE.NOTE] 在不使用媒体服务 API 的情况下，你不应该尝试更改媒体服务生成的 BLOB 容器内容。
 
 ##先决条件
 
@@ -79,7 +79,7 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 1. 将 .ism 文件设置为主文件。
 1. 为与此资产关联的 OnDemandOrigin 定位符创建平滑流 URL。 
 		
-		claclass Program
+		class Program
 		{
 		    // Read values from the App.config file. 
 		    static string _accountName = ConfigurationManager.AppSettings["MediaServicesAccountName"];
@@ -88,7 +88,7 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 		    static string _storageAccountKey = ConfigurationManager.AppSettings["MediaServicesStorageAccountKey"];
 		    static string _externalStorageAccountName = ConfigurationManager.AppSettings["ExternalStorageAccountName"];
 		    static string _externalStorageAccountKey = ConfigurationManager.AppSettings["ExternalStorageAccountKey"];
-
+		
 			private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
 
 			// Azure China uses a different API server and a different ACS Base Address from the Global.
@@ -97,7 +97,7 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 
 			// Azure China Storage Endpoint Suffix
 			private static readonly String _chinaEndpointSuffix = "core.chinacloudapi.cn";
-		
+
 		    private static MediaServicesCredentials _cachedCredentials = null;
 		    private static CloudMediaContext _context = null;
 		
@@ -234,6 +234,7 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 		            Where(f => f.Name.EndsWith(".ism", StringComparison.OrdinalIgnoreCase)).First();
 		
 		        // Create a 30-day readonly access policy. 
+            // You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
 		        IAccessPolicy policy = _context.AccessPolicies.Create("Streaming policy",
 		            TimeSpan.FromDays(30),
 		            AccessPermissions.Read);
@@ -314,5 +315,4 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 		}
  
 
-
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0307_2016-->

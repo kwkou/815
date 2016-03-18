@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/15/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="01/28/2016" 
+	wacn.date="03/17/2016"/>
 
 
 #如何使用媒体编码器标准通过 .NET 来生成缩略图
@@ -276,7 +276,7 @@
 有关架构的信息，请参阅[此主题](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)。
 	
 	<?xml version="1.0" encoding="utf-16"?>
-	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://azure.microsoft.com/media/encoding/Preset/2014/03">
+	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://www.windowsazure.com/media/encoding/Preset/2014/03">
 	  <Encoding>
 	    <H264Video>
 	      <KeyFrameInterval>00:00:02</KeyFrameInterval>
@@ -298,7 +298,6 @@
 	          <MaxBitrate>4500</MaxBitrate>
 	        </H264Layer>
 	      </H264Layers>
-	      <Chapters />
 	    </H264Video>
 	    <AACAudio>
 	      <Profile>AACLC</Profile>
@@ -353,7 +352,7 @@
 请注意以下事项：
 
 - 为 Start/Step/Range 使用的显式时间戳假设输入源的长度至少为 1 分钟。
-- Jpg/Png/BmpVideo 元素包含 Start、Step 和 Range 字符串属性 – 这些属性解释如下：
+- Jpg/Png/BmpImage 元素包含 Start、Step 和 Range 字符串属性 – 这些属性解释如下：
 
 	- 帧数（如果为非负整数），例如："Start": "120"；
 	- 相对于源持续时间（如果以 % 后缀表示），例如："Start": "15%"，或者
@@ -364,11 +363,11 @@
 	此外，Start 还支持特殊的宏 {Best}，它会尝试判断第一个“有意义”的内容帧。注意：（Start 设置为 {Best} 时，将忽略 Step 与 Range）
 	
 	- 默认值：Start:{Best}
-- 需要显式提供每个图像格式的输出格式：Jpg/Png/BmpFormat。AMS 会将 JpgVideo（如果已指定）与 JpgFormat 进行匹配，依此类推。OutputFormat 引入了新的图像编解码器特定宏 {Index}，需要为图像输出格式提供该宏一次（且只需一次）。
+- 需要显式提供每个图像格式的输出格式：Jpg/Png/BmpFormat。MES 会将 JpgVideo（如果已指定）与 JpgFormat 进行匹配，依此类推。OutputFormat 引入了新的图像编解码器特定宏 {Index}，需要为图像输出格式提供该宏一次（且只需一次）。
 
 
 ##另请参阅 
 
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0307_2016-->

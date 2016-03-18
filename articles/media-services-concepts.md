@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/02/2016" 
+	wacn.date="03/17/2016"/>
 
 #Azure 媒体服务概念 
 
@@ -34,7 +34,7 @@
 
 **AssetFile** 实例和实际媒体文件是两个不同的对象。AssetFile 实例包含有关媒体文件的元数据，而媒体文件包含实际媒体内容。
 
-在不使用 Media Service API 的情况下，你不应该尝试更改媒体服务生成的 BLOB 容器内容。
+在不使用媒体服务 API 的情况下，你不应该尝试更改媒体服务生成的 BLOB 容器内容。
 
 ###资产加密选项
 
@@ -61,7 +61,7 @@
 
 一个 Blob 容器包含一组 Blob 集。Blob 容器用作媒体服务中的访问控制分界点和资产上的共享访问签名 (SAS) 定位符。一个 Azure 存储帐户可以包含无数个 Blob 容器。一个容器可以存储无限个 Blob。
 
->[AZURE.NOTE]在不使用 Media Service API 的情况下，你不应该尝试更改媒体服务生成的 BLOB 容器内容。
+>[AZURE.NOTE]在不使用媒体服务 API 的情况下，你不应该尝试更改媒体服务生成的 BLOB 容器内容。
 
 ###<a id="locators"></a>定位符
 
@@ -117,7 +117,8 @@
 
 ###节目 
 
-[节目](https://msdn.microsoft.com/zh-cn/library/azure/dn783463.aspx)用于控制实时流中的片段的发布和存储。通道管理节目。频道和节目的关系非常类似于传统媒体，频道具有恒定的内容流，而节目的范围限定为该频道上的一些定时事件。你可以通过设置 **ArchiveWindowLength** 属性，指定你希望保留多少小时的节目录制内容。此值的设置范围是最短 5 分钟，最长 25 小时。
+[节目](https://msdn.microsoft.com/zh-cn/library/azure/dn783463.aspx)用于控制实时流中的片段的发布和存储。通道管理节目。频道和节目的关系非常类似于传统媒体，频道具有恒定的内容流，而节目的范围限定为该频道上的一些定时事件。
+你可以通过设置 **ArchiveWindowLength** 属性，指定你希望保留多少小时的节目录制内容。此值的设置范围是最短 5 分钟，最长 25 小时。
 
 ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向后搜索的最长时间。超出指定时间长度后，节目也能够运行，但落在时间窗口长度后面的内容将全部被丢弃。此属性的这个值还决定了客户端清单能够增加多长时间。
 
@@ -136,7 +137,7 @@ ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向
 
 ###动态加密
 
-使用 Azure 媒体服务，可以在媒体从离开计算机到存储、处理和传送的整个过程中确保其安全。借助媒体服务，你可以传送使用高级加密标准（AES，使用 128 位加密密钥）和通用加密（CENC，使用 PlayReady 和/或 Widevine DRM）进行动态加密的内容。媒体服务还提供了用于向已授权客户端传送 AES 密钥和 PlayReady 许可证的服务。Azure 媒体服务提供的 Widevine 许可证传送服务目前是预览版。
+使用 Azure 媒体服务，可以在媒体从离开计算机到存储、处理和传送的整个过程中确保其安全。借助媒体服务，你可以传送使用高级加密标准（AES，使用 128 位加密密钥）和通用加密（CENC，使用 PlayReady 和/或 Widevine DRM）进行动态加密的内容。媒体服务还提供了用于向已授权客户端传送 AES 密钥和 PlayReady 许可证的服务。
 
 当前你可以加密以下流格式：HLS、MPEG DASH 和平滑流。无法加密 HDS 流格式或渐进式下载。
 
@@ -168,7 +169,7 @@ ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向
 
 ###流式处理终结点
 
-StreamingEndpoint 表示一个流服务，该服务可以直接将内容传递给客户端播放器应用程序，也可以传递给内容交付网络 (CDN) 以进一步分发（Azure媒体服务现在还提供了 Azure CDN 集成）。 StreamingEndpoint 服务的出站流可以是实时流，也可以是媒体服务帐户中的视频点播资产。此外，还可以通过调整扩展单元（也称为流单元）来控制 StreamingEndpoint 服务处理不断增长的带宽需求的能力。建议为生产环境中的应用程序分配一个或多个扩展单元。缩放单元提供能够以 200 Mbps 为增量购买的专用出口容量和附加功能（当前包括使用动态打包）。
+StreamingEndpoint 表示一个流服务，该服务可以直接将内容传递给客户端播放器应用程序，也可以传递给内容交付网络 (CDN) 以进一步分发（Azure 媒体服务现在还提供了 Azure CDN 集成）。 StreamingEndpoint 服务的出站流可以是实时流，也可以是媒体服务帐户中的视频点播资产。此外，还可以通过调整扩展单元（也称为流单元）来控制 StreamingEndpoint 服务处理不断增长的带宽需求的能力。建议为生产环境中的应用程序分配一个或多个扩展单元。缩放单元提供能够以 200 Mbps 为增量购买的专用出口容量和附加功能（当前包括使用动态打包）。
 
 建议使用动态打包和/或动态加密。若要使用这些功能，你必须获取你计划从中流式传输内容的终结点的至少一个流式处理单位。有关详细信息，请参阅[缩放流式处理单位](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
 
@@ -237,4 +238,4 @@ StreamingEndpoint 表示一个流服务，该服务可以直接将内容传递�
 
 		http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=f4m-f4f) 
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->

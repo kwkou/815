@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="01/14/2016"    
-	wacn.date="02/25/2016"/>
+	ms.date="01/28/2016"    
+	wacn.date="03/17/2016"/>
 
 
 #通过自定义媒体编码器标准预设执行高级编码任务
@@ -412,7 +412,8 @@
 
 	你可以随意混搭使用表示法。
 	
-	此外，Start 还支持特殊的宏 {Best}，它会尝试判断第一个“有意义”的内容帧。注意：（Start 设置为 {Best} 时，将忽略 Step 与 Range）
+	此外，Start 还支持特殊的宏 {Best}，它会尝试判断第一个“有意义”的内容帧。 
+	注意：（Start 设置为 {Best} 时，将忽略 Step 与 Range）
 	
 	- 默认值：Start:{Best}
 - 需要显式提供每个图像格式的输出格式：Jpg/Png/BmpFormat。MES 会将 JpgVideo（如果已指定）与 JpgFormat 进行匹配，依此类推。OutputFormat 引入了新的图像编解码器特定宏 {Index}，需要为图像输出格式提供该宏一次（且只需一次）。
@@ -753,7 +754,6 @@
 	
 	<?xml version="1.0" encoding="utf-16"?>
 	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://www.windowsazure.com/media/encoding/Preset/2014/03">
-	  <Grid Enabled="true" />
 	  <Sources>
 	    <Source>
 	      <Streams />
@@ -879,4 +879,4 @@
 
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset)
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0307_2016-->

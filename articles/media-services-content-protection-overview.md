@@ -9,22 +9,22 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/02/2016" 
+	wacn.date="03/17/2016"/>
 
 #保护内容概述
 
 
-使用 Azure 媒体服务，可以在媒体从离开计算机到存储、处理和传送的整个过程中确保其安全。借助媒体服务，你可以传送使用高级加密标准（AES，使用 128 位加密密钥）和通用加密（CENC，使用 PlayReady 和/或 Widevine DRM）进行动态加密的内容。媒体服务还提供了用于向已授权客户端传送密钥和 PlayReady 许可证的服务。目前，媒体服务不提供 Widevine 许可证服务器。你可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。
+使用 Azure 媒体服务，可以在媒体从离开计算机到存储、处理和传送的整个过程中确保其安全。借助媒体服务，你可以传送使用高级加密标准（AES，使用 128 位加密密钥）和通用加密（CENC，使用 PlayReady 和/或 Widevine DRM）进行动态加密的内容。媒体服务还提供了用于向已授权客户端传送 AES 密钥和 PlayReady 许可证的服务。你还可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。
 
 - 下图演示了“PlayReady 和/或 Widevine DRM 动态通用加密”工作流。有关详细信息，请参阅[使用 PlayReady 和/或 Widevine DRM 动态通用加密](/documentation/articles/media-services-protect-with-drm)。
 
-	![使用 PlayReady 进行保护](./media/media-services-content-protection-overview/media-services-content-protection-with-drm.png)
+![使用 PlayReady 进行保护](./media/media-services-content-protection-overview/media-services-content-protection-with-drm.png)
 
 
 - 下图演示了“AES-128 动态加密”工作流。有关详细信息，请参阅[使用 AES-128 动态加密和密钥传送服务](/documentation/articles/media-services-protect-with-aes128)。
 
-	![使用 AES-128 提供保护](./media/media-services-content-protection-overview/media-services-content-protection-with-aes.png)
+![使用 AES-128 提供保护](./media/media-services-content-protection-overview/media-services-content-protection-with-aes.png)
 
 >[AZURE.NOTE]若要使用动态加密，首先必须获取你想要从中流式传输加密内容的流式处理终结点的至少一个流式处理保留单元。
 
@@ -34,7 +34,7 @@
 
 根据你要上载、存储和传递的内容的不同类型，媒体服务提供了多个加密选项供你选择。
 
-**无** - 不使用加密。这是默认值。请注意，使用此选项时，你的内容在传送过程中或静态存储过程中都不会受到保护。
+**无**：不使用加密。这是默认值。请注意，使用此选项时，你的内容在传送过程中或静态存储过程中都不会受到保护。
 
 如果计划使用渐进式下载交付 MP4，则使用此选项上载内容。
 
@@ -64,9 +64,9 @@
 
 ###PlayReady DRM 许可证和 AES 明文密钥传送服务
 
-媒体服务提供用于向已授权客户端传送 PlayReady 许可证和 AES 明文密钥的服务。你可以使用 Azure 管理门户、REST API 或 Media Services SDK for .NET 来配置许可证和密钥的授权与身份验证策略。
+媒体服务提供用于向已授权客户端传送 PlayReady 许可证和 AES 明文密钥的服务。你可以使用 Azure 管理门户、REST API 或适用于 .NET 的媒体服务 SDK 来配置许可证和密钥的授权与身份验证策略。
 
-请注意，如果使用门户，则你可以配置一个 AES 策略（将应用到所有 AES 加密内容）和一个 PlayReady 策略（将应用到所有 PlayReady 加密内容）。如果你想要以更大的力度控制配置，请使用 Media Services SDK for .NET。
+请注意，如果使用门户，则你可以配置一个 AES 策略（将应用到所有 AES 加密内容）和一个 PlayReady 策略（将应用到所有 PlayReady 加密内容）。如果你想要以更大的力度控制配置，请使用适用于 .NET 的媒体服务 SDK。
 
 ###PlayReady 许可证模板
 
@@ -127,4 +127,4 @@ AMS 还允许你传送通过 Widevine DRM 加密的 MPEG DASH。PlayReady 和 Wi
 
 [content-protection]: ./media/media-services-content-protection-overview/media-services-content-protection.png
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0307_2016-->

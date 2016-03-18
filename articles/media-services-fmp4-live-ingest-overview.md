@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/21/2015"
-	wacn.date="12/31/2015"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/17/2016"/>
 
 #Azure 媒体服务分片 MP4 实时引入规范
 
@@ -33,9 +33,9 @@
 ![image1][image1]
 
 
-##3\.位流格式 – ISO 14496-12 分片 MP4
+##3\.位流格式 - ISO 14496-12 分片 MP4
 
-本文档所述的实时流引入的有线格式基于 [ISO-14496-12]。有关分片 MP4 格式、视频点播和实时流引入的详细说明，请参阅 [MS SSTR](http://msdn.microsoft.com/zh-cn/library/ff469518.aspx)。
+本文档所述的实时流引入的有线格式基于 [ISO-14496-12]。有关分片 MP4 格式、视频点播和实时流引入的详细说明，请参阅 [[MS SSTR]] (http://msdn.microsoft.com/zh-cn/library/ff469518.aspx)。
 
 ###实时引入格式定义 
 
@@ -48,9 +48,9 @@
 5. [1] 中的第 3.3.6 部分定义了名为 MovieFragmentRandomAccessBox (‘mfra’) 的框，此框可能会在实时引入结束时发送，表示通道 EOS（流式传输结束）。Azure 媒体服务的引入逻辑使得 EOS（流式传输结束）的使用方式已过时，不应该发送实时引入的 ‘mfra’ 框。如果已发送，Azure 媒体服务会无提示方式将其忽略。建议使用[通道重置](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx#reset_channels)来重置引入点的状态，此外，建议使用[节目停止](https://msdn.microsoft.com/zh-cn/library/azure/dn783463.aspx#stop_programs)来结束演播与流。
 6. MP4 片段持续时间应该是恒定的才能减少客户端清单的大小，并通过使用重复标记来改善客户端下载启发。为了补偿非整数的帧速率，持续时间可能会波动。
 7. MP4 片段持续期间应该大约在 2 到 6 秒之间。
-8. 应该以递增顺序送达 MP4 片段时间戳和索引（TrackFragmentExtendedHeaderBox fragment\_absolute\_time 和 fragment\_index）。尽管 Azure 媒体服务在复制片段方面很有弹性，但是其根据媒体时间轴将片段重新排序的功能非常有限。
+8. 应该以递增顺序送达 MP4 片段时间戳和索引（TrackFragmentExtendedHeaderBox fragment_absolute_time 和 fragment_index）。尽管 Azure 媒体服务在复制片段方面很有弹性，但是其根据媒体时间轴将片段重新排序的功能非常有限。
 
-##4\.协议格式 – HTTP
+##4\.协议格式 - HTTP
 
 Azure 媒体服务的 ISO 分片 MP4 实时引入使用长时间运行的标准 HTTP POST 请求，将以分片 MP4 格式打包的编码媒体数据传输到服务。每个 HTTP POST 发送完整的分片 MP4 位流（“流”），其开头为标头框（‘ftyp’、“实时服务器清单框”及 ‘moov’ 框），后接一系列片段（‘moof’ 与 ‘mdat’ 框）。有关 HTTP POST 请求的 URL 语法，请参阅 [1] 中的第 9.2 部分。以下是 POST URL 的示例：
 
@@ -70,7 +70,7 @@ Azure 媒体服务的 ISO 分片 MP4 实时引入使用长时间运行的标准 
 
 ##5\.时间刻度 
 
-[MS SSTR](https://msdn.microsoft.com/zh-cn/library/ff469518.aspx) 介绍了 SmoothStreamingMedia（第 2.2.2.1 部分）、StreamElement（第 2.2.2.3 部分）、StreamFragmentElement（第 2.2.2.6 部分）和 LiveSMIL（第 2.2.7.3.1 节）的“时间刻度”使用方式。如果没有时间刻度值，则使用默认值 10,000,000 (10 MHz)。尽管平滑流格式规范不会阻止使用其他时间刻度值，但大多数编码器实现会使用此默认值 (10 MHz) 来生成平滑流引入数据。由于 [Azure 媒体动态打包](/documentation/articles/media-services-dynamic-packaging-overview)功能方面的原因，建议为视频流使用 90 kHz 时间刻度，为音频流使用 44.1 或 48.1 kHz。如果不同的流采用不同的时间刻度值，则必须发送流级时间刻度。请参阅 [MS-SSTR](https://msdn.microsoft.com/zh-cn/library/ff469518.aspx))。
+[[MS SSTR]] (https://msdn.microsoft.com/zh-cn/library/ff469518.aspx) 介绍了 SmoothStreamingMedia（第 2.2.2.1 部分）、StreamElement（第 2.2.2.3 部分）、StreamFragmentElement（第 2.2.2.6 部分）和 LiveSMIL（第 2.2.7.3.1 节）的“时间刻度”使用方式。如果没有时间刻度值，则使用默认值 10,000,000 (10 MHz)。尽管平滑流格式规范不会阻止使用其他时间刻度值，但大多数编码器实现会使用此默认值 (10 MHz) 来生成平滑流引入数据。由于 [Azure 媒体动态打包](/documentation/articles/media-services-dynamic-packaging-overview)功能方面的原因，建议为视频流使用 90 kHz 时间刻度，为音频流使用 44.1 或 48.1 kHz。如果不同的流采用不同的时间刻度值，则必须发送流级时间刻度。请参阅 [[MS-SSTR]] (https://msdn.microsoft.com/zh-cn/library/ff469518.aspx))。
 
 ##6\.“流”的定义  
 
@@ -80,9 +80,9 @@ Azure 媒体服务的 ISO 分片 MP4 实时引入使用长时间运行的标准 
 
 客户想要创建实时流演播，其中包含以下音频/视频比特率：
 
-视频 – 3000kbps、1500kbps、750kbps
+视频 - 3000kbps、1500kbps、750kbps
 
-音频 – 128 kbps
+音频 - 128 kbps
 
 ###选项 1：在一个流中包含所有轨迹
 
@@ -140,7 +140,7 @@ Azure 媒体服务的 ISO 分片 MP4 实时引入使用长时间运行的标准 
 3. 新编码器的 POST 请求必须包含与故障实例相同的分片 MP4 标头框。
 4. 新编码器必须与所有其他运行中的编码器正确同步，相同的实时演播才能生成与相符片段边界同步的音频/视频样本。
 5. 新流必须在语义上等同于上一个流，并可在标头与片段级别互换。
-6. 新的编码器应该尝试最大程度地减少数据丢失。媒体片段的 fragment\_absolute\_time 与 fragment\_index 应该从编码器上次停止的时间点开始增加。fragment\_absolute\_time 与 fragment\_index 应该连续增加，但允许视需要造成不连续情况。Azure 媒体服务将忽略已收到并处理的片段，因此在片段重新发送端造成错误，好过在媒体时间轴上造成不连续情况。 
+6. 新的编码器应该尝试最大程度地减少数据丢失。媒体片段的 fragment_absolute_time 与 fragment_index 应该从编码器上次停止的时间点开始增加。fragment_absolute_time 与 fragment_index 应该连续增加，但允许视需要造成不连续情况。Azure 媒体服务将忽略已收到并处理的片段，因此在片段重新发送端造成错误，好过在媒体时间轴上造成不连续情况。 
 
 ##9\.编码器冗余 
 
@@ -210,4 +210,4 @@ Azure 媒体服务的 ISO 分片 MP4 实时引入使用长时间运行的标准 
 
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0307_2016-->
