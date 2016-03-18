@@ -27,7 +27,9 @@ Azure 一直在不断扩大规模，因此很容易出现过载现象。基本�
 
 本文将使用**不同的组织**来讨论基于类似功能的服务，并调用属于大型服务一部分的重要子服务。
 
-![Azure 组件](./media/fundamentals-introduction-to-azure/AzureComponentsIntroNew780.png) *图：Azure 提供可通过 Internet 访问且在 Azure 数据中心运行的应用程序服务。*
+![Azure 组件](./media/fundamentals-introduction-to-azure/AzureComponentsIntroNew780.png)
+
+*图：Azure 提供可通过 Internet 访问且在 Azure 数据中心运行的应用程序服务。*
 
 ## 管理门户
 Azure 的 Web 接口名为[管理门户](http://manage.windowsazure.cn)，允许管理员访问和管理大多数但不是所有 Azure 功能。
@@ -41,7 +43,9 @@ Azure 的 Web 接口名为[管理门户](http://manage.windowsazure.cn)，允许
 
 ### Azure 虚拟机
 
-![Azure 虚拟机 ROBBCSIART\_TEST](./media/fundamentals-introduction-to-azure/mscsiart_VirtualMachinesIntroNew_12345.png) *图：Azure 虚拟机为您提供对云中虚拟机实例的完全控制。*
+![Azure 虚拟机 ROBBCSIART\_TEST](./media/fundamentals-introduction-to-azure/mscsiart_VirtualMachinesIntroNew_12345.png)
+
+*图：Azure 虚拟机为您提供对云中虚拟机实例的完全控制。*
 
 可以按需创建一个虚拟机（无论是从标准映像还是从你提供的映像），此功能非常有用。这种方法通常称为“基础结构即服务”(IaaS)，即是 Azure 虚拟机模型提供的用途。图 2 显示了虚拟机 (VM) 是如何运行的，以及如何从 VHD 创建虚拟机。
 
@@ -63,7 +67,9 @@ Azure 的 Web 接口名为[管理门户](http://manage.windowsazure.cn)，允许
 
 ### Web 应用
 
-![Azure Web Apps ROBBCSIART\_TEST](./media/fundamentals-introduction-to-azure/mscsiart_AzureWebsitesIntroNew_12345.png) *图：Azure Web 应用在云中运行网站应用程序，无需管理基础的 Web 服务器。*
+![Azure Web Apps ROBBCSIART\_TEST](./media/fundamentals-introduction-to-azure/mscsiart_AzureWebsitesIntroNew_12345.png)
+
+*图：Azure Web 应用在云中运行网站应用程序，无需管理基础的 Web 服务器。*
 
 人们在云中最常做的事情之一是运行网站和 Web 应用程序。虽然 Azure 虚拟机允许此操作，但仍由你负责管理一个或多个 VM 以及基础操作系统。云服务 Web 角色可以执行此操作，但部署和维护它们仍然离不开管理工作。如果你只需要一个由别人代你负责管理工作的网站，该怎么办？
 
@@ -77,7 +83,9 @@ Web 应用能做到这一点。此计算模型使用 Azure 管理门户以及 AP
 Web 应用旨在使公司、开发人员和 Web 设计机构都能利用它。对于公司而言，它是用于运行现有网站的易于管理、可伸缩、高度安全且高度可用的解决方案。当您需要设置一个网站时，最好是从 Azure Web 应用开始，当无法找到需要的功能时再转到云服务。请查看“计算”部分的末尾，以搜寻更多可以帮助你在这些选项中进行选择的链接。
 
 ### 云服务
-![Azure 云服务](./media/fundamentals-introduction-to-azure/CloudServicesIntroNew.png) *图：通过 Azure 云服务，可以在平台即服务 (PaaS) 环境中运行高度可缩放的自定义代码*
+![Azure 云服务](./media/fundamentals-introduction-to-azure/CloudServicesIntroNew.png)
+
+*图：通过 Azure 云服务，可以在平台即服务 (PaaS) 环境中运行高度可缩放的自定义代码*
 
 假设你要构建一个云应用程序，它可以支持大量并发用户，无需太多管理，且从不出故障。例如，您可能是一家较成熟的软件供应商，您决定通过在云中构建您应用程序之一的某个版本来包含“软件即服务”(SaaS)。或者，您可能是一家初创公司，您创建了一个预计会快速普及的使用者应用程序。如果在 Azure 上构建，应使用哪个执行模型？
 
@@ -142,7 +150,9 @@ Azure SQL 数据库以前称为 SQL Azure，它提供关系数据库管理系统
 
 
 ### Blob
-![Azure 存储 Blob](./media/fundamentals-introduction-to-azure/StorageBlobsIntroNew.png) *图：Azure Blob 提供非结构化的二进制数据。*
+![Azure 存储 Blob](./media/fundamentals-introduction-to-azure/StorageBlobsIntroNew.png)
+
+*图：Azure Blob 提供非结构化的二进制数据。*
 
 Azure Blob（同样，“Blob 存储”和“存储 Blob”都是指同一种功能）设计用于存储非结构化二进制数据。像表一样，Blob 也提供廉价的存储，单个 Blob 最大可以为 1TB。Azure 应用程序还可以使用 Azure 驱动器，使得 Blob 可以为 Azure 实例中装入的 Windows 文件系统提供持久存储。该应用程序看到的是普通 Windows 文件，但内容其实存储在 Blob 中。
 
@@ -154,7 +164,9 @@ Blob 存储可用于许多其他的 Azure 功能（包括虚拟机），因此�
 
 
 ### 文件服务
-![Azure 文件服务](./media/fundamentals-introduction-to-azure/FileServiceIntroNew.png) *图：Azure 文件服务为云中运行的应用程序提供 SMB \\\server\\share 路径。*
+![Azure 文件服务](./media/fundamentals-introduction-to-azure/FileServiceIntroNew.png)
+
+*图：Azure 文件服务为云中运行的应用程序提供 SMB \\\server\\share 路径。*
 
 进行本地部署时，通常会允许通过服务器消息块 (SMB) 协议使用 \\\Server\\share 格式来访问大量的文件存储。Azure 现在提供的一种服务允许你在云中使用该协议。在 Azure 中运行的应用程序可以使用它通过熟悉的文件系统 API（例如 ReadFile 和 WriteFile）在 VM 之间共享文件。此外，还可以通过 REST 界面同时访问这些文件，该界面允许你在也设置了虚拟网络的情况下，从本地访问共享。Azure 文件基于 Blob 服务，因此会继承 Azure 存储空间中内置的可用性、持续性、可伸缩性和地域冗余。
 
@@ -381,7 +393,9 @@ Azure 备份可以将运行 Windows Server 的本地服务器中的数据备份�
 通过服务总线通信的应用程序可能是在某个其他云平台上运行的 Azure 应用程序或软件。但是，也可以是在云外部运行的应用程序。例如，假设有家航空公司在其自己的数据中心内的计算机上实现预订服务。该航空公司需要向一些客户端公开这些服务，包括机场自助售票值机亭、预订代理终端机甚至客户手机。它可以使用服务总线来完成此工作，在各种应用程序之间创建松散耦合的交互。
 
 #### 服务总线主题和订阅
-![Azure 服务总线主题](./media/fundamentals-introduction-to-azure/ServiceBusTopicsSubsIntroNew.png) *图：服务总线主题允许多个应用程序发布消息，而其他订阅了消息的应用程序则可接收符合特定条件的消息。*
+![Azure 服务总线主题](./media/fundamentals-introduction-to-azure/ServiceBusTopicsSubsIntroNew.png)
+
+*图：服务总线主题允许多个应用程序发布消息，而其他订阅了消息的应用程序则可接收符合特定条件的消息。*
 
 服务总线提供了名为“主题和订阅”的发布和订阅机制。使用发布和订阅机制，应用程序可以将消息发送给主题，而其他应用程序可以创建对此主题的订阅。这允许在一组应用程序间进行一对多通信，让多个收件人阅读同一消息。
 
@@ -395,7 +409,9 @@ Azure 为不需要一直运行的服务提供协助。
 
 ### 计划程序
 
-![Azure 计划程序](./media/fundamentals-introduction-to-azure/SchedulerIntroNew.png) *图：Azure 计划程序提供的方法可用于计划特定时间作业的特定时长。*
+![Azure 计划程序](./media/fundamentals-introduction-to-azure/SchedulerIntroNew.png)
+
+*图：Azure 计划程序提供的方法可用于计划特定时间作业的特定时长。*
 
 有时候，应用程序只需在特定时间运行。在 Azure 上，你可以为此类应用程序节省资金，不必让应用程序全天候运行来等待要处理的数据。Azure 计划程序允许您根据时间间隔或日历来计划应用程序的运行时间。它很可靠，即使网络、计算机和数据中心出现故障，也可以验证某个进程是否在运行。你使用计划程序 REST API 来管理这些操作。
 
@@ -421,7 +437,9 @@ Azure 为不需要一直运行的服务提供协助。
 
 ### Azure 缓存
 
-![Azure 缓存](./media/fundamentals-introduction-to-azure/AzureCacheIntroNew.png) **图：Azure 应用程序可以在内存中缓存数据，甚至可以将其散布在多个辅助角色中**
+![Azure 缓存](./media/fundamentals-introduction-to-azure/AzureCacheIntroNew.png)
+
+*图：Azure 应用程序可以在内存中缓存数据，甚至可以将其散布在多个辅助角色中*
 
 访问存储在任何 Azure 数据管理服务（SQL 数据库、表或 Blob）中的数据的速度相当快。而访问存储在内存中的数据的速度更快。因此，保留频繁访问的数据的内存中副本可以提高应用程序的性能。可以使用 Azure 内存中 Caching 来做到这一点。
 
@@ -436,7 +454,9 @@ Azure 有很多随着时间的推移而变化的缓存技术。按照引入顺�
 例如，一个多次读取产品目录的应用程序可能从使用这种缓存中受益，因为它可以更快地获得其所需的数据。该技术还支持锁定，因此可用于读/写以及只读数据。只需改变一下配置，ASP.NET 应用程序就可以使用该服务存储会话数据。
 
 ### 内容传送网络
-![Azure CDN](./media/fundamentals-introduction-to-azure/CDNIntroNew.png) **图：可以在世界各地的站点上缓存 Blob 的副本。**
+![Azure CDN](./media/fundamentals-introduction-to-azure/CDNIntroNew.png) 
+
+*图：可以在世界各地的站点上缓存 Blob 的副本。*
 
 假设你需要存储将由世界各地用户访问的 Blob 数据。例如，该数据或许是最新世界杯比赛的一个视频、驱动程序更新或受欢迎的电子书。在多个 Azure 数据中心存储数据的副本虽然有用，但如果用户太多，或许会供不应求。为获得更好的性能，可以使用 Azure CDN。
 
@@ -451,7 +471,9 @@ CDN 在全球拥有数十个网站，每个网站都可以存储 Azure Blob 的�
 ## 大数据和大计算
 
 ### HDInsight (Hadoop)
-![HDInsight](./media/fundamentals-introduction-to-azure/HDInsightIntroNew.png) **图：HDInsight 帮助完成庞大数据的大容量处理**
+![HDInsight](./media/fundamentals-introduction-to-azure/HDInsightIntroNew.png) 
+
+*图：HDInsight 帮助完成庞大数据的大容量处理*
 
 多年以来，大部分数据分析都是针对使用关系 DBMS 建立的数据仓库中存储的关系数据进行的。这种业务分析仍然很重要，会在将来持续很长一段时间。但如果您要分析的数据大到该关系数据库没办法处理， 同时假设该数据不是关系型的，该怎么办？ 例如，数据中心的服务器日志、传感器的历史事件数据等。在这种情况下，您遇到了所谓的大数据问题。你需要另一种方法。
 
@@ -464,7 +486,9 @@ HDinsight 还支持 Hadoop 生态系统的其他组件，包括 Hive 和 Pig。M
 
 ## 媒体
 
-![Azure 媒体服务](./media/fundamentals-introduction-to-azure/MediaServicesIntroNew.png) **图：媒体服务是向全球客户端提供视频和其他媒体的应用程序的平台。**
+![Azure 媒体服务](./media/fundamentals-introduction-to-azure/MediaServicesIntroNew.png)
+
+*图：媒体服务是向全球客户端提供视频和其他媒体的应用程序的平台。*
 
 视频构成当今 Internet 流量的一大部分，并且该比例以后将更大。然而，在 Web 上提供视频并不简单。有许多可变因素，例如编码算法和用户屏幕的显示分辨率。视频需求往往还会突然爆发，例如在星期六晚上的高峰期，许多人都决定在这个时候观看在线影片。
 
