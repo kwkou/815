@@ -1,5 +1,5 @@
 ﻿<properties 
-	pageTitle="如何通过 Python 使用服务总线主题 | Azure" 
+	pageTitle="如何通过 Python 使用服务总线主题 | Microsoft Azure" 
 	description="了解如何使用 Python 中的 Azure 服务总线主题和订阅" 
 	services="service-bus" 
 	documentationCenter="python" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="10/08/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="01/26/2016" 
+	wacn.date="03/17/2016"/>
 
 # 如何使用服务总线主题和订阅
 

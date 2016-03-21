@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用中继消息传送的服务总线 REST 教程 | Azure"
+   pageTitle="使用中继消息传送的服务总线 REST 教程 | Microsoft Azure"
    description="生成一个简单的服务总线中继主机应用程序来公开基于 REST 的接口。"
    services="service-bus"
    documentationCenter="na"
@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="10/14/2015"
-   wacn.date="01/14/2016" />
+   wacn.date="03/17/2016" />
 
 # 服务总线 REST 教程
 
@@ -23,7 +23,7 @@
 
 ### 创建服务命名空间并获取 SAS 密钥
 
-1. 若要在 [Azure 经典门户][] 中创建服务命名空间，请遵循[如何：创建或修改服务总线服务命名空间中的步骤](https://msdn.microsoft.com/zh-cn/library/hh690931.aspx)。
+1. 若要创建服务命名空间，请访问 [Azure 经典门户][]。单击左侧的“服务总线”，然后单击“创建”。为你的命名空间键入一个名称，然后单击复选标记。
 
 2. 在门户的主窗口中，单击在上一步中创建的服务命名空间的名称。
 
@@ -565,7 +565,7 @@ namespace Microsoft.ServiceBus.Samples
 
 生成解决方案之后，请执行以下代码来运行应用程序：
 
-1. 从命令提示符运行服务 (ImageListener\bin\Debug\ImageListener.exe)。
+1. 从命令提示符运行服务 (ImageListener\\bin\\Debug\\ImageListener.exe)。
 
 2. 将命令提示符中的地址复制并粘贴到浏览器中以查看图像。
 

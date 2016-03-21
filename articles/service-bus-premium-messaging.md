@@ -1,5 +1,5 @@
 <properties
-	pageTitle="服务总线高级和标准消息传送定价层概述 | Azure"
+	pageTitle="服务总线高级和标准消息传送定价层概述 | Microsoft Azure"
 	description="服务总线高级和标准消息传送"
 	services="service-bus"
 	documentationCenter=".net"
@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="10/15/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="03/17/2016"/>
 
 # 服务总线高级和标准消息传送层 
 

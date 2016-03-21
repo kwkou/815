@@ -1,5 +1,5 @@
 <properties
-	pageTitle="服务总线消息传送概述 | Azure"
+	pageTitle="服务总线消息传送概述 | Microsoft Azure"
 	description="服务总线消息传送：在云中灵活传送数据"
 	services="service-bus"
 	documentationCenter=".net"
@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="12/09/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="03/17/2016"/>
 
 
 # 服务总线消息传送：在云中灵活传送数据

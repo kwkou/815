@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 Node.js 使用服务总线队列 | Azure" 
+	pageTitle="如何通过 Node.js 使用服务总线队列 | Microsoft Azure" 
 	description="了解如何在来自 Node.js 应用程序的 Azure 中使用服务总线队列。" 
 	services="service-bus" 
 	documentationCenter="nodejs" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="10/06/2015" 
-	wacn.date="01/21/2016"/>
+	ms.date="01/26/2016" 
+	wacn.date="03/17/2016"/>
 
 # 如何使用 Service Bus 队列
 
@@ -22,7 +22,7 @@
 
 ## 创建 Node.js 应用程序
 
-创建一个空的 Node.js 应用程序。有关如何创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure Web 应用][]或 [Node.js 云服务][]（使用 Windows PowerShell）。
+创建一个空的 Node.js 应用程序。有关如何创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站][]或 [Node.js 云服务][]（使用 Windows PowerShell）。
 
 ## 配置应用程序以使用 Service Bus
 
@@ -31,7 +31,7 @@
 
 ### 使用 Node 包管理器 (NPM) 可获取该程序包
 
-1.  使用 **Windows PowerShell for Node.js** 命令窗口导航到你在其中创建了示例应用程序的 **c:\node\sbqueues\WebRole1** 文件夹。
+1. 使用 **Windows PowerShell for Node.js** 命令窗口导航到你在其中创建了示例应用程序的 **c:\\node\\sbqueues\\WebRole1** 文件夹。
 
 2.  在命令窗口中键入 **npm install azure**，这应该产生类似如下的输出：
 
@@ -49,7 +49,7 @@
 		└── request@2.21.0 (json-stringify-safe@4.0.0, forever-agent@0.5.0, aws-sign@0.3.0, tunnel-agent@0.3.0, oauth-sign@0.3.0, qs@0.6.5, cookie-jar@0.3.0, node-uuid@1.4.0, http-signature@0.9.11, form-data@0.0.8, hawk@0.13.1)
 	```
 
-3.  可以手动运行 **ls** 命令来验证是否创建了 **node_modules** 文件夹。在该文件夹中，找到 **azure** 包，其中包含访问服务总线队列所需的库。
+3. 可以手动运行 **ls** 命令来验证是否创建了 **node\_modules** 文件夹。在该文件夹中，找到 **azure** 包，其中包含访问服务总线队列所需的库。
 
 ### 导入模块
 
@@ -59,13 +59,13 @@
 var azure = require('azure');
 ```
 
-### 设置 Azure Service Bus 连接
+### 设置 Azure 服务总线连接
 
 Azure 模块将读取环境变量 AZURE_SERVICEBUS_NAMESPACE 和 AZURE_SERVICEBUS_ACCESS_KEY 以获取连接到服务总线所需的信息。如果未设置这些环境变量，则在调用 **createServiceBusService** 时必须指定帐户信息。
 
 有关在 Azure 云服务的配置文件中设置环境变量的示例，请参阅[使用存储构建 Node.js 云服务][]。
 
-有关在 [Azure 经典门户][]中为 Azure Web 应用设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用程序][]。
+有关在 [Azure 经典门户][]中为 Azure 网站设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用程序][]。
 
 ## 创建队列
 
@@ -193,7 +193,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   
   [Node.js 云服务]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app
   [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
-  [创建 Node.js 应用程序并将其部署到 Azure Web 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+  [创建 Node.js 应用程序并将其部署到 Azure 网站]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
   [使用存储构建 Node.js 云服务]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
   [使用存储构建 Node.js Web 应用程序]: /documentation/articles/storage-nodejs-how-to-use-table-storage
   [Azure 队列和服务总线队列]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas
