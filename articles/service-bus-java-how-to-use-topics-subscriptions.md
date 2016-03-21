@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 Java 使用服务总线主题 | Azure"
+	pageTitle="如何通过 Java 使用服务总线主题 | Microsoft Azure"
 	description="了解如何在 Azure 中使用 Service Bus 主题和订阅。代码示例是针对 Java 应用程序编写的。"
 	services="service-bus"
 	documentationCenter="java"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="10/07/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="01/26/2016"
+	wacn.date="03/17/2016"/>
 
 
 # 如何使用服务总线主题和订阅
@@ -23,7 +23,7 @@
 
 ## 配置应用程序以使用 Service Bus
 
-在生成本示例之前，请确保已安装 [Azure SDK for Java][]。如果使用了 Eclipse，则可以安装包含 Azure SDK for Java 的 [Azure Toolkit for Eclipse][]。然后，你可以将 **Azure Libraries for Java** 添加到你的项目：
+在生成本示例之前，请确保已安装 [Azure SDK for Java][]。如果使用了 Eclipse，则可以安装包含 Azure SDK for Java 的 [Azure Toolkit for Eclipse][]。然后，你可以将 **Microsoft Azure Libraries for Java** 添加到你的项目：
 
 ![](./media/service-bus-java-how-to-use-topics-subscriptions/eclipselibs.png)
 

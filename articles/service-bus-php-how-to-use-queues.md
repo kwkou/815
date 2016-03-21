@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 PHP 使用服务总线队列 | Azure" 
+	pageTitle="如何通过 PHP 使用服务总线队列 | Microsoft Azure" 
 	description="了解如何在 Azure 中使用 Service Bus 队列。采用 PHP 编写的代码示例。" 
 	services="service-bus" 
 	documentationCenter="php" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="10/14/2015" 
-	wacn.date="01/21/2016"/>
+	ms.date="01/26/2016" 
+	wacn.date="03/17/2016"/>
 
 # 如何使用 Service Bus 队列
 
@@ -26,7 +26,7 @@
 
 > [AZURE.NOTE]你的 PHP 安装还必须已安装并启用 [OpenSSL 扩展](http://php.net/openssl)。
 
-在本指南中，你将使用服务功能，这些功能可在 PHP 应用程序中本地调用，或通过在 Azure 的 Web 角色、辅助角色或 Web 应用中运行的代码调用。
+在本指南中，你将使用服务功能，这些功能可在 PHP 应用程序中本地调用，或通过在 Azure 的 Web 角色、辅助角色或网站中运行的代码调用。
 
 ## 获取 Azure 客户端库
 
@@ -34,7 +34,7 @@
 
 ## 配置应用程序以使用 Service Bus
 
-若要使用 Azure 服务总线队列 API，请执行以下操作：
+若要使用服务总线队列 API，请执行以下操作：
 
 1. 使用 [require_once][require_once] 语句引用 autoloader 文件。
 2. 引用可使用的所有类。
@@ -48,13 +48,13 @@
 
 在以下示例中，`require_once` 语句将始终显示，但只会引用执行该示例所需的类。
 
-## 设置 Azure 服务总线连接
+## 设置服务总线连接
 
 若要实例化服务总线客户端，必须先设置采用以下格式的有效连接字符串：
 
 	Endpoint=[yourEndpoint];SharedSecretIssuer=[Default Issuer];SharedSecretValue=[Default Key]
 
-其中，“终结点”的格式通常为 `https://[yourNamespace].servicebus.chinacloudapi.cn`。
+其中，**Endpoint** 的格式通常为 `https://[yourNamespace].servicebus.chinacloudapi.cn`。
 
 若要创建任何 Azure 服务客户端，必须使用 **ServicesBuilder** 类。你可以：
 
@@ -76,7 +76,7 @@
 
 ## 如何：创建队列
 
-你可以通过 **ServiceBusRestProxy** 类执行服务总线队列的管理操作。**ServiceBusRestProxy** 对象是通过 **ServicesBuilder::createServiceBusService** 工厂方法与一个适当的连接字符串（该字符串封装了令牌权限以进行管理）构造的。
+可通过 **ServiceBusRestProxy** 类对服务总线队列执行管理操作。**ServiceBusRestProxy** 对象是通过 **ServicesBuilder::createServiceBusService** 工厂方法与一个适当的连接字符串（该字符串封装了令牌权限以进行管理）构造的。
 
 下面的示例演示了如何实例化 **ServiceBusRestProxy** 并调用 **servicebusrestproxy->createqueue** 以创建 `MySBNamespace` 服务命名空间中名为 `myqueue` 的队列：
 
@@ -192,7 +192,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 还存在与队列中已锁定消息关联的超时，并且如果应用程序无法在锁定超时到期之前处理消息（例如，如果应用程序崩溃），服务总线将自动解锁该消息并使它可再次被接收。
 
-如果在处理消息之后，发出 **deleteMessage** 请求之前应用程序发生崩溃，该消息将在应用程序重新启动时重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案不允许重复处理，则建议向应用程序添加其他逻辑来处理重复消息传送。通常可使用消息的 **getMessageId** 方法实现此操作，这在多个传送尝试中保持不变。
+如果在处理消息之后但在发出 **deleteMessage** 请求之前应用程序发生崩溃，该消息将在应用程序重新启动时重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案不允许重复处理，则建议向应用程序添加其他逻辑来处理重复消息传送。通常可使用消息的 **getMessageId** 方法实现此操作，这在多个传送尝试中保持不变。
 
 ## 后续步骤
 

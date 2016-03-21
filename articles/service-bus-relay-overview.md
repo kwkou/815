@@ -1,5 +1,5 @@
 <properties
-	pageTitle="服务总线中继消息传送概述 | Azure"
+	pageTitle="服务总线中继消息传送概述 | Microsoft Azure"
 	description="服务总线中继的概述。"
 	services="service-bus"
 	documentationCenter=".net"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="10/07/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="01/26/2016"
+	wacn.date="03/17/2016"/>
 
 
 # 服务总线中继消息传送
@@ -27,7 +27,7 @@
 
 ## 后续步骤
 
-有关服务总线中继的更多详细信息，请参阅以下主题。
+有关服务总线中继的深入详细信息，请参阅以下主题。
 
 - [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 

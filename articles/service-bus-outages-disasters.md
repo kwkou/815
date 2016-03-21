@@ -1,15 +1,15 @@
 <properties 
-   pageTitle="使服务总线应用程序免受服务总线中断和灾难影响 | Azure"
+   pageTitle="使服务总线应用程序免受服务总线中断和灾难影响 | Microsoft Azure"
    description="介绍可用于保护应用程序免受潜在服务总线中断影响的技术。"
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
-   editor="tysonn" />
+   editor="tysonn" /> 
 <tags 
    ms.service="service-bus"
-   ms.date="09/18/2015"
-   wacn.date="02/26/2016" />
+   ms.date="01/26/2016"
+   wacn.date="03/17/2016" />
 
 # 使应用程序免受服务总线中断和灾难影响的最佳实践
 
@@ -33,7 +33,7 @@
 
 ## 保护队列和主题免受消息存储空间故障的影响
 
-将未分区的队列或主题分配到一个消息存储空间。如果此消息存储空间不可用，则针对该队列或主题的所有操作将都失败。另一方面，分区的队列包括多个片段。每个片段存储在不同的消息存储空间中。当向分区的队列或主题发送消息时，服务总线会将该消息分配到其中一个片段。如果相应的消息存储空间不可用，则服务总线会将消息写入另一片段（如有可能）。有关分区的实体的详细信息，请参阅[消息传送实体分区][]。
+将未分区的队列或主题分配到一个消息存储空间。如果此消息存储空间不可用，则针对该队列或主题的所有操作将都失败。另一方面，分区的队列包括多个片段。每个片段存储在不同的消息存储空间中。当向分区的队列或主题发送消息时，服务总线会将该消息分配到其中一个片段。如果相应的消息存储空间不可用，则服务总线会将消息写入另一片段（如有可能）。有关分区实体的详细信息，请参阅[分区消息实体][]。
 
 ## 针对数据中心中断或灾难进行保护
 
@@ -95,14 +95,14 @@
 - [Azure 业务连续性技术指南][]
 
   [服务总线身份验证]: /documentation/articles/service-bus-authentication-and-authorization
-  [消息传送实体分区]: /documentation/articles/service-bus-partitioning
-  [异步消息传送模式和高可用性]: https://msdn.microsoft.com/zh-cn/library/azure/dn292562.aspx
+  [分区消息实体]: /documentation/articles/service-bus-partitioning
+  [异步消息传送模式和高可用性]: /documentation/articles/service-bus-async-messaging
   [使用服务总线中继消息进行异地复制]: http://code.msdn.microsoft.com/Geo-replication-with-16dbfecd
   [BrokeredMessage.MessageId]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx
   [BrokeredMessage.Label]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx
   [使用服务总线中转消息进行异地复制]: http://code.msdn.microsoft.com/Geo-replication-with-f5688664
   [持久消息发送方]: http://code.msdn.microsoft.com/Service-Bus-Durable-Sender-0763230d
-  [Azure SQL 数据库业务连续性]: https://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx
+  [Azure SQL 数据库业务连续性]: /documentation/articles//sql-database-business-continuity
   [Azure 业务连续性技术指南]: https://msdn.microsoft.com/zh-cn/library/azure/hh873027.aspx
 
 <!---HONumber=74-->

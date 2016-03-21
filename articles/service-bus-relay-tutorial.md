@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线中继消息传送教程 | Azure"
+   pageTitle="服务总线中继消息传送教程 | Microsoft Azure"
    description="使用服务总线中继消息传送继构建服务总线客户端应用程序。"
    services="service-bus"
    documentationCenter="na"
@@ -8,18 +8,18 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-   ms.date="09/11/2015"
-   wacn.date="01/14/2016" />
+   ms.date="01/26/2016"
+   wacn.date="03/17/2016" />
 
 # 服务总线中继消息传送教程
 
-本教程介绍了如何使用服务总线“中继”功能，构建简单的服务总线客户端应用程序和服务。有关介绍如何构建使用服务总线“中转”或异步消息传送功能的应用程序的相应教程，请参阅[服务总线中转消息传送 .NET 教程。](https://msdn.microsoft.com/zh-cn/library/hh367512.aspx)有关使用服务总线[中转消息传送](/documentation/articles/service-bus-messaging-overview/#Brokered-messaging)的类似教程，请参阅[ 服务总线中转消息传送 .NET 教程](https://msdn.microsoft.com/zh-cn/library/hh367512.aspx)。
+本教程介绍了如何使用服务总线“中继”功能，构建简单的服务总线客户端应用程序和服务。有关使用服务总线[中转消息传送](/documentation/articles/service-bus-messaging-overview#Brokered-messaging)的相应教程，请参阅[服务总线中转消息传送 .NET 教程](/documentation/articles/service-bus-brokered-tutorial-dotnet)。
 
 通过此教程，你可以了解创建服务总线客户端和服务应用程序所需的步骤。正如其 WCF 对应项，服务是公开一个或多个终结点的构造，其中每个终结点都公开一个或多个服务操作。服务的终结点用于指定可在其中找到服务的地址、包含客户端必须与服务进行通信的信息的绑定，以及定义服务向其客户端提供的功能的协定。WCF 和服务总线服务之间的主要区别在于：终结点在云中公开，而不是在本地计算机中公开。
 
-完成本教程中的一系列主题后，你将具有一项正在运行的服务和可以调用服务操作的客户端。第一个主题描述了如何设置帐户。接下来的步骤描述了如何定义使用协定的服务、如何实现服务，以及如何使用代码配置该服务。这些主题还描述了如何托管和运行该服务。创建的服务是自托管的，并且客户端和服务在同一台计算机上运行。你可以通过使用代码或配置文件配置服务。有关详细信息，请参阅[配置 WCF 服务以向服务总线注册](https://msdn.microsoft.com/zh-cn/library/ee173579.aspx)以及[为服务总线构建服务](https://msdn.microsoft.com/zh-cn/library/ee173564.aspx)。
+完成本教程中的一系列主题后，你将具有一项正在运行的服务和可以调用服务操作的客户端。第一个主题描述了如何设置帐户。接下来的步骤描述了如何定义使用协定的服务、如何实现服务，以及如何使用代码配置该服务。这些主题还描述了如何托管和运行该服务。创建的服务是自托管的，并且客户端和服务在同一台计算机上运行。你可以通过使用代码或配置文件配置服务。
 
-最后三个步骤介绍如何创建客户端应用程序、如何配置客户端应用程序，以及如何创建和使用可以访问主机功能的客户端。有关详细信息，请参阅[构建服务总线客户端应用程序](https://msdn.microsoft.com/zh-cn/library/ee173543.aspx)和[发现和公开服务总线服务](https://msdn.microsoft.com/zh-cn/library/dd582704.aspx)。
+最后三个步骤介绍如何创建客户端应用程序、如何配置客户端应用程序，以及如何创建和使用可以访问主机功能的客户端。
 
 本部分中的所有主题均假定使用 Visual Studio 作为开发环境。
 
@@ -27,19 +27,19 @@
 
 第一步是创建服务总线服务命名空间并获取共享访问签名 (SAS) 密钥。服务命名空间为每个通过服务总线公开的应用程序提供应用程序边界。服务命名空间与 SAS 密钥的组合为服务总线提供了一个用于验证应用程序访问权限的凭据。
 
-若要创建命名空间，请遵循[如何：创建或修改服务总线服务命名空间](https://msdn.microsoft.com/zh-cn/library/hh690931.aspx)中概述的步骤。
+1. 若要创建服务命名空间，请访问 [Azure 经典门户][]。单击左侧的“服务总线”，然后单击“创建”。为你的命名空间键入一个名称，然后单击复选标记。
 
->[AZURE.NOTE]无需针对客户端和服务应用程序使用相同的命名空间。
+	>[AZURE.NOTE] 无需针对客户端和服务应用程序使用相同的命名空间。
 
-1. 在 [Azure 经典门户][] 的主窗口中，单击在上一步中创建的服务命名空间的名称。
+1. 在门户的主窗口中，单击在上一步中创建的命名空间的名称。
 
-2. 单击“配置”以查看服务命名空间的默认共享访问策略。
+2. 单击“配置”以查看命名空间的默认共享访问策略。
 
 3. 记下 **RootManageSharedAccessKey** 策略的主键，或将其复制到剪贴板上。你将在本教程的后面部分使用此值。
 
 ## 定义 WCF 服务协定以用于服务总线
 
-服务协定用于指定服务支持的操作类型（方法或函数的 Web 服务术语）。约定通过定义 C++、C# 或 Visual Basic 接口来创建。接口中的每个方法都对应一个特定的服务操作。必须将 [ServiceContractAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.servicecontractattribute.aspx) 属性应用于每个接口，并且必须将 [OperationContractAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.operationcontractattribute.aspx) 属性应用于每个操作。如果具有 [ServiceContractAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.servicecontractattribute.aspx) 属性的接口中的方法没有 [OperationContractAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.operationcontractattribute.aspx) 属性，则该方法是不公开的。该过程后面的示例中提供了这些任务的代码。有关如何定义协定的详细信息，请参阅 [为服务总线设计 WCF 协定](https://msdn.microsoft.com/zh-cn/library/ee173585.aspx)。有关协定和服务的更多讨论，请参阅 WCF 文档中的[设计和实现服务](https://msdn.microsoft.com/zh-cn/library/ms729746.aspx)。
+服务协定用于指定服务支持的操作类型（方法或函数的 Web 服务术语）。约定通过定义 C++、C# 或 Visual Basic 接口来创建。接口中的每个方法都对应一个特定的服务操作。必须将 [ServiceContractAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.servicecontractattribute.aspx) 属性应用于每个接口，并且必须将 [OperationContractAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.operationcontractattribute.aspx) 属性应用于每个操作。如果具有 [ServiceContractAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.servicecontractattribute.aspx) 属性的接口中的方法没有 [OperationContractAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.operationcontractattribute.aspx) 属性，则该方法是不公开的。该过程后面的示例中提供了这些任务的代码。有关协定和服务的更多讨论，请参阅 WCF 文档中的[设计和实现服务](https://msdn.microsoft.com/zh-cn/library/ms729746.aspx)。
 
 ### 使用接口创建服务总线约定
 
@@ -61,7 +61,7 @@
 
 6. 将命名空间的默认名称 **EchoService** 更改为 **Microsoft.ServiceBus.Samples**。
 
-	>[AZURE.IMPORTANT]本教程使用 C# 命名空间 Micr**osoft.ServiceBus.Samples**，它是协定管理类型的命名空间，此类型用于“步骤 6：配置 WCF 客户端中”中的配置文件。在构建此示例时，你可以指定任何想要的命名空间，当你在配置文件中修改了协定以及相应服务的命名空间后，本教程才会生效。在 App.config 文件中指定的命名空间必须与在 C# 文件中指定的命名空间相同。
+	>[AZURE.IMPORTANT] 本教程使用 C# 命名空间 **Microsoft.ServiceBus.Samples**，它是协定管理类型的命名空间，此类型用于[配置 WCF 客户端中](#configure-the-wcf-client)步骤中的配置文件。在构建此示例时，你可以指定任何想要的命名空间，当你在配置文件中修改了协定以及相应服务的命名空间后，本教程才会生效。在 App.config 文件中指定的命名空间必须与在 C# 文件中指定的命名空间相同。
 
 7. 直接在完成 `Microsoft.ServiceBus.Samples` 命名空间声明后，在命名空间内定义一个名为 `IEchoContract` 的新接口，然后将 `ServiceContractAttribute` 属性应用于该接口，其值为 **http://samples.microsoft.com/ServiceModel/Relay/**。该命名空间值不同于你在整个代码范围内使用的命名空间。相反，该命名空间值将用作此协定的唯一标识符。显式指定命名空间可防止将默认的命名空间值添加到约定名称中。
 
@@ -74,7 +74,7 @@
 
 	>[AZURE.NOTE]通常情况下，服务协定命名空间包含一个包括版本信息的命名方案。服务协定命名空间中包括的版本信息可以使服务通过将新服务协定定义为新命名空间并将其公开到新的终结点上，来隔离重大更改。以这种方式，客户端可以继续使用旧的服务协定，而无需进行更新。版本信息可能包含日期或内部版本号。有关详细信息，请参阅[服务版本控制](http://go.microsoft.com/fwlink/?LinkID=180498)。鉴于此教程的目的，服务协定命名空间的命名方案不包含版本信息。
 
-8. 在 IEchoContract 接口中，为 `IEchoContract` 协定在接口中公开的单个操作声明一个方法，然后将 `OperationContractAttribute` 属性应用到你希望将其作为公共服务总线协定的一部分进行公开的方法中。
+1. 在 `IEchoContract` 接口中，为 `IEchoContract` 约定在接口中公开的单个操作声明一个方法，然后将 `OperationContractAttribute` 属性应用到你希望将其作为公共服务总线约定的一部分进行公开的方法中。
 
 	```
 	[OperationContract]
@@ -96,7 +96,7 @@
 
 	通道是主机和客户端用来互相传递信息的 WCF 对象。随后，你将针对通道编写代码，以在两个应用程序之间回显信息。
 
-10. 在“生成”菜单中，单击“生成解决方案”或按“F6”以确认工作的准确性。
+1. 在“生成”菜单中，单击“生成解决方案”或按 F6 以确认到目前为止操作的准确性。
 
 ### 示例
 
@@ -269,17 +269,9 @@ namespace Microsoft.ServiceBus.Samples
 
 ### 创建服务总线凭据
 
-1. 向项目添加对 Microsoft.ServiceBus.dll 的引用：请参阅 [使用 NuGet 服务总线包](https://msdn.microsoft.com/zh-cn/library/dn741354.aspx)。
+1. 安装[服务总线 NuGet 包](https://www.nuget.org/packages/WindowsAzure.ServiceBus)
 
-	>[AZURE.NOTE]使用命令行编译器时，你还必须为程序集提供路径。
-
-2. 在 Program.cs 中，为 Microsoft.ServiceBus 命名空间添加 `using` 语句。
-
-	```
-	using Microsoft.ServiceBus;
-	```
-
-3. 在 `Main()` 中，创建两个变量，将命名空间和从控制台窗口中读取的 SAS 密钥存储在其中。
+1. 在 `Main()` 中，创建两个变量，将命名空间和从控制台窗口中读取的 SAS 密钥存储在其中。
 
 	```
 	Console.Write("Your Service Namespace: ");
@@ -288,7 +280,7 @@ namespace Microsoft.ServiceBus.Samples
 	string sasKey = Console.ReadLine();
 	```
 
-	随后将使用 SAS 密钥来访问你的服务总线项目。服务命名空间作为参数传递给 `CreateServiceUri`以创建服务 URI。
+	随后将使用 SAS 密钥来访问你的服务总线项目。命名空间作为参数传递给 `CreateServiceUri` 以创建服务 URI。
 
 4. 使用 [TransportClientEndpointBehavior](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.transportclientendpointbehavior.aspx) 对象声明你将使用 SAS 密钥作为凭据类型。在最后一步中添加的代码后直接添加以下代码。
 
@@ -829,7 +821,7 @@ namespace Microsoft.ServiceBus.Samples
 
 ## 后续步骤
 
-本教程介绍了如何使用服务总线“中继”功能，构建服务总线客户端应用程序和服务。有关使用服务总线[中转消息传送](/documentation/articles/service-bus-messaging-overview/#Brokered-messaging)的类似教程，请参阅[服务总线中转消息传送 .NET 教程](https://msdn.microsoft.com/zh-cn/library/hh367512.aspx)。
+本教程介绍了如何使用服务总线“中继”功能，构建服务总线客户端应用程序和服务。有关使用服务总线[中转消息传送](/documentation/articles/service-bus-messaging-overview/#Brokered-messaging)的类似教程，请参阅[服务总线中转消息传送 .NET 教程](/documentation/articles/service-bus-brokered-tutorial-dotnet)。
 
 若要了解有关服务总线的详细信息，请参阅以下主题。
 

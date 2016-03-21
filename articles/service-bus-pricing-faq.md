@@ -1,22 +1,21 @@
 <properties 
-   pageTitle="服务总线定价常见问题 | Azure"
+   pageTitle="服务总线定价常见问题 | Microsoft Azure"
    description="回答了一些关于服务总线定价结构的常见问题。"
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" />
-
 <tags 
    ms.service="service-bus"
    ms.date="12/28/2015"
-   wacn.date="02/26/2016" />
+   wacn.date="03/17/2016" />
 
 # 服务总线定价常见问题
 
-本部分回答了一些关于服务总线定价结构的常见问题。你还可以访问 [Azure 支持常见问题](http://go.microsoft.com/fwlink/?LinkID=185083)了解一般的 Azure 定价信息。有关服务总线定价的完整信息，请参阅[服务总线定价](/pricing/details/service-bus/)。
+本部分回答了一些关于服务总线定价结构的常见问题。你还可以访问 [Azure 支持常见问题](http://go.microsoft.com/fwlink/?LinkID=185083)了解一般的 Microsoft Azure 定价信息。有关服务总线定价的完整信息，请参阅[服务总线定价](/pricing/details/service-bus/)。
 
->[AZURE.NOTE] 有关事件中心的定价结构，请参阅[事件中心的可用性和支持常见问题](/pricing/details/service-bus/event-hubs-availability-and-support-faq)主题，有关其详细信息，请参阅[事件中心定价](/pricing/details/event-hubs/)主题。
+>[AZURE.NOTE] 有关事件中心的定价结构，请参阅[事件中心的可用性和支持常见问题](/documentation/articles/event-hubs-availability-and-support-faq)主题，有关其详细信息，请参阅[事件中心定价](/pricing/details/event-hubs/)主题。
 
 - [服务总线如何收取费用？](#how-do-you-charge-for-service-bus)
 - [服务总线的哪些使用情况受数据传输限制？ 哪些不受其限制？](#what-usage-of-service-bus-is-subject-to-data-transfer-what-is-not)
