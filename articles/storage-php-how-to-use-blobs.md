@@ -281,7 +281,7 @@
 		echo $code.": ".$error_message."<br />";
 	}
 
-<h2><a id="NextSteps"></a>后续步骤</h2>
+<h2><a id="next-steps"></a>后续步骤</h2>
 
 现在，您已了解了 Azure Blob 服务的基础知识，单击下面的链接可了解有关更复杂的存储任务的详细信息。
 
