@@ -1,6 +1,6 @@
 <properties writer="kathydav" editor="tysonn" manager="timlt" />
 
-1. 登录到 [Azure 门户](http://manage.windowsazure.cn)。如果你尚未获取订阅，请查看[免费试用](/pricing/1rmb-trial/)优惠产品。
+1. 登录到 [Azure 管理门户](http://manage.windowsazure.cn)。如果你尚未获取订阅，请查看[试用](/pricing/1rmb-trial/)优惠产品。
 
 2. 在窗口底部的命令栏上，单击“新建”。
 
@@ -12,19 +12,20 @@
 
 5. 在第一个“虚拟机配置”页上：
 
-	- 键入“虚拟机名称”，例如“testlinuxvm”。
-	- 验证“层”并选取“大小”。层决定你可以选择的大小。大小会影响其使用成本，还会影响某些配置选项，例如，可以附加的数据磁盘数。有关详细信息，请参阅[虚拟机大小](../articles/virtual-machines-size-specs.md)。
+	- 键入“虚拟机名称”，例如“testlinuxvm”。该名称必须包含 3 至 15 个字符，只能包含字母、数字和连字符，必须以字母开头，并且必须以字母或数字结尾。
+
+	- 验证“层”并选取“大小”。层决定你可以选择的大小。大小会影响其使用成本，还会影响某些配置选项，例如，可以附加的数据磁盘数。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
 	- 键入“新用户名”，或接受默认值 **azureuser**。该名称会添加到 Sudoers 列表文件中。
 	- 决定要使用的“身份验证”类型。有关一般密码指南，请参阅[强密码](http://msdn.microsoft.com/zh-cn/library/ms161962.aspx)。
 
 6. 在下一个“虚拟机配置”页上：
 
 	- 使用默认的“创建新云服务”。
-	- 在“DNS 名称”框中，键入有效的 DNS 名称作为地址的一部分（例如“testlinuxvm”）。
+	- 在“DNS 名称”框中，键入唯一的 DNS 名称作为地址的一部分（例如“testlinuxvm”）。
 	- 在“区域/地缘组/虚拟网络”框中，选择将托管此虚拟映像的区域。
 	- 在“终结点”下，保留 SSH 终结点。你可以立即添加其他终结点，也可以在创建虚拟机之后添加、更改或删除终结点。
 
-	>[AZURE.NOTE]如果你希望虚拟机使用虚拟网络，则**必须**在创建虚拟机时指定虚拟网络。创建虚拟机后，不能将它添加到虚拟网络中。有关详细信息，请参阅[虚拟网络概述](/documentation/articles/virtual-networks-overview)。
+	>[AZURE.NOTE] 如果你希望虚拟机使用虚拟网络，则**必须**在创建虚拟机时指定虚拟网络。创建虚拟机后，不能将它添加到虚拟网络中。有关详细信息，请参阅[虚拟网络概述](/documentation/articles/virtual-networks-overview)。
 
 7.	在最后一个“虚拟机配置”页上，保留默认设置，然后单击复选标记以完成操作。
 
@@ -64,4 +65,4 @@
 
 [Image6]: ./media/create-and-configure-opensuse-vm-in-portal/putty.png
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0314_2016-->
