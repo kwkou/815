@@ -1,14 +1,15 @@
 <properties 
 	pageTitle="使用 PowerShell 创建和管理弹性数据库作业" 
 	description="使用 PowerShell 管理 Azure SQL 数据库池" 
-	services="sql-database" documentationCenter=""  
+	services="sql-database"
+	documentationCenter=""  
 	manager="jeffreyg" 
 	authors="ddove"/>
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="11/03/2015" 
-	wacn.date="01/29/2016" />
+	ms.date="02/02/2016" 
+	wacn.date="03/21/2016" />
 
 # 使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）
 
@@ -21,7 +22,7 @@
 使用适用于**弹性数据库作业**的 PowerShell API（预览版），可以定义要针对哪组数据库执行哪些脚本。本文说明如何使用 PowerShell cmdlet 创建和管理**弹性数据库作业**。请参阅[弹性作业概述](/documentation/articles/sql-database-elastic-jobs-overview)。
 
 ## 先决条件
-* Azure 订阅。若要获取试用版，请参阅[1元试用](/pricing/1rmb-trial)。
+* Azure 订阅。若要获取试用版，请参阅[试用](/pricing/1rmb-trial)。
 * 使用弹性数据库工具创建的一组数据库。请参阅[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started)。
 * Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 * **弹性数据库作业** PowerShell 包：请参阅[安装弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-service-installation)
@@ -260,7 +261,7 @@
 
 ## 创建 T-SQL 脚本用于跨数据库执行
 
-创建要执行的 T-SQL 脚本时，强烈建议将其构建为[幂等](https://zh.wikipedia.org/wiki/Idempotence)模式，以便灵活地应对各种故障。每当执行发生失败时，不论失败的分类，弹性数据库作业将重试执行脚本。
+创建要执行的 T-SQL 脚本时，强烈建议将其构建为[幂等](https://en.wikipedia.org/wiki/Idempotence)模式，以便灵活地应对各种故障。每当执行发生失败时，不论失败的分类，弹性数据库作业将重试执行脚本。
 
 使用 [**New-AzureSqlJobContent cmdlet**](https://msdn.microsoft.com/zh-cn/library/mt346085.aspx) 创建并保存执行脚本，然后设置 **-ContentName** 和 **-CommandText** 参数。
 
@@ -690,4 +691,4 @@
 [2]: ./media/sql-database-elastic-jobs-powershell/portal.png
 <!--anchors-->
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0307_2016-->
