@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="01/15/2016"
-   wacn.date="02/26/2016"/>
+   ms.date="02/02/2016"
+   wacn.date="03/21/2016"/>
 
 # Azure 资源管理器概述
 
@@ -118,6 +118,10 @@
 
 有关 REST API 的信息，请参阅 [Azure 资源管理器 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)。
 
+有关使用门户的信息，请参阅[使用 Azure 门户管理 Azure 资源](/documentation/articles/resource-group-portal)。
+
+Azure 资源管理器支持跨域资源共享 (CORS)。使用 CORS 时，你可以从驻留在不同域中的 Web 应用程序调用资源管理器 REST API 或 Azure 服务 REST API。如果不支持 CORS，Web 浏览器将阻止一个域中的应用访问另一个域中的资源。资源管理器为所有具有有效身份验证凭据的请求启用 CORS。
+
 ## 后续步骤
 
 - 若要了解如何创建模板，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)
@@ -125,4 +129,4 @@
 - 若要了解可以在模板中使用的函数，请参阅[模板函数](/documentation/articles/resource-group-template-functions)
 - 有关如何设计你的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0314_2016-->
