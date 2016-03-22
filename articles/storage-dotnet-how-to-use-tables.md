@@ -1,6 +1,7 @@
 <properties
-	pageTitle="如何通过 .NET 使用表存储 |  Azure"
-	description="使用表存储来存储非结构化、无架构数据。表存储是 NoSQL 键/属性存储。适用于 .NET 的存储客户端库提供了用于创建和删除表以及用于插入、更新、删除和查询数据的 API。"
+pageTitle="通过 .NET 开始使用 Azure 表存储 | Azure"
+	description="使用 Azure 表存储和 Microsoft 的 NoSQL 数据存储将非结构化的数据存储在云中。立即开始使用简单的表存储操作，包括创建和删除表和插入、更新、删除和查询数据。"
+	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
 	manager="adinah"
@@ -8,17 +9,21 @@
 
 <tags
 	ms.service="storage"
-	ms.date="01/07/2016"
-	wacn.date="02/25/2016"/>
+	ms.date="01/24/2016"
+	wacn.date="03/17/2016"/>
 
 
-# 如何通过 .NET 使用表存储
+# 通过 .NET 开始使用 Azure 表存储
 
 [AZURE.INCLUDE [storage-selector-table-include](../includes/storage-selector-table-include.md)]
 
 ## 概述
 
-本文将演示如何使用 Azure 表存储服务执行常见方案。示例是使用 C# 代码编写的，并使用了 .NET 的 Azure 存储客户端库。涉及的方案包括创建和删除表，以及使用表实体。
+Azure 表存储是一种将非结构化的 NoSQL 数据存储在云中的服务。表存储是采用无架构设计的键/属性存储。因为表存储无架构，因此可以很容易地随着你的应用程序需求的发展使数据适应存储。对于所有类型的应用程序，都可以快速并经济高效地访问数据。对于相似的数据量，表存储的成本通常显著低于传统的 SQL。
+
+你可以使用表存储来存储灵活的数据集，例如 Web 应用程序的用户数据、通讯簿、设备信息，以及你的服务需要的任何其他类型的元数据。可以在表中存储任意数量的实体，并且一个存储帐户可以包含任意数量的表，直至达到存储帐户的容量极限。
+
+本教程演示如何对使用 Azure 表存储的某些常见情形（包括创建和删除表和插入、更新、删除和查询表数据）编写 .NET 代码。
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -435,4 +440,4 @@
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [空间]: http://nuget.org/packages/System.Spatial/5.0.2
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0307_2016-->

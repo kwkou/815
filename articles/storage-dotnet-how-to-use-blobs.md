@@ -1,6 +1,6 @@
 <properties
-	pageTitle="如何通过 .NET 使用 Blob 存储 | Azure"
-	description="了解 Azure Blob 存储以及如何创建容器，如何上载、下载、列出和删除 Blob 内容。"
+	pageTitle="通过 .NET 开始使用 Azure Blob 存储 | Azure"
+	description="使用 Azure Blob（对象）存储在云中存储文件数据。立即开始简单的 Blob 存储操作，包括创建容器并上载、下载、列出和删除 blob 内容。"
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
@@ -9,17 +9,19 @@
 
 <tags
 	ms.service="storage"
-	ms.date="12/01/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/22/2016"
+	wacn.date="03/17/2016"/>
 
 
-# 如何通过 .NET 使用 Blob 存储
+# 通过 .NET 开始使用 Azure Blob 存储
 
 [AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include.md)]
 
 ## 概述
 
-本指南将演示如何使用 Azure Blob 存储服务执行常见方案。示例是用 C# 编写的并使用了用于 .NET 的 Azure 存储空间客户端库。存储客户端库是一种 SDK，用于简化与 Blob 存储 REST API 的交互。本指南中介绍的方案包括 blob 的**上传**、**列表**、**下载**和**删除**，应该需要大约 1 小时才能完成。如果你想要观看入门视频，可观看“存储空间五分钟简介”，也可以阅读[存储空间五分钟入门](documentation/articles/storage-getting-started-guide)指南。
+Azure Blob 存储是在云中存储文件数据的服务。Blob 存储可以存储任何类型的文本或二进制数据，例如文档、媒体文件或应用程序安装程序。Blob 存储有时称为对象存储。
+
+本教程演示如何针对使用 Azure Blob 存储一些常见情形编写 .NET 代码。涉及的任务包括上载、列出、下载和删除 Blob。完成本教程中仅仅只需一小时。
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -34,6 +36,7 @@
 [AZURE.INCLUDE [storage-dotnet-obtain-assembly](../includes/storage-dotnet-obtain-assembly.md)]
 
 ### 命名空间声明
+
 在您希望在其中以编程方式访问 Azure 存储空间的任何 C# 文件中，将以下命名空间声明添加到文件的顶部：
 
     using Microsoft.WindowsAzure;
@@ -303,7 +306,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
     //Get a reference to a container.
     CloudBlobContainer container = blobClient.GetContainerReference("my-append-blobs");
 
-    //Create the container if it does not already exist. 
+    //Create the container if it does not already exist.
     container.CreateIfNotExists();
 
     //Get a reference to an append blob.
@@ -319,7 +322,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
     Random rnd = new Random();
     byte[] bytes = new byte[numBlocks];
     rnd.NextBytes(bytes);
-        
+
     //Simulate a logging operation by writing text data and byte data to the end of the append blob.
     for (int i = 0; i < numBlocks; i++)
     {
@@ -362,4 +365,4 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
   [REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355
  
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0307_2016-->

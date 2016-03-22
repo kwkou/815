@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="01/05/2016"
-	wacn.date="02/25/2016"/>
+	ms.date="02/08/2016"
+	wacn.date="03/17/2016"/>
 
 
 # Azure 存储空间的客户端加密和 Azure 密钥保管库
@@ -245,6 +245,6 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 下载[用于 .NET 的 Azure 存储空间客户端库 NuGet 程序包](http://www.nuget.org/packages/WindowsAzure.Storage/5.0.0)
 从 GitHub 下载 [用于 .NET 的 Azure 存储空间客户端库源代码](https://github.com/Azure/azure-storage-net)
 下载 Azure 密钥保管库 NuGet [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/)、[Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) 和 [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) 程序包  
-查看 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis) 
+查看 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis)
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0307_2016-->
