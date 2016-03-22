@@ -3,14 +3,14 @@
    description="可与 SQL 数据仓库配合使用的解决方案的第三方合作伙伴列表。"
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="joliang"
+   authors="jrowlandjones"
    manager="barbkess"
    editor=""/>
 
-<tags 
-	ms.service="sql-data-warehouse"
-	ms.date="09/22/2015" 
-	wacn.date="01/20/2016"/>
+<tags
+   ms.service="sql-data-warehouse"
+   ms.date="01/07/2016"
+   wacn.date="03/17/2016"/>
 
 # SQL 数据仓库解决方案合作伙伴
 
@@ -97,4 +97,4 @@
 [targit_more]: http://www.targit.com/en/
 [yellowfin_more]: http://www.yellowfinbi.com/
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="11/19/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/17/2016"/>
 
 
 # 使用 bcp 加载数据
@@ -41,7 +41,7 @@ bcp 是将较小数据集移入和移出 SQL 数据仓库数据库的快速轻�
 - 已安装 bcp 命令行实用程序
 - 已安装 SQLCMD 命令行实用程序
 
->[AZURE.NOTE]可以从 [Microsoft 下载中心][]下载 bcp 和 sqlcmd 实用程序。
+>[AZURE.NOTE] 可以从 [Microsoft 下载中心][]下载 bcp 和 sqlcmd 实用程序。
 
 ## 将数据导入 SQL 数据仓库
 
@@ -70,7 +70,7 @@ WITH
 );
 GO
 ```
->[AZURE.NOTE]有关 WITH 子句中可用选项的详细信息，请参阅“开发”主题组中的[表设计][]。
+>[AZURE.NOTE] 有关 WITH 子句中可用选项的详细信息，请参阅“开发”主题组中的[表设计][]。
 
 ### 步骤 2：创建源数据文件
 
@@ -93,7 +93,7 @@ GO
 
 将此文件保存到本地临时目录，路径为 C:\\Temp\\DimDate2.txt。
 
-> [AZURE.NOTE]请务必记得 bcp.exe 不支持 UTF-8 文件编码。使用 bcp.exe 时，请对文件使用 ASCII 编码文件或 UTF-16 编码。
+> [AZURE.NOTE] 请务必记得 bcp.exe 不支持 UTF-8 文件编码。使用 bcp.exe 时，请对文件使用 ASCII 编码文件或 UTF-16 编码。
 
 ### 步骤 3：连接并导入数据
 在 bcp 中，可以使用以下命令来连接并导入数据（相应地替换其中的值）：
@@ -166,7 +166,7 @@ bcp DimDate2 out C:\Temp\DimDate2_export.txt -S <Server Name> -d <Database Name>
 20150101,1,3
 ```
 
->[AZURE.NOTE]由于分布式系统的性质，数据顺序在不同 SQL 数据仓库数据库之间可能不同。你可以选择性地使用 queryout 参数来指定要运行的 Transact-SQL 查询。
+>[AZURE.NOTE] 由于分布式系统的性质，数据顺序在不同 SQL 数据仓库数据库之间可能不同。你可以选择性地使用 queryout 参数来指定要运行的 Transact-SQL 查询。
 
 ## 后续步骤
 有关加载数据的概述，请参阅[将数据载入 SQL 数据仓库][]。
@@ -189,4 +189,4 @@ bcp DimDate2 out C:\Temp\DimDate2_export.txt -S <Server Name> -d <Database Name>
 <!--Other Web references-->
 [Microsoft 下载中心]: http://www.microsoft.com/zh-cn/download/details.aspx?id=36433
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

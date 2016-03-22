@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="10/21/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/17/2016"/>
 
 # 安装适用于 SQL 数据仓库的 Visual Studio 2015 和/或 SSDT
 
@@ -45,4 +45,4 @@
 
 <!--Image references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

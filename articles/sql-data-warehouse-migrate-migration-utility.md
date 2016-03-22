@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="09/22/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/17/2016"/>
 
 
 #数据仓库迁移实用程序（预览版）
@@ -57,4 +57,4 @@
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
 [此处]: https://migrhoststorage.blob.core.windows.net/sqldwsample/DataWarehouseMigrationUtility.zip
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

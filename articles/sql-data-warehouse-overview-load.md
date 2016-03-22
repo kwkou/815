@@ -5,12 +5,12 @@
    documentationCenter="NA"
    authors="lodipalm"
    manager="barbkess"
-   editor="jrowlandjones"/>
+   editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="11/04/2015"
-   wacn.date="01/21/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/17/2016"/>
 
 # 将数据载入 SQL 数据仓库
 SQL 数据仓库提供许多选项用于加载数据，包括：
@@ -58,7 +58,7 @@ Get-Content <input_file_name> -Encoding Unicode | Set-Content <output_file_name>
 
 以下步骤详细说明如何使用 AZCopy 将数据从本地移入 Azure 存储帐户。如果你在同一区域没有 Azure 存储帐户，可以遵循 [Azure 存储空间文档][]创建一个。还可以从不同区域中的存储帐户加载数据，但在此情况下，性能不是最佳的。
 
-> [AZURE.NOTE]本文档假设你已安装的 AZCopy 命令行实用程序，而且能够使用 Powershell 运行它。如果不是这样，请遵循 [AZCopy 安装说明][]。
+> [AZURE.NOTE] 本文档假设你已安装的 AZCopy 命令行实用程序，而且能够使用 Powershell 运行它。如果不是这样，请遵循 [AZCopy 安装说明][]。
 
 现在，已提供一组使用 BCP 创建的文件，因此 AzCopy 只需从 Azure powershell 或通过运行 powershell 脚本来运行。在更高的级别中，运行 AZCopy 所需的提示将采用以下格式：
 
@@ -89,33 +89,36 @@ AZCopy /Source:<File Location> /Dest:<Storage Container Location> /destkey:<Stor
 4. **创建外部数据源。** 指向存储帐户时，如果从同一个容器加载，则你可以使用外部数据源。对于 'LOCATION' 参数，请使用以下格式的位置：'wasbs://mycontainer@ test.blob.core.chinacloudapi.cn/path'。
 
 ```
-	-- Creating master key
-	CREATE MASTER KEY;	
-	-- Creating a database scoped credential
-	CREATE DATABASE SCOPED CREDENTIAL <Credential Name> 
-	WITH 
-	    IDENTITY = '<User Name>'
-	,   Secret = '<Azure Storage Key>'
-	;	
-	-- Creating external file format (delimited text file)
-	CREATE EXTERNAL FILE FORMAT text_file_format 
-	WITH 
-	(
-	    FORMAT_TYPE = DELIMITEDTEXT 
-	,   FORMAT_OPTIONS  (
-	                        FIELD_TERMINATOR ='|' 
-	                    ,   USE_TYPE_DEFAULT = TRUE
-	                    )
-	);	
-	--Creating an external data source
-	CREATE EXTERNAL DATA SOURCE azure_storage 
-	WITH 
-	(
-	    TYPE = HADOOP 
-	,   LOCATION ='wasbs://<Container>@<Blob Path>'
-	,   CREDENTIAL = <Credential Name>
-	)
-	;
+-- Creating master key
+CREATE MASTER KEY;
+
+-- Creating a database scoped credential
+CREATE DATABASE SCOPED CREDENTIAL <Credential Name> 
+WITH 
+    IDENTITY = '<User Name>'
+,   Secret = '<Azure Storage Key>'
+;
+
+-- Creating external file format (delimited text file)
+CREATE EXTERNAL FILE FORMAT text_file_format 
+WITH 
+(
+    FORMAT_TYPE = DELIMITEDTEXT 
+,   FORMAT_OPTIONS  (
+                        FIELD_TERMINATOR ='|' 
+                    ,   USE_TYPE_DEFAULT = TRUE
+                    )
+);
+
+--Creating an external data source
+CREATE EXTERNAL DATA SOURCE azure_storage 
+WITH 
+(
+    TYPE = HADOOP 
+,   LOCATION ='wasbs://<Container>@<Blob Path>'
+,   CREDENTIAL = <Credential Name>
+)
+;
 ```
 
 适当配置存储帐户后，你可以继续将数据载入 SQL 数据仓库。
@@ -124,17 +127,18 @@ AZCopy /Source:<File Location> /Dest:<Storage Container Location> /destkey:<Stor
 配置 PolyBase 后，只需创建一个外部表，指向存储中的数据，然后将该数据映射到 SQL 数据仓库内的新表，即可将数据直接载入 SQL 数据仓库。可以使用以下两个简单命令来完成此操作。
 
 1. 使用 'CREATE EXTERNAL TABLE' 命令来定义数据结构。若要确保快速且有效地捕获数据的状态，我们建议在 SSMS 中编写 SQL Server 表的脚本，然后根据外部表的差异手动调整。在 Azure 中创建外部表之后，它将继续指向相同的位置，即使更新了数据或添加了其他数据。  
+
 ```
-	-- Creating external table pointing to file stored in Azure Storage
-	CREATE EXTERNAL TABLE <External Table Name> 
-	(
-	    <Column name>, <Column type>, <NULL/NOT NULL>
-	)
-	WITH 
-	(   LOCATION='<Folder Path>'
-	,   DATA_SOURCE = <Data Source>
-	,   FILE_FORMAT = <File Format>      
-	);
+-- Creating external table pointing to file stored in Azure Storage
+CREATE EXTERNAL TABLE <External Table Name> 
+(
+    <Column name>, <Column type>, <NULL/NOT NULL>
+)
+WITH 
+(   LOCATION='<Folder Path>'
+,   DATA_SOURCE = <Data Source>
+,   FILE_FORMAT = <File Format>      
+);
 ```
 
 2. 使用 'CREATE TABLE...AS SELECT' 语句加载数据。 
@@ -143,7 +147,8 @@ AZCopy /Source:<File Location> /Dest:<Storage Container Location> /destkey:<Stor
 CREATE TABLE <Table Name> 
 WITH 
 (
-CLUSTERED COLUMNSTORE INDEX
+	CLUSTERED COLUMNSTORE INDEX,
+	DISTRIBUTION = <HASH(<Column Name>)>/<ROUND_ROBIN>
 )
 AS 
 SELECT  * 
@@ -192,4 +197,4 @@ create statistics [<another name>] on [<Table Name>] ([<Another Column Name>]);
 [Azure 存储空间文档]: /documentation/articles/storage-create-storage-account/
 [ExpressRoute 文档]: /documentation/services/expressroute/
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

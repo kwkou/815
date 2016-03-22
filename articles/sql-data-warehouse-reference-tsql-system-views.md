@@ -4,13 +4,13 @@
    services="sql-data-warehouse"
    documentationCenter="NA"
    authors="barbkess"
-   manager="jhubbard"
+   manager="barbkess"
    editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="09/22/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/21/2016"
+   wacn.date="03/17/2016"/>
 
 # 系统视图
 
@@ -37,20 +37,6 @@
 - [sys.pdw\_table\_distribution\_properties](http://msdn.microsoft.com/zh-cn/library/mt203896.aspx)
 - [sys.pdw\_table\_mappings](http://msdn.microsoft.com/zh-cn/library/mt203876.aspx)
 
-## SQL 数据库目录视图
-
-- [dbo.server\_quotas（Azure SQL 数据库）](http://msdn.microsoft.com/zh-cn/library/dn308512.aspx)
-- [sys.bandwidth\_usage（Azure SQL 数据库）](http://msdn.microsoft.com/zh-cn/library/dn269985.aspx)
-- [sys.database\_connection\_stats（Azure SQL 数据库）](http://msdn.microsoft.com/zh-cn/library/dn269986.aspx)
-- [sys.database\_firewall\_rules（Azure SQL 数据库）](http://msdn.microsoft.com/zh-cn/library/dn269982.aspx)
-- [sys.database\_usage（Azure SQL 数据库）](http://msdn.microsoft.com/zh-cn/library/azure/ff951626.aspx)
-- [sys.event\_log（Azure SQL 数据库）](http://msdn.microsoft.com/zh-cn/library/dn270018.aspx)
-- [sys.database\_firewall\_rules（Azure SQL 数据库）](http://msdn.microsoft.com/zh-cn/library/dn269982.aspx)
-- [sys.firewall\_rules（Azure SQL 数据库）](http://msdn.microsoft.com/zh-cn/library/azure/ff951627.aspx)
-- [sys.resource\_stats（Azure SQL 数据库）](http://msdn.microsoft.com/zh-cn/library/dn269979.aspx)
-- sys.resource\_usage（Azure SQL 数据库）
-
-
 ## SQL 数据仓库动态管理视图 (DMV)
 
 - [sys.dm\_pdw\_diag\_processing\_stats](http://msdn.microsoft.com/zh-cn/library/mt203914.aspx)
@@ -63,9 +49,8 @@
 - [sys.dm\_pdw\_network\_credentials](http://msdn.microsoft.com/zh-cn/library/mt203915.aspx)
 - [sys.dm\_pdw\_nodes](http://msdn.microsoft.com/zh-cn/library/mt203907.aspx)
 - [sys.dm\_pdw\_nodes\_database\_encryption\_keys](http://msdn.microsoft.com/zh-cn/library/mt203922.aspx)
-- [sys.dm\_pdw\_node\_status](http://msdn.microsoft.com/zh-cn/library/mt203905.aspx)
 - [sys.dm\_pdw\_os\_event\_logs](http://msdn.microsoft.com/zh-cn/library/mt203910.aspx)
-- [sys.dm\_pdw\_or\_performance\_counters](http://msdn.microsoft.com/zh-cn/library/mt203875.aspx)
+- [sys.dm\_pdw\_os\_performance\_counters](http://msdn.microsoft.com/zh-cn/library/mt203875.aspx)
 - [sys.dm\_pdw\_os\_threads](http://msdn.microsoft.com/zh-cn/library/mt203917.aspx)
 - [sys.dm\_pdw\_query\_stats\_xe](http://msdn.microsoft.com/zh-cn/library/mt203898.aspx)
 - [sys.dm\_pdw\_query\_stats\_xe\_file](http://msdn.microsoft.com/zh-cn/library/mt203919.aspx)
@@ -107,7 +92,6 @@
 - [sys.index\_columns](http://msdn.microsoft.com/zh-cn/library/ms175105.aspx)
 - [sys.indexes](http://msdn.microsoft.com/zh-cn/library/ms173760.aspx)
 - [sys.key\_constraints](http://msdn.microsoft.com/zh-cn/library/ms174321.aspx)
-- [sys.master\_files](http://msdn.microsoft.com/zh-cn/library/ms186782.aspx)
 - [sys.numbered\_procedures](http://msdn.microsoft.com/zh-cn/library/ms179865.aspx)
 - [sys.objects](http://msdn.microsoft.com/zh-cn/library/ms190324.aspx)
 - [sys.partition\_functions](http://msdn.microsoft.com/zh-cn/library/ms187381.aspx)
@@ -119,15 +103,11 @@
 - [sys.procedures](http://msdn.microsoft.com/zh-cn/library/ms188737.aspx)
 - [sys.schemas](http://msdn.microsoft.com/zh-cn/library/ms176011.aspx)
 - [sys.securable\_classes](http://msdn.microsoft.com/zh-cn/library/ms408301.aspx)
-- [sys.server\_role\_members](http://msdn.microsoft.com/zh-cn/library/ms190331.aspx)
-- [sys.server\_permissions](http://msdn.microsoft.com/zh-cn/library/ms186260.aspx)
-- [sys.server\_principals](http://msdn.microsoft.com/zh-cn/library/ms188786.aspx)
 - [sys.sql\_expression\_dependencies](http://msdn.microsoft.com/zh-cn/library/bb677315.aspx)
-- [sys.sql\_logins](http://msdn.microsoft.com/ms174355.aspx)
 - [sys.sql\_modules](http://msdn.microsoft.com/zh-cn/library/ms175081.aspx)
 - [sys.stats](http://msdn.microsoft.com/zh-cn/library/ms177623.aspx)
 - [sys.stats\_columns](http://msdn.microsoft.com/zh-cn/library/ms187340.aspx)
-- [sys.system\_columns](http://msdn.microsoft.com/zh-cn/library/ms178596.aspx****)
+- [sys.system\_columns](http://msdn.microsoft.com/zh-cn/library/ms178596.aspx)
 - [sys.system\_objects](http://msdn.microsoft.com/zh-cn/library/ms173551.aspx)
 - [sys.system\_sql\_modules](http://msdn.microsoft.com/zh-cn/library/ms188034.aspx)
 - [sys.system\_views](http://msdn.microsoft.com/zh-cn/library/ms187764.aspx)
@@ -143,7 +123,7 @@ SQL 数据仓库公开许多 SQL Server 动态管理视图 (DMV)。在 SQL 数�
 
 这就是为何其中每个 DMV 都有一个名为 pdw\_node\_id 的特定列的原因。这是计算节点的标识符。在 PDW 中，计算节点是体系结构的强势概念。在 SQL 数据仓库中，体系结构更严重依赖于分布区。
 
->[AZURE.NOTE]若要使用这些视图，请在名称中插入“pdw\_nodes\_”，如下表所示。
+>[AZURE.NOTE] 若要使用这些视图，请在名称中插入“pdw\_nodes\_”，如下表所示。
 
 
 | SQL 数据仓库中的 DMV 名称 | MSDN 上的 SQL Server Transact-SQL 主题链接 |
@@ -163,16 +143,16 @@ SQL 数据仓库公开许多 SQL Server 动态管理视图 (DMV)。在 SQL 数�
 | sys.dm\_pdw\_nodes\_exec\_query\_resource\_semaphores | [sys.dm\_exec\_query\_resource\_semaphores (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms366321.aspx) |
 | sys.dm\_pdw\_nodes\_exec\_query\_stats | [sys.dm\_exec\_query\_stats (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms189741.aspx) |
 | sys.dm\_pdw\_nodes\_exec\_requests | [sys.dm\_exec\_requests (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms177648.aspx) |
-| sys.dm\_pdw\_nodes\_exec\_sessions | sys.dm\_pdw\_nodes\_exec\_sessions (Transact-SQL) |
+| sys.dm\_pdw\_nodes\_exec\_sessions | [sys.dm\_exec\_sessions (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms176013.aspx) |
 | sys.dm\_pdw\_nodes\_io\_cluster\_shared\_drives | [sys.dm\_io\_cluster\_shared\_drives (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms188930.aspx) |
 | sys.dm\_pdw\_nodes\_io\_pending\_io\_requests | [sys.dm\_io\_pending\_io\_requests (Transact-SQl)](http://msdn.microsoft.com/zh-cn/library/ms188762.aspx) |
 | sys.dm\_pdw\_nodes\_os\_buffer\_descriptors | [sys.dm\_os\_buffer\_descriptors (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms173442.aspx) |
 | sys.dm\_pdw\_nodes\_os\_child\_instances | [sys.dm\_os\_child\_instances (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms165698.aspx) |
 | sys.dm\_pdw\_nodes\_os\_cluster\_nodes | [sys.dm\_os\_cluster\_nodes (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms187341.aspx) |
 | sys.dm\_pdw\_nodes\_os\_dispatcher\_pools | [sys.dm\_os\_dispatcher\_pools (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/bb630336.aspx) |
-| sys.dm\_pdw\_nodes\_os\_dispatchers | 未提供 Transact-SQl 文档。 |
+| sys.dm\_pdw\_nodes\_os\_dispatchers | 未提供 Transact-SQL 文档。 |
 | sys.dm\_pdw\_nodes\_os\_hosts | [sys.dm\_os\_hosts (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms187800.aspx) |
-| sys.dm\_pdw\_nodes\_os\_latch\_stats | [sys.dm\_os\_latch stats (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms175066.aspx) |
+| sys.dm\_pdw\_nodes\_os\_latch\_stats | [sys.dm\_os\_latch\_stats (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms175066.aspx) |
 | sys.dm\_pdw\_nodes\_os\_loaded\_modules | [sys.dm\_os\_loaded\_modules (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms179907.aspx) |
 | sys.dm\_pdw\_nodes\_os\_memory\_brokers | [sys.dm\_os\_memory\_brokers (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/bb522548.aspx) |
 | sys.dm\_pdw\_nodes\_os\_memory\_cache\_clock\_hands | [sys.dm\_os\_memory\_cache\_clock\_hands (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms173786.aspx) |
@@ -180,22 +160,22 @@ SQL 数据仓库公开许多 SQL Server 动态管理视图 (DMV)。在 SQL 数�
 | sys.dm\_pdw\_nodes\_os\_memory\_cache\_entries | [sys.dm\_os\_memory\_cache\_entries (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms189488.aspx) |
 | sys.dm\_pdw\_nodes\_os\_memory\_cache\_hash\_tables | [sys.dm\_os\_memory\_cache\_hash\_tables (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms182388.aspx) |
 | sys.dm\_pdw\_nodes\_os\_memory\_clerks | [sys.dm\_os\_memory\_clerks (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms175019.aspx) |
-| sys.dm\_pdw\_nodes\_os\_memory\_node\_access\_stats | 未提供 Transact-SQl 文档。 |
+| sys.dm\_pdw\_nodes\_os\_memory\_node\_access\_stats | 未提供 Transact-SQL 文档。 |
 | sys.dm\_pdw\_nodes\_os\_memory\_nodes | [sys.dm\_os\_memory\_nodes (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/bb510622.aspx) |
 | sys.dm\_pdw\_nodes\_os\_memory\_pools | [sys.dm\_os\_memory\_pools (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms175022.aspx) |
 | sys.dm\_pdw\_nodes\_os\_nodes | [sys.dm\_os\_nodes (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/bb510628.aspx) |
 | sys.dm\_pdw\_nodes\_os\_performance\_counters | [sys.dm\_os\_performance\_counters (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms187743.aspx) |
 | sys.dm\_pdw\_nodes\_os\_process\_memory | [sys.dm\_os\_process\_memory (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/bb510747.aspx) |
 | sys.dm\_pdw\_nodes\_os\_schedulers | [sys.dm\_os\_schedulers (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms177526.aspx) |
-| sys.dm\_pdw\_nodes\_os\_spinlock\_stats | sys.dm\_os\_spinlock\_stats (Transact-SQL) |
+| sys.dm\_pdw\_nodes\_os\_spinlock\_stats | 未提供 Transact-SQL 文档。 |
 | sys.dm\_pdw\_nodes\_os\_sys\_info | [sys.dm\_os\_sys\_info (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms175048.aspx) |
 | sys.dm\_pdw\_nodes\_os\_sys\_memory | [sys.dm\_os\_memory\_nodes (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/bb510622.aspx) |
 | sys.dm\_pdw\_nodes\_os\_tasks | [sys.dm\_os\_tasks (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms174963.aspx) |
 | sys.dm\_pdw\_nodes\_os\_threads | [sys.dm\_os\_threads (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms187818.aspx) |
-| sys.dm\_pdw\_nodes\_os\_virtual\_address\_dump | sys.dm\_virtual\_address\_dump (Transact-SQL) |
-| sys.dm\_pdw\_nodes\_os\_wait\_stats | sys.ldm\_pdw\_nodes\_os\_wait\_stats (Transact-SQL) |
-| sys.dm\_pdw\_nodes\_os\_waiting\_tasks | sys.dm\_waiting\_tasks (Transact-SQL) |
-| sys.dm\_pdw\_nodes\_os\_workers | sys.dm\_workers (Transact-SQL) |
+| sys.dm\_pdw\_nodes\_os\_virtual\_address\_dump | [sys.dm\_os\_virtual\_address\_dump (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms186294.aspx) |
+| sys.dm\_pdw\_nodes\_os\_wait\_stats | [sys.dm\_os\_wait\_stats (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms179984.aspx) |
+| sys.dm\_pdw\_nodes\_os\_waiting\_tasks | [sys.dm\_os\_waiting\_tasks (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms188743.aspx) |
+| sys.dm\_pdw\_nodes\_os\_workers | [sys.dm\_os\_workers (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms178626.aspx) |
 | sys.dm\_pdw\_nodes\_resource\_governor\_resource\_pools | [sys.dm\_resource\_governor\_resource\_pools (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/bb934023.aspx) |
 | sys.dm\_pdw\_nodes\_resource\_governor\_workload\_groups | [sys.dm\_resource\_governor\_workload\_groups (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/bb934197.aspx) |
 | sys.dm\_pdw\_nodes\_tran\_active\_snapshot\_database\_transactions | [sys.dm\_tran\_active\_snapshot\_database\_transactions (Transact\_SQL)](http://msdn.microsoft.com/zh-cn/library/ms180023.aspx) |
@@ -210,23 +190,23 @@ SQL 数据仓库公开许多 SQL Server 动态管理视图 (DMV)。在 SQL 数�
 
 - [sys.dm\_exec\_compute\_node\_errors (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/mt146380.aspx)
 - [sys.dm\_exec\_compute\_node\_status (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/mt146382.aspx)
-- sys.dm\_exec\_compute\_nodes (Transact-SQL)
-- sys.dm\_exec\_distributed\_request\_steps (Transact-SQL)
+- [sys.dm\_exec\_compute\_nodes (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt130700.aspx)
+- [sys.dm\_exec\_distributed\_request\_steps (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt130701.aspx)
 - [sys.dm\_exec\_distributed\_requests (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/mt146385.aspx)
-- [sys.dm\_exec\_distributed\_sql\_requests (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/mt146390.aspx) 
-- sys.dm\_exec\_dms\_services (Transact-SQL)
-- sys.dm\_exec\_dms\_workers (Transact-SQL)
-- sys.dm\_exec\_external\_operations (Transact-SQL)
-- sys.dm\_exec\_external\_work (Transact-SQL)
+- [sys.dm\_exec\_distributed\_sql\_requests (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/mt146390.aspx)
+- [sys.dm\_exec\_dms\_services (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt146374.aspx)
+- [sys.dm\_exec\_dms\_workers (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt146392.aspx)
+- [sys.dm\_exec\_external\_operations (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt146391.aspx)
+- [sys.dm\_exec\_external\_work (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt146375.aspx)
 
 ## SQL 数据仓库中提供的 SQL 数据库 DMV
 
-- sys.dm\_continuous\_copy\_status
-- [sys.dm\_database\_copies](http://msdn.microsoft.com/zh-cn/library/azure/ff951634.aspx)
-- sys.dm\_db\_objects\_impacted\_on\_version\_change
-- sys.dm\_db\_resource\_stats
-- sys.dm\_db\_wait\_stats
-- [sys.dm\_operation\_status](http://msdn.microsoft.com/zh-cn/library/azure/jj126282.aspx)
+- [sys.dm\_continuous\_copy\_status](https://msdn.microsoft.com/zh-cn/library/dn467642.aspx)
+- [sys.dm\_database\_copies](https://msdn.microsoft.com/zh-cn/library/dn270023.aspx)
+- [sys.dm\_db\_objects\_impacted\_on\_version\_change](https://msdn.microsoft.com/zh-cn/library/dn270019.aspx)
+- [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx)
+- [sys.dm\_db\_wait\_stats](https://msdn.microsoft.com/zh-cn/library/dn269834.aspx)
+- [sys.dm\_operation\_status](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx)
 
 
 ## SQL Server information\_schema views
@@ -266,4 +246,4 @@ SQL 数据仓库公开许多 SQL Server 动态管理视图 (DMV)。在 SQL 数�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

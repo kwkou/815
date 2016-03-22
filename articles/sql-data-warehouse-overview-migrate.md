@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="09/22/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/17/2016"/>
 
 # 将解决方案迁移到 SQL 数据仓库
 
@@ -48,4 +48,4 @@ SQL 数据仓库是一种分布式数据库系统，可根据你的需要弹性�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

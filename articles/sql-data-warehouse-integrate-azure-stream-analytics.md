@@ -9,12 +9,12 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="09/30/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/17/2016"/>
 
 # 将 Azure 流分析与 SQL 数据仓库配合使用
 
-Azure 流分析是一种完全托管的服务，可以在云中通过流式数据进行低延迟、高度可用、可缩放且复杂的事件处理。你可以参考[开始使用 Azure 流分析][]教程，了解如何使用流分析创建端到端解决方案。
+Azure 流分析是一种完全托管的服务，可以在云中通过流式数据进行低延迟、高度可用、可缩放且复杂的事件处理。你可以先阅读 [Azure 流分析简介][]了解基本知识。然后，可以参考[开始使用 Azure 流分析][]教程，了解如何使用流分析创建端到端解决方案。
 
 在本文中，你将学习如何使用 Azure SQL 数据仓库数据库作为流分析作业的输出接收器。
 
@@ -92,4 +92,4 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 <!--Other Web references-->
 [Azure Stream Analytics documentation]: /documentation/services/stream-analytics/
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

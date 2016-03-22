@@ -4,13 +4,13 @@
    services="sql-data-warehouse"
    documentationCenter="NA"
    authors="TwoUnder"
-   manager=""
+   manager="barbkess"
    editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="12/11/2015"
-   wacn.date="01/29/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/17/2016"/>
 
 # 故障排除
 以下主题列出了客户在使用 Azure SQL 数据仓库时经常遇到的一些问题。
@@ -86,4 +86,4 @@ WHERE
 
 <!--Other web references-->
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0307_2016-->
