@@ -10,9 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="12/04/2015" 
-	wacn.date="01/14/2016"/>
-
+	ms.date="02/04/2016" 
+	wacn.date="03/17/2016"/>
 # 如何在 Azure 流分析中运行流式处理作业
 
 当作业的输入、查询和输出均已指定时，你可以启动流分析作业。
@@ -29,7 +28,7 @@
     ![启动流式处理作业的时间](./media/stream-analytics-run-a-job/2-stream-analytics-run-a-job.png)
 
 
-3.	确认你的选择。作业状态将更改为“正在启动”，然后在作业已启动后很快转变为“正在运行”。你可以在**通知中心**中监视**启动**操作的进度：
+3.	确认你的选择。作业状态将更改为“正在启动”，然后在作业已启动后很快转变为“正在运行”。你可以在 **通知中心** 中监视 **启动** 操作的进度：
 
     ![流式处理作业进度](./media/stream-analytics-run-a-job/3-stream-analytics-run-a-job.png)
 
@@ -45,4 +44,4 @@
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->

@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="12/04/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/04/2016" 
+	wacn.date="03/21/2016"/>
 
 # 如何配置流分析作业的数据输出
 
@@ -41,7 +41,7 @@ Azure 流分析作业可以连接到一个或多个数据输出，这些数据�
 
     ![将数据输出添加到事件中心](./media/stream-analytics-add-outputs/4-stream-analytics-add-outputs.png)
 
-> [Azure.Note]必须先存在添加到作业的输出元素，然后才能启动作业并开始事件的流动。例如，如果你使用 Blob 存储作为输出，该作业将不会自动创建存储帐户。在启动 ASA 作业之前，需要由用户创建该存储帐户。
+> [Azure.Note] 必须先存在添加到作业的输出元素，然后才能启动作业并开始事件的流动。例如，如果你使用 Blob 存储作为输出，该作业将不会自动创建存储帐户。在启动 ASA 作业之前，需要由用户创建该存储帐户。
 
 ## 获取帮助
 如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=AzureStreamAnalytics)
@@ -54,4 +54,4 @@ Azure 流分析作业可以连接到一个或多个数据输出，这些数据�
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0314_2016-->

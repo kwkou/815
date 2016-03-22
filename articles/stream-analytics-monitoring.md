@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="了解流分析作业监视 | Azure" 
 	description="了解流分析作业监视" 
-	keywords="大数据分析、云服务中、物联网、托管服务、流处理、流分析、流数据"
+	keywords="查询监视器"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="12/04/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="02/04/2016" 
+	wacn.date="03/17/2016"/>
 
 # 了解流分析作业监视以及如何监视查询
 
@@ -33,7 +33,9 @@ Azure 管理门户提供了可用于监视你的作业及对其进行故障排�
 | 输出事件数 | 流分析作业发送到输出目标的数据量，以事件计数来衡量。 |
 | 无序事件数 | 收到的无序事件的数目，系统根据事件排序策略来删除这些事件，或者为其提供一个经过调整的时间戳。这可能会受“无序容错时段”设置的影响。 |
 | 数据转换错误数 | 流分析作业导致的数据转换错误的数目。 |
+| 运行时错误 | 执行流分析作业的过程中发生的错误数。 |
 | 延迟输入事件数 | 延迟到达的事件的数目，系统根据延迟到达容错时段设置的事件排序策略配置删除这些事件，或者调整其时间戳。 |
+
 ## 在 Azure 管理门户中自定义监视 ##
 
 一张图表上最多可以显示 6 个指标。
@@ -86,4 +88,4 @@ Azure 管理门户提供了可用于监视你的作业及对其进行故障排�
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->

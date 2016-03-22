@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="12/11/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="02/04/2016" 
+	wacn.date="03/17/2016"/>
 
 
 # 如何使用流分析编写查询
@@ -62,4 +62,4 @@
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->

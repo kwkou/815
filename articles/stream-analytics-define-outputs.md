@@ -8,10 +8,10 @@
 	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="stream-analytics" 
-	ms.date="12/01/2015"
-	wacn.date="01/29/2016"/>
+<tags
+	ms.service="stream-analytics"
+	ms.date="02/04/2016"
+	wacn.date="03/21/2016"/>
 # 使流分析数据转换输出输出到分析工具和数据存储选项
 
 创作流分析作业时，需考虑如何使用数据转换输出。如何查看流分析作业的结果？ 使用哪些工具来显示数据分析结果？ 数据存储选项是必需的吗？
@@ -112,7 +112,7 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 
 ## 表存储
 
-[Azure 表存储](/documentation/articles/storage-introduction)提供了具有高可用性且可大规模伸缩的存储，因此应用程序可以自动伸缩以满足用户需求。表存储是 Microsoft 推出的 NoSQL 键/属性存储，适用于对架构的约束性较少的结构化数据。Azure 表存储可用于持久地存储数据，方便进行高效的检索。
+[Azure 表存储](/documentation/articles/storage-introduction)提供了具有高可用性且可大规模缩放的存储，因此应用程序可以自动缩放以满足用户需求。表存储是 Microsoft 推出的 NoSQL 键/属性存储，适用于对架构的约束性较少的结构化数据。Azure 表存储可用于持久地存储数据，方便进行高效的检索。
 
 下表列出了属性名称和用于创建表输出的属性说明。
 
@@ -181,4 +181,4 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0314_2016-->

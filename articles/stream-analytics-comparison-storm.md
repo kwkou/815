@@ -10,18 +10,17 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="11/06/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="02/04/2016"
+	wacn.date="03/21/2016"/>
 
-# Apache Storm 和 Azure 流分析的比较 #
 
-## 介绍 ##
+# 帮助你选择流分析平台：Apache Storm 与 Azure 流分析的比较
 
-本文档对 Azure 流分析和 Apache Storm 在HDInsight 上充当托管服务这一定位进行了说明。本文的目的是帮助客户了解这两种服务的价值定位，以便决定如何选择其中一种服务进行业务运营。
+使用 Apache Storm 与 Azure 流分析之间的这种比较获取有关选择云分析平台的指导。了解流分析与 Apache Storm（Azure HDInsight 上的一种托管服务）的价值主张，以便为你的业务用例选择适当的解决方案。
 
-虽然这两种服务都具有 PaaS 解决方案的优势，但几项主要功能却存在各种差异。因此，我们认为，如果能够将这些服务的功能和限制罗列出来，将有助于客户根据其目标来确定所需的解决方案。
+这两种分析平台都具有 PaaS 解决方案的优势，但几项主要功能却存在各种差异。下面列出了这些服务的功能和限制，以帮助你选择所需的解决方案来实现目标。
 
-## 常规 ##
+## Storm 与流分析的比较：常规功能 ##
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
@@ -134,7 +133,7 @@
         </tr>
     </tbody>
 </table>
-## 创作 ##
+## 在每个分析平台上创作 ##
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
@@ -258,7 +257,7 @@
         </tr>
     </tbody>
 </table>
-## 输入和输出 ##
+## 数据源和输出 ##
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
@@ -586,4 +585,4 @@
     </tbody>
 </table>
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0314_2016-->

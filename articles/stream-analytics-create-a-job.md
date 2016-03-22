@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="12/04/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/04/2016" 
+	wacn.date="03/21/2016"/>
 # 如何为流分析创建数据分析处理作业
 
 在 Azure 流分析中的最上层资源是一个流分析作业。它包含一个或多个输入数据源、一个表达数据转换的查询以及一个或多个结果写入的输出目标。用户可以利用所有这些元素，针对流式数据方案进行数据分析处理。
@@ -48,4 +48,4 @@
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0314_2016-->
