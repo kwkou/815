@@ -166,7 +166,7 @@ Azure 存储服务通过一个 [REST API](http://msdn.microsoft.com/zh-cn/librar
 - [Python](/develop/python)
 - [PowerShell](http://msdn.microsoft.com/zh-cn/library/dn495240.aspx)
 
-## 后续步骤
+##<a id="next-steps"></a> 后续步骤
 
 在开始使用 Azure 存储服务之前，请浏览以下资源：
 
