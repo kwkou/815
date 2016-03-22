@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="01/28/2016"  
+	wacn.date="03/21/2016"/>
 
 #媒体编码器标准格式和编解码器
 
@@ -82,7 +82,7 @@ MP3 (MPEG-1 Audio Layer 3)|是
 Windows Media 音频|是 
 WAV/PCM|是 
 [FLAC](https://en.wikipedia.org/wiki/FLAC)</a>|是 
-[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format)) |是 
+[Opus](https://en.wikipedia.org/wiki/Opus_codec) |是 
 [Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a>|是 
 AMR（自适应多速率）|是
 AES（SMPTE 331M 和 302M、AES3-2003） |否 
@@ -108,4 +108,4 @@ MPEG2-TS |H.264（High、Main 和 Baseline Profile）|AAC-LC、HE-AAC v1、HE-AA
 
 [如何使用媒体编码器标准版进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0314_2016-->

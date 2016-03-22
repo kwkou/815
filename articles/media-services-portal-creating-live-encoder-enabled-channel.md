@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="02/03/2016"
+	wacn.date="03/21/2016"/>
 
 
 #使用 Azure 管理门户可创建通道，以执行从单比特率到多比特率流的实时编码
 
 > [AZURE.SELECTOR]
-- [Portal](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
+- [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
 - [.NET](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
 
@@ -28,9 +28,9 @@
 
 以下是在创建常见的实时流应用程序时涉及的常规步骤。
 
->[AZURE.NOTE]目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 WindowsAzure.cn 联系 amslived。
+>[AZURE.NOTE] 目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 WindowsAzure.cn 联系 amslived。
 
-1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出单比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure Media Services RTMP 支持和实时编码器](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/)。
+1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出单比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/)。
 	
 	此步骤也可以在创建频道后执行。
 
@@ -81,7 +81,7 @@
 
 若要更改流式处理保留单元数，请执行以下操作：
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中单击 **媒体服务**。然后，单击媒体服务的名称。
+1. 在 [Azure 管理门户](https://manage.windowsazure.cn/)中单击“媒体服务”。然后，单击媒体服务的名称。
 
 2. 选择“流式处理终结点”页。然后，单击要修改的流式处理终结点。
 
@@ -94,14 +94,14 @@
 	分配所有新的单元大约需要 20 分钟才能完成。
 
 	 
-	>[AZURE.NOTE]当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
+	>[AZURE.NOTE] 当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
 	>
-	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](/home/features/media-services/#price)。
+	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅[媒体服务定价详细信息](/home/features/media-services/#price)。
 
  
 ##<a id="create-a-channel"></a>创建频道
 
-1.	在[管理门户](http://manage.windowsazure.cn/)中，单击“媒体服务”，然后单击媒体服务帐户名。
+1.	在 [Azure 管理门户](http://manage.windowsazure.cn/)中，单击“媒体服务”，然后单击媒体服务帐户名。
 2.	选择“频道”页。
 3.	选择“添加+”以添加新频道。
 
@@ -131,14 +131,14 @@
 
 ![standard3][standard3]
 
-在**“创建频道”**页上，可以定义允许将视频发布到此频道的 IP 地址。允许的 IP 地址可以指定为单个 IP 地址（例如“10.0.0.1”）、使用一个 IP 地址和 CIDR 子网掩码的 IP 范围（例如“10.0.0.1/22”），或使用一个 IP 地址和点分十进制子网掩码的 IP 范围（例如“10.0.0.1(255.255.252.0)”）。
+在**“创建频道”**页上，可以定义允许将视频发布到此频道的 IP 地址。允许的 IP 地址可以指定为单个 IP 地址（例如 ‘10.0.0.1’）或指定为使用一个 IP 地址和 CIDR 子网掩码的 IP 范围（例如 ‘10.0.0.1/22’）或指定为使用一个 IP 地址和点分十进制子网掩码的 IP 范围（例如 ‘10.0.0.1(255.255.252.0)’）。
 
 如果未指定 IP 地址并且没有规则定义，则不会允许任何 IP 地址。若要允许任何 IP 地址，请创建一个规则并设置 0.0.0.0/0。
 
 
 ![standard4][standard4]
 
->[AZURE.NOTE]目前，通道启动可能最多需要 30 分钟。频道重置可能最多需要 5 分钟。
+>[AZURE.NOTE] 目前，通道启动可能最多需要 30 分钟。频道重置可能最多需要 5 分钟。
 
 创建频道后，可以选择**“编码器”**选项卡，从中可以查看频道配置。此外，还可以管理广告和清单。
 
@@ -262,4 +262,4 @@
 [standard4]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard4.png
 [standard5]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard_encode.png
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0314_2016-->

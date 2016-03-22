@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/04/2015"
-	wacn.date="01/14/2016"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/21/2016"/>
 
 
 
@@ -29,9 +29,9 @@
 
 如果你打算创建多个内容密钥，或者想要指定除媒体服务密钥传送服务以外的**密钥\\许可证传送服务** URL，请使用媒体服务 .NET SDK 或 REST API。
 
-[使用 Media Services .NET SDK 配置内容密钥授权策略](/documentation/articles/media-services-dotnet-configure-content-key-auth-policy/)
+[使用适用于 .NET 的媒体服务 SDK 配置内容密钥授权策略](/documentation/articles/media-services-dotnet-configure-content-key-auth-policy)
 
-[使用 Media Services REST API 配置内容密钥授权策略](/documentation/articles/media-services-rest-configure-content-key-auth-policy/)
+[使用媒体服务 REST API 配置内容密钥授权策略](/documentation/articles/media-services-rest-configure-content-key-auth-policy)
 
 ###请注意以下事项：
 
@@ -80,6 +80,8 @@
 
 你可以单击“导入策略 xml”按钮，然后提供符合[此处](/documentation/articles/media-services-playready-license-template-overview)定义的 XML 架构的另一个 XML。
 
+
+
 ##后续步骤
 现在已经配置了内容密钥的授权策略，请转到[如何：使用 Azure 管理门户启用加密](/documentation/articles/media-services-manage-content#encrypt)主题。
 
@@ -87,4 +89,6 @@
 [open_policy]: ./media/media-services-portal-configure-content-key-auth-policy/media-services-protect-content-with-open-restriction.png
 [token_policy]: ./media/media-services-key-authorization-policy/media-services-protect-content-with-token-restriction.png
 
-<!---HONumber=76-->
+ 
+
+<!---HONumber=Mooncake_0314_2016-->

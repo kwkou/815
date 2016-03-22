@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="01/10/2016" 
-	wacn.date="02/25/2016"/>
+	ms.date="02/02/2016" 
+	wacn.date="03/21/2016"/>
 
 
 #使用 PlayReady 和/或 Widevine DRM 动态通用加密
@@ -26,8 +26,7 @@ Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://www.micro
 
 从媒体服务 .NET SDK 版本 3.5.2 开始，媒体服务还允许你配置 Widevine 许可证模板并获取 Widevine 许可证。
 
->[AZURE.NOTE]Azure 媒体服务提供的 Widevine 许可证传送服务是预览版。有关详细信息，请参阅[此博客](http://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/)。
-你还可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。有关详细信息，请参阅：与 [castLabs](/documentation/articles/media-services-castlabs-integration) 集成。
+你还可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)有关详细信息，请参阅：与 [castLabs](/documentation/articles/media-services-castlabs-integration) 集成。
 
 媒体服务支持通过多种方式对发出密钥请求的用户进行授权。内容密钥授权策略可能受到一种或多种授权限制：开放或令牌限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用[简单 Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2) (SWT) 格式和 [JSON Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_3) (JWT) 格式的令牌。有关详细信息，请参阅“配置内容密钥授权策略”。
 
@@ -126,7 +125,7 @@ Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://www.micro
 	Console.WriteLine("The authorization token is:\nBearer {0}", testToken);
 
 	
-
+你可以使用 [AMS Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) 来测试你的流。
 
 ##<a id="example"></a>示例
 
@@ -626,4 +625,4 @@ Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://www.micro
 [使用 AMS 配置 Widevine 打包](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
 
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0314_2016-->

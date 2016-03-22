@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
-	wacn.date="01/18/2016"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/21/2016"/>
 
 #处理 Azure 媒体服务作业
 
@@ -90,4 +90,4 @@
 
 [配额与限制](/documentation/articles/media-services-quotas-and-limitations) - 介绍媒体服务编码器的使用配额和限制
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0314_2016-->

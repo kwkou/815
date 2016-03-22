@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/05/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="02/03/2016"
+	wacn.date="03/21/2016"/>
 
 
 # 开始使用 Azure 管理门户按需传送内容
@@ -21,7 +21,8 @@
 
 本教程将引导你完成使用 Azure 管理门户实施基本视频点播 (VoD) 内容传送应用程序的步骤。
 
-> [AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/?WT.mc_id=A8A8397B5" target="_blank">Azure 试用</a>。
+> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
+
 
 本教程包括以下任务：
 
@@ -69,7 +70,7 @@
 若要使用动态打包，必须执行下列操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。  
-- 针对你要传送内容的“流式处理终结点”，获取至少一个流式处理单位。
+- 针对你要传送内容的*流式处理终结点*，获取至少一个流式处理单位。
 
 通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
 
@@ -87,7 +88,7 @@
 
 	分配所有新的单元大约需要 20 分钟才能完成。
 
-	>[AZURE.NOTE]当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
+	>[AZURE.NOTE] 当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
 	>
 	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](/home/features/media-services/#price)。
 
@@ -116,6 +117,7 @@
 ## 对内容进行编码
 
 ### 概述
+
 若要通过 Internet 传送数字视频，你必须对媒体进行压缩。媒体服务提供了一个媒体编码器，可让你指定如何为内容编码（例如，要使用的编解码器、文件格式、分辨率和比特率。）
 
 使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
@@ -136,21 +138,12 @@
 本部分介绍通过 Azure 管理门户使用 Azure 媒体编码器为内容编码时可以执行的步骤。
 
 1.  选择要编码的文件。如果此文件类型支持编码，则“内容”页底部将启用“处理”按钮。
-4. 在“处理”对话框中，选择“Azure 媒体编码器”处理器。****
+4. 在“处理”对话框中，选择“Azure 媒体编码器”处理器。
 5. 选择其中一个“编码配置”。
 
 	![Process2][process2]
 
-	[Azure 媒体编码器的任务预设字符串](https://msdn.microsoft.com/zh-cn/library/azure/dn619392.aspx)主题说明了**自适应流式传输（动态打包）的预设**、**渐进式下载的预设**、**自适应流式传输的传统预设**等类别中各项预设的含义。
-
-	下一步介绍“其他”配置。
-
-	+ **使用 PlayReady 内容保护进行编码**。此预设格式会生成以 PlayReady 内容保护编码的资产。  
-
-		默认情况下，将使用媒体服务 PlayReady 许可证服务。若要指定其他可让客户端从中获取许可证以播放 PlayReady 加密内容的服务，请使用 REST 或媒体服务.NET SDK API。有关详细信息，请参阅[使用静态加密保护内容]()，并设置“媒体加密器”预设中的 **licenseAcquisitionUrl** 属性。或者，你可以使用动态加密，并根据[使用 PlayReady 动态加密和许可证传送服务](/documentation/articles/media-services-protect-with-drm)来设置 **PlayReadyLicenseAcquisitionUrl** 属性。
-	+ **在 PC/Mac 上（通过 Flash/Silverlight）播放**。此预设将生成带有以下特征的平滑流式处理资产：使用 AAC 按照 96 kbps 速率进行 CBR 编码的 44.1 kHz（16 位/采样）立体声音频，使用 H.264 Main Profile 按照 6 种比特率（3400 kbps 到 400 kbps）进行 CBR 编码的 720p 视频，以及两个辅助 GOP。
-	+ **通过 HTML5 (IE/Chrome/Safari) 播放**。此预设将生成具有以下特征的单个 MP4 文件：使用 AAC 按照 128 kbps 速率进行 CBR 编码的 44.1 kHz（16 位/采样）立体声音频，使用 H.264 Main Profile 按照 4500 kbps 速率进行 CBR 编码的 720p 视频。
-	+ **在 iOS 设备和 PC/Mac 上播放**。此预置生成与平滑流式资产（如前所述）具有相同特性的资产，但是采用可以将 Apple HLS 流传递到 iOS 设备的格式。
+	[媒体编码器标准的任务预设字符串](https://msdn.microsoft.com/zh-cn/library/mt269960)主题说明了每个预设的含义。
 
 5. 然后，输入所需的友好输出内容名称或接受默认值。然后，单击勾选按钮开始编码操作，你可以在门户底部跟踪进度。
 6. 选择“确定”。
@@ -189,7 +182,7 @@ SAS URL 采用以下格式。
 
 定位符附带过期日期。当你使用门户发布资产时，将会创建过期日期在 100 年后的定位符。
 
->[AZURE.NOTE]如果你使用门户在 2015 年 3 月之前创建了定位符，则会创建过期日期在两年后的定位符。
+>[AZURE.NOTE] 如果你使用门户在 2015 年 3 月之前创建了定位符，则会创建过期日期在两年后的定位符。
 
 若要更新定位符的过期日期，请使用 [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator) 或 [.NET](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
 
@@ -240,4 +233,4 @@ Azure 管理门户提供了可用于测试视频的内容播放器。
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-portal-get-started/media-services-portal-player.png
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0314_2016-->

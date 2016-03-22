@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="11/03/2015"
-	wacn.date="12/31/2015"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/21/2016"/>
 
 
 #使用现有播放器播放内容
@@ -78,4 +78,4 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
  
 [AMSPlayer]: ./media/media-services-playback-content-with-existing-players/media-services-portal-player.png
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0314_2016-->
