@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="推送通知入门 (Android JavaScript) | Azure"
+	pageTitle="推送通知入门 (Android JavaScript) | Microsoft Azure"
 	description="了解如何使用 Azure 移动服务向 Android JavaScript 应用程序发送推送通知。"
 	services="mobile-services, notification-hubs"
 	documentationCenter="android"
@@ -11,8 +11,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="10/06/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/20/2016"
+	wacn.date="03/21/2016"/>
 
 
 #  向移动服务 Android 应用程序添加推送通知

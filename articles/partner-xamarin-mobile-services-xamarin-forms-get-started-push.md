@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/05/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/22/2016"
+	wacn.date="03/21/2016"/>
 
 # 向 Xamarin.Forms 应用添加推送通知
 
@@ -224,7 +224,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
     此时将显示“上载证书”对话框。
 
-4. 单击“文件”，选择导出的 .p12 证书文件，输入密码，确保已选择正确的“模式”，单击勾选图标，然后单击“保存”。
+4. 单击“文件”，选择导出的 .p12 证书文件，输入“密码”，确保已选择正确的“模式”，单击勾选图标，然后单击“保存”。
 
     ![][20]
 
@@ -612,6 +612,10 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
         }
 
 8. 为项目编译所需的 **OnUnRegistered()** 和 **OnError()** 添加以下方法重写。
+	protected override void OnUnRegistered(Context context, string registrationId)
+	{
+	      Log.Error("GcmService", "Unregistered RegisterationId : " + registrationId);
+	}
 
         protected override void OnError(Context context, string errorId)
         {

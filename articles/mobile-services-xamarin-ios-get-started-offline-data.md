@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在移动服务中使用脱机数据 (Xamarin iOS) | Azure" 
+	pageTitle="在移动服务中使用脱机数据 (Xamarin iOS) | Microsoft Azure" 
 	description="了解如何使用 Azure 移动服务向 Xamarin iOS 应用程序中的缓存和同步离线数据" 
 	documentationCenter="xamarin" 
 	authors="lindydonna" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/02/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/21/2016"
+	wacn.date="03/21/2016"/>
 
 #  在移动服务中使用脱机数据同步
 
@@ -110,7 +110,7 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
     - `InsertTodoItemAsync`
     - `CompleteItemAsync`
-    - `RefreshAsync`
+    - `RefreshDataAsync`
 
     现在，`RefreshAsync()` 只会从本地存储加载数据，而不会连接到应用程序后端。
 

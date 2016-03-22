@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="适用于 Xamarin.Android 的移动服务入门 | Azure" 
+	pageTitle="适用于 Xamarin.Android 的移动服务入门 | Microsoft Azure" 
 	writer="craigd" 
 	description="了解如何对 Xamarin.Android 应用程序使用 Azure 移动服务。" 
 	documentationCenter="xamarin" 
@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/05/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/10/2016"
+	wacn.date="03/21/2016"/>
 
 #  <a name="getting-started"></a>移动服务入门
 
@@ -101,8 +101,7 @@
 * [推送通知入门 ]
  了解如何向应用程序发送一条很基本的推送通知。
 
-* [如何使用 Azure 移动服务的 Xamarin 组件客户端](/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library)  
-  了解如何查询移动服务、处理数据和访问自定义 API。
+
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 

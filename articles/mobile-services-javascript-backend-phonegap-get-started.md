@@ -1,5 +1,5 @@
 <properties
-	pageTitle="适用于 PhoneGap/cordova 应用的 Azure 移动服务入门 | Azure"
+	pageTitle="使用 Azure 移动服务开发 PhoneGap/cordova 应用入门 | Microsoft Azure"
 	description="请按照本教程中的说明操作，开始使用用于 PhoneGap 开发的 Azure 移动服务（面向 iOS、, Android 和 Windows Phone）。"
 	services="mobile-services"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="11/06/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/10/2016"
+	wacn.date="03/21/2016"/>
 
 #  移动服务入门
 
@@ -31,7 +31,7 @@
 
 + PhoneGap 工具（Windows Phone 8 项目需要 v3.2+）。
 
-+ 有效的 Azure 帐户。
++ 有效的 Microsoft Azure 帐户。
 
 + PhoneGap 支持针对多个平台进行开发。除了 PhoneGap 工具本身以外，还必须为你所要针对的每个平台安装工具：
 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将移动服务添加到现有应用 (WP8) | Azure" 
+	pageTitle="将移动服务添加到现有应用 (WP8) | Microsoft Azure" 
 	description="了解如何使用来自 Azure 移动服务 Windows Phone 8 应用程序的数据。" 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="11/11/2015" 
-	wacn.date="01/29/2016"/>
+	wacn.date="03/21/2016"/>
 
 
 #  将移动服务添加到现有应用程序
@@ -22,7 +22,7 @@
 
 ##概述
 
-此主题说明如何通过 Azure 移动服务来利用 Windows Phone 8 应用程序中的数据。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。  
+此主题说明如何通过 Azure 移动服务来利用 Windows Phone 8 应用程序中的数据。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 [Azure 经典门户]以查看运行该应用程序时对数据所做的更改。
 
 ## 先决条件 
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="适用于 Windows 应用商店应用的移动服务入门 (C#) | Azure"
+	pageTitle="适用于 Windows 应用商店应用的移动服务入门 (C#) | Microsoft Azure"
 	description="按照本教程开始使用 Azure 移动服务通过 C# 进行 Windows 应用商店开发。"
 	services="mobile-services"
 	documentationCenter="windows"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="11/06/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/10/2016"
+	wacn.date="03/21/2016"/>
 
 # <a name="getting-started"> </a>移动服务入门
 
@@ -75,8 +75,8 @@
 * [向应用添加推送通知][Get started with push notifications]
 了解如何向应用发送一条很基本的推送通知。
 
-* [如何使用 .NET 客户端库](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
-了解如何查询移动服务、处理数据和访问自定义 API。
+* [如何使用 .NET 客户端库](/documentation/articles/mobile-services-dotnet-how-to-use-client-library)  
+ 了解如何查询移动服务、处理数据和访问自定义 API。
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 

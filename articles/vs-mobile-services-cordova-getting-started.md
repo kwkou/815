@@ -1,16 +1,16 @@
 <properties
-	pageTitle="Cordova 移动服务项目（Visual Studio 连接服务）入门 | Azure"
+	pageTitle="Cordova 移动服务项目（Visual Studio 连接服务）入门 | Microsoft Azure"
 	description="描述使用 Visual Studio 连接服务将 Cordova 项目连接到 Azure 移动服务后可以执行的前几个步骤。"
 	services="mobile-services"
 	documentationCenter=""
-	authors="TomArcher"
-	manager="douge" 
+	authors="mlhoop"
+	manager="douge"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.date="01/05/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="03/21/2016"/>
 
 #  移动服务入门（Cordova 项目）
 

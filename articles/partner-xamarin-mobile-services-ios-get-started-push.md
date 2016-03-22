@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="12/03/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/11/2016"
+	wacn.date="03/21/2016"/>
 
 #  向移动服务应用程序添加推送通知
 
