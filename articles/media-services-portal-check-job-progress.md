@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/04/2015"
-	wacn.date="01/14/2016"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/21/2016"/>
 
 #如何：检查作业进度
 
@@ -21,12 +21,14 @@
 
 ##使用门户检查作业状态
 
-1. 在[管理门户](http://manage.windowsazure.cn)中，单击“媒体服务”，然后单击媒体服务帐户名。
+1. 在 [Azure 管理门户](http://manage.windowsazure.cn)中，单击“媒体服务”，然后单击媒体服务帐户名。
 2. 选择“作业”页。 
 
 	在该页上，你可以看到所有作业的状态。你还可以按状态、时间或作业 ID 进行筛选。
 
 	![CheckStatus][checkstatus]
+
+
 
 ##后续步骤
 
@@ -36,4 +38,4 @@
 [checkstatus]: ./media/media-services-portal-check-job-progress/media-services-monitor-job-progress.png
  
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0314_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
-	wacn.date="01/14/2016"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/21/2016"/>
 
 #媒体服务 PlayReady 许可证模板概述
 
@@ -46,7 +46,7 @@ XML 符合 PlayReady 许可证模板 XML 架构部分中定义的 PlayReady 许�
 
 媒体服务还可定义一组可用于序列化到 XML 和从 XML 反序列化的 .NET 类。有关主类的描述，请参阅用于配置许可证模板的[媒体服务 .NET 类](/documentation/articles/media-services-playready-license-template-overview#classes)。
 
-有关使用 .NET 类来配置 PlayReady 许可证模板的端到端示例，请参阅[使用 PlayReady 动态加密和许可证传送服务](https://msdn.microsoft.com/zh-cn/library/azure/dn783467.aspx)。
+有关使用 .NET 类来配置 PlayReady 许可证模板的端到端示例，请参阅[使用 PlayReady 动态加密和许可证传送服务](/documentation/articles/media-services-protect-with-drm)。
 
 ##<a id="classes"></a>用于配置许可证模板的媒体服务 .NET 类
 
@@ -297,4 +297,4 @@ XML 符合 PlayReady 许可证模板 XML 架构部分中定义的 PlayReady 许�
 	  <xs:element name="ScmsRestriction" nillable="true" type="tns:ScmsRestriction" />
 	</xs:schema>
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0314_2016-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何将媒体服务与 Java 结合使用" 
+	pageTitle="如何将 Azure 媒体服务与 Java 配合使用" 
 	description="介绍如何使用 Azure 媒体服务执行编码、加密和流式处理资源等常见任务。" 
 	services="media-services" 
 	documentationCenter="java" 
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/08/2015"
-	wacn.date="01/14/2016"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/21/2016"/>
 
 #如何将媒体服务与 Java 结合使用
 
@@ -18,11 +18,11 @@
 
 ##<a id="setup-account"></a>为媒体服务设置 Azure 帐户
 
-若要设置你的媒体服务帐户，请使用 Azure 管理门户。请参阅主题[如何创建媒体服务帐户](/documentation/articles/media-services-create-account)。在管理门户中创建帐户后，便可以设置你的计算机以进行媒体服务开发。
+若要设置你的媒体服务帐户，请使用 Azure 管理门户。请参阅主题[如何创建媒体服务帐户](/documentation/articles/media-services-create-account)。在 Azure 管理门户中创建帐户后，便可以设置你的计算机以进行媒体服务开发。
 
 ##<a id="setup-dev"></a>完成设置以进行媒体服务开发
 
-本部分介绍使用 Media Services SDK for Java 进行媒体服务开发需要满足的一般性先决条件。
+本部分介绍使用用于 Java 的媒体服务 SDK 进行媒体服务开发需要满足的一般性先决条件。
 
 ###先决条件
 
@@ -31,12 +31,12 @@
 
 ##<a if="connect"></a>如何将媒体服务与 Java 结合使用
 
-以下代码演示了如何创建一个资产、如何将媒体文件上载到该资产、如何使用任务运行某个作业以转换该资产，以及如何下载转换后的资产的输出文件。
+以下代码演示了如何创建一个资产、如何将媒体文件上载到该资产、如何使用任务运行某个作业以转换该资产，以及如何创建一个定位符用于流式传输你的视频。
 
 在使用此代码之前，需要设置一个媒体服务帐户。有关设置帐户的信息，请参阅[如何创建媒体服务帐户](/documentation/articles/media-services-create-account)。
 
 将 `clientId` 和 `clientSecret` 变量替换为你的值。该代码还依赖于本地存储的文件。你需要提供自己的文件以供使用。
-
+	
 	import java.io.*;
 	import java.security.NoSuchAlgorithmException;
 	import java.util.EnumSet;
@@ -66,7 +66,7 @@
 	import com.microsoft.windowsazure.services.media.models.Task;
 	
 	
-	public class HelloMediaServices 
+	public class HelloMediaServices
 	{
 	    // Media Services account credentials configuration
 	    private static String mediaServiceUri = "https://media.windows.cn/API/";
@@ -81,86 +81,89 @@
 		
 		public static void main(String[] args)
 		{
-
-		   try {
-	            // Set up the MediaContract object to call into the Media Services account
-	            Configuration configuration = MediaConfiguration.configureWithOAuthAuthentication(
-	                    mediaServiceUri, oAuthUri, clientId, clientSecret, scope);
-	            mediaService = MediaService.create(configuration);
-
-	            
-	            // Upload a local file to an Asset
-	            AssetInfo uploadAsset = uploadFileAndCreateAsset("BigBuckBunny.mp4");
-	            System.out.println("Uploaded Asset Id: " + uploadAsset.getId());
-	            
-
-	            // Transform the Asset
-	            AssetInfo encodedAsset = encode(uploadAsset);
-	            System.out.println("Encoded Asset Id: " + encodedAsset.getId());
-	            
-	            // Create the Streaming Origin Locator
-	            String url = getStreamingOriginLocator(encodedAsset);
-
-	            System.out.println("Origin Locator URL: " + url);
-	            System.out.println("Sample completed!");
-	            
-	        } catch (ServiceException se) {
-	            System.out.println("ServiceException encountered.");
-	            System.out.println(se.toString());
-	        } catch (Exception e) {
-	            System.out.println("Exception encountered.");
-	            System.out.println(e.toString());
-	        }
-		  
-		}
 		
-	    private static AssetInfo uploadFileAndCreateAsset(String fileName)
-	            throws ServiceException, FileNotFoundException, NoSuchAlgorithmException {
-	        WritableBlobContainerContract uploader;
-	        AssetInfo resultAsset;
-	        AccessPolicyInfo uploadAccessPolicy;
-	        LocatorInfo uploadLocator = null;
+			try {
+				// Set up the MediaContract object to call into the Media Services account
+				Configuration configuration = MediaConfiguration.configureWithOAuthAuthentication(
+				mediaServiceUri, oAuthUri, clientId, clientSecret, scope);
+				mediaService = MediaService.create(configuration);
+				
+				
+				// Upload a local file to an Asset
+				AssetInfo uploadAsset = uploadFileAndCreateAsset("BigBuckBunny.mp4");
+				System.out.println("Uploaded Asset Id: " + uploadAsset.getId());
+				
+				
+				// Transform the Asset
+				AssetInfo encodedAsset = encode(uploadAsset);
+				System.out.println("Encoded Asset Id: " + encodedAsset.getId());
+				
+				// Create the Streaming Origin Locator
+				String url = getStreamingOriginLocator(encodedAsset);
+				
+				System.out.println("Origin Locator URL: " + url);
+				System.out.println("Sample completed!");
+			
+			} catch (ServiceException se) {
+				System.out.println("ServiceException encountered.");
+				System.out.println(se.toString());
+			} catch (Exception e) {
+				System.out.println("Exception encountered.");
+				System.out.println(e.toString());
+			}
+		
+		}
 	
-	        // Create an Asset
-	        resultAsset = mediaService.create(Asset.create().setName(fileName).setAlternateId("altId"));
-	        System.out.println("Created Asset " + fileName);
+		private static AssetInfo uploadFileAndCreateAsset(String fileName)
+			throws ServiceException, FileNotFoundException, NoSuchAlgorithmException {
+
+			WritableBlobContainerContract uploader;
+			AssetInfo resultAsset;
+			AccessPolicyInfo uploadAccessPolicy;
+			LocatorInfo uploadLocator = null;
+			
+			// Create an Asset
+			resultAsset = mediaService.create(Asset.create().setName(fileName).setAlternateId("altId"));
+			System.out.println("Created Asset " + fileName);
+			
+			// Create an AccessPolicy that provides Write access for 15 minutes
+			uploadAccessPolicy = mediaService
+				.create(AccessPolicy.create("uploadAccessPolicy", 15.0, EnumSet.of(AccessPolicyPermission.WRITE)));
+			
+			// Create a Locator using the AccessPolicy and Asset
+			uploadLocator = mediaService
+				.create(Locator.create(uploadAccessPolicy.getId(), resultAsset.getId(), LocatorType.SAS));
+			
+			// Create the Blob Writer using the Locator
+			uploader = mediaService.createBlobWriter(uploadLocator);
+			
+			File file = new File("BigBuckBunny.mp4");//(ConnectToAMSView.class.getClassLoader().getResource("").getPath() + fileName);
+			
+			// The local file that will be uploaded to your Media Services account
+			InputStream input = new FileInputStream(file);
+			
+			System.out.println("Uploading " + fileName);
+			
+			// Upload the local file to the asset
+			uploader.createBlockBlob(fileName, input);
+			
+			// Inform Media Services about the uploaded files
+			mediaService.action(AssetFile.createFileInfos(resultAsset.getId()));
+			System.out.println("Uploaded Asset File " + fileName);
+			
+			mediaService.delete(Locator.delete(uploadLocator.getId()));
+			mediaService.delete(AccessPolicy.delete(uploadAccessPolicy.getId()));
+			
+			return resultAsset;
+		}
 	
-	        // Create an AccessPolicy that provides Write access for 15 minutes
-	        uploadAccessPolicy = mediaService
-	                .create(AccessPolicy.create("uploadAccessPolicy", 15.0, EnumSet.of(AccessPolicyPermission.WRITE)));
+		// Create a Job that contains a Task to transform the Asset
+		private static AssetInfo encode(AssetInfo assetToEncode)
+			throws ServiceException, InterruptedException {
 	
-	        // Create a Locator using the AccessPolicy and Asset
-	        uploadLocator = mediaService
-	                .create(Locator.create(uploadAccessPolicy.getId(), resultAsset.getId(), LocatorType.SAS));
-	
-	        // Create the Blob Writer using the Locator
-	        uploader = mediaService.createBlobWriter(uploadLocator);
-	
-	        File file = new File("BigBuckBunny.mp4");//(ConnectToAMSView.class.getClassLoader().getResource("").getPath() + fileName);
-	        
-	        // The local file that will be uploaded to your Media Services account
-	        InputStream input = new FileInputStream(file);
-	
-	        System.out.println("Uploading " + fileName);
-	
-	        // Upload the local file to the asset
-	        uploader.createBlockBlob(fileName, input);
-	
-	        // Inform Media Services about the uploaded files
-	        mediaService.action(AssetFile.createFileInfos(resultAsset.getId()));
-	        System.out.println("Uploaded Asset File " + fileName);
-	
-	        mediaService.delete(Locator.delete(uploadLocator.getId()));
-	        mediaService.delete(AccessPolicy.delete(uploadAccessPolicy.getId()));
-	
-	        return resultAsset;
-	    }
-	    // Create a Job that contains a Task to transform the Asset
-	    private static AssetInfo encode(AssetInfo assetToEncode)
-	            throws ServiceException, InterruptedException {
-	        // Retrieve the list of Media Processors that match the name
-	        ListResult<MediaProcessorInfo> mediaProcessors = mediaService
-	                .list(MediaProcessor.list().set("$filter", String.format("Name eq '%s'", preferedEncoder)));
+			// Retrieve the list of Media Processors that match the name
+			ListResult<MediaProcessorInfo> mediaProcessors = mediaService
+			                .list(MediaProcessor.list().set("$filter", String.format("Name eq '%s'", preferedEncoder)));
 	
 	        // Use the latest version of the Media Processor
 	        MediaProcessorInfo mediaProcessor = null;
@@ -247,6 +250,8 @@
 	}
 
 
+
+
 ##其他资源
 
 有关媒体服务 Javadoc 文档，请参阅[适用于 Java 的 Azure 库文档][]。
@@ -257,4 +262,6 @@
   [适用于 Java 的 Azure 库文档]: http://azure.github.io/azure-sdk-for-java/
   [Media Services Client Development]: http://msdn.microsoft.com/zh-cn/library/azure/dn223283.aspx
 
-<!---HONumber=74-->
+ 
+
+<!---HONumber=Mooncake_0314_2016-->

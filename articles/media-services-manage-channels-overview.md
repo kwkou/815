@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/15/2015"
-	wacn.date="01/28/2016"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/21/2016"/>
 
 #使用从本地编码器接收多比特率实时流的频道
 
@@ -18,7 +18,7 @@
 
 在 Azure 媒体服务中，**频道**表示用于处理实时流内容的管道。**频道**通过以下方式接收实时输入流：
 
-- 本地实时编码器将多比特率 **RTMP** 或 **平滑流**（分片 MP4）发送到频道。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Live、Telestream Wirecast 和 Tricaster 转码器。引入的流将会直接通过，而不会经过任何进一步的处理。你的实时编码器可以 lso 发送单比特率流，但不是建议使用。收到请求时，媒体服务会将该流传递给客户。
+- 本地实时编码器将多比特率 **RTMP** 或 **平滑流**（分片 MP4）发送到频道。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Live、Telestream Wirecast 和 Tricaster 转码器。引入的流将会直接通过**频道**，而不会经过任何进一步的处理。你的实时编码器可以 lso 发送单比特率流，但不是建议使用。收到请求时，媒体服务会将该流传递给客户。
 
 
 下图表示的是一个使用本地实时编码器输出多比特率 RTMP 或分片 MP4 流（平滑流式处理）的实时流式处理工作流。
@@ -29,12 +29,13 @@
 
 - [常见实时流式处理方案](/documentation/articles/media-services-manage-channels-overview#scenario)
 - [频道及其相关组件的说明](/documentation/articles/media-services-manage-channels-overview#channel)
-- [注意事项](/documentation/articles/media-services-manage-channels-overview#Considerations)
+- [注意事项](/documentation/articles/media-services-manage-channels-overview#considerations)
+- [与实时流式处理相关的任务](/documentation/articles/media-services-manage-channels-overview#tasks)
 
 ##<a id="scenario"></a>常见实时流式处理方案
 以下步骤介绍创建常见的实时流式处理应用程序时涉及的任务。
 
-1. 将视频摄像机连接到计算机。启动并配置输出多比特率 RTMP 或分段 MP4（平滑流式处理）流的本地实时编码器接收实时输入流。有关详细信息，请参阅 [Azure Media Services RTMP 支持和实时编码器](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/)。
+1. 将视频摄像机连接到计算机。启动并配置输出多比特率 RTMP 或分段 MP4（平滑流式处理）流的本地实时编码器接收实时输入流。有关详细信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/)。
 	
 	此步骤也可以在创建频道后执行。
 
@@ -138,7 +139,7 @@
 
 ####允许的 IP 地址
 
-你可以定义允许向此频道发布视频的 IP 地址。允许的 IP 地址可以指定为单个 IP 地址（例如“10.0.0.1”）、使用一个 IP 地址和 CIDR 子网掩码的 IP 范围（例如“10.0.0.1/22”），或使用一个 IP 地址和点分十进制子网掩码的 IP 范围（例如“10.0.0.1(255.255.252.0)”）。
+你可以定义允许向此频道发布视频的 IP 地址。允许的 IP 地址可以指定为单个 IP 地址（例如 ‘10.0.0.1’）或指定为使用一个 IP 地址和 CIDR 子网掩码的 IP 范围（例如 ‘10.0.0.1/22’）或指定为使用一个 IP 地址和点分十进制子网掩码的 IP 范围（例如 ‘10.0.0.1(255.255.252.0)’）。
 
 如果未指定 IP 地址并且没有规则定义，则不会允许任何 IP 地址。若要允许任何 IP 地址，请创建一个规则并设置 0.0.0.0/0。
 
@@ -203,7 +204,7 @@
 正在停止|正在停止|否（暂时状态）
 已停止|已停止|否
 
-###隐藏字幕和广告插入 
+##<a id="cc_and_ads"></a>隐藏字幕和广告插入 
 
 下表展示了支持的隐藏字幕和广告插入标准。
 
@@ -257,4 +258,4 @@ SCTE-35|用来提示广告插入的数字信号系统。下游接收器使用该
 [live-overview]: ./media/media-services-manage-channels-overview/media-services-live-streaming-current.png
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0314_2016-->

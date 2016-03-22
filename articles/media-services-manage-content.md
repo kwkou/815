@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="11/09/2015"
-	wacn.date="01/18/2016"/>
+	ms.date="02/04/2016"   
+	wacn.date="03/21/2016"/>
 
 
 # 使用 Azure 管理门户管理 Azure 媒体服务的内容
@@ -29,18 +29,13 @@
 - 播放内容
 
 
-##<a id="upload"></a>如何：上载内容 
+##<a id="upload"></a>如何：上载内容
 
 
-<div class="technical-azure-selector">
-<a href="/documentation/articles/media-services-manage-content">Portal</a>
-<a href="/documentation/articles/media-services-dotnet-upload-files">.NET</a>
-<a href="/documentation/articles/media-services-rest-upload-files">REST API</a>
-</div>
-<!---HONumber=67-->
+[AZURE.INCLUDE [media-services-selector-upload-files](../includes/media-services-selector-upload-files.md)]
 
 
-1. 在[管理门户](http://manage.windowsazure.cn)中，单击“媒体服务”，然后单击媒体服务帐户名。
+1. 在 [Azure 管理门户](http://manage.windowsazure.cn)中，单击“媒体服务”，然后单击媒体服务帐户名。
 2. 选择“内容”页。 
 3. 单击该页上或者门户底部的“上载”按钮。 
 4. 在“上载内容”对话框中，浏览到所需的资产文件。单击该文件，然后单击“打开”或按 **Enter**。
@@ -64,16 +59,16 @@
 <a href="/documentation/articles/media-services-index-content">.NET</a>
 <a href="/documentation/articles/media-services-manage-content#index">门户</a>
 </div>
-使用 Azure 媒体索引器，可以使媒体文件内容可供搜索，并为隐藏的字幕和关键字生成全文本脚本。你可以根据下面所示的步骤，使用管理门户为内容编制索引。但是，如果你想要以更大的力度控制文件和索引作业的完成方式，可以使用 Media Services SDK for .NET 或 REST API。有关详细信息，请参阅[使用 Azure 媒体索引器为媒体文件编制索引](/documentation/articles/media-services-index-content)。
+使用 Azure 媒体索引器，可以使媒体文件内容可供搜索，并为隐藏的字幕和关键字生成全文本脚本。你可以根据下面所示的步骤，使用 Azure 管理门户为内容编制索引。但是，如果你想要以更大的力度控制文件和索引作业的完成方式，可以使用适用于 .NET 的媒体服务 SDK 或 REST API。有关详细信息，请参阅[使用 Azure 媒体索引器为媒体文件编制索引](/documentation/articles/media-services-index-content)。
 
-下面的步骤演示如何使用管理门户为内容编制索引。
+下面的步骤演示如何使用 Azure 管理门户为内容编制索引。
 
 1. 选择要编制索引的文件。如果此文件类型支持索引，则“内容”页底部将启用“处理”按钮。
 1. 按“处理”按钮。
 2. 在“处理”对话框中，选择“Azure 媒体索引器”处理器。
 3. 然后，在“处理”对话框中，填写输入媒体文件的详细**标题**和**说明**信息。
-	
-	![过程][process]
+
+![过程][process]
 
 ##<a id="encode"></a>如何：对内容进行编码
 
@@ -97,36 +92,25 @@
 
 请注意，除了能够使用动态打包功能以外，点播流保留单元也为你提供可购买的专用流出容量（以 200 Mbps 为增量来购买）。默认情况下，点播流在共享实例模型中配置，该模型的服务器资源（例如计算机、出口容量等）与所有其他用户共享。若要增加按需流式处理吞吐量，建议购买按需流式处理保留单位。
 
-本部分介绍通过管理门户使用 Azure 媒体编码器为内容编码时可以执行的步骤。
+本部分介绍通过 Azure 管理门户使用 Azure 媒体编码器为内容编码时可以执行的步骤。
 
 1.  选择要编码的文件。如果此文件类型支持编码，则“内容”页底部将启用“处理”按钮。
 4. 在“处理”对话框中，选择“Azure 媒体编码器”处理器。
 5. 选择其中一个“编码配置”。
 
-	![Process2][process2]
-
-		
-	[Azure 媒体编码器的任务预设字符串](https://msdn.microsoft.com/zh-cn/library/azure/dn619392.aspx)主题说明了**自适应流式传输（动态打包）的预设**、**渐进式下载的预设**、**自适应流式传输的传统预设**等类别中各项预设的含义。
+![Process2][process2]
 
 
-	下面介绍“其他”配置：
-
-	+ **使用 PlayReady 内容保护进行编码**。此预设格式会生成以 PlayReady 内容保护编码的资产。  
-	
-	
-		默认情况下，将使用媒体服务 PlayReady 许可证服务。若要指定其他可让客户端从中获取许可证以播放 PlayReady 加密内容的服务，请使用 REST 或 Media Services .NET SDK API。有关详细信息，请参阅[使用静态加密保护内容](#)，并设置“媒体加密器”预设中的 **licenseAcquisitionUrl** 属性。或者，你可以使用动态加密，并根据[使用 PlayReady 动态加密和许可证传送服务](/documentation/articles/media-services-protect-with-drm)来设置 **PlayReadyLicenseAcquisitionUrl** 属性。 
-	+ **在 PC/Mac 上（通过 Flash/Silverlight）播放**。此预设将生成带有以下特征的平滑流式处理资产：使用 AAC 按照 96 kbps 速率进行 CBR 编码的 44.1 kHz（16 位/采样）立体声音频，使用 H.264 Main Profile 按照 6 种比特率（3400 kbps 到 400 kbps）进行 CBR 编码的 720p 视频，以及两个辅助 GOP。
-	+ **通过 HTML5 (IE/Chrome/Safari) 播放**。此预设将生成具有以下特征的单个 MP4 文件：使用 AAC 按照 128 kbps 速率进行 CBR 编码的 44.1 kHz（16 位/采样）立体声音频，使用 H.264 Main Profile 按照 4500 kbps 速率进行 CBR 编码的 720p 视频。
-	+ **在 iOS 设备和 PC/Mac 上播放**。此预置生成与平滑流式资产（如上所述）具有相同特性的资产，但是采用可以将 Apple HLS 流传递到 iOS 设备的格式。 
+[媒体编码器标准的任务预设字符串](https://msdn.microsoft.com/zh-cn/library/mt269960)主题说明了每个预设的含义。
 
 5. 然后，输入所需的友好输出内容名称或接受默认值。然后，单击勾选按钮开始编码操作，你可以在门户底部跟踪进度。
 6. 按“确定”。
 
-	完成编码后，“内容”页将包含已编码的文件。
+完成编码后，“内容”页将包含已编码的文件。
 
-	若要查看编码作业的进度，请切换到“作业”页。
+若要查看编码作业的进度，请切换到“作业”页。
 
-	如果在完成编码后未更新文件大小值，请按“同步元数据”按钮。这会将输出资产文件大小与存储中的实际文件大小同步，并刷新“内容”页上的值。
+如果在完成编码后未更新文件大小值，请按“同步元数据”按钮。这会将输出资产文件大小与存储中的实际文件大小同步，并刷新“内容”页上的值。
 
 ##<a id="encrypt"></a>如何：对内容进行加密
 
@@ -181,9 +165,9 @@ SAS URL 采用以下格式：
 
 定位符附带过期日期。当你使用门户发布资产时，将会创建过期日期在 100 年后的定位符。
 
->[AZURE.NOTE]如果你使用门户在 2015 年 3 月之前创建了定位符，则会创建过期日期在两年后的定位符。
+>[AZURE.NOTE] 如果你使用门户在 2015 年 3 月之前创建了定位符，则会创建过期日期在两年后的定位符。
 
-若要更新定位符的过期日期，请使用 [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator) 或 [.NET](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
+若要更新定位符的过期日期，请使用 [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator) 或 [.NET] (https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
 
 ###发布
 
@@ -206,7 +190,6 @@ SAS URL 采用以下格式：
 - 确保视频已发布。
 - **媒体服务内容播放器**从默认的流式处理终结点播放。如果要从非默认流式处理终结点播放，请使用其他播放器。例如 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
 
-
 ![AMSPlayer][AMSPlayer]
 
 <!-- Images -->
@@ -222,4 +205,4 @@ SAS URL 采用以下格式：
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-manage-content/media-services-portal-player.png
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0314_2016-->

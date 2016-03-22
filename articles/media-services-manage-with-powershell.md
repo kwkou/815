@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/08/2015"
-	wacn.date="01/14/2016"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/21/2016"/>
 
 
 #使用 PowerShell 管理 Azure 媒体服务帐户
@@ -20,7 +20,7 @@
 - [PowerShell](/documentation/articles/media-services-manage-with-powershell)
 - [REST](http://msdn.microsoft.com/zh-cn/library/azure/dn194267.aspx)
 
-> [AZURE.NOTE]若要创建 Azure 媒体服务帐户，你必须有一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/?WT.mc_id=A8A8397B5" target="_blank">Azure 试用</a>。
+> [AZURE.NOTE] 若要创建 Azure 媒体服务帐户，你必须有一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/?WT.mc_id=A8A8397B5" target="_blank">Azure 试用</a>。
 
 ##概述 
 
@@ -109,4 +109,4 @@ Azure 媒体服务使用 Azure 存储空间来存储媒体内容。当你创建�
 
  
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0314_2016-->
