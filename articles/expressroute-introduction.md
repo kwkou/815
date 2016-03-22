@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="ExpressRoute 简介 | Azure"
-   description="本页提供 ExpressRoute 服务的概述，包括 ExpressRoute 连接的工作方式、使用 Exchange 提供商和网络服务提供商，以及 ExpressRoute 公共对等互连、专用对等互连。"
+   pageTitle="ExpressRoute 简介 | Microsoft Azure"
+   description="本页提供 ExpressRoute 服务的概述，包括 ExpressRoute 连接的工作原理。"
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
@@ -8,30 +8,30 @@
    editor=""/>
 <tags 
    ms.service="expressroute"
-   ms.date="09/22/2015"
-   wacn.date="01/14/2016"/>
+   ms.date="01/16/2016"
+   wacn.date="03/17/2016"/>
 
 # ExpressRoute 技术概述
 
-Azure ExpressRoute 可让你通过连接服务提供商所提供的专用连接，将本地网络扩展到 Azure 云。使用 ExpressRoute 可与 Azure云服务建立连接。可以从任意位置之间的 (IP VPN) 网络、点到点以太网或在共置设施上通过连接服务提供商的虚拟交叉连接来建立这种连接。ExpressRoute 连接不通过公共 Internet 。与通过 Internet 的典型连接相比，ExpressRoute 连接提供更高的可靠性、更快的速度、更低的延迟和更高的安全性。
+Microsoft Azure ExpressRoute 可让你通过连接服务提供商所提供的专用连接，将本地网络扩展到 Microsoft Azure 云。使用 ExpressRoute 可与 Microsoft Azure云服务建立连接。可以从任意位置之间的 (IP VPN) 网络、点到点以太网或在共置设施上通过连接服务提供商的虚拟交叉连接来建立这种连接。ExpressRoute 连接不通过公共 Internet 。与通过 Internet 的典型连接相比，ExpressRoute 连接提供更高的可靠性、更快的速度、更低的延迟和更高的安全性。
 
 ![](./media/expressroute-introduction/expressroute-basic.png)
 
 **主要优势包括：**
 
-- 通过连接服务提供商在本地网络与 Azure 云之间建立第 3 层连接。可以从任意位置之间的 (IPVPN) 网络、点到点以太网，或通过以太网交换经由虚拟交叉连接来建立这种连接。
-- 跨地缘政治区域中的所有区域连接到 Azure 云服务。
-- 通过行业标准协议 (BGP) 在你的网络与 Azure 之间进行动态路由。
+- 通过连接服务提供商在本地网络与 Microsoft Azure 云之间建立第 3 层连接。可以从任意位置之间的 (IPVPN) 网络、点到点以太网，或通过以太网交换经由虚拟交叉连接来建立这种连接。
+- 跨地缘政治区域中的所有区域连接到 Microsoft Azure 云服务。
+- 通过行业标准协议 (BGP) 在你的网络与 Microsoft Azure 之间进行动态路由。
 - 在每个对等位置提供内置冗余以提高可靠性。
 - 连接运行时间 [SLA](/support/legal/sla/)。
 
 有关详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。
 
-## 如何使用 ExpressRoute 将我的网络连接到 Azure？
+## 如何使用 ExpressRoute 将我的网络连接到 Microsoft Azure？
 
-可以通过以下方法在本地网络与 Azure 云之间建立连接。
+可以通过以下方法在本地网络与 Microsoft Azure 云之间建立连接。
 
-**点到点以太网连接。** 你可以通过点到点以太网链路，将本地数据中心/办公室连接到 Azure 云。点到点以太网提供商可以在你的站点与 Azure 云之间提供第 2 层连接。
+**点到点以太网连接。** 你可以通过点到点以太网链路，将本地数据中心/办公室连接到 Microsoft Azure 云。点到点以太网提供商可以在你的站点与 Microsoft Azure 云之间提供第 2 层连接。
 
 ![](./media/expressroute-introduction/expressroute-connectivitymodels.png)
 
@@ -42,26 +42,26 @@ ExpressRoute 支持以下特性和功能。
 
 ### 第 3 层连接
 
-Azure 采用行业标准动态路由协议 (BGP)，在本地网络、Azure 中的实例和 Azure 公共地址之间交换路由。我们根据不同的流量配置文件来与网络建立多个 BGP 会话。有关详细信息，请参阅 [ExpressRoute 线路和路由域](/documentation/articles/expressroute-circuit-peerings)一文。
+Microsoft Azure 采用行业标准动态路由协议 (BGP)，在本地网络、Azure 中的实例和 Microsoft Azure 公共地址之间交换路由。我们根据不同的流量配置文件来与网络建立多个 BGP 会话。有关详细信息，请参阅 [ExpressRoute 线路和路由域](/documentation/articles/expressroute-circuit-peerings)一文。
 
 ### 冗余
 
-每个 ExpressRoute 线路有两道连接，用于从连接服务提供商/你的网络边缘连接到两个 Azure 企业边缘路由器 (MSEE)。Azure 要求从连接服务提供商/你的一端建立双重 BGP 连接 – 各自连接到每个 MSEE。你可以选择不要在你的一端部署冗余设备/以太网路线。但是，连接服务提供商会使用冗余设备，确保以冗余方式将你的连接移交给 Azure。冗余的第 3 层连接配置是 Azure [SLA](/support/legal/sla/) 生效的条件。
+每个 ExpressRoute 线路有两道连接，用于从连接服务提供商/你的网络边缘连接到两个 Microsoft Azure 企业边缘路由器 (MSEE)。Microsoft Azure 要求从连接服务提供商/你的一端建立双重 BGP 连接 – 各自连接到每个 MSEE。你可以选择不要在你的一端部署冗余设备/以太网路线。但是，连接服务提供商会使用冗余设备，确保以冗余方式将你的连接移交给 Microsoft Azure。冗余的第 3 层连接配置是 Microsoft Azure [SLA](/support/legal/sla/) 生效的条件。
 
-### 与 Azure 云服务建立连接
+### 与 Microsoft Azure 云服务建立连接
 
 通过 ExpressRoute 连接可访问以下服务。
 
-- Azure 服务
+- Microsoft Azure 服务
 
  
 你可以访问 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)页，以获取通过 ExpressRoute 支持的服务的详细列表。
 
 ### 与地缘政治区域中的所有区域建立连接
 
-可以在我们的某个[对等位置](/documentation/articles/expressroute-locations)连接到 Azure，然后访问该地缘政治区域中的所有区域。
+可以在我们的某个[对等位置](/documentation/articles/expressroute-locations)连接到 Microsoft Azure，然后访问该地缘政治区域中的所有区域。
 
-例如，如果你在北京通过 ExpressRoute 连接到 Azure，则就能够访问在上海托管的所有 Azure 云服务。
+例如，如果你在北京通过 ExpressRoute 连接到 Microsoft Azure，则就能够访问在上海托管的所有 Microsoft Azure 云服务。
 
 ### 支持的带宽选项
 

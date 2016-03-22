@@ -1,6 +1,6 @@
 <properties
-   pageTitle="采用 ExpressRoute 所要满足的先决条件 | Azure"
-   description="本页提供了在订购 Azure ExpressRoute 线路之前需要满足的要求列表"
+   pageTitle="采用 ExpressRoute 所要满足的先决条件 | Microsoft Azure"
+   description="本页提供了在订购 Azure ExpressRoute 线路之前需要满足的要求列表。"
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
@@ -8,17 +8,17 @@
    editor=""/>
 <tags
    ms.service="expressroute"
-   ms.date="09/21/2015"
-   wacn.date="01/14/2016"/>
+   ms.date="01/16/2016"
+   wacn.date="03/17/2016"/>
 
 
 # ExpressRoute 先决条件  
 
-若要使用 ExpressRoute 连接到 Azure 服务，你需要确认是否符合以下部分中所列的要求。
+若要使用 ExpressRoute 连接到 Microsoft Azure 服务，你需要确认是否符合以下部分中所列的要求。
 
 ## 帐户要求
 
-- 使用中的有效 Azure 帐户。需有此帐户才能设置 ExpressRoute 线路。
+- 使用中的有效 Microsoft Azure 帐户。需有此帐户才能设置 ExpressRoute 线路。
 
 ## 与连接服务提供商的关系
 
@@ -32,7 +32,7 @@
 
 ## 连接的冗余要求
 
-客户基础结构与服务提供商基础结构之间的物理连接没有任何冗余要求。Azure 不要求在第 3 层配置冗余。但 Azure 确实要求在 Azure 边缘与客户网络之间，通过服务提供商针对要启用的每个对等互连设置冗余路由。如果未以冗余方式配置路由会话，服务的可用性 SLA 将会失效。
+客户基础结构与服务提供商基础结构之间的物理连接没有任何冗余要求。Microsoft Azure 不要求在第 3 层配置冗余。但 Microsoft Azure 确实要求在 Microsoft Azure 边缘与客户网络之间，通过服务提供商针对要启用的每个对等互连设置冗余路由。如果未以冗余方式配置路由会话，服务的可用性 SLA 将会失效。
 
 ## IP 地址和路由注意事项
 

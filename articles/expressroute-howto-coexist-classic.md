@@ -1,5 +1,5 @@
 <properties
-   pageTitle="配置可共存的 ExpressRoute 连接和站点到站点 VPN 连接 | Azure"
+   pageTitle="配置可共存的 ExpressRoute 连接和站点到站点 VPN 连接 | Microsoft Azure"
    description="本教程将指导你配置可共存的 ExpressRoute 连接和站点到站点 VPN 连接。"
    documentationCenter="na"
    services="expressroute"
@@ -9,17 +9,17 @@
    tags="azure-service-management"/>
 <tags
    ms.service="expressroute"
-   ms.date="09/22/2015"
-   wacn.date="11/27/2015"/>
+   ms.date="01/16/2016"
+   wacn.date="03/17/2015"/>
 
 # 配置可共存的针对 VNet 的 ExpressRoute 连接和站点到站点 VPN 连接
 
-能够配置站点到站点 VPN 和 ExpressRoute 具有多项优势。你可以将站点到站点 VPN 配置为 ExressRoute 的安全故障转移路径，或者使用站点到站点 VPN 连接到不属于你网络的一部分但却已通过 ExpressRoute 进行连接的站点。我们将在本文中介绍这两种方案的配置步骤。本文适用于使用典型部署模型创建的连接。
+能够配置站点到站点 VPN 和 ExpressRoute 具有多项优势。你可以将站点到站点 VPN 配置为 ExressRoute 的安全故障转移路径，或者使用站点到站点 VPN 连接到不属于你网络的一部分但却已通过 ExpressRoute 进行连接的站点。我们将在本文中介绍这两种方案的配置步骤。当前只能使用经典部署模型创建此配置。当我们获得适用于资源管理器部署模型的文档时，我们将在此处链接到它。
 
->[AZURE.IMPORTANT]请务必了解 Azure 当前使用两种部署模型：资源管理器和经典部署模型。在开始你的配置之前，请确保你了解部署模型和工具。
+>[AZURE.IMPORTANT] 请务必了解 Azure 当前使用两种部署模型：资源管理器和经典部署模型。在开始你的配置之前，请确保你了解部署模型和工具。有关部署模型的信息，请参阅 [Azure 部署模型](/documentation/articles/azure-classic-rm)
 
 
-按以下说明进行操作之前，必须预先配置ExpressRoute 线路。在按以下步骤操作之前，请务必遵循相关指南来[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)和<!--[-->配置路由<!--](/documentation/articles/expressroute-howto-routing-classic)-->。
+按以下说明进行操作之前，必须预先配置ExpressRoute 线路。在按以下步骤操作之前，请务必遵循相关指南来[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)和[配置路由](/documentation/articles/expressroute-howto-routing-classic)。
 
 ## 限制和局限性
 
@@ -65,7 +65,7 @@
 
 1. 验证你是否有最新版本的 PowerShell cmdlet。可以从[下载页](/downloads/)的 PowerShell 部分下载和安装最新的 PowerShell cmdlet。
 
-2. 创建虚拟网络的架构。<!--有关使用网络配置文件的详细信息，请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal)。-->有关配置架构的详细信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)。
+2. 创建虚拟网络的架构。有关使用网络配置文件的详细信息，请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal)。有关配置架构的详细信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)。
 
 	在创建架构时，请确保使用以下值：
 

@@ -1,16 +1,16 @@
 <properties
-   pageTitle="如何配置 ExpressRoute 线路的路由 | Azure"
+   pageTitle="如何配置 ExpressRoute 线路的路由 | Microsoft Azure"
    description="本文将指导你完成创建和预配 ExpressRoute 线路的专用、公共和 Microsoft 对等互连的步骤。本文还介绍了如何检查状态，以及如何更新或删除线路的对等互连。"
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-resource-manager"/>
 <tags
    ms.service="expressroute"
-   ms.date="11/12/2015"
-   wacn.date="12/17/2015"/>
+   ms.date="02/04/2016"
+   wacn.date="03/17/2016"/>
 
 # 使用 Azure 资源管理器和 PowerShell 创建和修改 ExpressRoute 线路的路由
 
@@ -18,7 +18,7 @@
 [PowerShell - Classic](/documentation/articles/expressroute-howto-routing-classic)
 [PowerShell - Resource Manager](/documentation/articles/expressroute-howto-routing-arm)
 
-本文将指导你执行相关步骤，以便使用 PowerShell cmdlet 和 Azure 资源管理器部署模型创建和管理 ExpressRoute 线路的路由配置。下面的步骤还将说明如何查看状态，以及如何更新、删除和取消预配 ExpressRoute 线路的对等互连。
+本文将指导你执行相关步骤，以便使用 PowerShell cmdlet 和 Azure 资源管理器部署模型创建和管理 ExpressRoute 线路的路由配置。下面的步骤还将说明如何查看状态，以及如何更新、删除和取消预配 ExpressRoute 线路的对等互连。如果要使用 **经典** 部署模型创建或修改 ExpressRoute 线路的路由，请参阅[使用经典部署模型创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-classic)。
 
 [AZURE.INCLUDE [vpn-gateway-sm-rm](../includes/vpn-gateway-sm-rm-include.md)] 
 
@@ -26,7 +26,7 @@
 
 - 你将需要最新版本的 Azure PowerShell 模块（版本 1.0 或更高版本）。 
 - 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites)页、[路由要求](/documentation/articles/expressroute-routing)页和[工作流](/documentation/articles/expressroute-workflows)页。
-- 你必须有一个活动的 ExpressRoute 线路。在继续下一步之前，请按说明[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)，并通过连接提供商启用该线路。ExpressRoute 线路必须处于已预配和已启用状态，你才能运行下述 cmdlet。
+- 你必须有一个活动的 ExpressRoute 线路。在继续下一步之前，请按说明[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm)，并通过连接提供商启用该线路。ExpressRoute 线路必须处于已预配和已启用状态，你才能运行下述 cmdlet。
 
 >[AZURE.IMPORTANT]这些说明只适用于由提供第 2 层连接服务的服务提供商创建的线路。如果你的服务提供商提供第 3 层托管服务（通常是 IPVPN，如 MPLS），则连接服务提供商将为你设置和管理路由。在此情况下，你无法创建或管理对等互连。
 
@@ -272,8 +272,7 @@
 
 ## 后续步骤
 
-下一步，将 VNet 链接到 ExpressRoute 线路。使用 Azure 资源管理器部署模式时，你可以使用[此模板](https://github.com/Azure/azure-quickstart-templates/tree/ecad62c231848ace2fbdc36cbe3dc04a96edd58c/301-expressroute-circuit-vnet-connection)。我们目前正在致力于 PowerShell 步骤。
-
+下一步，[将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)。
 
 -  有关 ExpressRoute 工作流的详细信息，请参阅 [ExpressRoute 工作流](/documentation/articles/expressroute-workflows)。
 

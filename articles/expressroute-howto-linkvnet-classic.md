@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="将虚拟网络链接到 ExpressRoute 线路 | Azure"
+   pageTitle="将虚拟网络链接到 ExpressRoute 线路 | Microsoft Azure"
    description="本文档概述了如何将虚拟网络 (VNet) 链接到 ExpressRoute 线路。"
    services="expressroute"
    documentationCenter="na"
@@ -9,8 +9,8 @@
    tags="azure-service-management"/>
 <tags 
    ms.service="expressroute"
-   ms.date="11/02/2015"
-   wacn.date="01/14/2016" />
+   ms.date="01/16/2016"
+   wacn.date="03/17/2016" />
 
 # 将 VNet 链接到 ExpressRoute 线路
 
@@ -19,13 +19,13 @@
 - [PowerShell - 资源管理器](/documentation/articles/expressroute-howto-linkvnet-arm)  
 - [模板 - Azure 资源管理器](https://github.com/Azure/azure-quickstart-templates/tree/ecad62c231848ace2fbdc36cbe3dc04a96edd58c/301-expressroute-circuit-vnet-connection)
 
-本文概述了如何将虚拟网络 (VNet) 链接到 ExpressRoute 线路。虚拟网络可以在同一个订阅中，也可以属于另一个订阅。本文适用于使用经典部署模型部署的 VNet。如果你想要链接使用 Azure 资源管理器部署方法部署的虚拟网络，可使用模板来完成此操作。查看上面的选项卡可导航到该模板。
+本文概述了如何将虚拟网络 (VNet) 链接到 ExpressRoute 线路。虚拟网络可以在同一个订阅中，也可以属于另一个订阅。本文适用于使用经典部署模型部署的 VNet。如果你想要链接使用 Azure 资源管理器部署模型部署的虚拟网络，请参阅[将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)。
 
 [AZURE.INCLUDE [vpn-gateway-sm-rm](../includes/vpn-gateway-sm-rm-include.md)] 
 
 ## 配置先决条件
 
-- 你将需要最新版本的 Azure PowerShell 模块。可以从 [Azure 下载页](/downloads)的 PowerShell 部分下载最新 PowerShell 模块。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 页上的说明操作，以便获取有关如何配置计算机以使用 Azure PowerShell 模块的分步指导。 
+- 你将需要最新版本的 Azure PowerShell 模块。可以从 [Azure 下载页](/downloads/)的 PowerShell 部分下载最新 PowerShell 模块。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 页上的说明操作，以便获取有关如何配置计算机以使用 Azure PowerShell 模块的分步指导。 
 - 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites)页、[路由要求](/documentation/articles/expressroute-routing)页和[工作流](/documentation/articles/expressroute-workflows)页。
 - 你必须有一个活动的 ExpressRoute 线路。 
 	- 请按说明[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)，并通过连接提供商启用该线路。 
