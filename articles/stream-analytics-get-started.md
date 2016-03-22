@@ -1,7 +1,7 @@
 <properties
 	pageTitle="流分析入门：实时检测欺诈行为 | Azure"
 	description="了解如何通过流分析创建实时欺诈行为检测解决方案。使用事件中心进行实时事件处理。"
-	keywords="异常检测,欺诈检测,实时异常检测"
+	keywords="异常检测、欺诈检测、实时异常检测"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="12/04/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/04/2016"
+	wacn.date="03/21/2016"/>
 
 
 
@@ -255,4 +255,4 @@
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0314_2016-->

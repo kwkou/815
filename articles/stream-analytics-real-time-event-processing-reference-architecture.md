@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="使用流分析事件处理进行实时事件处理 | Azure" 
 	description="了解如何让一组 Azure 服务通过互操作来实现实时事件处理和分析。" 
-    	keywords="实时处理, 事件处理, 参考体系结构"
+    keywords="实时处理, 事件处理, 参考体系结构"
 	services="stream-analytics,event-hubs,storage,sql-database" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics"
-	ms.date="12/04/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="02/04/2016" 
+	wacn.date="03/17/2016"/>
 
 # 参考体系结构：使用 Azure 流分析进行实时事件处理
 
@@ -59,4 +59,4 @@ Azure 提供了各种类别的分析技术，支持一系列不同的解决方�
 
  
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->

@@ -10,10 +10,11 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="12/04/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/04/2016" 
+	wacn.date="03/21/2016"/>
+	
 
-#轮转登录凭据
+#在流分析作业中轮转输入和输出的登录凭据
 
 ##摘要
 Azure 流分析目前不允许在作业运行时替换输入/输出上的凭据。
@@ -67,7 +68,7 @@ Azure 流分析目前不允许在作业运行时替换输入/输出上的凭据�
 
 ###SQL 数据库
 
->[AZURE.NOTE]注意：你将需要连接到 SQL 数据库服务。我们将根据 Azure 管理门户上的管理经验来演示如何这样做，不过，你也可以选择使用某些客户端工具，例如 SQL Server Management Studio。
+>[AZURE.NOTE] 注意：你将需要连接到 SQL 数据库服务。我们将根据 Azure 管理门户上的管理经验来演示如何这样做，不过，你也可以选择使用某些客户端工具，例如 SQL Server Management Studio。
 
 1.  转到 Azure 管理门户的 SQL 数据库扩展：  
 ![graphic14][graphic14]
@@ -167,7 +168,7 @@ Azure 流分析目前不允许在作业运行时替换输入/输出上的凭据�
 1.	回到第 1 部分步骤 7 中的查询窗口，键入以下查询，将 <previous_login_name> 替换为你的作业以前使用过的用户名：  
 `DROP LOGIN <previous_login_name>`  
 2.	单击“运行”：  
-	![graphic43][graphic43]  
+![graphic43][graphic43]  
 
 你会获得以下确认：
 
@@ -230,4 +231,4 @@ Azure 流分析目前不允许在作业运行时替换输入/输出上的凭据�
 [graphic43]: ./media/stream-analytics-login-credentials-inputs-outputs/43-stream-analytics-login-credentials-inputs-outputs.png
  
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0314_2016-->

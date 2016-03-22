@@ -10,10 +10,10 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="12/04/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="02/04/2016" 
+	wacn.date="03/17/2016"/>
 
-# 了解流分析服务和操作日志
+# 使用服务和操作日志调试流分析作业
 
 所有 Azure 服务都向用户提供操作日志消息以记录与管理操作有关的详细信息。在 Azure 流分析中，此信息用可于调试目的，例如查看作业状态、作业进度和失败消息，跟踪作业在一段时间内的进度（从开始、处理直到输出）。
 
@@ -34,7 +34,7 @@
 
 在 Azure 门户中手动导航到流分析和其他服务的操作日志：
 
-1.	在 **Azure 门户**中单击“管理服务”[](https://manage.windowsazure.cn)。
+1.	在 **Azure 门户** 中单击“管理服务”[](https://manage.windowsazure.cn)。
 2.	在“类型”中选择“流分析”，在“服务名称”中选择作业的名称。  
 
   ![选择流分析](./media/stream-analytics-operation-logs/02-stream-analytics-operation-logs.png)
@@ -70,4 +70,4 @@
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->

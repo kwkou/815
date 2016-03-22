@@ -8,10 +8,10 @@
 	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="stream-analytics" 
-	ms.date="01/11/2016"
-	wacn.date="02/26/2016"/>
+<tags
+	ms.service="stream-analytics"
+	ms.date="02/04/2016"
+	wacn.date="03/21/2016"/>
 
 
 # 管理 .NET SDK：设置和运行使用 .NET 版 Azure 流分析 API 的分析作业
@@ -362,4 +362,4 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0314_2016-->

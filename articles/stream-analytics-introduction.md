@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="12/04/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/04/2016" 
+	wacn.date="03/21/2016"/>
 
 
 # 什么是流分析？
@@ -49,4 +49,4 @@ Azure 流分析 (ASA) 是一种完全托管的、经济高效的实时事件处�
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0314_2016-->

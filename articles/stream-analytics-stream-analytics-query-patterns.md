@@ -10,29 +10,29 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="12/04/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/04/2016"
+	wacn.date="03/17/2016"/>
 
 
 # 常用流分析使用模式的查询示例 #
 
 ## 介绍 ##
 
-Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言的文档说明见[此处](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)。本文档概述了针对多个常见查询模式的解决方案，依据的是真实的场景。此工作仍在进行中，将继续使用新的模式不断进行更新。
+Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言的文档说明参见[流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)指南。本文档概述了以真实情况为基础的多个常见查询模式的解决方案。此工作仍在进行中，将继续使用新的模式不断进行更新。
 
 ## 查询示例：数据类型转换 ##
 **说明**：定义输入流中的属性类型，例如，车重在输入流中是字符串格式的，需要转换为 INT 才能执行 SUM 操作。
 
 **输入**：
 
-| 请确 | 时间 | 重量 |
+| 制造商 | 时间 | 重量 |
 | --- | --- | --- |
 | Honda | 2015-01-01T00:00:01.0000000Z | "1000" |
 | Honda | 2015-01-01T00:00:02.0000000Z | "2000" |
 
 **输出**：
 
-| 请确 | 重量 |
+| 制造商 | 重量 |
 | --- | --- |
 | Honda | 3000 |
 
@@ -55,7 +55,7 @@ Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言
 
 **输入**：
 
-| 请确 | LicensePlate | 时间 |
+| 制造商 | LicensePlate | 时间 |
 | --- | --- | --- |
 | Honda | ABC-123 | 2015-01-01T00:00:01.0000000Z |
 | Toyota | AAA-999 | 2015-01-01T00:00:02.0000000Z |
@@ -63,7 +63,7 @@ Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言
 
 **输出**：
 
-| 请确 | LicensePlate | 时间 |
+| 制造商 | LicensePlate | 时间 |
 | --- | --- | --- |
 | Toyota | AAA-999 | 2015-01-01T00:00:02.0000000Z |
 | Nissan | ABC-369 | 2015-01-01T00:00:03.0000000Z |
@@ -84,7 +84,7 @@ Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言
 
 **输入**：
 
-| 请确 | 时间 |
+| 制造商 | 时间 |
 | --- | --- |
 | Honda | 2015-01-01T00:00:01.0000000Z |
 | Toyota | 2015-01-01T00:00:02.0000000Z |
@@ -119,7 +119,7 @@ Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言
 
 **输入**：
 
-| 请确 | 时间 |
+| 制造商 | 时间 |
 | --- | --- |
 | Honda | 2015-01-01T00:00:01.0000000Z |
 | Honda | 2015-01-01T00:00:02.0000000Z |
@@ -129,7 +129,7 @@ Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言
 
 **输出 1**：
 
-| 请确 | 时间 |
+| 制造商 | 时间 |
 | --- | --- |
 | Honda | 2015-01-01T00:00:01.0000000Z |
 | Honda | 2015-01-01T00:00:02.0000000Z |
@@ -139,7 +139,7 @@ Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言
 
 **输出 2**：
 
-| 请确 | 时间 | 计数 |
+| 制造商 | 时间 | 计数 |
 | --- | --- | --- |
 | Toyota | 2015-01-01T00:00:10.0000000Z | 3 |
 
@@ -185,7 +185,7 @@ INTO 子句告诉流分析哪一个输出可以通过此语句写入数据。第
 
 **输入**：
 
-| 请确 | 时间 |
+| 制造商 | 时间 |
 | --- | --- |
 | Honda | 2015-01-01T00:00:01.0000000Z |
 | Honda | 2015-01-01T00:00:02.0000000Z |
@@ -229,14 +229,14 @@ INTO 子句告诉流分析哪一个输出可以通过此语句写入数据。第
 
 **输入**：
 
-| 请确 | 时间 |
+| 制造商 | 时间 |
 | --- | --- |
 | Honda | 2015-01-01T00:00:01.0000000Z |
 | Toyota | 2015-01-01T00:00:02.0000000Z |
 
 **输出**：
 
-| 请确 | 时间 |
+| 制造商 | 时间 |
 | --- | --- |
 | Toyota | 2015-01-01T00:00:02.0000000Z |
 
@@ -258,7 +258,7 @@ INTO 子句告诉流分析哪一个输出可以通过此语句写入数据。第
 
 **输入**：
 
-| 牌照 | 请确 | 时间 |
+| 牌照 | 制造商 | 时间 |
 | --- | --- | --- |
 | DXE 5291 | Honda | 2015-07-27T00:00:05.0000000Z |
 | YZK 5704 | Ford | 2015-07-27T00:02:17.0000000Z |
@@ -270,7 +270,7 @@ INTO 子句告诉流分析哪一个输出可以通过此语句写入数据。第
 
 **输出**：
 
-| 牌照 | 请确 | 时间 |
+| 牌照 | 制造商 | 时间 |
 | --- | --- | --- |
 | DXE 5291 | Honda | 2015-07-27T00:00:05.0000000Z |
 | QYF 9358 | Honda | 2015-07-27T00:12:02.0000000Z |
@@ -288,7 +288,7 @@ INTO 子句告诉流分析哪一个输出可以通过此语句写入数据。第
 
 现在，我们来变一下这个问题，查找每 10 分钟时间间隔内特定制造商的第一辆车。
 
-| 牌照 | 请确 | 时间 |
+| 牌照 | 制造商 | 时间 |
 | --- | --- | --- |
 | DXE 5291 | Honda | 2015-07-27T00:00:05.0000000Z |
 | YZK 5704 | Ford | 2015-07-27T00:02:17.0000000Z |
@@ -312,7 +312,7 @@ INTO 子句告诉流分析哪一个输出可以通过此语句写入数据。第
 
 **输入**：
 
-| 牌照 | 请确 | 时间 |
+| 牌照 | 制造商 | 时间 |
 | --- | --- | --- |
 | DXE 5291 | Honda | 2015-07-27T00:00:05.0000000Z |
 | YZK 5704 | Ford | 2015-07-27T00:02:17.0000000Z |
@@ -324,7 +324,7 @@ INTO 子句告诉流分析哪一个输出可以通过此语句写入数据。第
 
 **输出**：
 
-| 牌照 | 请确 | 时间 |
+| 牌照 | 制造商 | 时间 |
 | --- | --- | --- |
 | VFE 1616 | Toyota | 2015-07-27T00:09:31.0000000Z |
 | MDR 6128 | BMW | 2015-07-27T00:13:45.0000000Z |
@@ -358,7 +358,7 @@ INTO 子句告诉流分析哪一个输出可以通过此语句写入数据。第
 
 **输入**：
 
-| 请确 | 牌照 | 时间 |
+| 制造商 | 牌照 | 时间 |
 | --- | --- | --- |
 | Honda | ABC-123 | 2015-01-01T00:00:01.0000000Z |
 | Honda | AAA-999 | 2015-01-01T00:00:02.0000000Z |
@@ -367,7 +367,7 @@ INTO 子句告诉流分析哪一个输出可以通过此语句写入数据。第
 
 **输出**：
 
-| 请确 | 时间 | CurrentCarLicensePlate | FirstCarLicensePlate | FirstCarTime |
+| 制造商 | 时间 | CurrentCarLicensePlate | FirstCarLicensePlate | FirstCarTime |
 | --- | --- | --- | --- | --- |
 | Honda | 2015-01-01T00:00:02.0000000Z | AAA-999 | ABC-123 | 2015-01-01T00:00:01.0000000Z |
 
@@ -387,12 +387,41 @@ INTO 子句告诉流分析哪一个输出可以通过此语句写入数据。第
 **说明**：
 使用 LAG 来查看后退一个事件之后的输入流，然后即可获得“制造商”字段的值。然后，将其与当前事件的“制造商”字段进行比较，如果二者相同，则输出该事件，并使用 LAG 来获取有关前一辆车的数据。
 
+## 查询示例：检测事件间的持续时间
+**说明**：查找给定事件的持续时间。例如，给定 Web 点击流，确定在某项功能上花费的时间。
+
+**输入**：
+  
+| 用户 | 功能 | 事件 | 时间 |
+| --- | --- | --- | --- |
+| user@location.com | RightMenu | 开始 | 2015-01-01T00:00:01.0000000Z |
+| user@location.com | RightMenu | 结束 | 2015-01-01T00:00:08.0000000Z |
+  
+**输出**：
+  
+| 用户 | 功能 | 持续时间 |
+| --- | --- | --- |
+| user@location.com | RightMenu | 7 |
+  
+
+**解决方案**
+
+````
+    SELECT
+    	[user], feature, DATEDIFF(second, LAST(Time) OVER (PARTITION BY [user], feature LIMIT DURATION(hour, 1) WHEN Event = 'start'), Time) as duration
+    FROM input TIMESTAMP BY Time
+    WHERE
+    	Event = 'end'
+````
+
+**解释**：使用 LAST 函数检索上次事件类型为“开始”时的时间值。请注意，LAST 函数使用 PARTITION BY [user] 指示结果应按唯一用户计算。该查询在“开始”和“停止”事件之间有 1 小时的最大时差阈值，但也可按需配置 (LIMIT DURATION(hour, 1)。
+
 ## 查询示例：检测某个条件的持续时间 ##
 **说明**：查看某个条件的持续时间。例如，假设某个 Bug 导致所有车的重量不正确（超出 20,000 磅），于是我们需要计算该 Bug 的持续时间。
 
 **输入**：
 
-| 请确 | 时间 | 重量 |
+| 制造商 | 时间 | 重量 |
 | --- | --- | --- |
 | Honda | 2015-01-01T00:00:01.0000000Z | 2000 |
 | Toyota | 2015-01-01T00:00:02.0000000Z | 25000 |
@@ -416,33 +445,17 @@ INTO 子句告诉流分析哪一个输出可以通过此语句写入数据。第
 
 **解决方案**：
 
-	SELECT
-	    PrevGood.Time AS StartFault,
-	    ThisGood.Time AS Endfault,
-	    DATEDIFF(second, PrevGood.Time, ThisGood.Time) AS FaultDuraitonSeconds
-	FROM
-	    Input AS ThisGood TIMESTAMP BY Time
-	    INNER JOIN Input AS PrevGood TIMESTAMP BY Time
-	    ON DATEDIFF(second, PrevGood, ThisGood) BETWEEN 1 AND 3600
-	    AND PrevGood.Weight < 20000
-	    INNER JOIN Input AS Bad TIMESTAMP BY Time
-	    ON DATEDIFF(second, PrevGood, Bad) BETWEEN 1 AND 3600
-	    AND DATEDIFF(second, Bad, ThisGood) BETWEEN 1 AND 3600
-	    AND Bad.Weight >= 20000
-	    LEFT JOIN Input AS MidGood TIMESTAMP BY Time
-	    ON DATEDIFF(second, PrevGood, MidGood) BETWEEN 1 AND 3600
-	    AND DATEDIFF(second, MidGood, ThisGood) BETWEEN 1 AND 3600
-	    AND MidGood.Weight < 20000
-	WHERE
-	    ThisGood.Weight < 20000
-	    AND MidGood.Weight IS NULL
+````
+SELECT 
+    LAG(time) OVER (LIMIT DURATION(hour, 24) WHEN weight < 20000 ) [StartFault],
+    [time] [EndFault]
+FROM input
+WHERE
+    [weight] < 20000
+    AND LAG(weight) OVER (LIMIT DURATION(hour, 24)) > 20000
+````
 
-**说明**：
-我们寻找的是 2 个正常事件中夹杂 1 个错误事件且这之中没有正常事件的情况。换句话说，这 2 个事件是位于至少 1 个错误事件之前以及之后的首批事件。获取 2 个在其中夹杂有 1 个错误事件的正常事件很简单，只需使用 2 个 JOIN 操作，然后通过检查重量并比较时间戳来验证我们获得的事件的状态是否为正常 -> 错误 -> 正常即可。
-
-在学习“通过 LEFT 外部联接来包括 NULL 或检查事件是否缺失”后，我们知道了如何检查在选取的 2 个正常事件之间是否没有正常事件的发生。
-
-将这些组合在一起，我们就可以得到“正常 -> 错误 -> 正常”这样的状态，二者之间没有其他正常事件。现在，我们可以计算开头的正常事件与末尾的正常事件之间的持续时间，从而得出 Bug 的持续时间。
+**解释**：使用 LAG 查看 24 小时内的输入流并查找因重量 < 20000 而持续的 StartFault 和 StopFault 实例。
 
 ## 获取帮助
 如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=AzureStreamAnalytics)
@@ -456,4 +469,4 @@ INTO 子句告诉流分析哪一个输出可以通过此语句写入数据。第
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
  
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->
