@@ -1,15 +1,15 @@
 <properties 
    pageTitle="Azure 自动化中的变量资产 | Azure"
-   description="变量资产是可供 Azure 自动化中的所有 Runbook 使用的值。本文介绍了变量的详细信息，以及如何在文本创作中使用变量。"
+   description="变量资产是可供 Azure 自动化中的所有 Runbook 使用的值。本文介绍了变量的详细信息，以及如何在文本和图形创作中使用变量。"
    services="automation"
    documentationCenter=""
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="10/23/2015"
-	wacn.date="12/17/2015"/>
+<tags 
+   ms.service="automation"
+   ms.date="01/27/2016"
+   wacn.date="03/22/2016" />
 
 # Azure 自动化中的变量资产
 
@@ -27,7 +27,7 @@
 
 >[AZURE.NOTE]Azure 自动化中的安全资产包括凭据、证书、连接和加密的变量。这些资产已使用针对每个自动化帐户生成的唯一密钥加密并存储在 Azure 自动化中。此密钥由主证书加密，并存储在 Azure 自动化中。在存储安全资产之前，会先使用主证书来解密自动化帐户的密钥，然后使用该密钥来加密资产。
 
-## <a id="variable-types"></a> 变量类型
+## 变量类型
 
 当使用 Azure 管理门户创建变量时，你必须通过下拉列表指定一个数据类型，以便门户可以显示用于输入变量值的相应控件。该变量并不局限于此数据类型，但如果您想要指定不同类型的值，则必须使用 Windows PowerShell 设置该变量。如果指定为“未定义”，则该变量的值将设置为 **$null**，并且你必须使用 [Set-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913767.aspx) cmdlet 或 **Set-AutomationVariable** 活动来设置该值。无法在该门户中创建或更改复杂变量类型的值，但您可以使用 Windows PowerShell 提供任何类型的值。复杂类型将作为 [PSCustomObject](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscustomobject.aspx) 返回。
 
@@ -51,11 +51,11 @@
 |Get-AutomationVariable|检索现有变量的值。|
 |Set-AutomationVariable|设置现有变量的值。|
 
->[AZURE.NOTE]应避免在 **Get-AutomationVariable** 的 –Name 参数中使用变量，因为这可能会使设计时发现 Runbook 与自动化变量之间的依赖关系变得复杂化。
+>[AZURE.NOTE] 应避免在 **Get-AutomationVariable** 的 –Name 参数中使用变量，因为这可能会使设计时发现 Runbook 与自动化变量之间的依赖关系变得复杂化。
 
 ## 创建新的自动化变量
 
-### 使用 Azure 管理门户创建新变量
+### 使用 Azure 经典门户创建新变量
 
 1. 在你的自动化帐户中，单击窗口顶部的“资产”。
 1. 在窗口底部，单击“添加设置”。
@@ -80,8 +80,8 @@
 	New-AzureAutomationVariable –AutomationAccountName "MyAutomationAccount" –Name "MyComplexVariable" –Encrypted $false –Value $vm
 	
 	$vmValue = (Get-AzureAutomationVariable –AutomationAccountName "MyAutomationAccount" –Name "MyComplexVariable").Value
-	$vmName = $ vmValue.Name
-	$vmIpAddress = $ vmValue.IpAddress
+	$vmName = $vmValue.Name
+	$vmIpAddress = $vmValue.IpAddress
 
 
 
@@ -105,7 +105,7 @@
 	for ($i = 1; $i -le $NumberOfIterations; $i++) {
 	   Write-Output "$i`: $SampleMessage"
 	}
-	Set-AutomationVariable –Name NumberOfRunnings –Value (NumberOfRunngs += 1)
+	Set-AutomationVariable –Name NumberOfRunnings –Value ($NumberOfRunnings += 1)
 
 
 #### 设置和检索变量中的复杂对象
@@ -143,4 +143,4 @@
 
  
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

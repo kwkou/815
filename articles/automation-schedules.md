@@ -6,10 +6,10 @@
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="10/26/2015"
-	wacn.date="12/17/2015"/>
+<tags 
+   ms.service="automation"
+   ms.date="01/27/2016"
+   wacn.date="03/22/2016" />
 
 # Azure 自动化中的计划
 
@@ -17,7 +17,7 @@
 
 ## Windows PowerShell Cmdlet
 
-下表中的 cmdlet 用于在 Azure 自动化中通过 Windows PowerShell 创建和管理变量。它们作为 [Azure PowerShell 模块](/documentation/articles/powershell-install-configure)的一部分提供。
+下表中的 cmdlet 用于在 Azure 自动化中通过 Windows PowerShell 创建和管理计划。它们作为 [Azure PowerShell 模块](/documentation/articles/powershell-install-configure)的一部分提供。
 
 |Cmdlet|说明|
 |:---|:---|
@@ -31,13 +31,13 @@
 
 ## 创建新计划
 
-### 使用 Azure 管理门户创建新计划
+### 使用 Azure 经典门户创建新计划
 
 
 1. 在你的自动化帐户中，单击窗口顶部的“资产”。
 1. 在窗口底部，单击“添加设置”。
 1. 单击“添加计划”。
-1. 完成向导并单击复选框以保存新变量。
+1. 完成向导并单击复选框以保存新计划。
 
 ### 使用 Windows PowerShell 创建新计划
 
@@ -52,7 +52,7 @@
 
 
 ## 另请参阅
-- [在 Azure Automation 中计划 Runbook](/documentation/articles/automation-scheduling-a-runbook)
+- [在 Azure 自动化中计划 Runbook](/documentation/articles/automation-scheduling-a-runbook)
  
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="02/09/2016"
-	wacn.date="02/19/2016"/>
+	ms.date="10/22/2015"
+	wacn.date="03/22/2016"/>
 
 # Runbook 设置
 
@@ -48,9 +48,9 @@ Azure Automation 中的每个 Runbook 都提供了多个设置用于帮助标识
 
 	$automationAccountName = "MyAutomationAccount"
 	$runbookName = "Sample-TestRunbook"
-	$tags = (Get-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName).Tags
+	$tags = (Get-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName).Tags
 	$tags += "Tag1,Tag2,Tag3"
-	Set-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName -LogVerbose $true -Tags $tags
+	Set-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName –LogVerbose $true –Tags $tags
 
 ## 相关文章
 - [Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages) 

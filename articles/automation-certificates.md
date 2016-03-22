@@ -7,15 +7,15 @@
    manager="stevenka"
    editor="tysonn" />
 <tags
-	ms.service="automation"
-	ms.date="10/23/2015"
-	wacn.date="12/17/2015"/>
+   ms.service="automation"
+   ms.date="01/27/2016"
+   wacn.date="03/22/2016" />
 
 # Azure 自动化中的证书资产
 
 可以安全地将证书存储在 Azure 自动化中，以便使用 **Get-AutomationCertificate** 活动通过 Runbook 访问这些证书。这样，你便可以创建使用证书进行身份验证的 Runbook，或者将证书添加到 Azure 或第三方资源。
 
->[AZURE.NOTE]Azure 自动化中的安全资产包括凭据、证书、连接和加密的变量。这些资产已使用针对每个自动化帐户生成的唯一密钥加密并存储在 Azure 自动化中。此密钥由主证书加密，并存储在 Azure 自动化中。在存储安全资产之前，会先使用主证书来解密自动化帐户的密钥，然后使用该密钥来加密资产。
+>[AZURE.NOTE] Azure 自动化中的安全资产包括凭据、证书、连接和加密的变量。这些资产已使用针对每个自动化帐户生成的唯一密钥加密并存储在 Azure 自动化中。此密钥由主证书加密，并存储在 Azure 自动化中。在存储安全资产之前，会先使用主证书来解密自动化帐户的密钥，然后使用该密钥来加密资产。
 
 ## Windows PowerShell Cmdlet
 
@@ -36,13 +36,13 @@
 |:---|:---|
 |Get-AutomationCertificate|在 Runbook 中获取要使用的证书。|
 
->[AZURE.NOTE]应避免在 GetAutomationCertificate 的 –Name 参数中使用变量，因为这可能会使设计时发现 Runbook 与证书资产之间的依赖关系变得复杂化。
+>[AZURE.NOTE] 应避免在 Get-AutomationCertificate 的 –Name 参数中使用变量，因为这可能会使设计时发现 Runbook 与证书资产之间的依赖关系变得复杂化。
 
 ## 创建新证书
 
-创建新证书时，需要将 cer 或 pfx 文件上载到 Azure 自动化。将证书标记为可导出后，你可以将其转出 Azure 自动化证书存储区。如果证书不可导出，则它只可用于在 Runbook 中签名。
+创建新证书时，需要将 .cer 或 .pfx 文件上载到 Azure 自动化。将证书标记为可导出后，你可以将其转出 Azure 自动化证书存储区。如果证书不可导出，则它只可用于在 Runbook 中签名。
 
-### 使用 Azure 管理门户创建新证书
+### 使用 Azure 经典门户创建新证书
 
 1. 在你的自动化帐户中，单击窗口顶部的“资产”。
 1. 在窗口底部，单击“添加设置”。
@@ -57,7 +57,7 @@
 
 ### 使用 Windows PowerShell 创建新证书
 
-以下示例命令演示了如何创建新的自动化证书并将其标记为可导出。这将导入现有的 pfx 文件。
+以下示例命令演示了如何创建新的自动化证书并将其标记为可导出。这将导入现有的 .pfx 文件。
 
 	$certName = 'MyCertificate'
 	$certPath = '.\MyCert.pfx'
@@ -78,4 +78,4 @@
 	$certPwd = Get-AutomationVariable –Name 'MyCertPassword'
 	Add-AzureCertificate -ServiceName $serviceName -CertToDeploy $cert
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

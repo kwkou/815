@@ -6,10 +6,10 @@
 	authors="bwren"
 	manager="stevenka"
 	editor="tysonn" />
-<tags
+<tags 
 	ms.service="automation"
-	ms.date="09/23/2015"
-	wacn.date="12/14/2015"/>
+	ms.date="01/19/2016"
+	wacn.date="03/22/2016" />
 
 # 在 Azure 自动化中编辑文本 Runbook
 
@@ -17,15 +17,14 @@ Azure 自动化中的文本编辑器可以用来编辑 PowerShell 工作流 Runb
 
 该文本编辑器包含的一项功能是将活动、资产和子 Runbook 的代码插入 Runbook 中。你不需要亲自键入代码，只需从可用资源列表中进行选择，然后即可将相应代码插入 Runbook 中。
 
-Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布版。你先对工作流的草稿版进行编辑，然后将其发布，这样便可以执行了。无法编辑已发布版本。有关详细信息，请参阅[发布 Runbook](/documentation/articles/automation-creating-importing-runbook#publishing-a-runbook)。
+Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布版。你先对 Runbook 的草稿版进行编辑，然后将其发布，这样便可以执行了。无法编辑已发布版本。有关详细信息，请参阅[发布 Runbook](/documentation/articles/automation-creating-importing-runbook/#publishing-a-runbook)。
 
 
-## 使用 Azure 管理门户编辑 Runbook
-<a name="to-edit-a-runbook-with-the-azure-portal"></a>
+## 使用 Azure 门户编辑 Runbook
 
 通过以下过程打开 Runbook 即可在文本编辑器中进行编辑。
 
-1. 在 Azure 管理门户中，选择“自动化”，然后单击自动化帐户的名称。
+1. 在 Azure 门户中，选择“自动化”，然后单击自动化帐户的名称。
 2. 选择“Runbook”选项卡。
 3. 单击你想要编辑的 Runbook 的名称，然后选择“创作”选项卡。
 5. 单击屏幕底部的“编辑”按钮。
@@ -65,7 +64,7 @@ Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布�
 
 ## 使用 Windows PowerShell 编辑 Azure 自动化 Runbook
 
-若要使用 Windows PowerShell 来编辑 Runbook，可使用所选编辑器来编辑工作流，然后将其保存到 .ps1 文件。你可以先使用 [Get-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690269.aspx) cmdlet 来检索 Runbook 的内容，然后使用 [Set-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690267.aspx) cmdlet 将现有的草稿工作流替换为修改的工作流。
+若要使用 Windows PowerShell 来编辑 Runbook，可使用所选编辑器进行操作，然后将其保存到 .ps1 文件。你可以先使用 [Get-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/getazurerunbookdefinition) cmdlet 来检索 Runbook 的内容，然后使用 [Set-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/setazurerunbookdefinition) cmdlet 将现有的草稿 Runbook 替换为修改的 Runbook。
 
 ### 使用 Windows PowerShell 检索 Runbook 的内容
 
@@ -82,7 +81,7 @@ Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布�
 
 ### 使用 Windows PowerShell 更改 Runbook 的内容
 
-以下示例命令演示了如何使用包含工作流的脚本文件的内容替换 Runbook 的现有内容。请注意，此示例过程与[使用 Windows PowerShell 从脚本文件中导入 Runbook](/documentation/articles/automation-creating-importing-runbook#ImportRunbookScriptPS) 中的相同。
+以下示例命令演示了如何使用脚本文件的内容替换 Runbook 的现有内容。请注意，此示例过程与[使用 Windows PowerShell 从脚本文件中导入 Runbook](/documentation/articles/automation-creating-or-importing-a-runbook#ImportRunbookScriptPS) 中的相同。
 
     $automationAccountName = "MyAutomationAccount"
     $runbookName = "Sample-TestRunbook"
@@ -93,6 +92,7 @@ Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布�
 
 ## 相关文章
 
+- [在 Azure 自动化中创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook)
 - [了解 PowerShell 工作流](/documentation/articles/automation-powershell-workflow)
 - [证书](/documentation/articles/automation-certificates)
 - [连接](/documentation/articles/automation-connections)
@@ -100,4 +100,4 @@ Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布�
 - [计划](/documentation/articles/automation-schedules)
 - [变量](/documentation/articles/automation-variables)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0307_2016-->

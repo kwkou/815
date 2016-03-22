@@ -1,19 +1,19 @@
 <properties 
    pageTitle="了解 PowerShell 工作流"
-   description="Azure 自动化中的所有 Runbook 都基于 Windows PowerShell 工作流。本文旨在作为熟悉 PowerShell 创作人员的一个速成教程，以便其了解 PowerShell 和 PowerShell 工作流之间的具体差异。"
+   description="本文旨在作为熟悉 PowerShell 创作人员的一个速成教程，以便其了解 PowerShell 和 PowerShell 工作流之间的具体差异。"
    services="automation"
    documentationCenter=""
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="10/01/2015"
-	wacn.date="12/14/2015"/>
+<tags 
+   ms.service="automation"
+   ms.date="02/03/2016"
+   wacn.date="03/22/2016" />
 
 # 学习 Windows PowerShell 工作流
 
-Azure Automation 中的 Runbook 作为 Windows PowerShell 工作流实现。Windows PowerShell 工作流类似于 Windows PowerShell 脚本，但包括一些可能会让新用户产生混淆的重大差异。本文适用于已经熟悉 PowerShell 的用户并简要介绍了如果要将 PowerShell 脚本转换为在 runbook 中使用的 PowerShell 工作流所需要了解的概念。
+Azure 自动化中的 Runbook 作为 Windows PowerShell 工作流实现。Windows PowerShell 工作流类似于 Windows PowerShell 脚本，但包括一些可能会让新用户产生混淆的重大差异。本文适用于已经熟悉 PowerShell 的用户并简要介绍了如果要将 PowerShell 脚本转换为在 runbook 中使用的 PowerShell 工作流所需要了解的概念。
 
 工作流是一系列编程的连接步骤，用于执行长时间运行的任务，或者要求跨多个设备或托管节点协调多个步骤。与标准脚本相比，工作流的好处包括能够同时执行针对多台设备的操作以及自动从故障中恢复的能力。Windows PowerShell 工作流是利用 Windows Workflow Foundation 的 Windows PowerShell 脚本。尽管工作流是使用 Windows PowerShell 语法编写的并通过 Windows PowerShell 启动，但它将由 Windows Workflow Foundation 进行处理。
 
@@ -21,7 +21,7 @@ Azure Automation 中的 Runbook 作为 Windows PowerShell 工作流实现。Wind
 
 ## Runbook 类型
 
-Azure 中国目前仅支持文本 Runbook。
+Azure 中国区目前仅支持文本 Runbook。
 
 ## 工作流的基本结构
 
@@ -32,7 +32,7 @@ Azure 中国目前仅支持文本 Runbook。
        <Commands>
     }
 
-工作流名称与 Automation Runbook 的名称匹配。如果正在导入某个 Runbook，其文件名必须与工作流名称匹配，并且必须以 .ps1 结尾。
+工作流名称与自动化 Runbook 的名称匹配。如果正在导入某个 Runbook，其文件名必须与工作流名称匹配，并且必须以 .ps1 结尾。
 
 若要将参数添加到工作流，请使用 **Param** 关键字，与使用脚本时相同。
 
@@ -70,7 +70,7 @@ Azure 中国目前仅支持文本 Runbook。
 
 如果您尝试在工作流中运行该代码，将看到错误消息，指明“在 Windows PowerShell 工作流中不支持方法调用”。
 
-一种选择是将这两行代码包括在 [InlineScript](#inlinescript) 代码块中，在这种情况下，$Service 是该代码块中的服务对象。
+一种选择是将这两行代码包括在 [InlineScript](#InlineScript) 代码块中，在这种情况下，$Service 是该代码块中的服务对象。
 
 	Workflow Stop-Service
 	{
@@ -90,7 +90,6 @@ Azure 中国目前仅支持文本 Runbook。
 
 
 ## InlineScript
-<a name="inlinescript"></a>
 
 当您需要将一个或多个命令作为传统的 PowerShell 脚本而不是 PowerShell 工作流运行时，**InlineScript** 活动非常有用。尽管工作流中的命令将发送到 Windows Workflow Foundation 进行处理，但 InlineScript 块中的命令将由 Windows PowerShell 处理。
 
@@ -122,7 +121,7 @@ InlineScript 使用如下所示的语法。
 		$ServiceName = "MyService"
 	
 		$Output = InlineScript {
-			$Service = Get-Service -Name $Using:MyService
+			$Service = Get-Service -Name $Using:ServiceName
 			$Service.Stop()
 			$Service
 		}
@@ -141,7 +140,6 @@ InlineScript 使用如下所示的语法。
 
 
 ## 并行处理
-<a name="parallel-execution"></a>
 
 Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行而不是按顺序执行一组命令。
 
@@ -200,13 +198,12 @@ Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行�
 		Write-Output "All files copied."
 	}
 
-> [AZURE.NOTE]我们不建议并行运行子 Runbook，这是由于这已被证实将导致不可靠的结果。来自子 Runbook 的输出有时将不会显示，一个子 Runbook 中的设置可能会影响其他并行子 Runbook
+> [AZURE.NOTE] 我们不建议并行运行子 Runbook，这是由于这已被证实将导致不可靠的结果。来自子 Runbook 的输出有时将不会显示，一个子 Runbook 中的设置可能会影响其他并行子 Runbook
 
 
 ## 检查点
-<a name="Checkpoints"></a>
 
-“检查点”是工作流变量的当前状态的快照，包括变量的当前值以及到该点为止生成的任何输出。如果工作流以错误结束或挂起，则其下次运行时将从其上一个检查点开始，而不是从工作流的起点开始。您可以使用 **Checkpoint-Workflow** 活动在工作流中设置一个检查点。
+“检查点”是工作流变量的当前状态的快照，包括变量的当前值以及到该点为止生成的任何输出。如果工作流以错误结束或暂停，则其下次运行时将从其上一个检查点开始，而不是从工作流的起点开始。您可以使用 **Checkpoint-Workflow** 活动在工作流中设置一个检查点。
 
 在以下示例代码中，Activity2 后发生的异常导致工作流结束。当工作流再次运行时，它会通过运行 Activity2 来启动，因为此活动刚好在设置的上一个检查点之后。
 
@@ -242,6 +239,6 @@ Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行�
 
 ## 相关文章
 
-- [Windows PowerShell 工作流入门](http://technet.microsoft.com/zh-cn/library/jj134242.aspx) 
+- [Windows PowerShell 工作流入门](http://technet.microsoft.com/zh-cn/library/jj134242.aspx)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0307_2016-->

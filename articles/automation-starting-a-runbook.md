@@ -1,19 +1,19 @@
 <properties 
-   pageTitle="在 Azure 自动化中启动 Runbook"
-   description="汇总了可用于在 Azure 自动化中启动 Runbook 的不同方法，并提供有关如何使用 Azure 管理门户和 Windows PowerShell 的详细信息。"
+   pageTitle="在 Azure 自动化中启动 Runbook | Azure"
+   description="汇总了可用于在 Azure 自动化中启动 Runbook 的不同方法，并提供有关使用 Azure 门户和 Windows PowerShell 的详细信息。"
    services="automation"
    documentationCenter=""
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="11/13/2015"
-	wacn.date="12/17/2015"/>
+<tags 
+   ms.service="automation"
+   ms.date="01/19/2016"
+   wacn.date="03/22/2016"/>
 
 # 在 Azure 自动化中启动 Runbook
 
-下表将帮助你确定如何在 Azure 自动化中以最适合你方案的方法启动 Runbook。本文包含有关使用 Azure 管理门户和 Windows PowerShell 启动 Runbook 的详细信息。有关其他方法的详细信息将在其他文档中提供，你可以通过以下链接来访问。
+下表将帮助你确定如何在 Azure 自动化中以最适合你方案的方法启动 Runbook。本文包含有关使用 Azure 门户和 Windows PowerShell 启动 Runbook 的详细信息。有关其他方法的详细信息将在其他文档中提供，你可以通过以下链接来访问。
 
 <table>
  <tr>
@@ -21,7 +21,7 @@
   <td>特征</td>
  </tr>
  <tr>           
-  <td><a href="#starting-a-runbook-with-the-azure-portal">Azure 管理门户</a></td>
+  <td><a href="#starting-a-runbook-with-the-azure-portal">Azure 门户</a></td>
   <td>
    <ul>
     <li>使用交互式用户界面的最简单方法。</li>
@@ -61,7 +61,7 @@
   <td>
    <ul>
     <li>按每小时、每天或每周计划自动启动 Runbook。</li>
-    <li>通过 Azure 管理门户、PowerShell cmdlet 或 Azure API 来操作计划。</li>
+    <li>通过 Azure 门户、PowerShell cmdlet 或 Azure API 来操作计划。</li>
     <li>提供与计划配置使用的参数值。</li>
    </ul>
   </td>
@@ -82,9 +82,8 @@
 
 
 ## 使用 Azure 管理门户启动 Runbook
-<a name="starting-a-runbook-with-the-azure-portal"></a>
 
-1. 在 Azure 管理门户中，选择“自动化”，然后单击自动化帐户的名称。
+1. 在 Azure 门户中，选择“自动化”，然后单击自动化帐户的名称。
 1. 选择“Runbook”选项卡。
 1. 选择一个 Runbook，然后单击“启动”。
 1. 如果 Runbook 包含参数，则系统会提示你在文本框中提供每个参数的值。请参阅下面的 [Runbook 参数](#Runbook-parameters)，以获取有关参数的更多详细信息。
@@ -92,7 +91,6 @@
 
 
 ## 使用 Windows PowerShell 启动 Runbook
-<a name="starting-a-runbook-with-windows-powershell"></a>
 
 可以在 Windows PowerShell 中使用 [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690259.aspx) 启动 Runbook。以下示例代码将启动名为 Test-Runbook 的 Runbook。
 
@@ -117,7 +115,6 @@ Start-AzureAutomationRunbook 将返回一个作业对象，启动 Runbook 后，
 	Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" –Parameters $params
 
 ## Runbook 参数
-<a id="runbook-parameters"></a>
 
 当你使用 Azure 管理门户或 Windows PowerShell 启动 Runbook 时，系统将通过 Azure 自动化 Web 服务发送指令。此服务不支持复杂数据类型的参数。如果需要提供复杂参数的值，则必须根据 [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks) 中所述，以内联方式从另一个 Runbook 调用该参数值。
 
@@ -209,4 +206,4 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 - [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks) 
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->
