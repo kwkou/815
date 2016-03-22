@@ -4,13 +4,13 @@
    services="sql-data-warehouse"
    documentationCenter="NA"
    authors="barbkess"
-   manager="jhubbard"
+   manager="barbkess"
    editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="09/22/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/21/2016"
+   wacn.date="03/17/2016"/>
 
 # 语言元素
 
@@ -58,7 +58,7 @@
 - [>=（大于或等于）](https://msdn.microsoft.com/zh-cn/library/ms181567.aspx)
 - [<=（小于或等于）](https://msdn.microsoft.com/zh-cn/library/ms174978.aspx)
 - [<>（不等于）](https://msdn.microsoft.com/zh-cn/library/ms176020.aspx)
-- [!=（不等于）](https://msdn.microsoft.com/zh-cn/library/vstudio/bb399278.aspx)
+- [!=（不等于）](https://msdn.microsoft.com/zh-cn/library/ms190296.aspx)
 - [AND](https://msdn.microsoft.com/zh-cn/library/ms188372.aspx)
 - [BETWEEN](https://msdn.microsoft.com/zh-cn/library/ms187922.aspx)
 - [EXISTS](https://msdn.microsoft.com/zh-cn/library/ms188336.aspx)
@@ -114,7 +114,7 @@
 - [DATEFROMPARTS](https://msdn.microsoft.com/zh-cn/library/hh213228.aspx)
 - [DATENAME](https://msdn.microsoft.com/zh-cn/library/ms174395.aspx)
 - [DATEPART](https://msdn.microsoft.com/zh-cn/library/ms174420.aspx)
-- [DATETIME2FROmPARTS](https://msdn.microsoft.com/zh-cn/library/hh213312.aspx)
+- [DATETIME2FROMPARTS](https://msdn.microsoft.com/zh-cn/library/hh213312.aspx)
 - [DATETIMEFROMPARTS](https://msdn.microsoft.com/zh-cn/library/hh213233.aspx)
 - [DATETIMEOFFSETFROMPARTS](https://msdn.microsoft.com/zh-cn/library/hh231077.aspx)
 - [DAY](https://msdn.microsoft.com/zh-cn/library/ms176052.aspx)
@@ -218,30 +218,30 @@
 
 ## 事务
 
-- 事务
+- [事务](https://msdn.microsoft.com/zh-cn/library/mt204031.aspx)
 
 ## 诊断会话
 
-- CREATE DIAGNOSTICS SESSION
+- [CREATE DIAGNOSTICS SESSION](https://msdn.microsoft.com/zh-cn/library/mt204029.aspx)
 
 ## 过程
 
 - [sp\_addrolemember](https://msdn.microsoft.com/zh-cn/library/ms187750.aspx)
 - [sp\_columns](https://msdn.microsoft.com/zh-cn/library/ms176077.aspx)
 - [sp\_configure](https://msdn.microsoft.com/zh-cn/library/ms188787.aspx)
-- sp\_datatype\_info\_90
+- [sp\_datatype\_info\_90](https://msdn.microsoft.com/zh-cn/library/mt204014.aspx)
 - [sp\_droprolemember](https://msdn.microsoft.com/zh-cn/library/ms188369.aspx)
 - [sp\_execute](https://msdn.microsoft.com/zh-cn/library/ff848746.aspx)
 - [sp\_executesql](https://msdn.microsoft.com/zh-cn/library/ms188001.aspx)
 - [sp\_fkeys](https://msdn.microsoft.com/zh-cn/library/ms175090.aspx)
-- sp\_pdw\_add\_network\_credentials
-- sp\_pdw\_database\_encryption
-- sp\_pdw\_database\_encryption\_regenerate\_system\_keys
-- sp\_pdw\_log\_user\_data\_masking
-- sp\_pdw\_remove\_network\_credentials
+- [sp\_pdw\_add\_network\_credentials](https://msdn.microsoft.com/zh-cn/library/mt204011.aspx)
+- [sp\_pdw\_database\_encryption](https://msdn.microsoft.com/zh-cn/library/mt219360.aspx)
+- [sp\_pdw\_database\_encryption\_regenerate\_system\_keys](https://msdn.microsoft.com/zh-cn/library/mt204033.aspx)
+- [sp\_pdw\_log\_user\_data\_masking](https://msdn.microsoft.com/zh-cn/library/mt204023.aspx)
+- [sp\_pdw\_remove\_network\_credentials](https://msdn.microsoft.com/zh-cn/library/mt204038.aspx)
 - [sp\_pkeys](https://msdn.microsoft.com/zh-cn/library/ms189813.aspx)
 - [sp\_prepare](https://msdn.microsoft.com/zh-cn/library/ff848808.aspx)
-- sp\_special\_columns\_100
+- [sp\_special\_columns\_100](https://msdn.microsoft.com/zh-cn/library/mt204025.aspx)
 - [sp\_sproc\_columns](https://msdn.microsoft.com/zh-cn/library/ms182705.aspx)
 - [sp\_statistics](https://msdn.microsoft.com/zh-cn/library/ms173842.aspx)
 - [sp\_tables](https://msdn.microsoft.com/zh-cn/library/ms186250.aspx)
@@ -253,7 +253,7 @@
 
 - [SET ANSI\_DEFAULTS](https://msdn.microsoft.com/zh-cn/library/ms188340.aspx)
 - [SET ANSI\_NULL\_DFLT\_OFF](https://msdn.microsoft.com/zh-cn/library/ms187356.aspx)
-- SET ANSI\_NULL\_DFLOT\_ON
+- [SET ANSI\_NULL\_DFLT\_ON](https://msdn.microsoft.com/zh-cn/library/ms187375.aspx)
 - [SET ANSI\_NULLS](https://msdn.microsoft.com/zh-cn/library/ms188048.aspx)
 - [SET ANSI\_PADDING](https://msdn.microsoft.com/zh-cn/library/ms187403.aspx)
 - [SET ANSI\_WARNINGS](https://msdn.microsoft.com/zh-cn/library/ms190368.aspx)
@@ -283,4 +283,4 @@
 
 <!--MSDN references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

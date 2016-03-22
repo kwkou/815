@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="11/19/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/17/2016"/>
 
 
 # 在 SQL 数据仓库中使用 PolyBase 的指南
@@ -42,12 +42,14 @@
 针对外部表的查询只使用表名称，如关系表一样。
 
 ```
+
 -- Query Azure storage resident data via external table. 
 SELECT * FROM [ext].[CarSensor_Data]
 ;
+
 ```
 
-> [AZURE.NOTE]对外部表的查询可能因“查询已中止 -- 从外部源读取时已达最大拒绝阈值”错误而失败。这表示外部数据包含*脏*记录。如果实际数据类型/列数目不匹配外部表的列定义，或数据不匹配指定的外部文件格式，则会将数据记录视为脏记录。若要解决此问题，请确保外部表和外部文件格式定义正确，并且外部数据符合这些定义。如果外部数据记录的子集是脏的，你可以通过使用 CREATE EXTERNAL TABLE DDL 中的拒绝选项，选择拒绝这些查询记录。
+> [AZURE.NOTE] 对外部表的查询可能因“查询已中止 -- 从外部源读取时已达最大拒绝阈值”错误而失败。这表示外部数据包含*脏*记录。如果实际数据类型/列数目不匹配外部表的列定义，或数据不匹配指定的外部文件格式，则会将数据记录视为脏记录。若要解决此问题，请确保外部表和外部文件格式定义正确，并且外部数据符合这些定义。如果外部数据记录的子集是脏的，你可以通过使用 CREATE EXTERNAL TABLE DDL 中的拒绝选项，选择拒绝这些查询记录。
 
 
 ## 从 Azure Blob 存储加载数据
@@ -59,20 +61,20 @@ SELECT * FROM [ext].[CarSensor_Data]
 
 CREATE TABLE AS SELECT 是高性能 TRANSACT-SQL 语句，可将数据并行加载到 SQL 数据仓库的所有计算节点。它最初是针对分析平台系统中的大规模并行处理 (MPP) 引擎开发的，现已纳入 SQL 数据仓库。
 
-
 ```
--- Load data from Azure blob storage to SQL Data Warehouse 		
+-- Load data from Azure blob storage to SQL Data Warehouse 
+
 CREATE TABLE [dbo].[Customer_Speed]
 WITH 
 (   
-  CLUSTERED COLUMNSTORE INDEX
+    CLUSTERED COLUMNSTORE INDEX
 ,	DISTRIBUTION = HASH([CarSensor_Data].[CustomerKey])
 )
 AS 
 SELECT * 
-FROM   [ext].[CarSensor_Data];
+FROM   [ext].[CarSensor_Data]
+;
 ```
-
 
 请参阅 [CREATE TABLE AS SELECT (Transact-SQL)][]。
 
@@ -134,38 +136,39 @@ Get-Content <input_file_name> -Encoding Unicode | Set-Content <output_file_name>
 
 以下代码示例更为复杂，但在流式处理从源到目标的数据行时要有效得多。请对较大的文件应用此方法。
 
+```
+#Static variables
+$ascii = [System.Text.Encoding]::ASCII
+$utf16le = [System.Text.Encoding]::Unicode
+$utf8 = [System.Text.Encoding]::UTF8
+$ansi = [System.Text.Encoding]::Default
+$append = $False
 
-		#Static variables
-		$ascii = [System.Text.Encoding]::ASCII
-		$utf16le = [System.Text.Encoding]::Unicode
-		$utf8 = [System.Text.Encoding]::UTF8
-		$ansi = [System.Text.Encoding]::Default
-		$append = $False
-		
-		#Set source file path and file name
-		$src = [System.IO.Path]::Combine("C:\input_file_path","input_file_name.txt")
-		
-		#Set source file encoding (using list above)
-		$src_enc = $ansi
-		
-		#Set target file path and file name
-		$tgt = [System.IO.Path]::Combine("C:\output_file_path","output_file_name.txt")
-		
-		#Set target file encoding (using list above)
-		$tgt_enc = $utf8
-		
-		$read = New-Object System.IO.StreamReader($src,$src_enc)
-		$write = New-Object System.IO.StreamWriter($tgt,$append,$tgt_enc)
-		
-		while ($read.Peek() -ne -1)
-		{
-		    $line = $read.ReadLine();
-		    $write.WriteLine($line);
-		}
-		$read.Close()
-		$read.Dispose()
-		$write.Close()
+#Set source file path and file name
+$src = [System.IO.Path]::Combine("C:\input_file_path","input_file_name.txt")
 
+#Set source file encoding (using list above)
+$src_enc = $ansi
+
+#Set target file path and file name
+$tgt = [System.IO.Path]::Combine("C:\output_file_path","output_file_name.txt")
+
+#Set target file encoding (using list above)
+$tgt_enc = $utf8
+
+$read = New-Object System.IO.StreamReader($src,$src_enc)
+$write = New-Object System.IO.StreamWriter($tgt,$append,$tgt_enc)
+
+while ($read.Peek() -ne -1)
+{
+    $line = $read.ReadLine();
+    $write.WriteLine($line);
+}
+$read.Close()
+$read.Dispose()
+$write.Close()
+$write.Dispose()
+```
 
 ## 后续步骤
 若要详细了解如何将数据转移到 SQL 数据仓库，请参阅[数据迁移概述][]。
@@ -203,4 +206,4 @@ Get-Content <input_file_name> -Encoding Unicode | Set-Content <output_file_name>
 [CREATE DATABASE SCOPED CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/zh-cn/library/mt270260.aspx
 [DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/zh-cn/library/ms189450.aspx
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

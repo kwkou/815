@@ -1,5 +1,5 @@
 <properties
-   pageTitle="SQL 数据仓库开发的设计决策和编程技术 | Azure"
+   pageTitle="SQL 数据仓库开发的设计决策和编码技术 | Azure"
    description="SQL 数据仓库的开发概念、设计决策、建议和编程技术。"
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="09/22/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/17/2016"/>
 
 # SQL 数据仓库的设计决策和编程技术
 
@@ -75,4 +75,4 @@
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

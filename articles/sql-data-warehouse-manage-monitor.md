@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="12/15/2015"
-   wacn.date="01/29/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/17/2016"/>
 
 # 使用 DMV 监视工作负荷
 
@@ -200,4 +200,4 @@ DBCC PDW_SHOWSPACEUSED("dbo.FactInternetSales");
 
 <!--MSDN references-->
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0307_2016-->

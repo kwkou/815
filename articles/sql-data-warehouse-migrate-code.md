@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="12/09/2015"
-   wacn.date="01/29/2015"/>
+   ms.date="01/07/2016"
+   wacn.date="03/17/2015"/>
 
 # 将 SQL 代码迁移到 SQL 数据仓库
 
@@ -126,4 +126,4 @@ AND     request_id IN
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0307_2016-->
