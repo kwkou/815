@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure 资源管理器和 PowerShell 配置 ExpressRoute 线路 | Azure"
+   pageTitle="使用 Azure 资源管理器和 PowerShell 配置 ExpressRoute 线路 | Microsoft Azure"
    description="本文将指导你完成创建和预配 ExpressRoute 线路的步骤。本文还介绍了如何检查状态，以及如何更新、删除和预配线路。"
    documentationCenter="na"
    services="expressroute"
@@ -9,8 +9,8 @@
    tags="azure-resource-manager"/>
 <tags
    ms.service="expressroute"
-   ms.date="01/12/2016"
-   wacn.date="02/26/2016"/>
+   ms.date="01/26/2016"
+   wacn.date="03/17/2016"/>
 
 # 使用 Azure 资源管理器和 PowerShell 创建和修改 ExpressRoute 线路
 
@@ -209,15 +209,11 @@
 		ServiceKey                       : **************************************
 		Peerings                         : []
 
-6. **创建路由配置。**
+7. **配置路由并链接 VNet**
+
+	a.**创建路由配置。** 有关分步说明，请参阅[创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-arm)。请注意，这些路由说明只适用于由提供第 2 层连接服务的服务提供商创建的线路。如果你的服务提供商提供第 3 层托管服务（通常是 IPVPN，如 MPLS），则连接服务提供商将为你设置和管理路由。在此情况下，你无法创建或管理对等互连。
 	
-	有关分步说明，请参阅[创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-arm)。
-
-	>[AZURE.IMPORTANT] 这些说明只适用于由提供第 2 层连接服务的服务提供商创建的线路。如果你的服务提供商提供第 3 层托管服务（通常是 IPVPN，如 MPLS），则连接服务提供商将为你设置和管理路由。在此情况下，你无法创建或管理对等互连。  
-
-8. **将 VNet 链接到 ExpressRoute 线路。**
-
-	接下来，将 VNet 链接到 ExpressRoute 线路。有关分步操作说明，请参考 [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)。
+	b.**将你的 VNet 链接到 ExpressRoute 线路。** 在确认已配置路由后，你需要将你的 VNet 链接到 ExpressRoute 线路。有关分步说明，请参阅[将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)。
 
 ##  获取 ExpressRoute 线路的状态
 
@@ -253,7 +249,8 @@
 
 		Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
-	The response will be something similar to the example below:
+
+响应将如下例所示：
 
 		Name                             : ExpressRouteARMCircuit
 		ResourceGroupName                : ExpressRouteResourceGroup
@@ -283,18 +280,22 @@
 
 ## 修改 ExpressRoute 线路
 
-你可以在不影响连接的情况下修改 ExpressRoute 线路的某些属性。
+你可以在不影响连接的情况下修改 ExpressRoute 线路的某些属性。有关限制的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)页。
 
 你可以执行以下操作：
 
 - 在不停机的情况下，增加 ExpressRoute 线路的带宽。
 
-有关限制的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)页。
+
 
 
 ### 如何更新 ExpressRoute 线路带宽
 
-有关你的提供商支持的带宽选项，请查看 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)页。你可以选取大于现有线路大小的任何大小。确定所需的大小后，可以使用以下命令调整线路的大小。
+有关你的提供商支持的带宽选项，请查看 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)页。你可以选取 **大于** 现有线路大小的任何大小，而不会出现停机。
+
+>[AZURE.IMPORTANT] 但是，你无法在不中断的情况下降低 ExpressRoute 线路的带宽。带宽降级需要取消对 ExpressRoute 线路的预配，然后重新预配新的 ExpressRoute 线路。
+
+确定所需的大小后，可以使用以下示例调整线路的大小。运行 cmdlet 后，你的线路将已在 Microsoft Azure 一侧调整好大小。你必须联系连接提供商，让他们在那一边根据此更改更新配置。请注意，我们将从现在开始按照已更新的带宽选项为你计费。
 
 		$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
@@ -302,24 +303,25 @@
 
 		Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
-将已在 Microsoft 一侧估计好线路的大小。你必须联系连接提供商，让他们在那一边根据此更改更新配置。请注意，我们将从现在开始按照已更新的带宽选项为你计费。
-
->[AZURE.IMPORTANT]但是，你无法在不中断的情况下降低 ExpressRoute 线路的带宽。带宽降级需要取消对 ExpressRoute 线路的预配，然后重新预配新的 ExpressRoute 线路。
-
 ## 删除和取消预配 ExpressRoute 线路
 
-可以通过运行以下命令来删除 ExpressRoute 线路：
+你可以删除 ExpressRoute 线路。删除 ExpressRoute 线路时，请注意以下事项：
+
+- 必须取消所有虚拟网络与 ExpressRoute 的链接，此操作才能成功。如果此操作失败，请查看你是否有虚拟网络链接到了此线路。
+
+- 如果启用了 ExpressRoute 线路服务提供商预配状态，则状态将从启用转为 *禁用*。你必须通过服务提供商在他们那一侧取消对线路的预配。在服务提供商取消对线路的预配并向我们发送通知之前，我们会继续保留资源并向你收费。
+
+- 如果在你运行 cmdlet 之前，服务提供商已取消对线路的预配（服务提供商预配状态已设置为 *未预配*），我们会取消对线路的预配，并停止向你收费。
+
+若要删除 ExpressRoute 线路，请使用下面的 PowerShell cmdlet 示例。
 
 		Remove-AzureRmExpressRouteCircuit -ResourceGroupName "ExpressRouteResourceGroup" -Name "ExpressRouteARMCircuit"
 
-请注意，必须取消所有虚拟网络与 ExpressRoute 的链接，此操作才能成功。如果此操作失败，请查看你是否有虚拟网络链接到了此线路。
-
-如果启用了 ExpressRoute 线路服务提供商预配状态，则状态将从启用转为*禁用*。你必须通过服务提供商在他们那一侧取消对线路的预配。在服务提供商取消对线路的预配并向我们发送通知之前，我们会继续保留资源并向你收费。
-
-如果在你运行上述 cmdlet 之前，服务提供商已取消对线路的预配（服务提供商预配状态已设置为*未预配*），我们会取消对线路的预配，并停止向你收费。
-
 ## 后续步骤
 
-- [配置路由](/documentation/articles/expressroute-howto-routing-arm)
+创建你的线路后，请确保执行以下操作：
+
+1.  [创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-arm)
+2.  [将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)
 
 <!---HONumber=Mooncake_0215_2016-->

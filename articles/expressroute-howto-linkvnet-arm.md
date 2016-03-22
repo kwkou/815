@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="将虚拟网络链接到 ExpressRoute 线路 | Azure"
+   pageTitle="将虚拟网络链接到 ExpressRoute 线路 | Microsoft Azure"
    description="本文档概述了如何将虚拟网络 (VNet) 链接到 ExpressRoute 线路。"
    services="expressroute"
    documentationCenter="na"
@@ -9,8 +9,8 @@
    tags="azure-service-management"/>
 <tags 
    ms.service="expressroute"
-   ms.date="01/07/2016"
-   wacn.date="02/26/2016" />
+   ms.date="01/16/2016"
+   wacn.date="03/17/2016" />
 
 # 将虚拟网络链接到 ExpressRoute 线路
 
@@ -27,11 +27,10 @@
 
 - 你将需要最新版本的 Azure PowerShell 模块（版本 1.0 或更高版本）。 
 - 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites)页、[路由要求](/documentation/articles/expressroute-routing)页和[工作流](/documentation/articles/expressroute-workflows)页。
-- 你必须有一个活动的 ExpressRoute 线路。在继续下一步之前，请按说明[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)，并通过连接提供商启用该线路。ExpressRoute 线路必须处于已预配和已启用状态，你才能运行下述 cmdlet。
 - 你必须有一个活动的 ExpressRoute 线路。 
 	- 请按说明[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm)，并通过连接提供商启用该线路。 
 	- 请确保为线路配置 Azure 专用对等互连。如需路由说明，请参阅[配置路由](/documentation/articles/expressroute-howto-routing-arm)一文。 
-	- 若要启用端到端连接，必须配置 Azure 专用对等互连并运行你的网络和 Azure 之间的 BGP 对等互连。
+	- 若要启用端到端连接，必须配置 Azure 专用对等互连并运行你的网络和 Microsoft Azure 之间的 BGP 对等互连。
 	- 必须已创建并完全预配一个虚拟网络和一个虚拟网络网关。遵照说明创建 [VPN 网关](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)
 
 最多可以将 10 个虚拟网络链接到一条 ExpressRoute 线路。所有 ExpressRoute 线路必须位于同一个地理政治区域。

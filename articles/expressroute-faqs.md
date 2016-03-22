@@ -8,26 +8,26 @@
    editor=""/>
 <tags
    ms.service="expressroute"
-   ms.date="10/20/2015"
-   wacn.date="01/14/2016"/>
+   ms.date="02/09/2016"
+   wacn.date="03/17/2016"/>
 
 # ExpressRoute 常见问题
 
 
 ## 什么是 ExpressRoute？
-ExpressRoute 是一项 Azure 服务，允许你在 Azure 数据中心与你的本地环境或第三方托管设施中的基础结构之间创建专用连接。ExpressRoute 连接不通过公共 Internet，与通过公共 Internet 的典型连接相比，提供更高的安全性、可靠性、速度和更低的延迟。
+ExpressRoute 是一项 Azure 服务，允许你在 Microsoft Azure 数据中心与你的本地环境或第三方托管设施中的基础结构之间创建专用连接。ExpressRoute 连接不通过公共 Internet，与通过公共 Internet 的典型连接相比，提供更高的安全性、可靠性、速度和更低的延迟。
 
 ### 使用 ExpressRoute 和专用网络连接的好处是什么？
 ExpressRoute 连接不通过公共 Internet，与通过公共 Internet 的典型连接相比，提供更高的安全性、可靠性、速度和一贯较低的延迟。在某些情况下，使用 ExpressRoute 连接在本地设备和 Azure 之间传输数据可以产生显著的成本效益。
 
-### 可通过 ExpressRoute 支持哪些 Azure 服务？
+### 可通过 ExpressRoute 支持哪些 Microsoft Azure 服务？
 ExpressRoute 目前支持大多数 Azure 服务。
 
 ### 哪里提供该服务？
 参阅 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)了解服务上市区域和可用性。
 
-### 我如果未与 ExpressRoute 运营商合作伙伴之一建立合作伙伴关系，则如何使用 ExpressRoute 连接到 Azure？
-你可以通过区域运营商来建立以太网连接到Azure支持的连接提供商。然后，你可以在连接服务商的位置与 Azure 实现对接。查看 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)的最后一部分，以确定你的网络提供商是否处在任何 Exchange 位置中。然后，你可以从交换提供商订购一条 ExpressRoute 线路以连接到 Azure。
+### 我如果未与 ExpressRoute 运营商合作伙伴之一建立合作伙伴关系，则如何使用 ExpressRoute 连接到 Microsoft Azure？
+你可以通过区域运营商来建立以太网连接到 Microsoft Azure支持的连接提供商。然后，你可以在连接服务商的位置与 Microsoft Azure 实现对接。查看 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)的最后一部分，以确定你的网络提供商是否处在任何 Exchange 位置中。然后，你可以从交换提供商订购一条 ExpressRoute 线路以连接到 Azure。
 
 ### ExpressRoute 的费用是多少？
 有关定价信息，请查看[定价详细信息](/home/features/expressroute/#price)。
@@ -93,7 +93,7 @@ ExpressRoute 目前支持大多数 Azure 服务。
 否。我们不支持将第 2 层连接扩展到 Azure。
 
 ### 能否在我的订阅中有多条 ExpressRoute 线路？
-是的。你可以在订阅中有多条 ExpressRoute 线路。专用线路数的默认限制设置为 10。如果你需要增大限制，请联系 Azure 支持。
+是的。你可以在订阅中有多条 ExpressRoute 线路。专用线路数的默认限制设置为 10。如果你需要增大限制，请联系 Microsoft Azure 支持。
 
 ### 能否使用不同服务提供商的 ExpressRoute 线路？
 是的。你可以使用许多服务提供商的 ExpressRoute 线路。每条 ExpressRoute 线路将只与一个服务提供商相关联。
@@ -116,7 +116,7 @@ ExpressRoute 目前支持大多数 Azure 服务。
 ### 我有多个包含虚拟网络的 Azure 订阅。能否将不同订阅中的虚拟网络连接到单个 ExpressRoute 线路？
 是的。最多可以授权其他 10 个 Azure 订阅使用单条 ExpressRoute 线路。
 
-<!--有关详细信息，请参阅[在多个订阅之间共享 ExpressRoute 线路](/documentation/articles/expressroute-share-circuit)。-->
+有关详细信息，请参阅[在多个订阅之间共享 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)。
 
 ### 连接到同一线路的虚拟网络相互隔离吗？
 不能。连接到同一 ExpressRoute 线路的所有虚拟网络都属于同一路由域，从路由角度看不是相互隔离的。如果需要路由隔离，则需要创建单独的 ExpressRoute 线路。

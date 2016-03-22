@@ -1,16 +1,16 @@
 <properties
-   pageTitle="使用 PowerShell 配置 ExpressRoute 线路的步骤 | Azure"
+   pageTitle="使用 PowerShell 配置 ExpressRoute 线路的步骤 | Microsoft Azure"
    description="本文将指导你完成创建和预配 ExpressRoute 线路的步骤。本文还介绍了如何检查状态，以及如何更新、删除和预配线路。"
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-service-management"/>
 <tags
    ms.service="expressroute"
-   ms.date="12/08/2015"
-   wacn.date="01/14/2016"/>
+   ms.date="02/04/2016"
+   wacn.date="03/17/2016"/>
 
 # 使用 PowerShell 创建和修改 ExpressRoute 线路
 
@@ -18,7 +18,7 @@
 [PowerShell - 经典](/documentation/articles/expressroute-howto-circuit-classic)
 [PowerShell - 资源管理器](/documentation/articles/expressroute-howto-circuit-arm)
 
-本文将指导你执行相关步骤，以便使用 PowerShell cmdlet 和经典部署模型创建 ExpressRoute 线路。下面的步骤还将向你显示如何查看状态，以及如何更新、删除和预配 ExpressRoute 线路。
+本文将指导你执行相关步骤，以便使用 PowerShell cmdlet 和 **经典** 部署模型创建 ExpressRoute 线路。下面的步骤还将向你显示如何查看状态，以及如何更新、删除和预配 ExpressRoute 线路。如果要使用 **资源管理器** 部署模型创建和修改 ExpressRoute 线路，请参阅[使用资源管理器部署模型创建和修改 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm)。
 
 [AZURE.INCLUDE [vpn-gateway-sm-rm](../includes/vpn-gateway-sm-rm-include.md)]
 
@@ -39,10 +39,9 @@
 
 2. **获取支持的提供商、位置和带宽的列表。**
 
-	在创建 ExpressRoute 线路之前，你需要连接提供商、支持的位置和带宽选项的列表。PowerShell cmdlet *Get-AzureDedicatedCircuitServiceProvider* 会返回此信息，你将在后续步骤中使用此信息。
+	在创建 ExpressRoute 线路之前，你需要连接提供商、支持的位置和带宽选项的列表。PowerShell cmdlet *Get-AzureDedicatedCircuitServiceProvider* 会返回此信息，你将在后续步骤中使用此信息。当你运行该 cmdlet 时，结果将类似于下面的示例。
 
 		PS C:\> Get-AzureDedicatedCircuitServiceProvider
-		**The information returned will look similar to the example below:**
 
 		Name                 DedicatedCircuitLocations      DedicatedCircuitBandwidths                                                                                                                                                                                   
 		----                 -------------------------      --------------------------                                                                                                                                                                                   
@@ -207,7 +206,7 @@
 		Sku                              : Standard
 		Status                           : Enabled
 
-现已在 Azure 一侧调整好线路的大小。你必须联系连接提供商，让他们在那一边根据此更改更新配置。请注意，我们将从现在开始按照已更新的带宽选项为你计费。
+现已在 Microsoft Azure 一侧调整好线路的大小。你必须联系连接提供商，让他们在那一边根据此更改更新配置。请注意，我们将从现在开始按照已更新的带宽选项为你计费。
 
 >[AZURE.IMPORTANT]但是，你无法在不中断的情况下降低 ExpressRoute 线路的带宽。带宽降级需要取消对 ExpressRoute 线路的预配，然后重新预配新的 ExpressRoute 线路。
 
