@@ -17,7 +17,6 @@
 - [Azure 经典步骤](/documentation/articles/application-gateway-ilb)
 - [资源管理器 Powershell 步骤](/documentation/articles/application-gateway-ilb-arm)
 
-
 可以配置使用面向 Internet 的虚拟 IP 或不向 Internet 公开的内部终结点（也称为内部负载平衡器 (ILB) 终结点）的应用程序网关。配置使用 ILB 的网关适用于不向 Internet 公开的内部业务线应用程序。对于位于不向 Internet 公开的安全边界内的多层应用程序中的服务/层也很有用，但仍需要执行循环负载分散、会话粘性或 SSL 终止。本文将引导你配置具有 ILB 的应用程序网关。
 
 ## 开始之前

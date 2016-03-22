@@ -38,38 +38,36 @@
 
 下面的代码示例演示了如何在 OnStart 方法中修改 TEMP 和 TMP 的目标目录：
 
+	using System;
+	using Microsoft.WindowsAzure.ServiceRuntime;
+	
+	namespace WorkerRole1
+	{
+	    public class WorkerRole : RoleEntryPoint
+	    {
+	        public override bool OnStart()
+	        {
+	            // The local resource declaration must have been added to the
+	            // service definition file for the role named WorkerRole1:
+	            //
+	            // <LocalResources>
+	            //    <LocalStorage name="CustomTempLocalStore"
+	            //                  cleanOnRoleRecycle="false"
+	            //                  sizeInMB="1024" />
+	            // </LocalResources>
+	
+	            string customTempLocalResourcePath =
+	            RoleEnvironment.GetLocalResource("CustomTempLocalStore").RootPath;
+	            Environment.SetEnvironmentVariable("TMP", customTempLocalResourcePath);
+	            Environment.SetEnvironmentVariable("TEMP", customTempLocalResourcePath);
+	
+	            // The rest of your startup code goes here…
+	
+	            return base.OnStart();
+	        }
+	    }
+	}
 
-```csharp
-using System;
-using Microsoft.WindowsAzure.ServiceRuntime;
-
-namespace WorkerRole1
-{
-    public class WorkerRole : RoleEntryPoint
-    {
-        public override bool OnStart()
-        {
-            // The local resource declaration must have been added to the
-            // service definition file for the role named WorkerRole1:
-            //
-            // <LocalResources>
-            //    <LocalStorage name="CustomTempLocalStore"
-            //                  cleanOnRoleRecycle="false"
-            //                  sizeInMB="1024" />
-            // </LocalResources>
-
-            string customTempLocalResourcePath =
-            RoleEnvironment.GetLocalResource("CustomTempLocalStore").RootPath;
-            Environment.SetEnvironmentVariable("TMP", customTempLocalResourcePath);
-            Environment.SetEnvironmentVariable("TEMP", customTempLocalResourcePath);
-
-            // The rest of your startup code goes here…
-
-            return base.OnStart();
-        }
-    }
-}
-```
 
 ## 后续步骤
 

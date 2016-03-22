@@ -89,7 +89,7 @@
 3. 在“库”控件中，展开“资产”，然后展开“凭据”。
 4. 右键单击你的凭据，然后单击“添加到画布”。这将会添加凭据的 **Get-AutomationPSCredential** 活动。
 5. 在 **Get-AutomationPSCredential** 前面，输入 *$Credential =* 以将凭据分配给变量。 
-6. 在下一行中键入 *Add-AzureAccount -Credential $Credential*。   
+6. 在下一行中键入 *Add-AzureAccount -Environment AzureChinaCloud -Credential $Credential*。   
     ![凭据](media/automation-first-runbook-textual-powershell/automation-get-credential.png)
 7. 单击“测试”窗格，以便我们可以测试 Runbook。
 8. 单击“启动”以启动测试。完成后，你会获得包含帐户的订阅 ID、类型、租户的输出。这是对凭据有效的确认。
@@ -98,7 +98,7 @@
 
 在 Runbook 对 Azure 订阅进行身份验证后，我们可以管理资源。我们将添加一个命令用于启动虚拟机。你可以在你的 Azure 订阅中选取任何虚拟机，现在我们会将该名称硬编码到 cmdlet 中。
 
-1. 在 *Add-AzureAccount* 后面，键入 *Start-AzureVM -Name 'VMName' -ServiceName 'VMServiceName'* 并提供要启动的虚拟机的名称和服务名称。  
+1. 在 *Add-AzureAccount -Environment AzureChinaCloud* 后面，键入 *Start-AzureVM -Name 'VMName' -ServiceName 'VMServiceName'* 并提供要启动的虚拟机的名称和服务名称。  
     ![StartVM](media/automation-first-runbook-textual-powershell/automation-startvm.png)  
 2. 保存 Runbook，然后单击“测试”窗格，以便我们可以测试 Runbook。
 3. 单击“启动”以启动测试。一旦测试完成后，检查已启动的虚拟机。

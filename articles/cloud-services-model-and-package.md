@@ -31,7 +31,7 @@
 ## ServiceDefinition.csdef
 **ServiceDefinition.csdef** 文件指定 Azure 用于配置云服务的设置。[Azure 服务定义架构（.csdef 文件）](https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)为服务定义文件提供允许的格式。以下示例显示了可为 Web 角色和辅助角色定义的设置：
 
-```xml
+ 
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<ServiceDefinition name="MyServiceName" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -80,7 +80,7 @@
 	  </WorkerRole>
 	</ServiceDefinition>
 
-```
+ 
 
 可以参考 [服务定义架构][] 以更好地了解此处使用的 XML 架构，而以下是某些元素的快速说明：
 
@@ -115,9 +115,7 @@
 你的云服务设置配置由 **ServiceConfiguration.cscfg** 文件中的值确定。指定要为此文件中每个角色部署的实例数。在服务定义文件中定义的配置设置值已添加到服务配置文件中。与云服务相关联的所有管理证书的指纹也会添加到该文件中。[Azure 服务配置架构（.cscfg 文件）](https://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx)为服务配置文件提供允许的格式。
 
 服务配置文件不与该应用程序一起打包，但将作为一个单独的文件上载到 Azure 中并用于配置云服务。无需重新部署云服务即可上载新的服务配置文件。云服务正在运行时可以更改云服务的配置值。以下示例显示了可为 Web 角色和辅助角色定义的配置设置：
-
-```xml
-
+ 
 	<?xml version="1.0"?>
 	<ServiceConfiguration serviceName="MyServiceName" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration">
 	  <Role name="WebRole1">
@@ -133,8 +131,6 @@
 	    </Certificates>
 	  </Role>
 	</ServiceConfiguration>
-
-```
 
 可以参考[服务配置架构](https://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx)以更好了解此处使用的 XML 架构，而以下是元素的快速说明：
 

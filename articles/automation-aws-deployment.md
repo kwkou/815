@@ -96,7 +96,7 @@
 
 
 
--   确定需在 Runbook 中提供的[具体区域](http://docs.aws.amazon.com/powershell/latest/userguide/pstools-installing-specifying-region.html)。例如，我的区域是“中国北部(俄勒冈州)”，可转换为 us-west-2。
+-   确定需在 Runbook 中提供的[具体区域](http://docs.aws.amazon.com/powershell/latest/userguide/pstools-installing-specifying-region.html)。例如，我的区域是“中国北部”，可转换为 China-North。
 
 ![AWS 区域](./media/automation-aws-deployment/3ee8065d-0480-4c78-a2e3-6062653e9cb6.png "AWS 区域")
 
@@ -106,7 +106,7 @@
 		#Sample to get the AWS VM available images
 		#Please provide the path where you have downloaded the AWS PowerShell module
 		Import-Module AWSPowerShell
-		$AWSRegion = "us-west-2"
+		$AWSRegion = "China-North"
 		$AwsCred = Get-Credential
 		$AwsAccessKeyId = $AwsCred.UserName
 		$AwsSecretKey = $AwsCred.GetNetworkCredential().Password

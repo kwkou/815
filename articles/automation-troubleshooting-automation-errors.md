@@ -21,7 +21,7 @@
 ### 场景：登录 Azure 帐户失败
 
 **错误：** 
-你在使用 Add-AzureAccount 或 Login-AzureRmAccount cmdlet 时收到“Unknown\_user\_type: 用户类型未知”错误。
+你在使用 Add-AzureAccount -Environment AzureChinaCloud或 Login-AzureRmAccount -EnvironmentName AzureChinaCloud 命令时收到“Unknown\_user\_type: 用户类型未知”错误。
 
 **错误原因：**
 如果凭据资产名称无效或者用于设置自动化凭据资产的用户名和密码无效，则会出现此错误。
@@ -35,9 +35,9 @@
 
         $Cred = Get-Credential  
         #Using Azure Service Management   
-        Add-AzureAccount –Credential $Cred  
+        Add-AzureAccount -Environment AzureChinaCloud –Credential $Cred  
         #Using Azure 资源管理器  
-        Login-AzureRmAccount –Credential $Cred
+        Login-AzureRmAccount -EnvironmentName AzureChinaCloud –Credential $Cred
 
 3. 如果无法在本地进行身份验证，则意味着你尚未设置好 Azure Active Directory 凭据。请参阅[使用 Azure Active Directory 向 Azure 进行身份验证](https://azure.microsoft.com/blog/azure-automation-authenticating-to-azure-using-azure-active-directory)博客文章，了解如何正确设置 Azure Active Directory 帐户。
 
@@ -53,9 +53,9 @@
 **疑难解答提示：**
 若要确定你是否已向 Azure 进行过适当的身份验证并可访问所要选择的订阅，请执行以下步骤：
 
-1. 确保先运行 **Add-AzureAccount** cmdlet，然后运行 **Select-AzureSubscription** cmdlet。  
+1. 确保先运行 **Add-AzureAccount -Environment AzureChinaCloud** cmdlet，然后运行 **Select-AzureSubscription** cmdlet。  
 
-2. 如果仍显示此错误消息，可通过添加 **Get-AzureSubscription** cmdlet（此前已添加 **Add-AzureAccount** cmdlet）来修改代码，然后执行代码。现在，请验证 Get-AzureSubscription 的输出是否包含你的订阅详细信息。
+2. 如果仍显示此错误消息，可通过添加 **Get-AzureSubscription** cmdlet（此前已添加 **Add-AzureAccount -Environment AzureChinaCloud** cmdlet）来修改代码，然后执行代码。现在，请验证 Get-AzureSubscription 的输出是否包含你的订阅详细信息。
     * 如果你在输出中看不到任何订阅详细信息，则说明该订阅尚未初始化。  
     * 如果你在输出中看到了订阅详细信息，请确认你对 **Select-AzureSubscription** cmdlet 使用了正确的订阅名称或 ID。   
 

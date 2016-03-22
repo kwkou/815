@@ -101,7 +101,7 @@
 在 Runbook 对 Azure 订阅进行身份验证后，我们可以管理资源。我们将添加一个命令用于启动虚拟机。你可以在你的 Azure 订阅中选取任何虚拟机，现在我们会将该名称硬编码到 cmdlet 中。
 
 
-1. 在 *Add-AzureAccount* 后面，键入 *Start-AzureVM -Name 'VMName' -ServiceName 'VMServiceName'* 并提供要启动的虚拟机的名称和服务名称。<br> 
+1. 在 *Add-AzureAccount -Environment AzureChinaCloud* 后面，键入 *Start-AzureVM -Name 'VMName' -ServiceName 'VMServiceName'* 并提供要启动的虚拟机的名称和服务名称。<br> 
 ![身份验证](media/automation-first-runbook-textual/start-azurevm.png) 
 9. 保存 Runbook，然后单击“测试”窗格，以便我们可以测试 Runbook。
 10. 单击“启动”以启动测试。一旦测试完成后，检查已启动的虚拟机。

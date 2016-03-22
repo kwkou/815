@@ -45,7 +45,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 
 | 资产类型 | 资产名称 | 说明 |
 |:---|:---|:---|:---|
-| 凭据 | AzureCredential | 包含帐户凭据，该帐户有权在 Azure 订阅中启动和停止虚拟机。此外，你也可以在 **Add-AzureAccount** 活动的 **Credential** 参数中指定其他凭据。 |
+| 凭据 | AzureCredential | 包含帐户凭据，该帐户有权在 Azure 订阅中启动和停止虚拟机。此外，你也可以在 **Add-AzureAccount -Environment AzureChinaCloud** 活动的 **Credential** 参数中指定其他凭据。 |
 | 变量 | AzureSubscriptionId | 包含你的 Azure 订阅的订阅 ID。 |
 
 ## 使用解决方案

@@ -22,8 +22,6 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 - [Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-create-gateway-arm)
 - [Azure 资源管理器模板](/documentation/articles/application-gateway-create-gateway-arm-template)
 
-<BR>
-
 你将了解如何从 GitHub 下载并修改现有 Azure 资源管理器模板，以及如何通过 GitHub、PowerShell 和 Azure CLI 部署该模板。
 
 如果你只是直接从 GitHub 部署 Azure 资源管理器模板，而不进行任何更改，请跳到“从 GitHub 部署模板”。
