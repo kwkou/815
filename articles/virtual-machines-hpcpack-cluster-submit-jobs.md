@@ -29,7 +29,7 @@
 * **客户端计算机** - 需要有可运行 HPC Pack 客户端实用工具的 Windows 或 Windows Server 客户端计算机（请参阅[系统要求](https://technet.microsoft.com/zh-cn/library/dn535781.aspx)）。如果你只想要使用 HPC Pack Web 门户或 REST API 来提交作业，则可以使用自选的客户端计算机。
 
 
-## 步骤 1：在头节点上安装并配置 Web 组件
+##<a name="step-1:-install-and-configure-the-web-components-on-the-head-node"></a> 步骤 1：在头节点上安装并配置 Web 组件
 
 若要启用通过 HTTPS 以 REST 接口将作业提交到群集的功能，请在 HPC Pack 头节点上安装并配置 HPC Pack Web 组件（如果尚未配置）。必须先运行 HpcWebComponents.msi 安装文件，以安装 Web 组件。然后，通过运行 HPC PowerShell 脚本 **Set-HPCWebComponents.ps1** 来配置组件。
 

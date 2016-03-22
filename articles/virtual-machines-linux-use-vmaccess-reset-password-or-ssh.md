@@ -213,7 +213,7 @@ VMAccess 扩展无需安装就可使用它。只要在虚拟机上安装了 Linu
 > [AZURE.NOTE] 如果想要重置现有用户帐户的密码或 SSH 密钥，务必键入准确的用户名。如果键入其他名称，VMAccess 扩展将创建一个新的用户帐户并将密码分配给该帐户。
 
 
-### <a name="SSHKey"></a>重置 SSH 密钥
+### <a name="SSHkey"></a>重置 SSH 密钥
 
 填写当前的 Linux 用户名和包含 SSH 密钥的证书的路径，然后运行以下命令。
 
@@ -301,6 +301,6 @@ SSH 配置中的错误可能会导致你无法访问虚拟机。可以通过将 
 [Azure Linux 代理用户指南]: /documentation/articles/virtual-machines-linux-agent-user-guide
 [如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure
 [Azure VM 扩展和功能]: /documentation/articles/virtual-machines-extensions-features
-[使用 RDP 或 SSH 连接到 Azure 虚拟机]: http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx
+[使用 RDP 或 SSH 连接到 Azure 虚拟机]: /documentation/articles/virtual-machines-about
 
 <!---HONumber=Mooncake_0314_2016-->

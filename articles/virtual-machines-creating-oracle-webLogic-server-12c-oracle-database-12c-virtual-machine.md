@@ -53,9 +53,6 @@
 按照以**在 Azure 中配置 Oracle WebLogic Server 12c 虚拟机**部分开头的[在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机](/documentation/articles/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine)中的说明进行操作。
 
 ##其他资源
-[有关 Oracle 虚拟机映像的其他注意事项](/documentation/articles/miscellaneous-considerations-for-oracle-virtual-machine-images-new-article)
-
-[Oracle 虚拟机映像列表](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
 
 [从 Java 应用程序连接到 Oracle 数据库](http://docs.oracle.com/cd/E11882_01/appdev.112/e12137/getconn.htm#TDPJD136)
 
