@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="01/05/2016"
-   wacn.date="02/26/2016"/>
+   ms.date="02/08/2016"
+   wacn.date="03/21/2016"/>
 
 # 创作 Azure 资源管理器模板
 
@@ -465,4 +465,4 @@ resources 节包含要部署的资源数组。在每个资源内，还可以定�
 - 有关部署应用程序的详细示例，请参阅[按可预见的方式在 Azure 中预配和部署微服务](/documentation/articles/app-service-deploy-complex-application-predictably)
 - 若要查看可用架构，请参阅 [Azure 资源管理器架构](https://github.com/Azure/azure-resource-manager-schemas)
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0314_2016-->

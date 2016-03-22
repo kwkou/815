@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="12/03/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/12/2016"
+	wacn.date="03/21/2016"/>
 
 # Azure 订阅和服务限制、配额和约束
 
@@ -174,4 +174,4 @@
 
 [Azure虚拟机大小](/documentation/articles/virtual-machines-size-specs)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0314_2016-->

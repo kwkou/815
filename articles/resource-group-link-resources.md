@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="azure-resource-manager" 
-	ms.date="11/06/2015" 
-	wacn.date="12/31/2015"/>
+	ms.date="01/26/2016" 
+	wacn.date="03/21/2016"/>
 
 # Azure 资源管理器中的链接资源
 
@@ -53,4 +53,4 @@ Properties 元素包含第二个资源的标识符。
 - 您还可以使用标记来组织您的资源。若要了解有关标记资源的信息，请参阅[使用标记来组织你的资源](/documentation/articles/resource-group-using-tags)。
 - 有关如何创建模板并定义要部署的资源的说明，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)。
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0314_2016-->
