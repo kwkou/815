@@ -1,16 +1,16 @@
 <properties
-	pageTitle="开始使用 Visual Studio .NET 移动服务项目（连接服务）| Azure"
+	pageTitle="开始使用 Visual Studio .NET 移动服务项目（连接服务）| Microsoft Azure"
 	description="如何在 Visual Studio .NET 项目中开始使用 Azure 移动服务"
 	services="mobile-services"
 	documentationCenter=""
-	authors="TomArcher"
+	authors="mlhoop"
 	manager="douge"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.date="01/05/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="03/21/2016"/>
 
 #  移动服务入门（.NET 项目）
 

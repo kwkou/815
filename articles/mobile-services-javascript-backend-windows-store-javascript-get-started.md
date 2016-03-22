@@ -1,5 +1,5 @@
 <properties
-	pageTitle="适用于 Windows 应用商店 JavaScript 应用的移动服务入门 | Azure 移动服务"
+	pageTitle="适用于 Windows 应用商店 JavaScript 应用的移动服务入门 | Microsoft Azure 移动服务"
 	description="按照本教程开始使用 Azure 移动服务通过 JavaScript 进行 Windows 应用商店开发。"
 	services="mobile-services"
 	documentationCenter="windows"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="11/06/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/10/2016"
+	wacn.date="03/21/2016"/>
 
 # 移动服务入门
 

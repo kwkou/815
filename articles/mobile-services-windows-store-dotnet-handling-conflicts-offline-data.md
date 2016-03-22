@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在通用 Windows 应用中处理与脱机数据的冲突 | Azure" 
+	pageTitle="在通用 Windows 应用中处理与脱机数据的冲突 | Microsoft Azure" 
 	description="了解在通用 Windows 应用程序中同步脱机数据时如何使用 Azure 移动服务处理冲突" 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/12/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/11/2016"
+	wacn.date="03/21/2016"/>
 
 
 # 在“移动服务”中处理与脱机数据同步的冲突

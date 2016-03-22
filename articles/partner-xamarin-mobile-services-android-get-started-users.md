@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/30/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/11/2016" 
+	wacn.date="03/21/2016"/>
 
 #  向移动服务应用程序添加身份验证
 
@@ -53,7 +53,7 @@
 
 1. 将以下属性添加到 **ToDoActivity** 类：
 
-		private MobileServiceUser user;
+		private MobileServiceUser user;
 
 2. 将以下方法添加到 **ToDoActivity** 类：
 
@@ -72,7 +72,7 @@
 
     这将会创建一个用于处理身份验证过程的新方法。将使用 Microsoft 帐户登录对用户进行身份验证。此时将出现一个对话框，其中显示了已经过身份验证的用户的 ID。如果未正常完成身份验证，你将无法继续操作。
 
-    > [AZURE.NOTE]如果使用的标识提供者不是 Microsoft，请将传递给上述 **login** 方法的值更改为下列其中一项：_WindowsAzureActiveDirectory_。
+    > [AZURE.NOTE] 如果使用的标识提供者不是 Microsoft，请将传递给上述 **login** 方法的值更改为下列其中一项: _WindowsAzureActiveDirectory_。
 
 3. 在 **OnCreate** 方法中，在实例化 `MobileServiceClient` 对象的代码后面添加以下代码行。
 
@@ -134,7 +134,6 @@
 <!-- URLs. -->
 [移动服务入门]: /documentation/articles/partner-xamarin-mobile-services-android-get-started
 [使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
-[Azure classic Portal]: https://manage.windowsazure.cn/
 
 [已完成的示例项目]: http://go.microsoft.com/fwlink/p/?LinkId=331328
 

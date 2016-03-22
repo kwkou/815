@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在命令行管理移动服务 | Azure" 
+	pageTitle="通过命令行管理移动服务 | Microsoft Azure" 
 	description="了解如何使用命令行工具创建、 部署和管理您的 Azure 移动服务。" 
 	services="mobile-services" 
 	documentationCenter="Mobile" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/02/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="01/27/2016"
+	wacn.date="03/21/2016"/>
 
 #  使用命令行工具自动操作移动服务 
 
@@ -106,7 +106,7 @@
 下面显示了脚本权限值与 [Azure 经典门户]中的权限值的对照表。
 
 |脚本值|门户值|
-|========|========|
+|------|------|
 |`public`|每个人|
 |`application`（默认值）|拥有应用程序密钥的任何人|
 |`user`|仅限经过身份验证的用户|

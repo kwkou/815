@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="利用乐观并发处理数据库写入冲突（Windows 应用商店）| Azure" 
+	pageTitle="利用乐观并发处理数据库写入冲突（Windows 应用商店）| Microsoft Azure" 
 	description="了解如何处理服务器上和 Windows 应用商店应用程序中的数据库写入冲突。" 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="10/05/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="01/21/2016"
+	wacn.date="03/21/2016"/>
 
 # 处理数据库写入冲突
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
@@ -124,7 +124,7 @@
 	>````` 
 	//Enable optimistic concurrency by retrieving __version
 todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
-
+	`````
 
 
 2. 将 `Version` 属性添加到 `TodoItem` 类后，如果记录自上次查询以来已更改，则在更新期间将通过 `MobileServicePreconditionFailedException` 异常通知应用程序。此异常包括服务器中该项目的最新版本。在共享项目的 MainPage.cs 中，添加以下代码以在 `UpdateToDoItem()` 方法中处理异常。

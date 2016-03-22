@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在移动服务中使用脱机数据 (Xamarin Android) | Azure"
+	pageTitle="在移动服务中使用脱机数据 (Xamarin Android) | Microsoft Azure"
 	description="了解如何使用 Azure 移动服务向 Xamarin.android 应用程序中的缓存和同步离线数据"
 	documentationCenter="xamarin"
 	authors="lindydonna"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="12/07/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/11/2016"
+	wacn.date="03/21/2016"/>
 
 #  在移动服务中使用脱机数据同步
 

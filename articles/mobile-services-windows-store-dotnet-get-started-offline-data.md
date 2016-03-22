@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在通用 Windows 应用中使用脱机数据 | Azure" 
+	pageTitle="在通用 Windows 应用中使用脱机数据 | Microsoft Azure" 
 	description="了解如何在通用 Windows 应用中使用 Azure 移动服务缓存和同步脱机数据" 
 	documentationCenter="mobile-services" 
 	authors="lindydonna" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/06/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/11/2016"
+	wacn.date="03/21/2016"/>
 
 # 在移动服务中使用脱机数据同步
 

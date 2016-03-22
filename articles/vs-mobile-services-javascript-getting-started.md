@@ -1,16 +1,16 @@
 <properties 
-	pageTitle="通过使用 Visual Studio 连接服务添加移动服务后开始使用 Javascript 移动应用 | Azure" 
+	pageTitle="通过使用 Visual Studio 连接服务添加移动服务后开始使用 Javascript 移动应用 | Microsoft Azure" 
 	description="如何在 Visual Studio 中的 JavaScript 项目内开始使用 Azure 移动服务" 
 	services="mobile-services" 
 	documentationCenter="" 
-	authors="TomArcher" 
+	authors="mlhoop" 
 	manager="douge" 
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.date="01/05/2016" 
-	wacn.date="02/26/2016"/>
+	wacn.date="03/21/2016"/>
 
 # 通过使用 Visual Studio 连接服务添加 Azure 移动服务后开始使用 Javascript 移动应用
 
@@ -66,7 +66,7 @@
 
 ##更新条目
 
-更新数据表中的行。在此示例中，*todoItem* 是更新的项目，而 *item* 是从移动服务中返回的同一项目。移动服务响应时，本地 todoItems 列表中的项目将使用 [splice](http://msdn.microsoft.com/zh-cn/library/windows/apps/Hh700810.aspx) 方法进行更新。对返回的 **Promise** 对象调用 [done](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 方法以获取插入对象的副本并处理任何错误。
+更新数据表中的行。在此示例中，*todoItem* 是更新的项目，而 *item* 是从移动服务中返回的同一项目。移动服务响应时，本地 todoItems 列表中的项目将使用 [splice](http://msdn.microsoft.com/zh-cn/library/windows/apps/Hh700810.aspx) 方法进行更新。对返回的 [Promise](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 对象调用  **done** 方法以获取插入对象的副本并处理任何错误。
 
         todoTable.update(todoItem).done(function (item) {
             todoItems.splice(todoItems.indexOf(item), 1, item);
@@ -74,7 +74,7 @@
 
 ##删除条目
 
-删除数据表中的行。对返回的 [Promise]() 对象调用 [done](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 方法以获取插入对象的副本并处理任何错误。
+删除数据表中的行。对返回的 [Promise](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 对象调用 [done]() 方法以获取插入对象的副本并处理任何错误。
 
 	todoTable.del(todoItem).done(function (item) {
 	    todoItems.splice(todoItems.indexOf(item), 1);

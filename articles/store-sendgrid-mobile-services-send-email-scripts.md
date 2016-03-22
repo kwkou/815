@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 SendGrid 发送电子邮件 | Azure" 
+	pageTitle="使用 SendGrid 发送电子邮件 | Microsoft Azure" 
 	description="了解如何使用 SendGrid 服务从 Azure 移动服务应用程序发送电子邮件。" 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="11/30/2015" 
-	wacn.date="01/29/2016"/>
+	wacn.date="03/21/2016"/>
 
 
 # 使用 SendGrid 从移动服务发送电子邮件

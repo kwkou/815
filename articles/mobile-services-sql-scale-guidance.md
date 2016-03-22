@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="缩放 Azure SQL 数据库支持的移动服务 | Azure" 
+	pageTitle="缩放 Azure SQL 数据库支持的移动服务 | Microsoft Azure" 
 	description="了解如何诊断和修复 SQL 数据库支持的移动服务中的可扩展性问题" 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="12/01/2015" 
-	wacn.date="01/29/2016"/>
+	wacn.date="03/21/2016"/>
 
 # 扩展 Azure SQL 数据库支持的移动服务
 
@@ -83,8 +83,10 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 请尽早考虑以下其他缓解步骤：
 
-- **优化数据库。** 优化数据库通常可以降低数据库利用率，并避免扩展到更高的服务层。 
-- **考虑服务体系结构。** 随着时间的推移，您的服务负载通常分布不均，但包含高需求“峰值”。如果不纵向扩展数据库应对峰值，并让数据库在低需求期间保持低利用率，通常可以调整服务体系结构，以避免出现此类峰值，或在不对数据库造成干扰的情况下处理峰值情况。
+- **优化数据库。**
+优化数据库通常可以降低数据库利用率，并避免扩展到更高的服务层。 
+- **考虑服务体系结构。**
+随着时间的推移，您的服务负载通常分布不均，但包含高需求“峰值”。如果不纵向扩展数据库应对峰值，并让数据库在低需求期间保持低利用率，通常可以调整服务体系结构，以避免出现此类峰值，或在不对数据库造成干扰的情况下处理峰值情况。
 
 本文余下部分将介绍自定义指南，以帮助实施这些缓解措施。
 
@@ -97,9 +99,9 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 2. 确保如上节所述显示相关指标。
 3. 选择你希望为其设置警报的指标，然后选择“添加规则”
     ![Azure 管理门户 - SQL 警报][PortalSqlAddAlert]
-4. 提供警报名称及描述!
-    [Azure 管理门户-SQL 警报名称和说明][PortalSqlAddAlert2]
-5. 指定用于警报阈值的值。请考虑使用 **80%**，以便有时间做出反应。此外，请务必指定你主动监控的电子邮箱地址。 
+4. 提供警报名称及描述
+    ![Azure 管理门户-SQL 警报名称和说明][PortalSqlAddAlert2]
+5. 指定用于警报阈值的值。请考虑使用 **80%**，以便有时间做出反应。此外，请务必指定你主动监控的电子邮箱地址。
     ![Azure 管理门户 - SQL 警报阈值和电子邮件][PortalSqlAddAlert3]
 
 有关诊断 SQL 问题的详细信息，请参阅本文末尾的[高级诊断](#AdvancedDiagnosing)。
@@ -163,7 +165,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
         public bool Complete { get; set; }
     }
 		 
-更多有关索引的详细信息，请参阅[实体框架中的索引批注][]。有关优化索引的更多提示，请参阅本文末尾的“高级索引”[](#AdvancedIndexing)。
+更多有关索引的详细信息，请参阅[实体框架中的索引批注][]。有关优化索引的更多提示，请参阅本文末尾的“高级索引”(#AdvancedIndexing)。
 
 <a name="Schema"></a>
 ##  架构设计
@@ -194,7 +196,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 - **将负载分散到不同时间。** 如果你对特定事件（例如广播推送通知）的执行时间进行控制，并预期这些事件会产生需求上的高峰，且这些事件的执行时间并不重要，请考虑将其分散到不同时间。在上述示例中，或许你的应用程序客户可以在一天的不同时间分批获取新应用程序内容的通知，而无需在几乎相同的时间获取。请考虑将客户分成允许交错传送到每个批的组。使用通知中心时，应用附加标记以跟踪批，然后将推送通知传送到该标记，这样便可提供实现此策略的简单途径。有关标记的详细信息，请参阅[使用通知中心发送突发新闻](/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news)。
 - **在可能的情况下使用 Blob 和表存储。** 客户在高峰期所查看的内容经常是较为静态的，且不需要存储在 SQL 数据库中，因为你不可能需要对该内容的关系查询功能。在此情况下，请考虑将内容存储在 Blob 或表存储中。你可以直接从设备访问 Blob 存储中的公共 Blob。若要以安全方式访问 Blob 或使用表存储，必须通过移动服务自定义 API 保护存储访问密钥。有关详细信息，请参阅[使用移动服务将图像上载到 Azure 存储空间](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage)。
-- **使用内存中缓存**。另一种方法是将流量峰值期间通常访问的数据存储于内存中缓存，比如 [Azure 缓存](/services/cache/)。这意味着传入的请求能够从内存中提取所需的信息，而不是重复查询数据库。
+- **使用内存中缓存**。另一种方法是将流量峰值期间通常访问的数据存储于内存中缓存，比如 [Azure 缓存](/documentaiton/services/cache/)。这意味着传入的请求能够从内存中提取所需的信息，而不是重复查询数据库。
 
 <a name="Advanced"></a>
 ##  高级故障排除
@@ -269,7 +271,8 @@ Azure 经典门户提供内置管理体验，虽然限制更多，但无需本�
     WHERE database_name = 'todoitem_db' 
     ORDER BY start_time DESC
 
-> [AZURE.NOTE]请在你服务器的 **master** 数据库上执行此查询，因为只有该数据库显示 **sys.resource\_stats** 视图。
+> [AZURE.NOTE] 
+请在你服务器的 **master** 数据库上执行此查询，因为只有该数据库显示 **sys.resource\_stats** 视图。
 
 结果将会包含以下有用的度量值：CPU（层限制百分比）、存储 (MB)、物理数据读取（层限制百分比）、日志写入（层限制百分比）、内存（层限制百分比）、工作线程计数、会话计数等。
 
@@ -282,7 +285,8 @@ Azure 经典门户提供内置管理体验，虽然限制更多，但无需本�
     and event_type like 'throttling%'
     order by start_time desc
 
-> [AZURE.NOTE]请在服务器的 **master** 数据库上执行此查询，**sys.event\_log** 视图只会出现在该数据库上。
+> [AZURE.NOTE] 
+请在服务器的 **master** 数据库上执行此查询，**sys.event\_log** 视图只会出现在该数据库上。
 
 <a name="AdvancedIndexing" ></a>
 ### 高级索引
@@ -295,7 +299,8 @@ Azure 经典门户提供内置管理体验，虽然限制更多，但无需本�
 
 若要提供真实类比：请考虑使用书本或技术手册。每页的内容为一条记录，页码为聚集索引，书背后的主题索引为非聚集索引。主题索引的每个条目指向聚集索引，页码。
 
-> [AZURE.NOTE]默认情况下，Azure 移动服务的 JavaScript 后端将 **\_createdAt** 设置为聚集索引。如果你要删除这列，或想要不同的聚集索引，请务必遵循以下[聚集索引设计指南](#ClusteredIndexes)。在.NET 后端，类 `EntityData` 会使用批注 `[Index(IsClustered = true)]` 将 `CreatedAt` 定义为聚集索引。
+> [AZURE.NOTE] 
+默认情况下，Azure 移动服务的 JavaScript 后端将 **\_createdAt** 设置为聚集索引。如果你要删除这列，或想要不同的聚集索引，请务必遵循以下[聚集索引设计指南](#ClusteredIndexes)。在.NET 后端，类 `EntityData` 会使用批注 `[Index(IsClustered = true)]` 将 `CreatedAt` 定义为聚集索引。
 
 <a name="ClusteredIndexes"></a>
 ####  聚集索引设计指南

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="11/06/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/10/2016"
+	wacn.date="03/21/2016"/>
 
 #  <a name="getting-started"></a>移动服务和 Sencha Touch 入门
 
@@ -244,7 +244,7 @@ Azure 代理会按照 Azure API 所预期的相应 CRUD 操作（包括身份验
 
 ### 存储 ToDo 项 
 
-**文件名：**app/store/TodoItems.js
+**文件名**: app/store/TodoItems.js
 
 Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模型）的集合，以便以各种不同的方式显示这些记录。这可能包括网格、图表、列表等等。
 
@@ -270,7 +270,7 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 
 ### 查看和编辑 ToDo 项
 
-**文件名：**app/view/DataItem.js
+**文件名**： app/view/DataItem.js
 
 由于我们已定义了每个 ToDo 项的结构并且已创建了存储来放置所有记录，因此应考虑希望如何向应用程序的用户显示此信息。我们通常通过使用“视图”向用户显示信息。视图可以是任意数量的 Touch 组件之一，可单独使用或与其他元素组合使用。
 
@@ -572,7 +572,7 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 
 ### 将其放在一起
 
-**文件名**：app.js
+**文件名**: app.js
 
 我们的最后一个步骤是完成编辑主应用程序文件，并提供有关已定义的模型、存储、视图和控制器的信息。这些资源的源文件会自动加载到应用程序中。最后，调用 launch 方法，它创建并显示主应用程序视图“Basic.main.View”。
 
@@ -668,7 +668,7 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 
   3. 在 Web 浏览器中打开你的终端中列出的 URL，以启动该应用程序（例如 http://localhost:1841)）。
 
-  4. 在应用程序中键入有意义的文本（例如 “Complete the tutorial”），然后单击“添加”。
+  4. 在应用程序中键入有意义的文本（例如 “完成此教程”），然后单击“添加”。
 
     ![新的 todo 项](./media/partner-sencha-mobile-services-get-started/new-todo-item.png)
 
