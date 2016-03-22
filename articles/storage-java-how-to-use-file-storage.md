@@ -8,10 +8,10 @@
 	editor="jimbe" />
 
 <tags 
-	ms.service="storage"
+	ms.service="storage" 
 
-	ms.date="01/11/2016"
-	wacn.date="02/25/2016"/>
+	ms.date="02/03/2016"
+	wacn.date="03/21/2016"/>
 
 # 如何通过 Java 使用文件存储
 
@@ -42,9 +42,9 @@
 若要使用文件存储，你需要连接到你的 Azure 存储帐户。第一步是配置连接字符串，我们将使用该字符串连接到你的存储帐户。为此，我们需要定义一个静态变量。
 
 	// Configure the connection-string with your values
-	public static final String storageConnectionString = 
-	    "DefaultEndpointsProtocol=http;" + 
-	    "AccountName=your_storage_account_name;" + 
+	public static final String storageConnectionString =
+	    "DefaultEndpointsProtocol=http;" +
+	    "AccountName=your_storage_account_name;" +
 	    "AccountKey=your_storage_account_key;" +
 	    "EndpointSuffix=core.Chinacloudapi.cn";
 
@@ -212,7 +212,7 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 - [Azure 存储团队博客]
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
 
-[Azure SDK for Java]: http://azure.microsoft.com/zh-cn/develop/java/
+[Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
 [Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
@@ -220,4 +220,4 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
  
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0314_2016-->
