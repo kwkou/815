@@ -188,7 +188,7 @@
 	  <ComputeNodes>
 	    <VMNamePattern>MyHPCCN-%0000%</VMNamePattern>
 	    <ServiceName>MyHPCCNService</ServiceName>
-	    <VMSize>A8</VMSize>
+	    <VMSize>A7</VMSize>
 	<NodeCount>5</NodeCount>
 	<AffinityGroup>MyIBAffinityGroup</AffinityGroup>
 	  </ComputeNodes>
@@ -358,7 +358,7 @@
 
     若要解决此问题，请登录到域控制器，删除转发器配置设置或配置一个有效的转发器 DNS 服务器。为此，请在服务器管理器中单击“工具”>“DNS”以打开 DNS 管理器，然后双击“转发器”。
 
-* **从大小为 A8 或 A9 的 VM 访问 RDMA 网络时出现问题** - 如果你通过使用部署脚本添加大小为 A8 或 A9 的计算节点 VM 或代理节点 VM，则在将这些 VM 连接到 RDMA 应用程序网络时可能会遇到问题。发生这种情况的原因之一是，在将大小为 A8 或 A9 的 VM 添加到群集时未正确安装 HpcVmDrivers 扩展。例如，该扩展可能会停滞在安装状态。
+* **从 VM 访问 RDMA 网络时出现问题** - 如果你通过使用部署脚本添加计算节点 VM 或代理节点 VM，则在将这些 VM 连接到 RDMA 应用程序网络时可能会遇到问题。发生这种情况的原因之一是，在 VM 添加到群集时未正确安装 HpcVmDrivers 扩展。例如，该扩展可能会停滞在安装状态。
 
     若要解决此问题，请先检查 VM 中扩展的状态。如果该扩展未正确安装，请尝试从 HPC 群集中删除节点，然后再重新添加节点。例如，你可以通过使用 Add-HpcIaaSNode.ps1 脚本添加计算节点 VM。
 

@@ -50,7 +50,7 @@ Azure 只支持固定的 VHD 格式的虚拟硬盘。如果你想在 Azure 中�
 它们在很多方面与“第 1 代”Hyper-V VM 类似，但并非完全相同。两种类型都提供虚拟化的硬件，而 VHD 格式的虚拟硬盘是兼容的。这意味着你可以在 Hyper-V 与 Azure 之间移动它们。存在以下三大区别，这有时会令 Hyper-V 用户感到惊讶：
 
 - Azure 不提供对虚拟机的控制台访问。在 VM 完成启动之前，无法对其进行访问。
-- 多数[大小](/documentation/articles/virtual-machines-size-specs)的 Azure VM 只有 1 个虚拟网络适配器，这意味着它们也只能有 1 个外部 IP 地址。（A8 和 A9 大小的 VM 可使用第二个网络适配器在实例之间进行应用程序通信，但仅限特定的方案。）
+- 多数[大小](/documentation/articles/virtual-machines-size-specs)的 Azure VM 只有 1 个虚拟网络适配器，这意味着它们也只能有 1 个外部 IP 地址。
 - Azure VM 不支持第 2 代 Hyper-V VM 功能。有关这些功能的详细信息，请参阅[适用于 Hyper-V 的虚拟机规格](http://technet.microsoft.com/zh-cn/library/dn592184.aspx)和[第 2 代虚拟机概述](https://technet.microsoft.com/zh-cn/library/dn282285.aspx)。
 
 ## 这些虚拟机能否使用我现有的本地网络基础结构？
