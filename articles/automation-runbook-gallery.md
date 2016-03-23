@@ -29,7 +29,7 @@
 ### 使用 Azure 经典门户从 Runbook 库导入 Runbook
 
 1. 在 Azure 管理门户中，单击“添加”>“应用程序服务”>“自动化”>“Runbook”>“从库中”。
-2. 选择一个类别以查看相关的 Runbook，然后选择一个 Runbook 以查看其详细信息。选择所需的 Runbook 后，单击右箭头按钮。<br>![Runbook 库](media/automation-runbook-gallery/runbook-gallery.png)
+2. 选择一个类别以查看相关的 Runbook，然后选择一个 Runbook 以查看其详细信息。选择所需的 Runbook 后，单击右箭头按钮。<br>![Runbook 库](./media/automation-runbook-gallery/runbook-gallery.png)
 3. 查看该 Runbook 的内容，并记下说明中所述的任何要求。完成后，单击右箭头按钮。
 4. 输入 Runbook 详细信息，然后单击复选标记按钮。Runbook 名称已填入。
 5. 该 Runbook 将出现在自动化帐户的“Runbook”选项卡中。

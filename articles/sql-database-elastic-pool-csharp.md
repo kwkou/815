@@ -16,7 +16,6 @@
 # C&#x23; 数据库开发：为 SQL 数据库创建和配置弹性数据库池
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-elastic-pool-portal)
 - [C#](/documentation/articles/sql-database-elastic-pool-csharp)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell)
 

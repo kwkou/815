@@ -38,7 +38,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 升级到 SQL 数据库 V12 的操作不可撤销。升级后，无法将服务器还原到 V11。
 
-升级到 V12 之后，[服务层建议](/documentation/articles/sql-database-service-tier-advisor)和[弹性池建议](/documentation/articles/sql-database-elastic-pool-portal/#step-2-choose-a-pricing-tier)将不会立即可用，必须等到服务有时间评估新服务器上的工作负荷之后，才可供使用。V11 服务器建议历史记录不适用于 V12 服务器，因此不会保留。
+升级到 V12 之后，[服务层建议](/documentation/articles/sql-database-service-tier-advisor)和弹性池建议将不会立即可用，必须等到服务有时间评估新服务器上的工作负荷之后，才可供使用。V11 服务器建议历史记录不适用于 V12 服务器，因此不会保留。
 
 
 ## 准备升级
@@ -99,7 +99,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 -或-
 
-如果你看到一条消息说“单击此处以查看针对此服务器建议的弹性数据库池”，则可单击它轻松创建一个已针对你服务器的数据库优化的池。有关详细信息，请参阅[建议的弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal/#recommended-elastic-database-pools)。
+如果你看到一条消息说“单击此处以查看针对此服务器建议的弹性数据库池”，则可单击它轻松创建一个已针对你服务器的数据库优化的池。
 
 
    
@@ -110,7 +110,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 升级后，建议你主动监视数据库，以确保应用程序以所需的性能运行，并根据需要优化使用方式。
 
-除了监视单个数据库之外，你还可以[使用门户](/documentation/articles/sql-database-elastic-pool-portal/#monitor-and-manage-an-elastic-database-pool)或通过 [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell/#monitoring-elastic-databases-and-elastic-database-pools) 监视弹性数据库池。
+除了监视单个数据库之外，你还可以通过 [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell/#monitoring-elastic-databases-and-elastic-database-pools) 监视弹性数据库池。
 
 
 **资源消耗数据：**对于基本、标准和高级数据库，可通过用户数据库中的 [sys.dm\_ db\_ resource\_stats](http://msdn.microsoft.com/zh-cn/library/azure/dn800981.aspx) DMV 查看资源消耗数据。此 DMV 针对前一小时的操作，以 15 秒的粒度级提供接近实时的资源消耗信息。每个间隔的 DTU 消耗百分比将计算为 CPU、IO 和日志维度的最大消耗百分比。下面是一个用于计算过去一小时平均 DTU 消耗百分比的查询：
@@ -143,8 +143,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 ## 后续步骤
 
-- [查看弹性数据库池建议](/documentation/articles/sql-database-elastic-pool-portal/#recommended-elastic-database-pools)。
-- [创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal)，并将部分或全部数据库添加到池中。
+- 创建弹性数据库池并将部分或全部数据库添加到池中。
 - [更改数据库的服务层和性能级别](/documentation/articles/sql-database-scale-up)。
 
 

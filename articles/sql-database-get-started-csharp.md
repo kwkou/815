@@ -26,7 +26,7 @@
 
 了解如何使用[适用于 .NET 的 Azure SQL 数据库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)通过 C# 命令创建 Azure SQL 数据库。
 
-你可以使用 SQL 和 C# 创建单一数据库以试用 SQL 数据库。若要创建弹性数据库，请参阅[创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal)。
+你可以使用 SQL 和 C# 创建单一数据库以试用 SQL 数据库。
 
 为简明起见，我们已分开列出各个代码段，并在本文底部的某个部分中提供了一个示例控制台应用程序，其中结合了所有命令。
 

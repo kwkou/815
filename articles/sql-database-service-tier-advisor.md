@@ -23,7 +23,7 @@
 
 - [更改 SQL 数据库的服务层和性能级别（定价层）](/documentation/articles/sql-database-scale-up)
 - [将 Azure SQL 服务器升级到 V12](/documentation/articles/sql-database-v12-upgrade)
-- 浏览到 V12 服务器 - 如果你的数据库可以[从弹性数据库池受益](/documentation/articles/sql-database-elastic-pool-portal/#recommended-elastic-database-pools)，服务器边栏选项卡将显示一条消息来指出建议的池。单击该消息可以创建建议的池。
+- 浏览到 V12 服务器 - 如果你的数据库可以从弹性数据库池受益，服务器边栏选项卡将显示一条消息来指出建议的池。单击该消息可以创建建议的池。
 - [创建弹性数据库池](/documentation/articles/sql-database-elastic-pool/#elastic-database-pool-pricing-tier-recommendations)
 
 

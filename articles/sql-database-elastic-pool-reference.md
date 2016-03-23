@@ -33,7 +33,6 @@
 | :-- | :-- |
 | [SQL 数据库弹性数据库池](/documentation/articles/sql-database-elastic-pool) | 弹性数据库池的概述 |
 | [价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance) | 如果评估使用弹性数据库池是否符合成本效益 |
-| [使用 Azure 门户创建和管理 SQL 数据库弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal) | 如何使用 Azure 门户创建和管理弹性数据库池 |
 | [使用 PowerShell 创建和管理 SQL 数据库弹性数据库池](/documentation/articles/sql-database-elastic-pool-powershell) | 如何使用 PowerShell cmdlet 创建和管理弹性数据库池 |
 | [使用适用于 .NET 的 Azure SQL 数据库库创建和管理 SQL 数据库](/documentation/articles/sql-database-elastic-pool-csharp) | 如何使用 C# 创建和管理弹性数据库池 |
 | [弹性数据库作业概述](/documentation/articles/sql-database-elastic-jobs-overview) | 概述弹性作业服务，该服务可用于跨池中的所有弹性数据库运行 T-SQL 脚本 |

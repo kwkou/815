@@ -86,7 +86,7 @@
 
 被分配了“自动化操作员”角色的用户在查看被分配到的自动化帐户时，只能查看在自动化帐户中创建的 Runbook、Runbook 作业和计划的列表，而不能查看其定义。该用户可以启动、停止、暂停、恢复或计划 Runbook 作业。该用户将无法访问其他自动化资源，例如配置、混合辅助角色组或 DSC 节点。
 
-![不能访问资源](media/automation-role-based-access-control/automation-10-no-access-to-resources.png)
+![不能访问资源](./media/automation-role-based-access-control/automation-10-no-access-to-resources.png)
 
 当用户单击 Runbook 时，系统不会提供查看源或编辑 Runbook 所需的命令，因为自动化操作员角色不允许访问它们。
 
@@ -102,21 +102,21 @@
 
 • [Get-AzureRmRoleDefinition](https://msdn.microsoft.com/zh-cn/library/mt603792.aspx) 列出 Azure Active Directory RBAC 中提供的所有角色。你可以使用此命令和 **Name** 属性来列出具有特定角色的所有用户。  
     **示例：**  
-    ![获取角色定义](media/automation-role-based-access-control/automation-14-get-azurerm-role-definition.png)
+    ![获取角色定义](./media/automation-role-based-access-control/automation-14-get-azurerm-role-definition.png)
 
 • [Get-AzureRmRoleAssignment](https://msdn.microsoft.com/zh-cn/library/mt619413.aspx) 列出指定作用域的 Azure RBAC 角色分配。在没有任何参数的情况下，此命令返回在订阅下进行的所有角色分配。使用 **ExpandPrincipalGroups** 参数可列出针对指定用户和用户所在组的访问权限分配情况。  
     **示例：** 使用以下命令列出自动化帐户中的所有用户及其角色。
 
     Get-AzureRMRoleAssignment -scope “/subscriptions/<SubscriptionID>/resourcegroups/<Resource Group Name>/Providers/Microsoft.Automation/automationAccounts/<Automation Account Name>” 
 
-![获取角色分配](media/automation-role-based-access-control/automation-15-get-azurerm-role-assignment.png)
+![获取角色分配](./media/automation-role-based-access-control/automation-15-get-azurerm-role-assignment.png)
 
 • [New-AzureRmRoleAssignment](https://msdn.microsoft.com/zh-cn/library/mt603580.aspx)：授予对特定作用域的用户、组和应用程序的访问权限。  
     **示例：** 使用以下命令为“自动化帐户”作用域的用户创建“自动化操作员”新角色。
 
     New-AzureRmRoleAssignment -SignInName <sign-in Id of a user you wish to grant access> -RoleDefinitionName "Automation operator" -Scope “/subscriptions/<SubscriptionID>/resourcegroups/<Resource Group Name>/Providers/Microsoft.Automation/automationAccounts/<Automation Account Name>”  
 
-![新建角色分配](media/automation-role-based-access-control/automation-16-new-azurerm-role-assignment.png)
+![新建角色分配](./media/automation-role-based-access-control/automation-16-new-azurerm-role-assignment.png)
 
 • 使用 [Remove-AzureRmRoleAssignment](https://msdn.microsoft.com/zh-cn/library/mt603781.aspx) 删除对特定作用域的指定用户、组或应用程序的访问权限。
     **示例：** 使用以下命令为“自动化帐户”作用域的用户创建“自动化操作员”新角色。

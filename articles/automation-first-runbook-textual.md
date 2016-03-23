@@ -36,18 +36,18 @@
 
 1. 在 Azure 经典门户中，打开你的自动化帐户。通过自动化帐户页面可快速查看此帐户中的资源。你应该已拥有某些资产。大多数资产都是自动包括在新的自动化帐户中的模块。你还应具有在“[先决条件](#prerequisites)”中提到的凭证资产。
 2. 单击 **Runbook** 磁贴打开 Runbook 的列表。<br>
-![Runbook 控制](media/automation-first-runbook-textual/runbooks-control.png)
+![Runbook 控制](./media/automation-first-runbook-textual/runbooks-control.png)
 2. 通过单击“添加 Runbook”按钮创建一个新 Runbook，然后“创建新 Runbook”。
 3. 将该 Runbook 命名为 *MyFirstRunbook-Workflow*。
-4. 在本例中，我们将要创建一个PowerShell 工作流 Runbook，因此请选择“PowerShell 工作流”作为“Runbook 类型”。<br> ![新建 Runbook](media/automation-first-runbook-textual/new-runbook.png)
+4. 在本例中，我们将要创建一个PowerShell 工作流 Runbook，因此请选择“PowerShell 工作流”作为“Runbook 类型”。<br> ![新建 Runbook](./media/automation-first-runbook-textual/new-runbook.png)
 5. 单击“创建”以创建 Runbook 并打开文本编辑器。
 
 ## 步骤 2 - 将代码添加到 Runbook
 
 你可以直接将代码键入 Runbook 中，或者通过“库”控件选择 cmdlet、Runbook 和资产，并使用任何相关的参数将它们添加到 Runbook。在本演练中，我们将直接键入 Runbook。
 
-1. 我们的 Runbook 目前是空的，只有必需的*工作流*关键字、Runbook 名称以及括住整个工作流的大括号。<br> ![Runbook 控制](media/automation-first-runbook-textual/empty-runbook.png)
-2. 在括号之间键入 *Write-Output "Hello World"*。<br> ![Hello world](media/automation-first-runbook-textual/hello-world.png)
+1. 我们的 Runbook 目前是空的，只有必需的*工作流*关键字、Runbook 名称以及括住整个工作流的大括号。<br> ![Runbook 控制](./media/automation-first-runbook-textual/empty-runbook.png)
+2. 在括号之间键入 *Write-Output "Hello World"*。<br> ![Hello world](./media/automation-first-runbook-textual/hello-world.png)
 3.   通过单击“保存”来保存 Runbook。<br>
 
 ## 步骤 3 - 测试 Runbook
@@ -70,15 +70,15 @@
 4. 我们只需要启动 Runbook，因此请单击“启动”，然后在出现提示时单击“是”。<br>
 5. 会为我们刚刚创建的 Runbook 作业打开作业窗格。我们可以关闭此窗格，但在这种情况下我们将其保持打开，以便可以查看该作业的进度。
 6.  作业状态显示在“作业摘要”中并且与我们在测试该 Runbook 时看到的状态相匹配。<br>
-![作业摘要](media/automation-first-runbook-textual/job-pane-summary.png)
+![作业摘要](./media/automation-first-runbook-textual/job-pane-summary.png)
 7.  一旦此 Runbook 状态显示“已完成”，单击“输出”。“输出”窗格将打开，并且我们可以看到 *Hello World*。<br> 
-![作业摘要](media/automation-first-runbook-textual/job-pane-output.png)  
+![作业摘要](./media/automation-first-runbook-textual/job-pane-output.png)  
 8.  关闭“输出”窗格。
 9.  单击“流”打开 Runbook 作业的“流”窗格。应该只会在输出流中看到 *Hello World*，但此窗格也可以显示 Runbook 作业的其他流，例如，“详细”和“错误”（如果 Runbook 向其写入)。<br>
-![作业摘要](media/automation-first-runbook-textual/job-pane-streams.png) 
+![作业摘要](./media/automation-first-runbook-textual/job-pane-streams.png) 
 9. 关闭“流”窗格和“作业”窗格中以返回到 MyFirstRunbook 窗格。
 9.  单击“作业”打开此 Runbook 的“作业”窗格。这将列出此 Runbook 创建的所有作业。由于我们只运行该作业一次，应该只会看到一个列出的作业。<br>
-![作业](media/automation-first-runbook-textual/runbook-control-jobs.png) 
+![作业](./media/automation-first-runbook-textual/runbook-control-jobs.png) 
 9. 你可以在此作业上单击以打开我们启动 Runbook 时查看的相同的作业窗格。这样你就可以回溯并查看为特定 Runbook 创建的任何作业的详细信息。
 
 ## 步骤 5 - 添加身份验证来管理 Azure 资源
@@ -92,9 +92,9 @@
 4.  右键单击你的凭据，然后单击“添加到画布”。这将会添加凭据的 **Get-AutomationPSCredential** 活动。
 5.  在 **Get-AutomationPSCredential** 前面，输入 *$Credential =* 以将凭据分配给变量。 
 3.  在下一行中键入 *Add-AzureAccount -Credential $Credential –Environment AzureChinaCloud*。<br> 
-![身份验证](media/automation-first-runbook-textual/authentication.png) 
+![身份验证](./media/automation-first-runbook-textual/authentication.png) 
 3. 单击“测试”窗格，以便我们可以测试 Runbook。
-10. 单击“启动”以启动测试。完成后，你应会收到类似于下面的输出，这是向凭据中的用户返回的信息。其中确认凭据有效。<br> ![身份验证](media/automation-first-runbook-textual/authentication-test.png) 
+10. 单击“启动”以启动测试。完成后，你应会收到类似于下面的输出，这是向凭据中的用户返回的信息。其中确认凭据有效。<br> ![身份验证](./media/automation-first-runbook-textual/authentication-test.png) 
 
 ## 步骤 6 – 添加用于启动虚拟机的代码
 
@@ -102,7 +102,7 @@
 
 
 1. 在 *Add-AzureAccount -Environment AzureChinaCloud* 后面，键入 *Start-AzureVM -Name 'VMName' -ServiceName 'VMServiceName'* 并提供要启动的虚拟机的名称和服务名称。<br> 
-![身份验证](media/automation-first-runbook-textual/start-azurevm.png) 
+![身份验证](./media/automation-first-runbook-textual/start-azurevm.png) 
 9. 保存 Runbook，然后单击“测试”窗格，以便我们可以测试 Runbook。
 10. 单击“启动”以启动测试。一旦测试完成后，检查已启动的虚拟机。
 
@@ -112,7 +112,7 @@
 我们的 Runbook 目前会启动我们在 Runbook 中硬编码的虚拟机，但如果可以在启动 Runbook 时指定虚拟机，它会更有用。我们现在将输入参数添加到 Runbook，以提供该功能。
 
 1. 将 *VMName* 和 *VMServiceName* 的参数添加到 Runbook，并将这些变量与 **Start-AzureVM** cmdlet 配合使用，如下图所示。<br> 
-![身份验证](media/automation-first-runbook-textual/params.png) 
+![身份验证](./media/automation-first-runbook-textual/params.png) 
 9. 保存 Runbook 并打开“测试”窗格。请注意，现在可以为将在测试中使用的两个输入变量提供值。 
 11.  关闭“测试”窗格。
 12.  单击“发布”以发布 Runbook 的新版本。

@@ -16,7 +16,7 @@
 # SQL 数据库选项和性能：了解每个服务层提供的功能
  
 
-[Azure SQL 数据库](/documentation/articles/sql-database-technical-overview)提供了多个服务层来处理不同类型的工作负荷。你可以使用定义的特征和定价[创建单一数据库](/documentation/articles/sql-database-get-started)。也可以通过[创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal)来管理多个数据库。在这两种情况下，层包括“基本”、“标准”和“高级”。但根据你是创建单一数据库还是创建弹性数据库池内的数据库，这些层中的数据库选项会有所不同。本文概述了这两个上下文中的服务层。
+[Azure SQL 数据库](/documentation/articles/sql-database-technical-overview)提供了多个服务层来处理不同类型的工作负荷。你可以使用定义的特征和定价[创建单一数据库](/documentation/articles/sql-database-get-started)。也可以通过创建弹性数据库池来管理多个数据库。在这两种情况下，层包括“基本”、“标准”和“高级”。但根据你是创建单一数据库还是创建弹性数据库池内的数据库，这些层中的数据库选项会有所不同。本文概述了这两个上下文中的服务层。
 
 ## 服务层和数据库选项
 基本、标准和高级服务层都提供 99.99% 的运行时间 SLA 和可预测的性能、灵活的业务连续性选项、安全功能和按小时计费。下表提供了最适用于不同应用程序工作负荷的层的示例。
@@ -82,7 +82,7 @@
 
 在门户中公开的相同指标也可以通过系统视图查看：服务器的逻辑 **master** 数据库中的 [sys.resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn269979.aspx) 和用户数据库中的 [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx)（**sys.dm\_db\_resource\_stats** 将在每个基本、标准和高级用户数据库中创建。Web 和 Business Edition 数据库将返回空结果集）。如果需要在更长时间段内监视更粗粒度的数据，请使用 **sys.resource\_stats**。如果需要在较小的时间范围内监视更细粒度的数据，请使用 **sys.dm\_db\_resource\_stats**。有关详细信息，请参阅 [Azure SQL 数据库性能指南](/documentation/articles/sql-database-performance-guidance/#monitoring-resource-use-with-sysresourcestats)。
 
-对于弹性数据库池，可以使用本节中所述的技术来监视池中的单个数据库。但你还可以在总体上监视池。有关信息，请参阅[监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal/#monitor-and-manage-an-elastic-database-pool)。
+对于弹性数据库池，可以使用本节中所述的技术来监视池中的单个数据库。但你还可以在总体上监视池。
 
 ## 后续步骤
 [SQL 数据库定价](/home/features/sql-database/#price)中提供了有关这些层的价格详细信息。

@@ -16,7 +16,7 @@
 
 # 使用弹性数据库池共享资源以顺应 SQL 数据库中的爆炸式数据增长
 
-SaaS 开发人员必须创建并管理数十、数百或甚至数千个 SQL 数据库。弹性池简化了这些数据库的创建、维护和性能管理，且预算在你的可控范内。随意在池中加减数据库。使用 Azure 门户、[PowerShell](/documentation/articles/sql-database-elastic-pool-powershell) 或 [C#](/documentation/articles/sql-database-elastic-pool-csharp)，在几分钟内为 SQL 数据库[创建一个弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal)。
+SaaS 开发人员必须创建并管理数十、数百或甚至数千个 SQL 数据库。弹性池简化了这些数据库的创建、维护和性能管理，且预算在你的可控范内。随意在池中加减数据库。使用 Azure 门户、[PowerShell](/documentation/articles/sql-database-elastic-pool-powershell) 或 [C#](/documentation/articles/sql-database-elastic-pool-csharp)，在几分钟内为 SQL 数据库创建一个弹性数据库池。
 
 有关 API 和错误的详细信息，请参阅[弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference)。
 
