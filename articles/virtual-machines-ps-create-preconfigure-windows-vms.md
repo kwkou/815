@@ -81,13 +81,13 @@
 选项 1：指定虚拟机名称和大小。
 
 	$vmname="<machine name>"
-	$vmsize="<Specify one: Small, Medium, Large, ExtraLarge, A5, A6, A7, A8, A9>"
+	$vmsize="<Specify one: Small, Medium, Large, ExtraLarge, A5, A6, A7>"
 	$vm1=New-AzureVMConfig -Name $vmname -InstanceSize $vmsize -ImageName $image
 
 选项 2：指定名称、大小和可用性集名称。
 
 	$vmname="<machine name>"
-	$vmsize="<Specify one: Small, Medium, Large, ExtraLarge, A5, A6, A7, A8, A9>"
+	$vmsize="<Specify one: Small, Medium, Large, ExtraLarge, A5, A6, A7>"
 	$availset="<set name>"
 	$vm1=New-AzureVMConfig -Name $vmname -InstanceSize $vmsize -ImageName $image -AvailabilitySetName $availset
 

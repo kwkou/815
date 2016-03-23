@@ -26,9 +26,9 @@ Microsoft HPC Pack 可提供在 Azure 虚拟机群集上运行各种大型 HPC �
 
 ## 先决条件
 
-*   **具有 Linux 计算节点的 HPC Pack 群集** - 请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)，了解使用 Azure PowerShell 脚本和 Azure 应用商店中的 HPC Pack 映像，在 Azure 上部署 HPC Pack 群集与 Linux 计算节点的先决条件和步骤。如需使用 A8 计算密集型实例来访问 Azure RDMA 网络的其他注意事项，请参阅[关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)。
+*   **具有 Linux 计算节点的 HPC Pack 群集** - 请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)，了解使用 Azure PowerShell 脚本和 Azure 应用商店中的 HPC Pack 映像，在 Azure 上部署 HPC Pack 群集与 Linux 计算节点的先决条件和步骤。
 
-    下面是一个示例 XML 配置文件，可以与脚本配合使用以部署基于 Azure 的 HPC Pack 群集，群集中包含一个 A8 大小的 Windows Server 2012 R2 头节点和 2 个 A8 大小的 SUSE Linux Enterprise Server 12 计算节点。请将订阅和服务名称替换为相应值。
+    下面是一个示例 XML 配置文件，可以与脚本配合使用以部署基于 Azure 的 HPC Pack 群集，群集中包含一个 A7 大小的 Windows Server 2012 R2 头节点和 2 个 A7 大小的 SUSE Linux Enterprise Server 12 计算节点。请将订阅和服务名称替换为相应值。
 
     >[AZURE.NOTE]目前，在 Azure 中实现 Linux RDMA 联网只能在特定的 VM 上进行，这些 VM 是通过 Azure 应用商店中启用了 RDMA 的 SUSE Linux Enterprise Server 12 映像 (b4590d9e3ed742e4a1d46e5424aa335e\_\_suse-sles-12-hpc-v20150708) 创建的。
 
@@ -54,14 +54,14 @@ Microsoft HPC Pack 可提供在 Azure 虚拟机群集上运行各种大型 HPC �
 	      <HeadNode>
 	        <VMName>SUSE12RDMA-HN</VMName>
 	        <ServiceName>suse12rdma-je</ServiceName>
-	        <VMSize>A8</VMSize>
+	        <VMSize>A7</VMSize>
 	        <EnableRESTAPI />
 	        <EnableWebPortal />
 	      </HeadNode>
 	      <LinuxComputeNodes>
 	        <VMNamePattern>SUSE12RDMA-LN%1%</VMNamePattern>
 	        <ServiceName>suse12rdma-je</ServiceName>
-	        <VMSize>A8</VMSize>
+	        <VMSize>A7</VMSize>
 	        <NodeCount>2</NodeCount>
 	        <ImageName>b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708</ImageName>
 	      </LinuxComputeNodes>

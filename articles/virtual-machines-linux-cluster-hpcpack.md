@@ -119,7 +119,7 @@ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文�
 
     找到所需的映像，然后替换配置文件中的 **ImageName** 值。
 
-* 对 A8 和 A9 大小 VM 支持 RDMA 连接的 Linux 映像可用。如果你指定的映像安装并启用了 Linux RDMA 驱动程序，则 HPC Pack IaaS 部署脚本将部署这些驱动程序。例如，为当前的 SUSE Linux Enterprise Server 12（已针对市场上的高性能计算映像进行优化）指定映像名称 `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708`。
+* 对 VM 支持 RDMA 连接的 Linux 映像可用。如果你指定的映像安装并启用了 Linux RDMA 驱动程序，则 HPC Pack IaaS 部署脚本将部署这些驱动程序。例如，为当前的 SUSE Linux Enterprise Server 12（已针对市场上的高性能计算映像进行优化）指定映像名称 `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708`。
 
 * 若要在从支持的映像创建的 Linux VM 上启用 Linux RDMA 以运行 MPI 作业，请在群集部署后根据应用程序需求在 Linux 节点上安装并配置特定的 MPI 库。如需示例，请参阅[在 Azure 中的 Linux RDMA 群集上运行 OpenFOAM 和 Microsoft HPC Pack](/documentation/articles/virtual-machines-linux-cluster-hpcpack-openfoam)。
 
@@ -294,7 +294,7 @@ HPC Pack **clusrun** 工具可用于通过命令提示符或 HPC 群集管理器
 
 * 尝试扩展群集，使之拥有更多的节点，或者尝试在群集上运行 Linux 工作负荷。有关示例，请参阅[在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd)。
 
-* 尝试计算节点大小为 [A8 或 A9](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs) 的群集，以便运行 MPI 工作负荷。如需示例，请参阅[在 Azure 中的 Linux RDMA 群集上运行 OpenFOAM 和 Microsoft HPC Pack](/documentation/articles/virtual-machines-linux-cluster-hpcpack-openfoam)。
+* 尝试计算节点群集，以便运行 MPI 工作负荷。如需示例，请参阅[在 Azure 中的 Linux RDMA 群集上运行 OpenFOAM 和 Microsoft HPC Pack](/documentation/articles/virtual-machines-linux-cluster-hpcpack-openfoam)。
 
 * 尝试 [Azure 快速入门模板](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/)，组合 Azure 资源管理器来加快部署 HPC Pack 与大量 Linux 计算节点。
 
