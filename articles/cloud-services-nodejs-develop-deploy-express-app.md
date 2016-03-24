@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="01/09/2016" 
-	wacn.date="02/26/2016"/>
+	wacn.date="03/24/2016"/>
 
 
 
@@ -29,7 +29,7 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 执行下列步骤可新建一个名为“expressapp”的云服务项目：
 
-1. 在“开始”菜单或“开始”屏幕中，搜索 **Azure PowerShell**。最后，右键单击“Azure PowerShell”并选择“以管理员身份运行”。
+1. 在“开始”菜单或“开始”屏幕中，搜索 **Windows PowerShell**。最后，右键单击“Windows PowerShell”并选择“以管理员身份运行”。
 
 	![Azure PowerShell 图标](./media/cloud-services-nodejs-develop-deploy-express-app/azure-powershell-start.png)
 

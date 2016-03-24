@@ -10,7 +10,7 @@
 <tags
    ms.service="cloud-services"
    ms.date="01/20/2016"
-   wacn.date="03/18/2016" />
+   wacn.date="03/24/2016" />
 
 # 对无法启动的云服务角色进行故障排除
 
@@ -67,7 +67,7 @@ DLL 或程序集缺失的症状可能为：
 
 1. 确保安装了 Azure SDK 1.3 或更高版本。
 
-2. 在使用 Visual Studio 部署解决方案的过程中，选择“配置远程桌面连接...”。有关配置远程桌面连接的详细信息，请参阅[将远程桌面与 Azure 角色一起使用](https://msdn.microsoft.com/zh-cn/library/gg443832.aspx)。
+2. 在使用 Visual Studio 部署解决方案的过程中，选择“配置远程桌面连接...”。有关配置远程桌面连接的详细信息，请参阅[将远程桌面与 Azure 角色一起使用](/documentation/articles/vs-azure-tools-remote-desktop-roles)。
 
 3. 在 Azure 经典门户中，在实例显示“就绪”状态后，请单击其中一个角色实例。
 
