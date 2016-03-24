@@ -4,17 +4,6 @@
 
 > [AZURE.NOTE] 在使用[适用于 Mac 和 Linux 的 Azure 命令行工具](/documentation/articles/xplat-cli-install)创建 Web 应用时，将自动执行本文中所述的许多 Git 命令。
 
-此任务包括下列步骤：
-
-* [安装 Git](#Step1)
-* [创建本地存储库](#Step2)
-* [添加网页](#Step3)
-* [启用 Web 应用存储库](#Step4)
-* [部署项目](#Step5)
-	* [将本地文件推送到 Azure（本地 Git）](#Step6)
-	* [从存储库 Web 应用（例如，GitHub 或 Mercurial）部署文件](#Step7)
-* [故障排除](#Step8)
-
 ## <a id="Step1"></a>步骤 1：安装 Git
 
 安装 Git 所需的步骤因操作系统的不同而异。有关操作系统特定的分发和安装指南，请参阅[安装 Git]。
