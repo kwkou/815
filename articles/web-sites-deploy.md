@@ -99,7 +99,7 @@ Visual Studio 支持所有这三种部署进程（FTP、Git 和 Web 部署），
 
 ## <a name="onprem"></a>从本地源代码管理系统进行部署
 
-如果你在任意规模的开发团队中工作并使用本地源代码管理 (SCM) 系统（如 [Team Foundation Server](https://www.visualstudio.com/products/tfs-overview-vs.aspx) (TFS)、[Git](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#gittfs) 或 [Mercurial](http://mercurial.selenic.com/)），你可以将 Azure 配置为与你的存储库集成，并在源代码管理工作流中直接部署到 Azure。如果你使用 TFS，还可以将它配置为连续部署至 Azure Web 应用。
+如果你在任意规模的开发团队中工作并使用本地源代码管理 (SCM) 系统（如 [Team Foundation Server](https://www.visualstudio.com/products/tfs-overview-vs.aspx) (TFS)、[Git](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#gittfs) 或 [Mercurial](http://mercurial.selenic.com/)），你可以将 Azure 配置为与你的存储库集成，并在源代码管理工作流中直接部署到 Azure。
 
 从本地源代码管理系统部署的优点是：
 
@@ -111,7 +111,7 @@ Visual Studio 支持所有这三种部署进程（FTP、Git 和 Web 部署），
 
 - 需要了解所选的 SCM 系统。
 - 可能会提供的功能和特性超过所需。
-- 缺少通过 Git 和 Mercurial 客户端工具进行连续部署和分支特定的部署的统包解决方案。 
+- 缺少通过 Git 客户端工具进行分支特定的部署的统包解决方案。 
 
 使用 TFS 进行部署的其他优点是：
 
@@ -122,24 +122,19 @@ Visual Studio 支持所有这三种部署进程（FTP、Git 和 Web 部署），
 - 实现 [Jenkins](https://jenkins-ci.org)、[Slack](https://slack.com)、[ZenDesk](https://www.zendesk.com)、[Trello](https://trello.com)、[Azure 服务总线](/home/features/messaging/)等的现成集成。 
 - [Team Foundation Server Express](https://www.microsoft.com/download/details.aspx?id=48259) 对于最多包含 5 个开发人员的团队是免费的。
 
-###<a name="tfs"></a>如何使用 TFS 进行连续部署
-
-* [在 Azure 中持续交付云服务](/documentation/articles/cloud-services-dotnet-continuous-delivery)。本文档适用于 Azure 云服务，但其部分内容与 Web Apps 有关。
-
 ###<a name="gitmercurial"></a>如何从本地 Git 或 Mercurial 存储库部署
 
-* [从源代码管理发布到使用 Git 的 Web Apps](/documentation/articles/web-sites-publish-source-control)。如何使用 Git 直接从本地计算机发布到 Web 应用（在 Azure 中，此发布方法称为“本地 Git”）。还将演示如何启用从 GitHub、CodePlex 或 BitBucket 进行 Git 存储库的连续部署。
+* [从源代码管理发布到使用 Git 的 Web Apps](/documentation/articles/web-sites-publish-source-control)。如何使用 Git 直接从本地计算机发布到 Web 应用（在 Azure 中，此发布方法称为“本地 Git”）。
 * [从任何 git/hg 存储库发布到 Web Apps](http://blog.davidebbo.com/2013/04/publishing-to-azure-web-sites-from-any.html)。该博客介绍了 Web Apps 中的“外部存储库”功能。
 * [Git 和 Mercurial 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchshome?forum=azuregit)。
 * [将两个网站从一个 Git 存储库部署到 Azure](http://www.hanselman.com/blog/DeployingTWOWebsitesToWindowsAzureFromOneGitRepository.aspx)。Scott Hanselman 的博客文章。
 
 ## 从基于云的源代码管理服务部署
-如果你在任意规模的开发团队中工作，并使用基于云的源代码管理 (SCM) 服务，如 [GitHub](https://www.github.com)，你可以将 Azure 配置为与你的存储库集成并连续部署。
+如果你在任意规模的开发团队中工作，并使用基于云的源代码管理 (SCM) 服务，如 [GitHub](https://www.github.com)，你可以将 Azure 配置为与你的存储库集成。
 
 从基于云的源代码管理服务部署的优点是：
 
 - 支持任何语言框架。
-- 无需配置即可实现 Git 和 Mercurial 存储库的连续部署。 
 - 分支特定的部署，可以将不同分支部署到不同的[槽](/documentation/articles/web-sites-staged-publishing)。
 - 适用于任何规模的开发团队。
 
@@ -150,7 +145,7 @@ Visual Studio 支持所有这三种部署进程（FTP、Git 和 Web 部署），
 
 ###<a name="cloudgitmercurial"></a>如何从基于云的 Git 或 Mercurial 存储库部署
 
-- [从源代码管理发布到使用 Git 的 Web Apps](/documentation/articles/web-sites-publish-source-control)。如何启用从 GitHub、CodePlex 或 BitBucket 进行存储库的连续部署。尽管本教程演示的是如何发布 Git 存储库，但 CodePlex 或 BitBucket 中托管的 Mercurial 存储库的发布过程与此类似。
+- [从源代码管理发布到使用 Git 的 Web Apps](/documentation/articles/web-sites-publish-source-control)。尽管本教程演示的是如何发布 Git 存储库，但 CodePlex 或 BitBucket 中托管的 Mercurial 存储库的发布过程与此类似。
 - [Web Apps 的“部署到 Azure”按钮](http://azure.microsoft.com/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/)。有关用于触发从 Git 存储库的部署方法的博客。
 - [Git 和 Mercurial 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchshome?forum=azuregit)。
 
