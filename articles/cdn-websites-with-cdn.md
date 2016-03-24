@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="12/08/2015"
-	wacn.date="02/17/2016"/>
+	wacn.date="03/24/2016"/>
 
 
 # 在 Azure Web 应用中使用 Azure CDN
@@ -19,7 +19,7 @@
 
 将 Web 应用与 Azure CDN 集成具有以下优点：
 
-- 在 Web 应用的[持续部署](/documentation/articles/web-sites-publish-source-control)过程中集成内容部署（映像、脚本和样式表）
+- 在 Web 应用的[部署](/documentation/articles/web-sites-publish-source-control)过程中集成内容部署（映像、脚本和样式表）
 - 轻松升级 Azure Web 应用中的 NuGet 包，例如 jQuery 或 Bootstrap 版本 
 - 在同一 Visual Studio 界面中管理 Web 应用和 CDN 提供的内容
 - 将 ASP.NET 绑定和缩减与 Azure CDN 集成
