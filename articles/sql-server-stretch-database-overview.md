@@ -59,7 +59,7 @@ SQL Server Stretch Database可以确保在迁移过程中发生错误时不会�
 ## 哪种类型的数据库和表符合SQL Server Stretch Database条件？
 SQL Server Stretch Database面向包含大量历史数据的事务数据库，这些数据通常存储在少量的表中。这些表可能包含超过十亿行。
 
-如果使用 SQL Server 2016 的临时表功能，则可以使用SQL Server Stretch Database将关联的所有或部分历史记录表迁移到 Azure 上的高性价比存储中。有关详细信息，请参阅[管理版本由系统控制的临时表中历史数据的保留期](https://msdn.microsoft.com/zh-cn/library/mt637341.aspx)。
+如果使用 SQL Server 2016 的历史表功能，则可以使用SQL Server Stretch Database将关联的所有或部分历史记录表迁移到 Azure 上的高性价比存储中。有关详细信息，请参阅[管理版本由系统控制的临时表中历史数据的保留期](https://msdn.microsoft.com/zh-cn/library/mt637341.aspx)。
 
 使用 SQL Server 2016 升级顾问的一项功能 - SQL Server Stretch Database顾问 - 可以识别符合SQL Server Stretch Database条件的数据库和表。有关详细信息，请参阅[识别符合SQL Server Stretch Database条件的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases)。若要详细了解潜在的阻碍性问题，请参阅[SQL Server Stretch Database的外围应用限制与阻碍性问题](/documentation/articles/sql-server-stretch-database-limitations)。
 
@@ -80,7 +80,7 @@ SQL Server Stretch Database面向包含大量历史数据的事务数据库，�
 
 **远程终结点**。Azure 中包含数据库远程数据的位置。
 
-**本地数据**。已启用SQL Server Stretch Database的数据库中不会根据数据库中表的SQL Server Stretch Database配置移到 Azure 的数据。
+**本地数据**。根据已启用SQL Server Stretch Database的数据库中表的延伸数据库配置，不会移到 Azure 的数据。
 
 **符合条件的数据**。已启用SQL Server Stretch Database的数据库中尚未移动，但会根据数据库中表的SQL Server Stretch Database配置移到 Azure 的数据。
 
