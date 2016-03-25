@@ -38,7 +38,7 @@
 |**已延伸**|指示该表是否已启用。|
 |**行**|指定表中的行数。|
 |**大小(KB)**|指定表的大小，以 KB 为单位。|
-|**迁移**|在 CTP 3.1 到 RC0 版本中，你只能使用向导迁移整个表。如果你要指定一个谓词以便在包含历史数据和当前数据的表中选择要迁移的行，请在退出向导之后运行 ALTER TABLE 语句指定谓词。有关详细信息，请参阅[为表启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table)或 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms190273.aspx)。|
+|**迁移**|在 CTP 3.1 到 RC1 版本中，你只能使用向导迁移整个表。如果你要指定一个谓词以便在包含历史数据和当前数据的表中选择要迁移的行，请在退出向导之后运行 ALTER TABLE 语句指定谓词。有关详细信息，请参阅[为表启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table)或 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms190273.aspx)。|
 
 ## <a name="Configure"></a>配置 Azure 部署
 

@@ -67,7 +67,7 @@ RETURN	SELECT 1 AS is_eligible
 
 -   将函数参数与常量表达式进行比较。例如，`@column1 < 1000`。
 
-    以下示例将检查 *date* 列的值是否为 &lt; 1\\/1\\/2016。
+    以下示例将检查 *date* 列的值是否为 `< 1/1/2016`。
 
     ```tsql
     CREATE FUNCTION dbo.fn_stretchpredicate(@column1 datetime)

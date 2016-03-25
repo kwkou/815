@@ -104,7 +104,7 @@ GO
     ALTER DATABASE <database name>
         SET REMOTE_DATA_ARCHIVE = ON
             (
-                SERVER = <server_name> ,
+                SERVER = '<server_name>' ,
                 CREDENTIAL = <db_scoped_credential_name>
             ) ;
     GO;

@@ -50,7 +50,7 @@
 
     ```tsql
     ALTER TABLE <table name>
-       SET ( REMOTE_DATA_ARCHIVE ( MIGRATION_STATE = OUTBOUND ) ) ;
+       SET ( REMOTE_DATA_ARCHIVE ( MIGRATION_STATE = INBOUND ) ) ;
     ```
     此操作会产生数据传输费用。有关详细信息，请参阅[数据传输定价详细信息](/pricing/details/data-transfer/)。
 
