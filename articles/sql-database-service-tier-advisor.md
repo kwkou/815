@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="12/01/2015"
-   wacn.date="01/29/2016"/>
+   ms.date="02/08/2016"
+   wacn.date="03/24/2016"/>
 
 # SQL 数据库定价层建议
 
@@ -22,7 +22,7 @@
 在执行以下任务期间获取定价层建议：
 
 - [更改 SQL 数据库的服务层和性能级别（定价层）](/documentation/articles/sql-database-scale-up)
-- [将 Azure SQL 服务器升级到 V12](/documentation/articles/sql-database-v12-upgrade)
+- [将 Azure SQL 服务器升级到 V12](/documentation/articles/sql-database-upgrade-server-portal)
 - 浏览到 V12 服务器 - 如果你的数据库可以从弹性数据库池受益，服务器边栏选项卡将显示一条消息来指出建议的池。单击该消息可以创建建议的池。
 - [创建弹性数据库池](/documentation/articles/sql-database-elastic-pool/#elastic-database-pool-pricing-tier-recommendations)
 
@@ -49,36 +49,6 @@ SQL 数据库服务会通过评估 SQL 数据库的历史资源使用量，来�
 | :--- | :--- |
 | 升级 | 升级到新层。 |
 | 不可用 | 数据库需要最小工作负载或大约 14 天的活动。数据不足，无法提供有效的建议。 |
-
-## 获取定价层建议
-
-可以通过选择现有的 Web 或企业数据库并单击“定价层”磁贴来获取定价层建议。（当你[将 Azure SQL 服务器升级到 V12](/documentation/articles/sql-database-v12-upgrade) 时，也可以获取定价层建议。）
-
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
-2. 单击“浏览”>“SQL 数据库”。
-4. 在“SQL 数据库”边栏选项卡中，单击想要查看其建议的数据库：
-
-
-
-5. 在数据库边栏选项卡中，选择“定价层”磁贴。
-
-
-
-
-7. 单击“定价层”磁贴后，你将会看到“建议的定价层”边栏选项卡，你可以在其中单击建议的层，然后单击“选择”按钮切换到该层。
-
-
-
-8. （可选）单击“查看使用情况详细信息”打开“定价层建议详细信息”边栏选项卡，你可以在其中查看数据库的建议层、当前层与建议层之间的功能比较，以及历史资源使用量分析图表。
-
-
-
-
-
-## 摘要
-
-定价层建议提供自动化体验，可以收集每个 SQL 数据库的遥测数据，并根据数据库的实际性能需求和功能要求推荐最佳的服务层/性能级别组合。在数据库边栏选项卡上单击“定价层”磁贴可查看定价层建议。
-
 
 
 ## 后续步骤

@@ -4,13 +4,13 @@
 	services="sql-database"
 	documentationCenter=""
 	authors="dalechen"
-	manager="msmets"
+	manager="felixwu"
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/10/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/14/2016"
+	wacn.date="03/24/2016"/>
 
 # 将数据库还原到以前的时间点、还原已删除的数据库，或者在数据中心服务中断的情况下进行恢复
 

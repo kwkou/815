@@ -1,6 +1,6 @@
 <properties 
-    pageTitle="使用 PowerShell 创建 Azure SQL 数据库的副本 | Azure" 
-    description="使用 PowerShell 创建 Azure SQL 数据库的副本" 
+    pageTitle="使用 PowerShell 复制 Azure SQL 数据库 | Azure" 
+    description="使用 PowerShell 复制 Azure SQL 数据库" 
 	services="sql-database"
 	documentationCenter=""
 	authors="stevestein"
@@ -9,18 +9,18 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="01/20/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="03/21/2016"
+	wacn.date="03/24/2016"/>
 
 
-# 使用 PowerShell 创建 Azure SQL 数据库的副本
+# 使用 PowerShell 复制 Azure SQL 数据库
 
 **单一数据库**
 
 > [AZURE.SELECTOR]
 - [Azure 门户](/documentation/articles/sql-database-copy)
 - [PowerShell](/documentation/articles/sql-database-copy-powershell)
-- [SQL](/documentation/articles/sql-database-copy-transact-sql)
+- [T-SQL](/documentation/articles/sql-database-copy-transact-sql)
 
 
 

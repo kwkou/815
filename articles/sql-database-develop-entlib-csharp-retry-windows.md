@@ -3,24 +3,22 @@
 	description="Enterprise Library 旨在简化云服务的客户端程序的多个任务，包括集成暂时性故障的重试逻辑。"
 	services="sql-database"
 	documentationCenter=""
-	authors="MightyPen"
-	manager="jeffreyg"
+	authors="annemill"
+	manager="jhubbard"
 	editor="" />
 
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="12/17/2015" 
-    wacn.date="01/15/2016"/>
+	ms.date="03/15/2016"
+    wacn.date="03/24/2016"/>
 
 
 # 代码示例：Enterprise Library 6 中用于连接到 SQL 数据库的 C&#x23; 重试逻辑
 
 
-> [AZURE.SELECTOR]
-- [PHP](/documentation/articles/sql-database-develop-php-retry-windows)
-- [C#](/documentation/articles/sql-database-develop-csharp-retry-windows)
-- [C# EntLib6](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows)
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)] 
+
 
 
 本主题提供了一个用于演示 Enterprise Library (EntLib) 的完整代码示例。EntLib 简化了与云服务（如 Azure SQL 数据库）进行交互的客户端程序的许多任务。我们的示例重点介绍包括暂时性故障的重试逻辑在内的重要任务。
@@ -305,7 +303,7 @@ Program.cs 源代码示例将在本主题后面部分提供。可以使用以下
 
 
 - Microsoft 提供的 .PDF 格式的免费电子书：
-[Microsoft Enterprise Library 版本 2 开发人员指南](http://www.microsoft.com/zh-cn/download/details.aspx?id=41145)。
+[Microsoft Enterprise Library 版本 2 开发人员指南](http://www.microsoft.com/en-us/download/details.aspx?id=41145)。
 
 
 - [Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling 命名空间](http://msdn.microsoft.com/zh-cn/library/microsoft.practices.enterpriselibrary.transientfaulthandling.aspx)

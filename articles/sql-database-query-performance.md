@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="12/02/2015"
-   wacn.date="01/29/2016"/>
+   ms.date="02/03/2016"
+   wacn.date="03/24/2016"/>
 
 # Azure SQL 数据库 Query Performance Insight
 

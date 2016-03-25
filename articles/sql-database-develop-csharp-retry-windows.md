@@ -3,25 +3,21 @@
 	description="C# 示例包含用于与 Azure SQL 数据库可靠交互的重试逻辑。" 
 	services="sql-database" 
 	documentationCenter="" 
-	authors="MightyPen" 
-	manager="jeffreyg" 
+	authors="annemill"
+	manager="jhubbard"
 	editor=""/>
 
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="12/17/2015" 
-	wacn.date="01/15/2016"/>
+	ms.date="03/15/2016"
+	wacn.date="03/24/2016"/>
 
 
 # 代码示例：用于连接到 SQL 数据库的 C# 重试逻辑
 
 
-
-> [AZURE.SELECTOR]
-- [PHP](/documentation/articles/sql-database-develop-php-retry-windows)
-- [C#](/documentation/articles/sql-database-develop-csharp-retry-windows)
-- [C# EntLib6](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows)
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)] 
 
 
 

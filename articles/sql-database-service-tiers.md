@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/22/2015"
-	wacn.date="02/26/2016"/>
+	ms.date="02/17/2016"
+	wacn.date="03/24/2016"/>
 
 # SQL 数据库选项和性能：了解每个服务层提供的功能
  
@@ -27,7 +27,7 @@
 | **标准** | 大多数云应用程序的首选选项，支持多个并发查询。示例包括工作组或 Web 应用程序。 |
 | **高级** | 专为高事务量设计，支持大量并发用户，并且需要最高级别的业务连续性功能。示例包括支持任务关键型应用程序的数据库。 |
 
->[AZURE.NOTE] Web 和 Business Edition 即将停用。了解如何[升级 Web 和 Business Edition](/documentation/articles/sql-database-upgrade-new-service-tiers)。如果你打算继续使用 Web 和 Business Edition，请阅读[版本停用常见问题](/home/features/sql-database/#price/web-business)。
+>[AZURE.NOTE] Web 和 Business Edition 即将停用。如果你打算继续使用 Web 和 Business Edition，请阅读[版本停用常见问题](/home/features/sql-database/#price/web-business)。
 
 ### 单一数据库服务层和性能级别
 对于单一数据库，每个服务层均包含多个性能级别，你可以灵活选择最适合工作负荷需求的级别。如果你需要向上或向下缩放，可以在 Azure 经典门户中轻松更改数据库层，且不会给应用程序造成任何中断。有关详细信息，请参阅[更改数据库服务层和性能级别](/documentation/articles/sql-database-scale-up)。

@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="11/03/2015"
-	wacn.date="01/05/2016" />
+	ms.date="03/02/2016"
+	wacn.date="03/24/2016" />
 
 
 # Azure SQL 数据库资源限制
@@ -50,12 +50,6 @@ CPU、内存、日志 I/O 和数据 I/O 以外的资源在达到限制时，将�
 [AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
 有关上述表中列出的每个资源的扩展定义，请参阅[服务层功能和限制](/documentation/articles/sql-database-performance-guidance#service-tier-capabilities-and-limits)中的描述。有关服务层的概述，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers)。
-
-## 每个服务器的 DTU 配额
-
-Azure SQL 数据库具有 DTU 配额，每个逻辑服务器当前为 15000 DTU。此配额表示逻辑服务器可以托管的 DTU 数，具体取决于服务器上每个数据库的性能级别的 DTU 总和。例如，一个具有 5 个基本数据库（5 X 5 个最大 DTU 数）、2 个标准 S1 数据库（2 X 20 个最大 DTU 数）和 3 个高级 P1 数据库（3 X 100 个最大 DTU 数）的服务器已使用其 15000 DTU 配额中的 365 个 DTU。
-
->[AZURE.NOTE]你可以通过与支持人员联系来请求增加此配额。
 
 ## 其他 SQL 数据库限制
 

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="01/20/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="03/21/2016"
+	wacn.date="03/24/2016"/>
 
 
 # 复制 Azure SQL 数据库
@@ -20,7 +20,7 @@
 > [AZURE.SELECTOR]
 - [Azure Portal](/documentation/articles/sql-database-copy)
 - [PowerShell](/documentation/articles/sql-database-copy-powershell)
-- [SQL](/documentation/articles/sql-database-copy-transact-sql)
+- [T-SQL](/documentation/articles/sql-database-copy-transact-sql)
 
 以下步骤说明如何使用 [Azure 门户](https://manage.windowsazure.cn)复制 SQL 数据库。数据库复制操作将创建新的 SQL 数据库。副本是在相同或不同服务器上创建的数据库快照备份。
 

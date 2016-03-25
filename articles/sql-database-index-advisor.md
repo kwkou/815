@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="12/01/2015"
-   wacn.date="01/29/2016"/>
+   ms.date="01/23/2016"
+   wacn.date="03/24/2016"/>
 
 # SQL 数据库索引顾问
 

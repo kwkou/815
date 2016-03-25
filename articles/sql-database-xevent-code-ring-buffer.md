@@ -4,15 +4,15 @@
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
-	manager="jeffreyg" 
+	manager="jhubbard" 
 	editor="" 
 	tags=""/>
 
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="12/30/2015" 
-	wacn.date="02/26/2016"/>
+	ms.date="03/15/2016" 
+	wacn.date="03/24/2016"/>
 
 
 # SQL 数据库中扩展事件的环形缓冲区目标代码

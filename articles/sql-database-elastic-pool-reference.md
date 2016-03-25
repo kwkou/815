@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="02/12/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="03/09/2016"
+	wacn.date="03/24/2016"/>
 
 
 # SQL 数据库弹性数据库池参考
@@ -110,7 +110,7 @@ Azure SQL 数据库 V12 服务器位于资源组中。
 | 任务 | 详细信息 |
 | :-- | :-- |
 | 创建新的弹性数据库（直接在池中创建） | [CREATE DATABASE（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx) |
-| 将现有数据库移入和移出池 | [ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms174269.aspx) |
+| 将现有数据库移入和移出池 | [ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt574871.aspx) |
 | 获取池的资源使用情况统计信息 | [sys.elastic\_pool\_resource\_stats（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/mt280062.aspx) |
 
 

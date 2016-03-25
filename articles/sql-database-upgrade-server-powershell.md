@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="12/01/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/23/2016" 
+	wacn.date="03/24/2016"/>
 
 # 使用 PowerShell 升级到 Azure SQL 数据库 V12
 
@@ -174,7 +174,7 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 其他监视信息：
 
 - [Azure SQL 数据库的单一数据库性能指导](http://msdn.microsoft.com/zh-cn/library/azure/dn369873.aspx)。
-- [弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database=elastic-pool-guidance)。
+- [弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)。
 - [使用动态管理视图监视 Azure SQL 数据库](/documentation/articles/sql-database-monitoring-with-dmvs)
 
 

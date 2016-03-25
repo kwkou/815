@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/11/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="03/17/2016"
+	wacn.date="03/24/2016"/>
 
 
 # SQL 数据库中的 In-Memory（预览版）入门

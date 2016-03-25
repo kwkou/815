@@ -10,20 +10,15 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/17/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="03/14/2016"
+	wacn.date="03/24/2016"/>
 
 
 # 在 Windows上使用 Python 连接到 SQL 数据库
 
 
-> [AZURE.SELECTOR]
-- [C#](/documentation/articles/sql-database-develop-dotnet-simple)
-- [PHP](/documentation/articles/sql-database-develop-php-simple-windows)
-- [Python](/documentation/articles/sql-database-develop-python-simple-windows)
-- [Ruby](/documentation/articles/sql-database-develop-ruby-simple-windows)
-- [Java](/documentation/articles/sql-database-develop-java-simple-windows)
-- [Node.js](/documentation/articles/sql-database-develop-nodejs-simple-windows)
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)] 
+
 
 
 本主题提供以 Python 编写的代码示例。该示例在 Windows 计算机上运行。该示例将使用 **pymssql** 驱动程序连接到 Azure SQL 数据库。
@@ -117,7 +112,7 @@
 	cursor = conn.cursor()
 	cursor.execute("BEGIN TRANSACTION")
 	cursor.execute("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server Express New', 'SQLEXPRESS New', 0, 0, CURRENT_TIMESTAMP)")
-	cnxn.rollback()
+	conn.rollback()
 
 ## 后续步骤
 

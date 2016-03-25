@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="12/17/2015"
-   wacn.date="01/15/2016"/>
+   ms.date="03/14/2016"
+   wacn.date="03/24/2016"/>
 
 # 使用 SqlPackage 将 SQL Server 数据库导出到 BACPAC 文件
 

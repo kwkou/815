@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/10/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/12/2016"
+	wacn.date="03/24/2016"/>
 
 # 排查“服务器上的数据库当前不可用。请稍后重试连接”和其他连接错误
 “服务器 <servername> 上的数据库 <dbname> 当前不可用...”是 Azure SQL 数据库最常见的暂时性连接错误。暂时性连接错误通常是由于平台重新配置（例如，故障转移到新服务器或暂时性系统中断）而导致的，并且持续时间很短。如果你遇到了不同的错误，请查看[错误消息](/documentation/articles/sql-database-develop-error-messages)以找到原因的线索，确定问题是暂时性的还是永久性的，然后使用本主题中的指导予以解决。

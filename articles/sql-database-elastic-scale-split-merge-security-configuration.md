@@ -8,8 +8,8 @@
 
 <tags 
     ms.service="sql-database"
-    ms.date="11/04/2015" 
-    wacn.date="01/05/2016" />
+    ms.date="02/23/2016" 
+    wacn.date="03/24/2016" />
 
 # 拆分合并安全配置  
 

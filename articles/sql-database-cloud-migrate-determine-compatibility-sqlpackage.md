@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="12/17/2015"
-   wacn.date="01/15/2016"/>
+   ms.date="03/14/2016"
+   wacn.date="03/24/2016"/>
 
 # 使用 SqlPackage.exe 确定 SQL 数据库兼容性
 
