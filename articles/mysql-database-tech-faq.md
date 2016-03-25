@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL服务问题 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,常见问题,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS,FAQ" description="针对用户在使用MySQL 数据库 on Azure中遇到的一些常见技术问题,提供快速解答。如果您仍存有疑问,欢迎联系技术支持。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date="01/11/2015"/>
+<tags ms.service="mysql" ms.date="" wacn.date="04/11/2016"/>
 
 #全部常见问题
 
@@ -105,6 +105,10 @@ workbench 6.3.5默认选择SSL连接, 且会使用“TLS-DHE-RSA-WITH-AES-256-CB
 
 ###MYSQL Database on Azure 的管理门户只支持对用户设置整个数据库的读写权限，如果我现在的数据库有对用户权限更细化的设置，迁移会成功吗？
 没有问题，虽然我们的管理门户 以及PowerShell /REST API在创建用户或数据库时只支持对整个数据库设置读写权限，但您可以用“grant”语句对用户权限进行更细化的设置。
+
+###如何将数据库从5.5升级到5.6？
+目前我们暂不支持一键升级，替代办法是用户可以通过mysqldump将数据从源5.5实例中导出，创建新的5.6数据库服务器实例，再将数据进行导入，测试兼容性通过后，可将应用迁移至5.6实例。
+如果用户的源数据库是生产环境或不能接受任何停机时间，可以在源数据库上手动创建快照，恢复到全新实例后，以恢复后的实例进行迁移升级，以减少对源数据库的影响。
 
 <!--Image references-->
 
