@@ -20,7 +20,7 @@
 - [Java](/documentation/articles/cache-java-get-started)
 - [Python](/documentation/articles/cache-python-get-started)
 
-本指南说明如何开始使用 **Azure Redis 缓存**。Azure Redis 缓存基于流行的开放源代码 Redis 缓存。它让您访问 WindowsAzure.cn 管理的安全专用的 Redis 缓存。使用 Azure Redis 缓存创建的缓存可从 Azure 内的任何应用程序进行访问。
+本指南说明如何开始使用 **Azure Redis 缓存**。Azure Redis 缓存基于流行的开放源代码 Redis 缓存。它让您访问 Azure.cn 管理的安全专用的 Redis 缓存。使用 Azure Redis 缓存创建的缓存可从 Azure 内的任何应用程序进行访问。
 
 Azure Redis 缓存提供以下层：
 

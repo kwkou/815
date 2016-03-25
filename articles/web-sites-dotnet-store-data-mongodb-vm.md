@@ -27,7 +27,7 @@
 * MongoDB 的 C# 驱动程序。有关针对 MongoDB 开发 C# 应用程序的更多信息，请参阅 [MongoDB CSharp 语言中心][MongoC#LangCenter]。 
 * ASP .NET Web 应用框架。可通过 [ASP.net Web 应用][ASP.NET]进行全面了解。
 * ASP .NET MVC Web 应用框架。可通过 [ASP.NET MVC Web 应用][MVCWebSite] 进行全面了解。
-* Azure。你可以先阅读 [Azure][WindowsAzure] 上的文章。
+* Azure。你可以先阅读 [Azure][Azure] 上的文章。
 
 ## 先决条件 ##
 
@@ -487,7 +487,7 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Bson**、**MongoDB.Driver** 
 <!-- HYPERLINKS -->
 
 [AzurePortal]: http://manage.windowsazure.cn
-[WindowsAzure]: http://www.windowsazure.cn
+[Azure]: http://www.azure.cn
 [MongoC#LangCenter]: http://docs.mongodb.org/ecosystem/drivers/csharp/
 [MVC Website]: http://www.asp.net/mvc
 [ASP.NET]: http://www.asp.net/

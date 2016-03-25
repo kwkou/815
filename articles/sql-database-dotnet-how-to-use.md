@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="如何使用 SQL 数据库 (.NET) - Azure" 
 	description="SQL Database 入门。了解如何创建 SQL Database 实例，以及如何使用 ADO.NET、ODBC 和 EntityClient Provider 与该实例建立连接。" 
 	services="sql-database" 
@@ -28,7 +28,7 @@ SQL 数据库 为 Azure 提供关系数据库管理系统并且基于 SQL Server
 
 SQL 数据库 在 Azure 上提供关系数据存储、访问和管理服务。若要使用它，您将需要一个 Azure 订阅。
 
-1. 打开 Web 浏览器并浏览到 [http://www.windowsazure.cn](http://www.windowsazure.cn)。若要开始使用免费帐户，请单击右上角的“免费试用”并执行相应步骤。
+1. 打开 Web 浏览器并浏览到 [http://www.azure.cn](http://www.azure.cn)。若要开始使用免费帐户，请单击右上角的“免费试用”并执行相应步骤。
 
 2. 现已创建您的帐户。一切准备就绪，即可开始。
 

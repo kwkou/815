@@ -375,8 +375,8 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
     .Link
     To find more information about how to set up Azure PowerShell, refer to the following links.
-    http://windowsazure.cn/documentation/articles/powershell-install-configure/
-    http://windowsazure.cn/documentation/articles/storage-powershell-guide-full/
+    http://azure.cn/documentation/articles/powershell-install-configure/
+    http://azure.cn/documentation/articles/storage-powershell-guide-full/
     http://azure.microsoft.com/blog/2014/10/22/migrate-azure-virtual-machines-between-storage-accounts/
 
     #>
@@ -466,7 +466,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
     }
     else
     {
-        Write-Host "[ERROR] - There is no valid azure subscription found in PowerShell. Please refer to this article http://windowsazure.cn/documentation/articles/powershell-install-configure/ to connect an azure subscription. Exiting." -ForegroundColor Red
+        Write-Host "[ERROR] - There is no valid azure subscription found in PowerShell. Please refer to this article http://azure.cn/documentation/articles/powershell-install-configure/ to connect an azure subscription. Exiting." -ForegroundColor Red
         Exit
     }
 

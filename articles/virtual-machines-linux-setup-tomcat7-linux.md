@@ -27,7 +27,7 @@ Apache Tomcat（或简称 Tomcat，以前也称为 Jakarta Tomcat）是由 Apach
 -	如何准备用于 tomcat7 的虚拟机。
 -	如何安装 tomcat7。
 
-假定读者已拥有 Azure 订阅。如果没有，你可以在 [http://windowsazure.cn](http://windowsazure.cn) 中注册 1rmb 试用版。如果你拥有 MSDN 订阅。
+假定读者已拥有 Azure 订阅。如果没有，你可以在 [http://azure.cn](http://azure.cn) 中注册 1rmb 试用版。
 
 本主题假定你具有 tomcat 和 Linux 的基本专业知识。
 

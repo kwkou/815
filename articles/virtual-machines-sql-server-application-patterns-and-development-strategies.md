@@ -39,7 +39,7 @@
 
 应用程序层级描述应用程序中的功能和组件的逻辑分组；而层则描述独立物理服务器、计算机、网络或远程地点的功能和组件的物理分布。应用程序的多个层级可能位于同一台物理计算机上（同一层），也可能分布在多台单独计算机上（n 层），每个层级中的组件通过明确定义的接口，与其他层级中的组件进行通信。你可将“层”这个词视为物理分布模式，例如两层、三层和 n 层。**2 层应用程序模式**包含两个应用程序层：应用程序服务器和数据库服务器。直接通信发生在应用程序服务器和数据库服务器之间。应用程序服务器包含 Web 层和业务层组件。在 **3 层应用程序模式**中，有三个应用程序层：Web 服务器、应用程序服务器（包含业务逻辑层和/或业务层数据访问组件）、数据库服务器。Web 服务器和数据库服务器之间的通信在应用程序服务器上进行。有关应用程序层级和层的详细信息，请参阅 [Microsoft 应用程序体系结构指南](https://msdn.microsoft.com/zh-cn/library/ff650706.aspx)。
 
-开始阅读本文之前，你应该掌握有关 SQL Server 和 Azure 的基本概念知识。有关信息，请参阅 [SQL Server 联机丛书](https://msdn.microsoft.com/zh-cn/library/bb545450.aspx)、[Azure 虚拟机中的 SQL Server](/documentation/articles/virtual-machines-sql-server-infrastructure-services) 和 [Windowsazure.cn](http://www.windowsazure.cn)。
+开始阅读本文之前，你应该掌握有关 SQL Server 和 Azure 的基本概念知识。有关信息，请参阅 [SQL Server 联机丛书](https://msdn.microsoft.com/zh-cn/library/bb545450.aspx)、[Azure 虚拟机中的 SQL Server](/documentation/articles/virtual-machines-sql-server-infrastructure-services) 和 [Azure.cn](http://www.azure.cn)。
 
 本文介绍了几种应用程序模式，它们可能适合你的简单应用程序，也可能适合非常复杂的企业应用程序。在详细介绍每种模式之前，我们建议你熟悉 Azure 中的可用数据存储服务，例如 [Azure 存储空间](/documentation/articles/storage-introduction)、[Azure SQL 数据库](/documentation/articles/sql-database-technical-overview)和 [Azure 虚拟机中的 SQL Server](/documentation/articles/virtual-machines-sql-server-infrastructure-services)。若要为你的应用程序做出最好的设计决策，必须明确了解何时使用何种数据存储服务。
 
