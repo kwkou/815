@@ -52,7 +52,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 
         虽然典型 Jenkins CI 解决方案将设置为作为一个服务运行，但在本教程中，通过命令行运行 Jenkins war 就足够了。
 
-- 一个 Azure 帐户。注册 Azure 帐户的位置位于 <http://www.windowsazure.cn>。
+- 一个 Azure 帐户。注册 Azure 帐户的位置位于 <http://www.azure.cn>。
 
 - 一个 Azure 存储帐户。如果你还没有存储帐户，则可使用[如何创建存储帐户][]中的步骤创建一个。
 

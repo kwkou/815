@@ -81,7 +81,7 @@
 
 以下是在创建常见的实时流应用程序时涉及的常规步骤。
 
->[AZURE.NOTE] 目前，实时事件的最大建议持续时间为 8 小时。如果你需要长时间运行某个通道，请通过 WindowsAzure.cn 联系 amslived。请注意，实时编码会影响计费，你应该记住，将实时编码通道保持为“正在运行”状态会产生费用。建议在实时流式处理事件完成之后立即停止正在运行的通道，以避免产生额外的小时费用。
+>[AZURE.NOTE] 目前，实时事件的最大建议持续时间为 8 小时。如果你需要长时间运行某个通道，请通过 Azure.cn 联系 amslived。请注意，实时编码会影响计费，你应该记住，将实时编码通道保持为“正在运行”状态会产生费用。建议在实时流式处理事件完成之后立即停止正在运行的通道，以避免产生额外的小时费用。
 
 1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出**单**比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/)。
 	
@@ -300,7 +300,7 @@
 
 指定此频道内的实时编码器要使用的预设。目前，唯一允许的值是 **Default720p**（默认值）。
 
-请注意，如果你需要自定义预设，应通过 WindowsAzure.cn 联系 amslived。
+请注意，如果你需要自定义预设，应通过 Azure.cn 联系 amslived。
 
 **Default720p** 会将视频编码为以下 7 层。
 
@@ -433,7 +433,7 @@
 - 默认情况下，你只能向你的媒体服务帐户添加 5 个频道。这是所有新帐户的软配额。有关详细信息，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations)。
 - 当频道或其关联的节目正在运行时，无法更改输入协议。如果你需要不同的协议，应当针对每个输入协议创建单独的频道。
 - 仅当你的频道处于**“正在运行”**状态时才会向你收费。有关详细信息，请参阅[此](/documentation/articles/media-services-manage-live-encoder-enabled-channels#states)部分。
-- 目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 WindowsAzure.cn 联系 amslived。
+- 目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 Azure.cn 联系 amslived。
 - 确保你要从中以流形式传输内容的流式传输终结点上至少有一个流式传输保留单元。
 - 在 Azure 中输入多个语言轨迹和执行实时编码时，多语言输入仅支持 RTP。使用 MPEG-2 TS over RTP 最多可以定义 8 个音频流。当前不支持使用 RTMP 或平滑流引入多个音频轨迹。使用[本地实时编码器](/documentation/articles/media-services-manage-channels-overview)执行实时编码时，将不存在这种限制，因为发送到 AMS 的任何数据都会通过某个通道，而不做进一步的处理。
 - 编码预设使用“最大帧速率”30 fps 的思路。因此，如果输入为 60fps/59.97i，则输入帧将修剪/反交错为 30/29.97 fps。因此，如果输入为 50fps/50i，则输入帧将修剪/反交错为 25 fps。如果输入为 25 fps，则输出将保持为 25 fps。

@@ -32,7 +32,7 @@
 
 	>[AZURE.NOTE] 不要尝试添加帐户，因为默认情况下，所添加的帐户必须是 Azure 全局帐户。我仍在尝试找出更改该项的方法。
 
-5. 单击[此处](https://manage.windowsazure.cn/publishsettings/index?client=vsserverexplorer&schemaversion=2.0)可下载订阅的发布配置文件。单击上一步弹出窗口中的“导入”，并选择刚下载的文件。然后，你将能够管理 WindowsAzure.cn 提供的大多数服务。
+5. 单击[此处](https://manage.windowsazure.cn/publishsettings/index?client=vsserverexplorer&schemaversion=2.0)可下载订阅的发布配置文件。单击上一步弹出窗口中的“导入”，并选择刚下载的文件。然后，你将能够管理 Azure.cn 提供的大多数服务。
 
 6. 右键单击“Azure”下“服务器资源管理器”中的“虚拟机”，然后选择“创建虚拟机”。选择刚添加的订阅。选择所需的服务器类型（必须是 windows server）。
 

@@ -609,7 +609,7 @@
 [node]: http://nodejs.org
 [Git]: http://git-scm.com
 [Express]: http://expressjs.com
-[for free]: http://www.windowsazure.cn
+[for free]: http://www.azure.cn
 [Git remote]: http://git-scm.com/docs/git-remote
 
 [使用 MongoDB 的 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-store-data-mongodb/

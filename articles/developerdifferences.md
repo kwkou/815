@@ -44,9 +44,9 @@ Microsoft 提供了一些工具来创建和部署 Azure 全球服务的云应用
 
 中国 Azure 是由中国公司世纪互联从位于中国人民共和国（不包括香港特别行政区、澳门特别行政区和中国台湾地区）的数据中心运营并提供的独立 Azure 平台。因此，创建和部署Azure 服务—由世纪互联运营（“中国服务”），而不是由全球服务运营的应用程序时，开发人员需要先了解这两项服务之间的主要区别，然后再设置自己的编程环境、编写应用程序并将其部署为在中国托管的服务。
 
-本文档概要说明了这些区别并为中国 [Azure 门户](http://www.windowsazure.cn)及 [MSDN 上的 Azure 技术库](http://msdn.microsoft.com/zh-cn/library/dd163896.aspx)提供补充信息。官方信息也会在许多其他地方发布，如 Azure [海报](http://www.microsoft.com/zh-cn/download/details.aspx?id=35473)、[TechNet wiki](http://social.technet.microsoft.com/wiki/contents/articles/inside-sql-azure.aspx) 以及 Microsoft 员工发表的各种博客文章。本内容专门针对将在中国部署托管于中国的数据中心的合作伙伴及开发人员。
+本文档概要说明了这些区别并为中国 [Azure 门户](http://www.azure.cn)及 [MSDN 上的 Azure 技术库](http://msdn.microsoft.com/zh-cn/library/dd163896.aspx)提供补充信息。官方信息也会在许多其他地方发布，如 Azure [海报](http://www.microsoft.com/zh-cn/download/details.aspx?id=35473)、[TechNet wiki](http://social.technet.microsoft.com/wiki/contents/articles/inside-sql-azure.aspx) 以及 Microsoft 员工发表的各种博客文章。本内容专门针对将在中国部署托管于中国的数据中心的合作伙伴及开发人员。
 
-有关中国服务功能可用性的最新更新，请访问中国[Azure 门户](http://www.windowsazure.cn)。有关 Azure 上当前内容资产的列表，请参阅本文档的附录。
+有关中国服务功能可用性的最新更新，请访问中国[Azure 门户](http://www.azure.cn)。有关 Azure 上当前内容资产的列表，请参阅本文档的附录。
  
 #<a name="dev-guide"></a>为开发人员提供指导
 

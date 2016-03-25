@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
-如果你创建了个人 Azure 帐户 -- 你使用 *WindowsAzure.cn 帐户* 标识来创建。Azure 的许多强大功能 - [资源组模板](/documentation/articles/resource-group-overview)就是一个例子 - 需要有工作或学校帐户（由 Azure Active Directory 管理的标识）才能运行。你可以遵循以下说明创建新的工作帐户或学校帐户，因为在个人 Azure 帐户方面，最有利的特点之一是，这种帐户附带了一个默认 Azure Active Directory 域，使用该域可以创建新的工作或学校帐户，以用于需要这种帐户的 Azure 功能。
+如果你创建了个人 Azure 帐户 -- 你使用 *Azure.cn 帐户* 标识来创建。Azure 的许多强大功能 - [资源组模板](/documentation/articles/resource-group-overview)就是一个例子 - 需要有工作或学校帐户（由 Azure Active Directory 管理的标识）才能运行。你可以遵循以下说明创建新的工作帐户或学校帐户，因为在个人 Azure 帐户方面，最有利的特点之一是，这种帐户附带了一个默认 Azure Active Directory 域，使用该域可以创建新的工作或学校帐户，以用于需要这种帐户的 Azure 功能。
 
 此外，利用最近所做的更改，你可以使用[此处](/documentation/articles/xplat-cli-connect)所述的 `azure login` 交互式登录方法，通过任何类型的 Azure 帐户管理你的订阅。你可以使用该机制，也可以遵循后面的说明。
 
@@ -27,7 +27,7 @@
 
 ## 在 Azure 门户中找到默认目录
 
-可首先通过用个人 WindowsAzure.cn 帐户标识登录到 [Azure 门户](https://manage.windowsazure.cn)。登录后，在左侧的蓝色面板中向下滚动，然后单击“ACTIVE DIRECTORY”。
+可首先通过用个人 Azure.cn 帐户标识登录到 [Azure 门户](https://manage.windowsazure.cn)。登录后，在左侧的蓝色面板中向下滚动，然后单击“ACTIVE DIRECTORY”。
 
 ![Azure Active Directory](./media/resource-group-create-work-id-from-personal/azureactivedirectorywidget.png)
 
@@ -83,7 +83,7 @@
 
 ![](./media/resource-group-create-work-id-from-personal/thesettingswidget.png)
 
-在主设置区域，单击顶部的“管理员”，你应该只会看到自己的个人 WindowsAzure.cn 帐户标识。在页面底部，单击“+添加”以指定协同管理员。在这里，输入已创建的新用户的电子邮件地址，包括你的默认域。如下一个屏幕快照所示，默认目录的用户旁边将显示一个绿色的复选标记。请记得选择你希望此用户能够管理的所有订阅。
+在主设置区域，单击顶部的“管理员”，你应该只会看到自己的个人 Azure.cn 帐户标识。在页面底部，单击“+添加”以指定协同管理员。在这里，输入已创建的新用户的电子邮件地址，包括你的默认域。如下一个屏幕快照所示，默认目录的用户旁边将显示一个绿色的复选标记。请记得选择你希望此用户能够管理的所有订阅。
 
 ![](./media/resource-group-create-work-id-from-personal/addingnewuserascoadmin.png)
 

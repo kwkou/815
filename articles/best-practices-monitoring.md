@@ -603,12 +603,12 @@ _图 6.
 - [优先级队列](https://msdn.microsoft.com/zh-cn/library/dn589794.aspx)模式说明如何排定队列消息的优先级，以便在较不紧急的消息之前接收和处理紧急请求。
 
 ## 详细信息
-- Windowsazure.cn 网站上的[监视、诊断和排查 Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)一文。
+- Azure.cn 网站上的[监视、诊断和排查 Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)一文。
 - Microsoft 网站上的 [Azure：遥测基础知识和疑难解答](http://social.technet.microsoft.com/wiki/contents/articles/18146.windows-azure-telemetry-basics-and-troubleshooting.aspx)一文。
 - Microsoft 网站上的[使用 Azure 诊断收集日志记录数据](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx)页。
 
-- Windowsazure.cn 网站上的 [Azure Redis 缓存](/home/features/redis-cache)和 [HDInsight](/home/features/hdinsight) 页。
-- Windowsazure.cn 网站上的[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)页。
-- Windowsazure.cn 网站上的 [Azure 虚拟机中的 SQL Server Business Intelligence](/documentation/articles/virtual-machines-sql-server-business-intelligence) 一文。
+- Azure.cn 网站上的 [Azure Redis 缓存](/home/features/redis-cache)和 [HDInsight](/home/features/hdinsight) 页。
+- Azure.cn 网站上的[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)页。
+- Azure.cn 网站上的 [Azure 虚拟机中的 SQL Server Business Intelligence](/documentation/articles/virtual-machines-sql-server-business-intelligence) 一文。
 
 <!---HONumber=Mooncake_0118_2016-->
