@@ -37,7 +37,7 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 
 * **内核配额** - 你可能需要增加内核配额才能部署群集。例如，若要使用 HPC Pack 部署 8 个实例，则至少需要 128 个核心。
 
-## 方案 1.部署计算密集型辅助角色实例 (PaaS)
+##<a name="scenario-1.-deploy-compute-intensive-worker-role-instances-(PaaS)"></a> 方案 1.部署计算密集型辅助角色实例 (PaaS)
 
 
 从现有的 HPC Pack 群集，添加运行在云服务 (PaaS) 中的 Azure 辅助角色实例（Azure 节点）形式的额外计算资源。此功能（也称为从 HPC Pack“迸发到 Azure”）支持一定范围的辅助角色实例大小。
