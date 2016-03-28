@@ -10,7 +10,7 @@
 <tags
 	ms.service="cache"
 	ms.date="12/16/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 如何为高级 Azure Redis 缓存配置 Redis 群集功能
 Azure Redis 缓存具有不同的缓存产品（包括新推出的高级层），使缓存大小和功能的选择更加灵活。本文介绍如何配置高级 Azure Redis 缓存实例中的群集功能。

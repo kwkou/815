@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="01/08/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 使用 Power BI 从 Apache Storm 拓扑可视化数据
 

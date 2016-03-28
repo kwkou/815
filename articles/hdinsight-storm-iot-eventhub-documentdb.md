@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="01/08/2016"
-	wacn.date="03/03/2016"/>
+	wacn.date="03/28/2016"/>
 
 #使用 Apache Storm on HDInsight 处理 Azure 事件中心的车辆传感器数据
 

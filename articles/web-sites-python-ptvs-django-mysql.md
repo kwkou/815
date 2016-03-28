@@ -10,7 +10,7 @@
 <tags 
 	ms.service="web-sites" 
 	ms.date="11/17/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="03/28/2016"/>
 # 具有 Python Tools 2.2 for Visual Studio 的 Azure 上的 Django 和 MySQL 
 
 > [AZURE.SELECTOR]

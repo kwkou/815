@@ -11,7 +11,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="12/07/2015" 
-	wacn.date="01/21/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 创建具有身份验证和 SQL 数据库的 ASP.NET MVC 应用程序并将其部署到 Azure Web 应用
 

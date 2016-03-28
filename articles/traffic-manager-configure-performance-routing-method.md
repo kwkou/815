@@ -9,7 +9,7 @@
 <tags
 	ms.service="traffic-manager"
    ms.date="12/09/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 配置性能流量路由方法
 
