@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/10/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="02/01/2016"
+	wacn.date="03/28/2016"/>
 
 
 #在 Azure 上安装和配置 PostgreSQL

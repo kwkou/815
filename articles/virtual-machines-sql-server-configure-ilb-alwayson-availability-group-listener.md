@@ -9,8 +9,8 @@
 	tags="azure-service-management"/>
 <tags 
 	ms.service="virtual-machines"
-	ms.date="11/06/2015"
-	wacn.date="12/31/2015" />
+	ms.date="02/03/2016"
+	wacn.date="03/28/2016" />
 
 # 在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器
 

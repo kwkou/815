@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="09/16/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="02/01/2016"
+	wacn.date="03/28/2016"/>
 
 # 示例 1 – 使用 NSG 构建简单的外围网络
 

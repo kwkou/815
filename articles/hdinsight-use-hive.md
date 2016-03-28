@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/03/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="01/28/2016"
+	wacn.date="03/28/2016"/>
 
 # 将 Hive 和 HiveQL 与 HDInsight 中的 Hadoop 配合使用以分析示例 Apache log4j 文件
 

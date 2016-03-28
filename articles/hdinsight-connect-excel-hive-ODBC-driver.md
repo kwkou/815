@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/15/2015"
-	wacn.date="02/17/2016"/>
+	ms.date="01/28/2016"
+	wacn.date="03/28/2016"/>
 
 #使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 Hadoop
 

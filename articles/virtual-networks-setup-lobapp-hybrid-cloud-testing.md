@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="virtual-network" 
-	ms.date="09/10/2015" 
-	wacn.date="11/02/2015"/>
+	ms.date="01/28/2016" 
+	wacn.date="03/28/2016"/>
 
 # 在混合云中设置用于测试且基于 Web 的 LOB 应用程序
 

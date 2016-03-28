@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="11/18/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/19/2016"
+	wacn.date="03/28/2016"/>
 
 
 # Azure SDK for .NET 2.7 和 .NET 2.7.1 发行说明

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="11/18/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/19/2016"
+	wacn.date="03/28/2016"/>
 
 
 

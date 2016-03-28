@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="cache"
-	ms.date="10/23/2015"
-	wacn.date="01/04/2016"/>
+	ms.date="01/13/2016"
+	wacn.date="03/28/2016"/>
 
 # Azure Redis 缓存的 ASP.NET 输出缓存提供程序
 

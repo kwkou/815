@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="01/07/2015"
-	wacn.date="02/26/2016"/>
+	ms.date="01/26/2016"
+	wacn.date="03/28/2016"/>
 
 # 在 Azure 中备份 Web 应用
 
