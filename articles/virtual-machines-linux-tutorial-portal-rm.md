@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/21/2015"
-	wacn.date=""/>
+	wacn.date="03/28/2016"/>
 
 # 使用 Azure 管理门户创建运行 Linux 的虚拟机
 

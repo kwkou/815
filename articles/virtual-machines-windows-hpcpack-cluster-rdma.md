@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/13/2016"
-	wacn.date=""/>
+	wacn.date="03/28/2016"/>
 
 # 使用 HPC Pack 实例设置 Windows RDMA 群集以运行 MPI 应用程序
 

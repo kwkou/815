@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/22/2016"
-	wacn.date=""/>
+	wacn.date="03/28/2016"/>
 
 # <a id="nonendorsed"> </a>有关未认可分发的信息 #
 

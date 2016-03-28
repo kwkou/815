@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/25/2016"
-	wacn.date=""/>
+	wacn.date="03/28/2016"/>
 
 # 对运行 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除
 
