@@ -9,7 +9,7 @@
 <tags
 	ms.service="traffic-manager"
    ms.date="12/07/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 添加、禁用、启用或删除终结点
 
@@ -32,7 +32,7 @@
 6. 在列表中选择 Web 应用以将其添加为此配置文件的终结点。清除 Web 应用名称会将其从终结点列表中删除。注意，对于每个 Azure 数据中心（也称为区域），只能选择一个 Web 应用。如果你在托管着多个 Web 应用的数据中心内选择 Web 应用，当你选择了第一个 Web 应用时，同一数据中心内的其他 Web 应用将变得不可供选择。另请注意，只会列出标准 Web 应用。
 7. 在为此配置文件选择终结点后，单击右下角的复选标记来保存你的更改。
 
->[AZURE.NOTE]如果你使用的是“故障转移”流量路由方法，在添加或删除终结点后，请务必在“配置”页面上调整故障转移优先级列表以反映你的配置需要的故障转移顺序。有关详细信息，请参阅[配置故障转移流量路由](/documentation/articles/traffic-manager-configure-failover-load-balancing)。
+>[AZURE.NOTE]如果你使用的是“故障转移”流量路由方法，在添加或删除终结点后，请务必在“配置”页面上调整故障转移优先级列表以反映你的配置需要的故障转移顺序。有关详细信息，请参阅[配置故障转移流量路由](/documentation/articles/traffic-manager-configure-failover-routing-method)。
 
 ## 禁用终结点
 

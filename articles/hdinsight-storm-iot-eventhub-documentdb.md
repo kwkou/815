@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="01/08/2016"
-	wacn.date="03/03/2016"/>
+	wacn.date="03/28/2016"/>
 
 #使用 Apache Storm on HDInsight 处理 Azure 事件中心的车辆传感器数据
 
@@ -48,7 +48,7 @@ Azure 事件中心可用于处理传感器生成的大量数据，而 Apache Sto
 
 ##实现
 
-GitHub 上的 <a href="https://github.com/hdinsight/hdinsight-storm-examples" target="_blank">HDInsight-Storm-Examples</a> 存储库中提供了这种情况的完整自动化解决方案。若要使用此示例，请遵循 [IoTExample README.MD](https://github.com/hdinsight/hdinsight-storm-examples/blob/master/IotExample/README.md) 中的步骤。
+GitHub 上的 [HDInsight-Storm-Examples](https://github.com/hdinsight/hdinsight-storm-examples) 存储库中提供了这种情况的完整自动化解决方案。若要使用此示例，请遵循 [IoTExample README.MD](https://github.com/hdinsight/hdinsight-storm-examples/blob/master/IotExample/README.md) 中的步骤。
 
 ## 后续步骤
 

@@ -40,7 +40,7 @@ Azure 事件中心可让你处理 Web 应用、应用程序和设备中的大量
 
 ##了解示例
 
-[hdinsight-java-storm-eventhub](https://github.com/Blackmist/hdinsight-java-storm-eventhub) 示例包含两个拓扑：
+[hdinsight-java-storm-eventhub](https://github.com/Azure-Samples/hdinsight-java-storm-eventhub) 示例包含两个拓扑：
 
 __com.microsoft.example.EventHubWriter__ 将随机数据写入 Azure 事件中心。数据由 Spout 生成，是随机设备 ID 和设备值。因此它可以模拟发出字符串 ID 和数字值的某些硬件。
 
@@ -281,7 +281,7 @@ HdfsBolt 一般用于将数据存储到 Hadoop 分布式文件系统 (HDFS)。�
 
 ## 下载并构建项目
 
-1. 从 GitHub 下载项目：[hdinsight-java-storm-eventhub](https://github.com/Blackmist/hdinsight-java-storm-eventhub)。可以下载 zip 存档形式的包，或者使用 [git](https://git-scm.com/) 在本地克隆项目。
+1. 从 GitHub 下载项目：[hdinsight-java-storm-eventhub](https://github.com/Azure-Samples/hdinsight-java-storm-eventhub)。可以下载 zip 存档形式的包，或者使用 [git](https://git-scm.com/) 在本地克隆项目。
 
 2. 使用以下命令以将项目中包含的包安装到本地 Maven 存储库。这些包将启用事件中心 Spout 和 Bolt，以及使用 HdfsBolt 写入 Azure 存储空间 (WASB) 的功能。
 

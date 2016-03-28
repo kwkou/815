@@ -10,7 +10,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="12/15/2015" 
-	wacn.date="02/17/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 在 Azure 中创建使用 AD FS 身份验证的 .NET MVC Web 应用
 
@@ -29,6 +29,8 @@
 
 <a name="bkmk_need"></a>
 ## 所需的项目 ##
+
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 若要完成本教程，你需要以下项目：
 

@@ -11,7 +11,7 @@
 <tags
 	ms.service="web-sites"
 	ms.date="01/12/2016"
-	wacn.date="03/03/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 为 Azure Web 应用设置过渡环境
 <a name="Overview"></a>
@@ -62,8 +62,6 @@ Web 应用必须在“标准”模式下运行才能启用多个部署槽。
 4. 当你单击部署站点槽名称时，将打开一个包含一组选项卡的页面，和其他 Web 应用一样。<strong><i>你的 Web 应用名称</i>(<i>部署槽名称</i>)</strong>将显示在门户页面顶部，提醒你正在查看部署站点槽。
 	
 	![部署槽标题][StagingTitle]
-	
-5. 单击仪表板视图中的站点 URL。请注意部署槽具有其自己的主机名，也是活动站点。若要限制对部署槽的公共访问权限，请参阅 [Azure Web 应用 – 阻止对非生产部署槽的 Web 访问](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)。
 
 创建部署槽后没有任何内容。您可以从其他存储库分支或完全不同的存储库部署到槽。您还可以更改此槽的配置。使用与内容更新部署槽关联的发布配置文件或部署凭证。例如，你可以[使用 git 发布到此槽](/documentation/articles/web-sites-publish-source-control)。
 
@@ -126,43 +124,43 @@ Azure PowerShell 是一个模块，可提供通过 Windows PowerShell 管理 Azu
 
 - 有关安装和配置 Azure PowerShell 的信息以及使用 Azure 订阅对 Azure PowerShell 进行身份验证的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。  
 
-- 若要对 PowerShell cmdlet 使用新的 Azure 资源管理器模式，首先请执行以下命令：`Switch-AzureMode -Name AzureResourceManager`
-
 ----------
 
 ### 创建 Web 应用
 
-`New-AzureWebApp -ResourceGroupName [resource group name] -Name [ WEB APP name] -Location [location] -AppServicePlan [app service plan name]`
+	New-AzureRmWebApp -ResourceGroupName [resource group name] -Name [web app name] -Location [location] -AppServicePlan [app service plan name]
 
 ----------
 
 ### 为 Web 应用创建部署槽
 
-`New-AzureWebApp -ResourceGroupName [resource group name] -Name [ WEB APP name] -SlotName [deployment slot name] -Location [location] -AppServicePlan [app service plan name]`
+	New-AzureRmWebAppSlot -ResourceGroupName [resource group name] -Name [web app name] -Slot [deployment slot name] -AppServicePlan [app service plan name]
 
 ----------
 
 ### 启动多阶段交换并将目标槽配置应用到源槽
 
-`$ParametersObject = @{targetSlot  = "[slot name – e.g. “production”]"}` `Invoke-AzureResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [ WEB APP name]/[slot name] -Action applySlotConfig -Parameters $ParametersObject -ApiVersion 2015-07-01`
+	$ParametersObject = @{targetSlot  = "[slot name - e.g. "production"]"}
+	Invoke-AzureRmResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [web app name]/[slot name] -Action applySlotConfig -Parameters $ParametersObject -ApiVersion 2015-07-01
 
 ----------
 
 ### 还原多阶段交换的第一个阶段并还原源槽配置
 
-`Invoke-AzureResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [ WEB APP name]/[slot name] -Action resetSlotConfig -ApiVersion 2015-07-01`
+	Invoke-AzureRmResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [web app name]/[slot name] -Action resetSlotConfig -ApiVersion 2015-07-01
 
 ----------
 
 ### 交换部署槽
 
-`$ParametersObject = @{targetSlot  = "[slot name – e.g. “production”]"}` `Invoke-AzureResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [ WEB APP name]/[slot name] -Action slotsswap -Parameters $ParametersObject -ApiVersion 2015-07-01`
+	$ParametersObject = @{targetSlot  = "[slot name - e.g. "production"]"}
+	Invoke-AzureRmResourceAction -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -ResourceName [web app name]/[slot name] -Action slotsswap -Parameters $ParametersObject -ApiVersion 2015-07-01
 
 ----------
 
 ### 删除部署槽
 
-`Remove-AzureResource -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots –Name [ WEB APP name]/[slot name] -ApiVersion 2015-07-01`
+	Remove-AzureRmResource -ResourceGroupName [resource group name] -ResourceType Microsoft.Web/sites/slots -Name [web app name]/[slot name] -ApiVersion 2015-07-01
 
 ----------
 

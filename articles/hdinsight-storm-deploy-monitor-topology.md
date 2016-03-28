@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="01/22/2016"
-	wacn.date="03/17/2016"/>
+	wacn.date="03/28/2016"/>
 
 #在基于 Windows 的 HDInsight 上部署和管理 Apache Storm 拓扑
 
@@ -145,7 +145,7 @@ HDInsight Tools 可用于将 C# 或混合拓扑提交到 Storm 群集。以下�
 
 Storm UI 是以 REST API 为基础生成的，因此，你可以使用 API 执行类似的管理和监视功能。使用 REST API 可以创建自定义工具来管理和监视 Storm 拓扑。
 
-有关详细信息，请参阅 [Storm UI REST API](https://github.com/apache/storm/)。以下信息特定于将 REST API 与 Apache Storm on HDInsight 配合使用的情况。
+有关详细信息，请参阅 [Storm UI REST API](https://github.com/apache/storm/blob/0.9.3-branch/STORM-UI-REST-API.md)。以下信息特定于将 REST API 与 Apache Storm on HDInsight 配合使用的情况。
 
 ###基本 URI
 

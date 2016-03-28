@@ -9,7 +9,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="12/11/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 如何使用 PowerShell 管理终结点的访问控制列表 (ACL)
 
@@ -87,10 +87,8 @@
 		| Remove-AzureAclConfig –EndpointName "web" 
 		| Update-AzureVM
 
-## 另请参阅
+## 下一步
 
 [什么是网络访问控制列表 (ACL)？](/documentation/articles/virtual-networks-acl)
-
-[如何与虚拟机建立通信](/documentation/articles/virtual-machines-set-up-endpoints)
 
 <!---HONumber=74-->

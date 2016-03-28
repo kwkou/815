@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/09/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="03/28/2016"/>
 
 
 
@@ -151,7 +151,7 @@
 
 [tables]: /develop/ruby/
 
-[vm-instructions]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm
+[vm-instructions]: /documentation/articles/virtual-machines-linux-tutorial
 
 
 <!-- External Links -->

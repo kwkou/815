@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="01/13/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 使用 .NET SDK 在 HDInsight 中创建基于 Windows 的 Hadoop 群集
 
@@ -22,6 +22,8 @@
 
 
 ###先决条件：
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 在开始按照本文中的说明操作之前，你必须具有以下内容：
 
@@ -38,7 +40,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 1. 在 Visual Studio 中创建新的 C# 控制台应用程序。
 2. 在 Nuget 包管理器控制台中输入以下 Nuget 命令。
 
-		Install-Package Microsoft.Azure.Common.Authentication -pre
+		Install-Package Microsoft.Azure.Common.Authentication -Pre
 		Install-Package Microsoft.Azure.Management.HDInsight -Pre
 
 6. 在解决方案资源管理器中双击 **Program.cs** 将它打开，粘贴以下代码，并提供变量的值：

@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="12/02/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 将 Apache Phoenix 和 SQuirreL 与 HDinsight 中的 HBase 配合使用  
 
@@ -50,7 +50,7 @@
 
 		CREATE TABLE Company (COMPANY_ID INTEGER PRIMARY KEY, NAME VARCHAR(225));
 		
-		!tables;
+		!tables
 		
 		UPSERT INTO Company VALUES(1, 'Microsoft');
 		

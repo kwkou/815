@@ -9,7 +9,7 @@
 <tags
 	ms.service="traffic-manager"
    ms.date="12/07/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 什么是流量管理器？
 
@@ -52,10 +52,10 @@
 1. **将 Azure 云服务、Azure Web 应用或其他终结点部署到生产环境**。在创建流量管理器配置文件时，必须将其与某个订阅关联。然后，在生产环境中为云服务和“标准”层 Web 应用添加属于同一订阅的终结点。如果某一终结点位于过渡环境中而不在 Azure 生产环境中或同一订阅中，则不能将其添加为外部终结点。有关云服务的详细信息，请参阅[云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)。有关 Web 应用的详细信息，请参阅[ Web 应用](/home/features/web-site/)。
 2. **确定流量管理器域的名称**。考虑为域使用带有唯一前缀的名称。域的后半部分（即 trafficmanager.cn）是固定的。有关详细信息，请参阅[最佳实践](#best-practices)。
 3. **确定要使用的监视配置**。无论使用哪种流量路由方法，流量管理器都会监视终结点以确保它们联机。在你配置监视设置之后，流量管理器不会将流量定向到监视系统判定为脱机的终结点，除非它检测到所有终结点均已脱机，或无法检测配置文件中包含的任一终结点的状态。有关监视的详细信息，请参阅[流量管理器监视](/documentation/articles/traffic-manager-monitoring)。
-4. **确定要使用的流量路由方法**。有三种不同的流量路由方法。请花一些时间了解哪种方法最适合你的要求。如果你以后需要更改方法，随时可以更改。另请注意，每种方法都需要稍微不同的配置步骤。有关流量路由方法的信息，请参阅[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-load-balancing-methods)。
+4. **确定要使用的流量路由方法**。有三种不同的流量路由方法。请花一些时间了解哪种方法最适合你的要求。如果你以后需要更改方法，随时可以更改。另请注意，每种方法都需要稍微不同的配置步骤。有关流量路由方法的信息，请参阅[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods)。
 5. **创建配置文件并配置设置**。可以使用 REST API、Windows PowerShell 或管理门户来创建流量管理器配置文件并配置设置。有关详细信息，请参阅[如何配置流量管理器设置](#how-to-configure-traffic-manager-settings)。以下步骤假定你将使用管理门户中的“快速创建”。 
    - **创建流量管理器配置文件** - 若要使用管理门户中的“快速创建”创建配置文件，请参阅[管理流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles)。
-   - **配置流量路由方法设置** – 在“快速创建”期间，你必须为配置文件选择流量路由方法。在完成“快速创建”步骤之后，可以随时更改此设置。有关配置步骤，请参阅与流量路由方法对应的主题：[配置“性能”流量路由方法](/documentation/articles/traffic-manager-configure-performance-load-balancing)、[配置“故障转移”流量路由方法](/documentation/articles/traffic-manager-configure-failover-load-balancing)、[配置“轮循机制”流量路由方法](/documentation/articles/traffic-manager-configure-round-robin-load-balancing)。
+   - **配置流量路由方法设置** – 在“快速创建”期间，你必须为配置文件选择流量路由方法。在完成“快速创建”步骤之后，可以随时更改此设置。有关配置步骤，请参阅与流量路由方法对应的主题：[配置“性能”流量路由方法](/documentation/articles/traffic-manager-configure-performance-routing-method)、[配置“故障转移”流量路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method)、[配置“轮循机制”流量路由方法](/documentation/articles/traffic-manager-configure-round-robin-routing-method)。
    
    >[AZURE.NOTE]“轮循机制”流量路由方法现在支持将网络流量进行加权分布。但是，目前必须使用 REST API 或 Windows PowerShell 配置权重。有关详细信息和示例配置，请参阅 Azure 博客中的 [Azure 流量管理器外部终结点与通过 PowerShell 实施的加权轮循机制](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/)。
 
@@ -99,7 +99,7 @@
 - **定义** – 定义包含策略设置和监视设置。定义与配置文件相对应。每个配置文件只能有一个定义。定义本身在管理门户中不可见，但在管理门户中可以看到定义的许多设置，并可对其进行配置。
 - **DNS 选项** – 每个定义都包含 DNS 选项。这是配置 DNS TTL 的位置。
 - **监视器** – 每个定义都包含监视设置。这是配置协议、端口、相对路径和文件名的位置。在管理门户中，可以看到监视设置，也可以对其进行配置。有关详细信息，请参阅[流量管理器监视](/documentation/articles/traffic-manager-monitoring)。
-- **策略** – 每个定义都包含策略设置。策略是指定流量路由方法和终结点的位置。策略本身在管理门户中不可见，但在管理门户中可以看到策略的某些设置，并可对其进行配置。有关详细信息，请参阅[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-load-balancing-methods)。
+- **策略** – 每个定义都包含策略设置。策略是指定流量路由方法和终结点的位置。策略本身在管理门户中不可见，但在管理门户中可以看到策略的某些设置，并可对其进行配置。有关详细信息，请参阅[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods)。
 
 ## 通过使用 Windows PowerShell 配置设置
 
