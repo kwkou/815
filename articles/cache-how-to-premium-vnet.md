@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cache"
-	ms.date="12/14/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/04/2016"
+	wacn.date=""/>
 
 # 如何为高级 Azure Redis 缓存配置虚拟网络支持
 Azure Redis 缓存具有不同的缓存产品（包括新推出的高级层），使缓存大小和功能的选择更加灵活。
@@ -45,11 +45,11 @@ Azure Redis 缓存高级层包括群集、暂留和虚拟网络 (VNET) 支持。
 
 创建缓存后，该缓存只能由同一 VNET 中的客户端访问。
 
->[AZURE.IMPORTANT]若要在使用 VNET 时访问 Azure Redis 缓存实例，请传递 VNET 中缓存的静态 IP 地址作为第一个参数，并传入包含缓存终结点的 `sslhost` 参数。在以下示例中，静态 IP 地址为 `10.10.1.5`，缓存终结点为 `contoso5.redis.cache.chinacloudapi.cn`。
+>[AZURE.IMPORTANT] 若要在使用 VNET 时访问 Azure Redis 缓存实例，请传递 VNET 中缓存的静态 IP 地址作为第一个参数，并传入包含缓存终结点的 `sslhost` 参数。在以下示例中，静态 IP 地址为 `172.160.0.99`，缓存终结点为 `contoso5.redis.cache.chinacloudapi.cn`。
 
 	private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
 	{
-	    return ConnectionMultiplexer.Connect("10.10.1.5,sslhost=contoso5.redis.cache.chinacloudapi.cn,abortConnect=false,ssl=true,password=password");
+	    return ConnectionMultiplexer.Connect("172.160.0.99,sslhost=contoso5.redis.cache.chinacloudapi.cn,abortConnect=false,ssl=true,password=password");
 	});
 	
 	public static ConnectionMultiplexer Connection
@@ -66,15 +66,23 @@ Azure Redis 缓存高级层包括群集、暂留和虚拟网络 (VNET) 支持。
 
 ## Azure Redis 缓存和 VNET 有哪些常见的错误配置问题？
 
-以下列表包含一些常见配置错误，它们可能导致 Azure Redis 缓存无法正常运行。
+在 VNET 中承载 Azure Redis 缓存时，会使用下表中的端口。如果这些端口受阻，则缓存可能无法正常工作。在 VNET 中使用 Azure Redis 缓存时，阻止这些端口中的一个或多个是最常见的错误配置问题。
 
--	缺少 DNS 访问权限。VNET 中的 Azure Redis 缓存实例在监视过程中需要访问 DNS，并且需要访问缓存的运行时系统。如果缓存实例无法访问 DNS，监视将无法进行，并且缓存无法正常工作。
--	已阻止客户端用来连接 Redis 的 TCP 端口（例如 6379 或 6380）。
--	已阻止或拦截来自虚拟网络的传出 HTTPS 流量。Azure Redis 缓存使用了定向到 Azure 服务（尤其是存储空间）的传出 HTTPS 流量。
--	已阻止 Redis 角色实例 VM 在子网内部相互通信。Redis 角色实例应允许在所用的任何端口上使用 TCP 相互通信，这些端口可能会变化，但至少可以假设为 Redis CSDEF 文件中使用的所有端口。
--	已阻止 Azure 负载平衡器在 TCP/HTTP 端口 16001 上连接到 Redis VM。Azure Redis 缓存依赖于默认 Azure 负载平衡器探测来判断哪些角色实例正在运行。默认负载平衡器探测的工作方式是在端口 16001 上 ping Azure 来宾代理。只有响应 ping 的角色实例才会放入轮转实例，以接收 ILB 转发的流量。如果由于端口被阻止导致 ping 失败，因而没有任何实例被放入轮转列表，ILB 将不接受任何传入 TCP 连接。
--	已阻止使用客户端应用程序的 Web 流量进行 SSL 公钥验证。Redis（在虚拟网络中）的客户端必须能够将 HTTP 流量传送到公共 Internet，才能下载 CA 证书和证书吊销列表，以在使用端口 6380 连接到 Redis 并进行 SSL 服务器身份验证时，执行 SSL 证书验证。
--	已阻止 Azure 负载平衡器通过端口 1300x（13000、13001 等）或 1500x（15000、15001 等）上的 TCP 连接到群集中的 Redis VM。在 csdef 文件中配置了 VNet，该文件中包含用于打开这些端口的负载平衡器探测。Azure 负载平衡器需受 NSG 的允许，默认 NSG 使用标记 AZURE\_LOADBALANCER 来执行此操作。Azure 负载平衡器具有单个静态 IP 地址 168.63.126.16。有关详细信息，请参阅[什么是网络安全组 (NSG)？](/documentation/articles/virtual-networks-nsg)。
+| 端口 | Direction | 传输协议 | 目的 | 远程 IP |
+|-------------|------------------|--------------------|-----------------------------------------------------------------------------------|-------------------------------------|
+| 80、443 | 出站 | TCP | Azure 存储空间/PKI (Internet) 上的 Redis 依赖关系 | * |
+| 53 | 出站 | TCP/UDP | DNS (Internet/VNet) 上的 Redis 依赖关系 | * |
+| 6379、6380 | 入站 | TCP | 与 Redis 的客户端通信、Azure 负载平衡 | VIRTUAL\_NETWORK、AZURE\_LOADBALANCER |
+| 8443 | 入站/出站 | TCP | Redis 的实现详细信息 | VIRTUAL\_NETWORK |
+| 8500 | 入站 | TCP/UDP | Azure 负载平衡 | AZURE\_LOADBALANCER |
+| 10221-10231 | 入站/出站 | TCP | Redis 的实现详细信息（可以将远程终结点限制为 VIRTUAL\_NETWORK） | VIRTUAL\_NETWORK、AZURE\_LOADBALANCER |
+| 13000-13999 | 入站 | TCP | 与 Redis 群集的客户端通信、Azure 负载平衡 | VIRTUAL\_NETWORK、AZURE\_LOADBALANCER |
+| 15000-15999 | 入站 | TCP | 与 Redis 群集的客户端通信、Azure 负载平衡 | VIRTUAL\_NETWORK、AZURE\_LOADBALANCER |
+| 16001 | 入站 | TCP/UDP | Azure 负载平衡 | AZURE\_LOADBALANCER |
+| 20226 | 入站+出站 | TCP | Redis 群集的实现详细信息 | VIRTUAL\_NETWORK |
+
+
+
 
 ## 是否可以对标准或基本缓存使用 VNET？
 
@@ -99,10 +107,9 @@ Azure Redis 缓存高级层包括群集、暂留和虚拟网络 (VNET) 支持。
 
 [redis-cache-vnet]: ./media/cache-how-to-premium-vnet/redis-cache-vnet.png
 
-[redis-cache-vnet-select]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-select.png
-
 [redis-cache-vnet-ip]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-ip.png
 
-[redis-cache-vnet-subnet]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-subnet.png
+[redis-cache-vnet-info]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-info.png
 
-<!---HONumber=Mooncake_0104_2016-->
+
+<!---HONumber=Mooncake_0321_2016-->

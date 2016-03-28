@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/05/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="01/22/2016"
+	wacn.date=""/>
 
 # <a id="nonendorsed"> </a>有关未认可分发的信息 #
 
@@ -28,7 +28,9 @@
 正是出于这个原因，建议你如果可能，从某个我们的 [Azure 上的 Linux - 认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distributions)开始操作。以下文章将指导你完成如何准备 Azure 上支持的各种认可的 Linux 分发：
 
 - **[基于 CentOS 的分发](/documentation/articles/virtual-machines-linux-create-upload-vhd-centos)**
+- **[Debian Linux](/documentation/articles/virtual-machines-linux-create-upload-vhd-debian)**
 - **[Oracle Linux](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)**
+- **[Red Hat Enterprise Linux](/documentation/articles/virtual-machines-linux-create-upload-vhd-redhat)**
 - **[SLES 和 openSUSE](/documentation/articles/virtual-machines-linux-create-upload-vhd-suse)**
 - **[Ubuntu](/documentation/articles/virtual-machines-linux-create-upload-vhd-ubuntu)**
 
@@ -68,11 +70,11 @@
 
 Azure 上的 VHD 映像必须已将虚拟大小调整为 1MB。通常情况下，使用 Hyper-V 创建的 VHD 应已正确调整。如果未正确调整 VHD，则在你尝试基于 VHD 创建*映像*时，可能会收到如下错误消息：
 
-	"The VHD http://<mystorageaccount>.blob.core.chinacloudapi.cn/vhds/MyLinuxVM.vhd has an unsupported virtual size of 21475270656 bytes. The size must be a whole number (in MBs).”
+	"The VHD http://<mystorageaccount>.blob.core.chinacloudapi.cn/vhds/MyLinuxVM.vhd has an unsupported virtual size of 21475270656 bytes. The size must be a whole number (in MBs)." 
 
 若要修正此问题，可使用 Hyper-V 管理器控制台或 [Resize-VHD](http://technet.microsoft.com/zh-cn/library/hh848535.aspx) Powershell cmdlet 调整 VM 大小。如果你未在 Windows 环境中运行，则建议使用 qemu-img 转换（如果需要）并调整 VHD 大小。
 
-> [AZURE.NOTE]qemu-img 版本（>=2.2.1）中有一个已知 bug，会导致 VHD 格式不正确。我们会在即将发布的 qemu-img 版本中解决此问题。现在建议使用 qemu-img 版本 2.2.0 或较低版本。参考：https://bugs.launchpad.net/qemu/+bug/1490611
+> [AZURE.NOTE] qemu-img 版本（>=2.2.1）中有一个已知 bug，会导致 VHD 格式不正确。我们会在即将发布的 qemu-img 版本中解决此问题。现在建议使用 qemu-img 版本 2.2.0 或较低版本。参考：https://bugs.launchpad.net/qemu/+bug/1490611
 
 
  1. 直接使用工具（如 `qemu-img` 或 `vbox-manage`）调整 VHD 大小可能会生成无法启动的 VHD。因此，建议先将 VHD 转换为 RAW 磁盘映像。如果已将 VM 映像创建为 RAW 磁盘映像（对于 KVM 等某些虚拟机监控程序，这是默认设置），则可以跳过此步骤：
@@ -168,7 +170,7 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
 
 - 不要在操作系统磁盘上创建交换空间
 
-	Azure Linux 代理可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
+	Azure Linux 代理可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是临时磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
@@ -189,4 +191,4 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
 
 - 然后，需要关闭虚拟机并将 VHD 上载到 Azure。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0321_2016-->

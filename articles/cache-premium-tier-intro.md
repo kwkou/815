@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cache"
-	ms.date="10/02/2015"
-	wacn.date="01/04/2016"/>
+	ms.date="01/09/2016"
+	wacn.date=""/>
 
 # Azure Redis 缓存高级层简介
 Azure Redis 缓存是一种分布式托管缓存，可通过提供对数据的超高速访问权限来帮助你构建高度可缩放且响应灵敏的应用程序。
@@ -25,7 +25,7 @@ Azure Redis 缓存是一种分布式托管缓存，可通过提供对数据的�
 有关高级缓存大小、吞吐量和带宽的更多详细信息，请参阅 [Azure Redis 缓存常见问题](/documentation/articles/cache-faq#what-redis-cache-offering-and-size-should-i-use)。
 
 ## Redis 数据持久性
-高级层允许你将缓存数据暂留在 Azure 存储帐户中。在基本/标准缓存中，所有数据只存储在内存中。如果底层基础结构出现问题，可能会导致数据丢失。我们建议使用高级级别中的 Redis 数据暂留功能来增加灵活性，防止数据丢失。Azure Redis 缓存提供可在 [Redis 持久性](http://redis.io/topics/persistence)中使用的 RDB 和 AOF（即将推出）选项。
+高级层允许你将缓存数据暂留在 Azure 存储空间帐户中。在基本/标准缓存中，所有数据只存储在内存中。如果底层基础结构出现问题，可能会导致数据丢失。我们建议使用高级级别中的 Redis 数据暂留功能来增加灵活性，防止数据丢失。Azure Redis 缓存提供可在 [Redis 持久性](http://redis.io/topics/persistence)中使用的 RDB 和 AOF（即将推出）选项。
 
 有关配置持久性的说明，请参阅[如何为高级 Azure Redis 缓存配置持久性](/documentation/articles/cache-how-to-premium-persistence)。
 
@@ -50,4 +50,5 @@ Azure Redis 缓存是一种分布式托管缓存，可通过提供对数据的�
 -	[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering)
   
 
-<!---HONumber=82-->
+
+<!---HONumber=Mooncake_0321_2016-->
