@@ -10,7 +10,7 @@
 <tags
 	ms.service="storage"
 	ms.date="12/11/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="03/28/2016"/>
 
 
 # 如何通过 Python 使用表存储
@@ -36,7 +36,7 @@
 
 以下代码使用存储帐户名称和帐户密钥创建 **TableService** 对象。使用实际帐户和密钥替换“myaccount”和“mykey”。
 
-	table_service = TableService(account_name='myaccount', account_key='mykey')
+	table_service = TableService(account_name='myaccount', account_key='mykey',endpoint_suffix='core.chinacloudapi.cn')
 
 	table_service.create_table('tasktable')
 

@@ -10,7 +10,7 @@
 <tags
 	ms.service="storage"
 	ms.date="12/11/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 如何通过 Python 使用 Azure Blob 存储
 
@@ -34,7 +34,7 @@
 
 以下代码使用存储帐户名称和帐户密钥创建一个 **BlobService** 对象。使用实际帐户和密钥替换“myaccount”和“mykey”。
 
-	blob_service = BlobService(account_name='myaccount', account_key='mykey')
+	blob_service = BlobService(account_name='myaccount', account_key='mykey',endpoint_suffix='core.chinacloudapi.cn')
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
 
