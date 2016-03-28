@@ -15,8 +15,6 @@
 
 # 使用 Bootstrap 自定义 HDInsight 群集
 
-[AZURE.INCLUDE [选择器](../includes/hdinsight-create-windows-cluster-selector.md)]
-
 有时，你可能需要配置配置文件，包括：
 
 - core-site.xml

@@ -589,13 +589,13 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 ### 停止 Web 应用以阻止其他人注册  
 
-1. 在“服务器资源管理器”中，导航到“Azure > Azure Web 应用 > {你的资源组} > {你的 Web 应用}”。
+1. 在“服务器资源管理器”中，导航到“Azure > App Service > {你的资源组} > {你的 Web 应用}”。
 
 4. 右键单击 Web 应用并选择“停止”。
 
 	也可以从 [Azure 管理门户](https://manage.windowsazure.cn)中选择 Web 应用，然后单击页面底部的“停止”图标。
 	
-	![stop网站portal](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/stopweb.png)
+	![stop web app portal](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/stopweb.png)
 
 ### 删除 AddToRoleAsync、发布和测试
 

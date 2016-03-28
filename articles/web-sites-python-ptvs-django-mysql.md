@@ -34,6 +34,7 @@
  - [Python Tools 2.2 for Visual Studio 示例 VSIX]
  - [Azure SDK Tools for VS 2013] 或 [Azure SDK Tools for VS 2015]
  - [Python 2.7（32 位）]
+ - Django 1.6 或者更早
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 

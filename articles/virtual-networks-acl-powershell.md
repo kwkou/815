@@ -87,10 +87,8 @@
 		| Remove-AzureAclConfig –EndpointName "web" 
 		| Update-AzureVM
 
-## 另请参阅
+## 下一步
 
 [什么是网络访问控制列表 (ACL)？](/documentation/articles/virtual-networks-acl)
-
-[如何与虚拟机建立通信](/documentation/articles/virtual-machines-set-up-endpoints)
 
 <!---HONumber=74-->

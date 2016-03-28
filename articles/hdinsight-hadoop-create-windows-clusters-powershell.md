@@ -22,6 +22,8 @@
 
 ###先决条件：
 
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+
 在开始按照本文中的说明操作之前，你必须具有以下内容：
 
 - Azure 订阅创建新存储帐户。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
@@ -87,8 +89,7 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
                                     -StorageAccountName $defaultStorageAccountName `
                                     -StorageAccountKey $defaultStorageAccountKey
     New-AzureStorageContainer `
-        -Name $hdinsightClusterName ` #use the cluster name as the container name
-        -Context $defaultStorageContext 
+        -Name $hdinsightClusterName -Context $defaultStorageContext
 
     ###########################################
     # Create the cluster

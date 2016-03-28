@@ -21,6 +21,8 @@
 
 ###先决条件：
 
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+
 在开始按照本文中的说明操作之前，你必须具有以下内容：
 
 - **Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。

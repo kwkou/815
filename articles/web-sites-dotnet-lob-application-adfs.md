@@ -30,6 +30,8 @@
 <a name="bkmk_need"></a>
 ## 所需的项目 ##
 
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
+
 若要完成本教程，你需要以下项目：
 
 - 本地 AD FS 部署（有关所使用的测试实验室的端到端演练，请参阅[测试实验室：Azure VM 中使用 AD FS 的独立 STS（仅用于测试）](#)）

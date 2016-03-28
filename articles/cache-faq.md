@@ -202,7 +202,7 @@ Redis 服务器不能现成地支持 SSL，但 Azure Redis 缓存可提供此支
 你可以使用 [Redis 命令](http://redis.io/commands#)中列出的任何命令。可以配合多个选项来运行 Redis 命令。
 
 -	你可以使用 Redis 命令行工具。若要使用这些选项，请执行以下步骤。
-	-	下载 [Redis 命令行工具](https://github.com/MSOpenTech/redis/releases/download/win-2.8.19.1/redis-2.8.19.zip)。
+	-	下载 [Redis 命令行工具](https://github.com/MSOpenTech/redis/releases/)。
 	-	使用 `redis-cli.exe` 连接到缓存。使用 -h 开关传入缓存终结点，如以下示例中所示使用 -a 传入键。
 		-	`redis-cli -h <your cache name>.redis.cache.chinacloudapi.cn -a <key>`
 	-	请注意，Redis 命令行工具对 SSL 端口不起作用，但是，你可以根据[适用于 Redis 预览版的 ASP.NET 会话状态提供程序通告](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx)中的说明，使用 `stunnel` 等实用程序安全地将这些工具连接到 SSL。

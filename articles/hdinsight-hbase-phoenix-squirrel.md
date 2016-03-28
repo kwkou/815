@@ -50,7 +50,7 @@
 
 		CREATE TABLE Company (COMPANY_ID INTEGER PRIMARY KEY, NAME VARCHAR(225));
 		
-		!tables;
+		!tables
 		
 		UPSERT INTO Company VALUES(1, 'Microsoft');
 		

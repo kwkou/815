@@ -151,7 +151,7 @@
 
 [tables]: /develop/ruby/
 
-[vm-instructions]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm
+[vm-instructions]: /documentation/articles/virtual-machines-linux-tutorial
 
 
 <!-- External Links -->

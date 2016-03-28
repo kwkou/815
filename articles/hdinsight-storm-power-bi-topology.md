@@ -13,9 +13,9 @@
 	ms.date="01/08/2016"
 	wacn.date="02/26/2016"/>
 
-# 使用 Power BI（预览版）从 Apache Storm 拓扑可视化数据
+# 使用 Power BI 从 Apache Storm 拓扑可视化数据
 
-Power BI 预览版允许你以可视方式将数据显示为报告或仪表板。借助 Power BI REST API 可以轻松地在 Power BI 中使用 HDInsight 群集上 Apache Storm 运行的拓扑中的数据。
+Power BI 允许你以可视方式将数据显示为报告或仪表板。借助 Power BI REST API 可以轻松地在 Power BI 中使用 HDInsight 群集上 Apache Storm 运行的拓扑中的数据。
 
 在本文档中，你将学习如何使用 Power BI，基于 Storm 拓扑创建的数据创建报告和仪表板。
 
@@ -56,7 +56,7 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 ## 下载示例
 
-下载 [HDInsight C# Storm Power BI 示例](https://github.com/Blackmist/hdinsight-csharp-storm-powerbi)。若要下载该示例，请使用 [git](http://git-scm.com/) 复制/克隆它，或使用“下载”链接下载 .zip 存档。
+下载 [HDInsight C# Storm Power BI 示例](https://github.com/Azure-Samples/hdinsight-dotnet-storm-powerbi)。若要下载该示例，请使用 [git](http://git-scm.com/) 复制/克隆它，或使用“下载”链接下载 .zip 存档。
 
 ## 配置示例
 

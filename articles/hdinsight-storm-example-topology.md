@@ -25,7 +25,7 @@
 | [在 C# Storm 拓朴中创建多个数据流][ec5a4064] | 多个流 | C# |
 | [使用 Storm on HDInsight 从 Azure 事件中心处理事件 (C#)][844d1d81] | 事件中心 | C# 和 Java |
 | [使用 Storm on HDInsight 从 Azure 事件中心处理事件 (Java)](/documentation/articles/hdinsight-storm-develop-java-event-hub-topology) | 事件中心 | Java |
-| [使用 Power BI（预览版）从 Storm 拓扑可视化数据][94d15238] | Power BI | C# |
+| [使用 Power BI 从 Storm 拓扑可视化数据][94d15238] | Power BI | C# |
 | [使用 HDInsight 中的 Storm 和 HBase 分析传感器数据][ab894747] | 事件中心、HBase、Socket.IO、Web 仪表板 | C#、Java、JavaScript、HTML |
 | [使用 Storm on HDInsight 处理事件中心的汽车传感器数据][246ee964] | 事件中心、DocumentDb、Azure 存储 Blob (WASB) | C#、Java |
 | [使用 Storm on HDInsight 在 HBase 中从 Azure 事件中心提取、转换及加载 (ETL) 数据][b4b68194] | 事件中心、HBase | C# |

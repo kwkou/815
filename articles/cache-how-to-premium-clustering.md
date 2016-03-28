@@ -55,6 +55,7 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 
 有关在 StackExchange.Redis 客户端中使用群集的示例代码，请参阅 [Hello World](https://github.com/rustd/RedisSamples/tree/master/HelloWorld) 示例的 [clustering.cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/Clustering.cs) 部分。
 
+<a name="move-exceptions"></a>
 >[AZURE.IMPORTANT]使用 StackExchange.Redis 连接已启用群集的 Azure Redis 缓存时，你可能会遇到问题并收到 `MOVE` 异常。这是因为 StackExchange.Redis 缓存客户端收集缓存群集中节点信息的间隔时间较短。如果你是第一次连接缓存，并在客户端完成收集此信息前立即调用缓存，便会发生这些异常。在应用程序中解决此问题的最简单方法是连接缓存，然后等待一秒后再对缓存进行任何调用。为此，请按以下示例代码中所示添加 `Thread.Sleep(1000)`。请注意，只会在首次连接到缓存期间发生 `Thread.Sleep(1000)`。有关详细信息，请参阅 [StackExchange.Redis.RedisServerException - MOVED #248](https://github.com/StackExchange/StackExchange.Redis/issues/248)。我们正在开发此问题的修复程序，如有任何更新，将发布在本页面。
 
 	private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>

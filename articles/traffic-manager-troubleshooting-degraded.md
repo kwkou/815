@@ -63,7 +63,7 @@
 ## 后续步骤
 
 
-[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-load-balancing-methods)
+[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods)
 
 [什么是流量管理器](/documentation/articles/traffic-manager-overview)
 

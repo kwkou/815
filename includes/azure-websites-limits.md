@@ -17,14 +17,14 @@ CPU 时间（天）<sup>6</sup>|60 分钟|240 分钟|无限制，按标准[费�
 自定义域 [SSL 支持](/documentation/articles/web-sites-configure-ssl-certificate)|||不受限制|无限制，包含 5 个 SNI SSL 和 1 个 IP SSL 连接|无限制，包含 5 个 SNI SSL 和 1 个 IP SSL 连接
 集成负载平衡器||X|X|X|X
 [始终打开](/documentation/articles/web-sites-configure)|||X|X|X
-[计划备份](/documentation/articles/web-sites-backup)||||每天一次|每 5 分钟一次<sup>8</sup>
+[计划备份](/documentation/articles/web-sites-backup)||||每天一次|每 5 分钟一次
 [自动扩展](/documentation/articles/web-sites-scale)|||X|X|X
-[WebJobs](/documentation/articles/web-sites-create-web-jobs)<sup>9</sup>|X|X|X|X|X
+[WebJobs](/documentation/articles/web-sites-create-web-jobs)<sup>8</sup>|X|X|X|X|X
 [Azure 计划程序](/home/features/scheduler/)支持||X|X|X|X
 [终结点监视](/documentation/articles/web-sites-monitor)|||X|X|X
 [过渡槽（预览）](/documentation/articles/web-sites-staged-publishing)||||5|20
 每个应用的自定义域数</a>||500|500|500|500
-SLA||<p>|99\.9%|99\.95%<sup>10</sup>|99\.95%<sup>10</sup>
+SLA||<p>|99\.9%|99\.95%<sup>9</sup>|99\.95%<sup>10</sup>
 
 <sup>1</sup>除非特别说明，否则应用和存储配额依每个 App Service 计划为准。  
 <sup>2</sup>你可以在这些计算机上托管的应用的实际数目取决于应用的活动、计算机实例的大小和相应的资源利用率。  
@@ -33,8 +33,7 @@ SLA||<p>|99\.9%|99\.95%<sup>10</sup>|99\.95%<sup>10</sup>
 <sup>5</sup>存储限制是跨相同 App Service 计划中所有应用的内容总大小。可以通过提出支持请求增加存储限制。  
 <sup>6</sup>这些资源受到专用实例上的物理资源（实例大小和实例数）的限制。  
 <sup>7</sup>如果你将基本层的某个应用扩展为两个实例，则其中每个实例有 350 个并发连接。  
-<sup>8</sup>使用 Azure Web 应用环境时，高级层允许将备份间隔下调为最多每隔 5 分钟，若不使用 Azure Web 应用环境则为每天 50 次。  
-<sup>9</sup>按需、按计划或作为 Azure 实例内的后台任务连续运行自定义可执行文件和/或脚本。连续执行 WebJob 需要使用“始终打开”。计划的 WebJob 需要使用 Azure 计划程序免费或标准版。  
-<sup>10</sup>向使用多个实例和为故障转移配置的 Azure 流量管理器的部署提供 99.95% 的 SLA。
+<sup>8</sup>按需、按计划或作为 Azure 实例内的后台任务连续运行自定义可执行文件和/或脚本。连续执行 WebJob 需要使用“始终打开”。计划的 WebJob 需要使用 Azure 计划程序免费或标准版。  
+<sup>9</sup>向使用多个实例和为故障转移配置的 Azure 流量管理器的部署提供 99.95% 的 SLA。
 
 <!---HONumber=Mooncake_0307_2016-->

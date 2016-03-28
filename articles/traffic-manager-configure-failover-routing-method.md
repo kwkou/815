@@ -34,7 +34,7 @@
 
 [将公司 Internet 域指向流量管理器域](/documentation/articles/traffic-manager-point-internet-domain)
 
-[流量管理器路由方法](/documentation/articles/traffic-manager-load-balancing-methods)
+[流量管理器路由方法](/documentation/articles/traffic-manager-routing-methods)
 
 [配置轮循机制路由方法](/documentation/articles/traffic-manager-configure-round-robin-routing-method)
 
