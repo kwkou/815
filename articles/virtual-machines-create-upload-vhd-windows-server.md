@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/21/2016"
-        wacn.date="02/17/2016"/>
+        wacn.date="03/28/2016"/>
 
 # 创建 Windows Server VHD 并将其上载到 Azure
 

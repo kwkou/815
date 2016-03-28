@@ -11,7 +11,7 @@
 <tags
 	ms.service="azure-resource-manager"
 	ms.date="01/28/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="03/28/2016"/>
 
 # Azure 中的资源组部署故障排除
 

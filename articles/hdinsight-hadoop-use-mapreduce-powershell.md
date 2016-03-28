@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="02/04/2016"
-	wacn.date="01/14/2016"/>
+	wacn.date="03/28/2016"/>
 
 #使用 PowerShell 对 HDInsight 上的 Hadoop 运行 Hive 查询
 

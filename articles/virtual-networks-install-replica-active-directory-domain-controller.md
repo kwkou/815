@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="02/01/2016"
-	wacn.date="02/17/2016"/>
+	wacn.date="03/28/2016"/>
 
 
 # 在 Azure 虚拟网络中安装副本 Active Directory 域控制器

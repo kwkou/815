@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="02/02/2016"
-	wacn.date="01/14/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 如何在 PowerShell 中设置静态专用 IP 地址（经典）
 

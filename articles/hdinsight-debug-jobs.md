@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="01/28/2016"
-	wacn.date="02/17/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 在 HDInsight 中调试 Hadoop：查看日志和解释错误消息
 
