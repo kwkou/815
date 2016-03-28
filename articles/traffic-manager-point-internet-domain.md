@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="11/12/2015"
+	ms.date="02/09/2016"
 	wacn.date="12/31/2015"/>
 
 # 将公司 Internet 域指向 Azure 流量管理器域

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date="01/14/2016"/>
 
 #了解和解决从 HDInsight 上的 WebHCat (Templeton) 收到的错误

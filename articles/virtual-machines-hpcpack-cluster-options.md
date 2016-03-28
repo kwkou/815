@@ -9,7 +9,7 @@
  tags="azure-resource-manager,azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines"
- 	ms.date="10/08/2015"
+ 	ms.date="02/04/2016"
 	wacn.date="02/17/2016"/>
 
 # 使用 Microsoft HPC Pack 在 Azure 中创建和管理高性能计算 (HPC) 群集时可用的选项

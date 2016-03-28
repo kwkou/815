@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/09/2015"
+	ms.date="02/04/2016"
 	wacn.date="01/15/2016"/>
 
 # 为 HDInsight 开发脚本操作脚本

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/08/2016"
+	ms.date="01/28/2016"
 	wacn.date="03/03/2016"/>
 
 # 将 Pig 与 HDInsight 上的 Hadoop 配合使用
