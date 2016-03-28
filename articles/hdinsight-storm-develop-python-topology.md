@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/01/2016"
 	wacn.date="02/17/2016"/>
 
 #在 HDInsight 上使用 Python 开发 Apache Storm 拓扑

@@ -10,7 +10,7 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/11/2015"
+	ms.date="02/02/2016"
 	wacn.date="01/14/2016"/>
 
 # 如何在 Azure CLI 中创建 NSG（经典）

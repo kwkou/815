@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="11/19/2015"
+	ms.date="02/09/2016"
 	wacn.date="01/29/2016"/>
 
 # 创建 PHP-SQL Web 应用并使用 Git 将其部署到 Azure Web 应用

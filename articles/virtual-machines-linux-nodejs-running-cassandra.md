@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="01/09/2016"
+	ms.date="02/04/2016"
 	wacn.date="02/26/2016"/>
 
 # 在 Azure 上将 Cassandra 与 Linux 一起运行以及通过 Node.js 对其进行访问 

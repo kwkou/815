@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/14/2015"
+	ms.date="02/01/2016"
 	wacn.date="11/12/2015"/>
 
 

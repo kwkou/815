@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/02/2015"
+	ms.date="02/12/2016"
 	wacn.date="01/15/2016"/>
 
 # 在 HDInsight Hadoop 群集上安装 Giraph 并使用 Giraph 处理大型图形

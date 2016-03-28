@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/08/2016"
+	ms.date="01/28/2016"
 	wacn.date="02/26/2016"/>
 
 #使用 PowerShell 运行 Hive 查询

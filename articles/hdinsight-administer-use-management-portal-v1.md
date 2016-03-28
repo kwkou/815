@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/04/2015"
+	ms.date="02/04/2016"
 	wacn.date="01/15/2016"/>
 
 # 使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集
