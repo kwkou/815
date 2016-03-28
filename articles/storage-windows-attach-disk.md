@@ -1,5 +1,5 @@
 <properties
-	pageTitle="将磁盘附加到虚拟机 | Azure"
+	pageTitle="将磁盘附加到 VM | Azure"
 	description="将数据磁盘附加到使用经典部署模型创建的 Windows 虚拟机并进行初始化。"
 	services="virtual-machines, storage"
 	documentationCenter=""
@@ -9,21 +9,17 @@
 	tags="azure-service-management"/>
 
 <tags
- ms.service="virtual-machines"
-	ms.date="10/14/2015"
-	wacn.date="12/17/2015"/>
-
+	ms.service="virtual-machines"
+	ms.date="02/03/2016"
+	wacn.date="03/28/2016"/>
 
 # 将数据磁盘附加到使用经典部署模型创建的 Windows 虚拟机
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
-如果需要其他数据磁盘，可将空磁盘或现有的数据磁盘附加到 VM。在这两种情况下，这些磁盘实际上是需要驻留在 Azure 存储帐户中的 .vhd 文件。如果是新磁盘，在附加磁盘之后，你也需要将它初始化，使其可供 Windows VM 使用。
+如果需要其他数据磁盘，可将空磁盘或现有的数据磁盘附加到 VM。在这两种情况下，磁盘是驻留在 Azure 存储帐户中的 .vhd 文件。如果是新磁盘，在附加磁盘之后，你也需要将它初始化，使其可供 Windows VM 使用。
 
 最佳做法是使用一个或多个不同的磁盘来存储虚拟机的数据。当你创建 Azure 虚拟机时，它具有一个映射到 C 盘的操作系统磁盘和一个映射到 D 盘的临时磁盘。**不要使用临时磁盘来存储数据**。顾名思义，它仅提供临时存储。它不提供冗余或备份，因为它不驻留在 Azure 存储空间中。
-
-
-
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-windows-linux.md)]
 
@@ -37,7 +33,7 @@
 
 3. 展开菜单并选择“磁盘”。
 
-4. “磁盘”部分会列出磁盘。在大多数情况下，会有磁盘 0、磁盘 1 和磁盘 2。磁盘 0 是操作系统磁盘，磁盘 1 是临时磁盘（不能用于数据存储），磁盘 2 是刚附加到虚拟机的数据磁盘。新的数据磁盘会将分区列为“未知”。右键单击磁盘，然后选择“初始化”。
+4. “磁盘”部分会列出磁盘。在大多数情况下，会有磁盘 0、磁盘 1 和磁盘 2。磁盘 0 是操作系统磁盘，磁盘 1 是临时磁盘，磁盘 2 是刚附加到 VM 的数据磁盘。新的数据磁盘会将分区列为“未知”。右键单击磁盘，然后选择“初始化”。
 
 5.	在初始化磁盘时，系统会告知你将要擦除所有数据。单击“是”确认警告并初始化磁盘。完成后，即会将分区列为“GPT”。再次右键单击磁盘，然后选择“新建卷”。
 
@@ -45,7 +41,7 @@
 
 	![已成功初始化卷](./media/storage-windows-attach-disk/newvolumecreated.png)
 
-> [AZURE.NOTE]虚拟机的大小决定了可以在其上附加多少个磁盘。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
+> [AZURE.NOTE] VM 的大小决定了可以在其上附加多少个磁盘。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
 
 ## 其他资源
 
@@ -55,4 +51,4 @@
 
 [logon]: /documentation/articles/virtual-machines-log-on-windows-server
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0321_2016-->

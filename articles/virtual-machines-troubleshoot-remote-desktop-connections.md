@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="01/08/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="01/25/2016"
+	wacn.date="03/28/2016"/>
 
 # 对运行 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除
 
@@ -22,7 +22,7 @@
 
 本文适用于运行 Windows 的 Azure 虚拟机。有关运行 Linux 的 Azure 虚拟机，请参阅[对 Azure VM 的 SSH 连接进行故障排除](/documentation/articles/virtual-machines-troubleshoot-ssh-connections)。
 
-如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和 CSDN 论坛](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。
+如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和 CSDN Azure 论坛](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。
 
 
 ##<a id="quickfixrdp"></a> 修复常见的远程桌面错误
@@ -33,31 +33,19 @@
 
 这些步骤可能会解决使用经典部署模型创建的 Azure 虚拟机中的大部分远程桌面连接失败。在执行每个步骤之后，请尝试重新连接到 VM。
 
-- 使用 PowerShell 重置远程桌面服务可修复 RDP 服务器的启动问题。请运行以下命令。
+- 从 PowerShell 重置远程桌面服务可修复 RDP 服务器的启动问题。请运行以下命令。
 
-		Set-AzureVMAccessExtension –vm $vm | Update-AzureVM
+		Set-AzureVMAccessExtension -vm $vm | Update-AzureVM
 
 - 重新启动虚拟机可解决其他启动问题。<br>
-	登陆 [Azure 管理门户](https://manage.windowsazure.cn)> “虚拟机”> 你的 Windows 虚拟机 >“重新启动”。
+	登录 [Azure 管理门户](https://manage.windowsazure.cn) >“虚拟机”> 你的 Windows 虚拟机 >“重新启动”。
 
 - 调整 VM 大小可修复任何主机问题。<br>
-	登陆 [Azure 管理门户](https://manage.windowsazure.cn)> “虚拟机”> 你的 Windows 虚拟机> “配置”> “虚拟机大小”。有关详细步骤，请参阅[调整虚拟机的大小](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx)。
+	登录 [Azure 管理门户](https://manage.windowsazure.cn) >“虚拟机”> 你的 Windows 虚拟机 >“配置”>“虚拟机大小”。有关详细步骤，请参阅[调整虚拟机的大小](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx)。
 
 - 检查 VM 的资源运行状况以了解是否有任何平台问题。<br>
-	登陆 [Azure 管理门户](https://manage.windowsazure.cn)> “虚拟机”> 你的 Windows 虚拟机> “监视器”
+	登录 [Azure 管理门户](https://manage.windowsazure.cn) >“虚拟机”> 你的 Windows 虚拟机 >“监视器”。
 
-如果上述步骤未解决你的远程桌面连接失败，请继续到下一部分。
-
-## 在 Windows 上运行 Azure IaaS 诊断程序包
-
-如果从运行 Windows 8、Windows 8.1、Windows Server 2012 或 Windows Server 2012 R2 的计算机进行故障排除，则可以尝试运行 [Azure IaaS (Windows) 诊断程序包](http://support.microsoft.com/kb/2976864)。此程序包可以解决远程桌面存在的许多常见问题。
-
-1.	在[“支持诊断”](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864)页上单击“Azure IaaS (Windows)诊断程序包”。单击“创建”以创建新的诊断会话。你可以将此会话与不同目标计算机**共享**，或者将它**下载**到本地计算机上。
-2.	**运行**此会话，**接受** Microsoft 许可协议，并**启动**诊断工具。
-3.	在弹出窗口中对你的 Azure 订阅进行身份验证并按照提示进行操作。
-4.	在“你遇到 Azure VM 的以下哪些问题?”页上，选择“与 Azure VM 的 RDP 连接(需要重启)”问题。
-
-如果 Azure IaaS 诊断程序包无法执行或不是很有帮助，则可以转到下一节来根据从远程桌面客户端获得的错误信息解决该问题。
 
 ## 对特定的远程桌面连接错误进行故障排除
 
@@ -130,9 +118,9 @@
 
 原因：用于连接的帐户没有远程桌面登录权限。
 
-每台 Windows 计算机都具有远程桌面用户本地组，其中包含可以远程登录它的帐户和组。本地管理员组的成员也具有访问权限，即使这些帐户未在远程桌面用户本地组中列出也是如此。对于已加入域的计算机，本地管理员组还包含该域的域管理员。
+每台 Windows 计算机都具有 Remote Desktop Users 本地组，其中包含可以远程登录它的帐户和组。本地 Administrators 组的成员也具有访问权限，即使这些帐户未在 Remote Desktop Users 本地组中列出也是如此。对于已加入域的计算机，本地管理员组还包含该域的域管理员。
 
-确保你用于连接的帐户具有远程桌面登录权限。一种解决方法是，使用域帐户或本地管理员帐户通过远程桌面连接，然后使用“计算机管理”管理单元（“系统工具”>“本地用户和组”>“组”>“远程桌面用户”）将所需的帐户添加到远程桌面用户本地组。
+确保你用于连接的帐户具有远程桌面登录权限。一种解决方法是，使用域帐户或本地管理员帐户通过远程桌面连接，然后使用“计算机管理”管理单元（“系统工具”>“本地用户和组”>“组”>“Remote Desktop Users”）将所需的帐户添加到 Remote Desktop Users 本地组。
 
 ## 对一般远程桌面错误进行故障排除
 
@@ -151,4 +139,4 @@
 
 [对在 Azure 虚拟机上运行的应用程序的访问进行故障排除](/documentation/articles/virtual-machines-troubleshoot-access-application)
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0321_2016-->

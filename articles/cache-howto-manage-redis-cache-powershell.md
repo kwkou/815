@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cache"
-	ms.date="12/16/2015"
-	wacn.date="03/24/2016"/>
+	ms.date="02/05/2016"
+	wacn.date="03/28/2016"/>
 
 # 使用 Azure PowerShell 管理 Azure Redis 缓存
 
@@ -57,6 +57,23 @@
 例如，若要获取有关 `New-AzureRmRedisCache` cmdlet 的帮助，请键入：
 
 	Get-Help New-AzureRmRedisCache -Detailed
+
+### 连接到 Azure 中国云
+
+若要连接到 Azure 中国云，请使用以下命令之一。
+
+	Add-AzureRMAccount -EnvironmentName AzureChinaCloud
+
+或
+
+	Add-AzureRmAccount -Environment (Get-AzureRmEnvironment -Name AzureChinaCloud)
+
+若要在 Azure 中国云中创建缓存，请使用以下位置之一。
+
+-	中国东部
+-	中国北部
+
+有关 Azure 中国云的详细信息，请参阅[中国 21Vianet 运营的 AzureChinaCloud for Azure](http://www.windowsazure.cn/)。
 
 ## Azure Redis 缓存 PowerShell 使用的属性
 
@@ -142,7 +159,7 @@
 	
 	    -VirtualNetwork <String>
 	        The exact ARM resource ID of the virtual network to deploy the redis cache in. Example format:
-	        /subscriptions/{subid}/resourceGroups/{resourceGroupName}/Microsoft.ClassicNetwork/VirtualNetworks/vnet1
+	        /subscriptions/{subid}/resourceGroups/{resourceGroupName}/providers/Microsoft.ClassicNetwork/VirtualNetworks/{vnetName}
 	
 	    -Subnet <String>
 	        Required when deploying a redis cache inside an existing Azure Virtual Network.
@@ -241,7 +258,7 @@
 
 修改 `Size`、`Sku` 或 `ShardCount` 属性时，可以使用 `Set-AzureRmRedisCache` 来缩放 Azure Redis 缓存实例。
 
->[AZURE.NOTE]你可以扩展到不同定价层，但有以下限制。
+>[AZURE.NOTE] 你可以扩展到不同定价层，但有以下限制。
 >
 >-	不能向上缩放到**高级**缓存，或者从此层向下缩放。
 >-	不能从**标准**缓存缩放到**基本**缓存。
@@ -507,7 +524,7 @@
 <a name="classic"></a>
 ## 使用 PowerShell 经典部署模型管理 Azure Redis 缓存实例
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/cache-howto-manage-redis-cache-powershell)本文开头介绍的。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 以下脚本演示了如何使用经典部署模型创建、更新和删除 Azure Redis 缓存。
 		
@@ -562,4 +579,4 @@
 - [Windows PowerShell 博客](http://blogs.msdn.com/powershell)：了解 Windows PowerShell 中的新功能。
 - [“你好，脚本编写专家！” 博客](http://blogs.technet.com/b/heyscriptingguy/)：从 Windows PowerShell 社区获取实用提示和技巧。
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0321_2016-->
