@@ -16,7 +16,7 @@
 # Azure 虚拟机中的 SQL Server 概述
 
 ## 入门
-你可以使用各种配置（从单一数据库服务器到多计算机配置）通过 AlwaysOn 可用性组和 Azure 虚拟网络托管 [Azure 虚拟机中的 SQL Server](/home/features/virtual-machines/sql-server/)。
+你可以使用各种配置（从单一数据库服务器到多计算机配置）通过 AlwaysOn 可用性组和 Azure 虚拟网络托管 Azure 虚拟机中的 SQL Server。
 
 >[AZURE.NOTE] 在 Azure VM 中运行 SQL Server 是在 Azure 中存储关系数据的一个选项。此外，还可以使用 Azure SQL 数据库服务。有关详细信息，请参阅[了解 Azure SQL 数据库和 Azure VM 中的 SQL Server](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas)。
 

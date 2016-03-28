@@ -209,7 +209,7 @@ Azure 终结点会引用在 Azure 中托管的其他服务。目前支持 3 种�
 
 在父配置文件中使用特定的终结点类型“NestedEndpoints”配置嵌套式终结点。指定嵌套式终结点时：
 - 终结点（即子配置文件）必须使用“targetResourceId”参数指定 <BR>
-- 如果使用了“性能”流量路由方法，则“EndpointLocation”为必填项，否则为可选项。该值必须是[有效的 Azure 区域名称](http://azure.microsoft.com/regions/)。<BR>
+- 如果使用了“性能”流量路由方法，则“EndpointLocation”为必填项，否则为可选项。该值必须是有效的 Azure 区域名称。<BR>
 - 对于 Azure 终结点来说，“Weight”和“Priority”为可选项。<BR>
 - “MinChildEndpoints”参数为可选项，默认值为“1”。如果子配置文件中的可用终结点数低于此阈值，则父配置文件会将此子配置文件视为“已降级”，并将流量转移到其他父配置文件终结点。<BR>
 
