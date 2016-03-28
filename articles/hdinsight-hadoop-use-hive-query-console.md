@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="02/05/2016"
-	wacn.date="02/17/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 使用查询控制台运行 Hive 查询
 

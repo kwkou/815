@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="02/02/2016"
-	wacn.date="12/31/2015"/>
+	wacn.date="03/28/2016"/>
 
 #使用 Azure CLI 部署多 NIC VM（经典）
 

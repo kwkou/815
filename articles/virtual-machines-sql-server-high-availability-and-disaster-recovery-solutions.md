@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="01/22/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="03/28/2016"/>
 
 # Azure 虚拟机中 SQL Server 的高可用性和灾难恢复
 

@@ -9,7 +9,7 @@
 <tags
 	ms.service="traffic-manager"
 	ms.date="02/09/2016"
-	wacn.date="12/31/2015"/>
+	wacn.date="03/28/2016"/>
 
 # 将公司 Internet 域指向 Azure 流量管理器域
 

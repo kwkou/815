@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="01/19/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 如何通过 WebJobs SDK 使用 Azure Blob 存储
 

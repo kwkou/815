@@ -11,7 +11,7 @@
 <tags
   ms.service="virtual-machines"
   ms.date="02/01/2016" 
-  wacn.date="02/17/2016" />
+  wacn.date="03/28/2016" />
 
 # 在 Azure 上部署自己的私有 Docker 注册表
 
