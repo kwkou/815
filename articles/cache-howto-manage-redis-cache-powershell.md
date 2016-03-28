@@ -73,7 +73,7 @@
 -	中国东部
 -	中国北部
 
-有关 Azure 中国云的详细信息，请参阅[中国 21Vianet 运营的 AzureChinaCloud for Azure](http://www.windowsazure.cn/)。
+有关 Azure 中国云的详细信息，请参阅[中国 21Vianet 运营的 AzureChinaCloud for Azure](http://www.azure.cn/)。
 
 ## Azure Redis 缓存 PowerShell 使用的属性
 

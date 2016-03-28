@@ -109,7 +109,7 @@ ConnectTimeout|连接操作的超时，以毫秒为单位。|
 -	重试
 	-	对于 ConnectRetry 和 ConnectTimeout，一般指导原则是快速失败并重试。这取决于工作负载，以及客户端发出 Redis 命令和接收响应平均花费的时间。
 	-	让 StackExchange.Redis 自动重新连接，而不是检查连接状态，然后由你自己重新连接。**避免使用 ConnectionMultiplexer.IsConnected 属性**。
-	-	雪球效应 - 有时，你可能会遇到这样的问题：不断地重试解决，但问题不断累积而永远无法恢复。在这种情况下，你应该根据 Azure.cn 模式和实践小组发布的[一般重试指导原则](https://github.com/mspnp/azure-guidance/blob/master/Retry-General.md)中所述，考虑使用指数退让重试算法。
+	-	雪球效应 - 有时，你可能会遇到这样的问题：不断地重试解决，但问题不断累积而永远无法恢复。在这种情况下，你应该根据 Azure.cn 模式和实践小组发布的[一般重试指导原则](https://github.com/mspnp/azure-guidance/blob/master/Retry-Policies.md)中所述，考虑使用指数退让重试算法。
 -	超时值
 	-	根据工作负载相应地设置值。如果要存储较大值，应将超时设置为较大值。
 		-	将 ABortOnConnectFail 设置为 false，让 StackExchange.Redis 为你重新连接。
@@ -210,7 +210,6 @@ Redis 服务器不能现成地支持 SSL，但 Azure Redis 缓存可提供此支
 ##<a name="cache-common-patterns"></a> 常见的缓存模式和注意事项有哪些？
 
 -	Azure.cn 模式和实践小组制定了以下指导原则。
-	-	[缓存指导原则](https://github.com/mspnp/azure-guidance/blob/master/Caching.md)。
 	-	[Azure 云应用程序设计和实施指导原则](https://github.com/mspnp/azure-guidance)
 -	[使用 Azure Redis 缓存的常见缓存模式](/documentation/articles/cache-howto-common-cache-patterns)
 
