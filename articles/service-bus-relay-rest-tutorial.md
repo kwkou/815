@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="10/14/2015"
-   wacn.date="03/17/2016" />
+   wacn.date="03/28/2016" />
 
 # 服务总线 REST 教程
 
@@ -252,27 +252,28 @@ namespace Microsoft.ServiceBus.Samples
 
 3. 在 App.config 文件中添加一个 `<system.serviceModel>` XML 元素。该元素是一个 WCF 元素，用于定义一个或多个服务。在这里，它用于定义服务名称和终结点。
 
-
-		<?xml version="1.0" encoding="utf-8" ?>
-		<configuration>
-			<system.serviceModel>
-		      
-			</system.serviceModel>
-		</configuration>
-
+	```
+	<?xml version="1.0" encoding="utf-8" ?>
+	<configuration>
+		<system.serviceModel>
+      
+		</system.serviceModel>
+    
+	</configuration>
+	```
 
 4. 在 `system.serviceModel` 元素中，添加包含以下内容的 `<bindings>` 元素。这样就定义了应用程序中使用的绑定。你可以定义多个绑定，但在本教程中，你只要定义一个绑定。
 
-
-		<bindings>
-			<!-- Application Binding -->
-			<webHttpRelayBinding>
-				<binding name="default">
-					<security relayClientAuthenticationType="None" />
-				</binding>
-			</webHttpRelayBinding>
-		</bindings>
-
+	```
+	<bindings>
+		<!-- Application Binding -->
+		<webHttpRelayBinding>
+			<binding name="default">
+				<security relayClientAuthenticationType="None" />
+			</binding>
+		</webHttpRelayBinding>
+	</bindings>
+	```
   
 	此步骤定义了一个服务总线 [WebHttpRelayBinding](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.webhttprelaybinding.aspx) 绑定，其中的 **relayClientAuthenticationType** 为 **None**。此设置表明使用此绑定的终结点将不需要客户端凭据。
 
