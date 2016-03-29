@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/09/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/11/2016"
+	wacn.date="03/28/2016"/>
 
 
 # Azure 媒体服务发行说明
@@ -21,6 +21,7 @@
 
 - [当前已知的问题](#issues)
 - [REST API 版本历史记录](#rest_version_history)
+- [2016 年 1 月版本](#jan_changes_16)
 - [2015 年 12 月版本](#dec_changes_15)
 - [2015 年 11 月版本](#nov_changes_15)
 - [2015 年 10 月版本](#oct_changes_15)
@@ -61,6 +62,7 @@ REST API 中未提供几种常见的 HTTP 标头。|如果你使用 REST API 来
 使用包含转义字符（例如 %20）的文件名对资产进行编码失败，出现错误：“MediaProcessor: 找不到文件”。|将添加到资产然后进行编码的文件的名称应只能包含字母数字字符和空格。未来的更新将解决该问题。
 Azure 存储空间 SDK 版本 3.x 中的 ListBlobs 方法将失败。|媒体服务基于 [2012-02-12](http://msdn.microsoft.com/zh-cn/library/azure/dn592123.aspx) 版本生成 SAS URL。如果你希望使用 Azure 存储空间 SDK 来列出 BLOB 容器中的 BLOB，请使用 Azure 存储空间 SDK 版本 2.x 中的 [CloudBlobContainer.ListBlobs](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.listblobs.aspx) 方法。Azure 存储空间 SDK 版本 3.x 中的 ListBlobs 方法将失败。
 媒体服务限制机制会限制那些发出过多服务请求的应用程序的资源使用情况。该服务可能返回“服务不可用”(503) HTTP 状态代码。|有关详细信息，请参阅 [Azure 媒体服务错误代码](http://msdn.microsoft.com/zh-cn/library/azure/dn168949.aspx)主题中 503 HTTP 状态代码的说明。
+查询实体时，一次返回的实体数限制为 1000 个，因为公共 REST v2 将查询结果数限制为 1000 个。 | 你需要使用[此 .NET 示例](/documentation/articles/media-services-dotnet-manage-entities#enumerating-through-large-collections-of-entities)和[此 REST API 示例](/documentation/articles/media-services-rest-manage-entities#enumerating-through-large-collections-of-entities)中所述的 **Skip** 和 **Take** (.NET)/ **top** (REST)。 
 
 
 ### <a id="dotnet_issues"></a>适用于 .NET 的媒体服务 SDK 存在的问题
@@ -72,6 +74,13 @@ SDK 中的媒体服务对象无法进行序列化，因此无法与 Azure Cachin
 ##<a id="rest_version_history"></a>REST API 版本历史记录
 
 有关媒体服务 REST API 版本历史记录的信息，请参阅 [Azure 媒体服务 REST API 参考]。
+
+
+##<a id="jan_changes_16"></a>2016 年 1 月版本
+
+编码保留单位已重命名，以减少与编码器名称的混淆。
+
+基本、标准和高级编码保留单位已分别重命名为 S1、S2 和 S3 保留单位。目前使用基本编码保留单位的客户在 Azure 门户（和帐单中）将看到 S1 的标签，标准和高级客户将分别看到 S2 和 S3 的标签。
 
 ##<a id="dec_changes_15"></a>2015 年 12 月版本
 
@@ -134,6 +143,7 @@ Azure 媒体服务 (AMS) 现已在以下数据中心推出：巴西南部、印�
 
 - 宣布媒体编码器标准版公开上市。有关详细信息，请参阅[此博客文章](http://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/)
 
+	媒体编码器标准版使用[本](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)部分中所述的预设值。注意，当使用预设值进行 4K 编码时，应获取“高级版”保留单位类型。有关详细信息，请参阅[如何缩放编码](/documentation/articles/media-services-portal-encoding-units)。
 - Azure 媒体服务和播放器的实时标题。有关详细信息，请参阅[此博客文章](https://azure.microsoft.com/blog/2015/07/08/live-real-time-captions-with-azure-media-services-and-player/)
 
 ###媒体服务 .NET SDK 更新
@@ -621,4 +631,4 @@ Azure 媒体服务 .NET SDK 扩展是一组扩展方法和帮助器函数，可�
 [处理媒体服务作业通知]: /documentation/articles/media-services-check-job-progress#check_progress_with_queues
  
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0321_2016-->

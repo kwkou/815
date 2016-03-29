@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/30/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="02/04/2016"  
+	wacn.date="03/28/2016"/>
 
 #授权 Microsoft® 平滑流式处理客户端移植工具包
 
@@ -87,40 +87,25 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 - Amazon Digital Services, Inc.
 - Amlogic, Co., Ltd.
 - AVC Multimedia Software Co., Ltd.
-- AwoX S.A.
-- Cisco Systems, Inc.
 - EchoStar Purchasing Corporation
 - Enseo, Inc.
-- Fluendo SA
-- GIGABYTE Technology
 - Guangdong OPPO Mobile Telecommunications Corp., Ltd.
+- HANDAN BroadInfoCom Co., Ltd.
 - Infomir GMBH
 - Inside Secure
 - Irdeto USA Inc.
-- Ittiam Systems Private Ltd
-- Koninklijke Philips Electronics N.V.
-- LG CNS Co., Ltd
 - Liberty Global Services BV
 - MediaTek Inc.
 - MStar Co, Ltd
-- Nextscape Inc.
+- Nintendo Co., Ltd.
 - OpenTV, Inc.
-- Panasonic Corporation
 - Research In Motion Limited
 - Saffron Digital Limited
 - Sichuan Changhong Electric Co., Ltd
-- SoftAtHome
 - Tatung Technology Inc.
-- TCL Technoly Electronics (Huizhou) Co., Ltd.
-- Technicolor Delivery Technologies, SAS
-- Teleca US Software Solutions LLC
 - Telechips Inc.
-- TeleIDEA BV
-- Tivo Inc.
 - Vestel Elektronik Sanayi ve Ticaret A.S.
-- VimpelCom (OJSC)
 - VisualOn, Inc.
-- WOOJEON & HANDAN Co., Ltd
 - ZTE Corporation
 
 ##Microsoft 平滑流式处理客户端最终产品协议受证人
@@ -128,35 +113,26 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 - Advanced Digital Broadcast SA
 - AirTies Kablosuz Iletism Sanayive Dis Ticaret A.S.
 - Albis Technologies Ltd.
-- Altech Multimedia International (Pty) Ltd
 - Amazon Digital Services, Inc.
 - AmTRAN Technology Co., Ltd.
 - Arcadyan Technology Corporation
-- Arcelik A.S
-- AwoX S.A.
+- ATMACA ELEKTRONİK SAN.VE TİC.A.Ş
 - British Sky Broadcasting Limited
 - CastPal Technology Inc., Shenzhen
-- Cisco Systems, Inc.
 - Compal Electronics, Inc.
 - Dongguan Digital AV Technology Corp., Ltd.
 - Enseo, Inc.
 - Filmflex Movies Limited
-- Fluendo SA
-- GIGABYTE Technology
 - Guangdong OPPO Mobile Telecommunications Corp., Ltd.
+- HANDAN BroadInfoCom Co., Ltd.
 - Hisense International Co., Ltd
 - Homecast Co.,Ltd
 - Hon Hai Precision Industry Co., Ltd.
 - Infomir GMBH
-- Koninklijke Philips Electronics N.V.
 - Kaonmedia Co., Ltd.
 - KDDI Corporation
-- Loewe Opta GmbH
-- NETGEAR, Inc.
 - Nintendo Co., Ltd.
 - Orange SA
-- Pace plc
-- Panasonic Corporation
 - PIXELA Corporation
 - Saffron Digital Limited
 - Sagemcom Broadband SAS
@@ -165,22 +141,17 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 - Shenzhen Jiuzhou Electric Co.,Ltd
 - Shenzhen Skyworth Digital Technology Co., Ltd
 - Sichuan Changhong Electric Co., Ltd.
+- Sky Deutschland Fernsehen GmbH & Co. KG
 - SmarDTV S.A.
 - SoftAtHome
 - TCL Overseas Marketing (Macao Commercial Offshore) Limited
 - Technicolor Delivery Technologies, SAS
-- TeleIDEA BV
 - Toshiba Lifestyle Products & Services Corporation
-- TP Vision Netherlands B.V.
 - Virgin Media Limited
 - VIZIO, Inc.
 - Wistron Corporation
-- WOOJEON & HANDAN Co., Ltd
 - WOOX Innovations Limited
 - ZTE Corporation
 
-##提供反馈
 
-[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
-
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0321_2016-->

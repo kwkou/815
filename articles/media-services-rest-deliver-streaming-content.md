@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/17/2015"
-	wacn.date="01/14/2016"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/28/2016"/>
 
 
 #如何：传送流内容
@@ -18,7 +18,7 @@
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/media-services-deliver-streaming-content)
 - [REST](/documentation/articles/media-services-rest-deliver-streaming-content)
-- [Portal](/documentation/articles/media-services-manage-content#publish)
+- [门户](/documentation/articles/media-services-manage-content#publish)
 
 ##概述
 
@@ -42,6 +42,7 @@
    		
 	如果你想要渐进式下载，请获取资产中的 MP4 文件名。 
    4. 生成清单文件或 MP4 文件的 URL。 
+   5. 请注意，你无法使用包含写入或删除权限的 AccessPolicy 创建流式处理定位符。
 
 
 ###创建访问策略
@@ -93,7 +94,7 @@
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
 	Accept-Charset: UTF-8
-	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstest1&urn%3aSubscriptionId=bbbef702-e769-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1424263184&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=NWE%2f986Hr5lZTzVGKtC%2ftzHm9n6U%2fxpTFULItxKUGC4%3d
+	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstest1&urn%3aSubscriptionId=zbbef702-e769-2233-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1424263184&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=NWE%2f986Hr5lZTzVGKtC%2ftzHm9n6U%2fxpTFULItxKUGC4%3d
 	x-ms-version: 2.11
 	x-ms-client-request-id: ac159492-9a0c-40c3-aacc-551b1b4c5f62
 	Host: media.chinacloudapi.cn
@@ -174,4 +175,8 @@ URL：**路径** + 资产文件 mp4 名称
         OnDemandOrigin = 2,
     }
 
-<!---HONumber=76-->
+
+##另请参阅
+
+[配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy)
+<!---HONumber=Mooncake_0321_2016-->

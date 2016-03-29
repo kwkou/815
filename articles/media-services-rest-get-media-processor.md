@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/14/2016" 
+	wacn.date="03/28/2016"/>
 
 
 #如何：获取媒体处理器实例
@@ -30,6 +30,7 @@
 ---|---|---
 Azure Media Encoder|让你使用 Azure 媒体编码器运行编码任务。|[Azure Media Encoder](/documentation/articles/media-services-encode-asset#azure_media_encoder)
 媒体编码器标准版|让你使用媒体编码器标准版运行编码任务。|[Azure Media Encoder](/documentation/articles/media-services-encode-asset#media_encoder_standard)
+媒体编码器高级工作流|允许你使用媒体编码器高级工作流运行编码任务。|[媒体编码器高级工作流](/documentation/articles/media-services-encode-asset#media_encoder_premium_wokrflow)
 Azure Media Indexer| 使媒体文件和内容可搜索，以及生成隐藏字幕跟踪和关键字。|[使用 Azure Media Indexer 为媒体文件编制索引](/documentation/articles/media-services-index-content)。
 Azure Media Hyperlapse（预览）|使你能够通过视频防抖动功能消除视频中的“晃动”。也可使将内容制作为可用剪辑的速度加快。|		[Azure Media Hyperlapse](http://azure.microsoft.com/blog/?p=286281&preview=1&_ppp=61e1a0b3db)</a>
 存储解密| 让你解密使用存储加密技术加密的媒体资产。|不适用
@@ -89,4 +90,4 @@ Azure Media Encryptor|让你使用 PlayReady 保护加密媒体资产。|[Azure 
 [Task Preset Strings for the Azure Media Encoder]: http://msdn.microsoft.com/zh-cn/library/jj129582.aspx
 [How to: Connect to Media Services Programmatically]: /documentation/articles/media-services-rest-connect_programmatically
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0321_2016-->
