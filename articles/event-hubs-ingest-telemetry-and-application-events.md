@@ -9,12 +9,12 @@
 
 <tags 
 	ms.service="event-hubs" 
-	ms.date="10/06/2015" 
-	wacn.date="01/21/2016"/>
+	ms.date="01/26/2016" 
+	wacn.date="03/28/2016"/>
 
 # 大规模引入遥测数据和应用程序事件
  
-现代应用程序在运行时会产生海量的信息。不管是移动应用中的用户操作还是 Web 应用上的点击流，这些遥测数据在长期分析和实时运行状况监视或决策支持方面都发挥着至关重要的作用。服务总线提供了所需的工具用于捕获和处理这些信息。
+现代应用程序在运行时会产生海量的信息。不管是移动应用中的用户操作还是网站上的点击流，这些遥测数据在长期分析和实时运行状况监视或决策支持方面都发挥着至关重要的作用。服务总线提供了所需的工具用于捕获和处理这些信息。
 
 
 ## 探究
@@ -28,8 +28,8 @@
 - [事件中心代码示例](https://code.msdn.microsoft.com/windowsazure/site/search?query=event%20hubs&f%5B0%5D.Value=event%20hubs&f%5B0%5D.Type=SearchText&ac=5)
  
 ## 相关服务
+- [服务总线](/documentation/services/service-bus/)
 - [Azure 存储空间](/documentation/services/storage/)
 - [HDInsight](/documentation/services/hdinsight/)
  
-
-<!---HONumber=66-->
+<!---HONumber=Mooncake_0321_2016-->
