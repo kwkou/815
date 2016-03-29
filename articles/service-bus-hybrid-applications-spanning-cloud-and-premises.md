@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="01/26/2016" 
-	wacn.date="03/17/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 启用跨云和本地的混合应用程序
 
