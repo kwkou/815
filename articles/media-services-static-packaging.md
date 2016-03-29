@@ -9,19 +9,19 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/14/2016"   
+	wacn.date="03/28/2016"/>
 
 
 # 使用 Azure 媒体包装器完成静态打包任务
 
->[AZURE.NOTE]Azure 媒体包装器和 Azure 媒体加密器的使用期限将于 2016 年 3 月 1 日到期。到时，这些组件将不再可用。格式转换和加密功能将通过动态打包和动态加密提供。
+>[AZURE.NOTE]Azure 媒体包装器和 Azure 媒体加密器的使用期限已延长到 2017 年 3 月 1 日。在此日期之前，这些处理器的功能将添加到媒体编码器标准 (MES) 中。客户将收到有关如何迁移工作流以将作业发送到 MES 的指示。格式转换和加密功能也可通过动态打包和动态加密提供。
 
 ## 概述
 
-要通过 Internet 传送数字视频，你必须对媒体进行压缩。数字视频文件相当大，可能因过大而无法通过 Internet 传送或者无法在你客户的设备上正常显示。编码是压缩视频和音频以便你的客户能够查看媒体的过程。视频经过编码后即可放入不同的文件容器中。将编码后的媒体放入容器这一过程称为打包。以 MP4 文件为例，你可以使用 Azure 媒体包装器将其转换为平滑流式处理或 HLS 内容。
+要通过 Internet 传送数字视频，你必须对媒体进行压缩。数字视频文件相当大，可能因过大而无法通过 Internet 传送或者无法在你客户的设备上正常显示。编码是压缩视频和音频以便你的客户能够查看媒体的过程。视频经过编码后即可放入不同的文件容器中。将编码后的媒体放入容器这一过程称为打包。以 MP4 文件为例，你可以使用 Azure 媒体包装器将其转换为平滑流式处理或 HLS 内容。有关详细信息，请参阅[编码与打包](http://blog-ndrouin.chinacloudsites.cn/streaming-media-terminology-explained/)。
 
-媒体服务支持动态和静态打包。使用静态打包时，需要以客户要求的各种格式创建内容副本。使用动态打包，你只需要创建一个包含一组自适应比特率 MP4 或平滑流文件的资产。然后，按需流式处理服务器会确保你的用户以选定的协议按清单或分段请求中的指定格式接收流。因此，你只需以单一存储格式存储文件并为其付费，然后 Media Services 服务就会基于客户端的请求构建并提供相应响应。
+媒体服务支持动态和静态打包。使用静态打包时，需要以客户要求的各种格式创建内容副本。使用动态打包，你只需要创建一个包含一组自适应比特率 MP4 或平滑流文件的资产。然后，按需流式处理服务器会确保你的用户以选定的协议按清单或分段请求中的指定格式接收流。因此，你只需以单一存储格式存储文件并为其付费，然后媒体服务服务就会基于客户端的请求构建并提供相应响应。
 
 >[AZURE.NOTE]建议使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)。
 
@@ -162,7 +162,7 @@
 	
 	            // Get the SDK extension method to  get a reference to the Azure Media Packager.
 	            IMediaProcessor processor = _context.MediaProcessors.GetLatestMediaProcessorByName(
-	                MediaProcessorNames.AzureMediaPackager);
+	                MediaProcessorNames.WindowsAzureMediaPackager);
 	
 	            // Create a task with the conversion details, using the configuration data. 
 	            ITask task = job.Tasks.AddNew("Mp4 Validation Task",
@@ -594,7 +594,7 @@
 	            // Note that the configuration defined in MediaEncryptor_PlayReadyProtection.xml
 	            // is using keySeedValue. It is recommended that you do this only for testing 
 	            // and not in production. For more information, see 
-	            // http://msdn.microsoft.com/zh-cn/library/azure/dn189154.aspx.
+	            // http://www.windowsazure.cn/documentation/articles/media-services-static-packaging.
 	            //
 	            string configPlayReady = File.ReadAllText(Path.Combine(_configurationXMLFiles,
 	                                        @"MediaEncryptor_PlayReadyProtection.xml"));
@@ -1344,7 +1344,7 @@
 	            // Note that the configuration defined in MediaEncryptor_PlayReadyProtection.xml
 	            // is using keySeedValue. It is recommended that you do this only for testing 
 	            // and not in production. For more information, see 
-	            // http://msdn.microsoft.com/zh-cn/library/azure/dn189154.aspx.
+	            // http://www.windowsazure.cn/documentation/articles/media-services-static-packaging.
 	            //
 	            string configPlayReady = File.ReadAllText(Path.Combine(_configurationXMLFiles,
 	                                        @"MediaEncryptor_PlayReadyProtection.xml"));
@@ -1436,5 +1436,4 @@
 	}
 
 
-
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0321_2016-->

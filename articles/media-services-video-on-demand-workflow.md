@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
-	wacn.date="01/14/2016"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/28/2016"/>
 
 
 #使用 Azure 媒体服务交付按需媒体
@@ -89,4 +89,4 @@
 [vod-overview]: ./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png
  
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0321_2016-->

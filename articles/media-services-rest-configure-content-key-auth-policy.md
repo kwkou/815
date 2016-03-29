@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/18/2015"
-	wacn.date="11/27/2015"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/28/2016"/>
 
 
 #动态加密：配置内容密钥授权策略 
@@ -460,6 +460,7 @@
         None = 0,
         PlayReadyLicense = 1,
         BaselineHttp = 2,
+        Widevine = 3
     }
 
 
@@ -469,5 +470,4 @@
 在配置内容密钥的授权策略后，请转到[如何配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy)主题。
 
  
-
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0321_2016-->

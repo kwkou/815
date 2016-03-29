@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
-	wacn.date="01/14/2016"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/28/2016"/>
 
 # 设置你的环境
 
@@ -40,4 +40,5 @@
 
 [AZURE.INCLUDE [media-services-selector-connect](../includes/media-services-selector-connect.md)]
 
-<!---HONumber=Mooncake_0104_2016-->
+
+<!---HONumber=Mooncake_0321_2016-->

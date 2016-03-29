@@ -9,14 +9,23 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="12/05/2015"
-	wacn.date="01/14/2016"/>
+ 	ms.date="02/11/2016"  
+	wacn.date="03/28/2016"/>
 
 
 #媒体服务 REST API 概述 
 
 [AZURE.INCLUDE [media-services-selector-setup](../includes/media-services-selector-setup.md)]Azure 媒体服务是一项服务，该服务接受基于 OData 的 HTTP 请求并能够以详细 JSON 或 atom+pub 做出响应。由于媒体服务遵循 Azure 设计准则，因此在连接到媒体服务时，每个客户端必须使用一组必需的 HTTP 标头，还可以使用一组可选标头。以下部分介绍你在创建请求和接收来自媒体服务的响应时可以使用的标头和 HTTP 谓词。
 
+##注意事项 
+
+使用 REST 时需考虑下列事项：
+
+
+- 如果使用 JSON，则必须将 Accept 标头设置为 [JSON 详细格式](http://www.odata.org/documentation/odata-version-3-0/json-verbose-format/)。Odata 并不了解请求中的 __metadata 属性，除非你将它设置为 verbose。
+
+	**Accept**: application/json;odata=verbose
+- 查询实体时，一次返回的实体数限制为 1000 个，因为公共 REST v2 将查询结果数限制为 1000 个。你需要使用[此 .NET 示例](/documentation/articles/media-services-dotnet-manage-entities#enumerating-through-large-collections-of-entities)和[此 REST API 示例](/documentation/articles/media-services-rest-manage-entities#enumerating-through-large-collections-of-entities)中所述的 **Skip** 和 **Take** (.NET)/ **top** (REST)。 
 
 ##媒体服务支持的标准 HTTP 请求标头
 
@@ -46,7 +55,9 @@
 
 
 <table border="1"> <tr><th>谓词</th><th>说明</th></tr> <tr><td>GET</td><td>返回对象的当前值。</td></tr> <tr><td>POST</td><td>根据提供的数据创建对象，或提交命令。</td></tr> <tr><td>PUT</td><td>替换对象，或创建命名对象（如果适用）。</td></tr> <tr><td>DELETE</td><td>删除对象。</td></tr> <tr><td>MERGE</td><td>使用指定的属性更改更新现有对象。</td></tr> <tr><td>HEAD</td><td>为 GET 响应返回对象的元数据。</td></tr> </table><br/>
+##限制
 
+查询实体时，一次返回的实体数限制为 1000 个，因为公共 REST v2 将查询结果数限制为 1000 个。你需要使用[此 .NET 示例](/documentation/articles/media-services-dotnet-manage-entities#enumerating-through-large-collections-of-entities)和[此 REST API 示例](/documentation/articles/media-services-rest-manage-entities#enumerating-through-large-collections-of-entities)中所述的 **Skip** 和 **Take** (.NET)/ **top** (REST)。
 ## 发现媒体服务模型
 
 为了使媒体服务实体易于发现，可使用 $metadata 操作。使用该操作，你可以检索所有有效的实体类型、实体属性、关联、函数、操作等。以下示例说明了如何构建 URI：https://media.chinacloudapi.cn/API/$metadata。
@@ -54,10 +65,11 @@
 如果希望在浏览器中查看元数据，应在 URI 的末尾追加“?api-version=2.x”，或不要在请求中包括 x-ms-version 标头。
 
 
-<!-- Anchors. -->
+
+  [Azure Management Portal]: http://manage.windowsazure.cn/
 
 
-<!-- URLs. -->
-  [Management Portal]: http://manage.windowsazure.cn/
 
-<!---HONumber=76-->
+ 
+
+<!---HONumber=Mooncake_0321_2016-->

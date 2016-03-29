@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用媒体服务 REST API 创建筛选器" 
+	pageTitle="使用 Azure 媒体服务 REST API 创建筛选器" 
 	description="本主题介绍如何创建筛选器，以便客户端能够使用它们来流式传输流的特定部分。媒体服务将创建动态清单来存档此选择性流。"
 	services="media-services" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/18/2015"
-	wacn.date="12/17/2015"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/28/2016"/>
 
 #使用媒体服务 REST API 创建筛选器
 
@@ -359,4 +359,4 @@
 
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0321_2016-->

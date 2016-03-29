@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/18/2015"
-	wacn.date="11/27/2015"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/28/2016"/>
 
 
 #使用 REST API 将文件上载到媒体服务帐户
@@ -21,7 +21,7 @@
 在媒体服务中，可以将数字文件上载到资产中。[资产](https://msdn.microsoft.com/zh-cn/library/azure/hh974277.aspx)实体可以包含视频、音频、图像、缩略图集合、图文轨迹和隐藏式字幕文件（以及有关这些文件的元数据。） 将文件上载到资产后，相关内容即安全地存储在云中供后续处理和流式处理。
 
 
->[AZURE.NOTE]生成流式处理内容的 URL（例如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）时，媒体服务会使用 IAssetFile.Name 属性的值。出于这个原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下保留的[百分号编码字符](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
+>[AZURE.NOTE]生成流式处理内容的 URL（例如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）时，媒体服务会使用 IAssetFile.Name 属性的值。出于这个原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下保留的[百分号编码字符](http://zh.wikipedia.org/wiki/百分号编码#.E4.BF.9D.E7.95.99.E5.AD.97.E7.AC.A6.E7.9A.84.E7.99.BE.E5.88.86.E5.8F.B7.E7.BC.96.E7.A0.81)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
 
 上载资产的基本工作流分为下列各节：
 
@@ -425,12 +425,13 @@ IngestManifestAsset 表示 IngestManifest 内与批量引入一起使用的资�
 如果你的资产将使用加密，则在为资产创建 IngestManifestFile 之前，必须创建用于加密的 ContentKey。在本示例中，请求正文包括以下属性。
  
 请求正文属性 | 说明 
+---|---
 ID | 我们使用以下格式自行生成的 ContentKey ID：“nb:kid:UUID:<NEW GUID>”。
 ContentKeyType | 这是此内容密钥的内容密钥类型（为整数）。我们为存储加密传递了值 1。
 EncryptedContentKey | 我们创建一个新的内容密钥值，这是一个 256 位（32 字节）的值。此密钥使用存储加密 X.509 证书进行加密，该证书是我们通过执行 GetProtectionKeyId 和 GetProtectionKey 方法的 HTTP GET 请求从 Azure 媒体服务中检索到的。
 ProtectionKeyId | 这是存储加密 X.509 证书的保护密钥 ID，用于加密内容密钥。
 ProtectionKeyType | 这是用于加密内容密钥的保护密钥的加密类型。对于我们的示例，此值为 StorageEncryption(1)。
-校验和 | 内容密钥的 MD5 计算的校验和。它通过使用内容密钥加密内容 ID 计算得出。此示例代码演示了如何计算校验和。
+Checksum | 内容密钥的 MD5 计算的校验和。它通过使用内容密钥加密内容 ID 计算得出。此示例代码演示了如何计算校验和。
 
 
 **HTTP 响应**
@@ -512,5 +513,4 @@ IngestManifestFile 代表将作为批量引入资产的一部分上载的实际�
  
 [How to Get a Media Processor]: /documentation/articles/media-services-get-media-processor
  
-
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0321_2016-->
