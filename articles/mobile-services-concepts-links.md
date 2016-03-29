@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="10/20/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="01/09/2016"
+	wacn.date="03/28/2016"/>
 
 # 移动服务的概念
 
@@ -18,7 +18,7 @@
 
 &nbsp;
 
-下面链接的主题提供有关 Azure 移动服务的具体行为的信息。Azure 经典门户中也提供了这些主题作为帮助信息。
+下面链接的主题提供有关 Microsoft Azure 移动服务的具体行为的信息。Azure 经典门户中也提供了这些主题作为帮助信息。
 
 [AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
@@ -79,7 +79,7 @@
 - [发送 HTTP 请求](https://msdn.microsoft.com/zh-cn/library/azure/jj631641.aspx) 
 - [为用户授权](https://msdn.microsoft.com/zh-cn/library/azure/jj631637.aspx) 
 - [限制管理员访问权限](https://msdn.microsoft.com/zh-cn/library/azure/jj712649.aspx) 
-- [错误处理](https://msdn.microsoft.com/zh-cn/library/azure/jj631632.aspx)。 
+- [错误处理](https://msdn.microsoft.com/zh-cn/library/azure/jj631632.aspx) 
 - [快捷键](https://msdn.microsoft.com/zh-cn/library/azure/jj552469.aspx) 
 
 

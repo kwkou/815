@@ -1,5 +1,5 @@
 <properties
-	pageTitle="开始使用 Android 上的数据（JavaScript 后端）| Azure"
+	pageTitle="开始使用 Android 上的数据（JavaScript 后端）| Microsoft Azure"
 	description="了解如何开始使用移动服务来利用 Android 应用中的数据（JavaScript 后端）。"
 	services="mobile-services"
 	documentationCenter="android"
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="10/05/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/20/2016"
+	wacn.date="03/28/2016"/>
 
 # 将移动服务添加到现有 Android 应用（JavaScript 后端）
 

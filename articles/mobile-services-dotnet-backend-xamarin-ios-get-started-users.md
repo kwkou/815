@@ -9,15 +9,16 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="12/01/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="01/25/2015" 
+	wacn.date="03/28/2016"/>
 
 # 向移动服务应用程序添加身份验证
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 &nbsp;
-[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
+
+>[AZURE.NOTE]这是一篇有关 Azure 移动服务的主题。Azure 建议对所有新的移动后端部署使用 Azure App Service Mobile Apps。有关详细信息，请参阅 [Mobile Apps 文档中的对应教程](/documentation/articles/app-service-mobile-xamarin-ios-get-started-users)。
 
 本主题说明如何通过应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
 
@@ -39,11 +40,9 @@
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
-<ol start="6">
-<li><p>在 Visual Studio 或 Xamarin Studio 中，运行设备或模拟器中的客户端项目。验证在应用程序启动后是否引发状态代码为 401（“未授权”）的未处理异常。</p>
-   
-   	<p>发生此异常的原因是应用程序尝试以未经身份验证的用户身份访问移动服务，但 <em>TodoItem</em> 表现在要求身份验证。</p></li>
-</ol>
+&nbsp;&nbsp;&nbsp;6.在 Visual Studio 或 Xamarin Studio 中，运行设备或模拟器中的客户端项目。验证在应用程序启动后是否引发状态代码为 401（“未授权”）的未处理异常。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发生此异常的原因是应用尝试以未经身份验证的用户身份访问移动服务，但 *TodoItem* 表现在要求身份验证。
 
 接下来，你需要更新应用程序，以便在从移动服务请求资源之前对用户进行身份验证。
 
@@ -71,50 +70,32 @@
             }
         }
 
-	> [AZURE.NOTE]如果使用的标识提供程序不是 Facebook，请将传递给上述 **LoginAsync** 方法的值更改为下列其中一项：_MicrosoftAccount_、_Twitter_、_Google_ 或 _WindowsAzureActiveDirectory_。
+	> [AZURE.NOTE] 如果使用的标识提供者不是 Facebook，请将传递给上述 **LoginAsync** 的值更改为下列其中一项：_MicrosoftAccount_ 或 _WindowsAzureActiveDirectory_。
 
-3. 打开 **QSTodoListViewController.cs**。修改 **ViewDidLoad** 的方法定义以删除接近结尾处对 **RefreshAsync()** 的调用：
+3. 打开 **QSTodoListViewController.cs**，并修改 **ViewDidLoad** 的方法定义以删除或注释禁止接近结尾处对 **RefreshAsync()** 的调用。
 
-		public override async void ViewDidLoad ()
-		{
-			base.ViewDidLoad ();
+4. 在 **RefreshAsync** 方法定义的顶部添加以下代码：
 
-			todoService = QSTodoService.DefaultService;
-
-			todoService.BusyUpdate += (bool busy) => {
-				if (busy)
-					activityIndicator.StartAnimating ();
-				else 
-					activityIndicator.StopAnimating ();
-			};
-
-			// Comment out the call to RefreshAsync
-			// await RefreshAsync ();
-
-			AddRefreshControl ();
-		}
-
-
-4. 修改方法 **RefreshAsync**，以便在 **User** 属性为 null 时进行身份验证并显示登录屏幕。在方法定义顶部的以下代码中：
-
-		// start of RefreshAsync method
+		// Add at the start of the RefreshAsync method.
 		if (todoService.User == null) {
 			await QSTodoService.DefaultService.Authenticate (this);
 			if (todoService.User == null) {
-				Console.WriteLine ("couldn't login!!");
+				Console.WriteLine ("You must sign in.");
 				return;
 			}
 		}
-		// rest of RefreshAsync method
-	
-5. 按“运行”按钮以生成项目，并在 iPhone 模拟器中启动应用程序。验证应用程序是否未显示任何数据。
+		
+	这会在“User”属性为 null 时显示登录屏幕来尝试进行身份验证。登录成功时，“User”即设置完毕。
 
-	通过向下拉动项列表来执行刷新笔势，这将导致显示登录屏幕。成功输入有效的凭据后，应用程序将显示 Todo 项的列表，你可以对数据进行更新。
+5. 按“运行”按钮以生成项目，并在 iPhone 模拟器中启动应用程序。验证应用程序是否未显示任何数据。此时尚未调用 **RefreshAsync()**。
 
-<!-- ## <a name="next-steps"> </a>Next steps
+6. 通过下拉项列表来执行刷新手势（将调用 **RefreshAsync()**）。这将调用 **Authenticate()** 来启动身份验证，并显示登录屏幕。当你验证成功之后，应用会显示待办事项列表，你可以对数据进行更新。
 
-In the next tutorial, [Service-side authorization of Mobile Services users][Authorize users with scripts], you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services. 
- -->
+## <a name="next-steps"></a>后续步骤
+
+在下一教程[移动服务用户的服务端授权][Authorize users with scripts]中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。
+
+
 <!-- Anchors. -->
 
 [注册应用程序以进行身份验证并配置移动服务]: #register

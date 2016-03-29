@@ -10,7 +10,7 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="01/12/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="03/28/2016"/>
 
 #  移动服务中的脱机数据同步入门
 
@@ -127,7 +127,7 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
     | ID（必需） | 64 位整数 |
     | itemId | 字符串 |
     | properties | 二进制数据 |
-    | table | String |
+    | table | 字符串 |
     | tableKind | 16 位整数 |
 
     #### MS\_TableOperationErrors

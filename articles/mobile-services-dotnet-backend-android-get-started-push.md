@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="12/06/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/07/2016"
+	wacn.date="03/28/2016"/>
 
 # 向移动服务应用程序添加推送通知
 
@@ -114,6 +114,5 @@
 [什么是通知中心？]: /documentation/articles/notification-hubs-overview
 [将广播通知发送到订户]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 [将基于模板的通知发送到订户]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
-[Azure classic portal]: https://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0118_2016-->

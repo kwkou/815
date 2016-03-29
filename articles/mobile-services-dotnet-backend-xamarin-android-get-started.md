@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="10/12/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/14/2016"
+	wacn.date="03/28/2016"/>
 
 # <a name="getting-started"></a>移动服务入门
 
@@ -33,6 +33,7 @@
 只有在完成本教程后，才可以学习有关 Xamarin Android 应用程序的所有其他移动服务教程。
 
 >[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并取得多达 10 个免费的移动服务，即使在试用期结束之后仍可继续使用这些服务。有关详细信息，请参阅 <a href="/pricing/1rmb-trial">Azure 试用</a>。<br />本教程需要安装 <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a>。可以使用免费试用版。
+>本教程需要安装 [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=257546)。可以使用免费试用版。
 
 ## 创建新的移动服务
 
@@ -40,11 +41,11 @@
 
 ## 创建新的 Xamarin Android 应用程序
 
-创建移动服务后，你可以在 Azure 经典门户中遵照一个简易的快速入门项目来创建新应用程序或修改现有应用程序，以连接到你的移动服务。
+创建移动服务后，你可以在经典门户中遵照一个简易的快速入门项目来创建新应用或修改现有应用，以连接到你的移动服务。
 
 在本部分中，你将为移动服务下载新的 Xamarin.android 应用程序和服务项目。
 
-1. 在 [Azure 经典门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1. 在 [Azure 管理门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2. 在快速入门选项卡中，单击“选择平台”下的“Xamarin”，然后展开“创建新的 Xamarin 应用程序”。
 
@@ -129,7 +130,7 @@
 [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [JavaScript and HTML]: /documentation/articles/mobile-services-win8-javascript
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 管理门户]: https://manage.windowsazure.cn/
 [JavaScript 后端版本]: /documentation/articles/mobile-services-android-get-started
 [移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
 

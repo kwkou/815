@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用移动服务托管客户端库 (Windows | Xamarin) | Azure"
+	pageTitle="使用移动服务托管客户端库 (Windows | Xamarin) | Microsoft Azure"
 	description="了解如何在 Windows 和 Xamarin 应用中使用 Azure 移动服务的 .NET 客户端。"
 	services="mobile-services"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="11/02/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="01/28/2016"
+	wacn.date="03/28/2016"/>
 
 # 如何使用 Azure 移动服务的托管客户端库
 

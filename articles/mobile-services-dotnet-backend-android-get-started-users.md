@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="10/05/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="01/21/2016"
+	wacn.date="03/28/2016"/>
 
 # 向移动服务 Android 应用添加身份验证
 
@@ -60,14 +60,12 @@
 
 [AZURE.INCLUDE [mobile-services-android-authenticate-app-refresh-token](../includes/mobile-services-android-authenticate-app-refresh-token.md)]
 
-<!--
 ##<a name="next-steps"></a>后续步骤
 
 在下一教程[移动服务用户的服务端授权][Authorize users with scripts]中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。
--->
+
 
 <!-- Anchors. -->
-
 [Register your app for authentication and configure Mobile Services]: #register
 [Restrict table permissions to authenticated users]: #permissions
 [Add authentication to the app]: #add-authentication
@@ -81,7 +79,6 @@
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
 [Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-android-authorize-users-in-scripts
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
 

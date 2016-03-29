@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="11/10/2015" 
-	wacn.date="01/29/2016"/>
+	wacn.date="03/28/2016"/>
 
 # 将移动服务添加到现有应用程序
 
@@ -34,7 +34,7 @@
 若要完成本教程，您需要以下各项：
 
 * 有效的 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
-* <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio 2013</a> Update 3 或更高版本。 
+* <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio 2013</a> (Update 3 或更高版本)。 
 
 ##下载 GetStartedWithData 项目
 
@@ -115,7 +115,6 @@
 [推送通知入门 ]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
 [Get started with offline data sync]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 
-[Azure classic portal]: https://manage.windowsazure.cn/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkID=510826
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
