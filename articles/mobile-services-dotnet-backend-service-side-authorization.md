@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="12/09/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/07/2016"
+	wacn.date="03/28/2016"/>
 
 # 移动服务中的用户服务端授权
 
@@ -31,7 +31,7 @@
 
 		public string UserId { get; set; }
 
-	>[AZURE.NOTE]若要进行此数据模型更改并维护数据库中的现有数据，必须使用 [Code First 迁移](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
+	>[AZURE.NOTE] 若要进行此数据模型更改并维护数据库中的现有数据，必须使用[代码优先迁移](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
 
 2. 在 Visual Studio 中，展开“控制器”文件夹，打开 **TodoItemController.cs**，然后添加以下 using 语句：
 

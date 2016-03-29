@@ -32,6 +32,28 @@
 	     parameters:emailHeader
 	     headers:nil
 	     completion:completion ];
+	    
+如果你需要返回数据，可以使用类似于下面的代码：
+
+	[self.client invokeAPI:apiName
+                 body:yourBody
+           HTTPMethod:httpMethod
+           parameters:parameters
+              headers:headers
+           completion:  ^(NSData *result,
+                          NSHTTPURLResponse *response,
+                          NSError *error){
+               // error is nil if no error occured
+               if(error) { 
+                   NSLog(@"ERROR %@", error);
+               } else {
+                   
+		// do something with the result
+               }
+               
+               
+           }];
+
 		
 
 <!---HONumber=74-->

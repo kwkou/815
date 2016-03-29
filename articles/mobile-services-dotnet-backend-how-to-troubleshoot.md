@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="12/01/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/07/2016" 
+	wacn.date="03/28/2016"/>
 
 # 移动服务 .NET 后端故障排除
 
@@ -33,7 +33,7 @@
 
 你可以使用任何 HTTP 调试器来发送和检查 HTTP 流量。[Fiddler](http://www.telerik.com/fiddler) 是开发人员针对此目的而经常使用的工具。为了让开发人员的工作更轻松，移动服务捆绑了基于 Web 的 HTTP 调试器（也称为测试客户端），以减少使用外部工具的需求。当你在本地托管移动服务时，可从类似于 http://localhost:59233 的 URI 获取该移动服务；而托管在云中时，此 URI 的格式为 [http://todo-list.azure-mobile.net](http://todo-list.azure-mobile.net)。无论在何处托管服务，以下步骤都会以相同方式运行：
 
-1. 首先，在 **Visual Studio 2013 Update 2** 或更高版本中打开移动服务服务器项目。如果你尚无此项目，可以通过依次选择“文件”、“新建”、“项目”、“云”节点和“Azure 移动服务”模板来创建一个项目。
+1. 首先，在 **Visual Studio 2013 Update 2** 或更高版本中打开移动服务服务器项目。如果你尚无此项目，可以通过依次选择“文件”、“新建”、“项目”、“云”节点和“Microsoft Azure 移动服务”模板来创建一个项目。
 2. 按 **F5**，以生成并运行该项目。在起始页上，选择“试用”。 
 
     >[AZURE.NOTE]
@@ -85,7 +85,7 @@
 
     ![发布调试][PublishDebug]
 
-10. 成功发布服务后，打开“服务器资源管理器”并展开“Azure”和“移动服务”节点。视需要登录。
+10. 成功发布服务后，打开“服务器资源管理器”并展开“Microsoft Azure”和“移动服务”节点。视需要登录。
 11. 右键单击刚刚发布到的移动服务，然后选择“附加调试器”。
 
     ![附加调试程序][AttachDebugger]
@@ -117,7 +117,7 @@
 
 当你将移动服务发布到 Azure 时，此服务将由移动服务托管环境加载，以确保能够无缝地升级和修补托管控制器代码的 HTTP 管道。这包括 [.NET 后端 NuGet 包](http://www.nuget.org/packages?q=%22mobile+services+.net+backend%22)引用的所有程序集：团队需持续更新服务才能使用这些程序集的最新版本。
 
-有时，版本会因为引用了所需程序集的*不同主要版本*而发生冲突（允许不同的*次要*版本）。当 NuGet 提示你升级到移动服务 .NET 后端所用某个包的最新版本时，经常发生此情况。
+有时，版本会因为引用了所需程序集的不同主要版本而发生冲突（允许不同的次要版本）。当 NuGet 提示你升级到移动服务 .NET 后端所用某个包的最新版本时，经常发生此情况。
 
 >[AZURE.NOTE]移动服务目前只与 ASP.NET 5.1 兼容；当前不支持 ASP.NET 5.2。部署后，将 ASP.NET NuGet 包升级到 5.2.* 可能会导致错误。
 
@@ -132,9 +132,9 @@
 此问题很容易解决：只需恢复到所需程序集的支持版本，然后重新发布服务。
 
 <a name="EFMigrations"></a>
-## Entity Framework 迁移故障排除
+## 实体框架迁移故障排除
 
-使用包含 SQL 数据库的移动服务 .NET 后端时，将以 Entity Framework (EF) 作为数据访问技术，让你查询数据库及保存对象。EF 代表开发人员处理的重要方面之一是数据库列（也称为*架构*）如何随着代码中指定的模型类的更改而更改。此过程称为 [Code First 迁移](http://msdn.microsoft.com/zh-cn/data/jj591621)。
+使用包含 SQL 数据库的移动服务 .NET 后端时，将以实体框架作为数据访问技术，让你查询数据库及保存对象。EF 代表开发人员处理的重要方面之一是数据库列（也称为架构）如何随着代码中指定的模型类的更改而更改。此过程称为[代码优先迁移](http://msdn.microsoft.com/zh-cn/data/jj591621)。
 
 迁移可能很复杂，只有数据库状态与 EF 模型保持同步才能成功。有关如何处理移动服务的迁移和可能发生的错误的说明，请参阅[如何对 .NET 后端移动服务进行数据模型更改](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
 

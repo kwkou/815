@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="10/05/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/21/2016"
+	wacn.date="03/28/2016"/>
 
 # 从 Android 设备将图像上载到 Azure 存储空间
 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="注册以进行 Azure Active Directory 身份验证 | Azure" 
+	pageTitle="注册以进行 Azure Active Directory 身份验证 | Microsoft Azure" 
 	description="了解如何在移动服务应用程序中注册以进行 Azure Active Directory 身份验证。" 
 	authors="wesmc7777" 
 	services="mobile-services" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/15/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/05/2016"
+	wacn.date="03/28/2016"/>
 
 # 注册应用程序以使用 Azure Active Directory 帐户登录
 
@@ -31,8 +31,7 @@
 
     ![AAD 的移动服务应用 URL](./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-copy-app-url-waad-auth.png)
 
-
-2. 在 [Azure 经典门户]中，导航到“Active Directory”，依次单击你的目录和“域”，然后记下目录的默认域。
+2. 在[经典门户]中，导航到“Active Directory”，依次单击你的目录和“域”，然后记下目录的默认域。
 
 3. 单击“应用程序”>“添加”。
 
@@ -66,5 +65,6 @@
 
 <!-- URLs. -->
 [Azure 经典门户]: https://manage.windowsazure.cn/
+[经典门户]: https://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0118_2016-->

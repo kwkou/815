@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/30/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/07/2016"
+	wacn.date="03/28/2016"/>
 
 # 在发生灾难时恢复移动服务
 
@@ -79,7 +79,7 @@
 		info:    Migration complete. It may take 30 minutes for DNS to resolve to the migrated site.
 		info:    mobile migrate command OK
 
-    > [AZURE.NOTE] It may take a few minutes after the command completes until you can see the changes in the Azure classic portal.
+    > [AZURE.NOTE] 完成该命令后，可能需要经过几分钟时间，你才能在 Azure 经典门户中看到更改。
 
 5. 验证是否已正确恢复所有脚本，方法是将其与源代码管理中的原件进行比较。大多数情况下，脚本会自动恢复且不会丢失数据，但如果你发现存在差异，可以手动恢复该脚本。
 

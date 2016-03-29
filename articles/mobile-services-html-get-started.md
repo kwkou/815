@@ -10,7 +10,7 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="11/30/2015"
-	wacn.date="01/29/2016"/>
+	wacn.date="03/28/2016"/>
 
 
 #  <a name="getting-started"></a>移动服务入门
@@ -77,7 +77,7 @@
 
   	![][9]
 
-	> [AZURE.IMPORTANT]如果将快速入门应用程序部署到除 localhost 以外的 Web 服务器，则必须将该 Web 服务器的主机名添加到“允许来自主机名的请求”列表。有关详细信息，请参阅[跨域资源共享](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn155871.aspx"%20target="_blank)。
+	> [AZURE.IMPORTANT] 如果将快速入门应用程序部署到除 localhost 以外的 Web 服务器，则必须将该 Web 服务器的主机名添加到“允许来自主机名的请求”列表。有关详细信息，请参阅[跨域资源共享](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn155871.aspx)。
 
 ##  托管和运行 HTML 应用程序
 
@@ -95,7 +95,7 @@
 
 2. 在 Web 浏览器中打开 URL <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> 以启动该应用程序。
 
-3. 在应用程序中的“输入新任务”中键入有意义的文本（例如 _Complete the tutorial_），然后单击“添加”。
+3. 在应用程序中的“输入新任务”中键入有意义的文本（例如 _完成教程_），然后单击“添加”。
 
    	![][10]
 

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="12/07/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/07/2016"
+	wacn.date="03/28/2016"/>
 
 # 配置本地 Web 服务器以允许连接到本地移动服务 
 
