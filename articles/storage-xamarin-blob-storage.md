@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="12/01/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="01/22/2016"
+	wacn.date="03/28/2016"/>
 
 # 如何通过 Xamarin（预览版）使用 Blob 存储
 
@@ -174,5 +174,4 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 [如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables)  
 [如何通过 .NET 使用队列存储](/documentation/articles/storage-dotnet-how-to-use-queues)
 [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
-
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0321_2016-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage"
-	ms.date="12/16/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="01/30/2016"
+	wacn.date="03/28/2016"/>
 
 # 开始使用 Azure 队列存储和 Visual Studio 连接服务（WebJob 项目）
 
@@ -228,7 +228,7 @@ SDK 会自动将对象序列化为 JSON。即使对象为 null，也始终会创
 可对以下参数类型使用 **Queue** 属性：
 
 * **out string**（如果函数结束时参数值非 null，则创建队列消息）
-* **out byte**（用法类似于 **string**）
+* **out byte[]**（用法类似于 **string**）
 * **out CloudQueueMessage**（用法类似于 **string**）
 * **out POCO**（一种可序列化类型，如果函数结束时参数为 null，则创建一个包含 null 对象的消息）
 * **ICollector**
@@ -542,5 +542,4 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 
 本文章提供了代码示例，演示如何处理用于操作 Azure 队列的常见方案。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 推荐资源](/documentation/articles/websites-webjobs-resources)。
  
-
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0321_2016-->

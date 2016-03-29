@@ -10,8 +10,8 @@
 
 <tags 
   ms.service="storage" 
-  ms.date="01/05/2016" 
-  wacn.date="02/25/2016"/>
+  ms.date="01/22/2016" 
+  wacn.date="03/28/2016"/>
 
 # Azure 存储复制
 
@@ -74,5 +74,4 @@
 - [使用 RA-GRS 的  Azure 存储模拟器 3.1](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/08/microsoft-azure-storage-emulator-3-1-with-ra-grs.aspx)
 - [Azure 存储 SOSP 论文](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)  
  
-
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0321_2016-->
