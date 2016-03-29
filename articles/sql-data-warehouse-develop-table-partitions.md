@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="09/28/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/28/2016"/>
 
 # SQL 数据仓库中的表分区
 
@@ -105,7 +105,7 @@ AND     rp.[name]    = 'SloDWPool'
 ;
 ```
 
-> [AZURE.NOTE]尽量避免将分区大小调整超过超大型资源类所提供的内存授予。如果分区成长超过此数据，就冒着内存压力的风险，进而导致比较不理想的压缩。
+> [AZURE.NOTE] 尽量避免将分区大小调整超过超大型资源类所提供的内存授予。如果分区成长超过此数据，就冒着内存压力的风险，进而导致比较不理想的压缩。
 
 ## 分区切换
 若要切换两个表间的分区，必须确定分区对齐其各自的边界，而且表定义匹配。检查约束不适用于强制表中的值范围，源表必须包含与目标表相同的分区边界。如果情况不是如此，则分区切换将失败，因为分区元数据不会同步。
@@ -116,34 +116,37 @@ AND     rp.[name]    = 'SloDWPool'
 以下示例显示了每个分区包含一个行的分区列存储表：
 
 ```
-	CREATE TABLE [dbo].[FactInternetSales]
-		(
-		        [ProductKey]            int          NOT NULL
-		    ,   [OrderDateKey]          int          NOT NULL
-		    ,   [CustomerKey]           int          NOT NULL
-		    ,   [PromotionKey]          int          NOT NULL
-		    ,   [SalesOrderNumber]      nvarchar(20) NOT NULL
-		    ,   [OrderQuantity]         smallint     NOT NULL
-		    ,   [UnitPrice]             money        NOT NULL
-		    ,   [SalesAmount]           money        NOT NULL
-		)
-		WITH
-		(   CLUSTERED COLUMNSTORE INDEX
-		,   DISTRIBUTION = HASH([ProductKey])
-		,   PARTITION   (   [OrderDateKey] RANGE RIGHT FOR VALUES
-		                    (20000101
-		                    )
-		                )
-		)
-		;		
-		INSERT INTO dbo.FactInternetSales
-		VALUES (1,19990101,1,1,1,1,1,1);
-		INSERT INTO dbo.FactInternetSales
-		VALUES (1,20000101,1,1,1,1,1,1);		
-		CREATE STATISTICS Stat_dbo_FactInternetSales_OrderDateKey ON dbo.FactInternetSales(OrderDateKey);
+CREATE TABLE [dbo].[FactInternetSales]
+(
+        [ProductKey]            int          NOT NULL
+    ,   [OrderDateKey]          int          NOT NULL
+    ,   [CustomerKey]           int          NOT NULL
+    ,   [PromotionKey]          int          NOT NULL
+    ,   [SalesOrderNumber]      nvarchar(20) NOT NULL
+    ,   [OrderQuantity]         smallint     NOT NULL
+    ,   [UnitPrice]             money        NOT NULL
+    ,   [SalesAmount]           money        NOT NULL
+)
+WITH
+(   CLUSTERED COLUMNSTORE INDEX
+,   DISTRIBUTION = HASH([ProductKey])
+,   PARTITION   (   [OrderDateKey] RANGE RIGHT FOR VALUES
+                    (20000101
+                    )
+                )
+)
+;
+
+INSERT INTO dbo.FactInternetSales
+VALUES (1,19990101,1,1,1,1,1,1);
+INSERT INTO dbo.FactInternetSales
+VALUES (1,20000101,1,1,1,1,1,1);
+
+
+CREATE STATISTICS Stat_dbo_FactInternetSales_OrderDateKey ON dbo.FactInternetSales(OrderDateKey);
 ```
 
-> [AZURE.NOTE]通过创建统计信息对象，我们可以确保表元数据更加准确。如果我们省略了创建统计信息，SQL 数据仓库将使用默认值。有关统计信息的详细信息，请参阅[统计信息][]。
+> [AZURE.NOTE] 通过创建统计信息对象，我们可以确保表元数据更加准确。如果我们省略了创建统计信息，SQL 数据仓库将使用默认值。有关统计信息的详细信息，请参阅[统计信息][]。
 
 然后，我们可以利用 `sys.partitions` 目录视图查询行计数：
 
@@ -167,7 +170,9 @@ WHERE t.[name] = 'FactInternetSales'
 ```
 ALTER TABLE FactInternetSales SPLIT RANGE (20010101);
 ```
-消息 35346，级别 15，状态 1，行 44: ALTER PARTITION 语句的 SPLIT 子句失败，因为分区不为空。仅当表上存在列存储索引时，才可以拆分空分区。请考虑在发出 ALTER PARTITION 语句前禁用列存储索引，然后在 ALTER PARTITION 完成后重建列存储索引。
+
+消息 35346，级别 15，状态 1，行 44:
+ALTER PARTITION 语句的 SPLIT 子句失败，因为分区不为空。仅当表上存在列存储索引时，才可以拆分空分区。请考虑在发出 ALTER PARTITION 语句前禁用列存储索引，然后在 ALTER PARTITION 完成后重建列存储索引。
 
 但是，我们可以使用 `CTAS` 创建新表以保存数据。
 
@@ -189,33 +194,32 @@ WHERE   1=2
 
 分区边界已对齐，因此允许切换。这使源表有空白分区可供我们完成后续拆分。
 
+```
+ALTER TABLE FactInternetSales SWITCH PARTITION 2 TO  FactInternetSales_20000101 PARTITION 2;
 
-		ALTER TABLE FactInternetSales SWITCH PARTITION 2 TO  FactInternetSales_20000101 PARTITION 2;
-		
-		ALTER TABLE FactInternetSales SPLIT RANGE (20010101);
-
+ALTER TABLE FactInternetSales SPLIT RANGE (20010101);
+```
 
 接下来只需使用 `CTAS` 将数据对齐新的分区边界，并将数据切换回到主表
 
+```
+CREATE TABLE [dbo].[FactInternetSales_20000101_20010101]
+    WITH    (   DISTRIBUTION = HASH([ProductKey])
+            ,   CLUSTERED COLUMNSTORE INDEX
+            ,   PARTITION   (   [OrderDateKey] RANGE RIGHT FOR VALUES
+                                (20000101,20010101
+                                )
+                            )
+            )
+AS
+SELECT  *
+FROM    [dbo].[FactInternetSales_20000101]
+WHERE   [OrderDateKey] >= 20000101
+AND     [OrderDateKey] <  20010101
+;
 
-
-		CREATE TABLE [dbo].[FactInternetSales_20000101_20010101]
-		    WITH    (   DISTRIBUTION = HASH([ProductKey])
-		            ,   CLUSTERED COLUMNSTORE INDEX
-		            ,   PARTITION   (   [OrderDateKey] RANGE RIGHT FOR VALUES
-		                                (20000101,20010101
-		                                )
-		                            )
-		            )
-		AS
-		SELECT  *
-		FROM    [dbo].[FactInternetSales_20000101]
-		WHERE   [OrderDateKey] >= 20000101
-		AND     [OrderDateKey] <  20010101
-		;
-		
-		ALTER TABLE dbo.FactInternetSales_20000101_20010101 SWITCH PARTITION 2 TO dbo.FactInternetSales PARTITION 2;
-
+ALTER TABLE dbo.FactInternetSales_20000101_20010101 SWITCH PARTITION 2 TO dbo.FactInternetSales PARTITION 2;
+```
 
 完成数据移动后，最好是刷新目标表上的统计信息，确保统计信息可在其各自的分区中准确反映数据的新分布：
 
@@ -228,85 +232,84 @@ UPDATE STATISTICS [dbo].[FactInternetSales];
 
 1. 将表创建为分区表，但不包含分区值
 
-
-
-		CREATE TABLE [dbo].[FactInternetSales]
-		(
-		    [ProductKey]            int          NOT NULL
-		,   [OrderDateKey]          int          NOT NULL
-		,   [CustomerKey]           int          NOT NULL
-		,   [PromotionKey]          int          NOT NULL
-		,   [SalesOrderNumber]      nvarchar(20) NOT NULL
-		,   [OrderQuantity]         smallint     NOT NULL
-		,   [UnitPrice]             money        NOT NULL
-		,   [SalesAmount]           money        NOT NULL
-		)
-		WITH
-		(   CLUSTERED COLUMNSTORE INDEX
-		,   DISTRIBUTION = HASH([ProductKey])
-		,   PARTITION   (   [OrderDateKey] RANGE RIGHT FOR VALUES
-		                    ()
-		                )
-		)
-		;
-
+```
+CREATE TABLE [dbo].[FactInternetSales]
+(
+    [ProductKey]            int          NOT NULL
+,   [OrderDateKey]          int          NOT NULL
+,   [CustomerKey]           int          NOT NULL
+,   [PromotionKey]          int          NOT NULL
+,   [SalesOrderNumber]      nvarchar(20) NOT NULL
+,   [OrderQuantity]         smallint     NOT NULL
+,   [UnitPrice]             money        NOT NULL
+,   [SalesAmount]           money        NOT NULL
+)
+WITH
+(   CLUSTERED COLUMNSTORE INDEX
+,   DISTRIBUTION = HASH([ProductKey])
+,   PARTITION   (   [OrderDateKey] RANGE RIGHT FOR VALUES
+                    ()
+                )
+)
+;
+```
 
 2. 在部署过程中 `SPLIT` 表：
 
+```
+-- Create a table containing the partition boundaries
 
+CREATE TABLE #partitions
+WITH
+(
+    LOCATION = USER_DB
+,   DISTRIBUTION = HASH(ptn_no)
+)
+AS
+SELECT  ptn_no
+,       ROW_NUMBER() OVER (ORDER BY (ptn_no)) as seq_no
+FROM    (
+        SELECT CAST(20000101 AS INT) ptn_no
+        UNION ALL
+        SELECT CAST(20010101 AS INT)
+        UNION ALL
+        SELECT CAST(20020101 AS INT)
+        UNION ALL
+        SELECT CAST(20030101 AS INT)
+        UNION ALL
+        SELECT CAST(20040101 AS INT)
+        ) a
+;
 
-		Create a table containing the partition boundaries
-		
-		CREATE TABLE #partitions
-		WITH
-		(
-		    LOCATION = USER_DB
-		,   DISTRIBUTION = HASH(ptn_no)
-		)
-		AS
-		SELECT  ptn_no
-		,       ROW_NUMBER() OVER (ORDER BY (ptn_no)) as seq_no
-		FROM    (
-		        SELECT CAST(20000101 AS INT) ptn_no
-		        UNION ALL
-		        SELECT CAST(20010101 AS INT)
-		        UNION ALL
-		        SELECT CAST(20020101 AS INT)
-		        UNION ALL
-		        SELECT CAST(20030101 AS INT)
-		        UNION ALL
-		        SELECT CAST(20040101 AS INT)
-		        ) a
-		;
-		
-		-- Iterate over the partition boundaries and split the table
-		
-		DECLARE @c INT = (SELECT COUNT(*) FROM #partitions)
-		,       @i INT = 1                                 --iterator for while loop
-		,       @q NVARCHAR(4000)                          --query
-		,       @p NVARCHAR(20)     = N''                  --partition_number
-		,       @s NVARCHAR(128)    = N'dbo'               --schema
-		,       @t NVARCHAR(128)    = N'FactInternetSales' --table
-		;
-		
-		WHILE @i <= @c
-		BEGIN
-		    SET @p = (SELECT ptn_no FROM #partitions WHERE seq_no = @i);
-		    SET @q = (SELECT N'ALTER TABLE '+@s+N'.'+@t+N' SPLIT RANGE ('+@p+N');');
-		
-		    -- PRINT @q;
-		    EXECUTE sp_executesql @q;
-		
-		    SET @i+=1;
-		END
-		
-		-- Code clean-up
-		
+-- Iterate over the partition boundaries and split the table
 
+DECLARE @c INT = (SELECT COUNT(*) FROM #partitions)
+,       @i INT = 1                                 --iterator for while loop
+,       @q NVARCHAR(4000)                          --query
+,       @p NVARCHAR(20)     = N''                  --partition_number
+,       @s NVARCHAR(128)    = N'dbo'               --schema
+,       @t NVARCHAR(128)    = N'FactInternetSales' --table
+;
+
+WHILE @i <= @c
+BEGIN
+    SET @p = (SELECT ptn_no FROM #partitions WHERE seq_no = @i);
+    SET @q = (SELECT N'ALTER TABLE '+@s+N'.'+@t+N' SPLIT RANGE ('+@p+N');');
+
+    -- PRINT @q;
+    EXECUTE sp_executesql @q;
+
+    SET @i+=1;
+END
+
+-- Code clean-up
+
+DROP TABLE #partitions;
+```
 
 使用这种方法时，源代码管理中的代码将保持静态，允许动态的分区边界值，并不断地与仓库一起演进。
 
->[AZURE.NOTE]相比于 SQL Server，分区切换有一些差异。请务必阅读[迁移代码][]，以深入了解此主题。
+>[AZURE.NOTE] 相比于 SQL Server，分区切换有一些差异。请务必阅读[迁移代码][]，以深入了解此主题。
 
 
 ## 后续步骤
@@ -327,4 +330,5 @@ UPDATE STATISTICS [dbo].[FactInternetSales];
 
 <!-- Other web references -->
 
-<!---HONumber=Mooncake_1207_2015-->
+
+<!---HONumber=Mooncake_0321_2016-->

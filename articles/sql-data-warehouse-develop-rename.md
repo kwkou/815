@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="11/05/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/28/2016"/>
 
 # 在 SQL 数据仓库中重命名
 SQL Server 通过存储过程 ```sp_renamedb``` 支持数据库重命名，而 SQL 数据仓库使用 DDL 语法来实现相同的目的。该 DDL 命令是 ```RENAME OBJECT```。
@@ -49,4 +49,4 @@ ALTER SCHEMA dbo TRANSFER OBJECT::product.item;
 <!--Article references-->
 [开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0321_2016-->

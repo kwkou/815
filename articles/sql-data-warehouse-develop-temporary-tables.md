@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="10/19/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/28/2016"/>
 
 # SQL 数据仓库中的临时表
 临时表存在于 SQL 数据仓库中的会话级别。这些表定义为本地临时表，与 SQL Server 表不同的是，可以从会话中的任何位置访问它们。
@@ -33,14 +33,17 @@ CREATE PROCEDURE    [dbo].[prc_sqldw_update_stats]
 	,@sample_pct     tinyint
 )
 AS
+
 IF @update_type NOT IN (1,2,3,4)
 BEGIN;
     THROW 151000,'Invalid value for @update_type parameter. Valid range 1 (default), 2 (fullscan), 3 (sample) or 4 (resample).',1;
 END;
+
 IF @sample_pct IS NULL
 BEGIN;
     SET @sample_pct = 20;
 END;
+
 CREATE TABLE #stats_ddl
 WITH
 (
@@ -98,22 +101,26 @@ FROM    t1
 
 ```
 EXEC [dbo].[prc_sqldw_update_stats] @update_type = 1, @sample_pct = NULL;
+
 DECLARE @i INT              = 1
 ,       @t INT              = (SELECT COUNT(*) FROM #stats_ddl)
 ,       @s NVARCHAR(4000)   = N''
+
 WHILE @i <= @t
 BEGIN
     SET @s=(SELECT update_stats_ddl FROM #stats_ddl WHERE seq_nmbr = @i);
+
     PRINT @s
     EXEC sp_executesql @s
     SET @i+=1;
 END
+
 DROP TABLE #stats_ddl;
 ```
 
 在某些情况下，还可以使用这种方法来取代内联和多语句函数。
 
-> [AZURE.NOTE]此外，你还可以扩展此解决方案。举例来说，如果你只想要更新单个表，则只需筛选 #stats\_ddl 表
+> [AZURE.NOTE] 此外，你还可以扩展此解决方案。举例来说，如果你只想要更新单个表，则只需筛选 #stats\_ddl 表
 
 ## 临时表的限制
 SQL 数据仓库在实现临时表时确实会施加一些限制。
@@ -136,4 +143,4 @@ SQL 数据仓库在实现临时表时确实会施加一些限制。
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0321_2016-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="sql-data-warehouse" 
-	ms.date="10/21/2015" 
-	wacn.date="01/20/2016"/>
+	ms.date="01/07/2016" 
+	wacn.date="03/28/2016"/>
  
 # 透明数据加密 (TDE) 入门
 > [AZURE.SELECTOR]
@@ -68,4 +68,4 @@ FROM
 
 <!--Link references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0321_2016-->

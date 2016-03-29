@@ -10,8 +10,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="10/21/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/28/2016"/>
 
 # 使用 Transact-SQL (TSQL) 创建 SQL 数据仓库数据库
 
@@ -48,7 +48,7 @@ SERVICE\_OBJECTIVE 指示启动实例时使用的 DWU 数目，接受以下值�
 ## 后续步骤
 完成预配 SQL 数据仓库之后，你可以[加载示例数据][]或了解如何[开发][]、[加载][]，或[迁移][]数据。
 
-[Azure 经典门户教程]: /documentation/articles/sql-data-warehouse-get-started-provision
+[Azure 门户教程]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell
 [连接和查询]: /documentation/articles/sql-data-warehouse-get-started-connect
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop
@@ -56,4 +56,4 @@ SERVICE\_OBJECTIVE 指示启动实例时使用的 DWU 数目，接受以下值�
 [加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples
 [定价页]: /home/features/sql-data-warehouse/#price
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0321_2016-->

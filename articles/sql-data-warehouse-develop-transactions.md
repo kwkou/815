@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="09/22/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/28/2016"/>
 
 # SQL 数据仓库中的事务
 
@@ -22,59 +22,58 @@ SQL 数据仓库实现 ACID 事务。但是，事务支持的隔离仅限于 `RE
 ## 事务状态
 SQL 数据仓库使用 XACT\_STATE() 函数（采用值 -2）来报告失败的事务。这表示事务已失败并标记为仅可回滚
 
-> [AZURE.NOTE]XACT\_STATE 函数使用 -2 表示失败的事务，以代表 SQL Server 中不同的行为。SQL Server 使用值 -1 来代表无法提交的事务。SQL Server 可以容忍事务内的某些错误，而无需将其标记为无法提交。例如，SELECT 1/0 导致错误，但不强制事务进入无法提交状态。SQL Server 还允许读取无法提交的事务。但是，在 SQLDW 中，情况并非如此。如果 SQLDW 事务内发生错误，它就会自动进入 -2 状态：包括 SELECT 1/0 错误。因此，必须查看应用程序代码是否使用 XACT\_STATE()。
+> [AZURE.NOTE] XACT\_STATE 函数使用 -2 表示失败的事务，以代表 SQL Server 中不同的行为。SQL Server 使用值 -1 来代表无法提交的事务。SQL Server 可以容忍事务内的某些错误，而无需将其标记为无法提交。例如，SELECT 1/0 导致错误，但不强制事务进入无法提交状态。SQL Server 还允许读取无法提交的事务。但是，在 SQLDW 中，情况并非如此。如果 SQLDW 事务内发生错误，它就会自动进入 -2 状态：包括 SELECT 1/0 错误。因此，必须查看应用程序代码是否使用 XACT\_STATE()。
 
 在 SQL Server 中，你可能会看到如下所示的代码片段：
 
+```
+BEGIN TRAN
+    BEGIN TRY
+        DECLARE @i INT;
+        SET     @i = CONVERT(int,'ABC');
+    END TRY
+    BEGIN CATCH
 
+        DECLARE @xact smallint = XACT_STATE();
 
-		BEGIN TRAN
-		    BEGIN TRY
-		        DECLARE @i INT;
-		        SET     @i = CONVERT(int,'ABC');
-		    END TRY
-		    BEGIN CATCH
-		
-		        DECLARE @xact smallint = XACT_STATE();
-		
-		        SELECT  ERROR_NUMBER()    AS ErrNumber
-		        ,       ERROR_SEVERITY()  AS ErrSeverity
-		        ,       ERROR_STATE()     AS ErrState
-		        ,       ERROR_PROCEDURE() AS ErrProcedure
-		        ,       ERROR_MESSAGE()   AS ErrMessage
-		        ;
-		
-		        ROLLBACK TRAN;
-		
-		    END CATCH;
+        SELECT  ERROR_NUMBER()    AS ErrNumber
+        ,       ERROR_SEVERITY()  AS ErrSeverity
+        ,       ERROR_STATE()     AS ErrState
+        ,       ERROR_PROCEDURE() AS ErrProcedure
+        ,       ERROR_MESSAGE()   AS ErrMessage
+        ;
 
+        ROLLBACK TRAN;
+
+    END CATCH;
+```
 
 请注意，`SELECT` 语句出现在 `ROLLBACK` 语句的前面。另外请注意，`@xact` 变量的设置使用 DECLARE 而非 `SELECT`。
 
 在 SQL 数据仓库中，代码需如下所示：
 
+```
+BEGIN TRAN
+    BEGIN TRY
+        DECLARE @i INT;
+        SET     @i = CONVERT(int,'ABC');
+    END TRY
+    BEGIN CATCH
 
-	BEGIN TRAN
-	    BEGIN TRY
-	        DECLARE @i INT;
-	        SET     @i = CONVERT(int,'ABC');
-	    END TRY
-	    BEGIN CATCH
-	
-	        ROLLBACK TRAN;
-	
-	        DECLARE @xact smallint = XACT_STATE();
-	
-	        SELECT  ERROR_NUMBER()    AS ErrNumber
-	        ,       ERROR_SEVERITY()  AS ErrSeverity
-	        ,       ERROR_STATE()     AS ErrState
-	        ,       ERROR_PROCEDURE() AS ErrProcedure
-	        ,       ERROR_MESSAGE()   AS ErrMessage
-	        ;
-	    END CATCH;
-	
-	SELECT @xact;
+        ROLLBACK TRAN;
 
+        DECLARE @xact smallint = XACT_STATE();
+
+        SELECT  ERROR_NUMBER()    AS ErrNumber
+        ,       ERROR_SEVERITY()  AS ErrSeverity
+        ,       ERROR_STATE()     AS ErrState
+        ,       ERROR_PROCEDURE() AS ErrProcedure
+        ,       ERROR_MESSAGE()   AS ErrMessage
+        ;
+    END CATCH;
+
+SELECT @xact;
+```
 
 请注意，事务的回滚必须发生于在 `CATCH` 块中读取错误信息之前。
 
@@ -109,4 +108,4 @@ SQL 数据仓库有一些与事务相关的其他限制。
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0321_2016-->

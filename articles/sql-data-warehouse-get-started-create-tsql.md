@@ -10,8 +10,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="10/21/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/28/2016"/>
 
 #使用 TSQL 创建 SQL 数据仓库 
 
@@ -23,12 +23,12 @@
 
 - Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
 - Visual Studio。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
-- 一个 V12 SQL 服务器。你将需要使用 V12 SQL 服务器来创建 SQL 数据仓库。如果你没有可用的 V12 SQL 服务器，我们建议在经典门户中创建一个，以便可以在新服务器上创建 SQL 数据仓库。
+- 一个 V12 SQL 服务器。你将需要使用 V12 SQL 服务器来创建 SQL 数据仓库。如果你没有可用的 V12 SQL 服务器，我们建议在门户中创建一个，以便可以在新服务器上创建 SQL 数据仓库。
 
 本文未介绍如何使用 Visual Studio 正确完成设置和连接。有关此操作的完整说明，请参阅[连接和查询][]文档。若要开始操作，必须在 Visual Studio 中打开 SQL Server 对象资源管理器，并连接到要用于创建 SQL 数据仓库的服务器。完成此操作后，你可以针对 Master 数据库运行以下命令来创建 SQL 数据仓库：
-```
-CREATE DATABASE <Name> (EDITION='datawarehouse', SERVICE_OBJECTIVE = '<Compute Size - DW####>', MAXSIZE= <Storage Size - #### GB>);
-```
+
+        CREATE DATABASE <Name> (EDITION='datawarehouse', SERVICE_OBJECTIVE = '<Compute Size - DW####>', MAXSIZE= <Storage Size - #### GB>);
+
 还可以通过打开命令行并运行以下命令来创建 SQL 数据仓库：
 ```
 sqlcmd -S <Server Name>.database.chinacloudapi.cn -I -U <User> -P <Password> -Q "CREATE DATABASE <Name> (EDITION='datawarehouse', SERVICE_OBJECTIVE = '<Compute Size - DW####>', MAXSIZE= <Storage Size - #### GB>)"
@@ -71,4 +71,4 @@ SERVICE\_OBJECTIVE 指示启动实例时使用的 DWU 数目，接受以下值�
 [加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples
 [定价页]: /home/features/sql-data-warehouse/#price
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0321_2016-->

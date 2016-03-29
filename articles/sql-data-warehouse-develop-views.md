@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="09/28/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/28/2016"/>
 
  
 # SQL 数据仓库中的视图
@@ -36,8 +36,10 @@ UNION ALL
 SELECT *
 FROM   dbo.DimDate_stg AS stg
 ;
+
 RENAME OBJECT DimDate TO DimDate_Old;
 RENAME OBJECT DimDate_New TO DimDate;
+
 ```
 
 但是，这可能会导致表对象在 SSDT SQL Server 对象资源管理器上的用户视图中出现和消失。视图可为仓库数据使用者提供一致的呈现层，同时将基础对象重命名。通过视图提供对数据的访问权限，意味着用户不需要基础表的可见性。这提供了一致的用户体验，同时确保数据仓库设计人员可以改进数据模型，并在数据加载过程中使用 CTAS 充分发挥性能。
@@ -49,10 +51,10 @@ RENAME OBJECT DimDate_New TO DimDate;
 SQL 数据仓库中的视图只是元数据。
 
 因此无法使用以下选项：
-- 	没有架构绑定选项
-- 	无法通过视图更新基表
-- 	无法基于临时表创建视图
-- 	不支持 EXPAND / NOEXPAND 提示
+- 	没有架构绑定选项 
+- 	无法通过视图更新基表 
+- 	无法基于临时表创建视图 
+- 	不支持 EXPAND / NOEXPAND 提示 
 - 	SQL 数据仓库中没有已编制索引的视图
 
 
@@ -68,4 +70,6 @@ SQL 数据仓库中的视图只是元数据。
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+
+
+<!---HONumber=Mooncake_0321_2016-->

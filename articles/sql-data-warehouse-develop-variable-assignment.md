@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="09/22/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/28/2016"/>
 
 # 在 SQL 数据仓库中分配变量
 SQL 数据仓库中的变量是使用 `DECLARE` 语句或 `SET` 语句设置的。
@@ -72,4 +72,4 @@ SET     @v +=1;
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0321_2016-->
