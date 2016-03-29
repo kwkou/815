@@ -64,13 +64,12 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 
 超大 VM 可通过使用 Azure PowerShell cmdlet 或 HDInsight SDK 来配置。
 
-通过使用 Azure PowerShell 创建和预配群集的过程记录在[使用 PowerShell 管理 HDInsight](/documentation/articles/hdinsight-administer-use-powershell) 中。配置超大头节点需要将 `-HeadNodeVMSize ExtraLarge` 参数添加到此代码中使用的 `New-AzureRmHDInsightcluster` cmdlet。
+通过使用 Azure PowerShell 创建和预配群集的过程记录在[使用 PowerShell 管理 HDInsight](/documentation/articles/hdinsight-administer-use-powershell) 中。配置超大头节点需要将 `-HeadNodeVMSize ExtraLarge` 参数添加到此代码中使用的 `New-AzureHDInsightcluster` cmdlet。
 
     # Create a new HDInsight cluster in Azure PowerShell
 	# Configured with an ExtraLarge head-node VM
-    New-AzureRmHDInsightCluster `
-				-ResourceGroupName $resourceGroupName `
-				-ClusterName $clusterName ` 
+    New-AzureHDInsightCluster `
+				-Name $clusterName ` 
 				-Location $location `
 				-HeadNodeVMSize ExtraLarge `
 				-DefaultStorageAccountName "$storageAccountName.blob.core.chinacloudapi.cn" `
