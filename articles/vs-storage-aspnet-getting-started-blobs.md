@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="12/16/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="01/30/2016"
+	wacn.date="03/28/2016"/>
 
 # 开始使用 blob 存储和 Visual Studio 连接服务 (ASP.NET)
 
@@ -233,4 +233,5 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=Mooncake_0104_2016-->
+
+<!---HONumber=Mooncake_0321_2016-->
