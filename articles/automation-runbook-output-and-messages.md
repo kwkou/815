@@ -3,13 +3,13 @@
    description="介绍如何创建和检索 Azure 自动化中 Runbook 的输出和错误消息。"
    services="automation"
    documentationCenter=""
-   authors="bwren"
+   authors="mgoedtel"
    manager="stevenka"
    editor="tysonn" />
 <tags 
    ms.service="automation"
-   ms.date="11/24/2015"
-   wacn.date="03/22/2016" />
+   ms.date="03/03/2016"
+   wacn.date="03/24/2016" />
 
 # Azure 自动化中的 Runbook 输出和消息
 

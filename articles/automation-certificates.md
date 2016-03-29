@@ -3,13 +3,13 @@
    description="可以安全地将证书存储在 Azure 自动化中，以便可以通过 Runbook 访问这些证书，对 Azure 和第三方资源进行身份验证。本文介绍了有关证书的详细信息，以及如何在文本和图形创作中使用证书。"
    services="automation"
    documentationCenter=""
-   authors="bwren"
+   authors="mgoedtel"
    manager="stevenka"
    editor="tysonn" />
 <tags
    ms.service="automation"
-   ms.date="01/27/2016"
-   wacn.date="03/22/2016" />
+   ms.date="02/23/2016"
+   wacn.date="03/24/2016" />
 
 # Azure 自动化中的证书资产
 

@@ -3,14 +3,14 @@
 	description="了解 Azure 自动化的重要性和常见问题的答案，为创建和使用 Runbook 做准备。"
 	services="automation"
 	documentationCenter=""
-	authors="SnehaGunda"
+	authors="mgoedtel"
 	manager="stevenka"
 	editor=""/>
 
 <tags
 	ms.service="automation"
-	ms.date="02/11/2016"
-	wacn.date="03/22/2016"/>
+	ms.date="02/23/2016"
+	wacn.date="03/24/2016"/>
 
 # Azure 自动化概述
 

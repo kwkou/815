@@ -3,13 +3,13 @@
 	description="本文提供的不同过程适用于在 Azure 自动化中通过文本编辑器来处理 PowerShell 工作流 Runbook。"
 	services="automation"
 	documentationCenter=""
-	authors="bwren"
+	authors="mgoedtel"
 	manager="stevenka"
 	editor="tysonn" />
 <tags 
 	ms.service="automation"
-	ms.date="01/19/2016"
-	wacn.date="03/22/2016" />
+	ms.date="02/23/2016"
+	wacn.date="03/24/2016" />
 
 # 在 Azure 自动化中编辑文本 Runbook
 
