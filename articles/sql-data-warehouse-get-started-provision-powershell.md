@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="01/11/2016"
-   wacn.date="02/26/2016"/>
+   ms.date="01/25/2016"
+   wacn.date="03/28/2016"/>
 
 # 使用 PowerShell 创建 SQL 数据仓库
 
@@ -18,31 +18,46 @@
 - [TSQL](/documentation/articles/sql-data-warehouse-get-started-create-database-tsql)
 - [PowerShell](/documentation/articles/sql-data-warehouse-get-started-provision-powershell)
 
-> [AZURE.NOTE]若要将 Azure Powershell 与 SQL 数据仓库配合使用，需要 1.0.2 或更高版本。可以在 Powershell 中运行 (Get-Module Azure).Version 来检查你的版本。
-
 ## 获取和运行 Azure PowerShell cmdlet
+
+> [AZURE.NOTE]  若要将 Azure Powershell 用于 SQL 数据仓库，应下载并安装带有 ARM cmdlet 的最新版本 Azure PowerShell。可以通过运行 `Get-Module -ListAvailable -Name Azure` 查看你的版本。本文基于 Microsoft Azure PowerShell 版本 1.0.3。
+
 如果你尚未安装 PowerShell，则需要下载它并对其进行配置。
 
 1. 若要下载 Azure PowerShell 模块，请运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)。
-2. 若要运行该模块，请在开始窗口中键入 **Azure PowerShell**。
-3. 如果尚未将你的帐户添加到计算机，请运行以下 cmdlet。（有关详细信息，请参阅[如何安装和配置 Azure PowerShell][]）：
+2. 若要运行该模块，请在开始窗口中键入“Windows PowerShell”。
+3. 运行此 cmdlet 以登录到 Azure Resource Manager 中。有关详细信息，请参阅[如何安装和配置 Azure PowerShell][]。
 
-```
-Add-AzureAccount
-```
+	```
+	Login-AzureRmAccount –EnvironmentName AzureChinaCloud
+	```
 
-4. 选择要使用的订阅。此示例将获取订阅名称的列表。然后，它将订阅名称设置为“MySubscription”。 
+4. 选择要用于当前会话的订阅。
 
-```
-Get-AzureRmSubscription
-Select-AzureRmSubscription -SubscriptionName "MySubscription"
-```
+	```
+	Get-AzureRmSubscription	-SubscriptionName "MySubscription" | Select-AzureRmSubscription
+	```
    
-## 创建 SQL 数据仓库
-为你的帐户配置 PowerShell 后，可以运行以下命令以在 SQL 数据仓库中部署新数据库。
+## 创建 SQL 数据仓库数据库
+若要部署 SQL 数据仓库，可使用 New-AzureRmSQLDatabase cmdlet。在运行该命令之前，请确保具备以下先决条件。
+
+### 先决条件
+
+- 用于托管数据库的 V12 Azure SQL Server
+- 知道 SQL Server 的资源组名称。
+
+### 部署命令
+
+此命令将在 SQL 数据仓库中部署新数据库。
 
 ```
-New-AzureSqlDatabase -RequestedServiceObjectiveName "<Service Objective>" -DatabaseName "<Data Warehouse Name>" -ServerName "<Server Name>" -ResourceGroupName "<ResourceGroupName>" -Edition "DataWarehouse"
+New-AzureRmSqlDatabase -RequestedServiceObjectiveName "<Service Objective>" -DatabaseName "<Data Warehouse Name>" -ServerName "<Server Name>" -ResourceGroupName "<ResourceGroupName>" -Edition "DataWarehouse"
+```
+
+此示例将一个名为“mynewsqldw1”且服务目标级别为“DW400”的新数据库部署到名为“mywesteuroperesgp1”的资源组中的名为“sqldwserver1”的服务器。
+
+```
+New-AzureRmSqlDatabase -RequestedServiceObjectiveName "DW400" -DatabaseName "mynewsqldw1" -ServerName "sqldwserver1" -ResourceGroupName "mywesteuroperesgp1" -Edition "DataWarehouse"
 ```
 
 此 cmdlet 的必需参数如下：
@@ -53,7 +68,7 @@ New-AzureSqlDatabase -RequestedServiceObjectiveName "<Service Objective>" -Datab
  + **ResourceGroupName**：要使用的资源组。若要查找订阅中可用的资源，请使用 Get-AzureResource。
  + **Edition**：必须将版本设置为“DataWarehouse”才能创建 SQL 数据仓库。 
 
-有关命令参考，请参阅 [New-AzureSqlDatabase](https://msdn.microsoft.com/zh-cn/library/mt619339.aspx)
+有关命令参考，请参阅 [New-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/mt619339.aspx)
 
 有关参数选项，请参阅[创建数据库（Azure SQL 数据仓库）](https://msdn.microsoft.com/zh-cn/library/mt204021.aspx)。
 
@@ -69,6 +84,7 @@ New-AzureSqlDatabase -RequestedServiceObjectiveName "<Service Objective>" -Datab
 <!--Article references-->
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
+[加载]: /documentation/articles/sql-data-warehouse-overview-load.md
 [加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
 [Powershell]: /documentation/articles/sql-data-warehouse-reference-powershell-cmdlets/
 [REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dn505719.aspx
@@ -76,4 +92,4 @@ New-AzureSqlDatabase -RequestedServiceObjectiveName "<Service Objective>" -Datab
 [firewall rules]: /documentation/articles/sql-database-configure-firewall-settings/
 [如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0321_2016-->

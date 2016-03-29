@@ -5,12 +5,12 @@
    documentationCenter="NA"
    authors="sahaj08"
    manager="barbkess"
-   editor="Lingli"/>
+   editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="09/23/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/28/2016"/>
 
 # 发生用户错误后在 SQL 数据仓库中恢复数据库
 
@@ -38,26 +38,29 @@ SQL 数据仓库提供两个核心功能，用于在发生导致意外数据损�
 6. 将数据库还原到所需的还原点。
 7. 监视还原进度。
 
-		Add-AzureRmAccount –EnvironmentName AzureChinaCloud
-		Get-AzureRMSubscription
-		Select-AzureRMSubscription -SubscriptionName "<Subscription_name>"
-		
-		# List database restore points
-		Select-AzureRmSubscription -SubscriptionId <MySubscriptionID>
-		Get-AzureRmSqlDatabaseRestorePoints -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>" -ResourceGroupName "<YourResourceGroupName>"(example:Default-Sql-ChinaNorth)
-		
-		# Pick desired restore point using RestorePointCreationDate
-		$PointInTime = "<RestorePointCreationDate>"
-		
-		# Get the specific database to restore
-		$Database = Get-AzureSqlDatabase -ServerName "<YourServerName>" –DatabaseName "<YourDatabaseName>"-ResourceGroupName "<YourResourceGroupName>"
-		
-		# Restore database
-		$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceServerName "<YourServerName>" -SourceDatabase $Database -TargetDatabaseName "<NewDatabaseName>" -PointInTime $PointInTime
-		
-		# Monitor progress of restore operation
-		Get-AzureSqlDatabaseOperation -ServerName "<YourServerName>" –OperationGuid $RestoreRequest.RequestID
+```
 
+	Add-AzureAccount –EnvironmentName AzureChinaCloud
+	Get-AzureSubscription
+	Select-AzureSubscription -SubscriptionName "<Subscription_name>"
+
+	# List database restore points
+	Switch-AzureMode AzureResourceManager
+	Get-AzureSqlDatabaseRestorePoints -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>" -ResourceGroupName "<YourResourceGroupName>"
+
+	# Pick desired restore point using RestorePointCreationDate
+	$PointInTime = "<RestorePointCreationDate>"
+
+	# Get the specific database to restore
+	Switch-AzureMode AzureServiceManagement
+	$Database = Get-AzureSqlDatabase -ServerName "<YourServerName>" –DatabaseName "<YourDatabaseName>"
+
+	# Restore database
+	$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceServerName "<YourServerName>" -SourceDatabase $Database -TargetDatabaseName "<NewDatabaseName>" -PointInTime $PointInTime
+
+	# Monitor progress of restore operation
+	Get-AzureSqlDatabaseOperation -ServerName "<YourServerName>" –OperationGuid $RestoreRequest.RequestID
+```
 
 
 
@@ -85,19 +88,19 @@ SQL 数据仓库提供两个核心功能，用于在发生导致意外数据损�
 3. 选择包含要还原的已删除数据库的订阅。
 4. 从已删除数据库列表中查找该数据库及其删除日期。
 
-
+```
 	Get-AzureSqlDatabase -RestorableDropped -ServerName "<YourServerName>"
-
+```
 
 5. 获取特定的已删除数据库，然后开始还原。
 
-			
-		$Database = Get-AzureSqlDatabase -RestorableDropped -ServerName "<YourServerName>"
-			
-		$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceRestorableDroppedDatabase $Database –TargetDatabaseName "<NewDatabaseName>"
-			
-		Get-AzureSqlDatabaseOperation –ServerName "<YourServerName>" –OperationGuid $RestoreRequest.RequestID
-			
+```
+	$Database = Get-AzureSqlDatabase -RestorableDropped -ServerName "<YourServerName>" –DatabaseName "<YourDatabaseName>" -DeletionDate "1/01/2015 12:00:00 AM"
+
+	$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceRestorableDroppedDatabase $Database –TargetDatabaseName "<NewDatabaseName>"
+
+	Get-AzureSqlDatabaseOperation –ServerName "<YourServerName>" –OperationGuid $RestoreRequest.RequestID
+```
 
 请注意，如果服务器是 foo.database.chinacloudapi.cn，请使用“foo”作为上述 Powershell cmdlet 中的 -ServerName。
 
@@ -131,4 +134,4 @@ SQL 数据仓库提供两个核心功能，用于在发生导致意外数据损�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0321_2016-->

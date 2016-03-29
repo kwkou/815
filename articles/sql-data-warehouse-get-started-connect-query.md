@@ -4,13 +4,13 @@
    services="sql-data-warehouse"
    documentationCenter="NA"
    authors="twounder"
-   manager=""
+   manager="barbkess"
    editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="10/20/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/28/2016"/>
 
 # 使用 Visual Studio 进行连接和查询
 
@@ -30,7 +30,7 @@
 
 ## 获取完全限定的 Azure SQL 服务器名称
 
-若要连接到数据库，你需要服务器的完整名称 (**servername**.database.chinacloudapi.cn*)，该名称中包含要连接到的数据库。
+若要连接到数据库，你需要服务器的完整名称 (****servername**.database.chinacloudapi.cn*)，该名称中包含要连接到的数据库。
 
 1. 通过以下命令查找我们需要的服务器信息。本示例使用 AdventureWorksDW 示例数据库, DataWarehouse资源组。
  
@@ -74,11 +74,11 @@
 
 
 
+
 <!--Image references-->
 
 [1]: ./media/sql-data-warehouse-get-started-connect-query/get-server-name.png
 [2]: ./media/sql-data-warehouse-get-started-connect-query/open-ssdt.png
 [3]: ./media/sql-data-warehouse-get-started-connect-query/connection-dialog.png
 [4]: ./media/sql-data-warehouse-get-started-connect-query/new-query.png
-
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0321_2016-->

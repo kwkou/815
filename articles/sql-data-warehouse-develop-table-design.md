@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="09/22/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/28/2016"/>
 
 # SQL 数据仓库中的表设计 #
 SQL 数据仓库是一种大规模并行处理 (MPP) 分布式数据库系统。它将数据存储在许多不同的位置（称为**分布区**）。每个**分布区**类似于一个桶，可在数据仓库中存储唯一的数据子集。通过将数据和处理能力分布于多个节点，SQL 数据仓库能够提供极大的缩放性 — 远超任何单一系统。
@@ -55,34 +55,37 @@ SQL 数据仓库支持常见的业务数据类型：
 
 你可以使用以下查询来识别数据仓库中包含不兼容类型的列：
 
-```	
-	SELECT  t.[name]
-	,       c.[name]
-	,       c.[system_type_id]
-	,       c.[user_type_id]
-	,       y.[is_user_defined]
-	,       y.[name]
-	FROM sys.tables  t
-	JOIN sys.columns c on t.[object_id]    = c.[object_id]
-	JOIN sys.types   y on c.[user_type_id] = y.[user_type_id]
-	WHERE y.[name] IN
-	                (   'geography'
-	                ,   'geometry'
-	                ,   'hierarchyid'
-	                ,   'image'
-	                ,   'ntext'
-	                ,   'numeric'
-	                ,   'sql_variant'
-	                ,   'sysname'
-	                ,   'text'
-	                ,   'timestamp'
-	                ,   'uniqueidentifier'
-	                ,   'xml'
-	                )	
-	OR  (   y.[name] IN (  'nvarchar','varchar','varbinary')
-	    AND c.[max_length] = -1
-	    )
-	OR  y.[is_user_defined] = 1;
+```
+SELECT  t.[name]
+,       c.[name]
+,       c.[system_type_id]
+,       c.[user_type_id]
+,       y.[is_user_defined]
+,       y.[name]
+FROM sys.tables  t
+JOIN sys.columns c on t.[object_id]    = c.[object_id]
+JOIN sys.types   y on c.[user_type_id] = y.[user_type_id]
+WHERE y.[name] IN
+                (   'geography'
+                ,   'geometry'
+                ,   'hierarchyid'
+                ,   'image'
+                ,   'ntext'
+                ,   'numeric'
+                ,   'sql_variant'
+                ,   'sysname'
+                ,   'text'
+                ,   'timestamp'
+                ,   'uniqueidentifier'
+                ,   'xml'
+                )
+
+OR  (   y.[name] IN (  'nvarchar','varchar','varbinary')
+    AND c.[max_length] = -1
+    )
+OR  y.[is_user_defined] = 1
+;
+
 ```
 
 该查询包含任何不支持的用户定义数据类型。
@@ -110,7 +113,7 @@ SQL 数据仓库支持常见的业务数据类型：
 
 - 默认约束仅支持文本和常量。不支持非确定性表达式或函数，例如 `GETDATE()` 或 `CURRENT_TIMESTAMP`。
 
-> [AZURE.NOTE]定义表，使最大可能的行大小（包括可变长度列的完整长度）不超过 32,767 个字节。虽然定义的行可以包含超过此数据的可变长度数据，但数据将无法插入表。此外，还请限制可变长度列的大小，以便运行查询时有更大的吞吐量。
+> [AZURE.NOTE] 定义表，使最大可能的行大小（包括可变长度列的完整长度）不超过 32,767 个字节。虽然定义的行可以包含超过此数据的可变长度数据，但数据将无法插入表。此外，还请限制可变长度列的大小，以便运行查询时有更大的吞吐量。
 
 ## 数据分布原则
 
@@ -168,13 +171,13 @@ WITH
 ;
 ```
 
-> [AZURE.NOTE]请注意，上述第二个示例并未提到分布键。轮循机制是默认设置，因此不是绝对必要的。但是，最好是明确分布方式，因为这可以在审查表设计时，确保你的同事知道你的意图。
+> [AZURE.NOTE] 请注意，上述第二个示例并未提到分布键。轮循机制是默认设置，因此不是绝对必要的。但是，最好是明确分布方式，因为这可以在审查表设计时，确保你的同事知道你的意图。
 
 没有明显的键列可哈希数据时，通常使用此表类型。较小或较不重要的表（其移动成本可能不是很高）也可以使用此表类型。
 
 将数据载入轮循机制分布式表通常比载入哈希分布式表更快。使用轮循机制分布式表，加载前不需要了解数据或执行哈希。出于此原因，轮循机制表通常具有良好的加载目标。
 
-> [AZURE.NOTE]将数据进行轮循机制分布后，数据将在*缓冲区*级别分配到分布区。
+> [AZURE.NOTE] 将数据进行轮循机制分布后，数据将在*缓冲区*级别分配到分布区。
 
 ### 建议
 
@@ -194,7 +197,7 @@ WITH
 
 如下所示，哈希分布对查询优化非常有用。这就是它为何被视为数据分布优化形式的原因。
 
-> [AZURE.NOTE]请记住！ 哈希不是基于数据值，而是基于要哈希的数据类型。
+> [AZURE.NOTE] 请记住！ 哈希不是基于数据值，而是基于要哈希的数据类型。
 
 以下是根据 ProductKey 进行哈希分布的表。
 
@@ -216,7 +219,7 @@ WITH
 ;
 ```
 
-> [AZURE.NOTE]将数据进行哈希分布后，数据将在行级别分配到分布区。
+> [AZURE.NOTE] 将数据进行哈希分布后，数据将在行级别分配到分布区。
 
 ## 表分区
 支持并且可轻松定义表分区。
@@ -267,7 +270,7 @@ SQL 数据仓库中的列级统计信息由用户定义。
 2. 生成复合子句的多列统计信息
 3. 定期更新统计信息。请记住，此操作不会自动完成！
 
->[AZURE.NOTE]SQL Server 数据仓库通常完全依赖 `AUTOSTATS` 来保持列统计信息的最新状态。对于 SQL Server 数据仓库而言，这不是最佳实践。20% 的变化率将触发 `AUTOSTATS`，这对于包含数百万或数十亿行的大型事实表而言可能不太足够。因此，最好随时掌握统计信息更新，以确保统计信息能准确地反映表的基数。
+>[AZURE.NOTE] SQL Server 数据仓库通常完全依赖 `AUTOSTATS` 来保持列统计信息的最新状态。对于 SQL Server 数据仓库而言，这不是最佳实践。20% 的变化率将触发 `AUTOSTATS`，这对于包含数百万或数十亿行的大型事实表而言可能不太足够。因此，最好随时掌握统计信息更新，以确保统计信息能准确地反映表的基数。
 
 ## 不支持的功能
 SQL 数据仓库不使用或不支持以下功能：
@@ -299,4 +302,4 @@ SQL 数据仓库不使用或不支持以下功能：
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0321_2016-->

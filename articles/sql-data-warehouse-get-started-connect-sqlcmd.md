@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="10/20/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/28/2016"/>
 
 # 使用 SQLCMD 进行连接和查询
 
@@ -28,7 +28,7 @@
 
 + [sqlcmd.exe](https://msdn.microsoft.com/zh-cn/library/azure/ms162773.aspx) - 若要下载 sqlcmd.exe，请参阅[适用于 SQL Server 的 Microsoft 命令行实用程序 11](http://www.microsoft.com/zh-cn/download/details.aspx?id=36433)。
 
-## 获取可用限定的 Azure SQL 服务器名称
+## 获取完全限定的 Azure SQL 服务器名称
 
 若要连接到数据库，你需要服务器的完整名称 (****servername**.database.chinacloudapi.cn*)，该名称中包含要连接到的数据库。
 
@@ -74,4 +74,4 @@ C:\>sqlcmd -S <Server Name>.database.chinacloudapi.cn -d <Database> -U <User> -P
 <!--Image references-->
 [1]: ./media/sql-data-warehouse-get-started-connect/get-server-name.png
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0321_2016-->

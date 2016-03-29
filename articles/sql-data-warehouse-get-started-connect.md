@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="10/22/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="02/01/2016"
+   wacn.date="03/28/2016"/>
 
 # 使用 Visual Studio 连接到 SQL 数据仓库
 
@@ -22,7 +22,7 @@
 
 ## 先决条件
 
-+ SQL 数据仓库中的 AdventureWorksDW 示例数据库。 
++ SQL 数据仓库中的 AdventureWorksDW 示例数据库。若要创建此数据库，请参阅[创建 SQL 数据仓库数据库](/documentation/articles/sql-data-warehouse-get-started-provision-powershell)。 
 + SQL Server Data Tools for Visual Studio。有关安装指说明和选项，请参阅[安装 Visual Studio 和/或 SSDT](/documentation/articles/sql-data-warehouse-install-visual-studio)
 
 ## 步骤 1：查找完全限定的 Azure SQL 服务器名称
@@ -84,7 +84,7 @@
 
     ![查询结果][8]
 
- 
+
 
 
 <!--Image references-->
@@ -97,5 +97,4 @@
 [6]: ./media/sql-data-warehouse-get-started-connect/new-query2.png
 [7]: ./media/sql-data-warehouse-get-started-connect/run-query.png
 [8]: ./media/sql-data-warehouse-get-started-connect/query-results.png
-
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0321_2016-->

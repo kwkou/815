@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="11/03/2015"
-   wacn.date="01/20/2016"/>
+   ms.date="01/07/2016"
+   wacn.date="03/28/2016"/>
 
 # SQL 数据仓库中的 Create Table As Select (CTAS)
 Create Table As Select (CTAS) 是最重要的 T-SQL 功能之一。它是根据 SELECT 语句的输出创建新表的完全并行化操作。CTAS 是创建表副本的最简单快速方法。你不妨将它视为 SELECT..INTO 的增强版本。本文档提供 CTAS 的示例和最佳实践。
@@ -76,10 +76,11 @@ AS SELECT * FROM FactInternetSales;
 ```
 RENAME OBJECT FactInternetSales TO FactInternetSales_old;
 RENAME OBJECT FactInternetSales_new TO FactInternetSales;
+
 DROP TABLE FactInternetSales_old;
 ```
 
-> [AZURE.NOTE]Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为了获得查询的最佳性能，在首次加载数据或者在数据发生重大更改之后，创建所有表的所有列统计信息非常重要。有关统计信息的详细说明，请参阅开发主题组中的[统计信息][]主题。
+> [AZURE.NOTE] Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为了获得查询的最佳性能，在首次加载数据或者在数据发生重大更改之后，创建所有表的所有列统计信息非常重要。有关统计信息的详细说明，请参阅开发主题组中的[统计信息][]主题。
 
 ## 使用 CTAS 解决不支持的功能
 
@@ -90,7 +91,7 @@ CTAS 还可用于解决以下多种不支持的功能。这往往是一种经过
 - DELETE 中的 ANSI JOIN
 - MERGE 语句
 
-> [AZURE.NOTE]尽量考虑“CTAS 优先”。如果你认为可以使用 CTAS 解决问题，则它往往就是最佳的解决方法，即使你要因此写入更多的数据。
+> [AZURE.NOTE] 尽量考虑“CTAS 优先”。如果你认为可以使用 CTAS 解决问题，则它往往就是最佳的解决方法，即使你要因此写入更多的数据。
 > 
 
 ## SELECT..INTO
@@ -118,7 +119,7 @@ FROM    [dbo].[FactInternetSales]
 ;
 ```
 
-> [AZURE.NOTE]CTAS 当前需要指定分布列。如果你不想要尝试更改分布列，并选择与基础表相同的分布列作为避免数据移动的策略，则 CTAS 将以最快的速度执行。如果你正在创建小型表（其性能并非考虑因素），则可以指定 ROUND\_ROBIN 来避免对分布列做出决策。
+> [AZURE.NOTE] CTAS 当前需要指定分布列。如果你不想要尝试更改分布列，并选择与基础表相同的分布列作为避免数据移动的策略，则 CTAS 将以最快的速度执行。如果你正在创建小型表（其性能并非考虑因素），则可以指定 ROUND\_ROBIN 来避免对分布列做出决策。
 
 ## 替换 Update 语句的 ANSI Join
 
@@ -168,9 +169,8 @@ AND	[acs].[CalendarYear]				= [fis].[CalendarYear]
 
 你可以使用 CTAS 和隐式联接的组合来替换此代码：
 
-
 ```
-Create an interim table
+-- Create an interim table
 CREATE TABLE CTAS_acs
 WITH (DISTRIBUTION = ROUND_ROBIN)
 AS
@@ -187,17 +187,20 @@ GROUP BY
 		[EnglishProductCategoryName]
 ,		[CalendarYear]
 ;
-Use an implicit join to perform the update 
+
+-- Use an implicit join to perform the update 
 UPDATE  AnnualCategorySales
 SET     AnnualCategorySales.TotalSalesAmount = CTAS_ACS.TotalSalesAmount
 FROM    CTAS_acs
 WHERE   CTAS_acs.[EnglishProductCategoryName] = AnnualCategorySales.[EnglishProductCategoryName]
 AND     CTAS_acs.[CalendarYear]               = AnnualCategorySales.[CalendarYear]
 ;
-Drop the interim table
+
+--Drop the interim table
 DROP TABLE CTAS_acs
 ;
 ```
+
 ## 替换 Delete 语句的 ANSI Join
 有时，删除数据的最佳方法是使用 CTAS。除了删除数据以外，可以只选择想要保留的数据。这对于使用 ANSI 联接语法的 DELETE 语句尤其适用，因为 SQL 数据仓库不支持在 DELETE 语句的 FROM 子句中使用 ANSI Join。
 
@@ -217,6 +220,7 @@ FROM       dbo.DimProduct p
 RIGHT JOIN dbo.stg_DimProduct s 
 ON         p.ProductKey = s.ProductKey
 ;
+
 RENAME OBJECT dbo.DimProduct        TO DimProduct_old;
 RENAME OBJECT dbo.DimProduct_upsert TO DimProduct;
 ```
@@ -250,8 +254,10 @@ WHERE NOT EXISTS
     WHERE   s.[ProductKey] = p.[ProductKey]
 )
 ;
+
 RENAME OBJECT dbo.[DimProduct]          TO [DimProduct_old];
 RENAME OBJECT dbo.[DimpProduct_upsert]  TO [DimProduct];
+
 ```
 
 ## CTAS 建议：显式声明数据类型和输出是否可为 null
@@ -261,10 +267,12 @@ RENAME OBJECT dbo.[DimpProduct_upsert]  TO [DimProduct];
 ```
 DECLARE @d decimal(7,2) = 85.455
 ,       @f float(24)    = 85.455
+
 CREATE TABLE result
 (result DECIMAL(7,2) NOT NULL
 )
 WITH (DISTRIBUTION = ROUND_ROBIN)
+
 INSERT INTO result
 SELECT @d*@f 
 ;
@@ -278,12 +286,14 @@ SELECT @d*@f
 DECLARE @d decimal(7,2) = 85.455
 ,       @f float(24)    = 85.455
 ;
+
 CREATE TABLE ctas_r
 WITH (DISTRIBUTION = ROUND_ROBIN)
 AS
 SELECT @d*@f as result
 ;
 ```
+
 请注意，列“result”沿用表达式的数据类型和可为 null 的值。如果你不小心处理，可能会导致值存在细微的差异。
 
 尝试使用以下内容作为示例：
@@ -292,6 +302,7 @@ SELECT @d*@f as result
 SELECT result,result*@d
 from result
 ;
+
 SELECT result,result*@d
 from ctas_r
 ;
@@ -312,6 +323,7 @@ from ctas_r
 ```
 DECLARE @d decimal(7,2) = 85.455
 ,       @f float(24)    = 85.455
+
 CREATE TABLE ctas_r
 WITH (DISTRIBUTION = ROUND_ROBIN)
 AS
@@ -319,12 +331,12 @@ SELECT ISNULL(CAST(@d*@f AS DECIMAL(7,2)),0) as result
 ```
 
 请注意以下事项：
-- CAST 或 CONVERT 可能已被使用
-- ISNULL 用于强制可为 Null 而不是 COALESCE
-- ISNULL 是最外层的函数
+- CAST 或 CONVERT 可能已被使用 
+- ISNULL 用于强制可为 Null 而不是 COALESCE 
+- ISNULL 是最外层的函数 
 - ISNULL 的第二个部分是常量，即 0
 
-> [AZURE.NOTE]若要正确设置可为 null 属性，必须使用 ISNULL 而不是 COALESCE。COALESCE 不是确定性的函数，因此表达式的结果始终可为 Null。ISNULL 则不同。它是确定性的。因此当 ISNULL 函数的第二个部分是常量或文本时，结果值将是 NOT NULL。
+> [AZURE.NOTE] 若要正确设置可为 null 属性，必须使用 ISNULL 而不是 COALESCE。COALESCE 不是确定性的函数，因此表达式的结果始终可为 Null。ISNULL 则不同。它是确定性的。因此当 ISNULL 函数的第二个部分是常量或文本时，结果值将是 NOT NULL。
 
 此技巧不仅可用于确保计算的完整性，它对表分区切换也很重要。假设你根据事实定义了此表：
 
@@ -417,4 +429,4 @@ OPTION (LABEL = 'CTAS : Partition IN table : Create');
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0321_2016-->
