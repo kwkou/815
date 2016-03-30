@@ -12,7 +12,7 @@
 	wacn.date="03/28/2016"/>
 
 # Azure 流量管理器预览版对 Azure 资源管理器的支持
-Azure 资源管理器 (ARM) 是针对 Azure 中的服务的新管理框架。现在，你可以使用基于 Azure 资源管理器的 API 和工具来管理 Azure 流量管理器配置文件。若要了解有关 Azure 资源组的详细信息，请参阅[使用资源组管理 Azure 资源](/documentation/articles/azure-preview-portal-using-resource-groups)。
+Azure 资源管理器 (ARM) 是针对 Azure 中的服务的新管理框架。现在，你可以使用基于 Azure 资源管理器的 API 和工具来管理 Azure 流量管理器配置文件。
 
 ## 资源模型
 

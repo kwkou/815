@@ -32,8 +32,8 @@
 |区域|优化|
 |---|---|
 |**VM 大小**|SQL Enterprise 版本为 [DS3](/documentation/articles/virtual-machines-size-specs#standard-tier-ds-series) 或更高。SQL 标准版和 Web 版本为 <br/><br/>[DS2](/documentation/articles/virtual-machines-size-specs#standard-tier-ds-series) 或更高。|
-|**存储**|使用[高级存储](/documentation/articles/storage-premium-storage-preview-portal)。<br/><br/>使[存储帐户](/documentation/articles/storage-create-storage-account)和 SQL Server VM 保存在同一个区域中。<br/><br/>禁用存储帐户上的 Azure [异地冗余存储](/documentation/articles/storage-redundancy)（异地复制）。|
-|**磁盘**|至少使用 2 个 [P30 磁盘](/documentation/articles/storage-premium-storage-preview-portal#scalability-and-performance-targets-when-using-premium-storage)（1 个用于日志文件；1 个用于数据文件和 TempDB）。<br/><br/>避免将操作系统磁盘或临时磁盘用于数据库存储或日志记录。<br/><br/>在托管数据文件和 TempDB 的磁盘上启用读缓存。<br/><br/>请勿在托管日志文件的磁盘上启用缓存。<br/><br/>条带化多个 Azure 数据磁盘以获得更高的 IO 吞吐量。<br/><br/>使用文档中记录的分配大小格式化。|
+|**存储**|使用[高级存储](/documentation/articles/storage-premium-storage)。<br/><br/>使[存储帐户](/documentation/articles/storage-create-storage-account)和 SQL Server VM 保存在同一个区域中。<br/><br/>禁用存储帐户上的 Azure [异地冗余存储](/documentation/articles/storage-redundancy)（异地复制）。|
+|**磁盘**|至少使用 2 个 [P30 磁盘](/documentation/articles/storage-premium-storage#scalability-and-performance-targets-when-using-premium-storage)（1 个用于日志文件；1 个用于数据文件和 TempDB）。<br/><br/>避免将操作系统磁盘或临时磁盘用于数据库存储或日志记录。<br/><br/>在托管数据文件和 TempDB 的磁盘上启用读缓存。<br/><br/>请勿在托管日志文件的磁盘上启用缓存。<br/><br/>条带化多个 Azure 数据磁盘以获得更高的 IO 吞吐量。<br/><br/>使用文档中记录的分配大小格式化。|
 |**I/O**|启用数据库页压缩。<br/><br/>为数据文件启用即时文件初始化。<br/><br/>限制或禁用数据库的自动增长。<br/><br/>禁用数据库的自动收缩。<br/><br/>将所有数据库都移到数据磁盘，包括系统数据库。<br/><br/>将 SQL Server 错误日志和跟踪文件目录移至数据磁盘。<br/><br/>设置默认的备份和数据库文件的位置。<br/><br/>启用锁定的页。<br/><br/>应用 SQL Server 性能修复程序。|
 |**特定于功能**|直接备份到 blob 存储。|
 
@@ -71,7 +71,7 @@
 
 ### 数据磁盘
 
-- **用于数据和日志文件的数据磁盘数目**：至少使用 2 个 [P30 磁盘](/documentation/articles/storage-premium-storage-preview-portal#scalability-and-performance-targets-when-using-premium-storage)，其中一个磁盘包含日志文件，另一个包含数据文件和 TempDB。要实现更大的吞吐量，你可能需要更多数据磁盘。若要确定数据磁盘数，你需要分析可用于数据和日志磁盘的 IOPS 数。要获取该信息，请参阅以下文章中有关每个 [VM 大小](/documentation/articles/virtual-machines-size-specs)和磁盘大小的 IOPS 的表：[使用磁盘的高级存储](/documentation/articles/storage-premium-storage-preview-portal)。如果需要更多带宽，则可以使用磁盘条带化附加更多的磁盘。如果使用的不是高级存储，建议添加 [VM 大小](/documentation/articles/virtual-machines-size-specs)支持的最大数量的数据磁盘并使用磁盘条带化。有关磁盘条带化的详细信息，请参阅下面的相关部分。
+- **用于数据和日志文件的数据磁盘数目**：至少使用 2 个 [P30 磁盘](/documentation/articles/storage-premium-storage#scalability-and-performance-targets-when-using-premium-storage)，其中一个磁盘包含日志文件，另一个包含数据文件和 TempDB。要实现更大的吞吐量，你可能需要更多数据磁盘。若要确定数据磁盘数，你需要分析可用于数据和日志磁盘的 IOPS 数。要获取该信息，请参阅以下文章中有关每个 [VM 大小](/documentation/articles/virtual-machines-size-specs)和磁盘大小的 IOPS 的表：[使用磁盘的高级存储](/documentation/articles/storage-premium-storage)。如果需要更多带宽，则可以使用磁盘条带化附加更多的磁盘。如果使用的不是高级存储，建议添加 [VM 大小](/documentation/articles/virtual-machines-size-specs)支持的最大数量的数据磁盘并使用磁盘条带化。有关磁盘条带化的详细信息，请参阅下面的相关部分。
 
 - **缓存策略**：仅在托管你的数据文件和 TempDB 的数据磁盘上启用读缓存。如果使用的不是高级存储，不要在任何数据磁盘上启用任何缓存。有关配置磁盘缓存的说明，请参阅以下主题：[Set-AzureOSDisk](https://msdn.microsoft.com/zh-cn/library/azure/jj152847) 和 [Set-AzureDataDisk](https://msdn.microsoft.com/zh-cn/library/azure/jj152851.aspx)。
 

@@ -18,7 +18,7 @@
 
 ## 概述
 
-[Azure 高级存储](/documentation/articles/storage-premium-storage-preview-portal)是下一代提供低延迟和高吞吐量 IO 的存储。它最适用于关键 IO 密集型工作负荷，例如 IaaS [虚拟机](/home/features/virtual-machines/)上的 SQL Server。
+[Azure 高级存储](/documentation/articles/storage-premium-storage)是下一代提供低延迟和高吞吐量 IO 的存储。它最适用于关键 IO 密集型工作负荷，例如 IaaS [虚拟机](/home/features/virtual-machines/)上的 SQL Server。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
@@ -146,7 +146,7 @@
 
 存储量性能取决于指定的 DS* VM 大小和 VHD 大小。VM 针对可附加的 VHD 数量以及它们支持的最大带宽（MB/秒）提供不同限额。有关特定带宽数字，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-size-specs)。
 
-较大的磁盘大小可提高 IOPS。当你考虑迁移路径时，应考虑这一点。有关详细信息，[请参阅 IOPS 和磁盘类型的表](/documentation/articles/storage-premium-storage-preview-portal#scalability-and-performance-targets-when-using-premium-storage)。
+较大的磁盘大小可提高 IOPS。当你考虑迁移路径时，应考虑这一点。有关详细信息，[请参阅 IOPS 和磁盘类型的表](/documentation/articles/storage-premium-storage#scalability-and-performance-targets-when-using-premium-storage)。
 
 最后，考虑到 VM 具有不同的最大磁盘带宽，它们将支持所有附加磁盘。在高负载下可使可供该 VM 角色大小使用的最大磁盘带宽饱和。例如，Standard\_DS14 将最多支持 512MB/秒；因此，使用三个 P30 磁盘可使 VM 的磁盘带宽饱和。但在此示例中，可以超出吞吐量限制，具体取决于读取和写入 IO 的组合。
 
@@ -1124,7 +1124,7 @@
 	![Appendix15][25]
 
 ## 其他资源
-- [Azure 高级存储](/documentation/articles/storage-premium-storage-preview-portal)
+- [Azure 高级存储](/documentation/articles/storage-premium-storage)
 - [虚拟机](/home/features/virtual-machines/)
 - [Azure 虚拟机中的 SQL Server](/documentation/articles/virtual-machines-sql-server-infrastructure-services)
 

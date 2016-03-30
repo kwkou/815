@@ -29,7 +29,7 @@
 
 *   Dv2 系列，原 D 系列的后续，拥有更加强大的 CPU。Dv2 系列的 CPU 大概比 D 系列的快 35%。它是基于最新一代 2.4 GHz Intel Xeon® E5-2673 v3 (Haswell) 处理器， 且使用了 Intel Turbo Boost Technology 2.0，最高可达 3.2 GHz。Dv2 系列拥有和 D 系列一样的内存以及硬盘设置。
 
-*   DS 系列的 VM 可使用高级存储，从而为 I/O 密集型工作负荷提供高性能、低延迟的存储。这些 VM 使用固态硬盘 (SSD) 托管虚拟机的磁盘，而且还提供本地 SSD 磁盘高速缓存。高级存储只在某些区域可用。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)。
+*   DS 系列的 VM 可使用高级存储，从而为 I/O 密集型工作负荷提供高性能、低延迟的存储。这些 VM 使用固态硬盘 (SSD) 托管虚拟机的磁盘，而且还提供本地 SSD 磁盘高速缓存。高级存储只在某些区域可用。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)。
 
 *   A 系列 VMs 可能会被发布到各种硬件类型和处理器上。根据硬件的不同，大小会被压制，以提供持续的处理器性能给运行中的示例。想知道物理硬件的情况，可以在虚拟机中查询。
 
@@ -135,7 +135,7 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 |Standard\_DS13 |8|56|8|本地 SSD 磁盘 = 112 GB |16|288| 25,600 每秒 256 MB |
 |Standard\_DS14 |16|112|8|本地 SSD 磁盘 = 224 GB |32|576| 50,000 每秒 512 MB |
 
-*DS 系列 VM 可能的最大每秒输入/输出操作次数 (IOPS) 和吞吐量（带宽）受磁盘大小影响。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)。
+*DS 系列 VM 可能的最大每秒输入/输出操作次数 (IOPS) 和吞吐量（带宽）受磁盘大小影响。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)。
 
 ### 另请参阅
 
