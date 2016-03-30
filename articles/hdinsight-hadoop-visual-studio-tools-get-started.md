@@ -49,7 +49,7 @@
 ## 连接到 Azure 订阅
 适用于 Visual Studio 的 HDInsight 工具允许你连接到 HDInsight 群集，执行一些基本的管理操作，并运行 Hive 查询。
 
->[AZURE.NOTE]有关连接到常规 Hadoop 群集（预览版）的信息，请参阅[使用 Visual Studio 编写和提交 Hive 查询](http://blogs.msdn.com/b/xiaoyong/archive/2015/05/04/how-to-write-and-submit-hive-queries-using-visual-studio.aspx)。
+>[AZURE.NOTE]有关连接到常规 Hadoop 群集的信息，请参阅[使用 Visual Studio 编写和提交 Hive 查询](http://blogs.msdn.com/b/xiaoyong/archive/2015/05/04/how-to-write-and-submit-hive-queries-using-visual-studio.aspx)。
 
 
 **连接到 Azure 订阅**

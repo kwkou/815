@@ -35,7 +35,7 @@
 
 你可以在 Azure 管理门户中使用“快速创建”或“自定义创建”选项预配 HDInsight 群集。有关说明，请参阅以下链接：
 
-- [使用“快速创建”设置群集](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1#provision)
+- [使用“快速创建”设置群集](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 - [使用“自定义创建”设置群集](/documentation/articles/hdinsight-provision-clusters-v1#portal)
 
 [AZURE.INCLUDE [数据中心列表](../includes/hdinsight-pricing-data-centers-clusters.md)]

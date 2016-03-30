@@ -49,7 +49,7 @@
 
 2. 选择定价**层**，并使用“大小”下拉菜单选择所需的相应 VM 大小。每种大小都指定了计算核心的数量、内存以及其他功能，比如对高级存储的支持，这将对价格产生影响。根据所选的映像，Azure 将自动推荐特定的大小。
 
-	>[AZURE.NOTE] 高级存储可用于 DS 系列虚拟机，该虚拟机尚不可在门户中配置。但是，你可以使用 Azure PowerShell 创建 DS 系列虚拟机。高级存储是数据密集型工作负荷（如数据库）的最佳存储选项。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)。
+	>[AZURE.NOTE] 高级存储可用于 DS 系列虚拟机，该虚拟机尚不可在门户中配置。但是，你可以使用 Azure PowerShell 创建 DS 系列虚拟机。高级存储是数据密集型工作负荷（如数据库）的最佳存储选项。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)。
 
 3. 单击“下一步”按钮以查看新 VM 的存储和网络设置。对于第一个 VM，一般可以接受默认设置。
 
