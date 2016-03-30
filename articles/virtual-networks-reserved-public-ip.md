@@ -66,7 +66,7 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 A
 
 ## 如何将保留 IP 关联到已存在的云服务
 
-你可以添加 “-ServiceName” 参数，把保留 IP 关联到已存在的云服务。把保留 IP 关联到名为 “TestService”，在“中国北部”的云服务，请运行一下 PowerShell 命令：
+你可以添加 “-ServiceName” 参数，把保留 IP 关联到已存在的云服务。把保留 IP 关联到名为 “TestService”，在“中国北部”的云服务，请运行以下 PowerShell 命令：
 
 	New-AzureReservedIP -ReservedIPName MyReservedIP -Location "China North" -ServiceName TestService
 
