@@ -98,24 +98,6 @@
 
 
 
-### 标识域名
-
-代码中需要用到域名。轻松标识正确域名的一种方式是：
-
-1. 转到 [Azure 门户](http://manage.windowsazure.cn)。
-2. 将鼠标悬停在右上角的名称上，并记下弹出窗口中显示的域。
-
-    ![标识域名。][3]
-
-
-
-
-
-**其他 AAD 资源**
-
-在[这篇有用的博客文章](http://www.cloudidentity.com/blog/2013/09/12/active-directory-authentication-library-adal-v1-for-net-general-availability)中，可以找到有关使用 Azure Active Directory 进行身份验证的其他信息。
-
-
 ### 检索当前用户的访问令牌 
 
 客户端应用程序必须检索当前用户的应用程序访问令牌。当用户首次执行此代码时，系统会提示用户输入其用户凭据，生成的令牌将在本地缓存。后续的执行将从缓存中检索令牌，并且仅在令牌已过期时才提示用户登录。
