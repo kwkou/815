@@ -55,130 +55,128 @@
 
 对于使用实体框架的应用程序，最简单的方法是根据[使用 EF DbContext 进行数据相关的路由](/documentation/articles/sql-database-elastic-scale-use-entity-framework-applications-visual-studio/#data-dependent-routing-using-ef-dbcontext)中所述，在 ElasticScaleContext 重写中设置 SESSION\_CONTEXT。在返回通过数据相关路由中转的连接之前，只需创建并执行一个 SqlCommand，以便将 SESSION\_CONTEXT 中的“TenantId”设置为针对该连接指定的 shardingKey。这样，只需编写代码一次就能设置 SESSION\_CONTEXT。
 
-```
-// ElasticScaleContext.cs 
-// ... 
-// C'tor for data dependent routing. This call will open a validated connection routed to the proper 
-// shard by the shard map manager. Note that the base class c'tor call will fail for an open connection 
-// if migrations need to be done and SQL credentials are used. This is the reason for the  
-// separation of c'tors into the DDR case (this c'tor) and the internal c'tor for new shards. 
-public ElasticScaleContext(ShardMap shardMap, T shardingKey, string connectionStr)
-    : base(OpenDDRConnection(shardMap, shardingKey, connectionStr), true /* contextOwnsConnection */)
-{
-}
+	
+	// ElasticScaleContext.cs 
+	// ... 
+	// C'tor for data dependent routing. This call will open a validated connection routed to the proper 
+	// shard by the shard map manager. Note that the base class c'tor call will fail for an open connection 
+	// if migrations need to be done and SQL credentials are used. This is the reason for the  
+	// separation of c'tors into the DDR case (this c'tor) and the internal c'tor for new shards. 
+	public ElasticScaleContext(ShardMap shardMap, T shardingKey, string connectionStr)
+	    : base(OpenDDRConnection(shardMap, shardingKey, connectionStr), true /* contextOwnsConnection */)
+	{
+	}
+	
+	public static SqlConnection OpenDDRConnection(ShardMap shardMap, T shardingKey, string connectionStr)
+	{
+	    // No initialization
+	    Database.SetInitializer<ElasticScaleContext<T>>(null);
+	
+	    // Ask shard map to broker a validated connection for the given key
+	    SqlConnection conn = null;
+	    try
+	    {
+	        conn = shardMap.OpenConnectionForKey(shardingKey, connectionStr, ConnectionOptions.Validate);
+	
+	        // Set TenantId in SESSION_CONTEXT to shardingKey to enable Row-Level Security filtering
+	        SqlCommand cmd = conn.CreateCommand();
+	        cmd.CommandText = @"exec sp_set_session_context @key=N'TenantId', @value=@shardingKey";
+	        cmd.Parameters.AddWithValue("@shardingKey", shardingKey);
+	        cmd.ExecuteNonQuery();
+	
+	        return conn;
+	    }
+	    catch (Exception)
+	    {
+	        if (conn != null)
+	        {
+	            conn.Dispose();
+	        }
+	
+	        throw;
+	    }
+	} 
+	// ... 
 
-public static SqlConnection OpenDDRConnection(ShardMap shardMap, T shardingKey, string connectionStr)
-{
-    // No initialization
-    Database.SetInitializer<ElasticScaleContext<T>>(null);
-
-    // Ask shard map to broker a validated connection for the given key
-    SqlConnection conn = null;
-    try
-    {
-        conn = shardMap.OpenConnectionForKey(shardingKey, connectionStr, ConnectionOptions.Validate);
-
-        // Set TenantId in SESSION_CONTEXT to shardingKey to enable Row-Level Security filtering
-        SqlCommand cmd = conn.CreateCommand();
-        cmd.CommandText = @"exec sp_set_session_context @key=N'TenantId', @value=@shardingKey";
-        cmd.Parameters.AddWithValue("@shardingKey", shardingKey);
-        cmd.ExecuteNonQuery();
-
-        return conn;
-    }
-    catch (Exception)
-    {
-        if (conn != null)
-        {
-            conn.Dispose();
-        }
-
-        throw;
-    }
-} 
-// ... 
-```
 
 现在，每当调用 ElasticScaleContext 时，系统就会自动将 SESSION\_CONTEXT 设置为指定的 TenantId：
 
-```
-// Program.cs 
-SqlDatabaseUtils.SqlRetryPolicy.ExecuteAction(() => 
-{   
-	using (var db = new ElasticScaleContext<int>(sharding.ShardMap, tenantId, connStrBldr.ConnectionString))   
-	{     
-		var query = from b in db.Blogs
-	                orderby b.Name
-	                select b;
-		
-		Console.WriteLine("All blogs for TenantId {0}:", tenantId);     
-		foreach (var item in query)     
-		{       
-			Console.WriteLine(item.Name);     
-		}   
-	} 
-}); 
-```
+	// Program.cs 
+	SqlDatabaseUtils.SqlRetryPolicy.ExecuteAction(() => 
+	{   
+		using (var db = new ElasticScaleContext<int>(sharding.ShardMap, tenantId, connStrBldr.ConnectionString))   
+		{     
+			var query = from b in db.Blogs
+		                orderby b.Name
+		                select b;
+			
+			Console.WriteLine("All blogs for TenantId {0}:", tenantId);     
+			foreach (var item in query)     
+			{       
+				Console.WriteLine(item.Name);     
+			}   
+		} 
+	}); 
+
 
 ### ADO.NET SqlClient 
 
 对于使用 ADO.NET SqlClient 的应用程序，建议的方法是围绕 ShardMap.OpenConnectionForKey() 创建一个包装函数，用于在返回连接之前将 SESSION\_CONTEXT 中的“TenantId”自动设置为正确的 TenantId。为确保始终设置 SESSION\_CONTEXT，应只使用此包装函数打开连接。
 
-```
-// Program.cs
-// ...
+	
+	// Program.cs
+	// ...
+	
+	// Wrapper function for ShardMap.OpenConnectionForKey() that automatically sets SESSION_CONTEXT with the correct
+	// tenantId before returning a connection. As a best practice, you should only open connections using this 
+	// method to ensure that SESSION_CONTEXT is always set before executing a query.
+	public static SqlConnection OpenConnectionForTenant(ShardMap shardMap, int tenantId, string connectionStr)
+	{
+	    SqlConnection conn = null;
+	    try
+	    {
+	        // Ask shard map to broker a validated connection for the given key
+	        conn = shardMap.OpenConnectionForKey(tenantId, connectionStr, ConnectionOptions.Validate);
+	
+	        // Set TenantId in SESSION_CONTEXT to shardingKey to enable Row-Level Security filtering
+	        SqlCommand cmd = conn.CreateCommand();
+	        cmd.CommandText = @"exec sp_set_session_context @key=N'TenantId', @value=@shardingKey";
+	        cmd.Parameters.AddWithValue("@shardingKey", tenantId);
+	        cmd.ExecuteNonQuery();
+	
+	        return conn;
+	    }
+	    catch (Exception)
+	    {
+	        if (conn != null)
+	        {
+	            conn.Dispose();
+	        }
+	
+	        throw;
+	    }
+	}
 
-// Wrapper function for ShardMap.OpenConnectionForKey() that automatically sets SESSION_CONTEXT with the correct
-// tenantId before returning a connection. As a best practice, you should only open connections using this 
-// method to ensure that SESSION_CONTEXT is always set before executing a query.
-public static SqlConnection OpenConnectionForTenant(ShardMap shardMap, int tenantId, string connectionStr)
-{
-    SqlConnection conn = null;
-    try
-    {
-        // Ask shard map to broker a validated connection for the given key
-        conn = shardMap.OpenConnectionForKey(tenantId, connectionStr, ConnectionOptions.Validate);
+	// ...
 
-        // Set TenantId in SESSION_CONTEXT to shardingKey to enable Row-Level Security filtering
-        SqlCommand cmd = conn.CreateCommand();
-        cmd.CommandText = @"exec sp_set_session_context @key=N'TenantId', @value=@shardingKey";
-        cmd.Parameters.AddWithValue("@shardingKey", tenantId);
-        cmd.ExecuteNonQuery();
+	// Example query via ADO.NET SqlClient
+	// If row-level security is enabled, only Tenant 4's blogs will be listed
+	SqlDatabaseUtils.SqlRetryPolicy.ExecuteAction(() =>
+	{
+	    using (SqlConnection conn = OpenConnectionForTenant(sharding.ShardMap, tenantId4, connStrBldr.ConnectionString))
+	    {
+	        SqlCommand cmd = conn.CreateCommand();
+	        cmd.CommandText = @"SELECT * FROM Blogs";
+	
+	        Console.WriteLine("--\nAll blogs for TenantId {0} (using ADO.NET SqlClient):", tenantId4);
+	        SqlDataReader reader = cmd.ExecuteReader();
+	        while (reader.Read())
+	        {
+	            Console.WriteLine("{0}", reader["Name"]);
+	        }
+	    }
+	});
 
-        return conn;
-    }
-    catch (Exception)
-    {
-        if (conn != null)
-        {
-            conn.Dispose();
-        }
-
-        throw;
-    }
-}
-
-// ...
-
-// Example query via ADO.NET SqlClient
-// If row-level security is enabled, only Tenant 4's blogs will be listed
-SqlDatabaseUtils.SqlRetryPolicy.ExecuteAction(() =>
-{
-    using (SqlConnection conn = OpenConnectionForTenant(sharding.ShardMap, tenantId4, connStrBldr.ConnectionString))
-    {
-        SqlCommand cmd = conn.CreateCommand();
-        cmd.CommandText = @"SELECT * FROM Blogs";
-
-        Console.WriteLine("--\nAll blogs for TenantId {0} (using ADO.NET SqlClient):", tenantId4);
-        SqlDataReader reader = cmd.ExecuteReader();
-        while (reader.Read())
-        {
-            Console.WriteLine("{0}", reader["Name"]);
-        }
-    }
-});
-
-```
 
 ## 步骤 2) 数据层：创建行级安全策略
 
