@@ -10,7 +10,7 @@
 <tags
     ms.service="sql-database"
     ms.date="11/04/2015"
-    wacn.date="01/05/2016"/>
+    wacn.date="03/29/2016"/>
 
 # 弹性数据库功能概述
 

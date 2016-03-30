@@ -10,13 +10,15 @@
 <tags 
 	ms.service="sql-database"
 	ms.date="11/04/2015" 
-	wacn.date="01/05/2016"/>
+	wacn.date="03/29/2016"/>
 
 # 多分片查询
 
 ## 概述
 
 你可以使用[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-introduction)创建分片数据库解决方案。**多分片查询**用于诸如数据收集/报告等需要跨多个分片运行查询的任务。（相比之下，[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)会在单个分片上执行所有操作。）
+
+## 概述
 
 你可以使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)管理分片。该库包括名为 **Microsoft.Azure.SqlDatabase.ElasticScale.Query** 的命名空间，你可以通过该空间使用单个查询和结果来查询多个分片。它提供对分片集合进行查询抽象的功能。它还提供了备用执行策略，尤其是部分结果，以处理在对多个分片进行查询时所出现的故障。
 

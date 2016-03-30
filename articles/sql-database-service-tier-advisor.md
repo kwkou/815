@@ -10,7 +10,7 @@
 <tags
    ms.service="sql-database"
    ms.date="02/08/2016"
-   wacn.date="03/24/2016"/>
+   wacn.date="03/29/2016"/>
 
 # SQL 数据库定价层建议
 
@@ -22,7 +22,7 @@
 在执行以下任务期间获取定价层建议：
 
 - [更改 SQL 数据库的服务层和性能级别（定价层）](/documentation/articles/sql-database-scale-up)
-- [将 Azure SQL 服务器升级到 V12](/documentation/articles/sql-database-upgrade-server-portal)
+- [将 Azure SQL 服务器升级到 V12](/documentation/articles/sql-database-v12-upgrade)
 - 浏览到 V12 服务器 - 如果你的数据库可以从弹性数据库池受益，服务器边栏选项卡将显示一条消息来指出建议的池。单击该消息可以创建建议的池。
 - [创建弹性数据库池](/documentation/articles/sql-database-elastic-pool/#elastic-database-pool-pricing-tier-recommendations)
 
@@ -58,12 +58,10 @@ SQL 数据库服务会通过评估 SQL 数据库的历史资源使用量，来�
 
 <!--Image references-->
 [1]: ./media/sql-database-service-tier-advisor/select-database.png
-[2]: ./media/sql-database-service-tier-advisor/pricing-tier.png
-[3]: ./media/sql-database-service-tier-advisor/preview-sign-up.png
 [4]: ./media/sql-database-service-tier-advisor/choose-pricing-tier.png
 [5]: ./media/sql-database-service-tier-advisor/usage-details.png
 
 
  
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0321_2016-->

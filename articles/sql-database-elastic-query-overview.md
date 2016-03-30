@@ -8,15 +8,15 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="10/15/2015"
-    wacn.date="12/22/2015" />
+    ms.date="01/22/2016"
+    wacn.date="03/29/2016" />
 # Azure SQL 数据库弹性数据库查询概述（预览版）
 
 使用弹性数据库查询功能（处于预览状态）可以跨 Azure SQL 数据库 (SQLDB) 中的多个数据库运行 Transact-SQL 查询。它允许你执行跨数据库查询以访问远程表，以及连接 Microsoft 和第三方工具（Excel、PowerBI、Tableau 等）以跨多个数据库的数据层进行查询。使用此功能，可以将查询扩大到 SQL 数据库中的较大数据层，并直观显示商业智能 (BI) 报表中的结果。若要开始构建弹性数据库查询应用程序，请参阅[弹性数据库查询入门](/documentation/articles/sql-database-elastic-query-getting-started)。
 
 ## 弹性数据库查询的新增功能
 
-* 现在可以在 T-SQL 中完全定义使用单个远程数据库的跨数据库查询方案。这允许对远程数据库进行只读查询。这为当前的本地 SQL Server 客户提供了一个选项，将使用由三部分和四部分组成的名称或链接服务器的应用程序迁移到 SQL 数据库。 
+* 现在可以在 T-SQL 中完全定义使用单个远程数据库的跨数据库查询方案。这允许对远程数据库进行只读查询。这为当前的本地 SQL Server 客户提供了一个选项，将使用由三部分和四部分组成的名称或链接服务器的应用程序迁移到 SQL 数据库。
 * 除了高级性能层之外，现在标准性能层也支持弹性查询。有关较低性能层的性能限制，请参阅下面有关预览版限制的部分。
 * 弹性查询现在可以将 SQL 参数推送到远程数据库执行。
 * 使用 sp\_execute\_fanout 的远程存储过程调用或远程函数调用现在可以使用类似于 [sp\_executesql](https://msdn.microsoft.com/zh-cn/library/ms188001.aspx) 的参数。
@@ -25,7 +25,8 @@
 
 ## 弹性数据库查询方案
 
-目标是便于实现多个数据库参与生成单个总体结果中的行的查询方案。查询可以由用户或应用程序直接编写，也可以通过与数据库连接的工具间接编写。这在使用商业 BI 或数据集成工具创建报表或任何不能更改的应用程序时特别有用。使用弹性查询，你可以利用 Excel、PowerBI、Tableau 或 Cognos 等工具中熟悉的 SQL Server 连接体验跨多个数据库进行查询。弹性查询可让你通过 SQL Server Management Studio 或 Visual Studio 发出的查询轻松访问整个数据库集合，并便于实现从实体框架或其他 ORM 环境跨数据库查询。图 1 显示了这样一个方案：其中使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)的现有云应用程序在扩大的数据层的基础上构建，并且弹性查询用于跨数据库报告。
+目标是便于实现多个数据库参与生成单个总体结果中的行的查询方案。查询可以由用户或应用程序直接编写，也可以通过与数据库连接的工具间接编写。这在使用商业 BI 或数据集成工具创建报表或任何不能更改的应用程序时特别有用。使用弹性查询，你可以利用 Excel、PowerBI、Tableau 或 Cognos 等工具中熟悉的 SQL Server 连接体验跨多个数据库进行查询。
+弹性查询可让你通过 SQL Server Management Studio 或 Visual Studio 发出的查询轻松访问整个数据库集合，并便于实现从实体框架或其他 ORM 环境跨数据库查询。图 1 显示了这样一个方案：其中使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)的现有云应用程序在扩大的数据层的基础上构建，并且弹性查询用于跨数据库报告。
 
 **图 1** 在扩大的数据层上使用的弹性数据库查询
 
@@ -34,9 +35,9 @@
 弹性查询的客户方案的特征包括以下拓扑：
 
 * **垂直分区 - 跨数据库查询**（拓扑 1）：在数据层中的多个数据库之间对数据进行垂直分区。通常，不同的表集驻留在不同的数据库上。这意味着不同数据库上的架构是不同的。例如，清单的所有表都位于一个数据库上，而与会计相关的所有表都位于第二个数据库上。采用此拓扑的常见使用案例需要使用一个查询跨多个数据库中的表进行查询或编译报表。
-* **水平分区 - 分片**（拓扑 2）：将数据进行水平分区以将行分布到扩大的数据层上。使用此方法时，所有参与数据库中的架构是相同的。此方法也称为“分片”。可以使用 (1) 弹性数据库客户端库或 (2) 自我分片来执行和管理分片。可使用弹性查询跨多个分片查询或编译报表。 
+* **水平分区 - 分片**（拓扑 2）：将数据进行水平分区以将行分布到扩大的数据层上。使用此方法时，所有参与数据库中的架构是相同的。此方法也称为“分片”。可以使用 (1) 弹性数据库客户端库或 (2) 自我分片来执行和管理分片。可使用弹性查询跨多个分片查询或编译报表。
 
-> [AZURE.NOTE]弹性数据库查询最适合于其中大部分处理可以在数据层上执行的临时报告方案。对于使用更复杂查询的大量报表工作负荷或数据仓库方案，还可以考虑使用 [Azure SQL 数据仓库](http://azure.microsoft.com/services/sql-data-warehouse/)。
+> [AZURE.NOTE] 弹性数据库查询最适合于其中大部分处理可以在数据层上执行的临时报告方案。对于使用更复杂查询的大量报表工作负荷或数据仓库方案，还可以考虑使用 [Azure SQL 数据仓库](/home/features/sql-data-warehouse)。
 
 
 ## 弹性数据库查询拓扑
@@ -69,7 +70,7 @@
 
 ![水平分区 - 使用弹性查询实现分片数据层上的报告][5]
 
-> [AZURE.NOTE]专用弹性数据库查询数据库必须是 SQL 数据库 v12 数据库。对分片本身没有任何限制。
+> [AZURE.NOTE] 专用弹性数据库查询数据库必须是 SQL 数据库 v12 数据库。对分片本身没有任何限制。
 
 
 ## 实现弹性数据库查询
@@ -80,24 +81,25 @@
 
 以下步骤为需要访问远程 SQLDB 数据库上的表的垂直分区方案配置弹性数据库查询：
 
-*    [CREATE MASTER KEY](https://msdn.microsoft.com/zh-cn/library/ms174382.aspx) mymasterkey 
+*    [CREATE MASTER KEY](https://msdn.microsoft.com/zh-cn/library/ms174382.aspx) mymasterkey
 *    [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/zh-cn/library/mt270260.aspx) mycredential
 *    [CREATE/DROP EXTERNAL DATA SOURCE](https://msdn.microsoft.com/zh-cn/library/dn935022.aspx) mydatasource of type **RDBMS**
 *    [CREATE/DROP EXTERNAL TABLE](https://msdn.microsoft.com/zh-cn/library/dn935021.aspx) mytable
 
 运行 DDL 语句后，你可以访问远程表“mytable”就像它是本地表一样。Azure SQL 数据库将自动打开与远程数据库的连接，处理远程数据库上的请求并返回结果。有关垂直分区方案所需的步骤的详细信息，可以在[垂直分区的弹性查询](/documentation/articles/sql-database-elastic-query-vertical-partitioning)中找到。
 
-### 水平分区 - 分片 
+### 水平分区 - 分片
 
 以下步骤为需要访问（通常）位于多个远程 SQLDB 数据库上的一组表的水平分区方案配置弹性数据库查询：
 
 *    [CREATE MASTER KEY](https://msdn.microsoft.com/zh-cn/library/ms174382.aspx) mymasterkey
-*    [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/zh-cn/library/mt270260.aspx) mycredential 
+*    [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/zh-cn/library/mt270260.aspx) mycredential
 *    使用弹性数据库客户端库创建表示数据层的[分片映射](/documentation/articles/sql-database-elastic-scale-shard-map-management)。   
 *    [CREATE/DROP EXTERNAL DATA SOURCE](https://msdn.microsoft.com/zh-cn/library/dn935022.aspx) mydatasource of type **SHARD\_MAP\_MANAGER**
 *    [CREATE/DROP EXTERNAL TABLE](https://msdn.microsoft.com/zh-cn/library/dn935021.aspx) mytable
 
-执行这些步骤后，你便可以访问水平分区的表“mytable”就像它是本地表一样。Azure SQL 数据库将自动打开与远程数据库（在其中表以物理方式存储）的多个并行连接，处理远程数据库上的请求并返回结果。有关水平分区方案所需的步骤的详细信息，可以在[水平分区的弹性查询](/documentation/articles/sql-database-elastic-query-horizontal-partitioning)中找到。
+执行这些步骤后，你便可以访问水平分区的表“mytable”就像它是本地表一样。Azure SQL 数据库将自动打开与远程数据库（在其中表以物理方式存储）的多个并行连接，处理远程数据库上的请求并返回结果。
+有关水平分区方案所需的步骤的详细信息，可以在[水平分区的弹性查询](/documentation/articles/sql-database-elastic-query-horizontal-partitioning)中找到。
 
 ## T-SQL 查询
 你定义外部数据源和外部表后，便可以使用常规 SQL Server 连接字符串连接到你在其中定义了外部表的数据库。然后可以通过该连接对外部表运行 T-SQL 语句，但具有下述限制。你可以在[水平分区](/documentation/articles/sql-database-elastic-query-horizontal-partitioning)和[垂直分区](/documentation/articles/sql-database-elastic-query-vertical-partitioning)的文档主题中找到 T-SQL 查询的详细信息和示例。
@@ -107,12 +109,12 @@
 
 ## 成本
 
-弹性查询包含在 Azure SQL 数据库的数据库成本中。请注意，支持远程数据库与弹性查询终结点在不同的数据中心的拓扑，但将按常规 [Azure 费率](https://azure.microsoft.com/pricing/details/data-transfers/)对远程数据库的数据流出量进行收费。
+弹性查询包含在 Azure SQL 数据库的数据库成本中。请注意，支持远程数据库与弹性查询终结点在不同的数据中心的拓扑，但将按常规 [Azure 费率](/pricing/details/data-transfer)对远程数据库的数据流出量进行收费。
 
 ## 预览版限制
 * 在标准性能层上运行第一个弹性查询可能需要长达几分钟时间。此时间是加载弹性查询功能所必需的；使用更高级性能层可提高加载性能。
 * 尚不支持从 SSMS 或 SSDT 对外部数据源或外部表进行脚本编写。
-* SQL 数据库的导入/导出尚不支持外部数据源和外部表。如果需要使用导入/导出，请在导出之前删除这些对象，然后在导入后重新创建它们。 
+* SQL 数据库的导入/导出尚不支持外部数据源和外部表。如果需要使用导入/导出，请在导出之前删除这些对象，然后在导入后重新创建它们。
 * 弹性数据库查询当前仅支持对外部表进行只读访问。但是，你可以对在其中定义了外部表的数据库使用完整的 T-SQL 功能。这可能对以下操作很有用：例如，使用（例如）SELECT <column_list> INTO <local_table> 持久保存临时结果，或在引用外部表的弹性查询数据库中定义存储过程。
 * 除了 nvarchar (max) 外，外部表定义也不支持 LOB 类型。一种解决方法是，可以在远程数据库上创建将 LOB 类型强制转换为 nvarchar(max) 的视图，通过该视图（而不是基表）定义外部表，然后在查询中将其强制转换回原始 LOB 类型。
 * 当前不支持外部表上的列统计信息。支持表统计信息，但需要手动创建。
@@ -130,7 +132,7 @@
 
 有关水平分区和分片方案的详细信息可在此处找到：
 
-* [水平分区和分片概述](/documentation/articles/sql-database-elastic-query-horizontal-partitioning) 
+* [水平分区和分片概述](/documentation/articles/sql-database-elastic-query-horizontal-partitioning)
 * 建议阅读可让完整的工作示例在几分钟内运行的分步教程：[弹性数据库查询入门 - 水平分区（分片）](/documentation/articles/sql-database-elastic-query-getting-started)。
 
 
@@ -145,4 +147,4 @@
 
 <!--anchors-->
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0314_2016-->

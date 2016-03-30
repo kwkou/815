@@ -9,7 +9,7 @@
 <tags 
 	ms.service="sql-database"
 	ms.date="11/04/2015" 
-	wacn.date="01/05/2016"/>
+	wacn.date="03/29/2016"/>
 
 # 将弹性数据库客户端库与 Dapper 配合使用 
 
@@ -28,7 +28,7 @@ Dapper 中的映射器功能对数据库连接提供扩展方法，可以简化�
  
 Dapper 和 DapperExtensions 的另一个优点在于，应用程序可以控制数据库连接的创建。这有助于与弹性数据库客户端库交互，从而可以通过将 shardlet 映射到数据库来中转数据库连接。
 
-若要获取 Dapper 程序集，请参阅 [Dapper .NET](http://www.nuget.org/packages/Dapper/)。有关 Dapper 扩展，请参阅 [DapperExtensions](http://www.nuget.org/packages/DapperExtensions)。
+若要获取 Dapper 程序集，请参阅 [Dapper .NET](http://www.nuget.org/packages/Dapper)。有关 Dapper 扩展，请参阅 [DapperExtensions](http://www.nuget.org/packages/DapperExtensions)。
 
 ## 弹性数据库客户端库速览
 

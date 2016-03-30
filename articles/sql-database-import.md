@@ -1,5 +1,5 @@
 <properties
-	pageTitle="导入 BACPAC 文件以创建新的 Azure SQL 数据库"
+	pageTitle="导入 BACPAC 文件以创建新的 Azure SQL 数据库 | Azure"
 	description="通过导入现有的 BACPAC 文件创建新的 Azure SQL 数据库。"
 	services="sql-database"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/17/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/20/2016"
+	wacn.date="03/29/2016"
 
 
 # 导入 BACPAC 文件以创建新的 Azure SQL 数据库
@@ -81,7 +81,7 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
 
 ## 后续步骤
 
-- [使用 SQL Server Management Studio (SSMS) 进行连接](/documentation/articles/sql-database-connect-to-database)
+- [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms)
 
 
 
@@ -98,4 +98,4 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
 [5]: ./media/sql-database-import/import-history.png
 [6]: ./media/sql-database-import/import-status.png
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0314_2016-->

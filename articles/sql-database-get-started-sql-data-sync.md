@@ -9,20 +9,20 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/27/2015"
-	wacn.date="02/26/2016"/>
+	ms.date="01/19/2016"
+	wacn.date="03/29/2016"/>
 
 
-# Azure SQL 数据同步入门（预览版）
-在本教程中，你将了解使用 Azure 经典门户的 Azure SQL 数据同步的基础知识。
+#Azure SQL 数据同步入门（预览版）
+在本教程中，你将了解使用 Azure 管理门户的 Azure SQL 数据同步的基础知识。
 
 本教程假定你之前未使用过 SQL Server 和 Azure SQL 数据库。在本教程中，你将创建一个完全配置且按既定计划同步的混合（SQL Server 和 SQL 数据库实例）同步组。
 
-> [AZURE.NOTE] Azure SQL 数据同步的完整技术文档集以前放置在 MSDN 中，现在则是单个的 .pdf，可以在[此处](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf)下载。
+> [AZURE.NOTE] 有关 Azure SQL 数据同步的完整技术文档集以前位于 MSDN 中，现在以 .pdf 文件提供。可从[此处](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf)下载。
 
 ## 步骤 1：连接到 Azure SQL 数据库
 
-1. 登录到[经典门户](http://manage.windowsazure.cn)。
+1. 登录到[管理门户](http://manage.windowsazure.cn)。
 
 2. 在左窗格中，单击“SQL 数据库”。
 
@@ -87,7 +87,7 @@
 <a id="StartNewSGWizard"></a>
 ### 步骤 4a：启动新建同步组向导
 
-1.	返回到[经典门户](http://manage.windowsazure.cn)。
+1.	返回到[管理门户](http://manage.windowsazure.cn)。
 2.	单击“SQL 数据库”。
 3.	单击页面底部的“添加同步”，然后从下拉列表中选择“新建同步组”。
 
@@ -152,7 +152,7 @@
 
 利用 Azure SQL 数据同步，你可以选择要同步的表和列。如果你还希望对列进行筛选以便仅同步具有特定值（如 Age>=65）的行，请使用 Azure 的 SQL 数据同步门户以及“选择要同步的表、列和行”文档，来定义要同步的数据。
 
-1.	返回到[经典门户](http://manage.windowsazure.cn)。
+1.	返回到[管理门户](http://manage.windowsazure.cn)。
 2.	单击“SQL 数据库”。
 3.	单击“同步”选项卡。
 4.	单击此同步组的名称。
@@ -173,7 +173,7 @@
 
 您可以始终通过单击数据同步登录页底部的“同步”来对同步组执行同步操作。如果您希望某个同步组按照计划同步，请配置该同步组。
 
-1.	返回到[经典门户](http://manage.windowsazure.cn)。
+1.	返回到[管理门户](http://manage.windowsazure.cn)。
 2.	单击“SQL 数据库”。
 3.	单击“同步”选项卡。
 4.	单击此同步组的名称。
@@ -199,4 +199,4 @@
 
  
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0314_2016-->

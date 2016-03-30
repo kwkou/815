@@ -10,8 +10,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="01/15/2016"
-   wacn.date="02/26/2016"/>
+   ms.date="02/01/2016"
+   wacn.date="03/29/2016"/>
 
 # Azure SQL 数据库 Transact-SQL 的差异
 
@@ -49,7 +49,8 @@ SQL 数据库 V12 支持相应 SQL Server 2016 Transact-SQL 语句中存在的�
 
 - 系统对象的排序规则
 - 连接相关：终结点语句、ORIGINAL\_DB\_NAME。Windows 身份验证不可用于登录名或包含的数据库用户。
-- 跨数据库查询、跨数据库所有权链接、TRUSTWORTHY 设置
+- INSERT、UPDATE 和 DELETE 操作的跨数据库查询。（支持只读跨数据库查询。）
+- 跨数据库所有权链接, TRUSTWORTHY 设置
 - 数据收集器
 - 数据库关系图
 - 数据库邮件
@@ -102,4 +103,4 @@ Transact-SQL 参考包含从 SQL Server 2008 到最新版本的相关主题。�
 
 在某些情况下，产品中可能使用了某个主题的常规主旨，但产品之间存在细微的差异。在适当的情况下，我们会在主题的中间位置指出差异。
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0321_2016-->

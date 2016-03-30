@@ -1,17 +1,17 @@
 <properties
-	title="Getting started with elastic database query"
-	pageTitle="弹性数据库查询入门"
-	description="如何使用弹性数据库查询"
-	metaKeywords="azure sql database elastic queries"
+	pageTitle="用于分片的弹性查询（水平分区）入门 | Azure"
+	description="如何使用跨数据库数据库查询"
 	services="sql-database"
 	documentationCenter=""  
 	manager="jeffreyg"
 	authors="sidneyh"/>
 
 <tags
-	ms.service="sql-database" ms.date="06/23/2015" wacn.date="08/14/2015" />
+	ms.service="sql-database"
+	ms.date="01/22/2016"
+	wacn.date="03/29/2016" />
 
-# 弹性数据库查询入门
+# 用于分片的弹性查询（水平分区）入门
 
 Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连接点运行跨多个数据库的 T-SQL 查询。有关弹性数据库查询功能的详细信息，请参阅[功能概述页](/documentation/articles/sql-database-elastic-query-overview)。
 
@@ -24,12 +24,12 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 
 在此处，你将创建分片映射管理器以及多个分片，然后将数据插入分片。如果你的分片中正好设置了分片数据，则你可以跳过下面的步骤，直接转到下一部分。
 
-1. 生成并运行**弹性数据库工具入门**示例应用程序。一直执行到[下载和运行示例应用](/documentation/articles/sql-database-elastic-scale-get-started)部分中的步骤 7。在步骤 7 结束时，你将看到以下命令提示符：
+1. 生成并运行**弹性数据库工具入门**示例应用程序。一直执行到[下载和运行示例应用](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools)部分中的步骤 7。在步骤 7 结束时，你将看到以下命令提示符：
 
 	![命令提示符][1]
 
 2.  在命令窗口中键入“1”，然后按 **Enter**。这会创建分片映射管理器，并将两个分片添加到服务器。然后键入“3”并按 **Enter**；重复该操作四次。这会在你的分片中插入示例数据行。
-3.  [Azure 预览门户](https://manage.windowsazure.cn)应会在 v12 服务器中显示三个新的数据库：
+3.  [Azure 门户](https://manage.windowsazure.cn)应会在 v12 服务器中显示三个新的数据库：
 
 	![Visual Studio 确认][2]
 
@@ -40,11 +40,11 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 ## 创建弹性查询数据库
 
 1. 打开 [Azure 门户](https://manage.windowsazure.cn)并登录。
-2. 在与分片设置相同的服务器中创建新的 Azure SQL 数据库。将数据库命名为“ElasticDBQuery”。 对于定价层，必须选择一个高级产品。弹性数据库查询目前只能在高级层上使用。
+2. 在与分片设置相同的服务器中创建新的 Azure SQL 数据库。将数据库命名为“ElasticDBQuery”。
 
 	![Azure 门户和定价层][3]
 
-	注意：你可以使用现有的高级数据库。如果这样做，该数据库不能是你想要对其运行查询的某一个分片。此数据库将用于为弹性数据库查询创建元数据对象。
+	注意：你可以使用现有的数据库。如果这样做，该数据库不能是你想要对其运行查询的某一个分片。此数据库将用于为弹性数据库查询创建元数据对象。
 
 
 ## 创建数据库对象
@@ -58,12 +58,11 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 
 		CREATE MASTER KEY ENCRYPTION BY PASSWORD = '<password>';
 
-		CREATE CREDENTIAL ElasticDBQueryCred ON DATABASE
+		CREATE DATABASE SCOPED CREDENTIAL ElasticDBQueryCred
 		WITH IDENTITY = '<username>',
 		SECRET = '<password>';
 
-	“username”和“password”应该与[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started)中[下载和运行示例应用](/documentation/articles/sql-database-elastic-scale-get-started)的步骤 6 中使用的登录信息相同。
-
+	“username”和“password”应该与[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started)中[下载和运行示例应用](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools)的步骤 6 中使用的登录信息相同。
 
 ### 外部数据源
 
@@ -85,7 +84,7 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 
 	CREATE EXTERNAL TABLE [dbo].[Customers]
 	( [CustomerId] [int] NOT NULL,
-	  [Name] [nvarchar](/documentation/articles/256) NOT NULL,
+	  [Name] [nvarchar](256) NOT NULL,
 	  [RegionId] [int] NOT NULL)
 	WITH
 	( DATA_SOURCE = MyElasticDBQueryDataSrc,
@@ -113,7 +112,7 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 3. 	单击“从其他源”，然后单击“从 SQL Server”。
 
 	![从其他源导入 Excel][5]
-4. 	在“数据连接向导”中，键入服务器名称和登录凭据。然后单击“下一步”。
+4. 	在“数据连接向导”中，键入服务器名称和登录凭据。然后，单击“下一步”。
 5. 	在对话框“选择包含所需数据的数据库”中，选择 **ElasticDBQuery** 数据库。
 6. 	在列表视图中选择“客户”表并单击“下一步”。然后单击“完成”。
 7. 	在“导入数据”窗体中的“请选择该数据在工作簿中的显示方式”下，选择“表”，然后单击“确定”。
@@ -121,10 +120,10 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 存储在不同分片中、来自“客户”表的所有行将填入 Excel 工作表。
 
 ## 后续步骤
-现在，你可以使用 Excel 的强大数据功能。你可以使用包含服务器名称、数据库名称和凭据的连接字符串，将 BI 和数据集成工具连接到弹性查询数据库。请确保支持将 SQL Server 用作工具的数据源。你可以引用弹性查询数据库和外部表，就如同使用工具连接的任何其他 SQL Server 数据库和 SQL Server 表一样。
+现在，你可以使用 Excel 的强大数据可视化功能。你可以使用包含服务器名称、数据库名称和凭据的连接字符串，将 BI 和数据集成工具连接到弹性查询数据库。请确保支持将 SQL Server 用作工具的数据源。你可以引用弹性查询数据库和外部表，就如同使用工具连接的任何其他 SQL Server 数据库和 SQL Server 表一样。
 
 ### 成本
-使用弹性数据库查询功能不会产生额外的费用。但是，目前此功能只能在用作终结点的高级数据库上使用，但分片可以是任何服务层。
+使用弹性数据库查询功能不会产生额外的费用。
 
 有关价格信息，请参阅 [SQL 数据库定价详细信息](/home/features/sql-database/#price)。
 
@@ -139,4 +138,4 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=66-->
+<!---HONumber=Mooncake_0314_2016-->

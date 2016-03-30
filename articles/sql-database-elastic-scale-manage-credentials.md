@@ -8,14 +8,13 @@
 	editor=""/>
 
 <tags 
-	ms.service="sql-database"
-	ms.date="11/11/2015" 
-	wacn.date="01/05/2016"/>
-
+	ms.service="sql-database" 
+	ms.date="02/04/2016" 
+	wacn.date="03/29/2016"/>
 
 # 用于访问弹性数据库客户端库的凭据
 
-[弹性数据库客户端库](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/)使用三种不同的凭据。这些凭据用于访问[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management)。使用凭据时，应根据需要尽可能采用最低访问级别。
+[弹性数据库客户端库](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client)使用三种不同的凭据来访问[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management)。使用凭据时，应根据需要尽可能采用最低访问级别。
 
 * **管理凭据**：用于创建或操作分片映射管理器。（请参阅[词汇表](/documentation/articles/sql-database-elastic-scale-glossary)。） 
 * **访问凭据**：用于访问现有分片映射管理器以获取有关分片的信息。
@@ -23,9 +22,9 @@
 
 另请参阅[管理 Azure SQL 数据库的数据库和登录名](/documentation/articles/sql-database-manage-logins)。
  
-## 管理凭据  
+## 关于管理凭据
 
-使用管理凭据可以针对操作分片映射的应用程序创建 [**ShardMapManager**](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.aspx) 对象。（例如，请参阅[使用弹性数据库工具添加分片](/documentation/articles/sql-database-elastic-scale-add-a-shard)。） 弹性缩放客户端库的用户创建 SQL 用户和 SQL 登录，并确保在全局分片映射数据库以及所有分片数据库上授予每个用户读/写权限。对分片映射执行更改时，这些凭据将用于维护全局分片映射和局部分片映射。例如，使用管理凭据创建分片映射管理器对象（使用 [**GetSqlShardMapManager**](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.getsqlshardmapmanager.aspx)）：
+使用管理凭据可以针对操作分片映射的应用程序创建 [**ShardMapManager**](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.aspx) 对象。有关示例，请参阅[使用弹性数据库工具添加分片](/documentation/articles/sql-database-elastic-scale-add-a-shard)和[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)）。弹性缩放客户端库的用户创建 SQL 用户和 SQL 登录，并确保在全局分片映射数据库以及所有分片数据库上授予每个用户读/写权限。对分片映射执行更改时，这些凭据将用于维护全局分片映射和局部分片映射。例如，使用管理凭据创建分片映射管理器对象（使用 [**GetSqlShardMapManager**](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.getsqlshardmapmanager.aspx)）：
 
 	// Obtain a shard map manager. 
 	ShardMapManager shardMapManager = ShardMapManagerFactory.GetSqlShardMapManager( 
@@ -67,11 +66,11 @@
 ## 另请参阅
 [在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins)
 
-[如何将用户添加到弹性数据库池](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs)
+[保护你的 SQL 数据库](/documentation/articles/sql-database-security)
 
 [弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started)
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0314_2016-->

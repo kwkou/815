@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags 
-	ms.service="sql-database"
-	ms.date="11/04/2015" 
-	wacn.date="01/05/2016"/>
+	ms.service="sql-database" 
+	ms.date="02/01/2016" 
+	wacn.date="03/29/2016"/>
 
 # 弹性数据库工具常见问题 
 
@@ -52,4 +52,4 @@
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0314_2016-->

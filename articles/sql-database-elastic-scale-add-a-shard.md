@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags 
-	ms.service="sql-database"
-	ms.date="11/04/2015"
-	wacn.date="01/05/2016"/>
+	ms.service="sql-database" 
+	ms.date="01/27/2016" 
+	wacn.date="03/29/2016"/>
 
 # 使用弹性数据库工具添加分片
 
@@ -21,7 +21,7 @@
 如果新的键值范围还不是现有映射的组成部分，则添加新分片以及将新的键或范围关联到该分片非常简单。
 
 ### 示例：将分片及其范围添加到现有的分片映射
-在以下示例中，创建了一个名为 **sample\_shard\_2** 的数据库以及其中所有必要的架构对象，用于保存范围 [300, 400)。
+本示例使用 [TryGetShard](https://msdn.microsoft.com/zh-cn/library/azure/dn823929.aspx)、[CreateShard](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmap.createshard.aspx), [CreateRangeMapping](https://msdn.microsoft.com/zh-cn/library/azure/dn807221.aspx#M:Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.RangeShardMap`1.CreateRangeMapping(Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.RangeMappingCreationInfo{`0})) 方法，并创建的 [ShardLocation](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardlocation.shardlocation.aspx#M:Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.ShardLocation.) 类的实例。在以下示例中，创建了一个名为 **sample\_shard\_2** 的数据库以及其中所有必要的架构对象，用于保存范围 [300, 400)。
 
     // sm is a RangeShardMap object.
     // Add a new shard to hold the range being added. 
@@ -75,4 +75,4 @@
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0314_2016-->

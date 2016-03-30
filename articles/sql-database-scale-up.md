@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="02/02/2016"
-	wacn.date="03/24/2016"/>
+	ms.date="02/02/2015"
+	wacn.date="03/29/2016"
 
 
 # 更改 SQL 数据库的服务层和性能级别（定价层）
@@ -23,7 +23,7 @@
 
 本文介绍如何使用 [Azure 门户](https://manage.windowsazure.cn)更改 SQL 数据库的服务层和性能级别。
 
-使用[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-server-portal)和 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers)中的信息为 Azure SQL 数据库确定适当的服务层和性能级别。
+使用[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-new-service-tiers)和 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers)中的信息为 Azure SQL 数据库确定适当的服务层和性能级别。
 
 > [AZURE.IMPORTANT] 更改 SQL 数据库的服务层和性能级别是一项联机操作。这意味着在整个操作期间数据库将保持联机并可用而没有停机时间。
 
@@ -31,6 +31,7 @@
 - 在启用了[标准异地复制](/documentation/articles/sql-database-business-continuity-design)或[活动异地复制](/documentation/articles/sql-database-geo-replication-overview)的情况下升级数据库时，必须先将次要数据库升级到所需的性能层，然后再升级主数据库。
 - 从高级服务层降级时，必须先终止所有异地复制关系。你可以按照[终止连续复制关系](/documentation/articles/sql-database-disaster-recovery)主题中所述的步骤停止主数据库与活动次要数据库之间的复制过程。
 - 各服务层提供的还原服务是不同的。如果进行降级，你可能无法再还原到某个时间点，或者备份保留期变短。有关详细信息，请参阅 [Azure SQL 数据库备份和还原](/documentation/articles/sql-database-business-continuity)。
+- 更改数据库定价层不会更改最大数据库大小。若要更改数据库最大大小，请使用 [Transact-SQL (T-SQL)](https://msdn.microsoft.com/zh-cn/library/mt574871.aspx) 或 [PowerShell](https://msdn.microsoft.com/zh-cn/library/mt619433.aspx)。
 - 你可以在 24 小时内进行最多四项单独的数据库更改（服务层或性能级别）。
 - 所做的更改完成之前不会应用数据库的新属性。
 
@@ -50,12 +51,12 @@
 2.	单击“浏览全部”。
 3.	单击“SQL 数据库”。
 2.	单击要更改的数据库。
-3.	在 SQL 数据库边栏选项卡中，单击“定价层”磁贴：
+3.	在“SQL 数据库”边栏选项卡上，单击“所有设置”，然后单击“定价层(规模 DTU)”：
 1.  选择新层，然后单击“选择”：
 
     单击“选择”将提交更改数据库层的缩放请求。根据数据库的大小，缩放操作可能需要一些时间才能完成。单击通知可了解缩放操作的详细信息和状态。
 
-
+    > [AZURE.NOTE] 更改数据库定价层不会更改最大数据库大小。若要更改数据库最大大小，请使用 [Transact-SQL (T-SQL)](https://msdn.microsoft.com/zh-cn/library/mt574871.aspx) 或 [PowerShell](https://msdn.microsoft.com/zh-cn/library/mt619433.aspx)。
 
 3.	在左侧功能区中，单击“通知”：
 
@@ -68,11 +69,12 @@
 2.	单击“浏览全部”。
 3.	单击“SQL 数据库”。
 2.	单击已更新的数据库。
-3.	检查**定价层**磁贴，并确认它已设置为正确的层。
+3.	检查“定价层”，确认它已设置为正确的层。
 
 
 ## 后续步骤
 
+- 更改数据库最大大小，使用 [Transact-SQL (T-SQL)](https://msdn.microsoft.com/zh-cn/library/mt574871.aspx) 或 [PowerShell](https://msdn.microsoft.com/zh-cn/library/mt619433.aspx)。
 - [扩大和缩小](/documentation/articles/sql-database-elastic-scale-get-started)
 - [使用 SSMS 连接和查询 SQL 数据库](/documentation/articles/sql-database-connect-query-ssms)
 - [导出 Azure SQL 数据库](/documentation/articles/sql-database-export)
@@ -89,4 +91,4 @@
 [3]: ./media/sql-database-scale-up/scale-notification.png
 [4]: ./media/sql-database-scale-up/new-tier.png
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0321_2016-->

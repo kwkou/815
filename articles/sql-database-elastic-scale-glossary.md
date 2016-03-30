@@ -8,9 +8,9 @@
     editor=""/>
 
 <tags 
-    ms.service="sql-database"
-    ms.date="11/04/2015" 
-    wacn.date="01/05/2016"/>
+    ms.service="sql-database" 
+    ms.date="02/01/2016" 
+    wacn.date="03/29/2016"/>
 
 # 弹性数据库工具词汇表
 Azure SQL 数据库的[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-introduction)的术语定义如下。这些工具用于管理[分片映射](/documentation/articles/sql-database-elastic-scale-shard-map-management)，包括[客户端库](/documentation/articles/sql-database-elastic-database-client-library)、[拆分/合并工具](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)、[弹性池](/documentation/articles/sql-database-elastic-pool)和[查询](/documentation/articles/sql-database-elastic-query-overview)。
@@ -21,7 +21,7 @@ Azure SQL 数据库的[弹性数据库工具](/documentation/articles/sql-databa
 
 **数据库**：Azure SQL 数据库。
 
-**数据相关的路由**：使应用程序能够连接到给定了特定分片键的分片的功能。与**多分片查询**进行比较。
+**数据相关的路由**：使应用程序能够连接到给定了特定分片键的分片的功能。请参阅[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)。与[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying)进行比较。
 
 **全局分片映射**：**分片集**内分片键及其各自分片之间的映射。全局分片映射存储在**分片映射管理器**中。与**局部分片映射**进行比较。
 
@@ -78,4 +78,4 @@ Azure SQL 数据库的[弹性数据库工具](/documentation/articles/sql-databa
 [3]: ./media/sql-database-elastic-scale-glossary/h_versus_vert.png
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0314_2016-->

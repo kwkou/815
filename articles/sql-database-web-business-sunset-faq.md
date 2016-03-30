@@ -1,4 +1,4 @@
-<properties 
+<properties
    pageTitle="Azure SQL 数据库 Web 和 Business Edition 版停用常见问题 | Azure"
    description="了解 Azure SQL Web 和企业数据库何时停用，并了解新服务层的特性和功能。"
    services="sql-database"
@@ -6,10 +6,10 @@
    authors="stevestein"
    manager="jeffreyg"
    editor="monicar" />
-<tags 
+<tags
    ms.service="sql-database"
-   ms.date="09/30/2015"
-   wacn.date="01/05/2016" />
+   ms.date="12/01/2015"
+   wacn.date="03/29/2016" />
 
 # Web 和 Business Edition 停用常见问题
 
@@ -19,15 +19,15 @@ Azure SQL Web 和企业数据库现已停用。基本、标准、高级和弹性
 
 **获取定价层建议：**
 
-- [使用 Azure 门户升级到 SQL 数据库 V12](/documentation/articles/sql-database-v12-upgrade)
-- [使用 PowerShell 升级到 SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server)
+- [使用 Azure 门户升级到 SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server-portal)
+- [使用 PowerShell 升级到 SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server-powershell)
 - [更改 Web 或企业数据库的定价层](/documentation/articles/sql-database-service-tier-advisor)
- 
 
 
-## 为何 Azure 管理门户显示我的 Web 和 Business Edition 数据库已停用？
 
-由于 Web 和 Business Edition 数据库在 2015 年 9 月后将不可用，因此管理门户将 Web 和企业数据库标记为“已停用”。你仍可以像平时一样设置和管理 Web 与企业数据库，“已停用”标签只是提醒你，最好为新数据库使用基本、标准或高级服务层。“已停用”标签还旨在提醒你应该将所有 Web 和企业数据库升级到标准、基本和高级服务层。有关将现有 Web 或企业数据库升级到新服务层的详细信息，请参阅[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-new-service-tiers)。
+## 为何 Azure 门户显示我的 Web 和 Business Edition 数据库已停用？
+
+由于 Web 和 Business Edition 数据库在 2015 年 9 月后将不可用，因此门户将 Web 和企业数据库标记为“已停用”。你仍可以像平时一样设置和管理 Web 与企业数据库，“已停用”标签只是提醒你，最好为新数据库使用基本、标准或高级服务层。“已停用”标签还旨在提醒你应该将所有 Web 和企业数据库升级到标准、基本和高级服务层。有关将现有 Web 或企业数据库升级到新服务层的详细信息，请参阅[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-new-service-tiers)。
 
 ## 最好是将我的现有 Web 或企业数据库升级到哪个新服务层？
 
@@ -58,8 +58,10 @@ Azure SQL Web 和企业数据库现已停用。基本、标准、高级和弹性
 
 [Azure SQL 数据库](/documentation/services/sql-databases)
 
+[Web 版和企业版定价](/home/features/sql-database/#price/web-business)
+
 [服务层](/documentation/articles/sql-database-service-tiers)
 
 [将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-new-service-tiers)
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0321_2016-->

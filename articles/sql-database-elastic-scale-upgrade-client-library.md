@@ -8,12 +8,12 @@
 
 <tags 
 	ms.service="sql-database"
-	ms.date="02/01/2016"
-	wacn.date="02/19/2016" />
+	ms.date="11/04/2015" 
+	wacn.date="03/29/2016" />
 
 # 升级到最新的弹性数据库客户端库
 
-可通过 [NuGet](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/) 和 Visual Studio 中的 NuGet 包管理器界面获取[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)的新版本。升级包含客户端库的 bug 修复和新功能支持。
+可通过 [NuGet](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client) 和 Visual Studio 中的 NuGet 包管理器界面获取[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)的新版本。升级包含客户端库的 bug 修复和新功能支持。
 
 使用新库重新生成你的应用程序，以及更改 Azure SQL 数据库中存储的现有分片映射管理器元数据以支持新功能。
 
@@ -30,9 +30,9 @@
  
  * 生成并部署。
 
-**2.升级你的脚本。** 如果你使用 **PowerShell** 脚本来管理分片，请[下载新的库版本](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/)并将其复制到你从其执行脚本的目录中。
+**2.升级你的脚本。** 如果你使用 **PowerShell** 脚本来管理分片，请[下载新的库版本](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client)并将其复制到你从其执行脚本的目录中。
 
-**3.升级拆分/合并服务。** 如果你使用弹性数据库拆分/合并工具来重新组织分片数据，请[下载并部署最新版本的工具](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/)。可在[此处](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)找到该服务的详细升级步骤。
+**3.升级拆分/合并服务。** 如果你使用弹性数据库拆分/合并工具来重新组织分片数据，请[下载并部署最新版本的工具](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge)。可在[此处](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)找到该服务的详细升级步骤。
 
 **4.升级分片映射管理器数据库**。升级 Azure SQL 数据库中支持分片映射的元数据。有两种方法可以完成此操作：使用 PowerShell 或 C#。这两个选项在下面说明。
 

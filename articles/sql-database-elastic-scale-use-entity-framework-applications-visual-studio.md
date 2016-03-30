@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags 
-	ms.service="sql-database"
-	ms.date="11/04/2015" 
-	wacn.date="01/05/2016"/>
+	ms.service="sql-database" 
+	ms.date="02/04/2016" 
+	wacn.date="03/29/2016"/>
 
 # 将弹性数据库客户端库与实体框架配合使用 
  
@@ -266,9 +266,9 @@ MyContext(DbConnection, DbCompiledModel,bool) |ElasticScaleContext(ShardMap, TKe
 
 * 给定一个请求，假设它所有的数据库处理包含在单个分片内，如该请求所提供的分片键所标识的那样。但是，此假设并不总是有效。例如，当无法提供分片键时。为解决此问题，客户端库提供 **MultiShardQuery** 类，此类可实现连接抽象以用于在多个分片上查询。学习结合使用 **MultiShardQuery** 和 EF 不在本文档的范围内。
 
-## 结论 
+## 结束语
 
-实体框架应用程序可以轻松享用 Azure SQL 数据库中的弹性数据库工具带来的好处。通过本文档中概述的步骤，EF 应用程序可以通过重构 EF 应用程序中使用的 **DbContext** 子类的构造函数来使用弹性数据库客户端库的数据相关路由功能。这将所需的更改限制到 **DbContext** 类已经存在的位置。此外，EF 应用程序可以通过将调用必要的 EF 迁移的步骤与新分片的注册和分片映射中的映射进行结合，来继续从自动架构部署中受益。
+通过本文档中概述的步骤，EF 应用程序可以通过重构 EF 应用程序中使用的 **DbContext** 子类的构造函数来使用弹性数据库客户端库的数据相关路由功能。这将所需的更改限制到 **DbContext** 类已经存在的位置。此外，EF 应用程序可以通过将调用必要的 EF 迁移的步骤与新分片的注册和分片映射中的映射进行结合，来继续从自动架构部署中受益。
 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
@@ -277,4 +277,4 @@ MyContext(DbConnection, DbCompiledModel,bool) |ElasticScaleContext(ShardMap, TKe
 [1]: ./media/sql-database-elastic-scale-use-entity-framework-applications-visual-studio/sample.png
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0314_2016-->

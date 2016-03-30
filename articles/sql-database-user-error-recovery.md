@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="11/09/2015"
-   wacn.date="01/29/2016"/>
+   ms.date="02/09/2016"
+   wacn.date="03/29/2016"/>
 
 # 在发生用户错误后恢复 Azure SQL 数据库
 
@@ -19,7 +19,7 @@ Azure SQL 数据库提供两个核心功能，用于在发生用户错误或意�
 - 时间点还原 
 - 还原已删除的数据库
 
-可以在这篇[博客文章](http://azure.microsoft.com/blog/2014/10/01/azure-sql-database-point-in-time-restore)中了解到有关这些功能的详细信息。
+可以在这篇[博客文章](https://azure.microsoft.com/blog/2014/10/01/azure-sql-database-point-in-time-restore)中了解到有关这些功能的详细信息。
 
 Azure SQL 数据库始终会还原到新数据库。这些还原功能适用于所有基本、标准和高级数据库。
 
@@ -43,7 +43,7 @@ Azure SQL 数据库始终会还原到新数据库。这些还原功能适用于�
 ###PowerShell
 使用 PowerShell 以编程方式通过 [Start-AzureSqlDatabaseRestore](https://msdn.microsoft.com/zh-cn/library/dn720218.aspx?f=255&MSPPError=-2147217396) cmdlet 执行时间点还原操作。
 
-> [AZURE.IMPORTANT] 本文包含的命令适用于最高版本为 1.0（*但不含*）的 Azure PowerShell。可以使用 **Get-Module azure | format-table version** 命令查看 Azure PowerShell 的版本。
+> [AZURE.IMPORTANT] 本文包含的命令适用于最高版本为 1.0（但不含）的 Azure PowerShell。可以使用 **Get-Module azure | format-table version** 命令查看 Azure PowerShell 的版本。
 
 		$Database = Get-AzureSqlDatabase -ServerName "YourServerName" –DatabaseName “YourDatabaseName”
 		$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceDatabase $Database –TargetDatabaseName “NewDatabaseName” –PointInTime “2015-01-01 06:00:00”
@@ -72,7 +72,7 @@ Azure SQL 数据库始终会还原到新数据库。这些还原功能适用于�
 1. 登录到 [Azure 门户](https://manage.windowsazure.cn)
 2. 在屏幕左侧选择“浏览”，然后选择“SQL Sever”。
 3. 导航到你的服务器并选择它。
-4. 在服务器边栏选项卡上的“操作”下，选择“已删除的数据库”。
+4. 在服务器的边栏选项卡上向下滚动到“操作”，然后单击“删除的数据库”磁贴。
 5. 选择要还原的已删除数据库。
 6. 指定数据库名称，然后单击“创建”。
 7. 数据库还原过程随即将会开始，你可以使用屏幕左侧的“通知”监视还原进度。
@@ -102,4 +102,4 @@ Azure SQL 数据库始终会还原到新数据库。这些还原功能适用于�
 	
 4.	使用[数据库操作状态](http://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx)操作跟踪还原状态。
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0321_2016-->

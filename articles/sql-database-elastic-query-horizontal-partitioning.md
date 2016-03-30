@@ -8,8 +8,8 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="01/06/2016"
-    wacn.date="02/26/2016" />
+    ms.date="01/28/2016"
+    wacn.date="03/29/2016" />
 
 # 用于分片的弹性数据库查询（水平分区）
 
@@ -48,7 +48,7 @@
     DROP MASTER KEY;   
 
  
-**注意** 请确保 *< username>* 中不包括任何 *“@servername”* 后缀。
+**注意** 请确保 *< username>* 中不包括任何“@servername”后缀。
 
 ### 1\.2 外部数据源
 
@@ -196,7 +196,7 @@ DISTRIBUTION 子句指定用于此表的数据分布：
 * 分片映射数据库名称 (nvarchar)：分片映射数据库的名称。 
 * 用户名 (nvarchar)：用于登录到分片映射数据库的用户名。 
 * 密码 (nvarchar)：用户的密码。 
-* 分片映射名称 (nvarchar)：要用于查询的分片映射的名称。 
+* 分片映射名称 (nvarchar)：要用于查询的分片映射的名称。可以在 \_ShardManagement.ShardMapsGlobal 表中找到该名称，它是使用[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started)中的示例应用创建数据库时使用的默认名称。应用中的默认名称为“CustomerIDShardMap”。
 *  查询：要在每个分片上执行的 T-SQL 查询。 
 *  参数声明 (nvarchar) - 可选：在查询参数（如 sp\_executesql）中使用的参数的字符串（包含数据类型定义）。 
 *  参数值列表 - 可选：以逗号分隔的参数值（如 sp\_executesql）的列表  
@@ -208,7 +208,7 @@ sp\_execute\_fanout 使用调用参数中提供的分片映射信息在注册到
 示例：
 
 	sp_execute_fanout 
-		’myserver.database.chinacloudapi.cn', 
+		N'myserver.database.chinacloudapi.cn', 
 		N'ShardMapDb', 
 		N'myuser', 
 		N'MyPwd', 
@@ -237,4 +237,4 @@ sp\_execute\_fanout 使用调用参数中提供的分片映射信息在注册到
 [1]: ./media/sql-database-elastic-query-horizontal-partitioning/horizontalpartitioning.png
 <!--anchors-->
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0314_2016-->

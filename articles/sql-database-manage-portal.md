@@ -1,34 +1,34 @@
-<properties 
-	pageTitle="使用 Azure 管理门户管理 Azure SQL 数据库" 
-	description="了解如何使用 Azure 管理门户管理云中的关系数据库。" 
-	services="sql-database" 
-	documentationCenter="" 
-	authors="stevestein" 
-	manager="jeffreyg" 
+<properties
+	pageTitle="使用 Azure 管理门户管理 Azure SQL 数据库"
+	description="了解如何使用 Azure 管理门户管理云中的关系数据库。"
+	services="sql-database"
+	documentationCenter=""
+	authors="stevestein"
+	manager="jeffreyg"
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="09/11/2015" 
-	wacn.date="01/05/2016"/>
+<tags
+	ms.service="sql-database"
+	ms.date="01/22/2016"
+	wacn.date="03/29/2016"/>
 
 
-# 使用 Azure 管理门户管理 Azure SQL 数据库
+# 使用 Azure 门户管理 Azure SQL 数据库
 
 
 > [AZURE.SELECTOR]
-- [Azure 经典门户](/documentation/articles/sql-database-manage-portal)
+- [Azure 门户](/documentation/articles/sql-database-manage-portal)
 - [SSMS](/documentation/articles/sql-database-manage-azure-ssms)
 - [PowerShell](/documentation/articles/sql-database-command-line-tools)
 
-在 [Azure 管理门户][Management Portal]中，你可以创建、监视和管理 Azure SQL 数据库与服务器。本文重点介绍使用管理门户可以实现的数据库操作。
+在 [Azure 门户](https://manage.windowsazure.cn)中，你可以创建、监视和管理 Azure SQL 数据库与逻辑服务器。本文重点介绍一些比较常见的任务。
 
 ![数据库概述](./media/sql-database-manage-portal/sqldatabase_annotated.png)
 
 ## 1\.数据库管理操作
 ![数据库管理操作](./media/sql-database-manage-portal/sqldatabase_actions.png)
 
-Azure 管理门户提供了一系列的通用数据库操作，你可以在数据库边栏选项卡的顶部访问这些操作选项。你可以将数据库还原到以前的某个时间点，在 Visual Studio 中打开数据库，将数据库复制到新服务器，以及将该数据库导出到 Azure 存储帐户。
+Azure 门户提供了一系列的通用数据库操作，你可以在数据库边栏选项卡的顶部访问这些操作选项。你可以将数据库还原到以前的某个时间点，在 Visual Studio 中打开数据库，将数据库复制到新服务器，以及将该数据库导出到 Azure 存储帐户。
 
 - [还原 SQL 数据库](/documentation/articles/sql-database-point-in-time-restore-tutorial-management-portal)
 - [在 Visual Studio 中打开 SQL 数据库](/documentation/articles/sql-database-connect-query)
@@ -48,7 +48,7 @@ Azure 管理门户提供了一系列的通用数据库操作，你可以在数�
 
 - [SQL 数据库审核](/documentation/articles/sql-database-auditing-get-started)
 
-还可以将 Azure SQL 数据库配置为向非特权用户屏蔽敏感数据。
+还可以将 Azure SQL 数据库配置为对非特权用户屏蔽敏感数据。
 
 - [动态数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started)
 
@@ -56,7 +56,7 @@ Azure 管理门户提供了一系列的通用数据库操作，你可以在数�
 ## 4\.地域复制
 ![地域复制](./media/sql-database-manage-portal/sqldatabase_georeplication.png)
 
-可将 Azure SQL 数据库配置为以异步方式将提交的事务复制到辅助数据库。在管理门户上的地域复制部分中，你可以选择辅助数据库所在的 Azure 区域。
+可将 Azure SQL 数据库配置为以异步方式将提交的事务复制到辅助数据库。在门户的异地复制部分，你可以选择需要安放辅助数据库的 Azure 区域。
 
 - [异地复制](https://msdn.microsoft.com/zh-cn/library/azure/dn783447.aspx)
 
@@ -64,15 +64,15 @@ Azure 管理门户提供了一系列的通用数据库操作，你可以在数�
 
 
 
-##其他资源
+## 其他资源
 * [SQL 数据库](/documentation/articles/sql-database-technical-overview)   
 * [使用动态管理视图监控 SQL 数据库][]   
 * [Transact-SQL 参考 (SQL 数据库)][]
-  
-  [Management Portal]: https://manage.windowsazure.cn
+
+  [Management portal]: https://manage.windowsazure.cn
   [Azure part monitoring]: /documentation/articles/documentdb-monitor-accounts
   [AzureDb management overview]: http://azure.microsoft.com/blog/2014/12/22/client-tooling-updates-for-azure-sql-database/
-  [Introducing SQL Database]: /documentation/services/sql-databases
+  [Introducing SQL Database]: /home/features/sql-database
   [Database geo-replication]: http://azure.microsoft.com/blog/2014/07/12/spotlight-on-sql-database-active-geo-replication/
   [Managing Azure SQL Database using SQL Server Management Studio]: /documentation/articles/sql-database-manage-azure-ssms
   [使用动态管理视图监控 SQL 数据库]: /documentation/articles/sql-database-monitoring-with-dmvs
@@ -83,4 +83,4 @@ Azure 管理门户提供了一系列的通用数据库操作，你可以在数�
  
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0321_2016-->
