@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="01/20/2016"
-	wacn.date="03/29/2016"
+	wacn.date="03/29/2016"/>
 
 
 # 导入 BACPAC 文件以创建新的 Azure SQL 数据库
