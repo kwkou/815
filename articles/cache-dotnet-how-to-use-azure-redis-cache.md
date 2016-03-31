@@ -26,7 +26,7 @@ Azure Redis 缓存提供以下层：
 
 -	**基本** - 单个节点。多种大小，最大 53 GB。
 -	**标准** - 双节点主/副本配置。多种大小，最大 53 GB。99.9% SLA。
--	**高级** - 双节点主/副本配置，最多有 10 个分片。从 6 GB 到 530 GB 的多种大小（有关详细信息，请与我们联系）。标准层的所有功能加上其他功能，支持 [Redis 群集](/documentation/articles/cache-how-to-premium-clustering)。99.9% SLA。
+-	**高级** - 双节点主/副本配置，最多有 10 个分片。从 6 GB 到 530 GB 的多种大小（有关详细信息，请与我们联系）。标准层的所有功能加上其他功能，支持 [Redis 群集](/documentation/articles/cache-how-to-premium-clustering)，[Redis 暂留](/documentation/articles/cache-how-to-premium-persistence)和 [Azure 虚拟网络](/documentation/articles/cache-how-to-premium-vnet)。99.9% SLA。
 
 每个级别在功能和定价方面存在差异。有关定价信息，请参阅[缓存定价详细信息][]。
 

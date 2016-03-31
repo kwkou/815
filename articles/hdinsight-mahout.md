@@ -390,9 +390,9 @@ Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些�
 
 现在，你已经学习了如何使用 Mahout，因此可以探索通过其他方式来使用 HDInsight 上的数据：
 
-* [Hive 和 HDInsight](/documentation/articles/hdinsight-hadoop-use-hive-powershell)
-* [Pig 和 HDInsight](/documentation/articles/hdinsight-hadoop-use-pig-powershell)
-* [MapReduce 和 HDInsight](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell)
+* [Hive 和 HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Pig 和 HDInsight](/documentation/articles/hdinsight-use-pig)
+* [MapReduce 和 HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 [build]: http://mahout.apache.org/developers/buildingmahout.html
 [aps]: /documentation/articles/powershell-install-configure

@@ -99,7 +99,7 @@
 * [适用于 Visual Studio 的 HDInsight 工具入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)
 
 
-[hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
+[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/

@@ -27,7 +27,7 @@
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 
-- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+- **配备 Azure PowerShell 的工作站**。请参阅[安装 Azure PowerShell 1.0 或 更新](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater)。
 
 
 ##<a id="powershell"></a>使用 PowerShell 运行 Pig 作业

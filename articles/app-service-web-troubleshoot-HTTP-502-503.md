@@ -17,7 +17,7 @@
 
 本文将会帮助你排查 [Azure Web 应用](/documentation/services/web-sites/)中托管的 Web 应用所发生的 HTTP 502/503 错误。
 
-如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“申请支持”。
+如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和 CSDN Azure](/support/forums/) 上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“申请支持”。
 
 ## 症状
 

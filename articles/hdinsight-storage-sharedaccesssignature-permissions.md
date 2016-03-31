@@ -30,7 +30,7 @@ HDInsight 使用 Azure 存储空间 Blob 来存储数据。HDInsight 必须对�
 
 * [Azure PowerShell][powershell] - 可以使用 Azure PowerShell 创建新群集，并在创建群集期间添加共享访问签名。
 
-* [https://github.com/Blackmist/hdinsight-azure-storage-sas](https://github.com/Blackmist/hdinsight-azure-storage-sas) 中的示例文件。此存储库包含以下项目：
+* [https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature](https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature) 中的示例文件。此存储库包含以下项目：
 
     * Visual Studio 项目，可以创建存储容器、存储策略，以及配合 HDInsight 使用的 SAS
     
@@ -64,7 +64,7 @@ HDInsight 使用 Azure 存储空间 Blob 来存储数据。HDInsight 必须对�
 
 ##创建存储策略并生成 SAS
 
-目前必须以编程方式创建存储策略。可在以下位置找到创建存储策略和 SAS 的 C# 与 Python 示例：[https://github.com/Blackmist/hdinsight-azure-storage-sas](https://github.com/Blackmist/hdinsight-azure-storage-sas)。
+目前必须以编程方式创建存储策略。可在以下位置找到创建存储策略和 SAS 的 C# 与 Python 示例：[https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature](https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature)。
 
 ###使用 C# 创建存储策略和 SAS
 

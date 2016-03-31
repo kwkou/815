@@ -85,7 +85,7 @@ AlwaysOn 可用性组通过添加辅助副本为数据库组提供高可用性�
 
 1. 预配过程开始。当向导成功完成时，单击“关闭”退出向导。
 
->[AZURE.NOTE]“添加 Azure 副本向导”将在 <Users><user name>\\AppData\\Local\\SQL Server\\AddReplicaWizard 中创建一个日志文件。此日志文件可用于对出现故障的 Azure 副本部署进行故障排除。如果向导无法执行任何操作，则以前的所有操作都将回滚，包括删除预配的 VM。
+>[AZURE.NOTE]“添加 Azure 副本向导”将在 Users\User Name\AppData\Local\SQL Server\AddReplicaWizard 中创建一个日志文件。此日志文件可用于对出现故障的 Azure 副本部署进行故障排除。如果向导无法执行任何操作，则以前的所有操作都将回滚，包括删除预配的 VM。
 
 ## 创建可用性组侦听器
 

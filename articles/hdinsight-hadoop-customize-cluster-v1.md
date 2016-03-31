@@ -95,6 +95,7 @@ Name | 脚本
 
 	New-AzureHDInsightCluster -Config $config
 
+<a name="call-scripts-using-net-sdk"></a>
 **从 HDInsight .NET SDK**
 
 HDInsight .NET SDK 提供了 <a href="http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.management.hdinsight.clusterprovisioning.data.scriptaction.aspx" target="_blank">ScriptAction</a> 类用于调用自定义脚本。使用 HDInsight .NET SDK：

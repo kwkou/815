@@ -24,7 +24,7 @@
 在使用 Azure 管理门户创建 Linux 虚拟机时，系统会要求你提供用户名、密码或 SSH 公钥。在 Azure 上部署 Linux 虚拟机时，用户名的选择受到以下限制：不允许使用虚拟机中已经存在的系统帐户 (UID <100) 的名称，例如，“根”。
 
 
- - 请参阅[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
+ - 请参阅[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-tutorial)
  - 请参阅[如何在 Azure 上将 SSH 用于 Linux 和 Mac](/documentation/articles/virtual-machines-linux-use-ssh-key)
 
 ## 使用 `sudo` 获取超级用户特权

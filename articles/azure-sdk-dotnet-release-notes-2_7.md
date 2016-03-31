@@ -95,6 +95,7 @@ Azure 资源管理器工具已更新为使用基于角色的访问控制 (RBAC) 
 ###存储资源管理器工具 
 
 - 支持查看附加 Blob。有关详细信息，请参阅[此博客文章](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/04/13/introducing-azure-storage-append-blob.aspx)。
+- 支持在服务器浏览器查看高级存储账户。服务器浏览器中只显示高级存储账户的页 blob，因为高级存储账户只支持这个类型。 
 
 ##Azure SDK for .NET 2.7.1
 

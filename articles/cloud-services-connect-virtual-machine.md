@@ -49,15 +49,15 @@
 若要连接独立云服务中的虚拟机，请执行以下步骤：
 
 1.	在 [Azure 管理门户](http://manage.windowsazure.cn)中创建云服务。单击“新建”>“计算”>“云服务”>“自定义创建”。或者，当你创建第一个虚拟机时，可以为你的部署创建云服务。
-2.	创建虚拟机时，请选择上一个步骤中创建的云服务名称。  
-![将虚拟机添加到现有云服务](./media/howto-connect-vm-cloud-service/Connect-VM-to-CS.png)
+
+2.	创建虚拟机时，请选择上一个步骤中创建的云服务名称。
+
+	![将虚拟机添加到现有云服务](./media/howto-connect-vm-cloud-service/Connect-VM-to-CS.png)
 
 ##资源
 [对虚拟机进行负载平衡](/documentation/articles/load-balance-virtual-machines)
 
 [管理虚拟机的可用性](/documentation/articles/virtual-machines-manage-availability)
-
-[虚拟网络配置任务](/documentation/services/virtual-machines/)
 
 创建虚拟机后，建议添加数据磁盘，你的服务和工作负荷才有地方存储数据。请参阅下列资源之一：
 
