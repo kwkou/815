@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="11/17/2015"
-	wacn.date="01/14/2015"/>
+	wacn.date="03/30/2016"/>
 
 # 通知中心入门
 
@@ -232,7 +232,7 @@
         private static async void SendNotificationAsync()
         {
             NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("<connection string with full access>", "<hub name>");
-            var alert = "{\"aps\":{\"alert\":\"Hello from .NET!\"}}";
+            var alert = "{"aps":{"alert":"Hello from .NET!"}}";
             await hub.SendAppleNativeNotificationAsync(alert);
         }
 
@@ -290,14 +290,6 @@
 
 在这个简单的示例中，你已将通知广播到所有 iOS 设备。若要针对特定客户，请参考教程[使用通知中心将通知推送到用户]。如果要按兴趣组划分用户，可以阅读[使用通知中心发送突发新闻]。请在[通知中心指南]和[适用于 iOS 的通知中心操作方法指南]中了解有关如何使用通知中心的详细信息。
 
-<!-- Anchors. -->
-[Generate the certificate signing request]: #certificates
-[Register your app and enable push notifications]: #register
-[Create a provisioning profile for the app]: #profile
-[Configure your Notification Hub]: #configure-hub
-[Connecting your app to the Notification Hub]: #connecting-app
-[Send notifications from your back-end]: #send
-[Next Steps]: #next-steps
 
 <!-- Images. -->
 
@@ -329,5 +321,6 @@
 [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkId=331329
 [Xamarin.iOS]: http://xamarin.com/download
-[WindowsAzure.Messaging]: https://github.com/ghuntley/WindowsAzure.Messaging.iOS
-<!---HONumber=Mooncake_0104_2016-->
+[WindowsAzure.Messaging]: https://github.com/infosupport/WindowsAzure.Messaging.iOS
+
+<!----HONumber=Mooncake_0104_2016-->

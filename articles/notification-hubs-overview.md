@@ -8,8 +8,8 @@
 	documentationCenter=""/>
 <tags 
 	ms.service="notification-hubs" 
-	ms.date="12/10/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/11/2016"
+	wacn.date="03/30/2016"/>
 
 
 #Azure 通知中心
@@ -125,17 +125,16 @@ Azure 通知中心提供易用的基础结构，使你能够从任何后端（�
 Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
 
 1. 检索设备 PNS 句柄
-2. 通过便利的 Mobile Apps Client SDK 注册 API，使用通知中心注册设备和 [模板]
+2. 通过便利的 Mobile Apps Client SDK 注册 API，使用通知中心注册设备和[模板]
     + 请注意，出于安全方面的考虑，Mobile Apps 将在注册中去除所有标记。直接从后端使用通知中心将标记与设备相关联。
 3. 从应用后端使用通知中心发送通知
 
 以下是这种集成为开发人员带来的便利性：
 - **Mobile Apps 客户端 SDK**。 这些多平台 SDK 提供简单的 API 用于注册，然后自动与链接到移动应用的通知中心联系。开发人员不需要通过通知中心凭据进行挖掘，以及使用其他服务。
-	+ SDK 使用经 Mobile Apps 验证的用户 ID 自动标记指定的设备，以启用向用户推送通知的方案。
-	+ SDK 自动使用 Mobile Apps 安装 ID 作为 GUID 来向通知中心注册，省去了开发人员维护多个服务 GUID 的麻烦。
+    + SDK 使用经 Mobile Apps 验证的用户 ID 自动标记指定的设备，以启用向用户推送通知的方案。
+    + SDK 自动使用 Mobile Apps 安装 ID 作为 GUID 来向通知中心注册，省去了开发人员维护多个服务 GUID 的麻烦。
 - **安装模型。** Mobile Apps 使用通知中心的最新推送模型来呈现 JSON 安装中所有与设备关联的推送属性，该模型与推送通知密切合作且易于使用。
 - **灵活性。** 即使是就地集成的，开发人员也始终可以选择直接使用通知中心。
-- **[Azure 门户] 中的集成体验。** Mobile Apps 以可视化方式呈现推送功能，开发人员可以通过 Mobile Apps 轻松使用关联的通知中心。
 
 
 
@@ -167,6 +166,9 @@ Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
   [Xamarin.Android]: /documentation/articles/partner-xamarin-notification-hubs-android-get-started
   [Microsoft.WindowsAzure.Messaging.NotificationHub]: http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.messaging.notificationhub.aspx
   [Microsoft.ServiceBus.Notifications]: http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.notifications.aspx
-  [App Service Mobile Apps]: /documentation/articles/app-service-mobile-value-prop/
-  [Azure 门户]: https://manage.windowsazure.cn
-<!---HONumber=Mooncake_0104_2016-->
+  [App Service Mobile Apps]: https://azure.microsoft.com/zh-cn/documentation/articles/app-service-mobile-value-prop/
+  [模板]: /documentation/articles/notification-hubs-templates
+
+  [标记]: (http://msdn.microsoft.com/library/azure/dn530749.aspx)
+
+<!---HONumber=Mooncake_0314_2016-->
