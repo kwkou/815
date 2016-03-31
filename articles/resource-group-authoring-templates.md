@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="11/13/2015"
-   wacn.date="01/21/2016"/>
+   ms.date="02/08/2016"
+   wacn.date="03/21/2016"/>
 
 # 创作 Azure 资源管理器模板
 
@@ -413,4 +413,4 @@ Azure 应用程序通常需要多种资源的组合（例如数据库服务器�
 - 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)
 - 若要查看可用架构，请参阅 [Azure 资源管理器架构](https://github.com/Azure/azure-resource-manager-schemas)
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0314_2016-->
