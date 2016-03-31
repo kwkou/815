@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 Linux 使用 Azure 文件存储 | Windows Azure"
+	pageTitle="如何通过 Linux 使用 Azure 文件存储 | Azure"
         description="在云中创建文件共享，然后从 Azure VM 或在 Linux 上运行的本地应用程序装载它。"
         services="storage"
         documentationCenter="na"
@@ -8,21 +8,23 @@
         editor="" />
 
 <tags ms.service="storage"
-      ms.date="10/06/2015"
-      wacn.date="11/02/2015" />
+      ms.date="12/17/2015"
+      wacn.date="01/29/2016" />
 
 
 # 如何通过 Linux 使用 Azure 文件存储 
 
 ## 概述
 
-Azure 文件存储使用标准 SMB 协议在云中提供文件共享。文件存储现已正式推出并同时支持 SMB 3.0 和 SMB 2.1。
+Azure 文件存储使用标准 SMB 协议在云中提供文件共享。使用 Azure 文件，你可以将依赖于文件服务器的企业应用程序迁移到 Azure。在 Azure 中运行的应用程序可以轻松地从运行 Linux 的 Azure 虚拟机装载文件共享。并且使用最新版本的文件存储，你还可以从支持 SMB 3.0 的本地应用程序装载文件共享。
 
-你可以使用 Azure 管理门户、Azure 存储空间 PowerShell cmdlet、Azure 存储空间客户端库或 Azure 存储空间 REST API 来创建 Azure 文件共享。此外，由于文件共享是 SMB 共享，因此你还可以通过标准的和熟悉的文件系统 API 来访问它们。
+你可以使用[管理门户](https://manage.windowsazure.cn)、Azure 存储空间 PowerShell cmdlet、Azure 存储空间客户端库或 Azure 存储空间 REST API 来创建 Azure 文件共享。此外，由于文件共享是 SMB 共享，因此你还可以通过标准的文件系统 API 来访问它们。
 
-在 Azure 中运行的应用程序可以轻松地从 Azure 虚拟机装载文件共享。并且使用最新版本的文件存储，你还可以从支持 SMB 3.0 的本地应用程序装载文件共享。
+文件存储基于与 Blob、表和队列存储相同的技术构建，因此文件存储能够提供 Azure 存储平台内置的现有可用性、持续性、可伸缩性和异地冗余。有关存文件存储性能目标和限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
 
-请注意，由于 Linux SMB 客户端尚不支持加密，从 Linux 装载文件共享仍需要客户端与文件共享在同一 Azure 区域中。但是，Linux 的加密支持已经在负责 SMB 功能的 Linux 开发人员的路线图上。将来支持加密的 Linux 分发也将能够从任何位置装载 Azure 文件共享。
+文件存储现已正式推出并同时支持 SMB 2.1 和 SMB 3.0。有关文件存储的更多详细信息，请参阅[文件服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn167006.aspx)。
+
+>[AZURE.NOTE] 由于 Linux SMB 客户端尚不支持加密，从 Linux 装载文件共享仍需要客户端与文件共享在同一 Azure 区域中。但是，Linux 的加密支持已经在负责 SMB 功能的 Linux 开发人员的路线图上。将来支持加密的 Linux 分发也将能够从任何位置装载 Azure 文件共享。
 
 ## 选择要使用的 Linux 分发 ##
 
@@ -55,7 +57,7 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。文件存
 
 例如，如果你是使用 Linux 映像 Ubuntu Server 15.04（可从 Azure 映像库中获得）创建的 Azure VM，则可以按如下所示装载文件：
 
-    azureuser@azureconubuntu:~$ sudo apt-get install apt-file
+    azureuser@azureconubuntu:~$ sudo apt-get install cifs-utils
     azureuser@azureconubuntu:~$ sudo mkdir /mnt/mountpoint
     azureuser@azureconubuntu:~$ sudo mount -t cifs //myaccountname.file.core.chinacloudapi.cn/mysharename /mnt/mountpoint -o vers=3.0,user=myaccountname,password=StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
     azureuser@azureconubuntu:~$ df -h /mnt/mountpoint
@@ -81,7 +83,7 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。文件存
 
 ## 管理文件共享 ##
 
-[Azure 管理门户](https://manage.windowsazure.cn/)现在提供用于管理 Azure 文件存储的用户界面。你可以从 Web 浏览器中执行以下操作：
+[Azure 管理门户](https://manage.windowsazure.cn/)提供用于管理 Azure 文件存储的用户界面。你可以从 Web 浏览器中执行以下操作：
 
 - 将文件上载到文件共享和从文件共享下载文件。
 - 监视每个文件共享的实际使用情况。
@@ -109,10 +111,11 @@ Linux 用户，我们希望倾听你的意见！
 ### 概念性文章
 
 - [如何通过 Windows 使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
 
 ### 文件存储的工具支持
 
-- [如何将 AzCopy 与 Windows Azure 存储一起使用](/documentation/articles/storage-use-azcopy)
+- [如何将 AzCopy 与 Azure 存储一起使用](/documentation/articles/storage-use-azcopy)
 - [将 Azure CLI 用于 Azure 存储空间](/documentation/articles/storage-azure-cli#create-and-manage-file-shares)
 
 ### 引用
@@ -123,7 +126,7 @@ Linux 用户，我们希望倾听你的意见！
 
 - [Azure 文件存储现已正式发布](/zh-cn/blog/)
 - [深入了解 Azure 文件存储](/home/features/storage) 
-- [Windows Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
-- [将连接保存到 Windows Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
+- [Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
+- [将连接保存到 Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

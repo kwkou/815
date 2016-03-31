@@ -1,6 +1,6 @@
 <properties
-	pageTitle="如何通过 .NET 使用队列存储 | Windows Azure"
-	description="了解如何使用 Windows Azure 队列存储创建和删除队列，以及插入、扫视、获取和删除队列消息。"
+	pageTitle="通过 .NET 开始使用 Azure 队列存储 | Azure"
+	description="使用 Azure 队列存储在应用程序组件之间异步发送和接收消息。立即开始使用简单的队列存储操作，包括创建和删除队列以及添加、读取和删除队列消息。"
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
@@ -9,16 +9,18 @@
 
 <tags
 	ms.service="storage"
-	ms.date="08/04/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="01/24/2016"
+	wacn.date="03/17/2016"/>
 
-# 如何通过 .NET 使用队列存储
+# 通过 .NET 开始使用 Azure 队列存储
 
 [AZURE.INCLUDE [storage-selector-queue-include](../includes/storage-selector-queue-include.md)]
 
 ## 概述
 
-本指南将演示如何使用 Azure 队列存储服务执行常见方案。示例用 C# 代码编写，并使用了用于 .NET 的 Azure 存储空间客户端库。介绍的方案包括“插入”、“扫视”、“获取”和“删除”队列消息以及“创建”和“删除”队列。
+Azure 队列存储是一种在云中提供消息传递队列的服务。在设计应用程序以实现可伸缩性时，通常要将各个应用程序组件分离，使其可以独立地进行伸缩。队列存储为在应用程序组件之间进行异步通信提供了一种可靠的消息传送解决方案，无论这些应用程序组件是在云中、在桌面上、在本地服务器上运行还是在移动设备上运行。队列存储还支持管理异步任务以及构建过程工作流。
+
+本教程演示如何针对使用 Azure 队列存储一些常见情形编写 .NET 代码。涉及的方案包括创建和删除队列、添加、读取和删除队列消息。
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -37,9 +39,9 @@
 
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Auth;
-	using Microsoft.WindowsAzure.Storage.Queue;
+    using Microsoft.WindowsAzure.Storage.Queue;
 
-确保你引用  `Microsoft.WindowsAzure.Storage.dll` 程序集。
+确保你引用 `Microsoft.WindowsAzure.Storage.dll` 程序集。
 
 [AZURE.INCLUDE [storage-dotnet-retrieve-conn-string](../includes/storage-dotnet-retrieve-conn-string.md)]
 
@@ -105,7 +107,7 @@
 
 ## 更改已排队消息的内容
 
-你可以更改队列中现有消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 *n*，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。
+你可以更改队列中现有消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 *n* ，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。
 
     // Retrieve storage account from connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -119,9 +121,9 @@
 
 	// Get the message from the queue and update the message contents.
     CloudQueueMessage message = queue.GetMessage();
-    message.SetMessageContent("Updated contents.") ;
-    queue.UpdateMessage(message, 
-        TimeSpan.FromSeconds(0.0),  // Make it visible immediately.
+    message.SetMessageContent("Updated contents.");
+    queue.UpdateMessage(message,
+        TimeSpan.FromSeconds(60.0),  // Make it visible for another 60 seconds.
         MessageUpdateFields.Content | MessageUpdateFields.Visibility);
 
 ## 取消对下一条消息的排队
@@ -195,7 +197,7 @@
 
 ## 获取队列长度
 
-你可以获取队列中消息的估计数。使用 **FetchAttributes** 方法可请求队列服务检索队列属性，包括消息计数。**ApproximateMethodCount** 属性返回 **FetchAttributes** 方法检索到的最后一个值，而不会调用队列服务。
+你可以获取队列中消息的估计数。使用 **FetchAttributes** 方法可请求队列服务检索队列属性，包括消息计数。**ApproximateMessageCount** 属性返回 **FetchAttributes** 方法检索到的最后一个值，而不会调用队列服务。
 
     // Retrieve storage account from connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -218,7 +220,7 @@
 
 ## 删除队列
 
-若要删除队列及其包含的所有消息，请调用队列对象的 **Delete** 方法。
+若要删除队列及其包含的所有消息，请对队列对象调用 **Delete** 方法。
 
     // Retrieve storage account from connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -238,9 +240,8 @@
 现在，您已了解有关队列存储的基础知识，可单击下面的链接来了解更复杂的存储任务。
 
 - 查看队列服务参考文档，了解有关可用 API 的完整详细信息：
-    - [.NET 存储客户端库参考](http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx)
+    - [.NET 存储客户端库参考](https://msdn.microsoft.com/zh-cn/library/mt347887.aspx)
     - [REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
-- 通过查看[在 Azure 中存储和访问数据](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)了解可以通过 Azure 存储空间执行的更高级任务
 - 了解如何通过使用 [Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk) 简化为使用 Azure 存储空间而写的代码。
 - 查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
     - 使用[表存储](/documentation/articles/storage-dotnet-how-to-use-tables)来存储结构化数据。 
@@ -249,8 +250,8 @@
 
 
 
-  [下载并安装 Azure SDK for.NET]：/develop/net/
-  [.NET 客户端库引用]: http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx
+  [下载并安装 Azure SDK for.NET]:/develop/net/
+  [.NET 客户端库引用]: https://msdn.microsoft.com/zh-cn/library/mt347887.aspx
   [在 Visual Studio 中创建 Azure 项目]: http://msdn.microsoft.com/zh-cn/library/azure/ee405487.aspx
   [CloudStorageAccount]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.cloudstorageaccount_methods.aspx
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
@@ -261,4 +262,4 @@
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
  
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_0307_2016-->

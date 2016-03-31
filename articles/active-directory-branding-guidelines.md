@@ -10,7 +10,7 @@
 <tags
    ms.service="active-directory"
    ms.date="09/17/2015"
-   wacn.date="11/12/2015"/>
+   wacn.date="01/29/2016"/>
 
 
 # 适用于应用程序的品牌准则
@@ -94,4 +94,4 @@ Microsoft 不会向最终用户显示 Azure 或 Active Directory 品牌名称，
 
 如果你的应用程序同时支持 Azure AD 帐户和 Microsoft 帐户，则需要在应用程序中提供两个单独的登录按钮。我们正在积极处理更新，以便你只需集成一次，就能支持个人帐户和 Microsoft 中的工作帐户。在使用此更新后，你便可以在应用程序中显示“使用 Microsoft 登录”按钮。
 
-<!---HONumber=60-->
+<!---HONumber=79-->

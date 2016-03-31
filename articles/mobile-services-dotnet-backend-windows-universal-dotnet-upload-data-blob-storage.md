@@ -1,19 +1,22 @@
-<properties 
-	pageTitle="将图像从通用 Windows 应用上载到 Azure Blob 存储 |Azure 移动服务" 
-	description="了解如何使用 .NET 后端移动服务将图像上载到 Azure Blob 存储和从通用 Windows 应用访问图像。" 
-	documentationCenter="windows" 
-	authors="ggailey777" 
-	services="mobile-services,storage" 
-	manager="dwrede" 
+<properties
+	pageTitle="将图像从通用 Windows 应用上载到 Azure Blob 存储 | Azure"
+	description="了解如何使用 .NET 后端移动服务将图像上载到 Azure Blob 存储和从通用 Windows 应用访问图像。"
+	documentationCenter="windows"
+	authors="ggailey777"
+	services="mobile-services,storage"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.date="07/13/2015" 
-	wacn.date="10/03/2015"/>
+	wacn.date="01/29/2016"/>
 
 # 使用移动服务将图像上载到 Azure 存储空间
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
 ##概述
@@ -31,7 +34,7 @@
 + [Azure 存储帐户](/documentation/articles/storage-create-storage-account)
 + 连接到你的计算机的照相机或其他图像捕获设备。
 
-本教程基于移动服务快速入门。在开始本教程之前，必须先完成移动服务入门。
+本教程基于移动服务快速入门。在开始本教程之前，必须先完成[移动服务入门]。
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-configure-blob-storage](../includes/mobile-services-dotnet-backend-configure-blob-storage.md)]
 
@@ -40,10 +43,6 @@
 ##后续步骤
 
 现在，你已能够通过将移动服务与 Blob 服务集成安全地上载图片，请查看一些其他的后端服务和集成主题：
-
-+ [在移动服务中计划后端作业](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
-
-     了解如何使用移动服务作业计划程序功能，定义按你定义的计划执行的服务器脚本代码。
 
 + [移动服务 .NET 操作方法概念性参考](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
 
@@ -61,10 +60,10 @@
 <!-- Images. -->
 
 <!-- URLs. -->
-[完成移动服务入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started
+[移动服务入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started
 [Azure Management Portal]: https://manage.windowsazure.cn
 [How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866
  
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0118_2016-->

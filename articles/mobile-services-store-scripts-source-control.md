@@ -9,15 +9,21 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/15/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="12/07/2015"
+	wacn.date="01/29/2016"/>
 
-#  在源代码管理中存储项目代码
+# 在源代码管理中存储移动服务项目代码
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+> [AZURE.SELECTOR]
+- [.NET backend](/documentation/articles/mobile-services-dotnet-backend-store-code-source-control)
+- [Javascript backend](/documentation/articles/mobile-services-store-scripts-source-control)
 
 本主题向您展示了如何使用 Azure 移动服务提供的源代码管理来存储服务器脚本。脚本和其他 JavaScript 后端代码文件可从您的本地 Git 存储库提升到生产移动服务。另外，本主题还说明了如何定义可在多个脚本之间使用的共享代码，以及如何使用 package.json 文件来为您的移动服务添加 Node.js 模块。
 
-若要完成本教程，你必须事先参考[移动服务入门]或[将移动服务添加到现有应用程序]教程创建一个移动服务。
+若要完成本教程，你必须事先参考[移动服务入门]教程创建一个移动服务。
 
 ## <a name="enable-source-control"></a>在移动服务中启用源代码管理
 
@@ -52,7 +58,7 @@
 
 	此时已创建了一个使用移动服务名称的新目录，即数据服务的本地存储库。
 
-7. 打开 .\service\table 子文件夹，可以看到，它包含一个 TodoItem.json 文件，该文件是对 TodoItem 表的操作权限的 JSON 表示形式。
+7. 打开 .\\service\\table 子文件夹，可以看到，它包含一个 TodoItem.json 文件，该文件是对 TodoItem 表的操作权限的 JSON 表示形式。
 
 	如果在此表中定义了服务器脚本，则还会出现一个或多个名为 <code>TodoItem._&lt;operation&gt;_.js</code> 的文件，其中包含给定表操作的脚本。计划程序和自定义 API 脚本保留在与其名称相对应的不同文件夹中。有关详细信息，请参阅[源代码管理]。
 
@@ -60,7 +66,7 @@
 
 ## <a name="deploy-scripts"></a>将更新的脚本文件部署到移动服务
 
-1. 浏览到 .\service\table 子文件夹，如果 todoitem.insert.js 文件不存在，现在请创建该文件。
+1. 浏览到 .\\service\\table 子文件夹，如果 todoitem.insert.js 文件不存在，现在请创建该文件。
 
 2. 在文本编辑器中打开新文件 todoitem.insert.js 并在其中粘贴以下代码，然后保存更改：
 
@@ -86,9 +92,7 @@
 	
 	您应该会看到一系列命令，指出已将提交的内容部署到移动服务。
 
-6. 返回到管理门户，单击“数据”选项卡，单击“TodoItem”表，单击“脚本”，然后选择“插入”操作。
-7. 
-	可以看到，显示的插入操作脚本与您刚刚上载到存储库的 JavaScript 代码相同。
+6. 返回 [Azure 经典门户]，单击“数据”选项卡，单击“TodoItem”表，单击“脚本”，然后选择“插入”操作。可以看到，显示的插入操作脚本与您刚刚上载到存储库的 JavaScript 代码相同。
 
 ## <a name="use-npm"></a>在服务器脚本中利用共享代码和 Node.js 模块
 
@@ -102,7 +106,7 @@
 
 	>[AZURE.NOTE]对 package.json 文件执行这项更新会导致推送提交内容后重新启动移动服务。
 
-4. 现在，请浏览到 .\service\table 子文件夹，打开 todoitem.insert.js 文件并按如下所示修改该文件：
+2. 现在，请浏览到 .\\service\\table 子文件夹，打开 todoitem.insert.js 文件并按如下所示修改该文件：
 
 		function insert(item, user, request) {
 		    var uuid = require('node-uuid');
@@ -128,9 +132,6 @@
 + [在移动服务中使用服务器脚本]
   <br/>说明如何使用服务器脚本、作业计划程序和自定义 API。
 
-+ [从客户端调用自定义 API]
-  <br/>说明如何创建可从客户端调用的自定义 API。
-
 <!-- Anchors. -->
 [Enable source control in your mobile service]: #enable-source-control
 [Install Git and create the local repository]: #clone-repo
@@ -148,11 +149,9 @@
 [源代码管理]: http://msdn.microsoft.com/zh-cn/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
 [安装 Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [移动服务入门]: /documentation/articles/mobile-services-ios-get-started
-[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-ios-get-started-data
 [在移动服务中使用服务器脚本]: /documentation/articles/mobile-services-how-to-use-server-scripts
-[Azure Management Portal]: https://manage.windowsazure.cn/
-[从客户端调用自定义 API]: /documentation/articles/mobile-services-ios-call-custom-api
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [模块]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

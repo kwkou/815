@@ -10,29 +10,33 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="05/15/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="01/22/2016"
+	wacn.date="03/21/2016"/>
 
 # 为 Azure 准备 Ubuntu 虚拟机
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
-##先决条件##
+## 正式 Ubuntu 云映像
+Ubuntu 现已发布正式 Azure VHD，可从 [http://cloud-images.ubuntu.com/](http://cloud-images.ubuntu.com/) 下载。如果你需要为 Azure 构建自己专用的 Ubuntu 映像，而不是使用以下手动过程，则我们建议你先使用这些已知良好的 VHD，并根据需要进行自定义。
 
-本文假定你已在虚拟硬盘中安装了 Ubuntu Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/library/hh846766.aspx)。
+
+## 先决条件
+
+本文假定你已在虚拟硬盘中安装了 Ubuntu Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。
 
 **Ubuntu 安装说明**
 
-- Azure 不支持更新的 VHDX 格式。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。
-
+- Azure 不支持 VHDX 格式，仅支持**固定大小的 VHD**。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。
 - 在安装 Linux 系统时，建议使用标准分区而不是 LVM（通常是许多安装的默认值）。这将避免 LVM 与克隆 VM 发生名称冲突，特别是在 OS 磁盘需要连接到另一台 VM 以进行故障排除的情况下。如果首选，LVM 或 [RAID](/documentation/articles/virtual-machines-linux-configure-raid) 可以在数据磁盘上使用。
-
 - 不要在操作系统磁盘上配置交换分区。可以配置 Linux 代理，以在临时资源磁盘上创建交换文件。可以在下面的步骤中找到有关此内容的详细信息。
-
 - 所有 VHD 的大小必须是 1 MB 的倍数。
 
 
-## <a id="ubuntu"> </a>Ubuntu 12.04+ ##
+## 手动步骤
+
+> [AZURE.NOTE] 在为 Azure 创建自定义的 Ubuntu 映像之前，建议你使用 [http://cloud-images.ubuntu.com/](http://cloud-images.ubuntu.com/) 上的映像。
+
 
 1. 在 Hyper-V 管理器的中间窗格中，选择虚拟机。
 
@@ -40,7 +44,7 @@
 
 3.	替换映像中的当前存储库，以使用 Ubuntu 的 Azure 存储库。这些步骤可能会由于 Ubuntu 版本的不同而稍有差异。
 
-	在编辑 /etc/apt/sources.list 之前，建议进行备份
+	编辑 /etc/apt/sources.list 之前，建议进行备份：
 
 		# sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 
@@ -50,38 +54,26 @@
 		# sudo apt-add-repository 'http://archive.canonical.com/ubuntu precise-backports main'
 		# sudo apt-get update
 
-	Ubuntu 12.10：
-
-		# sudo sed -i "s/[a-z][a-z].archive.ubuntu.com/azure.archive.ubuntu.com/g" /etc/apt/sources.list
-		# sudo apt-add-repository 'http://archive.canonical.com/ubuntu quantal-backports main'
-		# sudo apt-get update
-
-	Ubuntu 14.04+：
+	Ubuntu 14.04：
 
 		# sudo sed -i "s/[a-z][a-z].archive.ubuntu.com/azure.archive.ubuntu.com/g" /etc/apt/sources.list
 		# sudo apt-get update
 
-4. 通过运行以下命令将操作系统更新为最新内核：
+4. Ubuntu Azure 映像现在遵循硬件支持 (HWE) 内核。通过运行以下命令将操作系统更新为最新内核：
 
 	Ubuntu 12.04：
 
 		# sudo apt-get update
-		# sudo apt-get install hv-kvp-daemon-init linux-backports-modules-hv-precise-virtual
+		# sudo apt-get install linux-image-generic-lts-trusty linux-cloud-tools-generic-lts-trusty
+		# sudo apt-get install hv-kvp-daemon-init
 		(recommended) sudo apt-get dist-upgrade
 
 		# sudo reboot
 
-	Ubuntu 12.10：
+	Ubuntu 14.04：
 
 		# sudo apt-get update
-		# sudo apt-get install hv-kvp-daemon-init linux-backports-modules-hv-quantal-virtual
-		(recommended) sudo apt-get dist-upgrade
-
-		# sudo reboot
-
-	Ubuntu 14.04+：
-
-		# sudo apt-get update
+		# sudo apt-get install linux-image-virtual-lts-vivid linux-lts-vivid-tools-common
 		# sudo apt-get install hv-kvp-daemon-init
 		(recommended) sudo apt-get dist-upgrade
 
@@ -89,7 +81,7 @@
 
 5.	（可选）如果 Ubuntu 系统遇到错误并重新启动，则它通常将等待 grub 启动提示用户输入以阻止系统正常启动。若要防止此情况发生，请完成下列步骤：
 
-	a) 打开 /etc/grub.d/00_header 文件。
+	a) 打开 /etc/grub.d/00\_header 文件。
 
 	b) 在 **make\_timeout()** 函数中，搜索 **if ["\\${recordfail}" = 1 ]; then**
 
@@ -118,6 +110,16 @@
 		# export HISTSIZE=0
 		# logout
 
-11. 在 Hyper-V 管理器中单击**“操作”->“关闭”**。Linux VHD 现已准备好上载到 Azure。
+11. 在 Hyper-V 管理器中单击“操作”->“关闭”。Linux VHD 现已准备好上载到 Azure。
 
-<!---HONumber=79-->
+## 后续步骤
+现在，你可以使用 Ubuntu Linux 虚拟硬盘在 Azure 中创建新的 Azure 虚拟机了。如果这是你第一次将 .vhd 文件上载到 Azure，请参阅 [创建并上载包含 Linux 操作系统的虚拟硬盘](/documentation/articles/virtual-machines-linux-create-upload-vhd)中的步骤 2 和 3。
+
+## 参考 ##
+
+Ubuntu 硬件支持 (HWE) 内核：
+
+- [http://blog.utlemming.org/2015/01/ubuntu-1404-azure-images-now-tracking.html](http://blog.utlemming.org/2015/01/ubuntu-1404-azure-images-now-tracking.html)
+- [http://blog.utlemming.org/2015/02/1204-azure-cloud-images-now-using-hwe.html](http://blog.utlemming.org/2015/02/1204-azure-cloud-images-now-using-hwe.html)
+
+<!---HONumber=Mooncake_0314_2016-->

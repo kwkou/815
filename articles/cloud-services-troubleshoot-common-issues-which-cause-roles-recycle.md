@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="云服务角色回收的常见原因 | Windows Azure"
+   pageTitle="云服务角色回收的常见原因 | Azure"
    description="云服务角色突然回收可能会导致严重停机。以下是导致角色回收的部分常见问题，解决这些问题将有助于改进停机状况。"
    services="cloud-services"
    documentationCenter=""
@@ -20,7 +20,7 @@
 
 如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和CSDN论坛](/support/forums/)上的 Azure 专家。
 
-或者，你也可以提出 Azure 支持事件。转至 [Azure 支持站点](/support/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Windows Azure 支持常见问题](/support/faq/)。
+或者，你也可以提出 Azure 支持事件。转至 [Azure 支持站点](/support/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Azure 支持常见问题](/support/faq/)。
 
 
 ## 缺少运行时依赖项

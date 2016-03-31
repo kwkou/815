@@ -1,36 +1,37 @@
 <properties 
-    pageTitle="使用弹性数据库拆分/合并工具进行缩放" 
+    pageTitle="使用弹性数据库拆分/合并工具进行缩放 | Azure" 
     description="介绍如何使用弹性数据库 API 通过自托管服务来操作分片和移动数据。" 
     services="sql-database" 
     documentationCenter="" 
     manager="jeffreyg" 
-    authors="sidneyh"/>
+    authors="ddove"/>
 
 <tags 
-    ms.service="sql-database" 
-    ms.date="07/29/2015" 
-    wacn.date="09/15/2015" />
+    ms.service="sql-database"
+    ms.date="11/04/2015" 
+    wacn.date="01/05/2016" />
 
 # 使用弹性数据库拆分/合并工具进行缩放
 
-如果你选择不使用简单的模型来为每个 shardlet（租户）分配不同的数据库，当容量需求波动时，应用程序可能需要灵活地在数据库之间重新分配数据。弹性数据库工具包含客户托管的拆分/合并工具，用于重新平衡数据分布和管理分片应用程序的热点。它构建于在不同数据库之间按需移动 shardlet 的基础功能之上，并与分片映射管理集成，以维护一致的映射。
+[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-introduction)包含的一个工具可用于重新平衡数据分布和管理分片应用程序的热点。**拆分/合并工具**管理向内缩放和向外缩放。你可以在分片集中添加或删除数据库，并且可以使用拆分/合并工具重新平衡它们之间的 shardlet 分布。（有关术语定义，请参阅[弹性缩放词汇表](/documentation/articles/sql-database-elastic-scale-glossary)。）
 
-拆分/合并工具管理向内缩放和向外缩放。可以在分片集中添加或删除数据库，并使用拆分/合并工具重新平衡它们之间的 shardlet 分布。（有关术语定义，请参阅[弹性缩放词汇表](/documentation/articles/sql-database-elastic-scale-glossary)。）
+该工具在不同数据库之间按需移动 shardlet，并与[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management)集成，以维护一致的映射。
+
+开始时，请参阅[弹性数据库拆分/合并工具](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。
 
 ## 拆分/合并的新增功能
 
-拆分/合并工具的最新版本提供了以下改进：
+1\.1.0 版拆分/合并工具具有从完成的请求中自动清除元数据的功能。配置选项控制该元数据在删除之前的保留时间。
 
-* 包含 .Net API 来衔接拆分/合并 – Web 角色现在是可选的 
-* 分片键现在支持日期和时间类型 
-* 现在还支持列表分片映射。 
+1\.0.0 版拆分/合并工具提供了以下改进：
+* 包含 .Net API 来衔接拆分/合并 – Web 角色现在是可选的
+* 分片键现在支持日期和时间类型
+* 现在还支持列表分片映射。
 * 请求中的范围边界可以更轻松地符合存储在分片映射中的范围。
-* 为改善可用性，现在还支持多个辅助角色实体。 
+* 为改善可用性，现在还支持多个辅助角色实例。
 * 与拆分/合并操作一起存储的凭据现为静态加密。
 
 ## 如何升级
-
-若要升级到最新版的拆分/合并，请遵循以下步骤：
 
 1. 从 NuGet 下载最新版本的拆分/合并包，如[下载拆分/合并包](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge#download-the-Split-Merge-packages)中所述。
 2. 更改拆分/合并部署的云服务配置文件，以反映新的配置参数。新的必需参数是用于加密的证书的相关信息。执行此操作的简单方法是将下载的新配置模板文件与现有配置进行比较。请确保添加 Web 和辅助角色的“DataEncryptionPrimaryCertificateThumbprint”与“DataEncryptionPrimary”设置。
@@ -40,6 +41,7 @@
 无需设置新的元数据数据库，即可升级拆分/合并。新版本会自动将现有的元数据数据库升级到新版本。
 
 ## 拆分/合并的方案 
+
 应用程序需要灵活伸展到超出单个 Azure SQL DB 的限制，如以下方案所示：
 
 * **增长容量 – 拆分范围**：在数据层增长聚合容量的功能能够满足增长的容量需求。在本方案中，应用程序将通过对数据进行分片并将数据分发给越来越多的数据库来提供额外容量，直到满足容量需求。弹性缩放拆分/合并服务的“拆分”功能可以处理此方案。 
@@ -61,7 +63,7 @@
 
 ## 概念和主要功能
 
-**客户托管服务**：拆分/合并将作为客户托管服务交付。您必须在 Windows Azure 订阅中部署并托管该服务。您从 NuGet 下载的程序包将包含一个要使用您的特定部署信息完成的配置模板。有关详细信息，请参阅[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。由于服务在您的 Azure 订阅中运行，因此您可以控制和配置该服务的大多数安全设置。默认模板包括配置 SSL 的选项、基于证书的客户端身份验证、存储凭据的加密、DoS 防护和 IP 限制。你可以在以下[拆分/合并安全配置](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration)文档中找到有关安全方面的详细信息。
+**客户托管服务**：拆分/合并将作为客户托管服务交付。你必须在 Azure 订阅中部署并托管该服务。您从 NuGet 下载的程序包将包含一个要使用您的特定部署信息完成的配置模板。有关详细信息，请参阅[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。由于服务在您的 Azure 订阅中运行，因此您可以控制和配置该服务的大多数安全设置。默认模板包括配置 SSL 的选项、基于证书的客户端身份验证、存储凭据的加密、DoS 防护和 IP 限制。你可以在以下[拆分/合并安全配置](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration)文档中找到有关安全方面的详细信息。
 
 默认部署的服务可与一个辅助角色和一个 Web 角色同时运行。在 Azure 云服务中，每个角色都使用 A1 VM 大小。虽然您无法在部署程序包时修改这些设置，但是您可以在运行的云服务中成功进行部署之后更改它们（通过 Azure 门户）。请注意，出于技术方面的原因，不得为多个实例配置辅助角色。
 
@@ -113,7 +115,7 @@
 
 -    操作类型：操作类型是一个单选按钮，用于控制针对此请求由服务执行的操作类型。您可以在“概念和主要功能”中讨论的拆分、合并和移动方案之间进行选择。此外，您还可以取消以前提交的操作。你可以使用拆分、合并和移动请求来设置分片映射的范围。列表分片映射仅支持移动操作。
 
--    分片映射：请求参数的下一部分包含有关分片映射和托管分片映射的数据库的信息。具体而言，您需要提供托管分片映射的 Azure SQL 数据库 服务器和数据库的名称、用于连接到分片映射数据库的凭据以及分片映射的名称。当前，该操作仅接受一个凭据集。这些凭据需要具有足够的权限，才能对分片映射和分片上的用户数据执行更改。
+-    分片映射：请求参数的下一部分包含有关分片映射和托管分片映射的数据库的信息。具体而言，您需要提供托管分片映射的 Azure SQL 数据库服务器和数据库的名称、用于连接到分片映射数据库的凭据以及分片映射的名称。当前，该操作仅接受一个凭据集。这些凭据需要具有足够的权限，才能对分片映射和分片上的用户数据执行更改。
 
 -    源范围（拆分与合并）：拆分与合并操作将使用范围的低键和高键来处理该范围。若要使用无边界的高键值指定操作，请选中“高键为最大值”复选框，并将高键字段留空。指定的范围键值不需要与分片映射中的映射及其边界精确匹配。如果未指定任何范围边界，服务将自动为你推断最接近的范围。可以使用 GetMappings.ps1 PowerShell 脚本检索给定分片映射中的当前映射。
 
@@ -147,7 +149,7 @@
 
 ## 计费 
 
-拆分/合并服务在你的 Windows Azure 订阅中作为云服务运行。因此将对你的服务实例收取云服务费用。除非你频繁地执行拆分/合并/移动操作，否则建议删除你的拆分/合并云服务。这可以节省用于运行中的或已部署的云服务实例的成本。只要你需要执行拆分或合并操作，你就可以重新部署和启用已准备好的可运行配置。
+拆分/合并服务在你的 Azure 订阅中作为云服务运行。因此将对你的服务实例收取云服务费用。除非你频繁地执行拆分/合并/移动操作，否则建议删除你的拆分/合并云服务。这可以节省用于运行中的或已部署的云服务实例的成本。只要你需要执行拆分或合并操作，你就可以重新部署和启用已准备好的可运行配置。
  
 ## 监视 
 ### 状态表 
@@ -169,7 +171,7 @@
 
 ### Azure 诊断
 
-拆分/合并服务使用基于 Azure SDK 2.5 的 Azure Diagnostics 进行监视与诊断。可以根据此处所述控制诊断配置：[在 Azure 云服务和虚拟机器中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)。下载包包含两个诊断配置 – 一个用于 Web 角色，另一个用于辅助角色。这些服务诊断配置遵循 [Microsoft Azure 中的云服务基础知识](https://code.msdn.microsoft.com/windowsazure/Cloud-Service-Fundamentals-4ca72649)中的指导原则。它包括用于记录性能计数器、IIS 日志、Windows 事件日志和拆分/合并应用程序事件日志的定义。
+拆分/合并服务使用基于 Azure SDK 2.5 的 Azure Diagnostics 进行监视与诊断。可以根据此处所述控制诊断配置：[在 Azure 云服务和虚拟机器中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)。下载包包含两个诊断配置 – 一个用于 Web 角色，另一个用于辅助角色。这些服务诊断配置遵循 [Azure 中的云服务基础知识](https://code.msdn.microsoft.com/windowsazure/Cloud-Service-Fundamentals-4ca72649)中的指导原则。它包括用于记录性能计数器、IIS 日志、Windows 事件日志和拆分/合并应用程序事件日志的定义。
 
 ## 部署诊断 
 
@@ -179,7 +181,7 @@
     
     $key = "<YourAzureStorageAccountKey" 
     
-    $storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storage_name -StorageAccountKey $key  
+    $storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key  
     
     
     $config_path = "<YourFilePath>\SplitMergeWebContent.diagnostics.xml" 
@@ -210,7 +212,7 @@
 
 ## 性能
 
-通常，Azure SQL 数据库 中更高、更可执行的服务层应具有更好的性能。为更高服务层分配更高的 IO、CPU 和内存有利于拆分/合并服务在使用的批量复制和删除操作。因此，在定义的有限时间段内仅为这些数据库提高服务层。
+通常，Azure SQL 数据库中更高、更可执行的服务层应具有更好的性能。为更高服务层分配更高的 IO、CPU 和内存有利于拆分/合并服务在使用的批量复制和删除操作。因此，在定义的有限时间段内仅为这些数据库提高服务层。
 
 该服务也会将验证查询作为其常规操作的一部分来执行。除此之外，这些验证查询还会检查目标范围中数据的异常存在，确保任何拆分/合并/移动操作都从一致状态开始进行。这些查询在操作范围定义的分片键范围和作为请求定义的一部分而提供的批大小上都有效。当使用分片键作为起始列的索引存在时，这些查询表现最好。
 
@@ -239,4 +241,4 @@
 [3]: ./media/sql-database-elastic-scale-overview-split-and-merge/diagnostics-config.png
  
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1221_2015-->

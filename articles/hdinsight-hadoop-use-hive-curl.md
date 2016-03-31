@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 HDInsight 中将 Hadoop Hive 与 Curl 配合使用 | Windows Azure"
+   pageTitle="在 HDInsight 中将 Hadoop Hive 与 Curl 配合使用 | Azure"
    description="了解如何使用 Curl 向 HDInsight 远程提交 Pig 作业。"
    services="hdinsight"
    documentationCenter=""
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="02/05/2016"
+	wacn.date="03/28/2016"/>
 
 #使用 Curl 在 HDInsight 中以 Hadoop 运行 Hive 查询
 
@@ -34,10 +34,8 @@
 ##<a id="curl"></a>通过使用 Curl 运行 Hive 查询
 
 > [AZURE.NOTE]使用 Curl 或者与 WebHCat 进行任何其他形式的 REST 通信时，必须提供 HDInsight 群集管理员用户名和密码对请求进行身份验证。此外，还必须使用群集名称作为用来向服务器发送请求的统一资源标识符 (URI) 的一部分。
->
-> 对本部分中的所有命令，请将 **USERNAME** 替换为在群集上进行身份验证的用户，并将 **PASSWORD** 替换为用户帐户的密码。将 **CLUSTERNAME** 替换为群集名称。
->
-> REST API 通过[基本身份验证](http://en.wikipedia.org/wiki/Basic_access_authentication)进行保护。你始终应该使用安全 HTTP (HTTPS) 来发出请求，以确保安全地将凭据发送到服务器。
+> <p>对本部分中的所有命令，请将 **USERNAME** 替换为在群集上进行身份验证的用户，并将 **PASSWORD** 替换为用户帐户的密码。将 **CLUSTERNAME** 替换为群集名称。
+> <p>REST API 通过[基本身份验证](http://en.wikipedia.org/wiki/Basic_access_authentication)进行保护。你始终应该使用安全 HTTP (HTTPS) 来发出请求，以确保安全地将凭据发送到服务器。
 
 1. 在命令行中，使用以下命令验证你是否可以连接到 HDInsight 群集。
 
@@ -81,8 +79,7 @@
     * **CREATE EXTERNAL TABLE** - 在 Hive 中创建新的“外部”表。外部表仅在 Hive 中存储表定义。数据将保留在原始位置。
 
 		> [AZURE.NOTE]当你预期以外部源更新基础数据（例如自动化数据上载过程），或以其他 MapReduce 操作更新基础数据，但希望 Hive 查询始终使用最新数据时，必须使用外部表。
-		>
-		> 删除外部表**不会**删除数据，只会删除表定义。
+		> <p>删除外部表**不会**删除数据，只会删除表定义。
 
     * **ROW FORMAT** - 告知 Hive 如何设置数据的格式。在此情况下，每个日志中的字段以空格分隔。
 
@@ -110,7 +107,7 @@
 
 4. 在作业的状态更改为 **SUCCEEDED** 后，你可以从 Azure Blob 存储中检索作业的结果。随查询一起传递的 `statusdir` 参数包含输出文件的位置；在本例中为 **wasb:///example/curl**。此地址会将作业的输出存储在 HDInsight 群集所用的默认存储容器的 **example/curl** 目录中。
 
-    可以使用 [Azure CLI](/documentation/articles/xplat-cli) 列出并下载这些文件。例如，若要列出 **example/curl** 中的文件，请使用以下命令：
+    可以使用 [Azure CLI](/documentation/articles/xplat-cli-install) 列出并下载这些文件。例如，若要列出 **example/curl** 中的文件，请使用以下命令：
 
 		azure storage blob list <container-name> example/curl
 
@@ -164,7 +161,7 @@
 
 [apache-tez]: http://tez.apache.org
 [apache-hive]: http://hive.apache.org/
-[apache-log4j]: http://en.wikipedia.org/wiki/Log4j
+[apache-log4j]: http://zh.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
@@ -172,11 +169,11 @@
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 [image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png

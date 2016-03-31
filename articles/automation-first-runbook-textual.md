@@ -1,5 +1,5 @@
 <properties
-	pageTitle="我在 Azure 自动化中的第一个 PowerShell 工作流 Runbook | Windows Azure"
+	pageTitle="我在 Azure 自动化中的第一个 PowerShell 工作流 Runbook | Azure"
 	description="本教程指导你使用 PowerShell 工作流创建、测试和发布一个简单的文本 Runbook。文中涵盖了多个概念，例如，对 Azure 资源进行身份验证和输入参数。"
 	services="automation"
 	documentationCenter=""
@@ -122,8 +122,7 @@
 11.  关闭“测试”窗格。
 12.  单击“发布”以发布 Runbook 的新版本。
 13.  停止在上一步中启动的虚拟机。
-13.  单击“启动”以启动 Runbook。键入要启动的虚拟机的 **VMName** 和 **VMServiceName**。<br>
-
+13.  单击“启动”以启动 Runbook。键入要启动的虚拟机的 **VMName** 和 **VMServiceName**。
 14.  一旦 Runbook 完成后，检查已启动的虚拟机。
 
 <!---HONumber=82-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通过使用 Web API 注册推送通知的当前用户 | Microsoft Azure"
+	pageTitle="通过使用 Web API 注册推送通知的当前用户 | Azure"
 	description="了解在 ASP.NET Web API 执行注册时如何在 iOS 应用程序中请求向 Azure 通知中心注册推送通知。"
 	services="notification-hubs"
 	documentationCenter="ios"
@@ -9,13 +9,13 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="06/02/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="12/16/2015"
+	wacn.date="01/14/2016"/>
 
 # 通过使用 ASP.NET 注册推送通知的当前用户
 
 > [AZURE.SELECTOR]
-- [Windows Store C#](/documentation/articles/notification-hubs-windows-store-aspnet-register-user-push-notifications)
+- [Windows Store C#](/documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications)
 - [iOS](/documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications)
 
 
@@ -28,13 +28,13 @@
 
 1. 在 MainStoryboard\_iPhone.storyboard 中，从对象库添加以下组件：
 
-    -   **标签**：“使用通知中心推送到用户”
-    -   **标签**：“安装 ID”
-    -   **标签**：“用户”
-    -   **文本字段**：“用户”
-    -   **标签**：“密码”
-    -   **文本字段**：“密码”
-    -   **按钮**：“登录”
+	+ **标签**：“使用通知中心推送到用户”
+	+ **标签**："InstallationId"
+	+ **标签**：“用户”
+	+ **文本字段**：“用户”
+	+ **标签**：“密码”
+	+ **文本字段**：“密码”
+	+ **按钮**：“登录”
 
     此时，你的 Storyboard 应与下图类似：
 
@@ -223,7 +223,7 @@
 
 <!-- Anchors. -->  
 
-
+<!-- Images. -->
 [0]: ./media/notification-hubs-ios-aspnet-register-user-push-notifications/notification-hub-user-aspnet-ios1.png
 [1]: ./media/notification-hubs-ios-aspnet-register-user-push-notifications/notification-hub-user-aspnet-ios2.png
 
@@ -231,4 +231,4 @@
 [使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [通知中心入门]: /documentation/articles/notification-hubs-ios-get-started
-<!---HONumber=71-->
+<!---HONumber=82-->

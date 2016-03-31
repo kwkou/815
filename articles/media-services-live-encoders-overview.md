@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/29/2015"
-	wacn.date="11/27/2015"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/21/2016"/>
 
 
 
@@ -40,4 +40,4 @@
 
 [使用能够通过 Azure 媒体服务执行实时编码的通道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0314_2016-->

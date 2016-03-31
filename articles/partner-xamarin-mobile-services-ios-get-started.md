@@ -1,5 +1,5 @@
 <properties
-	pageTitle="用于 Xamarin iOS 应用程序的移动服务入门"
+	pageTitle="用于 Xamarin iOS 应用程序的移动服务入门 | Microsoft Azure"
 	description="按照本教程进行操作，开始使用 Azure 移动服务进行 Xamarin iOS 开发。"
 	services="mobile-services"
 	documentationCenter="xamarin"
@@ -9,14 +9,20 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/09/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="02/10/2016"
+	wacn.date="03/21/2016"/>
 
 #  <a name="getting-started"></a>移动服务入门
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
 
-本教程说明如何使用 Azure 移动服务向 Xamarin.iOS 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单<em>待办事项列表</em>应用程序。
+&nbsp;
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+&nbsp;
+
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
+
+本教程说明如何使用 Azure 移动服务向 Xamarin.iOS 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单*待办事项列表*应用程序。
 
 
 以下是完成的应用程序的屏幕快照：
@@ -33,11 +39,11 @@
 
 ##  创建新的 Xamarin iOS 应用程序
 
-创建移动服务后，你可以在管理门户中遵照一个简易的快速入门项目来创建新应用程序或修改现有应用程序，以连接到你的移动服务。
+创建移动服务后，你可以在 Azure 经典门户中遵照一个简易的快速入门项目来创建新应用程序或修改现有应用程序，以连接到你的移动服务。
 
 在本部分中，你将要创建一个连接到移动服务的新的 Xamarin.iOS 应用程序。
 
-1.  在管理门户中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1.  在 [Azure 经典门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2. 在快速启动选项卡中，单击“选择平台”下的“Xamarin.iOS”，然后展开“创建新的 Xamarin.iOS 应用程序”。
 
@@ -75,7 +81,7 @@
 
 	> [AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 TodoService.cs C# 文件中。
 
-4. 返回管理门户，单击“数据”选项卡，然后单击 **TodoItem** 表。
+4. 返回 [Azure 经典门户]，单击“数据”选项卡，然后单击“TodoItems”表。
 
 	![][11]
 
@@ -87,17 +93,19 @@
 ##  后续步骤
 完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
-* [数据处理入门]
-  <br/>了解如何将一个新表添加到移动服务中，然后对该表进行读取和写入操作。
-
 * [脱机数据同步入门]
-  <br/>了解如何快速开始使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
+了解如何快速开始使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
 
-* [身份验证入门]
-  <br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
+* [身份验证入门] 
+了解如何使用标识提供程序对应用程序的用户进行身份验证。
 
-* [推送通知入门]
-  <br/>了解如何向应用程序发送一条很基本的推送通知。
+* [推送通知入门] 
+了解如何向应用程序发送一条很基本的推送通知。
+
+
+
+
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]: #getting-started
@@ -106,7 +114,6 @@
 [Next Steps]: #next-steps
 
 <!-- Images. -->
-
 [0]: ./media/partner-xamarin-mobile-services-ios-get-started/mobile-quickstart-completed-ios.png
 [6]: ./media/partner-xamarin-mobile-services-ios-get-started/mobile-portal-quickstart-xamarin-ios.png
 [7]: ./media/partner-xamarin-mobile-services-ios-get-started/mobile-quickstart-steps-xamarin-ios.png
@@ -118,7 +125,6 @@
 
 
 <!-- URLs. -->
-[数据处理入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-data
 [脱机数据同步入门]: /documentation/articles/mobile-services-xamarin-ios-get-started-offline-data
 [身份验证入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-users
 [推送通知入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-push
@@ -126,6 +132,6 @@
 [Xamarin Studio]: http://xamarin.com/download
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
-[Management Portal]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

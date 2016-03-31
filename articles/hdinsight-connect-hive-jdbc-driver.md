@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="02/01/2016"
+	wacn.date="03/28/2016"/>
 
 #使用 Hive JDBC 驱动程序连接到 Azure HDInsight 上的 Hive
 
@@ -57,7 +57,9 @@
 
 ##Java 项目示例
 
-使用 Java 客户端在 HDInsight 上查询 Hive 的示例位于 [https://github.com/Blackmist/hdinsight-hive-jdbc](https://github.com/Blackmist/hdinsight-hive-jdbc)。按照存储库中的说明生成并运行该示例。
+使用 Java 客户端在 HDInsight 上查询 Hive 的示例位于 [https://github.com/Azure-Samples/hdinsight-java-hive-jdbc](https://github.com/Azure-Samples/hdinsight-java-hive-jdbc)。按照存储库中的说明生成并运行该示例。
+
+>[AZURE.NOTE] 这个示例是为全球 Azure 写的，在 Azure 中国，你需要把连接字符串中的 "azurehdinsight.net" 替换为 "azurehdinsight.cn"
 
 ##后续步骤
 

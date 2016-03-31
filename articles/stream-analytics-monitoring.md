@@ -1,7 +1,7 @@
 <properties 
-	pageTitle="了解流分析作业监视 | Windows Azure" 
+	pageTitle="了解流分析作业监视 | Azure" 
 	description="了解流分析作业监视" 
-	keywords="大数据分析、云服务中、物联网、托管服务、流处理、流分析、流数据"
+	keywords="查询监视器"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -10,18 +10,20 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="09/09/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="02/04/2016" 
+	wacn.date="03/17/2016"/>
 
-# 了解流分析作业监视
+# 了解流分析作业监视以及如何监视查询
 
-## “监视”页
+## 简介：“监视”页
 
-“监视”页包含用于监视你的作业及进行故障排除的关键性能指标。单击正在运行的流分析作业的“监视”选项卡可查看这些指标。在“监视”页中显示性能指标最多有 1 分钟的延迟。
+Azure 管理门户提供了可用于监视你的作业及对其进行故障排除的关键性能指标。
 
-  ![监视仪表板](./media/stream-analytics-monitoring/01-stream-analytics-monitoring.png)
+在 Azure 管理门户中，单击正在运行的流分析作业的“监视”选项卡可查看这些指标。在“监视”页中显示性能指标最多有 1 分钟的延迟。
 
-## 可用于流分析的指标
+  ![监视作业仪表板](./media/stream-analytics-monitoring/01-stream-analytics-monitoring.png)
+
+## 可用于流分析的指标  
 
 | 度量值 | 定义 |
 |--------|-------------|
@@ -31,18 +33,22 @@
 | 输出事件数 | 流分析作业发送到输出目标的数据量，以事件计数来衡量。 |
 | 无序事件数 | 收到的无序事件的数目，系统根据事件排序策略来删除这些事件，或者为其提供一个经过调整的时间戳。这可能会受“无序容错时段”设置的影响。 |
 | 数据转换错误数 | 流分析作业导致的数据转换错误的数目。 |
+| 运行时错误 | 执行流分析作业的过程中发生的错误数。 |
 | 延迟输入事件数 | 延迟到达的事件的数目，系统根据延迟到达容错时段设置的事件排序策略配置删除这些事件，或者调整其时间戳。 |
-一张图表上最多可以显示 6 个指标
+
+## 在 Azure 管理门户中自定义监视 ##
+
+一张图表上最多可以显示 6 个指标。
 
 若要切换显示相对值（仅显示每个度量值的最终值）和绝对值（显示 Y 轴），请在图表顶部选择“相对”或“绝对”。
 
-  ![相对或绝对](./media/stream-analytics-monitoring/02-stream-analytics-monitoring.png)
+  ![查询监视器相对绝对](./media/stream-analytics-monitoring/02-stream-analytics-monitoring.png)
 
 可以在 1 小时、12 小时、24 小时或 7 天聚合监视图中查看指标。
 
 若要更改度量值图表显示的时间范围，请在图表顶部选择 1 小时、24 小时或者 7 天。
 
-  ![时间刻度](./media/stream-analytics-monitoring/03-stream-analytics-monitoring.png)
+  ![查询监视器时间刻度](./media/stream-analytics-monitoring/03-stream-analytics-monitoring.png)
 
 你可以设置规则，在作业超过定义的阈值时以电子邮件的方式通知你。
 
@@ -63,13 +69,13 @@
 
 ## 诊断
 
-作业仪表板提供有关需要在何处查找诊断的信息，例如输入、输出和/或操作日志。可以单击链接以前往相应的位置来查看诊断。
+在 Azure 管理门户中，作业仪表板提供有关需要在何处查找诊断的信息（即输入、输出和/或操作日志）。可以单击链接以前往相应的位置来查看诊断。
 
-  ![错误](./media/stream-analytics-monitoring/04-stream-analytics-monitoring.png)
+  ![查询监视器错误](./media/stream-analytics-monitoring/04-stream-analytics-monitoring.png)
 
 单击输入或输出资源可提供详细的诊断信息。当作业正在运行时，会用最新的诊断信息刷新此内容。
 
-  ![诊断](./media/stream-analytics-monitoring/05-stream-analytics-monitoring.png)
+  ![查询诊断](./media/stream-analytics-monitoring/05-stream-analytics-monitoring.png)
 
 ## 获取帮助
 如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=AzureStreamAnalytics)
@@ -82,4 +88,4 @@
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0307_2016-->

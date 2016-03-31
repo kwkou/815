@@ -1,21 +1,21 @@
 <properties
-   pageTitle="配置流量管理器轮循机制流量路由方法 | Windows Azure"
+   pageTitle="配置流量管理器轮循机制流量路由方法 | Azure"
    description="本文将帮助你为流量管理器终结点配置“循环”负载平衡。"
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="traffic-manager"
-   ms.date="08/19/2015"
-   wacn.date="11/02/2015" />
+<tags
+	ms.service="traffic-manager"
+   ms.date="12/07/2015"
+	wacn.date="03/28/2016"/>
 
 # 配置轮循机制路由方法
 
-一种常见的流量路由方法模式是提供一组相同的终结点（包括云服务和网站），并以循环方式向每个终结点发送流量。下面的步骤概述了如何对流量管理器进行配置以执行此类型的流量路由方法。有关不同流量路由方法的详细信息，请参阅[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-load-balancing-methods)。
+一种常见的流量路由方法模式是提供一组相同的终结点（包括云服务和 Web 应用），并以循环方式向每个终结点发送流量。下面的步骤概述了如何对流量管理器进行配置以执行此类型的流量路由方法。有关不同流量路由方法的详细信息，请参阅[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods)。
 
->[AZURE.NOTE]Azure 网站已经针对数据中心（也称为区域）内的网站提供了“循环”负载平衡功能。你可以使用流量管理器为不同数据中心内的网站指定轮询机制流量路由方法。
+>[AZURE.NOTE]Azure Web 应用已经针对数据中心（也称为区域）内的 Web 应用提供了“循环”负载平衡功能。你可以使用流量管理器为不同数据中心内的 Web 应用指定轮询机制流量路由方法。
 
 ## 均衡地（轮循机制）在一组终结点之间路由流量：
 
@@ -31,21 +31,21 @@
 
 ## 后续步骤
 
-[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-load-balancing-methods)
+
+[将公司 Internet 域指向流量管理器域](/documentation/articles/traffic-manager-point-internet-domain)
+
+[流量管理器路由方法](/documentation/articles/traffic-manager-routing-methods)
+
+[配置故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method)
+
+[配置性能路由方法](/documentation/articles/traffic-manager-configure-performance-routing-method)
+
+[流量管理器降级状态疑难解答](/documentation/articles/traffic-manager-troubleshooting-degraded)
 
 [流量管理器 - 禁用、启用或删除配置文件](/documentation/articles/disable-enable-or-delete-a-profile)
 
 [流量管理器 - 禁用或启用终结点](/documentation/articles/disable-or-enable-an-endpoint)
 
-[什么是流量管理器？](/documentation/articles/traffic-manager-overview)
-
-[云服务](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
-
-[网站](/home/features/web-site/)
-
-[流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
-
-[Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
  
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_1221_2015-->

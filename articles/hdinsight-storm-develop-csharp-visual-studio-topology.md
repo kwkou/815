@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Visual Studio 和 C# 创建 Apache Storm 拓扑 | Windows Azure"
+   pageTitle="使用 Visual Studio 和 C# 创建 Apache Storm 拓扑 | Azure"
    description="了解如何通过使用 HDInsight Tools for Visual Studio 创建一个简单的单词计数拓扑，来以 C# 语言创建一个 Storm 拓扑。"
    services="hdinsight"
    documentationCenter=""
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="02/05/2016"
+	wacn.date="03/28/2016"/>
 
 # 使用 Hadoop Tools for Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑
 
@@ -35,7 +35,7 @@
 
     > [AZURE.NOTE]Visual Studio Express 不支持 HDInsight Tools for Visual Studio
 
--	Apache Storm on HDInsight 群集：参阅 [Apache Storm on HDInsight 入门](/documentation/articles/hdinsight-storm-getting-started)了解创建群集的步骤。
+-	Apache Storm on HDInsight 群集：参阅 [Apache Storm on HDInsight 入门](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)了解创建群集的步骤。
 
 	> [AZURE.NOTE]HDInsight Tools for Visual Studio 目前只支持 Storm on HDInsight 版本 3.2 群集。
 
@@ -94,72 +94,70 @@ HDInsight Tools for Visual Studio 提供以下模板：
 
 2.	将 **Spout** 类的内容替换为以下内容。这会创建将句子随机发出到拓扑中的 Spout。
 
-	```
-	private Context ctx;
-	private Random r = new Random();
-	string[] sentences = new string[] {
-	    "the cow jumped over the moon",
-	    "an apple a day keeps the doctor away",
-	    "four score and seven years ago",
-	    "snow white and the seven dwarfs",
-	    "i am at two with nature"
-	};
-
-
-	public Spout(Context ctx)
-	{
-	    // Set the instance context
-	    this.ctx = ctx;
-
-
-	    Context.Logger.Info("Generator constructor called");
-
-
-	    // Declare Output schema
-	    Dictionary<string, List<Type>> outputSchema = new Dictionary<string, List<Type>>();
-	    // The schema for the default output stream is
-	    // a tuple that contains a string field
-	    outputSchema.Add("default", new List<Type>() { typeof(string) });
-	    this.ctx.DeclareComponentSchema(new ComponentStreamSchema(null, outputSchema));
-	}
-
-
-	// Get an instance of the spout
-	public static Spout Get(Context ctx, Dictionary<string, Object> parms)
-	{
-	    return new Spout(ctx);
-	}
-
-
-	public void NextTuple(Dictionary<string, Object> parms)
-	{
-	    Context.Logger.Info("NextTuple enter");
-	    // The sentence to be emitted
-	    string sentence;
-
-
-	    // Get a random sentence
-	    sentence = sentences[r.Next(0, sentences.Length - 1)];
-	    Context.Logger.Info("Emit: {0}", sentence);
-	    // Emit it
-	    this.ctx.Emit(new Values(sentence));
-
-
-	    Context.Logger.Info("NextTuple exit");
-	}
-
-
-	public void Ack(long seqId, Dictionary<string, Object> parms)
-	{
-	    // Only used for transactional topologies
-	}
-
-
-	public void Fail(long seqId, Dictionary<string, Object> parms)
-	{
-	    // Only used for transactional topologies
-	}
-	```
+		private Context ctx;
+		private Random r = new Random();
+		string[] sentences = new string[] {
+	    	"the cow jumped over the moon",
+	    	"an apple a day keeps the doctor away",
+	    	"four score and seven years ago",
+	    	"snow white and the seven dwarfs",
+	    	"i am at two with nature"
+		};
+		
+		
+		public Spout(Context ctx)
+		{
+	    	// Set the instance context
+	    	this.ctx = ctx;
+			
+			
+	    	Context.Logger.Info("Generator constructor called");
+			
+			
+	    	// Declare Output schema
+	    	Dictionary<string, List<Type>> outputSchema = new Dictionary<string, List<Type>>();
+	    	// The schema for the default output stream is
+	    	// a tuple that contains a string field
+	    	outputSchema.Add("default", new List<Type>() { typeof(string) });
+	    	this.ctx.DeclareComponentSchema(new ComponentStreamSchema(null, outputSchema));
+		}
+		
+		
+		// Get an instance of the spout
+		public static Spout Get(Context ctx, Dictionary<string, Object> parms)
+		{
+	    	return new Spout(ctx);
+		}
+		
+		
+		public void NextTuple(Dictionary<string, Object> parms)
+		{
+	    	Context.Logger.Info("NextTuple enter");
+	    	// The sentence to be emitted
+	    	string sentence;
+			
+			
+	    	// Get a random sentence
+	    	sentence = sentences[r.Next(0, sentences.Length - 1)];
+	    	Context.Logger.Info("Emit: {0}", sentence);
+	    	// Emit it
+	    	this.ctx.Emit(new Values(sentence));
+			
+			
+	    	Context.Logger.Info("NextTuple exit");
+		}
+		
+		
+		public void Ack(long seqId, Dictionary<string, Object> parms)
+		{
+	    	// Only used for transactional topologies
+		}
+		
+		
+		public void Fail(long seqId, Dictionary<string, Object> parms)
+		{
+	    	// Only used for transactional topologies
+		}
 
 	请花片时间阅读注释，以了解此代码的作用。
 
@@ -179,121 +177,117 @@ HDInsight Tools for Visual Studio 提供以下模板：
 
 4.	将 **Splitter** 类的内容替换为以下代码：
 
-	```
-	private Context ctx;
-
-
-	// Constructor
-	public Splitter(Context ctx)
-	{
-	    Context.Logger.Info("Splitter constructor called");
-	    this.ctx = ctx;
-
-
-	    // Declare Input and Output schemas
-	    Dictionary<string, List<Type>> inputSchema = new Dictionary<string, List<Type>>();
-	    // Input contains a tuple with a string field (the sentence)
-	    inputSchema.Add("default", new List<Type>() { typeof(string) });
-	    Dictionary<string, List<Type>> outputSchema = new Dictionary<string, List<Type>>();
-	    // Outbound contains a tuple with a string field (the word)
-	    outputSchema.Add("default", new List<Type>() { typeof(string) });
-	    this.ctx.DeclareComponentSchema(new ComponentStreamSchema(inputSchema, outputSchema));
-	}
-
-
-	// Get a new instance of the bolt
-	public static Splitter Get(Context ctx, Dictionary<string, Object> parms)
-	{
-	    return new Splitter(ctx);
-	}
-
-
-	// Called when a new tuple is available
-	public void Execute(SCPTuple tuple)
-	{
-	    Context.Logger.Info("Execute enter");
-
-
-	    // Get the sentence from the tuple
-	    string sentence = tuple.GetString(0);
-	    // Split at space characters
-	    foreach (string word in sentence.Split(' '))
-	    {
-	        Context.Logger.Info("Emit: {0}", word);
-	        //Emit each word
-	        this.ctx.Emit(new Values(word));
-	    }
-
-
-	    Context.Logger.Info("Execute exit");
-	}
-	```
+		private Context ctx;
+		
+		
+		// Constructor
+		public Splitter(Context ctx)
+		{
+	    	Context.Logger.Info("Splitter constructor called");
+	    	this.ctx = ctx;
+			
+			
+	    	// Declare Input and Output schemas
+	    	Dictionary<string, List<Type>> inputSchema = new Dictionary<string, List<Type>>();
+	    	// Input contains a tuple with a string field (the sentence)
+	    	inputSchema.Add("default", new List<Type>() { typeof(string) });
+	    	Dictionary<string, List<Type>> outputSchema = new Dictionary<string, List<Type>>();
+	    	// Outbound contains a tuple with a string field (the word)
+	    	outputSchema.Add("default", new List<Type>() { typeof(string) });
+	    	this.ctx.DeclareComponentSchema(new ComponentStreamSchema(inputSchema, outputSchema));
+		}
+		
+		
+		// Get a new instance of the bolt
+		public static Splitter Get(Context ctx, Dictionary<string, Object> parms)
+		{
+	    	return new Splitter(ctx);
+		}
+		
+		
+		// Called when a new tuple is available
+		public void Execute(SCPTuple tuple)
+		{
+	    	Context.Logger.Info("Execute enter");
+			
+			
+	    	// Get the sentence from the tuple
+	    	string sentence = tuple.GetString(0);
+	    	// Split at space characters
+	    	foreach (string word in sentence.Split(' '))
+	    	{
+	        	Context.Logger.Info("Emit: {0}", word);
+	        	//Emit each word
+	        	this.ctx.Emit(new Values(word));
+	    	}
+			
+			
+	    	Context.Logger.Info("Execute exit");
+		}
 
 	请花片时间阅读注释，以了解此代码的作用。
 
 5.	打开 **Counter.cs** 并将类内容替换为以下内容。
 
-	```
-	private Context ctx;
-
-
-	// Dictionary for holding words and counts
-	private Dictionary<string, int> counts = new Dictionary<string, int>();
-
-
-	// Constructor
-	public Counter(Context ctx)
-	{
-	    Context.Logger.Info("Counter constructor called");
-	    // Set instance context
-	    this.ctx = ctx;
-
-
-	    // Declare Input and Output schemas
-	    Dictionary<string, List<Type>> inputSchema = new Dictionary<string, List<Type>>();
-	    // A tuple containing a string field - the word
-	    inputSchema.Add("default", new List<Type>() { typeof(string) });
-
-
-	    Dictionary<string, List<Type>> outputSchema = new Dictionary<string, List<Type>>();
-	    // A tuple containing a string and integer field - the word and the word count
-	    outputSchema.Add("default", new List<Type>() { typeof(string), typeof(int) });
-	    this.ctx.DeclareComponentSchema(new ComponentStreamSchema(inputSchema, outputSchema));
-	}
-
-
-	// Get a new instance
-	public static Counter Get(Context ctx, Dictionary<string, Object> parms)
-	{
-	    return new Counter(ctx);
-	}
-
-
-	// Called when a new tuple is available
-	public void Execute(SCPTuple tuple)
-	{
-	    Context.Logger.Info("Execute enter");
-
-
-	    // Get the word from the tuple
-	    string word = tuple.GetString(0);
-	    // Do we already have an entry for the word in the dictionary?
-	    // If no, create one with a count of 0
-	    int count = counts.ContainsKey(word) ? counts[word] : 0;
-	    // Increment the count
-	    count++;
-	    // Update the count in the dictionary
-	    counts[word] = count;
-
-
-	    Context.Logger.Info("Emit: {0}, count: {1}", word, count);
-	    // Emit the word and count information
-	    this.ctx.Emit(Constants.DEFAULT_STREAM_ID, new List<SCPTuple> { tuple }, new Values(word, count));
-
-
-	    Context.Logger.Info("Execute exit");
-	}
-	```
+		private Context ctx;
+		
+		
+		// Dictionary for holding words and counts
+		private Dictionary<string, int> counts = new Dictionary<string, int>();
+		
+		
+		// Constructor
+		public Counter(Context ctx)
+		{
+	    	Context.Logger.Info("Counter constructor called");
+	    	// Set instance context
+	    	this.ctx = ctx;
+			
+			
+	    	// Declare Input and Output schemas
+	    	Dictionary<string, List<Type>> inputSchema = new Dictionary<string, List<Type>>();
+	    	// A tuple containing a string field - the word
+	    	inputSchema.Add("default", new List<Type>() { typeof(string) });
+			
+			
+	    	Dictionary<string, List<Type>> outputSchema = new Dictionary<string, List<Type>>();
+	    	// A tuple containing a string and integer field - the word and the word count
+	    	outputSchema.Add("default", new List<Type>() { typeof(string), typeof(int) });
+	    	this.ctx.DeclareComponentSchema(new ComponentStreamSchema(inputSchema, outputSchema));
+		}
+		
+		
+		// Get a new instance
+		public static Counter Get(Context ctx, Dictionary<string, Object> parms)
+		{
+	    	return new Counter(ctx);
+		}
+		
+		
+		// Called when a new tuple is available
+		public void Execute(SCPTuple tuple)
+		{
+	    	Context.Logger.Info("Execute enter");
+			
+			
+	    	// Get the word from the tuple
+	    	string word = tuple.GetString(0);
+	    	// Do we already have an entry for the word in the dictionary?
+	    	// If no, create one with a count of 0
+	    	int count = counts.ContainsKey(word) ? counts[word] : 0;
+	    	// Increment the count
+	    	count++;
+	    	// Update the count in the dictionary
+	    	counts[word] = count;
+			
+			
+	    	Context.Logger.Info("Emit: {0}, count: {1}", word, count);
+	    	// Emit the word and count information
+	    	this.ctx.Emit(Constants.DEFAULT_STREAM_ID, new List<SCPTuple> { tuple }, new Values(word, count));
+			
+			
+	    	Context.Logger.Info("Execute exit");
+		}
 
 	请花片时间阅读注释，以了解此代码的作用。
 
@@ -309,7 +303,6 @@ Spout 和 Bolt 以图形方式排列，用于定义数据在组件之间的流�
 
 打开 **Program.cs**。重要的方法是 **ITopologyBuilder**，它用于定义提交到 Storm 的拓扑。将 **ITopologyBuilder** 的内容替换为以下代码，以实现上面所述的拓扑。
 
-```
     // Create a new topology named 'WordCount'
     TopologyBuilder topologyBuilder = new TopologyBuilder("WordCount");
 
@@ -364,7 +357,6 @@ Spout 和 Bolt 以图形方式排列，用于定义数据在组件之间的流�
     });
 
     return topologyBuilder;
-```
 
 请花片时间阅读注释，以了解此代码的作用。
 
@@ -400,9 +392,7 @@ Spout 和 Bolt 以图形方式排列，用于定义数据在组件之间的流�
 
 -	**序列 ID**：发出 Tuple 时，可以指定序列 ID。这应该是标识用于重放（确认和失败）处理的 Tuple 的值。例如，发出数据时，**Storm 示例**项目中的 Spout 会使用以下项：
 
-	```
-	this.ctx.Emit(Constants.DEFAULT_STREAM_ID, new Values(sentence), lastSeqId);
-	```
+		this.ctx.Emit(Constants.DEFAULT_STREAM_ID, new Values(sentence), lastSeqId);
 
 	这会发出包含默认数据流的句子的新 Tuple，以及 **lastSeqId** 中所含的序列 ID 值。在此示例中，只会递增每个发出的 Tuple 的 **lastSeqId**。
 
@@ -477,118 +467,112 @@ SCP.Net 版本 0.9.4.203 引入了专用于事件中心 Spout（从事件中心�
 
 3.	打开 **LocalTest.cs**，并在顶部添加以下 **using** 语句：
 
-	```
-	using Microsoft.SCP;
-	```
+		using Microsoft.SCP;
 
 4.	使用以下内容作为 **LocalTest** 类的内容：
 
-	```
-	// Drives the topology components
-	public void RunTestCase()
-	{
-	    // An empty dictionary for use when creating components
-	    Dictionary<string, Object> emptyDictionary = new Dictionary<string, object>();
-
-
-	    #region Test the spout
-	    {
-	        Console.WriteLine("Starting spout");
-	        // LocalContext is a local-mode context that can be used to initialize
-	        // components in the development environment.
-	        LocalContext spoutCtx = LocalContext.Get();
-	        // Get a new instance of the spout, using the local context
-	        Spout sentences = Spout.Get(spoutCtx, emptyDictionary);
-
-
-	        // Emit 10 tuples
-	        for (int i = 0; i < 10; i++)
-	        {
-	            sentences.NextTuple(emptyDictionary);
-	        }
-	        // Use LocalContext to persist the data stream to file
-	        spoutCtx.WriteMsgQueueToFile("sentences.txt");
-	        Console.WriteLine("Spout finished");
-	    }
-	    #endregion
-
-
-	    #region Test the splitter bolt
-	    {
-	        Console.WriteLine("Starting splitter bolt");
-	        // LocalContext is a local-mode context that can be used to initialize
-	        // components in the development environment.
-	        LocalContext splitterCtx = LocalContext.Get();
-	        // Get a new instance of the bolt
-	        Splitter splitter = Splitter.Get(splitterCtx, emptyDictionary);
-
-
-	        // Set the data stream to the data created by the spout
-	        splitterCtx.ReadFromFileToMsgQueue("sentences.txt");
-	        // Get a batch of tuples from the stream
-	        List<SCPTuple> batch = splitterCtx.RecvFromMsgQueue();
-	        // Process each tuple in the batch
-	        foreach (SCPTuple tuple in batch)
-	        {
-	            splitter.Execute(tuple);
-	        }
-	        // Use LocalContext to persist the data stream to file
-	        splitterCtx.WriteMsgQueueToFile("splitter.txt");
-	        Console.WriteLine("Splitter bolt finished");
-	    }
-	    #endregion
-
-
-	    #region Test the counter bolt
-	    {
-	        Console.WriteLine("Starting counter bolt");
-	        // LocalContext is a local-mode context that can be used to initialize
-	        // components in the development environment.
-	        LocalContext counterCtx = LocalContext.Get();
-	        // Get a new instance of the bolt
-	        Counter counter = Counter.Get(counterCtx, emptyDictionary);
-
-
-	        // Set the data stream to the data created by splitter bolt
-	        counterCtx.ReadFromFileToMsgQueue("splitter.txt");
-	        // Get a batch of tuples from the stream
-	        List<SCPTuple> batch = counterCtx.RecvFromMsgQueue();
-	        // Process each tuple in the batch
-	        foreach (SCPTuple tuple in batch)
-	        {
-	            counter.Execute(tuple);
-	        }
-	        // Use LocalContext to persist the data stream to file
-	        counterCtx.WriteMsgQueueToFile("counter.txt");
-	        Console.WriteLine("Counter bolt finished");
-	    }
-	    #endregion
-	}
-	```
+		// Drives the topology components
+		public void RunTestCase()
+		{
+	    	// An empty dictionary for use when creating components
+	    	Dictionary<string, Object> emptyDictionary = new Dictionary<string, object>();
+			
+			
+	    	#region Test the spout
+	    	{
+	        	Console.WriteLine("Starting spout");
+	        	// LocalContext is a local-mode context that can be used to initialize
+	        	// components in the development environment.
+	        	LocalContext spoutCtx = LocalContext.Get();
+	        	// Get a new instance of the spout, using the local context
+	        	Spout sentences = Spout.Get(spoutCtx, emptyDictionary);
+				
+				
+	        	// Emit 10 tuples
+	        	for (int i = 0; i < 10; i++)
+	        	{
+	            	sentences.NextTuple(emptyDictionary);
+	        	}
+	        	// Use LocalContext to persist the data stream to file
+	        	spoutCtx.WriteMsgQueueToFile("sentences.txt");
+	        	Console.WriteLine("Spout finished");
+	    	}
+	    	#endregion
+			
+			
+	    	#region Test the splitter bolt
+	    	{
+	        	Console.WriteLine("Starting splitter bolt");
+	        	// LocalContext is a local-mode context that can be used to initialize
+	        	// components in the development environment.
+	        	LocalContext splitterCtx = LocalContext.Get();
+	        	// Get a new instance of the bolt
+	        	Splitter splitter = Splitter.Get(splitterCtx, emptyDictionary);
+				
+				
+	        	// Set the data stream to the data created by the spout
+	        	splitterCtx.ReadFromFileToMsgQueue("sentences.txt");
+	        	// Get a batch of tuples from the stream
+	        	List<SCPTuple> batch = splitterCtx.RecvFromMsgQueue();
+	        	// Process each tuple in the batch
+	        	foreach (SCPTuple tuple in batch)
+	        	{
+	            	splitter.Execute(tuple);
+	        	}
+	        	// Use LocalContext to persist the data stream to file
+	        	splitterCtx.WriteMsgQueueToFile("splitter.txt");
+	        	Console.WriteLine("Splitter bolt finished");
+	    	}
+	    	#endregion
+			
+			
+	    	#region Test the counter bolt
+	    	{
+	        	Console.WriteLine("Starting counter bolt");
+	        	// LocalContext is a local-mode context that can be used to initialize
+	        	// components in the development environment.
+	        	LocalContext counterCtx = LocalContext.Get();
+	        	// Get a new instance of the bolt
+	        	Counter counter = Counter.Get(counterCtx, emptyDictionary);
+				
+				
+	        	// Set the data stream to the data created by splitter bolt
+	        	counterCtx.ReadFromFileToMsgQueue("splitter.txt");
+	        	// Get a batch of tuples from the stream
+	        	List<SCPTuple> batch = counterCtx.RecvFromMsgQueue();
+	        	// Process each tuple in the batch
+	        	foreach (SCPTuple tuple in batch)
+	        	{
+	            	counter.Execute(tuple);
+	        	}
+	        	// Use LocalContext to persist the data stream to file
+	        	counterCtx.WriteMsgQueueToFile("counter.txt");
+	        	Console.WriteLine("Counter bolt finished");
+	    	}
+	    	#endregion
+		}
 
 	花费片刻时间通读代码注释。此代码使用 **LocalContext** 在开发环境中运行组件，并将组件之间的数据流保存到本地磁盘驱动器上的文本文件中。
 
 5.	打开 **Program.cs**，将以下代码添加到 **Main** 方法中：
 
-	```
-	Console.WriteLine("Starting tests");
-	System.Environment.SetEnvironmentVariable("microsoft.scp.logPrefix", "WordCount-LocalTest");
-	// Initialize the runtime
-	SCPRuntime.Initialize();
-
-
-	//If we are not running under the local context, throw an error
-	if (Context.pluginType != SCPPluginType.SCP_NET_LOCAL)
-	{
-	    throw new Exception(string.Format("unexpected pluginType: {0}", Context.pluginType));
-	}
-	// Create test instance
-	LocalTest tests = new LocalTest();
-	// Run tests
-	tests.RunTestCase();
-	Console.WriteLine("Tests finished");
-	Console.ReadKey();
-	```
+		Console.WriteLine("Starting tests");
+		System.Environment.SetEnvironmentVariable("microsoft.scp.logPrefix", "WordCount-LocalTest");
+		// Initialize the runtime
+		SCPRuntime.Initialize();
+		
+		
+		//If we are not running under the local context, throw an error
+		if (Context.pluginType != SCPPluginType.SCP_NET_LOCAL)
+		{
+	    	throw new Exception(string.Format("unexpected pluginType: {0}", Context.pluginType));
+		}
+		// Create test instance
+		LocalTest tests = new LocalTest();
+		// Run tests
+		tests.RunTestCase();
+		Console.WriteLine("Tests finished");
+		Console.ReadKey();
 
 6.	保存更改，然后单击 **F5**，或者选择“调试”>“开始调试”以启动项目。随后应会出现一个控制台窗口，并记录测试进行的状态。出现“测试已完成”后，请按任意键关闭窗口。
 
@@ -604,9 +588,9 @@ SCP.Net 版本 0.9.4.203 引入了专用于事件中心 Spout（从事件中心�
 
 你可以使用 `Context.Logger` 轻松记录拓扑组件中的信息。例如，以下代码会创建一个信息日志条目：
 
-```
-Context.Logger.Info("Component started");
-```
+
+	Context.Logger.Info("Component started");
+
 
 你可以从“服务器资源管理器”中的“Hadoop 服务日志”查看记录的信息。展开 Storm on HDInsight 群集的条目，然后展开“Hadoop 服务日志”。最后，选择要查看的日志文件。
 
@@ -650,6 +634,6 @@ Context.Logger.Info("Component started");
 
 **Apache HBase on HDInsight**
 
--	[HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-get-started)
+-	[HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
 
 <!---HONumber=82-->

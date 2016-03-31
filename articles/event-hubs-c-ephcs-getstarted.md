@@ -1,5 +1,5 @@
 <properties
-	pageTitle="事件中心入门"
+	pageTitle="通过 C 和 C# 使用事件中心入门 | Azure"
 	description="遵循本教程开始使用 Azure 事件中心，以通过 C 发送事件，并使用 EventProcessorHost 通过 C# 接收事件。"
 	services="event-hubs"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.date="07/21/2015"
-	wacn.date="08/21/2015"/>
+	ms.date="09/01/2015"
+	wacn.date="01/14/2016"/>
 
 # 事件中心入门
 
@@ -26,11 +26,11 @@
 
 为了完成本教程，你将需要以下内容：
 
-+ C 语言开发环境。对于本教程，我们假设 gcc 堆栈位于使用 Ubuntu 14.04 的 [Azure Linux VM](/documentation/articles/virtual-machines-linux-tutorial) 上。有关其他环境的说明，将在外部链接中提供。
++ C 语言开发环境。对于本教程，我们假设 gcc 堆栈位于使用 Ubuntu 14.04 的 [Azure Linux VM](/documentation/articles/virtual-machines-linux-tutorial-portal-rm) 上。有关其他环境的说明，将在外部链接中提供。
 
 + Microsoft Visual Studio Express 2013 for Windows
 
-+ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial" target="_blank">Azure 试用</a>。
++ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="/pricing/1rmb-trial" target="_blank">Azure 试用</a>。
 
 ## 创建事件中心
 
@@ -90,6 +90,7 @@
 - [使用事件中心的完整示例应用程序]。
 - [使用事件中心扩大事件处理]示例。
 <!--- 使用服务总线队列的[队列消息解决方案]。-->
+- [事件中心概述]
 
 <!-- Images. -->
 [1]: ./media/event-hubs-c-ephcs-getstarted/create-event-hub1.png
@@ -111,4 +112,5 @@
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
-<!---HONumber=66-->
+
+<!---HONumber=Mooncake_1207_2015-->

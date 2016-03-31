@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何使用 SendGrid 电子邮件服务 (.NET) | Microsoft Azure" 
+	pageTitle="如何使用 SendGrid 电子邮件服务 (.NET) | Azure" 
 	description="了解如何在 Azure 上使用 SendGrid 电子邮件服务发送电子邮件。代码示例用 C# 编写且使用 .NET API。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags
-	ms.service="app-service-web"
-	ms.date="10/12/2015"
-	wacn.date="11/12/2015"/>
+	ms.service="web-sites"
+	ms.date="01/14/2016"
+	wacn.date="03/28/2016"/>
 
 
 
@@ -232,7 +232,7 @@ SendGrid 通过使用应用提供其他电子邮件功能。可将这些设置�
 
 SendGrid 提供了基于 Web 的 API 和 Webhook，可通过这些 API 从 Azure 应用程序中使用其他 SendGrid 功能。有关完整详细信息，请参阅 [SendGrid API 文档][]。
 
-<a name="nextsteps"></a> 
+<a name="nextsteps" id="next-steps"></a> 
 ## 后续步骤
 
 此时，你已了解 SendGrid 电子邮件服务的基础知识，请访问以下链接以了解更多信息。

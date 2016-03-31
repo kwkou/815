@@ -7,10 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="12/05/2015"
+	wacn.date="01/14/2016"/>
 
 #通过自定义任务预设操作编码任务 
 
@@ -22,6 +22,7 @@ Azure 媒体服务编码器使你能够将自定义预设文件传递给 Azure �
 - 对主要包含语音的演示文稿进行编码。
 
 ##控制 Azure 媒体编码器输出文件名 
+<a name="controlling-azure-media-encoder-output-file-names"></a>
 
 默认情况下，Azure 媒体编码器通过将输入资产和编码过程的各种特性组合在一起来创建输出文件名。如下文所述，使用宏来标识每种特性。
 
@@ -71,6 +72,7 @@ Azure 媒体服务编码器使你能够将自定义预设文件传递给 Azure �
 
 
 ##创建叠加
+<a name="creating-overlays"></a>
 
 Azure 媒体服务编码器可让你将图像（jpg、bmp、gif、tif）、视频或音轨（*.wma、*.mp3、*.wav）叠加到现有视频。此功能类似于 Expression Encoder 4 (Service Pack 2) 的功能。
 
@@ -193,9 +195,15 @@ Azure 媒体服务编码器可让你将图像（jpg、bmp、gif、tif）、视�
         // Create and cache the Media Services credentials in a static class variable.
         _cachedCredentials = new MediaServicesCredentials(
                         MediaServicesAccountName,
-                        MediaServicesAccountKey);
+                        MediaServicesAccountKey,
+						_defaultScope,
+						_chinaAcsBaseAddressUrl);
+
+		// Create the API server Uri
+		_apiServer = new Uri(_chinaApiServerUrl);
+
         // Used the cached credentials to create CloudMediaContext.
-        _context = new CloudMediaContext(_cachedCredentials);
+        _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 
 
 		// Upload assets to overlay
@@ -348,9 +356,15 @@ Azure 媒体服务编码器可让你将图像（jpg、bmp、gif、tif）、视�
         // Create and cache the Media Services credentials in a static class variable.
         _cachedCredentials = new MediaServicesCredentials(
                         MediaServicesAccountName,
-                        MediaServicesAccountKey);
+                        MediaServicesAccountKey,
+						_defaultScope,
+						_chinaAcsBaseAddressUrl);
+
+		// Create the API server Uri
+		_apiServer = new Uri(_chinaApiServerUrl);
+
         // Used the cached credentials to create CloudMediaContext.
-        _context = new CloudMediaContext(_cachedCredentials);
+        _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 		
 		// Upload assets to stitch
 		IAsset inputAsset1 = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, video1.mp4);
@@ -438,9 +452,15 @@ Azure 媒体服务编码器可让你将图像（jpg、bmp、gif、tif）、视�
         // Create and cache the Media Services credentials in a static class variable.
         _cachedCredentials = new MediaServicesCredentials(
                         MediaServicesAccountName,
-                        MediaServicesAccountKey);
+                        MediaServicesAccountKey,
+						_defaultScope,
+						_chinaAcsBaseAddressUrl);
+
+		// Create the API server Uri
+		_apiServer = new Uri(_chinaApiServerUrl);
+
         // Used the cached credentials to create CloudMediaContext.
-        _context = new CloudMediaContext(_cachedCredentials);
+        _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 
         IMediaProcessor processor = GetLatestMediaProcessorByName("Azure Media Encoder");
         IJob job = _context.Jobs.Create("A AME stitching job, using " + presetFileName);

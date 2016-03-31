@@ -9,11 +9,16 @@
 
 <tags 
 	ms.service="mobile-services"
-	ms.date="09/10/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="02/07/2016"
+	wacn.date="03/28/2016"/>
 
 
 # 如何：在 .NET 后端移动服务中定义自定义 API 终结点
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR]
 - [JavaScript 后端](/documentation/articles/mobile-services-javascript-backend-define-custom-api)
@@ -32,4 +37,4 @@
 
 <!-- URLs. -->
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0118_2016-->

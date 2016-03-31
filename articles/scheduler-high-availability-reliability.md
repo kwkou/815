@@ -8,8 +8,8 @@
  editor=""/>
 <tags 
  ms.service="scheduler" 
- ms.date="08/04/2015" 
- wacn.date="09/16/2015"/>
+ ms.date="12/04/2015" 
+ wacn.date="01/14/2016"/>
  
  
 # 计划程序高可用性和可靠性
@@ -18,11 +18,15 @@
 
 作为一个核心 Azure 平台服务，Azure 计划程序高度可用，并提供地域冗余服务部署和地理区域作业复制功能。
 
+### 异地冗余的服务部署
+
+Azure 计划程序已在中国的两个区域推出：中国东部和中国北部。如果托管区域中的某个数据中心服务中断，则 Azure 计划程序的故障转移功能便可发挥作用，使你能够从另一个数据中心使用该服务。
+
 ### 地理区域作业复制
 
 不只是 Azure 计划程序前端可用于管理请求，你自己的作业也会经过地域复制。当一个区域中的服务中断时，Azure 计划程序将故障转移，并确保配对地理区域中的另一个数据中心运行作业。
 
-例如，如果你已在美国中南部创建了一个作业，Azure 计划程序会自动在美国中北部复制该作业。如果美国中南部发生故障，Azure 计划程序可确保从美国中北部运行该作业。[此处提供了配对 Azure 区域的列表。](https://msdn.microsoft.com/zh-CN/library/azure/dn758204.aspx)
+例如，如果你已在美国中南部创建了一个作业，Azure 计划程序会自动在美国中北部复制该作业。如果美国中南部发生故障，Azure 计划程序可确保从美国中北部运行该作业。[此处提供了配对 Azure 区域的列表。](/documentation/articles/sql-database-business-continuity-design)
 
 ![][1]
 
@@ -77,4 +81,4 @@ Azure 计划程序允许你配置重试策略。默认情况下，如果某个�
 
 [2]: ./media/scheduler-high-availability-reliability/scheduler-high-availability-reliability-image2.png
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -9,15 +9,15 @@
 
 <tags 
 	ms.service="automation" 
-	ms.date="09/08/2015"
-	wacn.date="10/17/2015"/>
+	ms.date="12/08/2015"
+	wacn.date="12/14/2015"/>
 
 
 # Azure 自动化入门
 
 ## 什么是 Azure 自动化？
 
-通过 Windows Azure 自动化，用户可以自动完成通常要在云环境中执行的手动、长时间进行、易出错且重复性高的任务。你可以使用 Runbook 来创建、监视、管理和部署 Azure 环境中的资源。所谓的 Runbook，基本上就是指 Windows PowerShell 工作流。在本文中，你将学习运行一个简单示例 Runbook 的教程。然后，你将查找用于浏览更高级服务功能的资源。
+通过 Azure 自动化，用户可以自动完成通常要在云环境中执行的手动、长时间进行、易出错且重复性高的任务。你可以使用 Runbook 来创建、监视、管理和部署 Azure 环境中的资源。所谓的 Runbook，基本上就是指 Windows PowerShell 工作流。在本文中，你将学习运行一个简单示例 Runbook 的教程。然后，你将查找用于浏览更高级服务功能的资源。
 
 ## 教程
 本教程将逐步引导你完成创建自动化帐户、将一个示例“Hello World”Runbook 导入 Azure 自动化、执行该 Runbook 并查看其输出的过程。
@@ -42,7 +42,7 @@
 
 ## <a name="importrunbook"></a>从 Runbook 库导入 Runbook
 
-[Runbook 库](https://msdn.microsoft.com/zh-cn/library/azure/dn781422.aspx)包括你可以直接导入 Azure 自动化帐户的示例 Runbook，从而可让你利用其他 Azure 自动化和 PowerShell 用户的工作。在此步骤中，你将使用该库导入“Hello World”示例 Runbook。
+[Runbook 库](/documentation/articles/automation-runbook-gallery)包括你可以直接导入 Azure 自动化帐户的示例 Runbook，从而可让你利用其他 Azure 自动化和 PowerShell 用户的工作。在此步骤中，你将使用该库导入“Hello World”示例 Runbook。
 
 4.	在“自动化”页上，单击你刚刚创建的新帐户。
 
@@ -70,7 +70,7 @@
 
 ## <a name="publishrunbook"></a>发布 Runbook 
 
-Runbook 最初是以草稿模式导入的。这意味着，在授权它可作为新版本运行之前，你可以继续对它进行编辑。由于此示例 Runbook 不需要额外的配置，你可以按原样立即将其发布。有关详细信息，请参阅[发布 Runbook](https://msdn.microsoft.com/zh-cn/library/dn879137.aspx)。
+Runbook 最初是以草稿模式导入的。这意味着，在授权它可作为新版本运行之前，你可以继续对它进行编辑。由于此示例 Runbook 不需要额外的配置，你可以按原样立即将其发布。有关详细信息，请参阅[发布 Runbook](/documentation/articles/automation-edit-textual-runbook)。
 
 9.	Runbook 导入完成后，单击“Write-HelloWorld”。
 
@@ -92,7 +92,7 @@ Runbook 最初是以草稿模式导入的。这意味着，在授权它可作为
 
 ## <a name="startrunbook"></a>启动 Runbook
 
-在导入并发布 Runbook 后，你可以运行它，然后检查输出。有关详细信息，请参阅[启动 Runbook](https://msdn.microsoft.com/zh-cn/library/dn643628.aspx) 和 [Runbook 输出和消息](https://msdn.microsoft.com/zh-cn/library/dn879148.aspx)。
+在导入并发布 Runbook 后，你可以运行它，然后检查输出。有关详细信息，请参阅[启动 Runbook](/documentation/articles/automation-starting-a-runbook) 和 [Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages)。
 
 12.	打开 **Write-HelloWorld** Runbook 后，单击“启动”。
 
@@ -113,32 +113,22 @@ Runbook 最初是以草稿模式导入的。这意味着，在授权它可作为
 祝贺你！ 你已完成本教程。
 
 ## <a name="nextsteps"></a>后续步骤 
-1. 本教程中的简单 Runbook *不会管理 Azure 服务*。大多数 Runbook 使用 [Azure cmdlet](http://msdn.microsoft.com/zh-cn/library/jj156055.aspx) 进行管理，这需要对你的 Azure 订阅进行身份验证。请遵循[配置 Azure 以通过 Runbook 进行管理](https://msdn.microsoft.com/zh-cn/library/dn865019.aspx)中的说明配置你的 Azure 订阅，以使用这些 cmdlet。  
+1. 本教程中的简单 Runbook *不会管理 Azure 服务*。大多数 Runbook 使用 [Azure cmdlet](http://msdn.microsoft.com/zh-cn/library/jj156055.aspx) 进行管理，这需要对你的 Azure 订阅进行身份验证。请遵循[配置 Azure 以通过 Runbook 进行管理](/documentation/articles/automation-configuring)中的说明配置你的 Azure 订阅，以使用这些 cmdlet。  
 2. 有关 Azure 自动化功能的详细信息，请参阅下面列出的[资源](#resources)。
-3. 订阅 [Azure 自动化博客](http://azure.microsoft.com/blog/tag/azure-automation)，随时了解 Azure 自动化团队提供的最新信息。
+3. 订阅 [Azure 自动化博客](/blog/)，随时了解 Azure 自动化团队提供的最新信息。
 
 ## <a name="resources"></a>资源
 
 我们提供了其他多种资源，以帮助你了解有关 Azure 自动化的信息以及如何创建你自己的 Runbook。
 
-- [Azure 自动化库](https://msdn.microsoft.com/zh-cn/library/azure/dn643629.aspx)提供了有关配置和管理 Azure 自动化以及创作自己的 Runbook 的完整文档。 
+- [Azure 自动化库](/documentation/services/automation)提供了有关配置和管理 Azure 自动化以及创作自己的 Runbook 的完整文档。 
 - [Azure PowerShell cmdlet](http://msdn.microsoft.com/zh-cn/library/jj156055.aspx) 提供了有关使用 Windows PowerShell 自动完成 Azure 操作的信息。Runbook 使用这些 cmdlet 来处理 Azure 资源。
-- [Azure 自动化博客](http://azure.microsoft.com/blog/tag/azure-automation)提供了有关来自 Microsoft 的 Azure 自动化的最新信息。
-
-<!--
-- [Automation Forum](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=azureautomation) allows you to post questions about Azure Automation to be addressed by Microsoft and the Automation community.
--->
+- [Azure 自动化博客](/blog/)提供了有关来自 Microsoft 的 Azure 自动化的最新信息。
 
 
 ## 示例和实用 Runbook
 
-Microsoft 和 Azure 自动化社区提供了示例 Runbook，可帮助你开始创建自己的解决方案和实用 Runbook，可用作更大自动化任务的构建基块。可以从[脚本中心](http://go.microsoft.com/fwlink/p/?LinkId=393029)下载这些示例 Runbook，或者使用 [Runbook 库](https://msdn.microsoft.com/zh-cn/library/azure/dn781422.aspx)直接将其导入 Azure 自动化。
+Microsoft 和 Azure 自动化社区提供了示例 Runbook，可帮助你开始创建自己的解决方案和实用 Runbook，可用作更大自动化任务的构建基块。可以从[脚本中心](http://go.microsoft.com/fwlink/p/?LinkId=393029)下载这些示例 Runbook，或者使用 [Runbook 库](/documentation/articles/automation-runbook-gallery)直接将其导入 Azure 自动化。
   
-
-<!--
-## Feedback
-
-<strong>Give us feedback!</strong>  If you are looking for an Azure Automation runbook solution or an integration module, post a Script Request on Script Center. If you have feedback or feature requests for Azure Automation, post them on [User Voice](http://feedback.windowsazure.cn/forums/34192--general-feedback). Thanks!
--->
 
 <!---HONumber=74-->

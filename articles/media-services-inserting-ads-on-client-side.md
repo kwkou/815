@@ -7,19 +7,20 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services"  
-	ms.date="09/07/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="02/03/2016"
+	wacn.date="03/17/2016"/>
 
 
 #在客户端上插入广告
 
 此主题涵盖有关如何在客户端上插入多种类型的广告的信息。
 
-有关在实时流式处理视频中隐藏式字幕和广告支持的详细信息，请参阅[支持的隐藏式字幕和广告插入标准](https://msdn.microsoft.com/zh-cn/library/azure/dn783466.aspx#caption_ad)。
+有关在实时流式处理视频中隐藏式字幕和广告支持的详细信息，请参阅[支持的隐藏式字幕和广告插入标准](/documentation/articles/media-services-manage-channels-overview#cc_and_ads)。
 
- 
+>[AZURE.NOTE] Azure Media Player 目前不支持广告。
+
 ##<a id="insert_ads_into_media"></a>向媒体中插入广告
 
 Azure 媒体服务通过“Windows 媒体平台：播放器框架”提供广告插入支持。附带广告支持的播放器框架在 Windows 8、Silverlight、Windows Phone 8 和 iOS 设备上均可用。每个播放器框架均包含显示如何实现播放器应用程序的示例代码。可插入 media:list 中的广告有三种。
@@ -155,7 +156,7 @@ Application/x-javascript - 资源显示在 HTML <**脚本**> 标记中。
 
 Application/x-shockwave-flash – 资源显示在 Flash Player 中。
 
-**<IFrameResource>**描述可以在 IFrame 中显示的 HTML 资源。**<HTMLResource>**描述可以插入网页中的一段 HTML 代码。**<TrackingEvents>**指定跟踪事件以及事件发生时要请求的 URI。在此示例中，跟踪了 acceptInvitation 事件和折叠事件。有关**<NonLinearAds>**元素及其子元素的详细信息，请参阅 IAB.NET/VAST。请注意，**<TrackingEvents>**元素位于**<NonLinearAds>**元素内，而不是**<NonLinear>**元素内。
+**<IFrameResource>** 描述可以在 IFrame 中显示的 HTML 资源。**<HTMLResource>** 描述可以插入网页中的一段 HTML 代码。**<TrackingEvents>** 指定跟踪事件以及事件发生时要请求的 URI。在此示例中，跟踪了 acceptInvitation 事件和折叠事件。有关 **<NonLinearAds>** 元素及其子元素的详细信息，请参阅 IAB.NET/VAST。请注意，**<TrackingEvents>** 元素位于 **<NonLinearAds>** 元素内，而不是 **<NonLinear>** 元素内。
 
 在 <CompanionAds> 元素内定义伴随广告。<CompanionAds> 元素可以包含一个或多个 <Companion> 元素。每个 <Companion> 元素均描述一个伴随广告，并且可以包含以与非线性广告相同的方式定义的 <StaticResource><IFrameResource> 或 <HTMLResource>。VAST 文件可以包含多个伴随广告，播放器应用程序可以选择最适合显示的广告。有关 VAST 的详细信息，请参阅 [VAST 3.0](http://www.iab.net/media/file/VASTv3.0.pdf)。
 
@@ -352,7 +353,7 @@ VPAID 是用于使可执行广告单元能够与视频播放器进行通信的 A
 
 ##实现带有支持广告的 Windows 或 Windows Phone 8 播放器
 
-Microsoft Media Platform：适用于 Windows 8 和 Windows Phone 8 的播放器框架包含示例应用程序集合，这些示例应用程序向你展示如何使用该框架实现视频播放器应用程序。可以从[适用于 Windows 8 和 Windows Phone 8 的播放器框架](https://playerframework.codeplex.com/releases/view/105214)下载播放器框架和示例。
+Microsoft Media Platform：适用于 Windows 8 和 Windows Phone 8 的播放器框架包含示例应用程序集合，这些示例应用程序向你展示如何使用该框架实现视频播放器应用程序。可以从[适用于 Windows 8 和 Windows Phone 8 的播放器框架](https://playerframework.codeplex.com)下载播放器框架和示例。
 
 打开 Microsoft.PlayerFramework.Xaml.Samples 解决方案时，将看到项目中的多个文件夹。Advertising 文件夹包含与创建具有广告支持的视频播放器相关的示例代码。Advertising 文件夹中有多个 XAML/cs 文件，每一个均显示如何以不同的方式插入广告。以下列表对每个文件进行描述：
 
@@ -567,7 +568,6 @@ ProgrammaticAdPage.xaml.cs 文件创建 AdHandlerPlugin，添加 TimelineMarker 
 
 Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程序集合，这些示例应用程序向你展示如何使用该框架实现视频播放器应用程序。可以从 [Azure 媒体播放器框架](https://github.com/Azure/azure-media-player-framework)下载播放器框架和示例。GitHub 页面具有指向 Wiki（含有关播放器框架的其他信息）的链接和播放器示例简介：[Azure 媒体播放器 Wiki](https://github.com/Azure/azure-media-player-framework/wiki/How-to-use-Azure-media-player-framework)。
 
-有关插入广告的详细信息，请参阅[向媒体中插入广告](/documentation/articles/media-services-inserting-ads-on-client-side#insert_ads_into_media)。
 
 ###使用 VMAP 安排广告
 
@@ -802,9 +802,11 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
 	{
 	    [self logFrameworkError];
 	}
+
+
  
 ##另请参阅
 
 [开发视频播放器应用程序](/documentation/articles/media-services-develop-video-players)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0307_2016-->

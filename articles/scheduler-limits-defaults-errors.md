@@ -8,8 +8,8 @@
  editor=""/>
 <tags
  ms.service="scheduler"
- ms.date="07/28/2015"
- wacn.date="09/16/2015"/>
+ ms.date="12/04/2015"
+ wacn.date="01/14/2016"/>
 
 # 计划程序的限制、默认值和错误代码
 
@@ -25,7 +25,7 @@
 
 ## 计划程序状态和错误代码
 
-除了标准 HTTP 状态代码之外，Azure 计划程序 REST API 还返回扩展的错误代码和错误消息。这些扩展代码不替代标准 HTTP 状态代码，但提供可与标准 HTTP 状态代码一起使用的附加的、可行信息。 
+除了标准 HTTP 状态代码之外，Azure 计划程序 REST API 还返回扩展的错误代码和错误消息。这些扩展代码不替代标准 HTTP 状态代码，但提供可与标准 HTTP 状态代码一起使用的附加的、可行信息。
 
 例如，可能有多种原因会导致 HTTP 404 错误，因此，在扩展消息中具有这些附加信息可帮助解决问题。有关 REST API 返回的标准 HTTP 代码的详细信息，请参阅[服务管理状态和错误代码](https://msdn.microsoft.com/zh-CN/library/azure/ee460801.aspx)。服务管理 API 的 REST API 操作返回标准 HTTP 状态代码，[HTTP/1.1 状态代码定义](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)中定义了这些代码。下表介绍服务可能返回的常见错误。
 
@@ -55,20 +55,22 @@ API 操作可能还会返回由管理服务定义的其他错误信息。此额�
 
 ## 另请参阅
 
- [计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms)
+
+ [计划程序是什么？](/documentation/articles/scheduler-intro)
  
- [开始在管理门户中使用计划程序](/documentation/articles/scheduler-get-started-portal)
+ [Azure 计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms)
+ 
+ [开始在 Azure 门户中使用计划程序](/documentation/articles/scheduler-get-started-portal)
  
  [Azure 计划程序中的计划和计费](/documentation/articles/scheduler-plans-billing)
  
- [如何使用 Azure 计划程序生成复杂的计划和高级重复执行](/documentation/articles/scheduler-advanced-complexity)
+ [Azure 计划程序 REST API 参考](https://msdn.microsoft.com/zh-CN/library/dn528946)
  
- [计划程序 REST API 参考](https://msdn.microsoft.com/zh-CN/library/dn528946)   
+ [Azure 计划程序 PowerShell cmdlet 参考](/documentation/articles/scheduler-powershell-reference)
+ [Azure 计划程序高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability)
  
- [计划程序的高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability)
- 
- [计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication)
+ [Azure 计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication)
 
  
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -1,49 +1,51 @@
 <properties 
-	pageTitle="使用 Git 创建 PHP-SQL Web 应用并将其部署到 Azure 网站" 
-	description="本教程演示如何创建在 Azure SQL 数据库中存储数据的 PHP Web 应用并使用 Git 部署到 Azure 网站。" 
+	pageTitle="创建 PHP-SQL Web 应用并使用 Git 将其部署到 Azure Web 应用" 
+	description="本教程演示如何创建在 Azure SQL 数据库中存储数据的 PHP Web 应用并使用 Git 部署到 Azure Web 应用。" 
 	services="app-service\web, sql-database" 
 	documentationCenter="php" 
 	authors="tfitzmac" 
 	manager="wpickett" 
 	editor="mollybos"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.date="08/03/2015" 
-	wacn.date="10/03/2015"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="02/09/2016"
+	wacn.date="03/28/2016"/>
 
-#使用 SQL 数据库创建 PHP 网站并使用 Git 进行部署
+# 创建 PHP-SQL Web 应用并使用 Git 将其部署到 Azure Web 应用
 
-本教程演示如何创建带 Azure SQL 数据库的 PHP Azure 网站以及如何使用 Git 部署该网站。本教程假定你已在计算机上安装 [PHP][install-php]、[SQL Server Express][install-SQLExpress]、[Microsoft Drivers for SQL Server for PHP][install-drivers]、Web 服务器和 [Git][install-git]。完成本指南之后，您将拥有一个在 Azure 中运行的 PHP-SQL 数据库网站。
+本教程演示如何在 [Azure Web 应用](/documentation/services/web-sites/)中创建连接到 Azure SQL 数据库的 PHP Web 应用以及如何使用 Git 部署该 Web 应用。本教程假定你已在计算机上安装 [PHP][install-php]、[SQL Server Express][install-SQLExpress]、[Microsoft Drivers for SQL Server for PHP](http://www.microsoft.com/download/en/details.aspx?id=20098) 和 [Git][install-git]。完成本指南之后，你将拥有一个在 Azure 中运行的 PHP-SQL Web 应用。
 
-> [AZURE.NOTE]你可以使用 <a href="http://www.microsoft.com/web/downloads/platform.aspx">Microsoft Web 平台安装程序</a>安装和配置 PHP、SQL Server Express、Microsoft Drivers for SQL Server for PHP 和 Internet Information Services (IIS)。
+> [AZURE.NOTE]
+> 你可以使用 [Microsoft Web 平台安装程序](http://www.microsoft.com/web/downloads/platform.aspx)安装和配置 PHP、SQL Server Express 和 Microsoft Drivers for SQL Server for PHP。
 
 你将学习以下内容：
 
-* 如何使用 Azure 管理门户创建 Azure 网站和 SQL 数据库。由于在 Azure 网站中默认启用 PHP，因此运行 PHP 代码没有任何特殊要求。
+* 如何使用 [Azure 管理门户](https://manage.windowsazure.cn/)创建 Azure Web 应用和 SQL 数据库。由于在 Azure Web 应用中默认启用 PHP，因此运行 PHP 代码没有任何特殊要求。
 * 如何使用 Git 将应用程序发布和重新发布到 Azure。
  
-通过按照本教程中的说明进行操作，您将在 PHP 中构建简单的注册 Web 应用程序。将在 Azure 网站中托管应用程序。以下是已完成应用程序的屏幕快照：
+通过按照本教程中的说明进行操作，你将使用 PHP 构建简单的注册 Web 应用。将在 Azure Web 应用中托管应用程序。以下是已完成应用程序的屏幕快照：
 
-![Azure PHP 网站][running-app]
+![Azure PHP Web 应用](./media/web-sites-php-sql-database-deploy-use-git/running_app_3.png)
 
-> [AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。你可以<a href="/zh-cn/pricing/1rmb-trial/">注册以获取免费试用版</a>。
+[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
+##创建 Azure Web 应用并设置 Git 发布
 
-##创建 Azure 网站并设置 Git 发布
-
-按照以下步骤创建 Azure 网站和 SQL 数据库：
+按照以下步骤创建 Azure Web 应用和 SQL 数据库：
 
 1. 登录到 [Azure 管理门户][management-portal]。
-2. 单击门户左下角的“新建”图标。![创建新的 Azure 网站][new-Website]
+2. 单击该门户左下部的“新建”图标。
 
-3. 单击“网站”，然后单击“自定义创建”。
+	![创建新的 Azure Web 应用][new- Website]
 
-	![自定义创建新的网站][custom-create]
+3. 单击“ Web 应用”，然后单击“自定义创建”。
+
+	![自定义创建新的 Web 应用][custom-create]
 
 	在“URL”中输入值，从“数据库”下拉列表中选择“新建 SQL 数据库”，然后选择“从源控制发布”。单击对话框底部的箭头。
 
-	![填写网站详细信息][Website-details-sqlazure]
+	![填写 Web 应用详细信息][Website-details-sqlazure]
 
 4. 输入数据库的“名称”值，选择“新建 SQL 数据库服务器”，提供登录凭据，然后选择一个区域。单击对话框底部的箭头。
 
@@ -55,9 +57,9 @@
 
 	如果之前未设置 Git 存储库，则必须提供用户名和密码。
 
-6. 创建了网站之后，打开网站的仪表板，然后选择“查看部署”。
+6. 创建了 Web 应用之后，打开 Web 应用的仪表板，然后选择“查看部署”。
 
-	![网站仪表板][go-to-dashboard]
+	![ Web 应用仪表板][go-to-dashboard]
 
 9. 您将看到有关将应用程序文件推送到存储库的说明。记下这些说明 — 稍后您将需要它们。
 
@@ -65,7 +67,7 @@
 
 ##获取 SQL 数据库连接信息
 
-若要连接到正在 Azure 网站中运行的 SQL 数据库实例，你将需要连接信息。若要获取 SQL 数据库连接信息，请按照以下步骤操作：
+若要连接到链接到 Web 应用的 SQL 数据库实例，你将需要在创建数据库时指定的连接信息。若要获取 SQL 数据库连接信息，请按照以下步骤操作：
 
 1. 从 Azure 管理门户中，单击“链接的资源”，然后单击数据库名称。
 
@@ -75,7 +77,7 @@
 
 	![连接字符串][connection-string]
 	
-3. 从结果对话框的“PHP”部分，记下 `SERVER`、`DATABASE` 和 `USERNAME` 的值。
+3. 从结果对话框的“PHP”部分，记下 `Server`、`SQL Database` 和 `User Name` 的值。稍后将 PHP Web 应用发布到 Azure Web 应用时，将使用这些值。
 
 ##本地构建和测试应用程序
 
@@ -84,7 +86,7 @@
 * **index.php**：将显示注册形式及包含注册者信息的表。
 * **createtable.php**：为应用程序创建 SQL 数据库表。该文件只能被使用一次。
 
-若要本地运行应用程序，请执行下列步骤。请注意，这些步骤假定你已在本地计算机上设置 PHP、SQL Server Express 和 Web 服务器，并且你已启用 [SQL Server 的 PDO 扩展][pdo-sqlsrv]。
+若要本地运行应用程序，请执行下列步骤。请注意，这些步骤假定你已在本地计算机上设置 PHP 和 SQL Server Express，并且你已启用 [SQL Server 的 PDO 扩展][pdo-sqlsrv]。
 
 1. 创建一个名为 `registration` 的 SQL Server 数据库。你可以通过 `sqlcmd` 命令提示符使用以下命令执行此操作：
 
@@ -93,7 +95,7 @@
 		2> GO	
 
 
-2. 在 Web 服务器的根目录中，创建一个名为 `registration` 的文件夹，并在其中创建两个文件 - 一个名为 `createtable.php`，另一个名为 `index.php`。
+2. 在应用程序根目录中，创建两个文件 - 一个名为 `createtable.php`，另一个名为 `index.php`。
 
 3. 在文本编辑器或 IDE 中打开 `createtable.php` 文件并添加以下代码。此代码将用于在 `registration` 数据库中创建 `registration_tbl` 表。
 
@@ -122,7 +124,11 @@
 
 	请注意，你需要使用本地 SQL Server 用户名和密码更新 <code>$user</code> 和 <code>$pwd</code> 的值。
 
-4. 打开 Web 浏览器并浏览到 ****http://localhost/registration/createtable.php**。这将在数据库中创建 `registration_tbl` 表。
+4. 在应用程序根目录的终端中，键入以下命令：
+
+		php -S localhost:8000
+
+4. 打开 Web 浏览器并浏览到 **http://localhost:8000/createtable.php**。这将在数据库中创建 `registration_tbl` 表。
 
 5. 在文本编辑器或 IDE 中打开 **index.php** 文件，并为页面添加基本 HTML 和 CSS 代码（将在后续步骤中添加 PHP 代码）。
 
@@ -218,27 +224,29 @@
 			echo "<h3>No one is currently registered.</h3>";
 		}
 
-现在，你可以浏览到 **http://localhost/registration/index.php** 以测试应用程序。
+现在，你可以浏览到 **http://localhost:8000/index.php** 以测试应用程序。
 
 ##发布应用程序
 
-在本地测试你的应用程序之后，你可以使用 Git 将其发布到 Azure 网站。但是，你首先需要更新应用程序中的数据库连接信息。使用之前获取的数据库连接信息（在“获取 SQL 数据库连接信息”部分中），使用适当的值在 `createdatabase.php` 和 `index.php` 文件中更新以下信息：
+在本地测试你的应用程序之后，你可以使用 Git 将其发布到 Azure Web 应用。但是，你首先需要更新应用程序中的数据库连接信息。使用之前获取的数据库连接信息（在“获取 SQL 数据库连接信息”部分中），使用适当的值在 `createdatabase.php` 和 `index.php` 文件中更新以下信息：
 
 	// DB connection info
 	$host = "tcp:<value of Server>";
 	$user = "<value of User Name>";
 	$pwd = "<your password>";
-	$db = "<value of SQL ???>";
+	$db = "<value of SQL Database>";
 
-> [AZURE.NOTE]在 <code>$host</code> 中，Server 的值的前面必须带有 <code>tcp:</code>。
+> [AZURE.NOTE]
+> 在 <code>$host</code> 中，Server 的值的前面必须带有 <code>tcp:</code>。
 
 
 现在，您已准备好设置 Git 发布并发布应用程序。
 
-> [AZURE.NOTE]这些步骤与上面的**创建 Azure 网站并设置 Git 发布**部分结尾标明的步骤相同。
+> [AZURE.NOTE]
+> 这些步骤与在**创建 Azure Web 应用并设置 Git 发布**部分的结尾标明的步骤相同：
 
 
-1. 打开 GitBash（或终端，如果 Git 在 `PATH` 中），将目录更改为应用程序的根目录，并运行以下命令：
+1. 打开 GitBash（或终端，如果 Git 在 `PATH` 中），将目录更改为应用程序的根目录（**registration** 目录），并运行以下命令：
 
 		git init
 		git add .
@@ -248,8 +256,8 @@
 
 	系统将提示你输入之前创建的密码。
 
-2. 浏览到 **http://[site name].chinacloudsites.cn/createtable.php** 以创建应用程序的 MySQL 表。
-3. 浏览到 **http://[site name].chinacloudsites.cn/index.php** 以开始使用应用程序。
+2. 浏览到 **http://[web site name].chinacloudsites.cn/createtable.php** 以创建应用程序的 SQL 数据库表。
+3. 浏览到 **http://[web site name].chinacloudsites.cn/index.php** 以开始使用应用程序。
 
 发布应用程序之后，你可以开始对其进行更改并使用 Git 发布所做的更改。
 
@@ -266,24 +274,19 @@
 
 	系统将提示你输入之前创建的密码。
 
-3. 浏览到 **http://[site name].chinacloudsites.cn/index.php** 以查看所做的更改。
+3. 浏览到 **http://[web app name].chinacloudsites.cn/index.php** 以查看所做的更改。
 
-[install-php]: http://www.php.net/manual/en/install.php
-[install-SQLExpress]: http://www.microsoft.com/zh-cn/download/details.aspx?id=29062
-[install-Drivers]: http://www.microsoft.com/zh-cn/download/details.aspx?id=20098
-[install-git]: http://git-scm.com/
-[pdo-sqlsrv]: http://php.net/pdo_sqlsrv
+
+
 [running-app]: ./media/web-sites-php-sql-database-deploy-use-git/running_app_3.png
-[new- Website]: ./media/web-sites-php-sql-database-deploy-use-git/new\_Website.jpg
-[custom-create]: ./media/web-sites-php-sql-database-deploy-use-git/custom\_create.png
+[new- Website]: ./media/web-sites-php-sql-database-deploy-use-git/new_Website.jpg
+[custom-create]: ./media/web-sites-php-sql-database-deploy-use-git/custom_create.png
 [website-details-sqlazure]: ./media/web-sites-php-sql-database-deploy-use-git/createphpgitsite.png
 [database-settings]: ./media/web-sites-php-sql-database-deploy-use-git/setupdb.png
-[create-server]: ./media/web-sites-php-sql-database-deploy-use-git/create\_server.jpg
+[create-server]: ./media/web-sites-php-sql-database-deploy-use-git/create_server.jpg
 [go-to-dashboard]: ./media/web-sites-php-sql-database-deploy-use-git/viewdeploy.png
-[setup-git-publishing]: ./media/web-sites-php-sql-database-deploy-use-git/setup\_git\_publishing.png 
+[setup-git-publishing]: ./media/web-sites-php-sql-database-deploy-use-git/setup_git_publishing.png
 [credentials]: ./media/web-sites-php-sql-database-deploy-use-git/git-deployment-credentials.png
-
-
 [git-instructions]: ./media/web-sites-php-sql-database-deploy-use-git/gitsettings.png
 [linked-resources]: ./media/web-sites-php-sql-database-deploy-use-git/linked_resources.jpg
 [connection-string]: ./media/web-sites-php-sql-database-deploy-use-git/connection_string.jpg
@@ -291,4 +294,11 @@
 [sql-database-editions]: http://msdn.microsoft.com/zh-cn/library/azure/ee621788.aspx
 [where-is-code]: ./media/web-sites-php-sql-database-deploy-use-git/setupgit.png
 
-<!---HONumber=71-->
+[install-php]: http://www.php.net/manual/en/install.php
+[install-SQLExpress]: http://www.microsoft.com/download/details.aspx?id=29062
+[install-Drivers]: http://www.microsoft.com/download/details.aspx?id=20098
+[install-git]: http://git-scm.com/
+[pdo-sqlsrv]: http://php.net/pdo_sqlsrv
+ 
+
+<!---HONumber=Mooncake_0118_2016-->

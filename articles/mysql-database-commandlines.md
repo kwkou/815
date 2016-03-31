@@ -1,11 +1,17 @@
 <properties linkid="" urlDisplayName="" pageTitle="使用PowerShell管理MySQL Database on Azure - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="本文介绍如何通过PowerShell实现更多MySQL Database on Azure的查询、创建、修改、删除等操作。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />  
 
-<tags ms.service="mysql" ms.date="" wacn.date="10/14/2015"/>
+<tags ms.service="mysql" ms.date="" wacn.date="12/28/2015"/>
 
 #使用PowerShell管理MySQL Database on Azure
+> [AZURE.SELECTOR]
+- [中文版](/documentation/articles/mysql-database-commandlines)
+- [英文版](/documentation/articles/mysql-database-enus-commandlines)
+
 本文主要介绍如何通过PowerShell实现更多MySQL Database on Azure的创建、查看、删除、更改等操作。建议您先阅读[利用Azure 资源管理器与 PowerShell 来部署使用MySQL Database on Azure](/documentation/articles/mysql-database-etoe-powershell),该文介绍了如何下载使用Azure PowerShell, 如何利用PowerShell来快速创建MySQL Database on Azure数据服务。
 
 在开始之前，请确保已将 Azure PowerShell 准备就绪。
+
+注意：本文主要针对Azure PowerShell 0.9*版本，如果您使用1.0.0+版本，请参考[Azure PowerShell 1.0.0以上版本在中国Azure使用的注意事项](http://blogs.msdn.com/b/azchina/archive/2015/12/18/azure-powershell-1.0.0_e54e0a4e48722c6728572d4efd56_azure_7f4f28758476e86c0f618b4e7998_.aspx)。将下述命令当中AzureResource改为AzureRmResource运行。
 
 ###目录
 - [了解 Azure 资源模板和资源组](#gettoknow)
@@ -16,7 +22,7 @@
 
 ## <a id="gettoknow"></a>1. 了解 Azure 资源模板和资源组
 
-大多数部署和运行在 Windows Azure 中的应用程序是通过不同云资源类型的组合构建的。Azure资源管理器模板使你能够集中部署和管理这些不同的资源，只需对资源和关联的配置及部署参数进行 JSON 描述即可。
+大多数部署和运行在 Azure 中的应用程序是通过不同云资源类型的组合构建的。Azure资源管理器模板使你能够集中部署和管理这些不同的资源，只需对资源和关联的配置及部署参数进行 JSON 描述即可。
 ###1.1 了解MySQL Database on Azure的资源类型参数信息
 目前，MySQL Database on Azure的Json File中定义了六种资源类型： Servers, Databases, Users, Privileges, FirewallRules, Backups。用户可以通过"Get","New","Set","Remove"指令分别对上述六种资源类型进行查看、创建、修改、删除的操作。
 您可以通过下载[Json模板文件](http://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/2015-09-01.json)来了解更多MySQL Database on Azure 服务的API参数定义。
@@ -66,9 +72,18 @@ New-AzureResource -ResourceType "Microsoft.MySql/servers/databases/privileges" -
 New-AzureResource -ResourceType "Microsoft.MySql/servers/backups" -ResourceName testPSH/back1 -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{}
 ```
 
+###2.7 服务器备份恢复 （基于快照的恢复）
+编辑运行以下命令，通过制定快照来恢复服务器。
+其中，server和region的信息必填，backup不指定的情况下，默认通过最新的快照拷贝进行恢复。
+```
+New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testrestore -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -Location ChinaEast -Properties @{creationSource=@{server='testPSH';region='chinaEast' ; backup = 'testPSH/testpsh1b0a9038-6953-42ad-ac8e-42f73180825b'};version = '5.5'}
+```
+
 ## <a id="view"></a>3. 查看操作
 通过Get指令可以查看当前MySQL服务器、数据库、用户、用户权限、备份、防火墙规则等列表,也可以查看详细参数配置。
 ###3.1 查看服务器列表
+>[AZURE.NOTE] ** 注意:“在Azure管理门户上创建的实例，按照实例所处的区域分别在默认资源组：Default-MySql-ChinaEast以及Default-MySql-ChinaNorth**
+
 编辑运行以下命令，查看当前所有服务器列表
 
 ```
@@ -162,7 +177,7 @@ Set-AzureResource -ResourceType "Microsoft.MySql/servers/firewallRules" -Resourc
 ```
 Set-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{options=@{wait_timeout=70}} -UsePatchSemantics
 ```
-对其他参数的修改，可以参考下面Json文件的定义，参数的有效值范围可参考[定制MySQL Database on Azure服务器参数](http://www.windowsazure.cn/documentation/articles/mysql-database-advanced-settings)：
+对其他参数的修改，可以参考下面Json文件的定义，参数的有效值范围可参考[定制MySQL Database on Azure服务器参数](/documentation/articles/mysql-database-advanced-settings)：
 
 ```
 	"options": {

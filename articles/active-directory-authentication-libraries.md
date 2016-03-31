@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Active Directory 身份验证库 | Windows Azure"
+   pageTitle="Azure Active Directory 身份验证库 | Azure"
    description="通过 Azure AD 身份验证库 (ADAL)，客户端应用程序开发人员能够轻松利用云或本地 Active Directory (AD) 对用户进行身份验证，然后获取访问令牌，以进行安全的 API 调用。"
    services="active-directory"
    documentationCenter=""
@@ -8,8 +8,8 @@
    editor="mbaldwin" />
 <tags
    ms.service="active-directory"
-   ms.date="08/11/2015"
-   wacn.date="10/18/2015" />
+   ms.date="11/17/2015"
+   wacn.date="01/29/2016" />
 
 # Azure Active Directory 身份验证库
 
@@ -24,7 +24,7 @@
 |OS X、iOS|适用于 Objective-C 的 Active Directory 身份验证库 (ADAL)|客户端|[适用于 Objective-C 的 ADAL (CocoaPods)](https://cocoapods.org/?q=adal%20io)|[适用于 Objective-C 的 ADAL (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-objc)|[NativeClient-iOS (Github)](https://github.com/AzureADSamples/NativeClient-iOS)|
 |Android|适用于 Android 的 Active Directory 身份验证库 (ADAL)|客户端|[适用于 Android 的 ADAL（中央存储库）](http://search.maven.org/remotecontent?filepath=com/microsoft/aad/adal/)|[适用于 Android 的 ADAL (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-android)|[NativeClient-Android (Github)](https://github.com/AzureADSamples/NativeClient-Android)|
 |Node.js|适用于 Node.js 的 Active Directory 身份验证库 (ADAL)|客户端|[适用于 Node.js 的 ADAL (npm)](https://www.npmjs.com/package/adal-node)|[适用于 Node.js 的 ADAL (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-nodejs)|[WebAPI-Nodejs (Github)](https://github.com/AzureADSamples/WebAPI-Nodejs)|
-|Node.js|适用于 Node 的 Microsoft Azure Active Directory Passport 身份验证中间件|客户端|[适用于 Node.js 的 Azure Active Directory Passport (npm)](https://www.npmjs.com/package/passport-azure-ad)|[适用于 Node.js 的 Azure Active Directory (Github)](https://github.com/AzureAD/passport-azure-ad)||
+|Node.js|适用于 Node 的 Azure Active Directory Passport 身份验证中间件|客户端|[适用于 Node.js 的 Azure Active Directory Passport (npm)](https://www.npmjs.com/package/passport-azure-ad)|[适用于 Node.js 的 Azure Active Directory (Github)](https://github.com/AzureAD/passport-azure-ad)||
 |Java|适用于 Java 的 Active Directory 身份验证库 (ADAL)|客户端|[适用于 Java 的 ADAL (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-java)|[适用于 Java 的 ADAL (Github)](https://github.com/AzureAD/azure-activedirectory-library-for-java)||
 |.NET|适用于 Microsoft.NET Framework 4.5 的标识协议扩展|服务器|[Microsoft.IdentityModel.Protocol.Extensions (NuGet)](https://www.nuget.org/packages/Microsoft.IdentityModel.Protocol.Extensions)|[适用于 .NET 的 Azure AD 标识模型扩展 (Github)](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet)||
 |.NET|适用于 Microsoft.Net Framework 4.5 的 JSON Web 令牌处理程序|服务器|[System.IdentityModel.Tokens.Jwt (NuGet)](https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt)|[适用于 .NET 的 Azure AD 标识模型扩展 (Github)](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet)||
@@ -48,7 +48,7 @@
 
 ### 对代表用户访问远程资源的服务器应用程序进行身份验证
 
-在此方案中，开发人员在服务器上有一个正在运行的应用程序需要访问由 Azure AD 保护的远程资源（如 Web API）。请求也需要代表 Azure AD 中的用户发出。他有一个 Azure 订阅，知道如何调用下游 Web API，还知道服务使用哪个 Azure AD 租户。用户通过 Web 应用程序的身份验证后，应用程序可以从 Azure AD 获取该用户的授权代码。然后，Web 应用程序可以使用该授权代码以及与应用程序关联的客户端凭据，代表用户通过 ADAL 从 Azure AD 中获取访问令牌和刷新令牌。Web 应用程序拥有访问令牌后，就可以调用 Web API，直到该令牌过期。令牌过期后，Web 应用程序可以使用前面收到的刷新令牌，通过 ADAL 获取新的访问令牌。
+在此方案中，开发人员在服务器上有一个正在运行的应用程序需要访问由 Azure AD 保护的远程资源（如 Web API）。请求也需要代表 Azure AD 中的用户发出。他有一个 Azure 订阅，知道如何调用下游 Web API，还知道服务使用哪个 Azure AD 租户。用户通过 Web 应用的身份验证后，应用程序可以从 Azure AD 获取该用户的授权代码。然后， Web 应用可以使用该授权代码以及与应用程序关联的客户端凭据，代表用户通过 ADAL 从 Azure AD 中获取访问令牌和刷新令牌。 Web 应用拥有访问令牌后，就可以调用 Web API，直到该令牌过期。令牌过期后， Web 应用可以使用前面收到的刷新令牌，通过 ADAL 获取新的访问令牌。
 
 
 ## 另请参阅
@@ -59,4 +59,4 @@
 
 [Azure Active Directory 代码示例](/documentation/articles/active-directory-code-samples)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

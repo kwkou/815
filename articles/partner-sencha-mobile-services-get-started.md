@@ -9,16 +9,22 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/18/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="02/10/2016"
+	wacn.date="03/21/2016"/>
 
 #  <a name="getting-started"></a>移动服务和 Sencha Touch 入门
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+&nbsp;
+
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
 ##概述
 
-本教程演示了如何在您的 Sencha Touch 应用程序中利用 Azure 移动服务。使用可利用您通过管理门户定义的移动服务的 Sencha Touch，来创建一个简单的待办事项列表应用程序。本教程适用于中级到高级的 Web 应用程序开发人员，这些开发人员非常了解 JavaScript 并熟悉 Sencha Touch 框架。
+本教程演示了如何在您的 Sencha Touch 应用程序中利用 Azure 移动服务。使用可利用你通过 Azure 经典门户定义的移动服务的 Sencha Touch，来创建一个简单的*待办事项列表*应用。本教程适用于中级到高级的 Web 应用程序开发人员，这些开发人员非常了解 JavaScript 并熟悉 Sencha Touch 框架。
 
 
 下面显示的是完成的应用程序的屏幕快照：
@@ -32,6 +38,7 @@
 - 下载并安装 [Sencha Cmd Tool](http://www.sencha.com/products/sencha-cmd/download"target="\_blank")。
 
 - Java Runtime Environment (JRE) 或 Java 开发工具包（如果您创建 Android 应用程序）
+- Ruby 和 SASS gem。
 
 ##  <a name="create-new-service"></a>创建新的移动服务
 
@@ -39,9 +46,9 @@
 
 ## 创建 TodoItems 表
 
-创建移动服务后，你可以在管理门户中按照简单的快速入门来创建一个新数据库表，以便在该移动服务中使用。
+创建移动服务后，你可以在 Azure 经典门户中按照简单的快速入门来创建一个新数据库表，以便在该移动服务中使用。
 
-1. 在管理门户中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1. 在 [Azure 经典门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2. 在快速启动选项卡中，单击“选择平台”下的“HTML”，然后展开“创建新的 HTML 应用程序”。
 
@@ -53,10 +60,10 @@
 
 3. 单击“创建 TodoItem 表”以创建用于存储应用程序数据的表。
 
-	> [AZURE.NOTE]不要从管理门户下载 HTML 应用程序。相反，我们将在下面的部分中手动创建一个 Sencha Touch 应用程序。
+	> [AZURE.NOTE]不要从 Azure 经典门户下载 HTML 应用。相反，我们将在下面的部分中手动创建一个 Sencha Touch 应用程序。
 
 
-1. 记下管理门户中的 **appKey** 和 **appUrl**。您将在本教程的其他部分中使用它们。
+1. 记下 Azure 经典门户中的 **appKey** 和 **appUrl**。您将在本教程的其他部分中使用它们。
 
     ![应用程序密钥](./media/partner-sencha-mobile-services-get-started/mobile-app-key-portal.png)
 
@@ -84,7 +91,7 @@
 
 您可以使用以下步骤手动将 Azure 扩展添加到您的应用程序：
 
-1. 从[此处](https://market.sencha.com/extensions/sencha-touch-extensions-for-windows-azure)下载 Azure 扩展包。（您可能会使用自己的 Sencha 论坛 ID 访问此区域。）
+1. 从[此处](https://market.sencha.com/extensions/sencha-extensions-for-microsoft-azure)下载 Azure 扩展包。（您可能会使用自己的 Sencha 论坛 ID 访问此区域。）
 
 2. 将该 Azure 扩展包从下载目录复制到您最终希望放置和解压缩它的位置：
 
@@ -101,7 +108,7 @@
 
 所有由 Sencha Cmd 生成的应用程序在根目录下都具有一个“packages”文件夹。可以配置“packages”文件夹的位置，但不管其位置如何，您的应用程序（或多个应用程序，如果您已创建 Sencha 工作区）都可以将该文件夹用于存储所有程序包。
 
-由于 Ext.Azure 是 Sencha Cmd“包”，因此使用 Sencha Cmd 可轻松地安装源代码并将其包括在应用程序中。（有关详细信息，请参阅 [Sencha Cmd 包](http://docs.sencha.com/cmd/3.1.2/#!/guide/command_packages)）。
+由于 Ext.Azure 是 Sencha Cmd“包”，因此使用 Sencha Cmd 可轻松地安装源代码并将其包括在应用程序中。（有关详细信息，请参阅 [Sencha Cmd 包](http://docs.sencha.com/cmd/6.x/cmd_packages/cmd_packages.html)）。
 
 若要从 Sencha 包存储库下载和安装 Azure 扩展包，你需要将程序包的名称添加到你的 **app.json** 文件并生成你的应用程序：
 
@@ -150,7 +157,7 @@
 		});
 
 
-3. 配置 Azure
+3. 配置 Azure：
 
 	通过调用应用程序的启动部分中的 **Ext.Azure.init** 方法来初始化 Azure 包。此方法将传递一个配置对象，该对象包含移动服务凭据以及需要使用的其他凭据和功能。
 
@@ -237,7 +244,7 @@ Azure 代理会按照 Azure API 所预期的相应 CRUD 操作（包括身份验
 
 ### 存储 ToDo 项 
 
-**文件名：**app/store/TodoItems.js
+**文件名**: app/store/TodoItems.js
 
 Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模型）的集合，以便以各种不同的方式显示这些记录。这可能包括网格、图表、列表等等。
 
@@ -263,7 +270,7 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 
 ### 查看和编辑 ToDo 项
 
-**文件名：**app/view/DataItem.js
+**文件名**： app/view/DataItem.js
 
 由于我们已定义了每个 ToDo 项的结构并且已创建了存储来放置所有记录，因此应考虑希望如何向应用程序的用户显示此信息。我们通常通过使用“视图”向用户显示信息。视图可以是任意数量的 Touch 组件之一，可单独使用或与其他元素组合使用。
 
@@ -565,7 +572,7 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 
 ### 将其放在一起
 
-**文件名**：app.js
+**文件名**: app.js
 
 我们的最后一个步骤是完成编辑主应用程序文件，并提供有关已定义的模型、存储、视图和控制器的信息。这些资源的源文件会自动加载到应用程序中。最后，调用 launch 方法，它创建并显示主应用程序视图“Basic.main.View”。
 
@@ -653,7 +660,7 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 
   2. 使用 Sencha Cmd，运行以下命令：
 
-    * *sencha app refresh*：这将指示 Sencha Cmd 找到所有的应用程序依赖关系，并下载任何所需的程序包（例如，[Sencha Touch Extensions for Azure](https://market.sencha.com/extensions/sencha-touch-extensions-for-windows-azure)）。
+    * *sencha app refresh*：这将指示 Sencha Cmd 找到所有的应用程序依赖关系，并下载任何所需的程序包（例如，[Sencha Touch Extensions for Azure](https://market.sencha.com/extensions/sencha-extensions-for-microsoft-azure)）。
 
     * *sencha web start*：这将启动本地的 Web 服务器以测试我们的应用程序。
 
@@ -661,13 +668,13 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 
   3. 在 Web 浏览器中打开你的终端中列出的 URL，以启动该应用程序（例如 http://localhost:1841)）。
 
-  4. 在应用程序中键入有意义的文本（例如 “Complete the tutorial”），然后单击“添加”。
+  4. 在应用程序中键入有意义的文本（例如 “完成此教程”），然后单击“添加”。
 
     ![新的 todo 项](./media/partner-sencha-mobile-services-get-started/new-todo-item.png)
 
     这样可向在 Azure 中托管的新移动服务发送 POST 请求。来自请求的数据被插入到 TodoItem 表。
 
-  5. 返回管理门户，单击“数据”选项卡，然后单击 TodoItem 表。
+  5. 返回 [Azure 经典门户]，单击“数据”选项卡，然后单击“TodoItems”表。
 
     ![Todo 项表](./media/partner-sencha-mobile-services-get-started/mobile-data-tab.png)
 
@@ -685,13 +692,13 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
   * 示例应用程序[演练](http://docs.sencha.com/touch-azure/1.0.0/#!/guide/data_filters)
   * 在 [Sencha 论坛](http://www.sencha.com/forum)中获得帮助
   * 浏览 [Sencha 文档](http://docs.sencha.com/)
-  
+  * 将 Sencha 与 Azure 移动服务配合使用：[（视频）](http://channel9.msdn.com/Shows/Cloud+Cover/Episode-126-Using-Sencha-With-Windows-Azure-Mobile-Services)
 
 
 ## 其他资源
 
   * [下载 Sencha Touch](http://pages.sencha.com/touch-for-azure.html)
-  * [Sencha Touch Extensions for Azure](https://market.sencha.com/extensions/sencha-touch-extensions-for-windows-azure)
+  * [Sencha Touch Extensions for Azure](https://market.sencha.com/extensions/sencha-extensions-for-microsoft-azure)
  
 
 ## 摘要
@@ -700,8 +707,13 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 
 有关 Sencha Touch 入门的详细信息，请访问整套[指南](http://docs.sencha.com/touch/#!/guide)
 
+
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
+
 <!-- images -->
 
 [0]: ./media/partner-sencha-mobile-services-get-started/finished-app.png
 
-<!---HONumber=74-->
+[Azure 经典门户]: https://manage.windowsazure.cn/
+
+<!---HONumber=Mooncake_0118_2016-->

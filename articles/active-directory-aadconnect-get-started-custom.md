@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory"   
-	ms.date="10/13/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="01/08/2016"
+	wacn.date="01/29/2016"/>
 
 # Azure AD Connect 的自定义安装
 
@@ -18,16 +18,16 @@
 以下文档提供了有关对 Azure AD Connect 使用自定义安装选项的信息。如果你要设置其他配置选项，或需要使用快速安装中未包括的可选功能，则可以使用此选项。
 
 ## 相关文档
-如果你尚未阅读有关[将本地标识与 Azure Active Directory 集成](active-directory-aadconnect.md)的文档，下表提供了相关主题的链接。开始安装之前，需要完成以粗体显示的前三个主题。
+如果你尚未阅读有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的文档，下表提供了相关主题的链接。开始安装之前，需要完成以粗体显示的前三个主题。
 
 | 主题 | |
 | --------- | --------- |
 | **下载 Azure AD Connect** | [下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) |
-| **硬件和先决条件** | [Azure AD Connect：硬件和先决条件](active-directory-aadconnect-prerequisites.md) |
-| **用于安装的帐户** | [Azure AD Connect 帐户和权限](active-directory-aadconnect-accounts-permissions.md) |
-| 使用快速设置安装 | [Azure AD Connect 的快速安装](active-directory-aadconnect-get-started-express.md) |
-| 从 DirSync 升级 | [从 Azure AD 同步工具 (DirSync) 升级](active-directory-aadconnect-dirsync-upgrade-get-started.md) |
-| 安装后 | [验证安装并分配许可证](active-directory-aadconnect-whats-next.md) |
+| **硬件和先决条件** | [Azure AD Connect：硬件和先决条件](/documentation/articles/active-directory-aadconnect-prerequisites) |
+| **用于安装的帐户** | [Azure AD Connect 帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions) |
+| 使用快速设置安装 | [Azure AD Connect 的快速安装](/documentation/articles/active-directory-aadconnect-get-started-express) |
+| 从 DirSync 升级 | [从 Azure AD 同步工具 (DirSync) 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started) |
+| 安装后 | [验证安装并分配许可证](/documentation/articles/active-directory-aadconnect-whats-next) |
 
 
 ## 安装所需的组件
@@ -37,15 +37,15 @@
 ![所需的组件](./media/active-directory-aadconnect-get-started-custom/requiredcomponents.png)
 
 
-可选配置 | 说明 
-------------- | ------------- |
-SQL Server 名称 | 用于指定 SQL Server 名称和实例名称。如果你已有一个要使用的数据库服务器，请选择此选项。
-服务帐户 | 默认情况下，Azure AD Connect 将为同步服务创建要使用的本地服务帐户。密码是自动生成的，而安装 Azure AD Connect 的人员并不知道该密码。如果你使用远程 SQL 服务器，则需要在域中创建一个服务帐户并知道密码。在这些情况下，请输入要使用的服务帐户。 |
-权限 | 默认情况下，在安装同步服务时，Azure AD Connect 将在服务器本地创建四个组。这些组是：管理员组、操作员组、浏览组和密码重置组。如果你想要指定自己的组，可在此处指定。组必须在服务器本地，并且不能位于域中。 |
+| 可选配置 | 说明 |
+| ------------- | ------------- |
+| 使用现有的 SQL Server | 用于指定 SQL Server 名称和实例名称。如果你已有一个要使用的数据库服务器，请选择此选项。如果你的 SQL Server 没有启用浏览而你必须指定端口号，请在“实例名称”框中输入实例名称后接逗号和端口号。 |
+| 使用现有的服务帐户 | 默认情况下，Azure AD Connect 将为同步服务创建要使用的本地服务帐户。密码是自动生成的，而安装 Azure AD Connect 的人员并不知道该密码。如果你使用远程 SQL 服务器，则需要在域中创建一个服务帐户并知道密码。在这些情况下，请输入要使用的服务帐户。确保运行安装的用户是 SQL 中的 SA，以便可以创建服务帐户的登录名。请参阅 [Azure AD Connect 帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions#custom-settings-installation) |
+| 指定自定义同步组 | 默认情况下，在安装同步服务时，Azure AD Connect 将在服务器本地创建四个组。这些组是：管理员组、操作员组、浏览组和密码重置组。如果你想要指定自己的组，可在此处指定。组必须在服务器本地，并且不能位于域中。 |
 
 
 ## 用户登录
-安装所需的组件后，系统会要求你指定用户要使用的单一登录方法。下表提供了可用选项的简短说明。
+安装所需的组件后，系统会要求你指定用户要使用的单一登录方法。下表提供了可用选项的简短说明。有关登录方法的完整说明，请参阅[用户登录](/documentation/articles/active-directory-aadconnect-user-signin)。
 
 ![用户登录](./media/active-directory-aadconnect-get-started-custom/usersignin.png)
 
@@ -60,7 +60,8 @@ SQL Server 名称 | 用于指定 SQL Server 名称和实例名称。如果你已
 
 
 ## 连接到 Azure AD
-在“连接到 Azure AD”屏幕中，输入全局管理员的帐户和密码。请确保此帐户未启用 Multi-Factor Authentication。否则会导致身份验证失败。请注意，此帐户只会用于在 Azure AD 中创建服务帐户，在向导完成后将不会使用。
+在“连接到 Azure AD”屏幕中，输入全局管理员的帐户和密码。请确保此帐户未启用 Multi-Factor Authentication。否则会导致身份验证失败。
+此帐户只会用于在 Azure AD 中创建服务帐户，在向导完成后将不会使用。
 
 ![用户登录](./media/active-directory-aadconnect-get-started-custom/connectaad.png)
 
@@ -97,12 +98,15 @@ sAMAccountName 和 MailNickName|此选项根据预期可以在其中找到用户
 
 
 
-### 根据组同步筛选
-根据组筛选功能可让你执行小型试验，试验中应该只会在 Azure AD 和 Office 365 内创建一小部分对象。若要使用这项功能，请在 Active Directory 中创建一个组，并添加应该以直接成员身份与 Azure AD 同步的用户和组。你稍后可以在此组中添加和删除用户，以维护应该要在 Azure AD 中显示的对象列表。若要使用这项功能，请在自定义路径中查看以下页面：
+### <a name="sync-filtering-based-on-groups"></a>根据组同步筛选
+根据组筛选功能可让你执行小型试验，试验中应该只会在 Azure AD 和 Office 365 内创建一小部分对象。若要使用这项功能，请在 Active Directory 中创建一个组，并添加应该以直接成员身份与 Azure AD 同步的用户和组。你稍后可以在此组中添加和删除用户，以维护应该要在 Azure AD 中显示的对象列表。要同步的所有对象必须是组的直属成员。这包括用户、组、联系人和计算机/设备。不会解析嵌套的组成员身份；组成员只包括组本身而不包括其成员。
 
+若要使用这项功能，请在自定义路径中查看以下页面：
 ![同步筛选](./media/active-directory-aadconnect-get-started-custom/filter2.png)
 
->[AZURE.WARNING]此功能只用于支持试验部署，不应在成熟的生产部署中使用。
+>[AZURE.WARNING] 此功能只用于支持试验部署，不应在成熟的生产部署中使用。
+
+在成熟的生产部署中，往往很难维护单个要同步所有对象的组。在这种情况下，你应该使用[配置筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering)中所述的方法之一。
 
 ### 可选功能
 
@@ -122,7 +126,7 @@ Azure AD 应用程序和属性筛选|通过启用 Azure AD 应用程序和属性
 设备写回 | 允许你将 Azure AD 中的设备对象写回本地 Active Directory 以实现条件性访问方案。有关更多信息，请参阅[在 Azure AD Connect 中启用设备写回](/documentation/articles/active-directory-aadconnect-get-started-custom-device-writeback)
 目录扩展属性同步|通过启用目录扩展属性同步，可将指定的其他属性同步到 Azure AD。有关更多信息，请参阅[目录扩展](/documentation/articles/active-directory-aadconnect-feature-preview#directory-extensions)。
 
-### Azure AD 应用程序和属性筛选
+###<a name="azure-ad-app-and-attribute-filtering"></a> Azure AD 应用程序和属性筛选
 如果你希望限制要同步到 Azure AD 的属性，则一开始请选择要使用哪些服务。如果你配置此页面，则必须重新运行安装向导来明确选择任何新服务。
 
 ![可选功能](./media/active-directory-aadconnect-get-started-custom/azureadapps2.png)
@@ -136,9 +140,7 @@ Azure AD 应用程序和属性筛选|通过启用 Azure AD 应用程序和属性
 
 ![同步筛选](./media/active-directory-aadconnect-get-started-custom/extension2.png)
 
-有关更多信息，请参阅[目录扩展](active-directory-aadconnect-feature-preview.md#directory-extensions)。
-
-
+有关更多信息，请参阅[目录扩展](/documentation/articles/active-directory-aadconnect-feature-preview#directory-extensions)。
 
 ## 配置与 AD FS 的联合
 只需单击几下鼠标，请能使用 Azure AD Connect 配置 AD FS。以下是设置之前需要满足的要求。
@@ -165,22 +167,25 @@ Azure AD 应用程序和属性筛选|通过启用 Azure AD 应用程序和属性
 ![AD FS 服务器](./media/active-directory-aadconnect-get-started-custom/adfs2.png)
 
 
- 
+
 ### 指定 Web 应用程序代理服务器
 在此处输入你要用作 Web 应用程序代理服务器的特定服务器。Web 应用程序代理服务器部署在你的外围网络中（面向 Extranet），支持来自 Extranet 的身份验证请求。你可以根据容量规划需求添加一个或多个服务器。我们建议安装一台用于测试和试验部署的 Web 应用程序代理服务器，并通过打开 Azure AD Connect 向其他服务器部署 Web 应用程序代理，来部署更多的服务器。我们通常建议使用数量相当的代理服务器，以满足来自 Intranet 的身份验证要求。
 
 
-> [AZURE.NOTE]- 如果用于安装 Azure AD Connect 的帐户不是 AD FS 服务器上的本地管理员，则系统会提示你提供具有足够权限的帐户的凭据。- 在配置此步骤之前，请确保 Azure AD Connect 服务器与 Web 应用程序代理服务器之间已建立 HTTP/HTTPS 连接。- 此外，请确保 Web 应用程序服务器与 AD FS 服务器之间的 HTTP/HTTPS 连接允许通过身份验证请求。
+> [AZURE.NOTE]
+- 如果用于安装 Azure AD Connect 的帐户不是 AD FS 服务器上的本地管理员，则系统会提示你提供具有足够权限的帐户的凭据。
+- 在配置此步骤之前，请确保 Azure AD Connect 服务器与 Web 应用程序代理服务器之间已建立 HTTP/HTTPS 连接。
+- 此外，请确保 Web 应用程序服务器与 AD FS 服务器之间的 HTTP/HTTPS 连接允许通过身份验证请求。
 
 
 ![Web 应用](./media/active-directory-aadconnect-get-started-custom/adfs3.png)
- 
+
 
 系统将提示你输入凭据，使 Web 应用程序服务器可以创建与 AD FS 服务器的安全连接。这些凭据需是 AD FS 服务器上的本地管理员。
 
 ![代理](./media/active-directory-aadconnect-get-started-custom/adfs4.png)
- 
- 
+
+
 ### 指定 AD FS 服务的服务帐户
 AD FS 服务需要域服务帐户来验证用户，以及在 Active Directory 中查找用户信息。它可以支持两种类型的服务帐户：
 
@@ -204,7 +209,7 @@ AD FS 服务需要域服务帐户来验证用户，以及在 Active Directory �
 
 - 针对 Intranet（内部 DNS 服务器）和 Extranet（通过域注册机构注册的公共 DNS）设置 AD FS 联合身份验证服务名称（例如 adfs.contoso.com）的 DNS 记录。对于 Intranet 记录，请确保使用 A 记录而不是 CNAME 记录。只有这样，才能从加入域的计算机正常执行 Windows 身份验证。
 - 如果要部署多个 AD FS 服务器或 Web 应用程序代理服务器，请确保配置负载平衡器，以及指向负载平衡器的 AD FS 联合身份验证服务名称（例如 adfs.contoso.com）的 DNS 记录。
-- 如果要将 Windows 集成身份验证用于 Intranet 中使用 Internet Explorer 的浏览器应用程序，请确保已将 AD FS 联合身份验证服务名称（例如 adfs.contoso.com）添加到 IE 中的 Intranet 区域。此配置可以通过组策略进行控制，并可部署到所有已加入域的计算机中。 
+- 如果要将 Windows 集成身份验证用于 Intranet 中使用 Internet Explorer 的浏览器应用程序，请确保已将 AD FS 联合身份验证服务名称（例如 adfs.contoso.com）添加到 IE 中的 Intranet 区域。此配置可以通过组策略进行控制，并可部署到所有已加入域的计算机中。
 
 
 ### AD FS 服务中的可选配置
@@ -230,8 +235,8 @@ AD FS 服务需要域服务帐户来验证用户，以及在 Active Directory �
 当你单击“验证”按钮时，Azure AD Connect 将为你验证 DNS 设置。
 
 ![完成](./media/active-directory-aadconnect-get-started-custom/adfs7.png)
- 
- 
+
+
 此外，请执行以下验证步骤：
 
 - 在已加入域的计算机上通过 Intranet 中的 Internet Explorer 验证浏览器登录：连接到 https://myapps.microsoft.com，然后使用你登录的帐户验证登录。
@@ -240,8 +245,10 @@ AD FS 服务需要域服务帐户来验证用户，以及在 Active Directory �
 
 
 ## 后续步骤
+安装完成后，请注销并再次登录到 Windows，然后即可使用同步服务管理器或同步规则编辑器。
+
 安装 Azure AD Connect 后，可以[验证安装并分配许可证](/documentation/articles/active-directory-aadconnect-whats-next)。
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_0215_2016-->

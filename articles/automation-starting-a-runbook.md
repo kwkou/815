@@ -1,6 +1,6 @@
 <properties 
    pageTitle="在 Azure 自动化中启动 Runbook"
-   description="汇总了可用于在 Azure 自动化中启动 Runbook 的不同方法，并提供有关使用 Azure 管理门户和 Windows PowerShell 的详细信息。"
+   description="汇总了可用于在 Azure 自动化中启动 Runbook 的不同方法，并提供有关如何使用 Azure 管理门户和 Windows PowerShell 的详细信息。"
    services="automation"
    documentationCenter=""
    authors="bwren"
@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="09/28/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="11/13/2015"
+	wacn.date="12/17/2015"/>
 
 # 在 Azure 自动化中启动 Runbook
 
@@ -67,7 +67,7 @@
   </td>
  </tr>
  <tr>
-  <td><a href="/documentation/articles/automation-child-runbooks">从另一个 Runbook</a></td>
+  <td><a href="/documentation/articles/automation-child-runbooks/">从另一个 Runbook</a></td>
   <td>
    <ul>
     <li>使用一个 Runbook 作为另一个 Runbook 中的活动</li>
@@ -92,6 +92,7 @@
 
 
 ## 使用 Windows PowerShell 启动 Runbook
+<a name="starting-a-runbook-with-windows-powershell"></a>
 
 可以在 Windows PowerShell 中使用 [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690259.aspx) 启动 Runbook。以下示例代码将启动名为 Test-Runbook 的 Runbook。
 
@@ -116,9 +117,9 @@ Start-AzureAutomationRunbook 将返回一个作业对象，启动 Runbook 后，
 	Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" –Parameters $params
 
 ## Runbook 参数
-<a name="Runbook-parameters"></a>
+<a id="runbook-parameters"></a>
 
-当你使用 Azure 管理门户或 Windows PowerShell 启动 Runbook 时，系统将通过 Azure 自动化 Web 服务发送指令。此服务不支持复杂数据类型的参数。如果需要提供复杂参数的值，则必须根据[从一个 Runbook 启动另一个 Runbook](/documentation/articles/automation-child-runbooks) 中所述，以内联方式从另一个 Runbook 调用该参数值。
+当你使用 Azure 管理门户或 Windows PowerShell 启动 Runbook 时，系统将通过 Azure 自动化 Web 服务发送指令。此服务不支持复杂数据类型的参数。如果需要提供复杂参数的值，则必须根据 [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks) 中所述，以内联方式从另一个 Runbook 调用该参数值。
 
 Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功能，如以下部分中所述。
 
@@ -202,10 +203,10 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 假设凭据中的用户名为 *jsmith*，则会导致生成以下输出。
 
-	jsmith
+<code>jsmith</code>
 
 ## 相关文章
 
-- [从一个 Runbook 启动另一个 Runbook](/documentation/articles/automation-child-runbooks) 
+- [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks) 
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1207_2015-->

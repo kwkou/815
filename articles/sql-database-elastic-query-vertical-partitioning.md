@@ -1,19 +1,21 @@
 <properties
-    pageTitle="用于垂直分区的弹性数据库查询 | Windows Azure"
+    pageTitle="适用于跨数据库查询的弹性数据库查询（垂直分区）| Azure"
     description="如何在垂直分区上设置跨数据库查询"    
     services="sql-database"
     documentationCenter=""  
     manager="jeffreyg"
-    authors="sidneyh"/>
+    authors="torsteng"/>
 
 <tags
     ms.service="sql-database"
-    ms.date="10/19/2015"
-    wacn.date="11/12/2015" />
+    ms.date="01/06/2016"
+    wacn.date="02/26/2016" />
 
-# 用于垂直分区的弹性数据库查询
+# 适用于跨数据库查询的弹性数据库查询（垂直分区）
 
 本文档说明如何为跨数据库查询方案（垂直分区）设置弹性查询，以及如何执行查询。有关垂直分区方案的定义，请参阅 [Azure SQL 数据库弹性数据库查询概述（预览版）](/documentation/articles/sql-database-elastic-query-overview)。
+
+![跨不同数据库中的表进行查询][1]
 
 ## 创建数据库对象
 
@@ -23,15 +25,15 @@
 
 定义弹性数据库查询的数据库对象依赖于以下 T-SQL 语句，下面将针对垂直分区方案对这些语句进行进一步说明：
 
-* [CREATE MASTER KEY](https://msdn.microsoft.com/library/ms174382.aspx) 
+* [CREATE MASTER KEY](https://msdn.microsoft.com/zh-cn/library/ms174382.aspx) 
 
-* [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/library/mt270260.aspx)
+* [CREATE DATABASE SCOPED CREDENTIAL](https://msdn.microsoft.com/zh-cn/library/mt270260.aspx)
 
-* [CREATE/DROP EXTERNAL DATA SOURCE](https://msdn.microsoft.com/library/dn935022.aspx)
+* [CREATE/DROP EXTERNAL DATA SOURCE](https://msdn.microsoft.com/zh-cn/library/dn935022.aspx)
 
-* [CREATE/DROP EXTERNAL TABLE](https://msdn.microsoft.com/library/dn935021.aspx)
+* [CREATE/DROP EXTERNAL TABLE](https://msdn.microsoft.com/zh-cn/library/dn935021.aspx)
 
-### 1.1 数据库范围的主密钥和凭据 
+### 1\.1 数据库范围的主密钥和凭据 
 
 凭据表示弹性查询将用于连接到 Azure SQL 数据库中的远程数据库的用户 ID 和密码。若要创建所需的主密钥和凭据，请使用以下语法：
 
@@ -40,15 +42,15 @@
     SECRET = ‘<password>’
     [;]
     
-或者若要删除，请使用以下语法：
+若要删除凭据：
     
     DROP DATABASE SCOPED CREDENTIAL <credential_name>;  
     DROP MASTER KEY;   
 
  
-请确保 *< username>* 中不包括任何“@servername”后缀。
+请确保 *< username>* 中不包括任何 *“@servername”* 后缀。
 
-### 1.2 外部数据源
+### 1\.2 外部数据源
 
 通过定义外部数据源为弹性查询提供有关远程数据库的信息。用于创建和删除外部数据源的语法定义如下：
 
@@ -87,7 +89,7 @@
 
     select * from sys.external_data_sources; 
 
-### 1.3 外部表 
+### 1\.3 外部表 
 
 弹性查询将扩展现有的外部表语法以定义使用 RDBMS 类型的外部数据源的外部表。垂直分区的外部表定义涉及以下几个方面：
 
@@ -109,7 +111,7 @@
 
 DATA\_SOURCE 子句定义用于外部表的外部数据源（即，在垂直分区情况下的远程数据库）。
 
-使用 SCHEMA\_NAME 和 OBJECT_NAME 子句可分别将外部表定义映射到远程数据库上不同架构中的表，或映射到具有不同名称的表。如果你要在远程数据库上为目录视图或 DMV 定义外部表，或者在远程表名已在本地使用的任何其他情况下，这两个子句很有用。
+使用 SCHEMA\_NAME 和 OBJECT\_NAME 子句可分别将外部表定义映射到远程数据库上不同架构中的表，或映射到具有不同名称的表。如果你要在远程数据库上为目录视图或 DMV 定义外部表，或者在远程表名已在本地使用的任何其他情况下，这两个子句很有用。
 
 以下 DDL 语句从本地目录中删除现有的外部表定义。它不会影响远程数据库。
 
@@ -142,7 +144,7 @@ DATA\_SOURCE 子句定义用于外部表的外部数据源（即，在垂直分�
 
 ## 查询
 
-### 2.1 完全保真的 T-SQL 查询 
+### 2\.1 完全保真的 T-SQL 查询 
 
 定义外部数据源和外部表后，可以对外部表使用完整的 T-SQL。
 
@@ -178,6 +180,9 @@ DATA\_SOURCE 子句定义用于外部表的外部数据源（即，在垂直分�
 
 
 <!--Image references-->
+[1]: ./media/sql-database-elastic-query-vertical-partitioning/verticalpartitioning.png
+
+
 <!--anchors-->
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0215_2016-->

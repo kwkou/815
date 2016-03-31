@@ -9,9 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight" 
-   ms.date="07/06/2015"
-   wacn.date="10/03/2015"/>
+	ms.service="hdinsight"
+	ms.date="02/05/2016"
+	wacn.date="03/28/2016"/>
 
 #从远程桌面连接运行 Pig 作业
 

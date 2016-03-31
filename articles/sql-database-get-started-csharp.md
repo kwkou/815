@@ -1,30 +1,32 @@
 <properties 
-   pageTitle="使用 C# 创建 Azure SQL 数据库" 
-   description="本文介绍如何使用适用于 .NET 的 Azure SQL 数据库库通过 C# 创建 Azure SQL 数据库。" 
-   services="sql-database" 
-   documentationCenter="" 
-   authors="stevestein" 
-   manager="jeffreyg" 
-   editor=""/>
+	pageTitle="试用 SQL 数据库：使用 C# 创建 SQL 数据库 | Azure" 
+	description="尝试使用 SQL 数据库开发 SQL 和 C# 应用，并使用适用于 .NET 的 SQL 数据库库以 C# 创建 Azure SQL 数据库。" 
+	keywords="试用 sql, sql c#"   
+	services="sql-database" 
+	documentationCenter="" 
+	authors="stevestein" 
+	manager="jeffreyg" 
+	editor="cgronlun"/>
 
 <tags
    ms.service="sql-database"
-   ms.date="09/01/2015"
-   wacn.date="10/17/2015"/>
+   ms.date="12/01/2015"
+   wacn.date="01/29/2016"/>
 
-# 使用 C&#x23; 创建 SQL 数据库
+# 试用 SQL 数据库：使用 C&#x23; 通过适用于 .NET 的 SQL 数据库库创建 SQL 数据库 
 
 **单一数据库**
 
 > [AZURE.SELECTOR]
+- [Azure 门户](/documentation/articles/sql-database-get-started)
 - [C#](/documentation/articles/sql-database-get-started-csharp)
 - [PowerShell](/documentation/articles/sql-database-get-started-powershell)
 
 
 
-本文介绍使用[适用于 .NET 的 Azure SQL 数据库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)通过 C# 创建 Azure SQL 数据库的命令。
+了解如何使用[适用于 .NET 的 Azure SQL 数据库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)通过 C# 命令创建 Azure SQL 数据库。
 
-本文介绍如何创建单一数据库。
+你可以使用 SQL 和 C# 创建单一数据库以试用 SQL 数据库。若要创建弹性数据库，请参阅[创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal)。
 
 为简明起见，我们已分开列出各个代码段，并在本文底部的某个部分中提供了一个示例控制台应用程序，其中结合了所有命令。
 
@@ -32,19 +34,19 @@
 
 <br>
 
-> [AZURE.NOTE]适用于 .NET 的 Azure SQL 数据库库目前以预览版提供。
+> [AZURE.NOTE] 适用于 .NET 的 Azure SQL 数据库库目前以预览版提供。
 
 <br>
 
 若要完成本文中的步骤，你需要以下各项：
 
-- Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“免费试用”，然后再回来完成本文的相关操作即可。
+- Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
 - Visual Studio。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
 
 
 ## 安装所需的库
 
-使用[包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)安装以下包，即可获取所需的管理库：
+若要使用 C# 设置 SQL 数据库，请使用[包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)安装以下包，以获取所需的管理库：
 
     PM> Install-Package Microsoft.Azure.Management.Sql –Pre
     PM> Install-Package Microsoft.Azure.Management.Resources –Pre
@@ -57,39 +59,39 @@
 
 [Azure 资源管理器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx) 使用 Azure Active Directory 进行身份验证。
 
-若要基于当前的用户对客户端应用程序进行身份验证，你必须先将该应用程序注册到与创建了 Azure 资源的订阅关联的 AAD 域中。如果 Azure 订阅是以 Microsoft 帐户而不是工作或学校帐户创建的，则你已经有了默认的 AAD 域。可以在 [Azure 门户](https://manage.windowsazure.cn/)中完成应用程序的注册。
+若要基于当前的用户对客户端应用程序进行身份验证，你必须先将该应用程序注册到与创建了 Azure 资源的订阅关联的 AAD 域中。如果 Azure 订阅是以 Microsoft 帐户而不是工作或学校帐户创建的，则你已经有了默认的 AAD 域。可以在 [Azure 经典门户](https://manage.windowsazure.cn)中完成应用程序的注册。
 
 若要创建新应用程序并将其注册到正确的 Active Directory 中，请执行以下操作：
 
 1. 滚动左侧的菜单，找到 **Active Directory** 服务并将它打开。
 
-    ![AAD][1]
+    ![试用 SQL 数据库：设置 Azure Active Directory (AAD)。][1]
 
 2. 选择用于对应用程序进行身份验证的目录，然后单击该目录的**名称**。
 
-    ![目录][4]
+    ![选择用于对 SQL C# 应用程序进行身份验证的目录。][4]
 
 3. 在目录页上，单击“应用程序”。
 
-    ![应用程序][5]
+    ![包含“应用程序”的目录页。][5]
 
-4. 单击“添加”以创建新的应用程序。
+4. 单击“添加”为 SQL 数据库创建新的 C# 应用程序。
 
-    ![添加应用程序][6]
+    ![添加 SQL C# 应用程序。][6]
 
 5. 选择“添加我的组织正在开发的应用程序”。
 
 5. 提供应用的“名称”，然后选择“本机客户端应用程序”。
 
-    ![添加应用程序][7]
+    ![提供有关 SQL C# 应用程序的信息。][7]
 
 6. 提供“重定向 URI”。它不需要是实际的终结点，只要是有效的 URI 即可。
 
-    ![添加应用程序][8]
+    ![添加 SQL C# 应用程序的重定向 URL。][8]
 
 7. 完成创建应用，单击“配置”，然后复制“客户端 ID”（后面需要在代码中使用客户端 ID）。
 
-    ![获取客户端 ID][9]
+    ![获取 SQL C# 应用程序的客户端 ID。][9]
 
 
 1. 在页面底部单击“添加应用程序”。
@@ -97,7 +99,7 @@
 1. 选择“Azure 服务管理 API”，然后完成向导。
 2. 选择 API 之后，需要通过选择“访问 Azure 服务管理(预览)”，授予访问此 API 所需的特定权限。
 
-    ![权限][2]
+    ![设置权限。][2]
 
 2. 单击“保存”。
 
@@ -107,10 +109,10 @@
 
 代码中需要用到域名。轻松标识正确域名的一种方式是：
 
-1. 转到 [Azure 预览门户](https://manage.windowsazure.cn)。
+1. 转到 [Azure 门户](https://manage.windowsazure.cn)。
 2. 将鼠标悬停在右上角的名称上，并记下弹出窗口中显示的域。
 
-    ![标识域名][3]
+    ![标识域名。][3]
 
 
 
@@ -118,7 +120,7 @@
 
 **其他 AAD 资源**
 
-在[这篇有用的博客文章](http://www.cloudidentity.com/blog/2013/09/12/active-directory-authentication-library-adal-v1-for-net-general-availability/)中，可以找到有关使用 Azure Active Directory 进行身份验证的其他信息。
+在[这篇有用的博客文章](http://www.cloudidentity.com/blog/2013/09/12/active-directory-authentication-library-adal-v1-for-net-general-availability)中，可以找到有关使用 Azure Active Directory 进行身份验证的其他信息。
 
 
 ### 检索当前用户的访问令牌 
@@ -145,7 +147,7 @@
 
 
 
-> [AZURE.NOTE]本文中的示例使用每个 API 请求的同步形式，并会一直阻塞，直到对基础服务的 REST 调用完成。有可用的异步方法。
+> [AZURE.NOTE] 本文中的示例使用每个 API 请求的同步形式，并会一直阻塞，直到对基础服务的 REST 调用完成。有可用的异步方法。
 
 
 
@@ -160,7 +162,7 @@
     // Resource group parameters
     ResourceGroup resourceGroupParameters = new ResourceGroup()
     {
-        Location = "South Central US"
+        Location = "China East"
     };
     
     //Create a resource group
@@ -179,7 +181,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
     // Create a server
     ServerCreateOrUpdateParameters serverParameters = new ServerCreateOrUpdateParameters()
     {
-        Location = "South Central US",
+        Location = "China East",
         Properties = new ServerCreateOrUpdateProperties()
         {
             AdministratorLogin = "ServerAdmin",
@@ -195,7 +197,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 ## 创建服务器防火墙规则，以允许对服务器进行访问
 
-默认情况下，无法从任何位置连接到服务器。为了连接到服务器或者服务器上的任何数据库，必须定义[防火墙规则](https://msdn.microsoft.com/zh-cn/library/azure/ee621782.aspx)以允许从客户端 IP 地址进行访问。
+默认情况下，无法从任何位置连接到服务器。为了连接到服务器或者服务器上的任何数据库，必须定义[防火墙规则](/documentation/articles/sql-database-firewall-configure)以允许从客户端 IP 地址进行访问。
 
 以下示例将创建一个规则，用于实现从任何 IP 地址对服务器进行访问。建议你创建适当的 SQL 登录名和密码来保护数据库，并且不要依赖防火墙规则作为防范入侵的主要防御机制。
 
@@ -215,12 +217,12 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 
 
-若要允许其他 Azure 服务访问服务器，请添加一个防火墙规则并将 tartIpAddress 和 EndIpAddress 都设置为 0.0.0.0。请注意，这会允许来自*任何* Azure 订阅的 Azure 流量访问该服务器。
+若要允许其他 Azure 服务访问服务器，请添加一个防火墙规则并将 tartIpAddress 和 EndIpAddress 都设置为 0.0.0.0。请注意，这会允许来自 *任何* Azure 订阅的 Azure 流量访问该服务器。
 
 
-## 创建数据库
+## 使用 C&#x23; 创建基本的 SQL 数据库
 
-如果服务器上没有同名的数据库，则以下命令将创建新的基本数据库；如果具有同名的数据库，则会更新数据库。
+如果服务器上不存在同名的数据库，则以下 C# 命令将创建新的基本 SQL 数据库；如果具有同名的数据库，则会更新数据库。
 
         // Create a database
 
@@ -245,7 +247,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 
 
-## 示例控制台应用程序
+## 示例 C&#x23; 控制台应用程序
 
 
     using Microsoft.Azure;
@@ -274,7 +276,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
         private static string resourcegroupName = "rg1";
 
-        private static string dataCenterLocation = "Japan West";
+        private static string dataCenterLocation = "China East";
 
         private static string databaseName = "newDatabaseName";
         private static string databaseEdition = "Standard";
@@ -293,7 +295,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
         private static string domainName = "microsoft.partner.onmschina.cn";
 
-        private static string serverLocation = "Japan West";
+        private static string serverLocation = "China East";
 
         #endregion
 
@@ -406,13 +408,14 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 
 ## 后续步骤
+既然你已试用 SQL 数据库并使用 C# 设置了数据库，现在可以阅读以下文章：
 
 - [使用 C# 连接和查询 SQL 数据库](/documentation/articles/sql-database-connect-query)
 - [使用 SQL Server Management Studio (SSMS) 进行连接](/documentation/articles/sql-database-connect-to-database)
 
 ## 其他资源
 
-- [SQL 数据库](/documentation/services/sql-databases/)
+- [SQL 数据库](/documentation/services/sql-databases)
 
 
 
@@ -429,4 +432,4 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 [8]: ./media/sql-database-get-started-csharp/add-application2.png
 [9]: ./media/sql-database-get-started-csharp/clientid.png
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

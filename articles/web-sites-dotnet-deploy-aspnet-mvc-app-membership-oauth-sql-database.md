@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="创建具有身份验证和 SQL 数据库的 ASP.NET MVC 应用程序并将其部署到 Azure 网站" 
+	pageTitle="创建具有身份验证和 SQL 数据库的 ASP.NET MVC 应用程序并将其部署到 Azure Web 应用" 
 	description="了解如何开发具有 SQL 数据库后端的 ASP.NET MVC 5 应用程序，添加身份验证和授权，并将其部署到 Azure。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -9,15 +9,15 @@
 	editor=""/>
 
 <tags
-	ms.service="app-service-web"
-	ms.date="10/07/2015"
-	wacn.date="11/12/2015"/>
+	ms.service="web-sites"
+	ms.date="12/07/2015" 
+	wacn.date="03/28/2016"/>
 
-# 创建具有身份验证和 SQL 数据库的 ASP.NET MVC 应用程序并将其部署到 Azure 网站
+# 创建具有身份验证和 SQL 数据库的 ASP.NET MVC 应用程序并将其部署到 Azure Web 应用
 
-本教程演示如何构建安全的 ASP.NET MVC 5 Web 应用，以便用户能够使用 Facebook 或 Google 凭据进行登录。该应用是一个简单的联系人列表，它使用 ADO.NET Entity Framework 进行数据库访问。你需要将该应用部署到 [Azure 网站](/documentation/services/web-sites/)。
+本教程演示如何构建安全的 ASP.NET MVC 5 Web 应用，以便用户能够使用 Facebook 或 Google 凭据进行登录。该应用是一个简单的联系人列表，它使用 ADO.NET Entity Framework 进行数据库访问。你需要将该应用部署到 [Azure Web 应用](/documentation/services/web-sites/)。
 
-完成本教程之后，你将能够在云中启动并运行安全的数据驱动的 Web 应用程序，以及使用云数据库。下图演示了已完成的应用程序的登录页。
+完成本教程之后，你将能够在云中启动并运行安全的数据驱动的 Web 应用，以及使用云数据库。下图演示了已完成的应用程序的登录页。
 
 ![登录页面][rxb]
 
@@ -29,14 +29,14 @@
 * 如何使用 ADO.NET Entity Framework 6 Code First 在 SQL 数据库中读取和写入数据。
 * 如何使用 Entity Framework Code First 迁移来部署数据库。
 * 如何使用 Azure SQL 数据库在云中存储关系数据。
-* 如何部署 Web 项目，以便将数据库用于 Azure 网站中的 [Web 应用](/documentation/services/web-sites/)。
+* 如何部署 Web 项目，以便将数据库用于 Azure 中的 [ Web 应用](/documentation/services/web-sites/)。
 
->[AZURE.NOTE]这是一篇很长的教程。如果你想要快速了解 Azure 网站和 Visual Studio Web 项目，请参阅[在 Azure 网站中创建 ASP.NET Web 应用](/documentation/articles/web-sites-dotnet-get-started)。有关疑难解答信息，请参阅[疑难解答](#troubleshooting)部分。
+>[AZURE.NOTE]这是一篇很长的教程。如果你想要快速了解 Azure Web 应用和 Visual Studio Web 项目，请参阅[在 Azure 中创建 ASP.NET Web 应用](/documentation/articles/web-sites-dotnet-get-started)。有关疑难解答信息，请参阅[疑难解答](#troubleshooting)部分。
 >
 
 ## 先决条件
 
-若要完成本教程，您需要一个 Windows Azure 帐户。如果你没有帐户，可以[注册试用版](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
+若要完成本教程，您需要一个 Azure 帐户。如果你没有帐户，可以[注册试用版](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 若要设置开发环境，你必须安装 [Visual Studio 2013 Update 4](http://go.microsoft.com/fwlink/?LinkId=390521) 或更高版本，以及最新版本的 [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409)。本文专为 Visual Studio Update 4 和 SDK 2.7.1 编写。相同的说明同样适用于已安装最新 [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409) 的 Visual Studio 2015，但有些屏幕看起来与插图不同。
 
@@ -48,7 +48,7 @@
 
 	![“文件”菜单中的“新建项目”](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/gs13newproj.png)
 
-1. 在“新建项目”对话框中，展开“C#”并在“已安装的模板”下选择“Web”，然后选择“ASP.NET Web 应用程序”。
+1. 在“新建项目”对话框中，展开“C#”并在“已安装的模板”下选择“Web”，然后选择“ASP.NET Web 应用”。
 
 1. 将该应用程序命名为 **ContactManager**，然后单击“确定”。
 
@@ -56,47 +56,11 @@
  
 	**注意：**请确保输入“ContactManager”。您稍后将复制的代码块假定项目名称为 ContactManager。
 
-1. 在“新建 ASP.NET 项目”对话框中，选择“MVC”模板。确认已将“身份验证”设置为“单个用户帐户”，并且已选中“在云中托管”和“Web 应用”。
-
-	![“新建 ASP.NET 项目”对话框](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/newproject.png)
+1. 在“新建 ASP.NET 项目”对话框中，选择“MVC”模板。确认已将“身份验证”设置为“单个用户帐户”，并且确保不选中“在云中托管”
 
 1. 单击**“确定”**。
 
-3. 当“配置 Microsoft Azure Web 应用设置”对话框出现时，请确保已登录 Azure：如果还没有登录，现在请登录；如果登录已过期，请重新输入凭据。
-
-	![重新输入凭据](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/reentercredentials.png)
-
-2. 如果想要指定 Web 应用的名称，请更改“Web 应用名称”框中的值。
-
-	Web 应用的 URL 将是 {name}.chinacloudsites.cn，因此该名称在 chinacloudsites.cn 域中必须是唯一的。配置向导建议在项目名称“ContactManager”的后面追加一个数字以使名称保持唯一，在本教程中你也可以这样做。
-
-5. 在“App Service 计划”下拉列表中，选择“创建新的 App Service 计划”并输入名称，如下图中所示的“StandardWeb”。
-
-	如果需要，你也可以选择已有的 App Service 计划。有关 App Service 计划的信息，请参阅 [Azure App Service 计划深入概述](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview)。
-
-5. 在“资源组”下拉列表中，选择“创建新的资源组”并输入名称，如下图中所示的“ExampleMVC”。
-
-	如果需要，你也可以选择已有的资源组。但如果创建新的资源组并只将它用于本教程，则在完成教程后你可以轻松删除为教程创建的所有 Azure 资源。有关资源组的信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。
-
-7. 选择你附近的区域。
-
-	暂时不要单击“确定”。在下一步骤中，你将配置数据库资源。该对话框现在如下图所示。
-
-	![新建计划和资源组](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/newplanandgroup.png)
- 
-2. 选择“创建新服务器”并输入服务器名称、用户名和密码。
-
-	服务器名称必须唯一。该名称可以包含小写字母、数字和短划线，但尾部不能包含短划线。用户名和密码是要为新服务器创建的新凭据。
-
-	如果你已有数据库服务器，则可以选择该服务器而无需创建服务器。数据库服务器是非常宝贵的资源，而且你通常会想要在同一台服务器上创建多个数据库来进行测试和开发，而不是在每个数据库中各创建一个数据库服务器。不过，在本教程中，你只是暂时需要服务器。通过在相同的资源组中创建服务器作为网站，你可以在完成教程时轻松删除 Web 应用和数据库资源。
-
-	如果选择现有的数据库服务器，请确保 Web 应用和数据库位于相同的区域。
-
-	![使用新数据库](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/newdb.png)
-
-4. 单击**“确定”**。
-
-	Visual Studio 将创建 ContactManager Web 项目、创建资源组和指定的 App Service 计划，并在 Azure 网站中创建具有指定名称的 Web 应用。
+如果还没新建好 Web 应用，可以到 Azure 管理门户新建一个，并在“仪表板”的“速览”下，下载“发布配置文件”。
 
 ### 设置页眉和页脚
 
@@ -159,7 +123,7 @@
 
 	随后在默认浏览器中显示该应用程序主页。
 
-	![Web 应用在本地运行](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/rr2.png)
+	![ Web 应用在本地运行](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/rr2.png)
 
 这就是你创建将要部署到 Azure 的应用程序目前所需的全部操作。
 
@@ -171,6 +135,8 @@
 	![项目上下文菜单中的“发布”](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/GS13publish.png)
 	
 	“发布 Web”向导将打开。
+
+2. 点击“导入”，并选择之前下载好的“发布配置文件”。
 
 1. 在“发布 Web”对话框中，单击“发布”。
 
@@ -493,7 +459,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 		     return View(model);
 		  }
 
-在本教程的后面，你会将应用程序部署到 Azure，在其中，你将使用 Google 或其他第三方身份验证提供程序进行登录。这会将你新注册的帐户添加到 *canEdit* 角色。发现 Web 应用的 URL 并且具有 Google ID 的任何人都能注册并更新你的数据库。若要阻止其他人这样做，你可以停止该网站。你可以通过检查数据库来验证具有 *canEdit* 角色的人员。
+在本教程的后面，你会将应用程序部署到 Azure，在其中，你将使用 Google 或其他第三方身份验证提供程序进行登录。这会将你新注册的帐户添加到 *canEdit* 角色。发现 Web 应用的 URL 并且具有 Google ID 的任何人都能注册并更新你的数据库。若要阻止其他人这样做，你可以停止该 Web 应用。你可以通过检查数据库来验证具有 *canEdit* 角色的人员。
 
 在“包装管理器控制台”中，点击向上键以显示以下命令：
 
@@ -501,7 +467,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 **Update-Database** 命令将运行 **Seed** 方法，而该方法将运行你前面添加的 **AddUserAndRole** 方法。**AddUserAndRole** 方法将创建用户 **user1@contoso.com* 并将其添加到 *canEdit* 角色。
 
-## 通过 SSL 和 Authorize 属性保护应用程序 ##
+##<a id="protect-the-application-with-ssl-and-the-authorize-attribute"></a> 通过 SSL 和 Authorize 属性保护应用程序 ##
 
 在本部分中，你将应用 [Authorize](http://msdn.microsoft.com/zh-cn/library/system.web.mvc.authorizeattribute.aspx) 属性以限制对操作方法的访问。匿名用户将只能查看主控制器的 **Index** 操作方法。注册用户将能够查看联系人数据（Cm 控制器的“索引”和“详细信息”页）、“关于”页和“联系人”页。只有具有 *canEdit* 角色的用户才能访问可更改数据的操作方法。
 
@@ -623,12 +589,12 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 ### 停止 Web 应用以阻止其他人注册  
 
-1. 在“服务器资源管理器”中，导航到“Azure > Azure 网站 > {你的资源组} > {你的 Web 应用}”。
+1. 在“服务器资源管理器”中，导航到“Azure > App Service > {你的资源组} > {你的 Web 应用}”。
 
 4. 右键单击 Web 应用并选择“停止”。
 
-	也可以从 [Azure 管理门户](https://manage.windowsazure.cn)中选择网站，然后单击页面底部的“停止”图标。
-
+	也可以从 [Azure 管理门户](https://manage.windowsazure.cn)中选择 Web 应用，然后单击页面底部的“停止”图标。
+	
 	![stop web app portal](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/stopweb.png)
 
 ### 删除 AddToRoleAsync、发布和测试
@@ -645,7 +611,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 	
 4. 单击“开始预览”按钮。只会部署需要更新的文件。
 
-5. 从 Visual Studio 或门户启动 Web 应用。“Web 应用停止时无法发布”。
+5. 从 Visual Studio 或门户启动 Web 应用。“ Web 应用停止时无法发布”。
 
 	![启动 Web 应用](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss15.png)
 
@@ -707,21 +673,21 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
  
 3. 验证 **UserId** 是否来自 **user1@contoso.com* 和你注册的 Google 帐户。
 
-## 疑难解答
+##<a name="troubleshooting"></a> 疑难解答
 
 如果你遇到了问题，请尝试遵循以下建议。
 
 * 预配 SQL 数据库时出错 - 确保已安装最新的 SDK。2.7.1 之前的版本存在一个 bug，在某些情况下，当 VS 尝试创建数据库服务器或数据库时，该 bug 会导致错误。
 * 创建 Azure 资源时出现错误消息“你的订阅产品类型不支持该操作” - 同上。
 * 部署时出错 - 建议查看[基本 ASP.NET 部署](/documentation/articles/web-sites-dotnet-get-started)一文。该部署方案较为简单，如果你遇到相同的问题，也许可以轻松地识别原因。例如，在某些企业环境中，企业防火墙可能会阻止 Web Deploy 与 Azure 建立所需的连接类型。
-* 部署时无法在“发布 Web”向导中选择连接字符串 - 如果你使用另一种方法来创建 Azure 资源（例如，尝试部署到在门户中创建的 Web 应用和 SQL 数据库），SQL 数据库可能与 Web 应用不相关联。最简单的解决方案是根据本教程中所示，使用 VS 创建新的 Web 应用和数据库。不需要从头开始学习本教程 - 在“发布 Web”向导中，可以选择创建新的 web 应用，此时会出现你在创建项目时所看到的相同 Azure 资源创建对话框。
+* 部署时无法在“发布 Web”向导中选择连接字符串 - 如果你使用另一种方法来创建 Azure 资源（例如，尝试部署到在门户中创建的 Web 应用和 SQL 数据库），SQL 数据库可能与 Web 应用不相关联。最简单的解决方案是根据本教程中所示，使用 VS 创建新的 Web 应用和数据库。不需要从头开始学习本教程 - 在“发布 Web”向导中，可以选择创建新的 Web 应用，此时会出现你在创建项目时所看到的相同 Azure 资源创建对话框。
 * 有关 Google 或 Facebook 开发人员门户的指导已过时 - 在本教程末尾的 Disqus 专门注释。
 
 ## 后续步骤
 
-你已创建一个可对用户进行身份验证的基本 ASP.NET MVC Web 应用程序。有关常见身份验证任务以及如何保护机密数据的详细信息，请参阅以下教程。
+你已创建一个可对用户进行身份验证的基本 ASP.NET MVC Web 应用。有关常见身份验证任务以及如何保护机密数据的详细信息，请参阅以下教程。
 
-- [创建具有登录、电子邮件确认及密码重置功能的安全 ASP.NET MVC 5 Web 应用程序](http://www.asp.net/mvc/overview/getting-started/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset)
+- [创建具有登录、电子邮件确认及密码重置功能的安全 ASP.NET MVC 5 Web 应用](http://www.asp.net/mvc/overview/getting-started/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset)
 - [使用 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用程序](http://www.asp.net/mvc/overview/getting-started/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication)
 - [将密码和其他敏感数据部署到　ASP.NET 和 Azure 的最佳做法](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure) 
 - [使用 Facebook 和 Google OAuth2 创建 ASP.NET MVC 5 应用](http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on)包含有关如何将配置文件数据添加到用户注册数据库的说明以及有关将 Facebook 用作身份验证提供程序的说明。
@@ -784,7 +750,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 [addcode009]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/dntutmobile-migrations-package-manager-console.png
 
 
-[Important information about ASP.NET in Azure web apps]: #aspnetwindowsazureinfo
+[Important information about ASP.NET in Azure Web 应用]: #aspnetwindowsazureinfo
 [Next steps]: #nextsteps
 
 [ImportPublishSettings]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/ImportPublishSettings.png

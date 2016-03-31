@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="在经典部署模型中使用 Azure CLI 控制路由和使用虚拟设备 | Windows Azure"
+   pageTitle="在经典部署模型中使用 Azure CLI 控制路由和使用虚拟设备 | Azure"
    description="了解如何在典型部署模型中使用 Azure CLI 控制 Vnet 中的路由"
    services="virtual-network"
    documentationCenter="na"
@@ -10,16 +10,14 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="10/06/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="12/11/2015"
+	wacn.date="01/14/2016"/>
 
 #使用 Azure CLI 控制路由和使用虚拟设备（经典）
 
 [AZURE.INCLUDE [virtual-network-create-udr-classic-selectors-include.md](../includes/virtual-network-create-udr-classic-selectors-include.md)]
 
 [AZURE.INCLUDE [virtual-network-create-udr-intro-include.md](../includes/virtual-network-create-udr-intro-include.md)]
-
-本文介绍经典部署模型。你还可以[在资源管理器部署模型中控制路由和使用虚拟设备](/documentation/articles/virtual-network-create-udr-arm-cli)。
 
 [AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../includes/virtual-network-create-udr-scenario-include.md)]
 

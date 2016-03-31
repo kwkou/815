@@ -1,6 +1,6 @@
 ## 下载、安装和注册 Azure 备份代理
 
-在创建 Azure 备份保管库后，应在每个本地服务器（Windows Server、Windows 客户端或 Data Protection Manager 服务器）上安装代理，以便将数据和应用程序备份到 Azure。
+在创建 Azure 备份保管库后，应在每个 Windows 计算机（Windows Server、Windows 客户端、System Center Data Protection Manager 服务器或 Azure 备份服务器计算机）上安装代理，以便将数据和应用程序备份到 Azure。
 
 1. 登录到[管理门户](https://manage.windowsazure.cn)
 
@@ -38,9 +38,9 @@
 
     > [AZURE.WARNING]如果您丢失或忘记了通行短语，Microsoft 无法帮助您恢复备份的数据。加密通行短语由最终用户拥有，Microsoft 看不到最终用户所用的通行短语。请将该文件保存在安全位置，因为在恢复操作期间需要用到它。
 
-10. 单击“完成”按钮后，计算机即会成功注册到保管库，现在，您可以开始备份到 Microsoft Azure。
+10. 单击“完成”按钮后，计算机即会成功注册到保管库，现在，您可以开始备份到 Azure。
 
-11. 单独使用 Microsoft Azure 备份时，可以通过在 Azure 备份 mmc 管理单元中单击“更改属性”选项，来修改在注册工作流期间指定的设置。
+11. 单独使用 Azure 备份时，可以通过在 Azure 备份 mmc 管理单元中单击“更改属性”选项，来修改在注册工作流期间指定的设置。
 
     ![更改属性](./media/backup-install-agent/change.png)
 
@@ -48,4 +48,4 @@
 
     ![配置 Azure 备份](./media/backup-install-agent/configure.png)
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0104_2016-->

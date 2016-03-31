@@ -7,16 +7,21 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="07/20/2015" 
-	wacn.date="10/03/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="01/19/2016"
+	wacn.date="03/28/2016"/>
 
 
 
 #Azure SDK for .NET 发行说明
 
 本主题包含 Azure SDK for .NET 发行说明的链接。
+
+
+##Azure SDK for .NET 2.8 发行说明
+
+[Azure SDK for .NET 2.8 发行说明](/documentation/articles/azure-sdk-dotnet-release-notes-2_8)
 
 ##Azure SDK for .NET 2.7 发行说明
 
@@ -55,5 +60,6 @@
 [Azure SDK for .NET](/downloads/)
 
 [MSDN 上的 Azure SDK 发行说明](https://msdn.microsoft.com/zh-cn/library/azure/dn627519.aspx)
+ 
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0118_2016-->

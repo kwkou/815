@@ -10,16 +10,11 @@
 
 <tags    	
 	ms.service="notification-hubs" 
-    ms.date="07/17/2015"
-	wacn.date="11/02/2015"/>
+        ms.date="11/01/2015"
+	wacn.date="01/14/2016"/>
 
 # 如何通过 Java 使用通知中心
-
-> [AZURE.SELECTOR] 
-- [Java](/documentation/articles/notification-hubs-php-backend-how-to)
-- [PHP](/documentation/articles/notification-hubs-python-backend-how-to)
-- [Python](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)
-- [Node.js](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)
+[AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
 		
 本主题将向你介绍完全受支持的全新官方 Azure 通知中心 Java SDK 的主要功能。
 这是一个开源项目，你可以在 [Java SDK] 查看完整的 SDK 代码。
@@ -227,7 +222,7 @@ CreateOrUpdate、Patch 和 Delete 最终与 Get 一致。你请求的操作会�
 	List<NotificationHubJob> jobs = hub.getAllNotificationHubJobs();
 
 **使用 SAS 签名的 URI：**
-这是某些 BLOB 文件或 BLOB 容器的 URL，加上一套例如权限和过期日期的参数，再加上使用帐户的 SAS 密钥制成的所有这些内容的签名。Azure 存储 Java SDK 具有丰富的功能，包括创建这种类型的 URI。作为简单的替代，你可以考虑使用 ImportExportE2E 测试类（来自 github 位置），其具有非常基本、精简的签名算法。
+这是某些 BLOB 文件或 BLOB 容器的 URL，，加上一组参数（例如权限和到期日期），再加上使用帐户的 SAS 密钥生成的所有这些内容的签名。Azure 存储 Java SDK 具有丰富的功能，包括创建这种类型的 URI。作为简单的替代，你可以考虑使用 ImportExportE2E 测试类（来自 github 位置），其具有非常基本、精简的签名算法。
 
 ###发送通知
 通知对象只有带有标头的正文，一些实用工具方法可帮助你构建本机和模板通知对象。
@@ -310,4 +305,4 @@ CreateOrUpdate、Patch 和 Delete 最终与 Get 一致。你请求的操作会�
 [Maven]: http://maven.apache.org/
  
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_1207_2015-->

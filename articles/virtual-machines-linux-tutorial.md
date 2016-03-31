@@ -1,151 +1,170 @@
 <properties
-	pageTitle="创建在 Azure 中运行 Linux 的虚拟机"
-	description="了解如何使用 Azure 中的映像创建运行 Linux 的 Azure 虚拟机 (VM)。"
+	pageTitle="创建 Linux 虚拟机 | Microsoft Azure"
+	description="了解如何使用 Azure 中的映像和 Azure 命令行界面创建 Linux 虚拟机或 Ubuntu 虚拟机。"
+	keywords="linux 虚拟机,虚拟机 linux,ubuntu 虚拟机" 
 	services="virtual-machines"
 	documentationCenter=""
 	authors="squillace"
 	manager="timlt"
 	editor="tysonn"
-	tags="azure-resource-management" />
+	tags="azure-resource-manager" />
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/13/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/21/2015"
+	wacn.date="03/21/2016"/>
 
-# 创建运行 Linux 的虚拟机
+# 创建 Linux 虚拟机
 
 > [AZURE.SELECTOR]
-- [Azure CLI](/documentation/articles/virtual-machines-linux-tutorial)
+- [Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
+- [Portal - Linux](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
+- [CLI](/documentation/articles/virtual-machines-linux-tutorial)
 
-通过命令行或门户创建运行 Linux 的 Azure 虚拟机 \(VM\) 是一项很简单的操作。本教程演示如何使用 Mac、Linux 和 Windows 的 Azure 命令行界面 \(Azure CLI\) 来快速创建运行在 Azure 中的 Ubuntu Server VM，如何使用 **ssh** 连接到它，以及如何创建和装入新磁盘。（本主题使用 Ubuntu Server VM，不过你也可以[将自己的映像作为模板](/documentation/articles/virtual-machines-linux-create-upload-vhd)来创建 Linux VM。）
+通过命令行或门户创建运行 Linux 虚拟机 (VM) 是一项很简单的操作。本教程说明如何使用 Mac、Linux 和 Windows 的 Azure 命令行界面 (CLI) 来快速创建运行在 Azure 中的 Ubuntu Server VM，如何使用 **ssh** 连接到它，以及如何创建和装入新磁盘。本主题使用 Ubuntu Server VM，不过你也可以[将自己的映像作为模板](/documentation/articles/virtual-machines-linux-create-upload-vhd)来创建 Linux 虚拟机。
 
-<!--[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]-->
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 ## 安装 Azure CLI
 
 第一步是[安装 Azure CLI](/documentation/articles/xplat-cli-install)。
 
-很好。现在，请确保你是处于资源管理模式下，可通过键入 `azure config mode arm` 来验证。
+很好。现在，请确保你是处于服务管理器模式下，可通过键入 `azure config mode asm` 来验证。
 
-太好了。现在，请使用你的工作或学校 ID 登录，先请键入 `azure login`，然后按提示进行操作。
+太好了。现在，通过键入 `azure login -e AzureChinaCloud -u <your account>` 并遵循提示进行 Azure 帐户的交互式登录体验，来[使用工作或学校 ID 登录](/documentation/articles/xplat-cli-connect#use-the-log-in-method)。
 
-> [AZURE.NOTE]如果你在登录时收到错误，则可能需要<!--[-->从个人 Microsoft 帐户创建工作或学校 ID<!--](/documentation/articles/resource-group-create-work-id-from-personal)-->。
+## 创建 Linux 虚拟机
 
-## 创建 Azure VM
+可以使用 `azure vm create-from <your-vm-name> example.json` 来新建虚拟机。如果要为虚拟机创建新云服务，需要使用 `-l` 参数来指定云服务的位置。例如，`azure vm create-from <your-vm-name> example.json -l "China East"`。下面是用于创建虚拟机的示例 json 文件。
 
-键入 `azure group create <my-group-name> chinanorth`，将 _&lt;my-group-name&gt;_ 替换为对你来说属于唯一名称的组名（如果你愿意，你可以使用其他区域）。你会看到下面这样的内容：
+	{
+	    "configurationSets": [
+	        {
+	            "inputEndpoints": [
+	                {
+	                    "localPort": 22,
+	                    "name": "SSH",
+	                    "port": 22,
+	                    "protocol": "tcp",
+	                    "virtualIPAddress": "",
+	                    "enableDirectServerReturn": false
+	                }
+	            ],
+	            "networkInterfaces": [],
+	            "publicIPs": [],
+	            "storedCertificateSettings": [],
+	            "subnetNames": [],
+	            "configurationSetType": "NetworkConfiguration"
+	        },
+	        {
+	            "configurationSetType":"LinuxProvisioningConfiguration",
+	            "hostName": "myubuntu",
+	            "userName": "<adminName>",
+	            "userPassword": "<adminPass>",
+                "disableSshPasswordAuthentication": "false",
+                "sSh":{
+                    "publicKeys": [
+                        {
+                            "fingerprint": "",
+                            "path": ""
+                        }
+                    ],
+                    "keyPairs": [
+                        {
+                            "fingerprint": "",
+                            "path": ""
+                        }
+                    ]
+                },
+                "customData": ""
+	        }
+	    ],
+	    "dataVirtualHardDisks": [],
+	    "resourceExtensionReferences": [],
+	    "roleName": "myubuntu",
+	    "oSVersion": "",
+	    "roleType": "PersistentVMRole",
+	    "oSVirtualHardDisk": {
+	        "hostCaching": "ReadWrite",
+	        "mediaLink": "https://<storageaccountname>.blob.core.chinacloudapi.cn/vhds/myubuntu-myubuntu-2016-02-19.vhd",
+	        "sourceImageName":"b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140416.1-en-us-30GB",
+	        "operatingSystem": "Linux"
+	    },
+	    "roleSize": "Basic_A0",
+	    "provisionGuestAgent": true
+	}
 
-	azure group create myuniquegroupname chinanorth
-	info:    Executing command group create
-	+ Getting resource group myuniquegroupname
-	+ Creating resource group myuniquegroupname
-	info:    Created resource group myuniquegroupname
-	data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myuniquegroupname
-	data:    Name:                myuniquegroupname
-	data:    Location:            chinanorth
-	data:    Provisioning State:  Succeeded
-	data:    Tags:
-	data:
-	info:    group create command OK
+- configurationSets：包含配置集的集合，这些配置集定义系统和应用程序设置。
 
-现在可以创建你的 VM 了，先键入 `azure vm quick-create`，然后系统会提示你输入余下的参数。使用你刚在上面创建的资源组的名称，而对于 **ImageURN** 值，请使用 `canonical:ubuntuserver:14.04.2-LTS:latest`，这样你的体验看起来将如下所示：
+	* NetworkConfiguration：你可以选择指定 NetworkConfiguration 集，其中包含为虚拟机创建虚拟网络配置所需的元数据。
+	* LinuxProvisioningConfiguration：可以配置 VM 主机名、用户名、密码和 SSH 公钥，等等。
 
-	azure vm quick-create
-	info:    Executing command vm quick-create
-	Resource group name: myuniquegroupname
-	Virtual machine name: myuniquevmname
-	Location name: chinanorth
-	Operating system Type [Windows, Linux]: /documentation/articles/Linux
-	ImageURN (format: "publisherName:offer:skus:version"): canonical:ubuntuserver:14.04.2-LTS:latest
-	User name: ops
-	Password: *********
-	Confirm password: *********
-	+ Looking up the VM "myuniquevmname"
-	info:    Using the VM Size "Standard_D1"
-	info:    The [OS, Data] Disk or image configuration requires storage account
-	+ Retrieving storage accounts
-	info:    Could not find any storage accounts in the region "chinanorth", trying to create new one
-	+ Creating storage account "cli3c0464f24f1bf4f014323" in "chinanorth"
-	+ Looking up the storage account cli3c0464f24f1bf4f014323
-	+ Looking up the NIC "myuni-westu-1432328437727-nic"
-	info:    An nic with given name "myuni-westu-1432328437727-nic" not found, creating a new one
-	+ Looking up the virtual network "myuni-westu-1432328437727-vnet"
-	info:    Preparing to create new virtual network and subnet
-	/ Creating a new virtual network "myuni-westu-1432328437727-vnet" [address prefix: "10.0.0.0/16"] with subnet "myuni-westu-1432328437727-snet"+[address prefix: "10.0.1.0/24"]
-	+ Looking up the virtual network "myuni-westu-1432328437727-vnet"
-	+ Looking up the subnet "myuni-westu-1432328437727-snet" under the virtual network "myuni-westu-1432328437727-vnet"
-	info:    Found public ip parameters, trying to setup PublicIP profile
-	+ Looking up the public ip "myuni-westu-1432328437727-pip"
-	info:    PublicIP with given name "myuni-westu-1432328437727-pip" not found, creating a new one
-	+ Creating public ip "myuni-westu-1432328437727-pip"
-	+ Looking up the public ip "myuni-westu-1432328437727-pip"
-	+ Creating NIC "myuni-westu-1432328437727-nic"
-	+ Looking up the NIC "myuni-westu-1432328437727-nic"
-	+ Creating VM "myuniquevmname"
-	+ Looking up the VM "myuniquevmname"
-	+ Looking up the NIC "myuni-westu-1432328437727-nic"
-	+ Looking up the public ip "myuni-westu-1432328437727-pip"
-	data:    Id                              :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myuniquegroupname/providers/Microsoft.Compute/virtualMachines/myuniquevmname
-	data:    ProvisioningState               :Succeeded
-	data:    Name                            :myuniquevmname
-	data:    Location                        :chinanorth
-	data:    FQDN                            :myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com
-	data:    Type                            :Microsoft.Compute/virtualMachines
-	data:
-	data:    Hardware Profile:
-	data:      Size                          :Standard_D1
-	data:
-	data:    Storage Profile:
-	data:      Image reference:
-	data:        Publisher                   :canonical
-	data:        Offer                       :ubuntuserver
-	data:        Sku                         :14.04.2-LTS
-	data:        Version                     :latest
-	data:
-	data:      OS Disk:
-	data:        OSType                      :Linux
-	data:        Name                        :cli3c0464f24f1bf4f0-os-1432328438224
-	data:        Caching                     :ReadWrite
-	data:        CreateOption                :FromImage
-	data:        Vhd:
-	data:          Uri                       :https://cli3c0464f24f1bf4f014323.blob.core.chinacloudapi.cn/vhds/cli3c0464f24f1bf4f0-os-1432328438224.vhd
-	data:
-	data:    OS Profile:
-	data:      Computer Name                 :myuniquevmname
-	data:      User Name                     :ops
-	data:      Linux Configuration:
-	data:        Disable Password Auth       :false
-	data:
-	data:    Network Profile:
-	data:      Network Interfaces:
-	data:        Network Interface #1:
-	data:          Id                        :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myuniquegroupname/providers/Microsoft.Network/networkInterfaces/myuni-westu-1432328437727-nic
-	data:          Primary                   :true
-	data:          MAC Address               :00-0D-3A-31-55-31
-	data:          Provisioning State        :Succeeded
-	data:          Name                      :myuni-westu-1432328437727-nic
-	data:          Location                  :chinanorth
-	data:            Private IP alloc-method :Dynamic
-	data:            Private IP address      :10.0.1.4
-	data:            Public IP address       :191.239.51.1
-	data:            FQDN                    :myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com
-	info:    vm quick-create command OK
+- dataVirtualHardDisks：指定已附加到 VM 的 VHD。如果你使用高级存储，“roleSize”必须是 DS 系列。
+- oSVirtualHardDisk：指定 VM 的 OS VHD。
 
-你的 VM 已启动并运行，正在等待你进行连接。
+	* mediaLink：指定创建 VHD 文件的位置。
+	* sourceImageName：指定用于创建虚拟机的映像的名称。可以通过 `azure vm image list` 获取映像名称。有关映像搜索的详细信息，请参阅[导航和选择 VM 映像](/documentation/articles/resource-groups-vm-searching)。
 
-## 连接到 VM
+- roleSize：指定虚拟机的大小。可以使用 `azure vm location list --json` 查看可用的“virtualMachinesRoleSizes”。
 
-对于 Linux VM，通常使用 **ssh** 进行连接。本主题介绍如何使用用户名和密码连接到 VM；若要使用公钥和私钥对与 VM 通信，请参阅[如何在 Azure 上通过 Linux 使用 SSH](/documentation/articles/virtual-machines-linux-use-ssh-key)。
+有关每个字段的详细信息，请查看[创建虚拟机部署](https://msdn.microsoft.com/zh-cn/library/azure/jj157194.aspx) REST API 的请求正文。json 文件与请求正文在结构上完全相同，不过，请求正文采用 xml，并且每个字段名称以大写字母开头，而 `azure vm create-from` 使用 json 文件，并且每个字段名称以小写字母开头。
+
+片刻之后，你将看到以下输出 ︰
+
+	info:    Executing command vm create-from
+	+ Looking up cloud service
+	info:    cloud service myubuntu not found.
+	+ Creating cloud service
+	+ Creating VM
+	info:    vm create-from command OK
+
+你可以使用 `azure vm show <you-vm-name>` 来获取虚拟机的状态。你将获得如下所示的输出：
+
+	info:    Executing command vm show
+	+ Getting virtual machines
+	data:    DNSName "myubuntu.chinacloudapp.cn"
+	data:    Location "China East"
+	data:    VMName "myubuntu"
+	data:    IPAddress "<private ip>"
+	data:    InstanceStatus "ReadyRole"
+	data:    InstanceSize "Basic_A0"
+	data:    Image "b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140416.1-en-us-30GB"
+	data:    OSDisk hostCaching "ReadWrite"
+	data:    OSDisk name "myubuntu-myubuntu-0-201601070618550344"
+	data:    OSDisk mediaLink "https://<storageaccountname>.blob.core.chinacloudapi.cn/vhds/myubuntu-myubuntu-2016-02-19.vhd"
+	data:    OSDisk sourceImageName "b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140416.1-en-us-30GB"
+	data:    OSDisk operatingSystem "Linux"
+	data:    OSDisk iOType "Standard"
+	data:    ReservedIPName ""
+	data:    VirtualIPAddresses 0 address "<public ip>"
+	data:    VirtualIPAddresses 0 name "myubuntuContractContract"
+	data:    VirtualIPAddresses 0 isDnsProgrammed true
+	data:    Network Endpoints 0 localPort 22
+	data:    Network Endpoints 0 name "SSH"
+	data:    Network Endpoints 0 port 22
+	data:    Network Endpoints 0 protocol "tcp"
+	data:    Network Endpoints 0 virtualIPAddress "<public ip>"
+	data:    Network Endpoints 0 enableDirectServerReturn false
+
+如果看到了 `InstanceStatus "ReadyRole"`，则表示 VM 已启动并运行，正在等待你进行连接。
+
+## 连接到 Linux 虚拟机
+
+对于 Linux 虚拟机，通常使用 ssh 进行连接。
+
+> [AZURE.NOTE] 本主题介绍如何使用用户名和密码连接到 VM；若要使用公钥和私钥对与 VM 通信，请参阅[如何在 Azure 上通过 Linux 使用 SSH](/documentation/articles/virtual-machines-linux-use-ssh-key)。
 
 如果你不熟悉如何使用 **ssh** 进行连接，请注意，该命令采用以下形式：`ssh <username>@<publicdnsaddress> -p <the ssh port>`。在本示例中，我们使用前一步的用户名和密码，并使用端口 22，该端口是默认的 **ssh** 端口。
 
-	ssh ops@myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com -p 22
-	The authenticity of host 'myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com (191.239.51.1)' can't be established.
+	ssh ops@myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn -p 22
+	The authenticity of host 'myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn (191.239.51.1)' can't be established.
 	ECDSA key fingerprint is bx:xx:xx:xx:xx:xx:xx:xx:xx:x:x:x:x:x:x:xx.
 	Are you sure you want to continue connecting (yes/no)? yes
-	Warning: Permanently added 'myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com,191.239.51.1' (ECDSA) to the list of known hosts.
-	ops@myuni-westu-1432328437727-pip.chinanorth.cloudapp.azure.com's password:
+	Warning: Permanently added 'myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn,191.239.51.1' (ECDSA) to the list of known hosts.
+	ops@myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn's password:
 	Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.16.0-37-generic x86_64)
 
 	 * Documentation:  https://help.ubuntu.com/
@@ -179,13 +198,12 @@
 
 ## 连接和安装磁盘
 
-连接新的磁盘很快。键入 `azure vm disk attach-new <myuniquegroupname> <myuniquevmname> <size-in-GB>` 即可为 VM 创建和连接新的 GB 磁盘。你应该会看到类似下面的屏幕：
+连接新的磁盘很快。键入 `vm disk attach-new [options] <vm-name> <size-in-gb> [blob-url]` 即可为 VM 创建和连接新的 GB 磁盘。你应该会看到类似下面的屏幕：
 
-	azure vm disk attach-new myuniquegroupname myuniquevmname 5
+	azure vm disk attach-new <you-vm-name> 5 https://<storageAccoutName>.blob.core.chinacloudapi.cn/vhds/temp.vhd
 	info:    Executing command vm disk attach-new
-	+ Looking up the VM "myuniquevmname"
-	info:    New data disk location: https://cliexxx.blob.core.chinacloudapi.cn/vhds/myuniquevmname-20150526-0xxxxxxx43.vhd
-	+ Updating VM "myuniquevmname"
+	+ Getting virtual machines
+	+ Adding Data-Disk
 	info:    vm disk attach-new command OK
 
 
@@ -278,11 +296,11 @@
 	bin   datadrive  etc   initrd.img  lib64       media  opt   root  sbin  sys  usr  vmlinuz
 	boot  dev        home  lib         lost+found  mnt    proc  run   srv   tmp  var
 
-> [AZURE.NOTE]你还可以在连接到 Linux 虚拟机时，使用 SSH 密钥进行身份验证。有关详细信息，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-use-ssh-key)。
+> [AZURE.NOTE] 你还可以在连接到 Linux 虚拟机时，使用 SSH 密钥进行身份验证。有关详细信息，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-use-ssh-key)。
 
 ## 后续步骤
 
-请记住，即使重新启动 VM，你的新磁盘通常也无法供 VM 使用，除非你将该信息写入 [fstab](http://en.wikipedia.org/wiki/Fstab) 文件。
+请记住，即使重新启动 VM，你的新磁盘通常也无法供 VM 使用，除非你将该信息写入 [fstab](http://en.wikipedia.org/wiki/Fstab) 文件。如果需要，你可以再添加几个磁盘并[配置 RAID](/documentation/articles/virtual-machines-linux-configure-raid)。
 
 若要了解有关 Azure 上的 Linux 的详细信息，请参阅：
 
@@ -292,7 +310,6 @@
 
 - [使用适用于 Linux 的 Azure CustomScript 扩展部署 LAMP 应用程序](/documentation/articles/virtual-machines-linux-script-lamp)
 
-- [关于 Azure VM 配置设置](http://msdn.microsoft.com/zh-cn/library/azure/dn763935.aspx)
-
 - [Azure 上用于 Linux 的 Docker 虚拟机扩展](/documentation/articles/virtual-machines-docker-vm-extension)
- 
+
+<!---HONumber=Mooncake_0314_2016-->

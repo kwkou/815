@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="hdinsight" 
-	ms.date="07/28/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="12/02/2015"
+	wacn.date="01/14/2016"/>
 
 
 # 将基于时间的 Oozie 协调器与 HDInsight 中的 Hadoop 配合使用以定义工作流和协调作业
@@ -690,25 +690,25 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
 
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
 
 
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
-[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started/
 [hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
 [hdinsight-develop-java-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce/
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
 
-[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure/
+[sqldatabase-create-configue]: /documentation/articles/sql-database-get-started/
 [sqldatabase-get-started]: /documentation/articles/sql-database-get-started/
 
 [azure-management-portal]: https://manage.windowsazure.cn/
@@ -720,9 +720,9 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 
 [powershell-download]: /downloads/
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
-[powershell-install-configure]: /documentation/articles/install-and-configure-powershell/
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
+[powershell-script]: https://technet.microsoft.com/library/dn425048.aspx
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 

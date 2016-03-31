@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure SQL 数据库 - 弹性数据库工具"
+    pageTitle="弹性数据库工具功能概述 | Azure"
     description="软件即服务 (SaaS) 开发人员可以使用这些工具轻松地在云中创建可缩放的弹性数据库"
     services="sql-database"
     documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="08/27/2015"
-    wacn.date="10/17/2015"/>
+    ms.date="11/04/2015"
+    wacn.date="01/05/2016"/>
 
 # 弹性数据库功能概述
 
@@ -57,7 +57,7 @@
 
 大多数云规模的数据库应用程序都使用这些两种策略的组合。例如，软件即服务应用程序可能使用横向缩放来设置新的最终客户，使用纵向缩放来允许每个最终客户的数据库根据工作负荷的需要扩展或缩减资源。
 
-* 可以使用<!--[-->弹性数据库客户端库<!--](/documentation/articles/sql-database-elastic-client-overview)-->来管理水平缩放。
+* 可以使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)来管理水平缩放。
 
 * 可以通过使用 Azure PowerShell cmdlet 更改服务层或者通过将数据库放入弹性数据库池中，来实现纵向缩放。
 
@@ -89,7 +89,7 @@
 
 若要使用拆分/合并工具，你必须[配置安全性](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration)。
 
-若要查看弹性数据库池的具体信息，请参阅[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)。
+若要查看弹性数据库池的具体信息，请参阅[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)，或者参考[教程](/documentation/articles/sql-database-elastic-pool-portal)创建新池。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
@@ -104,4 +104,4 @@
 [3]: ./media/sql-database-elastic-scale-introduction/overview.png
 [4]: ./media/sql-database-elastic-scale-introduction/single_v_multi_tenant.png
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_1221_2015-->

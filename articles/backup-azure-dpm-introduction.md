@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure DPM 备份简介 | Windows Azure"
+	pageTitle="Azure DPM 备份简介 | Azure"
 	description="使用 Azure 备份服务备份 DPM 服务器的简介"
 	services="backup"
 	documentationCenter=""
@@ -9,19 +9,22 @@
 
 <tags
 	ms.service="backup" 
-	ms.date="07/16/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="12/10/2015"
+	wacn.date="01/15/2016"/>
+	
+# 使用 DPM 准备将工作负荷备份到 Azure
 
-# Azure DPM 备份简介
+> [AZURE.SELECTOR]
+- [SCDPM](/documentation/articles/backup-azure-dpm-introduction)
 
-本文介绍如何使用 Microsoft Azure 备份来保护 System Center Data Protection Manager (DPM) 服务器和工作负载。通过阅读本文，你将会了解：
+本文介绍如何使用 Azure 备份来保护 System Center Data Protection Manager (DPM) 服务器和工作负载。通过阅读本文，你将会了解：
 
 - Azure DPM 服务器备份的工作原理
 - 实现顺畅备份体验的先决条件
 - 遇到的典型错误以及如何处理它们
 - 支持的方案
 
-System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可以存储在磁带、磁盘上，或者使用 Microsoft Azure Backup 备份到 Azure。DPM 可与 Azure 备份交互，如下所述：
+System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可以存储在磁带、磁盘上，或者使用 Azure Backup 备份到 Azure。DPM 可与 Azure 备份交互，如下所述：
 
 - **部署为物理服务器或本地虚拟机的 DPM** — 如果 DPM 部署为物理服务器或本地 Hyper-V 虚拟机，则你除了磁盘和磁带备份外，还可以将数据备份到 Azure 备份保管库。
 - **部署为 Azure 虚拟机的 DPM** — 通过 System Center 2012 R2 Update 3，可以将 DPM 部署为 Azure 虚拟机。如果 DPM 部署为 Azure 虚拟机部署，则你可以将数据备份到附加到 DPM Azure 虚拟机的 Azure 磁盘，也可以通过将数据备份到 Azure 备份保管库来卸载数据存储。
@@ -38,7 +41,7 @@ System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可
 
 拍摄快照后，数据将由 Azure 备份服务传输到备份保管库中。该服务负责确定并传输自上次备份以来进行了更改的块，使备份存储和网络更高效。数据传输完成后，将会删除快照并创建恢复点。在 Azure 管理门户中，可以查看此恢复点。
 
->[AZURE.NOTE]Linux 虚拟机只能使用文件一致性备份。
+>[AZURE.NOTE] Linux 虚拟机只能使用文件一致性备份。
 
 ## 先决条件
 按如下所述让 Azure 备份做好备份 DPM 数据的准备：
@@ -61,9 +64,9 @@ System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可
 - DPM 服务器上应已安装 Windows PowerShell 和 .NET Framework 4.5。
 - DPM 可将大多数工作负载备份到 Azure 备份。有关所支持内容的完整列表，请参阅下面的 Azure 备份支持项。
 - 使用“复制到磁带”选项无法恢复存储在 Azure 备份中的数据。
-- 你需要一个启用了 Azure 备份功能的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。阅读 [Azure 备份定价](http://www.windowsazure.cn/home/features/back-up/#price)的相关信息。
+- 你需要一个启用了 Azure 备份功能的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。阅读 [Azure 备份定价](/home/features/back-up/#price)的相关信息。
 - 若要使用 Azure 备份，应在要备份的服务器上安装 Azure 备份代理。服务器必须至少为缓存位置提供 2.5 GB 的本地可用存储空间，但建议为缓存位置提供 15 GB 的本地可用存储空间。
-- 数据将存储在 Azure 保管库存储中。你可以备份到 Azure 备份保管库的数据量没有限制，但数据源（例如虚拟机或数据库）的大小不应超过 1.65 TB。
+- 数据将存储在 Azure 保管库存储中。你可以备份到 Azure 备份保管库的数据量没有限制，但数据源（例如虚拟机或数据库）的大小不应超过 54400 GB。
 
 支持将以下文件类型备份到 Azure：
 
@@ -82,6 +85,6 @@ System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可
 - 压缩流
 - 稀疏流
 
->[AZURE.NOTE]从 System Center 2012 DPM SP1 开始，你可以使用 Microsoft Azure 备份将 DPM 保护的工作负载备份到 Azure。
+>[AZURE.NOTE]从 System Center 2012 DPM SP1 开始，你可以使用 Azure 备份将 DPM 保护的工作负载备份到 Azure。
 
-<!---HONumber=67-->
+<!---HONumber=82-->

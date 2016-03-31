@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure 备份来取代磁带基础结构"
+   pageTitle="使用 Azure 备份来取代磁带基础结构 | Azure"
    description="了解如何 Azure 备份如何提供类似于磁带的语义，让你在 Azure 中备份和还原数据"
    services="backup"
    documentationCenter=""
@@ -8,18 +8,15 @@
    editor=""/>
 <tags
    ms.service="backup"
-   ms.date="07/01/2015"
-   wacn.date="09/15/2015"/>
+   ms.date="12/15/2015"
+   wacn.date="01/15/2016"/>
 
 # 使用 Azure 备份来取代磁带基础结构
 
 Azure 备份和 System Center Data Protection Manager 客户可以：
-
-+ 根据最适合组织需求的计划备份数据
-
-+ 长期保留备份数据
-
-+ 使用 Azure（而不是磁带）解决其长期数据保留需求。
+- 根据最适合组织需求的计划备份数据
+- 长期保留备份数据
+- 使用 Azure（而不是磁带）解决其长期数据保留需求。
 
 本文将介绍客户如何启用备份和保留策略。使用磁带解决长期数据保留需求的客户现在可以使用一种强大而可行并且同样提供此功能的替代解决方案。最新版本的 Azure 备份（可从[此处](http://aka.ms/azurebackup_agent)获取）中已启用该功能。SCDPM 客户在使用此功能之前需要迁移到 UR5。
 
@@ -42,10 +39,10 @@ Azure 备份和 System Center Data Protection Manager 客户可以：
 ## 示例 - 组合策略
 <br/> ![示例屏幕][4]
 
-1. “每天保留策略”：每天创建的备份存储 7 天。
-2. “每周保留策略”：每个星期六午夜和下午 6 点创建的备份保留 4 周
-3. “每月保留策略”：每个月最后一个星期六午夜和下午 6 点创建的备份保留 12 个月
-4. “每年保持期策略”：每年三月最后一个星期六午夜执行的备份保留 10 年
+1. **每天保留策略**：每天创建的备份存储 7 天。
+2. **每周保留策略**：每个星期六午夜和下午 6 点创建的备份保留 4 周
+3. **每月保留策略**：每个月最后一个星期六午夜和下午 6 点创建的备份保留 12 个月
+4. **每年保持期策略**：每年三月最后一个星期六午夜执行的备份保留 10 年
 
 上图中“保留点”总数（客户可从中还原数据的恢复点）计算方式如下：
 
@@ -58,6 +55,8 @@ Azure 备份和 System Center Data Protection Manager 客户可以：
 + 每年 1 个点 x 10 年 = 10 个恢复点
 
 恢复点总数为 56。
+
+> [AZURE.NOTE] Azure 备份对恢复点的数量没有限制。
 
 ## 高级配置
 
@@ -79,4 +78,4 @@ Azure 备份和 System Center Data Protection Manager 客户可以：
 [4]: ./media/backup-azure-backup-cloud-as-tape/samplescreen.png
 [5]: ./media/backup-azure-backup-cloud-as-tape/modify.png
 
-<!---HONumber=67-->
+<!---HONumber=82-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在混合云中设置用于测试的 SharePoint Intranet 场" 
-	description="连接如何在混合云环境中创建 SharePoint Intranet 场，以便进行开发测试或 IT 专业人员测试。" 
+	pageTitle="SharePoint 2013 场测试环境 |Azure" 
+	description="学习如何在混合云环境中创建两层 SharePoint Server 2013 Intranet 场，以便进行开发或 IT 专业人员测试。" 
 	services="virtual-network" 
 	documentationCenter="" 
 	authors="JoeDavies-MSFT" 
@@ -8,24 +8,24 @@
 	editor=""
 	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-network" 
-	ms.date="09/10/2015" 
-	wacn.date="11/02/2015"/>
-
+<tags
+	ms.service="virtual-network"
+	ms.date="01/28/2016"
+	wacn.date="03/17/2016"/>
 
 # 在混合云中设置用于测试的 SharePoint Intranet 场
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+ 
 
-本主题将指导你逐步创建混合云环境，以便测试在 Windows Azure 中托管的 Intranet SharePoint 场。这是生成的配置。
+本主题将指导你逐步创建混合云环境，以便测试在 Azure 中托管的 Intranet SharePoint 场。这是生成的配置。
 
 ![](./media/virtual-networks-setup-sharepoint-hybrid-cloud-testing/CreateSPFarmHybridCloud_3.png)
  
 此配置将通过你在 Internet 上的位置模拟 Azure 生产环境中的 SharePoint。它包括：
 
 - 简化的本地网络（Corpnet 子网）。
-- 在 Windows Azure 中托管的跨界虚拟网络 (TestVNET)。
+- 在 Azure 中托管的跨界虚拟网络 (TestVNET)。
 - 站点到站点 VPN 连接。
 - 两层 SharePoint 场和 TestVNET 虚拟网络中的辅助域控制器。
 
@@ -40,7 +40,7 @@
 2.	配置 SQL Server 计算机 (SQL1)。
 3.	配置 SharePoint Server (SP1)。
 
-如果你还没有 Azure 订阅，可以在[试用 Azure](/pricing/1rmb-trial/) 中注册一个免费试用版。
+如果你还没有 Azure 订阅，可以通过[试用 Azure](/pricing/1rmb-trial/) 注册试用版。
 
 ## 阶段 1：设置混合云环境
 
@@ -180,7 +180,7 @@
 11.	遇到提示“你要如何配置你的 SharePoint 场?”时，单击“启动向导”。
 12.	在“配置你的 SharePoint 场”页的“服务帐户”中，单击“使用现有托管帐户”。
 13.	在“服务”中，清除除“状态服务”旁边的框以外的所有复选框，然后单击“下一步”。“正在处理”页可能会显示一段时间，然后才会完成相关操作。
-14.	在“创建站点集”页的“标题和说明”的“标题”中键入“Contoso Corporation”，指定 URL **http://sp1**/，然后单击“确定”。“正在处理”页可能会显示一段时间，然后才会完成相关操作。此步骤将在 URL http://sp1上创建工作组网站。
+14.	在“创建站点集”页的“标题和说明”的“标题”中键入“Contoso Corporation”，指定 URL **http://sp1**/，然后单击“确定”。“正在处理”页可能会显示一段时间，然后才会完成相关操作。此步骤将在 URL http://sp1 上创建工作组网站。
 15.	在“这将完成场配置向导”页上，单击“完成”。Internet Explorer 选项卡将显示 SharePoint 2013 管理中心站点。
 16.	使用 CORP\\User1 帐户凭据登录到 CLIENT1 计算机上，然后启动 Internet Explorer。
 17.	在地址栏中，键入 **http://sp1/**，然后按 Enter。此时你会看到 Contoso Corporation 的 SharePoint 工作组网站。该站点可能需要一段时间才能呈现。
@@ -191,23 +191,4 @@
  
 你在混合云环境中的 SharePoint Intranet 场现已准备好进行测试。
 
-## 其他资源
-
-[Azure 基础结构服务上的 SharePoint](https://msdn.microsoft.com/zh-CN/library/azure/dn275955.aspx)
-
-[SharePoint Server 场](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview)
-
-[设置用于测试的混合云环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)
-
-[在混合云中设置用于测试且基于 Web 的 LOB 应用程序](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
-
-[在混合云中设置 Office 365 目录同步 (DirSync) 以便进行测试](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing)
-
-[设置用于测试的模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)
-
-[Azure 混合云测试环境](/documentation/articles/virtual-machines-hybrid-cloud-test-environments)
-
-[Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
- 
-
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0307_2016-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="共享访问签名：了解 SAS 模型 | Windows Azure" 
+	pageTitle="共享访问签名：了解 SAS 模型 | Azure" 
 	description="了解使用共享访问签名 (SAS) 委派对 Azure 存储空间资源（包括 Blob、队列、表和文件）的访问权限。使用共享访问签名，你可以保护你的存储帐户密钥，同时授权其他用户访问你的帐户中的资源。你可以控制你授予的权限以及 SAS 的有效期。如果你还建立存储访问策略，则在你担心你的帐户安全受到威胁时可以撤消该 SAS。" 
 	services="storage" 
 	documentationCenter="" 
@@ -9,9 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="10/08/2015" 
-	wacn.date="11/02/2015"/>
-
+	ms.date="11/16/2015" 
+	wacn.date="01/29/2016"/>
 
 
 
@@ -21,22 +20,22 @@
 
 使用共享访问签名 (SAS) 是将对你的存储帐户中对象的受限访问权限授予其他客户端且不必公开帐户密钥的一种强大方法。在有关共享访问签名的教程的第 1 部分中，我们将概要介绍 SAS 模型并复习 SAS 最佳实践。本教程的[第 2 部分](/documentation/articles/storage-dotnet-shared-access-signature-part-2)将逐步引导你完成使用 Blob 服务创建共享访问签名的过程。
 
-## 什么是共享访问签名？##
+## 什么是共享访问签名？
 
 共享访问签名对存储帐户中的资源提供委托访问。这意味着你可以授权客户端在指定时间段内，以一组指定权限有限地访问你的存储帐户中的对象，而不必共享你的帐户访问密钥。SAS 是在其查询参数中包含对存储资源进行验证了身份的访问所需的所有信息的 URI。若要使用 SAS 访问存储资源，客户端只需将 SAS 传入到相应的构造函数或方法。
 
-## 何时应使用共享访问签名？##
+## 何时应使用共享访问签名？
 
 需要将存储帐户中资源的访问权限提供给不能使用帐户密钥进行信任的客户端时，可以使用 SAS。你的存储帐户密钥包括主密钥和辅助密钥，这两种密钥都授予对你的帐户以及其中所有资源的管理访问权限。公开这两种帐户密钥的任何一种都会向可能的恶意或负面使用开放你的帐户。共享访问签名提供一种安全的方法，允许其他客户端根据你授予的权限读取、写入和删除你的存储帐户中的数据，而无需帐户密钥。
 
 SAS 通常适用于用户需要在你的存储帐户中读取和写入其数据的服务情形。在存储帐户存储用户数据的情形中，有两种典型的设计模式：
 
 
-1\. 客户端通过执行身份验证的前端代理服务上载和下载数据。此前端代理服务的优势在于允许验证业务规则，但对于大量数据或大量事务，创建可扩展以匹配需求的服务可能成本高昂或十分困难。
+1\.客户端通过执行身份验证的前端代理服务上载和下载数据。此前端代理服务的优势在于允许验证业务规则，但对于大量数据或大量事务，创建可扩展以匹配需求的服务可能成本高昂或十分困难。
 
 ![sas-storage-fe-proxy-service][sas-storage-fe-proxy-service]
 
-2\.	轻型服务按需对客户端进行身份验证，然后生成 SAS。在客户端接收 SAS 后，它们可以直接使用 SAS 定义的权限并且针对 SAS 允许的间隔访问存储帐户资源。SAS 减少了通过前端代理服务路由所有数据的需要。
+2\.轻型服务按需对客户端进行身份验证，然后生成 SAS。在客户端接收 SAS 后，它们可以直接使用 SAS 定义的权限并且针对 SAS 允许的间隔访问存储帐户资源。SAS 减少了通过前端代理服务路由所有数据的需要。
 
 ![sas-storage-provider-service][sas-storage-provider-service]
 
@@ -48,7 +47,7 @@ SAS 通常适用于用户需要在你的存储帐户中读取和写入其数据�
 - 当你将一个文件复制到驻留在不同存储帐户中的另一个文件时，必须使用 SAS 对源文件进行身份验证。使用版本 2015-04-05，你还可以选择使用 SAS 对目标文件进行身份验证。
 - 当你将一个 Blob 复制到一个文件，或将一个文件复制到一个 Blob 时，必须使用 SAS 对源对象进行身份验证，即使源对象和目标对象驻留在同一存储帐户中。
 
->[AZURE.NOTE]当前只有 Blob 和文件服务才支持帐户 SAS。在不久的将来，表和队列服务将支持它。
+>[AZURE.NOTE] 当前只有 Blob 和文件服务才支持帐户 SAS。在不久的将来，表和队列服务将支持它。
 
 ## 共享访问签名的类型
 
@@ -74,6 +73,7 @@ Azure 存储空间的版本 2015-04-05 引入了一种新的共享访问签名�
 - **IP。** 一个可选参数，它指定 Azure 外部要从中接受请求的一个 IP 地址或 IP 地址范围（有关 Express Route，请参阅[路由会话配置状态](/documentation/articles/expressroute-workflows#routing-session-configuration-state)部分）。 
 - **协议。** 一个可选参数，它指定请求允许的协议。可能的值包括“HTTPS 和 HTTP”(https,http)（它是默认值）或者“仅限 HTTPS”(https)。请注意，“仅限 HTTP”是不允许的值。
 - **签名。** 签名由指定为部分令牌的其他参数构造，然后进行加密。它用于对 SAS 进行身份验证。
+
 ### 帐户 SAS 令牌的参数
 
 - **一个服务或多个服务。** 帐户 SAS 可委派对一个或多个存储服务的访问权限。例如，可以创建一个帐户 SAS 以委派对 Blob 和文件服务的访问权限。也可以创建一个 SAS 以委派对所有四种服务（Blob、队列、表和文件）的访问权限。
@@ -100,8 +100,8 @@ Name|SAS 部分|说明
 ---|---|---
 Blob URI|https://myaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt | Blob 的地址。请注意，强烈建议使用 HTTPS。
 存储服务版本|sv=2015-04-05|对于存储服务版本 2012-02-12 和更高版本，此参数指示要使用的版本。
-开始时间|st=2015-04-29T22%3A18%3A26Z|以 ISO 8061 格式指定。如果你想要 SAS 立即生效，则省略开始时间。
-到期时间|se=2015-04-30T02%3A23%3A26Z|以 ISO 8061 格式指定。
+开始时间|st=2015-04-29T22%3A18%3A26Z|以 ISO 8601 格式指定。如果你想要 SAS 立即生效，则省略开始时间。
+到期时间|se=2015-04-30T02%3A23%3A26Z|以 ISO 8601 格式指定。
 资源|sr=b|资源是 Blob。
 权限|sp=rw|SAS 授予的权限包括读取 (r) 和写入 (w)。
 IP 范围|sip=168.1.5.60-168.1.5.70|将从中接受请求的 IP 地址范围。
@@ -126,9 +126,10 @@ Name|SAS 部分|说明
 共享访问签名可以采取以下两种形式的一种：
 
 - **临时 SAS：**在你创建一个临时 SAS 时，针对该 SAS 的开始时间、到期时间和权限全都在 SAS URI 上指定（在省略开始时间的情况下，也可以是暗示的）。这种类型的 SAS 可以创建为帐户 SAS 或服务 SAS。 
+
 - **具有存储访问策略的 SAS：**存储访问策略是对资源容器（Blob 容器、表、队列或文件共享）定义的，可用于管理针对一个或多个共享访问签名的约束。在你将某一 SAS 与一个存储访问策略相关联时，该 SAS 将继承对该存储访问策略定义的约束：开始时间、到期时间和权限。
 
->[AZURE.NOTE]目前，帐户 SAS 必须是一个临时 SAS。帐户 SAS 尚不支持存储访问策略。
+>[AZURE.NOTE] 目前，帐户 SAS 必须是一个临时 SAS。帐户 SAS 尚不支持存储访问策略。
 
 这两种形式之间的差异对于一个关键情形而言十分重要：吊销。一个 SAS 就是一个 URL，因此，获取该 SAS 的任何人都可以使用它，而与是谁请求它以便开始的无关。如果某一 SAS 是公开发布的，则世界上的任何人都可以使用它。在发生以下四种情况之一前分发的 SAS 是有效的：
 
@@ -137,19 +138,24 @@ Name|SAS 部分|说明
 3.	删除了该 SAS 引用的存储访问策略，这是用于吊销 SAS 的另一种方法。请注意，如果你使用完全相同的名称重新创建该存储访问策略，则根据与该存储访问策略相关联的权限，所有现有 SAS 标记都将再次有效（假定尚未经过该 SAS 的到期时间）。如果你想要吊销该 SAS，请确保使用不同时间（如果你使用将来的到期时间重新创建该访问策略）。
 4.	将重新生成用于创建 SAS 的帐户密钥。请注意，这样做将导致使用该帐户密钥的所有应用程序组件身份验证失败，直到这些组件更新为使用其他有效帐户密钥或者重新生成的新帐户密钥。
 
->[AZURE.IMPORTANT]共享访问签名 URI 与用于创建签名的帐户密钥和关联的存储访问策略（如果有）相关联。如果未指定存储访问策略，则吊销共享访问签名的唯一方法是更改帐户密钥。
+>[AZURE.IMPORTANT] 共享访问签名 URI 与用于创建签名的帐户密钥和关联的存储访问策略（如果有）相关联。如果未指定存储访问策略，则吊销共享访问签名的唯一方法是更改帐户密钥。
 
-## 共享访问签名的示例
+## 示例：创建和使用共享访问签名
 
 下面是两种类型的共享访问签名（帐户 SAS 和服务 SAS）的一些示例。
 
-### 帐户 SAS 示例
+若要运行这些示例，需下载和引用以下包：
+
+- [Azure .NET 存储客户端库](http://www.nuget.org/packages/WindowsAzure.Storage)，6.x 或更高版本（以便使用帐户 SAS）。
+- [Azure 配置管理器](http://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager) 
+
+### 示例：帐户 SAS
 
 以下代码示例将创建一个帐户 SAS，该 SAS 对 Blob 和文件服务是有效的，并授予客户端读取、写入和列表权限，使其能够访问服务级别 API。帐户 SAS 将协议限制为 HTTPS，因此请求必须使用 HTTPS 发出。
 
     static string GetAccountSASToken()
     {
-        // To create the account SAS, you need to use your shared key credentials.
+        // To create the account SAS, you need to use your shared key credentials. Modify for your account.
         CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
             Microsoft.Azure.CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
@@ -213,21 +219,13 @@ Name|SAS 部分|说明
         Console.WriteLine(serviceProperties.HourMetrics.Version);
     }
 
-### 服务 SAS 示例
+### 示例：具有存储访问策略的服务 SAS
 
-以下代码示例在容器上创建存储访问策略，然后为该容器生成服务 SAS。然后可以将此 SAS 提供给客户端，使其获得对容器的读/写权限：
+以下代码示例在容器上创建存储访问策略，然后为该容器生成服务 SAS。然后可以将此 SAS 提供给客户端，使其获得对容器的读/写权限。更改代码以使用你自己的帐户名：
 
-    // The connection string for the storage account.  Modify for your account.
-    string storageConnectionString =
-       "DefaultEndpointsProtocol=https;" +
-       "AccountName=myaccount;" +
-       "AccountKey=<account-key>";
-    
-    // As an alternative, you can retrieve storage account information from an app.config file. 
-    // This is one way to store and retrieve a connection string if you are 
-    // writing an application that will run locally, rather than in Microsoft Azure.
-    
-    // string storageConnectionString = ConfigurationManager.AppSettings["StorageAccountConnectionString"];
+    // Parse the connection string for the storage account.
+    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+        Microsoft.Azure.CloudConfigurationManager.GetSetting("StorageConnectionString"));
     
     // Create the storage account with the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageConnectionString);
@@ -241,29 +239,31 @@ Name|SAS 部分|说明
     
     // Get the current permissions for the blob container.
     BlobContainerPermissions blobPermissions = container.GetPermissions();
+
+    // Clear the container's shared access policies to avoid naming conflicts.
+    blobPermissions.SharedAccessPolicies.Clear();
     
     // The new shared access policy provides read/write access to the container for 24 hours.
     blobPermissions.SharedAccessPolicies.Add("mypolicy", new SharedAccessBlobPolicy()
     {
-       // To ensure SAS is valid immediately, don¡¯t set the start time.
+       // To ensure SAS is valid immediately, don’t set the start time.
        // This way, you can avoid failures caused by small clock differences.
        SharedAccessExpiryTime = DateTime.UtcNow.AddHours(24),
-       Permissions = SharedAccessBlobPermissions.Write |
-      SharedAccessBlobPermissions.Read
+       Permissions = SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.Create | SharedAccessBlobPermissions.Add
     });
     
     // The public access setting explicitly specifies that 
     // the container is private, so that it can't be accessed anonymously.
     blobPermissions.PublicAccess = BlobContainerPublicAccessType.Off;
     
-    // Set the permission policy on the container.
+    // Set the new stored access policy on the container.
     container.SetPermissions(blobPermissions);
     
     // Get the shared access signature token to share with users.
     string sasToken =
        container.GetSharedAccessSignature(new SharedAccessBlobPolicy(), "mypolicy");
 
-拥有服务 SAS 的客户端可以使用它从其代码对请求进行身份验证，以便读取或写入到容器中的 blob。例如，下面的代码使用 SAS 令牌在容器中创建新的块 blob：
+拥有服务 SAS 的客户端可以使用它从其代码对请求进行身份验证，以便读取或写入到容器中的 blob。例如，下面的代码使用 SAS 令牌在容器中创建新的块 blob。更改代码以使用你自己的帐户名：
 
     Uri blobUri = new Uri("https://myaccount.blob.core.chinacloudapi.cn/mycontainer/myblob.txt");
     
@@ -276,7 +276,7 @@ Name|SAS 部分|说明
     // Upload the blob. 
     // If the blob does not yet exist, it will be created. 
     // If the blob does exist, its existing content will be overwritten.
-    using (var fileStream = System.IO.File.OpenRead(@"c:\Test\myblob.txt"))
+    using (var fileStream = System.IO.File.OpenRead(@"c:\Temp\myblob.txt"))
     {
     	blob.UploadFromStream(fileStream);
     }
@@ -311,7 +311,7 @@ Name|SAS 部分|说明
 - [共享访问签名，第 2 部分：创建 SAS 并将 SAS 用于 Blob 服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2)
 - [如何通过 Windows 使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)
 - [管理对 Azure 存储资源的访问](/documentation/articles/storage-manage-access-to-resources)
-- [使用共享访问签名委托访问 (REST API)](http://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx)
+- [使用共享的访问签名委托访问](http://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx)
 - [表和队列 SAS 介绍](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx)
 [sas-storage-fe-proxy-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-fe-proxy-service.png
 [sas-storage-provider-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-provider-service.png
@@ -319,4 +319,4 @@ Name|SAS 部分|说明
 
  
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

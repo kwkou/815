@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Linux 虚拟机上安装 LAMP 堆栈 | Windows Azure"
+	pageTitle="在 Linux 虚拟机上安装 LAMP 堆栈 | Azure"
 	description="了解如何在 Azure 中的 Linux 虚拟机 (VM) 上安装 LAMP 堆栈。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -17,7 +17,7 @@
 
 #在 Azure 中的 Linux 虚拟机上安装 LAMP 堆栈
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用资源管理器部署模型或经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 LAMP 堆栈包含以下不同元素：
 
@@ -32,9 +32,9 @@ LAMP 堆栈包含以下不同元素：
 你将需要安装以下程序包：
 
 - `apache2`
-- `mysql-server`
-- `php5`
-- `php5-mysql`
+- **mysql-server**
+- **php5**
+- **php5-mysql**
 
 运行 `apt-get update` 以更新程序包的本地列表以后，即可使用单个 `apt-get install` 命令安装这些程序包：
 
@@ -53,10 +53,10 @@ LAMP 堆栈包含以下不同元素：
 你将需要安装以下程序包：
 
 - `httpd`
-- `mysql`
-- `mysql-server`
-- `php`
-- `php-mysql`
+- **mysql**
+- **mysql-server**
+- **php**
+- **php-mysql**
 
 你可以使用单个 `yum install` 命令安装这些程序包：
 
@@ -112,7 +112,7 @@ LAMP 堆栈包含以下不同元素：
 
 			# mysqladmin -u root -p password yourpassword
 
-	- 然后，你可以使用 `mysql` 或 `mysqladmin` 实用程序管理 MySQL。
+	- 然后，你可以使用 **mysql** 或 **mysqladmin** 实用程序管理 MySQL。
 
 
 ##延伸阅读

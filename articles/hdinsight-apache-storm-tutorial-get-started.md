@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Apache Storm 教程：Storm 入门 | Windows Azure"
+	pageTitle="Apache Storm 教程：Storm 入门 | Azure"
 	description="开始在 HDInsight 上使用 Apache Storm 和 Storm 初学者示例进行大数据分析。了解如何使用 Storm 实时处理数据。"
 	keywords="apache storm,apache storm 教程,大数据分析,storm 初学者"
 	services="hdinsight"
@@ -11,16 +11,14 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="02/05/2016"
+	wacn.date="03/28/2016"/>
 
 
 # Apache Storm 教程：用于在 HDInsight 上进行大数据分析的 Storm 初学者示例入门
 
 Apache Storm 是一个可扩展的、具有容错能力的分布式实时计算系统，用于处理数据流。使用 Azure HDInsight 上的 Storm，你可以创建一个基于云的、用于实时执行大数据分析的 Storm 群集。
 
-
-* [Apache Storm 教程：用于在 HDInsight 上进行大数据分析的 Storm 初学者示例入门](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
 
 ## 先决条件
 
@@ -48,7 +46,7 @@ Storm on HDInsight 使用 Azure Blob 存储来存储提交到群集的日志文�
 
 ##在 Azure 管理门户中预配 Storm 群集
 
-当你设置 HDInsight 群集时，便设置了包含 Apache Storm 和相关应用程序的 Azure 计算资源。你还可以使用 Azure 管理门户、适用于 HDInsight 的 Azure PowerShell cmdlet 或 HDInsight .NET SDK 为其他版本创建 Hadoop 群集。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。有关不同 HDInsight 版本及其服务级别协议 (SLA) 的信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning)页。
+当你设置 HDInsight 群集时，便设置了包含 Apache Storm 和相关应用程序的 Azure 计算资源。你还可以使用 Azure 管理门户、适用于 HDInsight 的 Azure PowerShell cmdlet 或 HDInsight .NET SDK 为其他版本创建 Hadoop 群集。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。有关不同 HDInsight 版本及其服务级别协议 (SLA) 的信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning-v1)页。
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
@@ -215,6 +213,6 @@ Storm UI 可以用于监视拓扑。
 [stormstarter]: https://github.com/apache/storm/tree/master/examples/storm-starter
 [stormjavadocs]: https://storm.incubator.apache.org/apidocs/
 [azureportal]: https://manage.windowsazure.cn/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 
 <!---HONumber=79-->

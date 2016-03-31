@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 PHP 使用队列存储 | Windows Azure"
+	pageTitle="如何通过 PHP 使用队列存储 | Azure"
 	description="了解如何使用 Azure 队列存储服务创建和删除队列，以及插入、获取和删除消息。示例用 PHP 编写。"
 	documentationCenter="php"
 	services="storage"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="07/29/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="12/16/2015"
+	wacn.date="01/21/2016"/>
 
 # 如何通过 PHP 使用队列存储
 
@@ -28,7 +28,7 @@
 
 创建访问 Azure 队列存储的 PHP 应用程序的唯一要求是从代码中引用 Azure SDK for PHP 中的类。你可以使用任何开发工具（包括“记事本”）创建应用程序。
 
-在本指南中，你将使用队列存储功能，这些功能可在 PHP 应用程序中本地调用，或通过在 Azure 的 Web 角色、辅助角色或网站中运行的代码调用。
+在本指南中，你将使用队列存储功能，这些功能可在 PHP 应用程序中本地调用，或通过在 Azure 的 Web 角色、辅助角色或 Web 应用中运行的代码调用。
 
 ## 获取 Azure 客户端库
 
@@ -38,19 +38,18 @@
 
 若要使用 Azure 队列存储 API，你需要：
 
-1. 通过使用 [require\_once][require_once] 语句引用 autoloader 文件。
+1. 通过使用 [require_once][require_once] 语句引用 autoloader 文件。
 2. 引用可使用的所有类。
 
 下面的示例演示了如何包括 autoloader 文件并引用 **ServicesBuilder** 类。
 
-> [AZURE.NOTE]
-> 本示例（以及本文中的其他示例）假定你已通过 Composer 安装用于 Azure 的 PHP 客户端库。如果你已手动安装这些库或将其作为 PEAR 包安装，则需要引用 `WindowsAzure.php` autoloader 文件。
+> [AZURE.NOTE] 本示例（以及本文中的其他示例）假定你已通过 Composer 安装用于 Azure 的 PHP 客户端库。如果你已手动安装这些库或将其作为 PEAR 包安装，则需要引用 `WindowsAzure.php` autoloader 文件。
 
 	require_once 'vendor\autoload.php';
 	use WindowsAzure\Common\ServicesBuilder;
 
 
-在下面的示例中， `require_once` 语句将始终显示，但只会引用执行该示例所需的类。
+在下面的示例中，`require_once` 语句将始终显示，但只会引用执行该示例所需的类。
 
 ## 设置 Azure 存储连接
 
@@ -90,29 +89,29 @@
 	use WindowsAzure\Common\ServicesBuilder;
 	use WindowsAzure\Common\ServiceException;
 	use WindowsAzure\Queue\Models\CreateQueueOptions;
-	
+
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
-	
+
 	// OPTIONAL: Set queue metadata.
 	$createQueueOptions = new CreateQueueOptions();
 	$createQueueOptions->addMetaData("key1", "value1");
 	$createQueueOptions->addMetaData("key2", "value2");
-	
+
 	try	{
 		// Create queue.
 		$queueRestProxy->createQueue("myqueue", $createQueueOptions);
 	}
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
+		// Error codes and messages are here:
 		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
 	}
 
-> [AZURE.NOTE] 您不应依赖元数据密钥的区分大小写。所有密钥都是采用小写形式从服务中读取的。
+> [AZURE.NOTE]您不应依赖元数据密钥的区分大小写。所有密钥都是采用小写形式从服务中读取的。
 
 
 ## 向队列添加消息
@@ -127,7 +126,7 @@
 
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
-	
+
 	try	{
 		// Create message.
 		$builder = new ServicesBuilder();
@@ -135,7 +134,7 @@
 	}
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
+		// Error codes and messages are here:
 		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -154,23 +153,23 @@
 
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
-	
+
 	// OPTIONAL: Set peek message options.
 	$message_options = new PeekMessagesOptions();
 	$message_options->setNumberOfMessages(1); // Default value is 1.
-	
+
 	try	{
 		$peekMessagesResult = $queueRestProxy->peekMessages("myqueue", $message_options);
 	}
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
+		// Error codes and messages are here:
 		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
 	}
-	
+
 	$messages = $peekMessagesResult->getQueueMessages();
 
 	// View messages.
@@ -198,27 +197,27 @@
 
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
-	
+
 	// Get message.
 	$listMessagesResult = $queueRestProxy->listMessages("myqueue");
 	$messages = $listMessagesResult->getQueueMessages();
 	$message = $messages[0];
-	
+
 	/* ---------------------
 		Process message.
 	   --------------------- */
-	
-	// Get message Id and pop receipt.
+
+	// Get message ID and pop receipt.
 	$messageId = $message->getMessageId();
 	$popReceipt = $message->getPopReceipt();
-	
+
 	try	{
 		// Delete message.
 		$queueRestProxy->deleteMessage("myqueue", $messageId, $popReceipt);
 	}
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
+		// Error codes and messages are here:
 		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -232,35 +231,35 @@
 	require_once 'vendor\autoload.php';
 
 	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;	
+	use WindowsAzure\Common\ServiceException;
 
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
-	
+
 	// Get message.
 	$listMessagesResult = $queueRestProxy->listMessages("myqueue");
 	$messages = $listMessagesResult->getQueueMessages();
 	$message = $messages[0];
-	
+
 	// Define new message properties.
 	$new_message_text = "New message text.";
-	$new_visibility_timeout = 5; // Measured in seconds. 
-	
-	// Get message Id and pop receipt.
+	$new_visibility_timeout = 5; // Measured in seconds.
+
+	// Get message ID and pop receipt.
 	$messageId = $message->getMessageId();
 	$popReceipt = $message->getPopReceipt();
-	
+
 	try	{
 		// Update message.
-		$queueRestProxy->updateMessage("myqueue", 
-									$messageId, 
-									$popReceipt, 
-									$new_message_text, 
+		$queueRestProxy->updateMessage("myqueue",
+									$messageId,
+									$popReceipt,
+									$new_message_text,
 									$new_visibility_timeout);
 	}
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
+		// Error codes and messages are here:
 		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -279,35 +278,35 @@
 
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
-	
-	// Set list message options. 
+
+	// Set list message options.
 	$message_options = new ListMessagesOptions();
-	$message_options->setVisibilityTimeoutInSeconds(300); 
+	$message_options->setVisibilityTimeoutInSeconds(300);
 	$message_options->setNumberOfMessages(16);
-	
+
 	// Get messages.
 	try{
-		$listMessagesResult = $queueRestProxy->listMessages("myqueue", 
-														 $message_options); 
-		$messages = $listMessagesResult->getQueueMessages(); 
+		$listMessagesResult = $queueRestProxy->listMessages("myqueue",
+														 $message_options);
+		$messages = $listMessagesResult->getQueueMessages();
 
 		foreach($messages as $message){
-			
+
 			/* ---------------------
 				Process message.
 			--------------------- */
-		
+
 			// Get message Id and pop receipt.
 			$messageId = $message->getMessageId();
 			$popReceipt = $message->getPopReceipt();
-			
+
 			// Delete message.
-			$queueRestProxy->deleteMessage("myqueue", $messageId, $popReceipt);   
+			$queueRestProxy->deleteMessage("myqueue", $messageId, $popReceipt);
 		}
 	}
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
+		// Error codes and messages are here:
 		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -325,7 +324,7 @@
 
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
-	
+
 	try	{
 		// Get queue metadata.
 		$queue_metadata = $queueRestProxy->getQueueMetadata("myqueue");
@@ -333,13 +332,13 @@
 	}
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
+		// Error codes and messages are here:
 		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
 		echo $code.": ".$error_message."<br />";
 	}
-	
+
 	echo $approx_msg_count;
 
 ## 删除队列
@@ -353,14 +352,14 @@
 
 	// Create queue REST proxy.
 	$queueRestProxy = ServicesBuilder::getInstance()->createQueueService($connectionString);
-	
+
 	try	{
 		// Delete queue.
 		$queueRestProxy->deleteQueue("myqueue");
 	}
 	catch(ServiceException $e){
 		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
+		// Error codes and messages are here:
 		// http://msdn.microsoft.com/zh-cn/library/azure/dd179446.aspx
 		$code = $e->getCode();
 		$error_message = $e->getMessage();
@@ -372,11 +371,12 @@
 
 现在，你已了解有关 Azure 队列存储的基础知识，可单击下面的链接来了解更复杂的存储任务。
 
-- 请参阅 MSDN 参考：[Azure 存储](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)。
 - 访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
 
-[download]: /zh-cn/documentation/articles/php-download-sdk/
+有关详细信息，另请参阅 [PHP 开发人员中心](/develop/php/)。
+
+[下载]: /documentation/articles/php-download-sdk
 [require_once]: http://www.php.net/manual/en/function.require-once.php
 [Azure 管理门户]: http://manage.windowsazure.cn/
-[在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-<!---HONumber=70-->
+
+<!---HONumber=Mooncake_0104_2016-->

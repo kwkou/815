@@ -1,5 +1,5 @@
 <properties
-	pageTitle="有关服务管理中虚拟机的文章 | Windows Azure"
+	pageTitle="有关服务管理中虚拟机的文章 | Azure"
 	description="本文列出了能帮助你在 Azure 服务管理中创建和管理虚拟机的资源。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,11 +10,13 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/28/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/07/2015"
+	wacn.date="12/31/2015"/>
 
 # 有关服务管理中虚拟机的文章
-这里列出了与在 Azure 服务管理中使用虚拟机相关的文章。对于新部署，我们建议使用基于 Azure 资源管理器的虚拟机和其他资源。有关资源管理器优点的说明，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+
 
 ## 入门
 
@@ -32,17 +34,15 @@
 
 [使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
-[使用 Azure PowerShell 创建和管理基于 Windows 的虚拟机](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)
+[使用 Powershell 和经典部署模型创建 Windows 虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
-[使用 Azure 命令行界面 (Azure CLI) 创建 VM](/documentation/articles/virtual-machines-xplat-getting-started)
-
-[使用 Azure CLI 创建多 VM 部署](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli)
+[使用 Azure 命令行界面 (Azure CLI) 创建运行 Linux 的自定义 VM](/documentation/articles/virtual-machines-linux-create-custom)
 
 ## 计划
 
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[我是否需要虚拟网络？](https://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)
+[我是否需要虚拟网络？](/documentation/articles/virtual-networks-overview)
 
 ## 创建
 
@@ -76,25 +76,17 @@
 
 [如何为虚拟机配置可用性集](/documentation/articles/virtual-machines-how-to-configure-availability)
 
-<!--[-->开始配置内部负载平衡器<!--](/documentation/articles/load-balancer-internal-getstarted)-->
-
-<!--[-->开始配置面向 Internet 的负载平衡器<!--](/documentation/articles/load-balancer-internet-getstarted)-->
-
 [如何设置虚拟机的终结点](/documentation/articles/virtual-machines-set-up-endpoints)
 
 ## 创建工作负荷
 
-[Active Directory](https://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx)
-
-[BizTalk Server](https://msdn.microsoft.com/zh-cn/library/azure/jj248689)
+[Active Directory](/documentation/articles/active-directory-new-forest-virtual-machine)
 
 [Cassandra](/documentation/articles/virtual-machines-linux-nodejs-running-cassandra)
 
-[Docker](/documentation/articles/virtual-machines-docker-with-xplat-cli)
-
 [Exchange Server](https://technet.microsoft.com/zh-cn/library/jj619301.aspx)
 
-[HPC Pack](https://msdn.microsoft.com/zh-cn/library/azure/dn518135.aspx)
+[HPC Pack](/documentation/articles/virtual-machines-hpcpack-cluster-options)
 
 [LAMP 堆栈](/documentation/articles/virtual-machines-linux-install-lamp-stack)
 
@@ -112,8 +104,6 @@
 
 [SAP](https://msdn.microsoft.com/zh-cn/library/azure/dn745892.aspx)
 
-[SharePoint Server](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)
-
 [SQL Server](/documentation/articles/virtual-machines-sql-server-infrastructure-services)
 
 [System Center App Controller](https://technet.microsoft.com/zh-cn/library/dn249764.aspx)
@@ -128,10 +118,6 @@
 
 [在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)
 
-[在 Visual Studio 中调试云服务或虚拟机](https://msdn.microsoft.com/zh-cn/library/azure/ff683670.aspx)
-
-[使用 Windows PowerShell 脚本发布到开发和测试环境](https://msdn.microsoft.com/zh-cn/library/azure/dn642480.aspx)
-
 ## 故障排除
 
 [对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)
@@ -142,8 +128,8 @@
 
 [Azure 服务管理 cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn708504.aspx)
 
-[服务管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
-
 [将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools)
 
-<!---HONumber=70-->
+[服务管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
+
+<!---HONumber=Mooncake_1221_2015-->

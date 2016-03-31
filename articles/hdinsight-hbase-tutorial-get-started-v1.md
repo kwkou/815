@@ -1,5 +1,5 @@
 <properties
-	pageTitle="HBase 教程：HDInsight 中的 HBase 入门 | Windows Azure"
+	pageTitle="HBase 教程：HDInsight 中的 HBase 入门 | Azure"
 	description="遵循本 HBase 教程开始在 HDInsight 中将 Apache HBase 与 Hadoop 配合使用。从 HBase shell 创建表，然后使用 Hive 查询这些表。"
 	keywords="apache hbase,hbase,hbase shell,hbase tutorial"
 	services="hdinsight"
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="01/29/2016"
+	wacn.date="03/28/2016"/>
 
 
 
@@ -19,17 +19,7 @@
 
 了解如何使用 Hive 在 HDInsight 中预配 HBase 群集、创建 HBase 表和查询表。有关 HBase 的一般信息，请参阅 [HDInsight HBase 概述][hdinsight-hbase-overview]。
 
-[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
-
-* [HBase 教程：开始在 HDInsight 中将 Apache HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started)
- 
 > [AZURE.NOTE]HBase（版本 0.98.0）只能用于 HDInsight 上的 HDInsight 3.1 群集（基于 Apache Hadoop 和 YARN 2.4.0）。有关版本信息，请参阅 [HDInsight 提供的 Hadoop 群集版本有哪些新功能？][hdinsight-versions]
-
-以下视频演示了相同的内容：
-
-> [AZURE.VIDEO get-started-with-hbase-in-hdinsight]
-
-
 
 
 **先决条件**
@@ -39,7 +29,7 @@
 - **一个 Azure 订阅**。请参阅[获取 Azure 免费试用版](/pricing/1rmb-trial/)。
 - 装有 Visual Studio 2013 的**工作站**：有关说明，请参阅[安装 Visual Studio](http://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx)。
 
-## 设置 HBase 群集
+##<a name="create-hbase-cluster"></a> 设置 HBase 群集
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
@@ -159,7 +149,7 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 
 若要打开该 Web UI，你必须通过 RDP 连接到群集，然后在桌面上单击“HMaster Info Web UI”快捷方式，或者在 Web 浏览器中使用以下 URL：
 
-	http://zookeeper[0-2]: master-status
+	http://zookeeper[0-2]:60010/master-status
 在高可用性群集中，你将会找到要托管 WebUI 的当前活动 HBase 主节点的链接。
 
 
@@ -329,7 +319,7 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 若要了解更多信息，请参阅以下文章：
 
 - [HDInsight HBase 概述][hdinsight-hbase-overview]：HBase 是构建于 Hadoop 上的 Apache 开源 NoSQL 数据库，用于为大量非结构化和半结构化数据提供随机访问和高度一致性。
-- [在 Azure 虚拟网络上设置 HBase 群集][hdinsight-hbase-provision-vnet]：通过虚拟网络集成，可以将 HBase 群集部署到应用程序所在的虚拟网络，以便应用程序直接与 HBase 进行通信。
+- [在 Azure 虚拟网络上设置 HBase 群集][hdinsight-hbase-provision-vnet-v1]：通过虚拟网络集成，可以将 HBase 群集部署到应用程序所在的虚拟网络，以便应用程序直接与 HBase 进行通信。
 - [在 HDInsight 中配置 HBase 地域复制](/documentation/articles/hdinsight-hbase-geo-replication)：了解如何跨两个 Azure 数据中心配置 HBase 复制。
 
 
@@ -344,8 +334,8 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 
 
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
-[hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 [hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
@@ -353,11 +343,11 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
 
-[img-hdinsight-hbase-cluster-quick-create]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-quick-create.png
-[img-hdinsight-hbase-hive-editor]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-hive-editor.png
-[img-hdinsight-hbase-file-browser]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-file-browser.png
-[img-hbase-shell]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-shell.png
-[img-hbase-sample-data-tabular]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-contacts-tabular.png
-[img-hbase-sample-data-bigtable]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-contacts-bigtable.png
+[img-hdinsight-hbase-cluster-quick-create]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-quick-create.png
+[img-hdinsight-hbase-hive-editor]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-hive-editor.png
+[img-hdinsight-hbase-file-browser]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-file-browser.png
+[img-hbase-shell]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-shell.png
+[img-hbase-sample-data-tabular]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-contacts-tabular.png
+[img-hbase-sample-data-bigtable]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-contacts-bigtable.png
 
 <!---HONumber=71-->

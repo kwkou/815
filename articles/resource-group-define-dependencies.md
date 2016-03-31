@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="07/15/2015"
-   wa.date="10/3/2015"/>
+   ms.date="10/20/2015"
+   wacn.date="12/31/2015"/>
 
 # 在 Azure 资源管理器模板中定义依赖关系
 
@@ -39,6 +39,8 @@
 
 如果将引用函数用于获取某个资源的表示形式，则不需要此元素，因为引用对象意味着依赖于该资源。事实上，如果有一个选项要使用引用和 dependsOn，则该指南将使用引用函数并具有隐式引用。此处的基本原理同样是性能。引用将定义在模版中引用时所需的已知的隐式依赖关系。根据其状态显示，它们是相关，避免再次优化性能并避免阻止部署引擎执行不必要地避免并行性带来的潜在风险。
 
+如果需要在某个资源与通过 copy 循环创建的资源之间创建依赖关系，可将 dependsOn 元素设置为该循环的名称。有关示例，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)。
+
 ## 资源
 
 资源属性允许指定与所定义的资源相关的子资源。子资源总共只能定义 5 级。请务必注意子资源和父资源之间不能创建隐式依赖关系。如果您需要在父级资源后部署子资源，则必须使用 dependsOn 属性明确声明该依赖关系。
@@ -58,4 +60,4 @@
 - 若要了解有关创建 Azure 资源管理器模板的信息，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)。 
 - 有关模板的可用函数列表，请参阅[模板函数](/documentation/articles/resource-group-template-functions)。
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_1221_2015-->

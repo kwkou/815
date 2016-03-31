@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="实现故障转移流式处理方案 | Windows Azure" 
+	pageTitle="实现故障转移流式处理方案 | Azure" 
 	description="本主题演示如何实现故障转移流式处理方案。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -7,14 +7,14 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/20/2015" 
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="media-services"
+ 	ms.date="02/03/2016"  
+	wacn.date="03/17/2016"/>
 
 #实现故障转移流式处理方案
 
-本演练演示如何将内容 (blob) 从一个资产复制到另一个资产，以便处理按需流式处理的冗余。此方案适用于想要将其 CDN 设置为当我们的某个数据中心出现中断时，在两个数据中心之间进行故障转移的客户。本演练使用 Windows Azure 媒体服务 SDK、Windows Azure 媒体服务 REST API 和 Azure 存储空间 SDK 来演示以下任务。
+本演练演示如何将内容 (blob) 从一个资产复制到另一个资产，以便处理按需流式处理的冗余。此方案适用于想要将其 CDN 设置为当我们的某个数据中心出现中断时，在两个数据中心之间进行故障转移的客户。本演练使用 Azure 媒体服务 SDK、Azure 媒体服务 REST API 和 Azure 存储空间 SDK 来演示以下任务。
 
 1. 在“数据中心 A”中设置一个媒体服务帐户。
 1. 将一个夹层文件上载到源资产中。
@@ -182,7 +182,7 @@
 		        CopyBlobsFromDifferentStorage(containerName, targetContainerName, StorageNameSource, StorageKeySource, StorageNameTarget, StorageKeyTarget);
 		
 		
-		        // 6.Use the CreateFileInfos Media Services REST API to automatically generate all the IAssetFile’s for the target asset. 
+		        // 6.Use the CreateFileInfos Media Services REST API to automatically generate all the IAssetFile's for the target asset. 
 		        //      This API call is not supported in the current Media Services SDK for .NET. 
 		        CreateFileInfosForAssetWithRest(_contextTarget, targetAsset, MediaServicesAccountNameTarget, MediaServicesAccountKeyTarget);
 		
@@ -310,6 +310,8 @@
 		    IAssetFile manifestFile = GetPrimaryFile(assetToStream);
 		
 		    // Create a 30-day readonly access policy. 
+        	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
+        
 		    IAccessPolicy policy = context.AccessPolicies.Create("Streaming policy",
 		        TimeSpan.FromDays(30),
 		        AccessPermissions.Read);
@@ -391,7 +393,8 @@
 		    if (!string.IsNullOrEmpty(acsToken))
 		    {
 		        var asset = context.Assets.Where(a => a.Id == targetAssetId).FirstOrDefault();
-		
+
+            	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
 		        var accessPolicy = context.AccessPolicies.Create("RestTest", TimeSpan.FromDays(100),
 		                                                            AccessPermissions.Read);
 		        if (asset != null)
@@ -956,4 +959,4 @@
 
 现在，你可以使用流量管理器在两个数据中心之间路由请求，因此可在任何中断情况下进行故障转移。
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0307_2016-->

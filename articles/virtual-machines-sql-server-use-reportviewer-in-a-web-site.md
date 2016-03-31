@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在网站中使用 ReportViewer | Windows Azure"
-	description="本主题介绍如何使用 Visual Studio ReportViewer 控件构建 Windows Azure 网站，该控件用于显示存储在 Windows Azure 虚拟机上的报表。"
+	pageTitle="在 Web 应用中使用 ReportViewer | Azure"
+	description="本主题介绍如何使用 Visual Studio ReportViewer 控件构建 Azure Web 应用，该控件用于显示存储在 Azure 虚拟机上的报表。"
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
@@ -9,18 +9,19 @@
 	tags="azure-service-management" />
 <tags 
 	ms.service="virtual-machines"
-	ms.date="08/19/2015"
-	wacn.date="11/12/2015" />
+	ms.date="12/11/2015"
+	wacn.date="01/14/2016" />
 
-# 在 Azure 中托管的网站中使用 ReportViewer
+# 在 Azure 中托管的 Web 应用中使用 ReportViewer
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
 
-你可以使用 Visual Studio ReportViewer 控件构建 Windows Azure 网站，该控件用于显示存储在 Windows Azure 虚拟机上的报表。ReportViewer 控件位于使用 ASP.NET Web 应用程序模板生成的 Web 应用程序中。
+
+你可以使用 Visual Studio ReportViewer 控件构建 Azure Web 应用，该控件用于显示存储在 Azure 虚拟机上的报表。ReportViewer 控件位于使用 ASP.NET Web 应用模板生成的 Web 应用中。
 
 >[AZURE.IMPORTANT]ASP.NET MVC Web 应用程序模板不支持 ReportViewer 控件。
 
-若要将 ReportViewer 整合到你的 Windows Azure 网站，需要完成以下任务。
+若要将 ReportViewer 整合到你的 Azure Web 应用，需要完成以下任务。
 
 - **添加**程序集到部署包
 
@@ -33,14 +34,12 @@
 查看 [Azure 虚拟机中的 SQL Server Business Intelligence](/documentation/articles/virtual-machines-sql-server-business-intelligence) 中的“常规建议和最佳实践”部分。
 
 >[AZURE.NOTE]ReportViewer 控件随 Visual Studio Standard Edition 或更高版本提供。如果你使用的是 Web Developer Express Edition，则必须安装 [MICROSOFT REPORT VIEWER 2012 RUNTIME](https://www.microsoft.com/download/details.aspx?id=35747) 才能使用 ReportViewer 运行时功能。
->
->在 Windows Azure 中不支持在本地处理模式下配置的 ReportViewer。
+><p>在 Azure 中不支持在本地处理模式下配置的 ReportViewer。
 
-查看白皮书 [Reporting Services 报表查看器控件和基于 Windows Azure 虚拟机的报表服务器](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Reporting%20Services%20report%20viewer%20control%20and%20Azure%20VM%20based%20report%20servers.docx)。
 
 ## 将程序集添加到部署包
 
-当在本地托管 ASP.NET 应用程序时，在 Visual Studio 安装过程中 ReportViewer 程序集通常直接安装在 IIS 服务器的全局程序集缓存 (GAC) 中，可以由应用程序直接访问。但是，当在云中托管 ASP.NET 应用程序时，Windows Azure 不允许将任何内容安装到 GAC 中，因此你必须确保 ReportViewer 程序集在本地可供你的应用程序使用。你可以通过在你的项目中添加它们的引用并将它们配置为以本地方式复制来实现此操作。
+当在本地托管 ASP.NET 应用程序时，在 Visual Studio 安装过程中 ReportViewer 程序集通常直接安装在 IIS 服务器的全局程序集缓存 (GAC) 中，可以由应用程序直接访问。但是，当在云中托管 ASP.NET 应用程序时，Azure 不允许将任何内容安装到 GAC 中，因此你必须确保 ReportViewer 程序集在本地可供你的应用程序使用。你可以通过在你的项目中添加它们的引用并将它们配置为以本地方式复制来实现此操作。
 
 在远程处理模式下，ReportViewer 控件使用以下程序集：
 
@@ -84,15 +83,14 @@
 
 ## 配置身份验证和授权
 
-ReportViewer 需要使用正确的凭据向报表服务器进行身份验证，并且凭据必须经报表服务器授权才能访问所需的报表。有关身份验证的信息，请查看白皮书 [Reporting Services 报表查看器控件和基于 Windows Azure 虚拟机的报表服务器](https://msdn.microsoft.com/library/azure/dn753698.aspx)。
+ReportViewer 需要使用正确的凭据向报表服务器进行身份验证，并且凭据必须经报表服务器授权才能访问所需的报表。有关身份验证的信息，请查看白皮书 [Reporting Services 报表查看器控件和基于 Azure 虚拟机的报表服务器](https://msdn.microsoft.com/zh-cn/library/azure/dn753698.aspx)。
 
 ## 发布 ASP.NET Web 应用程序到 Azure
 
-有关发布 ASP.NET Web 应用程序到 Azure 的说明，请参阅[如何：从 Visual Studio 迁移和发布 Web 应用程序到 Azure](https://msdn.microsoft.com/library/azure/hh420322.aspx) 和 [Web 应用程序和 ASP.NET 入门](/documentation/articles/web-sites-dotnet-get-started)。
+有关将 ASP.NET Web 应用程序发布到 Azure 的说明，请参阅 [Web Apps 和 ASP.NET 入门](/documentation/articles/web-sites-dotnet-get-started)。
 
 >[AZURE.IMPORTANT]如果在解决方案资源管理器中的快捷菜单中未显示添加Azure 部署项目或添加 Azure 云服务项目命令，你可能需要将该项目的目标框架更改为 .NET Framework 4。
->
->两个命令提供基本相同的功能。其中一个命令将显示在快捷菜单中，这取决于已安装的 Windows Azure SDK 版本。
+><p>两个命令提供基本相同的功能。其中一个命令将显示在快捷菜单中，这取决于已安装的 Azure SDK 版本。
 
 ## 资源
 
@@ -102,6 +100,6 @@ ReportViewer 需要使用正确的凭据向报表服务器进行身份验证，�
 
 [使用 PowerShell 创建运行本机模式报表服务器的 Azure VM](/documentation/articles/virtual-machines-sql-server-create-native-mode-report-server-powershell)
 
-[Reporting Services 报表查看器控件和基于 Windows Azure 虚拟机的报表服务器](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Reporting%20Services%20report%20viewer%20control%20and%20Azure%20VM%20based%20report%20servers.docx)
+[Reporting Services 报表查看器控件和基于 Azure 虚拟机的报表服务器](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Reporting%20Services%20report%20viewer%20control%20and%20Azure%20VM%20based%20report%20servers.docx)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -1,12 +1,12 @@
 # 为 Azure 云服务配置自定义域名
 
 > [WACOM.NOTE]
-> 快速入门 - 使用全新的 Azure [操作实例指南](https://support.microsoft.com/zh-CN/kb/2990804)!它可使自定义域名快速地与 Azure 云服务或 Azure 网站相关联，并确保通信安全 (SSL)。
+> 快速入门 - 使用全新的 Azure [操作实例指南](https://support.microsoft.com/zh-CN/kb/2990804)!它可使自定义域名快速地与 Azure 云服务或 Azure Web 应用相关联，并确保通信安全 (SSL)。
 
 当您在 Azure 中创建应用程序时，Azure 会在 chinacloudapp.cn 域上提供一个子域，以便您的用户可以使用以下 URL 访问您的应用程序，如 http://&lt;*myapp*>.chinacloudapp.cn. 但是，您还可以在自己的域名（例如 contoso.com）上公开应用程序。
 
 > [WACOM.NOTE] 
-> 本任务中的过程适用于 Azure 云服务。有关存储帐户，请参阅[为 Azure 存储帐户配置自定义域名](/documentation/articles/storage-custom-domain-name)。有关网站，请参阅[为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。
+> 本任务中的过程适用于 Azure 云服务。有关存储帐户，请参阅[为 Azure 存储帐户配置自定义域名](/documentation/articles/storage-custom-domain-name)。有关 Web 应用，请参阅[为 Azure Web 应用配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。
 
 本文内容：
 
@@ -41,17 +41,17 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 1. 使用下列方法之一查找分配给您的云服务的 **.chinacloudapp.cn** 域名。
 
-  * 登录到 [Azure 管理门户]，依次选择您的云服务、"仪表板"，然后在"速览"部分中查找"网站 URL"条目。
+  * 登录到 [Azure 管理门户]，依次选择您的云服务、"仪表板"，然后在"速览"部分中查找" Web 应用 URL"条目。
 
-  		  ![显示网站 URL 的速览部分][csurl]
+  		  ![显示 Web 应用 URL 的速览部分][csurl]
 
-  * 安装和配置 [Azure Powershell](/documentation/articles/install-configure-powershell)，然后使用以下命令：
+  * 安装和配置 [Azure Powershell](/documentation/articles/powershell-install-configure)，然后使用以下命令：
 
     Get-AzureDeployment -ServiceName yourservicename | Select Url
 
   保存任一方法返回的 URL 中所使用的域名，因为您将在创建 CNAME 记录时需要它。
 
-1.  登录到您的 DNS 注册机构的网站，然后转至用于管理 DNS 的页面。查找网站中标签为"域名"、"DNS"或"名称服务器管理"的链接或区域。
+1.  登录到您的 DNS 注册机构的 Web 应用，然后转至用于管理 DNS 的页面。查找 Web 应用中标签为"域名"、"DNS"或"名称服务器管理"的链接或区域。
 
 2.  现在找到您可以在其中选择或输入 CNAME 记录的位置。您可能需要从下拉列表中选择记录类型，或者需要转到高级设置页面。应当查找"CNAME"、"别名"或"子域"字样。
 
@@ -90,7 +90,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
    		 ![显示 VIP 的速览部分][vip]
 
-  * 安装和配置 [Azure Powershell](/documentation/articles/install-configure-powershell)，然后使用以下命令：
+  * 安装和配置 [Azure Powershell](/documentation/articles/powershell-install-configure)，然后使用以下命令：
 
       get-azurevm -servicename yourservicename | get-azureendpoint -VM {$_.VM} | select Vip
 
@@ -98,7 +98,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
   保存该 IP 地址，因为您将在创建 A 记录时需要它。
 
-1.  登录到您的 DNS 注册机构的网站，然后转至用于管理 DNS 的页面。查找网站中标签为"域名"、"DNS"或"名称服务器管理"的链接或区域。
+1.  登录到您的 DNS 注册机构的 Web 应用，然后转至用于管理 DNS 的页面。查找 Web 应用中标签为"域名"、"DNS"或"名称服务器管理"的链接或区域。
 
 2.  现在找到您可以在其中选择或输入 A 记录的位置。您可能需要从下拉列表中选择记录类型，或者需要转到高级设置页面。
 

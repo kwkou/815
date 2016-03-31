@@ -9,17 +9,20 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/16/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="12/16/2015"
+	wacn.date="01/29/2016"/>
 
 
 #  使用移动服务中的脱机数据处理冲突
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../includes/mobile-services-selector-offline-conflicts.md)]
 
 本主题演示在使用 Azure 移动服务的脱机功能时如何同步数据和处理冲突。本教程基于[脱机数据入门]教程编写。
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/?WT.mc_id=AE564AB28" target="_blank">Azure 试用</a>。
+>[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/?WT.mc_id=AE564AB28" target="_blank">Azure 试用</a>。
 
 
 ## 下载 iOS 项目
@@ -137,7 +140,6 @@
 [Getting Started Offline iOS Sample]: https://github.com/Azure/mobile-services-samples/tree/master/TodoOffline/iOS/blog20140611
 [脱机数据入门]: /documentation/articles/mobile-services-ios-get-started-offline-data
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
-[Get started with data]: /documentation/articles/mobile-services-ios-get-started-data
  
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

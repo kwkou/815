@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Mahout 和基于 WIndows 的 HDInsight 生成建议 | Windows Azure"
+	pageTitle="使用 Mahout 和基于 WIndows 的 HDInsight 生成推荐 | Azure"
 	description="了解如何使用 Apache Mahout 机器学习库通过基于 Windows 的 HDInsight (Hadoop) 生成电影推荐。"
 	services="hdinsight"
 	documentationCenter=""
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="01/28/2016"
+	wacn.date="03/28/2016"/>
 
 #将 Apache Mahout 与 HDInsight 中的 Hadoop 配合使用以生成电影推荐
 
@@ -30,20 +30,18 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 
 * 如何在 HDInsight 3.0 和 HDInsight 2.0 群集上安装 Mahout
 
-	> [AZURE.NOTE]Mahout 是随 HDInsight 3.1 版本的群集一起提供的。如果你使用的是早期版本的 HDInsight，请在继续操作之前参阅[安装 Mahout](#install)。
+	> [AZURE.NOTE] Mahout 是随 HDInsight 3.1 版本的群集一起提供的。如果你使用的是早期版本的 HDInsight，请在继续操作之前参阅[安装 Mahout](#install)。
 
 ##先决条件
 
-* **HDInsight 中基于 Windows 的 Hadoop 群集**。有关创建该群集的信息，请参阅[开始使用 HDInsight 中的 Hadoop][getstarted]。
-
-- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/install-configure-powershell)。
+- **HDInsight 中基于 Windows 的 Hadoop 群集**。有关创建该群集的信息，请参阅[开始使用 HDInsight 中的 Hadoop][getstarted]。
+- **配备 Azure PowerShell 的工作站**。请参阅[安装 Azure PowerShell 1.0 和更高版本](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater)。
 
 
 ##<a name="recommendations"></a>使用 Windows PowerShell 生成推荐
 
-> [AZURE.NOTE]尽管在本部分中使用的作业使用 Windows PowerShell 执行，但是，随 Mahout 一起提供的很多类当前不使用 Windows PowerShell，并且它们必须通过使用 Hadoop 命令行来运行。有关不使用 Windows PowerShell 的类的列表，请参阅[故障排除](#troubleshooting)部分。
->
-> 有关使用 Hadoop 命令行运行 Mahout 作业的示例，请参阅[使用 Hadoop 命令行对数据分类](#classify)。
+> [AZURE.NOTE] 尽管在本部分中使用的作业使用 Windows PowerShell 执行，但是，随 Mahout 一起提供的很多类当前不使用 Windows PowerShell，并且它们必须通过使用 Hadoop 命令行来运行。有关不使用 Windows PowerShell 的类的列表，请参阅[故障排除](#troubleshooting)部分。
+> <p>有关使用 Hadoop 命令行运行 Mahout 作业的示例，请参阅[使用 Hadoop 命令行对数据分类](#classify)。
 
 由 Mahout 提供的功能之一是推荐引擎。此引擎接受 `userID`、`itemId` 和 `prefValue` 格式（项的用户首选项）的数据。然后，Mahout 将执行共现分析，以确定：_偏好某个项的用户也偏好其他类似项_。Mahout 然后确定拥有类似项首选项的用户，这些首选项可用于做出推荐。
 
@@ -59,9 +57,9 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 
 为方便起见，[GroupLens 研究][movielens]以兼容 Mahout 的格式提供电影的评价数据。
 
-1. 下载 [MovieLens 100k][100k] 存档，其中包含 1000 名用户对 1700 部电影的 100,000 条评价信息。
+1. 下载 [MovieLens 100k][100k] 存档，其中包含 1000 名用户对 1700 部电影给出的 100,000 项评分。
 
-2. 提取该存档。该存档应包含 __ml-100k__ 目录，其中又包含很多前缀为 __u__ 的数据文件。Mahout 要分析的文件为 __u.data__。此文件的数据结构为 `userID`、`movieID`、`userRating` 和 `timestamp`。下面是数据的示例：
+2. 提取该存档。该存档应包含 __ml-100k__ 目录，其中又包含很多前缀为 __u.__ 的数据文件。Mahout 要分析的文件为 __u.data__。此文件的数据结构为 `userID`、`movieID`、`userRating` 和 `timestamp`。下面是数据的示例：
 
 
 		196	242	3	881250949
@@ -71,11 +69,11 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 		166	346	1	886397596
 
 
-3. 将 __u.data__ 文件上载到 HDInsight 群集中的 __example/data/u.data__。如果你安装了 [Azure PowerShell][aps]，则可以使用 [HDInsight-Tools][tools] 模块上载该文件。有关上载文件的其他方法，请参阅[在 HDInsight 中上载 Hadoop 作业的数据][upload]。以下命令使用 `Add-HDInsightFile` 来上载该文件：
+3.  将 __u.data__ 文件上载到 HDInsight 群集中的 __example/data/u.data__。如果你安装了 [Azure PowerShell][aps]，则可以使用 [HDInsight-Tools][tools] 模块上载该文件。有关上载文件的其他方法，请参阅[在 HDInsight 中上载 Hadoop 作业的数据][upload]。以下命令使用 `Add-HDInsightFile` 来上载该文件：
 
-    	PS C:\> Add-HDInsightFile -LocalPath "path\to\u.data" -DestinationPath "example/data/u.data" -ClusterName "your cluster name"
-
-    这样就会将 __u.data__ 文件上载到群集的默认存储中的 __example/data/u.data__。然后，你可以通过使用 __wasb:///example/data/u.data__ URI 从 HDInsight 作业访问此数据。
+        PS C:\> Add-HDInsightFile -LocalPath "path\to\u.data" -DestinationPath "example/data/u.data" -ClusterName "your cluster name"
+    
+    这样就会将 __u.data__ 文件上载到群集的默认存储中的 __example/data/u.data__。然后，你可以通过使用 \_\___wasb:///example/data/u.data__ URI 从 HDInsight 作业访问此数据。
 
 ###运行作业
 
@@ -83,7 +81,6 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 
 	# The HDInsight cluster name.
 	$clusterName = "the cluster name"
-
 	# NOTE: The version number portion of the file path
 	# may change in future versions of HDInsight.
 	# So dynamically grab it using Hive.
@@ -124,15 +121,11 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 	Write-Host "STDERR"
 	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardError
 
-> [AZURE.NOTE]Mahout 作业不删除在处理作业时创建的临时数据。在示例作业中指定 `--tempDir` 参数，以将临时文件隔离到特定路径中轻松删除。
->
-> 若要删除这些文件，你可以使用[在 HDInsight 中为 Hadoop 作业上载数据上载][upload]中所述的工具之一。你也可以使用 [HDInsight-Tools][tools] 模块中的 `Remove-HDInsightFile` 函数。
->
-> 如果你未删除临时文件或输出文件，则在重新运行作业时将会收到错误消息。
+> [AZURE.NOTE] Mahout 作业不删除在处理作业时创建的临时数据。在示例作业中指定 `--tempDir` 参数，以将临时文件隔离到特定目录中。
 
-Mahout 作业不会将输出返回到 STDOUT。相反，会将其作为 __part-r-00000__ 存储在指定的输出目录中。若要下载和查看文件，请使用 [HDInsight-Tools][tools] 模块中的 `Get-HDInsightFile` 函数。
+Mahout 作业不会将输出返回到 STDOUT。而是会将其作为 __part-r-00000__ 存储在指定的输出目录中。该脚本将此文件下载到你工作站上的当前目录中的 __output.txt__ 中。
 
-下面是文件内容的示例：
+下面是此文件内容的示例：
 
 	1	[234:5.0,347:5.0,237:5.0,47:5.0,282:5.0,275:5.0,88:5.0,515:5.0,514:5.0,121:5.0]
 	2	[282:5.0,210:5.0,237:5.0,234:5.0,347:5.0,121:5.0,258:5.0,515:5.0,462:5.0,79:5.0]
@@ -143,7 +136,7 @@ Mahout 作业不会将输出返回到 STDOUT。相反，会将其作为 __part-r
 
 ###查看输出
 
-尽管生成的输出也许能够正常地在应用程序中使用，但它的用户可读性并不太好。以前提取到 __ml-100k__ 文件夹的其他某些文件可用于将 `movieId` 解析为电影名称，这是以下 PowerShell 脚本的行为：
+尽管生成的输出也许能够正常地在应用程序中使用，但它的用户可读性并不太好。以前提取到 __ml-100k__ 文件夹的其他某些文件可用于将 `movieId` 解析为电影名称，这是以下 PowerShell 脚本所执行的操作：
 
 	<#
 	.SYNOPSIS
@@ -227,7 +220,7 @@ Mahout 作业不会将输出返回到 STDOUT。相反，会将其作为 __part-r
 	                        @{Expression={$_.Value};Label="Score"}
 	$recommendations | format-table $recommendationFormat
 
-若要使用此脚本，你以前必须提取 __ml-100k__ 文件夹，还必须拥有由 Mahout 作业生成的 __part-r-00000__ 输出文件的本地副本。下面是运行脚本的示例：
+若要使用此脚本，你必须之前已提取 __ml-100k__ 文件夹。下面是运行脚本的示例：
 
 	PS C:\> show-recommendation.ps1 -userId 4 -userDataFile .\ml-100k\u.data -movieFile .\ml-100k\u.item -recommendationFile .\output.txt
 
@@ -268,11 +261,11 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 ###加载数据
 
-1. 从 [NSL-KDD 数据集](http://nsl.cs.unb.ca/NSL-KDD/)下载以下文件。
+1. 从 [NSL-KDD 数据集](http://www.unb.ca/research/iscx/dataset/iscx-NSL-KDD-dataset.html)下载以下文件。
 
-  * [KDDTrain+.ARFF](http://nsl.cs.unb.ca/NSL-KDD/KDDTrain+.arff)：训练文件
+  * KDDTrain+.ARFF：训练文件
 
-  * [KDDTest+.ARFF](http://nsl.cs.unb.ca/NSL-KDD/KDDTest+.arff)：测试数据
+  * KDDTest+.ARFF：测试数据
 
 2. 打开每个文件，删除顶部以“@”开头的行，然后保存文件。如果未删除这些行，则你在 Mahout 中使用数据时将会收到错误消息。
 
@@ -280,7 +273,7 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 ###运行作业
 
-1. 此作业需要 Hadoop 命令行。为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)中的说明连接到该群集。
+1. 此作业需要 Hadoop 命令行。为 HDInsight 群集启用远程桌面，然后按照[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)中的说明连接到该群集。
 
 3. 建立连接后，使用“Hadoop 命令行”图标打开 Hadoop 命令行：
 
@@ -288,19 +281,19 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 3. 使用以下命令生成文件描述符 (__KDDTrain+.info__)，该描述符使用 Mahout。
 
-		hadoop jar "c:/apps/dist/mahout-0.9.0.2.1.3.0-1887/examples/target/mahout-examples-0.9.0.2.1.3.0-1887-job.jar" org.apache.mahout.classifier.df.tools.Describe -p "wasb:///example/data/KDDTrain+.arff" -f "wasb:///example/data/KDDTrain+.info" -d N 3 C 2 N C 4 N C 8 N 2 C 19 N L
+		hadoop jar "c:/apps/dist/mahout-0.9.0.2.2.7.1-37/examples/target/mahout-examples-0.9.0.2.2.7.1-37-job.jar" org.apache.mahout.classifier.df.tools.Describe -p "wasb:///example/data/KDDTrain+.arff" -f "wasb:///example/data/KDDTrain+.info" -d N 3 C 2 N C 4 N C 8 N 2 C 19 N L
 
 	`N 3 C 2 N C 4 N C 8 N 2 C 19 N L` 描述文件中数据的属性。例如，L 指示标签。
 
 4. 通过使用以下命令生成决策树的林：
 
-		hadoop jar c:/apps/dist/mahout-0.9.0.2.1.3.0-1887/examples/target/mahout-examples-0.9.0.2.1.3.0-1887-job.jar org.apache.mahout.classifier.df.mapreduce.BuildForest -Dmapred.max.split.size=1874231 -d wasb:///example/data/KDDTrain+.arff -ds wasb:///example/data/KDDTrain+.info -sl 5 -p -t 100 -o nsl-forest
+		hadoop jar c:/apps/dist/mahout-0.9.0.2.2.7.1-37/examples/target/mahout-examples-0.9.0.2.2.7.1-37-job.jar org.apache.mahout.classifier.df.mapreduce.BuildForest -Dmapred.max.split.size=1874231 -d wasb:///example/data/KDDTrain+.arff -ds wasb:///example/data/KDDTrain+.info -sl 5 -p -t 100 -o nsl-forest
 
-    此操作的输出存储在 __nsl-forest__ 目录中，该目录位于 HDInsight 群集的存储中的 \_\__wasb://user/&lt;username>/nsl-forest/nsl-forest.seq 处。&lt;用户名> 是你用于远程桌面会话的用户名。此文件对用户不可读。
+    此操作的输出存储在 __nsl-forest__ 目录中，该目录位于 HDInsight 群集的存储中的 __wasb://user/&lt;username>/nsl-forest/nsl-forest.seq__ 处。&lt;用户名> 是你用于远程桌面会话的用户名。此文件对用户不可读。
 
-5. 通过分类 __KDDTest+.arff__ 数据集对林进行测试。请使用以下命令：
+5. 通过为 __KDDTest+.arff__ 数据集分类来测试该林。请使用以下命令：
 
-    	hadoop jar c:/apps/dist/mahout-0.9.0.2.1.3.0-1887/examples/target/mahout-examples-0.9.0.2.1.3.0-1887-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i wasb:///example/data/KDDTest+.arff -ds wasb:///example/data/KDDTrain+.info -m nsl-forest -a -mr -o wasb:///example/data/predictions
+    	hadoop jar c:/apps/dist/mahout-0.9.0.2.2.7.1-37/examples/target/mahout-examples-0.9.0.2.2.7.1-37-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i wasb:///example/data/KDDTest+.arff -ds wasb:///example/data/KDDTrain+.info -m nsl-forest -a -mr -o wasb:///example/data/predictions
 
     此命令返回如下有关分类过程的摘要信息：
 
@@ -330,7 +323,7 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
   此作业还将生成位于 __wasb:///example/data/predictions/KDDTest+.arff.out__ 的文件。但是，此文件对用户不可读。
 
-> [AZURE.NOTE]Mahout 作业不会覆盖文件。如果要再次运行这些作业，则必须删除由以前的作业创建的文件。
+> [AZURE.NOTE] Mahout 作业不会覆盖文件。如果要再次运行这些作业，则必须删除由以前的作业创建的文件。
 
 ##<a name="troubleshooting"></a>故障排除
 
@@ -341,7 +334,6 @@ Mahout 安装在 HDInsight 3.1 群集上，它可以通过使用以下步骤手�
 1. 要使用的 Mahout 版本取决于群集的 HDInsight 版本。你可以通过使用以下 [Azure PowerShell][aps] 命令查找群集版本：
 
     	PS C:\> Get-AzureHDInsightCluster -Name YourClusterName | Select version
-
 
   * __对于 HDInsight 2.1__，可以下载包含 [Mahout 0.9](http://repo2.maven.org/maven2/org/apache/mahout/mahout-core/0.9/mahout-core-0.9-job.jar) 的 Java 存档 (JAR) 文件。
 
@@ -356,6 +348,7 @@ Mahout 安装在 HDInsight 3.1 群集上，它可以通过使用以下步骤手�
 2. 将该 jar 文件上载到群集默认存储的 __example/jars__ 中。以下示例使用 [HDInsight-Tools][tools] 中的 add-hdinsightfile 来上载文件：
 
     	PS C:\> .\Add-HDInsightFile -LocalPath "path\to\mahout-core-0.9-job.jar" -DestinationPath "example/jars/mahout-core-0.9-job.jar" -ClusterName "your cluster name"
+
 
 ###无法覆盖文件
 
@@ -405,7 +398,7 @@ Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些�
 [aps]: /documentation/articles/powershell-install-configure
 [movielens]: http://grouplens.org/datasets/movielens/
 [100k]: http://files.grouplens.org/datasets/movielens/ml-100k.zip
-[getstarted]: /documentation/articles/hdinsight-get-started
+[getstarted]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [upload]: /documentation/articles/hdinsight-upload-data
 [ml]: http://en.wikipedia.org/wiki/Machine_learning
 [forest]: http://en.wikipedia.org/wiki/Random_forest
@@ -416,4 +409,4 @@ Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些�
 [tools]: https://github.com/Blackmist/hdinsight-tools
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0215_2016-->

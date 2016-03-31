@@ -1,5 +1,5 @@
 <properties
-   pageTitle="外围网络示例 – 使用 NSG 构建简单的外围网络 | Windows Azure"
+   pageTitle="外围网络示例 – 使用 NSG 构建简单的外围网络 | Azure"
    description="使用网络安全组 (NSG) 构建外围网络"
    services="virtual-network"
    documentationCenter="na"
@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="09/16/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="02/01/2016"
+	wacn.date="03/28/2016"/>
 
 # 示例 1 – 使用 NSG 构建简单的外围网络
 
-[返回安全边界最佳实践页面][HOME]
+<!-- [返回安全边界最佳实践页面][HOME] -->
 
 本示例将创建一个简单的外围网络，其中包含四个 Windows 服务器和网络安全组。本示例还将演练每个相关命令，让你更加深入地了解每个步骤。另外还提供了“流量方案”部分，让你逐步深入了解流量如何流经外围网络的各个防御层。最后的“参考”部分提供了完整的代码，并说明如何构建此环境来测试和试验各种方案。
 
@@ -40,7 +40,7 @@
 
 **注意**：PowerShell 脚本中提到的区域必须与网络配置 xml 文件中提到的区域相匹配。
 
-成功运行脚本后，可以执行其他可选步骤。“参考”部分中提供了两个脚本，用于设置 Web 服务器和包含简单 Web 应用程序的应用服务器，以便能使用此外围网络配置进行测试。
+成功运行脚本后，可以执行其他可选步骤。“参考”部分中提供了两个脚本，用于设置 Web 服务器和包含简单 Web 应用的应用服务器，以便能使用此外围网络配置进行测试。
 
 以下部分通过演练 PowerShell 脚本的关键代码行，详细说明本示例的网络安全组及其运行方式。
 
@@ -58,7 +58,7 @@
 5.	拒绝从 Internet 到整个 VNet（两个子网）的任何流量（所有端口）
 6.	拒绝从前端子网到后端子网的任何流量（所有端口）
 
-将这些规则绑定到每个子网后，如果有从 Internet 到 Web 服务器的入站 HTTP 请求，将应用规则 3（允许）和规则 5（拒绝），但由于规则 3 具有较高的优先级，因此只应用规则 3 并忽略规则 5。这样就会允许 HTTP 请求传往 Web 服务器。如果相同的流量尝试传往 DNS01 服务器，则会先应用规则 5（拒绝），因此不允许该流量传递到服务器。规则 6（拒绝）阻止前端子网与后端子网对话（规则 1 和 4 允许的流量除外），这可在攻击者入侵前端上的 Web 应用程序时保护后端网络，攻击者只能对后端的“受保护”网络进行有限度的访问（只能访问 AppVM01 服务器上公开的资源）。
+将这些规则绑定到每个子网后，如果有从 Internet 到 Web 服务器的入站 HTTP 请求，将应用规则 3（允许）和规则 5（拒绝），但由于规则 3 具有较高的优先级，因此只应用规则 3 并忽略规则 5。这样就会允许 HTTP 请求传往 Web 服务器。如果相同的流量尝试传往 DNS01 服务器，则会先应用规则 5（拒绝），因此不允许该流量传递到服务器。规则 6（拒绝）阻止前端子网与后端子网对话（规则 1 和 4 允许的流量除外），这可在攻击者入侵前端上的 Web 应用时保护后端网络，攻击者只能对后端的“受保护”网络进行有限度的访问（只能访问 AppVM01 服务器上公开的资源）。
 
 有一个默认出站规则可允许流量外流到 Internet。在此示例中，我们允许出站流量，且未修改任何出站规则。如果两个方向的流量都要锁定，则需要用户定义的路由，下面的“示例 3”将对此进行介绍。
 
@@ -103,7 +103,7 @@
     		-DestinationPortRange '*' `
     		-Protocol *
 
-5.	此规则允许流量从 IIS01 服务器传递到 AppVM01 服务器，后面的规则将阻止其他所有从前端到后端的流量。如果要添加的端口是已知的，则可以改善此规则。例如，如果 IIS 服务器只抵达 AppVM01 上的 SQL Server，并且 Web 应用程序曾遭到入侵，则目标端口范围应该从“*”（任何）更改为 1433（SQL 端口），以缩小 AppVM01 上的入站攻击面。
+5.	此规则允许流量从 IIS01 服务器传递到 AppVM01 服务器，后面的规则将阻止其他所有从前端到后端的流量。如果要添加的端口是已知的，则可以改善此规则。例如，如果 IIS 服务器只抵达 AppVM01 上的 SQL Server，并且 Web 应用曾遭到入侵，则目标端口范围应该从“*”（任何）更改为 1433（SQL 端口），以缩小 AppVM01 上的入站攻击面。
 
 		Get-AzureNetworkSecurityGroup -Name $NSGName | `
 		    Set-AzureNetworkSecurityRule -Name "Enable $VMName[1] to $VMName[2]" `
@@ -224,7 +224,7 @@
 ## 结束语
 这种隔离后端子网与输入流量的方式相当直截了当。
 
-可以在[此处][HOME]找到更多示例和网络安全边界的概述。
+<!-- 可以在[此处][HOME]找到更多示例和网络安全边界的概述。-->
 
 ## 参考
 ### 主脚本和网络配置
@@ -492,13 +492,13 @@
 	        Set-AzureNetworkSecurityGroupToSubnet -Name $NSGName -SubnetName $BESubnet -VirtualNetworkName $VNetName
 	
 	# Optional Post-script Manual Configuration
-	  # Install Test Web App (Run Post-Build Script on the IIS Server)
+	  # Install Test Web 应用(Run Post-Build Script on the IIS Server)
 	  # Install Backend resource (Run Post-Build Script on the AppVM01)
 	  Write-Host
 	  Write-Host "Build Complete!" -ForegroundColor Green
 	  Write-Host
 	  Write-Host "Optional Post-script Manual Configuration Steps" -ForegroundColor Gray
-	  Write-Host " - Install Test Web App (Run Post-Build Script on the IIS Server)" -ForegroundColor Gray
+	  Write-Host " - Install Test Web 应用(Run Post-Build Script on the IIS Server)" -ForegroundColor Gray
 	  Write-Host " - Install Backend resource (Run Post-Build Script on the AppVM01)" -ForegroundColor Gray
 	  Write-Host
 	  

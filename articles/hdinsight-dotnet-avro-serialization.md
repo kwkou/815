@@ -1,63 +1,66 @@
-<properties 
-	pageTitle="使用 Microsoft Avro Library 序列化数据 | Azure" 
-	description="了解 Azure HDInsight 如何使用 Avro 来序列化大数据。" 
-	services="hdinsight" 
-	documentationCenter="" 
-	authors="bradsev" 
-	manager="paulettm" 
+<properties
+	pageTitle="使用 Microsoft Avro Library 序列化数据 | Azure"
+	description="了解 Azure HDInsight 如何使用 Avro 来序列化大数据。"
+	services="hdinsight"
+	documentationCenter=""
+	tags="azure-portal"
+	authors="mumian" 
+	manager="paulettm"
 	editor="cgronlun"/>
 
 <tags
-    	ms.service="hdinsight"
-	ms.date="07/09/2015" 
-	wacn.date="08/14/2015"/>
+	ms.service="hdinsight"
+	ms.date="02/04/2015"
+	wacn.date="03/17/2016"/>
 
 
 # 使用 Microsoft Avro Library 序列化 Hadoop 中的数据
 
 本主题演示如何使用 <a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library" target="_blank">Microsoft Avro Library</a> 将对象及其他数据结构序列化为流，以便将它们持久保存到内存、数据库或文件中，同时还演示如何对这些流进行反序列化以恢复原始对象。
 
+[AZURE.INCLUDE [仅适用于 Windows](../includes/hdinsight-windows-only.md)]
 
 ##<a name="apacheAvro"></a>Apache Avro
 <a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library" target="_blank">Microsoft Avro Library</a> 针对 Microsoft.NET 环境实现了 Apache Avro 数据序列化系统。Apache Avro 为序列化提供了一种紧凑的二进制数据交换格式。它使用 <a href="http://www.json.org" target="_blank">JSON</a> 定义与语言无关的架构，以支持语言互操作性。以一种语言序列化的数据可以用另一种语言读取。目前支持 C、C++、C#、Java、PHP、Python 和 Ruby。有关格式的详细信息可以在 <a href="http://avro.apache.org/docs/current/spec.html" target="_blank">Apache Avro 规范</a>中找到。请注意，Microsoft Avro Library 的当前版本不支持此规范的远程过程调用 (RPC) 部分。
 
 Avro 系统中的对象的序列化表示形式由两部分组成：架构和实际值。Avro 架构使用 JSON 描述已序列化数据的与语言无关的数据模型。它与数据的二进制表示形式并排显示。将架构与二进制表示形式分离，使写入每个对象时没有针对值的开销，从而实现快速序列化和较小的表示形式。
 
-##<a name="hadoopScenario"></a>Hadoop 应用场景 
-Apache Avro 序列化格式广泛应用于 Azure HDInsight 及其他 Apache Hadoop 环境中。Avro 提供了简便的方法来表示 Hadoop MapReduce 作业内的复杂数据结构。Avro 文件（Avro 对象容器文件）格式已设计为支持分布式 MapReduce 编程模型。实现分布的关键是文件必须是“可拆分的”，也就是说，用户可以在文件中随机设置一个点，然后即可从某一特定块开始读取。
- 
+##<a name="hadoopScenario"></a>Hadoop 应用场景
+Apache Avro 序列化格式广泛应用于 Azure HDInsight 及其他 Apache Hadoop 环境中。Avro 提供了简便的方法来表示 Hadoop MapReduce 作业内的复杂数据结构。Avro 文件（Avro 对象容器文件）格式已设计为支持分布式 MapReduce 编程模型。实现分布的关键功能是文件是“可拆分的”，也就是说，用户可以在文件中搜寻任一点，然后即可从某一特定块开始读取。
+
 ##<a name="serializationMAL"></a>Microsoft Avro Library 中的序列化
 .NET Library for Avro 支持通过两种方式序列化对象：
 
-- **反射** - 自动从要序列化的 .NET 类型的数据协定特性生成这些类型的 JSON 架构。 
-- **通用记录** - 当没有 .NET 类型可以用来描述要序列化的数据的架构时，系统会在以 [**AvroRecord**](http://msdn.microsoft.com/zh-cn/library/microsoft.hadoop.avro.avrorecord.aspx) 类表示的记录中显式指定 JSON 架构。 
+- **反射** - 自动从要序列化的 .NET 类型的数据协定特性生成这些类型的 JSON 架构。
+- **通用记录** - 当没有 .NET 类型可以用来描述要序列化的数据的架构时，系统会在以 [**AvroRecord**](http://msdn.microsoft.com/zh-cn/library/microsoft.hadoop.avro.avrorecord.aspx) 类表示的记录中显式指定 JSON 架构。
 
 当流的写入器和读取器都知道数据架构时，可以发送没有架构的数据。在未使用 Avro 对象容器文件的情况下，架构将存储在文件中。可以指定其他参数，例如用于数据压缩的编解码器。这些情况将在下面的代码示例中进一步详述和说明。
 
 
-##<a name="prerequisites"></a>Microsoft Avro Library 必备组件
+##<a name="prerequisites"></a> 安装 Avro Library
 
-- <a href="http://www.microsoft.com/zh-cn/download/details.aspx?id=17851" target="_blank">Microsoft .NET Framework 4</a>
-- <a href="http://james.newtonking.com/json" target="_blank">Newtonsoft Json.NET</a>（6.0.4 或更高版本） 
+以下是安装此库之前所需具备的先决条件：
+
+- <a href="http://www.microsoft.com/download/details.aspx?id=17851" target="_blank">Microsoft .NET Framework 4</a>
+- <a href="http://james.newtonking.com/json" target="_blank">Newtonsoft Json.NET</a>（6.0.4 或更高版本）
 
 请注意，Newtonsoft.Json.dll 依赖项已随着 Microsoft Avro Library 的安装自动下载。下一部分将提供此操作的相关过程。
 
-##<a name="installation"></a>Microsoft Avro Library 安装
+
 Microsoft Avro Library 以 NuGet 包发行，你可以使用以下过程在 Visual Studio 中安装 NuGet 程序包：
 
 1. 选择“项目”选项卡->“管理 NuGet 包...”
 2. 在“联机搜索”框中，搜索“Microsoft.Hadoop.Avro”。
-3. 单击“Windows Azure HDInsight Avro Library”旁边的“安装”按钮。 
+3. 单击“Azure HDInsight Avro Library”旁边的“安装”按钮。
 
 请注意，Newtonsoft.Json.dll (>= 6.0.4) 依赖项也将随 Microsoft Avro Library 一起自动下载。
 
 你可能需要浏览 <a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library" target="_blank">Microsoft Avro Library 主页</a>以阅读最新的发行说明。
- 
-##<a name="sourceCode"></a>Microsoft Avro Library 源代码
+
 
 <a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library" target="_blank">Microsoft Avro Library 主页</a>中提供了 Microsoft Avro Library 源代码。
 
-##<a name="compiling"></a>使用 Microsoft Avro Library 编译架构 
+##<a name="compiling"></a>使用 Avro Library 编译架构
 
 Microsoft Avro Library 包含代码生成实用工具，可让你自动根据先前定义的 JSON 架构来创建 C# 类型。代码生成实用工具不是以二进制可执行文件的形式分发的，但你可使用以下过程轻松生成：
 
@@ -84,18 +87,18 @@ Microsoft Avro Library 包含代码生成实用工具，可让你自动根据先
 
     Microsoft.Hadoop.Avro.Tools codegen /i:C:\SDK\src\Microsoft.Hadoop.Avro.Tools\SampleJSON\SampleJSONSchema.avsc /o:. /nf:my.own.nspace
 
-##<a name="samples"></a>Microsoft Avro Library 示例指南
+##<a name="samples"></a> 示例
 本主题中提供的六个示例演示了 Microsoft Avro Library 所支持的不同方案。Microsoft Avro Library 设计为可处理任何流。在这些示例中，为保持简单性和一致性，是使用内存流（而不是文件流或数据库）来操作数据的。在生产环境中所采取的方法将取决于实际的方案要求、数据源和卷、性能限制及其他因素。
 
 前两个示例显示如何使用反射和通用记录将数据序列化到内存流缓冲区，以及如何进行反序列化。这两个方案假设在读取器和写入器之间共享架构。
 
 第三和第四个示例说明如何使用 Avro 对象容器文件，将数据序列化与反序列化。当数据存储在 Avro 容器文件中时，其架构始终随之一起存储，因为必须共享架构才能进行反序列化。
 
-包含前四个示例的样例可以从 <a href="http://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-86055923" target="_blank">Azure 代码示例</a>站点下载。
+包含前四个示例的样例可以从 <a href="https://github.com/Azure-Samples" target="_blank">Azure 代码示例</a>站点下载。
 
-第五个示例演示如何将自定义压缩编解码器用于 Avro 对象容器文件。包含此示例代码的样例可以从 <a href="http://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-67159111" target="_blank">Azure 代码示例</a>站点下载。
+第五个示例演示如何将自定义压缩编解码器用于 Avro 对象容器文件。包含此示例代码的样例可以从 <a href="https://github.com/Azure-Samples" target="_blank">Azure 代码示例</a>站点下载。
 
-第六个示例显示如何使用 Avro 序列化来上载数据到 Azure Blob 存储，然后使用具有 HDInsight (Hadoop) 群集的 Hive 加以分析。可以从 <a href="https://code.msdn.microsoft.com/windowsazure/Using-Avro-to-upload-data-ae81b1e3" target="_blank">Azure 代码示例</a>站点下载该示例。
+第六个示例显示如何使用 Avro 序列化来上载数据到 Azure Blob 存储，然后使用具有 HDInsight (Hadoop) 群集的 Hive 加以分析。可以从 <a href="https://github.com/Azure-Samples" target="_blank">Azure 代码示例</a>站点下载该示例。
 
 以下是本主题所讨论的六个示例的链接：
 
@@ -104,10 +107,10 @@ Microsoft Avro Library 包含代码生成实用工具，可让你自动根据先
  * <a href="#Scenario3">**使用对象容器文件与反射进行序列化**</a> - JSON 架构自动生成并使用 Avro 对象容器文件随着序列化的数据共享。
  * <a href="#Scenario4">**使用对象容器文件与通用记录进行序列化**</a> - JSON 架构是在序列化前显式指定的，并使用 Avro 对象容器文件随着序列化的数据共享。
  * <a href="#Scenario5">**使用对象容器文件和自定义压缩编解码器进行序列化**</a> - 该示例演示如何使用 Deflate 数据压缩编解码器的自定义 .NET 实现，来创建 Avro 对象容器文件。
- * <a href="#Scenario6">**使用 Avro 来上载 Windows Azure HDInsight 服务的数据**</a> - 该示例演示 Avro 序列化如何与 HDInsight 服务交互。要运行此示例，你必须具备有效的 Azure 订阅并且可以访问 Windows Azure HDInsight 群集。
+ * <a href="#Scenario6">**使用 Avro 来上载 Azure HDInsight 服务的数据**</a> - 该示例演示 Avro 序列化如何与 HDInsight 服务交互。要运行此示例，你必须具备有效的 Azure 订阅并且可以访问 Azure HDInsight 群集。
 
 ###<a name="Scenario1"></a>示例 1：通过反射进行序列化
- 
+
 Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据协定特性自动生成类型的 JSON 架构。Microsoft Avro Library 将创建一个 [**IAvroSeralizer<T>**](http://msdn.microsoft.com/zh-cn/library/dn627341.aspx) 以标识要序列化的字段。
 
 在此示例中，将对象（具有成员 **Location** 结构的 **SensorData** 类）序列化到内存流，继而又将此流反序列化。然后，将结果与初始实例进行比较，以确认恢复的 **SensorData** 对象与原始对象相同。
@@ -166,7 +169,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
                 //Create a memory stream buffer
                 using (var buffer = new MemoryStream())
                 {
-                    //Create a data set by using sample class and struct 
+                    //Create a data set by using sample class and struct
                     var expected = new SensorData { Value = new byte[] { 1, 2, 3, 4, 5 }, Position = new Location { Room = 243, Floor = 1 } };
 
                     //Serialize the data to the specified stream
@@ -221,7 +224,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
             }
         }
     }
-    // The example is expected to display the following output: 
+    // The example is expected to display the following output:
     // SERIALIZATION USING REFLECTION
     //
     // Serializing Sample Data Set...
@@ -272,8 +275,8 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
                                 ""name"":""Microsoft.Hadoop.Avro.Specifications.SensorData"",
                                 ""fields"":
                                     [
-                                        { 
-                                            ""name"":""Location"", 
+                                        {
+                                            ""name"":""Location"",
                                             ""type"":
                                                 {
                                                     ""type"":""record"",
@@ -345,7 +348,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
         }
     }
 	}
-    // The example is expected to display the following output: 
+    // The example is expected to display the following output:
     // SERIALIZATION USING GENERIC RECORD
     //
     // Defining the Schema and creating Sample Data Set...
@@ -513,14 +516,14 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("The following exception was thrown during creation and writing to the file \"{0}\"", path);
+                        Console.WriteLine("The following exception was thrown during creation and writing to the file "{0}"", path);
                         Console.WriteLine(e.Message);
                         return false;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Can not create file \"{0}\". File already exists", path);
+                    Console.WriteLine("Can not create file "{0}". File already exists", path);
                     return false;
 
                 }
@@ -539,7 +542,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("The following exception was thrown during reading from the file \"{0}\"", path);
+                    Console.WriteLine("The following exception was thrown during reading from the file "{0}"", path);
                     Console.WriteLine(e.Message);
                     return false;
                 }
@@ -556,13 +559,13 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("The following exception was thrown during deleting the file \"{0}\"", path);
+                        Console.WriteLine("The following exception was thrown during deleting the file "{0}"", path);
                         Console.WriteLine(e.Message);
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Can not delete file \"{0}\". File does not exist", path);
+                    Console.WriteLine("Can not delete file "{0}". File does not exist", path);
                 }
             }
 
@@ -596,7 +599,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
     // For Pair 2 result of Data Set Identity Comparison is True
     // ----------------------------------------
     // Press any key to exit.
-  
+
 
 ###<a name="Scenario4"></a>示例 4：使用对象容器文件进行序列化与使用通用记录进行序列化
 
@@ -640,8 +643,8 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
                                 ""name"":""Microsoft.Hadoop.Avro.Specifications.SensorData"",
                                 ""fields"":
                                     [
-                                        { 
-                                            ""name"":""Location"", 
+                                        {
+                                            ""name"":""Location"",
                                             ""type"":
                                                 {
                                                     ""type"":""record"",
@@ -774,14 +777,14 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("The following exception was thrown during creation and writing to the file \"{0}\"", path);
+                        Console.WriteLine("The following exception was thrown during creation and writing to the file "{0}"", path);
                         Console.WriteLine(e.Message);
                         return false;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Can not create file \"{0}\". File already exists", path);
+                    Console.WriteLine("Can not create file "{0}". File already exists", path);
                     return false;
 
                 }
@@ -800,7 +803,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("The following exception was thrown during reading from the file \"{0}\"", path);
+                    Console.WriteLine("The following exception was thrown during reading from the file "{0}"", path);
                     Console.WriteLine(e.Message);
                     return false;
                 }
@@ -817,13 +820,13 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("The following exception was thrown during deleting the file \"{0}\"", path);
+                        Console.WriteLine("The following exception was thrown during deleting the file "{0}"", path);
                         Console.WriteLine(e.Message);
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Can not delete file \"{0}\". File does not exist", path);
+                    Console.WriteLine("Can not delete file "{0}". File does not exist", path);
                 }
             }
 
@@ -864,12 +867,12 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
 
 ###<a name="Scenario5"></a>示例 5：使用对象容器文件通过自定义压缩编解码器进行序列化
 
-第五个示例演示如何将自定义压缩编解码器用于 Avro 对象容器文件。包含此示例代码的样例可以从 [Azure 代码示例](http://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-67159111)站点下载。
+第五个示例演示如何将自定义压缩编解码器用于 Avro 对象容器文件。包含此示例代码的样例可以从 [Azure 代码示例](https://github.com/Azure-Samples)站点下载。
 
 [Avro 规范](http://avro.apache.org/docs/current/spec.html#Required+Codecs)允许使用可选的压缩编解码器（除了 **Null** 和 **Deflate** 默认压缩编解码器外）。此示例未完全实现类似 Snappy（在 [Avro 规范](http://avro.apache.org/docs/current/spec.html#snappy)中作为支持的可选编解码器提及）的新编解码器。它演示如何使用 [**Deflate**][deflate-110] 编解码器的 .NET Framework 4.5 实现，后者基于 [zlib](http://zlib.net/) 压缩库提供比默认的 .NET Framework 4.0 版本更好的压缩算法。
 
 
-    // 
+    //
     // This code needs to be compiled with the parameter Target Framework set as ".NET Framework 4.5"
     // to ensure the desired implementation of the Deflate compression algorithm is used.
     // Ensure your C# project is set up accordingly.
@@ -912,17 +915,17 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
         #endregion
 
         #region Defining custom codec based on .NET Framework V.4.5 Deflate
-        //Avro.NET codec class contains two methods, 
+        //Avro.NET codec class contains two methods,
         //GetCompressedStreamOver(Stream uncompressed) and GetDecompressedStreamOver(Stream compressed),
         //which are the key ones for data compression.
         //To enable a custom codec, one needs to implement these methods for the required codec.
 
         #region Defining Compression and Decompression Streams
         //DeflateStream (class from System.IO.Compression namespace that implements Deflate algorithm)
-        //can not be directly used for Avro because it does not support vital operations like Seek.
+        //cannot be directly used for Avro because it does not support vital operations like Seek.
         //Thus one needs to implement two classes inherited from stream
         //(one for compressed and one for decompressed stream)
-        //that use Deflate compression and implement all required features. 
+        //that use Deflate compression and implement all required features.
         internal sealed class CompressionStreamDeflate45 : Stream
         {
             private readonly Stream buffer;
@@ -1124,7 +1127,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
 
         #region Define modified Codec Factory
         //Define modified codec factory to be used in the reader.
-        //It will catch the attempt to use "Deflate" and provide  a custom codec. 
+        //It will catch the attempt to use "Deflate" and provide  a custom codec.
         //For all other cases, it will rely on the base class (CodecFactory).
         internal sealed class CodecFactoryDeflate45 : CodecFactory
         {
@@ -1275,14 +1278,14 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("The following exception was thrown during creation and writing to the file \"{0}\"", path);
+                        Console.WriteLine("The following exception was thrown during creation and writing to the file "{0}"", path);
                         Console.WriteLine(e.Message);
                         return false;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Can not create file \"{0}\". File already exists", path);
+                    Console.WriteLine("Can not create file "{0}". File already exists", path);
                     return false;
 
                 }
@@ -1301,7 +1304,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("The following exception was thrown during reading from the file \"{0}\"", path);
+                    Console.WriteLine("The following exception was thrown during reading from the file "{0}"", path);
                     Console.WriteLine(e.Message);
                     return false;
                 }
@@ -1318,13 +1321,13 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("The following exception was thrown during deleting the file \"{0}\"", path);
+                        Console.WriteLine("The following exception was thrown during deleting the file "{0}"", path);
                         Console.WriteLine(e.Message);
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Can not delete file \"{0}\". File does not exist", path);
+                    Console.WriteLine("Can not delete file "{0}". File does not exist", path);
                 }
             }
             #endregion
@@ -1360,9 +1363,9 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
     // ----------------------------------------
     // Press any key to exit.
 
-###<a name="Scenario6"></a>示例 6：使用 Avro 上载 Windows Azure HDInsight 服务的数据
+###<a name="Scenario6"></a>示例 6：使用 Avro 上载 Azure HDInsight 服务的数据
 
-第六个示例演示与 Windows Azure HDInsight 服务交互相关的一些编程技巧。包含此示例代码的样例可以从 [Azure 代码示例](https://code.msdn.microsoft.com/windowsazure/Using-Avro-to-upload-data-ae81b1e3)站点下载。
+第六个示例演示与 Azure HDInsight 服务交互相关的一些编程技巧。包含此示例代码的样例可以从 [Azure 代码示例](https://github.com/Azure-Samples)站点下载。
 
 该示例将执行以下操作：
 
@@ -1375,17 +1378,18 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
 
 该示例要求满足以下先决条件：
 
-* 有效的 Windows Azure 订阅及其订阅 ID。
+* 有效的 Azure 订阅及其订阅 ID。
 * 包含相应私钥的订阅管理证书。该证书应安装在用于运行示例的计算机上的当前用户私用存储中。
 * 活动的 HDInsight 群集。
 * 在先前的必要条件中链接到 HDInsight 群集的 Azure 存储帐户，以及相应的主要或辅助访问密钥。
 
 运行示例之前，必要条件中的所有信息均应输入到示例配置文件中。要运行此操作有两个可行的方式：
 
-* 编辑示例根目录中的 app.config 文件，然后生成示例，或 
-* 先生成示例，然后在生成目录中编辑 AvroHDISample.exe.config 
+* 编辑示例根目录中的 app.config 文件，然后生成示例，或
+* 先生成示例，然后在生成目录中编辑 AvroHDISample.exe.config
 
-在这两个情况下，所有编辑均应该在 **<appSettings>** 设置节中完成。请遵循文件中的注释。执行以下命令从命令行运行该示例（其中，包含该示例的 .zip 文件假设已解压缩到 C:\\AvroHDISample；如果不是，请使用相关的文件路径）：
+在这两个情况下，所有编辑均应该在 **<appSettings>** 设置节中完成。请遵循文件中的注释。
+执行以下命令从命令行运行该示例（其中，包含该示例的 .zip 文件假设已解压缩到 C:\\AvroHDISample；如果不是，请使用相关的文件路径）：
 
     AvroHDISample run C:\AvroHDISample\Data
 
@@ -1393,10 +1397,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
 
     AvroHDISample clean
 
-
-
-
 [deflate-100]: http://msdn.microsoft.com/zh-cn/library/system.io.compression.deflatestream(v=vs.100).aspx
 [deflate-110]: http://msdn.microsoft.com/zh-cn/library/system.io.compression.deflatestream(v=vs.110).aspx
 
-<!---HONumber=66-->
+<!---HONumber=Mooncake_0307_2016-->

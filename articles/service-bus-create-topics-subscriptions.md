@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="创建使用服务总线主题和订阅的应用程序 | Windows Azure"
+   pageTitle="创建使用服务总线主题和订阅的应用程序 | Azure"
    description="服务总线主题和订阅提供的发布-订阅功能简介。"
    services="service-bus"
    documentationCenter="na"
@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-   ms.date="09/16/2015"
-   wacn.date="10/22/2015" />
+   ms.date="12/28/2015"
+   wacn.date="02/26/2016" />
 
 # 创建使用服务总线主题和订阅的应用程序
 
@@ -144,6 +144,6 @@ namespaceManager.CreateSubscription("DataCollectionTopic", "Dashboard", dashboar
 
 ## 后续步骤
 
-请参阅[创建使用服务总线主题和订阅的应用程序](/documentation/articles/service-bus-create-topics-subscriptions)，以了解在 POS 零售方案中如何使用队列。
+请参阅[创建使用服务总线队列的应用程序](/documentation/articles/service-bus-create-queues)，以了解有关如何在 POS 零售方案中使用队列的信息。
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0215_2016-->

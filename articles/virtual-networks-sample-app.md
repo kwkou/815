@@ -1,6 +1,6 @@
 <properties
-   pageTitle="与安全边界环境配合使用的示例应用程序 | Windows Azure"
-   description="创建外围网络以测试流量传送方案后，请部署这个简单的 Web 应用程序"
+   pageTitle="与安全边界环境配合使用的示例应用程序 | Azure"
+   description="创建外围网络以测试流量传送方案后，请部署这个简单的 Web 应用"
    services="virtual-network"
    documentationCenter="na"
    authors="tracsman"
@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="09/16/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="02/01/2016"
+	wacn.date="03/28/2016"/>
 
 # 与安全边界环境配合使用的示例应用程序
 
-[返回安全边界最佳实践页面][HOME]
+<!-- [返回安全边界最佳实践页面][HOME] -->
 
-这些 PowerShell 脚本可以在 IIS01 和 AppVM01 服务器本地上运行，以安装和设置一个极简单的 Web 应用程序，显示来自前端 IIS01 服务器的 html 网页和来自后端 AppVM01 服务器的内容。
+这些 PowerShell 脚本可以在 IIS01 和 AppVM01 服务器本地上运行，以安装和设置一个极简单的 Web 应用，显示来自前端 IIS01 服务器的 html 网页和来自后端 AppVM01 服务器的内容。
 
 此应用程序提供简单的测试环境，可测试许多外围网络示例，以及终结点、NSG、UDR 及防火墙规则的更改如何影响流量。
 
@@ -29,7 +29,7 @@
 
 **注意：**如果你使用以下脚本，添加的这个防火墙规则是第一个语句。
 
-## IIS01 - Web 应用程序安装脚本
+## IIS01 - Web 应用安装脚本
 此脚本将：
 
 1.	在本地服务器 Windows 防火墙打开 IMCPv4 (Ping) 以方便测试
@@ -131,7 +131,7 @@
 		Restart-Service -Name W3SVC
 		
 		Write-Host
-		Write-Host "Web App Creation Successfull!" -ForegroundColor Green
+		Write-Host " Web App Creation Successfull!" -ForegroundColor Green
 		Write-Host
 
 

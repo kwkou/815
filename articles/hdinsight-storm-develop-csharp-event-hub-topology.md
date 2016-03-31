@@ -8,13 +8,13 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.date="09/02/2015"
-   wacn.date="11/02/2015"/>
+	ms.service="hdinsight"
+	ms.date="01/28/2016"
+	wacn.date="03/28/2016"/>
 
 # 使用 Storm on HDInsight 从 Azure 事件中心处理事件 (C#)
 
-Azure 事件中心可让你处理网站、应用程序和设备中的大量数据。借助事件中心 Spout，你可以轻松使用 Apache Storm on HDInsight 实时分析这些数据。你还可以使用事件中心 Bolt 从 Storm 向事件中心写入数据。
+Azure 事件中心可让你处理 Web 应用、应用程序和设备中的大量数据。借助事件中心 Spout，你可以轻松使用 Apache Storm on HDInsight 实时分析这些数据。你还可以使用事件中心 Bolt 从 Storm 向事件中心写入数据。
 
 在本教程中，你将学习如何使用 HDInsight Tools for Visual Studio 和事件中心 Spout 和 Bolt 创建两个混合 C#/Java 拓扑：
 
@@ -22,17 +22,17 @@ Azure 事件中心可让你处理网站、应用程序和设备中的大量数�
 
 * **EventHubReader**：从事件中心读取数据，并将其存储在 Azure 表存储中
 
-##先决条件
+## 先决条件
 
-* 一个 <a href="/documentation/articles/hdinsight-storm-getting-started/" target="_blank">Apache Storm on HDInsight 群集</a>
+* 一个 [Apache Storm on HDInsight 群集](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
 
-* 一个 <a href="/documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted/" target="_blank">Azure 事件中心</a>
+* 一个 [Azure 事件中心](/documentation/articles/event-hubs-csharp-ephcs-getstarted)
 
-* <a href="/downloads" target="_blank">Azure .NET SDK</a>
+* [Azure .NET SDK](/downloads/)
 
-* <a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/" target="_blank">HDInsight Tools for Visual Studio</a>（2/17/2015 或更高版本）
+* [HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)
 
-##已完成的项目
+## 已完成的项目
 
 你可以从 GitHub 下载本教程中所创建的项目的完整版本：[eventhub-storm-hybrid](https://github.com/Blackmist/eventhub-storm-hybrid)。不过，你仍然必须根据本教程中的步骤提供配置设置。
 
@@ -60,11 +60,11 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 		git clone https://github.com/hdinsight/hdinsight-storm-examples
 
-##配置事件中心
+## 配置事件中心
 
 事件中心是此示例的数据源。按照下列步骤创建一个新的事件中心。
 
-1. 在 [Azure 门户](https://manage.windowsazure.cn)中，选择“新建”>“服务总线”>“事件中心”>“自定义创建”。
+1. 在 [Azure 管理门户](https://manage.windowsazure.cn)中，选择“新建”>“服务总线”>“事件中心”>“自定义创建”。
 
 2. 在“添加新事件中心”屏幕中，输入“事件中心名称”，选择要在其中创建中心的“区域”，然后创建新的命名空间或选择现有的命名空间。单击**箭头**继续。
 
@@ -81,10 +81,12 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 4. 选择“配置”，然后使用以下信息创建两个新的访问策略。
 
 	<table>
-<tr><th>Name</th><th>权限</th></tr>
-<tr><td>写入器</td><td>发送</td></tr>
-<tr><td>读取器</td><td>侦听</td></tr>
-</table>创建权限后，在页面底部选择“保存”图标。这将会创建共享访问策略，用于对此事件中心进行发送 (writer) 和侦听 (reader)。
+	<tr><th>Name</th><th>权限</th></tr>
+	<tr><td>写入器</td><td>发送</td></tr>
+	<tr><td>读取器</td><td>侦听</td></tr>
+	</table>
+
+创建权限后，在页面底部选择“保存”图标。这将会创建共享访问策略，用于对此事件中心进行发送 (writer) 和侦听 (reader)。
 
 	![策略](./media/hdinsight-storm-develop-csharp-event-hub-topology/policy.png)
 
@@ -94,7 +96,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 表存储用于保存从事件中心读取的值，你可以轻松地在 Visual Studio 中通过“服务器资源管理器”查看表存储。使用以下步骤创建新的表存储：
 
-1. 在 [Azure 门户](https://manage.windowsazure.cn)中，选择“新建”>“数据服务”>“存储”>“快速创建”。
+1. 在 [Azure 管理门户](https://manage.windowsazure.cn)中，选择“新建”>“数据服务”>“存储”>“快速创建”。
 
 	![快速创建存储](./media/hdinsight-storm-develop-csharp-event-hub-topology/storagecreate.png)
 
@@ -110,7 +112,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 在本部分中，你将要使用事件中心 Bolt 创建向事件中心写入数据的拓扑。
 
-1. 如果你尚未安装最新版本的 HDInsight Tools for Visual Studio，请参阅<a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/" target="_blank">开始使用 HDInsight Tools for Visual Studio</a>。
+1. 如果你尚未安装最新版本的 HDInsight Tools for Visual Studio，请参阅<a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started" target="_blank">开始使用 HDInsight Tools for Visual Studio</a>。
 
 2. 打开 Visual Studio，选择“文件”>“新建”>“项目”。
 
@@ -126,7 +128,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 	* **Bolt.cs**：示例 Bolt。稍后需要删除此文件，因为你要使用事件中心 Bolt 向事件中心写入数据
 
-###配置
+### 配置
 
 1. 在“解决方案资源管理器”中，右键单击“EventHubWriter”，然后选择“属性”。
 
@@ -135,17 +137,17 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 3. 输入以下设置。在“值”列中使用前面创建的事件中心的信息。
 
 	<table>
-<tr><th style="text-align:left">Name</th><th style="text-align:left">类型</th><th style="text-align:left">范围</th></tr>
-<tr><td style="text-align:left">EventHubPolicyName</td><td style="text-align:left">字符串</td><td style="text-align:left">应用程序</td></tr>
-<tr><td style="text-align:left">EventHubPolicyKey</td><td style="text-align:left">字符串</td><td style="text-align:left">应用程序</td></tr>
-<tr><td style="text-align:left">EventHubNamespace</td><td style="text-align:left">字符串</td><td style="text-align:left">应用程序</td></tr>
-<tr><td style="text-align:left">EventHubName</td><td style="text-align:left">字符串</td><td style="text-align:left">应用程序</td></tr>
-<tr><td style="text-align:left">EventHubPartitionCount</td><td style="text-align:left">int</td><td style="text-align:left">应用程序</td></tr>
-</table>
+	<tr><th style="text-align:left">Name</th><th style="text-align:left">类型</th><th style="text-align:left">范围</th></tr>
+	<tr><td style="text-align:left">EventHubPolicyName</td><td style="text-align:left">字符串</td><td style="text-align:left">应用程序</td></tr>
+	<tr><td style="text-align:left">EventHubPolicyKey</td><td style="text-align:left">字符串</td><td style="text-align:left">应用程序</td></tr>
+	<tr><td style="text-align:left">EventHubNamespace</td><td style="text-align:left">字符串</td><td style="text-align:left">应用程序</td></tr>
+	<tr><td style="text-align:left">EventHubName</td><td style="text-align:left">字符串</td><td style="text-align:left">应用程序</td></tr>
+	<tr><td style="text-align:left">EventHubPartitionCount</td><td style="text-align:left">int</td><td style="text-align:left">应用程序</td></tr>
+	</table>
 
 4. 保存并关闭“属性”页。
 
-###定义拓扑
+### 定义拓扑
 
 1. 在“解决方案资源管理器”中，右键单击“Bolt.cs”并选择“删除”。由于你使用的是 Java 事件中心 Bolt，因此不需要此文件。
 
@@ -181,7 +183,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
             DeclareCustomizedJavaDeserializer(javaDeserializerInfo);
 
 	这将会创建一个 Spout，并使用事件中心分区计数作为此组件的并行度提示。这还应该为每个分区创建 Spout 的实例。
-	
+
 	这还会将前面创建的反序列化程序与此组件的输出流相关联。这样，下游 EventHubSpout 组件便可以使用 C# Spout 生成的数据。
 
 5. 紧接在上述代码的后面添加以下代码：
@@ -194,7 +196,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
             Properties.Settings.Default.EventHubPolicyKey,
             Properties.Settings.Default.EventHubNamespace,
             "servicebus.chinacloudapi.cn", //suffix for servicebus fqdn
-            Properties.Settings.Default.EventHubName, 
+            Properties.Settings.Default.EventHubName,
 			"true"));
 
 	这将为 Java Bolt 创建一个新的构造函数，在运行时，将使用此构造函数配置 Bolt 的新实例。在这种情况下，你将要通过 <a href="http://storm.apache.org/documentation/Clojure-DSL.html" target="_blank">Apache Storm Clojure DSL</a> 使用前面添加的事件中心配置信息来配置 Spout。更具体地说，HDInsight 在运行时将使用此代码执行以下操作：
@@ -290,15 +292,17 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 3. 输入以下设置。在“值”列中使用前面创建的事件中心和存储帐户的信息。
 
 	<table>
-<tr><th style="text-align:left">Name</th><th style="text-align:left">类型</th><th style="text-align:left">范围</th></tr>
-<tr><th style="text-align:left">EventHubPolicyName</th><th style="text-align:left">字符串</th><th style="text-align:left">应用程序</th></tr>
-<tr><th style="text-align:left">EventHubPolicyKey</th><th style="text-align:left">字符串</th><th style="text-align:left">应用程序</th></tr>
-<tr><th style="text-align:left">EventHubNamespace</th><th style="text-align:left">字符串</th><th style="text-align:left">应用程序</th></tr>
-<tr><th style="text-align:left">EventHubName</th><th style="text-align:left">字符串</th><th style="text-align:left">应用程序</th></tr>
-<tr><th style="text-align:left">EventHubPartitionCount</th><th style="text-align:left">int</th><th style="text-align:left">应用程序</th></tr>
-<tr><th style="text-align:left">StorageConnection</th><th style="text-align:left">（连接字符串）</th><th style="text-align:left">应用程序</th></tr>
-<tr><th style="text-align:left">TableName</th><th style="text-align:left">字符串</th><th style="text-align:left">应用程序</th></tr>
-</table>对于 **TableName**，请输入要在其中存储事件的表的名称。
+	<tr><th style="text-align:left">Name</th><th style="text-align:left">类型</th><th style="text-align:left">范围</th></tr>
+	<tr><th style="text-align:left">EventHubPolicyName</th><th style="text-align:left">字符串</th><th style="text-align:left">应用程序</th></tr>
+	<tr><th style="text-align:left">EventHubPolicyKey</th><th style="text-align:left">字符串</th><th style="text-align:left">应用程序</th></tr>
+	<tr><th style="text-align:left">EventHubNamespace</th><th style="text-align:left">字符串</th><th style="text-align:left">应用程序</th></tr>
+	<tr><th style="text-align:left">EventHubName</th><th style="text-align:left">字符串</th><th style="text-align:left">应用程序</th></tr>
+	<tr><th style="text-align:left">EventHubPartitionCount</th><th style="text-align:left">int</th><th style="text-align:left">应用程序</th></tr>
+	<tr><th style="text-align:left">StorageConnection</th><th style="text-align:left">（连接字符串）</th><th style="text-align:left">应用程序</th></tr>
+	<tr><th style="text-align:left">TableName</th><th style="text-align:left">字符串</th><th style="text-align:left">应用程序</th></tr>
+	</table>
+
+	对于 **TableName**，请输入要在其中存储事件的表的名称。
 
     对于 **StorageConnection**，请输入值 `DefaultEndpointsProtocol=https;AccountName=myAccount;AccountKey=myKey;`。将 **myAccount** 和 **myKey** 分别替换为前面获取的存储帐户名和密钥。
 
@@ -382,7 +386,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
     topologyBuilder.SetTopologyConfig(config);
 
 
-###创建帮助器类
+### 创建帮助器类
 
 将数据写入表存储时，你必须创建一个类来描述要写入的数据。
 
@@ -396,13 +400,13 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 		using System.Text;
 		using System.Threading.Tasks;
 		using Microsoft.WindowsAzure.Storage.Table;
-		
+
 		namespace EventHubReader
 		{
 		    class Device : TableEntity
 		    {
 		        public int value { get; set; }
-		
+
 		        public Device() { }
 		        public Device(int id)
 		        {
@@ -482,7 +486,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 此时，你已完成了一个从事件中心读取数据，并将数据存储在表存储中名为 **events** 的表内的拓扑。
 
-##部署拓扑
+## 部署拓扑
 
 1. 在“解决方案资源管理器”中，右键单击“EventHubReader”项目，然后选择“提交到 Storm on HDInsight”。
 
@@ -508,7 +512,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 	* 然后，**EventHubReader** 将从事件中心读取事件，并将其存储在表存储中的 **events** 表内。
 
-##停止拓扑
+## 停止拓扑
 
 若要停止拓扑，请在“Storm 拓扑查看器”中选择每个拓扑，然后单击“终止”。
 
@@ -532,11 +536,11 @@ EventHubSpout 定期检查点其状态为 Zookeeper 节点，将保存当前的�
 
 此目录中的脚本是：
 
-* **stormmeta_import.cmd**：将所有 Storm 元数据从群集默认存储容器导入 Zookeeper。
+* **stormmeta\_import.cmd**：将所有 Storm 元数据从群集默认存储容器导入 Zookeeper。
 
-* **stormmeta_export.cmd**：将所有 Storm 元数据从 Zookeeper 导出到群集默认存储容器。
+* **stormmeta\_export.cmd**：将所有 Storm 元数据从 Zookeeper 导出到群集默认存储容器。
 
-* **stormmeta_delete.cmd**：从 Zookeeper 中删除所有 Storm 元数据。
+* **stormmeta\_delete.cmd**：从 Zookeeper 中删除所有 Storm 元数据。
 
 当你需要删除群集，但在将新群集重新联机的情况下想要从中心的当前偏移量恢复处理时，可以使用导出和导入来保存检查点数据。
 
@@ -551,4 +555,4 @@ EventHubSpout 定期检查点其状态为 Zookeeper 节点，将保存当前的�
 * [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology)
  
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_1207_2015-->

@@ -8,8 +8,8 @@
  editor=""/>
 <tags 
  ms.service="scheduler" 
- ms.date="08/04/2015" 
- wacn.date="09/16/2015"/>
+ ms.date="12/04/2015" 
+ wacn.date="01/14/2016"/>
  
 # 计划程序出站身份验证
 
@@ -21,11 +21,11 @@
 
 若要删除身份验证，请对作业显式执行 PUT 或 PATCH，并将 `authentication` 对象设置为 null。响应中不会传回任何身份验证属性。
 
-目前，支持的身份验证类型仅包括 `ClientCertificate` 模型（表示使用 SSL/TLS 客户端证书）、 `Basic` 模型（表示基本身份验证）和 `ActiveDirectoryOAuth` 模型（表示 Active Directory OAuth 身份验证）。
+目前，支持的身份验证类型仅包括 `ClientCertificate` 模型（表示使用 SSL/TLS 客户端证书）、`Basic` 模型（表示基本身份验证）和 `ActiveDirectoryOAuth` 模型（表示 Active Directory OAuth 身份验证）。
 
 ## ClientCertificate 身份验证的请求正文
 
-使用 `ClientCertificate` 模型添加身份验证时，请在请求正文中指定以下附加元素。  
+使用 `ClientCertificate` 模型添加身份验证时，请在请求正文中指定以下附加元素。
 
 |元素|说明|
 |:---|:---|
@@ -197,7 +197,7 @@
 	  "id": "testScheduler",
 	  "action": {
 		"request": {
-		  "uri": "https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/CS-NorthCentralUS-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/test",
+		  "uri": "https:\/\/management.core.chinacloudapi.cn\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
 		  "method": "GET",
 		  "headers": {
 			"x-ms-version": "2013-03-01"
@@ -230,10 +230,14 @@
 |:--|:--|
 |_authentication（父元素）_ |用于使用 ActiveDirectoryOAuth 身份验证的身份验证对象。|
 |_type_ |必需。身份验证的类型。对于 ActiveDirectoryOAuth 身份验证，该值必须是 `ActiveDirectoryOAuth`。|
-|_tenant_ |必需。租户标识符是用于标识 AD 租户的 ID。|
-|_audience_ |必需。此元素设置为 https://management.core.chinacloudapi.cn/。|
+|_tenant_ |必需。Azure AD 租户的租户标识符。|
+|_audience_ |必需。此元素设置为 https://management.core.chinacloudapi.cn/.|。
 |_clientId_ |必需。为 Azure AD 应用程序提供客户端标识符。|
 |_secret_ |必需。正在请求令牌的客户端的机密。|
+
+### 确定你的租户标识符
+
+可以通过在 Azure PowerShell 中运行 `Get-AzureAccount`，找到 Azure AD 租户的租户标识符。
 
 ## ActiveDirectoryOAuth 身份验证的响应正文
 
@@ -243,9 +247,9 @@
 |:--|:--|
 |_authentication（父元素）_ |用于使用 ActiveDirectoryOAuth 身份验证的身份验证对象。|
 |_type_ |身份验证的类型。对于 ActiveDirectoryOAuth 身份验证，该值为 `ActiveDirectoryOAuth`。|
-|_tenant_ |用于标识 AD 租户的租户标识符。|
-|_audience_ |此元素设置为 https://management.core.chinacloudapi.cn/。|
-|_clientId_ |Azure AD 应用程序的客户端标识符。|
+|_tenant_ |Azure AD 租户的租户标识符。|
+|_audience_ |此元素设置为 https://management.core.chinacloudapi.cn/.|。
+|_clientId_ |AD 应用程序的客户端标识符。|
 
 ## ActiveDirectoryOAuth 身份验证的示例请求和响应
 
@@ -268,7 +272,7 @@
 			"x-ms-version": "2013-03-01"
 		  },
 		  "authentication":{  
-			"tenant":"contoso.com",
+			"tenant":"01234567-89ab-cdef-0123-456789abcdef",
 			"audience":"https://management.core.chinacloudapi.cn/",
 			"clientId":"8a14db88-4d1a-46c7-8429-20323727dfab",
 			"secret": "&lt;secret-key&gt;",
@@ -300,13 +304,13 @@
 	  "id": "testScheduler",
 	  "action": {
 		"request": {
-		  "uri": "https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/CS-NorthCentralUS-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/test",
+		  "uri": "https:\/\/management.core.chinacloudapi.cn\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
 		  "method": "GET",
 		  "headers": {
 			"x-ms-version": "2013-03-01"
 		  },
 		  "authentication":{  
-			"tenant":"contoso.com",
+			"tenant":"01234567-89ab-cdef-0123-456789abcdef",
 			"audience":"https://management.core.chinacloudapi.cn/",
 			"clientId":"8a14db88-4d1a-46c7-8429-20323727dfab",
 			"type":"ActiveDirectoryOAuth"
@@ -328,22 +332,26 @@
 	}
 
 ## 另请参阅
+ 
 
- [计划程序是什么？](/documentation/articles/scheduler-intro) [计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms)
+ [计划程序是什么？](/documentation/articles/scheduler-intro)
+ 
+ [Azure 计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms)
  
  [开始在管理门户中使用计划程序](/documentation/articles/scheduler-get-started-portal)
  
  [Azure 计划程序中的计划和计费](/documentation/articles/scheduler-plans-billing)
+ [Azure 计划程序 REST API 参考](https://msdn.microsoft.com/zh-CN/library/dn528946)
  
- [如何使用 Azure 计划程序生成复杂的计划和高级重复执行](/documentation/articles/scheduler-advanced-complexity)
+ [Azure 计划程序 PowerShell cmdlet 参考](/documentation/articles/scheduler-powershell-reference)
+ [Azure 计划程序高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability)
  
- [计划程序 REST API 参考](https://msdn.microsoft.com/zh-CN/library/dn528946)   
- 
- [计划程序的高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability)
- 
- [计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors)
- 
- [计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors)
- 
+ [Azure 计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors)
 
-<!---HONumber=69-->
+
+  
+
+ 
+  
+
+<!---HONumber=Mooncake_0104_2016-->

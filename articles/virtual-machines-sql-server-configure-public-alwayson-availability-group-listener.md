@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="为 AlwaysOn 可用性组配置外部侦听器 | Windows Azure"
+	pageTitle="为 AlwaysOn 可用性组配置外部侦听器 | Azure"
 	description="本教程指导你完成在 Azure 中创建一个可以使用关联云服务公共虚拟 IP 地址从外部访问的 AlwaysOn 可用性组侦听器。"
 	services="virtual-machines"
 	documentationCenter="na"
@@ -9,8 +9,8 @@
 	tags="azure-service-management" />
 <tags 
 	ms.service="virtual-machines"
-	ms.date="09/16/2015"
-	wacn.date="11/02/2015" />
+	ms.date="02/03/2016"
+	wacn.date="03/28/2016" />
 
 # 在 Azure 中配置 AlwaysOn 可用性组的外部侦听器
 
@@ -20,7 +20,9 @@
 
 本主题说明如何为 AlwaysOn 可用性组配置一个可以通过 Internet 从外部访问的侦听器。这是通过将云服务的**公共虚拟 IP (VIP)** 地址与侦听器关联来实现的。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
+
+## 外部侦听器的准则和限制
 
 你的可用性组可以仅包含本地副本或 Azure 副本，也可以跨越本地和 Azure 以实现混合配置。Azure 副本可以位于同一区域，也可以跨越使用多个虚拟网络 (VNet) 的多个区域。以下步骤假设你已[配置了一个可用性组](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)但是没有配置侦听器。
 

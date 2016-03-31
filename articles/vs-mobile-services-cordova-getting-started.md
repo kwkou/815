@@ -1,22 +1,20 @@
-<properties 
-	pageTitle="Cordova 移动服务项目（Visual Studio 连接服务）入门" 
-	description="描述使用 Visual Studio 连接服务将 Cordova 项目连接到 Azure 移动服务后可以执行的前几个步骤。" 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="patshea123" 
-	manager="douge" 
+<properties
+	pageTitle="Cordova 移动服务项目（Visual Studio 连接服务）入门 | Microsoft Azure"
+	description="描述使用 Visual Studio 连接服务将 Cordova 项目连接到 Azure 移动服务后可以执行的前几个步骤。"
+	services="mobile-services"
+	documentationCenter=""
+	authors="mlhoop"
+	manager="douge"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/17/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="01/05/2016"
+	wacn.date="03/21/2016"/>
 
 #  移动服务入门（Cordova 项目）
 
-> [AZURE.SELECTOR]
-> - [入门](/documentation/articles/vs-mobile-services-cordova-getting-started)
-> - [发生了什么情况](/documentation/articles/vs-mobile-services-cordova-what-happened)
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
 
 ##前几个步骤
 为了跟踪这些代码，您需要首先执行的步骤取决于您连接的移动服务类型。
@@ -82,12 +80,12 @@ var todoTable = mobileServiceClient.getTable('TodoItem');
 
 ##删除表项
 
-使用 **del** 方法删除数据表中的行。对返回的 **Promise** 对象调用 [done](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 方法以获取插入对象的副本并处理任何错误。
+使用 **del** 方法删除数据表中的行。对返回的 [Promise](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 对象调用 **done** 方法以获取插入对象的副本并处理任何错误。
 
     todoTable.del(todoItem).done(function (item) {
         items.splice(items.indexOf(todoItem), 1);
     });
 
-[详细了解移动服务](/services/mobile-services)
+[详细了解移动服务](/documentation/services/mobile-services)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0215_2016-->

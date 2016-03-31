@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何监视云服务 | Windows Azure" 
+	pageTitle="如何监视云服务 | Azure" 
 	description="了解如何使用 Azure 管理门户监视云服务。" 
 	services="cloud-services" 
 	documentationCenter="" 

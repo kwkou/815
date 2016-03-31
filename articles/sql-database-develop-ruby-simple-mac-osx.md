@@ -1,24 +1,33 @@
-<properties 
-	pageTitle="在 Mac OS X 上使用 Ruby 和 TinyTDS 连接到 SQL 数据库(Yosemite)" 
+<properties
+	pageTitle="在 Mac OS X 上使用 Ruby 和 TinyTDS 连接到 SQL 数据库(Yosemite)"
 	description="提供可在 Mac OS X (Yosemite) 上运行的，用于连接到 Azure SQL 数据库的 Ruby 代码示例。"
-	services="sql-database" 
-	documentationCenter="" 
-	authors="ajlam" 
-	manager="jeffreyg" 
+	services="sql-database"
+	documentationCenter=""
+	authors="ajlam"
+	manager="jeffreyg"
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" ms.date="07/20/2015" wacn.date="08/14/2015"/>
+<tags
+	ms.service="sql-database"
+	ms.date="12/17/2015"
+	wacn.date="01/29/2016"/>
 
 
 # 在 Mac OS X 上使用 Ruby 连接到 SQL 数据库(Yosemite)
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+
+> [AZURE.SELECTOR]
+- [Node.js](/documentation/articles/sql-database-develop-nodejs-simple-mac)
+- [Python](/documentation/articles/sql-database-develop-python-simple-mac-osx)
+- [Ruby](/documentation/articles/sql-database-develop-ruby-simple-mac-osx)
+
 
 本主题演示了一个在装有 Yosemite 的 Mac 计算机上运行的，用于连接到 Azure SQL 数据库数据库的 Ruby 代码示例。
 
-## 安装所需的模块
+## 先决条件
+
+### 安装所需的模块
 
 打开终端并安装以下组件：
 
@@ -32,55 +41,53 @@
 
 **3) TinyTDS**：从你的终端运行以下命令。这将在你的计算机上安装 TinyTDS。
 
-    sudo ARCHFLAGS="-arch x86_64" gem install tiny_tds
+    gem install tiny_tds
 
-## 创建数据库并检索连接字符串
+### SQL 数据库
 
-Ruby 示例依赖于 AdventureWorks 示例数据库。如果你尚未创建 AdventureWorks，可以通过以下主题了解如何创建：[创建你的第一个 Azure SQL Database](/documentation/articles/sql-database-get-started)
+请参阅[入门页](/documentation/articles/sql-database-get-started)，以了解如何创建示例数据库。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。
 
-本主题还将说明如何检索数据库连接字符串。
 
-## 连接到 SQL Database
+## 步骤 1：获取连接详细信息
 
-[TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds) 函数用于连接到 SQL Database。
+[AZURE.INCLUDE [sql-database-include-connection-string-details-20-portalshots](../includes/sql-database-include-connection-string-details-20-portalshots.md)]
 
-    require 'tiny_tds' 
-    client = TinyTds::Client.new username: 'yourusername@yourserver', password: 'yourpassword', 
-    host: 'yourserver.database.chinacloudapi.cn', port: 1433, 
-    database: 'AdventureWorks', azure:true 
+## 步骤 2：连接
 
-## 执行 SELECT 语句并检索结果集
+[TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds) 函数用于连接到 SQL 数据库。
+
+    require 'tiny_tds'
+    client = TinyTds::Client.new username: 'yourusername@yourserver', password: 'yourpassword',
+    host: 'yourserver.database.chinacloudapi.cn', port: 1433,
+    database: 'AdventureWorks', azure:true
+
+## 步骤 3：执行查询
 
 [TinyTds::Result](https://github.com/rails-sqlserver/tiny_tds) 函数用于检索针对 SQL 数据库执行的查询所返回的结果集。此函数接受查询并返回结果集。可以使用 [result.each do |row|](https://github.com/rails-sqlserver/tiny_tds) 循环访问结果集。
 
     require 'tiny_tds'  
     print 'test'     
-    client = TinyTds::Client.new username: 'yourusername@yourserver', password: 'yourpassword', 
-    host: 'yourserver.database.chinacloudapi.cn', port: 1433, 
-    database: 'AdventureWorks', azure:true 
-    results = client.execute("select * from SalesLT.Product") 
-    results.each do |row| 
-    puts row 
-    end 
+    client = TinyTds::Client.new username: 'yourusername@yourserver', password: 'yourpassword',
+    host: 'yourserver.database.chinacloudapi.cn', port: 1433,
+    database: 'AdventureWorks', azure:true
+    results = client.execute("select * from SalesLT.Product")
+    results.each do |row|
+    puts row
+    end
 
-## 插入一行，传递参数，然后检索生成的主键值
+## 步骤 4：插入行
 
-代码示例：
+在本示例中，你将了解如何安全地执行 [INSERT](https://msdn.microsoft.com/zh-cn/library/ms174335.aspx) 语句，传递参数以保护应用程序免遭 [SQL 注入](https://technet.microsoft.com/zh-cn/library/ms161953(v=sql.105).aspx) 漏洞的危害，然后检索自动生成的[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。
 
-- 将参数传递给要插入行中的值。
-- 插入行。
-- 检索为主键生成的值。
-
-在 SQL 数据库中，可以使用 [IDENTITY](http://msdn.microsoft.com/zh-cn/library/ms186775.aspx) 属性和 [SEQUENCE](http://msdn.microsoft.com/zh-cn/library/ff878058.aspx) 对象自动生成[主键](http://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。
 
 若要配合使用 TinyTDS 和 Azure，建议你运行多个 `SET` 语句来更改当前会话处理特定信息的方式。建议使用代码示例中所提供的 `SET` 语句。例如，即使未显式指定列的可为 null 状态，`SET ANSI_NULL_DFLT_ON` 也可以让你创建新列来允许 null 值。
 
 为了符合 Microsoft SQL Server [日期时间](http://msdn.microsoft.com/zh-cn/library/ms187819.aspx)格式，请使用 [strftime](http://ruby-doc.org/core-2.2.0/Time.html#method-i-strftime) 函数转换成对应的日期时间格式。
 
-    require 'tiny_tds' 
-    client = TinyTds::Client.new username: 'yourusername@yourserver', password: 'yourpassword', 
-    host: 'yourserver.database.chinacloudapi.cn', port: 1433, 
-    database: 'AdventureWorks', azure:true 
+    require 'tiny_tds'
+    client = TinyTds::Client.new username: 'yourusername@yourserver', password: 'yourpassword',
+    host: 'yourserver.database.chinacloudapi.cn', port: 1433,
+    database: 'AdventureWorks', azure:true
     results = client.execute("SET ANSI_NULLS ON")
     results = client.execute("SET CURSOR_CLOSE_ON_COMMIT OFF")
     results = client.execute("SET ANSI_NULL_DFLT_ON ON")
@@ -91,11 +98,11 @@ Ruby 示例依赖于 AdventureWorks 示例数据库。如果你尚未创建 Adve
     results = client.execute("SET CONCAT_NULL_YIELDS_NULL ON")
     require 'date'
     t = Time.now
-    curr_date = t.strftime("%Y-%m-%d %H:%M:%S.%L") 
-    results = client.execute("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) 
+    curr_date = t.strftime("%Y-%m-%d %H:%M:%S.%L")
+    results = client.execute("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate)
     OUTPUT INSERTED.ProductID VALUES ('SQL Server Express New', 'SQLEXPRESS New', 0, 0, '#{curr_date}' )")
-    results.each do |row| 
+    results.each do |row|
     puts row
     end
 
-<!---HONumber=66-->
+<!---HONumber=Mooncake_0118_2016-->

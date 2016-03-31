@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="创建包含成员资格、OAuth 和 SQL 数据库的安全 ASP.NET Web 窗体应用并部署到 Azure 网站" 
-	description="本教程说明如何生成整合了 SQL 数据库的安全 ASP.NET 4.5 Web 窗体 Web 应用程序并将其部署到 Azure。" 
+	pageTitle="创建包含成员资格、OAuth 和 SQL 数据库的安全 ASP.NET Web 窗体应用并部署到 Azure Web 应用" 
+	description="本教程说明如何生成整合了 SQL 数据库的安全 ASP.NET 4.5 Web 窗体 Web 应用并将其部署到 Azure。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="Erikre" 
@@ -8,51 +8,38 @@
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.date="08/06/2015" 
-	wacn.date="10/03/2015"/>
+	ms.service="web-sites" 
+	ms.date="12/10/2015" 
+	wacn.date="02/17/2016"/>
 
 
-# 创建包含成员资格、OAuth 和 SQL 数据库的安全 ASP.NET Web 窗体应用并部署到 Azure 网站
+# 创建包含成员资格、OAuth 和 SQL 数据库的安全 ASP.NET Web 窗体应用并部署到 Azure Web 应用
 
 ##概述
-本教程说明如何生成整合了 SQL 数据库的安全 ASP.NET 4.5 Web 窗体 Web 应用程序并将其部署到 Azure。
+本教程说明如何生成整合了 SQL 数据库的安全 ASP.NET 4.5 Web 窗体 Web 应用并将其部署到 Azure。
 
->[AZURE.NOTE]有关本教程中的 MVC 版本，请参阅[创建包含身份验证和 SQLDB 的 ASP.NET MVC 应用并将其部署到 Azure 网站](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
+>[AZURE.NOTE]有关本教程中的 MVC 版本，请参阅[创建包含身份验证和 SQLDB 的 ASP.NET MVC 应用并将其部署到 Azure Web 应用](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
 
 你可以免费注册一个 Azure 帐户，而且，如果你还没有 Visual Studio 2013，则此 SDK 会自动安装 Visual Studio 2013 for Web Express。你可以免费开始针对 Azure 进行开发。
 
-本教程假定你之前未使用过 Windows Azure。完成本教程之后，你将能够在云中启动并运行使用云数据库的 Web 应用程序。
+本教程假定你之前未使用过 Azure。完成本教程之后，你将能够在云中启动并运行使用云数据库的 Web 应用。
 
 学习内容：
 
-- 如何创建 ASP.NET 4.5 Web 窗体项目并将其发布到 Azure 网站。
+- 如何创建 ASP.NET 4.5 Web 窗体项目并将其发布到 Azure Web 应用。
 - 如何使用 OAuth 和 ASP.NET 成员资格保护你的应用程序。
 - 如何为成员资格和应用程序数据使用单个数据库。
 - 如何使用 Web 窗体基架创建网页以便修改数据。
 - 如何使用新成员资格 API 添加用户和角色。
 - 如何使用 SQL 数据库在 Azure 中存储数据。
 
-你将生成一个简单的联系人列表 Web 应用程序，该应用程序基于 ASP.NET 4.5 Web 窗体构建并使用实体框架进行数据库访问。下图显示了用于对数据库进行读取和写入访问的 Web 窗体页：
+你将生成一个简单的联系人列表 Web 应用，该应用程序基于 ASP.NET 4.5 Web 窗体构建并使用实体框架进行数据库访问。下图显示了用于对数据库进行读取和写入访问的 Web 窗体页：
 
 ![联系人 - 编辑页](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms00.png)
 
 >[AZURE.NOTE]若要完成本教程，您需要一个 Azure 帐户。如果您没有帐户，则可以<a href="/pricing/1rmb-trial/" target="_blank">注册获取试用版</a>。
 
-本教程包含以下部分：
-
-- [设置开发环境](#set-up-the-development-environment)
-- [设置 Azure 环境](#Set-up-the-Azure-environment)
-- [创建 ASP.NET Web 窗体应用程序](#Create-an-ASP.NET-Web-Forms-Application)
-- [向应用程序添加数据库](#Add-a-Database-to-the-Application)
-- [为项目启用 SSL](#Enable-SSL-for-the-Project)
-- [添加 OAuth 2.0 提供程序](#Add-an-OAuth-2.0-Provider)
-- [使用成员资格 API 来限制访问](#Use-the-Membership-API-to-Restrict-Access)
-- [将包含数据库的应用程序部署到 Azure](#Deploy-the-Application-with-the-Database-to-Azure)
-- [查看数据库](#Review-the-Database)
-- [后续步骤](#Next-Steps)
-
-##设置开发环境 
+##<a name="set-up-the-development-environment"></a>设置开发环境 
 若要开始，请通过安装 Visual Studio 2013 和 Azure SDK for .NET 来设置开发环境。
 
 1. 安装 [Visual Studio 2013](https://www.visualstudio.com/zh-cn/downloads)（如果尚未安装）。  
@@ -69,18 +56,18 @@
 
 安装完成后，你便做好了开发准备工作。
 
-##设置 Azure 环境
+##<a name="Set-up-the-Azure-environment"></a>设置 Azure 环境
 在本部分中，你将通过在 Azure 中创建 Azure 和 SQL 数据库来设置 Azure 环境。
 
 ###在 Azure 中创建 Web 应用和 SQL 数据库 
-在本教程中，你的 Web 应用将在共享宿主环境中运行，这意味着它将在与 Azure 网站中与其他 Web 应用共享的虚拟机 (VM) 上运行。共享宿主环境是一种在云中开始工作的低成本方式。稍后，如果你的 Web 流量增加，则应用程序可进行扩展，通过在专用 VM 上运行来满足需要。如果你需要一个更复杂的体系结构，则可迁移到 Azure 云服务。云服务在你可根据自己的需求进行配置的专用 VM 上运行。
+在本教程中，你的 Web 应用将在共享宿主环境中运行，这意味着它将在与 Azure 中与其他 Web 应用共享的虚拟机 (VM) 上运行。共享宿主环境是一种在云中开始工作的低成本方式。稍后，如果你的 Web 流量增加，则应用程序可进行扩展，通过在专用 VM 上运行来满足需要。如果你需要一个更复杂的体系结构，则可迁移到 Azure 云服务。云服务在你可根据自己的需求进行配置的专用 VM 上运行。
 
 Azure SQL 数据库是根据 SQL Server 技术构建的基于云的关系数据库服务。可以与 SQL Server 一起使用的工具和应用程序也可用于 SQL 数据库。
 
 1. 在 [ Azure 管理门户](https://manage.windowsazure.cn)中，单击左侧选项卡中的“Web Apps”，然后单击“新建”。![Web 平台安装程序](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-02.png)
 2. 单击“Web App”，然后单击“自定义创建”。![自定义创建](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-03.png) “新建 Web App - 自定义创建”向导将打开。  
 
-3. 在该向导的“创建 Web App”步骤中，在“URL”框中输入将用作你的应用程序的唯一 URL 的字符串。完整的 URL 将包含你在此处输入的内容和你在文本框旁边看到的后缀。图中显示了一个 URL，但可能已有人使用了该 URL，因此**必须另外选择一个 URL**。![联系人 - 创建新网站](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-04.png)
+3. 在该向导的“创建 Web App”步骤中，在“URL”框中输入将用作你的应用程序的唯一 URL 的字符串。完整的 URL 将包含你在此处输入的内容和你在文本框旁边看到的后缀。图中显示了一个 URL，但可能已有人使用了该 URL，因此**必须另外选择一个 URL**。![联系人 - 创建新 Web 应用](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-04.png)
 4. 在“Web 托管计划”下拉列表中，选择离你最近的区域。此设置指定你的 VM 将在哪个数据中心运行。
 5. 在“数据库”下拉列表中，选择“创建免费的 20 MB SQL 数据库”。
 6. 在“数据库连接字符串名称”框中，保留默认值 *DefaultConnection*。
@@ -91,8 +78,8 @@ Azure SQL 数据库是根据 SQL Server 技术构建的基于云的关系数据�
 11. 输入管理员“登录名”和“密码”。如果你选择了“新建 SQL 数据库服务器”，则在此处不要输入现有名称和密码。你应输入新的名称和密码，你现在定义的名称和密码将在你以后访问数据库时使用。如果你选择了之前创建的 SQL Server，系统将提示你输入之前创建的 SQL Server 帐户名称的密码。本教程将不选中“高级”框。
 12. 单击对话框右下角的复选标记以指示你已完成操作。
 
-“Azure 管理门户”返回到“Web Apps”页面，并且“状态”列显示正在创建网站。稍后（通常不到一分钟），“状态”列会显示已成功创建网站。在左侧的导航栏中，你的帐户中拥有的网站的数量将会显示在“Web 应用”图标旁边，而数据库的数量将会显示在“SQL 数据库”图标旁边。
-##创建 ASP.NET Web 窗体应用程序 
+“Azure 管理门户”返回到“Web Apps”页面，并且“状态”列显示正在创建 Web 应用。稍后（通常不到一分钟），“状态”列会显示已成功创建 Web 应用。在左侧的导航栏中，你的帐户中拥有的 Web 应用的数量将会显示在“Web 应用”图标旁边，而数据库的数量将会显示在“SQL 数据库”图标旁边。
+##<a name="Create-an-ASP.NET-Web-Forms-Application"></a>创建 ASP.NET Web 窗体应用程序 
 你已经创建了一个 Web 应用，但其中还没有内容。下一步将创建要发布到 Azure 的 Visual Studio Web 应用程序。
 ###创建项目 
 1. 在 Visual Studio 中，从“文件”菜单选择“新建项目”。![文件菜单 - 新建项目](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms01.png)  
@@ -203,24 +190,31 @@ Azure SQL 数据库是根据 SQL Server 技术构建的基于云的关系数据�
 ###在本地运行应用程序 
  
 1. 在“解决方案资源管理器”中，右键单击“Default.aspx”页并选择“设为起始页”。 
-2. 接下来，按“CTRL+F5”运行应用程序。应用程序的默认页会显示在默认浏览器窗口中。![联系人 - 创建新网站](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms04.png)  
+2. 接下来，按“CTRL+F5”运行应用程序。应用程序的默认页会显示在默认浏览器窗口中。![联系人 - 创建新 Web 应用](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms04.png)  
 
 这就是你创建将要部署到 Azure 的应用程序目前所需的全部操作。稍后，你将要添加数据库功能以及所需的页来显示和编辑联系人数据。
 ###将应用程序部署到 Azure
 创建并在本地运行应用程序后，可以将应用程序部署到 Azure。
 
-1. 在 Visual Studio 中，在“解决方案资源管理器”中右键单击该项目，从上下文菜单中选择“发布”。![选择“发布”](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms05.png) 此时将显示“发布 Web”对话框。  
+1. 在 Azure 管理门户中，找到你的 Web 应用，在“仪表板”页面的速览，下载“发布配置文件”。
 
-2. 在“发布 Web”对话框的“配置文件”选项卡中，单击“Azure Web 应用”。
+1. 在 Visual Studio 中，在“解决方案资源管理器”中右键单击该项目，从上下文菜单中选择“发布”。
+
+	![选择“发布”](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms05.png) 
+
+	此时将显示“发布 Web”对话框。  
+
+2. 在“发布 Web”对话框的“配置文件”选项卡中，单击“导入”。
 	  
-3. 如果你尚未登录，请在“选择现有 Web 应用”对话框中单击“登录”按钮。完成登录后，选择你在本教程第一部分中创建的 Web 应用。单击“确定”继续。![选择“现有网站”对话框](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms07.png) Visual Studio 将下载发布设置。
+3. 选择刚刚下载的配置文件，点击确认。
+
 4. 在“发布 Web”对话框中，单击“发布”。![“发布 Web”对话框](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms08.png) 你将在 Visual Studio 中的“Web 发布活动”窗口中看到总体发布状态：![Web 发布活动](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms09.png)  
 
 你创建的应用程序现在在云中运行。下次从 Visual Studio 部署该应用程序时，仅会部署已更改（或新的）文件。![浏览器中的应用](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms10.png)
 
 >[AZURE.NOTE]如果在发布已建立的 Web 应用时遇到错误，则可以在添加新的文件之前清除该位置。再次发布应用程序，但这次请在“发布 Web”对话框中选择“设置”选项卡。然后，将配置设置为“调试”，并选择“删除目标位置的其他文件”选项。选择“发布”以再次部署应用程序。![“发布 Web”对话框](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms11.png)
 
-##向应用程序添加数据库 
+##<a name="Add-a-Database-to-the-Application"></a>向应用程序添加数据库 
 接下来，你将更新 Web 窗体应用程序以添加显示和更新联系人以及在默认数据库中存储数据的功能。当你创建 Web 窗体项目时，默认情况下也会创建数据库。应用程序将使用 Entity Framework 访问数据库并读取和更新数据库中的数据。
 ###添加数据模型类 
 首先，使用代码创建一个简单的数据模型。此数据模型将包含在名为 `Contacts` 的类中。选择 `Contacts` 类名的目的是避免与 Web 窗体模板创建的 Contact.aspx.cs 文件中包含的 `Contact` 类名冲突。
@@ -359,7 +353,7 @@ update-database
 2. 按“Ctrl+F5”运行应用程序。浏览器将打开并显示 *Default.aspx* 页。
 3. 选择页面顶部的“联系人演示”链接以显示“联系人列表”页。![联系人列表页](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms17.png)  
 
-##为项目启用 SSL 
+##<a name="Enable-SSL-for-the-Project"></a>为项目启用 SSL 
 安全套接字层 (SSL) 是一种协议，定义为允许 Web 服务器与 Web 客户端通过使用加密以更安全的方式通信。如果不使用 SSL，在客户端与服务器之间发送数据时，对网络具有实际访问权限的任何人都可以探查数据包。此外，通过一般 HTTP 进行的几种常见身份验证方案也是不安全的。尤其是，基本身份验证和窗体身份验证会发送未加密的凭据。为确保安全，这些身份验证方案必须使用 SSL。
 
 1. 在“解决方案资源管理器”中，单击“ContactManager”项目，然后按**F4**显示“属性”窗口。 
@@ -374,11 +368,11 @@ update-database
 
 10. 单击“是”将证书安装到本地主机。![“安全警告”对话框](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21.png) 此时将显示浏览器窗口。
 
-你可以在本地使用 SSL 轻松测试 Web 应用程序。
+你可以在本地使用 SSL 轻松测试 Web 应用。
 
 
 
-##添加 OAuth 2.0 提供程序 
+##<a name="Add-an-OAuth-2.0-Provider"></a>添加 OAuth 2.0 提供程序 
 ASP.NET Web 窗体为成员资格和身份验证提供了增强的选项。这些增强功能包括 OAuth。OAuth 是一种开放协议，允许以一种简单而标准的方法从 Web、移动和桌面应用程序进行安全授权。ASP.NET MVC Internet 模板使用 OAuth 公开将 Facebook、Twitter、Google 和 Microsoft 作为身份验证提供程序。虽然本教程仅使用 Google 作为身份验证提供程序，但你可轻松修改代码以使用任何提供程序。实施其他提供程序的步骤与你将在本教程中看到的步骤非常类似。
 
 除了身份验证外，本教程还将使用角色实施授权。只有你添加到 `canEdit` 角色中的用户将能更改数据（创建、编辑或删除联系人）。
@@ -399,7 +393,7 @@ ASP.NET Web 窗体为成员资格和身份验证提供了增强的选项。这�
 4. 单击“创建项目”按钮，然后输入项目名称和 ID（可以使用默认值）。然后，单击“协议复选框”和“创建”按钮。![Google - 新建项目](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21b.png) 几秒钟后，将会创建新项目，并且浏览器将显示新项目页。
 5. 在左侧选项卡中，单击“API 和身份验证”，然后单击“凭据”。
 6. 单击“OAuth”下的“创建新客户端 ID”。此时将显示“创建客户端 ID”对话框。![Google - 创建客户端 ID](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21c.png)  
-7. 在“创建客户端 ID”对话框中，保留默认“Web 应用程序”作为应用程序类型。  
+7. 在“创建客户端 ID”对话框中，保留默认“ Web 应用”作为应用程序类型。  
 8. 将“授权的 JavaScript 来源”设置为你之前在本教程中使用的 SSL URL（****https://localhost:44300/**除非你已创建其他 SSL 项目）。此 URL 是应用程序的来源。对于此示例，你只需输入 localhost 测试 URL。但是，你可以针对 localhost 和生产环境输入多个 URL。
 
 9. 将“授权的重定向 URI”设置为：
@@ -473,12 +467,12 @@ namespace ContactManager
 12. 按“Ctrl + F5”构建并运行应用程序。单击“登录”链接。
 13. 在“使用其他服务进行登录”下，单击“Google”。![Log in](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21d.png)  
 14. 如果需要输入你的凭据，你将被重定向到 google 站点，你可以在这里输入你的凭据。![Google - 登录](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21e.png)  
-15. 输入你的凭据后，系统将提示你刚创建的 Web 应用程序，以便授予其权限：![项目默认服务帐户](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21f.png)  
+15. 输入你的凭据后，系统将提示你刚创建的 Web 应用，以便授予其权限：![项目默认服务帐户](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21f.png)  
 16. 单击“接受”。现在，你将被重定向回到“ContactManager”应用程序的“注册”页，你可以在该页中注册 Google 帐户。![使用你的 Google 帐户注册](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21g.png)  
 17. 你可以选择更改 Gmail 帐户使用的本地电子邮件注册名称，但是，你通常会保留默认电子邮件别名（即，用于身份验证的名称）。单击“登录”。
 
-##使用成员资格 API 来限制访问 
-ASP.NET 标识是在生成 ASP.NET Web 应用程序时用于身份验证的成员资格系统。它可以轻松地将特定于用户的配置文件数据与应用程序数据相集成。此外，ASP.NET 标识允许你为应用程序中的用户配置文件选择持久模型。你可以将数据存储在 SQL Server 数据库或其他数据存储中，包括 Azure 存储表等 *NoSQL* 数据存储。
+##<a name="Use-the-Membership-API-to-Restrict-Access"></a>使用成员资格 API 来限制访问 
+ASP.NET 标识是在生成 ASP.NET Web 应用时用于身份验证的成员资格系统。它可以轻松地将特定于用户的配置文件数据与应用程序数据相集成。此外，ASP.NET 标识允许你为应用程序中的用户配置文件选择持久模型。你可以将数据存储在 SQL Server 数据库或其他数据存储中，包括 Azure 存储表等 *NoSQL* 数据存储。
 
 通过使用默认的 ASP.NET Web 窗体模板，你可以获得在运行应用程序时立即可用的内置成员资格功能。你将使用 ASP.NET 标识添加管理员角色并将用户分配给该角色。然后，你将学习如何限制对管理文件夹和该文件夹中用于修改联系人数据的页面的访问。
 
@@ -636,16 +630,15 @@ Update-Database
 
 如果不属于“canEdit”角色的用户尝试修改数据，则系统会将他们重定向到“登录”页。
 
-##将包含数据库的应用程序部署到 Azure 
-Web 应用程序现已完成，你可以将其发布到 Azure。
+##<a name="Deploy-the-Application-with-the-Database-to-Azure"></a>将包含数据库的应用程序部署到 Azure 
+ Web 应用现已完成，你可以将其发布到 Azure。
 
 ###发布应用程序 
 1. 在 Visual Studio 中生成项目（“Ctrl+Shift+B”）
 2. 在“解决方案资源管理器”中，右键单击该项目并选择“发布”。![发布菜单选项](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms22.png) 此时将显示“发布 Web”对话框。![“发布 Web”对话框](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms22a.png)  
-3. 从“配置文件”选项卡中，选择“Azure Web 应用”作为发布目标（如果尚未选择）。![“发布 Web”对话框](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms23.png)  
-4. 如果你尚未登录，请单击“登录”。
-5. 从“现有 Web Apps”下拉框中选择你在本教程前面创建的现有 Web 应用，然后单击“确定”按钮。![选择“现有网站”对话框](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms25.png) 如果系统询问你是否保存对配置文件所做的更改，请选择“是”。
-6. 单击“设置”选项卡。![选择“现有网站”对话框](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26.png)  
+3. 从“配置文件”选项卡中，选择“导入”（如果尚未导入）。 
+4. 选择已经下载好的“发布配置文件”。
+6. 单击“设置”选项卡。![选择“现有 Web 应用”对话框](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26.png)  
 7. 将“配置”下拉框设置为“调试”。
 8. 单击“ApplicationDbContext”旁边的“向下箭头”图标，并将其设置为“ContactDB”。
 9. 选中“执行 Code First 迁移”复选框。在此示例中，仅当首次发布应用程序时才应选中此复选框。这样，便只会调用 *Configuration.cs* 文件中的 *Seed* 方法一次。  
@@ -668,12 +661,12 @@ Web 应用程序现已完成，你可以将其发布到 Azure。
 为了防止其他人注册和使用你的示例应用程序，你可以停止该 Web 应用。
 
 1. 在 Visual Studio 中，从“视图菜单”选择“服务器资源管理器”。 
-2. 在“服务器资源管理器”中，导航到“Web App”。
-3. 右键单击每个网站实例并选择“停止 Web App”。![停止网站菜单项](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26a.png)  
+2. 在“服务器资源管理器”中，导航到“ Web 应用”。
+3. 右键单击每个 Web 应用实例并选择“停止 Web 应用”。![停止 Web 应用菜单项](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26a.png)  
 
-	或者，也可以从 Windows Azure 管理门户中选择该 Web 应用，然后单击页面底部的“停止”图标。![添加新联系人页](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26b.png)
+	或者，也可以从 Azure 管理门户中选择该 Web 应用，然后单击页面底部的“停止”图标。![添加新联系人页](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26b.png)
 
-##查看数据库 
+##<a name="Review-the-Database"></a>查看数据库 
 必须知道如何直接查看和修改数据库。如果知道如何直接处理数据库，就可以确认数据库中的数据，同时了解数据在每个表中的存储方式。
 
 ###检查 SQL Azure 数据库 
@@ -696,10 +689,10 @@ Web 应用程序现已完成，你可以将其发布到 Azure。
 
 >[AZURE.NOTE]我们正在开发可显著简化用户和角色管理的工具。
 
-##后续步骤
-有关 ASP.NET Web 窗体的详细信息，请参阅 ASP.NET Web 应用上的 [了解 ASP.NET Web 窗体](http://www.asp.net/web-forms)和 [Windows Azure 教程和指南](/documentation/services/web-sites/#net)。
+##<a name="Next-Steps"></a>后续步骤
+有关 ASP.NET Web 窗体的详细信息，请参阅 ASP.NET Web 应用上的 [了解 ASP.NET Web 窗体](http://www.asp.net/web-forms)和 [Azure 教程和指南](/documentation/services/web-sites/#net)。
 
-本教程基于 Rick Anderson (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) 在 Tom Dykstra 和 Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) 的帮助下编写的 MVC 教程[创建包含身份验证和 SQL 数据库的 ASP.NET MVC 应用并部署到 Azure 网站](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
+本教程基于 Rick Anderson 在 Tom Dykstra 和 Barry Dorrans 的帮助下编写的 MVC 教程[创建包含身份验证和 SQL 数据库的 ASP.NET MVC 应用并部署到 Azure  Web 应用](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
 
 请提供有关你喜欢的内容或者你希望看到改善的内容的反馈，不仅关于教程本身，也关于它所演示的产品。你的反馈将帮助我们确定优先改进哪些方面。你还可以在[教我编写代码](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code)上请求帮助以及对新主题投票。
 

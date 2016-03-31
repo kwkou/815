@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="09/22/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="12/14/2015"
+	wacn.date="02/26/2016"/>
 
 # 如何通过 WebJobs SDK 使用 Azure 服务总线
 
@@ -22,20 +22,19 @@
 
 代码段只显示函数，不同于创建 `JobHost` 对象的代码（如以下示例所示）：
 
-		static void Main(string[] args)
-		{
-		    JobHost host = new JobHost();
-		    host.RunAndBlock();
-		}
-		
-## 目录
+	public class Program
+	{
+   		public static void Main()
+   		{
+      			JobHostConfiguration config = new JobHostConfiguration();
+      			config.UseServiceBus();
+      			JobHost host = new JobHost(config);
+      			host.RunAndBlock();
+   		}
+	}
 
--   [先决条件](#prerequisites)
--   [如何在接收队列消息时触发函数](#trigger)
--   [如何创建队列消息](#create)
--   [如何使用服务总线主题](#topics)
--   [存储队列文章涵盖的相关主题](#queues)
--   [后续步骤](#nextsteps)
+在 GitHub.com 上的 azure-webjobs-sdk-samples 存储库中有[完整的服务总线代码示例](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/ServiceBus/Program.cs)。
+
 ## <a id="prerequisites"></a>先决条件
 
 你必须先安装 [Microsoft.Azure.WebJobs.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus/) NuGet 包和其他 WebJobs SDK 包，然后才能使用服务总线。
@@ -150,6 +149,17 @@ SDK 会自动反序列化包含 POCO（[普通旧 CLR 对象](http://en.wikipedi
 
 若要创建某主题的消息，请使用 `ServiceBus` 属性和主题名称，过程与使用此属性和队列名称一样。
 
+## 1\.1 版中的新增功能
+
+在 1.1 版中添加了以下功能：
+
+* 允许通过 `ServiceBusConfiguration.MessagingProvider` 对消息处理进行深层自定义。
+* `MessagingProvider` 支持服务总线 `MessagingFactory` 和 `NamespaceManager` 的自定义。
+* `MessageProcessor` 策略模式允许你为每个队列/主题指定处理器。
+* 默认情况下支持消息处理并发。 
+* 可以轻松通过 `ServiceBusConfiguration.MessageOptions` 对 `OnMessageOptions` 进行自定义。
+* 允许在 `ServiceBusTriggerAttribute`/`ServiceBusAttribute` 上指定 [AccessRights](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/ServiceBus/Functions.cs#L71)（适用于你可能不具有管理权限的方案）。 
+
 ## <a id="queues"></a>存储队列操作说明文章涉及的相关主题
 
 若要了解非服务总线专用 WebJobs SDK 方案，请参阅[如何结合使用 Azure 队列存储和 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to)。
@@ -170,4 +180,4 @@ SDK 会自动反序列化包含 POCO（[普通旧 CLR 对象](http://en.wikipedi
 本指南中包含的代码示例展示了如何处理常见方案来结合使用 Azure 服务总线。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 推荐资源](/documentation/articles/websites-webjobs-resources/)。
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0215_2016-->

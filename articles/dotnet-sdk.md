@@ -2,7 +2,7 @@
 <tags 
 	ms.service="multiple" 
 	ms.date="08/14/2015" 
-	wacn.date="10/3/2015"/>
+	wacn.date="01/21/2016"/>
 # 什么是 Azure SDK for .NET？
 
 Azure SDK for .NET 是一套应用程序，其中包括 Visual Studio 工具、命令行工具、运行时二进制文件和客户端库，可帮助你开发、测试和部署在 Azure 中运行的应用程序。本文详细介绍了安装 SDK 时获得的内容。你可以从[“Azure 下载”](/downloads/)页下载 SDK。
@@ -23,12 +23,12 @@ Azure SDK for .NET 将安装以下产品：
 
 - [Visual Studio Express for Web](#vwd)
 - [Microsoft ASP.NET 和 Web Tools for Visual Studio](#wte)
-- [Microsoft Azure Tools for Microsoft Visual Studio](#tools)
-- [Microsoft Azure 创作工具](#auth)
-- [Microsoft Azure 模拟器](#emulator)
-- [Microsoft Azure 存储模拟器](#stgemulator)
-- [Microsoft Azure 存储工具](#stgtools)
-- [用于 .NET 的 Microsoft Azure 库](#libraries)
+- [Azure Tools for Microsoft Visual Studio](#tools)
+- [Azure 创作工具](#auth)
+- [Azure 模拟器](#emulator)
+- [Azure 存储模拟器](#stgemulator)
+- [Azure 存储工具](#stgtools)
+- [用于 .NET 的 Azure 库](#libraries)
 - [用于 Visual Studio 的 LightSwitch Azure Publishing 外接程序](#ls)
 
 ###Visual Studio Express for Web
@@ -37,18 +37,18 @@ Azure SDK for .NET 将安装以下产品：
  
 ###Microsoft ASP.NET 和 Web Tools for Visual Studio
 
-这使你可以使用 Azure 网站：
+这使你可以使用 Azure Web 应用：
 
-* 将 Web 项目发布到 Azure 网站。
+* 将 Web 项目发布到 Azure Web 应用。
 * 将控制台应用程序项目发布到 Azure WebJobs。
-* 在创建新的 Web 项目或发布 Web 项目时创建 Azure 网站和 SQL 数据库资源。
-* 在创建新网站时创建 PowerShell 部署脚本。
-* 在服务器资源管理器中管理和故障诊断 Azure 网站。
-* 在调试模式下针对网站和 WebJobs 远程运行。 
+* 在创建新的 Web 项目或发布 Web 项目时创建 Azure Web 应用和 SQL 数据库资源。
+* 在创建新 Web 应用时创建 PowerShell 部署脚本。
+* 在服务器资源管理器中管理和故障诊断 Azure Web 应用。
+* 在调试模式下针对 Web 应用和 WebJobs 远程运行。 
 
 >[WACOM.NOTE]无需安装 Azure SDK for .NET 即可使用这些功能；它们还包括在 Visual Studio 更新中。
 
-###Microsoft Azure Tools for Microsoft Visual Studio
+###Azure Tools for Microsoft Visual Studio
 
 这使你可以使用 Azure 云服务和虚拟机：
 
@@ -60,7 +60,7 @@ Azure SDK for .NET 将安装以下产品：
 * 在服务器资源管理器中查看和管理 云服务、虚拟机 和 Service Bus。 
 * 针对云服务和虚拟机在调试模式下远程运行。
 
-###Microsoft Azure 创作工具
+###Azure 创作工具
 
 其中包括：
 
@@ -68,19 +68,19 @@ Azure SDK for .NET 将安装以下产品：
 * CSEncrypt 命令行工具，用于加密密码，以便使用密码通过远程桌面连接访问云服务角色实例。
 * 运行时二进制文件，云服务项目需要使用该文件与运行时环境通信以及进行诊断。这些二进制文件在 NuGet 包中不提供。
 
-###Microsoft Azure 模拟器
+###Azure 模拟器
 
 Azure 模拟器模拟云服务环境，这样你就可以先在本地计算机上测试云服务项目，然后再将其部署到 Azure。
 
-###Microsoft Azure 存储模拟器
+###Azure 存储模拟器
 
 Azure 存储模拟器使用 SQL Server 实例和本地文件系统来模拟 Azure 存储空间（队列、表、Blob），以便在本地进行测试。
 
-###Microsoft Azure 存储工具
+###Azure 存储工具
 
 这将安装命令行工具 AzCopy，以便将数据传入和传出 Azure 存储帐户。
 
-###用于 .NET 的 Microsoft Azure 库
+###用于 .NET 的 Azure 库
 
 其中包括：
 
@@ -89,7 +89,7 @@ Azure 存储模拟器使用 SQL Server 实例和本地文件系统来模拟 Azur
 
 ###用于 Visual Studio 的 LightSwitch Azure Publishing 外接程序
 
-这使你可以将 LightSwitch 项目发布到 Azure 网站。LightSwitch 外接程序包括在 Visual Studio 更新和 Azure SDK for .NET 中。安装 SDK 可确保你拥有最新版本的外接程序。
+这使你可以将 LightSwitch 项目发布到 Azure Web 应用。LightSwitch 外接程序包括在 Visual Studio 更新和 Azure SDK for .NET 中。安装 SDK 可确保你拥有最新版本的外接程序。
 
 ##在安装 Azure SDK for .NET 时未获得的内容
 
@@ -103,7 +103,7 @@ Azure 存储模拟器使用 SQL Server 实例和本地文件系统来模拟 Azur
 
 	**包括客户端库的项目模板。** 只有 [Azure 云服务](/zh-cn/documentation/articles/cloud-services-dotnet-get-started/)和 [Azure 移动服务](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)项目模板会自动包含一些客户端库。对于其他库或其他模板，安装你所需的[客户端库 NuGet 包](http://go.microsoft.com/fwlink/?LinkId=510472)。
 
-* [Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/)
+* [Azure PowerShell](/zh-cn/documentation/articles/powershell-install-configure/)
 
 	使用 Azure PowerShell，你可以自动化 Azure 环境的创建和部署。
 
@@ -124,7 +124,7 @@ Azure 存储模拟器使用 SQL Server 实例和本地文件系统来模拟 Azur
 如果你想要使用最新工具针对 Azure 进行开发，则最好是安装该 SDK。如果你不愿意安装该 SDK，则在符合以下条件的情况下，你可以这样做：
 
 * 你已安装了最新版的 Visual Studio 更新。
-* 你的开发仅针对 Azure 网站或移动服务，不针对云服务或虚拟机。
+* 你的开发仅针对 Azure Web 应用或移动服务，不针对云服务或虚拟机。
 * 你的应用程序不使用存储，或者它使用存储，但你不需要存储模拟器或 AzCopy 工具。
 
 ###我想要一个客户端库。我必须安装 Azure SDK for .NET 才能获取它吗？
@@ -137,7 +137,7 @@ Azure 存储模拟器使用 SQL Server 实例和本地文件系统来模拟 Azur
 
 ###Azure SDK for .NET 版本的生命周期策略是什么？
 
-请参阅 Microsoft Azure 云服务支持生命周期策略。
+请参阅 Azure 云服务支持生命周期策略。
 
 ###哪些来宾操作系统版本是 Azure SDK for .NET 兼容的？
 

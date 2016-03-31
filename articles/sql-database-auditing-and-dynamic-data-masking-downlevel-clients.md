@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="SQL 数据库审核和动态数据掩码的下层客户端支持 | Windows Azure" 
-	description="了解 SQL 数据库审核和动态数据掩码的下层客户端支持。" 
+	pageTitle="SQL 数据库对审核的下层客户端支持 | Azure" 
+	description="了解 SQL 数据库对审核的下层客户端支持。" 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="nadavhelfman" 
@@ -9,13 +9,13 @@
 
 <tags 
 	ms.service="sql-database"
-	ms.date="09/01/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="11/12/2015"
+	wacn.date="12/22/2015"/>
  
-# SQL 数据库 - 审核和动态数据掩码的下层客户端支持 
+# SQL 数据库 - 对审核的下层客户端支持
 
 
-[审核](/documentation/articles/sql-database-auditing-get-started)和<!--[-->动态数据掩码<!--](/documentation/articles/sql-database-dynamic-data-masking-get-started)-->适用于支持 TDS 重定向的 SQL 客户端。
+对于支持 TDS 重定向的 SQL 客户端，可以自动使用[审核](/documentation/articles/sql-database-auditing-get-started)。
 
 任何实现了 TDS 7.4 的客户端同样应当支持重定向。例外情况包括不完全支持重定向功能的 JDBC 4.0 以及未实现重定向的 Tedious（适用于 Node.JS）。
 
@@ -34,6 +34,4 @@
 
 **注释：**上面的服务器 FDQN 修改可能还可用于应用 SQL Server 级别的审核策略，而无需在每个数据库中进行配置（临时缓解）。
 
- 
-
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

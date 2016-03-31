@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="向通用 Windows 8.1 应用添加推送通知 | Windows Azure" 
+	pageTitle="向通用 Windows 8.1 应用添加推送通知 | Azure" 
 	description="了解如何从 JavaScript 后端移动服务使用 Azure 通知中心向通用 Windows 8.1 应用发送推送通知。" 
 	services="mobile-services,notification-hubs" 
 	documentationCenter="windows" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/22/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="11/10/2015" 
+	wacn.date="12/31/2015"/>
 
 
 #  向移动服务应用程序添加推送通知
@@ -40,7 +40,7 @@
 
 &nbsp;&nbsp;7.打开共享的 App.xaml.cs 代码文件，可以看到已在 **OnLaunched** 事件处理程序中添加了对新的 **UploadChannel** 方法的调用。这可确保每次启动应用程序时都尝试注册设备。
 
-&nbsp;&nbsp;8.重复执行前面的步骤为 Windows Phone 应用商店应用项目添加推送通知，然后在共享的 App.xaml.cs 文件中，删除对 **UploadChannel** 的额外调用和剩余的 `#if...#endif` 条件包装器。现在，这两个项目可以共用对 **UploadChannel** 的单一调用。
+&nbsp;&nbsp;8.重复执行前面的步骤为 Windows Phone 应用商店应用项目添加推送通知，然后在共享的 App.xaml.cs 文件中，删除对**移动服务客户端**、**UploadChannel** 和剩余 `#if...#endif` 条件包装的额外调用。现在，这两个项目可以共用对 **UploadChannel** 的单一调用。
 
 &nbsp;&nbsp;请注意，你还可以通过将 `#if...#endif` 包装的 [MobileServiceClient] 定义统一为单个解包的定义，供这两个版本的应用使用来简化生成的代码。
 
@@ -61,28 +61,29 @@
 
 本教程演示了启用 Windows 应用商店应用程序以便使用移动服务和通知中心发送推送通知的基础知识。接下来，请考虑完成以下教程之一：
 
-+ [向经过身份验证的用户发送推送通知](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users)<br/>
-	了解如何使用标记来做到只将推送通知从移动服务发送到经过身份验证的用户。
++ [向经过身份验证的用户发送推送通知](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users)
+<br/>了解如何使用标记来做到只将推送通知从移动服务发送到经过身份验证的用户。
 
-+ [将广播通知发送到订户](/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news)<br/>
-	了解用户如何注册和接收他们感兴趣的类别的推送通知。
++ [将广播通知发送到订户](/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news)
+<br/>了解用户如何注册和接收他们感兴趣的类别的推送通知。
 
-+ [将平台无关的通知发送到订户](/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users)<br/>
-	了解如何使用模板从移动服务发送推送通知，且不会在后端中产生平台特定的负载。
++ [将平台无关的通知发送到订户](/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users)
+<br/>了解如何使用模板从移动服务发送推送通知，且不会在后端中产生平台特定的负载。
 
 	通过以下主题了解有关移动服务和通知中心的详细信息：
 
-* [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-diagnosing)<br/>
-  了解如何排查推送通知问题。
+* [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-diagnosing)
+<br/>了解如何排查推送通知问题。
 
-* [身份验证入门 ]<br/>
-  了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
+* [身份验证入门]
+  <br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
 
-* [什么是通知中心？] <br/>
-  了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
 
-* [如何使用适用于 Azure 移动服务的 .NET 客户端]<br/>
-  了解有关如何从 C# Windows 应用程序使用移动服务的详细信息。
+* [什么是通知中心？] 
+<br/>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
+
+* [如何使用适用于 Azure 移动服务的 .NET 客户端]
+<br/>了解有关如何从 C# Windows 应用程序使用移动服务的详细信息。
 
 <!-- Anchors. -->
 
@@ -94,8 +95,7 @@
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
-[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-data
-[身份验证入门 ]: /documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-users
+[身份验证入门]: /documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-users
 
 [Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users
 
@@ -104,4 +104,4 @@
 [如何使用适用于 Azure 移动服务的 .NET 客户端]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [MobileServiceClient]: http://go.microsoft.com/fwlink/p/?LinkId=302030
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_1221_2015-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在混合云中设置 Office 365 目录同步 (DirSync) 以便进行测试" 
+	pageTitle="Office 365 DirSync 测试环境 | Azure" 
 	description="了解如何在混合云中配置 Office 365 目录同步 (DirSync) 服务器，以便进行 IT 专业人员测试或开发测试。" 
 	services="virtual-network" 
 	documentationCenter="" 
@@ -8,14 +8,17 @@
 	editor=""
 	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-network" 
-	ms.date="09/10/2015" 
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="virtual-network"
+	ms.date="12/11/2015"
+	wacn.date="01/14/2016"/>
 
 # 在混合云中设置 Office 365 目录同步 (DirSync) 以便进行测试
 
-本主题将指导你逐步创建混合云环境，以便测试在 Windows Azure 中托管的带密码同步的 Office 365 目录同步 (DirSync)。这是生成的配置。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+ 
+
+本主题将指导你逐步创建混合云环境，以便测试在 Azure 中托管的带密码同步的 Office 365 目录同步 (DirSync)。这是生成的配置。
 
 ![](./media/virtual-networks-setup-dirsync-hybrid-cloud-testing/CreateDirSyncHybridCloud_3.png)
  
@@ -25,7 +28,7 @@
 - 在 Azure 中托管的跨界虚拟网络 (TestVNET)。
 - 站点到站点 VPN 连接。
 - Office 365 FastTrack 试用订阅。
-- TestVNET 虚拟网络中的 DirSync 服务器和辅助域控制器。
+- TestVNET 虚拟网络中运行 Azure AD Connect 工具的 DirSync 服务器和辅助域控制器。
 
 此配置提供了基础和通用的起始点，你可以据此执行以下操作：
 
@@ -38,7 +41,7 @@
 2.	配置 Office 365 FastTrack 试用版。
 3.	配置 DirSync 服务器 (DS1)。
 
-如果你还没有 Azure 订阅，可以在[试用 Azure](/pricing/1rmb-trial/) 中注册一个免费试用版。
+如果你还没有 Azure 订阅，可以通过[试用 Azure](/pricing/1rmb-trial/) 注册试用版。
 
 ## 阶段 1：设置混合云环境
 
@@ -48,7 +51,7 @@
 
 ![](./media/virtual-networks-setup-dirsync-hybrid-cloud-testing/CreateDirSyncHybridCloud_1.png)
 
-> [AZURE.NOTE] 就阶段 1 来说，你也可以设置模拟混合云测试环境。有关说明，请参阅[设置用于测试的模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)。
+> [AZURE.NOTE]就阶段 1 来说，你也可以设置模拟混合云测试环境。有关说明，请参阅[设置用于测试的模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)。
 
 ## 阶段 2：配置 Office 365 FastTrack 试用版
 
@@ -56,18 +59,17 @@
 
 接下来，注册新的 Microsoft 帐户。转到 **http://outlook.com**，使用 user123@outlook.com 这样的电子邮件地址创建一个帐户。你将使用此帐户注册 Office 365 FastTrack 试用版。
 
-接下来，注册新的 Office 365 FastTrack 试用版。
+接下来，注册新的 Office 365 Enterprise E3 试用版。
 
 1.	使用 CORP\\User1 帐户凭据登录 CLIENT1。
-2.	打开 Internet Explorer 并转到 **http://fasttrack.office.com**。
-3.	单击“开始使用 FastTrack”。
-4.	在“开始使用 FastTrack”页的“首先，注册 Office 365 试用版”下，单击“企业在此注册”。
-5.	在“步骤 1”页上填写该页面的内容，在“企业电子邮件地址”中指定新的 Microsoft 帐户，然后单击“下一步”。
-6.	在“步骤 2”页的第一个字段中键入初始 Office 365 帐户的名称，然后键入虚构的公司名称和密码。在安全的位置记录生成的电子邮件地址（例如 user123@contoso123.partner.onmschina.cn）和密码。你需要提供此信息才能完成阶段 3 中的 Active Directory 同步工具配置向导。单击**“下一步”**。
-7.	在“步骤 3”页上，键入具有短信功能的移动电话或智能手机的电话号码，然后单击“给我发送短信”。
-8.	在你的手机收到短信后，键入验证代码，然后单击“创建我的帐户”。 
-9.	当 Office 365 成功创建你的帐户以后，单击“你已准备就绪”。
-10.	你现在会看到 Office 365 门户主页。在顶部功能区中，单击“管理”，然后单击“Office 365”。此时会出现 Office 365 管理中心页。让此页在 CLIENT1 上保持打开状态。
+2.	打开 Internet Explorer 并转到 **https://go.microsoft.com/fwlink/p/?LinkID=403802**。
+3.	逐步完成注册 Office 365 Enterprise E3 试用版的过程。
+
+当系统提示输入**业务电子邮件地址**时，指定新的 Microsoft 帐户。
+
+当系统提示创建 ID 时，键入初始 Office 365 帐户的名称，然后键入虚构的公司名称和密码。在安全的位置记录生成的电子邮件地址（例如 user123@contoso123.partner.onmschina.cn）和密码。你将需要此信息才能完成阶段 3 中的 Azure AD Connect 配置。
+
+完成后，你应该会看到 Office 365 门户主页。在顶部功能区中，单击“管理”，然后单击“Office 365”。此时会出现 Office 365 管理中心页。让此页在 CLIENT1 上保持打开状态。
 
 这是你当前的配置。
 
@@ -75,7 +77,7 @@
 
 ## 阶段 3：配置目录同步服务器 (DS1)
 
-首先，在你的本地计算机上，当出现 Azure PowerShell 命令提示时，使用这些命令创建针对 DS1 的 Azure 虚拟机。在运行这些命令之前，请填写变量值并删除 < and > 字符。
+首先，在本地计算机上的 Azure PowerShell 命令提示符下使用这些命令创建适用于 DS1 的 Azure 虚拟机。在运行这些命令之前，请填写变量值并删除 < and > 字符。
 
 	$ServiceName="<The cloud service name for your TestVNET virtual network>"
 	$cred1=Get-Credential -Message "Type the name and password of the local administrator account for DS1."
@@ -108,16 +110,6 @@
 
 	Add-WindowsFeature NET-Framework-Core
 
-接下来，在 DS1 上安装目录同步。
-
-1.	运行 Internet Explorer，在地址栏中键入 **http://go.microsoft.com/fwlink/?LinkID=278924**，然后按 Enter。当系统提示你运行 dirsync.exe 时，依次单击“保存”旁边的箭头、“另存为”、“保存”，将文件保存在 Downloads 文件夹中。有关安装该工具的详细信息，请参阅[安装或升级目录同步工具](http://technet.microsoft.com/zh-cn/library/jj151800)。
-2.	打开 **Downloads** 文件夹，右键单击 **dirsync** 文件，然后单击“以管理员身份运行”。
-3.	在 Active Directory 同步设置向导的“欢迎”页中，单击“下一步”。 
-4.	在“许可条款”页上单击“我接受”，然后单击“下一步”。
-5.	在“选择文件夹安装”页上，单击“下一步”。可能需要几分钟的时间才能完成安装。
-6.	在“完成”页上，清除“立即启动配置向导”，然后单击“完成”。
-7.	在“开始”屏幕中，单击“user1”，然后单击“注销”。
-
 接下来，为你的 Office 365 FastTrack 试用版启用目录同步。
 
 1.	在 CLIENT1 的“Office 365 管理中心”页的左窗格中，单击“用户”，然后单击“活动用户”。
@@ -126,7 +118,7 @@
 4.	遇到提示“是否要激活 Active Directory 同步?”时，单击“激活”。执行此操作之后，“Active Directory 同步已激活”会出现在步骤 3 中。
 5.	让“设置和管理 Active Directory 同步”页在 CLIENT1 上处于打开状态。
 
-接下来，使用 CORP\\User1 帐户登录到 DC1，并打开管理员级的 Windows PowerShell 命令提示符。逐个运行这些命令，以便创建新的名为 contoso_users 的组织单元，然后为 Marci Kaufman 和 Lynda Meyer 添加两个新的用户帐户。
+接下来，使用 CORP\\User1 帐户登录到 DC1，并打开管理员级的 Windows PowerShell 命令提示符。逐个运行这些命令，以便创建新的名为 contoso\_users 的组织单元，然后为 Marci Kaufman 和 Lynda Meyer 添加两个新的用户帐户。
 
 	New-ADOrganizationalUnit -Name contoso_users -Path "DC=corp,DC=contoso,DC=com"
 	New-ADUser -SamAccountName marcik -AccountPassword (Read-Host "Set user password" -AsSecureString) -name "Marci Kaufman" -enabled $true -PasswordNeverExpires $true -ChangePasswordAtLogon $false -Path "OU=contoso_users,DC=corp,DC=contoso,DC=com"
@@ -134,20 +126,19 @@
 
 当你运行每个 Windows PowerShell 命令时，系统会提示你输入新用户的密码。记录这些密码并将其存储在安全的位置。稍后你将需要它们。
 
-接下来，在 DS1 上配置目录同步。
+接下来，在 DS1 上安装并配置 Azure AD Connect 工具。
 
-1.	使用 CORP\\User1 帐户登录到 DS1。
-2.	在“开始”屏幕上，键入“目录同步”。
-3.	右键单击“目录同步配置”，然后单击“以管理员身份运行”。这将启动配置向导。
-4.	在“欢迎”页上，单击“下一步”。
-5.	在“Windows Azure Active Directory 凭据”页上，键入你在阶段 2 设置 Office 365 FastTrack 试用版时创建的初始帐户的电子邮件地址和密码。单击“下一步”。 
-6.	在“Active Directory 凭据”页上，在“用户名”中键入“CORP\\User1”，在“密码”中键入 User1 帐户密码。单击**“下一步”**。
-7.	在“混合部署”页上，选择“启用混合部署”，然后单击“下一步”。
-8.	在“密码同步”页上，选择“启用密码同步”，然后单击“下一步”。
-9.	此时会显示“配置”页。配置完成后，单击“下一步”。
-10.	在“完成”页上，单击“完成”。出现提示时，单击“确定”。
+1.	运行 Internet Explorer，在**地址**栏中键入 **https://www.microsoft.com/download/details.aspx?id=47594**，然后按 Enter。
+2.	运行 Azure AD Connect 安装程序。
+3.	从桌面上双击“Azure AD Connect”。
+4.	在“欢迎使用”页上，选择“我同意许可条款和隐私声明”，然后单击“继续”。
+5.	在“快速设置”页上，单击“使用快速设置”。
+6.	在“连接到 Azure AD”页上，键入你在阶段 2 设置 Office 365 FastTrack 试用版时创建的初始帐户的电子邮件地址和密码。单击**“下一步”**。
+7.	在“连接到 AD DS”页上，在“用户名”中键入“CORP\\User1”，在“密码”中键入 User1 帐户密码。单击“下一步”。
+8.	在“准备配置”页上，复查设置，然后单击“安装”。
+9.	在“配置完成”页上，单击“退出”。
 
-接下来，验证 CORP 域中的用户帐户是否同步到 Office 365。请注意，可能需要等待数小时才会发生同步。
+接下来，验证 CORP 域中的用户帐户是否同步到 Office 365。请注意，可能需要等待几分钟才会进行同步。
 
 在 CLIENT1 的“设置和管理 Active Directory 同步”页上，单击该页步骤 6 中的“用户”链接。如果目录同步已成功，你会看到类似于下面这样的内容。
 
@@ -155,14 +146,14 @@
 
 “状态”列指示该帐户是通过与 Active Directory 域同步而获得的。
 
-接下来，通过 Lynda Myer Active Directory 帐户演示 Office 365 的密码同步。
+接下来，使用 Lynda Myer Active Directory 帐户演示 Office 365 密码同步。
 
 1.	在 CLIENT1 的“活动用户”页上，选择 **Lynda Meyer** 帐户。
 2.	在 Lynda Meyer 帐户的属性中的“已分配许可证”下，单击“编辑”。
 3.	在“分配许可证”选项卡的“设置用户位置”中选择一个位置（如美国）。
 4.	选择“Microsoft Office 365 计划 E3”，然后单击“保存”。
 5.	关闭 Internet Explorer。
-6.	运行 Internet Explorer 并转到 **https://portal.partner.microsoftonline.cn**。
+6.	运行 Internet Explorer 并转到 **http://portal.partner.microsoftonline.cn**。
 7.	使用 Lynda Meyer 的 Office 365 凭据登录。她的用户名将是 lyndam@<*Your Fictional Name*>.partner.onmschina.cn。该密码是 Lynda Meyer Active Directory 用户帐户密码。
 8.	成功登录后，你会看到 Office 365 门户主页，其中显示“让我们今天有所作为”。
 
@@ -174,9 +165,9 @@
 
 ## 其他资源
 
-[在 Windows Azure 中部署 Office 365 目录同步 (DirSync)](https://technet.microsoft.com/zh-CN/library/dn635310.aspx)
+[在 Azure 中部署 Office 365 目录同步 (DirSync)](http://technet.microsoft.com/zh-cn/library/dn635310.aspx)
 
-[使用 Office 服务器和云的解决方案](https://technet.microsoft.com/zh-CN/library/dn262744.aspx)
+[使用 Office 服务器和云的解决方案](http://technet.microsoft.com/zh-cn/library/dn262744.aspx)
 
 [设置用于测试的混合云环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)
 
@@ -190,7 +181,4 @@
 
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-
- 
-
-<!---HONumber=76-->
+<!---HONumber=Mooncake_1221_2015-->

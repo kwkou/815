@@ -1,20 +1,20 @@
 <properties
-   pageTitle="Microsoft Azure 安全和审核日志管理 | Microsoft Azure"
+   pageTitle="Azure 安全和审核日志管理 | Azure"
    description="文章提供了从托管在 Azure 上的服务生成、收集和分析安全日志的介绍。它面向每天要进行信息资产管理的 IT 专业人员和安全分析人员（包括负责其组织安全和合规性工作的人员）。"
    services="virtual-machines, cloud-services, storage"
    documentationCenter="na"
-   authors="TerryLanfear"
+   authors="nayak-mahesh"
    manager="msStevenPo"
    editor=""/>
 
 <tags
    ms.service="azure-security"
-   ms.date="08/13/2015"
-   wa.date="10/3/2015"/>
+   ms.date="12/10/2015"
+   wacn.date="01/29/2016"/>
 
-# Microsoft Azure 安全和审核日志管理
+# Azure 安全和审核日志管理
 
-Azure 使客户能够在其订阅中执行从 Azure 服务架构 (IaaS) 和平台即服务 (PaaS) 角色到中央存储的安全事件生成和收集。然后，客户就可以使用 [HDInsight](http://www.windowsazure.cn/documentation/services/hdinsight/) 来聚合和分析所收集的事件。此外，这些收集的事件可以导出到本地安全信息和事件管理 (SIEM) 系统以便进行持续监视。
+Azure 使客户能够在其订阅中执行从 Azure 服务架构 (IaaS) 和平台即服务 (PaaS) 角色到中央存储的安全事件生成和收集。然后，客户就可以使用 [HDInsight](/documentation/services/hdinsight/) 来聚合和分析所收集的事件。此外，这些收集的事件可以导出到本地安全信息和事件管理 (SIEM) 系统以便进行持续监视。
 
 Azure 安全日志记录、分析和监视生命周期包括：
 
@@ -30,7 +30,7 @@ Windows 事件日志中引发了虚拟机中有关**系统**、**安全**和**�
 
 >[AZURE.NOTE]在使用 Windows 事件转发 (WEF) 或 Azure 诊断（如[日志收集](#log-collection)部分所述）从云服务或虚拟机中拉取日志时，请考虑系统中断的潜在影响。例如，如果您的 WEF 环境在一段时间内出现故障，您要么确保日志大小足以应对更长的持续时间，要么就需要做好日志数据可能丢失的准备。
 
-对于在 Azure 中部署的云服务应用程序和从 <!--[-->Azure 虚拟机应用商店<!--](http://www.windowsazure.cn/marketplace/virtual-machines/#microsoft)-->创建的虚拟机，默认情况下启用一组操作系统安全事件。客户可以通过自定义操作系统审核策略来添加、删除或修改要审核的事件。有关详细信息，请参阅[安全策略设置参考](http://technet.microsoft.com/zh-cn/library/jj852210.aspx)。
+对于在 Azure 中部署的云服务应用程序和从 <!--[-->Azure 虚拟机应用商店<!--](/marketplace/virtual-machines/#microsoft)-->创建的虚拟机，默认情况下启用一组操作系统安全事件。客户可以通过自定义操作系统审核策略来添加、删除或修改要审核的事件。有关详细信息，请参阅[安全策略设置参考](http://technet.microsoft.com/zh-cn/library/jj852210.aspx)。
 
 可以使用以下方法来从操作系统（例如，审核策略更改）和 Windows 组件（例如 IIS）生成其他日志：
 
@@ -38,7 +38,7 @@ Windows 事件日志中引发了虚拟机中有关**系统**、**安全**和**�
 - Desired State Configuration (DSC)，以便推送和管理策略设置。有关详细信息，请参阅 [Azure PowerShell DSC](http://blogs.msdn.com/b/powershell/archive/2014/08/07/introducing-the-azure-powershell-dsc-desired-state-configuration-extension.aspx)。
 - 服务部署角色启动代码，以便为云服务（PaaS 方案）进行设置
 
-配置 Azure 角色启动任务可使代码在角色启动之前运行。可以通过将 **Startup** 元素添加到服务定义文件中的角色定义来定义角色的启动任务，如下面的示例中所示。有关详细信息，请参阅[在 Azure 中运行启动任务](http://msdn.microsoft.com/zh-cn/library/azure/hh180155.aspx)。
+配置 Azure 角色启动任务可使代码在角色启动之前运行。可以通过将 **Startup** 元素添加到服务定义文件中的角色定义来定义角色的启动任务，如下面的示例中所示。有关详细信息，请参阅[在 Azure 中运行启动任务](/documentation/articles/cloud-services-startup-tasks/)。
 
 要作为启动任务运行的任务文件（即以下示例中的 EnableLogOnAudit.cmd）需要包含在您的生成包中。如果您使用是的 Visual Studio，请将文件添加到您的云项目，右键单击该文件名，单击“属性”，然后将“复制到输出目录”设置为“始终复制”。
 
@@ -52,9 +52,9 @@ EnableLogOnAudit.cmd 的内容：
     auditpol.exe /set /category:"Logon/Logoff" /success:enable /failure:enable
     Exit /B 0
 
-前面示例中使用的 [Auditpol.exe](https://technet.microsoft.com/zh-cn/library/cc731451.aspx) 是 Windows Server 操作系统中包含的命令行工具，该操作系统允许您管理审核策略设置。
+前面示例中使用的 [Auditpol.exe](https://technet.microsoft.com/library/cc731451.aspx) 是 Windows Server 操作系统中包含的命令行工具，该操作系统允许您管理审核策略设置。
 
-除了生成 Windows 事件日志，还可以对各种 Windows 操作系统组件进行配置以生成日志，这些日志对于安全分析和监视而言非常重要。例如，自动为 Web 角色生成的 Internet Information Services (IIS) 日志和 http.err 日志，可以配置这些日志以进行收集。这些日志提供有价值的信息，可用于标识未经授权的访问或针对您的 Web 角色的攻击。有关详细信息，请参阅[在 IIS 中配置日志记录](http://technet.microsoft.com/zh-cn/library/hh831775.aspx)和 [ IIS 高级日志记录 – 自定义日志记录](http://www.iis.net/learn/extensions/advanced-logging-module/advanced-logging-for-iis-custom-logging)。
+除了生成 Windows 事件日志，还可以对各种 Windows 操作系统组件进行配置以生成日志，这些日志对于安全分析和监视而言非常重要。例如，自动为 Web 角色生成的 Internet Information Services (IIS) 日志和 http.err 日志，可以配置这些日志以进行收集。这些日志提供有价值的信息，可用于标识未经授权的访问或针对您的 Web 角色的攻击。有关详细信息，请参阅[在 IIS 中配置日志记录](http://technet.microsoft.com/library/hh831775.aspx)和 [ IIS 高级日志记录 – 自定义日志记录](http://www.iis.net/learn/extensions/advanced-logging-module/advanced-logging-for-iis-custom-logging)。
 
 若要更改 Web 角色中的 IIS 日志记录，客户可以向 Web 角色服务定义文件添加启动任务。下面的示例为名为 Contoso 的网站启用 HTTP 日志记录，并指定 IIS 应记录 Contoso 网站的所有请求。
 
@@ -89,7 +89,7 @@ ConfigureIISLogging:cmd 的内容
 ##	使用 Windows 事件转发进行的安全事件数据收集
 对于已加入域的 Azure 虚拟机，可以使用组策略设置配置 WEF（与配置本地已加入域的计算机的方法相同）。有关详细信息，请参阅[混合云](http://www.microsoft.com/server-cloud/solutions/hybrid-cloud.aspx)。
 
-组织可以使用此方法购买 IaaS 订阅，通过使用 [ExpressRoute](http://www.windowsazure.cn/services/expressroute/) 或站点到站点 VPN 将其连接到公司网络，然后将已在 Azure 中的虚拟机加入到企业域。之后，您可以从已加入域的计算机配置 WEF。
+组织可以使用此方法购买 IaaS 订阅，通过使用 [ExpressRoute](/services/expressroute/) 或站点到站点 VPN 将其连接到公司网络，然后将已在 Azure 中的虚拟机加入到企业域。之后，您可以从已加入域的计算机配置 WEF。
 
 事件转发拆分为两个部分：源和收集器。源是在其中生成安全日志的计算机。收集器是收集并合并事件日志的集中式服务器。IT 管理员可以订阅事件，以便他们可以接收和存储从远程计算机（事件源）转发的事件。有关详细信息，请参阅[配置计算机以转发和收集事件](http://technet.microsoft.com/zh-cn/library/cc748890.aspx)。
 
@@ -164,7 +164,7 @@ Azure PowerShell SDK 提供用于配置 Azure 虚拟机上的 Azure 诊断的 cm
 ##### <a name="step4"></a> 步骤 4：配置 Azure 诊断
  使用以下步骤启用 Azure 诊断并启动数据收集：
 
- 1.	若要打开 Azure PowerShell，键入 **Add-AzureAccount -Environment AzureChinaCloud**，然后按 ENTER。
+ 1.	若要打开 Azure PowerShell，键入 **Add-AzureAccount**，然后按 ENTER。
  2.	使用您的 Azure 帐户进行登录。
  3.	运行以下 PowerShell 脚本。请确保更新 storage\_name、key、config\_path、service\_name 和 vm\_name。
 
@@ -174,7 +174,7 @@ $key = "<Storage Key>"
 $config_path="<Path Of WAD Config XML>"
 $service_name="<Service Name. Usually it is same as VM Name>"
 $vm_name="<VM Name>"
-$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storage_name -StorageAccountKey $key
+$storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key
 $VM1 = Get-AzureVM -ServiceName $service_name -Name $vm_name
 $VM2 = Set-AzureVMDiagnosticsExtension -DiagnosticsConfigurationPath $config_path -Version "1.*" -VM $VM1 -StorageContext $storageContext
 $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
@@ -199,7 +199,8 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
 
 1.	在 Visual Studio（2013、2012 和 2010 SP1）中，单击“视图”，然后单击“服务器资源管理器”。
 2.	导航到您的存储帐户。
-3.	单击“表”，然后双击相应的表来查看从虚拟机中收集的安全日志。![][2]
+3.	单击“表”，然后双击相应的表来查看从虚拟机中收集的安全日志。
+![][2]
 
 4.	右键单击名为 WADWindowsEventLogsTable 的表，然后单击“查看数据”以打开表视图，如下所示：
 
@@ -353,7 +354,7 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
     $key = " <storage key>"
     $config_path="<path to configuration XML file>"
     $service_name="<Cloud Service Name>"
-    $storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storage_name -StorageAccountKey $key
+    $storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key
     Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name
 
 若要验证您的服务是否具有最新的诊断配置，请运行以下 Azure PowerShell 命令：
@@ -367,7 +368,8 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
 2.	打开提升的命令提示符并运行以下命令以创建虚拟机上的本地管理员帐户：
 
 
-    net user contosoadmin <enterpassword> /add net localgroup administrators contosoadmin /add
+    net user contosoadmin <enterpassword> /add
+    net localgroup administrators contosoadmin /add
 
 3.	打开“事件查看器”，打开“安全”通道，并注意是否已创建事件 4732，如下所示：
 
@@ -505,15 +507,20 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
 
 1.	打开 Web 浏览器并导航到云服务 Web 角色（例如，http://contosowebrole.chinacloudapp.cn/)）。
 2.	导航到“关于”和“联系人”页面以创建部分日志事件。
-3.	导航到生成状态代码 500 的页面（例如，http://contosowebrole.chinacloudapp.cn/Home/StatusCode500)）。您应该会看到一个错误，如下所示。请记住，我们在标题为“设置云服务名上日志收集管道的新实例”部分的步骤 1 中为 **StatusCode500** 添加了代码。![][16]
+3.	导航到生成状态代码 500 的页面（例如，http://contosowebrole.chinacloudapp.cn/Home/StatusCode500 ）。您应该会看到一个错误，如下所示。请记住，我们在标题为“设置云服务名上日志收集管道的新实例”部分的步骤 1 中为 **StatusCode500** 添加了代码。
+![][16]
 4.	打开到您的云服务实例的远程桌面会话。
 5.	打开 IIS 管理器。
-6.	默认情况下，启用 IIS 日志记录并将其设置为每小时生成包含 W3C 格式中的所有字段的文件。单击“浏览”，至少会显示一个日志文件，如下所示：![][17]
+6.	默认情况下，启用 IIS 日志记录并将其设置为每小时生成包含 W3C 格式中的所有字段的文件。单击“浏览”，至少会显示一个日志文件，如下所示：
+![][17]
 
-7.	等待大约五分钟以便 Azure 诊断代理将日志文件推送到 blob 容器。若要验证此数据，请打开“服务器资源管理器”>“存储”>“存储帐户”>“Blob”。如此处所示，创建了 blob **iislogs**：![][18]
+7.	等待大约五分钟以便 Azure 诊断代理将日志文件推送到 blob 容器。若要验证此数据，请打开“服务器资源管理器”>“存储”>“存储帐户”>“Blob”。如此处所示，创建了 blob **iislogs**：
+![][18]
 
-8.	右键单击并选中“查看 Blob 容器”以显示存储在 blob 中的 IIS 日志文件：![][19]
-9.	在 IIS 事件都位于客户的存储帐户后，利用 HDInsight 分析的应用程序可以用于执行事件聚合。下面的折线图是显示 HTTP 状态代码 500 的事件聚合任务的一个示例：![][20]
+8.	右键单击并选中“查看 Blob 容器”以显示存储在 blob 中的 IIS 日志文件：
+![][19]
+9.	在 IIS 事件都位于客户的存储帐户后，利用 HDInsight 分析的应用程序可以用于执行事件聚合。下面的折线图是显示 HTTP 状态代码 500 的事件聚合任务的一个示例：
+![][20]
 
 ## 安全日志收集的建议
 在收集安全日志时，我们建议您：
@@ -544,12 +551,12 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
 ## Azure Active Directory 报告
 Azure Active Directory (Azure AD) 包括一组安全、使用情况和审核日志报告，让您清楚地了解 Azure AD 租户的完整性和安全性。例如，Azure AD 能够自动分析用户活动和显示异常访问，然后通过客户可见的报告提供这一功能。
 
-通过“Active Directory”>“目录”下的“Azure 管理门户”[](https://manage.windowsazure.cn/)提供这些报告。其中一些报告是免费的，而其他报告作为 Azure AD Premium 版本的一部分功能提供。有关 Azure AD 报告的详细信息，请参阅[查看访问和使用情况报告](http://msdn.microsoft.com/zh-cn/library/azure/dn283934.aspx)。
+通过“Active Directory”>“目录”下的“[Azure 管理门户](https://manage.windowsazure.cn/)”提供这些报告。其中一些报告是免费的，而其他报告作为 Azure AD Premium 版本的一部分功能提供。有关 Azure AD 报告的详细信息，请参阅[查看访问和使用情况报告](http://msdn.microsoft.com/zh-cn/library/azure/dn283934.aspx)。
 
 ## Azure 操作日志
 与您的 Azure 订阅资源相关的操作日志还可通过管理门户中的“操作日志”功能提供。
 
-若要查看“操作日志”，请打开“Azure 管理门户”[](https://manage.windowsazure.cn/)，依次单击“管理服务”和“操作日志”。
+若要查看“操作日志”，请打开“[Azure 管理门户](https://manage.windowsazure.cn/)”，依次单击“管理服务”和“操作日志”。
 
 ## <a name="diagnostics"></a>支持 Azure 诊断的数据源
 
@@ -566,17 +573,17 @@ Azure Active Directory (Azure AD) 包括一组安全、使用情况和审核日�
 | 基于清单的 ETW | 由任何进程生成的 Windows 事件的事件跟踪 |
 
 ## 其他资源
-以下资源提供有关 Microsoft Azure 和相关的 Microsoft 服务的常规信息：
+以下资源提供有关 Azure 和相关的 Microsoft 服务的常规信息：
 
-- [Microsoft Azure 信任中心](/support/trust-center/)
+- [Azure 信任中心](/support/trust-center/)
 
     有关如何为 Azure 开发嵌入安全和隐私的信息以及 Azure 如何满足广泛的国际和特定于行业的合规性标准的信息
 
-- [Microsoft Azure 主页](http://www.windowsazure.cn)
+- [Azure 主页](http://www.azure.cn)
 
-    有关 Microsoft Azure 常规信息和链接
+    有关 Azure 常规信息和链接
 
-- [Microsoft Azure 文档中心](/documentation)
+- [Azure 文档中心](/documentation)
 
     Azure 服务和自动化脚本指南
 
@@ -586,7 +593,7 @@ Azure Active Directory (Azure AD) 包括一组安全、使用情况和审核日�
 
 - [Microsoft 安全响应中心电子邮件](mailto:secure@microsoft.com)
 
-    通过电子邮件报告 Microsoft 安全漏洞，包括 Microsoft Azure
+    通过电子邮件报告 Microsoft 安全漏洞，包括 Azure
 
 <!--Image references-->
 [1]: ./media/azure-security-audit-log-management/sec-security-data-collection-flow.png
@@ -610,4 +617,4 @@ Azure Active Directory (Azure AD) 包括一组安全、使用情况和审核日�
 [19]: ./media/azure-security-audit-log-management/sec-view-blob-container.png
 [20]: ./media/azure-security-audit-log-management/sec-hdinsight-analysis.png
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0118_2016-->

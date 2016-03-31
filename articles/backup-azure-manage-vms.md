@@ -1,36 +1,40 @@
 
 <properties
-	pageTitle="Azure 备份 - 管理虚拟机"
-	description="了解如何管理 Azure 虚拟机。"
+	pageTitle="管理和监视 Azure 虚拟机备份 | Azure"
+	description="了解如何管理和监视 Azure 虚拟机备份"
 	services="backup"
 	documentationCenter=""
-	authors="aashishr"
+	authors="trinadhk"
 	manager="shreeshd"
 	editor=""/>
 
 <tags
 	ms.service="backup" 
-	ms.date="09/09/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="10/29/2015"
+	wacn.date="01/26/2016"/>
 
-# 管理虚拟机
 
+# 管理和监视 Azure 虚拟机备份
 
 ## 管理受保护的虚拟机
 
+若要管理受保护的虚拟机，请执行以下操作：
+
 1. 若要查看和管理某个虚拟机的备份设置，请单击“受保护的项”选项卡。
 
-  - 单击受保护项的名称可以查看“备份详细信息”选项卡，其中显示了有关上次备份的信息。
+2. 单击受保护项的名称可以查看“备份详细信息”选项卡，其中显示了有关上次备份的信息。
 
-        ![Virtual machine backup](./media/backup-azure-manage-vms/backup-vmdetails.png)
+    ![Virtual machine backup](./media/backup-azure-manage-vms/backup-vmdetails.png)
 
-2. 若要查看和管理某个虚拟机的备份策略设置，请单击“策略”选项卡。
+3. 若要查看和管理某个虚拟机的备份策略设置，请单击“策略”选项卡。
 
-  - “备份策略”选项卡将显示现有策略。你可以根据需要进行更改。如果需要创建新策略，请在“策略”页上单击“创建”。请注意，如果要删除某个策略，则它不应当具有与之关联的任何虚拟机。
+    ![虚拟机策略](./media/backup-azure-manage-vms/manage-policy-settings.png)
 
-        ![Virtual machine policy](./media/backup-azure-manage-vms/backup-vmpolicy.png)
+    “备份策略”选项卡将显示现有策略。你可以根据需要进行更改。如果需要创建新策略，请在“策略”页上单击“创建”。请注意，如果要删除某个策略，则它不应当具有与之关联的任何虚拟机。
 
-3. 可以在“作业”页上获取有关虚拟机的操作或状态的更多信息。单击列表中的某个作业可获取更多详细信息，还可以筛选特定虚拟机的作业。
+    ![Virtual machine policy](./media/backup-azure-manage-vms/backup-vmpolicy.png)
+
+4. 可以在“作业”页上获取有关虚拟机的操作或状态的更多信息。单击列表中的某个作业可获取更多详细信息，还可以筛选特定虚拟机的作业。
 
     ![作业](./media/backup-azure-manage-vms/backup-job.png)
 
@@ -65,7 +69,7 @@
 - 保留 Azure 备份保管库中与虚拟机关联的备份数据
 - 删除与虚拟机关联的备份数据
 
-如果你已选择保留与虚拟机关联的备份数据，则可使用该备份数据来还原虚拟机。有关此类虚拟机的定价详细信息，请单击[此处](http://www.windowsazure.cn/home/features/back-up/#price)。
+如果你已选择保留与虚拟机关联的备份数据，则可使用该备份数据来还原虚拟机。有关此类虚拟机的定价详细信息，请单击[此处](/home/features/back-up/#price)。
 
 若要停止保护虚拟机，请执行以下操作：
 
@@ -148,12 +152,10 @@
 
     完成该作业后，与虚拟机对应的条目将从“受保护的项”页中删除。
 
-
-###仪表板
-
+## 仪表板
 在“仪表板”页中，可以查看有关 Azure 虚拟机、其存储和过去 24 小时内关联作业的信息。你可以查看备份状态和任何关联的备份错误。
 
-  ![仪表板](./media/backup-azure-manage-vms/dashboard-protectedvms.png)
+![仪表板](./media/backup-azure-manage-vms/dashboard-protectedvms.png)
 
 >[AZURE.NOTE]仪表板中的值每 24 小时刷新一次。
 
@@ -207,7 +209,7 @@ PS C:\> Switch-AzureMode AzureResourceManager
 PS C:\> Add-AlertRule -Operator GreaterThanOrEqual -Threshold 1 -ResourceId '/subscriptions/86eeac34-eth9a-4de3-84db-7a27d121967e/resourceGroups/RecoveryServices-DP2RCXUGWS3MLJF4LKPI3A3OMJ2DI4SRJK6HIJH22HFIHZVVELRQ-East-US/providers/microsoft.backupbvtd2/BackupVault/trinadhVault' -EventName Backup  -EventSource Administrative -Level Error -OperationName 'Microsoft.Backup/backupVault/Backup' -ResourceProvider Microsoft.Backup -Status Failed  -SubStatus Failed -RuleType Event -Location eastus -ResourceGroup RecoveryServices-DP2RCXUGWS3MLJF4LKPI3A3OMJ2DI4SRJK6HIJH22HFIHZVVELRQ-East-US -Name Backup-Failed -Description 'Backup failed for one of the VMs in vault trinadhkVault' -CustomEmails 'contoso@microsoft.com' -SendToServiceOwners
 ```
 
-**ResourceId**你可以从“操作日志”弹出窗口中获取此项，如以上部分所述。操作的详细信息弹出窗口中的 ResourceUri 是要针对此 cmdlet 提交的 ResourceId。
+**ResourceId**：你可以从“操作日志”弹出窗口中获取此项，如以上部分所述。操作的详细信息弹出窗口中的 ResourceUri 是要针对此 cmdlet 提交的 ResourceId。
 
 **EventName**：对于 IaaS VM 备份警报，支持的值包括 Register、Unregister、ConfigureProtection、Backup、Restore、StopProtection、DeleteBackupData、CreateProtectionPolicy、DeleteProtectionPolicy、UpdateProtectionPolicy
 
@@ -251,4 +253,4 @@ PS C:\> Add-AlertRule -Operator GreaterThanOrEqual -Threshold 1 -ResourceId '/su
 
 - [还原 Azure VM](/documentation/articles/backup-azure-restore-vms)
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_1207_2015-->

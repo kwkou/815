@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="向 Xamarin Android 应用添加推送通知 | Windows Azure" 
+	pageTitle="向 Xamarin Android 应用添加推送通知 | Azure" 
 	description="了解如何使用 Azure 移动服务和 Azure 通知中心将推送通知配置为通过 Google Cloud Messaging 发送到 Xamarin.Android 应用程序。" 
 	documentationCenter="xamarin" 
 	authors="ggailey777" 
@@ -9,10 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/16/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="12/07/2015"
+	wacn.date="01/29/2016"/>
 
-#  向移动服务应用程序添加推送通知
+# 向移动服务应用程序添加推送通知
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
@@ -24,7 +28,7 @@
 + 有效的 Google 帐户
 + [Google Cloud Messaging 客户端组件]。在学习本教程的过程中，你将要添加此组件。
 
-完成[移动服务入门]或[将移动服务添加到现有应用程序]时，你应该已在项目中安装了 [Xamarin.Android] 和 [Azure 移动服务组件]。
+完成[移动服务入门]教程时，你应该已在项目中安装了 [Xamarin.Android] 和 [Azure 移动服务]组件。
 
 ## <a id="register"></a>启用 Google Cloud Messaging
 
@@ -36,7 +40,7 @@
 
 ## <a id="update-scripts"></a>更新已注册的插入脚本以发送通知
 
->[AZURE.TIP]以下步骤说明了如何在 Azure 管理门户中，更新已注册到 TodoItem 表上的插入操作的脚本。你也可以在 Visual Studio 的“服务器资源管理器”的“Azure”节点中直接访问和编辑此移动服务脚本。
+>[AZURE.TIP]以下步骤说明了如何在 Azure 经典门户中，更新已注册到 TodoItem 表上的插入操作的脚本。你也可以在 Visual Studio 的“服务器资源管理器”的“Azure”节点中直接访问和编辑此移动服务脚本。
 
 [AZURE.INCLUDE [mobile-services-javascript-backend-android-push-insert-script](../includes/mobile-services-javascript-backend-android-push-insert-script.md)]
 
@@ -61,31 +65,27 @@
 
 通过以下主题了解有关移动服务和通知中心的详细信息：
 
-* [将移动服务添加到现有应用程序]
-  <br/>了解有关使用移动服务存储和查询数据的详细信息。
-
 * [身份验证入门 ](/documentation/articles/mobile-services-android-get-started-users)
-  <br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
+  </br>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
 
 * [什么是通知中心？](/documentation/articles/notification-hubs-overview)
-  <br/>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
+  </br>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
 
 * [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)
   </br>获取有关对通知中心解决方案进行故障排除和调试的指导。
 
 * [如何使用适用于移动服务的 .NET 客户端库](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
-  <br/>了解有关如何将移动服务与 Xamarin C# 代码配合使用的详细信息。
+  </br>了解有关如何将移动服务与 Xamarin C# 代码配合使用的详细信息。
 
 * [移动服务服务器脚本参考](/documentation/articles/mobile-services-how-to-use-server-scripts)
-  <br/>了解有关如何在移动服务中实施业务逻辑的详细信息。
+  </br>了解有关如何在移动服务中实施业务逻辑的详细信息。
 
 <!-- URLs. -->
 [移动服务入门]: /documentation/articles/mobile-services-ios-get-started
-[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-android-get-started-data
 
 [Google Cloud Messaging 客户端组件]: http://components.xamarin.com/view/GCMClient/
 [Xamarin.Android]: http://xamarin.com/download/
-[Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
+[Azure 移动服务]: http://components.xamarin.com/view/azure-mobile-services/
  
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

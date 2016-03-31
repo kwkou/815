@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="事件中心 API 概述"
+   pageTitle="事件中心 API 概述 | Azure"
    description="汇总了一些重要的事件中心 .NET 客户端 API。"
    services="event-hubs"
    documentationCenter="na"
@@ -8,14 +8,14 @@
    editor="" />
 <tags 
    ms.service="event-hubs"
-   ms.date="07/10/2015"
-   wacn.date="08/14/2015" />
+   ms.date="01/26/2016"
+   wacn.date="03/28/2016" />
 
 # 事件中心 API 概述
 
 本文汇总了一些重要的事件中心 .NET 客户端 API。有两个类别：管理 API 和运行时 API。运行时 API 包括发送和接收消息所需的全部操作。使用管理操作，你可以通过创建、更新和删除实体来管理事件中心实体状态。
 
-监视方案跨越了管理操作和运行时操作。有关 .NET API 的详细参考文档，请参阅 [.NET 类库](https://msdn.microsoft.com/zh-cn/library/jj933431.aspx)和 [EventProcessorHost API](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.aspx) 参考。
+监视方案跨越了管理操作和运行时操作。有关 .NET API 的详细参考文档，请参阅[服务总线 .NET](https://msdn.microsoft.com/zh-cn/library/azure/mt419900.aspx) 和 [EventProcessorHost API](https://msdn.microsoft.com/zh-cn/library/azure/mt445521.aspx) 参考。
 
 ## 管理 API
 
@@ -46,7 +46,7 @@ namespaceManager.UpdateEventHubAsync(ehd).Wait();
 ### 删除
 
 ```
-namespaceManager.DeleteEventHubAsync("event hub name").Wait();
+namespaceManager.DeleteEventHubAsync("Event Hub name").Wait();
 ```
 
 ## 运行时 API
@@ -55,7 +55,7 @@ namespaceManager.DeleteEventHubAsync("event hub name").Wait();
 
 ```
 // EventHubClient model (uses implicit factory instance, so all links on same connection)
-EventHubClient eventHubClient = EventHubClient.Create("event hub name");
+EventHubClient eventHubClient = EventHubClient.Create("Event Hub name");
 ```
 
 ### 发布消息
@@ -80,11 +80,11 @@ await client.SendAsync(data);
 ### 创建使用者
 
 ```
-// Create the Event Hub client
+// Create the Event Hubs client
 EventHubClient eventHubClient = EventHubClient.Create(EventHubName);
 
-// Get the default subscriber group
-EventHubSubscriberGroup defaultSubscriberGroup = eventHubClient.GetDefaultSubscriberGroup();
+// Get the default consumer group
+EventHubConsumerGroup defaultConsumerGroup = eventHubClient.GetDefaultConsumerGroup();
 
 // All messages
 EventHubReceiver consumer = await defaultConsumerGroup.CreateReceiverAsync(shardId: index);
@@ -111,11 +111,12 @@ msg = UnicodeEncoding.UTF8.GetString(info);
 
 ## 事件处理程序主机 API
 
-这些 API 为可能变成不可用状态但在多个可用辅助进程之间分布分片的辅助进程提供弹性。
+这些 API 通过在可用工作进程之间分布分片，为可能变为不可用的工作进程提供复原能力。
 
 ```
 // Checkpointing is done within the SimpleEventProcessor and on a per-consumerGroup per-partition basis, workers resume from where they last left off.
 // Use the EventData.Offset value for checkpointing yourself, this value is unique per partition.
+
 string eventHubConnectionString = System.Configuration.ConfigurationManager.AppSettings["Microsoft.ServiceBus.ConnectionString"];
 string blobConnectionString = System.Configuration.ConfigurationManager.AppSettings["AzureStorageConnectionString"]; // Required for checkpoint/state
 
@@ -127,7 +128,7 @@ EventProcessorHost host = new EventProcessorHost(WorkerName, EventHubName, defau
 host.UnregisterEventProcessorAsync().Wait();   
 ```
 
-[IEventProcessor](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.ieventprocessor.aspx) 接口定义如下：
+[IEventProcessor](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.ieventprocessor.aspx) 接口定义如下：
 
 ```
 public class SimpleEventProcessor : IEventProcessor
@@ -174,13 +175,14 @@ public class SimpleEventProcessor : IEventProcessor
 
 若要了解有关事件中心方案的详细信息，请访问以下链接：
 
-- [事件中心编程指南](/documentation/articles/event-hubs-programming-guide)
+- [什么是 Azure 事件中心？](/documentation/articles/event-hubs-what-is-event-hubs)
 - [事件中心概述](/documentation/articles/event-hubs-overview)
+- [事件中心编程指南](/documentation/articles/event-hubs-programming-guide)
 - [事件中心代码示例](https://code.msdn.microsoft.com/site/search?query=event%20hub&f%5B0%5D.Value=event%20hub&f%5B0%5D.Type=SearchText&ac=5)
 
 下面提供了 .NET API 参考：
 
-- [服务总线和事件中心 .NET API 参考](https://msdn.microsoft.com/zh-cn/library/jj933424.aspx)
-- [事件处理程序主机 API 参考](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.eventprocessorhost.aspx)
+- [服务总线和事件中心 .NET API 参考](https://msdn.microsoft.com/zh-cn/library/azure/mt419900.aspx)
+- [事件处理程序主机 API 参考](https://msdn.microsoft.com/zh-cn/library/azure/mt445521.aspx)
 
-<!---HONumber=66-->
+<!---HONumber=Mooncake_0321_2016-->

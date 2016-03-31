@@ -1,5 +1,5 @@
 <properties
-   pageTitle="外围网络示例 – 构建外围网络以通过防火墙、UDR 和 NSG 保护网络 | Windows Azure"
+   pageTitle="外围网络示例 – 构建外围网络以通过防火墙、UDR 和 NSG 保护网络 | Azure"
    description="构建包含防火墙、用户定义的路由 (UDR) 和网络安全组 (NSG) 的外围网络"
    services="virtual-network"
    documentationCenter="na"
@@ -9,12 +9,10 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="09/16/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="02/01/2016"
+	wacn.date="03/17/2016"/>
 
 # 示例 3 – 构建外围网络以通过防火墙、UDR 和 NSG 保护网络
-
-[返回安全边界最佳实践页面][HOME]
 
 本示例将创建一个外围网络，其中包含防火墙、四个 Windows 服务器、用户定义的路由、IP 转发和网络安全组。本示例还将演练每个相关命令，让你更加深入地了解每个步骤。另外还提供了“流量方案”部分，让你逐步深入了解流量如何流经外围网络的各个防御层。最后的“参考”部分提供了完整的代码，并说明如何构建此环境来测试和试验各种方案。
 
@@ -30,7 +28,7 @@
 - 两个代表应用程序后端服务器的 Windows Server（“AppVM01”、“AppVM02”）
 - 一个代表 DNS 服务器的 Windows Server（“DNS01”）
 
-下面的“参考”部分提供了可用于构建上述大多数环境的 PowerShell 脚本。尽管 VM 和虚拟网络的构建也可以由本示例脚本来完成，但本文未予详细的描述。
+下面的“参考”部分提供了可用于构建上述大多数环境的 PowerShell 脚本。尽管该示例脚本还完成了 VM 和虚拟网络的构建，但本文未对其进行详细描述。
 
 构建环境：
 
@@ -76,7 +74,7 @@ VNETLocal 始终是该特定网络的 VNet 的已定义地址前缀（也就是�
 2.	“VPNGateway”= 由动态网络协议添加的动态路由（与混合网络配合使用时为 BGP），这些路由随时间改变，因为动态协议会自动反映对等网络中的更改
 3.	“Default”= 上述路由表中所示的系统路由、本地 VNet 和静态条目。
 
->[AZURE.NOTE]由于 Azure 虚拟网关上使用的动态路由相当复杂，因此用户定义的路由 (UDR) 和 ExpressRoute 在使用上存在限制。如果子网与提供 ExpressRoute 连接的 Azure 网关通信，则不应该应用 UDR。此外，Azure 网关不能是用于其他 UDR 绑定子网的 NextHop 设备。将来的 Azure 版本将启用完全集成 UDR 和 ExpressRoute 的功能。
+>[AZURE.NOTE] 由于 Azure 虚拟网关上使用的动态路由相当复杂，因此用户定义的路由 (UDR) 和 ExpressRoute 在使用上存在限制。如果子网与提供 ExpressRoute 连接的 Azure 网关通信，则不应该应用 UDR。此外，Azure 网关不能是用于其他 UDR 绑定子网的 NextHop 设备。将来的 Azure 版本将启用完全集成 UDR 和 ExpressRoute 的功能。
 
 #### 创建本地路由
 
@@ -111,7 +109,7 @@ VNETLocal 始终是该特定网络的 VNet 的已定义地址前缀（也就是�
 		    -NextHopType VirtualAppliance `
 		    -NextHopIpAddress $VMIP[0]
 
-3. 上述路由条目将覆盖默认的 "0.0.0.0/0" 路由，但默认的 10.0.0.0/16 规则仍然存在，以允许 VNet 中的流量直接路由到目标，而不是路由到网络虚拟设备。若要纠正此行为，必须添加以下规则。
+3. 上述路由条目将覆盖默认的“0.0.0.0/0”路由，但默认的 10.0.0.0/16 规则仍然存在，以允许 VNet 中的流量直接路由到目标，而不是路由到网络虚拟设备。若要纠正此行为，必须添加以下规则。
 
 	    Get-AzureRouteTable $BERouteTableName `
 	        |Set-AzureRoute -RouteName "Internal traffic to FW" -AddressPrefix $VNetPrefix `
@@ -135,11 +133,11 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 
 例如，如果来自 AppVM01 的流量对 DNS01 服务器发出请求，UDR 会将此流量路由到防火墙。在启用 IP 转发后，目标为 DNS01 (10.0.2.4) 的流量被设备 (10.0.0.4) 所接受，然后转发到其最终目标 (10.0.2.4)。如果防火墙上未启用 IP 转发，则即使路由表将防火墙用作下一跃点，流量也不会被设备所接受。
 
->[AZURE.IMPORTANT]必须记得一同启用 IP 转发和用户定义的路由。
+>[AZURE.IMPORTANT] 必须记得一同启用 IP 转发和用户定义的路由。
 
 设置 IP 转发是单个命令，可在创建 VM 时运行。在本示例的流程中，这个代码段靠近脚本末尾处，与 UDR 命令放在一起：
 
-1.	调用代表虚拟设备的 VM 实例（在本例中为防火墙），并启用 IP 转发（注意：以货币符号开头的任何红色项（例如 $VMName[0]）均为本文“参考”部分的脚本中的用户定义变量。以方括号括住的零 [0] 代表 VM 数组中的第一个 VM，为了使示例脚本无须修改即可运行，第一个 VM (VM 0) 必须是防火墙）：
+1.	调用代表虚拟设备的 VM 实例（在本例中为防火墙），并启用 IP 转发（注意：以货币符号开头的任何红色项（例如 $VMName[0]）均为本文“参考”部分的脚本中的用户定义变量。以方括号括住的零 [0] 代表 VM 阵列中的第一个 VM，为了使示例脚本无须修改即可运行，第一个 VM (VM 0) 必须是防火墙）：
 
 		Get-AzureVM -Name $VMName[0] -ServiceName $ServiceName[0] `
 		   |Set-AzureIPForwarding -Enable
@@ -175,10 +173,10 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
  
 ![防火墙规则的逻辑视图][2]
 
->[AZURE.NOTE]根据所用的网络虚拟设备，管理端口会有所不同。本示例中提到的 Barracuda NG 防火墙使用端口 22、801 和 807。请参阅设备供应商的文档来查找用于管理所用设备的确切端口。
+>[AZURE.NOTE] 根据所用的网络虚拟设备，管理端口会有所不同。本示例中提到的 Barracuda NextGen 防火墙使用端口 22、801 和 807。请参阅设备供应商的文档来查找用于管理所用设备的确切端口。
 
 ### 逻辑规则描述
-安全子网上只有防火墙这个资源，因此上述逻辑视图未显示该子网，而且这个视图显示防火墙规则以及这些规则在逻辑上是如何允许或拒绝流量的流动，而不显示实际的路由路径。此外，针对 RDP 流量选择的外部端口均为较高范围的端口 (8014 – 8026)，并且选择时在一定程度上遵循了本地 IP 地址的最后两个八位字节以方便阅读（例如，本地服务器地址 10.0.1.4 与外部端口 8014 相关联），不过可以使用任何更高范围的端口，只要端口不冲突即可。
+安全子网上只有防火墙这个资源，因此上述逻辑视图未显示该子网，而且这个视图显示防火墙规则以及这些规则在逻辑上是如何允许或拒绝流量的流动，而不显示实际的路由路径。此外，针对 RDP 流量选择的外部端口均为较高范围的端口 (8014-8026)，并且选择时在一定程度上遵循了本地 IP 地址的最后两个八位字节以方便阅读（例如，本地服务器地址 10.0.1.4 与外部端口 8014 相关联），不过可以使用任何更高范围的端口，只要端口不冲突即可。
 
 在此示例中，我们需要 7 种类型的规则，下面描述了这些规则类型：
 
@@ -195,18 +193,18 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 - 防故障规则（针对不符合上述任一规则的流量）：
   7.	拒绝所有流量规则：请始终将此规则用作最终规则（在优先级方面），这样，如果流量的流动行为无法符合上述任何规则，此规则就会将其丢弃。这是默认规则且通常已激活，一般而言并不需要修改。
 
->[AZURE.TIP]为简化本示例，允许第二个应用程序流量规则上的任何端口，但在真实方案中，则应使用具体的端口和地址范围，以降低此规则的攻击面。
+>[AZURE.TIP] 为简化本示例，允许第二个应用程序流量规则上的任何端口，但在真实方案中，则应使用具体的端口和地址范围，以降低此规则的攻击面。
 
 <br />
 
->[AZURE.IMPORTANT]创建好上述所有规则后，请务必检查每个规则的优先级，以确保可根据需要允许或拒绝流量。在本示例中，规则设置了优先顺序。如果规则顺序错误，则很容易被锁定在防火墙外面。至少应该确保防火墙本身的管理绝对属于优先级最高的规则。
+>[AZURE.IMPORTANT] 创建好上述所有规则后，请务必检查每个规则的优先级，以确保可根据需要允许或拒绝流量。在本示例中，规则设置了优先顺序。如果规则顺序错误，则很容易被锁定在防火墙外面。至少应该确保防火墙本身的管理绝对属于优先级最高的规则。
 
 ### 规则先决条件
 运行防火墙的虚拟机的先决条件之一是公共终结点。为了使防火墙能够处理流量，必须开放相应的公共终结点。本示例包含三种类型的流量：1) 管理流量，用于控制防火墙和防火墙规则；2) RDP 流量，用于控制 Windows 服务器；3) 应用程序流量。这些流量是上述防火墙规则的逻辑视图上半部分中的三排流量类型。
 
->[AZURE.IMPORTANT]本内容的重点是要记住**所有**流量都会通过防火墙传送。通过远程桌面访问 IIS01 服务器也是如此，即使是在前端云服务和前端子网上，若要访问此服务器，也仍然需要通过 RDP 连接到端口 8014 上的防火墙，然后允许防火墙在内部将 RDP 请求路由到 IIS01 RDP 端口。由于没有直接通往 IIS01 的 RDP 路径（就门户上所见），Azure 管理门户的“连接”按钮将不起作用。这意味着，所有来自 Internet 的连接将连往安全服务和端口，例如 secscv001.chinacloudapp.cn:xxxx（请参考上图中外部端口与内部 IP 和端口的映射）。
+>[AZURE.IMPORTANT] 本内容的重点是要记住**所有**流量都会通过防火墙传送。通过远程桌面访问 IIS01 服务器也是如此，即使是在前端云服务和前端子网上，若要访问此服务器，也仍然需要通过 RDP 连接到端口 8014 上的防火墙，然后允许防火墙在内部将 RDP 请求路由到 IIS01 RDP 端口。由于没有直接通往 IIS01 的 RDP 路径（就门户上所见），Azure 管理门户的“连接”按钮将不起作用。这意味着，所有来自 Internet 的连接将连往安全服务和端口，例如 secscv001.chinacloudapp.cn:xxxx（请参考上图中外部端口与内部 IP 和端口的映射）。
 
-可以在创建 VM 或后续构建时开放终结点，示例脚本和以下代码段中演示了具体的操作（注意：以货币符号开头的任何项（例如 $VMName[$i]）均为本文“参考”部分的脚本中的用户定义变量。以方括号括住的“$i”[$i] 代表 VM 数组中特定 VM 的数组编号）：
+可以在创建 VM 或后续构建时开放终结点，示例脚本和以下代码段中演示了具体的操作（注意：以货币符号开头的任何项（例如 $VMName[$i]）均为本文“参考”部分的脚本中的用户定义变量。以方括号括住的“$i”[$i] 代表 VM 阵列中特定 VM 的阵列编号）：
 
 	Add-AzureEndpoint -Name "HTTP" -Protocol tcp -PublicPort 80 -LocalPort 80 `
 	    -VM (Get-AzureVM -ServiceName $ServiceName[$i] -Name $VMName[$i]) | `
@@ -216,7 +214,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 
 电脑上必须安装管理客户端才能管理防火墙和创建所需的配置。有关如何管理设备的信息，请参阅防火墙（或其他 NVA）供应商提供的文档。本部分的余下内容和下一部分“创建防火墙规则”将介绍如何通过供应商的管理客户端（即，不使用 Azure 管理门户或 PowerShell）来配置防火墙本身。
 
-有关下载客户端和连接到本示例所用 Barracuda 的说明可在 [Barracuda NG Admin](https://techlib.barracuda.com/NG61/NGAdmin) 中找到
+有关下载客户端和连接到本示例所用 Barracuda 的说明，可在以下位置找到：[Barracuda NG Admin](https://techlib.barracuda.com/NG61/NGAdmin)
 
 在登录防火墙之后、创建防火墙规则之前，你可以借助以下两个必备的对象类来方便创建规则：网络对象和服务对象。
 
@@ -232,7 +230,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 
 本文稍后将在 DNS 规则中使用这个 IP 地址引用。
 
-第二个必备对象是服务对象。这些对象代表每台服务器的 RDP 连接端口。由于现有 RDP 服务对象已绑定到默认 RDP 端口 3389，因此可以创建新服务以允许来自外部端口 (8014-8026) 的流量。还可将新端口添加到现有的 RDP 服务，但为了便于演示，我们可为每台服务器创建一个规则。若要为服务器创建新的 RDP 规则，请从访问 Barracuda NG Admin 客户端仪表板，导航到“配置”选项卡，在“操作配置”部分中单击“规则集”，单击“防火墙对象”菜单下面的“服务”，向下滚动服务列表，然后选择“RDP”服务。右键单击并选择“复制”，然后右键单击并选择“粘贴”。现已创建一个可编辑的 RDP-Copy1 服务对象。右键单击 RDP-Copy1 并选择“编辑”，此时将弹出如下所示的“编辑服务对象”窗口：
+第二个必备对象是服务对象。这些对象代表每台服务器的 RDP 连接端口。由于现有 RDP 服务对象已绑定到默认 RDP 端口 3389，因此可以创建新服务以允许来自外部端口 (8014-8026) 的流量。还可将新端口添加到现有的 RDP 服务，但为了便于演示，我们可为每台服务器创建一个规则。若要为服务器创建新的 RDP 规则，请先访问 Barracuda NG Admin 客户端仪表板，导航到“配置”选项卡，在“操作配置”部分中单击“规则集”，单击“防火墙对象”菜单下面的“服务”，向下滚动服务列表，然后选择“RDP”服务。右键单击并选择“复制”，然后右键单击并选择“粘贴”。现已创建一个可编辑的 RDP-Copy1 服务对象。右键单击 RDP-Copy1 并选择“编辑”，此时将弹出如下所示的“编辑服务对象”窗口：
 
 ![默认 RDP 规则的副本][5]
 
@@ -242,7 +240,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
  
 必须重复此过程来创建其余服务器的 RDP 服务：AppVM02、DNS01 和 IIS01。创建这些服务可让下一部分中的规则创建操作变得更简单明了。
 
->[AZURE.NOTE]防火墙不需要 RDP 服务的原因有两个：1) 首先，防火墙 VM 是基于 Linux 的映像，因此将在端口 22 上使用 SSH 来管理 VM，而不是使用 RDP，2) 下面所述的第一个管理规则允许端口 22 和另外两个管理端口，以允许进行管理连接。
+>[AZURE.NOTE] 防火墙不需要 RDP 服务的原因有两个：1) 首先，防火墙 VM 是基于 Linux 的映像，因此将在端口 22 上使用 SSH 来管理 VM，而不是使用 RDP，2) 下面所述的第一个管理规则允许端口 22 和另外两个管理端口，以允许进行管理连接。
 
 ### 创建防火墙规则
 本示例使用三种类型的防火墙规则，它们各有不同的图标：
@@ -255,17 +253,17 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 
 可以在 Barracuda 网站中找到有关这些规则的详细信息。
 
-若要创建以下规则（或验证现有的默认规则），请先访问 Barracuda NG Admin 客户端仪表板，导航到“设置”选项卡，在“操作配置”部分中单击“规则集”。此时将出现名为“主规则”的网格，其中显示了此防火墙的现有活动规则和已停用规则。此网格右上角有一个绿色“+”小按钮，单击此按钮即可创建新规则（注意：防火墙可能会“禁止”更改，如果你看到标记为“锁定”的按钮且无法创建或编辑规则，请单击此按钮以“解除锁定”规则集并允许编辑）。如果你想要编辑现有的某个规则，请选择该规则，右键单击并选择“编辑规则”。
+若要创建以下规则（或验证现有的默认规则），请先访问 Barracuda NG Admin 客户端仪表板，导航到“设置”选项卡，在“操作配置”部分中单击“规则集”。此时将出现名为“主规则”的网格，其中显示了此防火墙的现有活动规则和已停用规则。此网格右上角有一个绿色“+”小按钮，单击此按钮即可创建新规则（注意：防火墙可能会“禁止”更改，如果你看到标记为“锁定”的按钮且无法创建或编辑规则，请单击此按钮以“解除锁定”规则集并允许编辑）。如果你想要编辑现有规则，请选择该规则，右键单击并选择“编辑规则”。
 
 创建和/或修改规则后，必须将其推送到防火墙并激活，如果不这么做，规则更改将不会生效。下面的详细规则说明描述了推送和激活过程。
 
 完成本示例所需的每个规则的具体说明如下：
 
-- **防火墙管理规则**：此应用重定向规则允许流量传递到网络虚拟设备的管理端口，在本示例中为 Barracuda NG 防火墙。管理端口是 801 和 807，以及 22（可选）。外部和内部端口相同（即没有端口转换）。此规则 (SETUP-MGMT-ACCESS) 是默认规则，已按默认启用（在 Barracuda NG Firewall 版本 6.1 中）。
+- **防火墙管理规则**：此应用重定向规则允许流量传递到网络虚拟设备的管理端口，在本示例中为 Barracuda NextGen 防火墙。管理端口是 801 和 807，以及 22（可选）。外部和内部端口相同（即没有端口转换）。此规则 (SETUP-MGMT-ACCESS) 是默认规则，已按默认启用（在 Barracuda NextGen 防火墙版本 6.1 中）。
 
 	![防火墙管理规则][10]
 
->[AZURE.TIP]此规则中的源地址空间是“任何”，如果管理 IP 地址范围已知，则减少此范围还可降低管理端口的攻击面。
+>[AZURE.TIP] 此规则中的源地址空间是“任何”，如果管理 IP 地址范围已知，则减少此范围还可降低管理端口的攻击面。
 
 - **RDP 规则**：这些目标 NAT 规则将允许通过 RDP 管理单个服务器。
 创建此规则需要四个关键字段：
@@ -285,7 +283,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
     | RDP-to-AppVM01 | AppVM01 | AppVM01 RDP | 10\.0.2.5:3389 |
     | RDP-to-AppVM02 | AppVM02 | AppVm02 RDP | 10\.0.2.6:3389 |
   
->[AZURE.TIP]缩减“源”和“服务”字段的范围可降低攻击面。请使用可让功能正常运行的最小范围。
+>[AZURE.TIP] 缩减“源”和“服务”字段的范围可降低攻击面。请使用可让功能正常运行的最小范围。
 
 - **应用程序流量规则**：应用程序流量规则有两个，第一个针对前端 Web 流量，第二个针对后端流量（例如 Web 服务器流往数据层）。这些规则取决于网络体系结构（服务器的放置位置）和流量流动行为（流量的流动方向，以及使用的端口）。
 
@@ -309,13 +307,13 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 
 	**注意**：此规则的“源”网络是前端子网上的任何资源，如果只有一个或已知特定数目的 Web 服务器，则可以将网络对象资源创建为更与这些确切 IP 地址相关，而不是针对整个前端子网。
 
->[AZURE.TIP]此规则使用“任何”服务让你更轻松地设置和使用示例应用程序，此外，还允许在单个规则中使用 ICMPv4 (ping)。不过，这不是建议的做法。端口和协议（“服务”）应尽可能缩小到允许应用程序操作的程度，以降低跨越此边界的攻击面。
+>[AZURE.TIP] 此规则使用“任何”服务让你更轻松地设置和使用示例应用程序，此外，还允许在单个规则中使用 ICMPv4 (ping)。不过，这不是建议的做法。端口和协议（“服务”）应尽可能缩小到允许应用程序操作的程度，以降低跨越此边界的攻击面。
 
 <br />
 
->[AZURE.TIP]尽管此规则显示正在使用 explicit-dest 引用，但整个防火墙配置应使用一致的方法。建议在整个配置中使用命名网络对象，以方便阅读和支持。在此处使用 explicit-dest 只是为了显示备选的引用方法，一般并不建议这样做（尤其是在复杂配置中）。
+>[AZURE.TIP] 尽管此规则显示正在使用 explicit-dest 引用，但整个防火墙配置应使用一致的方法。建议在整个配置中使用命名网络对象，以方便阅读和支持。在此处使用 explicit-dest 只是为了显示备选的引用方法，一般并不建议这样做（尤其是在复杂配置中）。
 
-- **出站到 Internet 规则**：此传递规则允许来自任何源网络的流量传递到选定的目标网络。此规则通常是 Barracuda NG 防火墙上已有的但处于禁用状态的默认规则。右键单击此规则可以访问“激活规则”命令。此处所示的规则已经过修改，添加了本文先决条件部分中为了参考而创建的，连接到此规则的“源”属性的两个本地子网。
+- **出站到 Internet 规则**：此传递规则允许来自任何源网络的流量传递到选定的目标网络。此规则通常是 Barracuda NextGen 防火墙上已有的但处于禁用状态的默认规则。右键单击此规则可以访问“激活规则”命令。此处所示的规则已经过修改，添加了本文先决条件部分中为了参考而创建的，连接到此规则的“源”属性的两个本地子网。
 
 	![防火墙出站规则][14]
 
@@ -335,7 +333,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 
 	![防火墙拒绝规则][17]
 
->[AZURE.IMPORTANT]创建好上述所有规则后，请务必检查每个规则的优先级，以确保可根据需要允许或拒绝流量。在本示例中，规则的排列顺序是它们应在 Barracuda 管理客户端的转发规则主网格中显示的顺序。
+>[AZURE.IMPORTANT] 创建好上述所有规则后，请务必检查每个规则的优先级，以确保可根据需要允许或拒绝流量。在本示例中，规则的排列顺序是它们应在 Barracuda 管理客户端的转发规则主网格中显示的顺序。
 
 ## 规则激活
 根据逻辑图中的规范修改规则集后，必须将规则集上载到防火墙并激活。
@@ -344,10 +342,10 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
  
 管理客户端右上角是按钮群集。单击“发送更改”按钮将修改后的规则发送到防火墙，然后单击“激活”按钮。
  
-在激活防火墙规则集后，此示例环境的构建便已完成。
+激活防火墙规则集后，此示例环境即构建完成。
 
 ## 流量方案
->[AZURE.IMPORTANT]本部分的重点是要记住**所有**流量都会通过防火墙传送。通过远程桌面访问 IIS01 服务器也是如此，即使是在前端云服务和前端子网上，若要访问此服务器，也仍然需要通过 RDP 连接到端口 8014 上的防火墙，然后允许防火墙在内部将 RDP 请求路由到 IIS01 RDP 端口。由于没有直接通往 IIS01 的 RDP 路径（就门户上所见），Azure 管理门户的“连接”按钮将不起作用。这意味着，所有来自 Internet 的连接将连往安全服务和端口，例如 secscv001.chinacloudapp.cn:xxxx。
+>[AZURE.IMPORTANT] 本部分的重点是要记住**所有**流量都会通过防火墙传送。通过远程桌面访问 IIS01 服务器也是如此，即使是在前端云服务和前端子网上，若要访问此服务器，也仍然需要通过 RDP 连接到端口 8014 上的防火墙，然后允许防火墙在内部将 RDP 请求路由到 IIS01 RDP 端口。由于没有直接通往 IIS01 的 RDP 路径（就门户上所见），Azure 管理门户的“连接”按钮将不起作用。这意味着，所有来自 Internet 的连接将连往安全服务和端口，例如 secscv001.chinacloudapp.cn:xxxx。
 
 对于这些方案，应准备好以下防火墙规则：
 
@@ -363,7 +361,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 10.	子网内部流量（仅限后端到前端）
 11.	全部拒绝
 
-实际的防火墙规则集很可能包含上述规则以外的其他许多规则，任何给定防火墙上的规则还包含与此处所列编号不同的优先级编号。此列表和关联的编号只是提供这 11 个规则之间的相关性，以及它们彼此之间的相对优先级。换而言之，在实际的防火墙上，“通过 RDP 访问 IIS01”可能是规则编号 5，但只要它低于“防火墙管理”规则并高于“通过 RDP 访问 DNS01”规则，就符合此列表的目的。该列表还有助于使以下方案变得简单明了，例如“FW 规则 9 (DNS)”。同样为了简单起见，当流量方案与 RDP 无关时，四个 RDP 规则将统称为“RDP 规则”。
+实际的防火墙规则集很可能包含上述规则以外的其他许多规则，任何给定防火墙上的规则还包含与此处所列编号不同的优先级编号。此列表和关联的编号只是提供这 11 个规则之间的相关性，以及它们彼此之间的相对优先级。换而言之，在实际的防火墙上，“通过 RDP 访问 IIS01”可能是规则编号 5，但只要它低于“防火墙管理”规则并高于“通过 RDP 访问 DNS01”规则，就符合此列表的目的。该列表还有助于使以下方案变得简单明了，例如“转发规则 9 (DNS)”。同样为了简单起见，当流量方案与 RDP 无关时，四个 RDP 规则将统称为“RDP 规则”。
 
 另请记住，已创建了网络安全组用于前端和后端子网上的入站 Internet 流量。
 
@@ -374,7 +372,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 4.	流量抵达防火墙的内部 IP 地址 (10.0.1.4)
 5.	防火墙开始处理规则：
   1.	转发规则 1 (FW Mgmt) 不适用，将转到下一规则
-  2.	转发规则 2 - 5（RDP 规则）不适用，将转到下一规则
+  2.	转发规则 2-5（RDP 规则）不适用，将转到下一规则
   3.	转发规则 6（应用：Web）适用，允许流量，防火墙通过 NAT 将流量发送到 10.0.1.4 (IIS01)
 6.	前端子网开始处理入站规则：
   1.	NSG 规则 1（阻止 Internet）不适用（此流量由防火墙进行 NAT 处理，因此源地址现在是位于安全子网上的防火墙，被前端子网 NSG 认为是“本地”流量，因此受到允许），将转到下一个规则
@@ -385,7 +383,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 10.	前端子网上没有出站规则，允许流量
 11.	防火墙开始处理规则：
   1.	转发规则 1 (FW Mgmt) 不适用，将转到下一规则
-  2.	转发规则 2 - 5（RDP 规则）不适用，将转到下一规则
+  2.	转发规则 2-5（RDP 规则）不适用，将转到下一规则
   3.	转发规则 6（应用：Web）不适用，将转到下一规则
   4.	转发规则 7（应用：后端）适用，允许流量，防火墙将流量转发到 10.0.2.5 (AppVM01)
 12.	后端子网开始处理入站规则：
@@ -430,8 +428,8 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 4.	没有出站 NSG 规则绑定到前端子网，允许流量
 5.	防火墙开始处理规则：
   1.	转发规则 1 (FW Mgmt) 不适用，将转到下一规则
-  2.	转发规则 2 - 5（RDP 规则）不适用，将转到下一规则
-  3.	转发规则 6 - 7（应用规则）不适用，将转到下一规则
+  2.	转发规则 2-5（RDP 规则）不适用，将转到下一规则
+  3.	转发规则 6-7（应用规则）不适用，将转到下一规则
   4.	转发规则 8（到 Internet）不适用，将转到下一规则
   5.	转发规则 9 (DNS) 适用，允许流量，防火墙将流量转发到 10.0.2.4 (DNS01)
 6.	后端子网开始处理入站规则：
@@ -443,8 +441,8 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 10.	后端子网上没有出站 NSG 规则，允许流量
 11.	防火墙开始处理规则：
   1.	转发规则 1 (FW Mgmt) 不适用，将转到下一规则
-  2.	转发规则 2 - 5（RDP 规则）不适用，将转到下一规则
-  3.	转发规则 6 - 7（应用规则）不适用，将转到下一规则
+  2.	转发规则 2-5（RDP 规则）不适用，将转到下一规则
+  3.	转发规则 6-7（应用规则）不适用，将转到下一规则
   4.	 转发规则 8（到Internet）适用，允许流量，通过 SNAT 将会话发送到 Internet 上的根 DNS 服务器
 12.	Internet DNS 服务器做出响应，由于此会话是从防火墙发起的，因此响应被防火墙接受
 13.	由于这是建立的会话，防火墙将响应转发到发起端服务器 DNS01
@@ -466,8 +464,8 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 3.	后端子网上没有出站 NSG 规则，因此允许响应
 4.	防火墙开始处理规则：
   1.	转发规则 1 (FW Mgmt) 不适用，将转到下一规则
-  2.	转发规则 2 - 5（RDP 规则）不适用，将转到下一规则
-  3.	转发规则 6 - 7（应用规则）不适用，将转到下一规则
+  2.	转发规则 2-5（RDP 规则）不适用，将转到下一规则
+  3.	转发规则 6-7（应用规则）不适用，将转到下一规则
   4.	转发规则 8（到 Internet）不适用，将转到下一规则
   5.	转发规则 9 (DNS) 不适用，将转到下一规则
   6.	转发规则 10（子网内部）适用，允许流量，防火墙将流量传递到 10.0.1.4 (IIS01)
@@ -512,8 +510,8 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 2.	由于没有为 SQL 开放终结点，此流量不会通过云服务抵达防火墙
 3.	如果出于某种原因而开放了 SQL 终结点，防火墙将开始处理规则：
   1.	转发规则 1 (FW Mgmt) 不适用，将转到下一规则
-  2.	转发规则 2 - 5（RDP 规则）不适用，将转到下一规则
-  3.	转发规则 6 - 7（应用程序规则）不适用，将转到下一规则
+  2.	转发规则 2-5（RDP 规则）不适用，将转到下一规则
+  3.	转发规则 6-7（应用程序规则）不适用，将转到下一规则
   4.	转发规则 8（到 Internet）不适用，将转到下一规则
   5.	转发规则 9 (DNS) 不适用，将转到下一规则
   6.	转发规则 10（子网内部）不适用，将转到下一规则
@@ -523,7 +521,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 ## 参考
 ### 主脚本和网络配置
 将完整脚本保存在 PowerShell 脚本文件中。将网络配置保存到名为“NetworkConf2.xml”的文件中。
-根据需要修改用户定义的变量。运行脚本，然后根据上面的防火墙规则设置说明操作。
+如有需要，请修改用户定义的变量。运行脚本，然后根据上面的防火墙规则设置说明操作。
 
 #### 完整脚本
 此脚本基于用户定义的变量执行以下操作：
@@ -544,7 +542,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 
 此 PowerShell 脚本应该在连接到 Internet 的电脑或服务器上本地运行。
 
->[AZURE.IMPORTANT]此此脚本运行时，PowerShell 中可能会弹出警告或其他参考性消息。只有以红色字体显示的错误消息才需要引以关注。
+>[AZURE.IMPORTANT] 此此脚本运行时，PowerShell 中可能会弹出警告或其他参考性消息。只有以红色字体显示的错误消息才需要引以关注。
 
 	<# 
 	 .SYNOPSIS
@@ -555,7 +553,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 	   - A default storage account for VM disks
 	   - Three new cloud services
 	   - Three Subnets (SecNet, FrontEnd, and BackEnd subnets)
-	   - A Network Virtual Appliance (NVA), in this case a Barracuda NG Firewall
+	   - A Network Virtual Appliance (NVA), in this case a Barracuda NextGen Firewall
 	   - One server on the FrontEnd Subnet
 	   - Three Servers on the BackEnd Subnet
 	   - IP Forwading from the FireWall out to the internet
@@ -625,7 +623,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 	
 	  # VM Base Disk Image Details
 	    $SrvImg = Get-AzureVMImage | Where {$_.ImageFamily -match 'Windows Server 2012 R2 Datacenter'} | sort PublishedDate -Descending | Select ImageName -First 1 | ForEach {$_.ImageName}
-	    $FWImg = Get-AzureVMImage | Where {$_.ImageFamily -match 'Barracuda NG Firewall'} | sort PublishedDate -Descending | Select ImageName -First 1 | ForEach {$_.ImageName}
+	    $FWImg = Get-AzureVMImage | Where {$_.ImageFamily -match 'Barracuda NextGen Firewall'} | sort PublishedDate -Descending | Select ImageName -First 1 | ForEach {$_.ImageName}
 	
 	  # UDR Details
 	    $FERouteTableName = "FrontEndSubnetRouteTable"
@@ -690,7 +688,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 	
 	  # Get your Azure accounts
 	    Add-AzureAccount
-	    Set-AzureSubscription –SubscriptionId $subID -ErrorAction Stop
+	    Set-AzureSubscription -SubscriptionId $subID -ErrorAction Stop
 	    Select-AzureSubscription -SubscriptionId $subID -Current -ErrorAction Stop
 	
 	  # Create Storage Account
@@ -702,7 +700,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 	
 	  # Update Subscription Pointer to New Storage Account
 	    Write-Host "Updating Subscription Pointer to New Storage Account" -ForegroundColor Cyan 
-	    Set-AzureSubscription –SubscriptionId $subID -CurrentStorageAccountName $StorageAccountName -ErrorAction Stop
+	    Set-AzureSubscription -SubscriptionId $subID -CurrentStorageAccountName $StorageAccountName -ErrorAction Stop
 	
 	# Validation
 	$FatalError = $false
@@ -756,11 +754,11 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 	        Write-Host "Building $($VMName[$i])" -ForegroundColor Cyan
 	        If ($VMFamily[$i] -eq "Firewall") 
 	            { 
-	            New-AzureVMConfig -Name $VMName[$i] -ImageName $img[$i] –InstanceSize $size[$i] | `
+	            New-AzureVMConfig -Name $VMName[$i] -ImageName $img[$i] -InstanceSize $size[$i] | `
 	                Add-AzureProvisioningConfig -Linux -LinuxUser $LocalAdmin -Password $LocalAdminPwd  | `
-	                Set-AzureSubnet  –SubnetNames $SubnetName[$i] | `
+	                Set-AzureSubnet  -SubnetNames $SubnetName[$i] | `
 	                Set-AzureStaticVNetIP -IPAddress $VMIP[$i] | `
-	                New-AzureVM –ServiceName $ServiceName[$i] -VNetName $VNetName -Location $DeploymentLocation
+	                New-AzureVM -ServiceName $ServiceName[$i] -VNetName $VNetName -Location $DeploymentLocation
 	            # Set up all the EndPoints we'll need once we're up and running
 	            # Note: All traffic goes through the firewall, so we'll need to set up all ports here.
 	            #       Also, the firewall will be redirecting traffic to a new IP and Port in a forwarding
@@ -777,14 +775,14 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 	            }
 	        Else
 	            {
-	            New-AzureVMConfig -Name $VMName[$i] -ImageName $img[$i] –InstanceSize $size[$i] | `
+	            New-AzureVMConfig -Name $VMName[$i] -ImageName $img[$i] -InstanceSize $size[$i] | `
 	                Add-AzureProvisioningConfig -Windows -AdminUsername $LocalAdmin -Password $LocalAdminPwd  | `
-	                Set-AzureSubnet  –SubnetNames $SubnetName[$i] | `
+	                Set-AzureSubnet  -SubnetNames $SubnetName[$i] | `
 	                Set-AzureStaticVNetIP -IPAddress $VMIP[$i] | `
 	                Set-AzureVMMicrosoftAntimalwareExtension -AntimalwareConfiguration '{"AntimalwareEnabled" : true}' | `
 	                Remove-AzureEndpoint -Name "RemoteDesktop" | `
 	                Remove-AzureEndpoint -Name "PowerShell" | `
-	                New-AzureVM –ServiceName $ServiceName[$i] -VNetName $VNetName -Location $DeploymentLocation
+	                New-AzureVM -ServiceName $ServiceName[$i] -VNetName $VNetName -Location $DeploymentLocation
 	            }
 	        $i++
 	    }
@@ -939,4 +937,4 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 [HOME]: /documentation/articles/best-practices-network-security
 [SampleApp]: /documentation/articles/virtual-networks-sample-app
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0307_2016-->

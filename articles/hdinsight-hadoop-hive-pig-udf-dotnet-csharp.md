@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 HDInsight 中的 Hadoop 上将 C# 与 Hive 和 Pig 配合使用 | Windows Azure"
+	pageTitle="在 HDInsight 中的 Hadoop 上将 C# 与 Hive 和 Pig 配合使用 | Azure"
 	description="了解在 Azure HDInsight 中如何将 C# 用户定义的函数 (UDF) 与 Hive 和 Pig 流式处理配合使用。"
 	services="hdinsight"
 	documentationCenter=""
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="02/05/2016"
+	wacn.date="03/28/2016"/>
 
 
 #在 HDInsight 中的 Hadoop 上将 C# 用户定义函数与 Hive 和 Pig 流式处理配合使用
@@ -32,7 +32,7 @@ Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时�
 
 	* Visual Studio 2015 预览版
 
-* HDInsight 群集上的 Hadoop - 有关创建群集的步骤，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)
+* HDInsight 群集上的 Hadoop - 有关创建群集的步骤，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1)
 
 * Hadoop Tools for Visual Studio。有关安装和配置该工具的步骤，请参阅[开始使用 HDInsight Hadoop Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)。
 

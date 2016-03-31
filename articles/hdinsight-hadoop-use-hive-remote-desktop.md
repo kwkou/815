@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 HDInsight 中将 Hadoop Hive 与远程桌面配合使用 | Windows Azure"
+   pageTitle="在 HDInsight 中将 Hadoop Hive 与远程桌面配合使用 | Azure"
    description="学习如何通过使用远程桌面连接到 HDInsight 中的 Hadoop 群集，然后通过使用 Hive 命令行界面运行 Hive 查询。"
    services="hdinsight"
    documentationCenter=""
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/09/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="02/05/2016"
+	wacn.date="03/28/2016"/>
 
 # 通过远程桌面将 Hive 与 HDInsight 上的 Hadoop 配合使用
 
@@ -60,8 +60,7 @@
     * **CREATE EXTERNAL TABLE**：在 Hive 中创建新的“外部”表。外部表仅在 Hive 中存储表定义；数据会保留在原始位置。
 
 		> [AZURE.NOTE]当你预期以外部源更新基础数据（例如自动化数据上载过程），或以其他 MapReduce 操作更新基础数据，但希望 Hive 查询始终使用最新数据时，必须使用外部表。
-    	>
-    	> 删除外部表**不会**删除数据，只会删除表定义。
+    	> <p>删除外部表**不会**删除数据，只会删除表定义。
 
 	* **ROW FORMAT**：告知 Hive 如何设置数据的格式。在此情况下，每个日志中的字段以空格分隔。
 
@@ -119,7 +118,7 @@
 
 [apache-tez]: http://tez.apache.org
 [apache-hive]: http://hive.apache.org/
-[apache-log4j]: http://en.wikipedia.org/wiki/Log4j
+[apache-log4j]: http://zh.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
@@ -127,7 +126,7 @@
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started

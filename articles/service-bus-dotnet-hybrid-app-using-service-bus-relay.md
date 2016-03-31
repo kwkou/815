@@ -1,6 +1,6 @@
 <properties
-	pageTitle="本地/云混合应用程序 (.NET) | Windows Azure"
-	description="了解如何使用 Azure Service Bus 中继创建 .NET 本地/云混合应用程序。"
+	pageTitle="本地/云混合应用程序 (.NET) | Azure"
+	description="了解如何使用 Azure 服务总线中继创建 .NET 本地/云混合应用程序。"
 	services="service-bus"
 	documentationCenter=".net"
 	authors="sethmanheim"
@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="06/02/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="10/07/2015"
+	wacn.date="01/21/2016"/>
 
-#使用 Service Bus 中继创建 .NET 本地/云混合应用程序
+# 使用 Azure 服务总线中继创建 .NET 本地/云混合应用程序
 
 ##介绍
 
-使用 Visual Studio 2013 和免费的 Azure SDK for .NET，可以轻松地开发针对 Windows Azure 的混合云应用程序。本文假设你之前未使用过 Azure。在不到 30 分钟的时间内，你就能让使用多个 Azure 资源的应用程序在云中启动并运行。
+使用 Visual Studio 2013 和免费的 Azure SDK for .NET，可以轻松地开发针对 Azure 的混合云应用程序。本文假设你之前未使用过 Azure。在不到 30 分钟的时间内，你就能让使用多个 Azure 资源的应用程序在云中启动并运行。
 
 你将学习以下内容：
 
@@ -33,9 +33,9 @@
 
 服务总线中继的设计考虑到如何利用现有的 Windows Communication Foundation (WCF) Web 服务，使得位于企业外部的解决方案能够安全地访问这些服务，而无需对企业网络基础结构进行彻底的更改。虽然此类服务总线中继服务仍托管在现有环境中，但它们会将侦听传入会话和请求这一任务委托给云托管的服务总线。服务总线还会通过使用[共享访问签名](https://msdn.microsoft.com/library/dn170478.aspx) (SAS) 身份验证来保护这些服务，以阻止未经授权的访问。
 
-##解决方案应用场景
+## 解决方案应用场景
 
-在本教程中，你将创建一个 ASP.NET MVC 网站，用于查看产品库存页上的产品列表。
+在本教程中，你将创建一个 ASP.NET MVC Web 应用，用于查看产品库存页上的产品列表。
 
 ![][0]
 
@@ -69,17 +69,21 @@
 
 若要开始在 Azure 中使用服务总线功能，必须先创建一个服务命名空间。命名空间提供了用于对应用程序中的 Service Bus 资源进行寻址的范围容器。
 
-你可以使用[Azure 管理门户][]或 Visual Studio 服务器资源管理器管理命名空间和服务总线消息传送实体，但只能在门户内创建新命名空间。
+你可以使用[Azure 经典门户][]或 Visual Studio 服务器资源管理器管理命名空间和服务总线消息传送实体，但只能在门户内创建新命名空间。
 
-### 若要使用门户创建命名空间，请执行以下操作：
+### 使用 Azure 经典门户创建命名空间：
 
-1.  登录到 [Azure 管理门户][]。
+1.  登录到 [Azure 经典门户][]。
 
-2.  在管理门户的左侧导航窗格中，单击“服务总线”。
+2.  在门户的左侧导航窗格中，单击“服务总线”。
 
-3.  在管理门户的下方窗格中，单击“创建”。![][5]
+3.  在门户的下方窗格中，单击“创建”。
 
-4.  在“添加新命名空间”对话框中，输入命名空间名称。系统会立即检查该名称是否可用。![][6]
+	![][5]
+
+4.  在“添加新命名空间”对话框中，输入命名空间名称。系统会立即检查该名称是否可用。
+
+	![][6]
 
 5.  在确保命名空间名称可用后，选择应承载您的命名空间的国家或地区（确保使用在其中部署计算资源的同一国家/地区）。
 
@@ -89,7 +93,7 @@
 
 	![][38]
 
-你创建的命名空间随后将显示在管理门户中，不过需要花费一段时间来激活。请等到状态变为“活动”后再继续。
+你创建的命名空间随后将显示在 Azure 经典门户中，不过需要花费一段时间来激活。请等到状态变为“活动”后再继续。
 
 ## 获取命名空间的默认管理凭据
 
@@ -120,7 +124,7 @@
 
 ### 创建项目
 
-1.  使用管理员权限启动 Microsoft VisualStudio 2013 或 Microsoft Visual Studio Express。要使用管理器权限启动 Visual Studio，右键单击“Microsoft Visual Studio 2013“（或“Microsoft Visual Studio Express”），然后单击“以管理员身份运行”。
+1.  使用管理员权限启动 Microsoft VisualStudio 2013 或 Microsoft Visual Studio Express。若要使用管理员权限启动 Visual Studio，请右键单击“Microsoft Visual Studio 2013”（或“Microsoft Visual Studio Express”），然后单击“以管理员身份运行”。
 
 2.  在 Visual Studio 的“文件”菜单中，单击“新建”，然后单击“项目”。
 
@@ -138,13 +142,13 @@
 
     ![][12]
 
-7.  如果你已为 Visual Studio 安装 NuGet 包管理器，请跳到下一步骤。否则，请访问 [NuGet][]，然后单击“安装 NuGet”[](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c)。按照提示操作以安装 NuGet 包管理器，然后重新启动 Visual Studio。
+7.  如果你已为 Visual Studio 安装 NuGet 包管理器，请跳到下一步骤。否则，请访问 [NuGet][]，然后单击“[安装 NuGet](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c)”。按照提示操作以安装 NuGet 包管理器，然后重新启动 Visual Studio。
 
 8.  在解决方案资源管理器中，右键单击“引用”，然后单击“管理 NuGet 包”。
 
 9.  在“NuGet”对话框的左栏中，单击“联机”。
 
-10. 	在右栏中，单击“搜索”框，键入“**服务总线**”，然后选择“Microsoft Azure 服务总线”项。单击“安装”以完成安装，然后关闭此对话框。
+10. 	在右栏中，单击“搜索”框，键入“**服务总线**”，然后选择“Azure 服务总线”项。单击“安装”以完成安装，然后关闭此对话框。
 
     ![][13]
 
@@ -200,11 +204,11 @@
             using System.Collections.Generic;
             using System.ServiceModel;
 
-            // Implement the IProducts interface
+            // Implement the IProducts interface.
             class ProductsService : IProducts
             {
 
-                // Populate array of products for display on Website
+                // Populate array of products for display on website.
                 ProductData[] products =
                     new []
                         {
@@ -219,7 +223,7 @@
                         };
 
                 // Display a message in the service console application
-                // when the list of products is retrieved
+                // when the list of products is retrieved.
                 public IList<ProductData> GetProducts()
                 {
                     Console.WriteLine("GetProducts called.");
@@ -230,7 +234,7 @@
 
             class Program
             {
-                // Define the Main() function in the service application
+                // Define the Main() function in the service application.
                 static void Main(string[] args)
                 {
                     var sh = new ServiceHost(typeof(ProductsService));
@@ -244,7 +248,7 @@
             }
         }
 
-15. 在“解决方案资源管理器”中，双击“App.config”文件以在 Visual Studio 编辑器中将其打开。将 **&lt;system.ServiceModel&gt;** 的内容替换为以下 XML 代码。确保将 *yourServiceNamespace* 替换为你的服务命名空间的名称，并将 *yourKey* 替换为之前从 Azure 管理门户中检索到的 SAS 密钥：
+15. 在“解决方案资源管理器”中，双击“App.config”文件以在 Visual Studio 编辑器中将其打开。将 **&lt;system.ServiceModel&gt;** 的内容替换为以下 XML 代码。确保将 *yourServiceNamespace* 替换为你的服务命名空间的名称，并将 *yourKey* 替换为之前从 Azure 经典门户中检索到的 SAS 密钥：
 
         <system.serviceModel>
           <extensions>
@@ -282,7 +286,7 @@
 
 ### 创建项目
 
-1.  确保使用管理员权限运行 Visual Studio。若不能，要使用管理员权限启动 Visual Studio，请右键单击“Microsoft Visual Studio 2013”（或“Microsoft Visual Studio Express”），然后单击“以管理员身份运行”。Microsoft Azure 计算模拟器（本文后面会讨论）要求使用管理员权限启动 Visual Studio。
+1.  确保使用管理员权限运行 Visual Studio。若不能，要使用管理员权限启动 Visual Studio，请右键单击“Microsoft Visual Studio 2013”（或“Microsoft Visual Studio Express”），然后单击“以管理员身份运行”。Azure 计算模拟器（本文后面会讨论）要求使用管理员权限启动 Visual Studio。
 
 2.  在 Visual Studio 的“文件”菜单中，单击“新建”，然后单击“项目”。
 
@@ -294,15 +298,15 @@
 
     ![][16]
 
-5.  在解决方案资源管理器中，右键单击“模型”，再单击“添加”，然后单击“类”。在“名称”框中，键入名称 **Product.cs**。然后单击”添加“。
+5.  在解决方案资源管理器中，右键单击“模型”，再单击“添加”，然后单击“类”。在“名称”框中，键入名称 **Product.cs**。然后单击“添加”。
 
     ![][17]
 
 ### 修改 Web 应用程序
 
-1.  在 Visual Studio 的 Product.cs 文件中将现有命名空间定义替换为以下代码：
+1.  在 Visual Studio 的 Product.cs 文件中将现有命名空间定义替换为以下代码。
 
-        // Declare properties for the products inventory
+        // Declare properties for the products inventory.
         namespace ProductsWeb.Models
         {
             public class Product
@@ -323,7 +327,7 @@
 
             public class HomeController : Controller
             {
-                // Return a view of the products inventory
+                // Return a view of the products inventory.
                 public ActionResult Index(string Identifier, string ProductName)
                 {
                     var products = new List<Product>
@@ -334,19 +338,19 @@
             }
         }
 
-3.  在解决方案资源管理器中，展开 Views\\Shared 文件夹。
+3.  在解决方案资源管理器中，展开 Views\Shared 文件夹。
 
     ![][18]
 
-4.  双击 **\_Layout.cshtml** 以在 Visual Studio 编辑器中将其打开。
+4.  双击 **_Layout.cshtml** 以在 Visual Studio 编辑器中将其打开。
 
 5.  将每一处 **My ASP.NET Application** 更改为 **LITWARE'S Products**。
 
-6. 删除“主页”、“关于”和“联系人”链接。在下面的示例中，删除突出显示的代码。
+6. 删除“Home”、“About”和“Contact”链接。在下面的示例中，删除突出显示的代码。
 
 	![][41]
 
-7.  在解决方案资源管理器中，展开 Views\\Home 文件夹：
+7.  在解决方案资源管理器中，展开 Views\Home 文件夹：
 
     ![][20]
 
@@ -400,11 +404,11 @@
 
 ## 准备好将应用程序部署到 Azure
 
-你可以将应用程序部署到 Azure 云服务或 Azure 网站。若要详细了解网站和云服务之间的差异，请参阅 [Azure 执行模型][executionmodels]。若要了解如何将应用程序部署到 Azure 网站，请参阅[将 ASP.NET Web 应用程序部署到 Azure 网站](/develop/net/)。本部分包含有关如何将应用程序部署到 Azure 云服务的详细步骤。
+你可以将应用程序部署到 Azure 云服务或 Azure Web 应用。若要详细了解 Web 应用和云服务之间的差异，请参阅 [Azure 执行模型][executionmodels]。若要了解如何将应用程序部署到 Azure Web 应用，请参阅[将 ASP.NET Web 应用程序部署到 Azure Web 应用](/develop/net/)。本部分包含有关如何将应用程序部署到 Azure 云服务的详细步骤。
 
 若要将应用程序部署到云服务，需要在解决方案中添加一个云服务项目部署项目。该部署项目包含在云中正常运行应用程序所需的配置信息。
 
-1.  若要使应用程序能够部署到云中，请右键单击“解决方案资源管理器”中的 **ProductsPortal** 项目，再单击“转换”，然后单击“转换为 Microsoft Azure 云服务项目”。
+1.  若要使应用程序能够部署到云中，请右键单击“解决方案资源管理器”中的 **ProductsPortal** 项目，再单击“转换”，然后单击“转换为 Azure 云服务项目”。
 
     ![][22]
 
@@ -412,7 +416,7 @@
 
 3.  这将启动 Azure 计算模拟器。此计算模拟器使用本地计算机来模拟在 Azure 中运行的应用程序。可以通过查看系统托盘来确认此模拟器已启动。
 
-       ![][23]
+	![][23]
 
 4.  浏览器仍将显示你的应用程序正在本地运行，并且其外观和功能与你之前将其作为常规 ASP.NET MVC 4 应用程序运行时的外观和功能相同。
 
@@ -424,9 +428,9 @@
 
 2.  采用与“创建本地服务器”部分类似的步骤，将 NuGet 包添加到项目“引用”中。在解决方案资源管理器中，右键单击“引用”，然后单击“管理 NuGet 包”。
 
-3.  搜索“服务总线”并选择“Microsoft Azure 服务总线”项。然后，完成安装过程并关闭此对话框。
+3.  搜索“服务总线”并选择“Azure 服务总线”项。然后，完成安装过程并关闭此对话框。
 
-4.  在“解决方案资源管理器”中，右键单击“ProductsPortal”项目，然后单击“添加”，再单击“现有项”。
+4.  在解决方案资源管理器中，右键单击“ProductsPortal”项目，然后单击“添加”，再单击“现有项”。
 
 5.  从 **ProductsServer** 控制台项目导航到 **ProductsContract.cs** 文件。单击以突出显示 ProductsContract.cs。单击“添加”旁边的向下箭头，然后单击“添加为链接”。
 
@@ -445,12 +449,12 @@
 
                 public class HomeController : Controller
                 {
-                    // Declare the channel factory
+                    // Declare the channel factory.
                     static ChannelFactory<IProductsChannel> channelFactory;
 
                     static HomeController()
                     {
-                        // Create shared secret token credentials for authentication
+                        // Create shared secret token credentials for authentication.
                         channelFactory = new ChannelFactory<IProductsChannel>(new NetTcpRelayBinding(),
                             "sb://yourServiceNamespace.servicebus.windows.net/products");
                         channelFactory.Endpoint.Behaviors.Add(new TransportClientEndpointBehavior {
@@ -462,7 +466,7 @@
                     {
                         using (IProductsChannel channel = channelFactory.CreateChannel())
                         {
-                            // Return a view of the products inventory
+                            // Return a view of the products inventory.
                             return this.View(from prod in channel.GetProducts()
                                              select
                                                  new Product { Id = prod.Id, Name = prod.Name,
@@ -471,11 +475,11 @@
                     }
                 }
             }
-7.  在“解决方案资源管理器”中，右键单击“ProductsPortal”解决方案，单击“添加”，然后单击“现有项目”。
+7.  在解决方案资源管理器中，右键单击“ProductsPortal”解决方案，单击“添加”，然后单击“现有项目”。
 
 8.  导航到 **ProductsServer** 项目，然后双击“ProductsServer.csproj”解决方案文件以将其添加。
 
-9.  在“解决方案资源管理器”中，右键单击“ProductsPortal”解决方案并单击“属性”。
+9.  在解决方案资源管理器中，右键单击“ProductsPortal”解决方案并单击“属性”。
 
 10. 在左侧，单击“启动项目”。在右侧，单击“多个启动项目”。确保 **ProductsServer**、**ProductsPortal.Azure** 和 **ProductsPortal** 按这样的顺序显示，并且将“启动”设置为针对 **ProductsServer** 和 **ProductsPortal.Azure** 的操作，将“无”设置为针对 **ProductsPortal** 的操作。
 
@@ -483,7 +487,7 @@
 
 11. 仍然在“属性”对话框中，单击左侧的“ProjectDependencies”。
 
-12. 在“项目”列表中，单击“ProductsServer”。确保未选中“ProductsPortal”，但选中“ProductsPortal.Azure”。然后，单击“确定”：
+12. 在“项目”列表中，单击“ProductsServer”。确保未选中“ProductsPortal”，但选中“ProductsPortal.Azure”。然后单击“确定”：
 
     ![][26]
 
@@ -497,7 +501,7 @@
 
 ## 将你的应用程序部署到 Azure
 
-1.  在“解决方案资源管理器”中，右键单击“ProductsPortal”项目，然后单击“发布到 Microsoft Azure”。
+1.  在解决方案资源管理器中，右键单击“ProductsPortal”项目，然后单击“发布到 Azure”。
 
 2.  你可能必须登录才能查看你的所有订阅。
 
@@ -513,7 +517,7 @@
 
     ![][33]
 
-6. 在最后一页上，单击“发布”以开始部署过程：
+6. 在最后一页上，单击“发布”以开始部署过程。
 
     ![][34]
     
@@ -523,15 +527,15 @@
 
     ![][35]
 
-8. 部署完成后，你可以通过单击监视窗口中的“网站 URL”链接来查看网站。
+8. 部署完成后，你可以通过单击监视窗口中的“ Web 应用 URL”链接来查看 Web 应用。
 
     ![][36]
 
-    你的网站取决于本地服务器，因此你必须在本地运行 **ProductsServer** 应用程序，网站才能正常运行。在云网站上执行请求时，你将看到请求传入本地控制台应用程序，如以下屏幕快照中显示的“GetProducts called”输出所示。
+    你的 Web 应用取决于本地服务器，因此你必须在本地运行 **ProductsServer** 应用程序， Web 应用才能正常运行。在云 Web 应用上执行请求时，你将看到请求传入本地控制台应用程序，如以下屏幕快照中显示的“GetProducts called”输出所示。
 
     ![][37]
 
-若要详细了解网站和云服务之间的差异，请参阅 [Azure 执行模型][executionmodels]。
+若要详细了解 Web 应用和云服务之间的差异，请参阅 [Azure 执行模型][executionmodels]。
 
 ## 停止并删除应用程序
 
@@ -541,7 +545,7 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
 
 以下步骤演示了如何停止和删除应用程序。
 
-1.  登录到 [Azure 管理门户]，单击“云服务”，然后单击服务的名称。
+1.  登录到 [Azure 经典门户][]，单击“云服务”，然后单击服务的名称。
 
 2.  单击“仪表板”选项卡，然后单击“停止”以暂时挂起应用程序。单击“启动”即可重新启动它。单击“删除”即可从 Azure 中完全删除应用程序，但无法将其还原。
 
@@ -551,8 +555,7 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
 
 若要了解有关 Service Bus 的详细信息，请参阅以下资源：
 
-* [Azure 服务总线][sbmsdn]  
-* [Service Bus 操作方法][sbwacom]  
+* [Azure 服务总线][sbwacom]  
 * [如何使用 Service Bus 队列][sbwacomqhowto]  
 
 
@@ -561,16 +564,16 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
   [获取工具和 SDK]: /develop/net/
   [NuGet]: http://nuget.org
   [2]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-3.png
-  [3]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-4-2-WebPI.png
+  [3]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-42-webpi.png
 
 
-  [Azure 管理门户]: http://manage.windowsazure.cn
+  [Azure 经典门户]: http://manage.windowsazure.cn
   [5]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/sb-queues-03.png
   [6]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/sb-queues-04.png
 
 
 
-  [使用 NuGet 服务总线包]: http://go.microsoft.com/fwlink/?LinkId=234589
+  [使用 NuGet 服务总线包]: https://msdn.microsoft.com/zh-cn/library/azure/dn741354.aspx
   [10]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-web-1.png
   [11]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-con-1.png
   [12]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-con-3.png
@@ -607,10 +610,8 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
   [43]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-43.png
   [45]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hy-web-45.png
 
-  [sbmsdn]: http://msdn.microsoft.com/zh-cn/library/azure/ee732537.aspx
   [sbwacom]: /documentation/services/service-bus/
-  [sbwacomqhowto]: /develop/net/
-  [executionmodels]: /develop/net/
- 
+  [sbwacomqhowto]: /documentation/articles/service-bus-dotnet-how-to-use-queues
+  [executionmodels]: /documentation/articles/fundamentals-application-models
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0104_2016-->

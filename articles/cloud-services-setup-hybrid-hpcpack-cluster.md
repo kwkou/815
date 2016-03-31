@@ -22,7 +22,7 @@
 
 本教程假定你之前未使用过计算群集或 HPC Pack。它只是为了出于演示目的帮助你快速部署混合群集。有关在生产环境中以更大规模部署混合 HPC Pack 群集的注意事项和步骤，请参阅[详细指南](http://go.microsoft.com/fwlink/p/?LinkID=200493)。
 
->[AZURE.NOTE]Azure 为你的计算资源提供了适合不同工作负荷的[大小范围](/documentation/articles/virtual-machines-size-specs)。例如，A8 和 A9 实例结合了某些 HPC 应用程序所需要的高性能和对低延迟、高吞吐量应用程序网络的访问。请参阅[关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)。
+>[AZURE.NOTE]Azure 为你的计算资源提供了适合不同工作负荷的[大小范围](/documentation/articles/virtual-machines-size-specs)。
 
 ## 先决条件
 

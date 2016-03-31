@@ -9,12 +9,13 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="08/25/2015"
-   wacn.date="10/17/2015"/>
+   ms.date="12/01/2015"
+   wacn.date="01/15/2016"/>
 
 # 使用 C&#x23; 创建和管理 SQL 数据库
 
 > [AZURE.SELECTOR]
+- [Azure 门户](/documentation/articles/sql-database-elastic-pool-portal)
 - [C#](/documentation/articles/sql-database-client-library)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell)
 
@@ -33,7 +34,7 @@
 
 <br>
 
-如果你需要 Azure 订阅，只需单击本页顶部的“免费试用”，然后再回来完成本文的相关操作即可。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
+如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
 
 ## 安装所需的库
 
@@ -50,7 +51,7 @@
 
 [Azure 资源管理器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx) 使用 Azure Active Directory 进行身份验证，而不是早期 Azure 服务管理 REST API 使用的证书。
 
-若要基于当前的用户对客户端应用程序进行身份验证，你必须先将该应用程序注册到与创建了 Azure 资源的订阅关联的 AAD 域中。如果 Azure 订阅是以 Microsoft 帐户而不是工作或学校帐户创建的，则你已经有了默认的 AAD 域。可以在[管理门户](https://manage.windowsazure.cn/)中完成应用程序的注册。
+若要基于当前的用户对客户端应用程序进行身份验证，你必须先将该应用程序注册到与创建了 Azure 资源的订阅关联的 AAD 域中。如果 Azure 订阅是以 Microsoft 帐户而不是工作或学校帐户创建的，则你已经有了默认的 AAD 域。可以在[经典门户](https://manage.windowsazure.cn)中完成应用程序的注册。
 
 若要创建新应用程序并将其注册到正确的 Active Directory 中，请执行以下操作：
 
@@ -100,7 +101,7 @@
 
 代码中需要用到域名。轻松标识正确域名的一种方式是：
 
-1. 转到 [Azure 门户](http://manage.windowsazure.cn)。
+1. 转到 [Azure 门户](https://manage.windowsazure.cn)。
 2. 将鼠标悬停在右上角的名称上，并记下弹出窗口中显示的域。
 
     ![标识域名][3]
@@ -111,7 +112,7 @@
 
 **其他 AAD 资源**
 
-在[这篇有用的博客文章](http://www.cloudidentity.com/blog/2013/09/12/active-directory-authentication-library-adal-v1-for-net-general-availability/)中，可以找到有关使用 Azure Active Directory 进行身份验证的其他信息。
+在[这篇有用的博客文章](http://www.cloudidentity.com/blog/2013/09/12/active-directory-authentication-library-adal-v1-for-net-general-availability)中，可以找到有关使用 Azure Active Directory 进行身份验证的其他信息。
 
 
 ### 检索当前用户的访问令牌 
@@ -158,7 +159,7 @@
     // Resource group parameters
     ResourceGroup resourceGroupParameters = new ResourceGroup()
     {
-        Location = "South Central US"
+        Location = "China East"
     };
     
     //Create a resource group
@@ -177,7 +178,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
     // Create a server
     ServerCreateOrUpdateParameters serverParameters = new ServerCreateOrUpdateParameters()
     {
-        Location = "South Central US",
+        Location = "China East",
         Properties = new ServerCreateOrUpdateProperties()
         {
             AdministratorLogin = "ServerAdmin",
@@ -291,7 +292,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
     // Create elastic pool: configure create or update parameters and properties explicitly
     ElasticPoolCreateOrUpdateParameters newPoolParameters = new ElasticPoolCreateOrUpdateParameters()
     {
-        Location = "South Central US",
+        Location = "China East",
         Properties = new ElasticPoolCreateOrUpdateProperties()
         {
             Edition = "Standard",
@@ -490,7 +491,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
             // Resource group parameters
             ResourceGroup resourceGroupParameters = new ResourceGroup()
             {
-                Location = "South Central US"
+                Location = "China East"
             };
 
             //Create a resource group
@@ -506,7 +507,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
             // Create a server
             ServerCreateOrUpdateParameters serverParameters = new ServerCreateOrUpdateParameters()
             {
-                Location = "South Central US",
+                Location = "China East",
                 Properties = new ServerCreateOrUpdateProperties()
                 {
                     AdministratorLogin = "ServerAdmin",
@@ -584,7 +585,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
             // Create elastic pool: configure create or update parameters and properties explicitly
             ElasticPoolCreateOrUpdateParameters newPoolParameters = new ElasticPoolCreateOrUpdateParameters()
             {
-                Location = "South Central US",
+                Location = "China East",
                 Properties = new ElasticPoolCreateOrUpdateProperties()
                 {
                     Edition = "Standard",
@@ -775,7 +776,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 ## 其他资源
 
-[SQL 数据库](/documentation/services/sql-databases/)
+[SQL 数据库](/documentation/services/sql-databases)
 
 [Azure 资源管理 API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)
 
@@ -793,4 +794,4 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 [8]: ./media/sql-database-client-library/add-application2.png
 [9]: ./media/sql-database-client-library/clientid.png
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0104_2016-->

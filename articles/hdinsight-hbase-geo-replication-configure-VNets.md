@@ -8,9 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.date="07/08/2015"
-   wacn.date="10/03/2015"/>
+	ms.service="hdinsight"
+	ms.date="12/02/2015"
+	wacn.date="01/14/2016"/>
 
 # 在两个 Azure 虚拟网络之间配置 VPN 连接  
 
@@ -25,7 +25,6 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 - 具有强大隔离边界的区域多层应用程序 
 - 在 Azure 中跨订阅进行组织间通信
 
-有关详细信息，请参阅[配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)。
 
 本教程是有关创建 HBase 异地复制的[系列][hdinsight-hbase-replication]教程的一部分。
 
@@ -248,7 +247,7 @@ VNet 网关使用共享密钥对虚拟网络之间的连接进行身份验证。
 [azure-portal]: http://manage.windowsazure.cn
 
 
-[powershell-install]: /documentation/articles/install-configure-powershell
+[powershell-install]: /documentation/articles/powershell-install-configure
 
 
 

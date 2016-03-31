@@ -1,16 +1,16 @@
 ﻿<properties 
 	pageTitle="如何从媒体服务传送流内容" 
-	description="了解如何创建用于生成流 URL 的定位符。代码示例用 C# 编写且使用 Media Services SDK for .NET。" 
+	description="了解如何创建用于生成流 URL 的定位符。代码示例用 C# 编写且使用适用于 .NET 的媒体服务 SDK。" 
 	authors="juliako" 
 	manager="dwrede" 
 	editor="" 
 	services="media-services" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="02/03/2016"
+	wacn.date="03/17/2016"/>
 
 
 #如何：传送流内容
@@ -50,6 +50,7 @@
 	{
 	
 	    // Create a 30-day readonly access policy. 
+      	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.
 	    IAccessPolicy policy = _context.AccessPolicies.Create("Streaming policy",
 	        TimeSpan.FromDays(30),
 	        AccessPermissions.Read);
@@ -152,9 +153,11 @@
 	Console.WriteLine(smoothStreamingUri);
 	Console.WriteLine(hlsUri);
 	Console.WriteLine(mpegDashUri);
- 
+
+
+
 ##另请参阅
 
-[下载资产](/documentation/articles/media-services-deliver-asset-download)
+[下载资产](/documentation/articles/media-services-deliver-asset-download) [配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0307_2016-->

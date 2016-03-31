@@ -8,8 +8,8 @@
  editor=""/>
 <tags 
  ms.service="scheduler" 
- ms.date="08/04/2015" 
- wacn.date="09/16/2015"/>
+ ms.date="12/04/2015" 
+ wacn.date="01/14/2016"/>
  
 # Azure 计划程序中的计划和计费方式
 
@@ -19,7 +19,7 @@
 
 |**作业集合计划**|**每个作业集合的作业数上限**|**最大重复次数**|**每个订阅的作业集合数上限**|**限制**|
 |:---|:---|:---|:---|:---|
-|**免费**|每个作业集合 5 个作业|每小时一次。执行作业的频率不能超过每小时一次|一个订阅最多允许 1 个免费作业集合|无法使用 [HTTP 出站授权对象](https://msdn.microsoft.com/zh-CN/library/azure/dn864828.aspx)|
+|**免费**|每个作业集合 5 个作业|每小时一次。执行作业的频率不能超过每小时一次|一个订阅最多允许 1 个免费作业集合|无法使用 [HTTP 出站授权对象](/documentation/articles/scheduler-outbound-authentication)
 |**标准**|每个作业集合 50 个作业|每分钟一次。执行作业的频率不能超过每分钟一次|一个订阅最多允许 100 个标准作业集合|访问计划程序的完整功能集|
 |**高级**|每个作业集合 50 个作业|每分钟一次。执行作业的频率不能超过每分钟一次|一个订阅最多允许 10,000 个高级作业集合。有关详细信息，<a href="mailto:wapteams@microsoft.com">请联系我们</a>。|访问计划程序的完整功能集|
 
@@ -30,7 +30,7 @@
 - 订阅中已存在免费作业集合
 - 作业集合中某个作业的重复周期高于免费作业集合中作业允许的重复周期。免费作业集合允许的最大重复周期为每小时一次
 - 作业集合中有 5 个以上的作业
-- 作业集合中某个作业的 HTTP 或 HTTPS 操作使用了 [HTTP 出站授权对象](https://msdn.microsoft.com/zh-CN/library/azure/dn864828.aspx)
+- 作业集合中某个作业的 HTTP 或 HTTPS 操作使用了 [HTTP 出站授权对象](/documentation/articles/scheduler-outbound-authentication)
 
 ## 计费和 Azure 计划
 
@@ -50,7 +50,7 @@
 
 如果你有 1 到 10,000 个高级作业集合，将会按照 1 个高级计费单位向你计费。如果你有 10,001 到 20,000 个高级作业集合，将会按照 2 个高级计费单位向你计费，依次类推。
 
-因此，高级作业集合的功能与标准作业集合相同，但是，这个价格段适合应用程序需要许多作业集合的情况， 
+因此，高级作业集合的功能与标准作业集合相同，但是，这个价格段适合应用程序需要许多作业集合的情况，
 
 ## 计费和活动状态
 
@@ -63,22 +63,25 @@
 有关定价详细信息，请参阅[计划程序定价](/home/features/scheduler/#price)。
 
 ## 另请参阅
+ 
 
- [计划程序是什么？](/documentation/articles/scheduler-intro) [计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms)
+ [计划程序是什么？](/documentation/articles/scheduler-intro)
+ [Azure 计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms)
 
  [开始在管理门户中使用计划程序](/documentation/articles/scheduler-get-started-portal)
 
- [如何使用 Azure 计划程序生成复杂的计划和高级重复执行](/documentation/articles/scheduler-advanced-complexity)
+ [Azure 计划程序 REST API 参考](https://msdn.microsoft.com/zh-CN/library/dn528946)
 
- [计划程序 REST API 参考](https://msdn.microsoft.com/zh-CN/library/dn528946)   
-
- [计划程序 PowerShell Cmdlet 参考](/documentation/articles/scheduler-powershell-reference)
+ [Azure 计划程序 PowerShell Cmdlet 参考](/documentation/articles/scheduler-powershell-reference)
  
- [计划程序的高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability)
+ [Azure 计划程序的高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability)
 
- [计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors)
+ [Azure 计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors)
 
- [计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication)
+ [Azure 计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication)
  
+  
 
-<!---HONumber=69-->
+  
+
+<!---HONumber=Mooncake_0104_2016-->

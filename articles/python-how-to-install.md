@@ -10,7 +10,7 @@
 <tags
 	ms.service="multiple"
 	ms.date="08/31/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 安装 Python 和 SDK
 
@@ -31,7 +31,7 @@ Azure SDK for Python 包括允许您针对 Azure 开发、部署和管理 Python
 * IronPython - 在 .Net/CLR 上运行的 Python 解释程序
 * Jython - 在 JVM 上运行的 Python 解释程序
 
-仅 **CPython** 经过测试且支持 Python Azure SDK 和 Azure 服务（如网站和云服务）。我们建议使用 2.7 或 3.4 版本。
+仅 **CPython** 经过测试且支持 Python Azure SDK 和 Azure 服务（如 Web 应用和云服务）。我们建议使用 2.7 或 3.4 版本。
 
 ## 从哪里获得 Python？
 
@@ -74,8 +74,8 @@ Azure SDK for Python 包括允许您针对 Azure 开发、部署和管理 Python
 
 可以使用 Web 平台安装程序来简化安装。安装的项包括来自 [www.python.org][] 的 CPython。
 
-* [Windows Azure SDK for Python 2.7][]
-* [Windows Azure SDK for Python 3.4][]
+* [Azure SDK for Python 2.7][]
+* [Azure SDK for Python 3.4][]
 
 **注意：**在 Windows Server 上，若要下载 WebPI 安装程序，可能需要配置 IE ESC 设置（单击“开始”/“管理工具”/“服务器管理器”/“本地服务器”，然后单击 **IE 增强的安全配置**，将其设置为“关闭”）
 
@@ -85,13 +85,13 @@ WebPI 安装程序提供了开发 Python Azure 应用程序所需的所有内容
 
 ![how-to-install-python-webpi-27-1](./media/python-how-to-install/how-to-install-python-webpi-27-1.png)
 
-安装完成后，在提示符处键入 `python` 以确保一切正常。根据你的安装方式，你可能需要设置“path”变量以找到（正确版本的）Python：
+安装完成后，在提示符处键入 **python** 以确保一切正常。根据你的安装方式，你可能需要设置“path”变量以找到（正确版本的）Python：
 
 ![how-to-install-python-win-run-27](./media/python-how-to-install/how-to-install-python-win-run-27.png)
 
 安装后，您应该具有位于默认位置的 Python 和客户端库：
 
-		C:\Python27\Lib\site-packages\azure
+	C:\Python27\Lib\site-packages\azure
 
 
 ### Python 3.4
@@ -131,7 +131,7 @@ WebPI 安装程序提供了开发 Python Azure 应用程序所需的所有内容
 
 是否使用 PTVS 是可选择的，但建议使用，因为它能够为您提供 Python 和 Web 项目/解决方案支持、调试、分析、交互式窗口、模板编辑和智能感知。
 
-PTVS 还可以轻松实现部署到 Windows Azure，同时支持部署到[云服务][]和[网站][]。
+PTVS 还可以轻松实现部署到 Azure，同时支持部署到[云服务][]和[ Web 应用][]。
 
 PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关文档、下载和讨论的信息，请参阅 [Python Tools for Visual Studio]。
 
@@ -143,7 +143,7 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 
 2. 在 Linux VM 中运行你的应用程序
 
-3. 使用 Git 开发和发布到 Azure 网站
+3. 使用 Git 开发和发布到 Azure Web 应用
 
 第一个方案使你能够通过 Azure REST API 的 Pythonic 包装来创作利用 Azure PaaS 功能（例如 [Blob 存储][]、[队列存储][]、[表存储][]等）的丰富 Web 应用。这些应用程序的工作方式与在 Windows、Mac 和 Linux 上相同。此外可以从本地开发计算机或在 Azure 上运行的 Linux VM 中使用这些客户端库。
 
@@ -151,9 +151,9 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 
 有关如何安装 Linux VM 的信息，请参阅[创建运行 Linux 的虚拟机][]教程。
 
-使用 Git 部署，可以从任何操作系统开发 Python web 应用程序并将其发布到 Azure 网站。当将您的存储库推送到 Azure 时，它将自动创建虚拟环境和 pip 安装所需的包。
+使用 Git 部署，可以从任何操作系统开发 Python Web 应用并将其发布到 Azure Web 应用。当将您的存储库推送到 Azure 时，它将自动创建虚拟环境和 pip 安装所需的包。
 
-有关开发和发布 Azure 网站的详细信息，请参阅有关教程：[使用 Django 创建网站][]、[使用 Bottle 创建网站][]和[使用 Flask 创建网站][]。有关使用任何 WSGI 合规框架的更多常规信息，请参阅[使用 Azure 网站配置 Python][]。
+有关开发和发布 Azure Web 应用的详细信息，请参阅有关教程：[使用 Django 创建 Web 应用][]、[使用 Bottle 创建 Web 应用][]和[使用 Flask 创建 Web 应用][]。有关使用任何 WSGI 合规框架的更多常规信息，请参阅[使用 Azure Web 应用配置 Python][]。
 
 
 ## 其他软件和资源：
@@ -167,7 +167,7 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 * [IPython - Python 的高级 REPL/Notebook][]
 * [Azure 上的 IPython Notebook][]
 * [GitHub 上的 Python Tools for Visual Studio][]
-
+* [Python 开发人员中心](/develop/python/)
 
 [Continuum Analytics Python 分发]: http://continuum.io
 [Enthought Python 分发]: http://www.enthought.com
@@ -183,21 +183,21 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 [IPython]: http://ipython.org
 [Azure 上的 IPython Notebook]: /documentation/articles/virtual-machines-python-ipython-notebook
 [云服务]: /documentation/articles/cloud-services-python-ptvs
-[网站]: /documentation/articles/web-sites-python-ptvs-django-mysql
+[ Web 应用]: /documentation/articles/web-sites-python-ptvs-django-mysql
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
-[Python Tools for Visual Studio on CodePlex]: http://pytools.codeplex.com
+[GitHub 上的 Python Tools for Visual Studio]: http://microsoft.github.io/PTVS/
 [Python 包索引]: http://pypi.python.org/pypi
-[Windows Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?LinkId=254281&clcid=0x409
-[Windows Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?LinkID=516990&clcid=0x409
+[Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?LinkId=254281&clcid=0x409
+[Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?LinkID=516990&clcid=0x409
 [Setting up a Linux VM via the Azure portal]: /documentation/articles/create-and-configure-opensuse-vm-in-portal
 [How to use the Azure Command-Line Interface]: /documentation/articles/crossplat-cmd-tools
-[创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-tutorial
-[使用 Django 创建网站]: /documentation/articles/web-sites-python-create-deploy-django-app
-[使用 Bottle 创建网站]: /documentation/articles/web-sites-python-create-deploy-bottle-app
-[使用 Flask 创建网站]: /documentation/articles/web-sites-python-create-deploy-flask-app
-[使用 Azure 网站配置 Python]: /documentation/articles/web-sites-python-configure
+[创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm
+[使用 Django 创建 Web 应用]: /documentation/articles/web-sites-python-create-deploy-django-app
+[使用 Bottle 创建 Web 应用]: /documentation/articles/web-sites-python-create-deploy-bottle-app
+[使用 Flask 创建 Web 应用]: /documentation/articles/web-sites-python-create-deploy-flask-app
+[使用 Azure Web 应用配置 Python]: /documentation/articles/web-sites-python-configure
 [表存储]: /documentation/articles/storage-python-how-to-use-table-storage
 [队列存储]: /documentation/articles/storage-python-how-to-use-queue-storage
 [Blob 存储]: /documentation/articles/storage-python-how-to-use-blob-storage
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->

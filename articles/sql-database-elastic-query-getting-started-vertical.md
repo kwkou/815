@@ -1,5 +1,5 @@
 <properties
-	pageTitle="跨数据库查询（垂直分区）入门 | Windows Azure"	
+	pageTitle="跨数据库查询（垂直分区）入门 | Azure"	
 	description="如何在垂直分区数据库中使用弹性数据库查询"
 	services="sql-database"
 	documentationCenter=""  
@@ -8,8 +8,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/19/2015"
-	wacn.date="11/12/2015" />
+	ms.date="01/26/2016"
+	wacn.date="02/19/2016" />
 
 # 跨数据库查询（垂直分区）入门 
 
@@ -105,4 +105,4 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 
 <!--anchors-->
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

@@ -1,22 +1,21 @@
 <properties 
-   pageTitle="服务总线定价常见问题 | Windows Azure"
+   pageTitle="服务总线定价常见问题 | Microsoft Azure"
    description="回答了一些关于服务总线定价结构的常见问题。"
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
    editor="tysonn" />
-
 <tags 
    ms.service="service-bus"
-   ms.date="09/09/2015"
-   wacn.date="10/22/2015" />
+   ms.date="12/28/2015"
+   wacn.date="03/28/2016" />
 
 # 服务总线定价常见问题
 
 本部分回答了一些关于服务总线定价结构的常见问题。你还可以访问 [Azure 支持常见问题](http://go.microsoft.com/fwlink/?LinkID=185083)了解一般的 Microsoft Azure 定价信息。有关服务总线定价的完整信息，请参阅[服务总线定价](/pricing/details/service-bus/)。
 
->[AZURE.NOTE]有关事件中心的定价结构，请参阅[事件中心的可用性和支持常见问题](/pricing/details/service-bus/)主题，有关其详细信息，请参阅[事件中心定价](/pricing/details/event-hubs/) 主题。
+>[AZURE.NOTE] 有关事件中心的定价结构，请参阅[事件中心的可用性和支持常见问题](/documentation/articles/event-hubs-availability-and-support-faq)主题，有关其详细信息，请参阅[事件中心定价](/pricing/details/event-hubs/)主题。
 
 - [服务总线如何收取费用？](#how-do-you-charge-for-service-bus)
 - [服务总线的哪些使用情况受数据传输限制？ 哪些不受其限制？](#what-usage-of-service-bus-is-subject-to-data-transfer-what-is-not)
@@ -39,7 +38,7 @@
 
 中继是指中继客户端和 Web 服务之间的消息的服务总线实体。中继提供持久性访问、可发现的服务总线地址、可靠的连接（具有防火墙/NAT 遍历功能）和其他功能（例如自动负载平衡）。当启用中继的 WCF 服务（即“中继侦听器”）第一次连接到给定服务总线地址（命名空间 URL）时，中断将隐式实例化并在该地址中打开。应用程序使用服务总线 .NET 托管的 API 创建中继侦听器，API 可提供启用了特殊中继的标准 WCF 绑定版本。
 
-## 如何计算中继小时数？
+## <a name="How-is-the-Relay-Hours-meter-calculated?"></a>如何计算中继小时数？
 
 将按每个服务总线中继在指定计费期间处于“打开”状态的累积时间量对中继小时数收费。当启用中继的 WCF 服务（即“中继侦听器”）第一次连接到给定服务总线地址（服务命名空间 URL）时，中断将隐式实例化并在该地址中打开。仅当最后一个侦听器从其地址断开连接时，该中继才会关闭。因此，出于计费目的，在第一个中继侦听器连接到该中继的服务总线地址到最后一个中继侦听器从该地址断开连接的这段时间内，中继将被认为处于“打开”状态。换言之，当有一个或多个中继侦听器连接到其服务总线地址时，中继都将视为“打开”状态。
 
@@ -81,7 +80,7 @@
 
 - **每个命名空间的并发中继侦听器数** – 服务总线对每个服务命名空间强制的并发中继侦听器数为 2000 个。如果达到此配额，将拒绝后续的打开其他中继侦听器连接的请求，调用代码将收到一个异常。
 
-- **每个服务命名空间的主题/队列数** – 服务命名空间上的主题/队列（持久存储备份的实体）的最大数被限制为 10,000。如果达到此配额，将拒绝后续的在服务命名空间上创建新主题/队列的请求。在这种情况下，Azure 门户将显示一条错误消息或调用客户端代码将收到一个异常，具体取决于创建尝试是通过门户还是通过客户端代码完成。
+- **每个服务命名空间的主题/队列数** – 服务命名空间上的主题/队列（持久存储备份的实体）的最大数被限制为 10,000。如果达到此配额，将拒绝后续的在服务命名空间上创建新主题/队列的请求。在这种情况下，[Azure 经典门户][] 将显示一条错误消息或调用客户端代码将收到一个异常，具体取决于创建尝试是通过门户还是通过客户端代码完成。
 
 - **消息大小配额**
 	- **队列/主题/订阅**
@@ -93,11 +92,11 @@
 
 	系统将拒绝超过这些大小配额的消息，调用代码将收到一个异常。
 
-- **每个主题的订阅数** – 每个主题的最大订阅数被限制为 2000。如果达到此配额，则将拒绝创建该主题的附加订阅的请求。在这种情况下，管理门户将显示一条错误消息或调用客户端代码将收到一个异常，具体取决于创建尝试是通过门户还是通过客户端代码完成。
+- **每个主题的订阅数** – 每个主题的最大订阅数被限制为 2000。如果达到此配额，则将拒绝创建该主题的附加订阅的请求。在这种情况下，[Azure 经典门户][] 将显示一条错误消息或调用客户端代码将收到一个异常，具体取决于创建尝试是通过门户还是通过客户端代码完成。
 
-- **每个主题的 SQL 筛选器数** – 每个主题的最大 SQL 筛选器数被限制为 2000。如果达到此配额，将拒绝任何后续的创建该主题的其他筛选器的请求，调用代码将收到一个异常。
+- **每个主题的 SQL 筛选器数** – 每个主题的最大 SQL 筛选器数被限制为 2,000。如果达到此配额，将拒绝任何后续的创建该主题的其他筛选器的请求，调用代码将收到一个异常。
 
-- **每个主题的相关筛选器数** – 每个主题的最大相关筛选器数被限制为 100,,000。如果达到此配额，将拒绝任何后续的创建该主题的其他筛选器的请求，调用代码将收到一个异常。
+- **每个主题的相关筛选器数** – 每个主题的最大相关筛选器数被限制为 100,000。如果达到此配额，将拒绝任何后续的创建该主题的其他筛选器的请求，调用代码将收到一个异常。
 
 有关配额的详细信息，请参阅[服务总线配额](/documentation/articles/service-bus-quotas)。
 
@@ -108,7 +107,8 @@
 - [Azure 服务总线高级消息传送简介（博客文章）](http://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/)
 - [Azure 服务总线高级消息传送简介（Channel9）](https://channel9.msdn.com/Blogs/Subscribe/Introducing-Azure-Service-Bus-Premium-Messaging)
 - [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview)
-- [Azure 服务总线体系结构概述](/documentation/articles/fundamentals-service-bus-hybrid-solutions)
-- [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
+- [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
+- [如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues) 
+[Azure 经典门户]: http://manage.windowsazure.cn
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0215_2016-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将移动服务添加到现有应用 (WP8) | Windows Azure" 
+	pageTitle="将移动服务添加到现有应用 (WP8) | Microsoft Azure" 
 	description="了解如何使用来自 Azure 移动服务 Windows Phone 8 应用程序的数据。" 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -9,23 +9,26 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/25/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="11/11/2015" 
+	wacn.date="03/21/2016"/>
 
 
 #  将移动服务添加到现有应用程序
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-data-legacy](../includes/mobile-services-selector-get-started-data-legacy.md)]
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
 
 ##概述
 
-此主题说明如何通过 Azure 移动服务来利用 Windows Phone 8 应用程序中的数据。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。  
+此主题说明如何通过 Azure 移动服务来利用 Windows Phone 8 应用程序中的数据。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 [Azure 经典门户]以查看运行该应用程序时对数据所做的更改。
 
 ## 先决条件 
 
 + Visual Studio 2012 Express for Windows Phone 8，以及 Windows 8 上运行的 [Windows Phone 8 SDK]。若要在完成本教程后创建一个 Windows Phone 8.1 应用程序，您必须使用 Visual Studio 2013 Update 2 或更高版本。 
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/ target="\_blank">Azure 试用</a>。
++ 一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial)</a>。
 
 ## <a name="download-app"></a>下载 GetStartedWithData 项目
 
@@ -47,7 +50,7 @@
 
    	可以看到，保存的文本已显示在下面的列表中。
 
-## <a name="create-service"></a>在管理门户中创建新的移动服务
+##<a name="create-service"></a>在 Azure 经典门户中创建新的移动服务
 
 [AZURE.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
 
@@ -67,7 +70,7 @@
 
   	这会将移动服务客户端库添加到项目。
 
-3. 在管理门户中单击“移动服务”，然后单击你刚刚创建的移动服务。
+3. 在 [Azure 经典门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 4. 单击“仪表板”选项卡并记下“站点 URL”中的值，然后单击“管理密钥”并记下“应用程序密钥”中的值。
 
@@ -88,12 +91,12 @@
 
   	这将创建用于访问移动服务的 **MobileServiceClient** 的新实例。
 
-6. 在 MainPage.xaml.cs 文件中，添加或取消注释以下 `using` 语句：
+6. 在 MainPage.cs 文件中，添加或取消注释以下 `using` 语句：
 
        	using Microsoft.WindowsAzure.MobileServices;
 		using Newtonsoft.Json;
 
-7. 在同一个文件中，将 **TodoItem** 类定义替换为以下代码：
+7. 在此 DataModel 文件夹中，将 **TodoItem** 类定义替换为以下代码：
 
         public class TodoItem
         {
@@ -142,7 +145,7 @@
 
    	此时会将一个新项作为 insert 发送到移动服务。
 
-3. 在[管理门户]中单击“移动服务”，然后单击你的移动服务。
+3. 在 [Azure 经典门户]中，单击“移动服务”，然后单击你的移动服务。
 
 4. 单击“数据”选项卡，然后单击“浏览”。
 
@@ -174,7 +177,6 @@
 [Next Steps]: #next-steps
 
 <!-- Images. -->
-
 [0]: ./media/mobile-services-windows-phone-get-started-data/mobile-quickstart-startup-wp8.png
 [7]: ./media/mobile-services-windows-phone-get-started-data/mobile-add-nuget-package-wp.png
 [8]: ./media/mobile-services-windows-phone-get-started-data/mobile-dashboard-tab.png
@@ -182,12 +184,11 @@
 
 <!-- URLs. -->
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
-[管理门户]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268374
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268375
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkId=271146
 [开发人员代码示例站点]: http://go.microsoft.com/fwlink/p/?LinkId=271146
  
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

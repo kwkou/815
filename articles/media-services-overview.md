@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="02/02/2016"
+	wacn.date="03/21/2016"/>
 
 #Azure 媒体服务概述和常见方案
 
-Windows Azure 媒体服务是一个可扩展的基于云的平台，它使开发人员可以构建可缩放的媒体管理和交付应用程序。媒体服务基于 REST API，你可以使用这些 API 安全地上载、存储、编码和打包视频或音频内容，以供点播以及以实时流形式传送到各种客户端（例如，电视、电脑和移动设备）。
+Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能够生成可缩放的媒体管理和传送应用程序。媒体服务基于 REST API，你可以使用这些 API 安全地上载、存储、编码和打包视频或音频内容，以供点播以及以实时流形式传送到各种客户端（例如，电视、电脑和移动设备）。
 
 可以完全使用媒体服务构建端到端工作流。也可以选择使用第三方组件来构建工作流的某些组成部分。例如，使用第三方编码器进行编码。然后，使用媒体服务进行上载、保护、打包和传送。
 
@@ -25,16 +25,14 @@ Windows Azure 媒体服务是一个可扩展的基于云的平台，它使开发
 若要构建媒体服务解决方案，你可以使用：
 
 - [媒体服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx)
-- 以下可用客户端 SDK 之一：[适用于 .NET Azure 媒体服务 SDK](https://github.com/Azure/azure-sdk-for-media-services)、[适用于 Java 的 Azure SDK](https://github.com/Azure/azure-sdk-for-java)、[适用于 Node.js 的 Azure 媒体服务](https://github.com/fritzy/node-azure-media)、[Azure PHP SDK](https://github.com/Azure/azure-sdk-for-php)
-- 现有工具：[Azure 管理门户](http://manage.windowsazure.cn/)或 [Azure-Media-Services-Explorer](https://github.com/Azure/Azure-Media-Services-Explorer)。
-
-
-##媒体服务学习路径
-
-你可以在此处查看 AMS 学习路径：
-
-- [AMS 实时流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS 按需流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+- 可用的客户端 SDK 之一： 
+	- [适用于 .NET 的 Azure 媒体服务 SDK](https://github.com/Azure/azure-sdk-for-media-services)、 
+	- [Azure SDK for Java](https://github.com/Azure/azure-sdk-for-java)， 
+	- [Azure PHP SDK](https://github.com/Azure/azure-sdk-for-php)， 
+	- [适用于 Node.js 的 Azure 媒体服务](https://github.com/michelle-becker/node-ams-sdk/blob/master/lib/request.js)（这是 Node.js SDK 的非 Microsoft 版本。它由社区维护，当前未包括所有的 AMS API）。 
+- 现有工具： 
+	- [Azure 经典门户](http://manage.windowsazure.cn/) 
+	- [Azure-Media-Services-Explorer](https://github.com/Azure/Azure-Media-Services-Explorer)（Azure 媒体服务资源管理器 (AMSE) 是适用于 Windows 的 Winforms/C# 应用程序）
 
 ##先决条件
 
@@ -140,7 +138,7 @@ Windows Azure 媒体服务是一个可扩展的基于云的平台，它使开发
 	- 直接通过常用流式处理协议（例如 MPEG DASH、Smooth、HLS、HDS）将内容传递给客户，或传递至内容传送网络 (CDN) 以供进一步分发。 
 	
 		
-**Windows Azure 媒体服务** (AMS) 提供了引入、编码、预览、存储和传送实时流式处理内容的功能。
+**Azure 媒体服务** (AMS) 提供了引入、编码、预览、存储和传送实时流式处理内容的功能。
 
 在将内容传送给客户时，你的目标就是：将优质视频传递到处于不同网络条件下的各种设备。为了满足质量和网络条件的要求，使用实时编码器将流编码为多比特率（自适应比特率）视频流。为满足不同设备的流式处理要求，使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)将流动态地重新打包为不同的协议。媒体服务支持传送以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
@@ -211,7 +209,7 @@ Azure 媒体服务提供你所需的工具，以便你创建适用于大多数�
 - 对于内容保护，我们保证将在至少 99.9% 的时间成功满足密钥请求。
 - 对于索引器，我们将使用编码保留单位在 99.9% 的时间成功处理索引器任务请求。
 
-	有关详细信息，请参阅 [Windows Azure SLA](/support/legal/sla/)。
+	有关详细信息，请参阅 [Azure SLA](/support/legal/sla/)。
 
 <!-- Images -->
 [overview]: ./media/media-services-overview/media-services-overview.png
@@ -220,4 +218,4 @@ Azure 媒体服务提供你所需的工具，以便你创建适用于大多数�
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0314_2016-->

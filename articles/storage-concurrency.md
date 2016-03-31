@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Windows Azure 存储中管理并发" 
+	pageTitle="在 Azure 存储中管理并发" 
 	description="如何管理 Blob、队列、表和文件服务的并发" 
 	services="storage" 
 	documentationCenter="" 
@@ -10,18 +10,18 @@
 <tags 
 	ms.service="storage" 
 	ms.date="09/03/2015" 
-	wacn.date="11/02/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 
-#在 Windows Azure 存储中管理并发
+#在 Azure 存储中管理并发
 
 ## 概述 
 
 通常情况下，基于 Internet 的新型应用程序允许多名用户同时查看和更新数据。这就要求应用程序开发人员仔细考虑如何为他们的最终用户提供可预测的体验，尤其是在多名用户可以更新相同数据的情况下。开发人员通常将考虑下面三个主要数据并发策略：
 
 
-1.	乐观并发 – 执行更新的应用程序在更新过程中要验证数据是否自该应用程序上次读取该数据起已发生更改。例如，如果两名查看 wiki 页的用户对同一页进行更新，则 wiki 平台必须确保第二次更新不会覆盖第一次更新，并且两名用户都了解他们的更新成功与否。此策略最常用于 Web 应用程序中。
+1.	乐观并发 – 执行更新的应用程序在更新过程中要验证数据是否自该应用程序上次读取该数据起已发生更改。例如，如果两名查看 wiki 页的用户对同一页进行更新，则 wiki 平台必须确保第二次更新不会覆盖第一次更新，并且两名用户都了解他们的更新成功与否。此策略最常用于 Web 应用中。
 2.	悲观并发 – 要执行更新的应用程序将对对象获取一个锁，以防其他用户在该锁释放前更新数据。例如，在主/从数据复制情况下，如果只有主对象要执行更新，则该对象通常将在长时间内对数据持有一个独占锁，以确保其他任何用户都不能更新该数据。
 3.	上次编写者赢 – 一种方法，即允许任何更新操作继续进行，而不需要验证其他任何应用程序是否自应用程序首次读取数据起已更新该数据。此策略（或缺乏正式策略）通常用于以下情况：以多名用户不可能访问相同数据的方式对数据进行分区。该策略可能还适用于正在处理短期数据流的情况。  
 
@@ -268,7 +268,7 @@ customer.ETag = "*"；
 - [管理文件锁](http://msdn.microsoft.com/zh-cn/library/azure/dn194265.aspx)  
 
 ## 摘要和后续步骤
-经过精心设计，Windows Azure 存储服务可以满足最复杂的在线应用程序需要，而不会迫使开发人员对主要设计假设做出妥协或重新思考，例如他们视为理所当然的并发和数据一致性。
+经过精心设计，Azure 存储服务可以满足最复杂的在线应用程序需要，而不会迫使开发人员对主要设计假设做出妥协或重新思考，例如他们视为理所当然的并发和数据一致性。
 
 对于本博客中引用的完整示例应用程序：  
 
@@ -276,9 +276,9 @@ customer.ETag = "*"；
 
 有关 Azure 存储的详细信息，请参阅：  
 
-- [Windows Azure 存储主页](/home/features/storage)
+- [Azure 存储主页](/home/features/storage)
 - [Azure 存储简介](/zh-cn/documentation/articles/storage-introduction)
 - [Blob](/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs)、[表](/zh-cn/documentation/articles/storage-dotnet-how-to-use-tables)和[队列](/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues)的存储使用入门
-- 存储体系结构 - [Windows Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
+- 存储体系结构 - [Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
 <!---HONumber=79-->

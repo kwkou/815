@@ -9,11 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/18/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="02/11/2016"
+	wacn.date="03/21/2016"/>
 
 # 向移动服务应用程序添加身份验证
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 本主题说明如何通过应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
@@ -48,7 +51,7 @@
 
 ## <a name="add-authentication"></a>向应用程序添加身份验证
 
-1. 打开 **TodoService** 项目文件，并添加以下变量
+1. 打开 **QSToDoService** 项目文件并添加以下变量
 
 		// Mobile Service logged in user
 		private MobileServiceUser user; 
@@ -92,18 +95,19 @@
         {
             base.ViewDidAppear(animated);
 
-            if (QSToDoService.DefaultService.User == null)
+            if (QSTodoService.DefaultService.User == null)
             {
-                await QSToDoService.DefaultService.LoginAndGetData(this);
+                await QSTodoService.DefaultService.LoginAndGetData(this);
             }
 
-            if (QSToDoService.DefaultService.User == null)
+            if (QSTodoService.DefaultService.User == null)
             {
                 // TODO:: show error
                 return;
-            } 
-                
-            RefreshAsync();
+            }
+
+
+            await RefreshAsync();
         }
 6. 从 **TodoListViewController.ViewDidLoad** 中删除对 **RefreshAsync** 的原始调用。
 		
@@ -111,10 +115,10 @@
 
    	当你成功登录时，应用应该运行而不出现错误，你应该能够查询移动服务，并对数据进行更新。
 
-##  获取已完成的示例
+## 获取已完成的示例
 下载[已完成的示例项目]。请务必使用你自己的 Azure 设置更新 **applicationURL** 和 **applicationKey** 变量。
 
-##  <a name="next-steps"></a>后续步骤
+## <a name="next-steps"></a>后续步骤
 
 在下一教程[使用脚本为用户授权]中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。
 
@@ -122,7 +126,7 @@
 [注册应用程序以进行身份验证并配置移动服务]: #register
 [将表权限限制给已经过身份验证的用户]: #permissions
 [向应用程序添加身份验证]: #add-authentication
-[Next Steps]: #next-steps
+[Next Steps]:#next-steps
 
 <!-- Images. -->
 [4]: ./media/partner-xamarin-mobile-services-ios-get-started-users/mobile-services-selection.png
@@ -131,19 +135,18 @@
 [14]: ./media/partner-xamarin-mobile-services-ios-get-started-users/mobile-portal-data-tables.png
 [15]: ./media/partner-xamarin-mobile-services-ios-get-started-users/mobile-portal-change-table-perms.png
 
-
+<!-- URLs. TODO:: update completed example project link with project download -->
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 
-[移动服务入门]: /develop/mobile/tutorials/get-started-xamarin-ios
-[Get started with data]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-xamarin-ios
-[Get started with push notifications]: /develop/mobile/tutorials/-get-started-with-push-xamarin-ios
-[使用脚本为用户授权]: /develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios
+[移动服务入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started
+[Get started with data]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-data
+[Get started with authentication]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-users
+[Get started with push notifications]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-push
+[使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
 [已完成的示例项目]: http://go.microsoft.com/fwlink/p/?LinkId=331328
 [Xamarin.iOS]: http://xamarin.com/download
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

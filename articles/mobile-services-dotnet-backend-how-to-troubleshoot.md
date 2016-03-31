@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="移动服务 .NET 后端故障排除 | Windows Azure" 
+	pageTitle="移动服务 .NET 后端故障排除 | Azure" 
 	description="了解如何诊断和修复使用 .NET 后端的移动服务遇到的问题" 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -9,10 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="08/18/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="02/07/2016" 
+	wacn.date="03/28/2016"/>
 
 # 移动服务 .NET 后端故障排除
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 
 使用移动服务进行开发通常是简单轻松的工作，但即便如此，有时还是可能会出错。本教程提供了一些技巧，以帮助你排查移动服务 .NET 后端可能出现的常见问题。
 
@@ -22,7 +26,7 @@
 4. [调试云程序集解析](#AssemblyResolution)
 5. [实体框架迁移疑难解答](#EFMigrations)
 
-<a name="HttpDebugging">
+<a name="HttpDebugging"></a>
 ## HTTP 调试
 
 使用移动服务开发应用程序时，通常会将移动服务客户端 SDK 用于你所使用的平台（Windows 应用商店、iOS、Android 等）。但有时候，深入了解 HTTP 级别并观察网络上发生的原始调用可能会有所帮助。此方法在调试连接和序列化问题时特别有用。通过移动服务 .NET 后端，你可以将此方法与 Visual Studio 本地和远程调试搭配使用（下一部分将详细说明），以了解 HTTP 调用在调用服务代码之前所创建的路径。
@@ -32,7 +36,8 @@
 1. 首先，在 **Visual Studio 2013 Update 2** 或更高版本中打开移动服务服务器项目。如果你尚无此项目，可以通过依次选择“文件”、“新建”、“项目”、“云”节点和“Microsoft Azure 移动服务”模板来创建一个项目。
 2. 按 **F5**，以生成并运行该项目。在起始页上，选择“试用”。 
 
-    >[AZURE.NOTE]如果服务在本地托管，则单击链接会定向至下一页。但是，如果在云中托管，则系统会提示你提供一组凭据。这是为了确保未经授权的用户无法访问你的 API 和负载的相关信息。若要查看该页，你需要使用**空白用户名**以及**应用程序密钥**（充当密码）来登录。若要获取应用程序密钥，你可以在“Azure 管理门户”中导航至移动服务的“仪表板”选项卡，并选择“管理密钥”。
+    >[AZURE.NOTE]
+    >如果服务在本地托管，则单击链接会定向至下一页。但是，如果在云中托管，则系统会提示你提供一组凭据。这是为了确保未经授权的用户无法访问你的 API 和负载的相关信息。若要查看该页，你需要使用**空白用户名**以及**应用程序密钥**（充当密码）来登录。若要获取应用程序密钥，你可以在 Azure 经典门户中导航至移动服务的“仪表板”选项卡，并选择“管理密钥”。
     >
     > ![访问帮助页时的身份验证提示][HelpPageAuth]
 
@@ -64,8 +69,8 @@
 
     ![配置符号加载][SymbolLoading]
 
-3. 选择左边的“符号”节点，并使用 URI [http://srv.symbolsource.org/pdb/Public](http://srv.symbolsource.org/pdb/Public) 添加对 [SymbolSource](http://symbolsource.org) 服务器的引用。移动服务 .NET 后端的符号将以最新版本启用。
- 
+3. 选择左边的“符号”节点，并使用 URI [http://srv.symbolsource.org/pdb/Public](http://srv.symbolsource.org/pdb/Public) 添加对 [SymbolSource] 服务器的引用。移动服务 .NET 后端的符号将以最新版本启用。
+
     ![配置符号服务器][SymbolServer]
 
 4. 在代码段中要进行调试的位置设置一个断点。你可以在 Visual Studio 中移动服务项目模板随附的 **TodoItemController** 的 **GetAllTodoItems()** 方法中设置一个断点。
@@ -103,16 +108,16 @@
 
 ![Visual Studio 服务器资源管理器中的日志][LogsServerExplorer]
 
-也可以从“Azure 管理门户”中移动服务的“日志”选项卡获取相同的日志。
+也可以从 Azure 经典门户中移动服务的“日志”选项卡获取相同的日志。
 
-![Azure 管理门户中的日志][LogsPortal]
+![登录 Azure 经典门户][LogsPortal]
 
 <a name="AssemblyResolution"></a>
 ## 调试云程序集解析
 
 当你将移动服务发布到 Azure 时，此服务将由移动服务托管环境加载，以确保能够无缝地升级和修补托管控制器代码的 HTTP 管道。这包括 [.NET 后端 NuGet 包](http://www.nuget.org/packages?q=%22mobile+services+.net+backend%22)引用的所有程序集：团队需持续更新服务才能使用这些程序集的最新版本。
 
-有时，版本会因为引用了所需程序集的*不同主要版本*而发生冲突（允许不同的*次要*版本）。当 NuGet 提示你升级到移动服务 .NET 后端所用某个包的最新版本时，经常发生此情况。
+有时，版本会因为引用了所需程序集的不同主要版本而发生冲突（允许不同的次要版本）。当 NuGet 提示你升级到移动服务 .NET 后端所用某个包的最新版本时，经常发生此情况。
 
 >[AZURE.NOTE]移动服务目前只与 ASP.NET 5.1 兼容；当前不支持 ASP.NET 5.2。部署后，将 ASP.NET NuGet 包升级到 5.2.* 可能会导致错误。
 
@@ -127,9 +132,9 @@
 此问题很容易解决：只需恢复到所需程序集的支持版本，然后重新发布服务。
 
 <a name="EFMigrations"></a>
-## Entity Framework 迁移故障排除
+## 实体框架迁移故障排除
 
-使用包含 SQL 数据库的移动服务 .NET 后端时，将以 Entity Framework (EF) 作为数据访问技术，让你查询数据库及保存对象。EF 代表开发人员处理的重要方面之一是数据库列（也称为*架构*）如何随着代码中指定的模型类的更改而更改。此过程称为 [Code First 迁移](http://msdn.microsoft.com/zh-cn/data/jj591621)。
+使用包含 SQL 数据库的移动服务 .NET 后端时，将以实体框架作为数据访问技术，让你查询数据库及保存对象。EF 代表开发人员处理的重要方面之一是数据库列（也称为架构）如何随着代码中指定的模型类的更改而更改。此过程称为[代码优先迁移](http://msdn.microsoft.com/zh-cn/data/jj591621)。
 
 迁移可能很复杂，只有数据库状态与 EF 模型保持同步才能成功。有关如何处理移动服务的迁移和可能发生的错误的说明，请参阅[如何对 .NET 后端移动服务进行数据模型更改](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
 
@@ -150,4 +155,8 @@
 [LogsPortal]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/13.png
 [HelpConflict]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/14.png
 
-<!---HONumber=71-->
+
+<!-- Links -->
+[SymbolSource]: http://symbolsource.org
+
+<!---HONumber=Mooncake_0118_2016-->

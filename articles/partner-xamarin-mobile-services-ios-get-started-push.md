@@ -9,11 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/18/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="02/11/2016"
+	wacn.date="03/21/2016"/>
 
 #  向移动服务应用程序添加推送通知
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 ## 概述
@@ -151,7 +154,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
   	记下文件名和导出的证书的位置。
 
-2. 登录到 [Azure 管理门户]，单击“移动服务”，然后单击你的应用。
+2. 登录到 [Azure 经典门户]，单击“移动服务”，然后单击你的应用。
 
    	![][18]
 
@@ -258,7 +261,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
             }
         }
 
-8. 在 **TodoListViewController** 中，修改 **OnAdd** 操作以获取存储在 **AppDelegeate** 中的设备标记，并将它存储到所添加的 **TodoItem** 中。
+8. 在 **QSTodoListViewController** 中，修改 **OnAdd** 操作以获取存储在 **AppDelegeate** 中的设备标记，并将它存储到所添加的 **TodoItem** 中。
 
       string deviceToken = ((AppDelegate)UIApplication.SharedApplication.Delegate).DeviceToken;
 
@@ -271,9 +274,9 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 你的应用现已更新，可支持推送通知。
 
-##  <a name="update-scripts"></a>在管理门户中更新已注册的插入脚本
+## <a name="update-scripts"></a>在 Azure 经典门户中更新已注册的插入脚本
 
-1. 在管理门户中，单击“数据”选项卡，然后单击“TodoItem”表。 
+1. 在 [Azure 经典门户]中，单击“数据”选项卡，然后单击“TodoItem”表。
 
    	![][21]
 
@@ -387,10 +390,11 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 [Xamarin 设备设置]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
 
-[Azure 管理门户]: https://manage.windowsazure.cn/
+
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [apns 对象]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
 [completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331303
 [Xamarin.iOS]: http://xamarin.com/download
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

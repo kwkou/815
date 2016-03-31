@@ -1,5 +1,5 @@
 <properties
-    pageTitle="什么是云服务模型和包 | Windows Azure"
+    pageTitle="什么是云服务模型和包 | Azure"
     description="描述 Azure 中的云服务模型（.csdef、.cscfg）和包 (.cspkg)"
     services="cloud-services"
     documentationCenter=""
@@ -9,7 +9,7 @@
 <tags 
     ms.service="cloud-services"  
     ms.date="10/09/2015"
-    wacn.date="11/12/2015"/>
+    wacn.date="01/21/2016"/>
 
 # 什么是云服务模型以及如何打包？
 云服务由以下三个组件创建：服务定义 _(.csdef)_、服务配置 _(.cscfg)_ 和服务包 _(.cspkg)_。**ServiceDefinition.csdef** 和 **ServiceConfig.cscfg** 文件都基于 XML，同时介绍云服务的结构及其配置方式；统称为模型。**ServicePackage.cspkg** 是从 **ServiceDefinition.csdef** 和其他文件生成的 zip 文件，它包含所有必需的基于二进制的依赖项。Azure 可从 **ServicePackage.cspkg** 和 **ServiceConfig.cscfg** 两者创建云服务。
@@ -85,7 +85,7 @@
 可以参考 [服务定义架构][] 以更好地了解此处使用的 XML 架构，而以下是某些元素的快速说明：
 
 >**站点**  
->包含 IIS7 中承载的网站或 Web 应用程序的定义。
+>包含 IIS7 中承载的 Web 应用或 Web 应用的定义。
 >
 >**InputEndpoints**  
 >包含用于联系云服务的终结点的定义。
@@ -154,9 +154,9 @@
 
 
 ## 定义角色实例的端口
-Azure 仅允许 Web 角色有一个入口点。这意味着所有通信都通过一个 IP 地址完成。可以通过配置主机头使请求指向正确的位置来配置网站共享一个端口。此外，可以配置你的应用程序侦听 IP 地址上的已知端口。
+Azure 仅允许 Web 角色有一个入口点。这意味着所有通信都通过一个 IP 地址完成。可以通过配置主机头使请求指向正确的位置来配置 Web 应用共享一个端口。此外，可以配置你的应用程序侦听 IP 地址上的已知端口。
 
-以下示例显示了具有网站和 Web 应用程序的 Web 角色的配置。该网站配置为端口 80 上的默认入口位置，Web 应用程序配置为接收来自名为“mail.mysite.cloudapp.net”备用主机头的请求。
+以下示例显示了具有 Web 应用和 Web 应用的 Web 角色的配置。该 Web 应用配置为端口 80 上的默认入口位置， Web 应用配置为接收来自名为“mail.mysite.cloudapp.net”备用主机头的请求。
 
 ```xml
 <WebRole>
@@ -226,7 +226,7 @@ Azure 仅允许 Web 角色有一个入口点。这意味着所有通信都通过
 | &lt;1.6 | C:\Program Files\Azure SDK\[sdk-version]\bin\ |
 
 >[AZURE.NOTE]
-CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Microsoft Azure 命令提示符”快捷方式使用。
+CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Azure 命令提示符”快捷方式使用。
 >  
 >运行 CSPack.exe 程序来查看有关所有可能的开关和命令的文档。
 
@@ -277,13 +277,12 @@ CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Microsof
 
 * [创建新的云服务][vs_create]
 * [重新配置现有云服务][vs_reconfigure]
-* [部署云服务项目][vs_deploy]
+* 部署云服务项目
 * [为云服务实例设置远程桌面][vs_remote]
 
 
 [remotedesktop]: /documentation/articles/cloud-services-role-enable-remote-desktop
 [vs_remote]: https://msdn.microsoft.com/zh-cn/library/gg443832.aspx
-[vs_deploy]: https://msdn.microsoft.com/zh-cn/library/ee460772.aspx
 [vs_reconfigure]: https://msdn.microsoft.com/zh-cn/library/ee405486.aspx
 [vs_create]: https://msdn.microsoft.com/zh-cn/library/ee405487.aspx
 

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="跨域资源共享 (CORS) 支持 | Windows Azure" 
-	description="了解如何为 Windows Azure 存储服务启用 CORS 支持。" 
+	pageTitle="跨域资源共享 (CORS) 支持 | Azure" 
+	description="了解如何为 Azure 存储服务启用 CORS 支持。" 
 	services="storage" 
 	documentationCenter=".net" 
 	authors="andtyler" 
@@ -9,21 +9,12 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="06/18/2015" 
-	wacn.date="09/18/2015"/>
-
-
-
-
-
-
-
-
-
+	ms.date="01/07/2016"
+	wacn.date="02/25/2016"/>
 
 # 对 Azure 存储服务的跨域资源共享 (CORS) 支持
 
-从版本 2013-08-15 开始，Azure 存储服务支持 Blob、表和队列服务的跨域资源共享 (CORS)。CORS 是一项 HTTP 功能，使在一个域中运行的 Web 应用程序能够访问另一个域中的资源。Web 浏览器实施一种称为[同源策略](http://www.w3.org/Security/wiki/Same_Origin_Policy)的安全限制，以防止网页调用另一个域中的 API；CORS 提供了一种安全的方法来允许一个域（源域）调用另一个域中的 API。有关 CORS 的详细信息，请参阅 [CORS 规范](http://www.w3.org/TR/cors)。
+从版本 2013-08-15 开始，Azure 存储服务支持 Blob、表、队列和文件服务的跨域资源共享 (CORS)。CORS 是一项 HTTP 功能，使在一个域中运行的 Web 应用程序能够访问另一个域中的资源。Web 浏览器实施一种称为[同源策略](http://www.w3.org/Security/wiki/Same_Origin_Policy)的安全限制，以防止网页调用另一个域中的 API；CORS 提供了一种安全的方法来允许一个域（源域）调用另一个域中的 API。有关 CORS 的详细信息，请参阅 [CORS 规范](http://www.w3.org/TR/cors/)。
 
 可以通过调用[设置 Blob 服务属性](https://msdn.microsoft.com/zh-cn/library/hh452235.aspx)、[设置队列服务属性](https://msdn.microsoft.com/zh-cn/library/hh452232.aspx)和[设置表服务属性](https://msdn.microsoft.com/zh-cn/library/hh452240.aspx)，分别为每个存储服务设置 CORS 规则。为服务设置 CORS 规则后，将会对从另一个域对服务发出的经过正确身份验证的请求进行评估，以根据你指定的规则确定是否允许该请求。
 
@@ -33,7 +24,7 @@
 
 来自源域的 CORS 请求可能由两个单独的请求组成：
 
-- 预检请求，它查询服务施加的 CORS 限制。仅当请求方法是[简单方法](http://www.w3.org/TR/cors)（即 GET、HEAD 或 POST）时，才需要预检请求。
+- 预检请求，它查询服务施加的 CORS 限制。仅当请求方法是[简单方法](http://www.w3.org/TR/cors/)（即 GET、HEAD 或 POST）时，才需要预检请求。
 
 - 实际请求，它针对所需资源发出。
 
@@ -59,7 +50,7 @@
 
 CORS 规则在服务级别设置，因此你需要分别为每个服务（Blob、队列和表）启用或禁用 CORS。默认情况下，对每个服务禁用 CORS。若要启用 CORS，你需要使用版本 2013-08-15 或更高版本设置适当的服务属性，并向服务属性中添加 CORS 规则。有关如何为服务启用或禁用 CORS 以及如何设置 CORS 规则的详细信息，请参阅[设置 Blob 服务属性](https://msdn.microsoft.com/zh-cn/library/hh452235.aspx)、[设置队列服务属性](https://msdn.microsoft.com/zh-cn/library/hh452232.aspx)和[设置表服务属性](https://msdn.microsoft.com/zh-cn/library/hh452240.aspx)。
 
-下面是通过"设置服务属性"操作指定的一个 CORS 规则示例：
+下面是通过“设置服务属性”操作指定的一个 CORS 规则示例：
 
     <Cors>    
         <CorsRule>
@@ -73,11 +64,11 @@ CORS 规则在服务级别设置，因此你需要分别为每个服务（Blob�
 
 下面描述了 CORS 规则中包含的每个元素：
 
-- **AllowedOrigins**：允许通过 CORS 对存储服务发出请求的源域。源域是从中发出请求的域。请注意，来源必须与用户代理发送到服务的来源完全相同，包括大小写。也可以使用通配符"*"允许所有源域通过 CORS 发出请求。在上面的示例中，域 [http://www.contoso.com](http://www.contoso.com) 和 [http://www.fabrikam.com](http://www.fabrikam.com) 可以使用 CORS 发出服务请求。
+- **AllowedOrigins**：允许通过 CORS 对存储服务发出请求的源域。源域是从中发出请求的域。请注意，来源必须与用户代理发送到服务的来源完全相同，包括大小写。也可以使用通配符“*”允许所有源域通过 CORS 发出请求。在上面的示例中，域 [http://www.contoso.com](http://www.contoso.com) 和 [http://www.fabrikam.com](http://www.fabrikam.com) 可以使用 CORS 发出服务请求。
 
 - **AllowedMethods**：源域可用于 CORS 请求的方法（HTTP 请求谓词）。在上面的示例中，只允许 PUT 和 GET 请求。
 
-- **AllowedHeaders**：源域可以在 CORS 请求上指定的请求标头。在上面的示例中，允许所有以 x-ms-meta-data、x-ms-meta-target 和 x-ms-meta-abc 开头的元数据标头。请注意，通配符"*"表示允许任何以指定前缀开头的标头。
+- **AllowedHeaders**：源域可以在 CORS 请求上指定的请求标头。在上面的示例中，允许所有以 x-ms-meta-data、x-ms-meta-target 和 x-ms-meta-abc 开头的元数据标头。请注意，通配符“*”表示允许任何以指定前缀开头的标头。
 
 - **ExposedHeaders**：可以在 CORS 请求响应中发送并由浏览器向请求发出方公开的响应标头。在上面的示例中，指示浏览器公开任何以 x-ms-meta 开头的标头。
 
@@ -97,11 +88,11 @@ Azure 存储服务支持为 **AllowedHeaders** 和 **ExposedHeaders** 两个元�
 
 ## 了解 CORS 规则的评估逻辑
 
-当存储服务收到预检请求或实际请求时，它会根据你通过适当的"设置服务属性"操作为该服务设定的 CORS 规则评估该请求。按照 CORS 规则在"设置服务属性"操作的请求正文中的设置顺序对它们进行评估。
+当存储服务收到预检请求或实际请求时，它会根据你通过适当的“设置服务属性”操作为该服务设定的 CORS 规则评估该请求。按照 CORS 规则在“设置服务属性”操作的请求正文中的设置顺序对它们进行评估。
 
 按如下所示评估 CORS 规则：
 
-1. 首先，根据 **AllowedOrigins** 元素中列出的域检查请求的源域。如果列表中包含源域，或者通过通配符"*"允许了所有域，则规则评估会继续进行。如果列表中不包含源域，则请求失败。
+1. 首先，根据 **AllowedOrigins** 元素中列出的域检查请求的源域。如果列表中包含源域，或者通过通配符“*”允许了所有域，则规则评估会继续进行。如果列表中不包含源域，则请求失败。
 
 2. 接下来，根据 **AllowedMethods** 元素中列出的方法检查请求的方法（或 HTTP 谓词）。如果列表中包含所用方法，则规则评估会继续进行；否则，请求失败。
 
@@ -109,7 +100,7 @@ Azure 存储服务支持为 **AllowedHeaders** 和 **ExposedHeaders** 两个元�
 
 由于将按照规则在请求正文中出现的顺序处理规则，因此最佳做法建议你在列表中最先指定与来源有关的限制性最强的规则，以便先对这些规则进行评估。在列表的最后指定限制性较弱的规则，例如，允许所有来源的规则。
 
-### 示例 - CORS 规则评估
+### 示例 – CORS 规则评估
 
 以下示例显示用于为存储服务设置 CORS 规则的操作的部分请求正文。有关构造请求的详细信息，请参阅[设置 Blob 服务属性](https://msdn.microsoft.com/zh-cn/library/hh452235.aspx)、[设置队列服务属性](https://msdn.microsoft.com/zh-cn/library/hh452232.aspx)和[设置表服务属性](https://msdn.microsoft.com/zh-cn/library/hh452240.aspx)。
 
@@ -198,6 +189,6 @@ Azure 存储服务支持为 **AllowedHeaders** 和 **ExposedHeaders** 两个元�
 
 [设置表服务属性](https://msdn.microsoft.com/zh-cn/library/hh452240.aspx)
 
-[W3C 跨域资源共享规范](http://www.w3.org/TR/cors)
+[W3C 跨域资源共享规范](http://www.w3.org/TR/cors/)
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_0215_2016-->

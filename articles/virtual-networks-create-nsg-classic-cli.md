@@ -1,24 +1,23 @@
 <properties 
-   pageTitle="如何使用 Azure CLI 在经典模式下创建 NSG | Windows Azure"
+   pageTitle="如何使用 Azure CLI 在经典模式下创建 NSG | Azure"
    description="了解如何使用 Azure CLI 在经典模式下创建和部署 NSG"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn"
-   tags="azure-service-management" />
-<tags 
-   ms.service="virtual-network"
-   ms.date="09/15/2015"
-   wacn.date="10/17/2015" />
+   tags="azure-service-management"
+/>
+<tags
+	ms.service="virtual-network"
+	ms.date="02/02/2016"
+	wacn.date="03/28/2016"/>
 
 # 如何在 Azure CLI 中创建 NSG（经典）
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-selectors-classic-include](../includes/virtual-networks-create-nsg-selectors-classic-include.md)]
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-intro-include](../includes/virtual-networks-create-nsg-intro-include.md)]
-
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] 本文介绍经典部署模型。你还可以[在资源管理器部署模型中创建 NSG](/documentation/articles/virtual-networks-create-nsg-arm-cli)。
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-scenario-include](../includes/virtual-networks-create-nsg-scenario-include.md)]
 

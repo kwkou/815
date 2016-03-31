@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将图像从通用 Windows 应用上载到 Azure Blob 存储 | Windows Azure" 
+	pageTitle="将图像从通用 Windows 应用上载到 Azure Blob 存储 | Azure" 
 	description="了解如何使用 JavaScript 后端移动服务将图像上载到 Azure Blob 存储和从通用 Windows 应用访问图像。" 
 	services="mobile-services,storage" 
 	documentationCenter="windows" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/13/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="11/16/2015" 
+	wacn.date="01/29/2016"/>
 
 # 使用移动服务将图像上载到 Azure Blob 存储
 
@@ -34,7 +34,7 @@
 
 本教程基于移动服务快速入门。在开始本教程之前，必须先[完成移动服务入门]。
 
-##在管理门户中更新已注册的插入脚本
+##在 Azure 经典门户中更新已注册的插入脚本
 
 [AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 
@@ -71,7 +71,7 @@
 
 <!-- URLs. -->
 [Send email from Mobile Services with SendGrid]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts
-[在移动服务中计划后端作业]: /documentation/articles/mobile-services-schedule-recurring-tasks
+
 [Send push notifications to Windows Store apps using Service Bus from a .NET back-end]: http://go.microsoft.com/fwlink/?LinkId=277073&clcid=0x409
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [完成移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
@@ -83,4 +83,4 @@
 [App settings]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
  
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

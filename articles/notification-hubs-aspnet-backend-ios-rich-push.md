@@ -9,12 +9,10 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="06/16/2015"
-	wacn.date="11/02/2015" />
+	ms.date="12/16/2015"
+	wacn.date="01/14/2016" />
 
 # Azure 通知中心富推送
-> [AZURE.SELECTOR]
-- [iOS](/documentation/articles/notification-hubs-aspnet-backend-ios-rich-push)
 
 ## 概述
 
@@ -91,7 +89,7 @@
             }
         }
 
-> [AZURE.NOTE](optional) 请参阅[如何使用 Visual C# 嵌入和访问资源](https://support.microsoft.com/zh-cn/kb/319292)了解有关如何添加和获取项目资源的详细信息。
+> [AZURE.NOTE] 请参阅[如何使用 Visual C# 嵌入和访问资源](https://support.microsoft.com/zh-cn/kb/319292)了解有关如何添加和获取项目资源的详细信息。
 
 7. 在 **NotificationsController.cs** 中，使用以下代码段重新定义 **NotificationsController**。这会将初始无提示的富通知 ID 发送到设备，并允许客户端对图像进行检索：
 
@@ -376,4 +374,4 @@
 [IOS3]: ./media/notification-hubs-aspnet-backend-ios-rich-push/rich-push-ios-3.png
 [IOS4]: ./media/notification-hubs-aspnet-backend-ios-rich-push/rich-push-ios-4.png
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -10,16 +10,13 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="08/24/2015" 
-	wacn.date="11/02/2015"/>
+	wacn.date="01/29/2016"/>
 
 # Azure Active Directory Connect - 了解详细信息
-> [AZURE.SELECTOR]
-- [简介](/documentation/articles/active-directory-aadconnect/)
-- [工作原理](/documentation/articles/active-directory-aadconnect-how-it-works/)
-- [入门](/documentation/articles/active-directory-aadconnect-get-started/)
-- [后续步骤](/documentation/articles/active-directory-aadconnect-whats-next/)
-- [了解详细信息](/documentation/articles/active-directory-aadconnect-learn-more/)
 
+<div>
+<a href="/documentation/articles/active-directory-aadconnect/">简介</a> <a href="/documentation/articles/active-directory-aadconnect-how-it-works/">工作原理</a> <a href="/documentation/articles/active-directory-aadconnect-whats-next/">后续步骤</a> <a href="/documentation/articles/active-directory-aadconnect-learn-more/">了解详细信息</a>
+</div>
 
 下面是有关使用 Azure AD Connect 以及将本地目录与 Azure AD 集成的其他资源列表。
 
@@ -38,8 +35,7 @@
 
 * [在云中使用本地标识基础结构](/documentation/articles/active-directory-aadconnect)
 * [Azure AD Connect 工作原理](/documentation/articles/active-directory-aadconnect-how-it-works)
-* [Azure AD Connect 入门](/documentation/articles/active-directory-aadconnect-get-started)
 * [Azure AD Connect 后续步骤](/documentation/articles/active-directory-aadconnect-whats-next)
 * [MSDN 上的 Azure AD Connect](https://msdn.microsoft.com/zh-cn/library/azure/dn832695.aspx)
 
-<!---HONumber=60-->
+<!---HONumber=79-->

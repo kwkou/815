@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure PowerShell 管理虚拟机 | Windows Azure"
+   pageTitle="使用 Azure PowerShell 管理虚拟机 | Azure"
    description="了解可用于在虚拟机管理过程中自动执行任务的命令。"
    services="virtual-machines"
    documentationCenter="windows"
@@ -10,14 +10,14 @@
 
    <tags
    ms.service="virtual-machines"
-   ms.date="06/24/2015"
-   wacn.date="09/18/2015"/>
+   ms.date="12/07/2015"
+   wacn.date="03/03/2016"/>
 
 # 使用 Azure PowerShell 管理虚拟机
 
 每天执行的许多管理 VM 的任务都可通过使用 Azure PowerShell cmdlet 自动执行。本文提供较简单任务的示例命令，并提供演示更复杂任务的命令的文章链接。
 
->[AZURE.NOTE]如果尚未安装和配置 Azure PowerShell，你可以在[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell) 这篇文章中获取相关说明。
+>[AZURE.NOTE]如果尚未安装和配置 Azure PowerShell，你可以在[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 这篇文章中获取相关说明。
 
 ## 如何使用示例命令
 你需要将命令中的一些文本替换为适合你的环境的文本。< and > 符号指示需要替换的文本。替换文本时，请删除符号，但将引号保留在原处。

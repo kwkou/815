@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Active Directory 身份验证库单一登录对应用进行身份验证（Windows 应用商店）| Windows Azure"
+	pageTitle="使用 Active Directory 身份验证库单一登录对应用进行身份验证（Windows 应用商店）| Microsoft Azure"
 	description="了解如何在 Windows 应用商店应用程序中使用 ADAL 对用户进行单一登录身份验证。"
 	documentationCenter="windows"
 	authors="wesmc7777"
@@ -9,11 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="08/18/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="01/14/2016"
+	wacn.date="03/21/2016"/>
 
 # 使用 Active Directory 身份验证库单一登录对应用程序进行身份验证
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-adal-sso](../includes/mobile-services-selector-adal-sso.md)]
 
 ##概述
@@ -30,8 +33,8 @@
 
 本教程需要的内容如下：
 
-* 在 Windows 8.1 上运行的 Visual Studio 2013。
-* 完成[移动服务入门]或[数据处理入门]教程。
+* 在 Windows 8.1 上运行的 Visual Studio 2013
+* 完成[移动服务入门]教程
 * Microsoft Azure 移动服务 SDK NuGet 包
 * Active Directory 身份验证库 NuGet 包 
 
@@ -67,21 +70,14 @@
 
     ![][3]
 
-2. 然后单击“服务”
+2. 然后单击应用管理“>应用标识”，然后复制页面中的包 SID。
 
     ![][4]
 
-3. 然后单击“Live 服务站点”。
 
-    ![][5]
+###创建本机应用程序注册
 
-4. 从页面顶部复制程序包 SID。
-
-    ![][6]
-
-### 创建本机应用程序注册
-
-1. 在 [Azure 管理门户]中浏览到“Active Directory”，然后单击你的目录。
+1. 在[经典门户]中浏览到“Active Directory”，然后单击你的目录。
 
     ![][7]
 
@@ -121,7 +117,7 @@
 
 [AZURE.INCLUDE [mobile-services-dotnet-adal-install-nuget](../includes/mobile-services-dotnet-adal-install-nuget.md)]
 
-4. 在 Visual Studio 的“解决方案资源管理器”窗口中，打开 MainPage.xaml.cs 文件，并添加以下 using 语句。
+4. 在 Visual Studio 的“解决方案资源管理器”窗口中，打开 MainPage.cs 文件，并添加以下 using 语句。
 
         using Windows.UI.Popups;
         using Microsoft.IdentityModel.Clients.ActiveDirectory;
@@ -158,7 +154,7 @@
             } 
         }
 
-6. 在上面的 `AuthenticateAsync` 方法的代码中，将 **INSERT-AUTHORITY-HERE** 替换为在其中进行应用程序设置的租户的名称，格式应为 https://login.chinacloudapi.cn/tenant-name.onmicrosoft.com 。可以在 [Azure 管理门户]中从 Azure Active Directory 的“域”选项卡复制此值。
+6. 在上面的 `AuthenticateAsync` 方法的代码中，将 **INSERT-AUTHORITY-HERE** 替换为在其中进行应用程序设置的租户的名称，格式应为 https://login.chinacloudapi.cn/tenant-name.onmicrosoft.com。 可以在 [Azure 经典门户]中从 Azure Active Directory 的“域”选项卡复制此值。
 
 7. 在上面的 `AuthenticateAsync` 方法的代码中，将 **INSERT-RESOURCE-URI-HERE** 替换为你的移动服务的“应用程序 ID URI”。如果你按照[如何向 Azure Active Directory 注册]主题进行操作，你的应用程序 ID URI 应该类似于 https://todolist.azure-mobile.net/login/aad 。
 
@@ -207,9 +203,9 @@
 
 <!-- URLs. -->
 [如何向 Azure Active Directory 注册]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication/
-[Azure 管理门户]: https://manage.windowsazure.cn/
-[数据处理入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/
-[移动服务入门]: /documentation/articles/mobile-services-windows-store-get-started/
+[Azure 经典门户]: https://manage.windowsazure.com/
+[经典门户]: https://manage.windowsazure.cn/
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
 [Windows 开发人员中心仪表板]: http://go.microsoft.com/fwlink/p/?LinkID=266734
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

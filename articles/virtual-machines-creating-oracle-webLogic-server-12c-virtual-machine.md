@@ -1,47 +1,68 @@
-<properties title="Creating an Oracle WebLogic Server 12c Virtual Machine in Azure" pageTitle="在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机" description="逐步演示在 Windows Azure 中创建运行在 Windows Server 2012 上的 Oracle WebLogic Server 12c 虚拟机的示例。" services="virtual-machines" authors="bbenz" documentationCenter=""/>
-<tags ms.service="virtual-machines" ms.date="06/22/2015" wacn.date="08/29/2015"/>
+<properties
+	pageTitle="创建 Oracle WebLogic Server 12c VM | Azure"
+	description="使用 Resource Manager 部署模型在 Azure 中创建运行在 Windows Server 2012 上的 Oracle WebLogic Server 12c 虚拟机。"
+	services="virtual-machines"
+	authors="bbenz"
+	documentationCenter=""
+	tags="azure-resource-manager"/>
+
+<tags
+	ms.service="virtual-machines"
+	ms.date="06/22/2015"
+	wacn.date="03/21/2016"/>
+
 #在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机
 以下示例演示了如何在 Azure 中，基于 Windows Server 2012 上运行的由 Microsoft 提供的 Oracle WebLogic Server 12c 映像创建一个虚拟机。
 
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]
+
+
+
 ##在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机
 
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/)。
 
-2. 单击“应用商店”，单击“计算”，然后在搜索框中键入 **Oracle**。
+2. 单击“新建”>“计算”>“从库中”。
 
-3.	选择“Windows Server 2012 上的 Oracle WebLogic Server 12c Standard Edition”或“Windows Server 2012 上的 Oracle WebLogic Server 12c Enterprise Edition”映像。检查有关此映像的信息（如最小建议大小），然后单击“下一步”。
+3.	选择“Windows Server 2012 R2 Datacenter (zh-cn)”或“Windows Server 2012 R2 Datacenter (zh-cn)”映像。检查有关此映像的信息（如最小建议大小），然后单击**“下一步”**。
 
-4.	指定 VM 的“主机名”。
+4.	指定 VM 的“虚拟机名称”。
 
-5.	指定 VM 的“用户名”。请注意，此用户用于远程登录 VM；这不是 Oracle 数据库用户名。
+7.	选择“层”和“大小”。如果你需要 DS 系列 VM，请通过 Azure PowerShell 创建一个。有关详细信息，请参阅[使用 Powershell 和经典部署模型创建 Windows 虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
-6.	指定并确认 VM 的密码，或提供 SSH 公钥。
+5.	指定 VM 的“新用户名”。请注意，此用户用于远程登录 VM；这不是 Oracle 数据库用户名。
 
-7.	选择一个**定价层**。请注意，默认情况下会显示建议的定价层，若要查看所有配置选项，请单击右上角的“全部查看”。
+6.	指定并确认 VM 的密码，然后单击“下一步”。
 
-8.	根据需要设置[“可选配置”](https://msdn.microsoft.com/zh-cn/library/azure/dn763935.aspx)，但请注意以下事项：
+8.	根据需要设置可选配置，但请注意以下事项：
+	1. 创建新的云服务或选择现有的云服务。
+	2. 选择一个**位置**
 	1. 将“存储帐户”保持不变，以使用 VM 名称创建新的存储帐户。
-	2. 将“可用性集”保留为“未配置”。
-	3. 此时请不要添加任何**终结点**。
-
-9.	选择或创建<!--[-->资源组<!--](/documentation/articles/resource-group-portal)-->
-
-10. 选择一个**订阅**
-
-11. 选择一个**位置**
+	2. 将“可用性集”保留为“无”。
+	3. 此时请不要添加任何**终结点**。单击“下一步”。
+	
+10. 选择是否安装“配置扩展”和“安全扩展”，然后单击“完成”。
 
 
 ##在 Azure 中配置 Oracle WebLogic Server 12c 虚拟机
 
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/)。
 
-2.	单击“虚拟机”。
+2.	单击**“虚拟机”**。
 
 3.	单击你要登录到的虚拟机名称。
 
 4.	单击“连接”。
 
 5.	根据需要响应提示以连接到虚拟机。提示需要管理员名称和密码时，请使用你创建虚拟机时提供的值。
+
+6. 下载 [Java JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 并将其安装。设置 **JAVA_HOME** 环境变量，并将 `%JAVA_HOME%\bin` 添加到路径。
+
+	> [AZURE.NOTE] 默认情况下，Jave JRE 安装在服务器中，因此，在将 `%JAVA_HOME%\bin` 添加到路径时，应删除 `C:\ProgramData\Oracle\Java\javapath`。否则，系统将使用 JRE 而非 JDK。
+
+7. 下载 [Oracle WebLogic Server 快速安装程序](http://www.oracle.com/technetwork/middleware/weblogic/downloads/wls-main-097127.html)，然后根据[文档](http://download.oracle.com/otn/nt/middleware/12c/1221/wls_1221_QuickInstaller_README.txt)说明进行安装。
+
+8. 运行配置向导 -- `<path of your Weblogic Server>\oracle_common\common\bin\config.cmd`。
 
 6.	在“WebLogic 平台快速入门”对话框中，单击“WebLogic Server 入门”。（如果“WebLogic 平台快速入门”对话框尚未打开，请单击 Windows“开始”菜单，键入“启动 WebLogic Server 域的管理服务器”，然后单击“启动 WebLogic Server 域的管理服务器”图标以打开该对话框。）
 
@@ -53,7 +74,7 @@
 
 	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image11.png)
 
-9.	在“指定域名和位置”对话框中接受默认值，然后单击“下一步”。
+9.	在**“选择域名和位置”**对话框中，接受默认值，然后单击**“下一步”**。
 
 	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image12.png)
 
@@ -61,7 +82,7 @@
 
 	1.	[可选] 将用户名从 **weblogic** 更改为选择的值。
 
-	2.	指定并确认 WebLogic 服务器管理员的密码。
+	2.	指定并确认 WebLogic Server 管理员的密码。
 
 	3.	单击**“下一步”**。
 
@@ -75,24 +96,24 @@
 
 	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image15.png)
 
-13.	在“配置摘要”对话框中，单击“创建”。
+13.	在**“配置摘要”**对话框中，单击**“创建”**。
 
 	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image16.png)
 
-14.	在“创建域”对话框中，选中“启动管理服务器”，然后单击“完成”。
+14.	在**“创建域”**对话框中，选中**“启动管理服务器”**，然后单击**“完成”**。
 
 	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image17.png)
 
 15.	此时将启动 **startWebLogic.cmd** 命令提示符。根据提示提供你的 WebLogic 用户名和密码。
 
 ##在 Azure 中的 Oracle WebLogic Server 12c 虚拟机上安装应用程序
-1.	在保持登录到虚拟机的情况下，将可从 http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war 下载的 shoppingcart.war 示例复制到本地。例如，创建名为 **c:\mywar** 的文件夹，并将 http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war 中的 WAR 保存到 **c:\mywar**。
+1.	在保持登录到虚拟机的情况下，将可从 http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war 下载的 shoppingcart.war 示例复制到本地。例如，创建名为 **c:\\mywar** 的文件夹，并将 http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/12c/12-ManageSessions--4478/files/shoppingcart.war 中的 WAR 保存到 **c:\\mywar**。
 
 2.	打开 **WebLogic Server 管理控制台** (http://localhost:7001/console)。根据提示提供你的 WebLogic 用户名和密码。
 
 3.	在“WebLogic Server 管理控制台”中，依次单击“锁定和编辑”、“部署”、“安装”。
 
-4.	对于“路径”，请键入 **c:\mywar\shoppingcart.war**。
+4.	对于“路径”，请键入 **c:\\mywar\\shoppingcart.war**。
 
 	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image18.png)
 
@@ -110,7 +131,7 @@
 
 10.	为虚拟机创建终结点
 
-	1. 登录到 [Azure 门户](hhttps://manage.windowsazure.cn)。
+	1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/)。
 
 	2.	单击“浏览”
 
@@ -132,7 +153,7 @@
 
 		3. 使用 **7001** 作为专用端口。
 
-	9.	将其余的选项保留原样
+	9.	将其余选项保留原样
 
 	10. 单击**“确定”**
 
@@ -148,13 +169,13 @@
 
 	5.	对于“协议和端口”，请选择“TCP”，选择“特定本地端口”，为端口输入 **7001**，然后单击“下一步”。
 
-	6.	选择“允许连接”，然后单击“下一步”。
+	6.	选择**“允许连接”**，然后单击**“下一步”**。
 
 	7.	接受要应用该规则的配置文件的默认值，然后单击“下一步”。
 
 	8.	指定规则的名称，并选择性地输入说明，然后单击“完成”。
 
-12.	若要查看在 Internet 上运行的购物车应用程序，请在浏览器中打开 `http://<<unique_domain_name>>/shoppingcart` 格式的 URL。（可以通过以下方式确定 <<*unique_domain_name*>> 的值：在 [Azure 门户](https://manage.windowsazure.cn)中单击“虚拟机”，然后选择你要用于运行 Oracle WebLogic Server 的虚拟机）。
+12.	若要查看在 Internet 上运行的购物车应用程序，请在浏览器中打开 `http://<<unique_domain_name>>/shoppingcart` 格式的 URL。（可以通过以下方式确定 <<*unique_domain_name*>> 的值：在 [Azure 管理门户](https://manage.windowsazure.cn/)中单击“虚拟机”，然后选择你要用于运行 Oracle WebLogic Server 的虚拟机）。
 
 
 ##其他资源
@@ -164,6 +185,6 @@
 
 -	[Oracle WebLogic Server 产品文档](http://www.oracle.com/technetwork/middleware/weblogic/documentation/index.html)
 
--	[Windows Azure 上使用 Linux 的 Oracle WebLogic Server 12c](http://www.oracle.com/technetwork/middleware/weblogic/learnmore/oracle-weblogic-on-azure-wp-2020930.pdf)
+-	[Azure 上使用 Linux 的 Oracle WebLogic Server 12c](http://www.oracle.com/technetwork/middleware/weblogic/learnmore/oracle-weblogic-on-azure-wp-2020930.pdf)
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_0314_2016-->

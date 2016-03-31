@@ -1,5 +1,5 @@
 <properties
-	pageTitle="PHP Web 角色和辅助角色 | Windows Azure"
+	pageTitle="PHP Web 角色和辅助角色 | Azure"
 	description="有关如何在 Azure 云服务中创建 PHP Web 和辅助角色以及配置 PHP 运行时的指南。"
 	services=""
 	documentationCenter="php"
@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="09/01/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="01/11/2016"/>
 
 #如何创建 PHP Web 角色和辅助角色
 
@@ -22,7 +22,7 @@
 
 Azure 提供了三种计算模型以运行应用程序：Azure App Service、Azure 虚拟机和 Azure 云服务。这三种模型都支持 PHP。云服务（包括 Web 角色和辅助角色）提供了*平台即服务 (PaaS)*。在云服务中，Web 角色提供专门用于托管前端 Web 应用程序的 Internet Information Services (IIS) Web 服务器。辅助角色可运行独立于用户交互或输入的异步任务、运行时间较长的任务或永久性任务。
 
-有关这些选项的说明，请参阅 [Azure 提供的计算托管选项](/documentation/articles/fundamentals-application-models)。
+有关这些选项的详细信息，请参阅 [Azure 提供的计算托管选项](/documentation/articles/fundamentals-application-models)。
 
 ## 下载 Azure SDK for PHP
 
@@ -98,7 +98,7 @@ Azure 提供了三种计算模型以运行应用程序：Azure App Service、Azu
 
 1. 创建一个 Azure 服务项目并添加 PHP Web 角色，如本主题前面所述。
 2. 在位于 Web 角色的根目录中的 `bin` 文件夹中创建一个 `php` 文件夹，然后将 PHP 运行时（所有二进制文件、配置文件、子文件夹等）添加到该 `php` 文件夹中。
-3. （可选）如果 PHP 运行时使用 [Microsoft Drivers for PHP for SQL Server][sqlsrv drivers]，则需要将 Web 角色配置为在 [SQL Server Native Client 2012][sql native client] 可用时安装它。为此，将 [sqlncli.msi x64 安装程序]添加到 Web 角色的根目录中的 `bin` 文件夹。下一步中所述的启动脚本将在设置角色时以静默方式运行安装程序。如果你的 PHP 运行时不使用 Microsoft Drivers for PHP for SQL Server，则可从下一步所示的脚本中删除以下行：
+3. （可选）如果 PHP 运行时使用 [Microsoft Drivers for PHP for SQL Server][sqlsrv drivers]，则需要将 Web 角色配置为在预配它时安装 [SQL Server Native Client 2012][sql native client]。为此，将 [sqlncli.msi x64 安装程序]添加到 Web 角色的根目录中的 `bin` 文件夹。下一步中所述的启动脚本将在设置角色时以静默方式运行安装程序。如果你的 PHP 运行时不使用 Microsoft Drivers for PHP for SQL Server，则可从下一步所示的脚本中删除以下行：
 
 		msiexec /i sqlncli.msi /qn IACCEPTSQLNCLILICENSETERMS=YES
 
@@ -132,7 +132,7 @@ Azure 提供了三种计算模型以运行应用程序：Azure App Service、Azu
 
 1. 创建一个 Azure 服务项目并添加 PHP 辅助角色，如本主题前面所述。
 2. 在辅助角色的根目录中创建一个 `php` 文件夹，然后将 PHP 运行时（所有二进制文件、配置文件、子文件夹等）添加到该 `php` 文件夹中。
-3. （可选）如果 PHP 运行时使用 [Microsoft Drivers for PHP for SQL Server][sqlsrv drivers]，则需要将辅助角色配置为已预配 [SQL Server Native Client 2012][sql native client] 时安装它。为此，将 [sqlncli.msi x64 安装程序]添加到辅助角色的根目录。下一步中所述的启动脚本将在设置角色时以静默方式运行安装程序。如果你的 PHP 运行时不使用 Microsoft Drivers for PHP for SQL Server，则可从下一步所示的脚本中删除以下行：
+3. （可选）如果 PHP 运行时使用 [Microsoft Drivers for PHP for SQL Server][sqlsrv drivers]，则需要将辅助角色配置为在预配它时安装 [SQL Server Native Client 2012][sql native client]。为此，将 [sqlncli.msi x64 安装程序]添加到辅助角色的根目录。下一步中所述的启动脚本将在设置角色时以静默方式运行安装程序。如果你的 PHP 运行时不使用 Microsoft Drivers for PHP for SQL Server，则可从下一步所示的脚本中删除以下行：
 
 		msiexec /i sqlncli.msi /qn IACCEPTSQLNCLILICENSETERMS=YES
 
@@ -169,7 +169,7 @@ Azure 提供了三种计算模型以运行应用程序：Azure App Service、Azu
 
 ## 在计算和存储模拟器中运行你的应用程序
 
-Azure 模拟器提供了一个本地环境，可在将 Azure 应用程序部署到云之前在该本地环境中测试此应用程序。模拟器与 Azure 环境之间存在一些差异。若要更好地了解该模拟器，请参阅[使用 Azure 存储模拟器进行开发和测试](/documentation/articles//storage-use-emulator)。
+Azure 模拟器提供了一个本地环境，可在将 Azure 应用程序部署到云之前在该本地环境中测试此应用程序。模拟器与 Azure 环境之间存在一些差异。若要更好地了解该模拟器，请参阅[使用 Azure 存储模拟器进行开发和测试](/documentation/articles/storage-use-emulator)。
 
 请注意，你必须本地安装 PHP 才能使用计算模拟器。计算模拟器将使用本地 PHP 安装来运行应用程序。
 
@@ -207,4 +207,4 @@ Azure 模拟器提供了一个本地环境，可在将 Azure 应用程序部署�
 [sqlsrv drivers]: http://php.net/sqlsrv
 [sqlncli.msi x64 安装程序]: http://go.microsoft.com/fwlink/?LinkID=239648
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

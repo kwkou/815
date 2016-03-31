@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SQL 数据库 V12 的新增功能 | Windows Azure" 
+	pageTitle="SQL 数据库 V12 的新增功能 | Azure" 
 	description="介绍云中使用 Azure SQL 数据库的业务系统在升级到版本 V12 后为何能够受益。" 
 	services="sql-database" 
 	documentationCenter="" 
@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="09/15/2015" 
-	wacn.date="11/02/2015"/>
+	ms.date="11/11/2015" 
+	wacn.date="01/29/2016"/>
 
 
 # SQL 数据库 V12 的新增功能
@@ -19,12 +19,12 @@
 
 本主题介绍 Azure SQL 数据库新版本 V12 相比版本 V11 具有的诸多优点。
 
-<!--
+
 我们继续向 V12 添加功能。因此，我们鼓励你访问我们的针对 Azure 的服务更新网页并使用其筛选器：
 
 
 - 筛选为 [SQL 数据库服务](http://azure.microsoft.com/updates/?service=sql-database)。
-- 筛选为针对 SQL 数据库功能的正式发布 [(GA) 公告](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability)。-->
+- 筛选为针对 SQL 数据库功能的正式发布 [(GA) 公告](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability)。
 
 
 有关 SQL 数据库资源限制的最新信息：<br/>[Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
@@ -36,15 +36,14 @@
 SQL 数据库 V12 的一个主要目标就是提高与 Microsoft SQL Server 2014 的兼容性。另外，在编程性方面，V12 能够与 SQL Server 兼容。例如：
 
 
-- [公共语言运行时 (CLR) 程序集](http://msdn.microsoft.com/zh-cn/library/ms189524.aspx)
-- 包括 [OVER](http://msdn.microsoft.com/zh-cn/library/ms189461.aspx) 的[开窗函数](https://msdn.microsoft.com/zh-cn/library/bb934097.aspx) 
-- [XML 索引](https://msdn.microsoft.com/zh-cn/library/bb934097.aspx)和[选择性 XML 索引](http://msdn.microsoft.com/zh-cn/library/jj670104.aspx)
+- 包括 [OVER](http://msdn.microsoft.com/zh-cn/library/ms189461.aspx) 的[开窗函数](http://msdn.microsoft.com/zh-cn/library/bb934097.aspx) 
+- [XML 索引](http://msdn.microsoft.com/zh-cn/library/bb934097.aspx)和[选择性 XML 索引](http://msdn.microsoft.com/zh-cn/library/jj670104.aspx)
 - [更改跟踪](http://msdn.microsoft.com/zh-cn/library/bb933875.aspx)
 - [SELECT...INTO](http://msdn.microsoft.com/zh-cn/library/ms188029.aspx)
 - [全文搜索](http://msdn.microsoft.com/zh-cn/library/ms142571.aspx)
 
 
-有关 SQL 数据库尚不支持的少部分功能，请参阅[此处](http://msdn.microsoft.com/zh-cn/library/azure/ee336281.aspx)。
+有关 SQL 数据库尚不支持的少部分功能，请参阅[此处](/documentation/articles/sql-database-transact-sql-information)。
 
 
 ## 更高级的性能，全新的性能级别
@@ -87,9 +86,13 @@ SQL 数据库 V12 的一个主要目标就是提高与 Microsoft SQL Server 2014
 
 
 - [行级安全性](http://msdn.microsoft.com/zh-cn/library/dn765131.aspx) (RLS)
-- [包含的数据库](http://msdn.microsoft.com/zh-cn/library/azure/ff394108.aspx)
+- [动态数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started)
+- [包含的数据库](http://msdn.microsoft.com/zh-cn/library/ff929188.aspx)
 - 使用 GRANT、DENY、REVOKE 管理的[应用程序角色](http://msdn.microsoft.com/zh-cn/library/ms190998.aspx)
 - [透明数据加密](http://msdn.microsoft.com/zh-cn/library/0bf7e8ff-1416-4923-9c4c-49341e208c62.aspx) (TDE)
+- [通过使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication)
+ - SQL 数据库现在支持 Azure Active Directory 身份验证，该身份验证是使用 Azure Active Directory (Azure AD) 中的标识连接到 SQL 数据库的一种机制。通过 Azure Active Directory 身份验证，可以在一个中心位置中集中管理数据库用户和其他 Microsoft 服务的标识。
+- [始终加密](https://msdn.microsoft.com/zh-cn/library/mt163865.aspx)（预览版）使得加密对于应用程序来说是透明的，从而让客户端能够加密客户端应用程序中的敏感数据，不必与 SQL 数据库共享加密密钥。
 
 
 ## 在需要恢复时提高业务连续性
@@ -105,7 +108,7 @@ V12 提供大幅提高的恢复点目标 (RPO) 与预计恢复时间 (ERT)：
 | 活动异地复制 | • RPO < 5 分钟。<br/>• ERT < 1 小时。 | • RPO < 5 秒。<br/>• ERT < 30 秒。 |
 
 
-有关详细信息，请参阅 [SQL 数据库业务连续](https://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)。
+有关详细信息，请参阅 [SQL 数据库业务连续](/documentation/articles/sql-database-business-continuity)。
 
 
 ## 立即升级的更多原因
@@ -125,7 +128,7 @@ V12 提供大幅提高的恢复点目标 (RPO) 与预计恢复时间 (ERT)：
 执行以下操作可以轻松判断你是否在早期版本的 SQL 数据库服务上运行数据库或逻辑服务器：
 
 
-1. 转到 [Azure 门户](https://manage.windowsazure.cn)。
+1. 转到 [Azure 门户](http://manage.windowsazure.cn)。
 2. 单击“浏览”。
 3. 单击“SQL Server”。
 4. 服务器或数据库旁边的图标会告知实情：
@@ -143,7 +146,7 @@ V12 提供大幅提高的恢复点目标 (RPO) 与预计恢复时间 (ERT)：
 V12 数据库只能托管在 V12 逻辑服务器上。V12 服务器只能托管 V12 数据库。
 
 
-<!--如果你尚未在 V12 上运行，可以根据[就地升级到 SQL 数据库 V12](/documentation/articles/sql-database-v12-upgrade) 中的步骤升级你的逻辑服务器。-->
+如果你尚未在 V12 上运行，可以根据[就地升级到 SQL 数据库 V12](/documentation/articles/sql-database-v12-upgrade) 中的步骤升级你的逻辑服务器。
 
 
 ## <a name="V12AzureSqlDbPreviewGaTable"></a> 正式版上市区域
@@ -152,6 +155,4 @@ V12 数据库只能托管在 V12 逻辑服务器上。V12 服务器只能托管 
 - 2015 年 7 月 31，所有区域都已发布正式版 (GA)。
 - V12 已于 2014 年 12 月发布，但仅以预览版提供。
 
-<!--[Supplemental Terms of Use for Microsoft Azure Previews](http://azure.microsoft.com/support/legal/preview-supplemental-terms/).-->
-
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0118_2016-->

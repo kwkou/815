@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何使用访问控制 (Java) | Windows Azure" 
+	pageTitle="如何使用访问控制 (Java) | Azure" 
 	description="了解如何在 Azure 中以 Java 开发和使用访问控制。" 
 	services="active-directory" 
 	documentationCenter="java" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-    ms.date="10/12/2015" 
-	wacn.date="11/12/2015"/>
+    	ms.date="10/12/2015" 
+	wacn.date="01/21/2016"/>
 
 # 如何使用 Eclipse 在 Azure Access Control 服务上对 Web 用户进行身份验证
 
@@ -21,7 +21,7 @@
 
 ## 什么是 ACS？
 
-大多数开发人员都不是标识专家，他们通常都不想花时间开发针对其应用程序和服务的身份验证和授权机制。ACS 是一项 Azure 服务，可用于轻松对需要访问你的 Web 应用程序和服务的用户进行身份验证，而不必将复杂的身份验证逻辑注入代码中。
+大多数开发人员都不是标识专家，他们通常都不想花时间开发针对其应用程序和服务的身份验证和授权机制。ACS 是一项 Azure 服务，可用于轻松对需要访问你的 Web 应用和服务的用户进行身份验证，而不必将复杂的身份验证逻辑注入代码中。
 
 ACS 具有以下可用功能：
 
@@ -39,9 +39,9 @@ Azure ACS 在基于声明的标识的主体的基础上构建，它是一种创�
 
 若要完成本指南中的任务，您应了解以下概念：
 
-**客户端** - 在本操作方法指南的上下文中，这是一个尝试获取对你的 Web 应用程序的访问权的浏览器。
+**客户端** - 在本操作方法指南的上下文中，这是一个尝试获取对你的 Web 应用的访问权的浏览器。
 
-**信赖方 (RP) 应用程序** - RP 应用程序是一个将身份验证外包给外部权威机构的网站或服务。用标识行话来说，RP 信任该权威机构。本指南说明如何将您的应用程序配置为信任 ACS。
+**信赖方 (RP) 应用程序** - RP 应用程序是一个将身份验证外包给外部权威机构的 Web 应用或服务。用标识行话来说，RP 信任该权威机构。本指南说明如何将您的应用程序配置为信任 ACS。
 
 **令牌** - 令牌是一个安全数据集合，它通常会在对用户进行身份验证成功后颁发。它包含一组*声明*（经过身份验证的用户的属性）。声明可表示用户名、用户所属角色的标识符、用户年龄等。令牌通常已进行数字签名，这意味着始终能够找到令牌的颁发者，并且其内容无法篡改。用户可通过提供由 RP 应用程序信任的颁发机构颁发的有效令牌来获取对 RP 应用程序的访问权限。
 
@@ -53,7 +53,7 @@ Azure ACS 在基于声明的标识的主体的基础上构建，它是一种创�
 
 **ACS 命名空间** - 命名空间是 ACS 中的一个顶级分区，用于整理你的设置。命名空间包含一系列你信任的 IP、要为之服务的 RP 应用程序、希望规则引擎在处理传入令牌时使用的规则等。命名空间公开了各种终结点，可供应用程序和开发人员用来实现 ACS 的功能。
 
-下图演示 ACS 身份验证如何使用 Web 应用程序：
+下图演示 ACS 身份验证如何使用 Web 应用：
 
 ![ACS 流程图][acs_flow]
 
@@ -100,16 +100,16 @@ Azure 将创建并激活该命名空间。请等到新命名空间的状态变�
 2.  在 ACS 管理门户的左侧导航窗格中，单击“标识提供者”。
 3.  Windows Live ID 在默认情况下将启用且无法删除。在本教程中，仅使用 Windows Live ID。不过，你可通过单击“添加”按钮在此屏幕中添加其他 IP。
 
-Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，您将 Java Web 应用程序（稍后将创建）指定为 RP。
+Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，您将 Java Web 应用（稍后将创建）指定为 RP。
 
 ## <a name="add-RP"></a>添加信赖方应用程序
 
-在此任务中，您将 ACS 配置为将 Java Web 应用程序识别为有效的 RP 应用程序。
+在此任务中，您将 ACS 配置为将 Java Web 应用识别为有效的 RP 应用程序。
 
 1.  在 ACS 管理门户上，单击“信赖方应用程序”。
 2.  在“信赖方应用程序”页上，单击“添加”。
 3.  在“添加信赖方应用程序”页上，执行下列操作：
-    1.  在“名称”中，键入 RP 的名称。在本教程中，请键入 **Azure Web App**。
+    1.  在“名称”中，键入 RP 的名称。在本教程中，请键入 **Azure Web 应用**。
     2.  在“模式”中，选择“手动输入设置”。
     3.  在“领域”中，键入 ACS 所颁发的安全令牌将应用于的 URI。对于此任务，请键入 **http://localhost:8080/**。![要在计算仿真程序中使用的信赖方领域][relying_party_realm_emulator]
     4.  在“返回 URL”中，键入 ACS 将安全令牌返回到的 URL。对于此任务，请键入 **http://localhost:8080/MyACSHelloWorld/index.jsp** ![要在计算模拟器中使用的信赖方返回 URL][relying_party_return_url_emulator]
@@ -117,16 +117,16 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 
 4.  单击“保存”。
 
-现在你已成功完成对 Java Web 应用程序的配置，该应用程序在 Azure 计算模拟器（位于 http://localhost:8080/）中运行时将作为 ACS 命名空间中的 RP。接下来，创建 ACS 用于处理 RP 的声明的规则。
+现在你已成功完成对 Java Web 应用的配置，该应用程序在 Azure 计算模拟器（位于 http://localhost:8080/）中运行时将作为 ACS 命名空间中的 RP。接下来，创建 ACS 用于处理 RP 的声明的规则。
 
 ## <a name="create-rules"></a>创建规则
 
 在此任务中，您将定义用于决定将声明从 IP 传递到 RP 的方式的规则。在本指南中，我们只将 ACS 配置为直接复制输出令牌中的输入声明类型和值，而不筛选或修改它们。
 
 1.  在 ACS 管理门户主页上，单击“规则组”。
-2.  在“规则组”页上，单击“Azure Web App 的默认规则组”。
+2.  在“规则组”页上，单击“Azure Web 应用的默认规则组”。
 3.  在“编辑规则组”页上，单击“生成”。
-4.  在“生成规则: Azure Web App 的默认规则组”页上，确保已选中 Windows Live ID，然后单击“生成”。
+4.  在“生成规则: Azure Web 应用的默认规则组”页上，确保已选中 Windows Live ID，然后单击“生成”。
 5.  在“编辑规则组”页上，单击“保存”。
 
 ## <a name="upload-certificate"></a>将证书上载到 ACS 命名空间
@@ -136,25 +136,25 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 1.  在 ACS 管理门户主页上，单击“证书和密钥”。
 2.  在“证书和密钥”页上，单击“令牌签名”上方的“添加”。
 3.  在“添加令牌签名证书或密钥”页上：
-    1. 在“用于”部分中，单击“信赖方应用程序”并选择“Azure Web App”（你之前已将其设置为信赖方应用程序的名称）。
+    1. 在“用于”部分中，单击“信赖方应用程序”并选择“Azure Web 应用”（你之前已将其设置为信赖方应用程序的名称）。
     2. 在“类型”部分中，选择“X.509 证书”。
-    3. 在“证书”部分中，单击“浏览”按钮并导航到要使用的 X.509 证书文件。这将为 .PFX 文件。选择此文件，单击“打开”，然后在“密码”文本框中输入证书密码。请注意，出于测试目的，你可以使用自签名证书。若要创建自签名证书，请使用“ACS 筛选器库”对话框（后面将介绍）中的“新建”按钮，或使用 Azure Starter Kit for Java 的[项目网站][]中的 **encutil.exe** 实用工具（由 Microsoft Open Technologies 提供）。
+    3. 在“证书”部分中，单击“浏览”按钮并导航到要使用的 X.509 证书文件。这将为 .PFX 文件。选择此文件，单击“打开”，然后在“密码”文本框中输入证书密码。请注意，出于测试目的，你可以使用自签名证书。若要创建自签名证书，请使用“ACS 筛选器库”对话框（后面将介绍）中的“新建”按钮，或使用 Azure Starter Kit for Java 的[项目 Web 应用][]中的 **encutil.exe** 实用工具（由 Microsoft Open Technologies 提供）。
     4. 确保选中“设为主”。你的“添加令牌签名证书或密钥”页应与下图中所示类似。![添加令牌签名证书][add_token_signing_cert]
     5. 单击“保存”保存设置并关闭“添加令牌签名证书或密钥”页。
 
-接下来，查看“应用程序集成”页中的信息并复制将 Java Web 应用程序配置为使用 ACS 所需的 URI。
+接下来，查看“应用程序集成”页中的信息并复制将 Java Web 应用配置为使用 ACS 所需的 URI。
 
 ## <a name="review-app-int"></a>查看“应用程序集成”页
 
-您可在 ACS 管理门户的“应用程序集成”页上找到将 Java Web 应用程序（RP 应用程序）配置为使用的 ACS 所需的所有信息和代码。在配置 Java Web 应用程序以进行联合身份验证时需要此信息。
+您可在 ACS 管理门户的“应用程序集成”页上找到将 Java Web 应用（RP 应用程序）配置为使用的 ACS 所需的所有信息和代码。在配置 Java Web 应用以进行联合身份验证时需要此信息。
 
 1.  在 ACS 管理门户上，单击“应用程序集成”。  
 2.  在“应用程序集成”页上，单击“登录页”。
-3.  在“登录页集成”页上，单击“Azure Web App”。
+3.  在“登录页集成”页上，单击“Azure Web 应用”。
 
-在“登录页集成: Azure Web App”页上，“选项 1: 链接到托管 ACS 的登录页”中列出的 URL 将用于 Java Web 应用程序。在将 Azure Access Control 服务筛选器库添加到 Java 应用程序时需要此值。
+在“登录页集成: Azure Web 应用”页上，“选项 1: 链接到托管 ACS 的登录页”中列出的 URL 将用于 Java Web 应用。在将 Azure Access Control 服务筛选器库添加到 Java 应用程序时需要此值。
 
-## <a name="create-java-app"></a>创建 Java Web 应用程序
+## <a name="create-java-app"></a>创建 Java Web 应用
 1. 在 Eclipse 中的菜单上，依次单击“文件”、“新建”和“动态 Web 项目”。（如果你在单击“文件”和“新建”后未看到“动态 Web 项目”作为可用项目列出，请执行下列操作：依次单击“文件”、“新建”和“项目”，展开“Web”，再单击“动态 Web 项目”，然后单击“下一步”。） 在本教程中，将项目命名为 **MyACSHelloWorld**。（请务必使用此名称，因为本教程中的后续步骤会将你的 WAR 文件命名为 MyACSHelloWorld）。你的屏幕应与下图中所示类似：
 
     ![为 ACS 示例创建 Hello World 项目][create_acs_hello_world]
@@ -202,10 +202,10 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 
 1. 在 Eclipse 的项目资源管理器中，右键单击“MyACSHelloWorld”，单击“Azure”，然后单击“适用于 Azure 的包”。
 2. 对于“项目名称”，请键入 **MyAzureACSProject**，然后单击“下一步”。
-3. 选择一个 JDK 和一个应用程序服务器。（[在 Eclipse 中创建 Azure 的 Hello World 应用程序](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx)教程中将详细介绍这些步骤）。
+3. 选择一个 JDK 和一个应用程序服务器。（[在 Eclipse 中创建 Azure 的 Hello World 应用程序](/documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/)教程中将详细介绍这些步骤）。
 4. 单击“完成”。
 5. 单击“在 Azure 模拟器中运行”按钮。
-6. 当你的 Java Web 应用程序在计算模拟器中启动后，请关闭浏览器的所有实例（以便任何当前浏览器会话不会妨碍你的 ACS 登录测试）。
+6. 当你的 Java Web 应用在计算模拟器中启动后，请关闭浏览器的所有实例（以便任何当前浏览器会话不会妨碍你的 ACS 登录测试）。
 7. 通过在浏览器中打开 <http://localhost:8080/MyACSHelloWorld/>（如果已选中“需要 HTTPS 连接”，则打开 <https://localhost:8080/MyACSHelloWorld/>）来运行你的应用程序。系统将提示你输入 Windows Live ID 登录名，随后你将被定向到为你的信赖方应用程序指定的返回 URL。
 99.  查看完你的应用程序后，请单击“重置 Azure 模拟器”按钮。
 
@@ -238,7 +238,7 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 14. 单击“确定”关闭“MyACSHelloWorld 的属性”对话框。
 15. 在 Eclipse 中，单击“发布到 Azure 云”按钮。像在[在 Eclipse 中创建 Azure 的 Hello World 应用程序](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx)主题的**将应用程序部署到 Azure**部分中一样对提示进行响应。 
 
-部署 Web 应用程序后，关闭任何打开的浏览器会话，运行你的 Web 应用程序，系统将提示你使用 Windows Live ID 凭据登录，然后将这些凭据发送到信赖方应用程序的返回 URL。
+部署 Web 应用后，关闭任何打开的浏览器会话，运行你的 Web 应用，系统将提示你使用 Windows Live ID 凭据登录，然后将这些凭据发送到信赖方应用程序的返回 URL。
 
 使用完你的 ACS Hello World 应用程序后，请务必删除部署（可在[在 Eclipse 中创建 Azure 的 Hello World 应用程序](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx)主题中了解如何删除部署）。
 
@@ -271,19 +271,19 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 [What is ACS?]: #what-is
 [Concepts]: #concepts
 [Prerequisites]: #pre
-[Create a Java web application]: #create-java-app
+[Create a Java Web 应用lication]: #create-java-app
 [Create an ACS Namespace]: #create-namespace
 [Add Identity Providers]: #add-IP
 [Add a Relying Party Application]: #add-RP
 [Create Rules]: #create-rules
 [将证书上载到 ACS 命名空间]: #upload-certificate
 [Review the Application Integration Page]: #review-app-int
-[Configure Trust between ACS and Your ASP.NET Web Application]: #config-trust
+[Configure Trust between ACS and Your ASP.NET Web 应用lication]: #config-trust
 [Add the ACS Filter library to your application]: #add_acs_filter_library
 [Deploy to the compute emulator]: #deploy_compute_emulator
 [Deploy to Azure]: #deploy_azure
 [Next steps]: #next_steps
-[项目网站]: http://wastarterkit4java.codeplex.com/releases/view/61026
+[项目 Web 应用]: http://wastarterkit4java.codeplex.com/releases/view/61026
 [如何查看 Azure 访问控制服务返回的 SAML]: /documentation/articles/active-directory-java-view-saml-returned-by-access-control/
 [访问控制服务 2.0]: http://msdn.microsoft.com/zh-cn/library/hh147631.aspx
 [Windows Identity Foundation]: http://www.microsoft.com/zh-cn/download/details.aspx?id=17331
@@ -305,4 +305,4 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 [create_acs_hello_world]: ./media/active-directory-java-authenticate-users-access-control-eclipse/CreateACSHelloWorld.png
 [add_token_signing_cert]: ./media/active-directory-java-authenticate-users-access-control-eclipse/AddTokenSigningCertificate.png
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

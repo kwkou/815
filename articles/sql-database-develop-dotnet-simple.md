@@ -1,129 +1,136 @@
-<properties 
-	pageTitle="从 .NET (C#) 使用 SQL 数据库" 
+<properties
+	pageTitle="使用 .NET (C#) 连接到 SQL 数据库"
 	description="使用本快速入门教程中的示例代码可以生成一个包含 C# 代码并由云中强大的 Azure SQL 数据库关系数据库支持的现代应用程序。"
-	services="sql-database" 
-	documentationCenter="" 
-	authors="tobbox" 
-	manager="jeffreyg" 
+	services="sql-database"
+	documentationCenter=""
+	authors="tobbox"
+	manager="jeffreyg"
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="07/16/2015" 
-	wacn.date="09/15/2015"/>
+<tags
+	ms.service="sql-database"
+	ms.date="12/17/2015"
+        wacn.date="01/15/2016"/>
 
 
-# 从 .NET (C#) 使用 SQL 数据库 
+# 从 .NET (C#) 使用 SQL 数据库
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+> [AZURE.SELECTOR]
+- [C#](/documentation/articles/sql-database-develop-dotnet-simple)
+- [PHP](/documentation/articles/sql-database-develop-php-simple-windows)
+- [Python](/documentation/articles/sql-database-develop-python-simple-windows)
+- [Ruby](/documentation/articles/sql-database-develop-ruby-simple-windows)
+- [Java](/documentation/articles/sql-database-develop-java-simple-windows)
+- [Node.js](/documentation/articles/sql-database-develop-nodejs-simple-windows)
 
 
-## 要求
+## 先决条件
 
 ### .NET framework
 
-已在 Windows 上预装了 .NET Framework。对于 Linux 和 Mac OS X，可从 [Mono 项目](http://www.mono-project.com/)下载 .NET Framework。
+已在 Windows 上预装了 .NET Framework。对于 Linux 和 Mac OS X，可从 [Mono 项目](http://www.mono-project.com)下载 .NET Framework。
 
 ### SQL 数据库
 
-请参阅[入门页](/documentation/articles/sql-database-get-started)，以了解如何创建示例数据库并检索连接字符串。
+请参阅[入门页](/documentation/articles/sql-database-get-started)，以了解如何创建示例数据库。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。
 
-## 连接到 SQL 数据库
+## 步骤 1：获取连接字符串
 
-[System.Data.SqlClient.SqlConnection 类](https://msdn.microsoft.com/zh-CN/library/system.data.sqlclient.sqlconnection.aspx)用于连接到 SQL 数据库。
+[AZURE.INCLUDE [sql-database-include-connection-string-dotnet-20-portalshots](../includes/sql-database-include-connection-string-dotnet-20-portalshots.md)]
 
-```
-using System.Data.SqlClient;
+## 步骤 2：连接
 
-class Sample
-{
-  static void Main()
-  {
-	  using(var conn = new SqlConnection("Server=tcp:yourserver.database.chinacloudapi.cn,1433;Database=yourdatabase;User ID=yourlogin@yourserver;Password={your_password_here};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
-	  {
-		  conn.Open();	
-	  }
-  }
-}	
-```
+[System.Data.SqlClient.SqlConnection 类](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.aspx)用于连接到 SQL 数据库。
 
-## 执行查询并检索结果集 
 
-[System.Data.SqlClient.SqlCommand](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlcommand.aspx) 和 [SqlDataReader](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqldatareader.aspx) 类可用于针对 SQL 数据库 从查询中检索结果集。请注意，System.Data.SqlClient 也支持将数据检索到脱机 [System.Data.DataSet](https://msdn.microsoft.com/zh-cn/library/system.data.dataset.aspx) 中。   
-
-```
-using System;
-using System.Data.SqlClient;
-
-class Sample
-{
-	static void Main()
+	using System.Data.SqlClient;
+	
+	class Sample
 	{
-	  using(var conn = new SqlConnection("Server=tcp:yourserver.database.chinacloudapi.cn,1433;Database=yourdatabase;User ID=yourlogin@yourserver;Password={your_password_here};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
-		{
-			var cmd = conn.CreateCommand();
-			cmd.CommandText = @"
-					SELECT 
-						c.CustomerID
-						,c.CompanyName
-						,COUNT(soh.SalesOrderID) AS OrderCount
-					FROM SalesLT.Customer AS c
-					LEFT OUTER JOIN SalesLT.SalesOrderHeader AS soh ON c.CustomerID = soh.CustomerID
-					GROUP BY c.CustomerID, c.CompanyName
-					ORDER BY OrderCount DESC;";
+	  static void Main()
+	  {
+		  using(var conn = new SqlConnection("Server=tcp:yourserver.database.chinacloudapi.cn,1433;Database=yourdatabase;User ID=yourlogin@yourserver;Password={yourpassword};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+		  {
+			  conn.Open();
+		  }
+	  }
+	}
 
-			conn.Open();	
-		
-			using(var reader = cmd.ExecuteReader())
+
+## 步骤 3：执行查询
+
+[System.Data.SqlClient.SqlCommand](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlcommand.aspx) 和 [SqlDataReader](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqldatareader.aspx) 类可用于针对 SQL 数据库从查询中检索结果集。请注意，System.Data.SqlClient 也支持将数据检索到脱机 [System.Data.DataSet](https://msdn.microsoft.com/zh-cn/library/system.data.dataset.aspx) 中。
+
+	
+	using System;
+	using System.Data.SqlClient;
+	
+	class Sample
+	{
+		static void Main()
+		{
+		  using(var conn = new SqlConnection("Server=tcp:yourserver.database.chinacloudapi.cn,1433;Database=yourdatabase;User ID=yourlogin@yourserver;Password={yourpassword};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
 			{
-				while(reader.Read())
+				var cmd = conn.CreateCommand();
+				cmd.CommandText = @"
+						SELECT
+							c.CustomerID
+							,c.CompanyName
+							,COUNT(soh.SalesOrderID) AS OrderCount
+						FROM SalesLT.Customer AS c
+						LEFT OUTER JOIN SalesLT.SalesOrderHeader AS soh ON c.CustomerID = soh.CustomerID
+						GROUP BY c.CustomerID, c.CompanyName
+						ORDER BY OrderCount DESC;";
+	
+				conn.Open();
+	
+				using(var reader = cmd.ExecuteReader())
 				{
-					Console.WriteLine("ID: {0} Name: {1} Order Count: {2}", reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2));
-				}
-			}					
+					while(reader.Read())
+					{
+						Console.WriteLine("ID: {0} Name: {1} Order Count: {2}", reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2));
+					}
+				}					
+			}
 		}
 	}
-}
-
-```
 
 
-## 插入一行，传递参数，然后检索生成的主键值 
+## 步骤 4：插入行
 
-在 SQL 数据库 中，可以使用 [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) 属性和 [SEQUENECE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) 对象自动生成[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。在本示例中，你将了解如何执行 [insert 语句](https://msdn.microsoft.com/zh-cn/library/ms174335.aspx)，安全传递用于防止 [SQL 注入](https://msdn.microsoft.com/magazine/cc163917.aspx)的参数，然后检索自动生成的主键值。  
+在本示例中，你将了解如何安全地执行 [INSERT](https://msdn.microsoft.com/zh-cn/library/ms174335.aspx) 语句，传递参数以保护应用程序免遭 [SQL 注入](https://technet.microsoft.com/zh-cn/library/ms161953(v=sql.105).aspx) 漏洞的危害，然后检索自动生成的[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。
 
-可以使用 [System.Data.SqlClient.SqlCommand](https://msdn.microsoft.com/zh-CN/library/system.data.sqlclient.sqlcommand.aspx) 类中的 [ExecuteScalar](https://msdn.microsoft.com/zh-CN/library/system.data.sqlclient.sqlcommand.executescalar.aspx) 方法执行语句，然后检索此语句返回的第一列和行。可以使用 INSERT 语句的 [OUTPUT](https://msdn.microsoft.com/zh-CN/library/ms177564.aspx) 子句将插入的值作为结果集返回到调用应用程序。请注意，[UPDATE](https://msdn.microsoft.com/zh-CN/library/ms177523.aspx)、[DELETE](https://msdn.microsoft.com/zh-CN/library/ms189835.aspx) 和 [MERGE](https://msdn.microsoft.com/zh-CN/library/bb510625.aspx) 语句也支持 OUTPUT。如果插入了多个行，你应使用 [ExecuteReader](https://msdn.microsoft.com/zh-CN/library/system.data.sqlclient.sqlcommand.executereader.aspx) 方法来检索所有行的插入值。
+	
+	using System;
+	using System.Data.SqlClient;
+	
+	class Sample
+	{
+	    static void Main()
+	    {
+			using(var conn = new SqlConnection("Server=tcp:yourserver.database.chinacloudapi.cn,1433;Database=yourdatabase;User ID=yourlogin@yourserver;Password={yourpassword};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+	        {
+	            var cmd = conn.CreateCommand();
+	            cmd.CommandText = @"
+	                INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate)
+	                OUTPUT INSERTED.ProductID
+	                VALUES (@Name, @Number, @Cost, @Price, CURRENT_TIMESTAMP)";
+	
+	            cmd.Parameters.AddWithValue("@Name", "SQL Server Express");
+	            cmd.Parameters.AddWithValue("@Number", "SQLEXPRESS1");
+	            cmd.Parameters.AddWithValue("@Cost", 0);
+	            cmd.Parameters.AddWithValue("@Price", 0);
+	
+	            conn.Open();
+	
+	            int insertedProductId = (int)cmd.ExecuteScalar();
+	
+	            Console.WriteLine("Product ID {0} inserted.", insertedProductId);
+	        }
+	    }
+	}
 
-```
-class Sample
-{
-    static void Main()
-    {
-		using(var conn = new SqlConnection("Server=tcp:yourserver.database.chinacloudapi.cn,1433;Database=yourdatabase;User ID=yourlogin@yourserver;Password={your_password_here};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
-        {
-            var cmd = conn.CreateCommand();
-            cmd.CommandText = @"
-                INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) 
-                OUTPUT INSERTED.ProductID
-                VALUES (@Name, @Number, @Cost, @Price, CURRENT_TIMESTAMP)";
 
-            cmd.Parameters.AddWithValue("@Name", "SQL Server Express");
-            cmd.Parameters.AddWithValue("@Number", "SQLEXPRESS1");
-            cmd.Parameters.AddWithValue("@Cost", 0);
-            cmd.Parameters.AddWithValue("@Price", 0);
-
-            conn.Open();
-
-            int insertedProductId = (int)cmd.ExecuteScalar();
-
-            Console.WriteLine("Product ID {0} inserted.", insertedProductId);
-        }
-    }
-}
-```
-
- 
-
-<!---HONumber=69-->
+<!---HONumber=Mooncake_0104_2016-->

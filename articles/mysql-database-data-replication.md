@@ -3,6 +3,10 @@
 <tags ms.service="mysql" ms.date="" wacn.date="09/16/2015"/>
 
 #如何配置数据同步复制到MySQL Database on Azure
+> [AZURE.SELECTOR]
+- [中文版](/documentation/articles/mysql-database-data-replication)
+- [英文版](/documentation/articles/mysql-database-enus-data-replication)
+
 MySQL Database on Azure支持从服务器模式和标准的MySQL数据复制。你可以用这个功能把数据库数据从运行在自己本地或者其他地方的MySQL服务器自动同步到运行在MySQL Database on Azure上的从服务器。
 
 ##配置步骤

@@ -4,16 +4,16 @@
    services="virtual-network"
    documentationCenter="na"
    authors="joaoma"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.date="08/25/2015"
-   wacn.date="09/15/2015" />
+<tags
+	ms.service="virtual-network"
+	ms.date="01/21/2016"
+	wacn.date="03/28/2016"/>
 
 # 查看和修改主机名
 
-若要允许通过主机名引用角色实例，必须在服务配置文件中为每个角色设置主机名的值。可以通过将所需主机名添加到 **Role** 元素的 **vmName** 属性来执行该操作。**vmName** 属性的值将用作每个角色实例的主机名的基本元素。例如，如果 **vmName** 是 *webrole*，并且该角色有三个实例，则这些实例的主机名将为 *webrole0*、*webrole1* 和 *webrole2*。你无需在配置文件中为虚拟机指定主机名，因为虚拟机的主机名会基于虚拟机名称填充。有关配置 Windows Azure 服务的详细信息，请参阅 [Azure 服务配置架构（.cscfg 文件）](https://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx)
+若要允许通过主机名引用角色实例，必须在服务配置文件中为每个角色设置主机名的值。可以通过将所需主机名添加到 **Role** 元素的 **vmName** 属性来执行该操作。**vmName** 属性的值将用作每个角色实例的主机名的基本元素。例如，如果 **vmName** 是 *webrole*，并且该角色有三个实例，则这些实例的主机名将为 *webrole0*、*webrole1* 和 *webrole2*。你无需在配置文件中为虚拟机指定主机名，因为虚拟机的主机名会基于虚拟机名称填充。有关配置 Azure 服务的详细信息，请参阅 [Azure 服务配置架构（.cscfg 文件）](https://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx)
 
 ## 查看主机名
 

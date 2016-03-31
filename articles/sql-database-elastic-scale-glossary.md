@@ -1,19 +1,21 @@
 <properties 
-    pageTitle="弹性数据库工具词汇表" 
+    pageTitle="弹性数据库工具词汇表 | Azure" 
     description="弹性数据库工具所用术语的解释" 
     services="sql-database" 
     documentationCenter="" 
     manager="jeffreyg" 
-    authors="sidneyh" 
+    authors="ddove" 
     editor=""/>
 
 <tags 
-    ms.service="sql-database" 
-    ms.date="07/24/2015" 
-    wacn.date="09/15/2015"/>
+    ms.service="sql-database"
+    ms.date="11/04/2015" 
+    wacn.date="01/05/2016"/>
 
 # 弹性数据库工具词汇表
-Azure SQL 数据库的弹性数据库工具的术语定义如下。这些工具包括客户端库、拆分/合并工具、弹性池和查询。
+Azure SQL 数据库的[弹性数据库工具](/documentation/articles/sql-database-elastic-scale-introduction)的术语定义如下。这些工具用于管理[分片映射](/documentation/articles/sql-database-elastic-scale-shard-map-management)，包括[客户端库](/documentation/articles/sql-database-elastic-database-client-library)、[拆分/合并工具](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)、[弹性池](/documentation/articles/sql-database-elastic-pool)和[查询](/documentation/articles/sql-database-elastic-query-overview)。
+
+这些术语用于[使用弹性数据库工具添加分片](/documentation/articles/sql-database-elastic-scale-add-a-shard)和[使用 RecoveryManager 类解决分片映射问题](/documentation/articles/sql-database-elastic-database-recovery-manager)。
 
 ![灵活扩展术语][1]
 
@@ -76,4 +78,4 @@ Azure SQL 数据库的弹性数据库工具的术语定义如下。这些工具�
 [3]: ./media/sql-database-elastic-scale-glossary/h_versus_vert.png
  
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1221_2015-->

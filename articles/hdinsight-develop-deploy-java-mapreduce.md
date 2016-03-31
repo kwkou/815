@@ -578,8 +578,8 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 - [利用 Power Query 将 Excel 连接到 HDInsight][hdinsight-power-query]
  <!--[使用 Microsoft Hive ODBC Driver 将 Excel 连接到 HDInsight][hdinsight-ODBC]-->
 
-[azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
-[azure-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
+[azure-purchase-options]: /pricing/overview/
+[azure-trial]: /pricing/1rmb-trial/
 
 
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
@@ -599,7 +599,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 
 

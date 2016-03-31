@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Windows Azure AD Connect - 从 Windows Azure AD 同步工具 (DirSync) 升级" 
-   description="了解如何从 DirSync 升级到 Azure AD Connect。本文介绍将当前 Windows Azure AD 同步工具 (DirSync) 升级到 Azure AD Connect 的步骤。" 
+   pageTitle="Azure AD Connect - 从 Azure AD 同步工具 (DirSync) 升级" 
+   description="了解如何从 DirSync 升级到 Azure AD Connect。本文介绍将当前 Azure AD 同步工具 (DirSync) 升级到 Azure AD Connect 的步骤。" 
    services="active-directory" 
    documentationCenter="" 
    authors="shoatman" 
@@ -12,7 +12,7 @@
    ms.date="09/02/2015" 
    wacn.date="11/02/2015"/>
 
-# 将 Windows Azure Active Directory 同步功能 (DirSync) 升级到 Azure Active Directory Connect
+# 将 Azure Active Directory 同步功能 (DirSync) 升级到 Azure Active Directory Connect
 
 以下文档可帮助你将现有 DirSync 安装升级到 Azure AD Connect
 
@@ -121,7 +121,7 @@
 1. 运行 Azure AD Connect 安装程序 (MSI)
 2. 当你看到“欢迎使用 Azure AD Connect”屏幕时，请单击窗口右上角的“X”，以退出向导。
 3. 打开命令提示符
-4. 从 Azure AD Connect 的安装位置（默认值：C:\\Program Files\\Microsoft Azure Active Directory Connect）执行以下命令：  
+4. 从 Azure AD Connect 的安装位置（默认值：C:\\Program Files\\Azure Active Directory Connect）执行以下命令：  
     * AzureADConnect.exe /migrate  
 
 Azure AD Connect 会连接并向你呈现以下 UI：
@@ -160,8 +160,8 @@ UI 中会显示以下选项：
 
 ### 卸载 DirSync（旧服务器）
 
-- 在“添加或删除程序”中找到“Microsoft Azure Active Directory 同步工具”
-- 卸载“Microsoft Azure Active Directory 同步工具”
+- 在“添加或删除程序”中找到“Azure Active Directory 同步工具”
+- 卸载“Azure Active Directory 同步工具”
 
 ### 打开 Azure AD Connect（新服务器）
 安装之后，重新打开 Azure AD Connect 时会提供配置体验。打开 Azure AD Connect。
@@ -196,9 +196,7 @@ UI 中会显示以下选项：
 **其他资源**
 
 * [在云中使用本地标识基础结构](/documentation/articles/active-directory-aadconnect)
-* [Azure AD Connect 工作原理](/documentation/articles/active-directory-aadconnect-how-it-works)
 * [Azure AD Connect 后续步骤](/documentation/articles/active-directory-aadconnect-whats-next)
-* [了解详细信息](/documentation/articles/active-directory-aadconnect-learn-more)
 * [MSDN 上的 Azure AD Connect](/documentation/articles/active-directory-aadconnect)
  
 

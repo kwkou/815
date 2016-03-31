@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Site Recovery 的网络基础结构注意事项" 
+	pageTitle="Site Recovery 的网络基础结构注意事项 | Azure" 
 	description="本文讨论使用 Site Recovery 进行故障转移的切实可行的网络设计的注意事项。" 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="site-recovery" 
-	ms.date="08/10/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="12/14/2015" 
+	wacn.date="01/14/2016"/>
 
 #  Site Recovery 的网络基础结构注意事项
 
@@ -60,9 +60,7 @@ BCDR 策略的目的是使你的业务应用程序保持运行，并恢复失败
 
 [在群集中部署 VMM](https://technet.microsoft.com/zh-cn/library/gg610675.aspx) 提供高可用性和针对硬件故障转移的保护。如果你正在使用 Site Recovery 部署 VMM 群集，请注意：
 
-VMM 服务器应部署在一个外延式群集中，该群集在地理位置上跨多个单独的站点。
-应该使用包含辅助站点上的副本的 SQL Server AlwaysOn 可用性组来保护 VMM 所用的 SQL Server 数据库。
-如果发生灾难，VMM 服务器及其对应的 SQL Server 会自动向恢复站点进行故障转移。然后，你可以使用 Site Recovery 进行工作负荷的故障转移。
+VMM 服务器应部署在一个外延式群集中，该群集在地理位置上跨多个单独的站点。应该使用包含辅助站点上的副本的 SQL Server AlwaysOn 可用性组来保护 VMM 所用的 SQL Server 数据库。如果发生灾难，VMM 服务器及其对应的 SQL Server 会自动向恢复站点进行故障转移。然后，你可以使用 Site Recovery 进行工作负荷的故障转移。
 
 ![外延式 VMM 群集](./media/site-recovery-network-design/ASR_NetworkDesign1.png)
 
@@ -191,7 +189,7 @@ Woodgrove 要部署复制并维护 IP 地址，需要满足以下条件：
     )
     $Record = Get-DnsServerResourceRecord -ZoneName $zone -Name $name
     $newrecord = $record.clone()
-    $newrecord.RecordData[0].IPv4Address = $IP
+    $newrecord.RecordData[0].IPv4Address  =  $IP
     Set-DnsServerResourceRecord -zonename $zone -OldInputObject $record -NewInputObject $Newrecord
 
 #### 示例 - 向 Azure 进行的故障转移
@@ -202,4 +200,4 @@ Woodgrove 要部署复制并维护 IP 地址，需要满足以下条件：
 
 [了解](/documentation/articles/site-recovery-network-mapping) Site Recovery 如何映射源网络和目标网络。
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线配对命名空间 |Windows Azure"
+   pageTitle="服务总线配对命名空间 |Azure"
    description="配对命名空间实现的详细信息和成本"
    services="service-bus"
    documentationCenter="na"
@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-   ms.date="09/18/2015"
-   wacn.date="10/22/2015" />
+   ms.date="12/28/2015"
+   wacn.date="02/26/2016" />
 
 # 配对命名空间实现详细信息和成本影响
 
@@ -113,9 +113,6 @@
   [MessagingException]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingexception.aspx
   [TimeoutException]: https://msdn.microsoft.com/zh-cn/library/azure/system.timeoutexception.aspx
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
-  [0]: ./media/service-bus-paired-namespaces/IC673405.png
-  [1]: ./media/service-bus-paired-namespaces/IC673406.png
-  [2]: ./media/service-bus-paired-namespaces/IC673407.png
   [QueueDescription]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.aspx
   [TimeSpan]: https://msdn.microsoft.com/zh-cn/library/azure/system.timespan.aspx
   [PingPrimaryInterval]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sendavailabilitypairednamespaceoptions.pingprimaryinterval.aspx
@@ -124,5 +121,8 @@
   [ContentType]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.contenttype.aspx
   [TimeToLive]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx
   [异步消息传递模式和高可用性]: /documentation/articles/service-bus-async-messaging
+  [0]: ./media/service-bus-paired-namespaces/IC673405.png
+  [1]: ./media/service-bus-paired-namespaces/IC673406.png
+  [2]: ./media/service-bus-paired-namespaces/IC673407.png
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0215_2016-->

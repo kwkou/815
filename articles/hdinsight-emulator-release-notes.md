@@ -1,23 +1,26 @@
-﻿<properties 
+<properties 
 	pageTitle="发行说明：Microsoft HDInsight Emulator for Azure | Azure" 
-	description="获取有关最新版 HDInsight Hadoop Emulator 的最新信息。" 
+	description="获取有关最新版 HDInsight Hadoop Emulator、Hadoop 沙盒环境的最新信息。" 
 	editor="cgronlun" 
 	manager="paulettm" 
 	services="hdinsight" 
 	authors="mumian" 
 	documentationCenter=""/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.date="06/30/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="02/04/2016"
+	wacn.date="03/28/2016"/>
+
+
 
 
 # 发行说明：Microsoft HDInsight Emulator for Hadoop 
 
 
 
-> [AZURE.NOTE]查看版本号的最简单方法是在“添加/删除程序”中查看“Microsoft HDInsight Emulator for Azure”所对应的条目（适用于版本 1.0.0.0 或更高版本）或“Microsoft HDInsight 开发者预览版”所对应的条目（适用于 1.0.0.0 以下版本）。
+> [AZURE.NOTE]
+>查看版本号的最简单方法是在“添加/删除程序”中查看“Microsoft HDInsight Emulator for Azure”所对应的条目（适用于版本 1.0.0.0 或更高版本）或“Microsoft HDInsight 开发者预览版”所对应的条目（适用于 1.0.0.0 以下版本）。
 
 ## 于 2014 年 8 月 29 日发布的版本 2.0.0.0
 
@@ -27,7 +30,7 @@
 
 ### 新增功能 
  
-* [已更新 Hadoop 组件版本](/documentation/articles/hdinsight-component-versioning/)，使其对应于服务版本 3.1。这包括 Hive 0.13 和 Tez 支持。
+* [已更新 Hadoop 组件版本](/documentation/articles/hdinsight-component-versioning-v1)，使其对应于服务版本 3.1。这包括 Hive 0.13 和 Tez 支持。
 
 ## 于 2013 年 10 月 28 日发布的版本 1.0.0.0
 
@@ -83,21 +86,27 @@
 
 * 具有以下功能的全新 HDInsight 仪表板：
  
-	* 可连接到多个群集，包括本地安装，以及通过 Azure HDInsight 服务远程运行的群集。有关 HDInsight 服务的详细信息，请参阅 [http://www.windowsazure.cn/documentation/services/hdinsight/](/documentation/services/hdinsight/)。
+	* 可连接到多个群集，包括本地安装，以及通过 Azure HDInsight 服务远程运行的群集。有关 HDInsight 服务的详细信息，请参阅 [/documentation/services/hdinsight/](/documentation/services/hdinsight/)。
  
 	* 在本地群集上配置 Azure Blob 存储。在下面查看详细说明。
 
-* 在新版交互式 Hive 控制台中编写和编辑 Hive 查询。
+	* 在新版交互式 Hive 控制台中编写和编辑 Hive 查询。
 
-* 查看并下载作业历史记录和结果。
+	* 查看并下载作业历史记录和结果。
 
 ### 发行说明 
 
 * 本地 HDInsight 安装上的 REST API 终结点和 Azure HDInsight 服务通过相同服务的不同端口号进行访问： 
 
-	本地：Oozie - http://localhost:11000/oozie/v1/admin/status Templeton - http://localhost:50111/templeton/v1/status ODBC - 在 DSN 配置或连接字符串中使用端口 10000
+	本地：
+	Oozie - http://localhost:11000/oozie/v1/admin/status 
+	Templeton - http://localhost:50111/templeton/v1/status 
+	ODBC - 在 DSN 配置或连接字符串中使用端口 10000
 
-	HDInsight 服务：Oozie - http://ServerFQDN:563/oozie/v1/admin/status Templeton - http://ServerFQDN:563/templeton/v1/status ODBC - 在 DSN 配置或连接字符串中使用端口 563
+	HDInsight 服务：
+	Oozie - http://ServerFQDN:563/oozie/v1/admin/status 
+	Templeton - http://ServerFQDN:563/templeton/v1/status 
+	ODBC - 在 DSN 配置或连接字符串中使用端口 563
 
 
 * 在本地群集上配置 Azure Blob 存储：
@@ -155,7 +164,7 @@
 
 ## 于 2012 年 12 月 13 日发布的版本 0.3.0.0 
 
-* 已将仪表板网站更改为进行匿名身份验证，而不是使用 Windows 凭据进行身份验证。这消除了前一版本的发行说明中提到的登录提示问题。 
+* 已将仪表板 Web 应用更改为进行匿名身份验证，而不是使用 Windows 凭据进行身份验证。这消除了前一版本的发行说明中提到的登录提示问题。 
 
 * 修复了导出和某些类型的导入存在的一些 Sqoop Bug。
 
@@ -264,6 +273,10 @@
 - [HDInsight Emulator 入门][hdinsight-hadoop-emulator-get-started]
 
 
-[hdinsight-hadoop-emulator-get-started]: /documentation/articles/hdinsight-get-started-emulator/
 
-<!---HONumber=74-->
+
+[hdinsight-hadoop-emulator-get-started]: /documentation/articles/hdinsight-hadoop-emulator-get-started
+
+ 
+
+<!---HONumber=Mooncake_1207_2015-->

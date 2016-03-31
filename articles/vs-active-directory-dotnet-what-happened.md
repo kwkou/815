@@ -63,4 +63,4 @@ ms.service="active-directory" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="n
 
   [入门]: /documentation/articles/vs-active-directory-dotnet-getting-started
   [发生了什么情况]: /documentation/articles/vs-active-directory-dotnet-what-happened
-  [详细了解 Azure Active Directory]: http://www.windowsazure.cn/manage/services/identity/
+  [详细了解 Azure Active Directory]: /manage/services/identity/

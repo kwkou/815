@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在备份保管库中恢复另一 DPM 服务器中的数据 | Windows Azure"
+	pageTitle="在备份保管库中恢复另一 DPM 服务器中的数据 | Azure"
 	description="将所保护的数据从任意 DPM 服务器恢复到 Azure 备份保管库，前提是服务器已注册到该保管库。"
 	services="backup"
 	documentationCenter=""
@@ -92,7 +92,7 @@
 
 2. **所需的 Azure 备份代理最低版本是什么版本？**
 
-    A) 若要启用此功能，Azure 备份代理的最低版本为 2.0.8719.0。对 Azure 备份代理版本进行验证时，可以导航到“控制面板”>“所有控制面板项”>“程序和功能”>“Microsoft Azure 恢复服务代理”。如果该版本低于 2.0.8719.0，可下载并安装[最新 Azure 备份代理](https://go.microsoft.com/fwLink/?LinkID=288905)。
+    A) 若要启用此功能，Azure 备份代理的最低版本为 2.0.8719.0。对 Azure 备份代理版本进行验证时，可以导航到“控制面板”>“所有控制面板项”>“程序和功能”>“Azure 恢复服务代理”。如果该版本低于 2.0.8719.0，可下载并安装[最新 Azure 备份代理](https://go.microsoft.com/fwLink/?LinkID=288905)。
 
     ![清除外部 DPM](./media/backup-azure-alternate-dpm-server/external-dpm-azurebackupagentversion.png)
 

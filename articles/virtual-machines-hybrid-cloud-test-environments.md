@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 中的混合云测试环境 | Windows Azure"
+	pageTitle="Azure 中的混合云测试环境 | Azure"
 	description="查找介绍如何构建适用于基于 Azure 的混合云的开发/测试或概念证明 IT 专业环境的文章。"
 	documentationCenter=""
 	services="virtual-machines"
@@ -10,12 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/16/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="01/12/2016"
+	wacn.date="02/26/2016"/>
 
 # Azure 混合云测试环境
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 对于开发/测试或概念证明，混合云测试环境使用本地 Internet 连接和公共 IP 地址之一，逐步引导你设置可正常工作的跨界 Azure 虚拟网络 (VNet)。完成后，可以执行应用程序开发和测试、用简化的 IT 工作负荷进行试验，以及测量相对于你在 Internet 上的位置的站点到站点虚拟专用网络 (VPN) 连接的性能。
 
@@ -44,14 +44,8 @@
 对于直接 Internet 连接和公共 IP 地址不容易获得的组织和个人，[模拟的混合云测试环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)在单独的 Azure 虚拟网络中构建出简化的本地网络，然后使用 VNet 到 VNet VPN 连接将两个虚拟网络连接在一起。
 
 
-## 其他资源
+## 后续步骤
 
-[Azure 基础结构服务中托管的 SharePoint 场](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
+- 了解[实现准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)，以便在 Azure 基础结构服务中设计自定义开发/测试或生产部署。
 
-[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-LOB-application)
-
-[在 Windows Azure 中部署 Office 365 目录同步 (DirSync)](https://technet.microsoft.com/zh-CN/library/dn635310.aspx)
-
-[Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
-
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0215_2016-->

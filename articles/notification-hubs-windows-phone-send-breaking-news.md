@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="08/18/2015" 
-	wacn.date="11/02/2015" />
+	ms.date="12/15/2015" 
+	wacn.date="01/14/2016" />
 
 # 使用通知中心发送突发新闻
 
@@ -23,12 +23,7 @@
 
 在创建通知中心的注册时，通过加入一个或多个_标记_来启用广播方案。将通知发送到标签时，已注册该标签的所有设备将接收通知。因为标签是简单的字符串，它们不必提前设置。有关标记的详细信息，请参阅[通知中心指南]。
 
-本教程将指导你完成启用此方案的以下基本步骤：
-
-1. [向应用程序中添加类别选择]
-2. [注册通知]
-3. [从后端发送通知]
-4. [运行应用并生成通知]
+##先决条件
 
 本主题以你在[通知中心入门]中创建的应用程序为基础。在开始本教程之前，必须先阅读[通知中心入门]。
 
@@ -68,58 +63,134 @@
 		using Microsoft.Phone.Notification;
 		using Microsoft.WindowsAzure.Messaging;
 		using System.IO.IsolatedStorage;
+		using System.Windows;
 
 3. 将以下代码添加到新的 **Notifications** 类：
 
-		private NotificationHub hub;
+        private NotificationHub hub;
 
-		public Notifications()
-		{
-		    hub = new NotificationHub("<hub name>", "<connection string with listen access>");
-		}
-		
-		public async Task StoreCategoriesAndSubscribe(IEnumerable<string> categories)
-		{
-		    var categoriesAsString = string.Join(",", categories);
-		    var settings = IsolatedStorageSettings.ApplicationSettings;
-		    if (!settings.Contains("categories"))
-		    {
-		        settings.Add("categories", categoriesAsString);
-		    }
-		    else
-		    {
-		        settings["categories"] = categoriesAsString;
-		    }
-		    settings.Save();
-		
-		    await SubscribeToCategories(categories);
-		}
-		
-		public async Task SubscribeToCategories(IEnumerable<string> categories)
-		{
-		    var channel = HttpNotificationChannel.Find("MyPushChannel");
-		
-		    if (channel == null)
-		    {
-		        channel = new HttpNotificationChannel("MyPushChannel");
-		        channel.Open();
-		        channel.BindToShellToast();
-		    }
-		
-		    await hub.RegisterNativeAsync(channel.ChannelUri.ToString(), categories);
-		}
+        // Registration task to complete registration in the ChannelUriUpdated event handler
+        private TaskCompletionSource<Registration> registrationTask;
 
-    此类使用本地存储区存储此设备必须接收的新闻类别。它还包含注册这些类别所用的方法。
+        public Notifications(string hubName, string listenConnectionString)
+        {
+            hub = new NotificationHub(hubName, listenConnectionString);
+        }
 
-4. 在上面的代码中，将 `<hub name>` 和 `<connection string with listen access>` 占位符替换为你的通知中心的名称和你之前获取的 *DefaultListenSharedAccessSignature* 的连接字符串。
+        public IEnumerable<string> RetrieveCategories()
+        {
+            var categories = (string)IsolatedStorageSettings.ApplicationSettings["categories"];
+            return categories != null ? categories.Split(',') : new string[0];
+        }
+
+        public async Task<Registration> StoreCategoriesAndSubscribe(IEnumerable<string> categories)
+        {
+            var categoriesAsString = string.Join(",", categories);
+            var settings = IsolatedStorageSettings.ApplicationSettings;
+            if (!settings.Contains("categories"))
+            {
+                settings.Add("categories", categoriesAsString);
+            }
+            else
+            {
+                settings["categories"] = categoriesAsString;
+            }
+            settings.Save();
+
+            return await SubscribeToCategories();
+        }
+
+        public async Task<Registration> SubscribeToCategories()
+        {
+            registrationTask = new TaskCompletionSource<Registration>();
+
+            var channel = HttpNotificationChannel.Find("MyPushChannel");
+
+            if (channel == null)
+            {
+                channel = new HttpNotificationChannel("MyPushChannel");
+                channel.Open();
+                channel.BindToShellToast();
+                channel.ChannelUriUpdated += channel_ChannelUriUpdated;
+
+				// This is optional, used to receive notifications while the app is running.
+                channel.ShellToastNotificationReceived += channel_ShellToastNotificationReceived;
+            }
+
+            // If channel.ChannelUri is not null, we will complete the registrationTask here.  
+			// If it is null, the registrationTask will be completed in the ChannelUriUpdated event handler.
+            if (channel.ChannelUri != null)
+            {
+                await RegisterTemplate(channel.ChannelUri);
+            }
+            
+            return await registrationTask.Task;
+        }
+
+        async void channel_ChannelUriUpdated(object sender, NotificationChannelUriEventArgs e)
+        {
+            await RegisterTemplate(e.ChannelUri);
+        }
+
+        async Task<Registration> RegisterTemplate(Uri channelUri)
+        {
+            // Using a template registration to support notifications across platforms.
+            // Any template notifications that contain messageParam and a corresponding tag expression
+            // will be delivered for this registration.
+
+            const string templateBodyMPNS = "<wp:Notification xmlns:wp="WPNotification">" +
+                                                "<wp:Toast>" +
+                                                    "<wp:Text1>$(messageParam)</wp:Text1>" +
+                                                "</wp:Toast>" +
+                                            "</wp:Notification>";
+
+			// The stored categories tags are passed with the template registration.
+
+            registrationTask.SetResult(await hub.RegisterTemplateAsync(channelUri.ToString(), 
+				templateBodyMPNS, "simpleMPNSTemplateExample", this.RetrieveCategories()));
+
+            return await registrationTask.Task;
+        }
+
+		// This is optional. It is used to receive notifications while the app is running.
+        void channel_ShellToastNotificationReceived(object sender, NotificationEventArgs e)
+        {
+            StringBuilder message = new StringBuilder();
+            string relativeUri = string.Empty;
+
+            message.AppendFormat("Received Toast {0}:\n", DateTime.Now.ToShortTimeString());
+
+            // Parse out the information that was part of the message.
+            foreach (string key in e.Collection.Keys)
+            {
+                message.AppendFormat("{0}: {1}\n", key, e.Collection[key]);
+
+                if (string.Compare(
+                    key,
+                    "wp:Param",
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.CompareOptions.IgnoreCase) == 0)
+                {
+                    relativeUri = e.Collection[key];
+                }
+            }
+
+            // Display a dialog of all the fields in the toast.
+            System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() => 
+            { 
+                MessageBox.Show(message.ToString()); 
+            });
+        }
+
+
+    此类使用隔离存储区存储此设备要接收的新闻类别。它还包含用于通过[模板](notification-hubs-templates.md)通知注册来注册这些类别的方法。
+
+
+4. 在 App.xaml.cs 项目文件中，将以下属性添加到 **App** 类：将 `<hub name>` 和 `<connection string with listen access>` 占位符替换为通知中心名称和前面获取的 *DefaultListenSharedAccessSignature* 的连接字符串。
+
+		public Notifications notifications = new Notifications("<hub name>", "<connection string with listen access>");
 
 	> [AZURE.NOTE]由于使用客户端应用程序分发的凭据通常是不安全的，你只应使用客户端应用程序分发具有侦听访问权限的密钥。侦听访问权限允许应用程序注册通知，但是无法修改现有注册，也无法发送通知。在受保护的后端服务中使用完全访问权限密钥，以便发送通知和更改现有注册。
-
-4. 在 App.xaml.cs 项目文件中，将以下属性添加到 **App** 类：
-
-		public Notifications notifications = new Notifications();
-
-	此属性用于创建和访问 **Notifications** 实例。
 
 5. 在 MainPage.xaml.cs 中，添加以下行：
 
@@ -129,19 +200,20 @@
 
 		private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 		{
-		    var categories = new HashSet<string>();
-		    if (WorldCheckBox.IsChecked == true) categories.Add("World");
-		    if (PoliticsCheckBox.IsChecked == true) categories.Add("Politics");
-		    if (BusinessCheckBox.IsChecked == true) categories.Add("Business");
-		    if (TechnologyCheckBox.IsChecked == true) categories.Add("Technology");
-		    if (ScienceCheckBox.IsChecked == true) categories.Add("Science");
-		    if (SportsCheckBox.IsChecked == true) categories.Add("Sports");
-		
-		    await ((App)Application.Current).notifications.StoreCategoriesAndSubscribe(categories);
-		
-		    MessageBox.Show("Subscribed to: " + string.Join(",", categories));
-		}
+		  var categories = new HashSet<string>();
+		  if (WorldCheckBox.IsChecked == true) categories.Add("World");
+		  if (PoliticsCheckBox.IsChecked == true) categories.Add("Politics");
+		  if (BusinessCheckBox.IsChecked == true) categories.Add("Business");
+		  if (TechnologyCheckBox.IsChecked == true) categories.Add("Technology");
+		  if (ScienceCheckBox.IsChecked == true) categories.Add("Science");
+		  if (SportsCheckBox.IsChecked == true) categories.Add("Sports");
 	
+		  var result = await ((App)Application.Current).notifications.StoreCategoriesAndSubscribe(categories);
+	
+		  MessageBox.Show("Subscribed to: " + string.Join(",", categories) + " on registration id : " +
+			 result.RegistrationId);
+		}
+
 	此方法创建一个类别列表并使用 **Notifications** 类将该列表存储在本地存储区中，将相应的标签注册到你的通知中心。更改类别时，使用新类别重新创建注册。
 
 你的应用程序现在可以将一组类别存储在设备的本地存储区中了，每当用户更改所选类别时，会将这些类别注册到通知中心。
@@ -152,25 +224,23 @@
 
 > [AZURE.NOTE]由于 Microsoft 推送通知服务 (MPNS) 分配的通道 URI 随时可能更改，因此你应该经常注册通知以避免通知失败。此示例在每次应用程序启动时注册通知。对于经常运行（一天一次以上）的应用程序，如果每次注册间隔时间不到一天，你可以跳过注册来节省带宽。
 
-1. 将以下代码添加到 **Notifications** 类：
 
-		public IEnumerable<string> RetrieveCategories()
-		{
-		    var categories = (string)IsolatedStorageSettings.ApplicationSettings["categories"];
-		    return categories != null ? categories.Split(',') : new string[0];
-		}
+1. 打开 App.xaml.cs 文件，将 **async** 修饰符添加到 **Application\_Launching** 方法，并将你在[通知中心入门]中添加的通知中心注册代码替换为以下代码：
 
-	这返回在类中定义的类别。
+        private async void Application_Launching(object sender, LaunchingEventArgs e)
+        {
+            var result = await notifications.SubscribeToCategories();
 
-1. 打开 App.xaml.cs 文件并将 **async** 修饰符添加到 **Application\_Launching** 方法。
-
-2. 在 **Application\_Launching** 方法中，找到在[通知中心入门]中添加的通知中心注册代码并使用以下代码行替换它们：
-
-		await notifications.SubscribeToCategories(notifications.RetrieveCategories());
+            if (result != null)
+                System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    MessageBox.Show("Registration Id :" + result.RegistrationId, "Registered", MessageBoxButton.OK);
+                });
+        }
 
 	这确保每次应用程序启动时，它从本地存储区检索类别并请求注册这些类别。
 
-3. 在 MainPage.xaml.cs 项目文件中，添加实现 **OnNavigatedTo** 方法的以下代码：
+2. 在 MainPage.xaml.cs 项目文件中，添加实现 **OnNavigatedTo** 方法的以下代码：
 
 		protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
@@ -188,9 +258,9 @@
 
 应用程序现在已完成，可以在设备的本地存储区中存储一组类别了，每当用户更改所选类别时将使用这些类别注册到通知中心。接下来，我们将定义一个后端，它可将类别通知发送到此应用程序。
 
-<h2><a name="send"></a>从后端发送通知</h2>
+##发送带标记的通知
 
-[WACOM.INCLUDE [notification-hubs-back-end](../includes/notification-hubs-back-end.md)]
+[AZURE.INCLUDE [notification-hubs-send-categories-template](../includes/notification-hubs-send-categories-template.md)]
 
 ##<a name="test-app"></a>运行应用并生成通知
 
@@ -206,30 +276,12 @@
 
 	![][2]
 
-4. 使用以下方式之一从后端发送新通知：
-
-	+ **控制台应用：**启动控制台应用。
-
-	+ **Java/PHP：**运行你的应用/脚本。
-
-	所选类别的通知作为 toast 通知显示。
+3. 收到类别订阅已完成的确认消息后，运行控制台应用以发送每个类别的通知。确认你只会收到订阅的类别的通知。
 
 	![][3]
 
 你已完成本主题。
 
-<!--## <a name="next-steps"> </a>Next steps
-
-In this tutorial we learned how to broadcast breaking news by category. Consider completing one of the following tutorials that highlight other advanced Notification Hubs scenarios:
-
-+ [Use Notification Hubs to broadcast localized breaking news]
-
-	Learn how to expand the breaking news app to enable sending localized notifications. 
-
-+ [Notify users with Notification Hubs]
-
-	Learn how to push notifications to specific authenticated users. This is a good solution for sending notifications only to specific users.
--->
 
 <!-- Anchors. -->
 [向应用程序中添加类别选择]: #adding-categories
@@ -248,10 +300,10 @@ In this tutorial we learned how to broadcast breaking news by category. Consider
 <!-- URLs.-->
 [通知中心入门]: /documentation/articles/notification-hubs-windows-phone-get-started
 [Use Notification Hubs to broadcast localized breaking news]: ./breakingnews-localized-wp8.md
-[Notify users with Notification Hubs]: /manage/services/notification-hubs/notify-users/
-[Mobile Service]: /develop/mobile/tutorials/get-started
+[Notify users with Notification Hubs]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
+[Mobile Service]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0104_2016-->

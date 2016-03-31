@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用 | Windows Azure"
+	pageTitle="在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用 | Azure"
 	description="了解如何在 HDInsight（Azure 上的 Hadoop 技术堆栈）中通过 Hive 和 Pig 使用 Python 用户定义的函数 (UDF)。"
 	services="hdinsight"
 	documentationCenter=""
@@ -10,16 +10,21 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="02/10/2016"
+	wacn.date="03/17/2016"/>
 
 #在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用
 
 Hive 和 Pig 非常适用于在 HDInsight 中处理数据，但有时你需要一种更通用的语言。Hive 和 Pig 都可让你使用各种编程语言创建用户定义的功能 (UDF)。在本文中，你将了解如何通过 Hive 和 Pig 使用 Python UDF。
 
-> [AZURE.NOTE]本文中的步骤适用于 HDInsight 群集版本 2.1、3.0、3.1 和 3.2。
+> [AZURE.NOTE] 本文中的步骤适用于 HDInsight 群集版本 2.1、3.0、3.1 和 3.2。
 
+##要求
 
+* HDInsight 群集（基于 Windows）
+
+* 文本编辑器
+ 
 ##<a name="python"></a>HDInsight 上的 Python
 
 默认情况下，Python2.7 安装在 HDInsight 3.0 和更高版本的群集上。可以将 Hive 与此版本的 Python 配合使用，以进行流式处理（使用 STDOUT/STDIN 在 Hive 和 Python 之间传递数据）。
@@ -40,7 +45,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 	FROM hivesampletable
 	ORDER BY clientid LIMIT 50;
 
-> [AZURE.NOTE]在基于 Windows 的 HDInsight 群集上，**USING** 子句必须指定 python.exe 的完整路径。这始终是 `D:\Python27\python.exe`。
+> [AZURE.NOTE] 在基于 Windows 的 HDInsight 群集上，**USING** 子句必须指定 python.exe 的完整路径。这始终是 `D:\Python27\python.exe`。
 
 下面是本示例执行的操作：
 
@@ -50,7 +55,8 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 3. **AS** 子句描述从 **streaming.py** 返回的字段
 
-<a name="streamingpy"></a>下面是该 HiveQL 示例使用的 **streaming.py** 文件。
+<a name="streamingpy"></a>
+下面是该 HiveQL 示例使用的 **streaming.py** 文件。
 
 	#!/usr/bin/env python
 
@@ -72,7 +78,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 1. 从 STDIN 中读取数据。在本示例中，这是使用 `sys.stdin.readline()` 来完成的。
 
-2. 尾随的换行符是使用 `string.strip(line, "\n ")` 删除的，因为我们只需要文本数据，而不需要行指示器的末尾。
+2. 已使用 `string.strip(line, "\n ")` 删除尾部的换行符，因为我们只需要文本数据，而不需要行尾指示符。
 
 2. 执行流式处理时，一个行就包含了所有值，每两个值之间有一个制表符。因此，`string.split(line, "\t")` 可用于在每个制表符处拆分输入，并只返回字段。
 
@@ -106,7 +112,8 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 5. 最后，使用 **DUMP** 命令将输出转储到 STDOUT。这只是为了在完成操作后立即显示结果；在实际脚本中，你通常会使用 **STORE** 将数据存储到新文件中。
 
-<a name="jythonpy"></a>下面是该 Pig 示例使用的 **jython.py** 文件：
+<a name="jythonpy"></a>
+下面是该 Pig 示例使用的 **jython.py** 文件：
 
 	@outputSchema("log: {(date:chararray, time:chararray, classname:chararray, level:chararray, detail:chararray)}")
 	def create_structure(input):
@@ -129,11 +136,11 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 3. 示例数据 **sample.log** 基本上符合我们要返回的日期、时间、类名、级别和详细信息架构。但是，它还包含了一些以字符串“*java.lang.Exception*”开头的行，我们需要修改这些行，使之与架构匹配。**if** 语句将检查这些行，然后调整输入数据以将“*java.lang.Exception*”字符串移到末尾，使数据与预期的输出架构相一致。
 
-4. 接下来，使用 **split** 命令在前四个空白字符处拆分数据。这将生成五个值，它们分配到“日期”、“时间”、“类名”、“级别”和“详细信息”。
+4. 接下来，使用 **split** 命令在前四个空格字符处拆分数据。这将生成五个值，它们将分配到“日期”、“时间”、“类名”、“级别”和“详细信息”。
 
 5. 最后，将值返回到 Pig。
 
-当数据返回到 Pig 时，其架构与 **@outputSchema** 语句中的定义一致。
+当数据返回到 Pig 时，其架构将与 **@outputSchema** 语句中的定义一致。
 
 ##<a name="running"></a>运行示例
 
@@ -182,11 +189,11 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 ###PowerShell
 
-这些步骤使用 Azure PowerShell。如果尚未在开发计算机上安装并配置 Azure PowerShell，请在使用以下步骤之前，参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。
+这些步骤使用 Azure PowerShell。如果尚未在开发计算机上安装并配置 Azure PowerShell，请在使用以下步骤之前，参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 1. 使用 Python 示例 [streaming.py](#streamingpy) 和 [jython.py](#jythonpy) 创建开发计算机上的文件的本地副本。
 
-2. 使用以下 PowerShell 脚本将 **streaming.py** 和 **jython.py** 文件上载到服务器。更改 Azure HDInsight 群集的名称，并在脚本的前三行中更改 **streaming.py** 和 **jython.py** 文件的路径。
+2. 使用以下 PowerShell 脚本将 **streaming.py** 和 **jython.py** 文件上载到服务器。在脚本的前三行中替换为你的 Azure HDInsight 群集的名称，并替换为 **streaming.py** 和 **jython.py** 文件的路径。
 
 		$clusterName = YourHDIClusterName
 		$pathToStreamingFile = "C:\path\to\streaming.py"
@@ -203,7 +210,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 	此脚本将检索 HDInsight 群集的信息，然后提取默认存储帐户的名称和密钥，并将文件上载到容器的根目录。
 
-	> [AZURE.NOTE][在 HDInsight 中上载 Hadoop 作业的数据文档](/documentation/articles/hdinsight-upload-data)中介绍了上载脚本的其他方法。
+	> [AZURE.NOTE] [在 HDInsight 中上载 Hadoop 作业的数据](/documentation/articles/hdinsight-upload-data)文档中介绍了上载脚本的其他方法。
 
 上载文件后，使用以下 PowerShell 脚本启动作业。在完成作业时，会将输出写入到 PowerShell 控制台。
 
@@ -211,7 +218,6 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
     # Replace 'YourHDIClusterName' with the name of your cluster
 	$clusterName = YourHDIClusterName
-
 	$HiveQuery = "add file wasb:///streaming.py;" +
 	             "SELECT TRANSFORM (clientid, devicemake, devicemodel) " +
 	               "USING 'D:\Python27\python.exe streaming.py' AS " +
@@ -241,7 +247,6 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 	# Replace 'YourHDIClusterName' with the name of your cluster
 	$clusterName = YourHDIClusterName
-
 	$PigQuery = "Register wasb:///jython.py using jython as myfuncs;" +
 	            "LOGS = LOAD 'wasb:///example/data/sample.log' as (LINE:chararray);" +
 	            "LOG = FILTER LOGS by LINE is not null;" +
@@ -268,6 +273,22 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 ##<a name="troubleshooting"></a>故障排除
 
+###运行作业时出现错误
+
+在运行 hive 作业时，你可能会遇到如下错误：
+
+    Caused by: org.apache.hadoop.hive.ql.metadata.HiveException: [Error 20001]: An error occurred while reading or writing to your custom script. It may have crashed with an error.
+    
+此问题可能是由 streaming.py 文件中的行尾结束符号导致的。许多 Windows 编辑器默认为使用 CRLF 作为行尾结束符号，但 Linux 应用程序通常应使用 LF。
+
+如果你使用的编辑器无法创建 LF 行尾结束符号，或者不确定要使用什么行尾结束符号，在将文件上载到 HDInsight 之前，请使用以下 PowerShell 语句删除 CR 字符：
+
+    $original_file ='c:\path\to\streaming.py'
+    $text = [IO.File]::ReadAllText($original_file) -replace "`r`n", "`n"
+    [IO.File]::WriteAllText($original_file, $text)
+
+###PowerShell 脚本
+
 用于运行示例的两个示例 PowerShell 脚本都包含一个带注释的行，该行将显示作业的错误输出。如果你未看到作业的预期输出，请取消注释以下行，并查看错误信息中是否指明了问题。
 
 	# Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
@@ -281,7 +302,7 @@ Pig|/PigPython/stderr<p>/PigPython/stdout
 
 ##<a name="next"></a>后续步骤
 
-如果需要加载未按默认提供的 Python 模块，请参阅[如何将模块部署到 Azure HDInsight](http://blogs.msdn.com/b/benjguin/archive/2014/03/03/how-to-deploy-a-python-module-to-windows-azure-hdinsight.aspx)，以获取有关此操作的示例。
+如果需要加载默认情况下未提供的 Python 模块，请参阅[如何将模块部署到 Azure HDInsight](http://blogs.msdn.com/b/benjguin/archive/2014/03/03/how-to-deploy-a-python-module-to-windows-azure-hdinsight.aspx)，以获取有关如何执行此操作的示例。
 
 若要了解使用 Pig、Hive 的其他方式以及如何使用 MapReduce，请参阅以下内容。
 
@@ -291,4 +312,4 @@ Pig|/PigPython/stderr<p>/PigPython/stdout
 
 * [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0307_2016-->

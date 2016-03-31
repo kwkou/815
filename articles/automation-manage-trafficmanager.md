@@ -9,15 +9,15 @@
 
 <tags 
  ms.service="traffic-manager" 
- ms.date="08/12/2015" 
- wacn.date="10/03/2015"/>
+ ms.date="11/12/2015" 
+ wacn.date="01/29/2016"/>
 
 
 #使用 Azure 自动化管理 Azure 流量管理器
 
 本指南将介绍 Azure 自动化服务，以及如何使用它来简化 Azure 流量管理器的管理。
 
-## 什么是 Azure Automation？
+## 什么是 Azure 自动化？
 
 [Azure 自动化](/home/features/automation/)是用于通过流程自动化简化云管理的一项 Azure 服务。使用 Azure 自动化可以自动完成那些长时间运行、人工操作、易出错和经常重复的任务，从而改善组织的可靠性、效率和价值生成时间。
 

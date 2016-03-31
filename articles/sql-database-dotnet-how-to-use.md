@@ -1,5 +1,5 @@
-﻿<properties 
-	pageTitle="如何使用 SQL 数据库 (.NET) - Windows Azure" 
+<properties 
+	pageTitle="如何使用 SQL 数据库 (.NET) - Azure" 
 	description="SQL Database 入门。了解如何创建 SQL Database 实例，以及如何使用 ADO.NET、ODBC 和 EntityClient Provider 与该实例建立连接。" 
 	services="sql-database" 
 	documentationCenter=".net" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database" 
 	ms.date="07/07/2015" 
-	wacn.date="09/15/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 # 如何在 .NET 应用程序中使用 Azure SQL 数据库
@@ -28,7 +28,7 @@ SQL 数据库 为 Azure 提供关系数据库管理系统并且基于 SQL Server
 
 SQL 数据库 在 Azure 上提供关系数据存储、访问和管理服务。若要使用它，您将需要一个 Azure 订阅。
 
-1. 打开 Web 浏览器并浏览到 [http://www.windowsazure.cn](http://www.windowsazure.cn)。若要开始使用免费帐户，请单击右上角的“免费试用”并执行相应步骤。
+1. 打开 Web 浏览器并浏览到 [http://www.azure.cn](http://www.azure.cn)。若要开始使用免费帐户，请单击右上角的“免费试用”并执行相应步骤。
 
 2. 现已创建您的帐户。一切准备就绪，即可开始。
 
@@ -120,7 +120,7 @@ SQL 数据库 在 Azure 上提供关系数据存储、访问和管理服务。�
 - [到 SQL 数据库的连接：中心建议](/documentation/articles/sql-database-connect-central-recommendations)。
 
 
-如果你选择使用 Visual Studio 并且你的配置没有将 Azure Web 应用程序包含为前端，则无需在开发计算机上安装其他工具或 SDK。你现在即可开始开发应用程序。
+如果你选择使用 Visual Studio 并且你的配置没有将 Azure Web 应用包含为前端，则无需在开发计算机上安装其他工具或 SDK。你现在即可开始开发应用程序。
 
 您可以使用 Visual Studio 中的所有相同设计器工具处理 SQL 数据库，就像可以使用这些工具处理 SQL Server 一样。服务器资源管理器允许您查看（但不能编辑）数据库对象。Visual Studio 实体数据模型设计器功能完备，您可以用它来创建针对 SQL 数据库 的模型以用于 Entity Framework。
 

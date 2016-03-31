@@ -9,11 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/02/2015" 
-	wacn.date="11/02/2015"/>
+	ms.date="01/21/2016"
+	wacn.date="03/28/2016"/>
 
 # 从 Android 设备将图像上载到 Azure 存储空间
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
 本主题演示如何使 Android Azure 移动服务应用能够将图像上载到 Azure 存储空间。
@@ -41,11 +44,12 @@
 
 那么，SAS 是什么？
 
-在客户端应用内部存储将数据上载到 Azure 存储服务程序所需的凭据是不安全的。你应将这些凭据存储在移动服务中，并使用它们来生成用于授权上载新图像的共享访问签名 (SAS)。移动服务会向客户端应用安全返回 SAS（一个具有 5 分钟到期期限的凭据）。然后，应用程序将使用此临时凭据来上载图像。有关详细信息，请参阅[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)。
+在客户端应用内部存储将数据上载到 Azure 存储服务程序所需的凭据是不安全的。你应将这些凭据存储在移动服务中，并使用它们来生成用于授权上载新图像的共享访问签名 (SAS)。移动服务会向客户端应用安全返回 SAS（一个具有 5 分钟到期期限的凭据）。然后，应用程序将使用此临时凭据来上载图像。有关详细信息，请参阅[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)
 
->[AZURE.NOTE] [Here](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages) 是此应用的已完成客户端源代码部分。
+## 代码示例
+[此处](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages)提供了此应用的已完成客户端源代码部分。若要运行此代码，你必须先完成本教程的移动服务后端部分。
 
-## 在管理门户中更新已注册的插入脚本
+## 在 Azure 经典门户中更新已注册的插入脚本
 
 [AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 
@@ -364,7 +368,7 @@
 
 4. 按“上载”。注意 ToDoItem 如何像往常一样已添加到列表中。
 
-5. 在 Microsoft Azure 门户中，转到你的存储帐户，按“容器”选项卡，然后在列表中按你的容器的名称。
+5. 在 Azure 经典门户中，转到你的存储帐户，按“容器”选项卡，然后在列表中按你的容器的名称。
 
 6. 此时将显示已上载的 blob 文件列表。选择其中一个，然后按“下载”。
 
@@ -378,10 +382,6 @@
 + [使用 SendGrid 从移动服务发送电子邮件]
  
 	了解如何使用 SendGrid 电子邮件服务为你的移动服务添加电子邮件功能。本主题演示如何添加服务器端脚本，以使用 SendGrid 发送电子邮件。
-
-+ [在移动服务中计划后端作业]
-
-	了解如何使用移动服务作业计划程序功能，定义按你定义的计划执行的服务器脚本代码。
 
 + [移动服务服务器脚本参考]
 
@@ -406,15 +406,15 @@
 
 <!-- URLs. -->
 [使用 SendGrid 从移动服务发送电子邮件]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts
-[在移动服务中计划后端作业]: /documentation/articles/mobile-services-schedule-recurring-tasks
+
 [Send push notifications to Windows Store apps using Service Bus from a .NET back-end]: http://go.microsoft.com/fwlink/?LinkId=277073&clcid=0x409
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure classic portal]: https://manage.windowsazure.cn/
 [How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866
 [移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [App settings]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
  
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0118_2016-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="使用 AES-128 动态加密和密钥传送服务"
-	description="借助 Windows Azure 媒体服务，你可以传送使用 AES 128 位加密密钥加密的内容。媒体服务还提供密钥传送服务，将加密密钥传送给已授权的用户。本主题说明如何使用 AES-128 动态加密以及如何使用密钥传送服务。"
+	description="借助 Azure 媒体服务，你可以传送使用 AES 128 位加密密钥加密的内容。媒体服务还提供密钥传送服务，将加密密钥传送给已授权的用户。本主题说明如何使用 AES-128 动态加密以及如何使用密钥传送服务。"
 	services="media-services"
 	documentationCenter=""
 	authors="Juliako"
@@ -9,18 +9,19 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/07/2015"
-	wacn.date="11/27/2015"/>
+ 	ms.date="02/03/2016"  
+	wacn.date="03/21/2016"/>
 
 #使用 AES-128 动态加密和密钥传送服务
 
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/media-services-protect-with-aes128)
 - [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
+- [PHP](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)
 
 ##概述
 
-借助 Windows Azure 媒体服务，你能够传送使用高级加密标准 (AES) 加密的 Http 实时流式处理 (HLS) 和平滑流（使用 128 位加密密钥）。媒体服务还提供密钥传送服务，将加密密钥传送给已授权的用户。如果你需要媒体服务来加密资产，则需要将加密密钥与资产相关联，并配置密钥的授权策略。当播放器请求流时，媒体服务将使用指定的密钥通过 AES 加密来动态加密你的内容。为了解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否被授权获取密钥，服务将评估你为密钥指定的授权策略。
+借助 Azure 媒体服务，你能够传送使用高级加密标准 (AES) 加密的 Http 实时流式处理 (HLS) 和平滑流（使用 128 位加密密钥）。媒体服务还提供密钥传送服务，将加密密钥传送给已授权的用户。如果你需要媒体服务来加密资产，则需要将加密密钥与资产相关联，并配置密钥的授权策略。当播放器请求流时，媒体服务将使用指定的密钥通过 AES 加密来动态加密你的内容。为了解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否被授权获取密钥，服务将评估你为密钥指定的授权策略。
 
 媒体服务支持通过多种方式对发出密钥请求的用户进行身份验证。内容密钥授权策略可能受到一种或多种授权限制：开放、令牌限制或 IP 限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用[简单 Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2) (SWT) 格式和 [JSON Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_3) (JWT) 格式的令牌。有关详细信息，请参阅[配置内容密钥授权策略](/documentation/articles/media-services-protect-with-aes128#configure_key_auth_policy)。
 
@@ -58,31 +59,31 @@
 
 如果你添加或更新资产的传送策略，则必须删除现有定位符（如果有）并创建新定位符。
 
-##<a id="create_asset"></a>创建资产并将文件上载到资产
+##<a name="create_asset"></a>创建资产并将文件上载到资产
 
-为了对视频进行管理、编码和流式处理，必须首先将内容上载到 Windows Azure 媒体服务中。上载完成后，相关内容即安全地存储在云中供后续处理和流式处理。
+为了对视频进行管理、编码和流式处理，必须首先将内容上载到 Azure 媒体服务中。上载完成后，相关内容即安全地存储在云中供后续处理和流式处理。
 
 有关详细信息，请参阅[将文件上载到媒体服务帐户](/documentation/articles/media-services-dotnet-upload-files)。
 
-##<a id="encode_asset"></a>将包含文件的资产编码为自适应比特率 MP4 集
+##<a name="encode_asset"></a>将包含文件的资产编码为自适应比特率 MP4 集
 
 使用动态加密时，你只需创建包含一组多码率 MP4 文件或多码率平滑流源文件的资产。然后，点播流服务器会确保你以选定的协议按清单或分段请求中的指定格式接收流。因此，你只需以单一存储格式存储文件并为其付费，然后媒体服务服务就会基于客户端的请求构建并提供相应响应。有关详细信息，请参阅[动态打包概述](/documentation/articles/media-services-dynamic-packaging-overview)主题。
 
 有关如何编码的说明，请参阅[如何使用媒体编码器标准版对资产进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard)。
 
-##<a id="create_contentkey"></a>创建内容密钥并将其与编码资产相关联
+##<a name="create_contentkey"></a>创建内容密钥并将其与编码资产相关联
 
 在媒体服务中，内容密钥包含用于加密资产的密钥。
 
 有关详细信息，请参阅[创建内容密钥](/documentation/articles/media-services-dotnet-create-contentkey)。
 
-##<a id="configure_key_auth_policy"></a>配置内容密钥授权策略
+##<a name="configure_key_auth_policy"></a>配置内容密钥授权策略
 
 媒体服务支持通过多种方式对发出密钥请求的用户进行身份验证。你必须配置内容密钥授权策略，客户端（播放器）必须遵守该策略，才能将密钥传送到客户端。内容密钥授权策略可能受到一种或多种授权限制：开放、令牌限制或 IP 限制。
 
 有关详细信息，请参阅[配置内容密钥授权策略](/documentation/articles/media-services-dotnet-configure-content-key-auth-policy)。
 
-##<a id="configure_asset_delivery_policy"></a>配置资产传送策略 
+##<a name="configure_asset_delivery_policy"></a>配置资产传送策略 
 
 为资产配置传送策略。资产传送策略配置包括：
 
@@ -93,7 +94,7 @@
 
 有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy)。
 
-##<a id="create_locator"></a>创建 OnDemand 流定位符以获取流 URL
+##<a name="create_locator"></a>创建 OnDemand 流定位符以获取流 URL
 
 需要为用户提供平滑流、DASH 或 HLS 的流 URL。
 
@@ -118,7 +119,7 @@
 
 你可以使用 [AMS Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) 来测试你的流。
 
-##<a id="client_request"></a>你的客户端如何从密钥传送服务请求密钥？
+##<a name="client_request"></a>你的客户端如何从密钥传送服务请求密钥？
 
 在上一步骤中，你构造了指向清单文件的 URL。你的客户端需要从流清单文件提取必要的信息，以便向密钥传送服务发出请求。
 
@@ -140,7 +141,7 @@
 
 对于 HLS，根清单将划分成段文件。
 
-例如，根清单是：http://test001.origin.mediaservices.chinacloudapi.cn/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/manifest(format=m3u8-aapl)，并且包含段文件名的列表。
+例如，根清单是： http://test001.origin.mediaservices.chinacloudapi.cn/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/manifest(format=m3u8-aapl) ，并且包含段文件名的列表。
 	
 	. . . 
 	#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=630133,RESOLUTION=424x240,CODECS="avc1.4d4015,mp4a.40.2",AUDIO="audio"
@@ -149,7 +150,7 @@
 	QualityLevels(842459)/Manifest(video,format=m3u8-aapl)
 	…
 
-如果在文本编辑器中打开某个段文件（例如 http://test001.origin.mediaservices.chinacloudapi.cn/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/QualityLevels(514369)/Manifest(video,format=m3u8-aapl)），它应包含 #EXT-X-KEY，指示文件已加密。
+如果在文本编辑器中打开某个段文件（例如 http://test001.origin.mediaservices.chinacloudapi.cn/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/QualityLevels(514369)/Manifest(video,format=m3u8-aapl) ），它应包含 #EXT-X-KEY，指示文件已加密。
 	
 	#EXTM3U
 	#EXT-X-VERSION:4
@@ -209,10 +210,10 @@
 	    return key;
 	}
 	
-##<a id="example"></a>示例
+##<a name="example"></a>示例
 
 1. 创建新的控制台项目。
-1. 使用 NuGet 安装和添加 Azure 媒体服务 .NET SDK Extensions。安装此包也会安装媒体服务 .NET SDK 并添加所有其他必需的依赖项。
+1. 使用 NuGet 安装和添加 Azure 媒体服务.NET SDK Extensions。安装此包也会安装适用于 .NET 的媒体服务 SDK 并添加所有其他必需的依赖项。
 2. 添加包含帐户名称和密钥信息的配置文件：
 
 	
@@ -234,6 +235,7 @@
 1. 使用本部分中所示的代码覆盖 Program.cs 文件中的代码。
 	
 	请务必将变量更新为指向输入文件所在的文件夹。
+			
 		
 		using System;
 		using System.Collections.Generic;
@@ -261,7 +263,13 @@
 		            ConfigurationManager.AppSettings["MediaServicesAccountName"];
 		        private static readonly string _mediaServicesAccountKey =
 		            ConfigurationManager.AppSettings["MediaServicesAccountKey"];
-		
+
+				private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+				// Azure China uses a different API server and a different ACS Base Address from the Global.
+				private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+				private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
+
 		        // A Uri describing the issuer of the token.  
 		        // Must match the value in the token for the token to be considered valid.
 		        private static readonly Uri _sampleIssuer =
@@ -287,9 +295,15 @@
 		            // Create and cache the Media Services credentials in a static class variable.
 		            _cachedCredentials = new MediaServicesCredentials(
 		                            _mediaServicesAccountName,
-		                            _mediaServicesAccountKey);
+		                            _mediaServicesAccountKey,
+									_defaultScope,
+									_chinaAcsBaseAddressUrl);
+
+					// Create the API server Uri
+					_apiServer = new Uri(_chinaApiServerUrl);
+
 		            // Used the chached credentials to create CloudMediaContext.
-		            _context = new CloudMediaContext(_cachedCredentials);
+		            _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 		
 		            bool tokenRestriction = false;
 		            string tokenTemplateString = null;
@@ -357,7 +371,7 @@
 		            }
 		
 		            var assetName = Path.GetFileNameWithoutExtension(singleFilePath);
-		            IAsset inputAsset = _context.Assets.Create(assetName, AssetCreationOptions.StorageEncrypted); 
+		            IAsset inputAsset = _context.Assets.Create(assetName, AssetCreationOptions.StorageEncrypted);
 		
 		            var assetFile = inputAsset.AssetFiles.Create(Path.GetFileName(singleFilePath));
 		
@@ -381,31 +395,45 @@
 		            return inputAsset;
 		        }
 		
-		        static public IAsset EncodeToAdaptiveBitrateMP4Set(IAsset inputAsset)
+		        static public IAsset EncodeToAdaptiveBitrateMP4Set(IAsset asset)
 		        {
-		            var encodingPreset = "H264 Adaptive Bitrate MP4 Set 720p";
+		            // Declare a new job.
+		            IJob job = _context.Jobs.Create("Media Encoder Standard Job");
+		            // Get a media processor reference, and pass to it the name of the 
+		            // processor to use for the specific task.
+		            IMediaProcessor processor = GetLatestMediaProcessorByName("Media Encoder Standard");
 		
-		            IJob job = _context.Jobs.Create(String.Format("Encoding into Mp4 {0} to {1}",
-		                                    inputAsset.Name,
-		                                    encodingPreset));
+		            // Create a task with the encoding details, using a string preset.
+		            // In this case "H264 Multiple Bitrate 720p" preset is used.
+		            ITask task = job.Tasks.AddNew("My encoding task",
+		                processor,
+		                "H264 Multiple Bitrate 720p",
+		                TaskOptions.None);
 		
-		            var mediaProcessors =
-		                _context.MediaProcessors.Where(p => p.Name.Contains("Media Encoder")).ToList();
-		
-		            var latestMediaProcessor =
-		                mediaProcessors.OrderBy(mp => new Version(mp.Version)).LastOrDefault();
-		
-		
-		
-		            ITask encodeTask = job.Tasks.AddNew("Encoding", latestMediaProcessor, encodingPreset, TaskOptions.None);
-		            encodeTask.InputAssets.Add(inputAsset);
-		            encodeTask.OutputAssets.AddNew(String.Format("{0} as {1}", inputAsset.Name, encodingPreset), AssetCreationOptions.StorageEncrypted);
+		            // Specify the input asset to be encoded.
+		            task.InputAssets.Add(asset);
+		            // Add an output asset to contain the results of the job. 
+		            // This output is specified as AssetCreationOptions.None, which 
+		            // means the output asset is not encrypted. 
+		            task.OutputAssets.AddNew("Output asset",
+		                AssetCreationOptions.None);
 		
 		            job.StateChanged += new EventHandler<JobStateChangedEventArgs>(JobStateChanged);
 		            job.Submit();
 		            job.GetExecutionProgressTask(CancellationToken.None).Wait();
 		
 		            return job.OutputMediaAssets[0];
+		        }
+		
+		        private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)
+		        {
+		            var processor = _context.MediaProcessors.Where(p => p.Name == mediaProcessorName).
+		            ToList().OrderBy(p => new Version(p.Version)).LastOrDefault();
+		
+		            if (processor == null)
+		                throw new ArgumentException(string.Format("Unknown media processor", mediaProcessorName));
+		
+		            return processor;
 		        }
 		
 		        static public IContentKey CreateEnvelopeTypeContentKey(IAsset asset)
@@ -443,7 +471,7 @@
 		                    Name = "HLS Open Authorization Policy",
 		                    KeyRestrictionType = (int)ContentKeyRestrictionType.Open,
 		                    Requirements = null // no requirements needed for HLS
-		                };
+		                        };
 		
 		            restrictions.Add(restriction);
 		
@@ -512,10 +540,10 @@
 		            //   key url that will have KID=<Guid> appended to the envelope and
 		            //   the Initialization Vector (IV) to use for the envelope encryption.
 		            Dictionary<AssetDeliveryPolicyConfigurationKey, string> assetDeliveryPolicyConfiguration =
-		                new Dictionary<AssetDeliveryPolicyConfigurationKey, string> 
+		                new Dictionary<AssetDeliveryPolicyConfigurationKey, string>
 		            {
-		                {AssetDeliveryPolicyConfigurationKey.EnvelopeKeyAcquisitionUrl, keyAcquisitionUri.ToString()},
-		                {AssetDeliveryPolicyConfigurationKey.EnvelopeEncryptionIVAsBase64, envelopeEncryptionIV}
+		                        {AssetDeliveryPolicyConfigurationKey.EnvelopeKeyAcquisitionUrl, keyAcquisitionUri.ToString()},
+		                        {AssetDeliveryPolicyConfigurationKey.EnvelopeEncryptionIVAsBase64, envelopeEncryptionIV}
 		            };
 		
 		            IAssetDeliveryPolicy assetDeliveryPolicy =
@@ -543,6 +571,7 @@
 		                                        FirstOrDefault();
 		
 		            // Create a 30-day readonly access policy. 
+                	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
 		            IAccessPolicy policy = _context.AccessPolicies.Create("Streaming policy",
 		                TimeSpan.FromDays(30),
 		                AccessPermissions.Read);
@@ -591,4 +620,4 @@
 		    }
 		}
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0314_2016-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="如何创建、管理或删除存储帐户 | Windows Azure"
-	description="了解如何在 Azure 管理门户中创建、管理或删除存储帐户。"
+	pageTitle="如何创建、管理或删除存储帐户 | Azure"
+	description="创建新的存储帐户、管理访问密钥，或删除 Azure 管理门户中的存储帐户。"
 	services="storage"
 	documentationCenter=""
 	authors="tamram"
@@ -9,41 +9,57 @@
 
 <tags
 	ms.service="storage"
-	ms.date="09/23/2015"
-	wacn.date="11/02/2015"/>
-
+	ms.date="12/04/2015" 
+	wacn.date="01/29/2016"/>
 
 
 # 关于 Azure 存储帐户
+
+[AZURE.INCLUDE [storage-selector-portal-create-storage-account](../includes/storage-selector-portal-create-storage-account.md)]
 
 ## 概述
 
 Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列、表和文件服务的权限。你的存储帐户为你的 Azure 存储空间数据对象提供唯一的命名空间。默认情况下，只有你，即帐户所有者，才能使用你的帐户中的数据。
 
-在中国有一种类型的存储帐户：
+有两种类型的存储帐户：
 
-- 标准存储帐户包括 Blob、表和队列存储。文件存储可通过 [Windows Azure 门户](/zh-cn/)请求提供
-
-<!--
-- 高级存储帐户当前仅支持 Azure 虚拟机磁盘。Azure  高级存储可通过 [Azure 门户](/zh-cn)请求提供。请参阅[高级存储：Azure 虚拟机工作负载的高性能存储](http://go.microsoft.com/fwlink/?LinkId=521898) for an in-depth overview of Premium Storage.
--->
+- 标准存储帐户包括 Blob、表、队列和文件存储。 
+- 高级存储帐户当前仅支持 Azure 虚拟机磁盘。有关高级存储的详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)。
 
 ## 存储帐户计费
 
 我们将根据你的存储帐户，针对你的 Azure 存储空间使用情况收费。存储成本取决于四个因素：存储容量、复制方案、存储事务和数据流出量。
 
-- 存储容量指的是存储帐户中用来存储数据的配额。对数据进行简单存储时，其成本取决于存储的数据量和数据复制方式。 
-- 复制决定了你某一次的数据副本的保留数量，以及保留位置。 
-- 事务指的是对 Azure 存储空间的所有读取和写入操作。 
+- 存储容量指的是存储帐户中用来存储数据的配额。对数据进行简单存储时，其成本取决于存储的数据量和数据复制方式。
+- 复制决定了你某一次的数据副本的保留数量，以及保留位置。
+- 事务指的是对 Azure 存储空间的所有读取和写入操作。
 - 数据流出量指的是传出某个 Azure 区域的数据。当不在同一区域中的应用程序访问你的存储帐户中的数据时，无论该应用程序是云服务还是某个其他类型的应用程序，都将会针对数据流出量向你收费。（对于 Azure 服务，你可以采取措施将你的数据和服务通过分组分到相同的数据中心内，从而降低或避免数据流出量费用。）  
 
-[存储定价详细信息](/home/features/storage/#price)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/pricing/details/data-transfers)页提供了针对数据流出量的详细定价信息。
+[存储定价](/home/feature/storage#price)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/pricing/details/data-transfers/)页提供了针对数据流出量的详细定价信息。
 
-有关存储帐户容量和性能目标的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](https://msdn.microsoft.com/zh-CN/library/windowsazure/dn249410.aspx).
+有关存储帐户容量和性能目标的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets).
 
-> [WACOM.NOTE] 当你创建 Azure 虚拟机时，如果在部署位置中还没有存储帐户，则会在该位置自动创建一个存储帐户。因此，没有必要按照下面的步骤来创建虚拟机磁盘的存储帐户。存储帐户名称将基于虚拟机名称。请参阅 [Azure 虚拟机文档](/zh-cn/documentation/services/virtual-machines)以了解更多详细信息。<br />
+> [AZURE.NOTE] 当你创建 Azure 虚拟机时，如果在部署位置中还没有存储帐户，则会在该位置自动创建一个存储帐户。因此，没有必要按照下面的步骤来创建虚拟机磁盘的存储帐户。存储帐户名称将基于虚拟机名称。请参阅 [Azure 虚拟机文档](/documentation/services/virtual-machines/)以了解更多详细信息。
 
-## 创建存储帐户
+## 存储帐户终结点
+
+存储在 Azure 存储空间中的每个对象都有唯一的 URL 地址。存储帐户名称构成该地址的子域。特定于每个服务的子域和域名的组合构成你的存储帐户的 *终结点* 。
+
+例如，如果你的存储帐户名为 *mystorageaccount* ，则你的存储帐户的默认终结点为：
+
+- Blob 服务：http://*mystorageaccount*.blob.core.chinacloudapi.cn
+
+- 表服务：http://*mystorageaccount*.table.core.chinacloudapi.cn
+
+- 队列服务：http://*mystorageaccount*.queue.core.chinacloudapi.cn
+
+- 文件服务：http://*mystorageaccount*.file.core.chinacloudapi.cn
+
+用于访问存储帐户中某个对象的 URL 是通过将存储帐户中对象的位置附加到终结点而构建的。例如，Blob 地址可能具有以下格式：http://*mystorageaccount*.blob.core.chinacloudapi.cn/*mycontainer*/*myblob*。
+
+此外还可以配置用于存储帐户的自定义域名称。请参阅[为 Azure 存储帐户中的 Blob 数据配置自定义域名](/documentation/articles/storage-custom-domain-name)以了解详细信息。
+
+##<a id="create-a-storage-account"></a> 创建存储帐户
 
 1. 登录到[管理门户](https://manage.windowsazure.cn)。
 
@@ -52,7 +68,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 	![新建存储帐户](./media/storage-create-storage-account/storage_NewStorageAccount.png)
 
 3. 在 **URL** 中，输入你的存储帐户的名称。
-	
+
 	> [AZURE.NOTE] 存储帐户名称必须为 3 到 24 个字符，并且只能包含数字和小写字母。
 	>  
 	> 你的存储帐户名称在 Azure 中必须是唯一的。门户将指出你选择的存储帐户名称是否已经存在。
@@ -61,7 +77,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 4. 在“位置/地缘组”中，选择靠近你或你的客户的存储帐户的位置。如果其他 Azure 服务（例如 Azure 虚拟机或云服务）将要访问你存储帐户中的数据，你可能需要从列表中选择一个地缘组，以便将你的存储帐户与其他需要用来改进性能和降低成本的 Azure 服务组合到同一个数据中心。
 
-	请注意，在创建存储帐户时，必须选择一个地缘组；不能将现有帐户移到地缘组中。有关地缘组的更多信息，请参阅下面的[服务与地缘组的托管](#service-co-location-with-an-affinity-group)。
+	请注意，在创建存储帐户时，必须选择一个地缘组。不能将现有帐户移到一个地缘组中。有关地缘组的更多信息，请参阅下面的[服务与地缘组的托管](#service-co-location-with-an-affinity-group)。
 
 	>[AZURE.IMPORTANT]若要确定哪些位置可用于你的订阅，可以调用[列出提供程序](https://msdn.microsoft.com/zh-cn/library/azure/dn790524.aspx)操作。若要从 PowerShell 列出提供程序，请调用 [Get-AzureLocation](https://msdn.microsoft.com/zh-cn/library/azure/dn757693.aspx)。通过 .NET，使用 ProviderOperationsExtensions 类的 [List](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.management.resources.provideroperationsextensions.list.aspx) 方法。
 5. 如果你有多个 Azure 订阅，则会显示“订阅”字段。在“订阅”中，输入要使用存储帐户的 Azure 订阅。
@@ -77,35 +93,35 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 ###<a id="storage-account-endpoints"></a> 存储帐户终结点
 
-在 Azure 存储空间中存储的每个对象都有唯一的 URL 地址；存储帐户名称构成该地址的子域。特定于每个服务的子域和域名的组合构成你的存储帐户的*终结点*。
+在 Azure 存储空间中存储的每个对象都有唯一的 URL 地址；存储帐户名称构成该地址的子域。特定于每个服务的子域和域名的组合构成你的存储帐户的 *终结点* 。
 
-例如，如果你的存储帐户名为  *mystorageaccount*，则你的存储帐户的默认终结点为： 
+例如，如果你的存储帐户名为 *mystorageaccount* ，则你的存储帐户的默认终结点为：
 
-- Blob 服务: http://*mystorageaccount*.blob.core.chinacloudapi.cn
+- Blob 服务：http://*mystorageaccount*.blob.core.chinacloudapi.cn
 
-- 表服务: http://*mystorageaccount*.table.core.chinacloudapi.cn
+- 表服务：http://*mystorageaccount*.table.core.chinacloudapi.cn
 
-- 队列服务: http://*mystorageaccount*.queue.core.chinacloudapi.cn
+- 队列服务：http://*mystorageaccount*.queue.core.chinacloudapi.cn
 
-- 文件服务: http://*mystorageaccount*.file.core.chinacloudapi.cn
+- 文件服务：http://*mystorageaccount*.file.core.chinacloudapi.cn
 
 创建存储帐户后，你可以在 Azure 管理门户的存储仪表板上看到该帐户的终结点。
 
-用于访问存储帐户中某个对象的 URL 是通过将存储帐户中对象的位置附加到终结点而构建的。例如，Blob 地址可能具有以下格式：http://*mystorageaccount*.blob.core.chinacloudapi.cn/*mycontainer*/*myblob*.
+用于访问存储帐户中某个对象的 URL 是通过将存储帐户中对象的位置附加到终结点而构建的。例如，Blob 地址可能具有以下格式：http://*mystorageaccount*.blob.core.chinacloudapi.cn/*mycontainer*/*myblob*。
 
-此外还可以配置用于存储帐户的自定义域名称。请参阅[为存储帐户中的 Blob 数据配置自定义域名](/documentation/articles/storage-custom-domain-name) 以了解详细信息。
+此外还可以配置用于存储帐户的自定义域名称。请参阅[为存储帐户中的 Blob 数据配置自定义域名](/documentation/articles/storage-custom-domain-name)以了解详细信息。
 
 ###<a id="service-co-location-with-an-affinity-group"></a> 服务与地缘组的托管
 
-*地缘组*是你的 Azure 服务和 VM 及 Azure 存储帐户的地理分组。通过定位同一数据中心或靠近目标用户受众的计算机工作负载，地缘组可提高服务性能。此外，当某个存储帐户中的数据被另一个服务访问，而该服务是同一个地缘组的一部分时，不会对出口流量收费。
+ *地缘组* 是你的 Azure 服务和 VM 及 Azure 存储帐户的地理分组。通过定位同一数据中心或靠近目标用户受众的计算机工作负载，地缘组可提高服务性能。此外，当某个存储帐户中的数据被另一个服务访问，而该服务是同一个地缘组的一部分时，不会对出口流量收费。
 
-> [AZURE.NOTE]  若要创建地缘组，请打开管理门户的<b>"设置"</b>区域，单击<b>"地缘组"</b>，然后单击<b>"添加地缘组"</b>或<b>"添加"</b>按钮。你也可以使用 Azure 服务管理 API 创建和管理地缘组。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ee460798.aspx">对地缘组的操作</a>。
+> [AZURE.NOTE] 若要创建地缘组，请打开管理门户的“设置”<b></b>区域，单击“地缘组”<b></b>，然后单击“添加地缘组”<b></b>或“添加”<b></b>按钮。你也可以使用 Azure 服务管理 API 创建和管理地缘组。请参阅<a href="http://msdn.microsoft.com/zh-cn/library/azure/ee460798.aspx">对地缘组的操作</a>以了解更多信息。
 
-## 查看、复制和重新生成存储访问密钥
+##<a id="view-copy-and-regenerate-storage-access-keys"></a> 查看、复制和重新生成存储访问密钥
 
 当你创建存储帐户时，Azure 将生成两个 512 位存储访问密钥，用于在用户访问该存储帐户时对其进行身份验证。通过提供两个存储访问密钥，Azure 使你能够在不中断存储服务的情况下重新生成用于访问该服务的密钥。
 
-> [AZURE.NOTE]我们建议你避免与其他人共享你的存储访问密钥。若要允许不提供你的访问密钥即可访问存储空间资源，可使用 *共享访问签名*。共享访问签名可用于访问你的帐户中的资源，访问时间间隔由你定义，访问权限由你指定。请参阅[共享访问签名教程](/documentation/articles/storage-dotnet-shared-access-signature-part-1)以了解更多信息。
+> [AZURE.NOTE] 我们建议你避免与其他人共享你的存储访问密钥。若要允许不提供你的访问密钥即可访问存储空间资源，可使用*共享访问签名*。共享访问签名可用于访问你的帐户中的资源，访问时间间隔由你定义，访问权限由你指定。请参阅[共享访问签名教程](/documentation/articles/storage-dotnet-shared-access-signature-part-1)以了解更多信息。
 
 在[管理门户](http://manage.windowsazure.cn)中，可使用仪表板或“存储”页上的“管理密钥”查看、复制和重新生成用于访问 Blob、表和队列服务的存储访问密钥。
 
@@ -124,8 +140,8 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 3. 若要复制存储访问密钥，请选择密钥文本。然后右键单击，并单击“复制”。
 
-### 重新生成存储访问密钥
-你应定期更改你的存储帐户的访问密钥，以确保存储连接安全。分配了两个访问密钥，以便在你重新生成其中一个访问密钥时，始终能够使用另一个访问密钥连接到存储帐户。
+###<a id="regeneratestoragekeys"></a> 重新生成存储访问密钥
+我们建议你定期更改存储帐户的访问密钥，以确保存储连接安全。分配了两个访问密钥，以便在你重新生成其中一个访问密钥时，始终能够使用另一个访问密钥连接到存储帐户。
 
 > [AZURE.WARNING] 重新生成访问密钥会影响虚拟机、媒体服务以及任何依赖于存储帐户的应用程序。必须更新使用访问密钥访问存储帐户的所有客户端，以使用新密钥。
 
@@ -133,15 +149,17 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 **媒体服务** - 如果你的媒体服务依赖于存储帐户，则必须在重新生成密钥后将访问密钥与媒体服务重新同步。
 
-**应用程序** - 如果你拥有使用存储帐户的 Web 应用程序或云服务，则重新生成密钥将失去连接，除非你滚动使用密钥。过程如下：
+**应用程序** - 如果你拥有使用存储帐户的 Web 应用或云服务，则重新生成密钥将失去连接，除非你滚动使用密钥。
 
-1. 更新应用程序代码中的连接字符串以引用存储帐户的辅助访问密钥。 
+下面是轮换存储访问密钥的过程：
+
+1. 更新应用程序代码中的连接字符串以引用存储帐户的辅助访问密钥。
 
 2. 为你的存储帐户重新生成主访问密钥。在[管理门户](http://manage.windowsazure.cn)中，从仪表板或“配置”页，单击“管理密钥”。单击主访问密钥下的“重新生成”，然后单击“是”以确认要生成新密钥。
 
 3. 更新代码中的连接字符串以引用新的主访问密钥。
 
-4. 重新生成辅助访问密钥。
+4. 以相同方式重新生成辅助访问密钥。
 
 ## 删除存储帐户
 
@@ -163,9 +181,9 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 ## 后续步骤
 
-- 若要了解有关 Azure 存储空间的详细信息，请参阅[windowsazure.cn](/documentation/services/storage/)和 [MSDN](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)上的 Azure 存储空间文档。
+- 若要了解有关 Azure 存储空间的详细信息，请参阅 [windowsazure.cn](/documentation/services/storage/) 和 [MSDN](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx) 上的 Azure 存储空间文档。
 
 - 访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
- 
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0118_2016-->

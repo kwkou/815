@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何使用诊断 (.NET) | Windows Azure" 
+	pageTitle="如何使用诊断 (.NET) | Azure" 
 	description="了解如何在 Azure 中使用诊断数据进行调试、度量性能、进行监视以及流量分析等操作。" 
 	services="cloud-services" 
 	documentationCenter=".net" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="08/25/2015" 
-	wacn.date="10/17/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 
@@ -36,7 +36,7 @@ Azure Diagnostics 可以收集以下类型的遥测数据：
 
 数据源|说明
 ---|---
-IIS Logs|有关 IIS 网站的信息。
+IIS Logs|有关 IIS Web 应用的信息。
 Azure Diagnostics基础结构日志|有关 Diagnostics 自身的信息。
 IIS 失败请求日志|有关 IIS 站点或应用程序的失败请求的信息。
 Windows 事件日志|发送到 Windows 事件日志记录系统的信息。
@@ -56,7 +56,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 
 ### 步骤 1：创建辅助角色
 1.	启动 **Visual Studio 2013**。
-2.	从面向 .NET Framework 4.5 的**云**模板创建一个新的 **Windows Azure 云服务**项目。将该项目命名为“WadExample”。
+2.	从面向 .NET Framework 4.5 的**云**模板创建一个新的 **Azure 云服务**项目。将该项目命名为“WadExample”。
 3.	选择“辅助角色”并单击“确定”。随后将创建该项目。 
 4.	在“解决方案资源管理器”中，双击 **WorkerRole1** properties 文件。
 5.	在“配置”选项卡中，取消选中“启用诊断”以禁用 Diagnostics 1.0（Azure SDK 2.4 和更低版本）。
@@ -147,7 +147,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 ### 步骤 3：部署辅助角色
 1.	从 Visual Studio 中选择 **WadExample** 项目，然后从“生成”菜单中选择“发布”，以将辅助角色部署到 Azure。
 2.	选择你的订阅。
-3.	在“Windows Azure 发布设置”对话框中，选择“新建...”。
+3.	在“Azure 发布设置”对话框中，选择“新建...”。
 4.	在“创建云服务和存储帐户”对话框中输入一个名称（例如“WadExample”），然后选择区域或地缘组。
 5.	将“环境”设置为“过渡”。
 6.	适当地修改任何其他设置，然后单击“发布”。
@@ -165,7 +165,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 3.	将 WadConfig.xsd 与配置文件相关联。确保 WadExample.xml 编辑器窗口是活动的窗口。按 **F4** 打开“属性”窗口。在“属性”窗口中单击“架构”属性。在“架构”属性中单击“...”。单击“添加...”按钮并导航到 XSD 文件的保存位置，然后选择文件 WadConfig.xsd。单击“确定”。
 4.	将 WadExample.xml 配置文件的内容替换为以下 XML 并保存该文件。此配置文件定义两个要收集的性能计数器：一个对应于 CPU 使用率，另一个对应于内存使用率。配置将定义对应于 SampleEventSourceWriter 类中方法的四个事件。
 
-	```
+	
 		<?xml version="1.0" encoding="utf-8"?>
 		<PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
   			<WadCfg>
@@ -186,12 +186,12 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
     			</DiagnosticMonitorConfiguration>
   			</WadCfg>
 		</PublicConfig>
-	```
+	
 
 ### 步骤 5：在辅助角色上安装 Diagnostics
 用于在 Web 或辅助角色上管理 Diagnostics 的 PowerShell cmdlet 为：Set-AzureServiceDiagnosticsExtension、Get-AzureServiceDiagnosticsExtension 和 Remove-AzureServiceDiagnosticsExtension。
 
-1.	打开 Windows Azure PowerShell。
+1.	打开 Azure PowerShell。
 2.	执行脚本以在辅助角色上安装 Diagnostics（将 *StorageAccountKey* 替换为 wadexample 存储帐户的存储帐户密钥）：
 
 		$storage_name = "wadexample"
@@ -314,7 +314,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 3.	将 WadConfig.xsd 与配置文件相关联。确保 WadExample.xml 编辑器窗口是活动的窗口。按 **F4** 打开“属性”窗口。在“属性”窗口中单击“架构”属性。在“架构”属性中单击“...”。单击“添加...”按钮并导航到 XSD 文件的保存位置，然后选择文件 WadConfig.xsd。单击“确定”。
 4.	将 WadExample.xml 配置文件的内容替换为以下 XML 并保存该文件。此配置文件定义两个要收集的性能计数器：一个对应于 CPU 使用率，另一个对应于内存使用率。配置将定义对应于 SampleEventSourceWriter 类中方法的四个事件。
 
-	```
+	
 		<?xml version="1.0" encoding="utf-8"?>
 		<PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
   			<WadCfg>
@@ -335,12 +335,12 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
     			</DiagnosticMonitorConfiguration>
   			</WadCfg>
 		</PublicConfig>
-	```
+	
 
 ### 步骤 5：将 Diagnostics 远程安装到 Azure 虚拟机上
 用于在 VM 上管理 Diagnostics 的 PowerShell cmdlet 为：Set-AzureVMDiagnosticsExtension、Get-AzureVMDiagnosticsExtension 和 Remove-AzureVMDiagnosticsExtension。
 
-1.	在开发人员计算机上，打开 Windows Azure PowerShell。
+1.	在开发人员计算机上，打开 Azure PowerShell。
 2.	执行脚本以在 VM 上远程安装 Diagnostics（将 *StorageAccountKey* 替换为 wadexamplevm 存储帐户的存储帐户密钥）：
 
 		$storage_name = "wadexamplevm"
@@ -475,7 +475,7 @@ PowerShell 脚本 - 用于在角色上管理 Diagnostics 的安装和配置的�
 数据源|默认集合|格式|说明|Diagnostics 1.0|Diagnostics 1.1/1.2|Diagnostics 1.3
 ---|---|---|---|---|---|---
 System.Diagnostics.Trace 日志|是|表|记录从您的代码发送到跟踪侦听器的跟踪消息（必须将跟踪侦听器添加到 web.config 或 app.config 文件）。日志数据将以 scheduledTransferPeriod 指定的传输间隔传输到存储表 WADLogsTable。|是|否（使用 EventSource）|是
-IIS 日志|是|Blob|记录有关 IIS 网站的信息。日志数据将以 scheduledTransferPeriod 指定的传输间隔传输到您指定的容器。|是|是|是
+IIS 日志|是|Blob|记录有关 IIS Web 应用的信息。日志数据将以 scheduledTransferPeriod 指定的传输间隔传输到您指定的容器。|是|是|是
 Azure Diagnostics基础结构日志|是|表|记录有关诊断基础结构、RemoteAccess 模块和 RemoteForwarder 模块的信息。日志数据将以 scheduledTransferPeriodtransfer 指定的间隔传输到存储表 WADDiagnosticInfrastructureLogsTable。|是|是|是
 IIS 失败请求日志|否|Blob|记录有关 IIS 站点或应用程序的失败请求的信息。还必须通过在 Web.config 文件中的 system.WebServer 下设置跟踪选项来启用。日志数据将以 scheduledTransferPeriod 指定的传输间隔传输到您指定的容器。|是|是|是
 Windows 事件日志|否|表|记录有关操作系统、应用程序或驱动程序运行状况的信息。必须显式指定性能计数器。添加性能计数器后，性能计数器数据将以 scheduledTransferPeriod 指定的传输间隔传输到存储表 WADPerformanceCountersTable。|是|是|是
@@ -511,7 +511,7 @@ EventSource|否|表|记录你的代码使用 .NET EventSource 类生成的事件
 [有关开发 Azure 应用程序的故障排除最佳实践]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh771389.aspx
 [有关开发 Azure 应用程序的问题排查最佳实践]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh771389.aspx
 [试用版]: /pricing/1rmb-trial
-[安装并配置 Azure PowerShell 0.8.7 或更高版本]: /documentation/articles/install-configure-powershell
+[安装并配置 Azure PowerShell 0.8.7 或更高版本]: /documentation/articles/powershell-install-configure
 [Azure Diagnostics 1.2 配置架构]: http://msdn.microsoft.com/zh-cn/library/azure/dn782207.aspx
 [Set-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/zh-cn/library/dn495270.aspx
 [Get-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/zh-cn/library/dn495145.aspx

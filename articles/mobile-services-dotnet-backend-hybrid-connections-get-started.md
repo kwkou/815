@@ -1,19 +1,23 @@
-<properties 
-	pageTitle="使用混合连接从 Azure 移动服务连接到本地 SQL Server - Azure 移动服务" 
-	description="了解如何使用混合连接从 Azure 移动服务连接到本地 SQL Server" 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="ggailey777" 
-	manager="dwrede" 
-	editor="mollybos"/>
+<properties
+	pageTitle="使用混合连接从 .NET 后端移动服务连接到本地 SQL Server | Azure 移动服务"
+	description="了解如何使用 Azure 混合连接从 .NET 后端移动服务连接到本地 SQL Server"
+	services="mobile-services"
+	documentationCenter=""
+	authors="ggailey777"
+	manager="dwrede"
+	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/16/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="02/07/2016"
+	wacn.date="03/28/2016"/>
 
   
 # 使用混合连接从 Azure 移动服务连接到本地 SQL Server 
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 
 当企业在过渡到云环境时，可能无法立即就将所有资产迁移到 Azure。使用混合连接，Azure 移动服务可以安全地连接到本地资产。这样，移动客户端便可以使用 Azure 访问你的本地数据。支持的资产包括静态 TCP 端口上运行的任何资源，例如 Microsoft SQL Server、MySQL、HTTP Web API 和大多数自定义 Web 服务。混合连接使用共享访问签名 (SAS) 授权，确保从移动服务和本地混合连接管理器到混合连接的连接安全。有关详细信息，请参阅[混合连接概述](/documentation/articles/integration-hybrid-connection-overview)。
 
@@ -24,7 +28,7 @@
 
 本教程要求做好以下准备：
 
-- **现有的 .NET 后端移动服务** <br/>遵循[移动服务入门]教程，从 [Azure 管理门户]创建和下载新的 .NET 后端移动服务。
+- **现有的 .NET 后端移动服务**<br/>遵循[移动服务入门]教程，从 [Azure 经典门户]创建和下载新的 .NET 后端移动服务。
 
 [AZURE.INCLUDE [hybrid-connections-prerequisites](../includes/hybrid-connections-prerequisites.md)]
 
@@ -89,9 +93,9 @@
 
 在验证数据库连接后，需要为这个新的连接字符串添加应用设置，以便能够从 Azure 使用该连接字符串，并且能够将移动服务发布到 Azure。
 
-1. 在 [Azure 管理门户]中，浏览到你的移动服务。
-  
-2. 单击“配置”选项卡，然后找到“连接字符串”部分。
+1. 在 [Azure 经典门户]中，浏览到你的移动服务。
+
+1. 单击“配置”选项卡，然后找到“连接字符串”部分。
 
 	![本地数据库的连接字符串](./media/mobile-services-dotnet-backend-hybrid-connections-get-started/11.png)
 
@@ -128,6 +132,7 @@
 <!-- IMAGES -->
 
 <!-- Links -->
-[Azure 管理门户]: http://manage.windowsazure.cn
+[Azure 经典门户]: http://manage.windowsazure.cn
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
-<!---HONumber=71-->
+
+<!---HONumber=Mooncake_0118_2016-->

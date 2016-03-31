@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将 Azure 网站中的 Azure Redis 缓存用于会话状态" 
+	pageTitle="将 Azure 中的 Azure Redis 缓存用于会话状态" 
 	description="了解如何使用 Azure 缓存服务来支持 ASP.NET 会话状态缓存。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -8,27 +8,19 @@
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.date="09/16/2015" 
-	wacn.date="10/22/2015"/>
+	ms.service="web-sites" 
+	ms.date="12/08/2015" 
+	wacn.date="02/17/2016"/>
 
 
-# 将 Azure Web Apps 中的 Azure Redis 缓存用于会话状态
+# 将 Azure 中的 Azure Redis 缓存用于会话状态
 
 
 本主题说明如何将 Azure Redis Cache 服务（预览版）用于会话状态。
 
-如果你的 ASP.NET Web 应用程序使用会话状态，则你需要设置外部会话状态提供程序（可为 Redis Cache 服务或 SQL Server 会话状态提供程序）。如果你使用会话状态，但未使用外部提供程序，则你的 Web 应用程序只能限定为一个实例。Redis Cache 服务是最快最简单的启用方式。
+如果你的 ASP.NET Web 应用使用会话状态，则你需要设置外部会话状态提供程序（可为 Redis Cache 服务或 SQL Server 会话状态提供程序）。如果你使用会话状态，但未使用外部提供程序，则你的 Web 应用只能限定为一个实例。Redis Cache 服务是最快最简单的启用方式。
 
-将缓存服务（预览版）用于会话状态缓存的基本步骤包括：
-
-* [创建缓存。](#createcache)
-* [将 RedisSessionStateProvider NuGet 包添加到 Web 应用程序。](#configureproject)
-* [修改 Web.config 文件。](#configurewebconfig)
-* [使用会话对象存储和检索缓存项。](#usesessionobject)
-
-
-## <a id="configureproject"></a>将 RedisSessionStateProvider NuGet 包添加到 Web 应用程序
+## <a id="configureproject"></a>将 RedisSessionStateProvider NuGet 包添加到 Web 应用
 安装 NuGet `RedisSessionStateProvider` 包。从包管理器控制台（“工具”>“NuGet 包管理器”>“包管理器控制台”）使用以下命令进行安装：
 
   `PM> Install-Package Microsoft.Web.RedisSessionStateProvider`
@@ -42,7 +34,7 @@
 
 1. 打开 *web.config* 并查找 **sessionState** 元素。
 
-1. 输入 `host`、`accessKey`、 `port` 的值（SSL 端口应为 6380），并将 `SSL` 设置为 `true`。可以从 [Azure 门户](http://manage.windowsazure.cn)边栏选项卡为你的缓存实例获取这些值。请注意，默认情况下，将为新缓存禁用非 SSL 端口。有关启用非 SSL 端口的详细信息，请参阅[在 Azure Redis 缓存中配置缓存](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx)主题中的[访问端口](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx#AccessPorts)部分。以下标记显示了对 *web.config* 文件所做的更改，具体而言，是对 *port*、*host*、accessKey* 和 *ssl* 的更改。
+1. 输入 `host`、`accessKey`、 `port` 的值（SSL 端口应为 6380），并将 `SSL` 设置为 `true`。可以从 [Azure 门户](http://manage.windowsazure.cn)边栏选项卡为你的缓存实例获取这些值。请注意，默认情况下，将为新缓存禁用非 SSL 端口。以下标记显示了对 *web.config* 文件所做的更改，具体而言，是对 *port*、*host*、accessKey* 和 *ssl* 的更改。
 
 		  <system.web>;
 		    <customErrors mode="Off" />;
@@ -85,7 +77,7 @@
     if (objValue != null)
        strValue = (string)objValue;	
 
-还可以使用 Redis Cache 在 Web 应用程序中缓存对象。有关详细信息，请参阅 [15 分钟学会创建包含 Azure Redis 缓存的 MVC 影片应用](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/)。
+还可以使用 Redis Cache 在 Web 应用中缓存对象。有关详细信息，请参阅 [15 分钟学会创建包含 Azure Redis 缓存的 MVC 影片应用](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/)。
 有关如何使用 ASP.NET 会话状态的详细信息，请参阅 [ASP.NET 会话状态概述][]。
 
   

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线队列、主题和订阅 | Windows Azure"
+   pageTitle="服务总线队列、主题和订阅 | Microsoft Azure"
    description="服务总线消息传送实例概述。"
    services="service-bus"
    documentationCenter="na"
@@ -8,12 +8,12 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-   ms.date="09/04/2015"
-   wacn.date="10/22/2015" />
+   ms.date="12/09/2015"
+   wacn.date="03/28/2016" />
 
 # 服务总线队列、主题和订阅
 
-Windows Azure 服务总线支持一组基于云的、面向消息的中间件技术，包括可靠的消息队列和持久的发布/订阅消息。这些中转消息传送功能可被视为分离式消息传送功能，支持使用服务总线消息传送结构的发布-订阅、临时分离和负载平衡方案。分离式通信具有很多优点；例如，客户端和服务器可以根据需要进行连接并以异步方式执行其操作。
+Microsoft Azure 服务总线支持一组基于云的、面向消息的中间件技术，包括可靠的消息队列和持久的发布/订阅消息。这些中转消息传送功能可被视为分离式消息传送功能，支持使用服务总线消息传送结构的发布-订阅、临时分离和负载平衡方案。分离式通信具有很多优点；例如，客户端和服务器可以根据需要进行连接并以异步方式执行其操作。
 
 消息传送实体（队列、主题/订阅、规则/操作和事件中心）是服务总线中转消息传送功能的核心。
 
@@ -142,7 +142,7 @@ while ((message = auditSubscriptionClient.Receive(TimeSpan.FromSeconds(5))) != n
 
 在许多情况下，必须以不同方式处理具有特定特征的消息。若要启用此功能，你可以将订阅配置为查找具有所需属性的消息，然后执行这些属性的部分修改操作。虽然服务总线订阅可以看到发送到主题的所有消息，但你也可以仅将这些消息的一个子集复制到虚拟订阅队列。使用订阅筛选器完成此操作。此类修改称为*筛选器操作*。在创建订阅后，你可以提供可对消息的属性（例如，“标签”）和自定义应用程序属性（例如，**StoreName**）进行操作的筛选器表达式。 SQL 筛选器在此示例中为可选；如果没有 SQL 筛选器表达式，将对该订阅的所有消息执行在订阅上定义的任何筛选器操作。
 
-使用上述示例，要仅筛选来自 Store1 的消息，如下所示创建“仪表板”订阅：
+使用上述示例，要仅筛选来自 **Store1** 的消息，如下所示创建“仪表板”订阅：
 
 ```
 namespaceManager.CreateSubscription("IssueTrackingTopic", "Dashboard", new SqlFilter("StoreName = 'Store1'"));
@@ -163,8 +163,9 @@ namespaceManager.CreateSubscription("IssueTrackingTopic", "Dashboard", new SqlFi
 有关使用服务总线中转消息传送实例的详细信息，请参阅以下高级主题。
 
 - [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview)
-- [服务总线中转消息传送 .NET 教程。](https://msdn.microsoft.com/zh-cn/library/azure/hh367512.aspx)
+- [服务总线中转消息传送 .NET 教程](/documentation/articles/service-bus-brokered-tutorial-dotnet)
+- [服务总线中转消息传送 REST 教程](/documentation/articles/service-bus-brokered-tutorial-rest)
 - [事件中心开发人员指南](/documentation/articles/event-hubs-programming-guide)
 - [中转消息传送：高级筛选器](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0104_2016-->

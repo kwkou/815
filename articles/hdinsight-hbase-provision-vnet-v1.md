@@ -9,21 +9,17 @@
 	editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.date="08/07/2015"
-   wacn.date="10/03/2015"/>
+	ms.service="hdinsight"
+	ms.date="12/02/2015"
+	wacn.date="01/21/2016"/>
 
 # 在 Azure 虚拟网络上设置 HBase 群集
 
 了解如何在 [Azure 虚拟网络][1]上创建 Azure HDInsight HBase 群集。
 
-[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
-
-* [在 Azure 虚拟网络上设置 HBase 群集](/documentation/articles/hdinsight-hbase-provision-vnet)
-
 通过虚拟网络集成，可以将 HBase 群集部署到应用程序所在的虚拟网络，以便应用程序直接与 HBase 进行通信。优点包括：
 
-- 将 Web 应用程序直接连接到 HBase 群集节点，以通过 HBase Java 远程过程调用 (RPC) API 实现通信。
+- 将 Web 应用直接连接到 HBase 群集节点，以通过 HBase Java 远程过程调用 (RPC) API 实现通信。
 - 提高性能，因为流量不必通过多个网关和负载平衡器。
 - 能够以更安全的方式处理敏感信息，而无需公开公共终结点。
 
@@ -80,7 +76,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 **创建群集要使用的 Azure 存储帐户和 Blob 存储容器**
 
-> [AZURE.NOTE]HDInsight 群集使用 Azure Blob 存储来存储数据。有关详细信息，请参阅[在 HDInsight 中将 Azure Blob 存储与 Hadoop 配合使用](/documentation/articles/hdinsight-use-blob-storage)。你需要存储帐户和 Blob 存储容器。存储帐户位置必须与虚拟网络位置和群集位置匹配。
+> [AZURE.NOTE]HDInsight 群集使用 Azure Blob 存储来存储数据。有关详细信息，请参阅[在 HDInsight 中将 Azure Blob 存储与 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。你需要存储帐户和 Blob 存储容器。存储帐户位置必须与虚拟网络位置和群集位置匹配。
 
 像其他 HDInsight 群集，HBase 群集要求将 Azure 存储帐户和 Blob 存储容器作为默认文件系统。存储帐户位置必须与虚拟网络位置和群集位置匹配。有关详细信息，请参阅[在 HDInsight 中将 Azure Blob 存储与 Hadoop 配合使用][hdinsight-storage]。在设置 HBase 群集时，你可以选择创建新群集或使用现有群集。此过程演示如何使用 Azure 门户创建存储帐户和 Blob 存储容器。
 
@@ -120,7 +116,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 4. 在“配置群集”页上，输入或选择以下内容：
 
-	![提供 HBase 群集的详细信息](./media/hdinsight-hbase-provision-vnet/hbasewizard2.png)
+	![提供 HBase 群集的详细信息](./media/hdinsight-hbase-provision-vnet-v1/hbasewizard2.png)
 
 	<table border='1'>
 	<tr><th>属性</th><th>值</th></tr>
@@ -129,14 +125,14 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 	<tr><td>头节点大小</td><td><p>为头节点选择 VM 大小。</p></td></tr>
 	<tr><td>数据节点大小</td><td><p>为数据节点选择 VM 大小。</p></td></tr>
 	<tr><td>Zookeeper 大小</td><td><p>为 Zookeeper 节点选择 VM 大小。</p></td></tr>
-</table>
->[AZURE.NOTE]根据所选的 VM，你的成本可能会有所不同。HDInsight 对群集节点使用所有标准层 VM。有关 VM 大小如何影响价格的信息，请参阅 <a href="/home/features/hdinsight/#price" target="_blank">HDInsight 价格</a>。
+	</table>
+	>[AZURE.NOTE]根据所选的 VM，你的成本可能会有所不同。HDInsight 对群集节点使用所有标准层 VM。有关 VM 大小如何影响价格的信息，请参阅 <a href="/home/features/hdinsight/#price" target="_blank">HDInsight 价格</a>。
 
 	单击右侧按钮。
 
 5. 输入要用于此群集的 Hadoop 用户名和密码，然后单击右侧按钮。
 
-	![提供 Hadoop HDInsight 群集的存储帐户](./media/hdinsight-hbase-provision-vnet/hbasewizard3.png)
+	![提供 Hadoop HDInsight 群集的存储帐户](./media/hdinsight-hbase-provision-vnet-v1/hbasewizard3.png)
 
 	<table border='1'>
 	<tr><th>属性</th><th>值</th></tr>
@@ -146,11 +142,11 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 		<td>指定 HDInsight 群集用户密码。</td></tr>
 	<tr><td>为群集启用远程桌面</td>
 		<td>在设置后，选中此复选框，以为可远程连接到群集节点的远程桌面用户指定用户名、密码和到期日期。稍后，你还可以在设置了群集后启用远程桌面。有关说明，请参阅<a href="hdinsight-administer-use-management-portal-v1/#rdp" target="_blank">使用 RDP 连接到 HDInsight 群集</a>。</td></tr>
-</table>
+	</table>
 
 6. 在“存储帐户”页上提供以下值：
 
-    ![提供 Hadoop HDInsight 群集的存储帐户](./media/hdinsight-hbase-provision-vnet/hbasewizard4.png)
+    ![提供 Hadoop HDInsight 群集的存储帐户](./media/hdinsight-hbase-provision-vnet-v1/hbasewizard4.png)
 
 	<table border='1'>
 	<tr><th>属性</th><th>值</th></tr>
@@ -175,19 +171,19 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
     </td></tr>
 	<tr><td>其他存储帐户</td>
 		<td>如果需要，请为群集指定其他存储帐户。HDInsight 支持多个存储帐户。一个群集可以使用的其他存储帐户数没有限制。但是，如果你通过使用 Azure 门户创建群集，则由于 UI 限制，你最多只能创建七个存储帐户。指定的每个其他存储帐户将在向导中添加一个额外的“存储帐户”页，以便你在此指定帐户信息。<strong></strong>例如，在以上屏幕截图中，未选择其他存储帐户，因此，不会将额外的页添加到向导中。</td></tr>
-</table>单击右箭头。
+	</table>单击右箭头。
 
 7. 在“脚本操作”页上，选中右下角的复选标记。请勿单击“添加脚本操作”按钮，因为本教程不需要自定义群集安装程序。
 
 	![配置脚本操作以自定义 HDInsight HBase 群集][img-provision-cluster-page5]
 
-	> [AZURE.NOTE]此页可用于在安装过程中自定义群集。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster)。
+	> [AZURE.NOTE]此页可用于在安装过程中自定义群集。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)。
 
-要开始处理新 HBase 群集，可以按照[开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-get-started)中的步骤操作。
+要开始处理新 HBase 群集，可以按照[开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)中的步骤操作。
 
 ##通过使用 HBase Java RPC API 连接到虚拟网络中设置的 HBase 群集
 
-1.	将基础结构即服务 (IaaS) 虚拟机设置到相同的 Azure 虚拟网络和子网中。因此，虚拟机和 HBase 群集使用相同的内部 DNS 服务器来解析主机名。为此，你必须选择“从库中”选项，然后选择虚拟网络而不是数据中心。有关说明，请参阅[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial)。具有小型虚拟机的标准 Windows Server 2012 映像已足够。
+1.	将基础结构即服务 (IaaS) 虚拟机设置到相同的 Azure 虚拟网络和子网中。因此，虚拟机和 HBase 群集使用相同的内部 DNS 服务器来解析主机名。为此，你必须选择“从库中”选项，然后选择虚拟网络而不是数据中心。有关说明，请参阅[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。具有小型虚拟机的标准 Windows Server 2012 映像已足够。
 
 2.	使用 Java 应用程序远程连接到 HBase 时，必须使用完全限定域名 (FQDN)。若要确定这一点，你必须获取 HBase 群集的连接特定的 DNS 后缀。为此，请使用 Curl 查询 Ambari，或使用远程桌面来连接到群集。
 
@@ -302,8 +298,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 		这将返回 DNS 后缀。例如 **yourclustername.b4.internal.chinacloudapp.cn**。
 
 	> [AZURE.NOTE]你还可以使用远程桌面来连接到 HBase 群集（你将连接到头节点），并从命令提示符运行 **ipconfig** 来获取 DNS 后缀。有关启用远程桌面协议 (RDP) 并使用 RDP 连接到群集的说明，请参阅[使用 Azure 门户在 HDInsight 中管理 Hadoop 群集][hdinsight-admin-portal]。
-	>
-	> ![hdinsight.hbase.dns.surffix][img-dns-surffix]
+	> <p>![hdinsight.hbase.dns.surffix][img-dns-surffix]
 
 
 <!--
@@ -332,7 +327,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 > [AZURE.NOTE]有关 Azure 虚拟网络中的名称解析的详细信息，包括如何使用自己的 DNS 服务器，请参阅[名称解析 (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances)。
 
-##通过使用 Azure PowerShell 设置 HBase 群集
+##<a name="powershell"></a>通过使用 Azure PowerShell 设置 HBase 群集
 
 **通过使用 Azure PowerShell 设置 HBase 群集**
 
@@ -375,20 +370,20 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 在本教程中，你已学习了如何设置 HBase 群集。若要了解更多信息，请参阅以下文章：
 
-- [开始使用 HDInsight](/documentation/articles/hdinsight-get-started)
+- [开始使用 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 - [在 HDInsight 中配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication)
-- [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)
-- [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-get-started)
+- [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)
+- [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
 - [虚拟网络概述][vnet-overview]
 
 
-[1]: http://azure.microsoft.com/services/networking/
+[1]:/home/features/networking/
 [2]: http://technet.microsoft.com/zh-cn/library/ee176961.aspx
 [3]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
-[hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
-[vnet-overview]: http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx
-[vm-create]: /documentation/articles/virtual-machines-windows-tutorial
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
+[vnet-overview]: /documentation/services/networking
+[vm-create]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 [azure-portal]: https://manage.windowsazure.cn
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
@@ -405,20 +400,20 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
 
-[powershell-install]: /documentation/articles/install-configure-powershell
-[hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[powershell-install]: /documentation/articles/powershell-install-configure
+[hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-storage-powershell]: /documentation/articles/hdinsight-use-blob-storage#powershell
+[hdinsight-storage-powershell]: /documentation/articles/hdinsight-hadoop-use-blob-storage#powershell
 [hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 [hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
-[img-dns-surffix]: ./media/hdinsight-hbase-provision-vnet/DNSSuffix.png
-[img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet/PrimaryDNSSuffix.png
-[img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png "预配新 HBase 群集的详细信息"
-[img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet/hbasewizard5.png "使用脚本操作来自定义 HBase 群集"
+[img-dns-surffix]: ./media/hdinsight-hbase-provision-vnet-v1/DNSSuffix.png
+[img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet-v1/PrimaryDNSSuffix.png
+[img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet-v1/hbasewizard1.png "预配新 HBase 群集的详细信息"
+[img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet-v1/hbasewizard5.png "使用脚本操作来自定义 HBase 群集"
 
 <!---HONumber=71-->

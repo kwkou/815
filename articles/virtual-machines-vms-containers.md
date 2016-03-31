@@ -1,45 +1,46 @@
 <properties 
-	pageTitle="虚拟机和容器 | Windows Azure" 
+	pageTitle="虚拟机和容器 | Azure" 
 	description="介绍虚拟机、Docker 和 Linux 容器及其在 Azure 中各自组的使用情况，包括各自的好处以及每种方法的适用情况。" 
 	services="virtual-machines" 
 	documentationCenter="virtual-machines" 
 	authors="squillace" 
 	manager="timlt"
-	tags="azure-resource-manager,azure-service-management" 
-/>
+	tags="azure-resource-manager,azure-service-management"/>
 	
 
 <tags 
 	ms.service="virtual-machines" 
-	ms.date="07/02/2015" 
-	wacn.date="11/02/2015" />
+	ms.date="12/14/2015" 
+	wacn.date="01/14/2016" />
 
 <!--The next line, with one pound sign at the beginning, is the page title-->
 # Azure 中的虚拟机和容器
 
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+ 
+
 Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物理计算机硬件的模拟），可实现软件部署的灵活移动，以及相比于物理硬件大大优化的资源整合。在过去几年内，Linux 容器技术已显著拓展出了许多可用于开发和管理分布式软件的方式，这在很大程度上要归功于访问容器的 [Docker](https://www.docker.com) 方法以及 docker 生态系统。容器中的应用程序代码独立于主机 Azure VM 以及同一 VM 上的其他容器，这样除了 Azure VM 已经提供的灵活性之外，你还能在应用程序级别获得更大的开发和部署灵活性。
 
-**但是，这个新闻已经过时了。** *最新*的新闻是 Azure 可带来更多的 Docker 好处：
+**但是，这个新闻已经过时了。** *最新* 的新闻是 Azure 可带来更多的 Docker 好处：
 
-- 提供[许多](/documentation/articles/virtual-machines-docker-with-xplat-cli)<!--[-->不同的<!--](/documentation/articles/virtual-machines-docker-with-portal)--><!--[-->方式<!--](/documentation/articles/virtual-machines-docker-ubuntu-quickstart)-->，可根据具体需求为容器[创建 Docker 主机](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu)
-- [Azure 资源管理器](/documentation/articles/resource-group-overview)和[资源组模板](/documentation/articles/resource-group-authoring-templates)可简化复杂的分布式应用程序的部署和更新
+- 可通过 Azure CLI [创建 Docker 主机](/documentation/articles/virtual-machines-docker-with-xplat-cli)。
 - 可与许多专有和开放源配置管理工具集成
 
-而且由于可通过编程方式在 Azure 上创建 VM 和 Linux 容器，所以你还可以使用 VM 和容器*协调*工具来创建多组虚拟机 (VM)，并在 Linux 容器和很快即将支持的 [Windows Server 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)中部署应用程序。
+而且由于可通过编程方式在 Azure 上创建 VM 和 Linux 容器，因此还可以使用 VM 和容器*协调*工具来创建多组虚拟机 (VM)，并在 Linux 容器和很快即将支持的 [Windows 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)中部署应用程序。
 
-本文不仅从较高水平讨论了这些概念，还包含了很多链接，可帮助你了解与 Azure 上的容器和群集使用相关的详细信息、教程和产品。如果你已了解全部内容，而只是需要这些链接，则可[直接在此处](#tools-for-working-with-containers)复制。
+本文不仅从较高水平讨论了这些概念，还包含了很多链接，可帮助你了解与 Azure 上的容器和群集使用相关的详细信息、教程和产品。如果你已了解全部内容，而只是需要这些链接，这些链接就在[使用容器的工具](#tools-for-working-with-containers)中。
 
 ## 虚拟机与容器之间的区别
 
-虚拟机是在[虚拟机监控程序](http://zh.wikipedia.org/wiki/Hypervisor)提供的单独硬件虚拟化环境中运行。在 Azure 中，[虚拟机](http://www.windowsazure.cn/home/features/virtual-machines/)服务可为你处理所有事务：你只需选择操作系统并将其配置为按你所需方式运行（或上载你自己的自定义 VM 映像），由此创建虚拟机即可。虚拟机是经过时间考验、“久经沙场”的技术，可使用许多工具来管理操作系统并配置你所安装和运行的应用程序。虚拟机中运行的所有内容对主机操作系统隐藏，而且从虚拟机内运行的应用程序或用户的角度来看，虚拟机似乎是一个自治物理计算机。
+虚拟机是在[虚拟机监控程序](http://zh.wikipedia.org/wiki/Hypervisor)提供的单独硬件虚拟化环境中运行。在 Azure 中，[虚拟机](/home/features/virtual-machines/)服务可为你处理所有事务：你只需选择操作系统并将其配置为按你所需方式运行（或上载你自己的自定义 VM 映像），由此创建虚拟机即可。虚拟机是经过时间考验、“久经沙场”的技术，可使用许多工具来管理操作系统并配置你所安装和运行的应用程序。虚拟机中运行的所有内容对主机操作系统隐藏，而且从虚拟机内运行的应用程序或用户的角度来看，虚拟机似乎是一个自治物理计算机。
 
-[Linux 容器](http://zh.wikipedia.org/wiki/LXC)中包括使用 docker 工具创建和托管的对象以及其他方法，不需要或不使用虚拟机监控程序来提供隔离。相反，容器主机会利用 Linux 内核的流程和文件系统隔离功能，仅向容器（及其应用程序）显示特定的内核功能和其自己的隔离文件系统（最低程度上）。从容器内运行的应用程序的角度来看，该容器似乎是一个独特的操作系统实例。包含在容器内的应用程序无法查看该容器以外的流程或其他任何资源。
+[Linux 容器](http://en.wikipedia.org/wiki/LXC)中包括使用 docker 工具创建和托管的对象以及其他方法，不需要或不使用虚拟机监控程序来提供隔离。相反，容器主机会利用 Linux 内核的流程和文件系统隔离功能，仅向容器（及其应用程序）显示特定的内核功能和其自己的隔离文件系统（最低程度上）。从容器内运行的应用程序的角度来看，该容器似乎是一个独特的操作系统实例。包含在容器内的应用程序无法查看该容器以外的流程或其他任何资源。
 
 因为在该隔离和执行模型中，Docker 主机计算机的内核是共享的，而且由于容器的磁盘要求现在不包括整个操作系统，所以容器的启动时间和所需的磁盘存储开销都非常非常少。
 
 这一点很厉害。
 
-对于在 Windows 上运行的应用程序，[Windows Server 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)可提供与 Linux 容器相同的好处。Windows Server 容器支持 docker 映像格式和 docker API。因此，使用 Windows Server 容器的应用程序都可使用与 Mac 和 Linux 上相似的命令进行开发、发布、检索和部署。这是除了 [Microsoft Visual Studio 中的新 docker 支持](https://visualstudiogallery.msdn.microsoft.com/6f638067-027d-4817-bcc7-aa94163338f0)以外的另一好处。更大的[容器生态系统](https://msdn.microsoft.com/virtualization/windowscontainers/about/container_ecosystem)将使每个人都有合适的工具可对容器执行所需的操作。
+但是，对于在 Windows 上运行的应用程序，Windows 容器可提供与 Linux 容器相同的好处。Windows 容器支持 Docker 映像格式和 Docker API，但还可以使用 PowerShell 进行管理。两种容器运行时随 Windows 容器、Windows Server 容器和 Hyper-V 容器提供。Hyper-V 容器通过在超级优化虚拟机中托管每个容器提供了附加隔离层。若要了解有关 Windows 容器的详细信息，请参阅[关于 Windows 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)。若要在 Azure 中试用 Windows 容器，请参阅 [Windows 容器 Azure 快速入门](https://msdn.microsoft.com/virtualization/windowscontainers/quick_start/azure_setup)。
 
 这一点也很厉害。
 
@@ -55,7 +56,7 @@ Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物�
 
 ## 容器适合于哪些方面？
 
-它们适用于许多情况，但鼓励（正如执行 [Azure 云服务](http://www.windowsazure.cn/home/features/cloud-services/)<!--和 [Azure Service Fabric](/documentation/articles/service-fabric-overview)-->）创建单一服务、以[微服务]为导向的分布式应用程序，其中的应用程序设计是基于更多小规模的组合部件，而非基于更大规模、耦合更强的组件。
+它们适用于许多情况，但鼓励（正如执行 [Azure 云服务](/home/features/cloud-services/)）创建单一服务、以[微服务]为导向的分布式应用程序，其中的应用程序设计是基于更多小规模的组合部件，而非基于更大规模、耦合更强的组件。
 
 在公有云环境（例如 Azure）中尤其如此，你可随时随地租用 VM。你不仅能获得独立且快速的部署和协调工具，还能做出更高效的应用程序基础结构决策。
 
@@ -67,7 +68,7 @@ Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物�
 
 ### 容器为开发人员带来的好处
 
-一般而言，很容易能看出容器技术代表了技术的进步，但还有其他更具体的优点好处。我们以 Docker 容器为例展开讨论。本主题不会立即深入探究 Docker（有关这部分内容，请参阅[什么是 Docker？](https://www.docker.com/whatisdocker/)，或查阅[wikipedia](http://zh.wikipedia.org/wiki/Docker_%28software%29)），但 Docker 及其生态系统可为开发人员和 IT 专业人士带来巨大好处。
+一般而言，很容易能看出容器技术代表了技术的进步，但还有其他更具体的优点好处。我们以 Docker 容器为例展开讨论。本主题不会立即深入探究 Docker（有关这部分内容，请参阅[什么是 Docker？](https://www.docker.com/whatisdocker/)，或查阅[wikipedia](http://wikipedia.org/wiki/Docker_%28software%29)），但 Docker 及其生态系统可为开发人员和 IT 专业人士带来巨大好处。
 
 开发人员很快就会开始喜欢 Docker 容器，因为首先它有助于轻松使用 Linux 容器：
 
@@ -115,16 +116,7 @@ IT 和运营专家还可以从容器与虚拟机的组合中获益。
 
 你说得对，的确可以这样，而且有任意数量的系统，你可能已经使用了其中的许多系统，可管理 Azure VM 组和使用脚本（通常使用 [CustomScriptingExtension for Windows](https://msdn.microsoft.com/zh-cn/library/azure/dn781373.aspx) 或 [CustomScriptingExtension for Linux](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/)）注入自定义代码。你可以（可能已经）使用 PowerShell 或者[像这样](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli)的 Azure CLI 实现 Azure 自动部署。
 
-随后，这些功能通常迁移到 [Puppet](https://puppetlabs.com/) 和 [Chef](https://www.chef.io/) 等工具，以实现大规模的自动创建和配置 VM。（[此处](#tools-for-working-with-containers)有链接指向借助 Azure 使用这些工具的说明。）
-
-### Azure 资源组模板
-
-最近，Azure 发布了 [Azure 资源管理](/documentation/articles/virtual-machines-azurerm-versus-azuresm) REST API，并更新了 PowerShell 和 Azure CLI 工具，以便轻松使用。你可以使用包含 Azure 资源管理 API 的 [Azure 资源管理器模板](https://msdn.microsoft.com/zh-cn/library/azure/dn835138.aspx)部署、修改或重新部署整个应用程序拓扑，使用：
-
-- [使用模板的 Azure 预览门户](https://github.com/Azure/azure-quickstart-templates) - 提示，使用“DeployToAzure”按钮
-- [Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
-- [Azure PowerShell 模块](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
-
+随后，这些功能通常迁移到 [Puppet](https://puppetlabs.com/) 和 [Chef](https://www.chef.io/) 等工具，以实现大规模的自动创建和配置 VM。（此处有一些链接指向[在 Azure 中使用这些工具](#tools-for-working-with-containers)的说明。）
 
 ### 部署和管理整个组的 Azure VM 和容器
 
@@ -136,7 +128,7 @@ Docker 有自己的 VM 创建工具集 ([docker-machine](/documentation/articles
 
 另外，[kubernetes](http://azure.microsoft.com/blog/2014/08/28/hackathon-with-kubernetes-on-azure) 是一种用于 VM 和容器组管理的开放源系统，借鉴了从 Google 学习的经验。你甚至可以将 [kubernetes 与 weave 配合使用，以提供网络支持](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/coreos/azure/README.md#kubernetes-on-azure-with-coreos-and-weave)。
 
-[Deis](http://deis.io/overview/) 是一种开放源“平台即服务”(PaaS)，可帮助在你自己的服务器上轻松部署和管理应用程序。Deis 构建在 Docker 和 CoreOS 的基础之上，可提供轻型 PaaS，其中包含一个受 Heroku 启发的工作流。你可以轻松[创建一个包含 3 个节点的 Azure VM 组并将 Deis 安装](/documentation/articles/virtual-machines-deis-cluster)到 Azure 上，然后[安装 Hello World Go 应用程序](virtual-machines-deis-cluster.md#deploy-and-scale-a-hello-world-application)。
+[Deis](http://deis.io/overview/) 是一种开放源“平台即服务”(PaaS)，可帮助在你自己的服务器上轻松部署和管理应用程序。Deis 构建在 Docker 和 CoreOS 的基础之上，可提供轻型 PaaS，其中包含一个受 Heroku 启发的工作流。
 
 [CoreOS](/documentation/articles/virtual-machines-linux-coreos-how-to) 是一种 Linux 分发，可提供优化的占用空间和 Docker 支持，且具有名为 [rkt](https://github.com/coreos/rkt) 的自有容器系统，还有一个名为 [fleet](/documentation/articles/virtual-machines-linux-coreos-fleet-get-started) 的容器组管理工具。
 
@@ -158,9 +150,9 @@ Ubuntu 是另一个非常受欢迎的 Linux 分发，可以非常好地支持 Do
 - [开放容器项目](http://opencontainers.org/)
 - [RancherOS](http://rancher.com/rancher-os/)
 
-Windows Server 容器链接：
+Windows 容器链接：
 
-- [Windows Server 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)
+- [Windows 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)
 
 Visual Studio Docker 链接：
 
@@ -174,7 +166,7 @@ Docker 工具：
 	- [Docker 安装说明](https://docs.docker.com/installation/#installation)
 
 
-Windows Azure 上的 Docker：
+Azure 上的 Docker：
 
 - [适用于 Azure 上 的 Linux 的 Docker VM 扩展](/documentation/articles/virtual-machines-docker-vm-extension)
 - [Azure Docker VM 扩展用户指南](https://github.com/Azure/azure-docker-extension/blob/master/README.md)
@@ -182,7 +174,6 @@ Windows Azure 上的 Docker：
 - [如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-docker-machine)
 - [如何在 Azure 上将 docker 与 swarm 一起使用](/documentation/articles/virtual-machines-docker-swarm)
 - [在 Azure 上使用 Docker 和 Compose 入门](/documentation/articles/virtual-machines-docker-compose-quickstart)
-- [使用 Azure 资源组模板在 Azure 上快速创建 Docker 主机](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu)
 - [对包含在容器内的应用程序的 `compose`](https://github.com/Azure/azure-docker-extension#11-public-configuration-keys) 提供内置支持
 - [在 Azure 上实施 Docker 专有注册表](/documentation/articles/virtual-machines-docker-registry-on-azure-blob-storage)
 
@@ -194,9 +185,6 @@ Linux 分发和 Azure 示例：
 
 - [CoreOS 上的 Fleet](/documentation/articles/virtual-machines-linux-coreos-fleet-get-started)
 
--	Deis
-	- [创建一个包含 3 个节点的 Azure VM 组、安装 Deis，并启动 Hello World Go 应用程序](/documentation/articles/virtual-machines-deis-cluster)
-	
 -	Kubernetes
 	- [使用 CoreOS 和 Weave 实现 Kubernetes 群集部署自动化的完整指南](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/coreos/azure/README.md#kubernetes-on-azure-with-coreos-and-weave)
 	- [Kubernetes 可视化工具](http://azure.microsoft.com/blog/2014/08/28/hackathon-with-kubernetes-on-azure)
@@ -214,7 +202,7 @@ Linux 分发和 Azure 示例：
 	- [Chef 和虚拟机](/documentation/articles/virtual-machines-windows-install-chef-client)
 	- [视频：Chef 是什么及其工作原理](https://msopentech.com/blog/2014/03/31/using-chef-to-manage-azure-resources/)
 
--	[Azure Automation](http://www.windowsazure.cn/home/features/automation/)
+-	[Azure 自动化](/home/features/automation/)
 	
 	
 -	Powershell DSC for Linux
@@ -223,11 +211,11 @@ Linux 分发和 Azure 示例：
 
 ## 后续步骤
 
-了解 [Docker](https://www.docker.com) 和 [Windows Server 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)。
+了解 [Docker](https://www.docker.com) 和 [Windows 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)。
 
 <!--Anchors-->
 [microservices]: http://martinfowler.com/articles/microservices.html
 [微服务]: http://martinfowler.com/articles/microservices.html
 <!--Image references-->
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0104_2016-->

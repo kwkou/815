@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Windows Azure中支持的虚拟机镜像"
-	description="了解Windows Azure虚拟机能支持的系统镜像"
+	pageTitle="Azure中支持的虚拟机镜像"
+	description="了解Azure虚拟机能支持的系统镜像"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="Jack Zeng"
@@ -12,7 +12,7 @@
 	ms.date="09/10/2015"
 	wacn.date="09/10/2015"/>
 
-# Windows Azure中支持的虚拟机镜像
+# Azure中支持的虚拟机镜像
 
 <table border='1'>
 <tr>

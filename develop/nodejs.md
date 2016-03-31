@@ -1,5 +1,5 @@
 <properties 
-pageTitle="Windows Azure 开发人员中心：NODEJS" 
+pageTitle="Azure 开发人员中心：NODEJS" 
 description="" 
 services="NODEJS" 
 documentationCenter="Develop" 
@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="NODEJS"
     ms.date=""
-    wacn.date="11/02/2015"
+    wacn.date="01/21/2016"
     />
 
 #创建您的第一个 Node.js 应用程序
@@ -20,7 +20,7 @@ editor="Eric Chen" />
 
 ###计算
 
-- [部署网站](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
+- [部署 Web 应用](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
 - [使用 Socket.IO 生成聊天应用程序](/documentation/articles/web-sites-nodejs-chat-app-socketio)
 - [使用 CLI 进行部署](/documentation/articles/xplat-cli)
 - [使用 WebMatrix 进行部署](/documentation/articles/web-sites-nodejs-use-webmatrix)
@@ -58,6 +58,6 @@ editor="Eric Chen" />
 - [服务总线主题](/documentation/articles/service-bus-nodejs-how-to-use-topics-subscriptions) / [API](http://dl.windowsazure.com/nodedocs/ServiceBusService.html) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh780717)
 - [表服务](/documentation/articles/storage-nodejs-how-to-use-table-storage) / [API](http://go.microsoft.com/fwlink/?linkid=401538&clcid=0x804) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - [命令行工具](/documentation/articles/xplat-cli)
-- [PowerShell Cmdlet](/documentation/articles/install-configure-powershell)
+- [PowerShell Cmdlet](/documentation/articles/powershell-install-configure)
 
 

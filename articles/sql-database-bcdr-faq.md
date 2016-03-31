@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="07/14/2015"
-   wacn.date="09/15/2015"/>
+   ms.date="02/09/2016"
+   wacn.date="02/19/2016"/>
 
 # 业务连续性常见问题
 
@@ -44,7 +44,7 @@
 
 ## 7\.如何批量还原服务器中的数据库？
 
-没有任何内置功能用于执行批量还原。你可以使用 [Azure SQL 数据库：完全服务器恢复](https://gallery.technet.microsoft.com/Azure-SQL-Database-Full-82941666)脚本来完成此任务。
+没有任何内置功能用于执行批量还原。[Azure SQL 数据库：完全恢复服务器](https://gallery.technet.microsoft.com/Azure-SQL-Database-Full-82941666)脚本是完成此任务的一种方法示例。
 
 ## 8\.标准异地复制与活动异地复制之间有什么差别？
 
@@ -54,6 +54,6 @@
 
 ## 9\.使用标准异地复制或活动异地复制时有多长的复制延迟？
 
-异地复制使用连续复制。因此，可以使用 [sys.dm\_continuous\_copy\_status](https://msdn.microsoft.com/zh-cn/library/azure/dn741329.aspx) 动态管理视图 (DMV) 来获取上次复制时间和其他信息。
+使用 [sys.dm\_geo\_replication\_link\_status](https://msdnstage.redmond.corp.microsoft.com/library/mt575504.aspx) 动态管理视图 (DMV) 可以获取上次复制时间、上次复制延迟和有关复制链接的其他信息。
 
-<!--HONumber=55-->
+<!---HONumber=Mooncake_1207_2015-->

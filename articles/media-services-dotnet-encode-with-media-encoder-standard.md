@@ -9,19 +9,36 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="02/03/2016"  
+	wacn.date="03/17/2016"/>
 
 
 #如何使用媒体编码器标准版对资产进行编码
 
-编码作业是 Media Services 中最常见的处理操作之一。可通过创建编码作业将媒体文件从一种编码转换为另一种编码。进行编码时，可以使用 Media Services 内置的 Media Encoder。你也可以使用 Media Services 合作伙伴提供的编码器；可通过 Azure 应用商店获取第三方编码器。
+编码作业是媒体服务中最常见的处理操作之一。可通过创建编码作业将媒体文件从一种编码转换为另一种编码。进行编码时，可以使用媒体服务内置的 Media Encoder。你也可以使用媒体服务合作伙伴提供的编码器；可通过 Azure 应用商店获取第三方编码器。
 
-本主题介绍如何使用 .NET 通过媒体编码器标准版对资产进行编码。媒体编码器标准版使用[此处](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)所述的编码器预设之一进行配置。
+本主题介绍如何使用 .NET 通过媒体编码器标准 (MES) 对资产进行编码。媒体编码器标准使用[此处](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)所述的编码器预设之一进行配置。
 
 建议始终将夹层文件编码为自适应比特率 MP4 集，然后使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)将该集转换为所需的格式。若要利用动态打包，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
 
 如果你的输出资产已经过存储加密，则必须配置资产传送策略。有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy)。
+
+>[AZURE.NOTE]MES 将生成一个输出文件，其名称包含输入文件名的前 32 个字符。该名称基于预设文件中指定的内容。例如，"FileName": "{Basename}\_{Index}{Extension}"。{Basename} 将替换为输入文件名的前 32 个字符。
+
+###MES 格式
+
+[格式和编解码器](/documentation/articles/media-services-media-encoder-standard-formats)
+
+###MES 预设
+
+媒体编码器标准使用[此处](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)所述的编码器预设之一进行配置。
+
+###MES 输入和输出元数据
+
+[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783120.aspx)说明了编码器输入元数据。
+
+[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx)说明了编码器输出元数据。
+
 
 ##示例
 
@@ -29,7 +46,7 @@
 
 - 创建编码作业。
 - 获取对媒体编码器标准版编码器的引用。
-- 指定使用“H264 多比特率 720p”预设。你可以在[此处](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)看到所有预设。你也可以在[此处](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)查看相关主题，了解这些预设必须遵循的架构。
+- 指定使用“H264 多比特率 720p”预设。你可以在[此处](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)看到所有预设。你还可以在[此处](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)查看相关主题，了解这些预设必须遵循的架构。
 - 将一个编码任务添加到该作业。 
 - 指定要编码的输入资产。
 - 创建将包含所编码资产的输出资产。
@@ -110,8 +127,11 @@
 		}
 
 
+
+
 ##另请参阅 
 
+[如何使用媒体编码器标准通过 .NET 来生成缩略图](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes)
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0307_2016-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="事件中心入门"
+	pageTitle="通过 C 和 Apache Storm 使用事件中心入门 | Azure"
 	description="遵循本教程开始使用 Azure 事件中心，以通过 C 发送事件，并在 Apache Storm 群集中接收这些事件。"
 	services="event-hubs"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.date="07/21/2015"
-	wacn.date="08/14/2015"/>
+	ms.date="09/01/2015"
+	wacn.date="01/14/2016"/>
 
 # 事件中心入门
 
@@ -26,11 +26,11 @@
 
 为了完成本教程，你将需要以下内容：
 
-+ C 语言开发环境。对于本教程，我们假设 gcc 堆栈位于使用 Ubuntu 14.04 的 [Azure Linux VM](/documentation/articles/virtual-machines-linux-tutorial) 上。有关其他环境的说明，将在外部链接中提供。
++ C 语言开发环境。对于本教程，我们假设 gcc 堆栈位于使用 Ubuntu 14.04 的 [Azure Linux VM](/documentation/articles/virtual-machines-linux-tutorial-portal-rm) 上。有关其他环境的说明，将在外部链接中提供。
 
 + 一个 Java 开发环境，配置为运行 [Maven](http://maven.apache.org/)。对于本教程，我们将采用 [Eclipse](https://www.eclipse.org/)。
 
-+ 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/)。
++ 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/zh-cn/pricing/1rmb-trial/)。
 
 ## 创建事件中心
 
@@ -100,8 +100,11 @@
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [Event Processor Host]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [事件中心概述]: /documentation/articles/event-hubs-overview
+
 [Apache Storm]: https://storm.incubator.apache.org
 [HDInsight Storm 概述]: /documentation/articles/hdinsight-storm-overview
 [用 Storm 和 HDInsight 分析传感器数据]: /documentation/articles/hdinsight-storm-sensor-data-analysis
 [使用 SCP.NET 和 C# 在 Storm 和 HDInsight 上开发流式数据处理应用程序]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology
-<!---HONumber=66-->
+ 
+
+<!---HONumber=Mooncake_1207_2015-->

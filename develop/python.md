@@ -1,5 +1,5 @@
 <properties 
-pageTitle="Windows Azure 开发人员中心：PYTHON" 
+pageTitle="Azure 开发人员中心：PYTHON" 
 description="" 
 services="PYTHON" 
 documentationCenter="Develop" 
@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="PYTHON"
     ms.date=""
-    wacn.date="11/02/2015"
+    wacn.date="01/21/2016"
     />
 
 #PYTHON开发人员中心
@@ -23,7 +23,7 @@ editor="Eric Chen" />
 ###计算
 
 - [配置 Python](/documentation/articles/web-sites-python-configure)
-- [创建 Django 网站](/documentation/articles/web-sites-python-create-deploy-django-app)
+- [创建 Django Web 应用](/documentation/articles/web-sites-python-create-deploy-django-app)
 - [从 Visual Studio 部署](/documentation/articles/web-sites-python-ptvs-django-mysql)
 - [承载 IPython Notebook](/documentation/articles/virtual-machines-python-ipython-notebook)
 - [自定义域名](/documentation/articles/web-sites-custom-domain-name)
@@ -52,7 +52,7 @@ editor="Eric Chen" />
 - [服务管理](/documentation/articles/cloud-services-python-how-to-use-service-management) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/ee460799)
 - [表服务](/documentation/articles/storage-python-how-to-use-table-storage) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - [命令行工具](/documentation/articles/xplat-cli)
-- [PowerShell](/documentation/articles/install-configure-powershell) 
+- [PowerShell](/documentation/articles/powershell-install-configure) 
 
 ##更多资源
 

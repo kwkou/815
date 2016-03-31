@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Windows VM 上的自定义脚本扩展 | Windows Azure"
+   pageTitle="Windows VM 上的自定义脚本扩展 | Azure"
    description="通过使用自定义脚本扩展在远程 Windows VM 上运行 PowerShell 脚本自动执行 Azure VM 配置任务"
    services="virtual-machines"
    documentationCenter=""
@@ -19,7 +19,7 @@
 
 虚拟机 (VM) 扩展由 Microsoft 和受信任的第三方发布者构建，用于扩展 VM 的功能。有关 VM 扩展的概述，请参阅 [Azure VM 扩展和功能](/documentation/articles/virtual-machines-extensions-features)。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。你还可以使用[资源管理器部署模型](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template)创建资源。
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 ## 自定义脚本扩展概述
@@ -28,7 +28,7 @@
 
 ### 运行自定义脚本扩展的先决条件
 
-1. 从<a href="http://www.windowsazure.cn/downloads" target="_blank">此处</a>安装 Azure PowerShell Cmdlet 版本 0.8.0 或更高版本。
+1. 从<a href="/downloads" target="_blank">此处</a>安装 Azure PowerShell Cmdlet 版本 0.8.0 或更高版本。
 2. 如果脚本将在现有 VM 上运行，请确保已在该 VM 上启用了 VM 代理，如果没有启用，请按照<a href="https://msdn.microsoft.com/zh-cn/library/azure/dn832621.aspx" target="_blank">此文</a>来安装一个。
 3. 将你要在 VM 上运行的脚本上载到 Azure 存储。脚本可以来自单个容器或多个存储容器。
 4. 脚本应当以下述方式编写：使用扩展启动入口脚本，然后入口脚本再启动其他脚本。

@@ -3,21 +3,17 @@
 	description="了解如何从 Python 后端使用 Azure 通知中心。" 
 	services="notification-hubs" 
 	documentationCenter="" 
-	authors="ysxu" 
+	authors="wesmc7777"
 	manager="dwrede" 
 	editor=""/>
 
 <tags
       ms.service="notification-hubs" 
-      ms.date="07/17/2015" 
-      wacn.date="11/02/2015" />
+      ms.date="11/01/2015" 
+      wacn.date="01/14/2016" />
 
 # 如何通过 Python 使用通知中心
-> [AZURE.SELECTOR] 
-- [Java](/documentation/articles/notification-hubs-java-backend-how-to)
-- [PHP](/documentation/articles/notification-hubs-php-backend-how-to)
-- [Python](/documentation/articles/notification-hubs-python-backend-how-to)
-- [Node.js](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)
+[AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
 		
 如 MSDN 主题[通知中心 REST API](http://msdn.microsoft.com/library/dn223264.aspx) 中所述，你可以使用通知中心 REST 接口从 Java/PHP/Python/Ruby 后端访问所有通知中心功能。
 
@@ -31,7 +27,7 @@
 * 使用 Python 接口发送通知到通知中心 REST API。 
 * 获取 HTTP REST 请求/响应的转储以进行调试/培训。 
 
-请按照你选定的移动平台[入门教程](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)以 Python 实现后端部分。
+你可以按照你选定的移动平台的[入门教程](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)以 Python 实现后端部分。
 
 > [AZURE.NOTE]该示例仅限于发送通知，并不执行任何注册管理操作。
 
@@ -42,6 +38,7 @@
 
 例如，创建客户端：
 
+	isDebug = True
 	hub = NotificationHub("myConnectionString", "myNotificationHubName", isDebug)
 	
 发送 Windows toast 通知：
@@ -50,9 +47,9 @@
 	hub.send_windows_notification(wns_payload)
 	
 ## 实现
-如果您尚未实现，请按照我们[入门的教程]学至最后一节，其中您必须实现后端。
+如果你尚未实现，请按照我们的[入门教程]学至最后一节，其中你必须实现后端。
 
-有关实现完整 REST 包装器的所有详细信息，请访问 [MSDN](http://msdn.microsoft.com/zh-cn/library/dn530746.aspx)。在本部分中，我们将向您介绍访问通知中心 REST 终结点所需的主要步骤的 Python 实现：
+有关实现完整 REST 包装器的所有详细信息，请访问 [MSDN](http://msdn.microsoft.com/zh-cn/library/dn530746.aspx)。在本部分中，我们将向你介绍访问通知中心 REST 终结点所需的主要步骤的 Python 实现：
 
 1. 解析连接字符串
 2. 生成授权令牌
@@ -138,7 +135,7 @@
 
 请参阅[通知中心 REST API 文档](http://msdn.microsoft.com/zh-cn/library/dn495827.aspx)和具体的通知平台格式以了解所有可用选项。
 
-具备了此类后，我们现在可以在 **NotificationHub** 类中编写发送通知方法了。
+现在有了此类后，我们便可在 **NotificationHub** 类中编写发送通知方法了。
 
     def make_http_request(self, url, payload, headers):
         parsed_url = urllib.parse.urlparse(url)
@@ -204,10 +201,52 @@
 
         self.make_http_request(url, payload_to_send, headers)
 
+	def send_apple_notification(self, payload, tags=""):
+        nh = Notification("apple", payload)
+        self.send_notification(nh, tags)
+
+    def send_gcm_notification(self, payload, tags=""):
+        nh = Notification("gcm", payload)
+        self.send_notification(nh, tags)
+
+    def send_adm_notification(self, payload, tags=""):
+        nh = Notification("adm", payload)
+        self.send_notification(nh, tags)
+
+    def send_baidu_notification(self, payload, tags=""):
+        nh = Notification("baidu", payload)
+        self.send_notification(nh, tags)
+
+    def send_mpns_notification(self, payload, tags=""):
+        nh = Notification("windowsphone", payload)
+
+        if "<wp:Toast>" in payload:
+            nh.headers = {'X-WindowsPhone-Target': 'toast', 'X-NotificationClass': '2'}
+        elif "<wp:Tile>" in payload:
+            nh.headers = {'X-WindowsPhone-Target': 'tile', 'X-NotificationClass': '1'}
+
+        self.send_notification(nh, tags)
+
+    def send_windows_notification(self, payload, tags=""):
+        nh = Notification("windows", payload)
+
+        if "<toast>" in payload:
+            nh.headers = {'X-WNS-Type': 'wns/toast'}
+        elif "<tile>" in payload:
+            nh.headers = {'X-WNS-Type': 'wns/tile'}
+        elif "<badge>" in payload:
+            nh.headers = {'X-WNS-Type': 'wns/badge'}
+
+        self.send_notification(nh, tags)
+
+    def send_template_notification(self, properties, tags=""):
+        nh = Notification("template", properties)
+        self.send_notification(nh, tags)
+
 以上方法将 HTTP POST 请求发送到你通知中心的 /messages 终结点，该请求具有发送通知的正确正文和标头。
 
 ### 使用调试属性启用详细的日志记录
-在初始化通知中心时启用调试属性将写出关于 HTTP 请求和响应转储的详细日志记录信息，以及详细的通知消息发送结果。我们最近添加了名为[Notification Hubs TestSend 属性](http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.notifications.notificationhubclient.enabletestsend.aspx)的属性，其将返回有关通知发送结果的详细信息。若要使用它 - 请使用以下方法进行初始化：
+在初始化通知中心时启用调试属性将写出关于 HTTP 请求和响应转储的详细日志记录信息，以及详细的通知消息发送结果。我们最近添加了这个称为[通知中心 TestSend 属性](http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.notifications.notificationhubclient.enabletestsend.aspx)的属性，它将返回有关通知发送结果的详细信息。若要使用它 - 请使用以下方法进行初始化：
 
 	hub = NotificationHub("myConnectionString", "myNotificationHubName", isDebug)
 
@@ -216,7 +255,7 @@
 ##<a name="complete-tutorial"></a>完成教程
 现在，你可以通过从 Python 后端发送通知来完成该入门教程。
 
-初始化你的通知中心客户端（按[入门的教程]中所述替换连接字符串和中心名称）：
+初始化你的通知中心客户端（按[入门教程]中所述替换连接字符串和中心名称）：
 
 	hub = NotificationHub("myConnectionString", "myNotificationHubName")
 
@@ -331,13 +370,13 @@
 ## 后续步骤
 在本主题中，我们介绍了如何为通知中心创建简单的 Python REST 客户端。从这里你可以：
 
-* 下载完整[Python REST 包装器示例]，其中包含上述所有代码。
+* 下载完整的 [Python REST 包装器示例]，其中包含上述所有代码。
 * 在[突发新闻教程]中继续学习通知中心标记功能
 * 在[本地化新闻教程]中继续学习通知中心模板功能
 
 <!-- URLs -->
 [Python REST 包装器示例]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-python
-[入门的教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
+[入门教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [突发新闻教程]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 [本地化新闻教程]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
 <!-- Images. -->
@@ -347,4 +386,4 @@
 [4]: ./media/notification-hubs-python-backend-how-to/SendWithMultipleTags.png
 [5]: ./media/notification-hubs-python-backend-how-to/TemplatedNotification.png
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_0104_2016-->

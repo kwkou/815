@@ -1,18 +1,15 @@
-<properties 
-	linkid="dev-net-service-bus-amqp-overview" 
-	urlDisplayName="Azure Notification Hubs" 
-	pageTitle="Azure 通知中心" 
-	metaKeywords="Azure push notifications, Azure notification hubs, Azure messaging" 
-	description="了解如何在 Azure 中使用通知中心。代码示例是使用 .NET API 通过 C# 编写的。" 
-	metaCanonical="" 
-	disqusComments="1" 
-	umbracoNaviHide="0" 
-	title="Azure Notification Hubs" 
-	authors="sethm" />
+<properties
+	pageTitle="Azure 通知中心"
+	description="了解如何在 Azure 中使用通知中心。代码示例是使用 .NET API 通过 C# 编写的。"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""
+	services="notification-hubs"
+	documentationCenter=""/>
 <tags 
 	ms.service="notification-hubs" 
-	ms.date="06/16/2015"
-	wacn.date="11/02/12015"/>
+	ms.date="12/10/2015"
+	wacn.date="01/14/2016"/>
 
 
 #Azure 通知中心
@@ -121,6 +118,24 @@ Azure 通知中心提供易用的基础结构，使你能够从任何后端（�
 - **丰富的遥测功能**：可以在门户中或以编程方式使用。
 
 
+##与 App Service Mobile Apps 集成
+
+为了在 Azure 服务之间促成完美且统一的体验， App Service Mobile Apps 原生支持使用通知中心来推送通知。App Service Mobile Apps 提供面向企业开发人员和系统集成商的高度可缩放、全局可用的移动应用程序平台，该平台向移动开发人员提供一组丰富的功能。
+
+Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
+
+1. 检索设备 PNS 句柄
+2. 通过便利的 Mobile Apps Client SDK 注册 API，使用通知中心注册设备和 [模板]
+    + 请注意，出于安全方面的考虑，Mobile Apps 将在注册中去除所有标记。直接从后端使用通知中心将标记与设备相关联。
+3. 从应用后端使用通知中心发送通知
+
+以下是这种集成为开发人员带来的便利性：
+- **Mobile Apps 客户端 SDK**。 这些多平台 SDK 提供简单的 API 用于注册，然后自动与链接到移动应用的通知中心联系。开发人员不需要通过通知中心凭据进行挖掘，以及使用其他服务。
+	+ SDK 使用经 Mobile Apps 验证的用户 ID 自动标记指定的设备，以启用向用户推送通知的方案。
+	+ SDK 自动使用 Mobile Apps 安装 ID 作为 GUID 来向通知中心注册，省去了开发人员维护多个服务 GUID 的麻烦。
+- **安装模型。** Mobile Apps 使用通知中心的最新推送模型来呈现 JSON 安装中所有与设备关联的推送属性，该模型与推送通知密切合作且易于使用。
+- **灵活性。** 即使是就地集成的，开发人员也始终可以选择直接使用通知中心。
+- **[Azure 门户] 中的集成体验。** Mobile Apps 以可视化方式呈现推送功能，开发人员可以通过 Mobile Apps 轻松使用关联的通知中心。
 
 
 
@@ -132,7 +147,7 @@ Azure 通知中心提供易用的基础结构，使你能够从任何后端（�
 
 + **[通知中心教程和指南]**
 
-+ **通知中心入门教程**（[iOS]、[Android]、[Windows Universal]、[Windows Phone]、[Kindle]、[Xamarin.iOS]、[Xamarin.Android]）
++ **通知中心入门教程**（[iOS]、[Windows Universal]、[Windows Phone]、[Kindle]、[Xamarin.iOS]、[Xamarin.Android]）
 
 通知中心的相关 .NET 托管 API 参考位于此处：
 
@@ -142,17 +157,16 @@ Azure 通知中心提供易用的基础结构，使你能够从任何后端（�
 
   [0]: ./media/notification-hubs-overview/SBPushNotifications1.gif
   [1]: ./media/notification-hubs-overview/SBPushNotifications2.gif
-  [客户如何使用通知中心]: /zh-cn/services/notification-hubs
-  [通知中心教程和指南]: /zh-cn/documentation/services/notification-hubs
-  [iOS]: /zh-cn/documentation/articles/notification-hubs-ios-get-started
-  [Android]: /zh-cn/documentation/articles/notification-hubs-android-get-started
-  [Windows Universal]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started
-  [Windows Phone]: /zh-cn/documentation/articles/notification-hubs-windows-phone-get-started
-  [Kindle]: /zh-cn/documentation/articles/notification-hubs-kindle-get-started
-  [Xamarin.iOS]: /zh-cn/documentation/articles/partner-xamarin-notification-hubs-ios-get-started
-  [Xamarin.Android]: /zh-cn/documentation/articles/partner-xamarin-notification-hubs-android-get-started
+  [客户如何使用通知中心]: /services/notification-hubs
+  [通知中心教程和指南]: /documentation/services/notification-hubs
+  [iOS]: /documentation/articles/notification-hubs-ios-get-started
+  [Windows Universal]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
+  [Windows Phone]: /documentation/articles/notification-hubs-windows-phone-get-started
+  [Kindle]: /documentation/articles/notification-hubs-kindle-get-started
+  [Xamarin.iOS]: /documentation/articles/partner-xamarin-notification-hubs-ios-get-started
+  [Xamarin.Android]: /documentation/articles/partner-xamarin-notification-hubs-android-get-started
   [Microsoft.WindowsAzure.Messaging.NotificationHub]: http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.messaging.notificationhub.aspx
   [Microsoft.ServiceBus.Notifications]: http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.notifications.aspx
-  
-
-<!---HONumber=71-->
+  [App Service Mobile Apps]: /documentation/articles/app-service-mobile-value-prop/
+  [Azure 门户]: https://manage.windowsazure.cn
+<!---HONumber=Mooncake_0104_2016-->

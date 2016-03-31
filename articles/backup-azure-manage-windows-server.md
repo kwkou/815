@@ -1,5 +1,5 @@
 <properties
-	pageTitle="管理 Azure 备份保管库和服务器 | Windows Azure"
+	pageTitle="管理 Azure 备份保管库和服务器 | Azure"
 	description="使用本教程来了解如何管理 Azure 备份保管库和服务器。"
 	services="backup"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="backup"
-	ms.date="08/13/2015"
-	wacn.date="09/15/2015"/>
+	ms.date="12/15/2015"
+	wacn.date="01/14/2016"/>
 
 
 # 管理 Azure 备份保管库和服务器
@@ -40,11 +40,14 @@
 
 ![删除的服务器](./media/backup-azure-manage-windows-server/RS_deletedserver.png)
 
-可从该处执行以下任务：- **允许重新注册** - 在为服务器选择该选项时，可使用代理中的**注册向导**再一次将服务器注册到备份保管库。由于证书中存在错误或者如果必须重新构建服务器，你可能需要重新注册。每个服务器名称只能重新注册一次。- **删除** - 从备份保管库中删除服务器。将立即删除与服务器关联的所有已存储数据。
+可从该处执行以下任务：
+
+- **允许重新注册** - 在为服务器选择该选项时，可使用代理中的**注册向导**再一次将服务器注册到备份保管库。由于证书中存在错误或者如果必须重新构建服务器，你可能需要重新注册。
+- **删除** - 从备份保管库中删除服务器。将立即删除与服务器关联的所有已存储数据。
 
 ## 后续步骤
 - [从 Azure 还原 Windows Server 或 Windows 客户端](/documentation/articles/backup-azure-restore-windows-server)
 - 若要了解有关 Azure 备份的详细信息，请参阅 [Azure 备份概述](/documentation/articles/backup-introduction-to-azure-backup)
 - 访问 [Azure 备份论坛](http://go.microsoft.com/fwlink/p/?LinkId=290933)
 
-<!---HONumber=69-->
+<!---HONumber=82-->

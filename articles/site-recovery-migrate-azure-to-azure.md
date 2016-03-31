@@ -10,7 +10,7 @@
 <tags
 	ms.service="site-recovery"
 	ms.date="08/26/2015"
-	wacn.date="10/22/2015"/>
+	wacn.date="12/15/2015"/>
 
 #  在 Azure 区域之间迁移 Azure IaaS 虚拟机
 
@@ -37,7 +37,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 1. [创建保管库](/documentation/articles/site-recovery-vmware-to-azure/#step-1-create-a-vault)
 2. 作为 Azure 虚拟机[部署配置服务器](/documentation/articles/site-recovery-vmware-to-azure#step-2-deploy-a-configuration-server)。
-3. 作为 Azure 虚拟机[部署主目标服务器](/documentation/articles/site-recovery-vmware-to-azure#step-2-deploy-a-configuration-server)。
+3. 作为 Azure 虚拟机[部署主目标服务器](/documentation/articles/site-recovery-vmware-to-azure#step-3-deploy-the-master-target-server)。
 4. [部署进程服务器](/documentation/articles/site-recovery-vmware-to-azure#step-4-deploy-the-on-premises-process-server)。请注意：
 
 	- 你应将进程服务器部署在与你想要迁移的 IaaS 虚拟机相同的虚拟网络/子网中。

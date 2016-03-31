@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="10/15/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/17/2015"/>
 
 
 # 使用 Azure Media Indexer 为媒体文件编制索引
@@ -38,7 +38,7 @@
 
 本主题介绍如何创建索引作业，以便“为资产编制索引”以及“为多个文件编制索引”。
 
-有关最新的 Azure 媒体索引器更新，请参阅[媒体服务博客](http://azure.microsoft.com/blog/topics/media-services/)。
+有关最新的 Azure 媒体索引器更新，请参阅[媒体服务博客](/blog/tags/媒体服务)。
 
 ## 使用配置和清单文件执行索引编制任务
 
@@ -327,7 +327,7 @@ Error：指示是否为此媒体文件成功编制索引。0 表示成功，其�
 媒体文件受损。
 <br/>或<br/>
 输入媒体中没有音频流。</td></tr>
-<tr><td>4000</td><td>分批编制索引部分成功</td><td>一些输入媒体文件无法编制索引。有关详细信息，请参阅<a href="output_files">输出文件</a>。</td></tr>
+<tr><td>4000</td><td>分批编制索引部分成功</td><td>一些输入媒体文件无法编制索引。有关详细信息，请参阅<a href="#output_files">输出文件</a>。</td></tr>
 <tr><td>other</td><td>内部错误</td><td>请联系支持团队。</td></tr>
 </table>
 

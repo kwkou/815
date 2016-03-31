@@ -1,17 +1,29 @@
-<properties pageTitle="优化 Azure Linux VM 上的 MySQL 性能" description="了解如何优化运行 Linux 的 Azure 虚拟机 (VM) 上运行的 MySQL。"  services="virtual-machines" documentationCenter=""  authors="ningk" manager="timlt" editor="tysonn" />
-<tags  
-	ms.service="virtual-machines"
-	ms.date="05/21/2015" 
-	wacn.date="08/29/2015"/>
+<properties
+	pageTitle="优化 Linux VM 上的 MySQL 性能 | Azure"
+	description="了解如何优化运行 Linux 的 Azure 虚拟机 (VM) 上运行的 MySQL。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="NingKuang"
+	manager="timlt"
+	editor=""
+	tags="azure-service-management"/>
 
-#优化 Azure Linux VM 上的 MySQL 性能 
+<tags
+	ms.service="virtual-machines"
+	ms.date="12/15/2015"
+	wacn.date="01/29/2016"/>
+
+#优化 Azure Linux VM 上的 MySQL 性能
 
 影响 Azure 上 MySQL 性能的因素有很多，主要体现在虚拟硬件选择和软件配置两个方面。本文重点介绍如何通过存储、系统和数据库配置优化性能。
 
-##利用 Azure 虚拟机上的 RAID 
-存储是影响云环境中的数据库性能的关键因素。与单个磁盘相比，RAID 可以通过并发访问提供更快的访问速度。有关更多详细信息，请参阅[标准 RAID 级别](http://zh.wikipedia.org/wiki/Standard_RAID_levels)。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
-通过 RAID 可大幅提升 Azure 中的磁盘 I/O 吞吐量和 I/O 响应时间。我们的检验测试表明，随着 RAID 磁盘数量的加倍（从 2 到 4，从 4 到 8，等等），磁盘 I/O 吞吐量平均增加一倍，I/O 响应时间平均缩短一半。有关详细信息，请参阅[附录 A](/documentation/articles/AppendixA)。
+
+##利用 Azure 虚拟机上的 RAID
+存储是影响云环境中的数据库性能的关键因素。与单个磁盘相比，RAID 可以通过并发访问提供更快的访问速度。有关更多详细信息，请参阅[标准 RAID 级别](http://en.wikipedia.org/wiki/Standard_RAID_levels)。
+
+通过 RAID 可大幅提升 Azure 中的磁盘 I/O 吞吐量和 I/O 响应时间。我们的检验测试表明，随着 RAID 磁盘数量的加倍（从 2 到 4，从 4 到 8，等等），磁盘 I/O 吞吐量平均增加一倍，I/O 响应时间平均缩短一半。有关详细信息，请参阅[附录 A](#AppendixA)。
 
 增加 RAID 级别时，除了磁盘 I/O，MySQL 性能也得到改善。有关详细信息，请参阅[附录 B](#AppendixB)。
 
@@ -20,29 +32,30 @@
 请注意，对于不同的虚拟机类型，可添加的磁盘数量是有限制的。[Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)中详细介绍了这些限制。你可以选择设置磁盘较少的 RAID，不过，在本文的 RAID 示例中，你需要附加 4 个数据磁盘。
 
 本文假定你已经创建 Linux 虚拟机，并且安装和配置了 MYSQL。有关入门的详细信息，请参阅“如何在 Azure 上安装 MySQL”。
-  
+
 ###在 Azure 上设置 RAID
-以下步骤显示如何使用 Windows Azure 管理门户在 Azure 上创建 RAID。你也可以使用 Windows PowerShell 脚本设置 RAID。在本示例中，我们将使用 4 个磁盘配置 RAID 0。
+以下步骤显示如何使用 Azure 门户在 Azure 上创建 RAID。你也可以使用 Windows PowerShell 脚本设置 RAID。 
+在本示例中，我们将使用 4 个磁盘配置 RAID 0。
 
 ####步骤 1：向虚拟机添加数据磁盘  
 
-在 Azure 管理门户的“虚拟机”页上，单击要向其添加数据磁盘的虚拟机。在本示例中，该虚拟机为 mysqlnode1。
+在 Azure 门户的“虚拟机”页上，单击要向其添加数据磁盘的虚拟机。在本示例中，该虚拟机为 mysqlnode1。
 
 ![][1]
 
 在该虚拟机的相应页面上，单击“仪表板”。
 
 ![][2]
- 
+
 
 在任务栏中，单击“附加”。
- 
+
 ![][3]
 
 然后单击“附加空磁盘”。
 
 ![][4]
- 
+
 对于数据磁盘，“主机缓存首选项”应设置为“无”。
 
 这将向你的虚拟机添加一个空磁盘。再重复此步骤三次，以便为 RAID 附加 4 个数据磁盘。
@@ -52,10 +65,9 @@
 	sudo grep SCSI /var/log/dmesg
 
 ####步骤 2：创建具有更多磁盘的 RAID
-
 有关详细的 RAID 设置步骤，请参照本文：
 
-<!--[-->/zh-cn/documentation/articles/virtual-machines-linux-configure-RAID/<!--](/documentation/articles/virtual-machines-linux-configure-RAID)-->
+[在 Linux 上配置软件 RAID](/documentation/articles/virtual-machines-linux-configure-raid)
 
 >[AZURE.NOTE]如果使用的是 XFS 文件系统，创建 RAID 后请按照下面的步骤操作。
 
@@ -65,7 +77,7 @@
 
 若要在 Fedora、CentOS 或 RHEL 上安装 XFS，请使用以下命令：
 
-	yum -y install xfsprogs  xfsdump 
+	yum -y install xfsprogs  xfsdump
 
 
 ####步骤 3：设置新的存储路径
@@ -105,11 +117,11 @@ Linux 实现了四种类型的 I/O 计划算法：
 ###步骤 1.查看当前的 I/O 计划程序
 请使用以下命令：
 
-	root@mysqlnode1:~# cat /sys/block/sda/queue/scheduler 
+	root@mysqlnode1:~# cat /sys/block/sda/queue/scheduler
 
 你将看到以下输出，指示当前的计划程序。
 
-	noop [deadline] cfq 
+	noop [deadline] cfq
 
 
 ###步骤 2.更改当前设备 (/dev/sda) 的 I/O 计划算法
@@ -139,7 +151,7 @@ Linux 实现了四种类型的 I/O 计划算法：
 
 ##配置系统文件操作设置
 最佳做法之一是禁用文件系统上的 atime 日志记录功能。Atime 指最后一次文件访问的时间。无论何时访问文件，文件系统都会在日志中记录时间戳。但是，很少使用此信息。如果不需要，可以禁用它，这样将减少总体磁盘访问时间。
- 
+
 若要禁用 atime 日志记录，需修改文件系统配置文件 /etc/ fstab 并添加“noatime”选项。
 
 例如，编辑 vim /etc/fstab 文件，并按下面所示添加 noatime。
@@ -159,7 +171,7 @@ Linux 实现了四种类型的 I/O 计划算法：
 之前的示例：
 
 ![][5]
- 
+
 之后的示例：
 
 ![][6]
@@ -179,7 +191,7 @@ MySQL 是高并发数据库。对于 Linux，默认的并发句柄数量是 1024
 运行以下命令：
 
 	ulimit -SHn 65536
-	ulimit -SHu 65536 
+	ulimit -SHu 65536
 
 ###步骤 3：确保在启动时更新限制
 在 /etc/rc.local 文件中放入以下启动命令，以便其在每次启动时生效。
@@ -187,7 +199,7 @@ MySQL 是高并发数据库。对于 Linux，默认的并发句柄数量是 1024
 	echo “ulimit -SHn 65536” >>/etc/rc.local
 	echo “ulimit -SHu 65536” >>/etc/rc.local
 
-##MySQL 数据库优化 
+##MySQL 数据库优化
 可以在 Azure 上使用与在本地计算机上相同的性能优化策略来配置 MySQL。
 
 主要 I/O 优化规则包括：
@@ -203,10 +215,10 @@ MySQL 是高并发数据库。对于 Linux，默认的并发句柄数量是 1024
 -	**innodb\_log\_file\_size**：这是重做日志大小。重做日志用于确保写入操作快速、可靠并且可在出现故障后恢复。此值设置为 512MB，这将为记录写入操作提供大量空间。
 -	**max\_connections**：应用程序有时候不会正确关闭连接。值越大，服务器就有越多时间回收空闲的连接。最大连接数为 10000，但建议的最大值为 5000。
 -	**Innodb\_file\_per\_table**：此设置允许或禁止 InnoDB 将表存储在单独的文件中。启用该选项将确保可以有效地应用多项高级管理操作。从性能角度来看，它可以提高表空间传输的速度和优化碎片管理性能。因此，此选项的推荐设置是“打开”。</br> 从 MySQL 5.6 开始，默认设置为“打开”。因此，无需执行任何操作。对于早于 5.6 的其他版本，默认设置为“关闭”。必须启用此选项，并在加载数据之前应用此选项，因为只有新创建的表才会受影响。
--	**innodb\_flush\_log\_at\_trx\_commit**：默认值为 1，范围设置为 0\~2。默认值是最适合独立 MySQL DB 的选项。设置 2 支持最大程度的数据完整性，适用于 MySQL 群集中的主节点。设置 0 允许数据丢失，这可能会影响可靠性，但在某些情况下能提供更好的性能，适用于 MySQL 群集中的从属节点。
+-	**innodb\_flush\_log\_at\_trx\_commit**：默认值为 1，范围设置为 0~2。默认值是最适合独立 MySQL DB 的选项。设置 2 支持最大程度的数据完整性，适用于 MySQL 群集中的主节点。设置 0 允许数据丢失，这可能会影响可靠性，但在某些情况下能提供更好的性能，适用于 MySQL 群集中的从属节点。
 -	**Innodb\_log\_buffer\_size**：借助日志缓冲区，即使在事务提交之前未将日志刷新到磁盘，事务也可以运行。但是，如果有大型的二进制对象或文本字段，将很快地耗尽缓存，并触发频繁的磁盘 I/O。如果 Innodb\_log\_waits 状态变量不为 0，最好增加缓冲区大小。
 -	**query\_cache\_size**：最好是从一开始就禁用。将 query\_cache\_size 设置为 0（现在是 MySQL 5.6 中的默认设置）并使用其他方法来提高查询速度。  
-  
+
 有关优化后的性能比较，请参阅[附录 D](#AppendixD)。
 
 
@@ -225,11 +237,11 @@ MySQL 慢查询日志有助于识别 MySQL 的慢查询。在启用 MySQL 慢查
 	service  mysql  restart
 
 ###步骤 3：使用“show”命令检查该设置是否生效
- 
+
 ![][7]
-   
+
 ![][8]
- 
+
 在本示例中，可以看到慢查询功能已启用。然后可以使用 **mysqldumpslow** 工具来确定性能瓶颈和优化性能，比如添加索引。
 
 
@@ -240,35 +252,42 @@ MySQL 慢查询日志有助于识别 MySQL 的慢查询。在启用 MySQL 慢查
 
 以下是在目标实验室环境中生成的示例性能测试数据，它们提供了有关使用不同性能优化方法的性能数据趋势的常规背景信息，但是，不同环境或产品版本下的结果可能会有所不同。
 
-<a name="AppendixA"></a>附录 A：**不同 RAID 级别的磁盘性能 (IOPS)**
+<a name="AppendixA"></a>附录 A：  
+**不同 RAID 级别的磁盘性能 (IOPS)**
 
 
 ![][9]
- 
+
 **测试命令：**
 
 	fio -filename=/path/test -iodepth=64 -ioengine=libaio -direct=1 -rw=randwrite -bs=4k -size=5G -numjobs=64 -runtime=30 -group_reporting -name=test-randwrite
 
 >AZURE。请注意：此测试的工作负荷使用 64 个线程，并尝试达到 RAID 的上限。
 
-<a name="AppendixB"></a>附录 B：**不同 RAID 级别的 MySQL 性能（吞吐量）比较**（XFS 文件系统）
+<a name="AppendixB"></a>附录 B：  
+**不同 RAID 级别的 MySQL 性能（吞吐量）比较**   
+（XFS 文件系统）
 
- 
-![][10] ![][11]
+
+![][10]  
+![][11]
 
 **测试命令：**
 
 	mysqlslap -p0ps.123 --concurrency=2 --iterations=1 --number-int-cols=10 --number-char-cols=10 -a --auto-generate-sql-guid-primary --number-of-queries=10000 --auto-generate-sql-load-type=write –engine=innodb
 
-**不同 RAID 级别的 MySQL 性能 (OLTP) 比较**![][12]
+**不同 RAID 级别的 MySQL 性能 (OLTP) 比较**  
+![][12]
 
 **测试命令：**
 
 	time sysbench --test=oltp --db-driver=mysql --mysql-user=root --mysql-password=0ps.123  --mysql-table-engine=innodb --mysql-host=127.0.0.1 --mysql-port=3306 --mysql-socket=/var/run/mysqld/mysqld.sock --mysql-db=test --oltp-table-size=1000000 prepare
 
-<a name="AppendixC"></a>附录 C：**不同区块大小的磁盘性能 (IOPS) 比较**（XFS 文件系统）
+<a name="AppendixC"></a>附录 C：   
+**不同区块大小的磁盘性能 (IOPS) 比较**  
+（XFS 文件系统）
 
- 
+
 ![][13]
 
 **测试命令：**
@@ -279,9 +298,11 @@ MySQL 慢查询日志有助于识别 MySQL 的慢查询。在启用 MySQL 慢查
 请注意，用于此测试的文件大小分别为 30GB 和 1GB，并且使用的是 RAID 0（4 个磁盘）XFS 文件系统。
 
 
-<a name="AppendixD"></a>附录 D：**优化前和优化后的 MySQL 性能（吞吐量）比较**（XFS 文件系统）
+<a name="AppendixD"></a>附录 D：  
+**优化前和优化后的 MySQL 性能（吞吐量）比较**  
+（XFS 文件系统）
 
-  
+
 ![][14]
 
 **测试命令：**
@@ -333,4 +354,4 @@ MySQL 慢查询日志有助于识别 MySQL 的慢查询。在启用 MySQL 慢查
 [13]: ./media/virtual-machines-linux-optimize-mysql-perf/virtual-machines-linux-optimize-mysql-perf-13.png
 [14]: ./media/virtual-machines-linux-optimize-mysql-perf/virtual-machines-linux-optimize-mysql-perf-14.png
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_0118_2016-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="服务总线 AMQP 概述 | Windows Azure" 
+	pageTitle="服务总线 AMQP 概述 | Azure" 
 	description="了解如何在 Azure 中使用高级消息队列协议 (AMQP) 1.0。" 
 	services="service-bus" 
 	documentationCenter=".net" 
@@ -8,9 +8,9 @@
 	editor="mattshel"/>
 
 <tags 
-	ms.service="service-bus"
-	ms.date="07/21/2015" 
-	wacn.date="10/22/2015"/>
+	ms.service="service-bus" 
+	ms.date="10/05/2015" 
+	wacn.date="01/14/2016"/>
 
 
 
@@ -38,6 +38,8 @@ AMQP 1.0 是一个高效、可靠的线级消息传递协议，可用于构建�
 *    **独立于代理模型**：AMQP 1.0 规范对代理所使用的消息传送模型不作任何要求。这意味着可以向现有消息传送代理中轻松添加 AMQP 1.0 支持。
 
 ## AMQP 1.0 是一种标准（带有大写字母“S”）
+
+AMQP 1.0 是一种国际标准，已通过 ISO 和 IEC 的认证，认证编号为 ISO/IEC 19464:2014。
 
 自 2008 年以来，AMQP 1.0 一直由一个由 20 多家公司（包括技术提供商和最终用户企业）组成的核心小组进行开发。在此期间，用户企业提供其实际业务需求，技术供应商则开发该协议来满足这些需求。在整个过程中，供应商参加了研讨会，并在会上协作验证了其实现之间的互操作性。
 
@@ -77,21 +79,28 @@ Azure 服务总线中对 AMQP 1.0 的支持意味着现在可以通过一系列�
 
 **图 2：AMQP 1.0 客户端库表**
 
-有关如何获取和使用这些库以便用于服务总线的详细信息，请参阅[服务总线 AMQP 开发人员指南][]。有关更多信息，请参阅下面的“参考”一节。
-
 ## 摘要
 
 *    AMQP 1.0 是一个开放、可靠的消息传递协议，可用于构建跨平台的混合应用程序。AMQP 1.0 是一种 OASIS 标准。
 *    Azure 服务总线和 Windows Server 服务总线（服务总线 1.1）都支持 AMQP 1.0。定价与现有协议相同。
 
-## 参考
+## 后续步骤
 
-*    [如何将 AMQP 1.0 与服务总线 .NET API 一起使用](/documentation/articles/service-bus-dotnet-advanced-message-queuing)
-*    [如何将 Java 消息服务 (JMS) API 用于服务总线 和 AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)
-*    [服务总线 AMQP 开发人员指南](http://msdn.microsoft.com//zh-cn/library/jj841071.aspx)
-*    [OASIS 高级消息队列协议 (AMQP) 1.0 版规范](http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf)
+准备好了解详细信息？ 请访问以下链接：
 
-[0]:  ./media/service-bus-amqp-overview/Example1.png
-[服务总线 AMQP 开发人员指南]: http://msdn.microsoft.com/zh-cn/library/jj841071.aspx
+- [使用 AMQP 通过 .NET 使用服务总线]
+- [使用 AMQP 通过 Java 使用服务总线]
+- [使用 AMQP 通过 Python 使用服务总线]
+- [使用 AMQP 通过 PHP 使用服务总线]
+- [在 Azure Linux VM 上安装 Apache Qpid Proton-C]
+- [适用于 Windows Server 的服务总线中的 AMQP]
 
-<!---HONumber=74-->
+[0]: ./media/service-bus-amqp-overview/service-bus-amqp-1.png
+[使用 AMQP 通过 .NET 使用服务总线]: /documentation/articles/service-bus-amqp-dotnet
+[使用 AMQP 通过 Java 使用服务总线]: /documentation/articles/service-bus-amqp-java
+[使用 AMQP 通过 Python 使用服务总线]: /documentation/articles/service-bus-amqp-python
+[使用 AMQP 通过 PHP 使用服务总线]: /documentation/articles/service-bus-amqp-php
+[在 Azure Linux VM 上安装 Apache Qpid Proton-C]: /documentation/articles/service-bus-amqp-apache
+[适用于 Windows Server 的服务总线中的 AMQP]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx
+
+<!---HONumber=Mooncake_0104_2016-->

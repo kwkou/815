@@ -4,30 +4,30 @@
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
-   manager="adinah"
-   editor="tysonn"/>
+   manager="carolz"
+   editor=""/>
 <tags
    ms.service="expressroute"
-   ms.date="07/28/2015"
-   wacn.date="11/02/2015"/>
+   ms.date="02/09/2016"
+   wacn.date="03/17/2016"/>
 
 # ExpressRoute 常见问题
 
 
 ## 什么是 ExpressRoute？
-ExpressRoute 是一项 Azure 服务，允许你在 Azure 数据中心与你的本地环境或第三方托管设施中的基础结构之间创建专用连接。ExpressRoute 连接不通过公共 Internet，与通过公共 Internet 的典型连接相比，提供更高的安全性、可靠性、速度和更低的延迟。
+ExpressRoute 是一项 Azure 服务，允许你在 Microsoft Azure 数据中心与你的本地环境或第三方托管设施中的基础结构之间创建专用连接。ExpressRoute 连接不通过公共 Internet，与通过公共 Internet 的典型连接相比，提供更高的安全性、可靠性、速度和更低的延迟。
 
 ### 使用 ExpressRoute 和专用网络连接的好处是什么？
 ExpressRoute 连接不通过公共 Internet，与通过公共 Internet 的典型连接相比，提供更高的安全性、可靠性、速度和一贯较低的延迟。在某些情况下，使用 ExpressRoute 连接在本地设备和 Azure 之间传输数据可以产生显著的成本效益。
 
-### 可通过 ExpressRoute 支持哪些 Windows Azure 服务？
-ExpressRoute 目前支持大多数 Windows Azure 服务。
+### 可通过 ExpressRoute 支持哪些 Microsoft Azure 服务？
+ExpressRoute 目前支持大多数 Azure 服务。
 
 ### 哪里提供该服务？
 参阅 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)了解服务上市区域和可用性。
 
-### 我如果未与 ExpressRoute 运营商合作伙伴之一建立合作伙伴关系，则如何使用 ExpressRoute 连接到 Azure？
-你可以通过区域运营商来建立以太网连接到Azure支持的连接提供商。然后，你可以在连接服务商的位置与 Windows Azure 实现对接。查看 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)的最后一部分，以确定你的网络提供商是否处在任何 Exchange 位置中。然后，你可以从交换提供商订购一条 ExpressRoute 线路以连接到 Azure。
+### 我如果未与 ExpressRoute 运营商合作伙伴之一建立合作伙伴关系，则如何使用 ExpressRoute 连接到 Microsoft Azure？
+你可以通过区域运营商来建立以太网连接到 Microsoft Azure支持的连接提供商。然后，你可以在连接服务商的位置与 Microsoft Azure 实现对接。查看 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)的最后一部分，以确定你的网络提供商是否处在任何 Exchange 位置中。然后，你可以从交换提供商订购一条 ExpressRoute 线路以连接到 Azure。
 
 ### ExpressRoute 的费用是多少？
 有关定价信息，请查看[定价详细信息](/home/features/expressroute/#price)。
@@ -44,19 +44,19 @@ ExpressRoute 目前支持大多数 Windows Azure 服务。
 ### ExpressRoute 是否提供服务级别协议 (SLA)？
 有关详细信息，请参阅 [ExpressRoute SLA 页](/support/legal/sla/)。
 
-## 支持的 Azure 服务
+## 支持的服务
 大多数 Azure 服务都通过 ExpressRoute 提供支持。
 
-与虚拟机和虚拟网络中部署的云服务的连接通过私有对等互联路径提供支持。
+- 与虚拟机和虚拟网络中部署的云服务的连接通过私有对等互联路径提供支持。
 
-可通过公共对等路径访问 Azure 网站。
+- 可通过公共对等路径访问 Azure 网站。
 
-可通过公共对等路径访问所有其他服务。下面列出了例外情况 -
+- 可通过公共对等路径访问所有其他服务。下面列出了例外情况 -
 
-**不支持以下项目：**
+**不支持以下服务：**
 
 - CDN
-- Visual Studio Online Load Testing
+- Visual Studio Team Services 负载测试
 - 多重身份验证
 
 ## 数据和连接
@@ -86,46 +86,43 @@ ExpressRoute 目前支持大多数 Windows Azure 服务。
 ### 如果我的某个 ExpressRoute 链路出现故障，我会失去连接吗？
 如果其中一个交叉连接出现故障，你不会失去连接。冗余连接可用于支持网络负载。另外，你还可以在不同对等位置创建多条线路以获得故障恢复能力。
 
-### 我是否需要配置这两种链路才能使服务正常工作？
-你需要配置这两条链路来使服务正常工作，如果没有为线路配置冗余，我们的 SLA 将无效。
+### 我是否需要配置两条链路才能使服务正常工作？
+是的，你必须为ExpressRoute配置两条 LAN 链路。如果你从专用数据中心通过单条 WAN 链路连接到 ExpressRoute 连接点，则需要连接服务商在ExpressRoute连接点终止你自己的路由器上的 WAN 链路，然后为 ExpressRoute 配置两条 LAN 链路。如果没有为线路配置冗余，我们的 SLA 将无效。
 
 ### 能否使用 ExpressRoute 将我的一个 VLAN 扩展到 Azure？
 否。我们不支持将第 2 层连接扩展到 Azure。
 
 ### 能否在我的订阅中有多条 ExpressRoute 线路？
-是的。你可以在订阅中有多条 ExpressRoute 线路。专用线路数的默认限制设置为 10。如果你需要增大限制，请联系 Windows Azure 支持。
+是的。你可以在订阅中有多条 ExpressRoute 线路。专用线路数的默认限制设置为 10。如果你需要增大限制，请联系 Microsoft Azure 支持。
 
 ### 能否使用不同服务提供商的 ExpressRoute 线路？
 是的。你可以使用许多服务提供商的 ExpressRoute 线路。每条 ExpressRoute 线路将只与一个服务提供商相关联。
 
-### 如何将我的虚拟网络连接到 ExpressRoute 线路
-基本步骤如下所述。
+### 如何将我的虚拟网络连接到 ExpressRoute 线路？
+基本步骤如下所述：
 
 - 你必须建立一条 ExpressRoute 线路并让服务提供商启用它。
-- 你必须为私有对等互连配置 BGP（如果你使用的是 Exchange 提供商）。
+- 你必须为私有对等互连配置 BGP（如果你使用的是连接提供商）。
 - 你必须将虚拟网络连接到 ExpressRoute 线路。
 
-以下教程将帮助你：
-
-- [通过 Exchange 提供商配置 ExpressRoute 连接](/documentation/articles/expressroute-configuring-exps)
-- [为 ExpressRoute 配置虚拟网络和网关](/documentation/articles/expressroute-configuring-vnet-gateway)
+有关详细信息，请参阅 [ExpressRoute 线路预配工作流和线路状态](/documentation/articles/expressroute-workflows)。
 
 ### 我的 ExpressRoute 线路是否存在连接界限？
-是的。[ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)页概述了 ExpressRoute 线路的连接界限。一条 ExpressRoute 线路的连接范围限制为单个地缘政治区域。可以通过启用 ExpressRoute 高级功能，将连接扩展为跨服务区域。
+是的。[ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)页概述了 ExpressRoute 线路的连接界限。一条 ExpressRoute 线路的连接范围限制为单个地缘政治区域。
 
 ### 能否将多个虚拟网络链接到一条 ExpressRoute 线路？
 是的。最多可以将 10 个虚拟网络链接到一条 ExpressRoute 线路。
 
 ### 我有多个包含虚拟网络的 Azure 订阅。能否将不同订阅中的虚拟网络连接到单个 ExpressRoute 线路？
-是的。最多可以授权其他 10 个 Azure 订阅使用单条 ExpressRoute 线路。可以通过启用 ExpressRoute 高级功能来提高此限制。
+是的。最多可以授权其他 10 个 Azure 订阅使用单条 ExpressRoute 线路。
 
-有关详细信息，请参阅[在多个订阅之间共享 ExpressRoute 线路](/documentation/articles/expressroute-share-circuit)。
+有关详细信息，请参阅[在多个订阅之间共享 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)。
 
 ### 连接到同一线路的虚拟网络相互隔离吗？
 不能。连接到同一 ExpressRoute 线路的所有虚拟网络都属于同一路由域，从路由角度看不是相互隔离的。如果需要路由隔离，则需要创建单独的 ExpressRoute 线路。
 
 ### 能否将一个虚拟网络连接到多条 ExpressRoute 线路？
-是的。可以将一个虚拟网络最多链接到 4 条 ExpressRoute 线路。
+是的。可以将一个虚拟网络最多链接到 4 条 ExpressRoute 线路。必须通过 4 个不同的位置订购这些线路。
 
 ### 能否从连接到 ExpressRoute 线路的虚拟网络访问 Internet？
 是的。如果你尚未通过 BGP 会话公布默认路由 (0.0.0.0/0) 或 Internet 路由前缀，你将能够从连接到 ExpressRoute 线路的虚拟网络连接到 Internet。
@@ -146,7 +143,7 @@ ExpressRoute 目前支持大多数 Windows Azure 服务。
 你必须建立一条 ExpressRoute 线路并为公共对等互连配置路由。
 
 ### 对于我可以公布的路由数有限制吗？
-是的。对于专用对等互连和公共对等互连，我们最多接受 4000 个路由前缀。如果启用 ExpressRoute 高级功能，可以将此限制提高为 10,000 个路由。
+是的。对于专用对等互连和公共对等互连，我们最多接受 4000 个路由前缀。
 
 ### 对于我可以通过 BGP 会话公布的 IP 范围有限制吗？
 通过 BGP 公布的前缀必须为 /29 或更大（/28 到 /8）。
@@ -155,6 +152,9 @@ ExpressRoute 目前支持大多数 Windows Azure 服务。
 
 ### 如果超过 BGP 限制，会发生什么情况？
 BGP 会话将被删除。当前缀计数低于限制后，将重置这些会话。
+
+### ExpressRoute BGP 保持时间是多少？ 是否可以调整它？
+保持时间为 180 秒。Keep-Alive（保持活动）消息每隔 60 秒发送一次。这是 Microsoft 端的固定设置，不能更改。
 
 ### 将默认路由 (0.0.0.0/0) 播发到虚拟网络后，我无法激活 Azure VM 上运行的 Windows。我如何解决此问题？
 以下步骤可帮助 Azure 识别激活请求：
@@ -170,45 +170,6 @@ BGP 会话将被删除。当前缀计数低于限制后，将重置这些会话�
 ### 如何更改 ExpressRoute 线路的带宽？
 你可以使用“更新专用线路 API”和 PowerShell cmdlet 来更新 ExpressRoute 线路的带宽。
 
-## ExpressRoute 高级版
-
-### 什么是 ExpressRoute 高级版？
-ExpressRoute 高级版包括下面列出的功能集合。
-
- - 对于公共对等互连和专用对等互连，将路由表限制从 4000 个路由提升为 10,000 个路由。
- - 增加了可连接到 ExpressRoute 线路的 VNet 数量（默认数量为 10 个）。有关详细信息，请参阅下表。
- - 通过 Azure 核心网络建立全局连接。现在，你可以将一个服务区域中 VNet 链接到另一个区域中的 ExpressRoute 线路。**示例：**可以将中国北部创建的 VNet 链接到中国东部创建的 ExpressRoute 线路。
-
-### 如果启用 ExpressRoute 高级版，可将多少个 VNet 链接到一条 ExpressRoute 线路？
-下表列出了链接到 ExpressRoute 线路的 VNet 数的更高限制。默认限制为 10。
-
-**针对创建的线路的限制**
-
-| **线路大小** | **针对默认安装的 VNet 链接数** | **使用 ExpressRoute 高级版时的 VNet 链接数** |
-|--------------|-----------------------------------|------------------------------------------------|
-| 200 Mbps | 10 | 25 |
-| 500 Mbps | 10 | 40 |
-| 1 Gbps | 10 | 50 |
-| 10 Gbps | 10 | 100 |
 
 
-
-### 如何启用 ExpressRoute 高级版？
-在启用相应的功能后，将启用 ExpressRoute 高级功能；可以通过更新线路状态关闭高级功能。可以在创建线路时启用 ExpressRoute 高级版，或者通过调用“更新专用线路 API”/PowerShell cmdlet 来启用 ExpressRoute 高级版。
-
-### 如何禁用 ExpressRoute 高级版？
-你可以通过调用“更新专用线路 API”/PowerShell cmdlet 来禁用 ExpressRoute 高级版。在禁用 ExpressRoute 高级版之前，必须确保调整连接需求以满足默认限制。如果你的利用率级别超出了默认限制，我们将拒绝 ExpressRoute 禁用请求。
-
-### 我是否可以从高级功能集选择所需的功能？
-不可以。你无法选择所需的功能。如果你启用 ExpressRoute 高级版，我们会启用所有功能。
-
-### ExpressRoute 高级版的费用是多少？
-有关费用，请参阅[定价详细信息](/home/features/expressroute/#price)。
-
-### 除了支付 ExpressRoute 高级版费用以外，是否还要支付标准版 ExpressRoute 的费用？
-是的。ExpressRoute 高级版的费用是在 ExpressRoute 线路费用以及连接提供商所收费用的基础之上收取的。
-
-
-
-
-<!---HONumber=69-->
+<!---HONumber=Mooncake_0104_2016-->

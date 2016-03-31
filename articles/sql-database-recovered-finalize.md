@@ -1,6 +1,6 @@
 ﻿<properties
    pageTitle="确认已恢复的 Azure SQL 数据库"
-   description="时间点还原, Windows Azure SQL 数据库, 还原数据库, 恢复数据库, Azure 管理门户, Azure 门户"
+   description="时间点还原, Azure SQL 数据库, 还原数据库, 恢复数据库, Azure 管理门户, Azure 门户"
    services="sql-database"
    documentationCenter=""
    authors="elfisher"

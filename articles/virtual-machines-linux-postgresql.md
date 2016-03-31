@@ -1,32 +1,36 @@
 <properties
-	pageTitle="在运行 Linux 的 Windows Azure 虚拟机上安装和配置 PostgreSQL"
-	description="了解如何在 Azure 中的 Linux 虚拟机 (VM) 上安装和配置 PostgreSQL。"
+	pageTitle="在运行 Linux 的 Azure 虚拟机上安装和配置 PostgreSQL"
+	description="了解如何在 Azure 中的 Linux 虚拟机上安装和配置 PostgreSQL"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="SuperScottz"
 	manager="timlt"
 	editor=""
- 	tags=""/>
+ 	tags="azure-resource-manager,azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/10/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="02/01/2016"
+	wacn.date="03/28/2016"/>
 
 
-#在 Windows Azure 上安装和配置 PostgreSQL
+#在 Azure 上安装和配置 PostgreSQL
 
-PostgreSQL 是一种类似于 Oracle 和 DB2 的高级开放源代码数据库。它包含许多企业级功能，比如完整的 ACID 合规性、可靠的事务处理和多版本并发控制。它还支持 ANSI SQL 和 SQL/MED（包括 Oracle、MySQL、MongoDB 等等的外来数据包装器）等标准。它具有高度的可扩展性，支持超过 12 种程序语言，并支持 GIN 和 GIST 索引、空间数据，以及面向 JSON 或基于键值的应用程序的多款类似于 NoSQL 的功能。
+PostgreSQL 是一种类似于 Oracle 和 DB2 的高级开放源代码数据库。它包含许多企业级功能，比如完整的 ACID 合规性、可靠的事务处理和多版本并发控制。它还支持 ANSI SQL 和 SQL/MED（包括 Oracle、MySQL、MongoDB 等等的外来数据包装器）等标准。它具有高度的可扩展性，支持超过 12 种程序语言，并支持 GIN 和 GiST 索引、空间数据，以及面向 JSON 或基于键值的应用程序的多款类似于 NoSQL 的功能。
 
 在本文中，你将了解如何在运行 Linux 的 Azure 虚拟机上安装和配置 PostgreSQL。
 
-> [Azure.NOTE]你必须已经有一个运行 Linux 的 Windows Azure 虚拟机，才能完成本教程。在继续操作前，请参阅 [Azure Linux VM 教程](/documentation/articles/virtual-machines-linux-tutorial)创建并设置一个 Linux VM。
 
-[在此情况下，请使用 1999 端口作为 PostgreSQL 端口。]
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+
 
 ## 安装 PostgreSQL
 
-通过 putty 连接到你创建的 Linux VM。如果这是首次使用 Azure Linux VM，请参阅[此处](/documentation/articles/virtual-machines-linux-use-ssh-key)了解如何使用 putty 连接到 Linux VM。
+> [AZURE.NOTE]你必须已经有一个运行 Linux 的 Azure 虚拟机，才能完成本教程。在继续操作前，若要创建并设置 Linux VM，请参阅 [Azure Linux VM 教程](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)。
+
+在此示例中，使用端口 1999 作为 PostgreSQL 端口。
+
+通过 PuTTY 连接到你创建的 Linux VM。如果这是你首次使用 Azure Linux VM，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-use-ssh-key)，以了解如何使用 PuTTY 连接到 Linux VM。
 
 1. 运行以下命令切换成根用户（管理员）：
 
@@ -52,7 +56,7 @@ PostgreSQL 是一种类似于 Oracle 和 DB2 的高级开放源代码数据库�
 
 		# tar jxvf  postgresql-9.3.5.tar.bz2
 
-	上面是一个示例：可以在[此处](https://ftp.postgresql.org/pub/source/)找到更详细的下载地址。
+	上面是一个示例：你可以在 [/pub/source/ 的索引](https://ftp.postgresql.org/pub/source/)中找到更详细的下载地址。
 
 4. 若要启动生成，请运行这些命令：
 
@@ -78,7 +82,7 @@ PostgreSQL 是一种类似于 Oracle 和 DB2 的高级开放源代码数据库�
 
 		# mkdir -p /opt/pgsql_data
 
-3. 创建一个非根用户并修改该用户的配置文件。然后切换到该新用户（本例中称为 *postgres*）：
+3. 创建一个非根用户并修改该用户的配置文件。然后，切换到该新用户（本例中称为 *postgres*）：
 
 		# useradd postgres
 
@@ -89,7 +93,7 @@ PostgreSQL 是一种类似于 Oracle 和 DB2 的高级开放源代码数据库�
    >[AZURE.NOTE]出于安全原因，PostgreSQL 将使用非根用户来初始化、启动或关闭数据库。
 
 
-4. 通过输入以下命令编辑 *bash\_profile*。这些行将添加到 *bash\_profile* 文件的末尾：
+4. 通过输入以下命令编辑 *bash\_profile* 文件。这些行将添加到 *bash\_profile* 文件的末尾：
 
 		cat >> ~/.bash_profile <<EOF
 		export PGPORT=1999
@@ -164,7 +168,7 @@ PostgreSQL 是一种类似于 Oracle 和 DB2 的高级开放源代码数据库�
 
 ## 连接到 Postgres 数据库
 
-继续操作并再次切换成 postgres 用户：
+再次切换成 postgres 用户：
 
 	# su - postgres
 
@@ -176,7 +180,7 @@ PostgreSQL 是一种类似于 Oracle 和 DB2 的高级开放源代码数据库�
 
 	$ psql -d events
 
-## 如何创建和删除 Postgres 表
+## 创建和删除 Postgres 表
 
 既然已经连接到数据库，就可以在其中创建表了。
 
@@ -244,7 +248,7 @@ PostgreSQL 是一种类似于 Oracle 和 DB2 的高级开放源代码数据库�
  	UPDATE potluck set confirmed = 'Y' WHERE name = 'Sandy';
 
 
-##有关 PostgreSQL 的更多信息
-立即在 Windows Azure Linux VM 中安装 PostgreSQL，尽情享受 Windows Azure 的 PostgreSQL 之旅。有关 PostgreSQL 的更多信息，请参阅[此处](http://www.postgresql.org/)。
+##获取有关 PostgreSQL 的详细信息
+现在，你已完成在 Azure Linux VM 中安装 PostgreSQL，你可以在 Azure 中享受使用它的过程。若要了解有关 PostgreSQL 的详细信息，请访问 [PostgreSQL 网站](http://www.postgresql.org/)。
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

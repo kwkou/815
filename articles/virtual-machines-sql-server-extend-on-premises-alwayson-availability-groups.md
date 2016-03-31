@@ -1,29 +1,31 @@
 <properties 
-   pageTitle="将本地 AlwaysOn 可用性组扩展到 Azure"
-   description="本教程介绍如何使用 SQL Server Management Studio (SSMS) 中的“添加副本向导”将 AlwaysOn 可用性组副本添加到 Azure 中。"
-   services="virtual-machines"
-   documentationCenter="na"
-   authors="rothja"
-   manager="jeffreyg"
-   editor="monicar" />
+	pageTitle="将本地 AlwaysOn 可用性组扩展到 Azure | Azure"
+	description="本教程使用通过经典部署模型创建的资源，并介绍如何使用 SQL Server Management Studio (SSMS) 中的“添加副本”向导将 AlwaysOn 可用性组副本添加到 Azure 中。"
+	services="virtual-machines"
+	documentationCenter="na"
+	authors="rothja"
+	manager="jeffreyg"
+	editor="monicar"
+	tags="azure-service-management"/>
+
 <tags 
-   ms.service="virtual-machines"
-   ms.date="08/17/2015"
-   wacn.date="09/18/2015" />
+	ms.service="virtual-machines"
+	ms.date="02/03/2016"
+	wacn.date="03/28/2016" />
 
 # 将本地 AlwaysOn 可用性组扩展到 Azure
 
 AlwaysOn 可用性组通过添加辅助副本为数据库组提供高可用性。在发生故障时，可以使用这些副本来故障转移数据库。此外，它们还可用于卸载读取工作负荷或备份任务。
 
-可以通过预配包含 SQL Server 的一个或多个 Azure VM 并将其作为副本添加到本地可用性组，将本地可用性组扩展到 Windows Azure。
+可以通过预配包含 SQL Server 的一个或多个 Azure VM 并将其作为副本添加到本地可用性组，将本地可用性组扩展到 Azure。
 
 本文假设你符合以下条件：
 
-- 一个有效的 Azure 订阅。你可以注册[试用版](/pricing/1rmb-trial)。
+- 一个有效的 Azure 订阅。你可以注册[试用版](/pricing/1rmb-trial/)。
 
 - 本地现有 AlwaysOn 可用性组。有关可用性组的详细信息，请参阅 [AlwaysOn 可用性组](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx)。
 
-- 本地网络和 Azure 虚拟网络之间的连接。有关创建此虚拟网络的详细信息，请参阅[在管理门户中配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create)。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 ## 添加 Azure 副本向导
 
@@ -95,4 +97,4 @@ AlwaysOn 可用性组通过添加辅助副本为数据库组提供高可用性�
 
 有关其他与在 Azure VM 中运行 SQL Server 相关的主题，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-sql-server-infrastructure-services)。
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

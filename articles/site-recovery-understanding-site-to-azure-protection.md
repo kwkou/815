@@ -9,11 +9,11 @@
 
 <tags 
 	ms.service="site-recovery" 
-	ms.date="09/01/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="12/14/2015" 
+	wacn.date="01/14/2016"/>
 
 
-# 了解 Hyper-V 或 VMM 站点到 Azure 保护
+# 了解如何通过 Azure Site Recovery 进行 Hyper-V 复制
 
 本文介绍帮助你使用 Azure Site Recovery 成功配置和管理 Hyper-V 站点或 VMM 站点到 Azure 保护的技术概念。
 
@@ -39,7 +39,7 @@ Hyper-V 站点部署与 VMM 部署相同 – 唯一区别在于提供程序和�
 ![排查本地 Hyper-V 问题](./media/site-recovery-understanding-site-to-azure-protection/image02.png)
 
 ### 完成保护
-当触发初始复制时，系统拍摄一个 [Hyper-V 虚拟机快照](https://technet.microsoft.com/library/dd560637.aspx)。系统逐个处理虚拟硬盘，直到所有硬盘都被上载到 Azure。根据磁盘大小和带宽，这通常要花一段时间才能完成。请参阅[如何管理本地到 Azure 保护网络带宽使用](https://support.microsoft.com/zh-cn/kb/3056159)以优化你的网络使用。在初始复制完成时，*在虚拟机上完成保护*作业配置网络和复制后设置。当初始复制正在进行时，对磁盘做出的所有更改都会被记录下来，如下面的“增量复制”所述。当初始复制正在进行时，快照和 HRL 文件会占用额外的磁盘存储空间。在初始复制完成后，Hyper-V 虚拟机快照将被删除，导致系统将初始复制之后发生的数据变更合并到父磁盘中。
+当触发初始复制时，系统会拍摄一个 [Hyper-V 虚拟机快照](https://technet.microsoft.com/zh-cn/library/dd560637.aspx)。系统逐个处理虚拟硬盘，直到所有硬盘都被上载到 Azure。根据磁盘大小和带宽，这通常要花一段时间才能完成。请参阅[如何管理本地到 Azure 保护网络带宽使用](https://support.microsoft.com/zh-cn/kb/3056159)以优化你的网络使用。在初始复制完成时，*在虚拟机上完成保护*作业配置网络和复制后设置。当初始复制正在进行时，对磁盘做出的所有更改都会被记录下来，如下面的“增量复制”所述。当初始复制正在进行时，快照和 HRL 文件会占用额外的磁盘存储空间。在初始复制完成后，Hyper-V 虚拟机快照将被删除，导致系统将初始复制之后发生的数据变更合并到父磁盘中。
 
 ![排查本地 Hyper-V 问题](./media/site-recovery-understanding-site-to-azure-protection/image03.png)
 
@@ -75,4 +75,4 @@ Hyper-V 副本复制跟踪器是 Hyper-V 副本复制引擎的一部分，以 Hy
 - [联系 Microsoft 技术](/documentation/articles/site-recovery-monitoring-and-troubleshooting#reaching-out-for-microsoft-support)
 - [常见 ASR 错误及其解决方法](/documentation/articles/site-recovery-monitoring-and-troubleshooting#common-asr-errors-and-their-resolutions)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0104_2016-->

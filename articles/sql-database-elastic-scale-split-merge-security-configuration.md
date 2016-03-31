@@ -1,42 +1,41 @@
 <properties 
-    title="Elastic Scale Security Configurations" 
-    pageTitle="灵活扩展安全配置" 
+    pageTitle="弹性缩放安全配置 | Azure" 
     description="设置用于加密的 x409 证书" 
     metaKeywords="Elastic Database certificates security" 
     services="sql-database" documentationCenter="" 
     manager="jhubbard" 
-    authors="sidneyh"/>
+    authors="torsteng"/>
 
 <tags 
-    ms.service="sql-database" 
-    ms.date="07/07/2015" 
-    wacn.date="09/15/2015" />
+    ms.service="sql-database"
+    ms.date="11/04/2015" 
+    wacn.date="01/05/2016" />
 
 # 拆分合并安全配置  
 
-若要使用拆分/合并服务，必须正确配置安全性。该服务是 Windows Azure SQL 数据库 弹性扩展功能的一部分。有关详细信息，请参阅[弹性缩放拆分和合并服务教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)
+若要使用拆分/合并服务，必须正确配置安全性。该服务是 Azure SQL 数据库弹性扩展功能的一部分。有关详细信息，请参阅[弹性缩放拆分和合并服务教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)
 
 ## 配置证书
 
 通过两种方式配置证书。
 
-1. [配置 SSL 证书](/documentation/articles/To#Configure#the#SSL#Certificate)
-2. [配置客户端证书](/documentation/articles/To#Configure#Client#Certificates) 
+1. [配置 SSL 证书](To#Configure#the#SSL#Certificate)
+2. [配置客户端证书](To#Configure#Client#Certificates) 
 
 ## 获取证书
 
-可从公共证书颁发机构 (CA) 或 [Windows 证书服务](https://msdn.microsoft.com/zh-CN/library/windows/desktop/aa376539.aspx)中获取证书。这些方法是获取证书的首选方法。
+可从公共证书颁发机构 (CA) 或 [Windows 证书服务](http://msdn.microsoft.com/zh-cn/library/windows/desktop/aa376539.aspx)中获取证书。这些方法是获取证书的首选方法。
 
 如果这些选项不可用，你可以生成**自签名证书**。
  
 ## 用于生成证书的工具
 
-* [makecert.exe](https://msdn.microsoft.com/zh-CN/library/bfsktky3.aspx)
-* [pvk2pfx.exe](https://msdn.microsoft.com/zh-CN/library/windows/hardware/ff550672.aspx)
+* [makecert.exe](http://msdn.microsoft.com/zh-cn/library/bfsktky3.aspx)
+* [pvk2pfx.exe](http://msdn.microsoft.com/zh-cn/library/windows/hardware/ff550672.aspx)
 
 ### 运行工具
 
-* 有关适用于 Visual Studio 的开发人员命令提示符，请参阅 [Visual Studio 命令提示符](https://msdn.microsoft.com/zh-CN/library/ms229859.aspx) 
+* 有关适用于 Visual Studio 的开发人员命令提示符，请参阅 [Visual Studio 命令提示符](http://msdn.microsoft.com/zh-cn/library/ms229859.aspx) 
 
     如果已安装工具，请转到：
 
@@ -49,45 +48,45 @@
 
 ### 创建新的自签名证书
 
-1.    [创建自签名证书](/documentation/articles/Create#a#Self-Signed#Certificate)
-2.    [为自签名 SSL 证书创建 PFX 文件](/documentation/articles/Create#PFX#file#for#Self-Signed#SSL#Certificate)
-3.    [将 SSL 证书上载到云服务](/documentation/articles/Upload#SSL#Certificate#to#Cloud#Service)
-4.    [在服务配置文件中更新 SSL 证书](/documentation/articles/Update#SSL#Certificate#in#Service#Configuration#File)
-5.    [导入 SSL 证书颁发机构](/documentation/articles/Import#SSL#Certification#Authority)
+1.    [创建自签名证书](Create#a#Self-Signed#Certificate)
+2.    [为自签名 SSL 证书创建 PFX 文件](Create#PFX#file#for#Self-Signed#SSL#Certificate)
+3.    [将 SSL 证书上载到云服务](Upload#SSL#Certificate#to#Cloud#Service)
+4.    [在服务配置文件中更新 SSL 证书](Update#SSL#Certificate#in#Service#Configuration#File)
+5.    [导入 SSL 证书颁发机构](Import#SSL#Certification#Authority)
 
 ### 使用证书存储中的现有证书
-1. [从证书存储中导出 SSL 证书](/documentation/articles/Export#SSL#Certificate#From#Certificate#Store)
-2. [将 SSL 证书上载到云服务](/documentation/articles/Upload#SSL#Certificate#to#Cloud#Service)
-3. [在服务配置文件中更新 SSL 证书](/documentation/articles/Update#SSL#Certificate#in#Service#Configuration#File)
+1. [从证书存储中导出 SSL 证书](Export#SSL#Certificate#From#Certificate#Store)
+2. [将 SSL 证书上载到云服务](Upload#SSL#Certificate#to#Cloud#Service)
+3. [在服务配置文件中更新 SSL 证书](Update#SSL#Certificate#in#Service#Configuration#File)
 
 ### 在 PFX 文件中使用现有证书
 
-1. [将 SSL 证书上载到云服务](/documentation/articles/Upload#SSL#Certificate#to#Cloud#Service)
-2. [在服务配置文件中更新 SSL 证书](/documentation/articles/Update#SSL#Certificate#in#Service#Configuration#File)
+1. [将 SSL 证书上载到云服务](Upload#SSL#Certificate#to#Cloud#Service)
+2. [在服务配置文件中更新 SSL 证书](Update#SSL#Certificate#in#Service#Configuration#File)
 
 ## 配置客户端证书
 若要对服务请求进行身份验证，需要使用客户端证书。从下面的三个方案中选择最适合的方案，然后执行其所有步骤：
 
 ### 禁用客户端证书
-1.    [禁用基于客户端证书的身份验证](/documentation/articles/Turn#Off#Client#Certificate-Based#Authentication)
+1.    [禁用基于客户端证书的身份验证](Turn#Off#Client#Certificate-Based#Authentication)
 
 ### 颁发新的自签名客户端证书
-1.    [创建自签名证书颁发机构](/documentation/articles/Create#a#Self-Signed#Certification#Authority)
-2.    [将 CA 证书上载到云服务](/documentation/articles/Upload#CA#Certificate#to#Cloud#Service)
-3.    [在服务配置文件中更新 CA 证书](/documentation/articles/Update#CA#Certificate#in#Service#Configuration#File)
-4.    [颁发客户端证书](/documentation/articles/Issue#Client#Certificates)
-5.    [为客户端证书创建 PFX 文件](/documentation/articles/Create#PFX#files#for#Client#Certificates)
-6.    [导入客户端证书](/documentation/articles/Import#Client#Certificate)
-7.    [复制客户端证书指纹](/documentation/articles/Copy#Client#Certificate#Thumbprints)
-8.    [在服务配置文件中配置允许的客户端](/documentation/articles/Configure#Allowed#Clients#in#the#Service#Configuration#File)
+1.    [创建自签名证书颁发机构](Create#a#Self-Signed#Certification#Authority)
+2.    [将 CA 证书上载到云服务](Upload#CA#Certificate#to#Cloud#Service)
+3.    [在服务配置文件中更新 CA 证书](Update#CA#Certificate#in#Service#Configuration#File)
+4.    [颁发客户端证书](Issue#Client#Certificates)
+5.    [为客户端证书创建 PFX 文件](Create#PFX#files#for#Client#Certificates)
+6.    [导入客户端证书](Import#Client#Certificate)
+7.    [复制客户端证书指纹](Copy#Client#Certificate#Thumbprints)
+8.    [在服务配置文件中配置允许的客户端](Configure#Allowed#Clients#in#the#Service#Configuration#File)
 
 ### 使用现有客户端证书
-1.    [查找 CA 公钥](/documentation/articles/Find#CA#Public Key)
-2.    [将 CA 证书上载到云服务](/documentation/articles/Upload#CA#certificate#to#cloud#service)
-3.    [在服务配置文件中更新 CA 证书](/documentation/articles/Update#CA#Certificate#in#Service#Configuration#File)
-4.    [复制客户端证书指纹](/documentation/articles/Copy#Client#Certificate#Thumbprints)
-5.    [在服务配置文件中配置允许的客户端](/documentation/articles/Configure#Allowed#Clients#in#the#Service#Configuration File)
-6.    [配置客户端证书吊销检查](/documentation/articles/Configure#Client#Certificate#Revocation#Check)
+1.    [查找 CA 公钥](Find#CA#Public Key)
+2.    [将 CA 证书上载到云服务](Upload#CA#certificate#to#cloud#service)
+3.    [在服务配置文件中更新 CA 证书](Update#CA#Certificate#in#Service#Configuration#File)
+4.    [复制客户端证书指纹](Copy#Client#Certificate#Thumbprints)
+5.    [在服务配置文件中配置允许的客户端](Configure#Allowed#Clients#in#the#Service#Configuration File)
+6.    [配置客户端证书吊销检查](Configure#Client#Certificate#Revocation#Check)
 
 ## 允许的 IP 地址
 
@@ -99,21 +98,21 @@
 
 ### 使用新的自签名证书
 
-1.     [创建自签名证书](/documentation/articles/Create#a#Self-Signed#Certificate)
-2.     [为自签名加密证书创建 PFX 文件](/documentation/articles/Create#PFX#file#for#Self-Signed#Encryption#Certificate)
-3.     [将加密证书上载到云服务](/documentation/articles/Upload#Encryption#Certificate#to#Cloud#Service)
-4.     [在服务配置文件中更新加密证书](/documentation/articles/Update#Encryption#Certificate#in#Service#Configuration#File)
+1.     [创建自签名证书](Create#a#Self-Signed#Certificate)
+2.     [为自签名加密证书创建 PFX 文件](Create#PFX#file#for#Self-Signed#Encryption#Certificate)
+3.     [将加密证书上载到云服务](Upload#Encryption#Certificate#to#Cloud#Service)
+4.     [在服务配置文件中更新加密证书](Update#Encryption#Certificate#in#Service#Configuration#File)
 
 ### 使用证书存储中的现有证书
 
-1.     [从证书存储中导出加密证书](/documentation/articles/Export#Encryption#Certificate#From#Certificate#Store)
-2.     [将加密证书上载到云服务](/documentation/articles/Upload#Encryption#Certificate#to#Cloud#Service)
-3.     [在服务配置文件中更新加密证书](/documentation/articles/Update#Encryption#Certificate#in#Service#Configuration#File)
+1.     [从证书存储中导出加密证书](Export#Encryption#Certificate#From#Certificate#Store)
+2.     [将加密证书上载到云服务](Upload#Encryption#Certificate#to#Cloud#Service)
+3.     [在服务配置文件中更新加密证书](Update#Encryption#Certificate#in#Service#Configuration#File)
 
 ### 在 PFX 文件中使用现有证书
 
-1.     [将加密证书上载到云服务](/documentation/articles/Upload#Encryption#Certificate#to#Cloud#Service)
-2.     [在服务配置文件中更新加密证书](/documentation/articles/Update#Encryption#Certificate#in#Service#Configuration#File)
+1.     [将加密证书上载到云服务](Upload#Encryption#Certificate#to#Cloud#Service)
+2.     [在服务配置文件中更新加密证书](Update#Encryption#Certificate#in#Service#Configuration#File)
 
 ## 默认配置
 
@@ -139,7 +138,7 @@
     <EndpointAcls>
     <EndpointAcl role="SplitMergeWeb" endPoint="HttpsIn" accessControl="Restricted" />
 
-## <a name = "denial-of-service-prevention"></a>防止拒绝服务
+## 防止拒绝服务
 
 可使用两种受支持的不同机制检测和防止拒绝服务攻击：
 
@@ -196,13 +195,15 @@
 *    -n，带有服务 URL。通配符 ("CN=*.chinacloudapp.cn") 和替代名称 ("CN=myservice1.chinacloudapp.cn, CN=myservice2.chinacloudapp.cn") 均受支持。
 *    -e，带有证书过期日期创建强密码并在提示时指定它。
 
-## <a name="create-pfx-for-self-signed-cert"></a>为自签名 SSL 证书创建 PFX 文件
+## 为自签名 SSL 证书创建 PFX 文件
 
 执行：
 
         pvk2pfx -pvk MySSL.pvk -spc MySSL.cer
 
-输入密码，然后使用以下选项导出证书：* 是，导出私钥。* 导出所有扩展属性
+输入密码，然后使用以下选项导出证书：
+* 是，导出私钥。
+* * 导出所有扩展属性
 
 ## 从证书存储中导出 SSL 证书
 
@@ -234,7 +235,7 @@
 
 ## 禁用基于客户端证书的身份验证
 
-仅支持基于客户端证书的身份验证，禁用它即可公开访问服务终结点，除非使用了其他机制（例如 Microsoft Azure 虚拟网络）。
+仅支持基于客户端证书的身份验证，禁用它即可公开访问服务终结点，除非使用了其他机制（例如 Azure 虚拟网络）。
 
 在服务配置文件中，将这些设置更改为 false 以关闭该功能：
 
@@ -343,7 +344,14 @@
     * 包括选中的所有扩展属性
 
 ## 复制客户端证书指纹
-为其颁发了客户端证书的每个用户都必须遵循以下步骤，才能获取将添加到服务配置文件的证书的指纹：* 运行 certmgr.exe * 选择“个人”选项卡 * 双击要用于身份验证的客户端证书 * 在打开的“证书”对话框中，选择“详细信息”选项卡 * 确保“显示”可显示全部内容 * 选择列表中名为“Thumbprint”的字段 * 复制指纹值 ** 删除第一个数字前面的不可见 Unicode 字符 ** 删除所有空格
+为其颁发了客户端证书的每个用户都必须遵循以下步骤，才能获取将添加到服务配置文件的证书的指纹：
+* 运行 certmgr.exe
+* 选择“个人”选项卡
+* 双击要用于身份验证的客户端证书
+* 在打开的“证书”对话框中，选择“详细信息”选项卡
+* 确保“显示”可显示全部内容
+* 选择列表中名为“Thumbprint”的字段
+* 复制指纹值 ** 删除第一个数字前面的不可见 Unicode 字符 ** 删除所有空格
 
 ## 在服务配置文件中配置允许的客户端
 
@@ -448,21 +456,21 @@
 	* 如果已选中“受信任的根证书颁发机构”存储，请单击“是”。
 9.     在所有对话框窗口上单击“确定”。
 
-## <a name="upload-certificate"></a>上载证书
+## 上载证书
 
-在 [Azure 管理门户](http://manage.windowsazure.cn/)中：
+在 [Azure 管理门户](https://manage.windowsazure.cn)中：
 
-1. 选择“云服务”
-2. 选择云服务
-3. 单击顶部菜单栏上的“证书”
-4. 单击底部栏中的“上载”
-5. 选择证书文件
-6. 如果是 .PFX 文件，则输入私钥密码
-7. 完成操作后，从列表中的新条目复制证书指纹
+1. 选择“云服务”。
+2. 选择云服务。
+3. 单击顶部菜单上的“证书”。
+4. 在底部栏上，单击“上载”。
+5. 选择证书文件。
+6. 如果是 .PFX 文件，则输入私钥密码。
+7. 完成操作后，从列表中的新条目复制证书指纹。
 
 ## 其他安全注意事项
  
-使用 HTTPS 终结点时，本文档中介绍的 SSL 设置将对服务及其客户端之间的通信进行加密。这一点很重要，因为该通信中包含了数据库访问凭据以及其他可能的敏感信息。但是，请注意，该服务会将内部状态（包括凭据）保存在其内部表中，该表位于你在 Windows Azure 订阅中为元数据存储提供的 Windows Azure SQL 数据库 中。在服务配置文件（.CSCFG 文件）中，该数据库已定义为以下设置的一部分： 
+使用 HTTPS 终结点时，本文档中介绍的 SSL 设置将对服务及其客户端之间的通信进行加密。这一点很重要，因为该通信中包含了数据库访问凭据以及其他可能的敏感信息。但是，请注意，该服务会将内部状态（包括凭据）保存在其内部表中，该表位于你在 Azure 订阅中为元数据存储提供的 Azure SQL 数据库中。在服务配置文件（.CSCFG 文件）中，该数据库已定义为以下设置的一部分：
 
     <Setting name="ElasticScaleMetadata" value="Server=…" />
 
@@ -470,4 +478,4 @@
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1221_2015-->

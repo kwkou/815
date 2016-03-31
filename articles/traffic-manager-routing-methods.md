@@ -1,21 +1,21 @@
 <properties 
-   pageTitle="流量管理器 - 流量路由方法 | Windows Azure"
+   pageTitle="流量管理器 - 流量路由方法 | Azure"
    description="本文将帮助你了解流量管理器使用的各种流量路由方法。"
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="traffic-manager"
-   ms.date="08/19/2015"
-   wacn.date="11/02/2015" />
+<tags
+	ms.service="traffic-manager"
+   ms.date="12/07/2015"
+	wacn.date="01/21/2016"/>
 
 # 流量管理器路由方法
 
 流量管理器中提供了三种流量路由方法。虽然你随时可以为配置文件选择不同的流量路由方法，但每个流量管理器配置文件每次只能使用一种流量路由方法。
 
-请务必注意，所有流量路由方法都包括终结点监视。在配置流量管理器配置文件来指定最符合你要求的流量路由方法后，可配置监视设置。正确配置监视后，流量管理器将监视终结点（包括云服务和网站）的状态，并且不会向它认为不可用的终结点发送流量。有关流量管理器监视的信息，请参阅[关于流量管理器监视](/documentation/articles/traffic-manager-monitoring)。
+请务必注意，所有流量路由方法都包括终结点监视。在配置流量管理器配置文件来指定最符合你要求的流量路由方法后，可配置监视设置。正确配置监视后，流量管理器将监视终结点（包括云服务和 Web 应用）的状态，并且不会向它认为不可用的终结点发送流量。有关流量管理器监视的信息，请参阅[关于流量管理器监视](/documentation/articles/traffic-manager-monitoring)。
 
 以下是三种流量管理器流量路由方法：
 
@@ -25,7 +25,7 @@
 
 - **性能**：如果终结点位于不同的地理位置，并且你希望发出请求的客户端依据最低延迟使用“最近的”终结点，请选择“性能”。有关详细信息，请参阅[性能流量路由方法](#performance-traffic-routing-method)。
 
-请注意，无论网站模式如何，Azure 网站都已经针对数据中心内的网站提供了故障转移和轮循机制流量路由方法功能。你可以使用流量管理器为不同数据中心内的网站指定故障转移和轮询机制流量路由。
+请注意，无论 Web 应用模式如何，Azure Web 应用都已经针对数据中心内的 Web 应用提供了故障转移和轮循机制流量路由方法功能。你可以使用流量管理器为不同数据中心内的 Web 应用指定故障转移和轮询机制流量路由。
 
 >[AZURE.NOTE]DNS 生存时间 (TTL) 指示 DNS 客户端以及 DNS 服务器上的解析程序要将解析的名称缓存多久。客户端将持续使用给定的终结点来解析域名，直到该名称的本地 DNS 缓存条目过期。
 
@@ -119,18 +119,11 @@
 
 ## 后续步骤
 
-[什么是流量管理器？](/documentation/articles/traffic-manager-overview)
+[流量管理器监视](/documentation/articles/traffic-manager-monitoring)
 
-[关于流量管理器监视](/documentation/articles/traffic-manager-monitoring)
+[创建配置文件](/documentation/articles/traffic-manager-manage-profiles)
 
-[流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-CN/library/hh758255.aspx)
-
-[云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)
-
-[网站](/home/features/web-site/)
-
-[Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
-
+[添加终结点](/documentation/articles/traffic-manager-endpoints)
  
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_1221_2015-->

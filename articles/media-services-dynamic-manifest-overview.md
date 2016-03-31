@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/18/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="01/28/2016" 
+	wacn.date="03/17/2016"/>
 
 #筛选器和动态清单
 
@@ -22,7 +22,7 @@
 
 在将内容传送到客户（流式传输实时事件或视频点播）时，你的目标就是：将优质视频传递到处于不同网络条件下的各种设备。若要实现此目标，请执行以下操作：
 
-- 将你的流编码成多比特率（[自适应比特率](http://en.wikipedia.org/wiki/Adaptive_bitrate_streaming)）视频流（这将会负责处理质量和网络条件），并 
+- 将你的流编码成多比特率（[自适应比特率](http://zh.wikipedia.org/wiki/自适性串流)）视频流（这将会负责处理质量和网络条件），并 
 - 使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)将你的流动态地重新打包成不同的协议（这将会负责不同设备上的流式处理）。媒体服务支持传送以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。 
 
 ###清单文件 
@@ -116,7 +116,7 @@
  
 ![再现内容筛选示例][renditions2]
 
-以下示例使用 Azure Media Encoder 将夹层资产编码成七个 ISO MP4 视频再现内容（从 180p 到 1080p）。编码的资产可以动态打包成以下任一流协议：HLS、平滑流、MPEG DASH 和 HDS。图表顶部显示了不包含筛选器的资产的 HLS 清单（包含全部七个再现内容）。左下角显示名为“ott”的筛选器已应用到 HLS 清单。“ott”筛选器指定要删除所有不低于 1Mbps 的比特率，因此将最差的两个质量级别从响应中剥除。右下角显示名为“mobile”的筛选器已应用到 HLS 清单。“mobile”筛选器指定要删除分辨率大于 720p 的再现内容，因此将剥除两个 1080p 再现内容。
+以下示例使用编码器将夹层资产编码成七个 ISO MP4 视频再现内容（从 180p 到 1080p）。编码的资产可以动态打包成以下任一流协议：HLS、平滑流、MPEG DASH 和 HDS。图表顶部显示了不包含筛选器的资产的 HLS 清单（包含全部七个再现内容）。左下角显示名为“ott”的筛选器已应用到 HLS 清单。“ott”筛选器指定要删除所有不低于 1Mbps 的比特率，因此将最差的两个质量级别从响应中剥除。右下角显示名为“mobile”的筛选器已应用到 HLS 清单。“mobile”筛选器指定要删除分辨率大于 720p 的再现内容，因此将剥除两个 1080p 再现内容。
 
 ![再现内容筛选][renditions1]
 
@@ -188,7 +188,7 @@
 
 最多可以组合 3 个筛选器。
 
-有关详细信息，请参阅[此](http://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support)博客。
+有关详细信息，请参阅[此博客](https://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support/)。
 
 
 ##已知问题和限制
@@ -196,6 +196,7 @@
 - 动态清单在 GOP 边界（主键帧）内运行，因此修剪后具有精确的 GOP。 
 - 可以对本地和全局筛选器使用相同的筛选器名称。请注意，本地筛选器的优先顺序更高，会取代全局筛选器。
 - 如果你更新筛选器，则流式处理终结点需要 2 分钟的时间来刷新规则。如果内容是通过使用某些筛选器提供的（并在代理和 CDN 缓存中缓存），则更新这些筛选器会导致播放器失败。建议在更新筛选器之后清除缓存。如果此选项不可用，请考虑使用其他筛选器。
+
 
 
 ##另请参阅
@@ -222,4 +223,4 @@
 [skiing]: ./media/media-services-dynamic-manifest-overview/media-services-skiing.png
  
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0307_2016-->

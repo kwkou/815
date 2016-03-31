@@ -1,22 +1,26 @@
 <properties 
-	pageTitle="依赖于数据的路由" 
+	pageTitle="数据相关的路由 | Azure" 
 	description="如何将 ShardMapManager 用于数据相关的路由（Azure SQL 数据库弹性数据库的一项功能）" 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
-	authors="sidneyh" 
+	authors="torsteng" 
 	editor=""/>
 
 <tags 
-	ms.service="sql-database" 
-	ms.date="07/24/2015" 
-	wacn.date="09/15/2015"/>
+	ms.service="sql-database"
+	ms.date="11/04/2015" 
+	wacn.date="01/05/2016"/>
 
 #依赖于数据的路由
 
 **ShardMapManager** 类使 ADO.NET 应用程序能够轻松地将数据库查询和命令指向分片环境中的相应物理数据库。这称为**数据相关的路由**，在使用分片数据库时，它是一种基础模式。将应用程序中使用数据依赖路由的每个特定查询和事务限制为针对每个请求访问单个数据库。
 
 通过使用数据依赖路由，应用程序无需在分片环境中跟踪与不同的数据片相关联的各种连接字符串或数据库位置。但是，[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management)有责任在需要时基于分片映射中的数据以及作为应用程序请求目标的分片键值，将开放连接分发给正确的数据库。（该键通常为 *customer\_id*、*tenant\_id*、*date\_key* 或一些作为数据库请求的基础参数的其他特定标识符）。
+
+## 下载客户端库
+
+若要安装该库，请转到[弹性数据库客户端库](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/)。
 
 ## 在数据相关的路由应用程序中使用 ShardMapManager 
 
@@ -111,5 +115,6 @@ int newPersonId = 4321;
 确保分片的所有局部操作的事务属性。例如，通过数据依赖路由提交的事务将在目标分片范围内执行以供连接。此时，没有提供用于将多个连接包含在一个事务中的功能，因此对于在分片上执行的操作，没有事务保证。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+ 
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1221_2015-->

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线定价和计费|Windows Azure"
+   pageTitle="服务总线定价和计费|Azure"
    description="服务总线定价结构概述。"
    services="service-bus"
    documentationCenter="na"
@@ -9,14 +9,14 @@
 
 <tags 
    ms.service="service-bus"
-   ms.date="09/10/2015"
-   wacn.date="10/22/2015" />
+   ms.date="12/28/2015"
+   wacn.date="02/26/2016" />
 
 # 服务总线定价和计费
 
 服务总线推出基本、标准和[高级](/documentation/articles/service-bus-premium-messaging)三种层级。你可以为你创建的每个服务总线服务命名空间选择一个服务层，所选的服务层可应用于在该命名空间中创建的所有队列、主题/订阅、中继和事件中心。
 
->[AZURE.NOTE]有关当前服务总线的定价详细信息，请参阅[服务总线定价常见问题](/documentation/articles/service-bus-pricing-faq)。
+>[AZURE.NOTE] 有关当前服务总线定价详细信息，请参阅[服务总线定价常见问题](/documentation/articles/service-bus-pricing-faq)。
 
 服务总线使用以下两种测定仪用于队列和主题/订阅：
 
@@ -30,7 +30,7 @@
 
 请注意，每个 Azure 订阅每月仅需支付一次标准基础费用。这意味着在你创建了一个标准或高级层级的服务总线命名空间后，你将能够在同一 Azure 订阅下创建任意数目的标准或高级层级命名空间，而不会产生附加的基础费用。
 
-在 2014 年 11 月 1 日之前创建的所有现有服务总线命名空间会自动放入标准层。这可确保你继续有权访问服务总线当前可用的所有功能。随后，可以根据需要使用 Azure 门户降级到基本层。
+在 2014 年 11 月 1 日之前创建的所有现有服务总线命名空间会自动放入标准层。这可确保你继续有权访问服务总线当前可用的所有功能。随后，可以根据需要使用 [Azure 经典门户][]降级到基本层。
 
 下表总结了基本和标准/高级层之间的功能差异。
 
@@ -118,7 +118,7 @@
 
 ### 如何计算中继小时数？
 
-请参阅[本主题](/documentation/articles/service-bus-pricing-faq/#How-is-the-Relay-Hours-meter-calculated?)。
+请参阅[此主题](/documentation/articles/service-bus-pricing-faq/#How-is-the-Relay-Hours-meter-calculated?)。
 
 ### 什么是中转连接，它的计费方式是怎样的？
 
@@ -140,8 +140,10 @@
 
 是的。使用 HTTP 发送事件没有连接费用，无论发送系统或设备的数量是多少。使用超时值大于零的 HTTP 接收事件（有时称为“长轮询”）会产生中转连接费用。无论连接是用于发送还是接收，AMQP 连接都会产生中转连接费用。请注意，100 个中转连接在基本命名空间中免费。这也是 Azure 订阅中允许的最大中转连接数。在 Azure 订阅中，所有标准命名空间内的前 1,000 个中转连接都无需支付额外费用（基本费用除外）。由于这些限额足以涵盖许多服务到服务方案，因此通常仅当你打算对大量客户端使用 AMQP 或 HTTP 长轮询时，即，想要实现更高效的事件流或者启用许多设备或应用程序实例的双向通信时，中转连接费用才会变得可观。
 
-## 另请参阅
+## 后续步骤
 
-[服务总线定价常见问题](/documentation/articles/service-bus-pricing-faq)
+有关服务总线定价的详细信息，请参阅[服务总线定价常见问题](/documentation/articles/service-bus-pricing-faq)。
 
-<!---HONumber=74-->
+[Azure 经典门户]: http://manage.windowsazure.cn
+
+<!---HONumber=Mooncake_0215_2016-->

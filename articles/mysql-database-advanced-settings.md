@@ -1,11 +1,14 @@
 <properties linkid="" urlDisplayName="" pageTitle="定制MySQL 数据库 on Azure服务器参数 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,参数,定制,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL 数据库 on Azure支持您根据需求定制化服务器部分参数,帮您了解不同参数的设置范围和区间。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date="08/26/2015"/>
+<tags ms.service="mysql" ms.date="" wacn.date="01/11/2015"/>
 
 #定制MySQL 数据库 on Azure服务器参数
 
-MySQL 数据库 on Azure支持您对服务器部分参数进行自定义设置，下表中列出可配置的参数，默认值，以及可选范围。
+> [AZURE.SELECTOR]
+- [中文版](/documentation/articles/mysql-database-advanced-settings)
+- [英文版](/documentation/articles/mysql-enus-database-advanced-settings)
 
+MySQL 数据库 on Azure支持您对服务器部分参数进行自定义设置，下表中列出可配置的参数，默认值，以及可选范围。
 
 [了解更多MySQL参数信息](http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html)。
 
@@ -90,5 +93,12 @@ MySQL 数据库 on Azure支持您对服务器部分参数进行自定义设置�
     <td>120</td>
     <td>[60-240] </td>
   </tr>
+  <tr>
+    <td >time_zone</td>
+    <td>System</td>
+    <td>System, [-12:00 to +12:00] </td>
+  </tr>
 </table>
 >[AZURE.NOTE] **考虑到流量管理器的限制，我们将wait_timeout的默认值调整为120s，可选范围为60-240s，但上述调整只对10月后创建的实例生效。对于以前的实例，请您手动将wait_timeout值设置为60-240s之间的任意数值，推荐120s。**
+
+>[AZURE.NOTE] **关于时区的配置，可详细参考[MySQL on Azure上的时区配置](/documentation/articles/mysql-database-timezone-config).**

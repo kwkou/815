@@ -1,17 +1,17 @@
 <properties 
-   pageTitle="如何在经典模式下使用 PowerShell 设置静态专用 IP | Windows Azure"
+   pageTitle="如何在经典模式下使用 PowerShell 设置静态专用 IP | Azure"
    description="了解静态专用 IP (DIP) 以及如何在经典模式下使用 PowerShell 对其进行管理"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn"
    tags="azure-service-management"
 />
-<tags 
-   ms.service="virtual-network"
-   ms.date="09/08/2015"
-   wacn.date="11/02/2015" />
+<tags
+	ms.service="virtual-network"
+	ms.date="02/02/2016"
+	wacn.date="03/28/2016"/>
 
 # 如何在 PowerShell 中设置静态专用 IP 地址（经典）
 
@@ -19,11 +19,9 @@
 
 [AZURE.INCLUDE [virtual-networks-static-private-ip-intro-include](../includes/virtual-networks-static-private-ip-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)]本文介绍经典部署模型。你还可以[管理资源管理器部署模型中的静态专用 IP 地址](/documentation/articles/virtual-networks-static-private-ip-arm-ps)。
-
 [AZURE.INCLUDE [virtual-networks-static-ip-scenario-include](../includes/virtual-networks-static-ip-scenario-include.md)]
 
-下面的示例 PowerShell 命令需要已创建简单的环境。
+下面的示例 PowerShell 命令需要已创建简单的环境。首先需要构建[创建 VNet](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps) 中所述的测试环境。
 
 ## 如何验证特定 IP 地址是否可用：
 若要验证 IP 地址 *192.168.1.101* 在名为 *TestVnet* 的 VNet 中是否可用，请运行以下 PowerShell 命令并验证 *IsAvailable* 的值：

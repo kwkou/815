@@ -4,16 +4,16 @@
    services="traffic-manager"
    documentationCenter="na"
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="traffic-manager"
-   ms.date="08/19/2015"
-   wacn.date="10/03/2015" />
+<tags
+	ms.service="traffic-manager"
+   ms.date="12/02/2015"
+	wacn.date="01/21/2016"/>
 
 # 禁用或启用流量管理器终结点
 
-你还可以禁用属于流量管理器配置文件的一部分的个体终结点。终结点包括云服务和网站。禁用某个终结点会将其保留为配置文件的一部分，但是配置文件的行为就如同其中不包括该终结点一样。此操作对于临时删除处于维护模式或正在重新部署的终结点非常有用。终结点再次运行后，可以启用它。
+你还可以禁用属于流量管理器配置文件的一部分的个体终结点。终结点包括云服务和 Web 应用。禁用某个终结点会将其保留为配置文件的一部分，但是配置文件的行为就如同其中不包括该终结点一样。此操作对于临时删除处于维护模式或正在重新部署的终结点非常有用。终结点再次运行后，可以启用它。
 
 >[AZURE.NOTE]**禁用某个终结点对其在 Azure 中的部署状态没有任何影响。正常的终结点将保持运行并能够接收流量，即使在流量管理器中已将其禁用也是如此。此外，在一个配置文件中禁用某个终结点不会影响它在其他配置文件中的状态。**
 
@@ -36,13 +36,8 @@
 
 [流量管理器 - 禁用、启用或删除配置文件](/documentation/articles/disable-enable-or-delete-a-profile)
 
-[什么是流量管理器？](/documentation/articles/traffic-manager)
+[流量管理器降级状态疑难解答](/documentation/articles/traffic-manager-troubleshooting-degraded)
 
-[云服务](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
+[流量管理器性能注意事项](/documentation/articles/traffic-manager-performance-considerations)
 
-[网站](/documentation/services/web-sites/)
-
-
-[流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
-
-<!---HONumber=71-->
+<!---HONumber=Mooncake_1221_2015-->

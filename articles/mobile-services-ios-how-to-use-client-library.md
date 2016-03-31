@@ -9,11 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/01/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="01/12/2016"
+	wacn.date="02/26/2016"/>
 
 #  如何使用适用于 Azure 移动服务的 iOS 客户端库
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
 本指南介绍如何使用 Azure 移动服务 [iOS SDK] 执行常见任务。如果你不熟悉移动服务，请先完成[移动服务快速入门]，以配置你的帐户、创建表，并创建移动服务。
@@ -24,7 +27,7 @@
 
 ## <a name="Setup"></a>安装与先决条件
 
-本指南假设你已创建一个移动服务和一个表。有关详细信息，请参阅[创建表]，或重复使用在[移动服务快速入门]中创建的 `TodoItem` 表。本指南假设该表的架构与这些教程中的表相同。本指南还假设你的 Xcode 将引用 `WindowsAzureMobileServices.framework` 并导入 `WindowsAzureMobileServices/WindowsAzureMobileServices.h`。
+本指南假设你已创建一个移动服务和一个表。有关详细信息，请参阅[创建表]，或再次使用[移动服务快速入门]中创建的 `TodoItem` 表。本指南假设该表的架构与这些教程中的表相同。本指南还假设你的 Xcode 将引用 `WindowsAzureMobileServices.framework` 并导入 `WindowsAzureMobileServices/WindowsAzureMobileServices.h`。
 
 ## <a name="create-client"></a>如何：创建移动服务客户端
 
@@ -88,7 +91,13 @@ MSClient *client = [MSClient clientWithApplicationURLString:@"AppUrl" applicatio
     MSQuery *query = [table queryWithPredicate: [NSPredicate predicateWithFormat:@"complete == NO"]];
 ```
 
-`MSQuery` 可让你控制以下几种查询行为。通过调用 `readWithCompletion` 执行 `MSQuery` 查询，如下一示例中所示。* 指定结果的顺序 * 限制要返回的字段 * 限制要返回的记录数 * 指定响应中的总计数 * 指定请求中的自定义查询字符串参数 * 应用其他函数
+`MSQuery` 可让你控制以下几种查询行为。通过调用 `readWithCompletion` 执行 `MSQuery` 查询，如下一示例中所示。
+* 指定结果的顺序 
+* 限制要返回的字段 
+* 限制要返回的记录数 
+* 指定响应中的总计数 
+* 指定请求中的自定义查询字符串参数 
+* 应用其他函数
 
 
 ##  <a name="sorting"></a>如何：使用 MSQuery 对数据排序
@@ -307,27 +316,22 @@ Azure 移动服务支持两种身份验证工作流：
 <!-- Images. -->
 
 <!-- URLs. -->
-[将移动服务添加到现有应用程序]: /develop/mobile/
-
 [移动服务快速入门]: /documentation/articles/mobile-services-ios-get-started
-[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-ios
-[Validate and modify data in Mobile Services by using server scripts]: /documentation/articles/mobile-services-ios-validate-modify-data-server-scripts
+[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
+[身份验证]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
 [iOS SDK]: https://developer.apple.com/xcode
 
 [Handling Expired Tokens]: http://go.microsoft.com/fwlink/p/?LinkId=301955
 [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
 [权限]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj193161.aspx
 [服务器端授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
-[Use scripts to authorize users]: /zh-cn/documentation/articles/mobile-services-ios-authorize-users-in-scripts
 [动态架构]: http://go.microsoft.com/fwlink/p/?LinkId=296271
-[How to: access custom parameters]: /zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts#access-headers
 [创建表]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj193162.aspx
 [NSDictionary object]: http://go.microsoft.com/fwlink/p/?LinkId=301965
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-[CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools#Mobile_Tables
-[冲突处理程序]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data#add-conflict-handling
+[CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools/#Mobile_Tables
+[冲突处理程序]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data/#add-conflict-handling
  
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0215_2016-->

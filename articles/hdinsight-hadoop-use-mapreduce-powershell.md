@@ -1,17 +1,17 @@
 <properties
-   pageTitle="将 MapReduce 和 PowerShell 与 Hadoop 配合使用 | Windows Azure"
+   pageTitle="将 MapReduce 和 PowerShell 与 Hadoop 配合使用 | Azure"
    description="了解如何使用 PowerShell 在 HDInsight 上的 Hadoop 上远程运行 MapReduce 作业。"
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
    manager="paulettm"
    editor="cgronlun"
-   tags="azure-portal"/>
+	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="02/04/2016"
+	wacn.date="03/28/2016"/>
 
 #使用 PowerShell 对 HDInsight 上的 Hadoop 运行 Hive 查询
 
@@ -23,7 +23,7 @@
 
 若要完成本文中的步骤，你将需要：
 
-- **Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Windows)**
+- **Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Windows）** 
 
 - **配备 Azure PowerShell 的工作站**。请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 
@@ -33,11 +33,13 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 MapRed
 
 在远程 HDInsight 群集上运行 MapReduce 作业时，将使用以下 Cmdlet。
 
-* **Add-AzureAccount -Environment AzureChinaCloud**：在 Azure 订阅中进行 Azure PowerShell 身份验证
+* **Add-AzureAccount**：向 Azure 订阅进行 Azure PowerShell 身份验证
+
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
 
 * **New-AzureHDInsightMapReduceJobDefinition**：使用指定的 MapReduce 信息创建新的*作业定义*
 
-* **Start-AzureHDInsightJob**：将作业定义发送到 HDInsight，启动作业，然后返回可用来检查作业状态的*作业* 对象
+* **Start-AzureHDInsightJob**：将作业定义发送到 HDInsight，启动作业，然后返回可用来检查作业状态的*作业*对象
 
 * **Wait-AzureHDInsightJob**：使用作业对象来检查作业的状态。它等到作业完成或超出等待时间。
 
@@ -45,7 +47,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 MapRed
 
 以下步骤演示了如何使用这些 Cmdlet 在 HDInsight 群集上运行作业。
 
-1. 使用编辑器将以下代码另存为 **mapreducejob.ps1**。必须将 **CLUSTERNAME** 替换为 HDInsight 群集的名称。
+1. 使用编辑器将以下代码保存为 **mapreducejob.ps1**。必须将 **CLUSTERNAME** 替换为 HDInsight 群集的名称。
 
 		#Login to your Azure subscription
 		# Is there an active Azure subscription?
@@ -78,10 +80,12 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 MapRed
 		# Print the output
 		Write-Host "Display the standard output..." -ForegroundColor Green
 		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $wordCountJob.JobId -StandardOutput
-
+            
 2. 打开一个新的 **Azure PowerShell** 命令提示符。将目录更改为 **mapreducejob.ps1** 文件所在位置，然后使用以下命令来运行脚本：
 
 		.\mapreducejob.ps1
+    
+    运行该脚本时，系统可能会提示你向 Azure 订阅进行身份验证。还会要求你提供 HDInsight 群集的 HTTPS/Admin 帐户名称和密码。
 
 3. 在作业完成后，你应该会收到如下输出：
 
@@ -99,7 +103,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 MapRed
 
 	> [AZURE.NOTE]如果 **ExitCode** 的值不是 0，请参阅[故障排除](#troubleshooting)。
 
-##<a id="results"></a>查看作业输出
+##查看输出
 
 MapReduce 作业已将操作结果存储到 Azure Blob 存储（位于指定为作业参数的 **wasb:///example/data/WordCountOutput** 路径中）。可以通过 Azure PowerShell 访问 Azure Blob 存储，但你必须知道存储帐户名称、密钥，以及 HDInsight 群集用来直接访问文件的容器。
 
@@ -127,7 +131,7 @@ MapReduce 作业已将操作结果存储到 Azure Blob 存储（位于指定为�
 		$clusterInfo = Get-AzureHDInsightCluster -ClusterName $clusterName
 
 		#Get the storage account information
-		$storageAccountName = $clusterInfo.DefaultStorageAccount.StorageAccountName
+		$storageAccountName = $clusterInfo.DefaultStorageAccount.StorageAccountName -replace ".blob.core.chinacloudapi.cn", ""
 		$storageAccountKey = $clusterInfo.DefaultStorageAccount.StorageAccountKey
 		$storageContainer = $clusterInfo.DefaultStorageAccount.StorageContainerName
 
@@ -170,4 +174,4 @@ MapReduce 作业的输出会存储在名称为 *part-r-#####* 的文件中。使
 
 * [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

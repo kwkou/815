@@ -7,15 +7,15 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/10/2015"   
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="12/05/2015"
+	wacn.date="01/14/2016"/>
 
 
 # 使用 Azure 媒体包装器完成静态打包任务
 
->[AZURE.NOTE]Windows Azure 媒体包装器和 Windows Azure 媒体加密器的使用期限将于 2016 年 3 月 1 日到期。到时，这些组件将不再可用。格式转换和加密功能将通过动态打包和动态加密提供。
+>[AZURE.NOTE]Azure 媒体包装器和 Azure 媒体加密器的使用期限将于 2016 年 3 月 1 日到期。到时，这些组件将不再可用。格式转换和加密功能将通过动态打包和动态加密提供。
 
 ## 概述
 

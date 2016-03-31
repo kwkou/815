@@ -1,28 +1,29 @@
-<properties 
-	pageTitle="创建和上载 Oracle Linux VHD | Windows Azure" 
-	description="了解如何创建和上载包含 Oracle Linux 操作系统的 Azure 虚拟硬盘 (VHD)。" 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="szarkos" 
-	manager="timlt" 
+<properties
+	pageTitle="创建和上载 Oracle Linux VHD | Azure"
+	description="了解如何创建和上载包含 Oracle Linux 操作系统的 Azure 虚拟硬盘 (VHD)。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="szarkos"
+	manager="timlt"
 	editor="tysonn"
 	tags="azure-service-management,azure-resource-manager" />
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.date="05/15/2015" 
-	wacn.date="11/12/2015"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="01/22/2016"
+	wacn.date="03/28/2016"/>
 
 # 为 Azure 准备 Oracle Linux 虚拟机
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 - [为 Azure 准备 Oracle Linux 6.4+ 虚拟机](#oracle6)
 - [为 Azure 准备 Oracle Linux 7.0+ 虚拟机](#oracle7)
 
-##先决条件##
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
-本文假定你已在虚拟硬盘中安装了 Oracle Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/library/hh846766.aspx)。
+## 先决条件 ##
+
+本文假定你已在虚拟硬盘中安装了 Oracle Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。
 
 
 **Oracle Linux 安装说明**
@@ -31,7 +32,7 @@
 
 - Hyper-V 和 Azure 不支持 Oracle 的 UEK2，因为它不包括所需的驱动程序。
 
-- Azure 不支持更新的 VHDX 格式。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。
+- Azure 不支持 VHDX 格式，仅支持**固定大小的 VHD**。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。
 
 - 在安装 Linux 系统时，建议使用标准分区而不是 LVM（通常是许多安装的默认值）。这将避免 LVM 与克隆 VM 发生名称冲突，特别是在 OS 磁盘需要连接到另一台 VM 以进行故障排除的情况下。如果首选，LVM 或 [RAID](/documentation/articles/virtual-machines-linux-configure-raid) 可以在数据磁盘上使用。
 
@@ -91,7 +92,7 @@
 
 	这还将确保所有控制台消息都发送到第一个串行端口，从而可以协助 Azure 支持人员调试问题。由于 Oracle 的 Red Hat 兼容内核中的 bug，这将禁用 NUMA。
 
-	除此之外，建议*删除*以下参数：
+	除此之外，建议删除以下参数：
 
 		rhgb quiet crashkernel=auto
 
@@ -110,7 +111,7 @@
 
 12.	不要在 OS 磁盘上创建交换空间。
 
-	Azure Linux 代理可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
+	Azure Linux 代理可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是临时磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
@@ -163,7 +164,7 @@
 		PEERDNS=yes
 		IPV6INIT=no
 
-5.	移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Windows Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
+5.	移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
 
 		# sudo mkdir -m 0700 /var/lib/waagent
 		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/ 2>/dev/null
@@ -186,7 +187,7 @@
 
 		GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0"
 
-	这还将确保所有控制台消息都发送到第一个串行端口，从而可以协助 Azure 支持人员调试问题。除此之外，建议*删除*以下参数：
+	这还将确保所有控制台消息都发送到第一个串行端口，从而可以协助 Azure 支持人员调试问题。除此之外，建议删除以下参数：
 
 		rhgb quiet crashkernel=auto
 
@@ -205,9 +206,9 @@
 
 		# sudo yum install WALinuxAgent
 
-13.	不要在操作系统磁盘上创建交换空间
+13.	不要在 OS 磁盘上创建交换空间。
 
-	Azure Linux 代理可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
+	Azure Linux 代理可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是临时磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
@@ -223,4 +224,8 @@
 
 15. 在 Hyper-V 管理器中单击**“操作”->“关闭”**。Linux VHD 现已准备好上载到 Azure。
 
-<!---HONumber=79-->
+
+## 后续步骤
+现在，你已准备就绪，可以使用 Oracle Linux .vhd 在 Azure 中创建新的虚拟机了。如果这是你第一次将 .vhd 文件上载到 Azure，请参阅 [创建并上载包含 Linux 操作系统的虚拟硬盘](/documentation/articles/virtual-machines-linux-create-upload-vhd)中的步骤 2 和步骤 3。
+
+<!---HONumber=Mooncake_0321_2016-->

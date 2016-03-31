@@ -9,13 +9,20 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="10/13/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="01/11/2016"
+	wacn.date="02/25/2016"/>
 
 
 # 续订 Office 365 和 Azure AD 的联合身份验证证书
 
 如果你收到电子邮件或门户通知，要求你续订 Office 365 的证书，则可参阅本文，了解如何解决此问题并防止其再次发生。本文假定你使用 AD FS 作为联合服务器。
+
+>[AZURE.IMPORTANT] 请注意，执行下列操作之一后，在 Windows Server 2012 或 Windows Server 2008 R2 上通过代理进行身份验证可能会失败：
+>
+- 证书在 AD FS 中滚动更新后，你的代理续订了信任令牌
+- 你手动替换了 AD FS 证书
+>     
+可以使用一个修补程序来解决此问题。请参阅[在 Windows Server 2012 或 Windows 2008 R2 SP1 中通过代理进行身份验证失败](http://support.microsoft.com/kb/3094446)
 
 ## 查看是否需要执行任何操作
 
@@ -73,12 +80,13 @@ https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
 
 ### 手动更新 Office 365 联合身份验证信任属性，按以下步骤操作。
 
-1.	打开用于 Windows PowerShell 的 Microsoft Azure Active Directory 模块。
+1.	打开用于 Windows PowerShell 的 Azure Active Directory 模块。
 2.	运行 $cred=Get-Credential。当此 cmdlet 提示你输入凭据时，键入你的云服务管理员帐户凭据。
 3.	运行 Connect-MsolService –Credential $cred。此 cmdlet 会将你连接到云服务。通过工具运行任何其他已安装的 cmdlet 之前，必须创建将你连接到云服务的上下文。
 4.	如果你在并非用作 AD FS 主联合服务器的计算机上运行这些命令，请运行 Set-MSOLAdfscontext -Computer <AD FS primary server>，其中 <AD FS primary server> 是主 AD FS 服务器的内部 FQDN 名称。此 cmdlet 生成将你连接到 AD FS 的上下文。 
 5.	运行 Update-MSOLFederatedDomain –DomainName <domain>。此 cmdlet 会将 AD FS 中的设置更新到云服务中，并配置两者之间的信任关系。
 
->[AZURE.NOTE]如果你需要支持多个顶级域（例如 contoso.com 和 fabrikam.com），则必须将 SupportMultipleDomain 开关用于任何 cmdlet。有关详细信息，请参阅“支持多个顶级域”。最后，请确保所有 Web 应用程序代理服务器都通过 [Windows Server May 2014](http://support.microsoft.com/kb/2955164) 汇总进行了更新，否则代理可能无法使用新证书自行进行更新，导致服务中断。
+>[AZURE.NOTE] 如果你需要支持多个顶级域（例如 contoso.com 和 fabrikam.com），则必须将 SupportMultipleDomain 开关用于任何 cmdlet。有关详细信息，请参阅“支持多个顶级域”。
+最后，请确保所有网站代理服务器都通过 [Windows Server May 2014](http://support.microsoft.com/kb/2955164) 汇总进行了更新，否则代理可能无法使用新证书自行进行更新，导致服务中断。
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0215_2016-->

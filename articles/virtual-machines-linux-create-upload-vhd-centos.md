@@ -10,15 +10,16 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="05/15/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="10/22/2015"
+	wacn.date="12/17/2015"/>
 
 # 为 Azure 准备基于 CentOS 的虚拟机
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 - [为 Azure 准备 CentOS 6.x 虚拟机](#centos6)
 - [为 Azure 准备 CentOS 7.0+ 虚拟机](#centos7)
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 ##先决条件##
 
@@ -27,7 +28,7 @@
 
 **CentOS 安装说明**
 
-- Azure 不支持更新的 VHDX 格式。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。
+- Azure 不支持 VHDX 格式，仅支持**固定大小的 VHD**。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。
 
 - 在安装 Linux 系统时，建议使用标准分区而不是 LVM（通常是许多安装的默认值）。这将避免 LVM 与克隆 VM 发生名称冲突，特别是在 OS 磁盘需要连接到另一台 VM 以进行故障排除的情况下。如果首选，LVM 或 [RAID](/documentation/articles/virtual-machines-linux-configure-raid) 可以在数据磁盘上使用。
 
@@ -65,7 +66,7 @@
 		PEERDNS=yes
 		IPV6INIT=no
 
-6.	移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Windows Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
+6.	移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
 
 		# sudo mkdir -m 0700 /var/lib/waagent
 		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/
@@ -77,33 +78,12 @@
 		# sudo chkconfig network on
 
 
-8. **仅限 CentOS 6.3**：安装适用于 Linux Integration Services 的驱动程序
+8. **仅限 CentOS 6.3**：安装适用于 Linux Integration Services (LIS) 的驱动程序
 
-	**重要说明：该步骤仅适用于 CentOS 6.3 及更低版本。** 在 CentOS 6.4+ 上，*内核中已提供* Linux Integration Services。
+	**重要说明：该步骤仅适用于 CentOS 6.3 及更低版本。** 在 CentOS 6.4+ 中，*标准内核中已提供 *Linux Integration Services。
 
-	a) 从 [Microsoft 下载中心](http://www.microsoft.com/zh-CN/download/details.aspx?id=41554)获取包含 Linux Integration Services 驱动程序的 .iso 文件。
+	- 按照 [LIS 下载页](https://www.microsoft.com/zh-CN/download/details.aspx?id=46842)上的安装说明进行操作并将 RPM 安装到你的映像上。  
 
-	b) 在 Hyper-V 管理器的“操作”窗格中，单击“设置”。
-
-	![打开 Hyper-V 设置](./media/virtual-machines-linux-create-upload-vhd-centos/settings.png)
-
-	c) 在“硬件”窗格中，单击“IDE 控制器 1”。
-
-	![添加 DVD 驱动器与安装介质](./media/virtual-machines-linux-create-upload-vhd-centos/installiso.png)
-
-	d) 在“IDE 控制器”框中，单击“DVD 驱动器”，然后单击“添加”。
-
-	e) 选择“映像文件”，浏览到 **Linux IC v3.2.iso**，然后单击“打开”。
-
-	f) 在“设置”页中，单击“确定”。
-
-	g) 单击“连接”打开虚拟机窗口。
-
-	h) 在命令提示符窗口中键入以下命令：
-
-		# sudo mount /dev/cdrom /media
-		# sudo /media/install.sh
-		# sudo reboot
 
 9. 通过运行以下命令安装 python-pyasn1 包：
 
@@ -116,27 +96,27 @@
 		baseurl=http://olcentgbl.trafficmanager.cn/openlogic/$releasever/openlogic/$basearch/
 		enabled=1
 		gpgcheck=0
-		
+
 		[base]
 		name=CentOS-$releasever - Base
 		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/os/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-		
+
 		#released updates
 		[updates]
 		name=CentOS-$releasever - Updates
 		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/updates/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-		
+
 		#additional packages that may be useful
 		[extras]
 		name=CentOS-$releasever - Extras
 		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/extras/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-		
+
 		#additional packages that extend functionality of existing packages
 		[centosplus]
 		name=CentOS-$releasever - Plus
@@ -144,7 +124,7 @@
 		gpgcheck=1
 		enabled=0
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-		
+
 		#contrib - packages by Centos Users
 		[contrib]
 		name=CentOS-$releasever - Contrib
@@ -253,7 +233,7 @@
 		PEERDNS=yes
 		IPV6INIT=no
 
-5.	移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Windows Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
+5.	移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
 
 		# sudo mkdir -m 0700 /var/lib/waagent
 		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/ 2>/dev/null
@@ -274,27 +254,27 @@
 		baseurl=http://olcentgbl.trafficmanager.cn/openlogic/$releasever/openlogic/$basearch/
 		enabled=1
 		gpgcheck=0
-		
+
 		[base]
 		name=CentOS-$releasever - Base
 		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/os/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-		
+
 		#released updates
 		[updates]
 		name=CentOS-$releasever - Updates
 		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/updates/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-		
+
 		#additional packages that may be useful
 		[extras]
 		name=CentOS-$releasever - Extras
 		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/extras/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-		
+
 		#additional packages that extend functionality of existing packages
 		[centosplus]
 		name=CentOS-$releasever - Plus
@@ -302,7 +282,7 @@
 		gpgcheck=1
 		enabled=0
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-		
+
 		#contrib - packages by Centos Users
 		[contrib]
 		name=CentOS-$releasever - Contrib
@@ -360,7 +340,4 @@
 
 16. 在 Hyper-V 管理器中单击**“操作”->“关闭”**。Linux VHD 现已准备好上载到 Azure。
 
-
- 
-
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

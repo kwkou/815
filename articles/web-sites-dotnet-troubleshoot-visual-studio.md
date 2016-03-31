@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Visual Studio 对 Azure 网站中的 Web 应用进行故障排除" 
+	pageTitle="使用 Visual Studio 对 Azure 中的 Web 应用进行故障排除" 
 	description="了解如何通过内置于 Visual Studio 2013 的远程调试、 跟踪和日志记录工具排除 Azure Web 应用的故障。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -8,15 +8,15 @@
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.date="09/16/2015" 
-	wacn.date="10/22/2015"/>
+	ms.service="web-sites" 
+	ms.date="01/08/2016" 
+	wacn.date="03/03/2016"/>
 
-# 使用 Visual Studio 对 Azure Web Apps 进行故障排除
+# 使用 Visual Studio 对 Azure Web 应用进行故障排除
 
 ## 概述
 
-本教程将向你介绍如何使用 Visual Studio 工具，以通过远程运行[调试模式](http://www.visualstudio.com/zh-cn/get-started/debug-your-app-vs.aspx)或查看应用程序日志和 Web 服务器日志帮助调试 Azure 网站的 Web 应用。
+本教程将向你介绍如何使用 Visual Studio 工具，以通过远程运行[调试模式](http://www.visualstudio.com/zh-cn/get-started/debug-your-app-vs.aspx)或查看应用程序日志和 Web 服务器日志帮助调试 Azure Web 应用。
 
 学习内容：
 
@@ -29,35 +29,17 @@
 
 如果你有 Visual Studio Ultimate，则还可以使用 [IntelliTrace](http://msdn.microsoft.com/zh-cn/library/vstudio/dd264915.aspx) 进行调试。本教程未介绍 IntelliTrace。
 
-### 教程章节
-
-- [先决条件](#prerequisites)
-- [站点配置和管理](#sitemanagement)
-- [在服务器资源管理器中访问网站文件](#remoteview)
-- [远程调试](#remotedebug)
-	- 远程调试网站
-	- 远程调试 Web 作业
-	- 有关远程调试的说明 
-- [诊断日志概述](#logsoverview)
-- [创建并查看应用程序跟踪日志](#apptracelogs)
-- [查看 Web 服务器日志](#webserverlogs)
-- [查看详细的错误消息日志](#detailederrorlogs)
-- [下载文件系统日志](#downloadlogs)
-- [查看存储日志](#storagelogs)
-- [查看失败请求日志](#failedrequestlogs)
-- [后续步骤](#nextsteps)
-
 ## <a name="prerequisites"></a>先决条件
 
 本教程适用于 [Azure 和 ASP.NET 入门][GetStarted]中设置的开发环境、Web 项目和 Azure Web 应用。对于 Web 作业部分，需要用到 [Azure WebJobs SDK 入门][GetStartedWJ]中创建的应用程序。
 
-在本教程中所示的代码示例适用于 C# MVC Web 应用程序，但对于 Visual Basic 和 Web 窗体应用程序，故障排除过程是一样的。
+在本教程中所示的代码示例适用于 C# MVC Web 应用，但对于 Visual Basic 和 Web 窗体应用程序，故障排除过程是一样的。
 
 远程调试需要 Visual Studio 2013 或 Visual Studio 2012 Update 4。针对 Web 作业的远程调试和**服务器资源管理器**功能需要 [Visual Studio 2013 Update 4](http://go.microsoft.com/fwlink/?LinkID=510314) 或更高版本。本教程中所示的其他功能也适用于 Visual Studio 2013 Express for Web 和 Visual Studio 2012 Express for Web。
 
 流式日志功能仅适用于面向 .NET Framework 4 或更高版本的应用程序。
 
-## <a name="sitemanagement"></a>Web 应用配置和管理
+## <a name="sitemanagement"></a> Web 应用配置和管理
 
 通过 Visual Studio，用户可以访问管理门户中提供的 Web 应用管理功能和配置设置的子集。本节将向你介绍具体提供的功能。
 
@@ -67,9 +49,7 @@
 
 	> [AZURE.NOTE]将此订阅文件下载并保存到源代码目录之外的文件夹中（例如，在 Downloads 文件夹中），然后在导入完成后将其删除。获得了此订阅文件访问权的恶意用户可以编辑、创建和删除你的 Azure 服务。
 
-	有关从 Visual Studio 连接至 Azure 资源的详细信息，请参阅[管理帐户、订阅和管理角色](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx#bkmk_accountvcert&clcid=0x409)。
-
-2. 在“服务资源管理器”中，展开“Azure”，然后展开“Web Apps”。
+2. 在“服务资源管理器”中，展开“Azure”，然后展开“Web 应用”。
 
 3. 右键单击在 [Azure 和 ASP.NET 入门][GetStarted]中创建的 Web 应用的节点，然后单击“查看设置”。
 
@@ -81,9 +61,11 @@
 
 	本教程将向你介绍如何使用日志记录和跟踪下拉列表。其中，还将用到远程调试，但会通过不同方式启用该调试。
    
-	有关该窗口中“应用程序设置”和“连接字符串”框的信息，请参阅 [Azure Web Apps：应用程序字符串和连接字符串的工作原理](http://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx)。
+	有关该窗口中“应用程序设置”和“连接字符串”框的信息，请参阅 [Azure Web 应用：应用程序字符串和连接字符串的工作原理](https://azure.microsoft.com/zh-cn/blog/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)。
 
-	如果你想执行的 Web 应用管理任务无法在此窗口进行，可单击“完整的 Web 应用设置”打开一个到管理门户的浏览器窗口。有关详细信息，请参阅[如何配置网站](/documentation/articles/web-sites-configure)。
+	如果你想执行的网站管理任务无法在此窗口进行，可单击“完整的网站设置”打开一个到管理门户的浏览器窗口。有关详细信息，请参阅[如何配置网站](/documentation/articles/web-sites-configure)。
+
+	如果你想执行的 Web 应用管理任务无法在此窗口进行，可单击“完整的 Web 应用设置”打开一个到管理门户的浏览器窗口。有关详细信息，请参阅[如何配置 Web 应用](/documentation/articles/web-sites-configure)。
 
 ## <a name="remoteview"></a>在服务器资源管理器中访问 Web 应用文件
 
@@ -97,13 +79,13 @@
 
 ![无用的错误页](./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror1.png)
 
-**网站无法显示页面**
+** Web 应用无法显示页面**
 
 ![无用的错误页](./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror2.png)
 
 找出错误原因的最简便方法通常是启用详细错误消息，如此，之前保留的屏幕快照中的第一个快照会告诉你如何做。而实现此目的需要在部署的 Web.config 文件中进行更改。你可以编辑项目中的 *Web.config* 文件，然后重新部署该项目，或创建 [Web.config 转换](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/web-config-transformations)并部署调试版本，但还有一个更快捷的方式：在“解决方案资源管理器”中，可以通过使用*远程视图*功能直接查看并编辑远程站点上的文件。
 
-1. 在“服务器资源管理器”中，展开“Azure”、“网站”、Web 应用所在的资源组以及 Web 应用的节点。
+1. 在“服务器资源管理器”中，展开“Azure”、“ Web 应用”、 Web 应用所在的资源组以及 Web 应用的节点。
 
 	你将看到允许你访问 Web 应用的内容文件和日志文件的节点。
 
@@ -127,7 +109,7 @@
 
 编辑 Web.config 文件示例向你演示了能够读取并编辑 Azure Web 应用上的文件使得故障排除变得更加简单，而这仅仅只是其中之一。
 
-## <a name="remotedebug"></a>远程调试 Web Apps
+## <a name="remotedebug"></a>远程调试 Web 应用
 
 如果详细的错误消息提供的信息量不够，而你无法本地重新创建该错误，则可以采用远程运行调试模式来进行故障排除.你可以设置断点、直接操作内存、逐行执行代码，甚至更改代码路径。
 
@@ -160,15 +142,15 @@
 
 4. 部署结束后，浏览器将打开 Web 应用的 Azure URL，关闭浏览器。
 
-5. 对于 Visual Studio 2013：在“服务器资源管理器”中依次展开“Azure”和“Web Apps”，右键单击你的 Web 应用，然后单击“附加调试器”。
+5. 对于 Visual Studio 2013：在“服务器资源管理器”中依次展开“Azure”和“ Web 应用”，右键单击你的 Web 应用，然后单击“附加调试器”。
 
 	![附加调试程序](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-attachdebugger.png)
 
-	浏览器将自动打开你运行在 Azure 中的主页。你可能必须等待 20 秒左右以便 Azure 针对调试设置服务器。此延迟只在首次于网站上运行调试模式时出现。接下来的 48 小时内，再次启动调试将不会出现延迟。
+	浏览器将自动打开你运行在 Azure 中的主页。你可能必须等待 20 秒左右以便 Azure 针对调试设置服务器。此延迟只在首次于 Web 应用上运行调试模式时出现。接下来的 48 小时内，再次启动调试将不会出现延迟。
 
 6. 对于 Visual Studio 2012 Update 4：<a id="vs2012"></a>
 
-	* 在 Azure 管理门户中，转到网站的“配置”选项卡，然后向下滚至“站点诊断”部分。
+	* 在 Azure 管理门户中，转到 Web 应用的“配置”选项卡，然后向下滚至“站点诊断”部分。
 
 	* 将“远程调试”设置为“开启”，然后将“远程调试 Visual Studio 版本”设置为“2012”。
 
@@ -224,7 +206,7 @@
 
 	Visual Studio 将部署 Web 和 Web 作业项目，浏览器将打开你 Web 应用的 Azure URL。
 
-5. 在“服务器资源管理器”中，展开“Azure”>“Web Apps”> 你的 Web 应用 >“Web 作业”>“连续”，然后右键单击“ContosoAdsWebJob”。
+5. 在“服务器资源管理器”中，展开“Azure”>“ Web 应用”> 你的 Web 应用>“Web 作业”>“连续”，然后右键单击“ContosoAdsWebJob”。
 
 7. 单击“附加调试器”。
 
@@ -283,11 +265,11 @@
 
 * 启用远程调试功能时，服务器上会出现一个计时器，48 小时后该功能将自动关闭。这一 48 小时的限制是出于安全性与性能的考虑。你可以根据需要轻松地多次重启该功能。我们建议，在不主动进行调试的时候，保持其处于禁用状态。
 
-* 你可以手动将调试器附加至任何进程，而不仅仅是网站进程 (w3wp.exe)。有关如何在 Visual Studio 中使用调试模式的信息，请参阅[在 Visual Studio 中进行调试](http://msdn.microsoft.com/zh-cn/library/vstudio/sc65sadd.aspx)。
+* 你可以手动将调试器附加至任何进程，而不仅仅是 Web 应用进程 (w3wp.exe)。有关如何在 Visual Studio 中使用调试模式的信息，请参阅[在 Visual Studio 中进行调试](http://msdn.microsoft.com/zh-cn/library/vstudio/sc65sadd.aspx)。
 
 ## <a name="logsoverview"></a>诊断日志概述
 
-运行在 Azure Web 应用中的 ASP.NET 应用程序可以创建以下几类日志：
+运行在 Azure 中的 ASP.NET 应用程序可以创建以下几类日志：
 
 * **应用程序跟踪日志**<br/>应用程序通过调用 [System.Diagnostics.Trace](http://msdn.microsoft.com/zh-cn/library/system.diagnostics.trace.aspx) 类的方法创建这些日志。
 * **Web 服务器日志**<br/>Web 服务器为每一个对 Web 应用的 HTTP 请求创建一个日志条目。
@@ -401,7 +383,7 @@
 
 		<trace enabled="true" writeToDiagnosticsTrace="true" localOnly="false" mostRecent="true" pageOutput="false" />
 
-	然而，出于安全考虑，一般不建议在生产 Web 应用中启用 `trace.axd`，在随后的内容中你将了解到一种在 Azure Web 应用中更为便捷地读取跟踪日志的方法。
+	然而，出于安全考虑，一般不建议在生产 Web 应用中启用 `trace.axd`，在随后的内容中你将了解到一种在 Azure 中更为便捷地读取跟踪日志的方法。
 
 ### 在 Azure 中查看跟踪输出
 
@@ -487,7 +469,7 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 	![输出窗口中的 Web 服务器日志](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-wslogs.png)
 
 
-默认情况下，通过使用 Visual Studio 第一次启用 Web 服务器日志时，Azure 会将日志写入文件系统。或者，你可以使用管理门户指定将 Web 服务器日志写入存储帐户的 Blob 容器。有关详细信息，请参阅[如何配置网站](/documentation/articles/web-sites-configure/#howtochangeconfig)中的“站点诊断”部分。
+默认情况下，通过使用 Visual Studio 第一次启用 Web 服务器日志时，Azure 会将日志写入文件系统。或者，你可以使用管理门户指定将 Web 服务器日志写入存储帐户的 Blob 容器。有关详细信息，请参阅[如何配置 Web 应用](/documentation/articles/web-sites-configure/#howtochangeconfig)中的“站点诊断”部分。
 
 如果使用管理门户将 Web 服务器日志记录写入 Azure 存储帐户，之后在 Visual Studio 中禁用日志记录，那么在 Visual Studio 中重新启用日志记录时，存储帐户设置将还原。
 
@@ -532,7 +514,7 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 	![下载的文件](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-logfilefolders.png)
 
 	* 应用程序跟踪日志位于 *LogFiles\\Application* 文件夹的 *.txt* 文件中。
-	* Web 服务器位于 *LogFiles\\http\\RawLogs* 文件夹的 *.log* 文件中。可以使用诸如 [Log Parser](http://www.microsoft.com/zh-cn/download/details.aspx?displaylang=en&id=24659) 之类的工具查看并处理这些文件。
+	* Web 服务器位于 *LogFiles\\http\\RawLogs* 文件夹的 *.log* 文件中。可以使用诸如 [Log Parser](http://www.microsoft.com/download/details.aspx?displaylang=en&id=24659) 之类的工具查看并处理这些文件。
 	* 详细的错误消息日志位于 *LogFiles\\DetailedErrors* 文件夹的 *.html* 文件中。
 
 	（*deployments* 文件夹内是由源代码管理发布创建的文件；其中没有任何有关 Visual Studio 发布的内容。*Git* 文件夹内是与源代码管理发布以及日志文件流式传输服务相关的跟踪。）
@@ -567,7 +549,7 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 5. 将“区域或地缘组”设置为离你最近的区域。
 
-	此设置指定哪个 Azure 数据中心将托管你的存储帐户。对于本教程，你做的选择不会带来明显的差异；但是，对于生产 Web 应用，你希望 Web 服务器和存储帐户处于同一区域，以最大程度地减少延迟和数据传出费用。（稍后要创建的）Web 应用应在与访问 Web 应用的浏览器尽可能靠近的区域中运行，以最大程度地减少延迟。
+	此设置指定哪个 Azure 数据中心将托管你的存储帐户。对于本教程，你做的选择不会带来明显的差异；但是，对于生产 Web 应用，你希望 Web 服务器和存储帐户处于同一区域，以最大程度地减少延迟和数据传出费用。（稍后要创建的） Web 应用应在与访问 Web 应用的浏览器尽可能靠近的区域中运行，以最大程度地减少延迟。
 
 6. 将“复制”下拉列表设置为“本地冗余”。
 
@@ -581,7 +563,7 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 	![配置日志记录](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configlogging.png)
 
-	这将在管理门户中为你的 Web 应用打开“配置”选项卡。另一种访问此选项卡的方法是单击“Web Apps”选项卡，单击你的 Web 应用，然后单击“配置”选项卡。
+	这将在管理门户中为你的 Web 应用打开“配置”选项卡。另一种访问此选项卡的方法是单击“ Web 应用”选项卡，单击你的 Web 应用，然后单击“配置”选项卡。
 
 2. 在管理门户的“配置”选项卡中，向下滚动至应用程序诊断部分，然后将“应用程序日志记录(表存储)”更改为“打开”。
 
@@ -623,7 +605,7 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 	![表视图中的存储日志](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-tracelogtableview.png)
 
-	该视图将显示任何其他视图都没提供的额外字段。该视图还支持你使用特殊的 Query Builder UI 构建查询以筛选日志。有关详细信息，请参阅[通过服务器资源管理器浏览存储资源](http://msdn.microsoft.com/zh-cn/library/azure/ff683677.aspx)中的“使用表资源 - 筛选实体”。
+	该视图将显示任何其他视图都没提供的额外字段。该视图还支持你使用特殊的 Query Builder UI 构建查询以筛选日志。
 
 7. 要查看单个行的详细信息，请双击其中一行。
 
@@ -633,7 +615,7 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 在出现诸如 URL 重写或身份验证问题之类的情况下，需要详细了解 IIS 是如何处理 HTTP 请求时可求助于失败请求跟踪日志。
 
-Azure Web Apps 使用 IIS 7.0 及更高版本中提供的相同的失败请求跟踪功能。IIS 设置经过配置可记录指定错误，但你无法访问该设置。启用失败请求跟踪后，所有错误都将纳入捕获范围内。
+Azure Web 应用使用 IIS 7.0 及更高版本中提供的相同的失败请求跟踪功能。IIS 设置经过配置可记录指定错误，但你无法访问该设置。启用失败请求跟踪后，所有错误都将纳入捕获范围内。
 
 使用 Visual Studio 可启用失败请求跟踪，但却无法在 Visual Studio 中对其进行查看。这些日志是 XML 文件。这些流式传输日志服务只监视认为在纯文本模式下可读的文件：*.txt*、*.html* 和 *.log* 文件。
 
@@ -698,29 +680,28 @@ Azure Web Apps 使用 IIS 7.0 及更高版本中提供的相同的失败请求�
 
 ### Azure Web 应用故障排除
 
-有关排除 Azure Web Apps (WAWS) 故障的详细信息，请参阅以下资源：
+有关排除 Azure Web 应用(WAWS) 故障的详细信息，请参阅以下资源：
 
-* [如何监视 Web Apps](/documentation/articles/web-sites-monitor/)
-* [使用 Visual Studio 2013 在 Azure Web Apps 中调查内存泄漏](http://blogs.msdn.com/b/visualstudioalm/archive/2013/12/20/investigating-memory-leaks-in-azure-web-sites-with-visual-studio-2013.aspx)。有关用于分析托管内存问题的 Visual Studio 功能的 Microsoft ALM 博客文章。
-* [你应该了解的 Windows Azure Web Apps 联机工具](http://azure.microsoft.com/blog/2014/03/28/windows-azure-websites-online-tools-you-should-know-about-2/)。Amit Apple 发表的博客文章。
+* [如何监视 Web 应用](/documentation/articles/web-sites-monitor/)
+* [使用 Visual Studio 2013 在 Azure 中调查内存泄漏](http://blogs.msdn.com/b/visualstudioalm/archive/2013/12/20/investigating-memory-leaks-in-azure-web-sites-with-visual-studio-2013.aspx)。有关用于分析托管内存问题的 Visual Studio 功能的 Microsoft ALM 博客文章。
+* [你应该了解的 Azure Web 应用联机工具](http://azure.microsoft.com/blog/2014/03/28/windows-azure-websites-online-tools-you-should-know-about-2/)。Amit Apple 发表的博客文章。
 
 若要针对特定故障排除问题寻求帮助，可在以下论坛之一开启话题讨论：
 
 * [ASP.NET 站点上的 Azure 论坛](http://forums.asp.net/1247.aspx/1?Azure+and+ASP+NET)。
 * [MSDN 上的 Azure 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchs)。
-* [StackOverflow.com](http://www.stackoverflow.com)。
 
 ### 在 Visual Studio 中进行调试 
 
-有关如何在 Visual Studio 中使用调试模式，请参阅[在 Visual Studio 中进行调试](http://msdn.microsoft.com/zh-cn/library/vstudio/sc65sadd.aspx) MSDN 主题和[使用 Visual Studio 2010 进行调试的提示](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx)。
+有关如何在 Visual Studio 中使用调试模式，请参阅[在 Visual Studio 中进行调试](http://msdn.microsoft.com/zh-cn/library/sc65sadd.aspx) MSDN 主题和[使用 Visual Studio 2010 进行调试的提示](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx)。
 
 ### 在 Azure 中进行远程调试
 
-有关 Azure Web Apps 和 Web 作业远程调试的详细信息，请参阅以下资源：
+有关 Azure Web 应用和 Web 作业远程调试的详细信息，请参阅以下资源：
 
-* [Azure Web Apps 远程调试简介](http://azure.microsoft.com/blog/2014/05/06/introduction-to-remote-debugging-on-azure-web-sites/)。
-* [Azure Web Apps 远程调试简介第 2 部分 - 远程调试洞析](http://azure.microsoft.com/blog/2014/05/07/introduction-to-remote-debugging-azure-web-sites-part-2-inside-remote-debugging/)
-* [Azure Web Apps 远程调试简介第 3 部分 - 多实例环境和 GIT](http://azure.microsoft.com/blog/2014/05/08/introduction-to-remote-debugging-on-azure-web-sites-part-3-multi-instance-environment-and-git/)
+* [Azure Web 应用远程调试简介](http://azure.microsoft.com/blog/2014/05/06/introduction-to-remote-debugging-on-azure-web-sites/)。
+* [Azure Web 应用远程调试简介第 2 部分 - 远程调试洞析](http://azure.microsoft.com/blog/2014/05/07/introduction-to-remote-debugging-azure-web-sites-part-2-inside-remote-debugging/)
+* [Azure Web 应用远程调试简介第 3 部分 - 多实例环境和 GIT](http://azure.microsoft.com/blog/2014/05/08/introduction-to-remote-debugging-on-azure-web-sites-part-3-multi-instance-environment-and-git/)
 
 
 如果你的 Web 应用使用 Azure Web API 或移动服务后端并且需要进行调试，请参阅[在 Visual Studio 中调试 .NET 后端](http://blogs.msdn.com/b/azuremobile/archive/2014/03/14/debugging-net-backend-in-visual-studio.aspx)。
@@ -756,19 +737,14 @@ Internet 上对于 ASP.NET 跟踪没有全面且最新的介绍。最佳做法�
 
 有关分析 Web 服务器日志的详细信息，请参阅以下资源：
 
-* [LogParser](http://www.microsoft.com/zh-cn/download/details.aspx?id=24659)<br/>用于查看 Web 服务器日志（*.log* 文件）中的数据的工具。
+* [LogParser](http://www.microsoft.com/download/details.aspx?id=24659)<br/>用于查看 Web 服务器日志（*.log* 文件）中的数据的工具。
 * [使用 LogParser 解决 IIS 性能问题或应用程序错误](http://www.iis.net/learn/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser)<br/>可用于分析 Web 服务器日志的 Log Parser 工具介绍。
 * [Robert McMurray 有关 LogParser 使用的博客文章](http://blogs.msdn.com/b/robert_mcmurray/archive/tags/logparser/)<br/>
 * [IIS 7.0、IIS 7.5 以及 IIS 8.0 中的 HTTP 状态代码](http://support.microsoft.com/kb/943891)
 
 ### 分析失败请求跟踪日志
 
-Microsoft TechNet 网站包含的[使用失败请求跟踪](http://www.iis.net/learn/troubleshoot/using-failed-request-tracing)部分对于了解如何使用这些日志非常有用。然而，该文档主要着重于在 IIS 中配置失败请求跟踪，并不适用于 Azure Web Apps。
-
-### 调试云服务
-
-如果你希望调试 Azure 云服务而不是 Web 应用，请参阅[调试云服务](http://msdn.microsoft.com/zh-cn/library/azure/ee405479.aspx)。
-
+Microsoft TechNet Web 应用包含的[使用失败请求跟踪](http://www.iis.net/learn/troubleshoot/using-failed-request-tracing)部分对于了解如何使用这些日志非常有用。然而，该文档主要着重于在 IIS 中配置失败请求跟踪，并不适用于 Azure Web 应用。
 
 
 

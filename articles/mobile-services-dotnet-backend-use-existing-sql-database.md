@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用现有的 SQL 数据库和移动服务 .NET 后端生成服务 | Windows Azure" 
+	pageTitle="使用现有的 SQL 数据库和移动服务 .NET 后端生成服务 | Azure" 
 	description="了解如何将现有的云或本地 SQL 数据库与基于 .NET 的移动服务结合使用" 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -9,12 +9,15 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/20/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="11/09/2015"
+	wacn.date="01/29/2016"/>
 
 
 # 使用现有的 SQL 数据库和移动服务 .NET 后端生成服务
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 移动服务 .NET 后端可方便你利用现有的资产来生成移动服务。（在本地或云中）使用可能已被其他应用程序使用的现有 SQL 数据库让现有数据可供移动客户端使用是特别有趣的方案之一。在此情况下，数据库模型（或*架构*）必须保持不变才能使现有方案继续工作。
 
 <a name="ExistingModel"></a>
@@ -22,7 +25,7 @@
 
 在本教程中，我们将使用以你的移动服务创建的数据库，但不使用创建的默认模型。我们将手动创建任意模型，以代表你可能具有的现有应用程序。有关如何改为连接到本地数据库的完整详细信息，请查看[使用混合连接从 Azure 移动服务连接到本地 SQL Server](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started)。
 
-1. 首先，请在 **Visual Studio 2013 Update 2** 中创建移动服务服务器项目，或使用可在 [Azure 管理门户](http://manage.windowsazure.cn)中从服务的“移动服务”选项卡下载的快速入门项目。对于本教程，我们假设你的服务器项目名称为 **ShoppingService**。
+1. 首先，请在 **Visual Studio 2013 Update 2** 中创建移动服务服务器项目，或使用可在 [Azure 经典门户](http://manage.windowsazure.cn)中从服务的“移动服务”选项卡下载的快速入门项目。对于本教程，我们假设你的服务器项目名称为 **ShoppingService**。
 
 2. 在 **Models** 文件夹中创建 **Customer.cs** 文件，并使用以下实现。需要将 **System.ComponentModel.DataAnnotations** 的程序集引用添加到项目中。
 
@@ -108,7 +111,7 @@
             }
         }
 
-    请注意，此类与模型中的 **Customer** 类相类似，差别在于 **Order** 的关系属性已删除。若要使对象正常使用移动服务脱机同步，需要使用一组*系统属性*来进行乐观并发，因此你会发现，DTO 继承自包含这些属性的 [**EntityData**](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mobile.service.entitydata.aspx)。原始模型中的基于 int 的 **CustomerId** 属性将替换为 **EntityData** 中基于字符串的 **Id** 属性，这将是移动服务使用的 **Id**。
+    请注意，此类与模型中的 **Customer** 类相类似，差别在于 **Order** 的关系属性已删除。若要使对象正常使用移动服务脱机同步，需要使用一组*系统属性*来进行乐观并发，因此你会发现，DTO 继承自包含这些属性的 [**EntityData**](http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.entitydata.aspx)。原始模型中的基于 int 的 **CustomerId** 属性将替换为 **EntityData** 中基于字符串的 **Id** 属性，这将是移动服务使用的 **Id**。
 
 2. 在服务项目的 **DataObjects** 文件夹中创建 **MobileOrder.cs** 文件。
 
@@ -143,7 +146,6 @@
     
         using System.ComponentModel.DataAnnotations.Schema;
         using Microsoft.WindowsAzure.Mobile.Service.Tables;
-        using System.ComponentModel.DataAnnotations;
         using System;
 
 4. 然后，将这些附加属性添加到每个类：
@@ -266,7 +268,7 @@
 
 AutoMapper 此时会将对象互相映射。将匹配所有具有相应名称的属性，例如，**MobileOrder.CustomerId** 将会自动映射到 **Order.CustomerId**。可按如下所示配置自定义映射，其中，我们将 **MobileCustomerName** 属性映射到 **Customer** 关系属性的 **Name** 属性。
 
-<a name="DomainManager">
+<a name="DomainManager"></a>
 ## 实现特定于域的逻辑
 
 下一步是实现 [**MappedEntityDomainManager**](http://msdn.microsoft.com/zh-cn/library/dn643300.aspx)，它用作映射的数据存储与要从客户端提供 HTTP 流量的控制器之间的抽象层。我们可以在下一个部分中完全以 DTO 的形式编写控制器，而在此处添加的 **MappedEntityDomainManager** 将会处理与原始数据存储之间的通信，同时让我们有地方可以实现其任何特定逻辑。
@@ -581,14 +583,13 @@ AutoMapper 此时会将对象互相映射。将匹配所有具有相应名称的
 
 3. 现在，你可以运行服务。按 **F5**，然后使用内置于帮助页中的测试客户端来修改数据。
 
-    请注意，这两个控制器实现独占使用 **MobileCustomer** 和 **MobileOrder**，且不区分基础模型。这些 DTO 已序列化为 JSON，并可用来与所有平台上的移动服务客户端 SDK 交换数据。例如，如果生成 Windows 应用商店应用程序，则相应的客户端类型将如下所示。该类型将与其他客户端平台上的类型相似。
+请注意，这两个控制器实现独占使用 **MobileCustomer** 和 **MobileOrder**，且不区分基础模型。这些 DTO 已序列化为 JSON，并可用来与所有平台上的移动服务客户端 SDK 交换数据。例如，如果生成 Windows 应用商店应用程序，则相应的客户端类型将如下所示。该类型将与其他客户端平台上的类型相似。
 
+    using Microsoft.WindowsAzure.MobileServices;
+    using System;
 
-		using Microsoft.WindowsAzure.MobileServices;
-		using System;
-
-		namespace ShoppingClient
-		{
+    namespace ShoppingClient
+    {
         public class MobileCustomer
         {
             public string Id { get; set; }
@@ -608,8 +609,8 @@ AutoMapper 此时会将对象互相映射。将匹配所有具有相应名称的
 
         }
 
-	    }
+    }
 
-接下来，你可以生成客户端应用程序以访问服务。有关详细信息，请参阅[将移动服务添加到现有应用程序](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data#update-the-app-to-use-the-mobile-service)。
+接下来，你可以生成客户端应用程序以访问服务。
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0118_2016-->

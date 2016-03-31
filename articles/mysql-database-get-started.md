@@ -1,8 +1,12 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL 数据库 on Azure数据库入门 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="快速入门指南帮助您迅速了解MySQL 数据库 on Azure，让您几分钟内轻松创建、连接、迁移、监控管理您的MySQL数据库。您根据入门指南中的步骤操作，将成功建立使用属于您的MySQL数据库。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />  
 
-<tags ms.service="mysql" ms.date="" wacn.date="05/21/2015"/>
+<tags ms.service="mysql" ms.date="" wacn.date="12/28/2015"/>
 
 #MySQL 数据库 on Azure数据库入门
+> [AZURE.SELECTOR]
+- [中文版](/documentation/articles/mysql-database-get-started)
+- [英文版](/documentation/articles/mysql-database-enus-get-started)
+
 在本教程帮助您将了解如何使用Azure管理门户迅速创建，连接，配置MySQL 数据库 on Azure。完成本教程后，您将在Azure上拥有一个示例MySQL数据库服务器，并了解如何使用管理门户执行基本管理任务。
 
 ###目录
@@ -32,7 +36,7 @@
 
 ![配置MySQL服务器](./media/mysql-database-get-started/config-mysql-server.png) 
 
-默认您在Azure上的其他服务（包括在Azure上的VM）允许访问您的MySQL数据库，您无需再手动添加IP地址。您也可以更改此默认功能，在“允许的服务”中，“Windows Azure 服务”一项选择“否”
+默认您在Azure上的其他服务（包括在Azure上的VM）允许访问您的MySQL数据库，您无需再手动添加IP地址。您也可以更改此默认功能，在“允许的服务”中，“Azure 服务”一项选择“否”
 
 ##<a id="step3"></a>步骤三：设置备份时间
 MySQL 数据库 on Azure支持两种备份形式：按需备份和每日定时备份。您可以选中您的MySQL服务器，点击“配置”进行每日备份时间的设置。您可以通过下拉菜单选择自动备份时间。

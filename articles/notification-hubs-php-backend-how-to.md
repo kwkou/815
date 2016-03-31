@@ -9,15 +9,11 @@
 
 <tags 
      ms.service="notification-hubs"
-     ms.date="07/17/2015" 
-     wacn.date="11/02/2015" />
+     ms.date="11/01/2015" 
+     wacn.date="01/14/2016" />
 
 # 如何通过 PHP 使用通知中心
-> [AZURE.SELECTOR] 
-- [Java](/documentation/articles/notification-hubs-java-backend-how-to)
-- [PHP](/documentation/articles/notification-hubs-php-backend-how-to)
-- [Python](/documentation/articles/notification-hubs-python-backend-how-to)
-- [Node.js](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)
+[AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
 
 如 MSDN 主题[通知中心 REST API](http://msdn.microsoft.com/zh-cn/library/dn223264.aspx) 中所述，你可以使用通知中心 REST 接口从 Java/PHP/Ruby 后端访问所有通知中心功能。
 
@@ -27,7 +23,7 @@
 * 请按照你选定的移动平台[入门教程](/documentation/articles/notification-hubs-ios-get-started)以 PHP 实现后端部分。
 
 ## 客户端接口
-主要的客户端接口可提供与 [.NET 通知中心 SDK](http://msdn.microsoft.com/zh-cn/library/jj933431.aspx) 中相同的方法，这将允许您直接翻译当前该网站上提供的所有教程和示例，这些内容均来自 Internet 上的社区。
+主要的客户端接口可提供[.NET 通知中心 SDK](http://msdn.microsoft.com/zh-cn/library/jj933431.aspx) 中提供的相同方法，这将允许你直接翻译当前此站点上提供的所有教程和示例，这些内容均来自 Internet 上的社区。
 
 你可以在 [PHP REST 包装器示例]中找到提供的所有代码。
 
@@ -108,7 +104,7 @@
 	}
 
 ### 发送通知
-首先，定义表示通知的类。
+首先，让我们定义表示通知的类。
 
 	class Notification {
 		public $format;
@@ -135,11 +131,7 @@
 
 具备了此类后，我们现在可以在 **NotificationHub** 类中编写发送通知方法了。
 
-	public function sendNotification($notification) {
-		$this->sendNotification($notification, "");
-	}
-
-	public function sendNotification($notification, $tagsOrTagExpression) {
+	public function sendNotification($notification, $tagsOrTagExpression="") {
 		if (is_array($tagsOrTagExpression)) {
 			$tagExpression = implode(" || ", $tagsOrTagExpression);
 		} else {
@@ -232,7 +224,7 @@
 		                '<wp:Text1>Hello from PHP!</wp:Text1>' .
 		           '</wp:Toast> ' .
 		        '</wp:Notification>';
-	$notification = new Notification("mpns", $toast);
+	$notification = new Notification("windowsphone", $toast);
 	$notification->headers[] = 'X-WindowsPhone-Target : toast';
 	$notification->headers[] = 'X-NotificationClass : 2';
 	$hub->sendNotification($notification);
@@ -249,11 +241,13 @@
 ## 后续步骤
 在本主题中，我们介绍了如何为通知中心创建简单的 Java REST 客户端。从这里你可以：
 
-* 下载完整[PHP REST 包装器示例]，其中包含上述所有代码。
+* 下载完整的 [PHP REST 包装器示例]，其中包含上述所有代码。
 * 在 [突发新闻教程] 中继续学习通知中心标记功能
 * 在 [通知用户教程] 中了解如何将通知推送到单个用户
 
+<!-- For more information, see also the [PHP Developer Center](/develop/php/). -->
 
 [PHP REST 包装器示例]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
-[入门的教程]: /documentation/articles/notification-hubs-ios-get-started
-<!---HONumber=67-->
+[入门教程]: /documentation/articles/notification-hubs-ios-get-started
+
+<!---HONumber=Mooncake_0104_2016-->

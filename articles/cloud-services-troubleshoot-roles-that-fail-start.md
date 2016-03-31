@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="启动失败的角色的疑难解答 | Windows Azure"
+   pageTitle="启动失败的角色的疑难解答 | Azure"
    description="以下是云服务角色无法启动的部分常见原因。此外还提供了这些问题的解决方案。"
    services="cloud-services"
    documentationCenter=""
@@ -10,7 +10,7 @@
 <tags 
    ms.service="cloud-services"
    ms.date="10/14/2015"
-   wacn.date="11/12/2015" />
+   wacn.date="01/21/2016" />
 
 # 对无法启动的云服务角色进行故障诊断的常见步骤
 
@@ -20,7 +20,7 @@
 
 如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和CSDN论坛](/support/forums/)上的 Azure 专家。
 
-或者，你也可以提出 Azure 支持事件。转至 [Azure 支持站点](/support/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Windows Azure 支持常见问题](/support/faq/)。
+或者，你也可以提出 Azure 支持事件。转至 [Azure 支持站点](/support/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Azure 支持常见问题](/support/faq/)。
 
 
 ## 缺少 DLL 或依赖项
@@ -29,13 +29,13 @@ DLL 或程序集丢失可能导致出现不响应的角色以及在“正在初�
 **症状：**DLL 或程序集丢失的症状可能为：
 
 - 角色实例在“正在初始化/忙/正在停止”之间循环。
-- 角色实例已转为“就绪”状态，但在导航到 Web 应用程序时未显示相应页面
+- 角色实例已转为“就绪”状态，但在导航到 Web 应用时未显示相应页面
 
 解决方案：若要调查这些问题，可采用三种推荐的方法。
 
 ## 在 Web 角色中诊断丢失 DLL 的问题
 
-当你导航到在 Web 角色中部署的网站，且浏览器显示类似于下面的服务器错误时：
+当你导航到在 Web 角色中部署的 Web 应用，且浏览器显示类似于下面的服务器错误时：
 
 !['/' 应用程序中出现服务器错误。](./media/cloud-services-troubleshoot-roles-that-fail-start/ic503388.png)
 
@@ -69,7 +69,7 @@ DLL 或程序集丢失可能导致出现不响应的角色以及在“正在初�
 
 2. 在使用 Visual Studio 部署解决方案的过程中，请选择“配置远程桌面连接…”。有关配置远程桌面连接的详细信息，请参阅[将远程桌面与 Azure 角色一起使用](https://msdn.microsoft.com/zh-cn/library/gg443832.aspx)。
 
-3. 在 Windows Azure 管理门户中，当实例显示“就绪”状态时，请单击其中一个角色实例。
+3. 在 Azure 管理门户中，当实例显示“就绪”状态时，请单击其中一个角色实例。
 
 4. 单击功能区“远程访问”区域中的“连接”图标。
 
@@ -83,9 +83,9 @@ DLL 或程序集丢失可能导致出现不响应的角色以及在“正在初�
 
 9. 打开 Internet Explorer。
 
-10. 键入 Web 应用程序的地址和名称。例如，`http://<IPV4 Address>/default.aspx`。
+10. 键入 Web 应用的地址和名称。例如，`http://<IPV4 Address>/default.aspx`。
 
-导航到网站将返回更明确的错误消息。
+导航到 Web 应用将返回更明确的错误消息。
 
 * '/' 应用程序中出现服务器错误
 
@@ -99,7 +99,7 @@ DLL 或程序集丢失可能导致出现不响应的角色以及在“正在初�
 
 ## 使用计算模拟器诊断问题
 
-你可以使用 Azure Windows Azure 计算模拟器来诊断丢失依赖项和出现 web.config 错误的问题，并纠正这些问题。
+你可以使用 Azure Azure 计算模拟器来诊断丢失依赖项和出现 web.config 错误的问题，并纠正这些问题。
 
 为了在使用此诊断方法时获得最佳结果，你应使用包含 Windows 的干净安装的计算机或虚拟机。若要以最佳效果模拟 Azure 环境，应使用 Windows Server 2008 R2 x64。
 

@@ -1,5 +1,5 @@
-﻿<properties 
-pageTitle="Windows Azure 开发人员中心：RUBY" 
+<properties 
+pageTitle="Azure 开发人员中心：RUBY" 
 description="" 
 services="RUBY" 
 documentationCenter="Develop" 
@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="RUBY"
     ms.date=""
-    wacn.date="06/29/2015"
+    wacn.date="01/21/2016"
     />
 
 #Ruby开发人员中心
@@ -23,7 +23,7 @@ editor="Eric Chen" />
 ##Ruby 教程和文档
 
 ###计算
-- [在 Linux 虚拟机上托管网站](/zh-cn/documentation/articles/virtual-machines-ruby-rails-web-app-linux)
+- [在 Linux 虚拟机上托管 Web 应用](/zh-cn/documentation/articles/virtual-machines-ruby-rails-web-app-linux)
 - [使用 Capistrano 部署](/zh-cn/documentation/articles/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn)
 - [使用命令行部署](/zh-cn/documentation/articles/xplat-cli)
 - [全部显示](/zh-cn/develop/ruby/compute)
@@ -31,7 +31,7 @@ editor="Eric Chen" />
 ###数据服务
 - [在 Blob 中存储数据](/zh-cn/documentation/articles/storage-ruby-how-to-use-blob-storage)
 - [在表中存储数据](/zh-cn/documentation/articles/storage-ruby-how-to-use-table-storage)
-- [管理和分析数据](/zh-cn/documentation/articles/fundamentals-data-management-business-analytics)
+<!--- [管理和分析数据](/zh-cn/documentation/articles/fundamentals-data-management-business-analytics)-->
 - [全部显示](/zh-cn/develop/ruby/data)
   
 ###应用服务
@@ -49,7 +49,7 @@ editor="Eric Chen" />
 - [SQL 数据库](http://social.technet.microsoft.com/wiki/contents/articles/3896.connect-to-windows-azure-sql-database-from-ruby-applications.aspx) / [TSQL](http://msdn.microsoft.com/zh-cn/library/azure/ee336281) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/gg715283)
 - [表服务](/zh-cn/documentation/articles/storage-ruby-how-to-use-table-storage) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - [命令行工具](/zh-cn/documentation/articles/xplat-cli)
-- [PowerShell Cmdlet](/zh-cn/documentation/articles/install-configure-powershell)
+- [PowerShell Cmdlet](/zh-cn/documentation/articles/powershell-install-configure)
 
 ##更多资源
 

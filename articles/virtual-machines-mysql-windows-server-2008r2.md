@@ -1,20 +1,23 @@
 <properties
-	pageTitle="创建在 Azure 中运行 MySQL 的虚拟机"
-	description="创建运行 Windows Server 2012 R2 的 Azure 虚拟机，然后在其上安装和配置 MySQL 数据库。"
+	pageTitle="创建运行 MySQL 的 VM | Azure"
+	description="使用经典部署模型创建运行 Windows Server 2012 R2 的 Azure 虚拟机，然后在其上安装并配置 MySQL 数据库。"
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor="tysonn"
 	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/10/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="11/09/2015"
+	wacn.date="12/31/2015"/>
 
 
-# 在 Azure 中运行 Windows Server 2012 R2 的虚拟机上安装 MySQL
+
+# 在使用经典部署模型创建的运行 Windows Server 2012 R2 的虚拟机上安装 MySQL
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
 [MySQL](http://www.mysql.com) 是一种受欢迎的 SQL 开源数据库。使用 [Azure 门户](http://manage.windowsazure.cn)，你可以从映像库创建运行 Windows Server 2012 R2 的虚拟机。然后，你就可以将其安装并配置为 MySQL Server。
@@ -53,8 +56,8 @@
 1.	使用远程桌面连接到该虚拟机后，从“开始”菜单单击“Internet Explorer”。
 2.	选择右上角的“工具”按钮（齿轮图标），然后单击“Internet 选项”。依次单击“安全”选项卡、“受信任的站点”图标、“站点”按钮。将 http://*.mysql.com 添加到受信任站点列表中。单击“关闭”，然后单击“确定”。
 3.	在 Internet Explorer 的地址栏中，键入 http://dev.mysql.com/downloads/mysql/。
-4.	使用 MySQL 站点查找和下载最新版本的用于 Windows 的 MySQL 安装程序。选择 MySQL 安装程序时，请下载包含完整文件集的版本（例如 mysql-installer-community-5.6.23.0.msi，文件大小为 282.4 MB），然后将安装程序文件保存到 Windows 桌面。
-5.	在桌面上，双击安装程序文件即可开始安装。
+4.	使用 MySQL 站点查找和下载最新版本的用于 Windows 的 MySQL 安装程序。选择 MySQL 安装程序时，请下载包含完整文件集的版本（例如 mysql-installer-community-5.6.23.0.msi，文件大小为 282.4 MB），并保存该安装程序。
+5.	当安装程序下载完成后，单击“运行”以启动安装程序。
 6.	在“许可协议”页上接受许可协议，然后单击“下一步”。
 7.	在“选择安装类型”页上单击你所要的安装类型，然后单击“下一步”。以下步骤假定你选择了“仅服务器”安装类型。
 8.	在“安装”页上，单击“执行”。安装完成后，单击“下一步”。
@@ -85,6 +88,7 @@
 
 19.	你还可以使用 C:\\Program Files (x86)\\MySQL\\MySQL Server 5.6\\my-default.ini 文件中的条目来配置服务器配置的默认设置，例如基本目录和驱动器以及数据目录和驱动器。有关详细信息，请参阅 [5\.1.2 服务器配置的默认值](http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html)。
 
+## 配置终结点
 
 如果你希望 MySQL Server 服务可供 Internet 上的 MySQL 客户端计算机使用，则必须为 MySQL Server 服务所侦听的 TCP 端口配置一个终结点，并创建更多 Windows 防火墙规则。该端口为 TCP 端口 3306，除非你在“类型和网络”页上指定了其他端口（前一过程的步骤 10）。
 
@@ -100,9 +104,16 @@
 4.	如果你使用的是默认 MySQL TCP 端口 3306，则请单击“名称”中的“MySQL”，然后单击复选标记。
 5.	如果你使用的是其他 TCP 端口，则请在“名称”中键入唯一名称。在协议中选择“TCP”，在“公用端口”和“专用端口”中键入端口号，然后单击复选标记。
 
-若要添加 Windows 防火墙规则以允许来自 Internet 的 MySQL 流量，请在 MySQL Server 计算机上的管理员级别 Windows PowerShell 命令提示符下运行以下命令。
+## 添加 Windows 防火墙规则以允许 MySQL 流量
 
-	New-NetFirewallRule -DisplayName "MySQL56" -Direction Inbound Protocol TCP LocalPort 3306 -Action Allow -Profile Public
+若要添加 Windows 防火墙规则以允许来自 Internet 的 MySQL 流量，请在 MySQL Server 虚拟机上提升的 Windows PowerShell 命令提示符下运行以下命令。
+
+	New-NetFirewallRule -DisplayName "MySQL56" -Direction Inbound –Protocol TCP –LocalPort 3306 -Action Allow -Profile Public
+
+
+	
+## 测试你的远程连接
+
 
 若要测试到 MySQL Server 服务（运行在 Azure 虚拟机上）的远程连接，你必须先确定与云服务相对应的 DNS 名称，该云服务包含运行 MySQL Server 的虚拟机。
 
@@ -115,13 +126,13 @@
 
 		mysql -u <yourMysqlUsername> -p -h <yourDNSname>
 
-	例如，如果 MySQL 用户名为 dbadmin3，虚拟机的 DNS 名称为 testmysql.cloudapp.net，则请使用以下命令。
+	例如，如果 MySQL 用户名为 dbadmin3，虚拟机的 DNS 名称为 testmysql.chinacloudapp.cn，请使用以下命令。
 
-		mysql -u dbadmin3 -p -h testmysql.cloudapp.net
+		mysql -u dbadmin3 -p -h testmysql.chinacloudapp.cn
 
 
 ## 其他资源
 
 有关 MySQL 的信息，请参阅 [MySQL 文档](http://dev.mysql.com/doc/)。
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

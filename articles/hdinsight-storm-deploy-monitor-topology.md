@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 HDInsight 上部署和管理 Apache Storm 拓扑 | Windows Azure"
+   pageTitle="在 HDInsight 上部署和管理 Apache Storm 拓扑 | Azure"
    description="了解如何使用 HDInsight 上的 Storm 仪表板部署、监视和管理 Apache Storm 拓扑。使用 Hadoop Tools for Visual Studio。"
    services="hdinsight"
    documentationCenter=""
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="01/22/2016"
+	wacn.date="03/28/2016"/>
 
 #在基于 Windows 的 HDInsight 上部署和管理 Apache Storm 拓扑
 
@@ -21,7 +21,7 @@ HDInsight Tools 中的 Storm 仪表板和 Storm 功能依赖于 Storm REST API�
 
 ##先决条件
 
-* **Apache Storm on HDInsight** - 参阅 <a href="/documentation/articles/hdinsight-storm-getting-started" target="_blank">Apache Storm on HDInsight 入门</a>获取群集创建步骤
+* **Apache Storm on HDInsight** - 参阅 <a href="/documentation/articles/hdinsight-apache-storm-tutorial-get-started" target="_blank">Apache Storm on HDInsight 入门</a>获取群集创建步骤
 
 * **对于 Storm 仪表板**：支持 HTML5 的现代 Web 浏览器
 
@@ -29,13 +29,13 @@ HDInsight Tools 中的 Storm 仪表板和 Storm 功能依赖于 Storm REST API�
 
 	下列其中一个版本的 Visual Studio：
 
-	* Visual Studio 2012 <a href="http://www.microsoft.com/download/details.aspx?id=39305" target="_blank">Update 4</a>
+	* Visual Studio 2012 <a href="http://www.microsoft.com/download/details.aspx?id=39305" target="_blank">更新 4</a>
 
-	* Visual Studio 2013 <a href="http://www.microsoft.com/download/details.aspx?id=44921" target="_blank">Update 4</a> 或 <a href="http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe" target="_blank">Visual Studio 2013 Community</a>
+	* Visual Studio 2013 <a href="http://www.microsoft.com/download/details.aspx?id=44921" target="_blank">更新 4</a> 或 <a href="http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe" target="_blank">Visual Studio 2013 社区</a>
 
 	* <a href="http://visualstudio.com/downloads/visual-studio-2015-ctp-vs" target="_blank">Visual Studio 2015 CTP6</a>
 
-	> [AZURE.NOTE]HDInsight Tools for Visual Studio 目前只支持 Storm on HDInsight 群集版本 3.2。
+	> [AZURE.NOTE] HDInsight Tools for Visual Studio 目前只支持 Storm on HDInsight 群集版本 3.2。
 
 ##Storm 仪表板
 
@@ -51,7 +51,7 @@ Storm 仪表板是 Storm 群集上提供的网页。URL 是 **https://&lt;cluste
 
 ![Storm UI][storm-dashboard-ui]
 
-> [AZURE.NOTE]在某些版本的 Internet Explorer 中，你可能会发现，在首次访问 Storm UI 后它并不会刷新。例如，可能不显示已提交的新拓扑，或者将以前停用的拓扑显示为活动状态。Microsoft 已意识此问题，并在努力找出相应的解决方法。
+> [AZURE.NOTE] 在某些版本的 Internet Explorer 中，你可能会发现，在首次访问 Storm UI 后它并不会刷新。例如，可能不显示已提交的新拓扑，或者将以前停用的拓扑显示为活动状态。Microsoft 已意识此问题，并在努力找出相应的解决方法。
 
 ####主页面
 
@@ -123,7 +123,7 @@ HDInsight Tools 可用于将 C# 或混合拓扑提交到 Storm 群集。以下�
 
 1. 在“解决方案资源管理器”中，右键单击项目，然后选择“提交到 Storm on HDInsight”。
 
-	> [AZURE.NOTE]如果出现提示，请输入你 Azure 订阅的登录凭据。如果你有多个订阅，请登录包含 Storm on HDInsight 群集的订阅。
+	> [AZURE.NOTE] 如果出现提示，请输入你 Azure 订阅的登录凭据。如果你有多个订阅，请登录包含 Storm on HDInsight 群集的订阅。
 
 2. 从“Storm 群集”下拉列表中选择你的 Storm on HDInsight 群集，然后选择“提交”。你可以使用“输出”窗口监视提交是否成功。
 
@@ -131,19 +131,21 @@ HDInsight Tools 可用于将 C# 或混合拓扑提交到 Storm 群集。以下�
 
 	![visual studio 监视器](./media/hdinsight-storm-deploy-monitor-topology/vsmonitor.png)
 
-	> [AZURE.NOTE]你也可以依次展开“Azure”和“HDInsight”，右键单击 Storm on HDInsight 群集，然后选择“查看 Storm 拓扑”，来从“服务器资源管理器”查看“Storm 拓扑”。
+	> [AZURE.NOTE] 你也可以依次展开“Azure”和“HDInsight”，右键单击 Storm on HDInsight 群集，然后选择“查看 Storm 拓扑”，来从“服务器资源管理器”查看“Storm 拓扑”。
 
-	使用 Spout 或 Bolt 的链接查看有关这些组件的信息。将会针对每个选择的项打开一个新窗口。
+	选择 Spout 或 Bolt 的形状可查看有关这些组件的信息。将会针对每个选择的项打开一个新窗口。
+    
+    > [AZURE.NOTE] 拓扑的名称是拓扑的类名（在此示例中为 `HelloWord`）并追加了时间戳。
 
 4. 从“拓扑摘要”视图中，选择“终止”以停止拓扑。
 
-	> [AZURE.NOTE]Storm 拓扑会一直运行，直到它被停止，或者群集被删除。
+	> [AZURE.NOTE] Storm 拓扑会一直运行，直到它被停止，或者群集被删除。
 
 ##REST API
 
 Storm UI 是以 REST API 为基础生成的，因此，你可以使用 API 执行类似的管理和监视功能。使用 REST API 可以创建自定义工具来管理和监视 Storm 拓扑。
 
-有关详细信息，请参阅 <a href="https://github.com/apache/storm/blob/master/docs/documentation/ui-rest-api.md" target="_base">Storm UI REST API</a>。以下信息特定于将 REST API 与 Apache Storm on HDInsight 配合使用的情况。
+有关详细信息，请参阅 [Storm UI REST API](https://github.com/apache/storm/blob/0.9.3-branch/STORM-UI-REST-API.md)。以下信息特定于将 REST API 与 Apache Storm on HDInsight 配合使用的情况。
 
 ###基本 URI
 
@@ -153,7 +155,7 @@ REST API on HDInsight 群集的基本 URI 是 **https://&lt;clustername>.azurehd
 
 对 REST API 的请求必须使用**基本身份验证**，因此你应该使用 HDInsight 群集管理员名称和密码。
 
-> [AZURE.NOTE]由于基本身份验证是使用明文发送的，因此你**始终**应该使用 HTTPS 来保护与群集之间的通信。
+> [AZURE.NOTE] 由于基本身份验证是使用明文发送的，因此你**始终**应该使用 HTTPS 来保护与群集之间的通信。
 
 ###返回值
 
@@ -173,4 +175,4 @@ REST API on HDInsight 群集的基本 URI 是 **https://&lt;clustername>.azurehd
 [storm-dashboard-submit]: ./media/hdinsight-storm-deploy-monitor-topology/submit.png
 [storm-dashboard-ui]: ./media/hdinsight-storm-deploy-monitor-topology/storm-ui-summary.png
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0307_2016-->

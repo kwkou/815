@@ -1,16 +1,16 @@
 <properties 
-	pageTitle="暂存云服务部署 (Node.js) | Windows Azure" 
+	pageTitle="暂存云服务部署 (Node.js) | Azure" 
 	description="了解如何使用虚拟 IP (VIP) 交换将 Azure 应用程序部署到过渡环境，然后再将其部署到生产环境。" 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
-	authors="MikeWasson" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="09/08/2015" 
-	wacn.date="10/17/2015"/>
+	ms.date="11/20/2015" 
+	wacn.date="02/26/2016"/>
 
 
 
@@ -22,7 +22,7 @@
 
 ## 步骤 1：暂存应用程序
 
-此任务包括如何使用 **Windows Azure PowerShell** 暂存应用程序。
+此任务包括如何使用 **Azure PowerShell** 暂存应用程序。
 
 1.  在发布服务时，只需将 **-Slot** 参数传递给 **Publish-AzureServiceProject** cmdlet。
 
@@ -30,7 +30,7 @@
     Publish-AzureServiceProject -Slot staging
     ```
 
-2.  登录到 [Azure 管理门户]并选择“云服务”。创建云服务并且“过渡”列状态已更新为“正在运行”后，单击该服务名称。
+2.  登录到 [Azure 经典门户]并选择“云服务”。创建云服务并且“过渡”列状态已更新为“正在运行”后，单击该服务名称。
 
 	![显示正运行服务的门户][cloud-service]
 
@@ -50,7 +50,7 @@
 
 > [AZURE.NOTE]此步骤假定您已将应用程序部署到生产环境，并且暂存了它的升级版本。
 
-1.  登录到 [Azure 管理门户]，单击“云服务”，然后选择服务名称。
+1.  登录到 [Azure 经典门户]，单击“云服务”，然后选择服务名称。
 
 2.  从“仪表板”中选择“过渡”，然后单击页面底部的“交换”。将打开“VIP 交换”对话框。
 
@@ -64,12 +64,11 @@
 
 - [如何在 Azure 中通过交换 VIP 来将服务升级部署到生产]
 
-[Azure 管理门户]: http://manage.windowsazure.cn
+[Azure 经典门户]: http://manage.windowsazure.cn
 [cloud-service]: ./media/cloud-services-nodejs-stage-application/staging-cloud-service-running.png
 [cloud-service-dashboard]: ./media/cloud-services-nodejs-stage-application/cloud-service-dashboard-staging.png
-  [cloud-service-staging-url]: ./media/cloud-services-nodejs-stage-application/cloud-service-staging-url.png
-  [vip-swap-dialog]: ./media/cloud-services-nodejs-stage-application/vip-swap-dialog.png
-  [如何在 Azure 中通过交换 VIP 来将服务升级部署到生产]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee517253.aspx
-  [Overview of Managing Deployments in Azure]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh386336.aspx
+[cloud-service-staging-url]: ./media/cloud-services-nodejs-stage-application/cloud-service-staging-url.png
+[vip-swap-dialog]: ./media/cloud-services-nodejs-stage-application/vip-swap-dialog.png
+[如何在 Azure 中通过交换 VIP 来将服务升级部署到生产]: /documentation/articles/cloud-services-how-to-manage/#how-to-swap-deployments-to-promote-a-staged-deployment-to-production
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0104_2016-->

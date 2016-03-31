@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Apache Storm 和 HBase 分析传感器数据 | Windows Azure"
+   pageTitle="使用 Apache Storm 和 HBase 分析传感器数据 | Azure"
    description="了解如何使用虚拟网络连接到 Apache Storm。了解如何使用 Storm 和 HBase 处理来自 Azure 事件中心的传感器数据，然后使用 D3.js 来可视化这些数据。"
    services="hdinsight"
    documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="01/28/2016"
+	wacn.date="03/28/2016"/>
 
 # 使用 Apache Storm、事件中心和 HDInsight 中的 HBase (Hadoop) 分析传感器数据
 
@@ -20,7 +20,7 @@
 
 * Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 
-* 一个 [Apache Storm on HDInsight 群集](/documentation/articles/hdinsight-storm-getting-started)
+* 一个 [Apache Storm on HDInsight 群集](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
 
 * [Node.js](http://nodejs.org/)：用于 Web 仪表板，以及将传感器数据发送到事件中心。
 
@@ -46,17 +46,17 @@
 
 * **Azure 虚拟网络服务**（可选，使用 HBase 时必需）：在 Storm on HDInsight 和 HBase on HDInsight 群集之间启用安全通信。
 
-* **仪表板网站**：实时绘制数据图表的示例仪表板。
+* **仪表板 Web 应用**：实时绘制数据图表的示例仪表板。
 
-	* 该网站在 Node.js 中实现，因此它可以在用于测试的任何客户端操作系统上运行，或者可以部署到 Azure 网站。
+	* 该 Web 应用在 Node.js 中实现，因此它可以在用于测试的任何客户端操作系统上运行，或者可以部署到 Azure Web 应用。
 
-	* [Socket.io](http://socket.io/) 用于 Storm 拓扑和网站之间的实时通信。
+	* [Socket.io](http://socket.io/) 用于 Storm 拓扑和 Web 应用之间的实时通信。
 
 		> [AZURE.NOTE]这是实现详细信息。你可以使用任何通信框架，例如原始 WebSockets 或 SignalR。
 
-	* [D3.js](http://d3js.org/) 用于绘制发送到网站的数据的图表。
+	* [D3.js](http://d3js.org/) 用于绘制发送到 Web 应用的数据的图表。
 
-拓扑中使用从事件中心读取数据 **com.microsoft.eventhubs.spout.EventHubSpout** 类，该类在 Storm on HDInsight 群集中提供。与网站的通信可通过使用 [socket.io client.java](https://github.com/nkzawa/socket.io-client.java) 来实现。
+拓扑中使用从事件中心读取数据 **com.microsoft.eventhubs.spout.EventHubSpout** 类，该类在 Storm on HDInsight 群集中提供。与 Web 应用的通信可通过使用 [socket.io client.java](https://github.com/nkzawa/socket.io-client.java) 来实现。
 
 或者，可以使用 Storm 随附的 [org.apache.storm.hbase.bolt.HBaseBolt](https://storm.apache.org/javadoc/apidocs/org/apache/storm/hbase/bolt/class-use/HBaseBolt.html) 来实现与 HBase 的通信。
 
@@ -176,13 +176,13 @@
 
 测试之前，必须启动仪表板以查看拓扑的输出，并生成要在事件中心中存储的数据。
 
-### 启动 Web 应用程序
+### 启动 Web 应用
 
-1. 打开新的命令提示符或终端，并将目录更改为 将目录更改为 **hdinsight-eventhub-example/dashboard**，并使用以下命令安装 Web 应用程序所需的依赖项：
+1. 打开新的命令提示符或终端，并将目录更改为 将目录更改为 **hdinsight-eventhub-example/dashboard**，并使用以下命令安装 Web 应用所需的依赖项：
 
 		npm install
 
-2. 使用以下命令启动 Web 应用程序：
+2. 使用以下命令启动 Web 应用：
 
 		node server.js
 
@@ -238,7 +238,7 @@
 
 	mvn compile exec:java -Dstorm.topology=com.microsoft.examples.Temperature
 
-	此操作将启动拓扑、从事件中心中读取文件并将其发送到 Azure 网站中运行的仪表板中。你应看到各行显示在 Web 仪表板中，如下所示：
+	此操作将启动拓扑、从事件中心中读取文件并将其发送到 Azure 中运行的仪表板中。你应看到各行显示在 Web 仪表板中，如下所示：
 
 	![包含数据的仪表板](./media/hdinsight-storm-sensor-data-analysis/datadashboard.png)
 
@@ -250,11 +250,11 @@
 
 在你的开发环境中，按照以下步骤在你的 HDInsight Storm 群集中执行“Temperature”拓扑。
 
-### 发布网站仪表板
+### 发布 Web 应用仪表板
 
-1. 若要将仪表板部署到 Azure 网站，请遵循[构建 Node.js 网站并将其部署到 Azure](/documentation/articles/web-sites-nodejs-develop-deploy-mac) 中的步骤。记下网站的 URL，它类似于 **mywebsite.chinacloudsites.cn**。
+1. 若要将仪表板部署到 Azure Web 应用，请遵循[构建 Node.js Web 应用并将其部署到 Azure](/documentation/articles/web-sites-nodejs-develop-deploy-mac) 中的步骤。记下 Web 应用的 URL，它类似于 **mywebsite.chinacloudsites.cn**。
 
-2. 创建网站后，转到 Azure 管理门户中的站点，然后选择“配置”选项卡。启用“Web 套接字”，然后在页面底部单击“保存”。
+2. 创建 Web 应用后，转到 Azure 管理门户中的站点，然后选择“配置”选项卡。启用“Web 套接字”，然后在页面底部单击“保存”。
 
 2. 打开 **hdinsight-eventhub-example\\TemperatureMonitor\\src\\main\\java\\com\\microsoft\\examples\\bolts\\DashboardBolt.java** 并将以下行更改为指向已发布仪表板的 URL：
 
@@ -272,7 +272,7 @@
 
 2. 根据[部署和管理 Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology)中的步骤，在 Storm on HDInsight 群集上使用 **Storm 仪表板**上载和启动拓扑。
 
-3. 启动拓扑后，打开浏览器到 Azure 发布的网站，然后使用 `node app.js` 命令将数据发送到事件中心。你应该看到 Web 仪表板更新以显示信息。
+3. 启动拓扑后，打开浏览器到 Azure 发布的 Web 应用，然后使用 `node app.js` 命令将数据发送到事件中心。你应该看到 Web 仪表板更新以显示信息。
 
 	![仪表板](./media/hdinsight-storm-sensor-data-analysis/datadashboard.png)
 
@@ -313,8 +313,7 @@
 9. 在页面底部，默认子网名称为 **Subnet-1**。使用“添加子网”按钮添加 **Subnet-2**。Storm 和 HBase 群集将位于这些子网中。
 
 	> [AZURE.NOTE]在本文中，我们将使用只有一个节点的群集。如果你创建的是多节点群集，你必须为用于群集的子网验证其 **CIDR（地址数）**。地址数必须大于辅助节点数加上七（网关：2，头节点：2，ZooKeeper：3）。例如，如果需要一个 10 节点 HBase 群集，子网的地址数必须大于 17 (10+7)。否则，部署将失败。
-	>
-	> 强烈建议为一个群集指定一个子网。
+	> <p>强烈建议为一个群集指定一个子网。
 
 11. 单击页面底部的“保存”。
 

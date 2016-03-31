@@ -1,6 +1,6 @@
 <properties
-	pageTitle="将磁盘附加到 Linux 虚拟机 | Windows Azure"
-	description="了解如何将数据磁盘附加到 Azure 上运行的 Linux 虚拟机并将其初始化，以便它可供使用。"
+	pageTitle="将磁盘附加到 Linux VM | Azure"
+	description="了解如何将数据磁盘附加到运行 Linux 的 Azure 虚拟机并将其初始化，以便它可供使用。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
@@ -10,20 +10,24 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/11/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="01/07/2016"
+	wacn.date="02/26/2016"/>
 
 # 如何将数据磁盘附加到 Linux 虚拟机
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用 Azure 服务管理器附加磁盘。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
-你可以附加空磁盘和包含数据的磁盘。在这两种情况下，这些磁盘实际上是驻留在 Azure 存储帐户中的 .vhd 文件。此外，也是在这两种情况下，在附加磁盘之后，你将需要对其进行初始化，然后才能使用。本文所指的虚拟机是使用经典部署模型创建的虚拟机。
 
-> [AZURE.NOTE]最佳做法是使用一个或多个不同的磁盘来存储虚拟机的数据。当你创建 Azure 虚拟机时，该虚拟机有一个操作系统磁盘和一个临时磁盘。**不要使用临时磁盘来存储数据。** 顾名思义，它仅提供临时存储。它不提供冗余或备份，因为它不驻留在 Azure 存储空间中。临时磁盘通常由 Azure Linux 代理管理并且自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。另一方面，数据磁盘可以由 Linux 内核命名为 `/dev/sdc` 这样的形式，而用户则需对该资源进行分区、格式化和安装。有关详细信息，请参阅 [Azure Linux 代理用户指南][Agent]。
+你可以附加空磁盘和包含数据的磁盘。在这两种情况下，这些磁盘实际上是驻留在 Azure 存储帐户中的 .vhd 文件。此外，也是在这两种情况下，在附加磁盘之后，你将需要对其进行初始化，然后才能使用。
+
+> [AZURE.NOTE] 最佳做法是使用一个或多个不同的磁盘来存储虚拟机的数据。当你创建 Azure 虚拟机时，该虚拟机有一个操作系统磁盘和一个临时磁盘。**不要使用临时磁盘来存储数据。** 顾名思义，它仅提供临时存储。它不提供冗余或备份，因为它不驻留在 Azure 存储空间中。
+> 临时磁盘通常由 Azure Linux 代理管理并且自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。另一方面，数据磁盘可以由 Linux 内核命名为 `/dev/sdc` 这样的形式，而用户则需对该资源进行分区、格式化和安装。有关详细信息，请参阅 [Azure Linux 代理用户指南][Agent]。
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-linux.md)]
 
 ## 如何：在 Linux 中初始化新的数据磁盘
+
+可以按照相同的说明使用如下所示的正确设备标识符来初始化多个数据磁盘。
 
 1. 连接到虚拟机。有关说明，请参阅[如何登录到运行 Linux 的虚拟机][Logon]。
 
@@ -73,7 +77,7 @@
 
 		$sudo fdisk /dev/sdc
 
-	>[AZURE.NOTE]此示例中，如果 /sbin 或 /usr/sbin 不在你的 `$PATH` 中，你在某些分发上可能需要使用 `sudo -i`。
+	>[AZURE.NOTE] 此示例中，如果 /sbin 或 /usr/sbin 不在你的 `$PATH` 中，你在某些分发上可能需要使用 `sudo -i`。
 
 
 4. 出现提示时，键入 **n** 以创建新分区。
@@ -81,7 +85,7 @@
 
 	![新建设备](./media/virtual-machines-linux-how-to-attach-disk/DiskPartition.png)
 
-5. 出现提示时，键入 **p** 将该分区设置为主分区，键入 **1** 将其设置为第一分区，然后键入 Enter 以接受柱面的默认值。
+5. 出现提示时，键入 **p** 将该分区设置为主分区，键入 **1** 将其设置为第一分区，然后键入 Enter 以接受柱面的默认值。在某些系统上，它可以显示第一个和最后一个扇区（而不是柱面）的默认值。你可以选择接受这些默认值。
 
 
 	![创建分区](./media/virtual-machines-linux-how-to-attach-disk/DiskCylinder.png)
@@ -100,13 +104,13 @@
 
 	![写入磁盘更改](./media/virtual-machines-linux-how-to-attach-disk/DiskWrite.png)
 
-8. 在新分区上创建文件系统。例如，可键入以下命令，然后输入帐户密码：
+8. 在新分区上创建文件系统。将分区数 (1) 追加到设备 ID 后面。例如，可键入以下命令，然后输入帐户密码：
 
 		# sudo mkfs -t ext4 /dev/sdc1
 
 	![创建文件系统](./media/virtual-machines-linux-how-to-attach-disk/DiskFileSystem.png)
 
-	>[AZURE.NOTE]请注意，对于 ext4 文件系统，SUSE Linux Enterprise 11 系统仅支持只读访问。对于这些系统，建议将新文件系统格式化为 ext3 而非 ext4。
+	>[AZURE.NOTE] 请注意，对于 ext4 文件系统，SUSE Linux Enterprise 11 系统仅支持只读访问。对于这些系统，建议将新文件系统格式化为 ext3 而非 ext4。
 
 
 9. 创建一个目录来装载新的文件系统。例如，可键入以下命令，然后输入帐户密码：
@@ -134,7 +138,7 @@
 		/dev/sdc1: UUID="33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e" TYPE="ext4"
 
 
-	>[AZURE.NOTE]错误地编辑 **/etc/fstab** 文件可能会导致系统无法引导。如果没有把握，请参考分发的文档来获取有关如何正确编辑该文件的信息。另外，建议在编辑之前创建 /etc/fstab 文件的备份。
+	>[AZURE.NOTE] 错误地编辑 **/etc/fstab** 文件可能会导致系统无法引导。如果没有把握，请参考分发的文档来获取有关如何正确编辑该文件的信息。另外，建议在编辑之前创建 /etc/fstab 文件的备份。
 
 	接下来，请在文本编辑器中打开 **/etc/fstab** 文件。请注意，/etc/fstab 是系统文件，因此需使用 `sudo` 来编辑该文件，例如：
 
@@ -146,7 +150,7 @@
 
 	另外，在基于 SUSE Linux 的系统上，您可能需要使用稍微不同的格式：
 
-		/dev/disk/by-uuid/33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /   ext3   defaults   1   2
+		/dev/disk/by-uuid/33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext3   defaults   1   2
 
 	现在，你可以通过简单地卸载并重新装载文件系统（即使用在之前的步骤中创建的示例装载点 `/datadrive`）来测试文件系统是否已正确装载：
 
@@ -155,8 +159,11 @@
 
 	如果 `mount` 命令产生错误，请检查 /etc/fstab 文件的语法是否正确。如果还创建了其他数据驱动器或分区，您同样也需要分别将其输入到 /etc/fstab 中。
 
+	你需要使用以下命令使驱动器可写：
 
->[AZURE.NOTE]之后，在不编辑 fstab 的情况下删除数据磁盘可能会导致 VM 无法引导。如果这是一种常见情况，则请注意，大多数分发都提供了 `nofail` 和/或 `nobootwait` fstab 选项，这些选项使系统在磁盘无法装载的情况下也能引导。有关这些参数的详细信息，请查阅您的分发文档。
+		# sudo chmod go+w /datadrive
+
+>[AZURE.NOTE] 之后，在不编辑 fstab 的情况下删除数据磁盘可能会导致 VM 无法引导。如果这是一种常见情况，则请注意，大多数分发都提供了 `nofail` 和/或 `nobootwait` fstab 选项，这些选项使系统在磁盘无法装载的情况下也能引导。有关这些参数的详细信息，请查阅您的分发文档。
 
 ## 其他资源
 [如何登录到运行 Linux 的虚拟机][Logon]
@@ -169,4 +176,4 @@
 [Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide
 [Logon]: /documentation/articles/virtual-machines-linux-how-to-log-on
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0215_2016-->

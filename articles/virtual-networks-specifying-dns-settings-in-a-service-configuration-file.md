@@ -4,12 +4,12 @@
    services="virtual-network"
    documentationCenter="na"
    authors="joaoma"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.date="09/01/2015"
-   wacn.date="11/02/2015" />
+<tags
+	ms.service="virtual-network"
+	ms.date="12/07/2015"
+	wacn.date="01/14/2016"/>
 
 # 在服务配置文件中指定 DNS 设置
 
@@ -25,7 +25,7 @@
         <DnsServer name="ID3" IPAddress="IPAddress3" />
       </DnsServers>
 
->[AZURE.WARNING]**DnsServer** 元素中的 **name** 属性仅用作引用名称。它不表示 DNS 服务器的主机名。每个 **DnsServer** 属性值必须在整个 Windows Azure 订阅中是唯一的。
+>[AZURE.WARNING]**DnsServer** 元素中的 **name** 属性仅用作引用名称。它不表示 DNS 服务器的主机名。每个 **DnsServer** 属性值必须在整个 Azure 订阅中是唯一的。
 
 ## 另请参阅
 

@@ -5,6 +5,6 @@
 
 * 检查是否已收到通知，然后单击“确定”以取消通知。现在，你已成功完成本教程。
 
-    ![](../media/mobile-services-ios-get-started-push/mobile-quickstart-push3-ios.png)
+    ![](./media/mobile-services-ios-get-started-push/mobile-quickstart-push3-ios.png)
 
 <!---HONumber=71-->

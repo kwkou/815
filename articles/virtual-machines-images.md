@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/13/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="01/15/2016"
+	wacn.date="03/28/2016"/>
 
 # 关于虚拟机的映像
 
@@ -28,10 +28,6 @@
 你可以基于 Azure 中的虚拟机或复制和上载的在别处运行的虚拟机，创建你自己的映像。如果要使用某个映像来创建多个虚拟机，则需要通过对其进行通用化来准备将其用作映像。若要创建 Windows Server 映像，请在上载 .vhd 文件之前在服务器上运行 Sysprep 命令对其进行通用化。有关 Sysprep 的详细信息，请参阅[如何使用 Sysprep：简介](http://go.microsoft.com/fwlink/p/?LinkId=392030)。若要创建 Linux 映像，根据软件分发，你需要运行一组特定于该分发的命令，并运行 Azure Linux 代理。
 
 ## 使用映像
-
-可以使用适用于 Mac、Linux 和 Windows 的 Azure 命令行界面 (CLI) 或 Azure PowerShell 模块管理可供你的 Azure 订阅使用的映像。也可以使用 Azure 门户完成某些映像任务，但命令行为你提供更多选项。
-
-有关使用这些工具进行资源管理器部署的信息，请参阅[使用 PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/resource-groups-vm-searching)。
 
 在经典部署中使用这些工具的示例：
 

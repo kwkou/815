@@ -1,22 +1,26 @@
-<properties 
-	pageTitle="身份验证入门 (Android) | 移动开发人员中心" 
-	description="了解如何使用移动服务通过提供各种标识提供程序（包括 Google、Facebook、Twitter 和 Microsoft）对 Windows 应用商店应用程序的用户进行身份验证。" 
-	services="mobile-services" 
-	documentationCenter="android" 
-	authors="mattchenderson" 
-	manager="dwrede" 
+<properties
+	pageTitle="身份验证入门 (Android) | Azure"
+	description="了解如何使用移动服务通过提供各种标识提供程序（包括 Google和 Microsoft）对 Windows 应用商店应用程序的用户进行身份验证。"
+	services="mobile-services"
+	documentationCenter="android"
+	authors="RickSaling"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/13/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="01/21/2016"
+	wacn.date="03/28/2016"/>
 
 # 向移动服务 Android 应用添加身份验证
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 ## 摘要
+
 本主题说明如何通过应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
 
 本教程将指导你完成在应用程序中启用身份验证的基本步骤。
@@ -58,11 +62,10 @@
 
 ##<a name="next-steps"></a>后续步骤
 
-在下一教程移动服务用户的服务端授权中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。
+在下一教程[移动服务用户的服务端授权][Authorize users with scripts]中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。
 
 
 <!-- Anchors. -->
-
 [Register your app for authentication and configure Mobile Services]: #register
 [Restrict table permissions to authenticated users]: #permissions
 [Add authentication to the app]: #add-authentication
@@ -72,11 +75,11 @@
 
 <!-- URLs. -->
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
-[Get started with data]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-data
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
 [Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-android-authorize-users-in-scripts
-[Azure Management Portal]: https://manage.windowsazure.cn/
+
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
-<!---HONumber=71-->
+
+<!---HONumber=Mooncake_0118_2016-->

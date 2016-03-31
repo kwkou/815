@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="利用乐观并发处理数据库写入冲突（Windows 应用商店）| Windows Azure" 
+	pageTitle="利用乐观并发处理数据库写入冲突（Windows 应用商店）| Microsoft Azure" 
 	description="了解如何处理服务器上和 Windows 应用商店应用程序中的数据库写入冲突。" 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
@@ -9,10 +9,13 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/18/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="01/21/2016"
+	wacn.date="03/21/2016"/>
 
 # 处理数据库写入冲突
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 
 
 
@@ -118,10 +121,10 @@
 
 	> [AZURE.NOTE]使用非类型表时，请通过将 Version 标志添加到表的 SystemProperties 来启用乐观并发。
 	>
-````` 
+	>````` 
 	//Enable optimistic concurrency by retrieving __version
 todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
-`````
+	`````
 
 
 2. 将 `Version` 属性添加到 `TodoItem` 类后，如果记录自上次查询以来已更改，则在更新期间将通过 `MobileServicePreconditionFailedException` 异常通知应用程序。此异常包括服务器中该项目的最新版本。在共享项目的 MainPage.cs 中，添加以下代码以在 `UpdateToDoItem()` 方法中处理异常。
@@ -259,7 +262,7 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 
 以下步骤将指导你完成添加服务器更新脚本并对其进行测试的过程。
 
-1. 登录到 [Azure 管理门户]，单击“移动服务”，然后单击你的应用程序。 
+1. 登录到 [Azure 经典门户]，单击“移动服务”，然后单击你的应用。
 
    	![][7]
 
@@ -366,7 +369,7 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 <!-- URLs. -->
 [乐观并发控制]: http://go.microsoft.com/fwlink/?LinkId=330935
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
-[Azure 帐户]: http://www.windowsazure.cn/pricing/1rmb-trial/
+[Azure 帐户]: /pricing/1rmb-trial/
 [Validate and modify data with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts
 [Refine queries with paging]: /documentation/articles/mobile-services-windows-store-dotnet-add-paging-data
 [完成移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
@@ -375,11 +378,10 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 [向应用程序添加身份验证]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
 [向应用程序添加推送通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
 
-[Azure 管理门户]: https://manage.windowsazure.cn/
-[Management Portal]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268374
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268375
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkId=271146
 [系统属性]: http://go.microsoft.com/fwlink/?LinkId=331143
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

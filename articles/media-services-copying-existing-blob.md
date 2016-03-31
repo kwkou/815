@@ -9,16 +9,16 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/05/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="02/03/2016" 
+	wacn.date="03/17/2016"/>
 
 #将现有 Blob 复制到媒体服务资产中
 
-本主题介绍如何将存储帐户中的 Blob 复制到新的 Windows Azure 媒体服务资产中。
+本主题介绍如何将存储帐户中的 Blob 复制到新的 Azure 媒体服务资产中。
 
 Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存在于不与媒体服务帐户关联的存储帐户中。本主题演示如何将 Blob 从存储帐户复制到媒体服务资产中。请注意，你还可以跨数据中心复制。但是，这样做可能会产生费用。有关定价的详细信息，请参阅[数据传输](/pricing/#header-11)。
 
->[AZURE.NOTE]在不使用 Media Service API 的情况下，你不应该尝试更改媒体服务生成的 BLOB 容器内容。
+>[AZURE.NOTE] 在不使用媒体服务 API 的情况下，你不应该尝试更改媒体服务生成的 BLOB 容器内容。
 
 ##先决条件
 
@@ -89,6 +89,15 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 		    static string _externalStorageAccountName = ConfigurationManager.AppSettings["ExternalStorageAccountName"];
 		    static string _externalStorageAccountKey = ConfigurationManager.AppSettings["ExternalStorageAccountKey"];
 		
+			private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+			// Azure China uses a different API server and a different ACS Base Address from the Global.
+			private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+			private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
+
+			// Azure China Storage Endpoint Suffix
+			private static readonly String _chinaEndpointSuffix = "core.chinacloudapi.cn";
+
 		    private static MediaServicesCredentials _cachedCredentials = null;
 		    private static CloudMediaContext _context = null;
 		
@@ -99,9 +108,15 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 		    {
 		        _cachedCredentials = new MediaServicesCredentials(
 		                        _accountName,
-		                        _accountKey);
+		                        _accountKey,
+								_defaultScope,
+								_chinaAcsBaseAddressUrl);
+
+				// Create the API server Uri
+				_apiServer = new Uri("https://wamsshaclus001rest-hs.chinacloudapp.cn/API/");
+
 		        // Use the cached credentials to create CloudMediaContext.
-		        _context = new CloudMediaContext(_cachedCredentials);
+		        _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 		
 		        // In this example the storage account from which we copy blobs is not 
 		        // associated with the Media Services account into which we copy blobs.
@@ -112,12 +127,12 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 		        // (an external account).  
 		        StorageCredentials externalStorageCredentials =
 		            new StorageCredentials(_externalStorageAccountName, _externalStorageAccountKey);
-		        _sourceStorageAccount = new CloudStorageAccount(externalStorageCredentials, true);
+		        _sourceStorageAccount = new CloudStorageAccount(externalStorageCredentials, _chinaEndpointSuffix, true);
 		
 		        //Get a reference to the storage account that is associated with a Media Services account. 
 		        StorageCredentials mediaServicesStorageCredentials =
 		            new StorageCredentials(_storageAccountName, _storageAccountKey);
-		        _destinationStorageAccount = new CloudStorageAccount(mediaServicesStorageCredentials, false);
+		        _destinationStorageAccount = new CloudStorageAccount(mediaServicesStorageCredentials, _chinaEndpointSuffix, false);
 		
 		        // Upload Smooth Streaming files into a storage account.
 		        string localMediaDir = @"C:\supportFiles\streamingfiles";
@@ -219,6 +234,7 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 		            Where(f => f.Name.EndsWith(".ism", StringComparison.OrdinalIgnoreCase)).First();
 		
 		        // Create a 30-day readonly access policy. 
+            // You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
 		        IAccessPolicy policy = _context.AccessPolicies.Create("Streaming policy",
 		            TimeSpan.FromDays(30),
 		            AccessPermissions.Read);
@@ -299,5 +315,4 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 		}
  
 
-
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0307_2016-->

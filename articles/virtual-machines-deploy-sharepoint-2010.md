@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure VM 上的 SharePoint Server 2010 | Windows Azure"
+	pageTitle="Azure VM 上的 SharePoint Server 2010 | Azure"
 	description="了解 Azure 虚拟机上 SharePoint 的值、分步流程和使用 SharePoint 2010 的支持方案。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -11,21 +11,21 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/05/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="01/21/2016"/>
 
 
 # Azure 虚拟机上的 SharePoint 2010 部署
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 
-Microsoft SharePoint Server 2010 提供了丰富的部署灵活性，可帮助组织确定合适的部署方案，以便与其业务需求和目标保持一致。Azure 虚拟机产品/服务通过 Windows Azure 进行托管和管理，它提供了完整、可靠且可用的基础结构，以便支持各种按需应用程序和数据库工作负荷（如 Microsoft SQL Server 和 SharePoint 部署）。
+Microsoft SharePoint Server 2010 提供了丰富的部署灵活性，可帮助组织确定合适的部署方案，以便与其业务需求和目标保持一致。Azure 虚拟机产品/服务通过 Azure 进行托管和管理，它提供了完整、可靠且可用的基础结构，以便支持各种按需应用程序和数据库工作负荷（如 Microsoft SQL Server 和 SharePoint 部署）。
 
 虽然 Azure 虚拟机支持多种工作负荷，但是本文重点介绍 SharePoint 部署。利用 Azure 虚拟机，组织可以通过快速全局设置和访问几乎所有主机，创建和管理其 SharePoint 基础结构。这样，便可以完全控制和管理处理器、RAM、CPU 范围以及 SharePoint 虚拟机的其他资源。
 
 Azure 虚拟机减少了对硬件的需求，从而使组织能够将工作重心从处理较高的前期成本和复杂性转移到大规模构建和管理基础结构上。这意味着，组织只需几个小时的时间即可实现创新、试验和迭代，而通过传统部署做到这一点则需几天和几个星期的时间。
 
-> [AZURE.NOTE]有关在 Azure 中部署 SharePoint 2013 的信息，请参阅[适用于 SharePoint 2013 的 Windows Azure 体系结构](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)和 [Azure 基础结构服务中托管的 SharePoint 场](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)。
+> [AZURE.NOTE]有关在 Azure 中部署 SharePoint 2013 的信息，请参阅[适用于 SharePoint 2013 的 Azure 体系结构](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)和 [Azure 基础结构服务中托管的 SharePoint 场](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)。
 
 ## Azure 虚拟机上的 SharePoint
 
@@ -55,7 +55,7 @@ Azure 虚拟机使开发人员能够灵活选取其所需的语言或运行时�
 
 ## 设置过程
 
-Azure 中的映像库提供了可用预配置虚拟机的列表。用户可将 SharePoint Server、SQL Server、Windows Server 和其他 ISO/VHD 发布到映像库。若要简化虚拟机的创建，可创建基本映像并将这些映像发布到该库。授权用户可使用这些映像来生成所需的虚拟机。有关详细信息，请转到[在 Azure 预览门户中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial)。图 1 演示了使用 Azure 门户创建虚拟机的基本步骤。
+Azure 中的映像库提供了可用预配置虚拟机的列表。用户可将 SharePoint Server、SQL Server、Windows Server 和其他 ISO/VHD 发布到映像库。若要简化虚拟机的创建，可创建基本映像并将这些映像发布到该库。授权用户可使用这些映像来生成所需的虚拟机。有关详细信息，请转到[在 Azure 管理门户中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。图 1 演示了使用 Azure 门户创建虚拟机的基本步骤。
 
 ![azure-sharepoint-wp-13](./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-2.png)
 
@@ -94,7 +94,7 @@ Azure 中的映像库提供了可用预配置虚拟机的列表。用户可将 S
 使用下列任一选项构建 SQL Server 虚拟机：
 
 - 执行上面的步骤 1 到步骤 7 来创建 SQL Server 2012 虚拟机，只是在步骤 3 中，请使用 SQL Server 2012 映像而不是 Windows Server 2008 R2 SP1 映像。有关详细信息，请转到[在 Azure 上设置 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server)。
-	- 单击该选项后，设置过程将在 C:\\SQLServer\_11.0_Full 目录路径中保留 SQL Server 2012 安装程序文件的副本，以便你能自定义安装。例如，你可通过使用许可证密钥将 SQL Server 2012 的评估版安装转换为许可版本。
+	- 单击该选项后，设置过程将在 C:\\SQLServer\_11.0\_Full 目录路径中保留 SQL Server 2012 安装程序文件的副本，以便你能自定义安装。例如，你可通过使用许可证密钥将 SQL Server 2012 的评估版安装转换为许可版本。
 
 - 使用 SQL Server System Preparation (SysPrep) 工具以在虚拟机上利用基本操作系统安装 SQL Server（如上面的步骤 1 到步骤 7 中所述）。有关详细信息，请转到[使用 SysPrep 安装 SQL Server 2012](http://msdn.microsoft.com/zh-cn/library/ee210664.aspx)。
 
@@ -109,7 +109,7 @@ Azure 中的映像库提供了可用预配置虚拟机的列表。用户可将 S
 步骤 2。通过创建另一台具有基本操作系统的虚拟机（如上面的步骤 1 到步骤 6 中所述）来设置 SharePoint Server。若要在此虚拟机上构建 SharePoint Server，请选择下列选项之一：
 
 - 使用 SharePoint GUI 进行设置：
-	- 若要创建和设置 SharePoint 场，请转到[创建 Microsoft SharePoint Server 场](http://technet.microsoft.com/zh-cn/library/ee805948.aspx#CreateConfigure)。
+	- 若要创建和预配 SharePoint 场，请转到[创建 Microsoft SharePoint Server 场](http://technet.microsoft.com/zh-cn/library/ee805948.aspx#CreateConfigure)。
 	- 若要将 Web 或应用程序服务器添加到场，请转到[将 Web 或应用程序服务器添加到场](http://technet.microsoft.com/zh-cn/library/cc261752.aspx)。
 	- 若要将数据库服务器添加到现有场，请转到[将数据库服务器添加到现有场](http://technet.microsoft.com/zh-cn/library/cc262781)。
 	- 若要将 SQL Server 2012 用于 SharePoint 场，你必须在安装应用程序并选择不配置服务器之后，下载并安装 SharePoint Server 2010 Service Pack 1。有关详细信息，请转到 [SharePoint Server 2010 Service Pack 1](http://www.microsoft.com/zh-CN/download/details.aspx?id=26623)。
@@ -153,7 +153,7 @@ Azure 中的映像库提供了可用预配置虚拟机的列表。用户可将 S
 
 若要在 Azure 上实现 SharePoint 开发和测试环境，请按照以下步骤操作：
 
-1. 设置：首先，使用 Azure 虚拟网络在本地和 Azure 之间设置 VPN 连接。（由于此处未使用 Active Directory，因此需要 VPN 隧道。） 有关详细信息，请转到[虚拟网络概述](http://msdn.microsoft.com/zh-cn/library/jj156007.aspx)。然后，使用映像库中的储备映像通过 Azure 门户设置新的虚拟机。
+1. 设置：首先，使用 Azure 虚拟网络在本地和 Azure 之间设置 VPN 连接。（由于此处未使用 Active Directory，因此需要 VPN 隧道。） 有关详细信息，请转到[虚拟网络概述](/documentation/articles/virtual-networks-overview)。然后，使用映像库中的储备映像通过 Azure 门户设置新的虚拟机。
 	- 你可以将本地 SharePoint 开发和测试虚拟机上载到 Azure 存储帐户，并通过映像库引用这些虚拟机来构建所需的环境。
 	- 可以使用 SQL Server 2012 映像来替代 Windows Server 2008 R2 SP1 映像。有关详细信息，请转到[在 Azure 上设置 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server)。
 
@@ -175,9 +175,9 @@ Azure 中的映像库提供了可用预配置虚拟机的列表。用户可将 S
 
 ### 方案 2：带自定义项的面向公众的 SharePoint 场
 
-组织希望创建一个托管于云中并可基于需求和要求轻松缩放的 Internet 展示。他们还希望创建用于协作的合作伙伴 Extranet 网站，并轻松完成对分布式创作的处理以及对网站内容的审批。最后，为了处理不断增加的负载，这些组织希望按需向其网站提供容量。
+组织希望创建一个托管于云中并可基于需求和要求轻松缩放的 Internet 展示。他们还希望创建用于协作的合作伙伴 Extranet Web 应用，并轻松完成对分布式创作的处理以及对 Web 应用内容的审批。最后，为了处理不断增加的负载，这些组织希望按需向其 Web 应用提供容量。
 
-在此方案中，SharePoint Server 将用作托管面向公众的网站的基础。它使组织能够在安全的、可伸缩的云基础结构上快速部署、自定义和承载其商业网站。通过在 Azure 上使用 SharePoint 的面向公众的网站，组织可在流量增加时进行扩展，并且只需为其使用的部分付费。常用工具（类似于本地使用的工具）可用于在 Azure 上使用 SharePoint 进行的内容创作、工作流和审批。
+在此方案中，SharePoint Server 将用作托管面向公众的 Web 应用的基础。它使组织能够在安全的、可伸缩的云基础结构上快速部署、自定义和承载其商业 Web 应用。通过在 Azure 上使用 SharePoint 的面向公众的 Web 应用，组织可在流量增加时进行扩展，并且只需为其使用的部分付费。常用工具（类似于本地使用的工具）可用于在 Azure 上使用 SharePoint 进行的内容创作、工作流和审批。
 
 此外，通过使用 Azure 虚拟机，组织可轻松配置在虚拟机上运行的过渡和生产环境。可在虚拟存储中备份在 Azure 中创建的 SharePoint 的面向公众的虚拟机。另外，若要进行灾难恢复，组织可使用“持续异地复制”功能将位于某个数据中心的虚拟机自动备份到千里之外的其他数据中心。
 
@@ -208,7 +208,7 @@ Azure 基础结构中的虚拟机将进行验证，并能够与其他 Microsoft 
 
 此方案介绍组织如何使用 Azure 虚拟机来托管任务关键型 BI 应用程序。组织可在 Azure 虚拟机中部署 SharePoint 场，并向外扩展应用程序服务器虚拟机的 BI 组件，如 SSRS 或 Excel Services。通过在云中缩放资源密集型组件，组织可以更轻松地为专用工作负荷提供更佳支持。请注意，Azure 虚拟机中的 SQL Server 可正常运行，因为可轻松缩放 SQL Server 实例（范围从小型安装到超大型安装）。这将为组织提供灵活性，使其能够基于即时工作负荷要求动态设置（扩展）或取消设置（缩小）BI 实例。
 
-将现有 BI 应用程序迁移到 Azure 可提供更佳的缩放能力。借助 SQL Server Analysis Services (SSAS)、SQL Server Reporting Service (SSRS) 和 SharePoint Server 的功能，组织可创建可向上或向下扩展的且功能强大的商业智能应用程序、报告应用程序和仪表板。这些应用程序和仪表板还可与本地数据和应用程序更安全地集成。Azure 支持 ISO 27001，从而可以确保数据中心的合规性。有关详细信息，请转到 [Azure 信任中心](http://www.windowsazure.cn/support/trust-center/compliance/)。
+将现有 BI 应用程序迁移到 Azure 可提供更佳的缩放能力。借助 SQL Server Analysis Services (SSAS)、SQL Server Reporting Service (SSRS) 和 SharePoint Server 的功能，组织可创建可向上或向下扩展的且功能强大的商业智能应用程序、报告应用程序和仪表板。这些应用程序和仪表板还可与本地数据和应用程序更安全地集成。Azure 支持 ISO 27001，从而可以确保数据中心的合规性。有关详细信息，请转到 [Azure 信任中心](/support/trust-center/compliance/)。
 
 若要向外扩展 BI 组件的部署，则必须安装带 PowerPivot、Power View、Excel Services 或 PerformancePoint Services 等服务的新应用程序服务器。或者，必须将 SQL Server 商业智能实例（如 SSAS 或 SSRS）添加到现有场以支持其他查询处理。此服务器可作为安装了 SharePoint 2010 Server 或 SQL Server 的新 Azure 虚拟机添加。然后，可在该服务器上安装、部署和配置 BI 组件（图 5）。
 
@@ -219,7 +219,7 @@ Azure 基础结构中的虚拟机将进行验证，并能够与其他 Microsoft 
 若要在 Azure 上向外扩展 BI 环境，请按照以下步骤操作：
 
 1. 设置：
-	- 使用 Azure 虚拟网络在本地和 Azure 之间设置 VPN 连接。有关详细信息，请转到[虚拟网络概述](http://msdn.microsoft.com/zh-cn/library/jj156007.aspx)。
+	- 使用 Azure 虚拟网络在本地和 Azure 之间预配 VPN 连接。有关详细信息，请转到[虚拟网络概述](/documentation/articles/virtual-networks-overview)。
 	- 使用 Azure 门户从映像库中的储备映像设置新的虚拟机。你可以将 SharePoint Server 或 SQL Server 商业智能工作负荷映像上载到映像库，并且任何授权用户均可选择这些商业智能组件虚拟机来构建向外扩展的环境。
 2. 安装： 
 	- 如果你的组织没有 SharePoint Server 或 SQL Server 商业智能组件的预构建映像，请使用远程桌面连接在虚拟机上安装 SharePoint Server 和 SQL Server。
@@ -233,19 +233,19 @@ Azure 基础结构中的虚拟机将进行验证，并能够与其他 Microsoft 
 	- 使用管理中心监视 SharePoint 场。
 	- 使用本地管理软件（如 Microsoft System Center Operations Manager）监视和管理虚拟机。
 
-### 方案 4：完全自定义的基于 SharePoint 的网站
+### 方案 4：完全自定义的基于 SharePoint 的 Web 应用
 
-越来越多的组织希望在云中创建完全自定义的 SharePoint 网站。这些组织需要一个长期持久的可用环境来完全控制对云中运行的复杂应用程序的维护，但他们不希望花费太多的时间和资金。
+越来越多的组织希望在云中创建完全自定义的 SharePoint Web 应用。这些组织需要一个长期持久的可用环境来完全控制对云中运行的复杂应用程序的维护，但他们不希望花费太多的时间和资金。
 
-在此方案中，组织可在云中部署其整个 SharePoint 场，并动态缩放所有组件以获取额外容量，也可以在需要时将其本地部署扩展到云中来增加容量并提高性能。此方案侧重于希望获得应用程序开发和企业内容管理的完整 SharePoint 体验的组织。更为复杂的网站还可包含增强的报告、Power View、PerformancePoint、PowerPivot、详细图表和大多数其他 SharePoint 网站功能以实现端到端的完整功能。
+在此方案中，组织可在云中部署其整个 SharePoint 场，并动态缩放所有组件以获取额外容量，也可以在需要时将其本地部署扩展到云中来增加容量并提高性能。此方案侧重于希望获得应用程序开发和企业内容管理的完整 SharePoint 体验的组织。更为复杂的 Web 应用还可包含增强的报告、Power View、PerformancePoint、PowerPivot、详细图表和大多数其他 SharePoint Web 应用功能以实现端到端的完整功能。
 
 组织可使用 Azure 虚拟机在经济实惠且高度安全的云基础结构上托管自定义应用程序和关联组件。他们还可将本地 Microsoft System Center 用作本地和云应用程序的常见管理工具。
 
-若要在 Azure 上实现完全自定义的 SharePoint 网站，组织必须在云中部署 Active Directory 域并在此域中设置新的虚拟机。然后，必须创建运行 SQL Server 2012 的虚拟机并将其配置为 SharePoint 场的一部分。最后，必须创建 SharePoint 场，对该场进行负载平衡并将其连接到 Active Directory 和 SQL Server（图 6）。
+若要在 Azure 上实现完全自定义的 SharePoint Web 应用，组织必须在云中部署 Active Directory 域并在此域中设置新的虚拟机。然后，必须创建运行 SQL Server 2012 的虚拟机并将其配置为 SharePoint 场的一部分。最后，必须创建 SharePoint 场，对该场进行负载平衡并将其连接到 Active Directory 和 SQL Server（图 6）。
 
 ![azure-sharepoint-wp-14](./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-14.png)
 
-**图 6：完全自定义的基于 SharePoint 的网站**
+**图 6：完全自定义的基于 SharePoint 的 Web 应用**
 
 下列步骤演示了如何从映像库中的可用的预构建映像创建自定义的 SharePoint 场环境。但请注意，你还可将 SharePoint 场虚拟机上载到映像库，并且授权用户可选择这些虚拟机以在 Azure 上构建所需的 SharePoint 场。
 
@@ -258,7 +258,7 @@ Azure 基础结构中的虚拟机将进行验证，并能够与其他 Microsoft 
 	- 在虚拟机上配置 SQL Server。有关详细信息，请转到[使用 SysPrep 安装 SQL Server](http://msdn.microsoft.com/zh-cn/library/ee210664.aspx)。
 	- 将虚拟机加入新创建的 Active Directory 域。
 3. 部署多服务器 SharePoint 场：
-	- 创建虚拟网络。有关详细信息，请转到[虚拟网络概述](http://msdn.microsoft.com/zh-cn/library/jj156007.aspx)。
+	- 创建虚拟网络。有关详细信息，请转到[虚拟网络概述](/documentation/articles/virtual-networks-overview)。
 	- 在部署 SharePoint 虚拟机时，你需要为 SharePoint Server 提供的子网，以便在设置过程中可使用本地 Active Directory 框中的 DNS 地址。
 	- 使用 Azure 门户创建虚拟机。
 	- 在该虚拟机上安装 SharePoint Server 并生成可重复使用的映像。有关安装 SharePoint Server 的详细信息，请转到[使用 Windows PowerShell 安装和配置 SharePoint Server 2010](http://technet.microsoft.com/zh-cn/library/cc262839.aspx) 或 [CodePlex：AutoSPInstaller](http://autospinstaller.codeplex.com/)。
@@ -278,10 +278,8 @@ Azure 虚拟机提供了 SharePoint 部署的完整连续。它完全受支持�
 
 [Azure 基础结构服务中托管的 SharePoint 场](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 
-[Azure 基础结构服务工作负荷：Intranet SharePoint 场](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)
-
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
 [在 Azure 中测试 SharePoint Server 2016 IT 预览](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1207_2015-->

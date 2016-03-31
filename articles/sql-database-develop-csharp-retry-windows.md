@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="用于连接到 SQL 数据库的 C# 重试逻辑 | Windows Azure" 
+	pageTitle="用于连接到 SQL 数据库的 C# 重试逻辑 | Azure" 
 	description="C# 示例包含用于与 Azure SQL 数据库可靠交互的重试逻辑。" 
 	services="sql-database" 
 	documentationCenter="" 
@@ -10,17 +10,22 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="10/15/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="12/17/2015" 
+	wacn.date="01/15/2016"/>
 
 
 # 代码示例：用于连接到 SQL 数据库的 C# 重试逻辑
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+
+> [AZURE.SELECTOR]
+- [PHP](/documentation/articles/sql-database-develop-php-retry-windows)
+- [C#](/documentation/articles/sql-database-develop-csharp-retry-windows)
+- [C# EntLib6](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows)
 
 
-本主题提供一个用于演示自定义重试逻辑的 C# 代码示例。重试逻辑旨在正常处理暂时错误或*暂时性故障*，在程序等待几秒并重试后，这种错误或故障往往会自行消失。
+
+本主题提供一个用于演示自定义重试逻辑的 C# 代码示例。重试逻辑旨在正常处理暂时错误或 *暂时性故障*，在程序等待几秒并重试后，这种错误或故障往往会自行消失。
 
 
 用于连接本地 Microsoft SQL Server 的 ADO.NET 类也可以连接到 Azure SQL 数据库。但是，ADO.NET 类本身无法提供生产环境中所需的稳定性和可靠性。客户端程序可能会遇到暂时性故障，在此情况下，客户端程序应该能够自行从故障中静默正常恢复。
@@ -50,7 +55,7 @@
 ## C# 代码示例
 
 
-当前主题中的 C# 代码示例包含用于处理暂时性错误的自定义检测与重试逻辑。
+当前主题中的 C# 代码示例包含用于处理暂时性错误的自定义检测与重试逻辑。此示例假定已安装 .NET Framework 4.5.1 或更高版本。
 
 
 代码示例遵循一些基本指导原则或者无论你使用哪种技术来与 Azure SQL 数据库交互都适用的建议。你可以在此处查看常规建议：
@@ -92,124 +97,119 @@ C# 代码示例包含一个名为 Program.cs 的文件。将其代码粘贴到�
 然后，你必须编辑服务器名称、密码等字符串。你可以在名为 **GetSqlConnectionStringBuilder** 的方法中找到这些字符串。
 
 
-```
-using System;   // C#
-using G = System.Collections.Generic;
-using D = System.Data;
-using C = System.Data.SqlClient;
-using X = System.Text;
-using H = System.Threading;
-
-namespace RetryAdo2
-{
-	class Program
+	
+	using System;   // C#
+	using G = System.Collections.Generic;
+	using D = System.Data;
+	using C = System.Data.SqlClient;
+	using X = System.Text;
+	using H = System.Threading;
+	
+	namespace RetryAdo2
 	{
-		static void Main(string[] args)
+		class Program
 		{
-			Program program = new Program();
-			bool returnBool;
-
-			returnBool = program.Run(args);
-			if (returnBool == false)
+			static void Main(string[] args)
 			{
-				Console.WriteLine("Something failed.  :-( ");
+				Program program = new Program();
+				bool returnBool;
+	
+				returnBool = program.Run(args);
+				if (returnBool == false)
+				{
+					Console.WriteLine("Something failed.  :-( ");
+				}
+				return;
 			}
-			return;
-		}
-
-		bool Run(string[] _args)
-		{
-			C.SqlConnectionStringBuilder sqlConnectionSB;
-			C.SqlConnection sqlConnection;
-			D.IDbCommand dbCommand;
-			D.IDataReader dataReader;
-			X.StringBuilder sBuilder = new X.StringBuilder(256);
-			int retryIntervalSeconds = 10;
-			bool returnBool = false;
-
-			Program program = new Program();
-
-			for (int tries = 1; tries <= 5; tries++)
+	
+			bool Run(string[] _args)
 			{
-				try
+				C.SqlConnectionStringBuilder sqlConnectionSB;
+				C.SqlConnection sqlConnection;
+				D.IDbCommand dbCommand;
+				D.IDataReader dataReader;
+				X.StringBuilder sBuilder = new X.StringBuilder(256);
+				int retryIntervalSeconds = 10;
+				bool returnBool = false;
+	
+				for (int tries = 1; tries <= 5; tries++)
 				{
-					if (tries > 1)
+					try
 					{
-						H.Thread.Sleep(1000 * retryIntervalSeconds);
-						retryIntervalSeconds = Convert.ToInt32(retryIntervalSeconds * 1.5);
+						if (tries > 1)
+						{
+							H.Thread.Sleep(1000 * retryIntervalSeconds);
+							retryIntervalSeconds = Convert.ToInt32(retryIntervalSeconds * 1.5);
+						}
+						this.GetSqlConnectionStringBuilder(out sqlConnectionSB);
+	
+						sqlConnection = new C.SqlConnection(sqlConnectionSB.ToString());
+	
+						dbCommand = sqlConnection.CreateCommand();
+						dbCommand.CommandText = @"SELECT TOP 3 ob.name, CAST(ob.object_id as nvarchar(32)) as [object_id] FROM sys.objects as ob WHERE ob.type='IT' ORDER BY ob.name;";
+	
+						sqlConnection.Open();
+						dataReader = dbCommand.ExecuteReader();
+	
+						while (dataReader.Read())
+						{
+							sBuilder.Length = 0;
+							sBuilder.Append(dataReader.GetString(0));
+							sBuilder.Append("\t");
+							sBuilder.Append(dataReader.GetString(1));
+	
+							Console.WriteLine(sBuilder.ToString());
+						}
+						returnBool = true;
+						break;
 					}
-
-					program.GetSqlConnectionStringBuilder(out sqlConnectionSB);
-
-					sqlConnection = new C.SqlConnection(sqlConnectionSB.ToString());
-
-					dbCommand = sqlConnection.CreateCommand();
-					dbCommand.CommandText = @"
-SELECT TOP 3
-      ob.name,
-      CAST(ob.object_id as nvarchar(32)) as [object_id]
-   FROM sys.objects as ob
-   WHERE ob.type='IT'
-   ORDER BY ob.name;";
-
-					sqlConnection.Open();
-					dataReader = dbCommand.ExecuteReader();
-
-					while (dataReader.Read())
+	
+					catch (C.SqlException sqlExc)
 					{
-						sBuilder.Length = 0;
-						sBuilder.Append(dataReader.GetString(0));
-						sBuilder.Append("\t");
-						sBuilder.Append(dataReader.GetString(1));
-
-						Console.WriteLine(sBuilder.ToString());
+						if (this.m_listTransientErrorNumbers.Contains(sqlExc.Number) == true)
+						{ continue; }
+						else
+						{ throw sqlExc; }
 					}
-					returnBool = true;
-					break;
 				}
-
-				catch (C.SqlException sqlExc)
-				{
-					if (this.m_listTransientErrorNumbers.Contains(sqlExc.Number) == true)
-					{ continue; }
-					else
-					{ throw sqlExc; }
-				}
+				return returnBool;
 			}
-			return returnBool;
+	
+			void GetSqlConnectionStringBuilder(out C.SqlConnectionStringBuilder _sqlConnectionSB)
+			{
+				// Prepare the connection string to Azure SQL Database.
+				_sqlConnectionSB = new C.SqlConnectionStringBuilder();
+	
+				// Change these values to your values.
+				_sqlConnectionSB["Server"] = "tcp:myazuresqldbserver.database.chinacloudapi.cn,1433";
+				_sqlConnectionSB["User ID"] = "MyLogin";  // "@yourservername"  as suffix sometimes.
+				_sqlConnectionSB["Password"] = "MyPassword";
+				_sqlConnectionSB["Database"] = "MyDatabase";
+	
+				// Adjust these values if you like. (.NET 4.5.1 or later.)
+				_sqlConnectionSB["ConnectRetryCount"] = 3;
+				_sqlConnectionSB["ConnectRetryInterval"] = 10;  // Seconds.
+	
+				// Leave these values as they are.
+				_sqlConnectionSB["Trusted_Connection"] = false;
+				_sqlConnectionSB["Integrated Security"] = false;
+				_sqlConnectionSB["Encrypt"] = true;
+				_sqlConnectionSB["Connection Timeout"] = 30;
+			}
+	
+			Program()   // Constructor.
+			{
+				int[] arrayOfTransientErrorNumbers =
+					{ 4060, 40197, 40501, 40613, 49918, 49919, 49920
+						//,11001   // 11001 for testing, pretend network error is transient.
+					};
+				m_listTransientErrorNumbers = new G.List<int>(arrayOfTransientErrorNumbers);
+			}
+	
+			private G.List<int> m_listTransientErrorNumbers;
 		}
-
-		void GetSqlConnectionStringBuilder(out C.SqlConnectionStringBuilder _sqlConnectionSB)
-		{
-			// Prepare the connection string to Azure SQL Database.
-			_sqlConnectionSB = new C.SqlConnectionStringBuilder();
-
-			// Change these values to your values.
-			_sqlConnectionSB["Server"] = "tcp:myazuresqldbserver.database.chinacloudapi.cn,1433";
-			_sqlConnectionSB["User ID"] = "MyLogin";  // "@yourservername"  as suffix sometimes.
-			_sqlConnectionSB["Password"] = "MyPassword";
-			_sqlConnectionSB["Database"] = "MyDatabase";
-
-			// Leave these values as they are.
-			_sqlConnectionSB["Trusted_Connection"] = false;
-			_sqlConnectionSB["Integrated Security"] = false;
-			_sqlConnectionSB["Encrypt"] = true;
-			_sqlConnectionSB["Connection Timeout"] = 30;
-		}
-
-		Program()   // Constructor.
-		{
-			int[] arrayOfTransientErrorNumbers =
-				{ 4060, 40197, 40501, 40613, 49918, 49919, 49920
-					//,11001   // 11001 for testing, pretend network error is transient.
-				};
-			m_listTransientErrorNumbers = new G.List<int>(arrayOfTransientErrorNumbers);
-		}
-
-		private G.List<int> m_listTransientErrorNumbers;
 	}
-}
-```
+
 
 
 ### 运行该程序
@@ -277,4 +277,6 @@ filetable_updates_2105058535    2105058535
 
 - [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
 
-<!---HONumber=79-->
+- [试用 SQL 数据库：使用 C# 通过适用于 .NET 的 SQL 数据库库创建 SQL 数据库](/documentation/articles/sql-database-get-started-csharp)
+
+<!---HONumber=Mooncake_0104_2016-->

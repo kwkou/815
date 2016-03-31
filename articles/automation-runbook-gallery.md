@@ -9,7 +9,7 @@
 <tags
 	ms.service="automation"
 	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/14/2015"/>
 
 
 # Azure 自动化的 Runbook 和模块库
@@ -37,10 +37,11 @@
 
 
 ### 将 Runbook 添加到 Runbook 库
+<a name="AddRunbook"></a>
 
 Microsoft 建议你将 Runbook 添加到你认为对其他客户有用的 Runbook 库中。你可以通过连同以下详细信息[将 Runbook 上载到脚本中心](http://gallery.technet.microsoft.com/site/upload)，来添加 Runbook。
 
-- 你必须为向导中要显示的 Runbook 指定“Windows Azure”作为“类别”，指定“自动化”作为“子类别”。  
+- 你必须为向导中要显示的 Runbook 指定“Azure”作为“类别”，指定“自动化”作为“子类别”。  
 
 - 上载内容必须是单个 .ps1 或 .graphrunbook 文件。如果 Runbook 需要任何模块、子 Runbook 或资产，则你应该在提交内容的说明和 Runbook 的注释部分列出这些内容。如果你的解决方案需要多个 Runbook，请单独上载每个 Runbook 并在各自的说明中列出相关 Runbook 的名称。请确保使用相同的标记，以便它们在同一类别中显示。用户阅读说明后才会知道，此 Runbook 正常工作需要其他 Runbook。
 
@@ -66,7 +67,7 @@ Microsoft 建议你将 Runbook 添加到你认为对其他客户有用的 Runboo
 
 ## 请求 Runbook 或模块
 
-你可以将请求发送到[用户之声](http://feedback.azure.com/forums/246290-azure-automation)。如果你需要 Runbook 编写帮助，或对 PowerShell 存有疑问，请将问题发布到我们的[论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchszh-CN/home?forum=azureautomation&filter=alltypes&sort=lastpostdesc)。
+你可以将请求发送到[用户之声](/product-feedback/)。如果你需要 Runbook 编写帮助，或对 PowerShell 存有疑问，请将问题发布到我们的[论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchszh-CN/home?forum=azureautomation&filter=alltypes&sort=lastpostdesc)。
 
 ## 相关文章
 

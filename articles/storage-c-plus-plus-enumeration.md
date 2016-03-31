@@ -1,21 +1,22 @@
 <properties 
-    pageTitle="使用用于 C++ 的 Windows Azure 存储客户端库列出 Azure 存储资源 | Windows Azure" 
-    description="了解如何在用于 C++ 的 Windows Azure 存储客户端库中使用列表 API 来枚举容器、blob、队列、表和实体。" 
+    pageTitle="使用用于 C++ 的 Azure 存储客户端库列出 Azure 存储资源 | Azure" 
+    description="了解如何在用于 C++ 的 Azure 存储客户端库中使用列表 API 来枚举容器、blob、队列、表和实体。" 
     documentationCenter=".net" 
     services="storage"
     authors="tamram" 
     manager="carolz" 
     editor=""/>
 <tags 
-    ms.service="storage" 
-    ms.date="09/23/2015" 
-    wacn.date="11/02/2015"/>
+    ms.service="storage"
+   
+    ms.date="01/05/2016"
+    wacn.date="02/25/2016"/>
 
 # 使用 C++ 列出 Azure 存储资源
 
-使用 Azure 存储空间进行开发时，很多情况下列表操作很重要。本文介绍如何使用用于 C++ 的 Windows Azure 存储客户端库中提供的列表 API 最有效率地枚举 Azure 存储空间中的对象。
+使用 Azure 存储空间进行开发时，很多情况下列表操作很重要。本文介绍如何使用用于 C++ 的 Azure 存储客户端库中提供的列表 API 最有效率地枚举 Azure 存储空间中的对象。
 
->[AZURE.NOTE]本指南主要面向适用于 C++ 版本 1.x 的 Azure 存储客户端库，该库可通过 [NuGet](http://www.nuget.org/packages/wastorage) 或 [GitHub](https://github.com/Azure/azure-storage-cpp) 获取。
+>[AZURE.NOTE] 本指南主要面向适用于 C++ 版本 1.x 的 Azure 存储客户端库，该库可通过 [NuGet](http://www.nuget.org/packages/wastorage) 或 [GitHub](https://github.com/Azure/azure-storage-cpp) 获取。
 
 存储客户端库提供了多种方法，用于列出或查询 Azure 存储空间中的对象。本文将探讨以下方案：
 
@@ -46,7 +47,7 @@
 
 云存储的规模决定了要使用分段列表。例如，你可能在 Azure blob 容器中有超过一百万个 blob，或者在 Azure 表中有十亿个以上的实体。这些不是理论上的数字，而是实际的客户使用情况。
 
-因此，要在单个响应中列出所有对象是不实际的。与之相反，你可以使用分页来列出对象。每个列表 API 都有*分段*重载。
+因此，要在单个响应中列出所有对象是不实际的。与之相反，你可以使用分页来列出对象。每个列表 API 都有 *分段* 重载。
 
 分段列表操作的响应包括：
 
@@ -71,15 +72,15 @@
 	        process_diretory(it->as_directory());
 	    }
 	}
-	
+
 	    token = segment.continuation_token();
 	}
 	while (!token.empty());
 
 请注意，一页中返回的结果数可以通过每个 API 的重载中的参数 *max_results* 进行控制，例如：
-	
-	list_blob_item_segment list_blobs_segmented(const utility::string_t& prefix, bool use_flat_blob_listing, 
-		blob_listing_details::values includes, int max_results, const continuation_token& token, 
+
+	list_blob_item_segment list_blobs_segmented(const utility::string_t& prefix, bool use_flat_blob_listing,
+		blob_listing_details::values includes, int max_results, const continuation_token& token,
 		const blob_request_options& options, operation_context context)
 
 如果未指定 *max_results* 参数，则会在单个页面中返回默认的最大值（最多 5000 个结果）。
@@ -120,7 +121,7 @@ SDK 中的此类贪婪列表 API 在 C#、Java 或 JavaScript Node.js 环境中�
 	    {
 	        process_entity(*it);
 	    }
-	
+
 	    token = segment.continuation_token();
 	} while (!token.empty());
 
@@ -169,7 +170,7 @@ SDK 中的此类贪婪列表 API 在 C#、Java 或 JavaScript Node.js 环境中�
 -	在库中提供懒惰列表是将其作为封装器，适合在同步方案中使用。
 -	不建议使用贪婪列表，因此已将其从库中删除。
 
-## 后续步骤
+##后续步骤
 
 有关 Azure 存储空间以及用于 C++ 的客户端库的更多信息，请参阅以下资源。
 
@@ -178,6 +179,6 @@ SDK 中的此类贪婪列表 API 在 C#、Java 或 JavaScript Node.js 环境中�
 -	[如何通过 C++ 使用队列存储](/documentation/articles/storage-c-plus-plus-how-to-use-queues)
 -	[适用于 C++ 的 Azure 存储客户端库 API 文档。](http://azure.github.io/azure-storage-cpp/)
 -	[Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
--	[Azure 存档文档](http://www.windowsazure.cn/documentation/services/storage/)
+-	[Azure 存档文档](/documentation/services/storage/)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0215_2016-->

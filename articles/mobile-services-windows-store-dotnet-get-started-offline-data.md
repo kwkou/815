@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在通用 Windows 应用中使用脱机数据 | Windows Azure" 
+	pageTitle="在通用 Windows 应用中使用脱机数据 | Microsoft Azure" 
 	description="了解如何在通用 Windows 应用中使用 Azure 移动服务缓存和同步脱机数据" 
 	documentationCenter="mobile-services" 
 	authors="lindydonna" 
@@ -9,25 +9,23 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/23/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="02/11/2016"
+	wacn.date="03/21/2016"/>
 
 # 在移动服务中使用脱机数据同步
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
 
 本教程说明如何使用 Azure 移动服务向通用 Windows 应用商店应用程序添加脱机支持。脱机支持将允许您在应用程序脱机的情况下与本地数据库交互。应用程序与后端数据库联机后，将使用脱机功能同步本地更改。
 
-如果你更愿意观看视频，右侧的视频片段提供了与本教程相同的步骤。
 
 
-
-在本教程中，你将更新[移动服务入门]教程中的通用应用项目，以支持 Azure 移动服务的脱机功能。随后，你将在断开连接的脱机情况下添加数据，将这些项目同步到联机数据库，然后登录到 Azure 管理门户，查看在运行应用程序时对数据所做的更改。
-
+在本教程中，你将更新[移动服务入门]教程中的通用应用项目，以支持 Azure 移动服务的脱机功能。随后，你将在断开连接的脱机情况下添加数据，将这些项目同步到联机数据库，然后登录到 [Azure 经典门户]，查看在运行应用程序时对数据所做的更改。
 
 >[AZURE.NOTE]本教程旨在帮助你更好地了解如何使用移动服务通过 Azure 在 Windows 应用商店应用程序中存储和检索数据。如果这是你第一次体验移动服务，则应先完成[移动服务入门]教程。
->
->此处仍提供了适用于 Visual Studio 2012 的较旧的 Windows Phone 8 教程：[适用于 Visual Studio 2012 的 Windows Phone 8 教程]。
 
 ##先决条件 
 
@@ -38,8 +36,7 @@
 * [Azure 移动服务 SDK 版本 1.3.0（或更高版本）][Mobile Services SDK Nuget]
 * [Azure 移动服务 SQLite Store 版本 1.0.0（或更高版本）][SQLite store nuget]
 * [SQLite for Windows 8.1](http://www.sqlite.org/download.html)
-
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial target="\_blank">Azure 试用</a>。
+* 一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并取得多达 10 个免费的移动服务，即使在试用期结束之后仍可继续使用这些服务。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。 
 
 ## <a name="enable-offline-app"></a>更新应用程序以支持脱机功能
 
@@ -211,7 +208,7 @@
 
 2. 按 **F5** 键重新生成并运行应用。请注意，数据看上去与脱机情况下相同，即使应用程序现已连接到移动服务。这是因为此应用程序始终使用指向本地存储区的 `IMobileServiceSyncTable`。
 
-3. 登录到 Microsoft Azure 管理门户，查看你的移动服务数据库。如果你的服务将 JavaScript 后端用于移动服务，则可以通过移动服务的“数据”选项卡来游览数据。
+3. 登录到 [Azure 经典门户]，查看你的移动服务数据库。如果你的服务将 JavaScript 后端用于移动服务，则可以通过移动服务的“数据”选项卡来游览数据。
 
     如果将 .NET 后端用于移动服务，请在 Visual Studio 中，转到“服务器资源管理器”->“Azure”->“SQL 数据库”。右键单击数据库并选择“在 SQL Server 对象资源管理器中打开”。
 
@@ -242,7 +239,7 @@
 
 * [使用移动服务脱机支持处理冲突]
 
-* [使用移动服务中的软删除][软删除]
+* [使用移动服务中的软删除](/documentation/articles/mobile-services-using-soft-delete)
 
 <!-- Anchors. -->
 [Update the app to support offline features]: #enable-offline-app
@@ -251,7 +248,6 @@
 [Next Steps]: #next-steps
 
 <!-- Images -->
-[0]: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2013/mobile-todoitem-data-browse.png
 [1]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-services-add-reference-sqlite-dialog.png
 [2]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-services-sqlitestore-nuget.png
 [6]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-data-browse.png
@@ -268,16 +264,15 @@
 [TodoList 脱机示例]: http://go.microsoft.com/fwlink/?LinkId=394777
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
 [Getting Started]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started
-[Get started with data]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data
 [移动服务入门]: /documentation/articles/mobile-services-windows-store-get-started
 [SQLite for Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
 [SQLite for Windows Phone 8.1]: http://go.microsoft.com/fwlink/?LinkId=397953
-[适用于 Visual Studio 2012 的 Windows Phone 8 教程]: /documentation/articles/mobile-services-windows-phone-get-started-offline-data
 [软删除]: /documentation/articles/mobile-services-using-soft-delete
 
 
 
 [Mobile Services SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
+[Azure 经典门户]: https://manage.windowsazure.cn
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

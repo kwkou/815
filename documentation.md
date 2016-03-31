@@ -1,28 +1,128 @@
 <properties linkid="documentation-overview" urlDisplayName="Doc-Overview" pageTitle="文档概览" metaKeywords="Doc-Overview" description="" metaCanonical="" services="" documentationCenter="" title="" authors="" solutions="" manager="Tiffena" editor="Eric Chen" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="06/29/2015"
+    wacn.date="01/27/2016"
     />
 
 #文档中心
 
+##文档概览
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+  <tr>
+    <td><a href="/starter-guide/">入门指南</a></td>
+    <td><a href="/video-center/">视频中心</a></td>
+    <td><a href="/documentation/articles/virtual-machines-windows-tutorial-classic-portal/">创建运行Windows的虚拟机</a></td>
+    <td><a href="/documentation/articles/virtual-machines-linux-tutorial-portal-rm/">创建运行Linux的虚拟机</a></td>
+  </tr>
+  <tr>
+    <td><a href="/documentation/articles/web-sites-dotnet-get-started/">创建ASP.NET Web应用</a></td>
+    <td><a href="/documentation/articles/web-sites-nodejs-develop-deploy-mac/">创建 Node.js 网站并部署到 Azure</a></td>
+    <td><a href="/documentation/articles/mobile-services-ios-get-started/">创建iOS移动后端</a></td>
+    <td><a href=""></a></td>
+  </tr>
+</table>
+
+##计算
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+  <tr col>
+    <td><a href="/documentation/services/virtual-machines/">虚拟机</a></td>
+    <td><a href="/documentation/services/web-sites/">网站</a></td>
+    <td><a href="/documentation/services/cloud-services/">云服务</a></td>
+    <td><a href="/documentation/services/mobile-services/">移动服务</a></td>
+  </tr>
+  <tr>
+    <td><a href="/documentation/services/batch/">批处理（Batch）</a></td>
+    <td><a href=""></a></td>
+    <td><a href=""></a></td>
+    <td><a href=""></a></td>
+  </tr>
+</table>
+
+##数据服务
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+  <tr>
+    <td><a href="/documentation/services/storage/">存储</a></td>
+    <td><a href="/documentation/services/sql-databases/">SQL 数据库</a></td>
+    <td><a href="/documentation/services/hdinsight/">HDInsight</a></td>
+    <td><a href="/documentation/services/backup/">备份</a></td>
+  </tr>
+  <tr>
+    <td><a href="/documentation/services/site-recovery/">站点恢复</a></td>
+    <td><a href="/documentation/services/mysql/">MySQL 数据库</a></td>
+    <td><a href="/documentation/services/redis-cache/">Redis 缓存</a></td>
+    <td><a href="/documentation/services/stream-analytics/">流分析</a></td>
+  </tr>
+<tr>
+    <td><a href="/documentation/services/sql-data-warehouse/">SQL 数据仓库</a></td>
+    <td><a href=""></a></td>
+    <td><a href=""></a></td>
+    <td><a href=""></a></td>
+  </tr>
+</table>
+
+##应用服务
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+  <tr>
+    <td><a href="/documentation/services/service-bus/">服务总线</a></td>
+    <td><a href="/documentation/services/identity/">Active Directory</a></td>
+    <td><a href="/documentation/services/scheduler/">计划程序</a></td>
+    <td><a href="/documentation/services/cdn/">CDN</a></td>
+  </tr>
+  <tr>
+    <td><a href="/documentation/services/media-services/">媒体服务</a></td>
+    <td><a href="/documentation/services/notification-hubs/">通知中心</a></td>
+    <td><a href="/documentation/services/event-hubs/">事件中心</a></td>
+    <td><a href="/documentation/services/automation/">自动化</a></td>
+  </tr>
+<tr>
+    <td><a href="/documentation/services/multi-factor-authentication/">多重身份验证</a></td>
+    <td><a href="/documentation/services/key-vault/">密钥保管库</a></td>
+    <td><a href=""></a></td>
+    <td><a href=""></a></td>
+  </tr>
+</table>
+
+##网络服务
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+  <tr>
+    <td><a href="/documentation/services/networking/">虚拟网络</a></td>
+    <td><a href="/documentation/services/traffic-manager/">流量管理器</a></td>
+    <td><a href="/documentation/services/application-gateway/">应用程序网关</a></td>
+    <td><a href="/documentation/services/expressroute/">ExpressRoute</a></td>
+  </tr>
+</table>
 
 ##开发文档
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0"style="table-layout:fixed;">
   <tr>
+    <td><a href="/documentation/articles/architecture-overview/">架构指南</a></td>
+    <td><a href="/documentation/articles/developerdifferences/">开发说明</a></td>
+    <td><a href="/develop/other/open-source-software/">开源软件</a></td>
     <td><a href="/develop/net/">.Net</a></td>
-    <td><a href="/develop/nodejs/">Node.js</a></td>
+  </tr>
+  <tr>
     <td><a href="/develop/java/">Java</a></td>
-    <td><a href="/develop/mobile/ios/">移动服务</a></td>
+    <td><a href="/develop/nodejs/">Node.js</a></td>
+    <td><a href="/develop/python/">Python</a></td>
+    <td><a href="/develop/ruby/">Ruby</a></td>
   </tr>
   <tr>
     <td><a href="/develop/php/">PHP</a></td>
-    <td><a href="/develop/python/">Python</a></td>
-    <td><a href="/develop/ruby/">Ruby</a></td>
-    <td><a href="/develop/media-services/">媒体服务</a></td>
+    <td><a href="/develop/media-services/">Media</a></td>
+    <td><a href="/develop/mobile/ios/">Ios,Android Windows</a></td>
+    <td><a href=""></a></td>
   </tr>
 </table>
+
+##[工具下载](/downloads/)
+<!--
+##故障排除-->
 
 ##自动化脚本
 

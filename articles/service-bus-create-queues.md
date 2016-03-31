@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="编写使用服务总线队列的应用程序 | Microsoft Azure"
+   pageTitle="编写使用服务总线队列的应用程序 | Azure"
    description="如何编写一个基于队列的、使用服务总线的简单应用程序。"
    services="service-bus"
    documentationCenter="na"
@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-   ms.date="09/16/2015"
-   wacn.date="10/22/2015" />
+   ms.date="12/28/2015"
+   wacn.date="02/26/2016" />
 
 # 创建使用服务总线队列的应用程序
 
@@ -59,7 +59,7 @@
 
 ### 安装 NuGet 包
 
-若要使用服务总线服务命名空间，应用程序必须引用服务总线程序集，特别是 Microsoft.ServiceBus.dll。你可以在 Microsoft Azure SDK 的一部分中找到此程序集，也可在 [Azure SDK 下载页](/downloads/)下载。但是，服务总线 NuGet 包是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。有关使用 NuGet 和服务总线包的详细信息，请参阅[使用 NuGet 服务总线包](https://msdn.microsoft.com/zh-cn/library/dn741354.aspx)。
+若要使用服务总线服务命名空间，应用程序必须引用服务总线程序集，特别是 Microsoft.ServiceBus.dll。你可以在 Azure SDK 的一部分中找到此程序集，也可在 [Azure SDK 下载页](/downloads/)下载。但是，服务总线 NuGet 包是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。有关使用 NuGet 和服务总线包的详细信息，请参阅[使用 NuGet 服务总线包](https://msdn.microsoft.com/zh-cn/library/dn741354.aspx)。
 
 ### 创建队列
 
@@ -156,4 +156,4 @@ catch (Exception e)
 
 了解了有关队列的基础知识，即可参阅[创建使用服务总线主题和订阅的应用程序](/documentation/articles/service-bus-create-topics-subscriptions)，使用服务总线中转消息传送的发布/订阅功能继续这一讨论。
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0215_2016-->

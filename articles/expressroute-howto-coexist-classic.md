@@ -1,5 +1,5 @@
 <properties
-   pageTitle="配置可共存的 ExpressRoute 连接和站点到站点 VPN 连接 | Windows Azure"
+   pageTitle="配置可共存的 ExpressRoute 连接和站点到站点 VPN 连接 | Microsoft Azure"
    description="本教程将指导你配置可共存的 ExpressRoute 连接和站点到站点 VPN 连接。"
    documentationCenter="na"
    services="expressroute"
@@ -9,29 +9,30 @@
    tags="azure-service-management"/>
 <tags
    ms.service="expressroute"
-   ms.date="09/22/2015"
-   wacn.date="11/02/2015"/>
+   ms.date="01/16/2016"
+   wacn.date="03/17/2015"/>
 
 # 配置可共存的针对 VNet 的 ExpressRoute 连接和站点到站点 VPN 连接
 
-能够配置站点到站点 VPN 和 ExpressRoute 具有多项优势。你可以将站点到站点 VPN 配置为 ExressRoute 的安全故障转移路径，或者使用站点到站点 VPN 连接到不属于你网络的一部分但却已通过 ExpressRoute 进行连接的站点。我们将在本文中介绍这两种方案的配置步骤。本文适用于使用典型部署模型创建的连接。
+能够配置站点到站点 VPN 和 ExpressRoute 具有多项优势。你可以将站点到站点 VPN 配置为 ExressRoute 的安全故障转移路径，或者使用站点到站点 VPN 连接到不属于你网络的一部分但却已通过 ExpressRoute 进行连接的站点。我们将在本文中介绍这两种方案的配置步骤。当前只能使用经典部署模型创建此配置。当我们获得适用于资源管理器部署模型的文档时，我们将在此处链接到它。
 
->[AZURE.IMPORTANT]请务必了解 Azure 当前使用两种部署模型：资源管理器和经典部署模型。在开始你的配置之前，请确保你了解部署模型和工具。
+>[AZURE.IMPORTANT] 请务必了解 Azure 当前使用两种部署模型：资源管理器和经典部署模型。在开始你的配置之前，请确保你了解部署模型和工具。有关部署模型的信息，请参阅 [Azure 部署模型](/documentation/articles/azure-classic-rm)
 
 
-按以下说明进行操作之前，必须预先配置ExpressRoute 线路。在按以下步骤操作之前，请务必遵循相关指南来[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)和<!--[-->配置路由<!--](/documentation/articles/expressroute-howto-routing-classic)-->。
+按以下说明进行操作之前，必须预先配置ExpressRoute 线路。在按以下步骤操作之前，请务必遵循相关指南来[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)和[配置路由](/documentation/articles/expressroute-howto-routing-classic)。
 
 ## 限制和局限性
 
 - **不支持转换性路由：**你将不能（通过 Azure）在通过站点到站点 VPN 连接的本地网络与通过 ExpressRoute 连接的本地网络之间进行路由。
 - **不支持点到站点连接：**你不能启用点到站点 VPN 连接来连接到已连接到 ExpressRoute 的同一 VNet。对于同一 VNet 而言，点到站点 VPN 和 ExpressRoute 不能共存。
-- **仅标准或高性能网关：**ExpressRoute 网关和站点到站点 VPN 网关必须使用标准或高性能网关。
+- **无法在站点到站点 VPN 网关上启用强制隧道：**你只能通过 ExpressRoute 将所有 Internet 绑定流量“强制”返回到本地网络。 
+- **仅标准或高性能网关：**ExpressRoute 网关和站点到站点 VPN 网关必须使用标准或高性能网关。有关网关 SKU 的信息，请参阅[网关 SKU](/documentaion/articles/vpn-gateway-about-vpngateways)。
 - **静态路由要求：**如果你的本地网络同时连接到 ExpressRoute 和站点到站点 VPN，则必须在本地网络中配置静态路由，以便将站点到站点 VPN 连接路由到公共 Internet。
 - **必须先配置 ExpressRoute 网关：**必须先创建 ExpressRoute 网关，然后再添加站点到站点 VPN 网关。
 
 ## 将站点到站点 VPN 配置为 ExpressRoute 的故障转移路径
 
-你可以将站点到站点 VPN 连接配置为 ExpressRoute 的备份。这仅适用于链接到 Azure 专用对等路径的虚拟网络。对于可通过 Azure 公共线路和 Microsoft 对等线路访问的服务，没有基于 VPN 的故障转移解决方案。ExpressRoute 线路始终是主链接。仅当 ExpressRoute 线路失败时，数据才会流经站点到站点 VPN 路径。
+你可以将站点到站点 VPN 连接配置为 ExpressRoute 的备份。这仅适用于链接到 Azure 专用对等路径的虚拟网络。对于可通过 Azure 公共线路访问的服务，没有基于 VPN 的故障转移解决方案。ExpressRoute 线路始终是主链接。仅当 ExpressRoute 线路失败时，数据才会流经站点到站点 VPN 路径。
 
 ![共存](./media/expressroute-howto-coexist-classic/scenario1.jpg)
 
@@ -49,7 +50,7 @@
 
 - **创建新的虚拟网络和共存连接：**
 	
-	如果你还没有虚拟网络，此过程将指导你创建新的虚拟网络并创建新的 ExpressRoute 和站点到站点 VPN 连接。若要进行配置，请按文章的**使用 ExpressRoute 和站点到站点连接创建新的虚拟网络**部分的步骤进行操作。
+	如果你还没有虚拟网络，此过程将指导你完成创建新的虚拟网络并创建新的 ExpressRoute 和站点到站点 VPN 连接。若要进行配置，请按文章的**使用 ExpressRoute 和站点到站点连接创建新的虚拟网络**部分的步骤进行操作。
 
 - **配置现有虚拟网络实现共存连接：**
 
@@ -58,13 +59,13 @@
 	在此过程中，创建可以共存的连接将需要你删除网关，然后配置新网关。这意味着，在你删除并重新创建网关和连接时，跨界连接将会停止工作，但你无需将任何 VM 或服务迁移到新的虚拟网络。在你配置网关时，如果进行了相应配置，你的 VM 和服务仍可以通过负载平衡器与外界通信。
 
 
-## 使用 ExpressRoute 和站点到站点连接创建新的虚拟网络
+## <a name="create-a-new-virtual-network-with-both-expressroute-and-site-to-site-connectivity"></a>使用 ExpressRoute 和站点到站点连接创建新的虚拟网络
 
 此过程将指导你创建 VNet，以及创建将共存的站点到站点连接和 ExpressRoute 连接。
 
 1. 验证你是否有最新版本的 PowerShell cmdlet。可以从[下载页](/downloads/)的 PowerShell 部分下载和安装最新的 PowerShell cmdlet。
 
-2. 创建虚拟网络的架构。<!--有关使用网络配置文件的详细信息，请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal)。-->有关配置架构的详细信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)。
+2. 创建虚拟网络的架构。有关使用网络配置文件的详细信息，请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal)。有关配置架构的详细信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)。
 
 	在创建架构时，请确保使用以下值：
 
@@ -204,6 +205,6 @@
 
 ## 后续步骤
 
-有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)
+有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。
 
-<!---HONumber=76-->
+<!---HONumber=82-->

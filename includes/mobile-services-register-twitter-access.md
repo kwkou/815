@@ -4,9 +4,9 @@
 
 1. 如果您尚未注册您的应用，请完成主题<a href="/zh-cn/documentation/articles/mobile-services-how-to-register-twitter-authentication/" target="_blank">注册应用以便在移动服务中进行 Twitter 登录</a>中的步骤。 
   
-  	Twitter 生成让您访问 Twitter v1.1 API 所需的凭据。您可从 Twitter 开发人员网站获取这些凭据。
+  	Twitter 生成让您访问 Twitter v1.1 API 所需的凭据。您可从 Twitter 开发人员 Web 应用获取这些凭据。
 
-2. 导航到 <a href="http://go.microsoft.com/fwlink/p/?LinkId=268300" target="_blank">Twitter 开发人员</a>网站，使用你的 Twitter 帐户凭据登录，然后选择你的 Twitter 应用。
+2. 导航到 <a href="http://go.microsoft.com/fwlink/p/?LinkId=268300" target="_blank">Twitter 开发人员</a> Web 应用，使用你的 Twitter 帐户凭据登录，然后选择你的 Twitter 应用。
 
 3. 在应用的“密钥和访问令牌”选项卡中，记下以下值：
 
@@ -21,7 +21,7 @@
 
 	![](./media/mobile-services-register-twitter-access/mobile-identity-tab-twitter-only.png)
 
-2. 单击“配置”选项卡，向下滚动到“应用设置”，输入你从 Twitter 网站获取的下述每个项的“名称”和“值”对，然后单击“保存”。
+2. 单击“配置”选项卡，向下滚动到“应用设置”，输入你从 Twitter Web 应用获取的下述每个项的“名称”和“值”对，然后单击“保存”。
 
 	+ `TWITTER_ACCESS_TOKEN`
 	+ `TWITTER_ACCESS_TOKEN_SECRET`
@@ -33,7 +33,7 @@
 <!-- URLs. -->
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
 [Azure 管理门户]: https://manage.windowsazure.cn/
-[Register your apps for Twitter login with Mobile Services]: /documentation/articles//mobile-services-how-to-register-twitter-authentication
+[Register your apps for Twitter login with Mobile Services]: /documentation/articles/mobile-services-how-to-register-twitter-authentication
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [应用设置]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 

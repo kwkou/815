@@ -1,22 +1,18 @@
 <properties 
-	pageTitle="通过使用 Visual Studio 连接服务添加移动服务后开始使用 Javascript 移动应用 | Windows Azure" 
+	pageTitle="通过使用 Visual Studio 连接服务添加移动服务后开始使用 Javascript 移动应用 | Microsoft Azure" 
 	description="如何在 Visual Studio 中的 JavaScript 项目内开始使用 Azure 移动服务" 
 	services="mobile-services" 
 	documentationCenter="" 
-	authors="patshea123" 
+	authors="mlhoop" 
 	manager="douge" 
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/17/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="01/05/2016" 
+	wacn.date="03/21/2016"/>
 
-#  移动服务入门
-
-> [AZURE.SELECTOR]
-> - [入门](/documentation/articles/vs-mobile-services-javascript-getting-started)
-> - [发生了什么情况](/documentation/articles/vs-mobile-services-javascript-what-happened)
+# 通过使用 Visual Studio 连接服务添加 Azure 移动服务后开始使用 Javascript 移动应用
 
 为了跟踪这些代码，您需要首先执行的步骤取决于您连接的移动服务类型。
 
@@ -70,15 +66,15 @@
 
 ##更新条目
 
-更新数据表中的行。在此示例中，*todoItem* 是更新的项目，而 *item* 是从移动服务中返回的同一项目。移动服务响应时，本地 todoItems 列表中的项目将使用 [splice](http://msdn.microsoft.com/zh-cn/library/windows/apps/Hh700810.aspx) 方法进行更新。对返回的 **Promise** 对象调用 [done](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 方法以获取插入对象的副本并处理任何错误。
+更新数据表中的行。在此示例中，*todoItem* 是更新的项目，而 *item* 是从移动服务中返回的同一项目。移动服务响应时，本地 todoItems 列表中的项目将使用 [splice](http://msdn.microsoft.com/zh-cn/library/windows/apps/Hh700810.aspx) 方法进行更新。对返回的 [Promise](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 对象调用  **done** 方法以获取插入对象的副本并处理任何错误。
 
         todoTable.update(todoItem).done(function (item) {
             todoItems.splice(todoItems.indexOf(item), 1, item);
         });
 
-##### 删除条目
+##删除条目
 
-删除数据表中的行。对返回的 [Promise]() 对象调用 [done](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 方法以获取插入对象的副本并处理任何错误。
+删除数据表中的行。对返回的 [Promise](https://msdn.microsoft.com/zh-cn/library/dn802826.aspx) 对象调用 [done]() 方法以获取插入对象的副本并处理任何错误。
 
 	todoTable.del(todoItem).done(function (item) {
 	    todoItems.splice(todoItems.indexOf(item), 1);
@@ -88,4 +84,4 @@
 
 [详细了解移动服务](/documentation/services/mobile-services)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0215_2016-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure PowerShell 1.0 预览版资源管理器更改 | Windows Azure"
+	pageTitle="Azure PowerShell 1.0 预览版资源管理器更改 | Azure"
 	description="介绍针对 Azure PowerShell 1.0 预览版设计的资源管理器 cmdlet 所发生的更改。"
 	services="azure-resource-manager"
 	documentationCenter="na"

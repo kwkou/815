@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="在虚拟网络中创建和配置具有内部负载平衡器 (ILB) 的应用程序网关 | Windows Azure"
+   pageTitle="在虚拟网络中创建和配置具有内部负载平衡器 (ILB) 的应用程序网关 | Azure"
    description="本页说明如何配置具有内部负载平衡终结点的 Azure 应用程序网关"
    documentationCenter="na"
    services="application-gateway"

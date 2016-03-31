@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="自定义身份验证入门 | Windows Azure" 
+	pageTitle="自定义身份验证入门 | Azure" 
 	description="了解如何使用用户名和密码对用户进行身份验证。" 
 	documentationCenter="Mobile" 
 	authors="mattchenderson" 
@@ -9,10 +9,15 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/09/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="02/07/2016"
+	wacn.date="03/28/2016"/>
 
 # 自定义身份验证入门
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 ## 概述
 本主题说明如何通过颁发自己的移动服务身份验证令牌，对 Azure 移动服务 .NET 后端中的用户进行身份验证。在本教程中，你将使用应用程序的自定义用户名和密码向快速入门项目添加身份验证。
@@ -48,7 +53,9 @@
 
         public DbSet<Account> Accounts { get; set; }
 
-	>[AZURE.NOTE]本教程中的代码段使用 `todoContext` 作为上下文名称。你必须更新项目上下文的代码段。接下来，请设置安全功能以处理此数据。
+	>[AZURE.NOTE]本教程中的代码段使用 `todoContext` 作为上下文名称。你必须更新项目上下文的代码段。 
+        &nbsp;
+	接下来，请设置安全功能以处理此数据。
  
 5. 创建名为 `CustomLoginProviderUtils` 的类，然后添加以下 `using` 语句：
 
@@ -160,7 +167,8 @@
 
 ## 创建 LoginProvider
 
-**LoginProvider** 是移动服务身份验证管道中的基础构造之一。在本部分中，你将创建自己的 `CustomLoginProvider`。它并不会像内置提供程序一样插入管道中，但会为你提供方便的功能。如果你使用 Visual Studio 2013，则可能需要安装 `WindowsAzure.MobileServices.Backend.Security` Nuget 包才能添加对 `LoginProvider` 类的引用。
+**LoginProvider** 是移动服务身份验证管道中的基础构造之一。在本部分中，你将创建自己的 `CustomLoginProvider`。它并不会像内置提供程序一样插入管道中，但会为你提供方便的功能。  
+如果你使用 Visual Studio 2013，则可能需要安装 `WindowsAzure.MobileServices.Backend.Security` Nuget 包才能添加对 `LoginProvider` 类的引用。
 
 1. 创建派生自 **LoginProvider** 的新类 `CustomLoginProvider`，然后添加以下 `using` 语句：
 
@@ -211,9 +219,16 @@
             return;
         }
 
-	这是一个无操作方法，因为 **CustomLoginProvider** 不会与身份验证管道集成。
+	此方法尚未实现，因为 **CustomLoginProvider** 不会与身份验证管道集成。
 
-5. 将抽象方法 `ParseCredentials` 的以下实现添加到 **CustomLoginProvider**。public override ProviderCredentials ParseCredentials(JObject serialized) { if (serialized == null) { throw new ArgumentNullException("serialized"); }
+4. 将抽象方法 `ParseCredentials` 的以下实现添加到 **CustomLoginProvider**。
+
+        public override ProviderCredentials ParseCredentials(JObject serialized)
+        {
+            if (serialized == null)
+            {
+                throw new ArgumentNullException("serialized");
+            }
 
             return serialized.ToObject<CustomLoginProviderCredentials>();
         }
@@ -268,7 +283,7 @@
 
 	此类表示使用用户 ID 和身份验证令牌成功完成的登录。请注意，此类和客户端的 MobileServiceUser 类具有相同形式，因此，使用此类可以轻松地将登录响应传递给强类型化客户端。
 
-3. 右键单击“控制器”，单击“添加”和“控制器”，创建名为 `CustomLoginController` 的新“Microsoft Azure 移动服务自定义控制器”，然后添加以下 `using` 语句：
+2. 右键单击“控制器”，单击“添加”和“控制器”，创建名为 `CustomLoginController` 的新“Microsoft Azure 移动服务自定义控制器”，然后添加以下 `using` 语句：
 
 		using Microsoft.WindowsAzure.Mobile.Service.Security;
 		using System.Security.Claims;
@@ -376,7 +391,7 @@
 
 	如果你在“帐户”表中保留了用户登录信息，则你只需调用 **CustomRegistration** 终结点一次，即可为给定的用户创建帐户。有关如何在支持的各种客户端平台上调用自定义 API 的示例，请参阅文章 [Azure 移动服务中的自定义 API – 客户端 SDK](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx)。
 	 
-	> [AZURE.IMPORTANT]由于此用户设置步骤只会发生一次，因此你可以考虑以某种带外方式创建用户帐户。对于公共注册终结点，还应该考虑实施基于短信或电子邮件的验证过程或者其他防护机制，以避免生成欺骗性的帐户。你可以使用 Twilio 从移动服务发送短信。有关详细信息，请参阅[如何：发送短信](/documentation/articles/partner-twilio-mobile-services-how-to-use-voice-sms#howto_send_sms)。也可以使用 SendGrid 从移动服务发送电子邮件。有关详细信息，请参阅[使用 SendGrid 从移动服务发送电子邮件](/documentation/articles/store-sendgrid-mobile-services-send-email-scripts)。
+	> [AZURE.IMPORTANT]由于此用户设置步骤只会发生一次，因此你可以考虑以某种带外方式创建用户帐户。对于公共注册终结点，还应该考虑实施基于短信或电子邮件的验证过程或者其他防护机制，以避免生成欺骗性的帐户。你可以使用 Twilio 从移动服务发送短信。也可以使用 SendGrid 从移动服务发送电子邮件。有关使用 SendGrid 的详细信息，请参阅[使用 SendGrid 从移动服务发送电子邮件](/documentation/articles/store-sendgrid-mobile-services-send-email-scripts)。
 	
 3. 再次使用适当的 **invokeApi** 方法，但这次改为调用 **CustomLogin** 终结点，以在消息正文中传递运行时提供的用户名和密码。
 
@@ -406,4 +421,4 @@
 [ProviderCredentials]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.security.providercredentials.aspx
  
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0118_2016-->

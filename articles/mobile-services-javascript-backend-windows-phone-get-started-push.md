@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="向移动服务应用添加推送通知 (Windows Phone) | Windows Azure" 
+	pageTitle="向移动服务应用添加推送通知 (Windows Phone) | Azure" 
 	description="了解如何使用 Azure 移动服务和通知中心将推送通知发送到 Windows Phone 应用。" 
 	services="mobile-services,notification-hubs" 
 	documentationCenter="windows" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/14/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="12/07/2015" 
+	wacn.date="01/29/2016"/>
 
 
 #  向移动服务应用程序添加推送通知
@@ -70,7 +70,7 @@
 
 5. 按 **F5** 键以运行应用。将显示包含注册密钥的弹出式对话框。
   
-5.	在解决方案资源管理器中，展开“属性”，打开 WMAppManifest.xml 文件，单击“功能”选项卡并确保选中 **ID\_\_\_CAP\_\_\_PUSH\_NOTIFICATION** 功能。
+5. 在解决方案资源管理器中，展开“属性”，打开 WMAppManifest.xml 文件，单击“功能”选项卡并确保选中 **ID\_\_\_CAP\_\_\_PUSH\_NOTIFICATION** 功能。
 
    	![在 VS 中启用通知](./media/mobile-services-javascript-backend-windows-phone-get-started-push/mobile-app-enable-push-wp8.png)
 
@@ -136,9 +136,6 @@
 
 本教程演示了启用 Windows 应用商店应用程序以便使用移动服务和通知中心发送推送通知的基础知识。接下来，请考虑完成以下教程之一：
 
-+ [向经过身份验证的用户发送推送通知](/documentation/articles/mobile-services-javascript-backend-windows-phone-push-notifications-app-users)
-	<br/>了解如何使用标记来做到只将推送通知从移动服务发送到经过身份验证的用户。
-
 + [将广播通知发送到订户](/documentation/articles/notification-hubs-windows-phone-send-breaking-news)
 	<br/>了解用户如何注册和接收他们感兴趣的类别的推送通知。
 
@@ -185,4 +182,4 @@
 
  
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

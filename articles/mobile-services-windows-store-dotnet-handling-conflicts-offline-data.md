@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在通用 Windows 应用中处理与脱机数据的冲突 | Windows Azure" 
+	pageTitle="在通用 Windows 应用中处理与脱机数据的冲突 | Microsoft Azure" 
 	description="了解在通用 Windows 应用程序中同步脱机数据时如何使用 Azure 移动服务处理冲突" 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
@@ -9,12 +9,15 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/23/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="02/11/2016"
+	wacn.date="03/21/2016"/>
 
 
 # 在“移动服务”中处理与脱机数据同步的冲突
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../includes/mobile-services-selector-offline-conflicts.md)]
 
 ##概述
@@ -22,6 +25,10 @@
 本主题演示在使用 Azure 移动服务的脱机功能时如何同步数据和处理冲突。
 
 
+
+在本教程中，你将为支持处理脱机同步冲突的应用下载通用 Windows C# 解决方案。您要将移动服务与应用程序集成，然后再运行的 Windows 应用商店 8.1 和 Windows Phone 8.1 客户端生成同步冲突，并解决冲突。
+
+本教程以前一教程[脱机数据处理入门]中的步骤和示例应用程序为基础。在开始本教程之前，应先完成[脱机数据入门]。
 
 
 ##先决条件
@@ -54,7 +61,7 @@
 
 现在可以针对移动服务测试应用程序了。
 
-1. 在 Azure 管理门户中，通过单击“仪表板”选项卡的命令栏上的“管理密钥”找到移动服务的应用程序密钥。复制“应用程序密钥”。
+1. 在 [Azure 经典门户]中，通过单击“仪表板”选项卡的命令栏上的“管理密钥”找到移动服务的应用程序密钥。复制“应用程序密钥”。
 
 2. 在 Visual Studio 的解决方案资源管理器中，打开客户端示例项目中的 App.xaml.cs 文件。更改 **MobileServiceClient** 的初始化以使用你的移动服务 URL 和应用程序密钥：
 
@@ -72,7 +79,7 @@
 
 在实际情况中，当一个应用程序将更新推送到数据库中的一条记录，然后另一个应用程序尝试使用该记录中过时的版本字段将更新推送到同一条记录时，会发生同步冲突。如[脱机数据入门]中所述，要支持脱机同步功能需要版本系统属性。通过每次数据库更新检查此版本信息。如果应用的实例尝试使用过时版本更新记录，则将发生冲突，并且会在应用中捕获为 `MobileServicePreconditionFailedException`。如果应用未捕获 `MobileServicePreconditionFailedException`，则最终将引发 `MobileServicePushFailedException`，描述遇到了多少同步错误。
 
->[AZURE.NOTE]若要通过脱机数据同步支持同步已删除的记录，应启用[“软删除”](/documentation/articles/mobile-services-using-soft-delete)。否则，必须手动删除本地存储中的记录，或者调用 `IMobileServiceSyncTable::PurgeAsync()` 以清除本地存储。
+>[AZURE.NOTE]若要通过脱机数据同步支持同步已删除的记录，应启用“[软删除](/documentation/articles/mobile-services-using-soft-delete)”。否则，必须手动删除本地存储中的记录，或者调用 `IMobileServiceSyncTable::PurgeAsync()` 以清除本地存储。
 
 
 下面的步骤演示使用示例同时运行 Windows Phone 8.1 和 Windows 应用商店 8.1 客户端以引发冲突并解决冲突。
@@ -149,9 +156,9 @@
 [脱机数据入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 [脱机数据处理入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 [SQLite for Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [Handling Database Conflicts]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/#test-app
 [移动服务示例 GitHub 存储库]: http://go.microsoft.com/fwlink/?LinkId=512865
 [Todo 脱机移动服务示例]: http://go.microsoft.com/fwlink/?LinkId=512866
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

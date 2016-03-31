@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="04/14/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="01/21/2016"/>
 
 # 使用负载平衡集群集化 Linux 上的 MySQL
 
@@ -25,19 +25,19 @@
 
 ## 介绍
 
-本文旨在探索并说明可用于在 Windows Azure 上部署基于 Linux 的高度可用服务的不同方法，并作为入门书探索 MySQL Server 的高可用性。
+本文旨在探索并说明可用于在 Azure 上部署基于 Linux 的高度可用服务的不同方法，并作为入门书探索 MySQL Server 的高可用性。
 
 我们将基于 DRBD、Corosync 和 Pacemaker 概述无共享双节点单主机 MySQL 高可用性解决方案。一次只有一个节点运行 MySQL。读取和写入 DRBD 资源也限制为一次只有一个节点。
 
-无需使用类似 LVS 的 VIP 解决方案，因为我们使用 Windows Azure 负载平衡集来同时提供轮循功能和 VIP 的终结点检测、删除和正常恢复功能。VIP 是在首次创建云服务时由 Windows Azure 分配的全局可路由 IPv4 地址。
+无需使用类似 LVS 的 VIP 解决方案，因为我们使用 Azure 负载平衡集来同时提供轮循功能和 VIP 的终结点检测、删除和正常恢复功能。VIP 是在首次创建云服务时由 Azure 分配的全局可路由 IPv4 地址。
 
-MySQL 的其他可能体系结构包括 NBD 群集、Percona 和 Galera 以及多个中间件解决方案，其中至少有一个以 [VM Depot](http://vmdepot.msopentech.com) 中的 VM 的形式提供。只要这些解决方案可以复制到单播、多播或广播上，并且不要依赖于共享存储或多个网络接口，这些方案就应该很容易在 Windows Azure 上部署。
+MySQL 的其他可能体系结构包括 NBD 群集、Percona 和 Galera 以及多个中间件解决方案，其中至少有一个以 [VM Depot](http://vmdepot.msopentech.com) 中的 VM 的形式提供。只要这些解决方案可以复制到单播、多播或广播上，并且不要依赖于共享存储或多个网络接口，这些方案就应该很容易在 Azure 上部署。
 
 当然，这些群集体系结构可以类似方式扩展到其他产品（如 PostgreSQL 和 OpenLDAP）。例如，此无共享的负载平衡过程已成功在多主机 OpenLDAP 上测试，并可以在我们的第 9 频道博客上观看。
 
 ## 做好准备
 
-你将需要一个具有有效订阅可以创建至少两 (2) 个虚拟机的 Windows Azure 帐户（在此示例中使用 XS）、一个网络和一个子网、一个地缘组和一个可用性集，以及能够在同一区域中创建新的 VHD 作为云服务，并将这些 VHD 附加到 Linux 虚拟机。
+你将需要一个具有有效订阅可以创建至少两 (2) 个虚拟机的 Azure 帐户（在此示例中使用 XS）、一个网络和一个子网、一个地缘组和一个可用性集，以及能够在同一区域中创建新的 VHD 作为云服务，并将这些 VHD 附加到 Linux 虚拟机。
 
 ### 已测试的环境
 
@@ -164,7 +164,7 @@ MySQL 的其他可能体系结构包括 NBD 群集、Percona 和 Galera 以及�
 
 ### 测试负载平衡集
 
-可以从外部计算机使用任何 MySQL 客户端以及应用程序（例如，作为 Azure 网站运行的 phpMyAdmin）执行测试。在这种情况下，我们在另一台 Linux 计算机上使用 MySQL 的命令行工具：
+可以从外部计算机使用任何 MySQL 客户端以及应用程序（例如，作为 Azure Web 应用运行的 phpMyAdmin）执行测试。在这种情况下，我们在另一台 Linux 计算机上使用 MySQL 的命令行工具：
 
     mysql azureha –u root –h hadb.chinacloudapp.cn –e "select * from things;"
 
@@ -186,7 +186,7 @@ MySQL 的其他可能体系结构包括 NBD 群集、Percona 和 Galera 以及�
 
 Corosync 是使 Pacemaker 工作所需的基础群集基础结构。对于检测信号 v1 和 v2 用户（以及 Ultramonkey 等其他方法），Corosync 是 CRM 功能的拆分，而 Pacemaker 将保持更类似于功能中的检测信号。
 
-Azure 上 Corosync 的主要约束是 Corosync 首选多播，其次广播，再其次单播通信，但 Windows Azure 网络仅支持单播。
+Azure 上 Corosync 的主要约束是 Corosync 首选多播，其次广播，再其次单播通信，但 Azure 网络仅支持单播。
 
 幸运的是，Corosync 具有一种工作单播模式，并且唯一的真正约束是，由于并非所有节点之间都*自动*互相通信，因此需要在配置文件中定义节点，包括其 IP 地址。我们可以对单播使用 Corosync 示例文件，并只需更改绑定地址、节点列表和日志记录目录（Ubuntu 使用 `/var/log/corosync`，而示例文件使用 `/var/log/cluster`），并启用仲裁工具。
 

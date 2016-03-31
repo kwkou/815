@@ -9,9 +9,9 @@
  tags="azure-portal"/>
 
 <tags
- ms.service="hdinsight"
- ms.date="09/02/2015"
- wacn.date="11/02/2015"/>
+	ms.service="hdinsight"
+	ms.date="02/05/2016"
+	wacn.date="03/28/2016"/>
 
 #了解和解决从 HDInsight 上的 WebHCat (Templeton) 收到的错误
 
@@ -21,12 +21,11 @@
 
 [WebHCat](https://cwiki.apache.org/confluence/display/Hive/WebHCat)是适用于 [HCatalog](https://cwiki.apache.org/confluence/display/Hive/HCatalog) 的 REST API，是针对 Hadoop 的表和存储管理层。WebHCat 默认情况下在 HDInsight 群集上处于启用状态，可供各种工具在执行提交作业、获取作业状态等操作时使用，无需登录到群集中。
 
-##修改配置
+##<a name="modifying-configuration"></a> 修改配置
 
 > [AZURE.IMPORTANT]本文档中列出的几大错误之所以发生，是因为超出了配置的最大值。当解决步骤提到你可以更改一个值时，必须使用下列选项之一来执行更改：
 
 * 对于 **Windows** 群集：使用脚本操作在群集创建过程中配置值。有关详细信息，请参阅[开发脚本操作](/documentation/articles/hdinsight-hadoop-script-actions)。
-
 
 ###默认配置
 
@@ -81,4 +80,4 @@
 [max-age-ms]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.0.6.0/ds_Hadoop/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml
  
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_1207_2015-->

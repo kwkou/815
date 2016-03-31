@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="缩放 Azure SQL 数据库支持的移动服务 | Windows Azure" 
+	pageTitle="缩放 Azure SQL 数据库支持的移动服务 | Microsoft Azure" 
 	description="了解如何诊断和修复 SQL 数据库支持的移动服务中的可扩展性问题" 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -9,10 +9,15 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="08/08/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="12/01/2015" 
+	wacn.date="03/21/2016"/>
 
 # 扩展 Azure SQL 数据库支持的移动服务
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 Azure 移动服务可轻松启动和构建连接云托管后端的应用，从而将数据存储在 SQL 数据库中。随着应用的增长，服务示例的扩展与在门户中的调整扩展设置一样简单，可轻松提高计算和网络容量。然而，扩展支持服务的 SQL 数据库要求在服务接收更多负载的同时进行主动规划和监控。本文档将指导您实行一组最佳实践，以确保 SQL 支持的移动服务能够持续提供最佳性能。
 
@@ -28,7 +33,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 <a name="Diagnosing"></a>
 ##  诊断问题
 
-如果你怀疑移动服务出现欠载问题，首先需要在 [Azure 管理门户][]中查看服务的“仪表板”选项卡。以下几点需要验证：
+如果你怀疑移动服务出现欠载问题，首先需要在 [Azure 经典门户]中查看服务的“仪表板”选项卡。以下几点需要验证：
 
 - 用量计量表（包括“API 调用”和“活动设备”计量表）未超出配额
 - “终结点监视”状态指示服务处于上升阶段（仅支持服务正使用标准层以及终结点监视已启用的情况） 
@@ -37,20 +42,12 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 ### 选择合适的 SQL 数据库层 
 
-请务必了解，您可以在不同的数据库层进行选择，以确保选择合适的数据库层满足应用需求。Azure SQL 数据库提供两种不同的数据库版本和三个不同的服务层：
+请务必了解，您可以在不同的数据库层进行选择，以确保选择合适的数据库层满足应用需求。Azure SQL 数据库提供三个不同的服务层：
 
-- Web Edition 和 Business Edition（已停用）
-- 基本、标准和高级服务层
+- 基本
+- 标准
+- 高级
 
-尽管 Web Edition 和 Business Edition 完全受支持，但 [Web 和 Business Edition 停用常见问题](http://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx)显示，这两个版本将于 2015 年 9 月 12 日停用。我们鼓励新客户开始使用基本、标准和高级服务层，以为此更改做好准备。这些服务层将提供多种监视功能，有助于更加轻松地了解和解决数据库性能问题。所有新的移动服务均使用其中一个新服务层创建而成。
-
-若要将使用 Web Edition 和 Business Edition 的移动服务转换成使用基本、标准和高级服务层，请遵循下列步骤。
-
-1. 启动 [Azure 管理门户][]。
-2. 在工具栏中选择“+新建”，然后依次选择“数据服务”、“SQL 数据库”、“快速创建”。
-3. 输入数据库名称，然后在“服务器”字段中选择“新建 SQL 数据库服务器”。这将创建使用新的基本、标准或高级服务层的服务器。 
-4. 填写其余字段，并选择“创建 SQL 数据库”。这样可创建使用基础层的 100 MB 数据库。
-5. 配置移动服务以使用刚刚创建的数据库。导航到关于该服务的“配置”选项卡，然后在工具栏中选择“更改数据库”。在下一屏幕上，选择“SQL 数据库”字段中的“使用现有 SQL 数据库”，然后选择“下一步”。在下一屏幕上，请务必选择步骤 5 中创建的数据库，然后选择“确定”。
 
 关于如何为数据库选择合适的层级，下面提供几点建议：
 
@@ -64,29 +61,32 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 如果您已对不同数据库层有所了解，我们将探讨数据库性能指标，以帮助我们探寻在各层内部以及各层之间进行扩展的原因。
 
-1. 启动 [Azure 管理门户][]。
+1. 启动 [Azure 经典门户]。
 2. 在移动服务 (Mobile Services) 选项卡中选择您希望使用的服务。
 3. 选择“配置”选项卡。
 4. 在“数据库设置”部分中选择“SQL 数据库”名称。这样可导航到门户中的 Azure SQL 数据库选项卡。
 5. 导航到“监视”选项卡
 6. 确保使用“添加度量值”按钮显示相关度量值。待显示指标包含以下内容
     - *CPU 百分比*（仅在基本/标准/高级层中显示）
-    - *物理数据读取百分比*（仅在基本/标准/高级层中显示） 
-    - *日志写入百分比*（仅在基本/标准/高级层中显示）
+
+    - *数据 IO 百分比*（仅在基本/标准/高级层中显示）
+    - *日志 IO 百分比*（仅在基本/标准/高级层中显示）
     - *存储* 
 7. 当服务遇到问题时，检查高于时窗的指标。 
 
-    ![Azure 管理门户 - SQL 数据库度量值][PortalSqlMetrics]
+    ![Azure 经典门户 - SQL 数据库度量值][PortalSqlMetrics]
 
 如果指标超出了时间延长期 80% 的利用率，说明存在性能问题。有关数据库利用率的详细信息，请参阅[了解资源用量](http://msdn.microsoft.com/zh-cn/library/azure/dn369873.aspx#Resource)。
 
 如果指标显示数据库的利用率较高，请考虑**将数据库纵向扩展至更高的服务层**，这是缓解问题的第一步。为尽快解决问题，请考虑使用数据库的“缩放”选项卡，对数据库进行缩放。这会增加你的费用。
-![Azure 管理门户 - SQL 数据库缩放][PortalSqlScale]
+![Azure 经典门户 - SQL 数据库缩放][PortalSqlScale]
 
 请尽早考虑以下其他缓解步骤：
 
-- **优化数据库。** 优化数据库通常可以降低数据库利用率，并避免扩展到更高的服务层。 
-- **考虑服务体系结构。** 随着时间的推移，您的服务负载通常分布不均，但包含高需求“峰值”。如果不纵向扩展数据库应对峰值，并让数据库在低需求期间保持低利用率，通常可以调整服务体系结构，以避免出现此类峰值，或在不对数据库造成干扰的情况下处理峰值情况。
+- **优化数据库。**
+优化数据库通常可以降低数据库利用率，并避免扩展到更高的服务层。 
+- **考虑服务体系结构。**
+随着时间的推移，您的服务负载通常分布不均，但包含高需求“峰值”。如果不纵向扩展数据库应对峰值，并让数据库在低需求期间保持低利用率，通常可以调整服务体系结构，以避免出现此类峰值，或在不对数据库造成干扰的情况下处理峰值情况。
 
 本文余下部分将介绍自定义指南，以帮助实施这些缓解措施。
 
@@ -97,9 +97,12 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 1. 如果你希望为某数据库设置警报，导航到该数据库的“监视”选项卡
 2. 确保如上节所述显示相关指标。
-3. 选择你希望为其设置警报的指标，然后选择“添加规则”![Azure 管理门户 - SQL 警报][PortalSqlAddAlert]
-4. 提供警报名称及描述![Azure 管理门户-SQL 警报名称和说明][PortalSqlAddAlert2]
-5. 指定用于警报阈值的值。请考虑使用 **80%**，以便有时间做出反应。此外，请务必指定你主动监控的电子邮箱地址。![Azure 管理门户 - SQL 警报阈值和电子邮件][PortalSqlAddAlert3]
+3. 选择你希望为其设置警报的指标，然后选择“添加规则”
+    ![Azure 管理门户 - SQL 警报][PortalSqlAddAlert]
+4. 提供警报名称及描述
+    ![Azure 管理门户-SQL 警报名称和说明][PortalSqlAddAlert2]
+5. 指定用于警报阈值的值。请考虑使用 **80%**，以便有时间做出反应。此外，请务必指定你主动监控的电子邮箱地址。
+    ![Azure 管理门户 - SQL 警报阈值和电子邮件][PortalSqlAddAlert3]
 
 有关诊断 SQL 问题的详细信息，请参阅本文末尾的[高级诊断](#AdvancedDiagnosing)。
 
@@ -140,7 +143,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 若要设置 JavaScript 后端中某一列的索引，请执行以下操作：
 
-1. 在 [Azure 管理门户][]中打开你的移动服务。
+1. 在 [Azure 经典门户]中打开你的移动服务。
 2. 单击“数据”选项卡。
 3. 选择你想要修改的表。
 4. 单击“列”选项卡。
@@ -162,7 +165,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
         public bool Complete { get; set; }
     }
 		 
-更多有关索引的详细信息，请参阅[实体框架中的索引批注][]。有关优化索引的更多提示，请参阅本文末尾的[“高级索引”](#AdvancedIndexing)。
+更多有关索引的详细信息，请参阅[实体框架中的索引批注][]。有关优化索引的更多提示，请参阅本文末尾的“高级索引”(#AdvancedIndexing)。
 
 <a name="Schema"></a>
 ##  架构设计
@@ -193,23 +196,23 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 - **将负载分散到不同时间。** 如果你对特定事件（例如广播推送通知）的执行时间进行控制，并预期这些事件会产生需求上的高峰，且这些事件的执行时间并不重要，请考虑将其分散到不同时间。在上述示例中，或许你的应用程序客户可以在一天的不同时间分批获取新应用程序内容的通知，而无需在几乎相同的时间获取。请考虑将客户分成允许交错传送到每个批的组。使用通知中心时，应用附加标记以跟踪批，然后将推送通知传送到该标记，这样便可提供实现此策略的简单途径。有关标记的详细信息，请参阅[使用通知中心发送突发新闻](/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news)。
 - **在可能的情况下使用 Blob 和表存储。** 客户在高峰期所查看的内容经常是较为静态的，且不需要存储在 SQL 数据库中，因为你不可能需要对该内容的关系查询功能。在此情况下，请考虑将内容存储在 Blob 或表存储中。你可以直接从设备访问 Blob 存储中的公共 Blob。若要以安全方式访问 Blob 或使用表存储，必须通过移动服务自定义 API 保护存储访问密钥。有关详细信息，请参阅[使用移动服务将图像上载到 Azure 存储空间](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage)。
-- **使用内存中缓存**。另一种方法是将流量峰值期间通常访问的数据存储于内存中缓存，比如 [Azure 缓存](/services/cache/)。这意味着传入的请求能够从内存中提取所需的信息，而不是重复查询数据库。
+- **使用内存中缓存**。另一种方法是将流量峰值期间通常访问的数据存储于内存中缓存，比如 [Azure 缓存](/documentaiton/services/cache/)。这意味着传入的请求能够从内存中提取所需的信息，而不是重复查询数据库。
 
 <a name="Advanced"></a>
 ##  高级故障排除
 本部分介绍一些更高级的诊断任务，如果上述步骤未完全解决此问题，这些高级任务可能会有所帮助。
 
 ### 先决条件
-若要执行本部分的诊断任务，你需要访问 SQL 数据库的管理工具，比如 **SQL Server Management Studio** 或内置于 **Azure 管理门户**的管理功能。
+若要执行本部分的诊断任务，你需要访问 SQL 数据库的管理工具，比如 **SQL Server Management Studio** 或内置于 **Azure 经典门户**的管理功能。
 
 SQL Server Management Studio 是一个免费 Windows 应用，可提供最先进的功能。如果你无法访问 Windows 计算机（例如，你使用的是 Mac），请考虑按照[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial)中的说明在 Azure 中设置虚拟机，然后远程连接到该虚拟机。如果你使用 VM 的主要目的是运行 SQL Server Management Studio，则一个**基本 A0**（以前称为“超小型”）实例应该够用。
 
-Azure 管理门户可提供内置管理体验，虽然限制更多，但无需本地安装即可提供。
+Azure 经典门户提供内置管理体验，虽然限制更多，但无需本地安装即可提供。
 
 下列步骤向您介绍如何获取关于支持移动服务的 SQL 数据库的连接信息，以及如何使用以下两种工具进行连接。您可以挑选任意一种您喜欢的工具。
 
-####  获取 SQL 连接信息 
-1. 启动 [Azure 管理门户][]。
+#### 获取 SQL 连接信息
+1. 启动 [Azure 经典门户]。
 2. 在移动服务 (Mobile Services) 选项卡中选择您希望使用的服务。
 3. 选择“配置”选项卡。
 4. 在“数据库设置”部分中选择“SQL 数据库”名称。这样可导航到门户中的 Azure SQL 数据库选项卡。
@@ -239,12 +242,12 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
     - 密码：*创建服务器时选择的密码*
 3. 立即连接。
 
-    ![Azure 管理门户 - SQL 数据库][PortalSqlManagement]
+    ![Azure 经典门户 - SQL 数据库][PortalSqlManagement]
 
 <a name="AdvancedDiagnosing" /></a>
 ###  高级诊断
 
-许多诊断任务都可直接在 **Azure 管理门户**中轻松完成，但有些高级诊断任务只能通过 **SQL Server Management Studio** 或 **SQL 数据库管理门户**来完成。我们将充分利用动态管理视图，它是一组已自动填充数据库相关诊断信息的视图。本部分将提供一组我们根据这些视图所运行的查询，以检查各种指标。有关详细信息，请参阅[使用动态管理视图监视 SQL 数据库][]。
+许多诊断任务都可直接在 **Azure 经典门户**中轻松完成，但有些高级诊断任务只能通过 **SQL Server Management Studio** 或 **SQL 数据库管理门户**来完成。我们将充分利用动态管理视图，它是一组已自动填充数据库相关诊断信息的视图。本部分将提供一组我们根据这些视图所运行的查询，以检查各种指标。有关详细信息，请参阅[使用动态管理视图监视 SQL 数据库][]。
 
 完成上一部分中的步骤以连接到 SQL Server Management Studio 中的数据库后，请在“对象资源管理器”中选择你的数据库。依次展开“视图”，“系统视图”将显示管理视图列表。若要执行以下查询，请选择“新建查询”（前面已在“对象资源管理器”中选择了数据库），然后粘贴查询并选择“执行”。
 
@@ -260,14 +263,16 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
 
 ####  高级指标
 
-如果使用基础层、标准层和高级层，管理门户可随时提供部分指标。但如果使用 Web 层和业务层，门户仅提供存储指标。幸运的是，无论使用哪种数据库层，使用 **[sys.resource\_stats](http://msdn.microsoft.com/zh-cn/library/dn269979.aspx)** 管理视图可轻松获取所有度量值。请考虑下列查询：
+
+如果使用基础层、标准层和高级层，管理门户可随时提供部分指标。无论你使用哪种层，都可以通过 **[sys.resource\\_stats](http://msdn.microsoft.com/zh-cn/library/dn269979.aspx)** 管理视图轻松获取所有度量值。请考虑下列查询：
 
     SELECT TOP 10 * 
     FROM sys.resource_stats 
     WHERE database_name = 'todoitem_db' 
     ORDER BY start_time DESC
 
-> [AZURE.NOTE]请在你服务器的 **master** 数据库上执行此查询，因为只有该数据库显示 **sys.resource\_stats** 视图。
+> [AZURE.NOTE] 
+请在你服务器的 **master** 数据库上执行此查询，因为只有该数据库显示 **sys.resource\_stats** 视图。
 
 结果将会包含以下有用的度量值：CPU（层限制百分比）、存储 (MB)、物理数据读取（层限制百分比）、日志写入（层限制百分比）、内存（层限制百分比）、工作线程计数、会话计数等。
 
@@ -280,10 +285,11 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
     and event_type like 'throttling%'
     order by start_time desc
 
-> [AZURE.NOTE]请在服务器的 **master** 数据库上执行此查询，**sys.event\_log** 视图只会出现在该数据库上。
+> [AZURE.NOTE] 
+请在服务器的 **master** 数据库上执行此查询，**sys.event\_log** 视图只会出现在该数据库上。
 
-<a name="AdvancedIndexing"/></a>
-###  高级索引
+<a name="AdvancedIndexing" ></a>
+### 高级索引
 
 表或视图可能包含以下类型的索引：
 
@@ -293,7 +299,8 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
 
 若要提供真实类比：请考虑使用书本或技术手册。每页的内容为一条记录，页码为聚集索引，书背后的主题索引为非聚集索引。主题索引的每个条目指向聚集索引，页码。
 
-> [AZURE.NOTE]默认情况下，Azure 移动服务的 JavaScript 后端将 **\_createdAt** 设置为聚集索引。如果你要删除这列，或想要不同的聚集索引，请务必遵循以下[聚集索引设计指南](#ClusteredIndexes)。在.NET 后端，类 `EntityData` 会使用批注 `[Index(IsClustered = true)]` 将 `CreatedAt` 定义为聚集索引。
+> [AZURE.NOTE] 
+默认情况下，Azure 移动服务的 JavaScript 后端将 **\_createdAt** 设置为聚集索引。如果你要删除这列，或想要不同的聚集索引，请务必遵循以下[聚集索引设计指南](#ClusteredIndexes)。在.NET 后端，类 `EntityData` 会使用批注 `[Index(IsClustered = true)]` 将 `CreatedAt` 定义为聚集索引。
 
 <a name="ClusteredIndexes"></a>
 ####  聚集索引设计指南
@@ -363,12 +370,13 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
       AND migs_adv.index_advantage > 10
     ORDER BY migs_adv.index_advantage DESC;
 
-有关详细信息，请参阅[使用动态管理视图监视 SQL 数据库][] 和[缺失索引动态管理视图](sys-missing-index-stats)。
+有关详细信息，请参阅[使用动态管理视图监视 SQL 数据库][] 和[缺失索引动态管理视图][]。
 
-<a name="AdvancedQuery" /></a>
-###  高级查询设计 
+<a name="AdvancedQuery" ></a>
+### 高级查询设计 
 
-通常难以诊断数据库中最昂贵的查询。
+通常难以诊断数据库中开销最大的查询。
+
 
 ####  查找前 n 个查询
 
@@ -440,14 +448,16 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
 
 <!-- LINKS -->
 
-[Azure 管理门户]: http://manage.windowsazure.cn
+[Azure 经典门户]: http://manage.windowsazure.cn
 
 [Azure SQL 数据库文档]: /documentation/services/sql-database/
 [Managing SQL Database using SQL Server Management Studio]: http://go.microsoft.com/fwlink/p/?linkid=309723&clcid=0x409
 [使用动态管理视图监视 SQL 数据库]: http://go.microsoft.com/fwlink/p/?linkid=309725&clcid=0x409
 [Azure SQL 数据库性能和缩放]: http://go.microsoft.com/fwlink/p/?linkid=397217&clcid=0x409
 [Azure SQL 数据库故障排除]: http://msdn.microsoft.com/zh-cn/library/azure/ee730906.aspx
+[使用新服务层的原因]: http://msdn.microsoft.com/zh-cn/library/azure/dn369873.aspx#Reasons
 
+[Take 方法]: http://msdn.microsoft.com/zh-cn/library/vstudio/bb503062(v=vs.110).aspx
 <!-- MSDN -->
 [创建和修改主键约束]: http://technet.microsoft.com/zh-cn/library/ms181043(v=sql.105).aspx
 [创建聚集索引]: http://technet.microsoft.com/zh-cn/library/ms186342(v=sql.120).aspx
@@ -461,7 +471,7 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
 [唯一索引设计指南]: http://technet.microsoft.com/zh-cn/library/ms187019(v=sql.105).aspx
 [聚集索引设计指南]: http://technet.microsoft.com/zh-cn/library/ms190639(v=sql.105).aspx
 
-[sys-missing-index-stats]: http://technet.microsoft.com/zh-cn/library/ms345421.aspx
+[缺失索引动态管理视图]: http://technet.microsoft.com/zh-cn/library/ms345421.aspx
 
 <!-- EF -->
 [实体框架 5 性能注意事项]: http://msdn.microsoft.com/zh-cn/data/hh949853
@@ -471,4 +481,4 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
 <!-- BLOG LINKS -->
 [键的开销]: http://www.sqlskills.com/blogs/kimberly/how-much-does-that-key-cost-plus-sp_helpindex9/
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

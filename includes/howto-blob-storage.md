@@ -1,6 +1,6 @@
 ## <a name="what-is"> </a>什么是 Blob 存储
 
-Windows Azure Blob 存储是一项
+Azure Blob 存储是一项
 用于存储大量非结构化数据（例如文本或二进制数据）的服务，用户可在世界任何地方通过 HTTP 或 HTTPS 访问
 这些数据。您可以使用 Blob 存储向外公布数据，或
 私下存储应用程序数据。

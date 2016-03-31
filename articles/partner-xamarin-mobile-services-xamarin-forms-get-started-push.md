@@ -9,10 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="06/10/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="01/22/2016"
+	wacn.date="03/21/2016"/>
 
 # 向 Xamarin.Forms 应用添加推送通知
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 ##概述
@@ -45,7 +49,7 @@
 
 为了能够在新移动服务中存储应用程序数据，必须先创建一个新表。
 
-1. 在管理门户中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1. 在 **Azure 经典门户**中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2. 单击“数据”选项卡，然后单击“+创建”。
 
@@ -76,7 +80,7 @@
   
 1. 下载以下示例：[Xamarin.Forms Azure 推送通知初学者示例]。
 
-2. 在管理门户中单击“移动服务”，然后单击移动服务。单击“仪表板”选项卡，并记下“站点 URL”。然后单击“管理密钥”，并记下“应用程序密钥”。从应用代码访问移动服务时，你需要使用这些值。
+2. 在 [Azure 经典门户]中单击“移动服务”，然后单击该移动服务。单击“仪表板”选项卡，并记下“站点 URL”。然后单击“管理密钥”，并记下“应用程序密钥”。从应用代码访问移动服务时，你需要使用这些值。
 
 3. 在解决方案的 **ToDoAzure(Portable)** 项目中，打开 **Constants.cs** 文件，将 `ApplicationURL` 和 `ApplicationKey` 替换为你在上一步中获得的站点 URL 和应用程序密钥。
 
@@ -210,7 +214,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
     记下文件名和导出的证书的位置。
 
-2. 登录到 [Azure 管理门户]，单击“移动服务”，然后单击你的应用。
+2. 登录到 [Azure 经典门户]，单击“移动服务”，然后单击你的应用。
 
     ![][18]
 
@@ -220,7 +224,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
     此时将显示“上载证书”对话框。
 
-4. 单击“文件”，选择导出的 .p12 证书文件，输入密码，确保已选择正确的“模式”，单击勾选图标，然后单击“保存”。
+4. 单击“文件”，选择导出的 .p12 证书文件，输入“密码”，确保已选择正确的“模式”，单击勾选图标，然后单击“保存”。
 
     ![][20]
 
@@ -313,9 +317,9 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 你的应用现已更新，可支持推送通知。
 
-### <a name="update-scripts"></a>在管理门户中更新已注册的插入脚本
+### <a name="update-scripts"></a>在 Azure 经典门户中更新已注册的插入脚本
 
-1. 在管理门户中，单击“数据”选项卡，然后单击“TodoItem”表。
+1. 在 Azure 经典门户中，单击“数据”选项卡，然后单击“TodoItem”表。
 
     ![][21]
 
@@ -360,7 +364,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 1. 在支持 iOS 的设备中按“运行”按钮以生成项目并启动应用程序，然后单击“确定”接受推送通知
 
-   >[AZURE.NOTE]你必须显式接受来自应用程序的推送通知。此请求只会在首次运行应用程序时出现。
+	>[AZURE.NOTE]你必须显式接受来自应用程序的推送通知。此请求只会在首次运行应用程序时出现。
 
 2. 在应用中，单击“添加”按钮，添加任务标题，然后单击“保存”按钮。 
 
@@ -383,9 +387,9 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 ###<a id="update-scripts"></a>更新已注册的插入脚本以发送通知
 
->[AZURE.NOTE]以下步骤说明了如何在 Azure 管理门户中，更新已注册到 TodoItem 表上的插入操作的脚本。你也可以在 Visual Studio 的“服务器资源管理器”的“Azure”节点中直接访问和编辑此移动服务脚本。
+>[AZURE.NOTE]以下步骤说明了如何在 Azure 经典门户中，更新已注册到 TodoItem 表上的插入操作的脚本。你也可以在 Visual Studio 的“服务器资源管理器”的“Azure”节点中直接访问和编辑此移动服务脚本。
 
-1. 在管理门户中，单击“数据”选项卡，然后单击“TodoItem”表。
+在 [Azure 经典门户]中，单击“数据”选项卡，然后单击“TodoItem”表。
 
 	![][21]
 
@@ -393,7 +397,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 	![][22]
 
-    This displays the function that is invoked when an insert occurs in the **TodoItem** table.
+    将显示当 **TodoItem** 表中发生插入时所调用的函数。
 
 3. 将 insert 函数替换为以下代码，然后单击“保存”：
 
@@ -608,6 +612,10 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
         }
 
 8. 为项目编译所需的 **OnUnRegistered()** 和 **OnError()** 添加以下方法重写。
+	protected override void OnUnRegistered(Context context, string registrationId)
+	{
+	      Log.Error("GcmService", "Unregistered RegisterationId : " + registrationId);
+	}
 
         protected override void OnError(Context context, string errorId)
         {
@@ -632,7 +640,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 3. 在顶部工具栏中，单击“运行”，然后选择你的应用。这将启动模拟器并运行该应用程序。
 
-  应用将从 GCM 检索 *registrationId* 并注册到通知中心。
+	应用将从 GCM 检索 *registrationId* 并注册到通知中心。
 
 4. 在应用中，添加新的任务。
 
@@ -703,7 +711,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 最后，您必须更新注册到 TodoItem 表上的插入操作的脚本，以便发送通知。
 
-1. 在管理门户中，单击“数据”选项卡，然后单击“TodoItem”表。
+1. 在 [Azure 经典门户]中，单击“数据”选项卡，然后单击“TodoItem”表。
 
     ![][21]
 
@@ -832,7 +840,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 [Xamarin 设备设置]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
 
 
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
 [completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331303
@@ -842,4 +850,4 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 [已完成的 Xamarin.Forms Azure 推送通知示例]: https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithPushXamarinForms
  
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

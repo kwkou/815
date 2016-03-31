@@ -1,23 +1,22 @@
-<properties 
-	pageTitle="定义输出 | Windows Azure" 
-	description="了解流分析输出" 
-	keywords="大数据分析、云服务、物联网、托管服务、流处理、流分析、流数据"
-	services="stream-analytics,documentdb,sql-database,event-hubs,service-bus,storage" 
-	documentationCenter="" 
-	authors="jeffstokes72" 
-	manager="paulettm" 
+<properties
+	pageTitle="数据转换输出：针对存储、分析的选项 | Azure"
+	description="了解如何使流分析数据转换输出输出到数据存储选项。另外，请使用 Power BI 来获取分析结果。"
+	keywords="数据转换、分析结果、数据存储选项"
+	services="stream-analytics,documentdb,sql-database,event-hubs,service-bus,storage"
+	documentationCenter=""
+	authors="jeffstokes72"
+	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="stream-analytics" 
-	ms.date="10/14/2015" 
-	wacn.date="11/12/2015"/>
+<tags
+	ms.service="stream-analytics"
+	ms.date="02/04/2016"
+	wacn.date="03/21/2016"/>
+# 使流分析数据转换输出输出到分析工具和数据存储选项
 
-# 了解流分析输出
+创作流分析作业时，需考虑如何使用数据转换输出。如何查看流分析作业的结果？ 使用哪些工具来显示数据分析结果？ 数据存储选项是必需的吗？
 
-创作流分析作业时，一个考虑因素是将如何使用作业的输出。数据转换的使用者如何查看流分析作业的结果？ 他们会使用什么工具来分析输出？ 是否必须进行数据保留或数据仓库操作？
-
-为启用多种应用模式，Azure 流分析提供了七种不同的方法来存储和查看作业输出。SQL 数据库、Blob 存储、事件中心、服务总线队列、服务总线主题、Power BI 和表存储都是支持的输出。这样可以轻松地查看作业输出，并可灵活地使用和存储作业输出，以便进行数据仓库操作和其他操作。
+为了启用多种应用程序模式，Azure 流分析提供了不同的选项来存储输出和查看分析结果。这样可以轻松地查看作业输出，并可灵活地使用和存储作业输出，以便进行数据仓库操作和其他操作。必须先存在作业中配置的输出，然后才能启动作业并开始事件的流动。例如，如果你使用 Blob 存储作为输出，该作业将不会自动创建存储帐户。在启动 ASA 作业之前，需要由用户创建该存储帐户。
 
 
 ## SQL 数据库 ##
@@ -59,7 +58,7 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 </tr>
 <tr>
 <td>存储容器</td>
-<td>容器对存储在 Windows Azure Blob 服务中的 blob 进行逻辑分组。将 blob 上载到 Blob 服务时，必须为该 blob 指定一个容器。</td>
+<td>容器对存储在 Azure Blob 服务中的 blob 进行逻辑分组。将 blob 上载到 Blob 服务时，必须为该 blob 指定一个容器。</td>
 </tr>
 <tr>
 <td>路径前缀模式 [可选]</td>
@@ -101,7 +100,6 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 | 属性名称 | 说明 |
 |---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 输出别名 | 该名称是在查询中使用的友好名称，用于将查询输出定向到此事件中心。 |
-| 订阅 | 你可以从自己的订阅中选择一个事件中心，或者提供其他订阅中事件中心的连接信息 |
 | 服务总线命名空间 | 服务总线命名空间是包含一组消息传递实体的容器。当你创建新的事件中心后，你还创建了服务总线命名空间 |
 | 事件中心 | 事件中心输出的名称 |
 | 事件中心策略名称 | 可以在事件中心的“配置”选项卡上创建的共享访问策略。每个共享访问策略都会有名称、所设权限以及访问密钥 |
@@ -114,7 +112,7 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 
 ## 表存储
 
-[Azure 表存储](/documentation/articles/storage-introduction)提供了具有高可用性且可大规模伸缩的存储，因此应用程序可以自动伸缩以满足用户需求。表存储是 Microsoft 推出的 NoSQL 键/属性存储，适用于对架构的约束性较少的结构化数据。Azure 表存储可用于持久地存储数据，方便进行高效的检索。
+[Azure 表存储](/documentation/articles/storage-introduction)提供了具有高可用性且可大规模缩放的存储，因此应用程序可以自动缩放以满足用户需求。表存储是 Microsoft 推出的 NoSQL 键/属性存储，适用于对架构的约束性较少的结构化数据。Azure 表存储可用于持久地存储数据，方便进行高效的检索。
 
 下表列出了属性名称和用于创建表输出的属性说明。
 
@@ -163,6 +161,7 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 | 编码 | 如果是 CSV 或 JSON 格式，则必须指定一种编码格式。目前只支持 UTF-8 这种编码格式 |
 | 分隔符 | 仅适用于 CSV 序列化。流分析支持大量的常见分隔符以对 CSV 格式的数据进行序列化。支持的值为逗号、分号、空格、制表符和竖线。 |
 
+
 ## 获取帮助
 如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=AzureStreamAnalytics)
 
@@ -182,4 +181,4 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0314_2016-->

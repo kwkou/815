@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure PowerShell 部署和管理 Windows Server/客户端的备份 | Windows Azure"
+	pageTitle="使用 Azure PowerShell 部署和管理 Windows Server/客户端的备份 | Azure"
 	description="了解如何使用 Azure PowerShell 部署和管理 Azure 备份"
 	services="backup"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="backup" 
-	ms.date="08/18/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="10/01/2015"
+	wacn.date="01/29/2016"/>
 
 
 # 使用 Azure PowerShell 部署和管理 Windows Server/Windows 客户端的 Azure 备份
@@ -19,7 +19,16 @@
 [AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell.md)]
 
 ## 设置和注册
-使用 Azure PowerShell 可以自动化以下设置和注册任务：
+开始时，请执行以下操作：
+
+1. [下载最新 PowerShell](https://github.com/Azure/azure-powershell/releases)（要求的最低版本：1.0.0）
+2. 通过 **Switch-AzureMode** cmdlet 切换到 *AzureResourceManager* 模式，从而启用 Azure 备份 cmdlet：
+
+```
+PS C:\> Switch-AzureMode AzureResourceManager
+```
+
+使用 PowerShell 可以自动化以下设置和注册任务：
 
 - 创建备份保管库
 - 安装 Azure 备份代理
@@ -28,18 +37,21 @@
 - 加密设置
 
 ### 创建备份保管库
-可以使用 **New-AzureBackupVault** cmdlet 创建新的备份保管库。备份保管库是一种 ARM 资源，因此需要将它放置在资源组中。在权限提升的 Azure PowerShell 控制台中运行以下命令：
+
+> [AZURE.WARNING] 对于第一次使用 Azure 备份的客户，你需要注册用于订阅的 Azure 备份提供程序。可通过运行以下命令来执行此操作：Register-AzureProvider -ProviderNamespace "Microsoft.Backup"
+
+可以使用 **New-AzureRMBackupVault** cmdlet 创建新的备份保管库。备份保管库是一种 ARM 资源，因此需要将它放置在资源组中。在权限提升的 Azure PowerShell 控制台中运行以下命令：
 
 ```
-PS C:\> New-AzureResourceGroup –Name “test-rg” –Region “China North”
-PS C:\> $backupvault = New-AzureBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “China North” –Storage GRS
+PS C:\> New-AzureResourceGroup –Name “test-rg” -Region “China North”
+PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “China North” –Storage GeoRedundant
 ```
 
-可以使用 **Get-AzureBackupVault** cmdlet 获取给定订阅中所有备份保管库的列表。
+可以使用 **Get-AzureRMBackupVault** cmdlet 获取给定订阅中所有备份保管库的列表。
 
 
 ### 安装 Azure 备份代理
-在安装 Azure 备份代理之前，必须先将安装程序下载到 Windows Server 上。将安装程序保存到方便访问的位置，例如 *C:\Downloads*。
+在安装 Azure 备份代理之前，必须先将安装程序下载到 Windows Server 上。将安装程序保存到方便访问的位置，例如 *C:\Downloads\*。
 
 若要安装代理，请在已提升权限的 Azure PowerShell 控制台中运行以下命令：
 
@@ -66,11 +78,11 @@ PS C:\> MARSAgentInstaller.exe /?
 | 选项 | 详细信息 | 默认 |
 | ---- | ----- | ----- |
 | /q | 静默安装 | - |
-| /p:"location" | Azure 备份代理的安装文件夹路径。| C:\Program Files\\Windows Azure Recovery Services Agent |
-| /s:"location" | Azure 备份代理的快取文件夹路径。| C:\Program Files\\Windows Azure Recovery Services Agent\\Scratch |
+| /p:"location" | Azure 备份代理的安装文件夹路径。| C:\Program Files\\Azure Recovery Services Agent |
+| /s:"location" | Azure 备份代理的快取文件夹路径。| C:\Program Files\\Azure Recovery Services Agent\\Scratch |
 | /m | 选择启用 Microsoft Update | - |
 | /nu | 安装完成后不要检查更新 | - |
-| /d | 卸载 Windows Azure 恢复服务代理 | - |
+| /d | 卸载 Azure 恢复服务代理 | - |
 | /ph | 代理主机地址 | - |
 | /po | 代理主机端口号 | - |
 | /pu | 代理主机用户名 | - |
@@ -78,16 +90,16 @@ PS C:\> MARSAgentInstaller.exe /?
 
 
 ### 注册到 Azure 备份服务
-在可注册 Azure 备份服务之前，需要确保符合[先决条件](/documentation/articles/backup-try-azure-backup-in-10-mins)。你必须：
+在可注册 Azure 备份服务之前，需要确保符合[先决条件](/documentation/articles/backup-configure-vault)。你必须：
 
 - 具备有效的 Azure 订阅
 - 有一个备份保管库
 
-若要下载保管库凭据，请在 Azure PowerShell 控制台中运行 **Get-AzureBackupVaultCredentials**，并将其存储在方便的位置，例如 *C:\Downloads*。
+若要下载保管库凭据，请在 Azure PowerShell 控制台中运行 **Get-AzureRMBackupVaultCredentials**，并将其存储在方便的位置，例如 *C:\Downloads*。
 
 ```
-PS C:\> $credspath = "C:"
-PS C:\> $credsfilename = Get-AzureBackupVaultCredentials -Vault $backupvault -TargetLocation $credspath
+PS C:\> $credspath = "C:\"
+PS C:\> $credsfilename = Get-AzureRMBackupVaultCredentials -Vault $backupvault -TargetLocation $credspath
 PS C:\> $credsfilename
 f5303a0b-fae4-4cdb-b44d-0e4c032dde26_backuprg_backuprn_2015-08-11--06-22-35.VaultCredentials
 ```
@@ -211,7 +223,7 @@ PolicyState     : Valid
 在以下示例中，我们要备份卷 C: 和 D:，并排除 Windows 文件夹和任何临时文件夹中的操作系统二进制文件。为此，我们将使用 [New-OBFileSpec](https://technet.microsoft.com/zh-cn/library/hh770408) cmdlet 创建两个文件规范 - 一个用于包含，一个用于排除。创建文件规范后，使用 [Add-OBFileSpec](https://technet.microsoft.com/zh-cn/library/hh770424) cmdlet 将它们与策略相关联。
 
 ```
-PS C:\> $inclusions = New-OBFileSpec -FileSpec @("C:", "D:")
+PS C:\> $inclusions = New-OBFileSpec -FileSpec @("C:\", "D:\")
 
 PS C:\> $exclusions = New-OBFileSpec -FileSpec @("C:\windows", "C:\temp") -Exclude
 
@@ -304,14 +316,14 @@ PolicyState     : Valid
 
 ```
 PS C:\> Get-OBPolicy | Remove-OBPolicy
-Windows Azure Backup Are you sure you want to remove this backup policy? This will delete all the backed up data. [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "Y"):
+Azure Backup Are you sure you want to remove this backup policy? This will delete all the backed up data. [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "Y"):
 ```
 
 使用 [Set-OBPolicy](https://technet.microsoft.com/zh-cn/library/hh770421) cmdlet 可以提交策略对象。系统将提示你确认。若要跳过确认，请在 cmdlet 中请使用 ```-Confirm:$false``` 标志。
 
 ```
 PS C:\> Set-OBPolicy -Policy $newpolicy
-Windows Azure Backup Do you want to save this backup policy ? [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "Y"):
+Azure Backup Do you want to save this backup policy ? [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "Y"):
 BackupSchedule : 4:00 PM Saturday, Sunday, Every 1 week(s)
 DsList : {DataSource
          DatasourceId:4508156004108672185
@@ -583,7 +595,7 @@ PS C:\> Invoke-Command -Session $s -Script { param($d, $a) Start-Process -FilePa
 ## 后续步骤
 有关适用于 Windows Server/客户端的 Azure 备份的详细信息，请参阅
 
-- [Azure 备份简介](/documentation/articles/backup-introduction-to-azure-backup)
+- [Azure 备份简介](/documentation/articles/backup-configure-vault)
 - [备份 Windows Server](/documentation/articles/backup-azure-backup-windows-server)
 
-<!---HONumber=67-->
+<!---HONumber=82-->

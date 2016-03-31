@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Flask 和 Azure 表存储" 
-	description="了解如何使用 Python Tools for Visual Studio 来创建在 Azure 表存储中存储数据的 Flask Web 应用，以及将应用部署到 Azure 网站中。" 
+	description="了解如何使用 Python Tools for Visual Studio 来创建在 Azure 表存储中存储数据的 Flask Web 应用，以及将应用部署到 Azure 中。" 
 	services="app-service\web"
 	tags="python"
 	documentationCenter="python" 
@@ -9,9 +9,9 @@
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web"  
-	ms.date="08/30/2015"
-	wacn.date="11/02/2015"/>
+	ms.service="web-sites"  
+	ms.date="11/18/2015"
+	wacn.date="01/21/2016"/>
 
 
 
@@ -22,18 +22,9 @@
 
 轮询 Web 应用定义其存储库的抽象，因此您可以轻松地在不同类型存储库（内存中、Azure 表存储、MongoDB）之间进行切换。
 
-我们将了解如何创建 Azure 存储帐户、如何将 Web 应用配置为使用 Azure 表存储，以及如何将 Web 应用发布到 [Azure 网站](/documentation/services/web-sites/)中。
+我们将了解如何创建 Azure 存储帐户、如何将 Web 应用配置为使用 Azure 表存储，以及如何将 Web 应用发布到 [Azure Web 应用](/documentation/services/web-sites/)中。
 
-请参阅 [Python 开发人员中心]以获取更多文章，这些文章介绍了如何通过 PTVS（使用 Bottle、Flask 和 Django Web 框架）、MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure 网站。虽然本文将着重介绍 Azure 网站，但 [Azure 云服务]的开发步骤也是类似的。
-
-+ [先决条件](#prerequisites)
-+ [创建项目](#create-the-project)
-+ [创建 Azure 存储帐户](#create-an-azure-storage-account)
-+ [配置项目](#configure-the-project)
-+ [了解 Azure 表存储](#explore-the-azure-table-storage)
-+ [发布到 Azure 网站](#publish-to-an-azure-website)
-+ [配置 Azure 网站](#configure-the-azure-website)
-+ [后续步骤](#next-steps)
+请参阅 [Python 开发人员中心]以获取更多文章，这些文章介绍了如何通过 PTVS（使用 Bottle、Flask 和 Django Web 框架）、MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure Web 应用。虽然本文将着重介绍 Azure Web 应用，但 [Azure 云服务]的开发步骤也是类似的。
 
 ##<a name="prerequisites"></a>先决条件
 
@@ -75,13 +66,9 @@
 
 1.  登录 [Azure 门户]。
 
-2. 单击门户左下角的“新建”图标，然后单击“数据 + 存储”>“存储”。为存储帐户命名一个唯一名称，并为其新建一个[资源组](/documentation/articles/resource-group-overview)。
+2. 单击门户左下角的“新建”图标，然后单击“数据服务”>“存储空间”>“快速创建”。为存储帐户命名一个唯一名称。
 
-  	<!-- ![New Button](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonAzurePlusNew.png) -->
-
-	在您创建存储帐户后，“通知”按钮会闪烁显示绿色的“成功”字样，且存储帐户的边栏选项卡会处于打开状态，表明其属于您创建的新资源组。
-
-5. 单击存储帐户的边栏选项卡中的“设置”部分。记录帐户名称和主密钥。
+5. 单击存储帐户的“管理访问密钥”。记录帐户名称和主密钥。
 
 	我们将需要使用此信息在下一部分中配置您的项目。
 
@@ -121,7 +108,7 @@
 
 很容易地使用 Visual Studio 中的 Server Explorer 查看和编辑存储表。本部分中，我们将使用 Server Explorer 查看轮询应用程序表的内容。
 
-> [AZURE.NOTE] 这要求安装 Windows Azure 工具，作为 [Azure SDK for .NET] 的一部分。
+> [AZURE.NOTE] 这要求安装 Azure 工具，作为 [Azure SDK for .NET] 的一部分。
 
 1.  打开**服务器资源管理器**。展开 **Azure**、**存储**、您的存储帐户，然后展开**表**。
 
@@ -131,32 +118,25 @@
 
   	<!-- ![Table Query Results](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonServerExplorerTable.png) -->
 
-##<a name="publish-to-an-azure-website"></a>发布到 Azure 网站中
+##<a name="publish-to-an-azure-website"></a>发布到 Azure 中
 
-PTVS 提供了将 web 应用程序部署到 Azure 网站的方便方法。
+PTVS 提供了将 Web 应用部署到 Azure Web 应用的方便方法。
 
 1.  在“解决方案资源管理器”中，右键单击项目节点，然后选择“发布”。
 
   	![发布 Web 对话框](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonPublishWebSiteDialog.png)
 
-1.  单击“Windows Azure Web 应用”。
+1.  单击“导入”。
 
-1.  单击“新建”，新建一个 Web 应用。
+1.  选择已经下载好的“发布配置文件”，然后确认。
 
-1.  填写以下字段，然后单击“创建”。
-	-	**Web 应用名称**
-	-	**Azure 网站计划**
-	-	**资源组**
-	-	**区域**
-	-	保持“数据库服务器”的“无数据库”设置不变
-
-  	<!-- ![Create Site on Windows Azure Dialog](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonCreateWebSite.png) -->
+	如果还没有下载“发布配置文件”，或者还没新建 Web 应用，请到 Azure 管理门户新建一个，然后再“仪表板”的“速览”下，下载“发布配置文件”
 
 1.  接受其他所有默认值，然后单击**发布**。
 
 1.  此时，您的 Web 浏览器会自动打开已发布的 Web 应用。如果您转到“关于”页面，则会看到它使用的是**内存**存储库，而不是 **Azure 表存储库**。
 
-    这是因为未在 Azure 网站的 Web 应用实例上设置环境变量，因此它使用的是 **settings.py** 中指定的默认值。
+    这是因为未在 Azure Web 应用实例上设置环境变量，因此它使用的是 **settings.py** 中指定的默认值。
 
 ## 配置 Web 应用实例
 
@@ -189,7 +169,7 @@ PTVS 提供了将 web 应用程序部署到 Azure 网站的方便方法。
 - [Python Tools for Visual Studio 文档]
   - [Web 项目]
   - [云服务项目]
-  - [在 Windows Azure 上进行远程调试]
+  - [在 Azure 上进行远程调试]
 - [Flask 文档]
 - [Azure 存储空间]
 - [Azure SDK for Python]
@@ -214,7 +194,7 @@ PTVS 提供了将 web 应用程序部署到 Azure 网站的方便方法。
 [Python 3.4（32 位）]: http://go.microsoft.com/fwlink/?LinkId=517191
 [Python Tools for Visual Studio 文档]: http://pytools.codeplex.com/documentation
 [Flask 文档]: http://flask.pocoo.org/
-[在 Windows Azure 上进行远程调试]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
+[在 Azure 上进行远程调试]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
 [Web 项目]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
 [云服务项目]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
 [Azure 存储空间]: /documentation/services/storage/

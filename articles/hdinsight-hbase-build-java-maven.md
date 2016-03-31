@@ -1,6 +1,6 @@
-﻿<properties
-	pageTitle="使用 Maven 构建 HBase 应用程序 | Azure"
-	description="了解如何使用 Apache Maven 构建基于 Java 的 Apache HBase 应用程序，然后将其部署到 Azure HDInsight"
+<properties
+	pageTitle="使用 Maven 构建 HBase 应用程序并将其部署到基于 Windows 的 HDInsight | Azure"
+	description="了解如何使用 Apache Maven 构建基于 Java 的 Apache HBase 应用程序，然后将其部署到基于 Windows 的 Azure HDInsight 群集。"
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="02/01/2016"
+	wacn.date="03/28/2016"/>
 
 #借助 Maven 生成可将 HBase 与 HDInsight (Hadoop) 配合使用的 Java 应用程序
 
@@ -25,7 +25,7 @@
 
 * [Maven](http://maven.apache.org/)
 
-* [安装有 HBase 的 Azure HDInsight 群集](/documentation/articles/hdinsight-hbase-get-started#create-hbase-cluster)
+* [安装有 HBase 的 Azure HDInsight 群集](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1#create-hbase-cluster)
 
 ##创建项目
 
@@ -152,7 +152,7 @@
 
 	此文件将用于加载 HDInsight 群集的 HBase 配置。
 
-	> [AZURE.NOTE]这是极小的 hbase-site.xml 文件，其中包含 HDInsight 群集的基本最低设置。有关 HDInsight 使用的 hbase-site.xml 配置文件的完整版本，请参阅[通过使用 Azure 门户在 HDInsight 中管理 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)。hbase-site.xml 文件位于 C:\\apps\\dist\\hbase-&lt;version number>-hadoop2\\conf 目录中。在群集上更新 HBase 后，文件路径的版本号部分将发生变化。
+	> [AZURE.NOTE]这是极小的 hbase-site.xml 文件，其中包含 HDInsight 群集的基本最低设置。有关 HDInsight 使用的 hbase-site.xml 配置文件的完整版本，请参阅[使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)。hbase-site.xml 文件位于 C:\\apps\\dist\\hbase-&lt;version number>-hadoop2\\conf 目录中。在群集上更新 HBase 后，文件路径的版本号部分将发生变化。
 
 3. 保存 __hbase-site.xml__ 文件。
 
@@ -347,187 +347,205 @@
 
 ##上载 JAR 文件并启动作业
 
-> [AZURE.NOTE]你可以使用多种方法将文件上载到 HDInsight 群集，如[在 HDInsight 中为 Hadoop 作业上载数据](/documentation/articles/hdinsight-upload-data)中所述。以下步骤使用 [Azure PowerShell](/documentation/articles/install-configure-powershell)。
+> [AZURE.NOTE]你可以使用多种方法将文件上载到 HDInsight 群集，如[在 HDInsight 中为 Hadoop 作业上载数据](/documentation/articles/hdinsight-upload-data)中所述。以下步骤使用 [Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 1. 安装并配置 Azure PowerShell 后，请创建名为 __hbase-runner.psm1__ 的新文件。使用以下项作为此文件的内容：
 
-		<#
-		.SYNOPSIS
-		    Copies a file to the primary storage of an HDInsight cluster.
-		.DESCRIPTION
-		    Copies a file from a local directory to the blob container for
-		    the HDInsight cluster.
-		.EXAMPLE
-		    Start-HBaseExample -className "com.microsoft.examples.CreateTable"
-		        -clusterName "MyHDInsightCluster"
-
-		.EXAMPLE
-		    Start-HBaseExample -className "com.microsoft.examples.SearchByEmail"
-		        -clusterName "MyHDInsightCluster"
-		        -emailRegex "contoso.com"
-
-		.EXAMPLE
-		    Start-HBaseExample -className "com.microsoft.examples.SearchByEmail"
-		        -clusterName "MyHDInsightCluster"
-		        -emailRegex "^r" -showErr
-		#>
-
-		function Start-HBaseExample {
-		    [CmdletBinding(SupportsShouldProcess = $true)]
-		    param(
-		        #The class to run
-		        [Parameter(Mandatory = $true)]
-		        [String]$className,
-
-		        #The name of the HDInsight cluster
-		        [Parameter(Mandatory = $true)]
-		        [String]$clusterName,
-
-		        #Only used when using SearchByEmail
-		        [Parameter(Mandatory = $false)]
-		        [String]$emailRegex,
-
-		        #Use if you want to see stderr output
-		        [Parameter(Mandatory = $false)]
-		        [Switch]$showErr
-		    )
-
-		    Set-StrictMode -Version 3
-
-		    # Is the Azure module installed?
-		    FindAzure
-
-		    # The JAR
-		    $jarFile = "wasb:///example/jars/hbaseapp-1.0-SNAPSHOT.jar"
-
-		    # The job definition
-		    $jobDefinition = New-AzureHDInsightMapReduceJobDefinition `
-		      -JarFile $jarFile `
-		      -ClassName $className `
-		      -Arguments $emailRegex
-
-		    # Get the job output
-		    $job = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $jobDefinition
-		    Write-Host "Wait for the job to complete ..." -ForegroundColor Green
-		    Wait-AzureHDInsightJob -Job $job
-		    if($showErr)
-		    {
-		        Write-Host "STDERR"
-		        Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardError
-		    }
-		    Write-Host "Display the standard output ..." -ForegroundColor Green
-		    Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardOutput
-		}
-
-		<#
-		.SYNOPSIS
-		    Copies a file to the primary storage of an HDInsight cluster.
-		.DESCRIPTION
-		    Copies a file from a local directory to the blob container for
-		    the HDInsight cluster.
-		.EXAMPLE
-		    Add-HDInsightFile -localPath "C:\temp\data.txt"
-		        -destinationPath "example/data/data.txt"
-		        -ClusterName "MyHDInsightCluster"
-		.EXAMPLE
-		    Add-HDInsightFile -localPath "C:\temp\data.txt"
-		        -destinationPath "example/data/data.txt"
-		        -ClusterName "MyHDInsightCluster"
-		        -Container "MyContainer"
-		#>
-
-		function Add-HDInsightFile {
-		    [CmdletBinding(SupportsShouldProcess = $true)]
-		    param(
-		        #The path to the local file.
-		        [Parameter(Mandatory = $true)]
-		        [String]$localPath,
-
-		        #The destination path and file name, relative to the root of the container.
-		        [Parameter(Mandatory = $true)]
-		        [String]$destinationPath,
-
-		        #The name of the HDInsight cluster
-		        [Parameter(Mandatory = $true)]
-		        [String]$clusterName,
-
-		        #If specified, overwrites existing files without prompting
-		        [Parameter(Mandatory = $false)]
-		        [Switch]$force
-		    )
-
-		    Set-StrictMode -Version 3
-
-		    # Is the Azure module installed?
-		    FindAzure
-
-		    # Does the local path exist?
-		    if (-not (Test-Path $localPath))
-		    {
-		        throw "Source path '$localPath' does not exist."
-		    }
-
-		    # Get the primary storage container
-		    $storage = GetStorage -clusterName $clusterName
-
-		    # Upload file to storage, overwriting existing files if -force was used.
-		    Set-AzureStorageBlobContent -File $localPath -Blob $destinationPath -force:$force `
-		                                -Container $storage.container `
-		                                -Context $storage.context
-		}
-
-		function FindAzure {
-		    # Is the Azure module installed?
-		    if (-not(Get-Module -ListAvailable Azure))
-		    {
-		        throw "Azure PowerShell not found! For help, see http://www.windowsazure.cn/documentation/articles/install-configure-powershell/"
-		    }
-
-		    # Is there an active Azure subscription?
-		    $sub = Get-AzureSubscription -ErrorAction SilentlyContinue
-		    if(-not($sub))
-		    {
-		        throw "No active Azure subscription found! If you have a subscription, use the Add-AzureAccount or Import-PublishSettingsFile cmdlets to make the Azure account available to Windows PowerShell."
-		    }
-		}
-
-		function GetStorage {
-		    param(
-		        [Parameter(Mandatory = $true)]
-		        [String]$clusterName
-		    )
-		    $hdi = Get-AzureHDInsightCluster -name $clusterName
-		    # Does the cluster exist?
-		    if (!$hdi)
-		    {
-		        throw "HDInsight cluster '$clusterName' does not exist."
-		    }
-		    # Create a return object for context & container
-		    $return = @{}
-		    $storageAccounts = @{}
-		    # Get the primary storage account information
-		    $storageAccountName = $hdi.DefaultStorageAccount.StorageAccountName.Split(".",2)[0]
-		    $storageAccountKey = $hdi.DefaultStorageAccount.StorageAccountKey
-		    # Build the hash of storage account name/keys
-		    $storageAccounts.Add($hdi.DefaultStorageAccount.StorageAccountName, $storageAccountKey)
-		    foreach($account in $hdi.StorageAccounts)
-		    {
-		        $storageAccounts.Add($account.StorageAccountName, $account.StorageAccountKey)
-		    }
-		    # Get the storage context, as we can't depend
-		    # on using the default storage context
-		    $return.context = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
-		    # Get the container, so we know where to
-		    # find/store blobs
-		    $return.container = $hdi.DefaultStorageAccount.StorageContainerName
-		    # Return storage accounts to support finding all accounts for
-		    # a cluster
-		    $return.storageAccounts = $storageAccounts
-
-		    return $return
-		}
-		# Only export the verb-phrase things
-		export-modulemember *-*
+        <#
+        .SYNOPSIS
+        Copies a file to the primary storage of an HDInsight cluster.
+        .DESCRIPTION
+        Copies a file from a local directory to the blob container for
+        the HDInsight cluster.
+        .EXAMPLE
+        Start-HBaseExample -className "com.microsoft.examples.CreateTable"
+        -clusterName "MyHDInsightCluster"
+        
+        .EXAMPLE
+        Start-HBaseExample -className "com.microsoft.examples.SearchByEmail"
+        -clusterName "MyHDInsightCluster"
+        -emailRegex "contoso.com"
+        
+        .EXAMPLE
+        Start-HBaseExample -className "com.microsoft.examples.SearchByEmail"
+        -clusterName "MyHDInsightCluster"
+        -emailRegex "^r" -showErr
+        #>
+        
+        function Start-HBaseExample {
+        [CmdletBinding(SupportsShouldProcess = $true)]
+        param(
+        #The class to run
+        [Parameter(Mandatory = $true)]
+        [String]$className,
+        
+        #The name of the HDInsight cluster
+        [Parameter(Mandatory = $true)]
+        [String]$clusterName,
+        
+        #Only used when using SearchByEmail
+        [Parameter(Mandatory = $false)]
+        [String]$emailRegex,
+        
+        #Use if you want to see stderr output
+        [Parameter(Mandatory = $false)]
+        [Switch]$showErr
+        )
+        
+        Set-StrictMode -Version 3
+        
+        # Is the Azure module installed?
+        FindAzure
+        
+        # Get the login for the HDInsight cluster
+        $creds = Get-Credential
+        
+        # Get storage information
+        $storage = GetStorage -clusterName $clusterName
+        
+        # The JAR
+        $jarFile = "wasb:///example/jars/hbaseapp-1.0-SNAPSHOT.jar"
+        
+        # The job definition
+        $jobDefinition = New-AzureHDInsightMapReduceJobDefinition `
+            -JarFile $jarFile `
+            -ClassName $className `
+            -Arguments $emailRegex
+        
+        # Get the job output
+        $job = Start-AzureHDInsightJob `
+            -Cluster $clusterName `
+            -JobDefinition $jobDefinition `
+            -Credential $creds
+        Write-Host "Wait for the job to complete ..." -ForegroundColor Green
+        Wait-AzureHDInsightJob `
+            -Cluster $clusterName `
+            -JobId $job.JobId `
+            -Credential $creds
+        if($showErr)
+        {
+        Write-Host "STDERR"
+        Get-AzureHDInsightJobOutput `
+                    -Cluster $clusterName `
+                    -JobId $job.JobId `
+                    -Credential $creds
+                    -StandardError
+        }
+        Write-Host "Display the standard output ..." -ForegroundColor Green
+        Get-AzureHDInsightJobOutput `
+                    -Cluster $clusterName `
+                    -JobId $job.JobId `
+                    -Credential $creds
+        }
+        
+        <#
+        .SYNOPSIS
+        Copies a file to the primary storage of an HDInsight cluster.
+        .DESCRIPTION
+        Copies a file from a local directory to the blob container for
+        the HDInsight cluster.
+        .EXAMPLE
+        Add-HDInsightFile -localPath "C:\temp\data.txt"
+        -destinationPath "example/data/data.txt"
+        -ClusterName "MyHDInsightCluster"
+        .EXAMPLE
+        Add-HDInsightFile -localPath "C:\temp\data.txt"
+        -destinationPath "example/data/data.txt"
+        -ClusterName "MyHDInsightCluster"
+        -Container "MyContainer"
+        #>
+        
+        function Add-HDInsightFile {
+            [CmdletBinding(SupportsShouldProcess = $true)]
+            param(
+                #The path to the local file.
+                [Parameter(Mandatory = $true)]
+                [String]$localPath,
+                
+                #The destination path and file name, relative to the root of the container.
+                [Parameter(Mandatory = $true)]
+                [String]$destinationPath,
+                
+                #The name of the HDInsight cluster
+                [Parameter(Mandatory = $true)]
+                [String]$clusterName,
+                
+                #If specified, overwrites existing files without prompting
+                [Parameter(Mandatory = $false)]
+                [Switch]$force
+            )
+            
+            Set-StrictMode -Version 3
+            
+            # Is the Azure module installed?
+            FindAzure
+            
+            # Get authentication for the cluster
+            $creds=Get-Credential
+            
+            # Does the local path exist?
+            if (-not (Test-Path $localPath))
+            {
+                throw "Source path '$localPath' does not exist."
+            }
+            
+            # Get the primary storage container
+            $storage = GetStorage -clusterName $clusterName
+            
+            # Upload file to storage, overwriting existing files if -force was used.
+            Set-AzureStorageBlobContent -File $localPath `
+                -Blob $destinationPath `
+                -force:$force `
+                -Container $storage.container `
+                -Context $storage.context
+        }
+        
+        function FindAzure {
+            # Is there an active Azure subscription?
+            $sub = Get-AzureSubscription -ErrorAction SilentlyContinue
+            if(-not($sub))
+            {
+                throw "No active Azure subscription found! If you have a subscription, use the Add-AzureAccount cmdlet to login to your subscription."
+            }
+        }
+        
+        function GetStorage {
+            param(
+                [Parameter(Mandatory = $true)]
+                [String]$clusterName
+            )
+            $hdi = Get-AzureHDInsightCluster -Name $clusterName
+            # Does the cluster exist?
+            if (!$hdi)
+            {
+                throw "HDInsight cluster '$clusterName' does not exist."
+            }
+            # Create a return object for context & container
+            $return = @{}
+            $storageAccounts = @{}
+            
+            # Get storage information
+            $resourceGroup = $hdi.ResourceGroup
+            $storageAccountName=$hdi.DefaultStorageAccount.split('.')[0]
+            $container=$hdi.DefaultStorageContainer
+            $storageAccountKey=Get-AzureStorageKey `
+                -StorageAccountName $storageAccountName `
+                | %{ $_.Primary }
+            # Get the storage context, as we can't depend
+            # on using the default storage context
+            $return.context = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
+            # Get the container, so we know where to
+            # find/store blobs
+            $return.container = $container
+            # Return storage accounts to support finding all accounts for
+            # a cluster
+            $return.storageAccount = $storageAccountName
+            $return.storageAccountKey = $storageAccountKey
+            
+            return $return
+        }
+        # Only export the verb-phrase things
+        export-modulemember *-*
 
 	此文件包含两个模块：
 
@@ -588,4 +606,4 @@
 
 使用 `-showErr` 参数可查看运行作业时生成的标准错误 (STDERR)。
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_1207_2015-->

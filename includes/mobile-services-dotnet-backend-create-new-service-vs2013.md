@@ -8,7 +8,7 @@
 
 	![创建服务管理订阅](./media/mobile-services-dotnet-backend-create-new-service-vs2013/mobile-create-service-from-vs2013.png)
 
-3. 在“管理 Windows Azure 订阅”中，单击“登录...”以登录到你的 Azure 帐户（如果需要），选择可用的订阅，然后单击“关闭”。
+3. 在“管理 Azure 订阅”中，单击“登录...”以登录到你的 Azure 帐户（如果需要），选择可用的订阅，然后单击“关闭”。
 
 	你的订阅已经具有一个或多个现有移动服务时，会显示服务名称。
 

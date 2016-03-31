@@ -1,27 +1,28 @@
 <properties 
-	pageTitle="存储分析" 
-	description="如何管理 Blob、队列、表和文件服务的并发" 
+	pageTitle="在 Azure 门户中启用存储度量值 | Azure" 
+	description="如何为 Blob、队列、表和文件服务启用存储度量值" 
 	services="storage" 
 	documentationCenter="" 
 	authors="tamram" 
 	manager="adinah" 
 	editor=""/>
 <tags ms.service="storage"
-    ms.date="03/06/2015"
-    wacn.date="04/15/2015"
+	ms.date="12/01/2015" 
+    wacn.date="01/29/2016"
     />
+# 启用 Azure 存储空间度量值并查看度量值数据
 
+[AZURE.INCLUDE [storage-selector-portal-enable-and-view-metrics](../includes/storage-selector-portal-enable-and-view-metrics.md)]
 
+## 概述
 
-# 启用存储度量值并查看度量值数据
-
-对于存储服务，默认情况下不启用存储度量值。你可以使用 Azure 管理门户、Windows PowerShell 或以编程方式通过存储 API 启用监视。
+对于存储服务，默认情况下不启用存储度量值。你可以通过 [Azure 管理门户](https://manage.windowsazure.cn)或 Windows PowerShell 启用监视，也可以通过存储客户端库以编程方式启用监视。
 
 启用存储度量值时，必须为数据选择保留期：此期限用于确定存储服务保留度量值并针对存储度量值所需的空间向你收费的时长。通常，由于分钟度量值需要大量额外的空间，因此，应对分钟度量值而非小时度量值使用较短的保留期。你应该选择恰当的保留期，以便有足够的时间分析数据，并下载任何需要保留下来进行脱机分析或报告的度量值。请记住，从存储帐户下载度量值数据时，你也需要付费。
 
-## 如何使用 Azure 管理门户启用存储度量值
+## 如何使用管理门户启用度量值
 
-在 Azure 管理门户中，你可以使用存储帐户的"配置"页控制存储度量值。对于监视，你可以为每个 Blob、表和队列设置级别和保留期（以天为单位）。在每种情况下，该级别都是以下选项之一：
+在 Azure 管理门户中，你可以使用存储帐户的“配置”页控制存储度量值。对于监视，你可以为每个 Blob、表和队列设置级别和保留期（以天为单位）。在每种情况下，该级别都是以下选项之一：
 
 
 - 关 - 表示不收集任何度量值。
@@ -32,18 +33,17 @@
 
 请注意，管理门户目前不允许你在存储帐户中配置分钟度量值；你必须通过 PowerShell 或编程方式启用分钟度量值。
 
-
-## 如何使用 PowerShell 启用存储度量值
+## 如何使用 PowerShell 启用度量值
 
 你可以使用本地计算机上的 PowerShell 在存储帐户中配置存储度量值，具体方法是：使用 Azure PowerShell cmdlet Get-AzureStorageServiceMetricsProperty 检索当前设置，然后使用 cmdlet Set-AzureStorageServiceMetricsProperty 更改当前设置。
 
 控制存储度量值的 cmdlet 使用以下参数：
 
-- MetricsType，可能值是 Hour 和 Minute。
+- MetricsType：可能值是 Hour 和 Minute。
 
-- ServiceType，可能值是 Blob、Queue 和 Table。
+- ServiceType：可能值是 Blob、Queue 和 Table。
 
-- MetricsLevel，可能值是 None（相当于管理门户中的"关"）、Service（相当于管理门户中的"最小"）和 ServiceAndApi（相当于管理门户中的"详细"）。
+- MetricsLevel，可能值是 None（相当于管理门户中的“关”）、Service（相当于管理门户中的“最小”）和 ServiceAndApi（相当于管理门户中的“详细”）。
 
 例如，以下命令在保留期设为 5 天的情况下，在默认存储帐户中为 Blob 服务打开分钟度量值：
 
@@ -53,28 +53,45 @@
 
 `Get-AzureStorageServiceMetricsProperty -MetricsType Hour -ServiceType Blob`
 
-有关如何配置 Azure PowerShell cmdlet 以使用 Azure 订阅以及如何选择要使用的默认存储帐户的信息，请参阅：[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。
+有关如何配置 Azure PowerShell cmdlet 以使用 Azure 订阅以及如何选择要使用的默认存储帐户的信息，请参阅：[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 ## 如何以编程方式启用存储度量值
 
-除了使用 Azure 管理门户或 Azure PowerShell cmdlet 控制存储度量值，你还可以使用 Azure 存储 API 之一。例如，如果你要使用 .NET 语言，则可以使用存储客户端库。
+下面的 C# 代码段演示了如何使用 .NET 的存储客户端库为 Blob 服务启用度量值和日志记录：
 
-CloudBlobClient、CloudQueueClient 和 CloudTableClient 类都使用 SetServiceProperties 和 SetServicePropertiesAsync 等方法，这些方法采用 ServiceProperties 对象作为参数。你可以使用 ServiceProperties 对象配置存储度量值。例如，下面的 C# 代码段说明如何更改小时队列度量值的度量值级别和保留天数：
+	// Parse connection string.
+    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-    var storageAccount = CloudStorageAccount.Parse(connStr);
-    var queueClient = storageAccount.CreateCloudQueueClient();
-    var serviceProperties = queueClient.GetServiceProperties();
-     
-    serviceProperties.HourMetrics.MetricsLevel = MetricsLevel.Service;
-    serviceProperties.HourMetrics.RetentionDays = 10;
-     
-    queueClient.SetServiceProperties(serviceProperties);
+    // Create service client for credentialed access to the Blob service.
+    CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+
+    // Enable Storage Analytics logging and set retention policy to 10 days. 
+    ServiceProperties properties = new ServiceProperties();
+    properties.Logging.LoggingOperations = LoggingOperations.All;
+    properties.Logging.RetentionDays = 10;
+    properties.Logging.Version = "1.0";
+
+    // Configure service properties for metrics. Both metrics and logging must be set at the same time.
+    properties.HourMetrics.MetricsLevel = MetricsLevel.ServiceAndApi;
+    properties.HourMetrics.RetentionDays = 10;
+    properties.HourMetrics.Version = "1.0";
+
+    properties.MinuteMetrics.MetricsLevel = MetricsLevel.ServiceAndApi;
+    properties.MinuteMetrics.RetentionDays = 10;
+    properties.MinuteMetrics.Version = "1.0";
+
+    // Set the default service version to be used for anonymous requests.
+    properties.DefaultServiceVersion = "2015-04-05";
+
+    // Set the service properties.
+    blobClient.SetServiceProperties(properties);
+
     
 ## 查看存储度量值
 
-在配置为监视存储帐户后，存储度量值将使用存储帐户在一组已知表中记录度量值。你可以在管理门户中使用存储帐户的"监视"页，查看图表上可用的小时度量值。在管理门户中，你可以在此页上执行以下操作：
+在配置为监视存储帐户后，存储度量值将使用存储帐户在一组已知表中记录度量值。你可以在管理门户中使用存储帐户的“监视”页，查看图表上可用的小时度量值。在管理门户中，你可以在此页上执行以下操作：
 
-- 选择要在图表上绘制的度量值（可用度量值的选择将取决于你在"配置"页上为服务选择"详细"还是"最小"监视）。
+- 选择要在图表上绘制的度量值（可用度量值的选择将取决于你在“配置”页上为服务选择“详细”还是“最小”监视）。
 
 
 - 为图表上显示的度量值选择时间范围。
@@ -86,7 +103,7 @@ CloudBlobClient、CloudQueueClient 和 CloudTableClient 类都使用 SetServiceP
 - 配置电子邮件警报，以在特定度量值达到某值时通知你。
 
 
-如果你要为长期存储下载度量值或在本地分析这些度量值，则需要使用工具或编写一些代码来读取表。你必须下载分析用的分钟度量值。如果你在存储帐户中列出所有表，则这些表不会显示，但你可以按名称直接访问它们。很多第三方存储浏览工具都识别这些表，并允许你直接查看它们（有关可用工具的列表，请参阅博客文章 [Windows Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)）。
+如果你要为长期存储下载度量值或在本地分析这些度量值，则需要使用工具或编写一些代码来读取表。你必须下载分析用的分钟度量值。如果你在存储帐户中列出所有表，则这些表不会显示，但你可以按名称直接访问它们。很多第三方存储浏览工具都识别这些表，并允许你直接查看它们（有关可用工具的列表，请参阅博客文章 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)）。
 
 ### 每小时度量值
 - $MetricsHourPrimaryTransactionsBlob
@@ -119,7 +136,7 @@ CloudBlobClient、CloudQueueClient 和 CloudTableClient 类都使用 SetServiceP
 
 上面的示例数据显示一分钟的所有记录（从上午 11:00 开始），因此，QueryEntities 请求数加 QueryEntity 请求数再加 UpdateEntity 请求数的和为 7，这是显示在 user:All 行上的总数。同样，通过计算 ((143.8 * 5) + 3 + 9)/7，可以在 user:All 行得到平均端到端延迟为 104.4286。
 
-你应该考虑在管理门户中的"监视"页上设置警报，以便存储度量值自动通知你存储服务行为中发生的任何重要更改。如果你使用存储资源管理器工具下载这种采用分隔格式的度量值数据，则可以使用 Microsoft Excel 分析该数据。有关可用存储资源管理器工具的列表，请参阅博客文章 [Windows Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。
+你应该考虑在管理门户中的"监视"页上设置警报，以便存储度量值自动通知你存储服务行为中发生的任何重要更改。如果你使用存储资源管理器工具下载这种采用分隔格式的度量值数据，则可以使用 Microsoft Excel 分析该数据。有关可用存储资源管理器工具的列表，请参阅博客文章 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。
 
 
 
@@ -188,4 +205,4 @@ CloudBlobClient、CloudQueueClient 和 CloudTableClient 类都使用 SetServiceP
 ## 后续步骤：
 [启用存储日志记录和访问日志数据](https://msdn.microsoft.com/zh-cn/library/dn782840.aspx)
 
-<!--HONumber=50-->
+<!---HONumber=Mooncake_0118_2016-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Hive 和 Hadoop 分析传感器数据 |Windows Azure"
+	pageTitle="使用 Hive 和 Hadoop 分析传感器数据 |Azure"
 	description="了解如何通过将 Hive 查询控制台与 HDInsight (Hadoop) 配合使用来分析传感器数据，然后通过 PowerView 在 Microsoft Excel 中可视化数据。"
 	services="hdinsight"
 	documentationCenter=""
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="02/05/2016"
+	wacn.date="03/28/2016"/>
 
 #使用 HDInsight 中 Hadoop上的 Hive 查询控制台分析传感器数据
 
@@ -30,7 +30,7 @@
 
 ##先决条件
 
-* HDInsight (Hadoop) 群集：有关创建群集的信息，请参阅[在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)。
+* HDInsight (Hadoop) 群集：有关创建群集的信息，请参阅[在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)。
 
 * Microsoft Excel 2013
 

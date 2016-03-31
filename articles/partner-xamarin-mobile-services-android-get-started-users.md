@@ -9,11 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="08/18/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="02/11/2016" 
+	wacn.date="03/21/2016"/>
 
 #  向移动服务应用程序添加身份验证
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 <p>本主题说明如何通过 Xamarin.Android 应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。</p>
@@ -38,9 +41,9 @@
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 
-3. 在 Eclipse 中，打开你在完成 [移动服务入门] 教程后创建的项目。 
+3. 在 Xamarin Studio 中，打开你在完成[移动服务入门]教程后创建的项目。
 
-4. 然后，从“运行”菜单中单击“运行”以启动应用程序；验证启动该应用程序后，是否会引发状态代码为 401（“未授权”）的未处理异常。
+4. 在“运行”菜单中单击“开始调试”以启动应用；验证启动该应用后，是否会引发状态代码为 401（“未授权”）的未处理异常。
 
 	 发生此异常的原因是应用程序尝试以未经身份验证的用户身份访问移动服务，但 _TodoItem_ 表现在要求身份验证。
 
@@ -50,7 +53,7 @@
 
 1. 将以下属性添加到 **ToDoActivity** 类：
 
-		private MobileServiceUser user;
+		private MobileServiceUser user;
 
 2. 将以下方法添加到 **ToDoActivity** 类：
 
@@ -69,7 +72,7 @@
 
     这将会创建一个用于处理身份验证过程的新方法。将使用 Microsoft 帐户登录对用户进行身份验证。此时将出现一个对话框，其中显示了已经过身份验证的用户的 ID。如果未正常完成身份验证，你将无法继续操作。
 
-    > [AZURE.NOTE]如果使用的标识提供者不是 Microsoft，请将传递给上述 **login** 方法的值更改为下列其中一项：_WindowsAzureActiveDirectory_。
+    > [AZURE.NOTE] 如果使用的标识提供者不是 Microsoft，请将传递给上述 **login** 方法的值更改为下列其中一项: _WindowsAzureActiveDirectory_。
 
 3. 在 **OnCreate** 方法中，在实例化 `MobileServiceClient` 对象的代码后面添加以下代码行。
 
@@ -84,8 +87,8 @@
             
             await InitLocalStoreAsync();
 
-	            // Get the Mobile Service Table instance to use
-            toDoTable = client.GetTable<ToDoItem>();
+            // Get the Mobile Service Table instance to use
+            toDoTable = client.GetSyncTable<ToDoItem>();
 
             textNewToDo = FindViewById<EditText>(Resource.Id.textNewToDo);
 
@@ -103,7 +106,7 @@
 		await CreateTable();
 
 
-6. 然后，从“运行”菜单中单击“运行”以启动应用程序，并使用所选的标识提供程序登录。
+6. 在“运行”菜单中单击“开始调试”以启动应用，然后使用所选的标识提供者登录。
 
    	当你成功登录时，应用应该运行而不出现错误，你应该能够查询移动服务，并对数据进行更新。
 
@@ -129,10 +132,9 @@
 [15]: ./media/partner-xamarin-mobile-services-android-get-started-users/mobile-portal-change-table-perms.png
 
 <!-- URLs. -->
+[移动服务入门]: /documentation/articles/partner-xamarin-mobile-services-android-get-started
 [使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
-
-[Azure Management Portal]: https://manage.windowsazure.cn/
 
 [已完成的示例项目]: http://go.microsoft.com/fwlink/p/?LinkId=331328
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

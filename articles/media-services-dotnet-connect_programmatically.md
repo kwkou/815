@@ -7,25 +7,25 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="02/03/2016"
+	wacn.date="03/17/2016"/>
 
 
-# 使用 Media Services SDK for .NET 连接到媒体服务帐户
+# 使用适用于 .NET 的媒体服务 SDK 连接到媒体服务帐户
 
 > [AZURE.SELECTOR]
 - [REST](/documentation/articles/media-services-rest-connect_programmatically)
 - [.NET](/documentation/articles/media-services-dotnet-connect_programmatically)
 
 
-本主题介绍如何在使用 Media Services SDK for .NET 编程时获取与 Windows Azure 媒体服务的编程连接。
+本主题介绍如何在使用适用于 .NET 的媒体服务 SDK 编程时获取与 Azure 媒体服务的编程连接。
 
 
 ## 连接到媒体服务
 
-若要以编程方式连接到媒体服务，你必须在以前设置了一个 Azure 帐户，并在该帐户上配置了媒体服务，然后设置一个 Visual Studio 项目，以便通过 Media Services SDK for .NET 进行开发。有关详细信息，请参阅“设置以使用 Media Services SDK for .NET 进行开发”。
+若要以编程方式连接到媒体服务，你必须在以前设置了一个 Azure 帐户，并在该帐户上配置了媒体服务，然后设置一个 Visual Studio 项目，以便通过适用于 .NET 的媒体服务 SDK 进行开发。有关详细信息，请参阅“设置以使用适用于 .NET 的媒体服务 SDK 进行开发”。
 
 在媒体服务帐户设置过程结束时，你获得以下必需的连接值。请使用这些值以编程方式连接到媒体服务。
 
@@ -60,13 +60,13 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 本部分说明如何通过使用以 MediaServicesCredentials 为参数的 CloudMediaContext 构造函数重复使用访问控制服务令牌。
 
 
-[Azure Active Directory 访问控制](https://msdn.microsoft.com/zh-cn/library/hh147631.aspx)（也称为访问控制服务或 ACS）是一个基于云的服务，可轻松对用户进行身份验证和授权以使用户获得访问其 Web 应用程序的权限。Windows Azure 媒体服务通过需要 ACS 令牌的 OAuth 协议控制对其服务的访问。媒体服务从授权服务器接收 ACS 令牌。
+[Azure Active Directory 访问控制](https://msdn.microsoft.com/zh-cn/library/hh147631.aspx)（也称为访问控制服务或 ACS）是一个基于云的服务，可轻松对用户进行身份验证和授权以使用户获得访问其 Web 应用程序的权限。Azure 媒体服务通过需要 ACS 令牌的 OAuth 协议控制对其服务的访问。媒体服务从授权服务器接收 ACS 令牌。
 
-使用 Media Services SDK 进行开发时，可选择不处理令牌，而是由 SDK 代码为你进行管理。不过，将 ACS 令牌完全交由 SDK 管理会导致不必要的令牌请求。请求令牌将耗用一定的时间并消耗客户端和服务器资源。此外，如果速度过快，ACS 服务器还会限制请求。上限为每秒钟 30 条请求，请参阅 [ACS 服务限制](https://msdn.microsoft.com/zh-cn/library/gg185909.aspx)了解更多详细信息。
+使用媒体服务 SDK 进行开发时，可选择不处理令牌，而是由 SDK 代码为你进行管理。不过，将 ACS 令牌完全交由 SDK 管理会导致不必要的令牌请求。请求令牌将耗用一定的时间并消耗客户端和服务器资源。此外，如果速度过快，ACS 服务器还会限制请求。上限为每秒钟 30 条请求，请参阅 [ACS 服务限制](https://msdn.microsoft.com/zh-cn/library/gg185909.aspx)了解更多详细信息。
 
-自 Media Services SDK 版本 3.0.0.0 起，可以重复使用 ACS 令牌。以 **MediaServicesCredentials** 作为参数的 **CloudMediaContext** 构造函数可实现在多个上下文之间共享 ACS 令牌。MediaServicesCredentials 类中封装有媒体服务凭据。如果 ACS 令牌可用且其过期时间已知，则可以使用该令牌创建一个新的 MediaServicesCredentials 实例并将其传递给 CloudMediaContext 的构造函数。请注意，Media Services SDK 将在每次令牌过期时自动刷新令牌。有两种方法可重复使用 ACS 令牌，如以下示例中所示。
+自媒体服务 SDK 版本 3.0.0.0 起，可以重复使用 ACS 令牌。以 **MediaServicesCredentials** 作为参数的 **CloudMediaContext** 构造函数可实现在多个上下文之间共享 ACS 令牌。MediaServicesCredentials 类中封装有媒体服务凭据。如果 ACS 令牌可用且其过期时间已知，则可以使用该令牌创建一个新的 MediaServicesCredentials 实例并将其传递给 CloudMediaContext 的构造函数。请注意，媒体服务 SDK 将在每次令牌过期时自动刷新令牌。有两种方法可重复使用 ACS 令牌，如以下示例中所示。
 
-- 你可以在内存中（例如，在静态类变量中）缓存 **MediaServicesCredentials** 对象。然后，将缓存的对象传递给 CloudMediaContext 构造函数。MediaServicesCredentials 对象包含一个 ACS 令牌，如果该令牌仍然有效，则可重复使用。如果该令牌无效，则会使用提供给 MediaServicesCredentials 构造函数的凭据通过 Media Services SDK 刷新该令牌。
+- 你可以在内存中（例如，在静态类变量中）缓存 **MediaServicesCredentials** 对象。然后，将缓存的对象传递给 CloudMediaContext 构造函数。MediaServicesCredentials 对象包含一个 ACS 令牌，如果该令牌仍然有效，则可重复使用。如果该令牌无效，则会使用提供给 MediaServicesCredentials 构造函数的凭据通过媒体服务 SDK 刷新该令牌。
 
 	请注意，在调用 RefreshToken 后，**MediaServicesCredentials** 对象将获得有效的令牌。**CloudMediaContext** 将调用构造函数中的 **RefreshToken** 方法。如果你计划将令牌值保存到外部存储中，请确保在保存令牌数据之前检查 TokenExpiration 值是否有效。如果该值无效，请在进行缓存前调用 RefreshToken。
 
@@ -95,7 +95,7 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 		// Save token values for later use. 
 		// The SaveTokenDataToExternalStorage method should check 
 		// whether the TokenExpiration value is valid before saving the token data. 
-		// If it is not valid, call MediaServicesCredentials’s RefreshToken before caching.
+		// If it is not valid, call MediaServicesCredentials's RefreshToken before caching.
 		SaveTokenDataToExternalStorage(accessToken, tokenExpiration);
 		
 	使用保存的令牌值可创建 MediaServicesCredentials。
@@ -116,7 +116,7 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 		
 		CloudMediaContext context2 = new CloudMediaContext(credentials);
 
-	在令牌已由 Media Services SDK 更新的情况下，更新令牌副本。
+	在令牌已由媒体服务 SDK 更新的情况下，更新令牌副本。
 	
 		if(tokenExpiration != context2.Credentials.TokenExpiration)
 		{
@@ -169,25 +169,17 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 
 以下 App.config 文件包含了必需的连接值。<appSettings> 元素中的值是你从媒体服务帐户设置过程中获取的必需值。
 
+	<configuration>
+	  <appSettings>
+	    <add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
+	    <add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
+	  </appSettings>
+	</configuration>
 
-<pre><code>
-&lt;configuration>
-    &lt;appSettings>
-	&lt;add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
-    	&lt;add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
-    &lt;/appSettings>
-&lt;/configuration>
-</code></pre>
 
 若要从配置中检索连接值，你可以使用 **ConfigurationManager** 类，然后将相关值分配给代码中的字段：
 	
 	private static readonly string _accountName = ConfigurationManager.AppSettings["MediaServicesAccountName"];
 	private static readonly string _accountKey = ConfigurationManager.AppSettings["MediaServicesAccountKey"];
 
-
-<!-- Anchors. -->
-
-
-<!-- URLs. -->
-
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0307_2016-->

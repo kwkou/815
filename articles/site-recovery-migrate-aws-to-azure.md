@@ -1,5 +1,5 @@
 <properties
-	pageTitle="将 Windows 虚拟机从 Amazon Web Services 迁移到 Windows Azure"
+	pageTitle="将 Windows 虚拟机从 Amazon Web Services 迁移到 Azure"
 	description="使用 Azure Site Recovery 将运行在 Amazon Web Services (AWS) 中的 Windows 虚拟机迁移到 Azure。"
 	services="site-recovery"
 	documentationCenter=""

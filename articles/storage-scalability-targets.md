@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 存储可伸缩性和性能目标 |Windows Azure"
+	pageTitle="Azure 存储可伸缩性和性能目标 |Azure"
 	description="了解有关 Azure 存储帐户的可伸缩性和性能目标的信息，包括标准和高级存储账户的容量、请求速率以及入站和出站带宽。了解每个 Azure 存储服务中各分区的性能目标。"
 	services="storage"
 	documentationCenter="na"
@@ -8,32 +8,45 @@
 	editor="na" />
 <tags 
 	ms.service="storage"
-	ms.date="08/07/2015"
-	wacn.date="09/18/2015" />
+   ms.date="12/04/2015"
+	wacn.date="01/14/2016" />
 
 # Azure 存储空间可伸缩性和性能目标
 
-本主题介绍 Windows Azure 存储空间的可伸缩性和性能主题。有关其他 Azure 限制的摘要，请参阅 <!--[-->Azure 订阅和服务限制、配额与约束<!--](/documentation/articles/azure-subscription-service-limits)-->。
+## 概述
 
->[AZURE.NOTE] 所有存储帐户都在新的扁平网络拓扑上运行，无论它们在何时创建，都支持下文概述的可伸缩性和性能目标。有关 Azure 存储的扁平网络体系结构和可伸缩性的详细信息，请参阅 [Windows Azure 存储空间：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)。
+本主题介绍 Azure 存储空间的可伸缩性和性能主题。有关其他 Azure 限制的摘要，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits)。
+
+>[AZURE.NOTE] 所有存储帐户都在新的扁平网络拓扑上运行，无论它们在何时创建，都支持下文概述的可伸缩性和性能目标。有关 Azure 存储的扁平网络体系结构和可伸缩性的详细信息，请参阅 [Azure 存储空间：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)。
 
 <!-- -->
 
->[AZURE.IMPORTANT] 以下所列的可伸缩性和性能目标为高端目标，但却是能够实现的。在任何情况下，你的存储帐户实现的请求速率和带宽取决于存储对象大小、使用的访问模式、应用程序执行的工作负荷类型。请务必测试你的服务，以确定其性能是否达到你的要求。如果可能，应避免流量速率突发峰值，并确保流量在各个分区上均匀分布。
+>[AZURE.IMPORTANT]以下所列的可伸缩性和性能目标为高端目标，但却是能够实现的。在任何情况下，你的存储帐户实现的请求速率和带宽取决于存储对象大小、使用的访问模式、应用程序执行的工作负荷类型。请务必测试你的服务，以确定其性能是否达到你的要求。如果可能，应避免流量速率突发峰值，并确保流量在各个分区上均匀分布。
 
 >当你的应用程序达到分区能够处理的工作负荷极限时，Azure 存储将开始返回错误代码 503（服务器忙）或错误代码 500（操作超时）响应。发生这种情况时，应用程序应使用指数退让策略进行重试。使用指数退让策略，可以减少分区上的负载，缓解该分区的流量高峰。
 
-如果你的应用程序的需求超过了单个存储帐户的可伸缩性目标值，您可以创建应用程序以使用多个存储帐户，并将数据对象分布到这些存储帐户中。请参阅[存储定价详细信息](/home/features/storage/#price)，了解有关批量定价的信息。
+如果您的应用程序的需求超过了单个存储帐户的可伸缩性目标值，您可以创建应用程序以使用多个存储帐户，并将数据对象分布到这些存储帐户中。请参阅[存储定价详细信息](/home/features/storage#price)，了解有关批量定价的信息。
 
-## 标准存储帐户的可伸缩性目标
+
+##<a id="scalability-targets-for-standard-storage-accounts"></a> Blob、队列、表和文件的可伸缩性目标
 
 [AZURE.INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 
-## 高级存储帐户的可伸缩性目标
+## 虚拟机磁盘的可伸缩性目标 
 
-[AZURE.INCLUDE [azure-storage-limits-premium-storage](../includes/azure-storage-limits-premium-storage.md)]
+[AZURE.INCLUDE [azure-storage-limits-vm-disks](../includes/azure-storage-limits-vm-disks.md)]
 
-## 存储限制- Azure 资源管理器
+有关其他详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
+
+### 标准存储帐户
+
+[AZURE.INCLUDE [azure-storage-limits-vm-disks-standard](../includes/azure-storage-limits-vm-disks-standard.md)]
+
+###<a id="scalability-targets-for-premium-storage-accounts"></a> 高级存储帐户
+
+[AZURE.INCLUDE [azure-storage-limits-vm-disks-premium](../includes/azure-storage-limits-vm-disks-premium.md)]
+
+## Azure 资源管理器的可伸缩性目标
 
 [AZURE.INCLUDE [azure-storage-limits-azure-resource-manager](../includes/azure-storage-limits-azure-resource-manager.md)]
 
@@ -51,7 +64,7 @@
 
 - **消息**：消息中的分区键是队列名称，因此一个队列中的所有消息都分组到单个分区中，由单个服务器提供服务。不同队列可以由不同服务器处理，无论存储帐户有多少队列，都可以平衡负载。
 
-- **实体**：实体的分区键是表名称 + 分区键，其中，分区键是实体所需的自定义的** PartitionKey** 属性。
+- **实体**：实体的分区键是表名称 + 分区键，其中，分区键是实体所需的自定义的 **PartitionKey** 属性。
 
 	具有相同分区键值的所有实体都分组到同一分区，并存储在同一分区服务器上。在设计应用程序的过程中，了解这一点非常重要。将实体分布在多个分区中能够实现可伸缩性优势，而将实体分组到单个分区中则能够提供数据访问优势，你的应用程序应该平衡这两大优势。
 
@@ -61,15 +74,11 @@
 
 ## 另请参阅
 
-- [存储定价详细信息](/home/features/storage/#price)
+- [存储定价详细信息](/home/features/storage#price)
 - [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)
-
+- [高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)
 - [Azure 存储复制](/documentation/articles/storage-redundancy)
-- [Windows Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist)
-- [Windows Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
+- [Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist)
+- [Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
-
-
- 
-
-<!---HONumber=70-->
+<!---HONumber=Mooncake_0104_2016-->

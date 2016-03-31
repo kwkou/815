@@ -1,16 +1,16 @@
 <properties 
 	pageTitle="下载媒体资产" 
-	description="了解如何将资产下载到计算机。代码示例用 C# 编写且使用 Media Services SDK for .NET。" 
+	description="了解如何将资产下载到计算机。代码示例用 C# 编写且使用 适用于 .NET 的媒体服务 SDK。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="02/03/2016"
+	wacn.date="03/17/2016"/>
 
 #如何：通过下载交付资产
 
@@ -43,7 +43,7 @@
 	        ParallelTransferThreadCount = 20
 	    };
 	
-	    var downloadTasks = new List&lt;Task&gt;();
+	    var downloadTasks = new List<Task>();
 	    foreach (IAssetFile outputFile in outputAsset.AssetFiles)
 	    {
 	        // Use the following event handler to check download progress.
@@ -67,9 +67,11 @@
 	{
 	    Console.WriteLine(string.Format("{0} % download progress. ", e.Progress));
 	}
+
+
    
 ##另请参阅 
 
 [交付流内容](/documentation/articles/media-services-deliver-streaming-content)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0307_2016-->

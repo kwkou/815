@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure 网站中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用" 
-	description="学习如何在使用 Azure Active Directory 进行身份验证的 Azure 网站中创建 ASP.NET MVC 业务线应用程序" 
+	pageTitle="在 Azure 中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用" 
+	description="学习如何在使用 Azure Active Directory 进行身份验证的 Azure 中创建 ASP.NET MVC 业务线应用程序" 
 	services="app-service\web, active-directory" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -8,30 +8,22 @@
 	editor=""/>
 
 <tags
-	ms.service="app-service-web"
-	ms.date="10/14/2015"
-	wacn.date="11/12/2015"/>
+	ms.service="web-sites"
+	ms.date="12/10/2015" 
+	wacn.date="02/17/2016"/>
 
-# 在 Azure 网站中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用 #
+# 在 Azure 中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用#
 
-在本文中，你将了解如何在使用本地 [Azure Active Directory](/home/features/identity/) 作为标识提供者的 [Azure 网站](/documentation/services/web-sites/)中创建 ASP.NET MVC 业务线应用程序。你还将了解如何使用 [Azure Active Directory Graph 客户端库](http://blogs.msdn.com/b/aadgraphteam/archive/2014/06/02/azure-active-directory-graph-client-library-1-0-publish.aspx)查询应用程序中的目录数据。
+在本文中，你将了解如何在使用本地 [Azure Active Directory](/home/features/identity/) 作为标识提供者的 [Azure Web 应用](/documentation/services/web-sites/)中创建 ASP.NET MVC 业务线应用程序。你还将了解如何使用 [Azure Active Directory Graph 客户端库](http://blogs.msdn.com/b/aadgraphteam/archive/2014/06/02/azure-active-directory-graph-client-library-1-0-publish.aspx)查询应用程序中的目录数据。
 
 使用的 Azure Active Directory 租户可以是仅限 Azure 的目录，或者与本地 Active Directory (AD) 进行目录同步，以便为本地或远程的辅助角色创建单一登录体验。
 
->[AZURE.NOTE]对于 Azure 网站，只需单击几下鼠标，就能配置针对 Azure Active Directory 租户的身份验证。有关详细信息，请参阅[使用 Active Directory 在 Azure 网站中进行身份验证](/documentation/articles/web-sites-authentication-authorization)。
-
-- [要生成的项目](#bkmk_build)
-- [所需的项目](#bkmk_need)
-- [使用 LOB 模板的示例应用程序](#bkmk_sample)
-- [运行示例应用程序](#bkmk_run)
-- [将示例应用程序部署到 Azure 网站](#bkmk_deploy)
-- [将 LOB 功能添加到示例应用程序](#bkmk_crud)
-- [其他资源](#bkmk_resources)
+>[AZURE.NOTE]对于 Azure Web 应用，只需单击几下鼠标，就能配置针对 Azure Active Directory 租户的身份验证。有关详细信息，请参阅[使用 Active Directory 在 Azure 中进行身份验证](/documentation/articles/web-sites-authentication-authorization)。
 
 <a name="bkmk_build"></a>
 ## 要生成的项目 ##
 
-你将在 Azure 网站中生成用于跟踪工作项并具有以下功能的简单的业务线创建-读取-更新-删除 (CRUD) 应用程序：
+你将在 Azure 中生成用于跟踪工作项并具有以下功能的简单的业务线创建-读取-更新-删除 (CRUD) 应用程序：
 
 - 根据 Azure Active Directory 对用户进行身份验证
 - 实现登录和注销功能
@@ -60,7 +52,7 @@
 - 示例 `TaskTracker` 控制器演示了如何才能授权对应用程序，其中包括 `[Authorize]` 的标准用法中的特定操作的不同角色的控制器。 
 - 一个多租户应用程序，其中包含可立即分配给用户和组的预定义角色。 
 
-<a name="bkmk_run" />
+<a name="bkmk_run" ></a>
 ## 运行示例应用程序 ##
 
 1.	克隆或下载 [WebApp-RoleClaims-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims) 中的示例解决方案到本地目录。
@@ -78,25 +70,17 @@
 5.	如果你已正确配置 Azure Active Directory 应用程序，并在 Web.config 中设置了相应的设置，则应会重定向到登录页。你只需使用在 Azure 管理门户中创建 Azure Active Directory 应用程序时所用的帐户登录，因为该帐户是 Azure Active Directory 应用程序的默认所有者。
 	
 <a name="bkmk_deploy"></a>
-## 将示例应用程序部署到 Azure 网站
+## 将示例应用程序部署到 Azure Web 应用
 
-现在，你需要将应用程序发布到 Azure 网站中的 Web 应用。[README.md](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims/blob/master/README.md) 中已经提供了有关部署到 Azure 网站的说明，但这些步骤还取消了本地调试环境的配置。下面将介绍如何在保留调试配置的同时进行部署。
+现在，你需要将应用程序发布到 Azure 中的 Web 应用。[README.md](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims/blob/master/README.md) 中已经提供了有关部署到 Azure Web 应用的说明，但这些步骤还取消了本地调试环境的配置。下面将介绍如何在保留调试配置的同时进行部署。
 
 1. 右键单击您的项目，然后选择“发布”。
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/publish-app.png)
 
-2. 选择“Windows Azure Web Apps”。
+2. 单机“导入”，选择已下载的“发布配置文件”。
 
-3. 如果你尚未登录 Azure，请单击“添加帐户”，然后使用 Azure 订阅的 Microsoft 帐户进行登录。
-
-4. 登录后，单击“新建”，以在 Azure 中新建一个 Web 应用。
-
-5. 填写所有必填字段。你需要使用此应用程序的数据库连接来存储角色映射、缓存的令牌以及任何应用程序数据。
-
-	![](./media/web-sites-dotnet-lob-application-azure-ad/4-create-website.png)
-
-6. 单击“创建”。在你创建 Web 应用后，系统会打开“发布 Web”对话框。
+	如果还没有创建 Web 应用，可以登录 [Azure 管理门户](https://manage.windowsazure.cn/)创建一个，然后再“仪表板”的“速览”下，下载“发布配置文件”。
 
 7. 在“目标 URL”中，将 **http** 更改为 **https**。将整个 URL 复制到文本编辑器。稍后将要用到它。然后，单击“下一步”。
 
@@ -116,11 +100,11 @@
 
 2. 单击“添加我的组织正在开发的应用程序”。
 
-3. 选择“Web 应用程序和/或 Web API”。
+3. 选择“ Web 应用和/或 Web API”。
 
 4. 为应用程序提供一个名称，然后单击“下一步”。
 
-5. 在“应用程序属性”中，将“登录 URL”设置为你前面保存的Web 应用 URL（例如 `https://<site-name>.chinacloudsites.cn/`），并将“应用 ID URI”设置为 `https://<aad-tenanet-name>/<app-name>`。然后，单击“完成”。
+5. 在“应用程序属性”中，将“登录 URL”设置为你前面保存的 Web 应用URL（例如 `https://<site-name>.chinacloudsites.cn/`），并将“应用 ID URI”设置为 `https://<aad-tenanet-name>/<app-name>`。然后，单击“完成”。
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/7-app-properties.png)
 
@@ -145,17 +129,17 @@
 
 11. 在 Visual Studio 中，在项目中打开 **Web.Release.config**。将以下 XML 插入 `<configuration>` 标记，并将每个键的值替换为新的 Azure Active Directory 应用程序保存的信息。
 	<pre class="prettyprint">
-&lt;appSettings>
-   &lt;add key="ida:ClientId" value="<mark>[e.g. 82692da5-a86f-44c9-9d53-2f88d52b478b]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
-   &lt;add key="ida:AppKey" value="<mark>[e.g. rZJJ9bHSi/cYnYwmQFxLYDn/6EfnrnIfKoNzv9NKgbo=]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
-   &lt;add key="ida:PostLogoutRedirectUri" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
-&lt;/appSettings></pre>
+	&lt;appSettings><span>&#13;</span>
+		&lt;add key="ida:ClientId" value="<mark>[e.g. 82692da5-a86f-44c9-9d53-2f88d52b478b]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /><span>&#13;</span>
+		&lt;add key="ida:AppKey" value="<mark>[e.g. rZJJ9bHSi/cYnYwmQFxLYDn/6EfnrnIfKoNzv9NKgbo=]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /><span>&#13;</span>
+		&lt;add key="ida:PostLogoutRedirectUri" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /><span>&#13;</span>
+	&lt;/appSettings></pre>
 
 	请确保 ida:PostLogoutRedirectUri 的值以斜杠“/”结尾。
 
 1. 右键单击您的项目，然后选择“发布”。
 
-2. 单击“发布”以发布到 Azure 网站。
+2. 单击“发布”以发布到 Azure Web 应用。
 
 完成此操作后，将在 Azure 管理门户中配置两个 Azure Active Directory 应用程序，一个用于 Visual Studio 中的调试环境，另一个用于 Azure 中发布的 Web 应用。在调试期间，将使用 Web.config 中的应用程序设置来使**调试**配置适用于 Azure Active Directory，发布配置（默认情况下，会发布**版本**配置）后，将上载转换的 Web.config，其中包含 Web.Release.config 中的应用程序设置更改。
 
@@ -193,13 +177,13 @@
 
 6.	打开 DAL\\RoleClaimContext.cs 并添加突出显示的代码：
 	<pre class="prettyprint">
-	public class RoleClaimContext : DbContext
-	{
-	    public RoleClaimContext() : base("RoleClaimContext") { }
+	public class RoleClaimContext : DbContext<span>&#13;</span>
+	{<span>&#13;</span>
+	    public RoleClaimContext() : base("RoleClaimContext") { }<span>&#13;</span>
 
-	    public DbSet&lt;Task> Tasks { get; set; }
-	    <mark>public DbSet&lt;WorkItem> WorkItems { get; set; }</mark>
-	    public DbSet&lt;TokenCacheEntry> TokenCacheEntries { get; set; }
+	    public DbSet&lt;Task> Tasks { get; set; }<span>&#13;</span>
+	    <mark>public DbSet&lt;WorkItem> WorkItems { get; set; }</mark><span>&#13;</span>
+	    public DbSet&lt;TokenCacheEntry> TokenCacheEntries { get; set; }<span>&#13;</span>
 	}</pre>
 
 7.	生成项目，以便能够通过 Visual Studio 中的基架逻辑访问你的新模型。
@@ -216,36 +200,36 @@
 
 11. 将突出显示的 [Authorize] 修饰添加到下面的相应操作。
 	<pre class="prettyprint">
-	...
+	...<span>&#13;</span>
 
-    <mark>[Authorize(Roles = "Admin, Observer, Writer, Approver")]</mark>
-    public class WorkItemsController : Controller
-    {
-		...
+    <mark>[Authorize(Roles = "Admin, Observer, Writer, Approver")]</mark><span>&#13;</span>
+    public class WorkItemsController : Controller<span>&#13;</span>
+    {<span>&#13;</span>
+		...<span>&#13;</span>
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
-        public ActionResult Create()
-        ...
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span>
+        public ActionResult Create()<span>&#13;</span>
+        ...<span>&#13;</span>
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
-        public async Task&lt;ActionResult&gt; Create([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)
-        ...
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span>
+        public async Task&lt;ActionResult&gt; Create([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)<span>&#13;</span>
+        ...<span>&#13;</span>
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
-        public async Task&lt;ActionResult&gt; Edit(int? id)
-        ...
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span>
+        public async Task&lt;ActionResult&gt; Edit(int? id)<span>&#13;</span>
+        ...<span>&#13;</span>
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
-        public async Task&lt;ActionResult&gt; Edit([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)
-        ...
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span>
+        public async Task&lt;ActionResult&gt; Edit([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)<span>&#13;</span>
+        ...<span>&#13;</span>
 
-        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark>
-        public async Task&lt;ActionResult&gt; Delete(int? id)
-        ...
+        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark><span>&#13;</span>
+        public async Task&lt;ActionResult&gt; Delete(int? id)<span>&#13;</span>
+        ...<span>&#13;</span>
 
-        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark>
-        public async Task&lt;ActionResult&gt; DeleteConfirmed(int id)
-        ...
+        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark><span>&#13;</span>
+        public async Task&lt;ActionResult&gt; DeleteConfirmed(int id)<span>&#13;</span>
+        ...<span>&#13;</span>
 	}</pre>
 
 	> [AZURE.NOTE]你可能已注意到某些操作带有 <code>[ValidateAntiForgeryToken]</code> 修饰。由于存在 [Brock Allen](https://twitter.com/BrockLAllen) 在 [MVC 4、AntiForgeryToken 和声明](http://brockallen.com/2012/07/08/mvc-4-antiforgerytoken-and-claims/)中所述的行为，HTTP POST 可能无法完成防伪令牌验证，因为： + Azure Active Directory 不会发送 http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider，而默认情况下防伪令牌需要此项。+ 如果 Azure Active Directory 是与 AD FS 进行同步处理的目录，则默认情况下 AD FS 信任不发送 http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider 声明，不过你可以手动将 AD FS 配置为发送此声明。你将在下一步对此进行处理。
@@ -273,69 +257,69 @@
         }
 		
 14.	在 Views\\WorkItems\\Create.cshtml（自动搭建基架的项）中，找到 `Html.BeginForm` 帮助器方法并对其进行如下修改：
-	<pre class="prettyprint">@using (Html.BeginForm(<mark>"Create", "WorkItems", FormMethod.Post, new { id = "main-form" }</mark>))
-{
-    @Html.AntiForgeryToken()
+	<pre class="prettyprint">@using (Html.BeginForm(<mark>"Create", "WorkItems", FormMethod.Post, new { id = "main-form" }</mark>))<span>&#13;</span>
+	{<span>&#13;</span>
+    @Html.AntiForgeryToken()<span>&#13;</span>
 
-    &lt;div class="form-horizontal">
-        &lt;h4>WorkItem&lt;/h4>
-        &lt;hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    &lt;div class="form-horizontal"><span>&#13;</span>
+        &lt;h4>WorkItem&lt;/h4><span>&#13;</span>
+        &lt;hr /><span>&#13;</span>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })<span>&#13;</span>
 
-        &lt;div class="form-group">
-            &lt;div class="col-md-10">
-                @Html.EditorFor(model => model.AssignedToID, new { htmlAttributes = new { @class = "form-control"<mark>, @type="hidden"</mark> } })
-                @Html.ValidationMessageFor(model => model.AssignedToID, "", new { @class = "text-danger" })
-            &lt;/div>
-        &lt;/div>
+        &lt;div class="form-group"><span>&#13;</span>
+            &lt;div class="col-md-10"><span>&#13;</span>
+                @Html.EditorFor(model => model.AssignedToID, new { htmlAttributes = new { @class = "form-control"<mark>, @type="hidden"</mark> } })<span>&#13;</span>
+                @Html.ValidationMessageFor(model => model.AssignedToID, "", new { @class = "text-danger" })<span>&#13;</span>
+            &lt;/div><span>&#13;</span>
+        &lt;/div><span>&#13;</span>
 
-        &lt;div class="form-group">
-            @Html.LabelFor(model => model.AssignedToName, htmlAttributes: new { @class = "control-label col-md-2" })
-            &lt;div class="col-md-10">
-                @Html.EditorFor(model => model.AssignedToName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.AssignedToName, "", new { @class = "text-danger" })
-            &lt;/div>
-        &lt;/div>
+        &lt;div class="form-group"><span>&#13;</span>
+            @Html.LabelFor(model => model.AssignedToName, htmlAttributes: new { @class = "control-label col-md-2" })<span>&#13;</span>
+            &lt;div class="col-md-10"><span>&#13;</span>
+                @Html.EditorFor(model => model.AssignedToName, new { htmlAttributes = new { @class = "form-control" } })<span>&#13;</span>
+                @Html.ValidationMessageFor(model => model.AssignedToName, "", new { @class = "text-danger" })<span>&#13;</span>
+            &lt;/div><span>&#13;</span>
+        &lt;/div><span>&#13;</span>
 
-        &lt;div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            &lt;div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            &lt;/div>
-        &lt;/div>
+        &lt;div class="form-group"><span>&#13;</span>
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })<span>&#13;</span>
+            &lt;div class="col-md-10"><span>&#13;</span>
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })<span>&#13;</span>
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })<span>&#13;</span>
+            &lt;/div><span>&#13;</span>
+        &lt;/div><span>&#13;</span>
 
-        &lt;div class="form-group">
-            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
-            &lt;div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.Status, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
-            &lt;/div>
-        &lt;/div>
+        &lt;div class="form-group"><span>&#13;</span>
+            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })<span>&#13;</span>
+            &lt;div class="col-md-10"><span>&#13;</span>
+                @Html.EnumDropDownListFor(model => model.Status, htmlAttributes: new { @class = "form-control" })<span>&#13;</span>
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })<span>&#13;</span>
+            &lt;/div><span>&#13;</span>
+        &lt;/div><span>&#13;</span>
 
-        &lt;div class="form-group">
-            &lt;div class="col-md-offset-2 col-md-10">
-                &lt;input type="submit" value="Create" class="btn btn-default" <mark>id="submit-button"</mark> />
-            &lt;/div>
-        &lt;/div>
-    &lt;/div>
+        &lt;div class="form-group"><span>&#13;</span>
+            &lt;div class="col-md-offset-2 col-md-10"><span>&#13;</span>
+                &lt;input type="submit" value="Create" class="btn btn-default" <mark>id="submit-button"</mark> /><span>&#13;</span>
+            &lt;/div><span>&#13;</span>
+        &lt;/div><span>&#13;</span>
+    &lt;/div><span>&#13;</span>
 
-    <mark>&lt;script>
-            // People/Group Picker Code
-            var maxResultsPerPage = 14;
-            var input = document.getElementById("AssignedToName");
-            var token = "@ViewData["token"]";
-            var tenant = "@ViewData["tenant"]";
+    <mark>&lt;script><span>&#13;</span>
+            // People/Group Picker Code<span>&#13;</span>
+            var maxResultsPerPage = 14;<span>&#13;</span>
+            var input = document.getElementById("AssignedToName");<span>&#13;</span>
+            var token = "@ViewData["token"]";<span>&#13;</span>
+            var tenant = "@ViewData["tenant"]";<span>&#13;</span>
 
-            var picker = new AadPicker(maxResultsPerPage, input, token, tenant);
+            var picker = new AadPicker(maxResultsPerPage, input, token, tenant);<span>&#13;</span>
 
-            // Submit the selected user/group to be asssigned.
-            $("#submit-button").click({ picker: picker }, function () {
-                if (!picker.Selected())
-                    return;
-                $("#main-form").get()[0].elements["AssignedToID"].value = picker.Selected().objectId;
-            });
-    &lt;/script></mark>}
+            // Submit the selected user/group to be asssigned.<span>&#13;</span>
+            $("#submit-button").click({ picker: picker }, function () {<span>&#13;</span>
+                if (!picker.Selected())<span>&#13;</span>
+                    return;<span>&#13;</span>
+                $("#main-form").get()[0].elements["AssignedToID"].value = picker.Selected().objectId;<span>&#13;</span>
+            });<span>&#13;</span>
+    &lt;/script></mark>}<span>&#13;</span>
     
     	</pre>
    
@@ -344,7 +328,7 @@
 
 15. 打开[包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)并运行 **Enable-migrations-EnableAutomaticMigrations**。与你在将应用发布到 Azure 时选择的选项类似，当你在 Visual Studio 中调试应用时，此命令将帮助你在 [LocalDB](https://msdn.microsoft.com/zh-cn/library/hh510202.aspx) 中更新应用的数据库架构。
 
-15. 现在，在 Visual Studio 调试器中运行应用程序，或者再次发布到 Azure 网站。以应用程序所有者的身份登录并导航到 `https://<webappname>.chinacloudsites.cn/WorkItems/Create`。现在你会发现，你可以从下拉列表中选择 Azure Active Directory 用户或组，或者键入一些内容来筛选列表。
+15. 现在，在 Visual Studio 调试器中运行应用程序，或者再次发布到 Azure Web 应用。以应用程序所有者的身份登录并导航到 `https://<webappname>.chinacloudsites.cn/WorkItems/Create`。现在你会发现，你可以从下拉列表中选择 Azure Active Directory 用户或组，或者键入一些内容来筛选列表。
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/9-create-workitem.png)
 
@@ -360,13 +344,13 @@
 
 ![](./media/web-sites-dotnet-lob-application-azure-ad/11-edit-unauthorized.png)
 
-<a name="bkmk_resources">
+<a name="bkmk_resources"></a>
 ## 其他资源
 
 - [通过 SSL 和 Authorize 属性保护应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
-- [使用 Active Directory 在 Azure 网站中进行身份验证](/documentation/articles/web-sites-authentication-authorization)
-- [在 Azure 网站中创建使用 AD FS 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-adfs)
-- [Windows Azure Active Directory 示例和文档](https://github.com/AzureADSamples)
+- [使用 Active Directory 在 Azure 中进行身份验证](/documentation/articles/web-sites-authentication-authorization)
+- [在 Azure 中创建使用 AD FS 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-adfs)
+- [Azure Active Directory 示例和文档](https://github.com/AzureADSamples)
 - [Vittorio Bertocci 的博客](http://blogs.msdn.com/b/vbertocci/)
 - [将 VS2013 Web 项目从 WIF 迁移到 Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)
 - [Active Directory 与 Azure Active Directory 之间的相似之处](http://technet.microsoft.com/zh-cn/library/dn518177.aspx)

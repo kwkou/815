@@ -1,39 +1,38 @@
 <properties
-	pageTitle="使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机"
-	description="了解如何使用 Azure PowerShell 在 Azure 中创建和预配置基于 Windows 的虚拟机。"
+	pageTitle="使用 Powershell 创建 Windows VM | Azure"
+	description="使用 Azure PowerShell 和经典部署模型创建 Windows 虚拟机。"
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="06/10/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/13/2015"
+	wacn.date="12/31/2015"/>
 
-# 使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机
+# 使用 Powershell 和经典部署模型创建 Windows 虚拟机 
 
 > [AZURE.SELECTOR]
-- [Azure 预览门户](/documentation/articles/virtual-machines-windows-tutorial)
 - [Azure 门户](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
-- [PowerShell: 资源管理器部署](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
-- [PowerShell: 经典部署](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
+- [Powershell - Windows](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
+- [PowerShell - Linux](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] 
+
 
 这些步骤演示了如何使用构建基块方法自定义一组 Azure PowerShell 命令以创建和预配置基于 Windows 的 Azure 虚拟机。可以使用此过程快速创建用于新的基于 Windows 的虚拟机的命令集并扩展现有部署，或者创建多个命令集以快速构建出自定义开发/测试或 IT 专业环境。
 
 这些步骤采用填空方法来创建 Azure PowerShell 命令集。如果你不熟悉 PowerShell 或只想知道为成功的配置指定什么值，则此方法很有用。高级 PowerShell 用户可以使用命令并将变量（以“$”开头的行）替换为他们自己的值。
 
-有关配置基于 Linux 的虚拟机的配套主题，请参阅[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)。
+有关配置基于 Linux 的虚拟机的配套主题，请参阅[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)。
 
-[AZURE.INCLUDE [service-management-pointer-to-resource-manager](../includes/service-management-pointer-to-resource-manager.md)]
-
-- [使用资源管理器和 Azure PowerShell 创建并预配置 Windows 虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
 
 ## 步骤 1：安装 Azure PowerShell
 
-如果你尚未这样做，现在请按[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell) 中的说明在本地计算机上安装 Azure PowerShell。然后，打开 Azure PowerShell 命令提示符。
+如果你尚未这样做，现在请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明在本地计算机上安装 Azure PowerShell。然后，打开 Azure PowerShell 命令提示符。
 
 ## 步骤 2：设置订阅和存储帐户
 
@@ -48,11 +47,7 @@
 
 ## 步骤 3：确定 ImageFamily
 
-接下来，你需要确定与要创建的 Azure 虚拟机对应的特定映像的 ImageFamily 或 Label 值。下面是 Azure 管理门户的库中的一些示例。
-
-![](./media/virtual-machines-ps-create-preconfigure-windows-vms/PSPreconfigWindowsVMs_1.png)
-
-你可以使用此命令获取可用 ImageFamily 值的列表。
+接下来，你需要确定与要创建的 Azure 虚拟机对应的特定映像的 ImageFamily 或 Label 值。你可以使用此命令获取可用 ImageFamily 值的列表。
 
 	Get-AzureVMImage | select ImageFamily -Unique
 
@@ -86,13 +81,13 @@
 选项 1：指定虚拟机名称和大小。
 
 	$vmname="<machine name>"
-	$vmsize="<Specify one: Small, Medium, Large, ExtraLarge, A5, A6, A7, A8, A9>"
+	$vmsize="<Specify one: Small, Medium, Large, ExtraLarge, A5, A6, A7>"
 	$vm1=New-AzureVMConfig -Name $vmname -InstanceSize $vmsize -ImageName $image
 
 选项 2：指定名称、大小和可用性集名称。
 
 	$vmname="<machine name>"
-	$vmsize="<Specify one: Small, Medium, Large, ExtraLarge, A5, A6, A7, A8, A9>"
+	$vmsize="<Specify one: Small, Medium, Large, ExtraLarge, A5, A6, A7>"
 	$availset="<set name>"
 	$vm1=New-AzureVMConfig -Name $vmname -InstanceSize $vmsize -ImageName $image -AvailabilitySetName $availset
 
@@ -113,7 +108,7 @@
 	$domacctdomain="<domain of the account that has permission to add the machine to the domain>"
 	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.GetNetworkCredential().Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain $domacctdomain -DomainUserName $cred2.GetNetworkCredential().Username -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain $domaindns
 
-有关基于 Windows 的虚拟机的其他预配置选项，请参阅 [Add-AzureProvisioningConfig](https://msdn.microsoft.com/zh-CN/library/azure/dn495299.aspx) 中 **Windows** 和 **WindowsDomain** 参数集的语法。
+有关基于 Windows 的虚拟机的其他预配置选项，请参阅 [Add-AzureProvisioningConfig](https://msdn.microsoft.com/zh-cn/library/azure/dn495299.aspx) 中 **Windows** 和 **WindowsDomain** 参数集的语法。
 
 （可选）为虚拟机分配一个特定 IP 地址（称为静态 DIP）。
 
@@ -144,8 +139,8 @@
 	$pubport=<port number of the external port>
 	$endpointname="<name of the endpoint>"
 	$lbsetname="<name of the existing load-balanced set>"
-	$probeprotocol="<Specify one: tcp, udp>"
-	$probeport=<TCP or UDP port number of probe traffic>
+	$probeprotocol="<Specify one: tcp, http>"
+	$probeport=<TCP or HTTP port number of probe traffic>
 	$probepath="<URL path for probe traffic>"
 	$vm1 | Add-AzureEndpoint -Name $endpointname -Protocol $prot -LocalPort $localport -PublicPort $pubport -LBSetName $lbsetname -ProbeProtocol $probeprotocol -ProbePort $probeport -ProbePath $probepath
 
@@ -155,7 +150,7 @@
 
 	New-AzureVM –ServiceName "<short name of the cloud service>" -VMs $vm1
 
-云服务的短名称是 Azure 管理门户的云服务列表中或 Azure 预览版门户的资源组列表中显示的名称。
+云服务的短名称是在 Azure 门户的云服务列表中或 Azure 门户的资源组列表中显示的名称。
 
 选项 2：在现有的云服务和虚拟网络中创建虚拟机。
 
@@ -172,7 +167,7 @@
 如果你要再次创建此虚拟机或类似的虚拟机，则可以：
 
 - 将此命令集保存为 PowerShell 脚本文件 (*.ps1)。
-- 在 Azure 管理门户的“自动化”部分中将此命令集保存为 Azure Automation Runbook。
+- 在 Azure 门户的“自动化”部分中将此命令集保存为 Azure 自动化 Runbook。
 
 ## <a id="examples"></a>示例
 
@@ -257,14 +252,10 @@
 
 [虚拟机文档](/documentation/services/virtual-machines/)
 
-[Azure 虚拟机常见问题](https://msdn.microsoft.com/zh-CN/library/azure/dn683781.aspx)
+[Azure 虚拟机常见问题](/documentation/articles/virtual-machines-questions/)
 
-[Azure 虚拟机概述](https://msdn.microsoft.com/zh-CN/library/azure/jj156143.aspx)
+[Azure 虚拟机概述](/documentation/articles/virtual-machines-about/)
 
-[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
+[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 
-[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
-
-[使用资源管理器和 Azure PowerShell 创建并预配置 Windows 虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
-
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1221_2015-->

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="将虚拟网络链接到 ExpressRoute 线路 | Windows Azure"
+   pageTitle="将虚拟网络链接到 ExpressRoute 线路 | Microsoft Azure"
    description="本文档概述了如何将虚拟网络 (VNet) 链接到 ExpressRoute 线路。"
    services="expressroute"
    documentationCenter="na"
@@ -9,25 +9,30 @@
    tags="azure-service-management"/>
 <tags 
    ms.service="expressroute"
-   ms.date="09/21/2015"
-   wacn.date="11/02/2015" />
+   ms.date="01/16/2016"
+   wacn.date="03/17/2016" />
 
 # 将 VNet 链接到 ExpressRoute 线路
 
-本文概述了如何将虚拟网络 (VNet) 链接到 ExpressRoute 线路。虚拟网络可以在同一个订阅中，也可以属于另一个订阅。本文适用于使用典型部署模型部署的 VNet。
+> [AZURE.SELECTOR]
+- [PowerShell - 经典](/documentation/articles/expressroute-howto-linkvnet-classic)
+- [PowerShell - 资源管理器](/documentation/articles/expressroute-howto-linkvnet-arm)  
+- [模板 - Azure 资源管理器](https://github.com/Azure/azure-quickstart-templates/tree/ecad62c231848ace2fbdc36cbe3dc04a96edd58c/301-expressroute-circuit-vnet-connection)
 
->[AZURE.IMPORTANT]请务必了解 Azure 当前使用两种部署模型：资源管理器和经典部署模型。在开始你的配置之前，请确保你了解部署模型和工具。
+本文概述了如何将虚拟网络 (VNet) 链接到 ExpressRoute 线路。虚拟网络可以在同一个订阅中，也可以属于另一个订阅。本文适用于使用经典部署模型部署的 VNet。如果你想要链接使用 Azure 资源管理器部署模型部署的虚拟网络，请参阅[将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)。
+
+[AZURE.INCLUDE [vpn-gateway-sm-rm](../includes/vpn-gateway-sm-rm-include.md)] 
 
 ## 配置先决条件
 
-- 你将需要最新版本的 Azure PowerShell 模块。可以从 [Azure 下载页](/downloads)的 PowerShell 部分下载最新 PowerShell 模块。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 页上的说明操作，以便获取有关如何配置计算机以使用 Azure PowerShell 模块的分步指导。 
-- 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites)页、<!--[-->路由要求<!--](/documentation/articles/expressroute-routing)-->页和<!--[-->工作流<!--](/documentation/articles/expressroute-workflows)-->页。
+- 你将需要最新版本的 Azure PowerShell 模块。可以从 [Azure 下载页](/downloads/)的 PowerShell 部分下载最新 PowerShell 模块。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 页上的说明操作，以便获取有关如何配置计算机以使用 Azure PowerShell 模块的分步指导。 
+- 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites)页、[路由要求](/documentation/articles/expressroute-routing)页和[工作流](/documentation/articles/expressroute-workflows)页。
 - 你必须有一个活动的 ExpressRoute 线路。 
 	- 请按说明[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)，并通过连接提供商启用该线路。 
-	- 请确保为线路配置 Azure 专用对等互连。<!--如需路由说明，请参阅[配置路由](/documentation/articles/expressroute-howto-routing-classic)一文。-->
+	- 请确保为线路配置 Azure 专用对等互连。如需路由说明，请参阅[配置路由](/documentation/articles/expressroute-howto-routing-classic)一文。 
 	- 若要启用端到端连接，必须配置 Azure 专用对等互连并运行你的网络和 Microsoft 之间的 BGP 对等互连。
 
-最多可以将 10 个 VNet 链接到一条 ExpressRoute 线路。所有 ExpressRoute 线路必须位于同一个地理政治区域。如果你启用了 ExpressRoute 高级版外接程序，则可将更多数量的虚拟网络连接到 ExpressRoute 线路。有关高级版外接程序的更多详细信息，请参阅[常见问题](/documentation/articles/expressroute-faqs)。
+最多可以将 10 个 VNet 链接到一条 ExpressRoute 线路。所有 ExpressRoute 线路必须位于同一个地理政治区域。
 
 ## 将同一 Azure 订阅中的 VNet 链接到 ExpressRoute 线路
 
@@ -131,7 +136,7 @@
 
 线路用户可以通过运行以下 cmdlet 来兑现链接授权。
 
-	PS C:\> New-AzureDedicatedCircuitLink ¨Cservicekey "&&&&&&&&&&&&&&&&&&&&&&&&&&" -VnetName 'SalesVNET1' 
+	PS C:\> New-AzureDedicatedCircuitLink -servicekey "&&&&&&&&&&&&&&&&&&&&&&&&&&" -VnetName 'SalesVNET1' 
 		
 	State VnetName 
 	----- -------- 
@@ -141,4 +146,4 @@
 
 有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0104_2016-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="配合使用 Azure CLI 和服务管理 | Windows Azure"
+	pageTitle="配合使用 Azure CLI 和服务管理 | Azure"
 	description="了解如何使用适用于 Mac、Linux 和 Windows 的命令行工具，在经典（Azure 服务管理）模式下使用 Azure CLI 管理 Azure。"
 	services="virtual-machines, mobile-services, cloud-services"
 	documentationCenter=""
@@ -11,13 +11,14 @@
 <tags
 	ms.service="multiple"
 	ms.date="10/07/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="02/17/2016"/>
 
 # 将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。你还可以使用[资源管理器部署模型](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
-本文介绍如何在服务管理模式（asm 模式）下使用 Azure CLI 在 Mac、Linux 和 Windows 计算机的命令行中创建、管理和删除服务。你可以使用 Azure SDK 的各种库、Azure PowerShell 和 Azure 门户执行许多相同的任务。在服务管理模式下使用 Azure 服务从概念上讲类似于创建和管理各个 Azure 概念和服务（如网站、虚拟机、虚拟网络、存储器等）。
+
+本文介绍如何在服务管理模式（asm 模式）下使用 Azure CLI 在 Mac、Linux 和 Windows 计算机的命令行中创建、管理和删除服务。你可以使用 Azure SDK 的各种库、Azure PowerShell 和 Azure 门户执行许多相同的任务。在服务管理模式下使用 Azure 服务从概念上讲类似于创建和管理各个 Azure 概念和服务（如 Web 应用、虚拟机、虚拟网络、存储器等）。
 
 > [AZURE.NOTE]
 若要开始使用，首先[安装 Azure CLI](/documentation/articles/xplat-cli-install)，并[登录以使用与你的帐户关联的 Azure 资源](/documentation/articles/xplat-cli-connect)。
@@ -168,8 +169,8 @@
 	~$ azure account env show
 	info:    Executing command account env show
 	Environment name: AzureCloud
-	data:    Environment publishingProfile  <!--http://go.microsoft.com/fwlink/?LinkId=2544--><!--??????cannot be found -->
-	data:    Environment portal  <!--http://go.microsoft.com/fwlink/?LinkId=2544--><!--??????cannot be found -->
+	data:    Environment publishingProfile  http://go.microsoft.com/fwlink/?LinkId=2544
+	data:    Environment portal  http://go.microsoft.com/fwlink/?LinkId=2544
 	info:    account env show command OK
 
 **account env add [options] [environment]**
@@ -211,14 +212,17 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 **-n, --vm-name** 指定虚拟机的名称。默认情况下，此参数采用托管服务名称。如果未指定 -vmname，将生成 &lt;service-name>&lt;id> 形式的新虚拟机名称，其中 &lt;id> 是服务中现有虚拟机的数量加上 1。例如，如果你使用此命令向拥有一个现有虚拟机的托管服务 MyService 中添加新虚拟机，则会将新虚拟机命名为 MyService2。<br /> 
 **-u, --blob-url** 指定从中创建虚拟机系统磁盘的目标 Blob 存储 URL。<br /> 
 **-z, --vm-size** 指定虚拟机的大小。有效值为：
-“ExtraSmall”、“Small”、“Medium”、“Large”、“ExtraLarge”、“A5”、“A6”、“A7”、“A8”、“A9”、“A10”、“A11”、“Basic\_A0”、“Basic\_A1”、“Basic\_A2”、“Basic\_A3”、“Basic\_A4”、“Standard\_D1”、“Standard\_D2”、“Standard\_D3”、“Standard\_D4”、“Standard\_D11”、“Standard\_D12”、“Standard\_D13”、“Standard\_D14”、“Standard\_DS1”、“Standard\_DS2”、“Standard\_DS3”、“Standard\_DS4”、“Standard\_DS11”、“Standard\_DS12”、“Standard\_DS13”、“Standard\_DS14”、“Standard\_G1”、“Standard\_G2”、“Standard\_G3”、“Standard\_G4”、“Standard_G55”。默认值为“Small”。<br /> 
+“ExtraSmall”、“Small”、“Medium”、“Large”、“ExtraLarge”、“A5”、“A6”、“A7”、“A8”、“A9”、“A10”、“A11”、“Basic\_A0”、“Basic\_A1”、“Basic\_A2”、  
+“Basic\_A3”、“Basic\_A4”、“Standard\_D1”、“Standard\_D2”、“Standard\_D3”、“Standard\_D4”、“Standard\_D11”、“Standard\_D12”、“Standard\_D13”、  
+“Standard\_D14”、“Standard\_DS1”、“Standard\_DS2”、“Standard\_DS3”、“Standard\_DS4”、“Standard\_DS11”、“Standard\_DS12”、“Standard\_DS13”、  
+“Standard\_DS14”、“Standard\_G1”、“Standard\_G2”、“Standard\_G3”、“Standard\_G4”、“Standard_G55”。默认值为“Small”。<br /> 
 **-r** 添加到 Windows 虚拟机的 RDP 连接。<br />
 **-e, --ssh** 添加到 Windows 虚拟机的 SSH 连接。<br /> 
 **-t, --ssh-cert** 指定 SSH 证书。<br /> 
 **-s** 订阅。<br /> 
 **-o, --community** 指定的映像是社区映像。<br /> 
 **-w** 虚拟网络名称。<br/> 
-**-l, --location** 指定位置（例如，“North Central China”）。<br /> 
+**-l, --location** 指定位置（例如，“China North”）。<br /> 
 **-a, --affinity-group** 指定地缘组。<br /> 
 **-w, --virtual-network-name** 指定要在其中添加新虚拟机的虚拟网络。可从 Azure 门户设置和管理虚拟网络。<br /> 
 **-b, --subnet-names** 指定要分配虚拟机的子网名称。
@@ -256,7 +260,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 	info:   Executing command vm location list
 	data:   Name                   Display Name
 	data:   ---------------------  ------------
-	data:   Azure Preview  North US
+	data:   Azure Preview  China North
 	info:   account location list command OK
 
 **vm show [options] &lt;name>**
@@ -317,11 +321,11 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
 此命令关闭 Azure 虚拟机。可以使用 -p 选项指定在关闭时不释放计算资源。
 
-```
-~$ azure vm shutdown my-vm
-info:   Executing command vm shutdown
-info:   vm shutdown command OK  
-```
+	
+	~$ azure vm shutdown my-vm
+	info:   Executing command vm shutdown
+	info:   vm shutdown command OK  
+	
 
 **vm capture &lt;vm-name> &lt;target-image-name>**
 
@@ -458,7 +462,7 @@ info:   vm shutdown command OK
 	data:       Label: 'Windows Server 2008 R2 SP1, Nov 2011',
 	data:       Name: 'MSFT__Windows-Server-2008-R2-SP1.11-29-2011',
 	data:       Description: 'Microsoft Windows Server 2008 R2 SP1',
-	data:       @: { xmlns: 'http://schemas.microsoft.cn/windowsazure', xmlns:i: 'http://www.w3.org/2001/XMLSchema-instance' },
+	data:       @: { xmlns: 'http://schemas.microsoft.com/windowsazure', xmlns:i: 'http://www.w3.org/2001/XMLSchema-instance' },
 	data:       Category: 'Microsoft',
 	data:       OS: 'Windows',
 	data:       Eula: 'http://www.microsoft.com',
@@ -490,7 +494,7 @@ info:   vm shutdown command OK
 	info:   http://myaccount.blob.core.azure.com/vm-images/Sample.vhd is uploaded successfully
 	info:   vm image create command OK
 
-## 用于管理 Azure 虚拟机数据磁盘的命令
+##<a name="commands-to-manage-your-azure-virtual-machine-data-disks"></a> 用于管理 Azure 虚拟机数据磁盘的命令
 
 数据磁盘是 Blob 存储中可供虚拟机使用的 .vhd 文件。有关如何将数据磁盘部署到 Blob 存储的详细信息，请参阅前面所示的 Azure 技术图表。
 
@@ -696,7 +700,7 @@ Azure 服务证书是连接到你的 Azure 帐户的 SSL 证书。有关 Azure �
 
 ## 用于管理 Web 应用的命令
 
-Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机中托管，但你无需自己考虑创建和部署虚拟机的详细步骤。这些详细步骤将由 Azure 为你完成。
+Azure Web 应用是可通过 URI 访问的 Web 配置。 Web 应用在虚拟机中托管，但你无需自己考虑创建和部署虚拟机的详细步骤。这些详细步骤将由 Azure 为你完成。
 
 **site list [options]**
 
@@ -713,7 +717,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site set [options] [name]**
 
-此命令将设置你的 Web 应用 [名称] 的配置选项
+此命令将设置你的 Web 应用[名称] 的配置选项
 
 	~$ azure site set
 	info:    Executing command site set
@@ -994,7 +998,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site job list [options] [name]**
 
-此命令列出某个Web 应用下的所有 Web 作业。
+此命令列出某个 Web 应用下的所有 Web 作业。
 
 此命令支持以下附加选项：
 
@@ -1891,7 +1895,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 + **-d** 或 **--description** &lt;description>：存储帐户的说明。
 + **-l** 或 **--location** &lt;name>：要在其中创建存储帐户的地理区域。
 + **-a** 或 **--affinity-group** &lt;name>：要与存储帐户关联的地缘组。
-+ **--type**：指示要创建的帐户的类型：带冗余选项的标准存储 (LRS/ZRS/GRS/RAGRS) 或高级存储 (PLRS)。
++ **--type**：指示要创建的帐户的类型：带冗余选项的标准存储 (LRS/GRS/RAGRS) 或高级存储 (PLRS)。
 
 **storage account set [options] <name>**
 
@@ -1907,7 +1911,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 + **-e** 或 **--label** &lt;label>：存储帐户的标签。
 + **-d** 或 **--description** &lt;description>：存储帐户的说明。
 + **-l** 或 **--location** &lt;name>：要在其中创建存储帐户的地理区域。
-+ **--type**：指示帐户的新类型：带冗余选项的标准存储 (LRS/ZRS/GRS/RAGRS) 或高级存储 (PLRS)。
++ **--type**：指示帐户的新类型：带冗余选项的标准存储 (LRS/GRS/RAGRS) 或高级存储 (PLRS)。
 
 **storage account delete [options] <name>**
 

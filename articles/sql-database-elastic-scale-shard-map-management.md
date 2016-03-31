@@ -1,19 +1,20 @@
 <properties 
-	pageTitle="分片映射管理" 
+	pageTitle="分片映射管理 | Azure" 
 	description="如何使用弹性数据库客户端库 ShardMapManager" 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
-	authors="sidneyh" 
+	authors="ddove" 
 	editor=""/>
 
 <tags 
-	ms.service="sql-database" 
-	ms.date="07/24/2015" 
-	wacn.date="09/15/2015"/>
+	ms.service="sql-database"
+	ms.date="11/04/2015" 
+	wacn.date="01/05/2016"/>
 
 # 分片映射管理
-在分片数据库环境中，**分片映射**将维护相关信息，以便应用程序可以根据**分片键**的值连接到相应的数据库。若要管理弹性数据库客户端库中的分片，了解这些映射的构造方式至关重要。
+
+使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)管理分片应用程序。在分片数据库环境中，[**分片映射**](/documentation/articles/sql-database-elastic-scale-glossary)将维护相关信息，以便应用程序可以根据**分片键**的值连接到相应的数据库。了解如何构建这些映射对于分片映射管理至关重要。
 
 ## 分片映射
  
@@ -102,6 +103,7 @@
         // for privileges on both the GSM and the shards themselves.
     } 
  
+你可以使用 Powershell 作为替代方法来创建新的分片映射管理器。[此处](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db)提供了一个示例。
 
 ### 分片映射管理凭据
 
@@ -195,7 +197,7 @@
             } 
         } 
  
-使用 PowerShell 脚本也可达到相同的结果。
+使用 PowerShell 脚本也可达到相同的结果。[此处](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db)提供了某些 PowerShell 示例。
 
 填充完分片映射后，即可创建或改编数据访问应用程序，以便使用这些映射。在需要更改**映射布局**之前，无需重新填充或操作映射。
 
@@ -246,5 +248,6 @@
 但是，在需要移动数据的情况下，需要拆分/合并工具并结合使用必要的分片映射更新，才能安排在分片之间移动数据。有关使用拆分/合并工具的详细信息，请参阅[拆分/合并概述](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
+ 
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_1221_2015-->

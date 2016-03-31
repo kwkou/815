@@ -10,7 +10,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="08/17/2015"
-   wacn.date="10/22/2015"/>
+   wacn.date="01/15/2016"/>
 
 # Azure 门户的 HDInsight 文章索引
 
@@ -67,13 +67,13 @@
 ## 可扩展性
 
 * [使用 Azure 虚拟网络扩展 HDInsight 功能](/documentation/articles/hdinsight-extend-hadoop-virtual-network)
-* [使用 HDInsight 群集上的 Giraph 处理大型图形](/documentation/articles/hdinsight-hadoop-giraph-install)
+* [使用 HDInsight 群集上的 Giraph 处理大型图形](/documentation/articles/hdinsight-hadoop-giraph-install-v1)
 * [在 Hadoop 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1)
 
 ## 操作
 
 * [在 Windows 上预配群集](/documentation/articles/hdinsight-provision-clusters-v1)
-* [在 Azure 虚拟网络上设置 HBase 群集](/documentation/articles/hdinsight-hbase-provision-vnet)
+* [在 Azure 虚拟网络上设置 HBase 群集](/documentation/articles/hdinsight-hbase-provision-vnet-v1)
 * [使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)
 * [HDInsight 中 Hadoop 群集的可用性和可靠性](/documentation/articles/hdinsight-high-availability)
 
@@ -90,6 +90,6 @@
 * [收集堆转储](/documentation/articles/hdinsight-hadoop-collect-debug-heap-dumps)
 * [访问应用程序日志](/documentation/articles/hdinsight-hadoop-access-yarn-app-logs)
 * [解释错误消息](/documentation/articles/hdinsight-debug-jobs)
-* [在论坛上获取帮助](https://social.msdn.microsoft.com/forums/azure/home?forum=hdinsight)
+* [在论坛上获取帮助](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hdinsight)
 
 <!---HONumber=74-->

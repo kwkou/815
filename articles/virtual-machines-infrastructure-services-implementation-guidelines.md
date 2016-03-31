@@ -10,10 +10,12 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/09/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/21/2015"
+	wacn.date="12/17/2015"/>
 
 # Azure 基础结构服务实施准则
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 Azure 是一个实现开发/测试或概念证明配置的极好平台，因为它只需很少的投资即可测试实现你的解决方案的特定方法。但是，你必须能够将用于开发/测试环境的简便做法与用于全功能生产就绪的 IT 工作负荷实现的更难且更详细的做法区分开来。
 
@@ -21,7 +23,7 @@ Azure 是一个实现开发/测试或概念证明配置的极好平台，因为�
 
 本文改编自 [Azure 实现指导原则](http://blogs.msdn.com/b/thecolorofazure/archive/2014/05/13/azure-implementation-guidelines.aspx)这篇博客文章中的内容。感谢 Santiago Cánepa（Microsoft 应用程序开发经理）和 Hugo Salcedo（Microsoft 应用程序开发经理）提供的原创内容。
 
-> [AZURE.NOTE]地缘组已弃用。此处不介绍其用法。有关详细信息，请参阅[关于区域虚拟网络和地缘组](https://msdn.microsoft.com/zh-CN/library/azure/jj156085.aspx)。
+> [AZURE.NOTE]地缘组已弃用。此处不介绍其用法。有关详细信息，请参阅[关于区域虚拟网络和地缘组](/documentation/articles/virtual-networks-migrate-to-regional-vnet)。
 
 ## 1\.命名约定
 
@@ -54,7 +56,7 @@ Azure 是一个实现开发/测试或概念证明配置的极好平台，因为�
 Azure 组件、服务或产品 | Rg 用于资源组，Svc 用于云服务，VNet 用于虚拟网络 | 根据资源提供支持的产品。
 角色 | sql、ora、sp、iis | 根据虚拟机的角色。
 实例 | 01、02、03 等。 | 适用于具有多个实例的资源。例如，云服务中经过负载平衡的 Web 服务器。
-		
+
 建立命名约定时，请确保这些命名约定明确说明要对每种类型的资源使用哪些词缀，以及在哪个位置使用（前缀还是后缀）。
 
 ### 日期
@@ -82,11 +84,11 @@ Azure 组件、服务或产品 | Rg 用于资源组，Svc 用于云服务，VNet
 
 ### 计算机名称
 
-当管理员创建虚拟机时，Windows Azure 将要求他们提供至多为 15 个字符的虚拟机名称。Azure 使用虚拟机名称作为 Azure 虚拟机资源名称。Azure 使用同一名称作为虚拟机上安装的操作系统的计算机名称。但是，这些名称可能并非始终相同。
+当管理员创建虚拟机时，Azure 将要求他们提供至多为 15 个字符的虚拟机名称。Azure 使用虚拟机名称作为 Azure 虚拟机资源名称。Azure 使用同一名称作为虚拟机上安装的操作系统的计算机名称。但是，这些名称可能并非始终相同。
 
 如果使用已包含操作系统的 .vhd 映像文件创建虚拟机，Azure 中的虚拟机名称可能不同于虚拟机的操作系统计算机名称。这种情况可能会增加虚拟机管理难度，因此不建议使用这种方法。分配给 Azure 虚拟机资源的名称可以与分配给该虚拟机的操作系统的计算机名称相同。
 
-我们建议 Azure 虚拟机名称应该与基础 OS 计算机名称相同。因此，请遵循 [Microsoft NetBIOS 计算机命名约定](https://support.microsoft.com/zh-CN/kb/188997)中所述的 NetBIOS 命名规则。
+我们建议 Azure 虚拟机名称应该与基础操作系统计算机名称相同。因此，请遵循 [Microsoft NetBIOS 计算机命名约定](https://support.microsoft.com/zh-CN/kb/188997)中所述的 NetBIOS 命名规则。
 
 ### 存储帐户名称
 
@@ -96,7 +98,6 @@ Azure 组件、服务或产品 | Rg 用于资源组，Svc 用于云服务，VNet
 - mystorageaccount.table.core.chinacloudapi.cn
 - mystorageaccount.queue.core.chinacloudapi.cn
 
-此外，存储帐户还可以利用容器。这些项必须遵守[命名和引用容器、Blob 和元数据](https://msdn.microsoft.com/zh-CN/library/azure/dd135715.aspx)中所述的命名约定。
 
 ### Azure 构建基块名称
 
@@ -156,7 +157,7 @@ Azure 存储空间是许多 Azure 解决方案不可或缺的组成部分。Azur
 
 Azure 提供两种类型的存储帐户。标准存储帐户可以访问 Blob 存储（用于存储 Azure 虚拟机磁盘）、表存储、队列存储和文件存储。高级存储专为高性能应用程序（例如 AlwaysOn 群集中的 SQL Server）设计，当前仅支持 Azure 虚拟机磁盘。
 
-存储帐户将绑定到可伸缩性目标。要熟悉当前 Azure 存储空间限制，请参阅 <!--[-->Windows Azure 订阅和服务限制、配额和约束<!--](/documentation/articles/azure-subscription-service-limits#storage-limits)-->。另请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
+存储帐户将绑定到可伸缩性目标。要熟悉当前 Azure 存储空间限制，请参阅 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits#storage-limits)。另请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
 
 Azure 使用一个操作系统磁盘、一个临时磁盘和零个或更多可选数据磁盘创建虚拟机。操作系统磁盘和数据磁盘是 Azure 页 blob，而临时磁盘则通过本地方式存储在计算机所在的节点上。这使得临时磁盘不适用于在系统回收过程中必须保留的数据，因为计算机可能会以无提示方式从一个节点迁移到另一个节点，从而丢失该磁盘中的任何数据。不要在临时驱动器上存储任何内容。
 
@@ -165,7 +166,7 @@ Azure 使用一个操作系统磁盘、一个临时磁盘和零个或更多可�
 ### 条带化的磁盘
 除了提供相关功能来创建大于 1023 GB 的磁盘外，在许多情况下，对数据磁盘使用条带化还可增强性能，因为允许多个 blob 支持单个卷的存储。使用条带化时，将会并行处理针对单个逻辑磁盘写入和读取数据所需的 I/O。
 
-Azure 将对可用的数据磁盘量和带宽加以限制，具体取决于虚拟机大小。有关详细信息，请参阅 [虚拟机大小](https://msdn.microsoft.com/zh-CN/library/azure/dn197896.aspx)。
+Azure 将对可用的数据磁盘量和带宽加以限制，具体取决于虚拟机大小。有关详细信息，请参阅 [虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
 
 如果要对 Azure 数据磁盘使用磁盘条带化，请考虑以下准则：
 
@@ -199,7 +200,7 @@ Azure 将对可用的数据磁盘量和带宽加以限制，具体取决于虚�
 
 任务：
 
-- 使用命名约定创建存储帐户集。可以使用 Azure 预览门户、Azure 门户或 **New-AzureStorageAccount** PowerShell cmdlet。
+- 使用命名约定创建存储帐户集。可以使用 Azure 门户或 **New-AzureStorageAccount** PowerShell cmdlet。
 
 ## 4\.云服务
 
@@ -207,13 +208,13 @@ Azure 将对可用的数据磁盘量和带宽加以限制，具体取决于虚�
 
 对于 IaaS，云服务提供类似的功能，虽然在大多数情况下，负载平衡器功能用于将流量转发到 Internet 上的特定 TCP 或 UDP 端口，再转发到该云服务中的多个虚拟机。
 
-> [AZURE.NOTE]云服务不存在于 Azure 资源管理器中。有关资源管理器优点的简介，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
+> [AZURE.NOTE]云服务不存在于 Azure 资源管理器中。
 
 云服务名称在 IaaS 中尤其重要，因为 Azure 将使用它们作为磁盘的默认命名约定的一部分。云服务名称只能包含字母、数字和连字符。该字段中的第一个和最后一个字符必须是字母或数字。
 
 Azure 将公开云服务名称，因为这些名称会关联到域“chinacloudapp.cn”中 VIP。为了改善应用程序的用户体验，应根据需要配置虚名称来替换完全限定的云服务名称。这通常使用公共 DNS 中将资源的公共 DNS 名称（例如，www.contoso.com）映射到托管资源的云服务（例如，托管 www.contoso.com 的 Web 服务器的云服务）的 DNS 名称的 CNAME 记录完成。
 
-此外，用于云服务的命名约定可能需要允许例外，因为云服务名称必须在所有其他 Windows Azure 云服务中唯一，而不考虑 Windows Azure 租户。
+此外，用于云服务的命名约定可能需要允许例外，因为云服务名称必须在所有其他 Azure 云服务中唯一，而不考虑 Azure 租户。
 
 对于云服务中的所有虚拟机来说，一项需要考虑的云服务限制是：一次只能执行一项虚拟机管理操作。当你在云服务中的一台虚拟机上执行虚拟机管理操作时，你必须等待该操作完成，然后才能在另一台虚拟机上执行新的管理操作。因此，云服务中虚拟机的数量应保持在较低的水平。
 
@@ -285,7 +286,7 @@ Azure 订阅最多可以支持 200 个云服务。
 - 定义用于虚拟网络的地址空间。
 - 定义子网集和每个子网的地址空间。
 - 对于跨界虚拟网络，定义虚拟网络中的虚拟机需要访问的本地位置的本地网络地址空间集。
-- 使用命名约定创建虚拟网络。可以使用 Azure 预览门户或 Azure 门户。
+- 使用命名约定创建虚拟网络。可以使用Azure 门户。
 
 ## 6\.可用性集
 
@@ -324,7 +325,7 @@ Azure 订阅最多可以支持 200 个云服务。
 任务：
 
 - 使用命名约定定义每个虚拟机名称。
-- 使用 Azure 预览门户、Azure 门户、**New-AzureVM** PowerShell cmdlet、Azure CLI，或使用资源管理器模板创建虚拟机。
+- 使用 Azure 门户、**New-AzureVM** PowerShell cmdlet 或使 Azure CLI。
 
 ## IT 工作负荷的示例：Contoso 财务分析引擎
 
@@ -372,7 +373,7 @@ Contoso 确定他们需要以下两个存储帐户：
 
 由于该虚拟网络不需要持续连接到 Contoso 本地网络，Contoso 决定选择仅限云的虚拟网络。
 
-他们通过 Azure 预览门户使用以下设置创建了仅限云的虚拟网络：
+他们通过 Azure 门户使用以下设置创建了仅限云的虚拟网络：
 
 - 名称：AZFAE-USE-VN01
 - 位置：中国东部
@@ -425,16 +426,15 @@ Contoso 决定将以下名称用于其 Azure 虚拟机：
 
 ## 其他资源
 
-[Windows Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits#storage-limits)
+[Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits#storage-limits)
 
 [虚拟机的大小](/documentation/articles/virtual-machines-size-specs)
 
 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)
 
-<!--[云平台集成框架（Azure 体系结构模式）](/documentation/articles/azure-architectures-cpif-overview)-->
+[云平台集成框架（Azure 体系结构模式）](/documentation/articles/azure-architectures-cpif-overview)
 
 [数据中心扩展参考体系结构关系图](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84)
 
-[Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1207_2015-->

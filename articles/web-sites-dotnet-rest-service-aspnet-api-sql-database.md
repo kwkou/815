@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure 网站中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务" 
-	description="本教程将向你介绍如何通过使用 Visual Studio 将使用 ASP.NET Web API 的应用部署到 Azure Web 应用。" 
+	pageTitle="在 Azure Web 应用中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务" 
+	description="本教程将向您介绍如何通过使用 Visual Studio 将使用 ASP.NET Web API 的应用程序部署到 Azure Web 应用。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="Rick-Anderson" 
@@ -8,14 +8,14 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.date="08/31/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="12/04/2015"
+	wacn.date="01/29/2016"/>
 
-# 在 Azure 网站中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务
+# 在 Azure Web 应用中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务
 
-本教程将向你介绍如何使用 Visual Studio 2013 或 Visual Studio 2013 for Web Express 中的“发布 Web”向导将 ASP.NET Web 应用部署到 Azure 网站。
+本教程介绍如何使用 Visual Studio 2013 或 Visual Studio 2013 Community Edition 中的“发布 Web”向导将 ASP.NET Web 应用部署到 [Azure Web 应用](/documentation/services/web-sites/)。
 
 你可以免费注册一个 Azure 帐户，而且，如果你还没有 Visual Studio 2013，则此 SDK 会自动安装 Visual Studio 2013 for Web Express。这样你就能够完全免费地开始针对 Azure 进行开发了。
 
@@ -29,56 +29,27 @@
 * 如何使用 SQL 数据库在 Azure 中存储数据。
 * 如何将应用程序更新发布到 Azure。
 
-你将生成一个简单的联系人列表 Web 应用程序，该应用程序基于 ASP.NET MVC 5 构建并使用 ADO.NET Entity Framework 进行数据库访问。下图演示了完整的应用程序：
+你将生成一个简单的联系人列表 Web 应用，该 Web 应用基于 ASP.NET MVC 5 构建并使用 ADO.NET Entity Framework 进行数据库访问。下图演示了完整的应用程序：
 
-![网站屏幕截图][intro001]本教程的内容：
+![ Web 应用屏幕截图][intro001]
 
-* [设置开发环境][setupdbenv]
-* [设置 Azure 环境][setupwindowsazureenv]
-* [创建 ASP.NET MVC 5 应用程序][createapplication]
-* [将应用程序部署到 Azure][deployapp1]
-* [向应用程序添加数据库][adddb]
-* [为数据添加控制器和视图][addcontroller]
-* [添加 Web API Restful 接口][addwebapi]
-* [添加 XSRF 保护][]
-* [将应用程序更新发布到 Azure 和 SQL 数据库][deploy2]
-
-<a name="bkmk_setupdevenv"></a> 
-<!-- the next line produces the "Set up the development environment" section as see at http://www.windowsazure.cn/documentation/articles/web-sites-dotnet-get-started/ -->
-[WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 ### 创建项目
 
 1. 启动 Visual Studio 2013。
 1. 在“文件”菜单中，单击“新建项目”。
-3. 在“新建项目”对话框中，展开“Visual C#”并选择“Web”，然后选择“ASP.NET MVC 5 Web 应用程序”。将该应用程序命名为 **ContactManager**，然后单击“确定”。
+3. 在“新建项目”对话框中，展开“Visual C#”并选择“Web”，然后选择“ASP.NET Web 应用”。将该应用程序命名为 **ContactManager**，然后单击“确定”。
 
-	![“新建项目”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr4.PNG)]
+	![“新建项目”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr4.png)
 
-1. 在“新建 ASP.NET 项目”对话框中，选择“MVC”模板，选中“Web API”，然后单击“更改身份验证”。
+1. 在“新建 ASP.NET 项目”对话框中，选择“MVC”模板，选中“Web API”，确保“在云中托管”处于未选中状态，然后单击“确定”。
 
-	![“新建 ASP.NET 项目”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.PNG)
+	![“新建 ASP.NET 项目”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.png)
 
-1. 在“更改身份验证”对话框中，单击“无身份验证”，然后单击“确定”。
+如果你在 Azure 中还没有 Web 应用，则可以转到 [Azure 管理门户](http://manage.windowsazure.cn)创建一个。创建 Web 应用后，请转到“仪表板”，在“速览”下可以下载发布配置文件。在本文的发布部分中，你将需要它。
 
-	![无身份验证](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/GS13noauth.png)
-
-	你要创建的示例应用程序没有需要用户登录的功能。有关如何实现身份验证和授权功能的信息，请参阅本教程末尾的[后续步骤](#nextsteps)部分。
-
-1. 在“新建 ASP.NET 项目”对话框中，单击“确定”。
-
-	![“新建 ASP.NET 项目”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.PNG)
-
-如果你事先未登录 Azure，系统会提示你登录。
-
-1. 配置向导将根据 *ContactManager* 建议唯一名称（参阅下图）。选择你附近的区域。可以使用 [azurespeed.com](http://www.azurespeed.com/ "AzureSpeed.com") 查找延迟最低的数据中心。 
-2. 如果你以前未创建过数据库服务器，请选择“创建新服务器”，并输入数据库用户名和密码。
-
-	![配置 Azure 网站](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/configAz.PNG)
-
-如果你有数据库服务器，请使用它来创建新的数据库。数据库服务器是非常宝贵的资源，而且你通常会想要在同一台服务器上创建多个数据库来进行测试和开发，而不是在每个数据库中各创建一个数据库服务器。请确保你的网站和数据库位于相同区域中。
-
-![配置 Azure 网站](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/configWithDB.PNG)
+如果你有数据库服务器，请使用它来创建新的数据库。数据库服务器是非常宝贵的资源，而且你通常会想要在同一台服务器上创建多个数据库来进行测试和开发，而不是在每个数据库中各创建一个数据库服务器。请确保你的 Web 应用和数据库位于相同区域中。
 
 ### 设置页眉和页脚
 
@@ -130,7 +101,10 @@
 
 ### 在本地运行应用程序
 
-1. 按 Ctrl+F5 运行应用程序。随后在默认浏览器中显示该应用程序主页。![到待办事项列表主页](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr5.PNG)
+1. 按 Ctrl+F5 运行应用程序。
+随后在默认浏览器中显示该应用程序主页。
+
+	![到待办事项列表主页](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr5.png)
 
 这就是你创建将要部署到 Azure 的应用程序目前所需的全部操作。稍后你将添加数据库功能。
 
@@ -142,11 +116,11 @@
 
 	“发布 Web”向导将打开。
 
-12. 单击“发布”。
+12. 单击“发布”。点击“导入”，并选择之前下载的“发布配置文件”。
 
-![“设置”选项卡](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/pw.png)
+	![“设置”选项卡](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/pw.png)
 
-Visual Studio 开始执行将文件复制到 Azure 服务器的过程。“输出”窗口将显示已执行的部署操作并报告已成功完成部署。
+	Visual Studio 开始执行将文件复制到 Azure 服务器的过程。“输出”窗口将显示已执行的部署操作并报告已成功完成部署。
 
 14. 默认浏览器会自动打开，并指向所部署站点的 URL。
 
@@ -166,7 +140,7 @@ Visual Studio 开始执行将文件复制到 Azure 服务器的过程。“输�
 
 	![Models 文件夹上下文菜单中的“添加类”][adddb001]
 
-2. 在“添加新项”对话框中，将新的类文件命名为 *Contact.cs*，然后单击“添加”。
+2. 在“添加新项”对话框中，将新的类文件命名为 *Contact.cs* ，然后单击“添加”。
 
 	![“添加新项”对话框][adddb002]
 
@@ -194,7 +168,7 @@ Visual Studio 开始执行将文件复制到 Azure 服务器的过程。“输�
     		}
 		}
 
-**Contacts** 类定义你将为每个联系人存储的数据以及数据库需要的主键 ContactID。你可以在本教程末尾的[后续步骤](#nextsteps)部分中获取有关数据模型的详细信息。
+**Contact** 类定义你将为每个联系人存储的数据以及数据库需要的主键 ContactID。你可以在本教程末尾的[后续步骤](#nextsteps)部分中获取有关数据模型的详细信息。
 
 ### 创建使应用程序用户可以使用联系人的网页
 
@@ -212,15 +186,15 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 1. 在“添加基架”对话框中，选择“包含视图的 MVC 控制器(使用 Entity Framework)”并单击“添加”。
 
- ![添加控制器](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rrAC.PNG)
+	![添加控制器](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rrAC.png)
 
 6. 将控制器名设置为 **HomeController**。选择“联系人”作为模型类。单击“新建数据上下文”按钮并接受默认的“ContactManager.Models.ContactManagerContext”为“新的数据上下文类型”。单击**“添加”**。
 
-	![“添加控制器”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr9.PNG)
+	![“添加控制器”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr9.png)
 
 	将出现一个提示对话框：“名为 HomeController 的文件已存在。是否希望将其替换？”。单击**“是”**。我们正在覆盖使用新项目创建的主控制器。我们将为联系人列表使用新的主控制器。
 
-	Visual Studio 将创建一个控制器方法并为 **Contact** 对象的 CRUD 数据库操作创建视图。
+	Visual Studio 将为 **Contact** 对象的 CRUD 数据库操作创建控制器方法和视图。
 
 ## 启用迁移、创建数据库、添加示例数据和数据初始值设定项 ##
 
@@ -424,7 +398,8 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 	![在 Content 文件夹上下文菜单中添加样式表][addcode005]
 
-4. 在“添加新项”对话框中，在右上的搜索框中输入 **Style**，然后选择“样式表”。![“添加新项”对话框][rxStyle]
+4. 在“添加新项”对话框中，在右上的搜索框中输入 **Style**，然后选择“样式表”。
+	![“添加新项”对话框][rxStyle]
 
 5. 将文件命名为 *Contacts.css* 并单击“添加”。将文件的内容替换为以下代码。
     
@@ -507,14 +482,15 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 1. 在“程序包管理器控制台”中运行以下命令以安装 Knockout。
 
-	Install-Package knockoutjs
+		Install-Package knockoutjs
+
 ## 为 Web API Restful 接口添加控制器
 
-1. 在“解决方案资源管理器”中，右键单击“控制器”，然后依次单击“添加”和“控制器....”。
+1. 在“解决方案资源管理器”中，右键单击“控制器”，然后依次单击“添加”和“控制器....”。 
 
 1. 在“添加基架”对话框中，进入“包含操作的 Web API 2 控制器(使用 Entity Framework)”并单击“添加”。
 
-	![添加 API 控制器](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt1.PNG)
+	![添加 API 控制器](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt1.png)
 
 4. 在“添加控制器”对话框中，输入“ContactsController”作为控制器名称。为“模型类”选择“Contact (ContactManager.Models)”。保留“数据上下文类”的默认值。
 
@@ -551,11 +527,11 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 	**安全警告**：此时，你的应用程序是不安全的，而且容易受到 CSRF 攻击。本教程稍后部分将将解决这一漏洞。有关详细信息，请参阅[防止跨站点请求伪造 (CSRF) 攻击][prevent-csrf-attacks]。
 ## 添加 XSRF 保护
 
-跨站点请求伪造（也称为 XSRF 或 CSRF）是一种针对 Web 托管型应用程序的攻击，恶意网站凭此可以影响客户端浏览器与受该浏览器信任的网站之间的交互。这些攻击出现的原因可能是 Web 浏览器针对每一个对网站的请求自动发送身份验证令牌。典型示例是身份验证 cookie，如 ASP.NET 的表单身份验证票证。然而，使用任何持久身份验证（如 Windows Authentication、Basic 等）的网站也可能成为受攻击目标。
+跨站点请求伪造（也称为 XSRF 或 CSRF）是一种针对 Web 托管型应用程序的攻击，恶意 Web 应用凭此可以影响客户端浏览器与受该浏览器信任的 Web 应用之间的交互。这些攻击出现的原因可能是 Web 浏览器针对每一个对 Web 应用的请求自动发送身份验证令牌。典型示例是身份验证 cookie，如 ASP.NET 的表单身份验证票证。然而，使用任何持久身份验证（如 Windows Authentication、Basic 等）的 Web 应用也可能成为受攻击目标。
 
-XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进行交互。在网络钓鱼攻击中，恶意网站将仿冒目标网站，受到欺骗的受害者会向攻击者提供敏感信息。在 XSRF 攻击中，通常不必与受害者进行交互。相反，浏览器自动向目标网站发送所有相关 Cookie 为攻击者提供了可乘之机。
+XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进行交互。在网络钓鱼攻击中，恶意 Web 应用将仿冒目标 Web 应用，受到欺骗的受害者会向攻击者提供敏感信息。在 XSRF 攻击中，通常不必与受害者进行交互。相反，浏览器自动向目标 Web 应用发送所有相关 Cookie 为攻击者提供了可乘之机。
 
-有关详细信息，请参阅[打开 Web 应用程序安全性项目](https://www.owasp.org/index.php/Main_Page) (OWASP) [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF))。
+有关详细信息，请参阅[打开 Web 应用安全项目](https://www.owasp.org/index.php/Main_Page) (OWASP) [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF))。
 
 1. 在“解决方案资源管理器”中，右键单击“ContactManager”项目并单击“添加”，然后单击“类”。
 
@@ -631,13 +607,13 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 
 1. 将以下 *using* 语句添加到联系人控制器以便你可以访问 **[ValidateHttpAntiForgeryToken]** 属性。
 
-	using ContactManager.Filters;
+		using ContactManager.Filters;
 
 1. 将 **[ValidateHttpAntiForgeryToken]** 属性添加到 **ContactsController** 的 Post 方法以保护其免受 XSRF 威胁。将其添加到 "PutContact"、"PostContact" 和 **DeleteContact** 操作方法。
 
-		[ValidateHttpAntiForgeryToken] 
-		public IHttpActionResult PutContact(int id, Contact contact) 
-		{
+		[ValidateHttpAntiForgeryToken]
+	        public IHttpActionResult PutContact(int id, Contact contact)
+	        {
 
 1. 更新 *Views\\Home\\Index.cshtml* 文件的 *Scripts* 部分以包含代码，从而获取 XSRF 令牌。
 
@@ -692,6 +668,7 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
                }
                ko.applyBindings(new ContactsViewModel());
             </script>
+		 }
 
 
 ## 将应用程序更新发布到 Azure 和 SQL 数据库
@@ -702,9 +679,8 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 
 	![发布][rxP]
 
-5. 单击“设置”选项卡。
+5. 单击“导入”，然后选择上面下载的发布配置文件。
 	
-
 1. 在 **ContactsManagerContext(ContactsManagerContext)** 之下，单击 **v** 图标将*远程连接字符串*更改为联系人数据库的连接字符串。单击“ContactDB”。
 
 	![设置](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt5.png)
@@ -713,7 +689,8 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 
 1. 单击“下一步”，然后单击“预览”。Visual Studio 将显示一个需要添加或更新的文件列表。
 
-8. 单击“发布”。部署完成后，浏览器将打开该应用程序的主页。
+8. 单击“发布”。
+部署完成后，浏览器将打开该应用程序的主页。
 
 	![没有任何联系人的索引页面][intro001]
 
@@ -729,10 +706,9 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 
 该应用程序现在是运行在云中，使用 SQL 数据库存储其数据。在 Azure 中测试应用程序完成后，将其删除。该应用程序是公开的并且没有限制访问的机制。
 
-<h2><a name="nextsteps"></a>后续步骤</h2>
-## 后续步骤
+##<a name="nextsteps"></a>后续步骤
 
-实际的应用程序需要身份验证和授权，你可以使用成员资格数据库实现此目的。教程[使用 OAuth、成员资格以及 SQL 数据库部署安全的 ASP.NET MVC 应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)基于本教程，其中介绍了如何部署包含成员资格数据库的 Web 应用程序。
+实际的应用程序需要身份验证和授权，你可以使用成员资格数据库实现此目的。教程[使用 OAuth、成员资格以及 SQL 数据库部署安全的 ASP.NET MVC 应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)基于本教程，其中介绍了如何部署包含成员资格数据库的 Web 应用。
 
 另一种在 Azure 应用程序中存储数据的方法是使用 Azure 存储，该方法以 Blob 和表的形式提供非关系数据存储。以下链接提供了更多有关 Web API、ASP.NET MVC 以及 Window Azure 的信息。
  
@@ -740,9 +716,9 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 * [使用 MVC 的 Entity Framework 入门][EFCodeFirstMVCTutorial]
 * [ASP.NET MVC 5 简介](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)
 * [你的第一个 ASP.NET Web API](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api)
-* [调试 WAWS](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+* [调试 WAWS](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
 
-本教程和示例应用程序由 [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) 在 Tom Dykstra 和 Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) 的帮助下编写完成。
+本教程和示例应用程序由 [Rick Anderson](http://blogs.msdn.com/b/rickandy/) 在 Tom Dykstra 和 Barry Dorrans 的帮助下编写完成。
 
 请提供有关你喜欢的内容或者你希望看到改善的内容的反馈，不仅关于教程本身，也关于它所演示的产品。你的反馈将帮助我们确定优先改进哪些方面。我们特别希望确定大家对于对配置和部署成员资格数据库的流程进行更多自动化的兴趣有多大。
 
@@ -813,5 +789,6 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 [ValidateConnection]: ./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/ValidateConnection.png
 [WebPIAzureSdk20NetVS12]: ./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/WebPIAzureSdk20NetVS12.png
 [prevent-csrf-attacks]: http://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-(csrf)-attacks
+ 
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

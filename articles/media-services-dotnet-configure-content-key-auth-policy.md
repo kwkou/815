@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用 Media Services .NET SDK 配置内容密钥授权策略" 
-	description="了解如何使用 Media Services .NET SDK 配置内容密钥的授权策略。" 
+	pageTitle="使用安装适用于 .NET 的媒体服务 SDK 配置内容密钥授权策略" 
+	description="了解如何使用适用于 .NET 的媒体服务 SDK 配置内容密钥的授权策略。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako,Mingfeiy" 
@@ -9,18 +9,17 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/18/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="02/03/2016"
+	wacn.date="12/31/2015"/>
 
 
 
 #动态加密：配置内容密钥授权策略 
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../includes/media-services-selector-content-key-auth-policy.md)]
 
-
 ##概述
 
-借助 Windows Azure 媒体服务，你可以传送使用高级加密标准 (AES)（使用 128 位加密密钥）和/或 PlayReady DRM 动态加密的内容。媒体服务还提供了用于向已授权客户端传送密钥和 PlayReady 许可证的服务。
+借助 Azure 媒体服务，你可以传送使用高级加密标准 (AES)（使用 128 位加密密钥）和/或 PlayReady DRM 动态加密的内容。媒体服务还提供了用于向已授权客户端传送密钥和 PlayReady 许可证的服务。
 
 当前你可以加密以下流格式：HLS、MPEG DASH 和平滑流。无法加密 HDS 流格式或渐进式下载。
 
@@ -28,9 +27,9 @@
 
 当播放器请求流时，媒体服务将使用指定的密钥通过 AES 或 PlayReady 加密来动态加密你的内容。为了解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否被授权获取密钥，服务将评估你为密钥指定的授权策略。
 
-媒体服务支持通过多种方式对发出密钥请求的用户进行身份验证。内容密钥授权策略可能受到一种或多种授权限制：**开放**、**令牌**限制或 **IP** 限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用**简单 Web 令牌** ([SWT](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2)) 格式和 **JSON Web 令牌**(JWT) 格式的令牌。
+媒体服务支持通过多种方式对发出密钥请求的用户进行身份验证。内容密钥授权策略可能受到一种或多种授权限制：**开放** 或 **令牌** 限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用 **简单 Web 令牌** ([SWT](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2)) 格式和 **JSON Web 令牌** (JWT) 格式的令牌。
 
-媒体服务不提供安全令牌服务。你可以创建自定义 STS 或利用 Windows Azure ACS 来颁发令牌。必须将 STS 配置为创建令牌，该令牌使用指定密钥以及你在令牌限制配置中指定的颁发声明进行签名（如本文所述）。如果令牌有效，而且令牌中的声明与为内容密钥配置的声明相匹配，则媒体服务密钥传送服务会将加密密钥返回到客户端。
+媒体服务不提供安全令牌服务。你可以创建自定义 STS 或利用 Azure ACS 来颁发令牌。必须将 STS 配置为创建令牌，该令牌使用指定密钥以及你在令牌限制配置中指定的颁发声明进行签名（如本文所述）。如果令牌有效，而且令牌中的声明与为内容密钥配置的声明相匹配，则媒体服务密钥传送服务会将加密密钥返回到客户端。
 
 有关详细信息，请参阅
 
@@ -150,9 +149,9 @@
 	  <xs:element name="SymmetricVerificationKey" nillable="true" type="tns:SymmetricVerificationKey" />
 	</xs:schema>
 
-在配置**令牌**限制策略时，必须指定主**验证密钥**、**颁发者**和**受众**参数。**主验证密钥**包含用来为令牌签名的的密钥，**颁发者**是颁发令牌的安全令牌服务。**受众**（有时称为**范围**）描述该令牌的意图，或者令牌授权访问的资源。媒体服务密钥交付服务将验证令牌中的这些值是否与模板中的值匹配。
+在配置 **令牌** 限制策略时，必须指定主 **验证密钥**、**颁发者** 和 **受众** 参数。**主验证密钥** 包含用来为令牌签名的的密钥，**颁发者** 是颁发令牌的安全令牌服务。**受众**（有时称为 **范围** ）描述该令牌的意图，或者令牌授权访问的资源。媒体服务密钥交付服务将验证令牌中的这些值是否与模板中的值匹配。
 
-使用 **媒体服务 SDK for .NET** 时，可以使用 **TokenRestrictionTemplate** 类来生成限制令牌。以下示例创建包含令牌限制的授权策略。在此示例中，客户端必须出示令牌，其中包含：签名密钥 (VerificationKey)、令牌颁发者和必需的声明。
+使用 **适用于 .NET 的媒体服务 SDK** 时，可以使用 **TokenRestrictionTemplate** 类来生成限制令牌。以下示例创建包含令牌限制的授权策略。在此示例中，客户端必须出示令牌，其中包含：签名密钥 (VerificationKey)、令牌颁发者和必需的声明。
 	
 	public static string AddTokenRestrictedAuthorizationPolicy(IContentKey contentKey)
 	{
@@ -233,7 +232,7 @@
 
 媒体服务允许你配置相应的权限和限制，以便在用户尝试播放受保护的内容时，PlayReady DRM 运行时会强制实施这些权限和限制。
 
-使用 PlayReady 保护你的内容时，需要在授权策略中指定的项目之一是用于定义 [PlayReady 许可证模板](/documentation/articles/media-services-playready-license-template-overview)的 XML 字符串。在 媒体服务 SDK for .NET 中，**PlayReadyLicenseResponseTemplate** 和 **PlayReadyLicenseTemplate** 类将帮助你定义 PlayReady 许可证模板。
+使用 PlayReady 保护你的内容时，需要在授权策略中指定的项目之一是用于定义 [PlayReady 许可证模板](/documentation/articles/media-services-playready-license-template-overview)的 XML 字符串。在适用于 .NET 的媒体服务 SDK 中，**PlayReadyLicenseResponseTemplate** 和 **PlayReadyLicenseTemplate** 类将帮助你定义 PlayReady 许可证模板。
 
 ###开放限制
 	
@@ -341,18 +340,53 @@
 	    return TokenRestrictionTemplateSerializer.Serialize(template);
 	} 
 	
-	static private string ConfigurePlayReadyLicenseTemplate()
-	{
-	    // The following code configures PlayReady License Template using .NET classes
-	    // and returns the XML string.
-	             
-	    PlayReadyLicenseResponseTemplate responseTemplate = new PlayReadyLicenseResponseTemplate();
-	    PlayReadyLicenseTemplate licenseTemplate = new PlayReadyLicenseTemplate();
-	
-	    responseTemplate.LicenseTemplates.Add(licenseTemplate);
-	
-	    return MediaServicesLicenseTemplateSerializer.Serialize(responseTemplate);
-	}
+    static private string ConfigurePlayReadyLicenseTemplate()
+    {
+        // The following code configures PlayReady License Template using .NET classes
+        // and returns the XML string.
+
+        //The PlayReadyLicenseResponseTemplate class represents the template for the response sent back to the end user. 
+        //It contains a field for a custom data string between the license server and the application 
+        //(may be useful for custom app logic) as well as a list of one or more license templates.
+        PlayReadyLicenseResponseTemplate responseTemplate = new PlayReadyLicenseResponseTemplate();
+
+        // The PlayReadyLicenseTemplate class represents a license template for creating PlayReady licenses
+        // to be returned to the end users. 
+        //It contains the data on the content key in the license and any rights or restrictions to be 
+        //enforced by the PlayReady DRM runtime when using the content key.
+        PlayReadyLicenseTemplate licenseTemplate = new PlayReadyLicenseTemplate();
+        //Configure whether the license is persistent (saved in persistent storage on the client) 
+        //or non-persistent (only held in memory while the player is using the license).  
+        licenseTemplate.LicenseType = PlayReadyLicenseType.Nonpersistent;
+       
+        // AllowTestDevices controls whether test devices can use the license or not.  
+        // If true, the MinimumSecurityLevel property of the license
+        // is set to 150.  If false (the default), the MinimumSecurityLevel property of the license is set to 2000.
+        licenseTemplate.AllowTestDevices = true;
+
+
+        // You can also configure the Play Right in the PlayReady license by using the PlayReadyPlayRight class. 
+        // It grants the user the ability to playback the content subject to the zero or more restrictions 
+        // configured in the license and on the PlayRight itself (for playback specific policy). 
+        // Much of the policy on the PlayRight has to do with output restrictions 
+        // which control the types of outputs that the content can be played over and 
+        // any restrictions that must be put in place when using a given output.
+        // For example, if the DigitalVideoOnlyContentRestriction is enabled, 
+        //then the DRM runtime will only allow the video to be displayed over digital outputs 
+        //(analog video outputs won't be allowed to pass the content).
+
+        //IMPORTANT: These types of restrictions can be very powerful but can also affect the consumer experience. 
+        // If the output protections are configured too restrictive, 
+        // the content might be unplayable on some clients. For more information, see the PlayReady Compliance Rules document.
+
+        // For example:
+        //licenseTemplate.PlayRight.AgcAndColorStripeRestriction = new AgcAndColorStripeRestriction(1);
+
+        responseTemplate.LicenseTemplates.Add(licenseTemplate);
+
+        return MediaServicesLicenseTemplateSerializer.Serialize(responseTemplate);
+    }
+
 
 若要获取用于密钥授权策略的基于令牌限制的测试令牌，请参阅[此](#test)部分。
 
@@ -370,9 +404,10 @@
 
     public enum ContentKeyDeliveryType
     {
-        None = 0,
-        PlayReadyLicense = 1,
-        BaselineHttp = 2,
+      None = 0,
+      PlayReadyLicense = 1,
+      BaselineHttp = 2,
+      Widevine = 3
     }
 
 ###<a id="TokenType"></a>TokenType
@@ -386,8 +421,12 @@
 
 
 
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
+
+
 ##后续步骤
 在配置内容密钥的授权策略后，请转到[如何配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy)主题。
  
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0307_2016-->

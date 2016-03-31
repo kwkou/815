@@ -1,22 +1,18 @@
 <properties 
-	pageTitle="我的 Cordova 项目发生了什么情况（Visual Studio 连接服务）| Windows Azure" 
+	pageTitle="我的 Cordova 项目发生了什么情况（Visual Studio 连接服务）| Microsoft Azure" 
 	description="描述使用 Visual Studio 连接服务添加 Azure 移动服务后，Azure Cordova 项目发生了什么情况" 
 	services="mobile-services" 
 	documentationCenter="na" 
-	authors="patshea123" 
+	authors="mlhoop" 
 	manager="douge" 
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/17/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="01/05/2016" 
+	wacn.date="03/21/2016"/>
 
 # 使用 Visual Studio 连接服务添加 Azure 移动服务后，我的 Azure Cordova 项目发生了什么情况？
-
-> [AZURE.SELECTOR]
-> - [入门](/documentation/articles/vs-mobile-services-cordova-getting-started)
-> - [发生了什么情况](/documentation/articles/vs-mobile-services-cordova-what-happened)
 
 ##已添加引用
 
@@ -33,6 +29,6 @@
 	        "<insert your key>"
 	    );
 
-[详细了解移动服务](/services/mobile-services)
+[详细了解移动服务](/documentation/services/mobile-services)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0215_2016-->

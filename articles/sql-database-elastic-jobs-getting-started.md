@@ -1,8 +1,6 @@
 <properties
-	title="Getting started with elastic database jobs"
 	pageTitle="弹性数据库作业入门"
 	description="如何使用弹性数据库作业"
-	metaKeywords="azure sql database elastic jobs"
 	services="sql-database"
 	documentationCenter=""  
 	manager="jeffreyg"
@@ -10,8 +8,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/04/2015"
-	wacn.date="09/15/2015"/>
+	ms.date="12/01/2015"
+	wacn.date="01/29/2016" />
 
 # 弹性数据库作业入门
 
@@ -25,9 +23,9 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
 
 ## 使用示例应用程序创建分片映射管理器
 
-在此处，你将创建分片映射管理器以及多个分片，然后将数据插入分片。如果你的分片中正好设置了分片数据，则你可以跳过下面的步骤，直接转到下一部分。
+在此处，你将创建分片映射管理器以及多个分片，然后将数据插入分片。如果你的分片中设置了分片数据，则你可以跳过下面的步骤，直接转到下一部分。
 
-1. 生成并运行**弹性数据库工具入门**示例应用程序。一直执行到[下载和运行示例应用](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools)部分中的步骤 7。在步骤 7 结束时，你将看到以下命令提示符：
+1. 生成并运行**弹性数据库工具入门**示例应用程序。一直执行到[下载和运行示例应用](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools)部分中的步骤 7。在步骤 7 结束时，你将看到以下命令提示符：
 
 	![命令提示符][1]
 
@@ -41,14 +39,14 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
 
 我们通常会使用 **New-AzureSqlJobTarget** cmdlet 来创建分片映射目标。必须将分片映射管理器数据库设置为数据库目标，然后将特定分片映射指定为目标。而我们的做法是枚举服务器中的所有数据库，并将这些数据库添加到 master 数据库除外的其他新自定义集合。
 
-## 创建自定义集合并将服务器中的所有数据库添加到 master 除外的自定义集合目标。
+##创建自定义集合并将服务器中的所有数据库添加到 master 除外的自定义集合目标。
 
 
 	$customCollectionName = "dbs_in_server"
 	New-AzureSqlJobTarget -CustomCollectionName $customCollectionName 
 	$ResourceGroupName = "ddove_samples"
 	$ServerName = "samples"
-	$dbsinserver = Get-AzureSqlDatabase -ResourceGroupName $ResourceGroupName -ServerName $ServerName 
+	$dbsinserver = Get-AzureRMSqlDatabase -ResourceGroupName $ResourceGroupName -ServerName $ServerName 
 	$dbsinserver | %{
     $currentdb = $_.DatabaseName 
     $ErrorActionPreference = "Stop"
@@ -105,7 +103,7 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
         }
     }
     $ErrorActionPreference = "Continue"
-    }
+	}
 	
 ## 创建 T-SQL 脚本用于跨数据库执行
 
@@ -125,7 +123,7 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
 	$script = New-AzureSqlJobContent -ContentName $scriptName -CommandText $scriptCommandText
 	Write-Output $script
 
-## 创建作业以跨自定义数据库组执行脚本
+##创建作业以跨自定义数据库组执行脚本
 
 	$jobName = "create on server dbs"
 	$scriptName = "NewTable"
@@ -136,7 +134,7 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
 	Write-Output $job
 
 
-## 执行作业 
+##执行作业 
 
 以下 PowerShell 脚本可以用于执行现有的作业：
 
@@ -274,7 +272,7 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
  
 ## 取消作业
 
-弹性数据库作业支持取消作业请求。如果弹性数据库作业检测到当前正在执行作业的取消请求，它将尝试停止作业。
+弹性数据库作业支持作业取消请求。如果弹性数据库作业检测到当前正在执行作业的取消请求，它将尝试停止作业。
 
 弹性数据库作业可通过两种不同的方式执行取消：
 
@@ -377,7 +375,7 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 
 ## 使用作业触发器创建作业执行计划
 
-以下 PowerShell 脚本可用于创建重复计划。此脚本使用分钟间隔，但是 New-AzureSqlJobSchedule 也支持 -DayInterval、-HourInterval、-MonthInterval 和 -WeekInterval 参数。可以通过传递 -OneTime 来创建仅执行一次的计划。
+以下 PowerShell 脚本可用于创建重复计划。此脚本使用一分钟间隔，但是 New-AzureSqlJobSchedule 也支持 -DayInterval、-HourInterval、-MonthInterval 和 -WeekInterval 参数。可以通过传递 -OneTime 来创建仅执行一次的计划。
 
 创建新计划：
 
@@ -445,4 +443,4 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_0118_2016-->

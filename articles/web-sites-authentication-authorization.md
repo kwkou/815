@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用 Active Directory 在 Azure 网站中进行身份验证" 
-	description="了解部署到 Azure 网站的业务线应用程序的不同身份验证和授权选项" 
+	pageTitle="使用 Active Directory 在 Azure 中进行身份验证" 
+	description="了解部署到 Azure Web 应用的业务线应用程序的不同身份验证和授权选项" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
@@ -8,19 +8,13 @@
 	editor="jimbe"/>
 
 <tags
-	ms.service="app-service"
-	ms.date="09/29/2015"
-	wacn.date="11/12/2015"/>
+	ms.service="web-sites"
+	ms.date="12/10/2015" 
+	wacn.date="01/21/2016"/>
 
-# 使用 Active Directory 在 Azure 网站中进行身份验证 #
+# 使用 Active Directory 在 Azure 中进行身份验证 #
 
-[Azure 网站](/documentation/services/web-sites/)通过支持单一登录 (SSO) 的用户启用企业业务线应用程序方案，允许你在本地环境或公共 Internet 访问应用程序。可以将它与 [Azure Active Directory](/home/features/identity/) (AAD) 或本地安全令牌服务 (STS)（如 Active Directory 联合身份验证服务 (AD FS)）集成，以便对内部 Active Directory (AD) 用户进行身份验证并正确授权。
-
-## 零摩擦身份验证和授权 ##
-
-单击几下按钮，就可以为 Web 应用启用身份验证和授权。每个 Azure Web 应用中的复选框样式配置都提供了业务线 Web 应用的基本访问控制。它在授予用户对 Web 应用内容的访问权限之前，会强制对所选的 Azure AD 租户进行 HTTPS 通信和身份验证。有关详细信息，请参阅 [Web Apps 身份验证/授权](http://azure.microsoft.com/blog/2014/11/13/azure-websites-authentication-authorization/)。
-
->[AZURE.NOTE]此功能目前处于预览状态。
+[Azure Web 应用](/documentation/services/web-sites/)通过支持单一登录 (SSO) 的用户启用企业业务线应用程序方案，允许你在本地环境或公共 Internet 访问应用程序。可以将它与 [Azure Active Directory](/home/features/identity/) (AAD) 或本地安全令牌服务 (STS)（如 Active Directory 联合身份验证服务 (AD FS)）集成，以便对内部 Active Directory (AD) 用户进行身份验证并正确授权。
 
 ## 手动实现身份验证和授权 ##
 

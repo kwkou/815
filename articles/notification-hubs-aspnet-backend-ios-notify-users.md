@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 通知中心 - 通知用户"
+	pageTitle="Azure 通知中心 - 使用 .NET 后端通知 iOS 用户"
 	description="了解如何向 Azure 中的用户发送推送通知。使用 Objective-C 和 .NET API 为后端编写的代码示例。"
 	documentationCenter="ios"
 	authors="wesmc7777"
@@ -9,10 +9,10 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="06/16/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="12/16/2015"
+	wacn.date="01/16/2016"/>
 
-# Azure 通知中心通知用户
+#Azure 通知中心 - 使用 .NET 后端通知 iOS 用户
 
 [AZURE.INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
@@ -21,8 +21,6 @@
 利用 Azure 中的推送通知支持，你可以访问易于使用且向外扩展的多平台推送基础结构，这大大简化了为移动平台的使用者应用程序和企业应用程序实现推送通知的过程。本教程说明如何使用 Azure 通知中心将推送通知发送到特定设备上的特定应用程序用户。ASP.NET WebAPI 后端用于对客户端进行身份验证并生成通知，如指南主题[从应用后端注册](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx)中所述。
 
 > [AZURE.NOTE]本教程假设您已根据[通知中心入门 (iOS)](/documentation/articles/notification-hubs-ios-get-started) 中所述创建并配置了通知中心。此外，只有在学习本教程后，才可以学习[安全推送 (iOS)](/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push) 教程。如果你使用移动服务作为后端服务，请参阅本教程的[移动服务版本](/documentation/articles/mobile-services-javascript-backend-ios-push-notifications-app-users)。
-
-
 
 [AZURE.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../includes/notification-hubs-aspnet-backend-notifyusers.md)]
 
@@ -65,7 +63,7 @@
 
 		- (IBAction)LogInAction:(id)sender;		
 
-4. 在 ViewController.h 中，在 import 语句的正下方添加以下 `#define`。将 *<输入你的后端终结点>* 占位符替换为在上一节中用于部署应用后端的目标 URL。例如，*http://you_backend.chinacloudsites.cn*。
+4. 在 ViewController.h 中，在 import 语句的正下方添加以下 `#define`。将 *< 输入你的后端终结点>* 占位符替换为在上一节中用于部署应用后端的目标 URL。例如，*http://you_backend.chinacloudsites.cn*。
 
 		#define BACKEND_ENDPOINT @"<Enter Your Backend Endpoint>"
 
@@ -258,7 +256,7 @@
 
 		@end
 
-	上面的代码使用 NSURLSession 对应用后端执行 REST 调用并使用 NSUserDefaults 在本地存储通知中心返回的 registrationId，实现了指南文章[从应用后端注册](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx)中所述的逻辑。
+	上面的代码使用 NSURLSession 对应用后端执行 REST 调用并使用 NSUserDefaults 在本地存储通知中心返回的 registrationId，实现了指南文章[从应用后端注册](/documentation/articles/notification-hubs-registration-management#registration-management-from-a-backend)中所述的逻辑。
 
 	请注意，此类需要设置其属性 **authorizationHeader**，才能正常工作。登录后，由 **ViewController** 类设置此属性。
 
@@ -462,4 +460,4 @@
 [4]: ./media/notification-hubs-aspnet-backend-ios-notify-users/notification-hubs-ios-notify-users-enter-msg.png
  
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_0104_2016-->

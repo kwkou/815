@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="09/22/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="12/14/2015"
+	wacn.date="01/29/2016"/>
 
 # 如何通过 WebJobs SDK 使用 Azure 队列存储
 
@@ -18,7 +18,7 @@
 
 本指南提供了 C# 代码示例，用于演示如何在 Azure 队列存储服务中使用 Azure WebJobs SDK 版本 1.x。
 
-若要查看本指南，您需要知道[如何在 Visual Studio 中创建 Web 作业项目，其中包含指向存储帐户的连接字符串](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)。
+本指南假设你了解[如何使用指向存储帐户的连接字符串在 Visual Studio 中创建 WebJob 项目](/documentation/articles/websites-dotnet-webjobs-sdk-get-started#configure-storage)或创建[多个存储帐户](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/MultipleStorageAccountsEndToEndTests.cs)。
 
 大多数代码段只显示函数，不同于创建 `JobHost` 对象的代码，如以下示例所示：
 
@@ -58,7 +58,8 @@
 	- 配置 QueueTrigger 设置
 	- 在代码中设置 WebJobs SDK 构造函数参数的值
 -   [如何手动触发函数](#manual)
--   [如何写入日志](#logs)
+-   [如何写入日志](#logs) 
+-   [如何处理错误和配置超时](#errors)
 -   [后续步骤](#nextsteps)
 
 ## <a id="trigger"></a>如何在收到队列消息时触发函数
@@ -127,13 +128,15 @@ SDK 实现了随机指数退让算法，以降低空闲队列轮询对存储事�
 
 ### <a id="instances"></a>多个实例
 
-如果 Web 应用在多个实例上运行，则每台计算机上都会运行一个连续 Web 作业，并且都会等待触发器并尝试运行函数。在某些情况下，这可能会导致某些函数处理相同的数据两次，因此函数应该是幂等的（编写的这些函数在使用相同输入数据重复调用时不会生成重复的结果）。
+如果 Web 应用在多个实例上运行，则每台计算机上都会运行一个连续 Web 作业，并且每台计算机将等待触发器并尝试运行函数。WebJobs SDK 队列触发器会自动阻止函数多次处理队列消息；函数无需编写为幂等函数。但是，如果你想要确保即使有多个主机 Web 应用的实例，也只有一个函数实例运行，可以使用 `Singleton` 属性。
 
 ### <a id="parallel"></a>并行执行
 
 如果有多个函数在侦听不同的队列，SDK 将在同时接收消息时并行调用这些函数。
 
-接收单个队列的多个消息时，也是如此。默认情况下，SDK 每次获取包含 16 个队列消息的批，然后并行执行处理这些消息的函数。[批大小是可配置的](#config)。当处理的数量达到批大小的一半时，SDK 将获取另一个批，并开始处理这些消息。因此，每个函数处理的最大并发消息数是批大小的 1.5 倍。此限制分别应用于各个包含 `QueueTrigger` 属性的函数。如果不希望在收到一个队列的消息时并行执行，请将批大小设置为 1。
+接收单个队列的多个消息时，也是如此。默认情况下，SDK 每次获取包含 16 个队列消息的批，然后并行执行处理这些消息的函数。[批大小是可配置的](#config)。当处理的数量达到批大小的一半时，SDK 将获取另一个批，并开始处理这些消息。因此，每个函数处理的最大并发消息数是批大小的 1.5 倍。此限制分别应用于各个包含 `QueueTrigger` 属性的函数。
+
+如果不希望对队列上收到的消息并行执行，可以将批大小设置为 1。另请参阅 [Azure WebJobs SDK 1.1.0 RTM](http://azure.microsoft.com/zh-cn/blog/azure-webjobs-sdk-1-1-0-rtm/) 中的**更好地控制队列处理**。
 
 ### <a id="queuemetadata"></a>获取队列或队列消息元数据
 
@@ -211,7 +214,7 @@ SDK 实现了随机指数退让算法，以降低空闲队列轮询对存储事�
 	    }
 	}
 
-**注意：**仪表板可能无法正确显示已关闭函数的状态和输出。
+**注意**：仪表板可能会错误显示已关闭函数的的状态和输出。
  
 有关详细信息，请参阅 [Web 作业正常关闭](http://blog.amitapple.com/post/2014/05/webjobs-graceful-shutdown/#.VCt1GXl0wpR)。
 
@@ -520,7 +523,7 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 
 ## <a id="logs"></a>如何写入日志
 
-仪表板在两个位置显示日志：针对 Web 作业的页，以及针对特定 Web 作业调用的页。 
+仪表板在两个位置显示日志：针对 Web 作业的页，以及针对特定 Web 作业调用的页。
 
 ![WebJob 页中的日志](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardapplogs.png)
 
@@ -530,14 +533,14 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 
 无法将控制台输出链接到特定的方法调用，因为控制台是单线程的，而许多作业函数可能同时运行。正因如此，SDK 为每个函数调用提供了自身唯一的日志写入器对象。
 
-若要写入[应用程序跟踪日志](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#logsoverview)，请使用 `Console.Out`（创建标记为 INFO 的日志）和 `Console.Error`（创建标记为 ERROR 的日志）。或者，您可以使用 [Trace 或 TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)，它除了提供“信息”和“错误”外，还提供“详细”、“警告”和“严重级别”。应用程序跟踪日志在 Web 应用日志文件、Azure 表或 Azure blob 中显示，具体取决于配置 Azure Web 应用的方式。与所有控制台输出一样，最近的 100 条应用程序日志也会显示在 Web 作业的仪表板页中，而不是显示在函数调用的页中。
+若要写入[应用程序跟踪日志](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#logsoverview)，请使用 `Console.Out`（创建标记为 INFO 的日志）和 `Console.Error`（创建标记为 ERROR 的日志）。或者，您可以使用 [Trace 或 TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)，它除了提供“信息”和“错误”外，还提供“详细”、“警告”和“严重级别”。应用程序跟踪日志将显示在 Web 应用日志文件、Azure 表或 Azure Blob 中，具体取决于你如何配置 Azure Web 应用。与所有控制台输出一样，最近的 100 条应用程序日志也会显示在 Web 作业的仪表板页中，而不是显示在函数调用的页中。
 
 仅当程序在 Azure Web 作业中运行（而不是在本地运行或者在其他某个环境中运行）时，控制台输出才显示在仪表板中。
 
 为高吞吐量方案禁用仪表板日志记录。默认情况下，SDK 将日志写入存储，此活动会在处理的消息较多时降低性能。若要禁用日志记录，请按以下示例中所示，将仪表板连接字符串设置为 null。
 
 		JobHostConfiguration config = new JobHostConfiguration();       
-		config.DashboardConnectionString = “”;        
+		config.DashboardConnectionString = "";        
 		JobHost host = new JobHost(config);
 		host.RunAndBlock();
 
@@ -563,13 +566,16 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
  
 ![单击“切换输出”](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardapplogs.png)
 
-在连续的 WebJob 中，应用程序日志在 Web 应用文件系统的 /data/jobs/continuous/*{webjobname}*/job\_log.txt 中显示。
+在连续 Web 作业中，应用程序日志显示在 Web 应用文件系统的 /data/jobs/continuous/*{webjobname}*/job\_log.txt 中。
 
 		[09/26/2014 21:01:13 > 491e54: INFO] Console.Write - Hello world!
 		[09/26/2014 21:01:13 > 491e54: ERR ] Console.Error - Hello world!
 		[09/26/2014 21:01:13 > 491e54: INFO] Console.Out - Hello world!
 
-在 Azure blob 中，应用程序日志如下所示：2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738373502,0,17404,17,Console.Write - Hello world!, 2014-09-26T21:01:13,Error,contosoadsnew,491e54,635473620738373502,0,17404,19,Console.Error - Hello world!, 2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738529920,0,17404,17,Console.Out - Hello world!,
+在 Azure blob 中，应用程序日志如下所示：
+		2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738373502,0,17404,17,Console.Write - Hello world!,
+		2014-09-26T21:01:13,Error,contosoadsnew,491e54,635473620738373502,0,17404,19,Console.Error - Hello world!,
+		2014-09-26T21:01:13,Information,contosoadsnew,491e54,635473620738529920,0,17404,17,Console.Out - Hello world!,
 
 在 Azure 表中，`Console.Out` 和 `Console.Error` 日志如下所示：
 
@@ -577,9 +583,31 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 
 ![表中的错误日志](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/tableerror.png)
 
+如果要插入自己的记录器，请参阅[此示例](http://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/MiscOperations/Program.cs)。
+
+## <a id="errors"></a>如何处理错误和配置超时
+
+WebJobs SDK 还包括 [Timeout](http://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/MiscOperations/Functions.cs) 属性，可用于在函数未在指定的时间内完成时取消函数。而且，如果你想要在指定的时间段内发生太多错误时引发警报，可以使用 `ErrorTrigger` 属性。下面是 [ErrorTrigger 示例](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Error-Monitoring)。
+
+	
+	public static void ErrorMonitor(
+	[ErrorTrigger("00:01:00", 1)] TraceFilter filter, TextWriter log,
+	[SendGrid(
+	    To = "admin@emailaddress.com",
+	    Subject = "Error!")]
+	 SendGridMessage message)
+	{
+	    // log last 5 detailed errors to the Dashboard
+	   log.WriteLine(filter.GetDetailedMessage(5));
+	   message.Text = filter.GetDetailedMessage(1);
+	}
+	
+
+你还可以使用配置开关（可以是应用设置或环境变量名称）动态地禁用和启用函数以控制是否可以触发它们。有关示例代码，请参阅 [WebJobs SDK 示例存储库](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/MiscOperations/Functions.cs)中的 `Disable` 属性。
+
 ## <a id="nextsteps"></a>后续步骤
 
 本指南提供的代码示例演示了如何处理常见方案以操作 Azure 队列。若要详细了解如何使用 Azure WebJobs 和 WebJobs SDK，请参阅[有关 Azure WebJobs 的推荐资源](/documentation/articles/websites-webjobs-resources/)。
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0118_2016-->

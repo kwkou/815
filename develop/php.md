@@ -1,5 +1,5 @@
 <properties 
-pageTitle="Windows Azure 开发人员中心：PHP" 
+pageTitle="Azure 开发人员中心：PHP" 
 description="" 
 services="PHP" 
 documentationCenter="Develop" 
@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="PHP"
     ms.date=""
-    wacn.date="11/02/2015"
+    wacn.date="01/21/2016"
     />
 
 #PHP开发人员中心
@@ -21,18 +21,18 @@ editor="Eric Chen" />
 
 ##PHP 教程和文档
 
-###网站
+### Web 应用
 
-- [Azure 网站](/zh-cn/documentation/articles/fundamentals-application-models/#WebSites)
-- [创建 PHP 网站](/zh-cn/documentation/articles/web-sites-php-create-web-sites)
+- [Azure Web 应用](/zh-cn/documentation/articles/fundamentals-application-models/#WebSites)
+- [创建 PHP Web 应用](/zh-cn/documentation/articles/web-sites-php-create-web-sites)
 - [配置 PHP](/zh-cn/documentation/articles/web-sites-php-configure)
 - [使用 XDT 进行转换](/zh-cn/documentation/articles/web-sites-transform-extend)
-- [创建 PHP-MySQL 网站](/zh-cn/documentation/articles/web-sites-php-mysql-deploy-use-git)
+- [创建 PHP-MySQL Web 应用](/zh-cn/documentation/articles/web-sites-php-mysql-deploy-use-git)
 - **[全部显示](/develop/php/websites)**
 
 ###虚拟机
 
-- [创建 Linux VM](/zh-cn/documentation/articles/virtual-machines-linux-tutorial)
+- [创建 Linux VM](/zh-cn/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
 - [登录到 Linux VM](/zh-cn/documentation/articles/virtual-machines-linux-how-to-log-on)
 - [准备 Linux 分发](/zh-cn/documentation/articles/virtual-machines-linux-create-upload-vhd)
 - [适用于 Mac 和 Linux 的工具](/zh-cn/documentation/articles/xplat-cli)

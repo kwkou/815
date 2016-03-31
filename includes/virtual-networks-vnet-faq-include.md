@@ -28,7 +28,7 @@
 
 ### 哪些服务可以与 VNet 共同使用？
 
-VNet 可以与各种不同的 Azure 服务共同使用，例如云服务 (PaaS)、虚拟机和 Web Apps。但是，有几个 VNet 不支持的服务。请检查你想要使用的特定服务，并验证是否兼容。
+VNet 可以与各种不同的 Azure 服务共同使用，例如云服务 (PaaS)、虚拟机和 Web 应用。但是，有几个 VNet 不支持的服务。请检查你想要使用的特定服务，并验证是否兼容。
 
 ### 没有跨界连接的情况下是否可以使用 VNet？
 
@@ -58,7 +58,7 @@ VNet 中使用的子网数量没有限制。所有子网都必须完全包含在
 
 ### 使用这些子网中的 IP 地址是否有任何限制？
 
-Azure 会保留每个子网中的某些 IP 地址。子网的第一个和最后一个 IP 地址仅为协议一致性而保留，其他两个地址用于 Azure 服务。
+Azure 会保留每个子网中的某些 IP 地址。子网的第一个和最后一个 IP 地址仅为协议一致性而保留，其他 3 个地址用于 Azure 服务。
 
 ### VNet 和子网的最小和最大容量是多少？
 
@@ -124,7 +124,7 @@ Azure 会保留每个子网中的某些 IP 地址。子网的第一个和最后�
 
 ### VNet 的 DNS 选项有哪些？
 
-使用[](https://msdn.microsoft.com/zh-cn/library/azure/jj156088.aspx)“VM 和角色实例的名称解析”页的决策表，引导你浏览提供的所有 DNS 选项。
+使用“[VM 和角色实例的名称解析](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances)”页的决策表，引导你浏览提供的所有 DNS 选项。
 
 ### 是否可以为 VNet 指定 DNS 服务器？
 
@@ -217,16 +217,7 @@ Azure 提供的 DNS 是由 Microsoft 提供的多租户 DNS 服务。在此服�
 
 只能在 VNet 中使用计算服务。计算服务仅限于云服务（Web 和辅助角色）和 VM。
 
-### 是否可以共同使用 Web Apps 和虚拟网络？
-
-否。不能在 VNet 中部署 Azure Web 应用。但是，如果 VNet 中配置了点到站点，Web Apps 则可以安全地连接和访问 Azure VNet 中的资源。有关详细信息，请参阅以下主题：
-
-- [Web Apps 虚拟网络集成](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)
-
-
-
-- [共同使用 VNet 集成和混合连接与 Web Apps](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
-
+- [将 VNet 集成和混合连接用于 Web 应用](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
 
 ### 是否可以在 VNet 中部署云服务与 Web 和辅助角色 (PaaS)？
 
@@ -264,4 +255,4 @@ VNet 相互之间以及与 Azure 基础结构中托管的其他服务之间完�
 
 是的。PowerShell 和命令行工具可用于各种平台。可在[此处](https://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx)找到更多信息。
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_0104_2016-->

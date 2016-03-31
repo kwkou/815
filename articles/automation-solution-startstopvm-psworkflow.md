@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="通过 Azure 自动化启动和停止虚拟机 - PowerShell 工作流 | Windows Azure"
+	pageTitle="通过 Azure 自动化启动和停止虚拟机 - PowerShell 工作流 | Azure"
 	description="Azure 自动化解决方案的 PowerShell 版本，包括启动和停止经典虚拟机所需的 Runbook。"
 	services="automation"
 	documentationCenter=""
@@ -9,7 +9,7 @@
 <tags
 	ms.service="automation"
 	ms.date="09/25/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/14/2015"/>
 
 # Azure 自动化解决方案 - 启动和停止虚拟机
 
@@ -33,6 +33,7 @@
 
 [AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
 ## 安装解决方案
+<a id="installing-the-solution"></a>
 
 ### 1\.安装 Runbook
 
@@ -50,6 +51,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 | 变量 | AzureSubscriptionId | 包含你的 Azure 订阅的订阅 ID。 |
 
 ## 使用解决方案
+<a id="using-the-solution"></a>
 
 ### 参数
 

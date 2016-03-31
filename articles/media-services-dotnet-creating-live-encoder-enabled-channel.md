@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/18/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="02/03/2016"
+	wacn.date="03/17/2016"/>
 
 
 #使用 .NET SDK 创建频道，以执行从单比特率流到多比特率流的实时编码
@@ -20,18 +20,21 @@
 - [.NET](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
 
+>[AZURE.NOTE]
+若要完成本教程，你需要一个 Azure 帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
+
 ##概述
 
 本教程将指导你完成创建**频道**的步骤，该频道接收单比特率实时流，并将其编码为多比特率流。
 
->[AZURE.NOTE]如需与能够进行实时编码的频道相关的更多概念信息，请参阅 [使用执行从单比特率到多比特率流的实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+如需与能够进行实时编码的频道相关的更多概念信息，请参阅 [使用执行从单比特率到多比特率流的实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
 
 
 ##常见的实时流方案
 
 以下步骤介绍创建常见的实时流式处理应用程序时涉及的任务。
 
->[AZURE.NOTE]目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 WindowsAzure.cn 联系 amslived。
+>[AZURE.NOTE] 目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 Azure.cn 联系 amslived。
 
 1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出单比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/)。
 
@@ -49,9 +52,9 @@
 
 2. 创建资源。
 3. 如果你想让资源在播放期间进行动态加密，请执行以下操作：
-	1. 创建内容密钥。
-	1. 配置内容密钥授权策略。
-	1. 配置资产传送策略（由动态打包和动态加密使用）。
+1. 创建内容密钥。
+1. 配置内容密钥授权策略。
+1. 配置资产传送策略（由动态打包和动态加密使用）。
 3. 创建节目并指定使用你创建的资产。
 1. 通过创建按需定位器发布与节目关联的资产。
 
@@ -62,9 +65,9 @@
 1. 在要停止对事件进行流式传输和存档时，停止节目。
 1. 删除节目（并选择性地删除资产）。
 
-##本主题内容
+## 学习内容
 
-本主题演示如何使用 Media Services .NET SDK 对频道和节目执行不同操作。由于许多操作都长时间运行，因此将使用管理长时间运行的操作的 .NET API。
+本主题演示如何使用适用于 .NET 的媒体服务 SDK 对频道和节目执行不同操作。由于许多操作都长时间运行，因此将使用管理长时间运行的操作的 .NET API。
 
 本主题说明如何执行以下任务：
 
@@ -78,26 +81,30 @@
 1. 清理频道及所有关联的资源。
 
 
-##注意事项
-
-- 目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 WindowsAzure.cn 联系 amslived。
-- 确保你要从中以流形式传输内容的流式传输终结点上至少有一个流式传输保留单元。
-
 ##先决条件
+
 以下是完成本教程所需具备的条件。
 
-- 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
+- 若要完成本教程，你需要一个 Azure 帐户。 
+	
+	如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留该帐户，使用那些免费的 Azure 服务和功能，例如 Azure 中的 Web 应用功能。
 - 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
-- Visual Studio 2010 SP1 或更高版本。
-- 必须使用 Media Services .NET SDK 版本 3.2.0.0 或更高版本。
+- Visual Studio 2010 SP1（Professional、Premium、Ultimate 或 Express）或更高版本。
+- 必须使用适用于 .NET 的媒体服务 SDK 版本 3.2.0.0 或更高版本。
 - 可以发送单比特率实时流的摄像头和编码器。
 
-##使用 Media Services SDK for .NET 进行开发设置
+##注意事项
+
+- 目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 Azure.cn 联系 amslived。
+- 确保你要从中以流形式传输内容的流式传输终结点上至少有一个流式传输保留单元。
+
+
+##使用用于 .NET 的媒体服务 SDK 进行开发设置
 
 1. 使用 Visual Studio 创建控制台应用程序。
-1. 使用 Media Services NuGet 包将 Media Services SDK for .NET 添加到控制台应用程序。
+1. 使用媒体服务 NuGet 包将适用于 .NET 的媒体服务 SDK 添加到控制台应用程序。
 
-##连接到 媒体服务
+##连接到媒体服务
 最佳做法是，应使用 app.config 文件来存储媒体服务名称和帐户密钥。
 
 >[AZURE.NOTE]若要查找名称和密钥值，请转到 Azure 管理门户，选择你的媒体服务帐户，然后单击门户窗口底部的“管理密钥”图标。单击每个文本框旁边的图标将值复制到系统剪贴板中。
@@ -122,14 +129,10 @@
 	using System.IO;
 	using System.Linq;
 	using System.Net;
-	using System.Security.Cryptography;
-	using System.Text;
-	using System.Threading.Tasks;
 	using Microsoft.WindowsAzure.MediaServices.Client;
-	using Newtonsoft.Json.Linq;
 	using Microsoft.WindowsAzure.MediaServices.Client.DynamicEncryption;
 	
-	namespace ConsoleApplication1
+	namespace EncodeLiveStreamWithAmsClear
 	{
 	    class Program
 	    {
@@ -171,10 +174,9 @@
 	
 	            Console.WriteLine("Preview URL: {0}", previewEndpoint);
 	
-	            // Get a thumbnail preview of a live feed.
 	            // When Live Encoding is enabled, you can now get a preview of the live feed as it reaches the Channel. 
 	            // This can be a valuable tool to check whether your live feed is actually reaching the Channel. 
-	
+	            // The thumbnail is exposed via the same end-point as the Channel Preview URL.
 	            string thumbnailUri = new UriBuilder
 	            {
 	                Scheme = Uri.UriSchemeHttps,
@@ -202,13 +204,18 @@
 	
 	        public static IChannel CreateAndStartChannel()
 	        {
+	            var channelInput = CreateChannelInput();
+	            var channePreview = CreateChannelPreview();
+	            var channelEncoding = CreateChannelEncoding();
+	
+	
 	            ChannelCreationOptions options = new ChannelCreationOptions
 	            {
 	                EncodingType = ChannelEncodingType.Standard,
 	                Name = ChannelName,
-	                Input = CreateChannelInput(),
-	                Preview = CreateChannelPreview(),
-	                Encoding = CreateChannelEncoding()
+	                Input = channelInput,
+	                Preview = channePreview,
+	                Encoding = channelEncoding
 	            };
 	
 	            Log("Creating channel");
@@ -332,6 +339,7 @@
 	        /// <returns></returns>
 	        public static ILocator CreateLocatorForAsset(IAsset asset, TimeSpan ArchiveWindowLength)
 	        {
+             	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
 	            var locator = _context.Locators.CreateLocator
 	                (
 	                    LocatorType.OnDemandOrigin,
@@ -353,13 +361,16 @@
 	        /// <param name="channel"></param>
 	        public static void StartStopAdsSlates(IChannel channel)
 	        {
+	            int cueId = new Random().Next(int.MaxValue);
+	            var path = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\\..\\SlateJPG\\DefaultAzurePortalSlate.jpg"));
+	
 	            Log("Creating asset");
 	            var slateAsset = _context.Assets.Create("Slate test asset " + DateTime.Now.ToString("yyyy-MM-dd HH-mm"), AssetCreationOptions.None);
 	            Log("Slate asset created", slateAsset.Id);
 	
 	            Log("Uploading file");
-	            var assetFile = slateAsset.AssetFiles.Create("SlateTest.jpg");
-	            assetFile.Upload("SlateTest.jpg");
+	            var assetFile = slateAsset.AssetFiles.Create("DefaultAzurePortalSlate.jpg");
+	            assetFile.Upload(path);
 	            assetFile.IsPrimary = true;
 	            assetFile.Update();
 	
@@ -372,11 +383,11 @@
 	            TrackOperation(hideSlateOperation, "Hide slate");
 	
 	            Log("Starting ad");
-	            var startAdOperation = channel.SendStartAdvertisementOperation(TimeSpan.FromMinutes(1), 0, false);
+	            var startAdOperation = channel.SendStartAdvertisementOperation(TimeSpan.FromMinutes(1), cueId, false);
 	            TrackOperation(startAdOperation, "Start ad");
 	
 	            Log("Ending ad");
-	            var endAdOperation = channel.SendEndAdvertisementOperation();
+	            var endAdOperation = channel.SendEndAdvertisementOperation(cueId);
 	            TrackOperation(endAdOperation, "End ad");
 	
 	            Log("Deleting slate asset");
@@ -496,14 +507,13 @@
 	                operationId ?? string.Empty);
 	        }
 	    }
-	}
-	
+	}	
 
 
-##后续步骤
+[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
 
 ### 想要寻找其他内容吗？
 
 如果本主题不包含你所期待的内容、缺少某些内容，或在其他方面不符合你的需求，请使用下面的 Disqus 会话向我们提供反馈。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0307_2016-->

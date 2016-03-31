@@ -1,6 +1,6 @@
 <properties
 	pageTitle="使用 Azure 表服务的 Node.js Web 应用"
-	description="本教程演示如何使用 Azure 表服务在 Azure 网站所托管的 Node.js 应用程序中存储数据。"
+	description="本教程演示如何使用 Azure 表服务在 Azure Web 应用所托管的 Node.js 应用程序中存储数据。"
 	tags="azure-portal"
 	services="app-service\web, storage"
 	documentationCenter="nodejs"
@@ -10,15 +10,15 @@
 
 <tags
 	ms.service="storage"
-	ms.date="09/01/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="01/20/2016"
+	wacn.date="03/28/2016"/>
 
 
 
 # 使用 Azure 表服务的 Node.js Web 应用
 
 ## 概述
-本教程演示如何使用 Azure 数据管理提供的表服务来存储和访问在 Azure 网站上托管的 [node] 应用程序的数据。本教程假定你之前有使用 node 和[Git]的经验。
+本教程演示如何使用 Azure 数据管理提供的表服务来存储和访问在 Azure Web 应用上托管的 [node] 应用程序的数据。本教程假定你之前有使用 node 和[Git]的经验。
 
 你将学习以下内容：
 
@@ -125,7 +125,7 @@
 
 ### 安装其他模块
 
-**express** 创建的其中一个文件是 **package.json**。此文件包含模块依赖项的列表。之后，当你将应用程序部署到 Azure 网站时，此文件会确定需要在 Azure 上安装的模块。
+**express** 创建的其中一个文件是 **package.json**。此文件包含模块依赖项的列表。之后，当你将应用程序部署到 Azure Web 应用时，此文件会确定需要在 Azure 上安装的模块。
 
 在命令行中，输入以下命令，以安装 **package.json** 文件中描述的模块。可能需要使用“sudo”。
 
@@ -290,7 +290,7 @@
 		  },
 
 		  addTask: function(req,res) {
-		    var self = this      
+		    var self = this;
 		    var item = req.body.item;
 		    self.task.addItem(item, function itemAdded(error) {
 		      if(error) {
@@ -477,9 +477,9 @@
 
 ## 将你的应用程序部署到 Azure
 
-本部分中的步骤使用 Azure 命令行工具在 Azure 网站中创建新的 Web 应用，然后使用 Git 部署应用程序。若要执行这些步骤，你必须具有 Azure 订阅。
+本部分中的步骤使用 Azure 命令行工具在 Azure 中创建新的 Web 应用，然后使用 Git 部署应用程序。若要执行这些步骤，你必须具有 Azure 订阅。
 
-> [AZURE.NOTE]还可以使用 [Azure 门户](https://manage.windowsazure.cn)执行这些步骤。请参阅[在 Azure 网站中生成和部署 Node.js Web 应用]。
+> [AZURE.NOTE]还可以使用 [Azure 门户](https://manage.windowsazure.cn/)执行这些步骤。请参阅[在 Azure 中生成和部署 Node.js Web 应用]。
 >
 > 如果这是你创建的第一个 Web 应用，则你必须使用 Azure 门户部署此应用程序。
 
@@ -535,15 +535,15 @@
 		info:   Executing `git remote add azure https://username@tabletasklist.chinacloudsites.cn/TableTasklist.git`
 		info:   site create command OK
 
-	> [AZURE.NOTE]如果这是你的订阅的第一个 Web 应用，系统会指示你使用 Azure 门户创建 Web 应用。有关详细信息，请参阅[在 Azure 网站中生成和部署 Node.js Web 应用]。
+	> [AZURE.NOTE]如果这是你的订阅的第一个 Web 应用，系统会指示你使用 Azure 门户创建 Web 应用。有关详细信息，请参阅[在 Azure 中生成和部署 Node.js Web 应用]。
 
 ### 切换到环境变量
 
-前面我们实现了用于查找环境变量或从 **config.json** 文件中加载值的代码。在接下来的步骤中，你将在网站配置中创建应用程序通过环境变量实际访问的键值对。
+前面我们实现了用于查找环境变量或从 **config.json** 文件中加载值的代码。在接下来的步骤中，你将在 Web 应用配置中创建应用程序通过环境变量实际访问的键值对。
 
-1. 从管理门户中，单击“网站”，然后选择你的网站。
+1. 从管理门户中，单击“ Web 应用”，然后选择你的 Web 应用。
 
-	![打开网站仪表板][go-to-dashboard]
+	![打开 Web 应用仪表板][go-to-dashboard]
 
 2. 单击“配置”，然后找到页面的“应用设置”部分。
 
@@ -572,7 +572,7 @@
 
 		git push azure master
 
-在将更改部署到 Azure 后，你的 Web 应用程序应当继续工作，因为它现在从“应用设置”条目读取连接字符串。若要验证此情况，请在“应用设置”中将 **STORAGE\_KEY** 条目的值更改为一个无效值。保存该值后，网站应该会因存储访问密钥设置无效而失败。
+在将更改部署到 Azure 后，你的 Web 应用应当继续工作，因为它现在从“应用设置”条目读取连接字符串。若要验证此情况，请在“应用设置”中将 **STORAGE\_KEY** 条目的值更改为一个无效值。保存该值后， Web 应用应该会因存储访问密钥设置无效而失败。
 
 ### 发布应用程序
 
@@ -596,17 +596,12 @@
 		To https://username@tabletasklist.chinacloudsites.cn/TableTasklist.git
  		 * [new branch]      master -> master
 
-4. 推送操作完成后，浏览到 `azure create site` 命令之前返回的 Web 应用 URL，以查看你的应用程序。
-
-
-## 后续步骤
-
-虽然本文中的步骤介绍了使用表服务来存储信息，但你也可以使用 MongoDB。有关详细信息，请参阅 [使用 MongoDB 的 Node.js Web 应用]。
+4. 推送操作完成后，浏览到 `azure create site` 命令之前返回的 Web 应用URL，以查看你的应用程序。
 
 ## 其他资源
-[Azure 命令行界面]
-[创建 Node.js 应用程序并将其部署到 Azure  网站]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
-[使用 Git 发布到 Azure 网站]: /documentation/articles/web-sites-publish-source-control/
+[Azure 命令行界面][Azure CLI]
+[创建 Node.js 应用程序并将其部署到 Azure Web 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
+[使用 Git 发布到 Azure Web 应用]: /documentation/articles/web-sites-publish-source-control/
 [Azure 开发人员中心]: /develop/nodejs/
 
 
@@ -614,13 +609,13 @@
 [node]: http://nodejs.org
 [Git]: http://git-scm.com
 [Express]: http://expressjs.com
-[for free]: http://www.windowsazure.cn
+[for free]: http://www.azure.cn
 [Git remote]: http://git-scm.com/docs/git-remote
 
 [使用 MongoDB 的 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-store-data-mongodb/
-[Azure CLI]: /documentation/articles/xplat-cli/
+[Azure CLI]: /documentation/articles/xplat-cli-install
 
-[使用 Git 发布到 Azure 网站]: /documentation/articles/web-sites-publish-source-control/
+[使用 Git 发布到 Azure Web 应用]: /documentation/articles/web-sites-publish-source-control/
 [azure]: https://github.com/Azure/azure-sdk-for-node
 [node-uuid]: https://www.npmjs.com/package/node-uuid
 [nconf]: https://www.npmjs.com/package/nconf

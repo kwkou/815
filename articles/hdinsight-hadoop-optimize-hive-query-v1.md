@@ -1,5 +1,5 @@
 <properties
-   pageTitle="优化 Hive 查询以便在 HDInsight 中更快地执行 | Windows Azure"
+   pageTitle="优化 Hive 查询以便在 HDInsight 中更快地执行 | Azure"
    description="了解如何在 HDInsight 中优化 Hive 查询"
    services="hdinsight"
    documentationCenter=""
@@ -10,22 +10,18 @@
 <tags
    ms.service="hdinsight"
    ms.date="07/28/2015"
-   wacn.date="10/03/2015"/>
+   wacn.date="01/15/2016"/>
 
 
 # 在 Hdinsight 中优化 Hadoop 的 Hive 查询
 
 默认情况下，不会为了性能而优化 Hadoop 群集。本文介绍可对查询应用的几种最常见 Hive 性能优化方法。
 
-[AZURE.INCLUDE [门户](../includes/hdinsight-azure-portal.md)]
-
-* [在 Hdinsight 中优化 Hadoop 的 Hive 查询](/documentation/articles/hdinsight-hadoop-optimize-hive-query)。
-
 ##向外缩放辅助节点
 
 增加群集中的辅助节点数目，即可利用更多并行运行的映射器和化简器。在 HDInsight 中，可通过两种方式增加扩大的数目：
 
-- 在预配时，可以使用 Azure 门户、Azure PowerShell 或跨平台命令行界面指定辅助节点的数目。有关详细信息，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)。以下屏幕显示了 Azure 门户上的辅助节点配置：
+- 在预配时，可以使用 Azure 门户、Azure PowerShell 或跨平台命令行界面指定辅助节点的数目。有关详细信息，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1)。以下屏幕显示了 Azure 门户上的辅助节点配置：
 
 	![scaleout\_1][image-hdi-optimize-hive-scaleout_1]
 - 在运行时，你也可以向外缩放群集，而无需重建群集。如下所示。![scaleout\_1][image-hdi-optimize-hive-scaleout_2]
@@ -203,7 +199,6 @@ ORC（优化行纵栏式）格式是存储 Hive 数据的高效方式。与其�
 在本文中，你已学习了几种常见的 Hive 查询优化方法。若要了解更多信息，请参阅下列文章：
 
 - [使用 HDInsight 中的 Hive 分析航班延误数据](/documentation/articles/hdinsight-analyze-flight-delay-data)
-- [使用 HDInsight 中的 Hive 分析 Twitter 数据](/documentation/articles/hdinsight-analyze-twitter-data)
 - [使用 HDInsight 中 Hadoop上的 Hive 查询控制台分析传感器数据](/documentation/articles/hdinsight-hive-analyze-sensor-data)
 
 

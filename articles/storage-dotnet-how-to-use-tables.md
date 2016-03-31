@@ -1,6 +1,6 @@
 <properties
-	pageTitle="如何通过 .NET 使用表存储 | Windows Azure"
-	description="了解如何使用 Windows Azure 表存储来创建和删除表，以及在表中插入和查询实体。"
+pageTitle="通过 .NET 开始使用 Azure 表存储 | Azure"
+	description="使用 Azure 表存储和 Microsoft 的 NoSQL 数据存储将非结构化的数据存储在云中。立即开始使用简单的表存储操作，包括创建和删除表和插入、更新、删除和查询数据。"
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
@@ -9,18 +9,21 @@
 
 <tags
 	ms.service="storage"
-	ms.date="08/04/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="01/24/2016"
+	wacn.date="03/17/2016"/>
 
 
-
-# 如何通过 .NET 使用表存储
+# 通过 .NET 开始使用 Azure 表存储
 
 [AZURE.INCLUDE [storage-selector-table-include](../includes/storage-selector-table-include.md)]
 
 ## 概述
 
-本指南将演示如何使用 Azure 表存储服务执行常见方案。示例是使用 C# 代码编写的，并使用了 .NET 的 Azure 存储客户端库。涉及的方案包括**创建和删除表**，以及**使用表实体**。
+Azure 表存储是一种将非结构化的 NoSQL 数据存储在云中的服务。表存储是采用无架构设计的键/属性存储。因为表存储无架构，因此可以很容易地随着你的应用程序需求的发展使数据适应存储。对于所有类型的应用程序，都可以快速并经济高效地访问数据。对于相似的数据量，表存储的成本通常显著低于传统的 SQL。
+
+你可以使用表存储来存储灵活的数据集，例如 Web 应用程序的用户数据、通讯簿、设备信息，以及你的服务需要的任何其他类型的元数据。可以在表中存储任意数量的实体，并且一个存储帐户可以包含任意数量的表，直至达到存储帐户的容量极限。
+
+本教程演示如何对使用 Azure 表存储的某些常见情形（包括创建和删除表和插入、更新、删除和查询表数据）编写 .NET 代码。
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -35,19 +38,19 @@
 [AZURE.INCLUDE [storage-dotnet-obtain-assembly](../includes/storage-dotnet-obtain-assembly.md)]
 
 ### 命名空间声明
-在你希望以编程方式访问 Azure 存储的任何 C# 文件中，将以下代码命名空间声明添加到文件的顶部：
+在您希望以编程方式访问 Azure 存储的任何 C# 文件中，将以下代码命名空间声明添加到文件的顶部。
 
     using Microsoft.WindowsAzure.Storage;
 	using Microsoft.WindowsAzure.Storage.Auth;
     using Microsoft.WindowsAzure.Storage.Table;
 
-确保你引用  `Microsoft.WindowsAzure.Storage.dll` 程序集。
+确保你引用 `Microsoft.WindowsAzure.Storage.dll` 程序集。
 
 [AZURE.INCLUDE [storage-dotnet-retrieve-conn-string](../includes/storage-dotnet-retrieve-conn-string.md)]
 
 ## 创建表
 
-利用 **CloudTableClient** 对象，您可以获得表和实体的引用对象。以下代码将创建 **CloudTableClient** 对象并使用它创建新表。本指南中的所有代码假定将构建的应用程序是 Azure 云服务项目，并且使用存储在 Azure 应用程序的服务配置中的存储连接字符串。
+利用 **CloudTableClient** 对象，您可以获得表和实体的引用对象。以下代码将创建 **CloudTableClient** 对象并使用它创建新表。本文中的所有代码假定将构建的应用程序是 Azure 云服务项目，并且使用存储在 Azure 应用程序的服务配置中的存储连接字符串。
 
     // Retrieve the storage account from the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -62,7 +65,7 @@
 
 ## 将实体添加到表
 
-实体将映射到使用派生自 **TableEntity** 的自定义类的 C# 对象。若要将实体添加到表，请创建用于定义实体的属性的类。以下代码定义将客户的名字和姓氏分别用作行键和分区键的实体类。实体的分区键和行键共同唯一地标识表中的实体。查询分区键相同的实体的速度快于查询分区键不同的实体的速度，但使用不同的分区键可实现更高的并行操作可伸缩性。对于应存储在表服务中的任何属性，该属性必须是公开 `get` 和 `set` 的受支持类型的公共属性。此外，你的实体类型*必须*公开不带参数的构造函数。
+实体使用派生自 **TableEntity** 的自定义类映射到 C# 对象。若要将实体添加到表，请创建用于定义实体的属性的类。以下代码定义将客户的名字和姓氏分别用作行键和分区键的实体类。实体的分区键和行键共同唯一地标识表中的实体。查询分区键相同的实体的速度快于查询分区键不同的实体的速度，但使用不同的分区键可实现更高的并行操作可伸缩性。对于应存储在表服务中的任何属性，该属性必须是公开 `get` 和 `set` 的受支持类型的公共属性。此外，你的实体类型 *必须* 公开不带参数的构造函数。
 
     public class CustomerEntity : TableEntity
     {
@@ -71,7 +74,7 @@
             this.PartitionKey = lastName;
             this.RowKey = firstName;
         }
-		
+
         public CustomerEntity() { }
 
         public string Email { get; set; }
@@ -79,7 +82,7 @@
         public string PhoneNumber { get; set; }
     }
 
-调用实体的表操作通过你在“如何创建表”中创建的 **CloudTable** 对象执行。 用一个 **TableOperation** 对象表示要执行的操作。以下代码示例演示如何创建 **CloudTable** 对象以及 **CustomerEntity** 对象。为准备此操作，会创建一个 **TableOperation** 对象以将客户实体插入该表中。最后，通过调用 **CloudTable.Execute** 执行此操作。
+涉及实体的表操作通过你先前在“创建表”部分中创建的 **CloudTable** 对象执行。用一个 **TableOperation** 对象表示要执行的操作。以下代码示例演示如何创建 **CloudTable** 对象以及 **CustomerEntity** 对象。为准备此操作，会创建一个 **TableOperation** 对象以将客户实体插入该表中。最后，通过调用 **CloudTable.Execute** 执行此操作。
 
     // Retrieve the storage account from the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -87,7 +90,7 @@
 
     // Create the table client.
     CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
-	
+
 	// Create the CloudTable object that represents the "people" table.
 	CloudTable table = tableClient.GetTableReference("people");
 
@@ -109,7 +112,7 @@
 -  你可以在同一批处理操作中执行更新、删除和插入操作。
 -  单个批处理操作最多可包含 100 个实体。
 -  单次批处理操作中的所有实体都必须具有相同的分区键。
--  可以作为批处理操作执行查询时，此操作必须是批处理中仅有的操作。
+-  虽然可以将某个查询作为批处理操作执行，但该操作必须是批处理中仅有的操作。
 
 <!-- -->
 以下代码示例创建两个实体对象，并使用 **Insert** 方法将其中每个对象都添加到 **TableBatchOperation** 中。然后调用 **CloudTable.Execute** 以执行此操作。
@@ -120,7 +123,7 @@
 
     // Create the table client.
     CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
-    
+
 	// Create the CloudTable object that represents the "people" table.
     CloudTable table = tableClient.GetTableReference("people");
 
@@ -131,12 +134,12 @@
 	CustomerEntity customer1 = new CustomerEntity("Smith", "Jeff");
 	customer1.Email = "Jeff@contoso.com";
 	customer1.PhoneNumber = "425-555-0104";
-            
+
 	// Create another customer entity and add it to the table.
 	CustomerEntity customer2 = new CustomerEntity("Smith", "Ben");
 	customer2.Email = "Ben@contoso.com";
 	customer2.PhoneNumber = "425-555-0102";
-            
+
 	// Add both customer entities to the batch insert operation.
 	batchOperation.Insert(customer1);
 	batchOperation.Insert(customer2);
@@ -179,7 +182,7 @@
     // Create the table client.
     CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-    //Create the CloudTable object that represents the "people" table.
+    // Create the CloudTable object that represents the "people" table.
     CloudTable table = tableClient.GetTableReference("people");
 
 	// Create the table query.
@@ -224,7 +227,7 @@
 
 ## 替换实体
 
-若要更新实体，请从表服务中检索它，修改实体对象，然后将更改保存回表服务。以下代码将更改现有客户的电话号码。此代码使用 **Replace**，而不是调用 **Insert**。这将导致在服务器上完全替换该实体，除非服务器上的该实体自检索到它以后发生更改，在此情况下，该操作将失败。操作失败将防止您的应用程序无意中覆盖应用程序的其他组件在检索与更新之间所做的更改。正确处理此失败问题的方法是再次检索实体，进行更改（如果仍有效），然后再次执行 **Replace** 操作。下一节将为你演示如何重写此行为。
+若要更新实体，请从表服务中检索它，修改实体对象，然后将更改保存回表服务。以下代码将更改现有客户的电话号码。此代码使用 **Replace**，而不是调用 **Insert**。这将导致在服务器上完全替换该实体，除非服务器上的该实体自检索到它以后发生更改，在此情况下，该操作将失败。操作失败将防止你的应用程序无意中覆盖应用程序的其他组件在检索与更新之间所做的更改。正确处理此失败问题的方法是再次检索实体，进行更改（如果仍有效），然后再次执行 **Replace** 操作。下一节将为你演示如何重写此行为。
 
     // Retrieve the storage account from the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -264,7 +267,7 @@
 
 ## 插入或替换实体
 
-如果该实体自从服务器中检索到它以后发生更改，则 **Replace** 操作将失败。此外，你必须首先从服务器中检索该实体，**Replace** 操作才能成功。但是，有时你不知道服务器上是否存在该实体以及存储在其中的当前值是否无关。更新操作会将其全部覆盖。为此，你应使用 **InsertOrReplace** 操作。如果该实体不存在，此操作将插入它，如果存在，则替换它，而不管上次更新是何时进行的。在以下代码示例中，仍将检索 Ben Smith 的客户实体，但稍后会使用 **InsertOrReplace** 将其保存回服务器。将覆盖在检索与更新操作之间对实体进行的任何更新。
+如果该实体自从服务器中检索到它以后发生更改，则 **Replace** 操作将失败。此外，必须首先从服务器中检索该实体，**Replace** 操作才能成功。但是，有时你不知道服务器上是否存在该实体以及存储在其中的当前值是否无关。更新操作会将其全部覆盖。为此，你应使用 **InsertOrReplace** 操作。如果该实体不存在，此操作将插入它，如果存在，则替换它，而不管上次更新是何时进行的。在以下代码示例中，仍将检索 Ben Smith 的客户实体，但稍后会使用 **InsertOrReplace** 将其保存回服务器。将覆盖在检索与更新操作之间对实体进行的任何更新。
 
     // Retrieve the storage account from the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -304,7 +307,7 @@
 
 ## 查询一部分实体属性
 
-表查询可以只检索实体中的少数几个属性而不是所有实体属性。此方法称为“投影”，可减少带宽并提高查询性能，尤其适用于大型实体。以下代码中的查询只返回表中实体的电子邮件地址。这可通过使用 **DynamicTableEntity** 和 **EntityResolver** 的查询来实现。你可以在“Upsert 和查询投影介绍”[博客文章][]中更加详细地了解投影。注意，本地存储模拟器不支持投影，因此，此代码仅在使用表服务中的帐户时才能运行。
+表查询可以只检索实体中的少数几个属性而不是所有实体属性。此方法称为“投影”，可减少带宽并提高查询性能，尤其适用于大型实体。以下代码中的查询只返回表中实体的电子邮件地址。这可通过使用 **DynamicTableEntity** 和 **EntityResolver** 的查询来实现。你可以在[“Upsert 和查询投影介绍”博客文章][]中更加详细地了解投影。注意，本地存储模拟器不支持投影，因此，此代码仅在使用表服务中的帐户时才能运行。
 
     // Retrieve the storage account from the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -313,7 +316,7 @@
     // Create the table client.
     CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-    //Create the CloudTable that represents the "people" table.
+    // Create the CloudTable that represents the "people" table.
     CloudTable table = tableClient.GetTableReference("people");
 
     // Define the query, and select only the Email property.
@@ -338,7 +341,7 @@
     // Create the table client.
     CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-    //Create the CloudTable that represents the "people" table.
+    // Create the CloudTable that represents the "people" table.
     CloudTable table = tableClient.GetTableReference("people");
 
     // Create a retrieve operation that expects a customer entity.
@@ -375,7 +378,7 @@
     // Create the table client.
     CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-    //Create the CloudTable that represents the "people" table.
+    // Create the CloudTable that represents the "people" table.
     CloudTable table = tableClient.GetTableReference("people");
 
     // Delete the table it if exists.
@@ -383,7 +386,7 @@
 
 ## 以异步方式检索页中的实体
 
-如果你正在读取大量实体，并且你想要如已经检索到一样处理/显示实体而不是等待返回全部实体，则可以通过使用分段查询检索实体。此示例显示如何通过 Async-Await 模式以页面形式返回结果，这样就不会在等待返回大量结果时阻止操作的执行。有关在 .NET 中使用 Async-Await 模式的详细信息，请参阅 [使用 Async 和 Await 进行异步编程（C# 和 Visual Basic）](https://msdn.microsoft.com/zh-cn/library/hh191443.aspx)。
+如果你正在读取大量实体，并且想要在检索进行时处理/显示实体，而非等待返回全部实体，则可以通过使用分段查询检索实体。此示例显示如何通过 Async-Await 模式以页面形式返回结果，这样就不会在等待返回大量结果时阻止操作的执行。有关在 .NET 中使用 Async-Await 模式的详细信息，请参阅 [使用 Async 和 Await 进行异步编程（C# 和 Visual Basic）](https://msdn.microsoft.com/zh-cn/library/hh191443.aspx)。
 
     // Initialize a default TableQuery to retrieve all the entities in the table.
     TableQuery<CustomerEntity> tableQuery = new TableQuery<CustomerEntity>();
@@ -411,24 +414,14 @@
 
 现在，你已了解有关表存储的基础知识，请按照下面的链接了解更复杂的存储任务：
 
-<ul>
-<li>查看表服务参考文档，了解有关可用 API 的完整详情：
-  <ul>
-    <li><a href="http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx">.NET 存储客户端库参考</a>
-    </li>
-    <li><a href="http://msdn.microsoft.com/zh-cn/library/azure/dd179355">REST API 参考</a></li>
-  </ul>
-</li>
-<li>通过查看 <a href="http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx">Azure 存储空间文档</a>了解可以通过 Azure 存储空间执行的更高级任务。</li>
-<li>了解如何通过使用 <a href="/documentation/articles/websites-dotnet-webjobs-sdk/">Azure WebJobs SDK</a> 简化为使用 Azure 存储空间而写的代码。</li>
-<li>查看更多功能指南，以了解在 Azure 中存储数据的其他方式：
-  <ul>
-    <li>使用 <a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/">Blob 存储</a>来存储非结构化数据。</li>
-    <li>使用<a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues/">队列存储</a>来存储结构化数据。</li>
-    <li>使用 <a href="/zh-cn/documentation/articles/sql-database-dotnet-how-to-use/">SQL 数据库</a> 来存储关系数据。</li>
-  </ul>
-</li>
-</ul>
+- 查看表服务参考文档，了解有关可用 API 的完整详情：
+    - [.NET 存储客户端库参考](https://msdn.microsoft.com/zh-cn/library/mt347887.aspx)
+    - [REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
+- 了解如何使用 [Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started) 简化你编写的用于 Azure 存储空间的代码
+- 查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
+    - 使用 [Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)来存储非结构化数据。
+    - 使用 [SQL 数据库](/documentation/articles/sql-database-dotnet-how-to-use)来存储关系数据。
+
 
   [下载并安装 Azure SDK for.NET]: /develop/net/
   [在 Visual Studio 中创建 Azure 项目]: http://msdn.microsoft.com/zh-cn/library/azure/ee405487.aspx
@@ -438,7 +431,7 @@
   [Blob7]: ./media/storage-dotnet-how-to-use-table-storage/blob7.png
   [Blob8]: ./media/storage-dotnet-how-to-use-table-storage/blob8.png
   [Blob9]: ./media/storage-dotnet-how-to-use-table-storage/blob9.png
-  
+
   [博客文章]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
   [.NET 客户端库引用]: http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
@@ -447,4 +440,4 @@
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [空间]: http://nuget.org/packages/System.Spatial/5.0.2
-<!---HONumber=70-->
+<!---HONumber=Mooncake_0307_2016-->

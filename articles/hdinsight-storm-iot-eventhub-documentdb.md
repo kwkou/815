@@ -1,5 +1,5 @@
 <properties
- pageTitle="使用 Apache Storm on HDInsight 处理车辆传感器数据 | Windows Azure"
+ pageTitle="使用 Apache Storm on HDInsight 处理车辆传感器数据 | Azure"
  description="了解如何使用 Apache Storm on HDInsight 处理事件中心的车辆传感器数据。添加 DocumentDB 提供的车型数据，然后将输出存储到存储空间。"
  services="hdinsight,documentdb,notification-hubs"
  documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/23/2015"
-	wacn.date="11/27/2015"/>
+	ms.date="01/08/2016"
+	wacn.date="03/28/2016"/>
 
 #使用 Apache Storm on HDInsight 处理 Azure 事件中心的车辆传感器数据
 
@@ -48,10 +48,10 @@ Azure 事件中心可用于处理传感器生成的大量数据，而 Apache Sto
 
 ##实现
 
-GitHub 上的 <a href="https://github.com/hdinsight/hdinsight-storm-examples" target="_blank">HDInsight-Storm-Examples</a> 存储库中提供了这种情况的完整自动化解决方案。若要使用此示例，请遵循 [IoTExample README.MD](https://github.com/hdinsight/hdinsight-storm-examples/blob/master/IotExample/README.md) 中的步骤。
+GitHub 上的 [HDInsight-Storm-Examples](https://github.com/hdinsight/hdinsight-storm-examples) 存储库中提供了这种情况的完整自动化解决方案。若要使用此示例，请遵循 [IoTExample README.MD](https://github.com/hdinsight/hdinsight-storm-examples/blob/master/IotExample/README.md) 中的步骤。
 
 ## 后续步骤
 
 如需更多 Storm 拓扑示例，请参阅 [Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology)。
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1207_2015-->

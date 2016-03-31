@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Azure SQL 数据库安全指导原则和限制 | Windows Azure"
-   description="了解与安全性相关的 Windows Azure SQL 数据库指导原则和限制。"
+   pageTitle="Azure SQL 数据库安全指导原则和限制 | Azure"
+   description="了解与安全性相关的 Azure SQL 数据库指导原则和限制。"
    services="sql-database"
    documentationCenter=""
    authors="BYHAM"
@@ -10,18 +10,18 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="08/20/2015"
-   wacn.date="09/15/2015"/>
+   ms.date="11/24/2015"
+   wacn.date="01/29/2016"/>
 
 # Azure SQL 数据库安全指导原则和限制
 
-本主题介绍与安全性相关的 Windows Azure SQL 数据库指导原则和限制。在管理你的 Azure SQL 数据库的安全性时应考虑以下几点：
+本主题介绍与安全性相关的 Azure SQL 数据库指导原则和限制。在管理你的 Azure SQL 数据库的安全性时应考虑以下几点：
 
 ## 防火墙
 
 只能通过 TCP 端口 1433 使用 Azure SQL 数据库服务。若要从计算机访问 SQL 数据库，请确保你的防火墙允许 TCP 端口 1433 上的传出 TCP 通信。在连接过程中，来自 Azure 虚拟机的连接将重定向到每个辅助角色特有的不同 IP 地址和端口。该端口号在 11000 到 11999 的范围内。
 
-在你首次连接到 Azure SQL 数据库服务器之前，必须使用 [Azure 门户](https://manage.windowsazure.cn)或 [Azure 平台管理门户](https://manage.windowsazure.cn/microsoft.partner.onmschina.cn#Workspaces/All/dashboard)来配置 Azure SQL 数据库防火墙。你将需要创建一个服务器级防火墙设置，该设置允许从你的计算机或 Azure 连接到 Azure SQL 数据库服务器。如果要控制对 Azure SQL 数据库服务器内某些数据库的访问，请为相应数据库创建数据库级防火墙规则。有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)。
+在你首次连接到 Azure SQL 数据库服务器之前，必须使用 [Azure 经典门户](https://manage.windowsazure.cn)或 [Azure 平台经典门户](https://manage.windowsazure.cn/microsoft.partner.onmschina.cn#Workspaces/All/dashboard)来配置 Azure SQL 数据库防火墙。你将需要创建一个服务器级防火墙设置，该设置允许从你的计算机或 Azure 连接到 Azure SQL 数据库服务器。如果要控制对 Azure SQL 数据库服务器内某些数据库的访问，请为相应数据库创建数据库级防火墙规则。有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)。
 
 ## 连接加密和证书验证
 
@@ -33,7 +33,7 @@
 
 SQL Server Management Studio 也支持证书验证。在“连接到服务器”对话框中的“连接属性”选项卡上单击“加密连接”。
 
-> [AZURE.NOTE]在 SQL Server 2008 R2 之前的版本中，SQL Server Management Studio 不支持与 SQL 数据库建立连接。
+> [AZURE.NOTE] 在 SQL Server 2008 R2 之前的版本中，SQL Server Management Studio 不支持与 SQL 数据库建立连接。
 
 尽管从 SQL 数据库开始 SQLCMD 支持 SQL Server 2008，但在 SQL Server 2008 R2 之前的版本中不支持证书验证。若要使用从 SQL Server 2008 R2 中开始的 SQLCMD 来验证证书，请使用 ``-N`` 命令行选项并且不使用 ``-C`` 选项。通过使用 -N 选项，SQLCMD 请求加密的连接。不使用 ``-C`` 选项时，SQLCMD 不会隐式信任服务器证书并且强制验证证书。
 
@@ -41,11 +41,11 @@ SQL Server Management Studio 也支持证书验证。在“连接到服务器”
 
 ## 身份验证
 
-SQL 数据库仅支持 SQL Server 身份验证。不支持 Windows 身份验证（集成安全性）。用户在每次连接到 SQL Database 时都必须提供凭据（登录名和密码）。有关 SQL Server 身份验证的详细信息，请参阅 SQL Server 联机丛书中的[选择身份验证模式](https://msdn.microsoft.com/zh-cn/library/ms144284.aspx)。
+Active Directory 身份验证（集成安全性）在 SQL 数据库 V12 中以预览版的形式提供。有关如何配置 AD 身份验证的信息，请参阅[通过使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication)。如果与使用预览版，则用户在每次连接到 SQL 数据库时都必须提供凭据（登录名和密码）。有关 SQL Server 身份验证的详细信息，请参阅 SQL Server 联机丛书中的[选择身份验证模式](https://msdn.microsoft.com/zh-cn/library/ms144284.aspx)。
 
 [SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new) 允许用户使用包含的数据库用户在数据库中进行身份验证。有关详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)、[CREATE USER (Transact-SQL)](https://technet.microsoft.com/zh-cn/library/ms173463.aspx) 和[包含的数据库](https://technet.microsoft.com/zh-cn/library/ff929071.aspx)。
 
-> [AZURE.NOTE]Microsoft 建议使用包含的数据库用户提高可缩放性。
+> [AZURE.NOTE] Microsoft 建议使用包含的数据库用户提高可缩放性。
 
 数据库引擎将关闭空闲超过 30 分钟的连接。该连接必须重新登录才可供使用。
 
@@ -60,7 +60,7 @@ SQL 数据库仅支持 SQL Server 身份验证。不支持 Windows 身份验证�
 - 不能更改或删除 master 数据库中与服务器级别主体登录名相对应的数据库用户。 
 - 尽管服务器级别主体登录名不是 **dbmanager** 数据库中两个数据库角色 **loginmanager** 和 **master** 的成员，但它具有向这两个角色授予的所有权限。
 
-> [AZURE.NOTE]此登录名在服务器预配期间创建并且类似于 SQL Server 实例中的 **sa** 登录名。
+> [AZURE.NOTE] 此登录名在服务器预配期间创建并且类似于 SQL Server 实例中的 **sa** 登录名。
 
 对于所有登录名，以下限制均适用：
 
@@ -92,7 +92,7 @@ GO
 
 请考虑以下这些要点，以免你的 Azure SQL 数据库应用程序受到安全威胁：
 
-- 始终使用最新的更新：在连接到 SQL 数据库时，始终使用工具和库的最新版本来防止安全漏洞。有关支持哪些工具和库的详细信息，请参阅 [Azure SQL 数据库一般性的指导原则和限制](https://msdn.microsoft.com/zh-cn/library/azure/ee336245.aspx)。
+- 始终使用最新的更新：在连接到 SQL 数据库时，始终使用工具和库的最新版本来防止安全漏洞。
 - 阻止 TCP 端口 1433 上的入站连接：应用程序只需 TCP 端口 1433 上的出站连接即可与 SQL 数据库通信。如果该计算机上任何其他应用程序不需要入站通信，则请确保你的防火墙继续阻止 TCP 端口 1433 上的入站连接。
 - 防止注入安全漏洞：为了确保应用程序不存在 SQL 注入安全漏洞，请尽可能使用参数化查询。此外，请确保首先通查代码并且运行渗透测试，再部署你的应用程序。
 
@@ -103,8 +103,8 @@ GO
 
 [如何：配置防火墙设置（Azure SQL 数据库）](/documentation/articles/sql-database-configure-firewall-settings)
 
-[Azure SQL 数据库一般性的指导原则和限制](https://msdn.microsoft.com/zh-cn/library/azure/ee336245.aspx)
-
 [在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins)
 
-<!---HONumber=69-->
+[SQL Server 数据库引擎和 Azure SQL 数据库安全中心](https://msdn.microsoft.com/zh-cn/library/bb510589)
+
+<!---HONumber=Mooncake_0118_2016-->
