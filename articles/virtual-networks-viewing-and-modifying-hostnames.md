@@ -43,7 +43,7 @@
 
 从 REST 客户端，按照以下说明进行操作：
 
-1. 确保你有用于连接到 Azure 门户的客户端证书。若要获取客户端证书，请执行 [如何：下载和导入发布设置和订阅信息] 中提供的步骤 (https://msdn.microsoft.com/zh-cn/library/dn385850.aspx)。
+1. 确保你有用于连接到 Azure 门户的客户端证书。若要获取客户端证书，请执行 [如何：下载和导入发布设置和订阅信息](https://msdn.microsoft.com/zh-cn/library/dn385850.aspx)中提供的步骤。
 
 1. 使用值 2013-11-01 设置名为 x-ms-version 的标头条目。
 

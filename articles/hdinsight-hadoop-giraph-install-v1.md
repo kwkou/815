@@ -164,7 +164,7 @@
 <a name="usingSDK"></a>
 ## 使用 .NET SDK 安装 Giraph
 
-查看[使用脚本操作定制 HDInsight 集群](/documentation/articles/hdinsight-hadoop-customize-cluster#call-scripts-using-net-sdk). 这个示例展示了怎么使用 .NET SDK 安装 Spark。你需要定制这个脚本来使用 [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1).
+查看[使用脚本操作定制 HDInsight 集群](/documentation/articles/hdinsight-hadoop-customize-cluster-v1#call-scripts-using-net-sdk). 这个示例展示了怎么使用 .NET SDK 安装 Spark。你需要定制这个脚本来使用 [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1).
 
 ## 另请参阅
 
