@@ -10,12 +10,12 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="08/14/2015" 
-	wacn.date="01/29/2016" />
+	wacn.date="03/30/2016" />
 
 
 # 使用 Azure Active Directory 组管理对资源的访问
 
-Azure Active Directory 是综合性的标识和访问管理解决方案，它提供一套稳健的功能来管理对本地和云应用程序及资源（包括诸如 Office 365 的 Microsoft 联机服务和众多非 Microsoft SaaS 应用程序）的安全访问。
+Azure Active Directory (Azure AD) 是综合性的标识和访问管理解决方案，它提供一套稳健的功能来管理对本地和云应用程序及资源（包括诸如 Office 365 的 Microsoft 联机服务和众多非 Microsoft SaaS 应用程序）的安全访问。
 
 
 > [AZURE.NOTE]若要使用 Azure Active Directory，你需要一个 Azure 帐户。如果你没有帐户，可以[注册免费的 Azure 帐户](http://azure.microsoft.com/pricing/free-trial/)。
