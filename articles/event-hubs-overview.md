@@ -160,7 +160,7 @@ Azure 事件中心提供缩放性超高的事件与遥测处理服务，可用�
 
 [Azure 门户]: http://manage.windowsazure.cn
 [事件中心教程]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started
-[使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
-[队列消息解决方案]: /documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues
+[使用事件中心的完整示例应用程序]: https://github.com/Azure-Samples/
+[队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
  
 <!---HONumber=Mooncake_0321_2016-->
