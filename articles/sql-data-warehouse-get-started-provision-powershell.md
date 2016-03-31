@@ -84,7 +84,7 @@ New-AzureRmSqlDatabase -RequestedServiceObjectiveName "DW400" -DatabaseName "myn
 <!--Article references-->
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
-[加载]: /documentation/articles/sql-data-warehouse-overview-load.md
+[加载]: /documentation/articles/sql-data-warehouse-overview-load
 [加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
 [Powershell]: /documentation/articles/sql-data-warehouse-reference-powershell-cmdlets/
 [REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dn505719.aspx
