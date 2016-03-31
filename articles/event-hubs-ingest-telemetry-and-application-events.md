@@ -25,7 +25,7 @@
  
 ## 构建
 - [事件中心 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn790674.aspx)
-- [事件中心代码示例](https://code.msdn.microsoft.com/windowsazure/site/search?query=event%20hubs&f%5B0%5D.Value=event%20hubs&f%5B0%5D.Type=SearchText&ac=5)
+- [事件中心代码示例](https://github.com/Azure-Samples/)
  
 ## 相关服务
 - [服务总线](/documentation/services/service-bus/)
