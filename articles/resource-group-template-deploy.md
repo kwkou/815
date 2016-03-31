@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="12/08/2015"
-   wacn.date="01/14/2016"/>
+   ms.date="02/02/2016"
+   wacn.date="03/21/2016"/>
 
 # 使用 Azure 资源管理器模板部署应用程序
 
@@ -235,6 +235,14 @@
             },
             "webSiteLocation": {
                 "value": "China East"
+            },
+            "adminPassword": {
+                "reference": {
+                   "keyVault": {
+                      "id": "/subscriptions/{guid}/resourceGroups/{group-name}/providers/Microsoft.KeyVault/vaults/{vault-name}"
+                   }, 
+                   "secretName": "sqlAdminPassword" 
+                }   
             }
        }
     }
@@ -247,4 +255,4 @@
 
  
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0314_2016-->
