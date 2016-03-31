@@ -107,7 +107,7 @@
 
 4. 在作业的状态更改为 **SUCCEEDED** 后，你可以从 Azure Blob 存储中检索作业的结果。随查询一起传递的 `statusdir` 参数包含输出文件的位置；在本例中为 **wasb:///example/curl**。此地址会将作业的输出存储在 HDInsight 群集所用的默认存储容器的 **example/curl** 目录中。
 
-    可以使用 [Azure CLI](/documentation/articles/xplat-cli-install) 列出并下载这些文件。例如，若要列出 **example/curl** 中的文件，请使用以下命令：
+    可以使用[适用于 Mac, Linux 和 Windows 的 Azure CLI](/documentation/articles/xplat-cli-install) 列出并下载这些文件。例如，若要列出 **example/curl** 中的文件，请使用以下命令：
 
 		azure storage blob list <container-name> example/curl
 
@@ -131,7 +131,7 @@
     * **INSERT OVERWRITE ...SELECT** - 从包含 **[ERROR]** 的 **log4jLogs** 表中选择行，然后将数据插入 **errorLogs** 表中。
     * **SELECT** - 选择新 **errorLogs** 表中的所有行。
 
-7. 使用返回的作业 ID 检查作业的状态。成功后，如前面所述使用适用于 Windows 的 Azure CLI 下载并查看结果。输出应包含三行，其中所有行都包含 **[ERROR]**。
+7. 使用返回的作业 ID 检查作业的状态。成功后，如前面所述使用适用于 Mac, Linux 和 Windows 的 Azure CLI 下载并查看结果。输出应包含三行，其中所有行都包含 **[ERROR]**。
 
 
 ##<a id="summary"></a>摘要
@@ -153,7 +153,7 @@
 * [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
 
-[hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
+[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
@@ -175,9 +175,5 @@
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [Powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
-
-[image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png
-[img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
-[image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
 <!---HONumber=79-->

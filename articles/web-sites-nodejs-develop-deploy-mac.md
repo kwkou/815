@@ -175,7 +175,7 @@ Node.js 提供可由您的应用程序使用的丰富的模块生态系统。若
 有关如何在 Azure 上开发 Node.js 应用程序的详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
 
 [Azure 管理门户]: http://manage.windowsazure.cn
-[Azure Command-Line Tools for Mac and Linux]: /documentation/articles/xplat-cli
+[Azure Command-Line Tools for Mac and Linux]: /documentation/articles/xplat-cli-install
 [Azure PowerShell]: /documentation/articles/powershell-install-configure
 [portal-new-website]: ./media/web-sites-nodejs-develop-deploy-mac/plus-new.png
 [portal-git-username-password]: ./media/web-sites-nodejs-develop-deploy-mac/git-deployment-credentials.png

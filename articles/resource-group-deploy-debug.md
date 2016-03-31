@@ -156,7 +156,7 @@
 
 如果你的 Azure 凭据已过期或者尚未登录你的 Azure 帐户，则你的部署将失败。如果会话打开时间过长，则你的凭据可能会过期。你可以使用以下选项刷新你的凭据：
 
-- 对于 PowerShell，使用 **Login-AzureRmAccount** cmdlet（PowerShell 1.0 预览版以前的版本使用 **Add-AzureAccount**）。发布设置文件中的凭据不足以满足 AzureResourceManager 模块中的 cmdlet 的需要。
+- 对于 PowerShell，使用 **Login-AzureRmAccount** cmdlet。发布设置文件中的凭据不足以满足 AzureResourceManager 模块中的 cmdlet 的需要。
 - 对于 Azure CLI，使用 **azure login**。若要获取有关身份验证错误的帮助，请确保[正确配置 Azure CLI](/documentation/articles/xplat-cli-connect)。
 
 ## 检查模板和参数的格式
@@ -165,7 +165,7 @@
 
 ### PowerShell
 
-对于 PowerShell，使用 **Test-AzureRmResourceGroupDeployment**（PowerShell 1.0 预览版以前的版本使用 **Test-AzureResourceGroupTemplate**）。
+对于 PowerShell，使用 **Test-AzureRmResourceGroupDeployment**。
 
     PS C:\> Test-AzureRmResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile c:\Azure\Templates\azuredeploy.json -TemplateParameterFile c:\Azure\Templates\azuredeploy.parameters.json
     VERBOSE: 12:55:32 PM - Template is valid.
@@ -197,7 +197,7 @@
 
 ### PowerShell
 
-对于 PowerShell 1.0 预览版之前的版本，可以使用 **Get-AzureLocation** 命令查看资源和位置的完整列表。
+对于 PowerShell 1.0 之前的版本，可以使用 **Get-AzureLocation** 命令查看资源和位置的完整列表。
 
     PS C:\> Get-AzureLocation
 
@@ -283,7 +283,7 @@
 
 ### PowerShell
 
-若要获取资源提供程序和你的注册状态的列表，对于 PowerShell 1.0 预览版以前的版本，请使用 **Get-AzureProvider**。
+若要获取资源提供程序和你的注册状态的列表，对于 PowerShell 1.0 以前的版本，请使用 **Get-AzureProvider**。
 
     PS C:\> Get-AzureProvider
 
@@ -296,7 +296,7 @@
 
 若要注册一个提供程序，请使用 **Register-AzureProvider**。
 
-对于 Powershell 1.0 预览版，请使用 **Get-AzureRmResourceProvider**。
+对于 Powershell 1.0，请使用 **Get-AzureRmResourceProvider**。
 
     PS C:\> Get-AzureRmResourceProvider -ListAvailable
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure Automation 管理 Azure 虚拟机"
+	pageTitle="使用 Azure Automation 管理 Azure 虚拟机 | Azure"
 	description="了解如何使用 Azure Automation 服务来方便管理 Azure 虚拟机。"
 	services="virtual-machines, automation"
 	documentationCenter=""

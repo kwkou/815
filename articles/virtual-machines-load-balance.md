@@ -15,6 +15,8 @@
 
 # Azure 基础结构服务的负载平衡#
 
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+
 为 Azure 基础结构服务提供两个级别的负载平衡：
 
 - **DNS 级别**：使到以下位置的流量实现负载平衡：位于不同数据中心的不同云服务、位于不同数据中心的不同 Azure Web 应用，或者外部终结点。这是通过 Azure 流量管理器和轮循机制负载平衡方法完成的。
