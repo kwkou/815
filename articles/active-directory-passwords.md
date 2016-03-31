@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory"  
 	ms.date="11/16/2015" 
-	wacn.date="01/29/2016"/>
+	wacn.date="03/30/2016"/>
 
 # 从任意位置管理密码
 # 用户和管理员的 Azure AD 密码重置
@@ -52,7 +52,7 @@
 | 新发布的功能 | [最新服务更新](#recent-service-updates) |
 | 其他文档的链接 | [密码重置文档的链接](#links-to-password-reset-documentation) |
 
-## Azure AD 密码管理有何用途？
+### Azure AD 密码重置有何用途？
 以下是使用 Azure AD 密码管理功能可实现的某些目的。
 
 - **自助密码更改**：可让最终用户或管理员就可以更改过期的或未过期的密码，而无需请求管理员或帮助台提供支持。

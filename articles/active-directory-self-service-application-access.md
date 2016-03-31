@@ -9,14 +9,21 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="12/14/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/09/2016"
+	wacn.date="03/29/2016"/>
 
 #Azure Active Directory 的自助应用程序访问和委派管理
 
 为最终用户启用自助服务功能是常见的企业 IT 方案。许多用户、许多应用程序以及最有把握做出访问权授与决策的人员可能不是目录管理员。通常，决定谁可以访问应用程序的最佳人选是小组负责人或委派的其他管理员。但是，在一天结束时，使用应用的人是用户，而用户知道他们需要什么才能完成其作业。
 
-本文将介绍如何：
+自助应用程序访问是 [Azure Active Directory Premium](/trial/get-started-active-directory/) 的一项功能，可让目录管理员执行以下操作：
+
+* 允许用户使用 [Azure AD 访问面板](/documentation/articles/active-directory-appssoaccess-whatis#deploying-azure-ad-integrated-applications-to-users)中的“获取更多应用程序”磁贴访问应用程序
+* 设置用户可以请求访问哪些应用程序
+* 设置用户是否需要经过审批才能够自我分配对应用程序的访问
+* 设置谁应该审批请求以及管理对每个应用程序的访问
+
+现在，[Azure Active Directory 应用程序库](https://azure.microsoft.com/marketplace/active-directory/all/)中所有预先集成的应用程序，以及支持联合或基于密码的单一登录的自定义应用程序（包括 Salesforce、Dropbox、Google Apps 等应用程序）都支持此功能。本文将介绍如何：
 
 * 为最终用户配置自助应用程序访问，包括配置可选的审批工作流 
 * 将特定应用程序的访问管理权限委派给组织中最适当的人员，使他们能够使用 Azure AD 访问面板来审批访问请求，直接将访问权限分配给选定的用户，或者（可选）在配置基于密码的单一登录时设置用于访问应用程序的凭据
@@ -83,4 +90,4 @@
 [2]: ./media/active-directory-self-service-application-access/ssaa_ap_manage_app.PNG
 [3]: ./media/active-directory-self-service-application-access/ssaa_ap_manage_app_config.PNG
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0321_2016-->

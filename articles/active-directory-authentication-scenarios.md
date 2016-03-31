@@ -11,7 +11,7 @@
 <tags
    ms.service="active-directory"
    ms.date="09/17/2015"
-   wacn.date="01/21/2016"/>
+   wacn.date="03/30/2016"/>
 
 # Azure AD 的身份验证方案
 
@@ -466,4 +466,4 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 [Azure AD 中的 OAuth 2.0](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx)
 
-<!---HONumber=60-->
+<!---HONumber=Mooncake_0118_2016-->

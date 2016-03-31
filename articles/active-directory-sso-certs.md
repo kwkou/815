@@ -1,16 +1,16 @@
 <properties
-	pageTitle="如何在 Azure AD 中管理联合证书 | Azure"
+	pageTitle="如何在 Azure AD 中管理联合证书 | Microsoft Azure"
 	description="了解如何自定义联合证书的过期日期，以及如何续订即将过期的证书。"
 	services="active-directory"
 	documentationCenter=""
 	authors="liviodlc"
-	manager="terrylan"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="09/29/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/09/2016"
+	wacn.date="03/29/2016"/>
 
 #在 Azure Active Directory 中管理用于联合单一登录的证书
 
@@ -71,7 +71,11 @@
 	> [AZURE.IMPORTANT]完成这两个步骤中的任何一个时，会禁用单一登录到应用，但完成第二个步骤后会再次启用。因此，为了最大程度地减少停机时间，请准备好在较短的间隔时间内完成这两个步骤。
 
 	![下载然后上载证书](./media/active-directory-sso-certs/renew-config-app.PNG)
+<!--
+## 相关文章
 
-[AZURE.INCLUDE [saas-toc](../includes/active-directory-saas-toc.md)]
-
-<!---HONumber=Mooncake_1221_2015-->
+- [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index)
+- [Azure Active Directory 的应用程序访问与单一登录](/documentation/articles/active-directory-appssoaccess-whatis)
+- [排查基于 SAML 的单一登录问题](/documentation/articles/active-directory-saml-debugging)
+-->
+<!---HONumber=Mooncake_0321_2016-->

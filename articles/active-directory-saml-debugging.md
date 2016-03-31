@@ -1,13 +1,13 @@
 <properties 
-    pageTitle="如何在 Azure Active Directory 中调试对应用程序进行基于 SAML 的单一登录 | Azure" 
+    pageTitle="如何在 Azure Active Directory 中调试对应用程序进行基于 SAML 的单一登录 | Microsoft Azure" 
     description="了解如何在 Azure Active Directory 中调试对应用程序进行基于 SAML 的单一登录" 
     services="active-directory" 
     authors="asmalser-msft"  
     documentationCenter="na" manager="stevenpo"/>
 <tags 
     ms.service="active-directory" 
-    ms.date="11/18/2015" 
-    wacn.date="01/29/2016" />
+    ms.date="02/09/2016" 
+    wacn.date="03/29/2016" />
 
 #如何在 Azure Active Directory 中调试对应用程序进行基于 SAML 的单一登录
 
@@ -21,7 +21,13 @@
  
 **注意**：当你查看此 HTTP 请求的内容时，Fiddler 可能会提示你配置 HTTPS 流量解密，此时你需要执行此操作。
 
+<!--## 相关文章
+
+- [有关 Azure Active Directory 中应用程序管理的文章索引](active-directory-apps-index.md)
+- [针对不在 Azure Active Directory 应用程序库中的应用程序配置单一登录](active-directory-saas-custom-apps.md)
+- [如何为预先集成的应用程序自定义 SAML 令牌中颁发的声明](active-directory-saml-claims-customization.md)
+-->
 <!--Image references-->
 [1]: ./media/active-directory-saml-debugging/fiddler.png
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0321_2016-->
