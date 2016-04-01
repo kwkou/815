@@ -42,7 +42,7 @@ Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存进行�
 ## 在缓存中添加一些内容并检索此内容
 
     >>> import redis
-    >>> r = redis.StrictRedis(host='<name>.redis.cache.windows.net',
+    >>> r = redis.StrictRedis(host='<name>.redis.cache.chinacloudapi.cn',
           port=6380, db=0, password='<key>', ssl=True)
     >>> r.set('foo', 'bar')
     True

@@ -64,7 +64,7 @@ Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存进行�
 	  public static void main( String[] args )
 	  {
         /* In this line, replace <name> with your cache name: */
-	    JedisShardInfo shardInfo = new JedisShardInfo("<name>.redis.cache.windows.net", 6379);
+	    JedisShardInfo shardInfo = new JedisShardInfo("<name>.redis.cache..chinacloudapi.cn", 6379);
 	    shardInfo.setPassword("<key>"); /* Use your access key. */
 	    Jedis jedis = new Jedis(shardInfo);
      	jedis.set("foo", "bar");

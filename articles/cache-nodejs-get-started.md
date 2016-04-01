@@ -58,7 +58,7 @@ Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存进行�
 	var redis = require("redis");
 
     // Add your cache name and access key.
-	var client = redis.createClient(6379,'<name>.redis.cache.windows.net', {auth_pass: '<key>' });
+	var client = redis.createClient(6379,'<name>.redis.cache.chinacloudapi.cn', {auth_pass: '<key>' });
 
 	client.set("key1", "value", function(err, reply) {
 	    console.log(reply);
