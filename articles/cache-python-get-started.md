@@ -10,7 +10,7 @@
 <tags
 	ms.service="cache"
 	ms.date="12/03/2015"
-	wacn.date="01/04/2016"/>
+	wacn.date="04/01/2016"/>
 
 # 如何将 Azure Redis 缓存与 Python 配合使用
 
@@ -42,7 +42,7 @@ Azure 中国目前只支持 PowerShell 或者 Azure CLI 对 Redis 缓存进行�
 ## 在缓存中添加一些内容并检索此内容
 
     >>> import redis
-    >>> r = redis.StrictRedis(host='<name>.redis.cache.windows.net',
+    >>> r = redis.StrictRedis(host='<name>.redis.cache.chinacloudapi.cn',
           port=6380, db=0, password='<key>', ssl=True)
     >>> r.set('foo', 'bar')
     True
