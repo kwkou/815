@@ -10,7 +10,7 @@
 <tags
 	ms.service="cache"
 	ms.date="12/03/2015"
-	wacn.date="03/28/2016"/>
+	wacn.date="04/01/2016"/>
 
 # 如何将 Azure Redis 缓存与 Node.js 配合使用
 
