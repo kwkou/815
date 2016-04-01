@@ -10,20 +10,15 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/17/2015"
-        wacn.date="01/15/2016"/>
+	ms.date="03/16/2016"
+    wacn.date="03/24/2016"/>
 
 
 # 从 .NET (C#) 使用 SQL 数据库
 
 
-> [AZURE.SELECTOR]
-- [C#](/documentation/articles/sql-database-develop-dotnet-simple)
-- [PHP](/documentation/articles/sql-database-develop-php-simple-windows)
-- [Python](/documentation/articles/sql-database-develop-python-simple-windows)
-- [Ruby](/documentation/articles/sql-database-develop-ruby-simple-windows)
-- [Java](/documentation/articles/sql-database-develop-java-simple-windows)
-- [Node.js](/documentation/articles/sql-database-develop-nodejs-simple-windows)
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)] 
+
 
 
 ## 先决条件

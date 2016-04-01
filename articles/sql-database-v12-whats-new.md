@@ -4,14 +4,14 @@
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
-	manager="jeffreyg" 
+	manager="jhubbard" 
 	editor=""/>
 
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="11/11/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/05/2016" 
+	wacn.date="03/29/2016"/>
 
 
 # SQL 数据库 V12 的新增功能
@@ -23,7 +23,7 @@
 我们继续向 V12 添加功能。因此，我们鼓励你访问我们的针对 Azure 的服务更新网页并使用其筛选器：
 
 
-- 筛选为 [SQL 数据库服务](http://azure.microsoft.com/updates/?service=sql-database)。
+- 筛选为 [SQL 数据库服务](https://azure.microsoft.com/updates/?service=sql-database)。
 - 筛选为针对 SQL 数据库功能的正式发布 [(GA) 公告](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability)。
 
 
@@ -128,7 +128,7 @@ V12 提供大幅提高的恢复点目标 (RPO) 与预计恢复时间 (ERT)：
 执行以下操作可以轻松判断你是否在早期版本的 SQL 数据库服务上运行数据库或逻辑服务器：
 
 
-1. 转到 [Azure 门户](http://manage.windowsazure.cn)。
+1. 转到 [Azure 门户](https://manage.windowsazure.cn)。
 2. 单击“浏览”。
 3. 单击“SQL Server”。
 4. 服务器或数据库旁边的图标会告知实情：
@@ -146,7 +146,7 @@ V12 提供大幅提高的恢复点目标 (RPO) 与预计恢复时间 (ERT)：
 V12 数据库只能托管在 V12 逻辑服务器上。V12 服务器只能托管 V12 数据库。
 
 
-如果你尚未在 V12 上运行，可以根据[就地升级到 SQL 数据库 V12](/documentation/articles/sql-database-v12-upgrade) 中的步骤升级你的逻辑服务器。
+如果你尚未在 V12 上运行，可以根据[就地升级到 SQL 数据库 V12](/documentation/articles/sql-database-v12-plan-prepare-upgrade) 中的步骤升级你的逻辑服务器。
 
 
 ## <a name="V12AzureSqlDbPreviewGaTable"></a> 正式版上市区域
@@ -155,4 +155,4 @@ V12 数据库只能托管在 V12 逻辑服务器上。V12 服务器只能托管 
 - 2015 年 7 月 31，所有区域都已发布正式版 (GA)。
 - V12 已于 2014 年 12 月发布，但仅以预览版提供。
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0321_2016-->

@@ -8,8 +8,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="11/04/2015" 
-	wacn.date="01/29/2016" />
+	ms.date="02/01/2016" 
+	wacn.date="03/21/2016" />
 
 # 弹性数据库作业概述
 
@@ -49,13 +49,13 @@
 ## 弹性数据库作业：端到端 
 1.	安装**弹性数据库作业**组件。有关详细信息，请参阅[安装弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-service-installation)。如果安装失败，请参阅[如何卸载](/documentation/articles/sql-database-elastic-jobs-uninstall)。
 2.	使用 PowerShell API 可以访问更多功能，例如创建自定义数据库集合、添加计划和/或收集结果集。使用门户可以方便安装和创建/监视限制为针对**弹性数据库池**执行的作业。 
-3.	针对作业执行创建加密的凭据，并[将用户（或角色）添加到组中的每个数据库](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs)。
+3.	针对作业执行创建加密的凭据，并[将用户（或角色）添加到组中的每个数据库](/documentation/articles/sql-database-security)。
 4.	创建可针对组中每个数据库运行的幂等 T-SQL 脚本。 
 5.	使用 Azure 门户遵循以下步骤来创建作业：[创建和管理弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-create-and-manage)。 
 6.	或使用 PowerShell 脚本：[使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）](/documentation/articles/sql-database-elastic-jobs-powershell)。
 
 ## 幂等脚本的重要性
-脚本必须是[幂等的](https://zh.wikipedia.org/wiki/Idempotence)。简单而言，“幂等”是指如果脚本成功，则再次运行时，会出现相同的结果。脚本可能由于暂时性网络问题而失败。在此情况下，作业将自动重试运行脚本，达到默认的次数才停止。即使幂等脚本已成功运行两次，也仍会返回相同的结果。
+脚本必须是[幂等的](https://en.wikipedia.org/wiki/Idempotence)。简单而言，“幂等”是指如果脚本成功，则再次运行时，会出现相同的结果。脚本可能由于暂时性网络问题而失败。在此情况下，作业将自动重试运行脚本，达到默认的次数才停止。即使幂等脚本已成功运行两次，也仍会返回相同的结果。
 
 一个简单的策略是在创建对象之前测试其是否存在。
 
@@ -87,7 +87,7 @@
 * **Azure 云服务**：弹性数据库作业（预览版）以客户托管的 Azure 云服务交付，可执行请求的任务。服务可从门户部署，并托管在你的 Azure 订阅中。默认部署的服务将结合最少两个辅助角色运行，以实现高可用性。每个默认大小的辅助角色 (ElasticDatabaseJobWorker) 在 A0 实例上运行。有关价格，请参阅[云服务定价](/home/features/cloud-services/#price)。 
 * **Azure SQL 数据库**：服务使用名为**控制数据库**的 Azure SQL 数据库来存储所有的作业元数据。默认的服务层是 S0。有关价格，请参阅 [SQL 数据库定价](/home/features/sql-database/#price)。
 * **Azure Service Bus**：Azure Service Bus 用于协调 Azure 云服务中的工作。请参阅 [Service Bus 定价](/home/features/messaging/#price)。
-* **Azure 存储空间**：在某个问题需要进一步调试时，将使用 Azure 存储帐户来存储诊断输出（[Azure 诊断](/documentation/articles/cloud-services-dotnet-diagnostics)的常见做法）。有关价格，请参阅 [Azure 存储空间定价](/home/features/storage/#price)。
+* **Azure 存储空间**：在某个问题需要进一步调试时，将使用 Azure 存储帐户来存储诊断输出日志记录（请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)）。有关价格，请参阅 [Azure 存储空间定价](/home/features/storage/#price)。
 
 ## 弹性数据库作业的工作原理
 1.	Azure SQL 数据库是一个控制数据库，用于存储所有元数据和状态数据。
@@ -112,7 +112,7 @@
 4.	完成所有作业任务后，控制器会将作业更新为已完成状态。在作业执行期间，可以随时使用 PowerShell API 来查看作业执行的当前状态。PowerShell API 返回的所有时间都以 UTC 表示。如果需要，你可以启动取消请求来停止作业。 
 
 ## 后续步骤
-[安装组件](/documentation/articles/sql-database-elastic-jobs-service-installation)，然后[创建一个登录名并将其添加到数据库组的每个数据库中](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs)。若要进一步了解作业创建和管理过程，请参阅[创建和管理弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-create-and-manage)。
+[安装组件](/documentation/articles/sql-database-elastic-jobs-service-installation)，然后[创建一个登录名并将其添加到数据库组的每个数据库中](/documentation/articles/sql-database-security)。若要进一步了解作业创建和管理过程，请参阅[创建和管理弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-create-and-manage)。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
@@ -120,4 +120,4 @@
 [1]: ./media/sql-database-elastic-jobs-overview/elastic-jobs.png
 <!--anchors-->
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0307_2016-->

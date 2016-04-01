@@ -8,8 +8,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="01/26/2016"
-	wacn.date="02/19/2016" />
+	ms.date="10/19/2015"
+	wacn.date="03/21/2016" />
 
 # 跨数据库查询（垂直分区）入门 
 

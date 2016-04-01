@@ -1,6 +1,6 @@
 <properties 
-    pageTitle="使用 PowerShell 创建 Azure SQL 数据库的副本" 
-    description="使用 PowerShell 创建 Azure SQL 数据库的副本" 
+    pageTitle="使用 PowerShell 复制 Azure SQL 数据库 | Azure" 
+    description="使用 PowerShell 复制 Azure SQL 数据库" 
 	services="sql-database"
 	documentationCenter=""
 	authors="stevestein"
@@ -9,24 +9,24 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/01/2015"
-        wacn.date="01/15/2016"/>
+	ms.date="03/21/2016"
+	wacn.date="03/24/2016"/>
 
 
-# 使用 PowerShell 创建 Azure SQL 数据库的副本
+# 使用 PowerShell 复制 Azure SQL 数据库
 
 **单一数据库**
 
 > [AZURE.SELECTOR]
 - [Azure 门户](/documentation/articles/sql-database-copy)
 - [PowerShell](/documentation/articles/sql-database-copy-powershell)
-- [SQL](/documentation/articles/sql-database-copy-transact-sql)
+- [T-SQL](/documentation/articles/sql-database-copy-transact-sql)
 
 
 
 以下步骤说明如何使用 PowerShell 复制 SQL 数据库。数据库复制操作使用 [Start-AzureSqlDatabaseCopy](https://msdn.microsoft.com/zh-cn/library/dn720220.aspx) cmdlet 语句将 SQL 数据库复制到新的数据库。副本是在相同或不同服务器上创建的数据库快照备份。
 
-> [AZURE.NOTE]Azure SQL 数据库会自动为你可以还原的每个用户数据库创建和维护备份。有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
+> [AZURE.NOTE] Azure SQL 数据库会自动为你可以还原的每个用户数据库创建和维护备份。有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
 
 复制过程完成后，新数据库将完全正常工作，并独立于源数据库。完成复制时，新数据库的事务处理方式将与源数据库保持一致。数据库副本的服务层和性能级别（定价层）都与源数据库相同。在完成该复制后，副本将成为能够完全行使功能的独立数据库。登录名、用户和权限可单独进行管理。
 
@@ -36,7 +36,7 @@
 
 若要完成本文，你需要以下各项：
 
-- Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
+- Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用版”，然后再回来完成本文的相关操作即可。
 - Azure SQL 数据库。如果你没有 SQL 数据库，请按照[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)文章中的步骤创建一个。
 - Azure PowerShell。你可以通过运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)下载并安装 Azure PowerShell 模块。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
@@ -46,7 +46,7 @@
 
 首先必须与 Azure 帐户建立访问连接，因此请启动 PowerShell，然后运行以下 cmdlet。在登录屏幕中，输入登录 Azure 经典门户时所用的相同电子邮件和密码。
 
-	Add-AzureAccount -environment azurechinacloud
+	Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
 
@@ -120,7 +120,7 @@
     $PartnerDatabaseName = "partnerDatabaseName" 
 
 
-    Add-AzureAccount
+    Add-AzureRmAccount -EnvironmentName AzureChinaCloud
     Select-AzureSubscription -SubscriptionName "myAzureSubscriptionName"
       
     # Copy a database to a different server (remove the -PartnerServer parameter to copy to the same server)
@@ -132,7 +132,7 @@
 
 ## 后续步骤
 
-- [使用 SQL Server Management Studio (SSMS) 进行连接](/documentation/articles/sql-database-connect-to-database)
+- [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms)
 - [将数据库导出到 BACPAC](/documentation/articles/sql-database-export-powershell)
 
 
@@ -142,4 +142,4 @@
 - [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills)
 - [SQL 数据库文档](/documentation/services/sql-databases)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->

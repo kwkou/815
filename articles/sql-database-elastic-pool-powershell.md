@@ -16,7 +16,6 @@
 # 使用 PowerShell 创建弹性数据库池以便向外缩放多个 SQL 数据库的资源 
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-elastic-pool-portal)
 - [C#](/documentation/articles/sql-database-elastic-pool-csharp)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell)
 

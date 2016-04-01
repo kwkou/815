@@ -6,16 +6,16 @@
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="10/23/2015"
-	wacn.date="12/17/2015"/>
+<tags 
+   ms.service="automation"
+   ms.date="01/27/2016"
+   wacn.date="03/22/2016" />
 
 # Azure 自动化中的凭据资产
 
-自动化凭据资产包含 [PSCredential](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscredential) 对象，该对象包含用户名和密码等安全凭据。Runbook 可能会使用接受 PSCredential 对象用于身份验证的 cmdlet，或者 Runbook 可能会提取 PSCredential 对象的用户名和密码，以便提供给需要进行身份验证的应用程序或服务。在 Azure 自动化中安全地存储凭据的属性，并可以在 Runbook 中通过 [Get-AutomationPSCredential](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscredential.aspx) 活动访问这些属性。
+自动化凭据资产包含 [PSCredential](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscredential) 对象，该对象包含用户名和密码等安全凭据。Runbook 可能会使用在身份验证时接受 PSCredential 对象的 cmdlet，也可能会提取 PSCredential 对象的用户名和密码，以便提供给需要进行身份验证的某些应用程序或服务。在 Azure 自动化中安全地存储凭据的属性，并可以在 Runbook 中通过 [Get-AutomationPSCredential](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscredential.aspx) 活动访问这些属性。
 
->[AZURE.NOTE]Azure 自动化中的安全资产包括凭据、证书、连接和加密的变量。这些资产已使用针对每个自动化帐户生成的唯一密钥加密并存储在 Azure 自动化中。此密钥由主证书加密，并存储在 Azure 自动化中。在存储安全资产之前，会先使用主证书来解密自动化帐户的密钥，然后使用该密钥来加密资产。
+>[AZURE.NOTE] Azure 自动化中的安全资产包括凭据、证书、连接和加密的变量。这些资产已使用针对每个自动化帐户生成的唯一密钥加密并存储在 Azure 自动化中。此密钥由主证书加密，并存储在 Azure 自动化中。在存储安全资产之前，会先使用主证书来解密自动化帐户的密钥，然后使用该密钥来加密资产。
 
 ## Windows PowerShell cmdlet
 
@@ -36,12 +36,12 @@
 |:---|:---|
 |Get-AutomationPSCredential|获取要在 Runbook 中使用的凭据。返回 [System.Management.Automation.PSCredential](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscredential) 对象。|
 
->[AZURE.NOTE]应避免在 Get-AutomationPSCredential 的 –Name 参数中使用变量，因为这可能会使设计时发现 Runbook 与凭据资产之间的依赖关系变得复杂化。
+>[AZURE.NOTE] 应避免在 Get-AutomationPSCredential 的 –Name 参数中使用变量，因为这可能会使设计时发现 Runbook 与凭据资产之间的依赖关系变得复杂化。
 
 ## 创建新凭据
 
 
-### 使用 Azure 管理门户创建新变量
+### 使用 Azure 经典门户创建新变量
 
 1. 在你的自动化帐户中，单击窗口顶部的“资产”。
 1. 在窗口底部，单击“添加设置”。
@@ -63,7 +63,7 @@
 
 ## 使用 PowerShell 凭据
 
-在 Runbook 中使用 **Get-AutomationPSCredential** 活动检索凭据资产。此操作将返回“[PSCredential 对象](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscredential.aspx)”，您可将其用于需要 PSCredential 参数的活动或 cmdlet。还可以检索要单独使用的凭据对象的属性。该对象具有一个用于用户名和安全密码的属性，或者您可以使用 **GetNetworkCredential** 方法返回 [NetworkCredential](http://msdn.microsoft.com/zh-cn/library/system.net.networkcredential.aspx) 对象，该对象将提供该密码的不安全版本。
+在 Runbook 中使用 **Get-AutomationPSCredential** 活动检索凭据资产。此操作将返回“PSCredential 对象”，您可将其用于需要 PSCredential 参数的活动或 cmdlet。[](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscredential.aspx)还可以检索要单独使用的凭据对象的属性。该对象具有一个用于用户名和安全密码的属性，或者您可以使用 **GetNetworkCredential** 方法返回 [NetworkCredential](http://msdn.microsoft.com/zh-cn/library/system.net.networkcredential.aspx) 对象，该对象将提供该密码的不安全版本。
 
 ### 文本 Runbook 示例
 
@@ -78,4 +78,4 @@
 
  
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

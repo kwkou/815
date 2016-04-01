@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="12/17/2015"
-   wacn.date="01/15/2016"/>
+   ms.date="03/14/2016"
+   wacn.date="03/24/2016"/>
 
 # 使用“将数据库部署到 Azure 数据库”向导将 SQL Server 数据库迁移到 SQL 数据库
 
@@ -18,7 +18,7 @@ SQL Server Management Studio 中的“将数据库部署到 Azure 数据库”�
 
 ## 使用“将数据库部署到 Azure 数据库”向导
 
-> [AZURE.NOTE]执行以下步骤假定你有[预配的 SQL 数据库服务器](/documentation/articles/sql-database-get-started)。
+> [AZURE.NOTE]执行以下步骤假定你有[预配的 SQL 数据库服务器](https://azure.microsoft.com/documentation/learning-paths/sql-database-training-learn-sql-database)。
 
 1. 确认你安装了最新版本的 SQL Server Management Studio。Management Studio 的新版本将每月更新一次，以与 Azure 门户的更新保持同步。
 

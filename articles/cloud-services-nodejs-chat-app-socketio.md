@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="01/09/2016" 
-	wacn.date="02/26/2016"/>
+	wacn.date="03/24/2016"/>
 
 # 在 Azure 云服务中使用 Socket.IO 生成 Node.js 聊天应用程序
 
@@ -32,7 +32,7 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
 以下步骤创建将托管 Socket.IO 应用程序的云服务项目。
 
-1. 在“开始”菜单或“开始”屏幕中，搜索 **Azure PowerShell**。最后，右键单击“Azure PowerShell”并选择“以管理员身份运行”。
+1. 在“开始”菜单或“开始”屏幕中，搜索 **Windows PowerShell**。最后，右键单击“Windows PowerShell”并选择“以管理员身份运行”。
 
 	![Azure PowerShell 图标][powershell-menu]
 

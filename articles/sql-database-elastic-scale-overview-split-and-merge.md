@@ -9,7 +9,7 @@
 <tags 
     ms.service="sql-database"
     ms.date="11/04/2015" 
-    wacn.date="01/05/2016" />
+    wacn.date="03/29/2016" />
 
 # 使用弹性数据库拆分/合并工具进行缩放
 
@@ -107,7 +107,7 @@
 
 ## 获取服务二进制文件
 
-拆分/合并的服务二进制文件通过 [Nuget](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/) 提供。有关下载二进制文件的详细信息，请参阅循序渐进式[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。
+拆分/合并的服务二进制文件通过 [Nuget](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge) 提供。有关下载二进制文件的详细信息，请参阅循序渐进式[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。
 
 ## 拆分/合并用户界面
 

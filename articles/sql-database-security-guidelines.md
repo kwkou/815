@@ -10,8 +10,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="11/24/2015"
-   wacn.date="01/29/2016"/>
+   ms.date="02/16/2016"
+   wacn.date="03/24/2016"/>
 
 # Azure SQL 数据库安全指导原则和限制
 

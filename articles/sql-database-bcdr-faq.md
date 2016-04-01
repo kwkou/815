@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
    pageTitle="SQL 数据库业务连续性常见问题" 
    description="客户所提出的，有关 Azure SQL 数据库中用于实现业务连续性和灾难恢复的内置功能和可选功能的常见问题与解答。" 
    services="sql-database" 
@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="02/09/2016"
-   wacn.date="02/19/2016"/>
+   ms.date="11/16/2015"
+   wacn.date="03/21/2016"/>
 
 # 业务连续性常见问题
 
@@ -34,7 +34,7 @@
 
 ## 5\.我是否可以更改数据库的还原点保留期？
 
-没有。
+不能。
 
 ## 6\.如何找出我的数据库的可用还原点？
 

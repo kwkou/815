@@ -7,20 +7,20 @@
     authors="torsteng"/>
 
 <tags 
-    ms.service="sql-database"
-    ms.date="11/04/2015" 
-    wacn.date="01/05/2016" />
+    ms.service="sql-database" 
+    ms.date="02/04/2016" 
+    wacn.date="03/29/2016" />
 
 # 拆分合并安全配置  
 
-若要使用拆分/合并服务，必须正确配置安全性。该服务是 Azure SQL 数据库弹性扩展功能的一部分。有关详细信息，请参阅[弹性缩放拆分和合并服务教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)
+若要使用拆分/合并服务，必须正确配置安全性。该服务是 Azure SQL 数据库弹性扩展功能的一部分。有关详细信息，请参阅[弹性缩放拆分和合并服务教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。
 
 ## 配置证书
 
 通过两种方式配置证书。
 
-1. [配置 SSL 证书](To#Configure#the#SSL#Certificate)
-2. [配置客户端证书](To#Configure#Client#Certificates) 
+1. [配置 SSL 证书](#To-Configure-the-SSL#Certificate)
+2. [配置客户端证书](#To-Configure-Client-Certificates) 
 
 ## 获取证书
 
@@ -48,45 +48,45 @@
 
 ### 创建新的自签名证书
 
-1.    [创建自签名证书](Create#a#Self-Signed#Certificate)
-2.    [为自签名 SSL 证书创建 PFX 文件](Create#PFX#file#for#Self-Signed#SSL#Certificate)
-3.    [将 SSL 证书上载到云服务](Upload#SSL#Certificate#to#Cloud#Service)
-4.    [在服务配置文件中更新 SSL 证书](Update#SSL#Certificate#in#Service#Configuration#File)
-5.    [导入 SSL 证书颁发机构](Import#SSL#Certification#Authority)
+1.    [创建自签名证书](#Create-a-Self-Signed-Certificate)
+2.    [为自签名 SSL 证书创建 PFX 文件](#Create-PFX-file-for-Self-Signed-SSL-Certificate)
+3.    [将 SSL 证书上载到云服务](#Upload-SSL-Certificate-to-Cloud-Service)
+4.    [在服务配置文件中更新 SSL 证书](#Update-SSL-Certificate-in-Service-Configuration-File)
+5.    [导入 SSL 证书颁发机构](#Import-SSL-Certification-Authority)
 
 ### 使用证书存储中的现有证书
-1. [从证书存储中导出 SSL 证书](Export#SSL#Certificate#From#Certificate#Store)
-2. [将 SSL 证书上载到云服务](Upload#SSL#Certificate#to#Cloud#Service)
-3. [在服务配置文件中更新 SSL 证书](Update#SSL#Certificate#in#Service#Configuration#File)
+1. [从证书存储中导出 SSL 证书](#Export-SSL-Certificate-From-Certificate-Store)
+2. [将 SSL 证书上载到云服务](#Upload-SSL-Certificate-to-Cloud-Service)
+3. [在服务配置文件中更新 SSL 证书](#Update-SSL-Certificate-in-Service-Configuration-File)
 
 ### 在 PFX 文件中使用现有证书
 
-1. [将 SSL 证书上载到云服务](Upload#SSL#Certificate#to#Cloud#Service)
-2. [在服务配置文件中更新 SSL 证书](Update#SSL#Certificate#in#Service#Configuration#File)
+1. [将 SSL 证书上载到云服务](#Upload-SSL-Certificate-to-Cloud-Service)
+2. [在服务配置文件中更新 SSL 证书](#Update-SSL-Certificate-in-Service-Configuration-File)
 
 ## 配置客户端证书
 若要对服务请求进行身份验证，需要使用客户端证书。从下面的三个方案中选择最适合的方案，然后执行其所有步骤：
 
 ### 禁用客户端证书
-1.    [禁用基于客户端证书的身份验证](Turn#Off#Client#Certificate-Based#Authentication)
+1.    [禁用基于客户端证书的身份验证](#Turn-Off-Client-Certificate-Based-Authentication)
 
 ### 颁发新的自签名客户端证书
-1.    [创建自签名证书颁发机构](Create#a#Self-Signed#Certification#Authority)
-2.    [将 CA 证书上载到云服务](Upload#CA#Certificate#to#Cloud#Service)
-3.    [在服务配置文件中更新 CA 证书](Update#CA#Certificate#in#Service#Configuration#File)
-4.    [颁发客户端证书](Issue#Client#Certificates)
-5.    [为客户端证书创建 PFX 文件](Create#PFX#files#for#Client#Certificates)
-6.    [导入客户端证书](Import#Client#Certificate)
-7.    [复制客户端证书指纹](Copy#Client#Certificate#Thumbprints)
-8.    [在服务配置文件中配置允许的客户端](Configure#Allowed#Clients#in#the#Service#Configuration#File)
+1.    [创建自签名证书颁发机构](#Create-a-Self-Signed-Certification-Authority)
+2.    [将 CA 证书上载到云服务](#Upload-CA-Certificate-to-Cloud-Service)
+3.    [在服务配置文件中更新 CA 证书](#Update-CA-Certificate-in-Service-Configuration-File)
+4.    [颁发客户端证书](#Issue-Client-Certificates)
+5.    [为客户端证书创建 PFX 文件](#Create-PFX-files-for-Client-Certificates)
+6.    [导入客户端证书](#Import-Client-Certificate)
+7.    [复制客户端证书指纹](#Copy-Client-Certificate-Thumbprints)
+8.    [在服务配置文件中配置允许的客户端](#Configure-Allowed-Clients-in-the-Service-Configuration-File)
 
 ### 使用现有客户端证书
-1.    [查找 CA 公钥](Find#CA#Public Key)
-2.    [将 CA 证书上载到云服务](Upload#CA#certificate#to#cloud#service)
-3.    [在服务配置文件中更新 CA 证书](Update#CA#Certificate#in#Service#Configuration#File)
-4.    [复制客户端证书指纹](Copy#Client#Certificate#Thumbprints)
-5.    [在服务配置文件中配置允许的客户端](Configure#Allowed#Clients#in#the#Service#Configuration File)
-6.    [配置客户端证书吊销检查](Configure#Client#Certificate#Revocation#Check)
+1.    [查找 CA 公钥](#Find-CA-Public Key)
+2.    [将 CA 证书上载到云服务](#Upload-CA-certificate-to-cloud-service)
+3.    [在服务配置文件中更新 CA 证书](#Update-CA-Certificate-in-Service-Configuration-File)
+4.    [复制客户端证书指纹](#Copy-Client-Certificate-Thumbprints)
+5.    [在服务配置文件中配置允许的客户端](#Configure-Allowed-Clients-in-the-Service-Configuration File)
+6.    [配置客户端证书吊销检查](#Configure-Client-Certificate-Revocation-Check)
 
 ## 允许的 IP 地址
 
@@ -98,25 +98,26 @@
 
 ### 使用新的自签名证书
 
-1.     [创建自签名证书](Create#a#Self-Signed#Certificate)
-2.     [为自签名加密证书创建 PFX 文件](Create#PFX#file#for#Self-Signed#Encryption#Certificate)
-3.     [将加密证书上载到云服务](Upload#Encryption#Certificate#to#Cloud#Service)
-4.     [在服务配置文件中更新加密证书](Update#Encryption#Certificate#in#Service#Configuration#File)
+1.     [创建自签名证书](#Create-a-Self-Signed-Certificate)
+2.     [为自签名加密证书创建 PFX 文件](#Create-PFX-file-for-Self-Signed-Encryption-Certificate)
+3.     [将加密证书上载到云服务](#Upload-Encryption-Certificate-to-Cloud-Service)
+4.     [在服务配置文件中更新加密证书](#Update-Encryption-Certificate-in-Service-Configuration-File)
 
 ### 使用证书存储中的现有证书
 
-1.     [从证书存储中导出加密证书](Export#Encryption#Certificate#From#Certificate#Store)
-2.     [将加密证书上载到云服务](Upload#Encryption#Certificate#to#Cloud#Service)
-3.     [在服务配置文件中更新加密证书](Update#Encryption#Certificate#in#Service#Configuration#File)
+1.     [从证书存储中导出加密证书](#Export-Encryption-Certificate-From-Certificate-Store)
+2.     [将加密证书上载到云服务](#Upload-Encryption-Certificate-to-Cloud-Service)
+3.     [在服务配置文件中更新加密证书](#Update-Encryption-Certificate-in-Service-Configuration-File)
 
 ### 在 PFX 文件中使用现有证书
 
-1.     [将加密证书上载到云服务](Upload#Encryption#Certificate#to#Cloud#Service)
-2.     [在服务配置文件中更新加密证书](Update#Encryption#Certificate#in#Service#Configuration#File)
+1.     [将加密证书上载到云服务](#Upload-Encryption-Certificate-to-Cloud-Service)
+2.     [在服务配置文件中更新加密证书](#Update-Encryption-Certificate-in-Service-Configuration-File)
 
 ## 默认配置
 
-默认配置拒绝对 HTTP 终结点的所有访问。这是推荐的设置，因为对这些终结点的请求可能包含敏感信息，如数据库凭据。默认配置允许对 HTTPS 终结点的所有访问。可能会进一步限制此设置。
+默认配置拒绝对 HTTP 终结点的所有访问。这是推荐的设置，因为对这些终结点的请求可能包含敏感信息，如数据库凭据。
+默认配置允许对 HTTPS 终结点的所有访问。可能会进一步限制此设置。
 
 ### 更改配置
 
@@ -478,4 +479,4 @@
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0314_2016-->

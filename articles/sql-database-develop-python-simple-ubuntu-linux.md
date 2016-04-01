@@ -10,17 +10,14 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/17/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="03/14/2016"
+	wacn.date="03/24/2016"/>
 
 
 # 在 Ubuntu Linux 上使用 Python 连接到 SQL 数据库
 
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)] 
 
-> [AZURE.SELECTOR]
-- [Python](/documentation/articles/sql-database-develop-python-simple-ubuntu-linux)
-- [Node.js](/documentation/articles/sql-database-develop-nodejs-simple-linux)
-- [Ruby](/documentation/articles/sql-database-develop-ruby-simple-linux)
 
 
 本主题演示了一个在 Unbutu Linux 客户端计算机上运行的，用于连接到 Azure SQL 数据库的 Python 代码示例。

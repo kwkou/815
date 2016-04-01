@@ -1,66 +1,62 @@
 <properties
-	pageTitle="为解决暂时性连接断开而采取的措施 | Azure"
-	description="在与 Azure SQL 数据库交互时，为了排查、诊断和防止连接错误及其他暂时性故障而采取的措施。"
+	pageTitle="修复 SQL 连接错误和暂时性错误 | Azure"
+	description="了解如何排查、诊断和防止 Azure SQL 数据库中的 SQL 连接错误或暂时性错误。"
+	keywords="sql 连接, 连接字符串, 连接问题, 暂时性错误, 连接错误"
 	services="sql-database"
 	documentationCenter=""
 	authors="dalechen"
-	manager="msmets"
+	manager="felixwu"
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="01/06/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="02/02/2016"
+	wacn.date="03/21/2016"/>
 
 
-# 对 SQL 数据库的暂时性故障和连接错误进行故障排除
+# 排查、诊断和防止 SQL 数据库中的 SQL 连接错误和暂时性错误
 
-
-本主题介绍如何防止、排查、诊断和减少客户端程序在与 Azure SQL 数据库交互时发生的连接错误和暂时性故障。
-
+本文介绍如何防止、排查、诊断和减少客户端应用程序在与 Azure SQL 数据库交互时发生的连接错误和暂时性错误。了解如何配置重试逻辑、生成连接字符串以及调整其他连接设置。
 
 <a id="i-transient-faults" name="i-transient-faults"></a>
 
-## 暂时性故障
+## 暂时性错误（暂时性故障）
 
+暂时性错误（也称为暂时性故障）存在很快解决自身问题的根本原因。当 Azure 系统快速地将硬件资源转移到负载平衡更好的各种工作负荷时，偶尔会发生暂时性错误。在进行这种重新配置的过程中，可能会遇到与 Azure SQL 数据库的连接性问题。
 
-暂时性故障是根本原因很快就能自行解决的错误。当 Azure 系统快速地将硬件资源转移到负载平衡更好的各种工作负荷时，偶尔会发生暂时性故障。在进行这种重新配置的过程中，与 Azure SQL 数据库的连接可能会断开。
-
-
-如果客户端程序使用 ADO.NET，系统将会引发 **SqlException**，使你的程序知道已发生暂时性故障。你可以将 **Number** 属性与 [SQL 数据库客户端程序的错误消息](/documentation/articles/sql-database-develop-error-messages)主题顶部附近的暂时性故障列表进行比较。
-
+如果客户端程序使用 ADO.NET，系统将会引发 **SqlException**，使你的程序知道已发生暂时性错误。你可以将 **Number** 属性与 [SQL 数据库客户端应用程序的 SQL 错误代码](/documentation/articles/sql-database-develop-error-messages)主题顶部附近的暂时性错误列表进行比较。
 
 ### 连接与命令
 
+你将重试 SQL 连接或重新建立连接，具体取决于以下各项：
 
-如果在尝试连接期间发生暂时性故障，应该延迟数秒后再重试连接。
+* **在尝试连接期间发生暂时性错误**：应该延迟数秒后再重试连接。
 
-
-执行某个 SQL 查询命令期间发生暂时性故障时，不应该立即重试该命令。而应在一定的延迟之后建立新的连接。然后可以重试该命令。
+* **执行某个 SQL 查询命令期间发生暂时性错误时**：不应该立即重试该命令。而应在一定的延迟之后建立新的连接。然后可以重试该命令。
 
 
 <a id="j-retry-logic-transient-faults" name="j-retry-logic-transient-faults"></a>
 
-## 暂时性故障的重试逻辑
+## 针对暂时性错误的重试逻辑
 
 
-在偶尔会遇到暂时性故障的客户端程序中包含重试逻辑可以让它变得更稳健。
+在偶尔会遇到暂时性错误的客户端程序中包含重试逻辑可以让它变得更稳健。
 
 
-如果你的程序通过第三方中间件与 Azure SQL 数据库通信，请咨询供应商该中间件是否包含暂时性故障的重试逻辑。
+如果你的程序通过第三方中间件与 Azure SQL 数据库通信，请咨询供应商该中间件是否包含暂时性错误的重试逻辑。
 
 
 ### 重试原则
 
 
-- 如果错误是暂时性故障，则应重新尝试打开连接。
+- 如果错误是暂时性的，则应重新尝试打开连接。
 
 
-- 不应直接重试由于暂时性故障而失败的 SQL SELECT 语句。
+- 不应直接重试由于暂时性错误而失败的 SQL SELECT 语句。
  - 而是建立新的连接，然后重试 SELECT。
 
 
-- SQL UPDATE 语句由于暂时性故障而失败时，应该先建立新的连接，再重试 UPDATE。
+- SQL UPDATE 语句由于暂时性错误而失败时，应该先建立新的连接，再重试 UPDATE。
  - 重试逻辑必须确保整个数据库事务完成，或整个事务已回滚。
 
 
@@ -105,7 +101,7 @@
 
 
 可以测试重试逻辑的方法，就是在程序运行时断中客户端计算机与网络的连接。错误将是：
-- **SqlException.Number** = 11001
+- **SqlException.Number** = 11001 
 - 消息：“没有此类已知的主机”
 
 
@@ -145,7 +141,7 @@
 ## 连接：连接字符串
 
 
-连接到 Azure SQL 数据库所需的连接字符串与连接到 Microsoft SQL Server 所需的字符串稍有不同。可以从 [Azure 门户](http://manage.windowsazure.cn)复制数据库的连接字符串。
+连接到 Azure SQL 数据库所需的连接字符串与连接到 Microsoft SQL Server 所需的字符串稍有不同。可以从 [Azure 门户](https://manage.windowsazure.cn)复制数据库的连接字符串。
 
 
 [AZURE.INCLUDE [sql-database-include-connection-string-20-portalshots](../includes/sql-database-include-connection-string-20-portalshots.md)]
@@ -185,7 +181,7 @@
 - mySqlConnection.Open 方法调用
 - mySqlConnection.Execute 方法调用
 
-有个很微妙的地方。如果你正在执行*查询*时发生暂时性故障，**SqlConnection** 对象不会重试连接操作，因而肯定不会重试你的查询。但是，**SqlConnection** 在发送要执行的查询前会非常快速地检查连接。如果快速检查检测到连接问题，**SqlConnection** 会重试连接操作。如果重试成功，则会发送查询以执行。
+有个很微妙的地方。如果你正在执行*查询*时发生暂时性错误，**SqlConnection** 对象不会重试连接操作，因而肯定不会重试你的查询。但是，**SqlConnection** 在发送要执行的查询前会非常快速地检查连接。如果快速检查检测到连接问题，**SqlConnection** 会重试连接操作。如果重试成功，则会发送查询以执行。
 
 
 #### ConnectRetryCount 是否应结合应用程序重试逻辑？
@@ -199,7 +195,7 @@
 ## 连接：IP 地址
 
 
-必须将 SQL 数据库服务器配置为接受来自托管客户端程序的计算机的通信。为此，可以通过 [Azure 门户](http://manage.windowsazure.cn)编辑防火墙设置。
+必须将 SQL 数据库服务器配置为接受来自托管客户端程序的计算机的通信。为此，可以通过 [Azure 门户](https://manage.windowsazure.cn)编辑防火墙设置。
 
 
 如果你忘记了配置 IP 地址，你的程序将失败，并显示简单的错误消息，指出所需的 IP 地址。
@@ -256,7 +252,7 @@ ADO.NET 4.6.1：
 
 
 如果使用的是 ADO.NET 4.0 或更旧版本，我们建议升级到最新的 ADO.NET。
-- 从 2015年 11 月开始，你可以[下载 ADO.NET 4.6.1](http://blogs.msdn.com/b/dotnet/archive/2015/11/30/net-framework-4-6-1-is-now-available.aspx)。
+- 从 2015 年 11 月开始，你可以[下载 ADO.NET 4.6.1](http://blogs.msdn.com/b/dotnet/archive/2015/11/30/net-framework-4-6-1-is-now-available.aspx)。
 
 
 <a id="e-diagnostics-test-utilities-connect" name="e-diagnostics-test-utilities-connect"></a>
@@ -284,9 +280,9 @@ ADO.NET 4.6.1：
 
 
 在 Linux 上，以下实用程序可能很有用：
-	netstat -nap
-	nmap -sS -O 127.0.0.1
-	将示例值更改为你的 IP 地址）。
+- `netstat -nap` 
+- `nmap -sS -O 127.0.0.1`
+ - （将示例值更改为你的 IP 地址。）
 
 
 在 Windows 上，[PortQry.exe](http://www.microsoft.com/en-us/download/details.aspx?id=17148) 实用程序可能很有用。以下是在 Azure SQL 数据库服务器上查询端口情况，以及在便携式计算机上运行的的示例执行：
@@ -334,7 +330,7 @@ Enterprise Library 6 (EntLib60) 提供了 .NET 托管类来帮助进行日志记
 
 | 日志查询 | 说明 |
 | :-- | :-- |
-| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` | [sys.event\_log](http://msdn.microsoft.com/zh-cn/library/dn270018.aspx) 视图提供单个事件的相关信息，包括可能导致暂时性故障或连接失败的一些事件。<br/><br/>理想的情况下，可以将 **start\_time** 或 **end\_time** 值与有关客户端程序何时遇到问题的信息相关联。<br/><br/>**提示：**必须连接到 **master** 数据库才能运行此操作。 |
+| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` | [sys.event\_log](http://msdn.microsoft.com/zh-cn/library/dn270018.aspx) 视图提供单个事件的相关信息，包括可能导致暂时性错误或连接失败的一些事件。<br/><br/>理想的情况下，可以将 **start\_time** 或 **end\_time** 值与有关客户端程序何时遇到问题的信息相关联。<br/><br/>**提示：**必须连接到 **master** 数据库才能运行此操作。 |
 | `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` | [sys.database\_connection\_stats](http://msdn.microsoft.com/zh-cn/library/dn269986.aspx) 视图针对其他诊断提供事件类型的聚合计数。<br/><br/>**提示：**必须连接到 **master** 数据库才能运行此操作。 |
 
 
@@ -391,7 +387,7 @@ database_xml_deadlock_report  2015-10-16 20:28:01.0090000  NULL   NULL   NULL   
 Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服务（包括 Azure SQL 数据库服务）的稳健客户端。首先，可以访问 [Enterprise Library 6 – 2013年 4 月](http://msdn.microsoft.com/zh-cn/library/dn169621%28v=pandp.60%29.aspx)，找到 EntLib60 可以提供帮助的每个领域的相关专题
 
 
-处理暂时性故障的重试逻辑是 EntLib60 可以帮助的一个领域：
+处理暂时性错误的重试逻辑是 EntLib60 可以帮助的一个领域：
 - [4 - 锲而不舍是所有成功的秘诀：使用暂时性故障处理应用程序块](http://msdn.microsoft.com/zh-cn/library/dn440719%28v=pandp.60%29.aspx)
 
 
@@ -402,12 +398,12 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 > [AZURE.NOTE] EntLib60 的源代码可公开[下载](http://go.microsoft.com/fwlink/p/?LinkID=290898)。Microsoft 不打算对 EntLib 做进一步的功能或维护更新。
 
 
-### 用于暂时性故障和重试的 EntLib60 类
+### 用于暂时性错误和重试的 EntLib60 类
 
 
 以下 EntLib60 类对重试逻辑特别有用。所有这些类都包含在 **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling** 命名空间或其子级中：
 
-*在命名空间 **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling** 中：*
+在命名空间 **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling** 中：
 
 - **RetryPolicy** 类
  - **ExecuteAction** 方法
@@ -533,6 +529,6 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 - [SQL Server 连接池 (ADO.NET)](http://msdn.microsoft.com/zh-cn/library/8xx3tyca.aspx)
 
 
-- [*重试*是 Apache 2.0 授权的通用重试库，它以 **Python** 编写，可以简化向几乎任何程序添加重试行为的任务。](https://pypi.python.org/pypi/retrying)
+- [ *重试* 是 Apache 2.0 授权的通用重试库，它以 **Python** 编写，可以简化向几乎任何程序添加重试行为的任务。](https://pypi.python.org/pypi/retrying)
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0307_2016-->

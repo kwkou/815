@@ -78,7 +78,7 @@ Azure 提供两个选项用于在云中托管 SQL Server 工作负荷：
       <li type=round>需要通过安全隧道从 Azure 访问本地资源的 SQL Server 应用程序（例如 Active Directory）。
       <li type=round>你需要一个具有完全管理权限的定制 IT 环境。
       <li type=round>你想要快速完成开发和测试方案，但又不想购买本地 SQL Server 非生产硬件。
-      <li type=round>使用 [备份到 Azure 存储空间](http://msdn.microsoft.com/zh-cn/library/jj919148.aspx) 或 [Azure VM 中的 AlwaysOn 副本](/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions) 实现本地 SQL Server 应用程序的灾难恢复。
+      <li type=round>使用<a href='http://msdn.microsoft.com/zh-cn/library/jj919148.aspx'>备份到 Azure 存储空间</a> 或 <a href='/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions'>Azure VM 中的 AlwaysOn 副本</a>实现本地 SQL Server 应用程序的灾难恢复。
       <li type=round>大于 1 TB 的大型数据库。
       </ul></td>
 </tr>
@@ -100,16 +100,16 @@ Azure 提供两个选项用于在云中托管 SQL Server 工作负荷：
 </tr>
 <tr>
    <td valign="middle"><p><b>业务连续性</b></p></td>
-   <td valign="middle"><ul><li type=round>除了内置的容错基础结构功能以外，Azure SQL 数据库还提供可提高业务连续性的功能，例如时间点还原、地域还原和异地复制。有关详细信息，请参阅 [Azure SQL 数据库业务连续性概述](/documentation/articles/sql-database-business-continuity)。</ul></td>
-   <td valign="middle"><ul><li type=round>Azure VM 上的 SQL Server 可让你设置高可用性和灾难恢复解决方案，以满足数据库的具体需求。因此，可以构建针对应用程序高度优化的系统。你可以视需要自我测试并运行故障转移。有关详细信息，请参阅 [Azure 虚拟机上 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions)。</ul></td>
+   <td valign="middle"><ul><li type=round>除了内置的容错基础结构功能以外，Azure SQL 数据库还提供可提高业务连续性的功能，例如时间点还原、地域还原和异地复制。有关详细信息，请参阅<a href='/documentation/articles/sql-database-business-continuity'>Azure SQL 数据库业务连续性概述</a>。</ul></td>
+   <td valign="middle"><ul><li type=round>Azure VM 上的 SQL Server 可让你设置高可用性和灾难恢复解决方案，以满足数据库的具体需求。因此，可以构建针对应用程序高度优化的系统。你可以视需要自我测试并运行故障转移。有关详细信息，请参阅<a href='/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions'>Azure 虚拟机上 SQL Server 的高可用性和灾难恢复</a>。</ul></td>
 
 </tr>
 <tr>
    <td valign="middle"><p><b>混合云</b></p></td>
    <td valign="middle"><ul><li type=round>本地应用程序可以访问 Azure SQL 数据库中的数据。</ul></td>
    <td valign="middle"><ul>
-      <li type=round>使用 Azure VN 上的 SQL Server，应用程序可以一部分在云中运行，一部分在本地运行。例如，可以通过 [Azure 虚拟网络](/documentation/articles/virtual-networks-overview)，将本地网络和 Active Directory 域扩展到云中。此外，可以使用 [Azure 中的 SQL Server 数据文件](http://msdn.microsoft.com/zh-cn/library/dn385720.aspx)，将本地数据文件存储在 Azure 存储空间中。有关详细信息，请参阅 [SQL Server 2014 混合云简介](http://msdn.microsoft.com/zh-cn/library/dn606154.aspx)。
-      <li type=round>支持通过 [使用 Azure Blob 存储执行 SQL Server 备份和还原](http://msdn.microsoft.com/zh-cn/library/jj919148.aspx) 或 [Azure VM 中的 AlwaysOn 副本](/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions) 实现本地 SQL Server 应用程序的灾难恢复。
+      <li type=round>使用 Azure VN 上的 SQL Server，应用程序可以一部分在云中运行，一部分在本地运行。例如，可以通过<a href='/documentation/articles/virtual-networks-overview'>Azure 虚拟网络</a>，将本地网络和 Active Directory 域扩展到云中。此外，可以使用<a href='http://msdn.microsoft.com/zh-cn/library/dn385720.aspx'>Azure 中的 SQL Server 数据文件</a>，将本地数据文件存储在 Azure 存储空间中。有关详细信息，请参阅<a href='http://msdn.microsoft.com/zh-cn/library/dn606154.aspx'>SQL Server 2014 混合云简介</a>。
+      <li type=round>支持通过<a href='http://msdn.microsoft.com/zh-cn/library/jj919148.aspx'>使用 Azure Blob 存储执行 SQL Server 备份和还原</a>或<a href='/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions'>Azure VM 中的 AlwaysOn 副本</a>实现本地 SQL Server 应用程序的灾难恢复。
       </ul></td>
 
 </tr>

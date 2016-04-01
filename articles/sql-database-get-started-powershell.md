@@ -10,8 +10,8 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="12/01/2015"
-    wacn.date="01/29/2016"/>
+    ms.date="01/20/2016"
+    wacn.date="03/29/2016"/>
 
 # 使用 PowerShell cmdlet 创建新的 SQL 数据库并执行常见的数据库设置任务 
 
@@ -131,11 +131,11 @@ SQL 数据库在 Azure SQL 数据库服务器中创建。运行 **New-AzureRmSql
 ## 后续步骤
 创建新的 SQL 数据库并执行基本的数据库设置任务后，可以执行以下操作：
 
-- [使用 SQL Server Management Studio (SSMS) 进行连接](/documentation/articles/sql-database-connect-to-database)
+- [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms)
 
 
 ## 其他资源
 
 - [Azure SQL 数据库](/documentation/services/sql-databases)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0314_2016-->

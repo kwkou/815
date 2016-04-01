@@ -4,14 +4,14 @@
 	services="sql-database"
 	documentationCenter=""
 	authors="MightyPen"
-	manager="jeffreyg"
+	manager="jhubbard"
 	editor=""/>
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/08/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="02/05/2016"
+	wacn.date="03/29/2016"/>
 
 
 # 规划和准备升级到 SQL 数据库 V12
@@ -29,7 +29,7 @@
 | 标题和链接 | 内容说明 |
 | :--- | :--- |
 | [SQL 数据库 V12 的新增功能](/documentation/articles/sql-database-v12-whats-new) | 介绍 V12 如何使 Azure SQL 数据库几乎能够完全与 Microsoft SQL Server 兼容。 |
-| [在 SQL 数据库 V12 中创建数据库](/documentation/articles/sql-database-create) | 介绍如何在版本 V12 中创建新的 Azure SQL 数据库。其中介绍了各个选项，而不仅仅是如何创建空数据库。 |
+| [在 SQL 数据库 V12 中创建数据库](/documentation/articles/sql-database-get-started) | 介绍如何在版本 V12 中创建新的 Azure SQL 数据库。其中介绍了各个选项，而不仅仅是如何创建空数据库。 |
 
 
 ## 提前规划
@@ -117,20 +117,6 @@ V12 不支持 Web 和企业服务定价层。
 ##<a id="limitations"></a>升级到 V12 期间和之后的限制
 
 
-### V12 的门户
-
-
-Azure 有两个门户，每个门户针对 SQL 数据库 V12 提供不同的功能。
-
-- [http://manage.windowsazure.cn/](http://manage.windowsazure.cn/)<br/>此 Azure 门户最终可能会淘汰。此门户：
- - 可以管理 V12 服务器和数据库。
- - *无法*将 V11 数据库升级到 V12。
-
-
-- （http://*yourservername*.database.chinacloudapi.cn)<br/> Azure SQL 数据库管理门户：
- - 无法管理 V12 服务器。
-
-
 我们建议你使用 Visual Studio 2013 (VS2013) 连接到 Azure SQL 数据库。VS2013 可用于如下所述的任务：
 
 
@@ -139,16 +125,16 @@ Azure 有两个门户，每个门户针对 SQL 数据库 V12 提供不同的功�
 - 联机或脱机开发数据库。
 
 
-你可以改为使用 [Visual Studio Community 2013](https://www.visualstudio.com/zh-CN/news/vs2013-community-vs.aspx/)（免费但具有完整功能的 VS2013 版本）进行连接。
+你可以改为使用 [Visual Studio Community 2013](https://www.visualstudio.com/zh-cn/news/vs2013-community-vs.aspx)（免费但具有完整功能的 VS2013 版本）进行连接。
 
 
-在旧版 Azure 门户上的数据库页中，可以单击“在 Visual Studio 中打开”，以便在计算机上启动 VS2013，从而与 Azure SQL 数据库 建立连接。
+在旧版 Azure 管理门户上的数据库页中，可以单击“在 Visual Studio 中打开”，以便在计算机上启动 VS2013，从而与 Azure SQL 数据库 建立连接。
 
 
-另一种方法是使用装有 [CU6](http://support.microsoft.com/kb/3031047/) 的 SQL Server Management Studio (SSMS) 2014 来连接到 Azure SQL 数据库。以下博客文章提供了更多详细信息：<br/>[Azure SQL 数据库的客户端工具更新](http://azure.microsoft.com/blog/2014/12/22/client-tooling-updates-for-azure-sql-database/)。
+另一种方法是使用装有 [CU6](http://support.microsoft.com/zh-cn/kb/3031047) 的 SQL Server Management Studio (SSMS) 2014 来连接到 Azure SQL 数据库。以下博客文章提供了更多详细信息：<br/>[Azure SQL 数据库的客户端工具更新](https://azure.microsoft.com/blog/2014/12/22/client-tooling-updates-for-azure-sql-database)。
 
 
-### 升级到 V12 *期间*的限制
+### 升级到 V12 期间的限制
 
 
 在升级到 V12 期间，V11 数据库仍然支持数据访问。但你要考虑到几个限制。
@@ -161,7 +147,7 @@ Azure 有两个门户，每个门户针对 SQL 数据库 V12 提供不同的功�
 | 在升级到 V12 的最后一个阶段，数据库将暂时不可用 | 在升级过程中，属于 V11 服务器的数据库将保持可用。但是，与服务器和数据库的连接，在最后一个阶段当开始从 V11 切换到准备就绪的 V12 时，暂时不可用。<br/><br/>切换期间可能从 40 秒到 5 分钟变动。对于大多数服务器，切换应在 90 秒内完成。对于具有大量数据库的服务器，或者当数据库有大量写入工作负荷时，切换时间会增加。 |
 
 
-### 升级到 V12 *之后*的限制
+### 升级到 V12 之后的限制
 
 
 | 限制 | 说明 |
@@ -171,7 +157,7 @@ Azure 有两个门户，每个门户针对 SQL 数据库 V12 提供不同的功�
 
 
 
-### 升级到 V12 *之后*的导出和导入操作
+### 升级到 V12 之后的导出和导入操作
 
 
 你可以使用 [Azure 门户](https://manage.windowsazure.cn)导出或导入 V12 数据库。或者使用下列任一工具进行导出或导入：
@@ -187,10 +173,10 @@ Azure 有两个门户，每个门户针对 SQL 数据库 V12 提供不同的功�
 
 - [SQL Server Management Studio 2014 累积更新 6](http://support2.microsoft.com/kb/3031047)
 - [Visual Studio 2013 中的 SQL Server 数据库工具 2015 年 2 月更新版](https://msdn.microsoft.com/data/hh297027)
-- [Azure SQL 数据库 V12 数据层应用程序框架 (DacFx) 2015 年 2 月版](https://www.microsoft.com/zh-CN/download/details.aspx?id=45886)
+- [Azure SQL 数据库 V12 数据层应用程序框架 (DacFx) 2015 年 2 月版](http://www.microsoft.com/zh-cn/download/details.aspx?id=45886)
 
 
-> [AZURE.NOTE]前面的工具链接已在 2015 年 3 月 2 日或之后更新。我们建议你使用这些工具的较新更新版。
+> [AZURE.NOTE] 前面的工具链接已在 2015 年 3 月 2 日或之后更新。我们建议你使用这些工具的较新更新版。
 
 
 #### 自动导出
@@ -237,4 +223,4 @@ Stop- cmdlet 表示取消，而不是暂停。你无法在中途恢复升级，�
 [Subheading 1]: #subheading-1
  
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0321_2016-->

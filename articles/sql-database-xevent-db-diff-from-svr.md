@@ -4,15 +4,15 @@
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
-	manager="jeffreyg" 
+	manager="jhubbard" 
 	editor="" 
 	tags=""/>
 
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="10/13/2015" 
-	wacn.date="01/05/2016"/>
+	ms.date="02/05/2016" 
+	wacn.date="03/29/2016"/>
 
 
 # SQL 数据库中的扩展事件
@@ -29,7 +29,7 @@
 *XEvents* 是不正式的别名，有时在博客或其他非正式场合表示“扩展的事件”。
 
 
-> [AZURE.NOTE]从 2015 年 10 月开始，扩展事件会话功能已在 Azure SQL 数据库的预览级激活。正式版 (GA) 的推出日期尚未确定。
+> [AZURE.NOTE] 从 2015 年 10 月开始，扩展事件会话功能已在 Azure SQL 数据库的预览级激活。正式版 (GA) 的推出日期尚未确定。
 
 
 
@@ -88,7 +88,7 @@
 ## 新的目录视图
 
 
-扩展事件功能受多个[目录视图](http://msdn.microsoft.com/zh-cn/library/ms174365.aspx)的支持。目录视图告诉你有关当前数据库中用户创建的事件会话的*元数据或定义*的信息。视图不会返回有关活动事件会话的实例的信息。
+扩展事件功能受多个[目录视图](http://msdn.microsoft.com/zh-cn/library/ms174365.aspx)的支持。目录视图告诉你有关当前数据库中用户创建的事件会话的元数据或定义的信息。视图不会返回有关活动事件会话的实例的信息。
 
 
 | 目录<br/>视图的名称 | 说明 |
@@ -106,7 +106,7 @@
 ## 新的动态管理视图 [(DMV)](http://msdn.microsoft.com/zh-cn/library/ms188754.aspx)
 
 
-Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://msdn.microsoft.com/zh-cn/library/bb677293.aspx)。DMV 告诉你有关*活动*事件会话的信息。
+Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://msdn.microsoft.com/zh-cn/library/bb677293.aspx)。DMV 告诉你有关活动事件会话的信息。
 
 
 | DMV 的名称 | 说明 |
@@ -118,7 +118,7 @@ Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://
 | **sys.dm\_xe\_database\_sessions** | 返回划归到当前数据库的每个事件会话所对应的行。 |
 
 
-在 Microsoft SQL Server 中，类似目录视图的名称不包含 *\_database* 部分，例如：
+在 Microsoft SQL Server 中，类似目录视图的名称不包含 \_database 部分，例如：
 
 
 - 名称为 **sys.dm\_xe\_sessions**，而不是 <br/>**sys.dm\_xe\_database\_sessions**。
@@ -264,4 +264,4 @@ SELECT
 - Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/zh-cn/library/bb630355.aspx)
 -->
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0321_2016-->

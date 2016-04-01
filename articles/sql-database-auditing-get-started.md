@@ -9,15 +9,15 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="11/12/2015"
-	wacn.date="12/22/2015"/>
+	ms.date="02/03/2016"
+	wacn.date="03/21/2016"/>
  
 # SQL 数据库审核入门
 Azure SQL 数据库审核可以跟踪数据库事件，并将审核的事件写入 Azure 存储帐户中的审核日志。一般而言，可以在基本、标准和高级服务层中使用审核功能。
 
 审核可帮助你一直保持遵从法规、了解数据库活动，以及深入了解可以指明业务考量因素或疑似安全违规的偏差和异常。
 
-审核工具有助于遵从法规标准，但不能保证遵从法规。有关可帮助你遵从标准的 Azure 计划的详细信息，请参阅 [Azure 信任中心](http://azure.microsoft.com/zh-cn/support/trust-center/compliance)。
+审核工具有助于遵从法规标准，但不能保证遵从法规。有关可帮助你遵从标准的 Azure 计划的详细信息，请参阅 [Azure 信任中心](/support/trust-center/compliance)。
 
 + [Azure SQL 数据库审核基础知识]
 + [为数据库设置审核]
@@ -25,7 +25,7 @@ Azure SQL 数据库审核可以跟踪数据库事件，并将审核的事件写�
 
 ##<a id="subheading-1"></a>Azure SQL 数据库审核基本信息
 
-以下部分介绍如何使用 Azure 预览门户配置审核。你也可以[使用经典 Azure 门户为数据库设置审核]。
+以下部分介绍如何使用 Azure 门户配置审核。
 
 SQL 数据库审核可让你：
 
@@ -33,7 +33,7 @@ SQL 数据库审核可让你：
 - **报告**数据库活动。可以使用预配置的报告和仪表板快速开始使用活动和事件报告。
 - **分析**报告。可以查找可疑事件、异常活动和趋势。
 
-> [AZURE.NOTE]现在，你可以使用新的**威胁检测**功能（目前以预览版提供），针对可能表示出现安全威胁的异常数据库活动接收前瞻性的警报。可以在审核配置边栏选项卡中启用和配置威胁检测。有关更多详细信息，请参阅[威胁检测入门](/documentation/articles/sql-database-threat-detection-get-started)。
+> [AZURE.NOTE] 现在，你可以使用新的**威胁检测**功能（目前以预览版提供），针对可能表示出现安全威胁的异常数据库活动接收前瞻性的警报。可以在审核配置边栏选项卡中启用和配置威胁检测。有关更多详细信息，请参阅[威胁检测入门](/documentation/articles/sql-database-threat-detection-get-started)。
 
 你可以为以下事件类别配置审核：
 
@@ -55,10 +55,21 @@ SQL 数据库审核可让你：
 
 在设置审核之前，请检查是否正在使用[“下层客户端”](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients)。
 
+##<a id="subheading-3"></a>分析审核日志和报告
 
-##<a id="subheading-4"></a>使用经典 Azure 门户为数据库设置审核
+审核日志将在设置期间选择的 Azure 存储帐户中前缀为 **SQLDBAuditLogs** 的一系列存储表内进行聚合。你可以使用工具（比如 [Azure 存储资源管理器](http://azurestorageexplorer.codeplex.com)）查看日志文件。
 
-1. 启动[经典 Azure 门户](https://manage.windowsazure.cn/) (https://manage.windowsazure.cn/ )。
+预配置的报告模板作为[可下载的 Excel 电子表格](http://go.microsoft.com/fwlink/?LinkId=403540)提供，可帮助你快速分析日志数据。若要对审核日志使用模板，需要安装可从[此处](http://www.microsoft.com/zh-cn/download/details.aspx?id=39379)下载的 Excel 2013 或更高版本以及 Power Query。
+
+可以使用 Power Query 将审核日志从 Azure 存储帐户直接导入 Excel 模板。然后可以浏览审核记录，并在日志数据顶部创建仪表板和报表。
+
+
+![导航窗格][4]
+
+
+##<a id="subheading-4"></a>使用 Azure 经典门户为数据库设置审核
+
+1. 启动 https://manage.windowsazure.cn/ 处的 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 2. 单击要审核的 SQL 数据库/SQL Server，然后单击“审核和安全性”选项卡。
 
@@ -77,6 +88,10 @@ SQL 数据库审核可让你：
 6. 单击“保存”。
 
 
+
+
+##<a id="subheading-5">生产环境中的用法实践</a>
+本部分中的说明与以上屏幕截图相关。可以使用 [Azure 门户](https://manage.windowsazure.cn)或[ Azure 经典门户](https://manage.windowsazure.cn)。
 
 
 ##<a id="subheading-6"></a>重新生成存储密钥
@@ -112,7 +127,7 @@ SQL 数据库审核可让你：
 [Azure SQL 数据库审核基础知识]: #subheading-1
 [为数据库设置审核]: #subheading-2
 [分析审核日志和报告]: #subheading-3
-[使用经典 Azure 门户为数据库设置审核]: #subheading-4
+[使用 Azure 经典门户为数据库设置审核]: #subheading-4
 [Practices for usage in production]: #subheading-5
 [Storage Key Regeneration]: #subheading-6
 [Automation]: #subheading-7
@@ -131,4 +146,4 @@ SQL 数据库审核可让你：
 
  
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="02/03/2016"
-	wacn.date="02/19/2016"/>
+	ms.date="10/01/2015"
+	wacn.date="03/22/2016"/>
 
 # 在 Azure 自动化中计划 Runbook
 

@@ -4,14 +4,14 @@
 	services="sql-database"
 	documentationCenter=""
 	authors="jodebrui"
-	manager="jeffreyg"
+	manager="jhubbard"
 	editor=""/>
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/11/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/11/2016"
+	wacn.date="03/29/2016"/>
 
 
 # SQL 数据库中的 In-Memory（预览版）入门
@@ -63,7 +63,7 @@ In-Memory [Analytics](#install_analytics_manuallink) 的功能如下：
 
 GA（正式版）：
 
-- *磁盘上* 的[列存储索引](http://msdn.microsoft.com/zh-cn/library/dn817827.aspx)。
+- 磁盘上的[列存储索引](http://msdn.microsoft.com/zh-cn/library/dn817827.aspx)。
 
 
 预览版：
@@ -76,7 +76,7 @@ GA（正式版）：
 [本主题稍后](#preview_considerations_for_in_memory)将介绍 In-Memory 功能在预览期的注意事项。
 
 
-> [AZURE.NOTE] 这些预览期功能仅适用于 [*高级版*](/documentation/articles/sql-database-service-tiers) Azure SQL 数据库，而不适用于标准或基本服务层上的数据库。
+> [AZURE.NOTE] 这些预览期功能仅适用于 [高级版](/documentation/articles/sql-database-service-tiers) Azure SQL 数据库，而不适用于标准或基本服务层上的数据库。
 
 
 
@@ -86,7 +86,7 @@ GA（正式版）：
 
 ## A.安装 In-Memory OLTP 示例
 
-在 [Azure 门户](http://manage.windowsazure.cn)中按几下鼠标，即可创建 AdventureWorksLT [V12] 示例数据库。本部分中的步骤说明如何使用以下项目扩充 AdventureWorksLT 数据库：
+在 [Azure 门户](https://manage.windowsazure.cn)中按几下鼠标，即可创建 AdventureWorksLT [V12] 示例数据库。本部分中的步骤说明如何使用以下项目扩充 AdventureWorksLT 数据库：
 
 - In-Memory 表。
 - 本机编译的存储过程。
@@ -94,7 +94,7 @@ GA（正式版）：
 
 #### 安装步骤
 
-1. 在 [Azure 门户](http://manage.windowsazure.cn)中，于 V12 服务器上创建一个高级数据库。将“源”设置为 AdventureWorksLT [V12] 示例数据库。
+1. 在 [Azure 门户](https://manage.windowsazure.cn)中，于 V12 服务器上创建一个高级数据库。将“源”设置为 AdventureWorksLT [V12] 示例数据库。
  - 有关详细指示，请参阅[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)。
 
 2. 使用 SQL Server Management Studio [(SSMS.exe)](http://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 连接到该数据库。
@@ -171,7 +171,7 @@ SELECT uses_native_compilation, OBJECT_NAME(object_id), definition
 
 ## 运行示例 OLTP 工作负荷
 
-以下两个 *存储过程* 的唯一差别在于，第一个过程使用内存优化表版本，而第二个过程使用普通磁盘表：
+以下两个存储过程的唯一差别在于，第一个过程使用内存优化表版本，而第二个过程使用普通磁盘表：
 
 - SalesLT**.**usp\_InsertSalesOrder**\_inmem**
 - SalesLT**.**usp\_InsertSalesOrder**\_ondisk**
@@ -195,7 +195,7 @@ SELECT uses_native_compilation, OBJECT_NAME(object_id), definition
 本部分显示 ostress.exe 命令行中内嵌的 T-SQL 脚本。此脚本使用前面安装的 T-SQL 脚本所创建的项。
 
 
-以下脚本将在以下内存优化*表*中插入包含 5 个细目的示例销售订单：
+以下脚本将在以下内存优化表中插入包含 5 个细目的示例销售订单：
 
 - SalesLT.SalesOrderHeader\_inmem
 - SalesLT.SalesOrderDetail\_inmem
@@ -220,6 +220,7 @@ WHILE (@i < 20)
 begin;
 	EXECUTE SalesLT.usp_InsertSalesOrder_inmem @SalesOrderID OUTPUT,
 		@DueDate, @CustomerID, @BillToAddressID, @ShipToAddressID, @od;
+	SET @i = @i + 1;
 end
 ```
 
@@ -256,7 +257,7 @@ whereas for SQL 2016+
 ### 首先运行 \_inmem 压力工作负荷
 
 
-可以使用 *RML 命令提示符*窗口来运行 ostress.exe 命令行。命令行参数将指示 ostress：
+可以使用 RML 命令提示符窗口来运行 ostress.exe 命令行。命令行参数将指示 ostress：
 
 - 同时运行 100 个连接 (-n100)。
 - 每个连接运行 T-SQL 脚本 50 次 (-r50)。
@@ -313,7 +314,10 @@ EXECUTE Demo.usp_DemoReset;
 在与数据库相同的 Azure 区域的 Azure VM 上运行 ostress，In-Memory 测试已显示此简化工作负荷大约有 **9 倍**的性能改善。
 
 
-添加转换成本机编译的存储过程时，性能可以获得更大改善。
+
+<a id="install_analytics_manuallink" name="install_analytics_manuallink"></a>
+
+&nbsp;
 
 
 ## B.安装 In-Memory Analytics 示例
@@ -353,7 +357,7 @@ EXECUTE Demo.usp_DemoReset;
 
 - dbo.FactResellerSalesXL\_CCI 是具有群集**列存储索引**的表，已在*数据*级别进一步压缩。
 
-- dbo.FactResellerSalesXL\_PageCompressed 是具有等效常规群集索引的表，只在*页面*级别压缩。
+- dbo.FactResellerSalesXL\_PageCompressed 是具有等效常规群集索引的表，只在页面级别压缩。
 
 
 #### 用于比较列存储索引的关键查询
@@ -445,12 +449,12 @@ GO
 ## In-Memory OLTP 预览版注意事项
 
 
-Azure SQL 数据库中的 In-Memory OLTP 功能将在 [2015 年 10 月 28 日推出预览版](http://azure.microsoft.com/updates/public-preview-in-memory-oltp-and-real-time-operational-analytics-for-azure-sql-database)。
+Azure SQL 数据库中的 In-Memory OLTP 功能将在 [2015 年 10 月 28 日推出预览版](https://azure.microsoft.com/updates/public-preview-in-memory-oltp-and-real-time-operational-analytics-for-azure-sql-database)。
 
 
 在正式版 (GA) 发布前的预览期间，只有下述数据库支持 In-Memory OLTP：
 
-- 使用*高级*服务层的数据库。
+- 使用高级服务层的数据库。
 
 - 在 In-Memory OLTP 功能生效后创建的数据库。
  - 如果从 In-Memory OLTP 功能生效前创建的数据库还原，则新的数据库无法支持 In-memory OLTP。
@@ -521,4 +525,4 @@ SELECT DatabasePropertyEx(DB_NAME(), 'IsXTPSupported');
 
 - [监视内存中存储](/documentation/articles/sql-database-in-memory-oltp-monitoring)（适用于 In-Memory OLTP）。
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0321_2016-->

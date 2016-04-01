@@ -3,13 +3,13 @@
    description="本文包含有关管理 Azure 自动化环境的多个主题。Azure 自动化目前包括数据保留和备份 Azure 自动化灾难恢复。"
    services="automation"
    documentationCenter=""
-   authors="bwren"
+   authors="SnehaGunda"
    manager="stevenka"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="11/02/2015"
-	wacn.date="12/17/2015"/>
+<tags 
+   ms.service="automation"
+   ms.date="02/03/2016"
+   wacn.date="03/22/2016" />
 
 # 管理 Azure 自动化数据
 
@@ -70,4 +70,4 @@ Azure 自动化帐户中标配的异地复制可将帐户数据备份到其他�
 
 如果主要区域发生数据丢失（这种情况很少见），Microsoft 将尝试恢复数据。如果无法恢复主数据，则执行异地故障转移，并通过受影响用户的订阅向其通知此项操作。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

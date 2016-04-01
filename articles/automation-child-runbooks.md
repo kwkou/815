@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="automation"
-   ms.date="09/17/2015"
-   wacn.date="12/14/2015" />
+   ms.date="02/09/2016"
+   wacn.date="03/22/2016" />
 
 # Azure 自动化中的子 Runbook
 
@@ -17,7 +17,6 @@
 在 Azure 自动化中，最佳实践之一是编写可重用、模块化且提供可由其他 Runbook 使用的离散功能的 Runbook。父 Runbook 通常会调用一个或多个子 Runbook 来执行所需的功能。可通过两种方法调用子 Runbook，每种方法都有明显不同的差异，你应该了解这些差异，以确定哪种方法最适合你的方案。
 
 ##  使用内联执行调用子 Runbook
-<a name="InlineExecution"></a>
 
 若要从另一个 Runbook 调用某个内嵌 Runbook，请使用被调用 Runbook 的名称并提供其参数值，就像使用活动或 cmdlet 时一样。同一自动化帐户中的所有 Runbook 可按此方式相互使用。父 Runbook 将等待子 Runbook 完成，然后转移到下一行，并直接向父级返回任何输出。
 
@@ -25,7 +24,11 @@
 
 发布某个 Runbook 时，必须事先发布它所调用的任何子 Runbook。这是因为，在编译 Runbook 时，Azure 自动化将会生成与任何子 Runbook 的关联。如果未进行这种关联，父 Runbook 看似发布正常，但在启动时会生成异常。如果发生这种情况，你可以重新发布父 Runbook，以正确引用子 Runbook。如果由于已创建关联而更改了任何子 Runbook，则你不需重新发布父 Runbook。
 
-调用内联的子 Runbook 的参数可以是任意数据类型（包括复杂对象），并且不会进行 [JSON 序列化](/documentation/articles/automation-starting-a-runbook#runbook-parameters)，因为当你使用 Azure 管理门户或 Start-AzureAutomationRunbook cmdlet 启动 Runbook 时会进行这种序列化。
+调用内联的子 Runbook 的参数可以是任意数据类型（包括复杂对象），并且不会进行 [JSON 序列化](/documentation/articles/automation-starting-a-runbook/#runbook-parameters)，因为当你使用 Azure 管理门户或 Start-AzureAutomationRunbook cmdlet 启动 Runbook 时会进行这种序列化。
+
+### Runbook 类型
+
+在通过内联执行调用 PowerShell 工作流子 Runbook 时，你只需使用 Runbook 的名称。调用 PowerShell 子 Runbook 时，你必须将 *.\* 用作其名称的前缀，表示脚本位于本地目录中。
 
 ### 示例
 
@@ -36,18 +39,18 @@
 
 ##  使用 cmdlet 启动子 Runbook
 
-可以根据[使用 Windows PowerShell 启动 Runbook](/documentation/articles/automation-starting-a-runbook#starting-a-runbook-with-windows-powershell) 中所述，使用 [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/dn690259.aspx) cmdlet 来启动 Runbook。当你从 cmdlet 启动子 Runbook 时，为该子 Runbook 创建作业后，父 Runbook 将立即转移到下一行。如果需要从 Runbook 中检索任何输出，则需要使用 [Get-AzureAutomationJobOutput](http://msdn.microsoft.com/zh-cn/library/dn690268.aspx) 访问作业。
+可以根据[使用 Windows PowerShell 启动 Runbook](/documentation/articles/automation-starting-a-runbook/#starting-a-runbook-with-windows-powershell) 中所述，使用 [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/dn690259.aspx) cmdlet 来启动 Runbook。当你从 cmdlet 启动子 Runbook 时，为该子 Runbook 创建作业后，父 Runbook 将立即转移到下一行。如果需要从 Runbook 中检索任何输出，则需要使用 [Get-AzureAutomationJobOutput](http://msdn.microsoft.com/zh-cn/library/dn690268.aspx) 访问作业。
 
-使用 cmdlet 启动的子 Runbook 的作业将在父 Runbook 的某个独立作业中运行。这会导致调用内联脚本的作业增多，并使这些作业更难以跟踪。不过，父级可以启动多个子 Runbook，而无需等待每个子 Runbook 完成。对于调用内嵌子 Runbook 的同一种并行执行，父 Runbook 需要使用并行关键字。
+使用 cmdlet 启动的子 Runbook 的作业将在父 Runbook 的某个独立作业中运行。这会导致比调用内联 Runbook 更多的作业，并使这些作业更难以跟踪。不过，父级可以启动多个子 Runbook，而无需等待每个子 Runbook 完成。对于调用内嵌子 Runbook 的同一种并行执行，父 Runbook 需要使用[并行关键字](/documentation/articles/automation-powershell-workflow/#parallel-processing)。
 
-使用 cmdlet 启动的子 Runbook 的参数以哈希表形式提供，如 [Runbook 参数](/documentation/articles/automation-starting-a-runbook#runbook-parameters)中所述。只能使用简单数据类型。如果 Runbook 的参数使用复杂数据类型，则必须内联调用该 Runbook。
+使用 cmdlet 启动的子 Runbook 的参数以哈希表形式提供，如 [Runbook 参数](/documentation/articles/automation-starting-a-runbook/#runbook-parameters)中所述。只能使用简单数据类型。如果 Runbook 的参数使用复杂数据类型，则必须内联调用该 Runbook。
 
 ### 示例
 
 以下示例将启动一个包含参数的子 Runbook，然后等待其完成。完成后，父 Runbook 的作业将收集其输出。
 
 	$params = @{"VMName"="MyVM";"RepeatCount"=2;"Restart"=$true} 
-	$job = Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test- ChildRunbook" –Parameters $params
+	$job = Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-ChildRunbook" –Parameters $params
 	
 	$doLoop = $true
 	While ($doLoop) {
@@ -76,7 +79,7 @@
 
 ## 相关文章
 
-- [在 Azure Automation 中启动 Runbook](/documentation/articles/automation-starting-a-runbook)
+- [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook)
 - [Azure 自动化中的 Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0307_2016-->

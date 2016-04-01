@@ -10,17 +10,16 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/17/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="03/16/2016"
+	wacn.date="03/24/2016"/>
 
 
 # 在 Mac OS X 上使用 Ruby 连接到 SQL 数据库(Yosemite)
 
 
-> [AZURE.SELECTOR]
-- [Node.js](/documentation/articles/sql-database-develop-nodejs-simple-mac)
-- [Python](/documentation/articles/sql-database-develop-python-simple-mac-osx)
-- [Ruby](/documentation/articles/sql-database-develop-ruby-simple-mac-osx)
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)] 
+
+
 
 
 本主题演示了一个在装有 Yosemite 的 Mac 计算机上运行的，用于连接到 Azure SQL 数据库数据库的 Ruby 代码示例。
