@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="12/01/2015" 
-	wacn.date="03/21/2016"/>
+	wacn.date="04/01/2016"/>
 
 # 扩展 Azure SQL 数据库支持的移动服务
 
@@ -217,7 +217,7 @@ Azure 经典门户提供内置管理体验，虽然限制更多，但无需本�
 3. 选择“配置”选项卡。
 4. 在“数据库设置”部分中选择“SQL 数据库”名称。这样可导航到门户中的 Azure SQL 数据库选项卡。
 5. 选择“为此 IP 地址设置 Azure 防火墙规则”。
-6. 记下“连接到数据库”部分中的服务器地址，例如：*mcml4otbb9.database.windows.net*。
+6. 记下“连接到数据库”部分中的服务器地址，例如：*mcml4otbb9.database.chinacloudapi.cn*。
 
 #### SQL Server Management Studio
 1. 导航到[“SQL Server 版本 - Express”](http://www.microsoft.com/zh-cn/server-cloud/products/sql-server-editions/sql-server-express.aspx)

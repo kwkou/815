@@ -75,7 +75,7 @@ TodoItem 类定义数据对象，并且您需要将相同属性添加到此类�
             }
 
             // Set the URI for the Blob Storage service.
-            Uri blobEndpoint = new Uri(string.Format("https://{0}.blob.core.windows.net", storageAccountName));
+            Uri blobEndpoint = new Uri(string.Format("https://{0}.blob.core.chinacloudapi.cn", storageAccountName));
 
             // Create the BLOB service client.
             CloudBlobClient blobClient = new CloudBlobClient(blobEndpoint, 

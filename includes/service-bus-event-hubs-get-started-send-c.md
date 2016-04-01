@@ -65,7 +65,7 @@
 	}
 	
 	int sendMessage(pn_messenger_t * messenger) {
-		char * address = (char *) "amqps://SendRule:{Send Rule key}@{namespace name}.servicebus.windows.net/{event hub name}";
+		char * address = (char *) "amqps://SendRule:{Send Rule key}@{namespace name}.servicebus.chinacloudapi.cn/{event hub name}";
 		char * msgtext = (char *) "Hello from C!";
 	
 		pn_message_t * message;

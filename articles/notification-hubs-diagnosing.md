@@ -10,7 +10,7 @@
 <tags 
 	ms.service="notification-hubs"
 	ms.date="10/27/2015" 
-	wacn.date="01/14/2016"/>
+	wacn.date="04/01/2016"/>
 
 # Azure 通知中心 - 诊断指南
 
@@ -143,7 +143,7 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 
 当你通过通知中心发送通知时，起初只要对 NH 排队以进行处理，从而找到它的所有目标，然后最终 NH 将它发送到 PNS。这意味着，当你使用 REST API 或任意客户端 SDK 时，你的发送调用的成功返回只表示消息已成功在通知中心中排队。当 NH 最终准备将消息发送到 PNS 时，它不会深入探索发生了什么情况。如果你的通知没有到达客户端设备，则可能在 NH 尝试将消息传递到 PNS 时出现错误。例如，负载大小超出了 PNS 允许的上限，或者在 NH 中配置的凭据无效等。若要深入分析 PNS 错误，我们引入了一个名为 [EnableTestSend 功能]的属性。当你从门户或 Visual Studio 客户端中发送测试消息时，系统会自动启用此属性，从而允许你查看详细的调试信息。根据 .NET SDK 的示例，你可以通过 API 使用此属性，其现在可用，并且最终将被添加到所有客户端 SDK。若要和 REST 调用一起使用此属性，直接在你的发送调用的末尾附加名为“test”的查询字符串参数。例如：
 
-	https://mynamespace.servicebus.windows.net/mynotificationhub/messages?api-version=2013-10&test
+	https://mynamespace.servicebus.chinacloudapi.cn/mynotificationhub/messages?api-version=2013-10&test
 
 *示例 (.NET SDK)*
  

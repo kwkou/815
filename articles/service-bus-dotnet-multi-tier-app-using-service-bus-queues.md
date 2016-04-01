@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="10/07/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="04/01/2016"/>
 
 # 使用 Azure 服务总线队列创建 .NET 多层应用程序
 
@@ -385,7 +385,7 @@
 
 	<ConfigurationSettings>
     ...
-    	<Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://[yourServiceNamespace].servicebus.windows.net/;SharedSecretIssuer=RootManageSharedAccessKey;SharedSecretValue=[yourKey]" />
+    	<Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;SharedSecretIssuer=RootManageSharedAccessKey;SharedSecretValue=[yourKey]" />
 	</ConfigurationSettings>
 
 以下代码检索连接字符串，创建队列并初始化与队列的连接。

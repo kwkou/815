@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="12/09/2015"
-   wacn.date="01/14/2016" />
+   wacn.date="04/01/2016" />
 
 # 服务总线身份验证和授权
 
@@ -53,7 +53,7 @@ New-AzureSBNamespace <namespaceName> "<Region>” -CreateACSNamespace $true
 New-AzureSBNamespace <namespaceName> "<Region>” -CreateACSNamespace $false
 ```
 
-例如，如果创建名为 **contoso.servicebus.windows.net** 的服务总线命名空间，则将自动预配名为 **contoso-sb.accesscontrol.chinacloudapi.cn** 的随附 ACS 命名空间。对于在 2014 年 8 月之前创建的所有命名空间，还将创建一个随附的 ACS 命名空间。
+例如，如果创建名为 **contoso.servicebus.chinacloudapi.cn** 的服务总线命名空间，则将自动预配名为 **contoso-sb.accesscontrol.chinacloudapi.cn** 的随附 ACS 命名空间。对于在 2014 年 8 月之前创建的所有命名空间，还将创建一个随附的 ACS 命名空间。
 
 默认情况下，此随附 ACS 命名空间中设置了默认服务标识“owner”，具有全部权限。使用 ACS，可以通过配置相应信任关系来获取对任何服务总线实体的精细化控制。可以配置附加服务标识，用于管理对服务总线实体的访问权限。
 

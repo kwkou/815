@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="01/26/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="04/01/2016"/>
 
 # 如何使用 Service Bus 队列
 
@@ -47,7 +47,7 @@ import javax.xml.datatype.*;
 					"HowToSample",
 					"RootManageSharedAccessKey",
 					"SAS_key_value",
-					".servicebus.windows.net"
+					".servicebus.chinacloudapi.cn"
 					);
 
     ServiceBusContract service = ServiceBusService.create(config);

@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database" 
 	ms.date="09/11/2015" 
-	wacn.date="10/17/2015"/>
+	wacn.date="04/01/2016"/>
 
 
 # 使用 SQL Server Management Studio 管理 Azure SQL 数据库 
@@ -55,7 +55,7 @@
 
 1.  在任务栏上，单击“开始”、指向“所有程序”、指向“Microsoft SQL Server 2014”，然后单击“SQL Server Management Studio”。
 
-2.  在“连接到服务器”中，指定完全限定的服务器名称，例如 *serverName*.database.windows.net。在 Azure 上，服务器名称是由字母数字字符组成的自动生成的字符串。
+2.  在“连接到服务器”中，指定完全限定的服务器名称，例如 *serverName*.database.chinacloudapi.cn。在 Azure 上，服务器名称是由字母数字字符组成的自动生成的字符串。
 
 3.  选择“SQL Server 身份验证”。
 

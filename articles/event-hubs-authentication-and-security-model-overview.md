@@ -9,7 +9,7 @@
 <tags 
    ms.service="event-hubs"
    ms.date="01/26/2016"
-   wacn.date="03/28/2016" />
+   wacn.date="04/01/2016" />
 
 # 事件中心身份验证和安全模型概述
 
@@ -63,7 +63,7 @@ nm.CreateEventHub(ed);
 public static string SharedAccessSignatureTokenProvider.GetSharedAccessSignature(string keyName, string sharedAccessKey, string resource, TimeSpan tokenTimeToLive)
 ```
 
-调用此方法时，应将 URI 指定为 `//<NAMESPACE>.servicebus.windows.net/<EVENT_HUB_NAME>/publishers/<PUBLISHER_NAME>`。所有令牌的 URI 都是相同的，但每个令牌的 `PUBLISHER_NAME` 应该不同。`PUBLISHER_NAME` 最好是表示要接收该令牌的设备的 ID。
+调用此方法时，应将 URI 指定为 `//<NAMESPACE>.servicebus.chinacloudapi.cn/<EVENT_HUB_NAME>/publishers/<PUBLISHER_NAME>`。所有令牌的 URI 都是相同的，但每个令牌的 `PUBLISHER_NAME` 应该不同。`PUBLISHER_NAME` 最好是表示要接收该令牌的设备的 ID。
 
 此方法将生成具有以下结构的令牌：
 
