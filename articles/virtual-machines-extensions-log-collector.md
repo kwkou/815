@@ -131,7 +131,7 @@
         $StorageAccountName = 'YourStorageAccountName'
         $StorageAccountKey  = ‘YouStorageAccountKey'
 
-5. 按如下所示调用 SetAzureServiceLogCollector.ps1（本文末尾提供），以便为云服务启用 AzureLogCollector 扩展。执行完以后，你可以在 `https://YouareStorageAccountName.blob.core.windows.net/vmlogs` 下找到上载的文件
+5. 按如下所示调用 SetAzureServiceLogCollector.ps1（本文末尾提供），以便为云服务启用 AzureLogCollector 扩展。执行完以后，你可以在 `https://YouareStorageAccountName.blob.core.chinacloudapi.cn/vmlogs` 下找到上载的文件
 
         .\SetAzureServiceLogCollector.ps1 -ServiceName YourCloudServiceName  -Roles $roles  -Instances $instances –Mode $mode -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey -AdditionDataLocationList $AdditionalDataList
 
@@ -222,7 +222,7 @@
         $StorageAccountName = 'YourStorageAccountName'
         $StorageAccountKey  = ‘YouStorageAccountKey'
         
-3. 按如下所示调用 SetAzureVMLogCollector.ps1（本文末尾提供），以便为云服务启用 AzureLogCollector 扩展。执行完以后，你可以在 https://YouareStorageAccountName.blob.core.windows.net/vmlogs 下找到上载的文件
+3. 按如下所示调用 SetAzureVMLogCollector.ps1（本文末尾提供），以便为云服务启用 AzureLogCollector 扩展。执行完以后，你可以在 https://YouareStorageAccountName.blob.core.chinacloudapi.cn/vmlogs 下找到上载的文件
 
   
 下面是传递给脚本的参数的定义。（也在下面复制。）

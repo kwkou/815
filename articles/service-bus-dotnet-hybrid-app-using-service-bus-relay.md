@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="10/07/2015"
-	wacn.date="01/21/2016"/>
+	wacn.date="04/01/2016"/>
 
 # 使用 Azure 服务总线中继创建 .NET 本地/云混合应用程序
 
@@ -261,7 +261,7 @@
           </extensions>
           <services>
              <service name="ProductsServer.ProductsService">
-               <endpoint address="sb://yourServiceNamespace.servicebus.windows.net/products" binding="netTcpRelayBinding" contract="ProductsServer.IProducts"
+               <endpoint address="sb://yourServiceNamespace.servicebus.chinacloudapi.cn/products" binding="netTcpRelayBinding" contract="ProductsServer.IProducts"
         behaviorConfiguration="products"/>
              </service>
           </services>
@@ -456,7 +456,7 @@
                     {
                         // Create shared secret token credentials for authentication.
                         channelFactory = new ChannelFactory<IProductsChannel>(new NetTcpRelayBinding(),
-                            "sb://yourServiceNamespace.servicebus.windows.net/products");
+                            "sb://yourServiceNamespace.servicebus.chinacloudapi.cn/products");
                         channelFactory.Endpoint.Behaviors.Add(new TransportClientEndpointBehavior {
                             TokenProvider = TokenProvider.CreateSharedAccessSignatureTokenProvider(
                                 "RootManageSharedAccessKey", "yourKey") });

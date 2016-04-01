@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="01/26/2016"
-   wacn.date="03/28/2016" />
+   wacn.date="04/01/2016" />
 
 # 服务总线中继消息传送教程
 
@@ -299,7 +299,7 @@ namespace Microsoft.ServiceBus.Samples
 
 	"sb" 是服务总线方案的缩写，并指示我们正在使用 TCP 作为协议。先前当 [NetTcpRelayBinding](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.nettcprelaybinding.aspx) 被指定为绑定时，在配置文件中也指示了这一点。
 	
-	对于本教程中，URI 是 `sb://putServiceNamespaceHere.windows.net/EchoService`。
+	对于本教程中，URI 是 `sb://putServiceNamespaceHere.chinacloudapi.cn/EchoService`。
 
 ### 创建并配置服务主机
 
@@ -726,7 +726,7 @@ namespace Microsoft.ServiceBus.Samples
 
 	启动服务应用程序，并将其正在侦听的地址打印到控制台窗口中，如下面的示例中所示。
 
-    `Service address: sb://mynamespace.servicebus.windows.net/EchoService/`
+    `Service address: sb://mynamespace.servicebus.chinacloudapi.cn/EchoService/`
 
     `Press [Enter] to exit`
     

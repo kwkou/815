@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="09/15/2015"
-   wacn.date="01/14/2016" />
+   wacn.date="04/01/2016" />
 
 # 服务总线中转消息传送 REST 教程
 
@@ -75,7 +75,7 @@
 	static string serviceNamespace;
 	static string baseAddress;
 	static string token;
-	const string sbHostName = "servicebus.windows.net";
+	const string sbHostName = "servicebus.chinacloudapi.cn";
 	```
 
 6. 在 `Main()` 中，粘贴以下代码：
@@ -401,7 +401,7 @@ namespace Microsoft.ServiceBus.Samples
         static string serviceNamespace;
         static string baseAddress;
         static string token;
-        const string sbHostName = "servicebus.windows.net";
+        const string sbHostName = "servicebus.chinacloudapi.cn";
 
         static void Main(string[] args)
         {
