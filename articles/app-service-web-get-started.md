@@ -30,7 +30,7 @@
 - Git。可在[此处](http://www.git-scm.com/downloads)下载二进制安装文件。你应该能够从选择的命令行终端运行 `git --version`。 
 - 对 Git 有一个基本的了解。
 - Azure CLI。[此处](/documentation/articles/xplat-cli-install)提供了安装说明。你应该能够从选择的命令行终端运行 `azure --version`。
-- 一个 Azure 帐户。如果你没有帐户，可以[注册免费试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)，或者[激活你的 Visual Studio 订户权益](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)。
+- 一个 Azure 帐户。如果你没有帐户，可以[注册免费试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 ## 部署 Web 应用
 
@@ -72,7 +72,7 @@
     
     >[AZURE.NOTE] 系统将要求提供你的部署密码。如果你是 Azure Web 应用的新用户，请提供刚刚创建的部署密码，然后即可开始部署。
     
-    `git push` 不仅将代码放在 Azure 中，也在部署引擎中触发部署任务。如果项目（存储库）根目录中有任何 package.json (Node.js) 或 requirements.txt (Python)，或 ASP.NET 项目中有 packages.config，则部署脚本将为你还原所需的包。你还可以[启用编写器扩展](/documentation/articles/web-sites-php-mysql-deploy-use-git#composer)，以在 PHP 应用中自动处理 composer.json 文件。
+    `git push` 不仅将代码放在 Azure 中，也在部署引擎中触发部署任务。如果项目（存储库）根目录中有任何 package.json (Node.js) 或 requirements.txt (Python)，或 ASP.NET 项目中有 packages.config，则部署脚本将为你还原所需的包。
 
 祝贺你，你的应用已部署到 Azure Web 应用。
 
@@ -115,7 +115,7 @@ Azure Web 应用的门户页提供了一组丰富的设置和工具，让你对�
 
 ## 后续步骤
 
-将部署的应用提升到更高的级别。使用身份验证保护其安全。按需缩放。设置一些性能警报。所有这些操作只需按几下鼠标即可完成。请参阅 [Azure 入门 -第 2 部分](/documentation/articles/app-service-web-get-started-2)。
+将部署的应用提升到更高的级别。使用身份验证保护其安全。按需缩放。设置一些性能警报。所有这些操作只需按几下鼠标即可完成。
 
 或者，进一步探索如何使用特定的语言框架创建适用于 Azure 的 Web 应用：
 
@@ -124,11 +124,5 @@ Azure Web 应用的门户页提供了一组丰富的设置和工具，让你对�
 - [在 Azure 中创建 Node.js Web 应用](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
 - [在 Azure 中创建 Java Web 应用](/documentation/articles/web-sites-java-get-started)
 - [在 Azure 中创建 Python Web 应用](/documentation/articles/web-sites-python-ptvs-django-mysql)
-
-另外还有许多内容说明了可在 Azure Web 应用上构建的应用范围，包括 Web 应用、移动应用后端和 API 应用。
-
-- [创建 Web 应用](/documentation/learning-paths/appservice-webapps/)
-- [创建移动应用](/documentation/learning-paths/appservice-mobileapps/)
-- [创建 API 应用](/documentation/articles/app-service-api-apps-why-best-platform)
 
 <!---HONumber=Mooncake_0328_2016-->
