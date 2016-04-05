@@ -156,7 +156,7 @@
 
 ##<a name="monitor-and-manage-the-site-in-the-management-portal"></a> 在 Azure 管理门户中监视和管理 Web 应用
 
-[Azure 管理门户](/home/features/management-portal/)是一个 Web 界面，可用于管理和监视 Azure 服务，例如刚刚创建的 Web 应用。在本教程的本部分，你将了解可在该门户中执行的某些操作。
+[Azure 管理门户](https://manage.windowsazure.cn/)是一个 Web 界面，可用于管理和监视 Azure 服务，例如刚刚创建的 Web 应用。在本教程的本部分，你将了解可在该门户中执行的某些操作。
 
 1. 在浏览器中，转到 [https://manage.windowsazure.cn](https://manage.windowsazure.cn)，然后使用你的 Azure 凭据登录。
 
