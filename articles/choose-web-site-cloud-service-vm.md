@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="11/19/2015"
-	wacn.date="02/17/2016"/>
+	ms.date="02/22/2016"
+	wacn.date="04/05/2016"/>
 
 # Azure Web 应用、云服务和虚拟机比较
 
