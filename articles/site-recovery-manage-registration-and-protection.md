@@ -1,6 +1,6 @@
 <properties
-	pageTitle="管理注册和保护" 
-	description="Azure Site Recovery 可以协调位于本地服务器中的虚拟机到 Azure 或辅助数据中心的复制、故障转移和恢复。参考本文从 Site Recovery 保管库中注销服务器，以及对虚拟机和物理服务器禁用保护。" 
+	pageTitle="删除服务器并禁用保护 | Azure" 
+	description="本文介绍如何从 Site Recovery 保管库中注销服务器，以及如何禁用虚拟机和物理服务器的保护。" 
 	services="site-recovery" 
 	documentationCenter="" 
 	authors="rayne-wiselman" 
@@ -9,16 +9,22 @@
 
 <tags 
 	ms.service="site-recovery" 
-	ms.date="10/07/2015" 
-	wacn.date="11/02/2015"/>
+	ms.date="02/22/2016" 
+	wacn.date="04/05/2016"/>
 
-# 管理注册和保护
+# 删除服务器并禁用保护
 
-本文说明如何从站点恢复保管库中取消注册服务器，以及如何禁用站点恢复保护的虚拟机保护。如果在阅读本文后有任何问题，请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)上发布你的问题。
+Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview)
+
+## 概述
+
+本文说明如何从 Site Recovery 保管库中取消注册服务器，以及如何禁用 Site Recovery 保护的虚拟机保护。
+
+请将任何评论或问题发布到本文底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)。
 
 ## 取消注册 VMM 服务器
 
-可以通过在 Azure 站点恢复门户中的“服务器”选项卡上删除服务器，从保管库中取消注册 VMM 服务器。请注意：
+可以通过在 Azure Site Recovery 门户中的“服务器”选项卡上删除服务器，从保管库中取消注册 VMM 服务器。请注意：
 
 -  **已连接 VMM 服务器**：建议在 VMM 服务器连接到 Azure 之后取消注册该服务器。这样可确保正确清理本地 VMM 服务器上的设置以及与之关联的 VMM 服务器（包含的云映射到要删除的服务器上的云的 VMM 服务器）。建议只在连接出现永久性问题时才删除未连接的服务器。
 - **未连接 VMM 服务器**：如果 VMM 服务器未连接，当您删除该服务器时，需要手动运行一个脚本才能执行清理操作。该脚本位于 [Microsoft 库](https://gallery.technet.microsoft.com/scriptcenter/Cleanup-Script-for-Windows-95101439)中。请记下服务器的 VMM ID，以完成手动清理过程。
@@ -45,10 +51,10 @@
 
 ## 取消注册 Hyper-V 站点中的 Hyper-V 服务器
 
-部署 Azure 站点恢复以保护 Hyper-V 站点中 Hyper-V 服务器（不包含任何 VMM 服务器）上的虚拟机时，可以从保管库取消注册 Hyper-V 服务器，如下所述：
+部署 Azure Site Recovery 以保护 Hyper-V 站点中 Hyper-V 服务器（不包含任何 VMM 服务器）上的虚拟机时，可以从保管库取消注册 Hyper-V 服务器，如下所述：
 
 1. 对 Hyper-V 服务器上的虚拟机禁用保护。
-2. 在 Azure 站点恢复门户中的“服务器”选项卡上选择服务器，然后选择“删除”。执行此操作时，服务器不需要连接到 Azure。
+2. 在 Azure Site Recovery 门户中的“服务器”选项卡上选择服务器，然后选择“删除”。执行此操作时，服务器不需要连接到 Azure。
 3. 运行以下脚本以清理服务器上的设置，并从保管库中取消注册该服务器。 
 
 	    pushd .
@@ -141,8 +147,8 @@
 1. 在云属性的“虚拟机”选项卡中选择虚拟机，然后选择“删除”。
 2. “确认删除虚拟机”页上有几个选项：
 
-	- 禁用保护 — 如果您启用并保存此选项，虚拟机将不再受站点恢复的保护。系统将自动清理虚拟机的保护设置。
-	- 从保管库删除 — 如果您选择此选项，将只从站点恢复保管库中删除虚拟机。不会影响虚拟机的本地保护设置。您将需要手动清除设置以删除保护设置并从 Azure 订阅中删除虚拟机，而且要删除保护设置，您需要使用下面的说明手动清除它们。
+	- 禁用保护 — 如果您启用并保存此选项，虚拟机将不再受 Site Recovery 的保护。系统将自动清理虚拟机的保护设置。
+	- 从保管库删除 — 如果您选择此选项，将只从 Site Recovery 保管库中删除虚拟机。不会影响虚拟机的本地保护设置。您将需要手动清除设置以删除保护设置并从 Azure 订阅中删除虚拟机，而且要删除保护设置，您需要使用下面的说明手动清除它们。
 
 如果你选择删除虚拟机及其硬盘，将从目标位置删除它们。
 
@@ -181,7 +187,6 @@
 	    $replicationService = Get-WmiObject -Namespace "root\virtualization\v2"  -Query "Select * From Msvm_ReplicationService"  -computername $hostName
 	    $replicationService.RemoveReplicationRelationship($vm.__PATH)
 
-
 ### 手动清理保护设置（在 Hyper-V 站点与 Azure 之间）
 
 1. 在源 Hyper-V 主机服务器上，使用此脚本删除虚拟机的复制。将 SQLVM1 替换为你的虚拟机名称。
@@ -206,23 +211,9 @@
 			- 禁用虚拟机的此项设置不会影响 Azure 中的副本虚拟机。
 			- 您不能从虚拟机卸载移动服务。
 	
-	- **禁用保护** — 如果您启用并保存此选项，虚拟机将不再受站点恢复的保护。系统将自动清理虚拟机的保护设置。
-	- **从保管库删除** — 如果您选择此选项，将只从站点恢复保管库中删除虚拟机。不会影响虚拟机的本地保护设置。若要删除计算机上的设置以及从 Azure 订阅中删除虚拟机，您需要通过卸载移动服务来清理设置。
-		![删除选项](./media/site-recovery-manage-registration-and-protection/RegistrationProtection_RemoveVM.png)
+	- **禁用保护** — 如果您启用并保存此选项，虚拟机将不再受 Site Recovery 的保护。系统将自动清理虚拟机的保护设置。
+	- **从保管库删除** — 如果您选择此选项，将只从 Site Recovery 保管库中删除虚拟机。不会影响虚拟机的本地保护设置。若要删除计算机上的设置并从 Azure 订阅中删除虚拟机，则需要通过卸载移动服务来清理设置。
+	
+		![删除选项](./media/site-recovery-manage-registration-and-protection/remove-vm.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0328_2016-->

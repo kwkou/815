@@ -1,6 +1,6 @@
 <properties
 	pageTitle="什么是 Site Recovery？| Azure" 
-	description="Azure Site Recovery 可以协调位于本地的虚拟机和物理服务器到 Azure 或辅助本地站点的复制、故障转移和恢复。" 
+	description="概述 Azure Site Recovery 服务，并说明如何部署该服务。" 
 	services="site-recovery" 
 	documentationCenter="" 
 	authors="rayne-wiselman" 
@@ -9,58 +9,64 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="12/14/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="02/22/2016" 
+	wacn.date="04/05/2016"/>
 
 #  什么是 Site Recovery？
 
-Site Recovery 是有助于实现业务连续性和灾难恢复 (BCDR) 策略的 Azure 服务，因为它可以协调从本地服务器和虚拟机到辅助本地数据中心或 Azure 的复制。Site Recovery 负责进行复制，只需单击一下，即可开始故障转移和恢复操作。阅读在[常见问题](/documentation/articles/site-recovery-faq)中列出的常见问题
+欢迎使用 Azure Site Recovery！ 请以此文章作为开端，快速了解 Site Recovery 服务以及它如何有助于业务连续性和灾难恢复 (BCDR) 策略。
 
+Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文同时适用于这两种模型。Microsoft 建议大多数新部署使用资源管理器模型。
+
+## 概述
+
+组织的 BCDR 策略的其中一个重要部分是，找出在发生计划的和非计划的中断时让企业工作负荷和应用保持启动并运行的方法。
+
+Site Recovery 可帮助做到这一点，因为它能协调工作负荷和应用的复制、故障转移及恢复，因此能够在主要位置发生故障时通过辅助位置来提供工作负荷和应用。
 
 ## 为何使用 Site Recovery？ 
 
-- **简化 BCDR 操作** - Site Recovery 可以简化本地工作负荷和应用程序的复制、故障转移和恢复操作。
-- **增强复制的灵活性** - 你可以复制本地服务器、Hyper-V 虚拟机和 VMware 虚拟机。执行初始复制时，Site Recovery 将使用智能复制 - 只复制数据块而不是整个 VHD。对于正在进行的复制，只会复制增量更改。Site Recovery 支持脱机数据传输，并可与 WAN 优化器配合工作。 
-- **不再需要辅助数据中心** - Site Recovery 可以自动执行数据中心之间的复制，但它也允许你复制到 Azure，因此不需要辅助性的现场位置。复制的数据可以存储在 Azure 存储空间，可充分利用其所提供的弹性。
+以下是 Site Recovery 可以为企业提供的帮助：
 
+- **简化 BCDR 策略** — Site Recovery 可让你从单个位置轻松处理多个企业工作负荷和应用的复制、故障转移及恢复。Site Recovery 会协调复制和故障转移，但不会拦截应用程序数据或拥有任何相关信息。
+- **提供灵活的复制** — 借助 Site Recovery，你可以复制 Hyper-V 虚拟机、VMware 虚拟机和 Windows/Linux 物理服务器上运行的工作负荷。 
+- **简单故障转移和恢复** — Site Recovery 提供测试故障转移，既能支持灾难恢复练习，又不会影响生产环境。你也可以运行计划的故障转移，因为是预期中的中断，所以不会丢失任何数据；或是运行非计划的故障转移，以在发生非预期的灾难时将数据损失减到最少（取决于复制频率）。在故障转移之后，你可以故障回复到主站点。Site Recovery 提供包含脚本和 Azure 自动化工作簿的恢复计划，以供你自定义多层应用程序的故障转移和恢复。 
+- **消除辅助数据中心** — 你可以复制到辅助本地站点或 Azure。使用 Azure 作为灾难恢复目的地可免除辅助站点的维护成本与复杂度，而且复制的数据会存储在 Azure 存储空间，能够具备其提供的所有复原能力。
+- **与现有 BCDR 技术集成** — Site Recovery 能够与其他应用程序的 BCDR 功能搭配使用。例如，你可以使用 Site Recovery 保护企业工作负荷的 SQL Server 后端，包括本机支持 SQL Server AlwaysOn 以便管理可用性组的故障转移。 
 
-## 部署方案
+## 我可以复制哪些内容？
 
-下表汇总了 Site Recovery 支持的复制方案。
-
-**复制目标** | **复制源（本地）** | **详细信息** | **文章**
----|---|---|---
-VMware 虚拟机 | 本地 VMware 服务器 | Azure 存储空间 | [部署](/documentation/articles/site-recovery-vmware-to-azure)
-Windows/Linux 物理服务器 | 本地物理服务器 | Azure 存储空间 | [部署](/documentation/articles/site-recovery-vmware-to-azure)
-Hyper-V 虚拟机 | VMM 云中的本地 Hyper-V 主机服务器 | Azure 存储空间 | [部署](/documentation/articles/site-recovery-vmm-to-azure)
-Hyper-V 虚拟机 | 本地 Hyper-V 站点（一个或多个 Hyper-V 主机服务器） | Azure 存储空间 | [部署](/documentation/articles/site-recovery-hyper-v-site-to-azure)
-本地 Hyper-V 虚拟机| VMM 云中的本地 Hyper-V 主机服务器 | VMM 云中的辅助数据中心的本地 Hyper-V 主机服务器 | [部署](/documentation/articles/site-recovery-vmm-to-vmm)
-Hyper-V 虚拟机 | 使用 SAN 存储的 VMM 云中的本地 Hyper-V 主机服务器| 使用 SAN 存储的 VMM 云中的辅助数据中心的本地 Hyper-V 主机服务器 | [部署](/documentation/articles/site-recovery-vmm-san)
-VMware 虚拟机 | 本地 VMware 服务器 | 运行 VMware 的辅助数据中心 | [部署](/documentation/articles/site-recovery-vmware-to-vmware) 
-Windows/Linux 物理服务器 | 本地物理服务器 | 辅助数据中心 | [部署](/documentation/articles/site-recovery-vmware-to-vmware) 
-
-以下关系图概述了这些内容。
+以下是 Site Recovery 可以复制的内容摘要。
 
 ![本地到本地](./media/site-recovery-overview/asr-overview-graphic.png)
 
+**REPLICATE** | **REPLICATE FROM** | **REPLICATE TO** | **ARTICLE**
+---|---|---|---
+VMware VM 上运行的工作负荷 | 本地 VMware 服务器 | Azure 存储空间 | [部署](/documentation/articles/site-recovery-vmware-to-azure-classic)
+VMware VM 上运行的工作负荷 | 本地 VMware 服务器 | 辅助 VMware 站点 | [部署](/documentation/articles/site-recovery-vmware-to-vmware) 
+Hyper-V VM 上运行的工作负荷 | VMM 云中的本地 Hyper-V 主机服务器 | Azure 存储空间 | [部署](/documentation/articles/site-recovery-vmm-to-azure)
+Hyper-V VM 上运行的工作负荷 | VMM 云中的本地 Hyper-V 主机服务器 | 辅助 VMM 站点 | [部署](/documentation/articles/site-recovery-vmm-to-vmm)
+Hyper-V VM 上运行的工作负荷 | 使用 SAN 存储的 VMM 云中的本地 Hyper-V 主机服务器| 具有 SAN 存储的辅助 VMM 站点 | [部署](/documentation/articles/site-recovery-vmm-san)
+Hyper-V VM 上运行的工作负荷 | 本地 Hyper-V 站点（无 VMM） | Azure 存储空间 | [部署](/documentation/articles/site-recovery-hyper-v-site-to-azure)
+物理 Windows/Linux 服务器上运行的工作负荷 | 本地物理服务器 | Azure 存储空间 | [部署](/documentation/articles/site-recovery-vmware-to-azure-classic)
+物理 Windows/Linux 服务器上运行的工作负荷 | 本地物理服务器 | 辅助数据中心 | [部署](/documentation/articles/site-recovery-vmware-to-vmware) 
+
+
 ## 我可以保护哪些工作负荷？
 
-Site Recovery 有助于实现设备感知型业务连续性。可以使用 Site Recovery 来协调 Windows 和第三方应用的灾难恢复。这种应用程序感知型保护提供以下功能：
+Site Recovery 有助于应用程序感知 BCDR，让工作负荷和应用在发生中断时继续以一致的方式运行。Site Recovery 提供：
 
-
-- 几乎同步的复制，Hyper-V 的 RPO 低至 30 秒，可以针对 VMware 持续进行复制，满足大多数关键应用程序的需要。
-- 针对单层或 N 层应用程序的应用程序一致快照
-- 集成 SQL Server AlwaysOn，纳入了其他应用程序级别的复制技术，包括 Active Directory 复制、Exchange DAGS 和 Oracle 数据防护。
-- 灵活的恢复计划，一次单击即可恢复整个应用程序堆栈，包括外部脚本或手动操作。 
-- Site Recovery 和 Azure 中的高级网络管理可以简化应用的网络要求，包括保留 IP 地址、配置负载平衡器或集成 Azure 流量管理器以降低 RTO 网络切换数。
-- 丰富的自动化库，提供特定于应用程序的生产就绪型脚本，可以下载并与 Site Recovery 集成。  
-
-
-详细信息请参阅 [Site Recovery 可以保护哪些工作负荷？](/documentation/articles/site-recovery-workload)。
+- **应用程序一致的快照** — 使用单个或多层应用的应用程序一致快照进行复制。
+- **近乎同步的复制** — Hyper-V 的复制频率最低可为 30 秒，VMware 则可连续复制。
+- **与 SQL Server AlwaysOn 集成** — 你可以在 Site Recovery 恢复计划中管理可用性组的故障转移。 
+- **灵活的恢复计划** — 你可以使用外部脚本、手动操作和 Azure 自动化 Runbook 创建并自定义恢复计划，让你只要单击就能恢复整个应用程序堆栈。
+- **自动化库** — 丰富的 Azure 自动化库提供已可供生产环境使用的应用程序特定脚本供你下载，并可集成到 Site Recovery。
+- **简单的网络管理**— Site Recovery 和 Azure 中的高级网络管理简化了应用程序网络需求，包括保留 IP 地址、配置负载平衡器，以及集成 Azure 流量管理器以进行有效的网络交换操作。
 
 
 ## 后续步骤
 
-完成本概述后，可[详细了解](/documentation/articles/site-recovery-components) Site Recovery 体系结构。
+- 详细信息请参阅 [Site Recovery 可以保护哪些工作负荷？](/documentation/articles/site-recovery-workload)
+- 若要详细了解 Site Recovery 体系结构，请参阅 [Site Recovery 的工作原理](/documentation/articles/site-recovery-components)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0328_2016-->

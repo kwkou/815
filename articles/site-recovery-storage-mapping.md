@@ -9,16 +9,16 @@
 
 <tags
 	ms.service="site-recovery"  
-	ms.date="12/14/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/22/2016"
+	wacn.date="04/05/2016"/>
 
 
 # 准备存储映射，以便通过 Azure Site Recovery 在两个本地数据中心之间进行 Hyper-V 虚拟机复制
 
 
-Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。本文介绍存储映射。当你使用 Site Recovery 在两个本地数据中心之间复制 Hyper-V 虚拟机时，你可以通过存储映射来充分利用存储空间。
+Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。本文介绍存储映射。当你使用 Site Recovery 在两个本地 VMM 数据中心之间复制 Hyper-V 虚拟机时，可以通过存储映射来充分利用存储空间。
 
-阅读本文后，可在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=hypervrecovmgr)上发布任何问题。
+请将任何评论或问题发布到本文底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)。
 
 ## 概述
 
@@ -59,15 +59,15 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 可以在 Site Recovery 门户的“资源”页中的“服务器存储”选项卡上配置这些设置。
 
-![配置存储映射](./media/site-recovery-storage-mapping/StorageMapping1.png)
+![配置存储映射](./media/site-recovery-storage-mapping/storage-mapping1.png)
 
-对于此示例：
-- 在为 GOLD 存储 (SourceShare1) 上的任一虚拟机创建副本虚拟机后，该副本虚拟机将复制到 GOLD_TARGET 存储 (TargetShare1)。
-- 在为 SILVER 存储 (SourceShare2) 上的任一虚拟机创建副本虚拟机后，该副本虚拟机将复制到 SILVER_TARGET 存储 (TargetShare2) 存储。依此类推。
+在此示例中：
+- 为 GOLD 存储 (SourceShare1) 上的任何虚拟机创建副本虚拟机时，它将会复制到 GOLD_TARGET 存储 (TargetShare1)。
+- 为 SILVER 存储 (SourceShare2) 上的任何虚拟机创建副本虚拟机时，它将会复制到 SILVER_TARGET (TargetShare2) 存储。依此类推。
 
 下一屏幕截图显示了 VMM 中的实际文件共享及其分配的分类。
 
-![VMM 中的存储分类](./media/site-recovery-storage-mapping/StorageMapping2.png)
+![VMM 中的存储分类](./media/site-recovery-storage-mapping/storage-mapping2.png)
 
 ## 多个存储位置
 
@@ -96,4 +96,4 @@ VM5 | C:\ClusterStorage\SourceVolume3 | 不适用 | 无映射，因此将使用 
 
 现在，你已经对存储映射有了更好的了解，因此可以[准备部署 Azure Site Recovery](/documentation/articles/site-recovery-best-practices) 了。
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0328_2016-->

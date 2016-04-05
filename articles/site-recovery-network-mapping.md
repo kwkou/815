@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="12/01/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/22/2016"
+	wacn.date="04/05/2016"/>
 
 
 # 准备网络映射，以便在 Azure Site Recovery 中通过 VMM 进行 Hyper-V 虚拟机保护
@@ -19,7 +19,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 本文介绍网络映射，你可以通过网络映射来优化网络设置的配置，以便使用 Site Recovery 在两个本地数据中心之间或本地数据中心与 Azure 之间复制位于 VMM 云中的 Hyper-V 虚拟机。请注意，如果你是在没有 VMM 云的情况下复制 Hyper-V VM，或者是复制 VMware VM 或物理服务器，则本文与之不相关。
 
-阅读本文后，可在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)上发布任何问题
+请将任何评论或问题发布到本文底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)。
 
 
 ## 概述
@@ -119,4 +119,4 @@ VMNetwork1-Shanghai 的网络映射已更改 | VM-1 将连接到现映射到 VMN
 
 现在，你已经对网络映射有了更好的了解，因此可以[开始 Site Recovery 部署](/documentation/articles/site-recovery-best-practices)了。
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0328_2016-->

@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="01/06/2016"
-	wacn.date="02/25/2016"/>
+	ms.date="03/15/2016"
+	wacn.date="04/05/2016"/>
 
 # 通过 Azure Site Recovery（旧版）将 VMware 虚拟机和物理服务器复制到 Azure
 
 > [AZURE.SELECTOR]
-- [Enhanced](/documentation/articles/site-recovery-vmware-to-azure-classic)
-- [Legacy](/documentation/articles/site-recovery-vmware-to-azure-classic-legacy)
+- [增强版](/documentation/articles/site-recovery-vmware-to-azure-classic)
+- [旧版](/documentation/articles/site-recovery-vmware-to-azure-classic-legacy)
 
 
 Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview)。
@@ -28,7 +28,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 - **将 VMware 虚拟机复制到 Azure** - 部署 Site Recovery，以便协调本地 VMware 虚拟机到 Azure 存储空间的复制、故障转移和恢复。
 - **将物理服务器复制到 Azure** - 部署 Azure Site Recovery，以便协调本地 Windows 和 Linux 物理服务器到 Azure 的复制、故障转移和恢复。
 
->[AZURE.NOTE] 本文所述方案包含**旧版说明**。新部署请勿遵循本文。请改用针对经典门户的[增强型部署](/documentation/articles/site-recovery-vmware-to-azure-classic)说明。如果你已使用本文所述方法进行了部署，则建议你迁移到下述新版本。
+>[AZURE.NOTE] 本文所述方案包含**旧版说明**。新部署请勿遵循本文。请改用针对经典门户的[增强版部署](/documentation/articles/site-recovery-vmware-to-azure-classic)说明。如果你已使用本文所述方法进行了部署，则建议你迁移到下述新版本。
 
 
 ## 迁移到增强型部署
@@ -51,7 +51,8 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 按如下方式进行迁移：
 
-1. 阅读有关[增强型功能](/documentation/articles/site-recovery-vmware-to-azure-classic#enhanced-deployment)的信息，确保你了解新的[体系结构](/documentation/articles/site-recovery-vmware-to-azure-classic#scenario-architecture)，并查看增强型部署的[先决条件](/documentation/articles/site-recovery-vmware-to-azure-classic#before-you-start-deployment)。
+1. 阅读有关[增强版功能](/documentation/articles/site-recovery-vmware-to-azure-classic#enhanced-deployment)的信息，确保你了解新的[体系结构](/documentation/articles/site-recovery-vmware-to-azure-classic#scenario-architecture)，并查看增强版部署的[先决条件](/documentation/articles/site-recovery-vmware-to-azure-classic#before-you-start-deployment)。
+2. 从当前所保护的计算机中卸载移动服务。将这些计算机添加到新保护组时，会在它们上面安装新版本的移动服务
 2. 获取[保管库注册密钥](/documentation/articles/site-recovery-vmware-to-azure-classic#step-3:-download-a-vault-registration-key)并[运行统一安装程序向导](/documentation/articles/site-recovery-vmware-to-azure-classic#step-5-install-the-management-server)，以便在管理服务器上安装配置服务器、进程服务器和主目标服务器组件。阅读有关[容量规划](/documentation/articles/site-recovery-vmware-to-azure-classic#capacity-planning)的更多信息。
 3. 如果你有一个 VMware vCenter 服务器，请[设置凭据](/documentation/articles/site-recovery-vmware-to-azure-classic#step-6-set-up-credentials-for-the-vcenter-server)对其进行访问，使得 Site Recovery 能够自动发现所管理的 VM。阅读有关[所需权限](/documentation/articles/site-recovery-vmware-to-azure-classic#vmware-permissions-for-vcenter-access)的更多信息。
 4. 添加 [vCenter 服务器或 ESXi 主机](/documentation/articles/site-recovery-vmware-to-azure-classic#step-7-add-vcenter-servers-and-esxi-hosts)。门户进行刷新以显示凭据的时间可能长达 15 分钟。
@@ -80,6 +81,10 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 	![添加帐户](./media/site-recovery-vmware-to-azure-classic-legacy/legacy-migration5.png)
 
+>[AZURE.NOTE] 完成了迁移步骤之后，应继续查看[增强版文章](/documentation/articles/site-recovery-vmware-to-azure-classic)。迁移之后，此旧版文章的其余部分已不再相关，你无需遵循其中描述的任何其他步骤。
+
+
+
 
 ## 我需要做好哪些准备？
 
@@ -99,8 +104,6 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 **Azure Site Recovery 保管库** | 在订阅 Site Recovery 服务之后设置。 | 在 Site Recovery 保管库中注册服务器。保管库可协调和安排本地站点与 Azure 之间的数据复制、故障转移和恢复。
 **复制机制** | <p>**通过 Internet** — 通过公共 Internet 连接使用安全 SSL/TLS 通信通信并从受保护的本地服务器和 Azure 复制数据。这是默认选项。</p><p>**VPN/ExpressRoute** — 通过 VPN 连接通信并在本地服务器与 Azure 之间复制数据。你将需要在本地站点与 Azure 网络之间设置站点到站点 VPN 或 [ExpressRoute](/documentation/articles/expressroute-introduction) 连接。</p><p>需选择要在 Site Recovery 部署期间复制的方式。配置机制后，你无法在不影响已受保护服务器上的保护的前提下更改该机制。</p>| <p>无论是哪个选项，都不需要你在受保护的计算机上打开任何入站网络端口。所有网络通信都从本地站点启动。</p> 
 
-可以在 [Site Recovery 组件](/documentation/articles/site-recovery-components)中深入了解 Site Recovery 组件、提供程序和代理。
-
 ## 容量规划
 
 考虑的主要方面为：
@@ -115,8 +118,8 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 - **每个主目标服务器的源数目** — 可以使用单个主目标服务器保护多个源计算机。但是，无法通过多个主目标服务器保护单个计算机，因为在磁盘复制时，镜像磁盘大小的 VHD 在 Azure Blob 存储上创建，并作为数据磁盘附加到主目标服务器。  
 - **每个源的每日更改率上限** — 考虑每个源建议的更改率时，有三个需要考虑的因素。对于基于目标的考虑因素，源上每个操作的目标磁盘需要两个 IOPS。这是因为目标磁盘上会发生旧数据的读取和新数据的写入。 
 	- **进程服务器支持的每日更改率** — 一个源计算机不能跨多个进程服务器。单个进程服务器可以支持多达 1 TB 的每日更改率。因此 1 TB 是源计算机支持的每日数据更改率上限。 
-	- **目标磁盘支持的最大吞吐量** — 每个源磁盘的最大变换不能超过 144 GB/天（8K 写入大小）。请参阅主目标部分中的表，以获取各种写入大小的目标的吞吐量与 IOPS。必须将此数字除以 2，因为每个源 IOP 在目标磁盘上生成 2 个 IOPS。配置高级存储帐户的目标时，请参阅[使用高级存储时的缩放性和性能目标](/documentation/articles/storage-scalability-targets#scalability-targets-for-premium-storage-accounts)。
-	- **存储帐户支持的最大吞吐量** — 一个源不能跨越多个存储帐户。假设某个存储帐户每秒可接受最多 20,000 个请求，并且每个源 IOP 在主目标服务器上生成 2 个 IOPS，则建议将源的 IOPS 数目保留为 10,000。配置高级存储帐户的源时，请参阅[使用高级存储时的缩放性和性能目标](/documentation/articles/storage-scalability-targets#scalability-targets-for-premium-storage-accounts)。
+	- **目标磁盘支持的最大吞吐量** — 每个源磁盘的最大变换不能超过 144 GB/天（8K 写入大小）。请参阅主目标部分中的表，以获取各种写入大小的目标的吞吐量与 IOPS。必须将此数字除以 2，因为每个源 IOP 在目标磁盘上生成 2 个 IOPS。配置高级存储帐户的目标时，请阅读有关 [Azure 可伸缩性和性能目标](/documentation/articles/storage-scalability-targets#scalability-targets-for-premium-storage-accounts)的信息。
+	- **存储帐户支持的最大吞吐量** — 一个源不能跨越多个存储帐户。假设某个存储帐户每秒可接受最多 20,000 个请求，并且每个源 IOP 在主目标服务器上生成 2 个 IOPS，则建议将源的 IOPS 数目保留为 10,000。配置高级存储帐户的源时，请阅读有关 [Azure 可伸缩性和性能目标](/documentation/articles/storage-scalability-targets#scalability-targets-for-premium-storage-accounts)的信息。
 
 ### 有关组件服务器的注意事项
 
@@ -177,7 +180,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 主目标服务器的容量规划取决于：
 
 - Azure 存储空间性能和限制
-	- 单个存储帐户中标准层 VM 的高度使用的磁盘数目上限约为 40（每个磁盘 20,000/500 IOPS）。有关详细信息，请参阅[标准存储帐户的可伸缩性目标](/documentation/articles/storage-scalability-targets#scalability-targets-for-standard-storage-accounts)。有关高级存储帐户的详细信息，请参阅[高级存储帐户的可伸缩性目标](/documentation/articles/storage-scalability-targets#scalability-targets-for-premium-storage-accounts)。
+	- 单个存储帐户中标准层 VM 的高度使用的磁盘数目上限约为 40（每个磁盘 20,000/500 IOPS）。阅读有关[标准存储帐户的可伸缩性目标](/documentation/articles/storage-scalability-targets#scalability-targets-for-standard-storage-accounts)和[高级存储帐户的可伸缩性目标](/documentation/articles/storage-scalability-targets#scalability-targets-for-premium-storage-accounts)的信息。
 -	每日更改率 
 -	保留卷存储。
 
@@ -218,13 +221,13 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 ## 网络连接
 
-可以使用两个选项来配置本地站点与部署基础结构组件（配置服务器、主目标服务器）的 Azure 虚拟网络之间的网络连接。在部署配置服务器之前，需要决定所要使用的网络连接选项。你需要在部署时做出选择，以后无法更改。
+配置本地站点与部署基础结构组件（配置服务器、主目标服务器）的 Azure 虚拟网络之间的网络连接时，可以使用两个选项。在部署配置服务器之前，需要决定所要使用的网络连接选项。需要在部署时选择此设置。以后无法更改它。
 
-**公共 Internet：**本地服务器（进程服务器、受保护的服务器）与 Azure 基础结构组件服务器（配置服务器、主目标服务器）之间的通信和数据复制通过安全 SSL/TLS 连接从本地到配置服务器与主目标服务器上的公共终结点进行。（唯一的例外是 TCP 端口 9080 上的进程服务器与主目标服务器之间的连接未加密。在此连接上，只会交换用于设置复制的复制协议相关的控制信息。）
+**公共 Internet：**本地服务器（进程服务器、受保护的计算机）与 Azure 基础结构组件服务器（配置服务器、主目标服务器）之间的通信和数据复制通过安全 SSL/TLS 连接从本地到配置服务器与主目标服务器上的公共终结点进行。（唯一的例外是 TCP 端口 9080 上的进程服务器与主目标服务器之间的连接未加密。在此连接上，只会交换与用于复制设置的复制协议相关的控制信息。）
 
 ![部署示意图 - Internet](./media/site-recovery-vmware-to-azure-classic-legacy/internet-deployment.png)
 
-**VPN：**本地服务器（进程服务器、受保护的服务器）与 Azure 基础结构组件服务器（配置服务器、主目标服务器）之间的通信和数据复制通过 VPN 连接在本地网络与部署配置服务器和主目标服务器的 Azure 虚拟网络之间进行。确保本地网络通过 ExpressRoute 连接或站点到站点 VPN 连接来与 Azure 虚拟网络连接。
+**VPN：**本地服务器（进程服务器、受保护的计算机）与 Azure 基础结构组件服务器（配置服务器、主目标服务器）之间的通信和数据复制通过 VPN 连接在本地网络与部署配置服务器和主目标服务器的 Azure 虚拟网络之间进行。确保本地网络通过 ExpressRoute 连接或站点到站点 VPN 连接来与 Azure 虚拟网络连接。
 
 ![部署示意图 - VPN](./media/site-recovery-vmware-to-azure-classic-legacy/vpn-deployment.png)
 
@@ -241,7 +244,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 4. 在“名称”中，输入一个友好名称以标识此保管库。
 
-5. 在“区域”中，为保管库选择地理区域。若要查看受支持的区域，请参阅 [Azure Site Recovery 价格详细信息](pricing/details/site-recovery/)中的“地域可用性”。
+5. 在“区域”中，为保管库选择地理区域。若要查看受支持的区域，请参阅 [Azure Site Recovery 价格详细信息](/home/features/site-recovery#price)中的“地域可用性”。
 
 6. 单击“创建保管库”。
 
@@ -384,7 +387,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 请注意，任何子网中的前四个 IP 地址保留给 Azure 内部使用。请指定任何其他可用的 IP 地址。
 
->[AZURE.NOTE] 使用[高级存储帐户](/documentation/articles/storage-premium-storage-preview-portal)为需要持续性的高 IO 性能和低延迟才能托管 IO 密集型工作负荷的工作负荷配置保护时，请选择“标准 DS4”。
+>[AZURE.NOTE] 使用[高级存储帐户](/documentation/articles/storage-premium-storage)为需要持续性的高 IO 性能和低延迟才能托管 IO 密集型工作负荷的工作负荷配置保护时，请选择“标准 DS4”。
 
 
 3. Windows 主目标服务器虚拟机使用以下终结点创建：（仅当部署类型是“公共 Internet”时，才创建公开终结点）：
@@ -420,8 +423,8 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 	1. 在安装主目标服务器软件之前，请确保已安装最新的 Linux 集成服务 (LIS)。可以在[此处](https://www.microsoft.com/download/details.aspx?id=46842)找到最新版本的 LIS 和安装说明。安装 LIS 后重新启动计算机。
 	2. 在“准备目标(Azure)资源”中，单击“下载并安装其他软件(仅适用于 Linux 主目标服务器)”以下载 Linux 主目标服务器包。使用 sftp 客户端将下载的 tar 文件复制到虚拟机。你也可以登录到已部署的 Linux 主目标服务器，并使用 *wget http://go.microsoft.com/fwlink/?LinkID=529757&clcid=0x409* 下载文件。
 	2. 使用 Secure Shell 客户端登录到服务器。请注意，如果你已通过 VPN 连接到 Azure 网络，请使用内部 IP 地址。否则，请使用外部 IP 地址和 SSH 公用终结点。
-	3. 运行以下程序：**tar –xvzf Microsoft-ASR\_UA\_8.4.0.0\_RHEL6-64***
-	![Linux 主目标服务器](./media/site-recovery-vmware-to-azure-classic-legacy/linux-tar.png)，从 gzip 压缩过的安装程序中提取文件
+	3. 运行以下程序：**tar –xvzf Microsoft-ASR\_UA\_8.4.0.0\_RHEL6-64***,从 gzip 压缩过的安装程序中提取文件。
+	![Linux 主目标服务器](./media/site-recovery-vmware-to-azure-classic-legacy/linux-tar.png)
 	4. 确保你位于 tar 文件内容提取到的目录中。
 	5. 使用命令 **echo *`<passphrase>`* >passphrase.txt** 将配置服务器的通行短语复制到本地文件
 	6. 运行命令“**sudo ./install -t both -a host -R MasterTarget -d /usr/local/ASR -i *`<Configuration server internal IP address>`* -p 443 -s y -c https -P passphrase.txt**”。
@@ -647,7 +650,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 1. 将通行短语从 CX 复制到服务器上的“C:\\connection.passphrase”文件中，然后运行此命令。在本示例中，CX 是 104.40.75.37，HTTPS 端口是 62519：
 
-    `C:\Microsoft-ASR_UA_8.2.0.0_Windows_PREVIEW_20Mar2015_Release.exe" -ip 104.40.75.37 -port 62519 -mode UA /LOG="C:\stdout.txt" /DIR="C:\Program Files (x86)\Azure Site Recovery" /VERYSILENT  /SUPPRESSMSGBOXES /norestart  -usesysvolumes  /CommunicationMode https /PassphrasePath "C:\connection.passphrase"`
+    `C:\Microsoft-ASR_UA_8.2.0.0_Windows_PREVIEW_20Mar2015_Release.exe" -ip 104.40.75.37 -port 62519 -mode UA /LOG="C:\stdout.txt" /DIR="C:\Program Files (x86)\Microsoft Azure Site Recovery" /VERYSILENT  /SUPPRESSMSGBOXES /norestart  -usesysvolumes  /CommunicationMode https /PassphrasePath "C:\connection.passphrase"`
 
 **在 Linux 服务器上手动安装移动服务**：
 
@@ -698,7 +701,8 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 3. 如果你要保护 VMware 虚拟机，请在“选择虚拟机”中，选择负责管理虚拟机（或其运行所在的 EXSi 主机）的 vCenter 服务器，然后选择计算机。
 
 	![添加 V-Center 服务器](./media/site-recovery-vmware-to-azure-classic-legacy/select-vms.png)	
-4. 在“指定目标资源”中选择用于复制的主目标服务器和存储，并选择是否应将设置用于所有工作负荷。为需要持续性的高 IO 性能和低延迟才能托管 IO 密集型工作负荷的工作负荷配置保护时，请选择“高级存储帐户”。[](/documentation/articles/storage-premium-storage-preview-portal)如果你希望工作负荷磁盘使用高级存储帐户，则需使用 DS 系列的主目标。非 DS 系列的主目标无法使用高级存储磁盘。
+4. 在“指定目标资源”中选择用于复制的主目标服务器和存储，并选择是否应将设置用于所有工作负荷。为需要持续性的高 IO 性能和低延迟才能托管 IO 密集型工作负荷的工作负荷配置保护时，请选择“高级存储帐户”。[](/documentation/articles/storage-premium-storage)如果你希望工作负荷磁盘使用高级存储帐户，则需使用 DS 系列的主目标。非 DS 系列的主目标无法使用高级存储磁盘。
+
 
 	![vCenter 服务器](./media/site-recovery-vmware-to-azure-classic-legacy/machine-resources.png)
 
@@ -810,4 +814,4 @@ B 部分中的信息与 Microsoft 要依据原始许可条款提供给你的“�
 完整文件可以在 [Microsoft 下载中心](http://go.microsoft.com/fwlink/?linkid=529428&clcid=0x409)找到。Microsoft 保留未在此处明确授予的所有权利，无论是暗示、禁止或其他方式。
 
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0328_2016-->
