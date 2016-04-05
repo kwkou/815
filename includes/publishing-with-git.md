@@ -1,6 +1,6 @@
-[Azure Web 应用](/documentation/services/web-sites/)支持从源代码控件和存储库工具（例如，Git 和 Mercurial）部署到 Web 应用。可以使用这些工具维护你 Web 应用的内容和代码，然后在需要时快速轻松地将更改推送到你的 Azure Web 应用。
+[Azure Web 应用](/documentation/services/web-sites/)支持从源代码控制和存储库工具（例如，Git 和 Mercurial）部署到 Web Apps。你可以使用这些工具维护 Web 应用的内容和代码，然后在需要时快速轻松地将更改推送到你的 Azure Web 应用。
 
-在本文中，你将了解如何使用 Git 从本地计算机直接发布到 Web 应用（在 Azure 中，此发布方法称为**本地 Git**）。你还将了解如何启用从存储库站点（例如，GitHub 或 Mercurial）进行的部署。
+在本文中，你将了解如何使用 Git 从本地计算机直接发布到 Web Apps（在 Azure 中，此发布方法称为**本地 Git**）。你还将了解如何启用从存储库站点（例如，GitHub 或 Mercurial）进行的部署。
 
 > [AZURE.NOTE] 在使用[适用于 Mac 和 Linux 的 Azure 命令行工具](/documentation/articles/xplat-cli-install)创建 Web 应用时，将自动执行本文中所述的许多 Git 命令。
 
@@ -30,7 +30,7 @@
 
 ## <a id="Step3"></a>步骤 3：添加网页
 
- Web 应用支持用各种编程语言创建的应用程序。对于此示例，你将使用静态 .html 文件。
+Web Apps 支持用各种编程语言创建的应用程序。对于此示例，你将使用静态 .html 文件。
 
 1. 通过使用文本编辑器，在 Git 存储库的根目录下（你先前创建的 MyGitRepository 目录）创建一个名为 **index.html** 的新文件。
 
@@ -62,7 +62,7 @@
 
 2. 单击“新建”按钮以创建将为其启用存储库的新 Web 应用。
 
-2. 等待至 Web 应用创建过程在“ Web 应用”视图中完成，然后选择该 Web 应用。
+2. 等待至 Web 应用创建过程在“Web 应用”视图中完成，然后选择该 Web 应用。
 
 	![显示选定 Web 应用的图像][portal-select-website]
 
@@ -85,10 +85,10 @@
 ## <a id="Step5"></a>部署项目
 
 * [将本地文件推送到 Azure（本地 Git）](#Step6)
-* [从存储库 Web 应用（例如，GitHub 或 Mercurial）部署文件](#Step7)
-* [从 GitHub 或 Mercurial 部署 Visual Studio 解决方案](#Step75)
+* [从存储库 Web 应用（例如，GitHub 或 Mercurial）上部署文件](#Step7)
+* [从 GitHub 或 Mercurial 上部署 Visual Studio 解决方案](#Step75)
 
-<a id="Step6"></a>按照以下步骤，使用本地 Git 将你的 Web 应用发布到 Azure。
+<a id="Step6"></a>使用以下步骤通过本地 Git 将 Web 应用发布到 Azure 中。
 
 
 此时，门户将显示有关初始化本地存储库和添加文件的说明。你已经在本主题的前几个步骤中执行了此操作。但是，如果没有设置你的部署凭据，你必须转回至门户中的“仪表板”选项卡并单击“重置部署凭据”。
@@ -101,7 +101,7 @@
 
 		git remote add azure https://username@needsmoregit.scm.chinacloudsites.cn:443/NeedsMoreGit.git
 
-    > [AZURE.NOTE] **remote** 命令可将命名引用添加到远程存储库。在本例中，它为 Web 应用存储库创建名为“azure”的引用。
+    > [AZURE.NOTE] **remote** 命令可将命名引用添加到远程存储库。在本示例中，它为 Web 应用的存储库创建名为“azure”的引用。
 
 1. 从命令行中使用以下命令可将当前存储库内容从本地存储库推送到“azure”远程 Web 应用：
 
@@ -121,7 +121,7 @@
 		To https://username@needsmoregit.scm.chinacloudsites.cn:443/NeedsMoreGit.git
 		* [new branch]		master -> master
 
-	> [AZURE.NOTE] 为 Web 应用创建的存储库应推送请求以便面向其存储库的 <strong>master</strong> 分支，后者将用作该 Web 应用的内容。
+	> [AZURE.NOTE] 为 Web 应用创建的存储库应推送请求，以便面向其存储库的 <strong>master</strong> 分支，后者将用作该 Web 应用的内容。
 
 2. 在门户中，单击门户底部的“浏览”链接以验证是否已部署 **index.html**。这将显示一个包含“Hello Git!”的页面。
 
@@ -139,11 +139,11 @@
 
 ### <a id="Step7"></a>从存储库站点（例如，GitHub 或 Mercurial）部署文件
 
-通过使用“本地 Git”将本地文件推送到 Azure，可以手动将更新从本地项目推送到 Azure 中的 Web 应用，而从 GitHub 或 Mercurial 进行部署则需要在管理门户中点击“同步”。
+通过使用本地 Git 将本地文件推送到 Azure，你可以手动将更新从本地项目推送到 Azure 中的 Web 应用，而在管理门户上单击“同步”之后，从 GitHub 或 Mercurial 部署会生成部署过程。
 
-从 GitHub 部署文件需要你已将本地项目发布到这些服务之一。有关将项目发布到这些服务的详细信息，请参阅[创建存储库 (GitHub)] 或[快速入门 - Mercurial]。
+从 GitHub 部署文件要求你已经将本地项目发布到其中一项服务中。有关将项目发布到这些服务的详细信息，请参阅[创建存储库 (GitHub)] 或[快速启动 - Mercurial]。
 
-1. 首先，将您的 Web 应用文件放到将用于部署的选定存储库中。
+1. 首先将你的 Web 应用文件放到将用于部署的选定存储库中。
 
 2. 在 Web 应用的 Azure 管理门户中，转到“仪表板”选项卡。在“速览”部分中，选择“从源控件设置部署”。这将显示“设置部署”对话框，该对话框会询问“你的源代码在哪里?”。
 
@@ -157,13 +157,13 @@
 
 7. 此时，已将你的项目从所选存储库部署到 Azure Web 应用。若要验证该站点是否处于活动状态，请单击门户底部的“浏览”链接。浏览器应导航到该 Web 应用。
 
-8. 更改你的项目，然后将所做的更新推送到已与此 Web 应用关联的存储库。推送到存储库完成后，在管理门户中点击“同步”。
+8. 对你的项目进行更改，然后将更新推送到已与此 Web 应用关联的存储库。在管理门户上单击“同步”，完成推送到存储库后，你的 Web 应用应很快更新以反映更改。
 
-### <a id="Step75"></a>从 GitHub 或 Mercurial 部署 Visual Studio 解决方案
+### 从 GitHub 或 Mercurial 上部署 Visual Studio 解决方案
 
-将 Visual Studio 解决方案推送到 Azure Web 应用中的 Web 应用就像推送简单的 index.html 文件一样容易。 Web 应用部署过程简化了所有细节，包括还原 NuGet 依赖项和构建应用程序二进制文件。可以按照仅在你的 Git 存储库中维护代码的源控制最佳实践操作，并让 Web 应用部署处理其余工作。
+将 Visual Studio 解决方案推送到 Azure 中的 Web Apps 就像推送简单的 index.html 文件一样容易。Web Apps 部署过程简化了所有细节，包括还原 NuGet 依赖项和构建应用程序二进制文件。可以按照仅在你的 Git 存储库中维护代码的源控制最佳实践操作，并让 Web Apps 部署处理其余工作。
 
-将 Visual Studio 解决方案推送到 Web 应用的步骤与[上一部分](#Step7)中的步骤相同，前提是按以下方式配置你的解决方案和存储库：
+将 Visual Studio 解决方案推送到 Web Apps 的步骤与[上一部分](#Step7)中的步骤相同，前提是按以下方式配置你的解决方案和存储库：
 
 -	在你的存储库根中，添加 `.gitignore` 文件，然后指定想要从你的存储库中排除的所有文件和文件夹，例如，`Obj`、`Bin` 和 `packages` 文件夹（有关格式信息，请参阅 [gitignore 文档](http://git-scm.com/docs/gitignore)）。例如：
 
@@ -187,7 +187,7 @@
 
 -	将整个解决方案的目录树添加到你的存储库中，其中 .sln 文件位于存储库根中。
 
-你按照说明设置存储库并将 Azure 中的 Web 应用配置为从某个联机 Git 存储库连续发布后，你就可以在 Visual Studio 中从本地开发 ASP.NET 应用程序，并且只需通过将所做的更改推送到联机的 Git 存储库，然后在管理门户中点击“同步”。
+按照说明设置存储库并将 Azure 中的 Web 应用配置为从其中一个联机 Git 存储库连续发布后，就可以在 Visual Studio 中从本地开发 ASP.NET 应用程序，并且只需将所做更改推送到联机 Git 存储库即可部署代码。
 
 ## <a id="Step8"></a>故障排除
 
@@ -197,7 +197,7 @@
 
 **症状**：无法访问“[siteURL]”：无法连接到 [scmAddress]
 
-**原因**：如果 Web 应用无法正常工作，则可能发生此错误。
+**原因**：如果 Web 应用无法启动和运行，则会出现此错误。
 
 **解决方法**：在 Azure 管理门户中启动 Web 应用。在 Web 应用运行之前，Git 部署无法进行。
 
@@ -282,4 +282,4 @@
 [使用 Dropbox 共享 Git 存储库]: https://gist.github.com/trey/2722927
 [Continuous delivery to Azure using Visual Studio Team Services]: /documentation/articles/cloud-services-continuous-delivery-use-vso/
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0328_2016-->
