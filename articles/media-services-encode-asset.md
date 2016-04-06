@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/03/2016"  
-	wacn.date="03/17/2016"/>
+ 	ms.date="02/25/2016"  
+	wacn.date="04/05/2016"/>
 
 #简要介绍并比较 Azure 按需媒体编码器
 
@@ -37,18 +37,6 @@ Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项�
 请注意，默认情况下每个媒体服务帐户同时只能有一个活动的编码任务。你可以保留编码单元，使用它们可以同时运行多个编码任务，你购买的每个编码保留单位对应一个任务。有关信息，请参阅[缩放编码单位](/documentation/articles/media-services-portal-encoding-units)。
 
 ##媒体编码器标准版
-<a name="media_encoder_standard"></a>
-
-###概述
-
-建议使用媒体编码器标准版编码器。但是，它当前未通过 Azure 管理门户公开。
-
-与 Azure 媒体编码器相比，此编码器支持更多输入和输出格式和编解码器。其他优点包括：
-
-- 对创建输入文件的方式的要求低
-- 与 Azure 媒体编码器相比，具有更好的 H.264 编解码器质量
-- 在更新、更灵活的管道上构建
-- 更可靠/更具弹性
 
 ###如何使用
 
@@ -84,46 +72,6 @@ Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项�
 
 [媒体服务博客](https://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/)
  
-##Azure 媒体编码器
-
-###概述
-
-Azure 媒体编码器是媒体服务支持的编码器之一。从 2015 年 7 月开始，建议使用[媒体编码器标准版](/documentation/articles/media-services-encode-asset#media_encoder_standard)。
-
-###如何使用
-
-[如何使用 Azure 媒体编码器进行编码](/documentation/articles/media-services-dotnet-encode-asset)
-
-###格式
-
-[格式和编解码器](/documentation/articles/media-services-azure-media-encoder-formats)
-
-###预设
-
-Azure 媒体编码器使用[此处](https://msdn.microsoft.com/zh-cn/library/azure/dn619392.aspx)所述的编码器预设之一进行配置。你还可以在[此处](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/Azure%20Media%20Encoder)获取实际的 Azure 媒体编码器预设文件。
-
-###输入和输出元数据
-
-编码器输入元数据在[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783120.aspx)说明。
-
-编码器输出元数据在[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx)说明。
-
-###缩略图
-
-[创建缩略图](https://msdn.microsoft.com/zh-cn/library/hh973624.aspx)
-
-###音频和/或视频叠加
-
-[创建叠加](/documentation/articles/media-services-azure-media-customize-ame-presets#creating-overlays)。
-
-###命名约定
-
-[如何修改输出文件名](/documentation/articles/media-services-azure-media-customize-ame-presets#controlling-azure-media-encoder-output-file-names)
-
-###另请参阅
-
-[使用 Dolby Digital Plus 编码媒体](/documentation/articles/media-services-encode-with-dolby-digital-plus)
-
 ##媒体编码器高级工作流
 
 ###概述
@@ -148,106 +96,106 @@ Azure 媒体编码器使用[此处](https://msdn.microsoft.com/zh-cn/library/azu
 媒体处理器名称|适用定价|说明
 ---|---|---
 **媒体编码器标准版** |编码器|编码任务将根据“编码器”列下输出资产的大小（以 GB 为单位）按[此处][1]指定的费率进行收费。
-**Azure 媒体编码器** |编码器|编码任务将根据“编码器”列下输出资产的大小（以 GB 为单位）按[此处][1]指定的费率进行收费。
+**媒体编码器高级工作流** |高级编码器|编码任务将根据“高级编码器”列下输出资产的大小（以 GB 为单位）按[此处][1]指定的费率进行收费。
 
 
-本部分比较了**媒体编码器标准版**和 **Azure 媒体编码器**的编码功能。
+本部分将比较**媒体编码器标准版**和**媒体编码器高级工作流**的编码功能。
 
 
 ###输入容器/文件格式
 
-输入容器/文件格式|媒体编码器标准版|Azure 媒体编码器|媒体编码器高级工作流
----|---|---|---
-Adobe® Flash® F4V |是|否 |是
-MXF/SMPTE 377M |是|受限制|是
-GXF |是|否 |是
-Mpeg-2 传输流 |是|是 |是
-MPEG-2 节目流 |是|是 |是
-MPEG-4/MP4 |是|是 |是
-Windows Media/ASF |是|是 |是
-AVI（8 位/10 位未压缩）|是|是 |是
-3GPP/3GPP2 |是|是 |否
-平滑流文件格式 (PIFF 1.3)|是|是|否
-[Microsoft Digital Video Recording(DVR-MS)](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dd692984)|是|否|否
-Matroska/WebM |是|否|否
-QuickTime (.mov) |是|否|否
+输入容器/文件格式|媒体编码器标准版|媒体编码器高级工作流
+---|---|---
+Adobe® Flash® F4V |是|是
+MXF/SMPTE 377M |是|是
+GXF |是|是
+Mpeg-2 传输流 |是|是
+MPEG-2 节目流 |是|是
+MPEG-4/MP4 |是|是
+Windows Media/ASF |是|是
+AVI（8 位/10 位未压缩）|是|是
+3GPP/3GPP2 |是|否
+平滑流文件格式 (PIFF 1.3)|是|否
+[Microsoft Digital Video Recording(DVR-MS)](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dd692984)|是|否
+Matroska/WebM |是|否
+QuickTime (.mov) |是|否
 
 ###输入视频编解码器
 
-输入视频编解码器|媒体编码器标准版|Azure 媒体编码器|媒体编码器高级工作流
----|---|---|---
-AVC 8 位/10 位，最高支持 4:2:2，包括 AVCIntra |8 位 4:2:0 和 4:2:2|仅限 8 位 4:2:0|是
-Avid DNxHD（MXF 格式） |是|否|是
-DVCPro/DVCProHD（MXF 格式） |是|否|是
-JPEG2000 |是|否|是
-Mpeg-2（最高支持 422 Profile 和 High Level；包括 XDCAM、XDCAM HD、XDCAM IMX、CableLabs® 和 D10 等变体）|最高支持 422 Profile|最高支持 422 Profile|是
-MPEG-1 |是|是|是
-Windows Media 视频/VC-1 |是|是|是
-Canopus HQ/HQX |否|是|否
-Mpeg-4 第 2 部分 |是|否|否
-[Theora](https://zh.wikipedia.org/wiki/Theora) |是|否|否
-Apple ProRes 422 |是|否|否
-Apple ProRes 422 LT |是|否|否
-Apple ProRes 422 HQ |是|否|否
-Apple ProRes Proxy|是|否|否
-Apple ProRes 4444 |是|否|否
-Apple ProRes 4444 XQ |是|否|否
+输入视频编解码器|媒体编码器标准版|媒体编码器高级工作流
+---|---|---
+AVC 8 位/10 位，最高支持 4:2:2，包括 AVCIntra |8 位 4:2:0 和 4:2:2|是
+Avid DNxHD（MXF 格式） |是|是
+DVCPro/DVCProHD（MXF 格式） |是|是
+JPEG2000 |是|是
+Mpeg-2（最高支持 422 Profile 和 High Level；包括 XDCAM、XDCAM HD、XDCAM IMX、CableLabs® 和 D10 等变体）|最高支持 422 Profile|是
+MPEG-1 |是|是
+Windows Media 视频/VC-1 |是|是
+Canopus HQ/HQX |否|否
+Mpeg-4 第 2 部分 |是|否
+[Theora](https://zh.wikipedia.org/wiki/Theora) |是|否
+Apple ProRes 422 |是|否
+Apple ProRes 422 LT |是|否
+Apple ProRes 422 HQ |是|否
+Apple ProRes Proxy|是|否
+Apple ProRes 4444 |是|否
+Apple ProRes 4444 XQ |是|否
 
 ###输入音频编解码器
 
-输入音频编解码器|媒体编码器标准版|Azure 媒体编码器|媒体编码器高级工作流
----|---|---|---
-AES（SMPTE 331M 和 302M、AES3-2003） |否|否|是
-Dolby® E |否|否|是
-Dolby® Digital (AC3) |否|是|是
-Dolby® Digital Plus (E-AC3) |否|否|是
-AAC(AAC-LC、AAC-HE 和 AAC-HEv2；最高支持 5.1）|是|是|是
-MPEG Layer 2|是|是|是
-MP3 (MPEG-1 Audio Layer 3)|是|是|是
-Windows Media 音频|是|是|是
-WAV/PCM|是|是|是
-[FLAC](https://zh.wikipedia.org/wiki/FLAC)</a>|是|否|否
-[Opus](https://zh.wikipedia.org/wiki/Opus_codec) |是|否|否
-[Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a>|是|否|否
+输入音频编解码器|媒体编码器标准版|媒体编码器高级工作流
+---|---|---
+AES（SMPTE 331M 和 302M、AES3-2003） |否|是
+Dolby® E |否|是
+Dolby® Digital (AC3) |否|是
+Dolby® Digital Plus (E-AC3) |否|是
+AAC(AAC-LC、AAC-HE 和 AAC-HEv2；最高支持 5.1）|是|是
+MPEG Layer 2|是|是
+MP3 (MPEG-1 Audio Layer 3)|是|是
+Windows Media 音频|是|是
+WAV/PCM|是|是
+[FLAC](https://zh.wikipedia.org/wiki/FLAC)</a>|是|否
+[Opus](https://zh.wikipedia.org/wiki/Opus_(audio_format) |是|否
+[Vorbis](https://zh.wikipedia.org/wiki/Vorbis)</a>|是|否
 
 
 ###输出容器/文件格式
 
-输出容器/文件格式|媒体编码器标准版|Azure 媒体编码器|媒体编码器高级工作流
----|---|---|---
-Adobe® Flash® F4V|否|否|是
-MXF（OP1a、XDCAM 和 AS02）|否|否|是
-DPP（包括 AS11）|否|否|是
-GXF|否|否|是
-MPEG-4/MP4|是|是|是
-MPEG-TS|是|否|是
-Windows Media/ASF|否|是|是
-AVI（8 位/10 位未压缩）|否|否|是
-平滑流文件格式 (PIFF 1.3)|否|是|是
+输出容器/文件格式|媒体编码器标准版|媒体编码器高级工作流
+---|---|---
+Adobe® Flash® F4V|否|是
+MXF（OP1a、XDCAM 和 AS02）|否|是
+DPP（包括 AS11）|否|是
+GXF|否|是
+MPEG-4/MP4|是|是
+MPEG-TS|是|是
+Windows Media/ASF|否|是
+AVI（8 位/10 位未压缩）|否|是
+平滑流文件格式 (PIFF 1.3)|否|是
 
 ###输出视频编解码器
 
-输出视频编解码器|媒体编码器标准版|Azure 媒体编码器|媒体编码器高级工作流
----|---|---|---
-AVC（H.264；8 位；最高支持 High Profile、Level 5.2；4K Ultra HD；AVC Intra）|仅限 8 位 4:2:0|仅限 8 位 4:2:0，最高支持 1080p|是
-Avid DNxHD（MXF 格式）|否|否|是
-DVCPro/DVCProHD（MXF 格式）|否|否|是
-Mpeg-2（最高支持 422 Profile 和 High Level；包括 XDCAM、XDCAM HD、XDCAM IMX、CableLabs® 和 D10 等变体）|否|否|是
-MPEG-1|否|否|是
-Windows Media 视频/VC-1|否|是|是
-JPEG 缩图创建|否|是|是
+输出视频编解码器|媒体编码器标准版|媒体编码器高级工作流
+---|---|---
+AVC（H.264；8 位；最高支持 High Profile、Level 5.2；4K Ultra HD；AVC Intra）|仅限 8 位 4:2:0|是
+Avid DNxHD（MXF 格式）|否|是
+DVCPro/DVCProHD（MXF 格式）|否|是
+Mpeg-2（最高支持 422 Profile 和 High Level；包括 XDCAM、XDCAM HD、XDCAM IMX、CableLabs® 和 D10 等变体）|否|是
+MPEG-1|否|是
+Windows Media 视频/VC-1|否|是
+JPEG 缩图创建|否|是
 
 ###输出音频编解码器
 
-输出音频编解码器|媒体编码器标准版|Azure 媒体编码器|媒体编码器高级工作流
----|---|---|---
-AES（SMPTE 331M 和 302M、AES3-2003）|否|否|是
-Dolby® Digital (AC3)|否|是|是
-Dolby® Digital Plus (E-AC3)，最高支持 7.1|否|最高支持 5.1|是
-AAC(AAC-LC、AAC-HE 和 AAC-HEv2；最高支持 5.1）|是|是|是
-MPEG Layer 2|否|否|是
-MP3 (MPEG-1 Audio Layer 3)|否|否|是
-Windows Media 音频|否|是|是
+输出音频编解码器|媒体编码器标准版|媒体编码器高级工作流
+---|---|---
+AES（SMPTE 331M 和 302M、AES3-2003）|否|是
+Dolby® Digital (AC3)|否|是
+Dolby® Digital Plus (E-AC3)，最高支持 7.1|否|是
+AAC(AAC-LC、AAC-HE 和 AAC-HEv2；最高支持 5.1）|是|是
+MPEG Layer 2|否|是
+MP3 (MPEG-1 Audio Layer 3)|否|是
+Windows Media 音频|否|是
 
 
 ##错误代码  
@@ -283,4 +231,4 @@ TransientError|涵盖暂时性问题（例如 Azure 存储空间发生暂时性�
 <!--Reference links in article-->
 [1]: /home/features/media-services/#price
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0328_2016-->

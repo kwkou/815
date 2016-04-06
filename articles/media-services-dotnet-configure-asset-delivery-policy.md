@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/03/2016"
-	wacn.date="03/17/2016"/>
+  	ms.date="03/18/2016"
+	wacn.date="04/05/2016"/>
 
 #使用 .NET SDK 配置资产传送策略
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy.md)]
@@ -27,7 +27,7 @@
 
 可以将不同的策略应用到同一个资产。例如，可以将 PlayReady 加密应用到平滑流，将 AES 信封应用到 MPEG DASH 和 HLS。将阻止流式处理传送策略中未定义的任何协议（例如，添加仅将 HLS 指定为协议的单个策略）。如果你根本没有定义任何传送策略，则情况不是这样。此时，将允许所有明文形式的协议。
 
-请注意，如果要传送存储加密资产，则必须配置资产的传送策略。在流式传输资产之前，流式处理服务器会删除存储加密，然后再使用指定的传送策略流式传输你的内容。例如，若要传送使用高级加密标准 (AES) 信封加密密钥加密的资产，请将策略类型设为 **DynamicEnvelopeEncryption**。若要删除存储加密并以明文的形式流式传输资产，请将策略类型设为 **NoDynamicEncryption**。下面是演示如何配置这些策略类型的示例。
+如果要传送存储加密资产，则必须配置资产的传送策略。在流式传输资产之前，流式处理服务器会删除存储加密，然后再使用指定的传送策略流式传输你的内容。例如，若要传送使用高级加密标准 (AES) 信封加密密钥加密的资产，请将策略类型设为 **DynamicEnvelopeEncryption**。若要删除存储加密并以明文的形式流式传输资产，请将策略类型设为 **NoDynamicEncryption**。下面是演示如何配置这些策略类型的示例。
 
 根据配置资产传送策略的方式，你可以动态打包、动态加密和流式传输以下流式处理协议：平滑流式处理、HLS、MPEG DASH 和 HDS 流。
 
@@ -112,14 +112,27 @@ Azure 媒体服务还允许你添加 Widevine 加密。以下示例演示将 Pla
 
     static public void CreateAssetDeliveryPolicy(IAsset asset, IContentKey key)
     {
+    	// Get the PlayReady license service URL.
         Uri acquisitionUrl = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.PlayReadyLicense);
-        Uri widevineURl = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.Widevine);
+        
+
+        // GetKeyDeliveryUrl for Widevine attaches the KID to the URL.
+        // For example: https://amsaccount1.keydelivery.mediaservices.chinacloudapi.cn/Widevine/?KID=268a6dcb-18c8-4648-8c95-f46429e4927c.  
+        // The WidevineBaseLicenseAcquisitionUrl (used below) also tells Dynamaic Encryption 
+        // to append /? KID =< keyId > to the end of the url when creating the manifest.
+        // As a result Widevine license aquisition URL will have KID appended twice, 
+        // so we need to remove the KID that in the URL when we call GetKeyDeliveryUrl.
+
+        Uri widevineUrl = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.Widevine);
+        UriBuilder uriBuilder = new UriBuilder(widevineUrl);
+        uriBuilder.Query = String.Empty;
+        widevineUrl = uriBuilder.Uri;
 
         Dictionary<AssetDeliveryPolicyConfigurationKey, string> assetDeliveryPolicyConfiguration =
             new Dictionary<AssetDeliveryPolicyConfigurationKey, string>
         {
             {AssetDeliveryPolicyConfigurationKey.PlayReadyLicenseAcquisitionUrl, acquisitionUrl.ToString()},
-            {AssetDeliveryPolicyConfigurationKey.WidevineLicenseAcquisitionUrl, widevineURl.ToString()},
+            {AssetDeliveryPolicyConfigurationKey.WidevineLicenseAcquisitionUrl, widevineUrl.ToString()}
 
         };
 
@@ -336,4 +349,6 @@ Azure 媒体服务还允许你添加 Widevine 加密。以下示例演示将 Pla
         WidevineLicenseAcquisitionUrl
     }
 
-<!---HONumber=Mooncake_0307_2016-->
+
+
+<!---HONumber=Mooncake_0328_2016-->

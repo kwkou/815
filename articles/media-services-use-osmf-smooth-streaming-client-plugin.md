@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/28/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="02/17/2016"
+	wacn.date="04/05/2016"/>
 
 
 
-# 如何使用适用于 Adobe Open Source Media Framework 的 Microsoft 平滑流式处理插件 #
+# 如何使用适用于 Adobe Open Source Media Framework 的 Microsoft 平滑流式处理插件
 
-##概述 ##
+##概述
 
 
 适用于 Open Source Media Framework 2.0 的 Microsoft 平滑流式处理插件 (SS for OSMF) 扩展了 OSMF 的默认功能，并在新的和现有的 OSMF 播放器中添加了 Microsoft 平滑流式处理内容播放功能。该插件还为 Strobe Media Playback (SMP) 添加了平滑流式处理播放功能。
@@ -400,4 +400,4 @@ package
 
 [适用于 OSMF 的 Microsoft 自适应流式处理插件更新](http://azure.microsoft.com/blog/2014/10/27/microsoft-adaptive-streaming-plugin-for-osmf-update/)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0328_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/03/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="02/25/2016"
+	wacn.date="04/05/2016"/>
 
 
 # 开始使用 Azure 管理门户按需传送内容
@@ -233,4 +233,4 @@ Azure 管理门户提供了可用于测试视频的内容播放器。
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-portal-get-started/media-services-portal-player.png
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0328_2016-->

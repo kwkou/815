@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/04/2016"  
-	wacn.date="03/28/2016"/>
+	ms.date="03/07/2016"  
+	wacn.date="04/05/2016"/>
 
 #授权 Microsoft® 平滑流式处理客户端移植工具包
 
@@ -103,7 +103,6 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 - Saffron Digital Limited
 - Sichuan Changhong Electric Co., Ltd
 - Tatung Technology Inc.
-- Telechips Inc.
 - Vestel Elektronik Sanayi ve Ticaret A.S.
 - VisualOn, Inc.
 - ZTE Corporation
@@ -121,6 +120,7 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 - CastPal Technology Inc., Shenzhen
 - Compal Electronics, Inc.
 - Dongguan Digital AV Technology Corp., Ltd.
+- EchoStar Purchasing Corporation
 - Enseo, Inc.
 - Filmflex Movies Limited
 - Guangdong OPPO Mobile Telecommunications Corp., Ltd.
@@ -153,5 +153,4 @@ Microsoft 根据此许可证提供全部所需的知识产权，以便从其他�
 - WOOX Innovations Limited
 - ZTE Corporation
 
-
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0328_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/02/2016" 
-	wacn.date="03/17/2016"/>
+	ms.date="02/18/2016" 
+	wacn.date="04/05/2016"/>
 
 #保护内容概述
 
@@ -62,17 +62,23 @@
 
 >[AZURE.NOTE]若要利用动态加密，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
 
-###PlayReady DRM 许可证和 AES 明文密钥传送服务
+###许可证和密钥传送服务
 
-媒体服务提供用于向已授权客户端传送 PlayReady 许可证和 AES 明文密钥的服务。你可以使用 Azure 管理门户、REST API 或适用于 .NET 的媒体服务 SDK 来配置许可证和密钥的授权与身份验证策略。
+媒体服务提供用于向已授权客户端传送 DRM（PlayReady 和 Widevine）许可证和 AES 明文密钥的服务。你可以使用 Azure 管理门户、REST API 或适用于 .NET 的媒体服务 SDK 来配置许可证和密钥的授权与身份验证策略。
 
 请注意，如果使用门户，则你可以配置一个 AES 策略（将应用到所有 AES 加密内容）和一个 PlayReady 策略（将应用到所有 PlayReady 加密内容）。如果你想要以更大的力度控制配置，请使用适用于 .NET 的媒体服务 SDK。
 
-###PlayReady 许可证模板
+###PlayReady 许可证 
 
 媒体服务提供了用于传送 PlayReady 许可证的服务。当最终用户播放器（例如 Silverlight）尝试播放受 PlayReady 保护的内容时，将向许可证交付服务发送请求以获取许可证。如果许可证服务批准了该请求，则会颁发该许可证，该许可证将发送到客户端，并可用于解密和播放指定的内容。
 
 许可证包含在用户尝试播放受保护的内容时要由 PlayReady DRM 运行时强制实施的权限和限制。媒体服务提供了可让你配置 PlayReady 许可证的 API。有关详细信息，请参阅[媒体服务 PlayReady 许可证模板概述](/documentation/articles/media-services-playready-license-template-overview)。
+
+###Widevine 许可证
+
+AMS 还允许你传送通过 Widevine DRM 加密的 MPEG DASH。PlayReady 和 Widewine 都是按通用加密 (CENC) 规范加密的。你可以通过 [AMS .NET SDK](https://www.nuget.org/packages/windowsazure.mediaservices/)（从版本 3.5.1 开始）或 REST API 来配置 AssetDeliveryConfiguration 以使用 Widevine。
+
+从媒体服务 .NET SDK 版本 3.5.2 开始，媒体服务允许你配置 [Widevine 许可证模板](/documentation/articles/media-services-widevine-license-template-overview)并获取 Widevine 许可证。你还可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。
 
 ###令牌限制
 
@@ -80,11 +86,6 @@
 
 在配置令牌限制策略时，必须指定主验证密钥、颁发者和受众参数。主验证密钥包含用来为令牌签名的密钥，颁发者是颁发令牌的安全令牌服务。受众（有时称为范围）描述该令牌的意图，或者令牌授权访问的资源。媒体服务密钥交付服务将验证令牌中的这些值是否与模板中的值匹配。
 
-###Widevine
-
-AMS 还允许你传送通过 Widevine DRM 加密的 MPEG DASH。PlayReady 和 Widewine 都是按通用加密 (CENC) 规范加密的。你可以通过 [AMS .NET SDK](https://www.nuget.org/packages/windowsazure.mediaservices/)（从版本 3.5.1 开始）或 REST API 来配置 AssetDeliveryConfiguration 以使用 Widevine。
-
-从媒体服务 .NET SDK 版本 3.5.2 开始，媒体服务允许你配置 Widevine 许可证模板并获取 Widevine 许可证。你还可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。
 
 ##常见方案
 
@@ -127,4 +128,4 @@ AMS 还允许你传送通过 Widevine DRM 加密的 MPEG DASH。PlayReady 和 Wi
 
 [content-protection]: ./media/media-services-content-protection-overview/media-services-content-protection.png
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0328_2016-->

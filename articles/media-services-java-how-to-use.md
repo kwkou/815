@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/03/2016"  
-	wacn.date="03/21/2016"/>
+ 	ms.date="03/10/2016"  
+	wacn.date="04/05/2016"/>
 
 #如何将媒体服务与 Java 结合使用
 
@@ -74,6 +74,7 @@
 	    private static String clientId = "account name";
 	    private static String clientSecret = "account key";
 	    private static String scope = "urn:WindowsAzureMediaServices";
+		private static MediaContract mediaService;
 	    
 	    // Encoder configuration
 	    private static String preferedEncoder = "Media Encoder Standard";
@@ -260,8 +261,8 @@
 
   [Azure Java 开发人员中心]: /develop/java/
   [适用于 Java 的 Azure 库文档]: http://azure.github.io/azure-sdk-for-java/
-  [Media Services Client Development]: http://msdn.microsoft.com/zh-cn/library/azure/dn223283.aspx
+  [Media Services Client Development]: /documentation/articles/media-services-develop-video-players
 
  
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0328_2016-->

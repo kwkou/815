@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/03/2016"
-	wacn.date="03/17/2016"/>
+	ms.date="03/08/2016"
+	wacn.date="04/05/2016"/>
 
 
 #使用 .NET SDK 创建频道，以执行从单比特率流到多比特率流的实时编码
@@ -87,8 +87,8 @@
 
 - 若要完成本教程，你需要一个 Azure 帐户。 
 	
-	如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留该帐户，使用那些免费的 Azure 服务和功能，例如 Azure 中的 Web 应用功能。
-- 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
+	如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留该帐户，使用那些免费的 Azure 服务和功能，例如 Azure Web 应用中的 Web Apps 功能。
+- 一个媒体服务 帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
 - Visual Studio 2010 SP1（Professional、Premium、Ultimate 或 Express）或更高版本。
 - 必须使用适用于 .NET 的媒体服务 SDK 版本 3.2.0.0 或更高版本。
 - 可以发送单比特率实时流的摄像头和编码器。
@@ -510,10 +510,10 @@
 	}	
 
 
-[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
 
 ### 想要寻找其他内容吗？
 
 如果本主题不包含你所期待的内容、缺少某些内容，或在其他方面不符合你的需求，请使用下面的 Disqus 会话向我们提供反馈。
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0328_2016-->

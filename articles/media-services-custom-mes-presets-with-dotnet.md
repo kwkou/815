@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="01/28/2016"    
-	wacn.date="03/17/2016"/>
+	ms.date="02/18/2016"    
+	wacn.date="04/05/2016"/>
 
 
 #通过自定义媒体编码器标准预设执行高级编码任务
@@ -131,14 +131,33 @@
 				    return job.OutputMediaAssets[0];
 				}
 		
-		        static public IAsset EncodeWithOverlay(IAsset assetSource, IAsset assetOverlay, string customPresetFileName)
+		        static public IAsset UploadMediaFilesFromFolder(string folderPath)
+		        {
+		            IAsset asset = _context.Assets.CreateFromFolder(folderPath, AssetCreationOptions.None);
+		
+		            foreach (var af in asset.AssetFiles)
+		            {
+		                // The following code assumes 
+		                // you have an input folder with one MP4 and one overlay image file.
+		                if (af.Name.Contains(".mp4"))
+		                    af.IsPrimary = true;
+		                else
+		                    af.IsPrimary = false;
+		
+		                af.Update();
+		            }
+		
+		            return asset;
+		        }
+		
+		
+		        static public IAsset EncodeWithOverlay(IAsset assetSource, string customPresetFileName)
 		        {
 		            // Declare a new job.
 		            IJob job = _context.Jobs.Create("Media Encoder Standard Job");
 		            // Get a media processor reference, and pass to it the name of the 
 		            // processor to use for the specific task.
 		            IMediaProcessor processor = GetLatestMediaProcessorByName("Media Encoder Standard");
-		
 		
 		            // Load the XML (or JSON) from the local file.
 		            string configuration = File.ReadAllText(customPresetFileName);
@@ -150,8 +169,8 @@
 		                TaskOptions.None);
 		
 		            // Specify the input assets to be encoded.
+		            // This asset contains a source file and an overlay file.
 		            task.InputAssets.Add(assetSource);
-		            task.InputAssets.Add(assetOverlay);
 		
 		            // Add an output asset to contain the results of the job. 
 		            task.OutputAssets.AddNew("Output asset",
@@ -163,6 +182,7 @@
 		
 		            return job.OutputMediaAssets[0];
 		        }
+		
 
 		        private static void JobStateChanged(object sender, JobStateChangedEventArgs e)
 		        {
@@ -349,7 +369,6 @@
 	          <MaxBitrate>4500</MaxBitrate>
 	        </H264Layer>
 	      </H264Layers>
-	      <Chapters />
 	    </H264Video>
 	    <AACAudio>
 	      <Profile>AACLC</Profile>
@@ -422,7 +441,7 @@
 
 本部分说明如何修改编码器预设，以裁剪或修剪其输入为所谓的夹层文件或按需文件的输入视频。也可以使用编码器来裁剪或修剪从实时流捕获或存档的资产 – [此博客](https://azure.microsoft.com/blog/sub-clipping-and-live-archive-extraction-with-media-encoder-standard/)提供了详细信息。
 
-若要修剪视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设并修改 **Sources** 元素（如下所示）。请注意，**Sources** 应位于架构顶部。
+若要修剪视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设并修改 **Sources** 元素（如下所示）。StartTime 的值需与输入视频的绝对时间戳匹配。例如，如果输入视频第一帧的时间戳为 12:00:10.000，则 StartTime 应大于或等于 12:00:10.000。在以下示例中，假设输入视频的起始时间戳为零。请注意，**Sources** 应位于架构顶部。
 
 ###<a id="json"></a>JSON 预设
 	
@@ -668,9 +687,15 @@
 
 媒体编码器标准允许你在现有视频上覆盖图像。目前支持以下格式：png、jpg、gif 和 bmp。下面定义的预设是视频覆盖层的基本示例。
 
->[AZURE.NOTE]目前不支持覆盖层不透明度设置。
+除了定义预设文件外，你还必须让媒体服务知道资产中的哪个文件是覆盖层图像，哪个文件是你要在其上覆盖图像的源视频。视频文件必须是主文件。
 
-除了定义预设文件外，你还必须让媒体服务知道哪些资产包含覆盖层图像，以及哪些资产包含你要在其上覆盖图像的源视频。请参阅上面定义的 **EncodeWithOverlay** 方法的 .NET 示例。
+上面的 .NET 示例定义了两个函数：  **UploadMediaFilesFromFolder** 和 **EncodeWithOverlay** 。UploadMediaFilesFromFolder 函数从文件夹上载文件（例如 BigBuckBunny.mp4 和 Image001.png），并将 mp4 文件设置为资产中的主文件。 **EncodeWithOverlay** 函数使用传递给它的自定义预设文件（例如，下面的预设）来创建编码任务。
+
+>[AZURE.NOTE]当前限制：
+>
+>不支持覆盖层不透明度设置。
+>
+>源视频文件和覆盖层文件必须位于同一个资产中。
 
 ###JSON 预设
 	
@@ -698,7 +723,7 @@
 	              "InputLoop": true
 	            }
 	          ],
-	          "Source": "Image001.jpg",
+	          "Source": "Image001.png",
 	          "Clip": {
 	            "Duration": "00:00:05"
 	          },
@@ -733,7 +758,6 @@
 	          "FrameRate": "0/1"
 	        }
 	      ],
-	      "Chapters": [],
 	      "Type": "H264Video"
 	    },
 	    {
@@ -759,7 +783,7 @@
 	      <Streams />
 	      <Filters>
 	        <VideoOverlay>
-	          <Source>Image001.jpg</Source>
+	          <Source>Image001.png</Source>
 	          <Clip Duration="PT5S" />
 	          <FadeInDuration Duration="PT1S" />
 	          <FadeOutDuration StartTime="PT3S" Duration="PT4S" />
@@ -803,7 +827,6 @@
 	          <MaxBitrate>1045</MaxBitrate>
 	        </H264Layer>
 	      </H264Layers>
-	      <Chapters />
 	    </H264Video>
 	    <CopyAudio />
 	  </Encoding>
@@ -879,4 +902,4 @@
 
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0328_2016-->
