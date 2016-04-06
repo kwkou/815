@@ -76,7 +76,7 @@ GO
 
         -   如果通过运行 **ALTER DATABASE** 启用SQL Server Stretch Database，则必须在启用SQL Server Stretch Database之前手动创建凭据。
 
-        若要手动创建凭据，请参阅 [CREATE DATABASE SCOPED CREDENTIAL (Transact-SQL)](https://msdn.microsoft.com/library/mt270260.aspx)。创建凭据需要 ALTER ANY CREDENTIAL 权限。
+        若要手动创建凭据，请参阅 [CREATE DATABASE SCOPED CREDENTIAL (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt270260.aspx)。创建凭据需要 ALTER ANY CREDENTIAL 权限。
 
         ```tsql
         CREATE DATABASE SCOPED CREDENTIAL <db_scoped_credential_name>
