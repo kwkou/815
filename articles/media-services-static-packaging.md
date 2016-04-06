@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/14/2016"   
-	wacn.date="03/28/2016"/>
+	ms.date="03/01/2016"   
+	wacn.date="04/05/2016"/>
 
 
 # 使用 Azure 媒体包装器完成静态打包任务
@@ -40,17 +40,17 @@
 
 如果你要使用一组未使用媒体服务编码器编码的自适应比特率（多码率）MP4 文件，则应在进一步处理前验证这些文件。媒体服务包装程序可以验证包含一组 MP4 文件的资产，并可检查该资产是否可以打包成平滑流或 HLS。如果验证任务失败，则处理该任务的作业将完成并显示错误。用于定义验证任务的预设的 XML 可以在 [Azure 媒体包装器的任务预设](http://msdn.microsoft.com/zh-cn/library/azure/hh973635.aspx)主题中找到。
 
->[AZURE.NOTE]请使用媒体服务编码器来生成内容，或使用媒体服务包装程序来验证内容，以避免运行时问题。如果按需流式处理服务器在运行时无法解析你的源文件，则你会收到 HTTP 1.1 错误“415 不支持的媒体类型”。服务器多次未能解析你的源文件会影响按需流式处理服务器的性能，并且可能会减少服务于其他请求的可用带宽。Azure 媒体服务在其按需流式处理服务上提供一个服务级别协议 (SLA)；但是，如果以上述方式滥用服务器，则无法遵循此 SLA。
+>[AZURE.NOTE]请使用媒体编码器标准版来生成内容，或使用媒体服务包装程序来验证内容，以避免运行时问题。如果按需流式处理服务器在运行时无法解析你的源文件，则你会收到 HTTP 1.1 错误“415 不支持的媒体类型”。服务器多次未能解析你的源文件会影响按需流式处理服务器的性能，并且可能会减少服务于其他请求的可用带宽。Azure 媒体服务在其按需流式处理服务上提供一个服务级别协议 (SLA)；但是，如果以上述方式滥用服务器，则无法遵循此 SLA。
 
 本部分演示如何处理验证任务。本部分还演示如何查看完成时出现 JobStatus.Error 的作业的状态和错误消息。
 
-若要使用媒体服务包装程序验证 MP4 文件，必须创建自己的清单 (.ism) 文件，并将其与源文件一起上载到媒体服务帐户。下面是 Azure 媒体编码器生成的 .ism 文件的一个示例。文件名区分大小写。另请确保 .ism 文件中的文本采用 UTF-8 编码。
+若要使用媒体服务包装程序验证 MP4 文件，必须创建自己的清单 (.ism) 文件，并将其与源文件一起上载到媒体服务帐户。下面是媒体编码器标准版生成的 .ism 文件的一个示例。文件名区分大小写。另请确保 .ism 文件中的文本采用 UTF-8 编码。
 
 	
 	<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 	<smil xmlns="http://www.w3.org/2001/SMIL20/Language">
 	  <head>
-	<!-- Tells the server that these input files are MP4s – specific to Dynamic Packaging -->
+	<!-- Tells the server that these input files are MP4s - specific to Dynamic Packaging -->
 	    <meta name="formats" content="mp4" /> 
 	  </head>
 	  <body>
@@ -515,13 +515,13 @@
 	        /// <returns>The output asset.</returns>
 	        private static IAsset EncodeMP4IntoMultibitrateMP4sTask(IJob job, IAsset asset)
 	        {
-	            // Get the SDK extension method to  get a reference to the Azure Media Encoder.
+	            // Get the SDK extension method to  get a reference to the Media Encoder Standard.
 	            IMediaProcessor encoder = _context.MediaProcessors.GetLatestMediaProcessorByName(
-	                MediaProcessorNames.AzureMediaEncoder);
+	                MediaProcessorNames.MediaEncoderStandard);
 	
 	            ITask adpativeBitrateTask = job.Tasks.AddNew("MP4 to Adaptive Bitrate Task",
 	               encoder,
-	               "H264 Adaptive Bitrate MP4 Set 720p",
+	               "H264 Multiple Bitrate 720p",
 	               TaskOptions.None);
 	
 	            // Specify the input Asset
@@ -860,13 +860,13 @@
 	        /// <returns>The output asset.</returns>
 	        private static IAsset EncodeSingleMP4IntoMultibitrateMP4sTask(IJob job, IAsset asset)
 	        {
-	            // Get the SDK extension method to  get a reference to the Azure Media Encoder.
+	            // Get the SDK extension method to  get a reference to the Media Encoder Standard.
 	            IMediaProcessor encoder = _context.MediaProcessors.GetLatestMediaProcessorByName(
-	                MediaProcessorNames.AzureMediaEncoder);
+	                MediaProcessorNames.MediaEncoderStandard);
 	
 	            ITask adpativeBitrateTask = job.Tasks.AddNew("MP4 to Adaptive Bitrate Task",
 	               encoder,
-	               "H264 Adaptive Bitrate MP4 Set 720p",
+	               "H264 Multiple Bitrate 720p",
 	               TaskOptions.None);
 	
 	            // Specify the input Asset
@@ -964,13 +964,13 @@
 
 如果你想要通过 PlayReady 来保护你的内容，则可选择使用[动态加密](/documentation/articles/media-services-protect-with-drm)（推荐选项）或静态加密（如本部分所述）。
 
->[AZURE.NOTE]若要使用 PlayReady 保护你的内容，必须先将内容转换/编码为平滑流格式。
+>[AZURE.NOTE] 若要使用 PlayReady 保护你的内容，必须先将内容转换/编码为平滑流格式。
 
 本部分的示例将夹层文件（在本例中为 MP4）编码为多比特率 MP4 文件。然后，它将 MP4 打包为平滑流，并使用 PlayReady 对平滑流进行加密。若要生成使用 PlayReady 加密的 HTTP 实时流 (HLS)，需要将 PlayReady 平滑流资产打包成 HLS。本主题演示如何执行所有这些步骤。
 
 媒体服务现在提供有用于传送 Microsoft PlayReady 许可证的服务。本文中的示例显示如何配置媒体服务 PlayReady 许可证传送服务（请参见以下代码中定义的 **ConfigureLicenseDeliveryService** 方法）。
 
-确保更新以下代码，以便指向输入 MP4 文件所在的文件夹，并指向 MediaPackager\_MP4ToSmooth.xml、MediaPackager\_SmoothToHLS.xml 和 MediaEncryptor\_PlayReadyProtection.xml 文件所在的位置。MediaPackager\_MP4ToSmooth.xml 和 MediaPackager\_SmoothToHLS.xml在 [Azure 媒体包装器的任务预设](http://msdn.microsoft.com/zh-cn/library/azure/hh973635.aspx)中定义，MediaEncryptor\_PlayReadyProtection.xml 在 [Azure 媒体加密器的任务预设](http://msdn.microsoft.com/zh-cn/library/azure/hh973610.aspx)主题中定义。
+确保更新以下代码，以便指向输入 MP4 文件所在的文件夹，并指向 MediaPackager\_MP4ToSmooth.xml、MediaPackager\_SmoothToHLS.xml 和 MediaEncryptor\_PlayReadyProtection.xml 文件所在的位置。MediaPackager\_MP4ToSmooth.xml 和 MediaPackager\_SmoothToHLS.xml 在 [Azure 媒体包装器的任务预设](http://msdn.microsoft.com/zh-cn/library/azure/hh973635.aspx)中定义，MediaEncryptor\_PlayReadyProtection.xml 在 [Azure 媒体加密器的任务预设](http://msdn.microsoft.com/zh-cn/library/azure/hh973610.aspx)主题中定义。
 	
 	using System;
 	using System.Collections.Generic;
@@ -1231,13 +1231,13 @@
 	        /// <returns>The output asset.</returns>
 	        private static IAsset EncodeSingleMP4IntoMultibitrateMP4sTask(IJob job, IAsset asset)
 	        {
-	            // Get the SDK extension method to  get a reference to the Azure Media Encoder.
+	            // Get the SDK extension method to  get a reference to the Media Encoder Standard.
 	            IMediaProcessor encoder = _context.MediaProcessors.GetLatestMediaProcessorByName(
-	                MediaProcessorNames.AzureMediaEncoder);
+	                MediaProcessorNames.MediaEncoderStandard);
 	
 	            ITask adpativeBitrateTask = job.Tasks.AddNew("MP4 to Adaptive Bitrate Task",
 	               encoder,
-	               "H264 Adaptive Bitrate MP4 Set 720p",
+	               "H264 Multiple Bitrate 720p",
 	               TaskOptions.None);
 	
 	            // Specify the input Asset
@@ -1436,4 +1436,4 @@
 	}
 
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0328_2016-->

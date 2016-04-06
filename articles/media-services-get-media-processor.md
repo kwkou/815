@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/14/2016" 
-	wacn.date="03/17/2016"/>
+	ms.date="03/01/2016" 
+	wacn.date="04/05/2016"/>
 
 
 #如何：获取媒体处理器实例
@@ -26,71 +26,38 @@
 
 下表提供了每个可用媒体处理器的名称和说明。
 
-<table border="2" cellspacing="0" cellpadding="5" style="border: 2px solid #000000;">
-  <thead>
-    <tr>
-       <th>媒体处理器名称</th>
-       <th>说明</th>
-	<th>更多信息</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-       <td>Azure 媒体编码器</td>
-       <td>让你使用 Azure 媒体编码器运行编码任务。</td>
-       <td><a href="/documentation/articles/media-services-dotnet-encoding-units/">Azure 媒体编码器的任务预设字符串</a></td>
-    </tr>   
-	<tr>
-        <td>Azure 媒体索引器</td>
-        <td>使媒体文件和内容可搜索，以及生成隐藏字幕跟踪和关键字。</td>
-		<td><a href="/documentation/articles/media-services-index-content/">使用Azure 媒体索引器为媒体文件编制索引</a>。</td>
-    </tr>
-    <tr>
-        <td>Azure 媒体包装器</td>
-        <td>让你将媒体资产从 .mp4 格式转换为平滑流式处理格式。还可让你将媒体资产从平滑流式处理格式转换为 Apple HTTP 实时流 (HLS) 格式。</td>
-		<td><a href="http://msdn.microsoft.com/zh-cn/library/hh973635.aspx">Azure Media Packager 的任务预设字符串</a></td>
-    </tr>
-    <tr>
-        <td>Azure 媒体加密器</td>
-        <td>让你使用 PlayReady 保护加密媒体资产。</td>
-        <td><a href="http://msdn.microsoft.com/zh-cn/library/hh973610.aspx">Azure 媒体包装器的任务预设字符串</a></td>
-    </tr>
-	<tr>
-		<td>Azure Media Hyperlapse（预览）</td>
-		<td>使你能够通过视频防抖动功能消除视频中的“晃动”。也可使将内容制作为可用剪辑的速度加快。</td>
-		<td><a href="http://go.microsoft.com/fwlink/?LinkId=613274">Azure Media Hyperlapse</a></td>
-	</tr>
-    <tr>
-        <td>存储解密</td>
-        <td>让你解密使用存储加密技术加密的媒体资产。</td>
-		<td>不适用</td>
-    </tr>  </tbody>
-</table>
+媒体处理器名称|说明|更多信息
+---|---|---
+媒体编码器标准版|为按需编码提供标准功能。 |[简要介绍并比较 Azure 按需媒体编码器](/documentation/articles/media-services-encode-asset)
+媒体编码器高级工作流|允许你使用媒体编码器高级工作流运行编码任务。|[简要介绍并比较 Azure 按需媒体编码器](/documentation/articles/media-services-encode-asset)
+Azure Media Indexer| 使媒体文件和内容可搜索，以及生成隐藏字幕跟踪和关键字。|[Azure Media Indexer](/documentation/articles/media-services-index-content)
+Azure Media Hyperlapse（预览）|使你能够通过视频防抖动功能消除视频中的“晃动”。也可使将内容制作为可用剪辑的速度加快。|[Azure Media Hyperlapse](/documentation/articles/media-services-hyperlapse-content)
+Azure Media Encoder|已过时
+存储解密| 已过时|
+Azure 媒体包装器|已过时|
+Azure 媒体加密器|已过时|
 
-<br />
+##获取媒体处理器
 
-##获取 MediaProcessor
-
-以下方法演示了如何获取媒体处理器实例。该代码示例假设使用名为 **\_context** 的模块级变量来引用[如何：以编程方式连接到媒体服务]部分中描述的服务器上下文。
+以下方法演示了如何获取媒体处理器实例。该代码示例假设使用名为 **\_context** 的模块级变量来引用[如何：以编程方式连接到媒体服务](/documentation/articles/media-services-dotnet-connect_programmatically)部分中描述的服务器上下文。
 
 	private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)
 	{
-	     var processor = _context.MediaProcessors.Where(p => p.Name == mediaProcessorName).
-	        ToList().OrderBy(p => new Version(p.Version)).LastOrDefault();
-	
-	    if (processor == null)
-	        throw new ArgumentException(string.Format("Unknown media processor", mediaProcessorName));
-	
-	    return processor;
+		var processor = _context.MediaProcessors.Where(p => p.Name == mediaProcessorName).
+		ToList().OrderBy(p => new Version(p.Version)).LastOrDefault();
+		
+		if (processor == null)
+		throw new ArgumentException(string.Format("Unknown media processor", mediaProcessorName));
+		
+		return processor;
 	}
 
 
 
 ##后续步骤
-了解如何获取媒体处理器实例后，请转到[如何对资产进行编码][]主题，其中说明了如何使用 Azure 媒体编码器对资产进行编码。
 
-[如何对资产进行编码]: /documentation/articles/media-services-encode-asset
-[Task Preset Strings for the Azure Media Encoder]: http://msdn.microsoft.com/zh-cn/library/jj129582.aspx
-[如何：以编程方式连接到媒体服务]: /documentation/articles/media-services-set-up-computer
+了解如何获取媒体处理器实例后，请转到[如何对资产进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard)主题，其中说明了如何使用媒体编码器标准版对资产进行编码。
 
-<!---HONumber=Mooncake_0307_2016-->
+
+
+<!---HONumber=Mooncake_0328_2016-->

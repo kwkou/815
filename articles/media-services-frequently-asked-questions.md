@@ -9,13 +9,13 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/03/2016"  
-	wacn.date="03/17/2016"/>
+ 	ms.date="03/02/2016"  
+	wacn.date="04/05/2016"/>
 
 
 #常见问题  
 
-##概述
+##一般性的 AMS 常见问题 
 
 问：如何缩放索引？
 
@@ -35,11 +35,21 @@
 
 问：Azure 媒体服务是否支持存储图像？
 
-答：如果需要存储 JPEG 或 PNG 图像，应将其存储在 Azure Blob 存储中。除非你想要将图像与你的视频或音频资产相关联，否则将图像放入媒体服务帐户毫无益处。或者，你可能需要在视频编码器中将图像用作叠加。媒体服务编码器支持在视频上叠加图像，且它将 JPEG 和 PNG 列为支持的输入格式。有关详细信息，请参阅[创建覆盖](/documentation/articles/media-services-azure-media-customize-ame-presets)。
+答：如果需要存储 JPEG 或 PNG 图像，应将其存储在 Azure Blob 存储中。除非你想要将图像与你的视频或音频资产相关联，否则将图像放入媒体服务帐户毫无益处。或者，你可能需要在视频编码器中将图像用作叠加。媒体编码器标准版支持在视频上叠加图像，且它将 JPEG 和 PNG 列为支持的输入格式。有关详细信息，请参阅[创建覆盖](/documentation/articles/media-services-custom-mes-presets-with-dotnet#overlay)。
 
 问：如何将资产从一个媒体服务帐户复制到另一个媒体服务帐户？
 
-答：要将资产从一个媒体服务帐户复制到另一个，可使用 [Azure 媒体服务 .NET SDK 扩展](https://github.com/Azure/azure-sdk-for-media-services-extensions/)存储库中提供的 [IAsset.Copy](https://github.com/Azure/azure-sdk-for-media-services-extensions/blob/dev/MediaServices.Client.Extensions/IAssetExtensions.cs#L354) 扩展方法。有关详细信息，请参阅[此](https://social.msdn.microsoft.com/Forums/azure/28912d5d-6733-41c1-b27d-5d5dff2695ca/migrate-media-services-across-subscription?forum=MediaServices)论坛线程。
+答：要使用 .NET 将资产从一个媒体服务帐户复制到另一个帐户，可以使用 [Azure 媒体服务 .NET SDK 扩展](https://github.com/Azure/azure-sdk-for-media-services-extensions/)存储库中提供的 [IAsset.Copy](https://github.com/Azure/azure-sdk-for-media-services-extensions/blob/dev/MediaServices.Client.Extensions/IAssetExtensions.cs#L354) 扩展方法。有关详细信息，请参阅[此](https://social.msdn.microsoft.com/Forums/zh-cn/28912d5d-6733-41c1-b27d-5d5dff2695ca/migrate-media-services-across-subscription?forum=MediaServices)论坛线程。
+
+问：AMS 支持使用哪些字符来为文件命名？
+
+答：生成流式处理内容的 URL（例如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）时，媒体服务会使用 IAssetFile.Name 属性的值。出于这个原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下保留的[百分号编码字符](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“¡®.¡¯”。
+
+
+问：如何使用 REST 进行连接？
+
+答：在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须按[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically)中所述对新的 URI 执行后续调用。
+
 
 问：如何在编码过程中旋转视频。
 
@@ -58,4 +68,4 @@
 	
 	...
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0328_2016-->

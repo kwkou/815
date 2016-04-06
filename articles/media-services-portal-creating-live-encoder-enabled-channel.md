@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/03/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="03/08/2016"
+	wacn.date="04/05/2016"/>
 
 
 #使用 Azure 管理门户可创建通道，以执行从单比特率到多比特率流的实时编码
@@ -131,7 +131,7 @@
 
 ![standard3][standard3]
 
-在**“创建频道”**页上，可以定义允许将视频发布到此频道的 IP 地址。允许的 IP 地址可以指定为单个 IP 地址（例如 ‘10.0.0.1’）或指定为使用一个 IP 地址和 CIDR 子网掩码的 IP 范围（例如 ‘10.0.0.1/22’）或指定为使用一个 IP 地址和点分十进制子网掩码的 IP 范围（例如 ‘10.0.0.1(255.255.252.0)’）。
+在**“创建频道”**页上，可以定义允许将视频发布到此频道的 IP 地址。允许的 IP 地址可以指定为单个 IP 地址（例如“10.0.0.1”）、使用一个 IP 地址和 CIDR 子网掩码的 IP 范围（例如“10.0.0.1/22”），或使用一个 IP 地址和点分十进制子网掩码的 IP 范围（例如“10.0.0.1(255.255.252.0)”）。
 
 如果未指定 IP 地址并且没有规则定义，则不会允许任何 IP 地址。若要允许任何 IP 地址，请创建一个规则并设置 0.0.0.0/0。
 
@@ -261,5 +261,4 @@
 [standard3]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard3.png
 [standard4]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard4.png
 [standard5]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard_encode.png
-
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0328_2016-->

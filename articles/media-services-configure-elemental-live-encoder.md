@@ -9,17 +9,17 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="10/15/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="02/17/2016"
+	wacn.date="04/05/2016"/>
 
-#使用 Elemental Live 编码器发送单比特率实时流 
+#使用 Elemental Live 编码器发送单比特率实时流
 
 > [AZURE.SELECTOR]
 - [Elemental Live](/documentation/articles/media-services-configure-elemental-live-encoder)
 - [Tricaster](/documentation/articles/media-services-configure-tricaster-live-encoder)
 - [Wirecast](/documentation/articles/media-services-configure-wirecast-live-encoder)
 - [FMLE](/documentation/articles/media-services-configure-fmle-live-encoder)
-  
+
 本主题说明了如何配置 [Elemental Live](http://www.elementaltechnologies.com/products/elemental-live) 编码器，以便将单比特率流发送到 AMS 频道进行实时编码。有关详细信息，请参阅[使用能够通过 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
 
 本教程演示了如何通过 Azure 媒体服务浏览器 (AMSE) 工具管理 Azure 媒体服务 (AMS)。此工具仅在 Windows 电脑上运行。如果你使用的是 Mac 或 Linux，则可使用 Azure 管理门户创建[频道](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel#create-a-channel)和[节目](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program)。
@@ -28,15 +28,15 @@
 
 - 必须具有实践知识，了解如何使用 Elemental Live Web 界面来创建实时事件。
 - [创建 Azure 媒体服务帐户](/documentation/articles/media-services-create-account)
-- 确保在运行流式处理终结点时，至少为其分配了一个流式处理单元。有关详细信息，请参阅[在媒体服务帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins) 
+- 确保在运行流式处理终结点时，至少为其分配了一个流式处理单元。有关详细信息，请参阅[在媒体服务帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins)
 
 - 安装最新版本的 [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer) 工具。
 - 启动该工具并连接到你的 AMS 帐户。
 
 ##提示
 
-- 尽可能使用硬编码的 Internet 连接。 
-- 在确定带宽要求时，可以认为它就是将流式处理比特率翻倍。虽然此要求不是强制性要求，但它可以减轻网络拥塞的影响。  
+- 尽可能使用硬编码的 Internet 连接。
+- 在确定带宽要求时，可以认为它就是将流式处理比特率翻倍。虽然此要求不是强制性要求，但它可以减轻网络拥塞的影响。
 - 使用基于软件的编码器时，请关闭任何不需要的程序。
 
 ## 带 RTP 引入的 Elemental Live
@@ -45,9 +45,9 @@
 
 ### 创建通道
 
-1.  在 AMSE 工具中，导航到“实时”选项卡，然后右键单击频道区域。从菜单中选择“创建频道…”。  
+1.  在 AMSE 工具中，导航到“实时”选项卡，然后右键单击频道区域。从菜单中选择“创建频道…”。
 
-	![Elemental](./media/media-services-elemental-live-encoder/media-services-elemental1.png)
+![Elemental](./media/media-services-elemental-live-encoder/media-services-elemental1.png)
 
 2. 指定频道名称，说明字段为可选字段。在“频道设置”下针对“实时编码”选项选择“标准”，将“输入协议”设置为“RTP (MPEG-TS)”。所有其他设置可保留原样。
 
@@ -92,7 +92,7 @@
 	
 	![Elemental](./media/media-services-elemental-live-encoder/media-services-elemental13.png)
 	
-	>[AZURE.NOTE]建议将 Elemental 事件的时间代码设置为“系统时钟”，方便编码器在出现流故障时重新进行连接。
+	>[AZURE.NOTE] 建议将 Elemental 事件的时间代码设置为“系统时钟”，方便编码器在出现流故障时重新进行连接。
 
 4. 由于已创建输出，因此此时可单击“添加流”。现在可以配置输出设置。
 5. 向下滚动到刚创建的“流 1”，单击左侧的“视频”选项卡，展开“高级”设置部分。 
@@ -126,7 +126,7 @@
 	
 7. 单击“创建”（如果已创建新事件）或“更新”（如果要编辑现有事件），然后开始启动编码器。
 
->[AZURE.IMPORTANT]在 Elemental Live Web 界面上单击“启动”之前，**必须**确保频道已就绪。另外，请确保不要让频道在没有一个事件的情况下处于就绪状态的时间超出 15 分钟。
+>[AZURE.IMPORTANT] 在 Elemental Live Web 界面上单击“启动”之前，**必须**确保频道已就绪。另外，请确保不要让频道在没有一个事件的情况下处于就绪状态的时间超出 15 分钟。
 
 在流运行 30 秒以后，导航回 AMSE 工具并测试播放情况。
 
@@ -138,7 +138,7 @@
 
 如果流出现在播放器中，则编码器已正确配置，可以连接到 AMS。
 
-如果收到错误，则需重置频道并调整编码器设置。
+如果收到错误，则需重置频道并调整编码器设置。请参阅[故障排除](/documentation/articles/media-services-troubleshooting-live-streaming)主题以获取相关指导。
 
 ###创建节目
 
@@ -157,4 +157,9 @@
 
 现在可以将流嵌入到播放器中，也可将其分发给受众进行实时观看。
 
-<!---HONumber=79-->
+## 故障排除
+
+请参阅[故障排除](/documentation/articles/media-services-troubleshooting-live-streaming)主题以获取相关指导。
+
+
+<!---HONumber=Mooncake_0328_2016-->

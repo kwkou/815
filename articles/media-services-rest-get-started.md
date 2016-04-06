@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="01/28/2016" 
-	wacn.date="03/28/2016"/>
+ 	ms.date="03/01/2016" 
+	wacn.date="04/05/2016"/>
 
 #开始使用 REST API 按需传送内容
 
@@ -44,7 +44,7 @@
 
 ## <a id="create_ams"></a>使用门户创建媒体服务帐户
 
-1. 在[管理门户][]中，依次单击“新建”、“媒体服务”和“快速创建”。
+1. 在 [Azure 管理门户][]中，依次单击“新建”、“媒体服务”和“快速创建”。
    
 	![媒体服务快速创建](./media/media-services-rest-get-started/wams-QuickCreate.png)
 
@@ -77,11 +77,9 @@
 以下步骤描述了在使用媒体服务 REST API 连接到媒体服务时运用的最常见工作流：
 
 1. 获取访问令牌。 
-2. 连接到媒体服务 URI。 
-	
-	>[AZURE.NOTE]在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。你必须对这个新 URI 进行后续调用。
-	> 
-	> 你还可能会收到包含 ODATA API 元数据说明的 HTTP/1.1 200 响应。
+2. 连接到媒体服务 URI。  
+
+	请记住，在成功连接到 https://media.chinacloudapi.cn 之后， 你将接收到指定另一个媒体服务 URI 的 301 重定向。你必须对这个新 URI 进行后续调用。你还可能会收到包含 ODATA API 元数据说明的 HTTP/1.1 200 响应。
 3. 将后续 API 调用发布到新的 URL。 
 	
 	例如，如果在尝试连接后收到以下消息：
@@ -364,7 +362,7 @@
 	
 	{"Name":"NewUploadPolicy", "DurationInMinutes":"440", "Permissions":"2"} 
 
-**HTTP 请求**
+**HTTP 响应**
 
 	If successful, the following response is returned:
 	
@@ -496,7 +494,8 @@ SAS URL 采用以下格式：
 
 **HTTP 响应**
 
-如果成功，将返回以下响应：HTTP/1.1 204 无内容
+如果成功，将返回以下响应：
+	HTTP/1.1 204 无内容
 
 ## 删除定位符和 AccessPolicy 
 
@@ -679,7 +678,7 @@ SAS URL 采用以下格式：
 
 **HTTP 请求**
 
-	GET https://wamsbayclus001rest-hs.chinacloudapp.cn/api/MediaProcessors()?$filter=Name%20eq%20'Azure%20Media%20Encoder' HTTP/1.1
+	GET https://wamsbayclus001rest-hs.chinacloudapp.cn/api/MediaProcessors()?$filter=Name%20eq%20'Media%20Encoder%20Standard' HTTP/1.1
 	DataServiceVersion: 1.0;NetFx
 	MaxDataServiceVersion: 3.0;NetFx
 	Accept: application/json
@@ -709,8 +708,8 @@ SAS URL 采用以下格式：
 	   "value":[  
 	      {  
 	         "Id":"nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56",
-	         "Description":"Azure Media Encoder",
-	         "Name":"Azure Media Encoder",
+	         "Description":"Media Encoder Standard",
+	         "Name":"Media Encoder Standard",
 	         "Sku":"",
 	         "Vendor":"Microsoft",
 	         "Version":"1.1"
@@ -722,7 +721,7 @@ SAS URL 采用以下格式：
 
 每个作业可以有一个或多个任务，具体因要完成的处理类型而异。REST API 允许你通过以下两种方式之一创建作业及相关任务：可以通过作业实体上的任务导航属性以内联方式定义任务，或通过 OData 批处理来定义任务。媒体服务 SDK 使用批处理，但为了确保本主题中代码示例的可读性，将以内联方式定义任务。有关批处理的信息，请参阅[开放数据协议 (OData) 批处理](http://www.odata.org/documentation/odata-version-3-0/batch-processing/)。
 
-以下示例说明了如何使用一个任务集来创建和发布一个作业，从而以特定分辨率和质量来编码某个视频。以下文档部分包含 Azure 媒体处理器支持的所有[任务预设](http://msdn.microsoft.com/zh-cn/library/azure/dn619392.aspx)的列表。
+以下示例说明了如何使用一个任务集来创建和发布一个作业，从而以特定分辨率和质量来编码某个视频。以下文档部分包含媒体编码器标准版处理器支持的所有[任务预设](http://msdn.microsoft.com/zh-cn/library/mt269960)的列表。
 
 **HTTP 请求**
 	
@@ -1080,7 +1079,7 @@ MPEG DASH 的流 URL 采用以下格式：
 
 设置 AccessPolicy 和定位符后，可以使用 Azure 存储 REST API 下载文件。
 
->[AZURE.NOTE]必须将要下载的文件的文件名添加到在上一部分收到的 Locator **Path** 值中。例如，https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-e7b02da4-5a69-40e7-a8db-e8f4f697aac0/BigBuckBunny.mp4? . . .
+>[AZURE.NOTE] 必须将要下载的文件的文件名添加到在上一部分收到的 Locator **Path** 值中。例如，https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-e7b02da4-5a69-40e7-a8db-e8f4f697aac0/BigBuckBunny.mp4? . . .
 
 有关使用 Azure 存储 blob 的详细信息，请参阅 [Blob 服务 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx)。
 
@@ -1183,16 +1182,15 @@ MPEG DASH 的流 URL 采用以下格式：
 若要测试渐进式下载，请将 URL 粘贴到浏览器（例如 IE、Chrome、Safari）中。
 
 
-##其他资源
-- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure 媒体服务 101 - 立即在线获取你的视频！</a>
-- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-102-Dynamic-Packaging-and-Mobile-Devices">Azure 媒体服务 102 - 动态打包和移动设备</a>
+
+
 
 
 
 <!-- URLs. -->
-  [管理门户]: http://manage.windowsazure.cn/
+  [Azure 管理门户]: http://manage.windowsazure.cn/
 
 
 
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0328_2016-->

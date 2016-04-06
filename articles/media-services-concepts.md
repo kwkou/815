@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/02/2016" 
-	wacn.date="03/17/2016"/>
+	ms.date="02/25/2016" 
+	wacn.date="04/05/2016"/>
 
 #Azure 媒体服务概念 
 
@@ -81,19 +81,23 @@
 
 作业包含有关要执行的处理的元数据。每个作业包含一个或多个[任务](https://msdn.microsoft.com/zh-cn/library/azure/hh974286.aspx)，这些任务指定一个原子处理任务、该任务的输入资产和输出资产、一个媒体处理器及其关联的设置。作业中的各个任务可连接在一起，其中一个任务的输出资产指定为下一任务的输入资产。因此，一个作业可以包含播放媒体所必需的全部处理过程。
 
-##<a id="encoding"></a>编码\\打包
+##<a id="encoding"></a>编码
 
-###编码
+Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项。
 
-要通过 Internet 传送数字视频，你必须对媒体进行压缩。数字视频文件相当大，可能因过大而无法通过 Internet 传送或者无法在你客户的设备上正常显示。人们会使用从带机顶盒的电视、台式电脑到平板电脑和智能手机的各种设备观看视频。其中每个设备对带宽和压缩的要求都各不相同。编码是使用压缩程序/解压缩程序或编解码器压缩视频和音频的过程。
+一开始使用媒体服务时，了解编解码器与文件格式之间的区别很重要。编解码器是实现压缩/解压缩算法的软件，而文件格式是用于保存压缩视频的容器。
 
-转码是获取已编码的视频并将其重新编码为其他编码格式的过程。由于大多数相机都在某种程度上对视频进行编码，因此，在 Azure 媒体服务上完成的大多数编码工作从技术上讲都是转码。
+媒体服务所提供的动态打包可让你以媒体服务支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
 
-###编解码器和文件格式 
+若要使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)，必须执行下列操作：
 
-编解码器有两个组件：一个用于压缩数字媒体文件进行传输，另一个用于解压缩数字媒体文件进行播放。有音频编解码器（用于压缩和解压缩音频）和视频编解码器（用于压缩和解压缩视频）。编解码器可以使用无损压缩或有损压缩。无损编解码器在进行压缩时会保留全部信息。文件解压缩后，得到的文件与输入媒体相同，因此无损编解码器非常适用于存档和存储。有损编解码器在编码时会丢失部分信息，可通过牺牲视频质量生成比原始文件小的文件，因此非常适用于在 Internet 上进行流式传输。Azure Media Encoder 主要使用以下两款编解码器来进行编码：H.264 和 VC-1。我们的合作伙伴编码器生态系统中可能还提供了其他编解码器。
+- 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。
+- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints/)。
 
-###媒体服务编码器
+媒体服务支持将在本文中介绍的以下按需编码器：
+
+- [媒体编码器标准版](/documentation/articles/media-services-encode-asset#media-encoder-standard)
+
 
 有关受支持的编码器的信息，请参阅[编码器](/documentation/articles/media-services-encode-asset)。
 
@@ -238,4 +242,5 @@ StreamingEndpoint 表示一个流服务，该服务可以直接将内容传递�
 
 		http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=f4m-f4f) 
 
-<!---HONumber=Mooncake_0307_2016-->
+
+<!---HONumber=Mooncake_0328_2016-->
