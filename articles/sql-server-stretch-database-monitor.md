@@ -35,9 +35,9 @@
 
 -   在动态管理视图 **sys.dm\_db\_rda\_migration\_status** 中检查最新批的状态。如果发生错误，请检查该批的 error\_number、 error\_state 和 error\_severity 值。
 
-    -   有关该视图的详细信息，请参阅 [sys.dm\_db\_rda\_migration\_status (Transact-SQL)](https://msdn.microsoft.com/library/dn935017.aspx)。
+    -   有关该视图的详细信息，请参阅 [sys.dm\_db\_rda\_migration\_status (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/dn935017.aspx)。
 
-    -   有关 SQL Server 错误消息内容的详细信息，请参阅 [sys.messages (Transact-SQL)](https://msdn.microsoft.com/library/ms187382.aspx)。
+    -   有关 SQL Server 错误消息内容的详细信息，请参阅 [sys.messages (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms187382.aspx)。
 
 ## 另请参阅
 [SQL Server Stretch Database的管理和故障排除](/documentation/articles/sql-server-stretch-database-manage)

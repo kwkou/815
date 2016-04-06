@@ -52,7 +52,7 @@
     > [!IMPORTANT]
     > 如果提供的筛选器谓词性能不佳，则数据迁移的性能也会不佳。SQL Server Stretch Database将使用 CROSS APPLY 运算符对表应用筛选器谓词。
 
-    在 CTP 3.1 到 RC0 版本中，此选项在“为数据库启用延伸”向导中不可用。必须将 ALTER TABLE 语句与此选项结合使用才能为SQL Server Stretch Database配置表。有关详细信息，请参阅 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/library/ms190273.aspx)。
+    在 CTP 3.1 到 RC0 版本中，此选项在“为数据库启用延伸”向导中不可用。必须将 ALTER TABLE 语句与此选项结合使用才能为SQL Server Stretch Database配置表。有关详细信息，请参阅 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms190273.aspx)。
 
 2.  指定 `MIGRATION_STATE = OUTBOUND` 立即开始数据迁移，或指定 `MIGRATION_STATE = PAUSED` 推迟数据迁移的开始时间。
 
