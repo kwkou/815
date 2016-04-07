@@ -1,6 +1,6 @@
 <properties
    pageTitle="使用事务复制迁移到 SQL 数据库"
-   description="Azure SQL 数据库, 数据库迁移, 导入数据库, 事务复制"
+   description="Azure SQL 数据库，数据库迁移，导入数据库，事务复制"
    services="sql-database"
    documentationCenter=""
    authors="carlrabeler"
@@ -9,12 +9,12 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="12/17/2015"
-   wacn.date="01/15/2016"/>
+   ms.date="03/14/2016"
+   wacn.date="04/06/2016"/>
 
 # 使用事务复制将 SQL Server 数据库迁移到 SQL 数据库
 
-如果在迁移发生时你无法承受从实际运行中删除 SQL Server 数据库，可以使用 SQL Server 事务复制作为迁移解决方案。使用事务复制，开始迁移和完成迁移之间发生的数据或架构的所有更改都出现在 Azure SQL 数据库中。迁移完成后，你只需要更改应用程序的连接字符串，将其指向 Azure SQL 数据库，而不是指向本地数据库。一旦事务复制清空保留在本地数据库中的任何更改，并且所有应用程序指向 Azure DB，你就可以安全地卸载复制，使 Azure SQL 数据库作为生产系统。
+如果在发生迁移时你无法承受从生产中删除 SQL Server 数据库的后果，可以使用 SQL Server 事务复制作为你的迁移解决方案。使用事务复制，开始迁移和完成迁移之间发生的数据或架构的所有更改都出现在 Azure SQL 数据库中。迁移完成后，你只需要更改应用程序的连接字符串，将其指向 Azure SQL 数据库，而不是指向本地数据库。一旦事务复制清空保留在本地数据库中的任何更改，并且所有应用程序指向 Azure DB，你就可以安全地卸载复制，使 Azure SQL 数据库作为生产系统。
 
  ![SeedCloudTR 示意图](./media/sql-database-cloud-migrate/SeedCloudTR.png)
 
@@ -29,4 +29,4 @@
 
 还可以使用事务复制来迁移本地数据库的子集。复制到 Azure SQL 数据库的发布可以限制为复制的数据库中表的子集。此外，对于所复制的每一个表，可以将数据限制为行的子集和/或列的子集。
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0328_2016-->

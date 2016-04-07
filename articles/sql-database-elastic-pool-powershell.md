@@ -1,8 +1,8 @@
 <properties 
     pageTitle="使用弹性数据库池向外缩放资源 | Azure" 
     description="了解如何通过创建弹性数据库池，使用 PowerShell 向外缩放 Azure SQL 数据库资源以管理多个数据库。" 
-	keywords="多个数据库,向外缩放"    
-	services="sql-database" 
+    keywords="多个数据库,向外缩放"    
+    services="sql-database" 
     documentationCenter="" 
     authors="stevestein" 
     manager="jeffreyg" 
@@ -10,8 +10,8 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="12/01/2015"
-    wacn.date="03/18/2016"/>
+    ms.date="02/23/2016"
+    wacn.date="04/06/2016"/>
 
 # 使用 PowerShell 创建弹性数据库池以便向外缩放多个 SQL 数据库的资源 
 
@@ -19,9 +19,9 @@
 - [C#](/documentation/articles/sql-database-elastic-pool-csharp)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell)
 
-了解如何使用 PowerShell cmdlet 通过[创建弹性数据库池](/documentation/articles/sql-database-elastic-pool)来管理多个数据库。
+了解如何通过使用 PowerShell cmdlet 创建[弹性数据库池](/documentation/articles/sql-database-elastic-pool)来管理多个数据库。
 
-> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server)。
+> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-portal)。
 
 弹性数据库池允许你向外缩放数据库资源和跨多个 SQL 数据库进行管理。
 
@@ -42,7 +42,7 @@
 
 现在，你已经运行 Azure 资源管理器模块，因此可以访问创建和配置弹性数据库池所需的所有 cmdlet。首先，你必须能够访问 Azure 帐户。运行以下项目，然后就会出现一个要求你输入凭据的登录屏幕。使用登录 Azure 门户时所用的相同电子邮件和密码。
 
-	Add-AzureRmAccount -EnvironmentName AzureChinaCloud
+	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
 
@@ -56,7 +56,7 @@
 
 ## 创建资源组、服务器和防火墙规则
 
-现在，你已经有了针对 Azure 订阅运行 cmdlet 所需的访问权限，因此下一步是建立一个资源组，其中包含创建弹性数据库池（包含多个数据库）所需的服务器。你可以编辑下一个命令，以便使用所选择的有效位置。运行 **(Get-AzureRmLocation | where-object {$\_.Name -eq "Microsoft.Sql/servers" }).Locations**，以便获取有效位置的列表。
+现在，你已经有了针对 Azure 订阅运行 cmdlet 所需的访问权限，因此下一步是建立一个资源组，其中包含创建弹性数据库池（包含多个数据库）所需的服务器。你可以编辑下一个命令，以便使用所选择的有效位置。运行 **(Get-AzureRmLocation | where-object {$\_.Name -eq "Microsoft.Sql/servers" }).Locations** 以获取有效位置的列表。
 
 如果你已经有了一个资源组，则可转到下一步，也可运行以下命令来创建新的资源组：
 
@@ -94,7 +94,7 @@
 
 在上一步创建的池是空的，里面没有弹性数据库。以下部分说明如何在池中创建新的弹性数据库，以及如何将现有数据库添加到池中。
 
-*创建池后，你还可以使用 Transact-SQL 在该池中创建新的弹性数据库，以及将现有数据库移入和移出池。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL)。*
+创建池后，你还可以使用 Transact-SQL 在该池中创建新的弹性数据库，以及将现有数据库移入和移出池。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL)。
 
 ### 在弹性数据库池中创建新的弹性数据库
 
@@ -232,4 +232,4 @@
 
 有关弹性数据库和弹性数据库池的详细信息，包括 API 和错误详细信息，请参阅[弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference)。
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0328_2016-->

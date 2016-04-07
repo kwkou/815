@@ -10,20 +10,14 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/17/2015"
-	wacn.date="01/15/2016"/>
+	ms.date="03/14/2016"
+	wacn.date="04/06/2016"/>
 
 
 # 在 Windows上使用 Node.js 连接到 SQL 数据库
 
 
-> [AZURE.SELECTOR]
-- [C#](/documentation/articles/sql-database-develop-dotnet-simple)
-- [PHP](/documentation/articles/sql-database-develop-php-simple-windows)
-- [Python](/documentation/articles/sql-database-develop-python-simple-windows)
-- [Ruby](/documentation/articles/sql-database-develop-ruby-simple-windows)
-- [Java](/documentation/articles/sql-database-develop-java-simple-windows)
-- [Node.js](/documentation/articles/sql-database-develop-nodejs-simple-windows)
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 本主题演示了一个可以用来连接到 Azure SQL 数据库的 Node.js 代码示例。该 Node.js 程序在 Windows 客户端计算机上运行。若要管理连接，请使用 msnodesql 驱动程序。
@@ -35,21 +29,19 @@
 你的客户端开发计算机上必须存在以下软件项。
 
 
--  Node.js – [版本 0.8.9（32 位版本）](http://blog.nodejs.org/2012/09/11/node-v0-8-9-stable)。滚动页面，然后单击 32 位 x86 Windows 安装程序（而不是 64 位 Windows x64 安装程序）对应的“下载”链接。
-- [Python 2.7.6](https://www.python.org/download/releases/2.7.6) - 适用于 x86 或 x64 的安装程序。
-- [Visual C++ 2010](https://app.vssps.visualstudio.com/profile/review?download=true&family=VisualStudioCExpress&release=VisualStudio2010&type=web&slcid=0x409&context=eyJwZSI6MSwicGMiOjEsImljIjoxLCJhbyI6MCwiYW0iOjEsIm9wIjpudWxsLCJhZCI6bnVsbCwiZmEiOjAsImF1IjpudWxsLCJjdiI6OTY4OTg2MzU1LCJmcyI6MCwic3UiOjAsImVyIjoxfQ2) - 可从 Microsoft 下载免费的 Express 版本。
-- SQL Server Native Client 11.0 - 在 [SQL Server 2012 Feature Pack](http://www.microsoft.com/zh-cn/download/details.aspx?id=29065) 中作为 Microsoft SQL Server 2012 Native Client 提供。
+-  [Node.js](https://nodejs.org/en/download) - 单击 Windows 安装程序并下载合适的 msi 安装程序。下载后运行 msi 安装 Node.js
 
 
 ### 安装所需的模块
 
-满足这些要求后，请确保在 Node.js 版本 0.8.9 上操作。可以在命令行终端上使用以下命令来检查是否使用了此版本：node -v。
-<br>在 **cmd.exe** 命令行窗口中，导航到项目目录 - 例如 C:\\NodeJSSQLProject。按照显示的顺序输入以下命令。
+使用 **node** 配置计算机之后，打开 cmd.exe，并导航到要在其中创建 Node.js 项目的目录，然后输入以下命令。
+
 
 	npm init
-	npm install msnodesql
+	npm install tedious
 
-接下来，请导航到 node\_modules\\msnodesql 文件夹并运行 **msnodesql-0.2.1-v0.8-ia32** 可执行文件。遵循安装向导中的步骤操作，并在完成后单击“完成”。此时，应已安装 Node.js SQL Server 驱动程序。遵循后续步骤来获取连接字符串，然后，你应能从 Node.js 应用程序连接到 Azure SQL 数据库。
+
+**npm init** 将创建节点项目。若要在项目创建期间保留默认值，请一直按 Enter，直到创建了项目。现在，项目目录中会出现 **package.json** 文件。
 
 
 ### SQL 数据库
@@ -63,172 +55,114 @@
 
 ## 步骤 2：连接
 
+[new Connection](http://pekim.github.io/tedious/api-connection.html) 函数用于连接到 SQL 数据库。
 
-- 将以下代码复制到项目目录中的某个 .js 文件。
-
-
-		var http = require('http');
-		var sql = require('msnodesql');
-		var http = require('http');
-		var fs = require('fs');
-		var useTrustedConnection = false;
-		var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.chinacloudapi.cn;" +
-		(useTrustedConnection == true ? "Trusted_Connection={Yes};" : "UID=yourusername;PWD=yourpassword;") +
-		"Database={AdventureWorks};"
-		sql.open(conn_str, function (err, conn) {
-		    if (err) {
-		        console.log("Error opening the connection!");
-		        return;
-		    }
-		    else
-		        console.log("Successfuly connected");
-		});
-
-
-- 现在，请通过发出以下命令运行该 .js 文件。
-
-
-		node index.js
+	var Connection = require('tedious').Connection;
+	var config = {
+		userName: 'yourusername',
+		password: 'yourpassword',
+		server: 'yourserver.database.chinacloudapi.cn',
+		// If you are on Azure, you need this:
+		options: {encrypt: true, database: 'AdventureWorks'}
+	};
+	var connection = new Connection(config);
+	connection.on('connect', function(err) {
+	// If no error, then good to proceed.
+		console.log("Connected");
+	});
 
 
 ## 步骤 3：执行查询
 
 
-	var http = require('http');
-	var sql = require('msnodesql');
-	var http = require('http');
-	var fs = require('fs');
-	var useTrustedConnection = false;
-	var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.chinacloudapi.cn;" +
-	(useTrustedConnection == true ? "Trusted_Connection={Yes};" : "UID=yourusername;PWD=yourpassword;") +
-	"Database={AdventureWorks};"
-	sql.open(conn_str, function (err, conn) {
-	    if (err) {
-	        console.log("Error opening the connection!");
-	        return;
-	    }
-	    else
-	        console.log("Successfuly connected");
+所有 SQL 语句都是使用 [new Request()](http://pekim.github.io/tedious/api-request.html) 函数执行的。如果语句返回了行（例如 SELECT 语句），则你可以使用 [request.on()](http://pekim.github.io/tedious/api-request.html) 函数检索这些行。如果未返回行，[request.on()](http://pekim.github.io/tedious/api-request.html) 函数将返回空列表。
 
 
-	    conn.queryRaw("SELECT c.CustomerID, c.CompanyName,COUNT(soh.SalesOrderID) AS OrderCount FROM SalesLT.Customer AS c LEFT OUTER JOIN SalesLT.SalesOrderHeader AS soh ON c.CustomerID = soh.CustomerID GROUP BY c.CustomerID, c.CompanyName ORDER BY OrderCount DESC;", function (err, results) {
-	        if (err) {
-	            console.log("Error running query1!");
-	            return;
-	        }
-	        for (var i = 0; i < results.rows.length; i++) {
-	            console.log(results.rows[i]);
-	        }
-	    });
+	var Connection = require('tedious').Connection;
+	var config = {
+		userName: 'yourusername',
+		password: 'yourpassword',
+		server: 'yourserver.database.chinacloudapi.cn',
+		// When you connect to Azure SQL Database, you need these next options.
+		options: {encrypt: true, database: 'AdventureWorks'}
+	};
+	var connection = new Connection(config);
+	connection.on('connect', function(err) {
+		// If no error, then good to proceed.
+		console.log("Connected");
+		executeStatement();
 	});
+
+	var Request = require('tedious').Request;
+	var TYPES = require('tedious').TYPES;
+
+	function executeStatement() {
+		request = new Request("SELECT c.CustomerID, c.CompanyName,COUNT(soh.SalesOrderID) AS OrderCount FROM SalesLT.Customer AS c LEFT OUTER JOIN SalesLT.SalesOrderHeader AS soh ON c.CustomerID = soh.CustomerID GROUP BY c.CustomerID, c.CompanyName ORDER BY OrderCount DESC;", function(err) {
+	  	if (err) {
+	   		console.log(err);}
+		});
+		var result = "";
+		request.on('row', function(columns) {
+		    columns.forEach(function(column) {
+		      if (column.value === null) {
+		        console.log('NULL');
+		      } else {
+		        result+= column.value + " ";
+		      }
+		    });
+		    console.log(result);
+		    result ="";
+		});
+
+		request.on('done', function(rowCount, more) {
+		console.log(rowCount + ' rows returned');
+		});
+		connection.execSql(request);
+	}
 
 
 ## 步骤 4：插入行
 
-
-	var http = require('http');
-	var sql = require('msnodesql');
-	var http = require('http');
-	var fs = require('fs');
-	var useTrustedConnection = false;
-	var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.chinacloudapi.cn;" +
-	(useTrustedConnection == true ? "Trusted_Connection={Yes};" : "UID=yourusername;PWD=yourpassword;") +
-	"Database={AdventureWorks};"
-	sql.open(conn_str, function (err, conn) {
-	    if (err) {
-	        console.log("Error opening the connection!");
-	        return;
-	    }
-	    else
-	        console.log("Successfuly connected");
+在本示例中，你将了解如何安全地执行 [INSERT](https://msdn.microsoft.com/zh-cn/library/ms174335.aspx) 语句，传递参数以保护应用程序免遭 [SQL 注入](https://technet.microsoft.com/zh-cn/library/ms161953(v=sql.105).aspx) 漏洞的危害，然后检索自动生成的[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。
 
 
-	    conn.queryRaw("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server Express', 'SQLEXPRESS', 0, 0, CURRENT_TIMESTAMP)", function (err, results) {
-	        if (err) {
-	            console.log("Error running query!");
-	            return;
-	        }
-	        for (var i = 0; i < results.rows.length; i++) {
-	            console.log("Product ID Inserted : "+results.rows[i]);
-	        }
-	    });
+	var Connection = require('tedious').Connection;
+	var config = {
+		userName: 'yourusername',
+		password: 'yourpassword',
+		server: 'yourserver.database.chinacloudapi.cn',
+		// If you are on Azure SQL Database, you need these next options.
+		options: {encrypt: true, database: 'AdventureWorks'}
+	};
+	var connection = new Connection(config);
+	connection.on('connect', function(err) {
+		// If no error, then good to proceed.
+		console.log("Connected");
+		executeStatement1();
 	});
 
+	var Request = require('tedious').Request
+	var TYPES = require('tedious').TYPES;
 
-## 步骤 5：回退事务
+	function executeStatement1() {
+		request = new Request("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES (@Name, @Number, @Cost, @Price, CURRENT_TIMESTAMP);", function(err) {
+		 if (err) {
+		 	console.log(err);}
+		});
+		request.addParameter('Name', TYPES.NVarChar,'SQL Server Express 2014');
+		request.addParameter('Number', TYPES.NVarChar , 'SQLEXPRESS2014');
+		request.addParameter('Cost', TYPES.Int, 11);
+		request.addParameter('Price', TYPES.Int,11);
+		request.on('row', function(columns) {
+		    columns.forEach(function(column) {
+		      if (column.value === null) {
+		        console.log('NULL');
+		      } else {
+		        console.log("Product id of inserted item is " + column.value);
+		      }
+		    });
+		});		
+		connection.execSql(request);
+	}
 
-
-方法 **conn.beginTransactions** 在 Azure SQL 数据库中不起作用。请遵循代码示例在 SQL 数据库中执行事务。
-
-
-	var http = require('http');
-	var sql = require('msnodesql');
-	var http = require('http');
-	var fs = require('fs');
-	var useTrustedConnection = false;
-	var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.chinacloudapi.cn;" +
-	(useTrustedConnection == true ? "Trusted_Connection={Yes};" : "UID=yourusername;PWD=yourpassword;") +
-	"Database={AdventureWorks};"
-	sql.open(conn_str, function (err, conn) {
-	    if (err) {
-	        console.log("Error opening the connection!");
-	        return;
-	    }
-	    else
-	        console.log("Successfuly connected");
-
-
-	    conn.queryRaw("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server Express New ', 'SQLEXPRESS New', 1, 1, CURRENT_TIMESTAMP)", function (err, results) {
-	        if (err) {
-	            console.log("Error running query!");
-	            return;
-	        }
-	        for (var i = 0; i < results.rows.length; i++) {
-	            console.log("Product ID Inserted : "+results.rows[i]);
-	        }
-	    });
-
-	    conn.queryRaw("ROLLBACK TRANSACTION; ", function (err, results) {
-            	if (err) {
-        		console.log("Rollback failed");
-        		return;
-        	}
-    	    });
-	});
-
-
-## 步骤 6：存储过程
-
-要正常运行此代码示例，必须事先准备或创建一个不输入任何参数的存储过程。可以使用 SQL Server Management Studio (SSMS.exe) 等工具创建存储过程。
-
-
-	var http = require('http');
-	var sql = require('msnodesql');
-	var http = require('http');
-	var fs = require('fs');
-	var useTrustedConnection = false;
-	var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.chinacloudapi.cn;" +
-	(useTrustedConnection == true ? "Trusted_Connection={Yes};" : "UID=yourusername;PWD=yourpassword;") +
-	"Database={AdventureWorks};"
-	sql.open(conn_str, function (err, conn) {
-	    if (err) {
-	        console.log("Error opening the connection!");
-	        return;
-	    }
-	    else
-	        console.log("Successfuly connected");
-
-	    conn.query("exec NameOfStoredProcedure", function (err, results) {
-	    	if (err) {
-			console.log("Error running query8!");
-			return;
-		}
-	    });
-	});
-
-
-## 后续步骤
-
-有关详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs)。
-
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0328_2016-->

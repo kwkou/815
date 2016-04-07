@@ -9,15 +9,15 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="12/01/2015" 
-	wacn.date="01/15/2016"/>
+	ms.date="02/23/2016" 
+	wacn.date="04/06/2016"/>
 
 # 使用 PowerShell 管理 Azure SQL 数据库
 
 
 > [AZURE.SELECTOR]
 - [Azure 门户](/documentation/articles/sql-database-manage-portal)
-- [Transact-SQL (SSMS)](/documentation/articles/sql-database-manage-azure-ssms)
+- [事务 - SQL (SSMS)](/documentation/articles/sql-database-manage-azure-ssms)
 - [PowerShell](/documentation/articles/sql-database-command-line-tools)
 
 本主题提供了用于执行许多 Azure SQL 数据库任务的 PowerShell 命令。
@@ -29,9 +29,9 @@
 
 ## 配置你的凭据
 
-若要针对 Azure 订阅运行 PowerShell cmdlet，必须先与 Azure 帐户建立访问连接。运行以下项目，然后就会出现一个要求你输入凭据的登录屏幕。使用登录 Azure 经典门户时所用的相同电子邮件和密码。
+若要针对 Azure 订阅运行 PowerShell cmdlet，必须先与 Azure 帐户建立访问连接。运行以下项目，然后就会出现一个要求你输入凭据的登录屏幕。使用登录 Azure 管理门户时所用的相同电子邮件和密码。
 
-	Add-AzureAccount -Environment AzureChinaCloud
+	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
 
@@ -74,7 +74,7 @@
 
 	New-AzureRmSqlServerFirewallRule -ResourceGroupName "resourcegroupChinaEast" -ServerName "server12" -FirewallRuleName "clientFirewallRule1" -StartIpAddress "192.168.0.198" -EndIpAddress "192.168.0.199"
 
-有关详细信息，请参阅 [Azure SQL 数据库防火墙](https://msdn.microsoft.com/zh-cn/library/azure/ee621782.aspx)。
+有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)。
 
 ## 创建 SQL 数据库
 
@@ -107,7 +107,7 @@
 如果你要再次创建这些 Azure SQL 资源或类似资源，可以：
 
 - 将这个命令集另存为 PowerShell 脚本文件 (*.ps1)
-- 在 Azure 经典门户的“自动化”部分中，将这个命令集另存为 Azure 自动化 Runbook 
+- 在 Azure 管理门户的“自动化”部分中，将这个命令集另存为 Azure 自动化 Runbook 
 
 ## 后续步骤
 
@@ -123,4 +123,4 @@
 
 - [Azure SQL 数据库 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt574084.aspx)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0328_2016-->

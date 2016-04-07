@@ -1,25 +1,30 @@
 <properties
-	pageTitle="SQL 数据库教程：通过“始终加密”保护敏感数据 | Azure"
+	pageTitle="始终加密 - 使用数据库加密保护 Azure SQL 数据库中的敏感数据"
 	description="在数分钟内保护 SQL 数据库中的敏感数据。"
-	keywords="sql 数据库教程, 加密 sql 数据库中的数据"	
+	keywords="加密数据, sql 加密, 数据库加密, 敏感数据, 始终加密"	
 	services="sql-database"
 	documentationCenter=""
 	authors="stevestein"
-	manager="jeffreyg"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="01/14/2015"
-	wacn.date="02/26/2016"/>
+	ms.date="03/02/2016"
+	wacn.date="04/06/2016"/>
 
-# SQL 数据库教程：通过“始终加密”（Windows 证书存储）保护敏感数据
+# 始终加密 - 使用数据库加密保护 SQL 数据库中的敏感数据并将加密密钥存储在 Windows 证书存储中
+
+> [AZURE.SELECTOR]
+- [Azure 密钥保管库](/documentation/articles/sql-database-always-encrypted-azure-key-vault)
+- [Windows 证书存储](/documentation/articles/sql-database-always-encrypted)
 
 
-始终加密是 Azure SQL 数据库和 SQL Server 中一项新的加密技术，用于保护服务器上的静态敏感数据、在客户端和服务器之间进行移动的敏感数据，以及正在使用中的数据，确保敏感数据永远不会在数据库系统中以明文形式显示。仅客户端应用程序或应用服务器（具有密钥访问权限）能够访问明文数据。有关详细信息，请参阅[始终加密（数据库引擎）](https://msdn.microsoft.com/zh-cn/library/mt163865.aspx)。
+本文演示如何使用 [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/zh-cn/library/hh213248.aspx) 中的[始终加密向导](https://msdn.microsoft.com/zh-cn/library/mt459280.aspx)，通过数据库加密来保护 SQL 数据库中的敏感数据，以及如何将加密密钥存储在 Windows 证书存储中。
 
-本教程演示了如何通过在 SQL 数据库中实现始终加密来确保敏感数据的安全，使用 SQL Server Management Studio (SSMS) 来完成只需数分钟。
+始终加密是 Azure SQL 数据库和 SQL Server 中一项新的数据加密技术，用于保护服务器上的敏感静态数据、在客户端和服务器之间进行移动的敏感数据，以及正在使用中的数据，确保敏感数据永远不会在数据库系统中以明文形式显示。加密数据之后，仅客户端应用程序或应用服务器（具有密钥访问权限）能够访问明文数据。有关详细信息，请参阅[始终加密（数据库引擎）](https://msdn.microsoft.com/zh-cn/library/mt163865.aspx)。
+
 
 将数据库配置为使用始终加密后，我们将通过 Visual Studio 使用 C# 创建一个客户端应用程序，以便处理加密的数据。
 
@@ -46,9 +51,9 @@
 
 
 ## 创建空的 SQL 数据库
-1. 登录到 [Azure 门户](http://manage.windowsazure.cn)。
+1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
 2. 单击“新建”>“数据 + 存储”>“SQL 数据库”。
-3. 在新服务器或现有服务器上创建名为 **Clinic** 的**空**数据库。
+3. 在新服务器或现有服务器上创建名为 **Clinic** 的**空**数据库。如需在 Azure 门户中创建数据库的详细说明，请参阅[在数分钟内创建 SQL 数据库](/documentation/articles/sql-database-get-started)。
 
 你需要在本教程的后面部分用到该连接字符串，因此，在创建数据库以后，请浏览到新的 Clinic 数据库，然后复制连接字符串（你可以随时获取该连接字符串，但我们已经处于门户中，因此很容易复制它）。
 
@@ -58,7 +63,7 @@
 
 ## 使用 SSMS 连接到数据库
 
-打开 SSMS，使用 Clinic 数据库连接到服务器。
+打开 SSMS，连接到包含 Clinic 数据库的服务器。
 
 
 1. 打开 SSMS（单击“连接”>“数据库引擎...”打开“连接到服务器”窗口（如果尚未打开））。
@@ -106,9 +111,9 @@ SSMS 提供了一个向导，可以轻松地配置始终加密，只需为你设
 
     单击“简介”页上的“下一步”打开“列选择”页，在该页中，你可以选择要加密的列、要使用的[加密类型和列加密密钥 (CEK)](https://msdn.microsoft.com/zh-cn/library/mt459280.aspx#Anchor_2)。
 
-    我们需要加密每位患者的 **SSN** 和 **BirthDate** 信息。SSN 列将使用确定性加密，该加密支持相等性查找、联接和分组方式。BirthDate 列将使用随机加密，该加密不支持操作。
+    我们需要加密每位患者的“身份证号”和“出生日期”信息。SSN 列将使用确定性加密，该加密支持相等性查找、联接和分组方式。BirthDate 列将使用随机加密，该加密不支持操作。
 
-    选择 SSN 列的“加密类型”并将其设置为“确定”，将 BirthDate 列设置为“随机”，然后单击“下一步”。
+    选择“身份证号”列的“加密类型”并将其设置为“确定”，将“出生日期”列设置为“随机”，然后单击“下一步”。
 
     ![加密列](./media/sql-database-always-encrypted/column-selection.png)
 
@@ -164,7 +169,7 @@ SSMS 提供了一个向导，可以轻松地配置始终加密，只需为你设
 本节只介绍如何在数据库连接字符串中启用始终加密。在下一节（即“始终加密示例控制台应用程序”）中，你需要实际修改刚创建的控制台应用。
 
 
-若要启用始终加密，你需要将 **Column Encryption Setting** 关键字添加到加密字符串中，并将其设置为 **Enabled**。
+若要启用始终加密，你需要将 **Column Encryption Setting** 关键字添加到连接字符串中，并将其设置为 **Enabled**。
 
 你可以在连接字符串中直接进行该设置，也可以使用 [SqlConnectionStringBuilder](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnectionstringbuilder.aspx) 进行设置。下一节中的示例应用程序演示如何使用 **SqlConnectionStringBuilder**。
 
@@ -488,7 +493,7 @@ SSMS 提供了一个向导，可以轻松地配置始终加密，只需为你设
 
 若要快速查看服务器上的实际数据是否已加密，可以通过 SSMS 对患者数据进行轻松查询（使用当前的连接，其中，列加密设置尚未启用）。
 
-针对 Clinic 数据库运行以下查找：
+针对 Clinic 数据库运行以下查询：
 
     SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
 
@@ -505,7 +510,7 @@ SSMS 提供了一个向导，可以轻松地配置始终加密，只需为你设
 
 	![新建控制台应用程序](./media/sql-database-always-encrypted/ssms-connection-parameter.png)
 
-4. 针对 Clinic 数据库运行以下查找：
+4. 针对 Clinic 数据库运行以下查询：
 
         SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
 
@@ -535,6 +540,6 @@ SSMS 提供了一个向导，可以轻松地配置始终加密，只需为你设
 - [透明数据加密](https://msdn.microsoft.com/zh-cn/library/bb934049.aspx)
 - [SQL Server 加密](https://msdn.microsoft.com/zh-cn/library/bb510663.aspx)
 - [始终加密向导](https://msdn.microsoft.com/zh-cn/library/mt459280.aspx)
-- [始终加密博客](http://blogs.msdn.com/b/sqlsecurity/archive/tags/always%20encrypted)
+- [始终加密博客](http://blogs.msdn.com/b/sqlsecurity/archive/tags/always-encrypted)
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0328_2016-->

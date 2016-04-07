@@ -1,16 +1,16 @@
 <properties
 	pageTitle="弹性数据库拆分/合并工具教程 | Azure"
 	description="使用弹性数据库工具进行拆分与合并"
-	services="sql-database"
+	services="sql-database"  
 	documentationCenter=""
 	authors="sidneyh"
-	manager="jeffreyg"
+	manager="jhubbard"
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/01/2015"
-	wacn.date="01/29/2016" />
+	ms.date="02/23/2016"
+	wacn.date="04/06/2016" />
 
 # 弹性数据库拆分/合并工具教程
 
@@ -38,9 +38,9 @@
 
 ### 拆分/合并服务配置
 
-1. 在你下载拆分/合并组件的文件夹中，创建“SplitMergeService.cspkg”随附的“ServiceConfiguration.Template.cscfg”文件的副本，并将其命名为“ServiceConfiguration.cscfg”。
+1. 在你下载拆分/合并程序集的文件夹中，创建 **SplitMergeService.cspkg** 随附的 **ServiceConfiguration.Template.cscfg** 文件的副本，并将其重命名为 **ServiceConfiguration.cscfg**。
 
-2. 在您喜欢的文本编辑器中打开 ServiceConfiguration.cscfg。我们建议使用 Visual Studio，因为它将验证输入（例如，证书指纹的格式）。
+2. 在文本编辑器（如 Visual Studio）中打开 **ServiceConfiguration.cscfg**，它会验证输入内容（例如，证书指纹的格式）。
 
 3. 创建新的数据库或选择现有的数据库，以将其用作拆分/合并操作的状态数据库并检索该数据库的连接字符串。
 
@@ -128,7 +128,7 @@
 6. 确保选中标记为“即使一个或多个角色包含单个实例也部署”的复选框。
 7. 点击右下角的勾选按钮以开始部署。它预计需要几分钟的时间才能完成。
 
-	![上载][4]
+![上载][4]
 
 
 ## 部署故障排除
@@ -150,7 +150,7 @@
 
 ### 使用 Web 浏览器建立连接
 
-确定您的拆分/合并服务的 Web 终结点。通过转到云服务的“仪表板”并在右侧的“站点 URL”下查找，你可以在 Azure 经典门户中找到此内容。由于默认的安全设置将禁用 HTTP 终结点，因此请将 **http://** 替换为 **https://**。将此 URL 的页面加载到您的浏览器中。
+确定您的拆分/合并服务的 Web 终结点。通过转到云服务的“仪表板”并在右侧的“站点 URL”下查找，你可以在 Azure 管理门户中找到此内容。由于默认的安全设置将禁用 HTTP 终结点，因此请将 **http://** 替换为 **https://**。将此 URL 的页面加载到您的浏览器中。
 
 ### 使用 PowerShell 脚本进行测试
 
@@ -330,4 +330,4 @@
 [5]: ./media/sql-database-elastic-scale-configure-deploy-split-and-merge/storage.png
  
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0328_2016-->
