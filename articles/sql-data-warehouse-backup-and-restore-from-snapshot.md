@@ -28,7 +28,7 @@ SQL 数据仓库提供两个核心功能，用于在发生导致意外数据损�
 
 ### PowerShell
 
-使用 Azure PowerShell 以编程方式执行数据库还原。若要下载 Azure PowerShell 模块，请运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)。可以通过运行 Get-Module -ListAvailable -Name Azure 来检查你的版本。本文基于 Azure PowerShell 版本 1.0.4。
+使用 Azure PowerShell 以编程方式执行数据库还原。若要下载 Azure PowerShell 模块，请运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)。可以通过运行 Get-Module -ListAvailable -Name Azure 来检查你的版本。本文基于 Microsoft Azure PowerShell 版本 1.0.4。
 
 若要还原数据库，请使用 [Start-AzureSqlDatabaseRestore][] cmdlet。
 
@@ -42,29 +42,29 @@ SQL 数据仓库提供两个核心功能，用于在发生导致意外数据损�
 
 ```
 
-	Login-AzureRmAccount –EnvironmentName AzureChinaCloud
-	Get-AzureRmSubscription
-	Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
+Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+Get-AzureRmSubscription
+Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
 
-	# List the last 10 database restore points
-	((Get-AzureRMSqlDatabaseRestorePoints -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>" -ResourceGroupName "<YourResourceGroupName>").RestorePointCreationDate)[-10 .. -1]
+# List the last 10 database restore points
+((Get-AzureRMSqlDatabaseRestorePoints -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>" -ResourceGroupName "<YourResourceGroupName>").RestorePointCreationDate)[-10 .. -1]
 
-		# Or for all restore points
-		Get-AzureRmSqlDatabaseRestorePoints -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>" -ResourceGroupName "<YourResourceGroupName>"
+	# Or for all restore points
+	Get-AzureRmSqlDatabaseRestorePoints -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>" -ResourceGroupName "<YourResourceGroupName>"
 
-	# Pick desired restore point using RestorePointCreationDate
-	$PointInTime = "<RestorePointCreationDate>"
+# Pick desired restore point using RestorePointCreationDate
+$PointInTime = "<RestorePointCreationDate>"
 
-	# Get the specific database name to restore
-	(Get-AzureRmSqlDatabase -ServerName "<YourServerName>" -ResourceGroupName "<YourResourceGroupName>").DatabaseName | where {$_ -ne "master" }
-	#or
-	Get-AzureRmSqlDatabase -ServerName "<YourServerName>" –ResourceGroupName "<YourResourceGroupName>"
+# Get the specific database name to restore
+(Get-AzureRmSqlDatabase -ServerName "<YourServerName>" -ResourceGroupName "<YourResourceGroupName>").DatabaseName | where {$_ -ne "master" }
+#or
+Get-AzureRmSqlDatabase -ServerName "<YourServerName>" –ResourceGroupName "<YourResourceGroupName>"
 
-	# Restore database
-	$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceServerName "<YourServerName>" -SourceDatabaseName "<YourDatabaseName>" -TargetDatabaseName "<NewDatabaseName>" -PointInTime $PointInTime
+# Restore database
+$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceServerName "<YourServerName>" -SourceDatabaseName "<YourDatabaseName>" -TargetDatabaseName "<NewDatabaseName>" -PointInTime $PointInTime
 
-	# Monitor progress of restore operation
-	Get-AzureSqlDatabaseOperation -ServerName "<YourServerName>" –OperationGuid $RestoreRequest.RequestID
+# Monitor progress of restore operation
+Get-AzureSqlDatabaseOperation -ServerName "<YourServerName>" –OperationGuid $RestoreRequest.RequestID
 ```
 
 请注意，如果服务器是 foo.database.chinacloudapi.cn，请使用“foo”作为上述 Powershell cmdlet 中的 -ServerName。

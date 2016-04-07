@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="01/07/2016"
-   wacn.date="03/28/2016"/>
+   ms.date="03/14/2016"
+   wacn.date="04/05/2016"/>
 
 # SQL 数据仓库中的表分区
 
@@ -18,6 +18,9 @@
 
 - 删除 SQL Server 分区函数和方案，因为当你创建表时系统会帮你管理。
 - 在创建表时定义分区。只需指定分区边界点，以及希望边界点是有效的 `RANGE RIGHT` 还是 `RANGE LEFT`。
+
+注意：若要了解 SQL Server 中分区的详细信息，请参阅[分区表和索引](https://msdn.microsoft.com/zh-cn/library/ms190787.aspx)。
+
 
 ### 分区大小
 SQL DW 为 DBA 提供数个表类型选项：堆、群集索引 (CI) 和群集列存储索引 (CCI)。DBA 还可以针对每个表类型分区表，还就是将其分区成多个部分，以提升性能。但是，创建具有太多分区的表实际上有可能会导致性能降低，或导致查询在某些情况下失败。对于 CCI 表，尤其要考虑到这一点。若要使数据分区有所帮助，DBA 务必要了解使用数据分区的时机，以及要创建的分区数目。这些指导旨在帮助 DBA 在遇到状况时做出最佳选择。
@@ -330,5 +333,4 @@ DROP TABLE #partitions;
 
 <!-- Other web references -->
 
-
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0328_2016-->
