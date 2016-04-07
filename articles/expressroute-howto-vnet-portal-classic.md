@@ -1,25 +1,31 @@
 <properties
    pageTitle="为 ExpressRoute 配置虚拟网络和网关 | Microsoft Azure"
-   description="本文将指导你完成为 ExpressRoute 设置虚拟网络 (VNet)"
+   description="本文指导你使用经典部署模型为 ExpressRoute 设置虚拟网络 (VNet)。"
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-service-management"/>
 
 <tags 
    ms.service="expressroute"
-   ms.date="01/16/2016"
-   wacn.date="03/17/2016"/>
+   ms.date="03/08/2016"
+   wacn.date="04/05/2016"/>
 
-# 为 ExpressRoute 配置虚拟网络
+# 在经典门户中为 ExpressRoute 配置虚拟网络
 
-这些步骤将指导你通过经典部署模型和服务管理配置用于 ExpressRoute 的虚拟网络和网关。目前，我们尚未制作有关使用资源管理器部署模型为 ExpressRoute 配置 VNet 的文档。如果我们发布了相关的文章，我们将添加其链接。
- 
->[AZURE.IMPORTANT] 请务必了解 Azure 当前使用两种部署模型：资源管理器和经典部署模型。在开始你的配置之前，请确保你了解部署模型和工具。有关部署模型的信息，请参阅 [Azure 部署模型](/documentation/articles/azure-classic-rm)
+本文中的步骤将指导你通过经典部署模型和管理门户配置用于 ExpressRoute 的虚拟网络和网关。
 
-1. 登录到 **Azure 经典门户**。
+有关 Resource Manager 部署模型的说明，请参阅以下文章，其中将会指导你[使用 PowerShell 创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-ps)，以及[将 VPN 网关添加到 ExpressRoute 的 Resource Manager VNet](/documentation/articles/expressroute-howto-add-gateway-resource-manager)。
+
+**关于 Azure 部署模型**
+
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)]
+
+## 配置 VNet 和网关
+
+1. 登录到 [Azure 管理门户](http://manage.windowsazure.cn)。
 
 2. 在屏幕左下角，单击“新建”。在导航窗格中，单击“网络服务”，然后单击“虚拟网络”。单击“自定义创建”以启动配置向导。
 

@@ -9,7 +9,7 @@
    tags="azure-resource-manager"/>
 <tags
    ms.service="expressroute"
-   ms.date="02/04/2016"
+   ms.date="03/09/2016"
    wacn.date="03/17/2016"/>
 
 # 使用 Azure 资源管理器和 PowerShell 创建和修改 ExpressRoute 线路的路由

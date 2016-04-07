@@ -10,7 +10,7 @@
 <tags 
    ms.service="expressroute"
    ms.date="01/16/2016"
-   wacn.date="03/17/2016" />
+   wacn.date="04/05/2016" />
 
 # 将虚拟网络链接到 ExpressRoute 线路
 
@@ -21,17 +21,20 @@
 
 本文概述了如何将虚拟网络 (VNet) 链接到 ExpressRoute 线路。虚拟网络可以在同一个订阅中，也可以属于另一个订阅。本文适用于使用资源管理器部署模型部署的 VNet。如果你想要链接使用经典部署模型部署的虚拟网络，请参阅[将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)。
 
-[AZURE.INCLUDE [vpn-gateway-sm-rm](../includes/vpn-gateway-sm-rm-include.md)]
+
+**关于 Azure 部署模型**
+
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)]
 
 ## 配置先决条件
 
-- 你将需要最新版本的 Azure PowerShell 模块（版本 1.0 或更高版本）。 
+- 你将需要最新版本的 Azure PowerShell 模块（版本 1.0 或更高版本）。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。 
 - 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites)页、[路由要求](/documentation/articles/expressroute-routing)页和[工作流](/documentation/articles/expressroute-workflows)页。
 - 你必须有一个活动的 ExpressRoute 线路。 
 	- 请按说明[创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm)，并通过连接提供商启用该线路。 
 	- 请确保为线路配置 Azure 专用对等互连。如需路由说明，请参阅[配置路由](/documentation/articles/expressroute-howto-routing-arm)一文。 
-	- 若要启用端到端连接，必须配置 Azure 专用对等互连并运行你的网络和 Microsoft Azure 之间的 BGP 对等互连。
-	- 必须已创建并完全预配一个虚拟网络和一个虚拟网络网关。遵照说明创建 [VPN 网关](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)
+	- 若要启用端到端连接，必须配置 Azure 专用对等互连并运行你的网络和 Microsoft 之间的 BGP 对等互连。
+	- 必须已创建并完全预配一个虚拟网络和一个虚拟网络网关。请遵循创建 [VPN 网关](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)的说明，但务必使用 `-GatewayType ExpressRoute`。
 
 最多可以将 10 个虚拟网络链接到一条 ExpressRoute 线路。所有 ExpressRoute 线路必须位于同一个地理政治区域。
 
@@ -122,7 +125,7 @@
 线路用户可以通过运行以下 cmdlet 来兑现链接授权。
 
 	$id = "/subscriptions/********************************/resourceGroups/ERCrossSubTestRG/providers/Microsoft.Network/expressRouteCircuits/MyCircuit"	
-	$connection = New-AzureRmVirtualNetworkGatewayConnection -Name "ERConnection" -ResourceGroupName "RemoteResourceGroup -Location "East US" -VirtualNetworkGateway1 $gw -PeerId $id -ConnectionType ExpressRoute -AuthorizationKey "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+	$connection = New-AzureRmVirtualNetworkGatewayConnection -Name "ERConnection" -ResourceGroupName "RemoteResourceGroup" -Location "East US" -VirtualNetworkGateway1 $gw -PeerId $id -ConnectionType ExpressRoute -AuthorizationKey "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
 
 #### 释放连接授权
 
