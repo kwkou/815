@@ -174,7 +174,8 @@
 
 ### 步骤 6：查看遥测数据
 在 Visual Studio **服务器资源管理器**中，导航到 wadexample 存储帐户。在云服务大约运行 5 分钟后，你应该会看到表 **WADEnumsTable**、**WADHighFreqTable**、**WADMessageTable**、**WADPerformanceCountersTable** 和 **WADSetOtherTable**。双击其中一个表即可查看已收集的遥测数据。
-	![CloudServices\_diag\_tables](./media/cloud-services-dotnet-diagnostics/WadExampleTables.png)
+
+![CloudServices\_diag\_tables](./media/cloud-services-dotnet-diagnostics/WadExampleTables.png)
 
 
 ## 配置文件架构

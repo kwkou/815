@@ -138,7 +138,7 @@ wacn.date="04/06/2016"/>
 
 ## 示例
 
-下面是使用名为 `TestIsEmulated`、设置为 [@emulated xpath value](#app-running-in-emulator) 的环境变量创建启动任务的辅助角色示例。
+下面是使用名为 `TestIsEmulated`, 设置为 [@emulated xpath value](#app-running-in-emulator) 的环境变量创建启动任务的辅助角色示例。
 
 ```xml
 <WorkerRole name="Role1">
