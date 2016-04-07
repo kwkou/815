@@ -76,18 +76,18 @@
 
 		New-AzureRmResourceGroup -Name “ExpressRouteResourceGroup” -Location "West US"
 
-	以下示例演示如何通过北京的 Beijing Telecom Ethernet 创建 200 Mbps 的 ExpressRoute 线路。如果你使用的是其他提供商和其他设置，请在发出请求时替换该信息。
+以下示例演示如何通过北京的 Beijing Telecom Ethernet 创建 200 Mbps 的 ExpressRoute 线路。如果你使用的是其他提供商和其他设置，请在发出请求时替换该信息。
 
-	下面是请求新的服务密钥的示例：
+下面是请求新的服务密钥的示例：
 
 		New-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup" -Location "China North" -SkuTier Standard -SkuFamily MeteredData -ServiceProviderName "Beijing Telecom Ethernet" -PeeringLocation "Beijing" -BandwidthInMbps 200
 
-	请确保指定合适的 SKU 层级和 SKU 系列。
+请确保指定合适的 SKU 层级和 SKU 系列。
  
-	 - SKU 层级决定是否启用 ExpressRoute 标准版外接程序。
-	 - SKU 系列确定计费类型。可以选择 *metereddata* 以使用数据流量套餐，选择“unlimiteddata”以使用无限制的流量套餐。**注意：**创建线路后，你将不能更改计费类型。
+- SKU 层级决定是否启用 ExpressRoute 标准版外接程序。
+- SKU 系列确定计费类型。可以选择 *metereddata* 以使用数据流量套餐，选择“unlimiteddata”以使用无限制的流量套餐。**注意：**创建线路后，你将不能更改计费类型。
 
-	响应将包含服务密钥。你可以通过运行以下命令获取所有这些参数的详细说明。
+响应将包含服务密钥。你可以通过运行以下命令获取所有这些参数的详细说明。
 
 		Get-Help New-AzureRmExpressRouteCircuit -detailed 
 
@@ -95,10 +95,9 @@
 
 若要获取你所创建的所有 ExpressRoute 线路的列表，可以运行 Get-AzureRmExpressRouteCircuit 命令：
 
-```
-#Getting service key
-Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
-```
+
+    Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+
 
 响应将如以下示例中所示：
 
@@ -125,11 +124,11 @@ Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName
 		Peerings                         : []
 
 
-	你可以随时使用 *Get-AzureRmExpressRouteCircuit* cmdlet 检索此信息。进行不带任何参数的调用将列出所有线路。你的服务密钥将在 *ServiceKey* 字段中列出。
+你可以随时使用 *Get-AzureRmExpressRouteCircuit* cmdlet 检索此信息。进行不带任何参数的调用将列出所有线路。你的服务密钥将在 *ServiceKey* 字段中列出。
 
 		Get-AzureRmExpressRouteCircuit
 
-	响应将如下例所示：
+响应将如下例所示：
 
 		Name                             : ExpressRouteARMCircuit
 		ResourceGroupName                : ExpressRouteResourceGroup
@@ -154,26 +153,25 @@ Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName
 		Peerings                         : []
 
 
-
-	你可以通过运行以下命令获取所有这些参数的详细说明。
+你可以通过运行以下命令获取所有这些参数的详细说明。
 
 		Get-Help Get-AzureRmExpressRouteCircuit -detailed 
 
-5. **将服务密钥发送给连接提供商进行预配。**
+**步骤5. 将服务密钥发送给连接提供商进行预配。**
 
-	当你创建新的 ExpressRoute 线路时，线路将是以下状态：
+当你创建新的 ExpressRoute 线路时，线路将是以下状态：
 	
 		ServiceProviderProvisioningState : NotProvisioned
 		
 		CircuitProvisioningState         : Enabled
 
-	*ServiceProviderProvisioningState* 提供有关服务提供商端当前预配状态的信息，而 Status 则提供 Microsoft 端的状态。ExpressRoute 线路处于以下状态时，你才能使用它。
+*ServiceProviderProvisioningState* 提供有关服务提供商端当前预配状态的信息，而 Status 则提供 Microsoft 端的状态。ExpressRoute 线路处于以下状态时，你才能使用它。
 
 		ServiceProviderProvisioningState : Provisioned
 		
 		CircuitProvisioningState         : Enabled
 
-	当连接提供商正在为你启用线路时，线路将转为以下状态。
+当连接提供商正在为你启用线路时，线路将转为以下状态。
 
 		ServiceProviderProvisioningState : Provisioned
 		
@@ -181,13 +179,13 @@ Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName
 
 
 
-5. **定期检查服务密钥的状态。**
+**步骤6. 定期检查服务密钥的状态。**
 
 检查服务密钥的状态，此状态在你的提供商已启用你的线路时会让你了解。配置线路后，ServiceProviderProvisioningState 将显示为 Provisioned，如以下例中所示：
 
 		Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
-	响应将如下例所示：
+响应将如下例所示：
 
 		Name                             : ExpressRouteARMCircuit
 		ResourceGroupName                : ExpressRouteResourceGroup
@@ -210,7 +208,7 @@ Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName
 		                                   }
 		ServiceKey                       : **************************************
 		Peerings                         : []
-```
+
 
 **步骤 7.创建路由配置。**
 
