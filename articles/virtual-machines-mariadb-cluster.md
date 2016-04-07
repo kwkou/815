@@ -2,7 +2,7 @@
 <tags  
 	ms.service="virtual-machines"
 	ms.date="04/15/2015"
-	wacn.date="08/29/2015"/>
+	wacn.date="04/07/2016"/>
 
 # MariaDB (MySQL) 群集 - Azure 教程
 
@@ -349,7 +349,7 @@
 <!--Link references-->
 [Galera]: http://galeracluster.com/products/
 [MariaDBs]: https://mariadb.org/en/about/
-[Azure CLI]: /zh-cn/documentation/articles/xplat-cli/
+[Azure CLI]: /zh-cn/documentation/articles/xplat-cli-install/
 [Azure CLI 命令参考]: /zh-cn/documentation/articles/command-line-tools/
 [创建用于身份验证的 SSH 密钥]: http://www.jeff.wilcox.name/2013/06/secure-linux-vms-with-ssh-certificates/
 [性能优化策略]: /zh-cn/documentation/articles/virtual-machines-linux-optimize-mysql-perf/

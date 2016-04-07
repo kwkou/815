@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="12/11/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="04/07/2016"/>
 
 # 如何在 Azure CLI 中设置静态专用 IP 地址（经典）
 
@@ -24,7 +24,7 @@
 ## 如何在创建 VM 时指定静态专用 IP 地址
 若要根据上述方案在名为 *TestService* 的新云服务中创建名为 *DNS01* 的新 VM，请按照以下步骤进行操作：
 
-1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
+1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
 1. 运行 **azure service create** 命令以创建云服务。
 
 		azure service create TestService --location uscentral

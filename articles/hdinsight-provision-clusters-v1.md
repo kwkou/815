@@ -10,7 +10,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="01/28/2016"
-   wacn.date="03/28/2016"/>
+   wacn.date="04/07/2016"/>
 
 #在 HDInsight 中设置 Hadoop 群集
 
@@ -437,7 +437,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 - **Node.js SDK** - <a href="https://www.npmjs.com/package/azure-mgmt-hdinsight" target="_blank">https://www.npmjs.com/package/azure-mgmt-hdinsight</a>
 - **Azure CLI** - <a href="https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz" target="_blank">https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz</a>  
 
-有关如何使用 Azure CLI 的一般指导，请参阅 [Azure CLI](/documentation/articles/xplat-cli)。
+有关如何使用 Azure CLI 的一般指导，请参阅 [Azure CLI](/documentation/articles/xplat-cli-install)。
 
 以下说明将指导你在 Windows 上安装 Azure CLI，然后使用命令行来预配群集。
 

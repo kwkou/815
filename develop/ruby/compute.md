@@ -9,7 +9,7 @@
   editor="EricChen"/>
 <tags ms.service=""
     ms.date=""
-    wacn.date="04/11/2015"
+    wacn.date="04/07/2016"
     />
 
 
@@ -31,5 +31,5 @@
 <h2 id="header-2">工具</h2>
 <h3>功能指南： <a href="/documentation/articles/install-configure-powershell/">使用 PowerShell for Azure 进行开发和部署</a></h3>
 <p>Windows PowerShell for Azure 提供了用于通过 Windows PowerShell cmdlet 开发和部署 Azure 应用程序的命令行环境。本指南介绍如何使用 Windows PowerShell cmdlet 创建、测试、部署和管理 Azure 服务。</p>
-<h3>功能指南： <a href="/documentation/articles/xplat-cli/">使用适用于 Mac 和 Linux 的命令行工具进行开发和部署</a></h3>
+<h3>功能指南： <a href="/documentation/articles/xplat-cli-install/">使用适用于 Mac 和 Linux 的命令行工具进行开发和部署</a></h3>
 <p>针对 Mac 和 Linux 的 Azure 命令行工具是一组用于部署和管理 Azure 服务的命令行工具。使用这些命令行工具可在 Azure 中创建和管理网站及虚拟机。</p>

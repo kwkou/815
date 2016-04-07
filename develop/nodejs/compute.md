@@ -1,5 +1,5 @@
 <properties pageTitle="Nodejs-计算 - Azure 微软云" metakeywords="" description="" services="" documentationCenter="nodejs" authors="" manager="Tiffena" editor="EricChen"/>
-<tags ms.service="" ms.date="" wacn.date="04/11/2015"/>
+<tags ms.service="" ms.date="" wacn.date="04/07/2016"/>
 
 
 <h1 id="menu-nodejs-compute">计算</h1>
@@ -51,7 +51,7 @@
 <p>Git 是一个受欢迎的、开源分布式版本控制系统。Azure 网站允许你为你的站点启用 Git 存储库，以便快速且轻松地将代码更改发布到该站点。这一常见任务提供有关如何开始将 Git 与 Azure 结合使用的详细信息。</p>
 <h3>功能指南：<a href="/documentation/articles/install-configure-powershell/">使用 PowerShell for Azure 进行开发和部署</a></h3>
 <p>Windows PowerShell for Azure 提供用于通过 Windows PowerShell cmdlet 开发和部署 Azure 应用程序的命令行环境。本指南介绍如何使用 Windows PowerShell cmdlet 创建、测试、部署和管理 Azure 服务。</p>
-<h3>功能指南：<a href="/documentation/articles/xplat-cli/">使用适用于 Mac 和 Linux 的命令行工具进行开发和部署</a></h3>
+<h3>功能指南：<a href="/documentation/articles/xplat-cli-install/">使用适用于 Mac 和 Linux 的命令行工具进行开发和部署</a></h3>
 <p>针对 Mac 和 Linux 的 Azure 命令行工具是一组用于部署和管理 Azure 服务的命令行工具。使用这些命令行工具可在 Azure 中创建和管理网站及虚拟机。</p>
 <h2 id="header-5">开发指南</h2>
 <h3>如何：<a href="/documentation/articles/nodejs-specify-node-version-azure-apps/">在 Azure 应用程序中指定 Node.js 版本</a></h3>

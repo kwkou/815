@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="10/21/2015"
-	wacn.date="12/31/2015"/>
+	wacn.date="04/07/2016"/>
 
 # 如何在 Azure 上使用 CoreOS
 
@@ -187,7 +187,7 @@ CoreOS 的 `etcd` 守护程序需要发现 ID，以自动查询群集中的所�
 
 
 <!--Link references-->
-[Azure 命令行界面 (Azure CLI)]: /documentation/articles/xplat-cli
+[Azure 命令行界面 (Azure CLI)]: /documentation/articles/xplat-cli-install
 [CoreOS]: https://coreos.com/
 [CoreOS 概述]: https://coreos.com/using-coreos/
 [CoreOS 与 Azure]: https://coreos.com/docs/running-coreos/cloud-providers/azure/
