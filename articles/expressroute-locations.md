@@ -8,7 +8,7 @@
    editor="" />
 <tags
    ms.service="expressroute"
-   ms.date="01/15/2016"
+   ms.date="03/17/2016"
    wacn.date="03/17/2016" />
 
 # ExpressRoute 合作伙伴和对等位置

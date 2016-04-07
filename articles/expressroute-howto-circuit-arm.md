@@ -1,6 +1,6 @@
 <properties
-   pageTitle="使用 Azure 资源管理器和 PowerShell 配置 ExpressRoute 线路 | Microsoft Azure"
-   description="本文将指导你完成创建和预配 ExpressRoute 线路的步骤。本文还介绍了如何检查状态，以及如何更新、删除和预配线路。"
+   pageTitle="使用 Resource Manager 和 PowerShell 创建和修改 ExpressRoute 线路 | Microsoft Azure"
+   description="本文介绍如何创建和预配 ExpressRoute 线路。另外，还说明如何查看线路状态，以及如何更新、删除和取消预配线路。"
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
@@ -9,29 +9,30 @@
    tags="azure-resource-manager"/>
 <tags
    ms.service="expressroute"
-   ms.date="01/26/2016"
-   wacn.date="03/17/2016"/>
+   ms.date="03/03/2016"
+   wacn.date="04/05/2016"/>
 
-# 使用 Azure 资源管理器和 PowerShell 创建和修改 ExpressRoute 线路
+# 使用 Resource Manager 和 PowerShell 创建和修改 ExpressRoute 线路
 
 > [AZURE.SELECTOR]
 [PowerShell - 经典](/documentation/articles/expressroute-howto-circuit-classic)
 [PowerShell - 资源管理器](/documentation/articles/expressroute-howto-circuit-arm)
 
-本文将指导你执行相关步骤，以便使用 PowerShell cmdlet 和 Azure 资源管理器部署模型创建 ExpressRoute 线路。下面的步骤还将向你显示如何查看状态，以及如何更新、删除和预配 ExpressRoute 线路。
+本文介绍如何使用 Windows PowerShell cmdlet 和 Azure Resource Manager 部署模型创建 Azure ExpressRoute 线路。以下步骤还说明如何查看线路状态，以及如何更新、删除和取消预配线路。
 
 [AZURE.INCLUDE [vpn-gateway-sm-rm](../includes/vpn-gateway-sm-rm-include.md)] 
 
 ## 配置先决条件
 
-- 你将需要最新版本的 Azure PowerShell 模块（版本 1.0 或更高版本）。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 页上的说明操作，以便获取有关如何配置计算机以使用 Azure PowerShell 模块的分步指导。 
-- 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites)页和[工作流](/documentation/articles/expressroute-workflows)页。
+若要创建 ExpressRoute 线路，你需要：
+- 获取最新版本的 Azure PowerShell 模块（版本 1.0 或更高）。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 页上的说明操作，以便获取有关如何配置计算机以使用 PowerShell 模块的分步指导。
+- 在开始配置之前，请查看[先决条件](/documentation/articlesexpressroute-prerequisites)页和[工作流](/documentation/articlesexpressroute-workflows)页。
 
 ## 创建和预配 ExpressRoute 线路
 
-1. **为 ExpressRoute 导入 PowerShell 模块。**
+**步骤 1. 为 ExpressRoute 导入 PowerShell 模块。**
 
- 	你必须从 [PowerShell 库](http://www.powershellgallery.com/)安装最新的 PowerShell 安装程序，并将 Azure 资源管理器模块导入 PowerShell 会话，以便开始使用 ExpressRoute cmdlet。你需要以管理员身份运行 PowerShell。
+若要开始使用 ExpressRoute cmdlet，必须从 [PowerShell 库](http://www.powershellgallery.com/)安装最新的 PowerShell 安装程序，并将 Resource Manager 模块导入 PowerShell 会话。你将以管理员身份运行 PowerShell。
 
 	    Install-Module AzureRM
 
@@ -55,24 +56,23 @@
 			
 
 
-2. **获取支持的提供商、位置和带宽的列表。**
+**步骤 2. 获取支持的提供商、位置和带宽的列表。**
 
 	在创建 ExpressRoute 线路之前，你需要连接提供商、支持的位置和带宽选项的列表。PowerShell cmdlet *Get-AzureRmExpressRouteServiceProvider* 会返回此信息，你将在后续步骤中使用此信息。
 
 		Get-AzureRmExpressRouteServiceProvider
 
-	检查连接服务提供商是否已在该处列出。记下以下信息，因为你在创建线路时将需要这些信息。
-	
-	- Name
-	- PeeringLocations
-	- BandwidthsOffered
+检查连接服务提供商是否已在该处列出。请记下以下信息，因为稍后创建线路时需要用到：
+
+- 名称
+- PeeringLocations
+- BandwidthsOffered
 
 	现在，你已准备好创建 ExpressRoute 线路。
 
-		
-3. **创建 ExpressRoute 线路。**
+**步骤 3.创建 ExpressRoute 线路。**
 
-	在创建 ExpressRoute 线路之前，必须先创建一个资源组（如果你还没有）。为此，可以运行以下命令。
+如果你尚未有资源组，则在创建 ExpressRoute 线路之前，必须先创建一个资源组。为此，可以运行以下命令：
 
 		New-AzureRmResourceGroup -Name “ExpressRouteResourceGroup” -Location "West US"
 
@@ -91,14 +91,16 @@
 
 		Get-Help New-AzureRmExpressRouteCircuit -detailed 
 
-4. **列出所有 ExpressRoute 线路。**
+**步骤 4. 列出所有 ExpressRoute 线路。**
 
-	你可以运行 *Get-AzureRmExpressRouteCircuit* 命令，以获取你所创建的所有 ExpressRoute 线路的列表。
+若要获取你所创建的所有 ExpressRoute 线路的列表，可以运行 Get-AzureRmExpressRouteCircuit 命令：
 
-		
-		Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+```
+#Getting service key
+Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+```
 
-	响应将如下例所示：
+响应将如以下示例中所示：
 
 		Name                             : ExpressRouteARMCircuit
 		ResourceGroupName                : ExpressRouteResourceGroup
@@ -181,7 +183,7 @@
 
 5. **定期检查服务密钥的状态。**
 
-	这样，你就知道提供商何时启用了你的线路。配置线路后，*ServiceProviderProvisioningState* 将显示为 *Provisioned*，如下例所示。
+检查服务密钥的状态，此状态在你的提供商已启用你的线路时会让你了解。配置线路后，ServiceProviderProvisioningState 将显示为 Provisioned，如以下例中所示：
 
 		Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
@@ -208,12 +210,15 @@
 		                                   }
 		ServiceKey                       : **************************************
 		Peerings                         : []
+```
 
-7. **配置路由并链接 VNet**
+**步骤 7.创建路由配置。**
 
-	a.**创建路由配置。** 有关分步说明，请参阅[创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-arm)。请注意，这些路由说明只适用于由提供第 2 层连接服务的服务提供商创建的线路。如果你的服务提供商提供第 3 层托管服务（通常是 IPVPN，如 MPLS），则连接服务提供商将为你设置和管理路由。在此情况下，你无法创建或管理对等互连。
-	
-	b.**将你的 VNet 链接到 ExpressRoute 线路。** 在确认已配置路由后，你需要将你的 VNet 链接到 ExpressRoute 线路。有关分步说明，请参阅[将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)。
+如需分步说明，请参阅 [ExpressRoute 线路路由配置（创建和修改线路对等互连）](/documentation/articles/expressroute-howto-routing-arm)。
+
+**步骤 8.将虚拟网络链接到 ExpressRoute 线路。**
+
+接下来，将虚拟网络链接到 ExpressRoute 线路。使用 Resource Manager 部署模式时，你可以使用[此模板](https://github.com/Azure/azure-quickstart-templates/tree/ecad62c231848ace2fbdc36cbe3dc04a96edd58c/301-expressroute-circuit-vnet-connection)。我们目前正在编写有关使用 PowerShell 完成此操作的步骤。
 
 ##  获取 ExpressRoute 线路的状态
 
