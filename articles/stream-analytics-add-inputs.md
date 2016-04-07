@@ -1,6 +1,6 @@
-<properties 
-	pageTitle="如何将数据输入添加到流分析作业中 | Azure" 
-	description="添加流分析作业的输入 | 学习路径段。"
+<properties
+	pageTitle="向你的流分析作业添加数据输入 | Azure"
+	description="了解如何通过事件中心将数据源作为流数据挂接到流分析作业，或者通过 Blob 存储挂接引用数据。"
 	keywords="数据输入、流式数据"
 	documentationCenter=""
 	services="stream-analytics"
@@ -12,13 +12,13 @@
 <tags
 	ms.service="stream-analytics"
 	ms.date="02/04/2016"
-	wacn.date="03/21/2016"/>
+	wacn.date="04/05/2016"/>
 
 # 向流分析作业添加流数据输入或引用数据
 
 了解如何通过事件中心将数据源作为流数据挂接到流分析作业，或者通过 Blob 存储挂接引用数据。
 
-Azure 流分析作业可以连接到一个或多个数据输入，每个数据输入都定义了一个到现有数据源的连接。将数据发送到数据源时，流分析作业会使用该数据并将其作为流数据进行实时处理。流分析在作业订阅内外都与 [Azure 事件中心](/services/event-hubs/)和 [Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)进行高级集成。流分析中有两种不同类型的输入：数据流和引用数据。
+Azure 流分析作业可以连接到一个或多个数据输入，每个数据输入都定义了一个到现有数据源的连接。将数据发送到数据源时，流分析作业会使用该数据并将其作为流数据进行实时处理。流分析在作业订阅内外都与 [Azure 事件中心](/services/event-hubs/)和 [Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)进行高级集成
 
 本文是[流分析学习路径](/documentation/learning-paths/stream-analytics/)中的一个步骤。
 
@@ -62,7 +62,7 @@ Azure 流分析作业可以连接到一个或多个数据输入，每个数据�
     ![测试流式数据输入的连接](./media/stream-analytics-add-inputs/6-stream-analytics-add-inputs.png)
 
 ## 获取有关流数据输入的帮助
-如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=AzureStreamAnalytics)
+如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)
 
 ## 后续步骤
 
@@ -72,4 +72,4 @@ Azure 流分析作业可以连接到一个或多个数据输入，每个数据�
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0328_2016-->
