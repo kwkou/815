@@ -5,10 +5,10 @@
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
-   editor="tysonn" />
+   editor="" />
 <tags 
    ms.service="service-bus"
-   ms.date="12/28/2015"
+   ms.date="03/16/2016"
    wacn.date="03/28/2016" />
 
 # 服务总线定价常见问题

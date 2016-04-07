@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何使用服务总线主题 (Ruby) | Azure"
+	pageTitle="如何使用服务总线主题 (Ruby) | Microsoft Azure"
 	description="了解如何在 Azure 中使用 Service Bus 主题和订阅。相关代码示例是针对 Ruby 应用程序编写的。"
 	services="service-bus"
 	documentationCenter="ruby"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="12/09/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="03/09/2016"
+	wacn.date="04/05/2016"/>
 
 
 
@@ -36,13 +36,13 @@
 
 ## 创建服务命名空间
 
-若要开始在 Azure 中使用服务总线队列，必须先创建一个服务命名空间。命名空间提供了用于对应用程序中的 Service Bus 资源进行寻址的范围容器。必须通过命令行界面创建命名空间，因为 [Azure 经典门户][] 不会使用 ACS 连接创建命名空间。
+若要开始在 Azure 中使用服务总线队列，必须先创建一个服务命名空间。命名空间提供了用于对应用程序中的 Service Bus 资源进行寻址的范围容器。必须通过命令行界面创建命名空间，因为 [Azure 管理门户][] 不会使用 ACS 连接创建命名空间。
 
 创建命名空间：
 
 1. 打开 Azure PowerShell 控制台。
 
-2. 键入用于创建命名空间的命令，如下所示。提供你自己的命名空间值，并指定与应用程序相同的区域。
+2. 键入以下命令以创建命名空间。提供你自己的命名空间值，并指定与应用程序相同的区域。
 
       New-AzureSBNamespace -Name 'yourexamplenamespace' -Location 'China East' -NamespaceType 'Messaging' -CreateACSNamespace $true
 
@@ -57,7 +57,7 @@
        ![Copy key](./media/service-bus-ruby-how-to-use-topics-subscriptions/defaultkey.png)
 
 > [AZURE.NOTE]
-> 登录到 [Azure 经典门户][] 并导航到命名空间的连接信息后，也可以看到此密钥。
+> 登录到 [Azure 管理门户][] 并导航到命名空间的连接信息后，也可以看到此密钥。
 
 ## 创建 Ruby 应用程序
 
@@ -65,7 +65,7 @@
 
 ## 配置应用程序以使用 Service Bus
 
-要使用 Azure 服务总线，你需要使用 Ruby Azure 包，其中包括一组便于与存储 REST 服务进行通信的库。
+要使用服务总线，请下载并使用 Ruby Azure 包，其中包括一组便于与存储 REST 服务通信的库。
 
 ### 使用 RubyGems 获取该程序包
 
@@ -77,14 +77,18 @@
 
 使用常用的文本编辑器将以下内容添加到你要在其中使用存储的 Ruby 文件的顶部：
 
-    require "azure"
+```
+require "azure"
+```
 
 ## 设置服务总线连接
 
 Azure 模块将读取环境变量 **AZURE\_SERVICEBUS\_NAMESPACE** 和 **AZURE\_SERVICEBUS\_ACCESS\_KEY** 以获取连接到命名空间所需的信息。如果未设置这些环境变量，则在使用 **Azure::ServiceBusService** 之前必须通过以下代码指定命名空间信息：
 
-    Azure.config.sb_namespace = "<your azure service bus namespace>"
-    Azure.config.sb_access_key = "<your azure service bus access key>"
+```
+Azure.config.sb_namespace = "<your azure service bus namespace>"
+Azure.config.sb_access_key = "<your azure service bus access key>"
+```
 
 将命名空间值设置为你创建的值，而不是整个 URL 的值。例如，使用 **"yourexamplenamespace"**，而不是 "yourexamplenamespace.servicebus.chinacloudapi.cn"。
 
@@ -92,20 +96,24 @@ Azure 模块将读取环境变量 **AZURE\_SERVICEBUS\_NAMESPACE** 和 **AZURE\_
 
 可以通过 **Azure::ServiceBusService** 对象处理主题。以下代码将创建 **Azure::ServiceBusService** 对象。若要创建主题，请使用 **create\_topic()** 方法。以下示例将创建一个主题或输出错误（如果有）。
 
-	azure_service_bus_service = Azure::ServiceBusService.new
-	begin
-      topic = azure_service_bus_service.create_queue("test-topic")
-    rescue
-      puts $!
-    end
+```
+azure_service_bus_service = Azure::ServiceBusService.new
+begin
+  topic = azure_service_bus_service.create_queue("test-topic")
+rescue
+  puts $!
+end
+```
 
 还可以通过其他选项传递 **Azure::ServiceBus::Topic** 对象，这些选项允许你重写默认主题设置，如消息保存时间或最大队列大小。下面的示例演示如何将最大队列大小设置为 5 GB，将保存时间设置为 1 分钟：
 
-	topic = Azure::ServiceBus::Topic.new("test-topic")
-    topic.max_size_in_megabytes = 5120
-    topic.default_message_time_to_live = "PT1M"
+```
+topic = Azure::ServiceBus::Topic.new("test-topic")
+topic.max_size_in_megabytes = 5120
+topic.default_message_time_to_live = "PT1M"
 
-    topic = azure_service_bus_service.create_topic(topic)
+topic = azure_service_bus_service.create_topic(topic)
+```
 
 ## 创建订阅
 
@@ -117,8 +125,10 @@ Azure 模块将读取环境变量 **AZURE\_SERVICEBUS\_NAMESPACE** 和 **AZURE\_
 
 **MatchAll** 筛选器是默认筛选器，在创建新订阅时未指定筛选器的情况下使用。使用 **MatchAll** 筛选器时，发布到主题的所有消息都将置于订阅的虚拟队列中。以下示例创建了名为“all-messages”的订阅并使用了默认的 **MatchAll** 筛选器。
 
-	subscription = azure_service_bus_service.create_subscription("test-topic", 
-	  "all-messages")
+```
+subscription = azure_service_bus_service.create_subscription("test-topic", "all-messages")
+```
+
 
 ### <a id="how-to-create-subscriptions"></a>创建具有筛选器的订阅
 
@@ -132,31 +142,31 @@ Azure 模块将读取环境变量 **AZURE\_SERVICEBUS\_NAMESPACE** 和 **AZURE\_
 
 以下示例将创建一个名为“high-messages”的订阅，该订阅包含一个 **Azure::ServiceBus::SqlFilter**，它仅选择自定义 **message\_number** 属性大于 3 的消息：
 
-	subscription = azure_service_bus_service.create_subscription("test-topic", 
-	  "high-messages")
-	azure_service_bus_service.delete_rule("test-topic", "high-messages", 
-	  "$Default")
-	
-	rule = Azure::ServiceBus::Rule.new("high-messages-rule")
-	rule.topic = "test-topic"
-	rule.subscription = "high-messages"
-	rule.filter = Azure::ServiceBus::SqlFilter.new({ 
-	  :sql_expression => "message_number > 3" })
-	rule = azure_service_bus_service.create_rule(rule)
+```
+subscription = azure_service_bus_service.create_subscription("test-topic", "high-messages")
+azure_service_bus_service.delete_rule("test-topic", "high-messages", "$Default")
+
+rule = Azure::ServiceBus::Rule.new("high-messages-rule")
+rule.topic = "test-topic"
+rule.subscription = "high-messages"
+rule.filter = Azure::ServiceBus::SqlFilter.new({
+  :sql_expression => "message_number > 3" })
+rule = azure_service_bus_service.create_rule(rule)
+```
 
 类似地，以下示例将创建一个名为“low-messages”的订阅，其中包含的 **Azure::ServiceBus::SqlFilter** 仅选择 **message\_number** 属性小于或等于 3 的消息：
 
-	subscription = azure_service_bus_service.create_subscription("test-topic", 
-	  "low-messages")
-	azure_service_bus_service.delete_rule("test-topic", "low-messages", 
-	  "$Default")
-	
-	rule = Azure::ServiceBus::Rule.new("low-messages-rule")
-	rule.topic = "test-topic"
-	rule.subscription = "low-messages"
-	rule.filter = Azure::ServiceBus::SqlFilter.new({ 
-	  :sql_expression => "message_number <= 3" })
-	rule = azure_service_bus_service.create_rule(rule)
+```
+subscription = azure_service_bus_service.create_subscription("test-topic", "low-messages")
+azure_service_bus_service.delete_rule("test-topic", "low-messages", "$Default")
+
+rule = Azure::ServiceBus::Rule.new("low-messages-rule")
+rule.topic = "test-topic"
+rule.subscription = "low-messages"
+rule.filter = Azure::ServiceBus::SqlFilter.new({
+  :sql_expression => "message_number <= 3" })
+rule = azure_service_bus_service.create_rule(rule)
+```
 
 现在，将消息发送到“test-topic”时，它总是会传送给订阅了“all-messages”主题订阅的接收者，并选择性地传送给订阅了“high-messages”和“low-messages”主题订阅的接收者（具体取决于消息内容）。
 
@@ -166,11 +176,13 @@ Azure 模块将读取环境变量 **AZURE\_SERVICEBUS\_NAMESPACE** 和 **AZURE\_
 
 下面的示例演示如何向“test-topic”发送五条测试消息。请注意，每条消息的 **message\_number** 自定义属性值因循环迭代而异（这将确定哪些订阅接收它）：
 
-	5.times do |i|
-	  message = Azure::ServiceBus::BrokeredMessage.new("test message " + i, 
-	    { :message_number => i })
-	  azure_service_bus_service.send_topic_message("test-topic", message)
-	end
+```
+5.times do |i|
+  message = Azure::ServiceBus::BrokeredMessage.new("test message " + i,
+    { :message_number => i })
+  azure_service_bus_service.send_topic_message("test-topic", message)
+end
+```
 
 Service Bus 主题支持最大为 256 MB 的消息（标头最大为 64 MB，其中包括标准和自定义应用程序属性）。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
 
@@ -184,11 +196,13 @@ Service Bus 主题支持最大为 256 MB 的消息（标头最大为 64 MB，其
 
 以下示例演示如何使用 **receive\_subscription\_message()** 接收和处理消息。该示例先通过将 **:peek\_lock** 设置为 **false** 从“low-messages”订阅接收并删除一条消息，然后再从“high-messages”接收另一条消息，最后使用 **delete\_subscription\_message()** 删除该消息：
 
-    message = azure_service_bus_service.receive_subscription_message(
-	  "test-topic", "low-messages", { :peek_lock => false })
-    message = azure_service_bus_service.receive_subscription_message(
-	  "test-topic", "high-messages")
-    azure_service_bus_service.delete_subscription_message(message)
+```
+message = azure_service_bus_service.receive_subscription_message(
+  "test-topic", "low-messages", { :peek_lock => false })
+message = azure_service_bus_service.receive_subscription_message(
+  "test-topic", "high-messages")
+azure_service_bus_service.delete_subscription_message(message)
+```
 
 ## 处理应用程序崩溃和不可读消息
 
@@ -200,13 +214,17 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 ## 删除主题和订阅
 
-主题和订阅具有持久性，必须通过 [Azure 经典门户](https://manage.windowsazure.cn)或以编程方式显式删除。下面的示例演示如何删除名为“test-topic”的主题：
+主题和订阅具有持久性，必须通过 [Azure 管理门户](https://manage.windowsazure.cn)或以编程方式显式删除。下面的示例演示如何删除名为“test-topic”的主题：
 
-	azure_service_bus_service.delete_topic("test-topic")
+```
+azure_service_bus_service.delete_topic("test-topic")
+```
 
 删除某个主题也会删除向该主题注册的所有订阅。也可以单独删除订阅。下面的代码演示如何从“test-topic”主题中删除名为“high-messages”的订阅：
 
-	azure_service_bus_service.delete_subscription("test-topic", "high-messages")
+```
+azure_service_bus_service.delete_subscription("test-topic", "high-messages")
+```
 
 ## 后续步骤
 
@@ -215,6 +233,6 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 -   请参阅[队列、主题和订阅](/documentation/articles/service-bus-queues-topics-subscriptions)。
 -   [SqlFilter](http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx) 的 API 参考。
 -	访问 GitHub 上的 [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
-[Azure 经典门户]: http://manage.windowsazure.cn
+[Azure 管理门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->

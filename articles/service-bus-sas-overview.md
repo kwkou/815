@@ -1,5 +1,5 @@
 <properties
-   pageTitle="共享访问签名概述 | Azure"
+   pageTitle="共享访问签名概述 | Microsoft Azure"
    description="共享访问签名是什么，其工作原理是怎样的，以及如何在 Node、PHP 和 C# 编程中使用它们。"
    services="service-bus,event-hubs"
    documentationCenter="na"
@@ -9,8 +9,8 @@
 
 <tags
    ms.service="service-bus"
-   ms.date="12/09/2015"
-   wacn.date="01/14/2016"/>
+    ms.date="03/16/2016"
+   wacn.date="04/05/2016"/>
 
 # 共享访问签名
 
@@ -32,7 +32,7 @@
   + 侦听
   + 管理
 
-在你创建策略后，系统将为它分配*主密钥*和*辅助密钥*。它们是加密形式的强密钥。请不要遗失或透漏这些密钥 - 在 [Azure 经典门户][]中总要用到它们。你可以使用其中一个生成的密钥，并且随时可以重新生成密钥。不过，如果你重新生成或更改策略中的主密钥，基于该密钥创建的所有共享访问签名都将失效。
+在你创建策略后，系统将为它分配*主密钥*和*辅助密钥*。它们是加密形式的强密钥。请不要遗失或透漏这些密钥 - 在 [Azure 管理门户][]中总要用到它们。你可以使用其中一个生成的密钥，并且随时可以重新生成密钥。不过，如果你重新生成或更改策略中的主密钥，基于该密钥创建的所有共享访问签名都将失效。
 
 当你创建服务总线命名空间时，系统将自动为整个命名空间创建名为 **RootManageSharedAccessKey** 的策略，此策略具有所有权限。你不会以 **root** 身份登录，因此除非有适合的理由，否则请勿使用此策略。可以在 Azure 管理门户上的命名空间“配置”选项卡中创建更多的策略。请务必注意，在服务总线中的单一树级别（命名空间、队列、事件中心等）中，最多只能附加 12 个策略。
 
@@ -178,11 +178,11 @@ ContentType: application/atom+xml;type=entry;charset=utf-8
 
 ## 使用共享访问签名（在 AMQP 级别）
 
-在前一部分中，你已了解如何使用 SAS 令牌配合 HTTP POST 请求将数据发送到服务总线。如你所了解，你可以使用 AMQP（高级消息队列协议）来访问服务总线。在许多方案中，都会出于性能考虑而将 AMQP 协议用作首选的主要协议。文章[基于 AMQP 声明的安全性版本 1.0](https://www.oasis-open.org/committees/download.php/50506/amqp-cbs-v1%200-wd02%202013-08-12.doc)（自 2013 年以来以有效草案版推出，不过 Azure 现在能够很好地支持它）中介绍了如何配合 AMQP 使用 SAS 令牌。
+在前一部分中，你已了解如何使用 SAS 令牌配合 HTTP POST 请求将数据发送到服务总线。如你所了解，你可以使用高级消息队列协议 (AMQP) 来访问服务总线。在许多方案中，都会出于性能原因而将该协议用作首选协议。文档[基于 AMQP 声明的安全性版本 1.0](https://www.oasis-open.org/committees/download.php/50506/amqp-cbs-v1%200-wd02%202013-08-12.doc)（自 2013 年以来以有效草案版推出，不过 Azure 现在能够很好地支持它）中介绍了如何配合 AMQP 使用 SAS 令牌。
 
-开始将数据发送到服务总线之前，发布者需要在 AMQP 消息内部将 SAS 令牌发送到正确定义且名为 **"$cbs"** 的 AMQP 节点（可以将它视为一个由服务使用的“特殊”队列，用于获取和验证所有 SAS 令牌）。发布者需要指定 AMQP 消息内部的 **"ReplyTo"** 字段；这是服务向发布者回复令牌验证结果（发布者与服务之间的简单请求/回复模式）时所在的节点。根据 AMQP 1.0 规范中有关“动态创建远程节点”的论述，此回复节点是“即时”创建的。在检查 SAS 令牌有效之后，发布者可以继续将数据发送到服务。
+开始将数据发送到服务总线之前，发布者必须将 AMQP 消息中的 SAS 令牌发送到正确定义的名为 **"$cbs"** 的 AMQP 节点（可以将它视为一个由服务使用的“特殊”队列，用于获取和验证所有 SAS 令牌）。发布者必须在 AMQP 消息中指定 **"ReplyTo"** 字段；这是服务向发布者回复令牌验证结果（发布者与服务之间的简单请求/回复模式）时所在的节点。根据 AMQP 1.0 规范中有关“动态创建远程节点”的论述，此回复节点是“在运行中”创建的。在检查 SAS 令牌有效之后，发布者可以继续将数据发送到服务。
 
-以下步骤将说明如果无法在 C&#35; 中使用正式的服务总线 SDK（例如在 WinRT、.Net Compact Framework、.Net Micro Framework 和 Mono 中）进行开发，应如何有效地使用 [AMQP.Net Lite](http://amqpnetlite.codeplex.com) 库配合 AMQP 协议发送 SAS 令牌。当然，此库对于了解基于声明的安全性如何在 AMQP 级别运行而言非常有用，就如同你可以了解它如何在 HTTP 级别运行一样（使用 HTTP POST 请求并在 "Authorization" 标头内部发送 SAS 令牌）。但是，请不要担心！ 如果你不想要学习此类有关 AMQP 的深奥知识，可以使用正式服务总线 SDK 配合 .Net Framework 应用程序来为执行这些操作，或者针对其他所有平台使用 [Azure SB Lite](http://azuresblite.codeplex.com) 库（请参阅上述说明）。
+下面的步骤演示如何使用 [AMQP.Net Lite](https://github.com/Azure/amqpnetlite) 库通过 AMQP 协议发送 SAS 令牌。如果你不能使用官方的服务总线 SDK（例如，在 WinRT、Net Compact Framework、.Net Micro Framework 和 Mono 中）进行 C&#35; 开发，则这很有用。当然，此库对于帮助了解基于声明的安全性如何在 AMQP 级别工作非常有用，就如同你可以了解它如何在 HTTP 级别工作一样（使用 HTTP POST 请求并在“Authorization”标头内部发送 SAS 令牌）。如果你不需要此类有关 AMQP 的深入知识，可以将官方的服务总线 SDK 用于 .Net Framework 应用程序，该 SDK 会为你执行此操作。
 
 ### C&#35;
 
@@ -235,11 +235,13 @@ private bool PutCbsToken(Connection connection, string sasToken)
 }
 ```
 
-上述的 *PutCbsToken()* 方法接收代表服务 TCP 连接的 *connection*（AMQP .Net Lite 库提供的 AMQP Connection 类实例），以及代表要发送的 SAS 令牌的 *sasToken* 参数。注意：必须在**将 SASL 身份验证机制设置为 EXTERNAL** 的情况下创建连接（而不是在不需要发送 SAS 令牌时使用的包含用户名与密码的默认 PLAIN）。
+`PutCbsToken()` 方法接收代表服务的 TCP 连接的 connection（[AMQP .NET Lite 库](https://github.com/Azure/amqpnetlite)提供的 AMQP Connection 类实例），以及表示要发送的 SAS 令牌的 sasToken 参数。
+
+> [AZURE.NOTE] 请务必在 **SASL 身份验证机制设置为 EXTERNAL** 的情况下创建连接（而不是在不需要发送 SAS 令牌时使用的包含用户名与密码的默认 PLAIN）。
 
 接下来，发布者创建两个 AMQP 链接来发送 SAS 令牌并接收来自服务的回复（令牌验证结果）。
 
-AMQP 消息因为具有众多属性而有点复杂，且包含比简单消息更多的信息。SAS 令牌放在消息正文中（使用令牌构造函数）。**"ReplyTo"** 属性设置为节点名称，用于在接收者链接上接收验证结果（可以随意更改其名称，它是服务动态创建的）。服务使用最后三个 application/custom 属性来了解它必须执行哪种类型的操作。如 CBS 草案规范中所述，这些属性必须是**操作名称** ("put-token")、放入的**令牌类型** ("servicebus.chinacloudapi.cn:sastoken")，最后是要应用令牌的**受众“名称”**（整个实体）。
+AMQP 消息包含一组属性，比简单消息包含更多信息。SAS 令牌是消息的正文（使用其构造函数）。**"ReplyTo"** 属性设置为用于在接收方链接上接收验证结果的节点名称（可以根据需要更改其名称，该节点将由服务动态创建）。服务使用最后三个应用程序/自定义属性来指示它需要执行哪种类型的操作。如 CBS 草案规范中所述，这些属性必须是**操作名称** ("put-token")、**令牌类型**（在此例中为“servicebus.chinacloudapi.cn:sastoken”），以及要应用令牌的**受众的“名称”**（整个实体）。
 
 在发送方链接上发送 SAS 令牌后，发布者需要在接收者链接上读取回复。回复是一个简单的 AMQP 消息，其中包含名为 **"status-code"** 的应用程序属性，这些属性可以包含与 HTTP 状态代码相同的值。
 
@@ -251,6 +253,6 @@ AMQP 消息因为具有众多属性而有点复杂，且包含比简单消息更
 
 此[博客文章](http://developers.de/blogs/damir_dobric/archive/2013/10/17/how-to-create-shared-access-signature-for-service-bus.aspx)中介绍了更多关于 C# 和 Java 脚本中的 SAS 的示例。
 
-[Azure 经典门户]: http://manage.windowsazure.cn
+[Azure 管理门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->

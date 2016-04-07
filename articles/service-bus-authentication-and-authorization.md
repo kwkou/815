@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线身份验证和授权 | Azure"
+   pageTitle="服务总线身份验证和授权 | Microsoft Azure"
    description="共享访问签名 (SAS) 身份验证概述。"
    services="service-bus"
    documentationCenter="na"
@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-   ms.date="12/09/2015"
+   ms.date="03/09/2016"
    wacn.date="04/01/2016" />
 
 # 服务总线身份验证和授权

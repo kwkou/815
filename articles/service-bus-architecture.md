@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线体系结构 | Azure"
+   pageTitle="服务总线体系结构 | Microsoft Azure"
    description="介绍 Azure 服务总线的消息处理体系结构。"
    services="service-bus"
    documentationCenter="na"
@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-   ms.date="11/06/2015"
+   ms.date="03/09/2016"
    wacn.date="12/17/2015" />
 
 # 服务总线体系结构

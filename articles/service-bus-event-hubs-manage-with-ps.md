@@ -9,7 +9,7 @@
 
 <tags
    ms.service="service-bus"
-   ms.date="12/09/2015"
+   ms.date="03/09/2016"
    wacn.date="01/14/2016"/>
 
 # 使用 PowerShell 管理 Service Bus 和事件中心资源

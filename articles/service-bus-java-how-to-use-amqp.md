@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将 AMQP 1.0 用于 Java 服务总线 API | Azure" 
+	pageTitle="将 AMQP 1.0 用于 Java 服务总线 API | Microsoft Azure" 
 	description="了解如何将 Java 消息服务 (JMS) 用于 Azure 服务总线和高级消息队列"
 	services="service-bus"
 	documentationCenter="java"
@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="11/06/2015" 
+	ms.date="03/09/2016" 
 	wacn.date="01/14/2016"/>
 
 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="针对服务总线分区队列和主题的 AMQP 1.0 支持 | Azure" 
+	pageTitle="针对服务总线分区队列和主题的 AMQP 1.0 支持 | Microsoft Azure" 
 	description="了解如何将高级消息队列协议 (AMQP) 1.0 用于服务总线分区队列和主题。" 
 	services="service-bus" 
 	documentationCenter=".net" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="11/05/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="03/16/2016" 
+	wacn.date="04/05/2016"/>
 
 
 
@@ -64,13 +64,13 @@ receivedMessage.Complete();
 
 ## 将 AMQP 用于分区主题
 
-与队列相似，对于需要临时分离、负载调配、负载平衡和松散耦合的应用场景，主题十分有用。与队列不同，主题可以路由相同消息的副本到多个订阅服务器。在主题中，发布服务器将消息发送到主题，使用者接收订阅的消息。在库存系统的示例中，销售点终端会将数据发布到主题。然后，库存管理系统会从订阅接收消息。此外，监视系统可以从不同的订阅接收同一消息。有关服务总线主题的更多详细信息，请参阅[创建使用服务总线主题和订阅的应用程序](/documentation/articles/service-bus-create-topics-subscriptions)
+主题在概念上类似于队列，但主题可以将同一消息的副本路由到多个订阅服务器。在主题中，发布服务器将消息发送到主题，使用者从订阅接收消息。在库存系统销售点方案中，终端会将数据发布到主题。然后，库存管理系统会从订阅接收消息。此外，监视系统可以从不同的订阅接收同一消息。有关服务总线主题和订阅的更多详细信息，请参阅[创建使用服务总线主题和订阅的应用程序](/documentation/articles/service-bus-create-topics-subscriptions)
 
 分区主题会进一步提高应用程序的可用性、可靠性和吞吐量，因为这些主题及其订阅是跨多个消息中转站和消息存储分区的。
 
 ### 创建分区主题
 
-可以通过 [Azure 经典门户][]和服务总线 SDK 创建分区主题。若要创建分区主题，请在 [TopicDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.aspx) 实例中将 [EnablePartitioning](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.enablepartitioning.aspx) 属性设置为 **true**。以下代码演示如何使用服务总线 SDK 创建分区主题。
+可以通过 [Azure 管理门户][]和服务总线 SDK 创建分区主题。若要创建分区主题，请在 [TopicDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.aspx) 实例中将 [EnablePartitioning](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.enablepartitioning.aspx) 属性设置为 **true**。以下代码演示如何使用服务总线 SDK 创建分区主题。
 	
 ```
 // Create partitioned topic
@@ -85,7 +85,7 @@ nm.CreateSubscription(subscriptionDescription);
 
 ### 使用 AMQP 发送和接收消息
 
-通过将 [TransportType](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.servicebusconnectionstringbuilder.transporttype.aspx) 属性设置为 [TransportType.Amqp](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.transporttype.aspx) 可以使用 AMQP 作为协议发送消息到分区主题订阅，以及从分区主题订阅接收消息，如以下代码片段所示。
+通过将 [TransportType](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.servicebusconnectionstringbuilder.transporttype.aspx) 属性设置为 [TransportType.Amqp](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.transporttype.aspx) 可以使用 AMQP 作为协议发送消息到分区主题订阅，以及从分区主题订阅接收消息，如以下代码所示。
 
 ```
 // Sending and receiving messages to a topic and from a subscription
@@ -114,6 +114,6 @@ receivedMessage.Complete();
 *    [如何将 Java 消息服务 (JMS) API 用于服务总线和 AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)
 *    [如何将 AMQP 1.0 与服务总线 .NET API 一起使用](/documentation/articles/service-bus-dotnet-advanced-message-queuing)
 
-[Azure 经典门户]: http://manage.windowsazure.cn
+[Azure 管理门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->
