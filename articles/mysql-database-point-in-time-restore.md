@@ -22,7 +22,7 @@ MySQL Database on Azure每天在您指定的时间自动备份您的MySQL数据�
 
 MySQL Database on Azure会自动备份过去七天的数据库增量部分（或者改动部分）以实现基于任意时间点的回滚。用户不需要做任何的操作。
 
-###**还原数据库到任意时间点**
+##**还原数据库到任意时间点**
 
 MySQL Database on Azure支持还原到过去七天中的某一时间点。
 
