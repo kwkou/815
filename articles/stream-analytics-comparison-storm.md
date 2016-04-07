@@ -1,7 +1,7 @@
 <properties
-	pageTitle="比较：Apache Storm 和Azure 流分析 | Azure"
-	description="了解如何使用流分析进行实时 Twitter 观点分析。在实时仪表板上提供从事件生成到数据的分步指南。"
-	keywords="实时 twitter,观点分析,社交媒体分析,社交媒体分析工具"
+	pageTitle="分析平台：Apache Storm 与流分析之间的比较 | Azure"
+	description="使用 Apache Storm 与流分析之间的比较获取有关选择云分析平台的指导。了解功能和区别。"
+	keywords="分析平台, 分析平台, 云分析平台, storm 比较"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -11,7 +11,7 @@
 <tags
 	ms.service="stream-analytics"
 	ms.date="02/04/2016"
-	wacn.date="03/21/2016"/>
+	wacn.date="04/05/2016"/>
 
 
 # 帮助你选择流分析平台：Apache Storm 与 Azure 流分析的比较
@@ -585,4 +585,4 @@
     </tbody>
 </table>
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0328_2016-->
