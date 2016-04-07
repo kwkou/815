@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure 服务总线 | Azure" 
+	pageTitle="Azure 服务总线 | Microsoft Azure" 
 	description="介绍使用服务总线将 Azure 应用程序连接到其他软件的各种方法。" 
 	services="service-bus" 
 	documentationCenter=".net" 
@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="11/06/2015" 
+	ms.date="03/09/2016" 
 	wacn.date="01/14/2016"/>
 
 # Azure 服务总线

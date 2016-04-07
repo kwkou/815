@@ -1,14 +1,14 @@
 <properties 
-   pageTitle="使用服务总线提高性能的最佳实践 | Azure"
+   pageTitle="使用服务总线提高性能的最佳实践 | Microsoft Azure"
    description="介绍如何使用 Azure 服务总线在交换中转消息时优化性能。"
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
-   editor="tysonn" /> 
+   editor="" /> 
 <tags 
    ms.service="service-bus"
-   ms.date="12/28/2015"
+   ms.date="03/16/2016"
    wacn.date="02/26/2016" />
 
 # 使用服务总线中转消息传送改进性能的最佳实践

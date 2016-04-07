@@ -1,14 +1,14 @@
 <properties 
-   pageTitle="服务总线异步消息传送 | Azure"
+   pageTitle="服务总线异步消息传送 | Microsoft Azure"
    description="介绍服务总线异步中转消息传送。"
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
-   editor="tysonn" />
+   editor="" />
 <tags 
    ms.service="service-bus"
-   ms.date="12/28/2015"
+   ms.date="03/16/2016"
    wacn.date="02/26/2016" />
 
 # 异步消息传送模式和高可用性

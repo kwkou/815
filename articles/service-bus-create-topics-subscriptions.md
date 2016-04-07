@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="创建使用服务总线主题和订阅的应用程序 | Azure"
+   pageTitle="创建使用服务总线主题和订阅的应用程序 | Microsoft Azure"
    description="服务总线主题和订阅提供的发布-订阅功能简介。"
    services="service-bus"
    documentationCenter="na"
@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-   ms.date="12/28/2015"
-   wacn.date="02/26/2016" />
+    ms.date="03/16/2016"
+   wacn.date="04/05/2016" />
 
 # 创建使用服务总线主题和订阅的应用程序
 
@@ -29,7 +29,7 @@ Azure 服务总线支持一组基于云的、面向消息的中间件技术，�
 
 将消息发送到某主题的方式与将它们发送到队列的方式相同。但是，不会直接从该主题中接收消息；而是从订阅中接收消息。你可以将主题订阅视为接收发送至该主题的消息副本的虚拟队列。从订阅接收消息的方式与从队列接收的方式相同。
 
-返回到零售方案时，队列被替换为一个主题，并添加了一个将由库存管理系统组件使用的订阅。系统现将如下所示：
+返回到零售方案时，队列被替换为一个主题，并添加了库存管理系统组件可以使用的订阅。系统现将如下所示：
 
 ![Service-Bus2](./media/service-bus-create-topics-subscriptions/IC657165.gif)
 

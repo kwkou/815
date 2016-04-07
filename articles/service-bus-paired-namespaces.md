@@ -1,14 +1,14 @@
 <properties 
-   pageTitle="服务总线配对命名空间 |Azure"
+   pageTitle="服务总线配对命名空间 | Microsoft Azure"
    description="配对命名空间实现的详细信息和成本"
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
-   editor="tysonn" />
+   editor="" />
 <tags 
    ms.service="service-bus"
-   ms.date="12/28/2015"
+   ms.date="03/16/2016"
    wacn.date="02/26/2016" />
 
 # 配对命名空间实现详细信息和成本影响

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 Ruby 使用服务总线队列 | Azure"
+	pageTitle="如何通过 Ruby 使用服务总线队列 | Microsoft Azure"
 	description="了解如何在 Azure 中使用 Service Bus 队列。用 Ruby 编写的代码示例。"
 	services="service-bus"
 	documentationCenter="ruby"
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="12/09/2015"
+	ms.date="03/09/2016"
 	wacn.date="01/14/2016"/>
 
 
