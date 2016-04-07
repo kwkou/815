@@ -108,7 +108,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 			get-azurewebsite yoursitename | select hostnames
 
-	* 安装和配置 [Azure 跨平台命令行接口](/documentation/articles/xplat-cli)，然后使用以下命令：
+	* 安装和配置 [Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install)，然后使用以下命令：
 
 			azure site domain list yoursitename
 
@@ -149,7 +149,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 **使用命令行工具添加域名**
 
-安装和配置 [Azure 跨平台命令行接口](/documentation/articles/xplat-cli)，然后使用以下命令：
+安装和配置 [Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install)，然后使用以下命令：
 
 	azure site domain add customdomain yoursitename
 
@@ -245,7 +245,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 **使用命令行工具添加域名**
 
-安装和配置 [Azure 跨平台命令行接口](/documentation/articles/xplat-cli)，然后使用以下命令：
+安装和配置 [Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install)，然后使用以下命令：
 
 	azure site domain add customdomain yoursitename
 

@@ -10,7 +10,7 @@
 <tags
    ms.service="batch"
    ms.date="09/29/2015"
-   wacn.date="01/21/2016"/>
+   wacn.date="04/07/2016"/>
 
 #  批处理( Batch )和 HPC 解决方案
 
@@ -157,7 +157,7 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 
 ![IaaS 中的群集][iaas_cluster]
 
-**自动化部署** - 若要部署大量 Windows Server 或 Linux VM，可以使用标准或自定义的 VM 映像与 Azure 自动化工具，例如 [Azure 命令行界面](/documentation/articles/xplat-cli)或 [Azure PowerShell](/documentation/articles/powershell-install-configure)。示例包括：
+**自动化部署** - 若要部署大量 Windows Server 或 Linux VM，可以使用标准或自定义的 VM 映像与 Azure 自动化工具，例如 [Azure 命令行界面](/documentation/articles/xplat-cli-install)或 [Azure PowerShell](/documentation/articles/powershell-install-configure)。示例包括：
 
 * 若要在 Azure 基础结构服务中部署 HPC Pack 群集，可以从客户端计算机运行灵活的 [Azure PowerShell 脚本](https://msdn.microsoft.com/zh-cn/library/azure/dn864734.aspx)；该脚本使用预装了 HPC Pack 的 Windows Server VM 映像。
 

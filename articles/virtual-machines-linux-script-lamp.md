@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="02/23/2015"
-	wacn.date="09/18/2015"/>
+	wacn.date="04/07/2016"/>
 
 #使用适用于 Linux 的 Azure CustomScript 扩展部署 LAMP 应用程序#
 
@@ -28,7 +28,7 @@
 
 虽然特定的安装命令将采用 Ubuntu，但你可以针对任何受支持的发行版改编一般步骤。
 
-*script-vm* VM 需要使用与 Azure 之间的有效链接安装 Azure CLI。有关这方面的帮助，请参阅[安装和配置 Azure 命令行界面](/documentation/articles/xplat-cli)。
+*script-vm* VM 需要使用与 Azure 之间的有效链接安装 Azure CLI。有关这方面的帮助，请参阅[安装和配置 Azure 命令行界面](/documentation/articles/xplat-cli-install)。
 
 ## 上载脚本
 

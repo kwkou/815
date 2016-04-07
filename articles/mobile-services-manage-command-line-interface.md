@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="01/27/2016"
-	wacn.date="03/21/2016"/>
+	wacn.date="04/07/2016"/>
 
 #  使用命令行工具自动操作移动服务 
 
@@ -184,6 +184,6 @@
 [mac-installer]: http://go.microsoft.com/fwlink/p?LinkId=252249
 [windows-installer]: http://go.microsoft.com/fwlink/p?LinkID=275464
 [reference-docs]: /documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_mobile_services
-[如何安装适用于 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/documentation/articles/xplat-cli
+[如何安装适用于 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/documentation/articles/xplat-cli-install
 
 <!---HONumber=Mooncake_0118_2016-->
