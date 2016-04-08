@@ -10,7 +10,7 @@
 <tags
     ms.service="multiple"
     ms.date="03/07/2016" 
-    ms.author="04/05/2016"/>
+    wacn.date="04/05/2016"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh694271.aspx -->
 
