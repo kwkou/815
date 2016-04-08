@@ -14,7 +14,7 @@ MySQL Database on Azure每天在您指定的时间自动备份您的MySQL数据�
 
 手动即时备份的步骤：
 
-1. 登陆Azure管理门户, [http://manage.windowsazure.cn/](http://manage.windowsazure.cn/)。在左边服务列表里点击“MYSQL DATABASE ON AZURE"。
+1. 登陆[Azure管理门户](http://manage.windowsazure.cn/), 在左边服务列表里点击“MYSQL DATABASE ON AZURE"。
 2.	在服务器列表里点击要恢复的数据库服务器进入服务器界面，点击“备份”页面。
 3.	点击“立即备份”键并确认操作。
 
@@ -28,7 +28,7 @@ MySQL Database on Azure支持还原到过去七天中的某一时间点。
 
 恢复到某一时间点的步骤：
 
-1. 登陆Azure管理门户, [http://manage.windowsazure.cn/](http://manage.windowsazure.cn/)。在左边服务列表里点击“MYSQL DATABASE ON AZURE"。
+1. 登陆[Azure管理门户](http://manage.windowsazure.cn/),在左边服务列表里点击“MYSQL DATABASE ON AZURE"。
 2. 在服务器列表里点击要恢复的数据库服务器进入服务器界面。点击“操作台”页面。
 ![还原到任意时间点][1]
 3. 在下面的任务菜单里点击“还原”键，弹出对话框。
@@ -42,7 +42,7 @@ MySQL Database on Azure支持还原到过去七天中的某一时间点。
 
 MySQL Database on Azure支持还原一个完全备份到一个新的实例。具体步骤如下：
 
-1.	登陆Azure管理门户, [http://manage.windowsazure.cn/](http://manage.windowsazure.cn/)。在左边服务列表里点击“MYSQL DATABASE ON AZURE"。
+1.	登陆[Azure管理门户](http://manage.windowsazure.cn/), 在左边服务列表里点击“MYSQL DATABASE ON AZURE"。
 2.	在服务器列表里点击要恢复的数据库服务器进入服务器界面，点击“备份”页面。
 3.	选中要恢复的完全备份，点击“还原”键。
 ![完全备份到新实例][3]
@@ -54,7 +54,7 @@ MySQL Database on Azure支持还原一个完全备份到一个新的实例。具
 
 MySQL Database on Azure支持还原一个完全备份到原实例。具体步骤如下：
 
-1.	登陆Azure管理门户, [http://manage.windowsazure.cn/](http://manage.windowsazure.cn/)。在左边服务列表里点击“MYSQL DATABASE ON AZURE"。
+1.	登陆[Azure管理门户](http://manage.windowsazure.cn/), 在左边服务列表里点击“MYSQL DATABASE ON AZURE"。
 2.	在服务器列表里点击要恢复的数据库服务器进入服务器界面，点击“备份”页面。
 3.	选中要恢复的完全备份，点击“还原”键。
 4.	在弹出的对话框里，在“还原为”项中选择“当前服务”。同时确认“我理解还原服务器将需要几分钟，在此期间无法访问数据库服务器”。然后点击完成键。
