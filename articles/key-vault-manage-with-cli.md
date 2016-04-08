@@ -51,8 +51,6 @@
 还可阅读以下教程以熟悉如何在 Azure 跨平台命令行接口中使用 Azure 资源管理器：
 
 - [如何安装和配置 Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install)
-- [将 Azure 跨平台命令行接口用于 Azure 资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)
-
 
 ## 连接到订阅
 

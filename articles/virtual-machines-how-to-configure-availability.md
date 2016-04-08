@@ -93,9 +93,6 @@
 
 >[AZURE.NOTE] 虚拟机可能必须重新启动，以完成将其添加到可用性集的操作。
 
-## 其他资源
-
-[有关服务管理中虚拟机的文章]
 
 <!-- LINKS -->
 [选项 1：同时创建虚拟机和可用性集]: #createset
@@ -105,6 +102,5 @@
 [管理虚拟机的可用性]: /documentation/articles/virtual-machines-manage-availability
 [创建运行 Windows 的虚拟机]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 [虚拟网络概述]: /documentation/articles/virtual-networks-overview
-[有关服务管理中虚拟机的文章]: /documentation/articles/virtual-machines-service-management-articles
 
 <!---HONumber=Mooncake_0215_2016-->

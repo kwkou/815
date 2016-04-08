@@ -32,7 +32,6 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 有关 Azure CLI，请参阅：
 
 - [将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools).
-- [使用 Azure CLI 创建多 VM 部署](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli)
 
 有关 Azure PowerShell，请参阅：
 

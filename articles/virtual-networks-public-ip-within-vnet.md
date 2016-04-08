@@ -41,8 +41,6 @@
 
 ## 后续步骤
 
-[如何管理虚拟网络 (VNet) 属性](/documentation/articles/virtual-networks-settings)
-
 [如何管理虚拟网络 (VNet) 使用的 DNS 服务器](/documentation/articles/virtual-networks-manage-dns-in-vnet)
 
 [如何删除虚拟网络 (VNet)](/documentation/articles/virtual-networks-delete-vnet)

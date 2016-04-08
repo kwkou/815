@@ -108,7 +108,7 @@
 
 ## 后续步骤
 
-现在，可以借助新的 Azure Active Directory 标识来使用 [Azure 资源组模板](/documentation/articles/xplat-cli-azure-resource-manager)。
+现在，可以借助新的 Azure Active Directory 标识来使用 Azure 资源组模板
 
      azure login -e AzureChinaCloud -u <username> -p <password>
     info:    Executing command login

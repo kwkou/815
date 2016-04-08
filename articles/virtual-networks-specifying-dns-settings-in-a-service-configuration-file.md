@@ -35,6 +35,4 @@
 
 [使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/)
 
-[关于管理门户中的虚拟网络设置](/documentation/articles/virtual-networks-settings/)
-
 <!---HONumber=76-->

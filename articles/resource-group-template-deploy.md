@@ -110,8 +110,6 @@
 
 ## 使用适用于 Mac、Linux 和 Windows 的 Azure CLI 进行部署
 
-如果你以前没有对资源管理器使用过 Azure CLI，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager)。
-
 1. 登录到你的 Azure 帐户。提供凭据后，该命令将返回你的登录结果。
 
         azure login -e AzureCinaCloud -u <username> -p <password>
