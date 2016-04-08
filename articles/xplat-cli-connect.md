@@ -136,8 +136,6 @@ CLI 版本 0.9.9 及更高版本支持多重身份验证。
 
 * [将 Azure CLI 与服务管理（经典）命令配合使用][cliasm]
 
-* [将 Azure CLI 与资源管理器命令配合使用][cliarm]
-
 * 若要了解有关 Azure CLI、下载源代码、报告问题或贡献项目的详细信息，请访问[适用于 Azure CLI 的 GitHub 存储库](https://github.com/azure/azure-xplat-cli)。
 
 * 如果你在使用 Azure CLI 或 Azure 时遇到问题，请访问 [Azure 论坛](http://social.msdn.microsoft.com/Forums/windowsazure/home)。
@@ -151,6 +149,5 @@ CLI 版本 0.9.9 及更高版本支持多重身份验证。
 [portal]: https://manage.windowsazure.cn
 [signuporg]: /documentation/articles/sign-up-organization
 [cliasm]: /documentation/articles/virtual-machines-command-line-tools
-[cliarm]: /documentation/articles/xplat-cli-azure-resource-manager
 
 <!---HONumber=Mooncake_0314_2016-->

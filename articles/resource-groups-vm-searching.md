@@ -68,8 +68,6 @@
 	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_10-amd64-server-20140826-beta1-en-us-30GB                     Public    Linux    Canonical
 	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-15_04-amd64-server-20150707-en-us-30GB                           Public    Linux    Canonical
 
-关于如何使用这些映像，请参阅[使用 Azure CLI 创建多 VM 部署](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli)
-
 
 ## PowerShell
 

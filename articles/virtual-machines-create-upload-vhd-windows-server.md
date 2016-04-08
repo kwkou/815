@@ -190,7 +190,7 @@
 
 	![自定义映像](./media/virtual-machines-create-upload-vhd-windows-server/vm_custom_image.png)
 
-	现在，当你创建虚拟机时，此新映像将在**“我的映像”**下提供。有关说明，请参阅[如何创建运行 Windows 的自定义虚拟机](/documentation/articles/virtual-machines-windows-create-custom)。
+	现在，当你创建虚拟机时，此新映像将在**“我的映像”**下提供。
 
 	![从自定义映像创建虚拟机](./media/virtual-machines-create-upload-vhd-windows-server/create_vm_custom_image.png)
 

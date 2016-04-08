@@ -150,7 +150,7 @@ resolv.conf 文件通常是自动生成的，不应进行编辑。添加“optio
 
 ### 在管理门户中指定 DNS 服务器
 
-在管理门户中创建虚拟网络时，可以指定想要使用的 DNS 服务器的 IP 地址和名称。创建完虚拟网络后，你部署到虚拟网络的虚拟机和角色实例会使用指定的 DNS 设置自动配置。为特定云服务（Azure 经典）指定的 DNS 服务器或网络接口卡（基于 ARM 的部署）优先于为虚拟网络指定的 DNS 服务器。请参阅[关于在管理门户中配置虚拟网络](/documentation/articles/virtual-networks-settings)。
+在管理门户中创建虚拟网络时，可以指定想要使用的 DNS 服务器的 IP 地址和名称。创建完虚拟网络后，你部署到虚拟网络的虚拟机和角色实例会使用指定的 DNS 设置自动配置。为特定云服务（Azure 经典）指定的 DNS 服务器或网络接口卡（基于 ARM 的部署）优先于为虚拟网络指定的 DNS 服务器。
 
 ### 使用配置文件指定 DNS 服务器（Azure 经典）
 
@@ -168,8 +168,6 @@ resolv.conf 文件通常是自动生成的，不应进行编辑。添加“optio
 [Azure 服务配置架构](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)
 
 [虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
-
-[关于在管理门户中配置虚拟网络设置](/documentation/articles/virtual-networks-settings)
 
 [使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file)
 

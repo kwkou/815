@@ -40,8 +40,6 @@ VNet 可以与各种不同的 Azure 服务共同使用，例如云服务 (PaaS)�
 
 可以使用以下工具创建或配置虚拟网络：
 
-- 可以使用管理门户。请参阅[如何管理虚拟网络 (VNet) 属性](/documentation/articles/virtual-networks-settings)。
-
 - 可以使用网络配置文件 (netcfg)。请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file)。
 
 ### 在我的 VNet 中可以使用哪些地址范围？

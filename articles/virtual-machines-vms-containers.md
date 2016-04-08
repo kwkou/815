@@ -114,7 +114,7 @@ IT 和运营专家还可以从容器与虚拟机的组合中获益。
 
 这时候，任何架构师、开发人员或 IT 运营专家可能会想“我可以自动完成所有这些事情；这真的是数据中心即服务！”。
 
-你说得对，的确可以这样，而且有任意数量的系统，你可能已经使用了其中的许多系统，可管理 Azure VM 组和使用脚本（通常使用 [CustomScriptingExtension for Windows](https://msdn.microsoft.com/zh-cn/library/azure/dn781373.aspx) 或 [CustomScriptingExtension for Linux](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/)）注入自定义代码。你可以（可能已经）使用 PowerShell 或者[像这样](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli)的 Azure CLI 实现 Azure 自动部署。
+你说得对，的确可以这样，而且有任意数量的系统，你可能已经使用了其中的许多系统，可管理 Azure VM 组和使用脚本（通常使用 [CustomScriptingExtension for Windows](https://msdn.microsoft.com/zh-cn/library/azure/dn781373.aspx) 或 [CustomScriptingExtension for Linux](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/)）注入自定义代码。你可以（可能已经）使用 PowerShell 或者 Azure CLI 实现 Azure 自动部署。
 
 随后，这些功能通常迁移到 [Puppet](https://puppetlabs.com/) 和 [Chef](https://www.chef.io/) 等工具，以实现大规模的自动创建和配置 VM。（此处有一些链接指向[在 Azure 中使用这些工具](#tools-for-working-with-containers)的说明。）
 
