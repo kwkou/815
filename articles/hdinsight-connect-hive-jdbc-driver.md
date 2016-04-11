@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="03/04/2016"
-	wacn.date=""/>
+	wacn.date="04/11/2016"/>
 
 #使用 Hive JDBC 驱动程序连接到 Azure HDInsight 上的 Hive
 

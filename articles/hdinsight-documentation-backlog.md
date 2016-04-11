@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="03/09/2016"
-	wacn.date=""/>
+	wacn.date="04/11/2016"/>
 
 # Azure HDInsight 文档积压工作
 
