@@ -8,8 +8,8 @@
  editor=""/>
 <tags 
  ms.service="scheduler" 
- ms.date="12/04/2015" 
- wacn.date="01/14/2016"/>
+ ms.date="03/09/2016"
+ wacn.date="04/11/2016"/>
  
 # 计划程序 PowerShell Cmdlet 参考
 
@@ -35,13 +35,13 @@
  
  [计划程序是什么？](/documentation/articles/scheduler-intro)
  
- [计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms)
+ [Azure 计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms)
  
  [开始在管理门户中使用计划程序](/documentation/articles/scheduler-get-started-portal)
  
  [Azure 计划程序中的计划和计费](/documentation/articles/scheduler-plans-billing)
  
- [计划程序 REST API 参考](https://msdn.microsoft.com/zh-cn/library/dn528946)
+ [Azure 计划程序 REST API 参考](https://msdn.microsoft.com/zh-cn/library/dn528946)
  
  [计划程序高可用性和高可靠性](/documentation/articles/scheduler-high-availability-reliability)
  [Azure 计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors)
@@ -52,4 +52,4 @@
 
   
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0405_2016-->
