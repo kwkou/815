@@ -92,8 +92,6 @@ Power Query 可以从 [www.microsoft.com/download/details.aspx?id=39379](http://
 		TraceLevel eq 'ERROR'
 
 	![HDInsight Hadoop 日志选择列](./media/hdinsight-debug-jobs/hdinsight-hadoop-analyze-logs-visual-studio-filter.png)
-
-	有关构造筛选器的详细信息，请参阅[构造表设计器的筛选器字符串](/documentation/articles/vs-azure-tools-table-designer-construct-filter-strings)。
  
 ##写入 Azure Blob 存储的日志
 
