@@ -1,8 +1,13 @@
 <properties linkid="" urlDisplayName="" pageTitle="使用PowerShell管理MySQL Database on Azure - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, API, Azure MySQL Service, Azure RDS" description="本文介绍如何通过API实现更多MySQL Database on Azure的查询、创建、修改、删除等操作。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />  
 
-<tags ms.service="mysql" ms.date="" wacn.date="12/18/2015"/>
+<tags ms.service="mysql" ms.date="" wacn.date="04/11/2016"/>
 
 #创建用户
+
+> [AZURE.SELECTOR]
+- [中文版](/documentation/articles/mysql-database-api-createuser)
+- [英文版](/documentation/articles/mysql-database-enus-api-createuser)
+
 创建用户及密码。
 
 ##请求
