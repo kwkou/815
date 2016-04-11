@@ -1,5 +1,7 @@
 <properties linkid="" urlDisplayName="" pageTitle="Use Windows PowerShell to manage MySQL Database on Azure – Microsoft Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, beginner’s guide, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, API, Azure MySQL Service, Azure RDS" description="This article explains how to use the API to carry out more operations for MySQL Database on Azure, including query, create, modify and delete operations." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />
 
+<tags ms.service="mysql" ms.date="" wacn.date="04/11/2016"/>
+
 
 #Change user sign-in passwords
 
