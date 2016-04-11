@@ -8,8 +8,8 @@
  editor=""/>
 <tags 
  ms.service="scheduler" 
- ms.date="12/04/2015" 
- wacn.date="01/14/2016"/>
+ ms.date="03/09/2016"
+ wacn.date="04/11/2016"/>
  
 # 计划程序出站身份验证
 
@@ -29,113 +29,34 @@
 
 |元素|说明|
 |:---|:---|
-|_authentication（父元素）_|用于使用 SSL 客户端证书的身份验证对象。|
-|_type_|必需。身份验证的类型。对于 SSL 客户端证书，该值必须是 `ClientCertificate`。|
-|_pfx_|必需。PFX 文件的 Base64 编码内容。|
-|_password_|必需。用于访问 PFX 文件的密码。|
+|authentication（父元素）|用于使用 SSL 客户端证书的身份验证对象。|
+|type|必需。身份验证的类型。对于 SSL 客户端证书，该值必须是 `ClientCertificate`。|
+|pfx|必需。PFX 文件的 Base64 编码内容。|
+|password|必需。用于访问 PFX 文件的密码。|
 
 
 ## ClientCertificate 身份验证的响应正文
 
 发送包含身份验证信息的请求时，响应将包含以下与身份验证相关的元素。
 
-|元素 |说明 |
+|元素 | 说明 |
 |:--|:--|
-|_authentication（父元素）_ |用于使用 SSL 客户端证书的身份验证对象。|
-|_type_ |身份验证的类型。对于 SSL 客户端证书，该值为 `ClientCertificate`。|
-|_certificateThumbprint_ |证书的指纹。|
-|_certificateSubjectName_ |证书的使用者可分辨名称。|
-|_certificateExpiration_ |证书的过期日期。|
+|authentication（父元素） |用于使用 SSL 客户端证书的身份验证对象。|
+|type |身份验证的类型。对于 SSL 客户端证书，该值为 `ClientCertificate`。|
+|certificateThumbprint |证书的指纹。|
+|certificateSubjectName |证书的使用者可分辨名称。|
+|certificateExpiration |证书的过期日期。|
 
-## ClientCertificate 身份验证的示例请求和响应
-
-以下示例请求将发出包含 `ClientCertificate` 身份验证的 PUT 请求。该请求如下所示：
-
-
-	PUT https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/cs-brazilsouth-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/testScheduler 
-	x-ms-version: 2013-03-01
-	User-Agent: Microsoft.WindowsAzure.Scheduler.SchedulerClient/3.0.0.0 AzurePowershell/v0.8.10
-	Content-Type: application/json; charset=utf-8
-	Host: management.core.chinacloudapi.cn
-	Content-Length: 4013
-	Expect: 100-continue
-
-	{
-	  "action": {
-		"type": "http",
-		"request": {
-		  "uri": "https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/CS-NorthCentralUS-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/test",
-		  "method": "GET",
-		  "headers": {
-			"x-ms-version": "2013-03-01"
-		  },
-		  "authentication": {
-			"type": "clientcertificate",
-			"password": "test",
-			"pfx": "long-pfx-key”
-		  }
-		}
-	  },
-	  "recurrence": {
-		"frequency": "minute",
-		"interval": 1
-	  }
-	}
-
-发送此请求后，响应将如下所示：
-
-	HTTP/1.1 201 Created
-	Cache-Control: no-cache
-	Pragma: no-cache
-	Content-Length: 721
-	Content-Type: application/json; charset=utf-8
-	Expires: -1
-	Server: 1.0.6198.153 (rd_rdfe_stable.141027-2149) Microsoft-HTTPAPI/2.0
-	x-ms-servedbyregion: ussouth2
-	X-AspNet-Version: 4.0.30319
-	X-Powered-By: ASP.NET
-	 
-
-	{
-	  "id": "testScheduler",
-	  "action": {
-		"request": {
-		  "uri": "https://management.core.chinacloudapi.cn\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
-		  "method": "GET",
-		  "headers": {
-			"x-ms-version": "2013-03-01"
-		  },
-		  "authentication": {
-			"type": "ClientCertificate",
-			"certificateThumbprint": "C1645E2AF6317D9FCF9C78FE23F9DE0DAFAD2AB5",
-			"certificateExpiration": "2021-01-01T08:00:00Z",
-			"certificateSubjectName": "CN=Scheduler Management"
-		  }
-		},
-		"type": "http"
-	  },
-	  "recurrence": {
-		"frequency": "minute",
-		"interval": 1
-	  },
-	  "state": "enabled",
-	  "status": {
-		"nextExecutionTime": "2014-10-29T21:52:35.2108904Z",
-		"executionCount": 0,
-		"failureCount": 0,
-		"faultedCount": 0
-	  }
-	}
 ## 基本身份验证的请求正文
 
 使用 `Basic` 模型添加身份验证时，请在请求正文中指定以下附加元素。
 
 |元素|说明|
 |:--|:--|
-|_authentication（父元素）_ |用于使用基本身份验证的身份验证对象。|
-|_type_ |必需。身份验证的类型。对于基本身份验证，该值必须是 `Basic`。|
-|_username_ |必需。要进行身份验证的用户名。|
-|_password_ |必需。要进行身份验证的密码。|
+|authentication（父元素） |用于使用基本身份验证的身份验证对象。|
+|type |必需。身份验证的类型。对于基本身份验证，该值必须是 `Basic`。|
+|username |必需。要进行身份验证的用户名。|
+|password |必需。要进行身份验证的密码。|
 
 ## 基本身份验证的响应正文
 
@@ -143,84 +64,9 @@
 
 |元素|说明|
 |:--|:--|
-|_authentication（父元素）_ |用于使用基本身份验证的身份验证对象。|
-|_type_ |身份验证的类型。对于基本身份验证，该值为 `Basic`。|
-|_username_ |经过身份验证的用户名。|
-
-## 基本身份验证的示例请求和响应
-
-以下示例请求将发出包含 `Basic` 身份验证的 PUT 请求。该请求如下所示：
-
-	PUT https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/cs-brazilsouth-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/testScheduler 
-	x-ms-version: 2013-03-01
-	User-Agent: Microsoft.WindowsAzure.Scheduler.SchedulerClient/3.0.0.0 AzurePowershell/v0.8.10
-	Content-Type: application/json; charset=utf-8
-	Host: management.core.chinacloudapi.cn
-	Expect: 100-continue
-
-	{
-	  "action": {
-		"type": "http",
-		"request": {
-		  "uri": "https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/CS-NorthCentralUS-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/test",
-		  "method": "GET",
-		  "headers": {
-			"x-ms-version": "2013-03-01"
-		  },
-		"authentication":{  
-		  "username":"user1",
-		  "password":"password",
-		  "type":"basic"
-		  }           
-		}
-	  },
-	  "recurrence": {
-		"frequency": "minute",
-		"interval": 1
-	  }
-	}
-
-发送此请求后，响应将如下所示：
-
-	HTTP/1.1 201 Created
-	Cache-Control: no-cache
-	Pragma: no-cache
-	Content-Length: 721
-	Content-Type: application/json; charset=utf-8
-	Expires: -1
-	Server: 1.0.6198.153 (rd_rdfe_stable.141027-2149) Microsoft-HTTPAPI/2.0
-	x-ms-servedbyregion: ussouth2
-	X-AspNet-Version: 4.0.30319
-	X-Powered-By: ASP.NET
-
-	{
-	  "id": "testScheduler",
-	  "action": {
-		"request": {
-		  "uri": "https:\/\/management.core.chinacloudapi.cn\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
-		  "method": "GET",
-		  "headers": {
-			"x-ms-version": "2013-03-01"
-		  },
-		  "authentication":{  
-			"username":"user1",
-			"type":"Basic"
-		  }
-		},
-		"type": "http"
-	  },
-	  "recurrence": {
-		"frequency": "minute",
-		"interval": 1
-	  },
-	  "state": "enabled",
-	  "status": {
-		"nextExecutionTime": "2014-10-29T21:52:35.2108904Z",
-		"executionCount": 0,
-		"failureCount": 0,
-		"faultedCount": 0
-	  }
-	}
+|authentication（父元素） |用于使用基本身份验证的身份验证对象。|
+|type |身份验证的类型。对于基本身份验证，该值为 `Basic`。|
+|username |经过身份验证的用户名。|
 
 ## ActiveDirectoryOAuth 身份验证的请求正文
 
@@ -228,12 +74,12 @@
 
 |元素 |说明 |
 |:--|:--|
-|_authentication（父元素）_ |用于使用 ActiveDirectoryOAuth 身份验证的身份验证对象。|
-|_type_ |必需。身份验证的类型。对于 ActiveDirectoryOAuth 身份验证，该值必须是 `ActiveDirectoryOAuth`。|
-|_tenant_ |必需。Azure AD 租户的租户标识符。|
-|_audience_ |必需。此元素设置为 https://management.core.chinacloudapi.cn/.|。
-|_clientId_ |必需。为 Azure AD 应用程序提供客户端标识符。|
-|_secret_ |必需。正在请求令牌的客户端的机密。|
+|authentication（父元素） |用于使用 ActiveDirectoryOAuth 身份验证的身份验证对象。|
+|type |必需。身份验证的类型。对于 ActiveDirectoryOAuth 身份验证，该值必须是 `ActiveDirectoryOAuth`。|
+|tenant |必需。Azure AD 租户的租户标识符。|
+|audience |必需。此元素设置为 https://management.core.chinacloudapi.cn/.|。
+|clientId |必需。为 Azure AD 应用程序提供客户端标识符。|
+|secret |必需。正在请求令牌的客户端的机密。|
 
 ### 确定你的租户标识符
 
@@ -245,91 +91,11 @@
 
 |元素 |说明 |
 |:--|:--|
-|_authentication（父元素）_ |用于使用 ActiveDirectoryOAuth 身份验证的身份验证对象。|
-|_type_ |身份验证的类型。对于 ActiveDirectoryOAuth 身份验证，该值为 `ActiveDirectoryOAuth`。|
-|_tenant_ |Azure AD 租户的租户标识符。|
-|_audience_ |此元素设置为 https://management.core.chinacloudapi.cn/.|。
-|_clientId_ |AD 应用程序的客户端标识符。|
-
-## ActiveDirectoryOAuth 身份验证的示例请求和响应
-
-以下示例请求将发出包含 `ActiveDirectoryOAuth` 身份验证的 PUT 请求。该请求如下所示：
-
-	PUT https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/cs-brazilsouth-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/testScheduler 
-	x-ms-version: 2013-03-01
-	User-Agent: Microsoft.WindowsAzure.Scheduler.SchedulerClient/3.0.0.0 AzurePowershell/v0.8.10
-	Content-Type: application/json; charset=utf-8
-	Host: management.core.chinacloudapi.cn
-	Expect: 100-continue
-
-	{
-	  "action": {
-		"type": "http",
-		"request": {
-		  "uri": "https://management.core.chinacloudapi.cn/7e2dffb5-45b5-475a-91be-d3d9973c82d5/cloudservices/CS-NorthCentralUS-scheduler/resources/scheduler/~/JobCollections/testScheduler/jobs/test",
-		  "method": "GET",
-		  "headers": {
-			"x-ms-version": "2013-03-01"
-		  },
-		  "authentication":{  
-			"tenant":"01234567-89ab-cdef-0123-456789abcdef",
-			"audience":"https://management.core.chinacloudapi.cn/",
-			"clientId":"8a14db88-4d1a-46c7-8429-20323727dfab",
-			"secret": "&lt;secret-key&gt;",
-			"type":"ActiveDirectoryOAuth"
-		  }                      
-		}
-	  },
-	  "recurrence": {
-		"frequency": "minute",
-		"interval": 1
-	  }
-	}
-
-发送此请求后，响应将如下所示：
-
-	HTTP/1.1 201 Created
-	Cache-Control: no-cache
-	Pragma: no-cache
-	Content-Length: 721
-	Content-Type: application/json; charset=utf-8
-	Expires: -1
-	Server: 1.0.6198.153 (rd_rdfe_stable.141027-2149) Microsoft-HTTPAPI/2.0
-	x-ms-servedbyregion: ussouth2
-	X-AspNet-Version: 4.0.30319
-	X-Powered-By: ASP.NET
-
-
-	{
-	  "id": "testScheduler",
-	  "action": {
-		"request": {
-		  "uri": "https:\/\/management.core.chinacloudapi.cn\/7e2dffb5-45b5-475a-91be-d3d9973c82d5\/cloudservices\/CS-NorthCentralUS-scheduler\/resources\/scheduler\/~\/JobCollections\/testScheduler\/jobs\/test",
-		  "method": "GET",
-		  "headers": {
-			"x-ms-version": "2013-03-01"
-		  },
-		  "authentication":{  
-			"tenant":"01234567-89ab-cdef-0123-456789abcdef",
-			"audience":"https://management.core.chinacloudapi.cn/",
-			"clientId":"8a14db88-4d1a-46c7-8429-20323727dfab",
-			"type":"ActiveDirectoryOAuth"
-		  }
-		},
-		"type": "http"
-	  },
-	  "recurrence": {
-		"frequency": "minute",
-		"interval": 1
-	  },
-	  "state": "enabled",
-	  "status": {
-		"nextExecutionTime": "2014-10-29T21:52:35.2108904Z",
-		"executionCount": 0,
-		"failureCount": 0,
-		"faultedCount": 0
-	  }
-	}
+|authentication（父元素） |用于使用 ActiveDirectoryOAuth 身份验证的身份验证对象。|
+|type |身份验证的类型。对于 ActiveDirectoryOAuth 身份验证，该值为 `ActiveDirectoryOAuth`。|
+|tenant |Azure AD 租户的租户标识符。|
+|audience |此元素设置为 https://management.core.chinacloudapi.cn/.|。
+|clientId |AD 应用程序的客户端标识符。|
 
 ## 另请参阅
  
@@ -354,4 +120,4 @@
  
   
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0405_2016-->

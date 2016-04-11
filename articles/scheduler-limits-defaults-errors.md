@@ -8,8 +8,8 @@
  editor=""/>
 <tags
  ms.service="scheduler"
- ms.date="12/04/2015"
- wacn.date="01/14/2016"/>
+ ms.date="03/09/2016"
+ wacn.date="04/11/2016"/>
 
 # 计划程序的限制、默认值和错误代码
 
@@ -21,7 +21,7 @@
 
 对计划程序服务的每个请求都会返回一个名为“x-ms-request-id”的响应标头。此响应标头包含一个唯一标识此请求的不透明值。
 
-如果请求总是失败，并且你验证了请求格式正确，可以使用此值向 Microsoft 报告错误。请在报告中包含 x-ms-request-id 值，发出请求的大概时间，订阅、云服务、作业集合和/或作业的标识符，以及请求尝试进行的操作类型。
+如果请求总是失败，并且你验证了请求格式正确，可以使用此值向 Microsoft 报告错误。请在报告中包含 x-ms-request-id 值，发出请求的大概时间，订阅、作业集合和/或作业的标识符，以及请求尝试进行的操作类型。
 
 ## 计划程序状态和错误代码
 
@@ -45,13 +45,7 @@
 |ConflictError|冲突 (409)|发生了冲突，使操作未能完成。|
 |TemporaryRedirect|临时重定向 (307)|请求的对象不可用。可从响应的 Location 字段中获取该对象新位置的临时 URI。可对新 URI 重复执行原始请求。|
 
-API 操作可能还会返回由管理服务定义的其他错误信息。此额外错误信息将返回到响应正文中。错误响应的正文采用下面所示的基本格式。
-
-		<?xml version="1.0" encoding="utf-8"?>  
-		<Error>  
-			<Code>string-code</Code>  
-			<Message>detailed-error-message</Message>  
-		</Error>  
+API 操作可能还会返回由管理服务定义的其他错误信息。此额外错误信息将返回到响应正文中。
 
 ## 另请参阅
 
@@ -72,5 +66,4 @@ API 操作可能还会返回由管理服务定义的其他错误信息。此额�
  [Azure 计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication)
 
  
-
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0405_2016-->

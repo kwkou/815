@@ -8,22 +8,14 @@
  editor=""/>
 <tags
  ms.service="scheduler"
- ms.date="02/12/2016"
- wacn.date="03/17/2016"/>
+ ms.date="03/09/2016"
+ wacn.date="04/11/2016"/>
 
-# 在管理门户中开始使用计划程序
+# Azure 管理门户中的 Azure 计划程序入门
 
-# 开始在 Azure 经典门户中使用 Azure 计划程序
+在 Azure 计划程序中创建计划的作业很简单。在本教程中，你将了解如何创建作业。还将学习计划程序的监视和管理功能。
 
-## 入门
-
-在 Azure 计划程序中可以轻松创建作业和作业集合。本教程将引导你创建用于存储作业的作业集合，在作业集合中创建作业，并概述可执行的作业监视和管理任务。使用本教程要求你以前使用过 Azure。
-
-首次打开 Azure 管理门户时，系统会自动为你打开“所有项目”选项卡。可以对“所有项目”选项卡上的列进行排序。要查看计划程序作业和作业集合，请单击“计划程序”选项卡。
-
-![][1]
-
-## 创建作业集合和作业
+## 创建作业
 
 1.  登录到[管理门户](https://manage.windowsazure.cn)。  
 
@@ -255,5 +247,4 @@ Azure 计划程序基于几个条件实施配额。本节列出了配额阈值�
 [13]: ./media/scheduler-get-started-portal/scheduler-get-started-portal013.png
 [14]: ./media/scheduler-get-started-portal/scheduler-get-started-portal014.png
 [15]: ./media/scheduler-get-started-portal/scheduler-get-started-portal015.png
-
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0405_2016-->

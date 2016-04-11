@@ -8,8 +8,8 @@
  editor=""/>
 <tags
  ms.service="scheduler"
- ms.date="12/04/2015"
- wacn.date="01/14/2016"/>
+ ms.date="03/09/2016"
+ wacn.date="04/11/2016"/>
 
 # 计划程序的概念、术语和实体层次结构
 
@@ -19,7 +19,6 @@
 
 |资源 | 说明 |
 |---|---|
-|**云服务**|从概念上讲，一个云服务就表示一个应用程序。一个订阅可以具有多个云服务。|
 |**作业集合**|一个作业集合包含一组作业，并且维护该集合内各作业共享的设置、配额和限制。作业集合由订阅所有者创建，并基于使用情况或应用程序边界将作业组合在一起。它被约束到一个区域。通过作业集合，还可以强制执行配额以便约束对该集合中所有作业的使用。配额包括 MaxJobs 和 MaxRecurrence。|
 |**作业**|一个作业通过用于执行的简单或复杂策略定义单个重复发生的操作。操作可以包含 HTTP 请求或存储队列请求。|
 |**作业历史记录**|作业历史记录表示用于执行作业的详细信息。它包含成功与失败信息以及任何响应详细信息。|
@@ -30,7 +29,6 @@
 
 |功能|说明和 URI 地址|
 |---|---|
-|**云服务管理**|针对创建和修改云服务的 GET、PUT 和 DELETE 支持 <p>`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}`</p>|
 |**作业集合管理**|针对创建和修改作业集合和其中包含的作业的 GET、PUT 和 DELETE 支持。作业集合是针对作业以及指向配额和共享设置的映射的容器。配额（在后面介绍）的例子包括最大作业数和最小重复间隔 <p>PUT 和 DELETE：`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/jobcollections/{jobCollectionName}`</p><p>GET：`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}`</p>
 |**作业管理**|针对创建和修改作业的 GET、PUT、POST、PATCH 和 DELETE 支持。所有作业都必须属于某一已存在的作业集合，因此没有显式创建 <p>`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}`</p>|
 |**作业历史记录管理**|针对用于获取 60 天的作业执行历史记录（例如作业占用时间和作业执行结果）的 GET 支持。添加基于状态进行筛选的查询字符串参数支持 <P>`https://management.core.chinacloudapi.cn/{subscriptionId}/cloudservices/{cloudServiceName}/resources/scheduler/~/jobcollections/{jobCollectionName}/jobs/{jobId}/history`</p>|
@@ -204,4 +202,4 @@
  [计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication)
  
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0405_2016-->
