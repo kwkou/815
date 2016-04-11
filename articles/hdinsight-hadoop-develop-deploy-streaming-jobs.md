@@ -1,4 +1,3 @@
-
 <properties
 	pageTitle="为 HDInsight 开发 C# Hadoop 流式处理程序 | Azure"
 	description="了解如何以 C# 语言开发 Hadoop 流式处理 MapReduce 程序，以及如何将这些程序部署到 Azure HDInsight。"
@@ -11,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/15/2015"
-	wacn.date="01/07/2016"/>
+	ms.date="01/28/2016"
+	wacn.date=""/>
 
 
 
@@ -20,274 +19,117 @@
 
 Hadoop 为 MapReduce 提供了一个流式处理 API，使你能够以 Java 之外的其他语言来编写映射和化简函数。本教程将逐步引导你创建一个 C# 单词计数程序，从你提供的输入数据中统计给定单词的出现次数。下图显示了 MapReduce 框架如何执行单词计数：
 
-![HDI.WordCountDiagram][image-hdi-wordcountdiagram] 
-
+![HDI.WordCountDiagram][image-hdi-wordcountdiagram]
 
 本教程演示如何：
 
-- 在 HDInsight Emulator for Azure 上使用 C# 开发和测试 Hadoop 流式处理 MapReduce 程序
-- 在 Azure HDInsight 中运行同一个 MapReduce 作业
+- 使用 C# 开发 Hadoop 流式处理 MapReduce 程序 
+- 在 Azure HDInsight 中运行 MapReduce 作业
 - 检索 MapReduce 作业的结果
 
-<a name="prerequisites"></a>
-##先决条件
+##<a name="prerequisites"></a>先决条件
 
 在开始本教程之前，必须先完成以下操作：
 
-- 安装 HDInsight Emulator。有关说明，请参阅[开始使用 HDInsight Emulator][hdinsight-get-started-emulator]。
-- 在模拟器计算机上安装 Azure PowerShell。有关说明，请参阅[安装和配置 Azure PowerShell][powershell-install]。
+- 安装了 [Azure PowerShell][powershell-install] 和 [Microsoft Visual Studio](https://www.visualstudio.com/) 的工作站。
 - 获取 Azure 订阅。有关说明，请参阅[购买选项][azure-purchase-options]、[试用][azure-trial]。
 
 
-<a name="develop"></a>
-##使用 C&#35; 开发单词计数 Hadoop 流式处理程序
+##<a name="develop"></a> 使用 C&#35; 开发单词计数 Hadoop 流式处理程序
 
 单词计数解决方案包含两个控制台应用程序项目：映射器和化简器。映射器应用程序将每个单词流式传输到控制台，化简器应用程序对从文档流式传输的单词进行计数。映射器和化简器都从标准输入流 (stdin) 逐行读取字符，并写入到标准输出流 (stdout)。
 
-**创建 C# 控制台应用程序**
-
-1. 打开 Visual Studio 2013。
-2. 依次单击“文件”、“新建”和“项目”。
-3. 键入或选择以下值：
-
-
-字段|值
----|---
-模板|Visual C#/Windows/控制台应用程序
-Name|WordCountMapper
-位置|C:\\Tutorials
-解决方案名称|WordCount
-
-
-4. 单击“确定”以创建该项目。
-
 **创建映射器程序**
 
-5. 在解决方案资源管理器中，右键单击“Program.cs”，然后单击“重命名”。
-6. 将该文件重命名为 **WordCountMapper.cs**，然后按 **ENTER**。
-7. 单击“是”以确认重命名所有引用。
-8. 双击 **WordCountMapper.cs** 将它打开。
-9. 添加以下 **using** 语句：
+1. 打开 Visual Studio 并创建名为 **WordCountMapper** 的 C# 控制台应用程序。
+2. 在解决方案资源管理器中，将 **Program.cs** 重命名为 **WordCountMapper.cs**。单击“是”以确认重命名所有引用。
+3. 将 WordCountMapper.cs 中的代码替换为以下内容：
 
-		using System.IO;
+        using System;
+        using System.IO;
 
-10. 将 **Main()** 函数替换为以下内容：
+        namespace WordCountMapper
+        {
+            class WordCountMapper
+            {
+                static void Main(string[] args)
+                {
+                    if (args.Length > 0)
+                    {
+                        Console.SetIn(new StreamReader(args[0]));
+                    }
 
-		static void Main(string[] args)
-		{
-		    if (args.Length > 0)
-		    {
-		        Console.SetIn(new StreamReader(args[0]));
-		    }
+                    string line;
+                    string[] words;
 
-		    string line;
-		    string[] words;
+                    while ((line = Console.ReadLine()) != null)
+                    {
+                        words = line.Split(' ');
 
-		    while ((line = Console.ReadLine()) != null)
-		    {
-		        words = line.Split(' ');
+                        foreach (string word in words)
+                            Console.WriteLine(word.ToLower());
+                    }
+                }
+            }
+        }
 
-		        foreach (string word in words)
-		            Console.WriteLine(word.ToLower());
-		    }
-		}
-
-11. 单击“生成”，然后单击“生成解决方案”以编译该映射器程序。
-
+4. 生成解决方案，并确保没有编译错误。
 
 **创建化简器程序**
 
-1. 在 Visual Studio 2013 中，依次单击“文件”、“添加”、“新项目”。
-2. 键入或选择以下值：
-
-字段|值
----|---
-模板|Visual C#/Windows/控制台应用程序
-Name|WordCountReducer
-位置|C:\\Tutorials\\WordCount
-
-3. 清除“创建解决方案的目录”复选框，然后单击“确定”以创建项目。
-4. 在解决方案资源管理器中，右键单击“Program.cs”，然后单击“重命名”。
-5. 将该文件重命名为 **WordCountReducer.cs**，然后按 **ENTER**。
-7. 单击“是”以确认重命名所有引用。
-8. 双击 **WordCountReducer.cs** 将它打开。
-9. 添加以下 **using** 语句：
-
-		using System.IO;
-
-10. 将 **Main()** 函数替换为以下内容：
-
-		static void Main(string[] args)
-		{
-		    string word, lastWord = null;
-		    int count = 0;
-
-		    if (args.Length > 0)
-		    {
-		        Console.SetIn(new StreamReader(args[0]));
-		    }
-
-		    while ((word = Console.ReadLine()) != null)
-		    {
-		        if (word != lastWord)
-		        {
-		            if(lastWord != null)
-		                Console.WriteLine("{0}[{1}]", lastWord, count);
-
-		            count = 1;
-		            lastWord = word;
-		        }
-		        else
-		        {
-		            count += 1;
-		        }
-		    }
-		    Console.WriteLine(count);
-		}
-
-11. 单击“生成”，然后单击“生成解决方案”以编译该化简器程序。
-
-映射器和化简器可执行文件位于：
-
-- C:\\Tutorials\\WordCount\\WordCountMapper\\bin\\Debug\\WordCountMapper.exe
-- C:\\Tutorials\\WordCount\\WordCountReducer\\bin\\Debug\\WordCountReducer.exe
-
-
-<a name="test"></a>
-##在模拟器中测试该程序
-
-执行以下操作以在 HDInsight Emulator 中测试该程序：
-
-1. 将数据上载到模拟器的文件系统
-2. 将映射器和化简器应用程序上载到模拟器的文件系统
-3. 提交单词计数 MapReduce 作业
-4. 检查作业状态
-5. 检索作业结果
-
-默认情况下，HDInsight Emulator 使用 HDFS 作为文件系统。（可选）你可以将 HDInsight Emulator 配置为使用 Azure Blob 存储。有关详细信息，请参阅 [HDInsight Emulator 入门][hdinsight-emulator-wasb]。在本部分中，你将使用 HDFS **copyFromLocal** 命令上载文件。下一部分说明如何使用 Azure PowerShell 上载文件。有关其他方法，请参阅[将数据上载到 HDInsight][hdinsight-upload-data]。
-
-本教程使用以下文件夹结构：
-
-文件夹|注意
----|---
-\\WordCount|单词计数项目的根文件夹。
-\\WordCount\\Apps|映射器和化简器可执行文件所在的文件夹。
-\\WordCount\\Input|MapReduce 源文件文件夹。
-\\WordCount\\Output|MapReduce 输出文件文件夹。
-\\WordCount\\MRStatusOutput|作业输出文件夹。
-
-
-本教程使用位于 %hadoop\_home% 目录中的 .txt 文件。
-
-> [AZURE.NOTE]Hadoop HDFS 命令区分大小写。
-
-**将文本文件复制到模拟器的文件系统**
-
-1. 在 Hadoop 命令行窗口中，运行以下命令以生成输入文件的目录：
-
-		hadoop fs -mkdir /WordCount/
-		hadoop fs -mkdir /WordCount/Input
-
-	此处使用的路径是相对路径。它等效于以下命令：
-
-		hadoop fs -mkdir hdfs://localhost:8020/WordCount/Input
-
-2. 运行以下命令，将一些文本文件复制到 HDFS 中的输入文件夹：
-
-		hadoop fs -copyFromLocal %hadoop_home%\share\doc\hadoop\common*.txt \WordCount\Input
-
-3. 运行以下命令以列出已上载的文件：
-
-		hadoop fs -ls \WordCount\Input
-
-
-
-
-**将映射器和化简器部署到模拟器的文件系统**
-
-1. 从桌面打开 Hadoop 命令行，并在 HDFS 中创建 /Apps 文件夹：
-
-		hadoop fs -mkdir /WordCount/Apps
-
-2. 运行以下命令：
-
-		hadoop fs -copyFromLocal C:\Tutorials\WordCount\WordCountMapper\bin\Debug\WordCountMapper.exe /WordCount/Apps/WordCountMapper.exe
-		hadoop fs -copyFromLocal C:\Tutorials\WordCount\WordCountReducer\bin\Debug\WordCountReducer.exe /WordCount/Apps/WordCountReducer.exe
-
-3. 运行以下命令以列出已上载的文件：
-
-		hadoop fs -ls /WordCount/Apps
-
-	你应看到两个 .exe 文件。
-
-
-**使用 Azure PowerShell 运行 MapReduce 作业**
-
-1. 打开 Azure PowerShell。有关说明，请参阅[安装和配置 Azure PowerShell][powershell-install]。
-3. 运行以下命令以设置变量：
-
-		$clusterName = "http://localhost:50111"
-
-		$mrMapper = "WordCountMapper.exe"
-		$mrReducer = "WordCountReducer.exe"
-		$mrMapperFile = "/WordCount/Apps/WordCountMapper.exe"
-		$mrReducerFile = "/WordCount/Apps/WordCountReducer.exe"
-		$mrInput = "/WordCount/Input/"
-		$mrOutput = "/WordCount/Output"
-		$mrStatusOutput = "/WordCount/MRStatusOutput"
-
-	HDInsight Emulator 群集名称是 http://localhost:50111。
-
-4. 运行以下命令以定义流式处理作业：
-
-		$mrJobDef = New-AzureHDInsightStreamingMapReduceJobDefinition -JobName mrWordCountStreamingJob -StatusFolder $mrStatusOutput -Mapper $mrMapper -Reducer $mrReducer -InputPath $mrInput -OutputPath $mrOutput
-		$mrJobDef.Files.Add($mrMapperFile)
-		$mrJobDef.Files.Add($mrReducerFile)
-
-5. 运行以下命令以创建凭据对象：
-
-		$creds = Get-Credential -Message "Enter password" -UserName "hadoop"
-
-	系统将提示你输入密码。密码可以是任意字符串。用户名必须是“hadoop”。
-
-6. 运行以下命令以提交 MapReduce 作业并等待作业完成：
-
-		$mrJob = Start-AzureHDInsightJob -Cluster $clusterName -Credential $creds -JobDefinition $mrJobDef
-		Wait-AzureHDInsightJob -Credential $creds -job $mrJob -WaitTimeoutInSeconds 3600
-
-	作业完成后，你将获得如下输出：
-
-		StatusDirectory : /WordCount/MRStatusOutput
-		ExitCode        :
-		Name            : mrWordCountStreamingJob
-		Query           :
-		State           : Completed
-		SubmissionTime  : 11/15/2013 7:18:16 PM
-		Cluster         : http://localhost:50111
-		PercentComplete : map 100%  reduce 100%
-		JobId           : job_201311132317_0034
-
-	你可以在输出中看到作业 ID，例如 *job-201311132317-0034*。
-
-**检查作业状态**
-
-1. 从桌面单击“Hadoop YARN 状态”，或者浏览到 **http://localhost:50030/jobtracker.jsp**。
-2. 使用作业 ID 在“正在运行”或“已完成”类别下查找该作业。
-3. 如果作业失败，你可以在“失败”类别下找到该作业。你也可以打开作业详细信息，找到一些有用的调试信息。
-
-
-**显示 HDFS 的输出**
-
-1. 打开 Hadoop 命令行。
-2. 运行以下命令以显示输出：
-
-		hadoop fs -ls /WordCount/Output/
-		hadoop fs -cat /WordCount/Output/part-00000
-
-	你可以在命令结尾处追加“|more”以获取页面视图。
-
-<a id="upload"></a>
-##将数据上载到 Azure Blob 存储
+1. 将另一个名为 **WordCountReducer** 的 C# 控制台应用程序添加到该解决方案。
+
+		Location|C:\Tutorials\WordCount
+
+2. 在解决方案资源管理器中，将 **Program.cs** 重命名为 **WordCountReducer.cs**。单击“是”以确认重命名所有引用。
+3. 将 WordCountReducer.cs 中的代码替换为以下内容：
+
+        using System;
+        using System.IO;
+
+        namespace WordCountReducer
+        {
+            class WordCountReducer
+            {
+                static void Main(string[] args)
+                {
+                    string word, lastWord = null;
+                    int count = 0;
+
+                    if (args.Length > 0)
+                    {
+                        Console.SetIn(new StreamReader(args[0]));
+                    }
+
+                    while ((word = Console.ReadLine()) != null)
+                    {
+                        if (word != lastWord)
+                        {
+                            if (lastWord != null)
+                                Console.WriteLine("{0}[{1}]", lastWord, count);
+
+                            count = 1;
+                            lastWord = word;
+                        }
+                        else
+                        {
+                            count += 1;
+                        }
+                    }
+                    Console.WriteLine(count);
+                }
+            }
+        }
+
+4. 生成解决方案，并确保没有编译错误。
+
+你应获得映射器和化简器可执行文件：
+
+- ..\\WordCountMapper\\bin\\Debug\\WordCountMapper.exe
+- ..\\WordCountReducer\\bin\\Debug\\WordCountReducer.exe
+
+
+##<a id="upload"></a>将数据上载到 Azure Blob 存储
 Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDInsight 群集配置为将其他 Blob 存储用于数据文件。在本部分中，你将创建 Azure 存储帐户并将数据文件上载到 Blob 存储。数据文件是 %hadoop\_home%\\share\\doc\\hadoop\\common 目录中的 .txt 文件。
 
 
@@ -311,7 +153,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 
 		# Create a Blob storage container
 		$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-		$destContext = New-AzureStorageContext -Environment AzureChinaCloud –StorageAccountName $storageAccountName –StorageAccountKey $storageAccountKey  
+		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 		New-AzureStorageContainer -Name $containerName -Context $destContext
 
 4. 运行以下命令以验证存储帐户和容器：
@@ -376,8 +218,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 	你应看到这两个应用程序文件在该处列出。
 
 
-<a name="run"></a>
-##在 Azure HDInsight 中运行 MapReduce 作业
+##<a name="run"></a>在 Azure HDInsight 中运行 MapReduce 作业
 
 本部分提供的 Azure PowerShell 脚本将执行与 MapReduce 作业运行有关的所有任务。任务列表包括：
 
@@ -437,7 +278,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 		#====== CREATE A BLOB STORAGE CONTAINER ======
 		Write-Host "Create a Blob storage container" -ForegroundColor Green
 		$storageAccountKey_Default = Get-AzureStorageKey $storageAccountName_Default | %{ $_.Primary }
-		$destContext = New-AzureStorageContext -Environment AzureChinaCloud –StorageAccountName $storageAccountName_Default –StorageAccountKey $storageAccountKey_Default
+		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName_Default -StorageAccountKey $storageAccountKey_Default
 
 		New-AzureStorageContainer -Name $containerName_Default -Context $destContext
 
@@ -493,8 +334,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 有关提交 Hadoop 流式处理作业的 HDInsight .NET SDK 示例，请参阅[以编程方式提交 Hadoop 作业][hdinsight-submit-jobs]。
 
 
-<a name="retrieve"></a>
-##检索 MapReduce 作业输出
+##<a name="retrieve"></a> 检索 MapReduce 作业输出
 本节演示如何下载和显示输出。有关在 Excel 中显示结果的信息，请参阅[使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight][hdinsight-ODBC] 和[利用 Power Query 将 Excel 连接到 HDInsight][hdinsight-power-query]。
 
 
@@ -512,15 +352,16 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 
 		Select-AzureSubscription $subscriptionName
 		$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-		$storageContext = New-AzureStorageContext -Environment AzureChinaCloud –StorageAccountName $storageAccountName –StorageAccountKey $storageAccountKey  
+		$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 
 4. 运行以下命令以下载并显示输出：
 
 		Get-AzureStorageBlobContent -Container $ContainerName -Blob $blobName -Context $storageContext -Force
 		cat "./$blobName" | findstr "there"
 
-<a id="nextsteps"></a>
-##后续步骤
+
+
+##<a id="nextsteps"></a>后续步骤
 在本教程中，你已学习如何执行以下操作：开发 Hadoop 流式处理 MapReduce 作业、在 HDInsight Emulator 中测试应用程序、编写 Azure PowerShell 脚本以设置 HDInsight 群集以及在群集上运行 MapReduce 作业。若要了解更多信息，请参阅下列文章：
 
 - [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
@@ -537,17 +378,21 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+
 [hdinsight-get-started-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started
 [hdinsight-emulator-wasb]: /documentation/articles/hdinsight-hadoop-emulator-get-started#blobstorage
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
 [powershell-install]: /documentation/articles/powershell-install-configure
+
 [image-hdi-wordcountdiagram]: ./media/hdinsight-hadoop-develop-deploy-streaming-jobs/HDI.WordCountDiagram.gif "MapReduce 单词计数应用程序流"
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0405_2016-->
