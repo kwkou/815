@@ -724,7 +724,7 @@ PowerShell 示例将执行以下步骤：
 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
