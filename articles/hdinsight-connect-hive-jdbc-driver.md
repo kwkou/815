@@ -6,24 +6,30 @@
  authors="Blackmist"
  manager="paulettm"
  editor="cgronlun"
- tags="azure-portal"/>
+	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/01/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="03/04/2016"
+	wacn.date="04/11/2016"/>
 
 #使用 Hive JDBC 驱动程序连接到 Azure HDInsight 上的 Hive
 
 [AZURE.INCLUDE [ODBC-JDBC-selector](../includes/hdinsight-selector-odbc-jdbc.md)]
 
-在本文档中，你将学习如何使用 Java 应用程序中的 JDBC 将 Hive 查询远程提交到 HDInsight 群集。有关 Hive JDBC 接口的详细信息，请参阅 [HiveJDBCInterface](https://cwiki.apache.org/confluence/display/Hive/HiveJDBCInterface)。
+在本文档中，你将学习如何使用 Java 应用程序中的 JDBC 将 Hive 查询远程提交到 HDInsight 群集。你将学习如何从 SQuirreL SQL 客户端进行连接，以及如何通过 Java 以编程方式进行连接。
+
+有关 Hive JDBC 接口的详细信息，请参阅 [HiveJDBCInterface](https://cwiki.apache.org/confluence/display/Hive/HiveJDBCInterface)。
 
 ##先决条件
 
 若要完成本文中的步骤，你将需要：
 
-* HDInsight 群集上的 Hadoop。基于 Windows 的群集即可。
+* HDInsight 群集上的 Hadoop。可以使用基于 Windows 的群集。
+
+* [SQuirreL SQL](http://squirrel-sql.sourceforge.net/)。SQuirreL 是 JDBC 客户端应用程序。
+
+若要生成和运行本文中链接的示例 Java 应用程序，你需要以下软件。
 
 * [Java 开发人员工具包 (JDK) 版本 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 或更高版本。
 
@@ -35,31 +41,95 @@
 
     jdbc:hive2://CLUSTERNAME.azurehdinsight.cn:443/default;ssl=true?hive.server2.transport.mode=http;hive.server2.thrift.http.path=/hive2
 
+将 __CLUSTERNAME__ 替换为 HDInsight 群集的名称。
+
 ##身份验证
 
-建立连接时，必须指定 HDInsight 群集管理员名称和密码。这些凭据用于对提交到网关的请求进行身份验证。例如，以下 Java 代码将使用连接字符串、管理员名称和密码打开新的连接：
+建立连接时，必须使用 HDInsight 群集管理员名称和密码向群集网关进行身份验证。从 JDBC 客户端（例如 SQuirreL SQL）进行连接时，必须在客户端设置中输入管理员名称和密码。
+
+从 Java 应用程序建立连接时，必须使用该名称和密码。例如，以下 Java 代码将使用连接字符串、管理员名称和密码打开新的连接：
 
     DriverManager.getConnection(connectionString,clusterAdmin,clusterPassword);
 
-##查询
+##使用 SQuirreL SQL 客户端进行连接
 
-一旦建立连接，即可针对 Hive 运行查询。例如，以下 Java 代码对表执行 __SELECT__ 操作，将结果限制为只包括三行，然后显示结果：
+SQuirreL SQL 是一种 JDBC 客户端，可用于通过 HDInsight 群集远程运行 Hive 查询。以下步骤假定你已安装 SQuirreL SQL，并会引导你下载和配置 Hive 的驱动程序。
 
-    sql = "SELECT querytime, market, deviceplatform, devicemodel, state, country from " + tableName + " LIMIT 3";
-    stmt2 = conn.createStatement();
-    System.out.println("\nRetrieving inserted data:");
+1. 从 HDInsight 群集中复制 Hive JDBC 驱动程序。
 
-    res2 = stmt2.executeQuery(sql);
+    * 对于__基于 Windows 的 HDInsight__，请使用以下步骤来下载 jar 文件。
 
-    while (res2.next()) {
-      System.out.println( res2.getString(1) + "\t" + res2.getString(2) + "\t" + res2.getString(3) + "\t" + res2.getString(4) + "\t" + res2.getString(5) + "\t" + res2.getString(6));
-    }
+        1. 在 Azure 管理门户中选择你的 HDInsight 群集，然后单击页面顶部的“配置”。
 
-##Java 项目示例
+        2. 在“配置”页中，单击底部的“连接”连接到群集。如果未启用远程桌面，请使用表单提供用户名和密码，然后单击“启用”为群集启用远程桌面。
 
-使用 Java 客户端在 HDInsight 上查询 Hive 的示例位于 [https://github.com/Azure-Samples/hdinsight-java-hive-jdbc](https://github.com/Azure-Samples/hdinsight-java-hive-jdbc)。按照存储库中的说明生成并运行该示例。
+            选择“连接”后，将会下载 .rdp 文件。使用此文件来启动远程桌面客户端。出现提示时，使用你输入过的用户名和密码进行远程桌面访问。
 
->[AZURE.NOTE] 这个示例是为全球 Azure 写的，在 Azure 中国，你需要把连接字符串中的 "azurehdinsight.net" 替换为 "azurehdinsight.cn"
+        3. 连接后，将以下文件从远程桌面会话复制到本地计算机上。将其置于名为 `hivedriver` 的本地目录中。
+
+            * C:\\apps\\dist\\hive-0.14.0.2.2.9.1-7\\lib\\hive-jdbc-0.14.0.2.2.9.1-7-standalone.jar
+            * C:\\apps\\dist\\hadoop-2.6.0.2.2.9.1-7\\share\\hadoop\\common\\hadoop-common-2.6.0.2.2.9.1-7.jar
+            * C:\\apps\\dist\\hadoop-2.6.0.2.2.9.1-7\\share\\hadoop\\common\\lib\\hadoop-auth-2.6.0.2.2.9.1-7.jar
+
+            > [AZURE.NOTE] 你的群集的路径和文件名中包含的版本号可能有所不同。
+
+        4. 完成文件复制以后，断开远程桌面会话的连接。
+
+3. 启动 SQuirreL SQL 应用程序。在窗口左侧，选择“驱动程序”。
+
+    ![窗口左侧的“驱动程序”选项卡](./media/hdinsight-connect-hive-jdbc-driver/squirreldrivers.png)
+
+4. 从“驱动程序”对话框顶部的图标中，选择“+”图标创建新的驱动程序。
+
+    ![驱动程序图标](./media/hdinsight-connect-hive-jdbc-driver/driversicons.png)
+
+5. 在“添加驱动程序”对话框中，添加以下信息。
+
+    * __名称__：Hive
+    * __示例 URL__：jdbc:hive2://localhost:443/default;ssl=true?hive.server2.transport.mode=http;hive.server2.thrift.http.path=/hive2
+    * __额外类路径__：使用“添加”按钮添加此前下载的 jar 文件
+    * __类名__：org.apache.hive.jdbc.HiveDriver
+
+    ![添加驱动程序对话框](./media/hdinsight-connect-hive-jdbc-driver/adddriver.png)
+
+    单击“确定”以保存这些设置。
+
+6. 在 SQuirreL SQL 窗口左侧，选择“别名”。然后单击“+”图标，以创建新的连接别名。
+
+    ![添加新的别名](./media/hdinsight-connect-hive-jdbc-driver/aliases.png)
+
+7. 将以下值用于“添加别名”对话框。
+
+    * __名称__：Hive on HDInsight
+    * __驱动程序__：使用下拉列表选择 __Hive__ 驱动程序
+    * __URL__：jdbc:hive2://CLUSTERNAME.azurehdinsight.cn:443/default;ssl=true?hive.server2.transport.mode=http;hive.server2.thrift.http.path=/hive2
+
+        将 __CLUSTERNAME__ 替换为 HDInsight 群集的名称。
+
+    * __用户名__：HDInsight 群集的群集登录帐户名。默认为 `admin`。
+    * __密码__：群集登录帐户的密码。这是你在创建 HDInsight 群集时提供的密码。
+
+    ![添加别名对话框](./media/hdinsight-connect-hive-jdbc-driver/addalias.png)
+
+    使用“测试”按钮验证连接是否有效。出现“连接到: Hive on HDInsight”对话框时，选择“连接”进行测试。如果测试成功，你会看到“连接成功”对话框。
+
+    使用“添加别名”对话框底部的“确定”按钮来保存连接别名。
+
+8. 在 SQuirreL SQL 顶部的“连接到”下拉列表中，选择“Hive on HDInsight”。出现提示时，选择“连接”。
+
+    ![连接对话框](./media/hdinsight-connect-hive-jdbc-driver/connect.png)
+
+9. 连接后，在 SQL 查询对话框中输入以下查询，然后选择“运行”图标。结果区域会显示查询的结果。
+
+        select * from hivesampletable limit 10;
+
+    ![sql 查询对话框，其中包括结果](./media/hdinsight-connect-hive-jdbc-driver/sqlquery.png)
+
+##从示例 Java 应用程序进行连接
+
+使用 Java 客户端查询 Hive on HDInsight 的示例位于 [https://github.com/Azure-Samples/hdinsight-java-hive-jdbc](https://github.com/Azure-Samples/hdinsight-java-hive-jdbc)。按照存储库中的说明生成并运行该示例。
+
+>[AZURE.NOTE] 此示例是针对全球 Azure 编写的。对于 Azure 中国区，需在连接字符串中将“azurehdinsight.net”替换为“azurehdinsight.cn”。
 
 ##后续步骤
 
@@ -70,4 +140,4 @@
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig)
 * [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0405_2016-->
