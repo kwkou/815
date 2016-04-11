@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="01/07/2016"
-	wacn.date="02/25/2016"/>
+	ms.date="02/14/2016"
+	wacn.date="04/11/2016"/>
 
 # 存储分析
 
@@ -18,11 +18,11 @@
 
 Azure 存储分析执行日志记录并为存储帐户提供度量值数据。可以使用此数据跟踪请求、分析使用情况趋势以及诊断存储帐户的问题。
 
-若要使用存储分析，必须为每个要监视的服务单独启用它。可以从 [Azure 管理门户](https://manage.windowsazure.cn/)启用它；有关详细信息，请参阅[如何监视存储帐户](/documentation/articles/storage-monitor-storage-account)。还可以通过 REST API 或客户端库以编程方式启用存储分析。使用[获取 Blob 服务属性](https://msdn.microsoft.com/zh-cn/library/hh452239.aspx)、[获取队列服务属性](https://msdn.microsoft.com/zh-cn/library/hh452243.aspx)和[获取表服务属性](https://msdn.microsoft.com/zh-cn/library/hh452238.aspx)操作为每个服务启用存储分析。
+若要使用存储分析，必须为每个要监视的服务单独启用它。你可以从 [Azure 管理门户](https://manage.windowsazure.cn/)中启用它。有关详细信息，请参阅[在 Azure 门户中监视存储帐户](/documentation/articles/storage-monitor-storage-account)。还可以通过 REST API 或客户端库以编程方式启用存储分析。使用[获取 Blob 服务属性](https://msdn.microsoft.com/zh-cn/library/hh452239.aspx)、[获取队列服务属性](https://msdn.microsoft.com/zh-cn/library/hh452243.aspx)、[获取表服务属性](https://msdn.microsoft.com/zh-cn/library/hh452238.aspx)和[获取文件服务属性](https://msdn.microsoft.com/zh-cn/library/mt427369.aspx)操作来为每个服务启用存储分析。
 
 聚合数据存储在众所周知的 Blob（用于日志记录）和众所周知的表（用于度量）中，可以使用 BLOB 服务和表服务 API 对其进行访问。
 
-存储分析针对存储的数据量实施 20 TB 的限制，这与存储帐户的总限制无关。有关计费和数据保留策略的详细信息，请参阅[存储分析和计费](https://msdn.microsoft.com/zh-cn/library/hh360997.aspx)。有关存储帐户限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](https://msdn.microsoft.com/zh-cn/library/dn249410.aspx)。
+存储分析针对存储的数据量实施 20 TB 的限制，这与存储帐户的总限制无关。有有关计费和数据保留策略的详细信息，请参阅[存储分析和计费](https://msdn.microsoft.com/zh-cn/library/hh360997.aspx)。有关存储帐户限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
 
 有关使用存储分析及其他工具来识别、诊断和排查 Azure 存储相关问题的深入指导，请参阅[监视、诊断和排查 Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)。
 
@@ -32,6 +32,8 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 存储分析记录成功和失败的存储服务请求的详细信息。可以使用该信息监视各个请求和诊断存储服务问题。将最大程度地记录请求。
 
 仅当存在存储服务活动时，才会创建日志项。例如，如果存储帐户的 BLOB 服务中存在活动，而表或队列服务中没有活动，则仅创建与 BLOB 服务有关的日志。
+
+存储分析日志记录不可用于 Azure 文件服务。
 
 ### 记录经过身份验证的请求
 
@@ -58,13 +60,12 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 
 - 失败的 GET 请求，错误代码为 304（未修改）。
 
-不会记录所有其他失败的匿名请求。[存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/hh343260.aspx)及[存储分析日志格式](](https://msdn.microsoft.com/zh-cn/library/hh343259.aspx))主题中提供了所记录数据的完整列表。
+不会记录所有其他失败的匿名请求。[存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/hh343260.aspx)及[存储分析日志格式](https://msdn.microsoft.com/zh-cn/library/hh343259.aspx)主题中提供了所记录数据的完整列表。
 
 ### 如何存储日志
 所有日志以块存储(block blob) 的形式存储在一个名为 $logs 的容器中，为存储帐户启用存储分析时将自动创建该容器。$logs 容器位于存储帐户的 blob 命名空间中，例如：`http://<accountname>.blob.core.chinacloudapi.cn/$logs`。在启用存储分析后，无法删除该容器，但可以删除其内容。
 
->[Azure.NOTE] 在执行容器列出操作（例如 [ListContainers](https://msdn.microsoft.com/zh-cn/library/ee758348.aspx) 方法）时，不会显示 $logs 容器。必须直接访问该容器。例如，可以使用 [ListBlobs](https://msdn.microsoft.com/zh-cn/library/ee772878.aspx) 方法访问 `$logs` 容器中的 Blob。
-在记录请求时，存储分析将中间结果作为块进行上载。存储分析定期提交这些块，并将其作为 Blob 提供。
+>[Azure.NOTE] 在执行容器列出操作（例如 [ListContainers](https://msdn.microsoft.com/zh-cn/library/azure/dd179352.aspx) 方法）时，不会显示 $logs 容器。必须直接访问该容器。例如，可以使用 [ListBlobs](https://msdn.microsoft.com/zh-cn/library/azure/dd135734.aspx) 方法访问 `$logs` 容器中的 Blob。在记录请求时，存储分析将中间结果作为块进行上载。存储分析定期提交这些块，并将其作为 Blob 提供。
 
 在同一小时内创建的日志中可能存在重复的记录。可以通过检查 **RequestId** 和**操作**编号来确定记录是否为重复记录。
 
@@ -123,7 +124,7 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 
 存储分析可存储一些度量值，这些度量值包括有关存储服务请求的聚合事务统计信息和容量数据。在 API 操作级别以及存储服务级别报告事务，并在存储服务级别报告容量。度量值数据可用于分析存储服务使用情况，诊断对存储服务所发出请求的问题以及提高使用服务的应用程序的性能。
 
-若要使用存储分析，必须为每个要监视的服务单独启用它。可以从 [Azure 管理门户](https://manage.windowsazure.com/)启用它；有关详细信息，请参阅[如何监视存储帐户](/documentation/articles/how-to-monitor-a-storage-account)。还可以通过 REST API 或客户端库以编程方式启用存储分析。[使用获取 Blob 服务属性](https://msdn.microsoft.com/zh-cn/library/hh452239.aspx)、[获取队列服务属性和获取表服务属性操作为每个服务启用存储分析](https://msdn.microsoft.com/zh-cn/library/hh452238.aspx)。
+若要使用存储分析，必须为每个要监视的服务单独启用它。你可以从 [Azure 管理门户](https://manage.windowsazure.com/)中启用它。有关详细信息，请参阅[在 Azure 门户中监视存储帐户](/documentation/articles/storage-monitor-storage-account)。还可以通过 REST API 或客户端库以编程方式启用存储分析。使用**获取服务属性**操作为每项服务启用存储分析。
 
 ### 事务度量值
 
@@ -190,7 +191,7 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 ## 后续步骤
 
 ### 设置存储分析
-- [如何监视存储帐户](/documentation/articles/how-to-monitor-a-storage-account) 
+- [监视 Azure 门户中的存储帐户](/documentation/articles/storage-monitor-storage-account) 
 - [启用和配置存储分析](https://msdn.microsoft.com/zh-cn/library/hh360996.aspx)
 
 ### 存储分析日志记录  
@@ -203,4 +204,5 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 - [存储分析度量值表结构](https://msdn.microsoft.com/zh-cn/library/hh343264.aspx) 
 - [存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/hh343260.aspx)  
 
-<!---HONumber=Mooncake_0215_2016-->
+
+<!---HONumber=Mooncake_0405_2016-->

@@ -10,8 +10,8 @@
 <tags 
 	ms.service="storage" 
 
-	ms.date="02/03/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="02/29/2016"
+	wacn.date="04/11/2016"/>
 
 # 如何通过 Java 使用文件存储
 
@@ -206,18 +206,12 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 
 如果你还想更多地了解其他 Azure 存储 API，请点击以下链接。
 
-- [Azure Storage SDK for Java]
-- [Azure 存储客户端 SDK 参考]
-- [Azure 存储 REST API]
-- [Azure 存储团队博客]
+- [Java 开发中心](/develop/java/)
+- [Azure Storage SDK for Java](https://github.com/azure/azure-storage-java)
+- [Azure Storage SDK for Android](https://github.com/azure/azure-storage-android)
+- [Azure 存储客户端 SDK 参考](http://azure.github.io/azure-storage-java/)
+- [Azure 存储空间服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
+- [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
 
-[Azure SDK for Java]: /develop/java/
-[Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
-[Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
-[Azure 存储 REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
-[Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
- 
-
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0405_2016-->

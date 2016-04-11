@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="01/26/2016"
-	wacn.date="03/17/2016"/>
+	ms.date="02/20/2016"
+	wacn.date="04/11/2016"/>
 
 
 
@@ -21,7 +21,7 @@
 
 ## 什么是 Azure 自动化？
 
-[Azure 自动化](/documentation/services/automation) 是用于通过流程自动化简化云管理的一项 Azure 服务。使用 Azure 自动化 可以自动完成那些长时间运行、人工操作、易出错和经常重复的任务，从而改善组织的可靠性、效率和价值生成时间。
+[Azure 自动化](/home/features/automation/)是用于通过流程自动化简化云管理的一项 Azure 服务。使用 Azure 自动化可以自动完成那些长时间运行、人工操作、易出错和经常重复的任务，从而改善组织的可靠性、效率和价值生成时间。
 
 Azure 自动化提供高度可靠且高度可用的工作流执行引擎，它可以随着组织的发展，根据你的需求扩展。在 Azure 自动化中，流程可以手动、通过第三方系统或按计划的间隔启动，使任务能够完全根据需求进行。
 
@@ -34,16 +34,16 @@ Azure 自动化提供高度可靠且高度可用的工作流执行引擎，它�
 
 [Azure 自动化 Runbook 库](https://azure.microsoft.com/blog/2014/10/07/introducing-the-azure-automation-runbook-gallery/)包含产品团队和社区提供的各种 Runbook，以帮助你开始自动管理 Azure 存储空间、其他 Azure 服务和第三方系统。库中 Runbook 的功能包括：
 
- * [删除 X 天以前的 Azure 存储空间 Blob](https://gallery.technet.microsoft.com/scriptcenter/Remove-Storage-Blobs-that-aae4b761)
- * [将 Azure 存储空间中的 Blob 下载到 Azure 自动化](https://gallery.technet.microsoft.com/scriptcenter/a-Blob-from-Azure-Storage-6bc13745)
- * [在 Azure 云服务中创建 Azure VM 数据磁盘的副本](https://gallery.technet.microsoft.com/scriptcenter/Make-copies-of-Azure-VM-065a6394)
+ * [使用自动化服务删除寿命达到特定天数的 Azure 存储空间 Blob](https://gallery.technet.microsoft.com/scriptcenter/Remove-Storage-Blobs-that-aae4b761)
+ * [从 Azure 存储空间下载 Blob](https://gallery.technet.microsoft.com/scriptcenter/a-Blob-from-Azure-Storage-6bc13745)
+ * [为单个 Azure VM 或云服务中的所有 VM 备份所有磁盘](https://gallery.technet.microsoft.com/scriptcenter/Backup-all-disks-for-a-ede940d5)
 
 
 ## 后续步骤
 
 在了解 Azure 自动化 以及如何使用它来管理 Azure 存储 Blob、表和队列的基础知识后，请使用以下链接了解有关 Azure 自动化的更多信息。
 
-请参阅 Azure 自动化[入门教程](/documentation/articles/automation-create-runbook-from-samples)
+请参阅 Azure 自动化教程[在 Azure 自动化中创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook)
  
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0405_2016-->

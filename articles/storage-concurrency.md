@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="09/03/2015" 
-	wacn.date="01/21/2016"/>
+	ms.date="02/20/2016"
+	wacn.date="04/11/2016"/>
 
 
 
@@ -21,7 +21,7 @@
 通常情况下，基于 Internet 的新型应用程序允许多名用户同时查看和更新数据。这就要求应用程序开发人员仔细考虑如何为他们的最终用户提供可预测的体验，尤其是在多名用户可以更新相同数据的情况下。开发人员通常将考虑下面三个主要数据并发策略：
 
 
-1.	乐观并发 – 执行更新的应用程序在更新过程中要验证数据是否自该应用程序上次读取该数据起已发生更改。例如，如果两名查看 wiki 页的用户对同一页进行更新，则 wiki 平台必须确保第二次更新不会覆盖第一次更新，并且两名用户都了解他们的更新成功与否。此策略最常用于 Web 应用中。
+1.	乐观并发 – 执行更新的应用程序在更新过程中要验证数据是否自该应用程序上次读取该数据起已发生更改。例如，如果两名查看 wiki 页的用户对同一页进行更新，则 wiki 平台必须确保第二次更新不会覆盖第一次更新，并且两名用户都了解他们的更新成功与否。此策略最常用于 Web 应用程序中。
 2.	悲观并发 – 要执行更新的应用程序将对对象获取一个锁，以防其他用户在该锁释放前更新数据。例如，在主/从数据复制情况下，如果只有主对象要执行更新，则该对象通常将在长时间内对数据持有一个独占锁，以确保其他任何用户都不能更新该数据。
 3.	上次编写者赢 – 一种方法，即允许任何更新操作继续进行，而不需要验证其他任何应用程序是否自应用程序首次读取数据起已更新该数据。此策略（或缺乏正式策略）通常用于以下情况：以多名用户不可能访问相同数据的方式对数据进行分区。该策略可能还适用于正在处理短期数据流的情况。  
 
@@ -32,7 +32,7 @@ Azure 存储服务支持所有三个策略，尽管它具有独特的功能，�
 
 除了选择相应的并发策略，开发人员还应了解存储平台如何隔离更改，尤其是对跨事务的相同对象的更改。Azure 存储服务使用快照隔离允许在单个分区中并发执行读取操作与写入操作。与其他隔离级别不同，快照隔离保证，所有读取操作看到的数据快照是一致的，即使在执行更新时也是如此。事实上，这是通过在处理更新事务时返回上次提交的值实现的。  
 
-## 在 Blob 服务中管理并发
+## 在 Blob 存储中管理并发
 你可以选择使用乐观并发模型或悲观并发模型，来管理对 Blob 服务中的 Blob 和容器的访问。如果你没有明确指定策略，则上次编写者赢是默认策略。
 
 ### Blob 和容器的乐观并发  
@@ -47,7 +47,7 @@ Azure 存储服务支持所有三个策略，尽管它具有独特的功能，�
 4.	如果 Blob 的当前 ETag 值与请求的 **If-Match** 条件标头中的 ETag 的版本不同，则该服务将 412 错误返回到客户端。这向客户端表明，其他进程自客户端检索到 Blob 起已更新该 Blob。
 5.	如果 Blob 的当前 ETag 值与请求的 **If-Match** 条件标头中的 ETag 的版本相同，则该服务将执行请求的操作，并更新该 Blob 的当前 ETag 值，以说明它已创建新版本。  
 
-以下 C# 代码段（使用客户端存储库 4.2.0）显示一个简单示例，说明如何根据从以前检索到或插入的 Blob 访问的 ETag 值构造 **If-Match AccessCondition**。然后，在更新该 Blob 时使用 **AccessCondition** 对象：**AccessCondition** 对象将 **If-Match** 标头添加到请求中。如果其他进程已更新该 Blob，则 Blob 服务将返回 HTTP 412 (不满足前提条件) 状态消息。可在[此处](http://code.msdn.microsoft.com/windowsazure/Managing-Concurrency-using-56018114)下载完整示例。  
+以下 C# 代码段（使用客户端存储库 4.2.0）显示一个简单示例，说明如何根据从以前检索到或插入的 Blob 访问的 ETag 值构造 **If-Match AccessCondition**。然后，在更新该 Blob 时使用 **AccessCondition** 对象：**AccessCondition** 对象将 **If-Match** 标头添加到请求中。如果其他进程已更新该 Blob，则 Blob 服务将返回 HTTP 412 (不满足前提条件) 状态消息。可以在这里下载完整的示例：[使用 Azure 存储空间管理并发](http://code.msdn.microsoft.com/Managing-Concurrency-using-56018114)。
 
 	// Retrieve the ETag from the newly created blob
 	// Etag is already populated as UploadText should cause a PUT Blob call 
@@ -126,7 +126,7 @@ Azure 存储服务支持所有三个策略，尽管它具有独特的功能，�
 
 租约允许支持各种同步策略，包括独占写入/共享读取、独占写入/独占读取和共享写入/独占读取。如果租约存在，则存储服务会强制执行独占写入（放置、设置和删除操作），但是，若要确保读取操作的独占性，开发人员需要确保所有客户端应用程序都使用一个租约 ID，并且一次只有一个客户端具有有效的租约 ID。不包括租约 ID 的读取操作会导致共享读取。  
 
-以下 C# 代码段显示一个示例，说明如何在 30 秒内对 Blob 获取独占租约，更新 Blob 的内容，然后释放该租约。当你尝试获取新租约时，如果 Blob 中已经存在有效租约，则 Blob 服务将返回“HTTP (409) 冲突”状态结果。在发出请求以在存储服务中更新 Blob 时，下面的代码段使用 **AccessCondition** 对象封装租约信息。可在[此处](http://code.msdn.microsoft.com/windowsazure/Managing-Concurrency-using-56018114)下载完整示例。
+以下 C# 代码段显示一个示例，说明如何在 30 秒内对 Blob 获取独占租约，更新 Blob 的内容，然后释放该租约。当你尝试获取新租约时，如果 Blob 中已经存在有效租约，则 Blob 服务将返回“HTTP (409) 冲突”状态结果。在发出请求以在存储服务中更新 Blob 时，下面的代码段使用 **AccessCondition** 对象封装租约信息。可以在这里下载完整的示例：[使用 Azure 存储空间管理并发](http://code.msdn.microsoft.com/Managing-Concurrency-using-56018114)。
 
 	// Acquire lease for 15 seconds
 	string lease = blockBlob.AcquireLease(TimeSpan.FromSeconds(15), null);
@@ -207,7 +207,7 @@ Azure 存储服务支持所有三个策略，尽管它具有独特的功能，�
 
 请注意，与 Blob 服务不同，表服务要求客户端将 **If-Match** 标头包括在更新请求中。但是，如果客户端在请求中将 **If-Match** 标头设置为通配符 (*)，则可以强制执行非条件更新（“以最后写入者为准”策略）并绕过并发检查。
 
-以下 C# 代码段显示以前创建或检索到的客户实体是如何更新其电子邮件地址的。初始插入或检索操作将 ETag 值存储在客户对象中，因为示例在执行替换操作时使用相同的对象实例，所以将 ETag 值自动发送回表服务，从而使该服务可以检查是否存在并发违规情况。如果其他进程已更新表存储中的实体，则该服务将返回 HTTP 412 (不满足前提条件) 状态消息。可在[此处](http://code.msdn.microsoft.com/windowsazure/Managing-Concurrency-using-56018114)下载完整示例。  
+以下 C# 代码段显示以前创建或检索到的客户实体是如何更新其电子邮件地址的。初始插入或检索操作将 ETag 值存储在客户对象中，因为示例在执行替换操作时使用相同的对象实例，所以将 ETag 值自动发送回表服务，从而使该服务可以检查是否存在并发违规情况。如果其他进程已更新表存储中的实体，则该服务将返回 HTTP 412 (不满足前提条件) 状态消息。可以在这里下载完整的示例：[使用 Azure 存储空间管理并发](http://code.msdn.microsoft.com/Managing-Concurrency-using-56018114)。
 
 	try
 	{
@@ -240,7 +240,7 @@ customer.ETag = "*"；
 插入或替换实体|	是|	否|
 插入或合并实体|	是|	否 
 
-请注意，**插入或替换实体**和**插入或合并实体**操作不可以执行任何并发检查，因为这些操作*不会*将 ETag 值发送到表服务。
+请注意，**插入或替换实体**和**插入或合并实体**操作不可以执行任何并发检查，因为这些操作不会将 ETag 值发送到表服务。
 
 一般情况下，使用表的开发人员应依靠乐观并发来开发可伸缩的应用程序。如果需要悲观锁定，则开发人员在访问表时可采用的一种方法是，为每个表分配指定的 Blob，并在对该表执行操作前获取 Blob 中的租约。这种方法要求应用程序确保在对表执行操作前，所有数据访问路径都获得租约。你还应注意，最短租赁时间为 15 秒，这要求你慎重考虑可伸缩性。  
 
@@ -272,13 +272,14 @@ customer.ETag = "*"；
 
 对于本博客中引用的完整示例应用程序：  
 
-- [使用 Azure 存储管理并发 - 示例应用程序](http://code.msdn.microsoft.com/windowsazure/Managing-Concurrency-using-56018114)  
+- [使用 Azure 存储管理并发 - 示例应用程序](http://code.msdn.microsoft.com/Managing-Concurrency-using-56018114)  
 
 有关 Azure 存储的详细信息，请参阅：  
 
 - [Azure 存储主页](/home/features/storage)
-- [Azure 存储简介](/zh-cn/documentation/articles/storage-introduction)
-- [Blob](/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs)、[表](/zh-cn/documentation/articles/storage-dotnet-how-to-use-tables)和[队列](/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues)的存储使用入门
+- [Azure 存储简介](/documentation/articles/storage-introduction)
+- [Blob](/documentation/articles/storage-dotnet-how-to-use-blobs)、[表](/documentation/articles/storage-dotnet-how-to-use-tables)和[队列](/documentation/articles/storage-dotnet-how-to-use-queues)的存储使用入门
 - 存储体系结构 - [Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
-<!---HONumber=79-->
+ 
+<!---HONumber=Mooncake_0405_2016-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="01/07/2015"
-	wacn.date="02/25/2016"/>
+	ms.date="02/14/2016"
+	wacn.date="04/11/2016"/>
 
 
 # 为 Blob 存储终结点配置自定义域名
@@ -38,7 +38,7 @@ Blob|**默认 URL：** http://mystorageaccount.blob.core.chinacloudapi.cn/mycont
 
 如果你不担心域暂时对用户不可用，或者你的自定义域当前未托管应用程序，则使用本过程可注册你的自定义域。
 
-如果你的自定义域目前在支持不能有任何停机时间的应用程序，则使用在<a href="#register-asverify">使用中间 asverify 子域为你的存储帐户注册自定义域</a>中介绍的过程。
+如果你的自定义域目前在支持不能有任何停机时间的应用程序，则使用在<a href="#register-a-custom-domain-for-your-storage-account-using-the-intermediary-asverify-subdomain">使用中间 asverify 子域为你的存储帐户注册自定义域</a>中介绍的过程。
 
 若要配置自定义域名，必须通过你的域注册机构创建一个新的 CNAME 记录。该 CNAME 记录为域名指定别名；在这个例子中，它将自定义域的地址映射到你的存储帐户的 Blob 存储终结点。
 
@@ -113,4 +113,4 @@ Blob|**默认 URL：** http://mystorageaccount.blob.core.chinacloudapi.cn/mycont
 -   <a href="http://msdn.microsoft.com/zh-cn/library/azure/gg680307.aspx">如何将 CDN 内容映射到自定义域</a>
  
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0405_2016-->

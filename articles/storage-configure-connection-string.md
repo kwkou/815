@@ -1,5 +1,5 @@
 ﻿<properties 
-	pageTitle="配置 Azure 存储空间的连接字符串 | Azure" 
+	pageTitle="配置 Azure Storage | Azure 的连接字符串" 
 	description="了解如何配置 Azure 存储帐户的连接字符串。连接字符串包含对以编程方式访问存储帐户中的资源进行身份验证所需的信息。连接字符串可以为您自己的一个帐户封装您的帐户访问密钥，也可以包含一个共享访问签名，用于在没有访问密钥的情况下访问某个帐户中的资源。" 
 	services="storage" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="01/05/2016"
-	wacn.date="02/25/2016"/>
+	ms.date="02/17/2016"
+	wacn.date="04/11/2016"/>
 
 # 配置 Azure 存储空间连接字符串
 
@@ -33,7 +33,7 @@
 
 在一个配置文件中存储连接字符串可以轻松地更新连接字符串，从而在存储模拟器和云中的 Azure 存储帐户之间切换。只需编辑连接字符串以指向您的存储帐户即可。
 
-您可以使用 Azure [CloudConfigurationManager](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.cloudconfigurationmanager.aspx) 类在运行时访问连接字符串，而不考虑您的应用程序在何处运行。
+你可以使用 [Azure Configuration Manager](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/) 类在运行时访问连接字符串，而不考虑你的应用程序在何处运行。
 
 ## 创建存储模拟器的连接字符串
 
@@ -120,5 +120,4 @@
 
 
  
-
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0405_2016-->

@@ -9,8 +9,8 @@
 <tags
     ms.service="storage"
    
-    ms.date="01/05/2016"
-    wacn.date="02/25/2016"/>
+    ms.date="02/14/2016"
+    wacn.date="04/11/2016"/>
 
 # 将 Azure CLI 用于 Azure 存储服务
 
@@ -30,7 +30,7 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
 **Azure 新用户：**获取一个 Azure 订阅以及与该订阅关联的 Microsoft 帐户。有关 Azure 购买选项的信息，请参阅[免费试用](/pricing/1rmb-trial/)、[购买选项](/pricing/pia/)<!--、和[成员优惠](http://azure.microsoft.com/pricing/member-offers/)（适用于 MSDN、Microsoft 合作伙伴网络和 BizSpark 以及其他 Microsoft 计划的成员）-->。
 
-有关 Azure 订阅的详细信息，请参阅[管理帐户、订阅和管理角色](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx)。
+请参阅[在 Azure Active Directory (Azure AD) 中分配管理员角色](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx)，以了解有关 Azure 订阅的更多信息。
 
 **创建 Azure 订阅和帐户之后：**
 
@@ -91,7 +91,7 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
 ### 连接到你的 Azure 订阅
 
-大多数存储命令没有 Azure 订阅也可以使用，不过我们仍建议你通过 Azure CLI 连接到你的订阅。若要配置 Azure CLI 以使用你的订阅，请遵循[如何连接到 Azure 订阅](/documentation/articles/xplat-cli-install#how-to-connect-to-your-azure-subscription)中的步骤。
+大多数存储命令没有 Azure 订阅也可以使用，不过我们仍建议你通过 Azure CLI 连接到你的订阅。若要配置 Azure CLI 以使用你的订阅，请执行[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)中的步骤。
 
 ### 新建存储帐户
 
@@ -118,7 +118,7 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
 ## 创建并管理 blob
 
-Azure Blob 存储是用于存储大量非结构化数据（例如文本或二进制数据）的服务，这些数据可通过 HTTP 或 HTTPS 从世界各地进行访问。本部分假设你已熟悉 Azure Blob 存储的概念。有关详细信息，请参阅[如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)和 [Blob 服务概念](http://msdn.microsoft.com/zh-cn/library/azure/dd179376.aspx)。
+Azure Blob 存储是用于存储大量非结构化数据（例如文本或二进制数据）的服务，这些数据可通过 HTTP 或 HTTPS 从世界各地进行访问。本部分假设你已熟悉 Azure Blob 存储的概念。有关详细信息，请参阅[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)和[Blob 服务概念](http://msdn.microsoft.com/zh-cn/library/azure/dd179376.aspx)。
 
 ### 创建容器
 
@@ -126,11 +126,11 @@ Azure 存储服务中的每个 Blob 都必须在容器中。你可以使用 `azu
 
         azure storage container create mycontainer
 
-> [AZURE.NOTE]有三种级别的匿名读取访问权限：**Off**、**Blob** 和 **Container**。若要防止对 Blob 进行匿名访问，请将 Permission 参数设置为 **Off**。默认情况下，新容器是专用容器，只能由帐户所有者访问。若要允许对 Blob 资源进行匿名公共读取访问，但不允许访问容器元数据或容器中的 Blob 列表，请将 Permission 参数设置为 **Blob**。若要允许对 Blob 资源、容器元数据和容器中的 Blob 列表进行完全公开读取访问，请将 Permission 参数设置为 **Container**。有关详细信息，请参阅[管理对 Azure 存储资源的访问](/documentation/articles/storage-manage-access-to-resources)。
+> [AZURE.NOTE] 有三种级别的匿名读取访问权限：**Off**、**Blob** 和 **Container**。若要防止对 Blob 进行匿名访问，请将 Permission 参数设置为 **Off**。默认情况下，新容器是专用容器，只能由帐户所有者访问。若要允许对 Blob 资源进行匿名公共读取访问，但不允许访问容器元数据或容器中的 Blob 列表，请将 Permission 参数设置为 **Blob**。若要允许对 Blob 资源、容器元数据和容器中的 Blob 列表进行完全公开读取访问，请将 Permission 参数设置为 **Container**。有关详细信息，请参阅[管理对容器和 Blob 的匿名读取访问](/documentation/articles/storage-manage-access-to-resources)。
 
 ### 将 Blob 上载到容器中
 
-Azure Blob 存储支持块 Blob 和页 Blob。有关详细信息，请参阅[了解块 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)。
+Azure Blob 存储支持块 Blob 和页 Blob。有关详细信息，请参阅[了解块 Blob、追加 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)。
 
 若要将 blob 上载到容器，可使用 `azure storage blob upload`。默认情况下，此命令会将本地文件上载到块 Blob。若要指定 Blob 的类型，可以使用 `--blobtype` 参数。
 
@@ -166,7 +166,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。有关详细信息，请参阅[了
 
 ##<a id="create-and-manage-file-shares"></a> 创建和管理文件共享
 
-Azure 文件存储使用标准 SMB 协议为应用程序提供共享存储。Azure 虚拟机和云服务以及本地应用程序可以通过装载的共享来共享文件数据。你可以通过 Azure CLI 管理文件共享和文件数据。有关 Azure 文件存储的详细信息，请参阅[如何通过 Windows 使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)或[如何通过 Linux 使用 Azure 文件存储](/documentation/articles/storage-how-to-use-files-linux)。
+Azure 文件存储使用标准 SMB 协议为应用程序提供共享存储。Azure 虚拟机和云服务以及本地应用程序可以通过装载的共享来共享文件数据。你可以通过 Azure CLI 管理文件共享和文件数据。有关 Azure 文件存储的详细信息，请参阅[在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)或[如何通过 Linux 使用 Azure 文件存储](/documentation/articles/storage-how-to-use-files-linux)。
 
 ### 创建文件共享
 
@@ -180,7 +180,7 @@ Azure 文件共享是 Azure 中的 SMB 文件共享。所有目录和文件都�
 
         azure storage directory create myshare myDir
 
-请注意，目录路径可以包括多个级别，*例如* **a/b**。但是，你必须确保所有父目录都存在。例如，对于路径 **a/b**，你必须先创建目录 **a**，然后创建目录 **b**。
+请注意，目录路径可以包括多个级别，例如 **a/b**。但是，你必须确保所有父目录都存在。例如，对于路径 **a/b**，你必须先创建目录 **a**，然后创建目录 **b**。
 
 ### 将本地文件上载到目录
 
@@ -203,7 +203,7 @@ Azure 文件共享是 Azure 中的 SMB 文件共享。所有目录和文件都�
 从 Azure CLI 的 0.9.8 版开始，可以将一个文件复制到另一个文件，将一个文件复制到一个 Blob，或将一个 Blob 复制到一个文件。下面，我们演示如何使用 CLI 命令执行这些复制操作。若要将文件复制到新目录中：
 
 	azure storage file copy start --source-share srcshare --source-path srcdir/hello.txt --dest-share destshare --dest-path destdir/hellocopy.txt --connection-string $srcConnectionString --dest-connection-string $destConnectionString
-	
+
 若要将 blob 复制到一个文件目录中：
 
 	azure storage file copy start --source-container srcctn --source-blob hello2.txt --dest-share hello --dest-path hellodir/hello2copy.txt --connection-string $srcConnectionString --dest-connection-string $destConnectionString
@@ -212,10 +212,10 @@ Azure 文件共享是 Azure 中的 SMB 文件共享。所有目录和文件都�
 
 下面是一些相关的文章和资源，可以让你更多地了解 Azure 存储服务。
 
-- [Azure 存档文档](/documentation/services/storage)
+- [Azure 存档文档](/home/features/storage)
 - [Azure 存储 REST API 引用](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
 
 
 [Image1]: ./media/storage-azure-cli/azure_command.png
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0405_2016-->

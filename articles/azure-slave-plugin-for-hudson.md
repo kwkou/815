@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage" 
-	ms.date="01/11/2016"
-	wacn.date="02/25/2016"/>
+	ms.date="02/22/2016"
+	wacn.date="04/11/2016"/>
 
 # 如何在 Hudson 连续集成中使用 Azure Slave 插件
 
@@ -38,7 +38,7 @@
 * 你的订阅 ID
 * 用于你的订阅的管理证书
 
-可以在你的订阅配置文件中找到这些信息。如果你没有你的订阅配置文件副本，则可以从[此处](https://manage.windowsazure.cn/publishsettings/Index?SchemaVersion=2.0)下载。以下是订阅配置文件的一个示例。
+可以在你的[订阅配置文件](https://manage.windowsazure.cn/publishsettings/Index?SchemaVersion=2.0)中找到这些信息。以下是订阅配置文件的一个示例。
 
 	<?xml version="1.0" encoding="utf-8"?>
 		<PublishData>
@@ -56,7 +56,7 @@
 1. 在 Hudson 仪表板中，单击“管理 Hudson”。
 2. 单击“配置系统”。
 3. 向下滚动页面以找到“云”部分。
-4. 单击“添加新云”>“Azure”。
+4. 单击“添加新的云”> Microsoft Azure。
 
 	![添加新的云](./media/azure-slave-plugin-for-hudson/hudson-setup-addcloud.png)
 
@@ -160,8 +160,8 @@
 		ant
 
 9. 单击“保存”。
-10. 在 Hudson 仪表板中，找到你刚创建的作业，然后单击“安排构建”图标。 
+10. 在 Hudson 仪表板中，找到你刚创建的作业，然后单击“安排构建”图标。
 
 之后，Hudson 将使用在上一部分中创建的模板创建一个从属节点，并执行你在此任务的构建步骤中指定的脚本。
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0405_2016-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="12/01/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/29/2016"
+	wacn.date="04/11/2016"/>
 
 
 # 如何通过 Java 使用表存储
@@ -19,7 +19,7 @@
 
 ## 概述
 
-本指南将演示如何使用 Azure 表存储服务执行常见方案。这些示例用 Java 编写并使用 [Azure Storage SDK for Java][]。涉及的方案包括“创建”、“列出”和“删除”表，以及“插入”、“查询”、“修改”和“删除”表中的实体。有关表的详细信息，请参阅[后续步骤](#NextSteps)部分。
+本指南将演示如何使用 Azure 表存储服务执行常见方案。这些示例用 Java 编写并使用 [Azure Storage SDK for Java][]。涉及的方案包括“创建”、“列出”和“删除”表，以及“插入”、“查询”、“修改”和“删除”表中的实体。有关表的详细信息，请参阅[后续步骤](#Next-Steps)部分。
 
 注意：为在 Android 设备上使用 Azure 存储的开发人员提供了 SDK。有关详细信息，请参阅 [Azure Storage SDK for Android][]。
 
@@ -44,7 +44,7 @@
 
 ## 设置 Azure 存储连接字符串
 
-Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，必须提供以下格式的存储连接字符串，并对 *AccountName* 和 *AccountKey* 值使用管理门户中列出的存储帐户的名称和存储帐户的主访问密钥。此示例演示如何声明一个静态字段以保存连接字符串：
+Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，必须提供以下格式的存储连接字符串，并对 AccountName 和 AccountKey 值使用管理门户中列出的存储帐户的名称和存储帐户的主访问密钥。此示例演示如何声明一个静态字段以保存连接字符串：
 
     // Define the connection-string with your values.
     public static final String storageConnectionString = 
@@ -76,7 +76,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 	   // Create the table if it doesn't exist.
 	   String tableName = "people";
-	   CloudTable cloudTable = new CloudTable(tableName,tableClient);
+	   CloudTable cloudTable = tableClient.getTableReference(tableName);
 	   cloudTable.createIfNotExists();
     }
     catch (Exception e)
@@ -410,7 +410,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 ## 如何：查询实体属性子集
 
-对表的查询可以只检索实体中的少数几个属性。此方法称为“投影”，可减少带宽并提高查询性能，尤其适用于大型实体。以下代码中的查询使用 **select** 方法，仅返回表中实体的电子邮件地址。返回结果在 **EntityResolver**（用于对从服务器返回的实体执行类型转换）的帮助下投影到一个 **String** 集合中。你可以在此[博客文章][]中了解有关投影的详细信息。请注意，本地存储模拟器不支持投影，因此，此代码仅在使用表服务中的帐户时才能运行。
+对表的查询可以只检索实体中的少数几个属性。此方法称为“投影”，可减少带宽并提高查询性能，尤其适用于大型实体。以下代码中的查询使用 **select** 方法，仅返回表中实体的电子邮件地址。返回结果在 **EntityResolver**（用于对从服务器返回的实体执行类型转换）的帮助下投影到一个 **String** 集合中。你可以在[ Azure 表：Upsert 和查询投影简介][]中更加详细地了解投影。请注意，本地存储模拟器不支持投影，因此，此代码仅在使用表服务中的帐户时才能运行。
 
     try
     {
@@ -451,7 +451,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 ## 如何：插入或替换实体
 
-你经常需要将某个实体添加到表中，但又不知道该实体是否已存在于表中。利用插入或替换操作，您可以提出一个以下形式的请求：如果实体不存在，则插入一个实体；如果实体存在，则将其替换为现有实体。以下代码基于前面的示例针对“Walter Harp”插入或替换实体。创建新实体后，此代码调用 **TableOperation.insertOrReplace** 方法。此代码随后使用表和插入或替换表操作作为参数对 **CloudTable** 对象调用 **execute**。若要只更新实体的一部分，则可以改用 **TableOperation.insertOrMerge** 方法。请注意，本地存储仿真程序不支持插入或替换，因此，此代码仅在使用表服务中的帐户时才能运行。你可以在此[博客文章][]中了解有关插入或替换以及插入或合并的更多信息。
+你经常需要将某个实体添加到表中，但又不知道该实体是否已存在于表中。利用插入或替换操作，您可以提出一个以下形式的请求：如果实体不存在，则插入一个实体；如果实体存在，则将其替换为现有实体。以下代码基于前面的示例针对“Walter Harp”插入或替换实体。创建新实体后，此代码调用 **TableOperation.insertOrReplace** 方法。此代码随后使用表和插入或替换表操作作为参数对 **CloudTable** 对象调用 **execute**。若要只更新实体的一部分，则可以改用 **TableOperation.insertOrMerge** 方法。请注意，本地存储仿真程序不支持插入或替换，因此，此代码仅在使用表服务中的帐户时才能运行。你可以在此[ Azure 表：Upsert 和查询投影简介][]中更加详细地了插入或替换和插入或合并。
 
     try
     {
@@ -549,12 +549,15 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 - [Azure 存储 REST API][]
 - [Azure 存储团队博客][]
 
+有关详细信息，另请参阅 [Java 开发人员中心](/develop/java/)。
+
+
 [Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
+[Azure 存储客户端 SDK 参考]: http://azure.github.io/azure-storage-java/
 [Azure 存储 REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
-[博客文章]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
+[ Azure 表：Upsert 和查询投影简介]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0405_2016-->

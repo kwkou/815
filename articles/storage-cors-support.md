@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="01/07/2016"
-	wacn.date="02/25/2016"/>
+	ms.date="02/19/2016"
+	wacn.date="04/11/2016"/>
 
 # 对 Azure 存储服务的跨域资源共享 (CORS) 支持
 
@@ -191,4 +191,4 @@ Azure 存储服务支持为 **AllowedHeaders** 和 **ExposedHeaders** 两个元�
 
 [W3C 跨域资源共享规范](http://www.w3.org/TR/cors/)
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0405_2016-->
