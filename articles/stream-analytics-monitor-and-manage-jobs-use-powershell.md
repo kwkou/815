@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="02/08/2016" 
-	wacn.date="03/21/2016"/>
+	ms.date="02/16/2016" 
+	wacn.date="04/11/2016"/>
 
 
 # 使用 Azure PowerShell cmdlet 监视和管理流分析作业

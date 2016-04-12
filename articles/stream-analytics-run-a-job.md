@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="02/04/2016" 
-	wacn.date="03/17/2016"/>
+	ms.date="03/18/2016" 
+	wacn.date="04/11/2016"/>
 # 如何在 Azure 流分析中运行流式处理作业
 
 当作业的输入、查询和输出均已指定时，你可以启动流分析作业。
