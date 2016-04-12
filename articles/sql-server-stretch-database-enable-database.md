@@ -3,13 +3,13 @@
 	description="了解如何为SQL Server Stretch Database配置数据库。"
 	services="sql-server-stretch-database"
 	documentationCenter=""
-	authors="douglasl"
-	manager="jhubbard"
-	editor="monicar"/>
+	authors="douglaslMS"
+	manager=""
+	editor=""/>
 
 <tags
 	ms.service="sql-server-stretch-database"
-	ms.date="02/26/2016"
+	ms.date="03/09/2016"
 	wacn.date="03/10/2016"/>
 
 # 为数据库启用SQL Server Stretch Database
