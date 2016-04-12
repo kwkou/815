@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="03/07/2016"
+	wacn.date="04/12/2016"/>
 
 
 # Apache Storm 教程：用于在 HDInsight 上进行大数据分析的 Storm 初学者示例入门
@@ -21,6 +21,8 @@ Apache Storm 是一个可扩展的、具有容错能力的分布式实时计算�
 
 
 ## 先决条件
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 你必须具备以下条件才能成功完成本 Apache Storm 教程：
 
@@ -179,6 +181,10 @@ Storm UI 可以用于监视拓扑。
 ### 停止拓扑
 
 返回到单词计数拓扑的“拓扑摘要”页，然后从“拓扑操作”部分中选择“终止”。出现提示时，输入停止拓扑之前要等待的秒数，即 10。超时期限过后，当你访问仪表板的“Storm UI”部分时，将不再显示该拓扑。
+
+## 删除集群
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 ## 摘要
 

@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="01/28/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="04/12/2016"/>
 
 # 使用 Apache Storm、事件中心和 HDInsight 中的 HBase (Hadoop) 分析传感器数据
 
@@ -395,6 +395,9 @@
 
 在 Storm 群集上启动拓扑并已开始处理数据后，你可以再次使用 `scan 'SensorData'` 命令来验证数据是否已插入 HBase。
 
+## 删除集群
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 ## 后续步骤
 
