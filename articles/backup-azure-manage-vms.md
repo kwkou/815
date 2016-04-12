@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="backup" 
-	ms.date="10/29/2015"
-	wacn.date="01/26/2016"/>
+	ms.date="01/25/2016"
+	wacn.date="04/12/2016"/>
 
 
 # 管理和监视 Azure 虚拟机备份
@@ -253,4 +253,4 @@ PS C:\> Add-AlertRule -Operator GreaterThanOrEqual -Threshold 1 -ResourceId '/su
 
 - [还原 Azure VM](/documentation/articles/backup-azure-restore-vms)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0307_2016-->

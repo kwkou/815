@@ -1,15 +1,15 @@
 <properties
-   pageTitle="Azure 备份 - 备份包含加密磁盘的 Azure IaaS VM | Azure"
+   pageTitle="Azure 备份 - 备份包含加密磁盘的 Azure IaaS VM | Microsoft Azure"
    description="了解 Azure 备份在备份 IaaS VM 期间如何处理使用 BitLocker 或 dmcrypt 加密的数据。本文帮助你预先了解在处理加密的磁盘时，备份和还原体验的差异。"
    services="backup"
    documentationCenter=""
-   authors="aashishr"
-   manager="shreeshd"
+   authors="markgalioto"
+   manager="jwhit"
    editor=""/>
 <tags
    ms.service="backup"
-   ms.date="11/27/2015"
-   wacn.date="01/26/2016"/>
+   ms.date="03/14/2016"
+   wacn.date="04/12/2016"/>
 
 # VM 备份期间处理加密的磁盘
 
@@ -32,8 +32,8 @@
 
 | 函数 | 使用的软件 | 附加说明 |
 | -------- | ------------- | ------- |
-| 加密 | Bitlocker 或 dmcrypt | 由于相比于 Azure 备份，这种加密在*不同的*层中进行，因此可以使用任何加密软件。尽管如此，我们只使用 Bitlocker 和 dmcrypt 验证了这种体验。<br><br> 加密数据需要使用密钥。必须将密钥存放在安全的位置，以确保对数据的访问经过授权。 |
-| 密钥管理 | CloudLink SecureVM<br>或 Azure KeyVault | 密钥是加密或解密数据的关键所在。如果没有正确的密钥，就无法检索数据。这对以下操作*极其*重要：<br><li>密钥滚动更新<li>长期保留<br><br>例如，用于备份 7 年前数据的密钥可能与当天使用的密钥不同。如果没有 7 年前的密钥，就无法使用从该时间还原的数据。|
+| 加密 | Bitlocker 或 dmcrypt | 由于相比于 Azure 备份，这种加密在不同的层中进行，因此可以使用任何加密软件。尽管如此，我们只使用 Bitlocker 和 dmcrypt 验证了这种体验。<br><br> 加密数据需要使用密钥。必须将密钥存放在安全的位置，以确保对数据的访问经过授权。 |
+| 密钥管理 | CloudLink SecureVM<br>或 Azure KeyVault | 密钥是加密或解密数据的关键所在。如果没有正确的密钥，就无法检索数据。这对以下操作极其重要：<br><li>密钥滚动更新<li>长期保留<br><br>例如，用于备份 7 年前数据的密钥可能与当天使用的密钥不同。如果没有 7 年前的密钥，就无法使用从该时间还原的数据。|
 | 数据备份 | Azure 备份 | 使用 Azure 备份并配合 [Azure 管理门户](http://manage.windowsazure.cn)或 PowerShell 来备份 Azure IaaS VM |
 | 数据还原 | Azure 备份 | 使用 Azure 备份从恢复点还原磁盘或整个 VM。在执行还原操作过程中，Azure 备份不会解密数据。|
 | 解密 | Bitlocker 或 dmcrypt | 为了从还原的数据磁盘或还原的 VM 读取数据，软件需有密钥管理软件提供的密钥。如果没有正确的密钥，就无法解密数据。 |
@@ -57,4 +57,4 @@
 
 - [部署指南 - PDF](http://www.cloudlinktech.com/Azure/CL_SecureVM_4_0_DG_EMC_Azure_R2.pdf)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0405_2016-->

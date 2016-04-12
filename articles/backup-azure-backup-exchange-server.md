@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 System Center 2012 R2 DPM 将 Exchange Server 备份到 Azure 备份 | Azure"
+	pageTitle="使用 System Center 2012 R2 DPM 将 Exchange Server 备份到 Azure 备份 | Microsoft Azure"
 	description="了解如何使用 System Center 2012 R2 DPM 将 Exchange Server 备份到 Azure 备份"
 	services="backup"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="backup"
 	ms.date="12/08/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="01/12/2016"/>
 
 
 # 使用 System Center 2012 R2 DPM 将 Exchange Server 备份到 Azure 备份
@@ -22,7 +22,7 @@
 >[AZURE.NOTE]对于本文中的示例，将会安装 Azure 备份代理 2.0.8719.0 版，并在 System Center 2012 R2 DPM 上安装更新汇总 6。
 
 ## 先决条件
-在继续下一步之前，请确保符合使用 Azure 备份保护工作负荷的所有[先决条件](/documentation/articles/backup-azure-dpm-introduction#prerequisites)。这些先决条件包括：
+在继续下一步之前，请确保符合使用 Microsoft Azure 备份保护工作负荷的所有[先决条件](/documentation/articles/backup-azure-dpm-introduction#prerequisites)。这些先决条件包括：
 
 - 已在 Azure 网站上创建备份保管库。
 - 代理和保管库凭据已下载到 DPM 服务器。

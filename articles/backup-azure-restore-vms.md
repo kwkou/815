@@ -1,20 +1,22 @@
 
 <properties
-	pageTitle="从备份中还原虚拟机 | Azure"
-	description="了解如何恢复 Azure 虚拟机"
+	pageTitle="从备份中还原虚拟机 | Microsoft Azure"
+	description="了解如何从恢复点还原 Azure 虚拟机"
 	services="backup"
 	documentationCenter=""
 	authors="trinadhk"
 	manager="shreeshd"
-	editor=""/>
+	editor=""
+	keywords="还原备份; 如何还原; 恢复点;"/>
 
 <tags
 	ms.service="backup"
-	ms.date="10/29/2015"
-	wacn.date="01/26/2016"/>
+	ms.date="01/22/2016"
+	wacn.date="04/12/2016"/>
 
 # 还原 Azure 中的虚拟机
-你可以使用还原操作，通过存储在 Azure 备份保管库中的备份将虚拟机还原到新的 VM。
+
+执行以下步骤，通过存储在 Azure 备份保管库中的备份将虚拟机还原到新的 VM。
 
 ## 还原工作流
 ### 1\.选择要还原的项
@@ -134,4 +136,4 @@ PowerShell 能够只从备份还原 VM 磁盘，而不建立虚拟机。当还�
 - [排查错误](/documentation/articles/backup-azure-vms-troubleshoot#restore)
 - [管理虚拟机](/documentation/articles/backup-azure-manage-vms)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0307_2016-->

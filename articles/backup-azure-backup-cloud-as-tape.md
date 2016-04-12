@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure 备份来取代磁带基础结构 | Azure"
+   pageTitle="使用 Azure 备份来取代磁带基础结构 | Microsoft Azure"
    description="了解如何 Azure 备份如何提供类似于磁带的语义，让你在 Azure 中备份和还原数据"
    services="backup"
    documentationCenter=""
@@ -7,9 +7,9 @@
    manager="jwhit"
    editor=""/>
 <tags
-   ms.service="backup"
-   ms.date="12/15/2015"
-   wacn.date="01/15/2016"/>
+	ms.service="backup"
+   	ms.date="02/09/2016"
+	wacn.date="04/12/2016"/>
 
 # 使用 Azure 备份来取代磁带基础结构
 
@@ -46,21 +46,17 @@ Azure 备份和 System Center Data Protection Manager 客户可以：
 
 上图中“保留点”总数（客户可从中还原数据的恢复点）计算方式如下：
 
-+ 每天 2 个点 x 7 天 = 14 个恢复点
-
-+ 每周 2 个点 x 4 周 = 8 个恢复点
-
-+ 每月 2 个点 x 12 个月 = 24 个恢复点
-
-+ 每年 1 个点 x 10 年 = 10 个恢复点
+- 每天 2 个点 x 7 天 = 14 个恢复点
+- 每周 2 个点 x 4 周 = 8 个恢复点
+- 每月 2 个点 x 12 个月 = 24 个恢复点
+- 每年 1 个点 x 10 年 = 10 个恢复点
 
 恢复点总数为 56。
 
 > [AZURE.NOTE] Azure 备份对恢复点的数量没有限制。
 
 ## 高级配置
-
-通过单击上述屏幕中的“修改”，客户可以进一步灵活指定保留计划。<br/>
+通过单击上述屏幕中的“修改”，客户可以进一步灵活指定保留计划。
 
 ![修改][5]
 
@@ -78,4 +74,4 @@ Azure 备份和 System Center Data Protection Manager 客户可以：
 [4]: ./media/backup-azure-backup-cloud-as-tape/samplescreen.png
 [5]: ./media/backup-azure-backup-cloud-as-tape/modify.png
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0307_2016-->
