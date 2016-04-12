@@ -1,4 +1,4 @@
-> [AZURE.SELECTOR-LIST (操作系统 | 创建方法)]
+> [AZURE.SELECTOR]
 - [Windows |概述](/documentation/articles/hdinsight-provision-clusters-v1)
 - [Windows | Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli)
 - [Windows | Azure PowerShell](/documentation/articles/hdinsight-hadoop-create-windows-clusters-powershell)
