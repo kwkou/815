@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="11/16/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/14/2016"
+	wacn.date="04/11/2016"/>
 
 
 
@@ -46,8 +46,6 @@ SAS 通常适用于用户需要在你的存储帐户中读取和写入其数据�
 - 当你将一个 Blob 复制到驻留在不同存储帐户中的另一个 Blob 时，必须使用 SAS 对源 Blob 进行身份验证。使用版本 2015-04-05，你还可以选择使用 SAS 对目标 blob 进行身份验证。
 - 当你将一个文件复制到驻留在不同存储帐户中的另一个文件时，必须使用 SAS 对源文件进行身份验证。使用版本 2015-04-05，你还可以选择使用 SAS 对目标文件进行身份验证。
 - 当你将一个 Blob 复制到一个文件，或将一个文件复制到一个 Blob 时，必须使用 SAS 对源对象进行身份验证，即使源对象和目标对象驻留在同一存储帐户中。
-
->[AZURE.NOTE] 当前只有 Blob 和文件服务才支持帐户 SAS。在不久的将来，表和队列服务将支持它。
 
 ## 共享访问签名的类型
 
@@ -146,7 +144,7 @@ Name|SAS 部分|说明
 
 若要运行这些示例，需下载和引用以下包：
 
-- [Azure .NET 存储客户端库](http://www.nuget.org/packages/WindowsAzure.Storage)，6.x 或更高版本（以便使用帐户 SAS）。
+- [适用于 .NET 的 Azure 存储客户端库](http://www.nuget.org/packages/WindowsAzure.Storage) 6.x 或更高版本（以便使用帐户 SAS）。
 - [Azure 配置管理器](http://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager) 
 
 ### 示例：帐户 SAS
@@ -308,15 +306,15 @@ Name|SAS 部分|说明
 
 ## 后续步骤 ##
 
-- [共享访问签名，第 2 部分：创建 SAS 并将 SAS 用于 Blob 服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2)
-- [如何通过 Windows 使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)
-- [管理对 Azure 存储资源的访问](/documentation/articles/storage-manage-access-to-resources)
+- [共享访问签名，第 2 部分：创建 SAS 并将 SAS 用于 Blob 存储](/documentation/articles/storage-dotnet-shared-access-signature-part-2)
+- [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)
+- [管理对容器和 blob 的匿名读取访问](/documentation/articles/storage-manage-access-to-resources)
 - [使用共享的访问签名委托访问](http://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx)
-- [表和队列 SAS 介绍](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx)
+- [介绍表和队列 SAS](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx)
 [sas-storage-fe-proxy-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-fe-proxy-service.png
 [sas-storage-provider-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-provider-service.png
 
 
  
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0405_2016-->

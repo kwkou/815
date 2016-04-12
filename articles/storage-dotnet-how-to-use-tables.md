@@ -9,8 +9,8 @@ pageTitle="通过 .NET 开始使用 Azure 表存储 | Azure"
 
 <tags
 	ms.service="storage"
-	ms.date="01/24/2016"
-	wacn.date="03/17/2016"/>
+	ms.date="02/14/2016"
+	wacn.date="04/11/2016"/>
 
 
 # 通过 .NET 开始使用 Azure 表存储
@@ -419,8 +419,8 @@ Azure 表存储是一种将非结构化的 NoSQL 数据存储在云中的服务�
     - [REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - 了解如何使用 [Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started) 简化你编写的用于 Azure 存储空间的代码
 - 查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
-    - 使用 [Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)来存储非结构化数据。
-    - 使用 [SQL 数据库](/documentation/articles/sql-database-dotnet-how-to-use)来存储关系数据。
+    - [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)来存储非结构化数据。
+    - [如何在 .NET 应用程序中使用 Azure SQL 数据库](/documentation/articles/sql-database-dotnet-how-to-use)来存储关系数据。
 
 
   [下载并安装 Azure SDK for.NET]: /develop/net/
@@ -432,12 +432,11 @@ Azure 表存储是一种将非结构化的 NoSQL 数据存储在云中的服务�
   [Blob8]: ./media/storage-dotnet-how-to-use-table-storage/blob8.png
   [Blob9]: ./media/storage-dotnet-how-to-use-table-storage/blob9.png
 
-  [博客文章]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
+  [“Upsert 和查询投影介绍”博客文章]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
   [.NET 客户端库引用]: http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx
-  [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
   [配置连接字符串]: http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [空间]: http://nuget.org/packages/System.Spatial/5.0.2
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0405_2016-->

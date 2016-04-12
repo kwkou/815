@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="12/01/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/29/2016"
+	wacn.date="04/11/2016"/>
 
 # 如何通过 Java 使用队列存储
 
@@ -42,7 +42,7 @@
 
 ## 设置 Azure 存储连接字符串
 
-Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，必须提供以下格式的存储连接字符串，并对 *AccountName* 和 *AccountKey* 值使用[管理门户](https://manage.windowsazure.cn)中列出的存储帐户的名称和存储帐户的主访问密钥。此示例演示如何声明一个静态字段以保存连接字符串：
+Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，必须提供以下格式的存储连接字符串，并对 AccountName 和 AccountKey 值使用[管理门户](https://manage.windowsazure.cn)中列出的存储帐户的名称和存储帐户的主访问密钥。此示例演示如何声明一个静态字段以保存连接字符串：
 
     // Define the connection-string with your values.
     public static final String storageConnectionString = 
@@ -148,7 +148,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 ## 如何：更改已排队消息的内容
 
-你可以更改队列中现有消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 *n*，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。
+你可以更改队列中现有消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 n，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。
 
 下面的代码示例将搜索队列中的消息，查找内容中第一个与“Hello, World”匹配的消息，然后对消息内容进行修改并退出。
 
@@ -384,9 +384,9 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 [Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
-[CloudStorageAccount]: http://dl.windowsazure.com/storage/javadoc/
-[Azure 存储 REST API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
+[Azure 存储客户端 SDK 参考]: http://azure.github.io/azure-storage-java/
+[CloudStorageAccount]: http://azure.github.io/azure-storage-java/
+[Azure 存储 REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0405_2016-->

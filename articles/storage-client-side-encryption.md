@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/08/2016"
-	wacn.date="03/17/2016"/>
+	ms.date="02/24/2016"
+	wacn.date="04/11/2016"/>
 
 
 # Azure 存储空间的客户端加密和 Azure 密钥保管库
@@ -20,7 +20,7 @@
 
 ## 概述
 
-[用于 .NET 的 Azure 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage)支持在上载到 Azure 存储空间之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。此库还支持与 Azure [密钥保管库](/home/features/key-vault)集成，以便管理存储帐户密钥。
+[用于 .NET Nuget 包的 Azure 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage)支持在上载到 Azure 存储空间之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。此库还支持与 [Azure 密钥保管库](/home/features/key-vault)集成，以便管理存储帐户密钥。
 
 有关使用 Java 的客户端加密，请参阅 [Azure 存储空间的使用 Java 客户端加密](/documentation/articles/storage-client-side-encryption-java)。
 
@@ -242,9 +242,9 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 
 ## 后续步骤
 
-下载[用于 .NET 的 Azure 存储空间客户端库 NuGet 程序包](http://www.nuget.org/packages/WindowsAzure.Storage/5.0.0)
-从 GitHub 下载 [用于 .NET 的 Azure 存储空间客户端库源代码](https://github.com/Azure/azure-storage-net)
-下载 Azure 密钥保管库 NuGet [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/)、[Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) 和 [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) 程序包  
-查看 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis)
+- 下载[适用于 .NET NuGet 包的 Azure 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage)
+- 从 GitHub 下载[适用于.NET 源代码的 Azure 存储客户端库](https://github.com/Azure/azure-storage-net)
+- 下载 Azure 密钥保管库 NuGet [核心](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/)、[客户端](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/)和[扩展](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/)包  
+- 访问 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis) 
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0405_2016-->

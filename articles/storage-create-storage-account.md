@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="12/04/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/14/2016"
+	wacn.date="04/11/2016"/>
 
 
 # 关于 Azure 存储帐户
@@ -186,4 +186,4 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 - 访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0405_2016-->

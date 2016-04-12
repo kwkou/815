@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="01/07/2016"
-	wacn.date="02/25/2016"/>
+	ms.date="02/19/2016"
+	wacn.date="04/11/2016"/>
 
 # 创建 Blob 快照
 
@@ -46,7 +46,7 @@ Blob 的快照与从中创建快照的基本 Blob 具有相同的名称，但后
 
 不能删除具有快照的 Blob，除非也删除这些快照。可单独删除快照，也可指示存储服务在删除源 Blob 时删除所有快照。如果你尝试删除仍包含快照的 Blob，则将收到错误。
 
-## 在高级存储中使用快照
+## 在 Azure 高级存储中使用快照
 在高级存储中使用快照需遵循以下规则：
 
 - 高级存储帐户中每个页 Blob 的快照数限制为 100。如果超出该限制，快照 Blob 操作将返回错误代码 409 (**SnapshotCountExceeded**)。
@@ -121,4 +121,4 @@ Blob 的快照与从中创建快照的基本 Blob 具有相同的名称，但后
 
 ![Azure 存储资源](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-4.png)
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0405_2016-->

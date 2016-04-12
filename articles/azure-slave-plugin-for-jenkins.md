@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage" 
-	ms.date="01/09/2016"
-	wacn.date="02/25/2016"/>
+	ms.date="02/22/2016"
+	wacn.date="04/11/2016"/>
 
 # 如何在 Jenkins 持续集成中使用 Azure Slave 插件
 
@@ -37,7 +37,7 @@
 * 你的订阅 ID
 * 用于你的订阅的管理证书
 
-可以在你的订阅配置文件中找到这些信息。如果你没有订阅配置文件副本，可以从[订阅站点](https://manage.windowsazure.cn/publishsettings/Index?SchemaVersion=2.0)下载。以下是订阅配置文件的一个示例。
+可以在你的[订阅配置文件](https://manage.windowsazure.cn/publishsettings/Index?SchemaVersion=2.0)中找到这些信息。以下是订阅配置文件的一个示例。
 
 	<?xml version="1.0" encoding="utf-8"?>
 		<PublishData>
@@ -55,7 +55,7 @@
 1. 在 Jenkins 仪表板中，单击“管理 Jenkins”。
 2. 单击“配置系统”。
 3. 向下滚动页面以找到“云”部分。
-4. 单击“添加新云”>“Azure”。
+4. 单击“添加新的云”> Microsoft Azure。
 
 	![云部分](./media/azure-slave-plugin-for-jenkins/jenkins-cloud-section.png)
 
@@ -108,7 +108,7 @@
 
 	如果你有一个自定义映像，想要改用该映像，则输入该自定义映像的名称。自定义映像名称不显示在列表中，因此你必须确保名称输入正确。
 
-	对于本教程，键入 **U** 显示一个 Ubuntu 映像列表，然后单击 **Ubuntu Server 14.04 LTS**。
+	对于本教程，键入 **U** 显示一个 Ubuntu 映像列表，然后单击“Ubuntu Server 14.04 LTS”。
 
 14. 在“启动方法”列表中，单击“SSH”。
 15. 复制下面的脚本并粘贴到“初始化脚本”框中。
@@ -168,4 +168,4 @@
 
 之后，Jenkins 将使用在上一部分中创建的模板创建一个从属节点，并执行你在此任务的构建步骤中指定的脚本。
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0405_2016-->

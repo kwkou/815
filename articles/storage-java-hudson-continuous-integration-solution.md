@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="01/09/2016" 
-	wacn.date="02/25/2016"/>
+	ms.date="02/21/2016" 
+	wacn.date="04/11/2016"/>
 
 # 将 Azure 存储空间用于 Hudson 持续集成解决方案
 
@@ -24,7 +24,7 @@
 
 Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频繁地生成版本，实现了软件项目的持续集成，因此提高了开发人员的工作效率。生成是版本控制的，并且可将生成项目上载到不同存储库中。本文将演示如何将 Azure Blob 存储用作生成项目的存储库。它还将演示如何从 Azure Blob 存储下载依赖项。
 
-有关 Hudson 的更多信息，请访问 [Hudson 概览][]。
+有关 Hudson 的更多信息，请访问 [Hudson 概览](http://wiki.eclipse.org/Hudson-ci/Meet_Hudson)。
 
 ## 使用 Blob 服务的好处 ##
 
@@ -56,9 +56,9 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 
         虽然典型 Hudson CI 解决方案将设置为作为一个服务运行，但在本教程中，通过命令行运行 Hudson war 就足够了。
 
-- 一个 Azure 帐户。注册 Azure 帐户的位置位于 <http://www.azure.cn>。
+- 一个 Azure 帐户。注册 Azure 帐户的位置位于 <https://www.azure.cn>。
 
-- 一个 Azure 存储帐户。如果你还没有存储帐户，则可使用[如何创建存储帐户][]中的步骤创建一个。
+- 一个 Azure 存储帐户。如果你还没有存储帐户，则可使用[创建存储帐户](/documentation/articles/storage-create-storage-account#create-a-storage-account)中的步骤创建一个存储帐户。
 
 - 建议熟悉 Hudson CI 解决方案（但不是必需的），因为以下内容将使用一个基本示例向你演示使用 Blob 服务作为 Hudson CI 生成项目的存储库时所需的步骤。
 
@@ -112,7 +112,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 
     在你为“执行 Windows 批处理命令”输入脚本的“命令”部分下方，有一个指向 Hudson 所识别环境变量的链接。单击此链接可了解环境变量名称和说明。请注意，不允许将包含特殊字符的环境变量（如 **BUILD\_URL** 环境变量）用作容器名称或通用虚拟路径。
 
-8. 对于此示例，请单击“默认将新容器设为公开的”。（如果要使用私有容器，你将需要创建共享访问签名以允许访问。这超出了本文的范围。你可在[创建共享访问签名](http://msdn.microsoft.com/zh-cn/library/azure/jj721951.aspx)中了解有关共享访问签名的详细信息。）
+8. 对于此示例，请单击“默认将新容器设为公开的”。（如果要使用私有容器，你将需要创建共享访问签名以允许访问。这超出了本文的范围。你可以在此[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)中了解有关共享访问签名的详细信息。）
 9. [可选]如果你希望在上载生成项目之前清除容器的内容，请单击“在上载前清除容器”（如果你不希望清除容器的内容，则使该复选框保持未选中状态）。
 10. 对于“要上载的项目列表”，请输入 **text/*.txt**。
 11. 对于“已上载项目的通用虚拟路径”，输入 **${BUILD\_ID}/${BUILD\_NUMBER}**。
@@ -160,7 +160,11 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 
 ## 后续步骤
 
-  [如何创建存储帐户]: /documentation/articles/storage-create-storage-account
-  [Hudson 概览]: http://wiki.eclipse.org/Hudson-ci/Meet_Hudson
+- [Hudson 简介](http://wiki.eclipse.org/Hudson-ci/Meet_Hudson)
+- [Azure Storage SDK for Java](https://github.com/azure/azure-storage-java)
+- [Azure 存储客户端 SDK 参考](http://azure.github.io/azure-storage-java/)
+- [Azure 存储空间服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
+- [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 
-<!---HONumber=Mooncake_0215_2016-->
+有关详细信息，请参阅 [Java 开发人员中心](/develop/java/)。
+<!---HONumber=Mooncake_0405_2016-->

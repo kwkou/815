@@ -9,6 +9,6 @@
 	using System.Configuration;
 	...
 	CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-		ConfigurationManager.ConnectionStrings["StorageConnectionString"].ConnectionString);
+		ConfigurationManager.AppSettings["StorageConnectionString"]);
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_0405_2016-->

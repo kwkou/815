@@ -1,6 +1,6 @@
 <properties
 	pageTitle="如何通过 Linux 使用 Azure 文件存储 | Azure"
-        description="在云中创建文件共享，然后从 Azure VM 或在 Linux 上运行的本地应用程序装载它。"
+        description="按照此分步教程中的说明，在云中创建 Azure 文件共享。管理文件共享内容，并从运行 Linux 的 Azure 虚拟机 (VM) 或支持 SMB 3.0 的本地应用程序安装文件共享。"
         services="storage"
         documentationCenter="na"
         authors="jasontang501"
@@ -8,8 +8,8 @@
         editor="" />
 
 <tags ms.service="storage"
-      ms.date="12/17/2015"
-      wacn.date="01/29/2016" />
+      ms.date="02/29/2016"
+      wacn.date="04/11/2016" />
 
 
 # 如何通过 Linux 使用 Azure 文件存储 
@@ -110,13 +110,13 @@ Linux 用户，我们希望倾听你的意见！
 
 ### 概念性文章
 
-- [如何通过 Windows 使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)
-- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
+- [Azure 文件存储：适用于 Windows 和 Linux 的顺畅的云 SMB 文件系统](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
+- [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)
 
 ### 文件存储的工具支持
 
-- [如何将 AzCopy 与 Azure 存储一起使用](/documentation/articles/storage-use-azcopy)
-- [将 Azure CLI 用于 Azure 存储空间](/documentation/articles/storage-azure-cli#create-and-manage-file-shares)
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
+- 通过 Azure CLI [创建和管理文件共享](/documentation/articles/storage-azure-cli#create-and-manage-file-shares)
 
 ### 引用
 
@@ -125,8 +125,8 @@ Linux 用户，我们希望倾听你的意见！
 ### 博客文章
 
 - [Azure 文件存储现已正式发布](/zh-cn/blog/)
-- [深入了解 Azure 文件存储](/home/features/storage) 
+- [Azure 文件存储内部](/home/features/storage) 
 - [Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [将连接保存到 Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0405_2016-->

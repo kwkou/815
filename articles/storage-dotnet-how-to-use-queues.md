@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="01/24/2016"
-	wacn.date="03/17/2016"/>
+	ms.date="02/14/2016"
+	wacn.date="04/11/2016"/>
 
 # 通过 .NET 开始使用 Azure 队列存储
 
@@ -47,7 +47,7 @@ Azure 队列存储是一种在云中提供消息传递队列的服务。在设�
 
 ## 创建队列
 
-利用 **CloudQueueClient** 对象，可以获取队列的引用对象。以下代码将创建 **CloudQueueClient** 对象。本指南中的所有代码都使用存储在 Azure 应用程序的服务配置中的存储连接字符串。还可采用其他方法创建 **CloudStorageAccount** 对象。有关详细信息，请参阅 [CloudStorageAccount][] 文档。
+利用 **CloudQueueClient** 对象，可以获取队列的引用对象。以下代码将创建 **CloudQueueClient** 对象。本指南中的所有代码都使用存储在 Azure 应用程序的服务配置中的存储连接字符串。还可采用其他方法创建 **CloudStorageAccount** 对象。有关详细信息，请参阅 [CloudStorageAccount](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.storage.cloudstorageaccount_methods.aspx) 文档。
 
     // Retrieve storage account from connection string
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -253,13 +253,10 @@ Azure 队列存储是一种在云中提供消息传递队列的服务。在设�
   [下载并安装 Azure SDK for.NET]:/develop/net/
   [.NET 客户端库引用]: https://msdn.microsoft.com/zh-cn/library/mt347887.aspx
   [在 Visual Studio 中创建 Azure 项目]: http://msdn.microsoft.com/zh-cn/library/azure/ee405487.aspx
-  [CloudStorageAccount]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.cloudstorageaccount_methods.aspx
-  [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
-  [配置连接字符串]: http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
  
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0405_2016-->
