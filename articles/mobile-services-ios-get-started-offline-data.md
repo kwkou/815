@@ -1,23 +1,25 @@
 <properties
-	pageTitle="移动服务中的脱机数据同步入门 (iOS) | Azure"
+	pageTitle="移动服务中的脱机数据同步入门 (iOS) | Microsoft Azure"
 	description="了解如何在 iOS 应用程序中使用 Azure 移动服务缓存和同步脱机数据"
 	documentationCenter="ios"
 	authors="krisragh"
-	manager="dwrede"
+	manager="erikre"
 	editor=""
 	services="mobile-services"/>
 
 <tags
 	ms.service="mobile-services"
-	ms.date="01/12/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="03/09/2016"
+	wacn.date="04/11/2016"/>
 
 #  移动服务中的脱机数据同步入门
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
 
 &nbsp;
-[AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对应的 Mobile Apps 版本，请参阅[为 iOS 移动应用启用脱机同步功能](/documentation/articles/app-service-mobile-ios-get-started-offline-data)。
 
 借助脱机同步，即使在没有网络连接的情况下，你也可以查看、添加或修改移动应用中的数据。在本程中，你将了解应用如何在本地脱机数据库中自动存储更改，并在重新联机时同步这些更改。
 
@@ -74,7 +76,7 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
 * 接下来，在 **QSTodoService.m** 中，`pullData` 将获取与查询匹配的新数据。`pullData` 将调用 `MSSyncTable.pullWithQuery` 以检索远程数据，并将数据存储在本地。`pullWithQuery` 也允许你指定查询以筛选你要检索的记录。在此示例中，查询只会检索远程 `TodoItem` 表中的所有记录。
 
-`pullWithQuery` 的第二个参数是_增量同步_的查询 ID。增量同步只会使用记录的 `UpdatedAt` 时间戳（在本地存储中称为 `ms_updatedAt`）检索自上次同步以来修改的记录。对于应用中的每个逻辑查询而言，查询 ID 是唯一的描述性字符串。若选择不要增量同步，请传递 `nil` 作为查询 ID。这会降低效率，因为它会检索每个推送操作的所有记录。
+`pullWithQuery` 的第二个参数是增量同步的查询 ID。增量同步只会使用记录的 `UpdatedAt` 时间戳（在本地存储中称为 `ms_updatedAt`）检索自上次同步以来修改的记录。对于应用中的每个逻辑查询而言，查询 ID 是唯一的描述性字符串。若选择不要增量同步，请传递 `nil` 作为查询 ID。这会降低效率，因为它会检索每个推送操作的所有记录。
 
 ```
       -(void)pullData:(QSCompletionBlock)completion
@@ -124,10 +126,10 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
     | 属性 | 类型 |
     |-------------- |   ------    |
-    | ID（必需） | 64 位整数 |
-    | itemId | 字符串 |
+    | ID（必需） | Integer 64 |
+    | itemId | String |
     | properties | 二进制数据 |
-    | table | 字符串 |
+    | table | String |
     | tableKind | 16 位整数 |
 
     #### MS\_TableOperationErrors
@@ -135,7 +137,7 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
     | 属性 | 类型 |
     |-------------- | ----------  |
     | ID（必需） | 字符串 |
-    | operationId | 64 位整数 |
+    | operationId | Integer 64 |
     | 属性 | 二进制数据 |
     | tableKind | 16 位整数 |
 
@@ -144,11 +146,11 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
     | 属性 | 类型 |
     |-------------- | ----------  |
-    | ID（必需） | 字符串 |
-    | key | 字符串 |
+    | ID（必需） | String |
+    | key | String |
     | keyType | 64 位整数 |
-    | table | 字符串 |
-    | value | 字符串 |
+    | table | String |
+    | value | String |
 
     ### 数据表
 
@@ -156,9 +158,9 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
     | 属性 | 类型 | 注意 |
     |-------------- |  ------ | -------------------------------------------------------|
-    | ID（必需） | 字符串 | 远程存储中的主键（必需） |
+    | ID（必需） | String | 远程存储中的主键（必需） |
     | complete | 布尔 | todo 项字段 |
-    | text | 字符串 | todo 项字段 |
+    | text | String | todo 项字段 |
     | ms\_createdAt | 日期 | （可选）映射到 \_\_createdAt 系统属性 |
     | ms\_updatedAt | 日期 |（可选）映射到 \_\_updatedAt 系统属性 |
     | ms\_version | 字符串 |（可选）用于检测冲突，映射到 \_\_version |
@@ -195,7 +197,7 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
 2. 添加一些 todo 项或完成某些项。退出模拟器（或强行关闭应用），然后重新启动。验证你的更改是否已保存。请注意，数据项仍会显示，因为它们都保留在本地核心数据存储中。
 
-3. 查看远程 TodoItem 表的内容。验证新项是否_未_同步到服务器。
+3. 查看远程 TodoItem 表的内容。验证新项是否未同步到服务器。
 
    - 对于 JavaScript 后端，请转到 [Azure 经典门户](http://manage.windowsazure.cn)，然后单击“数据”选项卡查看 `TodoItem` 表的内容。
    - 对于 .NET 后端，请使用 SQL 工具（如 SQL Server Management Studio）或 REST 客户端（如 Fiddler 或 Postman）查看表内容。
@@ -212,9 +214,9 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
 为了与服务器同步本地存储，你使用了 `MSSyncTable.pullWithQuery` 和 `MSClient.syncContext.pushWithCompletion`：
 
-		* To push changes to the server, you called `pushWithCompletion`. This method is in `MSSyncContext` instead of the sync table because it will push changes across all tables. Only records that are modified in some way locally (through CUD operations) are be sent to the server.
+		* 为了将更改推送到服务器，你调用了 `pushWithCompletion`。此方法在 `MSSyncContext` 中而不是在同步表中，因为它将在所有表上推送更改。只有以某种方式在本地修改（通过 CUD 操作）的记录才会发送到服务器。
 
-		* To pull data from a table on the server to the app, you called `MSSyncTable.pullWithQuery`. A pull always issues a push first. This is to ensure all tables in the local store along with relationships remain consistent. `pullWithQuery` can also be used to filter the data that is stored on the client, by customizing the `query` parameter.
+		* 为了将数据从服务器上的表拉取到应用，你调用了 `MSSyncTable.pullWithQuery`。拉取时始终先发出推送操作。这是为了确保本地存储中的所有表以及关系都保持一致。可以通过自定义 `query` 参数，使用 `pullWithQuery` 筛选客户端上存储的数据。
 
 ##  后续步骤
 

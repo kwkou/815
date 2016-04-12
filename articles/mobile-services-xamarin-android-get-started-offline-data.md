@@ -9,15 +9,17 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="02/11/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="03/16/2016"
+	wacn.date="04/11/2016"/>
 
 #  在移动服务中使用脱机数据同步
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
 
 &nbsp;
-[AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对应的 Mobile Apps 版本，请参阅[为 Xamarin.Android 移动应用启用脱机同步功能](/documentation/articles/app-service-mobile-xamarin-android-get-started-offline-data)。
 
 本主题将指导你通过 Azure 移动服务的脱机同步功能在 todo 列表快速入门应用程序中。脱机同步可轻松地创建应用程序即使在最终用户不具有任何网络访问权限时才可用。
 
@@ -45,7 +47,8 @@
 
 ##  <a name="review-offline"></a>查看移动服务同步代码
 
-Azure 移动服务脱机同步允许最终用户在无法访问网络时与本地数据库交互。若要在你的应用程序中使用这些功能，请将 `MobileServiceClient.SyncContext` 初始化到本地存储。然后，通过 `IMobileServiceSyncTable` 接口引用你的表。本部分将指导完成脱机同步 `ToDoActivity.cs` 中的相关代码。
+Azure 移动服务脱机同步允许最终用户在无法访问网络时与本地数据库交互。若要在你的应用程序中使用这些功能，请将 `MobileServiceClient.SyncContext` 初始化到本地存储。然后，通过 `IMobileServiceSyncTable` 接口引用你的表。 
+本部分将指导完成脱机同步 `ToDoActivity.cs` 中的相关代码。
 
 1. 在 Visual Studio 或 Xamarin Studio 中，打开你在完成[移动服务入门]教程后创建的项目。打开 `ToDoActivity.cs` 文件。
 
@@ -129,9 +132,9 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
 2. 构建并运行应用程序。请注意，数据看上去与脱机情况下相同，即使应用程序现已连接到移动服务。这是因为此应用程序始终使用指向本地存储的 `IMobileServiceSyncTable`。
 
-3. 登录到 [Azure 经典门户]，查看你的移动服务数据库。如果服务使用 JavaScript 后端，则你可以从移动服务的“数据”选项卡浏览数据。
+3. 登录到 [Azure 管理门户]，查看你的移动服务数据库。如果服务使用 JavaScript 后端，则你可以从移动服务的“数据”选项卡浏览数据。
 
-    如果将 .NET 后端用于移动服务，请在 Visual Studio 中，转到“服务器资源管理器”->“Azure”->“SQL 数据库”。右键单击数据库并选择“在 SQL Server 对象资源管理器中打开”。
+    如果将 .NET 后端用于移动服务，请在 Visual Studio 中，转到“服务器资源管理器”>“Azure”>“SQL 数据库”。右键单击数据库并选择“在 SQL Server 对象资源管理器中打开”。
 
     请注意，数据*尚未*在数据库和本地存储之间同步。
 
@@ -168,6 +171,6 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 [Xamarin Studio]: http://xamarin.com/download
 [Xamarin 扩展]: http://xamarin.com/visual-studio
 [NuGet Addin for Xamarin]: https://github.com/mrward/monodevelop-nuget-addin
-[Azure 经典门户]: https://manage.windowsazure.cn
+[Azure 管理门户]: https://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0118_2016-->

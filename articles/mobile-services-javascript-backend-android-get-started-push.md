@@ -12,14 +12,19 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="01/20/2016"
-	wacn.date="03/21/2016"/>
+	wacn.date="04/11/2016"/>
 
 
 #  向移动服务 Android 应用程序添加推送通知
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
-##  摘要
+&nbsp;
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对应的 Mobile Apps 版本，请参阅[向 Android 应用程序添加推送通知](/documentation/articles/app-service-mobile-android-get-started-push)。
+
+## 摘要
 
 本主题说明如何使用 Azure 移动服务将推送通知发送到使用 Google Cloud Messaging（“GCM”）的 Android 应用程序。你将要向本教程必需的快速入门项目添加推送通知。推送通知是使用移动服务随附的 Azure 通知中心启用的。完成本教程后，每次插入一条记录时，你的移动服务就会发送一条推送通知。
 
@@ -31,11 +36,11 @@
 [AZURE.INCLUDE [mobile-services-android-prerequisites](../includes/mobile-services-android-prerequisites.md)]
 
 ## 代码示例
-若要查看完成的源代码，请转到[此处](https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithPush)。
+若要查看完整的源代码，请转到[此处](https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithPush)。
 
 ## 启用 Google Cloud Messaging
 
-[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../includes/mobile-services-enable-Google-cloud-messaging.md)]
+[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../includes/mobile-services-enable-google-cloud-messaging.md)]
 
 ## 配置移动服务以发送推送请求
 
@@ -49,7 +54,7 @@
 
 ### 将 Google Play Services 添加到项目
 
-[AZURE.INCLUDE [添加 Play Services](../includes/mobile-services-add-Google-play-services.md)]
+[AZURE.INCLUDE [添加 Play Services](../includes/mobile-services-add-google-play-services.md)]
 
 ### 添加代码
 
@@ -83,7 +88,7 @@
 
 1. 在“运行”菜单项中，单击“运行应用程序”以启动应用程序。
 
-2. 在应用程序中键入有意义的文本（例如 _A new Mobile Services task_），然后单击“添加”按钮。
+2. 在应用程序中键入有意义的文本（例如 A new Mobile Services task），然后单击“添加”按钮。
 
   	![](./media/mobile-services-javascript-backend-android-get-started-push/mobile-quickstart-push1-android.png)
 

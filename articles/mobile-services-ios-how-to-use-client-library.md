@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="01/12/2016"
+	ms.date="03/09/2016"
 	wacn.date="02/26/2016"/>
 
 #  如何使用适用于 Azure 移动服务的 iOS 客户端库
