@@ -4,19 +4,19 @@
 
 配置参考列表：
 	
-- 虚拟网络名称 = “TestVNet”
+- 虚拟网络名称（VNetName） = “TestVNet”
 - 虚拟网络地址空间 = 192.168.0.0/16
-- 资源组 = “TestRG”
+- 资源组（RG） = “TestRG”
 - Subnet1 名称 = “FrontEnd” 
 - Subnet1 地址空间 = “192.168.0.0/16”
-- 网关子网名称：“GatewaySubnet” 必须始终将网关子网命名为 *GatewaySubnet*。
+- 网关子网名称（GatewaySubnet）：“GatewaySubnet” 必须始终将网关子网命名为 *GatewaySubnet*。
 - 网关子网地址空间 = “192.168.200.0/26”
-- 区域 =“美国东部”
-- 网关名称 = “GW”
-- 网关 IP 名称 = “GWIP”
-- 网关 IP 配置名称 = “gwipconf”
-- VPN 类型 = “ExpressRoute” ExpressRoute 配置需要此 VPN 类型。
-- 网关公共 IP 名称 = “gwpip”
+- 区域（Location） =“美国东部”
+- 网关名称（GWName） = “GW”
+- 网关 IP 名称（GWIPName） = “GWIP”
+- 网关 IP 配置名称（GWIPconfName） = “gwipconf”
+- VPN 类型（VPNType） = “ExpressRoute” ExpressRoute 配置需要此 VPN 类型。
+- 网关公共 IP 名称（GWPIP） = “gwpip”
 
 
 ## 添加网关
@@ -27,7 +27,7 @@
 		Get-AzureRmSubscription 
 		Select-AzureRmSubscription -SubscriptionName "Name of subscription"
 
-2. 声明此练习的变量。本示例将在以下例子中使用这些变量。请务必编辑此例子，以反映想要使用的设置。
+2. 声明此示例的变量。本示例将在以下例子中使用这些变量。请务必编辑此例子，以反映想要使用的设置。
 		
 		$RG = "TestRG"
 		$Location = "East US"
@@ -36,7 +36,7 @@
 		$GWIPconfName = "gwipconf"
 		$VNetName = "TestVNet"
 
-3. 将虚拟网络对象存储为变量。
+3. 将虚拟网络对象赋值。
 
 		$vnet = Get-AzureRmVirtualNetwork -Name $VNetName -ResourceGroupName $RG
 
@@ -48,16 +48,16 @@
 
 			Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
 
-6. 将网关子网存储为变量。
+6. 将网关子网赋值。
 
 		$subnet = Get-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -VirtualNetwork $vnet
 
-7. 请求公共 IP 地址。创建网关之前请求 IP 地址。你无法指定要使用的 IP 地址；它会进行动态分配。后面的配置部分将使用此 IP 地址。AllocationMethod 必须是动态的。
+7. 请求公共 IP 地址。创建网关之前请求 IP 地址。不支持静态指定IP， AllocationMethod 必须是动态的。
 
 		$pip = New-AzureRmPublicIpAddress -Name gwpip -ResourceGroupName $RG -Location $Location -AllocationMethod Dynamic
 		$ipconf = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GWIPconfName -Subnet $subnet -PublicIpAddress $pip
 
-8. 创建网关配置。网关配置定义要使用的子网和公共 IP 地址。在此步骤中，你将指定创建网关时使用的配置。此步骤不会实际创建网关对象。使用下面的示例创建你的网关配置。
+8. 创建网关配置（gwipconfig）。网关配置定义要使用的子网和公共 IP 地址。在此步骤中，你将指定创建网关时使用的配置。此步骤不会实际创建网关对象。使用下面的示例创建你的网关配置。
 
 		$gwipconfig = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GWIPconfName -SubnetId $subnet.Id -PublicIpAddressId $pip.Id 
 
