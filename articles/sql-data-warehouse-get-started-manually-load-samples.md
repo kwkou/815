@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="01/07/2016"
-   wacn.date="03/28/2016"/>
+   ms.date="03/03/2016"
+   wacn.date="04/11/2016"/>
 
 #将示例数据载入 SQL 数据仓库
 

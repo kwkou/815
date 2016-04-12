@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="02/01/2016"
-   wacn.date="03/17/2016"/>
+   ms.date="03/08/2016"
+   wacn.date="04/11/2016"/>
 
 #Transact-SQL 主题
 
