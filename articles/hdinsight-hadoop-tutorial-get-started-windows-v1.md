@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/29/2015"
-	wacn.date="03/28/2016"/>
+	ms.date="03/07/2015"
+	wacn.date="04/12/2016"/>
 
 
 # Hadoop 教程：在 Windows 上的 HDInsight 中开始将 Hadoop 与 Hive 查询配合使用
@@ -188,6 +188,9 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 9. 单击左上角的“关闭并加载”以将 Hive 作业输出导入到 Excel 中。
 
+## 删除集群
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 ##<a name="nextsteps"></a>后续步骤
 在本 Hadoop 教程中，你已学习如何在 Windows 上的HDInsight 中设置 Hadoop 群集、如何对数据运行 Hive 查询，以及如何将结果导入到 Excel 中，在 Excel 中，可以使用商业智能工具进一步处理结果以及以图形方式显示结果。若要了解更多信息，请参阅以下教程：

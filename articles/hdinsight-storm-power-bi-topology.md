@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/08/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="03/01/2016"
+	wacn.date="04/12/2016"/>
 
 # 使用 Power BI 从 Apache Storm 拓扑可视化数据
 
@@ -124,6 +124,10 @@ Power BI 允许你以可视方式将数据显示为报告或仪表板。借助 P
 2. 选择“终止”按钮以停止 **WordCount** 拓扑。
 
     ![拓扑摘要中的终止按钮](./media/hdinsight-storm-power-bi-topology/killtopology.png)
+
+## 删除集群
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 ## 后续步骤
 

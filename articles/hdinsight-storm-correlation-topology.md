@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="02/01/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="04/12/2016"/>
 
 # 使用 HDInsight 上的 Storm 和 HBase 按时间对事件进行关联
 
@@ -188,6 +188,10 @@
 ##停止拓扑
 
 当你准备停止拓扑时，请返回到 Visual Studio 中的 **CorrelationTopology** 项目。在**“Storm 拓扑视图”**中，选择拓扑，然后使用拓扑视图顶部的**“终止”**按钮。
+
+## 删除集群
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 ##后续步骤
 

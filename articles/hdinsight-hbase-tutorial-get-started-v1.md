@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/29/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="03/07/2016"
+	wacn.date="04/12/2016"/>
 
 
 
@@ -23,6 +23,8 @@
 
 
 **先决条件**
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 在开始阅读本 HBase 教程前，你必须具有：
 
@@ -311,7 +313,9 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 7. 在 **Main** 函数中设置前三个变量。
 8. 按 **F5** 运行应用程序。
 
+## 删除集群
 
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 ## 后续步骤
 在针对 HDInsight 的本 HBase 教程中，你已学习如何设置 HBase 群集，如何创建表，以及如何从 HBase shell 查看这些表中的数据。你还学习了如何对 HBase 表中的数据使用 Hive 查询，以及如何使用 HBase C# REST API 创建 HBase 表并从该表中检索数据。

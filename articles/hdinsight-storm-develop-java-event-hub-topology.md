@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/28/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="03/01/2016"
+	wacn.date="04/12/2016"/>
 
 # 使用 Storm on HDInsight 从 Azure 事件中心处理事件 (Java)
 
@@ -381,6 +381,10 @@ EventHubSpout 定期检查点其状态为 Zookeeper 节点，将保存当前的�
 当你需要删除群集，但在将新群集重新联机的情况下想要从中心的当前偏移量恢复处理时，可以使用导出和导入来保存检查点数据。
 
 > [AZURE.NOTE]由于数据将保存到默认的存储容器，新群集**必须**使用前一群集所用的同一个存储帐户和容器。
+
+## 删除集群
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 ##故障排除
 
