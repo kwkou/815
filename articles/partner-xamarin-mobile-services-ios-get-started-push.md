@@ -9,15 +9,17 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="02/11/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="03/18/2016"
+	wacn.date="04/11/2016"/>
 
 #  向移动服务应用程序添加推送通知
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 &nbsp;
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对等 Mobile Apps 版本，请参阅[向 Xamarin.iOS 应用添加推送通知](/documentation/articles/app-service-mobile-xamarin-ios-get-started-push)。
 
 ## 概述
 
@@ -154,7 +156,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
   	记下文件名和导出的证书的位置。
 
-2. 登录到 [Azure 经典门户]，单击“移动服务”，然后单击你的应用。
+2. 登录到 [Azure 管理门户]，单击“移动服务”，然后单击你的应用。
 
    	![][18]
 
@@ -164,7 +166,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
    	此时将显示“上载证书”对话框。
 
-4. 单击“文件”，选择导出的 .p12 证书文件，输入密码，确保已选择正确的“模式”，单击勾选图标，然后单击“保存”。
+4. 单击“文件”，选择导出的 .p12 证书文件，输入“密码”，确保已选择正确的“模式”，单击勾选图标，然后单击“保存”。
 
    	![][20]
 
@@ -274,9 +276,9 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 你的应用现已更新，可支持推送通知。
 
-## <a name="update-scripts"></a>在 Azure 经典门户中更新已注册的插入脚本
+## <a name="update-scripts"></a>在 Azure 管理门户中更新已注册的插入脚本
 
-1. 在 [Azure 经典门户]中，单击“数据”选项卡，然后单击“TodoItem”表。
+1. 在 [Azure 管理门户]中，单击“数据”选项卡，然后单击“TodoItem”表。
 
    	![][21]
 
@@ -314,7 +316,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
    >[AZURE.NOTE]你必须显式接受来自应用程序的推送通知。此请求只会在首次运行应用程序时出现。
 
-2. 在应用中键入有意义的文本（例如 _A new Mobile Services task_），然后单击加号 (**+**) 图标。
+2. 在应用中键入有意义的文本（例如 A new Mobile Services task），然后单击加号 (**+**) 图标。
 
   	![][24]
 
@@ -391,7 +393,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 [Xamarin 设备设置]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
 
 
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 管理门户]: https://manage.windowsazure.cn/
 [apns 对象]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
 [completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331303

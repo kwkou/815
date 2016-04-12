@@ -9,13 +9,16 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/11/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="03/05/2016" 
+	wacn.date="04/11/2016"/>
 
 
 # 向经过身份验证的用户发送推送通知
 
-[AZURE.INCLUDE [mobile-services-selector-push-users](../includes/mobile-services-selector-push-users.md)]
+[AZURE.INCLUDE [mobile-services-selector-push-users](../includes/mobile-services-selector-push-users.md)]&nbsp;
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对应的 Mobile Apps 版本，请参阅[如何：使用标记向已经过身份验证的用户发送推送通知](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/#push-user)。
 
 ##概述
 本主题说明如何向任何已注册设备上已经过身份验证的用户发送推送通知。与前面的[向应用程序添加推送通知]教程不同，本教程将指导你更改移动服务，以要求先对用户进行身份验证，然后，才可以将客户端注册到通知中心以发送推送通知。此外，你还要修改注册，以根据分配的用户 ID 添加标记。最后，服务器脚本会更新为仅对经过身份验证的用户 （而不是向所有注册用户）发送通知。
@@ -92,6 +95,6 @@
 [向应用程序添加身份验证]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
 [向应用程序添加推送通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
 
-[Azure classic portal]: https://manage.windowsazure.cn/
+[Azure Management portal]: https://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0118_2016-->

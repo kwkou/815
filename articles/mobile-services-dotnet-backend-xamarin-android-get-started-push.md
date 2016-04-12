@@ -1,23 +1,25 @@
-<properties 
-	pageTitle="用于 Xamarin Android 应用程序的移动服务入门 - Azure 移动服务" 
-	description="了解如何使用 Azure 移动服务和通知中心将推送通知发送到 Xamarin Android 应用程序" 
-	services="mobile-services" 
-	documentationCenter="xamarin" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="适用于 Xamarin.Android 应用的移动服务入门 | Microsoft Azure"
+	description="了解如何使用 Azure 移动服务和通知中心将推送通知发送到 Xamarin Android 应用程序"
+	services="mobile-services"
+	documentationCenter="xamarin"
+	authors="ggailey777"
+	manager="dwrede"
 	editor="mollybos"/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="12/11/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="03/18/2016"
+	wacn.date="04/11/2016"/>
 
 # 向移动服务应用程序添加推送通知
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 &nbsp;
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对等 Mobile Apps 版本，请参阅[向 Xamarin.Android 应用添加推送通知](/documentation/articles/app-service-mobile-xamarin-android-get-started-push)。
 
 ##概述
 

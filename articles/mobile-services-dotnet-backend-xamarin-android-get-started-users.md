@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="用于 Xamarin Android 应用程序的移动服务中的身份验证入门 - Azure 移动服务" 
+	pageTitle="用于 Xamarin Android 应用的移动服务中的身份验证入门 | Microsoft Azure"
 	description="了解如何使用移动服务通过各种标识提供程序（包括 Microsoft 和 Azure Active Directory 对 Xamarin Android 应用程序的用户进行身份验证。" 
 	services="mobile-services" 
 	documentationCenter="xamarin" 
@@ -10,14 +10,16 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="12/01/2015" 
-	wacn.date="01/29/2016"/>
+	wacn.date="04/11/2016"/>
 
 # 移动服务中的身份验证入门
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 &nbsp;
-[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对等 Mobile Apps 版本，请参阅[向 Xamarin.Android 应用添加身份验证](/documentation/articles/app-service-mobile-xamarin-android-get-started-users)。
 
 本主题说明如何通过应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
 
@@ -42,7 +44,7 @@
 <ol start="6">
 <li><p>在 Visual Studio 或 Xamarin Studio 中，运行设备或模拟器中的客户端项目。验证在应用程序启动后是否引发状态代码为 401（“未授权”）的未处理异常。</p>
    
-   	<p>发生此异常的原因是应用程序尝试以未经身份验证的用户身份访问移动服务，但 <em>TodoItem</em> 表现在要求身份验证。</p></li>
+   	<p>发生此异常的原因是应用程序尝试以未经身份验证的用户身份访问移动服务，但 TodoItem 表现在要求身份验证。</p></li>
 </ol>
 
 接下来，你需要更新应用程序，以便在从移动服务请求资源之前对用户进行身份验证。

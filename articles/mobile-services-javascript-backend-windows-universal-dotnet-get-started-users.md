@@ -4,17 +4,22 @@
 	services="mobile-services" 
 	documentationCenter="windows" 
 	authors="ggailey777" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/22/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="03/05/2016" 
+	wacn.date="04/11/2016"/>
 
 # 向通用 Windows 8.1 应用添加身份验证
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
+
+&nbsp;
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对应的 Mobile Apps 版本，请参阅[向 Windows 应用添加身份验证](/documentation/articles/app-service-mobile-windows-store-dotnet-get-started-users)。
 
 本主题说明如何通过通用 Windows 8.1 应用对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
 
@@ -30,7 +35,7 @@
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-windows](../includes/mobile-services-restrict-permissions-windows.md)]
 
->[AZURE.NOTE]当你使用 Visual Studio 工具将应用程序连接到移动服务时，该工具将生成两组 **MobileServiceClient** 定义，每个客户端平台一组。这是简化生成的代码的好时机，你可以通过将 `#if...#endif` 包装的 **MobileServiceClient** 定义统一为单个解包的定义供这两个版本的应用程序使用来简化生成的代码。从 [Azure 经典门户]下载快速入门应用时无需执行此操作。
+>[AZURE.NOTE] 当你使用 Visual Studio 工具将应用程序连接到移动服务时，该工具将生成两组 **MobileServiceClient** 定义，每个客户端平台一组。这是简化生成的代码的好时机，你可以通过将 `#if...#endif` 包装的 **MobileServiceClient** 定义统一为单个解包的定义供这两个版本的应用程序使用来简化生成的代码。如果你从 [Azure 经典门户]下载了快速入门应用，则无需执行此操作。
 
 ## <a name="add-authentication"></a>向应用程序添加身份验证
 

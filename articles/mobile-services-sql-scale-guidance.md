@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="12/01/2015" 
+	ms.date="02/23/2016" 
 	wacn.date="04/01/2016"/>
 
 # 扩展 Azure SQL 数据库支持的移动服务

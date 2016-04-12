@@ -10,14 +10,16 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="02/11/2016" 
-	wacn.date="03/21/2016"/>
+	wacn.date="04/11/2016"/>
 
 #  向移动服务应用程序添加身份验证
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 &nbsp;
-[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对等 Mobile Apps 版本，请参阅[向 Xamarin.Android 应用添加身份验证](/documentation/articles/app-service-mobile-xamarin-android-get-started-users)。
 
 <p>本主题说明如何通过 Xamarin.Android 应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。</p>
 
@@ -53,7 +55,7 @@
 
 1. 将以下属性添加到 **ToDoActivity** 类：
 
-		private MobileServiceUser user;
+		private MobileServiceUser user;
 
 2. 将以下方法添加到 **ToDoActivity** 类：
 
@@ -72,7 +74,7 @@
 
     这将会创建一个用于处理身份验证过程的新方法。将使用 Microsoft 帐户登录对用户进行身份验证。此时将出现一个对话框，其中显示了已经过身份验证的用户的 ID。如果未正常完成身份验证，你将无法继续操作。
 
-    > [AZURE.NOTE] 如果使用的标识提供者不是 Microsoft，请将传递给上述 **login** 方法的值更改为下列其中一项: _WindowsAzureActiveDirectory_。
+    > [AZURE.NOTE] 如果使用的标识提供者不是 Microsoft，请将传递给上述 **login** 方法的值更改为下列其中一项：WindowsAzureActiveDirectory。
 
 3. 在 **OnCreate** 方法中，在实例化 `MobileServiceClient` 对象的代码后面添加以下代码行。
 
