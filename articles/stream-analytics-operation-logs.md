@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="02/04/2016" 
-	wacn.date="03/17/2016"/>
+	ms.date="03/18/2016" 
+	wacn.date="04/11/2016"/>
 
 # 使用服务和操作日志调试流分析作业
 

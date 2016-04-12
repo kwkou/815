@@ -3,15 +3,15 @@
 	description="了解如何使流分析数据转换输出输出到数据存储选项。另外，请使用 Power BI 来获取分析结果。"
 	keywords="数据转换、分析结果、数据存储选项"
 	services="stream-analytics,documentdb,sql-database,event-hubs,service-bus,storage"
-	documentationCenter=""
+	documentationCenter="" 
 	authors="jeffstokes72"
 	manager="paulettm"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="02/04/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="03/16/2016"
+	wacn.date="04/11/2016"/>
 # 使流分析数据转换输出输出到分析工具和数据存储选项
 
 创作流分析作业时，需考虑如何使用数据转换输出。如何查看流分析作业的结果？ 使用哪些工具来显示数据分析结果？ 数据存储选项是必需的吗？
@@ -19,7 +19,8 @@
 为了启用多种应用程序模式，Azure 流分析提供了不同的选项来存储输出和查看分析结果。这样可以轻松地查看作业输出，并可灵活地使用和存储作业输出，以便进行数据仓库操作和其他操作。必须先存在作业中配置的输出，然后才能启动作业并开始事件的流动。例如，如果你使用 Blob 存储作为输出，该作业将不会自动创建存储帐户。在启动 ASA 作业之前，需要由用户创建该存储帐户。
 
 
-## SQL 数据库 ##
+
+## SQL 数据库
 
 可以将 [Azure SQL 数据库](/services/sql-databases/)用作本质上为关系型数据的输出，也可以将其用于所依赖的内容在关系数据库中托管的应用程序。流分析作业将写入到 Azure SQL 数据库的现有表中。请注意表架构必须与字段及其正从作业输出的类型完全匹配。下表列出了属性名称和用于创建 SQL 数据库输出的属性说明。
 
@@ -32,7 +33,7 @@
 | 密码 | 用于连接到数据库的密码 |
 | 表 | 将写入输出的表名称。表名称区分大小写，并且该表架构应与字段数量以及作业输出正在生成的字段类型完全匹配。 |
 
-## Blob 存储 ##
+## Blob 存储
 
 Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在云中存储大量非结构化数据。如需 Azure Blob 存储及其用法的简介，请参阅文档：[如何使用 Blob](/documentation/articles/storage-dotnet-how-to-use-blobs)。
 
@@ -181,4 +182,4 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0405_2016-->
