@@ -1,19 +1,20 @@
 <properties
-   pageTitle="Azure 备份常见问题 | Azure"
-   description="有关 Azure 备份服务的常见问题"
+   pageTitle="Azure 备份常见问题 | Microsoft Azure"
+   description="针对备份代理、备份和保留、恢复、安全性的常见问题以及针对 Azure 备份解决方案的其他常见问题的答案。"
    services="backup"
    documentationCenter=""
    authors="Jim-Parker"
-   manager="shreeshd"
-   editor=""/>
+   manager="jwhit"
+   editor=""
+   keywords="备份解决方案; 备份服务"/>
 
 <tags
-   ms.service="backup" 
-   ms.date="10/07/2015"
-   wacn.date="01/14/2016"/>
+    ms.service="backup"
+    ms.date="01/28/2016"
+    wacn.date="04/12/2016"/>
 
-# Azure 备份 - 常见问题
-下面是与 Azure 备份有关的常见问题的列表。如果你有与 Azure 备份有关的任何其他问题，请转到[论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)并发布你的问题。来自我们社区的人员将帮助你回答问题。如果某个问题是常见问题，我们会将该问题添加到本文中，以便可以轻松快捷地找到该问题。
+# Azure 备份服务 - 常见问题
+下面是与 Azure 备份有关的常见问题的列表。如果你有与 Azure 备份解决方案有关的任何其他问题，请转到[论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup)并发布你的问题。来自我们社区的人员将帮助你回答问题。如果某个问题是常见问题，我们会将该问题添加到本文中，以便可以轻松快捷地找到该问题。
 
 ## 安装和配置
 **问 1.我可以在哪些受支持的操作系统上使用 Azure 备份向 Azure 备份数据？** <br/>
@@ -50,12 +51,12 @@
 答 6.虽然每个保管库中获取详细的清单，但强烈建议你考虑作为计费实体的 Azure 订阅。它在所有服务均保持一致，并且是更轻松地管理。
 
 **问 7.可针对每个保管库注册的服务器/计算机数量是否有任何限制？** <br/>
-答 7.是的，最多可为每个保管库注册 50 个计算机。对于 Azure IaaS 虚拟机，限制为每个保管库 100 个 VM。如果你需要注册更多的计算机，请创建新的保管库。
+答 7.是的，最多可为每个保管库注册 50 个计算机。对于 Azure IaaS 虚拟机，限制为每个保管库 200 个 VM。如果你需要注册更多的计算机，请创建新的保管库。
 
 **问 8.可从 Windows 服务器/客户端或 SCDPM 服务器备份的数据量是否有任何限制？** <br/>
 答 8.没有。
 
-**问 9.如何将我的服务器注册到其他数据中心？**<br/> 
+**问 9.如何将我的服务器注册到其他数据中心？**<br/>
 答 9.通常，备份数据发送到它所注册到的备份服务的数据中心。更改数据中心的最简便方法是卸载代理，然后将代理安装并注册到新的数据中心。
 
 **问 10.如果我重命名了用于将数据备份到 Azure 的 Windows 服务器，会发生什么情况？** <br/>
@@ -86,9 +87,9 @@
 - 稀疏流：不支持，跳过
 
 **问 13.针对缓存文件夹的最小大小要求是什么？** <br/>
-答 13.缓存文件夹的大小由你正在备份的数据量确定。通常，你应该为缓存文件夹分配数据存储所需空间的 10-15%。
+答 13.缓存文件夹的大小由你正在备份的数据量确定。通常，你应该为缓存文件夹分配数据存储所需空间的 5%。
 
-**问 14.如何隔离特定服务器的数据，使其不被组织中的其他服务器恢复？ **<br/>
+**问 14.如何隔离特定服务器的数据，使其不被组织中的其他服务器恢复？**<br/>
 答 14.使用同一个保管库注册的任何服务器将能够恢复由使用同一通行短语的其他服务器备份的数据。如果对于你的服务器，你希望确保只在组织中的特定服务器上发生恢复，则应使用为这些服务器指定的单独通行短语。例如，人力资源服务器可能使用一个加密通行短语，会计结算服务器使用另一个通行短语，而存储服务器使用第三个通行短语。
 
 **问 15.是否可以在订阅之间“迁移”我的备份数据？** <br/>
@@ -114,6 +115,18 @@
 - *.WindowsAzure.com
 - *.microsoftonline.com
 - *.windows.net
+
+**问 21.可以在已由 Azure 备份服务备份的 Azure VM 上使用 VM 扩展来安装 Azure 备份代理吗？** <br/>
+答 21.绝对是。Azure 备份使用 VM 扩展为 Azure VM 提供 VM 级别备份。可以在来宾 Windows OS 上安装 Azure 备份代理，以保护该来宾 OS 上的文件和文件夹。
+
+**问 22.可以在 Azure VM 上安装 Azure 备份代理来备份 Azure VM 提供的临时存储中存在的文件和文件夹吗？** <br/>
+答 22.你可以在来宾 Windows OS 上安装 Azure 备份代理，并将文件和文件夹备份到临时存储。但请注意，擦除临时存储数据后，备份将开始失败。此外，如果临时存储数据已被删除，则只能还原到非临时存储。
+
+**问 23.可以使用 Azure 备份代理指定为 Azure 备份策略一部分的文件路径的长度是多少？** <br>
+答 23.Azure 备份代理依赖于 NTFS。[文件路径长度规范受限于 Windows API](https://msdn.microsoft.com/library/aa365247.aspx#fully_qualified_vs._relative_paths)。在备份文件路径长度大于 Windows API 所指定长度的文件时，客户可以选择备份备份文件的父文件夹或磁盘驱动器。
+
+**问 24. 使用 Azure 备份代理的 Azure 备份策略的文件路径中允许哪些字符？** <br>
+答 24.Azure 备份代理依赖于 NTFS。允许使用 [NTFS 支持的字符](https://msdn.microsoft.com/library/aa365247.aspx#naming_conventions)作为文件规范的一部分。
 
 
 ## 备份和保留期
@@ -153,7 +166,8 @@
 **问 6.我是否可以计划下午 6 点的备份，同时指定不同时间的保留策略？**<br/>
 答 6.不可以。只能在备份时间点应用保留策略。在下图中，保留策略是针对上午 12 和下午 6 点生成的备份指定的。<br/>
 
-![计划备份和保持](./media/backup-azure-backup-faq/Schedule.png) <br/>
+![计划备份和保持](./media/backup-azure-backup-faq/Schedule.png)
+<br/>
 
 **问 7.是否为计划的保留策略传输增量复制？** <br/>
 答 7.否，增量复制是根据备份计划页中提到的时间发送的。可以保留的时间点是根据保留策略确定的。
@@ -189,6 +203,8 @@
 
 **问 4.如果我丢失了加密密钥，会发生什么情况？ 我是否可以恢复数据（或者）Microsoft 是否可以恢复数据？** <br/>
 答 4.用于加密备份数据的密钥只能放置在客户场地。Microsoft 不会在 Azure 中保留副本，并且无权访问密钥。如果客户丢失了密钥，Microsoft 将无法恢复备份的数据。
+
+
 ## 备份缓存
 
 **问 1.如何更改针对 Azure 备份代理指定的缓存位置？**
@@ -204,8 +220,8 @@
 
 	| 注册表路径 | 注册表项 | 值 |
 	| ------ | ------- | ------ |
-	| HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Azure Backup\\Config | ScratchLocation | <i>新的缓存文件夹位置</i> |
-	| HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Azure Backup\\Config\\CloudBackupProvider | ScratchLocation | <i>新的缓存文件夹位置</i> |
+	| `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Azure Backup\Config` | ScratchLocation | 新的缓存文件夹位置 |
+	| `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Azure Backup\Config\CloudBackupProvider` | ScratchLocation | 新的缓存文件夹位置 |
 
 
 + 通过在权限提升的命令提示符下运行以下命令来启动 OBEngine：
@@ -214,4 +230,4 @@
 
 使用新缓存位置成功备份后，可以删除原始缓存文件夹。
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0405_2016-->

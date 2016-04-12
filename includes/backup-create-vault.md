@@ -3,7 +3,7 @@
 
 以下步骤将指导你完成创建用于存储备份的保管库。
 
-1. 登录到[管理门户](https://manage.windowsazure.com/)
+1. 登录到[管理门户](https://manage.windowsazure.cn/)
 2. 单击“新建”>“数据服务”>“恢复服务”->“备份保管库”，然后选择“快速创建”。
 
     ![创建保管库](./media/backup-create-vault/createvault1.png)
@@ -23,9 +23,9 @@
 
 ### <a name="azure-backup---storage-redundancy-options"></a>Azure 备份 - 存储冗余选项
 
-> AZURE.IMPORTANT：确定存储冗余选项的最佳时机是在创建保管库之后、将任何计算机注册到保管库之前。将某个项注册到保管库后，存储冗余选项将会锁定且不能修改。
+>[AZURE.IMPORTANT] 确定存储冗余选项的最佳时机是在创建保管库之后、将任何计算机注册到保管库之前。将某个项注册到保管库后，存储冗余选项将会锁定且不能修改。
 
-你的业务需求确定了 Azure 备份后端存储的存储冗余。如果你要使用 Azure 作为主要备份存储终结点（例如，你要从 Windows Server 备份到 Azure），应考虑选择（默认的）地域冗余存储选项。此选项显示在备份保管库的“配置”选项下。
+你的业务需求应确定 Azure 备份后端存储的存储冗余。如果你要使用 Azure 作为主要备份存储终结点（例如，你要从 Windows Server 备份到 Azure），应考虑选择（默认的）地域冗余存储选项。此选项显示在备份保管库的“配置”选项下。
 
 ![GRS](./media/backup-create-vault/grs.png)
 
@@ -39,4 +39,4 @@ GRS 维护你的数据的六个副本。使用 GRS 时，你的数据将在主�
 
 ![LRS](./media/backup-create-vault/lrs.png)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0405_2016-->

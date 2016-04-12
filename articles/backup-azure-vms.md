@@ -1,34 +1,34 @@
 <properties
-	pageTitle="备份 Azure 虚拟机 | Azure"
+	pageTitle="备份 Azure 虚拟机 | Microsoft Azure"
 	description="使用本文中的 Azure 虚拟机备份过程来发现、注册和备份虚拟机。"
 	services="backup"
 	documentationCenter=""
-	authors="Jim-Parker"
+	authors="markgalioto"
 	manager="jwhit"
 	editor=""
-	keywords="虚拟机备份;备份虚拟机;备份和灾难恢复"/>
+	keywords="虚拟机备份;备份虚拟机;备份和灾难恢复;vm 备份"/>
 
 <tags
 	ms.service="backup"
-	ms.date="11/17/2015"
-	wacn.date="01/26/2016"/>
+	ms.date="01/22/2016"
+	wacn.date="04/12/2016"/>
 
 
 # 备份 Azure 虚拟机
-本文提供了备份现有 Azure 虚拟机 (VM)，以根据公司的备份和灾难恢复策略来保护这些 VM 的过程。
+本文介绍备份 Azure 虚拟机 (VM) 的过程。
 
-首先，在备份 Azure 虚拟机之前，需要注意一些事项。如果你尚未这样做，请完成[先决条件](/documentation/articles/backup-azure-vms-prepare)部分，在环境中做好 VM 备份的准备，然后再继续。
+首先，在备份 Azure 虚拟机之前，需要注意一些事项。如果你尚未这样做，请完成[先决条件](/documentation/articles/backup-azure-vms-prepare)部分，在环境中做好 VM 备份的准备。
 
 有关其他信息，请参阅[在 Azure 中规划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction)和 [Azure 虚拟机](/documentation/services/virtual-machines/)。
 
-<a name="offline-vms"></a>备份 Azure 虚拟机的过程包括三个主要步骤：
+备份 Azure 虚拟机的过程包括三个主要步骤：
 
 ![备份 Azure IaaS VM 的三个步骤](./media/backup-azure-vms/3-steps-for-backup.png)
 
->[AZURE.NOTE]备份虚拟机是在本地完成的过程。你不能将一个区域的虚拟机备份到另一个区域的备份保管库。因此，对于每个需要备份 VM 的 Azure 区域，需要在该区域中至少创建一个备份保管库。
+>[AZURE.NOTE] 备份虚拟机是在本地完成的过程。你不能将一个区域的虚拟机备份到另一个区域的备份保管库。因此，必须在每个要备份 VM 的 Azure 区域中创建一个备份保管库。
 
 ## 步骤 1 - 发现 Azure 虚拟机
-发现过程应始终作为第一步来运行，这样是为了确保标识任何添加到订阅的新虚拟机。该过程将在 Azure 上查询订阅中的虚拟机列表和其他信息，例如云服务名称、区域等。
+为确保在注册之前能够识别任何添加到订阅中的新虚拟机 (VM)，请先运行发现过程。该过程将在 Azure 上查询订阅中的虚拟机列表和其他信息，例如云服务名称、区域等。
 
 1. 导航到备份保管库（位于 Azure 门户的“恢复服务”下），然后单击“注册的项”。
 
@@ -61,7 +61,7 @@
 
 4. 在“注册项”快捷菜单中，选择你要注册的虚拟机。如果存在两个或两个以上的同名虚拟机，请使用云服务来区别它们。
 
-    >[AZURE.TIP]可以一次注册多个虚拟机。
+    >[AZURE.TIP] 可以一次注册多个虚拟机。
 
     为每一个选定的虚拟机创建一个作业。
 
@@ -89,7 +89,7 @@
 
 3. 单击页面底部的“保护”。
 
-    此时将显示“保护项”向导。此向导只列出已注册但不受保护的虚拟机。可以在此处选择要保护的虚拟机。
+    此时将显示“保护项”向导。此向导只列出已注册但不受保护的虚拟机。选择要保护的虚拟机。
 
     如果存在两个以上的同名虚拟机，请使用云服务来区别虚拟机。
 
@@ -109,7 +109,7 @@
 
     ![使用弹性保留期进行保护](./media/backup-azure-vms/policy-retention.png)
 
-    保留策略指定存储备份的时间长短。你可以根据备份的时间指定不同的保留策略。例如，在每个季末创建的备份点可能需要保留更长的时间（以便进行审核），而每天创建的备份点（用作操作恢复点）只需保留 90 天。
+    保留策略指定存储备份的时间长短。你可以根据备份的时间指定不同的保留策略。例如，每天创建的备份点（用作操作恢复点）可能只需保留 90 天。相比而言，在每个季末创建的备份点可能需要保留数月甚至数年时间（用于审核目的）。
 
     ![已使用恢复点备份虚拟机](./media/backup-azure-vms/long-term-retention.png)
 
@@ -122,16 +122,16 @@
 
     为每个所选虚拟机创建一个作业，以便配置保护策略并将虚拟机关联到该策略。
 
-6. 单击“作业”，并选择适当的筛选器来查看“配置保护”作业列表。
+6. 若要查看“配置保护”作业列表，请在保管库菜单中，单击“作业”，然后从“操作”筛选器中选择“配置保护”。
 
     ![配置保护作业](./media/backup-azure-vms/protect-configureprotection.png)
 
 ## 初始备份
-使用策略保护虚拟机后，虚拟机将会出现在“受保护的项”选项卡下，其状态为“受保护 - (等待初始备份)”。默认情况下，第一个计划的备份是*初始备份*。
+使用策略保护虚拟机后，虚拟机将会出现在“受保护的项”选项卡下，其状态为“受保护 - (等待初始备份)”。默认情况下，第一个计划的备份是初始备份。
 
 若要在配置保护后立即触发初始备份，请执行以下操作：
 
-1. 单击“受保护的项”页底部的“立即备份”按钮。
+1. 在“受保护的项”页面底部，单击“立即备份”。
 
     Azure 备份服务将为初始备份操作创建备份作业。
 
@@ -139,25 +139,25 @@
 
 ![备份进行中](./media/backup-azure-vms/protect-inprogress.png)
 
->[AZURE.NOTE]在执行备份操作的过程中，Azure 备份服务将向虚拟机中的备份扩展发出一条命令，以刷新所有写入并取得一致的快照。
+>[AZURE.NOTE] 在执行备份操作的过程中，Azure 备份服务将向虚拟机中的备份扩展发出一条命令，以刷新所有写入作业并取得一致的快照。
 
 完成初始备份后，“受保护的项”选项卡中的虚拟机状态将显示为“受保护”。
 
 ![已使用恢复点备份虚拟机](./media/backup-azure-vms/protect-backedupvm.png)
 
 ## 查看备份状态和详细信息
-虚拟机受保护后，“仪表板”页摘要中的虚拟机计数也会递增。“仪表板”页还显示过去 24 小时内成功、失败和仍在进行的作业数目。单击任何一个类别可在“作业”页中深入查看该类别。
+虚拟机受保护后，“仪表板”页摘要中的虚拟机计数也会递增。“仪表板”页还显示过去 24 小时内成功、失败和正在进行的作业数目。在“作业”页上，使用“状态”、“操作”或“从”和“到”菜单来筛选作业。
 
 ![“仪表板”页中的备份状态](./media/backup-azure-vms/dashboard-protectedvms.png)
 
 仪表板中的值每 24 小时刷新一次。
 
 ## 排查错误
-如果你在备份虚拟机时遇到问题，请参阅此[疑难解答](/documentation/articles/backup-azure-vms-troubleshoot)指南以获取帮助。
+如果你在备份虚拟机时遇到问题，请参阅 [VM 故障排除文章](/documentation/articles/backup-azure-vms-troubleshoot)以获取帮助。
 
 ## 后续步骤
 
 - [管理和监视你的虚拟机](/documentation/articles/backup-azure-manage-vms)
 - [恢复虚拟机](/documentation/articles/backup-azure-restore-vms)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0405_2016-->
