@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="02/01/2016"
-   wacn.date="03/17/2016"/>
+   ms.date="03/03/2016"
+   wacn.date="04/11/2016"/>
 
 #在 SQL 数据仓库中利用其他服务
 除了本身的核心功能以外，SQL 数据仓库还允许用户利用 Azure 中的其他许多服务。具体而言，我们目前已采取多种措施深度集成了以下服务：

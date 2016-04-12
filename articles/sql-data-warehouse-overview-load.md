@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="01/07/2016"
-   wacn.date="03/17/2016"/>
+   ms.date="03/03/2016"
+   wacn.date="04/11/2016"/>
 
 # 将数据载入 SQL 数据仓库
 SQL 数据仓库提供许多选项用于加载数据，包括：
