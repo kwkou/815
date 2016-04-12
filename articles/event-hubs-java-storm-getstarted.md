@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.date="07/21/2015"
-	wacn.date="08/21/2015"/>
+	ms.date="03/08/2016"
+	wacn.date="04/11/2016"/>
 
 # 事件中心入门
 

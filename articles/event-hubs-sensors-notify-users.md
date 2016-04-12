@@ -8,8 +8,8 @@
    editor="" />
 <tags 
    ms.service="event-hubs"
-   ms.date="12/16/2015"
-   wacn.date="01/14/2016" />
+   ms.date="03/08/2016"
+   wacn.date="04/11/2016" />
 
 # 通知用户已收到传感器或其他系统发出的数据
 
