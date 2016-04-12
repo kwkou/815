@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将 Azure PowerShell 与资源管理器配合使用 | Azure" 
+	pageTitle="Azure PowerShell 与资源管理器 | Azure" 
 	description="介绍如何使用 Azure PowerShell 将作为资源组的多个资源部署到 Azure。" 
 	services="azure-resource-manager" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="azure-resource-manager" 
-	ms.date="01/08/2016" 
-	wacn.date="02/26/2016"/>
+	ms.date="02/17/2016" 
+	wacn.date="04/11/2016"/>
 
 # 将 Azure PowerShell 与 Azure 资源管理器配合使用
 
@@ -29,9 +29,9 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 - 一个 Azure 帐户
   + 可以[免费建立一个 Azure 帐户](/pricing/1rmb-trial/)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web 应用）。你的信用卡将永远不会付费，除非你显式更改设置并要求付费。
   
-- Azure PowerShell 1.0。有关此版本及其安装方法的信息，请参阅 [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/)。
+- Azure PowerShell 1.0。有关此版本及其安装方法的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
-本教程专为 PowerShell 新手设计，但它假定您了解基本概念，如模块、cmdlet 和会话。有关 Windows PowerShell 的详细信息，请参阅 [Windows PowerShell 入门](http://technet.microsoft.com/zh-cn/library/hh857337.aspx)。
+本教程专为 PowerShell 新手设计，但它假定您了解基本概念，如模块、cmdlet 和会话。
 
 ## 将部署的内容
 
@@ -76,7 +76,7 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 在处理解决方案之前，你必须登录到你的帐户。
 
-若要登录到你的 Azure 帐户，请使用 **Login-AzureRmAccount** cmdlet。在低于 1.0 预览版的 Azure PowerShell 版本中，请使用 **Add-AzureAccount** 命令。
+若要登录到你的 Azure 帐户，请使用 **Login-AzureRmAccount** cmdlet。
 
     PS C:\> Login-AzureRmAccount
 
@@ -316,7 +316,7 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
 
 指定资源组及模板的位置。如果模板不在本地，你可以使用 **-TemplateUri** 参数并指定模板的 URI。可将 **-Mode** 参数设置为 **Incremental** 或 **Complete**。默认情况下，资源管理器将在部署期间执行增量更新；因此，不必要将 **-Mode** 设置为 **Incremental**。若要了解这些部署模式之间的差异，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
 
-### 动态模板参数
+###动态模板参数
 
 如果你熟悉 PowerShell 的话，就知道你可以通过键入减号 (-) 并按 TAB 键来切换 cmdlet 的可用参数。对于模板中定义的参数，同样也可以使用此功能。只要你键入模板名称，该 cmdlet 就会提取该模板、对其进行分析并将模板参数动态地添加到该命令。这使指定模板参数值变得非常轻松。而且，如果你忘记了必需的参数值，PowerShell 会提示你输入该值。
 
@@ -330,6 +330,8 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
     Supply values for the following parameters:
     (Type !? for Help.)
     administratorLoginPassword: ********
+
+如果模板包括名称与部署模板命令中的参数之一匹配的参数（例如，在模板中包括名为 **ResourceGroupName** 的参数，这与 [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/zh-cn/library/azure/mt679003.aspx) cmdlet 中的 **ResourceGroupName** 参数相同），系统将提示你为后缀为 **FromTemplate** 的参数（例如 **ResourceGroupNameFromTemplate**）提供值。通常，不应将参数命名为与用于部署操作的参数的名称相同以避免这种混乱。
 
 创建资源时，该命令将会运行并返回消息。最终，你将看到部署结果。
 
@@ -431,7 +433,8 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
 
 - 若要了解如何创建资源管理器模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
 - 若要了解部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
-- 有关部署项目的详细示例，请参阅[按可预见的方式在 Azure 中部署微服务](/documentation/articles/app-service-web/app-service-deploy-complex-application-predictably)。
+- 有关部署项目的详细示例，请参阅[按可预见的方式在 Azure 中部署微服务](/documentation/articles/app-service-deploy-complex-application-predictably)。
 - 若要了解如何对失败的部署进行故障排除，请参阅 [Azure 中的资源组部署疑难解答](/documentation/articles/virtual-machines/resource-group-deploy-debug)。
 
-<!---HONumber=Mooncake_0215_2016-->
+
+<!---HONumber=Mooncake_0405_2016-->

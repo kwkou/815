@@ -10,13 +10,13 @@
 <tags
 	ms.service="multiple"
 	ms.date="01/06/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="04/11/2016"/>
 
 # 如何安装和配置 Azure PowerShell#
 
 <div class="dev-center-tutorial-selector sublanding"><a href="#" title="PowerShell" class="current">PowerShell</a><a href="/documentation/articles/xplat-cli-install/" title="Azure CLI">Azure CLI</a></div>
 
-## 什么是 Azure PowerShell？#
+##什么是 Azure PowerShell？#
 Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。你可以使用 cmdlet 来创建、测试、部署和管理通过 Azure 平台传送的解决方案和服务。在大多数情况下，这些 cmdlet 可让你执行在 Azure 管理门户中可以执行的任务，例如，创建和配置云服务、虚拟机、虚拟网络和 Web 应用。
 
 <a id="Install"></a>
@@ -26,29 +26,17 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 
 > [AZURE.NOTE] 在安装后，你可能需要重新启动才能看到 Windows PowerShell 集成脚本环境 (ISE) 中的所有命令。
 
-### 从 WebPI 安装 Azure PowerShell
+###从 WebPI 安装 Azure PowerShell
 
-从 WebPI 安装 Azure PowerShell 1.0 和更高版本的方法与安装 0.9.x 版本是一样的。下载 [Azure Powershell](http://aka.ms/webpi-azps) 并开始安装。如果你已安装 Azure PowerShell 0.9.x，系统将提示你卸载 0.9.x。如果你从 PowerShell 库安装了 Azure PowerShell 模块，安装程序将要求你在安装之前删除该模块，以确保 Azure PowerShell 环境一致。
+从 WebPI 安装 Azure PowerShell 1.0 和更高版本的方法与安装 0.9.x 版本是一样的。下载 [Azure PowerShell](http://aka.ms/webpi-azps) 并开始安装。如果你已安装 Azure PowerShell 0.9.x，系统将提示你卸载 0.9.x。如果你从 PowerShell 库安装了 Azure PowerShell 模块，安装程序将要求你在安装之前删除该模块，以确保 Azure PowerShell 环境一致。
 
-> [AZURE.NOTE] 如果你已安装 PowerShell 库 Azure 模块，系统会要求你卸载。这是为了防止混淆已安装的模块与其所在的位置。PowerShell 库模块通常安装在 **%ProgramFiles%\WindowsPowerShell\Modules** 中。WebPI 安装程序将在 **%ProgramFiles%\Microsoft SDKs\Azure\PowerShell\** 中安装 Azure 模块。**PowerShellGet** 将卸载模块，如果在卸载时加载了模块依赖项，则会留下锁定的 .dll 及其文件夹。如果你已经卸载了 PowerShell 库模块但仍收到上述安装错误，请从 **%ProgramFiles%\WindowsPowerShell\Modules** 文件夹中删除 Azure* 文件夹。
+> [AZURE.NOTE] 如果已安装 PowerShell 库 Azure 模块，则安装程序将自动删除这些模块。这是为了防止混淆已安装的模块与其所在的位置。PowerShell 库模块通常安装在 **%ProgramFiles%\\WindowsPowerShell\\Modules** 中。WebPI 安装程序将在 **%ProgramFiles%\\Microsoft SDKs\\Azure\\PowerShell** 中安装 Azure 模块。**PowerShellGet** 将卸载模块，如果在卸载时加载了模块依赖项，则会留下锁定的 .dll 及其文件夹。如果在安装过程中发生错误，请删除 **%ProgramFiles%\\WindowsPowerShell\\Modules** 文件夹中的 Azure* 文件夹。
 
-如果你以前从 PowerShell 库安装了 Azure PowerShell 但现在想使用 WebPI 安装，请先运行以下命令，然后再从 WebPI 安装。
+如果已通过 PowerShell 库安装了 Azure PowerShell，但想要使用 WebPI 安装，则 WebPI 安装将自动删除从该库中安装的 cmdlet。
 
-    # Uninstall the AzureRM component modules
-    Uninstall-AzureRM
+> [AZURE.NOTE] 从 WebPI 安装时，会发生一个有关 PowerShell **$env:PSModulePath** 的已知问题。如果你的计算机由于系统更新或其他安装而需要重新启动，有可能会导致 **$env:PSModulePath** 不包含 Azure PowerShell 的安装路径。可以通过重新启动计算机来更正此问题。
 
-    # Uninstall AzureRM module
-    Uninstall-Module AzureRM
-
-    # Uninstall the Azure module
-    Uninstall-Module Azure
-
-    # Or, you can remove all Azure modules
-    # Uninstall-Module Azure* -Force
-
-> [AZURE.NOTE] 从 WebPI 安装时，会发生一个有关 PowerShell **$env:PSModulePath** 的已知问题。如果你的计算机由于系统更新或其他安装而需要重新启动，有可能会导致 **$env:PSModulePath** 不包含 Azure PowerShell 的安装路径。重新启动计算机或将 Azure PowerShell 路径添加到 **$env:PSModulePath** 即可解决此问题。
-
-### 从库安装 Azure PowerShell
+###从库安装 Azure PowerShell
 
 使用以下命令从库安装 Azure PowerShell 1.0 或更高版本：
 
@@ -65,7 +53,7 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
     # Import Azure Service Management module
     Import-Module Azure
 
-#### 有关这些命令的详细信息
+####有关这些命令的详细信息
 
 - **Install-Module AzureRM** 为 AzureRM 模块安装引导模块。此模块包含的 cmdlet 可帮助你以安全一致的方式更新、卸载和导入 AzureRM 模块。AzureRM 模块包含所需的模块和版本范围（最小和最大）列表，以确保不会对 AzureRM 的主要版本引入重大更改。有关语义版本的更多信息，请参阅 [semver.org](http://semver.org)。这意味着你可以使用 AzureRM 特定版本来创作你自己的 cmdlet，并了解所有通过引导程序安装的模块不会引入重大更改。
 - **Install-AzureRM** 安装引导模块中声明的所有模块。
@@ -75,15 +63,16 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 
 
 ## 步骤 2：启动
-该模块将安装 Azure PowerShell 的自定义控制台。你可以通过标准的 Windows PowerShell 控制台或 Azure PowerShell 控制台运行 cmdlet。您用于打开控制台的方法取决于您正在运行的 Windows 的版本：
+你可以通过标准的 Windows PowerShell 控制台或 PowerShell 集成脚本环境 (ISE) 运行 cmdlet。
+您用于打开控制台的方法取决于您正在运行的 Windows 的版本：
 
-- 在至少运行 Windows 8 或 Windows Server 2012 的计算机上，您可以使用内置搜索。从“开始”屏幕开始键入 power。此时将返回范围内的应用程序的列表，包括 Windows PowerShell 和 Azure PowerShell。若要打开控制台，请单击任一应用程序。（要将应用程序固定在“开始”屏幕，请右键单击此图标。）
+- 在至少运行 Windows 8 或 Windows Server 2012 的计算机上，您可以使用内置搜索。从“开始”屏幕开始键入 power。此时将返回范围内的应用列表，包括 Windows PowerShell。若要打开控制台，请单击任一应用程序。（要将应用程序固定在“开始”屏幕，请右键单击此图标。）
 
-- 在运行早于 Windows 8 或 Windows Server 2012 的版本的计算机上，请使用“开始”菜单。在“开始”菜单上，依次单击“所有程序”、“Azure”和“Azure PowerShell”。
+- 在运行早于 Windows 8 或 Windows Server 2012 的版本的计算机上，请使用“开始”菜单。在“开始”菜单上，单击“所有程序”，单击“附件”，单击“Windows PowerShell”文件夹，，然后单击“Windows PowerShell”。
 
-也可以运行 **Windows PowerShell ISE**，使用菜单项和快捷键来运行 Windows PowerShell 控制台中运行的许多相同任务。若要使用 ISE，请在 Windows PowerShell 控制台、Cmd.exe 或“运行”框中，键入 **powershell\_ise.exe**。
+也可以运行 **Windows PowerShell ISE**，使用菜单项和键盘快捷方式来执行可在 Windows PowerShell 控制台中执行的许多相同任务。若要使用 ISE，请在 Windows PowerShell 控制台、Cmd.exe 或“运行”框中，键入 **powershell\_ise.exe**。
 
-### 帮助入门的命令
+###帮助入门的命令
 
     # To make sure the Azure PowerShell module is available after you install
     Get-Module –ListAvailable 
@@ -141,17 +130,17 @@ cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订
 
 > [AZURE.NOTE] 这种非交互式登录方法仅适用于工作或学校帐户。工作或学校帐户是由你的公司或学校所管理的用户，并在你公司或学校的 Azure Active Directory 实例中定义。如果你当前没有工作或学校帐户，且已使用 Microsoft 帐户登录到 Azure 订阅，则你可以按照以下步骤轻松地创建一个工作或学校帐户。
 
-> 1. 登录到[Azure 管理门户](https://manage.windowsazure.cn)，然后单击“Active Directory”。
+> 1. 登录到“Azure 管理门户”，然后单击“Active Directory”[](https://manage.windowsazure.cn)。
 
 > 2. 如果目录不存在，请选择“创建目录”，并提供所请求的信息。
 
 > 3. 选择目录，并添加新用户。这个新用户可以使用工作或学校帐户登录。创建用户时，系统将为你提供用户电子邮件地址和临时密码。保存此信息，因为下面的步骤 5 将要用到。
 
-> 4. 从管理门户中，选择“设置”，然后选择“管理员”。选择“添加”，并将新用户添加为共同管理员。这样工作或学校帐户即可管理 Azure 订阅。
+> 4. 从门户中，选择“设置”，然后选择“管理员”。选择“添加”，并将新用户添加为共同管理员。这样工作或学校帐户即可管理 Azure 订阅。
 
 > 5. 最后，从 Azure 门户注销，然后使用工作或学校帐户重新登录。如果这是使用此帐户首次登录，系统将提示更改密码。
 
-> 有关使用工作或学校帐户注册 Azure 的详细信息，请参阅[以组织身份注册 Azure](sign-up-organization.md)。
+> 有关使用工作或学校帐户注册 Azure 的详细信息，请参阅[以组织身份注册 Azure](/documentation/articles/sign-up-organization)。
 
 > 有关 Azure 中的身份验证和订阅管理的详细信息，请参阅[管理帐户、订阅和管理角色](http://go.microsoft.com/fwlink/?LinkId=324796)。
 
@@ -163,7 +152,7 @@ cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订
 
 若要显示 Azure 订阅，请键入 **Get-AzureRmSubscription**。
 
-## <a id="Help"></a>获取帮助##
+##<a id="Help"></a>获取帮助##
 
 这些资源提供特定 cmdlet 的帮助信息：
 
@@ -175,7 +164,7 @@ cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订
 	- [MSDN 上的 Azure 论坛](https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs)
 	- [CSDN](http://azure.csdn.net/)
 
-## 了解详细信息
+##了解详细信息
 
 
 若要详细了解如何使用 cmdlet，请参阅以下资源：
@@ -186,4 +175,5 @@ cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订
 
 有关可帮助你了解如何使用脚本来管理 Azure 的示例脚本和说明，请参阅[脚本中心](http://go.microsoft.com/fwlink/p/?LinkId=321940)。
 
-<!---HONumber=Mooncake_0215_2016-->
+
+<!---HONumber=Mooncake_0405_2016-->
