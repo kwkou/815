@@ -25,10 +25,78 @@ Azure Site Recovery 支持将 VMware 和 Hyper-V VM 以及物理服务器复制�
 ## Hyper-V 复制的部署要求
 
 此表汇总了到 Azure 和辅助站点的 Hyper-V 复制（使用 VMM 和不使用 VMM）的常规部署要求。该表可帮助你了解和比较每个复制方案的常规要求。此外，还提供指向详细部署先决条件的链接。
-
+<!--
 **复制到 Azure（使用 VMM）** | **复制到 Azure（不使用 VMM）** | **复制到辅助站点（使用 VMM）**
 ---|---|---
-**VMM**：至少有一个在 System Center 2012 R2 上运行的 VMM 服务器。VMM 服务器应至少设置一个云，其中包含一个或多个 VMM 主机组。<br/><br/> **Hyper-V**：本地数据中心内有一个或多个 Hyper-V 主机服务器至少运行 Windows Server 2012 R2。Hyper-V 服务器必须位于 VM 云中的主机组中。<br/><br/> **虚拟机**：在源 Hyper-V 服务器上至少需要一个 VM。复制到 Azure 的 VM 必须符合 [Azure 虚拟机先决条件](#azure-virtual-machine-requirements)。<br/><br/> **Azure 帐户**：你需要有 [Azure](https://azure.cn/) 帐户和订阅。<br/><br/> **Azure 存储空间**：需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy#geo-redundant-storage)来存储复制的数据。复制的数据存储在 Azure 存储空间中，Azure VM 在发生故障转移时启动。<br/><br/> **网络映射**：设置网络映射，以使同一 Azure 网络上执行故障转移的所有虚拟机都能彼此互连，而与这些虚拟机所属的恢复计划无关。如果目标 Azure 网络上有网关，虚拟机还可以连接到本地虚拟机。如果不设置网络映射，则只有同一个恢复计划中故障转移的计算机才能进行连接。<br/><br/> **提供程序/代理**：在部署期间，将在 VMM 服务器上安装 Azure Site Recovery 提供程序，并在 Hyper-V 主机服务器上安装 Azure 恢复服务代理。该提供程序将与 Azure Site Recovery 进行通信。该代理将处理源和目标 Hyper-V 服务器之间的复制。不在 VM 上安装任何内容。<br/><br/> **Internet 连接**：从 VMM 服务器和 Hyper-V 主机连接。<br/><br/> **提供程序连接**：如果提供程序将通过代理连接到站点恢复，则需要确保该代理可以访问站点恢复 URL。<br/><br/> [详细的部署先决条件](/documentation/articles/site-recovery-vmm-to-azure#before-you-start) | **Hyper-V**：在源和目标站点中，至少有一个 Hyper-V 服务器至少运行 Windows Server 2012 R2。<br/><br/> **虚拟机**：在源 Hyper-V 服务器上至少有一个 VM。复制到 Azure 的虚拟机必须符合 [Azure 虚拟机先决条件](#azure-virtual-machine-requirements)<br/><br/> **Azure 帐户**：你将需要有 [Azure](https://azure.cn/) 帐户和订阅。<br/><br/> **Azure 存储空间**：需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy#geo-redundant-storage)来存储复制的数据。<br/><br/> **提供程序/代理**：在部署期间，将在 Hyper-V 主机服务器或群集上同时安装 Azure Site Recovery 提供程序和 Azure 恢复服务代理。不在 VM 上安装任何内容。<br/><br/> **Internet 连接**：从 Hyper-V 主机连接。<br/><br/> **提供程序连接**：如果提供程序将通过代理连接，则需要确保该代理可以访问站点恢复 URL。<br/><br/> [详细的部署先决条件](/documentation/articles/site-recovery-hyper-v-site-to-azure#before-you-start#before-you-start) | **VMM**：源 VMM 服务器应至少设置一个云，其中包含一个或多个 VMM 主机组。云应具有 Hyper-V 功能配置文件集。 <br/><br/>**Hyper-V**：在源和目标站点中，有一个或多个 Hyper-V 服务器至少运行包含最新更新的 Windows Server 2012。Hyper-V 服务器必须位于 VMM 云中的主机组中。<br/><br/> **虚拟机**：在源 VMM 云中至少有一个 VM。<br/><br/> **网络映射**：设置网络映射，以使虚拟机在故障转移之后连接到适当的网络，并以最佳方式将副本虚拟机放置在目标 Hyper-V 主机服务器上。如果未配置网络映射，则故障转移之后，复制的计算机将不会连接到任何 VM 网络。<br/><br/> **存储映射**：可以选择设置存储映射，以确保虚拟机在故障转移后以最佳方式连接到存储（默认情况下，副本 VM 将存储在目标 Hyper-V 服务器上所指示的位置中）。<br/><br/> **SAN 复制** 如果要使用 SAN 复制在两个本地 VMM 站点之间复制，可以使用现有的 SAN 环境。请查看 [支持的 SAN 阵列](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx)。<br/><br/> **提供程序/代理**：在部署期间，将在 VMM 服务器上安装 Azure Site Recovery 提供程序，以便与 Azure Site Recovery 通信。通过 LAN/VPN 在 Hyper-V 源和目标服务器之间进行复制。<br/><br/> **Internet 连接**：仅限在 VMM 服务器上。<br/><br/> **提供程序连接**：如果提供程序将通过代理连接，则需要确保可以访问站点恢复 URL。<br/><br/> [详细的部署先决条件](/documentation/articles/site-recovery-vmm-to-vmm#before-you-start)
+**VMM**：至少有一个在 System Center 2012 R2 上运行的 VMM 服务器。VMM 服务器应至少设置一个云，其中包含一个或多个 VMM 主机组。<br/><br/> **Hyper-V**：本地数据中心内有一个或多个 Hyper-V 主机服务器至少运行 Windows Server 2012 R2。Hyper-V 服务器必须位于 VM 云中的主机组中。<br/><br/> **虚拟机**：在源 Hyper-V 服务器上至少需要一个 VM。复制到 Azure 的 VM 必须符合 [Azure 虚拟机先决条件](#azure-virtual-machine-requirements)。<br/><br/> **Azure 帐户**：你需要有 [Azure](https://azure.cn/) 帐户和订阅。<br/><br/> **Azure 存储空间**：需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy#geo-redundant-storage)来存储复制的数据。复制的数据存储在 Azure 存储空间中，Azure VM 在发生故障转移时启动。<br/><br/> **网络映射**：设置网络映射，以使同一 Azure 网络上执行故障转移的所有虚拟机都能彼此互连，而与这些虚拟机所属的恢复计划无关。如果目标 Azure 网络上有网关，虚拟机还可以连接到本地虚拟机。如果不设置网络映射，则只有同一个恢复计划中故障转移的计算机才能进行连接。<br/><br/> **提供程序/代理**：在部署期间，将在 VMM 服务器上安装 Azure Site Recovery 提供程序，并在 Hyper-V 主机服务器上安装 Azure 恢复服务代理。该提供程序将与 Azure Site Recovery 进行通信。该代理将处理源和目标 Hyper-V 服务器之间的复制。不在 VM 上安装任何内容。<br/><br/> **Internet 连接**：从 VMM 服务器和 Hyper-V 主机连接。<br/><br/> **提供程序连接**：如果提供程序将通过代理连接到站点恢复，则需要确保该代理可以访问站点恢复 URL。<br/><br/> [详细的部署先决条件](/documentation/articles/site-recovery-vmm-to-azure#before-you-start) | **Hyper-V**：在源和目标站点中，至少有一个 Hyper-V 服务器至少运行 Windows Server 2012 R2。<br/><br/> **虚拟机**：在源 Hyper-V 服务器上至少有一个 VM。复制到 Azure 的虚拟机必须符合 [Azure 虚拟机先决条件](#azure-virtual-machine-requirements)<br/><br/> **Azure 帐户**：你将需要有 [Azure](https://azure.cn/) 帐户和订阅。<br/><br/> **Azure 存储空间**：需要使用 [Azure 存储帐户](/documentation/articles/storage-redundancy#geo-redundant-storage)来存储复制的数据。<br/><br/> **提供程序/代理**：在部署期间，将在 Hyper-V 主机服务器或群集上同时安装 Azure Site Recovery 提供程序和 Azure 恢复服务代理。不在 VM 上安装任何内容。<br/><br/> **Internet 连接**：从 Hyper-V 主机连接。<br/><br/> **提供程序连接**：如果提供程序将通过代理连接，则需要确保该代理可以访问站点恢复 URL。<br/><br/> [详细的部署先决条件](/documentation/articles/site-recovery-hyper-v-site-to-azure#before-you-start#before-you-start) | **VMM**：源 VMM 服务器应至少设置一个云，其中包含一个或多个 VMM 主机组。云应具有 Hyper-V 功能配置文件集。 <br/><br/>**Hyper-V**：在源和目标站点中，有一个或多个 Hyper-V 服务器至少运行包含最新更新的 Windows Server 2012。Hyper-V 服务器必须位于 VMM 云中的主机组中。<br/><br/> **虚拟机**：在源 VMM 云中至少有一个 VM。<br/><br/> **网络映射**：设置网络映射，以使虚拟机在故障转移之后连接到适当的网络，并以最佳方式将副本虚拟机放置在目标 Hyper-V 主机服务器上。如果未配置网络映射，则故障转移之后，复制的计算机将不会连接到任何 VM 网络。<br/><br/> **存储映射**：可以选择设置存储映射，以确保虚拟机在故障转移后以最佳方式连接到存储（默认情况下，副本 VM 将存储在目标 Hyper-V 服务器上所指示的位置中）。<br/><br/> **SAN 复制** 如果要使用 SAN 复制在两个本地 VMM 站点之间复制，可以使用现有的 SAN 环境。请查看 [支持的 SAN 阵列](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx)。<br/><br/> **提供程序/代理**：在部署期间，将在 VMM 服务器上安装 Azure Site Recovery 提供程序，以便与 Azure Site Recovery 通信。通过 LAN/VPN 在 Hyper-V 源和目标服务器之间进行复制。<br/><br/> **Internet 连接**：仅限在 VMM 服务器上。<br/><br/> **提供程序连接**：如果提供程序将通过代理连接，则需要确保可以访问站点恢复 URL。<br/><br/> [详细的部署先决条件](/documentation/articles/site-recovery-vmm-to-vmm#before-you-start)-->
+
+<table width="100%" border="1" style="border-left:none;border-right:none;" cellspacing="0" cellpadding="0">
+      <tr>
+        <th align="left" scope="col">复制到 Azure（使用 VMM）</th>
+		<th align="left" scope="col">复制到 Azure（不使用 VMM）</th>
+        <th align="left" scope="col">复制到辅助站点（使用 VMM）</th>
+      </tr>
+      <tr>
+        <td><b>VMM</b>：至少有一个在 System Center 2012 R2 上运行的 VMM 服务器。VMM 服务器应至少设置一个云，其中包含一个或多个 VMM 主机组。</td>
+		<td>不适用</td>
+        <td><b>VMM</b>：源 VMM 服务器应至少设置一个云，其中包含一个或多个 VMM 主机组。云应具有 Hyper-V 功能配置文件集。 </td>
+      </tr>
+      <tr>
+        <td><b>Hyper-V</b>：本地数据中心内有一个或多个 Hyper-V 主机服务器至少运行 Windows Server 2012 R2。Hyper-V 服务器必须位于 VM 云中的主机组中。</td>
+		<td><b>Hyper-V</b>：在源和目标站点中，至少有一个 Hyper-V 服务器至少运行 Windows Server 2012 R2。</td>
+        <td><b>Hyper-V</b>：在源和目标站点中，有一个或多个 Hyper-V 服务器至少运行包含最新更新的 Windows Server 2012。Hyper-V 服务器必须位于 VMM 云中的主机组中。</td>
+      </tr>
+      <tr>
+        <td><b>虚拟机</b>：在源 Hyper-V 服务器上至少需要一个 VM。复制到 Azure 的 VM 必须符合 <a href="#virtual-machines">Azure 虚拟机先决条件</a></td>
+		<td><b>虚拟机</b>：在源 Hyper-V 服务器上至少有一个 VM。复制到 Azure 的虚拟机必须符合 <a href="#virtual-machines">Azure 虚拟机先决条件</a></td>
+        <td><b>虚拟机</b>：在源 VMM 云中至少有一个 VM。</td>
+      </tr>
+      <tr>
+        <td><b>Azure 帐户</b>：你需要有 <a href="https://azure.cn/" target="_blank">Azure</a>帐户和订阅。</td>
+		<td><b>Azure 帐户</b>：你需要有 <a href="https://azure.cn/" target="_blank">Azure</a>帐户和订阅。</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><b>Azure 存储空间</b>：需要使用 <a href="/documentation/articles/storage-redundancy#geo-redundant-storage">Azure 存储帐户</a>来存储复制的数据。复制的数据存储在 Azure 存储空间中，Azure VM 在发生故障转移时启动。</td>
+		<td><b>Azure 存储空间</b>：需要使用 <a href="/documentation/articles/storage-redundancy#geo-redundant-storage">Azure 存储帐户</a>来存储复制的数据。</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><b>网络映射</b>：设置网络映射，以使同一 Azure 网络上执行故障转移的所有虚拟机都能彼此互连，而与这些虚拟机所属的恢复计划无关。如果目标 Azure 网络上有网关，虚拟机还可以连接到本地虚拟机。如果不设置网络映射，则只有同一个恢复计划中故障转移的计算机才能进行连接。</td>
+		<td>不适用</td>
+        <td><b>网络映射</b>：设置网络映射，以使虚拟机在故障转移之后连接到适当的网络，并以最佳方式将副本虚拟机放置在目标 Hyper-V 主机服务器上。如果未配置网络映射，则故障转移之后，复制的计算机将不会连接到任何 VM 网络。</td>
+      </tr>
+      <tr>
+        <td><b>存储映射</b>：不适用</td>
+		<td>不适用</td>
+        <td><b>存储映射</b>：可以选择设置存储映射，以确保虚拟机在故障转移后以最佳方式连接到存储（默认情况下，副本 VM 将存储在目标 Hyper-V 服务器上所指示的位置中）。</td>
+      </tr>
+      <tr>
+        <td><b>SAN 复制</b>：不适用</td>
+		<td>不适用</td>
+        <td><b>SAN 复制</b>：如果要使用 SAN 复制在两个本地 VMM 站点之间复制，可以使用现有的 SAN 环境。请查看 <a href="http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx" target="_blank">支持的 SAN 阵列</a>。</td>
+      </tr>
+      <tr>
+        <td><b>提供程序/代理</b>：在部署期间，将在 VMM 服务器上安装 Azure Site Recovery 提供程序，并在 Hyper-V 主机服务器上安装 Azure 恢复服务代理。该提供程序将与 Azure Site Recovery 进行通信。该代理将处理源和目标 Hyper-V 服务器之间的复制。不在 VM 上安装任何内容。</td>
+		<td><b>提供程序/代理</b>：在部署期间，将在 Hyper-V 主机服务器或群集上同时安装 Azure Site Recovery 提供程序和 Azure 恢复服务代理。不在 VM 上安装任何内容。</td>
+        <td><b>提供程序/代理</b>：在部署期间，将在 VMM 服务器上安装 Azure Site Recovery 提供程序，以便与 Azure Site Recovery 通信。通过 LAN/VPN 在 Hyper-V 源和目标服务器之间进行复制。</td>
+      </tr>
+      <tr>
+        <td><b>Internet 连接</b>：从 VMM 服务器和 Hyper-V 主机连接。</td>
+		<td><b>Internet 连接</b>：从 Hyper-V 主机连接。</td>
+        <td><b>Internet 连接</b>：仅限在 VMM 服务器上。</td>
+      </tr>
+      <tr>
+        <td><b>提供程序连接</b>：如果提供程序将通过代理连接到站点恢复，则需要确保该代理可以访问站点恢复 URL。</td>
+		<td><b>提供程序连接</b>：如果提供程序将通过代理连接，则需要确保该代理可以访问站点恢复 URL。</td>
+        <td><b>提供程序连接</b>：如果提供程序将通过代理连接，则需要确保可以访问站点恢复 URL。</td>
+      </tr>
+      <tr>
+        <td><a href="/documentation/articles/site-recovery-hyper-v-site-to-azure#before-you-start#before-you-start">详细的部署先决条件</a></td>
+		<td><a href="/documentation/articles/site-recovery-hyper-v-site-to-azure#before-you-start#before-you-start">详细的部署先决条件</a></td>
+        <td><a href="/documentation/articles/site-recovery-hyper-v-site-to-azure#before-you-start#before-you-start">详细的部署先决条件</a></td>
+      </tr>
+</table>
 
 
 ## 复制 VMware VM 和物理服务器的部署要求
