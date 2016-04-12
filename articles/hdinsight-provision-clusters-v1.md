@@ -10,9 +10,11 @@
 <tags
    ms.service="hdinsight"
    ms.date="01/28/2016"
-   wacn.date="04/07/2016"/>
+   wacn.date="04/12/2016"/>
 
 #在 HDInsight 中设置 Hadoop 群集
+
+[AZURE.INCLUDE [selector](../includes/hdinsight-selector-create-clusters.md)]
 
 了解如何规划 HDInsight 群集的预配。
 
