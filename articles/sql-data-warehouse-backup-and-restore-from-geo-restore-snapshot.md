@@ -50,18 +50,18 @@
 
 ```
 
-Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-Get-AzureRmSubscription
-Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
-
-# Get the database you want to recover
-$Database = Get-AzureRmSqlRecoverableDatabase -ServerName "<YourServerName>" –DatabaseName "<YourDatabaseName>"
-
-# Recover database
-$RecoveryRequest = Start-AzureSqlDatabaseRestore -SourceServerName "<YourSourceServerName>" -SourceDatabase $Database -TargetDatabaseName "<NewDatabaseName>" -TargetServerName "<YourTargetServerName>"
-
-# Monitor progress of recovery operation
-Get-AzureSqlDatabaseOperation -ServerName "<YourTargetServerName>" –OperationGuid $RecoveryRequest.RequestID
+    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+    Get-AzureRmSubscription
+    Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
+    
+    # Get the database you want to recover
+    $Database = Get-AzureRmSqlRecoverableDatabase -ServerName "<YourServerName>" –DatabaseName "<YourDatabaseName>"
+    
+    # Recover database
+    $RecoveryRequest = Start-AzureSqlDatabaseRestore -SourceServerName "<YourSourceServerName>" -SourceDatabase $Database -TargetDatabaseName "<NewDatabaseName>" -TargetServerName "<YourTargetServerName>"
+    
+    # Monitor progress of recovery operation
+    Get-AzureSqlDatabaseOperation -ServerName "<YourTargetServerName>" –OperationGuid $RecoveryRequest.RequestID
 
 ```
 

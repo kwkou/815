@@ -69,8 +69,6 @@ Suspend-AzureSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName
 Resume-AzureSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
 ```
 
-有关如何使用 PowerShell 的详细信息，请参阅 [PowerShell cmdlet 简介][]一文。
-
 > [Azure.Note] 由于存储和计算能力相互独立，因此你的存储不受暂停的影响。
 
 ## 后续步骤

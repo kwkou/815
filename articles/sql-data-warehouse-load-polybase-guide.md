@@ -136,39 +136,38 @@ Get-Content <input_file_name> -Encoding Unicode | Set-Content <output_file_name>
 
 以下代码示例更为复杂，但在流式处理从源到目标的数据行时要有效得多。请对较大的文件应用此方法。
 
-```
-#Static variables
-$ascii = [System.Text.Encoding]::ASCII
-$utf16le = [System.Text.Encoding]::Unicode
-$utf8 = [System.Text.Encoding]::UTF8
-$ansi = [System.Text.Encoding]::Default
-$append = $False
+    #Static variables
+    $ascii = [System.Text.Encoding]::ASCII
+    $utf16le = [System.Text.Encoding]::Unicode
+    $utf8 = [System.Text.Encoding]::UTF8
+    $ansi = [System.Text.Encoding]::Default
+    $append = $False
+    
+    #Set source file path and file name
+    $src = [System.IO.Path]::Combine("C:\input_file_path","input_file_name.txt")
+    
+    #Set source file encoding (using list above)
+    $src_enc = $ansi
+    
+    #Set target file path and file name
+    $tgt = [System.IO.Path]::Combine("C:\output_file_path","output_file_name.txt")
+    
+    #Set target file encoding (using list above)
+    $tgt_enc = $utf8
+    
+    $read = New-Object System.IO.StreamReader($src,$src_enc)
+    $write = New-Object System.IO.StreamWriter($tgt,$append,$tgt_enc)
+    
+    while ($read.Peek() -ne -1)
+    {
+        $line = $read.ReadLine();
+        $write.WriteLine($line);
+    }
+    $read.Close()
+    $read.Dispose()
+    $write.Close()
+    $write.Dispose()
 
-#Set source file path and file name
-$src = [System.IO.Path]::Combine("C:\input_file_path","input_file_name.txt")
-
-#Set source file encoding (using list above)
-$src_enc = $ansi
-
-#Set target file path and file name
-$tgt = [System.IO.Path]::Combine("C:\output_file_path","output_file_name.txt")
-
-#Set target file encoding (using list above)
-$tgt_enc = $utf8
-
-$read = New-Object System.IO.StreamReader($src,$src_enc)
-$write = New-Object System.IO.StreamWriter($tgt,$append,$tgt_enc)
-
-while ($read.Peek() -ne -1)
-{
-    $line = $read.ReadLine();
-    $write.WriteLine($line);
-}
-$read.Close()
-$read.Dispose()
-$write.Close()
-$write.Dispose()
-```
 
 ## 后续步骤
 若要详细了解如何将数据转移到 SQL 数据仓库，请参阅[数据迁移概述][]。

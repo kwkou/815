@@ -120,7 +120,7 @@ Polybase 易于使用，可让你通过使用熟悉的 T-SQL 命令来利用不�
 
 ## 后续步骤
 
-对 SQL 数据仓库有了初步的认识后，请深入了解[数据仓库工作负荷]和[预配]，并加载[示例数据]以开始操作。
+对 SQL 数据仓库有了初步的认识后，请深入了解[数据仓库工作负荷]和[预配]。
 
 >[AZURE.NOTE] 我们希望能够改善这篇文章。如果你对问题“本文有帮助吗？”回答“否”，请填写有关遗漏的内容或如何改善本文的简短建议。非常感谢！
 
@@ -130,7 +130,7 @@ Polybase 易于使用，可让你通过使用熟悉的 T-SQL 命令来利用不�
 <!--Article references-->
 [数据仓库工作负荷]: /documentation/articles/sql-data-warehouse-overview-workload
 [示例数据]: /documentation/articles/sql-data-warehouse-get-started-load-samples
-[预配]: /documentation/articles/sql-data-warehouse-get-started-provision
+[预配]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell
 
 <!--MSDN references-->
 
