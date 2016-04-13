@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="11/11/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="03/07/2016"
+	wacn.date="04/11/2016"/>
 
 
 # 使用标记来组织 Azure 资源

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将 Azure PowerShell 与资源管理器配合使用 | Azure" 
+	pageTitle="Azure PowerShell 与资源管理器 | Azure" 
 	description="介绍如何使用 Azure PowerShell 将作为资源组的多个资源部署到 Azure。" 
 	services="azure-resource-manager" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="azure-resource-manager" 
-	ms.date="10/16/2015" 
-	wacn.date="01/21/2016"/>
+	ms.date="02/17/2016" 
+	wacn.date="04/11/2016"/>
 
 # 将 Azure PowerShell 与 Azure 资源管理器配合使用
 
@@ -28,11 +28,9 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 - 一个 Azure 帐户
   + 可以[免费建立一个 Azure 帐户](/pricing/1rmb-trial/)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如 Web 应用）。你的信用卡将永远不会付费，除非你显式更改设置并要求付费。
   
-- Azure PowerShell
+- Azure PowerShell 1.0。有关此版本及其安装方法的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
-[AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
-
-本教程专为 PowerShell 新手设计，但它假定您了解基本概念，如模块、cmdlet 和会话。有关 Windows PowerShell 的详细信息，请参阅 [Windows PowerShell 入门](http://technet.microsoft.com/zh-cn/library/hh857337.aspx)。
+本教程专为 PowerShell 新手设计，但它假定您了解基本概念，如模块、cmdlet 和会话。
 
 ## 将部署的内容
 
@@ -77,7 +75,7 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 在处理解决方案之前，你必须登录到你的帐户。
 
-若要登录到你的 Azure 帐户，请使用 **Login-AzureRmAccount** cmdlet。在低于 1.0 预览版的 Azure PowerShell 版本中，请使用 **Add-AzureAccount** 命令。
+若要登录到你的 Azure 帐户，请使用 **Login-AzureRmAccount** cmdlet。
 
     PS C:\> Login-AzureRmAccount
 
@@ -85,7 +83,7 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 帐户设置会过期，因此您需要不时刷新它们。若要刷新帐户设置，请再次运行 **Login-AzureRmAccount**。
 
->[AZURE.NOTE]资源管理器模块要求使用 Login-AzureRmAccount。一个发布设置文件是不够的。
+>[AZURE.NOTE] 资源管理器模块要求使用 Login-AzureRmAccount。一个发布设置文件是不够的。
 
 ## 获取资源类型的位置
 
@@ -276,6 +274,9 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
                 "name": "[variables('siteName')]",
                 "type": "Microsoft.Web/sites",
                 "location": "[resourceGroup().location]",
+                "tags": {
+                    "team": "webdev"
+                },
                 "dependsOn": [
                     "[concat('Microsoft.Web/serverFarms/', parameters('hostingPlanName'))]"
                 ],
@@ -312,7 +313,7 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
 
     PS C:\> New-AzureRmResourceGroupDeployment -ResourceGroupName TestRG1 -TemplateFile c:\Azure\Templates\azuredeploy.json
 
-指定资源组及模板的位置。如果模板不在本地，你可以使用 -TemplateUri 参数并指定模板的 URI。
+指定资源组及模板的位置。如果模板不在本地，你可以使用 **-TemplateUri** 参数并指定模板的 URI。可将 **-Mode** 参数设置为 **Incremental** 或 **Complete**。默认情况下，资源管理器将在部署期间执行增量更新；因此，不必要将 **-Mode** 设置为 **Incremental**。若要了解这些部署模式之间的差异，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
 
 ###动态模板参数
 
@@ -328,6 +329,8 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
     Supply values for the following parameters:
     (Type !? for Help.)
     administratorLoginPassword: ********
+
+如果模板包括名称与部署模板命令中的参数之一匹配的参数（例如，在模板中包括名为 **ResourceGroupName** 的参数，这与 [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/zh-cn/library/azure/mt679003.aspx) cmdlet 中的 **ResourceGroupName** 参数相同），系统将提示你为后缀为 **FromTemplate** 的参数（例如 **ResourceGroupNameFromTemplate**）提供值。通常，不应将参数命名为与用于部署操作的参数的名称相同以避免这种混乱。
 
 创建资源时，该命令将会运行并返回消息。最终，你将看到部署结果。
 
@@ -366,9 +369,13 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
 		
 		...
 
-- 若要获取资源组中的资源，请使用 **Get-AzureRmResource** cmdlet 及其 ResourceGroupName 参数。若不带参数，则 Get-AzureRmResource 获取在你的 Azure 订阅中的所有资源。
+      如果你只想要获取特定的资源组，请提供 **Name** 参数。
+      
+          PS C:\> Get-AzureRmResourceGroup -Name TestRG1
 
-		PS C:\> Get-AzureRmResource -ResourceGroupName TestRG1
+- 若要获取资源组中的资源，请使用 **Find-AzureRmResource** cmdlet 及其 **ResourceGroupNameContains** 参数。如果未指定参数，Find-AzureRmResource 将获取你的 Azure 订阅中的所有资源。
+
+        PS C:\> Find-AzureRmResource -ResourceGroupNameContains TestRG1
 		
 		Name              : exampleserver
                 ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG1/providers/Microsoft.Sql/servers/tfserver10
@@ -379,8 +386,21 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
                 Location          : China East
                 SubscriptionId    : {guid}
                 
-                ...
+        ...
 	        
+- 上述模板将在一个资源中包含标记。你可以使用标记按逻辑顺序组织订阅中的所有资源。使用 **Find-AzureRmResource** 和 **Find-AzureRmResourceGroup** 命令可按标记查询资源。
+
+        PS C:\> Find-AzureRmResource -TagName team
+
+        Name              : ExampleSiteuxq53xiz5etmq
+        ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG1/providers/Microsoft.Web/sites/ExampleSiteuxq53xiz5etmq
+        ResourceName      : ExampleSiteuxq53xiz5etmq
+        ResourceType      : Microsoft.Web/sites
+        ResourceGroupName : TestRG1
+        Location          : China East
+        SubscriptionId    : {guid}
+                
+      标记的作用远远不止如此。有关详细信息，请参阅[使用标记来组织 Azure 资源](resource-group-using-tags.md)。
 
 ## 添加到资源组
 
@@ -411,5 +431,9 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
 ## 后续步骤
 
 - 若要了解如何创建资源管理器模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
+- 若要了解部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
+- 有关部署项目的详细示例，请参阅[按可预见的方式在 Azure 中部署微服务](/documentation/articles/app-service-deploy-complex-application-predictably)。
+- 若要了解如何对失败的部署进行故障排除，请参阅 [Azure 中的资源组部署疑难解答](/documentation/articles/virtual-machines/resource-group-deploy-debug)。
 
-<!---HONumber=79-->
+
+<!---HONumber=Mooncake_0405_2016-->
