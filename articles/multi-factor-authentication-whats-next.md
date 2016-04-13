@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="01/11/2016" 
-	wacn.date="02/25/2016"/>
+	ms.date="02/26/2016" 
+	wacn.date="04/13/2016"/>
 
 # 配置 Azure 多重身份验证
 
@@ -152,4 +152,4 @@ Azure AD 支持与本地 Windows Server Active Directory 域服务 (AD DS) 联�
 
 
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_0405_2016-->

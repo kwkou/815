@@ -4,13 +4,13 @@
 	services="multi-factor-authentication" 
 	documentationCenter="" 
 	authors="billmath" 
-	manager="terrylan" 
-	editor="bryanla"/>
+	manager="stevenp" 
+	editor="curtland"/>
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="11/19/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="02/16/2016" 
+	wacn.date="04/13/2016"/>
 
 # 在 myapps 365 门户中为多重身份验证创建应用密码
 

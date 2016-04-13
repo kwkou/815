@@ -4,13 +4,13 @@
 	documentationCenter="" 
 	services="multi-factor-authentication" 
 	authors="billmath" 
-	manager="swadhwa" 
+	manager="stevenpo" 
 	editor="curtand"/>
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="11/19/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="02/24/2016" 
+	wacn.date="04/13/2016"/>
 
 # 管理云中 Azure 多重身份验证的用户设置
 
@@ -29,18 +29,19 @@
 
 ### 如何要求用户再次提供联系方法
 
-<ol>
-<li>登录到 Azure 管理门户。</li>
-<li>在左侧单击“Active Directory”。</li>
-<li>在“目录”下，单击被要求再次提供联系方法的用户对应的目录。</li>
-<li>在顶部单击“用户”。</li>
-<li>在页面底部，单击“管理 Multi-Factor Auth”。此时将打开“Multi-Factor Authentication”页。
-<li>找到要管理的用户，并勾选其名称旁边的框。你可能需要在顶部切换视图。</li>
-<li>此时会在右侧显示“管理用户设置”链接。单击此链接。</li>
-<li>勾选“要求选定的用户再次提供联系方法”。</li>
-<center> <image src="./media/multi-factor-authentication-manage-users-and-devices/reproofup.png" /></center>
-<li>单击“保存”。</li>
-<li>单击“关闭”</li>
+
+
+
+1. 登录到 Azure 经典门户。
+2. 在左侧单击“Active Directory”。
+3. 在“目录”下，单击被要求再次提供联系方法的用户对应的目录。
+4. 在顶部单击“用户”。
+5. 在页面底部，单击“管理 Multi-Factor Auth”。此时将打开“Multi-Factor Authentication”页。
+6. 找到要管理的用户，并勾选其名称旁边的框。你可能需要在顶部切换视图。
+7. 此时会在右侧显示“管理用户设置”链接。请单击此按钮。
+8. 勾选“要求选定的用户再次提供联系方法”。![提供联系方法](./media/multi-factor-authentication-manage-users-and-devices/reproofup.png)
+9. 单击“保存”。
+10. 单击“关闭”
 
 ## <a name="delete-users-existing-app-passwords"></a>删除用户现有的应用密码
 
@@ -48,18 +49,15 @@
 
 ### 如何删除用户现有的应用密码
 
-<ol>
-<li>登录到 Azure 管理门户。</li>
-<li>在左侧单击“Active Directory”。</li>
-<li>在“目录”下，单击你要删除其应用密码的用户对应的目录。</li>
-<li>在顶部单击“用户”。</li>
-<li>在页面底部，单击“管理 Multi-Factor Auth”。此时将打开“Multi-Factor Authentication”页。
-<li>找到要管理的用户，并勾选其名称旁边的框。你可能需要在顶部切换视图。</li>
-<li>此时会在右侧显示“管理用户设置”链接。单击此链接。</li>
-<li>勾选“删除选定用户生成的所有现有应用密码”。</li>
-<center> <image src="./media/multi-factor-authentication-manage-users-and-devices/deleteapppasswords.png" /></center>
-<li>单击“保存”。</li>
-<li>单击“关闭”。</li>
-</ol>
+1. 登录到 Azure 经典门户。
+2. 在左侧单击“Active Directory”。
+3. 在“目录”下，单击你要删除其应用密码的用户对应的目录。
+4. 在顶部单击“用户”。
+5. 在页面底部，单击“管理 Multi-Factor Auth”。此时将打开“Multi-Factor Authentication”页。
+6. 找到要管理的用户，并勾选其名称旁边的框。你可能需要在顶部切换视图。
+7. 此时会在右侧显示“管理用户设置”链接。请单击此按钮。 
+8. 勾选“删除选定用户生成的所有现有应用密码”。![删除应用密码](./media/multi-factor-authentication-manage-users-and-devices/deleteapppasswords.png)
+9. 单击“保存”。
+10. 单击“关闭”。
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_0405_2016-->
