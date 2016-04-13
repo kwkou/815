@@ -70,7 +70,7 @@ SDK 包含多个主包的帮助器类。帮助器类实现于 auzre-mgmt-utility
 
 ## 身份验证
 
-对 ARM 的身份验证由 Azure Active Directory (AD) 处理。若要连接到任何 API，首先需要使用 Azure AD 进行身份验证，以接收可传递给每个请求的身份验证令牌。若要获取此令牌，首先需要创建所谓的 Azure AD 应用程序和一个用于登录的服务主体。有关分步说明，请参阅[创建 Azure AD 应用程序和服务主体](./resource-group-create-service-principal-portal.md)。
+对 ARM 的身份验证由 Azure Active Directory (AD) 处理。若要连接到任何 API，首先需要使用 Azure AD 进行身份验证，以接收可传递给每个请求的身份验证令牌。若要获取此令牌，首先需要创建所谓的 Azure AD 应用程序和一个用于登录的服务主体。有关分步说明，请参阅[创建 Azure AD 应用程序和服务主体](/documentation/articles/resource-group-create-service-principal-portal)。
 
 创建服务主体后，你应会获得：
 

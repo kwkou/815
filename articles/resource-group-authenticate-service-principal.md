@@ -113,7 +113,7 @@
 
 > [AZURE.NOTE] 直接在 PowerShell 脚本中包含密码不安全，因为密码将以文本的形式公开。请改用密钥保管库等服务来存储密码，并在执行脚本时检索它。
 
-这些步骤假定你已设置密码存储的密钥保管库和机密。若要通过模板部署密钥保管库和机密，请参阅[密钥保管库模板格式]()。若要了解有关密钥保管库的信息，请参阅 [Azure 密钥保管库入门](./key-vault/key-vault-get-started.md)。
+这些步骤假定你已设置密码存储的密钥保管库和机密。若要通过模板部署密钥保管库和机密，请参阅[密钥保管库模板格式]()。若要了解有关密钥保管库的信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started)。
 
 1. 从密钥保管库中检索密码（在下面的示例中，使用名称 **appPassword** 存储为机密）。
 
@@ -324,7 +324,7 @@
     现在你已在目录中创建服务主体，但未将任何权限或范围分配给服务。
     需要显式向服务主体授予权限，才能在某个范围执行操作。
 
-4. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](./active-directory/role-based-access-control-configure.md)。
+4. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
 
         azure role assignment create --objectId 7dbc8265-51ed-4038-8e13-31948c7f4ce7 -o Reader -c /subscriptions/{subscriptionId}/
 
@@ -445,7 +445,7 @@
         data:                      https://www.contoso.org/example
         info:    ad sp create command OK
         
-5. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](./active-directory/role-based-access-control-configure.md)。
+5. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
 
         azure role assignment create --objectId 7dbc8265-51ed-4038-8e13-31948c7f4ce7 -o Reader -c /subscriptions/{subscriptionId}/
 

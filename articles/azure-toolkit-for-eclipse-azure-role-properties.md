@@ -394,22 +394,22 @@
 
 <!-- URL List -->
 
-[Azure Java 开发人员中心]: http://go.microsoft.com/fwlink/?LinkID=699547
-[Azure 管理门户]: http://go.microsoft.com/fwlink/?LinkID=512959
-[适用于 Eclipse 的 Azure 工具包]: http://go.microsoft.com/fwlink/?LinkID=699529
-[Azure 项目属性]: http://go.microsoft.com/fwlink/?LinkID=699524
-[Azure 存储帐户列表]: http://go.microsoft.com/fwlink/?LinkID=699528
+[Azure Java 开发人员中心]: /develop/java/
+[Azure 管理门户]: http://manage.windowsazure.cn
+[适用于 Eclipse 的 Azure 工具包]: /documentation/articles/azure-toolkit-for-eclipse/
+[Azure 项目属性]: /documentation/articles/azure-toolkit-for-eclipse-azure-project-properties/
+[Azure 存储帐户列表]: /documentation/articles/azure-toolkit-for-eclipse-azure-storage-account-list/
 [com.microsoft.windowsazure.serviceruntime 包摘要]: http://azure.github.io/azure-sdk-for-java/com/microsoft/windowsazure/serviceruntime/package-summary.html
-[在 Eclipse 中为 Azure 创建 Hello World 应用程序]: http://go.microsoft.com/fwlink/?LinkID=699533
-[调试多实例部署中的特定角色实例]: http://go.microsoft.com/fwlink/?LinkID=699535#debugging_specific_role_instance
-[在 Eclipse 中调试 Azure 应用程序]: http://go.microsoft.com/fwlink/?LinkID=699535
-[实施大型部署]: http://go.microsoft.com/fwlink/?LinkID=699536
-[如何使用并置缓存]: http://go.microsoft.com/fwlink/?LinkID=699542
-[如何使用 SSL 卸载]: http://go.microsoft.com/fwlink/?LinkID=699545
-[安装 Azure Toolkit for Eclipse]: http://go.microsoft.com/fwlink/?LinkId=699546
-[会话相关性]: http://go.microsoft.com/fwlink/?LinkID=699548
-[]: http://go.microsoft.com/fwlink/?LinkID=699549
-[SSL 卸载]: http://go.microsoft.com/fwlink/?LinkID=699549
+[在 Eclipse 中为 Azure 创建 Hello World 应用程序]: /documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/
+[调试多实例部署中的特定角色实例]: /documentation/articles/azure-toolkit-for-eclipse-debugging-azure-applications/#debugging_specific_role_instance
+[在 Eclipse 中调试 Azure 应用程序]: /documentation/articles/azure-toolkit-for-eclipse-debugging-azure-applications/
+[实施大型部署]: /documentation/articles/azure-toolkit-for-eclipse-deploying-large-deployments/
+[如何使用并置缓存]: /develop/java/
+[如何使用 SSL 卸载]: /develop/java/
+[安装 Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
+[会话相关性]: /documentation/articles/azure-toolkit-for-eclipse-enable-session-affinity/
+[]: /develop/java/
+[SSL 卸载]: /develop/java/
 
 <!-- IMG List -->
 

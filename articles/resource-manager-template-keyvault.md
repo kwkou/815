@@ -63,7 +63,7 @@
 | properties | 对象 | 是 | （[如下所示](#properties)） | 一个对象，用于指定要创建的密钥保管库的类型。 |
 | resources | 数组 | 否 | [密钥保管库机密](/documentation/articles/resource-manager-template-keyvault-secret) | 密钥保管库的子资源。 |
 
-<a id="properties" />
+<a id="properties"></a>
 ### 属性对象
 
 | 名称 | 类型 | 必选 | 允许的值 | 说明 |
@@ -75,7 +75,7 @@
 | accessPolicies | 数组 | 是 | （[如下所示](#accesspolicies)） | 最多包含 16 个对象的数组，指定用户或服务主体的权限。 |
 | sku | 对象 | 是 | （[如下所示](#sku)） | 密钥保管库的 SKU。 |
 
-<a id="accesspolicies" />
+<a id="accesspolicies"></a>
 ### properties.accessPolicies 对象
 
 | 名称 | 类型 | 必选 | 允许的值 | 说明 |
@@ -84,7 +84,7 @@
 | objectId | 字符串 | 是 | 全局唯一标识符 | 将有权访问保管库的 AAD 用户或服务主体的对象标识符。可以通过 **Get-AzureRMADUser** 或 **Get-AzureRMADServicePrincipal** cmdlet 检索该值。 |
 | permissions | 对象 | 是 | （[如下所示](#permissions)） | 向 Active Directory 对象授予的对此保管库的权限。 |
 
-<a id="permissions" />
+<a id="permissions"></a>
 ### properties.accessPolicies.permissions 对象
 
 | 名称 | 类型 | 必选 | 允许的值 | 说明 |
@@ -92,7 +92,7 @@
 | keys | 数组 | 是 | 以下值的逗号分隔列表：<br />**all**<br />**backup**<br />**create**<br />**decrypt**<br />**delete**<br />**encrypt**<br />**get**<br />**import**<br />**list**<br />**restore**<br />**sign**<br />**unwrapkey**<br/>**update**<br />**verify**<br />**wrapkey** | 向此 Active Directory 对象授予的，对此保管库中密钥的权限。必须将此值指定为允许值的数组。 |
 | secrets | 数组 | 是 | 以下值的逗号分隔列表：<br />**all**<br />**delete**<br />**get**<br />**list**<br />**set** | 向此 Active Directory 对象授予的，对此保管库中机密的权限。必须将此值指定为允许值的数组。 |
 
-<a id="sku" />
+<a id="sku"></a>
 ### properties.sku 对象
 
 | 名称 | 类型 | 必选 | 允许的值 | 说明 |
