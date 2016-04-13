@@ -4,8 +4,8 @@
 
 #Monitoring MySQL database on Azure Databases
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-operation-monitoring-metrics)
-- [English Version](/documentation/articles/mysql-database-enus-operation-monitoring-metrics)
+- [中文版](/documentation/articles/mysql-database-operation-monitoring-metrics)
+- [In English](/documentation/articles/mysql-database-enus-operation-monitoring-metrics)
 
 that use the Azure portal -> MySQL Database on Azure. Select the required performance metrics from the list, and click “Dashboard” to implement real-time monitoring and control.
 

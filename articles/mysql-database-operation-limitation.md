@@ -5,7 +5,7 @@
 #了解MySQL 数据库 on Azure服务限制
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/mysql-database-operation-limitation)
-- [英文版](/documentation/articles/mysql-database-enus-operation-limitation)
+- [In English](/documentation/articles/mysql-database-enus-operation-limitation)
 
 MySQL 数据库 on Azure目前有如下几点限制，如果您有任何疑问，欢迎联系技术支持。
 

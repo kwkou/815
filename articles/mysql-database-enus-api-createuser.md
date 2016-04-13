@@ -6,8 +6,8 @@
 #Create users
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-createuser)
-- [English Version](/documentation/articles/mysql-database-enus-api-createuser)
+- [中文版](/documentation/articles/mysql-database-api-createuser)
+- [In English](/documentation/articles/mysql-database-enus-api-createuser)
 
 Create users and passwords.
 

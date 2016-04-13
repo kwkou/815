@@ -5,7 +5,7 @@
 # 如何使用MySQL 数据库 on Azure来配置WordPress Web 应用
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/mysql-database-wordpress-setup)
-- [英文版](/documentation/articles/mysql-database-enus-wordpress-setup)
+- [In English](/documentation/articles/mysql-database-enus-wordpress-setup)
 
 WordPress是一种使用非常广泛的CMS系统。本文介绍如何使用 MySQL 数据库 on Azure 和Azure Web应用来安装配置WordPress。
 

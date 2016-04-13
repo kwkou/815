@@ -6,8 +6,8 @@
 #Creating databases
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-createdatabase)
-- [English Version](/documentation/articles/mysql-database-enus-api-createdatabase)
+- [中文版](/documentation/articles/mysql-database-api-createdatabase)
+- [In English](/documentation/articles/mysql-database-enus-api-createdatabase)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

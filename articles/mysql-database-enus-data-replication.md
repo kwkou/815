@@ -4,8 +4,8 @@
 
 #How to Configure Data Sync to Replicate to MySQL Database on Azure
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-data-replication)
-- [English Version](/documentation/articles/mysql-database-enus-data-replication)
+- [中文版](/documentation/articles/mysql-database-data-replication)
+- [In English](/documentation/articles/mysql-database-enus-data-replication)
 
 MySQL Database on Azure supports slave server mode and standard MySQL data replication. You can use this feature to automatically sync database data from a MySQL server running locally or in other locations, to a server running on MySQL Database on Azure.
 

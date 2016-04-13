@@ -6,8 +6,8 @@
 #Update servers - Default daily backup times
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-updateserverdailybackup)
-- [English Version](/documentation/articles/mysql-database-enus-api-updateserverdailybackup)
+- [中文版](/documentation/articles/mysql-database-api-updateserverdailybackup)
+- [In English](/documentation/articles/mysql-database-enus-api-updateserverdailybackup)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

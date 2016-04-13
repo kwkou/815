@@ -5,7 +5,7 @@
 #MySQL 数据库 on Azure数据库入门
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/mysql-database-get-started)
-- [英文版](/documentation/articles/mysql-database-enus-get-started)
+- [In English](/documentation/articles/mysql-database-enus-get-started)
 
 在本教程帮助您将了解如何使用Azure管理门户迅速创建，连接，配置MySQL 数据库 on Azure。完成本教程后，您将在Azure上拥有一个示例MySQL数据库服务器，并了解如何使用管理门户执行基本管理任务。
 

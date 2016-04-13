@@ -6,8 +6,8 @@
 #Create database access permissions
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-createprivilege)
-- [English Version](/documentation/articles/mysql-database-enus-api-createprivilege)
+- [中文版](/documentation/articles/mysql-database-api-createprivilege)
+- [In English](/documentation/articles/mysql-database-enus-api-createprivilege)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

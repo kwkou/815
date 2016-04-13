@@ -4,8 +4,8 @@
 
 #Use Azure Resource Manager and Windows PowerShell to deploy and use MySQL Database on Azure
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-etoe-powershell)
-- [English Version](/documentation/articles/mysql-database-enus-etoe-powershell)
+- [中文版](/documentation/articles/mysql-database-etoe-powershell)
+- [In English](/documentation/articles/mysql-database-enus-etoe-powershell)
 
 Azure Resource Manager is a completely new management framework for Azure services. Now you can use APIs and tools based on Azure Resource Manager to manage MySQL Database on Azure. If you would like to find out more about Resource Manager, read [Using Resource Manager to manage Azure resources](/documentation/articles/azure-preview-portal-using-resource-groups). MySQL Database on Azure supports the use of PowerShell scripts to query, create, manage, and delete MySQL servers, databases, firewall rules, and users. It also supports the use of scripts to change parameters and settings. This article explains how to use PowerShell scripts to quickly set up and use MySQL services. You can also read [Using PowerShell to manage MySQL Database on Azure](/documentation/articles/mysql-database-commandlines) for more information on the create, view, delete, and modify operations.
 

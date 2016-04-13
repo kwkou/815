@@ -6,8 +6,8 @@
 #Delete servers
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-deleteserver)
-- [English Version](/documentation/articles/mysql-database-enus-api-deleteserver)
+- [中文版](/documentation/articles/mysql-database-api-deleteserver)
+- [In English](/documentation/articles/mysql-database-enus-api-deleteserver)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

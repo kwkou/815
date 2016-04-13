@@ -6,7 +6,7 @@
 
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/mysql-database-api-allowazureser)
-- [英文版](/documentation/articles/mysql-database-enus-api-allowazureser)
+- [In English](/documentation/articles/mysql-database-enus-api-allowazureser)
 
 ##请求
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

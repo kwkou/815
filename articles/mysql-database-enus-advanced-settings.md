@@ -4,8 +4,8 @@
 
 #Setting MySQL Database on Azure server parameters
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-advanced-settings)
-- [English Version](/documentation/articles/mysql-database-enus-advanced-settings)
+- [中文版](/documentation/articles/mysql-database-advanced-settings)
+- [In English](/documentation/articles/mysql-database-enus-advanced-settings)
 
 MySQL Database on Azure supports custom settings for some parameters. The table below lists the configurable parameters, default values, and selectable ranges.
 

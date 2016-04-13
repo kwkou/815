@@ -6,7 +6,7 @@
 
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/mysql-database-api-getdatabase)
-- [英文版](/documentation/articles/mysql-database-enus-api-getdatabase)
+- [In English](/documentation/articles/mysql-database-enus-api-getdatabase)
 
 ##请求
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

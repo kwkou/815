@@ -6,7 +6,7 @@
 
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/mysql-database-api-createuser)
-- [英文版](/documentation/articles/mysql-database-enus-api-createuser)
+- [In English](/documentation/articles/mysql-database-enus-api-createuser)
 
 创建用户及密码。
 

@@ -4,8 +4,8 @@
 
 #Use Windows PowerShell to manage MySQL Database on Azure
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-commandlines)
-- [English Version](/documentation/articles/mysql-database-enus-commandlines)
+- [中文版](/documentation/articles/mysql-database-commandlines)
+- [In English](/documentation/articles/mysql-database-enus-commandlines)
 
 This white paper explains how to use PowerShell to do more with MySQL Database on Azure, including create, view, delete, and modify operations. We recommend that you first read [Using Azure Resource Manager and PowerShell to deploy and use MySQL Database on Azure](/documentation/articles/mysql-database-etoe-powershell). This article explains how to download and use PowerShell, and how to use it to quickly create a MySQL Database on Azure data services.
 

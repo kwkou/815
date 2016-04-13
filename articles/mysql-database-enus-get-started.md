@@ -4,8 +4,8 @@
 
 #Introduction to MySQL Database on Azure
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-get-started)
-- [English Version](/documentation/articles/mysql-database-enus-get-started)
+- [中文版](/documentation/articles/mysql-database-get-started)
+- [In English](/documentation/articles/mysql-database-enus-get-started)
 
 This course will help you to understand how to use the Azure portal to quickly create, configure, and connect to MySQL Database on Azure. Once you have completed this course, you will have a sample MySQL database server on Azure and will understand how to use the Azure portal to perform basic management tasks.
 

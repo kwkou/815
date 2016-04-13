@@ -3,8 +3,8 @@
 <tags ms.service="mysql" ms.date="" wacn.date="12/28/2015"/>
 # Connect efficiently to MySQL Database on Azure<sup style="color: #a5ce00; font-weight: bold; text-transform: uppercase; font-family: '微软雅黑'; font-size: 20px;" class="wa-previewTag"></sup>
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-connection-pool)
-- [English Version](/documentation/articles/mysql-database-enus-connection-pool)
+- [中文版](/documentation/articles/mysql-database-connection-pool)
+- [In English](/documentation/articles/mysql-database-enus-connection-pool)
 
 
 Database connections are a limited resource, so making sensible use of connection pooling to access MySQL Database on Azure will optimize performance. This article explains how to use connection pooling or persistent connections to more effectively access MySQL Database on Azure.

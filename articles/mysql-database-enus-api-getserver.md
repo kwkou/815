@@ -6,8 +6,8 @@
 #View server status
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-getserver)
-- [English Version](/documentation/articles/mysql-database-enus-api-getserver)
+- [中文版](/documentation/articles/mysql-database-api-getserver)
+- [In English](/documentation/articles/mysql-database-enus-api-getserver)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

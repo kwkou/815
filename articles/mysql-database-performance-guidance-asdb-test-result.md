@@ -5,7 +5,7 @@
 #了解服务层和版本
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/mysql-database-performance-guidance-asdb-test-result)
-- [英文版](/documentation/articles/mysql-database-enus-performance-guidance-asdb-test-result)
+- [In English](/documentation/articles/mysql-database-enus-performance-guidance-asdb-test-result)
 
 ##ASDB (Azure SQL 数据库 Benchmark)测试结果参考 
 ASDB（Azure SQL 数据库 Benchmark）是Microsoft为了量化提高云计算资源配置如何转换为更高数据库性能而设计的一种数据库测试基准。该基准包括了几乎所有在线事务处理（OLTP）工作负载中发生的基本操作。尽管该基准是基于云计算设计的，但数据库架构、数据填充和事务在设计上广泛代表了 OLTP 工作负载中最常用的基本元素。

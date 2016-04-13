@@ -6,8 +6,8 @@
 #View the server list
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-serverlist)
-- [English Version](/documentation/articles/mysql-database-enus-api-serverlist)
+- [中文版](/documentation/articles/mysql-database-api-serverlist)
+- [In English](/documentation/articles/mysql-database-enus-api-serverlist)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

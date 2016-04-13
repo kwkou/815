@@ -6,8 +6,8 @@
 #Delete users
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-deleteuser)
-- [English Version](/documentation/articles/mysql-database-enus-api-deleteuser)
+- [中文版](/documentation/articles/mysql-database-api-deleteuser)
+- [In English](/documentation/articles/mysql-database-enus-api-deleteuser)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

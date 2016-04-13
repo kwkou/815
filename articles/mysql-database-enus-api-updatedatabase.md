@@ -6,8 +6,8 @@
 #Modify the database configuration
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-updatedatabase)
-- [English Version](/documentation/articles/mysql-database-enus-api-updatedatabase)
+- [中文版](/documentation/articles/mysql-database-api-updatedatabase)
+- [In English](/documentation/articles/mysql-database-enus-api-updatedatabase)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

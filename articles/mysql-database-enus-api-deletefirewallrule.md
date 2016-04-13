@@ -6,8 +6,8 @@
 #Delete firewall rules
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-deletefirewallrule)
-- [English Version](/documentation/articles/mysql-database-enus-api-deletefirewallrule)
+- [中文版](/documentation/articles/mysql-database-api-deletefirewallrule)
+- [In English](/documentation/articles/mysql-database-enus-api-deletefirewallrule)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

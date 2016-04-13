@@ -6,8 +6,8 @@
 #Update servers: Allow Azure service access
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-allowazureser)
-- [English Version](/documentation/articles/mysql-database-enus-api-allowazureser)
+- [中文版](/documentation/articles/mysql-database-api-allowazureser)
+- [In English](/documentation/articles/mysql-database-enus-api-allowazureser)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

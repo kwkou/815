@@ -6,7 +6,7 @@
 
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/mysql-database-api-deletebackup)
-- [英文版](/documentation/articles/mysql-database-enus-api-deletebackup)
+- [In English](/documentation/articles/mysql-database-enus-api-deletebackup)
 
 ##请求
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

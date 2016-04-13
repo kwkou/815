@@ -6,8 +6,8 @@
 #Delete backup files
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-deletebackup)
-- [English Version](/documentation/articles/mysql-database-enus-api-deletebackup)
+- 中文版(/documentation/articles/mysql-database-api-deletebackup)
+- [In English](/documentation/articles/mysql-database-enus-api-deletebackup)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

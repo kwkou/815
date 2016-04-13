@@ -6,8 +6,8 @@
 #Delete databases
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-deletedatabase)
-- [English Version](/documentation/articles/mysql-database-enus-api-deletedatabase)
+- [中文版](/documentation/articles/mysql-database-api-deletedatabase)
+- [In English](/documentation/articles/mysql-database-enus-api-deletedatabase)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

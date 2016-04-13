@@ -6,8 +6,8 @@
 #View database information
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-getdatabase)
-- [English Version](/documentation/articles/mysql-database-enus-api-getdatabase)
+- [中文版](/documentation/articles/mysql-database-api-getdatabase)
+- [In English](/documentation/articles/mysql-database-enus-api-getdatabase)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

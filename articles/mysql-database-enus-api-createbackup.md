@@ -6,8 +6,8 @@
 #Create backups
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-createbackup)
-- [English Version](/documentation/articles/mysql-database-enus-api-createbackup)
+- [中文版](/documentation/articles/mysql-database-api-createbackup)
+- [In English](/documentation/articles/mysql-database-enus-api-createbackup)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

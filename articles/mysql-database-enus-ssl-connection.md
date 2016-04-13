@@ -4,8 +4,8 @@
 
 # Use SSL to securely access MySQL Database on Azure
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-ssl-connection)
-- [English Version](/documentation/articles/mysql-database-enus-ssl-connection)
+- [中文版](/documentation/articles/mysql-database-ssl-connection)
+- [In English](/documentation/articles/mysql-database-enus-ssl-connection)
 
 Using SSL encryption to access databases helps ensure that your access is secure. This article explains how to download and configure SSL certificates. MySQL Database on Azure currently supports the use of public keys to perform encryption and verification on the server side.
 

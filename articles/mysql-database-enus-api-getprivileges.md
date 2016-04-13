@@ -6,8 +6,8 @@
 #View database access permissions
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-getprivileges)
-- [English Version](/documentation/articles/mysql-database-enus-api-getprivileges)
+- [中文版](/documentation/articles/mysql-database-api-getprivileges)
+- [In English](/documentation/articles/mysql-database-enus-api-getprivileges)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

@@ -6,8 +6,8 @@
 #Updating servers - Enable a slow query log
 
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-api-slowquerylog)
-- [English Version](/documentation/articles/mysql-database-enus-api-slowquerylog)
+- [中文版](/documentation/articles/mysql-database-api-slowquerylog)
+- [In English](/documentation/articles/mysql-database-enus-api-slowquerylog)
 
 ##Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
