@@ -92,7 +92,7 @@ ALTER TABLE <table name>
 CREATE TABLE <table name> ...
     WITH ( REMOTE_DATA_ARCHIVE = ON ( MIGRATION_STATE = OUTBOUND ) ) ;
 ```
-以下示例只会迁移 `dbo.fn_stretchpredicate` 内联表值函数识别的行，并推迟数据迁移。有关筛选器谓词的详细信息，请参阅[编写内联表值函数以选择行（延伸数据库）](sql-server-stretch-database-predicate-function.md)。
+以下示例只会迁移 `dbo.fn_stretchpredicate` 内联表值函数识别的行，并推迟数据迁移。有关筛选器谓词的详细信息，请参阅[编写内联表值函数以选择行（延伸数据库）](/documentation/articles/sql-server-stretch-database-predicate-function)。
 
 ```tsql
 CREATE TABLE <table name> ...
