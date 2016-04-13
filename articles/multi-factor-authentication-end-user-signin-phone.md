@@ -5,13 +5,13 @@
 	services="multi-factor-authentication" 
 	documentationCenter="" 
 	authors="billmath" 
-	manager="terrylan" 
-	editor="bryanla"/>
+	manager="stevenpo" 
+	editor="curtland"/>
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="11/19/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="02/16/2016" 
+	wacn.date="04/13/2016"/>
 
 # 在 Azure 多重身份验证中使用办公电话或手机呼叫进行登录
 

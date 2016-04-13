@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="11/19/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="02/16/2016" 
+	wacn.date="04/13/2016"/>
 
 # 将 Azure 多重身份验证与 Azure AD 帐户配合使用时的安全最佳实践
 
