@@ -289,27 +289,27 @@ Azure Plugin for Eclipse - 2011 年 12 月 CTP 已发布。新功能包括：新
 <!-- URL List -->
 
 [Zulu OpenJDK 的 Azul Systems 网页]: http://go.microsoft.com/fwlink/?LinkId=402457
-[Azure Java 开发人员中心]: http://go.microsoft.com/fwlink/?LinkID=699547
-[Azure 服务终结点]: http://go.microsoft.com/fwlink/?LinkID=699526
-[Azure 存储帐户列表]: http://go.microsoft.com/fwlink/?LinkID=699528
-[适用于 Eclipse 的 Azure 工具包]: http://go.microsoft.com/fwlink/?LinkID=699529
+[Azure Java 开发人员中心]: /develop/java/
+[Azure 服务终结点]: /documentation/articles/azure-toolkit-for-eclipse-azure-service-endpoints/
+[Azure 存储帐户列表]: /documentation/articles/azure-toolkit-for-eclipse-azure-storage-account-list/
+[适用于 Eclipse 的 Azure 工具包]: /documentation/articles/azure-toolkit-for-eclipse/
 [Azure Toolkit for IntelliJ]: https://plugins.jetbrains.com/plugin/8053
-[组件属性]: http://go.microsoft.com/fwlink/?LinkID=699525#components_properties
-[在 Eclipse 中为 Azure 创建 Hello World 应用程序]: http://go.microsoft.com/fwlink/?LinkID=699533
-[在 Eclipse 中调试 Azure 应用程序]: http://go.microsoft.com/fwlink/?LinkID=699535
-[实施大型部署]: http://go.microsoft.com/fwlink/?LinkID=699536
-[终结点属性]: http://go.microsoft.com/fwlink/?LinkID=699525#endpoints_properties
-[环境变量属性]: http://go.microsoft.com/fwlink/?LinkID=699525#environment_variables_properties
-[如何使用 Eclipse 在 Azure 访问控制服务上对 Web 用户进行身份验证]: http://go.microsoft.com/fwlink/?LinkID=264703
-[如何使用 SSL 卸载]: http://go.microsoft.com/fwlink/?LinkID=699545
-[安装 Azure Toolkit for Eclipse]: http://go.microsoft.com/fwlink/?LinkId=699546
-[本地存储属性]: http://go.microsoft.com/fwlink/?LinkID=699525#local_storage_properties
+[组件属性]: /documentation/articles/azure-toolkit-for-eclipse-azure-role-properties/#components_properties
+[在 Eclipse 中为 Azure 创建 Hello World 应用程序]: /documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/
+[在 Eclipse 中调试 Azure 应用程序]: /documentation/articles/azure-toolkit-for-eclipse-debugging-azure-applications/
+[实施大型部署]: /documentation/articles/azure-toolkit-for-eclipse-deploying-large-deployments/
+[终结点属性]: /documentation/articles/azure-toolkit-for-eclipse-azure-role-properties/#endpoints_properties
+[环境变量属性]: /documentation/articles/azure-toolkit-for-eclipse-azure-role-properties/#environment_variables_properties
+[如何使用 Eclipse 在 Azure 访问控制服务上对 Web 用户进行身份验证]: /documentation/articles/active-directory-java-authenticate-users-access-control-eclipse/
+[如何使用 SSL 卸载]: /develop/java/
+[安装 Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
+[本地存储属性]: /documentation/articles/azure-toolkit-for-eclipse-azure-role-properties/#local_storage_properties
 [Microsoft Azure 客户端 API]: http://go.microsoft.com/fwlink/?LinkId=280397
-[服务器配置属性]: http://go.microsoft.com/fwlink/?LinkID=699525#server_configuration_properties
-[会话相关性]: http://go.microsoft.com/fwlink/?LinkID=699548
-[SSL 卸载]: http://go.microsoft.com/fwlink/?LinkID=699549
-[新建存储器帐户]: http://go.microsoft.com/fwlink/?LinkID=699528#create_new
-[Azure 的虚拟机和云服务大小]: http://go.microsoft.com/fwlink/?LinkId=466520
+[服务器配置属性]: /documentation/articles/azure-toolkit-for-eclipse-azure-role-properties/#server_configuration_properties
+[会话相关性]: /documentation/articles/azure-toolkit-for-eclipse-enable-session-affinity/
+[SSL 卸载]: /develop/java/
+[新建存储器帐户]: /documentation/articles/azure-toolkit-for-eclipse-azure-storage-account-list/#create_new
+[Azure 的虚拟机和云服务大小]: /documentation/articles/cloud-services-sizes-specs/
 
 <!-- IMG List -->
 

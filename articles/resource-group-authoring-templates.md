@@ -30,7 +30,7 @@ Azure 应用程序通常需要多种资源的组合（例如数据库服务器�
 5. 想要在部署期间传入的值，以及想要在模板中直接定义的值
 6. 是否需要从部署返回值
 
-为了帮助找出哪些资源类型可供部署、各类型支持的区域，以及每个类型可用的 API 版本，请参阅[资源管理器提供程序、区域、API 版本和架构](resource-manager-supported-services.md)。本主题提供的示例和链接可帮助你判断需要在模板中提供的值。
+为了帮助找出哪些资源类型可供部署、各类型支持的区域，以及每个类型可用的 API 版本，请参阅[资源管理器提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services)。本主题提供的示例和链接可帮助你判断需要在模板中提供的值。
 
 如果某个资源必须在另一个资源之后部署，你可以将它标记为依赖于其他资源。下面的 [Resources](#resources) 部分介绍了如何执行此操作。
 
@@ -248,14 +248,14 @@ Azure 应用程序通常需要多种资源的组合（例如数据库服务器�
 
 | 元素名称 | 必选 | 说明
 | :----------------------: | :------: | :----------
-| apiVersion | 是 | 用于创建资源的 REST API 版本。若要确定可用于特定资源类型的版本号，请参阅[支持的 API 版本](../resource-manager-supported-services/#supported-api-versions)。
+| apiVersion | 是 | 用于创建资源的 REST API 版本。若要确定可用于特定资源类型的版本号，请参阅[支持的 API 版本](/documentation/articles/resource-manager-supported-services/#supported-api-versions)。
 | type | 是 | 资源的类型。此值是资源提供程序的命名空间以及资源提供程序支持的资源类型的组合。
 | name | 是 | 资源的名称。该名称必须遵循 RFC3986 中定义的 URI 构成部分限制。
 | location | 否 | 提供的资源支持的地理位置。若要确定可用的位置，请参阅[支持的区域](/documentation/articles/resource-manager-supported-services/#supported-regions)。
 | 标记 | 否 | 与资源关联的标记。
 | 注释 | 否 | 用于描述模板中资源的注释
 | dependsOn | 否 | 正在定义的资源所依赖的资源。将会评估资源之间的依赖关系，并按资源的依赖顺序来部署资源。如果资源不相互依赖，则会尝试并行部署资源。该值可以是资源名称或资源唯一标识符的逗号分隔列表。
-| properties | 否 | 特定于资源的配置设置。properties 的值与你在创建资源时，在 REST API 操作（PUT 方法）的请求正文中提供的值完全相同。有关资源架构文档或 REST API 的链接，请参阅[资源管理器提供程序、区域、API 版本和架构](resource-manager-supported-services.md)。
+| properties | 否 | 特定于资源的配置设置。properties 的值与你在创建资源时，在 REST API 操作（PUT 方法）的请求正文中提供的值完全相同。有关资源架构文档或 REST API 的链接，请参阅[资源管理器提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services)。
 | 资源 | 否 | 依赖于所定义的资源的子资源。只能提供父资源的架构允许的资源类型。子资源类型的完全限定名称包含父资源类型，例如 **Microsoft.Web/sites/extensions**。对父资源的依赖性不是隐式的；你必须显式定义该依赖性。 
 
 
@@ -466,7 +466,6 @@ resources 节包含要部署的资源数组。在每个资源内，还可以定�
 ## 后续步骤
 - 有关你可以使用的来自模板中的函数的详细信息，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)
 - 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)
-- 有关部署应用程序的详细示例，请参阅[按可预见的方式在 Azure 中预配和部署微服务](/documentation/articles/app-service-deploy-complex-application-predictably)
 - 若要查看可用架构，请参阅 [Azure 资源管理器架构](https://github.com/Azure/azure-resource-manager-schemas)
 
 <!---HONumber=Mooncake_0405_2016-->

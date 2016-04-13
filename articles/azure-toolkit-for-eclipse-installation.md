@@ -55,12 +55,12 @@
 
 <!-- URL List -->
 
-[适用于 Eclipse 的 Azure 工具包]: http://go.microsoft.com/fwlink/?LinkID=699529
-[Azure Java 开发人员中心]: http://go.microsoft.com/fwlink/?LinkID=699547
-[在 Eclipse 中为 Azure 创建 Hello World 应用程序]: http://go.microsoft.com/fwlink/?LinkID=699533
-[Installing the Azure Toolkit for Eclipse]: http://go.microsoft.com/fwlink/?LinkId=699546
+[适用于 Eclipse 的 Azure 工具包]: /documentation/articles/azure-toolkit-for-eclipse/
+[Azure Java 开发人员中心]: /develop/java/
+[在 Eclipse 中为 Azure 创建 Hello World 应用程序]: /documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/
+[Installing the Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
 [Web Platform Installer (WebPI)]: http://go.microsoft.com/fwlink/?LinkID=252838
-[Azure Toolkit for Eclipse 的新增功能]: http://go.microsoft.com/fwlink/?LinkID=699552
+[Azure Toolkit for Eclipse 的新增功能]: /documentation/articles/azure-toolkit-for-eclipse-whats-new/
 
 <!-- IMG List -->
 

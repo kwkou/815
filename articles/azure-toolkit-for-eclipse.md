@@ -68,27 +68,27 @@
 
 <!-- URL List -->
 
-[Azure Java 开发人员中心]: http://go.microsoft.com/fwlink/?LinkID=699547
-[Azure 项目属性]: http://go.microsoft.com/fwlink/?LinkID=699524
-[Azure 角色属性]: http://go.microsoft.com/fwlink/?LinkID=699525
-[Azure 服务终结点]: http://go.microsoft.com/fwlink/?LinkID=699526
-[Azure 存储帐户列表]: http://go.microsoft.com/fwlink/?LinkID=699528
-[在 Eclipse 中为 Azure 创建 Hello World 应用程序]: http://go.microsoft.com/fwlink/?LinkID=699533
+[Azure Java 开发人员中心]: /develop/java/
+[Azure 项目属性]: /documentation/articles/azure-toolkit-for-eclipse-azure-project-properties/
+[Azure 角色属性]: /articles/azure-toolkit-for-eclipse-azure-role-properties/
+[Azure 服务终结点]: /documentation/articles/azure-toolkit-for-eclipse-azure-service-endpoints/
+[Azure 存储帐户列表]: /documentation/articles/azure-toolkit-for-eclipse-azure-storage-account-list/
+[在 Eclipse 中为 Azure 创建 Hello World 应用程序]: /documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/
 [在 Eclipse 中创建 Azure 的 Hello World Web 应用]: /documentation/articles/create-a-hello-world-web-app-for-azure-in-eclipse
-[在 Eclipse 中调试 Azure 应用程序]: http://go.microsoft.com/fwlink/?LinkID=699535
-[实施大型部署]: http://go.microsoft.com/fwlink/?LinkID=699536
-[在 Eclipse 中显示 Package for Azure Libraries for Java 的 Javadoc 内容]: http://go.microsoft.com/fwlink/?LinkID=699537
-[在 Eclipse 中为 Azure 部署启用远程访问]: http://go.microsoft.com/fwlink/?LinkID=699538
-[如何使用 Eclipse 在 Azure Access Control 服务上对 Web 用户进行身份验证]: http://go.microsoft.com/fwlink/?LinkID=262380
-[如何使用会话相关性来维护会话数据]: http://go.microsoft.com/fwlink/?LinkID=699539
-[如何使用并置缓存]: http://go.microsoft.com/fwlink/?LinkID=699542
-[如何使用专用缓存]: http://go.microsoft.com/fwlink/?LinkID=699543
-[如何将 Azure 中的 JMS with AMQP 1.0 与 Eclipse 配合使用]: http://go.microsoft.com/fwlink/?LinkID=699544
-[如何使用 SSL 卸载]: http://go.microsoft.com/fwlink/?LinkID=699545
-[安装 Azure Toolkit for Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699546
-[启用会话相关性]: http://go.microsoft.com/fwlink/?LinkID=699548
-[SSL 卸载]: http://go.microsoft.com/fwlink/?LinkID=699549
-[在 JSP 中使用 Azure 服务运行时库]: http://go.microsoft.com/fwlink/?LinkID=699551
-[Azure Toolkit for Eclipse 的新增功能]: http://go.microsoft.com/fwlink/?LinkID=699552
+[在 Eclipse 中调试 Azure 应用程序]: /documentation/articles/azure-toolkit-for-eclipse-debugging-azure-applications/
+[实施大型部署]: /documentation/articles/azure-toolkit-for-eclipse-deploying-large-deployments/
+[在 Eclipse 中显示 Package for Azure Libraries for Java 的 Javadoc 内容]: /documentation/articles/azure-toolkit-for-eclipse-displaying-javadoc-content-for-azure-libraries/
+[在 Eclipse 中为 Azure 部署启用远程访问]: /documentation/articles/azure-toolkit-for-eclipse-enabling-remote-access-for-azure-deployments/
+[如何使用 Eclipse 在 Azure Access Control 服务上对 Web 用户进行身份验证]: /documentation/articles/active-directory-java-authenticate-users-access-control-eclipse/
+[如何使用会话相关性来维护会话数据]: /develop/java/
+[如何使用并置缓存]: /develop/java/
+[如何使用专用缓存]: /develop/java/
+[如何将 Azure 中的 JMS with AMQP 1.0 与 Eclipse 配合使用]: /develop/java/
+[如何使用 SSL 卸载]: /develop/java/
+[安装 Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
+[启用会话相关性]: /documentation/articles/azure-toolkit-for-eclipse-enable-session-affinity/
+[SSL 卸载]: /develop/java/
+[在 JSP 中使用 Azure 服务运行时库]: /develop/java/
+[Azure Toolkit for Eclipse 的新增功能]: /documentation/articles/azure-toolkit-for-eclipse-whats-new/
 
 <!---HONumber=Mooncake_0328_2016-->

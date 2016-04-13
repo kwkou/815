@@ -115,12 +115,12 @@
 
 <!-- URL List -->
 
-[Azure Java 开发人员中心]: http://go.microsoft.com/fwlink/?LinkID=699547
-[Azure 管理门户]: http://go.microsoft.com/fwlink/?LinkID=512959
-[适用于 Eclipse 的 Azure 工具包]: http://go.microsoft.com/fwlink/?LinkID=699529
-[在 Eclipse 中为 Azure 创建 Hello World 应用程序]: http://go.microsoft.com/fwlink/?LinkID=699533
-[安装 Azure Toolkit for Eclipse]: http://go.microsoft.com/fwlink/?LinkId=699546
-[在 JSP 中使用 Azure 服务运行时库]: http://go.microsoft.com/fwlink/?LinkID=699551
+[Azure Java 开发人员中心]: /develop/java/
+[Azure 管理门户]: http://manage.windowsazure.cn
+[适用于 Eclipse 的 Azure 工具包]: /documentation/articles/azure-toolkit-for-eclipse/
+[在 Eclipse 中为 Azure 创建 Hello World 应用程序]: /documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/
+[安装 Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
+[在 JSP 中使用 Azure 服务运行时库]: /develop/java/
 
 <!-- IMG List -->
 

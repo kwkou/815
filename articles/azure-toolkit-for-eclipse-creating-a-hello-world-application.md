@@ -146,14 +146,14 @@
 
 <!-- URL List -->
 
-[Azure Java 开发人员中心]: http://go.microsoft.com/fwlink/?LinkID=699547
-[Azure 管理门户]: http://go.microsoft.com/fwlink/?LinkID=512959
-[Azure Role Properties]: http://go.microsoft.com/fwlink/?LinkID=699525
-[适用于 Eclipse 的 Azure 工具包]: http://go.microsoft.com/fwlink/?LinkID=699529
-[在 Eclipse 中为 Azure 部署启用远程访问]: http://go.microsoft.com/fwlink/?LinkID=699538
-[安装 Azure Toolkit for Eclipse]: http://go.microsoft.com/fwlink/?LinkId=699546
-[服务器配置属性]: http://go.microsoft.com/fwlink/?LinkID=699525#server_configuration_properties
-[Azure Toolkit for Eclipse 的新增功能]: http://go.microsoft.com/fwlink/?LinkID=699552
+[Azure Java 开发人员中心]: /develop/java/
+[Azure 管理门户]: http://manage.windowsazure.cn
+[Azure Role Properties]: /documentation/articles/azure-toolkit-for-eclipse-azure-role-properties/
+[适用于 Eclipse 的 Azure 工具包]: /documentation/articles/azure-toolkit-for-eclipse/
+[在 Eclipse 中为 Azure 部署启用远程访问]: /documentation/articles/azure-toolkit-for-eclipse-enabling-remote-access-for-azure-deployments/
+[安装 Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
+[服务器配置属性]: /documentation/articles/azure-toolkit-for-eclipse-azure-role-properties/#server_configuration_properties
+[Azure Toolkit for Eclipse 的新增功能]: /documentation/articles/azure-toolkit-for-eclipse-whats-new/
 
 <!-- IMG List -->
 
