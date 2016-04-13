@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="11/04/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/29/2016"
+	wacn.date="04/13/2016"/>
 
 # 通知中心入门（Kindle 应用）
 
@@ -18,7 +18,8 @@
 
 ##概述
 
-本教程演示如何使用 Azure 通知中心将推送通知发送到 Kindle 应用程序。你将创建一个空白 Kindle 应用，它使用 Amazon Device Messaging (ADM) 接收推送通知。
+本教程演示如何使用 Azure 通知中心将推送通知发送到 Kindle 应用程序。
+你将创建一个空白 Kindle 应用，它使用 Amazon Device Messaging (ADM) 接收推送通知。
 
 ##先决条件
 
@@ -83,24 +84,25 @@
 
 1. 在根清单元素中添加 Amazon 命名空间：
 
-        xmlns:amazon="http://schemas.amazon.com/apk/res/android"
+
+		xmlns:amazon="http://schemas.amazon.com/apk/res/android"
 
 2. 在清单元素下添加权限作为第一个元素。将 **[YOUR PACKAGE NAME]** 替换为用于创建应用的包。
 
-        <permission
-         android:name="[YOUR PACKAGE NAME].permission.RECEIVE_ADM_MESSAGE"
-         android:protectionLevel="signature" />
+		<permission
+	     android:name="[YOUR PACKAGE NAME].permission.RECEIVE_ADM_MESSAGE"
+	     android:protectionLevel="signature" />
 
-        <uses-permission android:name="android.permission.INTERNET"/>
+		<uses-permission android:name="android.permission.INTERNET"/>
 
-        <uses-permission android:name="[YOUR PACKAGE NAME].permission.RECEIVE_ADM_MESSAGE" />
-
-        <!-- This permission allows your app access to receive push notifications
-        from ADM. -->
-        <uses-permission android:name="com.amazon.device.messaging.permission.RECEIVE" />
-
-        <!-- ADM uses WAKE_LOCK to keep the processor from sleeping when a message is received. -->
-        <uses-permission android:name="android.permission.WAKE_LOCK" />
+		<uses-permission android:name="[YOUR PACKAGE NAME].permission.RECEIVE_ADM_MESSAGE" />
+ 
+		<!-- This permission allows your app access to receive push notifications
+		from ADM. -->
+		<uses-permission android:name="com.amazon.device.messaging.permission.RECEIVE" />
+ 
+		<!-- ADM uses WAKE_LOCK to keep the processor from sleeping when a message is received. -->
+		<uses-permission android:name="android.permission.WAKE_LOCK" />
 
 3. 插入以下元素作为应用程序元素的第一个子级。请记得将 **[YOUR SERVICE NAME]** 替换为你在下一部分中创建的 ADM 消息处理程序的名称（包括包），并将 **[YOUR PACKAGE NAME]** 替换为创建应用时所用的包名称。
 
@@ -113,7 +115,7 @@
 		 
 		<receiver
 		    android:name="[YOUR SERVICE NAME]$Receiver" />
-		 
+
 		    <!-- This permission ensures that only ADM can send your app registration broadcasts. -->
 		    android:permission="com.amazon.device.messaging.permission.SEND" >
 		 
@@ -133,50 +135,50 @@
 
 	![][6]
 
-2.  添加以下 `import` 语句：
+2. 添加以下 `import` 语句：
 
-        import android.app.NotificationManager;
-        import android.app.PendingIntent;
-        import android.content.Context;
-        import android.content.Intent;
-        import android.support.v4.app.NotificationCompat;
-        import com.amazon.device.messaging.ADMMessageReceiver;
-        import com.microsoft.windowsazure.messaging.NotificationHub
+		import android.app.NotificationManager;
+		import android.app.PendingIntent;
+		import android.content.Context;
+		import android.content.Intent;
+		import android.support.v4.app.NotificationCompat;
+		import com.amazon.device.messaging.ADMMessageReceiver;
+		import com.microsoft.windowsazure.messaging.NotificationHub
 
-3.  在创建的类中添加以下代码。请记得替换中心名称和连接字符串 (listen)：
+3. 在创建的类中添加以下代码。请记得替换中心名称和连接字符串 (listen)：
 
-        public static final int NOTIFICATION_ID = 1;
-        private NotificationManager mNotificationManager;
-        NotificationCompat.Builder builder;
-        private static NotificationHub hub;
-        public static NotificationHub getNotificationHub(Context context) {
-            Log.v("com.wa.hellokindlefire", "getNotificationHub");
-            if (hub == null) {
-                hub = new NotificationHub("[hub name]", "[listen connection string]", context);
-            }
-            return hub;
-        }
+		public static final int NOTIFICATION_ID = 1;
+		private NotificationManager mNotificationManager;
+		NotificationCompat.Builder builder;
+      	private static NotificationHub hub;
+		public static NotificationHub getNotificationHub(Context context) {
+			Log.v("com.wa.hellokindlefire", "getNotificationHub");
+			if (hub == null) {
+				hub = new NotificationHub("[hub name]", "[listen connection string]", context);
+			}
+			return hub;
+		}
 
-        public MyADMMessageHandler() {
-                super("MyADMMessageHandler");
-            }
+		public MyADMMessageHandler() {
+				super("MyADMMessageHandler");
+			}
+	
+			public static class Receiver extends ADMMessageReceiver
+    		{
+        		public Receiver()
+        		{
+            		super(MyADMMessageHandler.class);
+        		}
+    		}
+	
+			private void sendNotification(String msg) {
+				Context ctx = getApplicationContext();
+		
+	   		 mNotificationManager = (NotificationManager)
+	    			ctx.getSystemService(Context.NOTIFICATION_SERVICE);
 
-            public static class Receiver extends ADMMessageReceiver
-            {
-                public Receiver()
-                {
-                    super(MyADMMessageHandler.class);
-                }
-            }
-
-            private void sendNotification(String msg) {
-                Context ctx = getApplicationContext();
-
-             mNotificationManager = (NotificationManager)
-                    ctx.getSystemService(Context.NOTIFICATION_SERVICE);
-
-            PendingIntent contentIntent = PendingIntent.getActivity(ctx, 0,
-                new Intent(ctx, MainActivity.class), 0);
+	    	PendingIntent contentIntent = PendingIntent.getActivity(ctx, 0,
+	          	new Intent(ctx, MainActivity.class), 0);
 
 	    	NotificationCompat.Builder mBuilder =
 	          	new NotificationCompat.Builder(ctx)
@@ -186,9 +188,9 @@
 	                     .bigText(msg))
 	          	.setContentText(msg);
 
-            mBuilder.setContentIntent(contentIntent);
-            mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
-        }
+	     	mBuilder.setContentIntent(contentIntent);
+	     	mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+		}
 
 4. 将以下代码添加到 `OnMessage()` 方法中：
 	
@@ -205,40 +207,40 @@
 
 6.	将以下代码添加到 `OnUnregistered` 方法中：
 
-            try {
-                getNotificationHub(getApplicationContext()).unregister();
-            } catch (Exception e) {
-                Log.e("[your package name]", "Fail onUnregister: " + e.getMessage(), e);
-            }
+			try {
+				getNotificationHub(getApplicationContext()).unregister();
+			} catch (Exception e) {
+				Log.e("[your package name]", "Fail onUnregister: " + e.getMessage(), e);
+			}
 
 7. 在 `MainActivity` 方法中添加以下 import 语句：
 
-        import com.amazon.device.messaging.ADM;             
+		import com.amazon.device.messaging.ADM;
 
 8. 在 `OnCreate` 方法的末尾添加以下代码：
 
-        final ADM adm = new ADM(this);
-        if (adm.getRegistrationId() == null)
-        {
-           adm.startRegister();
-        } else {
-            new AsyncTask() {
-                  @Override
-                  protected Object doInBackground(Object... params) {
-                     try {                       MyADMMessageHandler.getNotificationHub(getApplicationContext()).register(adm.getRegistrationId());
-                     } catch (Exception e) {
-                         Log.e("com.wa.hellokindlefire", "Failed registration with hub", e);
-                         return e;
-                     }
-                     return null;
-                 }
-               }.execute(null, null, null);
-        }
+		final ADM adm = new ADM(this);
+		if (adm.getRegistrationId() == null)
+		{
+		   adm.startRegister();
+		} else {
+			new AsyncTask() {
+			      @Override
+			      protected Object doInBackground(Object... params) {
+			         try {			        	 MyADMMessageHandler.getNotificationHub(getApplicationContext()).register(adm.getRegistrationId());
+			         } catch (Exception e) {
+			        	 Log.e("com.wa.hellokindlefire", "Failed registration with hub", e);
+			        	 return e;
+			         }
+			         return null;
+			     }
+			   }.execute(null, null, null);
+		}
 
 ## 将 API 密钥添加到应用
 
 1. 在 Eclipse 中，在项目的目录资产中创建名为 **api\_key.txt** 的新文件。
-2. 打开该文件，并复制你在 Amazon 开发人员门户中生成的 **API 密钥**。
+2. 打开该文件，并复制你在 Amazon 开发人员门户中生成的 API 密钥。
 
 ## 运行应用程序
 
@@ -246,7 +248,7 @@
 2. 在模拟器中，从顶部往下轻扫，单击“设置”，然后单击“我的帐户”并使用有效的 Amazon 帐户注册。
 3. 在 Eclipse 中运行应用程序。
 
-> [AZURE.NOTE]如果出现了问题，请检查模拟器（或设备）的时间。时间值必须准确。若要更改 Kindle 模拟器的时间，可以从 Android SDK platform-tools 目录运行以下命令：
+> [AZURE.NOTE] 如果出现了问题，请检查模拟器（或设备）的时间。时间值必须准确。若要更改 Kindle 模拟器的时间，可以从 Android SDK platform-tools 目录运行以下命令：
 
 		adb shell  date -s "yyyymmdd.hhmmss"
 
@@ -254,7 +256,7 @@
 
 若要使用 .NET 发送消息：
 
-        static void Main(string[] args)
+	static void Main(string[] args)
         {
             NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("[conn string]", "[hub name]");
 
@@ -275,5 +277,4 @@
 [5]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-cmd-window.png
 [6]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-new-java-class.png
 [7]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-notification.png
-
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0405_2016-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="notification-hubs"
-	ms.date="10/27/2015" 
-	wacn.date="04/01/2016"/>
+	ms.date="02/29/2016" 
+	wacn.date="04/12/2016"/>
 
 # Azure 通知中心 - 诊断指南
 
@@ -141,11 +141,12 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 
 **EnableTestSend 属性**
 
-当你通过通知中心发送通知时，起初只要对 NH 排队以进行处理，从而找到它的所有目标，然后最终 NH 将它发送到 PNS。这意味着，当你使用 REST API 或任意客户端 SDK 时，你的发送调用的成功返回只表示消息已成功在通知中心中排队。当 NH 最终准备将消息发送到 PNS 时，它不会深入探索发生了什么情况。如果你的通知没有到达客户端设备，则可能在 NH 尝试将消息传递到 PNS 时出现错误。例如，负载大小超出了 PNS 允许的上限，或者在 NH 中配置的凭据无效等。若要深入分析 PNS 错误，我们引入了一个名为 [EnableTestSend 功能]的属性。当你从门户或 Visual Studio 客户端中发送测试消息时，系统会自动启用此属性，从而允许你查看详细的调试信息。根据 .NET SDK 的示例，你可以通过 API 使用此属性，其现在可用，并且最终将被添加到所有客户端 SDK。若要和 REST 调用一起使用此属性，直接在你的发送调用的末尾附加名为“test”的查询字符串参数。例如：
+当你通过通知中心发送通知时，起初只要对 NH 排队以进行处理，从而找到它的所有目标，然后最终 NH 将它发送到 PNS。这意味着，当你使用 REST API 或任意客户端 SDK 时，你的发送调用的成功返回只表示消息已成功在通知中心中排队。当 NH 最终准备将消息发送到 PNS 时，它不会深入探索发生了什么情况。如果你的通知没有到达客户端设备，则可能在 NH 尝试将消息传递到 PNS 时出现错误。例如，负载大小超出了 PNS 允许的上限，或者在 NH 中配置的凭据无效等。 
+若要深入分析 PNS 错误，我们引入了一个名为 [EnableTestSend 功能]的属性。当你从门户或 Visual Studio 客户端中发送测试消息时，系统会自动启用此属性，从而允许你查看详细的调试信息。根据 .NET SDK 的示例，你可以通过 API 使用此属性，其现在可用，并且最终将被添加到所有客户端 SDK。若要和 REST 调用一起使用此属性，直接在你的发送调用的末尾附加名为“test”的查询字符串参数。例如：
 
 	https://mynamespace.servicebus.chinacloudapi.cn/mynotificationhub/messages?api-version=2013-10&test
 
-*示例 (.NET SDK)*
+示例 (.NET SDK)
  
 假设你正在使用 .NET SDK 发送本机 toast 通知：
 
@@ -153,7 +154,8 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
     var result = await hub.SendWindowsNativeNotificationAsync(toast);
     Console.WriteLine(result.State);
  
-`result.State` 将只在执行结束时陈述 `Enqueued`，而不深入分析你的推送发生了什么情况。现在，你可以使用 `EnableTestSend` 布尔值属性，同时初始化 `NotificationHubClient`，并获取有关发送通知时遇到的 PNS 错误的详细状态。此处发送调用需要更多时间进行返回，因为它只在 NH 已将通知传递到 PNS 之后返回以确定结果。
+`result.State` 将只在执行结束时陈述 `Enqueued`，而不深入分析你的推送发生了什么情况。
+现在，你可以使用 `EnableTestSend` 布尔值属性，同时初始化 `NotificationHubClient`，并获取有关发送通知时遇到的 PNS 错误的详细状态。此处发送调用需要更多时间进行返回，因为它只在 NH 已将通知传递到 PNS 之后返回以确定结果。
  
 	bool enableTestSend = true;
 	NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString(connString, hubName, enableTestSend);
@@ -166,7 +168,7 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 	    Console.WriteLine(result.ApplicationPlatform + "\n" + result.RegistrationId + "\n" + result.Outcome);
 	}
 
-*示例输出*
+示例输出
 
     DetailedStateAvailable
     windows
@@ -175,13 +177,13 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
  
 此消息表示在通知中心配置的凭据无效，或在中心注册方面存在问题，推荐的方案是删除此注册并让客户端重新创建注册，然后发送消息。
  
-> [AZURE.NOTE]请注意，此属性的使用已经受到极大限制，而且你只能在有限的注册集中的开发/测试环境中使用此属性。我们仅向 10 台设备发送调试通知。此外，我们每分钟向 10 台设备发送有限的处理调试。
+> [AZURE.NOTE] 请注意，此属性的使用已经受到极大限制，而且你只能在有限的注册集中的开发/测试环境中使用此属性。我们仅向 10 台设备发送调试通知。此外，我们每分钟向 10 台设备发送有限的处理调试。
 
 ###查看遥测 
 
 1. **使用 Azure 门户**
 
-	通过 Azure 门户，你可以获取有关通知中心上所有活动的快速概述。
+	通过该门户可以获取有关通知中心上所有活动的快速概述。
 	
 	a) 从“仪表板”选项卡上，你可以查看注册、通知以及每个平台的错误的汇总视图。
 	
@@ -233,4 +235,5 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 [以编程方式遥测访问]: http://msdn.microsoft.com/zh-cn/library/azure/dn458823.aspx
 [通过 API 示例遥测访问]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/FetchNHTelemetryInExcel
 
-<!---HONumber=Mooncake_0104_2016-->
+
+<!---HONumber=Mooncake_0405_2016-->

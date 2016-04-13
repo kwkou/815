@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通过百度开始使用 Azure 通知中心 | Azure"
+	pageTitle="通过百度开始使用 Azure 通知中心 | Microsoft Azure"
 	description="在本教程中，你将了解如何通过百度使用 Azure 通知中心将通知推送到 Android 设备。"
 	services="notification-hubs"
 	documentationCenter="android"
@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="11/25/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="04/13/2016"/>
 	
 # 通过百度开始使用通知中心
 
@@ -497,7 +497,7 @@
 <!-- URLs. -->
 [移动服务 Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
 [百度推送 Android SDK]: http://developer.baidu.com/wiki/index.php?title=docs/cplat/push/sdk/clientsdk
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [百度门户]: http://www.baidu.com/
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0405_2016-->

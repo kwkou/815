@@ -9,17 +9,17 @@
 
 <tags
       ms.service="notification-hubs" 
-      ms.date="11/01/2015" 
-      wacn.date="01/14/2016" />
+	ms.date="02/29/2016" 
+      wacn.date="04/13/2016" />
 
 # 如何通过 Python 使用通知中心
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
 		
 如 MSDN 主题[通知中心 REST API](http://msdn.microsoft.com/library/dn223264.aspx) 中所述，你可以使用通知中心 REST 接口从 Java/PHP/Python/Ruby 后端访问所有通知中心功能。
 
-> [AZURE.NOTE]这是在 Python 中实现通知发送的示例引用实现，不是官方支持的通知中心 Python SDK。
+> [AZURE.NOTE] 这是在 Python 中实现通知发送的示例引用实现，不是官方支持的通知中心 Python SDK。
 
-> [AZURE.NOTE]此示例使用 Python 3.4 编写。
+> [AZURE.NOTE] 此示例使用 Python 3.4 编写。
 
 本主题中，我们将向你介绍如何：
 
@@ -29,10 +29,10 @@
 
 你可以按照你选定的移动平台的[入门教程](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)以 Python 实现后端部分。
 
-> [AZURE.NOTE]该示例仅限于发送通知，并不执行任何注册管理操作。
+> [AZURE.NOTE] 该示例仅限于发送通知，并不执行任何注册管理操作。
 
 ## 客户端接口
-主要的客户端接口可提供与 [.NET 通知中心 SDK](http://msdn.microsoft.com/zh-cn/library/jj933431.aspx) 中相同的方法。这将允许你直接翻译当前该网站上提供的所有教程和示例，这些内容均来自 Internet 上的社区。
+主要的客户端接口可提供 [.NET 通知中心 SDK](http://msdn.microsoft.com/zh-cn/library/jj933431.aspx) 中提供的相同方法。这将允许你直接翻译当前该网站上提供的所有教程和示例，这些内容均来自 Internet 上的社区。
 
 你可以在 [Python REST 包装器示例]中找到提供的所有代码。
 
@@ -43,7 +43,7 @@
 	
 发送 Windows toast 通知：
 	
-	wns_payload = """<toast><visual><binding template=\"ToastText01\"><text id=\"1\">Hello world!</text></binding></visual></toast>"""
+	wns_payload = """<toast><visual><binding template="ToastText01"><text id="1">Hello world!</text></binding></visual></toast>"""
 	hub.send_windows_notification(wns_payload)
 	
 ## 实现
@@ -82,7 +82,8 @@
 
 
 ### 创建安全令牌
-有关安全令牌创建的详细信息，请访问[此处](http://msdn.microsoft.com/zh-cn/library/dn495627.aspx)。下面的方法必须添加到 **NotificationHub** 类，以根据当前请求的 URL 和提取自连接字符串的凭据创建令牌。
+有关安全令牌创建的详细信息，请访问[此处](http://msdn.microsoft.com/zh-cn/library/dn495627.aspx)。
+以下方法必须添加到 **NotificationHub** 类，以便根据当前请求的 URI 和提取自连接字符串的凭据创建令牌。
 
 	@staticmethod
     def get_expiry():
@@ -246,7 +247,9 @@
 以上方法将 HTTP POST 请求发送到你通知中心的 /messages 终结点，该请求具有发送通知的正确正文和标头。
 
 ### 使用调试属性启用详细的日志记录
-在初始化通知中心时启用调试属性将写出关于 HTTP 请求和响应转储的详细日志记录信息，以及详细的通知消息发送结果。我们最近添加了这个称为[通知中心 TestSend 属性](http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.notifications.notificationhubclient.enabletestsend.aspx)的属性，它将返回有关通知发送结果的详细信息。若要使用它 - 请使用以下方法进行初始化：
+在初始化通知中心时启用调试属性将写出关于 HTTP 请求和响应转储的详细日志记录信息，以及详细的通知消息发送结果。 
+我们最近添加了这个称为[通知中心 TestSend 属性](http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.notifications.notificationhubclient.enabletestsend.aspx)的属性，它将返回有关通知发送结果的详细信息。 
+若要使用它 - 请使用以下方法进行初始化：
 
 	hub = NotificationHub("myConnectionString", "myNotificationHubName", isDebug)
 
@@ -263,7 +266,7 @@
 
 ### Windows 应用商店和 Windows Phone 8.1（非 Silverlight）
 
-	wns_payload = """<toast><visual><binding template=\"ToastText01\"><text id=\"1\">Test</text></binding></visual></toast>"""
+	wns_payload = """<toast><visual><binding template="ToastText01"><text id="1">Test</text></binding></visual></toast>"""
 	hub.send_windows_notification(wns_payload)
 
 ### Windows Phone 8.0 和 8.1 Silverlight
@@ -312,8 +315,7 @@
 ## 示例:
 
 ### 启用调试属性
-如果在初始化 NotificationHub 时启用调试标志，你将会看到详细的 HTTP 请求和响应转储以及 NotificationOutcome，如下所示，你可以从中了解哪些 HTTP 标头传入请求以及从通知中心收到哪些 HTTP 响应：
-	![][1]
+如果在初始化 NotificationHub 时启用调试标志，你将会看到详细的 HTTP 请求和响应转储以及 NotificationOutcome，如下所示，你可以从中了解哪些 HTTP 标头传入请求以及从通知中心收到哪些 HTTP 响应：![][1]
 
 你将看到如详细的通知中心结果，例如
 
@@ -379,11 +381,11 @@
 [入门教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [突发新闻教程]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 [本地化新闻教程]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
+
 <!-- Images. -->
 [1]: ./media/notification-hubs-python-backend-how-to/DetailedLoggingInfo.png
 [2]: ./media/notification-hubs-python-backend-how-to/BroadcastScenario.png
 [3]: ./media/notification-hubs-python-backend-how-to/SendWithOneTag.png
 [4]: ./media/notification-hubs-python-backend-how-to/SendWithMultipleTags.png
 [5]: ./media/notification-hubs-python-backend-how-to/TemplatedNotification.png
-
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0405_2016-->

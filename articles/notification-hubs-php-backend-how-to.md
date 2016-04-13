@@ -9,8 +9,8 @@
 
 <tags 
      ms.service="notification-hubs"
-     ms.date="11/01/2015" 
-     wacn.date="01/14/2016" />
+	ms.date="02/29/2016" 
+     wacn.date="04/13/2016" />
 
 # 如何通过 PHP 使用通知中心
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
@@ -20,10 +20,10 @@
 本主题中，我们将向你介绍如何：
 
 * 以 PHP 构建 REST 客户端以获取通知中心功能；
-* 请按照你选定的移动平台[入门教程](/documentation/articles/notification-hubs-ios-get-started)以 PHP 实现后端部分。
+* 请按照你选定的移动平台的[入门教程](/documentation/articles/notification-hubs-ios-get-started)以 PHP 实现后端部分。
 
 ## 客户端接口
-主要的客户端接口可提供[.NET 通知中心 SDK](http://msdn.microsoft.com/zh-cn/library/jj933431.aspx) 中提供的相同方法，这将允许你直接翻译当前此站点上提供的所有教程和示例，这些内容均来自 Internet 上的社区。
+主要的客户端接口可提供 [.NET 通知中心 SDK](http://msdn.microsoft.com/zh-cn/library/jj933431.aspx) 中提供的相同方法，这将允许你直接翻译当前此站点上提供的所有教程和示例，这些内容均来自 Internet 上的社区。
 
 你可以在 [PHP REST 包装器示例]中找到提供的所有代码。
 
@@ -37,8 +37,7 @@
 	$hub->sendNotification($notification);
 
 ## 实现
-如果你尚未实现，请按照我们[入门的教程]学至最后一节，其中你必须实现后端。
-此外，如果你希望可以使用来自 [PHP REST 包装器示例]的代码并直接转到[完成本教程](#complete-tutorial)部分。
+如果你尚未实现，请按照我们的[入门教程]学至最后一节，其中你必须实现后端。此外，如果你希望可以使用 [PHP REST 包装器示例]中的代码并直接转到[完成本教程](#complete-tutorial)部分。
 
 有关实现完整 REST 包装器的所有详细信息，请访问 [MSDN](http://msdn.microsoft.com/zh-cn/library/dn530746.aspx)。在本部分中，我们将向你介绍访问通知中心 REST 终结点所需的主要步骤的 PHP 实现：
 
@@ -85,7 +84,7 @@
 
 ### 创建安全令牌
 有关安全令牌创建的详细信息，请访问[此处](http://msdn.microsoft.com/zh-cn/library/dn495627.aspx)。
-下面的方法必须添加到 **NotificationHub** 类，以根据当前请求的 URL 和提取自连接字符串的凭据创建令牌。
+以下方法必须添加到 **NotificationHub** 类，以便根据当前请求的 URI 和提取自连接字符串的凭据创建令牌。
 
 	private function generateSasToken($uri) {
 		$targetUri = strtolower(rawurlencode(strtolower($uri)));
@@ -193,8 +192,7 @@
 ##<a name="complete-tutorial"></a>完成教程
 现在，你可以通过从 PHP 后端发送通知来完成该入门教程。
 
-初始化你的通知中心客户端（按[入门的教程]中所述替换连接字符串和中心名称）：
-	$hub = new NotificationHub("连接字符串", "中心名称");
+初始化你的通知中心客户端（按[入门教程]中所述替换连接字符串和中心名称）：$hub = new NotificationHub("connection string", "hubname");
 
 然后，根据你的目标移动平台添加发送代码。
 
@@ -250,4 +248,4 @@
 [PHP REST 包装器示例]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
 [入门教程]: /documentation/articles/notification-hubs-ios-get-started
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0405_2016-->
