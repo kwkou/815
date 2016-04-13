@@ -28,14 +28,6 @@
 恢复数据库会从最新的异地冗余备份创建一个新的数据库。必须确保要恢复到的服务器具有足够的 DTU，可以容纳新数据库的容量。你可以通过[与支持人员联系][]来请求增加此配额。
 
 
-### Azure 门户
-1. 登录到 [Azure 门户][]
-2. 在屏幕左侧选择“+新建”，选择“数据和存储”，然后选择“SQL 数据仓库”
-3. 选择“备份”作为源，然后选择要从中进行恢复的异地冗余备份
-4. 指定余下的数据库属性，然后单击“创建”
-5. 数据库还原过程随即将会开始，你可以使用“通知”监视还原进度
-
-
 ### PowerShell
 使用 Azure PowerShell 以编程方式执行数据库恢复。若要下载 Azure PowerShell 模块，请运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)。可以通过运行 Get-Module -ListAvailable -Name Azure 来检查你的版本。本文基于 Microsoft Azure PowerShell 版本 1.0.4。
 
