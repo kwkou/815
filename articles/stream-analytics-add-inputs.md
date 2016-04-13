@@ -20,8 +20,6 @@
 
 Azure 流分析作业可以连接到一个或多个数据输入，每个数据输入都定义了一个到现有数据源的连接。将数据发送到数据源时，流分析作业会使用该数据并将其作为流数据进行实时处理。流分析在作业订阅内外都与 [Azure 事件中心](/services/event-hubs/)和 [Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)进行高级集成
 
-本文是[流分析学习路径](/documentation/learning-paths/stream-analytics/)中的一个步骤。
-
 ## 数据输入：流数据和引用数据
 
 流分析中有两种不同类型的输入：数据流和引用数据。
