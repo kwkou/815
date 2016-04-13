@@ -103,12 +103,12 @@ ALTER DATABASE [AdventureWorks] SET ENCRYPTION ON;
 
 
 <!--MSDN references-->
-[Azure SQL 数据库防火墙]: https://msdn.microsoft.com/zh-cn/library/ee621782.aspx
+[Azure SQL 数据库防火墙]: /documentation/articles/sql-database-firewall-configure
 [数据库角色]: https://msdn.microsoft.com/zh-cn/library/ms189121.aspx
-[在 Azure SQL 数据库中管理数据库和登录名]: https://msdn.microsoft.com/zh-cn/library/ee336235.aspx
+[在 Azure SQL 数据库中管理数据库和登录名]: /documentation/articles/sql-database-manage-logins/
 [权限]: https://msdn.microsoft.com/zh-cn/library/ms191291.aspx
 [存储过程]: https://msdn.microsoft.com/zh-cn/library/ms190782.aspx
-[透明数据加密]: http://go.microsoft.com/fwlink/?LinkId=526242
+[透明数据加密]: https://msdn.microsoft.com/zh-cn/library/dn948096.aspx
 [SQL 数据库审核入门]: /documentation/articles/sql-database-auditing-get-started
 [Azure 管理门户]: https://manage.windowsazure.cn
 

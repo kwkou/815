@@ -80,7 +80,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 
 <!--Article references-->
 
-[Azure 流分析简介]: /documentation/articles/stream-analytics-introductiond
+[Azure 流分析简介]: /documentation/articles/stream-analytics-introduction
 [开始使用 Azure 流分析]: /documentation/articles/stream-analytics-get-started
 [SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
 [SQL 数据仓库集成概述]: /documentation/articles/sql-data-warehouse-overview-integrate

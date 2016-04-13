@@ -42,29 +42,30 @@ SQL 数据仓库提供两个核心功能，用于在发生导致意外数据损�
 
 ```
 
-Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-Get-AzureRmSubscription
-Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
+    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+    Get-AzureRmSubscription
+    Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
+    
+    # List the last 10 database restore points
+    ((Get-AzureRMSqlDatabaseRestorePoints -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>" -ResourceGroupName "<YourResourceGroupName>").RestorePointCreationDate)[-10 .. -1]
+    
+    	# Or for all restore points
+    	Get-AzureRmSqlDatabaseRestorePoints -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>" -ResourceGroupName "<YourResourceGroupName>"
+    
+    # Pick desired restore point using RestorePointCreationDate
+    $PointInTime = "<RestorePointCreationDate>"
+    
+    # Get the specific database name to restore
+    (Get-AzureRmSqlDatabase -ServerName "<YourServerName>" -ResourceGroupName "<YourResourceGroupName>").DatabaseName | where {$_ -ne "master" }
+    #or
+    Get-AzureRmSqlDatabase -ServerName "<YourServerName>" –ResourceGroupName "<YourResourceGroupName>"
+    
+    # Restore database
+    $RestoreRequest = Start-AzureSqlDatabaseRestore -SourceServerName "<YourServerName>" -SourceDatabaseName "<YourDatabaseName>" -TargetDatabaseName "<NewDatabaseName>" -PointInTime $PointInTime
+    
+    # Monitor progress of restore operation
+    Get-AzureSqlDatabaseOperation -ServerName "<YourServerName>" –OperationGuid $RestoreRequest.RequestID
 
-# List the last 10 database restore points
-((Get-AzureRMSqlDatabaseRestorePoints -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>" -ResourceGroupName "<YourResourceGroupName>").RestorePointCreationDate)[-10 .. -1]
-
-	# Or for all restore points
-	Get-AzureRmSqlDatabaseRestorePoints -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>" -ResourceGroupName "<YourResourceGroupName>"
-
-# Pick desired restore point using RestorePointCreationDate
-$PointInTime = "<RestorePointCreationDate>"
-
-# Get the specific database name to restore
-(Get-AzureRmSqlDatabase -ServerName "<YourServerName>" -ResourceGroupName "<YourResourceGroupName>").DatabaseName | where {$_ -ne "master" }
-#or
-Get-AzureRmSqlDatabase -ServerName "<YourServerName>" –ResourceGroupName "<YourResourceGroupName>"
-
-# Restore database
-$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceServerName "<YourServerName>" -SourceDatabaseName "<YourDatabaseName>" -TargetDatabaseName "<NewDatabaseName>" -PointInTime $PointInTime
-
-# Monitor progress of restore operation
-Get-AzureSqlDatabaseOperation -ServerName "<YourServerName>" –OperationGuid $RestoreRequest.RequestID
 ```
 
 请注意，如果服务器是 foo.database.chinacloudapi.cn，请使用“foo”作为上述 Powershell cmdlet 中的 -ServerName。
