@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="" pageTitle="Setting MySQL Database on Azure Server Parameters – Azure Cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, parameters, customization, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL Database on Azure supports customizing some parameters to your own requirements. We will help you to understand the selectable ranges and intervals for different parameters." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="Setting MySQL Database on Azure Server Parameters – Microsoft Azure Cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, parameters, customization, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL Database on Azure supports customizing some parameters to your own requirements. We will help you to understand the selectable ranges and intervals for different parameters." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="12/28/2015"/>
 
@@ -7,8 +7,7 @@
 - [中文版](/documentation/articles/mysql-database-advanced-settings)
 - [In English](/documentation/articles/mysql-database-enus-advanced-settings)
 
-MySQL Database on Azure supports custom settings for some parameters. The table below lists the configurable parameters, default values, and selectable ranges.
-
+MySQL Database on Azure supports custom settings for some parameters. The following table lists these parameters, their default values, and their selectable ranges.
 
 [Find out more about MySQL parameters](http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html).
 
@@ -23,7 +22,7 @@ MySQL Database on Azure supports custom settings for some parameters. The table 
   <tr>
     <td>Event_scheduler</td>
     <td>OFF</td>
-    <td>ON|OFF|DISABLED</td>
+    <td>[ON|OFF|DISABLED]</td>
   </tr>
   <tr>
     <td>div_precision_increment</td>
@@ -38,7 +37,7 @@ MySQL Database on Azure supports custom settings for some parameters. The table 
   <tr>
     <td>Innodb_adaptive_hash_index</td>
     <td>ON</td>
-    <td>ON|OFF</td>
+    <td>[ON|OFF]</td>
   </tr>
   <tr>
     <td>innodb_lock_wait_timeout</td>
