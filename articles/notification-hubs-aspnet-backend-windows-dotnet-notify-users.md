@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="11/09/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/29/2016"
+	wacn.date="04/13/2016"/>
 
 #Azure 通知中心 - 使用 .NET 后端通知用户
 
@@ -44,7 +44,7 @@
 
 
 
-> [AZURE.NOTE]如果你使用移动服务作为后端服务，请参阅本教程的[移动服务版本](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users)。
+> [AZURE.NOTE]如果你使用移动服务作为后端服务，请参阅本教程的[移动服务版本](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push)。
 
 
 
@@ -107,7 +107,7 @@
                     <TextBlock Grid.Row="2" Grid.ColumnSpan="3" Text="Password" FontSize="24" Margin="20,0,20,0" />
                     <PasswordBox Name="PasswordTextBox" Grid.Row="3" Grid.ColumnSpan="3" Margin="20,0,20,0"/>
 
-                    <Button Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    <Button Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center"
                                 Content="1. Login and register" Click="LoginAndRegisterClick" Margin="0,0,0,20"/>
 
                     <ToggleButton Name="toggleWNS" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Content="WNS" IsChecked="True" />
@@ -144,11 +144,11 @@
 
 
 13. 将以下代码添加到“(Windows 8.1)”和“(Windows Phone 8.1)”项目的 **MainPage.xaml.cs** 中的 MainPage 类。
- 
+
 	`PushClick` 方法是“发送推送”按钮的单击处理程序。它调用后端以触发向用户名标记与 `to_tag` 参数匹配的所有设备发送通知。通知消息作为请求正文中的 JSON 内容发送。
 
 	`LoginAndRegisterClick` 方法是“登录和注册”按钮的单击处理程序。它在本地存储中存储基本身份验证令牌（请注意，这代表身份验证方案使用的任何令牌），然后使用 `RegisterClient` 来通过后端注册通知。
-	
+
 
         private async void PushClick(object sender, RoutedEventArgs e)
         {
@@ -351,17 +351,17 @@
     ![][14]
 
 4. 在 Windows Phone 8.1 实例上，于“用户名”和“密码”字段中输入用户名字符串，然后单击“登录和注册”。
-5. 然后，在“接收方用户名标记”字段中，输入在 Windows 8.1 上注册的用户名。输入通知消息，然后单击“发送推送”。 
+5. 然后，在“接收方用户名标记”字段中，输入在 Windows 8.1 上注册的用户名。输入通知消息，然后单击“发送推送”。
 
     ![][16]
 
 6. 只有已使用匹配用户名标记进行注册的设备才会收到通知消息。
-	
+
 	![][15]
- 
+
 ## 后续步骤
 
-* 如果要按兴趣组划分用户，可以阅读[使用通知中心发送突发新闻]。 
+* 如果要按兴趣组划分用户，可以阅读[使用通知中心发送突发新闻]。
 * 若要了解有关如何使用通知中心的详细信息，请参阅[通知中心指南]。
 
 
@@ -382,5 +382,4 @@
 [安全推送]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-secure-push
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
-
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0405_2016-->

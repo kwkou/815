@@ -10,12 +10,12 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="12/16/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="04/13/2016"/>
 
 # 通过使用 ASP.NET 注册推送通知的当前用户
 
 > [AZURE.SELECTOR]
-- [Windows Store C#](/documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications)
+- [Windows 应用商店 C#](/documentation/articles/notification-hubs-windows-store-aspnet-register-user-push-notifications)
 - [iOS](/documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications)
 
 
@@ -231,4 +231,4 @@
 [使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [通知中心入门]: /documentation/articles/notification-hubs-ios-get-started
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0405_2016-->

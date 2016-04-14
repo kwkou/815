@@ -1,23 +1,22 @@
-
 <properties 
 	pageTitle="如何结合使用通知中心与 Java" 
 	description="了解如何从 Java 后端使用 Azure 通知中心。" 
 	services="notification-hubs" 
 	documentationCenter="" 
-	authors="ysxu" 
+	authors="wesmc7777" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags    	
 	ms.service="notification-hubs" 
-        ms.date="11/01/2015"
-	wacn.date="01/14/2016"/>
+    ms.date="11/01/2015"
+	wacn.date="04/13/2016"/>
 
 # 如何通过 Java 使用通知中心
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
 		
-本主题将向你介绍完全受支持的全新官方 Azure 通知中心 Java SDK 的主要功能。
-这是一个开源项目，你可以在 [Java SDK] 查看完整的 SDK 代码。
+本主题将向你介绍完全受支持的全新官方 Azure 通知中心 Java SDK 的主要功能。 
+这是一个开源项目，你可以在 [Java SDK] 查看完整的 SDK 代码。 
 
 通常情况下，如 MSDN 主题[通知中心 REST API](http://msdn.microsoft.com/zh-cn/library/dn223264.aspx) 中所述，你可以使用通知中心 REST 接口从 Java/PHP/Python/Ruby 后端访问所有通知中心功能。此 Java SDK 在以 Java 形式表示的 REST 接口上提供瘦包装器。
 
@@ -137,8 +136,8 @@ SDK 当前支持：
 所有集合查询都支持 $top 和继续标记。
 
 ### 安装 API 用法
-安装 API 是一种注册管理的替代机制。其现在可以使用“单个”安装对象，而不是维护着多个注册，后者不但工作量较大，而且容易出错且效率低下。
-安装包含你所需的一切：推送通道（设备标记）、标记、模板、辅助磁贴（用于 WNS 和 APNS）。你不必再调用该服务以获取 ID - 只需生成 GUID 或任何其他标识符，将其保存在设备上并与推送通道（设备标记）一起发送到你的后端即可。
+安装 API 是一种注册管理的替代机制。其现在可以使用“单个”安装对象，而不是维护着多个注册，后者不但工作量较大，而且容易出错且效率低下。 
+安装包含你所需的一切：推送通道（设备标记）、标记、模板、辅助磁贴（用于 WNS 和 APNS）。你不必再调用该服务以获取 ID - 只需生成 GUID 或任何其他标识符，将其保存在设备上并与推送通道（设备标记）一起发送到你的后端即可。 
 在后端，你应当只做一个调用：CreateOrUpdateInstallation，其完全是幂等的，因此，如果需要，可随时重试。
 
 针对 Amazon Kindle Fire，示例如下：
@@ -149,15 +148,15 @@ SDK 当前支持：
 如果你希望进行更新：
 
 	installation.addTag("foo");
-	installation.addTemplate("template1", new InstallationTemplate("{\"data\":{\"key1\":\"$(value1)\"}}","tag-for-template1"));
-	installation.addTemplate("template2", new InstallationTemplate("{\"data\":{\"key2\":\"$(value2)\"}}","tag-for-template2"));
+	installation.addTemplate("template1", new InstallationTemplate("{"data":{"key1":"$(value1)"}}","tag-for-template1"));
+	installation.addTemplate("template2", new InstallationTemplate("{"data":{"key2":"$(value2)"}}","tag-for-template2"));
 	hub.createOrUpdateInstallation(installation);
 
 对于高级方案，我们提供有部分更新功能，以允许仅修改安装对象的特定属性。基本上，部分更新是你针对安装对象运行 JSON Patch 操作的子集。
 
 	PartialUpdateOperation addChannel = new PartialUpdateOperation(UpdateOperationType.Add, "/pushChannel", "adm-push-channel2");
 	PartialUpdateOperation addTag = new PartialUpdateOperation(UpdateOperationType.Add, "/tags", "bar");
-	PartialUpdateOperation replaceTemplate = new PartialUpdateOperation(UpdateOperationType.Replace, "/templates/template1", new InstallationTemplate("{\"data\":{\"key3\":\"$(value3)\"}}","tag-for-template1")).toJson());
+	PartialUpdateOperation replaceTemplate = new PartialUpdateOperation(UpdateOperationType.Replace, "/templates/template1", new InstallationTemplate("{"data":{"key3":"$(value3)"}}","tag-for-template1")).toJson());
 	hub.patchInstallation("installation-id", addChannel, addTag, replaceTemplate);
 
 删除安装：
@@ -222,26 +221,26 @@ CreateOrUpdate、Patch 和 Delete 最终与 Get 一致。你请求的操作会�
 	List<NotificationHubJob> jobs = hub.getAllNotificationHubJobs();
 
 **使用 SAS 签名的 URI：**
-这是某些 BLOB 文件或 BLOB 容器的 URL，，加上一组参数（例如权限和到期日期），再加上使用帐户的 SAS 密钥生成的所有这些内容的签名。Azure 存储 Java SDK 具有丰富的功能，包括创建这种类型的 URI。作为简单的替代，你可以考虑使用 ImportExportE2E 测试类（来自 github 位置），其具有非常基本、精简的签名算法。
+这是某些 BLOB 文件或 BLOB 容器的 URL，加上一组参数（例如权限和到期日期），再加上使用帐户的 SAS 密钥生成的所有这些内容的签名。Azure 存储 Java SDK 具有丰富的功能，包括创建这种类型的 URI。作为简单的替代，你可以考虑使用 ImportExportE2E 测试类（来自 github 位置），其具有非常基本、精简的签名算法。
 
 ###发送通知
 通知对象只有带有标头的正文，一些实用工具方法可帮助你构建本机和模板通知对象。
 
 * **Windows 应用商店和 Windows Phone 8.1（非 Silverlight）**
 
-	String toast = "<toast><visual><binding template=\"ToastText01\"><text id=\"1\">Hello from Java!</text></binding></visual></toast>";
+	String toast = "<toast><visual><binding template="ToastText01"><text id="1">Hello from Java!</text></binding></visual></toast>";
 	Notification n = Notification.createWindowsNotification(toast);
 	hub.sendNotification(n);
 
 * **iOS**
 
-	String alert = "{\"aps\":{\"alert\":\"Hello from Java!\"}}";
+	String alert = "{"aps":{"alert":"Hello from Java!"}}";
 	Notification n = Notification.createAppleNotification(alert);
 	hub.sendNotification(n);
 
 * **Android**
 
-		String message = "{\"data\":{\"msg\":\"Hello from Java!\"}}";
+		String message = "{"data":{"msg":"Hello from Java!"}}";
 		Notification n = Notification.createGcmNotification(message);
 		hub.sendNotification(n);
 
@@ -258,7 +257,7 @@ CreateOrUpdate、Patch 和 Delete 最终与 Get 一致。你请求的操作会�
 
 * **Kindle Fire**
 
-		String message = "{\"data\":{\"msg\":\"Hello from Java!\"}}";
+		String message = "{"data":{"msg":"Hello from Java!"}}";
 		Notification n = Notification.createAdmNotification(message);
 		hub.sendNotification(n);
 
@@ -304,5 +303,4 @@ CreateOrUpdate、Patch 和 Delete 最终与 Get 一致。你请求的操作会�
 [发送跨平台通知到经身份验证的用户]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users
 [Maven]: http://maven.apache.org/
  
-
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0405_2016-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用通知中心向用户发送跨平台通知 (ASP.NET)" 
+	pageTitle="使用通知中心向用户发送跨平台通知 (ASP.NET)"
 	description="了解如何使用通知中心模板在单个请求中发送针对所有平台的平台未知通知。"
 	services="notification-hubs"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="12/11/2015" 
-	wacn.date="01/14/2016"/>
+	wacn.date="04/13/2016"/>
 	
 # 使用通知中心向用户发送跨平台通知
 
@@ -67,7 +67,7 @@
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-    此代码将通知同时发送到所有平台，而不必指定本机负载。通知中心使用提供的*标签*值（在注册的模板中指定）生成正确的负载并将它传递到每个设备。
+	此代码将通知同时发送到所有平台，而不必指定本机负载。通知中心使用提供的_标记_值（在注册的模板中指定）生成正确的负载并将它传递到每个设备。
 
 4. 重新发布 WebApi 后端项目。
 
@@ -85,12 +85,13 @@
 
 +  **[Azure 通知中心概述][Templates]**<br/>“概述”主题提供有关模板的更多详细信息。
 
-+  **[针对 Windows 应用商店的通知中心操作指南]**<br/>包含模板表示语言参考。
+
+<!-- Anchors. -->
+
+<!-- Images. -->
 
 
-<!-- Anchors. --> 
 
-<!-- Images. --> 
 
 <!-- URLs. -->
 
@@ -101,4 +102,4 @@
 [Templates]: https://msdn.microsoft.com/zh-cn/library/jj927170.aspx#BKMK_NH7
 [针对 Windows 应用商店的通知中心操作指南]: http://msdn.microsoft.com/zh-cn/library/azure/jj927172.aspx
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0405_2016-->

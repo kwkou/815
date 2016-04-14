@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/01/2016" 
-	wacn.date="01/14/2016"/>
+	ms.date="11/01/2015" 
+	wacn.date="04/13/2016"/>
 
 # 通过使用移动服务注册推送通知的当前用户
 
@@ -116,4 +116,4 @@
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Get Started with Notification Hubs]: /documentation/articles/notification-hubs-ios-get-started/
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0405_2016-->
