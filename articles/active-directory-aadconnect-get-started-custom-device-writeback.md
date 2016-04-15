@@ -1,16 +1,16 @@
 <properties 
-	pageTitle="在 Azure AD Connect 中启用设备写回" 
+	pageTitle="Azure AD Connect：启用设备写回 | Microsoft Azure"
 	description="本文档详细说明如何使用 Azure AD Connect 启用设备写回功能" 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
-	manager="msStevenPo" 
+	manager="StevenPo"
 	editor="curtand"/>
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="12/18/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="01/21/2016"
+	wacn.date="04/13/2016"/>
 
 # 在 Azure AD Connect 中启用设备写回
 
@@ -40,7 +40,7 @@
 
 3.	使用企业管理员凭据运行以下命令，然后退出 PowerShell。
 
-	`Import-Module 'C:\Program Files\Azure Active Directory Connect\AdPrep\AdSyncPrep.psm1'`
+	`Import-Module 'C:\Program Files\Microsoft Azure Active Directory Connect\AdPrep\AdSyncPrep.psm1'`
 
 	`Initialize-ADSyncDeviceWriteback {Optional:–DomainName [name] Optional:-AdConnectorAccount [account]}`
 
@@ -52,9 +52,6 @@
 - 该命令将在 CN=Device Registration Configuration,CN=Services,CN=Configuration,[forest-dn] 下创建并配置新的容器和对象（如果不存在）。
 - 该命令将在 CN=RegisteredDevices,[domain-dn] 下创建并配置新的容器和对象（如果不存在）。将在此容器中创建设备对象。
 - 在 Azure AD 连接器帐户中设置必要的权限，以便管理 Active Directory 上的设备。
-
-
-
 - 即使 Azure AD Connect 安装在多个林中，也只需要在一个林中运行。
 
 参数：
@@ -105,7 +102,7 @@
 	- 转到“连接到 Active Directory 林”。检查此屏幕上指定的域和用户名是否与提供给脚本的帐户匹配。
 ![连接器帐户](./media/active-directory-aadconnect-get-started-custom-device-writeback/connectoraccount.png)
 
-验证 Active Directory 中的配置：
+在 Active Directory 中验证配置：
 - 检查设备注册服务是否位于配置命名上下文下面的以下位置：(CN=DeviceRegistrationService,CN=Device Registration Services,CN=Device Registration Configuration,CN=Services,CN=Configuration)。
 
 ![Troubleshoot1](./media/active-directory-aadconnect-get-started-custom-device-writeback/troubleshoot1.png)
@@ -135,4 +132,4 @@
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0405_2016-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="有关 Azure AD Connect 凭据和权限的详细信息 | Azure" 
+	pageTitle="有关 Azure AD Connect 凭据和权限的详细信息 | Microsoft Azure" 
 	description="Azure AD Connect 凭据和权限的自定义设置描述。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory"  
 	ms.date="10/13/2015"
-	wacn.date="01/29/2016"/>
+	wacn.date="04/13/2016"/>
 
 
 
@@ -86,5 +86,4 @@ AD FS：GMSA 帐户 (aadcsvc$)|域用户|FS 服务登录帐户
 * [Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom)
 * [MSDN 上的 Azure AD Connect](/documentation/articles/active-directory-aadconnect)
  
-
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0405_2016-->

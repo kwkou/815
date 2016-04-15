@@ -2,7 +2,7 @@
 	pageTitle="Azure AD Connect：自定义安装 | Microsoft Azure"
 	description="本文档详细介绍了 Azure AD Connect 的自定义安装选项。使用本文中的说明来通过 Azure AD Connect 安装 Active Directory。"
 	services="active-directory"
-	keywords="什么是 Azure AD Connect, 安装 Active Directory, Azure AD 所需的组件"
+        keywords="什么是 Azure AD Connect, 安装 Active Directory, Azure AD 所需的组件"
 	documentationCenter=""
 	authors="billmath"
 	manager="stevenpo"
@@ -60,7 +60,7 @@
 
 
 ## 连接到 Azure AD
-在“连接到 Azure AD”屏幕中，输入全局管理员的帐户和密码。如果在前一个页面选择了“与 AD FS 联合”，请确保不要以计划启用联合的域中的帐户登录。建议使用随附于 Azure AD 目录的默认 onmicrosoft.com 域中的帐户。
+在“连接到 Azure AD”屏幕中，输入全局管理员的帐户和密码。如果在前一个页面选择了**“与 AD FS 联合”**，请确保不要以计划启用联合的域中的帐户登录。建议使用随附于 Azure AD 目录的默认 **onmicrosoft.com** 域中的帐户。
 
 此帐户只会用于在 Azure AD 中创建服务帐户，在向导完成后将不会使用。  
 ![用户登录](./media/active-directory-aadconnect-get-started-custom/connectaad.png)
@@ -137,7 +137,7 @@ Exchange 混合部署 |Exchange 混合部署功能通过将 Azure AD 中的特�
 Azure AD 应用程序和属性筛选|通过启用 Azure AD 应用程序和属性筛选，可以根据向导后续页面上的特定集定制同步属性集。这会在向导中打开两个附加的配置页。有关更多信息，请参阅 [Azure AD 应用和属性筛选](#azure-ad-app-and-attribute-filtering)。
 密码同步 | 如果你选择了联合作为登录解决方案，则可以启用此选项。然后，可将密码同步用作备份选项。有关更多信息，请参阅[密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization)。
 密码写回|通过启用密码写回，源自 Azure AD 的密码更改将写回到本地目录。有关更多信息，请参阅[密码管理入门](/documentation/articles/active-directory-passwords-getting-started)。
-组写回 |如果你使用了“Office 365 组”功能，则可以在本地 Active Directory 中将这些组用作分发组。仅当本地 Active Directory 中存在 Exchange 时，才可以使用此选项。有关更多信息，请参阅[组写回](/documentation/articles/active-directory-aadconnect-feature-preview#group-writeback)。
+组写回 |如果你使用了**“Office 365 组”**功能，则可以在本地 Active Directory 中将这些组用作分发组。仅当本地 Active Directory 中存在 Exchange 时，才可以使用此选项。有关更多信息，请参阅[组写回](/documentation/articles/active-directory-aadconnect-feature-preview#group-writeback)。
 设备写回 | 允许你将 Azure AD 中的设备对象写回本地 Active Directory 以实现条件性访问方案。有关更多信息，请参阅[在 Azure AD Connect 中启用设备写回](/documentation/articles/active-directory-aadconnect-get-started-custom-device-writeback)
 目录扩展属性同步|通过启用目录扩展属性同步，可将指定的其他属性同步到 Azure AD。有关更多信息，请参阅[目录扩展](/documentation/articles/active-directory-aadconnect-feature-preview#directory-extensions)。
 
@@ -153,7 +153,7 @@ Azure AD 应用程序和属性筛选|通过启用 Azure AD 应用程序和属性
 >[AZURE.WARNING] 删除属性可能会影响功能。有关最佳实践和建议，请参阅[属性同步](/documentation/articles/active-directory-aadconnectsync-attributes-synchronized#attributes-to-synchronize)。
 
 ### 目录扩展属性同步
-借助目录扩展，你可以使用组织添加的自定义属性或 Active Directory 中的其他属性，在 Azure AD 中扩展架构。若要使用这项功能，请在“可选功能”页上选择“目录扩展属性同步”。这样，你便可以进入此页，并在其中选择其他属性。
+借助目录扩展，你可以使用组织添加的自定义属性或 Active Directory 中的其他属性，在 Azure AD 中扩展架构。若要使用这项功能，请在**“可选功能”**页上选择**“目录扩展属性同步”**。这样，你便可以进入此页，并在其中选择其他属性。
 
 ![同步筛选](./media/active-directory-aadconnect-get-started-custom/extension2.png)
 
@@ -265,4 +265,4 @@ AD FS 服务需要域服务帐户来验证用户，以及在 Active Directory �
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0405_2016-->

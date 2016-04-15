@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect：开始使用快速设置 | Azure"
+	pageTitle="Azure AD Connect：开始使用快速设置 | Microsoft Azure"
 	description="了解如何下载、安装和运行 Azure AD Connect 的设置向导。"
 	services="active-directory"
 	documentationCenter=""
@@ -40,7 +40,7 @@
 3. 在“欢迎”屏幕上，选中同意许可条款对应的框，然后单击“继续”。
 4. 在“快速设置”屏幕上，单击“使用快速设置”。
 ![欢迎使用 Azure AD Connect](./media/active-directory-aadconnect-get-started-express/express.png)
-5. 在“连接到 Azure AD”屏幕上，输入 Azure AD 的 Azure 全局管理员用户名和密码。单击**“下一步”**。
+5. 在“连接到 Azure AD”屏幕上，输入 Azure AD 的 Azure 全局管理员用户名和密码。单击“下一步”。
 ![连接到 AAD](./media/active-directory-aadconnect-get-started-express/connectaad.png)
 如果你收到错误消息并且出现了连接问题，请参阅[排查连接问题](/documentation/articles/active-directory-aadconnect-troubleshoot-connectivity)。
 6. 在“连接到 AD DS”屏幕上，输入企业管理员帐户的用户名和密码。单击“下一步”。
@@ -60,4 +60,4 @@
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0405_2016-->
