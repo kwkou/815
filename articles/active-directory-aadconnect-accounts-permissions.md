@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"  
-   ms.date="11/02/2015"
-   wacn.date="01/21/2016"/>
+   ms.date="03/16/2016"
+   wacn.date="04/13/2016"/>
 
 
 # Azure AD Connect 所需的帐户和权限
@@ -46,7 +46,19 @@
 ### 全局管理员凭据
 这些凭据只能在安装期间使用，而不能在安装完成后使用。它用于创建 [Azure AD 帐户](#azure-ad-service-account)，以便将更改同步到 Azure AD。该帐户还会在 Azure AD 中启用同步作为功能。使用的帐户不能启用 MFA。
 
-## <a name="#custom-settings-installation"></a>自定义设置安装
+### 使用快速设置创建的 AD DS 帐户的权限
+如果使用快速设置创建用于在 AD DS 中读取和写入数据的[帐户](#active-directory-account)，该帐户将拥有以下权限：
+
+| 权限 | 用途 |
+| ---- | ---- |
+| <li>复制目录更改</li><li>复制所有目录更改 | 密码同步 |
+| 读取/写入所有用户属性 | 导入和执行 Exchange 混合部署 |
+| 读取/写入所有 iNetOrgPerson 属性 | 导入和执行 Exchange 混合部署 |
+| 读取/写入所有组属性 | 导入和执行 Exchange 混合部署 |
+| 读取/写入所有联系人属性 | 导入和执行 Exchange 混合部署 |
+| 重置密码 | 准备启用密码写回 |
+
+## 自定义设置安装
 使用自定义设置时，必须在安装之前创建用于连接 Active Directory 的帐户。
 
 向导页 | 收集的凭据 | 所需的权限| 用途
@@ -56,7 +68,7 @@
 连接到 Azure AD|Azure AD 目录凭据| Azure AD 中的全局管理员角色| <li>在 Azure AD 目录中启用同步。</li> <li>创建将在 Azure AD 中用于进行中同步操作的 [Azure AD 帐户](#azure-ad-service-account)。</li>
 连接你的目录|要连接到 Azure AD 的每个林的本地 Active Directory 凭据 | 权限将取决于你启用的功能，可在[创建 AD DS 帐户](#create-the-ad-ds-account)中找到 |在同步期间，将使用此帐户读取和写入目录信息。
 AD FS 服务器|对于列表中的每个服务器，如果运行向导的用户的登录凭据权限不足，因而无法连接，则向导将会收集凭据|域管理员|安装和配置 AD FS 服务器角色。
-Web 应用代理服务器 |对于列表中的每个服务器，如果运行向导的用户的登录凭据权限不足，因而无法连接，则向导将会收集凭据|目标计算机上的本地管理员|安装和配置 WAP 服务器角色。
+Web 应用程序代理服务器 |对于列表中的每个服务器，如果运行向导的用户的登录凭据权限不足，因而无法连接，则向导将会收集凭据|目标计算机上的本地管理员|安装和配置 WAP 服务器角色。
 代理信任凭据 |联合身份验证服务信任凭据（代理用来注册 FS 信任证书的凭据） |作为 AD FS 服务器本地管理员的域帐户|初始注册 FS-WAP 信任证书。
 “AD FS 服务帐户”页上的“使用域用户帐户选项”|AD 用户帐户凭据|域用户|提供了其凭据的 AD 用户帐户将用作 AD FS 服务的登录帐户。
 
@@ -90,13 +102,13 @@ Web 应用代理服务器 |对于列表中的每个服务器，如果运行向�
 ![AD 帐户](./media/active-directory-aadconnect-accounts-permissions/adsyncserviceaccount.png)
 
 ### <a name="azure-ad-connect-sync-service-account"></a> Azure AD Connect 同步服务帐户
-安装向导将创建两个本地服务帐户（除非你在自定义设置指定了要使用的帐户）。具有 **AAD\_** 前缀的帐户用作实际同步服务的运行身份。如果你在域控制器上安装 Azure AD Connect，则会在该域中创建这些帐户。如果你在远程服务器上使用 SQL 服务器，**AAD\_** 服务帐户必须位于域中。具有 **AADSyncSched\_** 前缀的帐户用于运行同步引擎的计划任务。
+本地服务帐户将由安装向导创建（除非你在自定义设置指定了要使用的帐户）。该帐户具有 AAD\_ 前缀，将用作实际同步服务的运行身份。如果你在域控制器上安装 Azure AD Connect，则会在该域中创建帐户。如果你使用运行 SQL 服务器的远程服务器或使用需要身份验证的代理，则 AAD\_ 服务帐户必须位于域中。
 
 ![同步服务帐户](./media/active-directory-aadconnect-accounts-permissions/syncserviceaccount.png)
 
-这些帐户带有永不过期的长复杂密码。
+该帐户带有永不过期的长复杂密码。
 
-Windows 使用同步引擎服务帐户来存储加密密钥，使得此帐户的密码不被重置或更改。
+此帐户用于以安全方式存储其他帐户的密码。其他这些帐户密码将以加密形式存储在数据库中。使用 Windows 数据保护 (DPAPI)，通过加密服务机密-密钥加密方式来保护加密密钥的私钥。你不应重置服务帐户中的密码，否则出于安全原因，Windows 会销毁加密密钥。
 
 如果你使用完整的 SQL Server，则服务帐户将是为同步引擎创建的数据库的 DBO。如果使用其他权限，服务将无法按预期工作。还会创建 SQL 登录名。
 
@@ -117,4 +129,4 @@ Windows 使用同步引擎服务帐户来存储加密密钥，使得此帐户的
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0405_2016-->

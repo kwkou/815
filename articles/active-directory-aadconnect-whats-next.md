@@ -9,15 +9,25 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="10/01/2015"
-	wacn.date="01/09/2016"/>
+	ms.date="03/16/2016"
+	wacn.date="04/14/2016"/>
 
 # 后续步骤以及如何管理 Azure AD Connect
 以下属于高级操作主题，介绍如何根据组织的需要和要求自定义 Azure Active Directory Connect。
 
+## 添加更多的同步管理员
+默认情况下，只有执行安装的用户和本地管理员才可以管理安装的同步引擎。要使其他用户能够访问和管理同步引擎，请在本地服务器上找到名为 ADSyncAdmins 的组，并将这些用户添加到此组中。
+
+## AD FS 服务中的可选配置
+你可以自定义 AD FS 登录页的插图和徽标图像，方法是登录 AD FS，然后使用 PSH 进行这项配置。
+
+	Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.png"} ¨CIllustration @{path=¡±c:\Contoso\illustration.png¡±}
+
+有关可能配置的完整说明，请参阅[自定义 AD FS 登录页](https://technet.microsoft.com/library/dn280950.aspx)。
+
 ## 向 Azure AD Premium 和企业移动性套件用户分配许可证
 
-将用户同步到云后，你需要向他们分配许可证，以便他们可以继续使用云应用（例如 Office 365）。
+将用户同步到云后，你需要向他们分配许可证，以便他们继续使用云应用（例如 Office 365）。
 
 ### 分配 Azure AD Premium 或企业移动套件许可证
 --------------------------------------------------------------------------------
@@ -34,7 +44,6 @@
 
 ### 验证计划的同步任务
 --------------------------------------------------------------------------------
-
 1. 以管理员身份登录到 Azure 门户。
 2. 在左侧选择“Active Directory”。
 3. 在“Active Directory”页上，双击要启用的用户所在的目录。
@@ -48,7 +57,7 @@
 
 <center>![云](./media/active-directory-aadconnect-whats-next/startsynch.png)</center>
 
-
+有关“Azure AD Connect 同步：计划程序”的详细信息，请参阅 [Azure AD Connect 计划程序](/documentation/articles/active-directory-aadconnectsync-feature-scheduler)
 
 
 ## Azure AD Connect 中提供的其他任务
@@ -70,4 +79,4 @@
 
  
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0405_2016-->

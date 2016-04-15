@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect 同步：有关更改默认配置的最佳实践 | Azure"
+	pageTitle="Azure AD Connect 同步：有关更改默认配置的最佳实践 | Microsoft Azure"
 	description="提供有关更改 Azure AD Connect 同步默认配置的最佳实践。"
 	services="active-directory"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory"
-	ms.date="12/28/2015"
-	wacn.date="02/25/2016"/>
+	ms.date="02/16/2016"
+	wacn.date="04/14/2016"/>
 
 
 # Azure AD Connect 同步：有关更改默认配置的最佳实践
@@ -25,11 +25,7 @@ Azure AD Connect 同步在安装向导创建的服务帐户下运行。此服务
 - **不支持**更改或重置服务帐户的密码。这样做会破坏加密密钥，服务将无法访问数据库且无法启动。
 
 ## 计划程序的更改
-Azure AD Connect 同步设置为每隔 3 小时同步标识数据。在安装期间，将创建一个使用服务帐户运行的计划任务，此帐户具有操作同步服务器的权限。
-
-- **不支持**对计划任务进行更改。服务帐户的密码是未知的。请参阅[服务帐户的更改](#changes-to-the-service-account)
-- **不支持**比默认 3 小时更频繁的同步。
-	- 在测试新配置时，支持执行一次性同步运行。但是，你不应该以更频繁的计划运行导出到 Azure AD 的操作。
+从内部版本 1.1（2016 年 2 月）开始，你可以将[计划程序](/documentation/articles/active-directory-aadconnectsync-feature-scheduler)配置为使用非默认的同步周期（默认周期为 30 分钟）。
 
 ## 同步规则的更改
 安装向导提供的配置应该适用于最常见的方案。如果需要对配置进行更改，必须遵循这些规则，以便仍可保留支持的配置。
@@ -60,10 +56,12 @@ Fabrikam 中有对名字、姓氏和显示名称使用本地字母的林。以�
 
 - 从开始菜单启动“同步规则编辑器”。
 - 在左侧依然选定了“入站”的情况下，单击“添加新规则”按钮。
-- 为规则指定名称和说明。选择本地 Active Directory 和相关的对象类型。在“链接类型”中选择“联接”。为优先顺序选择一个未被其他规则使用的数字。现成的规则从 100 开始，因此该示例可以使用值 50。![属性流 2](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/attributeflowjp2.png)
+- 为规则指定名称和说明。选择本地 Active Directory 和相关的对象类型。在“链接类型”中选择“联接”。为优先顺序选择一个未被其他规则使用的数字。现成的规则从 100 开始，因此该示例可以使用值 50。
+![属性流 2](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/attributeflowjp2.png)
 - 将范围留空（即，应该应用到林中的所有用户对象）。
 - 将联接规则留空（即，让现成的规则处理所有联接）。
-- 在“转换”中创建以下流。![属性流 3](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/attributeflowjp3.png)
+- 在“转换”中创建以下流。
+![属性流 3](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/attributeflowjp3.png)
 - 单击“添加”保存规则。
 - 转到“同步服务管理器”。在“连接器”上，选择我们已在其中添加了规则的连接器。依次选择“运行”和“完全同步”。完全同步将使用当前规则重新计算所有对象。
 
@@ -80,10 +78,13 @@ Fabrikam 中有对名字、姓氏和显示名称使用本地字母的林。以�
 
 ![扩展属性](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/badextensionattribute.png)
 
-- 创建新的入站同步规则并填充说明 ![说明](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/syncruledescription.png)
-- 创建类型为 **Expression** 且源为 **AuthoritativeNull** 的属性流。即使优先顺序较低的同步规则尝试填充值，文本值 **AuthoritativeNull** 也会指出 MV 中的值应该为空。![扩展属性](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/syncruletransformations.png)
+- 创建新的入站同步规则并填充说明 
+![说明](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/syncruledescription.png)
+- 创建类型为 Expression 且源为 AuthoritativeNull 的属性流。即使优先顺序较低的同步规则尝试填充值，文本值 AuthoritativeNull 也会指出 MV 中的值应该为空。
+![扩展属性](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/syncruletransformations.png)
 - 保存同步规则。启动“同步服务”，查找连接器，然后依次选择“运行”和“完全同步”。这将重新计算所有属性流。
-- 通过搜索连接器空间来验证是否即将导出所需的更改。![分阶段删除](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/deletetobeexported.png)
+- 通过搜索连接器空间来验证是否即将导出所需的更改。
+![分阶段删除](./media/active-directory-aadconnectsync-best-practices-changing-default-configuration/deletetobeexported.png)
 
 ### <a name="disable-an-unwanted-sync-rule"></a>禁用不需要的同步规则
 不要删除现成的同步规则；下次升级期间将重新创建此规则。
@@ -110,4 +111,4 @@ Fabrikam 中有对名字、姓氏和显示名称使用本地字母的林。以�
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0405_2016-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect 设计概念 | Azure"
+   pageTitle="Azure AD Connect 设计概念 | Microsoft Azure"
    description="本主题详细说明某些实现设计方面的问题"
    services="active-directory"
    documentationCenter=""
@@ -9,14 +9,14 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="10/13/2015"
-   wacn.date="11/12/2015"/>
+   ms.date="02/16/2016"
+   wacn.date="04/13/2015"/>
 
 # Azure AD Connect 的设计概念
 本主题旨在说明 Azure AD Connect 实现设计期间必须考虑到的各个方面。这是特定领域的深入探讨，其他主题中也简要描述了这些概念。
 
 ## <a name="sourceAnchor"></a>sourceAnchor
-sourceAnchor 属性定义为*在对象生存期内不会变化的属性*。它可将对象唯一标识为本地和 Azure AD 中的相同对象。该属性也称为 **immutableId**，这两个名称可以换用。
+sourceAnchor 属性定义为在对象生存期内不会变化的属性。它可将对象唯一标识为本地和 Azure AD 中的相同对象。该属性也称为 **immutableId**，这两个名称可以换用。
 
 在本主题中，“不可变”（即无法更改）一词非常重要。由于此属性的值在设置之后就无法更改，因此请务必挑选可支持你的方案的设计。
 
@@ -64,4 +64,4 @@ sourceAnchor 属性区分大小写。“JohnDoe”与“johndoe”是不同的�
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0405_2016-->

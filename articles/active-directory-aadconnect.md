@@ -11,7 +11,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="02/29/2016"
-	wacn.date="04/06/2016"/>
+	wacn.date="04/13/2016"/>
 
 
 # 将本地标识与 Azure Active Directory 集成
@@ -116,8 +116,11 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 
 | 主题 | |
 | --------- | --------- |
+| 所有 Azure AD Connect 同步文章 | [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis) |
+| 技术概念 | [Azure AD Connect 同步：技术概念](/documentation/articles/active-directory-aadconnect-technical-concepts) |
+| 了解默认配置 | [Azure AD Connect 同步：了解默认配置](/documentation/articles/active-directory-aadconnectsync-understanding-default-configuration) |
 | 了解用户和联系人 | [Azure AD Connect 同步：了解用户和联系人](/documentation/articles/active-directory-aadconnectsync-understanding-users-and-contacts) |
-| 声明性预配 | [Azure AD Connect 同步：了解声明性设置表达式](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions) |
+| 声明性预配 | [Azure AD Connect Sync：了解声明性设置表达式](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions) |
 | 更改默认配置 | [更改默认配置的最佳做法](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration) |
 
 ## 详细信息和参考
@@ -138,4 +141,4 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 有关将本地目录扩展到云的 Ignite 2015 演示文稿。
 
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0405_2016-->

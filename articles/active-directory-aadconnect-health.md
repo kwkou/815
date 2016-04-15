@@ -101,4 +101,4 @@ Azure AD Connect Health 很容易入门。请遵循以下步骤进行配置：
 * [Azure AD Connect Health 常见问题](/documentation/articles/active-directory-aadconnect-health-faq)
  
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0405_2016-->
