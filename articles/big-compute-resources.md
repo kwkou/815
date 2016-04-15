@@ -1,6 +1,6 @@
 <properties
-   pageTitle="大型计算：用于批处理和高性能计算 (HPC) 的技术资源 | Azure"
-   description="列出了旨在帮助你在 Azure 中运行大规模并行、批处理和 HPC 工作负荷的技术资源。"
+   pageTitle="批处理和 HPC 工作负荷在云中的资源 | Microsoft Azure"
+   description="列出了旨在帮助你在 Azure 中运行大规模并行批处理和高性能计算 (HPC) 工作负荷的技术资源。"
    services="batch, cloud-services, virtual-machines"
    documentationCenter=""
    authors="dlepow"
@@ -9,8 +9,8 @@
 
 <tags
    ms.service="multiple"
-   ms.date="09/29/2015"
-   wacn.date="12/31/2015"/>
+   ms.date="01/26/2016"
+   wacn.date="04/13/2016"/>
 
 # Azure 中的大型计算：用于批处理和高性能计算 (HPC) 的技术资源
 这是一份技术资源指南，旨在帮助你在 Azure 中运行大规模并行、批处理和 HPC 工作负荷。在 Azure 中，可以使用各种 Azure 服务将现有的批处理或 HPC 工作负荷扩展到 Azure 云，或者生成新的大型计算解决方案。
@@ -56,6 +56,13 @@ HPC Pack 是在 Azure 和 Windows Server 技术基础之上构建的 Microsoft �
 
 * [Windows HPC 论坛](https://social.microsoft.com/Forums/home?category=windowshpc)
 
+### Linux 和 OSS 群集解决方案
+
+使用这些 Azure 模板来部署 Linux HPC 群集。
+
+* [运转 SLURM 群集](http://azure.microsoft.com/documentation/templates/slurm/)和[博客文章](http://blogs.technet.com/b/windowshpc/archive/2015/06/06/deploy-a-slurm-cluster-on-azure.aspx)
+
+* [运转 Torque 群集](http://azure.microsoft.com/documentation/templates/torque-cluster/)
 
 ## Microsoft MPI
 
@@ -71,7 +78,7 @@ HPC Pack 是在 Azure 和 Windows Server 技术基础之上构建的 Microsoft �
 
 ## 计算密集型实例
 
-Azure 提供[不同的大小](/documentation/articles/virtual-machines-size-specs)，用于运行 Linux 和 Windows HPC 工作负荷。
+Azure 提供一[系列大小](/documentation/articles/virtual-machines-size-specs)，包括能够连接到后端 RDMA 网络的计算密集型 [A8 和 A9](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs) 实例，以运行 Linux 和 Windows HPC 工作负荷。
 
 * [设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-cluster-rdma)
 
@@ -79,7 +86,7 @@ Azure 提供[不同的大小](/documentation/articles/virtual-machines-size-spec
 
 ## 体系结构蓝图
 
-* [大规模计算 - 金融服务](http://go.microsoft.com/fwlink/?LinkId=536378) (PDF) 说明了如何使风险管理、报告和仿真在云具有可操作性，以及协调大规模计算与数据分析。
+* [HPC 和数据的业务流程使用 Azure Batch 和 Azure 数据工厂](http://go.microsoft.com/fwlink/?linkid=717686) (PDF) 
 
 ## 示例和演示
 
@@ -96,10 +103,34 @@ Azure 提供[不同的大小](/documentation/articles/virtual-machines-size-spec
 
 * [媒体服务](/documentation/services/media-services/)
 
+## 客户案例
+
+
+* [ANEO](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=4168) 
+
+* [d3View](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=22088)
+
+* [路德维格癌症研究所](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=5830)
+
+* [Microsoft Research](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=15634)
+
+* [Milliman](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=14967)
+
+* [Mitsubishi UFJ Securities International](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=26266)
+
+* [Schlumberger](http://azure.microsoft.com/blog/big-compute-for-large-engineering-simulations)
+
+* [Towers Watson](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18222)
+
+
+
+
+
 
 
 ## 后续步骤
 
 * 有关最新通告，请参阅 [Microsoft HPC 和批处理团队博客](http://blogs.technet.com/b/windowshpc/)与 [Azure 博客](http://azure.microsoft.com/blog/tag/hpc/)。
+* 另请参阅 [Batch 中的新增功能](/updates/?service=batch)或订阅 [RSS 源](/updates/feed/?service=batch)。
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0405_2016-->
