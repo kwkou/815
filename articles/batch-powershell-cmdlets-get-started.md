@@ -9,19 +9,18 @@
 
 <tags
    ms.service="batch"
-   ms.date="10/13/2015"
-   wacn.date="12/31/2015"/>
+   ms.date="01/21/2016"
+   wacn.date="04/12/2016"/>
 
-# Azure 批处理( Batch ) PowerShell cmdlet 入门
-本文将简要介绍可用于管理批处理( Batch )帐户的 Azure PowerShell cmdlet，并提供有关批处理( Batch )作业、任务的信息和其他详细信息。
+# Azure 批处理 PowerShell cmdlet 入门
+本文将简要介绍可用于管理 Batch 帐户和处理 Batch 资源（例如池、作业和任务）的 Azure PowerShell cmdlet。你可以通过 Batch cmdlet 执行许多相同的任务，而 Batch cmdlet 可通过 Batch API 和 Azure 门户来执行。本文基于 Azure PowerShell 1.0 或更高版本中的 cmdlet。
 
-有关详细的 cmdlet 语法，请键入`get-help <Cmdlet_name>`，或参阅 [Azure 批处理( Batch ) cmdlet 参考](https://msdn.microsoft.com/zh-cn/library/azure/mt125957.aspx)。
+如需 Batch cmdlet 的完整列表和详细的 cmdlet 语法，请参阅 [Azure Batch cmdlet 参考](https://msdn.microsoft.com/library/azure/mt125957.aspx)。
 
-[AZURE.INCLUDE [powershell-preview-include](../includes/powershell-preview-include.md)]
 
 ## 先决条件
 
-* **Azure PowerShell** - Azure 资源管理器模块随附了 Batch cmdlet。请参阅 [Azure 资源管理器 cmdlet](https://msdn.microsoft.com/library/azure/mt125356.aspx) 以了解先决条件、安装说明和基本用法。
+* **Azure PowerShell** - 有关 Azure PowerShell 的下载和安装说明，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。由于 Azure Batch cmdlet 随附在 Azure Resource Manager 模块中，因此需要运行 **Login-AzureRmAccount** cmdlet 才能连接到订阅。
 
 
 
@@ -39,7 +38,7 @@
 **New-AzureRmBatchAccount** 可在指定的资源组中创建新的批处理( Batch ) 帐户。如果你没有资源组，可以通过运行 [New-AzureRmResourceGroup](https://msdn.microsoft.com/library/azure/mt603739.aspx) cmdlet 并在 **Location** 参数中指定一个 Azure 区域（例如“美国中部”）来创建资源组。例如：
 
 ```
-New-AzureResourceGroup –Name MyBatchResourceGroup –location "China North"
+New-AzureRmResourceGroup –Name MyBatchResourceGroup –location "China North"
 ```
 
 然后，在资源组中创建新的批处理( Batch ) 帐户，此时还应该为 <*account\_name*> 指定帐户名，以及批处理 ( Batch ) 服务可用的位置。帐户创建可能需要几分钟才能完成。例如：
@@ -77,11 +76,9 @@ Remove-AzureRmBatchAccount -AccountName <account_name>
 
 出现提示时，确认你想要删除该帐户。帐户删除可能需要一段时间才能完成。
 
-## 作业、任务查询和其他详细信息
+## 创建 BatchAccountContext 对象
 
-使用 **Get-AzureBatchJob**、**Get-AzureBatchTask** 和 **Get-AzureBatchPool** 等 cmdlet 来查询批处理( Batch )帐户下创建的实体。
-
-若要使用这些 cmdlet，首先需要创建一个 AzureBatchContext 对象用于存储帐户名和密钥：
+若要在 Batch 帐户中创建和管理池、作业、任务和其他资源，需先创建 BatchAccountContext 对象来存储帐户名称和密钥：
 
 ```
 $context = Get-AzureRmBatchAccountKeys -AccountName <account_name>
@@ -92,9 +89,25 @@ $context = Get-AzureRmBatchAccountKeys -AccountName <account_name>
 > [AZURE.NOTE]默认情况下，帐户的主要密钥用于身份验证，但你可以通过更改 BatchAccountContext 对象的 **KeyInUse** 属性，显式选择要使用的密钥：`$context.KeyInUse = "Secondary"`
 
 
+
+## 创建和修改 Batch 资源
+使用 cmdlet（例如 **New-AzureBatchPool**、**New-AzureBatchJob** 和 **New-AzureBatchTask**）在 Batch 帐户下创建资源。可以使用相应的 **Get-** 和 **Set-** cmdlet 来更新现有资源的属性，以及使用 **Remove-** cmdlet 来删除 Batch 帐户下的资源。
+
+例如，以下 cmdlet 可创建新的 Batch 池，该池在配置后可以使用包含系列 3 最新操作系统版本 (Windows Server 2012) 映像的小型虚拟机，计算节点的目标数由自动缩放公式而定。在本示例中，公式为 $TargetDedicated=3，表示池中的计算节点数最多为 3。**BatchContext** 参数将先前定义的变量 $context 指定为 BatchAccountContext 对象。
+
+```
+New-AzureBatchPool -Id "MyAutoScalePool" -VirtualMachineSize "Small" -OSFamily "3" -TargetOSVersion "*" -AutoScaleFormula '$TargetDedicated=3;' -BatchContext $Context
+```
+
+
+## 查询池、作业、任务以及其他详细信息
+
+使用 cmdlet（例如 **Get-AzureBatchPool**、**Get-AzureBatchJob** 和 **Get-AzureBatchTask**）查询在 Batch 帐户下创建的实体。
+
+
 ### 查询数据
 
-例如，使用 **Get-AzureBatchPools** 可查找池。假设你已将 BatchAccountContext 对象存储在 *$context* 中，则默认情况下，此 cmdlet 将查询帐户下的所有池：
+例如，使用 **Get-AzureBatchPools** 可查找池。假设你已将 BatchAccountContext 对象存储在 $context 中，则默认情况下，此 cmdlet 将查询帐户下的所有池：
 
 ```
 Get-AzureBatchPool -BatchContext $context
@@ -108,7 +121,7 @@ $filter = "startswith(id,'myPool')"
 Get-AzureBatchPool -Filter $filter -BatchContext $context
 ```
 
-此方法的灵活性不如在本地管道中使用“Where-Object”。但是，该查询将直接发送到批处理( Batch )服务，因此所有筛选都在服务器端发生，这可以节省 Internet 带宽。
+此方法的灵活性不如在本地管道中使用“Where-Object”。但是，该查询将直接发送到批处理服务，因此所有筛选都在服务器端发生，这可以节省 Internet 带宽。
 
 ### 使用 Id 参数
 
@@ -120,13 +133,7 @@ Get-AzureBatchPool -Id "myPool" -BatchContext $context
 ```
 **Id** 参数仅支持全 ID 搜索，而不支持通配符或 OData 样式的筛选器。
 
-### 使用管道
 
-批处理 ( Batch ) cmdlet 可以利用 PowerShell 管道在 cmdlet 之间发送数据。这与指定参数的效果相同，但可以更方便地列出多个实体。例如，以下代码可查找你帐户下的所有任务：
-
-```
-Get-AzureBatchJob -BatchContext $context | Get-AzureBatchTask -BatchContext $context
-```
 
 ### 使用 MaxCount 参数
 
@@ -139,10 +146,18 @@ Get-AzureBatchTask -MaxCount 2500 -BatchContext $context
 
 若要去除上限，请 **MaxCount** 设置为 0 或更小。
 
+### 使用管道
+
+批处理 cmdlet 可以利用 PowerShell 管道在 cmdlet 之间发送数据。这与指定参数的效果相同，但可以更方便地列出多个实体。例如，以下代码可查找你帐户下的所有任务：
+
+```
+Get-AzureBatchJob -BatchContext $context | Get-AzureBatchTask -BatchContext $context
+```
+
 ## 相关主题
 * [下载 Azure PowerShell](http://go.microsoft.com/?linkid=9811175)
 * [如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 * [Azure 批处理 ( Batch ) cmdlet 参考](https://msdn.microsoft.com/library/azure/mt125957.aspx)
 * [有效地查询 Batch 服务](/documentation/articles/batch-efficient-list-queries)
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0405_2016-->
