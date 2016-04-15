@@ -8,11 +8,10 @@
    editor="tysonn"/>
 <tags
    ms.service="application-gateway"
-   ms.date="01/21/2016"
-   wacn.date="03/18/2016"/>
+   ms.date="02/18/2016"
+   wacn.date="04/05/2016"/>
 
-# 什么是应用程序网关？
-
+# 应用程序网关概述
 
 Azure 应用程序网关提供基于第 7 层负载平衡的 Azure 托管 HTTP 负载平衡解决方案。
 
@@ -22,8 +21,8 @@ Azure 应用程序网关提供基于第 7 层负载平衡的 Azure 托管 HTTP �
 
 - HTTP 负载平衡
 - 基于 Cookie 的会话相关性
-- 安全套接字层 (SSL) 卸载
-
+- [安全套接字层 (SSL) 卸载](/documentation/articles/application-gateway-ssl-arm)
+- [基于 URL 的内容路由](/documentation/articles/application-gateway-url-route-overview) 
 
 ## HTTP 第 7 层负载平衡
 
@@ -68,4 +67,7 @@ Azure 应用程序网关自动监视后端实例的运行状况。有关详细�
 
 了解应用程序网关以后，你可以[创建应用程序网关](/documentation/articles/application-gateway-create-gateway)，也可以[创建应用程序网关 SSL 卸载](/documentation/articles/application-gateway-ssl)，以便对 HTTPS 连接进行负载平衡。
 
-<!---HONumber=Mooncake_0307_2016-->
+若要详细了解如何使用基于 URL 的内容路由创建应用程序网关，请转到[使用基于 URL 的路由创建应用程序网关](/documentation/articles/application-gateway-create-url-route-arm-ps)。
+
+
+<!---HONumber=Mooncake_0328_2016-->

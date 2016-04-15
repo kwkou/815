@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="02/02/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="02/17/2016"
+	wacn.date="04/06/2016"/>
 
 
 # 排查、诊断和防止 SQL 数据库中的 SQL 连接错误和暂时性错误
@@ -100,35 +100,39 @@
 ### 通过断开网络连接进行测试
 
 
-可以测试重试逻辑的方法，就是在程序运行时断中客户端计算机与网络的连接。错误将是：
-- **SqlException.Number** = 11001 
-- 消息：“没有此类已知的主机”
+可以测试重试逻辑的方法，就是在程序运行时断中客户端计算机与网络的连接。将产生错误：
+
+- **SqlException.Number** = 11001
+- 消息：“不存在已知的这种主机”
 
 
 首次重试时，程序可以更正拼写错误，然后尝试连接。
 
 
-若要使此操作可行，请从网络中断开计算机的连接，再启动你的程序。然后，你的程序将识别导致它执行以下操作的运行时参数：
+若要使此操作可行，请从网络中断开计算机的连接，再启动你的程序。然后，你的程序将识别促使它执行以下操作的运行时参数：
+
 1. 暂时将 11001 添加到视为暂时性故障的错误列表。
 2. 像往常一样尝试首次连接。
 3. 在捕获该错误后，从列表中删除 11001。
-4. 显示一条消息，提示用户将计算机接入网络。
- - 使用 **Console.ReadLine** 方法或包含“确定”按钮的对话框暂停进一步的执行。将计算机接入网络后，用户按 Enter 键。
+4. 显示一条消息，告知用户要将计算机接入网络。
+ - 通过使用 **Console.ReadLine** 方法或具有“确定”按钮的对话框来暂停进一步的执行。将计算机接入网络后，用户按 Enter 键。
 5. 重新尝试连接，预期将会成功。
 
 
 ### 通过在连接时拼错数据库名称进行测试
 
 
-在首次连接尝试之前，程序可以故意拼错用户名。错误将是：
-- **SqlException.Number** = 18456 
-- 消息：“用户 'WRONG\_MyUserName' 登录失败。”
+在首次连接尝试之前，程序可以故意拼错用户名。将产生错误：
+
+- **SqlException.Number** = 18456
+- 消息：“用户 'WRONG\_MyUserName' 的登录失败。”
 
 
 首次重试时，程序可以更正拼写错误，然后尝试连接。
 
 
-若要使此操作可行，你的程序可以识别导致它执行以下操作的运行时参数：
+要在实践中进行此测试，你的程序需要能够识别促使它执行以下操作的运行时参数：
+
 1. 暂时将 18456 添加到视为暂时性故障的错误列表。
 2. 故意将“WRONG\_”添加到用户名。
 3. 在捕获该错误后，从列表中删除 18456。
@@ -161,9 +165,9 @@
 
 为 **SqlConnection** 对象生成[连接字符串](http://msdn.microsoft.com/zh-cn/library/System.Data.SqlClient.SqlConnection.connectionstring.aspx)时，应在以下参数之间协调值：
 
-- ConnectRetryCount &nbsp;&nbsp;*（默认值为 0。范围是从 0 到 255。）*
-- ConnectRetryInterval &nbsp;&nbsp;*（默认值为 1 秒。范围是从 1 到 60。）*
-- 连接超时值 &nbsp;&nbsp;*（默认值为 15 秒。范围是从 0 到 2147483647）*
+- ConnectRetryCount &nbsp;&nbsp;（默认值为 0。范围是从 0 到 255。）
+- ConnectRetryInterval &nbsp;&nbsp;（默认值为 1 秒。范围是从 1 到 60。）
+- 连接超时值 &nbsp;&nbsp;（默认值为 15 秒。范围是从 0 到 2147483647）
 
 
 具体而言，所选的值应使以下等式成立：
@@ -204,8 +208,7 @@
 [AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../includes/sql-database-include-ip-address-22-v12portal.md)]
 
 
-有关详细信息，请参阅
-[如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings)
+有关详细信息，请参阅[如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings)
 
 
 <a id="c-connection-ports" name="c-connection-ports"></a>
@@ -231,8 +234,7 @@
 如果你的客户端程序托管在 Azure 虚拟机 (VM) 上，你应该阅读：<br/>[用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)。
 
 
-有关配置端口和 IP 地址的背景信息，请参阅：
-[Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)
+有关配置端口和 IP 地址的背景信息，请参阅：[Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)
 
 
 <a id="d-connection-ado-net-4-5" name="d-connection-ado-net-4-5"></a>
@@ -244,14 +246,17 @@
 
 
 ADO.NET 4.6.1：
-- 添加了对 TDS 7.4 协议的支持。这包括 4.0 所不具备的连接增强功能。
+
+- 对于 Azure SQL 数据库，使用 **SqlConnection.Open** 方法打开连接可以获得更高的可靠性。此 **Open** 方法现在针对连接超时期间产生的特定错误，吸纳了尽最大努力的重试机制，用于应对暂时性故障。
 - 支持连接池。这包括有效验证提供给程序的连接对象是否正常运行的功能。
+
 
 
 如果你要从连接池使用连接对象，我们建议，如果程序未立即使用连接，应暂时关闭连接。重新打开连接比创建新连接的开销更低。
 
 
 如果使用的是 ADO.NET 4.0 或更旧版本，我们建议升级到最新的 ADO.NET。
+
 - 从 2015 年 11 月开始，你可以[下载 ADO.NET 4.6.1](http://blogs.msdn.com/b/dotnet/archive/2015/11/30/net-framework-4-6-1-is-now-available.aspx)。
 
 
@@ -263,9 +268,10 @@ ADO.NET 4.6.1：
 如果你的程序无法连接到 Azure SQL 数据库，有一个诊断选项可让你尝试使用一个实用程序来进行连接。理想的情况下，该实用程序将使用你的程序所用的同一个库进行连接。
 
 
-在任何 Windows 计算机上，都可以尝试使用这些实用程序：
-- SQL Server Management Studio (ssms.exe)，它使用 ADO.NET 进行连接。
-- sqlcmd.exe，它使用 [ODBC](http://msdn.microsoft.com/zh-cn/library/jj730308.aspx) 进行连接。
+你可以在任何 Windows 计算机上尝试以下实用程序：
+
+- SQL Server Management Studio (ssms.exe)，使用 ADO.NET 进行连接。
+- sqlcmd.exe，使用 [ODBC](http://msdn.microsoft.com/zh-cn/library/jj730308.aspx) 进行连接。
 
 
 完成连接后，测试一个简短的 SQL SELECT 查询是否可以正常工作。
@@ -279,8 +285,9 @@ ADO.NET 4.6.1：
 假设你怀疑连接尝试由于端口问题而失败。在你的计算机上，可以运行报告端口配置的实用程序。
 
 
-在 Linux 上，以下实用程序可能很有用：
-- `netstat -nap` 
+在 Linux 上以下实用程序可能会有所帮助：
+
+- `netstat -nap`
 - `nmap -sS -O 127.0.0.1`
  - （将示例值更改为你的 IP 地址。）
 
@@ -317,7 +324,8 @@ ADO.NET 4.6.1：
 
 
 Enterprise Library 6 (EntLib60) 提供了 .NET 托管类来帮助进行日志记录：
-- [5 - 像滚圆木一样容易：使用日志记录应用程序块](http://msdn.microsoft.com/zh-cn/library/dn440731.aspx)
+
+- [5 - 如同从圆木上掉下来一样简单：使用日志记录应用程序块](http://msdn.microsoft.com/zh-cn/library/dn440731.aspx)
 
 
 <a id="h-diagnostics-examine-logs-errors" name="h-diagnostics-examine-logs-errors"></a>
@@ -384,15 +392,19 @@ database_xml_deadlock_report  2015-10-16 20:28:01.0090000  NULL   NULL   NULL   
 ## Enterprise Library 6
 
 
-Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服务（包括 Azure SQL 数据库服务）的稳健客户端。首先，可以访问 [Enterprise Library 6 – 2013年 4 月](http://msdn.microsoft.com/zh-cn/library/dn169621%28v=pandp.60%29.aspx)，找到 EntLib60 可以提供帮助的每个领域的相关专题
+Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服务（包括 Azure SQL 数据库服务）的稳健客户端。要找到 EntLib60 可以提供帮助的各个领域的相关专题，可以首先访问：
+
+- [Enterprise Library 6 - 2013 年 4 月](http://msdn.microsoft.com/zh-cn/library/dn169621%28v=pandp.60%29.aspx)
 
 
-处理暂时性错误的重试逻辑是 EntLib60 可以帮助的一个领域：
-- [4 - 锲而不舍是所有成功的秘诀：使用暂时性故障处理应用程序块](http://msdn.microsoft.com/zh-cn/library/dn440719%28v=pandp.60%29.aspx)
+用于处理暂时性错误的重试逻辑是 EntLib60 可以提供帮助的一个领域：
+
+- [4 - 坚持不懈是一切成功的秘密：使用暂时性故障处理应用程序块](http://msdn.microsoft.com/zh-cn/library/dn440719%28v=pandp.60%29.aspx)
 
 
-以下位置提供了在其重试逻辑中使用 EntLib60 的简短 C# 代码示例：
-- [代码示例：Enterprise Library 6 中用于连接到 SQL 数据库的 C# 重试逻辑](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows)
+在其重试逻辑中使用 EntLib60 的简短 C# 代码示例可从以下链接中找到：
+
+- [代码示例：Enterprise Library 6 中的用 C# 编写的用于连接 SQL 数据库的重试逻辑](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows)
 
 
 > [AZURE.NOTE] EntLib60 的源代码可公开[下载](http://go.microsoft.com/fwlink/p/?LinkID=290898)。Microsoft 不打算对 EntLib 做进一步的功能或维护更新。
@@ -429,6 +441,8 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 以下是 EntLib60 相关信息的链接：
 
 - 免费[书籍下载：Microsoft Enterprise Library 版本 2 开发人员指南](http://www.microsoft.com/en-us/download/details.aspx?id=41145)
+
+- 最佳实践：[有关重试的一般性指南](/documentation/articles/best-practices-retry-general)深入探讨了重试逻辑。
 
 - [Enterprise Library - 暂时性故障处理应用程序块 6.0](http://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling) 的 NuGet 下载
 
@@ -529,6 +543,6 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 - [SQL Server 连接池 (ADO.NET)](http://msdn.microsoft.com/zh-cn/library/8xx3tyca.aspx)
 
 
-- [ *重试* 是 Apache 2.0 授权的通用重试库，它以 **Python** 编写，可以简化向几乎任何程序添加重试行为的任务。](https://pypi.python.org/pypi/retrying)
+- [重试是 Apache 2.0 授权的通用重试库，它以 **Python** 编写，可以简化向几乎任何程序添加重试行为的任务。](https://pypi.python.org/pypi/retrying)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0328_2016-->

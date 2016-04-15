@@ -10,8 +10,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="02/01/2016"
-   wacn.date="03/21/2016"/>
+   ms.date="03/09/2016"
+   wacn.date="04/06/2016"/>
 
 # 通过使用 Azure Active Directory 身份验证连接到 SQL 数据库
 
@@ -23,8 +23,6 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 - 客户可以使用外部 (AAD) 组管理数据库权限。
 - 它可以通过启用集成的 Windows 身份验证和 Azure Active Directory 支持的其他形式的身份验证来消除存储密码。
 - Azure Active Directory 身份验证使用包含的数据库用户以数据库级别对标识进行身份验证。
-
-> [AZURE.IMPORTANT] Azure Active Directory 身份验证是一个预览功能，并遵守许可协议（例如，企业协议、Azure 协议或 Microsoft 在线订阅协议）中的预览条款以及任何适用的[ Azure 预览版补充使用条款](/support/legal)。
 
 配置步骤包括配置和使用 Azure Active Directory 身份验证的以下过程。
 
@@ -96,10 +94,9 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 
 如果你已经拥有一个数据库，通过连接到该数据库（例如使用 SQL Server Management Studio）并执行 `SELECT @@VERSION;` 来验证其是否托管在 SQL 数据库 V12 中。SQL 数据库 V12 中数据库的预期输出至少是 **Microsoft SQL Azure (RTM) - 12.0**。
 
-如果你的数据库未在 SQL 数据库 V12 中托管，请参阅[计划并准备升级到 SQL 数据库 V12](/documentation/articles/sql-database-v12-plan-prepare-upgrade)，然后访问 Azure 经典门户将数据库迁移到 SQL 数据库 V12。
+如果你的数据库未在 SQL 数据库 V12 中托管，请参阅[计划并准备升级到 SQL 数据库 V12](/documentation/articles/sql-database-v12-plan-prepare-upgrade)，然后访问 Azure 管理门户将数据库迁移到 SQL 数据库 V12。
 
-或者，可以按照[创建第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)中列出的步骤，在 SQL 数据库 V12 中创建一个新数据库。
-**提示**：请先阅读下一步，然后再为新的数据库选择订阅。
+或者，可以按照[创建第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)中列出的步骤，在 SQL 数据库 V12 中创建一个新数据库。**提示**：请先阅读下一步，然后再为新的数据库选择订阅。
 
 ## 3\.可选：关联或更改当前与你的 Azure 订阅关联的活动目录
 
@@ -109,7 +106,7 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 
 以下过程提供分步说明，介绍如何更改给定订阅的关联目录。
 
-1. 使用 Azure 订阅管理员身份连接到你的 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 使用 Azure 订阅管理员身份连接到你的 [Azure 管理门户](https://manage.windowsazure.cn)。
 2. 在左侧标题中，选择“设置”。
 3. 在设置屏幕中显示你的订阅。如果未显示所需订阅，请单击顶部的“订阅”，下拉“按目录筛选”框，并选择包含你的订阅的目录，然后单击“应用”。
 
@@ -131,11 +128,13 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 
 每个 Azure SQL Server 开始时只使用单个服务器管理员帐户，它是整个 Azure SQL Server 的管理员。必须创建第二个服务器管理员，这是一个 Azure AD 帐户。此主体在 master 数据库中作为包含的数据库用户创建。作为管理员，服务器管理员帐户是每个用户数据库中 **db\_owner** 角色的成员，并且以 **dbo** 用户身份输入每个用户数据库。有关服务器管理员帐户的详细信息，请参阅[管理 Azure SQL 数据库中的数据库和登录名](/documentation/articles/sql-database-manage-logins)以及 [Azure SQL 数据库安全指导原则和限制](/documentation/articles/sql-database-security-guidelines)中的**登录名和用户**部分。
 
+将 Azure Active Directory 与异地复制结合使用时，Azure Active Directory 管理员必须配置主服务器和辅助服务器。如果服务器没有 Azure Active Directory 管理员，则 Azure Active Directory 登录名和用户会收到“无法连接到服务器”错误。
+
 > [AZURE.NOTE] 如果用户使用的不是基于 Azure AD 的帐户（包括 Azure SQL Server 管理员帐户），则无法创建基于 Azure AD 的用户，这是因为他们没有权限来使用 Azure AD 验证建议的数据库用户。
 
-### 使用 Azure 经典门户为 Azure SQL Server 设置 Azure Active Directory 管理员
+### 通过使用 Azure 门户为 Azure SQL Server 设置 Azure Active Directory 管理员
 
-1. 在 [Azure 经典门户](https://manage.windowsazure.cn)的右上角中，单击你的连接以下拉一个列表，其中列出了可能存在的 Active Directory。选择正确的 Active Directory 作为默认的 Azure AD。此步骤将与 Active Directory 关联的订阅链接到 Azure SQL 数据库，确保为 Azure AD 和 SQL Server 使用相同的订阅。
+1. 在 [Azure 门户](https://manage.windowsazure.cn)的右上角中，单击你的连接以下拉一个列表，列出可能存在的 Active Directory。选择正确的 Active Directory 作为默认的 Azure AD。此步骤将与 Active Directory 关联的订阅链接到 Azure SQL 数据库，确保为 Azure AD 和 SQL Server 使用相同的订阅。
 
 
 2. 在左侧标题中，选择“SQL 服务器”，选择你的“SQL 服务器”，然后在“SQL Server”边栏选项卡的顶部，单击“设置”。
@@ -192,7 +191,7 @@ Set-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23"
 –ServerName "demo_server" -DisplayName "DBA_Group" -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353f"
 ```
 
-> [AZURE.NOTE] 在 **DisplayName** 不唯一时，需要使用 Azure AD **ObjectID**。若要检索 **ObjectID** 和 **DisplayName** 的值，请使用 Azure 经典门户的 Active Directory 部分，并查看用户或组的属性。
+> [AZURE.NOTE] 在 **DisplayName** 不唯一时，需要使用 Azure AD **ObjectID**。若要检索 **ObjectID** 和 **DisplayName** 的值，请使用 Azure 管理门户的 Active Directory 部分，并查看用户或组的属性。
 
 下面的示例针对 Azure SQL Server 的当前 Azure AD 管理员返回相关信息：
 
@@ -265,9 +264,9 @@ Azure Active Directory 身份验证要求以包含数据库用户的身份创建
 	CREATE USER [bob@contoso.com] FROM EXTERNAL PROVIDER;
 	CREATE USER [alice@fabrikam.partner.onmschina.cn] FROM EXTERNAL PROVIDER;
 
-若要创建代表 Azure AD 联合域组的包含数据库用户：
+若要创建代表 Azure AD 或联合域组的包含数据库用户，请提供安全组的显示名称：
 
-	CREATE USER [Nurses] FROM EXTERNAL PROVIDER;
+	CREATE USER [ICU Nurses] FROM EXTERNAL PROVIDER;
 
 
 有关基于 Azure Active Directory 标识创建包含数据库用户的详细信息，请参阅 [CREATE USER (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms173463.aspx)。
@@ -328,4 +327,4 @@ Azure Active Directory 身份验证支持使用 Azure AD 标识连接到数据�
 [9]: ./media/sql-database-aad-authentication/9ad-settings.png
 [10]: ./media/sql-database-aad-authentication/10choose-admin.png
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0328_2016-->

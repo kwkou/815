@@ -1,6 +1,6 @@
 <properties
-	pageTitle="使用站点恢复在本地 Hyper-V 虚拟机与 Azure 之间复制（不使用 VMM）| Azure"
-	description="Azure Site Recovery 可以协调位于本地 Hyper-V 服务器中的虚拟机到 Azure 的复制、故障转移和恢复"
+	pageTitle="使用 Site Recovery 在本地 Hyper-V 虚拟机和 Azure（不使用 VMM）之间复制 | Azure"
+	description="本文介绍当计算机不在 VMM 云中托管时，如何使用 Azure Site Recovery 将 Hyper-V 虚拟机复制到 Azure。"
 	services="site-recovery"
 	documentationCenter=""
 	authors="rayne-wiselman"
@@ -9,29 +9,37 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="12/10/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="03/15/2016"
+	wacn.date="04/05/2016"/>
 
 
 # 使用 Azure Site Recovery 在本地 Hyper-V 虚拟机与 Azure 之间复制（不使用 VMM）
 
-Azure Site Recovery 可在许多部署方案中安排虚拟机和物理服务器的复制、故障转移与恢复，为业务连续性和灾难恢复 (BCDR) 策略发挥作用。[阅读更多](/documentation/articles/site-recovery-overview)有关站点恢复的信息。
+> [AZURE.SELECTOR]
+- [Azure 经典门户](/documentation/articles/site-recovery-hyper-v-site-to-azure)
+
+
+
+Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview)。
 
 ## 概述
 
-本文说明如何部署站点恢复，以便在运行 Windows Server 2012 R2 的 Hyper-V 主机未在 System Center Virtual Machine Manager (VMM) 云中受管理时，复制 Hyper-V 虚拟机。
+本文说明如何部署 Site Recovery，以便当 Hyper-V 主机未在 System Center Virtual Machine Manager (VMM) 云中托管时，复制 Hyper-V 虚拟机。
 
-本文汇总了部署先决条件，并帮助你配置复制设置，以及为虚拟机启用保护。本文最后指导你测试故障转移，以确保一切都按预期进行。如果你遇到问题，则可以将其发布在 [Azure Recovery Services 论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=hypervrecovmgr)上。
+本文汇总了部署先决条件，并帮助你配置复制设置，以及为虚拟机启用保护。本文最后指导你测试故障转移，以确保一切都按预期进行。
+
+
+请将任何评论或问题发布到本文底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)。
 
 
 ## 开始之前
 
-在开始之前，请确保做好了一切准备工作。
+开始之前，请确保做好了一切准备工作。
 
 ### Azure 先决条件
 
-- 需要一个 [Azure](/) 帐户。你可以从[试用版](/pricing/1rmb-trial/)开始。
-- 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。[了解有关 Azure 存储空间的详细信息](/documentation/articles/storage-introduction)。
+- 需要一个 [Azure](https://azure.cn/) 帐户。你可以从[试用版](/pricing/1rmb-trial/)开始。
+- 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。该帐户应位于 Azure Site Recovery 保管库所在的同一区域，并与同一订阅相关联。[了解有关 Azure 存储空间的详细信息](/documentation/articles/storage-introduction)。
 - 你需要一个 Azure 虚拟网络，以便在从主站点故障转移时，Azure 虚拟机可以连接到网络。
 
 ### Hyper-V 先决条件
@@ -56,14 +64,15 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机和物理服务器
 	- *.accesscontrol.chinacloudapi.cn
 	- *.backup.windowsazure.cn
 	- *.blob.core.chinacloudapi.cn
-	- *.store.core.chinacloudapi.cn 
+	- *.store.core.chinacloudapi.cn
 - 若要使用自定义代理，请在安装提供程序之前设置代理服务器。在设置提供程序期间，你需要指定代理服务器地址和端口，以及用于访问的凭据。请注意，不支持基于 HTTPS 的代理。
+
 
 此图显示了站点恢复用来完成业务流程和复制的不同通信通道和端口
 
 ![B2A 拓扑](./media/site-recovery-hyper-v-site-to-azure/B2ATopology.png)
 
- 
+
 ## 步骤 1：创建保管库
 
 1. 登录到[管理门户](https://manage.windowsazure.cn)。
@@ -76,7 +85,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机和物理服务器
 
 4. 在“名称”中，输入一个友好名称以标识此保管库。
 
-5. 在“区域”中，为保管库选择地理区域。若要查看受支持的区域，请参阅 [Azure Site Recovery 价格详细信息](/home/features/site-recovery/#price)中的“地域可用性”。
+5. 在“区域”中，为保管库选择地理区域。若要查看受支持的区域，请参阅 Azure Site Recovery 价格详细信息中的“地域可用性”[](/home/features/site-recovery/#price)。
 
 6. 单击“创建保管库”。
 
@@ -161,15 +170,15 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机和物理服务器
 
 4. 运行以下命令以完成注册：
 
-    	CD C:\Program Files\Azure Site Recovery Provider
-    	C:\Program Files\Azure Site Recovery Provider> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file> /EncryptionEnabled <full file name to save the encryption certificate>         
+    	CD C:\Program Files\Microsoft Azure Site Recovery Provider
+    	C:\Program Files\Microsoft Azure Site Recovery Provider> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file> /EncryptionEnabled <full file name to save the encryption certificate>         
 
 其中的参数包括：
 
 - **/Credentials**：指定下载的注册密钥所在的位置。
-- **/FriendlyName**：指定一个用于标识 Hyper-V 主机服务器的名称。此名称将显示在门户中
+- **/FriendlyName**：指定用于标识 Hyper-V 主机服务器的名称。此名称将显示在门户中
 - **/EncryptionEnabled**：可选。指定是否要在 Azure 中加密副本虚拟机（静态加密）。
-- **/proxyAddress**、**/proxyport**、**/proxyUsername**、**/proxyPassword**：可选。如果想要使用自定义代理，或现有的代理需要身份验证，请指定代理参数。
+- **/proxyAddress**；**/proxyport**；**/proxyUsername**；**/proxyPassword**：可选。如果想要使用自定义代理，或现有的代理需要身份验证，请指定代理参数。
 
 
 ## 步骤 4：创建 Azure 存储帐户 
@@ -223,7 +232,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机和物理服务器
 		- **网络适配器**：网络适配器数目根据你为目标虚拟机指定的大小来确定。查看[虚拟机大小规格](/documentation/articles/virtual-machines-size-specs#size-tables)，了解虚拟机大小所支持的 NIC 数目。
 
 
-			在修改虚拟机的大小并保存设置后，下一次当你打开“设置”页时，网络适配器的数量将会改变。目标虚拟机的网络适配器数目是源虚拟机上网络适配器的最小数目和所选虚拟机大小支持的网络适配器的最大数目。解释如下：
+			修改虚拟机的大小并保存设置后，下一次打开“配置”页时，网络适配器的数量将会改变。目标虚拟机的网络适配器数目是源虚拟机上网络适配器的最小数目和所选虚拟机大小支持的网络适配器的最大数目。解释如下：
 
 
 			- 如果源计算机上的网络适配器数小于或等于目标计算机大小允许的适配器数，则目标的适配器数将与源相同。
@@ -231,7 +240,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机和物理服务器
 			- 例如，如果源计算机有两个网络适配器，而目标计算机大小支持四个，则目标计算机将有两个适配器。如果源计算机有两个适配器，但支持的目标大小只支持一个，则目标计算机只有一个适配器。 	
 		- **Azure 网络**：指定虚拟机应故障转移到的网络。如果虚拟机有多个网络适配器，所有适配器应连接到同一个 Azure 网络。
 		- **子网**：对于虚拟机上的每个网络适配器，请在 Azure 网络中选择故障转移后计算机应连接到的子网。
-		- **目标 IP 地址**：如果源虚拟机的网络适配器配置为使用静态 IP 地址，则你可以指定目标虚拟机的 IP 地址，以确保计算机在故障转移后具有相同的 IP 地址。如果不指定 IP 地址，将在故障转移时分配任何可用的地址。如果指定了正在使用的地址，故障转移将会失败。
+		- **目标 IP 地址**：如果源虚拟机的网络适配器配置为使用静态 IP 地址，那么你可以指定目标虚拟机的 IP 地址，以确保计算机在故障转移后具有相同的 IP 地址。如果不指定 IP 地址，将在故障转移时分配任何可用的地址。如果指定了正在使用的地址，故障转移将会失败。
 
 		![配置虚拟机属性](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_VMMultipleNic.png)
 
@@ -240,21 +249,21 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机和物理服务器
 
 ## 步骤 7：创建恢复计划
 
-为了对部署进行测试，你可以针对单个虚拟机或单个恢复计划（其中包含一个或多个虚拟机）运行测试性故障转移。[详细了解](/documentation/articles/site-recovery-create-recovery-plans)如何创建恢复计划。
+为了对部署进行测试，你可以针对单个虚拟机或单个恢复计划（其中包含一个或多个虚拟机）运行测试性故障转移。[了解](/documentation/articles/site-recovery-create-recovery-plans)有关创建恢复计划的详细信息。
 
 ## 步骤 8：测试部署
 
 可通过两种方式运行到 Azure 的测试故障转移。
 
-- **没有 Azure 网络的测试故障转移** — 此类型的测试故障转移检查虚拟机是否可以正常在 Azure 中运行。在故障转移后，虚拟机不会连接到任何 Azure 网络。
-- **具有 Azure 网络的测试故障转移** — 此类型的故障转移检查整个复制环境是否可以按预期运行，并且在故障转移后，虚拟机将连接到指定的目标 Azure 网络。请注意，对于测试故障转移，将根据副本虚拟机的子网确定测试虚拟机的子网。这不同于常规复制，在常规复制中，副本虚拟机的子网是根据源虚拟机的子网确定的。
+- **没有 Azure 网络的测试故障转移** — 此类型的测试故障转移检查虚拟机是否可以在 Azure 中正常运行。在故障转移后，虚拟机不会连接到任何 Azure 网络。
+- **具有 Azure 网络的测试故障转移** — 此类型的故障转移检查整个复制环境是否可以按预期运行，并且在故障转移后，虚拟机是否连接到指定的目标 Azure 网络。请注意，对于测试故障转移，将根据副本虚拟机的子网确定测试虚拟机的子网。这不同于常规复制，在常规复制中，副本虚拟机的子网是根据源虚拟机的子网确定的。
 
 如果你想要运行测试故障转移而未指定 Azure 网络，则不需要做任何准备。
 
 若要运行具有目标 Azure 网络的测试性故障转移，你将需要创建一个与你的 Azure 生产网络相隔离的新 Azure 网络（你在 Azure 中新建网络时的默认行为）。阅读[运行测试故障转移](/documentation/articles/site-recovery-failover#run-a-test-failover)以获取更多详细信息。
 
 
-若要完全测试复制和网络部署，你需要设置基础结构，以便复制的虚拟机按预期工作。一种做法是将虚拟机设置为使用 DNS 的域控制器，并使用站点恢复将其复制到 Azure，以通过运行测试故障转移在测试网络中创建该域控制器。[阅读更多](/documentation/articles/site-recovery-active-directory#considerations-for-test-failover)有关 Active Directory 测试故障转移的注意事项。
+若要完全测试复制和网络部署，你需要设置基础结构，以便复制的虚拟机按预期工作。一种做法是将虚拟机设置为使用 DNS 的域控制器，并使用站点恢复将其复制到 Azure，以通过运行测试故障转移在测试网络中创建该域控制器。[阅读](/documentation/articles/site-recovery-active-directory#considerations-for-test-failover)有关 Active Directory 测试故障转移注意事项的详细信息。
 
 按如下所述运行测试故障转移：
 
@@ -286,4 +295,4 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机和物理服务器
 
 设置并运行部署以后，请[详细了解](/documentation/articles/site-recovery-failover)故障转移。
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0328_2016-->

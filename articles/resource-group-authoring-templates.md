@@ -382,7 +382,7 @@ resources 节包含要部署的资源数组。在每个资源内，还可以定�
 你可能需要使用不同资源组中的资源。使用跨多个资源组共享的存储帐户或虚拟网络时，这很常见。有关详细信息，请参阅 [resourceId 函数](/documentation/articles/resource-group-template-functions/#resourceid)。
 
 ## 完整的模板
-以下模板将部署一个 Web 应用，并使用 .zip 文件中的代码设置该应用程序。
+以下模板将部署一个 Web 应用程序，并使用 .zip 文件中的代码设置该应用程序。
 
     {
        "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",

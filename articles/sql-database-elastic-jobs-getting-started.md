@@ -8,8 +8,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/01/2015"
-	wacn.date="01/29/2016" />
+	ms.date="02/23/2016"
+	wacn.date="04/06/2016" />
 
 # 弹性数据库作业入门
 
@@ -39,7 +39,7 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
 
 我们通常会使用 **New-AzureSqlJobTarget** cmdlet 来创建分片映射目标。必须将分片映射管理器数据库设置为数据库目标，然后将特定分片映射指定为目标。而我们的做法是枚举服务器中的所有数据库，并将这些数据库添加到 master 数据库除外的其他新自定义集合。
 
-##创建自定义集合并将服务器中的所有数据库添加到 master 除外的自定义集合目标。
+## 创建自定义集合并将服务器中的所有数据库添加到 master 除外的自定义集合目标。
 
 
 	$customCollectionName = "dbs_in_server"
@@ -425,7 +425,7 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 存储在不同分片中、来自“客户”表的所有行将填入 Excel 工作表。
 
 ## 后续步骤
-现在，你可以使用 Excel 的强大数据功能。你可以使用包含服务器名称、数据库名称和凭据的连接字符串，将 BI 和数据集成工具连接到弹性查询数据库。请确保支持将 SQL Server 用作工具的数据源。你可以引用弹性查询数据库和外部表，就如同使用工具连接的任何其他 SQL Server 数据库和 SQL Server 表一样。
+现在，你可以使用 Excel 的数据功能。使用包含服务器名称、数据库名称和凭据的连接字符串，将 BI 和数据集成工具连接到弹性查询数据库。请确保支持将 SQL Server 用作工具的数据源。参考弹性查询数据库和外部表，就如同将要与你的工具连接的任何其他 SQL Server 数据库和 SQL Server 表。
 
 ### 成本
 使用弹性数据库查询功能不会产生额外的费用。但是，目前此功能只能在用作终结点的高级数据库上使用，但分片可以是任何服务层。
@@ -443,4 +443,4 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0328_2016-->

@@ -34,7 +34,7 @@
 - **添加**模板中指定的、但不在资源组中的资源 
 - **不会重新预配**资源组中存在的、与模板中定义的条件相同的资源
  
-可以通过 **Mode** 属性指定部署的类型。
+你可以通过 **Mode** 属性指定部署的类型，如以下 PowerShell 和 REST API 示例中所示。
 
 ## 使用 PowerShell 进行部署
 
@@ -70,7 +70,7 @@
                     *
         ResourceId        : /subscriptions/######/resourceGroups/ExampleResourceGroup
 
-5. 若要为资源组创建新部署，请运行 **New-AzureRmResourceGroupDeployment** 命令并提供所需的参数。参数包括部署的名称、资源组的名称、所创建模板的路径，以及方案所需的任何其他参数。
+5. 若要为资源组创建新部署，请运行 **New-AzureRmResourceGroupDeployment** 命令并提供所需的参数。参数包括部署的名称、资源组的名称、所创建模板的路径，以及方案所需的任何其他参数。未指定 **Mode** 参数，意味着将使用默认值 **Incremental**。
    
      可以使用以下选项提供参数值：
    
@@ -96,9 +96,9 @@
           Mode              : Incremental
           ...
 
-     若要运行完整部署，请将 **Mode** 设置为 **Complete**。
+     若要运行完整部署，请将 **Mode** 设置为 **Complete**。请注意，系统会要求你确认使用 Complete 模式，这可能需要删除资源。
 
-          PS C:\> New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateFile <PathOrLinkToTemplate> -Mode Complete
+          PS C:\> New-AzureRmResourceGroupDeployment -Name ExampleDeployment -Mode Complete -ResourceGroupName ExampleResourceGroup -TemplateFile <PathOrLinkToTemplate> 
           Confirm
           Are you sure you want to use the complete deployment mode? Resources in the resource group 'ExampleResourceGroup' which are not
           included in the template will be deleted.
@@ -248,6 +248,9 @@
 参数文件的大小不能超过 64 KB。
 
 ## 后续步骤
+- 有关通过 .NET 客户端库部署资源的示例，请参阅[使用 .NET 库和模板部署资源](/documentation/articles/arm-template-deployment)
+- 有关部署应用程序的详细示例，请参阅[按可预见的方式在 Azure 中预配和部署微服务](app-service-web/app-service-deploy-complex-application-predictably.md)
+- 有关将解决方案部署到不同环境的指南，请参阅 [Azure 中的开发和测试环境](/documentation/articles/solution-dev-test-environments-preview-portal)。
 - 若要了解 Azure 资源管理器模板的节，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)。
 - 有关可在 Azure 资源管理器模板中使用的函数列表，请参阅[模板函数](/documentation/articles/resource-group-template-functions)。
 

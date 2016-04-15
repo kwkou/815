@@ -1,5 +1,5 @@
-<properties
-	pageTitle="将 Azure 存储用于 Jenkins 持续集成解决方案 | Azure"
+<properties 
+	pageTitle="将 Azure 存储用于 Jenkins 持续集成解决方案 | Azure" 
 	description="本教程演示如何使用 Azure Blob 服务作为 Jenkins 持续集成解决方案创建的生成项目的存储库。" 
 	services="storage" 
 	documentationCenter="java" 
@@ -67,7 +67,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 1. 在 Jenkins 仪表板中，单击“管理 Jenkins”。
 2. 在“管理 Jenkins”页中，单击“管理插件”。
 3. 单击“可用”选项卡。
-4. 在“项目上载程序”部分中，选中“ Azure 存储插件”。
+4. 在“项目上载程序”部分中，选中“Azure 存储插件”。
 5. 单击“安装而不重新启动”或“立即下载并在重新启动后安装”。
 6. 重新启动 Jenkins。
 

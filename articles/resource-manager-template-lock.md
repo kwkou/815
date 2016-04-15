@@ -1,6 +1,6 @@
 <properties
    pageTitle="资源锁的资源管理器模板 | Azure"
-   description="显示资源锁的资源管理器架构。"
+   description="介绍用于通过模板部署资源锁的资源管理器架构。"
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
@@ -12,7 +12,7 @@
    ms.date="01/21/2016"
    wacn.date="03/21/2016"/>
 
-# 资源锁 - 模板架构
+# 资源锁模板架构
 
 在资源及其子资源上创建新锁。
 
@@ -58,7 +58,7 @@
 
 将此资源添加到你的模板可防止对资源执行指定的操作。该锁将应用于所有用户和组。通常情况下，你只在有限的持续时间内应用锁，例如，当某个进程正在运行时，你想要确保组织中的某人不会无意中修改或删除某个资源。
 
-若要创建或删除管理锁，你必须有权访问 **Microsoft.Authorization/*** 或 **Microsoft.Authorization/locks/*** 操作。在内置角色中，只有**所有者**和**用户访问管理员**有权执行这些操作。有关基于角色的访问控制的信息，请参阅[管理对资源的访问权限](/documentation/articles/resource-group-rbac)。
+若要创建或删除管理锁，你必须有权访问 **Microsoft.Authorization/*** 或 **Microsoft.Authorization/locks/*** 操作。在内置角色中，只有**所有者**和**用户访问管理员**有权执行这些操作。有关基于角色的访问控制的信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
 
 锁将应用于指定的资源和任何子资源。
 

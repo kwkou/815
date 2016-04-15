@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <properties 
    pageTitle="Azure 存储空间示例 | Azure"
    description="查看、下载和试用 Azure 存储空间示例。发现使用 .NET、Java、Node.js 和 c + +的存储客户端库的 blob、队列、表和文件的入门示例。"

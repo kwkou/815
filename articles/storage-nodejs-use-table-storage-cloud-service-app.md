@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage" 
 	ms.date="01/09/2016" 
-	wacn.date="02/26/2016"/>
+	wacn.date="03/24/2016"/>
 
 # 使用存储构建 Node.js Web 应用程序
 

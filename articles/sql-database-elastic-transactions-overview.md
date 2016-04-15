@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Azure SQL 数据库的弹性数据库事务概述（预览版）"
-   description="Azure SQL 数据库的弹性数据库事务概述（预览版）"
+   pageTitle="Azure SQL 数据库的弹性数据库事务概述"
+   description="Azure SQL 数据库的弹性数据库事务概述"
    services="sql-database"
    documentationCenter=""
    authors="torsteng"
@@ -9,10 +9,10 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="02/01/2016"
-   wacn.date="03/29/2016"/>
+   ms.date="02/23/2016"
+   wacn.date="04/06/2016"/>
 
-# Azure SQL 数据库的弹性数据库事务概述（预览版）
+# Azure SQL 数据库的弹性数据库事务概述
 
 Azure SQL 数据库 (SQL DB) 的弹性数据库事务可让你在 SQL DB 中跨多个数据库运行事务。SQL DB 的弹性数据库事务适用于使用 ADO .NET 的 .NET 应用程序，并且与你熟悉的使用 [System.Transaction](https://msdn.microsoft.com/zh-cn/library/system.transactions.aspx) 类的编程体验相集成。若要获取该库，请参阅 [.NET Framework 4.6.1（Web 安装程序）](https://www.microsoft.com/zh-cn/download/details.aspx?id=49981)。
 
@@ -26,8 +26,7 @@ SQL DB 的弹性数据库事务可让应用程序对多个不同 SQL 数据库�
 
 * Azure 中的多数据库应用程序：在此方案中，数据垂直分区到 SQL DB 中的多个数据库，使得不同种类的数据位于不同的数据库。某些操作需要更改两个以上的数据库中保存的数据。应用程序使用弹性数据库事务来协调数据库之间的更改并确保原子性。
 
-* Azure 中的分区数据库应用程序：在此方案中，数据层使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)或自我分片，将数据水平分区到 SQL DB 中的多个数据库。常见的用例之一是在分片的多租户应用程序中，当更改涉及到多个租户时，需要执行原子更改。例如，从一个租户转移到另一个租户，而两者位于不同的数据库。第二种方案是以细致分片来适应大租户的容量需求，这又通常表示某些原子操作需要扩展到用于同一租户的多个数据库。第三种方案是以原子更新来引用数据库之间复制的数据。现在，可以使用预览版跨多个数据库协调这几个方面原子性事务操作。
-弹性数据库事务使用两阶段提交，确保跨数据库的事务原子性。如果事务涉及的数据库少于 100 个，则适合并入单个事务内。这些限制不不是强制施加的，但是，如果超出这些限制时，弹性数据库事务的性能和成功率很有可能会下降。
+* Azure 中的分区数据库应用程序：在此方案中，数据层使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)或自我分片，将数据水平分区到 SQL DB 中的多个数据库。常见的用例之一是在分片的多租户应用程序中，当更改涉及到多个租户时，需要执行原子更改。例如，从一个租户转移到另一个租户，而两者位于不同的数据库。第二种方案是以细致分片来适应大租户的容量需求，这又通常表示某些原子操作需要扩展到用于同一租户的多个数据库。第三种方案是以原子更新来引用数据库之间复制的数据。现在，可以使用预览版跨多个数据库协调这几个方面原子性事务操作。弹性数据库事务使用两阶段提交，确保跨数据库的事务原子性。如果事务涉及的数据库少于 100 个，则适合并入单个事务内。这些限制不不是强制施加的，但是，如果超出这些限制时，弹性数据库事务的性能和成功率很有可能会下降。
 
 
 ## 安装和迁移
@@ -67,8 +66,7 @@ SQL DB 的弹性数据库事务可让应用程序对多个不同 SQL 数据库�
 
 ### 分片数据库应用程序
  
-SQL DB 的弹性数据库事务还支持协调分布式事务，这需要使用弹性数据库客户端库的 OpenConnectionForKey 方法，打开扩大的数据层的连接。假设你需要保证事务一致性，使更改跨多个不同的分片键值。与托管不同分片键值的分片的连接由 OpenConnectionForKey 来中转。在一般情况下，可以连接到不同的分片，以确保事务保证需要分布式事务。
-以下代码示例演示了此方法。假设使用一个称为 shardmap 的变量代表来自弹性数据库客户端库的分片映射：
+SQL DB 的弹性数据库事务还支持协调分布式事务，这需要使用弹性数据库客户端库的 OpenConnectionForKey 方法，打开扩大的数据层的连接。假设你需要保证事务一致性，使更改跨多个不同的分片键值。与托管不同分片键值的分片的连接由 OpenConnectionForKey 来中转。在一般情况下，可以连接到不同的分片，以确保事务保证需要分布式事务。以下代码示例演示了此方法。假设使用一个称为 shardmap 的变量代表来自弹性数据库客户端库的分片映射：
 
 	using (var scope = new TransactionScope())
 	{
@@ -92,11 +90,13 @@ SQL DB 的弹性数据库事务还支持协调分布式事务，这需要使用�
 	}
 
 
-## Azure 辅助角色的设置
+## 适用于 Azure 云服务的 .NET 安装
 
-可以自动将弹性数据库事务所需的 .NET 版本和库安装并部署到 Azure（到云服务中的来宾 OS）。对于 Azure 辅助角色，请使用启动任务。[在云服务角色上安装 .NET](/documentation/articles/cloud-services-dotnet-install-dotnet) 中说明了概念和步骤。
+Azure 为托管 .NET 应用程序提供了多个产品。不同产品的比较可见于[Azure App Service、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm)。如果产品的来宾 OS 版本低于弹性事务所需的 .NET 4.6.1，你需要将来宾 OS 升级到 4.6.1。
 
-请注意，与 .NET 4.6 的安装程序相比，.NET 4.6.1 的安装程序在 Azure 云服务上执行引导过程时，需要更多的临时存储。为了确保安装成功，需要在 ServiceDefinition.csdef 文件中启动任务的 LocalResources 部分和环境设置中，增加 Azure 云服务的临时存储，如以下示例所示：
+对于 Azure App Service，当前不支持升级到来宾 OS。对于 Azure 虚拟机，只需要登录到 VM 并运行最新的 .NET framework 安装程序即可。对于 Azure 云服务，你需要将更高版本的 .NET 安装包括到部署的启动任务中。[在云服务角色上安装 .NET](/documentation/articles/cloud-services-dotnet-install-dotnet) 中说明了概念和步骤。
+
+请注意，与 .NET 4.6 的安装程序相比，.NET 4.6.1 的安装程序在 Azure 云服务上执行引导过程时，可能需要更多的临时存储空间。为了确保安装成功，需要在 ServiceDefinition.csdef 文件中启动任务的 LocalResources 部分和环境设置中，增加 Azure 云服务的临时存储，如以下示例所示：
 
 	<LocalResources>
 	...
@@ -116,6 +116,17 @@ SQL DB 的弹性数据库事务还支持协调分布式事务，这需要使用�
 			</Environment>
 		</Task>
 	</Startup>
+	
+## 跨多个服务器的事务
+
+Azure SQL 数据库中支持跨不同逻辑服务器的弹性数据库事务。当事务跨越逻辑服务器边界时，参与的服务器将首先需要进入相互通信关系。一旦建立了通信关系，任意两个服务器中的任何数据库都可以与另一服务器的数据库参与弹性事务。当事务跨越两个以上的逻辑服务器时，任意逻辑服务器对之间的通信关系需要准备就绪。
+
+使用以下 PowerShell cmdlet 来管理弹性数据库事务的跨服务器通信关系：
+
+* **New-AzureRmSqlServerCommunicationLink**：使用此 cmdlet 在 Azure SQL DB 中的两个逻辑服务器之间创建新的通信关系。这种通信关系是对称的，这意味着这两台服务器可以使用另一台服务器启动事务。
+* **Get AzureRmSqlServerCommunicationLink**：使用此 cmdlet 来检索现有通信关系及其属性。
+* **Get AzureRmSqlServerCommunicationLink**：使用此 cmdlet 来删除现有通信关系。 
+
 
 ## 监视事务状态
 
@@ -134,7 +145,6 @@ SQL DB 中的弹性数据库事务当前存在以下限制：
 * 仅支持 SQL DB 中跨数据库的事务。其他 [X/Open XA](https://zh.wikipedia.org/wiki/X/Open_XA) 资源提供程序和除 SQL DB 以外的数据库无法参与弹性数据库事务。这意味着，弹性数据库事务无法扩展到本地 SQL Server 和 Azure SQL 数据库。对于本地的分布式事务，请继续使用 MSDTC。 
 * 仅支持来自 .NET 应用程序的客户端协调事务。目前已规划 T-SQL 的服务器端支持，例如 BEGIN DISTRIBUTED TRANSACTION，但尚未推出。 
 * 仅支持 Azure SQL DB V12 上的数据库。
-* 仅支持属于 SQL DB 中同一逻辑服务器的数据库。
 
 ## 了解详细信息
 
@@ -143,4 +153,4 @@ SQL DB 中的弹性数据库事务当前存在以下限制：
 <!--Image references-->
 [1]: ./media/sql-database-elastic-transactions-overview/distributed-transactions.png
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0328_2016-->

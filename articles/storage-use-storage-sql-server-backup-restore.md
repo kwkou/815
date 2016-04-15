@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/20/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/16/2016"
+	wacn.date="03/24/2016"/>
 
 
 

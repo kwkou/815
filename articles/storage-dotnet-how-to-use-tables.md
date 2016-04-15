@@ -1,5 +1,5 @@
 <properties
-pageTitle="通过 .NET 开始使用 Azure 表存储 | Azure"
+	pageTitle="通过 .NET 开始使用 Azure 表存储 | Azure"
 	description="使用 Azure 表存储和 Microsoft 的 NoSQL 数据存储将非结构化的数据存储在云中。立即开始使用简单的表存储操作，包括创建和删除表和插入、更新、删除和查询数据。"
 	services="storage"
 	documentationCenter=".net"

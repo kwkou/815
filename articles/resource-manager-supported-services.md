@@ -1,6 +1,6 @@
 <properties
-   pageTitle="资源管理器支持的服务和支持的区域 | Azure"
-   description="介绍支持可托管资源的资源管理器和区域的资源提供程序。"
+   pageTitle="资源管理器支持的服务、区域、架构和版本 | Azure"
+   description="介绍支持资源管理器的资源提供程序及其架构和可用 API 版本，以及可托管资源的区域。"
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
@@ -12,7 +12,7 @@
    ms.date="01/23/2016"
    wacn.date="03/21/2016"/>
 
-# 服务、区域和 API 版本对资源管理器的支持
+# 资源管理器提供程序、区域、 API 版本和架构
 
 Azure 资源管理器为你提供了一种新的方式来部署和管理构成应用程序的服务。大多数（但并非所有）服务都支持资源管理器，有些服务仅部分支持资源管理器。Microsoft 将为每个服务启用资源管理器，这对于未来的解决方案而言很重要，但在全面提供支持之前，你需要了解每个服务的当前支持状态。本主题提供支持 Azure 资源管理器的资源提供程序列表。
 
@@ -120,6 +120,46 @@ Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角
 | 资源 | 是 | [链接的资源](https://msdn.microsoft.com/zh-cn/library/azure/mt238499.aspx) | [资源链接](resource-manager-template-links.md) | [Microsoft.Resources](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Resources%22&type=Code) |
 
 
+## 资源提供程序和类型
+
+部署资源时，经常需要检索有关资源提供程序和类型的信息。可以通过 REST API、Azure PowerShell 或 Azure CLI 检索此信息。
+
+### REST API
+
+若要获取所有可用的资源提供程序，包括其类型、位置、API 版本和注册状态，请使用[列出所有资源提供程序](https://msdn.microsoft.com/zh-cn/library/azure/dn790524.aspx)操作。
+
+### PowerShell
+
+以下示例演示如何获取所有可用的资源提供程序。
+
+    PS C:\> Get-AzureRmResourceProvider -ListAvailable
+    
+输出结果将会类似于：
+
+    ProviderNamespace               RegistrationState ResourceTypes
+    -----------------               ----------------- -------------
+    Microsoft.ApiManagement         Unregistered      {service, validateServiceName, checkServiceNameAvailability}
+    Microsoft.AppService            Registered        {apiapps, appIdentities, gateways, deploymenttemplates...}
+    ...
+
+以下示例演示如何获取特定资源提供程序的资源类型。
+
+    PS C:\> (Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes
+    
+输出结果将会类似于：
+
+    ResourceTypeName                Locations                                         ApiVersions
+    ----------------                ---------                                         ------
+    sites/extensions                {China East, China North} {20...
+    sites/slots/extensions          {China East, China North} {20...
+    ...
+    
+### Azure CLI
+
+可以使用以下命令将资源提供程序的信息保存到文件。
+
+    azure provider show Microsoft.Web -vv --json > c:\temp.json
+
 ## 支持的区域
 
 部署资源时，通常需要指定资源的区域。所有区域都支持资源管理器，但部署的资源可能无法在所有区域中受到支持。此外，订阅上可能有一些限制，以防止使用某些支持该资源的区域。这些限制可能与所在国家/地区的税务问题有关，或者与由订阅管理员所放置，只能使用特定区域的策略结果有关。
@@ -140,10 +180,6 @@ Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角
 
     China East
     China North
-
-对于 Azure PowerShell 0.9.8，请使用以下命令：
-
-    PS C:\> ((Get-AzureProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).Locations
 
 ### Azure CLI
 
@@ -172,7 +208,7 @@ Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角
 
 ### PowerShell
 
-以下示例演示如何使用 Azure PowerShell 1.0 来获取特定资源类型可用的 API 版本。
+以下示例演示如何获取特定资源类型可用的 API 版本。
 
     ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).ApiVersions
     
@@ -188,10 +224,6 @@ Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角
     2014-06-01
     2014-04-01-preview
     2014-04-01
-
-对于 Azure PowerShell 0.9.8，请使用：
-
-    PS C:\> ((Get-AzureProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).ApiVersions
 
 ### Azure CLI
 

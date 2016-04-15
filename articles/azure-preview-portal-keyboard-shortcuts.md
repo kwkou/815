@@ -9,8 +9,8 @@
 
 <tags
    ms.service="multiple"
-   ms.date="02/07/2016"
-   wacn.date="02/19/2016"/>
+   ms.date="12/01/2015"
+   wacn.date="03/18/2016"/>
 
 # Azure 经典门户快捷键
 
@@ -44,6 +44,6 @@
 
 ## 后续步骤
 
-更好地了解 Azure 经典门户：https://www.azure.cn/。
+更好地了解 Azure 经典门户：http://www.azure.cn/。
 
 <!---HONumber=Mooncake_0104_2016-->

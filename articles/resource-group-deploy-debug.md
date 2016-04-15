@@ -23,7 +23,7 @@
 
 本主题还描述了用户常见错误的解决方案。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。不能使用经典部署模型创建资源组。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]
 
 
 ## 使用 PowerShell 进行故障排除

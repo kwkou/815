@@ -1,5 +1,5 @@
-<properties
-    pageTitle="如何使用 Blob 存储 (C++) | Azure"
+<properties 
+    pageTitle="如何使用 Blob 存储 (C++) | Azure" 
     description="了解如何在 Azure 中使用 blob 存储服务。示例用 C++ 编写。" 
     services="storage" 
     documentationCenter=".net" 
@@ -49,7 +49,6 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 	const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key;EndpointSuffix=core.chinacloudapi.cn"));
 
 若要在本地 Windows 计算机中测试您的应用程序，可以使用随同 [Azure SDK](/downloads/) 一起安装的 Azure [存储模拟器](/documentation/articles/storage-use-emulator)。存储模拟器是一种用于模拟本地开发计算机上 Azure 中可用的 Blob、队列和表服务的实用程序。以下示例演示如何声明一个静态字段以将连接字符串保存到你的本地存储模拟器：
-
 
 	// Define the connection-string with Azure Storage Emulator.
 	const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  

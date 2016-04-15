@@ -2,14 +2,15 @@
 	pageTitle="弹性数据库作业概述 | Azure" 
 	description="安装弹性数据库作业服务" 
 	metaKeywords="Azure SQL 数据库弹性数据库" 
-	services="sql-database" documentationCenter=""  
+	services="sql-database" 
+	documentationCenter=""  
 	manager="jeffreyg" 
 	authors="ddove"/>
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="02/01/2016" 
-	wacn.date="03/21/2016" />
+	ms.date="02/23/2016" 
+	wacn.date="04/06/2016" />
 
 # 弹性数据库作业概述
 
@@ -19,7 +20,7 @@
 * [弹性数据库池](/documentation/articles/sql-database-elastic-pool)中的所有数据库
 * 分片集（使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)创建） 
  
-有关安装说明，请转到[安装弹性数据库作业组件](/documentation/articles/sql-database-elastic-jobs-service-installation)。
+有关安装说明，请转到[安装弹性数据库作业组件](/documentation/articles/sql-database-elastic-jobs-service-installation)。另请参阅[弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started)。
 
 **弹性数据库作业**是当前的客户托管 Azure 云服务，可以让你执行即席任务和计划的管理任务，称为**作业**。使用作业可以通过运行 Transact-SQL 脚本来执行管理操作，从而轻松可靠地管理大型 Azure SQL 数据库组。
 
@@ -84,10 +85,10 @@
 ## 组件和定价 
 以下组件配合工作可以创建支持即席执行管理作业的 Azure 云服务。在安装期间，这些组件将自动在你的订阅中安装和配置。你可以识别这些服务，因为它们具有相同的自动生成名称。名称是唯一的，包括前缀“edj”后接 21 个随机生成的字符。
 
-* **Azure 云服务**：弹性数据库作业（预览版）以客户托管的 Azure 云服务交付，可执行请求的任务。服务可从门户部署，并托管在你的 Azure 订阅中。默认部署的服务将结合最少两个辅助角色运行，以实现高可用性。每个默认大小的辅助角色 (ElasticDatabaseJobWorker) 在 A0 实例上运行。有关价格，请参阅[云服务定价](/home/features/cloud-services/#price)。 
+* **Azure 云服务**：弹性数据库作业（预览版）以客户托管的 Azure 云服务交付，可执行请求的任务。从门户开始，服务部署并托管在你的 Azure 订阅中。默认部署的服务将结合最少两个辅助角色运行，以实现高可用性。每个默认大小的辅助角色 (ElasticDatabaseJobWorker) 在 A0 实例上运行。有关价格，请参阅[云服务定价](/home/features/cloud-services/#price)。 
 * **Azure SQL 数据库**：服务使用名为**控制数据库**的 Azure SQL 数据库来存储所有的作业元数据。默认的服务层是 S0。有关价格，请参阅 [SQL 数据库定价](/home/features/sql-database/#price)。
 * **Azure Service Bus**：Azure Service Bus 用于协调 Azure 云服务中的工作。请参阅 [Service Bus 定价](/home/features/messaging/#price)。
-* **Azure 存储空间**：在某个问题需要进一步调试时，将使用 Azure 存储帐户来存储诊断输出日志记录（请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)）。有关价格，请参阅 [Azure 存储空间定价](/home/features/storage/#price)。
+* **Azure 存储空间**：在某个问题需要进一步调试时，使用 Azure 存储帐户来存储诊断输出日志记录（请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)）。有关价格，请参阅 [Azure 存储空间定价](/home/features/storage/#price)。
 
 ## 弹性数据库作业的工作原理
 1.	Azure SQL 数据库是一个控制数据库，用于存储所有元数据和状态数据。
@@ -112,7 +113,7 @@
 4.	完成所有作业任务后，控制器会将作业更新为已完成状态。在作业执行期间，可以随时使用 PowerShell API 来查看作业执行的当前状态。PowerShell API 返回的所有时间都以 UTC 表示。如果需要，你可以启动取消请求来停止作业。 
 
 ## 后续步骤
-[安装组件](/documentation/articles/sql-database-elastic-jobs-service-installation)，然后[创建一个登录名并将其添加到数据库组的每个数据库中](/documentation/articles/sql-database-security)。若要进一步了解作业创建和管理过程，请参阅[创建和管理弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-create-and-manage)。
+[安装组件](/documentation/articles/sql-database-elastic-jobs-service-installation)，然后[创建一个登录名并将其添加到数据库组的每个数据库中](/documentation/articles/sql-database-security)。若要进一步了解作业创建和管理过程，请参阅[创建和管理弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-create-and-manage)。另请参阅[弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started)。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
@@ -120,4 +121,4 @@
 [1]: ./media/sql-database-elastic-jobs-overview/elastic-jobs.png
 <!--anchors-->
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0328_2016-->

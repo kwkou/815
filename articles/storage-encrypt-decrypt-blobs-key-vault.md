@@ -1,6 +1,6 @@
 <properties
-   pageTitle="在 Microsoft Azure 存储空间中使用 Azure 密钥保管库加密和解密 blob | Azure"
-   description="本教程将指导你如何将  Azure 存储空间的客户端加密与 Azure 密钥保管库配合使用来加密和解密 blob。"
+   pageTitle="在 Azure 存储空间中使用 Azure 密钥保管库加密和解密 blob | Azure"
+   description="本教程将指导你如何将 Azure 存储空间的客户端加密与 Azure 密钥保管库配合使用来加密和解密 blob。"
    services="storage"
    documentationCenter=""
    authors="adhurwit"
@@ -25,7 +25,6 @@
 有关 Azure 存储空间的客户端加密的概述信息，请参阅 [Azure 存储空间的客户端加密入门](/documentation/articles/storage-client-side-encryption)
 
 
-
 ## 先决条件
 
 若要完成本教程，你必须准备好以下各项：
@@ -38,7 +37,6 @@
 ## 客户端加密概述
 
 有关 Azure 存储空间的客户端加密的概述，请参阅 [Azure 存储空间的客户端加密入门](/documentation/articles/storage-client-side-encryption)
-
 
 下面是客户端加密的工作原理的简要说明：
 
@@ -223,13 +221,11 @@ RSA 密钥的私钥则保留在密钥保管库中，因此，为了进行解密�
 
 ## 后续步骤
 
-有关将  Azure 存储空间与 C# 配合使用的详细信息，请参阅[用于 .NET 的  Azure 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
+有关将 Azure 存储空间与 C# 配合使用的详细信息，请参阅[用于 .NET 的 Azure 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
 
 有关 Blob REST API 的详细信息，请参阅 [Blob 服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx)。
 
-
-有关  Azure 存储空间的最新信息，请转到 [Microsoft Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
-
+有关 Azure 存储空间的最新信息，请转到 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
 
 
 <!--Image references-->

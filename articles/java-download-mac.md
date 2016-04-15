@@ -5,12 +5,12 @@
 	documentationCenter="java" 
 	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor=""/>
 
 <tags 
 	ms.service="multiple" 
-	ms.date="10/12/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="01/09/2016" 
+	wacn.date="02/26/2016"/>
 
 #下载 Azure SDK for Java
 
@@ -22,4 +22,4 @@
 
 有关详细信息，请参阅 [Java 开发人员中心](/develop/java/)。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0215_2016-->

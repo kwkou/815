@@ -1,6 +1,6 @@
-<properties
-	pageTitle="如何将 Hudson 与 Blob 存储一起使用 |  Azure" 
-	description="介绍如何将 Hudson 与  Azure Blob 存储一起使用作为生成项目的存储库。"
+<properties 
+	pageTitle="如何将 Hudson 与 Blob 存储一起使用 | Azure" 
+	description="介绍如何将 Hudson 与 Azure Blob 存储一起使用作为生成项目的存储库。" 
 	services="storage" 
 	documentationCenter="java" 
 	authors="rmcmurray" 
@@ -72,7 +72,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 2. 在“管理 Hudson”页中，单击“管理插件”。
 3. 单击“可用”选项卡。
 4. 单击“其他”。
-5. 在“项目上载程序”部分中，选择“ Azure 存储插件”。
+5. 在“项目上载程序”部分中，选择“Azure 存储插件”。
 6. 单击“安装”。
 7. 安装完毕后，重新启动 Hudson。
 
@@ -103,8 +103,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
         date /t > date.txt
         time /t >> date.txt
 
-5. 在作业配置的“生成后操作”部分，单击“将项目上载到  Azure Blob 存储”。
-
+5. 在作业配置的“生成后操作”部分，单击“将项目上载到 Azure Blob 存储”。
 6. 对于“存储帐户名称”，选择要使用的存储帐户。
 7. 对于“容器名称”，请指定容器名称。（如果上载生成项目时不存在该容器，则将创建该容器。） 你可使用环境变量，因此在此示例中，请输入 **${JOB\_NAME}** 作为容器名称。
 
@@ -147,7 +146,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 
 - **存储帐户**：对 Azure 存储服务的所有访问都要通过存储帐户来完成。存储帐户是访问 blob 的最高级别的命名空间。一个帐户可以包含无限个容器，只要这些容器的总大小不超过 100 TB 即可。
 - **容器**：一个容器包含一组 blob 集。所有 blob 必须位于相应的容器中。一个帐户可以包含无限个容器。一个容器可以存储无限个 Blob。
-- **Blob**：任何类型和大小的文件。可将两类 Blob 存储到  Azure 存储服务中：块 Blob 和页 Blob。大部分文件都是块 blob。单个块 Blob 最大可以为 200 GB。本教程使用的是块 Blob。另一种 Blob 类型为页 Blob，其大小可以达 1 TB，在对文件中的一系列字节进行频繁修改时，这种 Blob 类型更加高效。有关 Blob 的更多信息，请参见[了解块 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee691964.aspx)。
+- **Blob**：任何类型和大小的文件。可将两类 Blob 存储到 Azure 存储服务中：块 Blob 和页 Blob。大部分文件都是块 blob。单个块 Blob 最大可以为 200 GB。本教程使用的是块 Blob。另一种 Blob 类型为页 Blob，其大小可以达 1 TB，在对文件中的一系列字节进行频繁修改时，这种 Blob 类型更加高效。有关 Blob 的更多信息，请参见[了解块 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee691964.aspx)。
 - **URL 格式**：可使用以下 URL 格式对 Blob 寻址：
 
     `http://storageaccount.blob.core.chinacloudapi.cn/container_name/blob_name`

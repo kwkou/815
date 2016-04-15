@@ -26,9 +26,7 @@
 
 调用内联的子 Runbook 的参数可以是任意数据类型（包括复杂对象），并且不会进行 [JSON 序列化](/documentation/articles/automation-starting-a-runbook/#runbook-parameters)，因为当你使用 Azure 管理门户或 Start-AzureAutomationRunbook cmdlet 启动 Runbook 时会进行这种序列化。
 
-### Runbook 类型
-
-在通过内联执行调用 PowerShell 工作流子 Runbook 时，你只需使用 Runbook 的名称。调用 PowerShell 子 Runbook 时，你必须将 *.\* 用作其名称的前缀，表示脚本位于本地目录中。
+在通过内联执行调用 PowerShell 工作流子 Runbook 时，你只需使用 Runbook 的名称。
 
 ### 示例
 

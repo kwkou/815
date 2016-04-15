@@ -1,4 +1,4 @@
-<properties
+<properties 
 	pageTitle="使用存储分析收集日志和度量值数据 | Azure"
 	description="使用存储分析，可以跟踪所有存储服务的度量值数据，并收集 Blob、队列和表存储的日志。"
 	services="storage" 

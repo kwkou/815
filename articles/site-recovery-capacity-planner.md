@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Site Recovery 中规划虚拟机容量和物理服务器保护 | Azure"
+	pageTitle="在 Azure Site Recovery 中规划用于保护虚拟机和物理服务器的容量 | Azure"
 	description="Azure Site Recovery 可以协调位于本地的虚拟机和物理服务器到 Azure 或辅助本地站点的复制、故障转移和恢复。" 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -9,17 +9,17 @@
 
 <tags 
 	ms.service="site-recovery" 
-	ms.date="12/14/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="02/22/2016" 
+	wacn.date="04/05/2016"/>
 
 # 在 Azure Site Recovery 中规划虚拟机容量和物理服务器保护
 
-容量规划器工具可以帮助你确定通过 Azure Site Recovery 来保护 Hyper-V VM、VMware VM 和 Windows/Linux 物理服务器时的容量要求。
+Azure Site Recovery Capacity Planner 工具可帮助你确定通过 Azure Site Recovery 保护 Hyper-V VM、VMware VM 和 Windows/Linux 物理服务器时的容量要求。
 
 
 ## 概述
 
-使用此工具可以分析你的源环境和工作负荷，并且可以确定带宽需求、源位置所需的服务器资源，以及目标位置所需的资源（虚拟机和存储等）。
+使用 Site Recovery Capacity Planner 可以分析你的源环境和工作负荷，并且可以确定带宽需求、源位置所需的服务器资源，以及目标位置所需的资源（虚拟机和存储等）。
 
 可以通过多种模式运行该工具：
 
@@ -72,7 +72,7 @@
 ## 运行详细规划器
 
 
-1.	下载并打开 [Azure Site Recovery 容量规划器](http://aka.ms/asr-capacity-planner-excel)工具。你需要运行宏，因此在系统提示你启用编辑功能和启用内容时，请选择执行相应的操作。 
+1.	下载并打开 [Azure Site Recovery 容量规划器](https://gallery.technet.microsoft.com/Azure-Recovery-Capacity-d01dc40e)工具。你需要运行宏，因此在系统提示你启用编辑功能和启用内容时，请选择执行相应的操作。 
 2.	在“选择规划器类型”中，从列表框选择“详细规划器”。
 
 	![入门](./media/site-recovery-capacity-planner/getting-started-2.png)
@@ -86,7 +86,7 @@
 	-  在“附加磁盘数”中指定源服务器的磁盘总数。
 	-  在“磁盘容量使用率”中指定平均使用率。
 	-  在“每日更改率(%)”中指定源服务器的每日数据更改率。
-	-  在“映射 Azure 大小”中输入你想要映射的 Azure VM 大小。如果你不想手动执行此操作，请单击“计算 IaaS VM”。****请注意，如果你先输入手动设置，然后单击“计算 IaaS VM”，系统可能会覆盖你的手动设置，因为计算流程会自动确定 Azure VM 大小的最佳匹配项。
+	-  在“映射 Azure 大小”中输入你想要映射的 Azure VM 大小。如果你不想手动执行此操作，请单击“计算 IaaS VM”。请注意，如果你先输入手动设置，然后单击“计算 IaaS VM”，系统可能会覆盖你的手动设置，因为计算流程会自动确定 Azure VM 大小的最佳匹配项。
 
 	![工作负荷限定](./media/site-recovery-capacity-planner/workload-qualification.png)
 
@@ -117,7 +117,7 @@ AA 到 AE 列为输出，提供的是每个 VM 的信息。
 	-  VM4 可以使用第二个标准存储帐户。
 	-  VM5 和 VM6 需要高级存储帐户，并且都可以使用单个帐户。
 
-	>[AZURE.NOTE]标准存储和高级存储的 IOPS 在 VM 级别而非磁盘级别进行计算。标准虚拟机最多可处理每个磁盘 500 IOPS。如果磁盘的 IOPS 大于 500，则需要高级存储。不过，如果某个磁盘的 IOPS 超出 500 但所有 VM 磁盘的 IOPS 仍在标准 Azure VM 的支持范围（VM 大小、磁盘数、适配器数、CPU、内存）内，则规划器会选取标准 VM 而不是 DS 或 GS 系列。你将需要使用相应的 DS 或 GS 系列 VM 来手动更新“映射 Azure 大小”单元格。
+	>[AZURE.NOTE]  标准存储和高级存储的 IOPS 在 VM 级别而非磁盘级别进行计算。标准虚拟机最多可处理每个磁盘 500 IOPS。如果磁盘的 IOPS 大于 500，则需要高级存储。不过，如果某个磁盘的 IOPS 超出 500 但所有 VM 磁盘的 IOPS 仍在标准 Azure VM 的支持范围（VM 大小、磁盘数、适配器数、CPU、内存）内，则规划器会选取标准 VM 而不是 DS 或 GS 系列。你将需要使用相应的 DS 或 GS 系列 VM 来手动更新“映射 Azure 大小”单元格。
 
 5. 输入所有详细信息以后，单击“将数据提交到规划器工具”以打开“容量规划器”。工作负荷会突出显示，以表明其是否符合受保护资格。
 
@@ -129,4 +129,6 @@ AA 到 AE 列为输出，提供的是每个 VM 的信息。
 
 	![容量规划器](./media/site-recovery-capacity-planner/capacity-planner.png)
 
-<!---HONumber=Mooncake_0104_2016-->
+
+
+<!---HONumber=Mooncake_0328_2016-->
