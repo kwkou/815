@@ -4,25 +4,24 @@
 	services="mobile-services"
 	documentationCenter=""
 	authors="ggailey777"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services"
-	ms.date="02/07/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="03/06/2016"
+	wacn.date="04/18/2016"/>
 
 
 # 如何：在 .NET 后端移动服务中定义自定义 API 终结点
-
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
-
-
 > [AZURE.SELECTOR]
 - [JavaScript 后端](/documentation/articles/mobile-services-javascript-backend-define-custom-api)
 - [.NET 后端](/documentation/articles/mobile-services-dotnet-backend-define-custom-api)
+
+&nbsp;
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对应的 Mobile Apps 版本，请参阅[如何：定义一个自定义的 API 控制器](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#how-to-define-a-custom-api-controller)。
 
 本主题说明如何在 .NET 后端移动服务中定义自定义 API 终结点。自定义 API 可让你定义具有服务器功能的自定义终结点，但此功能不会映射到插入、更新、删除或读取操作。使用自定义 API 能够以更大的力度控制消息，包括 HTTP 标头和正文格式。
 

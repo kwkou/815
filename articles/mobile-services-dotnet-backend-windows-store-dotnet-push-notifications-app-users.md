@@ -9,15 +9,16 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="01/13/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="03/05/2016"
+	wacn.date="04/18/2016"/>
 
 # 向经过身份验证的用户发送推送通知
-
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-push-users](../includes/mobile-services-selector-push-users.md)]
 
 &nbsp;
-[AZURE.INCLUDE [mobile-services-selector-push-users](../includes/mobile-services-selector-push-users.md)]
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对应的 Mobile Apps 版本，请参阅[如何：向经过身份验证的用户发送推送通知](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#push-user)。
 
 ##概述
 
