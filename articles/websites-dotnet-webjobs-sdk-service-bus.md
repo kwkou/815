@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="如何通过 WebJobs SDK 使用 Azure 服务总线" 
-	description="了解如何通过 WebJobs SDK 使用 Azure 服务总线 队列和主题。" 
+	pageTitle="如何通过 WebJobs SDK 使用 Azure Service Bus" 
+	description="了解如何通过 WebJobs SDK 使用 Azure Service Bus 队列和主题。" 
 	services="app-service\web, service-bus" 
 	documentationCenter=".net" 
 	authors="tdykstra" 
@@ -9,10 +9,10 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/14/2015"
-	wacn.date="02/26/2016"/>
+	ms.date="02/29/2016"
+	wacn.date="04/18/2016"/>
 
-# 如何通过 WebJobs SDK 使用 Azure 服务总线
+# 如何通过 WebJobs SDK 使用 Azure Service Bus
 
 ## 概述
 
@@ -59,7 +59,7 @@
 
 SDK 接收 `PeekLock` 模式的消息。如果函数成功完成，则对此消息调用 `Complete`；如果函数失败，则调用 `Abandon`。如果函数的运行时间长于 `PeekLock` 超时时间，则会自动续订锁定。
 
-服务总线会自行执行有害队列处理，因此不需要由 WebJobs SDK 控制或在其中配置。
+服务总线会自行执行有害队列处理，因此不需要由 WebJobs SDK 控制或配置。
 
 ### 字符串队列消息
 
@@ -75,7 +75,7 @@ SDK 接收 `PeekLock` 模式的消息。如果函数成功完成，则对此消�
 
 ### POCO 队列消息
 
-SDK 会自动反序列化包含 POCO（[普通旧 CLR 对象](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)）类型 JSON 的队列消息。以下代码示例读取包含 `BlobInformation` 对象（具有 `BlobName` 属性）的队列消息：
+SDK 会自动反序列化包含 POCO[（普通旧 CLR 对象](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)）类型 JSON 的队列消息。以下代码示例读取包含 `BlobInformation` 对象（具有 `BlobName` 属性）的队列消息：
 
 		public static void WriteLogPOCO([ServiceBusTrigger("inputqueue")] BlobInformation blobInfo,
 		    TextWriter logger)
@@ -158,7 +158,7 @@ SDK 会自动反序列化包含 POCO（[普通旧 CLR 对象](http://en.wikipedi
 * `MessageProcessor` 策略模式允许你为每个队列/主题指定处理器。
 * 默认情况下支持消息处理并发。 
 * 可以轻松通过 `ServiceBusConfiguration.MessageOptions` 对 `OnMessageOptions` 进行自定义。
-* 允许在 `ServiceBusTriggerAttribute`/`ServiceBusAttribute` 上指定 [AccessRights](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/ServiceBus/Functions.cs#L71)（适用于你可能不具有管理权限的方案）。 
+* 允许在 `ServiceBusTriggerAttribute`/`ServiceBusAttribute` 上指定 [AccessRights](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/ServiceBus/Functions.cs#L71)（适用于你可能不具有管理权限的情况）。 
 
 ## <a id="queues"></a>存储队列操作说明文章涉及的相关主题
 
@@ -180,4 +180,4 @@ SDK 会自动反序列化包含 POCO（[普通旧 CLR 对象](http://en.wikipedi
 本指南中包含的代码示例展示了如何处理常见方案来结合使用 Azure 服务总线。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 推荐资源](/documentation/articles/websites-webjobs-resources/)。
  
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0411_2016-->

@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/28/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="02/16/2016"
+	wacn.date="04/18/2016"/>
 
 # 将 Hive 和 HiveQL 与 HDInsight 中的 Hadoop 配合使用以分析示例 Apache log4j 文件
 
@@ -58,7 +58,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 在前面的示例中，日志级别为 ERROR。
 
-> [AZURE.NOTE]你也可以使用 [Apache Log4j](http://zh.wikipedia.org/wiki/Log4j) 日志记录工具生成 log4j 文件，然后将该文件上载到 Blob 容器。请参阅[将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data) 以获取相关说明。有关如何将 Azure Blob 存储与 HDInsight 配合使用的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。
+> [AZURE.NOTE] 你也可以使用 [Apache Log4j](http://zh.wikipedia.org/wiki/Log4j) 日志记录工具生成 log4j 文件，然后将该文件上载到 Blob 容器。请参阅[将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data) 以获取相关说明。有关如何将 Azure Blob 存储与 HDInsight 配合使用的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。
 
 示例数据存储在 HDInsight 用作默认文件系统的 Azure Blob 存储中。HDInsight 可以使用 **wasb** 前缀来访问存储在 Blob 中的文件。例如，若要访问 sample.log 文件，可使用以下语法：
 
@@ -66,11 +66,11 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 由于 Azure Blob 存储是 HDInsight 的默认存储，因此你也可以使用 HiveQL 中的 **/example/data/sample.log** 访问该文件。
 
-> [AZURE.NOTE]语法 ****wasb:///** 用于访问存储在 HDInsight 群集的默认存储容器中的文件。如果你在预配群集时指定了其他存储帐户，并且你想要访问存储在这些帐户中的文件，则可以通过指定容器名称和存储帐户地址来访问这些数据，例如：**wasb://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log**。
+> [AZURE.NOTE] 语法 **wasb:///** 用于访问存储在 HDInsight 群集的默认存储容器中的文件。如果你在预配群集时指定了其他存储帐户，并且你想要访问存储在这些帐户中的文件，则可以通过指定容器名称和存储帐户地址来访问这些数据，例如：**wasb://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log**。
 
 ##<a id="job"></a>示例作业：将列投影到分隔的数据
 
-以下 HiveQL 语句将列投影到 ****wasb:///example/data** 目录中存储的分隔数据：
+以下 HiveQL 语句将列投影到 **wasb:///example/data** 目录中存储的分隔数据：
 
 	DROP TABLE log4jLogs;
     CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
@@ -87,8 +87,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 * **SELECT**：选择其列 **t4** 包含值 **[ERROR]** 的所有行计数。这应会返回值 **3**，因为有三个行包含此值。
 * **INPUT\_\_FILE\_\_NAME LIKE '%.log'** - 告诉 Hive，我们只应返回以 .log 结尾的文件中的数据。此项将搜索限定于包含数据的 sample.log 文件，使搜索不会返回与所定义架构不符的其他示例数据文件中的数据。
 
-> [AZURE.NOTE]当你预期以外部源更新基础数据（例如自动化数据上载过程），或以其他 MapReduce 操作更新基础数据，但希望 Hive 查询始终使用最新数据时，必须使用外部表。
-> <p>删除外部表**不会**删除数据，只会删除表定义。
+> [AZURE.NOTE] 当你预期以外部源更新基础数据（例如自动化数据上载过程），或以其他 MapReduce 操作更新基础数据，但希望 Hive 查询始终使用最新数据时，必须使用外部表。<p>删除外部表**不会**删除数据，只会删除表定义。
 
 创建外部表后，使用以下语句创建**内部**表。
 
@@ -103,18 +102,18 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 * **STORED AS ORC**：以优化行纵栏表 (ORC) 格式存储数据。这是高度优化且有效的 Hive 数据存储格式。
 * **INSERT OVERWRITE ...SELECT**：从包含 **[ERROR]** 的 **log4jLogs** 表中选择行，然后将数据插入 **errorLogs** 表中。
 
-> [AZURE.NOTE]与外部表不同，删除内部表会同时删除基础数据。
+> [AZURE.NOTE] 与外部表不同，删除内部表会同时删除基础数据。
 
 ##<a id="usetez"></a>使用 Apache Tez 提高性能
 
 [Apache Tez](http://tez.apache.org) 是可让数据密集型应用程序（例如 Hive）大规模高效运行的框架。在最新版的 HDInsight 中，Hive 支持在 Tez 上运行。
 
-> [AZURE.NOTE]对于基于 Windows 的 HDInsight 群集来说，Tez 目前默认处于关闭状态，必须将其启用。若要充分利用 Tez，你必须设置 Hive 查询的以下值：
-> <p>```set hive.execution.engine=tez;```
-><p>你可为每个查询提交此值，只需将它放置在查询的开头即可。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1)中找到详细信息。
+> [AZURE.NOTE] 对于基于 Windows 的 HDInsight 群集来说，Tez 目前默认处于关闭状态，必须将其启用。若要充分利用 Tez，你必须设置 Hive 查询的以下值：<p>```set hive.execution.engine=tez;``` <p>你可为每个查询提交此值，只需将它放置在查询的开头即可。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1)中找到详细信息。
 
 [Tez 上的 Hive 设计文档](https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez)包含实现选项和优化配置的详细信息。
 
+为了帮助使用 Tez 调试运行的作业，HDInsight 提供了以下 Web UI，使你可以查看 Tez 作业的详细信息：
+* [在基于 Windows 的 HDInsight 上使用 Tez UI](/documentation/articles/hdinsight-debug-tez-ui)
 
 ##<a id="run"></a>选择如何运行 HiveQL 作业
 
@@ -152,7 +151,6 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 [check]: ./media/hdinsight-use-hive/hdi.checkmark.png
 
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
-
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
@@ -179,7 +177,7 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
 [Powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
@@ -191,4 +189,4 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0411_2016-->

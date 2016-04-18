@@ -8,18 +8,18 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-   ms.date="12/01/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="03/17/2016"
+	wacn.date="04/18/2016"/>
 
 # 测试流量管理器设置
 
-测试流量管理器设置的最佳方法是设置许多客户端，然后逐个关闭配置文件中的终结点（包括云服务和 Web 应用）。以下技巧可帮助你测试流量管理器配置文件。
+测试流量管理器设置的最佳方法是设置许多客户端，然后逐个关闭配置文件中的终结点（包括云服务和网站）。以下技巧可帮助你测试流量管理器配置文件。
 
 ## 基本测试步骤
 
 -**将 DNS TTL 设置得非常低**以便快速传播更改，例如，30 秒。
 
--**了解你要测试的配置文件中的 Azure 云服务和 Web 应用的 IP 地址**。
+-**了解你要测试的配置文件中的 Azure 云服务和网站的 IP 地址**。
 
 -**使用能够让你将 DNS 名称解析为 IP 地址**并显示该地址的工具。你将查看公司域名是否可以解析为配置文件中的终结点的 IP 地址。解析方式应与流量管理器配置文件中的负载平衡方法一致。如果你的计算机运行的是 Windows，则可以在命令提示符或 Windows PowerShell 提示符下使用 Nslookup.exe 工具。在 Internet 上还可以找到其他公开发布的用于“挖掘”IP 地址的现成工具。
 
@@ -29,9 +29,9 @@
 
 2-键入 `ipconfig /flushdns` 以刷新 DNS 解析程序缓存。
 
-3-键入 `nslookup <your Traffic Manager domain name>`。例如，以下命令将检查前缀为 *myapp.contoso* 的域名：nslookup myapp.contoso.trafficmanager.cn。典型结果将显示以下内容：
+3-键入 `nslookup <your Traffic Manager domain name>`。例如，以下命令将检查前缀为 *myapp.contoso* nslookup myapp.contoso.trafficmanager.cn 的域名。典型结果将显示以下：
 - 为解析此流量管理器域名而访问的 DNS 服务器的 DNS 名称和 IP 地址。
-- 在命令行中“nslookup”后键入的流量管理器域名以及该流量管理器域解析为的 IP 地址。需要重点检查第二个 IP 地址。它应当与所测试的流量管理器配置文件中某个云服务或 Web 应用的公用虚拟 IP (VIP) 地址匹配。
+- 在命令行中“nslookup”后键入的流量管理器域名以及该流量管理器域解析为的 IP 地址。需要重点检查第二个 IP 地址。它应当与所测试的流量管理器配置文件中某个云服务或网站的公用虚拟 IP (VIP) 地址匹配。
 
 ## 测试负载平衡方法
 
@@ -62,6 +62,8 @@
 
 你可以使用基于 Web 的免费 DNS 查找和挖掘服务。这些服务中，有些可以从不同位置检查 DNS 名称解析。例如，针对“DNS 查找”执行搜索。另一种做法是使用 Gomez 或 Keynote 等第三方解决方案来确认配置文件是否按预期分配流量。
 
- 
+## 后续步骤
 
-<!---HONumber=Mooncake_1221_2015-->
+[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods)[流量管理器](/documentation/articles/traffic-manager-overview)
+
+<!---HONumber=Mooncake_0411_2016-->
