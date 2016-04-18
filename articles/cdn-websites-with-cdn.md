@@ -15,7 +15,7 @@
 
 # 在 Azure Web 应用中使用 Azure CDN
 
-[Azure Web 应用](/documentation/services/web-sites/)可以集成 [Azure CDN](/home/features/cdn/)，增强 [Azure Web Apps](/documentation/services/web-sites/) 固有的全局缩放功能，在全球通过靠近客户的服务器节点提供 Web 应用内容（如需已更新的包含所有最新节点位置的列表，请单击[此处](http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx)）。在特定情况下（例如提供静态映像），此集成可以大幅提高 Azure Web Apps 的性能，在全球显著改善 Web 应用的用户体验。
+[Azure Web 应用](/documentation/services/web-sites/)可以集成 [Azure CDN](/home/features/cdn/)，增强 [Azure Web Apps](/documentation/services/web-sites/) 固有的全局缩放功能。在特定情况下（例如提供静态映像），此集成可以大幅提高 Azure Web Apps 的性能，在全球显著改善 Web 应用的用户体验。
 
 将 Web Apps 与 Azure CDN 集成具有以下优点：
 
@@ -74,7 +74,7 @@
 
 	你可以接受“配置”和“文件发布选项”的默认值。
 
-	你可以通过“配置”下拉列表部署用于远程调试的调试版本。[后续步骤](#next-steps)部分链接到了说明如何在调试模式下远程运行 Visual Studio 的教程。
+	你可以通过“配置”下拉列表部署用于远程调试的调试版本。
 
 	![“设置”选项卡](./media/web-sites-dotnet-get-started/GS13SettingsTab.png)
 
@@ -105,7 +105,7 @@
 
 启用此功能后，通过不同的查询字符串进行访问的同一链接就可以缓存为不同的项。
 
-	>[AZURE.NOTE] 虽然启用查询字符串对于教程的此部分来说不是必需的，但为方便起见，最好是尽早启用此功能，因为在这里所做的任何更改都需要一定的时间才能传播到所有 CDN 节点，而你并不想让任何非查询字符串支持的内容充斥 CDN 缓存（稍后将讨论如何更新 CDN 内容）。
+>[AZURE.NOTE] 虽然启用查询字符串对于教程的此部分来说不是必需的，但为方便起见，最好是尽早启用此功能，因为在这里所做的任何更改都需要一定的时间才能传播到所有 CDN 节点，而你并不想让任何非查询字符串支持的内容充斥 CDN 缓存（稍后将讨论如何更新 CDN 内容）。
 
 2. 现在，导航到 CDN 终结点地址。如果终结点已准备就绪，你应该会看到 Web 应用显示。如果收到 **HTTP 404** 错误，则说明 CDN 终结点尚未准备好。CDN 配置传播到所有边缘节点可能需要长达 1 小时的等待。 
 
@@ -169,7 +169,7 @@
 
 ##<a name="serve-content-from-controller-actions-through-azure-cdn"></a> 通过 Azure CDN 的控制器操作提供内容 ##
 
-将 Web Apps 与 Azure CDN 集成以后，可以相对轻松地通过 Azure CDN 的控制器操作提供内容。同样，如果你决定通过 CDN 提供整个 Azure Web 应用，则根本不需要执行此操作，因为此时所有控制器操作都已经可以通过 CDN 进行访问。不过，出于我在[通过集成 CDN 终结点部署 Azure Web 应用](#deploy-a-web-app-to-azure-with-an-integrated-cdn-endpoint)中指出的原因，你不应该决定执行这样的操作，而应选择需要通过 Azure CDN 来处理的控制器操作。[Maarten Balliauw](https://twitter.com/maartenballiauw) 在[通过 Azure CDN 减少 Web 延迟](http://channel9.msdn.com/events/TechDays/Techdays-2014-the-Netherlands/Reducing-latency-on-the-web-with-the-Windows-Azure-CDN)中向你演示了如何使用有趣的 MemeGenerator 控制器执行该操作。在这里，我将简单地再现该过程。
+将 Web Apps 与 Azure CDN 集成以后，可以相对轻松地通过 Azure CDN 的控制器操作提供内容。同样，如果你决定通过 CDN 提供整个 Azure Web 应用，则根本不需要执行此操作，因为此时所有控制器操作都已经可以通过 CDN 进行访问。不过，出于我在[通过集成 CDN 终结点部署 Azure Web 应用](#deploy-a-web-app-to-azure-with-an-integrated-cdn-endpoint)中指出的原因，你不应该决定执行这样的操作，而应选择需要通过 Azure CDN 来处理的控制器操作。Maarten Balliauw 在[通过 Azure CDN 减少 Web 延迟](http://channel9.msdn.com/events/TechDays/Techdays-2014-the-Netherlands/Reducing-latency-on-the-web-with-the-Windows-Azure-CDN)中向你演示了如何使用有趣的 MemeGenerator 控制器执行该操作。在这里，我将简单地再现该过程。
 
 假设在你的 Web 应用中，你希望根据年轻的 Chuck Norris 的照片（由 [Alan Light](http://www.flickr.com/photos/alan-light/218493788/) 拍摄）来制作一个搞笑的迷因，如下所示：
 

@@ -168,7 +168,7 @@ Storm 可以提供不同级别的有保证的消息处理。例如，基本的 S
 
 ###IBasicBolt
 
-读取输入元组，发出零个或多个元组，然后在执行方法结束时立即询问输入元组，这种模式非常普通，以至 Storm 提供 [IBasicBolt](https://storm.apache.org/apidocs/backtype/storm/topology/IBasicBolt.html) 接口来自动执行这种模式。
+读取输入元组，发出零个或多个元组，然后在执行方法结束时立即询问输入元组，这种模式非常普通，以至 Storm 提供 IBasicBolt 接口来自动执行这种模式。
 
 ###联接
 

@@ -47,24 +47,24 @@
 
 **在 Visual Studio Online 中编辑**。通过 Visual Studio Online 启用实时代码编辑。如果启用，“仪表板”选项卡的“速览”部分下则会显示名为“在 Visual Studio Online 中编辑”的链接。单击此连结可直接联机编辑网站。如果你需要进行身份验证，可以使用你的基本部署凭据。
 
-	>[AZURE.NOTE]
-	> This feature is on preview.
+>[AZURE.NOTE]
+> 此功能还在预览中。
 
 注意：如果通过源代码管理你启用部署，则部署可能会覆盖你在 Visual Studio Online 编辑器中进行的更改。
 
 ### 证书
 
-在“基本”或“标准”模式下，你可为自定义域上载 SSL 证书。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](href="/documentation/articles/web-sites-configure-ssl-certificate/)。
+在“基本”或“标准”模式下，你可为自定义域上载 SSL 证书。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/)。
 
 此处列出已上载的证书。在你上载某一证书后，可以将其分配给你的订阅和区域中的任何网站。通配符证书可用于接受此证书的域中的任何站点。仅当该证书不具有有效绑定关系时，才能删除证书。
 
 ### 域名
 
-查看或添加网站的其他域名。有关详细信息，请参阅[为 Azure 网站配置自定义域名](/zh-cm/documentation/articles/web-sites-custom-domain-name/)。
+查看或添加网站的其他域名。有关详细信息，请参阅[为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name/)。
 
 ### SSL 绑定
 
-如果已上载 SSL 证书，可以将其绑定到自定义域名。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](href="/documentation/articles/web-sites-configure-ssl-certificate/)
+如果已上载 SSL 证书，可以将其绑定到自定义域名。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/)
 
 ### 部署
 
