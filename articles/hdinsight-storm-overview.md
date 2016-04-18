@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/08/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="03/18/2016"
+	wacn.date="04/18/2016"/>
 
 #Apache Storm on HDInsight 简介：面向 Hadoop 的实时分析
 
@@ -71,7 +71,7 @@ HDInsight Tools for Visual Studio 还提供了一个接口让你监视和管理�
 
 有关使用 Storm 仪表板的详细信息，请参阅[在 HDInsight 上部署和管理 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology)。
 
-Storm on HDInsight 还支持通过**事件中心 Spout** 与 Azure 事件中心轻松集成。可以使用 **%STORM\_HOME%\\examples\\eventhubspout\\eventhubs-storm-spout-0.9-jar-with-dependencies.jar** 在每个 Storm 群集上实现此目的。有关在 Storm 拓扑中使用此 Spout 的示例，请参阅以下文档：
+Storm on HDInsight 还支持通过**事件中心 Spout** 与 Azure 事件中心轻松集成。此组件的最新版本可在 [https://github.com/hdinsight/hdinsight-storm-examples/tree/master/lib/eventhubs](https://github.com/hdinsight/hdinsight-storm-examples/tree/master/lib/eventhubs) 上获取。有关使用此组件的详细信息，请参阅以下文档。
 
 * [开发使用 Azure 事件中心的 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology)
 
@@ -209,4 +209,4 @@ Storm 可以提供不同级别的有保证的消息处理。例如，基本的 S
 [apachetutorial]: https://storm.incubator.apache.org/documentation/Tutorial.html
 [gettingstarted]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0411_2016-->

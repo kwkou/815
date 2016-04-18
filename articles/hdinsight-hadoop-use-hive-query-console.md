@@ -6,12 +6,12 @@
    authors="Blackmist"
    manager="paulettm"
    editor="cgronlun"
-   tags="azure-portal"/>
+	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="02/16/2016"
+	wacn.date="04/18/2016"/>
 
 # 使用查询控制台运行 Hive 查询
 
@@ -19,7 +19,7 @@
 
 在本文中，你将了解如何在浏览器中使用 HDInsight 查询控制台在 HDInsight Hadoop 群集上运行 Hive 查询。
 
-> [AZURE.NOTE]查询控制台只能在基于 Windows 的 HDInsight 群集上使用。
+> [AZURE.NOTE] 查询控制台只能在基于 Windows 的 HDInsight 群集上使用。
 
 
 ##<a id="prereq"></a>先决条件
@@ -40,7 +40,7 @@
 
 	将文本 `Select * from hivesampletable` 替换为以下 HiveQL 语句：
 
-		set hive.execution.engine=tez;
+        set hive.execution.engine=tez;
         DROP TABLE log4jLogs;
         CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
         ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '
@@ -52,7 +52,7 @@
     * **DROP TABLE**：删除表和数据文件（如果该表已存在）。
     * **CREATE EXTERNAL TABLE**：在 Hive 中创建新的“外部”表。外部表仅在 Hive 中存储表定义；数据会保留在原始位置。
 
-    > [AZURE.NOTE]当你预期以外部源更新基础数据（例如自动化数据上载过程），或以其他 MapReduce 操作更新基础数据，但希望 Hive 查询始终使用最新数据时，必须使用外部表。
+    > [AZURE.NOTE] 当你预期以外部源更新基础数据（例如自动化数据上载过程），或以其他 MapReduce 操作更新基础数据，但希望 Hive 查询始终使用最新数据时，必须使用外部表。
     > <p>删除外部表**不会**删除数据，只会删除表定义。
 
     * **ROW FORMAT**：告知 Hive 如何设置数据的格式。在此情况下，每个日志中的字段以空格分隔。
@@ -83,7 +83,12 @@
 
 * [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
+如果将 Tez 与 Hive 配合使用，请参阅以下文档以了解调试信息：
+
+* [在基于 Windows 的 HDInsight 上使用 Tez UI](/documentation/articles/hdinsight-debug-tez-ui)
+
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
+
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
@@ -99,14 +104,20 @@
 
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+
+
+
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+
 [Powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
+
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0411_2016-->
