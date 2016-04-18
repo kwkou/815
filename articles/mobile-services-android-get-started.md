@@ -4,24 +4,22 @@
 	services="mobile-services"
 	documentationCenter="android"
 	authors="RickSaling"
-	manager="dwrede"
+	manager="reikre"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="02/05/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="03/05/2016"
+	wacn.date="04/18/2016"/>
 
 # 适用于 Android 的移动服务入门（JavaScript 后端）
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
 &nbsp;
 
-[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对应的 Mobile Apps 版本，请参阅[在 Azure Mobile Apps 中创建 Android 应用](/documentation/articles/app-service-mobile-android-get-started)。
 
 本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单**待办事项列表**应用程序。
 
@@ -50,7 +48,7 @@
 
 在本部分中，你将要创建一个连接到移动服务的新的 Android 应用程序。
 
-1.  在 **Azure 经典门户**中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1.  在 Azure 经典门户中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2. 在快速入门选项卡中，单击“选择平台”下的“Android”，然后展开“创建新的 Android 应用程序”。
 

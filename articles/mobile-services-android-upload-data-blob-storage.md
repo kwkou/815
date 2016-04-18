@@ -10,14 +10,15 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="01/21/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="04/18/2016"/>
 
 # 从 Android 设备将图像上载到 Azure 存储空间
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+[AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
 &nbsp;
-[AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
 
 本主题演示如何使 Android Azure 移动服务应用能够将图像上载到 Azure 存储空间。
 
@@ -58,7 +59,7 @@
 
 ### 引用 Azure 存储空间 Android 客户端库
 
-1. 若要添加对库的引用，请在“应用”> **build.gradle** 文件中，向 `dependencies` 节添加以下行：
+1. 若要添加对库的引用，请在“应用”> “build.gradle” 文件中，向 `dependencies` 节添加以下行：
 
 		compile 'com.microsoft.azure.android:azure-storage-android:0.6.0@aar'
 
@@ -82,12 +83,12 @@
 
 ### 更新新用户界面的资源文件
 
-1. 通过向 *values* 目录中的 **strings.xml** 文件添加以下内容，为新按钮添加标题：
+1. 通过向 *values* 目录中的 “strings.xml” 文件添加以下内容，为新按钮添加标题：
 
 	    <string name="preview_button_text">Take Photo</string>
 	    <string name="upload_button_text">Upload</string>
 
-2. 在 **res => layout** 文件夹中的 **activity\_to\_do.xml** 文件中，在“添加”按钮的现有代码前添加以下代码。
+2. 在 “res => layout” 文件夹中的 “activity\_to\_do.xml” 文件中，在“添加”按钮的现有代码前添加以下代码。
 
          <Button
              android:id="@+id/buttonPreview"
@@ -285,7 +286,7 @@
 	    }
 
 
-4. 在 **ToDoActivity.java** 文件中，将 **ToDoActivity.java** 中的 **addItem** 方法替换为以下代码，以便上载图像。
+4. 在 “ToDoActivity.java” 文件中，将 “ToDoActivity.java” 中的 “addItem” 方法替换为以下代码，以便上载图像。
 
 	    /**
 	     * Add a new item

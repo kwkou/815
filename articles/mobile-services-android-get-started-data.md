@@ -10,18 +10,19 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="01/20/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="04/18/2016"/>
 
 # 将移动服务添加到现有 Android 应用（JavaScript 后端）
 
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对应的 Mobile Apps 版本，请参阅[如何将 Android 客户端库用于 Mobile Apps](/documentation/articles/app-service-mobile-android-how-to-use-client-library)。
 
 ## 摘要
 
+本主题说明如何使用 Azure 移动服务将持久性数据添加到 Android 应用程序。在本教程中，你将要下载一个可在内存中存储数据的应用，创建一个新的移动服务，将该应用与该移动服务相集成以便在 Azure 移动服务而不是在本地存储和更新数据，然后使用 Azure 管理门户查看运行该应用时对数据所做的更改。
 
 
-
-<p>本教程将帮助你详细了解 Azure 移动服务如何从 Android 应用程序存储和检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门教程中代你完成。如果这是你第一次体验移动服务，请考虑首先完成<a href="/zh-CN/develop/mobile/tutorials/get-started-android">移动服务入门</a>教程。</p>
+本教程将帮助你详细了解 Azure 移动服务如何从 Android 应用程序存储和检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门教程中代你完成。如果这是你第一次体验移动服务，请考虑首先完成[移动服务入门](/documentation/articles/mobile-services-android-get-started)教程。
 
 ## 先决条件
 
@@ -31,11 +32,11 @@
 
 
 - [Azure 移动服务 Android SDK]；
-- <a  href="https://developer.android.com/sdk/index.html" target="_blank">Android Studio 集成开发环境</a>，其中包含 Android SDK；Android 4.2 或更高版本。下载的 GetStartedWithData 项目需要 Android 4.2 或更高版本。但是，移动服务 SDK 只需要 Android 2.2 或更高版本。
+- [Android Studio 集成开发环境](https://developer.android.com/sdk/index.html)，其中包含 Android SDK；Android 4.2 或更高版本。下载的 GetStartedWithData 项目需要 Android 4.2 或更高版本。但是，移动服务 SDK 只需要 Android 2.2 或更高版本。
 
 ## 代码示例
 
-若要查看完成的源代码，请转到<a href="https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithData/AndroidStudio">此处</a>。
+若要查看完整的源代码，请转到<a href="https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithData/AndroidStudio">此处</a>。
 
 ## 下载 GetStartedWithData 项目
 
@@ -47,7 +48,7 @@
 
 [AZURE.INCLUDE [mobile-services-android-run-sample-code](../includes/mobile-services-android-run-sample-code.md)]
 
-## 在 Azure 经典门户中创建新的移动服务
+## 在 Azure 管理门户中创建新的移动服务
 
 [AZURE.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
 
@@ -72,7 +73,7 @@
 
    	此时会将一个新项作为 insert 发送到移动服务。
 
-3. 在 [Azure 经典门户]中，单击“移动服务”，然后单击你的移动服务。
+3. 在 [Azure 管理门户]中，单击“移动服务”，然后单击你的移动服务。
 
 4. 单击“数据”选项卡，然后单击“浏览”。
 
@@ -90,23 +91,13 @@
 
 ## 后续步骤
 
-本教程演示了有关如何使 Android 应用程序处理移动服务中的数据的基础知识。
+本教程演示了有关如何使 Android 应用程序处理移动服务中的数据的基础知识。请试着学习下列其他 Android 教程：
 
-接下来，建议你完成下列教程之一，这些教程是基于本教程中创建的 GetStartedWithData 应用程序制作的：
+* [身份验证入门](/documentation/articles/mobile-services-android-get-started-users)
+	<br/>了解如何对应用程序用户进行身份验证。
 
-* [使用脚本验证和修改数据]
-<br/>了解更多有关使用移动服务中的服务器脚本验证和更改从应用程序发送的数据的信息。
-
-* [使用分页优化查询]
-<br/>了解如何使用查询中的分页控制单个请求中处理的数据量。
-
-完成数据处理系列教程后，请尝试学习以下其他 Android 教程：
-
-* [身份验证入门]
-<br/>了解如何对应用程序用户进行身份验证。
-
-* [推送通知入门]
-<br/>了解如何使用移动服务将非常基本的推送通知发送到应用程序。
+* [推送通知入门](/documentation/articles/mobile-services-javascript-backend-android-get-started-push)
+  <br/>了解如何使用移动服务将非常基本的推送通知发送到应用程序。
 
 <!-- Anchors. -->
 [Download the Android app project]: #download-app
@@ -127,14 +118,8 @@
 
 
 <!-- URLs. -->
-[使用脚本验证和修改数据]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
-[使用分页优化查询]: /documentation/articles/mobile-services-android-how-to-use-client-library
-[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started/
-[Get started with data]: /documentation/articles/mobile-services-android-get-started-data
-[身份验证入门]: /documentation/articles/mobile-services-android-get-started-users
-[推送通知入门]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
 
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 管理门户]: https://manage.windowsazure.cn/
 [Azure 移动服务 Android SDK]: http://aka.ms/Iajk6q
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkID=282122
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125

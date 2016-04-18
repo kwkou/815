@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 .NET 后端移动服务中对用户进行服务端授权 | Azure"
+	pageTitle="在 .NET 后端移动服务中对用户进行服务端授权 | Microsoft Azure"
 	description="了解如何在 .NET 后端移动服务中限制已授权用户的访问权限"
 	services="mobile-services"
 	documentationCenter="windows"
@@ -9,17 +9,18 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="02/07/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="03/09/2016"
+	wacn.date="04/18/2016"/>
 
 # 移动服务中的用户服务端授权
-
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> [AZURE.SELECTOR]
+- [.NET 后端](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
+- [Javascript 后端](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
 
 &nbsp;
-> [AZURE.SELECTOR]
-- [(Any | .NET)](/zh-cn/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
-- [(Any | Javascript)](/zh-cn/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对应的 Mobile Apps 版本，请参阅“使用适用于 Azure Mobile Apps 的 .NET 后端服务器 SDK”主题中的[如何：对授权用户限制数据访问](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#authorize)。
 
 本主题说明如何使用服务器端逻辑为用户授权。在本教程中，你将要修改表控制器，根据用户 ID 筛选查询，然后只授予用户对其自己数据的访问权限。根据用户 ID 筛选用户的查询结果是最基本的授权形式。根据具体的方案，你可能还需要创建“用户”或“角色”表，以跟踪更详细的用户授权信息，例如，给定的用户有权访问哪些终结点。
 
@@ -31,7 +32,7 @@
 
 		public string UserId { get; set; }
 
-	>[AZURE.NOTE] 若要进行此数据模型更改并维护数据库中的现有数据，必须使用[代码优先迁移](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
+	>[AZURE.NOTE] 若要进行此数据模型更改并维护数据库中的现有数据，必须使用 [Code First 迁移](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
 
 2. 在 Visual Studio 中，展开“控制器”文件夹，打开 **TodoItemController.cs**，然后添加以下 using 语句：
 

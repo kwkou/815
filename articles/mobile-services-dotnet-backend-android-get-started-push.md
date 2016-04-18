@@ -1,5 +1,5 @@
 <properties
-	pageTitle="推送入门 (Android) | Azure"
+	pageTitle="推送入门 (Android) | Microsoft Azure"
 	description="了解如何使用 Azure 移动服务将推送通知发送到 Android .Net 应用程序。"
 	services="mobile-services, notification-hubs"
 	documentationCenter="android"
@@ -10,21 +10,21 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="02/07/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="04/18/2016"/>
 
 # 向移动服务应用程序添加推送通知
 
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
+> 有关本主题的对应的 Mobile Apps 版本，请参阅[向 Android 应用添加推送通知](/documentation/articles/app-service-mobile-android-get-started-push)。
+ 
+&nbsp;[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 本主题说明如何使用 Azure 移动服务向 Android 应用程序发送推送通知。在本教程中，你将要使用 Google Cloud Messaging (GCM) 向快速入门项目添加推送通知。完成本教程后，每次插入一条记录时，你的移动服务就会发送一条推送通知。
 
 本教程基于移动服务快速入门。在开始本教程之前，必须先完成[移动服务入门]以将项目连接到移动服务。因此，本教程还需要 Visual Studio 2013。
 
 ## 代码示例
-若要查看完成的源代码，请转到[此处](https://github.com/RickSaling/mobile-services-samples/tree/push/GettingStartedWithPush)。
+若要查看完整的源代码，请转到[此处](https://github.com/RickSaling/mobile-services-samples/tree/push/GettingStartedWithPush)。
 
 ## 启用 Google Cloud Messaging
 

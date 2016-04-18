@@ -1,21 +1,25 @@
-<properties 
-	pageTitle="向通用 Windows 8.1 应用添加推送通知 | Azure" 
-	description="了解如何从 .NET 后端移动服务使用 Azure 通知中心向通用 Windows 8.1 应用发送推送通知。" 
-	services="mobile-services,notification-hubs" 
-	documentationCenter="windows" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="向通用 Windows 8.1 应用添加推送通知 | Microsoft Azure"
+	description="了解如何从 .NET 后端移动服务使用 Azure 通知中心向通用 Windows 8.1 应用发送推送通知。"
+	services="mobile-services,notification-hubs"
+	documentationCenter="windows"
+	authors="ggailey777"
+	manager="erikre"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="11/11/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="03/05/2016"
+	wacn.date="04/18/2016"/>
 
 # 向移动服务应用程序添加推送通知
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
+
+&nbsp;
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
+> 有关本主题的对应的 Mobile Apps 版本，请参阅[向 Windows 应用程序添加推送通知](/documentation/articles/app-service-mobile-windows-store-dotnet-get-started-push)。
 
 ##概述
 本主题说明如何结合使用 Azure 移动服务和 .NET 后端向通用 Windows 应用程序发送推送通知。在本教程中，你将在通用 Windows 应用程序项目中使用 Azure 通知中心来启用推送通知。完成后，每当在 TodoList 表中插入一条记录时，移动服务都会从 .NET 后端向所有已注册的 Windows 应用商店和 Windows Phone 应用商店应用程序发送一条推送通知。创建的通知中心可在移动服务中任意使用，可独立于移动服务进行管理，并可供其他应用程序和服务使用。
@@ -23,7 +27,7 @@
 若要完成本教程，您需要以下各项：
 
 * 有效的 [Microsoft 应用商店帐户](http://go.microsoft.com/fwlink/p/?LinkId=280045)。
-* <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio Community 2013</a>。 
+* [Visual Studio Community 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934)。
 
 ##<a id="register"></a>为推送通知注册应用程序
 

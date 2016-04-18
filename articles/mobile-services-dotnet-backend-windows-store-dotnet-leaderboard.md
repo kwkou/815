@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="01/09/2016"
+	ms.date="03/04/2016"
 	wacn.date="02/26/2016"/>
 
 # 使用 Azure 移动服务 .NET 后端创建排行榜应用程序
