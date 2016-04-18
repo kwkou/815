@@ -9,16 +9,15 @@
 
 <tags ms.service="storage"
 
-	ms.date="12/16/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/21/2016"
+	wacn.date="04/18/2016"/>
 
 # 开始使用表存储和 Visual Studio 连接服务 (ASP.NET)
 
 ## 概述
-本文介绍通过使用 Visual Studio 中的“添加连接服务”对话框在 ASP.NET 项目中创建或引用 Azure 存储帐户之后，如何开始在 Visual Studio 中使用 Azure 表存储。本文向你展示如何使用 Azure 表执行常见任务，包括创建和删除表以及使用表实体。示例是用 C# 代码编写的，并使用了 [Azure .NET 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。有关使用 Azure 表存储的更多常规信息，请参阅[如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables)。
+本文介绍通过使用 Visual Studio 中的“添加连接服务”对话框在 ASP.NET 项目中创建或引用 Azure 存储帐户之后，如何开始在 Visual Studio 中使用 Azure 表存储。本文向你展示如何使用 Azure 表执行常见任务，包括创建和删除表以及使用表实体。示例是用 C# 代码编写的，并使用了 [Azure .NET 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。有关使用 Azure 表存储的更多常规信息，请参阅[通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables)。
 
-
-Azure 表存储服务使用户可以存储大量结构化数据。该服务是一个 NoSQL 数据存储，接受来自 Azure 云内部和外部的通过验证的呼叫。Azure 表最适合存储结构化非关系型数据。
+Azure 表存储使用户可以存储大量结构化数据。该服务是一个 NoSQL 数据存储，接受来自 Azure 云内部和外部的通过验证的呼叫。Azure 表最适合存储结构化非关系型数据。
 
 
 ## 使用代码访问表
@@ -54,12 +53,41 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 	// Create the CloudTable if it does not exist
 	await table.CreateIfNotExistsAsync();
 
+## 将实体添加到表
+
+若要将实体添加到表，请创建用于定义实体的属性的类。以下代码定义了将客户的名字和姓氏分别用作行键和分区键的 **CustomerEntity** 实体类。
+
+	public class CustomerEntity : TableEntity
+	{
+	    public CustomerEntity(string lastName, string firstName)
+	    {
+	        this.PartitionKey = lastName;
+	        this.RowKey = firstName;
+	    }
+
+	    public CustomerEntity() { }
+
+	    public string Email { get; set; }
+
+	    public string PhoneNumber { get; set; }
+	}
+
+将使用之前在“使用代码访问表”中创建的 **CloudTable** 对象完成涉及实体的表操作。 **TableOperation** 对象表示将完成的操作。以下代码示例演示如何创建 **CloudTable** 对象以及 **CustomerEntity** 对象。为准备此操作，会创建一个 **TableOperation** 以将客户实体插入该表中。最后，将通过调用 CloudTable.ExecuteAsync 执行此操作。
+
+	// Create a new customer entity.
+	CustomerEntity customer1 = new CustomerEntity("Harp", "Walter");
+	customer1.Email = "Walter@contoso.com";
+	customer1.PhoneNumber = "425-555-0101";
+
+	// Create the TableOperation that inserts the customer entity.
+	TableOperation insertOperation = TableOperation.Insert(customer1);
+
+	// Execute the insert operation.
+	await peopleTable.ExecuteAsync(insertOperation);
 
 ## 插入一批实体
 
 您可以通过单个写入操作将多个实体插入表中。以下代码示例将创建两个实体对象（“Jeff Smith”和“Ben Smith”），使用 Insert 方法将它们添加到 **TableBatchOperation** 对象，然后通过调用 **CloudTable.ExecuteBatchAsync** 启动操作。
-
-	// Get a reference to a CloudTable object named 'peopleTable' as described in "Access a table in code"
 
 	// Create the batch operation.
 	TableBatchOperation batchOperation = new TableBatchOperation();
@@ -83,8 +111,6 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 ## 获取分区中的所有实体
 若要查询表以获取分区中的所有实体，请使用 **TableQuery** 对象。以下代码示例指定了一个筛选器，以筛选分区键为“Smith”的实体。此示例会将查询结果中每个实体的字段输出到控制台。
-
-	// Get a reference to a CloudTable object named 'peopleTable' as described in "Access a table in code"
 
 	// Construct the query operation for all customer entities where PartitionKey="Smith".
     TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Smith"));
@@ -110,24 +136,20 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 ## 获取单个实体
 您可以编写查询以获取单个特定实体。以下代码使用 **TableOperation** 对象来指定名为“Ben Smith”的客户。此方法仅返回一个实体，而不是一个集合，并且 **TableResult.Result** 中的返回值是一个 **CustomerEntity** 对象。在查询中同时指定分区键和行键是从表服务中检索单个实体的最快方法。
 
-        // Get a reference to a CloudTable object named 'peopleTable' as described in "Access a table in code"
-
-        // Create a retrieve operation that takes a customer entity.
-        TableOperation retrieveOperation = TableOperation.Retrieve<CustomerEntity>("Smith", "Ben");
+	// Create a retrieve operation that takes a customer entity.
+    TableOperation retrieveOperation = TableOperation.Retrieve<CustomerEntity>("Smith", "Ben");
 
 	// Execute the retrieve operation.
 	TableResult retrievedResult = await peopleTable.ExecuteAsync(retrieveOperation);
-
+	
 	// Print the phone number of the result.
 	if (retrievedResult.Result != null)
-	   Console.WriteLine(((CustomerEntity)retrievedResult.Result).PhoneNumber);
+		Console.WriteLine(((CustomerEntity)retrievedResult.Result).PhoneNumber);
 	else
 	   Console.WriteLine("The phone number could not be retrieved.");
 
 ## 删除实体
 您可以在找到实体后将其删除。以下代码将查找名为“Ben Smith”的客户实体，如果找到，会将其删除。
-
-	// Get a reference to a CloudTable object named 'peopleTable' as described in "Access a table in code"
 
 	// Create a retrieve operation that expects a customer entity.
 	TableOperation retrieveOperation = TableOperation.Retrieve<CustomerEntity>("Smith", "Ben");
@@ -156,4 +178,4 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 [AZURE.INCLUDE [vs-storage-dotnet-tables-next-steps](../includes/vs-storage-dotnet-tables-next-steps.md)]
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0411_2016-->

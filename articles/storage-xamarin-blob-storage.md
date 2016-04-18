@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="01/22/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="02/21/2016"
+	wacn.date="04/18/2016"/>
 
 # 如何通过 Xamarin（预览版）使用 Blob 存储
 
@@ -43,9 +43,9 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 
 	https://storageaccount.blob.core.chinacloudapi.cn/sascontainer?sv=2012-02-12&se=2013-04-13T00%3A12%3A08Z&sr=c&sp=wl&sig=t%2BbzU9%2B7ry4okULN9S0wst%2F8MCUhTjrHyV9rDNLSe8g%3Dsss
 
-你在容器上创建的共享访问签名将在接下来的一天内有效。该签名将授予对容器内 blob 的完整权限（*例如*，读取、写入、删除和列表）。
+你在容器上创建的共享访问签名将在接下来的一天内有效。该签名将授予对容器内 blob 的完整权限（例如，读取、写入、删除和列表）。
 
-有关共享访问签名的详细信息，请参阅[针对 .NET 的 SAS 教程](/documentation/articles/storage-dotnet-shared-access-signature-part-2)。
+有关共享访问签名的详细信息，请参阅[共享访问签名：创建 SAS 并将 SAS 用于 Blob 存储](/documentation/articles/storage-dotnet-shared-access-signature-part-2)。
 
 ## 创建新的 Xamarin 应用程序
 
@@ -170,8 +170,10 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 查看以下链接，了解有关 blob、表和队列的详细信息：
 
 [Azure 存储空间简介](/documentation/articles/storage-introduction)  
-[如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)  
-[如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables)  
-[如何通过 .NET 使用队列存储](/documentation/articles/storage-dotnet-how-to-use-queues)
-[使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
-<!---HONumber=Mooncake_0321_2016-->
+- [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)
+- [通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables)
+- [通过 .NET 开始使用 Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues)
+- [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)
+- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
+
+<!---HONumber=Mooncake_0411_2016-->

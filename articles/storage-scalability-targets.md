@@ -8,8 +8,8 @@
 	editor="na" />
 <tags 
 	ms.service="storage"
-   ms.date="12/04/2015"
-	wacn.date="01/14/2016" />
+   ms.date="03/07/2016"
+	wacn.date="04/18/2016" />
 
 # Azure 存储空间可伸缩性和性能目标
 
@@ -25,7 +25,7 @@
 
 >当你的应用程序达到分区能够处理的工作负荷极限时，Azure 存储将开始返回错误代码 503（服务器忙）或错误代码 500（操作超时）响应。发生这种情况时，应用程序应使用指数退让策略进行重试。使用指数退让策略，可以减少分区上的负载，缓解该分区的流量高峰。
 
-如果您的应用程序的需求超过了单个存储帐户的可伸缩性目标值，您可以创建应用程序以使用多个存储帐户，并将数据对象分布到这些存储帐户中。请参阅[存储定价详细信息](/home/features/storage#price)，了解有关批量定价的信息。
+如果您的应用程序的需求超过了单个存储帐户的可伸缩性目标值，您可以创建应用程序以使用多个存储帐户，并将数据对象分布到这些存储帐户中。有关批量定价的信息，请参阅 [Azure 存储空间定价](/home/features/storage#price)。
 
 
 ##<a id="scalability-targets-for-standard-storage-accounts"></a> Blob、队列、表和文件的可伸缩性目标
@@ -64,7 +64,7 @@
 
 - **消息**：消息中的分区键是队列名称，因此一个队列中的所有消息都分组到单个分区中，由单个服务器提供服务。不同队列可以由不同服务器处理，无论存储帐户有多少队列，都可以平衡负载。
 
-- **实体**：实体的分区键是表名称 + 分区键，其中，分区键是实体所需的自定义的 **PartitionKey** 属性。
+- **实体**：实体的分区键是表名称 + 分区键，其中，分区键是实体所需的自定义的** PartitionKey** 属性。
 
 	具有相同分区键值的所有实体都分组到同一分区，并存储在同一分区服务器上。在设计应用程序的过程中，了解这一点非常重要。将实体分布在多个分区中能够实现可伸缩性优势，而将实体分组到单个分区中则能够提供数据访问优势，你的应用程序应该平衡这两大优势。
 
@@ -76,9 +76,9 @@
 
 - [存储定价详细信息](/home/features/storage#price)
 - [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)
-- [高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)
+- [高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)
 - [Azure 存储复制](/documentation/articles/storage-redundancy)
 - [Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist)
 - [Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0411_2016-->
