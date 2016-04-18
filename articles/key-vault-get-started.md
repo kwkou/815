@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="key-vault"
-	ms.date="01/19/2016"
-	wacn.date="03/18/2016"/>
+	ms.date="02/23/2016"
+	wacn.date="04/18/2016"/>
 
 # Azure 密钥保管库入门 #
 在大多数区域中提供了 Azure 密钥保管库。有关详细信息，请参阅[密钥保管库定价页](/home/features/key-vault/#price)。
@@ -18,7 +18,7 @@
 ## 介绍  
 本教程将会帮助你开始使用 Azure 密钥保管库在 Azure 中创建强化容器（保管库），以存储和管理 Azure 中的加密密钥和机密。本教程将指导你完成使用 Azure PowerShell 创建包含密钥或密码（稍后可用于 Azure 应用程序）的保管库程序。然后，将会说明应用程序如何使用该密钥或密码。
 
-*估计完成时间：** 20 分钟
+**估计完成时间：**20 分钟。
 
 >[AZURE.NOTE]  本教程未说明如何编写其中一个步骤所包括的 Azure 应用程序，但说明了如何授权应用程序使用密钥保管库中的密钥或机密。
 >
@@ -41,9 +41,9 @@
 
 	Get-Help <cmdlet-name> -Detailed
 
-例如，若要获取有关 **Add-AzureAccount** cmdlet 的帮助，请键入：
+例如，若要获取有关 **Login-AzureRmAccount** cmdlet 的帮助，请输入：
 
-	Get-Help Add-AzureAccount -Detailed
+	Get-Help Login-AzureRmAccount -Detailed
 
 还可阅读以下教程以熟悉如何在 Azure PowerShell 中使用 Azure 资源管理器：
 
@@ -55,7 +55,7 @@
 
 启动 Azure PowerShell 会话，然后使用以下命令登录你的 Azure 帐户：
 
-    Login-AzureRmAccount 
+    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 请注意，如果你使用特定的 Azure 实例（例如 Azure Government），请结合此命令使用 -Environment 参数。例如：`Login-AzureRmAccount –Environment (Get-AzureRmEnvironment –Name AzureUSGovernment)`
 
@@ -93,6 +93,9 @@
 - **保管库 URI**：在本示例中为 https://contosokeyvault.vault.chinacloudapi.cn/。通过其 REST API 使用保管库的应用程序必须使用此 URI。
 
 你的 Azure 帐户现已获取在此密钥保管库上执行任何作业的授权。而且没有其他人有此授权。
+
+>[AZURE.NOTE]  如果在尝试创建新的密钥保管库时看到错误“未注册使用命名空间‘Microsoft.KeyVault’的订阅”，请运行 `Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.KeyVault"`，然后重新运行 New-AzureRmKeyVault 命令。有关详细信息，请参阅 [Register-AzureRmProvider](https://msdn.microsoft.com/zh-cn/library/mt679020.aspx)。
+>
 
 ## <a id="add"></a>将密钥或机密添加到保管库 ##
 
@@ -156,7 +159,7 @@
 3. 单击“应用程序”。如果你的目录中尚未添加任何应用，则此页只会显示“添加应用”链接。单击该链接，或者单击命令栏上的“添加”。
 4.	在“添加应用程序”向导的“要执行什么操作?”页面上，单击“添加我的组织正在开发的应用程序”。
 5.	在“向我们说明你的应用程序”页上，指定应用程序名称，然后选择“WEB 应用程序和/或 WEB API”（默认值）。单击“下一步”图标。
-6.	在“应用程序属性”页上，为你的 Web 应用程序指定“登录 URL”和“应用程序ID URI”。如果你的应用程序没有这些值，可以在此步骤中虚构这些值（例如，可以在两个框中指定 http://test1.contoso.com）。这些网站是否存在并不重要；重要的是目录中每个应用程序的应用程序 ID URI 都不相同。目录会使用此字符串来识别你的应用程序。
+6.	在“应用程序属性”页上，为你的 Web 应用程序指定“登录 URL”和“应用程序ID URI”。如果你的应用程序没有这些值，可以在此步骤中虚构这些值（例如，可以在两个框中指定 http://test1.contoso.com ）。这些网站是否存在并不重要；重要的是目录中每个应用程序的应用程序 ID URI 都不相同。目录会使用此字符串来识别你的应用程序。
 7.	单击“完成”图标以保存向导中的更改。
 8.	在“快速启动”页上，单击“配置”。
 9.	滚动到“密钥”部分，选择持续时间，然后单击“保存”。页面将会刷新，随后显示密钥值。你必须使用此密钥值和“客户端 ID”值来配置应用程序。（有关此配置的说明仅适用于特定的应用程序。）
@@ -208,4 +211,4 @@
 
 有关编程参考，请参阅 [Azure 密钥保管库开发人员指南](/documentation/articles/key-vault-developers-guide)。
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0411_2016-->
