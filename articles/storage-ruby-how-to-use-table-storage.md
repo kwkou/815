@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="12/16/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/17/2016"
+	wacn.date="04/18/2016"/>
 
 
 # 如何通过 Ruby 使用 Azure 表存储
@@ -27,7 +27,7 @@
 
 ## 创建 Ruby 应用程序
 
-有关如何创建 Ruby 应用程序的说明，请参阅[在 Azure 中创建 Ruby 应用程序](/documentation/articles/virtual-machines-ruby-rails-web-app-linux)。
+有关如何创建 Ruby 应用程序的说明，请参阅 [Azure VM 上的 Ruby on Rails Web 应用程序](/documentation/articles/virtual-machines-ruby-rails-web-app-linux)。
 
 ## 配置应用程序以访问存储
 
@@ -54,13 +54,14 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 
 获取这些值：
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/)。
 
-2. 导航到你的存储帐户。
+从管理门户中的存储帐户中获取这些值：
 
-3. 单击导航窗格底部的“管理密钥”。
-
-4. 在弹出对话框中，将会看到存储帐户名称、主访问密钥和辅助访问密钥。对于访问密钥，你可以使用主访问密钥，也可以使用辅助访问密钥。
+1. 登录到[管理门户](https://manage.windowsazure.cn)。
+2. 导航到要使用的存储帐户。
+3. 单击导航窗格底部的“管理访问密钥”。
+4. 在弹出对话框中，将会看到存储帐户名称、主访问密钥和辅助访问密钥。对于访问密钥，您可以使用主访问密钥，也可以使用辅助访问密钥。 
+5. 单击复制图标以将键复制到剪贴板。
 
 ## 创建表
 
@@ -96,7 +97,7 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 	  :PartitionKey => "test-partition-key", :RowKey => "1" }
 	azure_table_service.update_entity("testtable", entity)
 
-对于 **update_entity()** 和 **merge_entity()**，如果待更新的实体不存在，则更新操作将失败。因此，如果您希望存储某个实体而不考虑它是否已存在，则应改用 **insert_or_replace_entity()** 或 **insert_or_merge_entity()**。
+对于 **update_entity()** 和 **merge_entity()**，如果要更新的实体不存在，则更新操作将失败。因此，如果您希望存储某个实体而不考虑它是否已存在，则应改用 **insert_or_replace_entity()** 或 **insert_or_merge_entity()**。
 
 ## 使用实体组
 
@@ -153,4 +154,4 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 - GitHub 上的 [Azure SDK for Ruby](http://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0411_2016-->

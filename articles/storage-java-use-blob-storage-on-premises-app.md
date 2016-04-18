@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="12/01/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/20/2016"
+	wacn.date="04/18/2016"/>
 
 # 使用 Blob 存储的本地应用程序
 
@@ -22,8 +22,9 @@
 
 - 已安装 Java 开发人员工具包 (JDK) 版本1.6 或更高版本。
 - 已安装 Azure SDK。
-- 适用于 Azure Libraries for Java 的 JAR 以及任何适用的依赖项 JAR 已安装并且位于 Java 编译器使用的生成路径中。有关安装 Azure Libraries for Java 的信息，请参阅 [下载 Azure SDK for Java][]。
-- 已设置了一个 Azure 存储帐户。本文中的代码将使用存储帐户的帐户名称和帐户密钥。有关创建存储帐户的信息，请参阅[如何创建存储帐户]；有关检索帐户密钥的信息，请参阅[如何管理存储帐户][]。
+- 适用于 Azure Libraries for Java 的 JAR 以及任何适用的依赖项 JAR 已安装并且位于 Java 编译器使用的生成路径中。有关安装 Azure Libraries for Java 的信息，请参阅[下载 Azure SDK for Java](/documentation/articles/java-download-azure-sdk)。
+- 已设置了一个 Azure 存储帐户。本文中的代码将使用存储帐户的帐户名称和帐户密钥。有关创建存储帐户的信息，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account#create-a-storage-account)；有关检索帐户密钥的信息，请参阅[查看并复制存储访问密钥](/documentation/articles/storage-create-storage-account#view-and-copy-storage-access-keys)。
+
 - 您已创建存储在路径 c:\\myimages\\image1.jpg 处的已命名本地图像文件。或者，在示例中修改 **FileInputStream** 构造函数以使用其他图像路径和文件名。
 
 [AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
@@ -324,8 +325,8 @@ Azure 存储空间中的 Blob。
 **CloudBlobContainer** 对象的过程与针对
 **createIfNotExist** 方法显示的过程是相同的。以下是删除名为 gettingstarted 的容器的完整示例。
 
-    import com.microsoft.windowsazure.services.core.storage.*;
-    import com.microsoft.windowsazure.services.blob.client.*;
+    import com.microsoft.azure.storage.*;
+    import com.microsoft.azure.storage.blob.*;
 
     public class DeleteContainer {
 
@@ -367,25 +368,15 @@ Azure 存储空间中的 Blob。
         }
     }
 
-有关其他 Blob 存储类和方法的概述，请参阅[如何通过 Java 使用 Blob 存储服务]。
+有关其他 Blob 存储类和方法的概述，请参阅[如何通过 Java 使用 Blob 存储](/documentation/articles/storage-java-how-to-use-blob-storage)。
 
 ## 后续步骤
 
 请访问下面的链接了解有关更复杂的存储任务的详细信息。
 
-- [Azure Storage SDK for Java][]
-- [Azure 存储客户端 SDK 参考][]
-- [Azure 存储 REST API][]
-- [Azure 存储团队博客][]
+- [Azure Storage SDK for Java](https://github.com/azure/azure-storage-java)
+- [Azure 存储客户端 SDK 参考](http://azure.github.io/azure-storage-java/)
+- [Azure 存储空间服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
+- [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 
-  [Download the Azure SDK for Java]: /develop/java/
-  [如何创建存储帐户]: /documentation/articles/storage-create-storage-account#create-a-storage-account
-  [如何管理存储帐户]: 
-documentation/articles/storage-create-storage-account#view-copy-and-regenerate-storage-access-keys
-  [如何通过 Java 使用 Blob 存储服务]: /documentation/articles/storage-java-how-to-use-blob-storage
-  [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
-  [Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
-  [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
-  [Azure 存储 REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
-
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0411_2016-->

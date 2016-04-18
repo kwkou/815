@@ -9,8 +9,8 @@
 
 <tags ms.service="storage"
 
-	ms.date="12/16/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/21/2016"
+	wacn.date="04/18/2016"/>
 
 # 开始使用 Azure 队列存储和 Visual Studio 连接服务
 
@@ -39,7 +39,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 3. 获取 **CloudQueueClient** 对象，以引用存储帐户中的队列对象。
 
-	    // Create the queueclient.
+	    // Create the CloudQueueClient object for this storage account.
     	CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
 4. 获取 **CloudQueue** 对象，以引用特定队列。
@@ -54,7 +54,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 若要在代码中创建 Azure 队列，只需在上面的代码中添加对 **CreateIfNotExists** 的调用。
 
-	// Create the CloudQuecClient  if it does not exist
+	// Create the messageQueue if it does not exist
 	messageQueue.CreateIfNotExists();
 
 ## 向队列添加消息
@@ -65,8 +65,6 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 以下示例插入了消息“Hello, World”。
 
-	// Get a reference to the CloudQueue object named 'messageQueue' as described in "Access a queue in code"
-
 	// Create a message and add it to the queue.
 	CloudQueueMessage message = new CloudQueueMessage("Hello, World");
 	messageQueue.AddMessage(message);
@@ -75,35 +73,29 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 通过调用 PeekMessage() 方法，可以查看队列前面的消息，而不必从队列中将其删除。
 
-    // Get a reference to the CloudQueue object named 'messageQueue' as described in "Access a queue in code"
-
 	// Peek at the next message
     CloudQueueMessage peekedMessage = messageQueue.PeekMessage();
 
 ## 读取和删除队列中的消息
 
 您的代码分两步从队列中删除消息（取消对消息的排队）。
-1.调用 GetMessage() 以获取队列中的下一条消息。从 GetMessage() 返回的消息变得对从此队列读取消息的任何其他代码不可见。默认情况下，此消息将持续 30 秒不可见。
-2.若要完成从队列中删除消息，请调用 **DeleteMessage**。
+1. 调用 GetMessage() 以获取队列中的下一条消息。从 GetMessage() 返回的消息变得对从此队列读取消息的任何其他代码不可见。默认情况下，此消息将持续 30 秒不可见。
+2.	若要完成从队列中删除消息，请调用 **DeleteMessage**。
 
 此删除消息的两步过程可确保，如果你的代码因硬件或软件故障而无法处理消息，则你的代码的其他实例可以获取相同消息并重试。以下代码将在处理消息后立即调用 **DeleteMessage**。
-
-	// Get a reference to the CloudQueue object named 'messageQueue' as described in "Access a queue in code"
 
 	// Get the next message in the queue.
 	CloudQueueMessage retrievedMessage = messageQueue.GetMessage();
 
 	// Process the message in less than 30 seconds
 
-  	// Then delete the message.
+	// Then delete the message.
 	await messageQueue.DeleteMessage(retrievedMessage);
 
 
 ## 使用其他选项来取消对消息的排队
 
 你可以通过两种方式自定义队列中的消息检索。首先，你可以获取一批消息（最多 32 个）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。以下代码示例使用 **GetMessages** 方法在一次调用中获取 20 条消息。然后，它使用 **foreach** 循环处理每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。请注意，5 分钟超时时间对于所有消息都是同时开始的，因此在调用 **GetMessages** 5 分钟后，尚未删除的任何消息都将再次变得可见。
-
-    // Get a reference to the CloudQueue object named 'messageQueue' as described in "Access a queue in code"
 
     // Create the queue client.
     CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
@@ -121,8 +113,6 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 你可以获取队列中消息的估计数。使用 **FetchAttributes** 方法可请求 queueservice 检索队列属性，包括消息计数。**ApproximateMethodCount** 属性返回 **FetchAttributes** 方法检索到的最后一个值，而不会调用 queueservice。
 
-    // Get a reference to the CloudQueue object named 'messageQueue' as described in "Access a queue in code"
-
 	// Fetch the queue attributes.
 	messageQueue.FetchAttributes();
 
@@ -134,9 +124,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 ## 共同使用 Async-Await 模式和公用队列 API
 
-此示例演示如何共同使用 Async Await 模式和公用队列 API。示例代码会调用每个给定方法的异步版本，这可以通过每个方法的 Async 后修补程序体现。使用异步方法时，async-await 模式将暂停本地执行，直到调用完成。此行为允许当前的线程执行其他工作，这有助于避免性能瓶颈并提高应用程序的整体响应能力。有关在 .NET 中使用 Async-Await 模式的详细信息，请参阅 [Async 和 Await（C# 和 Visual Basic）](https://msdn.microsoft.com/zh-cn/library/hh191443.aspx)
-
-    // Get a reference to the CloudQueue object named 'messageQueue' as described in "Access a queue in code"
+此示例演示如何共同使用 Async-Await 模式和公用队列 API。示例代码会调用每个给定方法的异步版本，这可以通过每个方法的 Async 后修补程序体现。使用异步方法时，async-await 模式将暂停本地执行，直到调用完成。此行为允许当前的线程执行其他工作，这有助于避免性能瓶颈并提高应用程序的整体响应能力。有关在.NET 中使用 Async-Await 模式的详细信息，请参阅 [Async 和 Await（C# 和 Visual Basic）](https://msdn.microsoft.com/zh-cn/library/hh191443.aspx)
 
     // Create a message to put in the queue
     CloudQueueMessage cloudQueueMessage = new CloudQueueMessage("My message");
@@ -157,15 +145,11 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 若要删除队列及其包含的所有消息，请对队列对象调用 **Delete** 方法。
 
-    // Get a reference to the CloudQueue object named 'messageQueue' as described in "Access a queue in code"
-
     // Delete the queue.
     messageQueue.Delete();
-
-
 
 ## 后续步骤
 
 [AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../includes/vs-storage-dotnet-queues-next-steps.md)]
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0411_2016-->

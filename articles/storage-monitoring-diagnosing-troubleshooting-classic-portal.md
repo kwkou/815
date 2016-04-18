@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="12/10/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="03/18/2016"
+	wacn.date="04/18/2016"/>
 
 # 监视、诊断和排查 Azure 存储空间问题
 
@@ -81,7 +81,7 @@
 - 为你提供必要的过程和工具来帮助你确定应用程序中的问题是否与 Azure 存储空间有关。
 - 为你提供用于解决与 Azure 存储空间相关的问题的可操作指南。
 
-### <a name="how-this-guide-is-organized">本指南的组织方式</a>
+### <a name="how-this-guide-is-organized"></a>本指南的组织方式
 
 “[监视存储服务]”一节介绍如何使用 Azure 存储分析度量值（存储度量值）监视 Azure 存储服务的运行状况和性能。
 
@@ -121,7 +121,7 @@
 
 ### <a name="monitoring-service-health"></a>监视服务运行状况
 
-可以使用 [Azure 经典门户](manage.windowsazure.cn)查看全球所有 Azure 区域中存储服务（及其他 Azure 服务）的运行状况。这使你可以立即了解是否有不受你控制的问题正在影响你的应用程序所使用的区域中的存储服务。
+可以使用 [Azure 经典门户](https://manage.windowsazure.cn)查看全球所有 Azure 区域中存储服务（及其他 Azure 服务）的运行状况。这使你可以立即了解是否有不受你控制的问题正在影响你的应用程序所使用的区域中的存储服务。
 
 此外，Azure 经典门户还可以提供影响各种 Azure 服务的事件的通知。注意：此信息以前已在 Azure 服务仪表板（网址为：<a href="http://status.azure.com" target="_blank">http://status.azure.com</a>）上与历史数据一起提供。
 
@@ -611,7 +611,7 @@ e2d06d78-... | 重试策略不允许重试。操作失败，远程服务器返�
 
 > [AZURE.NOTE]在排查客户端 JavaScript 问题时，可以使用 Internet Explorer 中的 F12 开发人员工具来跟踪浏览器与存储服务之间交换的消息。
 
-之所以发生这些错误是因为 Web 浏览器实施了“<a href="http://www.w3.org/Security/wiki/Same_Origin_Policy" target="_blank">同源策略</a>”安全限制，以防止网页调用与它来自的域不同的域中的 API。
+之所以发生这些错误是因为 Web 浏览器实施了<a href="http://www.w3.org/Security/wiki/Same_Origin_Policy" target="_blank">“同源策略”</a>安全限制，以防止网页调用与它来自的域不同的域中的 API。
 
 若要解决此 JavaScript 问题，可以为客户端访问的存储服务配置跨域资源共享 (CORS)。有关详细信息，请参阅 MSDN 上的 <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn535601.aspx" target="_blank">Azure 存储空间服务的跨域资源共享 (CORS) 支持</a>。
 
@@ -663,9 +663,9 @@ Timestamp|操作|结果|容器名称|客户端请求 ID
 **PercentSuccess** 度量值根据操作的 HTTP 状态代码捕获已成功的操作的百分比。状态代码为 2XX 的操作将计为成功，而状态代码在 3XX、4XX 和 5XX 范围内的操作将计为失败并降低 **PercentSucess** 度量值。在服务器端存储日志文件中，这些操作将使用事务状态 **ClientOtherErrors** 进行记录。
 
 请务必注意，这些操作已成功完成，因此不会影响其他度量值，如可用性。成功执行但可能会导致失败的 HTTP 状态代码的一些操作示例包括：
-- **ResourceNotFound**（未找到 404），例如，从针对不存在的 blob 的 GET 请求。
-- **ResouceAlreadyExists**（冲突 409），例如，从已存在该资源的 **CreateIfNotExist**。
-- **ConditionNotMet**（未修改 304），例如，从条件运算 （例如当客户端发送 **ETag** 值和一个 HTTP **None-If-match** 标头以仅在它自上次操作以来已更新时请求映像）。
+- **ResourceNotFound**（未找到 404），例如，对不存在的 Blob 进行 GET 请求时生成。
+- **ResouceAlreadyExists**（冲突 409），例如，在资源已存在的情况下进行 **CreateIfNotExist** 操作时生成。
+- **ConditionNotMet**（未修改 304），例如，进行条件操作时生成，例如仅在自上次操作以来图像已更新时，客户端才会发送 **ETag** 值和一个 HTTP **If-None-Match** 标头来请求此图像。
 
 可以在<a href="http://msdn.microsoft.com/zh-cn/library/azure/dd179357.aspx" target="_blank">常见的 REST API 错误代码</a>页上找到存储服务返回的常见 REST API 错误代码的列表。
 
@@ -913,4 +913,4 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 [9]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/mma-screenshot-1.png
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/mma-screenshot-2.png
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0411_2016-->

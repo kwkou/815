@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="12/16/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="02/23/2016" 
+	wacn.date="04/18/2016"/>
 
 
 # 如何通过 Ruby 使用队列存储
@@ -27,7 +27,7 @@
 
 ## 创建 Ruby 应用程序
 
-创建 Ruby 应用程序。有关说明，请参阅[在 Azure 上创建 Ruby 应用程序](/documentation/articles/virtual-machines-ruby-rails-web-app-linux)。
+创建 Ruby 应用程序。有关说明，请参阅[Azure VM 上的 Ruby on Rails Web 应用程序](/documentation/articles/virtual-machines-ruby-rails-web-app-linux)。
 
 ## 配置应用程序以访问存储
 
@@ -56,8 +56,9 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 
 1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/)。
 2. 导航到要使用的存储帐户
-3. 单击导航窗格底部的“管理密钥”。
-4. 在弹出对话框中，将会看到存储帐户名称、主访问密钥和辅助访问密钥。对于访问密钥，你可以选择主访问密钥，也可以选择辅助访问密钥。
+3. 单击导航窗格底部的“管理访问密钥”。
+4. 在弹出对话框中，将会看到存储帐户名称、主访问密钥和辅助访问密钥。对于访问密钥，您可以使用主访问密钥，也可以使用辅助访问密钥。 
+5. 单击复制图标以将键复制到剪贴板。
 
 ## 如何：创建队列
 
@@ -145,7 +146,7 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 - 访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 - 访问 GitHub 上的 [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
 
-有关本文中讨论的 Azure 队列服务与[如何使用 Service Bus 队列](/documentation/articles/service-bus-ruby-how-to-use-queues)一文中讨论的 Azure Service Bus 队列的比较，请参阅 [Azure 队列和 Azure Service Bus 队列 - 比较与对照](http://msdn.microsoft.com/zh-cn/library/azure/hh767287.aspx)
+有关本文中讨论的 Azure 队列服务与[如何使用服务总线队列](/documentation/articles/service-bus-ruby-how-to-use-queues)一文中讨论的 Azure 服务总线队列的比较，请参阅 [Azure 队列和服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted)
  
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0411_2016-->

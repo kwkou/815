@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="01/30/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="02/21/2016"
+	wacn.date="04/18/2016"/>
 
 # 开始使用 blob 存储和 Visual Studio 连接服务 (ASP.NET)
 
@@ -18,7 +18,7 @@
 
 本文介绍通过使用 Visual Studio 中的“添加连接服务”对话框在 ASP.NET 应用中创建或引用 Azure 存储帐户之后，如何开始使用 Azure Blob 存储。本文演示如何创建 blob 容器和执行其他常见任务（如上载、列出、下载和删除 blob）。示例是用 C# 编写的，并使用了 [Azure .NET 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
 
- - 有关使用 Azure Blob 存储的更多常规信息，请参阅[如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)。 
+ - 有关使用 Azure Blob 存储的更多常规信息，请参阅[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)。 
  - 有关 ASP.NET 项目的详细信息，请参阅 [ASP.NET](http://www.asp.net)。
 
 
@@ -72,8 +72,6 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 
 若要将文件上载到块 Blob，请获取容器引用，并使用它获取块 Blob 引用。获取 Blob 引用后，可以通过调用 **UploadFromStream** 方法，将任何数据流上载到该 Blob。如果之前不存在 Blob，此操作将创建一个；如果存在 Blob，此操作将覆盖它。下面的示例演示了如何将 Blob 上载到容器中，并假定已创建容器。
 
-    // Get a CloudBlobContainer named 'container' as described in "Access blob containers in code."
-
     // Create or overwrite the "myblob" blob with contents from a local file.
     using (var fileStream = System.IO.File.OpenRead(@"path\myfile"))
     {
@@ -83,8 +81,6 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 ## 列出容器中的 Blob
 
 若要列出容器中的 Blob，可以使用 **ListBlobs** 方法检索其中的 Blob 和/或目录。若要访问返回的 **IListBlobItem** 的丰富属性和方法，您必须将它转换到 **CloudBlockBlob**、**CloudPageBlob** 或 **CloudBlobDirectory** 对象。如果类型未知，你可以使用类型检查来确定要将其转换为哪种类型。以下代码演示了如何检索和输出 **photos** 容器中每项的 URI。
-
-    // Get a CloudBlobContainer named 'container' as described in "Access blob containers in code."
 
 	// Loop over items within the container and output the length and URI.
 	foreach (IListBlobItem item in container.ListBlobs(null, false))
@@ -154,8 +150,6 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 
 若要下载 blob，请使用 **DownloadToStream** 方法。以下示例使用 **DownloadToStream** 方法将 Blob 内容传输到一个流对象，然后您可以将该对象保存到本地文件。
 
-    // Get a CloudBlobContainer named 'container' as described in "Access blob containers in code"
-
     // Retrieve a reference to a blob named "photo1.jpg".
     CloudBlockBlob blockBlob = container.GetBlockBlobReference("photo1.jpg");
 
@@ -166,8 +160,6 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
     }
 
 也可以使用 **DownloadToStream** 方法以文本字符串形式下载 Blob 的内容。
-
-    // Get a CloudBlobContainer named 'container' as described in "Access blob containers in code"
 
 	// Retrieve a reference to a blob named "myblob.txt"
 	CloudBlockBlob blockBlob2 = container.GetBlockBlobReference("myblob.txt");
@@ -182,8 +174,6 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 ## 删除 Blob
 
 若要删除 Blob，请使用 **Delete** 方法。
-
-    // Get a CloudBlobContainer named 'container' as described in "Access blob containers in code"
 
     // Retrieve reference to a blob named "myblob.txt".
     CloudBlockBlob blockBlob = container.GetBlockBlobReference("myblob.txt");
@@ -234,4 +224,4 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0411_2016-->

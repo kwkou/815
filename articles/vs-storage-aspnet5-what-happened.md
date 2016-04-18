@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage"
-	ms.date="12/16/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/21/2016"
+	wacn.date="04/18/2016"/>
 
 # 我的 ASP.NET 5 项目（Visual Studio Azure 存储连接服务）发生了什么情况？
 
@@ -35,5 +35,4 @@ Azure 存储 NuGet 包已添加到你的 Visual Studio 项目。
 
 有关详细信息，请参阅 [ASP.NET 5](http://www.asp.net/vnext)。
  
-
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0411_2016-->

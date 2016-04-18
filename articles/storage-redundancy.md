@@ -10,12 +10,12 @@
 
 <tags 
   ms.service="storage" 
-  ms.date="01/22/2016" 
-  wacn.date="03/28/2016"/>
+  ms.date="02/17/2016" 
+  wacn.date="04/18/2016"/>
 
 # Azure 存储复制
 
-始终复制 Azure 存储帐户中的数据以确保持久性和高可用性，并且即使在遇到临时硬件故障时也符合 [Azure 存储 SLA 要求](/support/legal/sla/)。
+始终复制 Azure 存储帐户中的数据以确保持久性和高可用性，并且即使在遇到临时硬件故障时也符合 [Azure 存储 SLA 要求](/support/sla/storage) 要求。
 
 创建存储帐户时，必须选择以下复制选项之一：
 
@@ -69,9 +69,10 @@
 
 ## 后续步骤
 
+- [关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)
 - [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets) 
 - [Azure 存储冗余选项和读取访问异地冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)  
 - [使用 RA-GRS 的  Azure 存储模拟器 3.1](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/08/microsoft-azure-storage-emulator-3-1-with-ra-grs.aspx)
-- [Azure 存储 SOSP 论文](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)  
+- [SOSP 论文 - Azure 存储空间：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)  
  
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0411_2016-->

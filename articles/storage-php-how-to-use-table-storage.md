@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="12/16/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="02/17/2016"
+	wacn.date="04/18/2016"/>
 
 
 # 如何通过 PHP 使用表存储
@@ -19,7 +19,7 @@
 
 ## 概述
 
-本指南演示如何使用 Azure 表服务执行常见任务。示例是用 PHP 编写的并使用了 [Azure SDK for PHP][download]。所涉及的任务包括“创建和删除表以及在表中插入、删除和查询实体”。有关 Azure 表服务的详细信息，请参阅[后续步骤](#NextSteps)部分。
+本指南演示如何使用 Azure 表服务执行常见任务。示例是用 PHP 编写的并使用了 [Azure SDK for PHP][download]。所涉及的任务包括“创建和删除表以及在表中插入、删除和查询实体”。有关 Azure 表服务的详细信息，请参阅[后续步骤](#next-steps)部分。
 
 [AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
 
@@ -58,7 +58,7 @@
 
 对于访问实时服务：
 
-	DefaultEndpointsProtocol=[http|https];AccountName=[yourAccount];AccountKey=[yourKey]
+	DefaultEndpointsProtocol=[http|https];AccountName=[yourAccount];AccountKey=[yourKey];EndpointSuffix=core.chinacloudapi.cn
 
 对于访问模拟器存储：
 
@@ -474,4 +474,4 @@
 [filters]: http://msdn.microsoft.com/zh-cn/library/azure/dd894031.aspx
 [entity-group-transactions]: http://msdn.microsoft.com/zh-cn/library/azure/dd894038.aspx
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0411_2016-->

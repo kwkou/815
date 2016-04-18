@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="12/11/2015"
-	wacn.date="03/28/2016"/>
+	ms.date="02/29/2016"
+	wacn.date="04/18/2016"/>
 
 # 如何通过 Python 使用 Azure Blob 存储
 
@@ -18,7 +18,7 @@
 
 ## 概述
 
-本指南将演示如何使用 Blob 存储执行常见方案。相关示例是使用 Python 编写的，并使用 [Python Azure 存储服务包][]。涉及的任务包括上传、列出、下载和删除 Blob。
+本指南将演示如何使用 Blob 存储执行常见方案。这些示例通过 Python 编写并使用 [Azure Storage SDK for Python][]。涉及的任务包括上载、列出、下载和删除 Blob。
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
 
@@ -26,89 +26,100 @@
 
 ## 创建容器
 
-> [AZURE.NOTE]如果您需要安装 Python 或 [Python Azure 包][]，请参阅 [Python 安装指南](/documentation/articles/python-how-to-install)。
+根据要使用的 Blob 的类型，创建 **BlockBlobService**、**AppendBlobService** 或 **PageBlobService** 对象。以下代码使用 **BlockBlobService** 对象。在你希望在其中以编程方式访问 Azure 块 Blob 存储的任何 Python 文件中，将以下代码添加到文件的顶部附近。
 
-使用 **BlobService** 对象可以对容器和 Blob 进行操作。以下代码创建 **BlobService** 对象。在您希望在其中以编程方式访问 Azure 存储空间的任何 Python 文件中，将以下代码添加到文件的顶部附近。
+	from azure.storage.blob import BlockBlobService
 
-	from azure.storage.blob import BlobService
+以下代码使用存储帐户名称和帐户密钥创建一个 **BlockBlobService** 对象。使用你的帐户名称和密钥替换“myaccount”和“mykey”。
 
-以下代码使用存储帐户名称和帐户密钥创建一个 **BlobService** 对象。使用实际帐户和密钥替换“myaccount”和“mykey”。
-
-	blob_service = BlobService(account_name='myaccount', account_key='mykey',endpoint_suffix='core.chinacloudapi.cn')
+	block_blob_service = BlockBlobService(account_name='myaccount', account_key='mykey', endpoint_suffix='core.chinacloudapi.cn')
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
 
-在以下代码示例中，如果该容器不存在，可以使用 **BlobService** 对象来创建它。
+在以下代码示例中，如果容器不存在，可以使用 **BlockBlobService** 对象来创建它。
 
-	blob_service.create_container('mycontainer')
+	block_blob_service.create_container('mycontainer')
 
-默认情况下，新容器是专用容器，因此您必须指定存储访问密钥（如之前所做的那样）才能从该容器下载 Blob。如果您要让容器中的文件可供所有人使用，则可以使用以下代码创建容器并传递公共访问级别。
+默认情况下，新容器是专用容器，因此您必须指定存储访问密钥（如之前所做的那样）才能从该容器下载 Blob。如果你要让容器中的 Blob 可供所有人使用，则可以使用以下代码创建容器并传递公共访问级别。
 
-	blob_service.create_container('mycontainer', x_ms_blob_public_access='container')
+	from azure.storage.blob import PublicAccess
+	block_blob_service.create_container('mycontainer', public_access=PublicAccess.Container)
 
 或者，也可以在创建容器后使用以下代码修改该容器。
 
-	blob_service.set_container_acl('mycontainer', x_ms_blob_public_access='container')
+	block_blob_service.set_container_acl('mycontainer', public_access=PublicAccess.Container)
 
 在此更改后，Internet 上的任何人都可以查看公共容器中的 Blob，但只有您可以修改或删除它们。
 
 ## 将 Blob 上载到容器中
 
-若要将数据上载到 Blob，请使用 **put_block_blob_from_path**、**put_block_blob_from_file**、**put_block_blob_from_bytes** 或 **put_block_blob_from_text** 方法。这些方法属于高级方法，用于在数据大小超过 64 MB 时执行必要的分块。
+若要创建块 Blob 并上载数据，请使用 **create_blob_from_path**、**create_blob_from_stream**、**create_blob_from_bytes** 或 **create_blob_from_text** 方法。这些方法属于高级方法，用于在数据大小超过 64 MB 时执行必要的分块。
 
-**put_block_blob_from_path** 上载指定路径中一个文件的内容，**put_block_blob_from_file** 上载已打开的文件/流中的内容。**put_block_blob_from_bytes** 上载一组字节，**put_block_blob_from_text** 使用使用指定的编码（默认为 UTF-8）上载指定的文本值。
+**create_blob_from_path** 上载指定路径文件中的内容，**create_blob_from_stream** 上载已打开的文件/流中的内容。**create_blob_from_bytes** 上载字节数组，**create_blob_from_text** 使用指定的编码（默认为 UTF-8）上载指定的文本值。
 
 下面的示例将 **sunset.png** 文件的内容上载到 **myblob** Blob。
 
-	blob_service.put_block_blob_from_path(
+	from azure.storage.blob import ContentSettings
+	block_blob_service.create_blob_from_path(
         'mycontainer',
-        'myblob',
+        'myblockblob',
         'sunset.png',
-        x_ms_blob_content_type='image/png'
+        content_settings=ContentSettings(content_type='image/png')
     )
 
 ## 列出容器中的 Blob
 
-若要列出容器中的 Blob，请使用 **list_blobs** 方法。每次调用 **list_blobs** 将返回一段结果。若要获取所有结果，请检查结果的 **next_marker** 并在需要时再次调用 **list_blobs**。以下代码将容器中每个 Blob 的“名称”输出到控制台。
+若要列出容器中的 Blob，请使用 **list_blobs** 方法。此方法会返回一个生成器。以下代码将容器中每个 Blob 的“名称”输出到控制台。
 
-	blobs = []
-	marker = None
-	while True:
-		batch = blob_service.list_blobs('mycontainer', marker=marker)
-		blobs.extend(batch)
-		if not batch.next_marker:
-			break
-		marker = batch.next_marker
-	for blob in blobs:
+	generator = block_blob_service.list_blobs('mycontainer')
+	for blob in generator:
 		print(blob.name)
 
 ## 下载 Blob
 
-每个结果段可以包含可变数目的 Blob，最大为 5000 个。如果存在特定数据段的 **next_marker**，容器中可能有多个 Blob。
-
-若要从 Blob 下载数据，请使用 **get_blob_to_path**、**get_blob_to_file**、**get_blob_to_bytes** 或 **get_blob_to_text**。这些方法属于高级方法，用于在数据大小超过 64 MB 时执行必要的分块。
+若要从 Blob 下载数据，请使用 **get_blob_to_path**、**get_blob_to_stream**、**get_blob_to_bytes** 或 **get_blob_to_text**。这些方法属于高级方法，用于在数据大小超过 64 MB 时执行必要的分块。
 
 以下示例演示了如何使用 **get_blob_to_path** 下载 **myblob** Blob 的内容，并将其存储到 **out-sunset.png** 文件：
 
-	blob_service.get_blob_to_path('mycontainer', 'myblob', 'out-sunset.png')
+	block_blob_service.get_blob_to_path('mycontainer', 'myblockblob', 'out-sunset.png')
 
 ## 删除 Blob
 
-最后，若要删除 Blob，请调用 delete_blob。
+最后，若要删除 Blob，请调用 **delete_blob**。
 
-	blob_service.delete_blob('mycontainer', 'myblob')
+	block_blob_service.delete_blob('mycontainer', 'myblockblob')
+
+## 写入追加 Blob
+
+追加 Blob 针对追加操作（例如日志记录）进行了优化。类似于块 Blob，追加 Blob 由块组成，但是当你将新的块添加到追加 Blob 时，始终追加到该 Blob 的末尾。你不能更新或删除追加 Blob 中现有的块。追加 Blob 的块 ID 不公开，因为它们是用于一个块 Blob 的。
+
+追加 Blob 中的每个块可以有不同的大小，最大为 4 MB，并且追加 Blob 最多可包含 50000 个块。因此，追加 Blob 的最大大小稍微大于 195 GB（4 MB X 50000 块）。
+
+下面的示例创建一个新的追加 Blob 并向其追加某些数据，模拟一个简单的日志记录操作。
+
+	from azure.storage.blob import AppendBlobService
+	append_blob_service = AppendBlobService(account_name='myaccount', account_key='mykey', endpoint_suffix='core.chinacloudapi.cn')
+
+	# The same containers can hold all types of blobs
+	append_blob_service.create_container('mycontainer')
+
+	# Append blobs must be created before they are appended to
+	append_blob_service.create_blob('mycontainer', 'myappendblob')
+	append_blob_service.append_blob_from_text('mycontainer', 'myappendblob', u'Hello, world!')
+
+	append_blob = append_blob_service.get_blob_to_text('mycontainer', 'myappendblob')
 
 ## 后续步骤
 
-现在，您已了解有关 Blob 存储的基础知识，可单击下面的链接来了解更复杂的存储任务。
+现在，你已了解 Blob 存储的基础知识，可单击下面的链接了解详细信息。
 
-- 访问 [Azure 存储空间团队博客][]
-- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
+- [Python 开发人员中心](/develop/python/)
+- [Azure 存储空间服务 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
+- [Azure 存储团队博客]
 
-有关详细信息，另请参阅 [Python 开发人员中心](/develop/python/)。
 
 [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
-[Python Azure 包]: https://pypi.python.org/pypi/azure
-[Python Azure 存储服务包]: https://pypi.python.org/pypi/azure-storage
+[Python Azure 包]: https://github.com/Azure/azure-storage-python
+[Python Azure 存储服务包]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0411_2016-->

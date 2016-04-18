@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="01/05/2016" 
-	wacn.date="02/25/2016"/>
+	ms.date="02/19/2016" 
+	wacn.date="04/18/2016"/>
 
 # 管理对容器和 blob 的匿名读取访问
 
@@ -151,4 +151,4 @@
 - [共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)
 - [使用共享的访问签名委托访问](https://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx) 
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0411_2016-->

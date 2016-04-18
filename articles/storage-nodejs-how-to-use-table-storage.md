@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="12/01/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/17/2016"
+	wacn.date="04/18/2016"/>
 
 
 # 如何通过 Node.js 使用 Azure 表存储
@@ -24,9 +24,9 @@
 
 本主题中的代码示例假定您已有 Node.js 应用程序。有关在 Azure 中创建 Node.js 应用程序的信息，请参阅以下任何主题：
 
-- [构建 Node.js Web 应用并部署到 Azure][创建 Node.js 应用程序并将其部署到 Azure Web 应用]。
-- [使用 WebMatrix 构建 Node.js Web 应用并部署到 Azure][使用 WebMatrix 构建 Web 应用]
-- [构建 Node.js 应用程序并将其部署到 Azure 云服务][Node.js Cloud Service]（使用 Windows PowerShell）
+- [在 Azure App Service 中创建 Node.js Web 应用](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
+- [使用 WebMatrix 构建 Node.js Web 应用并将其部署到 Azure](/documentation/articles/web-sites-nodejs-use-webmatrix)
+- [生成 Node.js 应用程序并将其部署到 Azure 云服务](/documentation/articles/cloud-services-nodejs-develop-deploy-app)（使用 Windows PowerShell）
 
 
 [AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
@@ -67,7 +67,7 @@
 
 Azure 模块将读取环境变量 AZURE_STORAGE_ACCOUNT 和 AZURE_STORAGE_ACCESS_KEY 或 AZURE_STORAGE_CONNECTION_STRING 以获取连接到您的 Azure 存储帐户所需的信息。如果未设置这些环境变量，则必须在调用 **TableService** 时指定帐户信息。
 
-有关在管理门户中为 Azure Web 应用设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用]
+有关在管理门户中为 Azure Web 应用设置环境变量的示例，请参阅[使用 Azure 表服务的 Node.js Web 应用]
 
 ## 创建表
 
@@ -272,7 +272,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-如果成功，`result.entries` 将包含与查询匹配的一组实体。如果查询无法返回所有实体，`result.continuationToken` 就不会是 *null* ，因此可用作 **queryEntities** 的第三个参数来检索更多结果。对于初始查询，请为第三个参数使用 *null* 。
+如果成功，`result.entries` 将包含与查询匹配的一组实体。如果查询无法返回所有实体，`result.continuationToken` 就不会是 *null*，因此可用作 **queryEntities** 的第三个参数来检索更多结果。对于初始查询，第三个参数请使用 *null*。
 
 ### 查询一部分实体属性
 
@@ -406,7 +406,7 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 	  }
 	];
 
-以下示例获取 **hometasks** 表的当前 ACL，然后使用 **setTableAcl** 添加新策略。此方法具有以下用途：
+下面的示例获取 **hometasks** 表的当前 ACL，然后使用 **setTableAcl** 添加新策略。此方法具有以下用途：
 
 	tableSvc.getTableAcl('hometasks', function(error, result, response) {
       if(!error){
@@ -437,11 +437,11 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [使用 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx
   [Azure 管理门户]: http://manage.windowsazure.cn
 
-  [Node.js 云服务]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app
-  [访问 Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
-  [使用 WebMatrix 构建 Web 应用]: /zh-cn/documentation/articles/web-sites-nodejs-use-webmatrix
+  [生成 Node.js 应用程序并将其部署到 Azure 云服务]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+  [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
+  [使用 WebMatrix 构建 Node.js Web 应用并将其部署到 Azure]: /documentation/articles/web-sites-nodejs-use-webmatrix
   [使用存储构建 Node.js 云服务]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
-  [使用存储构建 Node.js Web 应用]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-web-site
-  [Create and deploy a Node.js application to an Azure  Website]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+  [使用 Azure 表服务的 Node.js Web 应用]: /documentation/articles/storage-nodejs-use-table-storage-web-site
+  [在 Azure App Service 中创建 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0411_2016-->

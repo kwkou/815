@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="12/16/2015"
-	wacn.date="01/21/2016"/>
+	ms.date="02/17/2016"
+	wacn.date="04/18/2016"/>
 
 # 如何通过 PHP 使用队列存储
 
@@ -57,7 +57,7 @@
 
 对于访问实时服务：
 
-	DefaultEndpointsProtocol=[http|https];AccountName=[yourAccount];AccountKey=[yourKey]
+	DefaultEndpointsProtocol=[http|https];AccountName=[yourAccount];AccountKey=[yourKey];EndpointSuffix=core.chinacloudapi.cn
 
 对于访问模拟器存储：
 
@@ -379,4 +379,4 @@
 [require_once]: http://www.php.net/manual/en/function.require-once.php
 [Azure 管理门户]: http://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0411_2016-->
