@@ -1,18 +1,18 @@
 <properties
-	pageTitle="编写内联表值函数以选择要迁移的行（SQL Server Stretch Database）| Azure"
+	pageTitle="使用筛选器谓词来选择要迁移的行（SQL Server Stretch Database）| Azure"
 	description="了解如何创建筛选器谓词以选择要迁移的行。"
 	services="sql-server-stretch-database"
 	documentationCenter=""
-	authors="douglasl"
-	manager="jhubbard"
-	editor="monicar"/>
+	authors="douglaslMS"
+	manager=""
+	editor=""/>
 
 <tags
 	ms.service="sql-server-stretch-database"
 	ms.date="02/26/2016"
-	wacn.date="03/10/2016"/>
+	wacn.date="04/18/2016"/>
 
-# 编写内联表值函数以选择要迁移的行（SQL Server Stretch Database）
+# 使用筛选器谓词来选择要迁移的行（SQL Server Stretch Database）
 
 如果在单独的某个表中存储了历史数据，则你可以将SQL Server Stretch Database配置为迁移整个表。另一方面，如果表包含历史数据和当前数据，则你可以指定筛选器谓词来选择要迁移的行。该筛选器谓词必须调用内联表值函数。本主题介绍如何编写内联表值函数用于选择要迁移的行。
 
@@ -20,7 +20,6 @@
 
 如果未指定筛选器谓词，则会迁移整个表。
 
-> [!IMPORTANT]
 > 如果提供的筛选器谓词性能不佳，则数据迁移的性能也会不佳。SQL Server Stretch Database将使用 CROSS APPLY 运算符对表应用筛选器谓词。
 
 ## 内联表值函数的基本要求
@@ -42,7 +41,7 @@ RETURN	SELECT 1 AS is_eligible
 如果该函数返回非空结果，则表示相应的行符合迁移条件；否则 - 即，如果该函数未返回任何行 - 则表示相应的行不符合迁移条件。
 
 ### 条件
-&lt;*predicate*&gt; 可以包含一个条件或者使用 AND 逻辑运算符联接的多个条件。
+&lt;谓词&gt; 可以包含一个条件或者使用 AND 逻辑运算符联接的多个条件。
 
 ```
 <predicate> ::= <condition> [ AND <condition> ] [ ...n ]
@@ -67,7 +66,7 @@ RETURN	SELECT 1 AS is_eligible
 
 -   将函数参数与常量表达式进行比较。例如，`@column1 < 1000`。
 
-    以下示例将检查 *date* 列的值是否为 `< 1/1/2016`。
+    以下示例将检查 date 列的值是否 `< 1/1/2016`。
 
     ```tsql
     CREATE FUNCTION dbo.fn_stretchpredicate(@column1 datetime)
@@ -88,7 +87,7 @@ RETURN	SELECT 1 AS is_eligible
 
 -   使用 IN 运算符将函数参数与常量值列表进行比较。
 
-    以下示例将检查 *shipment\_status* 列的值是否为 `IN (N'Completed', N'Returned', N'Cancelled')`。
+    以下示例将检查 shipment\_status 列的值是否为 `IN (N'Completed', N'Returned', N'Cancelled')`。
 
     ```tsql
     CREATE FUNCTION dbo.fn_stretchpredicate(@column1 nvarchar(15))
@@ -330,7 +329,7 @@ ALTER TABLE stretch_table_name SET ( REMOTE_DATA_ARCHIVE = ON (
 
 -   运算符参数的顺序不能更改。
 
--   只有更改 `<, <=, >, >=` 比较表达式中的常量值，但更改的方式必须使谓词的限制强度更低。
+-   只能更改 `<, <=, >, >=` 比较表达式中的常量值，但更改的方式必须使谓词的限制性更低。
 
 ### 有效替换的示例
 假设以下函数是当前的筛选器谓词。
@@ -406,4 +405,4 @@ GO
 ## 另请参阅
 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms190273.aspx)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0411_2016-->
