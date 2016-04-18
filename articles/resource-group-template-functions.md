@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="01/15/2016"
-   wacn.date="02/26/2016"/>
+   ms.date="02/22/2016"
+   wacn.date="04/18/2016"/>
 
 # Azure 资源管理器模板函数
 
@@ -582,6 +582,19 @@
       } 
     } 
 
+<a id="list" /></a>
+### list*
+
+**list* (resourceName or resourceIdentifier, apiVersion)**
+
+以 **list** 开头的任何操作都可用作模板中的函数。这包括如上所示的 **listKeys**，但也包括 **list**、**listAdminKeys** 和 **listStatus** 等操作。调用函数时，请使用该函数的实际名称而不要使用 list*。若要确定哪些资源类型具有列表操作，请使用以下 PowerShell 命令。
+
+    PS C:\> Get-AzureRmProviderOperation -OperationSearchString *  | where {$_.Operation -like "*list*"} | FT Operation
+
+或者，使用 Azure CLI 来检索列表。以下示例将检索 **apiapps** 的所有操作，并使用 JSON 实用工具 [jq](http://stedolan.github.io/jq/download/) 来筛选出列表操作。
+
+    azure provider operations show --operationSearchString */apiapps/* --json | jq ".[] | select (.operation | contains("list"))"
+
 <a id="providers" /></a>
 ### providers
 
@@ -625,7 +638,8 @@
 
 **reference** 函数从运行时状态派生其值，因此不能在 variables 节中使用。可以在模板的 outputs 节中使用它。
 
-如果在相同的模板内设置了引用的资源，则可使用 reference 函数来隐式声明一个资源依赖于另一个资源。另外，不需要使用 **dependsOn** 属性。只有当引用的资源已完成部署后，才会对函数求值。
+如果在相同的模板内设置了引用的资源，则可使用 reference 函数来隐式声明一个资源依赖于另一个资源。另外，不需要使用 **dependsOn** 属性。
+只有当引用的资源已完成部署后，才会对函数求值。
 
 以下示例引用同一模板中部署的存储帐户。
 
@@ -769,8 +783,9 @@
 将使用以下格式返回有关订阅的详细信息。
 
     {
-        "id": "/subscriptions/#####"
-        "subscriptionId": "#####"
+        "id": "/subscriptions/#####",
+        "subscriptionId": "#####",
+        "tenantId": "#####"
     }
 
 以下示例演示了在 outputs 节中调用的 subscription 函数。
@@ -789,4 +804,5 @@
 - 若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)
 - 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)
 
-<!---HONumber=Mooncake_0215_2016-->
+
+<!---HONumber=Mooncake_0411_2016-->
