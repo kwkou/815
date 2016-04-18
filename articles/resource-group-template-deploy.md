@@ -9,16 +9,16 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="02/02/2016"
-   wacn.date="03/21/2016"/>
+   ms.date="02/17/2016"
+   wacn.date="04/18/2016"/>
 
 # 使用 Azure 资源管理器模板部署应用程序
 
-本主题介绍如何使用 Azure 资源管理器模板向 Azure 部署应用程序。它将说明如何使用 Azure PowerShell、Azure CLI、REST API 或 Azure 门户部署应用程序。
+本主题介绍如何使用 Azure 资源管理器模板向 Azure 部署资源。其中将说明如何使用 Azure PowerShell、Azure CLI、REST API 或 Azure 门户部署资源。
 
 有关资源管理器的简介，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。若要了解有关创建模板的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
 
-在使用模板部署应用程序时，可以提供参数值来自定义如何创建资源。以内联方式或者在参数文件中指定这些参数的值。
+在使用模板部署应用程序定义时，可以提供参数值来自定义如何创建资源。以内联方式或者在参数文件中指定这些参数的值。
 
 ## 增量部署和完整部署
 
@@ -104,15 +104,19 @@
           included in the template will be deleted.
           [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 
+     如果模板包括名称与部署模板命令中的参数之一匹配的参数（例如，在模板中包括名为 **ResourceGroupName** 的参数，这与 [New-AzureRmResourceGroupDeployment](https://msdn.microsoft.com/zh-cn/library/azure/mt679003.aspx) cmdlet 中的 **ResourceGroupName** 参数相同），系统将提示你为后缀为 **FromTemplate** 的参数（例如 **ResourceGroupNameFromTemplate**）提供值。通常，不应将参数命名为与用于部署操作的参数的名称相同以避免这种混乱。
+
 6. 获取有关部署错误的信息。
 
         PS C:\> Get-AzureRmResourceGroupDeployment -ResourceGroupName ExampleResourceGroup -Name ExampleDeployment
 
 ## 使用适用于 Mac、Linux 和 Windows 的 Azure CLI 进行部署
 
+如果你以前没有对资源管理器使用过 Azure CLI，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager)。
+
 1. 登录到你的 Azure 帐户。提供凭据后，该命令将返回你的登录结果。
 
-        azure login -e AzureCinaCloud -u <username> -p <password>
+        azure login -e AzureCinaCloud
   
         ...
         info:    login command OK
@@ -189,7 +193,7 @@
              }
            }
    
-3. 创建新的资源组部署。提供你的订阅 ID、要部署的资源组的名称、部署的名称以及模板的位置。有关模板文件的信息，请参阅[参数文件](#parameter-file)。有关使用 REST API 创建资源组的详细信息，请参阅[创建模板部署](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx)。
+3. 创建新的资源组部署。提供你的订阅 ID、要部署的资源组的名称、部署的名称以及模板的位置。有关模板文件的信息，请参阅[参数文件](#parameter-file)。有关使用 REST API 创建资源组的详细信息，请参阅[创建模板部署](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx)。请注意，**mode** 设置为 **Incremental**。若要运行完整部署，请将 **mode** 设置为 **Complete**。
     
          PUT https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2015-01-01
             <common headers>
@@ -247,6 +251,9 @@
 
 参数文件的大小不能超过 64 KB。
 
+有关如何在模板中定义参数，请参阅 [Authoring templates（创作模板](/documentation/articles/resource-group-authoring-templates/#parameters)）。
+有关用于传递安全值的 KeyVault 引用的详细信息，请参阅 [Pass secure values during deployment（在部署期间传递安全值）](/documentation/articles/resource-manager-keyvault-parameter)
+
 ## 后续步骤
 - 有关通过 .NET 客户端库部署资源的示例，请参阅[使用 .NET 库和模板部署资源](/documentation/articles/arm-template-deployment)
 - 有关部署应用程序的详细示例，请参阅[按可预见的方式在 Azure 中预配和部署微服务](app-service-web/app-service-deploy-complex-application-predictably.md)
@@ -256,4 +263,4 @@
 
  
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0411_2016-->
