@@ -8,8 +8,8 @@
    editor="monicar" />
 <tags
    ms.service="sql-database"
-   ms.date="12/01/2015"
-   wacn.date="03/29/2016" />
+   ms.date="02/23/2016"
+   wacn.date="04/18/2016" />
 
 # Web 和 Business Edition 停用常见问题
 
@@ -27,13 +27,13 @@ Azure SQL Web 和企业数据库现已停用。基本、标准、高级和弹性
 
 ## 为何 Azure 门户显示我的 Web 和 Business Edition 数据库已停用？
 
-由于 Web 和 Business Edition 数据库在 2015 年 9 月后将不可用，因此门户将 Web 和企业数据库标记为“已停用”。你仍可以像平时一样设置和管理 Web 与企业数据库，“已停用”标签只是提醒你，最好为新数据库使用基本、标准或高级服务层。“已停用”标签还旨在提醒你应该将所有 Web 和企业数据库升级到标准、基本和高级服务层。有关将现有 Web 或企业数据库升级到新服务层的详细信息，请参阅[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-new-service-tiers)。
+由于 Web 和 Business Edition 数据库在 2015 年 9 月后将不可用，因此门户将 Web 和企业数据库标记为“已停用”。“已停用”标签还旨在提醒你应该将所有 Web 和企业数据库升级到标准、基本和高级服务层。有关将现有 Web 或企业数据库升级到新服务层的详细信息，请参阅[升级到 Azure SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server-portal)。
 
 ## 最好是将我的现有 Web 或企业数据库升级到哪个新服务层？
 
 为现有 Web 或企业数据库选择适当的新服务层和性能级别取决于应用程序的具体功能和性能要求。
 
-请使用上述定价层建议；有关帮助你选择适当新服务层的详细信息，请参阅[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-new-service-tiers)。
+请使用上述定价层建议；有关帮助你选择合适的新服务层的详细信息，请参阅[升级到 Azure SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server-portal)。
 
 ## Microsoft 为何要引入新的服务层？
 
@@ -62,6 +62,6 @@ Azure SQL Web 和企业数据库现已停用。基本、标准、高级和弹性
 
 [服务层](/documentation/articles/sql-database-service-tiers)
 
-[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-new-service-tiers)
+[升级到 Azure SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server-portal)
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0411_2016-->

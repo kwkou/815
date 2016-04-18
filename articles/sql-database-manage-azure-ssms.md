@@ -9,63 +9,21 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="09/11/2015" 
-	wacn.date="04/01/2016"/>
+	ms.date="03/07/2016" 
+	wacn.date="04/18/2016"/>
 
 
 # 使用 SQL Server Management Studio 管理 Azure SQL 数据库 
 
 
 > [AZURE.SELECTOR]
+- [Azure 门户](/documentation/articles/sql-database-manage-portal)
 - [SSMS](/documentation/articles/sql-database-manage-azure-ssms)
 - [PowerShell](/documentation/articles/sql-database-command-line-tools)
 
-你可以使用 SQL Server Management Studio (SSMS) 来管理 Azure SQL 数据库逻辑服务器与数据库。本主题将指导你使用 SSMS 完成常见任务。在开始之前，你应该已在 Azure SQL 数据库中创建了逻辑服务器和数据库。若要开始，请先阅读[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)，然后返回此处。
+你可以使用 SQL Server Management Studio (SSMS) 来管理 Azure SQL 数据库逻辑服务器与数据库。本主题将指导你使用 SSMS 完成常见任务。在开始之前，你应该已在 Azure SQL 数据库中创建了逻辑服务器和数据库。有关如何连接并运行简单的 SELECT 查询的信息，请参阅[创建第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)和如何[使用 SSMS 连接并查询](/documentation/articles/sql-database-connect-query-ssms)的文章。
 
 建议你每当使用 Azure SQL 数据库时，都使用最新版本的 SSMS。请访问[下载 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 以获取最新版本的 SSMS。
-
-
-## 连接到 SQL 数据库逻辑服务器
-
-连接到 SQL 数据库需要您知道在 Azure 上的服务器名称。您可能需要登录到门户来获取此信息。
-
-1.  登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
-
-2.  在左窗格中，单击“SQL 数据库”。
-
-3.  在“SQL 数据库”主页上，单击页面顶部的“服务器”以列出与你的订阅关联的所有服务器。查找要连接到的服务器的名称，然后将它复制到剪贴板上。
-
-	接下来，将您的 SQL 数据库防火墙配置为允许从您的本地计算机连接。通过将您的本地计算机 IP 地址添加到防火墙例外列表中来执行此操作。
-
-1.  在“SQL 数据库”主页上，单击“服务器”，然后单击要连接到的服务器。
-
-2.  单击页面顶部的“配置”。
-
-3.  复制“当前客户端 IP 地址”中的 IP 地址。
-
-4.  在“配置”页中，“允许的 IP 地址”包括三个框，你可以在其中指定规则名称和作为开始和结束值的 IP 地址范围。对于规则名称，您可以输入您的计算机的名称。对于开始和结束范围，将您的计算机的 IP 地址粘贴到两个框中，然后单击显示的复选框。
-
-	规则名称必须是唯一的。如果这是您的开发计算机，则您可以将 IP 地址输入到 IP 范围开始框和 IP 范围结束框中。否则，您可能需要输入一组范围更广泛的 IP 地址来容纳来自您组织中的其他计算机的连接。
- 
-5. 单击页面底部的“保存”。
-
-    **注意：**在防火墙设置的更改生效之前，可能最多有五分钟的延迟。
-
-	您现在已准备好使用 Management Studio 连接到 SQL 数据库。
-
-1.  在任务栏上，单击“开始”、指向“所有程序”、指向“Microsoft SQL Server 2014”，然后单击“SQL Server Management Studio”。
-
-2.  在“连接到服务器”中，指定完全限定的服务器名称，例如 *serverName*.database.chinacloudapi.cn。在 Azure 上，服务器名称是由字母数字字符组成的自动生成的字符串。
-
-3.  选择“SQL Server 身份验证”。
-
-4.  在“登录”框中，输入你在创建服务器时在门户中指定的 SQL Server 管理员登录名。
-
-5.  在“密码”框中，输入你在创建服务器时在门户中指定的密码。
-
-8.  单击“连接”以建立连接。
-
-包含最新更新的 SQL Server 2014 SSMS 为创建和修改 Azure SQL 数据库等任务提供扩展的支持。此外，你也可以使用 Transact-SQL 语句来完成这些任务。下面的步骤提供了这些语句的示例。有关将 Transact-SQL 与 SQL 数据库结合使用的详细信息（包括有关受支持命令的详细信息），请参阅 [Transact-SQL 参考（SQL 数据库）](http://msdn.microsoft.com/zh-cn/library/bb510741.aspx)。
 
 ## 创建和管理 Azure SQL 数据库
 
@@ -97,11 +55,11 @@
 
 -   在 SQL 数据库中，不支持将 **USE** 语句用于在数据库之间切换。您需要改为建立直接到目标数据库的连接。
 
->[AZURE.NOTE]创建或修改数据库的许多 Transact-SQL 语句必须在其自己的批处理中运行，无法与其他 Transact-SQL 语句分组在一起。有关详细信息，请参阅上面列出的链接中提供的特定于语句的信息。
+>[AZURE.NOTE] 创建或修改数据库的许多 Transact-SQL 语句必须在其自己的批处理中运行，无法与其他 Transact-SQL 语句分组在一起。有关详细信息，请参阅上面列出的链接中提供的特定于语句的信息。
 
 ## 创建并管理登录名
 
-**master** 数据库跟踪登录名以及哪些登录名有权创建数据库或其他登录名。通过使用你在设置服务器时创建的服务器级别主体登录名连接到 **master** 数据库来管理登录名。你可以使用 **CREATE LOGIN**、**ALTER LOGIN** 或 **DROP LOGIN** 语句对将管理整个服务器上的登录的 master 数据库执行查询。有关详细信息，请参阅[在 SQL 数据库中管理数据库和登录名](http://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx)。
+**master** 数据库跟踪登录名以及哪些登录名有权创建数据库或其他登录名。通过使用你在设置服务器时创建的服务器级别主体登录名连接到 **master** 数据库来管理登录名。你可以使用 **CREATE LOGIN**、**ALTER LOGIN** 或 **DROP LOGIN** 语句对将管理整个服务器上的登录的 master 数据库执行查询。有关详细信息，请参阅[在 SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins)。
 
 
 -   使用 **CREATE LOGIN** 语句可创建新的服务器级别登录名。有关详细信息，请参阅 [CREATE LOGIN（SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/ms189751.aspx)。以下语句将创建一个名为 **login1** 的新登录名。将 **password1** 替换为你选择的密码。
@@ -138,13 +96,13 @@
 
         DROP LOGIN login1;
 
--   master 数据库具有可用于查看登录名的 **sys.sql\_logins** 视图。若要查看所有现有登录名，请执行以下语句：
+-   master 数据库具有可用于查看登录名的 **sys.sql\_logins**。若要查看所有现有登录名，请执行以下语句：
 
         SELECT * FROM sys.sql_logins;
 
 ## 使用动态管理视图监视 SQL 数据库</h2>
 
-SQL 数据库支持多个您可用于监视单个数据库的动态管理视图。下面是您可通过这些视图检索的监视器数据类型的一些示例。有关完整的详细信息和更多用法示例，请参阅[使用动态管理视图监视 SQL 数据库](https://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx)。
+SQL 数据库支持多个您可用于监视单个数据库的动态管理视图。下面是您可通过这些视图检索的监视器数据类型的一些示例。有关完整的详细信息和更多用法示例，请参阅[使用动态管理视图监视 SQL 数据库](/documentation/articles/sql-database-monitoring-with-dmvs)。
 
 -   查询动态管理视图需要 **VIEW DATABASE STATE** 权限。若要向特定数据库用户授予 **VIEW DATABASE STATE** 权限，请连接到要使用服务器级别主体登录名管理的数据库并对该数据库执行以下语句：
 
@@ -186,5 +144,4 @@ SQL 数据库支持多个您可用于监视单个数据库的动态管理视图�
         ORDER BY 2 DESC;
  
  
-
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0411_2016-->
