@@ -23,7 +23,7 @@ Azure IoT 中心是一项 Azure 服务，可在一个应用程序后端和数百
 
 你可以使用 IoT 设备 SDK 在各种设备硬件平台和操作系统上实现客户端应用程序。IoT 设备 SDK 包含库，可协助将遥测数据发送到 IoT 中心，并接收云到设备的命令。使用 SDK 时，可从数个网络协议中进行选择，以便与 IoT 中心通信。若要了解详细信息，请参阅[设备 SDK 的相关信息][lnk-device-sdks]。
 
-你也可能会对 [Azure IoT 套件][lnk-iot-suite]有兴趣，这是一套预配置的解决方案。IoT 套件可让你快速入门和扩展 IoT 项目，以应对常见的 IoT 案例，例如远程监视、资产管理和预测性维护。
+
 
 [lnk-getstarted]: /documentation/articles/iot-hub-csharp-csharp-getstarted
 [lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md
