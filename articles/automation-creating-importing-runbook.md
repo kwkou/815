@@ -1,15 +1,15 @@
-<properties 
+<properties
 	pageTitle="在 Azure 自动化中创建或导入 Runbook"
 	description="本文介绍了如何在 Azure 自动化中创建新的 Runbook，或如何从文件中导入 Runbook。"
 	services="automation"
 	documentationCenter=""
-	authors="bwren"
+	authors="mgoedtel"
 	manager="stevenka"
 	editor="tysonn" />
-<tags 
+<tags
 	ms.service="automation"
-	ms.date="02/09/2016"
-	wacn.date="03/22/2016" />
+	ms.date="02/29/2016"
+	wacn.date="04/20/2016" />
 
 # 在 Azure 自动化中创建或导入 Runbook
 
@@ -19,11 +19,11 @@
 
 你可以使用其中一个 Azure 门户或 Windows PowerShell 在 Azure 自动化中创建一个新的 Runbook。一旦创建 Runbook，你就可以利用[了解 PowerShell 工作流](/documentation/articles/automation-powershell-workflow)中的信息对其进行编辑。
 
-### 使用 Azure 门户创建新的 Azure 自动化 Runbook
+### 使用 Azure 管理门户创建新的 Azure 自动化 Runbook
 
 你只能使用 Azure 门户中的 PowerShell 工作流 Runbook。
 
-1. 在 Azure 门户中，依次单击“新建”、“应用程序服务”、“自动化”、“Runbook”、“快速创建”。
+1. 在 Azure 管理门户中，依次单击“新建”、“应用程序服务”、“自动化”、“Runbook”、“快速创建”。
 2. 输入所需的信息，然后单击“创建”。Runbook 名称必须以字母开头，可以使用字母、数字、下划线和短划线。
 3. 若要立即编辑 Runbook，则请单击“编辑 Runbook”。否则，请单击“确定”。
 4. 新的 Runbook 将出现在“Runbook”选项卡中。
@@ -36,7 +36,7 @@
 
     $automationAccountName = "MyAutomationAccount"
     $runbookName = "Sample-TestRunbook"
-    New-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName 
+    New-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName
 
 ## 将 Runbook 从文件导入 Azure 自动化
 
@@ -44,7 +44,7 @@
 
 如果该文件包含多个 PowerShell 工作流，导入将失败。必须将每个工作流保存到各自的文件中，并分别导入每个工作流。
 
-### 使用 Azure 门户通过文件导入 Runbook
+### 使用 Azure 管理门户通过文件导入 Runbook
 可通过以下过程将脚本文件导入 Azure 自动化。请注意，你只能通过此门户将 .ps1 文件导入 PowerShell 工作流 Runbook。
 
 1. 在 Azure 管理门户中，选择“自动化”，然后选择一个自动化帐户。
@@ -77,9 +77,8 @@
 ## 使用 Azure 门户发布 Runbook
 
 1. 在 Azure 门户中打开 Runbook。
-1. 在屏幕顶部，单击“创作”。
-1. 在屏幕底部，单击“发布”，然后在出现验证消息时单击“是”。
-
+1. 单击“Edit”（编辑）按钮。
+1. 单击“发布”按钮，然后对验证消息单击“是”。
 
 
 ## 使用 Windows PowerShell 发布 Runbook
@@ -98,4 +97,4 @@
 - [Azure 自动化的 Runbook 和模块库](/documentation/articles/automation-runbook-gallery)
 - [在 Azure 自动化中编辑文本 Runbook](/documentation/articles/automation-edit-textual-runbook)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0411_2016-->

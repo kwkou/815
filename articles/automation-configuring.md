@@ -3,13 +3,13 @@
    description="介绍在配置初次使用的 Azure 自动化时必须执行的步骤。"
    services="automation"
    documentationCenter=""
-   authors="SnehaGunda"
+   authors="MGoedtel"
    manager="stevenka"
    editor="tysonn" />
 <tags
    ms.service="automation"
-   ms.date="02/09/2016"
-   wacn.date="03/22/2016" />
+   ms.date="02/23/2016"
+   wacn.date="04/20/2016" />
 
 # 配置 Azure 自动化
 
@@ -21,9 +21,9 @@
 
 每个自动化帐户的自动化资源与单个 Azure 区域相关联，但自动化帐户可以管理任何区域中的 Azure 服务。在不同区域中创建自动化帐户的主要原因是，你的策略要求数据和资源隔离到特定的区域。
 
->[AZURE.NOTE] 使用 Azure 经典门户创建的自动化帐户及其包含的资源无法在 Azure 门户中访问。如果你想要使用 Windows PowerShell 来管理这些帐户或其资源，必须使用 Azure 资源管理器模块。
+>[AZURE.NOTE] 无法在 Azure 管理门户中访问使用 Azure 门户创建的自动化帐户及其包含的资源。如果你想要使用 Windows PowerShell 来管理这些帐户或其资源，必须使用 Azure 资源管理器模块。
 >
->使用 Azure 门户创建的自动化帐户可以通过门户和 cmdlet 集进行管理。创建帐户后，在该帐户中创建和管理资源的方式没有差别。如果你打算继续使用 Azure 门户，则应该使用它而不是 Azure 经典门户来创建任何自动化帐户。
+>可以通过门户和 cmdlet 集管理使用 Azure 管理门户创建的自动化帐户。创建帐户后，在该帐户中创建和管理资源的方式没有差别。如果你打算继续使用 Azure 管理门户，则应该使用它而不是 Azure 门户来创建任何自动化帐户。
 
 
 如果你的 Azure 帐户存在问题（例如逾期付款），则自动化帐户可能会挂起。在这种情况下，你无法访问帐户，任何正在运行的作业都将挂起，并且所有计划都将被禁用。你将可以查看帐户，但无法看到其中的任何资源。在纠正问题并启用自动化帐户后，你必须启用你的计划并重新启动已挂起的任何 Runbook。
@@ -37,7 +37,7 @@
 
 ## 创建新的 Azure Active Directory 用户用于管理 Azure 订阅
 
-1. 以你要管理的 Azure 订阅的服务管理员身份登录到 Azure 门户。
+1. 以你要管理的 Azure 订阅的服务管理员身份登录到 Azure 管理门户。
 2. 选择“Active Directory”
 3. 选择与你的 Azure 订阅关联的目录名称。如有必要，可以从“设置”>“订阅”>“编辑目录”更改此关联。
 4. [创建新的 Active Directory 用户](http://msdn.microsoft.com/zh-cn/library/azure/hh967632.aspx)。为“用户类型”选择“你的组织中的新用户”，并且不要选择“启用 Multi-Factor Authentication”。
@@ -52,27 +52,27 @@
 
 自动化帐户是 Azure 自动化资源的容器。它可以用来隔离环境，或者对工作流进行进一步的组织。如果你已创建自动化帐户，可以跳过此步骤。
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
 
-2. 在 Azure 经典门户中，单击“新建”>“管理”>“自动化帐户”
+2. 单击“新建”>“管理”>“自动化帐户”
 
 3. 在“添加自动化帐户”边栏选项卡中，配置自动化帐户详细信息。
 
->[AZURE.NOTE] 使用 Azure 经典门户创建自动化帐户时，不会让该帐户及其所有关联的资源回到经典管理门户中。
+>[AZURE.NOTE] 使用 Azure 门户创建自动化帐户时，不会让该帐户及其所有关联的资源回到 Azure 管理门户中。
 
 下面是要配置的参数的列表：
 
 |参数 |说明 |
 |:---|:---|
-| Name | 自动化帐户的名称，必须是唯一值。 |
-| 资源组 | 利用资源组可以轻松查看和管理相关的 Azure 资源。在 Azure 经典门户中，你可以为自动化帐户选择现有的资源组，也可以创建新的资源组，而在 Azure 管理门户中，所有的自动化帐户都会放置在默认资源组中。 |
+| 名称 | 自动化帐户的名称，必须是唯一值。 |
+| 资源组 | 利用资源组可以轻松查看和管理相关的 Azure 资源。在 Azure 门户中，你可以为自动化帐户选择现有的资源组，也可以创建新的资源组，而在 Azure 管理门户中，所有自动化帐户都会放置在默认资源组中。 |
 | 订阅 | 从可用订阅的列表中选择订阅。 |
 | 区域 | 该区域指定要将帐户中的自动化资源存储在哪个位置。你可以从列表中选择任何区域，这不会影响帐户的功能，但是，如果帐户所在区域靠近其他 Azure 资源的存储位置，则 Runbook 可以更快地执行。 |
 | 帐户选项 | 此选项允许你选择在新的自动化帐户中创建哪些资源；选择“是”即可创建教程式的 Runbook。 |
 
 
 
->[AZURE.NOTE] 将通过经典管理门户创建的自动化帐户通过 Azure 经典门户[移到其他资源组](/documentation/articles/resource-group-move-resources)后，就再也不能在 Azure 经典门户中使用该自动化帐户，因为经典管理门户不支持 Azure 资源管理器 帐户。
+>[AZURE.NOTE] 将使用 Azure 管理门户创建的自动化帐户通过 Azure 门户[移到其他资源组](/documentation/articles/resource-group-move-resources)后，就再也不能在 Azure 管理门户中使用该自动化帐户。
 
 
 
@@ -90,4 +90,4 @@
 - [Azure 自动化：使用 Azure Active Directory 向 Azure 进行身份验证](https://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory)
  
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0411_2016-->
