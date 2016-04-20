@@ -5,7 +5,7 @@
 #监视MySQL 数据库 on Azure数据库
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/mysql-database-operation-monitoring-metrics)
-- [英文版](/documentation/articles/mysql-database-enus-operation-monitoring-metrics)
+- [In English](/documentation/articles/mysql-database-enus-operation-monitoring-metrics)
 
 通过Azure管理门户-> MySQL 数据库 on Azure，在列表中选择所需的监控性能指标，点击“仪表盘”进行实时监控。
 

@@ -4,8 +4,8 @@
 
 # Use MySQL Database on Azure to configure WordPress websites
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-wordpress-setup)
-- [English Version](/documentation/articles/mysql-database-enus-wordpress-setup)
+- [中文版](/documentation/articles/mysql-database-wordpress-setup)
+- [In English](/documentation/articles/mysql-database-enus-wordpress-setup)
 
 WordPress is a very widely used CMS. This article explains how to use MySQL Database on Azure and Azure Web Apps to install and configure WordPress.
 

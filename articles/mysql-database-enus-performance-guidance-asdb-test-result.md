@@ -4,8 +4,8 @@
 
 #Understanding Service Tiers and Versions
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-performance-guidance-asdb-test-result)
-- [English Version](/documentation/articles/mysql-database-enus-performance-guidance-asdb-test-result)
+- [中文版](/documentation/articles/mysql-database-performance-guidance-asdb-test-result)
+- [In English](/documentation/articles/mysql-database-enus-performance-guidance-asdb-test-result)
 
 
 ##Azure SQL Database Benchmark test result references 

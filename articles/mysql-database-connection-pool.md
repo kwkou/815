@@ -5,7 +5,7 @@
 # 如何高效连接到MySQL Database on Azure<sup style="color: #a5ce00; font-weight: bold; text-transform: uppercase; font-family: '微软雅黑'; font-size: 20px;" class="wa-previewTag"></sup>
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/mysql-database-connection-pool)
-- [英文版](/documentation/articles/mysql-database-enus-connection-pool)
+- [In English](/documentation/articles/mysql-database-enus-connection-pool)
 
 
 数据库连接是一种有限的资源，合理的利用连接池访问MySQL Database on Azure会优化性能。本文介绍如何使用连接池或长连接高效效地访问MySQL Database on Azure。

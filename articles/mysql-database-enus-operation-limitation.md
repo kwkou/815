@@ -4,8 +4,8 @@
 
 #Service limitations of MySQL Database on Azure
 > [AZURE.SELECTOR]
-- [Chinese Version](/documentation/articles/mysql-database-operation-limitation)
-- [English Version](/documentation/articles/mysql-database-enus-operation-limitation)
+- [中文版](/documentation/articles/mysql-database-operation-limitation)
+- [In English](/documentation/articles/mysql-database-enus-operation-limitation)
 
 MySQL Database on Azure currently has the following limitations. If you have any questions, contact technical support.
 

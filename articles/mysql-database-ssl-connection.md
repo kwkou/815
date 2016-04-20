@@ -6,7 +6,7 @@
 # SSL安全访问MySQL Database on Azure
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/mysql-database-ssl-connection)
-- [英文版](/documentation/articles/mysql-database-enus-ssl-connection)
+- [In English](/documentation/articles/mysql-database-enus-ssl-connection)
 
 通过SSL加密访问数据库，可以保障您访问的安全性，本文介绍如何下载并配置SSL证书。目前MySQL Database on Azure支持利用公钥在服务器端进行加密验证。
 
