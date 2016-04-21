@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="02/23/2016"
-	wacn.date="04/18/2016"
+	wacn.date="04/18/2016"/>
 
 
 # 使用 PowerShell 更改 SQL 数据库的服务层和性能级别（定价层）
