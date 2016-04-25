@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="azure-resource-manager" 
-	ms.date="10/27/2015" 
-	wacn.date="12/31/2015"/>
+	ms.date="12/02/2015" 
+	wacn.date="04/18/2016"/>
 
 # 使用资源管理器执行审核操作
 
@@ -29,7 +29,7 @@
 
 [AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
 
-若要检索日志条目，请运行 **Get-AzureRmLog** 命令（如果 PowerShell 版本低于 1.0 预览版，则运行 **Get-AzureResourceGroupLog**）。你可以提供附加参数来筛选条目列表。
+若要检索日志条目，请运行 **Get-AzureRmLog** 命令（如果 PowerShell 版本低于 1.0，则运行 **Get-AzureResourceGroupLog**）。你可以提供附加参数来筛选条目列表。
 
 以下示例演示了如何使用审核日志来调查在解决方案生存期内执行的操作。你可以查看此操作的发生时间以及请求者。开始日期和结束日期以日期格式指定。
 
@@ -146,4 +146,4 @@
 - 若要了解如何向服务主体授予访问权限，请参阅[使用 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)。
 - 若要了解如何操作所有用户的资源，请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources)。
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0418_2016-->

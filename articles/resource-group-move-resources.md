@@ -105,4 +105,4 @@
 - [将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager)
 - [使用标记来组织资源](/documentation/articles/resource-group-using-tags)
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0418_2016-->

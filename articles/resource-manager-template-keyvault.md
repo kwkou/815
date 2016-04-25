@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="01/04/2016"
-   wacn.date="03/17/2016"/>
+   ms.date="02/23/2016"
+   wacn.date="04/25/2016"/>
 
 # 密钥保管库模板架构
 
@@ -69,7 +69,7 @@
 | 名称 | 类型 | 必选 | 允许的值 | 说明 |
 | ---- | ---- | -------- | ---------------- | ----------- |
 | enabledForDeployment | 布尔值 | 否 | **true** 或 **false** | 指定是否已为虚拟机或 Service Fabric 部署启用了保管库。 |
-| enabledForTemplateDeployment | 布尔值 | 否 | **true** 或 **false** | 指定是否在 Resource Manager 模板部署中启用了保管库。有关详细信息，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter) |
+| enabledForTemplateDeployment | 布尔值 | 否 | **true** 或 **false** | 指定是否在资源管理器模板部署中启用了保管库。有关详细信息，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter) |
 | enabledForVolumeEncryption | 布尔值 | 否 | **true** 或 **false** | 指定是否为卷加密启用了保管库。 |
 | tenantId | 字符串 | 是 | 全局唯一标识符 | 订阅的租户标识符。可以使用 **Get-AzureRMSubscription** PowerShell cmdlet 检索该值。 |
 | accessPolicies | 数组 | 是 | （[如下所示](#accesspolicies)） | 最多包含 16 个对象的数组，指定用户或服务主体的权限。 |
@@ -219,7 +219,6 @@
                 "type": "secrets",
                 "name": "[parameters('secretName')]",
                 "apiVersion": "2015-06-01",
-                "tags": { "displayName": "secret" },
                 "properties": {
                     "value": "[parameters('secretValue')]"
                 },
@@ -242,4 +241,5 @@
 - 有关密钥保管库的一般信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started)。
 - 有关在部署模板时引用密钥保管库机密的示例，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter)。
 
-<!---HONumber=Mooncake_0307_2016-->
+
+<!---HONumber=Mooncake_0418_2016-->

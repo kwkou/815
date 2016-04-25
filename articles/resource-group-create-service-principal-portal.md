@@ -24,8 +24,7 @@
 2. 服务主体 - 目录中应用程序的实例。
 3. AD 应用程序 - AAD 中向 AAD 标识某个应用程序的目录记录。 
 
-有关应用程序和服务主体的详细说明，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects)。
-有关 Active Directory 身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios)。
+有关应用程序和服务主体的详细说明，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects)。有关 Active Directory 身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios)。
 
 
 ## 创建应用程序
@@ -58,12 +57,11 @@
 
      ![新应用程序][10]
 
-6. 填写应用程序名称，然后选择你要使用的应用程序类型。选择你要创建的应用程序类型。在本教程中，我们将选择创建“Web 应用程序和/或 Web API”，然后单击“下一步”按钮。
+6. 填写应用程序名称，然后选择你要使用的应用程序类型。选择你要创建的应用程序类型。在本教程中，我们将选择创建“WEB 应用程序和/或 WEB API”，然后单击“下一步”按钮。
 
      ![命名应用程序][9]
 
-7. 填写应用程序的属性。对于“登入 URL”，请提供用于描述应用程序的网站 URI。将不验证网站是否存在。
-对于“应用程序 ID URI”，请提供用于标识应用程序的 URI。将不验证终结点的唯一性或存在性。如果你选择“本机客户端应用程序”作为应用程序类型，则需要提供“重定向 URI”值。单击“完成”创建 AAD 应用程序。
+7. 填写应用程序的属性。对于“登入 URL”，请提供用于描述应用程序的网站 URI。将不验证网站是否存在。对于“应用程序 ID URI”，请提供用于标识应用程序的 URI。将不验证终结点的唯一性或存在性。如果你选择“本机客户端应用程序”作为应用程序类型，则需要提供“重定向 URI”值。单击“完成”创建 AAD 应用程序。
 
      ![应用程序属性][4]
 
@@ -136,8 +134,7 @@
 
 ## 将应用程序分配到角色
 
-如果应用程序不是以登录用户的标识来运行，则你必须将应用程序分配到角色，以授予它执行操作的权限。若要将应用程序分配到角色，请从经典门户切换到 [Azure 门户](https://portal.azure.com)。 
-你必须确定要将应用程序添加到哪个角色以及作用域。若要了解有关可用角色的信息，请参阅 [RBAC：内置角色](./active-directory/role-based-access-built-in-roles.md)。可将作用域设置为订阅、资源组或资源级别。作用域的较低级别将继承权限（例如，将某个应用程序添加到资源组的“读取者”角色意味着该应用程序可以读取该资源组及其包含的所有资源）。
+你必须确定要将应用程序添加到哪个角色以及作用域。若要了解有关可用角色的信息，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles)。可将作用域设置为订阅、资源组或资源级别。作用域的较低级别将继承权限（例如，将某个应用程序添加到资源组的“读取者”角色意味着该应用程序可以读取该资源组及其包含的所有资源）。
 
 1. 在门户中，导航到你要将应用程序分配到的作用域级别。对于本主题，你可以导航到资源组，然后从资源组边栏选项卡中选择“访问”图标。
 
@@ -236,4 +233,4 @@
 [12]: ./media/resource-group-create-service-principal-portal/add-icon.png
 [13]: ./media/resource-group-create-service-principal-portal/save-icon.png
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0418_2016-->
