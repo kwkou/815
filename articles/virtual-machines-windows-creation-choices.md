@@ -35,7 +35,7 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 
 有关 Azure PowerShell，请参阅：
 
-- [在 Azure 中创建 SQL Server 虚拟机 (PowerShell)](/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell)
+- [在 Azure 中创建 SQL Server 虚拟机 (PowerShell)](/documentation/articles/virtual-machines-windows-classic-ps-sql-create)
 - [使用 PowerShell 来部署和管理虚拟机][]
 
 ## 操作系统和映像选项
@@ -45,19 +45,19 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 <!-- LINKS -->
 [概述]: /documentation/articles/resource-group-overview
 
-[创建运行 Windows 的虚拟机]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
+[创建运行 Windows 的虚拟机]: /documentation/articles/virtual-machines-windows-classic-tutorial
 
-[适合使用针对 Mac、Linux 和 Windows 的 Azure CLI 进行虚拟机操作的等效资源管理器和服务管理命令]: /documentation/articles/xplat-cli-azure-manage-vm-asm-arm
+[适合使用针对 Mac、Linux 和 Windows 的 Azure CLI 进行虚拟机操作的等效资源管理器和服务管理命令]: /documentation/articles/virtual-machines-windows-cli-manage
 
-[使用 PowerShell 来部署和管理虚拟机]: /documentation/articles/virtual-machines-manage-vms-powershell
+[使用 PowerShell 来部署和管理虚拟机]: /documentation/articles/virtual-machines-windows-classic-manage-psh
 
 
-[使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像]: /documentation/articles/resource-groups-vm-searching
+[使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像]: /documentation/articles/virtual-machines-linux-cli-ps-findimage
 
-[Sign in to the virtual machine]: /documentation/articles/virtual-machines-log-on-windows-server
+[Sign in to the virtual machine]: /documentation/articles/virtual-machines-windows-classic-connect-logon
 
-[Base configuration test environment]: /documentation/articles/virtual-machines-base-configuration-test-environment
+[Base configuration test environment]: /documentation/articles/virtual-machines-windows-classic-test-config-env
 
-[Azure hybrid cloud test environments]: /documentation/articles/virtual-machines-hybrid-cloud-test-environments
+[Azure hybrid cloud test environments]: /documentation/articles/virtual-machines-windows-classic-hybrid-test-env
 
 <!---HONumber=Mooncake_1221_2015-->

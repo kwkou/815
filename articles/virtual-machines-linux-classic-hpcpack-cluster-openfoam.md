@@ -20,13 +20,13 @@
 
 OpenFOAM（Open Field Operation and Manipulation 的缩写）是免费提供的开源计算流体动力学 (CFD) 软件包，广泛用于商业和学术组织的工程和科学项目中。它包括各种网格工具，最主要的工具是 snappyHexMesh，这是一个并行处理式网格器，适用于复杂的 CAD 几何以及预处理和后处理。几乎所有进程都是并行运行的，因此用户可以根据自己的需要充分利用计算机硬件。
 
-Microsoft HPC Pack 可提供在 Azure 虚拟机群集上运行各种大型 HPC 和并行应用程序的功能，包括 MPI 应用程序。从 Microsoft HPC Pack 2012 R2 Update 2 开始，HPC Pack 还支持在 HPC Pack 群集中部署的 Linux 计算节点 VM 上运行 Linux HPC 应用程序。有关将 Linux 计算节点与 HPC Pack 一起使用的简介，请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)。
+Microsoft HPC Pack 可提供在 Azure 虚拟机群集上运行各种大型 HPC 和并行应用程序的功能，包括 MPI 应用程序。从 Microsoft HPC Pack 2012 R2 Update 2 开始，HPC Pack 还支持在 HPC Pack 群集中部署的 Linux 计算节点 VM 上运行 Linux HPC 应用程序。有关将 Linux 计算节点与 HPC Pack 一起使用的简介，请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster)。
 
 >[AZURE.NOTE]本文假设你已对 Linux 系统管理以及如何在 Linux HPC 群集上运行 MPI 工作负荷有所了解。
 
 ## 先决条件
 
-*   **具有 Linux 计算节点的 HPC Pack 群集** - 请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)，了解使用 Azure PowerShell 脚本和 Azure 应用商店中的 HPC Pack 映像，在 Azure 上部署 HPC Pack 群集与 Linux 计算节点的先决条件和步骤。
+*   **具有 Linux 计算节点的 HPC Pack 群集** - 请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster)，了解使用 Azure PowerShell 脚本和 Azure 应用商店中的 HPC Pack 映像，在 Azure 上部署 HPC Pack 群集与 Linux 计算节点的先决条件和步骤。
 
     下面是一个示例 XML 配置文件，可以与脚本配合使用以部署基于 Azure 的 HPC Pack 群集，群集中包含一个 A7 大小的 Windows Server 2012 R2 头节点和 2 个 A7 大小的 SUSE Linux Enterprise Server 12 计算节点。请将订阅和服务名称替换为相应值。
 
@@ -133,7 +133,7 @@ Microsoft HPC Pack 可提供在 Azure 虚拟机群集上运行各种大型 HPC �
 
 ## 为 Linux 节点设置文件共享
 
-现在，在头节点上对一个文件夹设置标准 SMB 共享，然后在所有 Linux 节点上装载此共享文件夹，就可以支持 Linux 节点使用一个通用路径访问应用程序文件。你可以根据需要使用其他文件共享选项，例如 Azure 文件共享（建议用于多种方案）或 NFS 共享。请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](virtual-machines-linux-cluster-hpcpack.md)中的文件共享信息和详细步骤。
+现在，在头节点上对一个文件夹设置标准 SMB 共享，然后在所有 Linux 节点上装载此共享文件夹，就可以支持 Linux 节点使用一个通用路径访问应用程序文件。你可以根据需要使用其他文件共享选项，例如 Azure 文件共享（建议用于多种方案）或 NFS 共享。请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster)中的文件共享信息和详细步骤。
 
 1.	在头节点上创建一个文件夹，然后通过设置读/写权限与所有人共享。例如，在头节点上将 C:\\OpenFOAM 共享为 \\\SUSE12RDMA-HN\\OpenFOAM。在此处，*SUSE12RDMA-HN* 是头节点的主机名。
 
@@ -637,21 +637,21 @@ Microsoft HPC Pack 可提供在 Azure 虚拟机群集上运行各种大型 HPC �
 
 
 <!--Image references-->
-[keygen]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/keygen.png
-[keys]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/keys.png
-[step_variables]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/step_variables.png
-[data_files]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/data_files.png
-[decompose]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/decompose.png
-[job_details]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/job_details.png
-[job_resources]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/job_resources.png
-[task_details1]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/task_details1.png
-[task_dependencies]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/task_dependencies.png
-[creds]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/creds.png
-[heat_map]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/heat_map.png
-[tank]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/tank.png
-[tank_result]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/tank_result.png
-[isosurface]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/isosurface.png
-[isosurface_color]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/isosurface_color.png
-[linux_processes]: ./media/virtual-machines-linux-cluster-hpcpack-openfoam/linux_processes.png
+[keygen]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/keygen.png
+[keys]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/keys.png
+[step_variables]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/step_variables.png
+[data_files]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/data_files.png
+[decompose]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/decompose.png
+[job_details]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/job_details.png
+[job_resources]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/job_resources.png
+[task_details1]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/task_details1.png
+[task_dependencies]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/task_dependencies.png
+[creds]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/creds.png
+[heat_map]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/heat_map.png
+[tank]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/tank.png
+[tank_result]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/tank_result.png
+[isosurface]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/isosurface.png
+[isosurface_color]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/isosurface_color.png
+[linux_processes]: ./media/virtual-machines-linux-classic-hpcpack-cluster-openfoam/linux_processes.png
 
 <!---HONumber=Mooncake_0118_2016-->

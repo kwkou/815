@@ -609,6 +609,6 @@ _图 6.
 
 - Azure.cn 网站上的 [Azure Redis 缓存](/home/features/redis-cache)和 [HDInsight](/home/features/hdinsight) 页。
 - Azure.cn 网站上的[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)页。
-- Azure.cn 网站上的 [Azure 虚拟机中的 SQL Server Business Intelligence](/documentation/articles/virtual-machines-sql-server-business-intelligence) 一文。
+- Azure.cn 网站上的 [Azure 虚拟机中的 SQL Server Business Intelligence](/documentation/articles/virtual-machines-windows-classic-ps-sql-bi) 一文。
 
 <!---HONumber=Mooncake_0118_2016-->

@@ -33,7 +33,7 @@
 
 选择映像后，可以对大多数配置使用 Azure 的默认设置并快速创建 VM。
 
-1. 在“虚拟机配置”上，输入要为 VM 起的**名称**和证书文件（在此例中为 `.pem` 文件）。有关详细信息，请参阅[如何在 Azure 中将 SSH 与 Linux 和 Mac 配合使用](/documentation/articles/virtual-machines-linux-use-ssh-key)。
+1. 在“虚拟机配置”上，输入要为 VM 起的**名称**和证书文件（在此例中为 `.pem` 文件）。有关详细信息，请参阅[如何在 Azure 中将 SSH 与 Linux 和 Mac 配合使用](/documentation/articles/virtual-machines-linux-ssh-from-linux)。
 
 	![](./media/virtual-machines-linux-portal-create/step-1-thebasics.png)
 

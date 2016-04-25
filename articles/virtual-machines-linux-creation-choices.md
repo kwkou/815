@@ -29,7 +29,7 @@ Azure 管理门户的图形用户界面是一种试用虚拟机的简便方式�
 
 如果你喜欢使用命令行界面，请选择适用于 Mac、Linux 和 Windows 用户的 Azure 命令行界面 (CLI) 或 Azure PowerShell，后者提供适用于 Azure 的 Windows PowerShell cmdlet 和自定义控制台。
 
-对于经典部署模型，请参阅[使用 Azure CLI 创建自定义 Linux 虚拟机](/documentation/articles/virtual-machines-linux-create-custom)和[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机][]。
+对于经典部署模型，请参阅[使用 Azure CLI 创建自定义 Linux 虚拟机](/documentation/articles/virtual-machines-linux-classic-create-custom)和[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机][]。
 
 
 ### 开发环境：Visual Studio
@@ -65,30 +65,30 @@ Visual Studio 也支持创建 Azure 虚拟机。对于经典部署模型，请�
 <!-- LINKS -->
 [overview]: /documentation/articles/resource-group-overview
 
-[Create a Virtual Machine Running Windows]: /documentation/articles/virtual-machines-windows-tutorial
-[Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-tutorial
+[Create a Virtual Machine Running Windows]: /documentation/articles/virtual-machines-windows-hero-tutorial
+[Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-quick-create-cli
 
-[Equivalent Resource Manager and Service Management Commands for VM Operations with the Azure CLI for Mac, Linux, and Windows]: /documentation/articles/xplat-cli-azure-manage-vm-asm-arm
-[Deploy and Manage Virtual Machines using Azure Resource Manager Templates and the Azure CLI]: /documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli
-[Deploy and Manage Virtual Machines using Azure Resource Manager Templates and PowerShell]: /documentation/articles/virtual-machines-deploy-rmtemplates-powershell
-[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机]: /documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms
+[Equivalent Resource Manager and Service Management Commands for VM Operations with the Azure CLI for Mac, Linux, and Windows]: /documentation/articles/virtual-machines-windows-cli-manage
+[Deploy and Manage Virtual Machines using Azure Resource Manager Templates and the Azure CLI]: /documentation/articles/virtual-machines-linux-cli-deploy-templates
+[Deploy and Manage Virtual Machines using Azure Resource Manager Templates and PowerShell]: /documentation/articles/virtual-machines-windows-ps-manage
+[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-classic-createpowershell
 
-[How to Create a Custom Virtual Machine Running Linux in Azure]: /documentation/articles/virtual-machines-linux-create-custom
-[如何使用 CLI 捕获将用作模板的 Linux 虚拟机]: /documentation/articles/virtual-machines-linux-capture-image
+[How to Create a Custom Virtual Machine Running Linux in Azure]: /documentation/articles/virtual-machines-linux-classic-create-custom
+[如何使用 CLI 捕获将用作模板的 Linux 虚拟机]: /documentation/articles/virtual-machines-linux-classic-capture-image
 
-[创建并上载包含 Linux 操作系统的虚拟硬盘]: /documentation/articles/virtual-machines-linux-create-upload-vhd
+[创建并上载包含 Linux 操作系统的虚拟硬盘]: /documentation/articles/virtual-machines-linux-classic-create-upload-vhd
 
-[使用 Visual Studio 创建用于网站的虚拟机]: /documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell
-[Deploy Azure Resources Using the Compute, Network, and Storage .NET Libraries]: /documentation/articles/virtual-machines-arm-deployment
+[使用 Visual Studio 创建用于网站的虚拟机]: /documentation/articles/virtual-machines-windows-classic-web-app-visual-studio
+[Deploy Azure Resources Using the Compute, Network, and Storage .NET Libraries]: /documentation/articles/virtual-machines-windows-csharp
 
-[登录到虚拟机]: /documentation/articles/virtual-machines-linux-how-to-log-on
+[登录到虚拟机]: /documentation/articles/virtual-machines-linux-classic-log-on
 
-[附加数据磁盘]: /documentation/articles/virtual-machines-linux-how-to-attach-disk
+[附加数据磁盘]: /documentation/articles/virtual-machines-linux-classic-attach-disk
 
-[基本配置测试环境]: /documentation/articles/virtual-machines-base-configuration-test-environment
-[Azure 混合云测试环境]: /documentation/articles/virtual-machines-hybrid-cloud-test-environments
+[基本配置测试环境]: /documentation/articles/virtual-machines-windows-classic-test-config-env
+[Azure 混合云测试环境]: /documentation/articles/virtual-machines-windows-classic-hybrid-test-env
 
-[Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-tutorial
-[创建自定义虚拟机]: /documentation/articles/virtual-machines-create-custom
+[Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-quick-create-cli
+[创建自定义虚拟机]: /documentation/articles/virtual-machines-windows-classic-createportal
 
 <!---HONumber=Mooncake_0314_2016-->

@@ -14,7 +14,7 @@
 
 	- 键入“虚拟机名称”，例如“testlinuxvm”。该名称必须包含 3 至 15 个字符，只能包含字母、数字和连字符，必须以字母开头，并且必须以字母或数字结尾。
 
-	- 验证“层”并选取“大小”。层决定你可以选择的大小。大小会影响其使用成本，还会影响某些配置选项，例如，可以附加的数据磁盘数。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
+	- 验证“层”并选取“大小”。层决定你可以选择的大小。大小会影响其使用成本，还会影响某些配置选项，例如，可以附加的数据磁盘数。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)。
 	- 键入“新用户名”，或接受默认值 **azureuser**。该名称会添加到 Sudoers 列表文件中。
 	- 决定要使用的“身份验证”类型。有关一般密码指南，请参阅[强密码](http://msdn.microsoft.com/zh-cn/library/ms161962.aspx)。
 

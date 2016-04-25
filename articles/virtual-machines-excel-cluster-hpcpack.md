@@ -46,7 +46,7 @@ HPC Pack IaaS 部署脚本提供了另一种通用的方法来部署 HPC Pack �
 
 **创建配置文件**
 
- HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文件作为输入。若要部署由 1 个头节点和 18 个计算节点（从包含 Microsoft Excel 的计算节点映像创建）组成的群集，请将你环境的值代入下面的示例配置文件。有关配置文件的详细信息，请参阅脚本文件夹中的 Manual.rtf 文件和[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)。
+ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文件作为输入。若要部署由 1 个头节点和 18 个计算节点（从包含 Microsoft Excel 的计算节点映像创建）组成的群集，请将你环境的值代入下面的示例配置文件。有关配置文件的详细信息，请参阅脚本文件夹中的 Manual.rtf 文件和[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)。
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<IaaSClusterConfig>
@@ -285,18 +285,18 @@ HPC Pack 部署脚本将运行一段时间。此脚本将做的一件事情是�
 * 有关使用 HPC Pack 部署和管理 SOA 服务的详细信息，请参阅[在 Microsoft HPC Pack 中管理 SOA 服务](https://technet.microsoft.com/zh-cn/library/ff919412.aspx)。
 
 <!--Image references-->
-[scenario]: ./media/virtual-machines-excel-cluster-hpcpack/scenario.png
-[github]: ./media/virtual-machines-excel-cluster-hpcpack/github.png
-[template]: ./media/virtual-machines-excel-cluster-hpcpack/template.png
-[parameters]: ./media/virtual-machines-excel-cluster-hpcpack/parameters.png
-[create]: ./media/virtual-machines-excel-cluster-hpcpack/create.png
-[connect]: ./media/virtual-machines-excel-cluster-hpcpack/connect.png
-[cert]: ./media/virtual-machines-excel-cluster-hpcpack/cert.png
-[addin]: ./media/virtual-machines-excel-cluster-hpcpack/addin.png
-[macro]: ./media/virtual-machines-excel-cluster-hpcpack/macro.png
-[options]: ./media/virtual-machines-excel-cluster-hpcpack/options.png
-[run]: ./media/virtual-machines-excel-cluster-hpcpack/run.png
-[endpoint]: ./media/virtual-machines-excel-cluster-hpcpack/endpoint.png
-[udf]: ./media/virtual-machines-excel-cluster-hpcpack/udf.png
+[scenario]: ./media/virtual-machines-windows-excel-cluster-hpcpack/scenario.png
+[github]: ./media/virtual-machines-windows-excel-cluster-hpcpack/github.png
+[template]: ./media/virtual-machines-windows-excel-cluster-hpcpack/template.png
+[parameters]: ./media/virtual-machines-windows-excel-cluster-hpcpack/parameters.png
+[create]: ./media/virtual-machines-windows-excel-cluster-hpcpack/create.png
+[connect]: ./media/virtual-machines-windows-excel-cluster-hpcpack/connect.png
+[cert]: ./media/virtual-machines-windows-excel-cluster-hpcpack/cert.png
+[addin]: ./media/virtual-machines-windows-excel-cluster-hpcpack/addin.png
+[macro]: ./media/virtual-machines-windows-excel-cluster-hpcpack/macro.png
+[options]: ./media/virtual-machines-windows-excel-cluster-hpcpack/options.png
+[run]: ./media/virtual-machines-windows-excel-cluster-hpcpack/run.png
+[endpoint]: ./media/virtual-machines-windows-excel-cluster-hpcpack/endpoint.png
+[udf]: ./media/virtual-machines-windows-excel-cluster-hpcpack/udf.png
 
 <!---HONumber=Mooncake_1221_2015-->

@@ -76,7 +76,7 @@
 
 ## 后续步骤
 
-* 如果你想要有一种方法能够根据群集上作业及任务的当前工作负荷自动增加或减少 Azure 计算资源，请参阅[自动增加和减少 HPC Pack 群集中的 Azure 计算资源](/documentation/articles/virtual-machines-hpcpack-cluster-node-autogrowshrink)。
+* 如果你想要有一种方法能够根据群集上作业及任务的当前工作负荷自动增加或减少 Azure 计算资源，请参阅[自动增加和减少 HPC Pack 群集中的 Azure 计算资源](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink)。
 
 <!--Image references-->
 [burst]: ./media/virtual-machines-windows-classic-hpcpack-cluster-node-burst/burst.png

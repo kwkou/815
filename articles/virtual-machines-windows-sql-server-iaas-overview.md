@@ -49,7 +49,7 @@
 
 ### 迁移数据
 
-在启动并运行 SQL Server 虚拟机后，你可能想要将现有数据库迁移到虚拟机。你可以采用多种方法，但 SQL Server Management Studio 中的部署向导适合大多数方案。有关这些方案的讨论以及向导教程，请参阅[将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-migrate-onpremises-database)。
+在启动并运行 SQL Server 虚拟机后，你可能想要将现有数据库迁移到虚拟机。你可以采用多种方法，但 SQL Server Management Studio 中的部署向导适合大多数方案。有关这些方案的讨论以及向导教程，请参阅[将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-windows-migrate-sql)。
 
 ## 高可用性
 

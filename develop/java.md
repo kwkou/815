@@ -24,8 +24,8 @@ editor="Eric Chen" />
 
 ###计算
 - [创建 Web 应用](/documentation/articles/web-sites-java-get-started)
-- [VM 上的 Tomcat](/documentation/articles/virtual-machines-java-run-tomcat-application-server)
-- [在 VM 上运行任务](/documentation/articles/virtual-machines-java-run-compute-intensive-task)
+- [VM 上的 Tomcat](/documentation/articles/virtual-machines-windows-classic-java-run-tomcat-app-server)
+- [在 VM 上运行任务](/documentation/articles/virtual-machines-windows-classic-java-run-compute-intensive-task)
 - [使用 Eclipse 进行部署][使用 Eclipse 进行部署]
 - [运行 Spring Framework 应用程序](http://petclinic.cloudapp.net)
 - [全部显示](/develop/java/compute)

@@ -108,10 +108,10 @@
 [关于 Azure 存储帐户][Storage]
 
 <!--Link references-->
-[Attach]: /documentation/articles/storage-windows-attach-disk
+[Attach]: /documentation/articles/virtual-machines-windows-classic-attach-disk
 [VHD]: /documentation/articles/virtual-machines-create-upload-vhd-windows-server
-[Logon]: /documentation/articles/virtual-machines-log-on-windows-server
-[Detach]: /documentation/articles/storage-windows-detach-disk
+[Logon]: /documentation/articles/virtual-machines-windows-classic-connect-logon
+[Detach]: /documentation/articles/virtual-machines-windows-classic-detach-disk
 [Storage]: /documentation/articles/storage-create-storage-account/
 
 <!---HONumber=Mooncake_1221_2015-->

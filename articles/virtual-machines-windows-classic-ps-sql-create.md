@@ -161,7 +161,7 @@
 
 ## 后续步骤
 
-你可以在[虚拟机文档](/documentation/articles/virtual-machines-windows-classic-create-powershell)中找到使用 PowerShell 设置虚拟机的其他说明。有关与 SQL Server 和高级存储相关的其他脚本，请参阅[将 Azure 高级存储用于虚拟机上的 SQL Server](/documentation/articles/virtual-machines-sql-server-use-premium-storage)。
+你可以在[虚拟机文档](/documentation/articles/virtual-machines-windows-classic-create-powershell)中找到使用 PowerShell 设置虚拟机的其他说明。有关与 SQL Server 和高级存储相关的其他脚本，请参阅[将 Azure 高级存储用于虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-classic-sql-server-premium-storage)。
 
 在许多情况下，下一步是将数据库迁移到这个新 SQL Server VM。有关数据库迁移指南，请参阅[将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-windows-migrate-sql)。
 

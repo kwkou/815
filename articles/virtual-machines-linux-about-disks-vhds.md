@@ -25,7 +25,7 @@
 
 -  [附加磁盘](/documentation/articles/virtual-machines-linux-attach-disk-portal)，为你的 VM 增加额外的存储。
 -  [配置软件 RAID](/documentation/articles/virtual-machines-linux-configure-raid)。
--  [捕获 Linux 虚拟机](/documentation/articles/virtual-machines-linux-capture-image)，然后你就可以快速发布额外的 VM。
+-  [捕获 Linux 虚拟机](/documentation/articles/virtual-machines-linux-classic-capture-image)，然后你就可以快速发布额外的 VM。
 
 
 <!---HONumber=Mooncake_1207_2015-->
