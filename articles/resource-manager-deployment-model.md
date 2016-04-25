@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="10/26/2015"
-   wacn.date="12/31/2015"/>
+   ms.date="01/22/2016"
+   wacn.date="04/25/2016"/>
 
 # 了解资源管理器部署和经典部署
 
@@ -24,20 +24,22 @@
 
 但是，由于模型之间的体系结构差异，一些资源提供程序会提供两个版本的资源（一个用于经典模型，一个用于资源管理器）。区分两个模型的资源提供程序包括：
 
-- 计算
-- 存储
-- 网络
+- **计算** - 对虚拟机和可选可用性集的实例提供支持。
+- **存储** - 对所需的存储帐户提供支持，存储帐户存储虚拟机的 VHD，包括其操作系统和其附加的数据磁盘。
+- **网络** - 对所需的 NIC、虚拟机 IP 地址和虚拟网络内的子网及可选的网络安全组提供支持。
+
+对于这些资源类型，您必须知道使用的是哪个版本，因为支持的操作会有所不同。有关转换计算、存储和网络资源的详细信息，请参阅 [Azure Resource Manager 中的 Azure 计算、网络和存储提供程序](./virtual-machines/virtual-machines-azurerm-versus-azuresm.md)。
 
 ## 资源管理器的特性
 
 通过资源管理器创建的资源具备以下共同特性：
 
 - 通过以下方法之一创建：
-  - PowerShell 命令在 **AzureResourceManager** 模式下运行。
+  - 对于低于 1.0 的 Azure PowerShell 版本，命令将在 **AzureResourceManager** 模式下运行。
 
             PS C:\> Switch-AzureMode -Name AzureResourceManager
 
-  - 对于 Azure PowerShell 1.0 预览版，请使用命令的资源管理器版本。这些命令采用 *verb-AzureRm* 格式，如下所示。
+  - 对于 Azure PowerShell 1.0，请使用命令的资源管理器版本。这些命令采用 *Verb-AzureRmNoun* 格式，如下所示。
 
             PS C:\> Get-AzureRmResourceGroupDeployment
 
@@ -46,7 +48,21 @@
 
             azure config mode arm
 
+此外，资源提供程序内各个资源之间还存在相互关系：
+
+- 虚拟机依赖在 SRP 中定义的具体存储帐户，在 Blob 存储中存储其磁盘（必需）。
+- 虚拟机引用在 NRP 中定义的具体 NIC（必需）和在 CRP 中定义的可用性集（可选）。
+- NIC 引用虚拟机的指定 IP 地址（必需）、虚拟机的虚拟网络的子网（必需）和网络安全组（可选）。
+- 虚拟网络内的子网引用网络安全组（可选）。
+- 负载平衡器实例引用后端 IP 地址池，包括虚拟机的 NIC（可选）。
+
 ## 经典部署的特性
+
+在 Azure 服务管理中，宿主虚拟机的计算、存储或网络资源由以下各项提供：
+
+- 一项必不可少的云服务，用作宿主虚拟机的容器（计算）。虚拟机自动配备一个网络接口卡 (NIC) 并由 Azure 分配的 IP 地址。此外，云服务包含一个外部负载平衡器实例、一个公共 IP 地址以及若干默认终结点，以支持远程桌面、针对 Windows 虚拟机的远程 PowerShell 流量和针对 Linux 虚拟机的 Secure Shell (SSH) 流量。
+- 一个必不可少的存储帐户，存储虚拟机的 VHD，包括操作系统、临时文件和附加的数据磁盘（存储）。
+- 一个可选的虚拟网络，用作额外的容器，可以在其中创建子网结构并指定虚拟机所在的子网（网络）。
 
 在经典部署模型中创建的资源具有以下共同特性：
 
@@ -57,18 +73,19 @@
         ![Azure portal](./media/resource-manager-deployment-model/azure-portal.png)
 
 
-  - 对于低于 1.0 预览版的 Azure PowerShell 版本，命令在 **AzureServiceManagement** 模式下运行（这是默认模式，因此，如果不特意切换到 AzureResourceManager，你会在 AzureServiceManagement 模式下运行）。
+
+  - 对于低于 1.0 的 Azure PowerShell 版本，命令在 **AzureServiceManagement** 模式下运行（这是默认模式，因此，如果不特意切换到 AzureResourceManager，则会在 AzureServiceManagement 模式下运行）。
 
             PS C:\> Switch-AzureMode -Name AzureServiceManagement
 
-  - 对于 Azure PowerShell 1.0 预览版，请使用命令的服务管理版本。这些命令名称**不**采用 *verb-AzureRm* 格式，如下所示。
+  - 对于 Azure PowerShell 1.0，请使用命令的服务管理版本。这些命令采用 *Verb-AzureNoun* 格式，如下所示。
 
             PS C:\> Get-AzureDeployment
 
   - 适用于 REST 操作的[服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)。
   - Azure CLI 命令在 **asm** 或默认模式下运行。
 
-您仍可以使用预览门户来管理通过经典部署创建的资源。
+你仍可以使用 Azure 门户来管理通过经典部署创建的资源。
 
 ## 使用资源管理器和资源组的好处
 
@@ -76,9 +93,9 @@
 
 - 您可以以群组形式部署、管理和监视解决方案的所有服务，而不是单独处理这些服务。
 - 您可以在整个应用程序生命周期内重复部署应用程序，并确保以一致的状态部署资源。
-- 您可以使用声明性模板来定义您的部署。 
+- 您可以使用声明性模板来定义您的部署。
 - 您可以定义各资源之间的依赖关系，以便按正确的顺序进行部署。
-- 您可以将访问控制应用到资源组中的所有服务，因为基于角色的访问控制 (RBAC) 已在本机集成到管理平台。
+- 你可以向资源组中的所有资源应用访问控制，因为基于角色的访问控制 (RBAC) 已本机集成到管理平台。
 - 您可以将标记应用到资源，以按照逻辑组织订阅中的所有资源。
 
 
@@ -108,9 +125,9 @@
      ExampleResourceVM    Microsoft.Compute/virtualMachines             eastus
     ...
 
-但是，如果您运行 Get AzureVM 命令，您只能获取通过资源管理器创建的虚拟机。
+但是，如果运行 Get-AzureRmVM 命令，则只能获取通过资源管理器创建的虚拟机。
 
-    PS C:\> Get-AzureVM -ResourceGroupName ExampleGroup
+    PS C:\> Get-AzureRmVM -ResourceGroupName ExampleGroup
     ...
     Id       : /subscriptions/xxxx/resourceGroups/ExampleGroup/providers/Microsoft.Compute/virtualMachines/ExampleResourceVM
     Name     : ExampleResourceVM
@@ -137,4 +154,4 @@
 - 若要了解如何创建声明性部署模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
 - 若要查看用于部署模板的命令，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0418_2016-->
