@@ -1,23 +1,27 @@
 <properties 
-   pageTitle="在虚拟网络配置文件中指定 DNS 设置"
-   description="说明"
+   pageTitle="在虚拟网络配置文件中指定 DNS 设置 | Azure"
+   description="在经典部署模型中，如何使用虚拟网络配置文件更改虚拟网络中的 DNS 服务器设置"
    services="virtual-network"
    documentationCenter="na"
-   authors="joaoma"
-   manager="jdial"
-   editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.date="08/25/2015"
-   wacn.date="11/02/2015" />
+   authors="telmosampaio"
+   manager="carmonm"
+   editor="tysonn" 
+   tags="azure-service-management" />
+<tags
+	ms.service="virtual-network"
+	ms.date="02/23/2016"
+	wacn.date="04/25/2016"/> 
+
 
 # 在虚拟网络配置文件中指定 DNS 设置
 
 网络配置文件有两个可用于指定域名系统 (DNS) 设置的元素：**DnsServers** 和 **DnsServerRef**。可以通过指定服务器的 IP 地址和 **DnsServers** 元素的引用名添加 DNS 服务器列表。然后可以使用 **DnsServerRef** 元素指定 DnsServers 元素中的哪些 DNS 服务器实体用于虚拟网络内的不同网络站点。
 
->[AZURE.IMPORTANT] 有关如何配置网络配置文件的信息，请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file)。有关网络配置文件中包含的每个元素的信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)。
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)]
 
 网络配置文件可能包含以下元素。每个元素的标题链接到提供有关元素值设置的其他信息的页中。
+
+>[AZURE.IMPORTANT] 有关如何配置网络配置文件的信息，请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file)。有关网络配置文件中包含的每个元素的信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)。
 
 [Dns 元素](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 
@@ -43,10 +47,8 @@
 
 ## 后续步骤
 
-[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file)
+- 了解 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)。
+- 了解 [Azure 服务配置架构](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)。
+- [使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file)。
 
-[Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
-
-[Azure 服务配置架构](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)
-
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0418_2016-->
