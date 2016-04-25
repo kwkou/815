@@ -39,26 +39,41 @@
     function printResultFor(op) {
       return function printResult(err, res) {
         if (err) console.log(op + ' error: ' + err.toString());
-        if (res) console.log(op + ': message sent');
+        if (res) console.log(op + ' status: ' + res.constructor.name);
       };
     }
     ```
 
-7. 使用 **setInterval** 函数每隔一秒将新消息发送到 IoT 中心：
+7. 创建回调并使用 **setInterval** 函数每隔一秒将新消息发送到 IoT 中心：
 
     ```
-    setInterval(function(){
-      var windSpeed = 10 + (Math.random() * 4);
-      var data = JSON.stringify({ deviceId: 'myFirstDevice', windSpeed: windSpeed });
-      var message = new Message(data);
-      console.log("Sending message: " + message.getData());
-      client.sendEvent(message, printResultFor('send'));
-    }, 1000);
+    var connectCallback = function (err) {
+      if (err) {
+        console.log('Could not connect: ' + err);
+      } else {
+        console.log('Client connected');
+
+        // Create a message and send it to the IoT Hub every second
+        setInterval(function(){
+            var windSpeed = 10 + (Math.random() * 4);
+            var data = JSON.stringify({ deviceId: 'mydevice', windSpeed: windSpeed });
+            var message = new Message(data);
+            console.log("Sending message: " + message.getData());
+            client.sendEvent(message, printResultFor('send'));
+        }, 2000);
+      }
+    };
     ```
 
-8. 保存并关闭 **SimulatedDevice.js** 文件。
+8. 与 IoT 中心建立连接并开始发送消息：
 
-> [AZURE.NOTE] 为简单起见，本教程不实现任何重试策略。在生产代码中，你应该按 MSDN 文章[暂时性故障处理][lnk-transient-faults]中所述实现重试策略（例如指数退让）。
+    ```
+    client.open(connectCallback);
+    ```
+
+9. 保存并关闭 **SimulatedDevice.js** 文件。
+
+> [AZURE.NOTE] 为简单起见，本教程不实现任何重试策略。在生产代码中，应该按 MSDN 文章[暂时性故障处理][lnk-transient-faults]中所述实现重试策略（例如指数退让）。
 
 <!-- Links -->
 [lnk-transient-faults]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx

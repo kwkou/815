@@ -10,7 +10,7 @@
 <tags
      ms.service="iot-hub"
      ms.date="02/12/2016"
-     wacn.date="03/18/2016"/>
+     wacn.date="04/25/2016"/>
 
 # 使用 Powershell 创建 IoT 中心
 
@@ -18,7 +18,7 @@
 
 ## 介绍
 
-你可以使用 Azure Resource Manager (ARM) 以编程方式创建和管理 Azure IoT 中心。本教程说明如何使用 Resource Manager 模板从 C# 程序创建 IoT 中心。
+你可以使用 Azure Resource Manager (ARM) 以编程方式创建和管理 Azure IoT 中心。本教程说明如何结合使用 Resource Manager 模板和 PowerShell 来创建 IoT 中心。
 
 > [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用资源管理器部署模型。
 
@@ -58,7 +58,7 @@ New-AzureRmResourceGroup -Name MyIoTRG1 -Location "East US"
 
     ```
     {
-      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
       "contentVersion": "1.0.0.0",
       "parameters": {
         "hubName": {

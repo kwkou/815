@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="02/03/2016"
- wacn.date="03/18/2016"/>
+ wacn.date="04/25/2016"/>
 
 # 设计你的解决方案
 
@@ -32,13 +32,13 @@ IoT 解决方案存储有关单个设备的数据，例如：
 
 给定的 IoT 解决方案存储的设备数据取决于该解决方案的特定要求。但是，解决方案必须至少存储设备标识和身份验证密钥。Azure IoT 中心包含[标识注册表][lnk-devguide-identityregistry]，可以存储每个设备的值，例如 ID、身份验证密钥和状态代码。解决方案可以使用其他 Azure 服务（例如表、Blob 或 Azure DocumentDB）来存储任何其他设备数据。
 
-*设备预配*是将初始设备数据添加到解决方案中存储中的过程。若要使新设备能够连接到中心，必须将新设备 ID 和密钥添加到 [IoT 中心标识注册表][lnk-devguide-identityregistry]。在预配过程中，你可能需要初始化其他解决方案存储中的设备特定数据。
+“设备预配”是将初始设备数据添加到解决方案中存储中的过程。若要使新设备能够连接到中心，必须将新设备 ID 和密钥添加到 [IoT 中心标识注册表][lnk-devguide-identityregistry]。在预配过程中，你可能需要初始化其他解决方案存储中的设备特定数据。
 
 [IoT 中心设备管理指南][lnk-device-management]一文描述了设备预配的一些常用策略。[IoT 中心标识注册表 API][lnk-devguide-identityregistry] 可让你将 IoT 中心集成到预配过程。
 
 ## 现场网关
 
-在 IoT 解决方案中，*现场网关*位于设备和 IoT 中心之间。它通常位于靠近设备的位置。设备使用设备支持的协议，直接与现场网关通信。现场网关使用 IoT 中心支持的协议来与 IoT 中心通信。现场网关可以是专用的独立设备，也可以是在现有硬件部件上运行的软件。
+在 IoT 解决方案中，“现场网关”位于设备和 IoT 中心之间。它通常位于靠近设备的位置。设备使用设备支持的协议，直接与现场网关通信。现场网关使用 IoT 中心支持的协议来与 IoT 中心通信。现场网关可以是专用的独立设备，也可以是在现有硬件部件上运行的软件。
 
 现场网关与简单的流量路由设备（例如网络地址转换 (NAT) 设备或防火墙）不同，因为它通常在解决方案中管理访问和信息流中扮演主动的角色。例如，现场网关可以：
 
@@ -52,7 +52,7 @@ IoT 解决方案存储有关单个设备的数据，例如：
 
 ### 现场网关的类型
 
-现场网关可以是*透明的*或*不透明的*：
+现场网关可以是“透明的”或“不透明的”：
 
 | &nbsp; | 透明网关 | 不透明网关|
 |--------|-------------|--------|
@@ -68,9 +68,9 @@ IoT 解决方案存储有关单个设备的数据，例如：
 
 ## 自定义设备身份验证
 
-可以使用 IoT 中心[设备标识注册表][lnk-devguide-identityregistry]来配置每个设备的安全凭据和访问控制。如果 IoT 解决方案已经大幅投资自定义设备标识注册表和/或身份验证方案，可以通过创建*令牌服务*，将此现有基础结构与 IoT 中心集成。这样，便可以在解决方案中使用其他 IoT 功能。
+可以使用 IoT 中心[设备标识注册表][lnk-devguide-identityregistry]来配置每个设备的安全凭据和访问控制。如果 IoT 解决方案已经大幅投资自定义设备标识注册表和/或身份验证方案，可以通过创建“令牌服务”，将此现有基础结构与 IoT 中心集成。这样，便可以在解决方案中使用其他 IoT 功能。
 
-令牌服务是自定义云服务。它使用包含 **DeviceConnect** 权限的 IoT 中心*共享访问策略*创建*设备范围的*令牌。这些令牌可让设备连接到 IoT 中心。
+令牌服务是自定义云服务。它使用包含 **DeviceConnect** 权限的 IoT 中心“共享访问策略”创建“设备范围的”令牌。这些令牌可让设备连接到 IoT 中心。
 
   ![令牌服务模式的步骤][img-tokenservice]
 
@@ -89,15 +89,17 @@ IoT 解决方案存储有关单个设备的数据，例如：
 
 ### 与自定义网关的比较
 
-令牌服务模式是使用 IoT 中心实现自定义标识注册表/身份验证方案的建议方式。提供这种建议是因为 IoT 中心继续处理大部分解决方案流量。但在某些情况下，自定义身份验证方案和协议过度交织，因此需要可处理所有流量（*自定义网关*）的服务。[传输层安全 (TLS) 和预共享密钥 (PSK)][lnk-tls-psk] 就是这种服务的例子。有关详细信息，请参阅[协议网关][lnk-gateway]主题。
+令牌服务模式是使用 IoT 中心实现自定义标识注册表/身份验证方案的建议方式。提供这种建议是因为 IoT 中心继续处理大部分解决方案流量。但在某些情况下，自定义身份验证方案和协议过度交织，因此需要可处理所有流量（自定义网关）的服务。[传输层安全 (TLS) 和预共享密钥 (PSK)][lnk-tls-psk] 就是这种服务的例子。有关详细信息，请参阅[协议网关][lnk-gateway]主题。
 
 ## 设备检测信号 <a id="heartbeat"></a>
 
-[IoT 中心标识注册表][lnk-devguide-identityregistry]包含名为 **connectionState** 的字段。你只应在开发和调试期间使用 **connectionState** 字段，IoT 解决方案不应在运行时查询该字段（例如，为了检查设备是否已连接以确定是否要发送云到设备的消息或 SMS）。如果 IoT 解决方案需要知道设备是否已连接（在运行时，或在比 **connectionState** 属性提供的值更精确时），解决方案应该实施*检测信号模式*。
+[IoT 中心标识注册表][lnk-devguide-identityregistry]包含名为 **connectionState** 的字段。你只应在开发和调试期间使用 **connectionState** 字段，IoT 解决方案不应在运行时查询该字段（例如，为了检查设备是否已连接以确定是否要发送云到设备的消息或 SMS）。如果 IoT 解决方案需要知道设备是否已连接（在运行时，或在比 **connectionState** 属性提供的值更精确时），解决方案应该实施“检测信号模式”。
 
 在检测信号模式下，设备每隔固定时间至少发送一次设备到云的消息（例如，每小时至少一次）。这意味着，即使设备没有任何要发送的数据，仍会发送空的设备到云的消息（通常具有可供识别其属于检测信号的属性）。在服务端，解决方案维护一份图表，其中包含每个设备所收到的最后一次检测信号，并假设如果设备没有在预期时间内收到检测信号消息，即表示设备有问题。
 
 更复杂的实现可以包含来自[操作监视][lnk-devguide-opmon]的信息，以便识别尝试连接或通信但失败的设备。实施检测信号模式时，请务必查看 [IoT 中心配额与限制][]。
+
+> [AZURE.NOTE] 如果 IoT 解决方案只根据设备连接状态来决定是否发送云到设备的消息，并且没有把消息广播到大量设备，则可以考虑使用更简单的模式，即使用较短的到期时间。它达到的效果与使用检测信号模式维护设备连接状态达到的效果一样，而且更加有效。IoT 中心还可以通过请求消息确认来通知哪些设备可以接收消息、哪些设备脱机或不能接收消息。有关 C2D 消息的详细信息，请参阅 [IoT 中心开发人员指南][lnk-devguide-messaging]。
 
 ## 后续步骤
 
@@ -123,6 +125,7 @@ IoT 解决方案存储有关单个设备的数据，例如：
 [lnk-throttles-quotas]: /documentation/articles/azure-subscription-service-limits/#iot-hub-limits
 [lnk-devguide-antispoofing]: /documentation/articles/iot-hub-devguide/#antispoofing
 [lnk-devguide-protocol]: /documentation/articles/iot-hub-devguide/#amqpvshttp
+[lnk-devguide-messaging]: /documentation/articles/iot-hub-devguide/#messaging
 [lnk-dotnet-sas]: https://msdn.microsoft.com/zh-cn/library/microsoft.azure.devices.common.security.sharedaccesssignaturebuilder.aspx
 [lnk-java-sas]: http://azure.github.io/azure-iot-sdks/java/service/api_reference/com/microsoft/azure/iot/service/auth/IotHubServiceSasToken.html
 [IoT 中心配额与限制]: /documentation/articles/iot-hub-devguide/#throttling

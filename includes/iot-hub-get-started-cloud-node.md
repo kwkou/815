@@ -95,7 +95,7 @@
     var Promise = require('bluebird');
     ```
 
-5. 添加以下变量声明，并将占位符替换为前面记下的值。**{your event hub-compatible namespace}** 占位符的值来自事件中心兼容的终结点，其格式为 **xxxxnamespace.servicebus.windows.net**。
+5. 添加以下变量声明，并将占位符替换为前面记下的值。**{your event hub-compatible namespace}** 占位符的值来自门户中的“事件中心兼容的终结点”字段，其格式为 **xxxxnamespace.servicebus.chinacloudapi.cn**（不需要 **sb://* 前缀）。
 
     ```
     var protocol = 'amqps';
@@ -106,7 +106,7 @@
     var numPartitions = 2;
     ```
 
-    > [AZURE.NOTE] 此代码假设已在 F1（免费）层创建 IoT 中心。免费 IoT 中心有“0”和“1”这两个分区。如果使用另一种定价层创建 IoT 中心，则应调整代码来为每个分区创建 **MessageReceiver**。
+    > [AZURE.NOTE] 此代码假设已在 F1（免费）层创建 IoT 中心。免费 IoT 中心有“0”和“1”这两个分区。如果使用另一种定价层创建 IoT 中心，则应调整代码，为每个分区创建 **MessageReceiver**。
 
 6. 添加以下筛选器定义。在创建开始运行后只读取发送到 IoT 中心的消息的接收方时，此应用程序将使用筛选器。这很适合测试环境，因为这样可以看到当前的消息集，但在生产环境中，代码应该要确保它能处理所有消息。有关详细信息，请参阅[如何处理 IoT 中心设备到云的消息][lnk-processd2c-tutorial]教程。
 

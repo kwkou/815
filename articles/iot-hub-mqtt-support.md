@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="02/03/2016"
- wacn.date="03/18/2016"/>
+ wacn.date="04/25/2016"/>
 
 # IoT 中心 MQTT 支持
 
@@ -39,15 +39,31 @@ IoT 中心允许设备在端口 8883 上使用 [MQTT v3.1.1][lnk-mqtt-org] 协�
 
 如果设备无法使用设备客户端 SDK，仍可使用 MQTT 协议连接到公共设备终结点。在 **CONNECT** 数据包中，设备应使用以下值：
 
-- 使用 **deviceId** 作为 **ClientId**
-- “用户名”字段中的 `{iothubhostname}/{device_id}`，其中 {iothubhostname} 是 IoT 中心的完整 CName（例如，contoso.azure-devices.net）。
-- “密码”字段中的 SAS 令牌。[SAS 令牌的格式][lnk-iothub-security]与针对 HTTP 和 AMQP 协议所述的格式相同：<br/>`SharedAccessSignature sig={signature-string}&se={expiry}&skn={policyName}&sr={URL-encoded-resourceURI}`
+- “ClientId” 字段使用 “deviceId”。 
+- “用户名”字段使用 `{iothubhostname}/{device_id}`，其中 {iothubhostname} 是 IoT 中心的完整 CName。
 
-对于 MQTT 的连接和断开连接数据包，IoT 中心将在“操作监视”通道上发出事件。
+    例如，如果 IoT 中心的名称为 **contoso.azure-devices.net**，设备的名称为 **MyDevice01**，则完整“用户名”字段应包含 `contoso.azure-devices.net/MyDevice01`。
+
+- “密码”字段使用 SAS 令牌。[SAS 令牌的格式][lnk-iothub-security]与针对 HTTP 和 AMQP 协议所述的格式相同：<br/>`SharedAccessSignature sig={signature-string}&se={expiry}&skn={policyName}&sr={URL-encoded-resourceURI}`。
+
+    有关如何生成 SAS 令牌的详细信息，请参阅[使用 IoT 中心安全令牌][lnk-sas-tokens]。
+    
+    测试时也可以使用[设备资源管理器][lnk-device-explorer]工具来快速生成可以复制并粘贴到自己的代码中的 SAS 令牌。
+    
+    1. 转到设备资源管理器中的“管理”选项卡。
+    2. 单击“SAS 令牌”（右上角）。
+    3. 在 “SASTokenForm” 上，从 “DeviceID” 下拉列表中选择你的设备。设置你的 “TTL”。
+    4. 单击“生成”以创建你的令牌。
+    
+    所生成的 SAS 令牌如下所示：`HostName={your hub name}.azure-devices.net;DeviceId=javadevice;SharedAccessSignature=SharedAccessSignature sr={your hub name}.azure-devices.net%2fdevices%2fMyDevice01&sig=vSgHBMUG.....Ntg%3d&se=1456481802`。
+
+    与在“密码”字段中使用 MQTT 连接一样，此部分使用的是：`SharedAccessSignature sr={your hub name}.azure-devices.net%2fdevices%2fyDevice01&sig=vSgHBMUG.....Ntg%3d&se=1456481802g%3d&se=1456481802`。
+
+对于 MQTT 连接和断开连接数据包，IoT 中心将在“操作监视”通道上发出事件。
 
 ### 将消息发送到 IoT 中心
 
-成功建立连接后，设备可以使用 `devices/{did}/messages/events/` 或 `devices/{did}/messages/events/{property_bag}` 作为**主题名称**来将消息发送到 IoT 中心。`{property_bag}` 元素可让设备使用 url 编码格式发送包含其他属性的消息。例如：
+成功建立连接后，设备可以使用 `devices/{did}/messages/events/` 或 `devices/{did}/messages/events/{property_bag}` 作为**主题名称**来将消息发送到 IoT 中心。`{property_bag}` 元素可让设备使用 URL 编码格式发送包含其他属性的消息。例如：
 
 ```
 RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-encoded(<PropertyName2>)=RFC 2396-encoded(<PropertyValue2>)…
@@ -76,5 +92,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 [lnk-sample-java]: https://github.com/Azure/azure-iot-sdks/blob/develop/java/device/samples/send-receive-sample/src/main/java/samples/com/microsoft/azure/iothub/SendReceive.java
 [lnk-sample-c]: https://github.com/Azure/azure-iot-sdks/tree/master/c/iothub_client/samples/iothub_client_sample_mqtt
 [lnk-sample-csharp]: https://github.com/Azure/azure-iot-sdks/tree/master/csharp/device/samples
+[lnk-device-explorer]: https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/readme.md
+[lnk-sas-tokens]: /documentation/articles/iot-hub-sas-tokens
 
 <!---HONumber=Mooncake_0307_2016-->
