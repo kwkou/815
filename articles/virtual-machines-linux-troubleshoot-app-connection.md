@@ -1,0 +1,22 @@
+<properties
+	pageTitle="排查 VM 上的应用程序访问问题 | Azure"
+	description="如果无法访问 Azure 虚拟机上运行的应用程序，则可以按照这些步骤来隔离问题来源。"
+	services="virtual-machines-linux"
+	documentationCenter=""
+	authors="iainfoulds"
+	manager="timlt"
+	editor=""
+	tags="top-support-issue,azure-service-management,azure-resource-manager"/>
+
+<tags
+	ms.service="virtual-machines-linux"
+	ms.date="11/17/2015"
+	wacn.date="01/14/2016"/>
+
+# 对在 Azure 虚拟机上运行的应用程序的访问进行故障排除
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+
+[AZURE.INCLUDE [virtual-machines-common-troubleshoot-app-connection](../includes/virtual-machines-common-troubleshoot-app-connection.md)]
+
+<!---HONumber=Mooncake_0104_2016-->

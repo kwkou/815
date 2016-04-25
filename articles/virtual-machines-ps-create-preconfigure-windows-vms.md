@@ -16,9 +16,9 @@
 # 使用 Powershell 和经典部署模型创建 Windows 虚拟机 
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
-- [Powershell - Windows](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
-- [PowerShell - Linux](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
+- [Azure 门户](/documentation/articles/virtual-machines-windows-classic-tutorial)
+- [PowerShell - Windows](/documentation/articles/virtual-machines-windows-classic-create-powershell)
+- [PowerShell - Linux](/documentation/articles/virtual-machines-linux-classic-createpowershell)
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] 
 
@@ -27,7 +27,7 @@
 
 这些步骤采用填空方法来创建 Azure PowerShell 命令集。如果你不熟悉 PowerShell 或只想知道为成功的配置指定什么值，则此方法很有用。高级 PowerShell 用户可以使用命令并将变量（以“$”开头的行）替换为他们自己的值。
 
-有关配置基于 Linux 的虚拟机的配套主题，请参阅[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)。
+有关配置基于 Linux 的虚拟机的配套主题，请参阅[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-classic-createpowershell)。
 
 
 ## 步骤 1：安装 Azure PowerShell
@@ -36,7 +36,7 @@
 
 ## 步骤 2：设置订阅和存储帐户
 
-通过在 Azure PowerShell 命令提示符下运行以下命令设置你的 Azure 订阅和存储帐户。将引号内的所有内容（包括 < and > 字符）替换为相应的名称。
+通过在 Windows PowerShell 命令提示符下运行以下命令设置你的 Azure 订阅和存储帐户。将引号内的所有内容（包括 < and > 字符）替换为相应的名称。
 
 	$subscr="<subscription name>"
 	$staccount="<storage account name>"
@@ -55,7 +55,7 @@
 
 - Windows Server 2012 R2 Datacenter
 - Windows Server 2008 R2 SP1
-- Windows Server Technical Preview
+- Windows Server 2016 Technical Preview 4
 - Windows Server 2012 上的 SQL Server 2102 SP1 Enterprise
 
 如果你找到要查找的映像，请打开所选文本编辑器的一个新实例或 PowerShell 集成脚本环境 (ISE)。将以下内容复制到新的文本文件或 PowerShell ISE，并替换 ImageFamily 值。
@@ -96,7 +96,7 @@
 （可选）为独立 Windows 计算机指定本地管理员帐户和密码。
 
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account."
-	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
+	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.Username -Password $cred.GetNetworkCredential().Password
 
  选择一个强密码。若要检查其强度，请参阅[密码检查器：使用强密码](https://www.microsoft.com/security/pc-security/password-checker.aspx)。
 
@@ -106,7 +106,7 @@
 	$cred2=Get-Credential –Message "Now type the name (not including the domain) and password of an account that has permission to add the machine to the domain."
 	$domaindns="<FQDN of the domain that the machine is joining>"
 	$domacctdomain="<domain of the account that has permission to add the machine to the domain>"
-	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.GetNetworkCredential().Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain $domacctdomain -DomainUserName $cred2.GetNetworkCredential().Username -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain $domaindns
+	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain $domacctdomain -DomainUserName $cred2.Username -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain $domaindns
 
 有关基于 Windows 的虚拟机的其他预配置选项，请参阅 [Add-AzureProvisioningConfig](https://msdn.microsoft.com/zh-cn/library/azure/dn495299.aspx) 中 **Windows** 和 **WindowsDomain** 参数集的语法。
 
@@ -134,7 +134,7 @@
 
 （可选）将虚拟机添加到用于外部流量的现有负载平衡集。
 
-	$port="<Specify one: tcp, udp>"
+	$protocol="<Specify one: tcp, udp>"
 	$localport=<port number of the internal port>
 	$pubport=<port number of the external port>
 	$endpointname="<name of the endpoint>"
@@ -142,7 +142,7 @@
 	$probeprotocol="<Specify one: tcp, http>"
 	$probeport=<TCP or HTTP port number of probe traffic>
 	$probepath="<URL path for probe traffic>"
-	$vm1 | Add-AzureEndpoint -Name $endpointname -Protocol $prot -LocalPort $localport -PublicPort $pubport -LBSetName $lbsetname -ProbeProtocol $probeprotocol -ProbePort $probeport -ProbePath $probepath
+	$vm1 | Add-AzureEndpoint -Name $endpointname -Protocol $protocol -LocalPort $localport -PublicPort $pubport -LBSetName $lbsetname -ProbeProtocol $probeprotocol -ProbePort $probeport -ProbePath $probepath
 
 最后，请选择这些必需的命令块之一来创建虚拟机。
 
@@ -162,7 +162,7 @@
 
 复查你在步骤 4 中在文本编辑器或 PowerShell ISE 中生成的包含多个命令块的 Azure PowerShell 命令集。确保你指定了所需的所有变量，并且这些变量具有正确的值。另请确保你已删除所有 < and > 字符。
 
-如果你使用的是文本编辑器，则将命令集复制到剪贴板，然后右键单击打开的 Azure PowerShell 命令提示符。这将发出作为一系列 PowerShell 命令的命令集，并创建 Azure 虚拟机。或者，在 PowerShell ISE 中运行命令集。
+如果你使用的是文本编辑器，则将命令集复制到剪贴板，然后右键单击打开的 Windows PowerShell 命令提示符。这将发出作为一系列 PowerShell 命令的命令集，并创建 Azure 虚拟机。或者，在 PowerShell ISE 中运行命令集。
 
 如果你要再次创建此虚拟机或类似的虚拟机，则可以：
 
@@ -194,7 +194,7 @@
 	$vm1=New-AzureVMConfig -Name $vmname -InstanceSize $vmsize -ImageName $image
 
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account."
-	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
+	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.Username -Password $cred.GetNetworkCredential().Password
 
 	$vm1 | Set-AzureSubnet -SubnetNames "BackEnd"
 
@@ -233,7 +233,7 @@
 	$cred2=Get-Credential –Message "Now type the name (not including the domain) and password of an account that has permission to add the machine to the domain."
 	$domaindns="corp.contoso.com"
 	$domacctdomain="CORP"
-	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.GetNetworkCredential().Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain $domacctdomain -DomainUserName $cred2.GetNetworkCredential().Username -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain $domaindns
+	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain $domacctdomain -DomainUserName $cred2.Username -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain $domaindns
 
 	$vm1 | Set-AzureSubnet -SubnetNames "FrontEnd"
 
@@ -248,14 +248,8 @@
 	New-AzureVM –ServiceName $svcname -VMs $vm1 -VNetName $vnetname
 
 
-## 其他资源
+## 下一步
 
-[虚拟机文档](/documentation/services/virtual-machines/)
-
-[Azure 虚拟机常见问题](/documentation/articles/virtual-machines-questions/)
-
-[Azure 虚拟机概述](/documentation/articles/virtual-machines-about/)
-
-[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
+如果你需要大于 127GB 的 OS 磁盘，你可以[扩展 OS 磁盘](/documentation/articles/virtual-machines-windows-expand-os-disk)。
 
 <!---HONumber=Mooncake_1221_2015-->
