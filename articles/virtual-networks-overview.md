@@ -52,7 +52,7 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 ## IP 地址
 
 
-有两种类型的 IP 地址分配给 Azure 中的资源：公共和专用。使用公共 IP 地址可以让 Azure 资源与 Internet 以及其他面向公众的 Azure 服务（例如 [Azure Redis 缓存](/home/features/cache/)、[Azure 事件中心](/documentation/services/event-hubs/)）通信。专用 IP 地址允许在虚拟网络的资源之间通信，不需使用可通过 Internet 路由的 IP 地址。
+有两种类型的 IP 地址分配给 Azure 中的资源：公共和专用。使用公共 IP 地址可以让 Azure 资源与 Internet 以及其他面向公众的 Azure 服务（例如 [Azure Redis 缓存](/home/features/redis-cache/)、[Azure 事件中心](/documentation/services/event-hubs/)）通信。专用 IP 地址允许在虚拟网络的资源之间通信，不需使用可通过 Internet 路由的 IP 地址。
 
 若要详细了解 Azure 中的 IP 地址，请访问[虚拟网络中的 IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-classic)
 
@@ -63,8 +63,6 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 - **外部负载平衡器**。可以使用外部负载平衡器为从公共 Internet 访问的 IaaS VM 和 PaaS 角色实例提供高可用性。
 
 - **内部负载平衡器**。可以使用内部负载平衡器为从 VNet 中的其他服务访问的 IaaS VM 和 PaaS 角色实例提供高可用性。
-
-若要了解有关 Azure 中的负载平衡的详细信息，请访问[负载平衡器概述](/documentation/articles/load-balancer-overview)。
 
 ## 网络安全组 (NSG)
 
@@ -82,7 +80,7 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 一个订阅中允许的虚拟网络数是有限制的，请参阅 [Azure 网络限制](/documentation/articles/azure-subscription-service-limits#networking-limits)以获取更多信息。
 
 ## 定价
-在 Azure 中使用虚拟网络不需支付额外的费用。在 Vnet 中启动的计算实例将按标准费率计费，如 [Azure VM 定价](/home/features/virtual-machines/#price)中所述。在 VNet 中使用的[公共 IP 地址](/home/features/ip-addresses/#price)也将按标准费率计费。
+在 Azure 中使用虚拟网络不需支付额外的费用。在 Vnet 中启动的计算实例将按标准费率计费，如 [Azure VM 定价](/home/features/virtual-machines/#price)中所述。在 VNet 中使用的公共 IP 地址也将按标准费率计费。
 
 ## 后续步骤
 
