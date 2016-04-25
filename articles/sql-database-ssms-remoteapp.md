@@ -75,7 +75,7 @@ sysprep 在完成后会关闭 VM。
 
 当 VM 停止运行以后，可在当前门户中查找并捕获它。
 
-若要详细了解如何捕获映像，请参阅[捕获使用经典部署模型创建的 Azure Windows 虚拟机的映像](/documentation/articles/virtual-machines-capture-image-windows-server)
+若要详细了解如何捕获映像，请参阅[捕获使用经典部署模型创建的 Azure Windows 虚拟机的映像](/documentation/articles/virtual-machines-windows-classic-capture-image)
 
 
 ### 5\.添加到 Azure RemoteApp 模板映像

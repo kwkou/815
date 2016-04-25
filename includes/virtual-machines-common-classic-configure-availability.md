@@ -37,7 +37,7 @@
 
 	![创建新虚拟机的可用性集](./media/virtual-machines-common-classic-configure-availability/VMavailabilityset.png)
 
-6. 在第四个屏幕上，选择要安装的扩展。扩展提供简化管理虚拟机的功能，例如运行反恶意软件或重置密码。有关详细信息，请参阅 [Azure VM 代理和 VM 扩展](/documentation/articles/virtual-machines-extensions-agent-about)。
+6. 在第四个屏幕上，选择要安装的扩展。扩展提供简化管理虚拟机的功能，例如运行反恶意软件或重置密码。有关详细信息，请参阅 [Azure VM 代理和 VM 扩展](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions)。
 
 7.	单击箭头以创建虚拟机和可用性集。
 

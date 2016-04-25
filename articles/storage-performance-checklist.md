@@ -119,7 +119,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 请注意，因错误和数据包丢失而导致的网络状况会降低有效吞吐量，任何网络的使用都是这样。WireShark 或 NetMon 可用于诊断此问题。
 
 #####有用的资源
-有关虚拟机大小和分配带宽的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
+有关虚拟机大小和分配带宽的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)。
 
 ####<a name="subheading4"></a>位置
 在任何分布式环境中，将客户端放置在服务器附近可提供最佳性能。若要以最低的延迟访问 Azure 存储空间，则最好是将客户端放置在同一 Azure 区域内。例如，如果您的 Azure Web 应用使用 Azure 存储空间，则应将二者都放置在同一个区域（例如美国西部或亚洲东南部）。这会降低延迟和成本 — 在本文撰写之际，同一个区域的带宽使用是免费的。

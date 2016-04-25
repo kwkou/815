@@ -59,7 +59,7 @@ Azure SDK for .NET 将安装以下产品：
 
 * [创建、打开和发布云服务项目](/documentation/articles/cloud-services-dotnet-get-started)。
 * [创建云服务项目的部署包](http://msdn.microsoft.com/zh-cn/library/ff683672.aspx)。
-* [在创建新的 Web 项目时创建 Azure 虚拟机](/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell)。
+* [在创建新的 Web 项目时创建 Azure 虚拟机](/documentation/articles/virtual-machines-windows-classic-web-app-visual-studio)。
 * [在创建新的虚拟机时创建 PowerShell 脚本](http://msdn.microsoft.com/zh-cn/library/dn642480.aspx)。
 * [查看和管理 Visual Studio 项目属性窗口中的云服务项目设置](http://msdn.microsoft.com/zh-cn/library/ee405486.aspx)。
 * 在服务器资源管理器中查看和管理[云服务](http://msdn.microsoft.com/zh-cn/library/ff683675.aspx)、[虚拟机](http://msdn.microsoft.com/zh-cn/library/jj131259.aspx)和[服务总线](http://msdn.microsoft.com/zh-cn/library/jj149828.aspx)。 

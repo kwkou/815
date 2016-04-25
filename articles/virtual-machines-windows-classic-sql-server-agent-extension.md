@@ -33,8 +33,8 @@
  
 ## 服务适用于扩展
 
-- **SQL 自动备份**：此服务对 VM 中的 SQL Server 默认实例自动执行所有数据库的备份计划。若要查看有关此服务的详细信息，请参阅 [Azure 虚拟机中 SQL Server 的自动备份](/documentation/articles/virtual-machines-sql-server-automated-backup)。
-- **SQL 自动修补**：使用此服务能够配置维护时段，在此期间可能更新你的 VM，因此可以避免在工作负荷的高峰时间进行更新。若要查看有关此服务的详细信息，请参阅 [Azure 虚拟机中 SQL Server 的自动修补](/documentation/articles/virtual-machines-sql-server-automated-patching)。
+- **SQL 自动备份**：此服务对 VM 中的 SQL Server 默认实例自动执行所有数据库的备份计划。若要查看有关此服务的详细信息，请参阅 [Azure 虚拟机中 SQL Server 的自动备份](/documentation/articles/virtual-machines-windows-classic-sql-automated-backup)。
+- **SQL 自动修补**：使用此服务能够配置维护时段，在此期间可能更新你的 VM，因此可以避免在工作负荷的高峰时间进行更新。若要查看有关此服务的详细信息，请参阅 [Azure 虚拟机中 SQL Server 的自动修补](/documentation/articles/virtual-machines-windows-classic-sql-automated-patching)。
 
 ## 使用 Powershell 添加扩展
 如果使用 [Azure 预览门户](https://manage.windowsazure.cn)设置 SQL Server VM，将会自动安装该扩展。针对使用 [Azure 管理门户](https://manage.windowsazure.cn)配置的 SQL Server VM 或生成你自己 SQL 许可证的 VM，可以使用以下 Azure PowerShell cmdlet 将此扩展添加到现有 VM。

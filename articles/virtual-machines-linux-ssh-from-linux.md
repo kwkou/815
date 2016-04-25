@@ -16,8 +16,8 @@
 #如何在 Azure 上将 SSH 用于 Linux 和 Mac
 
 > [AZURE.SELECTOR]
-- [Windows](/documentation/articles/virtual-machines-windows-use-ssh-key)
-- [Linux/Mac](/documentation/articles/virtual-machines-linux-use-ssh-key)
+- [Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows)
+- [Linux/Mac](/documentation/articles/virtual-machines-linux-ssh-from-linux)
 
 本主题介绍如何在 Linux 和 Mac 上使用 **ssh-keygen** 和 **openssl**，创建和使用 **ssh-rsa** 格式和 **.pem** 格式文件来基于 Linux 保护与 Azure VM 的通信。对于新部署，建议使用资源管理器部署模型创建基于 Linux 的 Azure 虚拟机，并采用 *ssh-rsa* 类型公钥文件或字符串（具体取决于部署客户端）。[预览门户](https://manage.windowsazure.cn)当前仅接受 **ssh-rsa** 格式字符串，无论是进行经典部署还是资源管理器部署。
 
@@ -288,7 +288,7 @@ Azure 需要 2048 位的 **ssh-rsa** 格式密钥文件或等效的 .pem 文件�
 
 ## 如果你无法连接
 
-可以阅读 [SSH 连接疑难解答](/documentation/articles/virtual-machines-troubleshoot-ssh-connections)中的建议以了解这些建议是否可以帮助解决该情况。
+可以阅读 [SSH 连接疑难解答](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection)中的建议以了解这些建议是否可以帮助解决该情况。
 
 ## 后续步骤
  

@@ -10,7 +10,7 @@
 
 任务 | 服务管理模式 | 资源管理器模式
 -------------- | ----------- | -------------------------
-创建最基本的 VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>`<br/><br/>（从 `azure vm image list` 命令获取 `image-urn`。有关示例，请参阅[本文](/documentation/articles/resource-groups-vm-searching)。）
+创建最基本的 VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>`<br/><br/>（从 `azure vm image list` 命令获取 `image-urn`。有关示例，请参阅[本文](/documentation/articles/virtual-machines-linux-cli-ps-findimage)。）
 创建 Linux VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure  vm create [options] <resource-group> <name> <location> -y "Linux"`
 创建 Windows VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure  vm create [options] <resource-group> <name> <location> -y "Windows"`
 列出 VM | `azure  vm list [options]` | `azure  vm list [options]`

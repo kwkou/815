@@ -143,8 +143,8 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 为了演示如何装载 Azure 文件共享，现在我们将创建一个运行 Windows 的 Azure 虚拟机，并远程登录到它内部以装载共享。
 
-1. 首先，按照[在 Azure 门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)中的说明创建新的 Azure 虚拟机。
-2. 接下来，按照[使用 Azure 门户登录到 Windows 虚拟机](/documentation/articles/virtual-machines-log-on-windows-server)中的说明远程登录到虚拟机。
+1. 首先，按照[在 Azure 门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)中的说明创建新的 Azure 虚拟机。
+2. 接下来，按照[使用 Azure 门户登录到 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-connect-logon)中的说明远程登录到虚拟机。
 3. 在该虚拟机上打开 PowerShell 窗口。
 
 ### 保存虚拟机的存储帐户凭据

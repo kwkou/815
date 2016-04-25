@@ -339,19 +339,19 @@ MySQL 慢查询日志有助于识别 MySQL 的慢查询。在启用 MySQL 慢查
 
 
 
-[1]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-01.png
-[2]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-02.png
-[3]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-03.png
-[4]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-04.png
-[5]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-05.png
-[6]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-06.png
-[7]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-07.png
-[8]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-08.png
-[9]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-09.png
-[10]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-10.png
-[11]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-11.png
-[12]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-12.png
-[13]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-13.png
-[14]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-14.png
+[1]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-01.png
+[2]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-02.png
+[3]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-03.png
+[4]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-04.png
+[5]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-05.png
+[6]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-06.png
+[7]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-07.png
+[8]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-08.png
+[9]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-09.png
+[10]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-10.png
+[11]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-11.png
+[12]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-12.png
+[13]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-13.png
+[14]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-14.png
 
 <!---HONumber=Mooncake_0118_2016-->

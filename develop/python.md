@@ -25,7 +25,7 @@ editor="Eric Chen" />
 - [配置 Python](/documentation/articles/web-sites-python-configure)
 - [创建 Django Web 应用](/documentation/articles/web-sites-python-create-deploy-django-app)
 - [从 Visual Studio 部署](/documentation/articles/web-sites-python-ptvs-django-mysql)
-- [承载 IPython Notebook](/documentation/articles/virtual-machines-python-ipython-notebook)
+- [承载 IPython Notebook](/documentation/articles/virtual-machines-linux-jupyter-notebook)
 - [自定义域名](/documentation/articles/web-sites-custom-domain-name)
 - [全部显示](/develop/python/compute)
 

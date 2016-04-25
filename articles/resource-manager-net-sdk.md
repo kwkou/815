@@ -273,7 +273,7 @@ private static async Task<VirtualMachine> CreateVirtualMachineAsync(TokenCredent
 ```
 
 ### 使用模板化部署
-有关如何部署模板的详细说明，请阅读并遵循[使用 .NET 库和模板部署 Azure 资源](/documentation/articles/arm-template-deployment/#step-4-create-the-credentials-that-are-used-to-authenticate-requests)教程。
+有关如何部署模板的详细说明，请阅读并遵循[使用 .NET 库和模板部署 Azure 资源](/documentation/articles/virtual-machines-windows-csharp-template/#step-4-create-the-credentials-that-are-used-to-authenticate-requests)教程。
 
 简单地说，部署模板比手动预配资源要容易得多，以下代码演示如何通过指向包含模板和参数文件的 URI 来执行此操作。
 

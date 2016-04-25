@@ -8,7 +8,7 @@
 
 • Windows VM -- [Microsoft 服务器软件对 Azure 虚拟机的支持](https://support.microsoft.com/zh-cn/kb/2721672)
 
-• Linux VM -- [Azure 认可分发版中的 Linux](/documentation/articles/virtual-machines-linux-endorsed-distributions/)
+• Linux VM -- [Azure 认可分发版中的 Linux](/documentation/articles/virtual-machines-linux-endorsed-distros/)
 
 对于 Windows 客户端映像，某些版本的 Windows 7 和 Windows 8.1 可供 MSDN Azure 权益订户以及 MSDN 开发和测试即用即付订户用于开发和测试任务。有关详细信息（包括说明和限制），请参阅[适用于 MSDN 订户的 Windows 客户端映像](https://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/)。
 
@@ -94,7 +94,7 @@ Windows VM 的其他选项包括：
 
 Azure 针对防病毒解决方案提供了多种选项，但需要用户自行管理。例如，你可能需要另外订阅反恶意软件的软件，并需要自行决定运行扫描和安装更新的时间。你可以在创建 Windows 虚拟机时通过适用于 Microsoft 反恶意软件或 TrendMicro Deep Security Agent 的 VM 扩展来添加防病毒支持，也可以稍后进行。TrendMicro 扩展允许你使用免费的限时试用订阅或使用现有的企业订阅。Microsoft 反恶意软件是免费的。有关详细信息，请参阅：
 
-- [如何在 Azure VM 上安装和配置 Trend Micro Deep Security 即服务](/documentation/articles/virtual-machines-install-trend/)
+- [如何在 Azure VM 上安装和配置 Trend Micro Deep Security 即服务](/documentation/articles/virtual-machines-windows-classic-install-trend/)
 - [在 Azure 虚拟机上部署反恶意软件解决方案](https://azure.microsoft.com/zh-cn/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/)
 
 ## 有哪些选项可用于备份和恢复？
@@ -125,7 +125,7 @@ Azure 根据 VM 的大小和操作系统按小时价格进行计费。对于不�
 
 因计划内维护而重新启动时，你还可以使用 Azure 管理门户或 Azure PowerShell 查看重新启动日志。有关详细信息，请参阅[查看 VM 重新启动日志](https://azure.microsoft.com/blog/2015/04/01/viewing-vm-reboot-logs/)。
 
-若要提供冗余，请将两个或更多个采用类似配置的 VM 放到同一个可用性集中。这可以确保在计划内或计划外维护期间至少有一个 VM 可用。对于此配置，Azure 可以保证一定级别的 VM 可用性。有关详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-manage-availability)。
+若要提供冗余，请将两个或更多个采用类似配置的 VM 放到同一个可用性集中。这可以确保在计划内或计划外维护期间至少有一个 VM 可用。对于此配置，Azure 可以保证一定级别的 VM 可用性。有关详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability)。
 
 ## 其他资源
 

@@ -17,12 +17,12 @@
 # 创建 Linux 虚拟机
 
 > [AZURE.SELECTOR]
-- [Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
-- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
-- [Portal - Linux](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
-- [CLI](/documentation/articles/virtual-machines-linux-tutorial)
+- [Portal - Windows](/documentation/articles/virtual-machines-windows-classic-tutorial)
+- [PowerShell](/documentation/articles/virtual-machines-windows-classic-create-powershell)
+- [Portal - Linux](/documentation/articles/virtual-machines-linux-portal-create)
+- [CLI](/documentation/articles/virtual-machines-linux-quick-create-cli)
 
-通过命令行或门户创建运行 Linux 虚拟机 (VM) 是一项很简单的操作。本教程说明如何使用 Mac、Linux 和 Windows 的 Azure 命令行界面 (CLI) 来快速创建运行在 Azure 中的 Ubuntu Server VM，如何使用 **ssh** 连接到它，以及如何创建和装入新磁盘。本主题使用 Ubuntu Server VM，不过你也可以[将自己的映像作为模板](/documentation/articles/virtual-machines-linux-create-upload-vhd)来创建 Linux 虚拟机。
+通过命令行或门户创建运行 Linux 虚拟机 (VM) 是一项很简单的操作。本教程说明如何使用 Mac、Linux 和 Windows 的 Azure 命令行界面 (CLI) 来快速创建运行在 Azure 中的 Ubuntu Server VM，如何使用 **ssh** 连接到它，以及如何创建和装入新磁盘。本主题使用 Ubuntu Server VM，不过你也可以[将自己的映像作为模板](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd)来创建 Linux 虚拟机。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
@@ -106,7 +106,7 @@
 - oSVirtualHardDisk：指定 VM 的 OS VHD。
 
 	* mediaLink：指定创建 VHD 文件的位置。
-	* sourceImageName：指定用于创建虚拟机的映像的名称。可以通过 `azure vm image list` 获取映像名称。有关映像搜索的详细信息，请参阅[导航和选择 VM 映像](/documentation/articles/resource-groups-vm-searching)。
+	* sourceImageName：指定用于创建虚拟机的映像的名称。可以通过 `azure vm image list` 获取映像名称。有关映像搜索的详细信息，请参阅[导航和选择 VM 映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage)。
 
 - roleSize：指定虚拟机的大小。可以使用 `azure vm location list --json` 查看可用的“virtualMachinesRoleSizes”。
 
@@ -155,7 +155,7 @@
 
 对于 Linux 虚拟机，通常使用 ssh 进行连接。
 
-> [AZURE.NOTE] 本主题介绍如何使用用户名和密码连接到 VM；若要使用公钥和私钥对与 VM 通信，请参阅[如何在 Azure 上通过 Linux 使用 SSH](/documentation/articles/virtual-machines-linux-use-ssh-key)。
+> [AZURE.NOTE] 本主题介绍如何使用用户名和密码连接到 VM；若要使用公钥和私钥对与 VM 通信，请参阅[如何在 Azure 上通过 Linux 使用 SSH](/documentation/articles/virtual-machines-linux-ssh-from-linux)。
 
 如果你不熟悉如何使用 **ssh** 进行连接，请注意，该命令采用以下形式：`ssh <username>@<publicdnsaddress> -p <the ssh port>`。在本示例中，我们使用前一步的用户名和密码，并使用端口 22，该端口是默认的 **ssh** 端口。
 
@@ -296,7 +296,7 @@
 	bin   datadrive  etc   initrd.img  lib64       media  opt   root  sbin  sys  usr  vmlinuz
 	boot  dev        home  lib         lost+found  mnt    proc  run   srv   tmp  var
 
-> [AZURE.NOTE] 你还可以在连接到 Linux 虚拟机时，使用 SSH 密钥进行身份验证。有关详细信息，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-use-ssh-key)。
+> [AZURE.NOTE] 你还可以在连接到 Linux 虚拟机时，使用 SSH 密钥进行身份验证。有关详细信息，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-ssh-from-linux)。
 
 ## 后续步骤
 
@@ -304,12 +304,12 @@
 
 若要了解有关 Azure 上的 Linux 的详细信息，请参阅：
 
-- [Azure 上的 Linux 和开源计算](/documentation/articles/virtual-machines-linux-opensource)
+- [Azure 上的 Linux 和开源计算](/documentation/articles/virtual-machines-linux-opensource-links)
 
 - [如何使用 Azure 命令行界面](/documentation/articles/virtual-machines-command-line-tools)
 
-- [使用适用于 Linux 的 Azure CustomScript 扩展部署 LAMP 应用程序](/documentation/articles/virtual-machines-linux-script-lamp)
+- [使用适用于 Linux 的 Azure CustomScript 扩展部署 LAMP 应用程序](/documentation/articles/virtual-machines-linux-classic-lamp-script)
 
-- [Azure 上用于 Linux 的 Docker 虚拟机扩展](/documentation/articles/virtual-machines-docker-vm-extension)
+- [Azure 上用于 Linux 的 Docker 虚拟机扩展](/documentation/articles/virtual-machines-linux-dockerextension)
 
 <!---HONumber=Mooncake_0314_2016-->

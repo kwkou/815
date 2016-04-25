@@ -36,7 +36,7 @@
 
 [AZURE.INCLUDE [azure-storage-limits-vm-disks](../includes/azure-storage-limits-vm-disks.md)]
 
-有关其他详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
+有关其他详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)。
 
 ### 标准存储帐户
 

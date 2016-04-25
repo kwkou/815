@@ -22,12 +22,12 @@
 
 NAMD（用于纳米级分子动力学程序）是并行分子动力学软件包，设计用于包含数百万个原子的大型生物分子系统（如病毒、细胞结构和大蛋白）的高性能仿真。NAMD 扩展至数百个核心进行典型仿真，扩展至 500,000 个核心进行最大型仿真。
 
-Microsoft HPC Pack 可提供在 Azure 虚拟机群集上运行各种大型 HPC 和并行应用程序的功能，包括 MPI 应用程序。从 Microsoft HPC Pack 2012 R2 Update 2 开始，HPC Pack 还支持在 HPC Pack 群集中部署的 Linux 计算节点 VM 上运行 Linux HPC 应用程序。如需简介，请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)。
+Microsoft HPC Pack 可提供在 Azure 虚拟机群集上运行各种大型 HPC 和并行应用程序的功能，包括 MPI 应用程序。从 Microsoft HPC Pack 2012 R2 Update 2 开始，HPC Pack 还支持在 HPC Pack 群集中部署的 Linux 计算节点 VM 上运行 Linux HPC 应用程序。如需简介，请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster)。
 
 
 ## 先决条件
 
-* **具有 Linux 计算节点的 HPC Pack 群集** - 请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)，了解使用 Azure PowerShell 脚本和 Azure 应用商店中的 HPC Pack 映像，在 Azure 上部署 HPC Pack 群集与 Linux 计算节点的先决条件和步骤。
+* **具有 Linux 计算节点的 HPC Pack 群集** - 请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster)，了解使用 Azure PowerShell 脚本和 Azure 应用商店中的 HPC Pack 映像，在 Azure 上部署 HPC Pack 群集与 Linux 计算节点的先决条件和步骤。
 
     下面是一个示例 XML 配置文件，可以与脚本配合使用以部署基于 Azure 的 HPC Pack 群集，群集中包含一个 Windows Server 2012 R2 头节点和 4 个大型 (A3) CentOS 6.6 计算节点。请将订阅和服务名称替换为相应值。
 
@@ -123,7 +123,7 @@ Microsoft HPC Pack 可提供在 Azure 虚拟机群集上运行各种大型 HPC �
 
 ## 为 Linux 节点设置文件共享
 
-现在，在头节点上对一个文件夹设置标准 SMB 共享，然后在所有 Linux 节点上装载此共享文件夹，就可以支持 Linux 节点使用一个通用路径访问 NAMD 文件。请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)中的文件共享选项和步骤。（在本文中，我们建议在头节点上装载一个共享文件夹，因为 CentOS 6.6 Linux 节点目前不支持可提供类似功能的 Azure 文件服务。有关装载 Azure 文件共享的详细信息，请参阅[将连接保存到 Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)。）
+现在，在头节点上对一个文件夹设置标准 SMB 共享，然后在所有 Linux 节点上装载此共享文件夹，就可以支持 Linux 节点使用一个通用路径访问 NAMD 文件。请参阅 [Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster)中的文件共享选项和步骤。（在本文中，我们建议在头节点上装载一个共享文件夹，因为 CentOS 6.6 Linux 节点目前不支持可提供类似功能的 Azure 文件服务。有关装载 Azure 文件共享的详细信息，请参阅[将连接保存到 Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)。）
 
 1.	在头节点上创建一个文件夹，然后通过设置读/写权限与所有人共享。在本示例中，\\\CentOS66HN\\Namd 是文件夹的名称，其中 CentOS66HN 是头节点的主机名称。
 
@@ -396,12 +396,12 @@ Microsoft HPC Pack 可提供在 Azure 虚拟机群集上运行各种大型 HPC �
 
 
 <!--Image references-->
-[keygen]: ./media/virtual-machines-linux-cluster-hpcpack-namd/keygen.png
-[keys]: ./media/virtual-machines-linux-cluster-hpcpack-namd/keys.png
-[namd_job]: ./media/virtual-machines-linux-cluster-hpcpack-namd/namd_job.png
-[job_resources]: ./media/virtual-machines-linux-cluster-hpcpack-namd/job_resources.png
-[creds]: ./media/virtual-machines-linux-cluster-hpcpack-namd/creds.png
-[task_details]: ./media/virtual-machines-linux-cluster-hpcpack-namd/task_details.png
-[vmd_view]: ./media/virtual-machines-linux-cluster-hpcpack-namd/vmd_view.png
+[keygen]: ./media/virtual-machines-linux-classic-hpcpack-cluster-namd/keygen.png
+[keys]: ./media/virtual-machines-linux-classic-hpcpack-cluster-namd/keys.png
+[namd_job]: ./media/virtual-machines-linux-classic-hpcpack-cluster-namd/namd_job.png
+[job_resources]: ./media/virtual-machines-linux-classic-hpcpack-cluster-namd/job_resources.png
+[creds]: ./media/virtual-machines-linux-classic-hpcpack-cluster-namd/creds.png
+[task_details]: ./media/virtual-machines-linux-classic-hpcpack-cluster-namd/task_details.png
+[vmd_view]: ./media/virtual-machines-linux-classic-hpcpack-cluster-namd/vmd_view.png
 
 <!---HONumber=Mooncake_0118_2016-->

@@ -90,7 +90,7 @@ Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。虚拟机�
 
 - 在使用 SQL Server Enterprise Edition 时，虚拟机的最小建议大小是 **A3**。对于 Analysis Services 和 Reporting Services 的 SQL Server BI 部署，其建议虚拟机大小为 **A4**。
 
-	有关当前 VM 大小的信息，请参阅 [Azure 的虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
+	有关当前 VM 大小的信息，请参阅 [Azure 的虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)。
 
 - 磁盘管理的最佳做法是在 **C**: 和 **D**: 以外的驱动器上存储数据、日志和备份文件。例如，创建数据磁盘 **E**: 和 **F**:。
 
@@ -98,7 +98,7 @@ Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。虚拟机�
 	
 	- **D**: 驱动器是主要用于页面文件的临时驱动器。**D**: 驱动器不会持久保留且不保存在 blob 存储中。诸如更改虚拟机大小之类的管理任务会重置 **D**: 驱动器。建议**不**要将 **D**: 驱动器用于数据库文件（包括 tempdb）。
 
-	有关创建和附加磁盘的详细信息，请参阅[如何将数据磁盘附加到虚拟机](/documentation/articles/storage-windows-attach-disk)。
+	有关创建和附加磁盘的详细信息，请参阅[如何将数据磁盘附加到虚拟机](/documentation/articles/virtual-machines-windows-classic-attach-disk)。
 
 - 停止或卸载计划不使用的服务。例如，如果虚拟机仅用于 Reporting Services，停止或卸载 Analysis Services 和 SQL Server Integration Services。下图是默认情况下启动的服务的示例。
 
@@ -148,7 +148,7 @@ Analysis Services、Reporting Services、SQL Server 数据库引擎和数据源�
 
 SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式，但未配置报表服务器。本部分中的步骤配置 Reporting Services 报表服务器。有关配置 Reporting Services 本机模式的更多详细信息，请参阅[安装 Reporting Services 本机模式报表服务器 (SSRS)](https://msdn.microsoft.com/library/ms143711.aspx)。
 
->[AZURE.NOTE]有关使用 Windows PowerShell 脚本配置报表服务器的类似内容，请参阅[使用 PowerShell 创建运行本机模式报表服务器的 Azure VM](/documentation/articles/virtual-machines-sql-server-create-native-mode-report-server-powershell)。
+>[AZURE.NOTE]有关使用 Windows PowerShell 脚本配置报表服务器的类似内容，请参阅[使用 PowerShell 创建运行本机模式报表服务器的 Azure VM](/documentation/articles/virtual-machines-windows-classic-ps-sql-report)。
 
 ### 连接到虚拟机并启动 Reporting Services 配置管理器
 

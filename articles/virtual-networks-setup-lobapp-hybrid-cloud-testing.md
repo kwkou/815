@@ -189,9 +189,9 @@
 
 [设置用于测试的模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)
 
-[Azure 混合云测试环境](/documentation/articles/virtual-machines-hybrid-cloud-test-environments)
+[Azure 混合云测试环境](/documentation/articles/virtual-machines-windows-classic-hybrid-test-env)
 
-[Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
+[Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-linux-infrastructure-service-guidelines)
  
 
 <!---HONumber=76-->

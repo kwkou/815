@@ -56,7 +56,7 @@
 >[AZURE.NOTE] 当你创建经典 VM 时，由 Azure 创建的容器*云服务*具有虚拟 IP 地址 (VIP)。通过门户进行创建时，由门户配置默认 RDP 或 SSH *终结点*，让你可以通过云服务 VIP连接到 VM。可以保留此云服务 VIP，它能够有效地提供保留 IP 地址以便连接到 VM。你可以通过配置多个终结点打开其他端口。
 
 ### IaaS VM 和 PasS 角色实例
-你可以将公共 IP 地址直接分配给云服务内的 IaaS [VM](/documentation/articles/virtual-machines-about) 或 PaaS 角色实例。此类 IP 地址称为实例层级公共 IP 地址 ([ILPIP](/documentation/articles/virtual-networks-instance-level-public-ip))。此公共 IP 地址只能是动态的。
+你可以将公共 IP 地址直接分配给云服务内的 IaaS [VM](/documentation/articles/virtual-machines-linux-about) 或 PaaS 角色实例。此类 IP 地址称为实例层级公共 IP 地址 ([ILPIP](/documentation/articles/virtual-networks-instance-level-public-ip))。此公共 IP 地址只能是动态的。
 
 >[AZURE.NOTE] 它与云服务的 VIP（IaaS VM 或 PaaS 角色实例的容器）不同，因为云服务可包含多个 IaaS VM 或 PaaS 角色实例，通过同一云服务 VIP 公开。
 

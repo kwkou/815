@@ -19,7 +19,7 @@
 
 本文说明如何使用 [Microsoft HPC Pack](https://technet.microsoft.com/zh-cn/library/cc514029) 在 Azure 中设置一个 Windows RDMA 群集，以运行并行消息传递接口 (MPI) 应用程序。当你将基于 Windows Server 的实例设置为在 HPC Pack 群集中运行时，MPI 应用程序将通过 Azure 中基于远程直接内存访问 (RDMA) 技术的低延迟、高吞吐量网络高效地进行通信。
 
-如果你想要在访问 Azure RDMA 网络的 Linux VM 上运行 MPI 工作负荷，请参阅[设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-cluster-rdma)。
+如果你想要在访问 Azure RDMA 网络的 Linux VM 上运行 MPI 工作负荷，请参阅[设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-classic-rdma-cluster)。
 
 ## HPC Pack 群集部署选项
 Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时建议使用的工具。HPC Pack 提供了运行可访问 Azure 中 RDMA 网络的基于 Windows 的 MPI 应用程序的有效方法。HPC Pack 中包括适用于 Windows 消息传递接口的 Microsoft 实现 (MSMPI) 的运行时环境。
@@ -92,7 +92,7 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 
 ## 方案 2.在计算密集型 VM (IaaS) 中部署计算节点
 
-在此方案中，你可以将 HPC Pack 头节点和群集计算节点部署到 Azure 虚拟网络中已加入 Active Directory 域的 VM 中。HPC Pack 提供了许多 [Azure VM 中的部署选项](/documentation/articles/virtual-machines-hpcpack-cluster-options)，包括自动执行部署脚本和 Azure 快速入门模板。作为示例，以下注意事项和步骤将指导你使用 [HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)自动执行此过程中的大部分操作。
+在此方案中，你可以将 HPC Pack 头节点和群集计算节点部署到 Azure 虚拟网络中已加入 Active Directory 域的 VM 中。HPC Pack 提供了许多 [Azure VM 中的部署选项](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options)，包括自动执行部署脚本和 Azure 快速入门模板。作为示例，以下注意事项和步骤将指导你使用 [HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)自动执行此过程中的大部分操作。
 
 ![Azure VM 中的群集][iaas]
 
@@ -102,7 +102,7 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 
     从[ Microsoft 下载中心](https://www.microsoft.com/download/details.aspx?id=49922)下载 HPC Pack IaaS 部署脚本包。
 
-    若要准备客户端计算机、创建脚本配置文件和运行脚本，请参阅[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)。若要部署计算节点，请参阅本文中稍后介绍的其他注意事项。
+    若要准备客户端计算机、创建脚本配置文件和运行脚本，请参阅[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)。若要部署计算节点，请参阅本文中稍后介绍的其他注意事项。
 
 2. **使计算节点联机以运行作业**
 
@@ -110,7 +110,7 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 
 3. **向群集提交作业**
 
-    连接到头节点以提交作业，或将本地计算机设置为执行此操作。有关信息，请参阅[向 Azure 中的 HPC 群集提交作业](/documentation/articles/virtual-machines-hpcpack-cluster-submit-jobs)。
+    连接到头节点以提交作业，或将本地计算机设置为执行此操作。有关信息，请参阅[向 Azure 中的 HPC 群集提交作业](/documentation/articles/virtual-machines-windows-hpcpack-cluster-submit-jobs)。
 
 4. **使节点脱机并停止（释放）节点**
 
@@ -213,12 +213,12 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 
 ## 后续步骤
 
-* 如果你想要运行访问 Azure RDMA 网络的 Linux MPI 应用程序，请参阅[设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-cluster-rdma)。
+* 如果你想要运行访问 Azure RDMA 网络的 Linux MPI 应用程序，请参阅[设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-classic-rdma-cluster)。
 
 <!--Image references-->
-[burst]: ./media/virtual-machines-windows-hpcpack-cluster-rdma/burst.png
-[iaas]: ./media/virtual-machines-windows-hpcpack-cluster-rdma/iaas.png
-[pingpong1]: ./media/virtual-machines-windows-hpcpack-cluster-rdma/pingpong1.png
-[pingpong2]: ./media/virtual-machines-windows-hpcpack-cluster-rdma/pingpong2.png
+[burst]: ./media/virtual-machines-windows-classic-hpcpack-rdma-cluster/burst.png
+[iaas]: ./media/virtual-machines-windows-classic-hpcpack-rdma-cluster/iaas.png
+[pingpong1]: ./media/virtual-machines-windows-classic-hpcpack-rdma-cluster/pingpong1.png
+[pingpong2]: ./media/virtual-machines-windows-classic-hpcpack-rdma-cluster/pingpong2.png
 
 <!---HONumber=Mooncake_0321_2016-->

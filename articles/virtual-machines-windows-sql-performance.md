@@ -31,7 +31,7 @@
 
 |区域|优化|
 |---|---|
-|**VM 大小**|SQL Enterprise 版本为 [DS3](/documentation/articles/virtual-machines-size-specs#standard-tier-ds-series) 或更高。SQL 标准版和 Web 版本为 <br/><br/>[DS2](/documentation/articles/virtual-machines-size-specs#standard-tier-ds-series) 或更高。|
+|**VM 大小**|SQL Enterprise 版本为 [DS3](/documentation/articles/virtual-machines-windows-sizes#standard-tier-ds-series) 或更高。SQL 标准版和 Web 版本为 <br/><br/>[DS2](/documentation/articles/virtual-machines-windows-sizes#standard-tier-ds-series) 或更高。|
 |**存储**|使用[高级存储](/documentation/articles/storage-premium-storage)。<br/><br/>使[存储帐户](/documentation/articles/storage-create-storage-account)和 SQL Server VM 保存在同一个区域中。<br/><br/>禁用存储帐户上的 Azure [异地冗余存储](/documentation/articles/storage-redundancy)（异地复制）。|
 |**磁盘**|至少使用 2 个 [P30 磁盘](/documentation/articles/storage-premium-storage#scalability-and-performance-targets-when-using-premium-storage)（1 个用于日志文件；1 个用于数据文件和 TempDB）。<br/><br/>避免将操作系统磁盘或临时磁盘用于数据库存储或日志记录。<br/><br/>在托管数据文件和 TempDB 的磁盘上启用读缓存。<br/><br/>请勿在托管日志文件的磁盘上启用缓存。<br/><br/>条带化多个 Azure 数据磁盘以获得更高的 IO 吞吐量。<br/><br/>使用文档中记录的分配大小格式化。|
 |**I/O**|启用数据库页压缩。<br/><br/>为数据文件启用即时文件初始化。<br/><br/>限制或禁用数据库的自动增长。<br/><br/>禁用数据库的自动收缩。<br/><br/>将所有数据库都移到数据磁盘，包括系统数据库。<br/><br/>将 SQL Server 错误日志和跟踪文件目录移至数据磁盘。<br/><br/>设置默认的备份和数据库文件的位置。<br/><br/>启用锁定的页。<br/><br/>应用 SQL Server 性能修复程序。|
@@ -47,9 +47,9 @@
 
 - **SQL Server Standard 和 Web Edition**：DS2 或更高
 
-有关支持的虚拟机大小的最新信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
+有关支持的虚拟机大小的最新信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)。
 
-此外，我们建议你创建 Azure 存储帐户与 SQL Server 虚拟机在同一数据中心中，以减小传输延迟。创建存储帐户时应禁用异地复制，因为无法保证在多个磁盘上的写入顺序一致。相反，请考虑在两个 Azure 数据中心之间配置一个 SQL Server 灾难恢复技术。有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions)。
+此外，我们建议你创建 Azure 存储帐户与 SQL Server 虚拟机在同一数据中心中，以减小传输延迟。创建存储帐户时应禁用异地复制，因为无法保证在多个磁盘上的写入顺序一致。相反，请考虑在两个 Azure 数据中心之间配置一个 SQL Server 灾难恢复技术。有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr)。
 
 ## 磁盘和性能注意事项
 
@@ -71,7 +71,7 @@
 
 ### 数据磁盘
 
-- **用于数据和日志文件的数据磁盘数目**：至少使用 2 个 [P30 磁盘](/documentation/articles/storage-premium-storage#scalability-and-performance-targets-when-using-premium-storage)，其中一个磁盘包含日志文件，另一个包含数据文件和 TempDB。要实现更大的吞吐量，你可能需要更多数据磁盘。若要确定数据磁盘数，你需要分析可用于数据和日志磁盘的 IOPS 数。要获取该信息，请参阅以下文章中有关每个 [VM 大小](/documentation/articles/virtual-machines-size-specs)和磁盘大小的 IOPS 的表：[使用磁盘的高级存储](/documentation/articles/storage-premium-storage)。如果需要更多带宽，则可以使用磁盘条带化附加更多的磁盘。如果使用的不是高级存储，建议添加 [VM 大小](/documentation/articles/virtual-machines-size-specs)支持的最大数量的数据磁盘并使用磁盘条带化。有关磁盘条带化的详细信息，请参阅下面的相关部分。
+- **用于数据和日志文件的数据磁盘数目**：至少使用 2 个 [P30 磁盘](/documentation/articles/storage-premium-storage#scalability-and-performance-targets-when-using-premium-storage)，其中一个磁盘包含日志文件，另一个包含数据文件和 TempDB。要实现更大的吞吐量，你可能需要更多数据磁盘。若要确定数据磁盘数，你需要分析可用于数据和日志磁盘的 IOPS 数。要获取该信息，请参阅以下文章中有关每个 [VM 大小](/documentation/articles/virtual-machines-windows-sizes)和磁盘大小的 IOPS 的表：[使用磁盘的高级存储](/documentation/articles/storage-premium-storage)。如果需要更多带宽，则可以使用磁盘条带化附加更多的磁盘。如果使用的不是高级存储，建议添加 [VM 大小](/documentation/articles/virtual-machines-windows-sizes)支持的最大数量的数据磁盘并使用磁盘条带化。有关磁盘条带化的详细信息，请参阅下面的相关部分。
 
 - **缓存策略**：仅在托管你的数据文件和 TempDB 的数据磁盘上启用读缓存。如果使用的不是高级存储，不要在任何数据磁盘上启用任何缓存。有关配置磁盘缓存的说明，请参阅以下主题：[Set-AzureOSDisk](https://msdn.microsoft.com/zh-cn/library/azure/jj152847) 和 [Set-AzureDataDisk](https://msdn.microsoft.com/zh-cn/library/azure/jj152851.aspx)。
 
@@ -83,7 +83,7 @@
 	
 	- 对于 Windows 2008 R2 或更早版本，你可以使用动态磁盘（操作系统条带化卷），条带大小始终为 64 KB。请注意，从 Windows 8/Windows Server 2012 开始不推荐使用此选项。有关信息，请参阅[虚拟磁盘服务正在过渡到 Windows 存储管理 API](https://msdn.microsoft.com/zh-cn/library/windows/desktop/hh848071.aspx) 中的支持声明。
 	
-	- 如果你的工作负荷不是日志密集型的并且不需要专用的 IOPS，你可以只配置一个存储池。否则，请创建两个存储池，一个用于日志文件，另一个用于数据文件和 TempDB。根据负载预期确定与每个存储池相关联的磁盘数。请记住，不同的 VM 大小允许不同数量的附加数据磁盘。有关详细信息，请参阅[虚拟机的大小](/documentation/articles/virtual-machines-size-specs)。
+	- 如果你的工作负荷不是日志密集型的并且不需要专用的 IOPS，你可以只配置一个存储池。否则，请创建两个存储池，一个用于日志文件，另一个用于数据文件和 TempDB。根据负载预期确定与每个存储池相关联的磁盘数。请记住，不同的 VM 大小允许不同数量的附加数据磁盘。有关详细信息，请参阅[虚拟机的大小](/documentation/articles/virtual-machines-windows-sizes)。
 
 ## I/O 性能注意事项
 
@@ -107,7 +107,7 @@
 
 某些部署可以使用更高级的配置技术，获得更多的性能好处。下面的列表主要介绍可帮助你实现更佳性能的一些 SQL Server 功能：
 
-- **备份到 Azure 存储空间**：为在 Azure 虚拟机中运行的 SQL Server 执行备份时，可以使用 [SQL Server 备份到 URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx)。此功能是从 SQL Server 2012 SP1 CU2 开始提供的，在备份到附加数据磁盘时建议使用。当你备份至 Azure 存储空间或从中还原时，请按照 [SQL Server 备份到 URL 最佳实践和故障排除以及从 Azure 存储空间中存储的备份还原](https://msdn.microsoft.com/zh-cn/library/jj919149.aspx)中提供的建议操作。此外还可以使用 [Azure 虚拟机中 SQL Server 的自动备份](/documentation/articles/virtual-machines-sql-server-automated-backup)自动执行这些备份。
+- **备份到 Azure 存储空间**：为在 Azure 虚拟机中运行的 SQL Server 执行备份时，可以使用 [SQL Server 备份到 URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx)。此功能是从 SQL Server 2012 SP1 CU2 开始提供的，在备份到附加数据磁盘时建议使用。当你备份至 Azure 存储空间或从中还原时，请按照 [SQL Server 备份到 URL 最佳实践和故障排除以及从 Azure 存储空间中存储的备份还原](https://msdn.microsoft.com/zh-cn/library/jj919149.aspx)中提供的建议操作。此外还可以使用 [Azure 虚拟机中 SQL Server 的自动备份](/documentation/articles/virtual-machines-windows-classic-sql-automated-backup)自动执行这些备份。
 
 	对于 SQL Server 2012 以前版本，可以使用 [SQL Server 备份到 Azure 工具](https://www.microsoft.com/download/details.aspx?id=40740)。此工具可以通过使用多个备份条带目标帮助提高备份吞吐量。
 
@@ -115,10 +115,10 @@
 
 ## 后续步骤
 
-如果你有兴趣更深入地了解 SQL Server 和高级存储，请参阅文章[将 Azure 高级存储用于虚拟机上的 SQL Server](/documentation/articles/virtual-machines-sql-server-use-premium-storage)。
+如果你有兴趣更深入地了解 SQL Server 和高级存储，请参阅文章[将 Azure 高级存储用于虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-classic-sql-server-premium-storage)。
 
-有关安全最佳实践，请参阅 [Azure 虚拟机中 SQL Server 的安全注意事项](/documentation/articles/virtual-machines-sql-server-security-considerations)。
+有关安全最佳实践，请参阅 [Azure 虚拟机中 SQL Server 的安全注意事项](/documentation/articles/virtual-machines-windows-sql-security)。
 
-查看 [Azure 虚拟机上的 SQL Server 概述](/documentation/articles/virtual-machines-sql-server-infrastructure-services)中的其他 SQL Server 虚拟机主题。
+查看 [Azure 虚拟机上的 SQL Server 概述](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview)中的其他 SQL Server 虚拟机主题。
 
 <!---HONumber=Mooncake_0215_2016-->

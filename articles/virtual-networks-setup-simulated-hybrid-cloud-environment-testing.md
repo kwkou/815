@@ -47,7 +47,7 @@
 
 ## 阶段 1：配置 TestLab 虚拟网络
 
-按照[基本配置测试环境](/documentation/articles/virtual-machines-base-configuration-test-environment)中的说明，在名为 TestLab 的 Azure 虚拟网络中配置 DC1、APP1 和 CLIENT1 计算机。
+按照[基本配置测试环境](/documentation/articles/virtual-machines-windows-classic-test-config-env)中的说明，在名为 TestLab 的 Azure 虚拟网络中配置 DC1、APP1 和 CLIENT1 计算机。
 
 在本地计算机上的 Azure 管理门户中，使用 CORP\\User1 凭据连接到 DC1。若要配置 CORP 域，以便计算机和用户使用其本地域控制器进行身份验证，请从管理员级 Windows PowerShell 命令提示符运行这些命令。
 

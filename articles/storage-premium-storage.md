@@ -50,7 +50,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 ## DS 和 GS 系列 VM
 
-高级存储支持 DS 系列和 GS 系列 Azure 虚拟机 (VM)。DS 或 GS 系列的 VM 可同时使用标准和高级存储磁盘。非 DS 或非 GS 系列的 VM 无法使用高级存储磁盘。有关可用 Azure VM 类型和大小的详细信息，请参阅 [Sizes for Virtual Machines（虚拟机大小）](/documentation/articles/virtual-machines-size-specs)。以下是 DS 和 GS 系列 VM 的一些功能。
+高级存储支持 DS 系列和 GS 系列 Azure 虚拟机 (VM)。DS 或 GS 系列的 VM 可同时使用标准和高级存储磁盘。非 DS 或非 GS 系列的 VM 无法使用高级存储磁盘。有关可用 Azure VM 类型和大小的详细信息，请参阅 [Sizes for Virtual Machines（虚拟机大小）](/documentation/articles/virtual-machines-windows-sizes)。以下是 DS 和 GS 系列 VM 的一些功能。
 
 **云服务**：可以将 DS 系列 VM 添加到仅包含 DS 系列 VM 的云服务。请不要将 DS 系列虚拟机添加到包含非 DS 系列 VM 的现有云服务。你可以将现有 VHD 迁移到只运行 DS 系列 VM 的新云服务。如果想要保留托管 DS 系列 VM 的新云服务的相同虚拟 IP 地址 (VIP)，请使用[保留 IP 地址](/documentation/articles/virtual-networks-instance-level-public-ip)。GS 系列 VM 只能添加到运行 G 系列 VM 的现有云服务。
 
@@ -70,7 +70,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 目前，DS 系列上的最大 VM 是 STANDARD_DS14，它可以跨所有磁盘最高提供每秒 512 MB。GS 系列上的最大 VM 是 STANDARD_GS5，它可以跨所有磁盘最高提供每秒 2000 MB。
 请注意，这些限制只适用于磁盘流量，而不包括缓存命中和网络流量。VM 网络通信可以使用单独的带宽，这不同于高级存储磁盘的专用带宽。
 
-有关 DS 系列和 GS 系列 VM 的最大 IOPS 与吞吐量（带宽）的最新信息，请参阅 [Sizes for Virtual Machines（虚拟机的大小）](/documentation/articles/virtual-machines-size-specs)。若要了解高级存储磁盘及其 IOPs 和吞吐量限制，请参阅本文的[高级存储的可伸缩性和性能目标](#premium-storage-scalability-and-performance-targets)部分中的表格。
+有关 DS 系列和 GS 系列 VM 的最大 IOPS 与吞吐量（带宽）的最新信息，请参阅 [Sizes for Virtual Machines（虚拟机的大小）](/documentation/articles/virtual-machines-windows-sizes)。若要了解高级存储磁盘及其 IOPs 和吞吐量限制，请参阅本文的[高级存储的可伸缩性和性能目标](#premium-storage-scalability-and-performance-targets)部分中的表格。
 
 ## 高级存储的可伸缩性和性能目标
 
@@ -238,7 +238,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 	- 如果你使用的是 **XFS**，请使用装入选项“nobarrier”禁用屏障（要启用屏障，请使用“barrier”）
 
 - 对于缓存设置为“ReadWrite”的高级存储磁盘，应该启用屏障以实现写入持久性。
-- 若要在重新启动 VM 后保留卷标，你必须使用对磁盘的 UUID 引用来更新 /etc/fstab。另请参阅 [How to Attach a Data Disk to a Linux Virtual Machine（如何将数据磁盘附加到 Linux 虚拟机）](/documentation/articles/virtual-machines-linux-how-to-attach-disk)
+- 若要在重新启动 VM 后保留卷标，你必须使用对磁盘的 UUID 引用来更新 /etc/fstab。另请参阅 [How to Attach a Data Disk to a Linux Virtual Machine（如何将数据磁盘附加到 Linux 虚拟机）](/documentation/articles/virtual-machines-linux-classic-attach-disk)
 
 以下是我们使用高级存储验证过的 Linux 分发版。我们建议将 VM 升级到其中至少一个版本（或更新版本），以改进高级存储的性能和稳定性。此外，某些版本需要最新的 LIS（适用于 Azure 的 Linux Integration Services v4.0）。请使用下面提供的链接进行下载和安装。在我们完成其他验证后，将陆续在列表中添加更多映像。请注意，我们的验证表明，性能根据映像而有所不同，并且还取决于工作负荷特征和映像上的设置。不同的映像已针对不同种类的工作负荷进行优化。
 <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">

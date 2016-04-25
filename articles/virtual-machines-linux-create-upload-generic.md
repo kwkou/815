@@ -31,7 +31,7 @@
 - **[Debian Linux](/documentation/articles/virtual-machines-linux-debian-create-upload-vhd)**
 - **[Oracle Linux](/documentation/articles/virtual-machines-linux-oracle-create-upload-vhd)**
 - **[Red Hat Enterprise Linux](/documentation/articles/virtual-machines-linux-redhat-create-upload-vhd)**
-- **[SLES 和 openSUSE](/documentation/articles/virtual-machines-linux-create-upload-vhd-suse)**
+- **[SLES 和 openSUSE](/documentation/articles/virtual-machines-linux-suse-create-upload-vhd)**
 - **[Ubuntu](/documentation/articles/virtual-machines-linux-create-upload-ubuntu)**
 
 本文的其余部分将重点介绍有关在 Azure 上运行 Linux 分发的一般准则。

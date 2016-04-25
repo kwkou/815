@@ -88,15 +88,15 @@ VMAccess 扩展在虚拟机上运行这两个命令：
 
 有关详细信息，请参阅 [Azure IaaS (Windows) 诊断程序包](http://support.microsoft.com/kb/2976864)知识库文章。
 
-如果你无法运行 Azure IaaS (Windows) 诊断程序包或运行该程序包未解决你的问题，请参阅[对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)。
+如果你无法运行 Azure IaaS (Windows) 诊断程序包或运行该程序包未解决你的问题，请参阅[对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)。
 
 
 ## 其他资源
 
-[Azure VM 扩展和功能](/documentation/articles/virtual-machines-extensions-features)
+[Azure VM 扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features)
 
 [使用 RDP 或 SSH 连接到 Azure 虚拟机](http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx)
 
-[对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)
+[对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)
 
 <!---HONumber=Mooncake_1221_2015-->

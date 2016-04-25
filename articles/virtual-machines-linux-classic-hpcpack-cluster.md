@@ -27,7 +27,7 @@
 
 你将使用 Microsoft HPC Pack IaaS 部署脚本 (**New-HpcIaaSCluster.ps1**) 在 Azure 基础结构服务 (IaaS) 中自动执行群集部署。此 Azure PowerShell 脚本使用 Azure 应用商店中的 HPC Pack VM 映像进行快速部署，并提供一组全面的配置参数使部署轻松且灵活。脚本可部署 Azure 虚拟网络、存储帐户、云服务、域控制器、可选的单独 SQL Server 数据库服务器、群集头节点、计算节点、代理节点、Azure PaaS（“迸发”）节点和 Linux 计算节点（[HPC Pack 2012 R2 Update 2](https://technet.microsoft.com/library/mt269417.aspx) 中引入的 Linux 支持）。
 
-有关 HPC Pack 群集部署选项的概述，请参阅 [HPC Pack 2012 R2 和 HPC Pack 2012 入门指南](https://technet.microsoft.com/zh-cn/library/jj884144.aspx)和[使用 Microsoft HPC Pack 在 Azure 中创建和管理高性能计算 (HPC) 群集时可用的选项](/documentation/articles/virtual-machines-hpcpack-cluster-options)。
+有关 HPC Pack 群集部署选项的概述，请参阅 [HPC Pack 2012 R2 和 HPC Pack 2012 入门指南](https://technet.microsoft.com/zh-cn/library/jj884144.aspx)和[使用 Microsoft HPC Pack 在 Azure 中创建和管理高性能计算 (HPC) 群集时可用的选项](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options)。
 
 ### 先决条件
 
@@ -43,7 +43,7 @@
 
 ### 创建配置文件
 
-HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文件作为输入。若要部署由一个头节点和 2 个 Linux 计算节点组成的小群集，请将你环境的值代入下面的示例配置文件。有关配置文件的详细信息，请参阅脚本文件夹中的 Manual.rtf 文件和[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)。
+HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文件作为输入。若要部署由一个头节点和 2 个 Linux 计算节点组成的小群集，请将你环境的值代入下面的示例配置文件。有关配置文件的详细信息，请参阅脚本文件夹中的 Manual.rtf 文件和[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)。
 
 	
 	<?xml version="1.0" encoding="utf-8" ?>
@@ -121,7 +121,7 @@ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文�
 
 * 对 VM 支持 RDMA 连接的 Linux 映像可用。如果你指定的映像安装并启用了 Linux RDMA 驱动程序，则 HPC Pack IaaS 部署脚本将部署这些驱动程序。例如，为当前的 SUSE Linux Enterprise Server 12（已针对市场上的高性能计算映像进行优化）指定映像名称 `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708`。
 
-* 若要在从支持的映像创建的 Linux VM 上启用 Linux RDMA 以运行 MPI 作业，请在群集部署后根据应用程序需求在 Linux 节点上安装并配置特定的 MPI 库。如需示例，请参阅[在 Azure 中的 Linux RDMA 群集上运行 OpenFOAM 和 Microsoft HPC Pack](/documentation/articles/virtual-machines-linux-cluster-hpcpack-openfoam)。
+* 若要在从支持的映像创建的 Linux VM 上启用 Linux RDMA 以运行 MPI 作业，请在群集部署后根据应用程序需求在 Linux 节点上安装并配置特定的 MPI 库。如需示例，请参阅[在 Azure 中的 Linux RDMA 群集上运行 OpenFOAM 和 Microsoft HPC Pack](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-openfoam)。
 
 * 请确保在一个服务内部署所有 Linux RDMA 节点，以便节点之间的 RDMA 网络连接可以正常工作。
 
@@ -262,7 +262,7 @@ NFS 服务使用户能够在运行 Windows Server 2012 操作系统的计算机�
 
 * REST API
 
-通过 HPC Pack GUI 工具和 HPC Web 门户将作业提交到 Azure 中的群集的方法与 Windows 计算节点相同。请参阅 [HPC Pack 作业管理器](https://technet.microsoft.com/zh-cn/library/ff919691.aspx)和[如何从本地客户端提交作业](/documentation/articles/virtual-machines-hpcpack-cluster-submit-jobs)。
+通过 HPC Pack GUI 工具和 HPC Web 门户将作业提交到 Azure 中的群集的方法与 Windows 计算节点相同。请参阅 [HPC Pack 作业管理器](https://technet.microsoft.com/zh-cn/library/ff919691.aspx)和[如何从本地客户端提交作业](/documentation/articles/virtual-machines-windows-hpcpack-cluster-submit-jobs)。
 
 若要通过 REST API 提交作业，请参阅[在 Microsoft HPC Pack 中通过使用 REST API 创建和提交作业](http://social.technet.microsoft.com/wiki/contents/articles/7737.creating-and-submitting-jobs-by-using-the-rest-api-in-microsoft-hpc-pack-windows-hpc-server.aspx)。若要从 Linux 客户端提交作业，另请参阅 [HPC Pack SDK](https://www.microsoft.com/download/details.aspx?id=47756) 中的 Python 示例。
 
@@ -292,24 +292,24 @@ HPC Pack **clusrun** 工具可用于通过命令提示符或 HPC 群集管理器
 
 ## 后续步骤
 
-* 尝试扩展群集，使之拥有更多的节点，或者尝试在群集上运行 Linux 工作负荷。有关示例，请参阅[在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd)。
+* 尝试扩展群集，使之拥有更多的节点，或者尝试在群集上运行 Linux 工作负荷。有关示例，请参阅[在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-namd)。
 
-* 尝试计算节点群集，以便运行 MPI 工作负荷。如需示例，请参阅[在 Azure 中的 Linux RDMA 群集上运行 OpenFOAM 和 Microsoft HPC Pack](/documentation/articles/virtual-machines-linux-cluster-hpcpack-openfoam)。
+* 尝试计算节点群集，以便运行 MPI 工作负荷。如需示例，请参阅[在 Azure 中的 Linux RDMA 群集上运行 OpenFOAM 和 Microsoft HPC Pack](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-openfoam)。
 
 * 尝试 [Azure 快速入门模板](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/)，组合 Azure 资源管理器来加快部署 HPC Pack 与大量 Linux 计算节点。
 
 <!--Image references-->
-[scenario]: ./media/virtual-machines-linux-cluster-hpcpack/scenario.png
-[validate]: ./media/virtual-machines-linux-cluster-hpcpack/validate.png
-[resources]: ./media/virtual-machines-linux-cluster-hpcpack/resources.png
-[deploy]: ./media/virtual-machines-linux-cluster-hpcpack/deploy.png
-[management]: ./media/virtual-machines-linux-cluster-hpcpack/management.png
-[heatmap]: ./media/virtual-machines-linux-cluster-hpcpack/heatmap.png
-[fileshareperms]: ./media/virtual-machines-linux-cluster-hpcpack/fileshare1.png
-[filesharing]: ./media/virtual-machines-linux-cluster-hpcpack/fileshare2.png
-[nfsauth]: ./media/virtual-machines-linux-cluster-hpcpack/nfsauth.png
-[nfsshare]: ./media/virtual-machines-linux-cluster-hpcpack/nfsshare.png
-[nfsperm]: ./media/virtual-machines-linux-cluster-hpcpack/nfsperm.png
-[nfsmanage]: ./media/virtual-machines-linux-cluster-hpcpack/nfsmanage.png
+[scenario]: ./media/virtual-machines-linux-classic-hpcpack-cluster/scenario.png
+[validate]: ./media/virtual-machines-linux-classic-hpcpack-cluster/validate.png
+[resources]: ./media/virtual-machines-linux-classic-hpcpack-cluster/resources.png
+[deploy]: ./media/virtual-machines-linux-classic-hpcpack-cluster/deploy.png
+[management]: ./media/virtual-machines-linux-classic-hpcpack-cluster/management.png
+[heatmap]: ./media/virtual-machines-linux-classic-hpcpack-cluster/heatmap.png
+[fileshareperms]: ./media/virtual-machines-linux-classic-hpcpack-cluster/fileshare1.png
+[filesharing]: ./media/virtual-machines-linux-classic-hpcpack-cluster/fileshare2.png
+[nfsauth]: ./media/virtual-machines-linux-classic-hpcpack-cluster/nfsauth.png
+[nfsshare]: ./media/virtual-machines-linux-classic-hpcpack-cluster/nfsshare.png
+[nfsperm]: ./media/virtual-machines-linux-classic-hpcpack-cluster/nfsperm.png
+[nfsmanage]: ./media/virtual-machines-linux-classic-hpcpack-cluster/nfsmanage.png
 
 <!---HONumber=Mooncake_0118_2016-->

@@ -61,7 +61,7 @@ Azure 会提前发送电子邮件通信，提醒你即将执行计划内维护�
 <!--Anchors-->
 [image1]: ./media/virtual-machines-common-planned-maintenance/vmplanned1.png
 [image2]: ./media/virtual-machines-common-planned-maintenance/EventViewerPostReboot.png
-[image3]: ./media/virtual-machines-planned-maintenance/RegionPairs.PNG
+[image3]: ./media/virtual-machines-common-planned-maintenance/RegionPairs.PNG
 [image4]: ./media/virtual-machines-common-planned-maintenance/AvailabilitySetExample.png
 
 

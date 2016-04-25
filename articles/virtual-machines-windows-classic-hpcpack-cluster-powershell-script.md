@@ -257,7 +257,7 @@
 
 * 有关使用脚本创建群集和运行 HPC 工作负荷的教程，请参阅[开始使用 Azure 中的 HPC Pack 群集运行 Excel 和 SOA 工作负荷](/documentation/articles/virtual-machines-windows-excel-cluster-hpcpack)。
 
-* 尝试使用 HPC Pack 的工具来启动、停止、添加和删除所创建群集中的计算节点。请参阅[在 Azure 中管理 HPC Pack 群集的计算节点](/documentation/articles/virtual-machines-hpcpack-cluster-node-manage)。
+* 尝试使用 HPC Pack 的工具来启动、停止、添加和删除所创建群集中的计算节点。请参阅[在 Azure 中管理 HPC Pack 群集的计算节点](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-manage)。
 
 * 你也可以使用 Azure 资源管理器模板部署 HPC Pack 集群。
 

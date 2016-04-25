@@ -47,7 +47,7 @@
 		}
 	}
 
-关于如何使用这些映像，请参阅[在 Azure 中创建 SQL Server 虚拟机 (PowerShell)](/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell)
+关于如何使用这些映像，请参阅[在 Azure 中创建 SQL Server 虚拟机 (PowerShell)](/documentation/articles/virtual-machines-windows-classic-ps-sql-create)
 
 
 <!--Image references-->
