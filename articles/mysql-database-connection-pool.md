@@ -1,7 +1,7 @@
 <properties linkid="" urlDisplayName="" pageTitle="如何高效连接到MySQL Database on Azure- Azure 微软云" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，连接池，connection pool, Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="
 合理的利用连接池访问MySQL Database on Azure会优化性能。本文介绍如何使用连接池有效地访问MySQL Database on Azure，并给出以JAVA和PHP为例的示例代码供参考。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date="01/11/2015"/>
+<tags ms.service="mysql" ms.date="04/25/2016" wacn.date="04/25/2016"/>
 # 如何高效连接到MySQL Database on Azure<sup style="color: #a5ce00; font-weight: bold; text-transform: uppercase; font-family: '微软雅黑'; font-size: 20px;" class="wa-previewTag"></sup>
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/mysql-database-connection-pool)

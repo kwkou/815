@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="Understanding Service Layers and Versions – Azure Cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, performance, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS, ASDB benchmark" description="Explains service tiers and the performance of different versions, and provides you with a detailed reference for choosing MySQL Database on Azure. Based on the Azure SQL Database Benchmark, we have provided test data for different versions for your reference." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date="02/29/2016"/>
+<tags ms.service="mysql" ms.date="04/25/2016" wacn.date="04/25/2016"/>
 
 #Understanding Service Tiers and Versions
 > [AZURE.SELECTOR]

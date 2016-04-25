@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="Configure SQL Data Sync to replicate to MySQL Database on Azure – Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, service restrictions and limitations, data replication, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="This article helps you to understand how to use the SQL Data Sync function to replicate local MySQL instances to the cloud." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date="09/16/2015"/>
+<tags ms.service="mysql" ms.date="04/25/2016" wacn.date="04/25/2016"/>
 
 #Configure SQL Data Sync to replicate to MySQL Database on Azure
 > [AZURE.SELECTOR]

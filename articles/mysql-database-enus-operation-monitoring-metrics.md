@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="Monitoring MySQL Database on Azure databases – Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, monitoring, performance metrics, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL Database on Azure provides users with the ability to monitor key performance metrics, which you can check on the dashboard in the Azure management portal." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date="12/28/2015"/>
+<tags ms.service="mysql" ms.date="04/25/2016" wacn.date="04/25/2016"/>
 
 #Monitoring MySQL database on Azure Databases
 > [AZURE.SELECTOR]

@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL服务问题 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,常见问题,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS,FAQ" description="针对用户在使用MySQL 数据库 on Azure中遇到的一些常见技术问题,提供快速解答。如果您仍存有疑问,欢迎联系技术支持。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date="04/01/2016"/>
+<tags ms.service="mysql" ms.date="04/25/2016" wacn.date="04/25/2016"/>
 
 # MySQL 主从复制和只读实例
 MySQL Database on Azure支持用户用复制功能为MySQL实例创建从属实例。 所有在主实例上的改动都会复制到从属实例。 通过该功能，用户可以轻松实现弹性扩展，突破单个数据库实例的访问限制，从而降低运行负荷及增加高可用性。

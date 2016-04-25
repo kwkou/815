@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="Use MySQL Database on Azure to configure WordPress websites – Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, Wordpress, website configuration, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="WordPress is a very widely used CMS. This article explains how to use MySQL Database on Azure and Azure Web Apps to install and configure WordPress." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor=""/>
 
-<tags ms.service="mysql" ms.date="" wacn.date="12/28/2015"/>
+<tags ms.service="mysql" ms.date="04/25/2016" wacn.date="04/25/2016"/>
 
 # Use MySQL Database on Azure to configure WordPress websites
 > [AZURE.SELECTOR]
