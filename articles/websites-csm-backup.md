@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="11/18/2015"
+	ms.date="02/23/2016"
 	wacn.date="01/29/2016"/>
 
 # 使用 REST 来备份和还原 Azure 网站应用

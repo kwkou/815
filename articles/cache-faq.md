@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cache"
-	ms.date="01/21/2016"
+	ms.date="03/17/2016"
 	wacn.date="03/28/2016"/>
 
 # Azure Redis 缓存常见问题

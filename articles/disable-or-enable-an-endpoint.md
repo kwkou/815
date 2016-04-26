@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-   ms.date="12/02/2015"
+   ms.date="03/17/2016"
 	wacn.date="01/21/2016"/>
 
 # 禁用或启用流量管理器终结点

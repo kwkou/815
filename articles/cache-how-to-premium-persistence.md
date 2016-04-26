@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cache"
-	ms.date="12/03/2015"
+	ms.date="03/04/2016"
 	wacn.date="01/14/2016"/>
 
 # 如何为高级 Azure Redis 缓存配置数据暂留

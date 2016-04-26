@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="web-sites" 
-	ms.date="12/11/2015" 
+	ms.date="02/26/2016" 
 	wacn.date="03/24/2016"/>
 
 # 在 Azure 中使用 GIT 进行连续部署

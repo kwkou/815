@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="02/02/2016"
+	ms.date="03/17/2016"
 	wacn.date="03/28/2016"/>
 
 # Azure 流量管理器预览版对 Azure 资源管理器的支持

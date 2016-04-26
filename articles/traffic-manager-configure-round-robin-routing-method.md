@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-   ms.date="12/07/2015"
+   ms.date="03/17/2016"
 	wacn.date="03/28/2016"/>
 
 # 配置轮循机制路由方法
