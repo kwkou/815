@@ -9,7 +9,7 @@
 <tags
 	ms.service="cache"
    ms.date="03/04/2016"
-	wacn.date="01/04/2016"/>
+	wacn.date="04/26/2016"/>
 
 # Azure Redis 缓存的 ASP.NET 会话状态提供程序
 

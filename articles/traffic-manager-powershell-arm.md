@@ -9,7 +9,7 @@
 <tags
 	ms.service="traffic-manager"
 	ms.date="03/17/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="04/26/2016"/>
 
 # Azure 流量管理器预览版对 Azure 资源管理器的支持
 Azure 资源管理器 (ARM) 是针对 Azure 中的服务的新管理框架。现在，你可以使用基于 Azure 资源管理器的 API 和工具来管理 Azure 流量管理器配置文件。

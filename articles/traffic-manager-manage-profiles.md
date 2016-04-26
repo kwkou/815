@@ -9,7 +9,7 @@
 <tags
 	ms.service="traffic-manager"
    ms.date="03/17/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="04/26/2016"/>
 
 # 管理 Azure 流量管理器配置文件
 

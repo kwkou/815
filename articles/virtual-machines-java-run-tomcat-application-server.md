@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="03/04/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="04/26/2016"/>
 
 # 如何在使用经典部署模型创建的虚拟机上运行 Java 应用程序服务器
 

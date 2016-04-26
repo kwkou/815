@@ -9,7 +9,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="03/15/2016"
-	wacn.date="01/14/2016"/>
+	wacn.date="04/26/2016"/>
 
 # 如何从地缘组迁移到区域虚拟网络 (VNet)
 

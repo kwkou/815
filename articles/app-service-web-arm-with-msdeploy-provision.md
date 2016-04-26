@@ -9,7 +9,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="02/26/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="04/26/2016"/>
 
 # 使用 MSDeploy、自定义主机名和 SSL 证书部署 Web 应用
 
