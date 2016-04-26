@@ -10,8 +10,8 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/11/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="03/15/2016"
+	wacn.date="04/26/2016"/>
 
 #使用 Azure CLI 控制路由和使用虚拟设备（经典）
 

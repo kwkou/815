@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/11/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="03/15/2016"
+	wacn.date="04/26/2016"/>
 
 # 虚拟网络常见问题解答
 

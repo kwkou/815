@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/24/2015"
-	wacn.date="03/28/2016"/>
+	ms.date="02/26/2016"
+	wacn.date="04/26/2016"/>
 
 # 对 Web 应用有效使用 DevOps 环境
 

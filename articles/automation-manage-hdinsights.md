@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="HDInsight"
-	ms.date="10/20/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="02/16/2016"
+	wacn.date="04/26/2016"/>
 
 
 

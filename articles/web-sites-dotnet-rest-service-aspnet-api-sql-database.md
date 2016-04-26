@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/04/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/29/2016"
+	wacn.date="04/26/2016"/>
 
 # 在 Azure Web 应用中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务
 

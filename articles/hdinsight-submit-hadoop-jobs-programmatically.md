@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/04/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="03/09/2016"
+	wacn.date="04/26/2016"/>
 
 # 在 HDInsight 中提交 Hadoop 作业
 

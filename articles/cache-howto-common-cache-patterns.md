@@ -9,8 +9,8 @@
 
 <tags
    ms.service="cache"
-   ms.date="11/24/2015"
-   wacn.date="01/21/2016"/>
+   ms.date="02/23/2016"
+   wacn.date="04/26/2016"/>
 
 # Azure Redis 缓存的常见缓存模式
 

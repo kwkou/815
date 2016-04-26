@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/17/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/26/2016"
+	wacn.date="04/26/2016"/>
 
 # 在 Visual Studio Code 中创建 ASP.NET 5 Web 应用
 

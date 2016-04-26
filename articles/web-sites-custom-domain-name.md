@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="web-sites"
-	ms.date="10/23/2015"
-	wacn.date="02/17/2016"/>
+	ms.date="02/16/2016"
+	wacn.date="04/26/2016"/>
 
 # 在 Azure 中配置自定义域名
 

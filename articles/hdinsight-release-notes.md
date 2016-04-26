@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/27/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="03/10/2016"
+	wacn.date="04/26/2016"/>
 
 
 # Azure HDInsight 上的 Hadoop 组件发行说明

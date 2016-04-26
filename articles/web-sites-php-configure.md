@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/16/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/26/2016"
+	wacn.date="04/26/2016"/>
 
 #在 Azure Web 应用中配置 PHP
 

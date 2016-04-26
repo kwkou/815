@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="web-sites" 
-	ms.date="12/10/2015" 
-	wacn.date="02/17/2016"/>
+	ms.date="02/29/2016" 
+	wacn.date="04/26/2016"/>
 
 
 # 创建包含成员资格、OAuth 和 SQL 数据库的安全 ASP.NET Web 窗体应用并部署到 Azure Web 应用

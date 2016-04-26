@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="hdinsight" 
-	ms.date="12/02/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="03/04/2016"
+	wacn.date="04/26/2016"/>
 
 
 # 将基于时间的 Oozie 协调器与 HDInsight 中的 Hadoop 配合使用以定义工作流和协调作业

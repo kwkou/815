@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/07/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/24/2016"
+	wacn.date="04/26/2016"/>
 
 # 在服务配置文件中指定 DNS 设置
 

@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="web-sites"
-	ms.date="12/10/2015" 
-	wacn.date="01/21/2016"/>
+	ms.date="02/25/2016" 
+	wacn.date="04/26/2016"/>
 
 # 使用 Azure 流量管理器控制 Azure Web 应用流量
 

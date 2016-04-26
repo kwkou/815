@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/29/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="02/25/2016"
+	wacn.date="04/26/2016"/>
 
 
 # 用于执行 Hadoop 常见任务的 Azure HDInsight PowerShell cmdlet 备忘单

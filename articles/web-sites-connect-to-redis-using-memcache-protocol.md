@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/24/2015"
-	wacn.date="02/26/2016"/>
+	ms.date="02/29/2016"
+	wacn.date="04/26/2016"/>
 
 # 通过 Memcache 协议将 Azure 中的 Web 应用连接到 Redis 缓存
 

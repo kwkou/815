@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/11/2015"
-	wacn.date="03/28/2016"/>
+	ms.date="03/15/2016"
+	wacn.date="04/26/2016"/>
 
 # 什么是终结点访问控制列表 (ACL)？
 
