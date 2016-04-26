@@ -15,7 +15,7 @@ editor="" />
 
 ##快速链接
 
-开始使用 Azure IoT 中心，了解将 IoT 设备连接到 Microsoft 云是何等简单。无论你是初次接触物联网，还是经验丰富的专业用户，我们都提供了帮助你继续动作的工具和技术。 
+开始使用 Azure IoT 中心，了解将 IoT 设备连接到云是何等简单。无论你是初次接触物联网，还是经验丰富的专业用户，我们都提供了帮助你继续动作的工具和技术。 
 
 - [配置你的 IoT 中心](/develop/iot-starter-kits/)
 - [连接你的设备](https://azure.microsoft.com/zh-cn/develop/iot/get-started/)
@@ -25,9 +25,5 @@ editor="" />
 ## Azure IoT 教程和文档
 
 
-- [物联网](/zh-cn/services/iot-hub/)</br>
-了解我们的全新 IoT 服务 Azure IoT 中心，连接物联网。
-- [Azure Certified for IoT 计划](https://azure.microsoft.com/zh-cn/marketplace/certified-iot-program/)</br>
-发现使用 IoT 套件和 IoT 中心的设备和平台。
-- [示例库](https://azure.microsoft.com/zh-cn/documentation/samples/?service=iot-hub)</br>
-发现将设备、传感器和云服务结合在一起的端到端示例。
+- [物联网](/zh-cn/services/iot-hub/)    了解我们的全新 IoT 服务 Azure IoT 中心，连接物联网。
+- [示例库](https://azure.microsoft.com/zh-cn/documentation/samples/?service=iot-hub)    发现将设备、传感器和云服务结合在一起的端到端示例。

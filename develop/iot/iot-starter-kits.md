@@ -21,7 +21,7 @@ editor="" />
 
 由 Windows 10 提供支持，这台信用卡大小的计算机能够执行许多台式电脑能执行的操作，如电子表格、文字处理甚至是玩视频游戏。本套件为开始使用 Raspberry Pi 和 Azure IoT 提供了所有必需的传感器和组件。
 
-[Buy](https://www.adafruit.com/azure)  |   [Get Started](https://azure.microsoft.com/zh-cn/documentation/samples/iot-hub-c-raspberrypi-getstartedkit/)
+[购买](https://www.adafruit.com/azure)  |   [入门](https://azure.microsoft.com/zh-cn/documentation/samples/iot-hub-c-raspberrypi-getstartedkit/)
 
 ##Adafruit Feather M0 套件
 
@@ -29,7 +29,7 @@ editor="" />
 
 Feather 是 Adafruit 新的开发板，它就如其名称一样，非常轻薄。Adafruit 将 Feather 设计为便携式微控制器内核的一个新标准。这就是 Adafruit Feather M0 WiFi w/ATWINC1500 - 我们称之为“一体化”，可与 Arduino 兼容，具有高速、可靠的 WiFi，并且配置了内置 USB 和电池充电。
 
-[Buy](https://www.adafruit.com/azure)  |   [Get Started](https://azure.microsoft.com/zh-cn/documentation/samples/iot-hub-c-m0wifi-getstartedkit/)
+[购买](https://www.adafruit.com/azure)  |   [入门](https://azure.microsoft.com/zh-cn/documentation/samples/iot-hub-c-m0wifi-getstartedkit/)
 
 
 ##Adafruit Huzzah Feather ESP8266 套件
@@ -38,7 +38,7 @@ Feather 是 Adafruit 新的开发板，它就如其名称一样，非常轻薄�
 
 针对那些希望使用价格便宜、带有 ESP8266 WiFi 微控制器的新 Adafruit Feather HUZZAH 并且习惯使用该平台探索 Azure IoT 的人群而设计。不需要 Arduino 或其他微控制器。
 
-[Buy](https://www.adafruit.com/azure)  |   [Get Started](https://azure.microsoft.com/zh-cn/documentation/samples/iot-hub-c-huzzah-getstartedkit/)
+[购买](https://www.adafruit.com/azure)  |   [入门](https://azure.microsoft.com/zh-cn/documentation/samples/iot-hub-c-huzzah-getstartedkit/)
 
 
 ##Seeed - Intel Edison 套件
@@ -56,14 +56,10 @@ Feather 是 Adafruit 新的开发板，它就如其名称一样，非常轻薄�
 
 围绕 ESP8266 SOC 设计的 Thing Dev 开发板是一款经济高效并且能够支持 WiFi 的微控制器。本套件为开始使用 ThingDev 微控制器 和 Azure IoT 提供了所有必需的传感器和组件。
 
-[Buy](https://www.sparkfun.com/products/13799)  |   [Get Started](https://azure.microsoft.com/zh-cn/documentation/samples/iot-hub-c-thingdev-getstartedkit/)
+[购买](https://www.sparkfun.com/products/13799)  |   [入门](https://azure.microsoft.com/zh-cn/documentation/samples/iot-hub-c-thingdev-getstartedkit/)
 
 
 ##了解更多
 
-- [物联网](/zh-cn/services/iot-hub/)</br>
-了解我们的全新 IoT 服务 Azure IoT 中心，连接物联网。
-- [Azure Certified for IoT 计划](https://azure.microsoft.com/zh-cn/marketplace/certified-iot-program/)</br>
-发现使用 IoT 套件和 IoT 中心的设备和平台。
-- [示例库](https://azure.microsoft.com/zh-cn/documentation/samples/?service=iot-hub)</br>
-发现将设备、传感器和云服务结合在一起的端到端示例。
+- [物联网](/zh-cn/services/iot-hub/)    了解我们的全新 IoT 服务 Azure IoT 中心，连接物联网。
+- [示例库](https://azure.microsoft.com/zh-cn/documentation/samples/?service=iot-hub)    发现将设备、传感器和云服务结合在一起的端到端示例。
