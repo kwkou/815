@@ -47,7 +47,7 @@ Feather 是 Adafruit 新的开发板，它就如其名称一样，非常轻薄�
 
 针对专家决策者、企业家和一些工业的 IoT 应用程序而设计，Intel® Edison 计算模块在注重性能时对一系列的原型制作项目或商务投资提供简易的开发。
 
-[Buy](http://www.seeedstudio.com/depot/Grove-IoT-Developer-Kit-Microsoft-Azure-Edition-p-2631.html?ref=newInBazaar)  |   [Get Started](https://azure.microsoft.com/zh-cn/documentation/samples/iot-hub-node-intel-edison-getstartedkit/)
+[购买](http://www.seeedstudio.com/depot/Grove-IoT-Developer-Kit-Microsoft-Azure-Edition-p-2631.html?ref=newInBazaar)  |   [入门](https://azure.microsoft.com/zh-cn/documentation/samples/iot-hub-node-intel-edison-getstartedkit/)
 
 
 ##SparkFun Thing Dev 套件
