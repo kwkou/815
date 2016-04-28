@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="02/04/2016" 
-	wacn.date="03/18/2016"/>
+	ms.date="04/08/2016" 
+	wacn.date="04/28/2016"/>
 
 # 在 Azure 中启用远程桌面
 
@@ -53,9 +53,9 @@
 
 发布更新服务定义后，可以连接到角色实例。
 
-1.  在 [Azure 经典门户]中选择“云服务”，然后选择你的服务。
+1.  在 [Azure 管理门户]中选择“云服务”，然后选择你的服务。
 
-	![Azure 经典门户][cloud-services]
+	![Azure 管理门户][cloud-services]
 
 2.  单击“实例”，然后单击“生产”或“过渡”查看你的服务实例。选择一个实例，然后单击页面底部的“连接”。
 
@@ -97,7 +97,7 @@
 
   [Azure PowerShell]: http://go.microsoft.com/?linkid=9790229&clcid=0x409
 
-[Azure 经典门户]: http://manage.windowsazure.cn
+[Azure 管理门户]: http://manage.windowsazure.cn
 [publish-project]: ./media/cloud-services-nodejs-enable-remote-desktop/publish-rdp.png
 [enable-rdp]: ./media/cloud-services-nodejs-enable-remote-desktop/enable-rdp.png
 [cloud-services]: ./media/cloud-services-nodejs-enable-remote-desktop/cloud-services-remote.png
