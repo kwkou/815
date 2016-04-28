@@ -10,8 +10,8 @@
 />
 <tags  
    ms.service="application-gateway"
-   ms.date="12/17/2015"
-   wacn.date="02/26/2016" />
+   ms.date="03/22/2016"
+   wacn.date="04/28/2016" />
 
 # 使用 PowerShell 创建 Azure 应用程序网关（经典）的自定义探测
 
