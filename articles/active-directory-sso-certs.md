@@ -78,4 +78,4 @@
 - [Azure Active Directory 的应用程序访问与单一登录](/documentation/articles/active-directory-appssoaccess-whatis)
 - [排查基于 SAML 的单一登录问题](/documentation/articles/active-directory-saml-debugging)
 -->
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0418_2016-->

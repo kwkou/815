@@ -3,22 +3,27 @@
 	description="在 Azure AD Connect Sync 中引用声明性设置表达式。"
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
-	manager="swadhwa"
+	authors="andkjell"
+	manager="StevenPo"
 	editor=""/>
 
 <tags 
 	ms.service="active-directory"
-	ms.date="07/27/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="03/07/2016"
+	wacn.date="04/28/2016"/>
 
 
-# Azure AD Connect Sync：函数引用
+# Azure AD Connect 同步：函数参考
 
 
-在 Azure Active Directory Sync 中，函数用于在同步期间操作属性值。<br> 函数的语法使用以下格式表示： <br> `<output type> FunctionName(<input type> <position name>, ..)`
+在 Azure Active Directory Sync 中，函数用于在同步期间操作属性值。  
 
-如果函数被重载并接受多个语法，则会列出所有的有效语法。<br> 该函数为强类型函数，并会验证传递的类型是否匹配记录的类型。<br> 如果类型不匹配，则会引发错误。
+函数的语法使用以下格式表示：  
+`<output type> FunctionName(<input type> <position name>, ..)`
+
+如果函数被重载并接受多个语法，则会列出所有的有效语法。  
+该函数为强类型函数，并会验证传递的类型是否匹配记录的类型。  
+如果类型不匹配，则会引发错误。
 
 类型使用以下语法表示：
 
@@ -52,9 +57,10 @@
 
 [DNComponent](#dncomponent) &nbsp;&nbsp;&nbsp;&nbsp; [DNComponentRev](#dncomponentrev) &nbsp;&nbsp;&nbsp;&nbsp; [EscapeDNComponent](#escapedncomponent)
 
-**Insprection：**
+**计算：**
 
-[IsBitSet](#isbitset) &nbsp;&nbsp;&nbsp;&nbsp; [IsDate](#isdate) &nbsp;&nbsp;&nbsp;&nbsp; [IsEmpty](#isempty) &nbsp;&nbsp;&nbsp;&nbsp; [IsGuid](#isguid) &nbsp;&nbsp;&nbsp;&nbsp; [IsNull](#isnull) &nbsp;&nbsp;&nbsp;&nbsp; [IsNullOrEmpty](#isnullorempty) &nbsp;&nbsp;&nbsp;&nbsp; [IsNumeric](#isnumeric) &nbsp;&nbsp;&nbsp;&nbsp; [IsPresent](#ispresent) &nbsp;&nbsp;&nbsp;&nbsp; [IsString](#isstring)
+[IsBitSet](#isbitset) &nbsp;&nbsp;&nbsp;&nbsp; [IsDate](#isdate) &nbsp;&nbsp;&nbsp;&nbsp; [IsEmpty](#isempty)
+&nbsp;&nbsp;&nbsp;&nbsp; [IsGuid](#isguid) &nbsp;&nbsp;&nbsp;&nbsp; [IsNull](#isnull) &nbsp;&nbsp;&nbsp;&nbsp; [IsNullOrEmpty](#isnullorempty) &nbsp;&nbsp;&nbsp;&nbsp; [IsNumeric](#isnumeric) &nbsp;&nbsp;&nbsp;&nbsp; [IsPresent](#ispresent) &nbsp;&nbsp;&nbsp;&nbsp; [IsString](#isstring)
 
 **数学：**
 
@@ -1050,8 +1056,5 @@ Switch 会对所有表达式计算结果，即使它只返回其中一个结果�
 * [了解声明性设置表达式](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions)
 * [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis)
 * [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)
- 
- 
-<!--Image references-->
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0411_2016-->

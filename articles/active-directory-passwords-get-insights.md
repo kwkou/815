@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="深入分析：Azure AD 密码管理报告 | Azure" 
+	pageTitle="深入分析：Azure AD 密码管理报告 | Microsoft Azure" 
 	description="本文介绍如何使用报告来深入分析组织中的密码管理操作。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="11/16/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/16/2016" 
+	wacn.date="04/28/2016"/>
 
 # 如何使用密码管理报告获取 Operational Insights
 本部分介绍如何使用 Azure Active Directory 的密码管理报告来查看组织中用户对密码重置和更改的使用情况。
@@ -23,13 +23,13 @@
 ## <a name="overview-of-password-management-reports"></a>密码管理报告概述
 一旦部署密码重置，最常见的后续步骤之一是查看其在组织中的使用情况。例如，你可能希望了解用户对密码重置的注册情况，或者在过去几天内进行了多少个密码重置。下面是一些常见问题，你将能够使用当今 [Azure 管理门户](https://manage.windowsazure.cn)中的密码管理报告来回答这些问题：
 
-- 有多少人注册了密码重置？
-- 谁注册了密码重置？
+- 有多少人已注册了密码重置？
+- 谁已经注册了密码重置？
 - 人们都注册哪些数据？
 - 有多少人在过去 7 天内重置了他们的密码？
 - 用户或管理员用于重置其密码的最常见方法是什么？
 - 用户或管理员尝试使用密码重置时面临的常见问题是什么？
-- 哪些管理员经常重置自己的密码？
+- 哪些管理员经常重置其自己的密码？
 - 密码重置时是否有任何可疑的活动？
 
 
@@ -38,9 +38,9 @@
 
 1.	在 [Azure 管理门户](https://manage.windowsazure.cn)中单击 **Active Directory** 扩展。
 2.	从门户显示的列表中选择你的目录。
-3.	单击“报表”选项卡。
+3.	单击“报告”选项卡。
 4.	查看“活动日志”部分的下方。
-5.	选择**密码重置活动**报告或**密码重置注册活动**报告。
+5.	选择“密码重置活动报告”或“密码重置注册活动”报告。
 
     ![][001]
 
@@ -168,4 +168,4 @@
 [003]: ./media/active-directory-passwords-get-insights/003.jpg "Image_003.jpg"
  
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0418_2016-->

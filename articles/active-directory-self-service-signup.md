@@ -1,16 +1,16 @@
 <properties 
-	pageTitle="什么是 Azure 的自助服务注册？" 
+	pageTitle="什么是 Azure 的自助注册？| Microsoft Azure" 
 	description="概述 Azure 的自助服务注册以及如何管理注册过程。" 
 	services="active-directory" 
 	documentationCenter="" 
-	authors="Justinha" 
-	manager="TerryLan" 
-	editor="LisaToft"/>
+	authors="curtand"
+	manager="stevenpo"
+	editor=""/>
 
 <tags 
-	ms.service="active-directory"  
-	ms.date="05/13/2015" 
-	wacn.date="06/16/2015"/>
+	ms.service="active-directory" 
+	ms.date="01/05/2016"
+	wacn.date="04/28/2016"/>
 
 
 # 什么是 Azure 的自助服务注册？
@@ -45,24 +45,24 @@
 - 在接管某个非托管 Azure 租户时，你只会成为该非托管租户的全局管理员。这有时称为内部接管。 
 - 在合并非托管 Azure 租户时，会将非托管租户的 DNS 域名添加到托管 Azure 租户，并创建用户到资源的映射，以便用户可以继续访问服务而不会遇到中断。这有时称为外部接管。 
 
-### 将在 Azure 目录中创建哪些项目？
+## 将在 Azure Active Directory 中创建哪些项目？
 
 #### 租户
 
-- 将为每个域创建一个 Azure 租户。
-- Azure 租户目录没有全局管理员。
+- 将为每个域创建一个 Azure Active Directory 租户。
+- Azure AD 租户目录没有全局管理员。
 
 #### 用户
 
-- 对于注册的每个用户，将在 Azure 租户中创建一个用户对象。
+- 对于注册的每个用户，将在 Azure AD 租户中创建一个用户对象。
 - 每个用户对象标记为 viral。
 - 每个用户被授予访问其所注册的服务的权限。
 
-### 如何对我拥有的域声明自助服务 Azure 租户？
+### 如何对我拥有的域声明自助服务 Azure AD 租户？
 
-可以通过执行域验证来声明自助服务 Azure 租户。域验证会通过创建 DNS 记录证明你拥有该域。
+可以通过执行域验证来声明自助服务 Azure AD 租户。域验证会通过创建 DNS 记录证明你拥有该域。
 
-有两种方法可实现 Azure 租户的 DNS 接管：
+有两种方法可实现 Azure AD 租户的 DNS 接管：
 
 - 内部接管（管理员发现非托管 Azure 租户，并想要将转变为托管租户）
 - 外部接管（管理员尝试将新域添加到其托管 Azure 租户）
@@ -155,8 +155,11 @@
 
 例如：
 
-1. 使用用于响应自助服务产品的凭据连接到 Azure AD：import-module MSOnline $msolcred = get-credential connect-msolservice -credential $msolcred
-		
+1. 使用用于响应自助服务产品的凭据连接到 Azure AD：
+		import-module MSOnline
+		$msolcred = get-credential
+		connect-msolservice -credential $msolcred
+			
 2. 获取域的列表：
 
 	Get-MsolDomain
@@ -228,8 +231,7 @@
 -  [Set-MsolCompanySettings](https://msdn.microsoft.com/zh-cn/library/azure/dn194127.aspx)
 
 <!--Image references-->
-
-
 [1]: ./media/active-directory-self-service-signup/SelfServiceSignUpControls.png
 
-<!---HONumber=60-->
+
+<!---HONumber=Mooncake_0418_2016-->

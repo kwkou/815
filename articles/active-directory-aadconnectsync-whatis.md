@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="active-directory"
-	ms.date="01/22/2016"
+	ms.date="03/04/2016"
 	wacn.date="01/29/2016"/>
 
 
@@ -46,4 +46,4 @@ Azure Active Directory Connect 同步服务（Azure AD Connect 同步）是 Azur
 
 * [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0411_2016-->

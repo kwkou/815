@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Azure Active Directory 组管理对资源的访问 | Azure" 
+	pageTitle="使用 Azure Active Directory 组管理对资源的访问 | Microsoft Azure" 
 	description="如何在 Azure Active Directory 中使用组来管理对本地和云应用程序与资源的访问。"
 	services="active-directory" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="08/14/2015" 
-	wacn.date="03/30/2016" />
+	ms.date="02/09/2016"
+	wacn.date="04/28/2016" />
 
 
 # 使用 Azure Active Directory 组管理对资源的访问
@@ -18,7 +18,7 @@
 Azure Active Directory (Azure AD) 是综合性的标识和访问管理解决方案，它提供一套稳健的功能来管理对本地和云应用程序及资源（包括诸如 Office 365 的 Microsoft 联机服务和众多非 Microsoft SaaS 应用程序）的安全访问。
 
 
-> [AZURE.NOTE]若要使用 Azure Active Directory，你需要一个 Azure 帐户。如果你没有帐户，可以[注册免费的 Azure 帐户](http://azure.microsoft.com/pricing/free-trial/)。
+> [AZURE.NOTE] 若要使用 Azure Active Directory，你需要一个 Azure 帐户。如果你没有帐户，可以[注册免费的 Azure 帐户](http://azure.microsoft.com/pricing/free-trial/)。
 
 
 Azure Active Directory 的主要功能之一是管理对资源的访问。这些资源可以是目录的一部分（例如，用于通过目录中的角色管理对象的权限）、目录外部的资源（例如 SaaS 应用程序、Azure 服务以及 SharePoint 站点）或者本地资源。可通过 4 种方式向用户分配资源访问权限：
@@ -59,6 +59,30 @@ Azure Active Directory 访问管理解决方案的核心是安全组。使用安
 ## 访问管理入门
 已准备就绪？ 你可以尝试一些可以使用 Azure AD 组完成的基本任务。使用这些功能可向不同的人员组提供对组织中不同资源的特定访问权限。下面是基本的首要步骤列表。
 
+
+* [创建简单规则以配置组的动态成员身份](active-directory-accessmanagement-simplerulegroup.md)
+
+* [使用组来管理对 SaaS 应用程序的访问](active-directory-accessmanagement-group-saasapps.md)
+
+* [为最终用户启用自助组管理功能](active-directory-accessmanagement-self-service-group-management.md)
+
+* [使用 Azure AD Connect 将本地组同步到 Azure](active-directory-aadconnect.md)
+
+* [管理组的所有者](active-directory-accessmanagement-managing-group-owners.md)
+
+
+## 访问管理的后续步骤
+了解访问管理的基本概念后，请继续学习 Azure Active Directory 中用于管理应用程序和资源访问权限的其他高级功能。
+
+* [使用简单规则创建组](active-directory-accessmanagement-simplerulegroup.md)
+
+* [使用属性创建高级规则](active-directory-accessmanagement-groups-with-advanced-rules.md)
+
+* [在 Azure Active Directory 中管理安全组](active-directory-accessmanagement-manage-groups.md)
+
+* [在 Azure Active Directory 中设置专用组](active-directory-accessmanagement-dedicated-groups.md)
+
+
 ## 了解详细信息
 这些文章提供了有关 Azure Active Directory 的更多信息。
 
@@ -68,4 +92,4 @@ Azure Active Directory 访问管理解决方案的核心是安全组。使用安
 
 * [适用于组的图形 API 参考](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/groups-operations#GroupFunctions)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0418_2016-->

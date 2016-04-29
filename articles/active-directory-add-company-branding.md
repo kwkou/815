@@ -1,15 +1,15 @@
 <properties
-	pageTitle="向'登录'和'访问面板'页添加公司品牌"
-	description="本主题介绍组织如何在它们管理的所有网站和服务上应用一致的外观，使得最终用户在使用这些站点时，不会感到困惑。" 
-	services="active-directory" 
-	documentationCenter="" 
+	pageTitle="向“登录”和“访问面板”页添加公司品牌"
+	description="本主题介绍组织如何在它们管理的所有网站和服务上应用一致的外观，使得最终用户在使用这些站点时，不会感到困惑。"
+	services="active-directory"
+	documentationCenter=""
 	authors="markusvi"
 	manager="stevenpo"
-	editor="LisaToft"/>
+	editor=""/>
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="10/30/2015" 
+	ms.date="02/12/2016" 
 	wacn.date="01/29/2016"/>
 
 # 向“登录”和“访问面板”页添加公司品牌
@@ -183,4 +183,5 @@ Azure AD 中的某些可自定义的元素具有多个用例。公司徽标可�
 [7]: ./media/active-directory-add-company-branding/SignInPage_aftercustomization_croppedtop.png
 [8]: ./media/active-directory-add-company-branding/APBranding.png
 
-<!---HONumber=Mooncake_1221_2015-->
+
+<!---HONumber=Mooncake_0411_2016-->

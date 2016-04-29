@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect 同步：防止意外删除 | Azure"
+   pageTitle="Azure AD Connect 同步：防止意外删除 | Microsoft Azure"
    description="本主题说明 Azure AD Connect 中的防止意外删除功能。"
    services="active-directory"
    documentationCenter=""
@@ -9,10 +9,9 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="12/29/2015"
-   wacn.date="02/25/2016"/>
+   ms.date="03/07/2016"
+   wacn.date="04/28/2016"/>
 
-# 防止意外删除
 # Azure AD Connect 同步：防止意外删除
 本主题说明 Azure AD Connect 中的防止意外删除功能。
 
@@ -53,4 +52,4 @@
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0411_2016-->

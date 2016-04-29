@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何获取 Azure AD 租户 | Azure"
+	pageTitle="如何获取 Azure AD 租户 | Microsoft Azure"
 	description="如何获取用于注册和生成应用程序的 Azure Active Directory 租户。"
 	services="active-directory"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="09/28/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="04/28/2016" />
 
 # 如何获取 Azure Active Directory 租户
 
@@ -49,7 +49,7 @@
     - 可选：启用多因素身份验证
     - 最后，单击绿色的“创建”按钮以完成用户创建（并显示临时密码）。
 7.	完成“添加用户表单”并收到新管理用户的临时密码后，请务必记下此密码，因为在更改密码时，你要以此新用户的身份登录。你还可以使用备用电子邮件直接向用户发送密码。
-8.	若要更改临时密码，请使用此新用户帐户登录到 https://login.microsoftonline.com，然后根据请求更改密码。
+8.	若要更改临时密码，请使用此新用户帐户登录到 https://login.microsoftonline.com ，然后根据请求更改密码。
 
 
 ## 使用组织 Azure 订阅
@@ -61,4 +61,4 @@
 
 在注册 Azure 的过程中，你需要提供信用卡详细信息。你可以放心地继续注册 - 在 Azure AD 中发布应用程序或者创建新租户时，我们不会向你收费。
 
-<!---HONumber=60-->
+<!---HONumber=Mooncake_0418_2016-->
