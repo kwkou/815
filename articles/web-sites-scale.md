@@ -8,7 +8,7 @@
 	editor="mollybos"/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service"
 	ms.date="02/25/2016" 
 	wacn.date="04/26/2016"/>
 

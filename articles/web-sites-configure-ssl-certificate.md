@@ -9,7 +9,7 @@
 	tags="top-support-issue"/>
 
 <tags
-	ms.service="web-sites"
+	ms.service="app-service"
 	ms.date="02/03/2016"
 	wacn.date="03/28/2016"/>
 

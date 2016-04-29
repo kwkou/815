@@ -7,7 +7,7 @@
 	manager="wpickett"
 	editor="jimbe"/>
 <tags
-	ms.service="web-sites"
+	ms.service="app-service-web"
 	ms.date="03/04/2016"
 	wacn.date="04/26/2016"/>
 
