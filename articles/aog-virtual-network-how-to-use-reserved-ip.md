@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual network" ms.date="" wacn.date="01/21/2016"/>
+<tags ms.service="virtual-network" ms.date="" wacn.date="01/21/2016"/>
 
 #保留正在使用的VIP
 ###本文包含以下内容

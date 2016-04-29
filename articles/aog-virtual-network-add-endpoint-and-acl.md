@@ -7,7 +7,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual network" ms.date="" wacn.date="01/21/2016"/>
+<tags ms.service="virtual-network" ms.date="" wacn.date="01/21/2016"/>
 
 #虚拟机添加相应端口并配置ACL
 
