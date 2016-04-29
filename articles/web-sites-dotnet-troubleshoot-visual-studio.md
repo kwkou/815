@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags 
-	ms.service="web-sites" 
+	ms.service="app-service"
 	ms.date="01/08/2016" 
 	wacn.date="03/03/2016"/>
 
