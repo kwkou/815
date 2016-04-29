@@ -118,4 +118,6 @@ Azure Active Directory 有三个版本：免费版 (Free)、基本版 (Basic) �
 [11]: ./media/active-directory-get-started-premium/Assignlicensespicker.png
 [12]: ./media/active-directory-get-started-premium/Usagelocation.png
 
-<!---HONumber=Mooncake_1221_2015-->
+
+
+<!---HONumber=Mooncake_0418_2016-->

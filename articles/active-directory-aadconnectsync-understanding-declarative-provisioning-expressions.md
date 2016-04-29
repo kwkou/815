@@ -4,13 +4,13 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
-	manager="swadhwa"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/10/2015"
-	wacn.date="02/25/2016"/>
+	ms.date="02/16/2016"
+	wacn.date="04/28/2016"/>
 
 
 # Azure AD Connect 同步：了解声明性预配表达式
@@ -21,11 +21,7 @@ Azure AD Connect 同步构建在声明性预配的基础之上。该声明性预
 
 有关详细信息，请参阅[欢迎使用适用于 Office 2013 的 Visual Basic 应用程序语言参考](https://msdn.microsoft.com/library/gg264383.aspx)。
 
-属性属于强类型。需要单值字符串属性的函数不接受多值或不同类型的属性。它也区分大小写。函数名称和属性名称都必须具有正确的大小写，否则会引发错误
-
-
-
-
+属性属于强类型。函数只接受正确类型的属性。它也区分大小写。函数名称和属性名称都必须具有正确的大小写，否则会引发错误
 
 ## 语言定义和标识符
 
@@ -113,9 +109,7 @@ Active Directory 中的某些属性在架构中是多值，不过它们在 Activ
 
 对于出站同步规则，有两个不同的常量可以使用：NULL 和 IgnoreThisFlow。两个常量均指示属性流没有要提供的内容，但不同之处是当其他规则都没有要提供的任何内容时会发生的情况。如果已连接目录中存在现有值，NULL 则会在删除它的属性上暂存删除，而 IgnoreThisFlow 则会保留现有值。
 
-
-
-#### ImportedValue
+### ImportedValue
 
 函数 ImportedValues 不同于其他所有函数，因为属性名称必须放在引号内，而不是括在方括号中：ImportedValue(“proxyAddresses”)。
 
@@ -135,4 +129,4 @@ Active Directory 中的某些属性在架构中是多值，不过它们在 Activ
  
 <!--Image references-->
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0411_2016-->

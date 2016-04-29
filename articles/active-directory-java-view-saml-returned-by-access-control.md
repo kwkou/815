@@ -1,16 +1,16 @@
-<properties 
-	pageTitle="查看 Access Control 服务返回的 SAML (Java)" 
-	description="了解如何通过 Azure 上托管的 Java 应用程序查看 Access Control 服务返回的 SAML。" 
-	services="active-directory" 
-	documentationCenter="java" 
-	authors="rmcmurray" 
-	manager="wpickett" 
-    editor="jimbe" />
+<properties
+    pageTitle="查看 Access Control 服务返回的 SAML (Java)"
+    description="了解如何通过 Azure 上托管的 Java 应用程序查看 Access Control 服务返回的 SAML。"
+    services="active-directory" 
+    documentationCenter="java"
+    authors="rmcmurray"
+    manager="wpickett"
+    editor="" />
 
 <tags 
 	ms.service="active-directory" 
-    ms.date="10/12/2015" 
-	wacn.date="01/21/2016"/>
+        ms.date="03/04/2016" 
+	wacn.date="04/28/2016"/>
 
 # 如何查看 Azure Access Control 服务返回的 SAML
 
@@ -20,7 +20,8 @@
 
 有关 ACS 的详细信息，请参阅[后续步骤](#next_steps)部分。
 
-> [AZURE.NOTE]Azure 访问服务控制筛选器是一个社区技术预览版。作为预发行软件，Microsoft 不会为它提供正式支持。
+> [AZURE.NOTE]
+Azure 访问服务控制筛选器是一个社区技术预览版。作为预发行软件，Microsoft 不会为它提供正式支持。
 
 ## 先决条件
 
@@ -178,7 +179,7 @@
 ## <a name="run_application"></a>运行应用程序
 
 1. 按照如何[使用 Eclipse 在 Azure 访问控制服务中对 Web 用户进行身份验证][]主题所述的步骤，在计算模拟器中运行应用程序或部署到 Azure。
-2. 启动浏览器并打开 Web 应用。登录到您的应用程序后，您将看到 SAML 信息，包括标识提供程序提供的安全声明。
+2. 启动浏览器并打开 Web 应用程序。登录到您的应用程序后，您将看到 SAML 信息，包括标识提供程序提供的安全声明。
 
 ## <a name="next_steps"></a>后续步骤
 
@@ -189,9 +190,10 @@
 [Add the JspWriter library to your build path and deployment assembly]: #add_library
 [Run the application]: #run_application
 [Next steps]: #next_steps
-[访问控制服务 2.0]: http://msdn.microsoft.com/zh-cn/library/hh147631.aspx
+[访问控制服务 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
 [使用 Eclipse 在 Azure 访问控制服务中对 Web 用户进行身份验证]: /zh-cn/documentation/articles/active-directory-java-authenticate-users-access-control-eclipse
 [如何使用 Eclipse 向 Azure 访问控制服务对 Web 用户进行身份验证]: /zh-cn/documentation/articles/active-directory-java-authenticate-users-access-control-eclipse
 [saml_output]: ./media/active-directory-java-view-saml-returned-by-access-control/SAML_Output.png
+ 
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0418_2016-->

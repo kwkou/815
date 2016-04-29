@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 SCIM 启用从 Azure Active Directory 到应用程序的用户和组自动预配 | Azure"
+	pageTitle="使用 SCIM 启用从 Azure Active Directory 到应用程序的用户和组自动预配 | Microsoft Azure"
 	description="Azure Active Directory 可以使用 SCIM 协议规范中定义的接口，自动将用户和组预配到以 Web 服务为前端的任何应用程序或标识存储"
 	services="active-directory"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="10/29/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="02/09/2016"
+	wacn.date="04/28/2016"/>
 
 #使用 SCIM 启用从 Azure Active Directory 到应用程序的用户和组自动预配
 
@@ -19,13 +19,13 @@
 Azure Active Directory 可以使用 [SCIM 2.0 协议规范](https://tools.ietf.org/html/draft-ietf-scim-api-19)中定义的接口，将用户和组自动预配到 Web 服务前端的任何应用程序或标识存储。Azure Active Directory 可将请求发送到此 Web 服务以创建、修改和删除分配的用户与组，然后，Web 服务可将这些请求转换为针对目标标识存储的操作。
 
 ![][1]
-*图：通过 Web 服务从 Azure Active Directory 预配到标识存储*
+图：通过 Web 服务从 Azure Active Directory 预配到标识存储
 
 此功能可配合 Azure AD 中的“[自带应用](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx)”功能，为提供 SCIM Web 服务或位于该服务后端的应用程序启用单一登录和自动用户预配。
 
 Azure Active Directory 中的 SCIM 有两种使用方案：
 
-* **将用户和组预配到支持 SCIM 的应用程序** - 支持 SCIM 2.0 并且能够接受来自 Azure AD 的 OAuth 持有者令牌的应用程序可直接与 Azure AD 配合工作。
+* **将用户和组预配到支持 SCIM 的应用程序** — 支持 SCIM 2.0 并使用 OAuth 持有者令牌进行身份验证的应用程序可直接与 Azure AD 配合工作。
 
 * **为支持其他基于 API 的预配的应用程序构建自己的预配解决方案** - 对于非 SCIM 应用程序，可以创建一个 SCIM 终结点用于在 Azure AD 的 SCIM 终结点与应用程序为用户预配支持的任何 API 之间进行转换。为了帮助开发 SCIM 终结点，我们连同代码示例提供了 CLI 库，说明如何提供 SCIM 终结点和转换 SCIM 消息。
 
@@ -47,8 +47,6 @@ Azure Active Directory 可配置为将已分配的用户和组预配到实现[�
 
 * 接受根据 SCIM 协议第 2.1 部分使用 OAuth 持有者令牌进行授权。
 
-* 支持使用 Azure AD 作为 OAuth 令牌的标识提供者（对外部标识提供者的支持即将推出）
-
 你应该咨询应用程序提供者，或参阅应用程序提供者文档中的说明，以了解是否符合这些要求。
  
 ###入门
@@ -57,20 +55,21 @@ Azure Active Directory 可配置为将已分配的用户和组预配到实现[�
 
 **连接到支持 SCIM 的应用程序：**
 
-1.	在 Web 浏览器中，通过 https://manage.windowsazure.cn 启动 Azure 管理门户。
-2.	浏览到“Active Directory”>“目录”> [你的目录] >“应用程序”，然后选择“添加”>“从库中添加应用程序”。
+1.	在 Web 浏览器中，从 https://manage.windowsazure.cn 启动 Azure 管理门户。
+2.	浏览到“Active Directory”>“目录”>“[你的目录]”>“应用程序”，然后选择“添加”>“从库中添加应用程序”。
 3.	选择左侧的“自定义”选项卡，输入应用程序的名称，然后单击复选标记图标以创建应用对象。
 
 ![][2]
 
 4.	在出现的屏幕中，选择第二个“配置帐户预配”按钮。
-5.	在对话框中，输入应用程序SCIM 终结点的 URL。  
-6.	单击“下一步”，然后单击“开始测试”按钮，使 Azure Active Directory 尝试连接到 SCIM 终结点。如果尝试失败，将显示诊断信息。  
-7.	如果尝试连接到应用程序成功，请在余下的屏幕中单击“下一步”，然后单击“完成”以退出对话框。
-8.	在出现的屏幕中，选择第三个“分配帐户”按钮。在出现的“用户和组”部分中，分配你要预配到应用程序的用户或组。
-9.	分配用户和组后，单击屏幕顶部附近的“配置”选项卡。
-10.	在“帐户预配”下，确认“状态”设置为“打开”。 
-11.	在“工具”下，单击“重新开始帐户预配”以开始预配过程。
+5.	在“预配终结点 URL”字段中，输入应用程序的 SCIM 终结点的 URL。
+6.	如果 SCIM 终结点需要来自非 Azure AD 颁发者的 OAuth 持有者令牌，那么便将所需的 OAuth 持有者令牌复制到“身份验证令牌(可选)”字段。如果此字段留空，则 Azure AD 将在每个请求中包含从 Azure AD 颁发的 OAuth 持有者令牌。使用 Azure AD 作为标识提供者的应用可以验证 Azure AD 颁发的此令牌。
+7.	单击“下一步”，然后单击“开始测试”按钮，使 Azure Active Directory 尝试连接到 SCIM 终结点。如果尝试失败，将显示诊断信息。  
+8.	如果尝试连接到应用程序成功，请在余下的屏幕中单击“下一步”，然后单击“完成”以退出对话框。
+9.	在出现的屏幕中，选择第三个“分配帐户”按钮。在出现的“用户和组”部分中，分配你要预配到应用程序的用户或组。
+10.	分配用户和组后，单击屏幕顶部附近的“配置”选项卡。
+11.	在“帐户预配”下，确认“状态”设置为“打开”。 
+12.	在“工具”下，单击“重新开始帐户预配”以开始预配过程。
 
 请注意，预配过程可能需要 5-10 分钟才能开始将请求发送到 SCIM 终结点。应用程序的“仪表板”选项卡上提供了连接尝试的摘要，可以从目录的“报告”选项卡下载预配活动报告和任何预配错误。
 
@@ -80,7 +79,7 @@ Azure Active Directory 可配置为将已分配的用户和组预配到实现[�
 
 工作方式如下：
 
-1.	Azure AD 提供名为 [Microsoft.SystemForCrossDomainIdentityManagement](https://www.nuget.org/packages/Microsoft.SystemForCrossDomainIdentityManagement/) 的通用语言基础结构库。系统集成商和开发商可以使用此库来创建与部署能够将 Azure AD 连接到任何应用程序的标识存储的、基于 SCIM 的 Web 服务终结点。
+1.	Azure AD 提供名为 [Microsoft.SystemForCrossDomainIdentityManagement](https://www.nuget.org/packages/Microsoft.SystemForCrossDomainIdentityManagement/) 的公共语言基础结构库。系统集成商和开发商可以使用此库来创建与部署能够将 Azure AD 连接到任何应用程序的标识存储的、基于 SCIM 的 Web 服务终结点。
 2.	将在 Web 服务中实现映射，以将标准化用户架构映射到用户架构和应用程序所需的协议。
 3.	终结点 URL 在 Azure AD 中注册为应用程序库中自定义应用程序的一部分。
 4.	用户和组在 Azure AD 中分配到此应用程序。分配后，它们将被放入队列，以同步到目标应用程序。处理队列的同步过程每隔 5 分钟运行一次。
@@ -103,15 +102,15 @@ Azure Active Directory 可配置为将已分配的用户和组预配到实现[�
 
 **创建示例 SCIM 终结点：**
 
-1.	通过[https://github.com/Azure/AzureAD-BYOA-Provisioning-Samples/tree/master](https://github.com/Azure/AzureAD-BYOA-Provisioning-Samples/tree/master) 下载代码示例包
+1.	从 [https://github.com/Azure/AzureAD-BYOA-Provisioning-Samples/tree/master](https://github.com/Azure/AzureAD-BYOA-Provisioning-Samples/tree/master) 下载代码示例包
 2.	将包解压缩，并将它放在 Windows 计算机上的某个位置，例如 C:\\AzureAD-BYOA-Provisioning-Samples。
 3.	在此文件夹中，使用 Visual Studio 启动 FileProvisioningAgent 解决方案。
-4.	选择“工具”>“库包管理员”>“包管理员控制台”并执行以下命令，使 FileProvisioningAgent 项目解析解决方案引用：
+4.	选择“工具”>“库程序包管理器”>“程序包管理器控制台”并执行以下命令，使 FileProvisioningAgent 项目解析解决方案引用：
 
-    `Install-Package Microsoft.SystemForCrossDomainIdentityManagement
+    Install-Package Microsoft.SystemForCrossDomainIdentityManagement
     Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
     Install-Package Microsoft.Owin.Diagnostics
-    Install-Package Microsoft.Owin.Host.SystemWeb`
+    Install-Package Microsoft.Owin.Host.SystemWeb
 
 5.	构建 FileProvisioningAgent 项目。
 6.	在 Windows 中启动命令提示符应用程序（以管理员身分），并使用 **cd** 命令将目录切换到 **\\AzureAD-BYOA-Provisioning-Samples\\ProvisioningAgent\\bin\\Debug** 文件夹。
@@ -125,16 +124,16 @@ Azure Active Directory 可配置为将已分配的用户和组预配到实现[�
 
 **在 Azure AD 中注册示例 SCIM 终结点：**
 
-1.	在 Web 浏览器中，通过 https://manage.windowsazure.cn 启动 Azure 管理门户。
-2.	浏览到“Active Directory”>“目录”> [你的目录] >“应用程序”，然后选择“添加”>“从库中添加应用程序”。
-3.	选择左侧的“自定义”选项卡，输入类似于“SCIM 测试应用”的名称，然后单击复选标记图标创建应用对象。请注意，创建的应用程序对象代表要预配和实现登一登入的目标应用程序，而不只是 SCIM 终结点。
+1.	在 Web 浏览器中，从 https://manage.windowsazure.cn 启动 Azure 管理门户。
+2.	浏览到“Active Directory”>“目录”>“[你的目录]”>“应用程序”，然后选择“添加”>“从库中添加应用程序”。
+3.	选择左侧的“自定义”选项卡，输入类似于“SCIM 测试应用”的名称，然后单击复选标记图标以创建应用对象。请注意，创建的应用程序对象代表要预配和实现登一登入的目标应用程序，而不只是 SCIM 终结点。
 
 ![][2]
 
 4.	在出现的屏幕中，选择第二个“配置帐户预配”按钮。
 5.	在对话框中，输入面向 Internet 的 URL 和 SCIM 终结点的端口。这类似于 http://testmachine.contoso.com:9000 或 http://<ip-address>:9000/，其中 <ip-address> 是面向 Internet 的 IP 地址。  
 6.	单击“下一步”，然后单击“开始测试”按钮，使 Azure Active Directory 尝试连接到 SCIM 终结点。如果尝试失败，将显示诊断信息。  
-7.	如果尝试连接到 Web 服务成功，请在余下的屏幕上单击“下一步”，然后单击“完成”退出对话框。
+7.	如果尝试连接到 Web 服务成功，请在余下的屏幕中单击“下一步”，然后单击“完成”以退出对话框。
 8.	在出现的屏幕中，选择第三个“分配帐户”按钮。在出现的“用户和组”部分中，分配你要预配到应用程序的用户或组。
 9.	分配用户和组后，单击屏幕顶部附近的“配置”选项卡。
 10.	在“帐户预配”下，确认“状态”设置为“打开”。 
@@ -148,7 +147,7 @@ Azure Active Directory 可配置为将已分配的用户和组预配到实现[�
 
 若要开发自己的符合 SCIM 规范的 Web 服务，请先熟悉 Microsoft 提供的、有助于加速开发过程的以下库：
 
-**1：**提供通用语言基础结构库以配合基于该基础结构的语言，例如 C#。其中一个库 [Microsoft.SystemForCrossDomainIdentityManagement.Service](https://www.nuget.org/packages/Microsoft.SystemForCrossDomainIdentityManagement/) 声明接口 Microsoft.SystemForCrossDomainIdentityManagement.IProvider，如下图所示。使用这些库的开发人员将对某个类（一般称为提供程序）实现该接口。库可让开发人员轻松部署符合 SCIM 规范的 Web 服务，无论该服务是托管在 Internet 信息服务还是任何可执行的通用语言基础结构程序集中。对该 Web 服务的请求将转换为对提供程序方法的调用，这些方法由开发人员编程，以便对某些标识存储执行操作。
+**1：**提供公共语言基础结构库以配合基于该基础结构的语言，例如 C#。其中一个库 [Microsoft.SystemForCrossDomainIdentityManagement.Service](https://www.nuget.org/packages/Microsoft.SystemForCrossDomainIdentityManagement/) 声明接口 Microsoft.SystemForCrossDomainIdentityManagement.IProvider，如下图所示。使用这些库的开发人员将对某个类（一般称为提供程序）实现该接口。库可让开发人员轻松部署符合 SCIM 规范的 Web 服务，无论该服务是托管在 Internet 信息服务还是任何可执行的通用语言基础结构程序集中。对该 Web 服务的请求将转换为对提供程序方法的调用，这些方法由开发人员编程，以便对某些标识存储执行操作。
 
 ![][3]
 
@@ -334,7 +333,7 @@ Azure Active Directory 可将两种类型的资源预配到 SCIM Web 服务。�
 
 用户资源由协议规范 http://tools.ietf.org/html/draft-ietf-scim-core-schema 中包含的架构标识符 urn:ietf:params:scim:schemas:extension:enterprise:2.0:User 标识。以下表 1 提供了 Azure Active Directory 中用户属性与 urn:ietf:params:scim:schemas:extension:enterprise:2.0:User 资源属性之间的默认映射。
 
-组资源由架构标识符 http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group 标识。以下表 2 显示了 Azure Active Directory 中组属性与 http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group 资源属性之间的默认映射。
+组资源由架构标识符 http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group 标识。下面的表 2 显示了 Azure Active Directory 中组属性与 http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group 资源属性之间的默认映射。
 
 ###表 1：默认用户属性映射
 
@@ -375,8 +374,8 @@ Azure Active Directory 可将两种类型的资源预配到 SCIM Web 服务。�
 
 下图显示了 Azure Active Directory 将发送到 SCIM 服务以管理用户在其他标识存储中的生命周期的消息。该图还显示了使用 Microsoft 提供的、用于构建此类服务的通用语言基础结构库所实现的 SCIM 服务如何将这些请求转换为对提供程序的方法调用。
 
-![][4]
-*图：用户预配和取消预配顺序*
+![][4] 
+图：用户预配和撤销顺序
 
 **1：**Azure Active Directory 将在服务中查询是否有某个用户的 externalId 属性值与 Azure Active Directory 中用户的 mailNickname 属性值匹配。查询以类似的超文本传输协议请求表示，其中，jyoung 是 Azure Active Directory 中某个用户的 mailNickname 示例：
 
@@ -439,7 +438,7 @@ Azure Active Directory 可将两种类型的资源预配到 SCIM Web 服务。�
 * parameters.AlternateFilter.ElementAt(0).ComparisonValue: "jyoung"
 * correlationIdentifier: System.Net.Http.HttpRequestMessage.GetOwinEnvironment["owin.RequestId"] 
 
-**2：**如果对具有匹配 Azure Active Directory 中用户的 mailNickname 属性值的 externalId 属性值的用户服务查询的响应未返回任何用户，Azure Active Directory 将请求服务预配与 Azure Active Directory 中的用户相对应的用户。以下是此类请求的示例：
+**2：**如果在服务中查询是否有某个用户的 externalId 属性值与 Azure Active Directory 中用户的 mailNickname 属性值匹配时，该查询的响应未返回任何用户，Azure Active Directory 将请求服务预配与 Azure Active Directory 中的用户相对应的用户。以下是此类请求的示例：
 
     POST https://.../scim/Users HTTP/1.1
     Authorization: Bearer ...
@@ -655,7 +654,7 @@ Microsoft 提供的、用于实现 SCIM 服务的通用语言基础结构库将�
 * (PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Reference: http://.../scim/Users/2819c223-7f76-453a-919d-413861904646
 * (PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Value: 2819c223-7f76-453a-919d-413861904646
 
-**6：**为了从前端为 SCIM 服务的标识存储取消预配用户，Azure Active Directory 将发送如下请求：
+**6：**为了从前端为 SCIM 服务的标识存储撤销用户，Azure Active Directory 将发送如下请求：
 
     DELETE ~/scim/Users/54D382A4-2050-4C03-94D1-E769F1D15682 HTTP/1.1
     Authorization: Bearer ...
@@ -679,12 +678,12 @@ Microsoft 提供的、用于实现 SCIM 服务的通用语言基础结构库将�
 
 下图显示了 Azure Active Directory 将发送到 SCIM 服务以管理组在其他标识存储中的生命周期的消息。这些消息在以下三个方面与用户相关的消息不同：
 
-* 组资源的架构标识为 [http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group](http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group)。  
+* 组资源的架构标识为 http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/Group。  
 * 检索组的请求规定将成员属性从请求响应中提供的任何资源中排除。  
 * 确定引用属性是否具有特定值的请求将是有关成员属性的请求。  
 
 ![][5]
-*图：组预配和取消预配顺序*
+图：组预配和撤销顺序
 
 	
 <!--Image references-->
@@ -694,4 +693,4 @@ Microsoft 提供的、用于实现 SCIM 服务的通用语言基础结构库将�
 [4]: ./media/active-directory-scim-provisioning/scim-figure-4.PNG
 [5]: ./media/active-directory-scim-provisioning/scim-figure-5.PNG
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0418_2016-->

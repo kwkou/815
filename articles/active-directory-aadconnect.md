@@ -51,7 +51,7 @@ Azure Active Directory Connect 由三个主要部分组成，分别是同步服�
 | [快速设置](/documentation/articles/active-directory-aadconnect-get-started-express) | <li>适用于单林 AD 的推荐默认选项。</li> <li>使用密码同步以同一密码进行用户登录。</li>
 | [自定义设置](/documentation/articles/active-directory-aadconnect-get-started-custom) | <li>有多个林时使用。支持许多[本地拓扑](/documentation/articles/active-directory-aadconnect-topologies)。</li> <li>自定义登录选项，例如用于联合身份验证的 ADFS，或使用第三方标识提供者。</li> <li>自定义同步功能，例如筛选和写回。</li>
 | [从 DirSync 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started) | <li>如果你有已在运行的现有 DirSync 服务器。</li>
-| 从 Azure AD Sync 升级 | <li>无缝的就地升级。</li>
+| [从 Azure AD Sync 或 Azure AD Connect 升级](/documentation/articles/active-directory-aadconnect-upgrade-previous-version)| <li>根据你的偏好，你可以选择多种不同的方法。</li>
 
 
 [安装后](/documentation/articles/active-directory-aadconnect-whats-next)，你应该验证程序是否按预期工作，并将许可证分配给用户。
@@ -70,7 +70,7 @@ Azure Active Directory Connect 由三个主要部分组成，分别是同步服�
 
 你还要预先了解[操作](/documentation/articles/active-directory-aadconnectsync-operations)注意事项。你可能要部署一台待机服务器，以便在发生[灾难](active-directory-aadconnectsync-operations#disaster-recovery)时轻松故障转移。如果你要频繁进行配置更改，则应该计划部署一台[暂存模式](/documentation/articles/active-directory-aadconnectsync-operations#staging-mode)服务器。
 
-| 主题 |  |
+| 主题 | |
 | --------- | --------- |
 | 支持的拓扑 | [Azure AD Connect 的拓扑](/documentation/articles/active-directory-aadconnect-topologies) |
 | 设计概念 | [Azure AD Connect 设计概念](/documentation/articles/active-directory-aadconnect-design-concepts) |

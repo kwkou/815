@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="02/08/2016"
-	wacn.date="03/30/2016"/>
+	wacn.date="04/28/2016"/>
 
 # 使用自定义域名来简化用户登录体验
 
@@ -75,4 +75,4 @@ Azure Active Directory 中的每个目录随附内置域名，格式为“contos
 - [更改自定义域名的 DNS 注册机构](active-directory-add-domain-change-registrar.md)
 - [在 Azure Active Directory 中删除自定义域名](active-directory-add-domain-delete-domain.md)
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0411_2016-->

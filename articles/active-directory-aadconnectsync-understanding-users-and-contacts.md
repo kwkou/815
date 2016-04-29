@@ -4,13 +4,13 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
-	manager="swadhwa"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/09/2015"
-	wacn.date="02/25/2016"/>
+	ms.date="02/16/2016"
+	wacn.date="04/28/2016"/>
 
 
 # Azure AD Connect Sync：了解用户和联系人
@@ -22,10 +22,11 @@
 有几个配置假定的一般规则：
 
 - 不管按什么顺序从源 Active Directory 导入，最终结果始终相同。
-- 有效帐户会始终提供登录信息，包括 **userPrincipalName** 和 **sourceAnchor**。
+- 活动帐户会始终提供登录信息，包括 **userPrincipalName** 和 **sourceAnchor**。
 - 如果找不到活动的帐户，已禁用帐户会提供 userPrincipalName 和 sourceAnchor，除非该帐户为已链接邮箱。
 - 具有已链接邮箱的帐户永远不会用于 userPrincipalName 和 sourceAnchor。据推测，更高版本中将会找到有效帐户。
 - 可能为 Azure AD 设置联系人对象，作为联系人或用户。在处理完所有源 Active Directory 林之前，你确实不会知道。
+
 ## 联系人
 
 合并和收购之后，不同林中具有表示用户的联系人很常见，其中，GALSync 解决方案对两个或多个 Exchange 林桥接。联系人对象始终使用邮件属性从连接器空间联接到 metaverse。如果已存在具有相同邮件地址的联系人对象或用户对象，则会将这些对象联接在一起。这在规则 **In from AD – Contact Join** 中进行配置。另外，还有一条名为 **In from AD – Contact Common** 的规则，该规则具有到包含常量 **Contact** 的 metaverse 属性 **sourceObjectType** 的属性流。如果将任何用户对象联接到相同的 metaverse 对象，则此规则的优先级非常低，并且 **In from AD – User Common** 规则会为此属性提供值 User。在使用此规则的情况下，如果没有联接任何用户，此属性则会具有值 Contact，如果至少找到了一个用户，则会具有值 User。
@@ -37,25 +38,15 @@
 
 如果你有用户表示为联系人的拓扑，请确保你的选择匹配安装指南中 mail 属性上的用户。如果选择另一个选项，则会具有依赖于顺序的配置。联系人对象始终会联接 mail 属性，但如果安装指南中选择了此选项，则用户对象只会联接 mail 属性。如果在用户对象之前已导入联系人对象，那么具有相同 mail 属性的 metaverse 中可能最终会有两个不同的对象。在导出到 Azure AD 期间，会引发错误。此行为是设计使然，并且会指示错误数据或者在安装过程中未正确标识拓扑。
 
-
-
-
-
 ## 已禁用帐户
 
 已禁用帐户也会同步到 Azure AD。已禁用帐户在 Exchange 中表示资源是很常见的，例如会议室。例外情况是具有已链接邮箱的用户；如前文所述，这些用户永远不会将帐户设置到 Azure AD。
 
 假设是，如果找到已禁用的用户帐户，那么之后我们将找不到另一个有效帐户，并且在找到 userPrincipalName 和 sourceAnchor 的情况下，对象会设置到 Azure AD。如果另一个有效帐户联接到相同的 metaverse 对象，则会使用其 userPrincipalName 和 sourceAnchor。
 
-
-
-
-
 ## 更改 sourceAnchor
 
-当对象已导出到 Azure AD 时，则不再允许更改 sourceAnchor。当已导出对象时，则采用 Azure AD 接受的 **sourceAnchor** 值设置 metaverse 属性 **cloudSourceAnchor**。如果更改了 **sourceAnchor**，且不匹配 **cloudSourceAnchor**，规则 ** Out to AAD – User Join** 则会引发错误 **sourceAnchor 属性已更改**。在这种情况下，必须更正配置或数据，以便相同的 sourceAnchor 再次在 metaverse 中出现，然后才能再次同步对象。
-
-
+当对象已导出到 Azure AD 时，则不再允许更改 sourceAnchor。当已导出对象时，则采用 Azure AD 接受的 **sourceAnchor** 值设置 metaverse 属性 **cloudSourceAnchor**。如果更改了 **sourceAnchor**，且不匹配 **cloudSourceAnchor**，规则 **Out to AAD – User Join** 将引发错误“sourceAnchor 属性已更改”。在这种情况下，必须更正配置或数据，以便相同的 sourceAnchor 再次在 metaverse 中出现，然后才能再次同步对象。
 
 ## 其他资源
 
@@ -65,4 +56,4 @@
  
 <!--Image references-->
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0411_2016-->

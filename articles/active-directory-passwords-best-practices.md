@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="最佳做法：Azure AD 密码管理 |Azure" 
+	pageTitle="最佳实践：Azure AD 密码管理 | Microsoft Azure" 
 	description="有关 Azure Active Directory 中密码管理的部署和使用最佳实践、示例最终用户文档和培训指南。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="11/16/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/16/2016" 
+	wacn.date="04/28/2016"/>
 
 # 部署密码管理并向用户培训其用法
 启用密码重置之后，必须执行的下一个步骤就是让用户使用你组织中的服务。为此，需要确保已正确将用户配置为使用该服务，同时你必须培训用户，使他们可以顺利地管理其自己的密码。本文将解释以下概念：
@@ -149,4 +149,4 @@
 [006]: ./media/active-directory-passwords-best-practices/006.jpg "Image_006.jpg"
 [007]: ./media/active-directory-passwords-best-practices/007.jpg "Image_007.jpg"
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0418_2016-->

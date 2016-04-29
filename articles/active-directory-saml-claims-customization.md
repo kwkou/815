@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="02/09/2016"
-	wacn.date="03/30/2016"/>
+	ms.date="02/26/2016"
+	wacn.date=""/>
 
 #在 Azure Active Directory 中为预先集成的应用自定义 SAML 令牌中颁发的声明
 
@@ -52,8 +52,8 @@ Azure Active Directory 目前支持 Azure AD 应用库中数千个预先集成�
 
 如果指定的用户没有针对选定属性存储的值，则不会在令牌中颁发该声明。
 
-**注意：**仅当在使用最新预览版的 AAD Connect 工具从本地 Active Directory 同步用户数据时，才支持 **user.onpremisesecurityidentifier** 和 **user.onpremisesamaccountname**。可以通过下面的链接下载 Connect 工具预览版：
-[http://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=53949](http://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=53949)
+**注意：**仅当在使用 [Azure AD Connect 工具](active-directory-aadconnect.md)从本地 Active Directory 同步用户数据时，才支持 **user.onpremisesecurityidentifier** 和 **user.onpremisesamaccountname**。
+
 	
 <!--Image references-->
 [1]: ./media/active-directory-saml-claims-customization/claimscustomization1.png
@@ -61,4 +61,4 @@ Azure Active Directory 目前支持 Azure AD 应用库中数千个预先集成�
 [3]: ./media/active-directory-saml-claims-customization/claimscustomization3.png
 [4]: ./media/active-directory-saml-claims-customization/claimscustomization4.png
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0418_2016-->

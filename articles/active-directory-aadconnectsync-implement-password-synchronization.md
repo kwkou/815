@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect 同步 - 实现密码同步 | Azure"
+	pageTitle="Azure AD Connect 同步 - 实现密码同步 | Microsoft Azure"
 	description="为你提供需要了解密码同步的工作原理以及如何在你的环境中启用它的信息。"
 	services="active-directory"
 	documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="11/16/2015"
+	ms.date="03/16/2016"
 	wacn.date="02/25/2016"/>
 
 
@@ -119,6 +119,10 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 
 在“用户”上，选择“沿袭”选项卡，并确保至少有一个同步规则的“密码同步”显示为 **True**。使用默认配置时，这是名为 **In from AD - User AccountEnabled** 的同步规则。
 
+此外，你应该在 Azure AD 连接器空间中通过 Metaverse [跟踪用户](active-directory-aadconnectsync-service-manager-ui-connectors.md#follow-an-object-and-its-data-through-the-system)，并确保同样存在一个“密码同步”设置为 **True** 的出站规则。在默认配置中，这是名为 **Out to AAD - User Join** 的同步规则。
+
+![csuser2](./media/active-directory-aadconnectsync-implement-password-synchronization/cspasswordsync2.png)
+
 若要查看对象的密码同步详细信息，请单击此页面底部的“日志...”按钮。这会在此页面中显示过去一周用户的密码同步状态的历史视图。
 
 ![对象日志](./media/active-directory-aadsync-implement-password-synchronization/csobjectlog.png)
@@ -158,4 +162,5 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 * [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis)
 * [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)
 
-<!---HONumber=Mooncake_0215_2016-->
+
+<!---HONumber=Mooncake_0411_2016-->

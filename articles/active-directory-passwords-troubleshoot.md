@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="故障排除：Azure AD 密码管理 | Azure" 
+	pageTitle="故障排除：Azure AD 密码管理 | Microsoft Azure" 
 	description="针对 Azure AD 密码管理的常见故障排除步骤，包括重置、更改、写回、注册，以及寻求帮助时要提供的信息。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="11/16/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/16/2016" 
+	wacn.date="04/28/2016"/>
 
 # 如何排查密码管理问题
 如果你有密码管理方面的问题，我们随时可提供帮助。你可能会遇到的大多数问题都可以通过以下简单故障排除步骤来解决，请阅读以下内容来排查你的部署问题：
@@ -1380,7 +1380,7 @@
 
  1.	以管理员身份单击运行 **Azure AD Connect** 的服务器上的“开始”。
  2.	在搜索框中键入“services.msc”，然后按 **Enter**。
- 3.	查找 **Azure AD Connect** 条目。
+ 3.	找到 **Microsoft Azure AD Connect** 条目。
  4.	右键单击该服务条目，单击“重新启动”，并等待操作完成。
 
     ![][002]
@@ -1450,4 +1450,4 @@
 
  
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0418_2016-->

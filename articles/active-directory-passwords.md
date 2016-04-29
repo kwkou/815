@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="什么是：Azure AD 密码管理 | Azure"
+	pageTitle="Azure AD 密码重置 | Microsoft Azure"
 	description="介绍 Azure AD 中的密码管理功能，包括密码重置、更改、密码管理报告，以及将密码写回到本地 Active Directory。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -9,13 +9,13 @@
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="11/16/2015" 
-	wacn.date="03/30/2016"/>
+	ms.date="02/16/2016" 
+	wacn.date="04/28/2016"/>
 
-# 从任意位置管理密码
+
 # 用户和管理员的 Azure AD 密码重置
 
-  >[AZURE.IMPORTANT]你是因为想要重置 Azure 或 O365 密码而来到这里吗？ 如果是这样，请[跳到此部分](#users-how-to-manage-your-own-password)。
+  >[AZURE.IMPORTANT] 你是因为想要重置 Azure 或 O365 密码而来到这里吗？ 如果是这样，请[跳到此部分](#users-how-to-manage-your-own-password)。
   
 利用自助服务降低成本和节省人力，一直以来都是世界各地 IT 部门追求的主要目标。事实上，市场中充斥着各种产品，让你能够从云或本地管理本地组、密码或用户配置文件。独树一帜的 Azure AD 提供一些现今市场上最容易使用且最强大的自助服务功能。
 
@@ -33,11 +33,12 @@
 | 我无法登录，想要解锁我的帐户 | [如何解锁本地帐户](/documentation/articles/active-directory-passwords-update-your-own-password#how-to-unlock-your-account) |
 | 我希望你们帮助我排查密码重置失败的原因 | [常见问题及其解决方法](/documentation/articles/active-directory-passwords-update-your-own-password#common-problems-and-their-solutions) |
 
-## 管理员：了解如何开始使用 Azure AD 密码重置
+##管理员：了解如何开始使用 Azure AD 密码重置
 如果你是一名管理员，想要启用 Azure AD 密码重置或只是想详细了解此功能，请使用以下链接阅读你感兴趣的内容。
 
 | 主题 | |
 | --------- | --------- |
+| 支持的方案 | [Azure AD 密码重置有何用途？](#what-is-possible-with-azure-ad-password-reset) |
 | 为何要使用它？ | [为何使用 Azure AD 密码重置？](#why-use-azure-ad-password-reset) |
 | 定价和可用性 | [定价和可用性](#pricing-and-availability) |
 | 启用密码重置 | [为用户启用密码重置](#enable-password-reset-for-your-users) |
@@ -246,4 +247,4 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 * [**故障排除**](/documentation/articles/active-directory-passwords-troubleshoot) - 了解如何快速排查服务的问题
 * [**了解更多**](/documentation/articles/active-directory-passwords-learn-more) - 深入探索服务工作原理的技术细节
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0418_2016-->

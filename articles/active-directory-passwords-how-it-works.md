@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="11/16/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="02/16/2016" 
+	wacn.date="04/28/2016"/>
 
 # 密码管理的工作原理
 Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件。请单击每个链接以了解有关该组件的详细信息。
@@ -110,4 +110,4 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 [007]: ./media/active-directory-passwords-how-it-works/007.jpg "Image_007.jpg"
  
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0418_2016-->
