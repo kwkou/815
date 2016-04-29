@@ -16,15 +16,15 @@
 
 你可以使用自己的自定义域来改善及简化 Azure Active Directory 中的登录和其他用户体验。例如，如果你的组织拥有域名“contoso.com”，则用户可以使用他们熟悉的用户名（例如“joe@contoso.com”）来登录。
 
-Azure Active Directory 中的每个目录随附内置域名，格式为“contoso.onmicrosoft.com”，可让你开始使用 Azure 或其他 Microsoft 服务。[了解内置域](#built-in-domain-names-for-azure-active-directory)。
+Azure Active Directory 中的每个目录随附内置域名，格式为“contoso.onmicrosoft.com”，可让你开始使用 Azure 或其他 Microsoft 服务。
 
 ## 在 Azure AD 中使用自定义域名
 
 如果你的组织拥有用户熟悉的自定义域名，则最佳做法是在 Azure Active Directory 中使用该自定义域名。若要在 Azure Active Directory 中使用自定义域名，请执行以下操作：
 
--   [添加并验证自定义域名](active-directory-add-domain-add-verify-general.md)
+-   [添加并验证自定义域名](/documentation/articles/active-directory-add-domain-add-verify-general)
 
--   [将用户分配到自定义域](active-directory-add-domain-add-users.md)
+-   [将用户分配到自定义域](/documentation/articles/active-directory-add-domain-add-users)
 
 ## 在 Office 365 和其他服务中使用自定义域名
 
@@ -38,15 +38,9 @@ Azure Active Directory 中的每个目录随附内置域名，格式为“contos
 
 在 Azure Active Directory 中，域名一般无需持续进行管理。
 
--   [请参阅 Azure Active Directory 中的域名列表](active-directory-add-domain-add-users.md)
+-   [请参阅 Azure Active Directory 中的域名列表](/documentation/articles/active-directory-add-domain-add-users)
 
--   [更改自定义域名的 DNS 注册机构会发生什么情况](active-directory-add-domain-change-registrar.md)
-
-## 删除自定义域名
-
-如果你的组织不再使用某个自定义域名，或者需要在另一个 Azure AD 中使用该域名，你可以从 Azure AD 中删除该域名。
-
--   [删除自定义域名](#_Deleting_a_custom)
+-   [更改自定义域名的 DNS 注册机构会发生什么情况](/documentation/articles/active-directory-add-domain-change-registrar)
 
 ## Azure Active directory 的内置域名
 
@@ -69,10 +63,10 @@ Azure Active Directory 中的每个目录随附内置域名，格式为“contos
 
 如果你需要额外的资源来了解 Azure Active Directory 中的域名用法，请尝试：
 
-- [向“登录”和“访问面板”页添加公司品牌](active-directory-add-company-branding.md)
-- [在 Azure Active Directory 中添加和验证自定义域名](active-directory-add-domain-add-verify-general.md)
-- [将用户分配到自定义域](active-directory-add-domain-add-users.md)
-- [更改自定义域名的 DNS 注册机构](active-directory-add-domain-change-registrar.md)
-- [在 Azure Active Directory 中删除自定义域名](active-directory-add-domain-delete-domain.md)
+- [向“登录”和“访问面板”页添加公司品牌](/documentation/articles/active-directory-add-company-branding)
+- [在 Azure Active Directory 中添加和验证自定义域名](/documentation/articles/active-directory-add-domain-add-verify-general)
+- [将用户分配到自定义域](/documentation/articles/active-directory-add-domain-add-users)
+- [更改自定义域名的 DNS 注册机构](/documentation/articles/active-directory-add-domain-change-registrar)
+- [在 Azure Active Directory 中删除自定义域名](/documentation/articles/active-directory-add-domain-delete-domain)
 
 <!---HONumber=Mooncake_0411_2016-->

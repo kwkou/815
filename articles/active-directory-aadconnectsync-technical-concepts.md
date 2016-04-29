@@ -14,7 +14,7 @@
 
 
 # Azure AD Connect 同步：技术概念
-本文是[了解体系结构](active-directory-aadconnectsync-technical-concepts.md)主题的总结。
+本文是了解体系结构主题的总结。
 
 Azure AD Connect 同步构建在稳固的元目录同步平台基础之上。以下部分介绍了元目录同步的概念。Azure Active Directory 同步服务基于 MIIS、ILM 和 FIM 进行构建，它提供了下一个平台，用于连接到数据源、同步数据源之间的数据以及设置标识和取消标识设置。
 

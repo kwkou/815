@@ -23,11 +23,11 @@
 
 2. [Active Directory 身份验证方案](/documentation/articles/active-directory-authentication-scenarios)：利用 Azure Active Directory 中的简化身份验证来登录应用程序。
 
-3. [将应用程序与 Azure Active Directory 集成](active-directory-integrating-applications)：了解如何从 Azure Active Directory 添加、更新和删除应用程序，以及有关集成应用的品牌准则。
+3. [将应用程序与 Azure Active Directory 集成](/documentation/articles/active-directory-integrating-applications)：了解如何从 Azure Active Directory 添加、更新和删除应用程序，以及有关集成应用的品牌准则。
 
-4. [Azure Active Directory 图形 API](active-directory-graph-api.md)：使用 Azure Active Directory 图形 API 通过 REST API 终结点以编程方式访问 Azure AD。请注意，也可通过 [Microsoft Graph](https://graph.microsoft.io/) 访问 Azure AD 图形 API。Microsoft Graph 是统一的 API，可让你通过单个 REST API 终结点和单个访问令牌访问多个 Microsoft 云服务 API。
+4. [Azure Active Directory 图形 API](/documentation/articles/active-directory-graph-api)：使用 Azure Active Directory 图形 API 通过 REST API 终结点以编程方式访问 Azure AD。请注意，也可通过 [Microsoft Graph](https://graph.microsoft.io/) 访问 Azure AD 图形 API。Microsoft Graph 是统一的 API，可让你通过单个 REST API 终结点和单个访问令牌访问多个 Microsoft 云服务 API。
 
-5. [Azure Active Directory 身份验证库](active-directory-authentication-libraries.md)：使用适用于 [.NET](https://msdn.microsoft.com/library/azure/mt417579.aspx)、[JavaScript](https://github.com/AzureAD/azure-activedirectory-library-for-js)、[Objective-C](https://github.com/AzureAD/azure-activedirectory-library-for-objc)、[Android](http://search.maven.org/remotecontent?filepath=com/microsoft/aad/adal/o) 和[其他语言](active-directory-authentication-libraries.md)的 Azure 身份验证库轻松对用户进行身份验证以获取访问令牌。
+5. [Azure Active Directory 身份验证库](/documentation/articles/active-directory-authentication-libraries)：使用适用于 [.NET](https://msdn.microsoft.com/library/azure/mt417579.aspx)、[JavaScript](https://github.com/AzureAD/azure-activedirectory-library-for-js)、[Objective-C](https://github.com/AzureAD/azure-activedirectory-library-for-objc)、[Android](http://search.maven.org/remotecontent?filepath=com/microsoft/aad/adal/o) 和[其他语言](/documentation/articles/active-directory-authentication-libraries)的 Azure 身份验证库轻松对用户进行身份验证以获取访问令牌。
 
 ## 入门
 
@@ -105,7 +105,7 @@
 
 - [WS 联合身份验证 1.2 协议参考](https://msdn.microsoft.com/library/azure/dn903702.aspx)：Web Services 联合身份验证版本 1.2 规范中指定了 WS 联合身份验证 1.2 协议。
 
-- [支持的令牌和声明类型](active-directory-token-and-claims.md)：你可以通过本指南来了解和评估 SAML 2.0 令牌和 JSON Web 令牌 (JWT) 令牌中的声明。
+- [支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims)：你可以通过本指南来了解和评估 SAML 2.0 令牌和 JSON Web 令牌 (JWT) 令牌中的声明。
 
 ## 社交
 

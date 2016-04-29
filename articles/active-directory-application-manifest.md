@@ -10,7 +10,7 @@
 <tags
    ms.service="active-directory"
    ms.date="09/03/2015"
-   wacn.date"04/28/2016"/>
+   wacn.date="04/28/2016"/>
 
 # 了解 Azure Active Directory 应用程序清单
 
