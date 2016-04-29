@@ -123,7 +123,7 @@ Azure AD 要求删除目录之前必须符合特定的条件。这可以降低�
 
 - 该目录中的唯一用户是将要删除该目录的全局管理员。只有在删除所有其他用户后，才能删除该目录。如果用户是从本地同步的，则需要关闭同步，并且必须使用管理门户或用于 Windows PowerShell 的 Azure 模块从云目录中删除这些用户。不要求删除组或联系人，例如，从 Office 365 管理中心添加的联系人。
 - 该目录中不能有任何应用程序。只有在删除所有应用程序后，才能删除该目录。 
-- 与该目录关联的任何 Microsoft Online Services（例如 Microsoft Azure、Office 365 或 Azure AD Premium）不能存在任何订阅。例如，如果在 Azure 中为你创建了一个默认目录，并且你的 Azure 订阅仍然依赖于此目录进行身份验证，则你不能删除此目录。类似地，如果其他用户已将订阅与某个目录相关联，则你无法删除该目录。若要将你的订阅与其他目录相关联，请登录到 Azure 管理门户，并在左侧导航窗格中单击“设置”。然后，在“订阅”页的底部单击“编辑目录”。有关 Azure 订阅的详细信息，请参阅 [Azure 订阅与 Azure AD 的关联方式](active-directory-how-subscriptions-associated-directory)。 
+- 与该目录关联的任何 Microsoft Online Services（例如 Microsoft Azure、Office 365 或 Azure AD Premium）不能存在任何订阅。例如，如果在 Azure 中为你创建了一个默认目录，并且你的 Azure 订阅仍然依赖于此目录进行身份验证，则你不能删除此目录。类似地，如果其他用户已将订阅与某个目录相关联，则你无法删除该目录。若要将你的订阅与其他目录相关联，请登录到 Azure 管理门户，并在左侧导航窗格中单击“设置”。然后，在“订阅”页的底部单击“编辑目录”。有关 Azure 订阅的详细信息，请参阅 [Azure 订阅与 Azure AD 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory)。 
 
     > [AZURE.NOTE]
     > 如果用户是使用工作或学校帐户登录的，则该用户不得尝试删除其主目录。例如，如果用户是作为 joe@contoso.onmicrosoft.com 登录的，则该用户不能删除默认域为 contoso.onmicrosoft.com 的目录。

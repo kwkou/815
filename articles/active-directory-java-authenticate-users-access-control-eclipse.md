@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="active-directory" 
-        ms.date="03/04/2016" 
+    ms.date="03/04/2016" 
 	wacn.date="04/28/2016"/>
 
 # 如何使用 Eclipse 在 Azure Access Control 服务上对 Web 用户进行身份验证

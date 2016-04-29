@@ -25,11 +25,11 @@
 	- **组织中的新用户** – 在目录中创建新的用户帐户
 	- **现有 Microsoft 帐户的用户** – 将现有 Microsoft 使用者帐户添加到你的目录（例如 Outlook 帐户）
 	- **另一个 Azure AD 目录中的用户** – 将源自另一个 Azure AD 目录的用户帐户添加到目录（注意：必须是其他目录的成员才能选择其中的用户）
-	- **合作伙伴公司的用户** - 邀请并授权合作伙伴公司用户使用目录（请参阅 [Azure Active Directory B2B collaboration](active-directory-b2b-what-is-azure-ad-b2b.md)（Azure Active Directory B2B 协作））
-
+	<!--
+	- **合作伙伴公司的用户** - 邀请并授权合作伙伴公司用户使用目录（请参阅 [Azure Active Directory B2B collaboration](/documentation/articles/active-directory-b2b-what-is-azure-ad-b2b)（Azure Active Directory B2B 协作））-->
 
 4. 根据选择的用户类型，输入用户名、电子邮件地址或上载 CSV 文件，其中包括登录用户的电子邮件地址。
-5. 在该用户的“配置文件”页上，提供用户的名字和姓氏、用户友好名称，并从“角色”下拉菜单中选择用户角色。有关用户和管理员角色的详细信息，请参阅 [Assigning administrator roles in Azure AD](active-directory-assign-admin-roles.md)（在 Azure AD 中分配管理员角色）。指定是否要**启用 Multi-Factor Authentication**。
+5. 在该用户的“配置文件”页上，提供用户的名字和姓氏、用户友好名称，并从“角色”下拉菜单中选择用户角色。有关用户和管理员角色的详细信息，请参阅 [Assigning administrator roles in Azure AD](/documentation/articles/active-directory-assign-admin-roles)（在 Azure AD 中分配管理员角色）。指定是否要**启用 Multi-Factor Authentication**。
 6. 在“获取临时密码”页上，单击“创建”。
 
 如果你所在的组织使用多个域，在创建用户帐户时你应知道以下问题：
