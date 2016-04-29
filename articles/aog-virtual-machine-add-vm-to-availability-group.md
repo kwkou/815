@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual machine" ms.date="" wacn.date="12/18/2015"/>
+<tags ms.service="virtual-machine" ms.date="" wacn.date="12/18/2015"/>
 
 #将虚拟机添加到可用性集中
 

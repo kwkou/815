@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual machine" ms.date="" wacn.date="02/01/2016"/>
+<tags ms.service="virtual-machine" ms.date="" wacn.date="02/01/2016"/>
 
 #如何为虚拟机附加磁盘
 

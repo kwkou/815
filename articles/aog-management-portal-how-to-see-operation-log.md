@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="management portal" ms.date="" wacn.date="12/18/2015"/>
+<tags ms.service="management-portal" ms.date="" wacn.date="12/18/2015"/>
 
 
 #如何通过管理服务查看在管理门户中执行的相关操作记录
