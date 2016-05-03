@@ -18,11 +18,11 @@
 
 | 步骤 | 名称 | 详细信息 |
 | :------: | ---- | ------- |
-| 1 | [创建保管库](#create-a-backup-vault) | 在 [Azure 备份管理门户](http://manage.windowsazure.com)中创建一个保管库 |
+| 1 | [创建保管库](#create-a-backup-vault) | 在 [Azure 备份管理门户](http://manage.windowsazure.cn)中创建一个保管库 |
 | 2 | [下载保管库凭据](#download-the-vault-credential-file) | 下载保管库凭据，以便将 Windows 计算机注册到备份保管库 |
 | 3 | [安装 Azure 备份代理](#download-install-and-register-the-azure-backup-agent) | 安装该代理，然后使用保管库凭据将服务器注册到备份保管库 |
 
-如果你已完成上述所有概括性步骤，则可开始[备份 Windows 计算机](backup-azure-backup-windows-server.md)。否则请继续完成下面的详细步骤，确保你的环境已准备就绪。
+如果你已完成上述所有概括性步骤，则可开始[备份 Windows 计算机](/documentation/articles/backup-azure-backup-windows-server)。否则请继续完成下面的详细步骤，确保你的环境已准备就绪。
 
 ## 开始之前
 若要进行环境准备以备份 Windows 计算机，你需要一个 Azure 帐户。如果你没有帐户，只需几分钟的时间就能创建一个[免费试用帐户](/pricing/free-trial/)。
@@ -56,11 +56,11 @@
 
 4. 选择“存储冗余”选项。
 
-    如果你要使用 Azure 作为主要备份存储终结点（例如，你要从 Windows Server 备份到 Azure），应考虑选择（默认的）[异地冗余存储](../storage/storage-redundancy.md#geo-redundant-storage)选项。
+    如果你要使用 Azure 作为主要备份存储终结点（例如，你要从 Windows Server 备份到 Azure），应考虑选择（默认的）[异地冗余存储](/documentation/articles/storage-redundancy#geo-redundant-storage)选项。
 
-    如果使用 Azure 作为第三级备份存储终结点（例如，你正在使用 SCDPM 在本地创建本地备份复制，使用 Azure 满足长期数据保留需求），应考虑选择[本地冗余存储](../storage/storage-redundancy.md#locally-redundant-storage)。这可以降低在 Azure 中存储数据的成本，但提供的数据持久性更低，不过，对于第三级副本是可接受的。
+    如果使用 Azure 作为第三级备份存储终结点（例如，你正在使用 SCDPM 在本地创建本地备份复制，使用 Azure 满足长期数据保留需求），应考虑选择[本地冗余存储](/documentation/articles/storage-redundancy#locally-redundant-storage)。这可以降低在 Azure 中存储数据的成本，但提供的数据持久性更低，不过，对于第三级副本是可接受的。
 
-    请在此[概述](../storage/storage-redundancy.md)中深入了解[异地冗余](../storage/storage-redundancy.md#geo-redundant-storage)和[本地冗余](../storage/storage-redundancy.md#locally-redundant-storage)存储选项。
+    请在此[概述](/documentation/articles/storage-redundancy)中深入了解[异地冗余](/documentation/articles/storage-redundancy#geo-redundant-storage)和[本地冗余](/documentation/articles/storage-redundancy#locally-redundant-storage)存储选项。
 
     a.单击刚刚创建的保管库。
 
@@ -81,7 +81,7 @@
 ## 下载保管库凭据文件
 在本地服务器（Windows 客户端、Windows Server 或 Data Protection Manager 服务器）将数据备份到 Azure 之前，需要使用备份保管库对服务器进行身份验证。身份验证是使用“保管库凭据”实现的。保管库凭据文件是通过安全通道从 Azure 门户下载的，而 Azure 备份服务并不了解证书的私钥，该私钥不保存在门户或服务中。
 
-详细了解[如何使用保管库凭据向 Azure 备份服务进行身份验证](backup-introduction-to-azure-backup.md#what-is-the-vault-credential-file)。
+详细了解[如何使用保管库凭据向 Azure 备份服务进行身份验证](/documentation/articles/backup-introduction-to-azure-backup#what-is-the-vault-credential-file)。
 
 **将保管库凭据文件下载到本地计算机：**
 
