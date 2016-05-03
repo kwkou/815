@@ -105,39 +105,30 @@ Checking for existing job JobPrepReleaseSampleJob...
 Job JobPrepReleaseSampleJob not found, creating...
 Submitting tasks and awaiting completion...
 All tasks completed.
-
 Contents of shared\job_prep_and_release.txt on tvm-3105992504_1-20151015t150030z:
--------------------------------------------
 tvm-3105992504_1-20151015t150030z tasks:
   task001
   task002
   task006
   task007
-
 Contents of shared\job_prep_and_release.txt on tvm-3105992504_2-20151015t150030z:
--------------------------------------------
 tvm-3105992504_2-20151015t150030z tasks:
   task003
   task005
   task004
   task008
-
 Waiting for job JobPrepReleaseSampleJob to reach state Completed
 ....
-
 tvm-3105992504_1-20151015t150030z:
   Prep task exit code:    0
   Release task exit code: 0
-
 tvm-3105992504_2-20151015t150030z:
   Prep task exit code:    0
   Release task exit code: 0
-
 Delete job? [yes] no
 yes
 Delete pool? [yes] no
 no
-
 Sample complete, hit ENTER to exit...
 ```
 
