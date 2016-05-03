@@ -40,7 +40,7 @@
 | 可选配置 | 说明 |
 | ------------- | ------------- |
 | 使用现有的 SQL Server | 用于指定 SQL Server 名称和实例名称。如果你已有一个要使用的数据库服务器，请选择此选项。如果你的 SQL Server 没有启用浏览而你必须指定端口号，请在“实例名称”框中输入实例名称后接逗号和端口号。 |
-| 使用现有的服务帐户 | 默认情况下，Azure AD Connect 将为同步服务创建要使用的本地服务帐户。密码是自动生成的，而安装 Azure AD Connect 的人员并不知道该密码。如果你使用远程 SQL 服务器或使用需要身份验证的代理，则需要在域中创建一个服务帐户并知道密码。在这些情况下，请输入要使用的服务帐户。确保运行安装的用户是 SQL 中的 SA，以便可以创建服务帐户的登录名。请参阅 [Azure AD Connect 帐户和权限](active-directory-aadconnect-accounts-permissions.md#custom-settings-installation) |
+| 使用现有的服务帐户 | 默认情况下，Azure AD Connect 将为同步服务创建要使用的本地服务帐户。密码是自动生成的，而安装 Azure AD Connect 的人员并不知道该密码。如果你使用远程 SQL 服务器或使用需要身份验证的代理，则需要在域中创建一个服务帐户并知道密码。在这些情况下，请输入要使用的服务帐户。确保运行安装的用户是 SQL 中的 SA，以便可以创建服务帐户的登录名。请参阅 [Azure AD Connect 帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permission#custom-settings-installation) |
 | 指定自定义同步组 | 默认情况下，在安装同步服务时，Azure AD Connect 将在服务器本地创建四个组。这些组是：管理员组、操作员组、浏览组和密码重置组。如果你想要指定自己的组，可在此处指定。组必须在服务器本地，并且不能位于域中。 |
 
 
@@ -68,9 +68,9 @@
 如果全局管理员帐户已启用 MFA，则你需要在登录弹出窗口中再次提供密码，并完成 MFA 质询，例如提供验证码。  
 ![用户登录 MFA](./media/active-directory-aadconnect-get-started-custom/connectaadmfa.png)
 
-全局管理员帐户也可以启用 [Privileged Identity Management](active-directory-privileged-identity-management-getting-started.md)。
+全局管理员帐户也可以启用 [Privileged Identity Management](/documentation/articles/active-directory-privileged-identity-management-getting-started)。
 
-如果你收到错误消息并且出现了连接问题，请参阅[排查连接问题](active-directory-aadconnect-troubleshoot-connectivity.md)。
+如果你收到错误消息并且出现了连接问题，请参阅[排查连接问题](/documentation/articles/active-directory-aadconnect-troubleshoot-connectivity)。
 
 ## “同步”部分下的页面
 
@@ -83,7 +83,7 @@
 ### 域和 OU 筛选
 默认情况下将同步所有域和 OU。如果你不想将某些域或 OU 同步到 Azure AD，可以取消选择这些域和 OU。  
 ![DomainOU 筛选](./media/active-directory-aadconnect-get-started-custom/domainoufiltering.png)
-向导中的此页面将配置基于域的筛选，[基于域的筛选](active-directory-aadconnectsync-configure-filtering.md#domain-based-filtering)中对此也有说明。
+向导中的此页面将配置基于域的筛选，[基于域的筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering#domain-based-filtering)中对此也有说明。
 
 由于防火墙限制，也可能无法连接到某些域。默认情况下未选择这些域，并且会出现警告。  
 ![不可访问的域](./media/active-directory-aadconnect-get-started-custom/unreachable.png)  
@@ -100,7 +100,7 @@
 ------------- | ------------- |
 [我的用户在所有林中只呈现一次](/documentation/articles/active-directory-aadconnect-topologies#multiple-forests-separate-topologies) | 将所有用户在 Azure AD 中创建为单独的对象。<br> 不会在 Metaverse 中联接对象。
 [邮件属性](/documentation/articles/active-directory-aadconnect-topologies#multiple-forests-full-mesh-with-optional-galsync) | 如果邮件属性在不同的林中具有相同的值，则此选项将联接用户和联系人。当已使用 GALSync 创建了联系人时，建议使用此选项。
-[ObjectSID 和 msExchangeMasterAccountSID/ msRTCSIP-OriginatorSid](active-directory-aadconnect-topologies.md#multiple-forests-account-resource-forest)|此选项将帐户林中的已启用用户与 Exchange 资源林中的已禁用用户进行联接。这也称为 Exchange 中的链接邮箱。如果你只使用 Lync 并且资源林中没有 Exchange，则你也可以使用此选项。
+[ObjectSID 和 msExchangeMasterAccountSID/ msRTCSIP-OriginatorSid](/documentation/articles/active-directory-aadconnect-topologies#multiple-forests-account-resource-forest)|此选项将帐户林中的已启用用户与 Exchange 资源林中的已禁用用户进行联接。这也称为 Exchange 中的链接邮箱。如果你只使用 Lync 并且资源林中没有 Exchange，则你也可以使用此选项。
 sAMAccountName 和 MailNickName|此选项根据预期可以在其中找到用户登录 ID 的属性进行联接。
 特定的属性|此选项允许你选择自己的属性。**限制：**确保选择 Metaverse 中已存在的属性。如果你选择自定义属性（不在 Metaverse 中），向导将无法完成。
 
