@@ -42,7 +42,6 @@ CloudPool myCloudPool =
 		osFamily: "4",
 		virtualMachineSize: "small",
 		targetDedicated: 3);
-
 // Multi-instance tasks require inter-node communication, and those nodes
 // must run only one task at a time.
 myCloudPool.InterComputeNodeCommunicationEnabled = true;
@@ -68,7 +67,6 @@ StartTask startTask = new StartTask
     WaitForSuccess = true
 };
 myCloudPool.StartTask = startTask;
-
 // Commit the fully configured pool to the Batch service to actually create
 // the pool and its compute nodes.
 await myCloudPool.CommitAsync();
@@ -86,7 +84,6 @@ await myCloudPool.CommitAsync();
 // subtasks execute the CoordinationCommandLine.
 CloudTask myMultiInstanceTask = new CloudTask(id: "mymultiinstancetask",
     commandline: "cmd /c mpiexec.exe -wdir %AZ_BATCH_TASK_SHARED_DIR% MyMPIApplication.exe");
-
 // Configure the task's MultiInstanceSettings. The CoordinationCommandLine will be executed by
 // the primary and all subtasks.
 myMultiInstanceTask.MultiInstanceSettings =
@@ -97,7 +94,6 @@ myMultiInstanceTask.MultiInstanceSettings =
                      "MyMPIApplication.exe")
     }
 };
-
 // Submit the task to the job. Batch will take care of splitting it into subtasks and
 // scheduling them for execution on the nodes.
 await myBatchClient.JobOperations.AddTaskAsync("mybatchjob", myMultiInstanceTask);
@@ -170,7 +166,6 @@ cmd /c ""%MSMPI_BIN%\mpiexec.exe"" -c 1 -wdir %AZ_BATCH_TASK_SHARED_DIR% MyMPIAp
 // Obtain the job and the multi-instance task from the Batch service
 CloudJob boundJob = batchClient.JobOperations.GetJob("mybatchjob");
 CloudTask myMultiInstanceTask = boundJob.GetTask("mymultiinstancetask");
-
 // Now obtain the list of subtasks for the task
 IPagedEnumerable<SubtaskInformation> subtasks = myMultiInstanceTask.ListSubtasks();
 
@@ -180,18 +175,15 @@ await subtasks.ForEachAsync(async (subtask) =>
 {
     Console.WriteLine("subtask: {0}", subtask.Id);
     Console.WriteLine("exit code: {0}", subtask.ExitCode);
-
     if (subtask.State == TaskState.Completed)
     {
         ComputeNode node =
 			await batchClient.PoolOperations.GetComputeNodeAsync(subtask.ComputeNodeInformation.PoolId,
                                                                  subtask.ComputeNodeInformation.ComputeNodeId);
-
         NodeFile stdOutFile = await node.GetNodeFileAsync(subtask.ComputeNodeInformation.TaskRootDirectory + "\" + Constants.StandardOutFileName);
         NodeFile stdErrFile = await node.GetNodeFileAsync(subtask.ComputeNodeInformation.TaskRootDirectory + "\" + Constants.StandardErrorFileName);
         stdOut = await stdOutFile.ReadAsStringAsync();
         stdErr = await stdErrFile.ReadAsStringAsync();
-
         Console.WriteLine("node: {0}:", node.Id);
         Console.WriteLine("stdout.txt: {0}", stdOut);
         Console.WriteLine("stderr.txt: {0}", stdErr);
