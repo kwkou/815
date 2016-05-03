@@ -19,7 +19,7 @@ Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物理节点�
 - 远离内容源并使用需要进行多次“互联网旅行”才能加载内容的应用程序的最终用户可获得更好的性能和用户体验
 - 大型分布式规模可更好地处理瞬时高负载（例如在像产品发布这样的活动开始时）
 
-现有 Azure 中国客户现在可使用[Azure 管理门户](https://manage.windowsazure.cn/)中的 Azure CDN。 如需开通HTTPS加速类型，请参考[Microsoft Azure CDN HTTPS 加速服务](https://www.azure.cn/documentation/articles/cdn-https-how-to/)。
+现有 Azure 中国客户现在可使用[Azure 管理门户](https://manage.windowsazure.cn/)中的 Azure CDN。 如需开通HTTPS加速类型，请参考[Azure CDN HTTPS 加速服务](https://www.azure.cn/documentation/articles/cdn-https-how-to/)。
 
 ## 步骤 1:创建存储帐户，云服务， Web 应用或媒体服务<a id="step1"></a>
 您可以为现有的Azure订阅中的存储账户，云服务， Web 应用或媒体服务创建CDN终结点。您也可以按以下过程创建新的存储帐户，云服务或者 Web 应用用于 Azure 订阅。
