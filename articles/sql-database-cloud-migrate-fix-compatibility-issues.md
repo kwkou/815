@@ -10,7 +10,7 @@
 <tags
    ms.service="sql-database"
    ms.date="03/14/2016"
-   wacn.date="03/24/2016"/>
+   wacn.date="05/03/2016"/>
 
 # 在迁移到 SQL 数据库之前，修复 SQL Server 数据库兼容性问题
 
@@ -18,8 +18,8 @@
 
 > [AZURE.SELECTOR]
 - 使用 [SQL Azure 迁移向导](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues)
-- 使用 [SSDT](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-SSDT)
-- 使用 [SSMS](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-SSMS)
+- 使用 [SSDT](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssdt)
+- 使用 [SSMS](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssms)
 
 ## 使用 SQL Azure 迁移向导
 
