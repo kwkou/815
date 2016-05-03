@@ -4,13 +4,13 @@
     wacn.date="5/3/2016"
     />
 
-# Microsoft Azure CDN HTTPS 加速服务
+# Azure CDN HTTPS 加速服务
 
 
 ## 开通流程
 目前CDN HTTPS加速服务仅对Azure付费用户开放。
 
-1. **开通申请** 请联系[Microsoft Azure 技术支持团队](https://www.azure.cn/support/contact/)进行开通申请。需要客户提供需要开通HTTPS加速服务的Azure订阅ID。
+1. **开通申请** 请联系[Azure 技术支持团队](https://www.azure.cn/support/contact/)进行开通申请。需要客户提供需要开通HTTPS加速服务的Azure订阅ID。
 
 
 2. **自助式创建** Azure CDN团队收到开通请求并确认之后，会对用户提供的Azure订阅开通HTTPS加速服务。之后，用户可以自行登陆到Azure管理门户完成自助式的创建操作。请参考自助式创建流程。
@@ -144,7 +144,7 @@ CDN HTTPS加速节点的计费信息，会和其他CDN加速节点一样可以�
 
 
 ### 关于CDN HTTPS的价格
-目前Azure CDN HTTPS加速服务包含在高级版当中，具体的计费方式请参见[Microsoft Azure官方网站](https://www.azure.cn/home/features/cdn/#price)。
+目前Azure CDN HTTPS加速服务包含在高级版当中，具体的计费方式请参见[Azure官方网站](https://www.azure.cn/home/features/cdn/#price)。
 
 
 <!--Image references-->
