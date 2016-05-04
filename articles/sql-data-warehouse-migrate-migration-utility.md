@@ -16,7 +16,7 @@
 #数据仓库迁移实用程序（预览版）
 
 > [AZURE.SELECTOR]
-- [下载迁移实用程序](https://migrhoststorage.blob.core.chinacloudapi.cn/sqldwsample/DataWarehouseMigrationUtility.zip)
+- [下载迁移实用程序](https://migrhoststorage.blob.core.windows.net/sqldwsample/DataWarehouseMigrationUtility.zip)
 
 数据仓库迁移实用程序是专门用于将架构和数据从 SQL Server 与 Azure SQL 数据库迁移到 Azure SQL 数据仓库的工具。在迁移架构期间，该工具会自动将相应架构从源映射到目标。完成迁移架构后，用户还能选择以自动生成的脚本来移动数据。
 
