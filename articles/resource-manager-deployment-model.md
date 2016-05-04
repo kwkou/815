@@ -28,7 +28,7 @@
 - **存储** - 对所需的存储帐户提供支持，存储帐户存储虚拟机的 VHD，包括其操作系统和其附加的数据磁盘。
 - **网络** - 对所需的 NIC、虚拟机 IP 地址和虚拟网络内的子网及可选的网络安全组提供支持。
 
-对于这些资源类型，您必须知道使用的是哪个版本，因为支持的操作会有所不同。有关转换计算、存储和网络资源的详细信息，请参阅 [Azure Resource Manager 中的 Azure 计算、网络和存储提供程序](./virtual-machines/virtual-machines-azurerm-versus-azuresm.md)。
+对于这些资源类型，您必须知道使用的是哪个版本，因为支持的操作会有所不同。有关转换计算、存储和网络资源的详细信息，请参阅 [Azure Resource Manager 中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
 
 ## 资源管理器的特性
 

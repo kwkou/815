@@ -52,7 +52,7 @@
 
 返回一个迭代循环的当前索引。
 
-此函数始终配合 **copy** 对象使用。有关使用 **copyIndex** 的示例，请参阅[在 Azure 资源管理器中创建多个资源实例](resource-group-create-multiple.md)。
+此函数始终配合 **copy** 对象使用。有关使用 **copyIndex** 的示例，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)。
 
 
 <a id="div" /></a>
@@ -566,7 +566,7 @@
 
 **listKeys (resourceName or resourceIdentifier, apiVersion)**
 
-返回存储帐户的密钥。可以使用 [resourceId 函数](./#resourceid)或使用格式 **providerNamespace/resourceType/resourceName** 指定 resourceId。可以使用该函数来获取 primaryKey 和 secondaryKey。
+返回存储帐户的密钥。可以使用 [resourceId 函数](#resourceid)或使用格式 **providerNamespace/resourceType/resourceName** 指定 resourceId。可以使用该函数来获取 primaryKey 和 secondaryKey。
   
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------

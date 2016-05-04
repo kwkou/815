@@ -54,7 +54,7 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 | 服务 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
 | ------- | ------- | -------- | ------ | ------- | ------ |
 | Redis Cache | 是 | | [2014-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Cache.json) | [Microsoft.Cache](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Cache%22&type=Code) |
-| 存储 | 是 | [存储 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt163683.aspx) | [存储帐户](resource-manager-template-storage.md) | [Microsoft.Storage](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Storage%22&type=Code) |
+| 存储 | 是 | [存储 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt163683.aspx) | [存储帐户](/documentation/articles/resource-manager-template-storage) | [Microsoft.Storage](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Storage%22&type=Code) |
 | SQL 数据库 | 是 | [SQL 数据库 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx) | [2014-04-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01-preview/Microsoft.Sql.json) | [Microsoft.Sql](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Sql%22&type=Code) |
 | SQL 数据仓库 | 是 | | |
 
@@ -97,7 +97,7 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 
 ## 标识和访问管理 
 
-Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角色的访问控制。有关使用基于角色的访问控制和 Active Directory 的信息，请参阅 [Azure 基于角色的访问控制](./active-directory/role-based-access-control-configure.md)。
+Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角色的访问控制。
 
 ## 开发人员服务 
 
@@ -110,15 +110,15 @@ Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角
 | 服务 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
 | ------- | ------- | -------- | ------ | ------ |
 | 自动化 | 是 | | | [Microsoft.Automation](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Automation%22&type=Code) |
-| 密钥保管库 | 是 | [密钥保管库 REST](https://msdn.microsoft.com/zh-cn/library/azure/dn903609.aspx) | [密钥保管库](resource-manager-template-keyvault.md)<br />[密钥保管库机密](resource-manager-template-keyvault-secret.md) | [Microsoft.KeyVault](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.KeyVault%22&type=Code) |
+| 密钥保管库 | 是 | [密钥保管库 REST](https://msdn.microsoft.com/zh-cn/library/azure/dn903609.aspx) | [密钥保管库](/documentation/articles/resource-manager-template-keyvault)<br />[密钥保管库机密](/documentation/articles/resource-manager-template-keyvault-secret) | [Microsoft.KeyVault](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.KeyVault%22&type=Code) |
 | 计划程序 | 是 | [计划程序 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt629143.aspx) | [2014-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-08-01/Microsoft.Scheduler.json) | [Microsoft.Scheduler](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Scheduler%22&type=Code) |
 
 ## 资源管理器
 
 | 功能 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
 | ------- | ------- | -------------- | -------- | ------ | ------ |
-| 授权 | 是 | [管理锁](https://msdn.microsoft.com/zh-cn/library/azure/mt204563.aspx)<br >[基于角色的访问控制](https://msdn.microsoft.com/zh-cn/library/azure/dn906885.aspx) | [资源锁](resource-manager-template-lock.md)<br />[角色分配](resource-manager-template-role.md) | [Microsoft.Authorization](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Authorization%22&type=Code) |
-| 资源 | 是 | [链接的资源](https://msdn.microsoft.com/zh-cn/library/azure/mt238499.aspx) | [资源链接](resource-manager-template-links.md) | [Microsoft.Resources](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Resources%22&type=Code) |
+| 授权 | 是 | [管理锁](https://msdn.microsoft.com/zh-cn/library/azure/mt204563.aspx)<br >[基于角色的访问控制](https://msdn.microsoft.com/zh-cn/library/azure/dn906885.aspx) | [资源锁](/documentation/articles/resource-manager-template-lock)<br />[角色分配](/documentation/articles/resource-manager-template-role) | [Microsoft.Authorization](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Authorization%22&type=Code) |
+| 资源 | 是 | [链接的资源](https://msdn.microsoft.com/zh-cn/library/azure/mt238499.aspx) | [资源链接](/documentation/articles/resource-manager-template-links) | [Microsoft.Resources](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Resources%22&type=Code) |
 
 
 ## 资源提供程序和类型
@@ -184,12 +184,6 @@ Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角
 
     azure provider register -n Microsoft.ServiceBus
 
-## 支持的区域
-
-部署资源时，通常需要指定资源的区域。所有区域都支持资源管理器，但部署的资源可能无法在所有区域中受到支持。此外，订阅上可能有一些限制，以防止使用某些支持该资源的区域。这些限制可能与所在国家/地区的税务问题有关，或者与由订阅管理员所放置，只能使用特定区域的策略结果有关。
-
-有关所有 Azure 服务支持的所有区域的完整列表，请参阅[按区域列出的服务](https://azure.microsoft.com/regions/#services)；但是，此列表可能包含你的订阅不支持的区域。可以通过运行以下命令之一，来确定你的订阅支持的特定资源类型所在的区域。
-
 ### REST API
 
 若要发现哪些区域可供订阅中的特定资源类型使用，请使用[列出所有资源提供程序](https://msdn.microsoft.com/zh-cn/library/azure/dn790524.aspx)操作。
@@ -211,7 +205,7 @@ Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角
 
     azure location list
 
-你也可以使用 **jq** 之类的工具来筛选位置结果。若要了解有关 jq 等工具的信息，请参阅[与 Azure 交互的有用工具](/virtual-machines/resource-group-deploy-debug/#useful-tools-to-interact-with-azure)。
+你也可以使用 **jq** 之类的工具来筛选位置结果。若要了解有关 jq 等工具的信息，请参阅[与 Azure 交互的有用工具](/documentation/articles/resource-group-deploy-debug/#useful-tools-to-interact-with-azure)。
 
     azure location list --json | jq '.[] | select(.name == "Microsoft.Web/sites")'
 

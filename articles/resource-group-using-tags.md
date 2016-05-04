@@ -78,24 +78,6 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
     }
 
 
-## 门户中的标记
-
-可以通过门户向现有资源和资源组添加标记。使用“浏览”中心导航到要标记的资源或资源组，然后在边栏选项卡顶部的“概览”部分中单击“标记”部件。
-
-![资源和资源组边栏选项卡上的“标记”部件](./media/resource-group-using-tags/tag-icon.png)
-
-此时将打开一个边栏选项卡，其中包含已应用的标记列表。如果这是你的第一个标记，该列表将为空。若要添加标记，只需指定名称和值，然后按 Enter。添加若干个标记后，系统会根据预先存在的标记名称和值提供自动填充选项，以更好地确保各项资源的分类保持一致，并避免常见错误，如拼写错误。
-
-![使用名称/值对标记资源](./media/resource-group-using-tags/tag-resources.png)
-
-若要在门户中查看标记的分类，请使用“浏览”中心查看“所有内容”，然后选择“标记”。
-
-![通过“浏览”中心查找标记](./media/resource-group-using-tags/browse-tags.png)
-
-将最重要的标记固定启动板以便快速访问，准备工作到此完成。尽情使用吧！
-
-![将标记固定到启动板](./media/resource-group-using-tags/pin-tags.png)
-
 ## 标记和 PowerShell
 
 标记直接存在于资源和资源组中，因此，若要查看已应用了哪些标记，只需使用 **Get-AzureRmResource** 或 **Get-AzureRmResourceGroup** 获取资源或资源组。让我们从一个资源组着手。
@@ -249,7 +231,7 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
 
 ## 标记和计费
 
-对于受支持的服务，您可以使用标记对计费数据进行分组。例如，[与 Azure Resource Manager 集成的虚拟机](/documentation/articles/virtual-machines-azurerm-versus-azuresm)可让你定义并应用标签来组织虚拟机的计费使用情况。如果您针对不同组织运行多个虚拟机，可以使用标记根据成本中心对使用情况进行分组。您还可以使用标记根据运行时环境对成本进行分类；例如，在生产环境中运行的虚拟机的计费使用情况。
+对于受支持的服务，您可以使用标记对计费数据进行分组。如果您针对不同组织运行多个虚拟机，可以使用标记根据成本中心对使用情况进行分组。您还可以使用标记根据运行时环境对成本进行分类；例如，在生产环境中运行的虚拟机的计费使用情况。
 
 你可以通过  [Azure 帐户门户](https://account.windowsazure.cn/)或 [EA 门户](https://ea.azure.com)下载的使用情况逗号分隔值 (CSV) 文件来检索有关标记的信息。有关 REST API 操作，请参阅 [Azure 计费 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c)。
 
