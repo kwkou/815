@@ -73,7 +73,7 @@ CentOS Linux 分发是从 Red Hat Enterprise Linux (RHEL) 的源代码派生的�
 
 CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定义控制的纯计算规模。
 
-11. [何：在 Azure 上使用 CoreOS](/documentation/articles/virtual-machines-linux-coreos-how-to)
+11. [如何：在 Azure 上使用 CoreOS](/documentation/articles/virtual-machines-linux-coreos-how-to)
 12. [如何：开始在 Azure 上的 CoreOS 上使用 Fleet 和 Docker](/documentation/articles/virtual-machines-linux-coreos-fleet-get-started)
 
 
