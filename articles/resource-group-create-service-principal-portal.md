@@ -132,35 +132,7 @@
 
 ![多租户](./media/resource-group-create-service-principal-portal/multi-tenant.png)
 
-## 将应用程序分配到角色
 
-你必须确定要将应用程序添加到哪个角色以及作用域。若要了解有关可用角色的信息，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles)。可将作用域设置为订阅、资源组或资源级别。作用域的较低级别将继承权限（例如，将某个应用程序添加到资源组的“读取者”角色意味着该应用程序可以读取该资源组及其包含的所有资源）。
-
-1. 在门户中，导航到你要将应用程序分配到的作用域级别。对于本主题，你可以导航到资源组，然后从资源组边栏选项卡中选择“访问”图标。
-
-     ![选择用户](./media/resource-group-create-service-principal-portal/select-users.png)
-
-2. 选择“添加”。
-
-     ![选择添加](./media/resource-group-create-service-principal-portal/select-add.png)
-
-3. 选择“读取者”角色（或你要将应用程序分配到的任何角色）。
-
-     ![选择角色](./media/resource-group-create-service-principal-portal/select-role.png)
-
-4. 当你首次看到可添加到角色的用户列表时，将看不到应用程序，而只会看到组和用户。
-
-     ![显示用户](./media/resource-group-create-service-principal-portal/show-users.png)
-
-5. 若要查找你的应用程序，必须搜索它。开始键入应用程序的名称，随后可用选项的列表会发生变化。在列表中看到你的应用程序后，请选择它。
-
-     ![分配到角色](./media/resource-group-create-service-principal-portal/assign-to-role.png)
-
-6. 选择“确定”完成角色分配。现在，已分配到资源组角色的用户列表中应会出现你的应用程序。
-
-     ![显示](./media/resource-group-create-service-principal-portal/show-app.png)
-
-有关通过门户将用户和应用程序分配到角色的详细信息，请参阅[使用 Azure 管理门户管理访问权限](../role-based-access-control-configure/#manage-access-using-the-azure-management-portal)。
 
 ## 在代码中获取访问令牌
 
@@ -211,8 +183,7 @@
 
 
 ## 后续步骤
-
-- 若要了解如何指定安全策略，请参阅 [Azure 基于角色的访问控制](/documentation/articles/active-directory/role-based-access-control-configure)。  
+  
 - 有关这些步骤的演示视频，请参阅[使用 Azure Active Directory 启用 Azure 资源的编程管理](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/Enabling-Programmatic-Management-of-an-Azure-Resource-with-Azure-Active-Directory)。
 - 若要了解如何使用 Azure PowerShell 或 Azure CLI 来处理 Active Directory 应用程序和服务主体，包括如何使用证书进行身份验证，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)。
 - 有关在 Azure 资源管理器中实现安全性的指南，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)。
