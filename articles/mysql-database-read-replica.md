@@ -85,9 +85,9 @@ MySQL Database on Azure支持用户用复制功能为MySQL实例创建从属实�
 
 下面是应用端读写分离的PHP样例程序:
 
-* 读写分离可以通过PHP MySQL原生驱动配合主从实例插件(PECL/mysqlnd_ms)来达到。这个插件在已配置好的从属实例上执行只读语句，其他所有的查询都执行在MySQL主实例上。具体内容可参考[这里](http://php.net/manual/zh/mysqlnd-ms.rwsplit.php)
-* 用户定义的读写分离器可以请求内置的逻辑语句发送到特定位置，通过调用 mysqlnd_ms_is_select()。
-* 安装 PECL/mysqlnd_ms 请参考[这里](http://php.net/manual/zh/mysqlnd-ms.quickstart.configuration.php)
+* 读写分离可以通过PHP MySQL原生驱动配合主从实例插件(PECL/mysqlnd_ms)来实现。这个插件在已配置好的从属实例上执行只读语句，其他所有的查询都执行在MySQL主实例上。具体内容可参考<a href="http://php.net/manual/zh/mysqlnd-ms.rwsplit.php" target="_blank">这里</a>。
+* 用户定义的读写分离器可以请求内置的逻辑语句发送到特定位置，通过调用 mysqlnd\_ms\_is\_select()。
+* 安装 PECL/mysqlnd_ms 请参考<a href="http://php.net/manual/zh/mysqlnd-ms.quickstart.configuration.php" target="_blank">这里</a>。
 * 创建 PECL/mysqlnd_ms 插件配置文件如下所示:
 	
 		File mysqlnd_ms_plugin.ini:
