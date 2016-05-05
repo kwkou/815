@@ -43,7 +43,7 @@
             return blob.Uri + sasBlobToken;
         }
 
-    此方法将创建新的 Blob 引用，并生成[创建和使用包含 Blob 存储的 SAS](https://azure.microsoft.com/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-2/) 中所述的共享访问签名 URI。请注意，上述方法将生成一个有效期为 24 小时的签名 URI。如果目标设备需要更多时间来上载文件（例如，它不经常连接，或者上载大文件时的连接不稳定），则你可以考虑对签名使用更长的过期时间。
+    此方法将创建新的 Blob 引用，并生成[创建和使用包含 Blob 存储的 SAS](/documentation/articles/storage-dotnet-shared-access-signature-part-2/) 中所述的共享访问签名 URI。请注意，上述方法将生成一个有效期为 24 小时的签名 URI。如果目标设备需要更多时间来上载文件（例如，它不经常连接，或者上载大文件时的连接不稳定），则你可以考虑对签名使用更长的过期时间。
 
 5. 按如下方式修改 **SendCloudToDeviceMessageAsync**：
 
@@ -61,7 +61,7 @@
 
 <!-- Links -->
 
-[关于 Azure 存储空间]: https://azure.microsoft.com/zh-cn/documentation/articles/storage-create-storage-account/#create-a-storage-account
+[关于 Azure 存储空间]: /documentation/articles/storage-create-storage-account/#create-a-storage-account
 
 [IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide/#c2d
 [Azure IoT - Service SDK NuGet package]: https://www.nuget.org/packages/Microsoft.Azure.Devices/

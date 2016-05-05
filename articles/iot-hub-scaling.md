@@ -1,5 +1,5 @@
 <properties
- pageTitle="Azure IoT 中心缩放 | Microsoft Azure"
+ pageTitle="Azure IoT 中心缩放 | Azure"
  description="介绍如何缩放 Azure IoT 中心。"
  services="iot-hub"
  documentationCenter=""
@@ -54,7 +54,7 @@ Azure IoT 中心可支持多达一百万台设备同时连接。有关详细信�
 - [IoT 中心入门（教程）][lnk-get-started]
 - [Azure IoT 中心是什么？][]
 
-[lnk-pricing]: /pricing/details/iot-hub
+[lnk-pricing]: /home/features/iot-hub/#price
 [IoT 中心配额和限制]: /documentation/articles/iot-hub-devguide/#throttling
 
 [lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted

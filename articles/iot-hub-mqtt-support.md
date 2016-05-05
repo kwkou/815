@@ -1,5 +1,5 @@
 <properties
- pageTitle="IoT 中心 MQTT 支持 | Microsoft Azure"
+ pageTitle="IoT 中心 MQTT 支持 | Azure"
  description="介绍 IoT 中心级别的 MQTT 支持"
  services="iot-hub"
  documentationCenter=".net"

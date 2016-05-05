@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure IoT 协议网关 | Microsoft Azure"
+   pageTitle="Azure IoT 协议网关 | Azure"
    description="介绍如何使用 Azure IoT 协议网关来扩展 Azure IoT 中心的功能和协议支持。"
    services="iot-hub"
    documentationCenter=""

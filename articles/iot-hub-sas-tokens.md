@@ -1,5 +1,5 @@
 <properties
- pageTitle="如何生成 IoT 中心安全令牌 | Microsoft Azure"
+ pageTitle="如何生成 IoT 中心安全令牌 | Azure"
  description="说明 IoT 中心使用的不同类型的安全令牌和如何生成这些令牌。"
  services="iot-hub"
  documentationCenter=".net"

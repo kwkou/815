@@ -16,7 +16,7 @@
 
 ## 介绍
 
-Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备和一个应用程序后端之间实现安全可靠的双向通信。以前的教程（[IoT 中心入门]和[使用 IoT 中心发送云到设备的消息]）演示了 IoT 中心的设备到云和云到设备的基本消息传送功能，以及如何从设备和云组件访问这些消息。[处理设备到云的消息]介绍了在 Azure Blob 存储中可靠存储设备到云消息的方法。然而，在某些情况下，来自设备的数据无法轻松映射到相对较小的设备到云消息。包含图片、视频、高频震动数据样本，或者包含某种形式的预处理数据的大型文件就是这种数据的一些例子。这些文件通常使用工具（例如 [Azure 数据工厂]或 [Hadoop] 堆栈）进行批处理。如果你偏好通过从设备上载文件来发送事件，仍可以使用 IoT 中心的安全性与可靠性功能。
+Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备和一个应用程序后端之间实现安全可靠的双向通信。以前的教程（[IoT 中心入门]和[使用 IoT 中心发送云到设备的消息]）演示了 IoT 中心的设备到云和云到设备的基本消息传送功能，以及如何从设备和云组件访问这些消息。[处理设备到云的消息]介绍了在 Azure Blob 存储中可靠存储设备到云消息的方法。然而，在某些情况下，来自设备的数据无法轻松映射到相对较小的设备到云消息。包含图片、视频、高频震动数据样本，或者包含某种形式的预处理数据的大型文件就是这种数据的一些例子。这些文件通常使用工具（例如[Hadoop] 堆栈）进行批处理。如果你偏好通过从设备上载文件来发送事件，仍可以使用 IoT 中心的安全性与可靠性功能。
 
 本教程在[使用 IoT 中心发送云到设备的消息]中所述代码的基础上制作，说明如何使用云到设备消息来安全地向设备提供 Azure Blob URI 用于上载文件，以及如何使用 IoT 中心传送确认来触发来自应用后端的文件的处理。此方法的优点是重复使用 IoT 中心设备标识以及云到设备消息的传送确认，使应用后端知道文件已经成功上载。
 
@@ -35,7 +35,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 + Microsoft Visual Studio 2015。
 
-+ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
++ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 
 
 [AZURE.INCLUDE [iot-hub-file-upload-cloud-csharp](../includes/iot-hub-file-upload-cloud-csharp.md)]
@@ -65,7 +65,6 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 * [IoT 中心概述]
 * [IoT 中心开发人员指南]
 * [IoT 中心指南]
-* [支持的设备平台和语言][Supported devices]
 * [Azure IoT 开发人员中心]
 
 <!-- Images. -->
@@ -78,7 +77,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 [Azure 门户]: https://manage.windowsazure.cn
 
-[Azure 数据工厂]: /documentation/services/data-factory/
+
 [Hadoop]: /documentation/services/hdinsight/
 
 [Get started with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-getstarted

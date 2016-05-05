@@ -33,7 +33,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 + Microsoft Visual Studio 2015。
 
-+ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial)。
++ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial)。
 
 [AZURE.INCLUDE [iot-hub-c2d-device-csharp](../includes/iot-hub-c2d-device-csharp.md)]
 
@@ -52,7 +52,6 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 * [IoT 中心概述]
 * [IoT 中心开发人员指南]
 * [IoT 中心指南]
-* [支持的设备平台和语言][Supported devices]
 * [Azure IoT 开发人员中心]
 
 <!-- Images. -->

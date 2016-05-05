@@ -156,7 +156,7 @@ Map_AddOrUpdate(propMap, "SequenceNumber", propText);
 
 首先先调用 **IoTHubMessage\_Properties**，然后将消息的句柄传递给它。返回的结果是 **MAP\_HANDLE** 引用，它可让我们开始添加属性。后一项操作通过调用 **Map\_AddOrUpdate**（使用对 MAP\_HANDLE、属性名称和属性值的引用）来实现。使用此 API 可需要任意数目的属性。
 
-从**事件中心**读取事件时，接收方可以枚举属性并检索其对应值。例如，在 .NET 中，这可以通过访问 [EventData 对象中的属性集合](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.properties.aspx)来实现。
+从**事件中心**读取事件时，接收方可以枚举属性并检索其对应值。例如，在 .NET 中，这可以通过访问 [EventData 对象中的属性集合](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventdata.properties.aspx)来实现。
 
 在上述示例中，我们已将属性附加到发送给 IoT 中心的事件。属性也可以附加到从 IoT 中心接收的消息。如果想要从消息检索属性，可以在消息回调函数中使用如下所示的代码：
 

@@ -70,7 +70,7 @@
 
 <!-- Links -->
 [IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide/#c2d
-[Azure 存储空间 - 如何使用 Blob]: https://azure.microsoft.com/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/#upload-a-blob-into-a-container
+[Azure 存储空间 - 如何使用 Blob]: /documentation/articles/storage-dotnet-how-to-use-blobs/#upload-a-blob-into-a-container
 
 <!-- Images -->
 

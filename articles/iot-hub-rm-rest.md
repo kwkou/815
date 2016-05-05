@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 REST API 创建 IoT 中心 | Microsoft Azure"
+	pageTitle="使用 REST API 创建 IoT 中心 | Azure"
 	description="遵照本教程开始使用 REST API 创建 IoT 中心。"
 	services="iot-hub"
 	documentationCenter=".net"
@@ -20,12 +20,12 @@
 
 你可以通过编程方式使用 [IoT 中心资源提供程序 REST API][lnk-rest-api] 创建和管理 Azure IoT 中心。本教程说明如何使用资源提供程序 REST API 从 C# 程序创建 IoT 中心。
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](../resource-manager-deployment-model.md)。本文介绍如何使用资源管理器部署模型。
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用资源管理器部署模型。
 
 为了完成本教程，你需要有：
 
 - Microsoft Visual Studio 2015。
-- 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用][lnk-free-trial]。
+- 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][lnk-free-trial]。
 - [Microsoft Azure PowerShell 1.0][lnk-powershell-install] 或更高版本。
 
 [AZURE.INCLUDE [iot-hub-prepare-resource-manager](../includes/iot-hub-prepare-resource-manager.md)]

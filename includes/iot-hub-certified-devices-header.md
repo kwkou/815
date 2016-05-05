@@ -11,7 +11,7 @@
 - [（其他 | C）](/documentation/articles/iot-hub-certified-devices-other-c)
 - [（其他 | Javascript）](/documentation/articles/iot-hub-certified-devices-other-javascript)
 
-Microsoft Azure IoT 认证是一种合作伙伴计划，该计划将更广泛的 IoT 生态系统与 Microsoft Azure 相连接，以便开发人员和架构师了解兼容性方案。具体而言，它提供 OS/设备组合的受信任列表来帮助快速开始 IoT 项目 — 无论你是处于概念证明还是试验阶段。借助认证的设备和操作系统组合，IoT 项目可以快速开始，只需较少的工作和自定义便可确保设备与 [Azure IoT 套件][lnk-iot-suite] 和 Azure IoT 中心兼容。
+Azure IoT 认证是一种合作伙伴计划，该计划将更广泛的 IoT 生态系统与 Microsoft Azure 相连接，以便开发人员和架构师了解兼容性方案。具体而言，它提供 OS/设备组合的受信任列表来帮助快速开始 IoT 项目 — 无论你是处于概念证明还是试验阶段。借助认证的设备和操作系统组合，IoT 项目可以快速开始，只需较少的工作和自定义便可确保设备与 Azure IoT 中心兼容。
 
 有关 Azure IoT SDK 与各种 OS 平台的兼容性的一般信息，请参阅 [OS 平台与设备 SDK 的兼容性][lnk-os-compatibility]。
 
