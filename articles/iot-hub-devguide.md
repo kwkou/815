@@ -1,5 +1,5 @@
 <properties
- pageTitle="IoT 中心开发人员指南主题 | Microsoft Azure"
+ pageTitle="IoT 中心开发人员指南主题 | Azure"
  description="Azure IoT 中心开发人员指南，其中介绍了 IoT 中心终结点、安全性、设备标识注册表和消息传送"
  services="iot-hub"
  documentationCenter=".net"
@@ -53,35 +53,6 @@ Azure IoT 中心属于多租户服务，向各种执行组件公开功能。下�
 
 最后请务必注意，所有的 IoT 中心终结点都使用 [TLS][lnk-tls] 协议，且绝不会在未加密/不安全的通道上公开任何终结点。
 
-<!--
-### 如何从事件中心兼容的终结点读取信息<a id="eventhubcompatible"></a>
-
-当你使用[适用于 .NET 的 Azure 服务总线 SDK](https://www.nuget.org/packages/WindowsAzure.ServiceBus) 或[事件中心 - 事件处理器主机][]时，可以将任何 IoT 中心连接字符串与正确的权限配合使用，然后使用**消息/事件**作为事件中心名称。
-
-使用无法识别 IoT 中心的 SDK（或产品集成）时，必须从 [Azure 门户][]的 IoT 中心配置中检索事件中心兼容终结点和事件中心名称：
-
-1. 在 IoT 中心边栏选项卡中单击“设置”，然后单击“消息”。
-2. 在“设备到云的设置”部分中，你可以看到“事件中心兼容的终结点”、“事件中心兼容的名称”和“分区”值。
-
-    ![][img-eventhubcompatible]
-
-> [AZURE.NOTE] SDK 有时需要“主机名”或“命名空间”值。在此情况下，请从“事件中心兼容的终结点”中删除方案。例如，如果事件中心兼容的终结点为 **sb://iothub-ns-myiothub-1234.servicebus.windows.net/**，则**主机名**为 **iothub-ns-myiothub-1234.servicebus.windows.net**，**命名空间** 为 **iothub-ns-myiothub-1234**。
-
-然后，可以使用具有 **ServiceConnect** 权限的任何共享访问安全策略连接到指定的事件中心。
-
-如果需要构建使用以前信息的事件中心连接字符串，请使用以下模式：
-
-```
-Endpoint={Event Hub-compatible endpoint};SharedAccessKeyName={iot hub policy name};SharedAccessKey={iot hub policy key}
-```
-
-以下是可以配合 IoT 中心公开的事件中心兼容终结点使用的 SDK 和集成项目列表：
-
-* [Java 事件中心客户端](https://github.com/hdinsight/eventhubs-client)
-* [Apache Storm Spout](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology)。可以在 GitHub 上查看 [Spout 源代码](https://github.com/apache/storm/tree/master/external/storm-eventhubs)。
-* [Apache Spark 集成](/documentation/articles/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming)
-
--->
 
 ## 设备标识注册表
 
@@ -184,11 +155,11 @@ IoT 解决方案通常具有不同的解决方案特定存储，其中包含应�
 
 **示例**：
 
-```
-{"id":"devA","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}}
-{"id":"devB","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}}
-{"id":"devC","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}}
-```
+    
+    {"id":"devA","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}}
+    {"id":"devB","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}}
+    {"id":"devC","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}}
+
 
 ### 导入设备标识
 
@@ -240,11 +211,11 @@ IoT 解决方案通常具有不同的解决方案特定存储，其中包含应�
 
 **示例**：
 
-```
-{"id":"devA","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}, "importMode":"delete"}
-{"id":"devB","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}, "importMode":"createOrUpdate"}
-{"id":"devC","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}, "importMode":"create"}
-```
+
+    {"id":"devA","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}, "importMode":"delete"}
+    {"id":"devB","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}, "importMode":"createOrUpdate"}
+    {"id":"devC","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}, "importMode":"create"}
+
 
 ## 安全性 <a id="security"></a>
 
@@ -522,22 +493,22 @@ IoT 中心公开以下属性让你控制设备到云的消息传送。
 
 **示例**。这是反馈消息的正文示例。
 
-```
-[
-  {
-    "OriginalMessageId": "0987654321",
-    "EnqueuedTimeUtc": "2015-07-28T16:24:48.789Z",
-    "StatusCode": 0
-    "Description": "Success",
-    "DeviceId": "123",
-    "DeviceGenerationId": "abcdefghijklmnopqrstuvwxyz"
-  },
-  {
-    ...
-  },
-  ...
-]
-```
+
+    [
+      {
+        "OriginalMessageId": "0987654321",
+        "EnqueuedTimeUtc": "2015-07-28T16:24:48.789Z",
+        "StatusCode": 0
+        "Description": "Success",
+        "DeviceId": "123",
+        "DeviceGenerationId": "abcdefghijklmnopqrstuvwxyz"
+      },
+      {
+        ...
+      },
+      ...
+    ]
+
 
 #### 云到设备的配置选项 <a id="c2dconfiguration"></a>
 
