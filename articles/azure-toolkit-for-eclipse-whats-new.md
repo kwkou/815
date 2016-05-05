@@ -26,7 +26,7 @@
 Azure Toolkit for Eclipse - 2016 年 1 月版包含以下增强功能：
 
 * **支持 Zulu OpenJDK 更新**。有关详细信息，请参阅 [Zulu OpenJDK 的 Azul Systems 网页]。
-* **更新了 Tomcat 和 Jetty 分发版**。已更新 Microsoft Azure 上提供的、可配合 Azure Toolkit for Eclipse 使用的 Jetty 和 Tomcat 分发版。
+* **更新了 Tomcat 和 Jetty 分发版**。已更新  Azure 上提供的、可配合 Azure Toolkit for Eclipse 使用的 Jetty 和 Tomcat 分发版。
 * **Azure 的 Eclipse 工具包和 IntelliJ 工具包之间的功能对等性**。Azure Toolkit for Eclipse 和 [Azure Toolkit for IntelliJ] 现在支持相同的功能集。
 
 ### 2015 年 9 月 1 日
@@ -34,7 +34,7 @@ Azure Toolkit for Eclipse - 2016 年 1 月版包含以下增强功能：
 Azure Toolkit for Eclipse – 2015 年 9 月版包含以下增强功能：
 
 * **支持 Zulu OpenJDK 更新**。有关详细信息，请参阅 [Zulu OpenJDK 的 Azul Systems 网页]。
-* **更新了 Tomcat 和 Jetty 分发版**。已更新 Microsoft Azure 上提供的、可配合 Azure Toolkit for Eclipse 使用的 Jetty 和 Tomcat 分发版。（这些分发版可让开发人员使用 Azure Toolkit for Eclipse 创建快速开发与测试项目）。
+* **更新了 Tomcat 和 Jetty 分发版**。已更新  Azure 上提供的、可配合 Azure Toolkit for Eclipse 使用的 Jetty 和 Tomcat 分发版。（这些分发版可让开发人员使用 Azure Toolkit for Eclipse 创建快速开发与测试项目）。
 * **支持自动更新的 Tomcat 和 Jetty 引用**。除了 Azure 上所提供的 Tomcat 和 Jetty 特定版本以外，开发人员现在还可以引用名为“最新(自动更新)”的分发版，这个分发版将在下一次回收角色实例时自动更新为每个 Jetty 或 Tomcat 主要版本的最新分发版。（回收将自动发生，但开发人员也可以通过 Azure 门户手动触发回收）。 此新功能意味着开发人员不需要重新部署应用程序就能更新其服务器软件。（
 *  此功能目前仅适用于开发和测试目的或非任务关键型应用程序，不建议在生产环境中使用。）
 * **适用于 Azure 存储空间中 Blob、队列和表的 Azure 资源管理器视图**。可让开发人员直接从 Eclipse IDE 中对其存储项目执行一组常见的任务。例如：删除、上载或下载 Blob。
@@ -94,7 +94,7 @@ Azure Toolkit for Eclipse - 2014 年 10 月版包含以下增强功能：
 * **“发布到云”方案性能改进**。当用户有多个订阅和存储帐户时，可以更快地加载订阅信息。
 * **支持更新版本的 Zulu OpenJDK v1.8 包**。有关详细信息，请参阅 [Zulu OpenJDK 的 Azul Systems 网页]。
 * **支持即将弃用的旧版第三方 JDK**。已弃用的 JDK 包将不再显示在新部署项目的下拉菜单中。引用已弃用 JDK 包的现有项目暂时仍可继续引用，但建议升级此类项目以依赖最新的包。
-* **更新了 Package for Azure Libraries for Java 客户端 API 库版本**。有关详细信息，请参阅 [Microsoft Azure 客户端 API]。
+* **更新了 Package for Azure Libraries for Java 客户端 API 库版本**。有关详细信息，请参阅   Azure 客户端 API]。
 * **Bug 修复。** 此版本根据用户汇报和测试包含了其他大量 Bug 修复程序。
 
 ### 2014 年 8 月 5 日
@@ -103,9 +103,9 @@ Azure Toolkit for Eclipse - 2014 年 8 月版包含以下增强功能：
 
 * **支持 Azure SDK 2.4。** 旧版 Eclipse 工具包将不适用于此新发布的 SDK。
 * **更新了 Zulu OpenJDK v1.6、v1.7 和 v1.8 包的版本。** 有关详细信息，请参阅 [Zulu OpenJDK 的 Azul Systems 网页]。
-* **更新了 Package for Azure Libraries for Java 客户端 API 库版本。** 有关详细信息，请参阅 [Microsoft Azure 客户端 API]。
+* **更新了 Package for Azure Libraries for Java 客户端 API 库版本。** 有关详细信息，请参阅 [Azure 客户端 API]。
 * **支持最新的发布设置文件格式。** 添加了对 2.0 版发布设置文件格式的支持。
-* **“发布到云”功能幕后的体系结构更改。** 现在，该工具包使用新发布的适用于 Java 的 Microsoft Azure 客户端 API 来提供发布到云支持。
+* **“发布到云”功能幕后的体系结构更改。** 现在，该工具包使用新发布的适用于 Java 的 Azure 客户端 API 来提供发布到云支持。
 * **Bug 修复。** 此版本包含用户请求的大量 Bug 修复程序。
 
 ### 2014 年 6 月 12 日
@@ -114,7 +114,7 @@ Azure Toolkit for Eclipse - 2014 年 6 月版是一项次要服务更新，它�
 
 * **支持 Zulu OpenJDK 包 v1.8。** 有关详细信息，请参阅 [Zulu OpenJDK 的 Azul Systems 网页]。
 * **更新了 Zulu OpenJDK v1.6 和 v1.7 包的版本。** 有关详细信息，请参阅 [Zulu OpenJDK 的 Azul Systems 网页]。
-* **更新了 Package for Azure Libraries for Java 客户端 API 库版本。** 有关详细信息，请参阅 [Microsoft Azure 客户端 API]。
+* **更新了 Package for Azure Libraries for Java 客户端 API 库版本。** 有关详细信息，请参阅 [Azure 客户端 API]。
 * **Bug 修复。** 此版本包含用户请求的大量 Bug 修复程序。
 
 ### 2014 年 4 月 4 日
@@ -125,10 +125,10 @@ Azure Plugin for Eclipse - 2014 年 4 月版已发布。这是 Azure SDK 2.3 版
 * **无需部署整个包即可升级应用程序。** 在部署项目中包含的 Java 应用程序时，该插件现在会自动将这些应用程序上载到所选的存储帐户，因此，无需重新生成并重新部署整个包，就可以更新项目并回收角色实例，以部署最新的应用程序。
 * **Tomcat 8 现在是已获认可的应用程序服务器。** 如果你在“Azure 部署项目”对话框的“服务器”选项卡中选择计算机上的 Tomcat 8 安装目录，插件将自动检测该目录，并以自动方式部署 Tomcat 8，就像部署列表中已有的旧版 Tomcat 一样。
 * **Azul Zulu OpenJDK 包更新：v1.7 更新版 51 和 v1.6 更新版 47。** 从此版本开始提供了 Azul System Zulu Open JDK v7 包更新版 51。此外，从更新版 47 开始，Zulu Open JDK v6 包开始可用。这些更新是对以前提供的 Zulu Open JDK v7 包更新版 45、更新版 40 和更新版 25 的补充。
-* **支持 A8 和 A9 Microsoft Azure 虚拟机大小。** 现在，你可以将云服务部署到高内存 A8 和 A9 大小的虚拟机。有关 VM 大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小]。
+* **支持 A8 和 A9 Azure 虚拟机大小。** 现在，你可以将云服务部署到高内存 A8 和 A9 大小的虚拟机。有关 VM 大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小]。
 * **对于已启用 SSL 的角色自动从 HTTP 重定向到 HTTPS。** 当你的云服务只包含 HTTPS 角色时，如果用户请求指定了 HTTP，会自动重定向到 HTTPS。你不需要创建单独的角色来处理 HTTP 请求。
 * **用于本地模拟的 Express Emulator。** Azure Express Emulator 现将用作本地调试应用程序时的模拟器。
-* **Azure 的产品名称已更改为 Microsoft Azure。** UI 屏幕现在会反映 Azure 产品名称的变化，而不再称为 Azure。
+* **Azure 的产品名称已更改为 Azure。** UI 屏幕现在会反映 Azure 产品名称的变化，而不再称为 Azure。
 
 ### 2014 年 2 月 6 日
 
@@ -156,14 +156,14 @@ Azure Plugin for Eclipse - 2013 年 10 月预览版已发布。此更新包括�
 * **自动覆盖以前的部署。** “发布到 Azure”对话框包含一个新的复选框“覆盖以前的部署”。如果选中此选项，则在发布新部署时，会自动覆盖以前的部署；在未事先取消发布以前的部署的情况下发布到相同位置不会出现“409 冲突”问题。
 * **Jetty 9 现在是已获认可的应用程序服务器。** 如果你在“Azure 部署项目”对话框的“服务器”选项卡中选择计算机上的 Jetty 9 安装目录，插件将自动检测该目录，并以自动方式部署 Jetty 9，就像部署列表中已有的旧版 Jetty 一样。
 * **从“项目”上下文菜单添加角色。** **Azure** 项目上下文菜单现在包含一个新的菜单项“添加角色”，它提供了更快、更直观的方式让你向 Azure 项目添加新角色。
-* **对 Package for Azure Libraries for Java 库的更新。** 此项更新基于 [Microsoft Azure 客户端 API] 版本 0.4.6。
+* **对 Package for Azure Libraries for Java 库的更新。** 此项更新基于 [Azure 客户端 API] 版本 0.4.6。
 
 ### 2013 年 9 月 25 日
 
 Azure Plugin for Eclipse - 2013 年 9 月预览版已发布。此更新包括自 2013 年 8 月预览版发布以来所推出的新功能、Bug 修复程序和一些反馈驱动的可用性增强功能：
 
 * **允许在 Azure 上部署可用的 Azul Zulu OpenJDK 包。** 添加了一个新选项，供你在指定用于 Azure 部署的 JDK 时使用。使用此选项可以直接在 Azure 云上部署第三方 JDK 包，而无需上载自己的包。Azul Systems 即将提供基于 OpenJDK 的、名为 Zulu 的第一个此类包，现在，你可以使用此选项来部署该包。
-* **对 Package for Azure Libraries for Java 库的更新。** 此项更新基于 [Microsoft Azure 客户端 API] 版本 0.4.5。
+* **对 Package for Azure Libraries for Java 库的更新。** 此项更新基于 [Azure 客户端 API] 版本 0.4.5。
 
 ### 2013 年 8 月 1 日
 
@@ -182,7 +182,7 @@ Azure Plugin for Eclipse - 2013 年 7 月预览版已发布。此更新包括自
 * **允许设置 Azure 服务终结点。** 指定服务终结点，以确定你的应用程序是在全球 Azure 平台管理、中国 21Vianet 运营的 Azure 还是私有 Azure 平台中部署和管理。有关详细信息，请参阅 [Azure 服务终结点]。
 * **大型部署可以指定本地存储资源。** 如果你的部署太大，从而无法包含在默认 approot 文件夹中，则你可以指定本地存储资源作为 JDK 和应用程序服务器的部署目标。有关详细信息，请参阅[实施大型部署]。
 * **支持 A6 和 A7 Azure 虚拟机大小。** 现在，你可以将云服务部署到高内存 A6 和 A7 大小的虚拟机。有关这些大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小]。
-* **对 Package for Azure Libraries for Java 库的更新。** 此项更新基于 [Microsoft Azure 客户端 API] 版本 0.4.4。
+* **对 Package for Azure Libraries for Java 库的更新。** 此项更新基于 [Azure 客户端 API] 版本 0.4.4。
 
 ### 2013 年 5 月 1 日
 
@@ -191,7 +191,7 @@ Azure Plugin for Eclipse - 2013 年 5 月预览版已发布。这是 Azure SDK 2
 * **将 JDK 和应用程序服务器自动上载到 Azure 存储空间以及从中进行部署。** 你可以根据需要，使用一个新选项自动将选定的 JDK 和应用程序服务器上载到指定的 Azure 存储帐户以及从中部署这些组件，而无需在部署包中嵌入这些组件，或者让用户手动上载这些组件。这项经常有人提到的功能可以极大地简化 JDK 和服务器组件的部署，尤其是对于初级用户。有关使用这些选项的演练，请参阅[在 Eclipse 中为 Azure 创建 Hello World 应用程序]。
 * **集中跟踪存储帐户并更方便地引用存储帐户（通过下拉式控件）。** 这适用于依赖于存储的多个功能，例如 JDK 和服务器组件部署及缓存。有关详细信息，请参阅 [Azure 存储帐户列表]。
 * **简化了“发布到云”向导中的远程访问设置。** 只需键入用户名和密码即可启用远程访问，将字段留空会保持禁用远程访问。
-* **对 Package for Azure Libraries for Java 库的更新。** 此项更新基于 [Microsoft Azure 客户端 API] 版本 0.4.2。
+* **对 Package for Azure Libraries for Java 库的更新。** 此项更新基于 [Azure 客户端 API] 版本 0.4.2。
 * **支持 Windows Server 2012 上的粘性会话。** 以前，粘性会话仅适用于 Windows Server 2008 R2，现在，这两种云操作系统目标都支持会话相关性。
 * **包上载性能改进。** 与以前的版本相比，即使在部署包中嵌入了 JDK 和应用程序服务器，部署过程的上载部分也大能够快出两倍。
 
@@ -201,7 +201,7 @@ Azure Plugin for Eclipse - 2013 年 2 月预览版已发布。这是一项次要
 
 * 支持从公有或私有 Azure blob 存储下载部署 JDK、应用程序服务器和其他任意组件，而无需在部署到云时将它们包含在部署包中。
 * 在“Azure 角色属性”的“组件”部分中添加了“上移”和“下移”按钮，让用户更改角色的用户定义组件的处理顺序。
-* 对 **Package for the Azure Libraries for Java** 库的更新，基于 [Microsoft Azure 客户端 API] 版本 0.4.0。
+* 对 **Package for the Azure Libraries for Java** 库的更新，基于 [Azure 客户端 API] 版本 0.4.0。
 
 ### 2012 年 11 月 5 日
 
@@ -304,7 +304,7 @@ Azure Plugin for Eclipse - 2011 年 12 月 CTP 已发布。新功能包括：新
 [如何使用 SSL 卸载]: /develop/java/
 [安装 Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
 [本地存储属性]: /documentation/articles/azure-toolkit-for-eclipse-azure-role-properties/#local_storage_properties
-[Microsoft Azure 客户端 API]: http://go.microsoft.com/fwlink/?LinkId=280397
+[Azure 客户端 API]: http://go.microsoft.com/fwlink/?LinkId=280397
 [服务器配置属性]: /documentation/articles/azure-toolkit-for-eclipse-azure-role-properties/#server_configuration_properties
 [会话相关性]: /documentation/articles/azure-toolkit-for-eclipse-enable-session-affinity/
 [SSL 卸载]: /develop/java/
