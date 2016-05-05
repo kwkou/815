@@ -89,7 +89,8 @@ MySQL Database on Azure支持用户用复制功能为MySQL实例创建从属实�
 * 用户定义的读写分离器可以请求内置的逻辑语句发送到特定位置，通过调用 mysqlnd\_ms\_is\_select()。
 * 安装 PECL/mysqlnd_ms 请参考<a href="http://php.net/manual/zh/mysqlnd-ms.quickstart.configuration.php" target="_blank">这里</a>。
 * 创建 PECL/mysqlnd_ms 插件配置文件如下所示:
-	
+* 
+
 		File mysqlnd_ms_plugin.ini:
 		{
 	    	"myapp": {
