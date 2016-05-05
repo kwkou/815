@@ -83,7 +83,100 @@ MySQL Database on Azure支持用户用复制功能为MySQL实例创建从属实�
 	  }
 	}
 
+下面是应用端读写分离的PHP样例程序:
 
+* 读写分离可以通过PHP MySQL原生驱动配合主从实例插件(PECL/mysqlnd_ms)来达到。这个插件在已配置好的从属实例上执行只读语句，其他所有的查询都执行在MySQL主实例上。具体内容可参考[这里](http://php.net/manual/zh/mysqlnd-ms.rwsplit.php)
+* 用户定义的读写分离器可以请求内置的逻辑语句发送到特定位置，通过调用 mysqlnd_ms_is_select()。
+* 安装 PECL/mysqlnd_ms 请参考[这里](http://php.net/manual/zh/mysqlnd-ms.quickstart.configuration.php)
+* 创建 PECL/mysqlnd_ms 插件配置文件如下所示:
+	
+		File mysqlnd_ms_plugin.ini:
+		{
+	    	"myapp": {
+	       		"master": {
+	            	"master_0": {
+		                "host": "<your master host>",
+		                "port": "<your master port>",
+		                "user": "<your master username>",
+		                "password": "<your master password>"
+	            		}
+	        	},
+	        	"slave": {
+	            	"slave_0": {
+		                "host": "<your slave host>",
+		                "port": "<your slave port>",
+		                "user": "<your slave username>",
+		                "password": "<your slave password>"
+	            	}
+	        	}
+	    }
+
+* PHP 样例程序:
+
+		<?php
+		function is_select($query)
+		{
+		  switch (mysqlnd_ms_query_is_select($query))
+		  {
+		    case MYSQLND_MS_QUERY_USE_MASTER:
+		      printf("'%s' should be run on the master.<br>\n", $query);
+		      break;
+		    case MYSQLND_MS_QUERY_USE_SLAVE:
+		      printf("'%s' should be run on a slave.<br>\n", $query);
+		      break;
+		    case MYSQLND_MS_QUERY_USE_LAST_USED:
+		      printf("'%s' should be run on the server that has run the previous query.<br>\n", $query);
+		      break;
+		    default:
+		      printf("No suggestion where to run the '%s', fallback to master recommended.<br>\n", $query);
+		      break;
+		  }
+		}
+		
+		if (!($mysqli = new mysqli("myapp", "<your username>", "<your password>", "<your db>")) || mysqli_connect_errno())
+		{
+		  die(sprintf("Failed to connect: [%d] %s\n", mysqli_connect_errno(), mysqli_connect_error()));
+		}
+		$query = "INSERT INTO user(name, num) VALUES ('test', 1)";
+		is_select($query);
+		
+		if (!($res = $mysqli->query($query)))
+		{
+		  printf("Failed to insert: [%d] %s<br>\n", $mysqli->errno, $mysqli->error);
+		}
+		
+		$query = "SELECT * FROM user";
+		is_select($query);
+		if (!($res = $mysqli->query($query)))
+		{
+		  printf("Failed to query: [%d] %s<br>\n", $mysqli->errno, $mysqli->error);
+		}
+		else
+		{
+		  for ($i=0; $row = $res->fetch_assoc(); $i++)
+		  {
+		    $value[$i] = $row;
+		  }
+		  print_r($value);
+		  printf("<br>\n");
+		  $res->close();
+		}
+		
+		$query = "/*" . MYSQLND_MS_LAST_USED_SWITCH . "*/SELECT * FROM user limit 1";
+		is_select($query);
+		if (!($res = $mysqli->query($query)))
+		{
+		  printf("Failed to query: [%d] %s<br>\n", $mysqli->errno, $mysqli->error);
+		}
+		else
+		{
+		  $value = $res->fetch_assoc();
+		  print_r($value);
+		  printf("<br>\n");
+		  $res->close();
+		}
+		$mysqli->close();
+		?>
 
 ## 提升从属实例
 用户可以把一个从属实例提升为联机读写实例。提升后，主实例上的改动不再复制到该实例上。用户可以对该实例进行读写操作。
@@ -100,7 +193,6 @@ MySQL Database on Azure支持用户用复制功能为MySQL实例创建从属实�
 
 •	如何将数据库从5.5升级到5.6？
 目前我们暂不支持一键升级，替代办法是用户可以通过mysqldump将数据从源5.5实例中导出，创建新的5.6数据库服务器实例，再将数据进行导入，测试兼容性通过后，可将应用迁移至5.6实例。 如果用户的源数据库是生产环境或不能接受任何停机时间，可以在源数据库上手动创建快照，恢复到全新实例后，对恢复后的实例进行迁移升级，以减少对源数据库的影响。
-
 
 
 <!--Image references-->
