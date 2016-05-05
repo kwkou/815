@@ -4,13 +4,13 @@
 	services="azure-resource-manager" 
 	documentationCenter="" 
 	authors="tfitzmac" 
-	manager="wpickett" 
-	editor=""/>
+	manager="timlt" 
+	editor="tysonn"/>
 
 <tags 
 	ms.service="azure-resource-manager" 
-	ms.date="02/17/2016" 
-	wacn.date="04/11/2016"/>
+	ms.date="04/11/2016" 
+	wacn.date="05/05/2016"/>
 
 # 将 Azure PowerShell 与 Azure 资源管理器配合使用
 
@@ -19,7 +19,14 @@
 
 Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。首先应该构想整个解决方案，而不是创建和管理各个资源，如博客、照片库、SharePoint 门户或 wiki。可以使用模板（解决方案的声明性表示形式）创建包含支持该解决方案所需资源的资源组。然后，可以将该资源组作为一个逻辑单元进行管理和部署。
 
-在本教程中，你将了解如何将 Azure PowerShell 与 Azure 资源管理器配合使用。本教程将指导您逐步完成通过 SQL 数据库创建和部署 Azure 托管的 Web 应用的资源组的过程，其中充分使用了支持该过程所需的所有资源。
+在本教程中，你将了解如何将 Azure PowerShell 与 Azure 资源管理器配合使用。其中会引导你完成部署解决方案，以及使用该解决方案的过程。你将使用 Azure PowerShell 和资源管理器模板来部署：
+
+- SQL 服务器 - 用于托管数据库
+- SQL 数据库 - 用于存储数据
+- 防火墙规则 - 允许 Web 应用连接到数据库
+- 网站 - 用于运行 Web 应用
+- Web 配置 - 用于存储数据库的连接字符串 
+- 警报规则 - 用于监视性能和错误
 
 ## 先决条件
 
@@ -32,30 +39,19 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 本教程专为 PowerShell 新手设计，但它假定您了解基本概念，如模块、cmdlet 和会话。
 
-## 将部署的内容
-
-在本教程中，你将使用 Azure PowerShell 来部署 Web 应用和 SQL 数据库。但是，此 Web 应用和 SQL 数据库解决方案由多个共同协作的资源类型构成。将要部署的实际资源包括：
-
-- SQL 服务器 - 用于托管数据库
-- SQL 数据库 - 用于存储数据
-- 防火墙规则 - 允许 Web 应用连接到数据库
-- App Service 计划 - 用于定义 Web 应用的功能和成本
-- Web 应用 - 用于运行 Web 应用
-- Web 配置 - 用于存储数据库的连接字符串 
-
 ## 获取有关 cmdlet 的帮助
 
 若要获得您在此教程中看到的任何 cmdlet 的详细帮助，请使用 Get-Help cmdlet。
 
-	Get-Help <cmdlet-name> -Detailed
+    Get-Help <cmdlet-name> -Detailed
 
 例如，若要获取有关 Get-AzureRmResource cmdlet 的帮助，请键入：
 
-	Get-Help Get-AzureRmResource -Detailed
+    Get-Help Get-AzureRmResource -Detailed
 
 若要获取带有帮助摘要的资源模块中的 cmdlet 列表，请键入：
 
-    PS C:\> Get-Command -Module AzureRM.Resources | Get-Help | Format-Table Name, Synopsis
+    Get-Command -Module AzureRM.Resources | Get-Help | Format-Table Name, Synopsis
 
 输出与以下摘要类似：
 
@@ -69,259 +65,59 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 若要获得 cmdlet 的完整帮助，请使用以下格式键入命令：
 
-	Get-Help <cmdlet-name> -Full
+    Get-Help <cmdlet-name> -Full
   
 ## 登录到你的 Azure 帐户
 
 在处理解决方案之前，你必须登录到你的帐户。
 
-若要登录到你的 Azure 帐户，请使用 **Login-AzureRmAccount** cmdlet。
+若要登录到你的 Azure 帐户，请使用 **Add-AzureRmAccount** cmdlet。
 
-    PS C:\> Login-AzureRmAccount
+    Add-AzureRmAccount
 
 该 cmdlet 将提示您提供您的 Azure 帐户的登录凭据。登录后它会下载你的帐户设置，以便这些信息可供 Azure PowerShell 使用。
 
-帐户设置会过期，因此您需要不时刷新它们。若要刷新帐户设置，请再次运行 **Login-AzureRmAccount**。
+帐户设置会过期，因此您需要不时刷新它们。若要刷新帐户设置，请再次运行 **Add-AzureRmAccount**。
 
->[AZURE.NOTE] 资源管理器模块要求使用 Login-AzureRmAccount。一个发布设置文件是不够的。
+>[AZURE.NOTE] 资源管理器模块要求使用 Add-AzureRmAccount。一个发布设置文件是不够的。
 
-## 获取资源类型的位置
+如果你有多个订阅，请使用 **Set-AzureRmContext** cmdlet 提供要用于部署的订阅 ID。
 
-在部署资源时，必须指定资源的托管位置。并非每个区域都支持每种资源类型。在部署 Web 应用和 SQL 数据库之前，必须确定哪些区域支持这些类型。资源组可以包含位于不同区域的资源；但是，只要可能，你就应该在同一位置创建资源，以优化性能。具体而言，请确保你的数据库位于应用所访问的同一位置。
-
-若要获取支持每种资源类型的位置，需要使用 **Get-AzureRmResourceProvider** cmdlet。首先，让我们看看此命令的返回内容：
-
-    PS C:\> Get-AzureRmResourceProvider -ListAvailable
-
-    ProviderNamespace               RegistrationState ResourceTypes
-    -----------------               ----------------- -------------
-    Microsoft.ApiManagement         Unregistered      {service, validateServiceName, checkServiceNameAvailability}
-    Microsoft.AppService            Registered        {apiapps, appIdentities, gateways, deploymenttemplates...}
-    Microsoft.Batch                 Registered        {batchAccounts}
-    ...
-
-ProviderNamespace 表示相关资源类型的集合。这些命名空间通常与你要在 Azure 中创建的服务完全匹配。如果你想要使用已列作“已取消注册”的资源提供程序，可以通过运行 **Register-AzureRmResourceProvider** cmdlet 并指定要注册的提供程序命名空间，来注册该资源提供程序。要在本教程中使用的资源提供程序很可能已由你的订阅注册。
-
-可以通过指定命名空间来获取有关提供程序的更多详细信息：
-
-    PS C:\> Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Sql
-
-    ProviderNamespace RegistrationState ResourceTypes                                 Locations
-    ----------------- ----------------- -------------                                 ---------
-    Microsoft.Sql     Registered        {operations}                                  {China North, China East
-    Microsoft.Sql     Registered        {locations}                                   {China North, China East
-    Microsoft.Sql     Registered        {locations/capabilities}                      {China North, China East
-    ...
-
-若要将输出限制为特定资源类型（例如 Web 应用）的支持位置，请使用：
-
-    PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).Locations
-    
-输出结果将会类似于：
-
-    China East
-    China North
-
-你看到的位置可能与上面的结果略有不同。结果存在差异的原因是你组织中的管理员创建的策略限制了可在订阅中使用的区域，或者可能存在与你所在国家/地区的税收政策相关的限制。
-
-让我们对数据库运行同一命令：
-
-    PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Sql).ResourceTypes | Where-Object ResourceTypeName -eq servers).Locations
-    China East
-    China North
-
-看起来这些资源在许多区域可用。在本主题中，我们将使用“美国西部”，但你可以指定任何支持的区域。
+    Set-AzureRmContext -SubscriptionID <YourSubscriptionId>
 
 ## 创建资源组
 
-本教程部分将指导你完成创建资源组的整个过程。资源组将充当解决方案中具有相同生命周期的所有资源的容器。在后面的教程部分，你要向此资源组部署 Web 应用和 SQL 数据库。
+将任何资源部署到订阅之前，必须创建包含资源的资源组。
 
 若要创建资源组，请使用 **New-AzureRmResourceGroup** cmdlet。
 
 该命令使用 **Name** 参数来指定资源组的名称，并使用 **Location** 参数来指定其位置。根据上一部分中所述，我们将使用“美国西部”作为位置。
 
-    PS C:\> New-AzureRmResourceGroup -Name TestRG1 -Location "China East"
+    New-AzureRmResourceGroup -Name TestRG1 -Location "China East"
     
+输出结果将会类似于：
+
     ResourceGroupName : TestRG1
     Location          : China East
     ProvisioningState : Succeeded
     Tags              :
-    Permissions       :
-                    Actions  NotActions
-                    =======  ==========
-                    *
-
     ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG1
 
 现已成功创建资源组。
 
+## 部署你的解决方案
 
-## 获取资源的可用 API 版本
+本主题不会说明如何创建模板，也不会介绍模板的结构。有关该信息，请参阅 [Authoring Azure Resource Manager templates（创作 Azure Resource Manager 模板）](/documentation/articles/resource-group-authoring-templates)和 [Resource Manager Template Walkthrough（Resource Manager 模板演练）](/documentation/articles/resource-manager-template-walkthrough)。你将从 [Azure 快速入门模板](https://azure.microsoft.com/documentation/templates/)部署预先定义的[预配包含 SQL 数据库的 Web 应用](https://azure.microsoft.com/documentation/templates/201-web-app-sql-database/)模板。
 
-部署模板时，必须指定要用于创建资源的 API 版本。可用 API 版本对应于资源提供程序发布的 REST API 操作版本。资源提供程序启用新功能时，将会发布 REST API 的新版本。因此，在模板中指定的 API 版本会影响你在创建模板时可用的属性。通常，在创建新模板时，你需要选择最新的 API 版本。对于现有模板，你可以决定是要继续使用你已知不会更改部署的 API 版本，还是要选择最新版本来更新模板以利用新功能。
+在创建资源组和模板后，可以将模板中定义的基础结构部署到资源组。你可以使用 **New-AzureRmResourceGroupDeployment** cmdlet 部署资源。该模板指定了我们要使用的许多默认值，因此你不需要提供这些参数的值。基本语法如下：
 
-此步骤可能看起来令人困惑，但发现资源可用的 API 版本并不困难。你将再次使用 **Get-AzureRmResourceProvider** 命令。
+    New-AzureRmResourceGroupDeployment -ResourceGroupName TestRG1 -administratorLogin exampleadmin -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-sql-database/azuredeploy.json 
 
-    PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).ApiVersions
-    2015-08-01
-    2015-07-01
-    2015-06-01
-    2015-05-01
-    2015-04-01
-    2015-02-01
-    2014-11-01
-    2014-06-01
-    2014-04-01-preview
-    2014-04-01
-
-可以看到，此 API 经常会更新。通常，相同的 API 版本号适用于资源提供程序中的所有资源。唯一的例外情况是在某个时间点添加或删除了资源。我们假设相同的 API 版本适用于 serverFarms 资源；但是，你可以反复检查任何资源的可用 API 版本列表是否不同。
-
-对于数据库，你将看到：
-
-    PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Sql).ResourceTypes | Where-Object ResourceTypeName -eq servers/databases).ApiVersions
-    2014-04-01-preview
-    2014-04-01 
-
-## 创建模板
-
-本主题不会说明如何创建模板，也不会介绍模板的结构。有关此类信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。下面显示了你要部署的模板。请注意，该模板使用了你在上一部分中检索的 API 版本。为确保所有资源都驻留在同一区域中，我们将使用模板表达式 **resourceGroup ().location** 来使用该资源组位置。
-
-另请注意参数部分。此部分定义部署资源时可以提供的值。本教程后面的部分将会到用到这些值。
-
-你可以复制该模板，并将它作为.json 文件保存在本地。在本教程中，我们假设模板已保存到 c:\\Azure\\Templates\\azuredeploy.json，但你可以根据需要，使用好记的名称将它保存在任何方便访问的位置。
-
-    {
-        "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-        "contentVersion": "1.0.0.0",
-        "parameters": {
-            "hostingPlanName": {
-                "type": "string"
-            },
-            "serverName": {
-                "type": "string"
-            },
-            "databaseName": {
-                "type": "string"
-            },
-            "administratorLogin": {
-                "type": "string"
-            },
-            "administratorLoginPassword": {
-                "type": "securestring"
-            }
-        },
-        "variables": {
-            "siteName": "[concat('ExampleSite', uniqueString(resourceGroup().id))]"
-        },
-        "resources": [
-            {
-                "name": "[parameters('serverName')]",
-                "type": "Microsoft.Sql/servers",
-                "location": "[resourceGroup().location]",
-                "apiVersion": "2014-04-01",
-                "properties": {
-                    "administratorLogin": "[parameters('administratorLogin')]",
-                    "administratorLoginPassword": "[parameters('administratorLoginPassword')]",
-                    "version": "12.0"
-                },
-                "resources": [
-                    {
-                        "name": "[parameters('databaseName')]",
-                        "type": "databases",
-                        "location": "[resourceGroup().location]",
-                        "apiVersion": "2014-04-01",
-                        "dependsOn": [
-                            "[concat('Microsoft.Sql/servers/', parameters('serverName'))]"
-                        ],
-                        "properties": {
-                            "edition": "Basic",
-                            "collation": "SQL_Latin1_General_CP1_CI_AS",
-                            "maxSizeBytes": "1073741824",
-                            "requestedServiceObjectiveName": "Basic"
-                        }
-                    },
-                    {
-                        "name": "AllowAllWindowsAzureIps",
-                        "type": "firewallrules",
-                        "location": "[resourceGroup().location]",
-                        "apiVersion": "2014-04-01",
-                        "dependsOn": [
-                            "[concat('Microsoft.Sql/servers/', parameters('serverName'))]"
-                        ],
-                        "properties": {
-                            "endIpAddress": "0.0.0.0",
-                            "startIpAddress": "0.0.0.0"
-                        }
-                    }
-                ]
-            },
-            {
-                "apiVersion": "2015-08-01",
-                "type": "Microsoft.Web/serverfarms",
-                "name": "[parameters('hostingPlanName')]",
-                "location": "[resourceGroup().location]",
-                "sku": {
-                    "tier": "Free",
-                    "name": "f1",
-                    "capacity": 0
-                },
-                "properties": {
-                    "numberOfWorkers": 1
-                }
-            },
-            {
-                "apiVersion": "2015-08-01",
-                "name": "[variables('siteName')]",
-                "type": "Microsoft.Web/sites",
-                "location": "[resourceGroup().location]",
-                "tags": {
-                    "team": "webdev"
-                },
-                "dependsOn": [
-                    "[concat('Microsoft.Web/serverFarms/', parameters('hostingPlanName'))]"
-                ],
-                "properties": {
-                    "serverFarmId": "[parameters('hostingPlanName')]"
-                },
-                "resources": [
-                    {
-                        "name": "web",
-                        "type": "config",
-                        "apiVersion": "2015-08-01",
-                        "dependsOn": [
-                            "[concat('Microsoft.Web/Sites/', variables('siteName'))]"
-                        ],
-                        "properties": {
-                            "connectionStrings": [
-                                {
-                                    "ConnectionString": "[concat('Data Source=tcp:', reference(concat('Microsoft.Sql/servers/', parameters('serverName'))).fullyQualifiedDomainName, ',1433;Initial Catalog=', parameters('databaseName'), ';User Id=', parameters('administratorLogin'), '@', parameters('serverName'), ';Password=', parameters('administratorLoginPassword'), ';')]",
-                                    "Name": "DefaultConnection",
-                                    "Type": 2
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        ]
-    }
-
-
-## 部署模板
-
-在创建资源组和模板后，可以将模板中定义的基础结构部署到资源组。你可以使用 **New-AzureRmResourceGroupDeployment** cmdlet 部署资源。基本语法如下：
-
-    PS C:\> New-AzureRmResourceGroupDeployment -ResourceGroupName TestRG1 -TemplateFile c:\Azure\Templates\azuredeploy.json
-
-指定资源组及模板的位置。如果模板不在本地，你可以使用 **-TemplateUri** 参数并指定模板的 URI。可将 **-Mode** 参数设置为 **Incremental** 或 **Complete**。默认情况下，资源管理器将在部署期间执行增量更新；因此，不必要将 **-Mode** 设置为 **Incremental**。若要了解这些部署模式之间的差异，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
+指定资源组及模板的位置。如果你的模板是本地文件，可以使用 **-TemplateFile** 参数并指定模板的路径。可将 **-Mode** 参数设置为 **Incremental** 或 **Complete**。默认情况下，Resource Manager 将在部署期间执行增量更新；因此，不必要将 **-Mode** 设置为 **Incremental**。若要了解这些部署模式之间的差异，请参阅[使用 Azure Resource Manager 模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
 
 ###动态模板参数
 
-如果你熟悉 PowerShell 的话，就知道你可以通过键入减号 (-) 并按 TAB 键来切换 cmdlet 的可用参数。对于模板中定义的参数，同样也可以使用此功能。只要你键入模板名称，该 cmdlet 就会提取该模板、对其进行分析并将模板参数动态地添加到该命令。这使指定模板参数值变得非常轻松。而且，如果你忘记了必需的参数值，PowerShell 会提示你输入该值。
-
-下面是包含参数的完整命令。对于资源的名称，你可以提供自己的值。
-
-    PS C:\> New-AzureRmResourceGroupDeployment -ResourceGroupName TestRG1 -TemplateFile c:\Azure\Templates\azuredeploy.json -hostingPlanName freeplanwest -serverName exampleserver -databaseName exampledata -administratorLogin exampleadmin
+如果你熟悉 PowerShell 的话，就知道你可以通过键入减号 (-) 并按 TAB 键来切换 cmdlet 的可用参数。对于模板中定义的参数，同样也可以使用此功能。只要你键入模板名称，该 cmdlet 就会提取该模板、对其进行分析并将模板参数动态地添加到该命令。这使指定模板参数值变得非常轻松。
 
 当你输入该命令时，将提示你输入遗漏的必需参数 **administratorLoginPassword**。并且，当您键入密码时，将遮盖安全字符串值。此策略可以消除以纯文本格式提供密码的风险。
 
@@ -337,31 +133,54 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
     DeploymentName    : azuredeploy
     ResourceGroupName : TestRG1
     ProvisioningState : Succeeded
-    Timestamp         : 10/16/2015 12:55:50 AM
+    Timestamp         : 4/11/2016 7:26:11 PM
     Mode              : Incremental
     TemplateLink      :
+                Uri            : https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-sql-database/azuredeploy.json
+                ContentVersion : 1.0.0.0
     Parameters        :
-                    Name             Type                       Value
-                    ===============  =========================  ==========
-                    hostingPlanName  String                     freeplanwest
-                    serverName       String                     exampleserver
-                    databaseName     String                     exampledata
-                    administratorLogin  String                  exampleadmin
-                    administratorLoginPassword  SecureString
+                Name             Type                       Value
+                ===============  =========================  ==========
+                skuName          String                     F1
+                skuCapacity      Int                        1
+                administratorLogin  String                  exampleadmin
+                administratorLoginPassword  SecureString
+                databaseName     String                     sampledb
+                collation        String                     SQL_Latin1_General_CP1_CI_AS
+                edition          String                     Basic
+                maxSizeBytes     String                     1073741824
+                requestedServiceObjectiveName  String       Basic
 
     Outputs           :
+                Name             Type                       Value
+                ===============  =========================  ==========
+                siteUri          String                     websites5wdai7p2k2g4.azurewebsites.net
+                sqlSvrFqdn       String                     sqlservers5wdai7p2k2g4.database.chinacoudapi.cn
+                    
+    DeploymentDebugLogLevel :
 
 在几个步骤中，我们将创建和部署复杂网站所需的资源。
+
+### 日志调试信息
+
+在部署模板时，通过指定运行 **New-AzureRmResourceGroupDeployment** 时的 **-DeploymentDebugLogLevel** 参数，可记录有关请求和响应的其他信息。此信息可帮助排查部署错误。默认值为 **None**，即不记录任何请求或响应内容。你可以指定从请求和/或响应记录内容。有关排查部署问题和记录调试信息的详细信息，请参阅 [Troubleshooting resource group deployments with Azure PowerShell（使用 Azure PowerShell 排查资源组部署问题）](resource-manager-troubleshoot-deployments-powershell.md)。以下示例将记录部署的请求内容和响应内容。
+
+    New-AzureRmResourceGroupDeployment -ResourceGroupName TestRG1 -DeploymentDebugLogLevel All -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-sql-database/azuredeploy.json 
+
+> [AZURE.NOTE] 设置 DeploymentDebugLogLevel 参数时，请仔细考虑在部署期间传入的信息类型。通过记录有关请求或响应的信息，可能会公开通过部署操作检索的机密数据。
+
 
 ## 获取有关资源组的信息
 
 创建资源组之后，可以使用资源管理器模块中的 cmdlet 来管理该资源组。
 
-- 若要获取你订阅中的所有资源组，请使用 **Get-AzureRmResourceGroup** cmdlet：
+- 若要获取订阅中的资源组，请使用 **Get-AzureRmResourceGroup** cmdlet：
 
-		PS C:\> Get-AzureRmResourceGroup
+		Get-AzureRmResourceGroup -ResourceGroupName TestRG1
+	
+	这将返回以下信息：
 
-		ResourceGroupName : TestRG
+		ResourceGroupName : TestRG1
 		Location          : China East
 		ProvisioningState : Succeeded
 		Tags              :
@@ -369,32 +188,32 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
 		
 		...
 
-      如果你只想要获取特定的资源组，请提供 **Name** 参数。
-      
-          PS C:\> Get-AzureRmResourceGroup -Name TestRG1
+	如果未指定资源组名称，该 cmdlet 将返回订阅中的所有资源组。
 
 - 若要获取资源组中的资源，请使用 **Find-AzureRmResource** cmdlet 及其 **ResourceGroupNameContains** 参数。如果未指定参数，Find-AzureRmResource 将获取你的 Azure 订阅中的所有资源。
 
-        PS C:\> Find-AzureRmResource -ResourceGroupNameContains TestRG1
+        Find-AzureRmResource -ResourceGroupNameContains TestRG1
+	
+     将返回采用以下格式的资源列表：
 		
-		Name              : exampleserver
-                ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG1/providers/Microsoft.Sql/servers/tfserver10
-                ResourceName      : exampleserver
-                ResourceType      : Microsoft.Sql/servers
-                Kind              : v12.0
-                ResourceGroupName : TestRG1
-                Location          : China East
-                SubscriptionId    : {guid}
-                
+        Name              : sqlservers5wdai7p2k2g4
+        ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG1/providers/Microsoft.Sql/servers/sqlservers5wdai7p2k2g4
+        ResourceName      : sqlservers5wdai7p2k2g4
+        ResourceType      : Microsoft.Sql/servers
+        Kind              : v2.0
+        ResourceGroupName : TestRG1
+        Location          : China East
+        SubscriptionId    : {guid}
+        Tags              : {System.Collections.Hashtable}
         ...
 	        
-- 上述模板将在一个资源中包含标记。你可以使用标记按逻辑顺序组织订阅中的所有资源。使用 **Find-AzureRmResource** 和 **Find-AzureRmResourceGroup** 命令可按标记查询资源。
+- 你可以使用标记以逻辑方式组织订阅中的资源，并使用 **Find-AzureRmResource** 和 **Find-AzureRmResourceGroup** cmdlet 检索资源。
 
-        PS C:\> Find-AzureRmResource -TagName team
+        Find-AzureRmResource -TagName displayName -TagValue Website
 
-        Name              : ExampleSiteuxq53xiz5etmq
-        ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG1/providers/Microsoft.Web/sites/ExampleSiteuxq53xiz5etmq
-        ResourceName      : ExampleSiteuxq53xiz5etmq
+        Name              : webSites5wdai7p2k2g4
+        ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG1/providers/Microsoft.Web/sites/webSites5wdai7p2k2g4
+        ResourceName      : webSites5wdai7p2k2g4
         ResourceType      : Microsoft.Web/sites
         ResourceGroupName : TestRG1
         Location          : China East
@@ -410,7 +229,35 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
 
 可以将现有资源移动到新的资源组。有关示例，请参阅[将资源移动到新的资源组或订阅中](/documentation/articles/resource-group-move-resources)。
 
-## 删除资源组
+## 导出模板
+
+对于现有的资源组（通过 PowerShell 或门户等其他方法部署），可以查看资源组的 Resource Manager 模板。导出模板有两个好处：
+
+1. 由于所有基础结构都已定义于模板中，因此可以轻松地自动进行解决方案的将来部署。
+
+2. 可以查看代表解决方案的 JavaScript 对象表示法 (JSON)，以此熟悉模板语法。
+
+通过 PowerShell，可以生成代表资源组当前状态的模板，或检索特定部署所用的模板。
+
+已更改资源组，并且需要检索其当前状态的 JSON 表示法时，导出资源组的模板很有用。但是，生成的模板只包含最少的参数数目，但不包含任何变量。模板中大部分的值为硬编码。在部署所生成的模板之前，你可能想要将更多的值转换成参数，以便针对不同的环境自定义部署。
+
+当你需要查看用于部署资源的实际模板时，针对特定部署导出模板很有用。模板包含针对原始部署定义的所有参数和变量。但是，如果组织中有人已更改非此模板中定义的资源组，此模板并不代表资源组的当前状态。
+
+> [AZURE.NOTE] 导出模板功能处于预览状态，并非所有的资源类型目前都支持导出模板。尝试导出模板时，你可能会看到一个错误，指出未导出某些资源。如果需要，你可以在下载模板之后，在模板中手动定义这些资源。
+
+###从资源组导出模板
+
+若要查看资源组的模板，请运行 **Export-AzureRmResourceGroup** cmdlet。
+
+    Export-AzureRmResourceGroup -ResourceGroupName TestRG1 -Path c:\Azure\Templates\Downloads\TestRG1.json
+    
+###从部署下载模板
+
+若要下载特定部署使用的模板，请运行 **Save-AzureRmResourceGroupDeploymentTemplate** cmdlet。
+
+    Save-AzureRmResourceGroupDeploymentTemplate -DeploymentName azuredeploy -ResourceGroupName TestRG1 -Path c:\Azure\Templates\Downloads\azuredeploy.json
+
+## 删除资源或资源组
 
 - 若要从资源组中删除资源，请使用 **Remove-AzureRmResource** cmdlet。此 cmdlet 将删除该资源，但不会删除该资源组。
 
@@ -420,17 +267,110 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
 
 - 若要删除资源组，请使用 **Remove-AzureRmResourceGroup** cmdlet。此 cmdlet 将删除资源组及其资源。
 
-		PS C:\> Remove-AzureRmResourceGroup -Name TestRG1
+		Remove-AzureRmResourceGroup -Name TestRG1
+		
+	系统将请求你确认删除。
 		
 		Confirm
 		Are you sure you want to remove resource group 'TestRG1'
 		[Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 
+## 部署脚本
 
+本主题中前面的部署示例仅显示了将资源部署到 Azure 所需的各个 cmdlet。以下示例显示了可创建资源组和部署资源的部署脚本。
+
+    <#
+      .SYNOPSIS
+      Deploys a template to Azure
+      
+      .DESCRIPTION
+      Deploys an Azure Resource Manager template
+
+      .PARAMETER subscriptionId
+      The subscription id where the template will be deployed.
+
+      .PARAMETER resourceGroupName
+      The resource group where the template will be deployed. Can be the name of an existing or a new resource group.
+
+      .PARAMETER resourceGroupLocation
+      Optional, a resource group location. If specified, will try to create a new resource group in this location. If not specified, assumes resource group is existing.
+
+      .PARAMETER deploymentName
+      The deployment name.
+
+      .PARAMETER templateFilePath
+      Optional, path to the template file. Defaults to template.json.
+
+      .PARAMETER parametersFilePath
+      Optional, path to the parameters file. Defaults to parameters.json. If file is not found, will prompt for parameter values based on template.
+    #>
+
+    param(
+      [Parameter(Mandatory=$True)]
+      [string]
+      $subscriptionId,
+
+      [Parameter(Mandatory=$True)]
+      [string]
+      $resourceGroupName,
+
+      [string]
+      $resourceGroupLocation,
+
+      [Parameter(Mandatory=$True)]
+      [string]
+      $deploymentName,
+
+      [string]
+      $templateFilePath = "template.json",
+
+      [string]
+      $parametersFilePath = "parameters.json"
+    )
+
+    #******************************************************************************
+    # Script body
+    # Execution begins here 
+    #******************************************************************************
+    $ErrorActionPreference = "Stop"
+
+    # sign in
+    Write-Host "Logging in...";
+    Add-AzureRmAccount;
+
+    # select subscription
+    Write-Host "Selecting subscription '$subscriptionId'";
+    Set-AzureRmContext -SubscriptionID $subscriptionId;
+
+    #Create or check for existing resource group
+    $resourceGroup = Get-AzureRmResourceGroup -Name $resourceGroupName -ErrorAction SilentlyContinue
+    if(!$resourceGroup)
+    {
+      Write-Host "Resource group '$resourceGroupName' does not exist. To create a new resource group, please enter a location.";
+      if(!$resourceGroupLocation) {
+        $resourceGroupLocation = Read-Host "resourceGroupLocation";
+      }
+      Write-Host "Creating resource group '$resourceGroupName' in location '$resourceGroupLocation'";
+      New-AzureRmResourceGroup -Name $resourceGroupName -Location $resourceGroupLocation
+    }
+    else{
+      Write-Host "Using existing resource group '$resourceGroupName'";
+    }
+
+    # Start the deployment
+    Write-Host "Starting deployment...";
+    if(Test-Path $parametersFilePath) {
+      New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile $templateFilePath -TemplateParameterFile $parametersFilePath;
+    } else {
+      New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile $templateFilePath;
+    }
 
 ## 后续步骤
 
 - 若要了解如何创建资源管理器模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
 - 若要了解部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
+- 有关部署项目的详细示例，请参阅[按可预见的方式在 Azure 中部署微服务](/documentation/articles/app-service-deploy-complex-application-predictably)。
+- 若要了解如何对失败的部署进行故障排除，请参阅 [Azure 中的资源组部署疑难解答](/documentation/articles/virtual-machines/resource-group-deploy-debug)。
 
-<!---HONumber=Mooncake_0405_2016-->
+
+<!---HONumber=Mooncake_0425_2016-->

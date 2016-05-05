@@ -3,14 +3,14 @@
 	description="了解如何下载和安装 Azure SDK for PHP。"
 	documentationCenter="php"
 	services="app-service\web"
-	authors="tfitzmac"
+	authors="rmcmurray"
 	manager="wpickett"
 	editor=""/>
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/16/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="04/08/2016"
+	wacn.date="05/05/2016"/>
 
 #下载 Azure SDK for PHP
 
@@ -27,7 +27,7 @@ Azure SDK for PHP 包括允许你针对 Azure 开发、部署和管理 PHP 应�
 
 本主题中的说明假定您已安装 [PHP][install-php]。
 
-> [AZURE.NOTE]若要使用 Azure 的 PHP 客户端库，您必须安装 PHP 5.3 或更高版本。
+> [AZURE.NOTE] 若要使用 Azure 的 PHP 客户端库，您必须安装 PHP 5.3 或更高版本。
 
 ##Azure 的 PHP 客户端库
 
@@ -40,7 +40,7 @@ Azure 的 PHP 客户端库提供了一个用于从任何操作系统访问 Azure
 1. [安装 Git][install-git]。
 
 
-	> [AZURE.NOTE]在 Windows 上，您还需要向您的 PATH 环境变量添加 Git 可执行文件。
+	> [AZURE.NOTE] 在 Windows 上，您还需要向您的 PATH 环境变量添加 Git 可执行文件。
 
 2. 在你的项目的根目录中创建一个名为 **composer.json** 的文件并向其添加以下代码：
 
@@ -75,7 +75,7 @@ Azure 的 PHP 客户端库提供了一个用于从任何操作系统访问 Azure
 		pear channel-discover pear.windowsazure.cn
 3. 安装 PEAR 包：
 
-		pear install pear.windowsazure.cn/WindowsAzure-0.4.0
+		pear install pear.windowsazure.cn/WindowsAzure-0.4.1
 
 安装完成后，你可以从应用程序中引用类库。
 
@@ -85,7 +85,7 @@ Azure 的 PHP 客户端库提供了一个用于从任何操作系统访问 Azure
 
 1. 下载包含 [GitHub][php-sdk-github] 中的库的 .zip 存档。或者，复制现有存储库并将其克隆到您的本地计算机。（后一种选择需要一个 GitHub 帐户并要求已在本地安装 Git。）
 
-	> [AZURE.NOTE]用于 Azure 的 PHP 客户端库依赖于 [HTTP\_Request2](http://pear.php.net/package/HTTP_Request2)、[Mail\_mime](http://pear.php.net/package/Mail_mime) 和 [Mail\_mimeDecode](http://pear.php.net/package/Mail_mimeDecode) PEAR 包。若要处理这些依赖关系，建议使用 [PEAR 包管理器](http://pear.php.net/manual/en/installation.php)安装这些包
+	> [AZURE.NOTE] 用于 Azure 的 PHP 客户端库依赖于 [HTTP\_Request2](http://pear.php.net/package/HTTP_Request2)、[Mail\_mime](http://pear.php.net/package/Mail_mime) 和 [Mail\_mimeDecode](http://pear.php.net/package/Mail_mimeDecode) PEAR 包。若要处理这些依赖关系，建议使用 [PEAR 包管理器](http://pear.php.net/manual/en/installation.php)安装这些包
 
 2. 将已下载的存档的 `WindowsAzure` 目录复制到应用程序目录结构中并从应用程序引用类。
 
@@ -121,9 +121,9 @@ Azure CLI 是一组用于部署和管理 Azure 服务（例如 Azure 网站和 A
 [blob-service]: /documentation/articles/storage-php-how-to-use-blobs/
 [table-service]: /documentation/articles/storage-php-how-to-use-table-storage/
 [queue-service]: /documentation/articles/storage-php-how-to-use-queues/
-[azure cli]: http://go.microsoft.com/fwlink/?LinkId=252717
+[azure cli]: /documentation/articles/xplat-cli-install/
 [powershell-tools]: /documentation/articles/powershell-install-configure/
-[php-sdk-github]: http://go.microsoft.com/fwlink/?LinkId=252719
+[php-sdk-github]: https://github.com/Azure/azure-sdk-for-php
 [install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0425_2016-->

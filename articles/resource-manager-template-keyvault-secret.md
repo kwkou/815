@@ -4,13 +4,13 @@
    services="azure-resource-manager,key-vault"
    documentationCenter="na"
    authors="tfitzmac"
-   manager="wpickett"
+   manager="timlt"
    editor=""/>
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="01/04/2016"
-   wacn.date="03/17/2016"/>
+   ms.date="04/05/2016"
+   wacn.date="05/05/2016"/>
 
 # 密钥保管库机密模板架构
 
@@ -34,19 +34,20 @@
 
 下表描述了需要在架构中设置的值。
 
-| 名称 | 类型 | 必选 | 允许的值 | 说明 |
-| ---- | ---- | -------- | ---------------- | ----------- |
-| type | 枚举 | 是 | 作为密钥保管库的子资源：<br />**secrets**<br /><br />作为顶级资源：<br />**Microsoft.KeyVault/vaults/secrets** | 要创建的资源类型。 |
-| apiVersion | 枚举 | 是 | **2015-06-01** <br /> **2014-12-19-preview** | 要用于创建该资源的 API 版本。 | 
-| name | 字符串 | 是 | | 要创建的机密的名称。如果要将机密部署为密钥保管库的子资源，只需提供机密的名称即可。如果将机密部署为顶级资源，则名称格式必须是 **{key-vault-name}/{secret-name}**。 |
-| properties | 对象 | 是 | （下面显示） | 一个对象，用于指定要创建的机密的值。 |
-| dependsOn | 数组 | 否 | 资源名称或资源唯一标识符的逗号分隔列表。 | 此链接依赖的资源的集合。如果将机密的密钥保管库部署在同一个模板中，请在此元素中包含密钥保管库的名称，以确保首先部署它。 |
+| 名称 | 值 |
+| ---- | ---- | 
+| type | 枚举<br />必需<br />**secrets**（部署为密钥保管库的子资源时）或<br /> **Microsoft.KeyVault/vaults/secrets**（部署为顶级资源时）<br /><br />要创建的资源类型。 |
+| apiVersion | 枚举<br />必需<br />**2015-06-01** 或 **2014-12-19-preview**<br /><br />要用于创建该资源的 API 版本。 | 
+| name | 字符串<br />必需<br />一个单词（部署为密钥保管库的子资源时），采用格式 **{key-vault-name}/{secret-name}**（部署为要添加到现有密钥保管库的顶级资源时）。<br /><br />要创建的机密的名称。 |
+| properties | 对象<br />必需<br />[properties 对象](#properties)<br /><br />一个对象，用于指定要创建的机密的值。 |
+| dependsOn | 数组<br />可选<br />资源名称或资源唯一标识符的逗号分隔列表。<br /><br />此链接所依赖的资源的集合。如果将机密的密钥保管库部署在同一个模板中，请在此元素中包含密钥保管库的名称，以确保首先部署它。 |
 
+<a id="properties"></a>
 ### 属性对象
 
-| 名称 | 类型 | 必选 | 允许的值 | 说明 |
-| ---- | ---- | -------- | ---------------- | ----------- |
-| value | 字符串 | 是 | | 要在密钥保管库中存储的机密值。传入此属性的值时，请使用类型为 **securestring** 的参数。 |
+| 名称 | 值 |
+| ---- | ---- | 
+| value | 字符串<br />必需<br /><br />要在密钥保管库中存储的机密值。传入此属性的值时，请使用类型为 **securestring** 的参数。 |
 
 	
 ## 示例
@@ -167,7 +168,6 @@
                 "type": "secrets",
                 "name": "[parameters('secretName')]",
                 "apiVersion": "2015-06-01",
-                "tags": { "displayName": "secret" },
                 "properties": {
                     "value": "[parameters('secretValue')]"
                 },
@@ -223,4 +223,6 @@
 - 有关密钥保管库的一般信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started)。
 - 有关在部署模板时引用密钥保管库机密的示例，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter)。
 
-<!---HONumber=Mooncake_0307_2016-->
+
+
+<!---HONumber=Mooncake_0425_2016-->

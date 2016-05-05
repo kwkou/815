@@ -4,13 +4,13 @@
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
-   manager="wpickett"
+   manager="timlt"
    editor=""/>
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="01/04/2016"
-   wacn.date="02/26/2016"/>
+   ms.date="04/05/2016"
+   wacn.date="05/05/2016"/>
 
 # 角色分配模板架构
 
@@ -37,21 +37,22 @@
 
 下表描述了需要在架构中设置的值。
 
-| Name | 类型 | 必选 | 允许的值 | 说明 |
-| ---- | ---- | -------- | ---------------- | ----------- |
-| type | 枚举 | 是 | **Microsoft.Authorization/roleAssignments** | 要创建的资源类型。 |
-| apiVersion | 枚举 | 是 | **2015-07-01** | 要用于创建该资源的 API 版本。 |  
-| name | 字符串 | 是 | 全局唯一标识符 | 新角色分配的标识符。 |
-| dependsOn | 数组 | 否 | 资源名称或资源唯一标识符的逗号分隔列表。 | 此角色分配依赖的资源的集合。如果要分配的角色的作用域限定为一个资源并且该资源部署在同一模板中，请在此元素中包含该资源名称，以确保该资源先部署。 | 
-| properties | 对象 | 是 | （下面显示） | 一个对象，用于标识角色定义、主体和作用域。 |  
+| 名称 | 值 |
+| ---- | ---- |
+| type | 枚举<br />必需<br />**Microsoft.Authorization/roleAssignments**<br /><br />要创建的资源类型。 |
+| apiVersion | 枚举<br />必需<br />**2014-10-01-preview**<br /><br />用于创建资源的 API 版本。 |  
+| name | 字符串<br />必需<br />**全局唯一标识符**<br /><br />新角色分配的标识符。 |
+| dependsOn | 数组<br />可选<br />资源名称或资源唯一标识符的逗号分隔列表。<br /><br />此角色分配依赖的资源的集合。如果要分配的角色的作用域限定为一个资源并且该资源部署在同一模板中，请在此元素中包含该资源名称，以确保该资源先部署。 | 
+| properties | 对象<br />必需<br />[properties 对象](#properties)<br /><br />一个对象，用于标识角色定义、主体和范围。 |  
 
+<a id="properties">
 ### 属性对象
 
-| Name | 类型 | 必选 | 允许的值 | 说明 |
-| ------- | ---- | ---------------- | -------- | ----------- |
-| roleDefinitionId | 字符串 | 是 | **/subscriptions/{subscription-id}/providers/Microsoft.Authorization/roleDefinitions/{role-definition-id}** | 要在角色分配中使用的现有角色定义的标识符。 |
-| principalId | 字符串 | 是 | 全局唯一标识符 | 现有主体的标识符。这将映射到目录中的 ID 并可指向用户、服务主体或安全组。 |
-| 作用域 | 字符串 | 是 | 对于资源组：<br />**/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}**<br /><br />对于资源：<br />**/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{provider-namespace}/{resource-type}/{resource-name}** | 此角色分配适用的作用域。 |
+| 名称 | 值 |
+| ------- | ---- |
+| roleDefinitionId | 字符串<br />必需<br /> **/subscriptions/{subscription-id}/providers/Microsoft.Authorization/roleDefinitions/{role-definition-id}**<br /><br />要在角色分配中使用的现有角色定义的标识符。 |
+| principalId | 字符串<br />必需<br />**全局唯一标识符**<br /><br />现有主体的标识符。这将映射到目录中的 ID 并可指向用户、服务主体或安全组。 |
+| 作用域 | 字符串<br />必需<br />**/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}**（对于资源组）或<br />**/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{provider-namespace}/{resource-type}/{resource-name}**（对于资源）<br /><br />此角色分配适用的范围。 |
 
 
 ## 如何使用角色分配资源
@@ -115,10 +116,17 @@
         "outputs": {}
     }
 
+## 快速入门模板
+
+以下模板演示如何使用角色分配资源：
+
+- [将内置角色分配到资源组](https://github.com/Azure/azure-quickstart-templates/tree/master/101-rbac-builtinrole-resourcegroup)
+- [将内置角色分配到现有 VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-rbac-builtinrole-virtualmachine)
+- [将内置角色分配到多个现有 VM](https://github.com/Azure/azure-quickstart-templates/tree/master/201-rbac-builtinrole-multipleVMs)
 
 ## 后续步骤
 
 - 有关模板结构的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
 - 有关基于角色的访问控制的详细信息，请参阅 [Azure Active Directory 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0425_2016-->
