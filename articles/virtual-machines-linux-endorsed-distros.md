@@ -10,7 +10,7 @@
 	/>
 
 <tags
-	ms.service="virtual-machines"
+	ms.service="virtual-machines-linux"
 	ms.date="12/08/2015"
 	wacn.date="01/29/2016"/>
 

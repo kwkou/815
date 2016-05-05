@@ -7,7 +7,7 @@
 	manager="jeffreyg"
 	editor="monicar" />
 <tags 
-	ms.service="virtual-machines"
+	ms.service="virtual-machines-windows"
 	ms.date="12/04/2015"
 	wacn.date="03/03/2016" />
 

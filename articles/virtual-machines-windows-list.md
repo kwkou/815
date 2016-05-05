@@ -8,11 +8,11 @@
 	editor=""/>
 
 <tags
-	ms.service="virtual-machines"
-	ms.date="09/10/2015"
-	wacn.date="09/10/2015"/>
+	ms.service="virtual-machines-windows"
+	ms.date="05/05/2016"
+	wacn.date="05/05/2016"/>
 
-# Azure中支持的虚拟机镜像
+# Azure中支持的 Windows 虚拟机镜像
 
 <table border='1'>
 <tr>
@@ -146,44 +146,5 @@
 </tr>
 <tr>
 <td>Microsoft</td>		<td>Visual Studio</td>	<td>Team Foundation Server 2013 Update 4 Windows Server 2012 R2</td>
-</tr>
-<tr>
-<td>Ubuntu</td>			<td></td>				<td>Ubuntu Server 12.04 LTS</td>
-</tr>
-<tr>
-<td>Ubuntu</td>			<td></td>				<td>Ubuntu Server 14.04 LTS</td>
-</tr>
-<tr>
-<td>Ubuntu</td>			<td></td>				<td>Ubuntu Server 15.04</td>
-</tr>
-<tr>
-<td>Centos-Based</td>	<td></td>				<td>OpenLogic 6.5</td>
-</tr>
-<tr>
-<td>Centos-Based</td>	<td></td>				<td>OpenLogic 6.6</td>
-</tr>
-<tr>
-<td>Centos-Based</td>	<td></td>				<td>OpenLogic 7.0</td>
-</tr>
-<tr>
-<td>Centos-Based</td>	<td></td>				<td>OpenLogic 7.1</td>
-</tr>
-<tr>
-<td>SUSE</td>			<td></td>				<td>openSUSE 13.1</td>
-</tr>
-<tr>
-<td>SUSE</td>			<td></td>				<td>openSUSE 13.2</td>
-</tr>
-<tr>
-<td>SUSE</td>			<td></td>				<td>SUSE Linux Enterprise Server 11 SP3</td>
-</tr>
-<tr>
-<td>SUSE</td>			<td></td>				<td>SUSE Linux Enterprise Server 11 SP3 for SAP Cloud Appliance Library</td>
-</tr>
-<tr>
-<td>SUSE</td>			<td></td>				<td>SUSE Linux Enterprise Server 11 SP4</td>
-</tr>
-<tr>
-<td>SUSE</td>			<td></td>				<td>SUSE Linux Enterprise Server 12</td>
 </tr>
 </table>

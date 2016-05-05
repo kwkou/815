@@ -8,7 +8,7 @@
  editor=""
  tags="azure-service-management,hpc-pack"/>
 <tags
-	ms.service="virtual-machines"
+	ms.service="virtual-machines-windows"
 	ms.date="01/07/2016"
 	wacn.date="02/26/2016"/>
 
