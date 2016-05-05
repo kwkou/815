@@ -244,8 +244,8 @@ Azure 为大规模的关键任务 [WordPress][wordpress] 网站提供了一个�
 [monitor]: /documentation/articles/web-sites-monitor
 [log]: /documentation/articles/web-sites-enable-diagnostic-log
 [httpscustomdomain]: /documentation/articles/web-sites-configure-ssl-certificate
-[mysqlwindows]: /documentation/articles/virtual-machines-mysql-windows-server-2008r2
-[mysqllinux]: /documentation/articles/virtual-machines-linux-mysql-use-opensuse
+[mysqlwindows]: /documentation/articles/virtual-machines-windows-classic-mysql-2008r2
+[mysqllinux]: /documentation/articles/virtual-machines-linux-classic-mysql-on-opensuse
 [cge]: http://www.mysql.com/products/cluster/
 [websitepricing]: /home/features/web-site/#price
 [export]: http://en.support.wordpress.com/export/

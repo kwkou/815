@@ -1,4 +1,4 @@
-<properties
+﻿<properties
 	pageTitle="配合使用 Azure CLI 和服务管理 | Azure"
 	description="了解如何使用适用于 Mac、Linux 和 Windows 的命令行工具，在经典（Azure 服务管理）模式下使用 Azure CLI 管理 Azure。"
 	services="virtual-machines, mobile-services, cloud-services"

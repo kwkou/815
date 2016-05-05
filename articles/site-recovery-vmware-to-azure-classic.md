@@ -576,7 +576,7 @@ UnifiedAgent.exe [/Role <Agent/MasterTarget>] [/InstallLocation <安装目录>] 
 3. 你可以修改以下设置：
 
 	-  **Azure VM 名称**：这是在故障转移以后，要提供给 Azure 中的计算机的名称。该名称必须符合 Azure 要求。
-	-  **Azure VM 大小**：网络适配器数目根据你为目标虚拟机指定的大小来确定。[阅读更多](/documentation/articles/virtual-machines-size-specs#size-tables)有关大小和适配器的信息。请注意：
+	-  **Azure VM 大小**：网络适配器数目根据你为目标虚拟机指定的大小来确定。[阅读更多](/documentation/articles/virtual-machines-windows-sizes#size-tables)有关大小和适配器的信息。请注意：
 		- 在修改虚拟机的大小并保存设置后，下一次当你打开“配置”选项卡时，网络适配器的数量将会改变。目标虚拟机的网络适配器数目是源虚拟机上网络适配器的最小数目和所选虚拟机大小支持的网络适配器的最大数目。 
 			- 如果源计算机上的网络适配器数小于或等于目标计算机大小允许的适配器数，则目标的适配器数将与源相同。
 			- 如果源虚拟机的适配器数大于目标大小允许的数目，则使用目标大小允许的最大数目。

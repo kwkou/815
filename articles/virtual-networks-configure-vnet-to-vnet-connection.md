@@ -203,7 +203,7 @@ VNet2：地址空间 = 10.2.0.0/16；区域 = 中国北部
 
 ## 后续步骤
 
-连接完成后，即可将虚拟机添加到虚拟网络。请参阅[如何创建虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)以获取相关步骤。
+连接完成后，即可将虚拟机添加到虚拟网络。请参阅[如何创建虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)以获取相关步骤。
 
 
 [1]: /documentation/articles/hdinsight-hbase-geo-replication-configure-vnets

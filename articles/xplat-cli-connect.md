@@ -62,7 +62,7 @@ CLI 版本 0.9.9 及更高版本支持多重身份验证。
 ## 使用非交互式登录（使用工作或学校帐户）
 
 
-非交互式登录方法仅适用于工作或学校帐户，也称为*组织帐户*。此帐户由你的组织管理，并在组织的 Azure Active Directory 中定义。你可以[创建组织帐户](#create-an-organizational-account)（如果你没有），也可以[基于 Microsoft 帐户 ID 创建工作或学校 ID](/documentation/articles/resource-group-create-work-id-from-personal)。这需要在 `azure login` 命令中指定用户名或用户名和密码，如下所示：
+非交互式登录方法仅适用于工作或学校帐户，也称为*组织帐户*。此帐户由你的组织管理，并在组织的 Azure Active Directory 中定义。你可以[创建组织帐户](#create-an-organizational-account)（如果你没有），也可以[基于 Microsoft 帐户 ID 创建工作或学校 ID](/documentation/articles/virtual-machines-windows-create-aad-work-id)。这需要在 `azure login` 命令中指定用户名或用户名和密码，如下所示：
 
 	azure login -u ahmet@contoso.partner.onmschina.cn
 	info:    Executing command login

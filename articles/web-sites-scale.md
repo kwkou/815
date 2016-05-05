@@ -43,7 +43,7 @@
 	
 	“Web 托管计划站点”部分将介绍当前计划中的简短站点列表。当前计划中的所有站点都将更改为您选择的 Web 托管计划模式。
 	
-5. 在“容量”部分，选择“实例大小”。可用的选项包括“小”、“中”或“大”。在“共享”模式下，实例大小选项不可用。有关这些实例大小的详细信息，请参阅 Azure [虚拟机](/documentation/articles/virtual-machines-size-specs)和[云服务大小](/documentation/articles/cloud-services-sizes-specs)。
+5. 在“容量”部分，选择“实例大小”。可用的选项包括“小”、“中”或“大”。在“共享”模式下，实例大小选项不可用。有关这些实例大小的详细信息，请参阅 Azure [虚拟机](/documentation/articles/virtual-machines-windows-sizes)和[云服务大小](/documentation/articles/cloud-services-sizes-specs)。
 	
 	![“基本”模式的实例大小][ChooseBasicInstanceSize]
 	
@@ -180,7 +180,7 @@
 	
     [SQL 数据库定价详细信息](/home/features/sql-database/#price)
 	
-	Azure 的[虚拟机](/documentation/articles/virtual-machines-size-specs/)和[云服务](/documentation/articles/cloud-services-sizes-specs/)大小
+	Azure 的[虚拟机](/documentation/articles/virtual-machines-windows-sizes/)和[云服务](/documentation/articles/cloud-services-sizes-specs/)大小
 	
 	[ Web 应用定价详细信息](/home/features/web-site/#price)
 

@@ -172,7 +172,7 @@
 
 ## 另请参阅
 
-[Azure虚拟机大小](/documentation/articles/virtual-machines-size-specs)
+[Azure虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)
 
 [云服务的大小](/documentation/articles/cloud-services-sizes-specs)
 
