@@ -127,8 +127,8 @@ IoT 中心监视四种类别的事件：
 - [IoT 中心高可用性和灾难恢复][lnk-dr]
 
 <!-- Links and images -->
-[1]: media/iot-hub-operations-monitoring/enable-OM-1.png
-[2]: media/iot-hub-operations-monitoring/enable-OM-2.png
+[1]: ./media/iot-hub-operations-monitoring/enable-OM-1.png
+[2]: ./media/iot-hub-operations-monitoring/enable-OM-2.png
 
 [lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted
 [lnk-diagnostic-metrics]: /documentation/articles/iot-hub-metrics

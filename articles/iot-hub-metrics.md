@@ -57,9 +57,9 @@ IoT 中心提供多个度量值，使你大致了解中心的运行状况及连�
 - [IoT 中心高可用性和灾难恢复][lnk-dr]
 
 <!-- Links and images -->
-[1]: media/iot-hub-metrics/enable-metrics-1.png
-[2]: media/iot-hub-metrics/enable-metrics-2.png
-[3]: media/iot-hub-metrics/enable-metrics-3.png
+[1]: ./media/iot-hub-metrics/enable-metrics-1.png
+[2]: ./media/iot-hub-metrics/enable-metrics-2.png
+[3]: ./media/iot-hub-metrics/enable-metrics-3.png
 
 [lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted
 [lnk-operations-monitoring]: /documentation/articles/iot-hub-operations-monitoring
