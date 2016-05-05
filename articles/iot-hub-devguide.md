@@ -53,6 +53,7 @@ Azure IoT 中心属于多租户服务，向各种执行组件公开功能。下�
 
 最后请务必注意，所有的 IoT 中心终结点都使用 [TLS][lnk-tls] 协议，且绝不会在未加密/不安全的通道上公开任何终结点。
 
+<!--
 ### 如何从事件中心兼容的终结点读取信息<a id="eventhubcompatible"></a>
 
 当你使用[适用于 .NET 的 Azure 服务总线 SDK](https://www.nuget.org/packages/WindowsAzure.ServiceBus) 或[事件中心 - 事件处理器主机][]时，可以将任何 IoT 中心连接字符串与正确的权限配合使用，然后使用**消息/事件**作为事件中心名称。
@@ -79,6 +80,8 @@ Endpoint={Event Hub-compatible endpoint};SharedAccessKeyName={iot hub policy nam
 * [Java 事件中心客户端](https://github.com/hdinsight/eventhubs-client)
 * [Apache Storm Spout](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology)。可以在 GitHub 上查看 [Spout 源代码](https://github.com/apache/storm/tree/master/external/storm-eventhubs)。
 * [Apache Spark 集成](/documentation/articles/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming)
+
+-->
 
 ## 设备标识注册表
 
@@ -547,7 +550,7 @@ IoT 中心公开以下属性让你控制设备到云的消息传送。
 | feedback.ttlAsIso8601 | 服务绑定反馈消息的保留时间。 | ISO\_8601 间隔高达 2D（最小为 1 分钟）。默认值：1 小时。 |
 | feedback.maxDeliveryCount | 反馈队列的最大传送计数。 | 1 到 100。默认值：100。 |
 
-有关更多信息，请参阅[管理 IoT 中心][lnk-manage]。
+<!-- 有关更多信息，请参阅[管理 IoT 中心][lnk-manage]。-->
 
 ## 配额和限制 <a id="throttling"></a>
 
