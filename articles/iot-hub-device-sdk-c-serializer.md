@@ -14,7 +14,7 @@
 
 # 适用于 C 语言的 Azure IoT 设备 SDK – 有关序列化程序的详细信息
 
-本系列教程的[第一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro.md)介绍了**适用于 C 语言的 Azure IoT 设备 SDK**。下一篇文章提供 [**IoTHubClient**](/documentation/articles/iot-hub-device-sdk-c-iothubclient.md) 的更详细介绍。本文最后的部分将提供该 SDK 的剩余组件**序列化程序**库的更详细说明。
+本系列教程的[第一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro)介绍了**适用于 C 语言的 Azure IoT 设备 SDK**。下一篇文章提供 [**IoTHubClient**](/documentation/articles/iot-hub-device-sdk-c-iothubclient) 的更详细介绍。本文最后的部分将提供该 SDK 的剩余组件**序列化程序**库的更详细说明。
 
 本简介文章介绍如何使用**序列化程序**库将事件发送到 IoT 中心，以及接收来自 IoT 中心的消息。在本文中，我们将更完整说明如何利用**序列化程序**宏语言来创建数据模型，以延伸该项讨论。本文还包含更多有关该库如何序列化消息（以及在某些情况下，如何控制序列化行为）的详细信息。此外，将介绍可以修改以判断所要创建的模型大小的某些参数。
 
@@ -24,7 +24,7 @@
 
 ## 建模语言
 
-本系列教程中的[简介文章](/documentation/articles/iot-hub-device-sdk-c-intro.md)通过 **simplesample\_amqp** 应用程序提供的示例介绍了**适用于 C 语言的 Azure IoT 设备 SDK** 建模语言：
+本系列教程中的[简介文章](/documentation/articles/iot-hub-device-sdk-c-intro)通过 **simplesample\_amqp** 应用程序提供的示例介绍了**适用于 C 语言的 Azure IoT 设备 SDK** 建模语言：
 
 ```
 BEGIN_NAMESPACE(WeatherStation);
@@ -589,7 +589,7 @@ WITH_DATA(int, MyData)
 
 此文着重讲解的示例应用程序是 **simplesample\_amqp**。此示例使用较高级别（非“LL”）API 来发送事件和接收消息。如果你使用这些 API，将运行后台线程来处理事件发送和消息接收。不过，你可以使用较低级别 (LL) API 来消除此后台线程的使用，并掌握发送事件或从云接收消息时的明确控制权。
 
-如[前一篇文章](iot-hub-device-sdk-c-iothubclient.md)中所述，有一组由较高级别 API 组成的函数：
+如[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient)中所述，有一组由较高级别 API 组成的函数：
 
 -   IoTHubClient\_CreateFromConnectionString
 
@@ -617,7 +617,7 @@ WITH_DATA(int, MyData)
 
 ## 其他主题
 
-值得一提的其他几个主题包括属性处理、使用替代设备凭据和配置选项。这些都是[前一篇文章](iot-hub-device-sdk-c-iothubclient.md)中所涵盖的主题。重点在于，所有这些功能不论是与**序列化程序**库配合，还是与 **IoTHubClient** 库配合，其运行方式都相同。例如，如果你想要从模型将属性附加到事件，需要以前面所述的相同方式，使用 **IoTHubMessage\_Properties** 和 **Map**\_**AddorUpdate**：
+值得一提的其他几个主题包括属性处理、使用替代设备凭据和配置选项。这些都是[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient)中所涵盖的主题。重点在于，所有这些功能不论是与**序列化程序**库配合，还是与 **IoTHubClient** 库配合，其运行方式都相同。例如，如果你想要从模型将属性附加到事件，需要以前面所述的相同方式，使用 **IoTHubMessage\_Properties** 和 **Map**\_**AddorUpdate**：
 
 ```
 MAP_HANDLE propMap = IoTHubMessage_Properties(message.messageHandle);

@@ -1,5 +1,5 @@
 <properties
- pageTitle="面向 IT 专业人员的 Azure IoT 中心信息 | Microsoft Azure"
+ pageTitle="面向 IT 专业人员的 Azure IoT 中心信息 | Azure"
  description="帮助 IT 专业人员使用 Azure IoT 中心的信息，例如端口要求和安全背景信息。"
  services="iot-hub"
  documentationCenter=""
@@ -46,6 +46,5 @@
 
 [lnk-iothub]: /documentation/articles/iot-hub-what-is-iot-hub
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/#security
-[lnk-manage-portal]: /documentation/articles/iot-hub-manage-through-portal
 
 <!---HONumber=Mooncake_0307_2016-->

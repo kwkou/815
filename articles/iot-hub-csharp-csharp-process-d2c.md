@@ -20,7 +20,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 本教程以 [IoT 中心入门]中演示的代码为基础，呈现两种可用于处理设备到云消息的可缩放模式：
 
-- 在 [Azure Blob 存储]中可靠地存储设备到云的消息。当你执行*冷路径*分析时，这种情况很常见，你会将 Blob 中用作输入的数据存储到 [Azure 数据工厂]或 [HDInsight (Hadoop)] 堆栈等工具驱动的分析进程中。
+- 在 [Azure Blob 存储]中可靠地存储设备到云的消息。当你执行*冷路径*分析时，这种情况很常见，你会将 Blob 中用作输入的数据存储到 [HDInsight (Hadoop)] 堆栈等工具驱动的分析进程中。
 
 - 可靠处理*交互式*设备到云的消息。如果设备到云的消息因为应用程序后端中的一组操作而立即触发（相对于送入分析引擎的*数据点*消息），则表示这些消息是交互式的。例如，相比于遥测数据（例如属于数据点设备到云消息的温度样本），由必须触发在 CRM 系统中插入票证的设备所发出的警报是交互式的设备到云消息。
 
@@ -45,7 +45,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 + Microsoft Visual Studio 2015。
 
-+ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/1rmb-trial)。
++ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial)。
 
 你应该了解 [Azure 存储空间]和 [Azure 服务总线]的一些基本知识。
 
@@ -78,7 +78,6 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 * [IoT 中心概述]
 * [IoT 中心开发人员指南]
 * [IoT 中心指南]
-* [支持的设备平台和语言][Supported devices]
 * [Azure IoT 开发人员中心]
 
 <!-- Images. -->
@@ -88,7 +87,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 <!-- Links -->
 
 [Azure Blob 存储]: /documentation/articles/storage-dotnet-how-to-use-blobs/
-[Azure 数据工厂]: /documentation/services/data-factory/
+
 [HDInsight (Hadoop)]: /documentation/services/hdinsight/
 [服务总线队列]: /documentation/articles/service-bus-dotnet-how-to-use-queues/
 [EventProcessorHost]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx

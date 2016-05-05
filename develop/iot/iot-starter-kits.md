@@ -11,8 +11,8 @@ editor="" />
     wacn.date=""
     />
 
-#Microsoft Azure 初学者套件
-立即采用套件（包括为“Azure Certified for IoT”的开发板、传感器和传送器）开始创新。简单的用户友好教程可帮助你使用 Microsoft Azure IoT 将你的设备无缝连接到云。
+# Azure 初学者套件
+立即采用套件（包括为“Azure Certified for IoT”的开发板、传感器和传送器）开始创新。简单的用户友好教程可帮助你使用 Azure IoT 将你的设备无缝连接到云。
 
 
 ##Adafruit Raspberry Pi 套件

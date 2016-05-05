@@ -8,11 +8,11 @@
 
 2. 在“解决方案资源管理器”中，右键单击“CreateDeviceIdentity”项目，然后单击“管理 NuGet 包”。
 
-3. 在“NuGet 包管理器”窗口中，搜索“Microsoft Azure 设备”，单击“安装”以安装 **Microsoft.Azure.Devices** 包，然后接受使用条款。
+3. 在“NuGet 包管理器”窗口中，搜索“Azure 设备”，单击“安装”以安装 **Microsoft.Azure.Devices** 包，然后接受使用条款。
 
 	![][11]
 
-4. 这将下载、安装 [Microsoft Azure IoT 服务 SDK][lnk-nuget-service-sdk] NuGet 包并添加对它的引用。
+4. 这将下载、安装 [Azure IoT 服务 SDK][lnk-nuget-service-sdk] NuGet 包并添加对它的引用。
 
 4. 在 **Program.cs** 文件顶部添加以下 `using` 语句：
 

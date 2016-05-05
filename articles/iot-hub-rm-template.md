@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 ARM 模板和 C# 创建 IoT 中心 | Microsoft Azure"
+	pageTitle="使用 ARM 模板和 C# 创建 IoT 中心 | Azure"
 	description="遵照本教程开始使用 Resource Manager 模板和 C# 程序创建 IoT 中心。"
 	services="iot-hub"
 	documentationCenter=".net"
@@ -25,7 +25,7 @@
 为了完成本教程，你需要有：
 
 - Microsoft Visual Studio 2015。
-- 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用][lnk-free-trial]。
+- 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][lnk-free-trial]。
 - 可用于存储模板文件的 [Azure 存储帐户][lnk-storage-account]。
 - [Microsoft Azure PowerShell 1.0][lnk-powershell-install] 或更高版本。
 

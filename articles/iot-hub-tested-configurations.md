@@ -1,5 +1,5 @@
 <properties
-	pageTitle="OS 平台兼容性 | Microsoft Azure"
+	pageTitle="OS 平台兼容性 | Azure"
 	description="概述 IoT 设备 SDK 与 OS 平台的兼容性。"
 	services="iot-hub"
 	documentationCenter=""
@@ -18,7 +18,7 @@
 
 ## Azure IoT 认证计划
 
-如果你已经有一个设备，请查看 [Azure IoT 认证计划][lnk-certified]中包含的设备列表，以找到特定设备的兼容性信息。Microsoft Azure IoT 认证是一个合作伙伴计划，该计划将更广泛的 IoT 生态系统与 Microsoft Azure 相连接，以便开发人员和架构师了解兼容性方案。具体而言，它提供受信任的 OS/设备组合列表来帮助快速开始 IoT 项目 — 无论你是处于概念证明还是试验阶段。
+如果你已经有一个设备，请查看Azure IoT 认证计划中包含的设备列表，以找到特定设备的兼容性信息。 Azure IoT 认证是一个合作伙伴计划，该计划将更广泛的 IoT 生态系统与 Azure 相连接，以便开发人员和架构师了解兼容性方案。具体而言，它提供受信任的 OS/设备组合列表来帮助快速开始 IoT 项目 — 无论你是处于概念证明还是试验阶段。
 
 ## OS 平台
 
@@ -48,7 +48,7 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 
 ## C 库
 
-[适用于 C 的 Microsoft Azure IoT 设备 SDK](https://github.com/Azure/azure-iot-sdks/blob/master/c/readme.md) 在以下配置上进行了测试：
+[适用于 C 的 Azure IoT 设备 SDK](https://github.com/Azure/azure-iot-sdks/blob/master/c/readme.md) 在以下配置上进行了测试：
 
 |OS 平台| 版本|协议|
 |:---------|:----------:|:----------:|
@@ -64,7 +64,7 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 
 ## Node.js 库
 
-[适用于 Node.js 的 Microsoft Azure IoT 设备 SDK](https://github.com/Azure/azure-iot-sdks/blob/master/node/device/readme.md) 在以下配置上进行了测试：
+[适用于 Node.js 的 Azure IoT 设备 SDK](https://github.com/Azure/azure-iot-sdks/blob/master/node/device/readme.md) 在以下配置上进行了测试：
 
 
 |运行时| 版本|协议|
@@ -75,14 +75,14 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 
 ## Java 库
 
-[适用于 Java 的 Microsoft Azure IoT 设备 SDK](https://github.com/Azure/azure-iot-sdks/blob/master/java/device/readme.md) 在以下配置上进行了测试：
+[适用于 Java 的 Azure IoT 设备 SDK](https://github.com/Azure/azure-iot-sdks/blob/master/java/device/readme.md) 在以下配置上进行了测试：
 
 |运行时| 版本|协议|
 |:---------|:----------:|----|
 |Java SE (Windows)| 1\.8 | HTTPS、AMQP、MQTT |
 |Java SE (Linux)| 1\.8 | HTTPS、AMQP、MQTT|
 
-适用于 Java 的 Microsoft Azure IoT 服务 SDK 在以下配置上进行了测试：
+适用于 Java 的 Azure IoT 服务 SDK 在以下配置上进行了测试：
 
 |运行时| 版本|协议|
 |:---------|:----------:|:-----|
@@ -91,7 +91,7 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 
 ## CSharp
 
-[适用于 .NET 的 Microsoft Azure IoT 设备 SDK](https://github.com/Azure/azure-iot-sdks/blob/master/csharp/device/readme.md) 在以下配置上进行了测试：
+[适用于 .NET 的 Azure IoT 设备 SDK](https://github.com/Azure/azure-iot-sdks/blob/master/csharp/device/readme.md) 在以下配置上进行了测试：
 
 |OS 平台| 版本|协议|
 |:---------|:----------:|:----------:|
@@ -103,7 +103,7 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 
 ## Azure IoT 认证
 
-**Azure IoT 认证**是一种合作伙伴计划，该计划将更广泛的 IoT 生态系统与 Microsoft Azure 相连接，以便开发人员和架构师了解兼容性方案。具体而言，它提供 OS/设备组合的受信任列表来帮助快速开始 IoT 项目 — 无论你是处于概念证明还是试验阶段。借助认证的设备和操作系统组合，IoT 项目可以快速开始，只需较少的工作和自定义便可确保设备与 Azure IoT 中心兼容。
+**Azure IoT 认证**是一种合作伙伴计划，该计划将更广泛的 IoT 生态系统与 Azure 相连接，以便开发人员和架构师了解兼容性方案。具体而言，它提供 OS/设备组合的受信任列表来帮助快速开始 IoT 项目 — 无论你是处于概念证明还是试验阶段。借助认证的设备和操作系统组合，IoT 项目可以快速开始，只需较少的工作和自定义便可确保设备与 Azure IoT 中心兼容。
 
 ## IoT 认证设备
 
@@ -164,11 +164,11 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 |[Trueverit V4](http://www.trueverit.com/) |自定义 Linux | C|
 |[USISH EDA8909](http://www.usish.com/) |Windows 10 | C#|
 
-[开始使用这些设备](/develop/iot/get-started/)或访问我们的 GitHub [存储库](https://github.com/Azure/azure-iot-sdks)并按照语言搜索设备文档。
+[开始使用这些设备](/develop/iot/iot-starter-kits/)或访问我们的 GitHub [存储库](https://github.com/Azure/azure-iot-sdks)并按照语言搜索设备文档。
 
 ## 后续步骤
 
-- 了解有关使用 [IoT 认证设备](http://azure.com/iotdev)制定解决方案的详细信息。
+- 了解有关使用 [IoT 认证设备](/develop/iot/)制定解决方案的详细信息。
 
 
 [lnk-iot-suite]: /documentation/suites/iot-suite/

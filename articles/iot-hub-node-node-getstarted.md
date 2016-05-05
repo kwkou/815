@@ -1,5 +1,5 @@
 <properties
-	pageTitle="适用于 Node.js 的 Azure IoT 中心入门 | Microsoft Azure"
+	pageTitle="适用于 Node.js 的 Azure IoT 中心入门 | Azure"
 	description="遵照本教程开始将 Azure IoT 中心与 Node.js 配合使用。"
 	services="iot-hub"
 	documentationCenter="nodejs"
@@ -42,7 +42,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 + Node.js 版本 0.12.x 或更高版本。<br/>[准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Node.js。
 
-+ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用][lnk-free-trial]。
++ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][lnk-free-trial]。
 
 
 

@@ -112,7 +112,6 @@ IoT 解决方案存储有关单个设备的数据，例如：
 
 [lnk-devguide-identityregistry]: /documentation/articles/iot-hub-devguide/#identityregistry
 [lnk-device-management]: /documentation/articles/iot-hub-device-management
-[lnk-devguide-opmon]: /documentation/articles/iot-hub-operations-monitoring
 
 [lnk-device-sdks]: /documentation/articles/iot-hub-sdks-summary
 [lnk-devguide-security]: /documentation/articles/iot-hub-devguide/#security

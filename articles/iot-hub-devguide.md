@@ -568,7 +568,7 @@ SKU 还确定了 IoT 中心对所有操作强制实施的限制。
 
 [lnk-compatibility]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations.md
 [lnk-apis-sdks]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md
-[lnk-pricing]: /pricing/details/iot-hub
+[lnk-pricing]: /home/features/iot-hub/#price
 [lnk-resource-provider-apis]: https://msdn.microsoft.com/zh-cn/library/mt548492.aspx
 
 [lnk-sas-tokens]: /documentation/articles/iot-hub-sas-tokens
@@ -602,6 +602,6 @@ SKU 还确定了 IoT 中心对所有操作强制实施的限制。
 [lnk-iotdev]: /develop/iot/
 [lnk-bulk-identity]: /documentation/articles/iot-hub-bulk-identity-mgmt
 [lnk-eventhub-partitions]: /documentation/articles/event-hubs-overview/#partitions
-[lnk-manage]: /documentation/articles/iot-hub-manage-through-portal
+
 
 <!---HONumber=Mooncake_0307_2016-->
