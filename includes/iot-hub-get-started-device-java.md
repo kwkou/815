@@ -72,61 +72,60 @@
 
 9. 在 **App** 类中添加以下嵌套 **EventCallback** 类，以显示 IoT 中心在处理来自模拟设备的消息时返回的确认状态。处理消息时，此方法还会通知应用程序中的主线程：
 
-    ```
-    private static class EventCallback implements IotHubEventCallback
-    {
-      public void execute(IotHubStatusCode status, Object context) {
-        System.out.println("IoT Hub responded to message with status " + status.name());
-      
-        if (context != null) {
-          synchronized (context) {
-            context.notify();
+        private static class EventCallback implements IotHubEventCallback
+        {
+          public void execute(IotHubStatusCode status, Object context) {
+            System.out.println("IoT Hub responded to message with status " + status.name());
+          
+            if (context != null) {
+              synchronized (context) {
+                context.notify();
+              }
+            }
           }
         }
-      }
-    }
-    ```
+
 
 10. 在 **App** 类中添加以下嵌套 **MessageSender** 类。此类中的 **run** 方法将生成发送到 IoT 中心的示例遥测数据，并在发送下一条消息之前等待确认：
 
-    ```
-    private static class MessageSender implements Runnable {
-      public volatile boolean stopThread = false;
 
-      public void run()  {
-        try {
-          double avgWindSpeed = 10; // m/s
-          Random rand = new Random();
-          DeviceClient client;
-          client = new DeviceClient(connString, protocol);
-          client.open();
-        
-          while (!stopThread) {
-            double currentWindSpeed = avgWindSpeed + rand.nextDouble() * 4 - 2;
-            TelemetryDataPoint telemetryDataPoint = new TelemetryDataPoint();
-            telemetryDataPoint.deviceId = "myFirstDevice";
-            telemetryDataPoint.windSpeed = currentWindSpeed;
-      
-            String msgStr = telemetryDataPoint.serialize();
-            Message msg = new Message(msgStr);
-            System.out.println(msgStr);
-        
-            Object lockobj = new Object();
-            EventCallback callback = new EventCallback();
-            client.sendEventAsync(msg, callback, lockobj);
+        private static class MessageSender implements Runnable {
+          public volatile boolean stopThread = false;
     
-            synchronized (lockobj) {
-              lockobj.wait();
+          public void run()  {
+            try {
+              double avgWindSpeed = 10; // m/s
+              Random rand = new Random();
+              DeviceClient client;
+              client = new DeviceClient(connString, protocol);
+              client.open();
+            
+              while (!stopThread) {
+                double currentWindSpeed = avgWindSpeed + rand.nextDouble() * 4 - 2;
+                TelemetryDataPoint telemetryDataPoint = new TelemetryDataPoint();
+                telemetryDataPoint.deviceId = "myFirstDevice";
+                telemetryDataPoint.windSpeed = currentWindSpeed;
+          
+                String msgStr = telemetryDataPoint.serialize();
+                Message msg = new Message(msgStr);
+                System.out.println(msgStr);
+            
+                Object lockobj = new Object();
+                EventCallback callback = new EventCallback();
+                client.sendEventAsync(msg, callback, lockobj);
+        
+                synchronized (lockobj) {
+                  lockobj.wait();
+                }
+                Thread.sleep(1000);
+              }
+              client.close();
+            } catch (Exception e) {
+              e.printStackTrace();
             }
-            Thread.sleep(1000);
           }
-          client.close();
-        } catch (Exception e) {
-          e.printStackTrace();
         }
-      }
-    }
-    ```
+
 
     IoT 中心确认前面的消息一秒后，此方法将发送新的设备到云消息。该消息包含具有 deviceId 的 JSON 序列化对象和一个随机生成的编号，用于模拟风速传感器。
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="适用于 C 语言的 Azure IoT 设备 SDK - 序列化程序 | Microsoft Azure"
+	pageTitle="适用于 C 语言的 Azure IoT 设备 SDK - 序列化程序 | Azure"
 	description="了解如何使用适用于 C 语言的 Azure IoT 设备 SDK 中的序列化程序库"
 	services="iot-hub"
 	documentationCenter=""
@@ -12,7 +12,7 @@
      ms.date="11/10/2015"
      wacn.date="03/18/2016"/>
 
-# 适用于 C 语言的 Microsoft Azure IoT 设备 SDK – 有关序列化程序的详细信息
+# 适用于 C 语言的 Azure IoT 设备 SDK – 有关序列化程序的详细信息
 
 本系列教程的[第一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro.md)介绍了**适用于 C 语言的 Azure IoT 设备 SDK**。下一篇文章提供 [**IoTHubClient**](/documentation/articles/iot-hub-device-sdk-c-iothubclient.md) 的更详细介绍。本文最后的部分将提供该 SDK 的剩余组件**序列化程序**库的更详细说明。
 
@@ -132,30 +132,29 @@ SendAsync(iotHubClientHandle, (const void*)&(testModel->Test));
 简单而言，我们要将一个值赋给 **Test** 结构的每个成员，然后调用 **SendAsync** 将 **Test** 数据事件发送到云。**SendAsync** 是将单个数据事件发送到 IoT 中心的帮助器函数：
 
 ```
-void SendAsync(IOTHUB_CLIENT_LL_HANDLE iotHubClientHandle, const void *dataEvent)
-{
-	unsigned char* destination;
-	size_t destinationSize;
-	if (SERIALIZE(&destination, &destinationSize, *(const unsigned char*)dataEvent) ==
-	{
-		// null terminate the string
-		char* destinationAsString = (char*)malloc(destinationSize + 1);
-		if (destinationAsString != NULL)
-		{
-			memcpy(destinationAsString, destination, destinationSize);
-			destinationAsString[destinationSize] = '\0';
-			IOTHUB_MESSAGE_HANDLE messageHandle = IoTHubMessage_CreateFromString(destinationAsString);
-			if (messageHandle != NULL)
-			{
-				IoTHubClient_SendEventAsync(iotHubClientHandle, messageHandle, sendCallback, (void*)0);
-
-				IoTHubMessage_Destroy(messageHandle);
-			}
-			free(destinationAsString);
-		}
-		free(destination);
-	}
-}
+    void SendAsync(IOTHUB_CLIENT_LL_HANDLE iotHubClientHandle, const void *dataEvent)
+    {
+    	unsigned char* destination;
+    	size_t destinationSize;
+    	if (SERIALIZE(&destination, &destinationSize, *(const unsigned char*)dataEvent) ==
+    	{
+    		// null terminate the string
+    		char* destinationAsString = (char*)malloc(destinationSize + 1);
+    		if (destinationAsString != NULL)
+    		{
+    			memcpy(destinationAsString, destination, destinationSize);
+    			destinationAsString[destinationSize] = '\0';
+    			IOTHUB_MESSAGE_HANDLE messageHandle = IoTHubMessage_CreateFromString(destinationAsString);
+    			if (messageHandle != NULL)
+    			{
+    				IoTHubClient_SendEventAsync(iotHubClientHandle, messageHandle, sendCallback, (void*)0);
+    				IoTHubMessage_Destroy(messageHandle);
+    			}
+    			free(destinationAsString);
+    		}
+    		free(destination);
+    	}
+    }
 ```
 
 此函数序列化给定的数据事件并使用 **IoTHubClient\_SendEventAsync** 将事件发送到 IoT 中心。这是在以前的文章中讨论过的同一代码（**SendAsync** 将逻辑封装到便利函数中）。
@@ -246,18 +245,18 @@ if (SERIALIZE(&destination, &destinationSize, thermostat->Temperature) == IOT_AG
 上述代码使用前面介绍的帮助器 **GetDateTimeOffset**。此代码将序列化与发送事件的任务明确区分，原因在稍后将渐趋明朗。前面的代码将温度事件以序列化方式发送到缓冲区。**sendMessage** 是一个帮助器函数（包含在 **simplesample\_amqp** 中），可将事件发送到 IoT 中心：
 
 ```
-static void sendMessage(IOTHUB_CLIENT_HANDLE iotHubClientHandle, const unsigned char* buffer, size_t size)
-{
-    static unsigned int messageTrackingId;
-    IOTHUB_MESSAGE_HANDLE messageHandle = IoTHubMessage_CreateFromByteArray(buffer, size);
-    if (messageHandle != NULL)
+    static void sendMessage(IOTHUB_CLIENT_HANDLE iotHubClientHandle, const unsigned char* buffer, size_t size)
     {
-        IoTHubClient_SendEventAsync(iotHubClientHandle, messageHandle, sendCallback, (void*)(uintptr_t)messageTrackingId);
-
-        IoTHubMessage_Destroy(messageHandle);
+        static unsigned int messageTrackingId;
+        IOTHUB_MESSAGE_HANDLE messageHandle = IoTHubMessage_CreateFromByteArray(buffer, size);
+        if (messageHandle != NULL)
+        {
+            IoTHubClient_SendEventAsync(iotHubClientHandle, messageHandle, sendCallback, (void*)(uintptr_t)messageTrackingId);
+    
+            IoTHubMessage_Destroy(messageHandle);
+        }
+        free((void*)buffer);
     }
-    free((void*)buffer);
-}
 ```
 
 此代码是前一部分所述的 **SendAsync** 帮助器的子集，因此不在此赘述。

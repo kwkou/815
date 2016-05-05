@@ -16,9 +16,9 @@
 
 本文档介绍了 SDK 与不同 OS 平台的兼容性。如果你不确定要使用的设备，请查看本文中的 [OS 平台和库](#os-platforms)兼容性部分。
 
-## Microsoft Azure IoT 认证计划
+## Azure IoT 认证计划
 
-如果你已经有一个设备，请查看 [Microsoft Azure IoT 认证计划][lnk-certified]中包含的设备列表，以找到特定设备的兼容性信息。Microsoft Azure IoT 认证是一个合作伙伴计划，该计划将更广泛的 IoT 生态系统与 Microsoft Azure 相连接，以便开发人员和架构师了解兼容性方案。具体而言，它提供受信任的 OS/设备组合列表来帮助快速开始 IoT 项目 — 无论你是处于概念证明还是试验阶段。
+如果你已经有一个设备，请查看 [Azure IoT 认证计划][lnk-certified]中包含的设备列表，以找到特定设备的兼容性信息。Microsoft Azure IoT 认证是一个合作伙伴计划，该计划将更广泛的 IoT 生态系统与 Microsoft Azure 相连接，以便开发人员和架构师了解兼容性方案。具体而言，它提供受信任的 OS/设备组合列表来帮助快速开始 IoT 项目 — 无论你是处于概念证明还是试验阶段。
 
 ## OS 平台
 
@@ -101,9 +101,9 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 托管代理代码需要 Microsoft .NET Framework 4.5
 
 
-## Microsoft Azure IoT 认证
+## Azure IoT 认证
 
-**Microsoft Azure IoT 认证**是一种合作伙伴计划，该计划将更广泛的 IoT 生态系统与 Microsoft Azure 相连接，以便开发人员和架构师了解兼容性方案。具体而言，它提供 OS/设备组合的受信任列表来帮助快速开始 IoT 项目 — 无论你是处于概念证明还是试验阶段。借助认证的设备和操作系统组合，IoT 项目可以快速开始，只需较少的工作和自定义便可确保设备与 Azure IoT 中心兼容。
+**Azure IoT 认证**是一种合作伙伴计划，该计划将更广泛的 IoT 生态系统与 Microsoft Azure 相连接，以便开发人员和架构师了解兼容性方案。具体而言，它提供 OS/设备组合的受信任列表来帮助快速开始 IoT 项目 — 无论你是处于概念证明还是试验阶段。借助认证的设备和操作系统组合，IoT 项目可以快速开始，只需较少的工作和自定义便可确保设备与 Azure IoT 中心兼容。
 
 ## IoT 认证设备
 

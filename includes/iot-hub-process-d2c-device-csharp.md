@@ -4,23 +4,21 @@
 
 1. 在 Visual Studio 中的 **SimulatedDevice** 项目内，将以下方法添加到 **Program** 类。
 
-    ```
-    private static async void SendDeviceToCloudInteractiveMessagesAsync()
-    {
-      while (true)
-      {
-        var interactiveMessageString = "Alert message!";
-        var interactiveMessage = new Message(Encoding.ASCII.GetBytes(interactiveMessageString));
-        interactiveMessage.Properties["messageType"] = "interactive";
-        interactiveMessage.MessageId = Guid.NewGuid().ToString();
-
-        await deviceClient.SendEventAsync(interactiveMessage);
-        Console.WriteLine("{0} > Sending interactive message: {1}", DateTime.Now, interactiveMessageString);
-
-        Thread.Sleep(10000);
-      }
-    }
-    ```
+        private static async void SendDeviceToCloudInteractiveMessagesAsync()
+        {
+          while (true)
+          {
+            var interactiveMessageString = "Alert message!";
+            var interactiveMessage = new Message(Encoding.ASCII.GetBytes(interactiveMessageString));
+            interactiveMessage.Properties["messageType"] = "interactive";
+            interactiveMessage.MessageId = Guid.NewGuid().ToString();
+    
+            await deviceClient.SendEventAsync(interactiveMessage);
+            Console.WriteLine("{0} > Sending interactive message: {1}", DateTime.Now, interactiveMessageString);
+    
+            Thread.Sleep(10000);
+          }
+        }
 
     此方法非常类似于 **SimulatedDevice** 项目中的 **SendDeviceToCloudMessagesAsync** 方法。唯一的差别是你现在要设置 **MessageId** 系统属性，以及名为 **messageType** 的用户属性。代码将向 **MessageId** 属性分配全局唯一的标识符 (guid)，服务总线可以用它来删除重复接收的消息。本示例使用 **messageType** 属性来区分交互式消息与数据点消息。应用程序将在消息属性而不是在消息正文中传递此信息，因此事件处理器不需要反序列化消息来执行消息路由。
 
@@ -28,9 +26,9 @@
 
 2. 将以下方法添加到 **Main** 方法的 `Console.ReadLine()` 行的前面：
 
-    ````
-    SendDeviceToCloudInteractiveMessagesAsync();
-    ````
+    
+        SendDeviceToCloudInteractiveMessagesAsync();
+
 
     > [AZURE.NOTE] 为简单起见，本教程不实现任何重试策略。在生产代码中，你应该按 MSDN 文章[暂时性故障处理]中所述实现重试策略（例如指数退让）。
 

@@ -1,5 +1,5 @@
 <properties
- pageTitle="Azure IoT 中心概述 | Microsoft Azure"
+ pageTitle="Azure IoT 中心概述 | Azure"
  description="Azure IoT 中心服务概述，包括设备连接性、通信模式和服务辅助通信模式"
  services="iot-hub"
  documentationCenter=""

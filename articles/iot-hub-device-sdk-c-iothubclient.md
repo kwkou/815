@@ -1,5 +1,5 @@
 <properties
-	pageTitle="适用于 C 语言的 Azure IoT 设备 SDK - IoTHubClient | Microsoft Azure"
+	pageTitle="适用于 C 语言的 Azure IoT 设备 SDK - IoTHubClient | Azure"
 	description="了解如何使用适用于 C 语言的 Azure IoT 设备 SDK 中的 IoTHubClient 库"
 	services="iot-hub"
 	documentationCenter=""
@@ -12,9 +12,9 @@
      ms.date="11/10/2015"
      wacn.date="03/18/2016"/>
 
-# 适用于 C 语言的 Microsoft Azure IoT 设备 SDK – 有关 IoTHubClient 的详细信息
+# 适用于 C 语言的 Azure IoT 设备 SDK – 有关 IoTHubClient 的详细信息
 
-本系列教程的[第一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro)介绍了**适用于 C 语言的 Microsoft Azure IoT 设备 SDK**。该文章已说明 SDK 中有两个体系结构层。底层是 **IoTHubClient** 库，用于直接管理与 IoT 中心的通信。另有一个**序列化程序**库，它构建在 SDK 的顶部，可提供序列化服务。在本文中，我们将提供有关 **IoTHubClient** 库的更多详细信息。
+本系列教程的[第一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro)介绍了**适用于 C 语言的 Azure IoT 设备 SDK**。该文章已说明 SDK 中有两个体系结构层。底层是 **IoTHubClient** 库，用于直接管理与 IoT 中心的通信。另有一个**序列化程序**库，它构建在 SDK 的顶部，可提供序列化服务。在本文中，我们将提供有关 **IoTHubClient** 库的更多详细信息。
 
 前一篇文章介绍了如何使用 **IoTHubClient** 库将事件发送到 IoT 中心及接收消息。本文将扩大讨论范围，介绍**较低级别 API**，说明如何更精确地管理发送和接收数据的*时机*。此外将说明如何使用 **IoTHubClient** 库中的属性处理功能，将属性附加到事件（以及从消息中检索属性）。最后，进一步说明如何以不同的方式来处理从 IoT 中心收到的消息。
 
@@ -163,8 +163,6 @@ Map_AddOrUpdate(propMap, "SequenceNumber", propText);
 ```
 static IOTHUBMESSAGE_DISPOSITION_RESULT ReceiveMessageCallback(IOTHUB_MESSAGE_HANDLE message, void* userContextCallback)
 {
-    . . .
-
     // Retrieve properties from the message
     MAP_HANDLE mapProperties = IoTHubMessage_Properties(message);
     if (mapProperties != NULL)
@@ -185,8 +183,6 @@ static IOTHUBMESSAGE_DISPOSITION_RESULT ReceiveMessageCallback(IOTHUB_MESSAGE_HA
             }
         }
     }
-
-    . . .
 }
 ```
 
@@ -201,7 +197,6 @@ static IOTHUBMESSAGE_DISPOSITION_RESULT ReceiveMessageCallback(IOTHUB_MESSAGE_HA
 ```
 static IOTHUBMESSAGE_DISPOSITION_RESULT ReceiveMessageCallback(IOTHUB_MESSAGE_HANDLE message, void* userContextCallback)
 {
-	. . .
     return IOTHUBMESSAGE_ACCEPTED;
 }
 ```
