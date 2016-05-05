@@ -11,7 +11,7 @@
 <tags
    ms.service="sql-database"
    ms.date="02/09/2016"
-   wacn.date="03/21/2016"/>
+   wacn.date="05/05/2016"/>
 
 # 概述：云业务连续性与使用 SQL 数据库进行数据库灾难恢复
 
@@ -82,6 +82,6 @@
 
 ###活动异地复制
 
-活动异地复制适用于高级数据库。它专为恢复要求最为苛刻的写入密集型应用程序而设计。使用活动异地复制，最多可以在不同区域中的服务器上创建四个可读辅助数据库。你可以像使用标准异地复制时一样启动向任何辅助数据库的故障转移。此外，活动异地复制可用于支持应用程序升级或重定位方案，以及只读工作负荷的负载平衡。有关如何配置异地复制的详细信息，请参阅[业务连续性设计](/documentation/articles/sql-database-business-continuity-design)；有关如何故障转移到辅助数据库的详细信息，请参阅[在中断后恢复](/documentation/articles/sql-database-disaster-recovery)。有关如何在不停机的情况下实现应用程序升级的详细信息，请参阅[在不停机的情况下升级应用程序](/documentation/articles/sql-database-business-continuity-application-upgrade)。
+活动异地复制适用于所有服务层。它专为恢复要求最为苛刻的写入密集型应用程序而设计。使用活动异地复制，最多可以在不同区域中的服务器上创建四个可读辅助数据库。你可以像使用标准异地复制时一样启动向任何辅助数据库的故障转移。此外，活动异地复制可用于支持应用程序升级或重定位方案，以及只读工作负荷的负载平衡。有关如何配置异地复制的详细信息，请参阅[业务连续性设计](/documentation/articles/sql-database-business-continuity-design)；有关如何故障转移到辅助数据库的详细信息，请参阅[在中断后恢复](/documentation/articles/sql-database-disaster-recovery)。有关如何在不停机的情况下实现应用程序升级的详细信息，请参阅[在不停机的情况下升级应用程序](/documentation/articles/sql-database-business-continuity-application-upgrade)。
 
 <!---HONumber=Mooncake_0307_2016-->
