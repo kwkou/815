@@ -20,7 +20,7 @@
 
 ## 获取和运行 Azure PowerShell cmdlet
 
-> [AZURE.NOTE]  若要将 Azure Powershell 用于 SQL 数据仓库，应下载并安装带有 ARM cmdlet 的最新版本 Azure PowerShell。可以通过运行 `Get-Module -ListAvailable -Name Azure` 查看你的版本。本文基于 Microsoft Azure PowerShell 版本 1.0.3。
+> [AZURE.NOTE]  若要将 Azure Powershell 用于 SQL 数据仓库，应下载并安装带有 ARM cmdlet 的最新版本 Azure PowerShell。可以通过运行 `Get-Module -ListAvailable -Name Azure` 查看你的版本。本文基于  Azure PowerShell 版本 1.0.3。
 
 如果你尚未安装 PowerShell，则需要下载它并对其进行配置。
 

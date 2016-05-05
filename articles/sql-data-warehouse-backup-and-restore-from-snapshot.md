@@ -28,7 +28,7 @@ SQL 数据仓库提供两个核心功能，用于在发生导致意外数据损�
 
 ### PowerShell
 
-使用 Azure PowerShell 以编程方式执行数据库还原。若要下载 Azure PowerShell 模块，请运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)。可以通过运行 Get-Module -ListAvailable -Name Azure 来检查你的版本。本文基于 Microsoft Azure PowerShell 版本 1.0.4。
+使用 Azure PowerShell 以编程方式执行数据库还原。若要下载 Azure PowerShell 模块，请运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)。可以通过运行 Get-Module -ListAvailable -Name Azure 来检查你的版本。本文基于  Azure PowerShell 版本 1.0.4。
 
 若要还原数据库，请使用 [Start-AzureSqlDatabaseRestore][] cmdlet。
 
