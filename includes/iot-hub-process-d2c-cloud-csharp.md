@@ -249,7 +249,7 @@
 
 5. 最后，将以下几行添加到 **Main** 方法，将连接字符串替换为名为 **d2ctutorial** 的队列的侦听权限：
 
-    ```
+ ```
     Console.WriteLine("Process D2C Interactive Messages app\n");
 
     string connectionString = "{service bus listen connection string}";
@@ -280,7 +280,7 @@
     Console.WriteLine("Receiving interactive messages from SB queue...");
     Console.WriteLine("Press any key to exit.");
     Console.ReadLine();
-    ```
+ ```
 
 <!-- Links -->
 [关于 Azure 存储空间]: /documentation/articles/storage-create-storage-account/#create-a-storage-account

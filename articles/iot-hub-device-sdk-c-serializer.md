@@ -532,7 +532,7 @@ EXECUTE_COMMAND_RESULT SetAirResistance(ContosoAnemometer* device, int Position)
 
 此文件夹包含名为 **macro\_utils\_h\_generator.sln** 的 Visual Studio 解决方案。
 
-  ![](media/iot-hub-device-sdk-c-serializer/01-macro_utils_h_generator.PNG)
+  ![](./media/iot-hub-device-sdk-c-serializer/01-macro_utils_h_generator.PNG)
 
 此解决方案中的程序在 .\\c\\common\\inc 目录中生成 **macro\_utils.h** 文件。SDK 随附了一个默认的 macro\_utils.h 文件。此解决方案可让你修改某些参数，然后根据这些参数重新创建标头文件。
 
@@ -560,17 +560,17 @@ WITH_DATA(int, MyData)
 
 如前所述，**DECLARE\_MODEL** 只是一个 C 宏。模型的名称和 **WITH\_DATA** 语句（另一个宏）是 **DECLARE\_MODEL** 的参数。**nMacroParameters** 定义可在 **DECLARE\_MODEL** 中包含多少参数。实际上，这定义了你可以指定的数据事件和操作声明数目。因此，使用默认限制 124 时，你可以定义由大约 60 个操作和事件数据组成的模型。如果你试图超过此限制，将收到如下所示的编译器错误：
 
-  ![](media/iot-hub-device-sdk-c-serializer/02-nMacroParametersCompilerErrors.PNG)
+  ![](./media/iot-hub-device-sdk-c-serializer/02-nMacroParametersCompilerErrors.PNG)
 
 **nArithmetic** 参数主要与宏语言的内部工作有关，而与应用程序没有太大的关系。它控制你可以在模型中指定的成员总数，包括 **DECLARE\_STRUCT** 宏。如果你看到这样的编译器错误，应该尝试提高 **nArithmetic** 的值：
 
-   ![](media/iot-hub-device-sdk-c-serializer/03-nArithmeticCompilerErrors.PNG)
+   ![](./media/iot-hub-device-sdk-c-serializer/03-nArithmeticCompilerErrors.PNG)
 
 如果想要更改这些参数，请修改 macro\_utils.tt 文件中的值，重新编译 macro\_utils\_h\_generator.sln 解决方案，然后运行编译后的程序。执行此操作后，将生成新的 macro\_utils.h 文件并将其放在 .\\common\\inc 目录中。
 
 若要使用新版 macro\_utils.h，请从解决方案中删除**序列化程序** NuGet 包，然后在它的位置包含**序列化程序** Visual Studio 项目。这样，便可以让代码针对序列化程序库的源代码进行编译。这包括更新的 macro\_utils.h。如果你要对 **simplesample\_amqp** 执行此操作，请先从解决方案中删除序列化程序库的 NuGet 包：
 
-   ![](media/iot-hub-device-sdk-c-serializer/04-serializer-github-package.PNG)
+   ![](./media/iot-hub-device-sdk-c-serializer/04-serializer-github-package.PNG)
 
 然后将此项目添加到 Visual Studio 解决方案：
 
@@ -578,7 +578,7 @@ WITH_DATA(int, MyData)
 
 完成后，解决方案应该如下所示：
 
-   ![](media/iot-hub-device-sdk-c-serializer/05-serializer-project.PNG)
+   ![](./media/iot-hub-device-sdk-c-serializer/05-serializer-project.PNG)
 
 现在当你编译解决方案时，更新的 macro\_utils.h 就会包含在二进制文件中。
 

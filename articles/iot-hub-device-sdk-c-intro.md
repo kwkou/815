@@ -30,11 +30,11 @@
 
 在此存储库的 **master** 分支中可找到最新版本的库：
 
-  ![](media/iot-hub-device-sdk-c-intro/01-MasterBranch.PNG)
+  ![](./media/iot-hub-device-sdk-c-intro/01-MasterBranch.PNG)
 
 此存储库包含整个系列的 Azure IoT 设备 SDK。不过，本文讲述*适用于 C 语言*的 Azure IoT 设备 SDK（可在 **c** 文件夹中找到）。
 
-  ![](media/iot-hub-device-sdk-c-intro/02-CFolder.PNG)
+  ![](./media/iot-hub-device-sdk-c-intro/02-CFolder.PNG)
 
 * SDK 的核心实现可在 **iothub\_client** 文件夹中找到，此文件夹包含 SDK 的最低 API 层的实现：**IoTHubClient** 库。此 **IoTHubClient** 库包含实现原始消息传送的 API，即将消息发送到 IoT 中心以及从 IoT 中心接收消息。如果你使用此库，就需负责实现消息序列化（最终使用下面描述的序列化程序示例），但与 IoT 中心通信的其他细节则由系统为你处理。
 * **serializer** 文件夹包含帮助器函数和示例代码，演示了使用客户端库向 Azure IoT 中心发送消息之前如何序列化数据。请注意使用序列化程序不是必需的，仅为了提供便利。如果你使用**序列化程序**库，首先需要定义一个模型，以指定要发送到 IoT 中心的事件以及预期要从 IoT 中心接收的消息。定义此模型后，SDK 将提供一个 API 界面，让你轻松处理事件和消息，而无需担心序列化细节。此库依赖于其他使用一些协议（AMQP、MQTT）实现传输的开放源代码库。
@@ -69,7 +69,7 @@ SDK 中包含的[自述文件](https://github.com/Azure/azure-iot-sdks/tree/mast
 
 -   当你安装 “CMake” 实用程序时，请选择将 “CMake” 添加到“所有用户”的系统 PATH 的选项（也可以添加到“当前用户”）：
 
-  ![](media/iot-hub-device-sdk-c-intro/08-CMake.PNG)
+  ![](./media/iot-hub-device-sdk-c-intro/08-CMake.PNG)
 
 
 -   在打开“VS2015 开发人员命令提示符”之前，请先安装 Git 命令行工具。若要安装这些工具，请完成以下步骤：
@@ -78,13 +78,13 @@ SDK 中包含的[自述文件](https://github.com/Azure/azure-iot-sdks/tree/mast
 	
 	2. 确保在安装程序中选择“Git for Windows”功能，但也可以选中“Visual Studio 的 GitHub 扩展”选项以提供 IDE 集成：
 
-  		![](media/iot-hub-device-sdk-c-intro/10-GitTools.PNG)
+  		![](./media/iot-hub-device-sdk-c-intro/10-GitTools.PNG)
 
 	3. 完成安装向导以安装工具。
 
 	4. 将 Git 工具 “bin” 目录添加到系统 “PATH” 环境变量。在 Windows 上，屏幕如下所示：
 
-  		![](media/iot-hub-device-sdk-c-intro/11-GitToolsPath.PNG)
+  		![](./media/iot-hub-device-sdk-c-intro/11-GitToolsPath.PNG)
 
 
 当你完成[准备开发环境](https://github.com/Azure/azure-iot-sdks/blob/master/c/doc/devbox_setup.md)页面上所述的所有步骤后，就可以编译示例应用程序。
@@ -105,23 +105,23 @@ SDK 开放源代码存储库中提供了两个工具用来帮助管理 IoT 中�
 
 运行该程序时，你将看到此界面：
 
-  ![](media/iot-hub-device-sdk-c-intro/03-DeviceExplorer.PNG)
+  ![](./media/iot-hub-device-sdk-c-intro/03-DeviceExplorer.PNG)
 
 在第一个字段中输入你的 **IoT 中心连接字符串**，然后单击“更新”。这将配置该工具，以便与 IoT 中心通信。
 
 配置 IoT 中心连接字符串后，单击“管理”选项卡：
 
-  ![](media/iot-hub-device-sdk-c-intro/04-ManagementTab.PNG)
+  ![](./media/iot-hub-device-sdk-c-intro/04-ManagementTab.PNG)
 
 你将在其中管理已注册到 IoT 中心的设备。
 
 单击“创建”按钮即可创建设备。将显示一个已预先填充一组密钥（主密钥和辅助密钥）的对话框。你只需要输入**设备 ID**，然后单击“创建”。
 
-  ![](media/iot-hub-device-sdk-c-intro/05-CreateDevice.PNG)
+  ![](./media/iot-hub-device-sdk-c-intro/05-CreateDevice.PNG)
 
 创建设备后，“设备”列表将会更新，其中包含所有已注册的设备（包括刚刚创建的设备）。如果在新设备上单击右键，将看到此菜单：
 
-  ![](media/iot-hub-device-sdk-c-intro/06-RightClickDevice.PNG)
+  ![](./media/iot-hub-device-sdk-c-intro/06-RightClickDevice.PNG)
 
 如果你选择“复制所选设备的连接字符串”选项，设备的连接字符串将复制到剪贴板。请保留连接字符串的副本。在运行后续部分中所述的示例应用程序时，将要用到它。
 
@@ -139,11 +139,11 @@ azure-iot-sdks 存储库的 **iothub\_client** 文件夹中有一个 **samples**
 
 Windows 版本的 **iothub\_client\_sample\_ampq** 应用程序包含以下 Visual Studio 解决方案：
 
-  ![](media/iot-hub-device-sdk-c-intro/12-iothub-client-sample-amqp.PNG)
+  ![](./media/iot-hub-device-sdk-c-intro/12-iothub-client-sample-amqp.PNG)
 
 此解决方案只包含一个项目。值得注意的是，此解决方案中安装了四个 NuGet 包：
 
-  ![](media/iot-hub-device-sdk-c-intro/17-iothub-client-sample-amqp-githubpackages.PNG)
+  ![](./media/iot-hub-device-sdk-c-intro/17-iothub-client-sample-amqp-githubpackages.PNG)
 
 在使用 SDK 时始终需要 **Microsoft.Azure.C.SharedUtility** 包。由于此示例依赖于 AMQP，因此还必须包括 **Microsoft.Azure.uamqp** 和 **Microsoft.Azure.IoTHub.AmqpTransport** 包（HTTP 和 MQTT 有对应的包）。由于此示例使用 **IoTHubClient** 库，因此还必须在解决方案中包含 **Microsoft.Azure.IoTHub.IoTHubClient** 包。
 
@@ -249,11 +249,11 @@ IoTHubClient_Destroy(iotHubClientHandle);
 
 azure-iot-sdks 存储库的 **serializer** 文件夹中有一个 **samples** 文件夹，其中包含名为 **simplesample\_amqp** 的应用程序。此示例的 Windows 版本包含以下 Visual Studio 解决方案：
 
-  ![](media/iot-hub-device-sdk-c-intro/14-simplesample_amqp.PNG)
+  ![](./media/iot-hub-device-sdk-c-intro/14-simplesample_amqp.PNG)
 
 如同前面的示例，此示例也包含多个 NuGet 包：
 
-  ![](media/iot-hub-device-sdk-c-intro/18-simplesample_amqp-githubpackages.PNG)
+  ![](./media/iot-hub-device-sdk-c-intro/18-simplesample_amqp-githubpackages.PNG)
 
 其中的大多数包已在前面的示例中出现过，但 **Microsoft.Azure.IoTHub.Serializer** 是新的。在使用**序列化程序**库时将用到它。
 
