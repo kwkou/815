@@ -18,7 +18,7 @@ IoT 中心允许设备在端口 8883 上使用 [MQTT v3.1.1][lnk-mqtt-org] 协�
 
 ## 连接到 IoT 中心
 
-设备既可以使用 [Microsoft Azure IoT SDK][lnk-device-sdks] 中的库，也可以直接使用 MQTT 协议连接到 IoT 中心。
+设备既可以使用 [Azure IoT SDK][lnk-device-sdks] 中的库，也可以直接使用 MQTT 协议连接到 IoT 中心。
 
 ## 使用设备客户端 SDK
 

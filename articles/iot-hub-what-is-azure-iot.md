@@ -1,5 +1,5 @@
 <properties
- pageTitle="面向物联网的 Azure 解决方案 | Microsoft Azure"
+ pageTitle="面向物联网的 Azure 解决方案 | Azure"
  description="Azure 上 IoT 的概述，包括一个解决方案体系结构示例以及它如何与 Azure IoT 中心、设备 SDK 和预配置解决方案关联"
  services="iot-hub"
  documentationCenter=""
