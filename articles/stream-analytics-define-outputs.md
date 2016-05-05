@@ -5,13 +5,13 @@
 	services="stream-analytics,documentdb,sql-database,event-hubs,service-bus,storage"
 	documentationCenter="" 
 	authors="jeffstokes72"
-	manager="paulettm"
+	manager="paulettm" 
 	editor="cgronlun"/>
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="03/16/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="04/15/2016"
+	wacn.date="05/05/2016"/>
 # 使流分析数据转换输出输出到分析工具和数据存储选项
 
 创作流分析作业时，需考虑如何使用数据转换输出。如何查看流分析作业的结果？ 使用哪些工具来显示数据分析结果？ 数据存储选项是必需的吗？
@@ -22,7 +22,7 @@
 
 ## SQL 数据库
 
-可以将 [Azure SQL 数据库](/services/sql-databases/)用作本质上为关系型数据的输出，也可以将其用于所依赖的内容在关系数据库中托管的应用程序。流分析作业将写入到 Azure SQL 数据库的现有表中。请注意表架构必须与字段及其正从作业输出的类型完全匹配。下表列出了属性名称和用于创建 SQL 数据库输出的属性说明。
+可以将 [Azure SQL 数据库](/services/sql-databases/)用作本质上为关系型数据的输出，也可以将其用于所依赖的内容在关系数据库中托管的应用程序。流分析作业将写入到 Azure SQL 数据库的现有表中。请注意表架构必须与字段及其正从作业输出的类型完全匹配。[Azure SQL 数据仓库](/documentation/services/sql-data-warehouse/)也可以通过 SQL 数据库输出选项指定为输出（此项为预览功能）。下表列出了属性名称和用于创建 SQL 数据库输出的属性说明。
 
 | 属性名称 | 说明 |
 |---------------|-------------|
@@ -164,7 +164,7 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 
 
 ## 获取帮助
-如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=AzureStreamAnalytics)
+如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)
 
 ## 后续步骤
 我们已经向你介绍了流分析，这是一种托管服务，适用于对物联网的数据进行流式分析。若要了解有关此服务的详细信息，请参阅：
@@ -175,11 +175,11 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
 <!--Link references-->
-[stream.analytics.developer.guide]: ../stream-analytics-developer-guide.md
-[stream.analytics.scale.jobs]: stream-analytics-scale-jobs.md
-[stream.analytics.introduction]: stream-analytics-introduction.md
-[stream.analytics.get.started]: stream-analytics-get-started.md
+[stream.analytics.developer.guide]: /documentation/articles/stream-analytics-developer-guide
+[stream.analytics.scale.jobs]: /documentation/articles/stream-analytics-scale-jobs
+[stream.analytics.introduction]: /documentation/articles/stream-analytics-introduction
+[stream.analytics.get.started]: /documentation/articles/stream-analytics-get-started
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0425_2016-->
