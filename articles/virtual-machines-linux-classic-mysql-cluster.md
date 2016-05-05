@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags
-	ms.service="virtual-machines"
+	ms.service="virtual-machines-linux"
 	ms.date="04/14/2015"
 	wacn.date="01/21/2016"/>
 

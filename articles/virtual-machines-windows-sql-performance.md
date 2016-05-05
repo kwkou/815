@@ -9,7 +9,7 @@
 	tags="azure-service-management" />
 	
 <tags
-	ms.service="virtual-machines"
+	ms.service="virtual-machines-windows"
 	ms.date="12/22/2015"
 	wacn.date="02/26/2016"/>
 

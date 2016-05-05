@@ -9,7 +9,7 @@
 	tags="azure-service-management,azure-resource-manager" />
 
 <tags 
-	ms.service="virtual-machines"
+	ms.service="virtual-machines-linux"
 	ms.date="12/15/2015" 
 	wacn.date="01/29/2016"/>
 
