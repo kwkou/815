@@ -1,7 +1,7 @@
 <properties
-	pageTitle="配合使用 Azure CLI 和资源管理器 | Azure"
-	description="了解如何使用适用于 Mac、Linux 和 Windows 的 Azure CLI，在 Azure 资源管理器模式下管理 Azure 资源。"
-	services="virtual-machines,virtual-network,mobile-services,cloud-services"
+	pageTitle="Resource Manager 模式下的 Azure CLI 命令 | Azure"
+	description="用于在 Resource Manager 部署模型中管理资源的 Azure 命令行界面 (CLI) 命令"
+	services="virtual-machines-linux,virtual-machines-windows,virtual-network,mobile-services,cloud-services"
 	documentationCenter=""
 	authors="dlepow"
 	manager="timlt"
@@ -10,43 +10,36 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="11/18/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="03/07/2016"
+	wacn.date="05/05/2016"/>
 
-# 将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理器配合使用
+# Azure Resource Manager (arm) 模式下的 Azure CLI 命令
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Microsoft 建议对大多数新的部署使用该模型，而不是[经典部署模型](/documentation/articles/virtual-machines-command-line-tools)。
 
-本文介绍如何在 Azure 资源管理器模式下使用 Azure 命令行接口 (Azure CLI)，在 Mac、Linux 和 Windows 计算机的命令行中创建、管理和删除服务。你可以使用 Azure SDK 的各种库、Azure PowerShell 和 Azure 门户执行许多相同的任务。
+本文提供经常用于在 Azure Resource Manager 部署模型中创建和管理 Azure 资源的 Azure 命令行界面 (CLI) 命令的语法和选项。通过在 Resource Manager (arm) 模式下运行 CLI 可以访问这些命令。本参考内容并不完整，你的 CLI 版本可能会显示略微不同的命令或参数。
 
-Azure 资源管理器可让你创建一组资源 - 网站、数据库等 - 作为单个可部署单元。然后，可以通过一个协调的操作为应用程序部署、更新或删除所有资源。在部署的 JSON 模板中描述组资源，然后，可以针对不同的环境（如测试、过渡和生产）使用该模板。
+若要开始，请先[安装 Azure CLI](/documentation/articles/xplat-cli-install)，然后使用工作或学校帐户或 Microsoft 帐户标识[连接到你的 Azure 订阅](/documentation/articles/xplat-cli-connect)。
 
-## 本文的讨论范围
+要在资源管理器模式下在命令行中查看当前的命令语法和选项，请键入 `azure help`；要显示某个命令的帮助，请键入 `azure help [command]`。你还可以在创建和管理具体 Azure 服务的说明文档中找到 CLI 示例。
 
-本文提供了用于资源管理器部署模型的常用 Azure CLI 命令的语法和选项。它并不是完整的参考，并且你的 CLI 版本可能会显示某些不同的命令或参数。要在资源管理器模式下在命令行中查看当前的命令语法和选项，请键入 `azure help`；要显示某个命令的帮助，请键入 `azure help [command]`。你还可以在创建和管理具体 Azure 服务的说明文档中找到 CLI 示例。
+可选参数显示在方括号中（例如，`[parameter]`）。其他所有参数都是必需的。
 
-可选参数显示在方括号中（例如，[参数]）。其他所有参数都是必需的。
+除了此处记录的特定于命令的可选参数外，还有三个可用于显示详细输出（例如请求选项和状态代码）的可选参数。`-v` 参数提供详细输出，而 `-vv` 参数提供更详细的输出。`--json` 选项将以原始的 json 格式输出结果。
 
-除了此处记录的特定于命令的可选参数外，还有三个可用于显示详细输出（例如请求选项和状态代码）的可选参数。-v 参数提供详细输出，而 -vv 参数提供更详细的输出。--json 选项将以原始的 json 格式输出结果。使用 --json 开关的情况很常见，在获取和了解返回资源信息、状态和日志的 Azure CLI 操作的结果以及使用模板时，该开关非常重要。你可能想要安装 JSON 分析器工具（如 **jq** 或 **jsawk**）或使用你偏爱的语言库。
+## 设置 Resource Manager 模式
+
+使用以下命令启用 Azure CLI Resource Manager 命令。
+
+	azure config mode arm
+
+>[AZURE.NOTE] Azure 资源管理器模式与 Azure 服务管理模式互斥。即在一种模式下创建的资源不能从另一种模式进行管理。
 
 ## 命令性和声明性方法
 
-与 [Azure 服务管理模式](/documentation/articles/virtual-machines-command-line-tools)一样，Azure CLI 的资源管理器模式可提供命令让你在命令行上强制创建资源。例如，如果键入 `azure group create <groupname> <location>`，则会要求 Azure 创建资源组；如果键入 `azure group deployment create <resourcegroup> <deploymentname>`，则会指示 Azure 创建包含任意项数的部署，并将其放在组中。由于每种类型的资源都有强制命令，你可以将这些命令链接在一起，以创建相当复杂的部署。
+与 [Azure 服务管理模式](/documentation/articles/virtual-machines-command-line-tools)一样，Azure CLI 的 Resource Manager 模式可提供命令让你在命令行上强制创建资源。例如，如果键入 `azure group create <groupname> <location>`，则会要求 Azure 创建资源组；如果键入 `azure group deployment create <resourcegroup> <deploymentname>`，则会指示 Azure 创建包含任意项数的部署，并将其放在组中。由于每种类型的资源都有强制命令，你可以将这些命令链接在一起，以创建相当复杂的部署。
 
-但是，使用用于描述资源组的资源组_模板_是一种强大得多的声明性方法，它允许你针对（几乎）任何目的自动完成包含（几乎）任意数量的资源的复杂部署。使用模板时，唯一的强制性命令是单一部署。有关模板、资源和资源组的一般概述，请参阅 [Azure 资源组概述](/documentation/articles/resource-group-overview)。
-
-##用法要求
-
-对配合使用资源管理器模式和 Azure CLI 的设置要求如下：
-
-- 一个 Azure 帐户（[在此处获取试用版](/pricing/1rmb-trial/)）
-- [安装 Azure CLI](/documentation/articles/xplat-cli-install)
-
-
-获取帐户并安装 Azure CLI 后，你必须
-
-- [配置 Azure CLI](/documentation/articles/xplat-cli-connect) 以使用工作或学校帐户或 Microsoft 帐户标识
-- 通过键入 `azure config mode arm` 切换到资源管理器模式。
+但是，使用用于描述资源组的资源组模板是一种强大得多的声明性方法，它允许你针对（几乎）任何目的自动完成包含（几乎）任意数量的资源的复杂部署。使用模板时，唯一的强制性命令是单一部署。有关模板、资源和资源组的一般概述，请参阅 [Azure 资源组概述](/documentation/articles/resource-group-overview)。
 
 
 ## azure account：管理你的帐户信息
@@ -303,4 +296,4 @@ Azure 资源管理器可让你创建一组资源 - 网站、数据库等 - 作�
 
 在 Azure 中国，Azure HDInsight 还不能用 ARM 进行管理。有关 Azure HDInsight 的 Azure CLI ASM 命令，请阅读[使用 Azure CLI 管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-command-line)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0425_2016-->
