@@ -34,7 +34,7 @@ IoT 解决方案存储有关单个设备的数据，例如：
 
 “设备预配”是将初始设备数据添加到解决方案中存储中的过程。若要使新设备能够连接到中心，必须将新设备 ID 和密钥添加到 [IoT 中心标识注册表][lnk-devguide-identityregistry]。在预配过程中，你可能需要初始化其他解决方案存储中的设备特定数据。
 
-[IoT 中心设备管理指南][lnk-device-management]一文描述了设备预配的一些常用策略。[IoT 中心标识注册表 API][lnk-devguide-identityregistry] 可让你将 IoT 中心集成到预配过程。
+[IoT 中心标识注册表 API][lnk-devguide-identityregistry] 可让你将 IoT 中心集成到预配过程。
 
 ## 现场网关
 
@@ -111,7 +111,7 @@ IoT 解决方案存储有关单个设备的数据，例如：
 [img-tokenservice]: ./media/iot-hub-guidance/tokenservice.png
 
 [lnk-devguide-identityregistry]: /documentation/articles/iot-hub-devguide/#identityregistry
-[lnk-device-management]: /documentation/articles/iot-hub-device-management
+
 
 [lnk-device-sdks]: /documentation/articles/iot-hub-sdks-summary
 [lnk-devguide-security]: /documentation/articles/iot-hub-devguide/#security
