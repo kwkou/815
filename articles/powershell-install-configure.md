@@ -81,10 +81,10 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
     Import-Module Azure 
 	
     # To login to Azure Resource Manager
-    Login-AzureRmAccount
+    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
     # You can also use a specific Tenant if you would like a faster login experience
-    # Login-AzureRmAccount -TenantId xxxx
+    # Login-AzureRmAccount -EnvironmentName AzureChinaCloud -TenantId xxxx
 
     # To view all subscriptions for your account
     Get-AzureRmSubscription
@@ -113,7 +113,7 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 ## 步骤 3：连接
 cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订阅，可以购买一个。有关说明，请参阅[如何购买 Azure](http://go.microsoft.com/fwlink/p/?LinkId=320795)。
 
-1. 键入 **Login-AzureRmAccount**
+1. 键入 **Login-AzureRmAccount -EnvironmentName AzureChinaCloud**
 
 2. 键入与你的帐户关联的电子邮件地址和密码。Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
 
@@ -122,7 +122,7 @@ cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订
 登录到你的工作帐户或学校帐户：
 
     $cred = Get-Credential
-    Login-AzureRmAccount -Credential $cred
+    Login-AzureRmAccount -EnvironmentName AzureChinaCloud -Credential $cred
 > [AZURE.NOTE] 如果你的组织帐户有多个关联的租户，请指定 TenantId 参数：
 
     $loadersubscription = Get-AzureRmSubscription -SubscriptionName $YourSubscriptionName -TenantId $YourAssociatedSubscriptionTenantId
@@ -146,7 +146,7 @@ cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订
 
 ### 查看帐户和订阅详细信息
 
-你可以具有多个帐户和订阅以供 Azure PowerShell 使用。可以通过多次运行 **Add-AzureRmAccount** 来添加多个帐户。
+你可以具有多个帐户和订阅以供 Azure PowerShell 使用。可以通过多次运行 **Add-AzureRmAccount -EnvironmentName AzureChinaCloud** 来添加多个帐户。
 
 若要显示可用的 Azure 帐户，请键入 **Get-AzureAccount**。
 
