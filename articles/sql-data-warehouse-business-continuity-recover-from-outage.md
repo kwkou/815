@@ -42,7 +42,7 @@
 
 ```
 
-    Login-AzureRmAccount
+    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
     Get-AzureRmSubscription
     Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
     
@@ -57,7 +57,7 @@
 
 ```
 
-请注意，如果服务器是 foo.database.windows.net，请使用“foo”作为上述 Powershell cmdlet 中的 -ServerName。
+请注意，如果服务器是 foo.database.chinacloudapi.cn，请使用“foo”作为上述 Powershell cmdlet 中的 -ServerName。
 
 ### REST API
 使用 REST 以编程方式执行数据库恢复。

@@ -73,11 +73,11 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 若要登录到你的 Azure 帐户，请使用 **Add-AzureRmAccount** cmdlet。
 
-    Add-AzureRmAccount -Environment AzureChinaCloud
+    Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 该 cmdlet 将提示您提供您的 Azure 帐户的登录凭据。登录后它会下载你的帐户设置，以便这些信息可供 Azure PowerShell 使用。
 
-帐户设置会过期，因此您需要不时刷新它们。若要刷新帐户设置，请再次运行 **Add-AzureRmAccount**。
+帐户设置会过期，因此您需要不时刷新它们。若要刷新帐户设置，请再次运行 **Add-AzureRmAccount -EnvironmentName AzureChinaCloud**。
 
 >[AZURE.NOTE] 资源管理器模块要求使用 Add-AzureRmAccount。一个发布设置文件是不够的。
 
@@ -336,7 +336,7 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
     # sign in
     Write-Host "Logging in...";
-    Add-AzureRmAccount;
+    Add-AzureRmAccount -EnvironmentName AzureChinaCloud;
 
     # select subscription
     Write-Host "Selecting subscription '$subscriptionId'";

@@ -40,7 +40,7 @@
 
 1. 登录到你的帐户。
 
-        PS C:\> Login-AzureRmAccount
+        PS C:\> Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 1. 运行 **New-AzureRmADApplication** 命令创建新的 Active Directory 应用程序。提供应用程序的显示名称、描述应用程序的页面的 URI（该链接未验证）、标识应用程序的 URI，以及应用程序标识的密码。
 
@@ -97,7 +97,7 @@
 
 4. 通过使用 **Login-AzureRmAccount** cmdlet 以服务主体身份登录，但提供凭据对象，并指定该帐户是服务主体。
 
-        PS C:\> Login-AzureRmAccount -Credential $creds -ServicePrincipal -Tenant $subscription.TenantId
+        PS C:\> Login-AzureRmAccount -EnvironmentName AzureChinaCloud -Credential $creds -ServicePrincipal -Tenant $subscription.TenantId
         Environment           : AzureCloud
         Account               : {guid}
         Tenant                : {guid}
@@ -135,7 +135,7 @@
 
 5. 通过使用 **Login-AzureRmAccount** cmdlet 以服务主体身份登录，但提供凭据对象，并指定该帐户是服务主体。
     
-        PS C:\> Login-AzureRmAccount -Credential $creds -ServicePrincipal -TenantId $subscription.TenantId
+        PS C:\> Login-AzureRmAccount -EnvironmentName AzureChinaCloud -Credential $creds -ServicePrincipal -TenantId $subscription.TenantId
 
 现在，你已作为所创建 Active Directory 应用程序的服务主体进行身份验证。
 
@@ -171,7 +171,7 @@
 
 1. 登录到你的帐户。
 
-        PS C:\> Login-AzureRmAccount
+        PS C:\> Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 1. 使用这两种方法时，都将从你的证书创建一个 X509Certificate2 对象并检索密钥值。使用指向您的证书的路径和该证书的密码。
 
@@ -248,7 +248,7 @@
 
 4. 若要使用 PowerShell 进行身份验证，请提供证书指纹、应用程序 ID 和租户 ID。
 
-        PS C:\> Login-AzureRmAccount -CertificateThumbprint $cert.Thumbprint -ApplicationId $azureAdApplication.ApplicationId -ServicePrincipal -TenantId $subscription.TenantId
+        PS C:\> Login-AzureRmAccount -EnvironmentName AzureChinaCloud -CertificateThumbprint $cert.Thumbprint -ApplicationId $azureAdApplication.ApplicationId -ServicePrincipal -TenantId $subscription.TenantId
 
 现在，你已作为所创建 Active Directory 应用程序的服务主体进行身份验证。
 

@@ -45,7 +45,7 @@
 
     Azure PowerShell 1.0：
 
-         PS C:\> Login-AzureRmAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
+         PS C:\> Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
          Evironment : AzureCloud
          Account    : someone@example.com
