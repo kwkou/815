@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup" 
 	ms.date="01/22/2016"
-	wacn.date="04/12/2016"/>
+	wacn.date="05/09/2016"/>
 
 
 # 使用 PowerShell 部署和管理 Windows Server/Windows 客户端的 Azure 备份
@@ -104,12 +104,10 @@ f5303a0b-fae4-4cdb-b44d-0e4c032dde26_backuprg_backuprn_2015-08-11--06-22-35.Vaul
 ```
 PS C:\> $cred = $credspath + $credsfilename
 PS C:\> Start-OBRegistration -VaultCredentials $cred -Confirm:$false
-
 CertThumbprint      : 7a2ef2caa2e74b6ed1222a5e89288ddad438df2
 SubscriptionID      : ef4ab577-c2c0-43e4-af80-af49f485f3d1
 ServiceResourceName : test-vault
 Region              : China North
-
 Machine registration succeeded.
 ```
 
@@ -125,7 +123,6 @@ Machine registration succeeded.
 ```
 PS C:\> Set-OBMachineSetting -NoProxy
 Server properties updated successfully.
-
 PS C:\> Set-OBMachineSetting -NoThrottle
 Server properties updated successfully.
 ```
@@ -184,23 +181,18 @@ PS C:\> $retentionpolicy = New-OBRetentionPolicy -RetentionDays 7
 
 ```
 PS C:\> Set-OBRetentionPolicy -Policy $newpolicy -RetentionPolicy $retentionpolicy
-
 BackupSchedule  : 4:00 PM
                   Saturday, Sunday,
                   Every 1 week(s)
 DsList          :
 PolicyName      :
 RetentionPolicy : Retention Days : 7
-
                   WeeklyLTRSchedule :
                   Weekly schedule is not set
-
                   MonthlyLTRSchedule :
                   Monthly schedule is not set
-
                   YearlyLTRSchedule :
                   Yearly schedule is not set
-
 State           : New
 PolicyState     : Valid
 ```
@@ -217,11 +209,8 @@ PolicyState     : Valid
 
 ```
 PS C:\> $inclusions = New-OBFileSpec -FileSpec @("C:", "D:")
-
 PS C:\> $exclusions = New-OBFileSpec -FileSpec @("C:\windows", "C:\temp") -Exclude
-
 PS C:\> Add-OBFileSpec -Policy $newpolicy -FileSpec $inclusions
-
 BackupSchedule  : 4:00 PM
                   Saturday, Sunday,
                   Every 1 week(s)
@@ -232,7 +221,6 @@ DsList          : {DataSource
                   FileSpec:C:\
                   IsExclude:False
                   IsRecursive:True
-
                   , DataSource
                   DatasourceId:0
                   Name:D:\
@@ -240,26 +228,18 @@ DsList          : {DataSource
                   FileSpec:D:\
                   IsExclude:False
                   IsRecursive:True
-
                   }
 PolicyName      :
 RetentionPolicy : Retention Days : 7
-
                   WeeklyLTRSchedule :
                   Weekly schedule is not set
-
                   MonthlyLTRSchedule :
                   Monthly schedule is not set
-
                   YearlyLTRSchedule :
                   Yearly schedule is not set
-
 State           : New
 PolicyState     : Valid
-
-
 PS C:\> Add-OBFileSpec -Policy $newpolicy -FileSpec $exclusions
-
 BackupSchedule  : 4:00 PM
                   Saturday, Sunday,
                   Every 1 week(s)
@@ -278,7 +258,6 @@ DsList          : {DataSource
                   FileSpec:C:\temp
                   IsExclude:True
                   IsRecursive:True
-
                   , DataSource
                   DatasourceId:0
                   Name:D:\
@@ -286,20 +265,15 @@ DsList          : {DataSource
                   FileSpec:D:\
                   IsExclude:False
                   IsRecursive:True
-
                   }
 PolicyName      :
 RetentionPolicy : Retention Days : 7
-
                   WeeklyLTRSchedule :
                   Weekly schedule is not set
-
                   MonthlyLTRSchedule :
                   Monthly schedule is not set
-
                   YearlyLTRSchedule :
                   Yearly schedule is not set
-
 State           : New
 PolicyState     : Valid
 ```
@@ -325,17 +299,14 @@ DsList : {DataSource
          FileSpec:C:\
          IsExclude:False
          IsRecursive:True,
-
          FileSpec
          FileSpec:C:\windows
          IsExclude:True
          IsRecursive:True,
-
          FileSpec
          FileSpec:C:\temp
          IsExclude:True
          IsRecursive:True,
-
          DataSource
          DatasourceId:4508156005178868542
          Name:D:\
@@ -348,10 +319,8 @@ PolicyName : c2eb6568-8a06-49f4-a20e-3019ae411bac
 RetentionPolicy : Retention Days : 7
               WeeklyLTRSchedule :
               Weekly schedule is not set
-
               MonthlyLTRSchedule :
               Monthly schedule is not set
-
               YearlyLTRSchedule :
               Yearly schedule is not set
 State : Existing PolicyState : Valid
@@ -365,31 +334,26 @@ SchedulePolicyName : 71944081-9950-4f7e-841d-32f0a0a1359a
 ScheduleRunDays : {Saturday, Sunday}
 ScheduleRunTimes : {16:00:00}
 State : Existing
-
 PS C:\> Get-OBPolicy | Get-OBRetentionPolicy
 RetentionDays : 7
 RetentionPolicyName : ca3574ec-8331-46fd-a605-c01743a5265e
 State : Existing
-
 PS C:\> Get-OBPolicy | Get-OBFileSpec
 FileName : *
 FilePath : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\
 FileSpec : D:\
 IsExclude : False
 IsRecursive : True
-
 FileName : *
 FilePath : \?\Volume{cdd41007-a22f-11e2-be6c-806e6f6e6963}\
 FileSpec : C:\
 IsExclude : False
 IsRecursive : True
-
 FileName : *
 FilePath : \?\Volume{cdd41007-a22f-11e2-be6c-806e6f6e6963}\windows
 FileSpec : C:\windows
 IsExclude : True
 IsRecursive : True
-
 FileName : *
 FilePath : \?\Volume{cdd41007-a22f-11e2-be6c-806e6f6e6963}\temp
 FileSpec : C:\temp
@@ -429,7 +393,6 @@ PS C:\> $source
 FriendlyName : C:\
 RecoverySourceName : C:\
 ServerName : myserver.microsoft.com
-
 FriendlyName : D:\
 RecoverySourceName : D:\
 ServerName : myserver.microsoft.com
@@ -450,7 +413,6 @@ PointInTime : 18-Jun-15 6:41:52 AM
 ServerName : myserver.microsoft.com
 ItemSize :
 ItemLastModifiedTime :
-
 IsDir : False
 ItemNameFriendly : D:\
 ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\
@@ -482,7 +444,6 @@ PointInTime : 18-Jun-15 6:41:52 AM
 ServerName : myserver.microsoft.com
 ItemSize :
 ItemLastModifiedTime : 15-Jun-15 8:49:29 AM
-
 PS C:\> $filesFolders = Get-OBRecoverableItem $filesFolders[0]
 PS C:\> $filesFolders
 IsDir : False
@@ -495,7 +456,6 @@ PointInTime : 18-Jun-15 6:41:52 AM
 ServerName : myserver.microsoft.com
 ItemSize : 228313
 ItemLastModifiedTime : 21-Jun-14 6:45:09 AM
-
 IsDir : False
 ItemNameFriendly : D:\MyData\finances.xls
 ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\finances.xls
@@ -556,7 +516,6 @@ PS C:\> .\MARSAgentInstaller.exe /d /q
 
 ```
 PS C:\> Get-Service WinRM
-
 Status   Name               DisplayName
 ------   ----               -----------
 Running  winrm              Windows Remote Management (WS-Manag...
@@ -569,7 +528,6 @@ PS C:\> Enable-PSRemoting -force
 WinRM is already set up to receive requests on this computer.
 WinRM has been updated for remote management.
 WinRM firewall exception enabled.
-
 PS C:\> Set-ExecutionPolicy unrestricted -force
 ```
 
@@ -580,7 +538,6 @@ PS C:\> $dloc = "\\REMOTESERVER01\c$\Windows\Temp"
 PS C:\> $agent = "\\REMOTESERVER01\c$\Windows\Temp\MARSAgentInstaller.exe"
 PS C:\> $args = "/q"
 PS C:\> Copy-Item "C:\Downloads\MARSAgentInstaller.exe" -Destination $dloc - force
-
 PS C:\> $s = New-PSSession -ComputerName REMOTESERVER01
 PS C:\> Invoke-Command -Session $s -Script { param($d, $a) Start-Process -FilePath $d $a -Wait } -ArgumentList $agent $args
 ```

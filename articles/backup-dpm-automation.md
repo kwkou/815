@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup"
 	ms.date="01/28/2016"
-	wacn.date="04/12/2016"/>
+	wacn.date="05/09/2016"/>
 
 
 # 使用 PowerShell 部署和管理 Data Protection Manager (DPM) 服务器的 Azure 备份
@@ -24,9 +24,7 @@
 
 ```
 PS C:\> & "C:\Program Files\Microsoft System Center 2012 R2\DPM\DPM\bin\DpmCliInitScript.ps1"
-
 Welcome to the DPM Management Shell!
-
 Full list of cmdlets: Get-Command
 Only DPM cmdlets: Get-DPMCommand
 Get general help: help
@@ -173,7 +171,6 @@ PS C:\> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -Subscrip
 
 ```
 PS C:\> $Passphrase = ConvertTo-SecureString -string "passphrase123456789" -AsPlainText -Force
-
 PS C:\> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -SubscriptionSetting $setting -EncryptionPassphrase $Passphrase
 ```
 
@@ -224,7 +221,6 @@ PS C:\> $server = Get-ProductionServer -DPMServerName "TestingServer" | where {(
 
 ```
 PS C:\> $DS = Get-Datasource -ProductionServer $server -Inquire | where { $_.Name -contains “D:\” }
-
 PS C:\> Add-DPMChildDatasource -ProtectionGroup $MPG -ChildDatasource $DS
 ```
 
@@ -320,11 +316,9 @@ PS C:\> $RecoveryPoints = Get-DPMRecoverypoint -Datasource $DS[0] -Online
 
 ```
 PS C:\> $RecoveryOption = New-DPMRecoveryOption -HyperVDatasource -TargetServer "HVDCenter02" -RecoveryLocation AlternateHyperVServer -RecoveryType Recover -TargetLocation “C:\VMRecovery”
-
 PS C:\> $PG = Get-DPMProtectionGroup –DPMServerName "TestingServer"
 PS C:\> $DS = Get-DPMDatasource -ProtectionGroup $PG[0]
 PS C:\> $RecoveryPoints = Get-DPMRecoverypoint -Datasource $DS[0] -Online
-
 PS C:\> Restore-DPMRecoverableItem -RecoverableItem $RecoveryPoints[0] -RecoveryOption $RecoveryOption
 ```
 

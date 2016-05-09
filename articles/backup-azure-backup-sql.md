@@ -10,14 +10,14 @@
 <tags
 	ms.service="backup"
 	ms.date="02/08/2016"
-	wacn.date="04/12/2016"/>
+	wacn.date="05/09/2016"/>
 
 
 # 使用 DPM 为 SQL 工作负荷配置 Azure 备份
 
 本文将引导你使用 Azure 备份来完成 SQL Server 数据库的备份配置步骤。
 
-若要将 SQL Server 数据库备份到 Azure，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](https://azure.microsoft.com/pricing/free-trial/)。
+若要将 SQL Server 数据库备份到 Azure，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/free-trial/)。
 
 向 Azure 备份以及从 Azure 恢复 SQL Server 数据库的管理工作涉及三个步骤：
 
@@ -112,7 +112,7 @@
 14. 单击“下一步”，选择相应的选项将初始备份副本传输到 Azure。你可以选择“自动通过网络”或“脱机备份”。
 
     - “自动通过网络”会根据为备份选择的计划将备份数据传输到 Azure。
-    - “脱机备份”的工作原理详见 [Azure 备份中的脱机备份工作流](/documentation/articles/backup-azure-backup-import-export)。
+    
 
     选择将初始备份副本发送到 Azure 的相关传输机制，然后单击“下一步”。
 

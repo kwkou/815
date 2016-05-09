@@ -11,7 +11,7 @@
 <tags
    ms.service="backup" 
    ms.date="03/09/2016"
-   wacn.date="04/12/2016"/>
+   wacn.date="05/09/2016"/>
    
 # 先睹为快：将文件和文件夹从 Windows Server 或客户端备份到 Azure
 
@@ -29,7 +29,7 @@
 
 ## 步骤 1：获取 Azure 订阅
 
-如果你没有 Azure 订阅，可以创建一个[试用帐户](https://www.azure.cn/pricing/1rmb-trial/)，这样便可以访问任何 Azure 服务。
+如果你没有 Azure 订阅，可以创建一个[试用帐户](/pricing/1rmb-trial/)，这样便可以访问任何 Azure 服务。
 
 >[AZURE.NOTE] 如果你已有了 Azure 订阅，则可以跳过此步骤。
 
