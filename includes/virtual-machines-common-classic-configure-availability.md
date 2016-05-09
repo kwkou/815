@@ -83,7 +83,7 @@
 
 [Azure 基础结构服务的负载平衡]: /documentation/articles/virtual-machines-linux-load-balance
 [管理虚拟机的可用性]: /documentation/articles/virtual-machines-linux-manage-availability
-[创建运行 Windows 的虚拟机]: /documentation/articles/virtual-machines-windows-hero-tutorial
+[创建运行 Windows 的虚拟机]: /documentation/articles/virtual-machines-windows-classic-tutorial
 [虚拟网络概述]: /documentation/articles/virtual-networks-overview
 
 <!---HONumber=Mooncake_0215_2016-->

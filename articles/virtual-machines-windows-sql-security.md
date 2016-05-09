@@ -29,7 +29,7 @@ Azure 遵守多个行业法规和标准，使你能够使用在虚拟机中运�
 
 - 创建一个未命名为 **Administrator** 的唯一本地管理员帐户。
 
-- 对所有帐户使用复杂的强密码。有关如何创建强密码的详细信息，请参阅安全中心中的[创建强密码](http://windows.microsoft.com/windows-vista/Tips-for-creating-a-strong-password)一文。
+- 对所有帐户使用复杂的强密码。有关如何创建强密码的详细信息，请参阅安全中心中的[创建强密码](http://windows.microsoft.com/zh-cn/windows-vista/Tips-for-creating-a-strong-password)一文。
 
 - 默认情况下，Azure 在 SQL Server 虚拟机安装期间选择 Windows 身份验证。因此，禁用 **SA** 登录名，并由安装程序分配密码。我们建议不应使用或启用 **SA** 登录名。以下是在需要 SQL 登录时的备用策略：
 	- 创建一个具有 **CONTROL SERVER** 权限的 SQL 帐户。

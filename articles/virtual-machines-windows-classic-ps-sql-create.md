@@ -165,8 +165,6 @@
 
 在许多情况下，下一步是将数据库迁移到这个新 SQL Server VM。有关数据库迁移指南，请参阅[将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-windows-migrate-sql)。
 
-如果你还对从 Azure 管理门户创建 SQL 虚拟机感兴趣，请参阅[在 Azure 上设置 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision)。
-
 除了这些资源外，我们还建议你查看[与在 Azure 虚拟机中运行 SQL Server 相关的其他主题](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview)。
 
 <!---HONumber=Mooncake_0215_2016-->

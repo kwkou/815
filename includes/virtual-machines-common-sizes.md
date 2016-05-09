@@ -23,7 +23,7 @@
 
 *	Dv2 系列、D 系列是请求更快速的 CPU、更好的本地磁盘性能，或有更高内存要求之应用程序的最佳选择。它们为许多企业级应用程序提供强大的组合。
 
-*   Azure 数据中心内的一些物理主机可能不支持更大的虚拟机大小，例如 A5 - A11。因此，在以下情况下，可能会显示错误消息**<machine name>**“未能配置虚拟机”或**<machine name>**“未能创建虚拟机”：将现有虚拟机的大小调整为新的大小时；在 2013 年 4 月 16 日之前创建的虚拟网络中创建新的虚拟机时；或者向现有的云服务中添加新的虚拟机时。有关每个部署方案的解决方法，请参阅支持论坛上的[错误：“未能配置虚拟机”](https://social.msdn.microsoft.com/Forums/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows)。  
+*   Azure 数据中心内的一些物理主机可能不支持更大的虚拟机大小，例如 A5 - A7。因此，在以下情况下，可能会显示错误消息**<machine name>**“未能配置虚拟机”或**<machine name>**“未能创建虚拟机”：将现有虚拟机的大小调整为新的大小时；在 2013 年 4 月 16 日之前创建的虚拟网络中创建新的虚拟机时；或者向现有的云服务中添加新的虚拟机时。有关每个部署方案的解决方法，请参阅支持论坛上的[错误：“未能配置虚拟机”](https://social.msdn.microsoft.com/Forums/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows)。  
 
 
 ## 性能注意事项
@@ -40,7 +40,7 @@
 |[Standard\_A1-4](#standard-tier-a-series) |100 |
 |[Standard\_A5-7](#standard-tier-a-series) |100 |
 |[D1-14](#standard-tier-d-series) |160 |
-|[D1-15v2](#standard-tier-dv2-series) |210 - 250 *|
+|[D1-14v2](#standard-tier-dv2-series) |210 - 250 *|
 |[DS1-14](#standard-tier-ds-series) |160 |
 
 ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。提升量可能因 VM 大小、工作负荷和同一主机上运行的其他工作负荷而有所不同。
@@ -128,9 +128,6 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 ## 后续步骤
 
 - 了解 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)。
-- 了解高性能计算 (HPC) 等工作负荷的 [A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-windows-a8-a9-a10-a11-specs)。
-
-
 
 
 <!---HONumber=Mooncake_0425_2016-->

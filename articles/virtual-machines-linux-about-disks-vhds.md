@@ -1,7 +1,7 @@
 <properties
 	pageTitle="关于 Linux 虚拟机的磁盘和 VHD | Azure"
 	description="了解 Linux 中虚拟机磁盘和 VHD 的基础知识。"
-	services="virtual-machines-linux""
+	services="virtual-machines-linux"
 	documentationCenter=""
 	authors="cynthn"
 	manager="timlt"

@@ -31,13 +31,13 @@
 
 ![](./media/virtual-machines-common-create-aad-work-id/defaultdirectoryuserslisting.png)
 
-在接下来的几个步骤中，我们将遵循[这些说明](https://technet.microsoft.com/zh-cn/library/hh967632.aspx#BKMK_1)，不过会使用具体的示例。
+在接下来的几个步骤中，我们将遵循[这些说明](/documentation/articles/active-directory-create-users/#BKMK_1)，不过会使用具体的示例。
 
 在页面底部，单击“+添加用户”。在显示的页面中，键入新用户名，然后将“用户类型”设为“你的组织中的新用户”。在本示例中，新用户名为 `ahmet`。选择先前发现的默认域作为 `ahmet` 的电子邮件地址的域。完成后，单击下一步箭头。
 
 ![](./media/virtual-machines-common-create-aad-work-id/addingauserwithdirectorydropdown.png)
 
-为 Ahmet 输入更多信息，请确保选择相应的“角色”值。使用“全局管理员”可以轻松地让一切正常运行，但如果你可以使用权限更低的角色，则我们建议你这样做。本示例使用“用户”角色。（在[按角色列出的管理员权限](https://msdn.microsoft.com/zh-cn/library/azure/dn468213.aspx#BKMK_1)中了解详细信息。） 除非你要对操作中的每个日志使用多重身份验证，否则不要启用多重身份验证。完成后，单击下一步箭头。
+为 Ahmet 输入更多信息，请确保选择相应的“角色”值。使用“全局管理员”可以轻松地让一切正常运行，但如果你可以使用权限更低的角色，则我们建议你这样做。本示例使用“用户”角色。（在[按角色列出的管理员权限](/documentation/articles/active-directory-assign-admin-roles/#BKMK_1)中了解详细信息。） 除非你要对操作中的每个日志使用多重身份验证，否则不要启用多重身份验证。完成后，单击下一步箭头。
 
 ![](./media/virtual-machines-common-create-aad-work-id/userprofileuseradmin.png)
 

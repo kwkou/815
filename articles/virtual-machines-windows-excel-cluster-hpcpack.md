@@ -159,7 +159,7 @@ HPC Pack 部署脚本将运行一段时间。此脚本将做的一件事情是�
 
 4.	为你的计算机（[x64](http://www.microsoft.com/download/details.aspx?id=14632)，[x86](https://www.microsoft.com/download/details.aspx?id=5555)）下载完整的 [HPC Pack 2012 R2 Update 3 安装](http://www.microsoft.com/download/details.aspx?id=49922)并安装 HPC Pack 客户端，或下载并安装 [HPC Pack 2012 R2 Update 3 客户端实用工具](https://www.microsoft.com/download/details.aspx?id=49923)和相应的 Visual C++ 2010 可再发行组件。
 
-5.	在此示例中，我们使用名为 ConvertiblePricing\_Complete.xlsb 的示例 Excel 工作簿，在[此处](https://www.microsoft.com/zh-cn/download/details.aspx?id=2939)可供下载。
+5.	在此示例中，我们使用名为 ConvertiblePricing\_Complete.xlsb 的示例 Excel 工作簿，在[此处](https://www.microsoft.com/download/details.aspx?id=2939)可供下载。
 
 6.	将 Excel 工作簿复制到工作文件夹，例如 D:\\Excel\\Run。
 

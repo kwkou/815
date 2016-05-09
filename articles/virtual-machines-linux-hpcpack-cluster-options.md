@@ -37,7 +37,7 @@
 
 ### 群集管理
 
-* [将作业提交到 Azure 中的 HPC Pack 群集](/documentation/articles/virtual-machines-linux-hpcpack-cluster-submit-jobs)
+* [将作业提交到 Azure 中的 HPC Pack 群集](/documentation/articles/virtual-machines-windows-hpcpack-cluster-submit-jobs)
 
 
 ## 为 MPI 工作负荷创建 RDMA 群集

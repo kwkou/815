@@ -15,9 +15,9 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
--   [为 Azure 准备 Oracle Linux 6.4+ 虚拟机](/documentation/articles/virtual-machines-linux-oracle-create-upload-vhd))
+-   [为 Azure 准备 Oracle Linux 6.4+ 虚拟机](/documentation/articles/virtual-machines-linux-oracle-create-upload-vhd#oracle6)
 
--   [为 Azure 准备 Oracle Linux 7.0+ 虚拟机](/documentation/articles/virtual-machines-linux-oracle-create-upload-vhd))
+-   [为 Azure 准备 Oracle Linux 7.0+ 虚拟机](/documentation/articles/virtual-machines-linux-oracle-create-upload-vhd#oracle7)
 
 ##先决条件
 本文假定你已在虚拟硬盘中安装了 Oracle Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 并创建虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。

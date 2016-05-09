@@ -94,7 +94,7 @@ IT 和运营专家还可以从容器与虚拟机的组合中获益。
 
 这时候，任何架构师、开发人员或 IT 运营专家可能会想“我可以自动完成所有这些事情；这真的是数据中心即服务！”。
 
-你说得对，的确可以这样，而且有任意数量的系统，你可能已经使用了其中的许多系统，可管理 Azure VM 组和使用脚本（通常使用 [CustomScriptingExtension for Windows](https://msdn.microsoft.com/zh-cn/library/azure/dn781373.aspx) 或 [CustomScriptingExtension for Linux](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/)）注入自定义代码。你可以（可能已经）使用 PowerShell 或者 Azure CLI 实现 Azure 自动部署。
+你说得对，的确可以这样，而且有任意数量的系统，你可能已经使用了其中的许多系统，可管理 Azure VM 组和使用脚本（通常使用 CustomScriptingExtension for Windows 或 [CustomScriptingExtension for Linux](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/)）注入自定义代码。你可以（可能已经）使用 PowerShell 或者 Azure CLI 实现 Azure 自动部署。
 
 随后，这些功能通常迁移到 [Puppet](https://puppetlabs.com/) 和 [Chef](https://www.chef.io/) 等工具，以实现大规模的自动创建和配置 VM。（此处有一些链接指向[在 Azure 中使用这些工具](#tools-for-working-with-containers)的说明。）
 
@@ -104,7 +104,7 @@ IT 和运营专家还可以从容器与虚拟机的组合中获益。
 
 Docker 有自己的 VM 创建工具集 ([docker-machine](/documentation/articles/virtual-machines-linux-classic-docker-machine)) 和一个负载平衡、docker-container 群集管理工具 ([swarm](/documentation/articles/virtual-machines-linux-docker-swarm))。此外，[Azure Docker VM 扩展程序](https://github.com/Azure/azure-docker-extension/blob/master/README.md)附带了默认的 [`docker-compose`](https://docs.docker.com/compose/) 支持，此功能可在多个容器内部署已配置的应用程序容器。
 
-另外，你还可以尝试使用 [Mesosphere 的数据中心操作系统 (DCOS)](http://docs.mesosphere.com/install/azurecluster/)。DCOS 基于开放源 [mesos](http://mesos.apache.org/)“分布式系统内核”，有助于你将数据中心视为一个可寻址服务进行处理。DCOS 拥有适合于多个重要系统（[Spark](http://spark.apache.org/) 和 [Kafka](http://kafka.apache.org/) 及其他）的内置程序包，以及 [Marathon](https://mesosphere.github.io/marathon/)（一种容器控制系统）和 [Chronos](https://mesosphere.github.io/chronos/)（一种分布式计划程序）等内置服务。Mesos 是借鉴了从 Twitter、AirBnb 和其他网络级企业学到的经验。
+另外，你还可以尝试使用 [Mesosphere 的数据中心操作系统 (DCOS)](http://docs.mesosphere.com/install/azurecluster/)。DCOS 基于开放源 [mesos](http://mesos.apache.org/)“分布式系统内核”，有助于你将数据中心视为一个可寻址服务进行处理。DCOS 拥有适合于多个重要系统（[Spark](http://spark.apache.org/) 和 [Kafka](http://kafka.apache.org/) 及其他）的内置程序包，以及 [Marathon](https://mesosphere.github.io/marathon/)（一种容器控制系统）和 [Chronos](https://mesosphere.com/blog/2015/04/30/chronos-2-3-3-released/)（一种分布式计划程序）等内置服务。Mesos 是借鉴了从 Twitter、AirBnb 和其他网络级企业学到的经验。
 
 另外，[kubernetes](http://azure.microsoft.com/blog/2014/08/28/hackathon-with-kubernetes-on-azure) 是一种用于 VM 和容器组管理的开放源系统，借鉴了从 Google 学习的经验。你甚至可以将 [kubernetes 与 weave 配合使用，以提供网络支持](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/coreos/azure/README.md#kubernetes-on-azure-with-coreos-and-weave)。
 
@@ -114,13 +114,13 @@ Docker 有自己的 VM 创建工具集 ([docker-machine](/documentation/articles
 
 Ubuntu 是另一个非常受欢迎的 Linux 分发，可以非常好地支持 Docker，还支持 [Linux（LXC 式）群集](https://help.ubuntu.com/lts/serverguide/lxc.html)。
 
-## 使用 Azure VM 和容器所需的工具
+##<a name="tools-for-working-with-containers"></a> 使用 Azure VM 和容器所需的工具
 
 使用容器和 Azure VM 时需借助工具。本节仅列出了部分与容器和组相关的最有用或最重要的概念和工具，以及与其搭配使用的更大配置和协调工具。
 
 > [AZURE.NOTE]此领域正迅速发生着令人惊奇的变化，尽管我们尽最大努力使本主题及其中的链接保持最新，依然无法做到详尽。请确保搜索有兴趣的科目，以便掌握最新动态！
 
-### 容器和 VM 技术
+###<a name="containers-and-vm-technologies"></a> 容器和 VM 技术
 
 部分 Linux 容器技术：
 
@@ -179,7 +179,7 @@ Linux 分发和 Azure 示例：
 	- [第三方：适用于 Azure 的 Hudson Storage 插件](https://github.com/hudson3-plugins/windows-azure-storage-plugin)
 	
 -	[Chef](https://docs.chef.io/index.html)
-	- [Chef 和虚拟机](/documentation/articles/virtual-machines-windows-install-chef-client)
+	- [Chef 和虚拟机](/documentation/articles/virtual-machines-windows-extensions-features)
 	- [视频：Chef 是什么及其工作原理](https://msopentech.com/blog/2014/03/31/using-chef-to-manage-azure-resources/)
 
 -	[Azure 自动化](/home/features/automation/)

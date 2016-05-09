@@ -60,8 +60,6 @@ Visual Studio 也支持创建 Azure 虚拟机。对于经典部署模型，请�
 
 [基本配置测试环境][]
 
-[Azure 混合云测试环境][]
-
 <!-- LINKS -->
 [overview]: /documentation/articles/resource-group-overview
 

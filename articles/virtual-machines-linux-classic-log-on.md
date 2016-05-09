@@ -24,7 +24,7 @@
 - 对于运行 Linux 操作系统的虚拟机，你使用 Secure Shell (SSH) 客户端来登录；很难想象你可以使用默认情况下不安装该客户端的分发。请参阅[如何使用 SSH](/documentation/articles/virtual-machines-linux-ssh-from-linux)，了解有关 Linux 的更多信息。
 
 
->[AZURE.NOTE]如需了解更多要求和疑难解答提示，请参阅[使用 RDP 或 SSH 连接到 Azure 虚拟机](http://go.microsoft.com/fwlink/p/?LinkId=398294)。
+>[AZURE.NOTE]如需了解更多要求和疑难解答提示，请参阅[使用 RDP 或 SSH 连接到 Azure 虚拟机](/documentation/articles/virtual-machines-linux-about/)。
 
 此过程将向你演示如何使用 PuTTY 程序访问虚拟机。
 
