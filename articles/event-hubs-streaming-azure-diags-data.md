@@ -31,9 +31,8 @@ Azure 诊断提供了灵活的方法用于收集来自计算 VM 的指标和日�
   
 - Azure 诊断扩展 1.6（[Azure SDK for.NET 2.9 或更高版本](/downloads/)默认以此为目标）
 - [Visual Studio 2013 或更高版本](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
-- 在使用以下方法之一通过 .wadcfgx 文件在应用程序中成功配置 Azure 诊断之前：
-	- Visual Studio：[为 Azure 云服务和虚拟机配置诊断](/documentation/articles/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines)
-	- Windows PowerShell：[使用 PowerShell 在 Azure 云服务中启用诊断](/documentation/articles/cloud-services/cloud-services-diagnostics-powershell)
+- 在使用以下方法通过 .wadcfgx 文件在应用程序中成功配置 Azure 诊断之前：
+	- Windows PowerShell：[使用 PowerShell 在 Azure 云服务中启用诊断](/documentation/articles/cloud-services-diagnostics-powershell)
 - 根据文章[事件中心入门](/documentation/articles/event-hubs-csharp-ephcs-getstarted)预配的事件中心命名空间
 
 ## 将 Azure 诊断连接到事件中心接收器
@@ -60,7 +59,7 @@ Azure 诊断提供了灵活的方法用于收集来自计算 VM 的指标和日�
 	    <EventHub Url="https://diags-mycompany-ns.servicebus.chinacloudapi.cn/diageventhub" SharedAccessKeyName="SendRule" SharedAccessKey="9B3SwghJOGEUvXigc6zHPInl2iYxrgsKHZoy4nm9CUI=" />
 	  </PrivateConfig>
 
-**SharedAccessKeyName** 必须匹配已在 **ServiceBus/EventHub** 命名空间中定义的 SAS 密钥和策略。此操作可通过以下方式完成：浏览到[经典 Azure 门户](https://manage.windowsazure.com)中的事件中心仪表板，单击“配置”选项卡，然后设置具有“发送”权限的命名策略（例如，“SendRule”）。**StorageAccount** 也已在 **PrivateConfig** 中声明。不需要在此处更改值，特别是当它们可正常运行时。在本示例中，我们将值保留空白，这是下游资产将设置值的符号，例如 ServiceConfiguration.Cloud.cscfg 环境配置文件将设置环境的适当名称和密钥。
+**SharedAccessKeyName** 必须匹配已在 **ServiceBus/EventHub** 命名空间中定义的 SAS 密钥和策略。此操作可通过以下方式完成：浏览到[Azure 管理门户](https://manage.windowsazure.cn)中的事件中心仪表板，单击“配置”选项卡，然后设置具有“发送”权限的命名策略（例如，“SendRule”）。**StorageAccount** 也已在 **PrivateConfig** 中声明。不需要在此处更改值，特别是当它们可正常运行时。在本示例中，我们将值保留空白，这是下游资产将设置值的符号，例如 ServiceConfiguration.Cloud.cscfg 环境配置文件将设置环境的适当名称和密钥。
 
 >[AZURE.WARNING] 请注意，事件中心 SAS 密钥以纯文本存储在 .wadcfgx 文件中。有时这会签入源代码管理，或作为生成服务器中的资产，因此应该适当地保护。建议在此处使用具有“仅发送”权限的 SAS 密钥，使任何恶意用户最多只能写入事件中心而永远无法侦听或进行管理。
 
