@@ -1,8 +1,12 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL服务问题 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,常见问题,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS,FAQ" description="针对用户在使用MySQL 数据库 on Azure中遇到的一些常见技术问题,提供快速解答。如果您仍存有疑问,欢迎联系技术支持。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="v-chuw" solutions="" manager="RongYu" editor="" />
 
-<tags ms.service="mysql" ms.date="04/25/2016" wacn.date="04/25/2016"/>
+<tags ms.service="mysql" ms.date="05/09/2016" wacn.date="05/09/2016"/>
 
 # MySQL Database on Azure备份和恢复
+
+> [AZURE.SELECTOR]
+- [中文版](/documentation/articles/mysql-database-point-in-time-restore)
+- [In English](/documentation/articles/mysql-database-enus-point-in-time-restore)
 
 MySQL Database on Azure 支持完全备份（也叫快照备份）和增量备份，备份所用空间不占用数据库本身分配的数据存储限额。您可以轻松回溯数据库到过去7天的任意一个时间点或者保存在系统中的某一个特定的快照备份。
 
