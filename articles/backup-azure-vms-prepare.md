@@ -11,7 +11,7 @@
 <tags
 	ms.service="backup"
 	ms.date="03/01/2016"
-	wacn.date="04/12/2016"/>
+	wacn.date="05/09/2016"/>
 
 # 进行备份 Azure 虚拟机所需的环境准备
 
@@ -21,12 +21,12 @@
 - 在 Azure 公共 Internet 地址和 Azure 存储空间终结点之间建立网络连接。
 - 在 VM 上安装 VM 代理。
 
-如果你确定你的环境满足这些条件，请转到[有关备份 VM 的文章](backup-azure-vms.md)。否则，请继续阅读本文，其中将会引导你逐步完成准备环境来备份 Azure VM 的过程。
+如果你确定你的环境满足这些条件，请转到[有关备份 VM 的文章](/documentation/articles/backup-azure-vms)。否则，请继续阅读本文，其中将会引导你逐步完成准备环境来备份 Azure VM 的过程。
 
 
 ## 备份和还原 VM 时的限制
 
->[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](../resource-manager-deployment-model.md)。以下列表提供了在经典模型中部署时的限制。
+>[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model)。以下列表提供了在经典模型中部署时的限制。
 
 - 目前不支持备份基于 Azure Resource Manager (ARM)（即 IaaS V2）的虚拟机。
 - 不支持备份超过 16 个数据磁盘的虚拟机。
@@ -38,8 +38,8 @@
 - 只有特定的操作系统版本才支持使用 Azure 备份服务备份虚拟机。
   - **Linux**：请参阅 [Azure 认可的分发版列表](/documentation/articles/virtual-machines-linux-endorsed-distros)。只要虚拟机上装有 VM 代理，其他自带的 Linux 分发版应该也能正常运行。
   - **Windows Server**：不支持低于 Windows Server 2008 R2 的版本。
-	- 仅支持通过 PowerShell 还原属于多 DC 配置的域控制器 (DC) VM。阅读有关[还原多 DC 域控制器](backup-azure-restore-vms.md#restoring-domain-controller-vms)的详细信息。
-	- 仅支持通过 PowerShell 还原采用以下特殊网络配置的虚拟机。还原操作完成后，在 UI 中使用还原工作流创建的虚拟机将不采用这些网络配置。若要了解详细信息，请参阅[还原采用特殊网络配置的 VM](backup-azure-restore-vms.md#restoring-vms-with-special-netwrok-configurations)。
+	- 仅支持通过 PowerShell 还原属于多 DC 配置的域控制器 (DC) VM。阅读有关[还原多 DC 域控制器](/documentation/articles/backup-azure-restore-vms#restoring-domain-controller-vms)的详细信息。
+	- 仅支持通过 PowerShell 还原采用以下特殊网络配置的虚拟机。还原操作完成后，在 UI 中使用还原工作流创建的虚拟机将不采用这些网络配置。若要了解详细信息，请参阅[还原采用特殊网络配置的 VM](/documentation/articles/backup-azure-restore-vms#restoring-vms-with-special-netwrok-configurations)。
 		- 采用负载平衡器配置的虚拟机（内部和外部）
 		- 使用多个保留 IP 地址的虚拟机
 		- 使用多个网络适配器的虚拟机
@@ -55,13 +55,7 @@
 
 1. 登录到 [Azure 门户](http://manage.windowsazure.cn/)。
 
-2. 在 Azure 门户中，单击“新建”>“混合集成”>“备份”。单击“备份”时，会自动切换到经典门户（在“注释”之后显示）。
-
-    ![Ibiza 门户](./media/backup-azure-vms-prepare/Ibiza-portal-backup01.png)
-
-    >[AZURE.NOTE] 如果你的订阅上次是在经典门户中使用的，则你的订阅可能会在经典门户中打开。在此情况下，若要创建备份保管库，请单击“新建”>“数据服务”>“恢复服务”>“备份保管库”>“快速创建”（请参阅下图）。
-
-    ![创建备份保管库](./media/backup-azure-vms-prepare/backup_vaultcreate.png)
+2. 在 Azure 门户中，单击“新建”>“恢复服务”>“备份”。
 
 3. 对于“名称”，输入一个友好名称以标识此保管库。名称对于 Azure 订阅需要是唯一的。键入包含 2 到 50 个字符的名称。名称必须以字母开头，只能包含字母、数字和连字符。
 
@@ -73,7 +67,7 @@
 
     ![创建保管库 toast 通知](./media/backup-azure-vms-prepare/creating-vault.png)
 
-7. 一条消息将确认已成功创建保管库。并且将在“恢复服务”页上将保管库列出为“活动”保管库。确保在创建保管库后立即选择适当的存储冗余选项。阅读有关[在备份保管库中设置存储冗余选项](backup-configure-vault.md#azure-backup---storage-redundancy-options)的更多内容。
+7. 一条消息将确认已成功创建保管库。并且将在“恢复服务”页上将保管库列出为“活动”保管库。确保在创建保管库后立即选择适当的存储冗余选项。阅读有关[在备份保管库中设置存储冗余选项](/documentation/articles/backup-configure-vault#azure-backup---storage-redundancy-options)的更多内容。
 
     ![备份保管库列表](./media/backup-azure-vms-prepare/backup_vaultslist.png)
 
@@ -181,7 +175,7 @@ VM 代理已存在于从 Azure 库创建的 VM 中。但是，从本地数据中
 | **操作** | **Windows** | **Linux** |
 | --- | --- | --- |
 | 安装 VM 代理 | <li>下载并安装[代理 MSI](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409)。你需要有管理员权限才能完成安装。<li>[更新 VM 属性](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx)，指明已安装代理。 | <li>从 GitHub 安装最新的 [Linux 代理](https://github.com/Azure/WALinuxAgent)。你需要有管理员权限才能完成安装。<li>[更新 VM 属性](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx)，指明已安装代理。 |
-| 更新 VM 代理 | 更新 VM 代理与重新安装 [VM 代理二进制文件](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409)一样简单。<br><br>确保在更新 VM 代理时，没有任何正在运行的备份操作。 | 按照[更新 Linux VM 代理](../virtual-machines-linux-update-agent.md)上的说明进行操作。<br><br>确保在更新 VM 代理时，没有任何正在运行的备份操作。 |
+| 更新 VM 代理 | 更新 VM 代理与重新安装 [VM 代理二进制文件](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409)一样简单。<br><br>确保在更新 VM 代理时，没有任何正在运行的备份操作。 | 按照[更新 Linux VM 代理](/documentation/articles/virtual-machines-linux-update-agent)上的说明进行操作。<br><br>确保在更新 VM 代理时，没有任何正在运行的备份操作。 |
 | 验证 VM 代理安装 | <li>导航到 Azure VM 中的 C:\\WindowsAzure\\Packages 文件夹。<li>你应会发现 WaAppAgent.exe 文件已存在。<li> 右键单击该文件，转到“属性”，然后选择“详细信息”选项卡。“产品版本”字段应为 2.6.1198.718 或更高。 | 不适用 |
 
 
