@@ -55,9 +55,9 @@
 
 ## 资源提供程序
 
-资源提供程序是一种服务，提供可以通过资源管理器进行部署和管理的资源。每个资源提供程序提供 REST API 操作用于处理资源。例如，如果你想要部署 Azure 密钥保管库来存储密钥和机密，可以使用 **Microsoft.KeyVault** 资源提供程序。此资源提供程序提供名为 **vaults** 的资源类型用于创建密钥保管库，提供名为 **vaults/secrets** 的资源类型用于在密钥保管库中创建机密，并提供一组 [REST API 操作](https://msdn.microsoft.com/library/azure/dn903609.aspx)。
+资源提供程序是一种服务，提供可以通过资源管理器进行部署和管理的资源。每个资源提供程序提供 REST API 操作用于处理资源。例如，如果你想要部署 Azure 密钥保管库来存储密钥和机密，可以使用 **Microsoft.KeyVault** 资源提供程序。此资源提供程序提供名为 **vaults** 的资源类型用于创建密钥保管库，提供名为 **vaults/secrets** 的资源类型用于在密钥保管库中创建机密，并提供一组 [REST API 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn903609.aspx)。
 
-若要部署和管理基础结构，需要了解有关资源提供程序的详细信息；例如，它提供的资源类型、REST API 操作的版本号码、它支持的操作以及设置要创建的资源类型值时要使用的架构。若要了解支持的资源提供程序，请参阅[资源管理器提供程序、区域、API 版本和架构](resource-manager-supported-services.md)。
+若要部署和管理基础结构，需要了解有关资源提供程序的详细信息；例如，它提供的资源类型、REST API 操作的版本号码、它支持的操作以及设置要创建的资源类型值时要使用的架构。若要了解支持的资源提供程序，请参阅[资源管理器提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services)。
 
 ## 模板部署
 
@@ -75,13 +75,11 @@
 
 从应用商店创建解决方案时，该解决方案将自动包含部署模板。你无需从头开始创建模板，因为你可以从解决方案的模板着手，并根据你的特定需求自定义该模板。
 
-可以通过将资源组的当前状态导出到模板或查看特定部署所用的模板，来检索现有资源组的模板。[使用 Azure 门户来部署和管理 Azure 资源](/documentation/articles/resource-group-portal)中说明了这两种做法。
+可以通过将资源组的当前状态导出到模板或查看特定部署所用的模板，来检索现有资源组的模板。
 
 最后，该模板将成为应用程序源代码的一部分。你可以将它签入源代码存储库，并随着应用程序的发展更新该模板。你可以通过 Visual Studio 编辑模板。
 
 有关定义模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
-
-有关创建模板的分步说明，请参阅 [资源管理器模板演练](/documentation/articles/resource-manager-template-walkthrough)。
 
 有关如何构建你的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)。
 
@@ -100,7 +98,6 @@
 
 资源管理器会自动记录用户操作以供审核。有关使用审核日志的信息，请参阅[使用资源管理器执行审核操作](/documentation/articles/resource-group-audit)。
 
-有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。[RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles)主题包含内置角色和允许的操作的列表。内置角色包括“所有者”、“读取者”和“参与者”等普通角色，以及“虚拟机参与者”、“虚拟网络参与者”和“SQL 安全管理员”等服务特定角色（这里只是列举了几个可用的角色）。
 
 你可以显式锁定关键资源，以防止用户删除或修改这些资源。有关详细信息，请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources)。
 
@@ -108,7 +105,7 @@
 
 ## 使用自定义策略管理资源
 
-资源管理器可让你创建自定义策略来管理资源。创建的策略类型多种多样，例如，对资源实施命名约定、限制可以部署哪些资源类型和资源实例、限制哪些区域可以托管哪种资源，或者要求在资源中包含标记值，以便按部门安排计费。你可以创建策略以帮助降低成本并在订阅中保持一致性。有关详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy)。
+资源管理器可让你创建自定义策略来管理资源。创建的策略类型多种多样，例如，对资源实施命名约定、限制可以部署哪些资源类型和资源实例、限制哪些区域可以托管哪种资源，或者要求在资源中包含标记值，以便按部门安排计费。
 
 ## 一致的管理层
 
@@ -116,9 +113,7 @@
 
 有关 PowerShell 的信息，请参阅[将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager)和 [Azure 资源管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx)。
 
-有关 Azure CLI 的信息，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager)。
-
-有关 REST API 的信息，请参阅 [Azure 资源管理器 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)。若要查看已部署的资源的 REST 操作，请参阅 [Use Azure Resource Explorer to view and modify resources（使用 Azure 资源浏览器来查看和修改资源）](/documentation/articles/resource-manager-resource-explorer)。
+有关 REST API 的信息，请参阅 [Azure 资源管理器 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)。
 
 有关使用门户的信息，请参阅[使用 Azure 门户管理 Azure 资源](/documentation/articles/resource-group-portal)。
 

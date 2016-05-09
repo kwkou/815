@@ -62,7 +62,7 @@ azure help
 azure --version
 ```
 
-你现在已准备就绪！ 若要访问所有 CLI 命令以使用自己的资源，请[从 Azure CLI 连接到你的 Azure 订阅](xplat-cli-connect.md)。
+你现在已准备就绪！ 若要访问所有 CLI 命令以使用自己的资源，请[从 Azure CLI 连接到你的 Azure 订阅](/documentation/articles/xplat-cli-connect)。
 
 
 ## 更新 CLI

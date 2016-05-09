@@ -241,7 +241,6 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
 
 ## 后续步骤
 
-- 你可以使用自定义策略对订阅应用限制和约定。你定义的策略可能要求为所有资源设置特定的标记。有关详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy)。
 - 有关部署资源时使用 Azure PowerShell 的说明，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。
 
 <!---HONumber=Mooncake_0418_2016-->

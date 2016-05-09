@@ -73,7 +73,7 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 若要登录到你的 Azure 帐户，请使用 **Add-AzureRmAccount** cmdlet。
 
-    Add-AzureRmAccount
+    Add-AzureRmAccount -Environment AzureChinaCloud
 
 该 cmdlet 将提示您提供您的 Azure 帐户的登录凭据。登录后它会下载你的帐户设置，以便这些信息可供 Azure PowerShell 使用。
 
@@ -91,7 +91,7 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 若要创建资源组，请使用 **New-AzureRmResourceGroup** cmdlet。
 
-该命令使用 **Name** 参数来指定资源组的名称，并使用 **Location** 参数来指定其位置。根据上一部分中所述，我们将使用“美国西部”作为位置。
+该命令使用 **Name** 参数来指定资源组的名称，并使用 **Location** 参数来指定其位置。根据上一部分中所述，我们将使用“中国东部”作为位置。
 
     New-AzureRmResourceGroup -Name TestRG1 -Location "China East"
     
@@ -107,7 +107,7 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 ## 部署你的解决方案
 
-本主题不会说明如何创建模板，也不会介绍模板的结构。有关该信息，请参阅 [Authoring Azure Resource Manager templates（创作 Azure Resource Manager 模板）](/documentation/articles/resource-group-authoring-templates)和 [Resource Manager Template Walkthrough（Resource Manager 模板演练）](/documentation/articles/resource-manager-template-walkthrough)。你将从 [Azure 快速入门模板](https://azure.microsoft.com/documentation/templates/)部署预先定义的[预配包含 SQL 数据库的 Web 应用](https://azure.microsoft.com/documentation/templates/201-web-app-sql-database/)模板。
+本主题不会说明如何创建模板，也不会介绍模板的结构。有关该信息，请参阅 [Authoring Azure Resource Manager templates（创作 Azure Resource Manager 模板）](/documentation/articles/resource-group-authoring-templates)。
 
 在创建资源组和模板后，可以将模板中定义的基础结构部署到资源组。你可以使用 **New-AzureRmResourceGroupDeployment** cmdlet 部署资源。该模板指定了我们要使用的许多默认值，因此你不需要提供这些参数的值。基本语法如下：
 
@@ -163,7 +163,7 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 ### 日志调试信息
 
-在部署模板时，通过指定运行 **New-AzureRmResourceGroupDeployment** 时的 **-DeploymentDebugLogLevel** 参数，可记录有关请求和响应的其他信息。此信息可帮助排查部署错误。默认值为 **None**，即不记录任何请求或响应内容。你可以指定从请求和/或响应记录内容。有关排查部署问题和记录调试信息的详细信息，请参阅 [Troubleshooting resource group deployments with Azure PowerShell（使用 Azure PowerShell 排查资源组部署问题）](resource-manager-troubleshoot-deployments-powershell.md)。以下示例将记录部署的请求内容和响应内容。
+在部署模板时，通过指定运行 **New-AzureRmResourceGroupDeployment** 时的 **-DeploymentDebugLogLevel** 参数，可记录有关请求和响应的其他信息。此信息可帮助排查部署错误。默认值为 **None**，即不记录任何请求或响应内容。你可以指定从请求和/或响应记录内容。有关排查部署问题和记录调试信息的详细信息，请参阅 [Troubleshooting resource group deployments with Azure PowerShell（使用 Azure PowerShell 排查资源组部署问题）](/documentation/articles/resource-manager-troubleshoot-deployments-powershell)。以下示例将记录部署的请求内容和响应内容。
 
     New-AzureRmResourceGroupDeployment -ResourceGroupName TestRG1 -DeploymentDebugLogLevel All -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-sql-database/azuredeploy.json 
 
@@ -369,8 +369,7 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 - 若要了解如何创建资源管理器模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
 - 若要了解部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
-- 有关部署项目的详细示例，请参阅[按可预见的方式在 Azure 中部署微服务](/documentation/articles/app-service-deploy-complex-application-predictably)。
-- 若要了解如何对失败的部署进行故障排除，请参阅 [Azure 中的资源组部署疑难解答](/documentation/articles/virtual-machines/resource-group-deploy-debug)。
+- 若要了解如何对失败的部署进行故障排除，请参阅 [Azure 中的资源组部署疑难解答](/documentation/articles/resource-group-deploy-debug)。
 
 
 <!---HONumber=Mooncake_0425_2016-->

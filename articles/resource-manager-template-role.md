@@ -45,7 +45,7 @@
 | dependsOn | 数组<br />可选<br />资源名称或资源唯一标识符的逗号分隔列表。<br /><br />此角色分配依赖的资源的集合。如果要分配的角色的作用域限定为一个资源并且该资源部署在同一模板中，请在此元素中包含该资源名称，以确保该资源先部署。 | 
 | properties | 对象<br />必需<br />[properties 对象](#properties)<br /><br />一个对象，用于标识角色定义、主体和范围。 |  
 
-<a id="properties">
+<a id="properties"></a>
 ### 属性对象
 
 | 名称 | 值 |
@@ -127,6 +127,5 @@
 ## 后续步骤
 
 - 有关模板结构的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
-- 有关基于角色的访问控制的详细信息，请参阅 [Azure Active Directory 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
 
 <!---HONumber=Mooncake_0425_2016-->

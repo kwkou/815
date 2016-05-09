@@ -17,7 +17,6 @@
 
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/resource-manager-troubleshoot-deployments-powershell)
-- [Azure CLI](/documentation/articles/resource-manager-troubleshoot-deployments-cli)
 - [REST API](/documentation/articles/resource-manager-troubleshoot-deployments-rest)
 
 如果在将资源部署到 Azure 时发生错误，你需要进行故障排除。Azure PowerShell 提供 cmdlet 来让你轻松找到错误并确定可能的解决方法。

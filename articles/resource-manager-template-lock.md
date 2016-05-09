@@ -59,7 +59,7 @@
 
 将此资源添加到你的模板可防止对资源执行指定的操作。该锁将应用于所有用户和组。通常情况下，你只在有限的持续时间内应用锁，例如，当某个进程正在运行时，你想要确保组织中的某人不会无意中修改或删除某个资源。
 
-若要创建或删除管理锁，你必须有权访问 **Microsoft.Authorization/*** 或 **Microsoft.Authorization/locks/*** 操作。在内置角色中，只有**所有者**和**用户访问管理员**有权执行这些操作。有关基于角色的访问控制的信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+若要创建或删除管理锁，你必须有权访问 **Microsoft.Authorization/*** 或 **Microsoft.Authorization/locks/*** 操作。在内置角色中，只有**所有者**和**用户访问管理员**有权执行这些操作。
 
 锁将应用于指定的资源和任何子资源。
 
