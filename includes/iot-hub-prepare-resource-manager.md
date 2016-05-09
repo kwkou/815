@@ -9,7 +9,7 @@
 1. 使用以下命令登录到你的 Azure 订阅：
 
     ```
-    Login-AzureRmAccount
+    Login-AzureRmAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
     ```
 
 2. 记下你的 TenantId 和 SubscriptionId。稍后你将需要它们。
