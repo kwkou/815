@@ -34,7 +34,7 @@
 在 PowerShell 命令提示符中，输入以下命令以登录到你的 Azure 订阅：
 
 ```
-Login-AzureRmAccount
+Login-AzureRmAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
 ```
 
 可以使用以下命令来发现可部署 IoT 中心的位置和当前支持的 API 版本：
@@ -47,14 +47,14 @@ Login-AzureRmAccount
 在 IoT 中心支持的位置之一，使用以下命令创建资源组来包含你的 IoT 中心。本示例将创建一个名为 **MyIoTRG1** 的资源组：
 
 ```
-New-AzureRmResourceGroup -Name MyIoTRG1 -Location "East US"
+New-AzureRmResourceGroup -Name MyIoTRG1 -Location "China East"
 ```
 
 ## 提交模板以创建 IoT 中心
 
 使用 JSON 模板在资源组中创建新的 IoT 中心。还可以使用模板更改现有的 IoT 中心。
 
-1. 使用文本编辑器创建名为 **template.json** 的 ARM 模板，并指定以下资源定义来创建新的标准 IoT 中心。本示例在**美国东部**区域添加 IoT 中心，并使用 **2016-02-03** API 版本。此模板还要求你在名为 **hubName** 的参数中传入 IoT 中心名称。
+1. 使用文本编辑器创建名为 **template.json** 的 ARM 模板，并指定以下资源定义来创建新的标准 IoT 中心。本示例在**中国东部**区域添加 IoT 中心，并使用 **2016-02-03** API 版本。此模板还要求你在名为 **hubName** 的参数中传入 IoT 中心名称。
 
     ```
     {
@@ -70,14 +70,14 @@ New-AzureRmResourceGroup -Name MyIoTRG1 -Location "East US"
         "apiVersion": "2016-02-03",
         "type": "Microsoft.Devices/IotHubs",
         "name": "[parameters('hubName')]",
-        "location": "East US",
+        "location": "China East",
         "sku": {
           "name": "S1",
           "tier": "Standard",
           "capacity": 1
         },
         "properties": {
-          "location": "East US"
+          "location": "China East"
         }
       }
       ],

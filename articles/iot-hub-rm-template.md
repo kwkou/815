@@ -60,7 +60,7 @@
     static string subscriptionId = "{Your SubscriptionId}";
     static string tenantId = "{Your TenantId}";
     static string password = "{Your application Password}";
-    static string storageAddress = "https://{Your storage account name}.blob.core.windows.net";
+    static string storageAddress = "https://{Your storage account name}.blob.core.chinacloudapi.cn";
     static string rgName = "{Resource group name}";
     static string deploymentName = "{Deployment name}";
     ```
@@ -73,7 +73,7 @@
 
 1. 在解决方案资源管理器中右键单击你的项目，单击“添加”，然后单击“新建项”。将名为 **template.json** 的新 JSON 文件添加到项目。
 
-2. 将 **template.json** 的内容替换为以下资源定义，以便在**美国东部**区域添加新的标准 IoT 中心：
+2. 将 **template.json** 的内容替换为以下资源定义，以便在**中国东部**区域添加新的标准 IoT 中心：
 
     ```
     {
@@ -89,14 +89,14 @@
         "apiVersion": "2016-02-03",
         "type": "Microsoft.Devices/IotHubs",
         "name": "[parameters('hubName')]",
-        "location": "East US",
+        "location": "China East",
         "sku": {
           "name": "S1",
           "tier": "Standard",
           "capacity": 1
         },
         "properties": {
-          "location": "East US"
+          "location": "China East"
         }
       }
       ],
@@ -128,8 +128,8 @@
 6. 在“服务器资源管理器”中，右键单击“templates”容器，然后单击“查看 Blob 容器”。单击“上载 Blob”按钮，选择“parameters.json”和“templates.json”这两个文件，然后单击“打开”，将 JSON 文件上载到 **templates** 容器。包含 JSON 数据的 Blob 的 URL 如下：
 
     ```
-    https://{Your storage account name}.blob.core.windows.net/templates/parameters.json
-    https://{Your storage account name}.windows.net/templates/template.json
+    https://{Your storage account name}.blob.core.chinacloudapi.cn/templates/parameters.json
+    https://{Your storage account name}.chinacloudapi.cn/templates/template.json
     ```
 
 7. 将以下方法添加到 Program.cs：
