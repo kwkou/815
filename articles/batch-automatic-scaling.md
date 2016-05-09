@@ -11,13 +11,13 @@
 <tags
 	ms.service="batch"
 	ms.date="01/08/2016"
-	wacn.date="04/13/2016"/>
+	wacn.date="05/09/2016"/>
 
 # 自动缩放 Azure 批处理 ( Batch )池中的计算节点
 
 通过在 Azure Batch 中使用自动缩放，你可以在执行作业时在 Batch 池中动态添加或删除计算节点，从而自动调整应用程序所使用的处理能力。这种自动调整可以节省时间和资金。
 
-你可以通过将自动缩放公式与池相关联（例如，使用 [Batch .NET](batch-dotnet-get-started.md) 库中的 [PoolOperations.EnableAutoScale][net_enableautoscale] 方法），对计算节点池启用自动缩放。然后，Batch 服务将使用此公式来确定执行工作负荷所需的计算节点数目。池中的计算节点数（对应于定期收集的服务度量数据样本）会根据关联的公式按可配置的间隔进行调整。
+你可以通过将自动缩放公式与池相关联（例如，使用 [Batch .NET](/documentation/articles/batch-dotnet-get-started) 库中的 [PoolOperations.EnableAutoScale][net_enableautoscale] 方法），对计算节点池启用自动缩放。然后，Batch 服务将使用此公式来确定执行工作负荷所需的计算节点数目。池中的计算节点数（对应于定期收集的服务度量数据样本）会根据关联的公式按可配置的间隔进行调整。
 
 可以在创建池时启用自动缩放，也可以对现有池启用该功能。你还可以更改已启用“自动缩放”功能的池的现有公式。Batch 可让你在将公式分配给池之前先评估公式，以及监视自动缩放运行的状态。
 
@@ -47,7 +47,7 @@ $TargetDedicated = min(10, $averageActiveTaskCount);
 
 本文的后续部分将介绍构成自动缩放公式的各个实体，包括变量、运算符、操作和函数。你会了解如何在 Batch 中获取各种计算资源和任务度量值。你可以使用这些度量值，根据资源使用情况和任务状态对池的节点计数进行智能化调整。然后，你将了解如何使用 Batch REST 和 .NET API 构建公式以及对池启用自动缩放。最后，我们将讨论几个示例公式。
 
-> [AZURE.NOTE] 每个 Azure 批处理帐户限制为可用于处理的计算节点的最大数目。Batch 服务将会根据该限制来创建节点。因此，它可能达不到公式所指定的目标数目。请参阅 [Azure Batch 服务的配额和限制](batch-quota-limit.md)了解有关查看和提高帐户配额的信息。
+> [AZURE.NOTE] 每个 Azure 批处理帐户限制为可用于处理的计算节点的最大数目。Batch 服务将会根据该限制来创建节点。因此，它可能达不到公式所指定的目标数目。请参阅 [Azure Batch 服务的配额和限制](/documentation/articles/batch-quota-limit)了解有关查看和提高帐户配额的信息。
 
 ## <a name="variables"></a>变量
 
@@ -548,15 +548,14 @@ pool.Commit();
 > [AZURE.NOTE] 如果某个值是在创建池时为targetDedicated参数指定的，则会在评估自动缩放公式时忽略该值。
 
 此代码段演示了如何在现有池上通过 [Batch .NET][net_api] 库启用自动缩放功能。请注意，针对现有池启用公式和更新公式使用相同的方法。因此，如果已启用自动缩放功能，则此方法会针对指定池更新公式。该代码段假设“mypool”是现有池 ([CloudPool][net_cloudpool]) 的 ID。
-
+```
 		 // Define the autoscaling formula. In this snippet, the  formula sets the target number of nodes to 5 on
 		 // Mondays, and 1 on every other day of the week
 		 string myAutoScaleFormula = "$TargetDedicated = (time().weekday==1?5:1);";
-
 		 // Update the existing pool's autoscaling formula by calling the BatchClient.PoolOperations.EnableAutoScale
 		 // method, passing in both the pool's ID and the new formula.
 		 myBatchClient.PoolOperations.EnableAutoScale("mypool", myAutoScaleFormula);
-
+```
 ## 评估自动缩放公式
 
 在应用程序中使用公式之前，最好先对它进行评估。评估公式时，可以针对现有池对公式进行“测试性运行”。执行此操作时，可通过以下方式：
@@ -571,7 +570,6 @@ pool.Commit();
 ```
 // First obtain a reference to the existing pool
 CloudPool pool = myBatchClient.PoolOperations.GetPool("mypool");
-
 // We must ensure that autoscaling is enabled on the pool prior to evaluating a formula
 if (pool.AutoScaleEnabled.HasValue && pool.AutoScaleEnabled.Value)
 {
@@ -583,17 +581,14 @@ if (pool.AutoScaleEnabled.HasValue && pool.AutoScaleEnabled.Value)
 		$IsWorkingWeekdayHour=$WorkHours && $IsWeekday;
 		$TargetDedicated=$IsWorkingWeekdayHour?20:10;
 	";
-
 	// Perform the autoscale formula evaluation. Note that this does not actually apply the formula to
 	// the pool.
 	AutoScaleEvaluation eval = client.PoolOperations.EvaluateAutoScale(pool.Id, myFormula);
-
 	if (eval.AutoScaleRun.Error == null)
 	{
 		// Evaluation success - print the results of the AutoScaleRun. This will display the values of each
 		// variable as evaluated by the autoscale formula.
 		Console.WriteLine("AutoScaleRun.Results: " + eval.AutoScaleRun.Results);
-
 		// Apply the formula to the pool since it evaluated successfully
 		client.PoolOperations.EnableAutoScale(pool.Id, myFormula);
 	}
@@ -658,7 +653,7 @@ $NodeDeallocationOption = taskcompletion;
 
 ### 示例 3：考虑并行任务
 
-这是另一个示例，可根据任务数调整池大小。此公式还考虑为池设置的 [MaxTasksPerComputeNode][net_maxtasks] 值。在对池启用了[并行任务执行](batch-parallel-node-tasks.md)的情况下，此公式特别有用。
+这是另一个示例，可根据任务数调整池大小。此公式还考虑为池设置的 [MaxTasksPerComputeNode][net_maxtasks] 值。在对池启用了[并行任务执行](/documentation/articles/batch-parallel-node-tasks)的情况下，此公式特别有用。
 
 ```
 // Determine whether 70 percent of the samples have been recorded in the past 15 minutes; if not, use last sample
@@ -682,13 +677,11 @@ $NodeDeallocationOption = taskcompletion;
 ```
 string now = DateTime.UtcNow.ToString("r");
 string formula = string.Format(@"
-
 	$TargetDedicated = {1};
 	lifespan         = time() - time(""{0}"");
 	span             = TimeInterval_Minute * 60;
 	startup          = TimeInterval_Minute * 10;
 	ratio            = 50;
-
 	$TargetDedicated = (lifespan > startup ? (max($RunningTasks.GetSample(span, ratio), $ActiveTasks.GetSample(span, ratio)) == 0 ? 0 : $TargetDedicated) : {1});
 	", now, 4);
 ```
@@ -712,7 +705,7 @@ string formula = string.Format(@"
         * [BatchClient.PoolOperations.GetRDPFile](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.getrdpfile.aspx)--此 .NET 方法需要池 ID、节点 ID 以及要创建的 RDP 文件的名称。
         * [从节点获取远程桌面协议文件](https://msdn.microsoft.com/library/dn820120.aspx)--此 REST API 请求需要池的名称以及计算节点的名称。响应包含 RDP 文件的内容。
         * [Get-AzureBatchRDPFile](https://msdn.microsoft.com/library/mt149851.aspx)--此 PowerShell cmdlet 从指定的计算节点获取 RDP 文件，并将其保存到指定的文件位置或流。
-2.	某些应用程序会生成大量难以处理的数据。解决此问题的方法之一是进行[有效的列表查询](batch-efficient-list-queries.md)。
+2.	某些应用程序会生成大量难以处理的数据。解决此问题的方法之一是进行[有效的列表查询](/documentation/articles/batch-efficient-list-queries)。
 
 [net_api]: https://msdn.microsoft.com/library/azure/mt348682.aspx
 [net_batchclient]: http://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx

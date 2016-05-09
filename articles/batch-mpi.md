@@ -10,7 +10,7 @@
 <tags
 	ms.service="batch"
 	ms.date="02/19/2016"
-	wacn.date="" />
+	wacn.date="04/13/2016" />
 
 # 在 Azure Batch 中使用多实例任务来执行消息传递接口 (MPI) 应用程序
 
@@ -50,7 +50,7 @@ myCloudPool.MaxTasksPerComputeNode = 1;
 
 此外，多实例任务只在 **2015 年 12 月 14 日之后创建的池**中的节点上执行。
 
-> [AZURE.TIP] 当你在 Batch 池中使用大小 [A8 或 A9 计算节点](/documentation/articles/virtual-machines-windows-a8-a9-a10-a11-specs)时，MPI 应用程序可以使用 Azure 的高性能、低延迟的远程直接内存访问 (RDMA) 网络。[云服务的大小](/documentation/articles/cloud-services/cloud-services-sizes-specs)提供了 Batch 池中可用的计算节点大小的完整列表。
+> [AZURE.TIP] 当你在 Batch 池中使用大小时，MPI 应用程序可以使用 Azure 的高性能、低延迟的远程直接内存访问 (RDMA) 网络。[云服务的大小](/documentation/articles/cloud-services-sizes-specs)提供了 Batch 池中可用的计算节点大小的完整列表。
 
 ### 使用 StartTask 安装 MPI 应用程序
 
@@ -168,7 +168,6 @@ CloudJob boundJob = batchClient.JobOperations.GetJob("mybatchjob");
 CloudTask myMultiInstanceTask = boundJob.GetTask("mymultiinstancetask");
 // Now obtain the list of subtasks for the task
 IPagedEnumerable<SubtaskInformation> subtasks = myMultiInstanceTask.ListSubtasks();
-
 // Asynchronously iterate over the subtasks and print their stdout and stderr
 // output if the subtask has completed
 await subtasks.ForEachAsync(async (subtask) =>

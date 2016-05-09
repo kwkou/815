@@ -10,7 +10,7 @@
 <tags
 	ms.service="batch"
 	ms.date="01/22/2016"
-	wacn.date="04/13/2016"/>
+	wacn.date="05/09/2016"/>
 
 # 在 Azure 批处理( Batch ) 计算节点上运行作业准备和完成任务
 
@@ -57,30 +57,26 @@ Batch 作业通常需要一组通用的数据作为作业任务的输入。例�
 若要指定作业准备任务，可以创建并配置 [JobPreparationTask][net_job_prep] 对象，然后将它分配到作业的 [CloudJob.JobPreparationTask][net_job_prep_cloudjob] 属性。同样，初始化 [JobReleaseTask][net_job_release] 并将它分配到作业的 [CloudJob.JobReleaseTask][net_job_prep_cloudjob] 属性可以设置作业的释放任务。
 
 在此代码段中，`myBatchClient` 是完全初始化的 [BatchClient][net_batch_client] 实例，`myPool` 是 Batch 帐户中的现有池。
-
+```
 		// Create the CloudJob for CloudPool "myPool"
 		CloudJob myJob = myBatchClient.JobOperations.CreateJob("JobPrepReleaseSampleJob",
 															   new PoolInformation() { PoolId = "myPool" });
-
 		// Specify the command lines for the job preparation and release tasks
 		string jobPrepCmdLine = "cmd /c echo %AZ_BATCH_NODE_ID% > %AZ_BATCH_NODE_SHARED_DIR%\\shared_file.txt";
 		string jobReleaseCmdLine = "cmd /c del %AZ_BATCH_NODE_SHARED_DIR%\\shared_file.txt";
-
 		// Assign the job preparation task to the job
 		myJob.JobPreparationTask = new JobPreparationTask { CommandLine = jobPrepCmdLine };
-
 		// Assign the job release task to the job
 		myJob.JobReleaseTask = new JobPreparationTask { CommandLine = jobReleaseCmdLine };
-
 		await myJob.CommitAsync();
-
+```
 如上所述，终止或删除作业时会执行释放任务。可以通过调用 [PoolOperations.TerminateJobAsync][net_job_terminate] 使用 Batch .NET API 终止作业。可以使用 [PoolOperations.DeleteJobAsync][net_job_delete] 删除作业。这两项操作通常都是在作业的任务已完成或者达到了你定义的超时时完成。
-
+```
 		// Terminate the job to mark it as Completed; this will initiate the Job Release Task on any node
 		// that executed job tasks. Note that the Job Release Task is also executed when a job is deleted,
 		// thus you need not call Terminate if you typically delete your jobs upon task completion.
 		await myBatchClient.JobOperations.TerminateJobAsync("JobPrepReleaseSampleJob");
-
+```
 ## 后续步骤
 
 ### GitHub 上的示例项目
@@ -145,7 +141,7 @@ Sample complete, hit ENTER to exit...
 [api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
 [api_net_listjobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
 [api_rest]: http://msdn.microsoft.com/library/azure/dn820158.aspx
-[azure_storage]: https://azure.microsoft.com/services/storage/
+[azure_storage]: /services/storage/
 [batch_explorer_article]: http://blogs.technet.com/b/windowshpc/archive/2015/01/20/azure-batch-explorer-sample-walkthrough.aspx
 [batch_explorer_project]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
 [job_prep_release_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/JobPrepRelease

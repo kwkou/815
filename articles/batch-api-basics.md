@@ -10,7 +10,7 @@
 <tags 
 	ms.service="batch" 
 	ms.date="03/11/2016"
-	wacn.date="04/13/2016"/>
+	wacn.date="05/09/2016"/>
 	
 # Azure Batch 功能概述
 
@@ -66,7 +66,7 @@
 
 ### <a name="computenode"></a>计算节点
 
-计算节点是专门为应用程序处理特定工作负荷的 Azure 虚拟机。节点大小确定了 CPU 核心数目、内存容量，以及分配给节点的本地文件系统大小。节点可以是除 A0 以外的任何[云服务节点大小][/documentation/articles/cloud_service_sizes]。
+计算节点是专门为应用程序处理特定工作负荷的 Azure 虚拟机。节点大小确定了 CPU 核心数目、内存容量，以及分配给节点的本地文件系统大小。节点可以是除 A0 以外的任何[云服务节点大小](/documentation/articles/cloud_service_sizes)。
 
 节点可以运行可执行文件和脚本，包括可执行文件 (.exe)、命令文件 (.cmd)、批处理 ( Batch ) 文件 (.bat) 和 PowerShell 脚本。节点还具有以下属性：
 

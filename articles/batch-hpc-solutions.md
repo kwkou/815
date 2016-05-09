@@ -10,7 +10,7 @@
 <tags
    ms.service="batch"
    ms.date="01/21/2016"
-   wacn.date="04/12/2016"/>
+   wacn.date="05/09/2016"/>
 
 #  批处理( Batch )和 HPC 解决方案
 
@@ -22,7 +22,7 @@ Azure 提供高效且可伸缩的云解决方案来进行处理和高性能计�
 
 * 完全在 Azure 中运行 HPC 群集工具和工作负荷
 
-* 使用托管的可缩放 Azure 服务（例如[批处理](https://azure.microsoft.com/documentation/services/batch/)）运行计算密集型工作负荷，而无需部署和管理计算基础结构
+* 使用托管的可缩放 Azure 服务（例如[批处理](/documentation/services/batch/)）运行计算密集型工作负荷，而无需部署和管理计算基础结构
 
 Azure 还为开发人员和合作伙伴提供一整套功能、体系结构选项和开发工具，用于构建大规模的自定义大型计算工作流，当然这超出了本文的范围。你还可以使用规模不断扩大的合作伙伴生态系统，以提高大型计算工作流在 Azure 云中的工作效率。
 
@@ -83,7 +83,7 @@ Azure 还为开发人员和合作伙伴提供一整套功能、体系结构选�
 ------------- | ----------- | ---------------
 **让 HPC 群集迸发到 Azure**<br/><br/>[![群集迸发][burst_cluster]](./media/batch-hpc-solutions/burst_cluster.png) <br/><br/> 详细了解：<br/>• [使用 Microsoft HPC Pack 迸发到 Azure](https://technet.microsoft.com/library/gg481749.aspx)<br/><br/>• [使用 Microsoft HPC Pack 设置混合计算群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster)<br/><br/>|• 在混合解决方案中组合使用本地 [Microsoft HPC Pack](https://technet.microsoft.com/library/cc514029) 群集与其他 Azure 资源。<br/><br/>• 扩展大型计算工作负荷，以便在平台即服务 (PaaS) 虚拟机实例上运行（目前仅限 Windows Server）。<br/><br/>• 使用可选的 Azure 虚拟网络访问本地许可证服务器或数据存储|• 你已经有一个 HPC Pack 群集，需要更多资源 <br/><br/>• 你不想购买和管理更多的 HPC 群集基础结构<br/><br/>• 你的高峰需求时段很短暂，或者你的项目特殊
 **完全在 Azure 中创建 HPC 群集**<br/><br/>[![IaaS 中的群集][iaas_cluster]](./media/batch-hpc-solutions/iaas_cluster.png)<br/><br/>详细了解：<br/>• [Azure 中的 HPC 群集解决方案](/documentation/articles/big-compute-resources)<br/><br/>|• 在标准的或自定义的 Windows 或 Linux 基础结构即服务 (IaaS) 虚拟机上快速一致地部署应用程序和群集工具。<br/><br/>• 通过所选作业计划解决方案运行各种大型计算工作负荷。<br/><br/>• 使用其他 Azure 服务（包括联网和存储）来创建基于云的完整解决方案。 |• 你不想购买和管理更多的 Linux 或 Windows HPC 群集基础结构<br/><br/>• 你的高峰需求时段很短暂，或者你的项目特殊<br/><br/>• 你在一段时间内需要增加一个群集，但不想投资在部署该群集所需的计算机和空间上<br/><br/>• 你想卸载计算密集型应用程序，以便在云中完全以服务形式运行它
-**将并行应用程序横向扩展到 Azure**<br/><br/>[![Azure 批处理][batch_proc]](./media/batch-hpc-solutions/batch_proc.png)<br/><br/>详细了解：<br/>• [Azure Batch 基础](/documentation/articles/batch-technical-overview)<br/><br/>• [适用于 .NET 的 Azure Batch 库入门](/documentation/articles/batch-dotnet-get-started)|• 使用 [Azure Batch](https://azure.microsoft.com/documentation/services/batch/) API 进行开发，以便横向扩展各种能够在平台即服务 (PaaS) 虚拟机池上运行的大型计算工作负荷（目前仅限 Windows Server）。<br/><br/>• 使用 Azure 服务来管理虚拟机的部署和自动缩放、作业计划、灾难恢复、数据移动、依赖项管理以及应用程序部署 - 不需要单独的 HPC 群集或作业计划程序。|• 你不想管理计算资源或作业计划程序，只想专注于应用程序的运行<br/><br/>• 你希望卸载计算密集型应用程序，让其在云中以服务形式运行<br/><br/>• 你希望根据计算工作负荷自动缩放计算资源
+**将并行应用程序横向扩展到 Azure**<br/><br/>[![Azure 批处理][batch_proc]](./media/batch-hpc-solutions/batch_proc.png)<br/><br/>详细了解：<br/>• [Azure Batch 基础](/documentation/articles/batch-technical-overview)<br/><br/>• [适用于 .NET 的 Azure Batch 库入门](/documentation/articles/batch-dotnet-get-started)|• 使用 [Azure Batch](/documentation/services/batch/) API 进行开发，以便横向扩展各种能够在平台即服务 (PaaS) 虚拟机池上运行的大型计算工作负荷（目前仅限 Windows Server）。<br/><br/>• 使用 Azure 服务来管理虚拟机的部署和自动缩放、作业计划、灾难恢复、数据移动、依赖项管理以及应用程序部署 - 不需要单独的 HPC 群集或作业计划程序。|• 你不想管理计算资源或作业计划程序，只想专注于应用程序的运行<br/><br/>• 你希望卸载计算密集型应用程序，让其在云中以服务形式运行<br/><br/>• 你希望根据计算工作负荷自动缩放计算资源
 
 
 ## 用于大型计算的 Azure 服务
