@@ -60,19 +60,19 @@ SQL 数据仓库的独到之处就是能够根据需要暂停和恢复计算。�
 
 若要使用 Azure Powershell 暂停和继续服务，首先需要按如下所示导入 AzureRM.Sql 模块：
 
-```Powershell
+```
 Import-Module AzureRM.Sql
 ```
 
 以下代码演示如何使用 Azure PowerShell 执行暂停：
 
-```Powershell
+```
 Suspend-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
 ```
 
 使用 Azure PowerShell 还可轻松恢复服务：
 
-```Powershell
+```
 Resume-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
 ```
 
