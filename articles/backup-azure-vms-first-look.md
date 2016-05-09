@@ -10,14 +10,14 @@
 <tags
 	ms.service="backup"
 	ms.date="03/14/2016"
-	wacn.date="04/12/2016"/>
+	wacn.date="05/09/2016"/>
 
 
 # 先睹为快：备份 Azure 虚拟机
 
 本教程将引导你完成一组用于准备 Azure 环境以便备份 Azure 虚拟机 (VM) 的步骤。本教程假设 Azure 订阅中已有 VM，且已采取措施以允许备份服务访问 VM。概括而言，你将要完成以下这些步骤。
 
-![VM 备份过程的高级视图](./media/backup-azure-vms-first-look/BackupAzureVM.png)
+![VM 备份过程的高级视图](./media/backup-azure-vms-first-look/backupazurevm-classic.png)
 
 
 1. 创建或登录到 Azure 订阅。

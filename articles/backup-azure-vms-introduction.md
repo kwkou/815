@@ -11,9 +11,10 @@
 <tags
 	ms.service="backup"
 	ms.date="02/12/2016"
-	wacn.date="04/12/2016"/>
+	wacn.date="05/09/2016"/>
+
 # 在 Azure 中计划 VM 备份基础结构
-本文介绍在 Azure 中规划备份虚拟机时需要注意的重要事项。如果你已[准备好环境](backup-azure-vms-prepare.md)，则在开始[备份 VM](backup-azure-vms.md) 之前，下一步就是执行此操作。如果你需要有关 Azure 虚拟机的详细信息，请参阅[虚拟机文档](https://azure.microsoft.com/documentation/services/virtual-machines/)。
+本文介绍在 Azure 中规划备份虚拟机时需要注意的重要事项。如果你已[准备好环境](/documentation/articles/backup-azure-vms-prepare)，则在开始[备份 VM](/documentation/articles/backup-azure-vms) 之前，下一步就是执行此操作。如果你需要有关 Azure 虚拟机的详细信息，请参阅[虚拟机文档](/documentation/services/virtual-machines/)。
 
 ## <a name="how-does-azure-back-up-virtual-machines"></a>Azure 虚拟机备份原理
 当 Azure 备份服务在计划的时间启动备份作业时，它将触发进行时间点快照拍摄所需的备份扩展。创建此快照时，将借助卷影复制服务 (VSS) 来获取虚拟机中磁盘的一致性快照，不必关闭该虚拟机。

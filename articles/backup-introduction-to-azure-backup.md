@@ -11,7 +11,7 @@
 <tags
 	ms.service="backup"
 	ms.date="03/14/2016"
-	wacn.date="04/12/2016"/>
+	wacn.date="05/09/2016"/>
 
 
 # 什么是 Azure 备份？
