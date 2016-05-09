@@ -82,7 +82,7 @@
 
 	**重要说明：该步骤仅适用于 CentOS 6.3 及更低版本。** 在 CentOS 6.4+ 中，*标准内核中已提供 *Linux Integration Services。
 
-	- 按照 [LIS 下载页](https://www.microsoft.com/zh-CN/download/details.aspx?id=46842)上的安装说明进行操作并将 RPM 安装到你的映像上。  
+	- 按照 [LIS 下载页](https://www.microsoft.com/download/details.aspx?id=46842)上的安装说明进行操作并将 RPM 安装到你的映像上。  
 
 
 9. 通过运行以下命令安装 python-pyasn1 包：

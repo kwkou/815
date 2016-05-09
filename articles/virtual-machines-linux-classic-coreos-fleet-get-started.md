@@ -23,7 +23,7 @@
 若要使用这些示例，需要先设置三节点 CoreOS 群集，如[如何在 Azure 上使用 CoreOS] 中所述。完成该操作后，你将了解非常基本的 CoreOS 部署元素，并拥有可以工作的群集和客户端计算机。在这些示例中，我们将使用完全相同的群集名称。此外，这些示例还假定你使用本地 Linux 主机运行 **fleetctl** 命令。请参阅[使用客户端](https://coreos.com/fleet/docs/latest/using-the-client.html)，了解有关 **fleetctl** 客户端的详细信息。
 
 
-## <a id='simple'>示例 1：使用 Docker 的 Hello World</a>
+## <a id='simple'></a>示例 1：使用 Docker 的 Hello World
 
 下面是一个在单个 Docker 容器中运行的简单“Hello World”应用程序。此应用程序使用 [busybox Docker Hub 映像]。
 
@@ -83,11 +83,11 @@
 	
 
 
-## <a id='highavail'>示例 2：高度可用的 nginx 服务器</a>
+## <a id='highavail'></a>示例 2：高度可用的 nginx 服务器
 
 使用 CoreOS、Docker 和 **fleet** 的一个优点是很容易以高度可用的方式运行服务。在此示例中，你将部署一个由三个运行 nginx Web 服务器的相同容器组成的服务。这些容器将在群集中的三个虚拟机上运行。此示例类似于[使用 fleet 启动容器]中的示例，并使用 [nginx Docker Hub 映像]。
 
->[AZURE.IMPORTANT]若要运行高度可用的 Web 服务器，需要在虚拟机（公共端口 80、专用端口 80）上配置负载平衡 HTTP 终结点。你可以在创建 CoreOS 群集后，使用 Azure 门户或 **azure vm endpoint** 命令执行此操作。有关详细信息，请参阅[配置负载平衡集]。
+>[AZURE.IMPORTANT]若要运行高度可用的 Web 服务器，需要在虚拟机（公共端口 80、专用端口 80）上配置负载平衡 HTTP 终结点。你可以在创建 CoreOS 群集后，使用 Azure 门户或 **azure vm endpoint** 命令执行此操作。
 
 在客户端计算机上，使用你最喜欢的文本编辑器创建名为 nginx@.service 的 **systemd** 模板单元文件。你将使用这个简单的模板来启动名为 nginx@1.service、nginx@2.service 和 nginx@3.service 的三个单独实例：
 

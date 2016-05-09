@@ -37,7 +37,7 @@
 以下是为 HPC Pack 头节点创建 Azure VM 的大致步骤。可以使用各种 Azure 工具在 Azure 经典（服务管理）部署模型中执行这些步骤。
 
 
-1. 如果你打算为头节点 VM 创建 VNet，请参阅[使用 Azure 管理门户创建虚拟网络（经典）](/documentation/articles/virtual-networks-create-vnet-classic-pportal)。
+1. 如果你打算为头节点 VM 创建 VNet，请参阅[使用 Azure 管理门户创建虚拟网络（经典）](/documentation/articles/virtual-networks-create-vnet-classic-portal)。
 
     **注意事项**
 

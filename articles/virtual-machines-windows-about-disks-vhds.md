@@ -24,7 +24,7 @@
 ## 后续步骤
 
 -  [捕获 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-capture-image)
--  [上传 Windows VM 镜像到 Azure](/documentation/articles/virtual-machines-windows-upload-image)
+-  [上传 Windows VM 镜像到 Azure](/documentation/articles/virtual-machines-windows-classic-createupload-vhd)
 -  [更改 Windows 临时磁盘的驱动器号](/documentation/articles/virtual-machines-windows-classic-change-drive-letter)
 
 <!---HONumber=Mooncake_1207_2015-->

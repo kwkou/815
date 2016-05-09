@@ -91,7 +91,7 @@
 	$availset="<set name>"
 	$vm1=New-AzureVMConfig -Name $vmname -InstanceSize $vmsize -ImageName $image -AvailabilitySetName $availset
 
-有关 D、DS 或 G 系列虚拟机的 InstanceSize 值，请参阅 [Azure 的虚拟机和云服务大小](https://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)。
+有关 D、DS 或 G 系列虚拟机的 InstanceSize 值，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/cloud-services-sizes-specs/)。
 
 （可选）为独立 Windows 计算机指定本地管理员帐户和密码。
 
@@ -247,9 +247,5 @@
 	$vnetname="AZDatacenter"
 	New-AzureVM –ServiceName $svcname -VMs $vm1 -VNetName $vnetname
 
-
-## 下一步
-
-如果你需要大于 127GB 的 OS 磁盘，你可以[扩展 OS 磁盘](/documentation/articles/virtual-machines-windows-expand-os-disk)。
 
 <!---HONumber=Mooncake_1221_2015-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure 上运行 MariaDB (MySQL) 群集""
+	pageTitle="在 Azure 上运行 MariaDB (MySQL) 群集"
 	description="在 Azure 虚拟机上创建 MariaDB + Galera MySQL 群集"
 	services="virtual-machines-linux"
 	documentationCenter=""

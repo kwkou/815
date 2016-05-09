@@ -56,7 +56,7 @@
 
 	![下一步](./media/virtual-machines-windows-classic-ps-sql-report/IC692021.gif)
 
-	如果你需要 Reporting Services 数据驱动订阅功能，则选择 **SQL Server 2014 RTM Enterprise – Windows Server 2012 R2**。有关 SQL Server 版本和功能支持的详细信息，请参阅 [SQL Server 2012 各版本支持的功能](https://msdn.microsoft.com/library/cc645993.aspx#Reporting)。
+	如果你需要 Reporting Services 数据驱动订阅功能，则选择 **SQL Server 2014 RTM Enterprise – Windows Server 2012 R2**。有关 SQL Server 版本和功能支持的详细信息，请参阅 [SQL Server 2012 各版本支持的功能](https://msdn.microsoft.com/zh-cn/library/cc645993.aspx#Reporting)。
 
 1. 在“虚拟机配置”页上，编辑以下字段：
 									
@@ -66,7 +66,7 @@
 	
 	- **层**：标准
 	
-	- **大小：A3** 是 SQL Server 工作负荷的建议 VM 大小。如果 VM 仅用作报表服务器，A2 的 VM 大小就足够了，除非报表服务器遇到大量工作负荷。有关 VM 定价信息，请参阅[虚拟机定价](http://azure.microsoft.com/pricing/details/virtual-machines/)。
+	- **大小：A3** 是 SQL Server 工作负荷的建议 VM 大小。如果 VM 仅用作报表服务器，A2 的 VM 大小就足够了，除非报表服务器遇到大量工作负荷。有关 VM 定价信息，请参阅[虚拟机定价](/home/features/virtual-machines/#price)。
 	
 	- **新用户名**：将你提供的名称创建为 VM 上的管理员。
 	
@@ -106,7 +106,7 @@
 
 为了在 VM 上使用 HTTPS，你需要受信任的 SSL 证书。具体取决于你的方案，你可以使用以下两种方法之一：
 
-- 由证书颁发机构 (CA) 颁发并受 Microsoft 信任的有效 SSL 证书。CA 根证书都需要通过 Microsoft 根证书计划分发。有关此计划的详细信息，请参阅 [Windows 和 Windows Phone 8 SSL 根证书计划（成员 CA）](http://social.technet.microsoft.com/wiki/contents/articles/14215.windows-and-windows-phone-8-ssl-root-certificate-program-member-cas.aspx)和 [Microsoft 根证书计划简介](http://social.technet.microsoft.com/wiki/contents/articles/3281.introduction-to-the-microsoft-root-certificate-program.aspx)。
+- 由证书颁发机构 (CA) 颁发并受 Microsoft 信任的有效 SSL 证书。CA 根证书都需要通过 Microsoft 根证书计划分发。
 
 - 自签名证书。不建议将自签名证书用于生产环境。
 
@@ -118,25 +118,25 @@
 
 	有关请求服务器证书的详细信息，请参阅以下部分：
 	
-	- 使用 [Certreq](https://technet.microsoft.com/library/cc725793.aspx)，[Certreq](https://technet.microsoft.com/library/cc725793.aspx)。
+	- 使用 [Certreq](https://technet.microsoft.com/zh-cn/library/cc725793.aspx)。
 	
 	- 用于管理 Windows Server 2012 的安全工具。
 
-	[用于管理 Windows Server 2012 的安全工具](https://technet.microsoft.com/library/jj730960.aspx)
+	[用于管理 Windows Server 2012 的安全工具](https://technet.microsoft.com/zh-cn/library/jj730960.aspx)
 
 	>[AZURE.NOTE]受信任的 SSL 证书的 **issued to** 字段应与你用于新 VM 的**云服务 DNS 名称**相同。
 
-1. **在 Web 服务器上安装服务器证书**。Web 服务器在这种情况下是托管报表服务器的 VM， Web 应用在配置 Reporting Services 时的后续步骤中创建。有关通过使用证书 MMC 管理单元在 Web 服务器上安装服务器证书的详细信息，请参阅[安装服务器证书](https://technet.microsoft.com/library/cc740068)。
+1. **在 Web 服务器上安装服务器证书**。Web 服务器在这种情况下是托管报表服务器的 VM， Web 应用在配置 Reporting Services 时的后续步骤中创建。有关通过使用证书 MMC 管理单元在 Web 服务器上安装服务器证书的详细信息，请参阅[安装服务器证书](https://technet.microsoft.com/zh-cn/library/cc740068)。
 	
 	如果要使用本主题中包含的脚本来配置报表服务器，则需要证书 **Thumbprint** 的值作为该脚本的参数。有关如何获取证书指纹的详细信息，请参阅以下部分。
 
 1. 将服务器证书分配给报表服务器。将在下一部分中配置报表服务器时完成分配。
 
-### 使用虚拟机自签名证书
+###<a name="to-use-the-virtual-machines-self-signed-certificate"></a> 使用虚拟机自签名证书
 
 当设置 VM 时已在 VM 上创建了自签名证书。证书具有与 VM DNS 名称相同的名称。为避免出现证书错误，它必须在 VM 本身上受信任，并且受该站点的所有用户信任。
 
-1. 若要信任本地 VM 上的证书的根 CA，请将该证书添加到**受信任的根证书颁发机构**。以下是所需步骤的摘要。有关如何信任 CA 的详细步骤，请参阅[安装服务器证书](https://technet.microsoft.com/library/cc740068)。
+1. 若要信任本地 VM 上的证书的根 CA，请将该证书添加到**受信任的根证书颁发机构**。以下是所需步骤的摘要。有关如何信任 CA 的详细步骤，请参阅[安装服务器证书](https://technet.microsoft.com/zh-cn/library/cc740068)。
 
 	1. 从 Azure 门户中，选择 VM 并单击“连接”。根据你的浏览器配置，可能会向你提示保存一个用于连接到 VM 的 .rdp 文件。
 	
@@ -146,7 +146,7 @@
 		
 		![登录名包含 VM 名称](./media/virtual-machines-windows-classic-ps-sql-report/IC764111.png)
 	
-	1. 运行 mmc.exe。有关详细信息，请参阅[如何：使用 MMC 管理单元查看证书](https://msdn.microsoft.com/library/ms788967.aspx)。
+	1. 运行 mmc.exe。有关详细信息，请参阅[如何：使用 MMC 管理单元查看证书](https://msdn.microsoft.com/zh-cn/library/ms788967.aspx)。
 	
 	1. 在控制台应用程序“文件”菜单中，添加“证书”管理单元，在系统提示时选择“计算机帐户”，然后单击“下一步”。
 	
@@ -156,7 +156,7 @@
 	
 	1. 展开“受信任的根证书颁发机构”节点，然后右键单击“证书”，最后单击“粘贴”。
 	
-	1. 若要验证，双击“受信任的根证书颁发机构”下的证书名称，验证其中不存在错误并且你能看到你的证书。如果要使用本主题中包含的 HTTPS 脚本来配置报表服务器，则需要证书 **Thumbprint** 的值作为该脚本的参数。**要获取该指纹值**，请完成下列操作。[使用脚本来配置报表服务器和 HTTPS](/documentation/articles/#use-script-to-configure-the-report-server-and-HTTPS) 部分中还有一个 PowerShell 示例用于检索该指纹。
+	1. 若要验证，双击“受信任的根证书颁发机构”下的证书名称，验证其中不存在错误并且你能看到你的证书。如果要使用本主题中包含的 HTTPS 脚本来配置报表服务器，则需要证书 **Thumbprint** 的值作为该脚本的参数。**要获取该指纹值**，请完成下列操作。[使用脚本来配置报表服务器和 HTTPS](#use-script-to-configure-the-report-server-and-HTTPS) 部分中还有一个 PowerShell 示例用于检索该指纹。
 		
 		1. 双击该证书名称，例如 ssrsnativecloud.chinacloudapp.cn。
 		
@@ -325,7 +325,7 @@
 
 **验证**：若要验证基本报表服务器功能是否正常工作，请参阅本主题中稍后的[验证配置](#verify-the-configuration)部分。
 
-### 使用脚本来配置报表服务器和 HTTPS
+###<a name="use-script-to-configure-the-report-server-and-HTTPS"></a> 使用脚本来配置报表服务器和 HTTPS
 
 若要使用 Windows PowerShell 来配置报表服务器，请完成以下步骤。该配置包括 HTTPS 而不是 HTTP。
 
@@ -598,7 +598,7 @@
 
 若要远程连接到虚拟机上的报表管理器或报表服务器，在 VM 上需要 TCP 终结点。在 VM 防火墙中需要打开同一个端口。设置 VM 时创建了该终结点。
 
-本部分提供有关如何打开防火墙端口的基本信息。有关详细信息，请参阅[为报表服务器访问配置防火墙](https://technet.microsoft.com/library/bb934283.aspx)
+本部分提供有关如何打开防火墙端口的基本信息。有关详细信息，请参阅[为报表服务器访问配置防火墙](https://technet.microsoft.com/zh-cn/library/bb934283.aspx)
 
 >[AZURE.NOTE]如果使用了脚本来配置报表服务器，则可以跳过本节。该脚本包含一个用于打开防火墙端口的步骤。
 
@@ -616,7 +616,7 @@
 
 	get-netfirewallrule | where {$_.displayname -like "*report*"} | select displayname,enabled,action
 
-## 验证配置
+##<a name="verify-the-configuration" id="verify-the-connection"></a> 验证配置
 
 若要验证基本报表服务器功能现在是否正常工作，请使用管理权限打开你的浏览器，然后浏览到以下报表服务器和报表管理器 URL：
 
@@ -640,17 +640,17 @@
 
 在配置和验证报表服务器之后，一个常见管理任务是创建一个或多个用户并将用户分配到 Reporting Services 角色。有关详细信息，请参阅以下主题：
 
-- [创建本地用户帐户](https://technet.microsoft.com/library/cc770642.aspx)
+- [创建本地用户帐户](https://technet.microsoft.com/zh-cn/library/cc770642.aspx)
 
-- [授予用户对报表服务器（报表管理器）的访问权限](https://msdn.microsoft.com/library/ms156034.aspx)）
+- [授予用户对报表服务器（报表管理器）的访问权限](https://msdn.microsoft.com/zh-cn/library/ms156034.aspx)
 
-- [创建和管理角色分配](https://msdn.microsoft.com/library/ms155843.aspx)
+- [创建和管理角色分配](https://msdn.microsoft.com/zh-cn/library/ms155843.aspx)
 
 ## 创建报表并将其发布到 Azure 虚拟机
 
 下表汇总一些选项，可用于将现有报表从本地计算机发布到 Azure 虚拟机上托管的报表服务器：
 
-- **RS.exe 脚本**：使用 RS.exe 脚本将报表项从现有报表服务器复制到你的 Azure 虚拟机。有关详细信息，请参阅[用示例 Reporting Services rs.exe 脚本在报表服务器之间迁移内容](https://msdn.microsoft.com/library/dn531017.aspx)中的“本机模式到本机模式 – Azure 虚拟机”部分。
+- **RS.exe 脚本**：使用 RS.exe 脚本将报表项从现有报表服务器复制到你的 Azure 虚拟机。有关详细信息，请参阅[用示例 Reporting Services rs.exe 脚本在报表服务器之间迁移内容](https://msdn.microsoft.com/zh-cn/library/dn531017.aspx)中的“本机模式到本机模式 – Azure 虚拟机”部分。
 
 - **报表生成器**：虚拟机包括 Microsoft SQL Server 报表生成器的单击一次版本。若要首次在虚拟机上启动报表生成器：
 
@@ -658,7 +658,7 @@
 	
 	1. 浏览到虚拟机上的报表管理器，然后单击功能区中的“报表生成器”。
 
-	有关详细信息，请参阅[安装、卸载和支持报表生成器](https://technet.microsoft.com/library/dd207038.aspx)。
+	有关详细信息，请参阅[安装、卸载和支持报表生成器](https://msdn.microsoft.com/zh-cn/library/ff519551.aspx)。
 
 - **SQL Server Data Tools：VM**：如果创建的 VM 安装了 SQL Server 2012，则 SQL Server Data Tools 将安装在该虚拟机上并可用于在该虚拟机上创建**报表服务器项目**和报表。SQL Server Data Tools 可以将报表发布到虚拟机上的报表服务器。
 	
@@ -674,19 +674,17 @@
 
 	![SSRS 项目的 ssdt 项目属性](./media/virtual-machines-windows-classic-ps-sql-report/IC650114.gif)
 
-- **使用脚本**：使用脚本来复制报表服务器内容。有关详细信息，请参阅[使用示例 Reporting Services rs.exe 脚本在报表服务器之间迁移内容](https://msdn.microsoft.com/library/dn531017.aspx)。
+- **使用脚本**：使用脚本来复制报表服务器内容。有关详细信息，请参阅[使用示例 Reporting Services rs.exe 脚本在报表服务器之间迁移内容](https://msdn.microsoft.com/zh-cn/library/dn531017.aspx)。
 
 ## 如果使用的不是 VM，将成本降到最低
 
->[AZURE.NOTE]为了在不使用 Azure 虚拟机时尽可能减少费用，可从 Azure 门户关闭 VM。如果使用 VM 内的 Windows 电源选项来关闭 VM，仍将为 VM 支付相同的金额。若要减少费用，你需要在 Azure 管理门户中关闭 VM。如果你不再需要该 VM，请记住删除 VM 和关联的 .vhd 文件以避免产生存储费用。有关详细信息，请参阅[虚拟机定价详细信息](http://azure.microsoft.com/pricing/details/virtual-machines)中的常见问题部分。
+>[AZURE.NOTE]为了在不使用 Azure 虚拟机时尽可能减少费用，可从 Azure 门户关闭 VM。如果使用 VM 内的 Windows 电源选项来关闭 VM，仍将为 VM 支付相同的金额。若要减少费用，你需要在 Azure 管理门户中关闭 VM。如果你不再需要该 VM，请记住删除 VM 和关联的 .vhd 文件以避免产生存储费用。有关详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/#price)中的常见问题部分。
 
 ## 更多信息
 
 ### 资源
 
-- 有关对 SQL Server Business Intelligence 和 SharePoint 2013 进行单一服务器部署的相关类似内容，请参阅[使用 Windows PowerShell 创建装有 SQL Server BI 和 SharePoint 2013 的 Azure 虚拟机](https://msdn.microsoft.com/library/azure/dn385843.aspx)。
-
-- 有关对 SQL Server Business Intelligence 和 SharePoint 2013 进行多服务器部署的相关类似内容，请参阅[在 Azure 虚拟机中部署 SQL Server Business Intelligence](https://msdn.microsoft.com/library/dn321998.aspx)。
+- 有关对 SQL Server Business Intelligence 和 SharePoint 2013 进行多服务器部署的相关类似内容，请参阅[在 Azure 虚拟机中部署 SQL Server Business Intelligence](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview)。
 
 - 有关在 Azure 虚拟机上部署 SQL Server Business Intelligence 的常规信息，请参阅[在 Azure 虚拟机中部署 SQL Server Business Intelligence](/documentation/articles/virtual-machines-windows-classic-ps-sql-bi)。
 

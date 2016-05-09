@@ -266,7 +266,7 @@ NFS 服务使用户能够在运行 Windows Server 2012 操作系统的计算机�
 
 若要通过 REST API 提交作业，请参阅[在 Microsoft HPC Pack 中通过使用 REST API 创建和提交作业](http://social.technet.microsoft.com/wiki/contents/articles/7737.creating-and-submitting-jobs-by-using-the-rest-api-in-microsoft-hpc-pack-windows-hpc-server.aspx)。若要从 Linux 客户端提交作业，另请参阅 [HPC Pack SDK](https://www.microsoft.com/download/details.aspx?id=47756) 中的 Python 示例。
 
-## 用于 Linux 节点的 Clusrun
+##<a name="CLusrun-for-Linux-nodes"></a> 用于 Linux 节点的 Clusrun
 
 HPC Pack **clusrun** 工具可用于通过命令提示符或 HPC 群集管理器在 Linux 节点上执行命令。下面是一些基本示例。
 
@@ -295,8 +295,6 @@ HPC Pack **clusrun** 工具可用于通过命令提示符或 HPC 群集管理器
 * 尝试扩展群集，使之拥有更多的节点，或者尝试在群集上运行 Linux 工作负荷。有关示例，请参阅[在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-namd)。
 
 * 尝试计算节点群集，以便运行 MPI 工作负荷。如需示例，请参阅[在 Azure 中的 Linux RDMA 群集上运行 OpenFOAM 和 Microsoft HPC Pack](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-openfoam)。
-
-* 尝试 [Azure 快速入门模板](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/)，组合 Azure 资源管理器来加快部署 HPC Pack 与大量 Linux 计算节点。
 
 <!--Image references-->
 [scenario]: ./media/virtual-machines-linux-classic-hpcpack-cluster/scenario.png

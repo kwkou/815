@@ -80,7 +80,7 @@
 
 ![](./media/virtual-machines-windows-detailed-troubleshoot-rdp/tshootrdp_2.png)
 
-如果没有直接连接到 Internet 的计算机，则可以在云服务中创建新的 Azure 虚拟机并使用它进行测试。有关详细信息，请参阅[在 Azure 中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial)。在测试后，可以删除该虚拟机和云服务。
+如果没有直接连接到 Internet 的计算机，则可以在云服务中创建新的 Azure 虚拟机并使用它进行测试。有关详细信息，请参阅[在 Azure 中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)。在测试后，可以删除该虚拟机和云服务。
 
 如果你可以创建与直接连接到 Internet 的计算机的远程桌面连接，请检查你组织的 Intranet 边缘设备中是否有以下项：
 
@@ -96,7 +96,7 @@
 
 ![](./media/virtual-machines-windows-detailed-troubleshoot-rdp/tshootrdp_3.png)
 
-如果在同一云服务或虚拟网络中没有另一个虚拟机，可以按照[在 Azure 中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial)中的步骤创建一个新的虚拟机。测试完成后，请删除额外的虚拟机。
+如果在同一云服务或虚拟网络中没有另一个虚拟机，可以按照[在 Azure 中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)中的步骤创建一个新的虚拟机。测试完成后，请删除额外的虚拟机。
 
 如果可以通过远程桌面连接到同一云服务或虚拟网络中的虚拟机，请检查以下项：
 

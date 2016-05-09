@@ -38,14 +38,14 @@
 |SQL Server 2014 SP1|Windows Server 2012 R2|Enterprise、Standard、Web|
 |SQL Server 2016 CTP|Windows Server 2012 R2|计算|
 
-除了这些预配置的映像外，你还可以[创建不预装 SQL Server 的 Azure 虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial)。可以安装你有许可证的 SQL Server 的任何实例。可使用 [Azure 上通过软件保障实现的许可移动性](/pricing/license-mobility/)将许可证迁移到 Azure，以便在 Azure 虚拟机中运行 SQL Server。在这种情况下，你只需为与虚拟机关联的 Azure 计算和存储[成本](/home/features/virtual-machines/#price)付费。
+除了这些预配置的映像外，你还可以[创建不预装 SQL Server 的 Azure 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)。可以安装你有许可证的 SQL Server 的任何实例。可使用 [Azure 上通过软件保障实现的许可移动性](/pricing/license-mobility/)将许可证迁移到 Azure，以便在 Azure 虚拟机中运行 SQL Server。在这种情况下，你只需为与虚拟机关联的 Azure 计算和存储[成本](/home/features/virtual-machines/#price)付费。
 
 为了确定 SQL Server 映像的最佳虚拟机配置设置，请查看 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance)。对于生产工作负荷，**DS3** 是 SQL Server Enterprise 版建议的最小虚拟机大小，**DS2** 是标准版建议的最小虚拟机大小。
 
 除了查看性能最佳实践外，其他初始任务包括以下项：
 
 - [查看 Azure VM 中 SQL Server 的安全最佳实践](/documentation/articles/virtual-machines-windows-sql-security)
-- [设置连接](/documentation/articles/virtual-machines-windows-sql-connect)
+- [设置连接](/documentation/articles/virtual-machines-windows-classic-sql-connect)
 
 ### 迁移数据
 
@@ -125,7 +125,7 @@
 
 [客户体验改善计划 (CEIP)](https://technet.microsoft.com/zh-cn/library/cc730757.aspx) 已启用。可以通过使用“SQL Server 错误和使用情况报告”实用工具来禁用 CEIP。若要启动“SQL Server 错误和使用情况报告”实用工具，请在“开始”菜单上依次单击“所有程序”、Microsoft SQL Server 版本、“配置工具”和“SQL Server 错误和使用情况报告”。如果你不想使用已启用 CEIP 的 SQL Server 实例，则还可以考虑将你自己的虚拟机映像部署到 Azure。有关详细信息，请参阅[创建和上载包含 Windows Server 操作系统的虚拟硬盘](/documentation/articles/virtual-machines-windows-classic-createupload-vhd)。
 
-## 从平台提供的 SQL Server 映像运行 SQL Server 安装程序
+##<a name="run-sql-server-setup-from-the-platform-provided-sql-server-image"></a> 从平台提供的 SQL Server 映像运行 SQL Server 安装程序
 
 如果你通过使用平台提供的 SQL Server 映像创建虚拟机，可以在虚拟机上的 **C:\\SqlServer\_SQLMajorVersion.SQLMinorVersion\_Full** 目录中找到保存的 SQL Server 安装介质。你可以从该目录运行安装程序以执行任何安装操作，包括添加或删除功能、添加新实例或修复实例（如果磁盘空间允许）。
 
@@ -133,7 +133,7 @@
 
 ## 资源
 
-- [在 Azure 上设置 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision)
+- [在 Azure 上设置 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create)
 - [将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-windows-migrate-sql)
 - [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr)
 - [Azure 虚拟机中的 SQL Server 的应用程序模式和开发策略](/documentation/articles/virtual-machines-windows-sql-server-app-patterns-dev-strategies)

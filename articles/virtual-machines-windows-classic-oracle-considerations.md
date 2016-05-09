@@ -31,7 +31,7 @@ Azure 目前不支持 Oracle 数据库的 Oracle Real Application Clusters (RAC)
 
 ### 没有静态内部 IP
 
-Azure 为每个虚拟机分配内部 IP 地址。除非虚拟机是虚拟网络的一部分，否则虚拟机的 IP 地址就是动态的，在虚拟机重启后可能会更改。这会导致问题，因为 Oracle 数据库需要静态的 IP 地址。若要避免此问题，请考虑将虚拟机添加到 Azure 虚拟网络中。有关详细信息，请参阅[虚拟网络](/documentation/services/networking/)和[在 Azure 中创建虚拟网络](/documentation/articles/create-virtual-network)。
+Azure 为每个虚拟机分配内部 IP 地址。除非虚拟机是虚拟网络的一部分，否则虚拟机的 IP 地址就是动态的，在虚拟机重启后可能会更改。这会导致问题，因为 Oracle 数据库需要静态的 IP 地址。若要避免此问题，请考虑将虚拟机添加到 Azure 虚拟网络中。有关详细信息，请参阅[虚拟网络](/documentation/services/networking/)和[在 Azure 中创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal)。
 
 ### 附加磁盘配置选项
 

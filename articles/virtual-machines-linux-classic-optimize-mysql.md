@@ -29,7 +29,7 @@
 
 你可能还要考虑区块大小。通常，区块越大，获得的开销就越低，对于大型写入操作尤其如此。不过，区块太大时，它可能会添加额外的开销，并且你无法利用 RAID。当前的默认大小为 512KB，经证实，它是大多数常见生产环境的最佳大小。有关详细信息，请参阅[附录 C](#AppendixC)。
 
-请注意，对于不同的虚拟机类型，可添加的磁盘数量是有限制的。[Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)中详细介绍了这些限制。你可以选择设置磁盘较少的 RAID，不过，在本文的 RAID 示例中，你需要附加 4 个数据磁盘。
+请注意，对于不同的虚拟机类型，可添加的磁盘数量是有限制的。[Azure 的虚拟机和云服务大小](/documentation/articles/cloud-services-sizes-specs)中详细介绍了这些限制。你可以选择设置磁盘较少的 RAID，不过，在本文的 RAID 示例中，你需要附加 4 个数据磁盘。
 
 本文假定你已经创建 Linux 虚拟机，并且安装和配置了 MYSQL。有关入门的详细信息，请参阅“如何在 Azure 上安装 MySQL”。
 
@@ -339,19 +339,19 @@ MySQL 慢查询日志有助于识别 MySQL 的慢查询。在启用 MySQL 慢查
 
 
 
-[1]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-01.png
-[2]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-02.png
-[3]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-03.png
-[4]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-04.png
-[5]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-05.png
-[6]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-06.png
-[7]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-07.png
-[8]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-08.png
-[9]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-09.png
-[10]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-10.png
-[11]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-11.png
-[12]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-12.png
-[13]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-13.png
-[14]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-classic-optimize-mysql-14.png
+[1]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-01.png
+[2]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-02.png
+[3]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-03.png
+[4]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-04.png
+[5]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-05.png
+[6]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-06.png
+[7]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-07.png
+[8]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-08.png
+[9]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-09.png
+[10]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-10.png
+[11]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-11.png
+[12]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-12.png
+[13]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-13.png
+[14]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-14.png
 
 <!---HONumber=Mooncake_0118_2016-->

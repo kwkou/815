@@ -128,9 +128,6 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 ## 后续步骤
 
 - 了解 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)。
-- 了解高性能计算 (HPC) 等工作负荷的 [A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-windows-a8-a9-a10-a11-specs)。
-
-
 
 
 <!---HONumber=Mooncake_0425_2016-->
