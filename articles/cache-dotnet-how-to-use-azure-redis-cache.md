@@ -201,8 +201,8 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 现在，你已学习了基础知识，接下来请打开以下链接了解有关 Azure Redis 缓存的详细信息。
 
 -	了解 Azure Redis 缓存的 ASP.NET 提供程序。
-	-	[Azure Redis 会话状态提供程序](/documentation/articles/cache-asp.net-session-state-provider)
-	-	[Azure Redis 缓存 ASP.NET 输出缓存提供程序](/documentation/articles/cache-asp.net-output-cache-provider)
+	-	[Azure Redis 会话状态提供程序](/documentation/articles/cache-aspnet-session-state-provider)
+	-	[Azure Redis 缓存 ASP.NET 输出缓存提供程序](/documentation/articles/cache-aspnet-output-cache-provider)
 -	查看 [StackExchange.Redis 缓存客户端文档][]。
 	-	可以从许多 Redis 客户端和开发语言访问 azure Redis 缓存。有关详细信息，请参阅 [http://redis.io/clients][] 和[以其他语言开发 Azure Redis 缓存][]。
 -	请参阅 [redis][] 文档并阅读 [redis 数据类型][]和 [Redis 数据类型的十五分钟介绍][]。
@@ -257,7 +257,7 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 [http://redis.io/clients]: http://redis.io/clients
 [以其他语言开发 Azure Redis 缓存]: /documentation/services/redis-cache
 [如何检索 Azure Redis 连接字符串并将其用于 Redsmin]: https://redsmin.uservoice.com/knowledgebase/articles/485711-how-to-connect-redsmin-to-azure-redis-cache
-[Azure Redis 会话状态提供程序]: /documentation/articles/cache-asp.net-session-state-provider
+[Azure Redis 会话状态提供程序]: /documentation/articles/cache-aspnet-session-state-provider
 [How to: Configure a Cache Client Programmatically]: http://msdn.microsoft.com/zh-cn/library/azure/gg618003.aspx
 [Session State Provider for Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320835
 [Azure AppFabric Cache: Caching Session State]: http://www.microsoft.com/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20

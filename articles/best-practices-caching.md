@@ -229,11 +229,11 @@ Azure Redis 缓存提供对 Redis 服务器的访问权限，这些服务器在 
 - 针对多个读取者和单个写入者的同一会话状态数据支持受控的并发访问权限，以及
 - 可以使用压缩来节省内存，并提高网络性能。
 
-有关详细信息，请访问 [Azure Redis 缓存的 ASP.NET 会话状态提供程序](/documentation/articles/cache-asp.net-session-state-provider)页。
+有关详细信息，请访问 [Azure Redis 缓存的 ASP.NET 会话状态提供程序](/documentation/articles/cache-aspnet-session-state-provider)页。
 
 > [AZURE.NOTE]不要针对在 Azure 环境外部运行的 ASP.NET 应用程序使用 Azure Redis 缓存的会话状态提供程序。从 Azure 外部访问缓存的延迟会抵消缓存数据带来的性能优势。
 
-同样地，Azure Redis 缓存的输出缓存提供程序可让你保存 ASP.NET Web 应用程序生成的 HTTP 响应。配合 Azure Redis 缓存使用输出缓存提供程序可以针对呈现复杂 HTML 输出的应用程序改善响应时间；生成类似响应的应用程序实例可以使用缓存中的共享输出段，而不用重新生成此 HTML 输出。有关详细信息，请访问 [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](/documentation/articles/cache-asp.net-output-cache-provider)页。
+同样地，Azure Redis 缓存的输出缓存提供程序可让你保存 ASP.NET Web 应用程序生成的 HTTP 响应。配合 Azure Redis 缓存使用输出缓存提供程序可以针对呈现复杂 HTML 输出的应用程序改善响应时间；生成类似响应的应用程序实例可以使用缓存中的共享输出段，而不用重新生成此 HTML 输出。有关详细信息，请访问 [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](/documentation/articles/cache-aspnet-output-cache-provider)页。
 
 ## 构建自定义 Redis 缓存
 
@@ -788,8 +788,8 @@ subscriber.PublishAsync("messages:blogPosts", blogPost.Title);
 - Redis 网站上的[事务](http://redis.io/topics/transactions)。
 - Redis 网站上的 [Redis 安全性](http://redis.io/topics/security)。
 - [在 Azure 中的 CentOS Linux VM 上运行 Redis](http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx)。
-- [Azure Redis 缓存的 ASP.NET 会话状态提供程序](/documentation/articles/cache-asp.net-session-state-provider)。
-- [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](/documentation/articles/cache-asp.net-output-cache-provider)。
+- [Azure Redis 缓存的 ASP.NET 会话状态提供程序](/documentation/articles/cache-aspnet-session-state-provider)。
+- [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](/documentation/articles/cache-aspnet-output-cache-provider)。
 - [Redis 数据类型和抽象简介](http://redis.io/topics/data-types-intro)。
 - StackExchange.Redis 网站上的[基本用法](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md)。
 - StackExchange.Redis 存储库上的 [Redis 中的事务](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Transactions.md)。
