@@ -10,7 +10,7 @@
 <tags 
 	ms.service="multi-factor-authentication" 
 	ms.date="02/16/2016" 
-	wacn.date="04/13/2016"/>
+	wacn.date="05/09/2016"/>
 
 # 云中的 Azure 多重身份验证入门
 
@@ -23,7 +23,7 @@
 
 1. [注册 Azure 订阅](/pricing/free-trial/)
 	- 如果你还没有 Azure 订阅，需要注册一个订阅。如果你是新手，只是在摸索如何使用 Azure MFA，你可以使用试用版订阅
-2. [创建 Multi-Factor Auth 提供程序](#creating-an-azure-multi-factor-auth-provider)或者[向用户分配许可证](multi-factor-authentication-get-started-cloud.md#assigning-an-azure-ad-premium-or-enterprise-mobility-license-to-users)
+2. [创建 Multi-Factor Auth 提供程序](#creating-an-azure-multi-factor-auth-provider)或者[向用户分配许可证](/documentation/articles/multi-factor-authentication-get-started-cloud#assigning-an-azure-ad-premium-or-enterprise-mobility-license-to-users)
 	- 你需要创建 Azure Multi-Factor Auth 提供程序并将它分配给目录，或将 Azure MFA、Azure AD Premium 和/或 EMS 许可证分配给用户。Azure Multi-Factor Authentication 已随附在 Azure Active Directory Premium 中，因此也随附在 Enterprise Mobility Suite 中。如果你拥有的 Azure MFA、Azure AD Premium 和 EMS 许可证足以涵盖将要使用 Multi-Factor Authentication 的所有用户，则不需要创建 Multi-Factor Auth 提供程序。有关将许可证分配给用户的方式，请参阅后面的部分。
 3. [为用户启用 Multi-Factor Authentication](#turn-on-multi-factor-authentication-for-users)
 	- 通过 Office 365 或 Azure 门户为用户启用 Azure MFA。有关操作方法的信息，请参阅后面的部分。
