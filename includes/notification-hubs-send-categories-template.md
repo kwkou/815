@@ -70,7 +70,7 @@
 [16]: ./media/notification-hubs-back-end/notification-hub-scheduler2.png
 
 <!-- URLs. -->
-[get-started]: /documentation/articles/notification-hubs/notification-hubs-windows-store-dotnet-get-started
+[get-started]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 [Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
