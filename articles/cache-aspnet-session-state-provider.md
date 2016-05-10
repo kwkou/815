@@ -21,13 +21,13 @@ Azure Redis Cache 提供一个会话状态提供程序，可用于在缓存而�
 
 若要使用 Redis 缓存会话状态 NuGet 包配置客户端应用程序，请在“解决方案资源管理器”中右键单击项目，然后选择“管理 NuGet 包”。
 
-![Azure Redis 缓存管理 NuGet 包](./media/cache-asp.net-session-state-provider/IC729541.png)
+![Azure Redis 缓存管理 NuGet 包](./media/cache-aspnet-session-state-provider/IC729541.png)
 
 在“联机搜索”文本框中键入 **RedisSessionStateProvider**，从结果中选择它，然后单击“安装”。
 
 >[AZURE.IMPORTANT]如果你使用高级层的聚类分析功能，则必须使用 [RedisSessionStateProvider](https://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider) 2.0.0 或更高版本，否则会引发异常。这是一项重大更改；有关详细信息，请参阅 [2\.0.0 版重大更改详细信息](https://github.com/Azure/aspnet-redis-providers/wiki/v2.0.0-Breaking-Change-Details)。
 
-![Azure Redis 缓存会话状态提供程序](./media/cache-asp.net-session-state-provider/IC751730.png)
+![Azure Redis 缓存会话状态提供程序](./media/cache-aspnet-session-state-provider/IC751730.png)
 
 Redis 会话状态提供程序 NuGet 包依赖于 StackExchange.Redis.StrongName 包。如果你的项目中没有 StackExchange.Redis.StrongName 包，则将会安装它。请注意，除了强命名的 StackExchange.Redis.StrongName 包外，还有 StackExchange.Redis 非强命名版本。如果你的项目使用的是非强命名 StackExchange.Redis 版本，则必须在安装 Redis 会话状态提供程序 NuGet 包之前或之后将其卸载，否则你的项目中将出现命名冲突。有关这些包的详细信息，请参阅[配置 .NET 缓存客户端](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#configure-the-cache-clients)。
 
@@ -100,6 +100,6 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
 
 ## 后续步骤
 
-了解 [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](/documentation/articles/cache-asp.net-output-cache-provider)。
+了解 [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](/documentation/articles/cache-aspnet-output-cache-provider)。
 
 <!---HONumber=Mooncake_1207_2015-->
