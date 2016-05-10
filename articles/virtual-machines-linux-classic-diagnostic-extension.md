@@ -28,7 +28,7 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Azure 上运行的 
 对于 2.0 版，数据包括：
 
 - 所有 Linux Rsyslog 记录，包括系统、安全和应用程序日志。
-- 此[文档](https://scx.codeplex.com/wikipage?title=xplatproviders")中指定的所有系统数据。
+- 此[文档](https://scx.codeplex.com/wikipage?title=xplatproviders)中指定的所有系统数据。
 - 用户指定的日志文件。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]

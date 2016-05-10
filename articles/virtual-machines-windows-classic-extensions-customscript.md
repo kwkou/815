@@ -72,9 +72,6 @@
 
       get-azureVM -ServiceName KPTRDemo -Name KPTRDemo | Set-AzureVMCustomScriptExtension -Uninstall | Update-AzureVM
 
-### 将自定义脚本扩展与模板配合使用
-
-若要了解如何将自定义脚本扩展与模板配合使用，请参阅 [此处](/documentation/articles/virtual-machines-windows-classic-extensions-customscript) 的文档。
 
 <!--Image references-->
 [5]: ./media/virtual-machines-windows-classic-extensions-customscript/addcse.png

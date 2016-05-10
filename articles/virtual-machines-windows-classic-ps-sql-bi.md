@@ -395,7 +395,7 @@ Analysis Services 的**默认实例**侦听 TCP 端口 **2383**。在虚拟机�
 
 - 创建终结点：[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
 
-- SQL Server：请参阅[在 Azure 上设置 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)的“完成配置步骤以使用 SQL Server Management Studio 连接到虚拟机”。
+- SQL Server：请参阅[在 Azure 上设置 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create)的“完成配置步骤以使用 SQL Server Management Studio 连接到虚拟机”。
 
 下图说明了要允许远程访问 VM 上的功能和组件，需要在 VM 防火墙上打开的端口。
 
@@ -409,7 +409,7 @@ Analysis Services 的**默认实例**侦听 TCP 端口 **2383**。在虚拟机�
 
 - [虚拟机](/documentation/services/virtual-machines/)
 
-- [在 Azure 上设置 SQL Server 虚拟机](/documentation/articles//documentation/articles/virtual-machines-windows-classic-ps-sql-create/)
+- [在 Azure 上设置 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)
 
 - [如何将数据磁盘附加到虚拟机](/documentation/articles/virtual-machines-windows-classic-attach-disk)
 
