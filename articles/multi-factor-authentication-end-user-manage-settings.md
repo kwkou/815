@@ -11,7 +11,7 @@
 <tags 
 	ms.service="multi-factor-authentication" 
 	ms.date="02/25/2016" 
-	wacn.date="04/12/2016"/>
+	wacn.date="05/09/2016"/>
 	
 	
 # 使用 Azure Multi-Factor Authentication 时遇到问题
@@ -135,7 +135,7 @@
 
 ![备用号码](./media/multi-factor-authentication-end-user-manage/altphone2.png)
 
-第二种方法是联系管理员或为你设置 MFA 的人员。仅当你尚未配置辅助身份验证电话号码时，才需要这样做。否则，需要与管理员或者为你设置 MFA 的人员联系并让他们清除你的设置，这样，当你下次登录时，系统将提示你再次[设置多重身份验证](multi-factor-authentication-manage-users-and-devices.md#require-selected-users-to-provide-contact-methods-again)。
+第二种方法是联系管理员或为你设置 MFA 的人员。仅当你尚未配置辅助身份验证电话号码时，才需要这样做。否则，需要与管理员或者为你设置 MFA 的人员联系并让他们清除你的设置，这样，当你下次登录时，系统将提示你再次[设置多重身份验证](/documentation/articles/multi-factor-authentication-manage-users-and-devices#require-selected-users-to-provide-contact-methods-again)。
 
 ##<a name="i-am-not-receiving-a-code-or-a-call-on-my-phone"></a>我的手机上未收到代码或来电
 
