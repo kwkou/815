@@ -10,7 +10,7 @@
 <tags 
 	ms.service="notification-hubs" 
 	ms.date="12/10/2015" 
-	wacn.date="01/14/2016"/>
+	wacn.date="05/09/2016"/>
 
 # 使用 PowerShell 部署和管理通知中心
 
@@ -52,7 +52,6 @@ Azure PowerShell 中的 PowerShell cmdlet 尚不支持管理 Azure 通知中心�
 
 ``` 
 powershell
-
 try
 {
     # WARNING: Make sure to reference the latest version of Microsoft.Azure.NotificationHubs.dll
@@ -61,10 +60,8 @@ try
     $packagesFolder = (Split-Path $scriptPath -Parent) + "\packages"
     $assembly = Get-ChildItem $packagesFolder -Include "Microsoft.Azure.NotificationHubs.dll" -Recurse
     Add-Type -Path $assembly.FullName
-
     Write-Output "The [Microsoft.Azure.NotificationHubs.dll] assembly has been successfully added to the script."
 }
-
 catch [System.Exception]
 {
     Write-Error("Could not add the Microsoft.Azure.NotificationHubs.dll assembly to the script. Make sure you build the solution before running the provisioning script.")
@@ -79,7 +76,7 @@ catch [System.Exception]
 
 ``` powershell
 $sbr = Get-AzureSBAuthorizationRule -Namespace $Namespace
-# Create the NamespaceManager object to create the hub
+`#` Create the NamespaceManager object to create the hub
 Write-Output "Creating a NamespaceManager object for the [$Namespace] namespace..."
 $NamespaceManager=[Microsoft.Azure.NotificationHubs.NamespaceManager]::CreateFromConnectionString($sbr.ConnectionString);
 Write-Output "NamespaceManager object for the [$Namespace] namespace has been successfully created."
@@ -103,29 +100,24 @@ Write-Output "NamespaceManager object for the [$Namespace] namespace has been su
 
 + 如果不存在，脚本将使用 WNS 凭据创建 `NotificationHubDescription`，并将其传递给 `NamespaceManager` 类 `CreateNotificationHub` 方法。
 
-``` powershell
-
+``` 
+powershell
 $Namespace = "<Enter your namespace>
 $Path  = "<Enter a name for your notification hub>"
 $WnsPackageSid = "<your package sid>"
 $WnsSecretkey = "<enter your secret key>"
-
 $WnsCredential = New-Object -TypeName Microsoft.Azure.NotificationHubs.WnsCredential -ArgumentList $WnsPackageSid,$WnsSecretkey
-
-# Query the namespace
+`#` Query the namespace
 $CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
-
-# Check if the namespace already exists
+`#` Check if the namespace already exists
 if ($CurrentNamespace)
 {
     Write-Output "The namespace [$Namespace] in the [$($CurrentNamespace.Region)] region was found."
-
     # Create the NamespaceManager object used to create a new notification hub
     $sbr = Get-AzureSBAuthorizationRule -Namespace $Namespace
     Write-Output "Creating a NamespaceManager object for the [$Namespace] namespace..."
     $NamespaceManager = [Microsoft.Azure.NotificationHubs.NamespaceManager]::CreateFromConnectionString($sbr.ConnectionString);
     Write-Output "NamespaceManager object for the [$Namespace] namespace has been successfully created."
-
     # Check to see if the Notification Hub already exists
     if ($NamespaceManager.NotificationHubExists($Path))
     {
@@ -160,7 +152,6 @@ else
  
 
 [购买选项]: /pricing/overview/
-[成员优惠]: http://azure.microsoft.com/pricing/member-offers/
 [免费试用]: /pricing/1rmb-trial/
 [安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure
 [服务总线的 .NET API]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx

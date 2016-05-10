@@ -11,7 +11,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="03/14/2016"
-	wacn.date="04/13/2016"/>
+	wacn.date="05/09/2016"/>
 
 # 通过 Azure 通知中心向 iOS 发送推送通知
 
@@ -46,25 +46,6 @@
 
 [AZURE.INCLUDE [通知中心：启用 Apple 推送通知](../includes/notification-hubs-enable-apple-push-notifications.md)]
 
-##<a name="configure-hub"></a>配置通知中心
-
-本部分将引导你使用创建的 **.p12** 推送证书创建新的通知中心并配置 APNS 身份验证。如果你想要使用已创建的通知中心，可以跳到步骤 5。
-
-[AZURE.INCLUDE [notification-hubs-portal-create-new-hub](../includes/notification-hubs-portal-create-new-hub.md)]
-
-<ol start="6">
-<li>
-<p>单击“设置”边栏选项卡中的“通知服务”按钮，然后选择“Apple (APNS)”。<b></b><b></b><b></b>单击“上载证书”，然后选择你先前导出的 <b>.p12</b> 文件。<b></b>确保同时指定正确的密码。</p>
-<p>由于此项目用于开发，因此请务必选择“沙箱”模式。<b></b>仅当你想要将推送通知发送给从应用商店购买你应用的用户时，才使用“生产”模式。<b></b></p>
-</li>
-</ol>
-&emsp;&emsp;![在 Azure 门户中配置 APNS](./media/notification-hubs-ios-get-started/notification-hubs-apple-config.png)
-
-&emsp;&emsp;![在 Azure 门户中配置 APNS 证书](./media/notification-hubs-ios-get-started/notification-hubs-apple-config-cert.png)
-
-
-
-你的通知中心现在已配置为使用 APNS，并且你有连接字符串用于注册你的应用程序和发送推送通知。
 
 ##将你的 iOS 应用连接到通知中心
 
@@ -154,10 +135,6 @@
 
 ## 发送测试推送通知
 
-
-你可以在 [Azure 门户]中通过中心边栏选项卡中的“故障排除”部分（使用“测试发送”选项）发送推送通知，以在你的应用中测试通知接收。
-
-![Azure 门户 — 测试发送][30]
 
 [AZURE.INCLUDE [notification-hubs-sending-notifications-from-the-portal](../includes/notification-hubs-sending-notifications-from-the-portal.md)]
 
@@ -444,7 +421,7 @@
 
 	![iOS 应用推送通知注册测试][33]
 
-2. 如上所述，你可以从 [Azure 门户]发送测试推送通知。如果你在应用中添加了发送推送通知的代码，请触摸文本字段以输入通知消息。然后，按键盘上的“发送”按钮或视图中的“发送通知”按钮，以发送通知消息。
+2. 如上所述，你可以从Azure 门户发送测试推送通知。如果你在应用中添加了发送推送通知的代码，请触摸文本字段以输入通知消息。然后，按键盘上的“发送”按钮或视图中的“发送通知”按钮，以发送通知消息。
 
 	![iOS 应用推送通知发送测试][34]
 

@@ -10,7 +10,7 @@
 <tags    	
 	ms.service="notification-hubs" 
     ms.date="11/01/2015"
-	wacn.date="04/13/2016"/>
+	wacn.date="05/09/2016"/>
 
 # 如何通过 Java 使用通知中心
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
@@ -227,16 +227,16 @@ CreateOrUpdate、Patch 和 Delete 最终与 Get 一致。你请求的操作会�
 通知对象只有带有标头的正文，一些实用工具方法可帮助你构建本机和模板通知对象。
 
 * **Windows 应用商店和 Windows Phone 8.1（非 Silverlight）**
-
-	String toast = "<toast><visual><binding template="ToastText01"><text id="1">Hello from Java!</text></binding></visual></toast>";
-	Notification n = Notification.createWindowsNotification(toast);
-	hub.sendNotification(n);
+	
+		String toast = "<toast><visual><binding template="ToastText01"><text id="1">Hello from Java!</text></binding></visual></toast>";
+		Notification n = Notification.createWindowsNotification(toast);
+		hub.sendNotification(n);
 
 * **iOS**
-
-	String alert = "{"aps":{"alert":"Hello from Java!"}}";
-	Notification n = Notification.createAppleNotification(alert);
-	hub.sendNotification(n);
+	
+		String alert = "{"aps":{"alert":"Hello from Java!"}}";
+		Notification n = Notification.createAppleNotification(alert);
+		hub.sendNotification(n);
 
 * **Android**
 
@@ -246,14 +246,14 @@ CreateOrUpdate、Patch 和 Delete 最终与 Get 一致。你请求的操作会�
 
 * **Windows Phone 8.0 和 8.1 Silverlight**
 
-	String toast = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
-		        "<wp:Notification xmlns:wp=\"WPNotification\">" +
-		           "<wp:Toast>" +
-		                "<wp:Text1>Hello from Java!</wp:Text1>" +
-		           "</wp:Toast> " +
-		        "</wp:Notification>";
-	Notification n = Notification.createMpnsNotification(toast);
-	hub.sendNotification(n);
+		String toast = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
+			        "<wp:Notification xmlns:wp=\"WPNotification\">" +
+			           "<wp:Toast>" +
+			                "<wp:Text1>Hello from Java!</wp:Text1>" +
+			           "</wp:Toast> " +
+			        "</wp:Notification>";
+		Notification n = Notification.createMpnsNotification(toast);
+		hub.sendNotification(n);
 
 * **Kindle Fire**
 

@@ -10,12 +10,11 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="12/16/2015"
-	wacn.date="04/13/2016"/>
+	wacn.date="05/09/2016"/>
 
 # 通过使用 ASP.NET 注册推送通知的当前用户
 
 > [AZURE.SELECTOR]
-- [Windows 应用商店 C#](/documentation/articles/notification-hubs-windows-store-aspnet-register-user-push-notifications)
 - [iOS](/documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications)
 
 

@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags
-      ms.service="notification-hubs" 
+    ms.service="notification-hubs" 
 	ms.date="02/29/2016" 
-      wacn.date="04/13/2016" />
+    wacn.date="05/09/2016" />
 
 # 如何通过 Python 使用通知中心
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]

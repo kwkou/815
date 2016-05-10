@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="03/10/2016"
-	wacn.date="04/13/2016"/>
+	wacn.date="05/09/2016"/>
 	
 	
 # 在 Windows Phone 上借助 Azure 通知中心发送推送通知
@@ -38,18 +38,11 @@
 
 ##创建通知中心
 
-[AZURE.INCLUDE [notification-hubs-portal-create-new-hub](../includes/notification-hubs-portal-create-new-hub.md)]
+1.  单击“应用程序服务”->“服务总线”->“通知中心”
+![](./media/notification-hubs-windows-phone-get-started/create-notify.png)
+2.单击“快速创建”，填上“名称”，选择“区域”
+![](./media/notification-hubs-windows-phone-get-started/nameandregoin.png)
 
-<ol start="6">
-<li><p>单击“通知服务”部分（位于“设置”内），然后单击“Windows Phone (MPNS)”并选中“启用未经身份验证的推送”复选框。<b></b><i></i><b></b><b></b></p>
-</li>
-</ol>
-
-&emsp;&emsp;![Azure 门户 - 启用未经身份验证的推送通知](./media/notification-hubs-windows-phone-get-started/azure-portal-unauth.png)
-
-你的中心现已创建，并已配置为向 Windows Phone 发送未经身份验证的通知。
-
-> [AZURE.NOTE] 本教程使用未经身份验证模式下的 MPNS。MPNS 未经身份验证的模式对你可以发送到每个通道的通知有一些限制。通知中心支持 [MPNS 身份验证模式](http://msdn.microsoft.com/library/windowsphone/develop/ff941099.aspx)，它允许你上载证书。
 
 ##将你的应用程序连接到通知中心
 
