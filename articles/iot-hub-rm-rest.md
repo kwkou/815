@@ -113,7 +113,7 @@
 
     ```
     var content = new StringContent(JsonConvert.SerializeObject(description), Encoding.UTF8, "application/json");
-    var requestUri = string.Format("https://management.azure.com/subscriptions/{0}/resourcegroups/{1}/providers/Microsoft.devices/IotHubs/{2}?api-version=2016-02-03", subscriptionId, rgName, iotHubName);
+    var requestUri = string.Format("https://management.chinacloudapi.cn/subscriptions/{0}/resourcegroups/{1}/providers/Microsoft.devices/IotHubs/{2}?api-version=2016-02-03", subscriptionId, rgName, iotHubName);
     var result = client.PutAsync(requestUri, content).Result;
       
     if (!result.IsSuccessStatusCode)
@@ -140,7 +140,7 @@
 6. 将以下代码添加到 **CreateIoTHub** 方法末尾，以检索创建的 IoT 中心密钥并将其输出到控制台：
 
     ```
-    var listKeysUri = string.Format("https://management.azure.com/subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.Devices/IotHubs/{2}/IoTHubKeys/listkeys?api-version=2015-08-15-preview", subscriptionId, rgName, iotHubName);
+    var listKeysUri = string.Format("https://management.chinacloudapi.cn/subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.Devices/IotHubs/{2}/IoTHubKeys/listkeys?api-version=2015-08-15-preview", subscriptionId, rgName, iotHubName);
     var keysresults = client.PostAsync(listKeysUri, null).Result;
     
     Console.WriteLine("Keys: {0}", keysresults.Content.ReadAsStringAsync().Result);
