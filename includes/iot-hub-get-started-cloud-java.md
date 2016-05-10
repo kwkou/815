@@ -181,7 +181,7 @@
     public static void main( String[] args ) throws IOException
     ```
 
-12. 在 **App** 类的 **main** 方法中添加以下代码。此代码将创建 **EventHubClient** 实例以连接到 IoT 中心上的事件中心兼容的终结点。然后，创建两个线程以从两个分区进行读取。将 **{youriothubkey}**、**{youreventhubcompatiblenamespace}** 和 **{youreventhubcompatiblename}**。**{youreventhubcompatiblenamespace}** 替换为前面记下的值。**{youreventhubcompatiblenamespace}** 占位符的值来自事件中心兼容的终结点，其格式为 **xxxxnamespace.servicebus.windows.net**。
+12. 在 **App** 类的 **main** 方法中添加以下代码。此代码将创建 **EventHubClient** 实例以连接到 IoT 中心上的事件中心兼容的终结点。然后，创建两个线程以从两个分区进行读取。将 **{youriothubkey}**、**{youreventhubcompatiblenamespace}** 和 **{youreventhubcompatiblename}**。**{youreventhubcompatiblenamespace}** 替换为前面记下的值。**{youreventhubcompatiblenamespace}** 占位符的值来自事件中心兼容的终结点，其格式为 **xxxxnamespace.servicebus.chinacloudapi.cn**。
 
     ```
     String policyName = "iothubowner";

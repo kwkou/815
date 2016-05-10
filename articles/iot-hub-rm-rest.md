@@ -97,7 +97,7 @@
     var description = new
     {
       name = iotHubName,
-      location = "East US",
+      location = "China East",
       sku = new
       {
         name = "S1",

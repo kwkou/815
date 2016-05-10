@@ -6,10 +6,10 @@ Azure Active Directory 必须使用 Azure Resource Manager 来验证所有针对
 
     ```
     var authContext = new AuthenticationContext(string.Format  
-      ("https://login.windows.net/{0}", tenantId));
+      ("https://login.chinacloudapi.cn/{0}", tenantId));
     var credential = new ClientCredential(applicationId, password);
     AuthenticationResult token = authContext.AcquireTokenAsync
-      ("https://management.core.windows.net/", credential).Result;
+      ("https://management.core.chinacloudapi.cn/", credential).Result;
     
     if (token == null)
     {
@@ -30,7 +30,7 @@ Azure Active Directory 必须使用 Azure Resource Manager 来验证所有针对
 
     ```
     var rgResponse = client.ResourceGroups.CreateOrUpdate(rgName,
-        new ResourceGroup("East US"));
+        new ResourceGroup("China East"));
     if (rgResponse.Properties.ProvisioningState != "Succeeded")
     {
       Console.WriteLine("Problem creating resource group");
