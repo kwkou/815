@@ -34,6 +34,7 @@
 
 <!-- Links -->
 [IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide/#c2d
+[IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted
 
 <!-- Images -->
 
