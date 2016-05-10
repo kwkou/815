@@ -27,7 +27,7 @@
 - Microsoft Visual Studio 2015。
 - 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][lnk-free-trial]。
 - 可用于存储模板文件的 [Azure 存储帐户][lnk-storage-account]。
-- [Microsoft Azure PowerShell 1.0][lnk-powershell-install] 或更高版本。
+- [Azure PowerShell 1.0][lnk-powershell-install] 或更高版本。
 
 [AZURE.INCLUDE [iot-hub-prepare-resource-manager](../includes/iot-hub-prepare-resource-manager.md)]
 
