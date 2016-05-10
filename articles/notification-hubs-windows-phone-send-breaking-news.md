@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="12/15/2015" 
-	wacn.date="01/14/2016" />
+	wacn.date="05/09/2016" />
 
 # 使用通知中心发送突发新闻
 
@@ -183,7 +183,7 @@
         }
 
 
-    此类使用隔离存储区存储此设备要接收的新闻类别。它还包含用于通过[模板](notification-hubs-templates.md)通知注册来注册这些类别的方法。
+    此类使用隔离存储区存储此设备要接收的新闻类别。它还包含用于通过[模板](/documentation/articles/notification-hubs-templates)通知注册来注册这些类别的方法。
 
 
 4. 在 App.xaml.cs 项目文件中，将以下属性添加到 **App** 类：将 `<hub name>` 和 `<connection string with listen access>` 占位符替换为通知中心名称和前面获取的 *DefaultListenSharedAccessSignature* 的连接字符串。
@@ -299,7 +299,6 @@
 
 <!-- URLs.-->
 [通知中心入门]: /documentation/articles/notification-hubs-windows-phone-get-started
-[Use Notification Hubs to broadcast localized breaking news]: ./breakingnews-localized-wp8.md
 [Notify users with Notification Hubs]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
 [Mobile Service]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx

@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="11/25/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="05/09/2016"/>
 
 # 模板
 
@@ -94,7 +94,7 @@ Windows 应用商店客户端应用的相应模板为：
 发送到通知中心的消息包含以下属性：
 
 
-<table border="1"> <tr><td>day1\_image</td><td>day2\_image</td><td>day3\_image</td><td>day4\_image</td><td>day5\_image</td></tr> <tr><td>day1\_tempC</td><td>day2\_tempC</td><td>day3\_tempC</td><td>day4\_tempC</td><td>day5\_tempC</td></tr> <tr><td>day1\_tempF</td><td>day2\_tempF</td><td>day3\_tempF</td><td>day4\_tempF</td><td>day5\_tempF</td></tr> </table><br/>
+<table border="1"> <tr><td>day1_image</td><td>day2_image</td><td>day3_image</td><td>day4_image</td><td>day5_image</td></tr> <tr><td>day1_tempC</td><td>day2_tempC</td><td>day3_tempC</td><td>day4_tempC</td><td>day5_tempC</td></tr> <tr><td>day1_tempF</td><td>day2_tempF</td><td>day3_tempF</td><td>day4_tempF</td><td>day5_tempF</td></tr> </table><br/>
 
 
 通过使用此模式，后端只需发送一条消息，而不必为应用用户存储特定的个性化选项。下图演示了此方案：

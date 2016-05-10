@@ -10,10 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="03/08/2015"
-	wacn.date="04/13/2016"/>
-	
-	
-	
+	wacn.date="05/09/2016"/>
 	
 	
 # 使用 Azure 通知中心和 Node.js 发送推送通知
@@ -82,17 +79,13 @@ Azure 通知中心提供用于向移动设备发送推送通知的易于使用�
 
 可通过执行以下步骤从 [Azure 门户] 获取连接 **connectionstring** 值：
 
-1. 在左侧导航窗格中，单击“浏览”。
+1. 在左侧导航窗格中，单击“服务总线”。
+2. 单击你创建的那个通知中心名称
+3. 单击左上角的“通知中心”
+4. 单击正下方的“连接信息”
+5. 如下图所示，可以看到你需要的**connectionstring** 值
+![](./media/notification-hubs-nodejs-how-to-use-notification-hubs/connstr.png)
 
-2. 选择“通知中心”，然后找到要用于示例的中心。如果在创建新通知中心时需要获得帮助，可以参考 [Windows 应用商店入门教程](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)。
-
-3. 选择“设置”。
-
-4. 单击“访问策略”。你会看到共享连接字符串和完全访问连接字符串。
-
-![Azure 门户 — 通知中心](./media/notification-hubs-nodejs-how-to-use-notification-hubs/notification-hubs-portal.png)
-
-> [AZURE.NOTE] 还可以使用 [Azure PowerShell](/documentation/articles/powershell-install-configure) 提供的 **Get-AzureSbNamespace** cmdlet 或者在 [Azure 命令行界面 (Azure CLI)](/documentation/articles/xplat-cli-install) 中使用 **azure sb namespace show** 命令检索连接字符串。
 
 ##一般体系结构
 

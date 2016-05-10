@@ -11,7 +11,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="02/15/2016"
-	wacn.date="04/13/2016"/>
+	wacn.date="05/09/2016"/>
 
 # 通知中心入门
 # 使用通知中心针对 Xamarin 应用发送 iOS 推送通知
@@ -42,7 +42,7 @@
 
 [AZURE.INCLUDE [通知中心：启用 Apple 推送通知](../includes/notification-hubs-enable-apple-push-notifications.md)]
 
-
+<!--
 ##配置通知中心
 
 本部分将引导你使用创建的 **.p12** 推送证书创建新的通知中心并配置 APNS 身份验证。如果你想要使用已创建的通知中心，可以跳到步骤 5。
@@ -62,7 +62,7 @@
 
 
 你的通知中心现在已配置为使用 APNS，并且你有连接字符串用于注册你的应用和发送推送通知。
-
+-->
 
 ##将你的应用连接到通知中心
 
@@ -178,7 +178,7 @@
 10. 在你的设备上运行应用程序。
 
 
-## 发送推送通知
+<!--## 发送推送通知
 
 
 在 [Azure 门户] 中通过“通知中心”页面上“故障排除”工具集中的“测试发送”功能来发送通知，可以在应用中测试推送通知的接收情况，如以下屏幕中所示。
@@ -199,7 +199,7 @@
 
 * **Java/PHP**：有关如何使用 REST API 发送通知的示例，请参阅“如何通过 Java/PHP 使用通知中心”([Java](/documentation/articles/notification-hubs-java-backend-how-to) | [PHP](/documentation/articles/notification-hubs-php-backend-how-to))。
 
-
+-->
 ####（可选）通过 .NET 控制台应用发送通知。
 
 在本部分，你将使用简单的 .NET 控制台应用发送推送通知。为了演示本示例，我们将切换到已安装 Visual Studio 的 Windows 开发环境。
