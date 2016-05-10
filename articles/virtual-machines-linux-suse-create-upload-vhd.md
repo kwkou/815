@@ -19,7 +19,7 @@
 
 ##先决条件##
 
-本文假定你已在虚拟硬盘中安装了 SUSE 或 openSUSE Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/library/hh846766.aspx)。
+本文假定你已在虚拟硬盘中安装了 SUSE 或 openSUSE Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。
 
  - [SUSE Studio](http://www.susestudio.com) 可以轻松地创建和管理 Azure 和 Hyper-V 的 SLES/openSUSE 映像。这是自定义你自己的 SUSE 和 openSUSE 映像的推荐方法。SUSE Studio 库中的以下正式映像可下载或克隆到你自己的 SUSE Studio 中：
 

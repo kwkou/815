@@ -270,7 +270,7 @@
 		
 3. 你需获取 3 个 VM 各自的内部 IP 地址，才能执行后续步骤：
 
-	![获取 IP 地址](./media/virtual-machines-linux-classic-mariadb-mysql-clusterIP.png)
+	![获取 IP 地址](./media/virtual-machines-linux-classic-mariadb-mysql-cluster/IP.png)
 
 4. 通过 SSH 登录到 3 个 VM，并编辑每个虚拟机的配置文件
 
@@ -359,7 +359,7 @@
 [Galera]: http://galeracluster.com/products/
 [MariaDBs]: https://mariadb.org/en/about/
 [Azure CLI]: /zh-cn/documentation/articles/xplat-cli-install/
-[Azure CLI 命令参考]: /zh-cn/documentation/articles/command-line-tools/
+[Azure CLI 命令参考]: /documentation/articles/virtual-machines-command-line-tools/
 [创建用于身份验证的 SSH 密钥]: http://www.jeff.wilcox.name/2013/06/secure-linux-vms-with-ssh-certificates/
 [性能优化策略]: /zh-cn/documentation/articles/virtual-machines-linux-classic-optimize-mysql/
 [优化和测试 Azure Linux VM 上的 MySQL 性能]: /zh-cn/documentation/articles/virtual-machines-linux-classic-optimize-mysql/

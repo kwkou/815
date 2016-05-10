@@ -293,7 +293,7 @@
 	
 	1. 你可将数据库服务器、Web 服务器和应用程序服务器保留在本地，而将数据库副本保留在 Azure 的虚拟机中。这种设置允许本地 Web 服务器或报告应用程序访问 Azure 中的数据库副本。因此，你可以成功地降低本地数据库中的工作负荷。我们建议你在具有很高读取工作负荷的情况下实施此方案，也可将其用于开发目的。有关在 Azure 中创建数据库副本的信息，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr)中的“AlwaysOn 可用性组”。
 
-##<a name="comparing-development-strategies-in-azure"></a> 比较 Azure 中的 Web 开发策略
+##<a name="comparing-development-strategies-in-azure" id="comparing-web-development-strategies-in-azure"></a> 比较 Azure 中的 Web 开发策略
 
 若要在 Azure 中实现和部署基于 SQL Server 的多层应用程序，你可以使用以下两种编程方法之一：
 

@@ -6,7 +6,7 @@ Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物�
 - 可通过 Azure CLI [创建 Docker 主机](/documentation/articles/virtual-machines-linux-classic-cli-use-docker)。
 - 可与许多专有和开放源配置管理工具集成
 
-而且由于可通过编程方式在 Azure 上创建 VM 和 Linux 容器，因此还可以使用 VM 和容器*协调*工具来创建多组虚拟机 (VM)，并在 Linux 容器和很快即将支持的 [Windows 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)中部署应用程序。
+而且由于可通过编程方式在 Azure 上创建 VM 和 Linux 容器，因此还可以使用 VM 和容器*协调*工具来创建多组虚拟机 (VM)，并在 Linux 容器和很快即将支持的 [Windows 容器](https://msdn.microsoft.com/zh-cn/virtualization/windowscontainers/about/about_overview)中部署应用程序。
 
 本文不仅从较高水平讨论了这些概念，还包含了很多链接，可帮助你了解与 Azure 上的容器和群集使用相关的详细信息、教程和产品。如果你已了解全部内容，而只是需要这些链接，这些链接就在[使用容器的工具](#tools-for-working-with-containers)中。
 
@@ -20,7 +20,7 @@ Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物�
 
 这一点很厉害。
 
-但是，对于在 Windows 上运行的应用程序，Windows 容器可提供与 Linux 容器相同的好处。Windows 容器支持 Docker 映像格式和 Docker API，但还可以使用 PowerShell 进行管理。两种容器运行时随 Windows 容器、Windows Server 容器和 Hyper-V 容器提供。Hyper-V 容器通过在超级优化虚拟机中托管每个容器提供了附加隔离层。若要了解有关 Windows 容器的详细信息，请参阅[关于 Windows 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)。若要在 Azure 中试用 Windows 容器，请参阅 [Windows 容器 Azure 快速入门](https://msdn.microsoft.com/virtualization/windowscontainers/quick_start/azure_setup)。
+但是，对于在 Windows 上运行的应用程序，Windows 容器可提供与 Linux 容器相同的好处。Windows 容器支持 Docker 映像格式和 Docker API，但还可以使用 PowerShell 进行管理。两种容器运行时随 Windows 容器、Windows Server 容器和 Hyper-V 容器提供。Hyper-V 容器通过在超级优化虚拟机中托管每个容器提供了附加隔离层。若要了解有关 Windows 容器的详细信息，请参阅[关于 Windows 容器](https://msdn.microsoft.com/zh-cn/virtualization/windowscontainers/about/about_overview)。若要在 Azure 中试用 Windows 容器，请参阅 [Windows 容器 Azure 快速入门](https://msdn.microsoft.com/virtualization/windowscontainers/quick_start/azure_setup)。
 
 这一点也很厉害。
 
@@ -132,7 +132,7 @@ Ubuntu 是另一个非常受欢迎的 Linux 分发，可以非常好地支持 Do
 
 Windows 容器链接：
 
-- [Windows 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)
+- [Windows 容器](https://msdn.microsoft.com/zh-cn/virtualization/windowscontainers/about/about_overview)
 
 Visual Studio Docker 链接：
 
@@ -191,7 +191,7 @@ Linux 分发和 Azure 示例：
 
 ## 后续步骤
 
-了解 [Docker](https://www.docker.com) 和 [Windows 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)。
+了解 [Docker](https://www.docker.com) 和 [Windows 容器](https://msdn.microsoft.com/zh-cn/virtualization/windowscontainers/about/about_overview)。
 
 <!--Anchors-->
 [microservices]: http://martinfowler.com/articles/microservices.html
