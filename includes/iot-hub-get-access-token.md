@@ -22,7 +22,7 @@ Azure Active Directory 必须使用 Azure Resource Manager 来验证所有针对
 
     ```
     var creds = new TokenCredentials(token.AccessToken);
-    var client = new ResourceManagementClient(creds);
+    var client = new ResourceManagementClient(new Uri("Https://management.chinacloudapi.cn"), creds);
     client.SubscriptionId = subscriptionId;
     ```
 
