@@ -45,7 +45,7 @@
 
     Azure PowerShell 1.0：
 
-         PS C:\> Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+         PS C:\> Login-AzureRmAccount -EnvironmentName $(Get-AzureRmEnvironment -Name AzureChinaCloud)
 
          Evironment : AzureCloud
          Account    : someone@example.com
@@ -61,7 +61,7 @@
         PS C:\> New-AzureRmResourceGroup -Name ExampleResourceGroup -Location "China East"
    
         ResourceGroupName : ExampleResourceGroup
-        Location          : westus
+        Location          : chinaeast
         ProvisioningState : Succeeded
         Tags              :
         Permissions       :
@@ -114,7 +114,7 @@
 
 1. 登录到你的 Azure 帐户。提供凭据后，该命令将返回你的登录结果。
 
-        azure login -e AzureCinaCloud
+        azure login -e AzureCinaCloud -u <username> -p <password>
   
         ...
         info:    login command OK
@@ -139,7 +139,7 @@
         info:    Created resource group ExampleResourceGroup
         data:    Id:                  /subscriptions/####/resourceGroups/ExampleResourceGroup
         data:    Name:                ExampleResourceGroup
-        data:    Location:            westus
+        data:    Location:            chinaeast
         data:    Provisioning State:  Succeeded
         data:    Tags:
         data:
@@ -182,7 +182,7 @@
 1. 设置[常见参数和标头](https://msdn.microsoft.com/zh-cn/library/azure/8d088ecc-26eb-42e9-8acc-fe929ed33563#bk_common)，包括身份验证令牌。
 2. 如果目前没有资源组，请创建新的资源组。提供订阅 ID、新资源组的名称，以及解决方案所需的位置。有关详细信息，请参阅[创建资源组](https://msdn.microsoft.com/zh-cn/library/azure/dn790525.aspx)。
 
-         PUT https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>?api-version=2015-01-01
+         PUT https://management.chinacloudapi.cn/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>?api-version=2015-01-01
            <common headers>
            {
              "location": "China East",
@@ -193,7 +193,7 @@
    
 3. 创建新的资源组部署。提供你的订阅 ID、要部署的资源组的名称、部署的名称以及模板的位置。有关模板文件的信息，请参阅[参数文件](#parameter-file)。有关使用 REST API 创建资源组的详细信息，请参阅[创建模板部署](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx)。请注意，**mode** 设置为 **Incremental**。若要运行完整部署，请将 **mode** 设置为 **Complete**。
     
-         PUT https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2015-01-01
+         PUT https://management.chinacloudapi.cn/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2015-01-01
             <common headers>
             {
               "properties": {
@@ -211,7 +211,7 @@
    
 4. 获取模板部署的状态。有关详细信息，请参阅[获取有关模板部署的信息](https://msdn.microsoft.com/zh-cn/library/azure/dn790565.aspx)。
 
-         GET https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2015-01-01
+         GET https://management.chinacloudapi.cn/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2015-01-01
            <common headers>
 
 ## 使用 Visual Studio 进行部署
@@ -253,7 +253,6 @@
 有关用于传递安全值的 KeyVault 引用的详细信息，请参阅 [Pass secure values during deployment（在部署期间传递安全值）](/documentation/articles/resource-manager-keyvault-parameter)
 
 ## 后续步骤
-- 有关通过 .NET 客户端库部署资源的示例，请参阅[使用 .NET 库和模板部署资源](/documentation/articles/arm-template-deployment)
 - 若要了解 Azure 资源管理器模板的节，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)。
 - 有关可在 Azure 资源管理器模板中使用的函数列表，请参阅[模板函数](/documentation/articles/resource-group-template-functions)。
 
