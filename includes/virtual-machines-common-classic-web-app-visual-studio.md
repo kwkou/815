@@ -25,7 +25,7 @@
 
 	![][5]
 
-9. 在服务器的远程桌面上，在 IIS 管理器中，右键单击要部署到的站点，正确配置“Web 部署发布”。如果你有 SQL Server，请输入 Web 应用的连接字符串。按“<your cloud service name>.chinacloudapp.cn”重放 URL 中的主机名。该 URL 将变为如下所示内容：“https://<your cloud service name>.chinacloudapp.cn:8172/msdeploy.axd”。单击“安装”，将为你创建发布设置文件。
+9. 在服务器的远程桌面上，在 IIS 管理器中，右键单击要部署到的站点，正确配置“Web 部署发布”。如果你有 SQL Server，请输入 Web 应用的连接字符串。按 `<your cloud service name>.chinacloudapp.cn` 重放 URL 中的主机名。该 URL 将变为如下所示内容： `https://<your cloud service name>.chinacloudapp.cn:8172/msdeploy.axd` 。单击“安装”，将为你创建发布设置文件。
 
 10. 返回到 Visual Studio，右键单击你的解决方案，然后选择“发布”。
 
