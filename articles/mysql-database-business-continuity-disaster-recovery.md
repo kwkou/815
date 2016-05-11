@@ -85,7 +85,7 @@
 
 ###异地还原的性能指标： 。###
 ERT<3小时，RPO< 1小时.<br>
-[AZURE.NOTE]**注意：ERT, RTO和RPO是工程指标，仅提供参考，且该指标仅在区域性灾难中出现，且不属于MySQL数据库服务的SLA。**
+>[AZURE.NOTE]**注意：ERT, RTO和RPO是工程指标，仅提供参考，且该指标仅在区域性灾难中出现，且不属于MySQL数据库服务的SLA。**
 
 ###用户自助助服务步骤：###
 如果发生灾难时，管理门户可用，用户可以通过[备份与恢复](/documentation/articles/mysql-database-point-in-time-restore)中异地还原的步骤进行操作。但通常发生区域性灾难时，管理门户中无法正确获取实例的信息，建议用户通过PowerShell对实例进行异地还原操作：
