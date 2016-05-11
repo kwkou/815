@@ -1,5 +1,5 @@
 <properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
-<tags ms.service="" ms.date="" wacn.date="01/21/2016"/>
+<tags ms.service="" ms.date="" wacn.date="05/11/2016"/>
 
 #中国 Azure 应用程序开发人员说明
 
@@ -7,7 +7,7 @@
 - [关于本文档](#about)
 - [为开发人员提供指导](#dev-guide)
 - [中国服务当前提供的功能](#readyonwacn)
-- [中国服务当前未提供的功能](#notonwacn)
+<!--- [中国服务当前未提供的功能](#notonwacn)-->
 - [在中国服务上创建应用程序时的区别概述](#cndiffoverview)
 - [端点映射](#endpointmap)
 - [中国的数据中心](#cncenter)
@@ -44,9 +44,9 @@ Microsoft 提供了一些工具来创建和部署 Azure 全球服务的云应用
 
 中国 Azure 是由中国公司世纪互联从位于中国人民共和国（不包括香港特别行政区、澳门特别行政区和中国台湾地区）的数据中心运营并提供的独立 Azure 平台。因此，创建和部署Azure 服务—由世纪互联运营（“中国服务”），而不是由全球服务运营的应用程序时，开发人员需要先了解这两项服务之间的主要区别，然后再设置自己的编程环境、编写应用程序并将其部署为在中国托管的服务。
 
-本文档概要说明了这些区别并为中国 [Azure 门户](http://www.azure.cn)及 [MSDN 上的 Azure 技术库](http://msdn.microsoft.com/zh-cn/library/dd163896.aspx)提供补充信息。官方信息也会在许多其他地方发布，如 Azure [海报](http://www.microsoft.com/zh-cn/download/details.aspx?id=35473)、[TechNet wiki](http://social.technet.microsoft.com/wiki/contents/articles/inside-sql-azure.aspx) 以及 Microsoft 员工发表的各种博客文章。本内容专门针对将在中国部署托管于中国的数据中心的合作伙伴及开发人员。
+本文档概要说明了这些区别并为中国 [Azure 门户](https://www.azure.cn)及 [MSDN 上的 Azure 技术库](http://msdn.microsoft.com/zh-cn/library/dd163896.aspx)提供补充信息。官方信息也会在许多其他地方发布，如 Azure [海报](http://www.microsoft.com/zh-cn/download/details.aspx?id=35473)、[TechNet wiki](http://social.technet.microsoft.com/wiki/contents/articles/inside-sql-azure.aspx) 以及 Microsoft 员工发表的各种博客文章。本内容专门针对将在中国部署托管于中国的数据中心的合作伙伴及开发人员。
 
-有关中国服务功能可用性的最新更新，请访问中国[Azure 门户](http://www.azure.cn)。有关 Azure 上当前内容资产的列表，请参阅本文档的附录。
+有关中国服务功能可用性的最新更新，请访问中国[Azure 门户](https://www.azure.cn)。有关 Azure 上当前内容资产的列表，请参阅本文档的附录。
  
 #<a name="dev-guide"></a>为开发人员提供指导
 
@@ -58,36 +58,40 @@ Microsoft 提供了一些工具来创建和部署 Azure 全球服务的云应用
 
 中国服务当前包含以下的 Azure 功能。
 
-* 计算 – 虚拟机（适用于 IaaS 服务）
-
-	-包含 Windows Server Essentials Experience 服务器角色的 Windows Server 2012 R2 Data Center
-	
-	-Windows Server 2012 R2 Data Center
-	
-	-SQL Server (包含 SQL Server 2014, SQL Server 2012, SQL Server 2008 R2 各版本)
-
-* 计算 – 虚拟机	 
-* 计算 – 云服务（适用于 PaaS 服务）
-* 计算 – Web 应用
-* 计算 – 移动服务
-* 数据服务 – 存储（适用于 Blob、表和队列）
-* 数据服务 – SQL 数据库
-* 数据服务 – SQL 数据库 – SQL 导入/导出
-* 数据服务 – HDInsight 
-* 数据服务 – 备份
-* 数据服务 - 站点恢复
-* 数据服务 - MySQL 数据库 on Azure
-* 访问控制服务 – 拥有其自己的 UI 和命名空间
-* 网络服务 – 虚拟网络（通过本地网络在云服务之间进行通信）
+* 计算 – 虚拟机
+* 计算 – 云服务
+* 计算 – 批处理（Batch）
+* Web 和移动 – Web 应用
+* Web 和移动 – 移动服务
+* Web 和移动 – 通知中心
+* 数据和存储 – SQL 数据库
+* 数据和存储 – Redis 缓存
+* 数据和存储 – 存储
+* 数据和存储 – MySQL Database on Azure
+* 数据和存储 – SQL 数据仓库
+* 数据和存储 – SQL Server Stretch Database
+* 分析 – HDInsight
+* 分析 – 流分析
+* 物联网 – Azure IoT 中心
+* 物联网 – 事件中心
+* 物联网 – 流分析
+* 物联网 – 通知中心
+* 网络服务 – 虚拟网络
+* 网络服务 – ExpressRoute
 * 网络服务 – 流量管理器
-* 应用服务 – 服务总线(服务总线) 
-* 应用服务 – Active Directory
-* 应用服务 – 计划程序
-* 应用服务 – CDN 
-* 应用服务 – 媒体服务 
-* 应用服务 – 通知中心
-* 应用服务 – 自动化
+* 网络服务 – 应用程序网关
+* 媒体和CDN – 媒体服务 
+* 媒体和CDN – CDN
+* 混合集成 – 服务总线 
+* 混合集成 – 备份  
+* 混合集成 – 站点恢复  
+* 身份和访问管理 – Active Directory
+* 身份和访问管理 – 多重身份验证
+* 管理与安全 – 计划程序
+* 管理与安全 – 自动化
+* 管理与安全 – 密钥保管库
 
+<!--
 #<a name="notonwacn"></a>中国服务当前未提供的功能
 
 中国服务当前不包含以下的 Azure 功能。
@@ -111,6 +115,7 @@ Microsoft 提供了一些工具来创建和部署 Azure 全球服务的云应用
 * SQL 数据库管理门户
 * 秘钥保管库
 * Visual Studio Online
+-->
 
 #<a name="cndiffoverview"></a>在中国服务上创建应用程序时的区别概述
 
@@ -139,18 +144,18 @@ Azure - 常规 | *.windows.net | *.chinacloudapi.cn
 Azure - 计算 | *.cloudapp.net | *.chinacloudapp.cn
 Azure - 存储 | *.blob.core.windows.net <br /> *.queue.core.windows.net <br /> *.table.core.windows.net | *.blob.core.chinacloudapi.cn <br /> *.queue.core.chinacloudapi.cn <br /> *.table.core.chinacloudapi.cn
 Azure - 服务管理 | https://management.core.windows.net | https://management.core.chinacloudapi.cn
-SQL数据库 | *.database.windows.net | *.database.chinacloudapi.cn
+SQL 数据库 | *.database.windows.net | *.database.chinacloudapi.cn
 Azure - 管理门户 | http://manage.windowsazure.com | http://manage.windowsazure.cn
 SQL Azure数据库管理API | https://management.database.windows.net | https://management.database.chinacloudapi.cn
 服务总线 | *.servicebus.windows.net | *.servicebus.chinacloudapi.cn
 ACS | *.accesscontrol.windows.net | *.accesscontrol.chinacloudapi.cn
 HDInsight | *.azurehdinsight.net | *.azurehdinsight.cn
-SQL数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc) <br /> 2. 中国北部：[https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc)
+SQL 数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc) <br /> 2. 中国北部：[https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc)
 
 
 #<a name="cncenter"></a>中国的数据中心
 
-中国服务当前运营着两个数据中心。这两个数据中心在location字段中显示为“China North”和“China East”。
+中国服务当前运营着两个数据中心。这两个数据中心在"位置"字段中显示为“中国北部”和“中国东部”。
  
 
 #<a name="databackup"></a>数据备份
@@ -184,20 +189,25 @@ SQL数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod
 	o 选择一项现有服务。此时将显示此云服务的数据中心的位置。记下这一位置并确保您的存储帐户位置与该数据中心位置相同。
 	
 	o 选择 Create New 创建 Azure 托管的云服务。在 Create Azure Services 对话框中，指定服务的名称，然后指定“China North”作为数据中心。
+
 2. 在 Environment 列表中，选择 Production 或 Staging。如果要将应用程序部署到测试环境中，请选择过渡环境。稍后可将应用程序移动到生产环境中。
+
 3. 在 Build configuration 列表中，选择 Debug 或 Release。
+
 4. 在 Service configuration 列表中，选择 Cloud。
+
 5. 选中 Enable Remote Desktop for all roles 复选框启用远程桌面。此选项主要用于故障排除。选中此复选框时，将显示 Remote Desktop Configuration 对话框。选择 Settings 链接可更改配置。选中 Enable Web Deploy for all web roles 复选框启用 Web 部署。必须启用远程桌面才能使用此功能。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683672.aspx">使用 Azure 工具发布云服务</a>。有关 Web 部署的详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683672.aspx">使用 Azure 工具发布云服务</a>。<br />
 ![developerdifferences-003](./media/developerdifferences/developerdifferences-003.png)
 
 6. 选择 Advanced Settings 选项卡。在 Deployment label 字段中，可以接受默认名称，也可以输入您选择名称。如需将日期附加到部署标签，请选中对应复选框。
+
 7. 在Storage account列表中，选择用于此部署的存储帐户。比较云服务数据中心和存储帐户的位置。理想状态下，这两个位置应该相同。<br />
 ![developerdifferences-004](./media/developerdifferences/developerdifferences-004.png)
 
 8. 如果您只希望部署已更新的组件，请选中 Deployment update 复选框。此类型的部署速度比全面部署更快。选择 Settings 链接，以打开 Deployment update settings 对话框，如下图所示。<br />
  ![developerdifferences-005](./media/developerdifferences/developerdifferences-005.png)<br />
 您可以选择两个更新部署选项（增量或同时）中的任意一个。增量部署一次更新一个已部署的实例，以使您的应用程序保持在线状态并可供用户使用。同时部署会一次性更新所有已部署的实例。同时更新的速度快于增量更新，但是如果选择此选项，您的应用程序在更新过程中可能会不可用。<br />
-当更新部署失败后，如果您希望自动执行完整部署，应选中复选框 *if deployment can't be updated, do a full deployment*。完整部署将重置云服务的虚拟 IP (VIP) 地址。有关详细信息，请参见<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/jj614593.aspx">如何：为云服务保留固定的虚拟 IP 地址</a>。
+当更新部署失败后，如果您希望自动执行完整部署，应选中复选框 *if deployment can't be updated, do a full deployment*。完整部署将重置云服务的虚拟 IP (VIP) 地址。
 
 ###<a name="pubproj"></a>发布项目
 1. 您可以用所选的设置创建发布配置文件。例如，对于测试环境，您可能具有一个置文件，而对于生产则有另一个配置文件。要保存此配置文件，请选择Save图标。此向导将创建配置文件并将其保存在 Visual Studio 项目中。<br />
@@ -294,7 +304,7 @@ Azure Active Directory（“Azure AD”）提供身份和访问功能，可用�
 * 不包含Access Control (访问控制)命名空间。如果您需要集成应用程序和与Azure的身份验证服务同步企业目录，请使用Azure中的Active Directory。在 Azure管理门户中，单击“Active Directory"。
 *  ACS管理门户仅适用于服务总线命名空间。
 *  授权。对于本地应用程序和服务器到服务器案例，目前尚不支持 OAuth 2.0 授权代码授予类型的预览功能。
-除了这些基于设计的差异之外，中国服务中的 Azure AD 设计与全球服务相同。有关世纪互联服务中的 Azure AD 的信息，请参见<a href="http://go.microsoft.com/fwlink/?LinkId=306710">如何使用 Azure Active Directory 访问控制对 Web 用户进行身份验证</a>。
+除了这些基于设计的差异之外，中国服务中的 Azure AD 设计与全球服务相同。有关世纪互联服务中的 Azure AD 的信息，请参见<a href="https://www.azure.cn/documentation/articles/active-directory-dotnet-how-to-use-access-control/">如何使用 Azure Active Directory 访问控制对 Web 用户进行身份验证</a>。
 
 注意：在公共预览期间创建的访问控制命名空间将不可操作或访问。然而，类似的功能可在Azure管理门户的Active Directory使用。
 
@@ -365,11 +375,11 @@ Webservices\Acs2WindowsPhoneSample<br />  \CustomerInformationService\Web.config
   <tbody>
     <tr>
       <td width="295" valign="top"> servicebus.windows.net </td>
-      <td width="295" valign="top"> servicebus. chinacloudapi.cn </td>
+      <td width="295" valign="top"> servicebus.chinacloudapi.cn </td>
     </tr>
     <tr>
       <td width="295" valign="top"> accesscontrol.windows.net </td>
-      <td width="295" valign="top"> accesscontrol. chinacloudapi.cn </td>
+      <td width="295" valign="top"> accesscontrol.chinacloudapi.cn </td>
     </tr>
   </tbody>
 </table>
@@ -484,12 +494,10 @@ csuploadSet-Connection"SubscriptionId=<span class="Italic">&lt;subscriptionId&gt
 ##<a name="vsexplorer"></a>Visual Studio 服务器资源管理器
 
 可以使用 Visual Studio 中的服务器资源管理器浏览适用于所有中国订阅的计算、服务总线、存储以及虚拟机资源。用户导入发布设置文件时，Visual Studio 将获取中国存储端点。
-<a href="http://msdn.microsoft.com/zh-cn/library/ff687127.aspx">Azure Tools for Visual Studio 入门</a><a name="_Hlt357777468"></a><a name="_Hlt357777469"></a>中逐步介绍了使用服务器资源管理器创建、编译、调试、上传以及查看 Azure Hello World 应用程序的完整过程。将中国订阅导入 Visual Studio 后，这些说明即可在中国安装上使用。
-还可以查看已经在中国服务上但未使用 Visual Studio 部署的计算、服务总线、存储或虚拟机资源。按照<a href="http://msdn.microsoft.com/zh-cn/library/ff683675.aspx">使用 Azure 计算资源管理器查看 Azure 应用程序的状态</a>中的说明查看已经在世纪互联服务上运行的一个或多个托管服务的状态。按照<a href="http://msdn.microsoft.com/zh-cn/library/ff683677.aspx">使用 Azure 存储资源管理器浏览存储资源</a>中的说明查看中国服务上运行的现有存储帐户中的对象。
 
 ##<a name="csmanage"></a>CSManage - Azure 服务管理示例
 
-CSManage 示例（最近更名为“Azure 服务管理示例”）使用服务管理 API。此示例包含指向全球服务的代码。必须找到对http://*.chinacloudapi.cn的引用并将其更新为 *.chinacloudapi.cn。可以在<a href="https://code.msdn.microsoft.com/windowsazure/Windows-Azure-CSManage-e3f1882c">服务管理示例</a>中下载 CSManage 示例。
+CSManage 示例（最近更名为“Azure 服务管理示例”）使用服务管理 API。此示例包含指向全球服务的代码。必须找到对http://*.chinacloudapi.cn的引用并将其更新为 *.chinacloudapi.cn。
 
 ##<a name="plainhttp"></a>为中国服务更新 ServiceBus SDK 中的 PlainHttp 示例
 
@@ -501,7 +509,7 @@ chinacloudapi.cn实例更改为 *.chinacloudapi.cn。参见第 31、77 和 98 �
 
 #<a name="wadig"></a>使用 Azure 诊断
 
-Azure 诊断使用开发计算机上的本地存储或中国服务存储帐户来存储诊断信息。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/gg433048.aspx">使用 Azure 诊断收集日志记录数据</a>
+Azure 诊断使用开发计算机上的本地存储或中国服务存储帐户来存储诊断信息。有关详细信息，请参阅<a href="https://www.azure.cn/documentation/articles/cloud-services-dotnet-diagnostics/">使用 Azure 诊断收集日志记录数据</a>
 例如，您的代码可能包含以下行
 
 	DiagnosticMonitor.Start("Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString");
@@ -556,7 +564,7 @@ Azure 诊断使用开发计算机上的本地存储或中国服务存储帐户�
       <td width="794" valign="top"> Azure 的全球门户。 </td>
     </tr>
     <tr>
-      <td width="130" valign="top"> windowsazure.cn </td>
+      <td width="130" valign="top"> azure.cn </td>
       <td width="180" valign="top"> 是 </td>
       <td width="794" valign="top"> 专为在中国运营的 Azure 构建的门户 </td>
     </tr>
@@ -585,12 +593,12 @@ Azure 诊断使用开发计算机上的本地存储或中国服务存储帐户�
     </tr>
     <tr>
       <td width="130" valign="top"> MSDN 库 </td>
-      <td width="180" valign="top"> 一定 </td>
+      <td width="180" valign="top"> 是/否 </td>
       <td width="794" valign="top"><a href="https://msdn.microsoft.com/library/azure/">https://msdn.microsoft.com/library/azure/</a></td>
     </tr>
     <tr>
       <td width="130" valign="top"> Azure 团队的博客 </td>
-      <td width="180" valign="top"> 不一定 </td>
+      <td width="180" valign="top"> 是/否 </td>
       <td width="794" valign="top"><a href="http://blogs.msdn.com/b/azchina/">http://blogs.msdn.com/b/azchina/</a></td>
     </tr>
     <tr>
@@ -624,7 +632,7 @@ Azure 诊断使用开发计算机上的本地存储或中国服务存储帐户�
     <tr>
       <td width="130" valign="top"> Github </td>
       <td width="180" valign="top"> 否 </td>
-      <td width="794" valign="top"> 我们仅在此处托管 windowsazure.cn 的英文内容，不提供本地化内容 </td>
+      <td width="794" valign="top"> 我们仅在此处托管 sazure.cn 的英文内容，不提供本地化内容 </td>
     </tr>
   </tbody>
 </table>
