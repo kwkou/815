@@ -101,7 +101,7 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 >[AZURE.NOTE] 若要从设备本地存储区中删除已在移动设备数据库中删除的记录，应启用“[软删除]”。否则，你的应用程序应定期调用 `MSSyncTable.purgeWithQuery` 以清除本地存储。
 
 
-* 在 **QSTodoService.m** 中，`addItem` 和 `completeItem` 方法会在修改数据后调用 `syncData`。在 **QSTodoListViewController.m** 中，`refresh` 方法也会调用 `syncData`，使 UI 在每次刷新和启动时（`init` 调用 `refresh`）显示最新数据。
+* 在 **QSTodoService.m** 中，`addItem` 和 `completeItem` 方法会在修改数据后调用 `syncData`。在 **QSTodoListViewController.m** 中，`refresh` 方法也会调用 `syncData`，使 UI 在每次刷新和启动时（**init** 调用 `refresh`）显示最新数据。
 
 因为每当你修改数据时，应用就会调用 `syncData`，所以无论你何时在应用中编辑数据，应用都会假设你已联机。
 
