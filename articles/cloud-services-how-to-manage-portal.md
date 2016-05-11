@@ -101,7 +101,7 @@ Azure 门户不会像当前 Azure 经典门户一样将资源链接在一起。�
 > [AZURE.NOTE]
 如果为云服务配置了详细监视，那么在删除云服务时，Azure 不会从你的存储帐户中删除监视数据。你将需要手动删除这些数据。有关在何处查找度量值表的信息，请参阅[此](/documentation/articles/cloud-services-how-to-monitor)文章。
 
-[Azure 门户]: https://portal.azure.com
+[Azure 门户]: https://portal.azure.cn
 
 ## 后续步骤
 

@@ -148,7 +148,7 @@ Azure 中的 IP 地址默认为动态 IP 地址。你将很可能想使用[保�
 [Expose Your Data on a Custom Domain]: #access-data
 [VIP swaps]:/documentation/articles/cloud-services-how-to-manage-portal/#how-to-swap-deployments-to-promote-a-staged-deployment-to-production
 [Create a CNAME record that associates the subdomain with the storage account]: #create-cname
-[Azure 门户]: https://portal.azure.com
+[Azure 门户]: https://portal.azure.cn
 [vip]: ./media/cloud-services-custom-domain-name-portal/csvip.png
 [csurl]: ./media/cloud-services-custom-domain-name-portal/csurl.png
  
