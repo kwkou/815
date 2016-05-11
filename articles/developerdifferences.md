@@ -7,7 +7,6 @@
 - [关于本文档](#about)
 - [为开发人员提供指导](#dev-guide)
 - [中国服务当前提供的功能](#readyonwacn)
-<!--- [中国服务当前未提供的功能](#notonwacn)-->
 - [在中国服务上创建应用程序时的区别概述](#cndiffoverview)
 - [端点映射](#endpointmap)
 - [中国的数据中心](#cncenter)
