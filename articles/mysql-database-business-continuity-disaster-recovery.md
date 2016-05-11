@@ -18,7 +18,7 @@
 ## 2. 业务连续性方案 ##
 下面介绍主要的几个常见的场景和相应的方案。
 
-<table>
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
 			<b>场景</b>
@@ -83,24 +83,22 @@
 ###异地还原原理：###
 一旦灾难发生，通过自助服务，用户可以通过指定希望还原的时间点，或是PaaS服务恢复方案将会默认指定中断发生数据完好的时间点，MySQL on Azure会尽力而为将实例指定地域进行基于该时间点或是离该时间点最近的可恢复时间点进行还原。MySQL on Azure底层将用户数据存储在Azure存储的块blob中，并采用只读访问跨地域冗余级别，保障本地异地各有三份数据拷贝，且异地只读可访问。当用户执行异地还原操作时，MySQL on Azure会根据用户指定的时间点，在本地存储可用的情况下将数据从本地拷贝到目的区域后进行数据库还原，若本地存储已不可用，MySQL on Azure会在异地使用存储层复制后的离指定时间点最接近的数据对数据库进行还原。
 
-###异地还原的性能指标： ERT<3小时，RPO< 1小时。###
-\*注意：ERT, RTO和RPO是工程指标，仅提供参考，且该指标仅在区域性灾难中出现，且不属于MySQL数据库服务的SLA。
+###异地还原的性能指标： 。###
+ERT<3小时，RPO< 1小时.<br>
+[AZURE.NOTE]**注意：ERT, RTO和RPO是工程指标，仅提供参考，且该指标仅在区域性灾难中出现，且不属于MySQL数据库服务的SLA。**
 
 ###用户自助助服务步骤：###
 如果发生灾难时，管理门户可用，用户可以通过[备份与恢复](/documentation/articles/mysql-database-point-in-time-restore)中异地还原的步骤进行操作。但通常发生区域性灾难时，管理门户中无法正确获取实例的信息，建议用户通过PowerShell对实例进行异地还原操作：
 
-    New-AzureRmResource 
-    	-ResourceType "Microsoft.MySql/servers" 
-    	-ResourceName <ResourceName> 
-    	-ApiVersion 2015-09-01 
-    	-ResourceGroupName <ResourceGroupName> 
-    	-Location <TargetLocation> 
-    	-Properties @{creationSource=@{server='<SourceServerName>';
-    	region='<SourceLocation>';timepoint='<TimeTag>'};version = '<version number>'}
+```
+New-AzureRmResource -ResourceType "Microsoft.MySql/servers" -ResourceName <ResourceName> -ApiVersion 2015-09-01 -ResourceGroupName <ResourceGroupName> -Location <TargetLocation> -Properties @{creationSource=@{server='<SourceServerName>';region='<SourceLocation>';timepoint='<TimeTag>'};version = '<version number>'}
+```
 
-####*注意：####
-1. 其中timepoint是Optional的值，如果不填，则默认是当前的时间点，如果用户填写时间需按照Json中date-time格式, 如2016-05-06T08:00:00，我们统一使用的是UTC时间。
-2. 通过Azure管理门户创建的实例，按地理位置默认分配在”Default-MySQL-ChinaNorth”和”Default-MySQL-ChinaEast” 资源组中。当还原实例创建完毕之后，需要将当前IP加入新实例的防火墙白名单中，并且需要手动将应用程序与数据库的连接字符串更新为新实例的hostname，从而恢复应用层业务。
+>[AZURE.NOTE] **注意:<br>
+1. 其中timepoint是Optional的值，如果不填，则默认是当前的时间点，如果用户填写时间需按照Json中date-time格式, 如2016-05-06T08:00:00，我们统一使用的是UTC时间。<br>
+2. 通过Azure管理门户创建的实例，按地理位置默认分配在”Default-MySQL-ChinaNorth”和”Default-MySQL-ChinaEast” 资源组中。**
+
+当还原实例创建完毕之后，需要将当前IP加入新实例的防火墙白名单中，并且需要手动将应用程序与数据库的连接字符串更新为新实例的hostname，从而恢复应用层业务。
 
 ## 4. 常见业务连续性问题 ##
 1. 是否支持从异地副本中恢复？<br>
