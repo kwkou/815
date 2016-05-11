@@ -87,9 +87,17 @@
 
 ##配置通知中心
 
-[AZURE.INCLUDE [notification-hubs-portal-create-new-hub](../includes/notification-hubs-portal-create-new-hub.md)]
-
-<ol start="7">
+1.  单击“应用程序服务”->“服务总线”->“通知中心”
+![](./media/notification-hubs-windows-phone-get-started/create-notify.png)
+2.单击“快速创建”，填上“名称”，选择“区域”
+![](./media/notification-hubs-windows-phone-get-started/nameandregoin.png)
+3. 完成创建后，在左侧导航窗格中，单击“服务总线”。
+4. 单击你创建的那个通知中心名称
+5. 单击左上角的“通知中心”
+6. 单击正下方的“连接信息”
+7. 如下图所示，可以看到你需要的**connectionstring** 值
+![](./media/notification-hubs-nodejs-how-to-use-notification-hubs/connstr.png)
+<ol start="8">
 <li><p>选择顶部的“配置”选项卡，输入你在前一部分中从 WNS 获取的“客户端密码”和“包 SID”值，然后单击“保存”。<b></b><b></b><b></b><b></b></p>
 </li>
 </ol>
