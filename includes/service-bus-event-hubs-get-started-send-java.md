@@ -14,16 +14,16 @@
 	- 命名空间名称（后者通常是 `{event hub name}-ns`）。
 	- URL 编码的 **SendRule** 键（你在创建事件中心时已经记下了此键）。可以在[此处](http://www.w3schools.com/tags/ref_urlencode.asp)对它进行 URL 编码。
 
-		# servicebus.properties - sample JNDI configuration
-
-		# Register a ConnectionFactory in JNDI using the form:
-		# connectionfactory.[jndi_name] = [ConnectionURL]
-		connectionfactory.SBCF = amqps://SendRule:{Send Rule key}@{namespace name}.servicebus.chinacloudapi.cn/?sync-publish=false
-
-		# Register some queues in JNDI using the form
-		# queue.[jndi_name] = [physical_name]
-		# topic.[jndi_name] = [physical_name]
-		queue.EventHub = {event hub name}
+    		# servicebus.properties - sample JNDI configuration
+    
+    		# Register a ConnectionFactory in JNDI using the form:
+    		# connectionfactory.[jndi_name] = [ConnectionURL]
+    		connectionfactory.SBCF = amqps://SendRule:{Send Rule key}@{namespace name}.servicebus.chinacloudapi.cn/?sync-publish=false
+    
+    		# Register some queues in JNDI using the form
+    		# queue.[jndi_name] = [physical_name]
+    		# topic.[jndi_name] = [physical_name]
+    		queue.EventHub = {event hub name}
 
 5. 创建名为 **Sender** 的新类。添加以下  `import` 语句：
 
