@@ -10,7 +10,7 @@
 <tags
 	ms.service="batch"
 	ms.date="02/16/2016"
-	wacn.date="04/12/2016"/>
+	wacn.date="05/09/2016"/>
 
 # Azure 批处理 ( Batch ) 基础知识
 
@@ -123,7 +123,7 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 [batch_ps]: https://msdn.microsoft.com/library/azure/mt125957.aspx
 [batch_rest]: https://msdn.microsoft.com/library/azure/Dn820158.aspx
 
-[free_account]: https://azure.microsoft.com/free/
+[free_account]: /pricing/1rmb-trial/
 [github_samples]: https://github.com/Azure/azure-batch-samples
 
 [storage_explorer]: http://storageexplorer.com/

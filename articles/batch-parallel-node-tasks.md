@@ -6,11 +6,10 @@
    authors="mmacy"
    manager="timlt"
    editor=""/>
-
-   <tags
-   	ms.service="batch"
+<tags
+	ms.service="batch"
 	ms.date="01/22/2016"
-   	wacn.date="04/13/2016"/>
+	wacn.date="05/09/2016"/>
 
 # 通过并发节点任务最大限度提高 Azure 批处理 ( Batch ) 计算资源的使用量
 

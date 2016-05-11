@@ -10,7 +10,7 @@
 <tags
    ms.service="batch"
    ms.date="01/21/2016"
-   wacn.date="04/12/2016"/>
+   wacn.date="05/09/2016"/>
 
 # Azure 批处理 PowerShell cmdlet 入门
 本文将简要介绍可用于管理 Batch 帐户和处理 Batch 资源（例如池、作业和任务）的 Azure PowerShell cmdlet。你可以通过 Batch cmdlet 执行许多相同的任务，而 Batch cmdlet 可通过 Batch API 和 Azure 门户来执行。本文基于 Azure PowerShell 1.0 或更高版本中的 cmdlet。
@@ -129,7 +129,6 @@ OData 筛选器的替代方法是使用 **Id** 参数。若要查询 ID 为“my
 
 ```
 Get-AzureBatchPool -Id "myPool" -BatchContext $context
-
 ```
 **Id** 参数仅支持全 ID 搜索，而不支持通配符或 OData 样式的筛选器。
 
@@ -141,7 +140,6 @@ Get-AzureBatchPool -Id "myPool" -BatchContext $context
 
 ```
 Get-AzureBatchTask -MaxCount 2500 -BatchContext $context
-
 ```
 
 若要去除上限，请 **MaxCount** 设置为 0 或更小。

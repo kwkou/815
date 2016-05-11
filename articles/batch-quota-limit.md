@@ -10,7 +10,7 @@
 <tags
 	ms.service="batch"
 	ms.date="03/11/2016"
-	wacn.date="04/12/2016"/>
+	wacn.date="05/09/2016"/>
 
 
 
@@ -39,18 +39,6 @@
 应用程序包大小（每个） | 约 195 GB<sup>1</sup>
 
 <sup>1</sup> 最大的块 Blob 大小的 Azure 存储空间限制
-
-## 查看 Batch 配额
-
-可在 [Azure 门户](https://manage.windowsazure.cn)中查看 Batch 帐户配额。
-
-1. 在门户中，单击“Batch 帐户”，然后单击你的 Batch 帐户的名称。
-
-2. 在帐户边栏选项卡中，单击“设置”>“属性”。
-
-	![Batch 帐户配额][account_quotas]
-
-3. 在“属性”边栏选项卡中，检查当前应用于 Batch 帐户的配额。
 
 ## 增加配额
 

@@ -10,7 +10,7 @@
 <tags
 	ms.service="Batch"
 	ms.date="01/22/2016"
-	wacn.date="04/13/2016"/>
+	wacn.date="05/09/2016"/>
 # 有效地查询 Azure 批处理 ( batch ) 服务
 
 在本文中，你将了解如何通过减少查询 Batch 服务（使用 [Batch .NET][api_net] 库）时返回的数据量来提高 Azure Batch 应用程序的性能。
@@ -33,7 +33,6 @@ IPagedEnumerable<CloudTask> allTasks = batchClient.JobOperations.ListTasks("job-
 ODATADetailLevel detailLevel = new ODATADetailLevel();
 detailLevel.FilterClause = "state eq 'completed'";
 detailLevel.SelectClause = "id,commandLine,nodeInfo";
-
 // Supply the ODATADetailLevel to the ListTasks method
 IPagedEnumerable<CloudTask> completedTasks = batchClient.JobOperations.ListTasks("job-001", detailLevel);
 ```
@@ -94,20 +93,16 @@ expand 字符串用于减少获取特定信息所需的 API 调用数。使用 e
 // First we need an ODATADetailLevel instance on which to set the expand, filter, and select
 // clause strings
 ODATADetailLevel detailLevel = new ODATADetailLevel();
-
 // We want to pull only the "test" pools, so we limit the number of items returned by using a
 // FilterClause and specifying that the pool IDs must start with "test"
 detailLevel.FilterClause = "startswith(id, 'test')";
-
 // To further limit the data that crosses the wire, configure the SelectClause to limit the
 // properties that are returned on each CloudPool object to only CloudPool.Id and CloudPool.Statistics
 detailLevel.SelectClause = "id, stats";
-
 // Specify the ExpandClause so that the .NET API pulls the statistics for the CloudPools in a single
 // underlying REST API call. Note that we use the pool's REST API element name "stats" here as opposed
 // to "Statistics" as it appears in the .NET API (CloudPool.Statistics)
 detailLevel.ExpandClause = "stats";
-
 // Now get our collection of pools, minimizing the amount of data that is returned by specifying the
 // detail level that we configured above
 List<CloudPool> testPools = await myBatchClient.PoolOperations.ListPools(detailLevel).ToListAsync();
@@ -179,19 +174,17 @@ filter、select 和 expand 字符串中的属性名称必须反映其 REST API �
 ## 后续步骤
 
 请查看 GitHub 上的 [EfficientListQueries][efficient_query_sample] 示例项目，了解列表查询如何有效地影响应用程序的性能。此 C# 控制台应用程序创建大量的任务并将其添加到作业。然后，它对 [JobOperations.ListTasks][net_list_tasks] 方法进行多次调用，并传递配置了不同属性值的 [ODATADetailLevel][odata] 对象，以改变要返回的数据量。生成的输出如下所示：
-
+```
 		Adding 5000 tasks to job jobEffQuery...
 		5000 tasks added in 00:00:47.3467587, hit ENTER to query tasks...
-
 		4943 tasks retrieved in 00:00:04.3408081 (ExpandClause:  | FilterClause: state eq 'active' | SelectClause: id,state)
 		0 tasks retrieved in 00:00:00.2662920 (ExpandClause:  | FilterClause: state eq 'running' | SelectClause: id,state)
 		59 tasks retrieved in 00:00:00.3337760 (ExpandClause:  | FilterClause: state eq 'completed' | SelectClause: id,state)
 		5000 tasks retrieved in 00:00:04.1429881 (ExpandClause:  | FilterClause:  | SelectClause: id,state)
 		5000 tasks retrieved in 00:00:15.1016127 (ExpandClause:  | FilterClause:  | SelectClause: id,state,environmentSettings)
 		5000 tasks retrieved in 00:00:17.0548145 (ExpandClause: stats | FilterClause:  | SelectClause: )
-
 		Sample complete, hit ENTER to continue...
-
+```
 如所用时间信息中所示，限制返回的属性和项数可以大大缩短查询响应时间。你可以在 GitHub 的 [azure-batch-samples][github_samples] 存储库中查找此项目和其他示例项目。
 
 [api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
