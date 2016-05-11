@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="12/28/2015"
-	wacn.date="02/26/2016"/>
+	wacn.date="05/11/2016"/>
 
 # Azure 云服务和 ASP.NET 入门
 
@@ -32,9 +32,9 @@
 
 应用程序使用[以队列为中心的工作模式](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern)来减轻创建缩略图到后端进程的 CPU 密集型工作。
 
-## 替代体系结构： Web 应用和 Web 作业
+## 替代体系结构：网站和 Web 作业
 
-本教程演示如何在 Azure 云服务中运行前端和后端。一种替代方法是在 [Azure Web 应用](/services/web-sites)中运行前端，并为后端使用 [Web 作业](/documentation/articles/websites-webjobs-resources)功能（目前以预览版提供）。有关如何使用 Web 作业的教程，请参阅 [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)。有关如何选择最适合你方案的服务信息，请参阅 [Azure Web 应用、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm)。
+本教程演示如何在 Azure 云服务中运行前端和后端。一种替代方法是在 [Azure 网站](/services/web-sites)中运行前端，并为后端使用 [Web 作业](/documentation/articles/websites-webjobs-resources)功能（目前以预览版提供）。有关如何使用 Web 作业的教程，请参阅 [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)。有关如何选择最适合你方案的服务信息，请参阅 [Azure 网站、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm)。
 
 ## 学习内容
 
@@ -552,7 +552,7 @@ ContosoAdsContext 类指定 DbSet 集合中使用的 Ad 类，实体框架将存
 		var storageAccount = CloudStorageAccount.Parse
 		    (RoleEnvironment.GetConfigurationSettingValue("StorageConnectionString"));
 
-然后，它获取对*图像* Blob 容器的引用，创建尚不存在的容器，并在新容器上设置访问权限。默认情况下，新容器只允许带存储帐户凭据的客户端访问 Blob。 Web 应用需要 Blob 是公共的，以便它可以使用指向图像 Blob 的 Url 显示图像。
+然后，它获取对*图像* Blob 容器的引用，创建尚不存在的容器，并在新容器上设置访问权限。默认情况下，新容器只允许带存储帐户凭据的客户端访问 Blob。网站需要 Blob 是公共的，以便它可以使用指向图像 Blob 的 Url 显示图像。
 
 		var blobClient = storageAccount.CreateCloudBlobClient();
 		var imagesBlobContainer = blobClient.GetContainerReference("images");
@@ -809,4 +809,4 @@ Contoso 广告应用程序有意保持入门教程的简单性。例如，它没
 * [如何管理云服务](/documentation/articles/cloud-services-how-to-manage)
 * [Azure 存储空间](/documentation/services/storage)
 
-<!---HONumber=Mooncake_0215_2016-->
+<!------HONumber=Mooncake_0215_2016-->

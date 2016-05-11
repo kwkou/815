@@ -9,7 +9,7 @@
 <tags 
  ms.service="cloud-services" 
  ms.date="09/14/2015"
- wacn.date="05/09/2016"/>
+ wacn.date="05/11/2016"/>
  
 # 云服务的大小
 
@@ -23,7 +23,7 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 
 以下注意事项可能会帮助你决定大小：
 
-* D 系列的 VM 实例旨在运行需要更高计算能力和临时磁盘性能的应用程序。D 系列 VM 为临时磁盘提供更快的处理器、更高的内存内核比和固态驱动器 (SSD)。有关详细信息，请参阅 Azure 博客[新的 D 系列虚拟机大小](http://azure.microsoft.com/blog/2014/09/22/new-d-series-virtual-machine-sizes/)上的公告。  
+* D 系列的 VM 实例旨在运行需要更高计算能力和临时磁盘性能的应用程序。D 系列 VM 为临时磁盘提供更快的处理器、更高的内存内核比和固态驱动器 (SSD)。有关详细信息，请参阅 Azure 博客[新的 D 系列虚拟机大小](http://azure.microsoft.com/blog/2014/09/22/new-d-series-virtual-machine-sizes)上的公告。  
 
 *   Dv2 系列是原 D 系列的后续系列，其特点是 CPU 功能更强大。Dv2 系列 CPU 比 D 系列 CPU 快大约 35%。该系列基于最新一代的 2.4 GHz Intel Xeon® E5-2673 v3 (Haswell) 处理器，通过 Intel Turbo Boost Technology 2.0 可以达到 3.2 GHz。Dv2 系列的内存和磁盘配置与 D 系列相同。
 
@@ -82,6 +82,6 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 请确保指定的本地资源大小小于或等于上表中的最大本地资源大小。
 ## 后续步骤
 
-[为 Azure 设置云服务](https://msdn.microsoft.com/zh-cn/library/hh124108)
+[为 Azure 设置云服务](/documentation/articles/cloud-services-model-and-package)
 
 <!---HONumber=79-->

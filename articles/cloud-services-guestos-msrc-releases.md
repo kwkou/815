@@ -10,7 +10,7 @@
 <tags
    ms.service="cloud-services"
    ms.date="12/15/2015"
-   wacn.date="01/15/2016"/>
+   wacn.date="05/11/2016"/>
 
 # Azure 来宾 OS 
 
