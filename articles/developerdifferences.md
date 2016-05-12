@@ -1,5 +1,5 @@
 <properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
-<tags ms.service="" ms.date="" wacn.date="05/11/2016"/>
+<tags ms.service="" ms.date="" wacn.date="05/12/2016"/>
 
 #中国 Azure 应用程序开发人员说明
 
@@ -278,7 +278,7 @@ Visual Studio 将在您的服务配置文件中创建一个自定义存储端点
     		</Bindings>
     	</Site>
     </Sites>
-有关详细信息，请参见<a href="http://msdn.microsoft.com/zh-cn/library/hh180158.aspx">如何配置Azure 端口。
+有关详细信息，请参见<a href="/documentation/articles/cloud-services-enable-communication-role-instances">如何配置Azure 端口。
 
 ##<a name="sqlcon"></a>与 SQL 数据库服务器的连接
 
@@ -303,7 +303,7 @@ Azure Active Directory（“Azure AD”）提供身份和访问功能，可用�
 * 不包含Access Control (访问控制)命名空间。如果您需要集成应用程序和与Azure的身份验证服务同步企业目录，请使用Azure中的Active Directory。在 Azure管理门户中，单击“Active Directory"。
 *  ACS管理门户仅适用于服务总线命名空间。
 *  授权。对于本地应用程序和服务器到服务器案例，目前尚不支持 OAuth 2.0 授权代码授予类型的预览功能。
-除了这些基于设计的差异之外，中国服务中的 Azure AD 设计与全球服务相同。有关世纪互联服务中的 Azure AD 的信息，请参见<a href="https://www.azure.cn/documentation/articles/active-directory-dotnet-how-to-use-access-control/">如何使用 Azure Active Directory 访问控制对 Web 用户进行身份验证</a>。
+除了这些基于设计的差异之外，中国服务中的 Azure AD 设计与全球服务相同。有关世纪互联服务中的 Azure AD 的信息，请参见<a href="/documentation/articles/active-directory-dotnet-how-to-use-access-control/">如何使用 Azure Active Directory 访问控制对 Web 用户进行身份验证</a>。
 
 注意：在公共预览期间创建的访问控制命名空间将不可操作或访问。然而，类似的功能可在Azure管理门户的Active Directory使用。
 
@@ -477,7 +477,7 @@ Webservices\Acs2WindowsPhoneSample<br />  \CustomerInformationService\Web.config
 
 ##<a name="usevm"></a>使用 VM 角色和 CSUpload
 
-使用 VM 角色时，请更改 CSUpload 端点以便使用特定于中国的 URI。例如：
+使用 VM 角色时，请更改 CSUpload 端点以便使用特定于中国的 URI。例如：  
 csuploadSet-Connection"SubscriptionId=<span class="Italic">&lt;subscriptionId&gt;</span>;CertificateThumbprint=<span class="Italic">&lt;certThumbprint&gt;</span>;<br />ServiceManagementEndpoint=https://management.core.chinacloudapi.cn"
  
 
@@ -631,7 +631,7 @@ Azure 诊断使用开发计算机上的本地存储或中国服务存储帐户�
     <tr>
       <td width="130" valign="top"> Github </td>
       <td width="180" valign="top"> 否 </td>
-      <td width="794" valign="top"> 我们仅在此处托管 sazure.cn 的英文内容，不提供本地化内容 </td>
+      <td width="794" valign="top"> 我们仅在此处托管 azure.cn 的英文内容，不提供本地化内容 </td>
     </tr>
   </tbody>
 </table>
