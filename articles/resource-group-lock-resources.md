@@ -16,13 +16,13 @@
 
 作为管理员，在以下情况下，你将需要在订阅、资源组或资源上放置锁定，以防止你组织中的其他用户意外删除关键资源。锁定后，经过授权的用户仍可以读取和修改资源，但不能删除资源。
 
-锁不同于使用基于角色的访问控制向用户分配用来执行特定操作的权限。若要了解如何为用户和角色设置权限，请参阅[Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。与基于角色的访问控制不同，你可以使用管理锁来对所有用户和角色应用限制，并且通常只会在有限的持续时间内应用锁。
+锁不同于使用基于角色的访问控制向用户分配用来执行特定操作的权限。你可以使用管理锁来对所有用户和角色应用限制，并且通常只会在有限的持续时间内应用锁。
 
 在父作用域应用锁时，所有子资源将继承同一个锁。
 
 ## 谁可以在组织中创建或删除锁
 
-若要创建或删除管理锁，你必须有权访问 **Microsoft.Authorization/*** 或 **Microsoft.Authorization/locks/*** 操作。在内置角色中，只有**所有者**和**用户访问管理员**有权执行这些操作。有关分配访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+若要创建或删除管理锁，你必须有权访问 **Microsoft.Authorization/*** 或 **Microsoft.Authorization/locks/*** 操作。在内置角色中，只有**所有者**和**用户访问管理员**有权执行这些操作。
 
 ## 在模板上创建锁
 
@@ -84,6 +84,5 @@ Azure PowerShell 提供了其他用于使用锁的命令，如 **Set-AzureRmReso
 - 有关使用资源锁的详细信息，请参阅 [向下锁定你的 Azure 资源](http://blogs.msdn.com/b/cloud_solution_architect/archive/2015/06/18/lock-down-your-azure-resources.aspx)
 - 若要了解有关使用逻辑方式组织资源的信息，请参阅[使用标记来组织资源](/documentation/articles/resource-group-using-tags)。
 - 若要更改资源位于哪个资源组，请参阅[将资源移到新的资源组](/documentation/articles/resource-group-move-resources)
-- 你可以使用自定义策略对订阅应用限制和约定。有关详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy)。
 
 <!---HONumber=Mooncake_0425_2016-->

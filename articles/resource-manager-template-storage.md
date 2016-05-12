@@ -39,8 +39,8 @@
 | ---- | ---- |
 | type | 枚举<br />必需<br />**Microsoft.Storage/storageAccounts**<br /><br />要创建的资源类型。 |
 | apiVersion | 枚举<br />必需<br />**2015-06-15** or **2015-05-01-preview**<br /><br />用于创建资源的 API 版本。 | 
-| name | 字符串<br />必需<br />3 到 24 个字符，仅限数字和小写字母。<br /><br />要创建的存储帐户的名称。该名称必须在全 Azure 中唯一。请考虑在你的命名约定中使用 [uniqueString](resource-group-template-functions.md#uniquestring) 函数，如下面的示例所示。 |
-| location | 字符串<br />所需<br />支持存储帐户的区域。若要确定有效的区域，请参阅[支持的区域](resource-manager-supported-services.md#supported-regions)。<br /><br />托管存储帐户的区域。 |
+| name | 字符串<br />必需<br />3 到 24 个字符，仅限数字和小写字母。<br /><br />要创建的存储帐户的名称。该名称必须在全 Azure 中唯一。请考虑在你的命名约定中使用 [uniqueString](/documentation/articles/resource-group-template-functions#uniquestring) 函数，如下面的示例所示。 |
+| location | 字符串<br />所需<br />支持存储帐户的区域。若要确定有效的区域，请参阅[支持的区域](/documentation/articles/resource-manager-supported-services#supported-regions)。<br /><br />托管存储帐户的区域。 |
 | properties | 对象<br />必需<br />[properties 对象](#properties)<br /><br />一个对象，用于指定要创建的存储帐户的类型。 |
 
 <a id="properties"></a>
@@ -79,13 +79,13 @@
 
 有许多快速入门模板包含存储帐户。以下模板演示了一些常见方案：
 
-- [创建标准存储帐户](/documentation/templates/101-storage-account-create)
-- [简单部署 Windows VM](/documentation/templates/101-vm-simple-windows)
-- [简单部署 Linux VM](/documentation/templates/101-vm-simple-linux)
-- [创建 CDN 配置文件，以及创建使用存储帐户作为来源的 CDN 终结点](/documentation/templates/201-cdn-with-storage-account)
-- [使用 Powershell DSC 扩展创建包含 9 个 VM 的高可用性 SharePoint 场](/documentation/templates/sharepoint-server-farm-ha)
-- [简单部署已启用 WAD 的 5 节点安全 Service Fabric 群集](/documentation/templates/service-fabric-secure-cluster-5-node-1-nodetype-wad)
-- [从 Windows 映像创建包含 4 个空数据磁盘的虚拟机](/documentation/templates/101-vm-multiple-data-disk)
+- [创建标准存储帐户](https://github.com/Azure/azure-quickstart-templates/tree/master/101-storage-account-create)
+- [简单部署 Windows VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-linux)
+- [简单部署 Linux VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-linux)
+- [创建 CDN 配置文件，以及创建使用存储帐户作为来源的 CDN 终结点](https://github.com/Azure/azure-quickstart-templates/tree/master/201-cdn-with-storage-account)
+- [使用 Powershell DSC 扩展创建包含 9 个 VM 的高可用性 SharePoint 场](https://github.com/Azure/azure-quickstart-templates/tree/master/sharepoint-server-farm-ha)
+- [简单部署已启用 WAD 的 5 节点安全 Service Fabric 群集](https://github.com/Azure/azure-quickstart-templates/tree/master/service-fabric-secure-cluster-5-node-1-nodetype-wad)
+- [从 Windows 映像创建包含 4 个空数据磁盘的虚拟机](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-multiple-data-disk)
 
 
 ## 后续步骤

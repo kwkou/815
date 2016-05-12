@@ -17,14 +17,13 @@
 
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/resource-manager-troubleshoot-deployments-powershell)
-- [Azure CLI](/documentation/articles/resource-manager-troubleshoot-deployments-cli)
 - [REST API](/documentation/articles/resource-manager-troubleshoot-deployments-rest)
 
 如果在将资源部署到 Azure 时发生错误，你需要进行故障排除。REST API 提供操作来让你查找错误并确定可能的解决方法。
 
 可以通过查看审核日志或部署操作来对部署进行故障排除。本主题将演示这两种方法。
 
-如果部署之前先验证模板和基础结构，则可以避免一些错误。有关详细信息，请参阅 [Deploy a resource group with Azure Resource Manager template（使用 Azure Resource Manager 模板部署资源组）](resource-group-template-deploy.md)。
+如果部署之前先验证模板和基础结构，则可以避免一些错误。有关详细信息，请参阅 [Deploy a resource group with Azure Resource Manager template（使用 Azure Resource Manager 模板部署资源组）](/documentation/articles/resource-group-template-deploy)。
 
 ## 使用 REST API 进行故障排除
 
