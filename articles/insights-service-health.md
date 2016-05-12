@@ -18,7 +18,7 @@
 
 ## 按区域查看服务运行状况
 
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
 
 2. 在**主页**中，你会看到名为**服务运行状况**的磁贴
     ![主页](./media/insights-service-health/Insights_Home.png)

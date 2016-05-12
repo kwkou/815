@@ -14,13 +14,13 @@
 
 # 启用监视和诊断
 
-在 [Azure 门户](http://manage.windowsazure.cn)中，可以配置有关资源的丰富、频繁的监视和诊断数据。还可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931932.aspx) 或 [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) 以编程方式配置诊断。
+在 [Azure 门户预览](http://portal.azure.cn)中，可以配置有关资源的丰富、频繁的监视和诊断数据。还可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931932.aspx) 或 [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) 以编程方式配置诊断。
 
 Azure 中的诊断、监视和指标数据会保存到所选择的存储帐户中。这使你可以使用所需的任何工具将数据从存储浏览器读取到 Power BI，再到第三方工具。
 
 ## 创建资源时
 
-在 [Azure 门户](http://manage.windowsazure.cn)中首次创建大多数服务时，它们会允许你启用诊断。
+在 [Azure 门户预览](http://portal.azure.cn)中首次创建大多数服务时，它们会允许你启用诊断。
 
 1. 转到“新建”并选择感兴趣的资源。 
 

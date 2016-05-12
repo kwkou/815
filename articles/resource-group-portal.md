@@ -17,9 +17,9 @@
 
 ## 介绍
 
-本主题演示了如何将 [Azure 门户](https://manage.windowsazure.cn)与 [Azure 资源管理器](/documentation/articles/resource-group-overview)配合使用，以部署和管理 Azure 资源。
+本主题演示了如何将 [Azure 门户预览](https://portal.azure.cn)与 [Azure 资源管理器](/documentation/articles/resource-group-overview)配合使用，以部署和管理 Azure 资源。
 
-目前，并非每种服务都支持门户或资源管理器。对于这些服务，你需要使用[管理门户](https://manage.windowsazure.cn)。
+目前，并非每种服务都支持门户或资源管理器。对于这些服务，你需要使用[经典门户](https://manage.windowsazure.cn)。
 
 也可以通过 Azure PowerShell 和 Azure CLI 来管理资源。有关使用这些接口的详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。
 

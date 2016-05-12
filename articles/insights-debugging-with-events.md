@@ -18,7 +18,7 @@
 
 ## 浏览影响 Azure 订阅的事件
 
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
 2. 单击“浏览”，然后选择“审核日志”。  
     ![浏览中心](./media/insights-debugging-with-events/Insights_Browse.png)
 3. 这时，将打开一个边栏选项卡，其中显示过去 7 天影响你的任何订阅的所有事件。顶部是一个按级别显示数据的图表，下部是日志的完整列表：

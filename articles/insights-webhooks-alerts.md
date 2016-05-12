@@ -20,7 +20,7 @@ webhook URI 必须是有效 HTTP 或 HTTPS 终结点。Azure 警报服务将在�
 
 ## 通过门户配置 webhook
 
-在 [Azure 门户](https://manage.windowsazure.cn/)的“创建/更新警报”屏幕上，可以添加或更新 webhook URI。
+在 [Azure 门户预览](https://portal.azure.cn/)的“创建/更新警报”屏幕上，可以添加或更新 webhook URI。
 
 ![添加警报规则](./media/insights-webhooks-alerts/Alertwebhook.png)
 

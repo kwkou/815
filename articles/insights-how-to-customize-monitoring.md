@@ -22,7 +22,7 @@ documentationCenter=""/>
 
 可以在所选的任何时间段内绘制任何指标的图表。
 
-1. 在 [Azure 门户](https://manage.windowsazure.cn/)中，单击“浏览”，然后单击要监视的资源。
+1. 在 [Azure 门户预览](https://portal.azure.cn/)中，单击“浏览”，然后单击要监视的资源。
 
 2. “监视”部分包含每个 Azure 资源的最重要指标。例如，Web 应用具有“请求和错误”，而虚拟机具有“CPU 百分比”和“磁盘读写”：
     ![“监视”小视窗](./media/insights-how-to-customize-monitoring/Insights_MonitoringChart.png)
