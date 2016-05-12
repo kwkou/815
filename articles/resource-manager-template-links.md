@@ -4,13 +4,13 @@
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
-   manager="wpickett"
+   manager="timlt"
    editor=""/>
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="01/04/2016"
-   wacn.date="02/26/2016"/>
+   ms.date="04/05/2016"
+   wacn.date="05/05/2016"/>
 
 # 资源链接模板架构
 
@@ -38,20 +38,21 @@
 
 下表描述了需要在架构中设置的值。
 
-| Name | 类型 | 必选 | 允许的值 | 说明 |
-| ---- | ---- | -------- | ---------------- | ----------- |
-| type | 枚举 | 是 | **{namespace}/{type}/providers/links** | 要创建的资源类型。{namespace} 和 {type} 值是指源资源的提供程序命名空间和资源类型。 |
-| apiVersion | 枚举 | 是 | **2015-01-01** | 要用于创建该资源的 API 版本。 |  
-| name | 字符串 | 是 | **{resouce}/Microsoft.Resources/{linkname}**<br /><br />最多为 64 个字符<br />它不能包含 <、>、%、&、? 或任何控制字符。 | 一个值，用于指定源资源的名称和链接名称。 |
-| dependsOn | 数组 | 否 | 资源名称或资源唯一标识符的逗号分隔列表。 | 此链接依赖的资源的集合。如果要链接的资源部署在同一模板中，请在此元素中包含这些资源名称以确保它们先部署。 | 
-| properties | 对象 | 是 | （下面显示） | 一个对象，标识要链接到的资源，以及有关该链接的说明。 |  
+| 名称 | 值 |
+| ---- | ---- |
+| type | 枚举<br />必需<br />**{namespace}/{type}/providers/links**<br /><br />要创建的资源类型。{namespace} 和 {type} 值是指源资源的提供程序命名空间和资源类型。 |
+| apiVersion | 枚举<br />必需<br />**2015-01-01**<br /><br />要用于创建该资源的 API 版本。 |  
+| name | 字符串<br />必需<br />**{resouce}/Microsoft.Resources/{linkname}****<br /> 最多为 64 个字符，且不能包含 <、>、%、&、? 或任何控制字符。<br /><br />一个用于指定源资源名称和链接名称的值。|
+| dependsOn | 数组<br />可选<br />资源名称或资源唯一标识符的逗号分隔列表。<br /><br />此链接依赖的资源的集合。如果要链接的资源部署在同一模板中，请在此元素中包含这些资源名称以确保它们先部署。|
+| properties | 对象<br />必需<br />[properties 对象](#properties)<br /><br />一个对象，标识要链接到的资源，以及有关该链接的说明。| 
 
+<a id="properties"></a>
 ### 属性对象
 
-| Name | 类型 | 必选 | 允许的值 | 说明 |
-| ------- | ---- | ---------------- | -------- | ----------- |
-| targetId | 字符串 | 是 | | 要链接到的目标资源的标识符。 |
-| 说明 | 字符串 | 否 | 512 个字符 | 该锁的说明。 |
+| 名称 | 值 |
+| ------- | ---- |
+| targetId | 字符串<br />必需<br />**{resource id}**<br /><br />要链接到的目标资源的标识符。|
+| notes | 字符串<br />可选<br />最多为 512 个字符<br /><br />锁的描述。|
 
 
 ## 如何使用链接资源
@@ -64,7 +65,7 @@
 
 使用以下 Azure PowerShell 命令可查看订阅中的所有链接。你可以提供其他参数来限制结果。
 
-    Get-AzureRmResource -ResourceType Microsoft.Resources/links -isCollection -OutputObjectFormat New
+    Get-AzureRmResource -ResourceType Microsoft.Resources/links -isCollection -ResourceGroupName <YourResourceGroupName>
 
 ## 示例
 
@@ -120,9 +121,20 @@
         "outputs": {}
     }
 
+## 快速入门模板
+
+以下快速入门模板将使用链接部署资源。
+
+- [使用逻辑应用发出队列警报](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app)
+- [使用逻辑应用发出 Slack 警报](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app)
+- [使用现有网关预配 API 应用](https://github.com/Azure/azure-quickstart-templates/tree/master/201-api-app-gateway-existing)
+- [使用新网关预配 API 应用](https://github.com/Azure/azure-quickstart-templates/tree/master/201-api-app-gateway-new)
+- [使用模板创建逻辑应用和 API 应用](https://github.com/Azure/azure-quickstart-templates/tree/master/201-logic-app-api-app-create)
+- [触发警报时发送文本消息的逻辑应用](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app)
+
 
 ## 后续步骤
 
 - 有关模板结构的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0425_2016-->

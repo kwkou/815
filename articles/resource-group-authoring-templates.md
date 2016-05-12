@@ -1,5 +1,5 @@
 <properties
-   pageTitle="创作 Azure 资源管理器模板"
+   pageTitle="创作 Azure 资源管理器模板 | Azure"
    description="使用声明性 JSON 语法创建 Azure 资源管理器模板，以将应用程序部署到 Azure。"
    services="azure-resource-manager"
    documentationCenter="na"
@@ -9,15 +9,13 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="02/17/2016"
-   wacn.date="04/11/2016"/>
+   ms.date="04/04/2016"
+   wacn.date="05/05/2016"/>
 
 # 创作 Azure 资源管理器模板
 
-Azure 应用程序通常需要多种资源的组合（例如数据库服务器、数据库或网站）来达到所需的目标。你无需单独部署和管理每个资源，而可以创建一个 Azure 资源管理器模板，以单个协调操作为应用程序部署和设置所有资源。在模板中，定义应用程序所需的资源，并指定部署参数以针对不同的环境输入值。模板中包含可用于构造部署值的 JSON 和表达式。本主题介绍了该模板的部分。
+在 Azure 资源管理器模板中，可以定义要为解决方案部署的资源，以及指定可让你根据不同的环境输入值的参数和变量。模板中包含可用于构造部署值的 JSON 和表达式。本主题介绍了该模板的部分。
 
-
-您必须将您的模版大小限制为 1 MB 以内，每个参数文件大小限制为 64 KB 以内。已完成对迭代资源定义和变量值和参数值的扩展后，1 MB 的限制将适用于该模板的最终状态。
 
 ## 规划模板
 
@@ -30,13 +28,9 @@ Azure 应用程序通常需要多种资源的组合（例如数据库服务器�
 5. 想要在部署期间传入的值，以及想要在模板中直接定义的值
 6. 是否需要从部署返回值
 
-为了帮助找出哪些资源类型可供部署、各类型支持的区域，以及每个类型可用的 API 版本，请参阅[资源管理器提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services)。本主题提供的示例和链接可帮助你判断需要在模板中提供的值。
+为了帮助找出哪些资源类型可供部署、各类型支持的区域，以及每个类型可用的 API 版本，请参阅[资源管理器提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services)。
 
-如果某个资源必须在另一个资源之后部署，你可以将它标记为依赖于其他资源。下面的 [Resources](#resources) 部分介绍了如何执行此操作。
-
-可以在执行期间提供参数值，以改变模板部署的结果。下面的 [Parameters](#parameters) 部分介绍了如何执行此操作。
-
-可以在 [Outputs](#outputs) 节中返回部署的值。
+您必须将您的模版大小限制为 1 MB 以内，每个参数文件大小限制为 64 KB 以内。已完成对迭代资源定义和变量值和参数值的扩展后，1 MB 的限制将适用于该模板的最终状态。
 
 ## 模板格式
 
@@ -183,14 +177,6 @@ Azure 应用程序通常需要多种资源的组合（例如数据库服务器�
 
 以下示例演示如何定义从两个参数值构造出的变量：
 
-    "parameters": {
-       "username": {
-         "type": "string"
-       },
-       "password": {
-         "type": "secureString"
-       }
-     },
      "variables": {
        "connectionString": "[concat('Name=', parameters('username'), ';Password=', parameters('password'))]"
     }
@@ -293,53 +279,58 @@ resources 节包含要部署的资源数组。在每个资源内，还可以定�
 以下示例演示了 **Microsoft.Web/serverfarms** 资源，以及一个包含子 **Extensions** 资源的 **Microsoft.Web/sites** 资源。请注意，站点标记为依赖于服务器场，因为只有该服务器场存在，才能部署该站点。另请注意，**Extensions** 资源是站点的子级。
 
     "resources": [
-        {
-          "apiVersion": "2014-06-01",
-          "type": "Microsoft.Web/serverfarms",
-          "name": "[parameters('hostingPlanName')]",
-          "location": "[resourceGroup().location]",
-          "properties": {
-              "name": "[parameters('hostingPlanName')]",
-              "sku": "[parameters('hostingPlanSku')]",
-              "workerSize": "0",
-              "numberOfWorkers": 1
-          }
+      {
+        "apiVersion": "2015-08-01",
+        "name": "[parameters('hostingPlanName')]",
+        "type": "Microsoft.Web/serverfarms",
+        "location": "[resourceGroup().location]",
+        "tags": {
+          "displayName": "HostingPlan"
         },
-        {
-          "apiVersion": "2014-06-01",
-          "type": "Microsoft.Web/sites",
-          "name": "[parameters('siteName')]",
-          "location": "[resourceGroup().location]",
-          "tags": {
-              "environment": "test",
-              "team": "ARM"
-          },
-          "dependsOn": [
-              "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
-          ],
-          "properties": {
-              "name": "[parameters('siteName')]",
-              "serverFarm": "[parameters('hostingPlanName')]"
-          },
-          "resources": [
-              {
-                  "apiVersion": "2014-06-01",
-                  "type": "Extensions",
-                  "name": "MSDeploy",
-                  "dependsOn": [
-                      "[resourceId('Microsoft.Web/sites', parameters('siteName'))]"
-                  ],
-                  "properties": {
-                    "packageUri": "https://auxmktplceprod.blob.core.chinacloudapi.cn/packages/StarterSite-modified.zip",
-                    "dbType": "None",
-                    "connectionString": "",
-                    "setParameters": {
-                      "Application Path": "[parameters('siteName')]"
-                    }
-                  }
-              }
-          ]
+        "sku": {
+          "name": "[parameters('skuName')]",
+          "capacity": "[parameters('skuCapacity')]"
+        },
+        "properties": {
+          "name": "[parameters('hostingPlanName')]",
+          "numberOfWorkers": 1
         }
+      },
+      {
+        "apiVersion": "2015-08-01",
+        "type": "Microsoft.Web/sites",
+        "name": "[parameters('siteName')]",
+        "location": "[resourceGroup().location]",
+        "tags": {
+          "environment": "test",
+          "team": "ARM"
+        },
+        "dependsOn": [
+          "[concat('Microsoft.Web/serverFarms/', parameters('hostingPlanName'))]"
+        ],
+        "properties": {
+          "name": "[parameters('siteName')]",
+          "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
+        },
+        "resources": [
+          {
+            "apiVersion": "2015-08-01",
+            "type": "extensions",
+            "name": "MSDeploy",
+            "dependsOn": [
+              "[concat('Microsoft.Web/sites/', parameters('siteName'))]"
+            ],
+            "properties": {
+              "packageUri": "https://auxmktplceprod.blob.core.windows.net/packages/StarterSite-modified.zip",
+              "dbType": "None",
+              "connectionString": "",
+              "setParameters": {
+                "Application Path": "[parameters('siteName')]"
+              }
+            }
+          }
+        ]
+      }
     ]
 
 
@@ -381,91 +372,9 @@ resources 节包含要部署的资源数组。在每个资源内，还可以定�
 
 你可能需要使用不同资源组中的资源。使用跨多个资源组共享的存储帐户或虚拟网络时，这很常见。有关详细信息，请参阅 [resourceId 函数](/documentation/articles/resource-group-template-functions/#resourceid)。
 
-## 完整的模板
-以下模板将部署一个 Web 应用程序，并使用 .zip 文件中的代码设置该应用程序。
-
-    {
-       "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-       "contentVersion": "1.0.0.0",
-       "parameters": {
-         "siteName": {
-           "type": "string"
-         },
-         "hostingPlanName": {
-           "type": "string"
-         },
-         "hostingPlanSku": {
-           "type": "string",
-           "allowedValues": [
-             "Free",
-             "Shared",
-             "Basic",
-             "Standard",
-             "Premium"
-           ],
-           "defaultValue": "Free"
-         }
-       },
-       "resources": [
-         {
-           "apiVersion": "2014-06-01",
-           "type": "Microsoft.Web/serverfarms",
-           "name": "[parameters('hostingPlanName')]",
-           "location": "[resourceGroup().location]",
-           "properties": {
-             "name": "[parameters('hostingPlanName')]",
-             "sku": "[parameters('hostingPlanSku')]",
-             "workerSize": "0",
-             "numberOfWorkers": 1
-           }
-         },
-         {
-           "apiVersion": "2014-06-01",
-           "type": "Microsoft.Web/sites",
-           "name": "[parameters('siteName')]",
-           "location": "[resourceGroup().location]",
-           "tags": {
-             "environment": "test",
-             "team": "ARM"
-           },
-           "dependsOn": [
-             "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
-           ],
-           "properties": {
-             "name": "[parameters('siteName')]",
-             "serverFarm": "[parameters('hostingPlanName')]"
-           },
-           "resources": [
-             {
-               "apiVersion": "2014-06-01",
-               "type": "Extensions",
-               "name": "MSDeploy",
-               "dependsOn": [
-                 "[resourceId('Microsoft.Web/sites', parameters('siteName'))]"
-               ],
-               "properties": {
-                 "packageUri": "https://auxmktplceprod.blob.core.chinacloudapi.cn/packages/StarterSite-modified.zip",
-                 "dbType": "None",
-                 "connectionString": "",
-                 "setParameters": {
-                   "Application Path": "[parameters('siteName')]"
-                 }
-               }
-             }
-           ]
-         }
-       ],
-       "outputs": {
-         "siteUri": {
-           "type": "string",
-           "value": "[concat('http://',reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]"
-         }
-       }
-    }
-
 ## 后续步骤
 - 有关你可以使用的来自模板中的函数的详细信息，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)
 - 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)
 - 若要查看可用架构，请参阅 [Azure 资源管理器架构](https://github.com/Azure/azure-resource-manager-schemas)
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0425_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="02/26/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="04/13/2016"
+	wacn.date="05/05/2016"/>
 
 # 使用策略来管理资源和控制访问
 
@@ -42,7 +42,7 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
 ## 策略定义结构
 
-策略定义是使用 JSON 创建的。它包含定义操作和效果的一个或多个条件/逻辑运算符，告诉你满足条件时产生的效果。
+策略定义是使用 JSON 创建的。它包含定义操作和效果的一个或多个条件/逻辑运算符，告诉你满足条件时产生的效果。该架构在 [http://schema.management.azure.com/schemas/2015-10-01-preview/policyDefinition.json](http://schema.management.azure.com/schemas/2015-10-01-preview/policyDefinition.json) 中发布。
 
 简单而言，策略包含以下各项：
 
@@ -52,13 +52,18 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
     {
       "if" : {
-        <condition> | <logical operator>
+          <condition> | <logical operator>
       },
       "then" : {
-        "effect" : "deny | audit"
+          "effect" : "deny | audit | append"
       }
     }
+    
+## 策略评估
 
+使用 HTTP PUT 创建资源或部署模板时，将评估策略。部署模板时，将在模板中的每个资源创建期间评估策略。
+
+注意：策略不会评估不支持标记、种类和位置的资源类型，例如 Microsoft.Resources/deployments。将来会添加此支持。若要避免向后兼容问题，编写策略时显式指定类型是最佳做法。例如，未指定类型的标记策略将应用到所有类型，因此，添加资源类型以便在将来评估时，如果存在不支持标记的嵌套资源，模板部署可能会失败。
 
 ## 逻辑运算符
 
@@ -84,17 +89,80 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 | In | "in" : [ "&lt;value1&gt;","&lt;value2&gt;" ]|
 | ContainsKey | "containsKey" : "&lt;keyName&gt;" |
 
+### 字段和源
 
-## 字段和源
-
-条件是使用字段和源构成的。字段表示资源请求负载中的属性。源表示请求本身的特征。
+条件是使用字段和源构成的。字段显示用于描述资源状态的资源请求负载属性。源表示请求本身的特征。
 
 支持以下字段和源：
 
-字段：**name**、**kind**、**type**、**location**、**tags**、**tags.***。
+字段：**name**、**kind**、**type**、**location**、**tags**、**tags.*** 和 **property alias**。
 
 源：**action**
 
+### 属性别名 
+属性别名可在策略定义中用于访问资源类型特定属性，例如设置和 SKU。它适用于所有具有属性的 API 版本。可使用以下 REST API 来检索别名（将来会添加 Powershell 支持）：
+
+    GET /subscriptions/{id}/providers?$expand=resourceTypes/aliases&api-version=2015-11-01
+	
+别名的定义如下所示。如你所见，别名在不同的 API 版本中定义路径，无论属性名称是否更改。
+
+	"aliases": [
+	    {
+	      "name": "Microsoft.Storage/storageAccounts/sku.name",
+	      "paths": [
+	        {
+	          "path": "properties.accountType",
+	          "apiVersions": [
+	            "2015-06-15",
+	            "2015-05-01-preview"
+	          ]
+	        },
+	        {
+	          "path": "sku.name",
+	          "apiVersions": [
+	            "2016-01-01"
+	          ]
+	        }
+	      ]
+	    }
+	]
+
+目前，支持的别名为：
+
+| 别名名称 | 说明 |
+| ---------- | ----------- |
+| {resourceType}/sku.name | 支持的资源类型为：Microsoft.Compute/virtualMachines、<br />Microsoft.Storage/storageAccounts、<br />Microsoft.Scheduler/jobcollections、<br />Microsoft.DocumentDB/databaseAccounts、<br />Microsoft.Cache/Redis、<br />Microsoft..CDN/profiles |
+| {resourceType}/sku.family | 支持的资源类型为 Microsoft.Cache/Redis |
+| {resourceType}/sku.capacity | 支持的资源类型为 Microsoft.Cache/Redis |
+| Microsoft.Compute/virtualMachines/imagePublisher | |
+| Microsoft.Compute/virtualMachines/imageOffer | |
+| Microsoft.Compute/virtualMachines/imageSku | |
+| Microsoft.Compute/virtualMachines/imageVersion | |
+| Microsoft.Cache/Redis/enableNonSslPort | |
+| Microsoft.Cache/Redis/shardCount | |
+
+
+若要获取有关操作的详细信息，请参阅 [RBAC - 内置角色](active-directory/role-based-access-built-in-roles.md)。目前，策略仅适用于 PUT 请求。
+
+## 效果
+策略支持三种类型的影响 -**deny**、**audit** 和 **append**。
+
+- Deny 将在审核日志中生成一个事件，并使请求失败
+- Audit 将在审核日志中生成一个事件，但不会使请求失败
+- Append 会将定义的字段集添加到请求 
+
+对于 **append**，必须提供如下所示的详细信息：
+
+    ....
+    "effect": "append",
+    "details": [
+      {
+        "field": "field name",
+        "value": "value of the field"
+      }
+    ]
+
+值可以是字符串或 JSON 格式对象。
 
 ## 策略定义示例
 
@@ -116,6 +184,51 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
       }
     }
 
+如果不存在任何标记，以下策略将附加使用预定义值的 costCenter 标记。
+
+	{
+	  "if": {
+	    "field": "tags",
+	    "exists": "false"
+	  },
+	  "then": {
+	    "effect": "append",
+	    "details": [
+	      {
+	        "field": "tags",
+	        "value": {"costCenter":"myDepartment" }
+	      }
+	    ]
+	  }
+	}
+	
+如果存在其他标记，以下策略将附加使用预定义值的 costCenter 标记。
+
+	{
+	  "if": {
+	    "allOf": [
+	      {
+	        "field": "tags",
+	        "exists": "true"
+	      },
+	      {
+	        "field": "tags.costCenter",
+	        "exists": "false"
+	      }
+	    ]
+	
+	  },
+	  "then": {
+	    "effect": "append",
+	    "details": [
+	      {
+	        "field": "tags.costCenter",
+	        "value": "myDepartment"
+	      }
+	    ]
+	  }
+	}
+
 
 ### 地区法规遵循：确保资源位置
 
@@ -135,26 +248,26 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
 ### 服务策展：选择服务目录
 
-以下示例演示如何使用源。它显示只允许对 Microsoft.Resources/、Microsoft.Compute/*、Microsoft.Storage/*、Microsoft.Network/ 类型的服务执行的操作。其他任何请求将被拒绝。
+以下示例演示如何使用源。它显示只允许对 Microsoft.Resources/\*、Microsoft.Compute/\*、Microsoft.Storage/\*、Microsoft.Network/\* 类型的服务执行的操作。其他任何请求将被拒绝。
 
     {
       "if" : {
         "not" : {
           "anyOf" : [
             {
-              "source" : "action",
+              "field" : "type",
               "like" : "Microsoft.Resources/*"
             },
             {
-              "source" : "action",
+              "field" : "type",
               "like" : "Microsoft.Compute/*"
             },
             {
-              "source" : "action",
+              "field" : "type",
               "like" : "Microsoft.Storage/*"
             },
             {
-              "source" : "action",
+              "field" : "type",
               "like" : "Microsoft.Network/*"
             }
           ]
@@ -164,6 +277,35 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
         "effect" : "deny"
       }
     }
+
+### 使用批准的 SKU
+
+以下示例演示如何使用属性别名来限制 SKU。在以下示例中，只有 Standard\_LRS 和 Standard\_GRS 已被批准用于存储帐户。
+
+    {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Storage/storageAccounts"
+          },
+          {
+            "not": {
+              "allof": [
+                {
+                  "field": "Microsoft.Storage/storageAccounts/sku.name",
+                  "in": ["Standard_LRS", "Standard_GRS"]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+    
 
 ### 命名约定
 
@@ -239,8 +381,6 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
           }
         }
       },
-      "id":"/subscriptions/########-####-####-####-############/providers/Microsoft.Authorization/policyDefinitions/testdefinition",
-      "type":"Microsoft.Authorization/policyDefinitions",
       "name":"testdefinition"
     }
 
@@ -251,18 +391,19 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
 可以使用 New-AzureRmPolicyDefinition cmdlet 创建新的策略定义，如下所示。以下示例将创建一个策略，只允许欧洲北部和欧洲西部的资源。
 
-    $policy = New-AzureRmPolicyDefinition -Name regionPolicyDefinition -Description "Policy to allow resource creation onlyin certain regions" -Policy '{	"if" : {
-    	    			    "not" : {
-    	      			    	"field" : "location",
-    	      			    		"in" : ["northeurope" , "westeurope"]
-    	    			    	}
-    	    		          },
-    	      		    		"then" : {
-    	    			    		"effect" : "deny"
-    	      			    		}
-    	    		    	}'    		
+    $policy = New-AzureRmPolicyDefinition -Name regionPolicyDefinition -Description "Policy to allow resource creation only in certain regions" -Policy '{	
+      "if" : {
+        "not" : {
+          "field" : "location",
+          "in" : ["northeurope" , "westeurope"]
+    	}
+      },
+      "then" : {
+        "effect" : "deny"
+      }
+    }'    		
 
-执行输出将存储在 $policy 对象中，以便稍后可在分配策略期间使用。对于策略参数，也可以提供包含策略的 .json 文件的路径，而不是指定内联策略，如下所示。
+执行输出将存储在 $policy 对象中，稍后可在分配策略期间使用。对于策略参数，也可以提供包含策略的 .json 文件的路径，而不是指定内联策略，如下所示。
 
     New-AzureRmPolicyDefinition -Name regionPolicyDefinition -Description "Policy to allow resource creation only in certain 	regions" -Policy "path-to-policy-json-on-disk"
 
@@ -277,7 +418,7 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
     PUT https://management.azure.com /subscriptions/{subscription-id}/providers/Microsoft.authorization/policyassignments/{policyAssignmentName}?api-version={api-version}
 
-{policy-assignment} 是策略分配的名称。对于 api-version，请使用 *2015-10-01-preview*。
+{policy-assignment} 是策略分配的名称。对于 api-version，请使用 2015-10-01-preview。
 
 使用类似于下面的请求正文：
 
@@ -287,8 +428,6 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
         "policyDefinitionId":"/subscriptions/########/providers/Microsoft.Authorization/policyDefinitions/testdefinition",
         "scope":"/subscriptions/########-####-####-####-############"
       },
-      "id":"/subscriptions/########-####-####-####-############/providers/Microsoft.Authorization/policyAssignments/VMPolicyAssignment",
-      "type":"Microsoft.Authorization/policyAssignments",
       "name":"VMPolicyAssignment"
     }
 
@@ -316,11 +455,12 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
 若要查看拒绝效果相关的所有事件，可以使用以下命令。
 
-    Get-AzureRmLog | where {$_.subStatus -eq "Forbidden"}     
+    Get-AzureRmLog | where {$_.OperationName -eq "Microsoft.Authorization/policies/deny/action"} 
 
 若要查看审核效果相关的所有事件，可以使用以下命令。
 
     Get-AzureRmLog | where {$_.OperationName -eq "Microsoft.Authorization/policies/audit/action"} 
     
 
-<!---HONumber=Mooncake_0104_2016-->
+
+<!---HONumber=Mooncake_0425_2016-->
