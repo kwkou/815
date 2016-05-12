@@ -4,18 +4,18 @@
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn"/>
 <tags
    ms.service="application-gateway"
-   ms.date="02/02/2016"
-   wacn.date="03/18/2016"/>
+   ms.date="04/05/2016"
+   wacn.date="05/12/2016"/>
 
 # 使用经典部署模型配置应用程序网关以进行 SSL 卸载
 
 > [AZURE.SELECTOR]
-- [Azure 经典 PowerShell](/documentation/articles/application-gateway-ssl)
-- [Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-ssl-arm)
+-[Azure 经典 PowerShell](/documentation/articles/application-gateway-ssl)
+-[Azure 资源管理器 PowerShell](/documentation/articles/application-gateway-ssl-arm)
 
 可将 Azure 应用程序网关配置为在网关上终止安全套接字层 (SSL) 会话，以避免 Web 场中出现开销较高的 SSL 解密任务。SSL 卸载还简化了 Web 应用程序的前端服务器设置与管理。
 
@@ -52,7 +52,7 @@
 
 若要验证是否已创建网关，可以使用 **Get-AzureApplicationGateway** cmdlet。
 
-在此示例中， *Description*、 *InstanceCount* 和 *GatewaySize* 是可选参数。 *InstanceCount* 的默认值为 2，最大值为 10。 *GatewaySize* 的默认值为 Medium。其他可用值为 Small 和 Large。 *VirtualIPs* 和 *DnsName* 显示为空白，因为网关尚未启动。这些值将在网关进入运行状态后立即创建。
+在此示例中，Description、InstanceCount 和 GatewaySize 是可选参数。InstanceCount 的默认值为 2，最大值为 10。GatewaySize 的默认值为 Medium。其他可用值为 Small 和 Large。VirtualIPs 和 DnsName 显示为空白，因为网关尚未启动。这些值将在网关进入运行状态后立即创建。
 
 此示例在第一行显示 cmdlet，接着显示输出。
 
@@ -74,7 +74,7 @@
 
 ## 上载 SSL 证书
 
-使用 **Add-AzureApplicationGatewaySslCertificate** 将 *pfx* 格式的服务器证书上载到应用程序网关。证书名称是用户选择的名称，在应用程序网关中必须唯一。在应用程序网关上执行所有证书管理操作时，将按此名称引用此证书。
+使用 **Add-AzureApplicationGatewaySslCertificate** 将 pfx 格式的服务器证书上载到应用程序网关。证书名称是用户选择的名称，在应用程序网关中必须唯一。在应用程序网关上执行所有证书管理操作时，将按此名称引用此证书。
 
 此示例在第一行显示 cmdlet，接着显示输出。将示例中的值替换为你自己的值。
 
@@ -100,6 +100,7 @@
 	ThumbprintAlgo : sha1RSA
 	State..........: Provisioned
 
+>[AZURE.NOTE] 证书密码的长度必须是 4 到 12 个字符，可包含字母或数字。不接受特殊字符。
 
 ## 配置网关
 
@@ -111,13 +112,13 @@
 - **后端服务器池设置：**每个池都有一些设置，例如端口、协议和基于 Cookie 的关联性。这些设置绑定到池，并会应用到池中的所有服务器。
 - **前端端口：**此端口是应用程序网关上打开的公共端口。客户流量将抵达此端口，然后重定向到后端服务器之一。
 - **侦听器：**侦听器具有前端端口、协议（Http 或 Https，区分大小写）和 SSL 证书名称（如果要配置 SSL 卸载）。
-- **规则：**规则将会绑定侦听器和后端服务器池，并定义当流量抵达特定侦听器时应定向到的后端服务器池。目前仅支持*基本*规则。*基本*规则是一种轮循负载分发模式。
+- **规则：**规则将会绑定侦听器和后端服务器池，并定义当流量抵达特定侦听器时应定向到的后端服务器池。目前仅支持基本规则。基本规则是一种轮循负载分发模式。
 
 **其他配置说明**
 
-对于 SSL 证书配置，**HttpListener** 中的协议应更改为 *Https*（区分大小写）。需要将 **SslCert** 元素添加到 **HttpListener**，后者的值设置为上述上载 SSL 证书部分中使用的名称。前端端口应更新为 443。
+对于 SSL 证书配置，**HttpListener** 中的协议应更改为 Https（区分大小写）。需要将 **SslCert** 元素添加到 **HttpListener**，后者的值设置为上述上载 SSL 证书部分中使用的名称。前端端口应更新为 443。
 
-**启用基于 Cookie 的相关性**：可以配置应用程序网关，以确保来自客户端会话的请求始终定向到 Web 场中的同一 VM。这是通过注入允许网关适当定向流量的会话 Cookie 来实现的。若要启用基于 Cookie 的相关性，请在 **BackendHttpSettings** 元素中将 **CookieBasedAffinity** 设置为 *Enabled*。
+**启用基于 Cookie 的相关性**：可以配置应用程序网关，以确保来自客户端会话的请求始终定向到 Web 场中的同一 VM。这是通过注入允许网关适当定向流量的会话 Cookie 来实现的。若要启用基于 Cookie 的相关性，请在 **BackendHttpSettings** 元素中将 **CookieBasedAffinity** 设置为 Enabled。
 
 
 
@@ -205,7 +206,7 @@
 
 ## 验证网关状态
 
-使用 **Get-AzureApplicationGateway** cmdlet 检查网关的状态。如果前一步骤中的 **Start-AzureApplicationGateway** 成功，则 *State* 应为 Running，*VirtualIPs* 和 *DnsName* 应包含有效的条目。
+使用 **Get-AzureApplicationGateway** cmdlet 检查网关的状态。如果前一步骤中的 **Start-AzureApplicationGateway** 成功，则 State 应为 Running，VirtualIPs 和 DnsName 应包含有效的条目。
 
 此示例演示了一个正常运行并已准备好接收流量的应用程序网关。
 
@@ -230,4 +231,4 @@
 <!--- [Azure 负载平衡器](/documentation/services/load-balancer)-->
 - [Azure 流量管理器](/documentation/services/traffic-manager)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0425_2016-->
