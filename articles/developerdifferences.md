@@ -143,6 +143,7 @@ Azure - 常规 | *.windows.net | *.chinacloudapi.cn
 Azure - 计算 | *.cloudapp.net | *.chinacloudapp.cn
 Azure - 存储 | *.blob.core.windows.net <br /> *.queue.core.windows.net <br /> *.table.core.windows.net | *.blob.core.chinacloudapi.cn <br /> *.queue.core.chinacloudapi.cn <br /> *.table.core.chinacloudapi.cn
 Azure - 服务管理 | https://management.core.windows.net | https://management.core.chinacloudapi.cn
+Azure - 资源管理器(ARM) | https://management.azure.com | https://management.chinacloudapi.cn
 SQL 数据库 | *.database.windows.net | *.database.chinacloudapi.cn
 Azure - 管理门户 | http://manage.windowsazure.com | http://manage.windowsazure.cn
 SQL Azure数据库管理API | https://management.database.windows.net | https://management.database.chinacloudapi.cn
@@ -255,16 +256,18 @@ Visual Studio 将在您的服务配置文件中创建一个自定义存储端点
 以下代码通过使用特定于中国服务的自定义 URI 以编程方式显示与存储帐户的连接。
 
     CloudStorageAccount Account = new CloudStorageAccount( 
-    new StorageCredentialsAccountAndKey(ACCOUNTNAME, ACCOUNTKEY), 
+    new StorageCredentials(ACCOUNTNAME, ACCOUNTKEY), 
     new Uri("http://ACCOUNTNAME.blob.core.chinacloudapi.cn/"), 
     new Uri("http://ACCOUNTNAME.queue.core.chinacloudapi.cn/"), 
-    new Uri("http://ACCOUNTNAME.table.core.chinacloudapi.cn/")
+    new Uri("http://ACCOUNTNAME.table.core.chinacloudapi.cn/"),
+	new Uri("http://ACCOUNTNAME.file.core.chinacloudapi.cn/")
+	);
     CloudBlobClient BlobClient = Account.CreateCloudBlobClient();
-    )
+    
     
 ##<a name="waport"></a>Azure 计算中的端口绑定
 
-端口绑定还使用以 *.chinacloudapp.cn* 结尾的 DNS 名称。您必须更改这些名称以指向 *.chinacloudapp.cn*。以下显示了包括端口说明的部分服务定义文件。
+端口绑定还使用以 *.cloudapp.net* 结尾的 DNS 名称。您必须更改这些名称以指向 *.chinacloudapp.cn*。以下显示了包括端口说明的部分服务定义文件。
 
     <Sites>
     	<Site name="MySite" physcalDirectory="..\WebSite1">
@@ -282,13 +285,13 @@ Visual Studio 将在您的服务配置文件中创建一个自定义存储端点
 
 ##<a name="sqlcon"></a>与 SQL 数据库服务器的连接
 
-SQL 数据库服务器名称将从 *.database.chinacloudapi.cn* 更改为 *.devdatabase.chinacloudapi.cn*。任何要连接到数据库的客户端应用程序或工具都必须对其连接字符串使用该新名称。对于未在中国服务中运行的应用程序，对 SQL 数据库服务器的引用可以是服务定义文件中的 DataConnectionString 值或其他 .NET 配置文件中的值。例如：
+SQL 数据库服务器名称为 *.database.chinacloudapi.cn*。任何要连接到数据库的客户端应用程序或工具都必须对其连接字符串使用该名称。对于未在中国服务中运行的应用程序，对 SQL 数据库服务器的引用可以是服务定义文件中的 DataConnectionString 值或其他 .NET 配置文件中的值。例如：
 
     <configuration>
     <connectionStrings>
-    <add name="SQLAzure" connectionString="Server=tcp:yourserver.devdatabase.chinacloudapi.cn;
+    <add name="SQLAzure" connectionString="Server=tcp:yourserver.database.chinacloudapi.cn,1433;
     Database=Test;User ID=login@server;Password=yourPassword;
-    Trusted_Connection=False;Encrypt=True;"/>
+    Trusted_Connection=False;Encrypt=True;Connection Timeout=30;"/>
     </connectionStrings>
     </configuration>
 
@@ -473,13 +476,14 @@ Webservices\Acs2WindowsPhoneSample<br />  \CustomerInformationService\Web.config
 例如，如果将 www.contoso.com 重定向到在 contoso.chinacloudapp.cn 运行的 Web 角色，现在必须将其重定向到 contoso.chinacloudapp.cn。中国服务不包括允许自定义域名注册或转发的功能。
  
 
-#<a name="usecnvm"></a>对中国服务使用 VM 角色
+<!---#<a name="usecnvm"></a>对中国服务使用 VM 角色
 
 ##<a name="usevm"></a>使用 VM 角色和 CSUpload
 
 使用 VM 角色时，请更改 CSUpload 端点以便使用特定于中国的 URI。例如：  
-csuploadSet-Connection"SubscriptionId=<span class="Italic">&lt;subscriptionId&gt;</span>;CertificateThumbprint=<span class="Italic">&lt;certThumbprint&gt;</span>;<br />ServiceManagementEndpoint=https://management.core.chinacloudapi.cn"
- 
+
+	csupload Set-Connection"SubscriptionId=<span class="Italic">&lt;subscriptionId&gt;</span>;CertificateThumbprint=<span class="Italic">&lt;certThumbprint&gt;</span>;<br />ServiceManagementEndpoint=https://management.core.chinacloudapi.cn"
+---> 
 
 #<a name="codetool"></a>修改代码示例和工具
 
