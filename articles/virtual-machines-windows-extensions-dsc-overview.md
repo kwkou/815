@@ -122,7 +122,7 @@ C:\\WindowsAzure\\Logs\\Plugins\\Microsoft.Powershell.DSC[Version Number]
 
 ## 后续步骤 ##
 
-有关有关 PowerShell DSC 的详细信息，请[访问 PowerShell 文档中心](https://msdn.microsoft.com/powershell/dsc/overview)。
+有关有关 PowerShell DSC 的详细信息，请[访问 PowerShell 文档中心](https://msdn.microsoft.com/zh-cn/powershell/dsc/overview)。
 
 若要查找可以使用 PowerShell DSC 管理的其他功能，请[浏览 PowerShell 库](https://www.powershellgallery.com/packages?q=DscResource&x=0&y=0)以获取更多 DSC 资源。
 

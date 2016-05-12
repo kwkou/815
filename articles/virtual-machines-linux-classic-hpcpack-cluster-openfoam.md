@@ -109,7 +109,7 @@ Microsoft HPC Pack 可提供在 Azure 虚拟机群集上运行各种大型 HPC �
 
 你需要先运行多个 **clusrun** 命令，在所有 Linux 节点上安装 Intel MPI 库和 OpenFOAM。使用以前配置的头节点共享在 Linux 节点中共享安装文件。
 
->[AZURE.IMPORTANT]这些安装和编译步骤属于示例，需要对 Linux 系统管理有一定的了解，以确保正确安装相关内容（尤其是编译器和库）。你可能需要根据 Intel MPI 和 OpenFOAM 的版本修改某些环境变量或其他设置。有关详细信息，请参阅 [Intel MPI Library for Linux Installation Guide（Intel MPI Library for Linux 安装指南）](http://scc.ustc.edu.cn/zlsc/tc4600/intel/impi/INSTALL.html)和 [OpenFOAM Source Pack Installation（OpenFOAM Source Pack 安装）](http://www.openfoam.org/download/source.php)。
+>[AZURE.IMPORTANT]这些安装和编译步骤属于示例，需要对 Linux 系统管理有一定的了解，以确保正确安装相关内容（尤其是编译器和库）。你可能需要根据 Intel MPI 和 OpenFOAM 的版本修改某些环境变量或其他设置。有关详细信息，请参阅 [Intel MPI Library for Linux Installation Guide（Intel MPI Library for Linux 安装指南）](http://scc.ustc.edu.cn/zlsc/tc4600/intel/2015.1.133/impi/INSTALL.html)和 [OpenFOAM Source Pack Installation（OpenFOAM Source Pack 安装）](http://www.openfoam.org/download/source.php)。
 
 
 ### 安装 Intel MPI
@@ -124,7 +124,7 @@ Microsoft HPC Pack 可提供在 Azure 虚拟机群集上运行各种大型 HPC �
 	
 	    clusrun /nodegroup:LinuxNodes tar -xzf /opt/intel/l_mpi_p_5.0.3.048.tgz -C /opt/intel/
 
-2.  若要以无提示方式安装 Intel MPI Library，请使用 silent.cfg 文件。你可以在本文末尾的示例文件中找到一个示例。将此文件放在共享文件夹 /openfoam 中。有关 silent.cfg 文件的详细信息，请参阅 [Intel MPI Library for Linux Installation Guide - Silent Installation（Intel MPI Library for Linux 安装指南 - 无提示安装）](http://scc.ustc.edu.cn/zlsc/tc4600/intel/impi/INSTALL.html#silentinstall)。
+2.  若要以无提示方式安装 Intel MPI Library，请使用 silent.cfg 文件。你可以在本文末尾的示例文件中找到一个示例。将此文件放在共享文件夹 /openfoam 中。有关 silent.cfg 文件的详细信息，请参阅 [Intel MPI Library for Linux Installation Guide - Silent Installation（Intel MPI Library for Linux 安装指南 - 无提示安装）](http://scc.ustc.edu.cn/zlsc/tc4600/intel/2015.1.133/impi/INSTALL.html#silentinstall)。
 
     >[AZURE.TIP]请确保将你的 silent.cfg 文件另存为带有 Linux 换行（仅 LF，而不是 CR LF）的文本文件。这可确保其在 Linux 节点上正常运行。
 

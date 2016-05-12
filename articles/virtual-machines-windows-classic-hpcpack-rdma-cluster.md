@@ -29,11 +29,11 @@ Microsoft HPC Pack 是一个免费提供的工具，可在 Azure 中创建基于
 
 ## 先决条件
 
-* **Azure 订阅** - 如果你没有 Azure 订阅，只需要花费几分钟就能创建一个[免费帐户](https://azure.microsoft.com/free/)。
+* **Azure 订阅** - 如果你没有 Azure 订阅，只需要花费几分钟就能创建一个[1元帐户](/pricing/1rmb-trial/)。
 
 * **内核配额** - 你可能需要增加内核配额才能部署 VM 的群集。例如，若要使用 HPC Pack 部署 8 个实例，则至少需要 128 个核心。若要增加配额，可免费建立[联机客户支持请求](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。
 
-## 方案 1.部署计算密集型辅助角色实例 (PaaS)
+##<a name="scenario-1.-deploy-compute-intensive-worker-role-instances-(PaaS)"></a> 方案 1.部署计算密集型辅助角色实例 (PaaS)
 
 从现有的 HPC Pack 群集，添加运行在云服务 (PaaS) 中的 Azure 辅助角色实例（Azure 节点）形式的额外计算资源。此功能（也称为从 HPC Pack“迸发到 Azure”）支持一定范围的辅助角色实例大小。
 

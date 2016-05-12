@@ -188,7 +188,7 @@ Microsoft HPC Pack 可提供在 Azure 虚拟机群集上运行各种大型 HPC �
 	host CENTOS66LN-01 ++cpus 4
 	host CENTOS66LN-03 ++cpus 2
 
-## 提交 NAMD 作业
+##<a name="submit-a-namd-job"></a> 提交 NAMD 作业
 
 现在你可以在 HPC 群集管理器中提交 NAMD 作业。
 
