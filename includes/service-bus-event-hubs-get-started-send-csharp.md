@@ -56,9 +56,13 @@
         Console.WriteLine("Press Enter to start now");
         Console.ReadLine();
         SendingRandomMessages().Wait();
+        
+8. 点击**发送规则**的复制按钮并将连接字符串复制到记事本中。将";EntityPath=eventhub"（包括分号）从连接字符串后缀移除。这是一步是必须要做的，因为"EntitiyPath"的后缀代表的是一个实体级的连接字符串，但是我们使用`EventProcessorHost`类来访问事件中心时是命名空间级别。在处理**接收规则**连接字符串的时候也需要进行同样的操作。
 
+    ![][9]
 
 <!-- Images -->
 [7]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
 [8]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp2.png
+[9]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp3.png
 <!--HONumber=41-->
