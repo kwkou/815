@@ -1,30 +1,34 @@
 <properties
 	pageTitle="将 VM 的 D 驱动器设为数据磁盘 | Azure"
-	description="说明如何更改使用经典部署模型创建的 Windows VM 的驱动器号，以便可以使用 D: 驱动器作为数据驱动器。"
+	description="介绍如何更改 Windows VM 的盘符，以使用 D: 驱动器作为数据驱动器。"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="cynthn"
 	manager="timlt"
 	editor=""
-	tags="azure-service-management"/>
+	tags="azure-resource-manager,azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="11/03/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="03/10/2016"
+	wacn.date="05/12/2016"/>
 
 # 使用 D 盘作为 Windows VM 上的数据驱动器 
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+如果应用程序需要使用 D 盘存储数据，请遵循这些说明操作以使用其他驱动器号作为临时磁盘。切勿使用临时磁盘来存储需要保存的数据。
 
+如果调整虚拟机大小或**停止（解除分配）**虚拟机，这可能会触发将虚拟机置于新的虚拟机监控程序上。计划中或计划外的维护事件也可能触发此放置操作。在此方案中，临时磁盘将重新分配给第一个可用的盘符。如果应用程序专门需要 D: 驱动器，则你需要遵循这些步骤暂时移动 pagefile.sys，连接新的数据磁盘并为其分配盘符 D，然后将 pagefile.sys 移回到临时驱动器。完成后，如果 VM 移到不同的虚拟机监控程序，Azure 将不收回 D:。
 
-如果需要使用 D 盘存储数据，请遵循这些说明操作以使用其他驱动器号作为临时磁盘。切勿使用临时磁盘来存储需要保存的数据。
+有关 Azure 如何使用临时磁盘的详细信息，请参阅 [Understanding the temporary drive on Azure Virtual Machines（了解 Azure 虚拟机上的临时驱动器）](https://blogs.msdn.microsoft.com/mast/2013/12/06/understanding-the-temporary-drive-on-windows-azure-virtual-machines/)
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 ## 附加数据磁盘
 
-首先，需要将数据磁盘附加到虚拟机。若要附加新磁盘，请参阅[如何将数据磁盘附加到 Windows 虚拟机][Attach]。
+首先，需要将数据磁盘附加到虚拟机。
 
-如果要使用现有数据磁盘，请确保将 VHD 也上载到存储帐户。有关说明，请参阅[创建 Windows Server VHD 并将其上载到 Azure][VHD] 中的步骤 3 和 4。
+- 若要使用门户，请参阅 [How to attach a data disk in the Azure portal（如何在 Azure 门户中附加数据磁盘）](/documentation/articles/virtual-machines-windows-attach-disk-portal)
+- 若要使用经典门户，请参阅 [How to attach a data disk to a Windows virtual machine（如何将数据磁盘附加到 Windows 虚拟机）](/documentation/articles/virtual-machines-windows-classic-attach-disk)。 
 
 
 ## 将 pagefile.sys 暂时移到 C 驱动器
@@ -70,10 +74,10 @@
 
 8. 在“驱动器号”下，选择驱动器 **E**，然后单击“确定”。
 
-> [AZURE.NOTE]如果你的 VM 有其他磁盘或驱动器，可使用相同的方法来重新分配其他磁盘和驱动器的驱动器号。所需的磁盘配置为：
-> - C: OS 磁盘  
-> - D: 数据磁盘  
-> - E: 临时磁盘
+> [AZURE.NOTE] 如果你的 VM 有其他磁盘或驱动器，可使用相同的方法来重新分配其他磁盘和驱动器的驱动器号。你希望磁盘配置为：
+>- C：OS 磁盘  
+>- D：数据磁盘  
+>- E：临时磁盘
 
 
 
@@ -100,18 +104,10 @@
 
 
 
-## 其他资源
-[如何登录到运行 Windows Server 的虚拟机][Logon]
+## 后续步骤
+- 你可以通过[附加更多数据磁盘](/documentation/articles/virtual-machines-windows-attach-disk-portal)来增加虚拟机可用的存储空间。
 
-[如何从 Windows 虚拟机分离数据磁盘][Detach]
 
-[关于 Azure 存储帐户][Storage]
 
-<!--Link references-->
-[Attach]: /documentation/articles/virtual-machines-windows-classic-attach-disk
-[VHD]: /documentation/articles/virtual-machines-create-upload-vhd-windows-server
-[Logon]: /documentation/articles/virtual-machines-windows-classic-connect-logon
-[Detach]: /documentation/articles/virtual-machines-windows-classic-detach-disk
-[Storage]: /documentation/articles/storage-create-storage-account/
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0503_2016-->
