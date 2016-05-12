@@ -102,7 +102,7 @@
 	using System.Threading.Tasks;
 	```
 
-	然后，按如下所示在 `Program` 类中修改 `Main` 方法，并替换事件中心名称和连接字符串，以及存储帐户和你在前面部分中复制的密钥：
+	然后，按如下所示在 `Program` 类中修改 `Main` 方法，并替换事件中心名称和之前在记事本中修改过的连接字符串，以及存储帐户和你在前面部分中复制的密钥：
 
      ```
 	static void Main(string[] args)
