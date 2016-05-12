@@ -196,12 +196,12 @@ SQL 数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1pro
 
 4. 在 Service configuration 列表中，选择 Cloud。
 
-5. 选中 Enable Remote Desktop for all roles 复选框启用远程桌面。此选项主要用于故障排除。选中此复选框时，将显示 Remote Desktop Configuration 对话框。选择 Settings 链接可更改配置。选中 Enable Web Deploy for all web roles 复选框启用 Web 部署。必须启用远程桌面才能使用此功能。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683672.aspx">使用 Azure 工具发布云服务</a>。有关 Web 部署的详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683672.aspx">使用 Azure 工具发布云服务</a>。<br />
+5. 选中 Enable Remote Desktop for all roles 复选框启用远程桌面。此选项主要用于故障排除。选中此复选框时，将显示 Remote Desktop Configuration 对话框。选择 Settings 链接可更改配置。选中 Enable Web Deploy for all web roles 复选框启用 Web 部署。必须启用远程桌面才能使用此功能。  
 ![developerdifferences-003](./media/developerdifferences/developerdifferences-003.png)
 
 6. 选择 Advanced Settings 选项卡。在 Deployment label 字段中，可以接受默认名称，也可以输入您选择名称。如需将日期附加到部署标签，请选中对应复选框。
 
-7. 在Storage account列表中，选择用于此部署的存储帐户。比较云服务数据中心和存储帐户的位置。理想状态下，这两个位置应该相同。<br />
+7. 在Storage account列表中，选择用于此部署的存储帐户。比较云服务数据中心和存储帐户的位置。理想状态下，这两个位置应该相同。  
 ![developerdifferences-004](./media/developerdifferences/developerdifferences-004.png)
 
 8. 如果您只希望部署已更新的组件，请选中 Deployment update 复选框。此类型的部署速度比全面部署更快。选择 Settings 链接，以打开 Deployment update settings 对话框，如下图所示。<br />
@@ -500,14 +500,14 @@ Webservices\Acs2WindowsPhoneSample<br />  \CustomerInformationService\Web.config
 
 ##<a name="csmanage"></a>CSManage - Azure 服务管理示例
 
-CSManage 示例（最近更名为“Azure 服务管理示例”）使用服务管理 API。此示例包含指向全球服务的代码。必须找到对http://*.chinacloudapi.cn的引用并将其更新为 *.chinacloudapi.cn。
+CSManage 示例（最近更名为“Azure 服务管理示例”）使用服务管理 API。此示例包含指向全球服务的代码。必须找到对http://*.windows.net的引用并将其更新为 *.chinacloudapi.cn。
 
 ##<a name="plainhttp"></a>为中国服务更新 ServiceBus SDK 中的 PlainHttp 示例
 
-当在中国运行时，需要对 PlainHttp 示例中的 URL 进行多项更新。按照以下步骤更新该示例。
-1.打开此示例的根文件夹：WindowsAzureAppFabricSDKSamples_V1.0-CS\ServiceBus\ExploringFeatures\MessageBuffer\PlainHttp 
-2.导航到 MessageBufferClient 子文件夹并编辑 MainPage.xaml.cs
-chinacloudapi.cn实例更改为 *.chinacloudapi.cn。参见第 31、77 和 98 行。
+当在中国运行时，需要对 PlainHttp 示例中的 URL 进行多项更新。按照以下步骤更新该示例。  
+1.打开此示例的根文件夹：WindowsAzureAppFabricSDKSamples_V1.0-CS\ServiceBus\ExploringFeatures\MessageBuffer\PlainHttp   
+2.导航到 MessageBufferClient 子文件夹并编辑 MainPage.xaml.cs  
+3.将windows.net实例更改为 *.chinacloudapi.cn。参见第 31、77 和 98 行。
  
 
 #<a name="wadig"></a>使用 Azure 诊断
@@ -527,7 +527,7 @@ Azure 诊断使用开发计算机上的本地存储或中国服务存储帐户�
 #<a name="http-cert"></a>重新颁发 HTTPS 端点的证书
 
 使用自定义域名时无需对证书进行更改。
-如果任何现有应用程序使用 HTTPS 端点并将证书绑定到**https://*.chinacloudapp.cn**（其中 ** * **为您的服务名称），则必须为 ***.chinacloudapp.cn** 重新颁发这些证书。在中国部署该服务时，必须使用这些新证书。
+如果任何现有应用程序使用 HTTPS 端点并将证书绑定到https://*.cloudapp.net（其中 * 为您的服务名称），则必须为 ***.chinacloudapp.cn** 重新颁发这些证书。在中国部署该服务时，必须使用这些新证书。
  
 #<a name="powershell"></a>使用 Azure PowerShell
 
