@@ -77,7 +77,7 @@ DSC 允许使用参数化配置，其中的凭据将传入配置并安全地存�
 
 有关 Azure DSC 扩展处理程序的详细信息，请参阅 [Introduction to the Azure Desired State Configuration extension handler（Azure Desired State Configuration 扩展处理程序简介）](/documentation/articles/virtual-machines-windows-extensions-dsc-overview)。
 
-有关有关 PowerShell DSC 的详细信息，请[访问 PowerShell 文档中心](https://msdn.microsoft.com/powershell/dsc/overview)。
+有关有关 PowerShell DSC 的详细信息，请[访问 PowerShell 文档中心](https://msdn.microsoft.com/zh-cn/powershell/dsc/overview)。
 
 若要查找可以使用 PowerShell DSC 管理的其他功能，请[浏览 PowerShell 库](https://www.powershellgallery.com/packages?q=DscResource&x=0&y=0)以获取更多 DSC 资源。
 <!---HONumber=Mooncake_0503_2016-->

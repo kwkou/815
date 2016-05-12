@@ -36,7 +36,7 @@
 
 ### 环境设置
 
-[免费帐户](https://azure.microsoft.com/free/)
+[免费帐户](/pricing/1rmb-trial/)
  
 [安装 Azure PowerShell](/documentation/articles/powershell-install-configure)
 
@@ -44,7 +44,6 @@
 
 
 ### 入门
-[Windows VM 的学习路径](https://azure.microsoft.com/documentation/learning-paths/virtual-machines/)
 
 [在 Azure 经典门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)
 
@@ -58,8 +57,6 @@
 [关于经典虚拟机的映像](/documentation/articles/virtual-machines-windows-classic-about-images)
 
 [虚拟机的大小](/documentation/articles/virtual-machines-windows-sizes)
-
-[关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-windows-a8-a9-a10-a11-specs)
 
 [Azure 虚拟机的计划内维护](/documentation/articles/virtual-machines-windows-planned-maintenance)
 
@@ -106,8 +103,6 @@
 [如何为 Windows VM 重置密码或远程桌面服务](/documentation/articles/virtual-machines-windows-reset-rdp)
 
 [关于虚拟机扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features)
-
-[如何在 Windows VM 上安装和配置 Symantec Endpoint Protection](/documentation/articles/virtual-machines-windows-classic-install-symantec)
 	
 [如何在 Windows VM 上安装和配置 Trend Micro Deep Security 即服务](/documentation/articles/virtual-machines-windows-classic-install-trend)
 
@@ -132,10 +127,6 @@
 [将使用经典部署模型创建的虚拟机连接到虚拟网络或云服务](/documentation/articles/virtual-machines-windows-classic-connect-vms)
 	
 [使用 Azure PowerShell 管理 NSG](/documentation/articles/virtual-networks-create-nsg-classic-ps)
-	
-[创建负载平衡器](/documentation/articles/load-balancer-get-started-internet-classic-portal)
-
-	
 
 ### 开发
 
@@ -153,11 +144,7 @@
 
 ### 工作负荷
 
-[高可用性业务线应用程序](/documentation/articles/virtual-machines-windows-lob)
-
 [HPC Pack](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options)
-
-[混合云测试环境](/documentation/articles/virtual-machines-windows-classic-hybrid-test-env)
 
 [MongoDB](/documentation/articles/virtual-machines-windows-classic-install-mongodb)
 
@@ -166,8 +153,6 @@
 [Oracle](/documentation/articles/virtual-machines-windows-classic-oracle)
 
 [SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview)
-
-[SharePoint](/documentation/articles/virtual-machines-windows-sharepoint-farm)
 
 [Tomcat](/documentation/articles/virtual-machines-windows-classic-java-run-tomcat-app-server)
 

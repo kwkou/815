@@ -35,7 +35,7 @@
 
 ### 先决条件
 
-* **Azure 订阅** - 你可以使用 Azure 全球或 Azure 中国服务中的订阅。如果你没有帐户，只需花费几分钟就能创建一个[免费帐户](/pricing/1rmb-trial/)。
+* **Azure 订阅** - 你可以使用 Azure 全球或 Azure 中国服务中的订阅。如果你没有帐户，只需花费几分钟就能创建一个[1元帐户](/pricing/1rmb-trial/)。
 
 * **内核配额** - 你可能需要增加内核配额，尤其是在你选择部署具有多核 VM 大小的多个群集节点时需要。若要增加配额，可免费[建立联机客户支持请求](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。
 
@@ -117,7 +117,7 @@ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文�
 
 ## 连接到头节点
 
-成功完成部署之后，请使用部署群集时提供的域凭据（例如，hpc\\clusteradmin）[通过远程桌面连接到头节点](/documentation/articles/virtual-machines-windows-connect-logon)。
+成功完成部署之后，请使用部署群集时提供的域凭据（例如，hpc\\clusteradmin）[通过远程桌面连接到头节点](/documentation/articles/virtual-machines-windows-classic-connect-logon)。
 
 在头节点上，启动 HPC 群集管理器来查看 HPC Pack 群集的状态。你可以用处理 Windows 计算节点的相同方式管理和监视 Linux 计算节点。例如，在“资源管理”中，你将看到列出的 Linux 节点（这些节点都是使用 **LinuxNode** 模板部署的）。
 
@@ -221,7 +221,7 @@ NFS 服务使你能够在运行 Windows Server 2012 操作系统的计算机之�
 
 若要通过 REST API 提交作业，请参阅[在 Microsoft HPC Pack 中通过使用 REST API 创建和提交作业](http://social.technet.microsoft.com/wiki/contents/articles/7737.creating-and-submitting-jobs-by-using-the-rest-api-in-microsoft-hpc-pack-windows-hpc-server.aspx)。若要从 Linux 客户端提交作业，另请参阅 [HPC Pack SDK](https://www.microsoft.com/download/details.aspx?id=47756) 中的 Python 示例。
 
-## 用于 Linux 节点的 Clusrun
+##<a name="CLusrun-for-Linux-nodes"></a> 用于 Linux 节点的 Clusrun
 
 HPC Pack **clusrun** 工具可用于通过命令提示符或 HPC 群集管理器在 Linux 节点上执行命令。下面是一些基本示例。
 
