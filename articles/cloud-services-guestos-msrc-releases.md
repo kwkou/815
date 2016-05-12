@@ -9,12 +9,57 @@
 
 <tags
    ms.service="cloud-services"
-   ms.date="12/15/2015"
-   wacn.date="05/11/2016"/>
+   ms.date="03/23/2016"
+   wacn.date="05/12/2016"/>
 
 # Azure 来宾 OS 
 
 下表显示了适用于 Azure 来宾 OS 的 Microsoft 安全响应中心 (MSRC) 更新。若要确定特定的更新是否适用于你使用的来宾 OS，请搜索本文。引入这些更新的特定[系列][family-explain]始终会包含这些更新。
+
+## 3 月来宾 OS 
+
+| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS16-023 | [3142015] | Internet Explorer 的累积安全更新 | 4\.30、3.37、2.49 | 2016 年 3 月 8 日 |  
+| MS16-026 | [3143148] | 图形字体安全更新，解决远程代码执行过程中的问题 | 4\.30、3.37、2.49 | 2016 年 3 月 8 日 |  
+| MS16-027 | [3143146] | Windows Media Player 安全更新，解决远程代码执行过程中的问题 | 4\.30、3.37、2.49 | 2016 年 3 月 8 日 |  
+| MS16-028 | [3143081] | Microsoft Windows PDF 库安全更新，解决远程代码执行过程中的问题 | 4\.30、3.37 | 2016 年 3 月 8 日 |  
+| MS16-030 | [3143136] | Windows OLE 安全更新，解决远程代码执行过程中的问题 | 4\.30、3.37、2.49 | 2016 年 3 月 8 日 |  
+| MS16-031 | [3140410] | Microsoft Windows 安全更新，解决权限提升过程中的问题 | 2\.49 | 2016 年 3 月 8 日 |  
+| MS16-032 | [3143141] | 对辅助登录安全更新，解决权限提升过程中的问题 | 4\.30、3.37、2.49 | 2016 年 3 月 8 日 |  
+| MS16-033 | [3143142] | 对 USB 海量存储类驱动程序安全更新，解决权限提升过程中的问题 | 4\.30、3.37、2.49 | 2016 年 3 月 8 日 |  
+| MS16-034 | [3143145] | 内核模式驱动程序安全更新，解决权限提升过程中的问题 | 4\.30、3.37、2.49 | 2016 年 3 月 8 日 | | MS16-035 | [3141780] | .NET Framework 安全更新，解决绕过安全功能问题 | 4\.30、3.37、2.49 | 2016 年 3 月 8 日 |  
+
+
+## 2 月来宾 OS
+
+| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS16-009 | [3134220] | Internet Explorer 的累积安全更新 | 4\.29、3.36、2.48 | 2016 年 2 月 9 日 |
+| MS16-013 | [3134811] | Windows 日记安全更新，解决远程代码执行过程中的问题 | 4\.29、3.36、2.48 | 2016 年 2 月 9 日 |
+| MS16-014 | [3134228] | Microsoft Windows 安全更新，解决远程代码执行过程中的问题 | 4\.29、3.36、2.48 | 2016 年 2 月 9 日 |
+| MS16-016 | [3136041] | WebDAV 安全更新，解决权限提升过程中的问题 | 4\.29、3.36、2.48 | 2016 年 2 月 9 日 |
+| MS16-018 | [3136082] | Windows 内核模式驱动程序安全更新，解决权限提升过程中的问题 | 4\.29、3.36、2.48 | 2016 年 2 月 9 日 |
+| MS16-019 | [3137893] | .NET Framework 安全更新，解决远程代码执行过程中的问题 | 4\.29、3.36、2.48 | 2016 年 2 月 9 日 |
+| MS16-021 | [3133043] | NPS RADIUS 服务器安全更新，解决拒绝服务问题 | 4\.29、3.36、2.48 | 2016 年 2 月 9 日 |
+| Microsoft 安全公告 | [3109853] | 更新后改进了 TLS 互操作性 | 4\.29、3.36 | 2016 年 2 月 9 日 |
+| 再发布版 - MS15-101 | [3089662] | .NET Framework 中的漏洞可能导致提升权限 | 4\.29、3.36、2.48 | 2016 年 2 月 9 日 |
+| 再发布版 - MS15-118 | [3104507] | .NET Framework 安全更新，解决权限提升过程中的问题 | 4\.29、3.36、2.48 | 2016 年 2 月 9 日 |
+| 再发布版 - MS15-128 | [3104503] | Microsoft 图形组件的安全更新，解决远程代码执行过程中的问题 | 4\.29、3.36、2.48 | 2016 年 2 月 9 日 |
+
+## 1 月来宾 OS
+
+| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS16-001 | [3124903] | Internet Explorer 的累积安全更新 | 4\.28、3.35、2.47 | 2016 年 1 月 12 日 |
+| MS16-003 | [3125540] | JScript 和 VBScript 的累积安全更新 | 2\.47 | 2016 年 1 月 12 日 |
+| MS16-005 | [3124584] | Windows 内核模式驱动程序安全更新，解决远程代码执行过程中的问题 | 4\.28、3.35、2.47 | 2016 年 1 月 12 日 |
+| MS16-007 | [3124901] | Microsoft Windows 安全更新，解决远程代码执行过程中的问题 | 4\.28、3.35、2.47 | 2016 年 1 月 12 日 |
+| MS16-008 | [3124605] | 内核安全更新，解决权限提升过程中的问题 | 4\.28、3.35、2.47 | 2016 年 1 月 12 日 |
+| Microsoft 安全公告修订版 | [2755801] | 针对 Internet Explorer 中的 Adobe Flash Player 的漏洞提供更新（包 KB：TBD）- 公告占位符 | 4\.28、3.35 | 2016 年 1 月 12 日 |
+| Microsoft 安全公告 | [3109853] | 更新后改进了 TLS 互操作性 | 4\.28、3.35 | 2016 年 1 月 12 日 |
+| Microsoft 安全公告 | [3123479] | 弃用 Microsoft 根证书计划的 SHA-1 哈希算法 | 4\.28、3.35、2.47 | 2016 年 1 月 12 日 |
+| Microsoft 安全公告 | [2736233] | ActiveX Kill Bits 更新 | 4\.28、3.35、2.47 | 2016 年 1 月 12 日 |
 
 ## 12 月来宾 OS
 
@@ -160,7 +205,7 @@
 | MS15-029 | [3035126][3035126] | Windows 照片解码器组件中的漏洞可能导致信息泄露 | 4\.18、3.25、2.37 | 不适用 |
 | MS15-030 | [3039976] | 远程桌面协议中的漏洞可能导致拒绝服务 | 4\.18、3.25、2.37 | 不适用 |
 
-> [AZURE.NOTE]公告 MS15-031 可能显示为已卸载。但是，它不适用于此来宾 OS 版本。
+> [AZURE.NOTE] 公告 MS15-031 可能显示为已卸载。但是，它不适用于此来宾 OS 版本。
 
 ## 2 月来宾 OS
 
@@ -207,6 +252,39 @@
 | 不适用 | [2999802][2999802] | 在 Windows 中打印时，虚线变成实线 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
 | 不适用 | [2896881][2896881] | 在 Windows 中登录期间使用 AddPrinterConnection VBScript 命令映射用户的打印机时，登录时间过长 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
 
+
+[3142015]: http://support.microsoft.com/zh-cn/kb/3142015
+[3143148]: http://support.microsoft.com/zh-cn/kb/3143148
+[3143146]: http://support.microsoft.com/zh-cn/kb/3143146
+[3143081]: http://support.microsoft.com/zh-cn/kb/3143081
+[3143136]: http://support.microsoft.com/zh-cn/kb/3143136
+[3140410]: http://support.microsoft.com/zh-cn/kb/3140410
+[3143141]: http://support.microsoft.com/zh-cn/kb/3143141
+[3143142]: http://support.microsoft.com/zh-cn/kb/3143142
+[3143145]: http://support.microsoft.com/zh-cn/kb/3143145
+[3141780]: http://support.microsoft.com/zh-cn/kb/3141780
+
+[3134220]: http://support.microsoft.com/zh-cn/kb/3134220
+[3134811]: http://support.microsoft.com/zh-cn/kb/3134811
+[3134228]: http://support.microsoft.com/zh-cn/kb/3134228
+[3136041]: http://support.microsoft.com/zh-cn/kb/3136041
+[3136082]: http://support.microsoft.com/zh-cn/kb/3136082
+[3137893]: http://support.microsoft.com/zh-cn/kb/3137893
+[3133043]: http://support.microsoft.com/zh-cn/kb/3133043
+[3109853]: http://support.microsoft.com/zh-cn/kb/3109853
+[3089662]: http://support.microsoft.com/zh-cn/kb/3089662
+[3104507]: http://support.microsoft.com/zh-cn/kb/3104507
+[3104503]: http://support.microsoft.com/zh-cn/kb/3104503
+
+[3124903]: http://support.microsoft.com/zh-cn/kb/3124903
+[3125540]: http://support.microsoft.com/zh-cn/kb/3125540
+[3124584]: http://support.microsoft.com/zh-cn/kb/3124584
+[3124901]: http://support.microsoft.com/zh-cn/kb/3124901
+[3124605]: http://support.microsoft.com/zh-cn/kb/3124605
+[2755801]: http://support.microsoft.com/zh-cn/kb/2755399
+[3109853]: http://support.microsoft.com/zh-cn/kb/3109853
+[3123479]: http://support.microsoft.com/zh-cn/kb/3123479
+[2736233]: http://support.microsoft.com/zh-cn/kb/2736233
 
 [3116180]: http://support.microsoft.com/zh-cn/kb/3116180
 [3116178]: http://support.microsoft.com/zh-cn/kb/3116178
@@ -350,4 +428,4 @@
 [family-explain]: /documentation/articles/cloud-services-guestos-update-matrix/#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0503_2016-->
