@@ -88,7 +88,7 @@
         ===============  =========================  ==========
         siteName         String                     ExampleSite
         hostingPlanName  String                     ExamplePlan
-        siteLocation     String                     West US
+        siteLocation     String                     China East
         sku              String                     Free
         workerSize       String                     0
         
