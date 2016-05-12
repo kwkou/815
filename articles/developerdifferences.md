@@ -254,11 +254,11 @@ Visual Studio 还提供了一个用于在给定角色的 Settings 部分中创�
 Visual Studio 将在您的服务配置文件中创建一个自定义存储端点。您可以通过角色中的代码使用此存储端点。
 以下代码通过使用特定于中国服务的自定义 URI 以编程方式显示与存储帐户的连接。
 
-    CloudStorageAccount Account = newCloudStorageAccount( 
-    newStorageCredentialsAccountAndKey(ACCOUNTNAME, ACCOUNTKEY), 
-    newUri("http://ACCOUNTNAME.blob.core.chinacloudapi.cn/"), 
-    newUri("http://ACCOUNTNAME.queue.core.chinacloudapi.cn/"), 
-    newUri("http://ACCOUNTNAME.table.core.chinacloudapi.cn/")
+    CloudStorageAccount Account = new CloudStorageAccount( 
+    new StorageCredentialsAccountAndKey(ACCOUNTNAME, ACCOUNTKEY), 
+    new Uri("http://ACCOUNTNAME.blob.core.chinacloudapi.cn/"), 
+    new Uri("http://ACCOUNTNAME.queue.core.chinacloudapi.cn/"), 
+    new Uri("http://ACCOUNTNAME.table.core.chinacloudapi.cn/")
     CloudBlobClient BlobClient = Account.CreateCloudBlobClient();
     )
     
