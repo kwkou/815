@@ -30,7 +30,7 @@
 
     - “专用映像”列出你创建的专用化和通用化虚拟机映像。
 
-    若要了解专用化和通用化虚拟机，请参阅 [VM Image（VM 映像）](https://azure.microsoft.com/blog/2014/04/14/vm-image-blog-post/)。有关如何将虚拟机转换成模板以便快速创建预配置的新虚拟机的信息，请参阅 [How to Capture a Windows Virtual Machine to Use as a Template（如何捕获一台用作模板的 Windows 虚拟机）](/documentation/articles/virtual-machines-capture-image-windows-server/)。
+    若要了解专用化和通用化虚拟机，请参阅 [VM Image（VM 映像）](https://azure.microsoft.com/blog/2014/04/14/vm-image-blog-post/)。有关如何将虚拟机转换成模板以便快速创建预配置的新虚拟机的信息，请参阅 [How to Capture a Windows Virtual Machine to Use as a Template（如何捕获一台用作模板的 Windows 虚拟机）](/documentation/articles/virtual-machines-windows-classic-capture-image/)。
 
     你可以单击虚拟机映像名称，在页面右侧查看映像的相关信息。
 
@@ -54,9 +54,9 @@
 
     ![虚拟机向导中的“终结点”页。](./media/virtual-machines-common-classic-create-manage-visual-studio/IC718351.png)
 
-    可用的终结点取决于为虚拟机选择的云服务。有关详细信息，请参阅 [Azure Service Endpoints（Azure 服务终结点）](/documentation/articles/virtual-machines-set-up-endpoints/)。
+    可用的终结点取决于为虚拟机选择的云服务。有关详细信息，请参阅 [Azure Service Endpoints（Azure 服务终结点）](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。
 
-    >[AZURE.NOTE] 启用公共终结点后，便可以通过 Internet 使用你虚拟机上的服务。请务必在虚拟机上安装并正确配置终结点和服务，例如，为终结点设置访问控制列表 (ACL)。有关详细信息，请参阅 [How to Set Up Endpoints to a Virtual Machine（如何为虚拟机设置终结点）](/documentation/articles/virtual-machines-set-up-endpoints/)。
+    >[AZURE.NOTE] 启用公共终结点后，便可以通过 Internet 使用你虚拟机上的服务。请务必在虚拟机上安装并正确配置终结点和服务，例如，为终结点设置访问控制列表 (ACL)。有关详细信息，请参阅 [How to Set Up Endpoints to a Virtual Machine（如何为虚拟机设置终结点）](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。
 
 1. 配置完虚拟机设置后，请选择“创建”按钮以创建虚拟机。
 
@@ -118,7 +118,7 @@
 
 1. 如果你已在此虚拟机上运行 Sysprep，请选中“我已在虚拟机上运行 Sysprep”框。
 
-    Sysprep 是一种工具，它的一种功能是将系统特定的数据从虚拟机的 Windows 版本中删除，从而使其成为其他用户能够使用的模板。有关详细信息，请参阅 [How to Capture a Windows Virtual Machine to Use as a Template（如何捕获一台用作模板的 Windows 虚拟机）](/documentation/articles/virtual-machines-capture-image-windows-server/)。
+    Sysprep 是一种工具，它的一种功能是将系统特定的数据从虚拟机的 Windows 版本中删除，从而使其成为其他用户能够使用的模板。有关详细信息，请参阅 [How to Capture a Windows Virtual Machine to Use as a Template（如何捕获一台用作模板的 Windows 虚拟机）](/documentation/articles/virtual-machines-windows-classic-capture-image/)。
 
 1. 配置好捕获设置之后，选择“捕获”按钮以创建检查点。
 

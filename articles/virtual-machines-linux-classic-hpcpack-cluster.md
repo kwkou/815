@@ -29,7 +29,7 @@
 
 下面是在 Azure 中创建包含 Linux 计算节点的 HPC Pack 群集的两种建议方法：
 
-* **PowerShell 脚本** - 使用 [Microsoft HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script) (**New-HpcIaaSCluster.ps1**) 在经典部署模型中自动化群集部署。此 Azure PowerShell 脚本使用 Azure 库中的 HPC Pack VM 映像进行快速部署，并提供一组全面的配置参数使部署轻松且灵活。脚本可部署 Azure 虚拟网络、存储帐户、云服务、域控制器、可选的单独 SQL Server 数据库服务器、群集头节点、计算节点、中转站节点、Azure PaaS（“迸发”）节点和 Linux 计算节点。
+* **PowerShell 脚本** - 使用 [Microsoft HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script) (**New-HpcIaaSCluster.ps1**) 在经典部署模型中自动化群集部署。此 Azure PowerShell 脚本使用 Azure 库中的 HPC Pack VM 映像进行快速部署，并提供一组全面的配置参数使部署轻松且灵活。脚本可部署 Azure 虚拟网络、存储帐户、云服务、域控制器、可选的单独 SQL Server 数据库服务器、群集头节点、计算节点、中转站节点、Azure PaaS（“迸发”）节点和 Linux 计算节点。
 
 有关 HPC Pack 群集部署选项的概述，请参阅 [Getting started guide for HPC Pack 2012 R2 and HPC Pack 2012（HPC Pack 2012 R2 和 HPC Pack 2012 入门指南）](https://technet.microsoft.com/zh-cn/library/jj884144.aspx)和 [Options to create and manage a high peformance computing (HPC) cluster in Azure with Microsoft HPC Pack（使用 Microsoft HPC Pack 在 Azure 中创建和管理高性能计算 (HPC) 群集时可用的选项）](/documentation/articles/virtual-machines-linux-hpcpack-cluster-options)。
 
@@ -51,7 +51,7 @@
 
 ### 部署方案 2.使用 IaaS 部署脚本
 
-HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文件作为输入。以下示例配置文件将部署一个小型群集，该群集由头节点和两个大小为 A7 的 CentOS 7 Linux 计算节点组成。请根据环境和所需的群集配置修改该文件。有关配置文件中的元素的详细信息，请参阅脚本文件夹中的 Manual.rtf 文件和 [Create an HPC cluster with the HPC Pack IaaS deployment script（使用 HPC Pack IaaS 部署脚本创建 HPC 群集）](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)。
+HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文件作为输入。以下示例配置文件将部署一个小型群集，该群集由头节点和两个大小为 A7 的 CentOS 7 Linux 计算节点组成。请根据环境和所需的群集配置修改该文件。有关配置文件中的元素的详细信息，请参阅脚本文件夹中的 Manual.rtf 文件和 [Create an HPC cluster with the HPC Pack IaaS deployment script（使用 HPC Pack IaaS 部署脚本创建 HPC 群集）](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script)。
 
 	<?xml version="1.0" encoding="utf-8" ?>
 	<IaaSClusterConfig>
