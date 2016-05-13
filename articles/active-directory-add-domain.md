@@ -22,9 +22,7 @@ Azure Active Directory 中的每个目录随附内置域名，格式为“contos
 
 如果你的组织拥有用户熟悉的自定义域名，则最佳做法是在 Azure Active Directory 中使用该自定义域名。若要在 Azure Active Directory 中使用自定义域名，请执行以下操作：
 
--   [添加并验证自定义域名](/documentation/articles/active-directory-add-domain-add-verify-general)
 
--   [将用户分配到自定义域](/documentation/articles/active-directory-add-domain-add-users)
 
 ## 在 Office 365 和其他服务中使用自定义域名
 
@@ -38,9 +36,6 @@ Azure Active Directory 中的每个目录随附内置域名，格式为“contos
 
 在 Azure Active Directory 中，域名一般无需持续进行管理。
 
--   [请参阅 Azure Active Directory 中的域名列表](/documentation/articles/active-directory-add-domain-add-users)
-
--   [更改自定义域名的 DNS 注册机构会发生什么情况](/documentation/articles/active-directory-add-domain-change-registrar)
 
 ## Azure Active directory 的内置域名
 
@@ -56,7 +51,7 @@ Azure Active Directory 中的每个目录随附内置域名，格式为“contos
 
 -   [使用 PowerShell 管理 Azure AD 中的域名](https://msdn.microsoft.com/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains)
 
--   [使用图形 API 管理 Azure AD 中的域名（预览版）](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/domains-operations)
+
 
 
 ## 后续步骤
@@ -64,9 +59,7 @@ Azure Active Directory 中的每个目录随附内置域名，格式为“contos
 如果你需要额外的资源来了解 Azure Active Directory 中的域名用法，请尝试：
 
 - [向“登录”和“访问面板”页添加公司品牌](/documentation/articles/active-directory-add-company-branding)
-- [在 Azure Active Directory 中添加和验证自定义域名](/documentation/articles/active-directory-add-domain-add-verify-general)
-- [将用户分配到自定义域](/documentation/articles/active-directory-add-domain-add-users)
-- [更改自定义域名的 DNS 注册机构](/documentation/articles/active-directory-add-domain-change-registrar)
-- [在 Azure Active Directory 中删除自定义域名](/documentation/articles/active-directory-add-domain-delete-domain)
+
+
 
 <!---HONumber=Mooncake_0411_2016-->

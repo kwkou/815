@@ -11,7 +11,7 @@
 <tags 
 	ms.service="active-directory"   
 	ms.date="03/16/2016"
-	wacn.date="04/06/2016"/>
+	wacn.date="05/12/2016"/>
 
 # Azure AD Connect 的自定义安装
 
@@ -40,7 +40,7 @@
 | 可选配置 | 说明 |
 | ------------- | ------------- |
 | 使用现有的 SQL Server | 用于指定 SQL Server 名称和实例名称。如果你已有一个要使用的数据库服务器，请选择此选项。如果你的 SQL Server 没有启用浏览而你必须指定端口号，请在“实例名称”框中输入实例名称后接逗号和端口号。 |
-| 使用现有的服务帐户 | 默认情况下，Azure AD Connect 将为同步服务创建要使用的本地服务帐户。密码是自动生成的，而安装 Azure AD Connect 的人员并不知道该密码。如果你使用远程 SQL 服务器或使用需要身份验证的代理，则需要在域中创建一个服务帐户并知道密码。在这些情况下，请输入要使用的服务帐户。确保运行安装的用户是 SQL 中的 SA，以便可以创建服务帐户的登录名。请参阅 [Azure AD Connect 帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permission#custom-settings-installation) |
+| 使用现有的服务帐户 | 默认情况下，Azure AD Connect 将为同步服务创建要使用的本地服务帐户。密码是自动生成的，而安装 Azure AD Connect 的人员并不知道该密码。如果你使用远程 SQL 服务器或使用需要身份验证的代理，则需要在域中创建一个服务帐户并知道密码。在这些情况下，请输入要使用的服务帐户。确保运行安装的用户是 SQL 中的 SA，以便可以创建服务帐户的登录名。请参阅 [Azure AD Connect 帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions#custom-settings-installation) |
 | 指定自定义同步组 | 默认情况下，在安装同步服务时，Azure AD Connect 将在服务器本地创建四个组。这些组是：管理员组、操作员组、浏览组和密码重置组。如果你想要指定自己的组，可在此处指定。组必须在服务器本地，并且不能位于域中。 |
 
 
@@ -67,10 +67,6 @@
 
 如果全局管理员帐户已启用 MFA，则你需要在登录弹出窗口中再次提供密码，并完成 MFA 质询，例如提供验证码。  
 ![用户登录 MFA](./media/active-directory-aadconnect-get-started-custom/connectaadmfa.png)
-
-全局管理员帐户也可以启用 [Privileged Identity Management](/documentation/articles/active-directory-privileged-identity-management-getting-started)。
-
-如果你收到错误消息并且出现了连接问题，请参阅[排查连接问题](/documentation/articles/active-directory-aadconnect-troubleshoot-connectivity)。
 
 ## “同步”部分下的页面
 
@@ -108,7 +104,7 @@ sAMAccountName 和 MailNickName|此选项根据预期可以在其中找到用户
 
 - **UserPrincipalName** - 属性 userPrincipalName 是用户登录 Azure AD 和 Office 365 时使用的属性。应在同步处理用户前在 Azure AD 中对使用的域（也称为 UPN 后缀）进行验证。强烈建议保留默认属性 userPrincipalName。如果此属性不可路由且无法验证，则可以选择另一个属性，例如，选择 email 作为保存登录 ID 的属性。这就是所谓的**替代 ID**。“替代 ID”属性值必须遵循 RFC822 标准。替代 ID 可以配合密码单一登录 (SSO) 和联合 SSO 作为登录解决方案来使用。
 
->[AZURE.WARNING]所有 Office 365 工作负荷都不允许使用替代 ID。有关详细信息，请参阅[配置替代登录 ID](https://technet.microsoft.com/library/dn659436.aspx.)。
+>[AZURE.WARNING]所有 Office 365 工作负荷都不允许使用替代 ID。
 
 
 
@@ -133,7 +129,7 @@ sAMAccountName 和 MailNickName|此选项根据预期可以在其中找到用户
 
 可选功能 | 说明
 -------------------    | ------------- |
-Exchange 混合部署 |Exchange 混合部署功能通过将 Azure AD 中的特定[属性](/documentation/articles/active-directory-aadconnectsync-attributes-synchronzied#exchange-hybrid-writeback)集同步回到本地目录，使 Exchange 邮箱能够在本地和 Azure 中共存。
+Exchange 混合部署 |Exchange 混合部署功能通过将 Azure AD 中的特定[属性](/documentation/articles/active-directory-aadconnectsync-attributes-synchronized#exchange-hybrid-writeback)集同步回到本地目录，使 Exchange 邮箱能够在本地和 Azure 中共存。
 Azure AD 应用程序和属性筛选|通过启用 Azure AD 应用程序和属性筛选，可以根据向导后续页面上的特定集定制同步属性集。这会在向导中打开两个附加的配置页。有关更多信息，请参阅 [Azure AD 应用和属性筛选](#azure-ad-app-and-attribute-filtering)。
 密码同步 | 如果你选择了联合作为登录解决方案，则可以启用此选项。然后，可将密码同步用作备份选项。有关更多信息，请参阅[密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization)。
 密码写回|通过启用密码写回，源自 Azure AD 的密码更改将写回到本地目录。有关更多信息，请参阅[密码管理入门](/documentation/articles/active-directory-passwords-getting-started)。

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何使用访问控制 (Java) | Microsoft Azure" 
+	pageTitle="如何使用访问控制 (Java) | Azure" 
 	description="了解如何在 Azure 中以 Java 开发和使用访问控制。" 
 	services="active-directory" 
 	documentationCenter="java"
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory" 
     ms.date="03/04/2016" 
-	wacn.date="04/28/2016"/>
+	wacn.date="05/13/2016"/>
 
 # 如何使用 Eclipse 在 Azure Access Control 服务上对 Web 用户进行身份验证
 
@@ -75,7 +75,7 @@ Azure ACS 在基于声明的标识的主体的基础上构建，它是一种创�
 - Azure 订阅，可以从 </pricing/overview/> 获取。
 - Azure Toolkit for Eclipse 2014 年 4 月版或更高版本。有关详细信息，请参阅[安装 Azure Toolkit for Eclipse](http://msdn.microsoft.com/library/windowsazure/hh690946.aspx)。
 - 要用于应用程序的 X.509 证书。你将需要此证书的公用证书 (.cer) 格式版和个人信息交换 (.PFX) 格式版。（本教程后面将介绍用于创建此证书的选项）。
-- 熟悉[在 Eclipse 中创建 Azure 的 Hello World 应用程序](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx)中介绍的 Azure 计算模拟器和部署技术。
+- 熟悉[在 Eclipse 中创建 Azure 的 Hello World 应用程序](/documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/)中介绍的 Azure 计算模拟器和部署技术。
 
 ## <a name="create-namespace"></a>创建 ACS 命名空间
 
@@ -236,11 +236,11 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 
 13. 单击“完成”关闭“编辑库”对话框。
 14. 单击“确定”关闭“MyACSHelloWorld 的属性”对话框。
-15. 在 Eclipse 中，单击“发布到 Azure 云”按钮。像在[在 Eclipse 中创建 Azure 的 Hello World 应用程序](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx)主题的**将应用程序部署到 Azure**部分中一样对提示进行响应。 
+15. 在 Eclipse 中，单击“发布到 Azure 云”按钮。像在[在 Eclipse 中创建 Azure 的 Hello World 应用程序](/documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/)主题的**将应用程序部署到 Azure**部分中一样对提示进行响应。 
 
 部署 Web 应用程序后，关闭任何打开的浏览器会话，运行你的 Web 应用程序，系统将提示你使用 Windows Live ID 凭据登录，然后将这些凭据发送到信赖方应用程序的返回 URL。
 
-使用完你的 ACS Hello World 应用程序后，请务必删除部署（可在[在 Eclipse 中创建 Azure 的 Hello World 应用程序](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx)主题中了解如何删除部署）。
+使用完你的 ACS Hello World 应用程序后，请务必删除部署（可在[在 Eclipse 中创建 Azure 的 Hello World 应用程序](/documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/)主题中了解如何删除部署）。
 
 
 ## <a name="next_steps"></a>后续步骤

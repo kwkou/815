@@ -133,7 +133,7 @@ Azure AD Connect 只删除其曾经认为在范围中的对象。如果 Azure AD
 - 若要完成配置设置，请参阅[应用并验证更改](#apply-and-verify-changes)。
 
 ## 基于组织单位的筛选
-更改基于 OU 的筛选的首选方法是运行安装向导并更改[域和 OU 筛选](active-directory-aadconnect-get-started-custom.md#domain-and-ou-filtering)。使用安装向导可以自动执行本主题中所述的所有任务。
+更改基于 OU 的筛选的首选方法是运行安装向导并更改[域和 OU 筛选](/documentation/articles/active-directory-aadconnect-get-started-custom#domain-and-ou-filtering)。使用安装向导可以自动执行本主题中所述的所有任务。
 
 仅当你出于某种原因而无法运行安装向导时，才遵循以下步骤。
 
@@ -155,7 +155,7 @@ Azure AD Connect 只删除其曾经认为在范围中的对象。如果 Azure AD
 8. 若要完成配置设置，请参阅[应用并验证更改](#apply-and-verify-changes)。
 
 ## <a name="attribute-based-filtering"></a>基于属性的筛选
-为了正常执行这些步骤，请确保使用 2015 年 11 月 ([1\.0.9125](active-directory-aadconnect-version-history.md#1091250)) 或更高版本。
+为了正常执行这些步骤，请确保使用 2015 年 11 月 ([1\.0.9125](/documentation/articles/active-directory-aadconnect-version-history#1091250)) 或更高版本。
 
 基于属性的筛选是最灵活的对象筛选方式。将对象同步到 Azure AD 时，你可以使用[声明性预配](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions)的能力来控制几乎每个方面的问题。
 

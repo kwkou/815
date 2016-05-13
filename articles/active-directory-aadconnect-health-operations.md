@@ -97,7 +97,7 @@ Azure AD Connect 支持两个级别的管理访问：
 
 如果最终用户有权在目录或服务实例级别访问，则会被授予权限。
 
-
+<!--
 ### 如何允许用户或组访问 Azure AD Connect Health
 #### 步骤 1：选择适当的访问范围
 若要允许用户访问 Azure AD Connect Health 中的*所有服务实例*级别，请在 Azure AD Connect Health 打开主边栏选项卡。<br>
@@ -132,7 +132,7 @@ Azure AD Connect 支持两个级别的管理访问：
 ![Azure AD Connect Health RBAC 中的“删除用户”](./media/active-directory-aadconnect-health/RBAC_remove.png)
 
 [//]: # "结束 RBAC 部分"
-
+-->
 ## 相关链接
 
 * [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health)

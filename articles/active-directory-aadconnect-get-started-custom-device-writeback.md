@@ -18,7 +18,7 @@
 
 对 ADFS（2012 R2 或更高版本）保护的应用程序（信赖方信任），启用基于设备的条件性访问。
 
-这可以提供额外的安全性，确保只有受信任的设备才能访问应用程序。有关条件性访问的详细信息，请参阅[使用条件性访问管理风险](/documentation/articles/active-directory-conditional-access)和[使用 Azure Active Directory Device Registration 设置本地的条件性访问](/documentation/articles/active-directory-conditional-access-on-premises-setup/?rnd=1)。
+这可以提供额外的安全性，确保只有受信任的设备才能访问应用程序。有关条件性访问的详细信息，请参阅[使用条件性访问管理风险](/documentation/articles/active-directory-conditional-access)
 
 >[AZURE.NOTE]设备写回需要 Azure AD Premium 订阅。
 

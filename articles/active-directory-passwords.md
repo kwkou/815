@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory"  
 	ms.date="02/16/2016" 
-	wacn.date="04/28/2016"/>
+	wacn.date="05/13/2016"/>
 
 
 # 用户和管理员的 Azure AD 密码重置
@@ -77,7 +77,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 - **Azure AD 基本版或任何付费 O365 订阅** - 仅限云的用户及仅限云的管理员可以重置自己的密码
 - **Azure AD 高级版** - 任何用户或管理员（包括仅限云、联合或密码同步的用户）可以重置自己的密码（需要[启用密码写回](/documentation/articles/active-directory-passwords-getting-started#enable-users-to-reset-or-change-their-ad-passwords)）
 
-有关关于 Azure AD 高级版或基本版定价的详细信息，请访问 [Active Directory 定价详细信息](https://azure.microsoft.com/pricing/details/active-directory/)页。
+有关关于 Azure AD 高级版或基本版定价的详细信息，请访问 [Active Directory 定价详细信息](/pricing/details/active-directory/)页。
 
 ## <a name="enable-password-reset-for-your-users"></a>为用户启用密码重置
 | 主题 | |

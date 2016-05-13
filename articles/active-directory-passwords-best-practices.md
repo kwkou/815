@@ -119,7 +119,7 @@
 
 若要了解如何使用上述每个属性，请参阅[密码重置使用的数据](/documentation/articles/active-directory-passwords-learn-more#what-data-is-used-by-password-reset)。
 
-请参阅[如何从 PowerShell 访问用户的密码重置数据](active-directory-passwords-learn-more#how-to-access-password-reset-data-for-your-users)，以了解如何使用 PowerShell 读取和设置此数据。
+请参阅[如何从 PowerShell 访问用户的密码重置数据](/documentation/articles/active-directory-passwords-learn-more#how-to-access-password-reset-data-for-your-users)，以了解如何使用 PowerShell 读取和设置此数据。
 
 ## <a name="sample-training-materials"></a>示例培训材料
 我们正在准备示例培训材料，以帮助你的 IT 部门和用户快速了解如何部署及使用密码重置。敬请期待！
@@ -134,7 +134,6 @@
 * [**工作原理**](/documentation/articles/active-directory-passwords-how-it-works) - 了解六个不同的服务组件及其功能
 * [**入门**](/documentation/articles/active-directory-passwords-getting-started) - 了解如何让用户重置及更改云密码或本地密码
 * [**自定义**](/documentation/articles/active-directory-passwords-customize) - 了解如何根据组织的需求自定义服务的外观和行为
-* [**深入分析**](/documentation/articles/active-directory-passwords-get-insights) - 了解集成式报告功能
 * [**常见问题**](/documentation/articles/active-directory-passwords-faq) - 获取常见问题的解答
 * [**故障排除**](/documentation/articles/active-directory-passwords-troubleshoot) - 了解如何快速排查服务的问题
 * [**了解更多**](/documentation/articles/active-directory-passwords-learn-more) - 深入探索服务工作原理的技术细节
