@@ -59,7 +59,7 @@ Azure AD Connect 不支持 NetBios 名称包含句点“.”的本地林/域。
 仅支持客户使用本站点上介绍的 cmdlet，而不支持使用 Azure AD Connect 中的其他 PowerShell cmdlet。
 
 **问：我是否可以使用同步服务管理器中的“服务器导出/服务器导入”在服务器之间移动配置？**  
-不可以。此选项不会检索所有配置设置，因此不应使用。应该改用向导在第二台服务器上创建基础配置，并使用同步规则编辑器生成 PowerShell 脚本，如此即可在服务器之间移动任何自定义规则。请参阅[将自定义配置从活动服务器移到暂存服务器](documentation/articles/active-directory-aadconnect-upgrade-previous-version#move-custom-configuration-from-active-to-staging-server)。
+不可以。此选项不会检索所有配置设置，因此不应使用。应该改用向导在第二台服务器上创建基础配置，并使用同步规则编辑器生成 PowerShell 脚本，如此即可在服务器之间移动任何自定义规则。
 
 ## 故障排除
 

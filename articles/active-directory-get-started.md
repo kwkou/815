@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="04/20/2015" 
-	wacn.date="01/29/2016"/>
+	wacn.date="05/12/2016"/>
 
 # 如何开始使用 Azure AD
 
@@ -33,11 +33,11 @@
 
 ## 如何添加我自己注册的域名？
 
-想要添加自定义域名，或者使用自己注册的域名吗？[了解有关添加自定义域的详细信息](https://msdn.microsoft.com/zh-CN/library/azure/dn532272.aspx)。
+想要添加自定义域名，或者使用自己注册的域名吗？[了解有关添加自定义域的详细信息](/documentation/articles/active-directory-editions/)。
 
 ## 如何添加我的公司商标？
 
-使用 Azure AD 高级版，你可以在 Azure 登录页和"访问面板"页中添加公司徽标和其他商标。[向"登录"和"访问面板"页添加公司品牌](https://msdn.microsoft.com/zh-CN/library/azure/dn532270.aspx)
+使用 Azure AD 高级版，你可以在 Azure 登录页和"访问面板"页中添加公司徽标和其他商标。[向"登录"和"访问面板"页添加公司品牌](/documentation/articles/active-directory-editions/)
 
 ## 如何将 Azure AD 与另一个目录集成？
 
@@ -45,11 +45,7 @@
 
 ## 如何创建和编辑用户？
 
-为想要访问 Microsoft 云服务的每个用户创建帐户。默认情况下，用户不具有管理员权限，但你可以给他们分配这种权限。[了解有关创建 Azure AD 用户的详细信息](https://msdn.microsoft.com/zh-CN/library/azure/hh967632.aspx)。
-
-## 查看访问和使用情况报告
-
-Azure AD 为管理员提供许多报告。Azure AD 付费版提供更多的报告，此外还提供一个报告 API 用于创建你自己的自定义报告。[了解有关 Azure AD 报告的详细信息](https://msdn.microsoft.com/zh-CN/library/azure/dn283934.aspx)。
+为想要访问 Microsoft 云服务的每个用户创建帐户。默认情况下，用户不具有管理员权限，但你可以给他们分配这种权限。[了解有关创建 Azure AD 用户的详细信息](/documentation/articles/active-directory-create-users/)。
 
 ## 其他资源
 

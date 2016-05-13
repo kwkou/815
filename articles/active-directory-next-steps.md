@@ -8,14 +8,9 @@
 	editor=""/>
 
 <tags 
-	wacn.date="05/15/2015"
 	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="hero-article" 
 	ms.date="04/20/2015" 
-	ms.author="curtand"/>
+	wacn.date="05/13/2016"/>
 
 # Azure AD 的后续用途有哪些？
 
@@ -39,7 +34,7 @@
 
 ## 对已注册的移动设备实施条件性访问策略
 
-Azure AD 设备注册将为设备设置一个标识，当用户登录时，将使用该标识对设备进行身份验证。然后，可以使用已经过身份验证的设备和设备的属性，对云中和本地托管的应用程序实施条件性访问策略。[了解有关 Azure AD 设备注册的详细信息](/documentation/articles/active-directory-conditional-access-device-registration-overview/)。 
+Azure AD 设备注册将为设备设置一个标识，当用户登录时，将使用该标识对设备进行身份验证。然后，可以使用已经过身份验证的设备和设备的属性，对云中和本地托管的应用程序实施条件性访问策略。
 
 
 ## 其他资源

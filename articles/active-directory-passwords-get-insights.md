@@ -33,22 +33,6 @@
 - 密码重置时是否有任何可疑的活动？
 
 
-##  <a name="how-to-view-password-management-reports"></a>如何查看密码管理报告
-若要查找密码管理报告，请按照以下步骤操作：
-
-1.	在 [Azure 管理门户](https://manage.windowsazure.cn)中单击 **Active Directory** 扩展。
-2.	从门户显示的列表中选择你的目录。
-3.	单击“报告”选项卡。
-4.	查看“活动日志”部分的下方。
-5.	选择“密码重置活动报告”或“密码重置注册活动”报告。
-
-    ![][001]
-
-## 如何通过 API 访问密码管理报告
-从 2015 年 8 月开始，Azure AD 报告和事件支持检索密码重置和密码重置注册报告中包含的所有信息。
-
-若要访问此数据，你需要编写一个小型应用或脚本，以便从我们的服务器检索这些数据。[了解如何开始使用 Azure AD Reporting API](/documentation/articles/active-directory-reporting-api-getting-started)。
-
 编写有效的脚本后，接下来请根据你的方案，检查可以检索的密码重置和注册事件。
 
 - [SsprActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprActivityEvent)：列出密码重置事件可用的列

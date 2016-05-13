@@ -21,7 +21,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 相关链接：
 
 - 从[旧版升级到最新版本](/documentation/articles/active-directory-aadconnect-upgrade-previous-version) Azure AD Connect 的不同方法。
-- 有关应用更新时所需的权限，请参阅[帐户和权限](active-directory-aadconnect-accounts-permissions.md#upgrade)
+- 有关应用更新时所需的权限，请参阅[帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions#upgrade)
 - [下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771)
 
 ## 1\.1.119.0
@@ -48,22 +48,22 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 **新功能：**
 
-- 适用于快速设置客户的[自动升级](active-directory-aadconnect-feature-automatic-upgrade.md)功能。
+- 适用于快速设置客户的[自动升级](/documentation/articles/active-directory-aadconnect-feature-automatic-upgrade)功能。
 - 使用安装向导中的 MFA 和 PIM 来提供全局管理员支持。
     - 如果你使用 MFA，则需要让代理也允许向 https://secure.aadcdn.microsoftonline-p.com 的传送流量。
     - 需要将 https://secure.aadcdn.microsoftonline-p.com 添加到受信任站点列表，MFA 才能正常运行。
 - 允许在初始安装之后更改用户的登录方法。
-- 允许在安装向导中使用[域和 OU 筛选](active-directory-aadconnect-get-started-custom.md#domain-and-ou-filtering)。这也允许连接到并非所有域都可供使用的林。
-- [计划程序](active-directory-aadconnectsync-feature-scheduler.md)是同步引擎的内置功能。
+- 允许在安装向导中使用[域和 OU 筛选](/documentation/articles/active-directory-aadconnect-get-started-custom#domain-and-ou-filtering)。这也允许连接到并非所有域都可供使用的林。
+- [计划程序](/documentation/articles/active-directory-aadconnectsync-feature-scheduler)是同步引擎的内置功能。
 
 **从预览版升级到 GA 的功能：**
 
-- [设备写回](active-directory-aadconnect-feature-device-writeback.md)
-- [目录扩展](active-directory-aadconnectsync-feature-directory-extensions.md)
+- [设备写回](/documentation/articles/active-directory-aadconnect-feature-device-writeback)
+- [目录扩展](/documentation/articles/active-directory-aadconnectsync-feature-directory-extensions)
 
 **新的预览功能：**
 
-- 新的默认同步周期间隔为 30 分钟。过去所有旧版本都是 3 小时。添加了可更改[计划程序](active-directory-aadconnectsync-feature-scheduler.md)行为的支持。
+- 新的默认同步周期间隔为 30 分钟。过去所有旧版本都是 3 小时。添加了可更改[计划程序](/documentation/articles/active-directory-aadconnectsync-feature-scheduler)行为的支持。
 
 **已解决的问题：**
 
@@ -93,7 +93,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 **新的预览功能：**
 
-- 支持 [Azure AD 域服务](active-directory-get-started.md)密码同步。
+- 支持 [Azure AD 域服务](/documentation/articles/active-directory-get-started)密码同步。
 
 **新的受支持方案：**
 

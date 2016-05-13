@@ -9,19 +9,18 @@
 
 <tags 
 	ms.service="active-directory" 
-
-    	ms.date="02/11/2016"
-        wacn.date=""/>
+	ms.date="02/11/2016"
+    wacn.date="05/11/2016"/>
 
 
 # 了解 Azure 中的资源访问权限
 
 
-> [AZURE.NOTE] 本主题介绍有关使用订阅管理员在整个 Azure 门户中控制资源访问权限的概念。作为替代方法，Azure 预览门户提供了[基于角色的访问控制](role-based-access-control-configure.md)，以便可以更准确地管理 Azure 资源。
+> [AZURE.NOTE] 本主题介绍有关使用订阅管理员在整个 Azure 门户中控制资源访问权限的概念。作为替代方法，Azure 预览门户提供了[基于角色的访问控制](/documentation/articles/role-based-access-control-configure)，以便可以更准确地管理 Azure 资源。
 
 为了针对改进用户的 Azure 资源访问管理体验奠定基础，Azure 经典门户和服务管理 API 已在 2013 年 10 月与 Azure Active Directory 进行集成。Azure Active Directory 已经提供了出色的功能，例如用户管理、本地目录同步、多重身份验证和应用程序访问控制。自然，这些功能也可用于全面管理 Azure 资源。
 
-Azure 中的访问控制首先体现在计费方面。Azure 帐户的所有者（可通过访问 [Azure 帐户中心](https://account.windowsazure.com/subscriptions)进行访问）是帐户管理员 (AA)。订阅是计费容器，但它们也可充当安全边界：每个订阅都有一个服务管理员 (SA)，此管理员可以使用 [Azure 经典门户](https://manage.windowsazure.com/)来添加、删除和修改该订阅中的 Azure 资源。新订阅的默认 SA 是 AA，但 AA 可以在 Azure 帐户中心更改 SA。
+Azure 中的访问控制首先体现在计费方面。Azure 帐户的所有者（可通过访问 [Azure 帐户中心](https://account.windowsazure.com/subscriptions)进行访问）是帐户管理员 (AA)。订阅是计费容器，但它们也可充当安全边界：每个订阅都有一个服务管理员 (SA)，此管理员可以使用 [Azure 经典门户](https://manage.windowsazure.cn/)来添加、删除和修改该订阅中的 Azure 资源。新订阅的默认 SA 是 AA，但 AA 可以在 Azure 帐户中心更改 SA。
 
 <br><br>![Azure 帐户][1]
 
@@ -56,7 +55,7 @@ Azure 中的访问控制首先体现在计费方面。Azure 帐户的所有者�
 ## 后续步骤
 
 
-- 有关 Azure Active Directory 如何与你的 Azure 订阅相关联的信息，请参阅 [Azure 订阅与 Azure Active Directory 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated directory)
+- 有关 Azure Active Directory 如何与你的 Azure 订阅相关联的信息，请参阅 [Azure 订阅与 Azure Active Directory 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory)
 
 - 有关如何在 Azure AD 中分配角色的详细信息，请参阅[在 Azure Active Directory 中分配管理员角色](/documentation/articles/active-directory-assign-admin-roles)
 

@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory"  
 	ms.date="10/13/2015"
-	wacn.date="01/29/2016"/>
+	wacn.date="05/12/2016"/>
 
 
 
@@ -24,7 +24,7 @@ Azure AD Connect 可让用户使用同一组密码登录云和本地资源。你
 
 <center>![云](./media/active-directory-aadconnect-user-signin/passwordhash.png)</center>
 
-[有关密码同步的详细信息](https://msdn.microsoft.com/zh-cn/library/azure/dn246918.aspx)
+[有关密码同步的详细信息](/documentation/articles/active-directory-aadconnect/)
 
 
 ### 使用 Windows Server 2012 R2 场中新的或现有 AD FS 的联合
