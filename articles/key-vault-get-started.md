@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="key-vault"
-	ms.date="02/23/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="04/07/2016"
+	wacn.date="05/13/2016"/>
 
 # Azure 密钥保管库入门 #
 在大多数区域中提供了 Azure 密钥保管库。有关详细信息，请参阅[密钥保管库定价页](/home/features/key-vault/#price)。
