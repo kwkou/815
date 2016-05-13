@@ -26,7 +26,7 @@ Microsoft HPC Pack 可提供在 Azure 虚拟机群集上运行各种大型 HPC �
 
 ## 先决条件
 
-*   **包含 Linux 计算节点的 HPC Pack 群集** - 使用 [Azure PowerShell 脚本](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)，在 Azure 上部署包含 Linux 计算节点的 HPC Pack 群集。有关任一选项的先决条件和步骤，请参阅 [Get started with Linux compute nodes in an HPC Pack cluster in Azure（Azure 的 HPC Pack 群集中的 Linux 计算节点入门）](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster)。如果你选择 Powershell 脚本部署选项，请参阅本文末尾的示例文件中的示例配置文件，以部署包含一个基于 Azure 的 HPC Pack 群集，其中包含 1 个 Windows Server 2012 R2 头节点和 2 个 SUSE Linux Enterprise Server 12 计算节点。请将订阅和服务名称替换为相应值。 
+*   **包含 Linux 计算节点的 HPC Pack 群集** - 使用 [Azure PowerShell 脚本](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script)，在 Azure 上部署包含 Linux 计算节点的 HPC Pack 群集。有关任一选项的先决条件和步骤，请参阅 [Get started with Linux compute nodes in an HPC Pack cluster in Azure（Azure 的 HPC Pack 群集中的 Linux 计算节点入门）](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster)。如果你选择 Powershell 脚本部署选项，请参阅本文末尾的示例文件中的示例配置文件，以部署包含一个基于 Azure 的 HPC Pack 群集，其中包含 1 个 Windows Server 2012 R2 头节点和 2 个 SUSE Linux Enterprise Server 12 计算节点。请将订阅和服务名称替换为相应值。 
 
     **其他须知项**
 
