@@ -25,7 +25,7 @@
 
 本教程演示在 Azure 管理门户中创建运行 Windows 的 Azure 虚拟机 (VM) 是多么容易。我们将使用 Windows Server 映像作为示例，但这只是 Azure 提供的众多映像的其中一个。
 
-你也可以使用[自己的映像](/documentation/articles/virtual-machines-create-upload-vhd-windows-server)创建 VM。若要了解此方法和其他方法，请参阅[创建 Windows 虚拟机的不同方式](/documentation/articles/virtual-machines-windows-creation-choices)。
+你也可以使用[自己的映像](/documentation/articles/virtual-machines-windows-classic-createupload-vhd)创建 VM。若要了解此方法和其他方法，请参阅[创建 Windows 虚拟机的不同方式](/documentation/articles/virtual-machines-windows-creation-choices)。
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 

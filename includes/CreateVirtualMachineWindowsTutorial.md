@@ -151,7 +151,7 @@
 
 [如何连接云服务中的虚拟机](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-linux-classic-connect-vms)
 
-[如何创建和上载您自己的包含 Windows Server 操作系统的虚拟硬盘](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-create-upload-vhd-windows-server)
+[如何创建和上载您自己的包含 Windows Server 操作系统的虚拟硬盘](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-windows-classic-createupload-vhd)
 
 [将数据磁盘附加到虚拟机](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-windows-classic-attach-disk)
 

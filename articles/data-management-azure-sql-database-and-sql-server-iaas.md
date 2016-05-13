@@ -191,6 +191,6 @@ Azure 提供两个选项用于在云中托管 SQL Server 工作负荷：
 
 - 你有现有的 IT 资源，需要 SQL Server 的完全管理权限，并需要与本地 SQL server 完全兼容。这种方法可让你灵活运行大多数应用程序，将开发或修改现有应用程序的成本降到最低。此外，它还提供对 VM、操作系统和数据库配置的完全控制。
 
-若要开始，请参阅[在 Azure 中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server)。
+若要开始，请参阅[在 Azure 中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create)。
 
 <!---HONumber=Mooncake_0328_2016-->

@@ -15,7 +15,7 @@
 
 <h1 id="menu-ruby-compute">计算</h1>
 <h2 id="header-0">虚拟机</h2>
-<h3>教程： <a href="/documentation/articles/virtual-machines-ruby-rails-web-app-linux/">使用 Linux 虚拟机托管 Ruby on Rails Web 应用程序</a></h3>
+<h3>教程： <a href="/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app/">使用 Linux 虚拟机托管 Ruby on Rails Web 应用程序</a></h3>
 <p>了解如何使用 Linux 虚拟机在 Azure 上托管基于 Ruby on Rails 的网站。</p>
 <h3>教程： <a href="/documentation/articles/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/">使用 Capistrano、Unicorn 和 Nginx 向虚拟机部署 Ruby on Rails 应用程序。</a></h3>
 <p>了解如何使用 Capistrano、Unicorn 和 Nginx 向 Azure 虚拟机部署 Ruby on Rails 应用程序。</p>

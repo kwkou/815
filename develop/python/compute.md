@@ -51,11 +51,11 @@
 <h3>功能指南：<a href="/documentation/articles/cloud-services-python-how-to-use-service-management/">服务管理</a></h3>
 <p>本指南演示如何通过使用 Azure SDK for Python 中的 ServiceManagementService 类,以编程方式执行 Python 的常见服务管理任务。</p>
 <h2 id="header-2">虚拟机</h2>
-<h3>教程：<a href="/documentation/articles/virtual-machines-python-django-web-app-linux/">Linux 虚拟机上的 Django Hello World Web 应用程序</a></h3>
+<h3>教程：<a href="/documentation/articles/virtual-machines-linux-python-django-web-app/">Linux 虚拟机上的 Django Hello World Web 应用程序</a></h3>
 <p>实现在 Django Python Web 框架中编写的一个简单 Hello World 应用程序，并将该应用程序部署到 Azure。你将了解有关使用 Azure 计算仿真程序并将 Python 应用程序部署到 Azure 的基础知识。</p>
-<h3>教程：<a href="/documentation/articles/virtual-machines-python-django-web-app-windows-server/">Windows 虚拟机上的 Django Hello World Web 应用程序</a></h3>
+<h3>教程：<a href="/documentation/articles/virtual-machines-windows-classic-python-django-web-app/">Windows 虚拟机上的 Django Hello World Web 应用程序</a></h3>
 <p>了解如何使用 Windows Server 虚拟机在 Azure 上托管基于 Django 的网站。你将了解如何设置 Azure 虚拟机以托管 Django，以及如何从 Windows 创建新的 Django 应用程序。</p>
-<h3>教程：<a href="/documentation/articles/virtual-machines-python-ipython-notebook/">Azure 上的 iPython Notebook</a></h3>
+<h3>教程：<a href="/documentation/articles/virtual-machines-linux-jupyter-notebook/">Azure 上的 iPython Notebook</a></h3>
 <p><a href="http://ipython.org/">IPython 项目</a>提供了一系列用于科学计算的工具，包括称为 IPython Notebook 的基于 Web 的交互式环境。本教程演示如何在 Azure 中使用 Linux 或 Windows 虚拟机部署 IPython Notebook。</p>
 <h2 id="header-3">工具</h2>
 <h3>功能指南：<a href="/documentation/articles/xplat-cli-install/">使用适用于 Mac 和 Linux 的命令行工具进行开发和部署</a></h3>

@@ -24,7 +24,7 @@
 
 ### 在单个 VM 上部署 SQL Server 实例
 
-注册订阅后，在 Azure 中部署 SQL Server 虚拟机的最简单方法是[在 Azure 中预配 SQL Server 计算机库映像](/documentation/articles/virtual-machines-provision-sql-server)。这些映像包括 VM 定价中的 SQL Server 许可。
+注册订阅后，在 Azure 中部署 SQL Server 虚拟机的最简单方法是[在 Azure 中预配 SQL Server 计算机库映像](/documentation/articles/virtual-machines-windows-classic-ps-sql-create)。这些映像包括 VM 定价中的 SQL Server 许可。
 
 下表提供了虚拟机库中提供的 SQL Server 映像的矩阵。
 
