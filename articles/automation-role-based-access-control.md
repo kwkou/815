@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="automation"
-   ms.date="02/11/2016"
-   wacn.date="03/22/2016"/>
+   ms.date="04/04/2016"
+   wacn.date="05/13/2016"/>
 
 # Azure 自动化中基于角色的访问控制
 
