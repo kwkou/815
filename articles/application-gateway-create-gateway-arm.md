@@ -67,6 +67,7 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 ### 步骤 1
 登录到 Azure。
+
 		Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 系统将提示你使用凭据进行身份验证。<BR>
