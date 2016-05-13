@@ -102,7 +102,7 @@ MSClient *client = [MSClient clientWithApplicationURLString:@"AppUrl" applicatio
 
 ##  <a name="sorting"></a>如何：使用 MSQuery 对数据排序
 
-让我们先看一个示例，来了解如何对结果排序。若要先按 `text` 字段升序排序，然后按 `completion` 字段降序排序，请按如下所示调用 `MSQuery`：
+让我们先看一个示例，来了解如何对结果排序。若要先按 **text** 字段升序排序，然后按 `completion` 字段降序排序，请按如下所示调用 `MSQuery`：
 
 ```
 [query orderByAscending:@"text"];

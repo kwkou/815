@@ -9,7 +9,7 @@
 	tags="azure-service-management,azure-resource-manager" />
 
 <tags 
-	ms.service="virtual-machines" 
+	ms.service="virtual-machines-linux" 
 	ms.date="12/14/2015" 
 	wacn.date="01/29/2016"/>
 
@@ -60,12 +60,12 @@ Azure Linux 代理 (/usr/sbin/waagent) 管理虚拟机与 Azure 结构控制器�
 ###获取 Linux 代理
 可从以下位置直接获取最新的 Linux 代理：
 
-- [认可 Linux on Azure 的其他分发提供商（可能为英文页面）](http://support.microsoft.com/kb/2805216)
+- [认可 Linux on Azure 的其他分发提供商](/documentation/articles/virtual-machines-linux-endorsed-distros/)
 - 或 [Azure Linux 代理的 GitHub 开放源存储库](https://github.com/Azure/WALinuxAgent)
 
 
 ## 要求
-下列系统已经过测试并确认兼容 Azure Linux 代理。**请注意，此列表可能不同于 Azure 平台所支持系统的官方列表**，详见以下网站：[http://support.microsoft.com/kb/2805216](http://support.microsoft.com/kb/2805216)
+下列系统已经过测试并确认兼容 Azure Linux 代理。**请注意，此列表可能不同于 Azure 平台所支持系统的官方列表**，详见以下网站：[http://support.microsoft.com/kb/2805216](/documentation/articles/virtual-machines-linux-endorsed-distros/)
 
 ###支持的 Linux 分发
 
@@ -331,7 +331,7 @@ Linux 代理的正常运行依赖一些系统程序包：
 - 请参阅以下资源来配置资源磁盘装入点，并在预配期间交换 Ubuntu 云映像上的空间：
 
  - [Ubuntu Wiki：配置交换分区](http://go.microsoft.com/fwlink/?LinkID=532955&clcid=0x409)
- - [将自定义数据注入到 Azure 虚拟机中](/documentation/articles/virtual-machines-how-to-inject-custom-data)
+ - [将自定义数据注入到 Azure 虚拟机中](/documentation/articles/virtual-machines-windows-classic-inject-custom-data)
 
  
 

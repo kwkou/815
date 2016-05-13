@@ -66,7 +66,7 @@ Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，�
 你可以使用 Java [创建证书](/documentation/articles/java-create-azure-website-using-java-sdk/#create-a-certificate)。
 
 ### Linux
-[本文](/documentation/articles/virtual-machines-linux-use-ssh-key)介绍如何通过 SSH 创建证书。
+[本文](/documentation/articles/virtual-machines-linux-ssh-from-linux)介绍如何通过 SSH 创建证书。
 
 ## 后续步骤
 

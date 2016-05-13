@@ -85,7 +85,7 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 ## 后续步骤
 
 - [创建 VNet](/documentation/articles/virtual-networks-create-vnet-classic-portal) 和子网。
-- [在 VNet 中创建 VM](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。
+- [在 VNet 中创建 VM](/documentation/articles/virtual-machines-windows-classic-tutorial)。
 - 了解 [NSG](/documentation/articles/virtual-networks-nsg)。
 - 了解[用户定义的路由和 IP 转发](/documentation/articles/virtual-networks-udr-overview)。
 

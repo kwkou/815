@@ -1,211 +1,211 @@
-#ÈçºÎÊ¹ÓÃÕë¶Ô Mac ºÍ Linux µÄ Azure ÃüÁîÐÐ¹¤¾ß
+#å¦‚ä½•ä½¿ç”¨é’ˆå¯¹ Mac å’Œ Linux çš„ Azure å‘½ä»¤è¡Œå·¥å…·
 
-±¾Ö¸ÄÏ½éÉÜÈçºÎÊ¹ÓÃÊÊÓÃÓÚ Mac ºÍ Linux µÄ Azure ÃüÁîÐÐ¹¤¾ß´´½¨ºÍ¹ÜÀí Azure ÖÐµÄ·þÎñ¡£ËùÉæ¼°µÄ·½°¸°üÀ¨**°²×°¹¤¾ß**¡¢**µ¼Èë·¢²¼ÉèÖÃ**¡¢**´´½¨ºÍ¹ÜÀí Azure ÍøÕ¾**ÒÔ¼°**´´½¨ºÍ¹ÜÀí Azure ÐéÄâ»ú**¡£ÓÐ¹ØÍêÕûµÄ²Î¿¼ÎÄµµ£¬Çë²ÎÔÄ[ÊÊÓÃÓÚ Mac ºÍ Linux µÄ Azure ÃüÁîÐÐ¹¤¾ßÎÄµµ][reference-docs]¡£
+æœ¬æŒ‡å—ä»‹ç»å¦‚ä½•ä½¿ç”¨é€‚ç”¨äºŽ Mac å’Œ Linux çš„ Azure å‘½ä»¤è¡Œå·¥å…·åˆ›å»ºå’Œç®¡ç† Azure ä¸­çš„æœåŠ¡ã€‚æ‰€æ¶‰åŠçš„æ–¹æ¡ˆåŒ…æ‹¬**å®‰è£…å·¥å…·**ã€**å¯¼å…¥å‘å¸ƒè®¾ç½®**ã€**åˆ›å»ºå’Œç®¡ç† Azure ç½‘ç«™**ä»¥åŠ**åˆ›å»ºå’Œç®¡ç† Azure è™šæ‹Ÿæœº**ã€‚æœ‰å…³å®Œæ•´çš„å‚è€ƒæ–‡æ¡£ï¼Œè¯·å‚é˜…[é€‚ç”¨äºŽ Mac å’Œ Linux çš„ Azure å‘½ä»¤è¡Œå·¥å…·æ–‡æ¡£][reference-docs]ã€‚
 
-##Ä¿Â¼
-* [Ê²Ã´ÊÇÊÊÓÃÓÚ Mac ºÍ Linux µÄ Azure ÃüÁîÐÐ¹¤¾ß](#Overview)
-* [ÈçºÎ°²×°ÃæÏò Mac ºÍ Linux µÄ Azure ÃüÁîÐÐ¹¤¾ß](#Download)
-* [ÈçºÎ´´½¨ Azure ÕÊ»§](#CreateAccount)
-* [ÈçºÎÏÂÔØºÍµ¼Èë·¢²¼ÉèÖÃ](#Account)
-* [ÈçºÎ´´½¨ºÍ¹ÜÀí Azure ÍøÕ¾](#WebSites)
-* [ÈçºÎ´´½¨ºÍ¹ÜÀí Azure ÐéÄâ»ú](#VMs)
+##ç›®å½•
+* [ä»€ä¹ˆæ˜¯é€‚ç”¨äºŽ Mac å’Œ Linux çš„ Azure å‘½ä»¤è¡Œå·¥å…·](#Overview)
+* [å¦‚ä½•å®‰è£…é¢å‘ Mac å’Œ Linux çš„ Azure å‘½ä»¤è¡Œå·¥å…·](#Download)
+* [å¦‚ä½•åˆ›å»º Azure å¸æˆ·](#CreateAccount)
+* [å¦‚ä½•ä¸‹è½½å’Œå¯¼å…¥å‘å¸ƒè®¾ç½®](#Account)
+* [å¦‚ä½•åˆ›å»ºå’Œç®¡ç† Azure ç½‘ç«™](#WebSites)
+* [å¦‚ä½•åˆ›å»ºå’Œç®¡ç† Azure è™šæ‹Ÿæœº](#VMs)
 
 
-<h2><a id="Overview"></a>Ê²Ã´ÊÇÊÊÓÃÓÚ Mac ºÍ Linux µÄ Azure ÃüÁîÐÐ¹¤¾ß</h2>
+<h2><a id="Overview"></a>ä»€ä¹ˆæ˜¯é€‚ç”¨äºŽ Mac å’Œ Linux çš„ Azure å‘½ä»¤è¡Œå·¥å…·</h2>
 
-ÊÊÓÃÓÚ Mac ºÍ Linux µÄ Azure ÃüÁîÐÐ¹¤¾ßÊÇÒ»×éÓÃÓÚ²¿ÊðºÍ¹ÜÀí Azure ·þÎñµÄÃüÁîÐÐ¹¤¾ß¡£
+é€‚ç”¨äºŽ Mac å’Œ Linux çš„ Azure å‘½ä»¤è¡Œå·¥å…·æ˜¯ä¸€ç»„ç”¨äºŽéƒ¨ç½²å’Œç®¡ç† Azure æœåŠ¡çš„å‘½ä»¤è¡Œå·¥å…·ã€‚
  
-Ö§³ÖµÄÈÎÎñ°üÀ¨£º
+æ”¯æŒçš„ä»»åŠ¡åŒ…æ‹¬ï¼š
 
-* µ¼Èë·¢²¼ÉèÖÃ¡£
-* ´´½¨ºÍ¹ÜÀí Azure ÍøÕ¾¡£
-* ´´½¨ºÍ¹ÜÀí Azure ÐéÄâ»ú¡£
+* å¯¼å…¥å‘å¸ƒè®¾ç½®ã€‚
+* åˆ›å»ºå’Œç®¡ç† Azure ç½‘ç«™ã€‚
+* åˆ›å»ºå’Œç®¡ç† Azure è™šæ‹Ÿæœºã€‚
 
-ÓÐ¹ØÖ§³ÖÃüÁîµÄÍêÕûÁÐ±í£¬ÇëÔÚÕâÐ©¹¤¾ß°²×°ºóÔÚÃüÁîÐÐ´¦¼üÈë `azure -help`£¬»ò²Î¼û[²Î¿¼ÎÄµµ][reference-docs]¡£
+æœ‰å…³æ”¯æŒå‘½ä»¤çš„å®Œæ•´åˆ—è¡¨ï¼Œè¯·åœ¨è¿™äº›å·¥å…·å®‰è£…åŽåœ¨å‘½ä»¤è¡Œå¤„é”®å…¥ `azure -help`ï¼Œæˆ–å‚è§[å‚è€ƒæ–‡æ¡£][reference-docs]ã€‚
 
-<h2><a id="Download">ÈçºÎ°²×°ÃæÏò Mac ºÍ Linux µÄ Azure ÃüÁîÐÐ¹¤¾ß</a></h2>
+<h2><a id="Download">å¦‚ä½•å®‰è£…é¢å‘ Mac å’Œ Linux çš„ Azure å‘½ä»¤è¡Œå·¥å…·</a></h2>
 
-ÒÔÏÂÁÐ±í°üº¬ÓÐ¹Ø°²×°ÃüÁîÐÐ¹¤¾ßµÄÐÅÏ¢£¨¾ßÌåÈ¡¾öÓÚÄãµÄ²Ù×÷ÏµÍ³£©£º
+ä»¥ä¸‹åˆ—è¡¨åŒ…å«æœ‰å…³å®‰è£…å‘½ä»¤è¡Œå·¥å…·çš„ä¿¡æ¯ï¼ˆå…·ä½“å–å†³äºŽä½ çš„æ“ä½œç³»ç»Ÿï¼‰ï¼š
 
-* **Mac**£ºÏÂÔØ [Azure SDK °²×°³ÌÐò][mac-installer]¡£´ò¿ªÏÂÔØµÄ .pkg ÎÄ¼þ²¢¸ù¾ÝÌáÊ¾Íê³É°²×°²½Öè¡£
+* **Mac**ï¼šä¸‹è½½ [Azure SDK å®‰è£…ç¨‹åº][mac-installer]ã€‚æ‰“å¼€ä¸‹è½½çš„ .pkg æ–‡ä»¶å¹¶æ ¹æ®æç¤ºå®Œæˆå®‰è£…æ­¥éª¤ã€‚
 
-* **Linux**£º°²×°×îÐÂ°æ±¾µÄ [Node.js][nodejs-org]£¨Çë²ÎÔÄ[Í¨¹ý³ÌÐò°ü¹ÜÀíÆ÷°²×° Node.js][install-node-linux]£©£¬È»ºóÔËÐÐÒÔÏÂÃüÁî£º
+* **Linux**ï¼šå®‰è£…æœ€æ–°ç‰ˆæœ¬çš„ [Node.js][nodejs-org]ï¼ˆè¯·å‚é˜…[é€šè¿‡ç¨‹åºåŒ…ç®¡ç†å™¨å®‰è£… Node.js][install-node-linux]ï¼‰ï¼Œç„¶åŽè¿è¡Œä»¥ä¸‹å‘½ä»¤ï¼š
 
 		npm install azure-cli -g
 
-	**×¢Òâ**£ºÄã¿ÉÄÜÐèÒªÊ¹ÓÃÌáÉýµÄÈ¨ÏÞ²ÅÄÜÔËÐÐ´ËÃüÁî£º
+	**æ³¨æ„**ï¼šä½ å¯èƒ½éœ€è¦ä½¿ç”¨æå‡çš„æƒé™æ‰èƒ½è¿è¡Œæ­¤å‘½ä»¤ï¼š
 
 		sudo npm install azure-cli -g
 
-* **Windows**£ºÔËÐÐ´Ë´¦ [Azure ÃüÁîÐÐ¹¤¾ß][windows-installer]Ìá¹©µÄ Windows °²×°³ÌÐò£¨.msi ÎÄ¼þ£©¡£
+* **Windows**ï¼šè¿è¡Œæ­¤å¤„ [Azure å‘½ä»¤è¡Œå·¥å…·][windows-installer]æä¾›çš„ Windows å®‰è£…ç¨‹åºï¼ˆ.msi æ–‡ä»¶ï¼‰ã€‚
 
 
-ÈôÒª²âÊÔ°²×°£¬ÇëÔÚÃüÁîÌáÊ¾·ûÏÂ¼üÈë `azure`¡£Èç¹û°²×°³É¹¦£¬Äã½«»á¿´µ½ËùÓÐ¿ÉÓÃ `azure` ÃüÁîµÄÁÐ±í¡£
+è‹¥è¦æµ‹è¯•å®‰è£…ï¼Œè¯·åœ¨å‘½ä»¤æç¤ºç¬¦ä¸‹é”®å…¥ `azure`ã€‚å¦‚æžœå®‰è£…æˆåŠŸï¼Œä½ å°†ä¼šçœ‹åˆ°æ‰€æœ‰å¯ç”¨ `azure` å‘½ä»¤çš„åˆ—è¡¨ã€‚
 
-<h2><a id="CreateAccount"></a>ÈçºÎ´´½¨ Azure ÕÊ»§</h2>
+<h2><a id="CreateAccount"></a>å¦‚ä½•åˆ›å»º Azure å¸æˆ·</h2>
 
-ÈôÒªÊ¹ÓÃÊÊÓÃÓÚ Mac ºÍ Linux µÄ Azure ÃüÁîÐÐ¹¤¾ß£¬ÄãÐèÒªÒ»¸ö Azure ÕÊ»§¡£
+è‹¥è¦ä½¿ç”¨é€‚ç”¨äºŽ Mac å’Œ Linux çš„ Azure å‘½ä»¤è¡Œå·¥å…·ï¼Œä½ éœ€è¦ä¸€ä¸ª Azure å¸æˆ·ã€‚
 
-´ò¿ª Web ä¯ÀÀÆ÷£¬ä¯ÀÀµ½ [http://www.azure.cn][azuredotcn] ²¢µ¥»÷ÓÒÉÏ½ÇµÄ**Ãâ·ÑÊÔÓÃ**¡£
+æ‰“å¼€ Web æµè§ˆå™¨ï¼Œæµè§ˆåˆ° [http://www.azure.cn][azuredotcn] å¹¶å•å‡»å³ä¸Šè§’çš„**å…è´¹è¯•ç”¨**ã€‚
 
-![Azure ÍøÕ¾][Azure Web Site]
+![Azure ç½‘ç«™][Azure Web Site]
 
-×ñÑ­ÓÐ¹Ø´´½¨ÕÊ»§µÄËµÃ÷¡£
+éµå¾ªæœ‰å…³åˆ›å»ºå¸æˆ·çš„è¯´æ˜Žã€‚
 
-<h2><a id="Account"></a>ÈçºÎÏÂÔØºÍµ¼Èë·¢²¼ÉèÖÃ</h2>
+<h2><a id="Account"></a>å¦‚ä½•ä¸‹è½½å’Œå¯¼å…¥å‘å¸ƒè®¾ç½®</h2>
 
-ÈôÒª¿ªÊ¼²Ù×÷£¬ÄúÐèÒªÏÈÏÂÔØ²¢µ¼ÈëÄúµÄ·¢²¼ÉèÖÃ¡£Õâ½«ÔÊÐíÄúÊ¹ÓÃÕâÐ©¹¤¾ßÀ´´´½¨ºÍ¹ÜÀí Azure ·þÎñ¡£ÈôÒªÏÂÔØÄãµÄ·¢²¼ÉèÖÃ£¬ÇëÊ¹ÓÃ `account download` ÃüÁî£º
+è‹¥è¦å¼€å§‹æ“ä½œï¼Œæ‚¨éœ€è¦å…ˆä¸‹è½½å¹¶å¯¼å…¥æ‚¨çš„å‘å¸ƒè®¾ç½®ã€‚è¿™å°†å…è®¸æ‚¨ä½¿ç”¨è¿™äº›å·¥å…·æ¥åˆ›å»ºå’Œç®¡ç† Azure æœåŠ¡ã€‚è‹¥è¦ä¸‹è½½ä½ çš„å‘å¸ƒè®¾ç½®ï¼Œè¯·ä½¿ç”¨ `account download` å‘½ä»¤ï¼š
 
 	azure account download
 
-Õâ½«´ò¿ªÄ¬ÈÏä¯ÀÀÆ÷£¬²¢ÌáÊ¾ÄúµÇÂ¼µ½¹ÜÀíÃÅ»§¡£µÇÂ¼ºó£¬½«»áÏÂÔØÄãµÄ `.publishsettings` ÎÄ¼þ¡£¼ÇÏÂ´ËÎÄ¼þµÄ±£´æÎ»ÖÃ¡£
+è¿™å°†æ‰“å¼€é»˜è®¤æµè§ˆå™¨ï¼Œå¹¶æç¤ºæ‚¨ç™»å½•åˆ°ç®¡ç†é—¨æˆ·ã€‚ç™»å½•åŽï¼Œå°†ä¼šä¸‹è½½ä½ çš„ `.publishsettings` æ–‡ä»¶ã€‚è®°ä¸‹æ­¤æ–‡ä»¶çš„ä¿å­˜ä½ç½®ã€‚
 
-½ÓÏÂÀ´£¬Í¨¹ýÔËÐÐÒÔÏÂÃüÁîµ¼Èë `.publishsettings` ÎÄ¼þ£¬²¢½« `{path to .publishsettings file}` Ìæ»»Îª `.publishsettings` ÎÄ¼þµÄÂ·¾¶£º
+æŽ¥ä¸‹æ¥ï¼Œé€šè¿‡è¿è¡Œä»¥ä¸‹å‘½ä»¤å¯¼å…¥ `.publishsettings` æ–‡ä»¶ï¼Œå¹¶å°† `{path to .publishsettings file}` æ›¿æ¢ä¸º `.publishsettings` æ–‡ä»¶çš„è·¯å¾„ï¼š
 
 	azure account import {path to .publishsettings file}
 
-¿ÉÒÔÊ¹ÓÃ <code>account clear</code> ÃüÁîÀ´É¾³ýÍ¨¹ý <code>import</code> ÃüÁî´æ´¢µÄËùÓÐÐÅÏ¢£º
+å¯ä»¥ä½¿ç”¨ <code>account clear</code> å‘½ä»¤æ¥åˆ é™¤é€šè¿‡ <code>import</code> å‘½ä»¤å­˜å‚¨çš„æ‰€æœ‰ä¿¡æ¯ï¼š
 
 	azure account clear
 
-ÈôÒª²é¿´ `account` ÃüÁîµÄÑ¡ÏîÁÐ±í£¬ÇëÊ¹ÓÃ `-help` Ñ¡Ïî£º
+è‹¥è¦æŸ¥çœ‹ `account` å‘½ä»¤çš„é€‰é¡¹åˆ—è¡¨ï¼Œè¯·ä½¿ç”¨ `-help` é€‰é¡¹ï¼š
 
 	azure account -help
 
-µ¼Èë·¢²¼ÉèÖÃºó£¬Îª°²È«Æð¼û£¬Ó¦É¾³ý `.publishsettings` ÎÄ¼þ¡£
+å¯¼å…¥å‘å¸ƒè®¾ç½®åŽï¼Œä¸ºå®‰å…¨èµ·è§ï¼Œåº”åˆ é™¤ `.publishsettings` æ–‡ä»¶ã€‚
 
-> [AZURE.NOTE] µ¼Èë·¢²¼ÉèÖÃÊ±£¬ÓÃÓÚ·ÃÎÊ Azure ¶©ÔÄµÄÆ¾¾Ý½«´æ´¢ÔÚÄãµÄ `user` ÎÄ¼þ¼ÐÖÐ¡£ÄãµÄ `user` ÎÄ¼þ¼ÐÊÜ²Ù×÷ÏµÍ³±£»¤¡£µ«ÊÇ£¬½¨ÒéÄã²ÉÈ¡ÆäËû´ëÊ©À´¶ÔÄãµÄ `user` ÎÄ¼þ¼Ð½øÐÐ¼ÓÃÜ¡£Äã¿ÉÍ¨¹ýÒÔÏÂ·½Ê½Íê³É´Ë²Ù×÷£º
+> [AZURE.NOTE] å¯¼å…¥å‘å¸ƒè®¾ç½®æ—¶ï¼Œç”¨äºŽè®¿é—® Azure è®¢é˜…çš„å‡­æ®å°†å­˜å‚¨åœ¨ä½ çš„ `user` æ–‡ä»¶å¤¹ä¸­ã€‚ä½ çš„ `user` æ–‡ä»¶å¤¹å—æ“ä½œç³»ç»Ÿä¿æŠ¤ã€‚ä½†æ˜¯ï¼Œå»ºè®®ä½ é‡‡å–å…¶ä»–æŽªæ–½æ¥å¯¹ä½ çš„ `user` æ–‡ä»¶å¤¹è¿›è¡ŒåŠ å¯†ã€‚ä½ å¯é€šè¿‡ä»¥ä¸‹æ–¹å¼å®Œæˆæ­¤æ“ä½œï¼š
 > 
-> - ÔÚ Windows ÉÏ£¬ÐÞ¸ÄÎÄ¼þ¼ÐÊôÐÔ»òÊ¹ÓÃ BitLocker¡£
-> - ÔÚ Mac ÉÏ£¬ÎªÎÄ¼þ¼ÐÆôÓÃ FileVault¡£
-> - ÔÚ Ubuntu ÉÏ£¬Ê¹ÓÃ¡°¼ÓÃÜÖ÷Ä¿Â¼¡±¹¦ÄÜ¡£ÆäËû Linux ·Ö·¢Ìá¹©ÁËµÈÐ§¹¦ÄÜ¡£
+> - åœ¨ Windows ä¸Šï¼Œä¿®æ”¹æ–‡ä»¶å¤¹å±žæ€§æˆ–ä½¿ç”¨ BitLockerã€‚
+> - åœ¨ Mac ä¸Šï¼Œä¸ºæ–‡ä»¶å¤¹å¯ç”¨ FileVaultã€‚
+> - åœ¨ Ubuntu ä¸Šï¼Œä½¿ç”¨â€œåŠ å¯†ä¸»ç›®å½•â€åŠŸèƒ½ã€‚å…¶ä»– Linux åˆ†å‘æä¾›äº†ç­‰æ•ˆåŠŸèƒ½ã€‚
 
-´ËÊ±ÄãÒÑ×¼±¸ºÃ´´½¨ºÍ¹ÜÀí Azure ÍøÕ¾ºÍ Azure ÐéÄâ»ú¡£
+æ­¤æ—¶ä½ å·²å‡†å¤‡å¥½åˆ›å»ºå’Œç®¡ç† Azure ç½‘ç«™å’Œ Azure è™šæ‹Ÿæœºã€‚
 
-<h2><a id="WebSites"></a>ÈçºÎ´´½¨ºÍ¹ÜÀí Azure ÍøÕ¾</h2>
+<h2><a id="WebSites"></a>å¦‚ä½•åˆ›å»ºå’Œç®¡ç† Azure ç½‘ç«™</h2>
 
-###´´½¨ÍøÕ¾
+###åˆ›å»ºç½‘ç«™
 
-ÈôÒª´´½¨ Azure ÍøÕ¾£¬ÇëÏÈ´´½¨Ò»¸öÃûÎª `MySite` µÄ¿ÕÄ¿Â¼£¬È»ºóä¯ÀÀµ½¸ÃÄ¿Â¼¡£
+è‹¥è¦åˆ›å»º Azure ç½‘ç«™ï¼Œè¯·å…ˆåˆ›å»ºä¸€ä¸ªåä¸º `MySite` çš„ç©ºç›®å½•ï¼Œç„¶åŽæµè§ˆåˆ°è¯¥ç›®å½•ã€‚
 
-È»ºó£¬ÔËÐÐÒÔÏÂÃüÁî£º
+ç„¶åŽï¼Œè¿è¡Œä»¥ä¸‹å‘½ä»¤ï¼š
 
 	azure site create MySite --git
 
-´ËÃüÁîµÄÊä³ö½«°üº¬ÐÂ´´½¨µÄÍøÕ¾µÄÄ¬ÈÏ URL¡£Ñ¡Ïî `--git` ÔÊÐíÄãÍ¨¹ýÔÚ±¾µØÓ¦ÓÃ³ÌÐòÄ¿Â¼ºÍÍøÕ¾µÄÊý¾ÝÖÐÐÄ´´½¨ git ´æ´¢¿âÀ´Ê¹ÓÃ git ·¢²¼µ½ÍøÕ¾¡£Çë×¢Òâ£¬Èç¹û±¾µØÎÄ¼þ¼ÐÒÑÊÇ git ´æ´¢¿â£¬Ôò´ËÃüÁî»á½«ÐÂµÄÔ¶³ÌÌí¼Óµ½ÏÖÓÐ´æ´¢¿â£¬²¢Ö¸ÏòÍøÕ¾Êý¾ÝÖÐÐÄÄÚµÄ´æ´¢¿â¡£
+æ­¤å‘½ä»¤çš„è¾“å‡ºå°†åŒ…å«æ–°åˆ›å»ºçš„ç½‘ç«™çš„é»˜è®¤ URLã€‚é€‰é¡¹ `--git` å…è®¸ä½ é€šè¿‡åœ¨æœ¬åœ°åº”ç”¨ç¨‹åºç›®å½•å’Œç½‘ç«™çš„æ•°æ®ä¸­å¿ƒåˆ›å»º git å­˜å‚¨åº“æ¥ä½¿ç”¨ git å‘å¸ƒåˆ°ç½‘ç«™ã€‚è¯·æ³¨æ„ï¼Œå¦‚æžœæœ¬åœ°æ–‡ä»¶å¤¹å·²æ˜¯ git å­˜å‚¨åº“ï¼Œåˆ™æ­¤å‘½ä»¤ä¼šå°†æ–°çš„è¿œç¨‹æ·»åŠ åˆ°çŽ°æœ‰å­˜å‚¨åº“ï¼Œå¹¶æŒ‡å‘ç½‘ç«™æ•°æ®ä¸­å¿ƒå†…çš„å­˜å‚¨åº“ã€‚
 
-Çë×¢Òâ£¬Äã¿É½« `azure site create` ÃüÁîÓëÏÂÁÐÈÎÒ»Ñ¡ÏîÒ»ÆðÖ´ÐÐ£º
+è¯·æ³¨æ„ï¼Œä½ å¯å°† `azure site create` å‘½ä»¤ä¸Žä¸‹åˆ—ä»»ä¸€é€‰é¡¹ä¸€èµ·æ‰§è¡Œï¼š
 
-* `--location [location name]`¡£´ËÑ¡ÏîÔÊÐíÄãÖ¸¶¨´´½¨ÍøÕ¾µÄÊý¾ÝÖÐÐÄµÄÎ»ÖÃ£¨ÀýÈç¡°ÃÀ¹úÎ÷²¿¡±£©¡£Èç¹ûºöÂÔ´ËÑ¡Ïî£¬ÏµÍ³½«ÌáÊ¾ÄãÑ¡ÔñÒ»¸öÎ»ÖÃ¡£
-* `--hostname [custom host name]`¡£´ËÑ¡ÏîÔÊÐíÄãÖ¸¶¨ÍøÕ¾µÄ×Ô¶¨ÒåÖ÷»úÃû¡£
+* `--location [location name]`ã€‚æ­¤é€‰é¡¹å…è®¸ä½ æŒ‡å®šåˆ›å»ºç½‘ç«™çš„æ•°æ®ä¸­å¿ƒçš„ä½ç½®ï¼ˆä¾‹å¦‚â€œç¾Žå›½è¥¿éƒ¨â€ï¼‰ã€‚å¦‚æžœå¿½ç•¥æ­¤é€‰é¡¹ï¼Œç³»ç»Ÿå°†æç¤ºä½ é€‰æ‹©ä¸€ä¸ªä½ç½®ã€‚
+* `--hostname [custom host name]`ã€‚æ­¤é€‰é¡¹å…è®¸ä½ æŒ‡å®šç½‘ç«™çš„è‡ªå®šä¹‰ä¸»æœºåã€‚
 
-È»ºó£¬Äã¿ÉÒÔ½«ÄÚÈÝÌí¼Óµ½ÍøÕ¾Ä¿Â¼¡£Ê¹ÓÃ³£¹æ git Á÷£¨`git add`£¬`git commit`£©À´Ìá½»ÄãµÄÄÚÈÝ¡£Ê¹ÓÃÒÔÏÂ git ÃüÁî¿É½«ÍøÕ¾ÄÚÈÝÍÆËÍµ½ Azure£º
+ç„¶åŽï¼Œä½ å¯ä»¥å°†å†…å®¹æ·»åŠ åˆ°ç½‘ç«™ç›®å½•ã€‚ä½¿ç”¨å¸¸è§„ git æµï¼ˆ`git add`ï¼Œ`git commit`ï¼‰æ¥æäº¤ä½ çš„å†…å®¹ã€‚ä½¿ç”¨ä»¥ä¸‹ git å‘½ä»¤å¯å°†ç½‘ç«™å†…å®¹æŽ¨é€åˆ° Azureï¼š
 
 	git push azure master
 
-###ÉèÖÃ´Ó GitHub µÄ·¢²¼
+###è®¾ç½®ä»Ž GitHub çš„å‘å¸ƒ
 
-ÈôÒª´Ó GitHub ´æ´¢¿âÉèÖÃÁ¬Ðø·¢²¼£¬ÇëÔÚ´´½¨Õ¾µãÊ±Ê¹ÓÃ `--GitHub` Ñ¡Ïî£º
+è‹¥è¦ä»Ž GitHub å­˜å‚¨åº“è®¾ç½®è¿žç»­å‘å¸ƒï¼Œè¯·åœ¨åˆ›å»ºç«™ç‚¹æ—¶ä½¿ç”¨ `--GitHub` é€‰é¡¹ï¼š
 
 	auzre site create MySite --github --githubusername username --githubpassword password --githubrepository githubuser/reponame
 
-Èç¹ûÄúÓµÓÐ GitHub ´æ´¢¿âµÄ±¾µØ¿ËÂ¡£¬»òÕßÄúÓµÓÐ´ø¶Ô GitHub ´æ´¢¿âµÄµ¥¸öÔ¶³ÌÒýÓÃµÄ´æ´¢¿â£¬Ôò´ËÃüÁî»á×Ô¶¯½« GitHub ´æ´¢¿âÖÐµÄ´úÂë·¢²¼µ½ÄúµÄÕ¾µã¡£×Ô´Ë£¬ÈÎºÎÍÆËÍµ½ GitHub ´æ´¢¿âµÄ¸ü¸Ä¶¼½«×Ô¶¯·¢²¼µ½ÄúµÄÕ¾µã¡£
+å¦‚æžœæ‚¨æ‹¥æœ‰ GitHub å­˜å‚¨åº“çš„æœ¬åœ°å…‹éš†ï¼Œæˆ–è€…æ‚¨æ‹¥æœ‰å¸¦å¯¹ GitHub å­˜å‚¨åº“çš„å•ä¸ªè¿œç¨‹å¼•ç”¨çš„å­˜å‚¨åº“ï¼Œåˆ™æ­¤å‘½ä»¤ä¼šè‡ªåŠ¨å°† GitHub å­˜å‚¨åº“ä¸­çš„ä»£ç å‘å¸ƒåˆ°æ‚¨çš„ç«™ç‚¹ã€‚è‡ªæ­¤ï¼Œä»»ä½•æŽ¨é€åˆ° GitHub å­˜å‚¨åº“çš„æ›´æ”¹éƒ½å°†è‡ªåŠ¨å‘å¸ƒåˆ°æ‚¨çš„ç«™ç‚¹ã€‚
 
-ÔÚÉèÖÃ´Ó GitHub µÄ·¢²¼Ê±£¬ËùÊ¹ÓÃµÄÄ¬ÈÏ·ÖÖ§Îª master ·ÖÖ§¡£ÈôÒªÖ¸¶¨ÆäËû·ÖÖ§£¬Çë´Ó±¾µØ´æ´¢¿âÖ´ÐÐÒÔÏÂÃüÁî£º
+åœ¨è®¾ç½®ä»Ž GitHub çš„å‘å¸ƒæ—¶ï¼Œæ‰€ä½¿ç”¨çš„é»˜è®¤åˆ†æ”¯ä¸º master åˆ†æ”¯ã€‚è‹¥è¦æŒ‡å®šå…¶ä»–åˆ†æ”¯ï¼Œè¯·ä»Žæœ¬åœ°å­˜å‚¨åº“æ‰§è¡Œä»¥ä¸‹å‘½ä»¤ï¼š
 
 	azure site repository <branch name>
 
-###ÅäÖÃÓ¦ÓÃÉèÖÃ
+###é…ç½®åº”ç”¨è®¾ç½®
 
-Ó¦ÓÃÉèÖÃÊÇÔÚÔËÐÐÊ±¿É¹©Ó¦ÓÃ³ÌÐòÊ¹ÓÃµÄ¼üÖµ¶Ô¡£ÔÚÕë¶Ô Azure ÍøÕ¾½øÐÐÉèÖÃÊ±£¬Ó¦ÓÃÉèÖÃÖµ½«ÖØÐ´ÄãÍøÕ¾µÄ Web.config ÎÄ¼þÖÐ¶¨ÒåµÄ¾ßÓÐÏàÍ¬¼üµÄÉèÖÃ¡£¶ÔÓÚ Node.js ºÍ PHP Ó¦ÓÃ³ÌÐò£¬Ó¦ÓÃÉèÖÃ¿ÉÓÃ×÷»·¾³±äÁ¿¡£ÏÂÃæµÄÊ¾ÀýÑÝÊ¾ÈçºÎÉèÖÃ¼üÖµ¶Ô£º
+åº”ç”¨è®¾ç½®æ˜¯åœ¨è¿è¡Œæ—¶å¯ä¾›åº”ç”¨ç¨‹åºä½¿ç”¨çš„é”®å€¼å¯¹ã€‚åœ¨é’ˆå¯¹ Azure ç½‘ç«™è¿›è¡Œè®¾ç½®æ—¶ï¼Œåº”ç”¨è®¾ç½®å€¼å°†é‡å†™ä½ ç½‘ç«™çš„ Web.config æ–‡ä»¶ä¸­å®šä¹‰çš„å…·æœ‰ç›¸åŒé”®çš„è®¾ç½®ã€‚å¯¹äºŽ Node.js å’Œ PHP åº”ç”¨ç¨‹åºï¼Œåº”ç”¨è®¾ç½®å¯ç”¨ä½œçŽ¯å¢ƒå˜é‡ã€‚ä¸‹é¢çš„ç¤ºä¾‹æ¼”ç¤ºå¦‚ä½•è®¾ç½®é”®å€¼å¯¹ï¼š
 
 	azure site config add <key>=<value> 
 
-ÈôÒª²é¿´ËùÓÐ¼üÖµ¶ÔµÄÁÐ±í£¬ÇëÊ¹ÓÃÒÔÏÂÃüÁî£º
+è‹¥è¦æŸ¥çœ‹æ‰€æœ‰é”®å€¼å¯¹çš„åˆ—è¡¨ï¼Œè¯·ä½¿ç”¨ä»¥ä¸‹å‘½ä»¤ï¼š
 
 	azure site config list 
 
-»òÕß£¬Èç¹ûÄúÖªµÀ¸Ã¼ü²¢Ï£Íû²é¿´Öµ£¬Ôò¿ÉÊ¹ÓÃ£º
+æˆ–è€…ï¼Œå¦‚æžœæ‚¨çŸ¥é“è¯¥é”®å¹¶å¸Œæœ›æŸ¥çœ‹å€¼ï¼Œåˆ™å¯ä½¿ç”¨ï¼š
 
 	azure site config get <key> 
 
-ÈôÒª¸ü¸ÄÏÖÓÐ¼üµÄÖµ£¬Ôò±ØÐëÏÈÇå³ýÏÖÓÐ¼ü£¬È»ºóÖØÐÂÌí¼Ó¸Ã¼ü¡£Çå³ýÃüÁîÎª£º
+è‹¥è¦æ›´æ”¹çŽ°æœ‰é”®çš„å€¼ï¼Œåˆ™å¿…é¡»å…ˆæ¸…é™¤çŽ°æœ‰é”®ï¼Œç„¶åŽé‡æ–°æ·»åŠ è¯¥é”®ã€‚æ¸…é™¤å‘½ä»¤ä¸ºï¼š
 
 	azure site config clear <key> 
 
-###ÁÐ³ö²¢ÏÔÊ¾Õ¾µã
+###åˆ—å‡ºå¹¶æ˜¾ç¤ºç«™ç‚¹
 
-ÈôÒªÁÐ³öÄãµÄÍøÕ¾£¬ÇëÊ¹ÓÃÒÔÏÂÃüÁî£º
+è‹¥è¦åˆ—å‡ºä½ çš„ç½‘ç«™ï¼Œè¯·ä½¿ç”¨ä»¥ä¸‹å‘½ä»¤ï¼š
 
 	azure site list
 
-ÈôÒª»ñÈ¡ÓÐ¹ØÕ¾µãµÄÏêÏ¸ÐÅÏ¢£¬ÇëÊ¹ÓÃ `site show` ÃüÁî¡£ÏÂÃæµÄÊ¾ÀýÑÝÊ¾ÁË `MySite` µÄÏêÏ¸ÐÅÏ¢£º
+è‹¥è¦èŽ·å–æœ‰å…³ç«™ç‚¹çš„è¯¦ç»†ä¿¡æ¯ï¼Œè¯·ä½¿ç”¨ `site show` å‘½ä»¤ã€‚ä¸‹é¢çš„ç¤ºä¾‹æ¼”ç¤ºäº† `MySite` çš„è¯¦ç»†ä¿¡æ¯ï¼š
 
 	azure site show MySite
 
-###Í£Ö¹¡¢Æô¶¯»òÖØÐÂÆô¶¯Õ¾µã
+###åœæ­¢ã€å¯åŠ¨æˆ–é‡æ–°å¯åŠ¨ç«™ç‚¹
 
-Äã¿ÉÒÔÊ¹ÓÃ `site stop`¡¢`site start` »ò `site restart` ÃüÁîÍ£Ö¹¡¢Æô¶¯»òÖØÐÂÆô¶¯Õ¾µã£º
+ä½ å¯ä»¥ä½¿ç”¨ `site stop`ã€`site start` æˆ– `site restart` å‘½ä»¤åœæ­¢ã€å¯åŠ¨æˆ–é‡æ–°å¯åŠ¨ç«™ç‚¹ï¼š
 
 	azure site stop MySite
 	azure site start MySite
 	azure site restart MySite
 
-###É¾³ýÕ¾µã
+###åˆ é™¤ç«™ç‚¹
 
-×îºó£¬Äã¿ÉÊ¹ÓÃ `site delete` ÃüÁîÉ¾³ýÕ¾µã£º
+æœ€åŽï¼Œä½ å¯ä½¿ç”¨ `site delete` å‘½ä»¤åˆ é™¤ç«™ç‚¹ï¼š
 
 	azure site delete MySite
 
-Çë×¢Òâ£¬Èç¹ûÄã´ÓÔËÐÐ `site create` µÄÎÄ¼þ¼ÐÖÐÔËÐÐÉÏÊöÈÎÒ»ÃüÁî£¬ÔòÎÞÐè½«Õ¾µãÃû³Æ `MySite` Ö¸¶¨Îª×îºóÒ»¸ö²ÎÊý¡£
+è¯·æ³¨æ„ï¼Œå¦‚æžœä½ ä»Žè¿è¡Œ `site create` çš„æ–‡ä»¶å¤¹ä¸­è¿è¡Œä¸Šè¿°ä»»ä¸€å‘½ä»¤ï¼Œåˆ™æ— éœ€å°†ç«™ç‚¹åç§° `MySite` æŒ‡å®šä¸ºæœ€åŽä¸€ä¸ªå‚æ•°ã€‚
 
-ÈôÒª²é¿´ `site` ÃüÁîµÄÍêÕûÁÐ±í£¬ÇëÊ¹ÓÃ `-help` Ñ¡Ïî£º
+è‹¥è¦æŸ¥çœ‹ `site` å‘½ä»¤çš„å®Œæ•´åˆ—è¡¨ï¼Œè¯·ä½¿ç”¨ `-help` é€‰é¡¹ï¼š
 
 	azure site -help 
 
-<h2><a id="VMs"></a>ÈçºÎ´´½¨ºÍ¹ÜÀí Azure ÐéÄâ»ú</h2>
+<h2><a id="VMs"></a>å¦‚ä½•åˆ›å»ºå’Œç®¡ç† Azure è™šæ‹Ÿæœº</h2>
 
-´ÓÄãÌá¹©µÄ»òÓ³Ïñ¿âÖÐ¿ÉÓÃµÄÐéÄâ»úÓ³Ïñ£¨.vhd ÎÄ¼þ£©´´½¨ Azure ÐéÄâ»ú¡£ÈôÒª²é¿´¿ÉÓÃµÄÓ³Ïñ£¬ÇëÊ¹ÓÃ `vm image list` ÃüÁî£º
+ä»Žä½ æä¾›çš„æˆ–æ˜ åƒåº“ä¸­å¯ç”¨çš„è™šæ‹Ÿæœºæ˜ åƒï¼ˆ.vhd æ–‡ä»¶ï¼‰åˆ›å»º Azure è™šæ‹Ÿæœºã€‚è‹¥è¦æŸ¥çœ‹å¯ç”¨çš„æ˜ åƒï¼Œè¯·ä½¿ç”¨ `vm image list` å‘½ä»¤ï¼š
 
 	azure vm image list
 
-Äã¿ÉÊ¹ÓÃ `vm create` ÃüÁî´Ó¿ÉÓÃÓ³ÏñÖ®Ò»ÉèÖÃºÍÆô¶¯ÐéÄâ»ú¡£ÏÂÃæµÄÊ¾ÀýÑÝÊ¾ÁËÈçºÎ´ÓÓ³Ïñ¿â (CentOS 6.2) ÖÐµÄÓ³Ïñ´´½¨ Linux ÐéÄâ»ú£¨ÃûÎª `myVM`£©¡£ÐéÄâ»úµÄ¸ùÓÃ»§ÃûºÍÃÜÂë·Ö±ðÎª `myusername` ºÍ `Mypassw0rd`¡££¨Çë×¢Òâ£¬`--location` ²ÎÊýÖ¸¶¨ÔÚÆäÖÐ´´½¨ÐéÄâ»úµÄÊý¾ÝÖÐÐÄ¡£Èç¹ûºöÂÔ `--location` ²ÎÊý£¬ÔòÏµÍ³½«ÌáÊ¾ÄãÑ¡ÔñÒ»¸öÎ»ÖÃ¡££©
+ä½ å¯ä½¿ç”¨ `vm create` å‘½ä»¤ä»Žå¯ç”¨æ˜ åƒä¹‹ä¸€è®¾ç½®å’Œå¯åŠ¨è™šæ‹Ÿæœºã€‚ä¸‹é¢çš„ç¤ºä¾‹æ¼”ç¤ºäº†å¦‚ä½•ä»Žæ˜ åƒåº“ (CentOS 6.2) ä¸­çš„æ˜ åƒåˆ›å»º Linux è™šæ‹Ÿæœºï¼ˆåä¸º `myVM`ï¼‰ã€‚è™šæ‹Ÿæœºçš„æ ¹ç”¨æˆ·åå’Œå¯†ç åˆ†åˆ«ä¸º `myusername` å’Œ `Mypassw0rd`ã€‚ï¼ˆè¯·æ³¨æ„ï¼Œ`--location` å‚æ•°æŒ‡å®šåœ¨å…¶ä¸­åˆ›å»ºè™šæ‹Ÿæœºçš„æ•°æ®ä¸­å¿ƒã€‚å¦‚æžœå¿½ç•¥ `--location` å‚æ•°ï¼Œåˆ™ç³»ç»Ÿå°†æç¤ºä½ é€‰æ‹©ä¸€ä¸ªä½ç½®ã€‚ï¼‰
 
 	azure vm create myVM OpenLogic__OpenLogic-CentOS-62-20120509-en-us-30GB.vhd myusername --location "West US"
 
-Äã¿ÉÒÔ¿¼ÂÇ½« `--ssh` ±êÖ¾ (Linux) »ò `--rdp` ±êÖ¾ (Windows) ´«µÝµ½ `vm create` ÒÔÖ§³ÖÓëÐÂ´´½¨µÄÐéÄâ»úµÄÔ¶³ÌÁ¬½Ó¡£
+ä½ å¯ä»¥è€ƒè™‘å°† `--ssh` æ ‡å¿— (Linux) æˆ– `--rdp` æ ‡å¿— (Windows) ä¼ é€’åˆ° `vm create` ä»¥æ”¯æŒä¸Žæ–°åˆ›å»ºçš„è™šæ‹Ÿæœºçš„è¿œç¨‹è¿žæŽ¥ã€‚
 
-Èç¹ûÄã¸üÔ¸Òâ´Ó×Ô¶¨ÒåÓ³ÏñÉèÖÃÐéÄâ»ú£¬Ôò¿ÉÊ¹ÓÃ `vm image create` ÃüÁî´Ó .vhd ÎÄ¼þ´´½¨Ó³Ïñ£¬È»ºóÊ¹ÓÃ `vm create` ÃüÁîÉèÖÃÐéÄâ»ú¡£ÏÂÃæµÄÊ¾ÀýÑÝÊ¾ÁËÈçºÎ´Ó±¾µØ .vhd ÎÄ¼þ´´½¨ Linux Ó³Ïñ£¨ÃûÎª `myImage`£©¡££¨`--location` ²ÎÊýÖ¸¶¨ÔÚÆäÖÐ´æ´¢Ó³ÏñµÄÊý¾Ý¡££©
+å¦‚æžœä½ æ›´æ„¿æ„ä»Žè‡ªå®šä¹‰æ˜ åƒè®¾ç½®è™šæ‹Ÿæœºï¼Œåˆ™å¯ä½¿ç”¨ `vm image create` å‘½ä»¤ä»Ž .vhd æ–‡ä»¶åˆ›å»ºæ˜ åƒï¼Œç„¶åŽä½¿ç”¨ `vm create` å‘½ä»¤è®¾ç½®è™šæ‹Ÿæœºã€‚ä¸‹é¢çš„ç¤ºä¾‹æ¼”ç¤ºäº†å¦‚ä½•ä»Žæœ¬åœ° .vhd æ–‡ä»¶åˆ›å»º Linux æ˜ åƒï¼ˆåä¸º `myImage`ï¼‰ã€‚ï¼ˆ`--location` å‚æ•°æŒ‡å®šåœ¨å…¶ä¸­å­˜å‚¨æ˜ åƒçš„æ•°æ®ã€‚ï¼‰
 
 	azure vm image create myImage /path/to/myImage.vhd --os linux --location "West US"
 
-Äã¿ÉÒÔ´Ó´æ´¢ÔÚ Azure Blob ´æ´¢ÖÐµÄ .vhd ´´½¨Ó³Ïñ£¬¶ø²»ÓÃ´Ó±¾µØ .vhd ´´½¨Ó³Ïñ¡£Äã¿ÉÊ¹ÓÃ `blob-url` ²ÎÊý×öµ½ÕâÒ»µã£º
+ä½ å¯ä»¥ä»Žå­˜å‚¨åœ¨ Azure Blob å­˜å‚¨ä¸­çš„ .vhd åˆ›å»ºæ˜ åƒï¼Œè€Œä¸ç”¨ä»Žæœ¬åœ° .vhd åˆ›å»ºæ˜ åƒã€‚ä½ å¯ä½¿ç”¨ `blob-url` å‚æ•°åšåˆ°è¿™ä¸€ç‚¹ï¼š
 
 	azure vm image create myImage --blob-url <url to .vhd in Blob Storage> --os linux
 
-´´½¨Ó³Ïñºó£¬Äã¿ÉÊ¹ÓÃ `vm create` ´ÓÓ³Ïñ´¦ÉèÖÃÐéÄâ»ú¡£ÏÂÃæµÄÃüÁî½«´ÓÉÏÃæ´´½¨µÄÓ³Ïñ£¨`myImage`£© ´´½¨ÃûÎª `myVM` µÄÐéÄâ»ú¡£
+åˆ›å»ºæ˜ åƒåŽï¼Œä½ å¯ä½¿ç”¨ `vm create` ä»Žæ˜ åƒå¤„è®¾ç½®è™šæ‹Ÿæœºã€‚ä¸‹é¢çš„å‘½ä»¤å°†ä»Žä¸Šé¢åˆ›å»ºçš„æ˜ åƒï¼ˆ`myImage`ï¼‰ åˆ›å»ºåä¸º `myVM` çš„è™šæ‹Ÿæœºã€‚
 
 	azure vm create myVM myImage myusername --location "China East"
 
-ÉèÖÃÐéÄâ»úºó£¬Äú¿ÉÄÜÐèÒª´´½¨ÖÕ½áµãÒÔÔÊÐí¶ÔÐéÄâ»ú½øÐÐÔ¶³Ì·ÃÎÊ£¨¼ûÏÂÀý£©¡£ÏÂÃæµÄÊ¾ÀýÊ¹ÓÃ `vm create endpoint` ÃüÁî´ò¿ª `myVM` ÉÏµÄÍâ²¿¶Ë¿Ú 22 ºÍ±¾µØ¶Ë¿Ú 22£º
+è®¾ç½®è™šæ‹ŸæœºåŽï¼Œæ‚¨å¯èƒ½éœ€è¦åˆ›å»ºç»ˆç»“ç‚¹ä»¥å…è®¸å¯¹è™šæ‹Ÿæœºè¿›è¡Œè¿œç¨‹è®¿é—®ï¼ˆè§ä¸‹ä¾‹ï¼‰ã€‚ä¸‹é¢çš„ç¤ºä¾‹ä½¿ç”¨ `vm create endpoint` å‘½ä»¤æ‰“å¼€ `myVM` ä¸Šçš„å¤–éƒ¨ç«¯å£ 22 å’Œæœ¬åœ°ç«¯å£ 22ï¼š
 
 	azure vm endpoint create myVM 22 22
 
-Äã¿ÉÊ¹ÓÃ `vm show` ÃüÁî»ñÈ¡ÓÐ¹ØÐéÄâ»úµÄÏêÏ¸ÐÅÏ¢£¨°üÀ¨ IP µØÖ·¡¢DNS Ãû³ÆºÍÖÕ½áµãÐÅÏ¢£©£º
+ä½ å¯ä½¿ç”¨ `vm show` å‘½ä»¤èŽ·å–æœ‰å…³è™šæ‹Ÿæœºçš„è¯¦ç»†ä¿¡æ¯ï¼ˆåŒ…æ‹¬ IP åœ°å€ã€DNS åç§°å’Œç»ˆç»“ç‚¹ä¿¡æ¯ï¼‰ï¼š
 
 	azure vm show myVM
 
-ÈôÒª¹Ø±Õ¡¢Æô¶¯»òÖØÐÂÆô¶¯ÐéÄâ»ú£¬ÇëÊ¹ÓÃÏÂÁÐÃüÁîÖ®Ò»£º
+è‹¥è¦å…³é—­ã€å¯åŠ¨æˆ–é‡æ–°å¯åŠ¨è™šæ‹Ÿæœºï¼Œè¯·ä½¿ç”¨ä¸‹åˆ—å‘½ä»¤ä¹‹ä¸€ï¼š
 
 	azure vm shutdown myVM
 	azure vm start myVM
 	azure vm restart myVM
 
-×îºó£¬ÈôÒªÉ¾³ý VM£¬ÇëÊ¹ÓÃ `vm delete` ÃüÁî£º
+æœ€åŽï¼Œè‹¥è¦åˆ é™¤ VMï¼Œè¯·ä½¿ç”¨ `vm delete` å‘½ä»¤ï¼š
 
 	azure vm delete myVM
 
-ÓÐ¹ØÓÃÓÚ´´½¨ºÍ¹ÜÀíÐéÄâ»úµÄÃüÁîµÄÍêÕûÁÐ±í£¬ÇëÊ¹ÓÃ `-h` Ñ¡Ïî£º
+æœ‰å…³ç”¨äºŽåˆ›å»ºå’Œç®¡ç†è™šæ‹Ÿæœºçš„å‘½ä»¤çš„å®Œæ•´åˆ—è¡¨ï¼Œè¯·ä½¿ç”¨ `-h` é€‰é¡¹ï¼š
 
 	azure vm -h
 

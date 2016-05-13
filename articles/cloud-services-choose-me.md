@@ -32,7 +32,7 @@ Azure 提供了用于运行应用程序的不同托管模型。每种模型提�
 * [在 Python 中创建云服务应用](/documentation/articles/cloud-services-python-ptvs)
 
 [App Service]: /documentation/articles/app-service-choose-me
-[虚拟机]: /documentation/articles/virtual-machines-about
+[虚拟机]: /documentation/articles/virtual-machines-linux-about
 [云服务]: #tellmecs
 
 <!---HONumber=79-->
