@@ -30,7 +30,7 @@
 
 在开始之前，你需要有 Azure 帐户和订阅。如果没有，请注册[试用版](/pricing/1rmb-trial)。
 
-> [AZURE.NOTE] 本 SQL 数据库教程介绍如何使用云中的 Microsoft 关系数据库管理服务 Azure SQL 数据库来设置一个数据库。另一个选项是在 Azure 虚拟机上运行 SQL Server。请参阅[了解 Azure SQL 数据库和 Azure VM 中的 SQL Server](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas) 以进行快速比较，或者参阅[预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server)以开始使用虚拟机。
+> [AZURE.NOTE] 本 SQL 数据库教程介绍如何使用云中的 Microsoft 关系数据库管理服务 Azure SQL 数据库来设置一个数据库。另一个选项是在 Azure 虚拟机上运行 SQL Server。请参阅[了解 Azure SQL 数据库和 Azure VM 中的 SQL Server](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas) 以进行快速比较，或者参阅[预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create)以开始使用虚拟机。
 
 ## 步骤 1：登录并开始设置 SQL 数据库
 1. 登录到 [Azure 门户](http://manage.windowsazure.cn)。

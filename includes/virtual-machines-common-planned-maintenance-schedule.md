@@ -48,7 +48,7 @@ Get-AzureVM -ServiceName "<VmCloudServiceName>" -Name "<VmName>" | Remove-AzureA
 
 
 <!--Link references-->
-[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
-[Understand planned versus unplanned maintenance]: /documentation/articles/virtual-machines-manage-availability#Understand-planned-versus-unplanned-maintenance
+[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-classic-tutorial
+[Understand planned versus unplanned maintenance]: /documentation/articles/virtual-machines-linux-manage-availability#Understand-planned-versus-unplanned-maintenance
 
 <!---HONumber=Mooncake_0425_2016-->

@@ -40,9 +40,9 @@
 <p>您可以通过远程桌面访问在 Azure 中运行的角色实例的桌面。您可以使用远程桌面连接配置虚拟机，或者排查应用程序问题。</p>
 <h2 id="header-2">虚拟机</h2>
 <h3>在几分钟之内轻松部署并运行 Windows Server 和 Linux 虚拟机。</h3>
-<h3>教程：<a href="/documentation/articles/virtual-machines-java-run-tomcat-application-server/">在虚拟机上运行 Apache Tomcat 应用程序服务器</a></h3>
+<h3>教程：<a href="/documentation/articles/virtual-machines-windows-classic-java-run-tomcat-app-server/">在虚拟机上运行 Apache Tomcat 应用程序服务器</a></h3>
 <p>创建一台运行在 Azure 上的虚拟机，然后将其配置为运行 Tomcat（一个 Java 应用程序服务器）。您将了解如何使用 Azure 虚拟机托管 Java 应用程序。</p>
-<h3>教程：<a href="/documentation/articles/virtual-machines-java-run-compute-intensive-task/">在虚拟机上运行需要进行大量计算的任务</a></h3>
+<h3>教程：<a href="/documentation/articles/virtual-machines-windows-classic-java-run-compute-intensive-task/">在虚拟机上运行需要进行大量计算的任务</a></h3>
 <p>了解如何使用虚拟机来处理需要进行大量计算的任务；例如，虚拟机可以处理任务并将结果传送给客户端计算机或移动应用程序。</p>
 <h2 id="header-3">持续集成</h2>
 <h3>教程：<a href="/documentation/articles/storage-java-jenkins-continuous-integration-solution/">将 Azure 存储用于 Jenkins 持续集成解决方案</a></h3>

@@ -665,7 +665,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 有关虚拟机迁移的特定方案，请参阅以下资源：
 
 - [在存储帐户之间迁移 Azure 虚拟机](https://azure.microsoft.com/blog/2014/10/22/migrate-azure-virtual-machines-between-storage-accounts/)
-- [创建 Windows Server VHD 并将其上载到 Azure。](/documentation/articles/virtual-machines-create-upload-vhd-windows-server)  
+- [创建 Windows Server VHD 并将其上载到 Azure。](/documentation/articles/virtual-machines-windows-classic-createupload-vhd)  
 - [创建并上载包含 Linux 操作系统的虚拟硬盘](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd)  
 - [将虚拟机从 Amazon AWS 迁移到 Azure](http://channel9.msdn.com/Series/Migrating-Virtual-Machines-from-Amazon-AWS-to-Microsoft-Azure)  
 
