@@ -1,6 +1,6 @@
 <properties
-	pageTitle="OS 平台兼容性 | Azure"
-	description="概述 IoT 设备 SDK 与 OS 平台的兼容性。"
+	pageTitle="OS 平台和硬件兼容性 | Azure"
+	description="总结 IoT 设备 SDK 与 OS 平台和设备硬件的兼容性。"
 	services="iot-hub"
 	documentationCenter=""
 	authors="hegate"
@@ -9,16 +9,14 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="02/28/2016"
-     wacn.date="04/25/2016"/>
+     ms.date="04/15/2016"
+     wacn.date="05/05/2016"/>
 
 # OS 平台和硬件与设备 SDK 的兼容性
 
 本文档介绍了 SDK 与不同 OS 平台的兼容性。如果你不确定要使用的设备，请查看本文中的 [OS 平台和库](#os-platforms)兼容性部分。
 
-## Azure IoT 认证计划
 
-如果你已经有一个设备，请查看Azure IoT 认证计划中包含的设备列表，以找到特定设备的兼容性信息。 Azure IoT 认证是一个合作伙伴计划，该计划将更广泛的 IoT 生态系统与 Azure 相连接，以便开发人员和架构师了解兼容性方案。具体而言，它提供受信任的 OS/设备组合列表来帮助快速开始 IoT 项目 — 无论你是处于概念证明还是试验阶段。
 
 ## OS 平台
 
@@ -101,70 +99,7 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 托管代理代码需要 Microsoft .NET Framework 4.5
 
 
-## Azure IoT 认证
 
-**Azure IoT 认证**是一种合作伙伴计划，该计划将更广泛的 IoT 生态系统与 Azure 相连接，以便开发人员和架构师了解兼容性方案。具体而言，它提供 OS/设备组合的受信任列表来帮助快速开始 IoT 项目 — 无论你是处于概念证明还是试验阶段。借助认证的设备和操作系统组合，IoT 项目可以快速开始，只需较少的工作和自定义便可确保设备与 Azure IoT 中心兼容。
-
-## IoT 认证设备
-
-**IoT 认证**设备测试了与 Azure IoT SDK 的兼容性，已准备好在 IoT 应用程序中使用。具体而言，我们基于操作系统平台和代码语言确定兼容性。
-
-#### 设备列表
-
-每个设备都进行了认证，可在设备制造商所选择的 OS 和语言中与我们的 SDK 结合使用。例如，BeagleBone Black 可使用我们的 C、Javascript 和 Java 语言在 Debian 上工作。这意味着开发人员可以在特定设备上采用其中任何语言和 OS 组合构建应用程序。
-
-|设备| 经测试的 OS |语言|
-|:---------|:----------|:----------|
-|[AAEON ACP-1104](http://www.aaeon.com/en/p/infotainment-multi-touch-panel-solutions-1104/) |Windows 10 | C#|
-|[AAEON GENE-BT05](http://www.aaeon.com/en/p/3-and-half-inches-subcompact-boards-gene-bt05/) |Windows 10 | C#|
-|[AAEON PICO-BT01](http://www.aaeon.com/en/p/pico-itx-boards-pico-bt01) |Windows 10 | C#|
-|[AAEON UP](http://www.up-board.org/) |Windows 10 | C#|
-|[Acme Systems Arietta G25](http://www.acmesystems.it/arietta) |Debian | C|
-|[ADLINK MXE-202i](http://www.adlinktech.com/PD/web/PD_detail.php?pid=1589) |Wind River | Javascript|
-|[ADLINK MXE-5400](http://www.adlinktech.com/PD/web/PD_detail.php?pid=1318) |Windows 10 | C#|
-|[Advantech Co.，ARK-2121L](http://www.advantech.com/products/ark-2000_series_embedded_box_pcs/ark-2121l/mod_dd092808-0832-44bc-b38a-945eb7e016bd) |Windows 10 | C#|
-|[Advantech Co.，ARK-1123C](http://www.advantech.com/products/92d96fda-cdd3-409d-aae5-2e516c0f1b01/ark-1123c/mod_0b91165c-aa8c-485d-8d25-fde6f88f4873) |Windows 10 | C#|
-|[Advantech Co.，LTD UNO-1372G](http://www.advantech.com/products/gf-bvl2/uno-1372g/mod_8e63b3c9-b606-4725-a1af-94fccb98bb1a) |[Windows 10 | C#|
-|[Advantech Co.，TREK-674](http://www.advantech.com/products/1-2jsj5t/trek-674/mod_88a737dd-819b-4c8e-8f2e-2bb75b04619b) |Windows 10 | C#|
-|[Advantech Co.，UTX-3115](http://www.advantech.com/products/bda911fe-28bc-4171-aed3-67f76f6a12c8/utx-3115/mod_fa00d5cd-7d2b-430b-8983-c232bfb9f315) |Windows 10 | C#|
-|[Arduino MKR1000](https://www.arduino.cc/en/Main/ArduinoMKR1000) |Arduino IDE | C|
-|[Arduino Zero](https://www.arduino.cc/en/Guide/ArduinoZero) |Arduino IDE | C|
-|[Arrow DragonBoard 410c](http://partners.arrow.com/campaigns-na/qualcomm/dragonboard-410c/) |Windows 10 IoT Core | C#|
-|[Axiomtek ICO300](http://www.axiomtek.com/Default.aspx?MenuId=Products&FunctionId=ProductView&ItemId=1151) |Windows 10 | C#|
-|[BeagleBone Black](http://beagleboard.org/black) | Debian | C、Javascript、Java|
-|[BeagleBone Green](http://beagleboard.org/green) |Debian | C、Javascript、Java|
-|[ComponentSoft RFID Tunnel](http://www.componentsoft.com/) |Windows 10 | C#|
-|[Dell 边缘网关 5000 系列](http://www.dell.com/IoTgateway) |Ubuntu | Java|
-|[e-con Systems Almach](http://www.e-consystems.com/DM3730-development-board.asp) |Linux Yocto | C|
-|[e-con Systems Ankaa](http://www.e-consystems.com/iMX6-development-board.asp) |Ubuntu | C|
-|[嵌入式系统 LogicMachine 系列](http://openrb.com/products/) |自定义 Linux | C|
-|[Freescale FRDM K64](http://www.freescale.com/products/arm-processors/kinetis-cortex-m/k-series/k6x-ethernet-mcus/freescale-freedom-development-platform-for-kinetis-k64-k63-and-k24-mcus:FRDM-K64F) |mbed 2.0 | C|
-|[HPE Edgeline EL10](http://www8.hp.com/h20195/v2/GetPDF.aspx/c04884747.pdf) |Windows 10 | C#|
-|[HPE Edgeline EL20](http://www8.hp.com/h20195/v2/GetPDF.aspx/c04884769.pdf) |Windows 10 | C#|
-|[IEI ICECARE-10W](http://www.ieimobile.com/index.php?option=com_content&view=article&id=222&Itemid=21) |Windows 10 | C#|
-|[IEI DRPC-120](http://www.ieiworld.com/product_groups/industrial/content.aspx?gid=09049552811981014603&cid=0D182494345754583862&id=0E318374091597499543#.VqW3Q_l97Dd) |Windows 10 | C#|
-|[IEI IVS-100-BT](http://tw.ieiworld.com/product_groups/industrial/content.aspx?gid=09049552811981014603&cid=0F202412454715193114&id=0F202496627608256517#.VqH1hvl97Dc) |Windows 10 | C#|
-|[Ilevia Eve Raspberry](http://www.ilevia.com/overview/) |Debian | C|
-|[Intel Edison](http://www.intel.com/content/www/us/en/do-it-yourself/edison.html) |Yocto | C、Javascript|
-|[Libelium Meshlium Xtreme](http://www.libelium.com/products/meshlium/) |Debian | Java|
-|[Minnowboard Max](http://www.minnowboard.org/meet-minnowboard-max/) |Windows 7、8、10 | C#|
-|[NEXCOM NISE 50C](http://www.nexcom.com/Products/industrial-computing-solutions/industrial-fanless-computer/atom-compact/fanless-computer-nise-50c) |Windows 10 IoT Core | C#|
-|[Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) | Raspbian | C、Javascript、Java |
-|[Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) | Windows 10 IoT Core| C、Javascript、C#|
-|[Samsung ARTIK](http://developer.samsung.com/artik) |Fedora | C|
-|[SOTEC CloudPlug](http://cloudplug.info/) |YOCTO | C|
-|[TI CC3200](http://www.ti.com/product/cc3200) |TI-RTOS 2.x | C|
-|[Toradex Apalis iMX6](https://www.toradex.com/computer-on-modules/apalis-arm-family/freescale-imx-6) |Linux Angstrom(Yocto) | Javascript、Java|
-|[Toradex Apalis T30](https://www.toradex.com/computer-on-modules/apalis-arm-family/nvidia-tegra-3) |Linux Angstrom(Yocto) | Javascript、Java|
-|[Toradex Colibri iMX6](https://www.toradex.com/computer-on-modules/colibri-arm-family/freescale-imx6) |Linux Angstrom(Yocto) | Javascript、Java|
-|[Toradex Colibri T20](https://www.toradex.com/computer-on-modules/colibri-arm-family/nvidia-tegra-2) |Linux Angstrom(Yocto) | Java|
-|[Toradex Colibri T30](https://www.toradex.com/computer-on-modules/colibri-arm-family/nvidia-tegra-3) |Windows 10 IoT Core | C#|
-|[Toradex Colibri VF61](https://www.toradex.com/computer-on-modules/colibri-arm-family/freescale-vybrid-vf6xx) |Linux Angstrom(Yocto) | Javascript、Java|
-|[Trex NGP](http://www.trex.com.tr/en/donanim_dcasngp8739_73.php) |Windows 10 | C#|
-|[Trueverit V4](http://www.trueverit.com/) |自定义 Linux | C|
-|[USISH EDA8909](http://www.usish.com/) |Windows 10 | C#|
-
-[开始使用这些设备](/develop/iot/iot-starter-kits/)或访问我们的 GitHub [存储库](https://github.com/Azure/azure-iot-sdks)并按照语言搜索设备文档。
 
 ## 后续步骤
 

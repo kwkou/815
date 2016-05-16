@@ -2,21 +2,21 @@
 
 在本部分中，你将创建一个 Node.js 控制台应用程序，用于在 IoT 中心的标识注册表中创建新的设备标识。设备无法连接到 IoT 中心，除非它在设备标识注册表中具有条目。有关详细信息，请参阅 [IoT 中心开发人员指南][lnk-devguide-identity]的“设备识别注册表”部分。当你运行此控制台应用程序时，它将生成唯一的设备 ID 和密钥，当设备向 IoT 中心发送设备到云的消息时，可以用于标识设备本身。
 
-1. 新建名为 **createdeviceidentity** 的空文件夹。在 **createdeviceidentity** 文件夹中，于命令提示符下使用以下命令创建新的 package.json 文件。接受所有默认值：
+1. 新建名为 **createdeviceidentity** 的空文件夹。在 createdeviceidentity 文件夹中，于命令提示符下使用以下命令创建新的 package.json 文件。接受所有默认值：
 
     ```
     npm init
     ```
 
-2. 在 **createdeviceidentity** 文件夹中的命令提示符下，运行以下命令安装 **azure iothub** 包：
+2. 在 createdeviceidentity 文件夹中的命令提示符下，运行以下命令安装 azure iothub 包：
 
     ```
     npm install azure-iothub --save
     ```
 
-3. 使用文本编辑器在 **createdeviceidentity** 文件夹中创建一个新的 **CreateDeviceIdentity.js** 文件。
+3. 使用文本编辑器在 createdeviceidentity 文件夹中创建一个新的 CreateDeviceIdentity.js 文件。
 
-4. 在 **CreateDeviceIdentity.js** 文件的开头添加以下 `require` 语句：
+4. 在 CreateDeviceIdentity.js 文件的开头添加以下 `require` 语句：
 
     ```
     'use strict';
@@ -24,7 +24,7 @@
     var iothub = require('azure-iothub');
     ```
 
-5. 将以下代码添加到 **CreateDeviceIdentity.js** 文件，并将占位符值替换为在上一部分中为 IoT 中心创建的连接字符串：
+5. 将以下代码添加到 CreateDeviceIdentity.js 文件，并将占位符值替换为在上一部分中为 IoT 中心创建的连接字符串：
 
     ```
     var connectionString = '{iothub connection string}';
@@ -54,15 +54,15 @@
     }
     ```
 
-7. 保存并关闭 **CreateDeviceIdentity.js** 文件。
+7. 保存并关闭 CreateDeviceIdentity.js 文件。
 
-8. 若要运行 **create-device-identity** 应用程序，请在命令提示符下于 create-device-identity 文件夹中执行以下命令：
+8. 若要运行 create-device-identity应用程序，请在命令提示符下于 create-device-identity 文件夹中执行以下命令：
 
     ```
     node CreateDeviceIdentity.js 
     ```
 
-9. 记下**设备 ID** 和**设备密钥**。稍后在创建连接到作为设备的 IoT 中心的应用程序时需要这些数据。
+9. 记下设备 ID 和设备密钥。稍后在创建连接到作为设备的 IoT 中心的应用程序时需要这些数据。
 
 > [AZURE.NOTE] IoT 中心标识注册表只存储设备标识，以启用对中心的安全访问。它存储设备 ID 和密钥作为安全凭据，以及启用或禁用标志让你禁用对单个设备的访问。如果应用程序需要存储其他设备特定的元数据，则应使用应用程序特定的存储。有关详细信息，请参阅 [IoT 中心开发人员指南][lnk-devguide-identity]。
 
@@ -70,6 +70,7 @@
 
 在本部分中，你将创建一个 Node.js 控制台应用程序，用于读取来自 IoT 中心的设备到云消息。IoT 中心公开与[事件中心][lnk-event-hubs-overview]兼容的终结点，以让你读取设备到云的消息。为了简单起见，本教程创建的基本读取器不适用于高吞吐量部署。[处理设备到云的消息][lnk-processd2c-tutorial]教程说明了如何大规模处理设备到云的消息。[事件中心入门][lnk-eventhubs-tutorial]教程更详细说明了如何处理来自事件中心的消息，此教程也适用于 IoT 中心事件中心兼容的终结点。
 
+> [AZURE.NOTE] 读取设备到云消息的事件中心兼容终结点始终使用 AMQPS 协议。
 1. 新建名为 **readdevicetocloudmessages** 的空文件夹。在 **readdevicetocloudmessages** 文件夹中，于命令提示符下使用以下命令创建新的 package.json 文件。接受所有默认值：
 
     ```

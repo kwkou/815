@@ -10,7 +10,7 @@
 <tags
      ms.service="iot-hub"
      ms.date="02/12/2016"
-     wacn.date="03/18/2016"/>
+     wacn.date="05/05/2016"/>
 
 # 使用 C# 程序和 ARM 模板创建 IoT 中心
 
@@ -111,11 +111,11 @@
 
 3. 在解决方案资源管理器中右键单击你的项目，单击“添加”，然后单击“新建项”。将名为 **parameters.json** 的新 JSON 文件添加到项目。
 
-4. 将 **parameters.json** 的内容替换为以下参数信息，以便将新 IoT 中心的名称设置为 **mynewiothub**：
+4. 将 **parameters.json** 的内容替换为以下参数信息，以便将新 IoT 中心的名称设置为 **mynewiothub**（请注意，此名称必须全局唯一）：
 
     ```
     {
-      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
       "contentVersion": "1.0.0.0",
       "parameters": {
         "hubName": { "value": "mynewiothub" }

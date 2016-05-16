@@ -9,10 +9,10 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="02/12/2016"
-     wacn.date="04/25/2016"/>
+     ms.date="04/07/2016"
+     wacn.date="05/05/2016"/>
 
-# 使用 Powershell 创建 IoT 中心
+# 使用 PowerShell 创建 IoT 中心
 
 [AZURE.INCLUDE [iot-hub-resource-manager-selector](../includes/iot-hub-resource-manager-selector.md)]
 
@@ -79,6 +79,22 @@ New-AzureRmResourceGroup -Name MyIoTRG1 -Location "China East"
         "properties": {
           "location": "China East"
         }
+      },
+      {
+        "apiVersion": "2016-02-03",
+        "type": "Microsoft.Devices/IotHubs/eventhubEndpoints/ConsumerGroups",
+        "name": "[concat(parameters('hubName'), '/events/cg1')]",
+        "dependsOn": [
+          "[concat('Microsoft.Devices/Iothubs/', parameters('hubName'))]"
+        ]
+      },
+      {
+        "apiVersion": "2016-02-03",
+        "type": "Microsoft.Devices/IotHubs/eventhubEndpoints/ConsumerGroups",
+        "name": "[concat(parameters('hubName'), '/events/cg2')]",
+        "dependsOn": [
+          "[concat('Microsoft.Devices/Iothubs/', parameters('hubName'))]"
+        ]
       }
       ],
       "outputs": {
@@ -92,7 +108,7 @@ New-AzureRmResourceGroup -Name MyIoTRG1 -Location "China East"
 
 2. 将模板文件保存在你的本地计算机上。本示例假设将它保存在名为 **c:\\templates** 的文件夹中。
 
-3. 运行以下命令部署新的 IoT 中心，并传递 IoT 中心的名称作为参数。在本示例中，IoT 中心的名称为 **myiothub**：
+3. 运行以下命令部署新的 IoT 中心，并传递 IoT 中心的名称作为参数。在此示例中，IoT 中心的名称为 **myiothub**（请注意此名称必须全局唯一）：
 
     ```
     New-AzureRmResourceGroupDeployment -ResourceGroupName MyIoTRG1 -TemplateFile C:\templates\template.json -hubName myiothub

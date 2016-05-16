@@ -10,13 +10,13 @@
 
     这将下载、安装 [Microsoft Azure 存储空间 SDK](https://www.nuget.org/packages/WindowsAzure.Storage/) 并添加对它的引用。
 
-3. 在 **Program.cs** 文件的顶部添加以下语句：
+3. 在 Program.cs 文件的顶部添加以下语句：
 
         using System.IO;
         using Microsoft.WindowsAzure.Storage;
         using Microsoft.WindowsAzure.Storage.Blob;
 
-4. 在 **Program** 类中，按以下方式更改 **ReceiveC2dAsync** 方法：
+4. 在 Program 类中，按以下方式更改 ReceiveC2dAsync 方法：
          
         private static async void ReceiveC2dAsync()
         {
@@ -38,7 +38,7 @@
             }
         }
 
-    这使 **ReceiveC2dAsync** 可以区分 `command` 属性设为 `FileUpload` 的消息，这些消息将由 **UploadFileToBlobAsync** 方法进行处理。
+    这使 ReceiveC2dAsync 可以区分 `command` 属性设为 `FileUpload` 的消息，这些消息将由 UploadFileToBlobAsync 方法进行处理。
 
     添加以下方法来处理文件上载命令。
    
@@ -66,7 +66,7 @@
 
     此方法使用 Azure 存储空间 SDK，将随机生成的 10Mb Blob 上载到指定的 URI。有关如何上载 Blob 的详细信息，请参阅 [Azure 存储空间 - 如何使用 Blob]。
 
-> [AZURE.NOTE] 请注意，此模拟设备的实现，只在上载 Blob 后，完成云到设备的消息。此方法可简化后端中已上载文件的处理作业，由于传递通知即表示上载的文件已可供处理。如 [IoT 中心开发人员指南][IoT Hub Developer Guide - C2D]中所述，但在“可见性超时”（通常是 1 分钟）前未完成的消息放回设备队列，而 **ReceiveAsync()** 方法再次接收该消息。在文件上载时间较长的情况下，可能较适合为模拟设备将当前的上载工作保持长期存放。这可让模拟设备在文件上载完毕之前，完成云到设备的消息，然后发送云到设备消息，以对后端通知工作已完成。
+> [AZURE.NOTE] 请注意，此模拟设备的实现，只在上载 Blob 后，完成云到设备的消息。此方法可简化后端中已上载文件的处理作业，由于传递通知即表示上载的文件已可供处理。如 [IoT 中心开发人员指南][IoT Hub Developer Guide - C2D]中所述，但在“可见性超时”（通常是 1 分钟）前未完成的消息放回设备队列，而 ReceiveAsync() 方法再次接收该消息。在文件上载时间较长的情况下，可能较适合为模拟设备将当前的上载工作保持长期存放。这可让模拟设备在文件上载完毕之前，完成云到设备的消息，然后发送云到设备消息，以对后端通知工作已完成。
 
 <!-- Links -->
 [IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide/#c2d
