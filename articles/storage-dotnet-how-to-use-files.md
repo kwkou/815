@@ -208,7 +208,7 @@ Get-AzureStorageFile 将返回任何传入的目录对象的文件和目录列�
 	using Microsoft.WindowsAzure.Storage.Blob; // Namespace for Blob storage
 	using Microsoft.WindowsAzure.Storage.File; // Namespace for File storage
 
-[AZURE.INCLUDE [storage-cloud-configuration-manager-include](../../includes/storage-cloud-configuration-manager-include.md)]
+[AZURE.INCLUDE [storage-cloud-configuration-manager-include](../includes/storage-cloud-configuration-manager-include.md)]
 
 ### 以编程方式访问文件共享
 
