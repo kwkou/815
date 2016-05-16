@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/03/2016"  
-	wacn.date="03/21/2016"/>
+ 	ms.date="04/07/2016"  
+	wacn.date="05/16/2016"/>
 
 
 
@@ -20,11 +20,12 @@
 
 ##概述
 
-借助 Azure 媒体服务，你可以传送使用高级加密标准 (AES)（使用 128 位加密密钥）和 PlayReady DRM 加密的内容。媒体服务还提供了一个**密钥\\许可证传送服务**，客户端可从中获取密钥或许可证，以用于播放加密的内容。
+Azure 媒体服务允许你传送受高级加密标准 (AES)（使用 128 位加密密钥）或受 [Microsoft PlayReady DRM](https://www.microsoft.com/playready/overview/) 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。AMS 还允许你传送通过 Widevine DRM 加密的 DASH 流。PlayReady 和 Widevine 都是按通用加密 (ISO/IEC 23001-7 CENC) 规范加密的。
 
+媒体服务还提供了一个**密钥\\许可证传送服务**，客户端可从中获取 AES 密钥或 PlayReady/Widevine 许可证，以用于播放加密的内容。
 本主题介绍了如何使用 **Azure 管理门户**配置内容密钥授权策略。以后，可以使用该密钥来动态加密你的内容。请注意，当前你可以加密以下流格式：HLS、MPEG DASH 和平滑流式处理。无法加密 HDS 流格式或渐进式下载。
  
-当播放器请求已设置为动态加密的流时，媒体服务将使用配置的密钥通过 AES 或 PlayReady 加密来动态加密你的内容。为了解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否被授权获取密钥，服务将评估你为密钥指定的授权策略。
+当播放器请求已设置为动态加密的流时，媒体服务将使用配置的密钥通过 AES 或 DRM 加密来动态加密你的内容。为了解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否被授权获取密钥，服务将评估你为密钥指定的授权策略。
 
 
 如果你打算创建多个内容密钥，或者想要指定除媒体服务密钥传送服务以外的**密钥\\许可证传送服务** URL，请使用媒体服务 .NET SDK 或 REST API。
@@ -90,5 +91,4 @@
 [token_policy]: ./media/media-services-key-authorization-policy/media-services-protect-content-with-token-restriction.png
 
  
-
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0509_2016-->
