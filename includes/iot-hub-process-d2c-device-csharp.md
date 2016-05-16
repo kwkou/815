@@ -16,7 +16,7 @@
             await deviceClient.SendEventAsync(interactiveMessage);
             Console.WriteLine("{0} > Sending interactive message: {1}", DateTime.Now, interactiveMessageString);
     
-            Thread.Sleep(10000);
+            Task.Delay(10000).Wait();
           }
         }
 

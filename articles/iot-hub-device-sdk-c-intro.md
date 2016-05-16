@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用适用于 C 语言的 Azure IoT 设备 SDK | Microsoft Azure"
+	pageTitle="使用适用于 C 语言的 Azure IoT 设备 SDK | Azure"
 	description="了解并开始使用适用于 C 语言的 Azure IoT 设备 SDK 中的示例代码。"
 	services="iot-hub"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="02/23/2016"
-     wacn.date="04/25/2016"/>
+     ms.date="03/29/2016"
+     wacn.date="05/05/2016"/>
 
 # 适用于 C 语言的 Azure IoT 设备 SDK 简介
 
@@ -32,7 +32,7 @@
 
   ![](./media/iot-hub-device-sdk-c-intro/01-MasterBranch.PNG)
 
-此存储库包含整个系列的 Azure IoT 设备 SDK。不过，本文讲述*适用于 C 语言*的 Azure IoT 设备 SDK（可在 **c** 文件夹中找到）。
+此存储库包含整个系列的 Azure IoT 设备 SDK。不过，本文讲述适用于 C 语言的 Azure IoT 设备 SDK（可在 **c** 文件夹中找到）。
 
   ![](./media/iot-hub-device-sdk-c-intro/02-CFolder.PNG)
 
@@ -67,14 +67,14 @@ SDK 中包含的[自述文件](https://github.com/Azure/azure-iot-sdks/tree/mast
 
 以下是一些提示，可帮助你完成准备指南中所述的过程：
 
--   当你安装 “CMake” 实用程序时，请选择将 “CMake” 添加到“所有用户”的系统 PATH 的选项（也可以添加到“当前用户”）：
+-   当你安装 **CMake** 实用程序时，请选择将 **CMake** 添加到**所有用户**的系统 PATH 的选项（也可以添加到**当前用户**）：
 
   ![](./media/iot-hub-device-sdk-c-intro/08-CMake.PNG)
 
 
--   在打开“VS2015 开发人员命令提示符”之前，请先安装 Git 命令行工具。若要安装这些工具，请完成以下步骤：
+-   在打开**VS2015 开发人员命令提示符**之前，请先安装 Git 命令行工具。若要安装这些工具，请完成以下步骤：
 
-	1. 启动 “Visual Studio 2015” 安装程序（或从“程序和功能”控制台选择“Microsoft Visual Studio 2015”，然后选择“更改”）。
+	1. 启动 **Visual Studio 2015** 安装程序（或从“程序和功能”控制台选择“Microsoft Visual Studio 2015”，然后选择“更改”）。
 	
 	2. 确保在安装程序中选择“Git for Windows”功能，但也可以选中“Visual Studio 的 GitHub 扩展”选项以提供 IDE 集成：
 
@@ -82,7 +82,7 @@ SDK 中包含的[自述文件](https://github.com/Azure/azure-iot-sdks/tree/mast
 
 	3. 完成安装向导以安装工具。
 
-	4. 将 Git 工具 “bin” 目录添加到系统 “PATH” 环境变量。在 Windows 上，屏幕如下所示：
+	4. 将 Git 工具 **bin** 目录添加到系统 **PATH** 环境变量。在 Windows 上，屏幕如下所示：
 
   		![](./media/iot-hub-device-sdk-c-intro/11-GitToolsPath.PNG)
 
@@ -152,6 +152,8 @@ Windows 版本的 **iothub\_client\_sample\_ampq** 应用程序包含以下 Visu
 我们将使用此示例应用程序来演示使用 **IoTHubClient** 库时所需的项目。
 
 ### 初始化库
+
+> [AZURE.NOTE] 在开始使用库之前，你可能需要执行一些特定于平台的初始化。例如，如果你打算在 Linux 上使用 AMQPS，则必须初始化 OpenSSL 库。[GitHub 存储库](https://github.com/Azure/azure-iot-sdks)中的示例将在客户端启动时调用实用工具函数 **platform\_init**，并在退出之前调用 **platform\_deinit** 函数。这些函数在“platform.h”标头文件中声明。你应该在[存储库](https://github.com/Azure/azure-iot-sdks)中根据目标平台检查这些函数定义，以确定是否需要在客户端中包含任何平台初始化代码。
 
 只有在分配 IoT 中心客户端句柄之后，才可以开始使用库：
 
@@ -279,7 +281,7 @@ ContosoAnemometer* myWeather = CREATE_MODEL_INSTANCE(WeatherStation, ContosoAnem
 
 ### 定义模型
 
-**序列化程序**库中的模型定义了设备可发送到 IoT 中心的事件以及可接收的消息（在建模语言中称为*操作*）。正如 **simplesample\_amqp** 示例应用程序中所示，可以使用一组 C 宏来定义模型：
+**序列化程序**库中的模型定义了设备可发送到 IoT 中心的事件以及可接收的消息（在建模语言中称为操作）。正如 **simplesample\_amqp** 示例应用程序中所示，可以使用一组 C 宏来定义模型：
 
 ```
 BEGIN_NAMESPACE(WeatherStation);

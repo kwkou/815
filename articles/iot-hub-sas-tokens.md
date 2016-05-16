@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="03/02/2016"
-wacn.date="04/25/2016"/>
+wacn.date="05/05/2016"/>
 
 # 使用 IoT 中心安全令牌
 
@@ -64,7 +64,7 @@ IoT 中心使用安全令牌对设备和服务进行身份验证，以避免在�
 
         // construct autorization string
         var token = "SharedAccessSignature sr=" + resourceUri + "&sig="
-        * base64UriEncoded + "&se=" + expires;
+        + base64UriEncoded + "&se=" + expires;
         if (policyName) token += "&skn="+policyName;
         // console.log("signature:" + token);
         return token;
@@ -163,11 +163,13 @@ IoT 中心使用安全令牌对设备和服务进行身份验证，以避免在�
 * 策略名称：`registryRead`；
 * 任何过期时间。
 
-    var 终结点为“myhub.azure-devices.net/devices”；
-    var 策略名称为“device”；
-    var 策略密钥为“...”；
+```
+    var endpoint ="myhub.azure-devices.net/devices";
+    var policyName = 'device';
+    var policyKey = '...';
 
-    var 令牌为 generateSasToken(终结点, 策略密钥, 策略名称, 60)；
+    var token = generateSasToken(endpoint, policyKey, policyName, 60);
+```
 
 授权读取所有设备标识权限的安全令牌是：
 

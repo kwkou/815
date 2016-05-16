@@ -2,7 +2,7 @@
 
 在本部分中，你将编写一个 Windows 控制台应用程序，用于将云到设备的消息发送到模拟设备应用程序。
 
-1. 在当前的 Visual Studio 解决方案中，使用“控制台应用程序”项目模板创建一个新的 Visual C# 桌面应用项目。将项目命名为 **SendCloudToDevice**。
+1. 在当前的 Visual Studio 解决方案中，使用“控制台应用程序”项目模板创建一个新的 Visual C# 桌面应用项目。将项目命名为 SendCloudToDevice。
 
    	![][20]
 
@@ -43,18 +43,18 @@
         SendCloudToDeviceMessageAsync().Wait();
         Console.ReadLine();
 
-8. 在 Visual Studio 中，右键单击你的解决方案并选择“设置启动项目...”。选择“多个启动项目”，然后同时针对 **ProcessDeviceToCloudMessages**、**SimulatedDevice** 和 **SendCloudToDevice** 选择“启动”操作。
+8. 在 Visual Studio 中，右键单击你的解决方案并选择“设置启动项目...”。选择“多个启动项目”，然后同时针对 “ProcessDeviceToCloudMessages”、“SimulatedDevice” 和 “SendCloudToDevice” 选择“启动”操作。
 
-9.  按 F5，你应会看到所有三个应用程序启动。选择“SendCloudToDevice”窗口并按 Enter：你应会看到模拟应用程序正在接收消息。
+9.  按 “F5”，你应会看到所有三个应用程序启动。选择“SendCloudToDevice”窗口并按 “Enter”：你应会看到模拟应用程序正在接收消息。
 
     ![][21]
 
 ## 接收送达反馈
 可以从 IoT 中心请求每个云到设备消息的送达（或过期）确认。这样，云后端就能轻松地通知重试或补偿逻辑。有关云到设备的反馈的详细信息，请参阅 [IoT 中心开发人员指南][IoT Hub Developer Guide - C2D]。
 
-在本部分中，你将修改 **SendCloudToDevice** 应用程序以请求反馈，并接收来自 IoT 中心的反馈。
+在本部分中，你将修改 “SendCloudToDevice” 应用程序以请求反馈，并接收来自 IoT 中心的反馈。
 
-1. 在 Visual Studio 中的 **SendCloudToDevice** 项目内，将以下方法添加到 **Program** 类。
+1. 在 Visual Studio 中的 “SendCloudToDevice” 项目内，将以下方法添加到 “Program” 类。
    
         private async static void ReceiveFeedbackAsync()
         {
@@ -76,15 +76,15 @@
 
     请注意，此处的接收模式与用于从设备应用程序接收云到设备消息的模式相同。
 
-2. 将以下方法添加到 **Main** 方法的 `serviceClient = ServiceClient.CreateFromConnectionString(connectionString)` 行之后：
+2. 将以下方法添加到 “Main” 方法的 `serviceClient = ServiceClient.CreateFromConnectionString(connectionString)` 行之后：
 
         ReceiveFeedbackAsync();
 
-3. 若要请求针对传递云到设备消息的反馈，必须在 **SendCloudToDeviceMessageAsync** 方法中指定一个属性。将以下行添加到 `var commandMessage = new Message(...);` 行之后：
+3. 若要请求针对传递云到设备消息的反馈，必须在 "SendCloudToDeviceMessageAsync" 方法中指定一个属性。将以下行添加到 `var commandMessage = new Message(...);` 行之后：
 
         commandMessage.Ack = DeliveryAcknowledgement.Full;
 
-4.  按 F5 运行应用程序，你应会看到这三个应用程序启动。选择“SendCloudToDevice”窗口并按 Enter：你应会看到模拟应用程序收到消息，并在几秒钟后，**SendCloudToDevice** 应用程序收到反馈消息。
+4.  按 "F5" 运行应用程序，你应会看到这三个应用程序启动。选择“SendCloudToDevice”窗口并按 **Enter**：你应会看到模拟应用程序收到消息，几秒钟后，**SendCloudToDevice** 应用程序将收到反馈消息。
 
     ![][22]
 
