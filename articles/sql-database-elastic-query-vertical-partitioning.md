@@ -9,7 +9,7 @@
 <tags
     ms.service="sql-database"
     ms.date="01/06/2016"
-    wacn.date="02/26/2016" />
+    wacn.date="05/16/2016" />
 
 # 适用于跨数据库查询的弹性数据库查询（垂直分区）
 

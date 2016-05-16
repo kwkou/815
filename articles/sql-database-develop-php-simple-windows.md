@@ -4,44 +4,39 @@
 	services="sql-database"
 	documentationCenter=""
 	authors="meet-bhagdev"
-	manager="jeffreyg"
+	manager="jhubbard"
 	editor=""/>
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="12/17/2015"
-	wacn.date="01/15/2016"/>
+	ms.date="03/18/2016"
+	wacn.date="05/16/2016"/>
 
 
 # 在 Windows上使用 PHP 连接到 SQL 数据库
 
 
-> [AZURE.SELECTOR]
-- [C#](/documentation/articles/sql-database-develop-dotnet-simple)
-- [PHP](/documentation/articles/sql-database-develop-php-simple-windows)
-- [Python](/documentation/articles/sql-database-develop-python-simple-windows)
-- [Ruby](/documentation/articles/sql-database-develop-ruby-simple-windows)
-- [Java](/documentation/articles/sql-database-develop-java-simple-windows)
-- [Node.js](/documentation/articles/sql-database-develop-nodejs-simple-windows)
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 本主题演示了如何从 Windows 运行的、以 PHP 编写的客户端应用程序连接到 Azure SQL 数据库。
 
+## 步骤 1：配置开发环境
 
 [AZURE.INCLUDE [sql-database-develop-includes-prerequisites-php-windows](../includes/sql-database-develop-includes-prerequisites-php-windows.md)]
 
-### SQL 数据库
+## 步骤 2：创建 SQL 数据库
 
 请参阅[入门页](/documentation/articles/sql-database-get-started)，以了解如何创建示例数据库。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。
 
 
-## 步骤 1：获取连接详细信息
+## 步骤 3：获取连接详细信息
 
 [AZURE.INCLUDE [sql-database-include-connection-string-details-20-portalshots](../includes/sql-database-include-connection-string-details-20-portalshots.md)]
 
 
-## 步骤 2：连接
+## 步骤 4：连接
 
 
 此 **OpenConnection** 函数将在其后面的所有函数的靠近顶部位置调用。
@@ -65,9 +60,9 @@
 	}
 
 
-## 步骤 3：执行查询
+## 步骤 5：执行查询
 
-[sqlsrv\_query()](http://php.net/manual/zh/function.sqlsrv-query.php) 函数可用于针对 SQL 数据库从查询中检索结果集。此函数实际上可接受任何查询和连接对象，并返回可使用 [sqlsrv\_fetch\_array()](http://php.net/manual/zh/function.sqlsrv-fetch-array.php) 循环访问的结果集。
+[sqlsrv\_query()](http://php.net/manual/en/function.sqlsrv-query.php) 函数可用于针对 SQL 数据库从查询中检索结果集。此函数实际上可接受任何查询和连接对象，并返回可使用 [sqlsrv\_fetch\_array()](http://php.net/manual/zh/function.sqlsrv-fetch-array.php) 循环访问的结果集。
 
 	function ReadData()
 	{
@@ -95,7 +90,7 @@
 	}
 
 
-## 步骤 4：插入行
+## 步骤 6：插入行
 
 在本示例中，你将了解如何安全地执行 [INSERT](https://msdn.microsoft.com/zh-cn/library/ms174335.aspx) 语句，传递参数以保护应用程序免遭 [SQL 注入](https://technet.microsoft.com/zh-cn/library/ms161953(v=sql.105).aspx) 漏洞的危害，然后检索自动生成的[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。
 
@@ -106,7 +101,7 @@
 		{
 			$conn = OpenConnection();
 
-			$tsql = "INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server 1', 'SQL Server 2', 0, 0, getdate())";
+			$tsql = "INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT 			INSERTED.ProductID VALUES ('SQL Server 1', 'SQL Server 2', 0, 0, getdate())";
 			//Insert query
 			$insertReview = sqlsrv_query($conn, $tsql);
 			if($insertReview == FALSE)
@@ -125,7 +120,7 @@
 		}
 	}
 
-## 步骤 5：回退事务
+## 步骤 7：回滚事务
 
 
 此代码示例演示了你可以在其中执行以下操作的事务的用法：
@@ -182,4 +177,4 @@
 
 有关 PHP 安装和用法的详细信息，请参阅[使用 PHP 访问 SQL Server 数据库](http://technet.microsoft.com/zh-cn/library/cc793139.aspx)。
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0509_2016-->

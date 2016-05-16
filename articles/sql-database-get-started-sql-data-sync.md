@@ -3,14 +3,14 @@
 	description="本教程帮助你 Azure SQL 数据同步（预览版）入门。"
 	services="sql-database"
 	documentationCenter=""
-	authors="spelluru"
-	manager="JennieHubbard"
+	authors="jhubbard"
+	manager="jhubbard"
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="01/19/2016"
-	wacn.date="03/29/2016"/>
+	ms.date="04/04/2016"
+	wacn.date="05/16/2016"/>
 
 
 #Azure SQL 数据同步入门（预览版）
@@ -48,11 +48,11 @@
 
 - **Microsoft SQL Server 2008 R2 SP1 System CLR Types (x86)**
 
- 你可以从[此处](http://www.microsoft.com/zh-cn/download/details.aspx?id=26728)安装 Microsoft SQL Server 2008 R2 SP1 System CLR Types (x86)
+ 从[此处](http://www.microsoft.com/zh-cn/download/details.aspx?id=26728)安装 Microsoft SQL Server 2008 R2 SP1 System CLR Types (x86)
 
 - **Microsoft SQL Server 2008 R2 SP1 共享管理对象 (x86)**
 
- 你可以从[此处](http://www.microsoft.com/zh-cn/download/details.aspx?id=26728)安装 Microsoft SQL Server 2008 R2 SP1 Shared Management Objects (x86)
+ 从[此处](http://www.microsoft.com/zh-cn/download/details.aspx?id=26728)安装 Microsoft SQL Server 2008 R2 SP1 Shared Management Objects (x86)
 
 
 
@@ -111,10 +111,10 @@
 
 1. 从下拉列表中，选择 SQL 数据库实例以用作同步组中心。
 2. 输入此 SQL 数据库实例的凭据 –“中心用户名”和“中心密码”。
-3. 等待 SQL 数据同步确认该用户名和密码。在凭据被确认后，密码右侧将出现一个绿色复选标记。
+3. 等待 SQL 数据同步确认该用户名和密码。在凭据被确认后，你可以在密码右侧看到一个绿色复选标记出现。
 4. 从下拉列表中，选择“冲突解决”策略。
 
- **中心 Wins** – 写入中心数据库的任何更改将写入引用数据库，以覆盖同一引用数据库记录中的更改。从功能上看，这意味着写入中心的首次更改会传播到其他数据库。
+ **中心 Wins** – 写入中心数据库的任何更改都将写入引用数据库，以覆盖同一引用数据库记录中的更改。从功能上看，这意味着写入中心的首次更改会传播到其他数据库。
 
 
  **客户端 Wins** – 写入中心的更改将被引用数据库中的更改覆盖。从功能上看，这意味着写入中心的最后一次更改会被保留并传播到其他数据库。
@@ -171,7 +171,8 @@
 
 ## 步骤 6：配置同步组
 
-您可以始终通过单击数据同步登录页底部的“同步”来对同步组执行同步操作。如果您希望某个同步组按照计划同步，请配置该同步组。
+您可以始终通过单击数据同步登录页底部的“同步”来对同步组执行同步操作。
+若要按照计划同步，请配置该同步组。
 
 1.	返回到[管理门户](http://manage.windowsazure.cn)。
 2.	单击“SQL 数据库”。
@@ -199,4 +200,4 @@
 
  
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0509_2016-->

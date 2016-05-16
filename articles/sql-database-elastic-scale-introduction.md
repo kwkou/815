@@ -3,23 +3,24 @@
     description="软件即服务 (SaaS) 开发人员可以使用这些工具轻松地在云中创建可缩放的弹性数据库"
     services="sql-database"
     documentationCenter=""
-    manager="jeffreyg"
+    manager="jhubbard"
     authors="ddove"
     editor=""/>
 
 <tags
     ms.service="sql-database"
-    ms.date="11/04/2015"
-    wacn.date="03/29/2016"/>
+    ms.date="04/04/2016"
+    wacn.date="05/16/2016"/>
 
 # 弹性数据库功能概述
 
 **弹性数据库**功能可让你使用 **Azure SQL 数据库**中几乎不受限制的数据库资源，来为事务工作负荷，尤其是软件即服务 (SaaS) 应用程序创建解决方案。弹性数据库的功能包括：
 
-* 弹性数据库工具：这两个工具简化了分片数据库解决方案的开发与管理。这些工具是：[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)和[弹性数据库拆分/合并工具](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)。 
-* [弹性数据库池](/documentation/articles/sql-database-elastic-pool-guidance)（预览版）：池是你随时可以在其中添加或删除数据库的数据库集合。池中的数据库共享固定数量的资源（称为数据库吞吐量单位，简称 DTU）。你按固定的价格支付资源费用，在管理性能时可以轻松计算费用。 
+* 弹性数据库工具：这两个工具简化了分片数据库解决方案的开发与管理。这些工具是：[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)和[弹性数据库拆分/合并工具](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)。
+* [弹性数据库池](/documentation/articles/sql-database-elastic-pool-guidance)（预览版）：池是你随时可以在其中添加或删除数据库的数据库集合。池中的数据库共享固定数量的资源（称为数据库事务单位，简称 DTU）。你按固定的价格支付资源费用，在管理性能时可以轻松计算费用。
 * [弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-overview)（预览版）：使用作业来管理大量的 Azure SQL 数据库。轻松执行管理操作，例如，使用作业更改架构、管理凭据、更新引用数据、收集性能数据，或收集租户（客户）遥测数据。
 * [弹性数据库查询](/documentation/articles/sql-database-elastic-query-overview)（预览版）：可让你跨多个数据库运行 Transact-SQL 查询。这样，便可以连接到 Excel、PowerBI、Tableau 等报告工具。
+* [弹性事务](/documentation/articles/sql-database-elastic-transactions-overview)：此功能可以让你在 Azure SQL 数据库中跨多个数据库运行事务。弹性数据库事务适用于使用 ADO .NET 的 .NET 应用程序，并且与你熟悉的使用 [System.Transaction](https://msdn.microsoft.com/zh-cn/library/system.transactions.aspx) 类的编程体验相集成。
 
 下图显示的体系结构与数据库集合有关的**弹性数据库功能**。
 
@@ -29,13 +30,13 @@
 
 在此图中，数据库颜色表示架构。颜色相同的数据库具有相同的架构。
 
-1. 一组使用分片体系结构的 **Azure SQL 数据库**托管在 Azure 上。 
+1. 一组使用分片体系结构的 **Azure SQL 数据库**托管在 Azure 上。
 2. **弹性数据库客户端库**用于管理分片集。
-3. 一个数据库子集已放入**弹性数据库池**。（请参阅[使用弹性数据库缓解爆炸性增长](/documentation/articles/sql-database-elastic-pool)）。 
+3. 一个数据库子集已放入**弹性数据库池**。（请参阅[使用弹性数据库缓解爆炸性增长](/documentation/articles/sql-database-elastic-pool)）。
 4. **弹性数据库作业**针对所有数据库运行 T-SQL 脚本。
 5. **拆分/合并工具**用于将数据从一个分片移到另一个分片。
 6. 使用**弹性数据库查询**可以编写跨分片集中所有数据库运行的查询。
-  
+
 ## 约定和挑战
 
 对于云应用程序而言，实现计算和 Blob 存储的弹性和缩放性非常直接 - 增加或减少单位即可。但对于关系数据库中的有状态数据处理，这仍是一个挑战。我们发现这些挑战主要出现在以下两种情况中：
@@ -63,7 +64,7 @@
 
 ## 单租户和多租户模式
 
-*分片*是一项可跨许多独立的数据库分发大量相同结构数据的技术。这项技术尤其受到为最终客户或企业创建软件即服务 (SaaS) 产品的云开发人员的欢迎。这些最终客户通常称为“租户”。需要分片的原因有很多：
+分片是一项可跨许多独立的数据库分发大量相同结构数据的技术。这项技术尤其受到为最终客户或企业创建软件即服务 (SaaS) 产品的云开发人员的欢迎。这些最终客户通常称为“租户”。需要分片的原因有很多：
 
 * 数据总量过大而超出单个数据库的限制范围
 * 整个工作负载的事务吞吐量超出单个数据库的容量
@@ -89,7 +90,7 @@
 
 若要使用拆分/合并工具，你必须[配置安全性](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration)。
 
-若要查看弹性数据库池的具体信息，请参阅[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)创建新池。
+若要查看弹性数据库池的具体信息，请参阅[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
@@ -104,4 +105,4 @@
 [3]: ./media/sql-database-elastic-scale-introduction/overview.png
 [4]: ./media/sql-database-elastic-scale-introduction/single_v_multi_tenant.png
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0509_2016-->

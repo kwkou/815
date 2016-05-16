@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database" 
 	ms.date="01/27/2016" 
-	wacn.date="03/29/2016"/>
+	wacn.date="05/16/2016"/>
 
 # 使用弹性数据库工具添加分片
 

@@ -4,13 +4,13 @@
    services="sql-database" 
    documentationCenter="" 
    authors="stevestein" 
-   manager="jeffreyg" 
+   manager="jhubbard" 
    editor=""/>
 
 <tags
    ms.service="sql-database"
-   ms.date="12/01/2015"
-   wacn.date="01/15/2016"/>
+   ms.date="03/23/2016"
+   wacn.date="05/16/2016"/>
 
 # 使用 C&#x23; 创建和管理 SQL 数据库
 
@@ -29,11 +29,11 @@
 
 <br>
 
-> [AZURE.NOTE]适用于 .NET 的 Azure SQL 数据库库目前以预览版提供。
+> [AZURE.NOTE] 适用于 .NET 的 Azure SQL 数据库库目前以预览版提供。
 
 <br>
 
-如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
+如果你没有 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
 
 ## 安装所需的库
 
@@ -50,7 +50,7 @@
 
 [Azure 资源管理器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx) 使用 Azure Active Directory 进行身份验证，而不是早期 Azure 服务管理 REST API 使用的证书。
 
-若要基于当前的用户对客户端应用程序进行身份验证，你必须先将该应用程序注册到与创建了 Azure 资源的订阅关联的 AAD 域中。如果 Azure 订阅是以 Microsoft 帐户而不是工作或学校帐户创建的，则你已经有了默认的 AAD 域。可以在[经典门户](https://manage.windowsazure.cn)中完成应用程序的注册。
+若要基于当前的用户对客户端应用程序进行身份验证，你必须先将该应用程序注册到与创建了 Azure 资源的订阅关联的 AAD 域中。如果 Azure 订阅是以 Microsoft 帐户而不是工作或学校帐户创建的，则你已经有了默认的 AAD 域。可以在[管理门户](https://manage.windowsazure.cn)中完成应用程序的注册。
 
 若要创建新应用程序并将其注册到正确的 Active Directory 中，请执行以下操作：
 
@@ -143,7 +143,7 @@
 
 
 
-> [AZURE.NOTE]本文中的示例使用每个 API 请求的同步形式，并会一直阻塞，直到对基础服务的 REST 调用完成。有可用的异步方法。
+> [AZURE.NOTE] 本文中的示例使用每个 API 请求的同步形式，并会一直阻塞，直到对基础服务的 REST 调用完成。有可用的异步方法。
 
 
 
@@ -158,7 +158,7 @@
     // Resource group parameters
     ResourceGroup resourceGroupParameters = new ResourceGroup()
     {
-        Location = "China East"
+        Location = "China North"
     };
     
     //Create a resource group
@@ -177,7 +177,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
     // Create a server
     ServerCreateOrUpdateParameters serverParameters = new ServerCreateOrUpdateParameters()
     {
-        Location = "China East",
+        Location = "China North",
         Properties = new ServerCreateOrUpdateProperties()
         {
             AdministratorLogin = "ServerAdmin",
@@ -193,7 +193,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 ## 创建服务器防火墙规则，以允许对服务器进行访问
 
-默认情况下，无法从任何位置连接到服务器。为了使用 TDS 连接到服务器并将 T-SQL 提交到服务器或者服务器上的任何数据库，必须定义[防火墙规则](https://msdn.microsoft.com/zh-cn/library/azure/ee621782.aspx)以允许从客户端 IP 地址进行访问。
+默认情况下，无法从任何位置连接到服务器。为了使用 TDS 连接到服务器并将 T-SQL 提交到服务器或者服务器上的任何数据库，必须定义[防火墙规则](/documentation/articles/sql-database-firewall-configure)以允许从客户端 IP 地址进行访问。
 
 以下示例将创建一个规则，用于实现从任何 IP 地址对服务器进行访问。建议你创建适当的 SQL 登录名和密码来保护数据库，并且不要依赖防火墙规则作为防范入侵的主要防御机制。
 
@@ -213,7 +213,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 
 
-若要允许其他 Azure 服务访问服务器，请添加一个防火墙规则并将 tartIpAddress 和 EndIpAddress 都设置为 0.0.0.0。请注意，这会允许来自*任何* Azure 订阅的 Azure 流量访问该服务器。
+若要允许其他 Azure 服务访问服务器，请添加一个防火墙规则并将 tartIpAddress 和 EndIpAddress 都设置为 0.0.0.0。请注意，这会允许来自任何 Azure 订阅的 Azure 流量访问该服务器。
 
 
 ## 创建数据库
@@ -244,7 +244,8 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 ## 更新数据库 
 
-若要更新数据库（例如更改服务层和性能级别），请调用 **Databases.CreateOrUpdate** 方法，就像上面所述的创建或更新数据库一样。将 **Edition** 和 **RequestedServiceObjectiveName** 属性设置为所需的服务层和性能级别。请注意，将版本更改为 **Premium** 或从该版本更改时，更新可能需要花费一些时间，具体取决于数据库的大小。
+若要更新数据库（例如更改服务层和性能级别），请调用 **Databases.CreateOrUpdate** 方法，就像上面所述的创建或更新数据库一样。将 **Edition** 和 **RequestedServiceObjectiveName** 属性设置为所需的服务层和性能级别。
+ 请注意，将版本更改为 **Premium** 或从该版本更改时，更新可能需要花费一些时间，具体取决于数据库的大小。
 
 以下命令会将 SQL 数据库更新至标准 (S0) 级别：
 
@@ -291,7 +292,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
     // Create elastic pool: configure create or update parameters and properties explicitly
     ElasticPoolCreateOrUpdateParameters newPoolParameters = new ElasticPoolCreateOrUpdateParameters()
     {
-        Location = "China East",
+        Location = "China North",
         Properties = new ElasticPoolCreateOrUpdateProperties()
         {
             Edition = "Standard",
@@ -330,7 +331,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 ## 将现有数据库移入弹性数据库池
 
-*创建一个池后，你还可以使用 Transact-SQL 将现有数据库移入和移出一个池。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL)。*
+创建一个池后，你还可以使用 Transact-SQL 将现有数据库移入和移出一个池。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL)。
 
 若要将现有数据库移入池中，请执行以下操作：
 
@@ -362,7 +363,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 ## 在弹性数据库池中创建新数据库
 
-*创建一个池后，你还可以使用 Transact-SQL 在池中创建新的弹性数据库。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL)。*
+创建一个池后，你还可以使用 Transact-SQL 在池中创建新的弹性数据库。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL)。
 
 若要直接在池中创建新数据库，请执行以下操作：
 
@@ -490,7 +491,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
             // Resource group parameters
             ResourceGroup resourceGroupParameters = new ResourceGroup()
             {
-                Location = "China East"
+                Location = "China North"
             };
 
             //Create a resource group
@@ -506,7 +507,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
             // Create a server
             ServerCreateOrUpdateParameters serverParameters = new ServerCreateOrUpdateParameters()
             {
-                Location = "China East",
+                Location = "China North",
                 Properties = new ServerCreateOrUpdateProperties()
                 {
                     AdministratorLogin = "ServerAdmin",
@@ -584,7 +585,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
             // Create elastic pool: configure create or update parameters and properties explicitly
             ElasticPoolCreateOrUpdateParameters newPoolParameters = new ElasticPoolCreateOrUpdateParameters()
             {
-                Location = "China East",
+                Location = "China North",
                 Properties = new ElasticPoolCreateOrUpdateProperties()
                 {
                     Edition = "Standard",
@@ -793,4 +794,4 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 [8]: ./media/sql-database-client-library/add-application2.png
 [9]: ./media/sql-database-client-library/clientid.png
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0503_2016-->

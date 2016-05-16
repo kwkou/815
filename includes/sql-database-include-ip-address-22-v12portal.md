@@ -2,7 +2,7 @@
 <!--
 ../includes/sql-database-include-ip-address-22-v12portal.md
 
-Latest Freshness check:  2015-09-04 , GeneMi.
+Latest Freshness check:  2016-03-21 , daleche.
 
 As of circa 2015-09-04, the following topics might include this include:
 /documentation/articles/sql-database-configure-firewall-settings
@@ -15,30 +15,28 @@ As of circa 2015-09-04, the following topics might include this include:
 -->
 
 
-1. µÇÂ¼µ½ [Azure ÃÅ»§](http://manage.windowsazure.cn)£¨ÍøÖ·Îª http://manage.windowsazure.cn/£©¡£
+1. ç™»å½•åˆ° [Azure é—¨æˆ·](https://manage.windowsazure.cn)ï¼ˆç½‘å€ä¸º http://manage.windowsazure.cn/ï¼‰ã€‚
 
-2. ÔÚ×ó²àµÄºá·ùÖÐ£¬µ¥»÷¡°ä¯ÀÀ¡±¡£´ËÊ±»áÏÔÊ¾¡°ä¯ÀÀ¡±±ßÀ¸Ñ¡Ïî¿¨¡£
+2. åœ¨å·¦ä¾§çš„æ¨ªå¹…ä¸­ï¼Œå•å‡»â€œæµè§ˆå…¨éƒ¨â€ã€‚æ­¤æ—¶ä¼šæ˜¾ç¤ºâ€œæµè§ˆâ€è¾¹æ é€‰é¡¹å¡ã€‚
 
-3. ¹ö¶¯²¢µ¥»÷¡°SQL Server¡±¡£´ËÊ±»áÏÔÊ¾¡°SQL Server¡±±ßÀ¸Ñ¡Ïî¿¨¡£
+3. æ»šåŠ¨å¹¶å•å‡»â€œSQL Serverâ€ã€‚æ­¤æ—¶ä¼šæ˜¾ç¤ºâ€œSQL Serverâ€è¾¹æ é€‰é¡¹å¡ã€‚
 
+4. ä¸ºæ–¹ä¾¿èµ·è§ï¼Œå¯å•å‡»ä»¥å‰çš„â€œæµè§ˆâ€è¾¹æ é€‰é¡¹å¡ä¸Šçš„æœ€å°åŒ–æŽ§ä»¶ã€‚
 
+5. åœ¨ç­›é€‰å™¨æ–‡æœ¬æ¡†ä¸­ï¼Œå¼€å§‹é”®å…¥ä½ çš„æœåŠ¡å™¨çš„åç§°ã€‚æ­¤æ—¶ä¼šæ˜¾ç¤ºä½ çš„è¡Œã€‚
 
-4. Îª·½±ãÆð¼û£¬¿Éµ¥»÷ÒÔÇ°µÄ¡°ä¯ÀÀ¡±±ßÀ¸Ñ¡Ïî¿¨ÉÏµÄ×îÐ¡»¯¿Ø¼þ¡£
+6. å•å‡»æœåŠ¡å™¨æ‰€å¯¹åº”çš„è¡Œã€‚æ­¤æ—¶ä¼šæ˜¾ç¤ºæœåŠ¡å™¨çš„è¾¹æ é€‰é¡¹å¡ã€‚
 
-5. ÔÚÉ¸Ñ¡Æ÷ÎÄ±¾¿òÖÐ£¬¿ªÊ¼¼üÈëÄãµÄ·þÎñÆ÷µÄÃû³Æ¡£´ËÊ±»áÏÔÊ¾ÄãµÄÐÐ¡£
+7. åœ¨æœåŠ¡å™¨è¾¹æ é€‰é¡¹å¡ä¸Šå•å‡»â€œè®¾ç½®â€ã€‚æ­¤æ—¶ä¼šæ˜¾ç¤ºâ€œè®¾ç½®â€è¾¹æ é€‰é¡¹å¡ã€‚
 
-6. µ¥»÷·þÎñÆ÷Ëù¶ÔÓ¦µÄÐÐ¡£´ËÊ±»áÏÔÊ¾·þÎñÆ÷µÄ±ßÀ¸Ñ¡Ïî¿¨¡£
+8. å•å‡»â€œé˜²ç«å¢™â€ã€‚æ­¤æ—¶ä¼šæ˜¾ç¤ºâ€œé˜²ç«å¢™è®¾ç½®â€è¾¹æ é€‰é¡¹å¡ã€‚
 
-7. ÔÚ·þÎñÆ÷±ßÀ¸Ñ¡Ïî¿¨ÉÏµ¥»÷¡°ÉèÖÃ¡±¡£´ËÊ±»áÏÔÊ¾¡°ÉèÖÃ¡±±ßÀ¸Ñ¡Ïî¿¨¡£
+9. å•å‡»â€œæ·»åŠ å®¢æˆ·ç«¯ IPâ€ã€‚åœ¨ç¬¬ä¸€ä¸ªæ–‡æœ¬æ¡†ä¸­é”®å…¥æ–°è§„åˆ™çš„åç§°ã€‚
 
-8. µ¥»÷¡°·À»ðÇ½¡±¡£´ËÊ±»áÏÔÊ¾¡°·À»ðÇ½ÉèÖÃ¡±±ßÀ¸Ñ¡Ïî¿¨¡£
+10. é”®å…¥ä½ æƒ³è¦å¯ç”¨çš„èŒƒå›´çš„ä¸‹é™å’Œä¸Šé™ IP åœ°å€å€¼ã€‚
+	- ä¸ºæ–¹ä¾¿èµ·è§ï¼Œå¯ä»¥è®©ä¸‹é™å€¼ä»¥ **.0** ç»“å°¾ï¼Œè®©ä¸Šé™å€¼ä»¥ **.255** ç»“å°¾ã€‚
 
-9. µ¥»÷¡°Ìí¼Ó¿Í»§¶Ë IP¡±¡£ÔÚµÚÒ»¸öÎÄ±¾¿òÖÐ¼üÈëÐÂ¹æÔòµÄÃû³Æ¡£
-
-10. ¼üÈëÄãÏëÒªÆôÓÃµÄ·¶Î§µÄÏÂÏÞºÍÉÏÏÞ IP µØÖ·Öµ¡£
- - Îª·½±ãÆð¼û£¬¿ÉÒÔÈÃÏÂÏÞÖµÒÔ **.0** ½áÎ²£¬ÈÃÉÏÏÞÖµÒÔ **.255** ½áÎ²¡£ 
-
-11. µ¥»÷¡°±£´æ¡±¡£
+11. å•å‡»â€œä¿å­˜â€ã€‚
 
 
 
@@ -55,6 +53,8 @@ As of circa 2015-09-04, the following topics might include this include:
 <!--
 These includes/ files are a sequenced set, but you can pick and choose:
 
-includes/sql-database-include-ip-address-22-v12portal.md
-? includes/sql-database-include-ip-address-*.md
+../includes/sql-database-include-ip-address-22-v12portal.md
+? ../includes/sql-database-include-ip-address-*.md
 -->
+
+<!---HONumber=Mooncake_0503_2016-->

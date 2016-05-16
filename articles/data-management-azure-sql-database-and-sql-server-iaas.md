@@ -4,14 +4,14 @@
 	services="sql-database, virtual-machines"
 	keywords="SQL Server 云, 云中 SQL Server, PaaS 数据库, 云 SQL Server, DBaaS"
 	documentationCenter=""
-	authors="jeffgoll"
-	manager="jeffreyg"
+	authors="carlrabeler"
+	manager="jhubbard"
 	editor="cjgronlund"/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="02/02/2016"
-	wacn.date="04/06/2016"/>
+	ms.date="03/25/2016"
+	wacn.date="05/16/2016"/>
 
 # 选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)
 
@@ -78,7 +78,7 @@ Azure 提供两个选项用于在云中托管 SQL Server 工作负荷：
       <li type=round>需要通过安全隧道从 Azure 访问本地资源的 SQL Server 应用程序（例如 Active Directory）。
       <li type=round>你需要一个具有完全管理权限的定制 IT 环境。
       <li type=round>你想要快速完成开发和测试方案，但又不想购买本地 SQL Server 非生产硬件。
-      <li type=round>使用 [备份到 Azure 存储空间](http://go.microsoft.com/fwlink/?LinkID=699547) 或 [Azure VM 中的 AlwaysOn 副本](/documentation/articles/virtual-machines-windows-sql-high-availability-dr) 实现本地 SQL Server 应用程序的灾难恢复。
+      <li type=round>使用 [备份到 Azure 存储空间](http://msdn.microsoft.com/zh-cn/library/jj919148.aspx) 或 Azure VM 中的 AlwaysOn 副本实现本地 SQL Server 应用程序的灾难恢复。
       <li type=round>大于 1 TB 的大型数据库。
       </ul></td>
 </tr>
@@ -101,7 +101,7 @@ Azure 提供两个选项用于在云中托管 SQL Server 工作负荷：
 <tr>
    <td valign="middle"><p><b>业务连续性</b></p></td>
    <td valign="middle"><ul><li type=round>除了内置的容错基础结构功能以外，Azure SQL 数据库还提供可提高业务连续性的功能，例如时间点还原、地域还原和异地复制。有关详细信息，请参阅 [Azure SQL 数据库业务连续性概述](/documentation/articles/sql-database-business-continuity)。</ul></td>
-   <td valign="middle"><ul><li type=round>Azure VM 上的 SQL Server 可让你设置高可用性和灾难恢复解决方案，以满足数据库的具体需求。因此，可以构建针对应用程序高度优化的系统。你可以视需要自我测试并运行故障转移。有关详细信息，请参阅 [Azure 虚拟机上 SQL Server 的高可用性和灾难恢复](/documentation/articles//virtual-machines-windows-sql-high-availability-dr)。</ul></td>
+   <td valign="middle"><ul><li type=round>Azure VM 上的 SQL Server 可让你设置高可用性和灾难恢复解决方案，以满足数据库的具体需求。因此，可以构建针对应用程序高度优化的系统。你可以视需要自我测试并运行故障转移。有关详细信息，请参阅 [Azure 虚拟机上 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr)。</ul></td>
 
 </tr>
 <tr>
@@ -157,7 +157,7 @@ Azure 提供两个选项用于在云中托管 SQL Server 工作负荷：
 
 对许多企业来说，决定过渡到到云服务的关键在于降低管理复杂度。使用 **SQL 数据库**，Microsoft 可以管理底层硬件，自动复制所有数据以提供高可用性，配置及升级数据库软件，管理负载平衡，并在发生服务器故障时执行透明的故障转移。你可以继续管理数据库，但不再需要管理数据库引擎、服务器操作系统或硬件。可以继续管理的项目示例包括数据库和登录、索引和查询优化，以及审核和安全性。
 
-在另一方面，你可能有内部专业人员，并希望全面控制数据库位置甚至磁盘位置。使用 **Azure VM 上运行的 SQL Server**，你可以完全掌控操作系统和 SQL Server 实例配置。使用 VM，你可以决定何时更新/升级操作系统与数据库软件，以及何时安装任何其他软件（例如防病毒和备份工具）。此外，你还可以控制 VM 的大小、磁盘数目及其存储配置。例如，Azure 允许你视需要更改 VM 的大小。有关信息，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-windows-sizes)。
+在另一方面，你可能有内部专业人员，并希望全面控制数据库位置甚至磁盘位置。使用 **Azure VM 上运行的 SQL Server**，你可以完全掌控操作系统和 SQL Server 实例配置。使用 VM，你可以决定何时更新/升级操作系统与数据库软件，以及何时安装任何其他软件（例如防病毒和备份工具）。此外，你还可以控制 VM 的大小、磁盘数目及其存储配置。例如，Azure 允许你视需要更改 VM 的大小。有关信息，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-linux-sizes)。
 
 ### 服务级别协议 (SLA)
 
@@ -183,7 +183,7 @@ Azure 提供两个选项用于在云中托管 SQL Server 工作负荷：
 
 - 你想要让 Microsoft 在数据库上运行常见管理操作，因而数据库需要更高的可用性 SLA。
 
-若要开始，请参阅[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)。
+
 
 对于以下情况，请选择 **Azure VM 上的 SQL Server**：
 
@@ -191,6 +191,13 @@ Azure 提供两个选项用于在云中托管 SQL Server 工作负荷：
 
 - 你有现有的 IT 资源，需要 SQL Server 的完全管理权限，并需要与本地 SQL server 完全兼容。这种方法可让你灵活运行大多数应用程序，将开发或修改现有应用程序的成本降到最低。此外，它还提供对 VM、操作系统和数据库配置的完全控制。
 
-若要开始，请参阅[在 Azure 中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create)。
 
-<!---HONumber=Mooncake_0328_2016-->
+
+> [AZURE.NOTE] 想要试用 SQL Server 2016 CTP2？ 请注册 Azure，然后转到[此处](http://aka.ms/sql2016vm)创建已经装有 SQL Server 2016 CTP2 的虚拟机。
+
+## 后续步骤
+- 若要开始使用 SQL 数据库，请参阅 [SQL Database tutorial: Create a SQL database in minutes using the Azure portal（SQL 数据库教程：使用 Azure 门户在几分钟内创建一个 SQL 数据库）](/documentation/articles/sql-database-get-started)。
+- 请参阅 [SQL Database pricing（SQL 数据库定价）](/home/features/sql-database/#price)
+- 若要开始在 Azure VM 上使用 SQL Server，请参阅 [Provision a SQL Server virtual machine in Azure（在 Azure 中预配 SQL Server 虚拟机）](/documentation/articles/virtual-machines-windows-portal-sql-server-provision)。
+
+<!---HONumber=Mooncake_0503_2016-->

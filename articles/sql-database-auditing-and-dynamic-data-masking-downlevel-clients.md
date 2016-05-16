@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database"
 	ms.date="11/12/2015"
-	wacn.date="12/22/2015"/>
+	wacn.date="05/16/2016"/>
  
 # SQL 数据库 - 对审核的下层客户端支持
 

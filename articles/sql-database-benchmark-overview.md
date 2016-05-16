@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="10/15/2015"
-	wacn.date="11/12/2015" />
+	wacn.date="05/16/2016" />
 
 # Azure SQL 数据库基准检验概述
 

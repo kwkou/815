@@ -1,16 +1,16 @@
-<properties 
-	pageTitle="使用 PowerShell 升级到 Azure SQL 数据库 V12 | Azure" 
-	description="介绍如何使用 PowerShell 升级到 Azure SQL 数据库 V12，包括如何升级 Web 和企业数据库，以及如何升级 V11 服务器并将其数据库直接迁移到弹性数据库池。" 
-	services="sql-database" 
-	documentationCenter="" 
-	authors="stevestein" 
-	manager="jeffreyg" 
+<properties
+	pageTitle="使用 PowerShell 升级到 Azure SQL 数据库 V12 | Azure"
+	description="介绍如何使用 PowerShell 升级到 Azure SQL 数据库 V12，包括如何升级 Web 和企业数据库，以及如何升级 V11 服务器并将其数据库直接迁移到弹性数据库池。"
+	services="sql-database"
+	documentationCenter=""
+	authors="stevestein"
+	manager="jhubbard"
 	editor=""/>
 
-<tags 
-	ms.service="sql-database" 
-	ms.date="02/23/2016" 
-	wacn.date="03/24/2016"/>
+<tags
+	ms.service="sql-database"
+	ms.date="03/18/2016"
+	wacn.date="05/16/2016"/>
 
 # 使用 PowerShell 升级到 Azure SQL 数据库 V12
 
@@ -39,7 +39,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 升级到 SQL 数据库 V12 的操作不可撤销。升级后，无法将服务器还原到 V11。
 
-升级到 V12 之后，[服务层建议](/documentation/articles/sql-database-service-tier-advisor)和弹性池建议将不会立即可用，必须等到服务有时间评估新服务器上的工作负荷之后，才可供使用。V11 服务器建议历史记录不适用于 V12 服务器，因此不会保留。
+升级到 V12 之后，[服务层建议](/documentation/articles/sql-database-service-tier-advisor)将不会立即可用，必须等到服务有时间评估新服务器上的工作负荷之后，才可供使用。
 
 ## 准备升级
 
@@ -48,7 +48,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 - **如果客户端在 Azure VM 上，请打开这些端口**：如果客户端程序连接到 SQL 数据库 V12，而客户端运行在 Azure 虚拟机 (VM) 上，则必须打开虚拟机上的端口范围 11000-11999 和 14000-14999。有关详细信息，请参阅 [SQL 数据库 V12 的端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)。
 
 
-## 先决条件 
+## 先决条件
 
 若要使用 PowerShell 将服务器升级到 V12，你需要安装并运行 Azure PowerShell，然后，根据具体的版本，你可能需要切换到资源管理器模式，以访问 Azure 资源管理器 PowerShell cmdlet。
 
@@ -75,9 +75,9 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 若要获取有关服务器升级的建议，请运行以下 cmdlet：
 
-    $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName “resourcegroup1” -ServerName “server1” 
+    $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName “resourcegroup1” -ServerName “server1”
 
-有关详细信息，请参阅[Azure SQL 数据库定价层建议](/documentation/articles/sql-database-service-tier-advisor)。
+有关详细信息，请参阅 [Azure SQL 数据库定价层建议](/documentation/articles/sql-database-service-tier-advisor)。
 
 
 
@@ -97,22 +97,22 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
     # Adding the account
     #
     Add-AzureRmAccount -EnvironmentName AzureChinaCloud
-    
+
     # Setting the variables
     #
-    $SubscriptionName = 'YOUR_SUBSCRIPTION' 
-    $ResourceGroupName = 'YOUR_RESOURCE_GROUP' 
-    $ServerName = 'YOUR_SERVER' 
-    
-    # Selecting the right subscription 
-    # 
-    Select-AzureRmSubscription -SubscriptionName $SubscriptionName 
-    
-    # Getting the upgrade recommendations 
+    $SubscriptionName = 'YOUR_SUBSCRIPTION'
+    $ResourceGroupName = 'YOUR_RESOURCE_GROUP'
+    $ServerName = 'YOUR_SERVER'
+
+    # Selecting the right subscription
     #
-    $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName $ResourceGroupName -ServerName $ServerName 
-    
-    # Starting the upgrade process 
+    Select-AzureRmSubscription -SubscriptionName $SubscriptionName
+
+    # Getting the upgrade recommendations
+    #
+    $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName $ResourceGroupName -ServerName $ServerName
+
+    # Starting the upgrade process
     #
     Start-AzureRmSqlServerUpgrade -ResourceGroupName $ResourceGroupName -ServerName $ServerName -ServerVersion 12.0 -DatabaseCollection $hint.Databases -ElasticPoolCollection $hint.ElasticPools  
 
@@ -122,42 +122,42 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 如果建议不适合于你的服务器和业务案例，你可以选择数据库的升级方式并可以将它们映射到单一或弹性数据库。
 
 ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
-    
+
     # Creating elastic pool mapping
     #
-    $elasticPool = New-Object -TypeName Microsoft.Azure.Management.Sql.Models.UpgradeRecommendedElasticPoolProperties 
-    $elasticPool.DatabaseDtuMax = 100 
-    $elasticPool.DatabaseDtuMin = 0 
-    $elasticPool.Dtu = 800 
-    $elasticPool.Edition = "Standard" 
-    $elasticPool.DatabaseCollection = ("DB1", “DB2”, “DB3”, “DB4”) 
-    $elasticPool.Name = "elasticpool_1" 
-    $elasticPool.StorageMb = 800 
-     
+    $elasticPool = New-Object -TypeName Microsoft.Azure.Management.Sql.Models.UpgradeRecommendedElasticPoolProperties
+    $elasticPool.DatabaseDtuMax = 100
+    $elasticPool.DatabaseDtuMin = 0
+    $elasticPool.Dtu = 800
+    $elasticPool.Edition = "Standard"
+    $elasticPool.DatabaseCollection = ("DB1", “DB2”, “DB3”, “DB4”)
+    $elasticPool.Name = "elasticpool_1"
+    $elasticPool.StorageMb = 800
+
     # Creating single database mapping for 2 databases. DBMain1 mapped to S0 and DBMain2 mapped to S2
     #
-    $databaseMap1 = New-Object -TypeName Microsoft.Azure.Management.Sql.Models.UpgradeDatabaseProperties 
-    $databaseMap1.Name = "DBMain1" 
-    $databaseMap1.TargetEdition = "Standard" 
+    $databaseMap1 = New-Object -TypeName Microsoft.Azure.Management.Sql.Models.UpgradeDatabaseProperties
+    $databaseMap1.Name = "DBMain1"
+    $databaseMap1.TargetEdition = "Standard"
     $databaseMap1.TargetServiceLevelObjective = "S0"
-    
-    $databaseMap2 = New-Object -TypeName Microsoft.Azure.Management.Sql.Models.UpgradeDatabaseProperties 
-    $databaseMap2.Name = "DBMain2" 
-    $databaseMap2.TargetEdition = "Standard" 
+
+    $databaseMap2 = New-Object -TypeName Microsoft.Azure.Management.Sql.Models.UpgradeDatabaseProperties
+    $databaseMap2.Name = "DBMain2"
+    $databaseMap2.TargetEdition = "Standard"
     $databaseMap2.TargetServiceLevelObjective = "S2"
-     
+
     # Starting the upgrade
     #
-    Start-AzureRmSqlServerUpgrade –ResourceGroupName resourcegroup1 –ServerName server1 -Version 12.0 -DatabaseCollection @($databaseMap1, $databaseMap2) -ElasticPoolCollection @($elasticPool) 
+    Start-AzureRmSqlServerUpgrade –ResourceGroupName resourcegroup1 –ServerName server1 -Version 12.0 -DatabaseCollection @($databaseMap1, $databaseMap2) -ElasticPoolCollection @($elasticPool)
 
-    
+
 
 ## 升级到 SQL 数据库 V12 后监视数据库
 
 
 升级后，建议你主动监视数据库，以确保应用程序以所需的性能运行，并根据需要优化使用方式。
 
-除了监视单个数据库之外，你还可以通过 [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell/#monitoring-elastic-databases-and-elastic-database-pools) 监视弹性数据库池。
+除了监视各个数据库之外，你还可以使用 [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell) 监视弹性数据库池。
 
 
 **资源消耗数据：**对于基本、标准和高级数据库，可通过用户数据库中的 [sys.dm\_ db\_ resource\_stats](http://msdn.microsoft.com/zh-cn/library/azure/dn800981.aspx) DMV 查看资源消耗数据。此 DMV 针对前一小时的操作，以 15 秒的粒度级提供接近实时的资源消耗信息。每个间隔的 DTU 消耗百分比将计算为 CPU、IO 和日志维度的最大消耗百分比。下面是一个用于计算过去一小时平均 DTU 消耗百分比的查询：
@@ -186,8 +186,7 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 
 
 ## 后续步骤
-
-- 创建弹性数据库池并将部分或全部数据库添加到该池。
+ 
 - [更改数据库的服务层和性能级别](/documentation/articles/sql-database-scale-up)。
 
 
@@ -198,4 +197,4 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 - [Start-AzureRmSqlServerUpgrade](https://msdn.microsoft.com/zh-cn/library/azure/mt619403.aspx)
 - [Stop-AzureRmSqlServerUpgrade](https://msdn.microsoft.com/zh-cn/library/azure/mt603589.aspx)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0509_2016-->

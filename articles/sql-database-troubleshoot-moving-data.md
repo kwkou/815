@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="12/11/2015"
-	wacn.date="01/29/2016"/>
+	wacn.date="05/16/2016"/>
 
 # 在服务器之间或订阅之间移动数据库，以及将数据库移入和移出 Azure
 ##将数据库移到同一订阅中的不同服务器

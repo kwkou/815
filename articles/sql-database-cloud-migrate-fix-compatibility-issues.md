@@ -4,15 +4,15 @@
    services="sql-database"
    documentationCenter=""
    authors="carlrabeler"
-   manager="jeffreyg"
+   manager="jhubbard"
    editor=""/>
 
 <tags
    ms.service="sql-database"
-   ms.date="03/14/2016"
-   wacn.date="05/03/2016"/>
+   ms.date="03/23/2016"
+   wacn.date="05/16/2016"/>
 
-# 在迁移到 SQL 数据库之前，修复 SQL Server 数据库兼容性问题
+# 在迁移到 SQL 数据库之前使用 SQL Azure 迁移向导解决 SQL Server 数据库兼容性问题
 
 如果你确定源 SQL Server 数据库不兼容，则有几个选项可修复已确定的数据库兼容性问题。
 
@@ -27,10 +27,10 @@
 
  ![SAMW 迁移示意图](./media/sql-database-cloud-migrate/02SAMWDiagram.png)
 
-  >[AZURE.NOTE]请注意，向导的内置转换并非能够修复它可检测到的所有不兼容的架构。无法解决的非兼容脚本将报告为错误，将在生成的脚本中注入注释。如果检测到许多错误，请使用 Visual Studio 或 SQL Server Management Studio 来单步执行并修复无法使用 SQL Server 迁移向导修复的每个错误。
+  > [AZURE.NOTE] 请注意，向导的内置转换并非能够修复它可检测到的所有不兼容的架构。无法解决的非兼容脚本将报告为错误，将在生成的脚本中注入注释。如果检测到许多错误，请使用 Visual Studio 或 SQL Server Management Studio 来单步执行并修复无法使用 SQL Server 迁移向导修复的每个错误。
 
 ## 下一步：选择迁移方法并执行迁移
 
 [选择迁移方法](/documentation/articles/sql-database-cloud-migrate/#migrate-a-compatible-sql-server-database-to-sql-database)。
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0503_2016-->

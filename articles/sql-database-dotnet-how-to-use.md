@@ -1,16 +1,16 @@
 <properties 
-	pageTitle="如何使用 SQL 数据库 (.NET) - Azure" 
-	description="SQL Database 入门。了解如何创建 SQL Database 实例，以及如何使用 ADO.NET、ODBC 和 EntityClient Provider 与该实例建立连接。" 
+	pageTitle="如何使用 SQL 数据库 (.NET) | Azure" 
+	description="SQL 数据库入门。了解如何创建 SQL 数据库实例，以及如何使用 ADO.NET、ODBC 和 EntityClient Provider 与该实例建立连接。" 
 	services="sql-database" 
 	documentationCenter=".net" 
-	authors="jeffgoll" 
-	manager="jeffreyg" 
+	authors="annemill" 
+	manager="jhubbard" 
 	editor=""/>
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="07/07/2015" 
-	wacn.date="01/21/2016"/>
+	ms.date="04/14/2016" 
+	wacn.date="05/16/2016"/>
 
 
 # 如何在 .NET 应用程序中使用 Azure SQL 数据库
@@ -18,24 +18,24 @@
 本指南说明如何在 Azure SQL 数据库 上创建逻辑服务器和数据库实例，以及如何使用下列 .NET Framework 数据提供程序技术连接到数据库：ADO.NET、ODBC 和 EntityClient Provider。
 
 
+## 什么是 SQL 数据库
 
-
-SQL 数据库 为 Azure 提供关系数据库管理系统并且基于 SQL Server 技术。使用 SQL 数据库 实例，您可以轻松地配置关系数据库解决方案并将其部署到云中，并且利用能够为企业级可用性、可缩放性和安全性提供内置数据保护和自愈优势的分布式数据中心。
+SQL 数据库为 Azure 提供关系数据库管理系统并且基于 SQL Server 技术。使用 SQL 数据库实例，您可以轻松地配置关系数据库解决方案并将其部署到云中，并且利用能够为企业级可用性、可缩放性和安全性提供内置数据保护和自愈优势的分布式数据中心。
 
 
 
 ## 登录 Azure
 
-SQL 数据库 在 Azure 上提供关系数据存储、访问和管理服务。若要使用它，您将需要一个 Azure 订阅。
+SQL 数据库在 Azure 上提供关系数据存储、访问和管理服务。若要使用它，您将需要一个 Azure 订阅。
 
-1. 打开 Web 浏览器并浏览到 [http://www.azure.cn](http://www.azure.cn)。若要开始使用免费帐户，请单击右上角的“免费试用”并执行相应步骤。
+1. 打开 Web 浏览器并浏览到 [http://www.azure.cn](http://www.azure.cn)。若要开始试用，请单击右上角的“试用”并执行相应步骤。
 
 2. 现已创建您的帐户。一切准备就绪，即可开始。
 
 
 ## 创建和配置 SQL 数据库
 
-接下来，创建并配置数据库和服务器。在 Azure 管理门户中，你可以先使用已修订的工作流创建数据库，然后配置服务器。
+接下来，创建并配置数据库和服务器。在 Azure 管理门户中，你可以先使用已修订的工作流创建数据库，然后预配服务器。
 
 **创建数据库实例和逻辑服务器：**
 
@@ -65,7 +65,7 @@ SQL 数据库 在 Azure 上提供关系数据存储、访问和管理服务。�
 
 10. 在“服务器设置”中，输入 SQL Server 身份验证登录名。
 
-	SQL 数据库 使用 SQL 身份验证进行加密连接。将使用您提供的名称创建一个分配给 sysadmin 固定服务器角色的新 SQL Server 身份验证登录名。 
+	SQL 数据库使用 SQL 身份验证进行加密连接。将使用您提供的名称创建一个分配给 sysadmin 固定服务器角色的新 SQL Server 身份验证登录名。
 
 	该登录名不能是电子邮件地址、Windows 用户帐户或 Windows Live ID。SQL 数据库不支持声明，也不支持 Windows 身份验证。
 
@@ -77,7 +77,7 @@ SQL 数据库 在 Azure 上提供关系数据存储、访问和管理服务。�
 
 14. 完成后，请单击页面底部的复选标记。
 
-请注意，您没有指定服务器名称。SQL 数据库 会自动生成服务器名称以确保没有重复的 DNS 条目。服务器名称是一个由 10 个字符组成的字母数字字符串。您不能更改 SQL 数据库 服务器的名称。
+请注意，您没有指定服务器名称。SQL 数据库会自动生成服务器名称以确保没有重复的 DNS 条目。服务器名称是一个由 10 个字符组成的字母数字字符串。您不能更改 SQL 数据库服务器的名称。
 
 创建数据库后，单击它以打开其仪表板。仪表板提供可在应用程序代码中复制和使用的连接字符串。仪表板还显示了你在从 Management Studio 或其他管理工具中连接到数据库时所需要指定的管理 URL。
 
@@ -95,7 +95,7 @@ SQL 数据库 在 Azure 上提供关系数据存储、访问和管理服务。�
 
 2. 单击**“配置”**。
 
-3. 复制当前客户端 IP 地址。如果您从某网络进行连接，则为您的路由器或代理服务器侦听的 IP 地址。SQL 数据库 会检测当前连接所使用的 IP 地址，以便您可以创建一个接受来自该设备的连接请求的防火墙规则。 
+3. 复制当前客户端 IP 地址。如果您从某网络进行连接，则为您的路由器或代理服务器侦听的 IP 地址。SQL 数据库会检测当前连接所使用的 IP 地址，以便您可以创建一个接受来自该设备的连接请求的防火墙规则。
 
 4. 将 IP 地址粘贴到“起始 IP 地址”和“结束 IP 地址”中，以确定允许访问服务器的地址范围。日后，如果您遇到指示该范围太窄的连接错误，则可以编辑此规则来扩大范围。
 
@@ -112,17 +112,17 @@ SQL 数据库 在 Azure 上提供关系数据存储、访问和管理服务。�
 现在，你拥有数据库实例、逻辑服务器、允许来自你的 IP 地址的入站连接的防火墙规则以及管理员登录名。你现在可以通过编程方式连接到数据库。
 
 
-## 连接到 SQL Database
+## 连接到 SQL 数据库
 
-本节介绍如何使用不同的 .NET Framework 数据提供程序连接到 SQL Database 实例。有关连接到 SQL 数据库服务器和数据库的中心建议，请参阅：
+本节介绍如何使用不同的 .NET Framework 数据提供程序连接到 SQL 数据库实例。有关连接到 SQL 数据库服务器和数据库的中心建议，请参阅：
 
 
 - [到 SQL 数据库的连接：中心建议](/documentation/articles/sql-database-connect-central-recommendations)。
 
 
-如果你选择使用 Visual Studio 并且你的配置没有将 Azure Web 应用包含为前端，则无需在开发计算机上安装其他工具或 SDK。你现在即可开始开发应用程序。
+如果你选择使用 Visual Studio 并且你的配置没有将 Azure Web 应用程序包含为前端，则无需在开发计算机上安装其他工具或 SDK。你现在即可开始开发应用程序。
 
-您可以使用 Visual Studio 中的所有相同设计器工具处理 SQL 数据库，就像可以使用这些工具处理 SQL Server 一样。服务器资源管理器允许您查看（但不能编辑）数据库对象。Visual Studio 实体数据模型设计器功能完备，您可以用它来创建针对 SQL 数据库 的模型以用于 Entity Framework。
+您可以使用 Visual Studio 中的所有相同设计器工具处理 SQL 数据库，就像可以使用这些工具处理 SQL Server 一样。服务器资源管理器允许您查看（但不能编辑）数据库对象。Visual Studio 实体数据模型设计器功能完备，您可以用它来创建针对 SQL 数据库的模型以用于 Entity Framework。
 
 ## 使用用于 SQL Server 的 .NET Framework 数据提供程序
 
@@ -159,7 +159,6 @@ SQL 数据库 在 Azure 上提供关系数据存储、访问和管理服务。�
 
     SqlConnectionStringBuilder csBuilder;
     csBuilder = new SqlConnectionStringBuilder(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-    After you have built your connection string, you can use the SQLConnection class to connect the SQL 数据库 server:
     SqlConnection conn = new SqlConnection(csBuilder.ToString());
     conn.Open();
 
@@ -204,7 +203,6 @@ SQL 数据库 在 Azure 上提供关系数据存储、访问和管理服务。�
 
 ## 后续步骤
 
-现在，你已经了解连接到 SQL 数据库的相关基础知识，接下来请查看[开发：操作方法主题（SQL 数据库）](http://msdn.microsoft.com//zh-cn/library/windowsazure/ee621787.aspx)
+现在，你已经了解连接到 SQL 数据库的相关基础知识，接下来请查看[开发：操作方法主题（SQL 数据库）](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee621787.aspx)
  
-
-<!---HONumber=69-->
+<!---HONumber=Mooncake_0509_2016-->

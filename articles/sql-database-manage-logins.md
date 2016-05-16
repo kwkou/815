@@ -5,18 +5,18 @@
    services="sql-database"
    documentationCenter=""
    authors="BYHAM"
-   manager="jeffreyg"
+   manager="jhubbard"
    editor=""
    tags=""/>
 
 <tags
    ms.service="sql-database"
-   ms.date="03/08/2016"
-   wacn.date="04/18/2016"/>
+   ms.date="03/22/2016"
+   wacn.date="05/16/2016"/>
 
 # SQL 数据库安全：管理数据库的访问和登录安全  
 
-了解 SQL 数据库安全管理，特别是如何通过服务器级的主体帐户管理数据库的访问和登录安全。了解 SQL 数据库和本地 SQL Server 之间存在的登录安全选项方面的某些异同之处。
+了解 SQL 数据库安全管理，特别是如何通过服务器级的主体帐户管理数据库的访问和登录安全。了解 SQL 数据库和本地 SQL Server 之间存在的登录安全选项方面的某些异同之处。请参阅 [Azure SQL 数据库教程：Azure SQL 数据库安全性入门](/documentation/articles/sql-database-get-started-security)获取快速教程。
 
 ## 数据库预配和服务器级的主体登录名
 
@@ -24,9 +24,9 @@
 
 Azure SQL 数据库服务器级别主体帐户始终有权管理所有服务器级别和数据库级别的安全性。本主题介绍如何使用服务器级别主体和其他帐户以便在 SQL 数据库中管理登录名和数据库。
 
-通过 Azure 基于角色的访问控制和 Azure Resource Manager REST API 来访问 SQL 数据库的 Azure 用户从其 Azure 角色获得权限。Azure 角色成员的操作由数据库引擎代其执行。这些操作不受数据库引擎权限模型的影响，不在本主题讨论范围之内。
+通过 Azure 基于角色的访问控制 (RBAC) 和 Azure 资源管理器 REST API 来访问 SQL 数据库的 Azure 用户从其 Azure 角色获得权限。这些角色提供对管理平面操作的访问权限，但不提供对数据平面操作的访问权限。这些管理平面操作包括能够读取各种属性和 SQL 数据库中的架构元素。并且允许创建、删除和配置某些与 SQL 数据库相关的服务器级别的功能。其中许多管理平面操作是在使用 Azure 门户时可以查看并配置的项。使用 RBAC 角色时，数据库内部的 Azure 角色成员的操作（例如列出表）由数据库引擎执行，这样角色就不会被 GRANT/REVOKE/DENY 语句的标准 SQL Server 权限系统影响。RBAC 角色不能够读取或更改数据，因为这些是数据平面操作。有关详细信息，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles)。
 
-> [AZURE.IMPORTANT] SQL 数据库 V12 允许用户使用包含的数据库用户在数据库中进行身份验证。包含的数据库用户不需要登录名。这将使数据库更易于移植，但会降低服务器级主体对数据库访问权限的控制能力。启用包含的数据库用户会产生重要的安全影响。有关详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)、[包含的数据库](https://technet.microsoft.com/zh-cn/library/ff929071.aspx)、[CREATE USER (Transact-SQL)](https://technet.microsoft.com/zh-cn/library/ms173463.aspx) 和[使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication)。
+> [AZURE.IMPORTANT] SQL 数据库 V12 允许用户使用包含的数据库用户在数据库中进行身份验证。包含的数据库用户不需要登录名。这将使数据库更易于移植，但会降低服务器级主体对数据库访问权限的控制能力。启用包含的数据库用户会产生重要的安全影响。有关详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)、[包含的数据库](https://technet.microsoft.com/zh-cn/library/ff929071.aspx)、[创建用户 (Transact-SQL)](https://technet.microsoft.com/zh-cn/library/ms173463.aspx) 和[使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication)。
 
 ## SQL 数据库安全管理概述
 
@@ -82,7 +82,7 @@ CREATE LOGIN login1 WITH password='<ProvidePassword>';
 
 #### 使用新登录名
 
-为了使用你创建的登录名连接到 Azure SQL 数据库，你必须首先通过使用 ``CREATE USER`` 命令为每个登录名授予数据库级别权限。有关详细信息，请参阅下面的“授予登录名数据库访问权限”一节。
+为了使用你创建的登录名连接到 Azure SQL 数据库，你必须首先通过使用 ``CREATE USER`` 命令为每个登录名授予数据库级别权限。有关详细信息，请参阅下面的授予登录名数据库访问权限一节。
 
 因为某些工具以不同方式实现表格格式数据流 (TDS)，所以，你可能需要使用 ``<login>@<server>`` 表示法将 Azure SQL 数据库服务器名称追加到连接字符串中的登录名。在这些情况下，使用 ``@`` 符号分隔登录名和 Azure SQL 数据库服务器名称。例如，如果你的登录名为 **login1**，并且你的 Azure SQL 数据库服务器的完全限定名称为 **servername.database.chinacloudapi.cn**，则你的连接字符串的用户名参数应为：**login1@servername**。此限制将限制你可为登录名选择的文本。有关详细信息，请参阅 [CREATE LOGIN (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms189751.aspx)。
 
@@ -123,7 +123,7 @@ EXEC sp_addrolemember 'loginmanager', 'login1User';
 
 ## 授予对登录名的数据库访问权限
 
-所有登录名都必须在 **master** 数据库中创建。在创建一个登录名后，你可以为该登录名在另一个数据库中创建用户帐户。Azure SQL 数据库通过与 SQL Server 的本地实例中相同的方式支持数据库角色。
+所有登录名都必须在 master 数据库中创建。在创建一个登录名后，你可以为该登录名在另一个数据库中创建用户帐户。Azure SQL 数据库通过与 SQL Server 的本地实例中相同的方式支持数据库角色。
 
 若要在其他数据库中创建用户帐户，并且假设你尚未创建登录名或数据库，请执行以下步骤：
 
@@ -143,7 +143,7 @@ CREATE DATABASE database1;
 
 > [AZURE.NOTE] 创建登录名时必须使用强密码。有关详细信息，请参阅[强密码](https://msdn.microsoft.com/zh-cn/library/ms161962.aspx)。
 
-以下示例演示如何在与登录名 **login1** 相对应的数据库 **database1** 中创建名为 **login1User** 的数据库用户。若要执行以下示例，首先必须使用在 database1 中拥有 **ALTER ANY USER** 权限的登录名与该数据库建立新连接。以 **db\_owner** 角色成员连接的任何用户（例如创建该数据库的登录名）都拥有该权限。
+以下示例演示了如何在与登录名 **login1** 相对应的数据库 database1 中创建名为 **login1User** 的数据库用户。若要执行以下示例，首先必须使用在 **database1** 中拥有“更改任意用户”权限的登录名与该数据库建立新连接。以 **db\_owner** 角色成员连接的任何用户（例如创建该数据库的登录名）都拥有该权限。
 
 ```
 -- Establish a new connection to the database1 database
@@ -170,7 +170,8 @@ SELECT * FROM sys.databases;
 
 ## 另请参阅
 
+[Azure SQL 数据库教程：Azure SQL 数据库安全性入门](/documentation/articles/sql-database-get-started-security)
 [Azure SQL 数据库安全指导原则和限制](/documentation/articles/sql-database-security-guidelines)
 [通过使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication)
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0509_2016-->

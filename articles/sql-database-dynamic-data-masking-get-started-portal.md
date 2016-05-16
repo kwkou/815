@@ -1,21 +1,21 @@
 <properties
-   pageTitle="SQL 数据库动态数据屏蔽入门（Azure 经典门户）"
-   description="如何开始在 Azure 经典门户中使用 SQL 数据库动态数据屏蔽"
+   pageTitle="SQL 数据库动态数据屏蔽入门（Azure 管理门户）"
+   description="如何开始在 Azure 管理门户中使用 SQL 数据库动态数据屏蔽"
    services="sql-database"
    documentationCenter=""
    authors="ronitr"
-   manager="jeffreyg"
-   editor="v-romcal"/>
+   manager="jhubbard"
+   editor=""/>
 
 <tags
    ms.service="sql-database"
-   ms.date="10/20/2015"
-   wacn.date="03/21/2016"/>
+   ms.date="04/11/2016"
+   wacn.date="05/16/2016"/>
 
-# SQL 数据库动态数据屏蔽入门（Azure 经典门户）
+# SQL 数据库动态数据屏蔽入门（Azure 管理门户）
 
 > [AZURE.SELECTOR]
-- [动态数据屏蔽 - Azure 门户](/documentation/articles/sql-database-dynamic-data-masking-get-started)
+- [Dynamic Data Masking - Azure 门户](/documentation/articles/sql-database-dynamic-data-masking-get-started)
 
 ## 概述
 
@@ -27,7 +27,7 @@ SQL 数据库动态数据屏蔽通过向无特权用户屏蔽敏感数据来控�
 
 ## SQL 数据库动态数据屏蔽基础知识
 
-可以在 Azure 经典门户中数据库的“审核和安全性”选项卡下设置动态数据屏蔽策略。
+可以在 Azure 管理门户中数据库的“审核和安全性”选项卡下设置动态数据屏蔽策略。
 
 
 > [AZURE.NOTE] 若要在 Azure 门户中设置动态数据屏蔽，请参阅 [SQL 数据库动态数据屏蔽入门（Azure 门户）](/documentation/articles/sql-database-dynamic-data-masking-get-started)。
@@ -57,9 +57,9 @@ Azure 数据库管理员、服务器管理员或安全主管角色可以配置�
 
 <a name="Anchor1"></a>
 
-## 使用 Azure 经典门户为数据库设置动态数据屏蔽
+## 使用 Azure 管理门户为数据库设置动态数据屏蔽
 
-1. 启动 Azure 经典门户 ([https://manage.windowsazure.cn](https://manage.windowsazure.cn))。
+1. 启动 Azure 管理门户 ([https://manage.windowsazure.cn](https://manage.windowsazure.cn))。
 
 2. 单击要屏蔽的数据库，然后单击“审核和安全性”选项卡。
 
@@ -84,12 +84,16 @@ Azure 数据库管理员、服务器管理员或安全主管角色可以配置�
 9. 单击“保存”以保存新的或更新的屏蔽策略。
 
 
+## 使用 Transact-SQL 语句为数据库设置动态数据屏蔽
+
+请参阅 [Dynamic Data Masking（动态数据屏蔽）](https://msdn.microsoft.com/zh-cn/library/mt130841.aspx)。
+
 ## 使用 Powershell cmdlet 为数据库设置动态数据屏蔽
 
 请参阅 [Azure SQL 数据库 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt574084.aspx)。
 
 ## 使用 REST API 为数据库设置动态数据屏蔽
 
-请参阅 [对 Azure SQL 数据库的操作](https://msdn.microsoft.com/zh-cn/library/dn505719.aspx)。
+请参阅[对 Azure SQL 数据库的操作](https://msdn.microsoft.com/zh-cn/library/dn505719.aspx)。
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0509_2016-->

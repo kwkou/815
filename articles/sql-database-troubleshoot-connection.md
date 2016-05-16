@@ -9,25 +9,30 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="02/12/2015"
-	wacn.date="03/29/2016"/>
+	ms.date="03/29/2016"
+	wacn.date="05/16/2016"/>
 
-# 排查“服务器上的数据库当前不可用。请稍后重试连接”和其他连接错误
-“服务器 <servername> 上的数据库 <dbname> 当前不可用...”是 Azure SQL 数据库最常见的暂时性连接错误。暂时性连接错误的发生通常是由于计划内事件（例如软件升级）或计划外事件（例如进程崩溃）。这些错误的发生通常时间很短，从数秒到一分钟（最多）不等。如果你收到了其他错误，请查看[错误消息](/documentation/articles/sql-database-develop-error-messages)以找到原因的线索，确定问题是暂时性的还是永久性的，然后使用本主题中的指导予以解决。
+# 排查“&lt;x&gt;服务器上的&lt;y&gt;数据库当前不可用。请稍后重试连接”错误
+[AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
+
+当应用程序连接到 Azure SQL 数据库时，你将收到以下错误消息：
+
+```
+Error code 40613: "Database <x> on server <y> is not currently available. Please retry the connection later. If the problem persists, contact customer support, and provide them the session tracing ID of <z>"
+```
+
+> [AZURE.NOTE] 此错误消息通常是暂时的（生存期较短）。
+
+正在移动（或重新配置）Azure 数据库时发生该错误，并且你的应用程序失去与 SQL 数据库的连接。SQL 数据库重新配置事件发生是由于计划内事件（例如软件升级）或计划外事件（例如进程崩溃或负载平衡）。大多数重新配置事件的生存期通常较短，并且应在最多 60 秒内完成。但是，偶尔这些事件可能需要更长时间才能完成，例如当一个大型事务导致长时间运行的恢复时。
 
 ## 解决暂时性连接问题的步骤
-1.	请查看 [Azure 服务仪表板](https://azure.microsoft.com/status)以了解已知的中断。
-2.	确保你的应用程序使用重试逻辑。有关常规重试策略，请参阅[连接问题](/documentation/articles/sql-database-connectivity-issues)和[最佳实践和设计准则](/documentation/articles/sql-database-connect-central-recommendations)。然后参阅[代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)以了解具体操作。
-3.	由于数据库即将达到其资源限制，因此错误看起来像是暂时性连接问题。
-4.	如果仍存在连接问题，你可以通过在 [Azure 支持](/support/contact)站点上选择“获取支持”来发出 Azure 支持请求。
+1.	检查 [Azure 服务仪表板](https://azure.microsoft.com/status)在由应用程序报告错误期间是否发生任何已知的服务中断。
+2. 连接到云服务的应用程序（如 Azure SQL 数据库）应期望定期重新配置事件并实施重试逻辑来处理这些错误，而不是将它们作为应用程序错误展现给用户。请查看[暂时性错误](/documentation/articles/sql-database-connectivity-issues)部分和[最佳实践和设计指南](/documentation/articles/sql-database-connect-central-recommendations)，了解详细信息和常规重试策略。然后参阅[代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)以了解具体操作。
+3.	由于数据库即将达到其资源限制，因此错误看起来像是暂时性连接问题。请参阅[排查性能问题](/documentation/articles/sql-database-troubleshoot-performance)。
+4.	如果连接问题继续，或者应用程序遇到错误的持续时间超过 60 秒，或者在给定日期内看到错误多次发生，请通过选择[Azure 支持](/support/contact)站点上的“获取支持”提出 Azure 支持请求。
 
-## 解决永久性连接问题的步骤
-如果应用完全无法连接，原因通常与 IP 和防火墙配置有关。这可能包括客户端上重新配置了网络（例如，使用了新的 IP 地址或代理）。连接参数拼写错误（例如连接字符串）也很常见。
+## 后续步骤
+- 如果你收到其他错误，请评估[错误信息](/documentation/articles/sql-database-develop-error-messages)，以便获取有关原因的线索。
+- 如果问题持续，请访问[排查 SQL Azure 数据库的常见连接问题](/documentation/articles/sql-database-troubleshoot-common-connection-issues)中的指南。
 
-1.	设置[防火墙规则](/documentation/articles/sql-database-configure-firewall-settings)以允许客户端 IP 地址。
-2.	在客户端与 Internet 之间的所有防火墙上，确保为出站连接打开端口 1433。
-3.	验证连接字符串和其他连接设置。参阅[连接问题主题](/documentation/articles/sql-database-connectivity-issues)中的“连接字符串”部分。
-4.	在仪表板中检查服务运行状况。如果你认为没有区域性的中断，请参阅[在中断后恢复](/documentation/articles/sql-database-disaster-recovery)，以了解恢复到新区域的步骤。
-5.	如果仍存在连接问题，你可以通过在 [Azure 支持](/support/contact)站点上选择“获取支持”来发出 Azure 支持请求。
-
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0509_2016-->

@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="试用 SQL 数据库：使用 C# 创建 SQL 数据库 | Azure" 
-	description="尝试使用 SQL 数据库开发 SQL 和 C# 应用，并使用适用于 .NET 的 SQL 数据库库以 C# 创建 Azure SQL 数据库。" 
+<properties
+	pageTitle="试用 SQL 数据库：使用 C# 创建 SQL 数据库 | Azure"
+	description="尝试使用 SQL 数据库开发 SQL 和 C# 应用，并使用适用于 .NET 的 SQL 数据库库以 C# 创建 Azure SQL 数据库。"
 	keywords="试用 sql, sql c#"   
-	services="sql-database" 
-	documentationCenter="" 
-	authors="stevestein" 
-	manager="jeffreyg" 
+	services="sql-database"
+	documentationCenter=""
+	authors="stevestein"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
    ms.service="sql-database"
-   ms.date="01/22/2016"
-   wacn.date="03/29/2016"/>
+   ms.date="03/24/2016"
+   wacn.date="05/16/2016"/>
 
-# 试用 SQL 数据库：使用 C&#x23; 通过适用于 .NET 的 SQL 数据库库创建 SQL 数据库 
+# 试用 SQL 数据库：使用 C&#x23; 通过适用于 .NET 的 SQL 数据库库创建 SQL 数据库
 
 **单一数据库**
 
@@ -22,13 +22,7 @@
 - [C#](/documentation/articles/sql-database-get-started-csharp)
 - [PowerShell](/documentation/articles/sql-database-get-started-powershell)
 
-
-
-了解如何使用[适用于 .NET 的 Azure SQL 数据库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)通过 C# 命令创建 Azure SQL 数据库。
-
-你可以使用 SQL 和 C# 创建单一数据库以试用 SQL 数据库。
-
-为简明起见，我们已分开列出各个代码段，并在本文底部的某个部分中提供了一个示例控制台应用程序，其中结合了所有命令。
+了解如何使用[适用于 .NET 的 Azure SQL 数据库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)通过 C# 命令创建 Azure SQL 数据库。你可以使用 SQL 和 C# 创建单一数据库以试用 SQL 数据库。为简明起见，我们已分开列出各个代码段，并在本文底部的某个部分中提供了一个示例控制台应用程序，其中结合了所有命令。
 
 适用于 .NET 的 Azure SQL 数据库库提供了基于 [Azure 资源管理器](/documentation/articles/resource-group-overview)的 API，用于包装[基于资源管理器的 SQL 数据库 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx)。此客户端库遵循基于资源管理器的客户端库的通用模式。资源管理器需要资源组，并要求使用 [Azure Active Directory](https://msdn.microsoft.com/zh-cn/library/azure/mt168838.aspx) (AAD) 进行身份验证。
 
@@ -46,7 +40,7 @@
 
 ## 安装所需的库
 
-若要使用 C# 设置 SQL 数据库，请在 Visual Studio 中使用[包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)安装以下包，以获取所需的管理库（“工具”>“NuGet 包管理器”>“包管理器控制台”）：
+若要使用 C# 来设置 SQL 数据库，请通过在 Visual Studio 中使用[程序包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)（“工具”>“NuGet 程序包管理器”>“程序包管理器控制台”）安装以下程序包来获取所需的管理库：
 
     Install-Package Microsoft.Azure.Management.Sql –Pre
     Install-Package Microsoft.Azure.Management.Resources –Pre
@@ -82,7 +76,7 @@
 
     ![添加 SQL C# 应用程序的重定向 URL。][8]
 
-7. 完成创建应用，单击“配置”，然后复制“客户端 ID”（后面需要在代码中使用客户端 ID）。
+7. 完成创建应用，单击“配置”，然后复制“客户端 ID”（稍后需要在代码中使用客户端 ID）。
 
     ![获取 SQL C# 应用程序的客户端 ID。][9]
 
@@ -98,7 +92,23 @@
 
 
 
-### 检索当前用户的访问令牌 
+### 标识域名
+
+代码中需要用到域名。轻松标识正确域名的一种方式是：
+
+1. 转到 [Azure 门户](http://manage.windowsazure.cn)。
+2. 将鼠标悬停在右上角的名称上，并记下弹出窗口中显示的域。
+
+     
+
+
+
+**其他 AAD 资源**
+
+在[这篇有用的博客文章](http://www.cloudidentity.com/blog/2013/09/12/active-directory-authentication-library-adal-v1-for-net-general-availability)中，可以找到有关使用 Azure Active Directory 进行身份验证的其他信息。
+
+
+### 检索当前用户的访问令牌
 
 客户端应用程序必须检索当前用户的应用程序访问令牌。当用户首次执行此代码时，系统会提示用户输入其用户凭据，生成的令牌将在本地缓存。后续的执行将从缓存中检索令牌，并且仅在令牌已过期时才提示用户登录。
 
@@ -132,7 +142,7 @@
         {
             creds = new Microsoft.Rest.TokenCredentials(token.AccessToken);
 
-            // Create a resource management client 
+            // Create a resource management client
             ResourceManagementClient resourceClient = new ResourceManagementClient(creds);
 
             // Resource group parameters
@@ -147,7 +157,7 @@
         }
 
 
-## 创建服务器 
+## 创建服务器
 
 SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server 中必须全局唯一，因此，如果该服务器名称已被使用，你将会收到错误。还必须指出的是，该命令可能需要数分钟才能运行完毕。
 
@@ -201,7 +211,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
         static void CreateFirewallRule()
         {
-            // Create a firewall rule on the server 
+            // Create a firewall rule on the server
             FirewallRuleCreateOrUpdateParameters firewallParameters = new FirewallRuleCreateOrUpdateParameters()
             {
                 Properties = new FirewallRuleCreateOrUpdateProperties()
@@ -216,7 +226,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 
 
-若要允许其他 Azure 服务访问服务器，请添加一个防火墙规则并将 tartIpAddress 和 EndIpAddress 都设置为 0.0.0.0。请注意，这会允许来自*任何* Azure 订阅的 Azure 流量访问该服务器。
+若要允许其他 Azure 服务访问服务器，请添加一个防火墙规则并将 tartIpAddress 和 EndIpAddress 都设置为 0.0.0.0。请注意，这会允许来自任何 Azure 订阅的 Azure 流量访问该服务器。
 
 
 ## 使用 C&#x23; 创建 SQL 数据库
@@ -248,7 +258,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 ## 示例 C&#x23; 控制台应用程序
 
-以下示例将创建资源组、服务器、防火墙规则和 SQL 数据库。本文顶部的“使用 Azure Active Directory 配置身份验证”部分说明了可在何处获取 clientId、redirectUri 和 domainName 变量的值。
+以下示例将创建资源组、服务器、防火墙规则和 SQL 数据库。本文顶部的“使用 Azure Active Directory 配置身份验证”一节介绍了获取 clientId、redirectUri 和 domainName 变量值的具体位置。
 
 
     using Microsoft.Azure;
@@ -262,7 +272,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    
+
     namespace SqlDbConsoleApp
     {
     class Program
@@ -273,13 +283,13 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
         static string redirectUri = "<Azure App redirectURI>";
         static string domainName = "<domain>";
 
-        // You create these values 
+        // You create these values
         static string resourceGroupName = "<your resource group name>";
         static string location = "<Azure data center location>";
 
         static string serverName = "<your server name>";
         static string administratorLogin = "<your server admin>";
-        
+
         // store your password securely!
         static string administratorPassword = "<your server admin password>";
         static string serverVersion = "12.0";
@@ -318,7 +328,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
             Console.WriteLine("Creating database...");
 
             DatabaseCreateOrUpdateResponse dbResponse = CreateDatabase();
-            Console.WriteLine("Status: " + dbResponse.Status.ToString() 
+            Console.WriteLine("Status: " + dbResponse.Status.ToString()
                 + " Code: " + dbResponse.StatusCode.ToString());
 
             Console.WriteLine("Press enter to exit...");
@@ -329,7 +339,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
         {
             creds = new Microsoft.Rest.TokenCredentials(token.AccessToken);
 
-            // Create a resource management client 
+            // Create a resource management client
             ResourceManagementClient resourceClient = new ResourceManagementClient(creds);
 
             // Resource group parameters
@@ -364,7 +374,7 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
         static void CreateFirewallRule()
         {
-            // Create a firewall rule on the server 
+            // Create a firewall rule on the server
             FirewallRuleCreateOrUpdateParameters firewallParameters = new FirewallRuleCreateOrUpdateParameters()
             {
                 Properties = new FirewallRuleCreateOrUpdateProperties()
@@ -439,4 +449,4 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 [8]: ./media/sql-database-get-started-csharp/add-application2.png
 [9]: ./media/sql-database-get-started-csharp/clientid.png
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0509_2016-->
