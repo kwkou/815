@@ -76,7 +76,7 @@
         loggingEnabled: true
         logDirectory: iisnode
 
-    现在已针对 iisnode 启用日志记录。
+    现在已针对 iisnode 启用日志记录。有关具体操作的详细信息，请参阅[从 iisnode 获取 stdout 和 stderr 日志](/documentation/articles/app-service-web-nodejs-get-started#iisnodelog)。
 
 2. 打开 config/env/production.js 来配置生产环境，并设置 `port` 和 `hookTimeout`：
 
@@ -142,6 +142,7 @@
 ## 排查部署问题
 
 如果 Sails.js 应用程序在 Azure Web 应用中由于某种原因而失败，请查找 stderr 日志，以帮助进行故障排除。
+有关详细信息，请参阅[从 iisnode 获取 stdout 和 stderr 日志](/documentation/articles/app-service-web-nodejs-get-started#iisnodelog)。
 如果应用成功启动，stdout 日志应显示你熟悉的消息：
 
                 .-..-.
