@@ -22,16 +22,15 @@
 - [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
 - [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
-本教程说明如何创建一个简单的 [Node.js](http://nodejs.org) 应用程序，然后通过 cmd.exe 或 bash 等命令行将它部署到 [Azure Web 应用](/documentation/services/web-sites)中的 [Web 应用](/home/features/web-site)。本教程中的说明适用于任何能够运行 Node.js 的操作系统。
+本教程说明如何创建一个简单的 [Node.js](http://nodejs.org) 应用程序，然后通过 cmd.exe 或 bash 等命令行将它部署到 [Azure Web 应用](/documentation/services/web-sites)。本教程中的说明适用于任何能够运行 Node.js 的操作系统。
 
-<a name="prereq"/>
-## 先决条件
+##<a name="prereq"><a/> 先决条件
 
 - Node.js。安装二进制文件可从[此处](https://nodejs.org/)获取。
 - Yoeman。[此处](http://yeoman.io/)提供了安装说明。
 - Git。安装二进制文件可从[此处](http://www.git-scm.com/downloads)获取。
 - Azure CLI。[此处](/documentation/articles/xplat-cli-install)提供了安装说明。
-- 一个 Azure 帐户。如果你没有帐户，可以[注册免费试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)，或者[激活你的 Visual Studio 订户权益](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)。
+- 一个 Azure 帐户。如果你没有帐户，可以[注册1元试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 ## 创建并部署简单的 Node.js Web 应用
 

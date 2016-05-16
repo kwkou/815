@@ -23,9 +23,7 @@
 - Sails.js 的实践知识。本教程并非旨在帮助你解决运行 Sail.js 相关的一般性问题。
 - Git。安装二进制文件可从[此处](http://www.git-scm.com/downloads)获取。
 - Azure CLI。[此处](/documentation/articles/xplat-cli-install)提供了安装说明。
-- 一个 Azure 帐户。如果你没有帐户，可以[注册免费试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)，或者[激活你的 Visual Studio 订户权益](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)。
-
->[AZURE.NOTE] 若要在注册 Azure 帐户之前了解 Azure 的功能，请转到[试用 Azure Web 应用](https://tryappservice.azure.com/)。在那里，你可以立刻在 Azue Web 应用中创建短期的入门级应用 -- 无需信用卡，也无需做出任何承诺。
+- 一个 Azure 帐户。如果你没有帐户，可以[注册1元试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 ## 步骤 1：在开发环境中创建 Sails.js 应用
 
@@ -78,7 +76,7 @@
         loggingEnabled: true
         logDirectory: iisnode
 
-    现在已针对 iisnode 启用日志记录。有关具体操作的详细信息，请参阅[从 iisnode 获取 stdout 和 stderr 日志](/documentation/articles/app-service-web-nodejs-sails#iisnodelog)。
+    现在已针对 iisnode 启用日志记录。
 
 2. 打开 config/env/production.js 来配置生产环境，并设置 `port` 和 `hookTimeout`：
 
@@ -141,12 +139,9 @@
 
     现在，你应会看到相同的 Sails.js 主页。
     
-    ![](./media/app-service-web-nodejs-sails/sails-in-azure.png)
-
 ## 排查部署问题
 
 如果 Sails.js 应用程序在 Azure Web 应用中由于某种原因而失败，请查找 stderr 日志，以帮助进行故障排除。
-有关详细信息，请参阅[从 iisnode 获取 stdout 和 stderr 日志](/documentation/articles/app-service-web-nodejs-sails#iisnodelog)。
 如果应用成功启动，stdout 日志应显示你熟悉的消息：
 
                 .-..-.
