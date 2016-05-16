@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="10/19/2015"
-	wacn.date="04/06/2016"/>
+	wacn.date="05/16/2016"/>
 
 # Azure AD Connect Health 操作
 
@@ -97,42 +97,7 @@ Azure AD Connect 支持两个级别的管理访问：
 
 如果最终用户有权在目录或服务实例级别访问，则会被授予权限。
 
-<!--
-### 如何允许用户或组访问 Azure AD Connect Health
-#### 步骤 1：选择适当的访问范围
-若要允许用户访问 Azure AD Connect Health 中的*所有服务实例*级别，请在 Azure AD Connect Health 打开主边栏选项卡。<br>
-#### 步骤 2：添加用户、组并分配角色
-1. 单击“配置”部分中的“用户”部件。<br>
-![Azure AD Connect Health RBAC 中的主边栏选项卡](./media/active-directory-aadconnect-health/RBAC_main_blade.png)
-2. 选择“添加”
-3. 选择“角色”，例如“所有者”<br>
-![Azure AD Connect Health RBAC 中的“添加用户”](./media/active-directory-aadconnect-health/RBAC_add.png)
-4. 键入目标用户或组的名称或标识符。可以同时选择一个或多个用户或组。单击“选择”。
-![Azure AD Connect Health RBAC 中的“选择用户”](./media/active-directory-aadconnect-health/RBAC_select_users.png)
-5. 选择“确定”。<br>
 
-6. 完成角色分配后，用户和/或组将出现在列表中。<br>
-![Azure AD Connect Health RBAC 中的用户列表](./media/active-directory-aadconnect-health/RBAC_user_list.png)
-
-执行这些步骤可以根据分配给所列用户和组的角色为其授予访问权限。
->[AZURE.NOTE]
-- 全局管理员始终拥有所有操作的完全访问权限，但全局管理员帐户不会出现在上述列表中。
-- “邀请用户”功能在 Azure AD Connect Health 中不受支持。
-
-#### 步骤 3：与用户或组共享边栏选项卡位置
-1. 分配权限后，用户可以转到 [http://aka.ms/aadconnecthealth](http://aka.ms/aadconnecthealth) 来访问 Azure AD Connect Health。
-2. 在边栏选项卡上，用户只需单击“固定到仪表板”，即可将边栏选项卡或其他部件固定到仪表板<br> 
-![Azure AD Connect Health RBAC 中的固定边栏选项卡](./media/active-directory-aadconnect-health/RBAC_pin_blade.png)
-
-
->[AZURE.NOTE]分配有“读取者”角色的用户无法执行“创建”操作来从 Azure 应用商店获取 Azure AD Connect Health 扩展。但此用户仍可转到上述链接来访问边栏选项卡。为方便后续使用，用户可以将边栏选项卡固定到仪表板。
-
-### 删除用户和/或组
-可以通过单击右键并选择“删除”，来删除已添加到 Azure AD Connect Health“基于角色的访问控制”部件中的用户或组。<br> 
-![Azure AD Connect Health RBAC 中的“删除用户”](./media/active-directory-aadconnect-health/RBAC_remove.png)
-
-[//]: # "结束 RBAC 部分"
--->
 ## 相关链接
 
 * [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health)
