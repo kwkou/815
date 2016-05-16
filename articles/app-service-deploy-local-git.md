@@ -14,7 +14,7 @@
     
 # 从本地 Git 部署到 Azure
 
-本教程说明如何将应用从本地计算机上的 Git 存储库部署到 [Azure Web 应用]。Azure 支持结合 [Azure 门户]中的“本地 Git”部署选项使用此方法。  
+本教程说明如何将应用从本地计算机上的 Git 存储库部署到 [Azure Web 应用]。Azure 支持结合 [Azure 管理门户]中的“本地 Git”部署选项使用此方法。  
 在根据[此处](/documentation/articles/app-service-web-get-started)所述使用 [Azure 命令行界面]创建 Azure Web 应用时，将自动执行本文中所述的许多 Git 命令。
 
 ## 先决条件
@@ -23,9 +23,7 @@
 
 - Git。可在[此处](http://www.git-scm.com/downloads)下载二进制安装文件。  
 - 对 Git 有一个基本的了解。
-- 一个 Azure 帐户。如果你没有帐户，可以[注册免费试用帐户](https://azure.microsoft.com/pricing/1rmb-trial)，或者[激活你的 Visual Studio 订户权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details)。
-
->[AZURE.NOTE] 如果想要在注册 Azure 帐户之前开始使用 Azure，请转到[试用 Azure Web 应用](https://tryappservice.azure.com/)，你可以在 Azure Web 应用中立即创建一个生存期较短的入门应用。你不需要使用信用卡，也不需要做出承诺。
+- 一个 Azure 帐户。如果你没有帐户，可以[注册一元试用帐户](/pricing/1rmb-trial)。
 
 ## <a id="Step1"></a>步骤 1：创建本地存储库
 
@@ -156,16 +154,16 @@ Azure 支持用各种编程语言创建的应用程序。
 ## 其他资源
 
 * [Git 文档](http://git-scm.com/documentation)
-* [持续部署到 Azure Web 应用](/documentation/articles/app-service-continous-deployment)
 * [如何使用适用于 Azure 的 PowerShell](/documentation/articles/powershell-install-configure)
 * [如何使用 Azure 命令行界面](/documentation/articles/xplat-cli-install)
 
-[Azure Web 应用]: /documentation/articles/app-service-changes-existing-services/
+[Azure Web 应用]: /documentation/services/web-sites/
 [Azure Developer Center]: http://azure.microsoft.com/develop/overview/
+[Azure 管理门户]: https://manage.windowsazure.cn
 [Azure 门户]: https://portal.azure.cn
 [Git website]: http://git-scm.com
 [Installing Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
-[Azure 命令行界面]: /documentation/articles/xplat-cli-azure-resource-manager/
+[Azure 命令行界面]: /documentation/articles/xplat-cli-install/
 
 [Using Git with CodePlex]: http://codeplex.codeplex.com/wikipage?title=Using%20Git%20with%20CodePlex&referringTitle=Source%20control%20clients&ProjectName=codeplex
 [Quick Start - Mercurial]: http://mercurial.selenic.com/wiki/QuickStart

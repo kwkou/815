@@ -121,9 +121,7 @@ V1 VNET 需要与 App Service 计划位于相同的订阅中，其中保存了�
 
 可在 $Configuration.GeneratedCertificatePath 指定的位置找到证书。
 
-若要手动上载证书，请在新门户 [Azure 门户][azureportal]上，选择“浏览虚拟网络(经典)”–>“VPN 连接”–>“点到站点”–>“管理证书”。从此处上载证书。
-
-或者在 Azure 经典门户中，单击“网络”>“你的 Vnet”>“证书”>“上载”。
+若要手动上载证书，请在 [Azure 管理门户](https://manage.windowsazure.cn)中，单击“网络”>“你的 Vnet”>“证书”>“上载”。
 
 #####获取点到站点包#####
 

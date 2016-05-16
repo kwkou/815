@@ -61,7 +61,7 @@
 
     Get-HpcClusterProperty -AutoGrowShrink
 
-### AutoGrowShrink 参数
+###<a name="AutoGrowShrink-parameters"></a> AutoGrowShrink 参数
 
 下面是可以使用 **Set-HpcClusterProperty** 命令修改的 AutoGrowShrink 参数。
 
@@ -98,7 +98,7 @@
 
 ### 先决条件
 
-* **HPC Pack 2012 R2 Update 1 或更高版本群集** - **AzureAutoGrowShrink.ps1** 脚本已安装在 %CCP\_HOME%bin 文件夹中。群集头节点既可以部署在本地，也可以部署在 Azure VM 中。请参阅[使用 HPC Pack 设置一个混合群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster)，开始使用本地头节点和 Azure“突发”节点。若要在 Azure VM 中快速部署 HPC Pack 群集，请参阅 [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)（HPC Pack IaaS 部署脚本），或使用 [Azure 快速入门模板](https://azure.microsoft.com/documentation/templates/create-hpc-cluster/)。
+* **HPC Pack 2012 R2 Update 1 或更高版本群集** - **AzureAutoGrowShrink.ps1** 脚本已安装在 %CCP\_HOME%bin 文件夹中。群集头节点既可以部署在本地，也可以部署在 Azure VM 中。请参阅[使用 HPC Pack 设置一个混合群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster)，开始使用本地头节点和 Azure“突发”节点。若要在 Azure VM 中快速部署 HPC Pack 群集，请参阅 [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)（HPC Pack IaaS 部署脚本）。
 
 * **Azure PowerShell 0.8.12** - 该脚本当前依赖于此特定版本的 Azure PowerShell。如果要在头节点上运行更高版本，可能需要将 Azure PowerShell 降级到[版本 0.8.12](http://az412849.vo.msecnd.net/downloads03/azure-powershell.0.8.12.msi) 才能运行该脚本。
 
