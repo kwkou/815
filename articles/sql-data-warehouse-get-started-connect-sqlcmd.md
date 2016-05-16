@@ -3,14 +3,14 @@
    description="开始连接到 SQL 数据仓库并运行一些查询。"
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="twounder"
-   manager=""
+   authors="sonyama"
+   manager="barbkess"
    editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="03/03/2016"
-   wacn.date="04/11/2016"/>
+   ms.date="03/28/2016"
+   wacn.date="05/16/2016"/>
 
 # 使用 SQLCMD 进行连接和查询
 
@@ -30,24 +30,23 @@
 
 ## 获取完全限定的 Azure SQL 服务器名称
 
-若要连接到数据库，你需要服务器的完整名称 (****servername**.database.chinacloudapi.cn*)，该名称中包含要连接到的数据库。
+若要连接到数据库，你需要服务器的完整名称 (***servername**.database.chinacloudapi.cn*)，该名称中包含要连接到的数据库。
 
+1. 转到 [Azure 管理门户](https://manage.windowsazure.cn)。
+2. 浏览到要连接到的数据库。
+3. 找出完整的服务器名称（我们将在下面的步骤中使用此名称）：
 
-若要查找完全限定的服务器名称，请执行以下操作。
+![][1]
 
-1. 通过以下命令查找我们需要的服务器信息。本示例使用 ,Group1 资源组。
-```
-PS C:\> Get-AzureRmSqlServer -ResourceGroupName "Group1" 
-```
 
 ## 使用 sqlcmd 连接到 SQL 数据仓库
 
-若要在使用 sqlcmd 时连接到 SQL 数据仓库的特定实例，需要打开命令提示符并输入 **sqlcmd** 后接 SQL 数据仓库数据库的连接字符串。连接字符串需包含以下参数：
+若要在使用 sqlcmd 时连接到 SQL 数据仓库的特定实例，需要打开命令提示符并输入 **sqlcmd** 后接 SQL 数据仓库数据库的连接字符串。连接字符串需包含以下必需参数：
 
-+ **用户 (-U)：**采用 `<`用户`>` 格式的服务器用户
-+ **密码 (-P)：**与用户关联的密码
 + **服务器 (-S)：**采用 `<`服务器名称`>`.database.chinacloudapi.cn 格式的服务器
 + **数据库 (-D)：**数据库名称
++ **用户 (-U)：**采用 `<`用户`>` 格式的服务器用户
++ **密码 (-P)：**与用户关联的密码
 + **启用带引号的标识符 (-I)：**必须启用带引号的标识符才能连接到 SQL 数据仓库实例。
 
 因此，若要连接到 SQL 数据仓库实例，需输入以下信息：
@@ -62,7 +61,7 @@ C:\>sqlcmd -S <Server Name>.database.chinacloudapi.cn -d <Database> -U <User> -P
 
 ```
 C:\>sqlcmd -S <Server Name>.database.chinacloudapi.cn -d <Database> -U <User> -P <Password> -I
-1> SELECT COUNT(*) FROM dbo.FactInternetSales;
+1> SELECT name FROM sys.tables;
 2> GO
 3> QUIT
 ```
@@ -74,4 +73,4 @@ C:\>sqlcmd -S <Server Name>.database.chinacloudapi.cn -d <Database> -U <User> -P
 <!--Image references-->
 [1]: ./media/sql-data-warehouse-get-started-connect/get-server-name.png
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0509_2016-->
