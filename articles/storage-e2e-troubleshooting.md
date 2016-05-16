@@ -6,11 +6,11 @@
 	authors="tamram" 
 	manager="adinah"/>
 <tags ms.service="storage"
-	ms.date="02/14/2016"
-    wacn.date="04/11/2016"
+	ms.date="04/06/2016"
+    wacn.date="05/16/2016"
     />
 
-# 使用 Azure 存储度量值和日志记录、AzCopy 及 Message Analyzer 进行点对点故障排除 
+# 使用 Azure 存储度量值和日志记录、AzCopy 及 Message Analyzer 进行点对点故障排除
 
 [AZURE.INCLUDE [storage-selector-portal-e2e-troubleshooting](../includes/storage-selector-portal-e2e-troubleshooting.md)]
 
@@ -20,7 +20,7 @@
 
 在本教程中，我们将演示如何识别某些会影响性能的错误，并使用 Microsoft 和 Azure 存储空间提供的工具以点对点的方式排查这些错误，以优化客户端应用程序。
 
-本教程提供了点对点故障排除方案的实践分析。有关排查 Azure 存储应用程序问题的深入化概念指南，请参阅[监视、诊断和排查存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)。
+本教程提供了点对点故障排除方案的实践分析。有关排查 Azure 存储应用程序问题的深入化概念指南，请参阅[监视、诊断和排查 Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)。
 
 ## Azure 存储应用程序故障排除工具
 
@@ -59,15 +59,15 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 当针对容器或 Blob 的读取操作失败，或者由于找不到 Blob 或容器而失败时发生。
 
-- 当容器或 Blob 被此请求之前的另一个客户端删除时发生。 
+- 当容器或 Blob 被此请求之前的另一个客户端删除时发生。
 - 当使用的 API 调用在检查容器或 Blob 是否存在后创建容器或 Blob 时发生。CreateIfNotExists API 先执行 HEAD 调用以检查容器或 Blob 是否存在；如果不存在，则将返回 404 错误，然后再次执行 PUT 调用以写入容器或 Blob。
 
 **状态代码 409（冲突）示例**
 
-- 当你使用 Create API 创建新容器或 Blob，但未事先检查存在性，而已经存在同名的容器或 Blob 时发生。 
+- 当你使用 Create API 创建新容器或 Blob，但未事先检查存在性，而已经存在同名的容器或 Blob 时发生。
 - 如果在删除某个容器时，你尝试在删除操作完成之前创建同名的新容器，则会发生此错误。
 - 如果在容器或 Blob 中指定了租约，但已存在租约，则会发生此错误。
- 
+
 **状态代码 412（前置条件失败）示例**
 
 - 当未满足条件标头指定的条件时发生。
@@ -78,7 +78,7 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 在本教程中，我们将使用 Message Analyzer 来处理三种不同类型的日志文件，不过，你可以选择要处理的类型之一：
 
 - **服务器日志**，这是在启用 Azure 存储日志记录时创建的。服务器日志包含有关针对 Azure 存储服务（Blob、队列、表和文件）之一调用的每个操作的数据。服务器日志将指示调用的操作、返回的状态代码，以及有关请求和响应的其他详细信息。
-- **.NET 客户端日志**，这是在从 .NET 应用程序内部启用客户端日志记录时创建的。客户端日志包括有关客户端准备请求以及接收和处理响应的详细信息。 
+- **.NET 客户端日志**，这是在从 .NET 应用程序内部启用客户端日志记录时创建的。客户端日志包括有关客户端准备请求以及接收和处理响应的详细信息。
 - **HTTP 网络跟踪日志**，它收集有关 HTTP/HTTPS 请求的数据和响应数据，包括针对 Azure 存储空间的操作的数据。在本教程中，我们将通过 Message Analyzer 生成网络跟踪。
 
 ### 配置服务器端日志记录和度量值
@@ -212,8 +212,8 @@ Message Analyzer 包括 Azure 存储空间的资产，可帮助你分析服务�
 
 1. 在 Microsoft Message Analyzer 中的“文件”菜单上单击“新建会话”，然后单击“空白会话”。在“新建会话”对话框中，输入分析会话的名称。在“会话详细信息”面板中，单击“文件”按钮。 
 1. 若要加载 Message Analyzer 生成的网络跟踪数据，请单击“添加文件”，浏览到你通过 Web 跟踪会话将 .matp 文件保存到的位置，选择该 .matp 文件，然后单击“打开”。 
-1. 若要加载服务器端日志数据，请单击“添加文件”，浏览到你将服务器端日志下载到的位置，选择要分析的时间范围内的日志文件，然后单击“打开”。在“会话详细信息”面板中，将每个服务器端日志文件的“文本日志配置”下拉列表设置为 AzureStorageLog，以确保 Microsoft Message Analyzer 可以正确分析日志文件。
-1. 若要加载客户端日志数据，请单击“添加文件”，浏览到客户端日志保存到的位置，选择想要分析的日志文件，然后单击“打开”。在“会话详细信息”面板中，将每个客户端日志文件的“文本日志配置”下拉列表设置为 AzureStorageClientDotNetV4，以确保 Microsoft Message Analyzer 可以正确分析日志文件。
+1. 若要加载服务器端日志数据，请单击“添加文件”，浏览到你将服务器端日志下载到的位置，选择要分析的时间范围内的日志文件，然后单击“打开”。在“会话详细信息”面板中，将每个服务器端日志文件的“文本日志配置”下拉列表设置为 **AzureStorageLog**，以确保 Microsoft Message Analyzer 可以正确分析日志文件。
+1. 若要加载客户端日志数据，请单击“添加文件”，浏览到客户端日志保存到的位置，选择想要分析的日志文件，然后单击“打开”。在“会话详细信息”面板中，将每个客户端日志文件的“文本日志配置”下拉列表设置为 **AzureStorageClientDotNetV4**，以确保 Microsoft Message Analyzer 可以正确分析日志文件。
 1. 在“新建会话”对话框中单击“开始”以加载并分析日志数据。日志数据将显示在 Message Analyzer 分析网格中。
 
 下图显示了使用服务器、客户端和网络跟踪日志文件配置的示例会话。
@@ -334,7 +334,7 @@ Message Analyzer 将查找并选择搜索条件匹配客户端请求 ID 的第�
 | 队列上的消息传递出现意外的延迟 | AzureStorageClientDotNetV4.Description 包含“Retrying failed operation.” | 客户端 |
 | PercentThrottlingError 的 HTTP 提升 | HTTP.Response.StatusCode == 500 &#124;&#124; HTTP.Response.StatusCode == 503 | 网络 |
 | PercentTimeoutError 提升 | HTTP.Response.StatusCode == 500 | 网络 |
-| PercentTimeoutError 提升（全部） |    **StatusCode == 500 | 全部 |
+| PercentTimeoutError 提升（全部） |    *StatusCode == 500 | 全部 |
 | PercentNetworkError 增加 | AzureStorageClientDotNetV4.EventLogEntry.Level < 2 | 客户端 |
 | HTTP 403 (禁止) 消息 | HTTP.Response.StatusCode == 403 | 网络 |
 | HTTP 404 (找不到) 消息 | HTTP.Response.StatusCode == 404 | 网络 |
@@ -359,4 +359,4 @@ Message Analyzer 将查找并选择搜索条件匹配客户端请求 ID 的第�
 - [Microsoft Message Analyzer 操作指南](http://technet.microsoft.com/zh-cn/library/jj649776.aspx)
  
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0509_2016-->

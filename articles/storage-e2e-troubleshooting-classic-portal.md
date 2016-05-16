@@ -8,8 +8,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/23/2016" 
-	wacn.date="04/11/2016"/>
+	ms.date="04/06/2016" 
+	wacn.date="05/16/2016"/>
 
 # 使用 Azure 存储度量值和日志记录、AzCopy 及 Message Analyzer 进行点对点故障排除 
 
@@ -221,8 +221,8 @@ Message Analyzer 包括 Azure 存储空间的资产，可帮助你分析服务�
 
 1. 在 Microsoft Message Analyzer 中的“文件”菜单上单击“新建会话”，然后单击“空白会话”。在“新建会话”对话框中，输入分析会话的名称。在“会话详细信息”面板中，单击“文件”按钮。 
 1. 若要加载 Message Analyzer 生成的网络跟踪数据，请单击“添加文件”，浏览到你通过 Web 跟踪会话将 .matp 文件保存到的位置，选择该 .matp 文件，然后单击“打开”。 
-1. 若要加载服务器端日志数据，请单击“添加文件”，浏览到你将服务器端日志下载到的位置，选择要分析的时间范围内的日志文件，然后单击“打开”。在“会话详细信息”面板中，将每个服务器端日志文件的“文本日志配置”下拉列表设置为 AzureStorageLog，以确保 Microsoft Message Analyzer 可以正确分析日志文件。
-1. 若要加载客户端日志数据，请单击“添加文件”，浏览到客户端日志保存到的位置，选择想要分析的日志文件，然后单击“打开”。在“会话详细信息”面板中，将每个客户端日志文件的“文本日志配置”下拉列表设置为 AzureStorageClientDotNetV4，以确保 Microsoft Message Analyzer 可以正确分析日志文件。
+1. 若要加载服务器端日志数据，请单击“添加文件”，浏览到你将服务器端日志下载到的位置，选择要分析的时间范围内的日志文件，然后单击“打开”。在“会话详细信息”面板中，将每个服务器端日志文件的“文本日志配置”下拉列表设置为 **AzureStorageLog**，以确保 Microsoft Message Analyzer 可以正确分析日志文件。
+1. 若要加载客户端日志数据，请单击“添加文件”，浏览到客户端日志保存到的位置，选择想要分析的日志文件，然后单击“打开”。在“会话详细信息”面板中，将每个客户端日志文件的“文本日志配置”下拉列表设置为 **AzureStorageClientDotNetV4**，以确保 Microsoft Message Analyzer 可以正确分析日志文件。
 1. 在“新建会话”对话框中单击“开始”以加载并分析日志数据。日志数据将显示在 Message Analyzer 分析网格中。
 
 下图显示了使用服务器、客户端和网络跟踪日志文件配置的示例会话。
@@ -343,7 +343,7 @@ Message Analyzer 将查找并选择搜索条件匹配客户端请求 ID 的第�
 | 队列上的消息传递出现意外的延迟 | AzureStorageClientDotNetV4.Description 包含“Retrying failed operation.” | 客户端 |
 | PercentThrottlingError 的 HTTP 提升 | HTTP.Response.StatusCode == 500 &#124;&#124; HTTP.Response.StatusCode == 503 | 网络 |
 | PercentTimeoutError 提升 | HTTP.Response.StatusCode == 500 | 网络 |
-| PercentTimeoutError 提升（全部） |    **StatusCode == 500 | 全部 |
+| PercentTimeoutError 提升（全部） |    *StatusCode == 500 | 全部 |
 | PercentNetworkError 增加 | AzureStorageClientDotNetV4.EventLogEntry.Level < 2 | 客户端 |
 | HTTP 403 (禁止) 消息 | HTTP.Response.StatusCode == 403 | 网络 |
 | HTTP 404 (找不到) 消息 | HTTP.Response.StatusCode == 404 | 网络 |
@@ -369,4 +369,4 @@ Message Analyzer 将查找并选择搜索条件匹配客户端请求 ID 的第�
  
  
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0509_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage" 
-	ms.date="02/22/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="04/08/2016"
+	wacn.date="05/16/2016"/>
 
 # 如何在 Jenkins 持续集成中使用 Azure Slave 插件
 
@@ -40,14 +40,22 @@
 可以在你的[订阅配置文件](https://manage.windowsazure.cn/publishsettings/Index?SchemaVersion=2.0)中找到这些信息。以下是订阅配置文件的一个示例。
 
 	<?xml version="1.0" encoding="utf-8"?>
+
 		<PublishData>
+
   		<PublishProfile SchemaVersion="2.0" PublishMethod="AzureServiceManagementAPI">
+
     	<Subscription
+
       		ServiceManagementUrl="https://management.core.chinacloudapi.cn"
+
       		Id="<Subscription ID value>"
+
       		Name="Pay-As-You-Go"
 			ManagementCertificate="<Management certificate value>" />
+
   		</PublishProfile>
+
 	</PublishData>
 
 获取订阅配置文件后，请按照以下步骤配置 Azure Slave 插件：
@@ -77,6 +85,7 @@
 1. 在 Jenkins 仪表板中，单击“管理 Jenkins”。
 2. 单击“配置系统”。
 3. 向下滚动页面以找到“云”部分。
+
 4. 在“云”部分中，找到“添加 Azure 虚拟机模板”，然后单击“添加”。
 
 	![添加 VM 模板](./media/azure-slave-plugin-for-jenkins/jenkins-add-vm-template.png)
@@ -86,6 +95,7 @@
 	![空白的常规配置](./media/azure-slave-plugin-for-jenkins/jenkins-slave-template-general-configuration-blank.png)
 
 5. 在“名称”框中输入 Azure 云服务的名称。如果你输入的名称引用一个现有的云服务，则将在该服务中设置虚拟机。否则，Azure 将创建一个新服务。
+
 6. 在“说明”框中，输入描述所创建模板的文本。此信息供仅你参考，而不会在预配虚拟机时使用。
 7. “标签”框用于标识所创建的模板，随后在创建 Jenkins 作业时用于引用该模板。对于本例，请在此框中输入 **linux**。
 8. 在“区域”列表中，单击要在其中创建虚拟机的区域。
@@ -111,23 +121,34 @@
 	对于本教程，键入 **U** 显示一个 Ubuntu 映像列表，然后单击“Ubuntu Server 14.04 LTS”。
 
 14. 在“启动方法”列表中，单击“SSH”。
-15. 复制下面的脚本并粘贴到“初始化脚本”框中。
+15. 复制下面的脚本并粘贴到“Init 脚本”框中。
 
 		# Install Java
 		sudo apt-get -y update
+
 		sudo apt-get install -y openjdk-7-jdk
+
 		sudo apt-get -y update --fix-missing
+
 		sudo apt-get install -y openjdk-7-jdk
+
+
 
 		# Install git
+
 		sudo apt-get install -y git
 
+
+
 		#Install ant
-		sudo apt-get install -y ant
-		sudo apt-get -y update --fix-missing
+
 		sudo apt-get install -y ant
 
-	将在创建虚拟机后执行“初始化脚本”。在本示例中，脚本将安装 Java、Git 和 ant。
+		sudo apt-get -y update --fix-missing
+
+		sudo apt-get install -y ant
+
+	将在创建虚拟机后执行该 init 脚本。在本示例中，脚本将安装 Java、Git 和 ant。
 
 16. 在“用户名”和“密码”框中，为要在你的虚拟机中创建的管理员帐户创建你的偏好值。
 17. 单击“验证模板”以检查你指定的参数是否有效。
@@ -148,18 +169,29 @@
 8. 编辑以下脚本，用相应的值替换 **(your GitHub account name)**、**(your project name)** 和 **(your project directory)**，然后将编辑后的脚本粘贴到显示的文本区域中。
 
 		# Clone from git repo
+
 		currentDir="$PWD"
+
 		if [ -e (your project directory) ]; then
+
   			cd (your project directory)
+
   			git pull origin master
+
 		else
+
   			git clone https://github.com/(your GitHub account name)/(your project name).git
+
 		fi
 
 		# change directory to project
+
 		cd $currentDir/(your project directory)
 
+
+
 		#Execute build task
+
 		ant
 
 9. 单击“保存”。
@@ -168,4 +200,4 @@
 
 之后，Jenkins 将使用在上一部分中创建的模板创建一个从属节点，并执行你在此任务的构建步骤中指定的脚本。
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0509_2016-->

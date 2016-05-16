@@ -8,8 +8,8 @@
             editor="" />
 
 <tags ms.service="storage"
-      ms.date="03/03/2016"
-      wacn.date="04/11/2016" />
+	  ms.date="04/11/2016"
+      wacn.date="05/16/2016" />
 
 # 在 Windows 上开始使用 Azure 文件存储
 
@@ -45,7 +45,7 @@ Azure 文件存储是一种使用标准[服务器消息块 (SMB) 协议](https:/
 	- 将文件复制到同一存储帐户中的一个 Blob。
 - 使用 Azure 存储空间度量值进行故障排除
 
-现在所有存储帐户均支持文件存储，因此你可以使用现有存储帐户，也可以创建新的存储帐户。请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account-classic-portal#create-a-storage-account)，了解有关创建新存储帐户的信息。
+现在所有存储帐户均支持文件存储，因此你可以使用现有存储帐户，也可以创建新的存储帐户。请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account#create-a-storage-account)，了解有关创建新存储帐户的信息。
 
 <!--
 ## Use the Azure preview portal to manage a file share
@@ -105,10 +105,12 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 ### 列出目录中的文件
 
-可以列出目录的文件，以便查看其中的文件。此命令也将列出子目录，但在此示例中没有子目录，因此只列出文件。
+若要查看目录中的文件，你可以列出目录的所有文件。此命令将返回 CustomLogs 目录中的文件和子目录（如果有的话）。
 
 	# list files in the new directory
-	Get-AzureStorageFile -Share $s -Path CustomLogs
+	Get-AzureStorageFile -Share $s -Path CustomLogs | Get-AzureStorageFile
+
+Get-AzureStorageFile 将返回任何传入的目录对象的文件和目录列表。“Get-AzureStorageFile -Share $s”将返回根目录中的文件和目录列表。若要获取子目录中的文件列表，必须将子目录传递给 Get AzureStorageFile。这就是此功能的作用 -- 到达管道的命令的第一部分将返回子目录 CustomLogs 的目录实例。然后，该实例将传递到 Get-AzureStorageFile，从而返回 CustomLogs 中的文件和目录。
 
 ### 复制文件
 
@@ -143,8 +145,9 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 为了演示如何装载 Azure 文件共享，现在我们将创建一个运行 Windows 的 Azure 虚拟机，并远程登录到它内部以装载共享。
 
-1. 首先，按照[在 Azure 门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)中的说明创建新的 Azure 虚拟机。
-2. 接下来，按照[使用 Azure 门户登录到 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-connect-logon)中的说明远程登录到虚拟机。
+
+1. 首先，按照[在 Azure 门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)中的说明创建新的 Azure 虚拟机。
+2. 接下来，按照[使用 Azure 门户登录到 Windows 虚拟机](/documentation/articles/virtual-machines-log-on-windows-server)中的说明远程登录到虚拟机。
 3. 在该虚拟机上打开 PowerShell 窗口。
 
 ### 保存虚拟机的存储帐户凭据
@@ -188,7 +191,7 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 ## 使用文件存储进行开发
 
-若要以编程方式使用文件存储，可以使用适用于 .NET 和 Java 的存储空间客户端库或 Azure 存储空间 REST API。本部分中的示例演示如何通过在桌面上运行的简单控制台应用程序使用 [Azure .NET 存储空间客户端库](https://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx)处理文件共享。
+若要以编程方式使用文件存储，可以使用适用于 .NET 和 Java 的存储空间客户端库或 Azure 存储空间 REST API。本部分中的示例演示如何通过在桌面上运行的简单控制台应用程序使用[适用于 .NET 的 Azure 存储空间客户端库](https://msdn.microsoft.com/zh-cn/library/mt347887.aspx)处理文件共享。
 
 [AZURE.INCLUDE [storage-dotnet-install-library-include](../includes/storage-dotnet-install-library-include.md)]
 
@@ -198,21 +201,14 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 ### 添加命名空间声明
 
-从解决方案资源管理器打开 program.cs 文件，并在该文件顶部添加以下命名空间声明。
+从解决方案资源管理器打开 `program.cs` 文件，并在该文件顶部添加以下命名空间声明。
 
 	using Microsoft.Azure; // Namespace for Azure Configuration Manager
-	using Microsoft.WindowsAzure.Storage; // Namespaces for Storage Client Library
-	using Microsoft.WindowsAzure.Storage.Blob;
-	using Microsoft.WindowsAzure.Storage.File;
+	using Microsoft.WindowsAzure.Storage; // Namespace for Storage Client Library
+	using Microsoft.WindowsAzure.Storage.Blob; // Namespace for Blob storage
+	using Microsoft.WindowsAzure.Storage.File; // Namespace for File storage
 
-### 以编程方式检索连接字符串
-
-可以使用 `Microsoft.WindowsAzure.CloudConfigurationManager` 类或 `System.Configuration.ConfigurationManager ` 类从 app.config 文件中检索保存的凭据。Azure 配置管理器包，其中包括 `Microsoft.WindowsAzure.CloudConfigurationManager` 类，可从 [Nuget](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager) 获得。
-
-此处的示例显示如何使用 `CloudConfigurationManager` 类检索凭据，并使用 `CloudStorageAccount` 类封装这些凭据。将以下代码添加到 program.cs 的 `Main()` 方法中。
-
-    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-    	CloudConfigurationManager.GetSetting("StorageConnectionString")); 
+[AZURE.INCLUDE [storage-cloud-configuration-manager-include](../../includes/storage-cloud-configuration-manager-include.md)]
 
 ### 以编程方式访问文件共享
 
@@ -441,7 +437,7 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 Azure 存储服务分析现在支持用于文件存储的指标。使用指标数据，可以跟踪请求和诊断问题。
 
-可以从[管理门户](https://manage.windowsazure.cn)启用文件存储的指标。你还可以通过 REST API 或存储客户端库中的类似物之一调用“设置文件服务属性”操作，以编程方式启用指标。
+你可以通过 REST API 或存储客户端库中的类似物之一调用“设置文件服务属性”操作，以编程方式启用指标。
 
 下面的代码示例演示如何使用适用于 .NET 的存储客户端库启用文件存储的指标。
 
@@ -502,7 +498,7 @@ Azure 存储服务分析现在支持用于文件存储的指标。使用指标�
 
 2. **Azure 文件共享是在 Internet 上公开可见，还是只能通过 Azure 对其进行访问？**
  
-	只要端口 445（TCP 出站）处于打开状态且客户端支持 SMB 3.0 协议（ *例如* ，Windows 8 或 Windows Server 2012），文件共享就可通过 Internet 使用。
+	只要端口 445（TCP 出站）处于打开状态且客户端支持 SMB 3.0 协议（例如，Windows 8 或 Windows Server 2012），文件共享就可通过 Internet 使用。
 
 3. **Azure 虚拟机与文件共享之间的网络流量是否算作对订阅计费的外部带宽？**
 
@@ -579,4 +575,4 @@ Azure 存储服务分析现在支持用于文件存储的指标。使用指标�
 - [Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [将连接保存到 Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0509_2016-->

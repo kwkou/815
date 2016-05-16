@@ -9,10 +9,10 @@
 
 <tags
    ms.service="storage"
-   ms.date="01/06/2016"
-   wacn.date="02/25/2016"/>
+   ms.date="03/31/2016"
+   wacn.date="05/16/2016"/>
 
-# 在 Azure 存储空间中使用 Azure 密钥保管库加密和解密 blob
+# 教程：在 Azure 存储空间中使用 Azure 密钥保管库加密和解密 Blob
 
 ## 介绍
 
@@ -22,7 +22,7 @@
 
 有关 Azure 密钥保管库的概述信息，请参阅[什么是 Azure 密钥保管库？](/documentation/articles/key-vault-whatis)
 
-有关 Azure 存储空间的客户端加密的概述信息，请参阅 [Azure 存储空间的客户端加密入门](/documentation/articles/storage-client-side-encryption)
+有关 Azure 存储空间的客户端加密的概述信息，请参阅 [Azure 存储空间客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption)
 
 
 ## 先决条件
@@ -36,7 +36,7 @@
 
 ## 客户端加密概述
 
-有关 Azure 存储空间的客户端加密的概述，请参阅 [Azure 存储空间的客户端加密入门](/documentation/articles/storage-client-side-encryption)
+有关 Azure 存储空间的客户端加密的概述，请参阅 [Azure 存储空间客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption)
 
 下面是客户端加密的工作原理的简要说明：
 
@@ -231,4 +231,4 @@ RSA 密钥的私钥则保留在密钥保管库中，因此，为了进行解密�
 <!--Image references-->
 [1]: ./media/storage-encrypt-decrypt-blobs-key-vault/blobmetadata.png
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0509_2016-->
