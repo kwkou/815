@@ -131,7 +131,7 @@
 
 最佳做法是始终确保所有 Internet 连接首先进入呈现层。呈现层访问业务层，业务层再访问数据层。例如，在呈现层上创建一个终结点。每个终结点具有一个公共端口和一个专用端口。专用端口由虚拟机在内部用于侦听终结点上的流量。公共端口是 Azure 外部通信的入口点，由 Azure 负载平衡器使用。建议设置网络访问控制列表 (ACL) 以定义相应规则，帮助隔离和控制任何应用程序层上任何公共终结点的任何公共端口的传入流量。有关详细信息，请参阅[管理终结点上的 ACL](/documentation/articles/virtual-machines-windows-classic-setup-endpoints#manage-the-acl-on-an-endpoint)。
 
-请注意，Azure 中的负载平衡器的工作方式类似于本地环境中的负载平衡器。有关更多信息，请参阅 [Azure 基础结构服务的负载平衡](/documentation/articles/virtual-machines-linux-load-balance)。
+请注意，Azure 中的负载平衡器的工作方式类似于本地环境中的负载平衡器。有关更多信息，请参阅 [Azure 基础结构服务的负载平衡](/documentation/articles/virtual-machines-windows-load-balance)。
 
 此外，我们建议你使用 Azure 虚拟网络为虚拟机设置专用网络。这让虚拟机能够通过专用 IP 地址相互通信。有关详细信息，请参阅 [Azure 虚拟网络](/documentation/articles/virtual-networks-overview)。
 
@@ -175,7 +175,7 @@
 
 下图演示本地方案及其云解决方案。在此方案中，你将 Azure 的多个虚拟机中的呈现层和业务层组件向外缩放。此外，你还要为 Azure 中的 SQL Server 数据库实现高可用性和灾难恢复 (HADR) 技术。
 
-在不同 VM 上运行一个应用程序的多个副本，确保你在这些虚拟机上实现请求的负载平衡。使用多个虚拟机时，需要确保所有 VM 都是可访问的，并且同一时间点都在运行。如果你配置了负载平衡，Azure 负载平衡器会跟踪 VM 的运行状况，并将传入调用正确定向到正常运行的 VM 节点。有关如何设置虚拟机负载平衡的信息，请参阅 [Azure 基础结构服务的负载平衡](/documentation/articles/virtual-machines-linux-load-balance)。负载平衡器之后有多个 Web 服务器和应用程序服务器实例，可以确保呈现层和业务层的高可用性。
+在不同 VM 上运行一个应用程序的多个副本，确保你在这些虚拟机上实现请求的负载平衡。使用多个虚拟机时，需要确保所有 VM 都是可访问的，并且同一时间点都在运行。如果你配置了负载平衡，Azure 负载平衡器会跟踪 VM 的运行状况，并将传入调用正确定向到正常运行的 VM 节点。有关如何设置虚拟机负载平衡的信息，请参阅 [Azure 基础结构服务的负载平衡](/documentation/articles/virtual-machines-windows-load-balance)。负载平衡器之后有多个 Web 服务器和应用程序服务器实例，可以确保呈现层和业务层的高可用性。
 
 ![向外缩放和高可用性](./media/virtual-machines-windows-sql-server-app-patterns-dev-strategies/IC728012.png)
 
@@ -189,7 +189,7 @@
 
 ## 使用 Azure VM 和云服务的 2 层和 3 层模式
 
-在此应用程序模式中，你使用 [Azure 云服务](/documentation/articles/cloud-services-choose-me#tellmecs)（Web 角色和辅助角色 - 平台即服务 (PaaS)）和 [Azure 虚拟机](/documentation/services/virtual-machines/)（基础结构即服务 (IaaS)），将 2 层或 3 层应用程序部署到 Azure。将 [Azure 云服务](/documentation/services/cloud-services/)用于呈现层/业务层，而将 [Azure 虚拟机](/documentation/articles/virtual-machines-linux-about)中的 SQL Server 用于数据层，这对于在 Azure 上运行的大多数应用程序都是有利的。原因是，在云服务上运行一个计算实例可以简化管理、部署、监控和向外缩放操作。
+在此应用程序模式中，你使用 [Azure 云服务](/documentation/articles/cloud-services-choose-me#tellmecs)（Web 角色和辅助角色 - 平台即服务 (PaaS)）和 [Azure 虚拟机](/documentation/services/virtual-machines/)（基础结构即服务 (IaaS)），将 2 层或 3 层应用程序部署到 Azure。将 [Azure 云服务](/documentation/services/cloud-services/)用于呈现层/业务层，而将 [Azure 虚拟机](/documentation/articles/virtual-machines-windows-about)中的 SQL Server 用于数据层，这对于在 Azure 上运行的大多数应用程序都是有利的。原因是，在云服务上运行一个计算实例可以简化管理、部署、监控和向外缩放操作。
 
 通过云服务，Azure 可为你维护基础结构、执行日常维护、为操作系统安装修补程序，并尝试从服务和硬件故障中恢复。当你的应用程序需要向外缩放时，可以通过增加或减少应用程序使用的实例或虚拟机的数量，使用云服务项目的自动和手动向外缩放选项。此外，你可以使用本地 Visual Studio，将应用程序部署到 Azure 中的云服务项目。
 

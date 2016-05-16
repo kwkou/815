@@ -144,7 +144,7 @@
 - 目标 VM 上 SSH 流量的终结点配置。终结点的专用 TCP 端口应与 VM 上的 SSH 服务正在侦听的 TCP 端口（默认值为 22）匹配。在 Azure 管理门户中使用“虚拟机”>“VM 名称”>“终结点”来验证 SSH TCP 端口号。
 - 目标虚拟机上的 SSH 流量终结点的 ACL。ACL 允许你指定基于源 IP 地址允许或拒绝的从 Internet 传入的流量。错误配置的 ACL 可能会阻止 SSH 流量传入终结点。检查你的 ACL 以确保允许从你的代理服务器或其他边缘服务器的公共 IP 地址传入的流量。有关详细信息，请参阅[关于网络访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl)。
 
-若要将终结点从问题原因中排除，请删除当前终结点，然后创建一个新的终结点并指定 **SSH** 名称（公用和专用端口号为 TCP 端口 22）。有关详细信息，请参阅[在 Azure 中的虚拟机上设置终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
+若要将终结点从问题原因中排除，请删除当前终结点，然后创建一个新的终结点并指定 **SSH** 名称（公用和专用端口号为 TCP 端口 22）。有关详细信息，请参阅[在 Azure 中的虚拟机上设置终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints)。
 
 <a id="nsg"></a>
 #### 来源 4：网络安全组

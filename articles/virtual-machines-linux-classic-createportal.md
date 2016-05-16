@@ -14,7 +14,7 @@
 	wacn.date="02/26/2016"/>
 
 	
-# 创建运行 Windows 的自定义虚拟机
+# 创建运行 Linux 的自定义虚拟机
 
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]

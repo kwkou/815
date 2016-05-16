@@ -7,7 +7,7 @@ VM 扩展可帮助你：
 -   重置或安装连接功能，如 RDP 和 SSH
 -   诊断、监视和管理 VM
 
-还有许多其他功能；将定期发布新的 VM 扩展功能。本文介绍适用于 Windows 和 Linux 的 Azure VM 代理，以及这些代理如何支持 VM 扩展功能。有关按功能类别列出的 VM 扩展的列表，请参阅 [Azure VM 扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features)。
+还有许多其他功能；将定期发布新的 VM 扩展功能。本文介绍适用于 Windows 和 Linux 的 Azure VM 代理，以及这些代理如何支持 VM 扩展功能。有关按功能类别列出的 VM 扩展的列表，请参阅 Azure VM 扩展和功能：[Windows](/documentation/articles/virtual-machines-windows-extensions-features) 或者 [Linux](/documentation/articles/virtual-machines-linux-extensions-features)。
 
 ##适用于 Windows 和 Linux 的 Azure VM 代理
 
@@ -19,7 +19,7 @@ Azure 虚拟机代理（VM 代理）是一个安全的轻型进程，用于在�
 
 在下列情况下启用 VM 代理：
 
--   通过使用管理门户中的**“快速创建”**方法或**“自定义创建”**方法创建虚拟机实例时，并确保选中**“安装 VM 代理”**复选框（如下图中所示）。有关详细信息，请参阅[如何创建自定义虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal)。
+-   通过使用管理门户中的**“快速创建”**方法或**“自定义创建”**方法创建虚拟机实例时，并确保选中**“安装 VM 代理”**复选框（如下图中所示）。有关详细信息，请参阅如何创建自定义 [Window](/documentation/articles/virtual-machines-windows-classic-createportal) 或者 [Linux](/documentation/articles/virtual-machines-linux-classic-createportal) 虚拟机。
 
     ![VM 代理复选框](./media/virtual-machines-common-classic-agents-and-extensions/IC719409.png)
 
@@ -39,4 +39,4 @@ Azure 虚拟机代理（VM 代理）是一个安全的轻型进程，用于在�
 
 ##查找、添加、更新和删除 VM 扩展  
 
-有关这些任务的详细信息，请参阅[添加、查找、更新和删除 Azure VM 扩展](/documentation/articles/virtual-machines-windows-classic-manage-extensions)。
+有关这些任务的详细信息，请参阅添加、查找、更新和删除 Azure VM 扩展：[Windows](/documentation/articles/virtual-machines-windows-classic-manage-extensions) 或者 [Linux](/documentation/articles/virtual-machines-linux-classic-manage-extensions)。

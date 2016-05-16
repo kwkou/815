@@ -91,7 +91,7 @@
 		$svcname = "<cloud service name>"
 		New-AzureService -ServiceName $svcname -Label $svcname -Location $dcLocation
 
-2. 指定虚拟机名称和大小。有关虚拟机大小的更多信息，请参见[适用于 Azure 的虚拟机大小](/documentation/articles/virtual-machines-linux-sizes)。
+2. 指定虚拟机名称和大小。有关虚拟机大小的更多信息，请参见[适用于 Azure 的虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)。
 
 		$vmname="<machine name>"
 		$vmsize="<Specify a valid machine size>" # see the link to virtual machine sizes

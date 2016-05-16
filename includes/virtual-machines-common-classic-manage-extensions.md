@@ -5,7 +5,7 @@
 
 Azure VM 扩展实现了可帮助其他程序在 Azure VM 上正常工作的行为或功能（例如，**WebDeployForVSDevTest** 扩展允许 Visual Studio 在 Azure VM 上对解决方案进行 Web 部署），或为你提供与 VM 交互的功能以支持其他某种行为（例如，你可以使用 VM 访问扩展从 Powershell、Azure CLI 和 REST 客户端重置或修改 Azure VM 上的远程访问值）。
 
->[AZURE.IMPORTANT] 有关这些扩展按它们支持的功能列出的完整列表，请参阅 [Azure VM 扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features)。由于每个 VM 扩展都支持特定功能，因此使用扩展确切地可以和不可以执行哪些操作取决于该扩展。因此，在修改 VM 之前，请确保你已阅读要使用的 VM 扩展的文档。不支持删除某些 VM 扩展；其他 VM 扩展具有可设置以从根本上更改 VM 行为的属性。
+>[AZURE.IMPORTANT] 有关这些扩展按它们支持的功能列出的完整列表，请参阅 Azure VM 扩展和功能：[Windows](/documentation/articles/virtual-machines-windows-extensions-features) 或者 [Linux](/documentation/articles/virtual-machines-linux-extensions-features)。由于每个 VM 扩展都支持特定功能，因此使用扩展确切地可以和不可以执行哪些操作取决于该扩展。因此，在修改 VM 之前，请确保你已阅读要使用的 VM 扩展的文档。不支持删除某些 VM 扩展；其他 VM 扩展具有可设置以从根本上更改 VM 行为的属性。
 
 最常见的任务是：
 
@@ -19,7 +19,7 @@ Azure VM 扩展实现了可帮助其他程序在 Azure VM 上正常工作的行�
 
 ##查找可用扩展
 
-Azure VM 扩展是（有关这些扩展按它们支持的功能列出的完整列表，请参阅 [Azure VM 扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features)）。 可以使用以下项查找扩展和扩展信息：
+Azure VM 扩展是（有关这些扩展按它们支持的功能列出的完整列表，请参阅 Azure VM 扩展和功能：[Windows](/documentation/articles/virtual-machines-windows-extensions-features) 或者 [Linux](/documentation/articles/virtual-machines-linux-extensions-features)）。 可以使用以下项查找扩展和扩展信息：
 
 -   PowerShell
 -   Azure 跨平台界面 (Azure CLI)

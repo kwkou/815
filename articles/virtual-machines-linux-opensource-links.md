@@ -86,8 +86,8 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 13. [基础知识：RAID](/documentation/articles/virtual-machines-linux-configure-raid)
 14. [基础知识：捕获 Linux VM 来生成模板](/documentation/articles/virtual-machines-linux-classic-capture-image)
 15. [基础知识：Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)
-16. [基础知识：Azure VM 扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features)
-17. [基础知识：将自定义数据注入到 VM 中以用于 Cloud-init](/documentation/articles/virtual-machines-windows-classic-inject-custom-data)
+16. [基础知识：Azure VM 扩展和功能](/documentation/articles/virtual-machines-linux-extensions-features)
+17. [基础知识：将自定义数据注入到 VM 中以用于 Cloud-init](/documentation/articles/virtual-machines-linux-classic-inject-custom-data)
 18. [博客中的基础知识：通过 12 个步骤在 Azure 上构建高度可用的 Linux](http://blogs.technet.com/b/keithmayer/archive/2014/10/03/quick-start-guide-building-highly-available-linux-servers-in-the-cloud-on-microsoft-azure.aspx)
 19. [博客中的基础知识：使用 Azure CLI、node.js、jhawk 在 Azure 上自动预配 Linux](http://blogs.technet.com/b/keithmayer/archive/2014/11/24/step-by-step-automated-provisioning-for-linux-in-the-cloud-with-microsoft-azure-xplat-cli-json-and-node-js-part-1.aspx)
 23. [Azure 服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 参考

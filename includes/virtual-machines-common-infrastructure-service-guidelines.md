@@ -149,7 +149,7 @@ Azure 使用一个操作系统磁盘、一个临时磁盘和零个或更多可�
 ### 条带化的磁盘
 除了提供相关功能来创建大于 1023 GB 的磁盘外，在许多情况下，对数据磁盘使用条带化还可增强性能，因为允许多个 blob 支持单个卷的存储。使用条带化时，将会并行处理针对单个逻辑磁盘写入和读取数据所需的 I/O。
 
-Azure 将对可用的数据磁盘量和带宽加以限制，具体取决于虚拟机大小。有关详细信息，请参阅 [虚拟机大小](/documentation/articles/virtual-machines-linux-sizes)。
+Azure 将对可用的数据磁盘量和带宽加以限制，具体取决于虚拟机大小。有关详细信息，请参阅 [Windows](/documentation/articles/virtual-machines-windows-sizes) 或者 [Linux](/documentation/articles/virtual-machines-linux-sizes)虚拟机大小。
 
 如果要对 Azure 数据磁盘使用磁盘条带化，请考虑以下准则：
 
@@ -411,7 +411,7 @@ Contoso 决定将以下名称用于其 Azure 虚拟机：
 
 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits#storage-limits)
 
-[虚拟机的大小](/documentation/articles/virtual-machines-linux-sizes)
+[Windows](/documentation/articles/virtual-machines-windows-sizes) 或者 [linux](/documentation/articles/virtual-machines-linux-sizes) 虚拟机的大小
 
 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)
 

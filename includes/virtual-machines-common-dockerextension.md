@@ -51,7 +51,7 @@ Docker VM 扩展是在你创建的 VM 实例中安装的组件，它会自行安
 ##<a name="Virtual-Machine-Extensions-For-Linux-and-Windows"></a> 适用于 Linux 和 Windows 的虚拟机扩展
 [Azure 的 Docker VM 扩展](https://github.com/Azure/azure-docker-extension/blob/master/README.md)只是提供特殊行为的众多 VM 扩展之一，还有许多正在开发中。例如，许多 [Linux VM 代理扩展](/documentation/articles/virtual-machines-linux-agent-user-guide)功能可让你修改和管理虚拟机，包括安全功能、内核和网络功能，等等。例如，VMAccess 扩展可让你重置管理员密码或 SSH 密钥。
 
-有关完整列表，请参阅 [Azure VM 扩展](/documentation/articles/virtual-machines-windows-extensions-features)。
+有关完整列表，请参阅 Azure VM 扩展：[Windows](/documentation/articles/virtual-machines-windows-extensions-features) 或者 [Linux](/documentation/articles/virtual-machines-linux-extensions-features)。
 
 <!--Anchors-->
 [如何从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展]: /documentation/articles/virtual-machines-linux-classic-cli-use-docker/

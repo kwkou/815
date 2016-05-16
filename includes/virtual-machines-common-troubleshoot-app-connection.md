@@ -65,8 +65,8 @@
 
 如果不能访问应用程序，请验证以下各项：
 
-- 对于使用经典部署模型创建的 VM，VM 的终结点配置允许传入流量，尤其是协议（TCP 或 UDP）和公用和专用端口号。有关详细信息，请参阅[如何对虚拟机设置终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
-- 对于使用经典部署模型创建的 VM，终结点上的访问控制列表 (ACL) 不会阻止来自 Internet 的传入流量。有关详细信息，请参阅[如何对虚拟机设置终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
+- 对于使用经典部署模型创建的 VM，VM 的终结点配置允许传入流量，尤其是协议（TCP 或 UDP）和公用和专用端口号。有关详细信息，请参阅如何对虚拟机设置终结点：[Windows](/documentation/articles/virtual-machines-windows-classic-setup-endpoints) 或者 [Linux](/documentation/articles/virtual-machines-windows-linux-setup-endpoints)。
+- 对于使用经典部署模型创建的 VM，终结点上的访问控制列表 (ACL) 不会阻止来自 Internet 的传入流量。有关详细信息，请参阅如何对虚拟机设置终结点：[Windows](/documentation/articles/virtual-machines-windows-classic-setup-endpoints) 或者 [Linux](/documentation/articles/virtual-machines-windows-linux-setup-endpoints)。
 - 对于使用 Resource Manager 部署模型创建的 VM，VM 的入站 NAT 规则配置允许传入流量，尤其是协议（TCP 或 UDP）和公用和专用端口号。
 - 网络安全组允许入站请求和出站响应流量。有关详细信息，请参阅[什么是网络安全组 (NSG)？](/documentation/articles/virtual-networks-nsg)。
 

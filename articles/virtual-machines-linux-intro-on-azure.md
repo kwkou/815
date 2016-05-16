@@ -39,7 +39,7 @@
 
 Azure 提供了一个入站数据包筛选器，用于限制与管理门户中指定的端口的连接。默认情况下，唯一允许的端口为 SSH。通过在管理门户中配置终结点，可以启用对 Linux 虚拟机上的其他端口的访问：
 
- - 请参阅：[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)
+ - 请参阅：[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)
 
 默认情况下，Azure 库中的 Linux 映像不支持 *iptables* 防火墙。如果需要，可以将该防火墙配置为提供附加筛选。
 
@@ -59,7 +59,7 @@ Azure Linux 代理包含自动检测此名称更改的功能，并会相应地�
 ### Cloud-Init
 **Ubuntu** 和 **CoreOS** 映像利用 cloud-init pn Azure 为启动虚拟机提供附加功能。
 
- - [如何插入自定义数据](/documentation/articles/virtual-machines-windows-classic-inject-custom-data)
+ - [如何插入自定义数据](/documentation/articles/virtual-machines-linux-classic-inject-custom-data)
  - [Azure 上的自定义数据和 Cloud-Init](http://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/)
  - [使用 Cloud-Init 创建 Azure 交换分区](https://wiki.ubuntu.com/AzureSwapPartitions)
  - [如何在 Azure 上使用 CoreOS](/documentation/articles/virtual-machines-linux-classic-coreos-howto)

@@ -18,7 +18,7 @@
 
 > [AZURE.SELECTOR]
 - [Portal - Windows](/documentation/articles/virtual-machines-windows-classic-tutorial)
-- [PowerShell](/documentation/articles/virtual-machines-windows-classic-create-powershell)
+- [PowerShell](/documentation/articles/virtual-machines-linux-classic-create-powershell)
 - [Portal - Linux](/documentation/articles/virtual-machines-linux-portal-create)
 - [CLI](/documentation/articles/virtual-machines-linux-quick-create-cli)
 

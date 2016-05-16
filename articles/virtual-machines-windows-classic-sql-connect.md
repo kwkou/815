@@ -34,7 +34,7 @@
 
 ###<a name="connect-to-sql-server-in-the-same-cloud-service"></a> 连接到同一云服务中的 SQL Server
 
-可以在同一云服务中创建多个虚拟机。若要了解此虚拟机方案，请参阅[如何将虚拟机连接到虚拟网络或云服务](/documentation/articles/virtual-machines-linux-classic-connect-vms)。
+可以在同一云服务中创建多个虚拟机。若要了解此虚拟机方案，请参阅[如何将虚拟机连接到虚拟网络或云服务](/documentation/articles/virtual-machines-windows-classic-connect-vms)。
 
 首先，根据[此文章中的步骤来配置连接](#steps-for-configuring-sql-server-connectivity-in-an-azure-vm)。请注意，如果要连接同一云服务中的计算机，则不需要设置公共终结点。
 
