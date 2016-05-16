@@ -30,7 +30,7 @@
 - Git。可在[此处](http://www.git-scm.com/downloads)下载二进制安装文件。你应该能够从选择的命令行终端运行 `git --version`。 
 - 对 Git 有一个基本的了解。
 - Azure CLI。[此处](/documentation/articles/xplat-cli-install)提供了安装说明。你应该能够从选择的命令行终端运行 `azure --version`。
-- 一个 Azure 帐户。如果你没有帐户，可以[注册免费试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
+- 一个 Azure 帐户。如果你没有帐户，可以[注册1元试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 ## 部署 Web 应用
 
@@ -73,7 +73,7 @@
     
     >[AZURE.NOTE] 系统将要求提供你的部署密码。如果你是 Azure Web 应用的新用户，请提供刚刚创建的部署密码，然后即可开始部署。
     
-    `git push` 不仅将代码放在 Azure 中，也在部署引擎中触发部署任务。如果项目（存储库）根目录中有任何 package.json (Node.js) 或 requirements.txt (Python)，或 ASP.NET 项目中有 packages.config，则部署脚本将为你还原所需的包。你还可以[启用编写器扩展](/documentation/articles/web-sites-php-mysql-deploy-use-git#composer)，以在 PHP 应用中自动处理 composer.json 文件。
+    `git push` 不仅将代码放在 Azure 中，也在部署引擎中触发部署任务。如果项目（存储库）根目录中有任何 package.json (Node.js) 或 requirements.txt (Python)，或 ASP.NET 项目中有 packages.config，则部署脚本将为你还原所需的包。
 
 祝贺你，你的应用已部署到 Azure Web 应用。
 
