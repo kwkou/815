@@ -9,51 +9,50 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="03/15/2016"
-	wacn.date="04/05/2016"/>
+	ms.date="03/30/2016"
+	wacn.date="05/16/2016"/>
 
 
 # 使用 Azure Site Recovery 在本地 Hyper-V 虚拟机与 Azure 之间复制（不使用 VMM）
 
 > [AZURE.SELECTOR]
-- [Azure 经典门户](/documentation/articles/site-recovery-hyper-v-site-to-azure)
+- [Azure 管理门户](/documentation/articles/site-recovery-hyper-v-site-to-azure)
 
 
-
-Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview)。
-
-## 概述
-
-本文说明如何部署 Site Recovery，以便当 Hyper-V 主机未在 System Center Virtual Machine Manager (VMM) 云中托管时，复制 Hyper-V 虚拟机。
+阅读本文以了解如何部署 Site Recovery，以便当 Hyper-V 主机未在 System Center Virtual Machine Manager (VMM) 云中托管时，将 Hyper-V 虚拟机复制到 Azure。
 
 本文汇总了部署先决条件，并帮助你配置复制设置，以及为虚拟机启用保护。本文最后指导你测试故障转移，以确保一切都按预期进行。
 
+阅读本文后，请将任何评论或问题发布到底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)。
 
-请将任何评论或问题发布到本文底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)。
+
+## 概述
+
+组织需要制定业务连续性和灾难恢复 (BCDR) 策略来确定应用、工作负荷和数据如何在计划和非计划停机期间保持运行和可用，并尽快恢复正常运行情况。BCDR 策略的重点在于，发生灾难时提供确保业务数据的安全性和可恢复性以及工作负荷的持续可用性的解决方案。
+
+站点恢复是一项 Azure 服务，可以通过协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的的复制，来为 BCDR 策略提供辅助。当主要位置发生故障时，你可以故障转移到辅助站点，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障转移回到主要位置。
+
+站点恢复可用于许多方案，并可保护许多工作负荷。在[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview)中了解详细信息。
 
 
-## 开始之前
-
-开始之前，请确保做好了一切准备工作。
-
-### Azure 先决条件
+## Azure 先决条件
 
 - 需要一个 [Azure](https://azure.cn/) 帐户。你可以从[试用版](/pricing/1rmb-trial/)开始。
 - 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。该帐户应位于 Azure Site Recovery 保管库所在的同一区域，并与同一订阅相关联。[了解有关 Azure 存储空间的详细信息](/documentation/articles/storage-introduction)。
 - 你需要一个 Azure 虚拟网络，以便在从主站点故障转移时，Azure 虚拟机可以连接到网络。
 
-### Hyper-V 先决条件
+## Hyper-V 先决条件
 
-- 源本地站点中至少有一台运行 Windows Server 2012 R2 且装有 Hyper-V 角色的服务器。此服务器应该：
+- 源本地站点中需要一台或多台运行 Windows Server 2012 R2 且装有 Hyper-V 角色的服务器。此服务器应该：
 - 包含一个或多个虚拟机。
 - 直接或通过代理连接到 Internet。
 - 正在运行知识库 [2961977](https://support.microsoft.com/zh-cn/kb/2961977 "KB2961977") 中所述的修复程序。
 
 ### 虚拟机先决条件
 
-要保护的虚拟机应符合[虚拟机先决条件](/documentation/articles/site-recovery-best-practices#virtual-machines)。
+要保护的虚拟机应符合 [Azure 虚拟机要求](/documentation/articles/site-recovery-best-practices#azure-virtual-machine-requirements)。
 
-### 提供程序和代理先决条件
+## 提供程序和代理先决条件
 
 在部署 Azure Site Recovery 的过程中，你将在每个 Hyper-V 服务器上安装 Azure Site Recovery 提供程序和 Azure 恢复服务代理。请注意：
 
@@ -65,12 +64,13 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 	- *.backup.windowsazure.cn
 	- *.blob.core.chinacloudapi.cn
 	- *.store.core.chinacloudapi.cn
+	
 - 若要使用自定义代理，请在安装提供程序之前设置代理服务器。在设置提供程序期间，你需要指定代理服务器地址和端口，以及用于访问的凭据。请注意，不支持基于 HTTPS 的代理。
 
 
 此图显示了站点恢复用来完成业务流程和复制的不同通信通道和端口
 
-![B2A 拓扑](./media/site-recovery-hyper-v-site-to-azure/B2ATopology.png)
+![B2A 拓扑](./media/site-recovery-hyper-v-site-to-azure/b2a-topology.png)
 
 
 ## 步骤 1：创建保管库
@@ -85,11 +85,11 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 4. 在“名称”中，输入一个友好名称以标识此保管库。
 
-5. 在“区域”中，为保管库选择地理区域。若要查看受支持的区域，请参阅 Azure Site Recovery 价格详细信息中的“地域可用性”[](/home/features/site-recovery/#price)。
+5. 在“区域”中，为保管库选择地理区域。若要查看受支持的区域，请参阅 [Azure Site Recovery 价格详细信息](/home/features/site-recovery/#price)中的“地域可用性”。
 
 6. 单击“创建保管库”。
 
-	![新保管库](./media/site-recovery-hyper-v-site-to-azure/SR_HvVault.png)
+	![新保管库](./media/site-recovery-hyper-v-site-to-azure/vault.png)
 
 检查状态栏以确认保管库已成功创建。保管库将以“活动”形式列在主要的“恢复服务”页上。
 
@@ -98,15 +98,15 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 1. 在“恢复服务”页中，单击保管库以打开“快速启动”页。也可随时使用该图标打开“快速启动”。
 
-	![快速启动](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_QuickStartIcon.png)
+	![快速启动](./media/site-recovery-hyper-v-site-to-azure/quick-start-icon.png)
 
 2. 在下拉列表中，选择“本地 Hyper-V 站点与 Azure 之间”。
 
-	![Hyper-V 站点方案](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_SelectScenario.png)
+	![Hyper-V 站点方案](./media/site-recovery-hyper-v-site-to-azure/select-scenario.png)
 
 3. 在“创建 Hyper-V 站点”中，单击“创建 Hyper-V 站点”。指定站点名称并保存。
 
-	![Hyper-V 站点](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_CreateSite2.png)
+	![Hyper-V 站点](./media/site-recovery-hyper-v-site-to-azure/create-site.png)
 
 
 ## 步骤 3：安装提供程序和代理
@@ -117,7 +117,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 1. 在“准备 Hyper-V 服务器”中，单击“下载注册密钥”文件。
 2. 在“下载注册密钥”页上，单击站点旁边的“下载”。将密钥下载到可由 Hyper-V 服务器方便访问的安全位置。该密钥生成后，有效期为 5 天。
 
-	![注册密钥](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_DownloadKey2.png)
+	![注册密钥](./media/site-recovery-hyper-v-site-to-azure/download-key.png)
 
 4. 单击“下载该提供程序”以获取最新版本。
 5. 在想要注册到保管库中的每个 Hyper-V 服务器上运行该文件。该文件将安装两个组件：
@@ -125,33 +125,33 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 	- **Azure 恢复服务代理** - 处理源 Hyper-V 服务器上运行的虚拟机与 Azure 存储空间之间的数据传输。
 6. 在“Microsoft 更新”中，你可以选择获取更新。启用此设置后，将会根据你的 Microsoft Update 策略安装提供程序和代理更新。
 
-	![Microsoft 更新](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_Provider1.png)
+	![Microsoft 更新](./media/site-recovery-hyper-v-site-to-azure/provider1.png)
 
 7. 在“安装”中，指定要将提供程序和代理安装在 Hyper-V 服务器上的哪个位置。
 
-	![安装位置](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_Provider2.png)
+	![安装位置](./media/site-recovery-hyper-v-site-to-azure/provider2.png)
 
 8. 完成安装后，请继续设置以在保管库中注册服务器。
 
-	![安装完成](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_Provider3.png)
+	![安装完成](./media/site-recovery-hyper-v-site-to-azure/provider3.png)
 
 
 9. 在“Internet 连接”页，指定提供程序如何连接到 Azure Site Recovery。选择“使用默认系统代理设置”以使用服务器上配置的默认 Internet 连接设置。如果你未指定值，系统将使用默认设置。
 
-	![Internet 设置](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_Provider4.png)
+	![Internet 设置](./media/site-recovery-hyper-v-site-to-azure/provider4.png)
 
 9. 在“保管库设置”页上，单击“浏览”以选择密钥文件。指定 Azure Site Recovery 订阅、保管库名称和 Hyper-V 服务器所属的 Hyper-V 站点。
 
-	![服务器注册](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_SelectKey.png)
+	![服务器注册](./media/site-recovery-hyper-v-site-to-azure/select-key.png)
 
 
 11. 注册过程将开始在保管库中注册服务器。
 
-	![服务器注册](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_Provider6.png)
+	![服务器注册](./media/site-recovery-hyper-v-site-to-azure/provider5.png)
 
 11. 完成注册后，Azure Site Recovery 将检索 Hyper-V 服务器中的元数据，该服务器将显示在保管库中“服务器”页上的“Hyper-V 站点”选项卡上。
 
-	![服务器注册](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_Provider7.png)
+	![服务器注册](./media/site-recovery-hyper-v-site-to-azure/provider6.png)
 
 
 ### 从命令行安装提供程序
@@ -185,7 +185,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 1. 在“准备资源”中，选择“创建存储帐户”以创建一个 Azure 存储帐户（如果你没有的话）。该帐户应已启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。
 
-	![创建存储帐户](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_CreateResources1.png)
+	![创建存储帐户](./media/site-recovery-hyper-v-site-to-azure/create-resources.png)
 
 ## 步骤 5：创建并配置保护组
 
@@ -195,7 +195,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 2. 在“保护组”选项卡中，添加一个保护组。指定名称、源 Hyper-V 站点、目标 **Azure**、你的 Azure Site Recovery 订阅名称和 Azure 存储帐户。
 
-	![保护组](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_ProtectionGroupCreate3.png)
+	![保护组](./media/site-recovery-hyper-v-site-to-azure/protection-group.png)
 
 
 2. 在“复制设置”中设置“复制频率”，以指定在源和目标之间同步数据差异的频率。可以设置为 30 秒、5 分钟或 15 分钟。
@@ -203,7 +203,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 4. 在“与应用程序一致的快照的频率”中，可以指定是否拍摄使用卷影复制服务 (VSS) 的快照来确保在拍摄快照时应用程序处于一致状态。默认情况下不拍摄这些快照。请确保将此值设置为小于配置的附加恢复点数。仅当虚拟机运行 Windows 操作系统时，才支持此操作。
 5. 在“初始复制开始时间”中，指定何时应将保护组中虚拟机的初始复制发送到 Azure。
 
-	![保护组](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_ProtectionGroup4.png)
+	![保护组](./media/site-recovery-hyper-v-site-to-azure/protection-group2.png)
 
 
 ## 步骤 6：启用虚拟机保护
@@ -211,12 +211,12 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 将虚拟机添加到保护组以启用虚拟机保护。
 
->[AZURE.NOTE]不支持保护运行 Linux 的、使用静态 IP 地址的 VM。
+>[AZURE.NOTE] 不支持保护运行 Linux 的、使用静态 IP 地址的 VM。
 
 1. 在保护组的“计算机”选项卡上，单击“将虚拟机添加到保护组以启用保护”。
 2. 在“启用虚拟机保护”页上，选择你要保护的虚拟机。
 
-	![启用虚拟机保护](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_AddVM3.png)
+	![启用虚拟机保护](./media/site-recovery-hyper-v-site-to-azure/add-vm.png)
 
 	随后将开始运行“启用保护”作业。你可以在“作业”选项卡上跟踪进度。在“完成保护”作业运行之后，虚拟机就可以进行故障转移了。
 3. 在设置保护后，你可以：
@@ -226,10 +226,10 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 		- **名称**：虚拟机在 Azure 中的名称。
 		- **大小**：故障转移的虚拟机的目标大小。
 
-		![配置虚拟机属性](./media/site-recovery-hyper-v-site-to-azure/VMProperties.png)
+		![配置虚拟机属性](./media/site-recovery-hyper-v-site-to-azure/vm-properties.png)
 	- 在“受保护的项”>“保护组”>“protectiongroup_name”>“虚拟机”>“virtual_machine_name”>“配置”中配置其他虚拟机设置，包括：
 
-		- **网络适配器**：网络适配器数目根据你为目标虚拟机指定的大小来确定。查看[虚拟机大小规格](/documentation/articles/virtual-machines-windows-sizes#size-tables)，了解虚拟机大小所支持的 NIC 数目。
+		- **网络适配器**：网络适配器数目根据你为目标虚拟机指定的大小来确定。查看[虚拟机大小规格](/documentation/articles/virtual-machines-linux-sizes#size-tables)，了解虚拟机大小所支持的 NIC 数目。
 
 
 			修改虚拟机的大小并保存设置后，下一次打开“配置”页时，网络适配器的数量将会改变。目标虚拟机的网络适配器数目是源虚拟机上网络适配器的最小数目和所选虚拟机大小支持的网络适配器的最大数目。解释如下：
@@ -242,7 +242,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 		- **子网**：对于虚拟机上的每个网络适配器，请在 Azure 网络中选择故障转移后计算机应连接到的子网。
 		- **目标 IP 地址**：如果源虚拟机的网络适配器配置为使用静态 IP 地址，那么你可以指定目标虚拟机的 IP 地址，以确保计算机在故障转移后具有相同的 IP 地址。如果不指定 IP 地址，将在故障转移时分配任何可用的地址。如果指定了正在使用的地址，故障转移将会失败。
 
-		![配置虚拟机属性](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_VMMultipleNic.png)
+		![配置虚拟机属性](./media/site-recovery-hyper-v-site-to-azure/multiple-nic.png)
 
 
 
@@ -267,10 +267,12 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 按如下所述运行测试故障转移：
 
+>[AZURE.NOTE] 在为 Azure 执行故障转移时，若要获得最佳性能，请确保已在受保护计算机中安装 Azure 代理。这有助于加快启动速度，并且也对出现问题时的诊断有所帮助。Linux 代理可在 [此处](https://github.com/Azure/WALinuxAgent)找到 - Windows 代理可在[此处](http://go.microsoft.com/fwlink/?LinkID=394789)找到。
+
 1. 在“恢复计划”选项卡上，选择该计划并单击“测试故障转移”。
 2. 在“确认测试故障转移”页上，选择“无”或选择一个特定的 Azure 网络。请注意，如果你选择了“无”，则测试故障转移将检查虚拟机是否可以正确复制到 Azure，但不会检查你的复制网络配置。
 
-	![测试故障转移](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_TestFailoverNoNetwork.png)
+	![测试故障转移](./media/site-recovery-hyper-v-site-to-azure/test-nonetwork.png)
 
 3. 在“作业”选项卡上，你可以跟踪故障转移进度。在 Azure 门户中，你应当也能够看到虚拟机测试副本。如果你已设置为从本地网络访问虚拟机，则可以启动与虚拟机的远程桌面连接。
 4. 在故障转移到达“完成测试”阶段时，单击“完成测试”以结束测试故障转移。你可以向下钻取到“作业”选项卡来跟踪故障转移进度和状态以及执行所需的任何操作。
@@ -295,4 +297,5 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 设置并运行部署以后，请[详细了解](/documentation/articles/site-recovery-failover)故障转移。
 
-<!---HONumber=Mooncake_0328_2016-->
+
+<!---HONumber=Mooncake_0509_2016-->
