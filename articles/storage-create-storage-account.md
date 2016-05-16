@@ -181,7 +181,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 ## 后续步骤
 
-- 若要了解有关 Azure 存储空间的详细信息，请参阅 [windowsazure.cn](/documentation/services/storage/) 和 [MSDN](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx) 上的 Azure 存储空间文档。
+- 若要了解有关 Azure 存储空间的详细信息，请参阅 [azure.cn](/documentation/services/storage/) 和 [MSDN](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx) 上的 Azure 存储空间文档。
 
 - 访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
