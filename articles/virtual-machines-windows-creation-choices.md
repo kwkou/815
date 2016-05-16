@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="10/22/2015"
-	wacn.date="02/17/2016"/>
+	ms.date="03/11/2016"
+	wacn.date="05/16/2016"/>
 
 # 创建 Windows 虚拟机的不同方式
 

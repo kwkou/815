@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Visual Studio 创建 Web 应用 | Azure"
+	pageTitle="ASP.NET 和 Azure 入门 | Azure"
 	description="了解如何在 Visual Studio 中创建 ASP.NET Web 项目，并将其部署到 Azure 中的新 Web 应用。"
 	services="app-service\web"
 	documentationCenter=".net"
@@ -10,13 +10,13 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="03/02/2016"
-	wacn.date="04/05/2016"/>
+	wacn.date="05/16/2016"/>
 
-# 使用 Visual Studio 在 Azure 中创建 ASP.NET Web 应用
+# 配合 Visual Studio 使用 Azure 中的 ASP.NET Web 应用入门
 
 > [AZURE.SELECTOR]
 - [.Net](/documentation/articles/web-sites-dotnet-get-started)
-- [Node.js](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
+- [Node.js](/documentation/articles/app-service-web-nodejs-get-started)
 - [Java](/documentation/articles/web-sites-java-get-started)
 - [PHP - Git](/documentation/articles/web-sites-php-mysql-deploy-use-git)
 - [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
@@ -37,6 +37,8 @@
 * 如何使用 [Azure 管理门户](https://manage.windowsazure.cn/)监视和管理 Web 应用。
 
 教程末尾的[后续步骤](#next-steps)部分提供了其他教程的链接，方便用户更深入地了解如何使用 Azure Web 应用。
+
+## 先决条件
 
 [AZURE.INCLUDE [先决条件](../includes/app-service-web-dotnet-get-started-prereqs.md)]
 
@@ -76,12 +78,11 @@
 
 	![解决方案资源管理器](./media/web-sites-dotnet-get-started/solutionexplorer.png)
 
-
-##<a name="deploy-the-application-to-azure"></a>将项目部署到网站
+##<a name="deploy-the-application-to-azure"></a> 将 Web 项目部署到 Azure Web 应用
 
 在本部分中，你需要将 Web 项目部署到 Web 应用，如关系图中的第 2 步所示。
 
-![创建和部署](./media/web-sites-dotnet-get-started/Create_App.png)
+![Visual Studio 创建和部署图](./media/web-sites-dotnet-get-started/Create_App.png)
 
 1. 在[管理门户](https://manage.windowsazure.cn/)中创建新网站或选择已退出的网站。
 
@@ -221,4 +222,4 @@
 
 	在 Azure 中，你可以根据本教程中所述在 Azure Web Apps 中运行 Web 应用程序，也可以在云服务或虚拟机中运行 Web 应用程序。有关详细信息，请参阅 [Azure Web Apps、云服务和 VM：何时使用何种产品](/documentation/articles/choose-web-site-cloud-service-vm/)。
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0509_2016-->

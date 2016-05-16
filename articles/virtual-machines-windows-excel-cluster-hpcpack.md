@@ -1,6 +1,6 @@
 <properties
  pageTitle="用于 Excel 和 SOA 的 HPC Pack 群集 | Azure"
- description="使用资源管理器部署模型运行 Excel 和 SOA 工作负荷的 HPC Pack 群集入门。"
+ description="开始使用 Azure 中的 HPC Pack 群集运行大规模 Excel 和 SOA 工作负荷"
  services="virtual-machines-windows"
  documentationCenter=""
  authors="dlepow"
@@ -9,9 +9,9 @@
  tags="azure-resource-manager,hpc-pack"/>
 
 <tags
- 	ms.service="virtual-machines-windows"
- 	ms.date="11/11/2015"
- 	wacn.date="12/31/2015"/>
+	ms.service="virtual-machines-windows"
+	ms.date="02/19/2016"
+	wacn.date="05/16/2016"/>
 
 # 开始使用 Azure 中的 HPC Pack 群集运行 Excel 和 SOA 工作负荷
 

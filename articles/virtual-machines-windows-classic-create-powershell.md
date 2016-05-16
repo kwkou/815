@@ -1,6 +1,6 @@
 <properties
 	pageTitle="使用 Powershell 创建 Windows VM | Azure"
-	description="使用 Azure PowerShell 和经典部署模型创建 Windows 虚拟机。"
+	description="使用 Azure PowerShell 创建 Windows 虚拟机。"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="cynthn"
@@ -10,10 +10,10 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="10/13/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="03/10/2016"
+	wacn.date="05/16/2016"/>
 
-# 使用 Powershell 和经典部署模型创建 Windows 虚拟机 
+# 使用 Powershell 创建 Windows 虚拟机 
 
 > [AZURE.SELECTOR]
 - [Azure 门户](/documentation/articles/virtual-machines-windows-classic-tutorial)
@@ -29,10 +29,14 @@
 
 有关配置基于 Linux 的虚拟机的配套主题，请参阅[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-classic-createpowershell)。
 
+如果你尚未这样做，现在请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明在本地计算机上安装 Azure PowerShell。然后，打开 Windows PowerShell 命令提示符。
 
-## 步骤 1：安装 Azure PowerShell
+## 步骤 1：添加帐户
 
-如果你尚未这样做，现在请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明在本地计算机上安装 Azure PowerShell。然后，打开 Azure PowerShell 命令提示符。
+1. 在 PowerShell 命令提示下，键入 “Add-AzureAccount” 并单击“Enter”。 
+2. 键入与你的 Azure 订阅相关联的电子邮件地址并单击“继续”。 
+3. 键入你的帐户的密码。 
+4. 单击“登录”。
 
 ## 步骤 2：设置订阅和存储帐户
 
@@ -40,7 +44,7 @@
 
 	$subscr="<subscription name>"
 	$staccount="<storage account name>"
-	Select-AzureSubscription -SubscriptionName $subscr –Current
+	Select-AzureSubscription -SubscriptionName $subscr -Current
 	Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $subscr -CurrentStorageAccountName $staccount
 
 你可以从 **Get-AzureSubscription** 命令输出的 SubscriptionName 属性获取相应的订阅名称。运行 **Select-AzureSubscription** 命令后，你可以从 **Get-AzureStorageAccount** 命令输出的 Label 属性获取相应的存储帐户名称。
@@ -102,8 +106,8 @@
 
 （可选）若要将 Windows 计算机添加到现有的 Active Directory 域，请指定本地管理员帐户和密码、域以及域帐户的名称和密码。
 
-	$cred1=Get-Credential –Message "Type the name and password of the local administrator account."
-	$cred2=Get-Credential –Message "Now type the name (not including the domain) and password of an account that has permission to add the machine to the domain."
+	$cred1=Get-Credential -Message "Type the name and password of the local administrator account."
+	$cred2=Get-Credential -Message "Now type the name (not including the domain) and password of an account that has permission to add the machine to the domain."
 	$domaindns="<FQDN of the domain that the machine is joining>"
 	$domacctdomain="<domain of the account that has permission to add the machine to the domain>"
 	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain $domacctdomain -DomainUserName $cred2.Username -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain $domaindns
@@ -116,7 +120,7 @@
 
 可以使用以下命令来验证特定 IP 地址是否可用：
 
-	Test-AzureStaticVNetIP –VNetName <VNet name> –IPAddress <IP address>
+	Test-AzureStaticVNetIP -VNetName <VNet name> -IPAddress <IP address>
 
 （可选）将虚拟机分配到 Azure 虚拟网络中的特定子网。
 
@@ -148,7 +152,7 @@
 
 选项 1：在现有云服务中创建虚拟机。
 
-	New-AzureVM –ServiceName "<short name of the cloud service>" -VMs $vm1
+	New-AzureVM -ServiceName "<short name of the cloud service>" -VMs $vm1
 
 云服务的短名称是在 Azure 门户的云服务列表中或 Azure 门户的资源组列表中显示的名称。
 
@@ -156,7 +160,7 @@
 
 	$svcname="<short name of the cloud service>"
 	$vnetname="<name of the virtual network>"
-	New-AzureVM –ServiceName $svcname -VMs $vm1 -VNetName $vnetname
+	New-AzureVM -ServiceName $svcname -VMs $vm1 -VNetName $vnetname
 
 ## 步骤 5：运行命令集
 
@@ -208,7 +212,7 @@
 
 	$svcname="Azure-TailspinToys"
 	$vnetname="AZDatacenter"
-	New-AzureVM –ServiceName $svcname -VMs $vm1 -VNetName $vnetname
+	New-AzureVM -ServiceName $svcname -VMs $vm1 -VNetName $vnetname
 
 ### 示例 2
 
@@ -229,8 +233,8 @@
 	$vmsize="Large"
 	$vm1=New-AzureVMConfig -Name $vmname -InstanceSize $vmsize -ImageName $image
 
-	$cred1=Get-Credential –Message "Type the name and password of the local administrator account."
-	$cred2=Get-Credential –Message "Now type the name (not including the domain) and password of an account that has permission to add the machine to the domain."
+	$cred1=Get-Credential -Message "Type the name and password of the local administrator account."
+	$cred2=Get-Credential -Message "Now type the name (not including the domain) and password of an account that has permission to add the machine to the domain."
 	$domaindns="corp.contoso.com"
 	$domacctdomain="CORP"
 	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain $domacctdomain -DomainUserName $cred2.Username -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain $domaindns
@@ -245,7 +249,7 @@
 
 	$svcname="Azure-TailspinToys"
 	$vnetname="AZDatacenter"
-	New-AzureVM –ServiceName $svcname -VMs $vm1 -VNetName $vnetname
+	New-AzureVM -ServiceName $svcname -VMs $vm1 -VNetName $vnetname
 
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0509_2016-->

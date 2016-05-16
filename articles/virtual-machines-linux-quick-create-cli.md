@@ -1,18 +1,16 @@
 <properties
-	pageTitle="创建 Linux 虚拟机 | Microsoft Azure"
-	description="了解如何使用 Azure 中的映像和 Azure 命令行界面创建 Linux 虚拟机或 Ubuntu 虚拟机。"
-	keywords="linux 虚拟机,虚拟机 linux,ubuntu 虚拟机" 
-	services="virtual-machines"
-	documentationCenter=""
-	authors="squillace"
-	manager="timlt"
-	editor="tysonn"
-	tags="azure-resource-manager" />
+   pageTitle="使用 CLI 在 Azure 上创建 Linux VM | Azure"
+   description="使用 CLI 在 Azure 上创建 Linux VM。"
+   services="virtual-machines-linux"
+   documentationCenter=""
+   authors="vlivech"
+   manager="timlt"
+   editor=""/>
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="10/21/2015"
-	wacn.date="03/21/2016"/>
+	ms.date="04/08/2016"
+	wacn.date="05/16/2016"/>
 
 # 创建 Linux 虚拟机
 
