@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="01/22/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="04/12/2016"
+	wacn.date="05/16/2016"/>
 
 # 对于基于 Linux 的 Azure 虚拟机的 Secure Shell (SSH) 连接进行故障排除
 
@@ -149,8 +149,7 @@
 <a id="nsg"></a>
 #### 来源 4：网络安全组
 
-通过使用网络安全组，可以对允许的入站和出站流量进行更精细的控制。你可以创建跨 Azure 虚拟网络中的子网和云服务的规则。检查你的网络安全组规则，以确保允许来自和去往 Internet 的 SSH 流量。
-有关详细信息，请参阅[关于网络安全组](/documentation/articles/virtual-networks-nsg)。
+通过使用网络安全组，可以对允许的入站和出站流量进行更精细的控制。你可以创建跨 Azure 虚拟网络中的子网和云服务的规则。检查你的网络安全组规则，以确保允许来自和去往 Internet 的 SSH 流量。有关详细信息，请参阅[关于网络安全组](/documentation/articles/virtual-networks-nsg)。
 
 #### 来源 5：基于 Linux 的 Azure 虚拟机
 
@@ -176,4 +175,4 @@
 
 [对在 Azure 虚拟机上运行的应用程序的访问进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-app-connection)
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0509_2016-->

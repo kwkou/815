@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="03/17/2016"
-	wacn.date="04/05/2016"/>
+	ms.date="04/04/2016"
+	wacn.date="05/16/2016"/>
 	
 # Azure 中的 Web 应用入门
 
@@ -58,13 +58,14 @@
     
     根据提示继续登录你的 Azure 订阅。
 
-4. 在 Azure 中以下一个命令创建具有唯一应用名称的 Azure Web 应用资源。Web 应用的 URL 是 http://&lt;app_name>.chinacloudsites.cn。
+4. 在 Azure 中以下一个命令创建具有唯一应用名称的 Azure Web 应用资源。
 
-        azure site create --git <app_name> 
+        azure site create --git <app_name>
       
     >[AZURE.NOTE] 如果从未设置 Azure 订阅的部署凭据，系统将提示你进行创建。Azure 只将这些凭据（而不是 Azure 帐户凭据）用于 Git 部署与 FTP 登录。
     
-    不仅应用已创建于 Azure 中，而且当前的目录也已进行 Git 初始化并连接到新的 Azure Web 应用而成为 Git 远程。你可以浏览到应用的 URL 以查看优雅的默认 HTML 网页，但让我们立即实际获取自己的代码。
+    现在已在 Azure 中创建应用。而且当前的目录也已进行 Git 初始化并作为 Git 远程连接到新的 Azure Web 应用。
+    你可以浏览到应用的 URL (http://&lt;app_name>.chinacloudsites.cn) 以查看优雅的默认 HTML 页面，但让我们立即实际获取自己的代码。
 
 4. 现在，将示例代码部署到新的 Azure Web 应用，如同使用 Git 推送任何代码一样：
 
@@ -72,24 +73,22 @@
     
     >[AZURE.NOTE] 系统将要求提供你的部署密码。如果你是 Azure Web 应用的新用户，请提供刚刚创建的部署密码，然后即可开始部署。
     
-    `git push` 不仅将代码放在 Azure 中，也在部署引擎中触发部署任务。如果项目（存储库）根目录中有任何 package.json (Node.js) 或 requirements.txt (Python)，或 ASP.NET 项目中有 packages.config，则部署脚本将为你还原所需的包。
+    `git push` 不仅将代码放在 Azure 中，也在部署引擎中触发部署任务。如果项目（存储库）根目录中有任何 package.json (Node.js) 或 requirements.txt (Python)，或 ASP.NET 项目中有 packages.config，则部署脚本将为你还原所需的包。你还可以[启用编写器扩展](/documentation/articles/web-sites-php-mysql-deploy-use-git#composer)，以在 PHP 应用中自动处理 composer.json 文件。
 
 祝贺你，你的应用已部署到 Azure Web 应用。
 
 ## 查看应用实时运行
 
-若要查看应用在 Azure 中的实时运行情况，请运行此命令：
+若要查看 Azure 中实时运行的应用，请从存储库中的任何目录运行以下命令：
 
-    azure site browse <app_name>
-
-如果看到错误消息：`Site <app_name> does not exist or has no hostnames`，请在几秒后重试命令。某些应用（如 Java 应用）包装部署的时间比较长。
+    azure site browse
 
 ## 更新应用
 
 现在可以使用 Git 随时从项目（存储库）根目录进行推送，以更新实时站点。此操作的方式如同首次将应用部署到 Azure。例如，每次想要推送已在本地测试的新更改时，只需从项目（存储库）根目录运行以下命令：
     
     git add .
-    git commit -m "<you_message>"
+    git commit -m "<your_message>"
     git push azure master
 
 ## 其他部署方式
@@ -98,7 +97,7 @@
 
 ## 在 Azure 管理门户中查看应用
 
-现在，让我们转到 Azure 管理门户，以查看所创建的应用：
+现在，让我们转到 Azure 管理门户，查看所创建的应用：
 
 1. 使用具有 Azure 订阅的帐户登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
 
@@ -125,4 +124,4 @@ Azure Web 应用的门户页提供了一组丰富的设置和工具，让你对�
 - [在 Azure 中创建 Java Web 应用](/documentation/articles/web-sites-java-get-started)
 - [在 Azure 中创建 Python Web 应用](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0509_2016-->
