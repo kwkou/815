@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.date="03/08/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="04/12/2016"
+	wacn.date="05/16/2016"/>
 
 # 事件中心入门
 
@@ -18,7 +18,7 @@
 
 ## 介绍
 
-事件中心是一个服务，可用于处理来自连接设备和应用程序的大量事件数据。将数据采集到事件中心后，可以使用任何实时分析提供程序或存储群集来转换和存储数据。这种大规模事件收集和处理功能是现代应用程序体系结构（包括物联网 (IoT)）的重要组件。
+事件中心是一个服务，可用于处理来自连接设备和应用程序的大量事件数据（遥测）。将数据采集到事件中心后，可以使用任何实时分析提供程序或存储群集来转换和存储数据。这种大规模事件收集和处理功能是现代应用程序体系结构（包括物联网 (IoT)）的重要组件。
 
 本教程说明如何使用 Azure 管理门户创建事件中心。此外，还将说明如何使用以 C# 编写的控制台应用程序将消息收集到事件中心，以及如何使用 C# [事件处理程序主机]库并行检索这些消息。
 
@@ -67,13 +67,33 @@
 
 现在，你已准备就绪，可以运行应用程序了。
 
-1.	从 Visual Studio 中，运行 **Receiver** 项目，然后等待它为所有分区启动接收方。
+1. 从 Visual Studio 中，打开先前创建的 **Receiver** 项目。
 
-   	![][21]
+2. 右键单击“Receiver”解决方案，单击“添加”，然后单击“现有项目”。
+ 
+3. 找到现有的 Sender.csproj 文件，然后双击该文件以将其添加到解决方案中。
+ 
+4. 再次右键单击“Receiver”解决方案，然后单击“属性”。随即显示“Receiver”属性页面。
 
-2.	运行 **Sender** 项目，在控制台窗口中按 **Enter**，然后会看到事件出现在接收方窗口中。
+5. 单击“启动项目”，然后单击“多启动项目”按钮。将 **Receiver** 和 **Sender** 项目的“操作”框设置为“启动”。
 
-   	![][22]
+	![][19]
+
+6. 单击“项目依赖项”。在“项目”框中，单击“Sender”。在“依赖于”框中，确保选中“Receiver”。
+
+	![][20]
+
+7. 单击“确定”以消除“属性”对话框。
+
+1.	从 Visual Studio 中，按 F5 运行 **Receiver** 项目，然后等待它为所有分区启动接收方。
+
+	![][21]
+
+2.	**Sender** 项目将自动运行。在控制台窗口中按 **Enter**，便会看到事件出现在接收方窗口中。
+
+	![][22]
+
+在“Sender”窗口中按 **Ctrl+C** 以结束 Sender 应用程序，然后在“Receiver”窗口中按 **Enter** 以关闭该应用程序。
 
 ## 后续步骤
 
@@ -92,6 +112,8 @@
 [5]: ./media/event-hubs-csharp-ephcs-getstarted/create-event-hub5.png
 [6]: ./media/event-hubs-csharp-ephcs-getstarted/create-event-hub6.png
 
+[19]: ./media/event-hubs-csharp-ephcs-getstarted/create-eh-proj1.png
+[20]: ./media/event-hubs-csharp-ephcs-getstarted/create-eh-proj2.png
 [21]: ./media/event-hubs-csharp-ephcs-getstarted/run-csharp-ephcs1.png
 [22]: ./media/event-hubs-csharp-ephcs-getstarted/run-csharp-ephcs2.png
 
@@ -104,4 +126,4 @@
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
  
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0509_2016-->
