@@ -24,7 +24,7 @@
 
 本教程说明如何创建一个简单的 [Node.js](http://nodejs.org) 应用程序，然后通过 cmd.exe 或 bash 等命令行将它部署到 [Azure Web 应用](/documentation/services/web-sites)。本教程中的说明适用于任何能够运行 Node.js 的操作系统。
 
-##<a name="prereq"><a/> 先决条件
+##<a name="prereq"></a> 先决条件
 
 - Node.js。安装二进制文件可从[此处](https://nodejs.org/)获取。
 - Yoeman。[此处](http://yeoman.io/)提供了安装说明。
