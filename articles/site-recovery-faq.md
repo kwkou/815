@@ -111,9 +111,7 @@ Site Recovery 可以复制受支持 VM 或物理服务器上运行的任何工�
 
 在常规复制期间，数据将复制到异地冗余的 Azure 存储空间，你不需要支付任何 Azure IaaS 虚拟机费用。当你故障转移到 Azure 时，站点恢复将自动创建 Azure IaaS 虚拟机，此后，你需要为你在 Azure 中使用的计算资源付费。
 
-### 你们是否提供可以用来将 Site Recovery 工作流自动化的 SDK？
 
-是的。可以使用 Rest API、PowerShell 或 Azure SDK 将站点恢复工作流自动化。了解有关[使用 PowerShell 和 Azure Resource Manager 部署 Site Recovery](/documentation/articles/site-recovery-deploy-with-powershell-resource-manager) 的详细信息。
 
 ### 如果要复制到 Azure，我需要哪种存储帐户？
 
