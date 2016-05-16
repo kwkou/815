@@ -31,7 +31,7 @@
 
 基础 Azure 平台为可用性集中的每个虚拟机分配一个更新域和一个容错域。每个更新域是一组在相同时间范围内重新启动的虚拟机。每个容错域是一组共用一个通用电源和网络交换机的虚拟机。
 
-有关更新域和容错域的详细信息，请参阅[配置可用性集中的多个虚拟机以实现冗余](/documentation/articles/virtual-machines-windows-manage-availability#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy)。
+有关更新域和容错域的详细信息，请参阅配置可用性集中的多个虚拟机以实现冗余：[Windows](/documentation/articles/virtual-machines-windows-manage-availability#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) 或者 [Linux](/documentation/articles/virtual-machines-linux-manage-availability#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy)。
 
 为防止更新域同时脱机，将通过以下方式执行维护：关闭某个更新域中的所有虚拟机，向主机应用更新，重新启动虚拟机，然后继续对下一个更新域执行相同操作。更新完所有更新域之后，计划内维护事件即结束。
 

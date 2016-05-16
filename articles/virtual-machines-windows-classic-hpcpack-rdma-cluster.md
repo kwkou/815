@@ -89,7 +89,7 @@ Microsoft HPC Pack 是一个免费提供的工具，可在 Azure 中创建基于
 
 ## 方案 2.在计算密集型 VM (IaaS) 中部署计算节点
 
-在此方案中，你可以将 HPC Pack 头节点和群集计算节点部署到 Azure 虚拟网络中已加入 Active Directory 域的 VM 中。HPC Pack 提供了许多 [Azure VM 中的部署选项](/documentation/articles/virtual-machines-linux-hpcpack-cluster-options)，包括自动执行部署脚本和 Azure 快速入门模板。作为示例，以下注意事项和步骤将指导你使用 [HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)自动执行此过程中的大部分操作。
+在此方案中，你可以将 HPC Pack 头节点和群集计算节点部署到 Azure 虚拟网络中已加入 Active Directory 域的 VM 中。HPC Pack 提供了许多 [Azure VM 中的部署选项](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options)，包括自动执行部署脚本和 Azure 快速入门模板。作为示例，以下注意事项和步骤将指导你使用 [HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)自动执行此过程中的大部分操作。
 
 ![Azure VM 中的群集][iaas]
 

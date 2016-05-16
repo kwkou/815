@@ -44,7 +44,7 @@
 
 ### 虚拟机大小
 
-要使用高级存储，需要使用 DS 系列虚拟机 (VM)。如果你以前尚未在云服务中使用 DS 系列虚拟机，则必须在重新创建 VM 作为 DS* 角色大小之前，删除现有 VM、保留附加磁盘，然后创建新的云服务。有关虚拟机大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-linux-sizes)。
+要使用高级存储，需要使用 DS 系列虚拟机 (VM)。如果你以前尚未在云服务中使用 DS 系列虚拟机，则必须在重新创建 VM 作为 DS* 角色大小之前，删除现有 VM、保留附加磁盘，然后创建新的云服务。有关虚拟机大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-windows-sizes)。
 
 ### 云服务
 
@@ -144,7 +144,7 @@
 
 ### VM 存储带宽和 VHD 存储吞吐量
 
-存储量性能取决于指定的 DS* VM 大小和 VHD 大小。VM 针对可附加的 VHD 数量以及它们支持的最大带宽（MB/秒）提供不同限额。有关特定带宽数字，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-linux-sizes)。
+存储量性能取决于指定的 DS* VM 大小和 VHD 大小。VM 针对可附加的 VHD 数量以及它们支持的最大带宽（MB/秒）提供不同限额。有关特定带宽数字，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-windows-sizes)。
 
 较大的磁盘大小可提高 IOPS。当你考虑迁移路径时，应考虑这一点。有关详细信息，[请参阅 IOPS 和磁盘类型的表](/documentation/articles/storage-premium-storage#scalability-and-performance-targets-when-using-premium-storage)。
 

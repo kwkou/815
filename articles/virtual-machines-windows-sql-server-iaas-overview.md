@@ -85,7 +85,7 @@
 |来宾帐户|已禁用|
 |具有高级安全性的 Windows 防火墙|启用|
 |.NET framework|版本 4|
-|磁盘|所选定的大小会限制你能够配置的数据磁盘个数。请参阅 [Azure 的虚拟机大小](/documentation/articles/virtual-machines-linux-sizes)|
+|磁盘|所选定的大小会限制你能够配置的数据磁盘个数。请参阅 [Azure 的虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)|
 
 ### SQL Server
 
@@ -137,6 +137,6 @@
 - [将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-windows-migrate-sql)
 - [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr)
 - [Azure 虚拟机中的 SQL Server 的应用程序模式和开发策略](/documentation/articles/virtual-machines-windows-sql-server-app-patterns-dev-strategies)
-- [Azure 虚拟机](/documentation/articles/virtual-machines-linux-about)
+- [Azure 虚拟机](/documentation/articles/virtual-machines-windows-about)
 
 <!---HONumber=Mooncake_0321_2016-->

@@ -14,7 +14,7 @@
 
 ## 使用虚拟机时，我可以使用多少存储？
 
-每个数据磁盘的容量高达 1 TB。你可以使用的数据磁盘的数目取决于虚拟机的大小。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-linux-sizes)。
+每个数据磁盘的容量高达 1 TB。你可以使用的数据磁盘的数目取决于虚拟机的大小。有关详细信息，请参阅 [Windows](/documentation/articles/virtual-machines-windows-sizes) 或者 [Linux](/documentation/articles/virtual-machines-linux-sizes) 虚拟机大小。
 
 Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存储。每个磁盘都是一个 .vhd 文件，以页 blob 形式存储。如需定价详细信息，请参阅[存储定价详细信息](/home/features/storage/#price)。
 
@@ -125,11 +125,11 @@ Azure 根据 VM 的大小和操作系统按小时价格进行计费。对于不�
 
 因计划内维护而重新启动时，你还可以使用 Azure 管理门户或 Azure PowerShell 查看重新启动日志。有关详细信息，请参阅[查看 VM 重新启动日志](https://azure.microsoft.com/blog/2015/04/01/viewing-vm-reboot-logs/)。
 
-若要提供冗余，请将两个或更多个采用类似配置的 VM 放到同一个可用性集中。这可以确保在计划内或计划外维护期间至少有一个 VM 可用。对于此配置，Azure 可以保证一定级别的 VM 可用性。有关详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability)。
+若要提供冗余，请将两个或更多个采用类似配置的 VM 放到同一个可用性集中。这可以确保在计划内或计划外维护期间至少有一个 VM 可用。对于此配置，Azure 可以保证一定级别的 VM 可用性。有关详细信息，请参阅管理虚拟机的可用性：[Windows](/documentation/articles/virtual-machines-windows-manage-availability) 或者 [Linux](/documentation/articles/virtual-machines-linux-manage-availability)。
 
 ## 其他资源
 
-[关于 Azure 虚拟机](/documentation/articles/virtual-machines-linux-about)
+关于 Azure 虚拟机：[Windows](/documentation/articles/virtual-machines-windows-about) 或者 [Linux](/documentation/articles/virtual-machines-linux-about)
 
 [创建 Linux 虚拟机的不同方式](/documentation/articles/virtual-machines-linux-creation-choices)
 

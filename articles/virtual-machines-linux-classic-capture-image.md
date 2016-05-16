@@ -90,7 +90,7 @@ Azure 将映像存储在“映像”下。这也是你上载和存储任何映�
 [如何登录到运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-classic-log-on
 [关于 Azure 中的虚拟机映像]: /documentation/articles/virtual-machines-linux-classic-about-images
 [如何创建自定义虚拟机]: /documentation/articles/virtual-machines-linux-classic-create-custom
-[How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/virtual-machines-windows-classic-attach-disk
+[How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/virtual-machines-linux-classic-attach-disk
 [如何创建 Linux 虚拟机]: /documentation/articles/virtual-machines-linux-classic-create-custom
 
 <!---HONumber=Mooncake_0321_2016-->
