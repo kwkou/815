@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="02/14/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="04/07/2016"
+	wacn.date="05/16/2016"/>
 
 # 通过 .NET 开始使用 Azure 队列存储
 
@@ -20,7 +20,19 @@
 
 Azure 队列存储是一种在云中提供消息传递队列的服务。在设计应用程序以实现可伸缩性时，通常要将各个应用程序组件分离，使其可以独立地进行伸缩。队列存储为在应用程序组件之间进行异步通信提供了一种可靠的消息传送解决方案，无论这些应用程序组件是在云中、在桌面上、在本地服务器上运行还是在移动设备上运行。队列存储还支持管理异步任务以及构建过程工作流。
 
+### 关于本教程
+
 本教程演示如何针对使用 Azure 队列存储一些常见情形编写 .NET 代码。涉及的方案包括创建和删除队列、添加、读取和删除队列消息。
+
+**估计完成时间：**45 分钟
+
+**先决条件：**
+
+- [Microsoft Visual Studio](https://www.visualstudio.com/zh-cn/visual-studio-homepage-vs.aspx)
+- [适用于 .NET 的 Azure 存储空间客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)
+- [适用于 .NET 的 Azure Configuration Manager](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/)
+- [Azure 存储帐户](/documentation/articles/storage-create-storage-account#create-a-storage-account)
+
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -28,37 +40,40 @@ Azure 队列存储是一种在云中提供消息传递队列的服务。在设�
 
 [AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
-[AZURE.INCLUDE [storage-configure-connection-string-include](../includes/storage-configure-connection-string-include.md)]
+[AZURE.INCLUDE [storage-development-environment-include](../includes/storage-development-environment-include.md)]
 
-## 以编程方式访问队列存储
+### 添加命名空间声明
 
-[AZURE.INCLUDE [storage-dotnet-obtain-assembly](../includes/storage-dotnet-obtain-assembly.md)]
+将下列 `using` 语句添加到 `program.cs` 文件顶部：
 
-### 命名空间声明
-在你希望以编程方式访问 Azure 存储的任何 C# 文件中，将以下代码命名空间声明添加到文件的顶部：
+	using Microsoft.Azure; // Namespace for CloudConfigurationManager 
+	using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
+    using Microsoft.WindowsAzure.Storage.Queue; // Namespace for Queue storage types
 
-    using Microsoft.WindowsAzure.Storage;
-    using Microsoft.WindowsAzure.Storage.Auth;
-    using Microsoft.WindowsAzure.Storage.Queue;
+### 解析连接字符串
 
-确保你引用 `Microsoft.WindowsAzure.Storage.dll` 程序集。
+[AZURE.INCLUDE [storage-cloud-configuration-manager-include](../includes/storage-cloud-configuration-manager-include.md)]
 
-[AZURE.INCLUDE [storage-dotnet-retrieve-conn-string](../includes/storage-dotnet-retrieve-conn-string.md)]
+### 创建队列服务客户端
+
+**CloudQueueClient** 类使你能够检索存储在队列存储中的队列。下面是创建服务客户端的一种方法：
+
+    CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+
+现在，你已准备好编写从队列存储读取数据并将数据写入队列存储的代码。
 
 ## 创建队列
 
-利用 **CloudQueueClient** 对象，可以获取队列的引用对象。以下代码将创建 **CloudQueueClient** 对象。本指南中的所有代码都使用存储在 Azure 应用程序的服务配置中的存储连接字符串。还可采用其他方法创建 **CloudStorageAccount** 对象。有关详细信息，请参阅 [CloudStorageAccount](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.storage.cloudstorageaccount_methods.aspx) 文档。
+此示例演示如何创建队列（如果队列已经不存在）：
 
-    // Retrieve storage account from connection string
+    // Retrieve storage account from connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
         CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-    // Create the queue client
+    // Create the queue client.
     CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-使用 **queueClient** 对象获取对要使用的队列的引用。如果队列不存在，你可以创建它。
-
-    // Retrieve a reference to a queue
+    // Retrieve a reference to a container.
     CloudQueue queue = queueClient.GetQueueReference("myqueue");
 
     // Create the queue if it doesn't already exist
@@ -107,7 +122,7 @@ Azure 队列存储是一种在云中提供消息传递队列的服务。在设�
 
 ## 更改已排队消息的内容
 
-你可以更改队列中现有消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 *n* ，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。
+你可以更改队列中现有消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 n，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。
 
     // Retrieve storage account from connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -244,9 +259,9 @@ Azure 队列存储是一种在云中提供消息传递队列的服务。在设�
     - [REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - 了解如何通过使用 [Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk) 简化为使用 Azure 存储空间而写的代码。
 - 查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
-    - 使用[表存储](/documentation/articles/storage-dotnet-how-to-use-tables)来存储结构化数据。 
-    - 使用 [Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)来存储非结构化数据。
-    - 使用 [SQL 数据库](/documentation/articles/sql-database-dotnet-how-to-use)来存储关系数据。
+    - [通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables)来存储结构化数据。
+    - [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)来存储非结构化数据。
+    - [如何在 .NET 应用程序中使用 Azure SQL 数据库](/documentation/articles/sql-database-dotnet-how-to-use)来存储关系数据。
 
 
 
@@ -259,4 +274,4 @@ Azure 队列存储是一种在云中提供消息传递队列的服务。在设�
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
  
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0509_2016-->

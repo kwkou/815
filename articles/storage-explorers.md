@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="03/18/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="03/30/2016"
+	wacn.date="05/16/2016"/>
 
 # Azure 存储资源管理器
 
@@ -40,14 +40,14 @@ Azure 存储空间的用户常常希望能够在“资源管理器”（一个�
     <td>OSX</td>
     <td>Linux</td>
   </tr>
-  
+
   <tr>
     <td><a href="http://storageexplorer.com/">Microsoft Azure 存储空间资源管理器</a></td>
     <td>X</td>
     <td>X</td>
     <td>X</td>
-    <td></td>
-    <td></td>
+    <td>X</td>
+    <td>X</td>
     <td></td>
     <td>Y</td>
     <td></td>
@@ -235,4 +235,4 @@ Azure 存储空间的用户常常希望能够在“资源管理器”（一个�
   </tr>
 </table>
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0509_2016-->
