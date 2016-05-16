@@ -1,8 +1,8 @@
 
 
-可用性集可帮助虚拟机在停机期间（例如维护期间）保持可用。在可用性集中放置两个或更多个类似配置的虚拟机，将可针对虚拟机运行的应用程序或服务创建保持其可用性所需的冗余。有关工作原理的详细信息，请参阅[管理虚拟机的可用性][]。
+可用性集可帮助虚拟机在停机期间（例如维护期间）保持可用。在可用性集中放置两个或更多个类似配置的虚拟机，将可针对虚拟机运行的应用程序或服务创建保持其可用性所需的冗余。有关工作原理的详细信息，请参阅管理虚拟机的可用性：[Windows](/documentation/articles/virtual-machines-windows-manage-availability) 或者 [Linux](/documentation/articles/virtual-machines-linux-manage-availability)。
 
-同时使用可用性集和负载平衡终结点是帮助确保应用程序一直可用并有效运行的最佳实践。有关负载平衡终结点的详细信息，请参阅 [Azure 基础结构服务的负载平衡][]。
+同时使用可用性集和负载平衡终结点是帮助确保应用程序一直可用并有效运行的最佳实践。有关负载平衡终结点的详细信息，请参阅 Azure 基础结构服务的负载平衡：[Windows](/documentation/articles/virtual-machines-windows-load-balance) 或者 [Linux](/documentation/articles/virtual-machines-linux-load-balance)。
 
 在经典部署模型中，可以使用以下两个选项中的一个，将虚拟机放入可用性集：
 
@@ -37,7 +37,7 @@
 
 	![创建新虚拟机的可用性集](./media/virtual-machines-common-classic-configure-availability/VMavailabilityset.png)
 
-6. 在第四个屏幕上，选择要安装的扩展。扩展提供简化管理虚拟机的功能，例如运行反恶意软件或重置密码。有关详细信息，请参阅 [Azure VM 代理和 VM 扩展](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions)。
+6. 在第四个屏幕上，选择要安装的扩展。扩展提供简化管理虚拟机的功能，例如运行反恶意软件或重置密码。有关详细信息，请参阅 Azure VM 代理和 VM 扩展：[Windows](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions) 或者 [Linux](/documentation/articles/virtual-machines-linux-classic-agents-and-extensions)。
 
 7.	单击箭头以创建虚拟机和可用性集。
 

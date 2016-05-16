@@ -76,7 +76,7 @@ Visual Studio 也支持创建 Azure 虚拟机。对于经典部署模型，请�
 
 [创建并上载包含 Linux 操作系统的虚拟硬盘]: /documentation/articles/virtual-machines-linux-classic-create-upload-vhd
 
-[使用 Visual Studio 创建用于网站的虚拟机]: /documentation/articles/virtual-machines-windows-classic-web-app-visual-studio
+[使用 Visual Studio 创建用于网站的虚拟机]: /documentation/articles/virtual-machines-linux-classic-web-app-visual-studio
 [Deploy Azure Resources Using the Compute, Network, and Storage .NET Libraries]: /documentation/articles/virtual-machines-windows-csharp
 
 [登录到虚拟机]: /documentation/articles/virtual-machines-linux-classic-log-on
@@ -87,6 +87,6 @@ Visual Studio 也支持创建 Azure 虚拟机。对于经典部署模型，请�
 [Azure 混合云测试环境]: /documentation/articles/virtual-machines-windows-classic-hybrid-test-env
 
 [Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-quick-create-cli
-[创建自定义虚拟机]: /documentation/articles/virtual-machines-windows-classic-createportal
+[创建自定义虚拟机]: /documentation/articles/virtual-machines-linux-classic-createportal
 
 <!---HONumber=Mooncake_0314_2016-->

@@ -16,7 +16,7 @@
 
 6. 第三个屏幕可让你配置网络资源、存储和可用性。下面是一些提示：
 
-	- “云服务 DNS 名称”是全局 DNS 名称，是用于联系虚拟机的 URI 的一部分。你需要指定自己的云服务名称，因为该名称在 Azure 中必须唯一。对于使用[多个虚拟机](/documentation/articles/virtual-machines-linux-classic-connect-vms)的方案而言，云服务非常重要。
+	- “云服务 DNS 名称”是全局 DNS 名称，是用于联系虚拟机的 URI 的一部分。你需要指定自己的云服务名称，因为该名称在 Azure 中必须唯一。对于使用[多个虚拟机](/documentation/articles/virtual-machines-windows-classic-connect-vms)的方案而言，云服务非常重要。
 
 	- 对于“区域/地缘组/虚拟网络”，请使用适合你所在位置的区域。您也可以选择指定一个虚拟网络。
 

@@ -56,7 +56,7 @@ Azure 为每个虚拟机分配内部 IP 地址。除非虚拟机是虚拟网络�
 
 在 Azure 虚拟机中使用 Oracle 数据库时，你负责实现高可用性和灾难恢复解决方案，以避免任何停机。你还负责备份自己的数据和应用程序。
 
-可以在 Azure 上使用[数据防护、活动数据防护](http://www.oracle.com/technetwork/articles/oem/dataguardoverview-083155.html)或 [Oracle Golden Gate](http://www.oracle.com/technetwork/middleware/goldengate) 实现 Oracle 数据库企业版（不带 RAC）的高可用性和灾难恢复，其中两个数据库位于两个单独的虚拟机中。这两个虚拟机都位于相同的[云服务](/documentation/articles/virtual-machines-linux-classic-connect-vms)和相同的[虚拟网络](/documentation/services/networking/)中，这样可确保它们能够通过专用的持久性 IP 地址相互访问。另外，我们建议你将虚拟机放在同一[可用性集](/documentation/articles/virtual-machines-windows-manage-availability)中，以便 Azure 将它们置于不同的容错域和升级域中。请注意，只有同一云服务中的虚拟机可加入同一可用性集。每台虚拟机必须至少具有 2 GB 内存和 5 GB 磁盘空间。
+可以在 Azure 上使用[数据防护、活动数据防护](http://www.oracle.com/technetwork/articles/oem/dataguardoverview-083155.html)或 [Oracle Golden Gate](http://www.oracle.com/technetwork/middleware/goldengate) 实现 Oracle 数据库企业版（不带 RAC）的高可用性和灾难恢复，其中两个数据库位于两个单独的虚拟机中。这两个虚拟机都位于相同的[云服务](/documentation/articles/virtual-machines-windows-classic-connect-vms)和相同的[虚拟网络](/documentation/services/networking/)中，这样可确保它们能够通过专用的持久性 IP 地址相互访问。另外，我们建议你将虚拟机放在同一[可用性集](/documentation/articles/virtual-machines-windows-manage-availability)中，以便 Azure 将它们置于不同的容错域和升级域中。请注意，只有同一云服务中的虚拟机可加入同一可用性集。每台虚拟机必须至少具有 2 GB 内存和 5 GB 磁盘空间。
 
 有了 Oracle 数据防护，可以通过一个虚拟机中的主数据库、另一个虚拟机中的辅助（备用）数据库和它们之间的单向复制设置实现高可用性。结果是对数据库副本的读取访问权限。使用 Oracle GoldenGate，可以配置两个数据库之间的双向复制。若要了解如何使用这些工具为数据库设置高可用性解决方案，请参阅 Oracle 网站上的[活动数据防护](http://www.oracle.com/technetwork/database/features/availability/data-guard-documentation-152848.html)和 [GoldenGate](http://docs.oracle.com/goldengate/1212/gg-winux/index.html) 文档。如果你需要对数据库副本的读写访问权限，则可以使用 [Oracle 活动数据防护](http://www.oracle.com/uk/products/database/options/active-data-guard/overview/index.html)。
 

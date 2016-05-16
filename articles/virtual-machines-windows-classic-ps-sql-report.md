@@ -28,7 +28,7 @@
 	
 	- 若要验证你的订阅的核心限制，在 Azure 管理门户中，单击右侧窗格中的“设置”，然后单击顶部菜单中的“使用情况”。
 	
-	- 若要增加核心配额，请联系 [Azure 支持](/support/contact/)。有关 VM 大小信息，请参阅 [Azure 的虚拟机大小](/documentation/articles/virtual-machines-linux-sizes)。
+	- 若要增加核心配额，请联系 [Azure 支持](/support/contact/)。有关 VM 大小信息，请参阅 [Azure 的虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)。
 
 - **Windows PowerShell 脚本编制**：本主题假定你有 Windows PowerShell 的基础工作知识。有关使用 Windows PowerShell 的详细信息，请参阅以下部分：
 

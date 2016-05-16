@@ -300,7 +300,7 @@ SSH 配置中的错误可能会导致你无法访问虚拟机。可以通过将 
 <!--Link references-->
 [Azure Linux 代理用户指南]: /documentation/articles/virtual-machines-linux-agent-user-guide
 [如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure
-[Azure VM 扩展和功能]: /documentation/articles/virtual-machines-windows-extensions-features
+[Azure VM 扩展和功能]: /documentation/articles/virtual-machines-linux-extensions-features
 [使用 RDP 或 SSH 连接到 Azure 虚拟机]: /documentation/articles/virtual-machines-linux-about
 
 <!---HONumber=Mooncake_0314_2016-->
