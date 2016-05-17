@@ -91,7 +91,7 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 ### 在文件共享中创建目录
 
-接下来，将在共享中创建目录。在下面的示例中，目录名为 `CustomLogs`。
+接下来，将在共享中创建目录。在下面的示例中，目录名为 **CustomLogs**。
 
     # create a directory in the share
     New-AzureStorageDirectory -Share $s -Path CustomLogs
