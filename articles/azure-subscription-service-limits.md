@@ -28,6 +28,7 @@
 - [批处理](#batch-limits)
 - [CDN](#cdn-limits)
 - [云服务](#cloud-services-limits)
+- [IoT 中心](#iot-hub-limits)
 - [密钥保管库](#key-vault-limits)
 - [媒体服务](#media-services-limits)
 - [移动服务](#mobile-services-limits)
@@ -125,6 +126,11 @@
 ### 服务总线限制
 
 [AZURE.INCLUDE [azure-servicebus-limits](../includes/service-bus-quotas-table.md)]
+
+<a id="iot-hub-limits"></a>
+### IoT 中心 限制
+
+[AZURE.INCLUDE [azure-iothub-limits](../includes/iot-hub-limits.md)]
 
 <a id="stream-analytics-limits"></a>
 ### 流分析限制
