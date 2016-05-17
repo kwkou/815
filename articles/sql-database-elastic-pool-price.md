@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="04/11/2016"
-	wacn.date="05/16/2016"
+	wacn.date="05/16/2016" />
 
 
 # 弹性数据库池计费和定价信息

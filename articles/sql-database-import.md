@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="04/11/2016"
-	wacn.date="05/16/2016"
+	wacn.date="05/16/2016" />
 
 
 # 导入 BACPAC 文件以创建新的 Azure SQL 数据库
@@ -45,7 +45,7 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。数据库是使用�
 
 打开要导入的数据库的 SQL Server 边栏选项卡：
 
-1.	转到 [Azure 门户](https://manage.windowsazure.cn)。
+1.	转到 [Azure 门户预览](portal.azure.cn)。
 2.	单击“SQL Server”。
 3.	单击要将数据库还原到的服务器。
 4.	在 SQL Server 边栏选项卡中，单击“导入数据库”以打开“导入数据库”边栏选项卡：

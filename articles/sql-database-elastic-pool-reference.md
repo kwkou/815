@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="04/07/2016"
-	wacn.date="05/16/2016"
+	wacn.date="05/16/2016" />
 
 
 # SQL 数据库弹性数据库池参考

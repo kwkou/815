@@ -16,7 +16,7 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-manage-portal)
+- [Azure 门户预览](/documentation/articles/sql-database-manage-portal)
 - [事务 - SQL (SSMS)](/documentation/articles/sql-database-manage-azure-ssms)
 - [PowerShell](/documentation/articles/sql-database-command-line-tools)
 
@@ -29,7 +29,7 @@
 
 ## 配置你的凭据
 
-若要针对 Azure 订阅运行 PowerShell cmdlet，必须先与 Azure 帐户建立访问连接。运行以下项目，然后就会出现一个要求你输入凭据的登录屏幕。使用登录 Azure 管理门户时所用的相同电子邮件和密码。
+若要针对 Azure 订阅运行 PowerShell cmdlet，必须先与 Azure 帐户建立访问连接。运行以下项目，然后就会出现一个要求你输入凭据的登录屏幕。使用登录 Azure 经典管理门户时所用的相同电子邮件和密码。
 
 	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
@@ -107,7 +107,7 @@
 如果你要再次创建这些 Azure SQL 资源或类似资源，可以：
 
 - 将这个命令集另存为 PowerShell 脚本文件 (*.ps1)
-- 在 Azure 管理门户的“自动化”部分中，将这个命令集另存为 Azure 自动化 Runbook 
+- 在 Azure 经典管理门户的“自动化”部分中，将这个命令集另存为 Azure 自动化 Runbook 
 
 ## 后续步骤
 

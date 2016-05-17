@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="04/06/2016"
-	wacn.date="05/16/2016"
+	wacn.date="05/16/2016" />
 
 
 # 使用 PowerShell 将 Azure SQL 数据库存档到 BACPAC 文件

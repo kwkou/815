@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="04/04/2016"
-	wacn.date="05/16/2016"
+	wacn.date="05/16/2016" />
 
 
 # 什么是 Azure 弹性数据库池？

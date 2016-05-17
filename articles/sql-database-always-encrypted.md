@@ -51,9 +51,9 @@
 
 
 ## 创建空的 SQL 数据库
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 2. 单击“新建”>“数据 + 存储”>“SQL 数据库”。
-3. 在新服务器或现有服务器上创建名为 **Clinic** 的**空**数据库。如需在 Azure 门户中创建数据库的详细说明，请参阅[在数分钟内创建 SQL 数据库](/documentation/articles/sql-database-get-started)。
+3. 在新服务器或现有服务器上创建名为 **Clinic** 的**空**数据库。如需在 Azure 经典管理门户中创建数据库的详细说明，请参阅[在数分钟内创建 SQL 数据库](/documentation/articles/sql-database-get-started)。
 
 你需要在本教程的后面部分用到该连接字符串，因此，在创建数据库以后，请浏览到新的 Clinic 数据库，然后复制连接字符串（你可以随时获取该连接字符串，但我们已经处于门户中，因此很容易复制它）。
 
@@ -205,7 +205,7 @@ SSMS 提供了一个向导，可以轻松地配置始终加密，只需为你设
 - 将数据插入已加密列。
 - 通过在已加密列中筛选出特定的值来选择记录。
 
-将 **Program.cs** 的内容替换为以下内容。将 Main 方法上面一行中全局 connectionString 变量的连接字符串替换为 Azure 门户中的有效连接字符串。这是需要对此代码进行的唯一更改。
+将 **Program.cs** 的内容替换为以下内容。将 Main 方法上面一行中全局 connectionString 变量的连接字符串替换为 Azure 经典管理门户中的有效连接字符串。这是需要对此代码进行的唯一更改。
 
 现在，请运行该应用以查看始终加密操作。
 
