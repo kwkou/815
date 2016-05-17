@@ -691,11 +691,7 @@
 
 上面的 .NET 示例定义了两个函数：**UploadMediaFilesFromFolder** 和 **EncodeWithOverlay**。UploadMediaFilesFromFolder 函数从文件夹上载文件（例如 BigBuckBunny.mp4 和 Image001.png），并将 mp4 文件设置为资产中的主文件。**EncodeWithOverlay** 函数使用传递给它的自定义预设文件（例如，下面的预设）来创建编码任务。
 
->[AZURE.NOTE]当前限制：
->
->不支持覆盖层不透明度设置。
->
->源视频文件和覆盖层文件必须位于同一个资产中。
+>[AZURE.NOTE]当前限制：<p>不支持覆盖层不透明度设置。</p></br><p>源视频文件和覆盖层文件必须位于同一个资产中。</p>
 
 ###JSON 预设
 	
