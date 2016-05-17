@@ -18,8 +18,7 @@
 
 &nbsp;
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-> 有关本主题的对应的 Mobile Apps 版本，请参阅[为 iOS 移动应用启用脱机同步功能](/documentation/articles/app-service-mobile-ios-get-started-offline-data)。
+
 
 借助脱机同步，即使在没有网络连接的情况下，你也可以查看、添加或修改移动应用中的数据。在本程中，你将了解应用如何在本地脱机数据库中自动存储更改，并在重新联机时同步这些更改。
 

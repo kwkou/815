@@ -18,8 +18,6 @@
 
 &nbsp;
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-> 有关本主题的对应的 Mobile Apps 版本，请参阅[为 Android 移动应用启用脱机同步功能](/documentation/articles/app-service-mobile-android-get-started-offline-data)。
 
 ## 摘要
 
