@@ -101,7 +101,7 @@ JSON 配置文件指定要部署的内容的详细信息。它包括当你创建
 	    "environmentSettings": {
 	        "webSite": {
 	            "name": "WebApplication10554",
-	            "location": "West US"
+	            "location": "China East"
 	        },
 	        "databases": [
 	            {
@@ -113,7 +113,7 @@ JSON 配置文件指定要部署的内容的详细信息。它包括当你创建
 	                "edition": "",
 	                "size": "",
 	                "collation": "",
-	                "location": "West US"
+	                "location": "China East"
 	            }
 	        ]
 	    }

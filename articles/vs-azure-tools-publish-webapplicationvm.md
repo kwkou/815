@@ -122,7 +122,7 @@ JSON 配置文件指定要部署的内容的详细信息。它包括当你创建
         "cloudService": {
             "name": "myvmname",
             "affinityGroup": "",
-            "location": "West US",
+            "location": "China East",
             "virtualNetwork": "",
             "subnet": "",
             "availabilitySet": "",
