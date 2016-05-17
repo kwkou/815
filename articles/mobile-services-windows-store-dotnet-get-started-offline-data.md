@@ -14,9 +14,8 @@
 
 # 在移动服务中使用脱机数据同步
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
 
-&nbsp;
+
 [AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
 
 本教程说明如何使用 Azure 移动服务向通用 Windows 应用商店应用程序添加脱机支持。脱机支持将允许您在应用程序脱机的情况下与本地数据库交互。应用程序与后端数据库联机后，将使用脱机功能同步本地更改。

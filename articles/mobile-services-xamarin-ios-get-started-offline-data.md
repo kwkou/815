@@ -16,10 +16,7 @@
 
 [AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
 
-&nbsp;
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-> 有关本主题的对应的 Mobile Apps 版本，请参阅[为 Xamarin.iOS 移动应用启用脱机同步功能](/documentation/articles/app-service-mobile-xamarin-ios-get-started-offline-data)。
 
 本主题将指导你通过 Azure 移动服务的脱机同步功能在 todo 列表快速入门应用程序中。脱机同步可轻松地创建应用程序即使在最终用户不具有任何网络访问权限时才可用。
 
