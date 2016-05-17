@@ -9,7 +9,7 @@ editor="" />
 <tags 
 	ms.service=""
     ms.date=""
-    wacn.date="05/16/2016"
+    wacn.date="05/17/2016"
     />
 #最佳实践文档
 
@@ -34,7 +34,9 @@ editor="" />
 
 实现 Azure Redis 缓存时的相关注意事项
 
-
+<p></p>
+<p></p>
+<p></p>
 
 
 
