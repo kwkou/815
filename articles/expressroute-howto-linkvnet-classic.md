@@ -32,7 +32,7 @@
 	- 请确保为线路配置 Azure 专用对等互连。如需路由说明，请参阅[配置路由](/documentation/articles/expressroute-howto-routing-classic)一文。 
 	- 若要启用端到端连接，必须配置 Azure 专用对等互连并运行你的网络和 Microsoft 之间的 BGP 对等互连。
 
-最多可以将 10 个 VNet 链接到一条 ExpressRoute 线路。所有 ExpressRoute 线路必须位于同一个地理政治区域。
+最多可以将 10 个 VNet 链接到一条 ExpressRoute 线路。所有 ExpressRoute 线路必须位于同一个地理政治区域。如果你启用了 ExpressRoute 高级版外接程序，则可将更多数量的虚拟网络连接到 ExpressRoute 线路。有关高级版外接程序的更多详细信息，请参阅[常见问题](/documentation/articles/expressroute-faqs)。
 
 ## 将同一 Azure 订阅中的 VNet 链接到 ExpressRoute 线路
 

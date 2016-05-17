@@ -84,7 +84,7 @@
 
 请确保指定合适的 SKU 层级和 SKU 系列。
  
-- SKU 层级决定是否启用 ExpressRoute 标准版外接程序。
+- SKU 层级决定是否启用 ExpressRoute 标准版或 ExpressRoute 高级版外接程序。可以指定“标准”以获取标准 SKU，或指定“高级”以获取高级版外接程序。
 - SKU 系列确定计费类型。可以选择 *metereddata* 以使用数据流量套餐，选择“unlimiteddata”以使用无限制的流量套餐。**注意：**创建线路后，你将不能更改计费类型。
 
 响应将包含服务密钥。你可以通过运行以下命令获取所有这些参数的详细说明。
@@ -287,8 +287,42 @@
 
 你可以执行以下操作：
 
+- 在不停机的情况下，为 ExpressRoute 线路启用/禁用 ExpressRoute 高级版外接程序。
 - 在不停机的情况下，增加 ExpressRoute 线路的带宽。
 
+### 如何启用 ExpressRoute 高级版外接程序
+
+可以使用以下 PowerShell 代码段为现有线路启用 ExpressRoute 高级版外接程序：
+
+		$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+
+		$ckt.Sku.Name = "Premium"
+		$ckt.sku.Name = "Premium_MeteredData"
+
+		Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
+	
+		
+你的线路现已启用 ExpressRoute 高级版外接程序功能。请注意，该命令成功运行后，我们将立即开始为你对高级版外接程序功能计费。
+
+### 如何禁用 ExpressRoute 高级版外接程序
+
+可以使用以下 PowerShell cmdlet 为现有线路禁用 ExpressRoute 高级版外接程序：
+	
+		$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+		
+		$ckt.Sku.Tier = "Standard"
+		$ckt.sku.Name = "Standard_MeteredData"
+		
+		Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
+
+
+你的线路现已禁用高级版外接程序。
+
+请注意，如果你使用的资源超出了标准线路允许的范围，此操作可能会失败。
+
+- 从高级版降级到标准版之前，你必须确保链接到线路的虚拟机的数目少于 10。否则，你的更新请求会失败，将按高级版费率向你收费。
+- 你必须取消其他地理政治区域的所有虚拟网络的链接。否则，你的更新请求会失败，将按高级版费率向你收费。
+- 路由表中专用对等互连的路由必须少于 4000。如果你的路由表大小超出 4000 个路由，则会删除 BGP 会话且不会重新启用它，除非已播发前缀的数目低于 4000。
 
 
 
