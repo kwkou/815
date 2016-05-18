@@ -95,8 +95,8 @@ Azure IoT 中心会实现[服务辅助通信][lnk-service-assisted-pattern]模�
 * [连接你的设备][lnk-connect-device]
 * [处理设备到云的消息][lnk-d2c]
 
-[img-architecture]: ./media/iot-hub-what-is-iot-hub/hubarchitecture.png
 
+[img-architecture]: ./media/iot-hub-what-is-iot-hub/hubarchitecture.png
 [lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted
 [lnk-connect-device]: /develop/iot/
 [lnk-d2c]: /documentation/articles/iot-hub-csharp-csharp-process-d2c
@@ -106,8 +106,10 @@ Azure IoT 中心会实现[服务辅助通信][lnk-service-assisted-pattern]模�
 [lnk-gateway]: /documentation/articles/iot-hub-protocol-gateway
 [lnk-field-gateway]: /documentation/articles/iot-hub-guidance/#field-gateways
 [lnk-devguide-identityregistry]: /documentation/articles/iot-hub-devguide/#identityregistry
+[lnk-devguide-security]: /documentation/articles/iot-hub-devguide/#security
 [lnk-wns]: https://msdn.microsoft.com/zh-cn/library/windows/apps/mt187203.aspx
 [lnk-google-messaging]: https://developers.google.com/cloud-messaging/
 [lnk-apple-push]: https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW9
-
-<!---HONumber=Mooncake_0321_2016-->
+[lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks
+[lnk-refarch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
+[lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
