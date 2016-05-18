@@ -454,31 +454,27 @@ _图 10.记录客户订单及其详细信息的 Redis 存储中的建议结构_
 - Microsoft 网站上的 [什么是 Azure SQL 数据库？]页提供了有关如何创建和使用 SQL 数据库的详细文档。
 - Microsoft 网站上的 [弹性数据库功能概述]页提供了有关弹性数据库的综合介绍。
 - Microsoft 网站上的 [使用弹性数据库拆分/合并工具进行缩放]页包含有关使用拆分/合并服务管理弹性数据库分片的信息。
-- Microsoft 网站上的 [Azure 存储空间可缩放性和性能目标](https://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)页介绍了 Azure 存储空间的当前大小和吞吐量限制。
+- Microsoft 网站上的 [Azure 存储空间可缩放性和性能目标](/documentation/articles/storage-scalability-targets/)页介绍了 Azure 存储空间的当前大小和吞吐量限制。
 - Microsoft 网站上的 [执行实体组事务]页提供了有关通过存储在 Azure 表存储的实体执行事务操作的详细信息。
 - Microsoft 网站上的 [Azure 存储表设计指南]一文包含有关在 Azure 表存储中分区数据的详细信息。
 - Microsoft 网站上的 [使用 Azure 内容交付网络]页介绍了如何使用 Azure 内容交付网络复制保存在 Azure Blob 存储中的数据。
-- Microsoft 网站上的 [管理 DocumentDB 容量需求]页包含有关 Azure DocumentDB 数据库如何分配资源的信息。
-- Microsoft 网站上的 [什么是 Azure 搜索？]页全面介绍了 Azure 搜索提供的功能。
-- Microsoft 网站上的 [Azure 搜索中的服务限制]页包含有关每个 Azure 搜索实例的容量的信息。
-- Microsoft 网站上的 [支持的数据类型（Azure 搜索）]页汇总了你可以在可搜索文档和索引中使用的数据类型。
 - Microsoft 网站上的 [Azure Redis 缓存]页提供了 Azure Redis 缓存的介绍。
 - Redis 网站上的 [分区：如何在多个 Redis 实例之间拆分数据]页提供了有关如何使用 Redis 实施分区的信息。
 - Microsoft 网站上的 [在 Azure 中的 CentOS Linux VM 上运行 Redis]页逐步讲解了一个示例，演示如何构建和配置作为 Azure VM 运行的 Redis 节点。
 - Redis 网站上的 [数据类型]页介绍了可在 Redis 和 Azure Redis 缓存中使用的数据类型。
 
-[Azure Redis 缓存]: /services/cache/
+[Azure Redis 缓存]: /documentation/services/redis-cache/
 [Azure 存储空间可缩放性和性能目标]: /documentation/articles/storage-scalability-targets
 [Azure 存储表设计指南]: /documentation/articles/storage-table-design-guide
 [构建 Polyglot 解决方案]: https://msdn.microsoft.com/zh-cn/library/dn313279.aspx
 [高度可缩放解决方案的数据访问：使用 SQL、NoSQL 和 Polyglot 持续性]: https://msdn.microsoft.com/zh-cn/library/dn271399.aspx
-[数据一致性入门]: http://aka.ms/Data-Consistency-Primer
+[数据一致性入门]: https://msdn.microsoft.com/zh-cn/library/dn589800.aspx
 [数据分区指南]: https://msdn.microsoft.com/zh-cn/library/dn589795.aspx
 [数据类型]: http://redis.io/topics/data-types
 [弹性数据库功能概述]: /documentation/articles/sql-database-elastic-scale-introduction
 [Federations Migration Utility]: https://code.msdn.microsoft.com/vstudio/Federations-Migration-ce61e9c1
-[索引表模式]: http://aka.ms/Index-Table-Pattern
-[具体化视图模式]: http://aka.ms/Materialized-View-Pattern
+[索引表模式]: https://msdn.microsoft.com/zh-cn/library/dn589791.aspx
+[具体化视图模式]: https://msdn.microsoft.com/zh-cn/library/dn589782.aspx
 [多分片查询]: /documentation/articles/sql-database-elastic-scale-multishard-querying
 [分区：如何在多个 Redis 实例之间拆分数据]: http://redis.io/topics/partitioning
 [执行实体组事务]: https://msdn.microsoft.com/zh-cn/library/azure/dd894038.aspx
@@ -487,11 +483,9 @@ _图 10.记录客户订单及其详细信息的 Redis 存储中的建议结构_
 [使用弹性数据库拆分/合并工具进行缩放]: /documentation/articles/sql-database-elastic-scale-overview-split-and-merge
 [Using CDN for Azure]: /documentation/articles/cdn-how-to-use-cdn
 [服务总线配额]: /documentation/articles/service-bus-quotas
-[Azure 搜索中的服务限制]: /documentation/articles/search-limits-quotas-capacity
-[分片模式]: http://aka.ms/Sharding-Pattern
+[分片模式]: https://msdn.microsoft.com/zh-cn/library/dn589797.aspx
 [支持的数据类型（Azure 搜索）]: https://msdn.microsoft.com/zh-cn/library/azure/dn798938.aspx
 [事务]: http://redis.io/topics/transactions
-[什么是 Azure 搜索？]: /documentation/articles/search-what-is-azure-search
 [什么是 Azure SQL 数据库？]: /documentation/articles/sql-database-technical-overview
 
 <!---HONumber=Mooncake_0503_2016-->
