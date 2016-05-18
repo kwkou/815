@@ -1,5 +1,5 @@
 <properties
-	pageTitle="什么是 Azure 备份？| Microsoft Azure"
+	pageTitle="什么是 Azure 备份？| Azure"
 	description="使用 Azure 备份和恢复服务，你可以从 Windows 服务器、Windows 客户端计算机、System Center DPM 服务器和 Azure 虚拟机备份和还原数据与应用程序。"
 	services="backup"
 	documentationCenter=""
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="backup"
-	ms.date="03/14/2016"
-	wacn.date="05/09/2016"/>
+	ms.date="04/13/2016"
+	wacn.date="05/18/2016"/>
 
 
 # 什么是 Azure 备份？
@@ -20,7 +20,8 @@ Azure 备份是用于备份和还原 Microsoft 云数据的服务。它取代了
 
 
 ## 为何使用 Azure 备份？
-传统的备份解决方案已演变成将云视为类似于磁盘或磁带的终结点。这种方法很简单，但也存在限制。它并不能充分利用基础云平台，可谓是效率不佳又昂贵的解决方案。相比之下，Azure 备份可提供功能强大且价格合理的云备份解决方案的所有优点。Azure 备份提供的部分主要优点如下：
+传统的备份解决方案已演变成将云视为类似于磁盘或磁带的终结点。这种方法很简单，但也存在限制。它并不能充分利用基础云平台，可谓是效率不佳又昂贵的解决方案。
+相比之下，Azure 备份可提供功能强大且价格合理的云备份解决方案的所有优点。Azure 备份提供的部分主要优点如下：
 
 | 功能 | 优势 |
 | ------- | ------- |
@@ -46,6 +47,15 @@ Azure 备份是用于备份和还原 Microsoft 云数据的服务。它取代了
 | Azure 备份服务器 | <p>**是**</p> <p>详细了解[如何使用 Azure 备份服务器保护 Azure 中的工作负荷](/documentation/articles/backup-azure-microsoft-azure-backup)。</p> | <p>**是**</p> <p>详细了解[如何使用 Azure 备份服务器保护 Azure 中的工作负荷](/documentation/articles/backup-azure-microsoft-azure-backup)。</p> | <p>本地附加的磁盘、</p><p>Azure 备份保管库</p> |
 | Azure 备份（VM 扩展） | <p>是</p> <p>专门用于[备份 Azure 基础结构即服务 (IaaS) 虚拟机](/documentation/articles/backup-azure-vms-introduction)。</p> | <p>**否**</p> <p>使用 System Center DPM 备份数据中心的虚拟机。</p> | <p>Azure 备份保管库</p> |
 
+### 组件级别的优势和限制
+
+| 组件 | 优点 | 限制 | 恢复粒度 |
+| --- | --- | --- | --- |
+| Azure 备份 (MARS) 代理 | <li>可以在 Windows OS 计算机（不管是物理机还是虚拟机）上备份文件和文件夹（VM 可位于本地或 Azure 上的任何位置）<li>不需要单独的备份服务器<li>使用 Azure 备份保管库 | <li>一天备份三次/文件级还原<li>仅限文件/文件夹/卷级还原，非应用程序感知<li>不支持 Linux | 文件/文件夹/卷 |
+| System Center Data Protection Manager | <li>应用感知的快照 (VSS)<li>创建备份时提供充分的弹性<li>恢复粒度（全部）<li>可以使用 Azure 备份保管库<li>Linux 支持（如果托管在 Hyper-V 上） | <li>缺少异构支持（VMware VM 备份、Oracle 工作负荷备份）。 | 文件/文件夹/卷<br>/VM/应用程序 |
+| Microsoft Azure 备份服务器 | <li>应用感知的快照 (VSS)<li>创建备份时提供充分的弹性<li>恢复粒度（全部）<li>可以使用 Azure 备份保管库<li>Linux 支持（如果托管在 Hyper-V 上）<li>不需要 System Center 许可证 | <li>缺少异构支持（VMware VM 备份、Oracle 工作负荷备份）。<li>始终需要实时 Azure 订阅<li>不支持磁带备份 | 文件/文件夹/卷<br>/VM/应用程序 |
+| Azure IaaS VM 备份 | <li>针对 Windows/Linux 的本机备份<li>不需要安装特定的代理<li>无需使用备份基础结构进行结构级备份 | <li>一天备份一次/磁盘级还原<li>无法本地备份 | VM<br>所有磁盘（使用 PowerShell） |
+
 ## 可以备份哪些应用程序和工作负荷？
 
 | 工作负载 | 源计算机 | Azure 备份解决方案 |
@@ -59,6 +69,39 @@ Azure 备份是用于备份和还原 Microsoft 云数据的服务。它取代了
 | Microsoft Exchange | Windows Server | <p>[System Center DPM](/documentation/articles/backup-azure-backup-sql)、</p><p>[Azure 备份服务器](/documentation/articles/backup-azure-microsoft-azure-backup)</p> |
 | Azure IaaS VM (Windows)| - | [Azure 备份（VM 扩展）](/documentation/articles/backup-azure-vms-introduction)|
 | Azure IaaS VM (Linux) | - | [Azure 备份（VM 扩展）](/documentation/articles/backup-azure-vms-introduction)|
+## ARM 和 Linux 支持
+
+| 组件 | ARM 支持 | Linux（Azure 认可）支持 |
+| --- | --- | --- |
+| Azure 备份 (MARS) 代理 | 是 | 否（仅限基于 Windows 的代理） |
+| System Center Data Protection Manager | 是（来宾中的代理） | 仅限 Hyper-V（非 Azure VM），只能进行文件一致的备份 |
+| Azure 备份服务器 (MABS) | 是（来宾中的代理） | 仅限 Hyper-V（非 Azure VM），只能进行文件一致的备份（与 DPM 相同） |
+| Azure IaaS VM 备份 | 公共预览版 | 在公开预览中 - Resource Manager 部署模型中的 Linux VM<br>（文件系统级一致性）<br><br>是（对于经典部署模型中的 Linux VM） |
+
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-include.md)]
+
+
+## 备份和还原高级存储 VM
+
+Azure 备份服务现在可以保护高级存储 VM。
+
+### 备份高级存储 VM
+
+在备份高级存储 VM 时，备份服务在高级存储帐户中创建临时暂存位置。名为“AzureBackup-”的暂存位置相当于连接到 VM 的高级磁盘的数据大小总计。
+
+>[AZURE.NOTE] 请不要修改或编辑暂存位置。
+
+备份作业完成后，将删除暂存位置。用于暂存位置的存储的价格在所有[高级存储定价](../storage/storage-premium-storage.md#pricing-and-billing)层中保持一致。
+
+### 还原高级存储 VM
+
+将高级存储 VM 的恢复点还原到高级存储是典型的还原过程。但是，将高级存储 VM 的恢复点还原到标准存储更符合成本效益。如果需要 VM 中的一部分文件，可以使用这种还原类型。
+
+将高级存储 VM 的恢复点还原到高级存储的步骤如下：
+
+1. [将 VM 恢复点还原到标准存储。](/documentation/articles/backup-azure-restore-vms)
+2. [将磁盘复制到高级存储。](/documentation/articles/storage-use-azcopy)
+3. [创建 Azure IaaS VM。](/documentation/articles/virtual-machines-windows-hero-tutorial)
 
 ## 功能
 下面的五个表汇总了如何在每个组件中处理备份功能。
@@ -133,22 +176,22 @@ Azure 备份是用于备份和还原 Microsoft 云数据的服务。它取代了
 
 由于 VM 扩展通过存储网络直接从 Azure 存储帐户读取数据，因此不需要优化此流量。流量通过 Azure 数据中心的本地存储网络传送，因此不太需要出于带宽的考虑而压缩数据。
 
-在备份服务器（DPM 或备份服务器）上保护数据的客户可以压缩从主服务器传输到备份服务器的流量以节省带宽。
+如果你要将数据备份到备份服务器（DPM 或备份服务器），可以压缩从主服务器传输到备份服务器的流量以节省带宽。
 
 #### 网络限制
 Azure 备份代理提供的限制功能可让你控制在数据传输期间使用网络带宽的方式。如果需要在上班时间内备份数据，但不希望备份程序干扰其他 Internet 流量，这很有帮助。数据传输的限制适用于备份和还原活动。
 
 ### 备份和保留
 
-| | Azure 备份代理 | System Center DPM 和 Azure 备份服务器 | Azure 备份（VM 扩展） |
-| --- | --- | --- | --- |
-| 备份频率（到备份保管库） | 每天三次备份 | 每天两次备份 | 每天一次备份 |
-| 备份频率（到磁盘） | 不适用 | <p>SQL Server 每 15 分钟一次</p><p>其他工作负荷每小时一次</p> | 不适用 |
-| 保留期选项 | 每日、每周、每月、每年 | 每日、每周、每月、每年 | 每日、每周、每月、每年 |
-| 保留期 | 最长 99 年 | 最长 99 年 | 最长 99 年 |
-| 备份保管库中的恢复点 | 不受限制 | 不受限制 | 不受限制 |
-| 本地磁盘上的恢复点 | 不适用 | 不适用 | 不适用 |
-| 磁带上的恢复点 | 不适用 | 不适用 | 不适用 |
+| | Azure 备份代理 | System Center DPM | Azure 备份服务器 | Azure 备份（VM 扩展） |
+| --- | --- | --- | --- | --- |
+| 备份频率（到备份保管库） | 每天三次备份 | 每天两次备份 |每天两次备份 | 每天一次备份 |
+| 备份频率（到磁盘） | 不适用 | <p>SQL Server 每 15 分钟一次</p><p>其他工作负荷每小时一次</p> | <p>SQL Server 每 15 分钟一次</p><p>其他工作负荷每小时一次</p> |不适用 |
+| 保留期选项 | 每日、每周、每月、每年 | 每日、每周、每月、每年 | 每日、每周、每月、每年 |每日、每周、每月、每年 |
+| 保留期 | 最长 99 年 | 最长 99 年 | 最长 99 年 | 最长 99 年 |
+| 备份保管库中的恢复点 | 不受限制 | 不受限制 | 不受限制 | 不受限制 |
+| 本地磁盘上的恢复点 | 不适用 | 对于文件服务器为 64，<br><br>对于应用程序服务器为 448 | 对于文件服务器为 64，<br><br>对于应用程序服务器为 448 |不适用 |
+| 磁带上的恢复点 | 不适用 | 不受限制 | 不适用 | 不适用 |
 
 ## 什么是保管库凭据文件？
 
@@ -167,16 +210,24 @@ Azure 备份在本地和云中备份数据。Azure Site Recovery 可以协调虚
 | ------- | ------- | ------ | ----------------- |
 | 恢复点目标 (RPO) | 在需要执行恢复的情况下可接受的数据丢失量。 | 备份解决方案的可接受 RPO 存在很大差异。虚拟机备份的 RPO 通常为一天，而数据库备份的 RPO 只有 15 分钟。 | 灾难恢复解决方案的 RPO 较低。DR 复制可以落后几秒钟或几分钟时间。 |
 | 恢复时间目标 (RTO) | 完成恢复或还原所需的时间量。 | 由于 RPO 较大，备份解决方案需要处理的数据量通常更多，这会导致 RTO 较长。例如，根据从异地转送磁带所需的时间，从磁带还原数据可能需要数天的时间。 | 由于灾难恢复解决方案与源之间的同步程度更高，因此其 RTO 更小，需要处理的更改也更少。 |
-| 保留 | 数据需要存储多久 | <p>对于需要进行操作恢复的情况（数据损坏、意外的文件删除、OS 故障），备份数据通常会保留 30 天或更短。</p> <p>从合规性的角度来看，数据可能需要存储数月甚至数年。在这种情况下，备份数据非常适合存档。</p> | 灾难恢复只需操作性恢复数据，通常只需几个小时或最多一天的数据。由于 DR 解决方案中使用了精细数据捕获，因此不建议长期保留 DR 数据。 |
+| 保留 | 数据需要存储多久 | 对于需要进行操作恢复的情况（数据损坏、意外的文件删除、OS 故障），备份数据通常会保留 30 天或更短。<br>从合规性的角度来看，数据可能需要存储数月甚至数年。在这种情况下，备份数据非常适合存档。 | 灾难恢复只需操作性恢复数据，通常只需几个小时或最多一天的数据。由于 DR 解决方案中使用了精细数据捕获，因此不建议长期保留 DR 数据。 |
 
 ## 后续步骤
+
+尝试使用简单易用的 Azure 备份。有关说明，请参阅以下教程之一：
+
 - [尝试 Azure 备份](/documentation/articles/backup-try-azure-backup-in-10-mins)
-- [有关 Azure 备份服务的常见问题](/documentation/articles/backup-azure-backup-faq)
-- 访问 [Azure 备份论坛](http://go.microsoft.com/fwlink/p/?LinkId=290933)
+- [尝试 Azure VM 备份](/documentation/articles/backup-azure-vms-first-look)
+
+这些教程可帮助你快速备份，因此只说明了备份数据的最直接途径。有关可执行的备份类型的详细信息，请参阅：
+
+- [Back up Windows machine（备份 Windows 计算机）](/documentation/articles/backup-configure-vault)
+
+- [Backup Azure IaaS VMs（备份 Azure IaaS VM）](/documentation/articles/backup-azure-vms-prepare)
 
 
 [green]: ./media/backup-introduction-to-azure-backup/green.png
 [yellow]: ./media/backup-introduction-to-azure-backup/yellow.png
 [red]: ./media/backup-introduction-to-azure-backup/red.png
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->

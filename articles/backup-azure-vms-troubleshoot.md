@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 虚拟机备份疑难解答 | Microsoft Azure"
+	pageTitle="Azure 虚拟机备份疑难解答 | Azure"
 	description="Azure 虚拟机备份和还原疑难解答"
 	services="backup"
 	documentationCenter=""
