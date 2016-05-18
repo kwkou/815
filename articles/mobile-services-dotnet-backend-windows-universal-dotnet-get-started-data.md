@@ -16,10 +16,6 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
  
-&nbsp;
-
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-> 有关本主题的对应的 Mobile Apps 版本，请参阅[如何将托管客户端库用于 Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-how-to-use-client-library)。
 
 ##概述
 

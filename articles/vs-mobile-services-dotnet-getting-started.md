@@ -14,7 +14,6 @@
 
 #  移动服务入门（.NET 项目）
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
 
 为了跟踪这些代码，您需要首先执行的步骤取决于您连接的移动服务类型。
 

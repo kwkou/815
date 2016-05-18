@@ -14,10 +14,6 @@
 
 # 在发生灾难时恢复移动服务
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
-
 当你使用 Azure 移动服务部署应用程序时，可以使用它的内置功能来确保发生可用性问题（例如服务器故障、网络中断、数据丢失和大范围的设施损毁）时保持业务连续性。使用 Azure 移动服务部署应用程序时，你可以像部署传统的本地解决方案一样，利用你必须设计、实施和管理的许多容错与基础结构功能。Azure 可让你花费少量的成本消除大量的潜在故障。
 
 ## <a name="prepare"></a>针对可能的灾难做好准备

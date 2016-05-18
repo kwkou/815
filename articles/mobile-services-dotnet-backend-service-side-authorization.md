@@ -17,10 +17,6 @@
 - [.NET 后端](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
 - [Javascript 后端](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
 
-&nbsp;
-
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-> 有关本主题的对应的 Mobile Apps 版本，请参阅“使用适用于 Azure Mobile Apps 的 .NET 后端服务器 SDK”主题中的[如何：对授权用户限制数据访问](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#authorize)。
 
 本主题说明如何使用服务器端逻辑为用户授权。在本教程中，你将要修改表控制器，根据用户 ID 筛选查询，然后只授予用户对其自己数据的访问权限。根据用户 ID 筛选用户的查询结果是最基本的授权形式。根据具体的方案，你可能还需要创建“用户”或“角色”表，以跟踪更详细的用户授权信息，例如，给定的用户有权访问哪些终结点。
 

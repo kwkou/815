@@ -16,10 +16,6 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
-&nbsp;
-
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-> 有关本主题的对应的 Mobile Apps 版本，请参阅[向 Android 应用添加身份验证](/documentation/articles/app-service-mobile-android-get-started-users)。
 
 ## 摘要
 

@@ -16,10 +16,6 @@
 
 [AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
-&nbsp;
-
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-
 本主题演示如何使 Android Azure 移动服务应用能够将图像上载到 Azure 存储空间。
 
 移动服务使用 SQL 数据库存储数据。但是，在 Azure 存储空间中存储二进制大型对象 (BLOB) 数据更有效。在本教程中，你将使移动服务快速入门应用能够使用 Android 相机拍照，并将图像上载到 Azure 存储空间。

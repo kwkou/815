@@ -13,10 +13,7 @@
 	wacn.date="04/11/2016"/>
 
 # <a name="getting-started"></a>移动服务入门
-[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]&nbsp;
-
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-> 有关本主题的对等 Mobile Apps 版本，请参阅[创建 Xamarin.iOS 应用](/documentation/articles/app-service-mobile-xamarin-ios-get-started)。
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
 以下是完成的应用程序的屏幕快照：
 

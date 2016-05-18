@@ -15,10 +15,6 @@
 
 # 如何对 .NET 后端移动服务进行数据模型更改
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
-
 
 本主题说明如何使用 Entity Framework 中的 Code First 迁移对现有的 Azure SQL 数据库进行数据模型更改，以避免丢失现有数据。此过程假设你已将 .NET 后端项目发布到 Azure，数据库中已有数据，并且远程和本地数据模型仍然保持同步。本主题还将介绍 Azure 移动服务实现的、在开发期间使用的默认 Code First 初始值设定项。这些初始值设定项可让你在无需维护现有数据的情况下，不使用 Code First 迁移就能轻松进行架构更改。
 

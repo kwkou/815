@@ -14,9 +14,6 @@
 
 # 使用 JavaScript 的移动服务和 Azure Active Directory 中基于角色的访问控制
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-rbac](../includes/mobile-services-selector-rbac.md)]
 
 ##概述

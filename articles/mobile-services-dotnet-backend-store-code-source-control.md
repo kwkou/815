@@ -14,11 +14,6 @@
 
 # 在源代码管理中存储移动服务项目代码
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
-
-
 > [AZURE.SELECTOR]
 - [.NET backend](/zh-cn/documentation/articles/mobile-services-dotnet-backend-store-code-source-control)
 - [Javascript backend](/zh-cn/documentation/articles/mobile-services-store-scripts-source-control)

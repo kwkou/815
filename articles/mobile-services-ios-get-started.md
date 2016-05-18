@@ -16,10 +16,6 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
-&nbsp;
-
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-> 有关本主题的对应的 Mobile Apps 版本，请参阅[在 Azure Mobile Apps 中创建 iOS 应用](/documentation/articles/app-service-mobile-android-get-started)。
 
 本教程说明如何使用 Azure 移动服务向 iOS 应用程序添加基于云的后端服务。
 
