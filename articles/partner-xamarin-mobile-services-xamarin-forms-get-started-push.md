@@ -16,10 +16,6 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
-&nbsp;
-
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-> 有关本主题的对等 Mobile Apps 版本，请参阅[向 Xamarin.Forms 应用添加推送通知](/documentation/articles/app-service-mobile-xamarin-forms-get-started-push)。
 
 ##概述
 

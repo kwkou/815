@@ -13,11 +13,6 @@
 	wacn.date="03/21/2016"/>
 
 # 处理数据库写入冲突
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
-
-
 
 ##概述
 

@@ -16,11 +16,6 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
-&nbsp;
-
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-> 有关本主题的对应的 Mobile Apps 版本，请参阅[向 iOS 应用添加身份验证](/documentation/articles/app-service-mobile-ios-get-started-users)。
-
 在本教程中，你将要使用支持的标识提供程序向快速入门项目添加身份验证。本教程是在你必须先完成的[移动服务快速入门教程]的基础之上制作的。
 
 ##<a name="register"></a>注册应用程序以进行身份验证并配置移动服务

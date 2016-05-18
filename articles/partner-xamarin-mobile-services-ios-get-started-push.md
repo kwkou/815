@@ -16,11 +16,6 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
-&nbsp;
-
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-> 有关本主题的对等 Mobile Apps 版本，请参阅[向 Xamarin.iOS 应用添加推送通知](/documentation/articles/app-service-mobile-xamarin-ios-get-started-push)。
-
 ## 概述
 
 本主题说明如何使用 Azure 移动服务向 Xamarin.iOS 8 应用程序发送推送通知。在本教程中，你将要使用 Apple 推送通知服务 (APNS) 向[移动服务入门]项目添加推送通知。完成本教程后，每次插入一条记录时，你的移动服务就会发送一条推送通知。

@@ -14,9 +14,7 @@
 
 # 使用 Active Directory 身份验证库单一登录对应用程序进行身份验证
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
 
-&nbsp;
 [AZURE.INCLUDE [mobile-services-selector-adal-sso](../includes/mobile-services-selector-adal-sso.md)]
 
 ##概述

@@ -14,9 +14,6 @@
 
 # 自定义身份验证入门
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-> 有关本主题的对应的 Mobile Apps 版本，请参阅[如何：将自定义身份验证用于应用程序](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#custom-auth)。
-
 
 ## 概述
 本主题说明如何通过颁发自己的移动服务身份验证令牌，对 Azure 移动服务 .NET 后端中的用户进行身份验证。在本教程中，你将使用应用程序的自定义用户名和密码向快速入门项目添加身份验证。

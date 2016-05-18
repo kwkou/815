@@ -15,10 +15,7 @@
 # 移动服务入门
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
-&nbsp;
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-> 有关本主题的对应的 Mobile Apps 版本，请参阅[使用 Mobile Apps 创建 Windows 应用](/documentation/articles/app-service-mobile-windows-store-dotnet-get-started)。
 
 本教程说明如何使用 Azure 移动服务向 Windows 应用商店 JavaScript 应用添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单待办事项列表应用程序。要创建的移动服务将为服务器端业务逻辑使用 JavaScript。
 

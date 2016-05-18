@@ -14,7 +14,6 @@
 
 # 使用“连接服务”添加 Azure 移动服务后，我的 Visual Studio .NET 项目发生了什么情况？
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
 
 ## 已添加引用
 

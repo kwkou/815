@@ -14,8 +14,6 @@
 
 # 将移动服务添加到现有 Android 应用（JavaScript 后端）
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-> 有关本主题的对应的 Mobile Apps 版本，请参阅[如何将 Android 客户端库用于 Mobile Apps](/documentation/articles/app-service-mobile-android-how-to-use-client-library)。
 
 ## 摘要
 

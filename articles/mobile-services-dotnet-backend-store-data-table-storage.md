@@ -14,11 +14,6 @@
 
 # 构建使用表存储的 .NET 后端移动服务
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
-
-
 本主题说明如何将非关系数据存储用于 .NET 后端移动服务。在本教程中，你将要修改移动服务快速入门项目，以使用 Azure 表存储而不是默认的 SQL 数据库数据存储。
 
 在学习本教程之前，需要先完成[移动服务入门]教程。你还需要一个 Azure 存储帐户。

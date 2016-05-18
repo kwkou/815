@@ -16,8 +16,6 @@
 
 [AZURE.INCLUDE [mobile-services-selector-offline](../includes/mobile-services-selector-offline.md)]
 
-&nbsp;
-
 
 ## 摘要
 

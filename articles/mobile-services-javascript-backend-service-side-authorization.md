@@ -16,10 +16,7 @@
 
 > [AZURE.SELECTOR]
 - [.NET 后端](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
-- [JavaScript 后端](/documentation/articles/mobile-services-javascript-backend-service-side-authorization) &nbsp;
-
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-> 有关本主题的对应的 Mobile Apps 版本，请参阅[此示例代码](https://github.com/Azure/azure-mobile-apps-node/blob/master/samples/personal-table/tables/TodoItem.js#L38)。
+- [JavaScript 后端](/documentation/articles/mobile-services-javascript-backend-service-side-authorization) 
 
 本主题说明如何使用服务器端脚本为用户授权。在本教程中，你将在 Azure 移动服务中注册脚本，根据用户 ID 筛选查询，然后只授予用户对其自己数据的访问权限。根据用户 ID 筛选用户的查询结果是最基本的授权形式。根据具体的方案，你可能还需要创建“用户”或“角色”表，以跟踪更详细的用户授权信息，例如，给定的用户有权访问哪些终结点。
 

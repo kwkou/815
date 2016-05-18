@@ -14,10 +14,6 @@
 
 # 移动服务 .NET 后端故障排除
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
-
 使用移动服务进行开发通常是简单轻松的工作，但即便如此，有时还是可能会出错。本教程提供了一些技巧，以帮助你排查移动服务 .NET 后端可能出现的常见问题。
 
 1. [HTTP 调试](#HttpDebugging)

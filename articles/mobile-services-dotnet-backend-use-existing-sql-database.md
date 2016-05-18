@@ -15,9 +15,6 @@
 
 # 使用现有的 SQL 数据库和移动服务 .NET 后端生成服务
 
-[AZURE.INCLUDE [mobile-service-note-mobile-apps](../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
 移动服务 .NET 后端可方便你利用现有的资产来生成移动服务。（在本地或云中）使用可能已被其他应用程序使用的现有 SQL 数据库让现有数据可供移动客户端使用是特别有趣的方案之一。在此情况下，数据库模型（或*架构*）必须保持不变才能使现有方案继续工作。
 
 <a name="ExistingModel"></a>
