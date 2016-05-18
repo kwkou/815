@@ -1,11 +1,11 @@
-<properties 
-	pageTitle="在云中监视本地标识基础结构" 
-	description="本页介绍 Azure AD Connect Health 是什么，以及为何要使用它。" 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
-	editor="curtand"/>
+<properties
+	pageTitle="在云中监视本地标识基础结构"
+	description="本页介绍 Azure AD Connect Health 是什么，以及为何要使用它。"
+	services="active-directory"
+	documentationCenter=""
+	authors="karavar"
+	manager="stevenpo"
+	editor="karavar"/>
 
 <tags 
 	ms.service="active-directory"  
@@ -105,4 +105,4 @@ Azure AD Connect Health 很容易入门。请遵循以下步骤进行配置：
 * [Azure AD Connect Health 常见问题](/documentation/articles/active-directory-aadconnect-health-faq)
  
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0509_2016-->

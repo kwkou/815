@@ -1,16 +1,16 @@
-<properties 
-	pageTitle="Azure AD Connect Health 操作。" 
+<properties
+	pageTitle="Azure AD Connect Health 操作。"
 	description="本文介绍在部署 Azure AD Connect Health 后可以执行的其他操作。"
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
+	services="active-directory"
+	documentationCenter=""
+	authors="karavar"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="10/19/2015"
-	wacn.date="05/16/2016"/>
+	ms.date="02/21/2016"
+	wacn.date="05/18/2016"/> 
 
 # Azure AD Connect Health 操作
 
@@ -106,4 +106,4 @@ Azure AD Connect 支持两个级别的管理访问：
 * [使用用于同步的 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-sync)
 * [Azure AD Connect Health 常见问题](/documentation/articles/active-directory-aadconnect-health-faq)
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0509_2016-->

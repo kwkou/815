@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect：支持的拓扑 | Microsoft Azure"
+   pageTitle="Azure AD Connect：支持的拓扑 | Azure"
    description="本主题详细说明 Azure AD Connect 的受支持和不受支持的拓扑"
    services="active-directory"
    documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="02/12/2016"
-   wacn.date="01/29/2016"/>
+    ms.date="04/14/2016"
+   wacn.date="05/18/2016"/>
 
 # Azure AD Connect 的拓扑
 
@@ -59,7 +59,7 @@ Azure AD Connect 向导提供如何合并用户的多个选项，因此即使不
 4.	如果你有链接的邮箱，则在不同的林中还有另一个帐户用于登录。
 
 如果你的环境不符合这些假设，将发生以下情况：
--	如果你有多个活动帐户或多个邮箱，同步引擎将选择其中一个并忽略其他的帐户或邮箱。
+-	如果有一个以上的活动帐户或一个以上的邮箱，同步引擎将选择其中一个并忽略其他的帐户或邮箱。
 -	如果你有链接的邮箱但没有其他帐户，则这些帐户不会导出到 Azure AD，并且用户将不是任何组的成员。在 DirSync 中，链接的邮箱显示为普通邮箱，这是有意的行为，目的是更好地支持多林方案。
 
 ### 多个林，多个同步服务器连接到单个 Azure AD 目录
@@ -106,6 +106,8 @@ FSP 可在 ADDS 中用来代表安全组中来自其他林的成员。同步引�
 
 此方案包括一个信任所有帐户林的林。此林通常具有带 Exchange 和 Lync 的扩展 AD 架构。所有 Exchange 和 Lync 服务以及其他共享的服务都位于此林中。用户在此林中具有一个禁用的用户帐户，并且邮箱被链接到帐户林。
 
+它还支持使用多个资源林。这可能是在合并之后的状态。预计用户在资源林中只能具有一个已禁用的帐户。
+
 ## Office 365 和拓扑注意事项
 某些 Office 365 工作负荷对支持的拓扑实施一些限制。如果你打算使用其中任何一项，请参阅每个工作负荷的支持拓扑页。
 
@@ -126,7 +128,8 @@ Azure AD Connect 支持以“暂存模式”安装第二个服务器。使用此
 如果想要在不同的数据中心拥有多个备份，也可以配置多个暂存服务器。
 
 ## 多个 Azure AD 目录
-Microsoft 建议组织在 Azure AD 中部署单个目录。在打算使用多个 Azure AD 目录之前，请参阅以下主题，其中介绍了可让你使用单个目录的常见方案。
+Microsoft 建议组织在 Azure AD 中部署单个目录。
+在打算使用多个 Azure AD 目录之前，请参阅以下主题，其中介绍了可让你使用单个目录的常见方案。
 
 | 主题 | |
 | --------- | --------- |
@@ -143,11 +146,14 @@ Azure AD Connect 同步服务器与 Azure AD 目录之间不存在一对一的�
 
 在此拓扑中，Azure AD 目录实例之间没有任何“GALsync”，因此 Exchange Online 和 Skype for Business 中的通讯簿只在相同的目录中显示用户。
 
-使用此拓扑时，只有一个 Azure AD 目录可以使用本地 Active Directory 启用 Exchange 混合。
+另外此拓扑对支持的方案具有以下限制：
+
+- 只有一个 Azure AD 目录可以使用本地 Active Directory 启用 Exchange 混合部署。
+- Windows 10 设备只能与一个 Azure AD 目录相关联。
 
 对象互斥集的要求也适用于写回。这使得此拓扑不支持部分写回功能，由于这些拓扑采用单个本地配置。这包括：
--	使用默认配置进行组写回
--	设备写回
+- 使用默认配置进行组写回 
+- 设备写回
 
 ### 每个对象在 Azure AD 目录中运行多次
 ![SingleForestMultiDirectoryUnsupported](./media/active-directory-aadconnect-topologies/SingleForestMultiDirectoryUnsupported.png) ![SingleForestMultiConnectorsUnsupported](./media/active-directory-aadconnect-topologies/SingleForestMultiConnectorsUnsupported.png)
@@ -171,4 +177,4 @@ Azure AD 目录在设计上是隔离的。它不支持将 Azure AD Connect 同�
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0509_2016-->

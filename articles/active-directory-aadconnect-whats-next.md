@@ -21,7 +21,7 @@
 ## AD FS 服务中的可选配置
 你可以自定义 AD FS 登录页的插图和徽标图像，方法是登录 AD FS，然后使用 PSH 进行这项配置。
 
-	Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.png"} ¨CIllustration @{path=¡±c:\Contoso\illustration.png¡±}
+	Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.png"} –Illustration @{path=”c:\Contoso\illustration.png”}
 
 有关可能配置的完整说明，请参阅[自定义 AD FS 登录页](https://technet.microsoft.com/library/dn280950.aspx)。
 
@@ -79,4 +79,4 @@
 
  
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0509_2016-->
