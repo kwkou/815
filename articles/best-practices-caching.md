@@ -907,7 +907,7 @@ subscriber.PublishAsync("messages:blogPosts", blogPost.Title);
 ## 详细信息
 
 - Microsoft 网站上的 [MemoryCache 类](http://msdn.microsoft.com/zh-cn/library/system.runtime.caching.memorycache.aspx)页
-- Microsoft 网站上的 [Azure Redis 缓存文档](/documentation/services/cache/)页
+- Microsoft 网站上的 [Azure Redis 缓存文档](/documentation/services/redis-cache/)页
 - Microsoft 网站上的 [Azure Redis 缓存常见问题](/documentation/articles/cache-faq)页
 - Microsoft 网站上的 [配置模型](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh914149.aspx)页
 - Microsoft 网站上的 [基于任务的异步模式](http://msdn.microsoft.com/zh-cn/library/hh873175.aspx)页
