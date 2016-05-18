@@ -1,6 +1,6 @@
 <properties
-   pageTitle="将文件和文件夹从 Windows 备份到 Azure | Microsoft Azure"
-   description="通过创建保管库、安装备份代理，并将文件和文件夹备份到 Azure，来保护你的 Windows Server 数据。"
+   pageTitle="了解如何将文件和文件夹从 Windows 备份到 Azure | Azure"
+   description="了解如何通过创建保管库、安装备份代理，并将文件和文件夹备份到 Azure，来备份 Windows Server 数据。"
    services="backup"
    documentationCenter=""
    authors="Jim-Parker"
@@ -10,33 +10,34 @@
 
 <tags
    ms.service="backup" 
-   ms.date="03/09/2016"
-   wacn.date="05/09/2016"/>
+   ms.date="04/14/2016"
+   wacn.date="05/18/2016"/>
    
 # 先睹为快：将文件和文件夹从 Windows Server 或客户端备份到 Azure
 
-只需几个步骤，即可将 Windows 机器（Windows 客户端或 Windows Server）备份到 Azure。
+本文介绍如何使用 Azure 备份将 Windows Server（或 Windows 客户端）文件和文件夹备份到 Azure。本教程旨在引导你完成基本操作。如果想要开始使用 Azure 备份，本文的内容非常合适。
 
-只需执行以下步骤：
+如果想要深入了解 Azure 备份，请阅读此[概述](backup-introduction-to-azure-backup.md)。
 
-![步骤 1](./media/backup-try-azure-backup-in-10-mins/step-1.png) 获取 Azure 订阅（如果需要）。<br>
-![步骤 2](./media/backup-try-azure-backup-in-10-mins/step-2.png) 创建备份保管库并下载所需的组件。<br>
-![步骤 3](./media/backup-try-azure-backup-in-10-mins/step-3.png) 通过安装并注册这些组件，来准备好 Windows Server 或客户端。<br>
-![步骤 4](./media/backup-try-azure-backup-in-10-mins/step-4.png) 保护你的数据。
+将文件和文件夹备份到 Azure 需要进行以下活动：
+
+![步骤 1](./media/backup-try-azure-backup-in-10-mins/step-1.png) 获取 Azure 订阅（如果没有）。<br>
+![步骤 2](./media/backup-try-azure-backup-in-10-mins/step-2.png) 创建备份保管库并下载所需的项。<br>
+![步骤 3](./media/backup-try-azure-backup-in-10-mins/step-3.png) 下载并注册备份代理。<br>
+![步骤 4](./media/backup-try-azure-backup-in-10-mins/step-4.png) 备份文件和文件夹。
 
 
-![Windows Server 和客户端备份过程](./media/backup-try-azure-backup-in-10-mins/windows-machine-backup-process.png)
+![如何使用 Azure 备份来备份 Windows 计算机](./media/backup-try-azure-backup-in-10-mins/windows-machine-backup-process.png)
 
 ## 步骤 1：获取 Azure 订阅
 
 如果你没有 Azure 订阅，可以创建一个[试用帐户](/pricing/1rmb-trial/)，这样便可以访问任何 Azure 服务。
 
->[AZURE.NOTE] 如果你已有了 Azure 订阅，则可以跳过此步骤。
+## 步骤 2：创建备份保管库并下载所需的项
 
-## 步骤 2：创建备份保管库并下载所需的组件
+若要备份文件和文件夹，你需要在要存储数据的区域内创建一个备份保管库。你还要确定存储的复制方式，并下载凭据和备份代理。
 
-若要将文件和数据从 Windows 计算机备份到 Azure，你需要在要存储数据的地理区域内创建一个备份保管库。
-
+### 创建备份保管库的步骤
 1. 如果你尚未登录 [Azure 管理门户](https://manage.windowsazure.cn/)，请使用你的 Azure 订阅登录。
 
 2. 单击“新建”>“恢复服务”>“备份”。
@@ -244,4 +245,4 @@
 - [备份 Windows Server](/documentation/articles/backup-azure-backup-windows-server)
 + 访问 [Azure 备份论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)。
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->

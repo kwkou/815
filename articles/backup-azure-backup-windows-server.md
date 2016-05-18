@@ -3,14 +3,15 @@
    description="使用这个简单的过程将 Windows Server 或 Windows 客户端备份到 Azure。只需执行几个简单的步骤，就能将 Windows 文件和文件夹备份到云中。"
    services="backup"
    documentationCenter=""
-   authors="aashishr"
+   authors="Jim-Parker"
    manager="jwhit"
-   editor=""/> keywords="windows server 备份; 备份 windows server"/>
+   editor=""
+   keywords="windows server 备份; 备份 windows server"/>
 
 <tags
    ms.service="backup"
-   ms.date="11/17/2015"
-   wacn.date="04/12/2016"/>
+   ms.date="02/05/2016"
+   wacn.date="05/18/2016"/>
 
 # 将 Windows Server 或 Windows 客户端文件和文件夹备份到 Azure
 使用这个简单的过程，可以轻松将 Windows 文件和文件夹备份到 Azure。如果你尚未这样做，请完成[先决条件](/documentation/articles/backup-configure-vault#before-you-start)部分，在环境中做好备份 Windows 计算机的准备，然后继续。
@@ -46,5 +47,6 @@
 - [管理 Windows Server 或 Windows 客户端](/documentation/articles/backup-azure-manage-windows-server)
 - [从 Azure 还原 Windows Server 或 Windows 客户端](/documentation/articles/backup-azure-restore-windows-server)
 - [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq)
+- 访问 [Azure 备份论坛](http://go.microsoft.com/fwlink/p/?LinkId=290933)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0503_2016-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure 备份 - 备份包含加密磁盘的 Azure IaaS VM | Microsoft Azure"
+   pageTitle="Azure 备份 - 备份包含加密磁盘的 Azure IaaS VM | Azure"
    description="了解 Azure 备份在备份 IaaS VM 期间如何处理使用 BitLocker 或 dmcrypt 加密的数据。本文帮助你预先了解在处理加密的磁盘时，备份和还原体验的差异。"
    services="backup"
    documentationCenter=""

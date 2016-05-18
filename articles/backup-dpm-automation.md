@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 备份 - 使用 PowerShell 部署和管理 DPM 的备份 | Microsoft Azure"
+	pageTitle="Azure 备份 - 使用 PowerShell 部署和管理 DPM 的备份 | Azure"
 	description="了解如何使用 PowerShell 部署和管理 Data Protection Manager (DPM) 的 Azure 备份"
 	services="backup"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup"
 	ms.date="01/28/2016"
-	wacn.date="05/09/2016"/>
+	wacn.date="05/18/2016"/>
 
 
 # 使用 PowerShell 部署和管理 Data Protection Manager (DPM) 服务器的 Azure 备份
@@ -93,7 +93,7 @@ PS C:\> MARSAgentInstaller.exe /?
 | ---- | ----- | ----- |
 | /q | 静默安装 | - |
 | /p:"location" | Azure 备份代理的安装文件夹路径。| C:\\Program Files\\Microsoft Azure Recovery Services Agent |
-| /s:"location" | Azure 备份代理的缓存文件夹路径。| C:\\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch |
+| /s:"location" | Azure 备份代理的快取文件夹路径。| C:\\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch |
 | /m | 选择启用 Microsoft Update | - |
 | /nu | 安装完成后不要检查更新 | - |
 | /d | 卸载 Microsoft Azure 恢复服务代理 | - |
@@ -188,7 +188,7 @@ PS C:\> Set-DPMCloudSubscriptionSetting -DPMServerName "TestingServer" -Subscrip
 1. “组成员”是你要在相同的保护组中保护的所有可保护对象的列表（在 DPM 中也称为“数据源”）。例如，你可能想要保护一个保护组中的生产 VM 与另一个保护组中的 SQL Server 数据库，因为它们可能有不同的备份要求。在可以备份生产服务器上的任何数据源之前，需要确保 DPM 代理已安装在服务器上并受 DPM 的管理。遵循[安装 DPM 代理](https://technet.microsoft.com/zh-cn/library/bb870935.aspx)的步骤，并将代理链接到相应的 DPM 服务器。
 2. “数据保护方法”指定目标备份位置 - 磁带、磁盘和云。在本示例中，我们将在本地磁盘和云中保护数据。
 3. 一个“备份计划”，指定何时需要进行备份，以及应该在 DPM 服务器和生产服务器之间同步数据的频率。
-4. 一个**保留计划**，指定要在 Azure 中保留恢复点多长时间。
+4. 一个“保留计划”，指定要在 Azure 中保留恢复点多长时间。
 
 ### 创建保护组
 首先，使用 [Add-DPMProtectionGroup](https://technet.microsoft.com/zh-cn/library/hh881722) cmdlet 创建新的保护组。
@@ -328,4 +328,4 @@ PS C:\> Restore-DPMRecoverableItem -RecoverableItem $RecoveryPoints[0] -Recovery
 
 - 有关适用于 DPM 的 Azure 备份的详细信息，请参阅 [DPM 备份简介](/documentation/articles/backup-azure-dpm-introduction)
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->

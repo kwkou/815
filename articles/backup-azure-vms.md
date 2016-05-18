@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="backup"
-	ms.date="01/22/2016"
+	ms.date="04/08/2016"
 	wacn.date="04/12/2016"/>
 
 
@@ -30,22 +30,39 @@
 ## 步骤 1 - 发现 Azure 虚拟机
 为确保在注册之前能够识别任何添加到订阅中的新虚拟机 (VM)，请先运行发现过程。该过程将在 Azure 上查询订阅中的虚拟机列表和其他信息，例如云服务名称、区域等。
 
-1. 导航到备份保管库（位于 Azure 门户的“恢复服务”下），然后单击“注册的项”。
+1. 登录到[经典门户](http://manage.windowsazure.cn/)
 
-2. 从下拉菜单中选择“Azure 虚拟机”。
+2. 在 Azure 服务列表中，单击“恢复服务”打开备份和站点恢复保管库的列表。
+    ![打开保管库列表](./media/backup-azure-vms/choose-vault-list.png)
+
+3. 从备份保管库列表中，选择要备份 VM 的保管库。
+
+    如果这是新的保管库，门户将打开“快速启动”页。
+
+    ![打开“已注册的项”菜单](./media/backup-azure-vms/vault-quick-start.png)
+
+    如果以前已配置了该保管库，门户将打开最近使用的菜单。
+
+4. 在保管库菜单（位于页面顶部）中，单击“已注册的项”。
+
+    ![打开“已注册的项”菜单](./media/backup-azure-vms/vault-menu.png)
+
+5. 在“类型”菜单中选择“Azure 虚拟机”。
 
     ![选择工作负荷](./media/backup-azure-vms/discovery-select-workload.png)
 
-3. 单击页面底部的“发现”。
+6. 单击页面底部的“发现”。
     ![发现按钮](./media/backup-azure-vms/discover-button-only.png)
 
     发现过程可能会需要几分钟，将以表格显示虚拟机。屏幕底部有一个通知，让你知道系统正在运行发现过程。
 
     ![发现 VM](./media/backup-azure-vms/discovering-vms.png)
 
-    发现过程完成后，该通知会变化。
+    发现过程完成后，该通知会变化。如果发现过程未找到虚拟机，请先确保 VM 存在。如果 VM 存在，请确保 VM 与备份保管库位于同一个区域。如果 VM 存在但不在同一个区域，请确保尚未将 VM 注册到备份保管库。如果 VM 已分配到某个备份保管库，则不能将它分配到其他备份保管库。
 
     ![完成发现](./media/backup-azure-vms/discovery-complete.png)
+
+    发现新项后，请转到步骤 2 并注册你的 VM。
 
 ##  步骤 2 - 注册 Azure 虚拟机
 注册 Azure 虚拟机即可将其与 Azure 备份服务相关联。这通常是一次性活动。
@@ -160,4 +177,4 @@
 - [管理和监视你的虚拟机](/documentation/articles/backup-azure-manage-vms)
 - [恢复虚拟机](/documentation/articles/backup-azure-restore-vms)
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->

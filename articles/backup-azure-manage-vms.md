@@ -221,9 +221,9 @@ PS C:\> Add-AlertRule -Operator GreaterThanOrEqual -Threshold 1 -ResourceId '/su
 
 **SubStatus**：进行备份操作时，与 status 相同。
 
-**RuleType**：始终设置为 *Event*，因为备份警报是基于事件的。
+**RuleType**：始终设置为 Event，因为备份警报是基于事件的。
 
-**ResourceGroup**：触发操作时所在的资源的 ResourceGroup。可以从 ResourceId 值获取此项。ResourceId 值中字段 */resourceGroups/* 与字段 */providers/* 之间的值是 ResourceGroup 的值。
+**ResourceGroup**：触发操作时所在的资源的 ResourceGroup。可以从 ResourceId 值获取此项。ResourceId 值中字段 /resourceGroups/ 与字段 /providers/ 之间的值是 ResourceGroup 的值。
 
 **Name**：警报规则的名称。
 
@@ -247,10 +247,10 @@ PS C:\> Add-AlertRule -Operator GreaterThanOrEqual -Threshold 1 -ResourceId '/su
 基于事件的警报会受到以下限制：
 
 1. 警报在备份保管库的所有虚拟机上触发。你不能通过自定义来获取备份保管库中特定虚拟机集的警报。
-2. 如果在下一警报期间没有触发与警报相对应的事件，则会自动取消警报。在 Add-AlertRule cmdlet 中使用 *WindowSize* 参数可设置警报触发持续时间。
+2. 如果在下一警报期间没有触发与警报相对应的事件，则会自动取消警报。在 Add-AlertRule cmdlet 中使用 WindowSize 参数可设置警报触发持续时间。
 
 ## 后续步骤
 
 - [还原 Azure VM](/documentation/articles/backup-azure-restore-vms)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0503_2016-->
