@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure AD Connect Sync：了解用户和联系人"
-	description="说明 Azure AD Connect Sync 中的用户和联系人。"
+	pageTitle="Azure AD Connect 同步：了解用户和联系人 | Azure"
+	description="介绍 Azure AD Connect 同步中的用户和联系人。"
 	services="active-directory"
 	documentationCenter=""
 	authors="markusvi"
@@ -10,12 +10,12 @@
 <tags
 	ms.service="active-directory"
 	ms.date="02/16/2016"
-	wacn.date="04/28/2016"/>
+	wacn.date="05/18/2016"/>
 
 
-# Azure AD Connect Sync：了解用户和联系人
+# Azure AD Connect 同步：了解用户和联系人
 
-有几个不同的原因导致你会有多个 Active Directory 林，并且还有几个不同的部署拓扑。常见的模型包括合并和收购之后的帐户-资源部署和 GAL 同步的林。但即使有纯模型，混合模型也是常见的模型。Azure AD Connect Sync 中的默认配置不会假定任何特定模型，但具体取决于安装指南中如何选择用户匹配，可以观察到不同的行为。
+有几个不同的原因导致你会有多个 Active Directory 林，并且还有几个不同的部署拓扑。常见的模型包括合并和收购之后的帐户-资源部署和 GAL 同步的林。但即使有纯模型，混合模型也是常见的模型。Azure AD Connect 同步中的默认配置不会假定任何特定模型，但具体取决于安装指南中如何选择用户匹配，可以观察到不同的行为。
 
 在本主题中，我们将讨论默认配置在某些拓扑中的行为方式。我们将讨论配置，并且同步规则编辑器可用于查看配置。
 
@@ -56,4 +56,4 @@
  
 <!--Image references-->
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0509_2016-->

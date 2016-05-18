@@ -1,6 +1,6 @@
 <properties
-	pageTitle="在 Azure AD 中分配管理员角色"
-	description="介绍 Azure AD 提供的管理员角色，以及如何分配这些角色。"
+	pageTitle="在 Azure Active Directory 中分配管理员角色 | Azure"
+	description="介绍 Azure Active Directory 提供的管理员角色，以及如何分配这些角色。"
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
@@ -89,4 +89,4 @@
 
 - [管理组](/documentation/articles/active-directory-manage-groups)
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0509_2016-->

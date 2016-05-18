@@ -10,13 +10,14 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="02/29/2016"
-	wacn.date="04/13/2016"/>
+	ms.date="04/14/2016"
+	wacn.date="05/16/2016"/>
 
 
 # 将本地标识与 Azure Active Directory 集成
 Azure AD Connect 是用于集成本地标识系统（例如 Windows Server Active Directory）与 Azure Active Directory，并将用户连接到 Office 365、Azure 和 1000 多种 SaaS 应用程序的工具。本主题将全面指导你准备和部署必要的组件，让用户使用其目前用于访问现有公司应用的同一标识来访问云服务。
 
+> [AZURE.IMPORTANT] [Azure AD Connect 是连接本地目录与 Azure AD 和 Office 365 的最佳方式。这是将 Azure AD Connect 从 Microsoft Azure Active Directory Sync (DirSync) 或 Azure AD Sync 升级的最佳时机，由于这些工具现在已弃用，并在 2017 年 4 月 13 日结束支持。](/documentation/articles/active-directory-aadconnect-dirsync-deprecated/?WT.mc_id=DirSyncDepACOM)
 ![什么是 Azure AD Connect](./media/active-directory-aadconnect/arch.png)
 
 ## 为何使用 Azure AD Connect
@@ -26,7 +27,6 @@ Azure AD Connect 是用于集成本地标识系统（例如 Windows Server Activ
 
 - 单个工具即可提供轻松同步和登录的部署体验。
 
-- 为方案提供最新功能。Azure AD Connect 取代了 DirSync 和 Azure AD Sync 等早期版本的标识集成工具。有关详细信息，请参阅[目录集成工具比较](/documentation/articles/active-directory-aadconnect-get-started-tools-comparison)。
 
 
 ### Azure AD Connect 工作原理
@@ -102,11 +102,12 @@ Azure AD Connect 随附了多个可以选择启用或已按默认启用的功能
 | 密码写回 | [密码管理入门](/documentation/articles/active-directory-passwords-getting-started) |
 | 设备写回 | [在 Azure AD Connect 中启用设备写回](/documentation/articles/active-directory-aadconnect-get-started-custom-device-writeback) |
 | 防止意外删除 | [Azure AD Connect 同步：防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes) |
+| 自动升级 | [Azure AD Connect：自动升级](/documentation/articles/active-directory-aadconnect-feature-automatic-upgrade)|
 
 ## 自定义 Azure AD Connect 同步
 Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配置。但总会有一些情况使得默认配置不适用，因此你必须进行调整。你可以根据本部分和链接主题中所述进行更改。
 
-。Azure AD Connect 是在 MIIS2003、ILM2007 和 FIM2010 基础上演进而来的。即使有些功能相同，但改变的部分也有很多。
+如果你以前没有用过同步拓扑，请先了解[技术概念](/documentation/articles/active-directory-aadconnect-technical-concepts)中所述的基本概念和术语。Azure AD Connect 是在 MIIS2003、ILM2007 和 FIM2010 基础上演进而来的。即使有些功能相同，但改变的部分也有很多。
 
 [默认配置](/documentation/articles/active-directory-aadconnectsync-understanding-default-configuration)假设配置中可能存在多个林。在这些拓扑中，用户对象可能表示为另一个林中的联系人。用户还可能在另一个资源林中具有链接的邮箱。[用户和联系人](/documentation/articles/active-directory-aadconnectsync-understanding-users-and-contacts)中介绍了默认配置的行为。
 
@@ -141,4 +142,4 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 有关将本地目录扩展到云的 Ignite 2015 演示文稿。
 
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0509_2016-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure AD Connect 同步：配置筛选 | Microsoft Azure"
-	description="说明如何在 Azure AD Connect Sync 中配置筛选。"
+	description="介绍如何在 Azure AD Connect 同步中配置筛选。"
 	services="active-directory"
 	documentationCenter=""
 	authors="andkjell"
@@ -274,4 +274,4 @@ Azure AD Connect 只删除其曾经认为在范围中的对象。如果 Azure AD
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0509_2016-->

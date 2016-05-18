@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure AD Connect 常见问题" 
+	pageTitle="Azure AD Connect：常见问题 | Azure"
 	description="此页包含有关 Azure AD Connect 的常见问题。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="02/29/2016"
-	wacn.date="04/13/2016"/>
+	wacn.date="05/16/2016"/>
 
 # Azure Active Directory Connect 常见问题
 
@@ -30,7 +30,7 @@
 
 所有网络软件、物理设备或其他软硬件限制最长连接时间的阈值应该至少为 5 分钟 (300 秒)，使装有 Azure AD Connect 客户端的服务器能够与 Azure Active Directory 连接。这同样适用于以前发布的 Microsoft 标识同步工具。
 
-**问：是否支持 SLD（单一标签域）？**  
+**是否支持 SLD（单一标签域）？**  
 Azure AD Connect 不支持使用 SLD 的本地林/域。
 
 **问：是否支持包含句点的 NetBios 名称？**  
@@ -78,4 +78,4 @@ Azure AD Connect 不支持 NetBios 名称包含句点“.”的本地林/域。
 
 - 使用此链接，以便通过 Azure 门户获取支持。 
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0509_2016-->

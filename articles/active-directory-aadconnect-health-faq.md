@@ -1,10 +1,10 @@
-<properties 
-	pageTitle="Azure AD Connect Health 常见问题" 
-	description="此常见问题回答了关于 Azure AD Connect Health 的问题。其中涵盖了服务使用方面的问题，包括计费模式、功能、限制和支持。" 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
+<properties
+	pageTitle="Azure AD Connect Health 常见问题"
+	description="此常见问题回答了关于 Azure AD Connect Health 的问题。其中涵盖了服务使用方面的问题，包括计费模式、功能、限制和支持。"
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
@@ -102,4 +102,4 @@
 * [在 AD FS 中使用 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-adfs)
 * [Azure AD Connect Health 操作](/documentation/articles/active-directory-aadconnect-health-operations)
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0405_2016-->

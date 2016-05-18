@@ -1,16 +1,16 @@
 <properties
-	pageTitle="Azure AD Connect Sync：了解声明性设置表达式"
+	pageTitle="Azure AD Connect 同步：了解声明性设置表达式 | Microsoft Azure"
 	description="说明声明性设置表达式"
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
+	authors="andkjell"
 	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.date="02/16/2016"
-	wacn.date="04/28/2016"/>
+	ms.date="04/14/2016"
+	wacn.date="05/18/2016"/>
 
 
 # Azure AD Connect 同步：了解声明性预配表达式
@@ -81,13 +81,13 @@ Active Directory 连接器为入站同步规则提供以下参数：
 
 字符串属性在默认情况下设置为可编制索引，并且最大长度为 448 个字符。如果你正在使用其中可能包含更多字符的字符串属性，则请确保属性流中包括以下内容：
 
-`attributeName <- Left([attributeName],448)`
+`attributeName` <- `Left([attributeName],448)`
 
 ### 更改 userPrincipalSuffix
 
-Active Directory 中的 userPrincipalName 属性并非始终被用户知晓，并且可能不适合作为登录名 ID。Azure AD Connect 同步安装向导允许选择不同的属性，例如 mail。但在某些情况下，必须计算该属性。例如：公司 Contoso 具有两个 Azure AD 目录，一个用于生产，另一个用于测试。他们希望测试租户中的用户只能更改登录 ID 中的后缀。
+Active Directory 中的 userPrincipalName 属性并非始终被用户知晓，并且可能不适合作为登录 ID。Azure AD Connect 同步安装向导允许选择不同的属性，例如 mail。但在某些情况下，必须计算该属性。例如：公司 Contoso 具有两个 Azure AD 目录，一个用于生产，另一个用于测试。他们希望测试租户中的用户只能更改登录 ID 中的后缀。
 
-`userPrincipalName <- Word([userPrincipalName],1,"@") & "@contosotest.com"`
+`userPrincipalName` <- `Word([userPrincipalName],1,"@") & "@contosotest.com"`
 
 在此表达式中，我们首先使用左侧所有内容 @-sign (Word)，并与固定字符串连接。
 
@@ -95,11 +95,9 @@ Active Directory 中的 userPrincipalName 属性并非始终被用户知晓，�
 
 Active Directory 中的某些属性在架构中是多值，不过它们在 Active Directory 用户和计算机中看上去是单值。一个示例就是说明属性。
 
-`description <- IIF(IsNullOrEmpty([description]),NULL,Left(Trim(Item([description],1)),448))`
+`description` <- `IIF(IsNullOrEmpty([description]),NULL,Left(Trim(Item([description],1)),448))`
 
 在此表达式中，如果属性具有值，我们会使用属性中的第一项 (Item)，删除前导空格和尾随空格 (Trim)，然后保留字符串中的前 448 个字符（左）。
-
-
 
 ## 高级概念
 
@@ -111,13 +109,13 @@ Active Directory 中的某些属性在架构中是多值，不过它们在 Activ
 
 ### ImportedValue
 
-函数 ImportedValues 不同于其他所有函数，因为属性名称必须放在引号内，而不是括在方括号中：ImportedValue(“proxyAddresses”)。
+函数 ImportedValues 不同于其他所有函数，因为其属性名称必须放在引号内，而不是括在方括号中：ImportedValue(“proxyAddresses”)。
 
 通常在同步期间，即使尚未导出或在导出过程中收到错误 (“top of the tower”)，属性也会使用预期值。入站同步会假定尚未到达已连接目录的属性最终会到达该目录。在某些情况下，仅同步由已连接目录已确认的值很重要，并且在这种情况下会使用函数 ImportedValue (“hologram and delta import tower”)。
 
 可以从 Exchange 的现成同步规则 In from AD – User Common 中找到这种示例。其中，在混合 Exchange 中，如果已确认已成功导出由 Exchange Online 添加的值，则应该只同步该值：
 
-`proxyAddresses <- RemoveDuplicates(Trim(ImportedValues("proxyAddresses")))`
+`proxyAddresses` <- `RemoveDuplicates(Trim(ImportedValues("proxyAddresses")))`
 
 有关函数的完整列表，请参阅 [Azure AD Connect Sync：函数引用](/documentation/articles/active-directory-aadconnectsync-functions-reference)
 
@@ -129,4 +127,4 @@ Active Directory 中的某些属性在架构中是多值，不过它们在 Activ
  
 <!--Image references-->
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0509_2016-->

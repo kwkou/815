@@ -1,10 +1,10 @@
-<properties 
-	pageTitle="Office 365 和 Azure AD 用户证书续订指南。" 
-	description="本文向 Office 365 用户说明了如何解决向其发送证书续订通知的电子邮件的问题。" 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
+<properties
+	pageTitle="Office 365 和 Azure AD 用户证书续订指南。| Azure"
+	description="本文向 Office 365 用户说明了如何解决向其发送证书续订通知的电子邮件的问题。"
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
@@ -63,10 +63,10 @@ https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
 ## 如果你的元数据不可公开访问
 如果 AutocertificateRollover 设置为 True 而联合身份验证元数据不可公开使用，则可执行以下步骤以确保在本地和云中对证书进行了更新：
 
-### 确保 AD FS 系统已生成新的证书。 
+### 确保 AD FS 系统已生成新的证书。
 
 - 确保你已登录主 AD FS 服务器。
-- 通过打开 PowerShell 命令窗口并运行以下命令，检查 AD FS 中的当前签名证书： 
+- 通过打开 PowerShell 命令窗口并运行以下命令，检查 AD FS 中的当前签名证书：
 
 `PS C:\>Get-ADFSCertificate –CertificateType token-signing.`
 
@@ -92,10 +92,9 @@ https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
 1.	打开用于 Windows PowerShell 的 Microsoft Azure Active Directory 模块。
 2.	运行 $cred=Get-Credential。当此 cmdlet 提示你输入凭据时，键入你的云服务管理员帐户凭据。
 3.	运行 Connect-MsolService –Credential $cred。此 cmdlet 会将你连接到云服务。通过工具运行任何其他已安装的 cmdlet 之前，必须创建将你连接到云服务的上下文。
-4.	如果你在并非用作 AD FS 主联合服务器的计算机上运行这些命令，请运行 Set-MSOLAdfscontext -Computer <AD FS primary server>，其中 <AD FS primary server> 是主 AD FS 服务器的内部 FQDN 名称。此 cmdlet 生成将你连接到 AD FS 的上下文。 
+4.	如果你在并非用作 AD FS 主联合服务器的计算机上运行这些命令，请运行 Set-MSOLAdfscontext -Computer <AD FS primary server>，其中 <AD FS primary server> 是主 AD FS 服务器的内部 FQDN 名称。此 cmdlet 生成将你连接到 AD FS 的上下文。
 5.	运行 Update-MSOLFederatedDomain –DomainName <domain>。此 cmdlet 会将 AD FS 中的设置更新到云服务中，并配置两者之间的信任关系。
 
->[AZURE.NOTE] 如果你需要支持多个顶级域（例如 contoso.com 和 fabrikam.com），则必须将 SupportMultipleDomain 开关用于任何 cmdlet。有关详细信息，请参阅“支持多个顶级域”。
-最后，请确保所有 Web 应用程序代理服务器都通过 [Windows Server May 2014](http://support.microsoft.com/kb/2955164) 汇总进行了更新，否则代理可能无法使用新证书自行进行更新，导致服务中断。
+>[AZURE.NOTE] 如果你需要支持多个顶级域（例如 contoso.com 和 fabrikam.com），则必须将 SupportMultipleDomain 开关用于任何 cmdlet。有关详细信息，请参阅“支持多个顶级域”。最后，请确保所有 Web 应用程序代理服务器都通过 [Windows Server May 2014](http://support.microsoft.com/kb/2955164) 汇总进行了更新，否则代理可能无法使用新证书自行进行更新，导致服务中断。
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0509_2016-->

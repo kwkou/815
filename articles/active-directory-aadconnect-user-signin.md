@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure AD Connect - 用户登录" 
+	pageTitle="Azure AD Connect：用户登录 | Azure"
 	description="Azure AD Connect 用户登录的自定义设置。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="10/13/2015"
-	wacn.date="05/12/2016"/>
+	ms.date="04/11/2016"
+	wacn.date="05/18/2016"/>
 
 
 
@@ -20,7 +20,8 @@ Azure AD Connect 可让用户使用同一组密码登录云和本地资源。你
 
 
 ### 密码同步
-使用密码同步可将用户密码的哈希从本地 Active Directory 同步到 Azure AD。当密码在本地更改或重置时，新密码将立即同步到 Azure AD，使用户用来访问云资源的密码始终与本地相同。密码绝不将发送到 Azure AD，也不会以明文存储在 Azure AD 中。可将密码同步与密码写回一起使用，以便在 Azure AD 中启用自助密码重置。
+使用密码同步可将用户密码的哈希从本地 Active Directory 同步到 Azure AD。当密码在本地更改或重置时，新密码将立即同步到 Azure AD，使用户用来访问云资源的密码始终与本地相同。密码绝不将发送到 Azure AD，也不会以明文存储在 Azure AD 中。
+可将密码同步与密码写回一起使用，以便在 Azure AD 中启用自助密码重置。
 
 <center>![云](./media/active-directory-aadconnect-user-signin/passwordhash.png)</center>
 
@@ -42,8 +43,8 @@ Azure AD Connect 可让用户使用同一组密码登录云和本地资源。你
 如果你要部署新场或使用现有场：
 
 - 联合服务器上的本地管理员凭据。
-- 要部署网站代理角色的任何工作组（未加入域）服务器上的本地管理员凭据。
-- 执行向导的计算机必须能够通过 Windows 远程管理连接到要安装 AD FS 或网站代理的任何其他计算机。
+- 要部署 Web 应用程序代理角色的任何工作组（未加入域）服务器上的本地管理员凭据。
+- 执行向导的计算机必须能够通过 Windows 远程管理连接到要安装 AD FS 或 Web 应用程序代理的任何其他计算机。
 
 #### 使用早期版本的 AD FS 或第三方解决方案登录
 如果你已使用早期版本的 AD FS（例如 AD FS 2.0）或第三方联合身份验证提供者配置了云登录，则可以通过 Azure AD Connect 选择跳过用户登录配置。这样，你便可以获取最新的同步和 Azure AD Connect 的其他功能，同时仍可使用现有的解决方案进行登录。
@@ -58,9 +59,9 @@ Azure AD Connect 可让用户使用同一组密码登录云和本地资源。你
 	- 使用第三方提供者或智能卡的本地 Multi-Factor Authentication（了解 Windows Server 2012 R2 中适用于 AD FS 的第三方 MFA 提供者）
 	- Active Directory 集成功能，例如软帐户锁定或 AD 密码及工作时数策略
 	- 使用设备注册、Azure AD 联接或 Intune MDM 策略对本地资源和云资源进行条件性访问
- 
+
 
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0509_2016-->

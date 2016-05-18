@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect 端口"
+	pageTitle="Azure AD Connect：端口 | Azure"
 	description="此技术参考页面描述了需要为 Azure AD Connect 打开的端口"
 	services="active-directory"
 	documentationCenter=""
@@ -80,4 +80,4 @@
 ### 6b - 适用于 (AD FS/Sync) 和 Azure AD 的 Azure AD Connect Health 代理的终结点
 有关终结点的列表，请参阅 [Azure AD Connect Health 代理的要求部分](/documentation/articles/active-directory-aadconnect-health#requirements)
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0509_2016-->
