@@ -122,7 +122,7 @@
 
 2. **ReceiveAndSendNotification**
 
-	a.此项目使用 *WindowsAzure.ServiceBus* 和 *Microsoft.Web.WebJobs.Publish* Nuget 包，并基于[服务总线 Pub/Sub 编程]构建。
+	a.此项目使用 WindowsAzure.ServiceBus 和 Microsoft.Web.WebJobs.Publish Nuget 包，并基于[服务总线 Pub/Sub 编程]构建。
 
 	b.这是另一个 C# 控制台应用，我们将它作为 [Azure WebJob] 运行，因为它必须连续运行以侦听来自 LoB/后端系统的消息。它将是移动后端的一部分。
 
@@ -210,7 +210,7 @@
 	
 	![][3]
 
-	g.将该作业配置为“连续运行”，以便在你登录到 Azure 管理门户时，应看到如下内容：
+	g.将该作业配置为“连续运行”，以便在你登录到 [Azure 经典门户]时，应看到如下内容：
 
 	![][4]
 
@@ -221,7 +221,7 @@
 	
 	b.确保应用程序已启用接收 toast 通知。
 
-	c.确保在应用启动时（替换 *HubName* 和 *DefaultListenSharedAccessSignature* 后）调用以下通知中心注册代码：
+	c.确保在应用启动时（替换 HubName 和 DefaultListenSharedAccessSignature 后）调用以下通知中心注册代码：
 
         private async void InitNotificationsAsync()
         {
@@ -247,7 +247,7 @@
 
 	![][5]
 
-4. 消息最初发送到正被 WebJob 中的服务总线订阅监视的服务总线主题。收到消息后，将创建通知并将其发送到移动应用。当你转到 Azure 管理门户中 WebJob 的“日志”链接时，可以仔细查看 WebJob 日志来确认处理：
+4. 消息最初发送到正被 WebJob 中的服务总线订阅监视的服务总线主题。收到消息后，将创建通知并将其发送到移动应用。当你转到 [Azure 经典门户]中 Web 作业的“日志”链接时，可以仔细查看 Web 作业日志来确认处理：
 
 	![][6]
 
@@ -262,9 +262,10 @@
 <!-- Links -->
 [通知中心示例]: https://github.com/Azure/azure-notificationhubs-samples
 [Azure 移动服务]: /home/features/mobile-services/
-[Azure 服务总线]: /documentation/articles/service-bus-fundamentals-hybrid-solutions
+[Azure 服务总线]: /documentation/articles/fundamentals-service-bus-hybrid-solutions
 [服务总线 Pub/Sub 编程]: /documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions
 [Azure WebJob]: /documentation/articles/web-sites-create-web-jobs
 [通知中心 - Windows 通用教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
+[Azure 经典门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->

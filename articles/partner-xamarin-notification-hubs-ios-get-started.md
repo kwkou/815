@@ -33,7 +33,7 @@
 + [Xcode 6.0][Install Xcode]
 + iOS 7.0（或更高版本）兼容设备
 + iOS 开发人员计划成员身份
-+ [Xamarin.iOS]
++ [Xamarin Studio]
 
    > [AZURE.NOTE] 由于 iOS 推送通知配置要求，你必须在物理 iOS 设备（iPhone 或 iPad）而不是在模拟器上部署和测试示例应用程序。
 
@@ -62,7 +62,7 @@
 
 
 你的通知中心现在已配置为使用 APNS，并且你有连接字符串用于注册你的应用和发送推送通知。
--->
+
 
 ##将你的应用连接到通知中心
 
@@ -172,7 +172,7 @@
             }
         }
 
-    > [AZURE.NOTE]你可以选择覆盖 **FailedToRegisterForRemoteNotifications()** 以处理无网络连接等情况。
+    > [AZURE.NOTE] 你可以选择覆盖 **FailedToRegisterForRemoteNotifications()** 以处理无网络连接等情况。如果用户可能会在脱机模式下（例如飞行模式）下启动你的应用程序，并且你想要处理应用特定的推送消息方案，则此操作特别重要。
 
 
 10. 在你的设备上运行应用程序。
@@ -243,7 +243,6 @@
 
 可以在 Apple [本地和推送通知编程指南]中找到所有可能的负载。
 
-
 ####（可选）从移动服务发送通知
 
 在本部分，我们将使用移动服务通过节点脚本来发送推送通知。
@@ -262,7 +261,7 @@
 
 4. 创建作业时，单击该作业名称。然后单击顶部栏上的“脚本”选项卡。
 
-5. 在你的计划程序函数中插入以下脚本。确保将占位符替换为你先前获取的通知中心名称和 *DefaultFullSharedAccessSignature* 的连接字符串。单击“保存”。
+5. 在你的计划程序函数中插入以下脚本。确保将占位符替换为你先前获取的通知中心名称和 DefaultFullSharedAccessSignature 的连接字符串。单击“保存”。
 
 		var azure = require('azure');
 		var notificationHubService = azure.createNotificationHubService('<Hubname>', '<SAS Full access >');
@@ -321,4 +320,4 @@
 [Xamarin.iOS]: http://xamarin.com/download
 [WindowsAzure.Messaging]: https://github.com/infosupport/WindowsAzure.Messaging.iOS
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->

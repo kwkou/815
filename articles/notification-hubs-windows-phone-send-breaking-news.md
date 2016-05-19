@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="12/15/2015" 
-	wacn.date="05/09/2016" />
+	ms.date="03/28/2016" 
+	wacn.date="05/18/2016" />
 
 # 使用通知中心发送突发新闻
 
@@ -21,13 +21,13 @@
 
 本主题演示如何使用 Azure 通知中心将突发新闻通知广播到 Windows Phone 8.0/8.1 Silverlight 应用。如果你要以 Windows 应用商店或 Phone 8.1 应用为目标，请参阅 [Windows Universal](/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news) 版本。完成时，你可以注册感兴趣的突发新闻类别并仅接收这些类别的推送通知。此方案对于很多应用程序来说是常见模式，在其中必须将通知发送到以前声明过对它们感兴趣的一组用户，这样的应用程序有 RSS 阅读器、针对音乐迷的应用程序等。
 
-在创建通知中心的注册时，通过加入一个或多个_标记_来启用广播方案。将通知发送到标签时，已注册该标签的所有设备将接收通知。因为标签是简单的字符串，它们不必提前设置。有关标记的详细信息，请参阅[通知中心指南]。
+在创建通知中心的注册时，通过加入一个或多个标记来启用广播方案。将通知发送到标签时，已注册该标签的所有设备将接收通知。因为标签是简单的字符串，它们不必提前设置。有关标记的详细信息，请参阅[通知中心路由和标记表达式](/documentation/articles/notification-hubs-routing-tag-expressions)。
 
 ##先决条件
 
 本主题以你在[通知中心入门]中创建的应用程序为基础。在开始本教程之前，必须先阅读[通知中心入门]。
 
-##<a name="adding-categories"></a>向应用程序中添加类别选择
+##<a name="adding-categories"></a>向应用添加类别选择
 
 第一步是向现有主页添加 UI 元素，这些元素允许用户选择要注册的类别。用户选择的类别存储在设备上。应用程序启动时，使用所选类别作为标签在你的通知中心创建设备注册。
 
@@ -186,7 +186,7 @@
     此类使用隔离存储区存储此设备要接收的新闻类别。它还包含用于通过[模板](/documentation/articles/notification-hubs-templates)通知注册来注册这些类别的方法。
 
 
-4. 在 App.xaml.cs 项目文件中，将以下属性添加到 **App** 类：将 `<hub name>` 和 `<connection string with listen access>` 占位符替换为通知中心名称和前面获取的 *DefaultListenSharedAccessSignature* 的连接字符串。
+4. 在 App.xaml.cs 项目文件中，将以下属性添加到 **App** 类：将 `<hub name>` 和 `<connection string with listen access>` 占位符替换为通知中心名称和前面获取的 DefaultListenSharedAccessSignature 的连接字符串。
 
 		public Notifications notifications = new Notifications("<hub name>", "<connection string with listen access>");
 
@@ -305,4 +305,8 @@
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0104_2016-->
+
+
+
+
+<!---HONumber=Mooncake_0503_2016-->

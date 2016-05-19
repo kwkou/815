@@ -382,4 +382,5 @@
 [安全推送]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-secure-push
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
-<!---HONumber=Mooncake_0405_2016-->
+
+<!---HONumber=Mooncake_0503_2016-->

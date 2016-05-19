@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="12/15/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="03/28/2016"
+	wacn.date="05/18/2016"/>
 
 # 使用通知中心发送突发新闻
 
@@ -60,7 +60,9 @@
 
 		@property NSData* deviceToken;
 
-		- (void)storeCategoriesAndSubscribeWithCategories:(NSArray*)categories 
+		- (id)initWithConnectionString:(NSString*)listenConnectionString HubName:(NSString*)hubName;
+
+		- (void)storeCategoriesAndSubscribeWithCategories:(NSArray*)categories
 					completion:(void (^)(NSError* error))completion;
 
 		- (NSSet*)retrieveCategories;
@@ -124,7 +126,7 @@
 
 8. 在 AppDelegate.m 的 **didFinishLaunchingWithOptions** 方法中，于方法开头添加代码来初始化 notifications 实例：
  
-	在 hubinfo.h 中定义的 `HUBNAME` 和 `HUBLISTENACCESS` 内，`<hub name>` 和 `<connection string with listen access>` 占位符应已替换为你的通知中心的名称和你之前获取的 *DefaultListenSharedAccessSignature* 的连接字符串。
+	在 hubinfo.h 中定义的 `HUBNAME` 和 `HUBLISTENACCESS` 内，`<hub name>` 和 `<connection string with listen access>` 占位符应已替换为你的通知中心的名称和你之前获取的 DefaultListenSharedAccessSignature 的连接字符串。
 
 		self.notifications = [[Notifications alloc] initWithConnectionString:HUBLISTENACCESS HubName:HUBNAME];
 
@@ -361,4 +363,5 @@
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Notification Hubs How-To for iOS]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [get-started]: /documentation/articles/notification-hubs-ios-get-started
-<!---HONumber=Mooncake_0104_2016-->
+[Azure 经典门户]: https://manage.windowsazure.cn
+<!---HONumber=Mooncake_0503_2016-->

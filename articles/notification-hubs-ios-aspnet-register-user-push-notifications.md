@@ -9,9 +9,9 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="12/16/2015"
-	wacn.date="05/09/2016"/>
-
+	ms.date="03/28/2016"
+	wacn.date="05/18/2016"/>
+	
 # 通过使用 ASP.NET 注册推送通知的当前用户
 
 > [AZURE.SELECTOR]
@@ -21,7 +21,7 @@
 
 ##概述
 
-本主题演示在 ASP.NET Web API 执行注册时如何请求向 Azure 通知中心注册推送通知。它是对教程[使用通知中心通知用户][使用通知中心通知用户]的扩展。你必须在该教程中已完成创建经过身份验证的移动服务所需的步骤。有关通知用户方案的详细信息，请参阅[使用通知中心通知用户][使用通知中心通知用户]。
+本主题演示在 ASP.NET Web API 执行注册时如何请求向 Azure 通知中心注册推送通知。本主题是对教程[使用通知中心通知用户]的扩展。你必须在该教程中已完成创建经过身份验证的移动服务所需的步骤。有关通知用户方案的详细信息，请参阅[使用通知中心通知用户]。
 
 ##更新应用程序  
 
@@ -230,4 +230,4 @@
 [使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [通知中心入门]: /documentation/articles/notification-hubs-ios-get-started
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->

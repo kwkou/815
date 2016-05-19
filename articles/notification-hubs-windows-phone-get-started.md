@@ -1,8 +1,9 @@
 <properties
-	pageTitle="Azure 通知中心入门（Windows Phone）| Microsoft Azure"
+	pageTitle="在 Windows Phone 上借助 Azure 通知中心发送推送通知 | Azure"
 	description="在本教程中，你将了解如何使用 Azure 通知中心将通知推送到 Windows Phone 8 或 Windows Phone 8.1 Silverlight 应用程序。"
 	services="notification-hubs"
 	documentationCenter="windows"
+        keywords="推送通知,push notification,windows phone 推送"
 	authors="wesmc7777"
 	manager="dwrede"
 	editor="dwrede"/>
@@ -10,7 +11,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="03/10/2016"
-	wacn.date="05/09/2016"/>
+	wacn.date="05/18/2016"/>
 	
 	
 # 在 Windows Phone 上借助 Azure 通知中心发送推送通知
@@ -211,4 +212,4 @@
   [toast 目录]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/jj662938(v=vs.105).aspx
   [磁贴目录]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/hh202948(v=vs.105).aspx
   [MPNS 身份验证模式]: http://msdn.microsoft.com/library/windowsphone/develop/ff941099.aspx
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->

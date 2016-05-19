@@ -9,7 +9,7 @@
 <tags 
 	ms.service="notification-hubs" 
 	ms.date="02/11/2016"
-	wacn.date="03/30/2016"/>
+	wacn.date="05/18/2016"/>
 
 
 #Azure 通知中心
@@ -82,15 +82,10 @@ Azure 通知中心提供易用的基础结构，使你能够从任何后端（�
 ![][1]
 
 
-
-
-
-
 通知中心提供了随时可用的推送通知基础结构，该基础结构具有以下优势：
 
-- **多个平台。**   
+- **多个平台。**
 	+  支持所有主要移动平台。通知中心可将推送通知发送到 Windows 应用商店、iOS、Android 和 Windows Phone 应用程序。
-
 
 	+  通知中心提供了用于将通知发送到所有受支持平台的常见界面。不需要特定于平台的协议。应用程序后端可以采用特定于平台的格式或独立于平台的格式发送通知。应用程序只与通知中心通信。
 
@@ -129,12 +124,13 @@ Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
     + 请注意，出于安全方面的考虑，Mobile Apps 将在注册中去除所有标记。直接从后端使用通知中心将标记与设备相关联。
 3. 从应用后端使用通知中心发送通知
 
-以下是这种集成为开发人员带来的便利性：
-- **Mobile Apps 客户端 SDK**。 这些多平台 SDK 提供简单的 API 用于注册，然后自动与链接到移动应用的通知中心联系。开发人员不需要通过通知中心凭据进行挖掘，以及使用其他服务。
-    + SDK 使用经 Mobile Apps 验证的用户 ID 自动标记指定的设备，以启用向用户推送通知的方案。
-    + SDK 自动使用 Mobile Apps 安装 ID 作为 GUID 来向通知中心注册，省去了开发人员维护多个服务 GUID 的麻烦。
+以下是这种集成为开发人员带来的便利：
+- **Mobile Apps 客户端 SDK。** 这些多平台 SDK 提供简单的 API 用于注册，然后自动与链接到移动应用的通知中心联系。开发人员不需要深入了解通知中心凭据和使用其他服务。
+    + SDK 将使用 Mobile Apps 的已经过身份验证的用户 ID 来自动标记给定设备，以实现推送到用户的方案。
+    + SDK 自动使用 Mobile Apps 安装 ID 作为 GUID 来注册到通知中心，省去了开发人员维护多个服务 GUID 的麻烦。
 - **安装模型。** Mobile Apps 使用通知中心的最新推送模型来呈现 JSON 安装中所有与设备关联的推送属性，该模型与推送通知密切合作且易于使用。
 - **灵活性。** 即使是就地集成的，开发人员也始终可以选择直接使用通知中心。
+- **[Azure 门户] 中的集成体验。** Mobile Apps 以可视化方式呈现推送功能，开发人员可以通过 Mobile Apps 轻松使用关联的通知中心。
 
 
 
@@ -153,10 +149,10 @@ Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
 + [Microsoft.WindowsAzure.Messaging.NotificationHub]
 + [Microsoft.ServiceBus.Notifications] 
 
-
-  [0]: ./media/notification-hubs-overview/SBPushNotifications1.gif
-  [1]: ./media/notification-hubs-overview/SBPushNotifications2.gif
-  [客户如何使用通知中心]: /services/notification-hubs
+  [Azure 门户]: http://manage.azure.cn/
+  [0]: ./media/notification-hubs-overview/registration-diagram.png
+  [1]: ./media/notification-hubs-overview/notification-hub-diagram.png
+  [客户如何使用通知中心]: /zh-cn/services/notification-hubs
   [通知中心教程和指南]: /documentation/services/notification-hubs
   [iOS]: /documentation/articles/notification-hubs-ios-get-started
   [Windows Universal]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
@@ -171,4 +167,4 @@ Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
 
   [标记]: (http://msdn.microsoft.com/library/azure/dn530749.aspx)
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0503_2016-->

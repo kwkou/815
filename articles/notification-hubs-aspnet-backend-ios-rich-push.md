@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="12/16/2015"
-	wacn.date="01/14/2016" />
+	ms.date="03/28/2016"
+	wacn.date="05/18/2016" />
 
 # Azure 通知中心富推送
 
@@ -374,4 +374,4 @@
 [IOS3]: ./media/notification-hubs-aspnet-backend-ios-rich-push/rich-push-ios-3.png
 [IOS4]: ./media/notification-hubs-aspnet-backend-ios-rich-push/rich-push-ios-4.png
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0503_2016-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="notification-hubs" 
-	ms.date="12/10/2015" 
-	wacn.date="05/09/2016"/>
+	ms.date="03/28/2016" 
+	wacn.date="05/18/2016"/>
 
 # 使用 PowerShell 部署和管理通知中心
 
@@ -30,7 +30,7 @@
 
 在开始阅读本文前，你必须具有：
 
-- Azure 订阅。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[购买选项]、[免费试用]。
+- Azure 订阅。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[购买选项]、[试用]。
 
 - 配备 Azure PowerShell 的计算机。有关说明，请参阅[安装和配置 Azure PowerShell]。
 
@@ -152,12 +152,11 @@ else
  
 
 [购买选项]: /pricing/overview/
-[免费试用]: /pricing/1rmb-trial/
+[试用]: /pricing/1rmb-trial/
 [安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure
 [服务总线的 .NET API]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx
 [New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx
 [Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/zh-cn/library/azure/dn495113.aspx
  
-
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0503_2016-->
