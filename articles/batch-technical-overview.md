@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Batch 服务基础知识 | Microsoft Azure"
+	pageTitle="Azure Batch 服务基础知识 | Azure"
 	description="了解如何使用 Azure Batch 服务执行大规模并发工作负荷与 HPC 工作负荷"
 	services="batch"
 	documentationCenter=""
@@ -40,8 +40,6 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 有关 Batch 与 Azure 中其他 HPC 解决方案选项的比较，请参阅 [Batch 和 HPC 解决方案](/documentation/articles/batch-hpc-solutions)。
 
->[AZURE.NOTE] 目前，Batch 仅支持基于 Windows Server 的虚拟机上运行的工作负荷。
-
 ## 使用 Batch 进行开发
 
 当你构建解决方案来使用 Azure Batch 处理并行工作负荷时，可以使用 Batch API 来编程。Batch API 可让你创建和管理计算节点（虚拟机）池，以及计划作业和任务在这些节点上运行。编写的客户端应用程序或服务使用 Batch API 来与 Batch 服务通信。可以为组织有效率地处理大量工作负荷，或提供前端服务给客户，让他们可以在一个、数百个或数千个节点上，按需要或按计划运行作业和任务。
@@ -52,7 +50,7 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 开发 Batch 解决方案时，你将在 Microsoft Azure 中使用以下帐户。
 
-- **Azure 帐户和订阅** - 如果你没有 Azure 订阅，可以注册[试用 Azure 帐户][free_account]。当你创建帐户时，系统将为你创建默认订阅。
+- **Azure 帐户和订阅** - 如果你没有 Azure 订阅，可以激活你的 [MSDN 订户权益][msdn_benefits]，或注册[试用 Azure 帐户][free_account]。当你创建帐户时，系统将为你创建默认订阅。
 
 - **Batch 帐户** - 当应用程序与 Batch 服务交互时，将使用帐户名、帐户的 URL 和访问密钥作为凭据。所有 Batch 资源（如池、计算节点、作业和任务）都与 Batch 帐户关联。可以在 Azure 门户中[创建和管理 Batch 帐户](/documentation/articles/batch-account-create-portal)。
 
@@ -131,4 +129,4 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 [1]: ./media/batch-technical-overview/tech_overview_01.png
 [2]: ./media/batch-technical-overview/tech_overview_02.png
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->
