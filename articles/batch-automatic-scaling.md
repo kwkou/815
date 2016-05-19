@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="自动缩放 Azure Batch 池中的计算节点 | Microsoft Azure"
+	pageTitle="自动缩放 Azure Batch 池中的计算节点 | Azure"
 	description="对云池启用自动缩放功能可以动态调整池中计算节点的数目。"
 	services="batch"
 	documentationCenter=""
@@ -10,20 +10,20 @@
 
 <tags
 	ms.service="batch"
-	ms.date="01/08/2016"
-	wacn.date="05/09/2016"/>
+	ms.date="04/18/2016"
+	wacn.date="05/18/2016"/>
 
 # 自动缩放 Azure 批处理 ( Batch )池中的计算节点
 
-通过在 Azure Batch 中使用自动缩放，你可以在执行作业时在 Batch 池中动态添加或删除计算节点，从而自动调整应用程序所使用的处理能力。这种自动调整可以节省时间和资金。
+使用自动缩放，Azure Batch 可以根据定义的参数在池中动态添加或删除计算节点。这样，你便可以调整应用程序使用的计算资源量，从而节省时间和资金。
 
-你可以通过将自动缩放公式与池相关联（例如，使用 [Batch .NET](/documentation/articles/batch-dotnet-get-started) 库中的 [PoolOperations.EnableAutoScale][net_enableautoscale] 方法），对计算节点池启用自动缩放。然后，Batch 服务将使用此公式来确定执行工作负荷所需的计算节点数目。池中的计算节点数（对应于定期收集的服务度量数据样本）会根据关联的公式按可配置的间隔进行调整。
+你可以通过将定义的自动缩放公式与计算节点池相关联（例如，使用 [Batch .NET](/documentation/articles/batch-dotnet-get-started) 库中的 [PoolOperations.EnableAutoScale][net_enableautoscale] 方法），对计算节点池启用自动缩放。然后，Batch 服务将使用此公式来确定执行工作负荷所需的计算节点数目。Batch 将会响应定期收集的服务指标数据样本，并根据公式按可配置的间隔调整池中的计算节点数。
 
 可以在创建池时启用自动缩放，也可以对现有池启用该功能。你还可以更改已启用“自动缩放”功能的池的现有公式。Batch 可让你在将公式分配给池之前先评估公式，以及监视自动缩放运行的状态。
 
 ## 自动缩放公式
 
-自动缩放公式是一个字符串值，该值包含分配给池的 [autoScaleFormula][rest_autoscaleformula] 元素 (Batch REST API) 或 [CloudPool.AutoScaleFormula][net_cloudpool_autoscaleformula] 属性 (Batch .NET API) 的一个或多个语句。这些公式由你来定义。将公式分配到池后，它们将确定池中可供下一个处理间隔使用的计算节点数目（稍后将详细说明间隔）。公式是一个字符串，其大小不能超过 8 KB，最多可以包含 100 个以分号分隔的语句，可以包括换行符和注释。
+自动缩放公式是你定义的字符串值，其中包含分配给池的 [autoScaleFormula][rest_autoscaleformula] 元素 (Batch REST) 或 [CloudPool.AutoScaleFormula][net_cloudpool_autoscaleformula] 属性 (Batch .NET) 的一个或多个语句。将公式分配到池后，Batch 服务将使用公式来确定池中可供下一个处理间隔使用的目标计算节点数（稍后将详细说明间隔）。公式是一个字符串，其大小不能超过 8 KB，最多可以包含 100 个以分号分隔的语句，可以包括换行符和注释。
 
 可以将自动缩放公式视为使用 Batch 自动缩放“语言”。 公式语句是自由格式的表达式，可能包括系统定义的和用户定义的变量和常量。公式语句可以通过内置类型、运算符和函数对这些值执行各种操作。例如，语句可以采用以下格式：
 
@@ -36,7 +36,7 @@ VAR₀ = Expression₀(system-defined variables);
 VAR₁ = Expression₁(system-defined variables, VAR₀);
 ```
 
-在公式中使用语句的目标是实现池要缩放到的计算节点数目--**专用节点**的**目标**数目。此数目可以大于、小于或等于池中当前的节点数目。Batch 按特定的时间间隔（下面讨论[自动缩放时间间隔](#interval)）对池的自动缩放公式求值。然后，它会将池中节点的目标数目调整成在求值时自动缩放公式所指定的数目。
+在公式中使用这些语句的目标是实现池要缩放到的计算节点数目--**专用节点**的**目标**数目。此数目可以大于、小于或等于池中当前的节点数目。Batch 按特定的时间间隔（下面讨论[自动缩放时间间隔](#automatic-scaling-interval)）对池的自动缩放公式求值。然后，它会将池中节点的目标数目调整成在求值时自动缩放公式所指定的数目。
 
 举个简单的例子，以下两行自动缩放公式根据活动任务数目指定应该调整的节点数目（最多 10 个计算节点）：
 
@@ -47,7 +47,7 @@ $TargetDedicated = min(10, $averageActiveTaskCount);
 
 本文的后续部分将介绍构成自动缩放公式的各个实体，包括变量、运算符、操作和函数。你会了解如何在 Batch 中获取各种计算资源和任务度量值。你可以使用这些度量值，根据资源使用情况和任务状态对池的节点计数进行智能化调整。然后，你将了解如何使用 Batch REST 和 .NET API 构建公式以及对池启用自动缩放。最后，我们将讨论几个示例公式。
 
-> [AZURE.NOTE] 每个 Azure 批处理帐户限制为可用于处理的计算节点的最大数目。Batch 服务将会根据该限制来创建节点。因此，它可能达不到公式所指定的目标数目。请参阅 [Azure Batch 服务的配额和限制](/documentation/articles/batch-quota-limit)了解有关查看和提高帐户配额的信息。
+> [AZURE.IMPORTANT] 每个 Azure 批处理帐户限制为可用于处理的计算节点的最大数目。Batch 服务将会根据该限制来创建节点。因此，它可能达不到公式所指定的目标数目。请参阅 [Azure Batch 服务的配额和限制](batch-quota-limit.md)了解有关查看和提高帐户配额的信息。
 
 ## <a name="variables"></a>变量
 
@@ -86,70 +86,70 @@ $TargetDedicated = min(10, $averageActiveTaskCount);
   </tr>
   <tr>
     <td>$CPUPercent</td>
-    <td>CPU 使用率的平均百分比</td>
+    <td>CPU 使用率的平均百分比。</td>
   </tr>
   <tr>
     <td>$WallClockSeconds</td>
-    <td>使用的秒数</td>
+    <td>使用的秒数。</td>
   </tr>
   <tr>
     <td>$MemoryBytes</td>
-    <td>使用的平均 MB 数</td>
+    <td>使用的平均 MB 数。</td>
   <tr>
     <td>$DiskBytes</td>
-    <td>本地磁盘上使用的平均 GB 数</td>
+    <td>本地磁盘上使用的平均 GB 数。</td>
   </tr>
   <tr>
     <td>$DiskReadBytes</td>
-    <td>读取的字节数</td>
+    <td>读取的字节数。</td>
   </tr>
   <tr>
     <td>$DiskWriteBytes</td>
-    <td>写入的字节数</td>
+    <td>写入的字节数。</td>
   </tr>
   <tr>
     <td>$DiskReadOps</td>
-    <td>执行的读取磁盘操作数</td>
+    <td>执行的读取磁盘操作数。</td>
   </tr>
   <tr>
     <td>$DiskWriteOps</td>
-    <td>执行的写入磁盘操作数</td>
+    <td>执行的写入磁盘操作数。</td>
   </tr>
   <tr>
     <td>$NetworkInBytes</td>
-    <td>入站字节数</td>
+    <td>入站字节数。</td>
   </tr>
   <tr>
-    <td>$NetworkInBytes</td>
-    <td>出站字节数</td>
+    <td>$NetworkOutBytes</td>
+    <td>出站字节数。</td>
   </tr>
   <tr>
     <td>$SampleNodeCount</td>
-    <td>计算节点数</td>
+    <td>计算节点数。</td>
   </tr>
   <tr>
     <td>$ActiveTasks</td>
-    <td>处于活动状态的任务数</td>
+    <td>处于活动状态的任务数。</td>
   </tr>
   <tr>
     <td>$RunningTasks</td>
-    <td>处于运行状态的任务数</td>
+    <td>处于运行状态的任务数。</td>
   </tr>
   <tr>
     <td>$SucceededTasks</td>
-    <td>成功完成的任务数</td>
+    <td>成功完成的任务数。</td>
   </tr>
   <tr>
     <td>$FailedTasks</td>
-    <td>失败的任务数</td>
+    <td>失败的任务数。</td>
   </tr>
   <tr>
     <td>$CurrentDedicated</td>
-    <td>当前的专用计算节点数</td>
+    <td>当前的专用计算节点数。</td>
   </tr>
 </table>
 
-> [AZURE.TIP] 上面所示的只读系统定义变量是可提供各种方法来访问相互关联数据的 *对象* 。有关详细信息，请参阅下面的[获取样本数据](#getsampledata)。
+> [AZURE.TIP] 上面所示的只读系统定义变量是可提供各种方法来访问相互关联数据的对象。有关详细信息，请参阅下面的[获取样本数据](#getsampledata)。
 
 ## 类型
 
@@ -183,180 +183,64 @@ $TargetDedicated = min(10, $averageActiveTaskCount);
 
 上面所列的类型允许的**操作**：
 
-<table>
-  <tr>
-    <th>操作</th>
-    <th>允许的操作</th>
-  </tr>
-  <tr>
-    <td>double &lt;运算符> double => double</td>
-    <td>+, -, *, /</td>
-  </tr>
-  <tr>
-    <td>double &lt;运算符> timeinterval => timeinterval</td>
-    <td>*</td>
-  </tr>
-  <tr>
-    <td>doubleVec &lt;运算符> double => doubleVec</td>
-    <td>+, -, *, /</td>
-  </tr>
-  <tr>
-    <td>doubleVec &lt;运算符> doubleVec => doubleVec</td>
-    <td>+, -, *, /</td>
-  </tr>
-  <tr>
-    <td>timeinterval &lt;运算符> double => timeinterval</td>
-    <td>*, /</td>
-  </tr>
-  <tr>
-    <td>timeinterval &lt;运算符> timeinterval => timeinterval</td>
-    <td>+, -</td>
-  </tr>
-  <tr>
-    <td>timeinterval &lt;运算符> timestamp => timestamp</td>
-    <td>+</td>
-  </tr>
-  <tr>
-    <td>timestamp &lt;运算符> timeinterval => timestamp</td>
-    <td>+</td>
-  </tr>
-  <tr>
-    <td>timestamp &lt;运算符> timestamp => timeinterval</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>&lt;运算符>double => double</td>
-    <td>-, !</td>
-  </tr>
-  <tr>
-    <td>&lt;运算符>timeinterval => timeinterval</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>double &lt;运算符> double => double</td>
-    <td>&lt;, &lt;=, ==, >=, >, !=</td>
-  </tr>
-  <tr>
-    <td>string &lt;运算符> string => double</td>
-    <td>&lt;, &lt;=, ==, >=, >, !=</td>
-  </tr>
-  <tr>
-    <td>timestamp &lt;运算符> timestamp => double</td>
-    <td>&lt;, &lt;=, ==, >=, >, !=</td>
-  </tr>
-  <tr>
-    <td>timeinterval &lt;运算符> timeinterval => double</td>
-    <td>&lt;, &lt;=, ==, >=, >, !=</td>
-  </tr>
-  <tr>
-    <td>double &lt;运算符> double => double</td>
-    <td>&amp;&amp;, ||</td>
-  </tr>
-  <tr>
-    <td>测试仅限 double（非零值为 true，零值为 false）</td>
-    <td>? :</td>
-  </tr>
-</table>
+| 操作 | 支持的运算符 | 结果类型 |
+| ------------------------------------- | --------------------- | ------------- |
+| double *运算符* double | +, -, *, / | double |
+| double *运算符* timeinterval | * | timeinterval |
+| doubleVec *运算符* double | +, -, *, / | doubleVec |
+| doubleVec *运算符* doubleVec | +, -, *, / | doubleVec |
+| timeinterval *运算符* double | *, / | timeinterval |
+| timeinterval *运算符* timeinterval | +, - | timeinterval |
+| timeinterval *运算符* timestamp | + | timestamp |
+| timestamp *运算符* timeinterval | + | timestamp |
+| timestamp *运算符* timestamp | - | timeinterval |
+| *operator*double | -, ! | double |
+| *operator*timeinterval | - | timeinterval |
+| double *运算符* double | <, <=, ==, >=, >, != | double |
+| string *运算符* string | <, <=, ==, >=, >, != | double |
+| timestamp *运算符* timestamp | <, <=, ==, >=, >, != | double |
+| timeinterval *运算符* timeinterval | <, <=, ==, >=, >, != | double |
+| double *运算符* double | &&, &#124;&#124;     | | double |
+
+测试包含三元运算符的双精度值 (`double ? statement1 : statement2`) 时，非零值为 **true**，零值为 **false**。
 
 ## 函数
 
 可以使用以下预定义**函数**来定义自动缩放公式。
 
-<table>
-  <tr>
-    <th>函数</th>
-    <th>说明</th>
-  </tr>
-  <tr>
-    <td>double <b>avg</b>(doubleVecList)</td>
-    <td>返回 DoubleVecList 中所有值的平均值。</td>
-  </tr>
-  <tr>
-    <td>double <b>len</b>(doubleVecList)</td>
-    <td>返回从 doubleVecList 创建的向量的长度。</td>
-  <tr>
-    <td>double <b>lg</b>(double)</td>
-    <td>返回 double 的对数底数 2。</td>
-  </tr>
-  <tr>
-    <td>doubleVec <b>lg</b>(doubleVecList)</td>
-    <td>返回 doubleVecList 的分量对数底数 2。对于单一的 double 参数，必须显式传递 vec(double)。否则会采用 double lg(double) 版本。</td>
-  </tr>
-  <tr>
-    <td>double <b>ln</b>(double)</td>
-    <td>返回 double 的自然对数。</td>
-  </tr>
-  <tr>
-    <td>doubleVec <b>ln</b>(doubleVecList)</td>
-    <td>返回 doubleVecList 的分量对数底数 2。对于单一的 double 参数，必须显式传递 vec(double)。否则会采用 double lg(double) 版本。</td>
-  </tr>
-  <tr>
-    <td>double <b>log</b>(double)</td>
-    <td>返回 double 的对数底数 10。</td>
-  </tr>
-  <tr>
-    <td>doubleVec <b>log</b>(doubleVecList)</td>
-    <td>返回 doubleVecList 的分量对数底数 10。对于单一的 double 参数，必须显式传递 vec(double)。否则会采用 double log(double) 版本。</td>
-  </tr>
-  <tr>
-    <td>double <b>max</b>(doubleVecList)</td>
-    <td>返回 doubleVecList 中的最大值。</td>
-  </tr>
-  <tr>
-    <td>double <b>min</b>(doubleVecList)</td>
-    <td>返回 doubleVecList 中的最小值。</td>
-  </tr>
-  <tr>
-    <td>double <b>norm</b>(doubleVecList)</td>
-    <td>返回从 doubleVecList 创建的向量的二范数。
-  </tr>
-  <tr>
-    <td>double <b>percentile</b>(doubleVec v, double p)</td>
-    <td>返回向量 v 的百分位元素。</td>
-  </tr>
-  <tr>
-    <td>double <b>rand</b>()</td>
-    <td>返回介于 0.0 和 1.0 之间的随机值。</td>
-  </tr>
-  <tr>
-    <td>double <b>range</b>(doubleVecList)</td>
-    <td>返回 doubleVecList 中最小值和最大值之间的差。</td>
-  </tr>
-  <tr>
-    <td>double <b>std</b>(doubleVecList)</td>
-    <td>返回 doubleVecList 中值的样本标准偏差。</td>
-  </tr>
-  <tr>
-    <td><b>stop</b>()</td>
-    <td>停止对自动缩放表达式求值。</td>
-  </tr>
-  <tr>
-    <td>double <b>sum</b>(doubleVecList)</td>
-    <td>返回 doubleVecList 的所有组成部分之和。</td>
-  </tr>
-  <tr>
-    <td>timestamp <b>time</b>(string dateTime="")</td>
-    <td>如果未传递参数，则返回当前时间的时间戳；如果传递了参数，则返回 dateTime 字符串的时间戳。支持的 dateTime 格式为 W3C-DTF 和 RFC 1123。</td>
-  </tr>
-  <tr>
-    <td>double <b>val</b>(doubleVec v, double i)</td>
-    <td>返回在起始索引为零的向量 v 中，位置 i 处的元素的值。</td>
-  </tr>
-</table>
+| 函数 | 返回类型 | 说明
+| --------------------------------- | ------------- | --------- |
+| avg(doubleVecList) | double | 返回 DoubleVecList 中所有值的平均值。
+| len(doubleVecList) | double | 返回从 doubleVecList 创建的向量的长度。
+| lg(double) | double | 返回 double 的对数底数 2。
+| lg(doubleVecList) | doubleVec | 返回 doubleVecList 的分量对数底数 2。必须为参数显式传递 vec(double)。否则会采用 double lg(double) 版本。
+| ln(double) | double | 返回 double 的自然对数。
+| ln(doubleVecList) | doubleVec | 返回 doubleVecList 的分量对数底数 2。必须为参数显式传递 vec(double)。否则会采用 double lg(double) 版本。
+| log(double) | double | 返回 double 的对数底数 10。
+| log(doubleVecList) | doubleVec | 返回 doubleVecList 的分量对数底数 10。对于单一的 double 参数，必须显式传递 vec(double)。否则会采用 double log(double) 版本。
+| max(doubleVecList) | double | 返回 doubleVecList 中的最大值。
+| min(doubleVecList) | double | 返回 doubleVecList 中的最小值。
+| norm(doubleVecList) | double | 返回从 doubleVecList 创建的向量的二范数。
+| percentile(doubleVec v, double p) | double | 返回向量 v 的百分位元素。
+| rand() | double | 返回介于 0.0 和 1.0 之间的随机值。
+| range(doubleVecList) | double | 返回 doubleVecList 中最小值和最大值之间的差。
+| std(doubleVecList) | double | 返回 doubleVecList 中值的样本标准偏差。
+| stop() | | 停止对自动缩放表达式求值。
+| sum(doubleVecList) | double | 返回 doubleVecList 的所有组成部分之和。
+| time(string dateTime="") | timestamp | 如果未传递参数，则返回当前时间的时间戳；如果传递了参数，则返回 dateTime 字符串的时间戳。支持的 dateTime 格式为 W3C-DTF 和 RFC 1123。
+| val(doubleVec v, double i) | double | 返回在起始索引为零的向量 v 中，位置 i 处的元素的值。
 
-上表中描述的某些函数可以接受列表作为参数。逗号分隔列表为double和doubleVec的任意组合。例如：
+上表中描述的某些函数可以接受列表作为参数。逗号分隔列表为 double 和 doubleVec 的任意组合。例如：
 
 `doubleVecList := ( (double | doubleVec)+(, (double | doubleVec) )* )?`
 
-doubleVecList值在计算之前将转换为单个 doubleVec。例如，如果 `v = [1,2,3]`，则调用 `avg(v)` 相当于调用 `avg(1,2,3)`。调用 `avg(v, 7)` 相当于调用 `avg(1,2,3,7)`。
+doubleVecList 值在计算之前将转换为单个 doubleVec。例如，如果 `v = [1,2,3]`，则调用 `avg(v)` 相当于调用 `avg(1,2,3)`。调用 `avg(v, 7)` 相当于调用 `avg(1,2,3,7)`。
 
 ## <a name="getsampledata"></a>获取样本数据
 
 自动缩放公式使用 Batch 服务提供的度量值数据（样本）。公式根据服务所提供的值来扩大或缩小池的大小。上述系统定义的变量是可提供各种方法来访问与该对象关联的数据的对象。例如，以下表达式显示了一个用于获取过去五分钟 CPU 使用率的请求：
 
 `$CPUPercent.GetSample(TimeInterval_Minute * 5)`
-
-这些方法可用于获取样本数据。
 
 <table>
   <tr>
@@ -397,7 +281,7 @@ doubleVecList值在计算之前将转换为单个 doubleVec。例如，如果 `v
   </tr>
 </table>
 
-### 样本、样本百分比和 *GetSample()* 方法
+### 样本、样本百分比和 GetSample() 方法
 
 自动缩放公式的核心操作是获取任务和资源度量值数据，然后根据该数据调整池大小。因此，请务必明确知道自动缩放公式如何与度量值数据或“样本”交互。
 
@@ -485,11 +369,11 @@ Batch 评估上述代码行后，会以值的向量形式返回样本范围。�
 2. 如果 CPU 使用率低，则降低池中计算节点的目标数。
 3. 始终将最大节点数限制为 400。
 
-为了在 CPU 使用率高时*增加* 节点数，我们定义了一个语句，如果在过去 10 分钟内最小平均 CPU 使用率高于 70%，该语句就会向用户定义变量 ($TotalNodes) 填充一个值，值的大小为节点当前目标数的 110%：
+为了在 CPU 使用率高时增加节点数，我们定义了一个语句，如果在过去 10 分钟内最小平均 CPU 使用率高于 70%，该语句就会向用户定义变量 ($TotalNodes) 填充一个值，值的大小为节点当前目标数的 110%：
 
 `$TotalNodes = (min($CPUPercent.GetSample(TimeInterval_Minute*10)) > 0.7) ? ($CurrentDedicated * 1.1) : $CurrentDedicated;`
 
-如果过去 60 分钟的平均 CPU 使用率*低于* 20%，则下一个语句会将同一变量设置为节点当前目标数的 90%。这会降低 CPU 使用率低时的目标数。请注意，此语句还引用以上语句中的用户定义变量 *$TotalNodes*。
+如果过去 60 分钟的平均 CPU 使用率低于20%，则下一个语句会将同一变量设置为节点当前目标数的 90%。这会降低 CPU 使用率低时的目标数。请注意，此语句还引用以上语句中的用户定义变量 $TotalNodes。
 
 `$TotalNodes = (avg($CPUPercent.GetSample(TimeInterval_Minute * 60)) < 0.2) ? ($CurrentDedicated * 0.9) : $TotalNodes;`
 
@@ -515,9 +399,9 @@ $TargetDedicated = min(400, $TotalNodes)
 - [BatchClient.PoolOperations.CreatePool](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.createpool.aspx)--在调用此 .NET 方法创建池后，将设置池的 [CloudPool.AutoScaleEnabled](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.autoscaleenabled.aspx) 属性和 [CloudPool.AutoScaleFormula](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.autoscaleformula.aspx) 属性，以启用自动缩放。
 - [将池添加到帐户](https://msdn.microsoft.com/library/azure/dn820174.aspx)--创建池后，此 REST API 请求中使用的 enableAutoScale 和 autoScaleFormula 元素将为池设置自动缩放。
 
-> [AZURE.IMPORTANT] 如果你使用上述方法之一创建了支持自动缩放的池，则**不得**指定该池的targetDedicated参数。另请注意，如果你希望手动调整启用自动缩放功能的池的大小（例如，使用 [BatchClient.PoolOperations.ResizePool][net_poolops_resizepool] 来调整），则必须先**禁用**该池的自动缩放功能，然后再调整池的大小。
+> [AZURE.IMPORTANT] 如果你使用上述方法之一创建了支持自动缩放的池，则**不得**指定该池的 targetDedicated 参数。另请注意，如果你希望手动调整启用自动缩放功能的池的大小（例如，使用 [BatchClient.PoolOperations.ResizePool][net_poolops_resizepool] 来调整），则必须先**禁用**该池的自动缩放功能，然后再调整池的大小。
 
-下面的代码段演示如何通过 [Batch .NET][net_api] 库创建启用自动缩放的池 ([CloudPool][net_cloudpool])。该池的自动缩放公式在星期一将节点的目标数设置为 5，在每星期的其他日子将该目标数设置为 1。此外，自动缩放间隔设置为 30 分钟（请参阅下面的[自动缩放间隔](#interval)）。在本文的此部分与其他 C# 代码段中，“myBatchClient”是适当初始化的 [BatchClient][net_batchclient] 实例。
+下面的代码段演示如何通过 [Batch .NET][net_api] 库创建启用自动缩放的池 ([CloudPool][net_cloudpool])。该池的自动缩放公式在星期一将节点的目标数设置为 5，在每星期的其他日子将该目标数设置为 1。此外，自动缩放间隔设置为 30 分钟（请参阅下面的[自动缩放间隔](#automatic-scaling-interval)）。在本文的此部分与其他 C# 代码段中，“myBatchClient”是适当初始化的 [BatchClient][net_batchclient] 实例。
 
 ```
 CloudPool pool = myBatchClient.PoolOperations.CreatePool("mypool", "3", "small");
@@ -540,28 +424,29 @@ pool.Commit();
 
 ## 创建池后启用自动缩放
 
-如果你使用targetDedicated参数设置了包含指定计算节点数的池，则以后可以更新现有池以自动缩放。可以通过以下方法之一实现此目的：
+如果你使用 targetDedicated 参数设置了包含指定计算节点数的池，则以后可以更新现有池以自动缩放。可以通过以下方法之一实现此目的：
 
 - [BatchClient.PoolOperations.EnableAutoScale][net_enableautoscale]--此 .NET 方法需要现有池的 ID 和自动缩放公式才能应用到池。
 - [允许对池进行自动缩放][rest_enableautoscale]--此 REST API 请求要求 URI 中存在现有池的 ID，以及请求正文中存在自动缩放公式。
 
-> [AZURE.NOTE] 如果某个值是在创建池时为targetDedicated参数指定的，则会在评估自动缩放公式时忽略该值。
+> [AZURE.NOTE] 如果某个值是在创建池时为 targetDedicated 参数指定的，则会在评估自动缩放公式时忽略该值。
 
 此代码段演示了如何在现有池上通过 [Batch .NET][net_api] 库启用自动缩放功能。请注意，针对现有池启用公式和更新公式使用相同的方法。因此，如果已启用自动缩放功能，则此方法会针对指定池更新公式。该代码段假设“mypool”是现有池 ([CloudPool][net_cloudpool]) 的 ID。
-```
+
 		 // Define the autoscaling formula. In this snippet, the  formula sets the target number of nodes to 5 on
 		 // Mondays, and 1 on every other day of the week
 		 string myAutoScaleFormula = "$TargetDedicated = (time().weekday==1?5:1);";
+
 		 // Update the existing pool's autoscaling formula by calling the BatchClient.PoolOperations.EnableAutoScale
 		 // method, passing in both the pool's ID and the new formula.
 		 myBatchClient.PoolOperations.EnableAutoScale("mypool", myAutoScaleFormula);
-```
+
 ## 评估自动缩放公式
 
 在应用程序中使用公式之前，最好先对它进行评估。评估公式时，可以针对现有池对公式进行“测试性运行”。执行此操作时，可通过以下方式：
 
 - [BatchClient.PoolOperations.EvaluateAutoScale](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscale.aspx) 或 [BatchClient.PoolOperations.EvaluateAutoScaleAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscaleasync.aspx)--这些 .NET 方法需要现有池的 ID，并需要包含自动缩放公式的字符串。调用的结果将包含在 [AutoScaleEvaluation](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscaleevaluation.aspx) 类的实例中。
-- [对自动缩放公式求值](https://msdn.microsoft.com/library/azure/dn820183.aspx)--在此 REST API 请求中，池 ID 在 URI 中指定。自动缩放公式在请求正文的autoScaleFormula元素中指定。操作的响应包含任何可能与该公式相关的错误信息。
+- [对自动缩放公式求值](https://msdn.microsoft.com/library/azure/dn820183.aspx)--在此 REST API 请求中，池 ID 在 URI 中指定。自动缩放公式在请求正文的 autoScaleFormula 元素中指定。操作的响应包含任何可能与该公式相关的错误信息。
 
 > [AZURE.NOTE] 若要评估某个自动缩放公式，你必须先通过有效的公式对池启用了自动缩放功能。
 
@@ -696,16 +581,9 @@ string formula = string.Format(@"
 
 ## 后续步骤
 
-1. 若要完全评估应用程序的效率，你可能需要访问计算节点。若要利用远程访问，必须将一个用户帐户添加到你要访问的节点，并且必须为该节点检索远程桌面协议 (RDP) 文件。
-    - 通过以下方法之一添加用户帐户：
-        * [New-AzureBatchVMUser](https://msdn.microsoft.com/library/mt149846.aspx)--此 PowerShell cmdlet 使用池名称、计算节点名称、帐户名和密码作为参数。
-        * [BatchClient.PoolOperations.CreateComputeNodeUser](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.createcomputenodeuser.aspx)--此 .NET 方法会创建 [ComputeNodeUser](https://msdn.microsoft.com/library/microsoft.azure.batch.computenodeuser.aspx) 类的一个实例，你可以在该实例上针对计算节点设置帐户名和密码，然后再在该实例上调用 [ComputeNodeUser.Commit](https://msdn.microsoft.com/library/microsoft.azure.batch.computenodeuser.commit.aspx)，以便在该节点上创建用户。
-        * [将用户帐户添加到节点](https://msdn.microsoft.com/library/dn820137.aspx)--池的名称和计算节点在 URI 中指定。帐户名称和密码发送到此 REST API 请求的请求正文中的节点。
-    - 获取 RDP 文件：
-        * [BatchClient.PoolOperations.GetRDPFile](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.getrdpfile.aspx)--此 .NET 方法需要池 ID、节点 ID 以及要创建的 RDP 文件的名称。
-        * [从节点获取远程桌面协议文件](https://msdn.microsoft.com/library/dn820120.aspx)--此 REST API 请求需要池的名称以及计算节点的名称。响应包含 RDP 文件的内容。
-        * [Get-AzureBatchRDPFile](https://msdn.microsoft.com/library/mt149851.aspx)--此 PowerShell cmdlet 从指定的计算节点获取 RDP 文件，并将其保存到指定的文件位置或流。
-2.	某些应用程序会生成大量难以处理的数据。解决此问题的方法之一是进行[有效的列表查询](/documentation/articles/batch-efficient-list-queries)。
+* [Maximize Azure Batch compute resource usage with concurrent node tasks（通过并发节点任务最大限度提高 Azure Batch 计算资源的使用量）](batch-parallel-node-tasks.md)详细说明了如何在池中的计算节点上同时执行多个任务。除了自动缩放以外，此功能还可帮助降低某些工作负荷的作业持续时间，从而节省资金。
+
+* 为了进一步提升效率，请确保 Batch 应用程序以最佳的方式查询 Batch 服务。在 [Query the Azure Batch service efficiently（有效地查询 Azure Batch 服务）](batch-efficient-list-queries.md)中，可以了解在查询数千个计算节点或任务的状态时，如何限制跨线数据量。
 
 [net_api]: https://msdn.microsoft.com/library/azure/mt348682.aspx
 [net_batchclient]: http://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx
@@ -721,4 +599,4 @@ string formula = string.Format(@"
 [rest_autoscaleinterval]: https://msdn.microsoft.com/en-us/library/azure/dn820173.aspx
 [rest_enableautoscale]: https://msdn.microsoft.com/library/azure/dn820173.aspx
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->

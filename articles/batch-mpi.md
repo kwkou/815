@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure Batch 中使用多实例任务运行 MPI 应用程序 | Microsoft Azure"
+	pageTitle="在 Azure Batch 中使用多实例任务运行 MPI 应用程序 | Azure"
 	description="了解如何在 Azure Batch 中使用多实例任务类型执行消息传递接口 (MPI) 应用程序。"
 	services="batch"
 	documentationCenter=".net"
@@ -10,7 +10,7 @@
 <tags
 	ms.service="batch"
 	ms.date="02/19/2016"
-	wacn.date="04/13/2016" />
+	wacn.date="05/18/2016" />
 
 # 在 Azure Batch 中使用多实例任务来执行消息传递接口 (MPI) 应用程序
 
@@ -33,15 +33,16 @@
 
 ## 多实例任务的要求
 
-多实例任务需要有**已启用节点间通信**和**已禁用并发任务执行**的池。如果尝试在已禁用节点间通信，或 maxTasksPerNode 值大于 1 的池中执行多实例任务，则永远不排定任务 -- 它无限期停留在“活动”状态。本代码段显示如何使用 Batch .NET 库创建这种池。
+多实例任务需要有已启用**节点间通信**和**已禁用并发任务执行**的池。如果尝试在已禁用节点间通信，或 maxTasksPerNode 值大于 1 的池中执行多实例任务，则永远不排定任务 -- 它无限期停留在“活动”状态。本代码段显示如何使用 Batch .NET 库创建这种池。
 
 ```
 CloudPool myCloudPool =
 	myBatchClient.PoolOperations.CreatePool(
 		poolId: "MultiInstanceSamplePool",
-		osFamily: "4",
+		targetDedicated: 3
 		virtualMachineSize: "small",
-		targetDedicated: 3);
+		cloudServiceConfiguration: new CloudServiceConfiguration(osFamily: "4"));
+
 // Multi-instance tasks require inter-node communication, and those nodes
 // must run only one task at a time.
 myCloudPool.InterComputeNodeCommunicationEnabled = true;
@@ -67,6 +68,7 @@ StartTask startTask = new StartTask
     WaitForSuccess = true
 };
 myCloudPool.StartTask = startTask;
+
 // Commit the fully configured pool to the Batch service to actually create
 // the pool and its compute nodes.
 await myCloudPool.CommitAsync();
@@ -84,6 +86,7 @@ await myCloudPool.CommitAsync();
 // subtasks execute the CoordinationCommandLine.
 CloudTask myMultiInstanceTask = new CloudTask(id: "mymultiinstancetask",
     commandline: "cmd /c mpiexec.exe -wdir %AZ_BATCH_TASK_SHARED_DIR% MyMPIApplication.exe");
+
 // Configure the task's MultiInstanceSettings. The CoordinationCommandLine will be executed by
 // the primary and all subtasks.
 myMultiInstanceTask.MultiInstanceSettings =
@@ -94,6 +97,7 @@ myMultiInstanceTask.MultiInstanceSettings =
                      "MyMPIApplication.exe")
     }
 };
+
 // Submit the task to the job. Batch will take care of splitting it into subtasks and
 // scheduling them for execution on the nodes.
 await myBatchClient.JobOperations.AddTaskAsync("mybatchjob", myMultiInstanceTask);
@@ -101,7 +105,7 @@ await myBatchClient.JobOperations.AddTaskAsync("mybatchjob", myMultiInstanceTask
 
 ## 主要任务和子任务
 
-当你创建任务的多实例设置时，需要指定用于执行任务的计算节点数目。当你将任务提交给作业时，Batch 服务将创建一个**主要**任务和足够的**子任务**，并且合计符合指定的节点数。
+当你创建任务的多实例设置时，需要指定用于执行任务的计算节点数目。当你将任务提交给作业时，Batch 服务将创建一个**主要任务**和足够的**子任务**，并且合计符合指定的节点数。
 
 系统分配范围介于 0 到 numberOfInstances-1 的整数 ID 给这些任务。ID 为 0 的任务是主要任务，其他所有 ID 都是子任务。例如，如果为任务创建以下多实例设置，则主要任务的 ID 为 0，而子任务的 ID 为 1 到 9。
 
@@ -166,23 +170,28 @@ cmd /c ""%MSMPI_BIN%\mpiexec.exe"" -c 1 -wdir %AZ_BATCH_TASK_SHARED_DIR% MyMPIAp
 // Obtain the job and the multi-instance task from the Batch service
 CloudJob boundJob = batchClient.JobOperations.GetJob("mybatchjob");
 CloudTask myMultiInstanceTask = boundJob.GetTask("mymultiinstancetask");
+
 // Now obtain the list of subtasks for the task
 IPagedEnumerable<SubtaskInformation> subtasks = myMultiInstanceTask.ListSubtasks();
+
 // Asynchronously iterate over the subtasks and print their stdout and stderr
 // output if the subtask has completed
 await subtasks.ForEachAsync(async (subtask) =>
 {
     Console.WriteLine("subtask: {0}", subtask.Id);
     Console.WriteLine("exit code: {0}", subtask.ExitCode);
+
     if (subtask.State == TaskState.Completed)
     {
         ComputeNode node =
 			await batchClient.PoolOperations.GetComputeNodeAsync(subtask.ComputeNodeInformation.PoolId,
                                                                  subtask.ComputeNodeInformation.ComputeNodeId);
+
         NodeFile stdOutFile = await node.GetNodeFileAsync(subtask.ComputeNodeInformation.TaskRootDirectory + "\" + Constants.StandardOutFileName);
         NodeFile stdErrFile = await node.GetNodeFileAsync(subtask.ComputeNodeInformation.TaskRootDirectory + "\" + Constants.StandardErrorFileName);
         stdOut = await stdOutFile.ReadAsStringAsync();
         stdErr = await stdErrFile.ReadAsStringAsync();
+
         Console.WriteLine("node: {0}:", node.Id);
         Console.WriteLine("stdout.txt: {0}", stdOut);
         Console.WriteLine("stderr.txt: {0}", stdErr);
@@ -234,4 +243,4 @@ await subtasks.ForEachAsync(async (subtask) =>
 
 [1]: ./media/batch-mpi/batch_mpi_01.png "多实例概述"
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->
