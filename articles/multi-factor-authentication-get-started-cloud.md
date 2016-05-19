@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="02/16/2016" 
-	wacn.date="05/09/2016"/>
+	ms.date="04/06/2016" 
+	wacn.date="05/18/2016"/>
 
 # 云中的 Azure 多重身份验证入门
 
@@ -23,19 +23,19 @@
 
 1. [注册 Azure 订阅](/pricing/free-trial/)
 	- 如果你还没有 Azure 订阅，需要注册一个订阅。如果你是新手，只是在摸索如何使用 Azure MFA，你可以使用试用版订阅
-2. [创建 Multi-Factor Auth 提供程序](#creating-an-azure-multi-factor-auth-provider)或者[向用户分配许可证](/documentation/articles/multi-factor-authentication-get-started-cloud#assigning-an-azure-ad-premium-or-enterprise-mobility-license-to-users)
-	- 你需要创建 Azure Multi-Factor Auth 提供程序并将它分配给目录，或将 Azure MFA、Azure AD Premium 和/或 EMS 许可证分配给用户。Azure Multi-Factor Authentication 已随附在 Azure Active Directory Premium 中，因此也随附在 Enterprise Mobility Suite 中。如果你拥有的 Azure MFA、Azure AD Premium 和 EMS 许可证足以涵盖将要使用 Multi-Factor Authentication 的所有用户，则不需要创建 Multi-Factor Auth 提供程序。有关将许可证分配给用户的方式，请参阅后面的部分。
+2. [创建 Multi-Factor Auth 提供程序](#creating-an-azure-multi-factor-auth-provider)或[将许可证分配给用户](#assigning-an-azure-ad-premium-or-enterprise-mobility-license-to-users)
+	- 接下来你需要执行以下操作之一。创建 Azure Multi-Factor Auth 提供程序，并将其分配到你的目录或将许可证分配给你的用户。许可证将提供给拥有 Azure MFA、Azure AD Premium 或 EMS 的用户。Azure Multi-Factor Authentication 随附在 Azure Active Directory Premium 中。它也随附在企业移动性套件中。如果你有足够的许可证，则不需要创建 Auth 提供程序。 
 3. [为用户启用 Multi-Factor Authentication](#turn-on-multi-factor-authentication-for-users)
 	- 通过 Office 365 或 Azure 门户为用户启用 Azure MFA。有关操作方法的信息，请参阅后面的部分。
 4. [向用户发送电子邮件户，以通知他们有关 MFA 的信息](#send-email-to-end-users)
-	- 在用户为其帐户启用 Multi-Factor Authentication 后，建议你向他们发送一封电子邮件，以通知相关的操作。系统将在用户下次登录时提示完成相应的过程，因此这样能让他们做好心理准备。有关示例电子邮件模板，请参阅后面的部分。
+	- 在用户为其帐户启用 Multi-Factor Authentication 后，建议你发送一封电子邮件通知他们。系统将在用户下次登录时提示完成相应的过程，因此电子邮件能让他们做好心理准备。 
 
 
 
 ## 创建 Azure Multi-Factor Auth 提供程序
-默认情况，具有 Azure Active Directory 的全局管理员可以使用 Multi-Factor Authentication。但是，如果要将 Multi-Factor Authentication 扩展到你的所有用户，并且/或者希望全域管理员和 Office 365 用户能够利用受信任 IP、自定义问候语及报告等功能，则必须购买完整版本的 Azure MFA。实现此目的的方法之一是创建 Multi-Factor Authentication 提供程序。
+默认情况，具有 Azure Active Directory 和 Office 365 用户的全局管理员可以使用多重身份验证。但是，如果你想要充分利用高级功能，则必须购买完整版的 Azure MFA。
 
-
+Azure Multi-Factor Auth 提供程序用于利用 Azure MFA 完整版提供的功能。它适用于没有通过 Azure MFA、Azure AD Premium 或 EMS 获得许可证的用户。默认情况下，Azure MFA、Azure AD Premium 和 EMS 包括 Azure MFA 完整版。如果你有许可证，则无需 Azure Multi-Factor Auth 提供程序。以下步骤演示如何创建 Azure Multi-Factor Auth 提供程序。
 
 ### 创建 Multi-Factor Auth 提供程序
 --------------------------------------------------------------------------------
@@ -50,9 +50,9 @@
 		- 按身份验证 - 购买按身份验证收费的模型。通常用于在面向使用者的应用程序中使用 Azure Multi-Factor Authentication 的方案。
 		- 按启用的用户 - 购买按每个启用的用户收费的模型。通常用于员工访问 Office 365 等应用程序的方案。
 	2. 目录 - 与 Multi-Factor Authentication 提供程序关联的 Azure Active Directory 租户。请注意以下事项：
-		- 无需 Azure AD 目录即可创建 Multi-Factor Auth 提供程序。如果计划仅使用 Azure Multi-Factor Authentication 服务器或 SDK，则此项可以保留为空。
-		- 如果你想要将 Multi-Factor Authentication扩展到你的所有用户和/或希望全局管理员能够利用受信任的 IP、自定义问候语和报告等高级功能，则需要将 Multi-Factor Authentication 提供程序与 Azure AD 目录关联。
-		- 仅当要将本地 Active Directory 环境与 Azure AD 目录同步时，才需要 Azure AD Connect、AAD Sync 或 DirSync。如果你只使用不与 Active Directory 的本地实例同步的 Azure AD 目录，则不需要这些功能。
+		- 无需 Azure AD 目录即可创建 Multi-Factor Auth 提供程序。如果计划仅使用多重身份验证服务器或 SDK，则可将此框留空。
+		- Multi-Factor Auth 提供程序必须与 Azure AD 目录相关联才能利用高级功能。
+		- 仅当要将本地 Active Directory 环境与 Azure AD 目录同步时，才需要 Azure AD Connect、AAD Sync 或 DirSync。如果你只使用未同步的 Azure AD 目录，则不要求同步。
 		
 
 
@@ -85,10 +85,11 @@ Azure Multi-Factor Authentication 中的用户帐户具有以下三种不同状�
 
 状态 | 说明 |受影响的非浏览器应用| 说明 
 :-------------: | :-------------: |:-------------: |:-------------: |
-已禁用 | 未加入多重身份验证的新用户的默认状态。|否|用户当前未使用多重身份验证。
-Enabled |用户已加入多重身份验证。|否。它们将继续工作，直到注册过程完成。|用户已启用多重身份验证，但尚未完成注册过程。这些用户在下次登录时，系统将提示其完成注册过程。
-强制|用户已加入，并已完成使用多重身份验证前的注册过程。|是的。除非创建及使用应用密码，否则将无法工作。 | 用户不一定完成了注册。如果他们已完成注册过程，表示他们正在使用多重身份验证。否则，在他们下次登录时，系统将提示其完成注册过程
-创建身份验证提供程序或者将许可证分配给用户后，接下来我们要为目录中的用户启用 MFA。可以使用以下过程为用户启用 MFA。
+已禁用 | 未加入多重身份验证的新用户的默认状态。|否|用户未使用多重身份验证。
+Enabled |用户已加入多重身份验证。|否。它们继续工作，直到注册过程完成。|用户已启用多重身份验证，但尚未完成注册过程。这些用户在下次登录时，系统将提示其完成注册过程。
+强制|用户已加入，并已完成使用多重身份验证前的注册过程。|是的。应用需要应用密码。 | 用户不一定完成了注册。如果他们已完成注册过程，表示他们正在使用多重身份验证。否则，在用户下次登录时，系统将提示其完成注册过程。
+
+可以使用以下过程为用户启用 MFA。
 
 ### 启用 Multi-Factor Authentication
 --------------------------------------------------------------------------------
@@ -98,12 +99,12 @@ Enabled |用户已加入多重身份验证。|否。它们将继续工作，直�
 4.  在顶部单击“用户”。
 5.  在页面底部，单击“管理 Multi-Factor Auth”。
 6.  找到要为其启用多重身份验证的用户。你可能需要在顶部切换视图。确保用户的状态为“已禁用”，并勾选其名称旁边的框。
-7.  此时将在右侧显示两个选项：“启用”和“管理用户设置”。单击“启用”。此时将显示一个弹出窗口，其中指定你需要对用户执行的后续步骤。单击“启用 Multi-Factor Auth”。
-8.  启用用户后，建议你向这些用户发送一封电子邮件，告知他们如何使用非浏览器应用而不会被锁定。
+7.  在右侧，单击“启用”。单击“启用 Multi-Factor Auth”。
+8.  启用用户后，建议你通过电子邮件通知他们。它还应该通知他们如何使用其非浏览器应用以避免被锁定。
 
 <center>![Cloud](./media/multi-factor-authentication-get-started-cloud/user.png)</center>
 
-若要使用 Windows PowerShell 更改用户的状态，可以使用以下代码。你可以将 `$st.State` 更改为前述任一状态。
+若要使用 Windows PowerShell 更改状态，可以使用以下代码。你可以将 `$st.State` 更改为提到过的任一状态。
 
 		$st = New-Object -TypeName Microsoft.Online.Administration.StrongAuthenticationRequirement
 		$st.RelyingParty = "*"
@@ -149,6 +150,7 @@ Enabled |用户已加入多重身份验证。|否。它们将继续工作，直�
 		管理员
 
 ## 后续步骤
-在云中设置多重身份验证后，接下来可以转到[配置多重身份验证](/documentation/articles/multi-factor-authentication-whats-next) 以继续执行后续步骤。
+现在你已在云中安装 Multi-Factor Authentication，可以配置和设置部署。请参阅[配置 Azure Multi-Factor Authentication。](/documentation/articles/multi-factor-authentication-whats-next)
 
-<!---HONumber=Mooncake_0215_2016-->
+
+<!---HONumber=Mooncake_0509_2016-->
