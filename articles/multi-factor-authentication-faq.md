@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="02/16/2016" 
+	ms.date="04/07/2016" 
 	wacn.date="04/13/2016"/>
 
 # Azure 多重身份验证常见问题
@@ -99,4 +99,13 @@ Azure 多重身份验证服务通过短信聚合器发送短信。许多因素�
 
 此问题的解决方法是，管理员相关操作与非管理员操作使用单独的用户帐户。稍后你可以链接管理员帐户和非管理员帐户的邮箱，以便使用非管理员帐户登录到 Outlook。有关此解决方法的更多详细信息，请参阅 [使管理员能够打开和查看用户邮箱内容](http://help.outlook.com/141/gg709759(d=loband).aspx?sl=1)。
 
-<!---HONumber=Mooncake_0215_2016-->
+
+
+
+
+
+
+
+
+
+<!---HONumber=Mooncake_0509_2016-->

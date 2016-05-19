@@ -64,4 +64,7 @@
 <li>将弹出一个对话框，要求你确认删除。</li>
 <li>单击“是”。</li>
 
-<!---HONumber=Mooncake_0104_2016-->
+
+
+ 
+<!---HONumber=Mooncake_0405_2016-->

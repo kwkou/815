@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="02/24/2016" 
-	wacn.date="04/13/2016"/>
+	ms.date="04/11/2016" 
+	wacn.date="05/18/2016"/>
 
 # 管理云中 Azure 多重身份验证的用户设置
 
@@ -60,4 +60,4 @@
 9. 单击“保存”。
 10. 单击“关闭”。
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0509_2016-->
