@@ -93,7 +93,7 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 
 	使用[入门教程]在各自的 PNS 开发人员门户（APNS、GCM、WNS 等）中验证它们。
 
-2. **Azure 管理门户**
+2. **Azure 经典门户**
 
 	转到“配置”选项卡，查看并将凭据与从 PNS 开发人员门户中获取的凭据进行匹配。
 
@@ -111,7 +111,7 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 
 	![][8]
  
-	> [AZURE.NOTE]编辑注册的 Visual Studio 功能应该只能在开发/测试有限的注册时使用。如果出现批量修复你的注册的需求，可以考虑使用此处[导入/导出注册]（只在标准层可用）描述的导出/导入注册功能
+	> [AZURE.NOTE] 编辑注册的 Visual Studio 功能应该只能在开发/测试有限的注册时使用。如果需要批量修复注册，可以考虑使用[导入/导出注册](https://msdn.microsoft.com/library/dn790624.aspx)中所述的导出/导入注册功能
 
 2. **服务总线资源管理器**
 
@@ -119,7 +119,7 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 
 ###验证消息通知
 
-1. **Azure 门户**
+1. **Azure 经典门户**
 
 	你可以转到“调试”选项卡向你的客户端发送测试通知，无需启动和运行任何服务后端。
 
@@ -154,8 +154,7 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
     var result = await hub.SendWindowsNativeNotificationAsync(toast);
     Console.WriteLine(result.State);
  
-`result.State` 将只在执行结束时陈述 `Enqueued`，而不深入分析你的推送发生了什么情况。
-现在，你可以使用 `EnableTestSend` 布尔值属性，同时初始化 `NotificationHubClient`，并获取有关发送通知时遇到的 PNS 错误的详细状态。此处发送调用需要更多时间进行返回，因为它只在 NH 已将通知传递到 PNS 之后返回以确定结果。
+`result.State` 将只在执行结束时陈述 `Enqueued`，而不深入分析你的推送发生了什么情况。现在，你可以使用 `EnableTestSend` 布尔值属性，同时初始化 `NotificationHubClient`，并获取有关发送通知时遇到的 PNS 错误的详细状态。此处发送调用需要更多时间进行返回，因为它只在 NH 已将通知传递到 PNS 之后返回以确定结果。
  
 	bool enableTestSend = true;
 	NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString(connString, hubName, enableTestSend);
@@ -181,7 +180,7 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 
 ###查看遥测 
 
-1. **使用 Azure 门户**
+1. **使用 Azure 经典门户**
 
 	通过该门户可以获取有关通知中心上所有活动的快速概述。
 	
@@ -236,4 +235,4 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 [通过 API 示例遥测访问]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/FetchNHTelemetryInExcel
 
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->

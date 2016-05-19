@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="11/25/2015"
-	wacn.date="05/09/2016"/>
+	ms.date="04/11/2016"
+	wacn.date="05/18/2016"/>
 
 # 注册管理
 
@@ -27,7 +27,7 @@
 注册是通知中心的子实体，它将设备的平台通知服务 (PNS) 句柄与标记（有时还包括模板）相关联。PNS 句柄可能是 ChannelURI、设备令牌或 GCM 注册 ID。标记用于将通知路由到一组正确的设备句柄。有关详细信息，请参阅[路由和标记表达式](/documentation/articles/notification-hubs-routing-tag-expressions)。模板用于实现按注册转换。有关详细信息，请参阅[模板](/documentation/articles/notification-hubs-templates)。
 
 #### 安装
-安装是增强型的注册，包含推送相关的属性包。不过，它是最新且最佳的设备注册方式。
+安装是增强型的注册，包含推送相关的属性包。它是最新且最佳的设备注册方式。但是，客户端 .NET SDK（[用于后端操作的通知中心 SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)）目前不支持安装。这意味着，如果你要从客户端设备本身注册，则必须使用[通知中心 REST API](https://msdn.microsoft.com/library/mt621153.aspx) 方法来支持安装。如果使用后端服务，则应能够使用[用于后端操作的通知中心 SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)。
 
 以下是使用安装的一些主要优点：
 
@@ -35,9 +35,7 @@
 * 安装模型可让你轻松地执行每次推送（以特定设备为目标）。每次执行基于安装的注册时，都会自动添加一个系统标记 **"$InstallationId:[installationId]"**。因此，你无需编写任何额外的代码，就能对此标记调用 send 以针对特定的设备。
 * 使用安装还能执行部分注册更新。可以使用 [JSON-Patch standard](https://tools.ietf.org/html/rfc6902) 以 PATCH 方法来请求部分安装更新。当你想要更新注册中的标记时，此方法特别有用。你不需要删除整个注册，然后重新发送前面的所有标记。
 
-目前只有[适用于后端操作的通知中心 SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/) 支持安装。有关详细信息，请参阅[安装类](https://msdn.microsoft.com/library/azure/microsoft.azure.notificationhubs.installation.aspx)。若要在没有后端的情况下使用安装 ID 从客户端设备进行注册，目前需要使用[通知中心 REST API](https://msdn.microsoft.com/library/mt621153.aspx)。
-
-安装可以包含以下属性。有关完整的安装属性列表，请参阅[使用 REST 创建或覆盖安装](https://msdn.microsoft.com/library/azure/mt621153.aspx)或[安装属性](https://msdn.microsoft.com/library/azure/microsoft.azure.notificationhubs.installation_properties.aspx)。
+安装可以包含以下属性。有关完整的安装属性列表，请参阅[使用 REST API 创建或覆盖安装](https://msdn.microsoft.com/library/azure/mt621153.aspx)或[安装属性](https://msdn.microsoft.com/library/azure/microsoft.azure.notificationhubs.installation_properties.aspx)。
 
 	// Example installation format to show some supported properties
 	{
@@ -75,9 +73,9 @@
 
  
 
-请务必注意，注册与安装以及它们所包含的 PNS 句柄会过期。可以在通知中心上设置最长 90 天的生存期。此项限制意味着必须定期刷新这些注册与安装，此外，也意味着不应将其用作重要信息的唯一存储区。此自动过期机制也简化了卸载移动应用程序时的清理操作。
+请务必注意，注册和安装默认情况下不再过期。
 
-注册与安装必须包含每个设备/通道的最新 PNS 句柄。由于只能在设备上的客户端应用中获取 PNS 句柄，因此有一种模式是直接在该设备上使用客户端应用进行注册。另一方面，与标记相关的安全性考虑和业务逻辑可能要求你在应用后端管理设备注册。
+注册与安装必须包含每个设备/通道的有效 PNS 句柄。由于只能在设备上的客户端应用中获取 PNS 句柄，因此有一种模式是直接在该设备上使用客户端应用进行注册。另一方面，与标记相关的安全性考虑和业务逻辑可能要求你在应用后端管理设备注册。
 
 #### 模板
 
@@ -101,7 +99,9 @@ SecondaryTiles 字典使用的 TileId 与在 Windows 应用商店应用中创建
 设备首先从 PNS 检索 PNS 句柄，然后直接向通知中心进行注册。注册成功之后，应用后端即可发送以该注册为目标的通知。有关如何发送通知的详细信息，请参阅[路由和标记表达式](/documentation/articles/notification-hubs-routing-tag-expressions)。
 请注意，在此情况下，将只使用“侦听”权限从设备访问通知中心。有关详细信息，请参阅[安全性](/documentation/articles/notification-hubs-security)。
 
-从设备注册是最简单的方法，但存在一些缺点。第一个缺点是客户端应用只能在它处于活动状态时更新其标记。例如，如果用户有两台设备要注册与体育团队相关的标记，则当第一台设备注册附加标记（例如，Seahawks）时，第二台设备将不会收到有关 Seahawks 的通知，直到第二次在第二台设备上执行应用程序为止。更概括地说，如果标记受多个设备的影响，则从后端管理标记是理想的选择。从客户端应用管理注册的第二个缺点是，由于应用可能会受到攻击，因此保护特定标记的注册需要格外小心，如“标记级安全性”部分中所述。
+从设备注册是最简单的方法，但存在一些缺点。
+第一个缺点是客户端应用只能在它处于活动状态时更新其标记。例如，如果用户有两台设备要注册与体育团队相关的标记，则当第一台设备注册附加标记（例如，Seahawks）时，第二台设备将不会收到有关 Seahawks 的通知，直到第二次在第二台设备上执行应用程序为止。更概括地说，如果标记受多个设备的影响，则从后端管理标记是理想的选择。
+从客户端应用管理注册的第二个缺点是，由于应用可能会受到攻击，因此保护特定标记的注册需要格外小心，如“标记级安全性”部分中所述。
 
 
 
@@ -240,7 +240,6 @@ SecondaryTiles 字典使用的 TileId 与在 Windows 应用商店应用中创建
 	}
 	catch (Microsoft.WindowsAzure.Messaging.RegistrationGoneException e)
 	{
-		// regId likely expired, delete from local storage and try again
 		settings.Remove("__NHRegistrationId");
 	}
 
@@ -328,5 +327,4 @@ SecondaryTiles 字典使用的 TileId 与在 Windows 应用商店应用中创建
 
 
 后端必须处理注册更新之间的并发性。服务总线为注册管理提供了乐观并发控制。在 HTTP 级别，这是通过对注册管理操作使用 ETag 来实现的。Microsoft SDK 以透明方式使用此功能，如果由于并发原因拒绝了更新，则会引发异常。应用后端负责处理这些异常并在需要时重试更新。
-
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0503_2016-->

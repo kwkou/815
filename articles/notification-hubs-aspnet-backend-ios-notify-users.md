@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="12/16/2015"
-	wacn.date="05/09/2016"/>
+	ms.date="03/28/2016"
+	wacn.date="05/18/2016"/>
 
 #Azure 通知中心 - 使用 .NET 后端通知 iOS 用户
 
@@ -458,5 +458,4 @@
 [3]: ./media/notification-hubs-aspnet-backend-ios-notify-users/notification-hubs-ios-notify-users-registered.png
 [4]: ./media/notification-hubs-aspnet-backend-ios-notify-users/notification-hubs-ios-notify-users-enter-msg.png
  
-
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0503_2016-->

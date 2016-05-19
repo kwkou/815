@@ -9,13 +9,13 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="12/15/2015" 
+	ms.date="03/28/2016" 
 	wacn.date="01/14/2016"/>
 
 # 使用通知中心发送本地化的突发新闻
 
 > [AZURE.SELECTOR]
-- [Windows Store C#](/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news)
+- [Windows 应用商店 C#](/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news)
 - [iOS](/documentation/articles/notification-hubs-ios-send-localized-breaking-news)
 
 ##概述
@@ -40,7 +40,9 @@
 
 ##模板概念
 
-在[使用通知中心发送突发新闻]中，你构建了一个使用**标记**订阅不同新闻类别通知的应用程序。但是，很多应用程序针对多个市场，需要本地化。这意味着通知内容本身必须本地化且传递到正确的设备组。在本主题中，我们将演示如何使用通知中心的**模板**功能轻松传递本地化的突发新闻通知。
+在[使用通知中心发送突发新闻]中，你构建了一个使用**标记**订阅不同新闻类别通知的应用程序。
+但是，很多应用程序针对多个市场，需要本地化。这意味着通知内容本身必须本地化且传递到正确的设备组。
+在本主题中，我们将演示如何使用通知中心的**模板**功能轻松传递本地化的突发新闻通知。
 
 注意：发送本地化的通知的一种方式是创建每个标签的多个版本。例如，要支持英语、法语和汉语，我们需要三种不同的标签用于世界新闻：“world\_en”、“world\_fr”和“world\_ch”。我们然后必须将世界新闻的本地化版本分别发送到这些标签。在本主题中，我们使用模板来避免增生标签和发送多个消息的要求。
 
@@ -54,13 +56,13 @@
 
 然后我们将确保设备注册到引用正确属性的模板。例如，要接收简单的 toast 消息的 Windows 应用商店应用将注册以下包含任何相应标记的模板：
 
-    <toast>
-      <visual>
-        <binding template=\"ToastText01\">
-          <text id=\"1\">$(News_English)</text>
-        </binding>
-      </visual>
-    </toast>
+	<toast>
+	  <visual>
+	    <binding template="ToastText01">
+	      <text id="1">$(News_English)</text>
+	    </binding>
+	  </visual>
+	</toast>
 
 
 
@@ -130,7 +132,7 @@
             return await hub.RegisterTemplateAsync(channel.Uri, templateBodyWNS, "localizedWNSTemplateExample", categories);
         }
 
-	请注意，不是调用 *RegisterNativeAsync* 方法，我们调用的是 *RegisterTemplateAsync*：我们将注册特定的通知格式，在其中模板依赖于区域设置。我们还提供模板的名称（“localizedWNSTemplateExample”），因为我们可能要注册多个模板（例如一个用于 toast 通知，一个用于磁贴），需要命名它们以便可以更新或删除它们。
+	请注意，不是调用 RegisterNativeAsync 方法，我们调用的是 RegisterTemplateAsync：我们将注册特定的通知格式，在其中模板依赖于区域设置。我们还提供模板的名称（“localizedWNSTemplateExample”），因为我们可能要注册多个模板（例如一个用于 toast 通知，一个用于磁贴），需要命名它们以便可以更新或删除它们。
 
     请注意，如果一个设备使用同一标签注册多个模板，针对该标签的传入消息将导致多个通知发送到设备（每个通知对应一个模板）。当同一逻辑消息必须导致多个可视通知时，此行为很有用，例如在 Windows 应用商店应用程序显示徽章和 toast。
 
@@ -209,4 +211,4 @@
 [Azure Management Portal]: https://manage.windowsazure.com/
 
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0503_2016-->

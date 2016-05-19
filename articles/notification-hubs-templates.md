@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="11/25/2015"
-	wacn.date="05/09/2016"/>
+	ms.date="03/28/2016"
+	wacn.date="05/18/2016"/>
 
 # 模板
 
@@ -94,7 +94,11 @@ Windows 应用商店客户端应用的相应模板为：
 发送到通知中心的消息包含以下属性：
 
 
-<table border="1"> <tr><td>day1_image</td><td>day2_image</td><td>day3_image</td><td>day4_image</td><td>day5_image</td></tr> <tr><td>day1_tempC</td><td>day2_tempC</td><td>day3_tempC</td><td>day4_tempC</td><td>day5_tempC</td></tr> <tr><td>day1_tempF</td><td>day2_tempF</td><td>day3_tempF</td><td>day4_tempF</td><td>day5_tempF</td></tr> </table><br/>
+<table border="1">
+<tr><td>day1_image</td><td>day2_image</td><td>day3_image</td><td>day4_image</td><td>day5_image</td></tr>
+<tr><td>day1_tempC</td><td>day2_tempC</td><td>day3_tempC</td><td>day4_tempC</td><td>day5_tempC</td></tr>
+<tr><td>day1_tempF</td><td>day2_tempF</td><td>day3_tempF</td><td>day4_tempF</td><td>day5_tempF</td></tr>
+</table><br/>
 
 
 通过使用此模式，后端只需发送一条消息，而不必为应用用户存储特定的个性化选项。下图演示了此方案：
@@ -119,7 +123,7 @@ Windows 应用商店客户端应用的相应模板为：
 | $(prop, n) | 同上，但会在 n 个字符处对文本进行显式剪切，例如，$(title, 20) 会在 20 个字符处对 title 属性的内容进行剪切。 |
 | .(prop, n) | 同上，但会在剪切后的文本后面添加三个点作为后缀。剪切后的字符串以及后缀的总大小不超过 n 个字符。对输入属性“This is the title line”使用 .(title, 20) 会生成 **This is the title…** |
 | %(prop) | 类似于 $(name)，不过其输出已经过 URI 编码。 |
-| #(prop) | 在 JSON 模板中使用（例如，用于 iOS 和 Android 模板）。<br><br>此函数的工作方式与前面指定的 $(prop) 完全相同，但在 JSON 模板（例如 Apple 模板）中使用时例外。在此示例中，如果此函数未由“{”、“}”括起来（例如，‘myJsonProperty’ : ‘#(name)’），它将按 Javascript 格式（例如，regexp: (0|(&#91;1-9&#93;&#91;0-9&#93;*))(.&#91;0-9&#93;+)?((e|E)(+|-)?&#91;0-9&#93;+)?）求值结果为数字，则输出 JSON 是一个数字。<br><br>例如，‘badge : ‘#(name)’ 将变为 ‘badge’ : 40（而不是 ‘40‘）。|
+| #(prop) | 在 JSON 模板中使用（例如，用于 iOS 和 Android 模板）。<br><br>此函数的工作方式与前面指定的 $(prop) 完全相同，但在 JSON 模板（例如 Apple 模板）中使用时例外。在此示例中，如果此函数未由“{”、“}”括起来（例如，‘myJsonProperty’ : ‘#(name)’），它将按 Javascript 格式（例如，regexp: (0&#124;(&#91;1-9&#93;&#91;0-9&#93;*))(\.&#91;0-9&#93;+)?((e&#124;E)(+&#124;-)?&#91;0-9&#93;+)?）求值结果为数字，则输出 JSON 是一个数字。<br><br>例如，‘badge : ‘#(name)’ 将变为 ‘badge’ : 40（而不是 ‘40‘）。|
 | ‘text’ 或 “text” | 一个文本。文本包含以单引号或双引号括住的任意文本。|
 | expr1 + expr2 | 用于将两个表达式联接成单个字符串的串联运算符。
 
@@ -149,4 +153,5 @@ Windows 应用商店客户端应用的相应模板为：
 	  </visual>
 	</tile>
 
-<!---HONumber=Mooncake_0104_2016-->
+
+<!---HONumber=Mooncake_0503_2016-->

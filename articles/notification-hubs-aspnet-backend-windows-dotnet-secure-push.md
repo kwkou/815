@@ -10,12 +10,12 @@
 <tags 
 	ms.service="notification-hubs" 
 	ms.date="02/29/2016"
-	wacn.date="04/13/2016"/>
+	wacn.date="05/18/2016"/>
 
 # Azure 通知中心安全推送
 
 > [AZURE.SELECTOR]
-- [Windows Universal](/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-secure-push)
+- [Windows Universal](/documentation/articles/notification-hubs-windows-dotnet-secure-push)
 - [iOS](/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push)
 
 
@@ -182,4 +182,4 @@
 [12]: ./media/notification-hubs-aspnet-backend-windows-dotnet-secure-push/notification-hubs-secure-push12.png
 [13]: ./media/notification-hubs-aspnet-backend-windows-dotnet-secure-push/notification-hubs-secure-push13.png
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->

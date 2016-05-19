@@ -9,9 +9,9 @@
 
 
 <tags
-	ms.service="notification-hubs" 
-	ms.date="12/14/2015"
-	wacn.date="01/14/2015"/>
+	ms.service="mobile-services,notification-hubs" 
+	ms.date="03/28/2016"
+	wacn.date="05/18/2016"/>
 
 # 使用通知中心发送突发新闻
 
@@ -254,4 +254,4 @@
 
  
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0503_2016-->

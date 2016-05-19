@@ -9,7 +9,7 @@
 
 <tags    	
 	ms.service="notification-hubs" 
-    ms.date="11/01/2015"
+	ms.date="03/28/2016" 
 	wacn.date="05/09/2016"/>
 
 # 如何通过 Java 使用通知中心
@@ -136,9 +136,7 @@ SDK 当前支持：
 所有集合查询都支持 $top 和继续标记。
 
 ### 安装 API 用法
-安装 API 是一种注册管理的替代机制。其现在可以使用“单个”安装对象，而不是维护着多个注册，后者不但工作量较大，而且容易出错且效率低下。 
-安装包含你所需的一切：推送通道（设备标记）、标记、模板、辅助磁贴（用于 WNS 和 APNS）。你不必再调用该服务以获取 ID - 只需生成 GUID 或任何其他标识符，将其保存在设备上并与推送通道（设备标记）一起发送到你的后端即可。 
-在后端，你应当只做一个调用：CreateOrUpdateInstallation，其完全是幂等的，因此，如果需要，可随时重试。
+安装 API 是一种注册管理的替代机制。其现在可以使用“单个”安装对象，而不是维护着多个注册，后者不但工作量较大，而且容易出错且效率低下。安装包含你所需的一切：推送通道（设备标记）、标记、模板、辅助磁贴（用于 WNS 和 APNS）。你不必再调用该服务以获取 ID - 只需生成 GUID 或任何其他标识符，将其保存在设备上并与推送通道（设备标记）一起发送到你的后端即可。在后端，你应当只做一个调用：CreateOrUpdateInstallation，其完全是幂等的，因此，如果需要，可随时重试。
 
 针对 Amazon Kindle Fire，示例如下：
 
@@ -227,13 +225,13 @@ CreateOrUpdate、Patch 和 Delete 最终与 Get 一致。你请求的操作会�
 通知对象只有带有标头的正文，一些实用工具方法可帮助你构建本机和模板通知对象。
 
 * **Windows 应用商店和 Windows Phone 8.1（非 Silverlight）**
-	
+
 		String toast = "<toast><visual><binding template="ToastText01"><text id="1">Hello from Java!</text></binding></visual></toast>";
 		Notification n = Notification.createWindowsNotification(toast);
 		hub.sendNotification(n);
 
 * **iOS**
-	
+
 		String alert = "{"aps":{"alert":"Hello from Java!"}}";
 		Notification n = Notification.createAppleNotification(alert);
 		hub.sendNotification(n);
@@ -246,8 +244,8 @@ CreateOrUpdate、Patch 和 Delete 最终与 Get 一致。你请求的操作会�
 
 * **Windows Phone 8.0 和 8.1 Silverlight**
 
-		String toast = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
-			        "<wp:Notification xmlns:wp=\"WPNotification\">" +
+		String toast = "<?xml version="1.0" encoding="utf-8"?>" +
+			        "<wp:Notification xmlns:wp="WPNotification">" +
 			           "<wp:Toast>" +
 			                "<wp:Text1>Hello from Java!</wp:Text1>" +
 			           "</wp:Toast> " +
@@ -303,4 +301,4 @@ CreateOrUpdate、Patch 和 Delete 最终与 Get 一致。你请求的操作会�
 [发送跨平台通知到经身份验证的用户]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users
 [Maven]: http://maven.apache.org/
  
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->

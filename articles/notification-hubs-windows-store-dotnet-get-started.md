@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 通知中心入门（Windows 应用商店应用）| Microsoft Azure"
+	pageTitle="Azure 通知中心入门（Windows 应用商店应用）| Azure"
 	description="在本教程中，你将了解如何使用 Azure 通知中心将通知推送到 Windows 应用商店或 Windows Phone 8.1（非 Silverlight）应用程序。"
 	services="notification-hubs"
 	documentationCenter="windows"
@@ -9,8 +9,8 @@
 
 <tags
     ms.service="notification-hubs"
-    ms.date="12/14/2015"
-    wacn.date="04/13/2016"/>
+    ms.date="03/28/2016"
+    wacn.date="05/18/2016"/>
 
 # 通知中心入门（Windows 应用商店应用）
 
@@ -285,7 +285,7 @@
 [20]: ./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-windows-universal-app-install-package.png
 
 <!-- URLs. -->
-[Azure 管理门户]: https://manage.windowsazure.cn/
+
 [Azure 经典门户]: https://manage.windowsazure.cn
 
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
@@ -297,4 +297,4 @@
 [锁屏提醒]: http://msdn.microsoft.com/library/windows/apps/hh779719.aspx
  
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->

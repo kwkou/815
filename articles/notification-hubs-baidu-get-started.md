@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通过百度开始使用 Azure 通知中心 | Microsoft Azure"
+	pageTitle="通过百度开始使用 Azure 通知中心 | Azure"
 	description="在本教程中，你将了解如何通过百度使用 Azure 通知中心将通知推送到 Android 设备。"
 	services="notification-hubs"
 	documentationCenter="android"
@@ -28,7 +28,7 @@
 + [移动服务 Android SDK]
 + [百度推送 Android SDK]
 
->[AZURE.NOTE]若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/free-trial/)。
+>[AZURE.NOTE]若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/free-trial/)。
 
 
 ##创建百度帐户
@@ -260,7 +260,7 @@
 				public static String NotificationHubConnectionString = "...";
 			}
 
-	使用先前从百度云项目中检索到的内容设置 **API\_KEY** 的值，使用 Azure 管理门户中的通知中心名称设置 **NotificationHubName**，并使用 Azure 门户中的 DefaultListenSharedAccessSignature 设置 **NotificationHubConnectionString**。
+	使用前面从百度云项目中检索到的内容设置 **API\_KEY** 的值，使用 Azure 经典门户中的通知中心名称设置 **NotificationHubName**，并使用 Azure 经典门户中的 DefaultListenSharedAccessSignature 设置 **NotificationHubConnectionString**。
 
 11. 添加一个名为 **DemoApplication.java** 的新类，并向此类中添加以下代码：
 
@@ -500,4 +500,4 @@
 [Azure 经典门户]: https://manage.windowsazure.cn/
 [百度门户]: http://www.baidu.com/
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 通知中心入门（Kindle 应用）| Winodws Azure"
+	pageTitle="Azure 通知中心入门（Kindle 应用）| Azure"
 	description="在本教程中，你将了解如何使用 Azure 通知中心将推送通知发送到 Kindle 应用程序。"
 	services="notification-hubs"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="02/29/2016"
-	wacn.date="04/13/2016"/>
+	wcdn.date="05/18/2016"/>
 
 # 通知中心入门（Kindle 应用）
 

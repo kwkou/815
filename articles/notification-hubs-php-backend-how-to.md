@@ -3,14 +3,14 @@
 	description="了解如何从 PHP 后端使用 Azure 通知中心。" 
 	services="notification-hubs" 
 	documentationCenter="" 
-	authors="ysxu" 
+	authors="wesmc7777" 
 	manager="dwrede" 
 	editor="" />
 
 <tags 
      ms.service="notification-hubs"
-	ms.date="02/29/2016" 
-     wacn.date="04/13/2016" />
+     ms.date="02/29/2016" 
+     wacn.date="05/18/2016" />
 
 # 如何通过 PHP 使用通知中心
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../includes/notification-hubs-backend-how-to-selector.md)]
@@ -192,7 +192,9 @@
 ##<a name="complete-tutorial"></a>完成教程
 现在，你可以通过从 PHP 后端发送通知来完成该入门教程。
 
-初始化你的通知中心客户端（按[入门教程]中所述替换连接字符串和中心名称）：$hub = new NotificationHub("connection string", "hubname");
+初始化你的通知中心客户端（按[入门教程]中所述替换连接字符串和中心名称）：
+
+	$hub = new NotificationHub("connection string", "hubname");	
 
 然后，根据你的目标移动平台添加发送代码。
 
@@ -248,4 +250,4 @@
 [PHP REST 包装器示例]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
 [入门教程]: /documentation/articles/notification-hubs-ios-get-started
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0503_2016-->
