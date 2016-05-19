@@ -98,7 +98,7 @@ Yes. Although the Azure Management Portal and Windows PowerShell/REST API only s
 
 <!--Image references-->
 
-[1]: ./media/mysql-database-migration/migration1.png
-[2]: ./media/mysql-database-migration/migration2.png
+[1]: ./media/mysql-database-migration/migration1-en.png
+[2]: ./media/mysql-database-migration/migration2-en.png
 
 <!---HONumber=Acom_0218_2016_MySql-->

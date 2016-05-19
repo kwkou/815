@@ -91,7 +91,7 @@ ERT<3小时，RPO< 1小时。<br>
 如果发生灾难时，管理门户可用，用户可以通过[备份与恢复](/documentation/articles/mysql-database-point-in-time-restore)中异地还原的步骤进行操作。但通常发生区域性灾难时，管理门户中无法正确获取实例的信息，建议用户通过PowerShell对实例进行异地还原操作：
 
 ```
-New-AzureRmResource -ResourceType "Microsoft.MySql/servers" -ResourceName <ResourceName> -ApiVersion 2015-09-01 -ResourceGroupName <ResourceGroupName> -Location <TargetLocation> -Properties @{creationSource=@{server='<SourceServerName>';region='<SourceLocation>';timepoint='<TimeTag>'};version = '<version number>'}
+New-AzureRmResource -ResourceType "Microsoft.MySql/servers" -ResourceName <ResourceName> -ApiVersion 2015-09-01 -ResourceGroupName <ResourceGroupName> -Location <TargetLocation> -SkuObject @{name=<targetSKU>} -Properties @{creationSource=@{server='<SourceServerName>';region='<SourceLocation>';timepoint='<TimeTag>'};version = '<version number>'}
 ```
 
 >[AZURE.NOTE] **注意:<br>

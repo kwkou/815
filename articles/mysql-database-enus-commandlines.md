@@ -31,7 +31,7 @@ Edit and run the following commands to set information, including your server na
 
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 		
--ResourceGroupName resourcegroupChinaEast -Location chinaeast -PropertyObject @{version = '5.5'} 
+-ResourceGroupName resourcegroupChinaEast -Location chinaeast -SkuObject @{name='MS4'} -PropertyObject @{version = '5.5'} 
 ```
 
 ### 2\.2 Create server firewall rules
@@ -67,6 +67,13 @@ Edit and run the following commands to set backup file names and create on-deman
 
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers/backups" -ResourceName testPSH/back1 -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{}
+```
+###2.7 Server backup restore(Recovery based on snapshot)
+Edit and execute following command, restore server through the setting snapshot.
+The parameters 'server' and 'region' are mandatory, when the parameter 'backup' is not specified, will restore through the latest snapshot by default.
+
+```
+New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testrestore -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -Location ChinaEast -Properties @{creationSource=@{server='testPSH';region='chinaEast' ; backup = 'testpsh1b0a9038-6953-42ad-ac8e-42f73180825b'};version = '5.5'}
 ```
 
 ## <a id="view"></a>3. View operations
@@ -215,6 +222,11 @@ Refer to the definitions in the following JSON file for modifications to other p
             }
           }
         }
+```
+
+### 4\.8 Modify performance edition of the MySQL server
+```
+Set-AzureResource -ResourceType "Microsoft.MySql/servers " -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -SkuObject @{name="MS4"} -UsePatchSemantics
 ```
 	
 ## <a id="delete"></a>5. Remove operations

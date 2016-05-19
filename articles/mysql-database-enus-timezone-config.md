@@ -17,7 +17,7 @@ MySQL Database on Azure currently supports changing the time zone by modifying t
 MySQL on Azure currently defaults to using UTC (Coordinated Universal Time) as the system time. You can configure offsets to update the time. For example, “+10:00” corresponds to the UTC+10 time zone, while “-06:00” corresponds to the UTC-6 time zone.
 
 For example, if you are changing to Beijing time, you can set the time\_zone parameter in the diagram below to: +08:00.
-![Beijing time setting](./media/mysql-database-timezone-config/time_zone.png)
+![Beijing time setting](./media/mysql-database-timezone-config/time_zone_en.png)
 
 >[AZURE.NOTE] **Named time zones such as "Europe/Helsinki", "US/Eastern" or "MET" are not currently supported.**
 *

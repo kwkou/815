@@ -12,11 +12,11 @@ MySQL Database on Azure supports slave server mode and standard MySQL data repli
 ##Configuration steps
 1.	Confirm that the system variable lower\_case\_table\_names on the master MySQL server is set to 1. If not, then you must set it to 1. MySQL database replication requires the value of this parameter to be consistent between the master and slave servers, and this parameter is set to 1 on MySQL on Azure. mysql> SET GLOBAL lower\_case\_table\_names = 1;
 2.	Set the master server to read-only mode: mysql> FLUSH TABLES WITH READ LOCK; mysql> SET GLOBAL read\_only = ON;
-3.	Run the “show master status” SQL command on the master server to ascertain the current binary log file name and offset. The results returned should be similar to this: ![Return to results](./media/mysql-database-data-replication/packet.png)
+3.	Run the “show master status” SQL command on the master server to ascertain the current binary log file name and offset. The results returned should be similar to this: ![Return to results](./media/mysql-database-data-replication/packet-en.png)
 
 4.	Export the databases for all users on the master server, for example, by using the mysqldump tool. mysqldump --databases <database name> --single-transaction --order-by-primary -r <backup file name> --routines -h<server address> -P<port number> –u<username> -p<password> Note that databases that are built into MySQL servers, including the MySQL library and test library, do not need to be exported.
 5.	Once the database has been exported, change the master MySQL server setting back to read/write mode: mysql> SET GLOBAL read\_only = OFF; mysql> UNLOCK TABLES;  
-6.	Create an account on the master MySQL server for data replication use, and set up the permissions. CREATE USER '<your user>'@'%' IDENTIFIED BY '<your password>'; GRANT REPLICATION SLAVE ON *.* TO '<your user>'@'%';
+6.	Create an account on the master MySQL server for data replication use, and set up the permissions. CREATE USER '<your user\>'@'%' IDENTIFIED BY '<your password\>'; GRANT REPLICATION SLAVE ON \*.\* TO '<your user\>'@'%';
 7.	Sign in to the Azure portal and create a new MySQL server on MySQL Database on Azure.
 8.	Create individual databases for all users on the master server on the newly created MySQL server.
 9.	Create the required user accounts on the newly created MySQL server. This is necessary because user account information cannot be replicated.
@@ -26,11 +26,11 @@ MySQL Database on Azure supports slave server mode and standard MySQL data repli
 
 	b) Upload the file that was exported from the database onto the virtual machine. If the backup file is very large, you can compress it before uploading.
 
-	c) Sign in to the virtual machine, and connect to the newly created MySQL server by using mysql.exe: mysql -h<server address> -P<port number> –u<username> -p<password>
+	c) Sign in to the virtual machine, and connect to the newly created MySQL server by using mysql.exe: mysql -h<server address\> -P<port number\> –u<username\> -p<password\>
 
 	d) Run the source <backup file name> SQL command to import data within the backup file.
 
-	e) Repeat steps c and d until all the data in the user databases has been imported into the MySQL server.
+	e) Repeat steps 3 to 6 until all the data in the user databases has been imported into the MySQL server.
 
 11.	Make the newly created MySQL server the slave server
 
@@ -44,10 +44,10 @@ MySQL Database on Azure supports slave server mode and standard MySQL data repli
 
 >[AZURE.NOTE]**We strongly recommend using SSL to help ensure that your data is secure. **
 
-![Configuration process](./media/mysql-database-data-replication/replicationsetting.png)
+![Configuration process](./media/mysql-database-data-replication/replicationsetting-en.png)
 
 
-12.	Once the configuration is successful, the Replication Status at the bottom should say “replicating.” ![Configuration process](./media/mysql-database-data-replication/replicationstatus.png)
+12.	Once the configuration is successful, the Replication Status at the bottom should say “replicating.” ![Configuration process](./media/mysql-database-data-replication/replicationstatus-en.png)
 
 >[AZURE.NOTE]**Once the replication role of the MySQL server is set to slave server, the server will be in read-only mode. - Once the replication role of the MySQL server is set to slave server, none of the master server parameters on the replication page will be editable, except for the role. If there is an input error, you must set the replication role to Disabled and then reconfigure the slave server parameters. - We recommend setting the binlog\_format for the master server to Mixed or Row, to avoid causing data replication errors due to the use of unsafe statements such as sysdate ().**
 

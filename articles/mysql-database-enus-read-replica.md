@@ -207,9 +207,9 @@ A: We do not currently support one-key upgrades. The way around this is to expor
 
 <!--Image references-->
 
-[1]: ./media/mysql-database-read-replica/replica1.jpg
-[2]: ./media/mysql-database-read-replica/replica2.jpg
-[3]: ./media/mysql-database-read-replica/replica3.jpg
-[4]: ./media/mysql-database-read-replica/replica4.jpg
+[1]: ./media/mysql-database-read-replica/replica1-en.jpg
+[2]: ./media/mysql-database-read-replica/replica2-en.jpg
+[3]: ./media/mysql-database-read-replica/replica3-en.jpg
+[4]: ./media/mysql-database-read-replica/replica4-en.jpg
 
 <!---HONumber=Acom_0418_2016_MySql-->

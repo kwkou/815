@@ -25,8 +25,8 @@ mysqldump --databases <数据库名>  --single-transaction --order-by-primary -r
 mysql> SET GLOBAL read_only = OFF;
 mysql> UNLOCK TABLES;  
 6.	在主MySQL服务器上建一个用于数据复制的账号并设置权限。
-CREATE USER '<your user>'@'%' IDENTIFIED BY '<your password>';
-GRANT REPLICATION SLAVE ON *.* TO '<your user>'@'%';
+CREATE USER '<your user>'@'%' IDENTIFIED BY '<your password\>';
+GRANT REPLICATION SLAVE ON \*.\* TO '<your user\>'@'%';
 7.	登录Azure管理门户，在MySQL　Database on Azure上创建一个新的MySQL服务器。
 8.	在新创建的MySQL服务器上逐个创建主服务器上的所有用户的数据库。
 9.	在新创建的MySQL服务器上创建需要的用户账号。这是因为用户账号信息不会被复制。
@@ -42,7 +42,7 @@ mysql -h<服务器地址>  -P<端口号> –u<用户名>  -p<密码>
 	4)	运行下列sql命令，导入备份文件中的数据。
 source <备份文件名>;
 
-	5)	重复执行 c) -> f)，直到将所有用户数据库中的数据导入到MySQL服务器中。
+	5)	重复执行 3) -> 6)，直到将所有用户数据库中的数据导入到MySQL服务器中。
 
 11.	将新创建的MySQL服务器设置为从服务器
 
