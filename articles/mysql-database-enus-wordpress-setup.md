@@ -76,13 +76,13 @@ Once you have completed the process above, if you access the web app that you cr
 
 
 <!--Image references-->
-[1]: ./media/mysql-database-wordpress-setup/001.png
-[2]: ./media/mysql-database-wordpress-setup/002.png
-[3]: ./media/mysql-database-wordpress-setup/003.png
-[4]: ./media/mysql-database-wordpress-setup/004.png
-[5]: ./media/mysql-database-wordpress-setup/005.png
-[6]: ./media/mysql-database-wordpress-setup/006.png
-[7]: ./media/mysql-database-wordpress-setup/007.png
-[8]: ./media/mysql-database-wordpress-setup/008.png
-[9]: ./media/mysql-database-wordpress-setup/009.png
+[1]: ./media/mysql-database-wordpress-setup/001-en.png
+[2]: ./media/mysql-database-wordpress-setup/002-en.png
+[3]: ./media/mysql-database-wordpress-setup/003-en.png
+[4]: ./media/mysql-database-wordpress-setup/004-en.png
+[5]: ./media/mysql-database-wordpress-setup/005-en.png
+[6]: ./media/mysql-database-wordpress-setup/006-en.png
+[7]: ./media/mysql-database-wordpress-setup/007-en.png
+[8]: ./media/mysql-database-wordpress-setup/008-en.png
+[9]: ./media/mysql-database-wordpress-setup/009-en.png
 <!--HONumber=81-->

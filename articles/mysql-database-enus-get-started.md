@@ -23,7 +23,7 @@ This course will help you to understand how to use the Azure portal to quickly c
 2.	Click “Create” at the bottom of the page. A list of content that can be created will then be displayed.
 3.	Click “MySQL Database on Azure,” and then click on “Quick Create.”
  
-![Creating MySQL servers](./media/mysql-database-get-started/create-mysql-server.png)
+![Creating MySQL servers](./media/mysql-database-get-started/create-mysql-server-en.png)
 
 >[AZURE.NOTE]**Your username is composed of “server name%username”. Ensure that you fill in the complete username when you connect to the database. **
 
@@ -34,19 +34,19 @@ Enter the parameters that are required to create a new server, and then click �
 ##<a id="step2"></a>Step 2: Configure the firewall
 Before you connect to MySQL Database on Azure from your client for the first time, you must configure the firewall and add the client’s public network IP address (or IP address range) to the whitelist. In the portal, click your instance, and then click “Configure.” You can then add the IP addresses by using the interface below.
 
-![Configuring MySQL servers](./media/mysql-database-get-started/config-mysql-server.png)
+![Configuring MySQL servers](./media/mysql-database-get-started/config-mysql-server-en.png)
 
 By default, your other services on Azure (including virtual machines [VMs] on Azure) are allowed to access your MySQL database, so you don’t need to manually add other IP addresses. You can also change this default setting by selecting “No” for “Azure Services” under “Allowed Services.”
 
 ##<a id="step3"></a>Step 3: Set the scheduled backup time
 MySQL Database on Azure supports two types of backup: on-demand and daily scheduled. After selecting your MySQL server, you can click “Configure” to set the scheduled time for daily backups. You can choose an automatic backup time from the drop-down menu.
 
-![Backing up settings](./media/mysql-database-get-started/config-backup-window.png)
+![Backing up settings](./media/mysql-database-get-started/config-backup-window-en.png)
 
 ##<a id="step4"></a>Step 4: Create the database
 Users can create multiple databases within a MySQL server. There is no limit to the number of databases that can be created, but multiple databases will share server resources. To create a database, select the MySQL server, click “Databases,” and then click “Create” in the lower-left corner.
 
-![Creating databases](./media/mysql-database-get-started/create-mysql-db.png)
+![Creating databases](./media/mysql-database-get-started/create-mysql-db-en.png)
 
 ##<a id="step5"></a>Step 5: Connect to the database
 You can find the server address by using the “dashboard” in the Azure portal, and can connect to your MySQL Database on Azure database by using the app.

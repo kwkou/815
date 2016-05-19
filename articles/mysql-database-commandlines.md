@@ -34,7 +34,7 @@
 
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 		
--ResourceGroupName resourcegroupChinaEast -Location chinaeast -PropertyObject @{version = '5.5'} 
+-ResourceGroupName resourcegroupChinaEast -Location chinaeast -SkuObject @{name='MS4'} -PropertyObject @{version = '5.5'} 
 ```
 
 ###2.2 创建服务器防火墙原则
@@ -75,8 +75,9 @@ New-AzureResource -ResourceType "Microsoft.MySql/servers/backups" -ResourceName 
 ###2.7 服务器备份恢复 （基于快照的恢复）
 编辑运行以下命令，通过制定快照来恢复服务器。
 其中，server和region的信息必填，backup不指定的情况下，默认通过最新的快照拷贝进行恢复。
+
 ```
-New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testrestore -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -Location ChinaEast -Properties @{creationSource=@{server='testPSH';region='chinaEast' ; backup = 'testPSH/testpsh1b0a9038-6953-42ad-ac8e-42f73180825b'};version = '5.5'}
+New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testrestore -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -Location ChinaEast -Properties @{creationSource=@{server='testPSH';region='chinaEast' ; backup = 'testpsh1b0a9038-6953-42ad-ac8e-42f73180825b'};version = '5.5'}
 ```
 
 ## <a id="view"></a>3. 查看操作
@@ -172,7 +173,7 @@ Set-AzureResource -ResourceType "Microsoft.MySql/servers/firewallRules" -Resourc
 ```
 
 ###4.7 修改部分MySQL服务器设置
-以wait_timeout参数为例，其他参数详见Json文件，编辑运行以下命令，更改wait_timeout默认值。
+以wait\_timeout参数为例，其他参数详见Json文件，编辑运行以下命令，更改wait_timeout默认值。
 
 ```
 Set-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{options=@{wait_timeout=70}} -UsePatchSemantics
@@ -228,6 +229,13 @@ Set-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH 
           }
         }
 ```
+
+###4.8 修改MySQL服务器性能版本
+
+```
+Set-AzureResource -ResourceType "Microsoft.MySql/servers " -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -SkuObject @{name="MS4"} -UsePatchSemantics
+```
+
 	
 ## <a id="delete"></a>5. 删除操作
 通过Remove指令可以删除MySQL服务器、数据库、用户、备份、防火墙规则等。

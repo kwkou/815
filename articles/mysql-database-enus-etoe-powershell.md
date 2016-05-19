@@ -73,7 +73,7 @@ New-AzureResourceGroup -Name "resourcegroupChinaEast" -Location "chinaeast"
 Edit and run the following commands to set information, including your server name, location, version, and other details, in order to finish creating the server.
 
 ```
-New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -Location chinaeast -PropertyObject @{version = '5.5'} 
+New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -Location chinaeast -SkuObject @{name='MS4'} -PropertyObject @{version = '5.5'} 
 ```
 
 >[AZURE.NOTE] **“-ApiVersion 2015-09-01” specifies the API version and is essential. It is also important to note that running the above commands will finish creating the MySQL server but not the user. You must create user settings and privileges in the subsequent steps, which is a different process than that used by the Azure portal.**

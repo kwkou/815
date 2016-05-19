@@ -76,7 +76,7 @@ New-AzureRmResourceGroup -Name "resourcegroupChinaEast" -Location "chinaeast"
 编辑运行以下命令，定义您的服务器名称、位置、版本等信息来完成服务器创建。
 ### Azure PowerShell 0.9* 版本：
 ```
-New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -Location chinaeast -PropertyObject @{version = '5.5'} 
+New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -Location chinaeast -SkuObject @{name='MS4'} -PropertyObject @{version = '5.5'} 
 ```
 ### Azure PowerShell 1.0.0+版本：
 ```

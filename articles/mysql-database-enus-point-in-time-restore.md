@@ -33,10 +33,10 @@ MySQL Database on Azure supports restoring to any time point in the last 7 days.
 Process for restoring to a particular time point:
 
 1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn/), and click **MYSQL DATABASE ON AZURE** in the services list in the left pane.
-2. In the server list, click the database server that you want to restore to open the server interface, and then click on **Operation panel**.
+2. In the server list, click the database server that you want to restore to open the server interface, and then click on **DASHBOARD**.
 ![Restore to any point in time][1]
-3. Click the **Restore** button in the task menu at the bottom. A dialogue box will pop up.
-4. The **Restore type** is already set to **Return to a time point** by default. Select the time point, the target database server instance, and the version that you want to restore. Click on the **Finish** button.
+3. Click the **RESTORE** button in the task menu at the bottom. A dialogue box will pop up.
+4. The **RESTORE TYPE** is already set to **Rollback to a point in time** by default. Select the time point, the target database server instance, and the version that you want to restore. Click on the **Finish** button.
 ![Restore to any point in time][2]
 5. Go back to the server list page to confirm that the server was successfully restored and that the status is **Running**. The data recovery process might take from a few minutes to several hours, depending on the time point that you choose and the amount of data that was added to the database server that day.
 
@@ -47,10 +47,10 @@ You can access the new server instance using the original server instance accoun
 With **MySQL Database on Azure**, you can restore a full backup to a new instance. The specific procedure for this is as follows:
 
 1.	Sign in to the [Azure Management Portal](http://manage.windowsazure.cn/), and click **MYSQL DATABASE ON AZURE** in the services list in the left pane.
-2.	In the server list, click the database server that you want to restore to open the server interface, and then click **Backup**.
-3.	Select the full backup that you want to restore, and click the **Restore** button.
+2.	In the server list, click the database server that you want to restore to open the server interface, and then click **BACKUPS**.
+3.	Select the full backup that you want to restore, and click the **RESTORE** button.
 ![Restore a full backup to a new instance][3]
-4.	In the dialogue box that opens, the **Restore type** is set to **Return to a full backup** by default, the **Selected backup** is automatically set to the full backup that you selected, and **Restore as** is set to **New service** by default. Enter the name and version of the new server instance, and then click the **Finish** button.
+4.	In the dialogue box that opens, the **RESTORE TYPE** is set to **Rollback to a full backup** by default, the **SELECTED BACKUP** is automatically set to the full backup that you selected, and **RESTORE TO** is set to **New Server** by default. Enter the name and version of the new server instance, and then click the **Finish** button.
 ![Restore a full backup to a new instance][4]
 5.	Go back to the server list to confirm that the server was successfully created and that the status is **Running**. This process is generally completed within two minutes. You can access the new server instance by using the original server instance account. However, you will need to change the server name prefix in the account to the new server name.
 
@@ -59,18 +59,18 @@ With **MySQL Database on Azure**, you can restore a full backup to a new instanc
 With **MySQL Database on Azure**, you can restore a full backup to the original instance. The specific procedure for this is as follows:
 
 1.	Sign in to the [Azure Management Portal](http://manage.windowsazure.cn/), and click **MYSQL DATABASE ON AZURE** in the services list in the left pane.
-2.	In the server list, click the database server that you want to restore to open the server interface, then click **Backup**.
-3.	Select the full backup that you want to restore, and click the **Restore** button.
-4.	Select **Current service** from the **Restore as** options in the dialogue box that pops up. At the same time, you must confirm that **I understand that restoring the server will take several minutes, and that I will be unable to access the database server during this time.** Click the **Finish** button.
+2.	In the server list, click the database server that you want to restore to open the server interface, then click **BACKUPS**.
+3.	Select the full backup that you want to restore, and click the **RESTORE** button.
+4.	Select **Current Service** from the **RESTORE TO** options in the dialogue box that pops up. At the same time, you must confirm that **I understand it will take a few minutes to restore the server, during which the database server could not be accessed. ** Click the **Finish** button.
 ![Restore a full backup to the original instance][5]
 5.	Go back to the server list to confirm that the status of the server is **Running**. This indicates that the server was successfully restored.
 
 <!--Image references-->
 
-[1]: ./media/mysql-database-point-in-time-restore/Restore1.jpg
-[2]: ./media/mysql-database-point-in-time-restore/Restore2.jpg
-[3]: ./media/mysql-database-point-in-time-restore/Restore3.jpg
-[4]: ./media/mysql-database-point-in-time-restore/Restore4.jpg
-[5]: ./media/mysql-database-point-in-time-restore/Restore5.jpg
+[1]: ./media/mysql-database-point-in-time-restore/Restore1-en.jpg
+[2]: ./media/mysql-database-point-in-time-restore/Restore2-en.jpg
+[3]: ./media/mysql-database-point-in-time-restore/Restore3-en.jpg
+[4]: ./media/mysql-database-point-in-time-restore/Restore4-en.jpg
+[5]: ./media/mysql-database-point-in-time-restore/Restore5-en.jpg
 
 <!---HONumber=Acom_0418_2016_MySql-->
