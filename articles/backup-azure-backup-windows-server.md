@@ -1,5 +1,5 @@
 <properties
-   pageTitle="将 Windows Server 或 Windows 客户端文件和文件夹备份到 Azure | Microsoft Azure"
+   pageTitle="将 Windows Server 或 Windows 客户端文件和文件夹备份到 Azure | Azure"
    description="使用这个简单的过程将 Windows Server 或 Windows 客户端备份到 Azure。只需执行几个简单的步骤，就能将 Windows 文件和文件夹备份到云中。"
    services="backup"
    documentationCenter=""
@@ -31,7 +31,7 @@
 
 4. 根据以下[文章](/documentation/articles/backup-azure-backup-cloud-as-tape)中的详细说明，指定备份计划和保留策略。
 
-5. 选择发送初始备份的方法。选择以哪种方法完成初始种子设定取决于你要备份的数据量，以及 Internet 上载链路的速度。如果你打算通过高延迟、低带宽连接备份若干 GB/TB 的数据，则建议你将磁盘寄送到最接近的 Azure 数据中心以完成初始备份。这称为“脱机备份”，此[文章](/documentation/articles/backup-azure-backup-import-export)中已做了详述。如果你有足够的带宽连接，则建议通过网络完成初始备份。
+5. 选择发送初始备份的方法。选择以哪种方法完成初始种子设定取决于你要备份的数据量，以及 Internet 上载链路的速度。如果你打算通过高延迟、低带宽连接备份若干 GB/TB 的数据，则建议你将磁盘寄送到最接近的 Azure 数据中心以完成初始备份。如果你有足够的带宽连接，则建议通过网络完成初始备份。
 
     ![初始 Windows Server 备份](./media/backup-azure-backup-windows-server/initialbackup.png)
 
