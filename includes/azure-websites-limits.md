@@ -8,7 +8,7 @@
 存储<sup>5</sup>|1 GB<sup>5</sup>|1 GB<sup>5</sup>|10 GB<sup>5</sup>|50 GB<sup>5</sup>|500 GB<sup>4,5</sup></p>
 CPU 时间（天）<sup>6</sup>|60 分钟|240 分钟|无限制，按标准[费率](/home/features/web-site/#price)</a>付费|无限制，按标准费率付费|无限制，按标准费率付费
 内存（1 小时）|每个 App Service 计划 1024 MB|每个应用 1024 MB|不适用|不适用|不适用
-带宽|165 MB|无限制，收取[数据传输费率](/pricing/details/data-transfers/)|无限制，收取数据传输费率|无限制，收取数据传输费率|无限制，收取数据传输费率
+带宽|165 MB|无限制，收取[数据传输费率](/pricing/details/data-transfer/)|无限制，收取数据传输费率|无限制，收取数据传输费率|无限制，收取数据传输费率
 应用程序体系结构|32 位|32 位|32 位/64 位|32 位/64 位|32 位/64 位
 每个实例的 Web 套接字数<sup>7</sup>|5|35|350|不受限制|不受限制
 每个应用程序的并发[调试器连接](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)数|1|1|1|5|5

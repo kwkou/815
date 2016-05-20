@@ -54,7 +54,6 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 2. 通过 Nuget 包管理器控制台运行以下命令。
 
 		Install-Package Microsoft.Azure.Common.Authentication -Pre
-		Install-Package Microsoft.Azure.Management.HDInsight -Pre
 		Install-Package Microsoft.Azure.Management.HDInsight.Job -Pre
 2. 使用以下代码：
 
@@ -66,7 +65,6 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 		using Microsoft.Azure.Common.Authentication;
 		using Microsoft.Azure.Common.Authentication.Factories;
 		using Microsoft.Azure.Common.Authentication.Models;
-		using Microsoft.Azure.Management.HDInsight;
 		using Microsoft.Azure.Management.HDInsight.Job;
 		using Microsoft.Azure.Management.HDInsight.Job.Models;
 		using Hyak.Common;
@@ -75,7 +73,6 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 		{
 		    class Program
 		    {
-		        private static HDInsightManagementClient _hdiManagementClient;
 		        private static HDInsightJobManagementClient _hdiJobManagementClient;
 		
 		        private static Guid SubscriptionId = new Guid("<Your Subscription ID>");
@@ -96,9 +93,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 		
 		            var tokenCreds = GetTokenCloudCredentials();
 		            var subCloudCredentials = GetSubscriptionCloudCredentials(tokenCreds, SubscriptionId);
-		
-		            _hdiManagementClient = new HDInsightManagementClient(subCloudCredentials);
-		
+
 		            var clusterCredentials = new BasicAuthenticationCloudCredentials { Username = ExistingClusterUsername, Password = ExistingClusterPassword };
 		            _hdiJobManagementClient = new HDInsightJobManagementClient(ExistingClusterUri, clusterCredentials);
 		
@@ -116,7 +111,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 		            if (username != null && password != null)
 		                account.Id = username;
 		
-		            var env = AzureEnvironment.PublicEnvironments[EnvironmentName.AzureCloud];
+		            var env = AzureEnvironment.PublicEnvironments[EnvironmentName.AzureChinaCloud];
 		
 		            var accessToken =
 		                authFactory.Authenticate(account, env, AuthenticationFactory.CommonAdTenant, password, ShowDialog.Auto)

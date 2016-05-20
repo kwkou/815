@@ -643,34 +643,31 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 
 6. 在控制台中运行下列命令以安装程序包：
 
-		Install-Package Microsoft.Azure.Common.Authentication -pre
-		Install-Package Microsoft.Azure.Management.HDInsight -Pre
+		Install-Package Microsoft.WindowsAzure.Management.HDInsight
 
 	这些命令将 .NET 库以及对这些库的引用添加到当前 Visual Studio 项目中。
 
 7. 在“解决方案资源管理器”中，双击 **Program.cs** 将其打开。
 8. 将此代码替换为以下代码：
 
-		using Microsoft.Azure;
-		using Microsoft.Azure.Common.Authentication;
-		using Microsoft.Azure.Common.Authentication.Factories;
-		using Microsoft.Azure.Common.Authentication.Models;
-		using Microsoft.Azure.Management.HDInsight;
-		using Microsoft.Azure.Management.HDInsight.Models;
+		using System;
+		using Microsoft.WindowsAzure.Management.HDInsight;
+		using System.Security.Cryptography.X509Certificates;
 
 		namespace CreateHDICluster
 		{
 		    internal class Program
 		    {
-		        private static HDInsightManagementClient _hdiManagementClient;
+		        private static IHDInsightClient _hdinsightClient;
 		
-		        private static Guid SubscriptionId = new Guid("<AZURE SUBSCRIPTION ID>");
-		        private const string ResourceGroupName = "<AZURE RESOURCEGROUP NAME>";
+		        private static String SubscriptionId = "<Your Azure Subscription ID>";
+				private static Uri baseUri = new Uri("https://management.core.chinacloudapi.cn");
+				private static X509Certificate2 cert = new X509Certificate2("c:/path/to/cert.cer");
 
 		        private const string NewClusterName = "<HDINSIGHT CLUSTER NAME>";
 		        private const int NewClusterNumNodes = <NUMBER OF NODES>;
 		        private const string NewClusterLocation = "<LOCATION>";  // Must match the Azure Storage account location
-		        private const HDInsightClusterType NewClusterType = HDInsightClusterType.Hadoop;
+		        private const ClusterType NewClusterType = ClusterType.Hadoop;
 		        private const OSType NewClusterOSType = OSType.Windows;
 		        private const string NewClusterVersion = "3.2";
 
@@ -681,60 +678,30 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 		        private const string ExistingContainer = "<DEFAULT CONTAINER NAME>"; 
 		
 		
-		        private static void Main(string[] args)
-		        {
-		            var tokenCreds = GetTokenCloudCredentials();
-		            var subCloudCredentials = GetSubscriptionCloudCredentials(tokenCreds, SubscriptionId);
-		
-		            _hdiManagementClient = new HDInsightManagementClient(subCloudCredentials);
-		
-		            CreateCluster();
-		        }
-		
-		        public static SubscriptionCloudCredentials GetTokenCloudCredentials(string username = null, SecureString password = null)
-		        {
-		            var authFactory = new AuthenticationFactory();
-		
-		            var account = new AzureAccount { Type = AzureAccount.AccountType.User };
-		
-		            if (username != null && password != null)
-		                account.Id = username;
-		
-		            var env = AzureEnvironment.PublicEnvironments[EnvironmentName.AzureCloud];
-		
-		            var accessToken =
-		                authFactory.Authenticate(account, env, AuthenticationFactory.CommonAdTenant, password, ShowDialog.Auto)
-		                    .AccessToken;
-		
-		            return new TokenCloudCredentials(accessToken);
-		        }
-		
-		        public static SubscriptionCloudCredentials GetSubscriptionCloudCredentials(SubscriptionCloudCredentials creds, Guid subId)
-		        {
-		            return new TokenCloudCredentials(subId.ToString(), ((TokenCloudCredentials)creds).Token);
-		        }
-		
-		
-		        private static void CreateCluster()
-		        {
-		            var parameters = new ClusterCreateParameters
-		            {
-		                ClusterSizeInNodes = NewClusterNumNodes,
-		                Location = NewClusterLocation,
-		                ClusterType = NewClusterType,
-		                OSType = NewClusterOSType,
-		                Version = NewClusterVersion,
+		        static void Main(string[] args)
+				{
+					System.Console.WriteLine("Creating a cluster.  The process takes 10 to 20 minutes ...");
 
-		                UserName = NewClusterUsername,
-		                Password = NewClusterPassword,
+					_hdinsightClient = HDInsightClient.Connect(new HDInsightCertificateCredential(new Guid(SubscriptionId), cert, baseUri));
 
-		                DefaultStorageAccountName = ExistingStorageName,
-		                DefaultStorageAccountKey = ExistingStorageKey,
-		                DefaultStorageContainer = ExistingContainer
-		            };
-		
-		            _hdiManagementClient.Clusters.Create(ResourceGroupName, NewClusterName, parameters);
-		        }
+					ClusterCreateParametersV2 parameters = new ClusterCreateParametersV2 {
+						ClusterSizeInNodes = NewClusterNumNodes,
+						UserName = NewClusterUsername,
+						Password = NewClusterPassword,
+						Location = NewClusterLocation,
+						DefaultStorageAccountName = ExistingStorageName,
+						DefaultStorageAccountKey = ExistingStorageKey,
+						DefaultStorageContainer = ExistingContainer,
+						ClusterType = NewClusterType,
+						OSType = NewClusterOSType
+					};
+
+					var cluster = _hdinsightClient.CreateCluster(parameters);
+
+                    System.Console.WriteLine("The cluster has been created. Press ENTER to continue ...");
+                    System.Console.ReadLine();
+                    
+				}
 			}
 		}
 		
