@@ -1,7 +1,7 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to use CDN - HTTPS" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure HTTPS, CDN HTTPS, Azure caching, Azure add-ons, CDN, CDN加速, CDN服务, 主流CDN, 多场景加速, 免费CDN, CDN网站加速, 网站加速, 网页加速, 静态加速, 下载加速, VOD加速, 流媒体直播加速, 云服务,  存储账户,缓存刷新, 回源, 云加速, 加速效果, 节点, 流量, CNAME, 带宽, 网速, 防盗链,https加速, 低成本带宽, 访问加速, CDN缓存, 存储账户, 云服务, 网站, 媒体服务, ICP备案号, ICP编号, ICP, 缓存刷新, 内容预取, 日志下载, CDN帮助文档, CDN技术文档" description="Learn how to create HTTPS CDN acceleration type." metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
-    wacn.date="5/3/2016"
+    wacn.date="5/11/2016"
     />
 
 # Azure CDN HTTPS 加速服务
@@ -49,19 +49,19 @@
 
 	**客户端到CDN节点的访问端口**：确认需要开通的客户端到CDN节点的访问方式。
 
-		1) 只开通HTTPS访问（HTTP访问会被禁止）
+	1) 只开通HTTPS访问（HTTP访问会被禁止）
 
-		2) 同时开通HTTP和HTTPS访问
+	2) 同时开通HTTP和HTTPS访问
 
-		3) 将HTTP访问统一跳转至HTTPS访问
+	3) 将HTTP访问统一跳转至HTTPS访问
 
 	**CDN节点到源站的回源访问端口**：确认CDN节点可以回源访问的方式。
 
-		1) 只能使用HTTP回源
+	1) 只能使用HTTP回源
 
-		2) 只能使用HTTPS回源
+	2) 只能使用HTTPS回源
 
-		3) 可以同时使用HTTP和HTTPS回源
+	3) 可以同时使用HTTP和HTTPS回源
 
 	**检测URL**：输入一个后续可以用来检查访问的URL。要确保源站上的该URL可以被访问。
 
@@ -85,13 +85,13 @@
 
 	![][8]
 
-		DNS TXT记录创建完成后，在Windows操作系统下可以使用如下命令来验证： nslookup -qt=txt www.cdn.test.com
+	DNS TXT记录创建完成后，在Windows操作系统下可以使用如下命令来验证： nslookup -qt=txt www.cdn.test.com
 
 	![][9]
 
-		之后，和默认方式一样，用户登陆到DNS TXT记录中指定的邮箱来完成后续的域名所有权验证。
+	之后，和默认方式一样，用户登陆到DNS TXT记录中指定的邮箱来完成后续的域名所有权验证。
 
-		当用户在本步骤确定已经成功创建了相应的DNS TXT记录后，点击本步骤中的“确定”按钮，前往下一步。
+	当用户在本步骤确定已经成功创建了相应的DNS TXT记录后，点击本步骤中的“确定”按钮，前往下一步。
 
 	![][10]
 
@@ -105,13 +105,13 @@
 
 	这时用户就可以前往响应的邮箱去完成域名所有权认证。
 
-		邮件标题: Please validate ownership of your domain www.cdn.test.com -- DigiCert order 00123456
+	邮件标题: Please validate ownership of your domain www.cdn.test.com -- DigiCert order 00123456
 
-		邮件正文：
+	邮件正文：
 
 	![][7]
 
-		用户需要点击邮件中的确认链接来完成域名所有权的确认。
+	用户需要点击邮件中的确认链接来完成域名所有权的确认。
 
 	之后，用户需要在步骤四的界面里点击“完成”，来最终完成整个域名所有权的确认。	
 
