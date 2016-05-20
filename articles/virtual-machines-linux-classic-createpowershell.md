@@ -16,6 +16,11 @@
 
 # 使用 Azure PowerShell 创建和预配置 Linux 虚拟机
 
+> [AZURE.SELECTOR]
+- [Azure 管理门户](/documentation/articles/virtual-machines-windows-classic-tutorial)
+- [PowerShell - Windows](/documentation/articles/virtual-machines-windows-classic-create-powershell)
+- [PowerShell - Linux](/documentation/articles/virtual-machines-linux-classic-createpowershell)
+
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
  
 下列步骤演示如何通过使用填空方法创建 Azure PowerShell 命令集来创建 Linux 虚拟机。如果你不熟悉 Azure PowerShell 或只想知道为成功的配置指定什么值，则此方法很有用。
