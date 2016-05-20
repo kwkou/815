@@ -17,7 +17,7 @@
 
 本文介绍如何使用 Azure 备份将 Windows Server（或 Windows 客户端）文件和文件夹备份到 Azure。本教程旨在引导你完成基本操作。如果想要开始使用 Azure 备份，本文的内容非常合适。
 
-如果想要深入了解 Azure 备份，请阅读此[概述](backup-introduction-to-azure-backup.md)。
+如果想要深入了解 Azure 备份，请阅读此[概述](/documentation/articles/backup-introduction-to-azure-backup)。
 
 将文件和文件夹备份到 Azure 需要进行以下活动：
 
@@ -200,7 +200,7 @@
 
 5. 选择备份副本的“保留策略”。你可以根据需要修改每日、每周、每月和每年保留策略。
 
-    >[AZURE.NOTE] [此文](backup-azure-backup-cloud-as-tape.md)中详细介绍了备份计划。
+    >[AZURE.NOTE] [此文](/documentation/articles/backup-azure-backup-cloud-as-tape)中详细介绍了备份计划。
 
      单击“下一步”
 
@@ -208,7 +208,7 @@
 
 6. 选择初始备份类型。
 
-    你可以通过网络自动备份，或者脱机备份。本文的余下部分将遵循自动备份过程。如果你想要执行脱机备份，请此文章，以获取有关 [Azure 备份中的脱机备份工作流](backup-azure-backup-import-export.md)的其他信息。
+    你可以通过网络自动备份，或者脱机备份。本文的余下部分将遵循自动备份过程。
 
     单击“下一步”
 
