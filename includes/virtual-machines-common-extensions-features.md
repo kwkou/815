@@ -30,7 +30,7 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 |**DockerExtension**|安装 Docker 后台程序以支持远程 Docker 命令。|[如何使用 Docker 虚拟机扩展](/documentation/articles/virtual-machines-linux-dockerextension)有关更广泛的信息，请参阅 [Docker VM 扩展用户指南](https://github.com/Azure/azure-docker-extension/blob/master/README.md)|
 |**DSC**|PowerShell DSC（所需状态配置）扩展。|[Azure PowerShell DSC（所需状态配置）扩展](http://blogs.msdn.com/b/powershell/archive/2014/08/07/introducing-the-azure-powershell-dsc-desired-state-configuration-extension.aspx)|
 |**PuppetEnterpriseAgent**|实现 Puppet Enterprise 的功能。 |[Azure 上的 Puppet](http://puppetlabs.com/solutions/microsoft)|
-|**CustomScriptExtension** (Windows)**CustomScriptForLinux** (Linux)|在任何时候调用 VM 上的自定义脚本：启动时或在生存期内。|[自定义脚本扩展](/documentation/articles/virtual-machines-windows-classic-extensions-customscript) | [Linux](https://github.com/Azure/azure-linux-extensions/tree/master/CustomScript)|
+|**CustomScriptExtension** (Windows)**CustomScriptForLinux** (Linux)|在任何时候调用 VM 上的自定义脚本：启动时或在生存期内。|
 |**AzureCATExtensionHandler**|使用 **IaaSDiagnostics** 和少数其他数据源（如 [Azure 存储分析指标](https://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)）收集的诊断数据，并将这些数据转换为适合 SAP 主机控制进程使用的聚合数据集|[适用于 SAP 的 Azure 增强型监视](http://azure.microsoft.com/blog/2014/06/04/azure-enhanced-monitoring-for-sap/)|
 
 ##安全和保护
