@@ -10,7 +10,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="01/28/2016"
-   wacn.date="04/12/2016"/>
+   wacn.date="05/20/2016"/>
 
 #在 HDInsight 中设置 Hadoop 群集
 
