@@ -16,7 +16,7 @@
 # 使用 Powershell 创建 Windows 虚拟机 
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/virtual-machines-windows-classic-tutorial)
+- [Azure 管理门户](/documentation/articles/virtual-machines-windows-classic-tutorial)
 - [PowerShell - Windows](/documentation/articles/virtual-machines-windows-classic-create-powershell)
 - [PowerShell - Linux](/documentation/articles/virtual-machines-linux-classic-createpowershell)
 
