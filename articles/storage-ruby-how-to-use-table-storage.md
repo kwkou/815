@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 Ruby 使用表存储 | Azure" 
+	pageTitle="如何通过 Ruby 使用 Azure 表存储 | Azure" 
 	description="了解如何使用 Azure 中的 Azure 表存储。相关代码示例是使用 Ruby API 编写的。"
 	services="storage"
 	documentationCenter="ruby"
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/17/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="04/10/2016"
+	wacn.date="05/23/2016"/>
 
 
 # 如何通过 Ruby 使用 Azure 表存储
@@ -28,6 +28,7 @@
 ## 创建 Ruby 应用程序
 
 有关如何创建 Ruby 应用程序的说明，请参阅 [Azure VM 上的 Ruby on Rails Web 应用程序](/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app)。
+
 
 ## 配置应用程序以访问存储
 
@@ -125,7 +126,7 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 	query = { :filter => "PartitionKey eq 'test-partition-key'" }
 	result, token = azure_table_service.query_entities("testtable", query)
 
-> [AZURE.NOTE]如果结果集太大，一个查询无法全部返回，将会返回一个继续标记，你可以使用该标记检索后续页面。
+> [AZURE.NOTE] 如果结果集太大，一个查询无法全部返回，将会返回一个继续标记，你可以使用该标记检索后续页面。
 
 ## 查询一部分实体属性
 
@@ -135,13 +136,13 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 	  :select => ["content"] }
 	result, token = azure_table_service.query_entities("testtable", query)
 
-## <a id="how-to-delete-an-entity"></a>如何：删除实体
+## <a id="how-to-delete-an-entity"></a>删除实体
 
 若要删除实体，请使用 **delete_entity()** 方法。你需要传入包含该实体的表的名称、实体的 PartitionKey 和 RowKey。
 
 		azure_table_service.delete_entity("testtable", "test-partition-key", "1")
 
-## <a id="how-to-delete-a-table"></a>如何：删除表
+## <a id="how-to-delete-a-table"></a>删除表
 
 若要删除表，请使用 **delete_table()** 方法并传入要删除的表的名称。
 
@@ -154,4 +155,5 @@ Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 - GitHub 上的 [Azure SDK for Ruby](http://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
 
-<!---HONumber=Mooncake_0411_2016-->
+
+<!---HONumber=Mooncake_0516_2016-->

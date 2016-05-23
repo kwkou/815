@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/21/2016" 
-	wacn.date="04/11/2016"/>
+	ms.date="04/08/2016" 
+	wacn.date="05/23/2016"/>
 
 # 将 Azure 存储空间用于 Hudson 持续集成解决方案
 
@@ -81,8 +81,8 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 1. 在 Hudson 仪表板中，单击“管理 Hudson”。
 2. 在“管理 Hudson”页中，单击“配置系统”。
 3. 在“Azure 存储帐户配置”部分：
-    1. 输入你的存储帐户名称，可以通过[管理门户](https://manage.windowsazure.cn)获取该帐户名称。
-    2. 输入你的存储帐户密钥，同样可以从 Azure 门户获取该密钥。
+    1. 输入你的存储帐户名称，可以通过[Azure 管理门户](https://manage.windowsazure.cn)获取该帐户名称。
+    2. 输入你的存储帐户密钥，同样可以从 Azure 管理门户获取该密钥。
     3. 如果你在使用公共 Azure 云，对于“Blob 服务终结点 URL”，请使用默认值。如果你在使用其他 Azure 云，则使用在 Azure 管理门户中为你的存储帐户指定的终结点。 
     4. 单击“验证存储凭据”以验证你的存储帐户。 
     5. [可选]如果你有其他存储帐户并且希望其可供 Hudson CI 使用，请单击“添加更多存储帐户”。
@@ -103,7 +103,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
         date /t > date.txt
         time /t >> date.txt
 
-5. 在作业配置的“生成后操作”部分，单击“将项目上载到 Azure Blob 存储”。
+5. 在作业配置的“后期生成操作”部分，单击“将项目上载到 Azure Blob 存储”。
 6. 对于“存储帐户名称”，选择要使用的存储帐户。
 7. 对于“容器名称”，请指定容器名称。（如果上载生成项目时不存在该容器，则将创建该容器。） 你可使用环境变量，因此在此示例中，请输入 **${JOB\_NAME}** 作为容器名称。
 
@@ -111,7 +111,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 
     在你为“执行 Windows 批处理命令”输入脚本的“命令”部分下方，有一个指向 Hudson 所识别环境变量的链接。单击此链接可了解环境变量名称和说明。请注意，不允许将包含特殊字符的环境变量（如 **BUILD\_URL** 环境变量）用作容器名称或通用虚拟路径。
 
-8. 对于此示例，请单击“默认将新容器设为公开的”。（如果要使用私有容器，你将需要创建共享访问签名以允许访问。这超出了本文的范围。你可以在此[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)中了解有关共享访问签名的详细信息。）
+8. 对于此示例，请单击“默认将新容器设为公开的”。（如果要使用私有容器，你将需要创建共享访问签名以允许访问。这超出了本文的范围。你可以在 [Shared Access Signatures: Understanding the SAS Model（共享访问签名：了解 SAS 模型）](/documentation/articles/storage-dotnet-shared-access-signature-part-1)中了解有关共享访问签名的详细信息。）
 9. [可选]如果你希望在上载生成项目之前清除容器的内容，请单击“在上载前清除容器”（如果你不希望清除容器的内容，则使该复选框保持未选中状态）。
 10. 对于“要上载的项目列表”，请输入 **text/*.txt**。
 11. 对于“已上载项目的通用虚拟路径”，输入 **${BUILD\_ID}/${BUILD\_NUMBER}**。
@@ -124,7 +124,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
     4. 单击“容器”。
     5. 单击名为 **myjob** 的容器，该名称是你创建 Hudson 作业时分配的作业名称的小写形式。在 Azure 存储空间中，容器名称和 Blob 名称都是小写的（并且区分大小写）。在名为 **myjob** 的容器的 Blob 列表中，你应该能看到 **hello.txt** 和 **date.txt**。复制这两项中任一项的 URL 并在浏览器中打开。你将看到已作为生成项目上载的文本文件。
 
-每个作业只能创建一个用来将项目上载到 Azure Blob 存储的生成后操作。请注意，用来将项目上载到 Azure Blob 存储的单个生成后操作可以在“要上载的项目列表”中使用分号作为分隔符指定不同的文件（包括通配符）和文件路径。例如，如果你的 Hudson 生成在你的工作空间的 **build** 文件夹中生成了 JAR 文件和 TXT 文件，并且你希望将这两者都上载到 Azure Blob 存储，请使用以下项作为“要上载的项目列表”值：**build/*.jar;build/*.txt**。你还可以使用双冒号语法指定要在 Blob 名称内使用的路径。例如，如果你希望在 Blob 路径中使用 **binaries** 以上载 JAR 并在 Blob 路径中使用 **notices** 以上载 TXT 文件，请使用以下项作为“要上载的项目列表”值：**build/*.jar::binaries;build/*.txt::notices**。
+每个作业只能创建一个用来将项目上载到 Azure Blob 存储的生成后操作。请注意，用来将项目上传到 Azure Blob 存储的单个生成后操作可以在“要上传的项目列表”中使用分号作为分隔符指定不同的文件（包括通配符）和文件路径。例如，如果你的 Hudson 生成在你的工作区的 **build** 文件夹中生成了 JAR 文件和 TXT 文件，并且你希望将这两者都上传到 Azure Blob 存储，请使用以下项作为“要上传的项目列表”值：**build/*.jar;build/*.txt**。你还可以使用双冒号语法指定要在 Blob 名称内使用的路径。例如，如果你希望在 Blob 路径中使用 **binaries** 以上载 JAR 并在 Blob 路径中使用 **notices** 以上载 TXT 文件，请使用以下项作为“要上载的项目列表”值：**build/*.jar::binaries;build/*.txt::notices**。
 
 ## 如何创建从 Azure Blob 存储进行下载的生成步骤 ##
 
@@ -134,7 +134,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 2. 对于“存储帐户名称”，选择要使用的存储帐户。
 3. 对于“容器名称”，指定包含你要下载的 Blob 的容器的名称。你可以使用环境变量。
 4. 对于“Blob 名称”，指定 Blob 名称。你可以使用环境变量。另外，在指定 Blob 名称的初始字母后，你可以使用星号作为通配符。例如，**project*** 将指定其名称以 **project** 开头的所有 Blob。
-5. [可选]对于“下载路径”，指定 Hudson 计算机上你希望将文件从 Azure Blob 存储下载到的路径。也可以使用环境变量。（如果你未为“下载路径”提供值，则 Azure Blob 存储中的文件将下载到作业的工作空间中。）
+5. [可选] 对于“下载路径”，指定 Hudson 计算机上你希望将文件从 Azure Blob 存储下载到的路径。也可以使用环境变量。（如果你没有为“下载路径”提供值，则 Azure Blob 存储中的文件将被下载到作业的工作区中。）
 
 如果你还希望从 Azure Blob 存储下载其他项，可以创建其他生成步骤。
 
@@ -146,7 +146,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 
 - **存储帐户**：对 Azure 存储服务的所有访问都要通过存储帐户来完成。存储帐户是访问 blob 的最高级别的命名空间。一个帐户可以包含无限个容器，只要这些容器的总大小不超过 100 TB 即可。
 - **容器**：一个容器包含一组 blob 集。所有 blob 必须位于相应的容器中。一个帐户可以包含无限个容器。一个容器可以存储无限个 Blob。
-- **Blob**：任何类型和大小的文件。可将两类 Blob 存储到 Azure 存储服务中：块 Blob 和页 Blob。大部分文件都是块 blob。单个块 Blob 最大可以为 200 GB。本教程使用的是块 Blob。另一种 Blob 类型为页 Blob，其大小可以达 1 TB，在对文件中的一系列字节进行频繁修改时，这种 Blob 类型更加高效。有关 Blob 的更多信息，请参见[了解块 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee691964.aspx)。
+- **Blob**：任何类型和大小的文件。可将两类 Blob 存储到 Azure 存储服务中：块 Blob 和页 Blob。大部分文件都是块 blob。单个块 Blob 最大可以为 200 GB。本教程使用的是块 Blob。另一种 Blob 类型为页 Blob，其大小可以达 1 TB，在对文件中的一系列字节进行频繁修改时，这种 Blob 类型更加高效。有关 Blob 的更多信息，请参阅[了解块 Blob、追加 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)。
 - **URL 格式**：可使用以下 URL 格式对 Blob 寻址：
 
     `http://storageaccount.blob.core.chinacloudapi.cn/container_name/blob_name`
@@ -166,4 +166,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 
 有关详细信息，请参阅 [Java 开发人员中心](/develop/java/)。
-<!---HONumber=Mooncake_0405_2016-->
+
+
+
+<!---HONumber=Mooncake_0516_2016-->

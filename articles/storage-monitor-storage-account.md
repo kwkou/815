@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="12/01/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="04/06/2016"
+	wacn.date="05/23/2016"/>
 
 # 监视 Azure 门户中的存储帐户
 
@@ -39,7 +39,7 @@
 
       **最少** - 收集经过汇总的有关 Blob、表和队列服务的入口/出口、可用性、延迟及成功百分比等度量值。
 
-      **详细** - 除最少监视度量值外，在 Azure 存储服务 API 中为每项存储操作收集一组相同的度量值。通过详细监视度量值可对应用程序运行期间出现的问题进行进一步分析。
+      **详细** – 除最少监视度量值外，在 Azure 存储服务 API 中为每项存储操作收集一组相同的度量值。通过详细监视度量值可对应用程序运行期间出现的问题进行进一步分析。
 
       **关闭** - 关闭监视。现有监视数据将一直保留到保留期结束。
 
@@ -51,7 +51,7 @@
 
 在您为存储帐户配置监视之前，不会收集任何监视数据，且仪表板和“监视”页上的度量值图表为空。
 
-在设置监视级别和保留策略后，你可以选择要在 [Azure 管理门户](https://manage.windowsazure.cn)中监视哪些可用度量值，以及要在度量值图表上显示哪些度量值。将在每个监视级别显示一组默认度量值。您可以使用“添加度量值”在度量值列表中添加或删除度量值。
+在设置监视级别和保留策略后，你可以选择要在 [Azure 管理门户](https://manage.windowsazure.cn)中监视哪些可用指标，以及要在指标图表上显示哪些指标。将在每个监视级别显示一组默认度量值。您可以使用“添加度量值”在度量值列表中添加或删除度量值。
 
 度量值存储在存储帐户中的以下 4 个表中：$MetricsTransactionsBlob、$MetricsTransactionsTable、$MetricsTransactionsQueue 和 $MetricsCapacityBlob。有关详细信息，请参阅[关于存储分析度量值](http://msdn.microsoft.com/zh-cn/library/azure/hh343258.aspx)。
 
@@ -153,4 +153,4 @@
 
 诊断日志保存在你的存储帐户下名为 $logs 的 Blob 容器中。有关访问 $logs 容器的信息，请参阅[关于存储分析日志记录](http://msdn.microsoft.com/zh-cn/library/azure/hh343262.aspx)。
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0516_2016-->

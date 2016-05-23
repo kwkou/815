@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="02/20/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="04/08/2016"
+	wacn.date="05/23/2016"/>
 
 # 使用 Blob 存储的本地应用程序
 
@@ -114,8 +114,7 @@ Azure 存储空间中的 Blob。
 
     blob.upload(new FileInputStream(fileReference), fileReference.length());
 
-调用一个名为 **MakeHTMLPage** 的帮助器函数来生成一个包含 **&lt;image&gt;** 元素的基本 HTML 页面，并将元素中的源设置为现在位于你的 Azure 存储帐户中的 Blob。（
-**MakeHTMLPage** 的代码将在本主题后面讨论。）
+调用一个名为 **MakeHTMLPage** 的帮助器函数来生成一个包含 **&lt;image&gt;** 元素的基本 HTML 页面，并将元素中的源设置为现在位于你的 Azure 存储帐户中的 Blob。本文后面将讨论 **MakeHTMLPage** 的代码。
 
     MakeHTMLPage(container);
 
@@ -315,15 +314,13 @@ Azure 存储空间中的 Blob。
 
 ## <a name="bkmk_deletecontainer"> </a>删除容器
 
-由于存储是收费的，因此你在完成本示例的试验以后，可能需要删除
-**gettingstarted** 容器。若要删除容器，请使用 CloudBlobContainer.delete 方法：
+
+由于你的存储是收费的，因此你可能希望在完成对此示例的试验后删除 **gettingstarted** 容器。若要删除容器，请使用 **CloudBlobContainer.delete** 方法：
 
     container = serviceClient.getContainerReference("gettingstarted");
     container.delete();
 
-调用 **CloudBlobContainer.delete** 方法时，初始 **CloudStorageAccount**、**ClodBlobClient**、
-**CloudBlobContainer** 对象的过程与针对
-**createIfNotExist** 方法显示的过程是相同的。以下是删除名为 gettingstarted 的容器的完整示例。
+若要调用 **CloudBlobContainer.delete** 方法，初始化 **CloudStorageAccount**、**ClodBlobClient**、**CloudBlobContainer** 对象的过程与为 **createIfNotExist** 方法演示的过程相同。以下是删除名为 **gettingstarted** 的容器的完整示例。
 
     import com.microsoft.azure.storage.*;
     import com.microsoft.azure.storage.blob.*;
@@ -379,4 +376,5 @@ Azure 存储空间中的 Blob。
 - [Azure 存储空间服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 
-<!---HONumber=Mooncake_0411_2016-->
+
+<!---HONumber=Mooncake_0516_2016-->

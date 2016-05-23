@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 Node.js 使用表存储 | Azure" 
+	pageTitle="如何通过 Node.js 使用 Azure 表存储 | Azure"
 	description="了解如何使用 Azure 表存储。代码示例使用 Node.js API 编写。" 
 	services="storage" 
 	documentationCenter="nodejs" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/17/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="04/08/2016"
+	wacn.date="05/23/2016"/>
 
 
 # 如何通过 Node.js 使用 Azure 表存储
@@ -83,7 +83,7 @@ Azure 模块将读取环境变量 AZURE_STORAGE_ACCOUNT 和 AZURE_STORAGE_ACCESS
 		}
 	});
 
-`result` 将为 `true`（如果创建了新表），或者为 `false`（如果表已存在）。`response` 将包含有关该请求的信息。
+如果创建了新表，`result.created` 将为 `true`，如果表已存在，则为 `false`。`response` 将包含有关该请求的信息。
 
 ### 筛选器
 
@@ -155,7 +155,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 可使用多种方法来更新现有实体：
 
-* **updateEntity** - 通过替换现有实体来更新现有实体
+* **replaceEntity** - 通过替换现有实体来更新现有实体
 
 * **mergeEntity** - 通过将新属性值合并到现有实体来更新现有实体
 
@@ -163,13 +163,13 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 * **insertOrMergeEntity** - 通过将新属性值合并到现有实体来更新现有实体。如果不存在实体，将插入一个新实体
 
-以下示例演示了使用 **updateEntity** 更新实体：
+以下示例演示了使用 **replaceEntity** 更新实体：
 
-	tableSvc.updateEntity('mytable', updatedTask, function(error, result, response){
-      if(!error) {
-        // Entity updated
-      }
-    });
+	tableSvc.replaceEntity('mytable', updatedTask, function(error, result, response){
+	  if(!error) {
+	    // Entity updated
+	  }
+	});
 
 > [AZURE.NOTE] 默认情况下，更新某个实体时，不会查看要更新的数据是否曾被其他进程更新过。若要支持并发更新，请执行以下步骤：
 >
@@ -181,7 +181,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 >    
 > 3. 执行更新操作。如果实体在您检索 ETag 值后已被修改，例如被应用程序的其他实例修改，则会返回一条 `error`，指出未满足请求中指定的更新条件。
 
-对于 **updateEntity** 和 **mergeEntity**，如果待更新的实体不存在，则更新操作将失败。因此，如果您希望存储某个实体而不考虑它是否已存在，请使用 **insertOrReplaceEntity** 或 **insertOrMergeEntity**。
+对于 **replaceEntity** 和 **mergeEntity**，如果待更新的实体不存在，则更新操作将失败。因此，如果你希望存储某个实体而不考虑它是否已存在，请使用 **insertOrReplaceEntity** 或 **insertOrMergeEntity**。
 
 如果更新操作成功，则 `result` 会包含所更新实体的 **Etag**。
 
@@ -272,7 +272,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-如果成功，`result.entries` 将包含与查询匹配的一组实体。如果查询无法返回所有实体，`result.continuationToken` 就不会是 *null*，因此可用作 **queryEntities** 的第三个参数来检索更多结果。对于初始查询，第三个参数请使用 *null*。
+如果成功，`result.entries` 将包含与查询匹配的一组实体。如果查询无法返回所有实体，`result.continuationToken` 就不会是 null，因此可用作 **queryEntities** 的第三个参数来检索更多结果。对于初始查询，第三个参数请使用 null。
 
 ### 查询一部分实体属性
 
@@ -387,36 +387,30 @@ dc.table.queryEntities(tableName,
 
 ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID。以下示例定义了两个策略，一个用于“user1”，一个用于“user2”：
 
-	var sharedAccessPolicy = [
-	  {
-	    AccessPolicy: {
-	      Permissions: azure.TableUtilities.SharedAccessPermissions.QUERY,
-	      Start: startDate,
-	      Expiry: expiryDate
-	    },
-	    Id: 'user1'
+	var sharedAccessPolicy = {
+	  user1: {
+	    Permissions: azure.TableUtilities.SharedAccessPermissions.QUERY,
+	    Start: startDate,
+	    Expiry: expiryDate
 	  },
-	  {
-	    AccessPolicy: {
-	      Permissions: azure.TableUtilities.SharedAccessPermissions.ADD,
-	      Start: startDate,
-	      Expiry: expiryDate
-	    },
-	    Id: 'user2'
+	  user2: {
+	    Permissions: azure.TableUtilities.SharedAccessPermissions.ADD,
+	    Start: startDate,
+	    Expiry: expiryDate
 	  }
-	];
+	};
 
 下面的示例获取 **hometasks** 表的当前 ACL，然后使用 **setTableAcl** 添加新策略。此方法具有以下用途：
 
+	var extend = require('extend');
 	tableSvc.getTableAcl('hometasks', function(error, result, response) {
-      if(!error){
-		//push the new policy into signedIdentifiers
-		result.signedIdentifiers.push(sharedAccessPolicy);
-		tableSvc.setTableAcl('hometasks', result, function(error, result, response){
-	  	  if(!error){
-	    	// ACL set
-	  	  }
-		});
+    if(!error){
+	    var newSignedIdentifiers = extend(true, result.signedIdentifiers, sharedAccessPolicy);
+	    tableSvc.setTableAcl('hometasks', newSignedIdentifiers, function(error, result, response){
+	      if(!error){
+	        // ACL set
+	      }
+	    });
 	  }
 	});
 
@@ -444,4 +438,4 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [使用 Azure 表服务的 Node.js Web 应用]: /documentation/articles/storage-nodejs-use-table-storage-web-site
   [在 Azure App Service 中创建 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0516_2016-->

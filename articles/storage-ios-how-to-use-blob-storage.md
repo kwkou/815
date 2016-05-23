@@ -8,8 +8,8 @@
 
 <tags
     ms.service="storage"
-    ms.date="01/05/2016"
-    wacn.date="02/25/2016"/>
+    ms.date="04/11/2016"
+    wacn.date="05/23/2016"/>
 
 # 如何通过 iOS 使用 Blob 存储
 
@@ -17,7 +17,7 @@
 
 ## 概述
 
-本文将演示如何使用 Azure Blob 存储执行常见任务。示例用 Objective-C 编写，并使用 [Azure 存储空间 iOS 库](https://github.com/Azure/azure-storage-ios)。涉及的任务包括**上载**、**列出**、**下载**和**删除** Blob。有关 Blob 的详细信息，请参阅[后续步骤](#next-steps)部分。你也可以下载[示例应用](https://github.com/Azure/azure-storage-ios/tree/master/BlobSample)以快速了解如何在 iOS 应用程序中使用 Azure 存储空间。
+本文将演示如何使用 Azure Blob 存储执行常见任务。示例是用 Objective-C 编写的，并使用了 [Azure Storage Client Library for iOS（适用于 iOS 的 Azure 存储客户端库）](https://github.com/Azure/azure-storage-ios)。涉及的任务包括**上载**、**列出**、**下载**和**删除** Blob。有关 Blob 的详细信息，请参阅[后续步骤](#next-steps)部分。你也可以下载[示例应用](https://github.com/Azure/azure-storage-ios/tree/master/BlobSample)以快速了解如何在 iOS 应用程序中使用 Azure 存储空间。
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
 
@@ -28,7 +28,7 @@
 
 1. 首先，下载或克隆 [azure-storage-ios repo](https://github.com/azure/azure-storage-ios)。
 
-2. 转到 *azure-storage-ios* -> *Lib* -> *Azure 存储客户端库* ，并在 Xcode 中打开 `Azure Storage Client Library.xcodeproj`。
+2. 转到 azure-storage-ios -> Lib -> Azure Storage Client Library，并在 Xcode 中打开 `Azure Storage Client Library.xcodeproj`。
 
 3. 在 Xcode 的左上方，将活动方案从“Azure Storage Client Library”更改为“Framework”。
 
@@ -72,9 +72,7 @@
 
 - **DefaultEndpointsProtocol** - 你可以选择 HTTP 或 HTTPS。但是，强烈建议使用 HTTPS。
 - **帐户名** - 存储帐户的名称
-- **帐户密钥** - 如果使用[管理门户](manage.windowsazure.cn)，你可以通过单击“管理访问密钥”找到此项。
-
-<!-- If you're using the [Preview Portal](portal.azure.com), you can click the Key icon to find this information.-->
+- **帐户密钥** - 如果你使用 [Azure 管理门户](https://manage.windowsazure.cn)，请在该门户中导航到你的存储帐户，然后单击“管理访问密钥”。 
 
 下面是该密钥在你的应用程序中的显示方式：
 
@@ -86,9 +84,9 @@
 作为存储帐户所有者，你需要为 iOS 客户端生成要使用的 SAS。若要生成 SAS，你可能需要编写单独的服务，该服务生成要分发给客户端的 SAS。出于测试目的，你还可以使用 Azure CLI 来生成 SAS。请注意，共享密钥凭据用于生成 SAS，但客户端随后可以通过封装在 SAS URL 中的身份验证信息来使用 SAS。
 创建 SAS 时，可以指定 SAS 有效的时间间隔，以及 SAS 授予客户端的权限。例如，对于 blob 容器，SAS 可以授予对容器中的 blob 的读取、写入或删除权限，以及列出容器中的 blob 的列出权限。
 
-以下示例演示如何使用 Azure CLI 来生成 SAS 令牌，该令牌授予对容器 *sascontainer* 的读取和写入权限，这些权限截止于 2015 年 9 月 5 日上午 12:00 (UTC)。
+以下示例演示如何使用 Azure CLI 来生成 SAS 令牌，该令牌授予对容器 sascontainer 的读取和写入权限，这些权限截止于 2015 年 9 月 5 日上午 12:00 (UTC)。
 
-1. 首先，请阅读此[指南](../xplat-cli/#how-to-install-the-azure-cli)了解如何安装 Azure CLI 并连接到 Azure 订阅。
+1. 首先，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install) 以了解如何安装 Azure CLI 并连接到 Azure 订阅。
 
 2. 接下来，在 Azure CLI 中键入以下命令以获得帐户的连接字符串：
 
@@ -111,13 +109,13 @@
 		// Get a reference to a container in your Storage account
     	AZSCloudBlobContainer *blobContainer = [[AZSCloudBlobContainer alloc] initWithUrl:[NSURL URLWithString:@" your SAS URL"]];
 
-如你所见，使用 SAS 令牌时，不会在 iOS 应用程序中公开你的帐户名和帐户密钥。你可以通过查阅[共享访问签名教程](../storage-dotnet-shared-access-signature-part-1)了解有关 SAS 的更多信息。
+如你所见，使用 SAS 令牌时，不会在 iOS 应用程序中公开你的帐户名和帐户密钥。你可以通过查阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)了解有关 SAS 的详细信息。
 
 ##异步操作
 > [AZURE.NOTE] 执行对服务的请求的所有方法都是异步操作。在代码示例中，你会发现这些方法都有完成处理程序。请求完成**后**，将运行完成处理程序内的代码。正在发出请求**时**，将运行完成处理程序后的代码。
 
 ## 创建容器
-Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下示例演示如何在存储帐户中创建一个名为 *newcontainer* 的容器（如果它尚不存在）。在选择容器的名称时，请注意上面提到的命名规则。
+Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下示例演示如何在存储帐户中创建一个名为 newcontainer 的容器（如果它尚不存在）。在选择容器的名称时，请注意上面提到的命名规则。
 
      -(void)createContainer{
         // Create a storage account object from a connection string.
@@ -137,7 +135,7 @@ Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下�
         }];
     }
 
-你可以通过查看[管理门户](http://manage.windowsazure.cn)或任何[存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)并验证 *newcontainer* 是否在你的存储帐户的容器列表中来确认此操作是否正常工作。
+可通过查看 [Azure 管理门户](http://manage.windowsazure.cn)或任意[存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)并验证 newcontainer 存在于存储帐户的容器列表中来确认此操作有效。
 
 ## 设置容器权限
 默认情况下，容器的权限配置为**私有**访问权限。但是，容器提供了几个不同的容器访问权限选项：
@@ -202,7 +200,7 @@ Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下�
          }];
      }
 
-你可以通过查看[管理门户](http://manage.windowsazure.cn)或任何[存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)并验证容器 *containerpublic* 是否包含该 blob *sampleblob* 来确认此操作是否正常工作。在此示例中，我们使用了公共容器，因此你还可以通过转到 blob URI 来验证此操作是否正常工作：
+你可以通过查看[Azure 管理门户](http://manage.windowsazure.cn)或任何[存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)并验证容器 *containerpublic* 是否包含该 blob *sampleblob* 来确认此操作是否正常工作。在此示例中，我们使用了公共容器，因此你还可以通过转到 blob URI 来验证此操作是否正常工作：
 
     https://nameofyourstorageaccount.blob.core.chinacloudapi.cn/containerpublic/sampleblob
 
@@ -348,15 +346,12 @@ Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下�
 
 现在，你已了解有关 Blob 存储的基础知识，可单击下面的链接来了解更复杂的存储任务。
 
-- [Azure 存储空间 iOS 库]
-- [Azure 存储 REST API]
+- [Azure Storage Client Library for iOS（适用于 iOS 的 Azure 存储客户端库）](https://github.com/azure/azure-storage-ios)
+- [Azure 存储空间服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
-- [Azure 存储团队博客]
+- [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage)
 
 如果你对此库有任何疑问，请随意将问题发布到我们的 [MSDN Azure 论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazuredata)或[堆栈溢出](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files)。如果你有 Azure 存储空间的功能建议，请将建议发布到 [Azure 存储空间反馈](/product-feedback)。
 
-[Azure 存储空间 iOS 库]: https://github.com/azure/azure-storage-ios
-[Azure 存储 REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
-[Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0516_2016-->

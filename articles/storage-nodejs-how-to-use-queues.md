@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/17/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="04/08/2016"
+	wacn.date="05/23/2016"/>
 
 
 # 如何通过 Node.js 使用队列存储
@@ -60,7 +60,7 @@
 使用记事本或其他文本编辑器将以下内容添加到应用程序的
 **server.js** 文件的顶部，以便在其中使用存储：
 
-    var azure = require('azure-storage');
+	var azure = require('azure-storage');
 
 ## 设置 Azure 存储连接
 
@@ -72,17 +72,17 @@ Azure 模块将读取环境变量 AZURE_STORAGE_ACCOUNT 和 AZURE_STORAGE_ACCESS
 
 以下代码将创建一个 **QueueService** 对象，您可通过该对象来操作队列。
 
-    var queueSvc = azure.createQueueService();
+	var queueSvc = azure.createQueueService();
 
 使用 **createQueueIfNotExists** 方法，该方法将返回指定队列（如果它存在），或创建具有指定名称的新队列（如果它尚不存在）。
 
 	queueSvc.createQueueIfNotExists('myqueue', function(error, result, response){
-      if(!error){
-        // Queue created or exists
+	  if(!error){
+	    // Queue created or exists
 	  }
 	});
 
-如果创建了队列，则 `result` 为 true。如果队列已存在，则 `result` 为 false。
+如果创建了队列，则 `result.created` 为 true。如果队列已存在，则 `result.created` 为 false。
 
 ### 筛选器
 
@@ -269,36 +269,30 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID。下面的示例定义了两个策略，一个用于“user1”，一个用于“user2”：
 
-	var sharedAccessPolicy = [
-	  {
-	    AccessPolicy: {
-	      Permissions: azure.QueueUtilities.SharedAccessPermissions.PROCESS,
-	      Start: startDate,
-	      Expiry: expiryDate
-	    },
-	    Id: 'user1'
+	var sharedAccessPolicy = {
+	  user1: {
+	    Permissions: azure.QueueUtilities.SharedAccessPermissions.PROCESS,
+	    Start: startDate,
+	    Expiry: expiryDate
 	  },
-	  {
-	    AccessPolicy: {
-	      Permissions: azure.QueueUtilities.SharedAccessPermissions.ADD,
-	      Start: startDate,
-	      Expiry: expiryDate
-	    },
-	    Id: 'user2'
+	  user2: {
+	    Permissions: azure.QueueUtilities.SharedAccessPermissions.ADD,
+	    Start: startDate,
+	    Expiry: expiryDate
 	  }
-	];
+	};
 
 下面的示例获取 **myqueue** 的当前 ACL，然后使用 **setQueueAcl** 添加新策略。此方法具有以下用途：
 
+	var extend = require('extend');
 	queueSvc.getQueueAcl('myqueue', function(error, result, response) {
-      if(!error){
-		//push the new policy into signedIdentifiers
-		result.signedIdentifiers = result.signedIdentifiers.concat(sharedAccessPolicy);
-		queueSvc.setQueueAcl('myqueue', result.signedIdentifiers, function(error, result, response){
-	  	  if(!error){
-	    	// ACL set
-	  	  }
-		});
+	  if(!error){
+	    var newSignedIdentifiers = extend(true, result.signedIdentifiers, sharedAccessPolicy);
+	    queueSvc.setQueueAcl('myqueue', newSignedIdentifiers, function(error, result, response){
+	      if(!error){
+	        // ACL set
+	      }
+	    });
 	  }
 	});
 
@@ -314,10 +308,10 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 -   访问 GitHub 上的 [Azure Storage SDK for Node][] 存储库。
 
   [Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
-  [使用 REST API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh264518.aspx
+  [使用 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx
   [Azure 管理门户]: http://manage.windowsazure.cn
   [在 Azure App Service 中创建 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
-  [生成 Node.js 应用程序并将其部署到 Azure 云服务]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
+  [生成 Node.js 应用程序并将其部署到 Azure 云服务]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
   [使用 Azure 表服务的 Node.js Web 应用]: /documentation/articles/storage-nodejs-use-table-storage-web-site
 
   
@@ -327,8 +321,8 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   
   
   
-  [Node.js 云服务]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
+  [生成 Node.js 应用程序并将其部署到 Azure 云服务]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
   [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
- [使用 Web Matrix 生成 Node.js Web 应用并将其部署到 Azure]: /zh-cn/documentation/articles/web-sites-nodejs-use-webmatrix/
+  [使用 Web Matrix 生成 Node.js Web 应用并将其部署到 Azure]: /documentation/articles/web-sites-nodejs-use-webmatrix
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0516_2016-->

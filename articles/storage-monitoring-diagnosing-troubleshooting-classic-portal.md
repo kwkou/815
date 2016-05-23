@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="03/18/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="04/06/2016"
+	wacn.date="05/23/2016"/>
 
 # 监视、诊断和排查 Azure 存储空间问题
 
@@ -73,7 +73,7 @@
 
 ![][1]
 
-*图 1：监视、诊断和故障排除*
+图 1：监视、诊断和故障排除
 
 本指南的主要目标受众是开发使用 Azure 存储服务的联机服务的开发人员以及负责管理此类联机服务的 IT 专业人员。本指南的目标是：
 
@@ -104,7 +104,7 @@
 
 ![][2]
 
-*图 2 在 Azure 经典门户中查看存储度量值*
+图 2 在 Azure 经典门户中查看存储度量值
 
 你应通过以下方式持续监视 Azure 应用程序以确保它们正常运行并按预期执行操作：
 
@@ -123,7 +123,7 @@
 
 可以使用 [Azure 经典门户](https://manage.windowsazure.cn)查看全球所有 Azure 区域中存储服务（及其他 Azure 服务）的运行状况。这使你可以立即了解是否有不受你控制的问题正在影响你的应用程序所使用的区域中的存储服务。
 
-此外，Azure 经典门户还可以提供影响各种 Azure 服务的事件的通知。注意：此信息以前已在 Azure 服务仪表板（网址为：<a href="http://status.azure.com" target="_blank">http://status.azure.com</a>）上与历史数据一起提供。
+此外，Azure 管理门户还可以提供影响各种 Azure 服务的事件的通知。注意：此信息以前已在 Azure 服务仪表板（网址为：<a href="/support/service-dashboard/" target="_blank">https://www.azure.cn/support/service-dashboard/</a>）上与历史数据一起提供。
 
 虽然 Azure 经典门户从 Azure 数据中心内部收集运行状况信息（由内而外监视），但你也可以考虑采用由外而内方法来生成定期从多个位置访问 Azure 托管的 Web 应用程序的综合事务。<a href="http://www.keynote.com/solutions/monitoring/web-monitoring" target="_blank">Keynote</a>、<a href="https://www.gomeznetworks.com/?g=1" target="_blank">Gomez</a> 和 Application Insights for Visual Studio Team Services 提供的服务是这种由外而内方法的示例。有关 Application Insights for Visual Studio Team Services 的详细信息，请参阅附录“[附录 5：使用 Application Insights for Visual Studio Team Services 进行监视]”。
 
@@ -131,7 +131,7 @@
 
 存储度量值仅存储 Blob 服务的容量度量值，因为 Blob 通常占所存储数据的最大比例（撰写本文时，尚不能使用存储度量值来监视表和队列的容量）。如果您已为 Blob 服务启用监视，则可以在 **$MetricsCapacityBlob** 表中找到此数据。存储度量值每天记录一次此数据，然后您可以使用 **RowKey** 的值来确定某行是否包含与用户数据（值 **data**）或分析数据（值 **analytics**）相关的实体。每个存储的实体均包含有关所用的存储量（**Capacity**，以字节为单位）、当前的容器数 (**ContainerCount**) 以及存储帐户中正在使用的 Blob 数 (**ObjectCount**) 的信息。有关 **$MetricsCapacityBlob** 表中存储的容量度量值的详细信息，请参阅 MSDN 上的<a href="http://msdn.microsoft.com/zh-cn/library/azure/hh343264.aspx" target="_blank">存储分析度量表架构</a>。
 
-> [AZURE.NOTE]你应监视这些值以便获取“你已接近存储帐户的容量限制”的早期警告。在 Azure 经典门户中你的存储帐户的“监视”页上，你可以添加警报规则，以便在聚合存储使用量超过或低于你指定的阈值时通知你。
+> [AZURE.NOTE] 你应监视这些值以便获取“你已接近存储帐户的容量限制”的早期警告。在 Azure 经典门户中你的存储帐户的“监视”页上，你可以添加警报规则，以便在聚合存储使用量超过或低于你指定的阈值时通知你。
 
 若要帮助估算各种存储对象（如 Blob）的大小，请参阅博客文章<a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx" target="_blank">了解 Azure 存储空间计费 - 带宽、事务和容量</a>。
 
@@ -194,7 +194,7 @@
 
 应用程序用户可能会向你通知客户端应用程序报告的错误。存储度量值还会记录来自存储服务的不同错误类型（如 **NetworkError**、**ClientTimeoutError** 或 **AuthorizationError**）的计数。虽然存储度量值仅记录不同错误类型的计数，但你可以通过检查服务器端日志、客户端日志和网络日志来获取有关单个请求的详细信息。通常，存储服务返回的 HTTP 状态代码将指示请求失败的原因。
 
-> [AZURE.NOTE]请记住，你应该会看到一些间歇性错误：例如，因暂时性的网络状况导致的错误或应用程序错误。
+> [AZURE.NOTE] 请记住，你应该会看到一些间歇性错误：例如，因暂时性的网络状况导致的错误或应用程序错误。
 
 MSDN 上的以下资源对了解与存储相关的状态和错误代码很有帮助：
 
@@ -215,7 +215,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 使用 .NET 存储客户端库可以收集与应用程序执行的存储操作相关的客户端日志数据。有关如何启用客户端日志记录和访问日志数据的详细信息，请参阅 MSDN 上的<a href="https://msdn.microsoft.com/zh-cn/library/dn782839.aspx" target="_blank">使用存储客户端库进行客户端日志记录</a>。
 
-> [AZURE.NOTE]在某些情况下（如 SAS 授权失败），用户可能会报告一个错误，而你可能在服务器端存储日志中未找到该错误所对应的请求数据。你可以使用存储客户端库的日志记录功能来调查该问题的原因是否出在客户端上，或者使用网络监视工具来调查网络。
+> [AZURE.NOTE] 在某些情况下（如 SAS 授权失败），用户可能会报告一个错误，而你可能在服务器端存储日志中未找到该错误所对应的请求数据。你可以使用存储客户端库的日志记录功能来调查该问题的原因是否出在客户端上，或者使用网络监视工具来调查网络。
 
 ### <a name="using-network-logging-tools"></a>使用网络日志记录工具
 
@@ -244,7 +244,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 - 在网络跟踪（如 Fiddler 捕获的网络跟踪）中，客户端请求 ID 在请求消息中作为 **x-ms-client-request-id** HTTP 标头值可见。
 - 在服务器端存储日志记录日志中，客户端请求 ID 将出现在“客户端请求 ID”列中。
 
-> [AZURE.NOTE]多个请求可以共享同一客户端请求 ID，因为客户端可以分配此值（尽管存储客户端库会自动分配一个新值）。在从客户端的重试的情况下的所有尝试都共享相同的客户端请求 ID。如果从客户端发送批处理，批处理有单个客户端请求 ID。
+> [AZURE.NOTE] 多个请求可以共享同一客户端请求 ID，因为客户端可以分配此值（尽管存储客户端库会自动分配一个新值）。在从客户端的重试的情况下的所有尝试都共享相同的客户端请求 ID。如果从客户端发送批处理，批处理有单个客户端请求 ID。
 
 
 ### <a name="server-request-id"></a>服务器请求 ID
@@ -255,7 +255,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 - 在网络跟踪（如 Fiddler 捕获的网络跟踪）中，服务器请求 ID 将作为 **x-ms-request-id** 标头值出现在响应消息中。
 - 在存储客户端库创建的客户端日志中，服务器请求 ID 将出现在显示服务器响应详细信息的日志项的“操作文本”列中。
 
-> [AZURE.NOTE]存储服务始终为它接收的每个请求分配唯一的服务器请求 ID，l因此客户端进行的每次重试尝试和批处理中包含的每个操作均使用唯一的服务器请求 ID。
+> [AZURE.NOTE] 存储服务始终为它接收的每个请求分配唯一的服务器请求 ID，l因此客户端进行的每次重试尝试和批处理中包含的每个操作均使用唯一的服务器请求 ID。
 
 如果存储客户端库在客户端上引发 **StorageException**，则 **RequestInformation** 属性将包含 **RequestResult** 对象（其中包含 **ServiceRequestID** 属性）。您也可以通过 **OperationContext** 实例访问 **RequestResult** 对象。
 
@@ -913,4 +913,4 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 [9]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/mma-screenshot-1.png
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/mma-screenshot-2.png
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0516_2016-->

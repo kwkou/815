@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="02/17/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="04/08/2016"
+	wacn.date="05/23/2016"/>
 
 # 如何通过 PHP 使用 Blob 存储
 
@@ -79,7 +79,7 @@
 
 	$blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
-<h2><a id="CreateContainer"></a>如何：创建容器</h2>
+<h2><a id="CreateContainer"></a>创建容器</h2>
 [AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
 
 利用 **BlobRestProxy** 对象，您可以使用 **createContainer** 方法创建 Blob 容器。创建容器时，可以在该容器上设置选项，但此操作不是必需的。（下面的示例演示了如何设置容器访问控制列表 (ACL) 和容器元数据。）
@@ -136,7 +136,7 @@
 
 有关 Blob 服务错误代码的详细信息，请参阅 [Blob 服务错误代码][error-codes]。
 
-<h2><a id="UploadBlob"></a>如何：将 Blob 上载到容器</h2>
+<h2><a id="UploadBlob"></a>将 Blob 上载到容器中</h2>
 
 若要将文件作为 Blob 上载，请使用 **BlobRestProxy->createBlockBlob** 方法。此操作将创建 Blob（如果该 Blob 不存在），或者覆盖它（如果该 Blob 存在）。下面的代码示例假定已创建了容器，并使用 [fopen][fopen] 将文件作为流打开。
 
@@ -167,7 +167,7 @@
 
 请注意，上面的示例将 Blob 作为流上载。但是，也可使用 [file_get_contents][file_get_contents] 函数将 Blob 作为字符串上载。若要使用前面的示例执行此操作，请将 `$content = fopen("c:\myfile.txt", "r");` 更改为 `$content = file_get_contents("c:\myfile.txt");`。
 
-<h2><a id="ListBlobs"></a>如何：列出容器中的 Blob</h2>
+<h2><a id="ListBlobs"></a>列出容器中的 Blob</h2>
 
 若要列出容器中的 Blob，请将 **BlobRestProxy->listBlobs** 方法与 **foreach** 循环一起使用来循环访问结果。以下代码将容器中的每个 Blob 的名称作为容器中的输出并将其 URI 显示到浏览器。
 
@@ -200,7 +200,7 @@
 	}
 
 
-<h2><a id="DownloadBlob"></a>如何：下载 Blob</h2>
+<h2><a id="DownloadBlob"></a>下载 Blob</h2>
 
 若要下载 Blob，请调用 **BlobRestProxy->getBlob** 方法，然后对生成的 **GetBlobResult** 对象调用 **getContentStream** 方法。
 
@@ -229,7 +229,7 @@
 
 请注意，上面的示例将 Blob 作为流资源获取（默认行为）。但是，你可以使用 [stream_get_contents][stream-get-contents] 函数将返回的流转换为字符串。
 
-<h2><a id="DeleteBlob"></a>如何：删除 Blob</h2>
+<h2><a id="DeleteBlob"></a>删除 Blob</h2>
 
 若要删除 Blob，请将容器名称和 Blob 名称传递到 **BlobRestProxy->deleteBlob**。
 
@@ -255,7 +255,7 @@
 		echo $code.": ".$error_message."<br />";
 	}
 
-<h2><a id="DeleteContainer"></a>如何：删除 Blob 容器</h2>
+<h2><a id="DeleteContainer"></a>删除 Blob 容器</h2>
 
 最后，若要删除 Blob 容器，请将容器名称传递到 **BlobRestProxy->deleteContainer**。
 
@@ -301,4 +301,5 @@
 [fopen]: http://www.php.net/fopen
 [stream-get-contents]: http://www.php.net/stream_get_contents
 
-<!---HONumber=Mooncake_0411_2016-->
+
+<!---HONumber=Mooncake_0516_2016-->
