@@ -1,5 +1,5 @@
 <properties
-	pageTitle="教程 - Azure  批处理( Batch ) .NET 库入门 | Microsoft Azure"
+	pageTitle="教程 - Azure  批处理( Batch ) .NET 库入门 | Azure"
 	description="了解 Azure  批处理( Batch )的基本概念，以及如何使用一个简单方案开发 批处理( Batch )服务"
 	services="batch"
 	documentationCenter=".net"
@@ -25,7 +25,7 @@
 ### 帐户
 
 - **Azure 帐户** -- 如果你没有 Azure 订阅，可以 [创建一个 试用 Azure 帐户][azure\_free\_account]。
-- **Batch 帐户**--获取 Azure 订阅后，请参阅[创建和管理 Azure Batch 帐户](/documentation/articles/batch-account-create-portal)。
+- **Batch 帐户**
 - **存储帐户** -- 请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)中的“创建存储帐户”部分。
 
 ### Visual Studio
@@ -106,7 +106,7 @@ private const string StorageAccountKey  = "";
 
 ![在 Azure 存储空间中创建容器][1] <br/>
 
-Batch 包含的内置支持支持与 Azure 存储空间交互。存储帐户中的容器将为 Batch 帐户中运行的任务提供所需的文件。这些容器还提供存储任务生成的输出数据所需的位置。DotNetTutorial 客户端应用程序首先在 [Azure Blob 存储](../storage/storage-introduction.md)中创建三个容器：
+Batch 包含的内置支持支持与 Azure 存储空间交互。存储帐户中的容器将为 Batch 帐户中运行的任务提供所需的文件。这些容器还提供存储任务生成的输出数据所需的位置。DotNetTutorial 客户端应用程序首先在 [Azure Blob 存储](/documentation/articles/storage-introduction)中创建三个容器：
 
 - **应用程序**：此容器用于存储任务所要运行的应用程序及其依赖项，例如 DLL。
 - **输入**：任务将从输入容器下载所要处理的数据文件。
@@ -325,7 +325,7 @@ private static async Task CreatePoolAsync(
 
 在此示例应用程序中，StartTask 将它从存储空间下载的文件（使用 [StartTask][net_starttask].[ResourceFiles][net_starttask_resourcefiles] 属性指定），从 StartTask 工作目录复制到在节点上运行的所有任务可以访问的共享目录。本质上，这会在节点加入池时，将 `TaskApplication.exe` 及其依赖项复制到每个节点上的共享目录，因此该节点上运行的任何任务都可以访问它。
 
-> [AZURE.TIP] Azure Batch 的**应用程序包**功能提供另一种方法用于将应用程序转移到池中的计算节点。有关详细信息，请参阅 [Application deployment with Azure Batch application packages（使用 Azure Batch 应用程序包部署应用程序）](/documentation/articles/batch-application-packages)。
+> [AZURE.TIP] Azure Batch 的**应用程序包**功能提供另一种方法用于将应用程序转移到池中的计算节点。
 
 此外，在上述代码段中，值得注意的问题是，StartTask 的CommandLine属性中使用了两个环境变量：`%AZ_BATCH_TASK_WORKING_DIR%` 和 `%AZ_BATCH_NODE_SHARED_DIR%`。将自动为 Batch 池中的每个计算节点配置多个特定于 Batch 的环境变量。由任务执行的任何进程都可以访问这些环境变量。
 
@@ -449,11 +449,11 @@ private static void UploadFileToContainer(string filePath, string containerSas)
 
 DotNetTutorial 的 `Program.cs` 中的 `MonitorTasks` 方法内有三个 Batch .NET 概念值得讨论。下面按出现顺序列出了这些概念：
 
-1. **ODATADetailLevel**--必须在列出操作（例如获取作业的任务列表）中指定 [ODATADetailLevel][net_odatadetaillevel]，以确保 Batch 应用程序的性能。如果你打算在 Batch 应用程序中进行任何类型的状态监视，请将[有效地查询 Azure Batch 服务](batch-efficient-list-queries.md)加入你的阅读列表。
+1. **ODATADetailLevel**--必须在列出操作（例如获取作业的任务列表）中指定 [ODATADetailLevel][net_odatadetaillevel]，以确保 Batch 应用程序的性能。如果你打算在 Batch 应用程序中进行任何类型的状态监视，请将[有效地查询 Azure Batch 服务](/documentation/articles/batch-efficient-list-queries)加入你的阅读列表。
 
 2. **TaskStateMonitor**--[TaskStateMonitor][net_taskstatemonitor] 为 Batch .NET 应用程提供用于监视任务状态的帮助器实用程序。在 `MonitorTasks` 中，DotNetTutorial 将等待所有任务在时限内达到 [TaskState.Completed][net_taskstate]，然后终止作业。
 
-3. **TerminateJobAsync**--通过 [JobOperations.TerminateJobAsync][net_joboperations_terminatejob] 终止作业（或阻止 JobOperations.TerminateJob）会将该作业标记为已完成。如果你的 Batch 解决方案使用 [JobReleaseTask][net_jobreltask]，则这样做很重要。这是一种特殊类型的任务，在[作业准备与完成任务](batch-job-prep-release.md)中有说明。
+3. **TerminateJobAsync**--通过 [JobOperations.TerminateJobAsync][net_joboperations_terminatejob] 终止作业（或阻止 JobOperations.TerminateJob）会将该作业标记为已完成。如果你的 Batch 解决方案使用 [JobReleaseTask][net_jobreltask]，则这样做很重要。这是一种特殊类型的任务，在[作业准备与完成任务](/documentation/articles/batch-job-prep-release)中有说明。
 
 DotNetTutorial 的 `Program.cs` 中的 `MonitorTasks` 方法如下所示：
 
@@ -685,7 +685,7 @@ Sample complete, hit ENTER to exit...
 [azure_free_account]: /free/
 [azure_portal]: https://portal.azure.cn
 [batch_explorer_blog]: http://blogs.technet.com/b/windowshpc/archive/2015/01/20/azure-batch-explorer-sample-walkthrough.aspx
-[batch_learning_path]: https://azure.microsoft.com/documentation/learning-paths/batch/
+
 [blog_linux]: http://blogs.technet.com/b/windowshpc/archive/2016/03/30/introducing-linux-support-on-azure-batch.aspx
 [github_batchexplorer]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
 [github_dotnettutorial]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/DotNetTutorial

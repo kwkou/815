@@ -52,7 +52,7 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 - **Azure 帐户和订阅** - 如果你没有 Azure 订阅，可以激活你的 [MSDN 订户权益][msdn_benefits]，或注册[试用 Azure 帐户][free_account]。当你创建帐户时，系统将为你创建默认订阅。
 
-- **Batch 帐户** - 当应用程序与 Batch 服务交互时，将使用帐户名、帐户的 URL 和访问密钥作为凭据。所有 Batch 资源（如池、计算节点、作业和任务）都与 Batch 帐户关联。可以在 Azure 门户中[创建和管理 Batch 帐户](/documentation/articles/batch-account-create-portal)。
+- **Batch 帐户** - 当应用程序与 Batch 服务交互时，将使用帐户名、帐户的 URL 和访问密钥作为凭据。所有 Batch 资源（如池、计算节点、作业和任务）都与 Batch 帐户关联。
 
 - **存储帐户** - Batch 内置支持处理 [Azure 存储空间][azure_storage]中的文件。几乎每个 Batch 方案都使用 Azure 存储空间来暂存文件（用于任务执行的程序及它们处理的数据），以及存储任务生成的输出数据。若要创建存储帐户，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)。
 

@@ -11,7 +11,7 @@
 <tags
 	ms.service="batch"
 	ms.date="04/18/2016"
-	wacn.date="05/18/2016"/>
+	wacn.date="05/20/2016"/>
 
 # 自动缩放 Azure 批处理 ( Batch )池中的计算节点
 
@@ -47,7 +47,7 @@ $TargetDedicated = min(10, $averageActiveTaskCount);
 
 本文的后续部分将介绍构成自动缩放公式的各个实体，包括变量、运算符、操作和函数。你会了解如何在 Batch 中获取各种计算资源和任务度量值。你可以使用这些度量值，根据资源使用情况和任务状态对池的节点计数进行智能化调整。然后，你将了解如何使用 Batch REST 和 .NET API 构建公式以及对池启用自动缩放。最后，我们将讨论几个示例公式。
 
-> [AZURE.IMPORTANT] 每个 Azure 批处理帐户限制为可用于处理的计算节点的最大数目。Batch 服务将会根据该限制来创建节点。因此，它可能达不到公式所指定的目标数目。请参阅 [Azure Batch 服务的配额和限制](batch-quota-limit.md)了解有关查看和提高帐户配额的信息。
+> [AZURE.IMPORTANT] 每个 Azure 批处理帐户限制为可用于处理的计算节点的最大数目。Batch 服务将会根据该限制来创建节点。因此，它可能达不到公式所指定的目标数目。请参阅 [Azure Batch 服务的配额和限制](/documentation/articles/batch-quota-limit)了解有关查看和提高帐户配额的信息。
 
 ## <a name="variables"></a>变量
 
@@ -581,9 +581,9 @@ string formula = string.Format(@"
 
 ## 后续步骤
 
-* [Maximize Azure Batch compute resource usage with concurrent node tasks（通过并发节点任务最大限度提高 Azure Batch 计算资源的使用量）](batch-parallel-node-tasks.md)详细说明了如何在池中的计算节点上同时执行多个任务。除了自动缩放以外，此功能还可帮助降低某些工作负荷的作业持续时间，从而节省资金。
+* [Maximize Azure Batch compute resource usage with concurrent node tasks（通过并发节点任务最大限度提高 Azure Batch 计算资源的使用量）](/documentation/articles/batch-parallel-node-tasks)详细说明了如何在池中的计算节点上同时执行多个任务。除了自动缩放以外，此功能还可帮助降低某些工作负荷的作业持续时间，从而节省资金。
 
-* 为了进一步提升效率，请确保 Batch 应用程序以最佳的方式查询 Batch 服务。在 [Query the Azure Batch service efficiently（有效地查询 Azure Batch 服务）](batch-efficient-list-queries.md)中，可以了解在查询数千个计算节点或任务的状态时，如何限制跨线数据量。
+* 为了进一步提升效率，请确保 Batch 应用程序以最佳的方式查询 Batch 服务。在 [Query the Azure Batch service efficiently（有效地查询 Azure Batch 服务）](/documentation/articles/batch-efficient-list-queries)中，可以了解在查询数千个计算节点或任务的状态时，如何限制跨线数据量。
 
 [net_api]: https://msdn.microsoft.com/library/azure/mt348682.aspx
 [net_batchclient]: http://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx
