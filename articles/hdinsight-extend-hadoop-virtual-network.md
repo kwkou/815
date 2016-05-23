@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/29/2016"
-	wacn.date="03/17/2016"/>
+	ms.date="03/22/2016"
+	wacn.date="05/23/2016"/>
 
 
 #使用 Azure 虚拟网络扩展 HDInsight 功能
@@ -70,13 +70,22 @@ Azure HDInsight 仅支持基于位置的虚拟网络，目前无法处理基于�
 
 ###受保护的虚拟网络
 
-明确限制与 Internet 相互访问的 Azure 虚拟网络不支持 HDInsight。例如，使用网络安全组或 ExpressRoute 阻止 Internet 流量进入虚拟网络中的资源。HDInsight 服务是一个托管的服务，需要在预配期间和运行时访问 Internet，以便 Azure 能够监视群集的运行状况、启动群集资源故障转移，以及执行其他自动化管理任务。
+明确限制与 Internet 相互访问的 Azure 虚拟网络不支持 HDInsight。例如，使用网络安全组或 ExpressRoute 阻止 Internet 流量进入虚拟网络中的资源。
+
+HDInsight 服务是一个托管的服务，需要在预配期间和运行时访问 Internet，以便 Azure 能够监视群集的运行状况、启动群集资源故障转移，以及执行其他自动化管理任务。必须允许以下 IP 地址入站访问你希望将 HDInsight 安装到其中的子网：
+
+* 168\.61.49.99
+* 23\.99.5.239
+* 168\.61.48.131
+* 138\.91.141.162
 
 如果想要在阻止 Internet 流量的虚拟网络上使用 HDInsight，可以执行以下步骤：
 
 1. 在虚拟网络中创建新的子网。默认情况下，新子网能够与 Internet 通信。这样就可以在此子网上安装 HDInsight。由于新子网与受保护子网位于同一虚拟网络中，因此它也可以与受保护子网中安装的资源通信。
 
 2. 创建 HDInsight 群集。为群集配置虚拟网络设置时，请选择步骤 1 中创建的子网。
+
+有关网络安全组的详细信息，请参阅[网络安全组概述](/documentation/articles/virtual-networks-nsg)。有关在 Azure 虚拟网络中控制路由的详细信息，请参阅[用户定义的路由和 IP 转发](/documentation/articles/virtual-networks-udr-overview)。
 
 ##<a id="tasks"></a>任务和信息
 
@@ -100,4 +109,4 @@ Azure HDInsight 仅支持基于位置的虚拟网络，目前无法处理基于�
 
 若要了解有关 Azure 虚拟网络的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview)。
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0516_2016-->

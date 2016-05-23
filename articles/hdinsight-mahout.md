@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/28/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="04/08/2016"
+	wacn.date="05/23/2016"/>
 
 #将 Apache Mahout 与 HDInsight 中的 Hadoop 配合使用以生成电影推荐
 
@@ -40,8 +40,7 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 
 ##<a name="recommendations"></a>使用 Windows PowerShell 生成推荐
 
-> [AZURE.NOTE] 尽管在本部分中使用的作业使用 Windows PowerShell 执行，但是，随 Mahout 一起提供的很多类当前不使用 Windows PowerShell，并且它们必须通过使用 Hadoop 命令行来运行。有关不使用 Windows PowerShell 的类的列表，请参阅[故障排除](#troubleshooting)部分。
-> <p>有关使用 Hadoop 命令行运行 Mahout 作业的示例，请参阅[使用 Hadoop 命令行对数据分类](#classify)。
+> [AZURE.NOTE] 尽管在本部分中使用的作业使用 Windows PowerShell 执行，但是，随 Mahout 一起提供的很多类当前不使用 Windows PowerShell，并且它们必须通过使用 Hadoop 命令行来运行。有关不使用 Windows PowerShell 的类的列表，请参阅[故障排除](#troubleshooting)部分。<p>有关使用 Hadoop 命令行运行 Mahout 作业的示例，请参阅[使用 Hadoop 命令行对数据分类](#classify)。
 
 由 Mahout 提供的功能之一是推荐引擎。此引擎接受 `userID`、`itemId` 和 `prefValue` 格式（项的用户首选项）的数据。然后，Mahout 将执行共现分析，以确定：_偏好某个项的用户也偏好其他类似项_。Mahout 然后确定拥有类似项首选项的用户，这些首选项可用于做出推荐。
 
@@ -53,13 +52,13 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 
 * __类似性推荐__：由于 Joe 喜欢前三部电影，Mahout 会查看具有类似首选项的其他人喜欢的电影，但是 Joe 还未观看过（喜欢/评价）。在这种情况下，Mahout 推荐《幽灵的威胁》、《克隆人的进攻》和《西斯的复仇》。
 
-###加载数据
+###了解数据
 
-为方便起见，[GroupLens 研究][movielens]以兼容 Mahout 的格式提供电影的评价数据。
+为方便起见，[GroupLens 研究][movielens]以兼容 Mahout 的格式提供电影的评价数据。此数据在 `/HdiSamples/MahoutMovieData` 中你的群集的默认存储中可用。
 
-1. 下载 [MovieLens 100k][100k] 存档，其中包含 1000 名用户对 1700 部电影给出的 100,000 项评分。
+存在两个文件，`moviedb.txt`（有关影片的信息）和 `user-ratings.txt`。user-ratings.txt 文件用于分析过程中，而 moviedb.txt 用于在显示分析结果时，提供用户友好的文本信息。
 
-2. 提取该存档。该存档应包含 __ml-100k__ 目录，其中又包含很多前缀为 __u.__ 的数据文件。Mahout 要分析的文件为 __u.data__。此文件的数据结构为 `userID`、`movieID`、`userRating` 和 `timestamp`。下面是数据的示例：
+user-ratings.txt 中包含的数据具有 `userID`、`movieID`、`userRating` 和 `timestamp` 结构，它将告诉我们每个用户对电影评级的情况。下面是数据的示例：
 
 
 		196	242	3	881250949
@@ -69,25 +68,37 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 		166	346	1	886397596
 
 
-3.  将 __u.data__ 文件上载到 HDInsight 群集中的 __example/data/u.data__。如果你安装了 [Azure PowerShell][aps]，则可以使用 [HDInsight-Tools][tools] 模块上载该文件。有关上载文件的其他方法，请参阅[在 HDInsight 中上载 Hadoop 作业的数据][upload]。以下命令使用 `Add-HDInsightFile` 来上载该文件：
 
-        PS C:\> Add-HDInsightFile -LocalPath "path\to\u.data" -DestinationPath "example/data/u.data" -ClusterName "your cluster name"
+        
+        
+            
     
-    这样就会将 __u.data__ 文件上载到群集的默认存储中的 __example/data/u.data__。然后，你可以通过使用 \_\___wasb:///example/data/u.data__ URI 从 HDInsight 作业访问此数据。
 
 ###运行作业
 
-使用以下 Windows PowerShell 脚本来运行作业，以将 Mahout 推荐引擎用于你以前上载的 __u.data__ 文件：
+使用以下 Windows PowerShell 脚本来运行作业，以将 Mahout 推荐引擎用于电影数据：
 
 	# The HDInsight cluster name.
 	$clusterName = "the cluster name"
-	# NOTE: The version number portion of the file path
+    
+    #Get HTTPS/Admin credentials for submitting the job later
+    $creds = Get-Credential
+    #Get the cluster info so we can get the storage, etc.
+    $clusterInfo = Get-AzureHDInsightCluster -Cluster $clusterName
+    $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+    $container=$clusterInfo.DefaultStorageContainer
+    $storageAccountKey=Get-AzureStorageKey `
+        -StorageAccountName $storageAccountName `
+        | %{ $_.Primary }
+            
+    #Create a storage content and upload the file
+    $context = New-AzureStorageContext `
+        -StorageAccountName $storageAccountName `
+        -StorageAccountKey $storageAccountKey
+            
+	# NOTE: The version number in the file path
 	# may change in future versions of HDInsight.
-	# So dynamically grab it using Hive.
-	$mahoutPath = Invoke-Hive -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target*-job.jar' | where {$_.startswith("C:\apps\dist")}
-	$noCRLF = $mahoutPath -replace "`r`n", ""
-	$cleanedPath = $noCRLF -replace "\", "/"
-	$jarFile = "file:///$cleanedPath"
+	$jarFile =  "file:///C:/apps/dist/mahout-0.9.0.2.2.9.1-8/examples/target/mahout-examples-0.9.0.2.2.9.1-8-job.jar"
     #
 	# If you are using an earlier version of HDInsight,
 	# set $jarFile to the jar file you
@@ -99,27 +110,43 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 	# * input - the path to the data uploaded to HDInsight
 	# * output - the path to store output data
 	# * tempDir - the directory for temp files
-	$jobArguments = "-s", "SIMILARITY_COOCCURRENCE",
-	                "--input", "wasb:///example/data/u.data",
+	$jobArguments = "--similarityClassname", "recommenditembased", `
+                    "-s", "SIMILARITY_COOCCURRENCE", `
+	                "--input", "wasb:///HdiSamples/MahoutMovieData/user-ratings.txt",
 	                "--output", "wasb:///example/out",
-	                "--tempDir", "wasb:///temp/mahout"
+	                "--tempDir", "wasb:///example/temp"
 
 	# Create the job definition
 	$jobDefinition = New-AzureHDInsightMapReduceJobDefinition `
 	  -JarFile $jarFile `
-	  -ClassName "org.apache.mahout.cf.taste.hadoop.item.RecommenderJob" `
+	  -Class "org.apache.mahout.cf.taste.hadoop.item.RecommenderJob" `
 	  -Arguments $jobArguments
 
 	# Start the job
-	$job = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $jobDefinition
+	$job = Start-AzureHDInsightJob `
+        -Cluster $clusterName `
+        -JobDefinition $jobDefinition `
+        -Credential $creds
 
 	# Wait on the job to complete
 	Write-Host "Wait for the job to complete ..." -ForegroundColor Green
-	Wait-AzureHDInsightJob -Job $job
-
+	Wait-AzureHDInsightJob `
+            -Cluster $clusterName `
+            -JobId $job.JobId `
+            -Credential $creds
+    # Download the output
+    Get-AzureStorageBlobContent `
+            -Blob example/out/part-r-00000 `
+            -Container $container `
+            -Destination output.txt `
+            -Context $context
+            
 	# Write out any error information
 	Write-Host "STDERR"
-	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardError
+	Get-AzureHDInsightJobOutput `
+            -Cluster $clusterName `
+            -JobId $job.JobId `
+            -StandardError
 
 > [AZURE.NOTE] Mahout 作业不删除在处理作业时创建的临时数据。在示例作业中指定 `--tempDir` 参数，以将临时文件隔离到特定目录中。
 
@@ -136,7 +163,32 @@ Mahout 作业不会将输出返回到 STDOUT。而是会将其作为 __part-r-00
 
 ###查看输出
 
-尽管生成的输出也许能够正常地在应用程序中使用，但它的用户可读性并不太好。以前提取到 __ml-100k__ 文件夹的其他某些文件可用于将 `movieId` 解析为电影名称，这是以下 PowerShell 脚本所执行的操作：
+尽管生成的输出也许能够正常地在应用程序中使用，但它的用户可读性并不太好。服务器的 `moviedb.txt` 可用于将 `movieId` 解析为电影名称，但是必须首先使用以下脚本从服务器下载它并对文件评级：
+
+    # The HDInsight cluster name.
+	$clusterName = "the cluster name"
+    #Get the cluster info so we can get the storage, etc.
+    $clusterInfo = Get-AzureHDInsightCluster -Cluster $clusterName
+    $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+    $container=$clusterInfo.DefaultStorageContainer
+    $storageAccountKey=Get-AzureStorageKey `
+        -StorageAccountName $storageAccountName `
+        | %{ $_.Primary }
+    #Create a storage content and upload the file
+    $context = New-AzureStorageContext `
+        -StorageAccountName $storageAccountName `
+        -StorageAccountKey $storageAccountKey
+    #Download the files
+    Get-AzureStorageBlobContent -blob "HdiSamples/MahoutMovieData/moviedb.txt" `
+    -Container $container `
+    -Destination moviedb.txt `
+    -Context $context
+    Get-AzureStorageBlobContent -blob "HdiSamples/MahoutMovieData/user-ratings.txt" `
+    -Container $container `
+    -Destination user-ratings.txt `
+    -Context $context
+    
+下载文件后，使用以下 PowerShell 脚本通过影片名称显示推荐：
 
 	<#
 	.SYNOPSIS
@@ -146,8 +198,8 @@ Mahout 作业不会将输出返回到 STDOUT。而是会将其作为 __part-r-00
 	    with HDInsight example in a human readable format.
 	.EXAMPLE
 	    .\Show-Recommendation -userId 4
-	        -userDataFile "u.data"
-	        -movieFile "u.item"
+	        -userDataFile "user-ratings.txt"
+	        -movieFile "moviedb.txt"
 	        -recommendationFile "output.txt"
 	#>
 
@@ -220,9 +272,9 @@ Mahout 作业不会将输出返回到 STDOUT。而是会将其作为 __part-r-00
 	                        @{Expression={$_.Value};Label="Score"}
 	$recommendations | format-table $recommendationFormat
 
-若要使用此脚本，你必须之前已提取 __ml-100k__ 文件夹。下面是运行脚本的示例：
+下面是运行脚本的示例：
 
-	PS C:\> show-recommendation.ps1 -userId 4 -userDataFile .\ml-100k\u.data -movieFile .\ml-100k\u.item -recommendationFile .\output.txt
+	PS C:\> show-recommendation.ps1 -userId 4 -userDataFile .\user-ratings.txt -movieFile .\moviedb.txt -recommendationFile .\output.txt
 
 输出应如下所示：
 
@@ -269,7 +321,29 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 2. 打开每个文件，删除顶部以“@”开头的行，然后保存文件。如果未删除这些行，则你在 Mahout 中使用数据时将会收到错误消息。
 
-2. 将文件上载到 __example/data__。你可以通过使用 [HDInsight-Tools][tools] 模块中的 `Add-HDInsightFile` 函数执行此操作。
+2. 将文件上载到 __example/data__。为此，可以使用以下脚本。将 __CLUSTERNAME__ 替换为 HDInsight 群集的名称。将 FILENAME 替换为要上载的文件的名称。
+
+        #Get the cluster info so we can get the storage, etc.
+        $clusterName="CLUSTERNAME"
+        $fileToUpload="FILENAME"
+        $blobPath="example/data/FILENAME"
+        $clusterInfo = Get-AzureHDInsightCluster -Cluster $clusterName
+        $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+        $container=$clusterInfo.DefaultStorageContainer
+        $storageAccountKey=Get-AzureStorageKey `
+            -StorageAccountName $storageAccountName `
+            | %{ $_.Primary }
+        
+        #Create a storage content and upload the file
+        $context = New-AzureStorageContext `
+            -StorageAccountName $storageAccountName `
+            -StorageAccountKey $storageAccountKey
+            
+        Set-AzureStorageBlobContent `
+            -File $fileToUpload `
+            -Blob $blobPath `
+            -Container $container `
+            -Context $context
 
 ###运行作业
 
@@ -281,19 +355,19 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 3. 使用以下命令生成文件描述符 (__KDDTrain+.info__)，该描述符使用 Mahout。
 
-		hadoop jar "c:/apps/dist/mahout-0.9.0.2.2.7.1-37/examples/target/mahout-examples-0.9.0.2.2.7.1-37-job.jar" org.apache.mahout.classifier.df.tools.Describe -p "wasb:///example/data/KDDTrain+.arff" -f "wasb:///example/data/KDDTrain+.info" -d N 3 C 2 N C 4 N C 8 N 2 C 19 N L
+		hadoop jar "c:/apps/dist/mahout-0.9.0.2.2.9.1-8/examples/target/mahout-examples-0.9.0.2.2.9.1-8-job.jar" org.apache.mahout.classifier.df.tools.Describe -p "wasb:///example/data/KDDTrain+.arff" -f "wasb:///example/data/KDDTrain+.info" -d N 3 C 2 N C 4 N C 8 N 2 C 19 N L
 
 	`N 3 C 2 N C 4 N C 8 N 2 C 19 N L` 描述文件中数据的属性。例如，L 指示标签。
 
 4. 通过使用以下命令生成决策树的林：
 
-		hadoop jar c:/apps/dist/mahout-0.9.0.2.2.7.1-37/examples/target/mahout-examples-0.9.0.2.2.7.1-37-job.jar org.apache.mahout.classifier.df.mapreduce.BuildForest -Dmapred.max.split.size=1874231 -d wasb:///example/data/KDDTrain+.arff -ds wasb:///example/data/KDDTrain+.info -sl 5 -p -t 100 -o nsl-forest
+		hadoop jar c:/apps/dist/mahout-0.9.0.2.2.9.1-8/examples/target/mahout-examples-0.9.0.2.2.9.1-8-job.jar org.apache.mahout.classifier.df.mapreduce.BuildForest -Dmapred.max.split.size=1874231 -d wasb:///example/data/KDDTrain+.arff -ds wasb:///example/data/KDDTrain+.info -sl 5 -p -t 100 -o nsl-forest
 
-    此操作的输出存储在 __nsl-forest__ 目录中，该目录位于 HDInsight 群集的存储中的 __wasb://user/&lt;username>/nsl-forest/nsl-forest.seq__ 处。&lt;用户名> 是你用于远程桌面会话的用户名。此文件对用户不可读。
+    此操作的输出存储在 __nsl-forest__ 目录中，该目录位于 HDInsight 群集的存储中的 __wasb://user/&lt;username>/nsl-forest/nsl-forest.seq 处。&lt;用户名> 是你用于远程桌面会话的用户名。此文件对用户不可读。
 
 5. 通过为 __KDDTest+.arff__ 数据集分类来测试该林。请使用以下命令：
 
-    	hadoop jar c:/apps/dist/mahout-0.9.0.2.2.7.1-37/examples/target/mahout-examples-0.9.0.2.2.7.1-37-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i wasb:///example/data/KDDTest+.arff -ds wasb:///example/data/KDDTrain+.info -m nsl-forest -a -mr -o wasb:///example/data/predictions
+    	hadoop jar c:/apps/dist/mahout-0.9.0.2.2.9.1-8/examples/target/mahout-examples-0.9.0.2.2.9.1-8-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i wasb:///example/data/KDDTest+.arff -ds wasb:///example/data/KDDTrain+.info -m nsl-forest -a -mr -o wasb:///example/data/predictions
 
     此命令返回如下有关分类过程的摘要信息：
 
@@ -331,9 +405,7 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 Mahout 安装在 HDInsight 3.1 群集上，它可以通过使用以下步骤手动安装在 HDInsight 3.0 或 HDInsight 2.1 群集上：
 
-1. 要使用的 Mahout 版本取决于群集的 HDInsight 版本。你可以通过使用以下 [Azure PowerShell][aps] 命令查找群集版本：
-
-    	PS C:\> Get-AzureHDInsightCluster -Name YourClusterName | Select version
+1. 要使用的 Mahout 版本取决于群集的 HDInsight 版本。可以通过在 Azure 门户中查看群集的属性找到群集版本。
 
   * __对于 HDInsight 2.1__，可以下载包含 [Mahout 0.9](http://repo2.maven.org/maven2/org/apache/mahout/mahout-core/0.9/mahout-core-0.9-job.jar) 的 Java 存档 (JAR) 文件。
 
@@ -345,10 +417,28 @@ Mahout 安装在 HDInsight 3.1 群集上，它可以通过使用以下步骤手�
 
     	> [AZURE.NOTE] When Mahout 1.0 is released, you should be able to use the prebuilt packages with HDInsight 3.0.
 
-2. 将该 jar 文件上载到群集默认存储的 __example/jars__ 中。以下示例使用 [HDInsight-Tools][tools] 中的 add-hdinsightfile 来上载文件：
+2. 将该 jar 文件上载到群集默认存储的 __example/jars__ 中。在以下脚本中将 CLUSTERNAME 替换为你的 HDInsight 群集的名称，并将 FILENAME 替换为 __mahout-coure-0.9-job.jar__ 文件的路径。
 
-    	PS C:\> .\Add-HDInsightFile -LocalPath "path\to\mahout-core-0.9-job.jar" -DestinationPath "example/jars/mahout-core-0.9-job.jar" -ClusterName "your cluster name"
-
+        #Get the cluster info so we can get the storage, etc.
+        $clusterName = "CLUSTERNAME"
+        $fileToUpload = "FILENAME"
+        $clusterInfo = Get-AzureHDInsightCluster -Cluster $clusterName
+        $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
+        $container=$clusterInfo.DefaultStorageContainer
+        $storageAccountKey=Get-AzureStorageKey `
+            -StorageAccountName $storageAccountName `
+            | %{ $_.Primary }
+        
+        #Create a storage content and upload the file
+        $context = New-AzureStorageContext `
+            -StorageAccountName $storageAccountName `
+            -StorageAccountKey $storageAccountKey
+            
+        Set-AzureStorageBlobContent `
+            -File $fileToUpload `
+            -Blob "example/jars/mahout-core-0.9-job.jar" `
+            -Container $container `
+            -Context $context
 
 ###无法覆盖文件
 
@@ -358,10 +448,12 @@ Mahout 作业不清理在处理期间创建的临时文件。此外，作业将�
 
 ###找不到 JAR 文件
 
-HDInsight 3.1 群集提供 Mahout。路径和文件名包括在群集上安装的 Mahout 的版本号。本教程中的 Windows PowerShell 示例脚本使用的路径的有效截止期为 2014 年 7 月，但是，将来对 HDInsight 做出更新后，版本号将发生更改。若要确定群集的 Mahout JAR 文件的当前路径，请使用以下 Windows PowerShell 命令，然后修改脚本以引用返回的文件路径：
+HDInsight 3.1 群集提供 Mahout。路径和文件名包括在群集上安装的 Mahout 的版本号。本教程中的 Windows PowerShell 示例脚本使用的路径的有效截止期为 2015 年 11 月，但是，将来对 HDInsight 做出更新后，版本号将发生更改。若要确定群集的 Mahout JAR 文件的当前路径，请使用以下 Windows PowerShell 命令，然后修改脚本以引用返回的文件路径：
 
-	Use-AzureHDInsightCluster -Name $clusterName
-	$jarFile = Invoke-Hive -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target*-job.jar'
+	Use-AzureHDInsightCluster -Cluster $clusterName
+    Invoke-AzureHDInsightHiveJob `
+            -StatusFolder "wasb:///example/statusout" `
+            -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target*-job.jar'
 
 ###<a name="nopowershell"></a>不适用于 Windows PowerShell 的类
 
@@ -407,6 +499,5 @@ Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些�
 [connect]: ./media/hdinsight-mahout/connect.png
 [hadoopcli]: ./media/hdinsight-mahout/hadoopcli.png
 [tools]: https://github.com/Blackmist/hdinsight-tools
- 
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0516_2016-->
