@@ -15,6 +15,10 @@
 
 # 安装 Azure CLI
 
+> [AZURE.SELECTOR]
+- [PowerShell](/documentation/articles/powershell-install-configure)
+- [Azure CLI](/documentation/articles/xplat-cli-install)
+
 快速安装 Azure 命令行界面 (Azure CLI)，以便使用一组基于 shell 的开源命令在 Azure 中创建和管理资源。可以使用多个安装选项：使用针对不同操作系统提供的安装包之一、从 npm 包安装，或者在 Docker 主机中以容器的形式安装 Azure CLI。有关更多选项和背景信息，请参阅 [GitHub](https://github.com/azure/azure-xplat-cli) 上的项目存储库。
 
 
