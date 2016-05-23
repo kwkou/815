@@ -47,13 +47,13 @@ The Azure CDN HTTPS acceleration service is only available to paid Azure users.
 
 	**Access port for client access to CDN node**: Specify how the client you wish to enable will access the CDN node.
 
-		1) Only enable HTTPS access (HTTP access is forbidden)
+	1) Only enable HTTPS access (HTTP access is forbidden)
 
-		2) Enable HTTP and HTTPS access
+	2) Enable HTTP and HTTPS access
 
-		3) Always redirect HTTP access to HTTPS access
+	3) Always redirect HTTP access to HTTPS access
 
-	**Return-to-source port for CDN node access to the source station**: Specify how the CDN node can achieve return-to-source access.
+	**Return-to-source port for CDN node access to the source station**: Specify how the CDN node can return to origin source.
 
 		1) Only use HTTP to return to source
 
@@ -75,7 +75,7 @@ The Azure CDN HTTPS acceleration service is only available to paid Azure users.
 
 	There are two methods of receiving the email:
 
-	1) **Default method**: Once the certificate issuer receives the request, the domain name confirmation email will be sent by default to the email address associated with the acceleration domain name (see the screenshot above for details) as soon as possible. If you choose to obtain the confirmation email by this method, you can go directly to the next step by clicking on the “Confirm” button.
+	1) **Default method**: Once the certificate issuer receives the request, the domain name  ownership confirmation email will be sent by default to the email address associated with the acceleration domain name (see the screenshot above for details) as soon as possible. If you choose to obtain the confirmation email by this method, you can go directly to the next step by clicking on the “Confirm” button.
 		
 	
 
@@ -105,9 +105,9 @@ The Azure CDN HTTPS acceleration service is only available to paid Azure users.
 
 	Email body:
 
-	![][7]
+	![][14]
 
-		You need to click on the confirmation link in the email to complete confirmation of domain name ownership.
+	You need to click on the confirmation link in the email to complete confirmation of domain name ownership.
 
 	After this, you need to click on “Complete” in the interface for Step 4 to finally complete confirmation of the entire domain name.
 
@@ -150,12 +150,13 @@ The Azure CDN HTTPS acceleration service is currently included in the premium ve
 [4]: ./media/cdn-https/he004.png
 [5]: ./media/cdn-https/he005.png
 [6]: ./media/cdn-https/he006.png
-[7]: ./media/cdn-https/h007.png
+[7]: ./media/cdn-https/he007.png
 [8]: ./media/cdn-https/h008.png
 [9]: ./media/cdn-https/he009.png
 [10]: ./media/cdn-https/h010.png
 [11]: ./media/cdn-https/he011.png
 [12]: ./media/cdn-https/he012.png
 [13]: ./media/cdn-https/he013.png
+[14]: ./media/cdn-https/h007.png
 
 <!---HONumber=Acom_0503_2016_CDN-->
