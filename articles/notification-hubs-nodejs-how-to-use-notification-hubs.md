@@ -38,7 +38,7 @@ Azure 通知中心提供用于向移动设备发送推送通知的易于使用�
 
 ##创建 Node.js 应用程序
 
-本教程的第一步是创建新的空白 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站][nodejswebsite]、[Node.js 云服务][Node.js Cloud Service]（使用 Windows PowerShell）或[使用 WebMatrix 创建网站]。
+本教程的第一步是创建新的空白 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站][nodejswebsite]、[Node.js 云服务][Node.js Cloud Service]（使用 Windows PowerShell。
 
 ##将应用程序配置为使用通知中心
 
@@ -215,7 +215,6 @@ Azure 通知中心提供用于向移动设备发送推送通知的易于使用�
   [SqlFilter.SqlExpression]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [Azure Service Bus Notification Hubs]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
-  [使用 WebMatrix 创建网站]: /develop/nodejs/tutorials/web-site-with-webmatrix/
   [Node.js Cloud Service]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [Azure 门户]: https://portal.azure.cn
   [nodejswebsite]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/

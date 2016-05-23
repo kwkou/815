@@ -204,7 +204,7 @@
 
 项目已配置为将推送通知发送到目标设备，因此我们只需要做两件事：换出通知中心的适当连接字符串，并添加边界标识以便仅当用户位于地域隔离区内时才发送通知。
 
-若要配置连接字符串，请打开 `Models` 文件夹中的 `Notifications.cs`。`NotificationHubClient.CreateClientFromConnectionString` 函数应该包含可在 [Azure 门户](https://portal.azure.com)中获取的通知中心的相关信息（查看“设置”中的“访问策略”边栏选项卡）。保存更新的配置文件。
+若要配置连接字符串，请打开 `Models` 文件夹中的 `Notifications.cs`。`NotificationHubClient.CreateClientFromConnectionString` 函数应该包含可在 [Azure 门户](https://portal.azure.cn)中获取的通知中心的相关信息（查看“设置”中的“访问策略”边栏选项卡）。保存更新的配置文件。
 
 现在，我们需要为必应地图 API 结果创建模型。执行此操作的最简单方法是右键单击 `Models` 文件夹，然后选择“添加”>“类”。将它命名为 `GeofenceBoundary.cs`。完成后，通过我们在第一部分中所述的 API 响应复制 JSON，然后在 Visual Studio 中使用“编辑”>“选择性粘贴”>“将 JSON 粘贴为类”。
 
@@ -374,7 +374,7 @@
 
 其次，由于你要确保向正确的参与者执行传送，因此可以通过[标记](/documentation/articles/notification-hubs-routing-tag-expressions)来锁定这些人。
 
-上面所示的解决方案描述了一种方案，其中可能有各种不同的目标平台，因此我们并未限制只有系统特定的功能才能使用地域隔离。也就是说，通用 Windows 平台提供现成的功能用于[检测地域隔离](msdn.microsoft.com/zh-cn/windows/uwp/maps-and-location/set-up-a-geofence)。
+上面所示的解决方案描述了一种方案，其中可能有各种不同的目标平台，因此我们并未限制只有系统特定的功能才能使用地域隔离。也就是说，通用 Windows 平台提供现成的功能用于[检测地域隔离](https://msdn.microsoft.com/zh-cn/windows/uwp/maps-and-location/set-up-a-geofence)。
 
 有关通知中心功能的详细信息，请访问我们的[文档门户](/documentation/services/notification-hubs/)。
 
