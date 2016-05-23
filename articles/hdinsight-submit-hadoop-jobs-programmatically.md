@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="03/09/2016"
-	wacn.date="05/20/2016"/>
+	wacn.date="05/23/2016"/>
 
 # 在 HDInsight 中提交 Hadoop 作业
 
@@ -53,18 +53,12 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 1. 在 Visual Studio 中创建 C# 控制台应用程序。
 2. 通过 Nuget 包管理器控制台运行以下命令。
 
-		Install-Package Microsoft.Azure.Common.Authentication -Pre
 		Install-Package Microsoft.Azure.Management.HDInsight.Job -Pre
+
 2. 使用以下代码：
 
-		using System;
 		using System.Collections.Generic;
 		using System.Security;
-		using System.Threading;
-		using Microsoft.Azure;
-		using Microsoft.Azure.Common.Authentication;
-		using Microsoft.Azure.Common.Authentication.Factories;
-		using Microsoft.Azure.Common.Authentication.Models;
 		using Microsoft.Azure.Management.HDInsight.Job;
 		using Microsoft.Azure.Management.HDInsight.Job.Models;
 		using Hyak.Common;
@@ -74,19 +68,12 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 		    class Program
 		    {
 		        private static HDInsightJobManagementClient _hdiJobManagementClient;
-		
-		        private static Guid SubscriptionId = new Guid("<Your Subscription ID>");
-		        private const string ResourceGroupName = "<Your Resource Group Name>";
-		
+
 		        private const string ExistingClusterName = "<Your HDInsight Cluster Name>";
 		        private const string ExistingClusterUri = ExistingClusterName + ".azurehdinsight.cn";
 		        private const string ExistingClusterUsername = "<Cluster Username>";
 		        private const string ExistingClusterPassword = "<Cluster User Password>";
-		
-		        private const string DefaultStorageAccountName = "<Default Storage Account Name>";
-		        private const string DefaultStorageAccountKey = "<Default Storage Account Key>";
-		        private const string DefaultStorageContainerName = "<Default Blob Container Name>";
-		
+
 		        static void Main(string[] args)
 		        {
 		            System.Console.WriteLine("Running");
@@ -101,30 +88,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 		            SubmitPigJob();
 		            SubmitSqoopJob();
 		        }
-		
-		        public static TokenCloudCredentials GetTokenCloudCredentials(string username = null, SecureString password = null)
-		        {
-		            var authFactory = new AuthenticationFactory();
-		
-		            var account = new AzureAccount { Type = AzureAccount.AccountType.User };
-		
-		            if (username != null && password != null)
-		                account.Id = username;
-		
-		            var env = AzureEnvironment.PublicEnvironments[EnvironmentName.AzureChinaCloud];
-		
-		            var accessToken =
-		                authFactory.Authenticate(account, env, AuthenticationFactory.CommonAdTenant, password, ShowDialog.Auto)
-		                    .AccessToken;
-		
-		            return new TokenCloudCredentials(accessToken);
-		        }
-		
-		        public static SubscriptionCloudCredentials GetSubscriptionCloudCredentials(TokenCloudCredentials creds, Guid subId)
-		        {
-		            return new TokenCloudCredentials(subId.ToString(), creds.Token);
-		        }
-		
+
 		        private static void SubmitPigJob()
 		        {
 		            var parameters = new PigJobSubmissionParameters
