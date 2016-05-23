@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual-machine" ms.date="" wacn.date="01/21/2016"/>
+<tags ms.service="virtual-machine-aog" ms.date="" wacn.date="01/21/2016"/>
 
 
 #自动化实现定时关闭虚拟机

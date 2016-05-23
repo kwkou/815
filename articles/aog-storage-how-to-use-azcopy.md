@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="storage" ms.date="" wacn.date="01/21/2016"/>
+<tags ms.service="storage-aog" ms.date="" wacn.date="01/21/2016"/>
 
 #通过AzCopy操作Azure存储
 

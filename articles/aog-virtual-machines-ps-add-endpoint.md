@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual-machine" ms.date="" wacn.date="02/01/2016"/>
+<tags ms.service="virtual-machine-aog" ms.date="" wacn.date="02/01/2016"/>
 
 #通过PowerShell的方式增加虚拟机终结点
 

@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="storage" ms.date="" wacn.date="02/01/2016"/>
+<tags ms.service="storage-aog" ms.date="" wacn.date="02/01/2016"/>
 
 #如何为Azure存储的Blob创建SAS（共享访问签名）令牌
 

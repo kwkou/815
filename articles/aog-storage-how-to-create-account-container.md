@@ -7,7 +7,7 @@
 	manager="" 
 	editor=""/>
 
-<tags ms.service="storage" ms.date="" wacn.date="12/14/2015"/>
+<tags ms.service="storage-aog" ms.date="" wacn.date="12/14/2015"/>
 
 #如何创建存储账号及容器
 

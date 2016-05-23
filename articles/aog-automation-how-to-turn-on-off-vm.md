@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="automation" ms.date="" wacn.date="12/29/2015"/>
+<tags ms.service="automation-aog" ms.date="" wacn.date="12/29/2015"/>
 
 #使用Azure Automation实现自动开关虚拟机的操作
  

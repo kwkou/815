@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="automation" ms.date="" wacn.date="02/01/2016"/>
+<tags ms.service="automation-aog" ms.date="" wacn.date="02/01/2016"/>
 
 #通过Azure Active Directory认证Azure 自动化服务
 

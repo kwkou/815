@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual-machine" ms.date="" wacn.date="12/18/2015"/>
+<tags ms.service="virtual-machine-aog" ms.date="" wacn.date="12/18/2015"/>
 
 #调整虚拟机的尺寸
 
