@@ -13,7 +13,7 @@
 	ms.date="03/15/2016"
 	wacn.date="04/26/2016"/>
 
-# 使用 Azure 门户创建虚拟网络（经典）
+# 使用 Azure 管理门户创建虚拟网络
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-selectors-classic-include](../includes/virtual-networks-create-vnet-selectors-classic-include.md)]
 
