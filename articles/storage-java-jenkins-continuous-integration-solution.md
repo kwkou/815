@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/21/2016" 
-	wacn.date="04/18/2016"/>
+	ms.date="04/08/2016" 
+	wacn.date="05/23/2016"/>
 
 # 将 Azure 存储空间用于 Jenkins 持续集成解决方案
 
@@ -67,7 +67,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 1. 在 Jenkins 仪表板中，单击“管理 Jenkins”。
 2. 在“管理 Jenkins”页中，单击“管理插件”。
 3. 单击“可用”选项卡。
-4. 在“项目上载程序”部分中，选中“Azure 存储插件”。
+4. 在“项目上载程序”部分，选中“Azure 存储插件”。
 5. 单击“安装而不重新启动”或“立即下载并在重新启动后安装”。
 6. 重新启动 Jenkins。
 
@@ -76,8 +76,8 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 1. 在 Jenkins 仪表板中，单击“管理 Jenkins”。
 2. 在“管理 Jenkins”页中，单击“配置系统”。
 3. 在“Azure 存储帐户配置”部分：
-    1. 输入你的存储帐户名称，获取该帐户名称可以通过 Azure 门户 (<https://manage.windowsazure.cn>)。
-    2. 输入你的存储帐户密钥，同样可以从 Azure 门户获取该密钥。
+    1. 输入你的存储帐户名称，获取该帐户名称可以通过 Azure 管理门户 (<https://manage.windowsazure.cn>)。
+    2. 输入你的存储帐户密钥，同样可以从 Azure 管理门户获取该密钥。
     3. 如果你在使用公共 Azure 云，对于“Blob 服务终结点 URL”，请使用默认值。如果你在使用其他 Azure 云，则使用在 Azure 管理门户中为你的存储帐户指定的终结点。 
     4. 单击“验证存储凭据”以验证你的存储帐户。 
     5. [可选]如果你有其他存储帐户并且希望其可供 Jenkins CI 使用，请单击“添加更多存储帐户”。
@@ -106,7 +106,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
     
     在你为"执行 Windows 批处理命令"输入脚本的"命令"部分下方，有一个指向 Jenkins 识别的环境变量的链接。单击此链接可了解环境变量名称和说明。请注意，不允许将包含特殊字符的环境变量（如 BUILD_URL 环境变量）用作容器名称或通用虚拟路径。
 
-8. 对于此示例，请单击“默认将新容器设为公开的”。（如果要使用私有容器，你将需要创建共享访问签名以允许访问。这超出了本主题的范围。你可以在此[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)中了解有关共享访问签名的详细信息。）
+8. 对于此示例，请单击“默认将新容器设为公开的”。（如果要使用私有容器，你将需要创建共享访问签名以允许访问。这超出了本主题的范围。你可以在 [Shared Access Signatures: Understanding the SAS Model（共享访问签名：了解 SAS 模型）](/documentation/articles/storage-dotnet-shared-access-signature-part-1)中了解有关共享访问签名的详细信息。）
 9. [可选]如果你希望在上载生成项目之前清除容器的内容，请单击“在上载前清除容器”（如果你不希望清除容器的内容，则使该复选框保持未选中状态）。
 10. 对于“要上载的项目列表”，请输入 **text/*.txt**。
 11. 在本教程中，对于“已上载项目的通用虚拟路径”，请输入 **${BUILD\_ID}/${BUILD\_NUMBER}**。
@@ -161,4 +161,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 
 有关详细信息，请参阅 [Java 开发人员中心](/develop/java/)。
-<!---HONumber=Mooncake_0411_2016-->
+
+
+
+<!---HONumber=Mooncake_0516_2016-->

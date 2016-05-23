@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="02/17/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="04/08/2016"
+	wacn.date="05/23/2016"/>
 
 # 如何通过 PHP 使用队列存储
 
@@ -379,4 +379,4 @@
 [require_once]: http://www.php.net/manual/en/function.require-once.php
 [Azure 管理门户]: http://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0516_2016-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/17/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="04/08/2016"
+	wacn.date="05/23/2016"/>
 
 
 
@@ -36,7 +36,7 @@
 
 ### 使用 Node 包管理器 (NPM) 可获取该程序包
 
-1.  使用 **PowerShell** (Windows)、**Terminal** (Mac) 或 **Bash** (Unix) 等命令行界面导航到您在其中创建了示例应用程序的文件夹。
+1.  使用 **PowerShell** (Windows)、**Terminal** (Mac) 或 **Bash** (Unix) 等命令行界面导航到你在其中创建了示例应用程序的文件夹。
 
 2.  在命令窗口中键入 **npm install azure-storage**。该命令的输出类似于以下代码示例。
 
@@ -51,11 +51,11 @@
 		+-- xml2js@0.2.7 (sax@0.5.2)
 		+-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
 
-3.  可以手动运行 **ls** 命令来验证是否创建了 **node_modules** 文件夹。在该文件夹中，您将找到 **azure-storage** 包，其中包含您访问存储所需的库。
+3.  可以手动运行 **ls** 命令来验证是否创建了 **node\_modules** 文件夹。在该文件夹中，你将找到 **azure-storage** 包，其中包含你访问存储所需的库。
 
 ### 导入包
 
-使用记事本或其他文本编辑器将以下内容添加到您要在其中使用存储的应用程序的 **server.js** 文件的顶部：
+使用记事本或其他文本编辑器将以下内容添加到你要在其中使用存储的应用程序的 **server.js** 文件的顶部：
 
     var azure = require('azure-storage');
 
@@ -75,17 +75,17 @@ Azure 模块将读取环境变量 `AZURE_STORAGE_ACCOUNT`、`AZURE_STORAGE_ACCES
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
 
-若要创建一个新的容器，请使用 **createContainerIfNotExists**。以下代码示例将创建名为“mycontainer”的新容器
+若要创建一个新的容器，请使用 **createContainerIfNotExists**。以下代码示例将创建名为“mycontainer”的新容器：
 
 	blobSvc.createContainerIfNotExists('mycontainer', function(error, result, response){
-      if(!error){
-        // Container exists and allows
-        // anonymous read access to blob
-        // content and metadata within this container
-      }
+	    if(!error){
+	      // Container exists and allows
+	      // anonymous read access to blob
+	      // content and metadata within this container
+	    }
 	});
 
-如果该容器是新建的，则 `result` 为 true。如果容器已存在，`result` 将为 false。`response` 将包含有关操作的信息，包括容器的 [ETag](http://zh.wikipedia.org/wiki/HTTP_ETag) 信息。
+如果该容器是新建的，则 `result.created` 为 true。如果该容器已存在，则 `result.created` 为 false。`response` 包含有关操作的信息，包括容器的 ETag 信息。
 
 ### 容器安全性
 
@@ -97,17 +97,17 @@ Azure 模块将读取环境变量 `AZURE_STORAGE_ACCOUNT`、`AZURE_STORAGE_ACCES
 
 以下代码示例演示了如何将访问级别设置为“Blob”：
 
-    blobSvc.createContainerIfNotExists('mycontainer', {publicAccessLevel : 'blob'}, function(error, result, response){
-      if(!error){
-        // Container exists and is private
-      }
+	blobSvc.createContainerIfNotExists('mycontainer', {publicAccessLevel : 'blob'}, function(error, result, response){
+	    if(!error){
+	      // Container exists and is private
+	    }
 	});
 
 另外，您可以通过使用 **setContainerAcl** 指定访问级别来修改容器的访问级别。以下代码示例将访问级别更改为“容器”：
 
-    blobSvc.setContainerAcl('mycontainer', null /* signedIdentifiers */, 'container' /* publicAccessLevel*/, function(error, result, response){
+	blobSvc.setContainerAcl('mycontainer', null /* signedIdentifiers */, {publicAccessLevel : 'container'} /* publicAccessLevel*/, function(error, result, response){
 	  if(!error){
-		// Container access level set to 'container'
+	    // Container access level set to 'container'
 	  }
 	});
 
@@ -117,11 +117,11 @@ Azure 模块将读取环境变量 `AZURE_STORAGE_ACCOUNT`、`AZURE_STORAGE_ACCES
 
 你可以向使用 **BlobService** 执行的操作应用可选的筛选操作。筛选操作可包括日志记录、自动重试等。筛选器是实现具有签名的方法的对象：
 
-		function handle (requestOptions, next)
+	function handle (requestOptions, next)
 
 在对请求选项执行预处理后，该方法需要调用“next”并且传递具有以下签名的回调：
 
-		function (returnObject, finalCallback, next)
+	function (returnObject, finalCallback, next)
 
 在此回调中并且在处理 returnObject（来自对服务器请求的响应）后，回调需要调用 next（如果它存在以便继续处理其他筛选器）或只调用 finalCallback 以便结束服务调用。
 
@@ -132,9 +132,9 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 ## 将 Blob 上载到容器中
 
-Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上传大型数据，而页 Blob 则针对读/写操作进行了优化。有关详细信息，请参阅[了解块 Blob、追加 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)。
+有三种类型的 Blob：块 Blob、页 Blob 和追加 Blob。块 Blob 使你能够更高效地上传大型数据。追加 Blob 针对追加操作进行了优化。页 Blob 针对读取/写入操作进行了优化。有关详细信息，请参阅[了解块 Blob、追加 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)。
 
-###块 Blob
+### 块 Blob
 
 若要将数据上传到块 Blob，可使用以下方法：
 
@@ -155,6 +155,49 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 	});
 
 这些方法返回的 `result` 将包含有关操作的信息，例如 Blob 的 **ETag**。
+
+### 追加 Blob
+
+若要将数据上传到新的追加 Blob，可使用以下方法：
+
+* **createAppendBlobFromLocalFile** - 创建新的追加 Blob 并上传文件的内容
+
+* **createAppendBlobFromStream** - 创建新的追加 Blob 并上传流的内容
+
+* **createAppendBlobFromText** - 创建新的追加 Blob 并上传字符串的内容
+
+* **createWriteStreamToNewAppendBlob** - 创建新的 Blob，然后向其提供要写入的流
+
+以下代码示例将 **test.txt** 文件的内容上传到 **myappendblob** 中。
+
+	blobSvc.createAppendBlobFromLocalFile('mycontainer', 'myappendblob', 'test.txt', function(error, result, response){
+	  if(!error){
+	    // file uploaded
+	  }
+	});
+
+若要将块追加到现有追加 Blob，请使用以下方法：
+
+* **appendFromLocalFile** - 将文件的内容追加到现有追加 Blob
+
+* **appendFromStream** - 将流的内容追加到现有追加 Blob
+
+* **appendFromText** - 将字符串的内容追加到现有追加 Blob
+
+* **appendBlockFromStream** - 将流的内容追加到现有追加 Blob
+
+* **appendBlockFromText** - 将字符串的内容追加到现有追加 Blob
+
+> [AZURE.NOTE] appendFromXXX API 将会执行某些客户端验证以快速失败，从而避免不必要的服务器调用。而 appendBlockFromXXX 则不会如此。
+
+以下代码示例将 **test.txt** 文件的内容上传到 **myappendblob** 中。
+
+	blobSvc.appendFromText('mycontainer', 'myappendblob', 'text to be appended', function(error, result, response){
+	  if(!error){
+	    // text appended
+	  }
+	});
+
 
 ### 页 Blob
 
@@ -178,20 +221,20 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 	  }
 	});
 
-> [AZURE.NOTE] 页 Blob 包含 512 字节的“页面”。当你上传大小不是 512 倍数的数据时，可能会收到错误。
+> [AZURE.NOTE] 页 Blob 包含 512 字节的“页面”。当你上传大小不是 512 倍数的数据时，将会收到错误。
 
 ## 列出容器中的 Blob
 
-若要列出容器中的 Blob，请使用 **listBlobsSegmented** 方法。如果您想要返回带特定前缀的 Blob，请使用 **listBlobsSegmentedWithPrefix**。
+若要列出容器中的 Blob，请使用 **listBlobsSegmented** 方法。如果你想要返回带特定前缀的 Blob，请使用 **listBlobsSegmentedWithPrefix**。
 
-    blobSvc.listBlobsSegmented('mycontainer', null, function(error, result, response){
-      if(!error){
-        // result.entries contains the entries
-        // If not all blobs were returned, result.continuationToken has the continuation token.
+	blobSvc.listBlobsSegmented('mycontainer', null, function(error, result, response){
+	  if(!error){
+	      // result.entries contains the entries
+	      // If not all blobs were returned, result.continuationToken has the continuation token.
 	  }
 	});
 
-`result` 包含一个 `entries` 集合，该集合是一组用于描述每个 Blob 的对象。如果不能返回所有 Blob，`result` 还将提供 `continuationToken`，这可用作第二个参数来检索其他条目。
+`result` 包含一个 `entries` 集合，该集合是一组用于描述每个 Blob 的对象。如果不能返回所有的 Blob，`result` 还将提供 `continuationToken`，这可用作第二个参数来检索其他条目。
 
 ## 下载 Blob
 
@@ -207,7 +250,7 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 
 以下代码示例演示了如何使用 **getBlobToStream** 下载 **myblob** Blob 的内容，并使用一个流将其存储到 **output.txt** 文件：
 
-    var fs = require('fs');
+	var fs = require('fs');
 	blobSvc.getBlobToStream('mycontainer', 'myblob', fs.createWriteStream('output.txt'), function(error, result, response){
 	  if(!error){
 	    // blob retrieved
@@ -220,7 +263,7 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 
 最后，若要删除 Blob，请调用 **deleteBlob**。以下代码示例将删除名为 **myblob** 的 Blob。
 
-    blobSvc.deleteBlob(containerName, 'myblob', function(error, response){
+	blobSvc.deleteBlob(containerName, 'myblob', function(error, response){
 	  if(!error){
 		// Blob has been deleted
 	  }
@@ -236,12 +279,12 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 
 ### ETag
 
-如果你需要允许多个客户端或实例同时写入该 Blob，请使用 ETag。ETag 用于确定自从你第一次读取或创建某个容器或 Blob 以来，该容器或 Blob 是否被修改，这样就可以避免覆盖其他客户端或进程提交的更改。
+如果你需要允许多个客户端或实例同时写入块 Blob 或页 Blob，请使用 ETag。ETag 用于确定自从你第一次读取或创建某个容器或 Blob 以来，该容器或 Blob 是否被修改，这样就可以避免覆盖其他客户端或进程提交的更改。
 
-可以使用可选的 `options.accessConditions` 参数设置ETag 条件。如果 Blob 已存在且具有 `etagToMatch` 所包含的 ETag 值，则以下代码示例将仅上传 **test.txt** 文件。
+可以使用可选的 `options.accessConditions` 参数设置 ETag 条件。如果 Blob 已存在且具有 `etagToMatch` 所包含的 ETag 值，则以下代码示例将仅上传 **test.txt** 文件。
 
-	blobSvc.createBlockBlobFromLocalFile('mycontainer', 'myblob', 'test.txt', { accessConditions: { 'if-match': etagToMatch} }, function(error, result, response){
-      if(!error){
+	blobSvc.createBlockBlobFromLocalFile('mycontainer', 'myblob', 'test.txt', { accessConditions: { EtagMatch: etagToMatch} }, function(error, result, response){
+	    if(!error){
 	    // file uploaded
 	  }
 	});
@@ -256,7 +299,7 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 
 ### 租约
 
-新的租约可使用 **acquireLease** 方法获取，只需指定您希望获取其租约的 Blob 或容器即可。例如，以下代码将获取 **myblob** 的租约。
+新的租约可使用 **acquireLease** 方法获取，只需指定你希望获取其租约的 Blob 或容器即可。例如，以下代码将获取 **myblob** 的租约。
 
 	blobSvc.acquireLease('mycontainer', 'myblob', function(error, result, response){
 	  if(!error) {
@@ -266,7 +309,7 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 
 对 **myblob** 的后续操作必须提供 `options.leaseId` 参数。租约 ID 作为 `result.id` 从 **acquireLease** 返回。
 
-> [AZURE.NOTE] 默认情况下，租约期限为无期。您可以指定一个无限的租期（15 到 60 秒），只需提供 `options.leaseDuration` 参数即可。
+> [AZURE.NOTE] 默认情况下，租约期限为无期。你可以指定一个有限的租期（15 到 60 秒），只需提供 `options.leaseDuration` 参数即可。
 
 若要删除租约，请使用 **releaseLease**。若要中断租约，但又要防止其他人在您的原始租约到期之前获得新租约，则可使用 **breakLease**。
 
@@ -315,36 +358,30 @@ Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上
 
 ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID。以下代码示例定义了两个策略，一个用于“user1”，一个用于“user2”：
 
-	var sharedAccessPolicy = [
-	  {
-	    AccessPolicy: {
-	      Permissions: azure.BlobUtilities.SharedAccessPermissions.READ,
-	      Start: startDate,
-	      Expiry: expiryDate
-	    },
-	    Id: 'user1'
+	var sharedAccessPolicy = {
+	  user1: {
+	    Permissions: azure.BlobUtilities.SharedAccessPermissions.READ,
+	    Start: startDate,
+	    Expiry: expiryDate
 	  },
-	  {
-	    AccessPolicy: {
-	      Permissions: azure.BlobUtilities.SharedAccessPermissions.WRITE,
-	      Start: startDate,
-	      Expiry: expiryDate
-	    },
-	    Id: 'user2'
+	  user2: {
+	    Permissions: azure.BlobUtilities.SharedAccessPermissions.WRITE,
+	    Start: startDate,
+	    Expiry: expiryDate
 	  }
-	];
+	};
 
 以下代码示例将获取 **mycontainer** 的当前 ACL，然后使用 **setBlobAcl** 添加新策略。此方法具有以下用途：
 
+	var extend = require('extend');
 	blobSvc.getBlobAcl('mycontainer', function(error, result, response) {
-      if(!error){
-		//push the new policy into signedIdentifiers
-		result.signedIdentifiers.push(sharedAccessPolicy);
-		blobSvc.setBlobAcl('mycontainer', result, function(error, result, response){
-	  	  if(!error){
-	    	// ACL set
-	  	  }
-		});
+	  if(!error){
+	    var newSignedIdentifiers = extend(true, result.signedIdentifiers, sharedAccessPolicy);
+	    blobSvc.setBlobAcl('mycontainer', newSignedIdentifiers, function(error, result, response){
+	      if(!error){
+	        // ACL set
+	      }
+	    });
 	  }
 	});
 
@@ -363,6 +400,7 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 -   [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy)
 
 [Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
+
 [在 Azure App Service 中创建 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
 [Node.js Cloud Service with Storage]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
 [使用 Azure 表服务的 Node.js Web 应用]: /documentation/articles/storage-nodejs-use-table-storage-web-site
@@ -373,4 +411,4 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Storage SDK for Node API 参考]: http://azure.github.io/azure-storage-node/
  
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0516_2016-->

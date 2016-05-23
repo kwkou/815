@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="02/17/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="04/08/2016"
+	wacn.date="05/23/2016"/>
 
 
 # 如何通过 PHP 使用表存储
@@ -44,7 +44,7 @@
 
 下面的示例演示了如何包括 autoloader 文件并引用 **ServicesBuilder** 类。
 
-> [AZURE.NOTE]本示例（以及本文中的其他示例）假定您已通过 Composer 安装用于 Azure 的 PHP 客户端库。如果你已手动安装这些库或将其作为 PEAR 包安装，则需要引用 <code>WindowsAzure.php</code> autoloader 文件。
+> [AZURE.NOTE] 本示例（以及本文中的其他示例）假定您已通过 Composer 安装用于 Azure 的 PHP 客户端库。如果你已手动安装这些库或将其作为 PEAR 包安装，则需要引用 <code>WindowsAzure.php</code> autoloader 文件。
 
 	require_once 'vendor\autoload.php';
 	use WindowsAzure\Common\ServicesBuilder;
@@ -214,7 +214,7 @@
 
 ## 检索分区中的所有实体
 
-使用筛选器来构造实体查询（有关详细信息，请参阅[查询表和实体][filters]）。若要检索分区中的所有实体，请使用筛选器“PartitionKey eq *partition\_name*”。下面的示例演示如何通过将筛选器传递到 **queryEntities** 方法来检索 `tasksSeattle` 分区中的所有实体。
+使用筛选器来构造实体查询（有关详细信息，请参阅[查询表和实体][filters]）。若要检索分区中的所有实体，请使用筛选器“PartitionKey eq partition_name”。下面的示例演示如何通过将筛选器传递到 **queryEntities** 方法来检索 `tasksSeattle` 分区中的所有实体。
 
 	require_once 'vendor\autoload.php';
 
@@ -474,4 +474,5 @@
 [filters]: http://msdn.microsoft.com/zh-cn/library/azure/dd894031.aspx
 [entity-group-transactions]: http://msdn.microsoft.com/zh-cn/library/azure/dd894038.aspx
 
-<!---HONumber=Mooncake_0411_2016-->
+
+<!---HONumber=Mooncake_0516_2016-->

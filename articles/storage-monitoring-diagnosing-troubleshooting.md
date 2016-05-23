@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="01/12/2016"
-	wacn.date="02/25/2016"/>
+	ms.date="04/06/2016"
+	wacn.date="05/23/2016"/>
 
 # 监视、诊断和排查 Azure 存储空间问题 
 
@@ -73,7 +73,7 @@
 
 ![][1]
 
-*图 1：监视、诊断和故障排除*
+图 1：监视、诊断和故障排除
 
 本指南的主要目标受众是开发使用 Azure 存储服务的联机服务的开发人员以及负责管理此类联机服务的 IT 专业人员。本指南的目标是：
 
@@ -134,14 +134,7 @@
 
 ### <a name="monitoring-availability"></a>监视可用性
 
-你应通过监视以下每小时或每分钟度量值表中的 **Availability** 列中的值来监视存储帐户中存储服务的可用性：
-**$MetricsHourPrimaryTransactionsBlob**、
-**$MetricsHourPrimaryTransactionsTable**、
-**$MetricsHourPrimaryTransactionsQueue**、
-**$MetricsMinutePrimaryTransactionsBlob**、
-**$MetricsMinutePrimaryTransactionsTable**、
-**$MetricsMinutePrimaryTransactionsQueue**、
-**$MetricsCapacityBlob**。**Availability** 列包含一个百分比值，指示该服务的可用性或该行所表示的 API 操作的可用性（**RowKey** 显示行是包含整体服务的度量值还是包含特定 API 操作的度量值）。 
+您应通过监视以下每小时或每分钟度量值表中的 **Availability** 列中的值来监视存储帐户中存储服务的可用性：**$MetricsHourPrimaryTransactionsBlob**、**$MetricsHourPrimaryTransactionsTable**、**$MetricsHourPrimaryTransactionsQueue**、**$MetricsMinutePrimaryTransactionsBlob**、**$MetricsMinutePrimaryTransactionsTable**、**$MetricsMinutePrimaryTransactionsQueue**、**$MetricsCapacityBlob**。**Availability** 列包含一个百分比值，指示该服务的可用性或该行所表示的 API 操作的可用性（**RowKey** 显示行是包含整体服务的度量值还是包含特定 API 操作的度量值）。
 
 任何小于 100% 的值指示某些存储请求将失败。您可以通过检查度量值数据中显示具有不同错误类型（如 **ServerTimeoutError**）的请求数的其他列来了解失败原因。由于以下原因您应该会看到 **Availability** 暂时低于 100%：比如在该服务移动分区以更好地负载平衡请求时，出现暂时性服务器超时；客户端应用程序中的重试逻辑应处理此类间歇性情况。页面 <a href="http://msdn.microsoft.com/zh-cn/library/azure/hh343260.aspx" target="_blank"></a> 列出了存储度量值在其“可用性”计算中包括的事务类型。
 
@@ -413,7 +406,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 较高的 **AverageServerLatency** 值也可能是设计欠佳的表或查询的症状，它会导致扫描操作或执行追加/前面预置反模式。有关详细信息，请参阅“[度量值显示 PercentThrottlingError 增加]”。
 
-> [AZURE.NOTE] 你可以找到一份包括此处应注意的其他问题的全面的核对清单：[Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist)。
+> [AZURE.NOTE] 你可以在此处找到一份包括应注意的其他问题的全面的清单：[Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist)。
 
 ### <a name="you-are-experiencing-unexpected-delays-in-message-delivery"></a>队列上的消息传递出现意外的延迟
 
@@ -621,7 +614,7 @@ e2d06d78-... | 重试策略不允许重试。操作失败，远程服务器返�
 
 > [AZURE.NOTE] 在排查客户端 JavaScript 问题时，可以使用 Internet Explorer 中的 F12 开发人员工具来跟踪浏览器与存储服务之间交换的消息。
 
-之所以发生这些错误是因为 Web 浏览器实施了“<a href="http://www.w3.org/Security/wiki/Same_Origin_Policy" target="_blank">同源策略</a>”安全限制，以防止网页调用与它来自的域不同的域中的 API。
+之所以发生这些错误是因为 Web 浏览器实施了“同源策略”安全限制，以防止网页调用与它来自的域不同的域中的 API。<a href="http://www.w3.org/Security/wiki/Same_Origin_Policy" target="_blank"></a>
 
 若要解决此 JavaScript 问题，可以为客户端访问的存储服务配置跨域资源共享 (CORS)。有关详细信息，请参阅 MSDN 上的 <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn535601.aspx" target="_blank">Azure 存储空间服务的跨域资源共享 (CORS) 支持</a>。
 
@@ -675,7 +668,7 @@ Timestamp|操作|结果|容器名称|客户端请求 ID
 请务必注意，这些操作已成功完成，因此不会影响其他度量值，如可用性。成功执行但可能会导致失败的 HTTP 状态代码的一些操作示例包括：
 - **ResourceNotFound**（未找到 404），例如，对不存在的 Blob 进行 GET 请求时生成。
 - **ResouceAlreadyExists**（冲突 409），例如，在资源已存在的情况下进行 **CreateIfNotExist** 操作时生成。
-- **ConditionNotMet**（未修改 304），例如，进行条件操作时生成，例如当客户端发送 **ETag** 值和一个 HTTP **None-If-match** 标头，以仅在自上次操作以来图像已更新的情况下请求图像。
+- **ConditionNotMet**（未修改 304），例如，进行条件操作时生成，例如仅在自上次操作以来映像已更新时，客户端才会发送 **ETag** 值和一个 HTTP **If-None-Match** 标头来请求此映像。
 
 可以在<a href="http://msdn.microsoft.com/zh-cn/library/azure/dd179357.aspx" target="_blank">常见的 REST API 错误代码</a>页上找到存储服务返回的常见 REST API 错误代码的列表。
 
@@ -830,7 +823,7 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 
 ### <a name="appendix-4"></a>附录 4：使用 Excel 查看度量值和日志数据
 
-使用许多工具可以从 Azure 表存储中下载带分隔符格式的存储度量值数据，以便可以轻松地将这些数据加载到 Excel 中进行查看和分析。来自 Azure Blob 存储的存储日志记录数据已采用可以加载到 Excel 中的带分隔符格式。但是，你需要基于<a href="http://msdn.microsoft.com/zh-cn/library/hh343259.aspx" target="_blank">存储分析日志格式</a>和<a href="http://msdn.microsoft.com/zh-cn/library/hh343264.aspx" target="_blank">存储分析度量表架构</a>中的信息添加相应的列标题。
+使用许多工具可以从 Azure 表存储中下载带分隔符格式的存储度量值数据，以便可以轻松地将这些数据加载到 Excel 中进行查看和分析。来自 Azure Blob 存储的存储日志记录数据已采用可以加载到 Excel 中的带分隔符格式。但是，您需要基于 <a href="http://msdn.microsoft.com/zh-cn/library/azure/hh343259.aspx" target="_blank">“存储分析日志格式”</a> 和 <a href="http://msdn.microsoft.com/zh-cn/library/azure/hh343264.aspx" target="_blank">“存储分析度量表架构”</a> 中的信息添加相应的列标题。
 
 若要将存储日志记录数据导入 Excel（从 Blob 存储下载后），请执行以下操作：
 
@@ -923,4 +916,5 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 [9]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-1.png
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-2.png
 
-<!---HONumber=Mooncake_0215_2016-->
+
+<!---HONumber=Mooncake_0516_2016-->
