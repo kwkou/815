@@ -3,6 +3,9 @@
     ms.date=""
     wacn.date="5/23/2016"
     />
+> [AZURE.SELECTOR]
+- [中文版](/documentation/articles/cdn-https-how-to)
+- [English Version](/documentation/articles/cdn-enus-https-how-to)
 
 # Azure CDN HTTPS acceleration service
 
