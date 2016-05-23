@@ -14,7 +14,9 @@
 
 # 如何安装和配置 Azure PowerShell#
 
-<div class="dev-center-tutorial-selector sublanding"><a href="#" title="PowerShell" class="current">PowerShell</a><a href="/documentation/articles/xplat-cli-install/" title="Azure CLI">Azure CLI</a></div>
+> [AZURE.SELECTOR]
+- [PowerShell](/documentation/articles/powershell-install-configure)
+- [Azure CLI](/documentation/articles/xplat-cli-install)
 
 ##什么是 Azure PowerShell？#
 Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。你可以使用 cmdlet 来创建、测试、部署和管理通过 Azure 平台传送的解决方案和服务。在大多数情况下，这些 cmdlet 可让你执行在 Azure 管理门户中可以执行的任务，例如，创建和配置云服务、虚拟机、虚拟网络和 Web 应用。
