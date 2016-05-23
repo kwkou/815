@@ -262,7 +262,7 @@
 <!-- Links -->
 [通知中心示例]: https://github.com/Azure/azure-notificationhubs-samples
 [Azure 移动服务]: /home/features/mobile-services/
-[Azure 服务总线]: /documentation/articles/fundamentals-service-bus-hybrid-solutions
+[Azure 服务总线]: /documentation/articles/fundamentals-service-bus-hybrid-solutions 
 [服务总线 Pub/Sub 编程]: /documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions
 [Azure WebJob]: /documentation/articles/web-sites-create-web-jobs
 [通知中心 - Windows 通用教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started

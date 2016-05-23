@@ -63,7 +63,7 @@
 
 你的通知中心现在已配置为使用 APNS，并且你有连接字符串用于注册你的应用和发送推送通知。
 
-
+-->
 ##将你的应用连接到通知中心
 
 #### 创建新项目
@@ -76,7 +76,7 @@
 
 3. 在 **AppDelegate.cs** 中，添加以下 using 语句：
 
-    using WindowsAzure.Messaging;
+        using WindowsAzure.Messaging;
 
 4. 声明 **SBNotificationHub** 的实例：
 
