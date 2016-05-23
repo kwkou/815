@@ -134,8 +134,6 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 * [HDInsight .NET SDK 参考](https://msdn.microsoft.com/zh-cn/library/mt271028.aspx)
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig)
 * [将 Sqoop 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-sqoop)
-* [Create non-interactive authentication .NET HDInsight applications（创建非交互式身份验证 .NET HDInsight 应用程序）](/documentation/articles/hdinsight-create-non-interactive-authentication-dotnet-applications)
-
 
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1

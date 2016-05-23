@@ -15,8 +15,6 @@
 
 #将 Apache Mahout 与 HDInsight 中的 Hadoop 配合使用以生成电影推荐
 
-[AZURE.INCLUDE [mahout-selector](../includes/hdinsight-selector-mahout.md)]
-
 了解如何使用 [Apache Mahout](http://mahout.apache.org) 机器学习库通过 Azure HDInsight 生成电影推荐。
 
 
