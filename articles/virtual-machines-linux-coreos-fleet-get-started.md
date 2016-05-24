@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="11/16/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="03/09/2016"
+	wacn.date="05/24/2016"/>
 
 # 在 Azure 上的 CoreOS VM 群集上使用 Fleet 入门
 

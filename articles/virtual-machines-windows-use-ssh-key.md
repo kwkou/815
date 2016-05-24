@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="01/04/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 #如何在 Azure 上结合使用 SSH 和 Windows
 
@@ -43,23 +43,16 @@ Azure 的基本 SSH 设置包括从 **id\_rsa** 私钥文件生成的 `.pem` 文
 
 使用[管理门户](https://manage.windowsazure.cn)创建 VM 时必需使用 .pem 文件。使用 [Azure CLI](/documentation/articles/xplat-cli-install) 的经典部署中也支持.pem 文件。
 
-> [AZURE.NOTE] 如果你计划管理使用经典部署模型部署的服务，则可能还要创建 **.cer** 格式的文件来上载到门户，尽管这不涉及 **ssh** 或连接到 Linux VM，但这是本文的主题。若要在 Linux 或 Mac 上创建那些文件，请键入
+> [AZURE.NOTE] 如果你计划管理使用经典部署模型部署的服务，则可能还要创建 **.cer** 格式的文件来上载到门户，尽管这不涉及 **ssh** 或连接到 Linux VM，但这是本文的主题。若要在 windows 上创建那些文件，请键入<br />openssl.exe x509 -outform der -in myCert.pem -out myCert.cer
 
 ## 获得适用于Windows的ssh-keygen和openssl工具 ##
 
 [本部分](#What-SSH-and-key-creation-programs-do-you-need)的上述内容列出了多个包括适用于 Windows 的 `ssh-keygen` 和 `openssl` 的实用工具。下面列出了几个示例：
 
-### 使用 Msysgit ###
-
-1.	从以下位置下载并安装 msysgit：[http://msysgit.github.com/](http://msysgit.github.com/)
-2.	从安装目录运行 `msys`（示例：c:\\msysgit\\msys.exe）
-3.	通过键入 `cd bin` 更改为 `bin` 目录
-
-
 ### 使用针对 Windows 的 GitHub ###
 
-1.	从以下位置下载并安装 GitHub for Windows：[http://windows.github.com/](http://windows.github.com/)
-2.	从“开始”菜单 >“所有程序”>“GitHub, Inc”运行 Git Shell
+1.	从以下位置下载并安装 GitHub for Windows：[https://git-for-windows.github.io/](https://git-for-windows.github.io/)
+2.	从“开始”菜单 >“所有程序”>“GitHub”运行 Git Bash
 
 > [AZURE.NOTE] 在运行上述 `openssl` 命令时，可能会遇到以下错误：
 
@@ -93,9 +86,22 @@ Azure 的基本 SSH 设置包括从 **id\_rsa** 私钥文件生成的 `.pem` 文
 
 		# openssl.exe req -x509 -nodes -days 365 -newkey rsa:2048 -keyout myPrivateKey.key -out myCert.pem
 
-3.	您的屏幕应与下图中所示类似：
+3.	您的屏幕应与所示类似：
 
-	![linuxwelcomegit](./media/virtual-machines-linux-ssh-from-linux/linuxwelcomegit.png)
+		  $ openssl.exe req -x509 -nodes -days 365 -newkey rsa:2048 -keyout myPrivateKey.key -out myCert.pem
+		  Generating a 2048 bit RSA private key
+		  .......................................+++
+		  .......................+++
+		  writing new private key to 'myPrivateKey.key'
+		  -----
+		  You are about to be asked to enter information that will be incorporated
+		  into your certificate request.
+		  What you are about to enter is what is called a Distinguished Name or a DN.
+		  There are quite a few fields but you can leave some blank
+		  For some fields there will be a default value,
+		  If you enter '.', the field will be left blank.
+		  -----
+		  Country Name (2 letter code) [AU]:
 
 4.	回答询问的问题。
 5.	应已创建两个文件：`myPrivateKey.key` 和 `myCert.pem`。

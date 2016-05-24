@@ -10,8 +10,8 @@
 
    <tags
    ms.service="virtual-machines-windows"
-   ms.date="12/07/2015"
-   wacn.date="03/03/2016"/>
+   ms.date="03/31/2016"
+   wacn.date="05/24/2016"/>
 
 # 使用 Azure PowerShell 管理虚拟机
 
@@ -86,14 +86,6 @@
 若要在 Azure 中创建新的基于 Windows 的虚拟机，请使用[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell)中的说明。本主题指导你逐步完成创建 Azure PowerShell 命令集，以创建可预先配置以下项的基于 Windows 的 VM：
 
 - Active Directory 域成员身份。
-- 附加磁盘。
-- 作为现有负载平衡集的成员。
-- 静态 IP 地址。
-
-## 创建基于 Linux 的 VM
-
-若要在 Azure 中创建新的基于 Linux 的虚拟机，请使用[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-classic-createpowershell)中的说明。本主题指导你逐步完成创建 Azure PowerShell 命令集，以创建可预先配置以下项的基于 Linux 的 VM：
-
 - 附加磁盘。
 - 作为现有负载平衡集的成员。
 - 静态 IP 地址。

@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="01/22/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="05/24/2016"/>
 
 # <a id="nonendorsed"> </a>有关未认可分发的信息 #
 
@@ -37,9 +37,9 @@
 本文的其余部分将重点介绍有关在 Azure 上运行 Linux 分发的一般准则。
 
 
-## <a id="linuxinstall"> </a>常规 Linux 安装说明 ##
+## <a id="linuxinstall" name="general-linux-installation-notes"> </a>常规 Linux 安装说明 ##
 
-- Azure 不支持 VHDX 格式，仅支持**固定大小的 VHD**。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。
+- Azure 不支持 VHDX 格式，仅支持**固定大小的 VHD**。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。如果你使用 VirtualBox，这就意味着创建硬盘时，选择“固定大小”，而不是默认的动态分配。
 
 - 在安装 Linux 系统时，建议使用标准分区而不是 LVM（通常是许多安装的默认值）。这将避免 LVM 与克隆 VM 发生名称冲突，特别是在 OS 磁盘需要连接到另一台 VM 以进行故障排除的情况下。如果首选，LVM 或 [RAID](/documentation/articles/virtual-machines-linux-configure-raid) 可以在数据磁盘上使用。
 

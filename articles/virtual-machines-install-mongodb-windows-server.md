@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="10/14/2015"
-	wacn.date="12/17/2015"/>
+	ms.date="03/25/2016"
+	wacn.date="05/24/2016"/>
 
 #在 Windows VM 上安装 MongoDB
 

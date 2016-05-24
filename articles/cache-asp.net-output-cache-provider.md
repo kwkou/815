@@ -9,7 +9,7 @@
 <tags
 	ms.service="cache"
 	ms.date="01/13/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="05/24/2016"/>
 
 # Azure Redis 缓存的 ASP.NET 输出缓存提供程序
 
@@ -21,11 +21,11 @@ Redis 输出缓存提供程序是用于输出缓存数据的进程外存储机�
 
 若要在 Visual Studio 中使用 Redis 输出缓存提供程序 NuGet 包配置客户端应用程序，请在“解决方案资源管理器”中右键单击项目，然后选择“管理 NuGet 包”。
 
-![Azure Redis 缓存管理 NuGet 包](./media/cache-aspnet-output-cache-provider/IC729541.png)
+![Azure Redis 缓存管理 NuGet 包](./media/cache-aspnet-output-cache-provider/redis-cache-manage-nuget-menu.png)
 
-在“联机搜索”文本框中键入 **RedisOutputCacheProvider**，从结果中选择它，然后单击“安装”。
+在搜索文本框中键入 **RedisOutputCacheProvider**，从结果中选择它，然后单击“安装”。
 
-![Azure Redis 缓存输出缓存提供程序](./media/cache-aspnet-output-cache-provider/IC751727.jpg)
+![Azure Redis 缓存输出缓存提供程序](./media/cache-aspnet-output-cache-provider/redis-cache-page-output-provider.png)
 
 Redis 输出缓存提供程序 NuGet 包依赖于 StackExchange.Redis.StrongName 包。如果你的项目中没有 StackExchange.Redis.StrongName 包，则将会安装它。请注意，除了强命名的 StackExchange.Redis.StrongName 包外，还有 StackExchange.Redis 非强命名版本。如果你的项目使用的是非强命名 StackExchange.Redis 版本，则必须在安装 Redis 输出缓存提供程序 NuGet 包之前或之后将其卸载，否则你的项目中将出现命名冲突。有关这些包的详细信息，请参阅[配置 .NET 缓存客户端](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#configure-the-cache-clients)。
 
