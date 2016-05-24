@@ -14,8 +14,8 @@
 # 在 Azure 中配置 AlwaysOn 可用性组 (PowerShell)
 
 > [AZURE.SELECTOR]
-- [门户 - 经典](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)
-- [PowerShell - 经典](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups)
+- [门户](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)
+- [PowerShell](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups)
 
 
 >[AZURE.NOTE]有关同一方案的基于 GUI 的教程，请参阅[在 Azure 中配置 AlwaysOn 可用性组 (GUI)](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)。

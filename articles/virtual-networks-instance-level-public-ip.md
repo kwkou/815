@@ -92,7 +92,7 @@
 	| Update-AzureVM
 
 ## 如何使用服务配置文件将 ILPIP 关联到 VM
-你可以使用服务配置 (CSCFG) 文件将 ILPIP 关联到 VM。下面的示例 xml 显示了如何将云服务配置为使用名为 *MyReservedIP* 的保留 IP，让其充当角色实例的 ILPIP：
+你可以使用服务配置 (CSCFG) 文件将 ILPIP 关联到 VM。下面的示例 xml 显示了如何将云服务配置为使用名为 *MyPublicIP* 的 ILPIP，让其充当角色实例的 ILPIP：
 	
 	<?xml version="1.0" encoding="utf-8"?>
 	<ServiceConfiguration serviceName="ReservedIPSample" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2014-01.2.3">
@@ -111,7 +111,7 @@
 	          <Subnet name="Subnet2"/>
 	        </Subnets>
 	        <PublicIPs>
-	          <PublicIP name="MyReservedIP" domainNameLabel="MyReservedIP" />
+	          <PublicIP name="MyPublicIP" domainNameLabel="MyPublicIP" />
 	        </PublicIPs>
 	      </InstanceAddress>
 	    </AddressAssignments>

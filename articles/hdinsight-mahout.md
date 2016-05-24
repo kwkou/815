@@ -33,8 +33,9 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 ##先决条件
 
 - **HDInsight 中基于 Windows 的 Hadoop 群集**。有关创建该群集的信息，请参阅[开始使用 HDInsight 中的 Hadoop][getstarted]。
-- **配备 Azure PowerShell 的工作站**。请参阅[安装 Azure PowerShell 1.0 和更高版本](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater)。
+- **配备 Azure PowerShell 的工作站**。
 
+    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 ##<a name="recommendations"></a>使用 Windows PowerShell 生成推荐
 

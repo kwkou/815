@@ -232,9 +232,6 @@
 假设你已在 Azure Web 上运行了 WordPress Web 应用，请登录 [Azure 管理门户](http://manage.windowsazure.cn)并转到该 WordPress Web 应用。
 单击“仪表板”->“速览”->“添加新部署槽”以创建名为 stage 的部署槽。部署槽是与上面创建的主要 web 应用共享相同资源的另一个 web 应用。
 
-
-添加另一个 MySQL 数据库，假设为 `wordpress-stage-db`。将过渡部署槽的连接字符串更新为指向新建的数据库 `wordpress-stage-db`。请注意，生产 web 应用 `wordpressprodapp` 和过渡 web 应用 `wordpressprodapp-stage` 必须指向不同的数据库。
-
 #### 配置环境特定的应用设置
 开发人员可以在 Azure 中存储键-值字符串对，作为与名为“应用设置”的 Web 应用关联的配置信息的一部分。在运行时，Azure Web Apps 将自动检索这些值，并使这些值可供 Web 应用中运行的代码使用。从安全角度来看，这可以带来优势，因为包含密码的数据库连接字符串等机密信息永远不会以明文形式显示在文件（例如 `wp-config.php`）中。
 

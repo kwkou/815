@@ -90,13 +90,5 @@
 - 作为现有负载平衡集的成员。
 - 静态 IP 地址。
 
-## 创建基于 Linux 的 VM
-
-若要在 Azure 中创建新的基于 Linux 的虚拟机，请使用[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-classic-createpowershell)中的说明。本主题指导你逐步完成创建 Azure PowerShell 命令集，以创建可预先配置以下项的基于 Linux 的 VM：
-
-- 附加磁盘。
-- 作为现有负载平衡集的成员。
-- 静态 IP 地址。
-
 
 <!---HONumber=70-->

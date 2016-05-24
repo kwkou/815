@@ -29,6 +29,9 @@
 Bootstrap 的使用方式有 2 种：
 
 - 使用 Azure PowerShell
+
+	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+
 - 使用 .NET SDK
 
 有关在创建时在 HDInsight 群集上安装其他组件的信息，请参阅：

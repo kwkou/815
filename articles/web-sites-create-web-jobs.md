@@ -69,7 +69,7 @@ Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，
 
 以下备用技术利用 Azure 计划程序。在这种情况下，Web 作业没有计划的任何直接知识。而是将 Azure 计划程序配置为按计划触发 Web 作业。
 
-Azure 管理门户尚不能创建计划的 Web 作业，但在添加该功能之前，你可以使用[管理门户](http://manage.windowsazure.cn)执行此类操作。
+你可以使用[管理门户](http://manage.windowsazure.cn)执行此类操作。
 
 1. 在[管理门户](http://manage.windowsazure.cn)中，转到“Web 作业”页并单击“添加”。
 

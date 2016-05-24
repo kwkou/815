@@ -20,7 +20,7 @@
 
 ## 先决条件
 
-* **Azure VM 中的 HPC Pack 群集** - 在经典（服务管理）部署模型中，使用 HPC Pack 2012 R2 Update 1 以上版本创建一个 HPC Pack 群集。例如，可以通过使用 Azure 库中的 HPC Pack VM 映像和 Azure PowerShell 脚本，自动执行部署。有关信息和先决条件，请参阅[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)。
+* **Azure VM 中的 HPC Pack 群集** - 在经典部署模型中，使用 HPC Pack 2012 R2 Update 1 以上版本创建一个 HPC Pack 群集。例如，可以通过使用 Azure 库中的 HPC Pack VM 映像和 Azure PowerShell 脚本，自动执行部署。有关信息和先决条件，请参阅[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script)。
 
 * **Azure 发布设置文件或管理证书** - 你需要在头节点上执行下列操作之一：
 

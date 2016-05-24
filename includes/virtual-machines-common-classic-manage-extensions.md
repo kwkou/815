@@ -19,13 +19,11 @@ Azure VM 扩展实现了可帮助其他程序在 Azure VM 上正常工作的行�
 
 ##查找可用扩展
 
-Azure VM 扩展是（有关这些扩展按它们支持的功能列出的完整列表，请参阅 Azure VM 扩展和功能：[Windows](/documentation/articles/virtual-machines-windows-extensions-features) 或者 [Linux](/documentation/articles/virtual-machines-linux-extensions-features)）。 可以使用以下项查找扩展和扩展信息：
+你可以使用以下项查找扩展和扩展信息：
 
 -   PowerShell
 -   Azure 跨平台界面 (Azure CLI)
 -   服务管理 REST API
-
-[Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/dn495240.aspx) cmdlet 或[服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/ee460799.aspx) 用于查找有关可用扩展的信息。
 
 ###Azure PowerShell
 

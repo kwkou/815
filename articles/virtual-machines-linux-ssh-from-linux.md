@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="在 Linux 和 Mac 上使用 SSH | Azure" 
 	description="在 Linux 和 Mac 上为 Azure 上的资源管理器和经典部署模型生成和使用 SSH 密钥。" 
-	services="virtual-machines" 
+	services="virtual-machines-linux" 
 	documentationCenter="" 
 	authors="squillace" 
 	manager="timlt" 
@@ -23,6 +23,8 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
+想要为使用 Windows 计算机安全地链接 Azure 中的 Linux VM 创建这类型的文件，请参阅[在 Windows 使用 SSH](virtual-machines-linux-ssh-from-windows)。
+
 ## 你需要哪些文件？
 
 Azure 的基本 SSH 设置包括 2048 位的 **ssh-rsa** 公钥和私钥对（默认情况下，**ssh-keygen** 会将这些文件存储为 **~/.ssh/id\_rsa** 和 **~/.ssh/id-rsa.pub**，除非更改默认值）以及从 **id\_rsa** 私钥文件生成的 `.pem` 文件，以供与经典门户的经典部署模型一起使用。
@@ -34,7 +36,7 @@ Azure 的基本 SSH 设置包括 2048 位的 **ssh-rsa** 公钥和私钥对（�
 
 ## 创建密钥以用于 SSH
 
-Azure 需要 2048 位的 **ssh-rsa** 格式密钥文件或等效的 .pem 文件，具体取决于你的方案。如果你已有此类文件，在创建 Azure VM 时，请传递公钥文件。
+如果你已有SSH 密钥，在创建 Azure VM 时，请传递公钥文件。
 
 如果你需要创建这些文件：
 
@@ -43,17 +45,14 @@ Azure 需要 2048 位的 **ssh-rsa** 格式密钥文件或等效的 .pem 文件�
 	- 对于 Mac，请务必访问 [Apple 产品安全性网站](https://support.apple.com/HT201222)，并选择适当的更新（如有必要）。
 	- 对于基于 Debian 的 Linux 分发（如 Ubuntu、Debian、Mint 等）：
 
-			sudo apt-get update ssh-keygen
-			sudo apt-get update openssl
+			sudo apt-get install --upgrade-only openssl
 
 	- 对于基于 RPM 的 Linux 分发（如 CentOS 和 Oracle Linux）：
 
-			sudo yum update ssh-keygen
 			sudo yum update openssl
 
 	- 对于 SLES 和 OpenSUSE
 
-			sudo zypper update ssh-keygen
 			sudo zypper update openssl
 
 2. 使用 **ssh-keygen** 创建 2048 位的 RSA 公钥和私钥文件，除非你为文件设置了特定位置或特定名称，否则接受默认位置和名称（即，`~/.ssh/id_rsa`）。基本命令是：
@@ -68,7 +67,7 @@ Azure 需要 2048 位的 **ssh-rsa** 格式密钥文件或等效的 .pem 文件�
 
 	如果要从不同的私钥文件创建 .pem 文件，请修改 `-key` 参数。
 
-> [AZURE.NOTE]如果你计划管理使用经典部署模型部署的服务，则可能还要创建 **.cer** 格式的文件来上载到门户，尽管这不涉及 **ssh** 或连接到 Linux VM，但这是本文的主题。若要在 Linux 或 Mac 上创建这些文件，请键入：<br /> openssl.exe x509 -outform der -in myCert.pem -out myCert.cer
+> [AZURE.NOTE]如果你计划管理使用经典部署模型部署的服务，则可能还要创建 **.cer** 格式的文件来上载到门户，尽管这不涉及 **ssh** 或连接到 Linux VM，但这是本文的主题。若要在 Linux 或 Mac 上创建这些文件，请键入：<br /> openssl  x509 -outform der -in myCert.pem -out myCert.cer
 
 将 .pem 文件转换为 DER 编码的 X509 证书文件。
 
@@ -90,7 +89,7 @@ Azure 需要 2048 位的 **ssh-rsa** 格式密钥文件或等效的 .pem 文件�
 	--vnet-name testvnet \
 	--vnet-subnet-name testsubnet \
 	--storage-account-name computeteststore 
-	--image-urn canonical:UbuntuServer:14.04.3-LTS:latest \
+	--image-urn canonical:UbuntuServer:14.04.4-LTS:latest \
 	--username ops \
 	-ssh-publickey-file ~/.ssh/id_rsa.pub \
 	testrg testvm westeurope linux
@@ -138,14 +137,14 @@ Azure 需要 2048 位的 **ssh-rsa** 格式密钥文件或等效的 .pem 文件�
 然后可以在经典门户或经典部署模式和 `azure vm create` 中使用 .pem 文件，如以下示例所示：
 
 	azure vm create \
-	-l "China East" -n testpemasm \
+	-l "China North" -n testpemasm \
 	-P -t myCert.pem -e 22 \
 	testpemasm \
-	b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20150908-en-us-30GB \
+	b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_4-LTS-amd64-server-20160406-en-us-30GB \
 	ops
 	info:    Executing command vm create
 	warn:    --vm-size has not been specified. Defaulting to "Small".
-	+ Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20150908-en-us-30GB
+	+ Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_4-LTS-amd64-server-20160406-en-us-30GB
 	+ Looking up cloud service
 	info:    cloud service testpemasm not found.
 	+ Creating cloud service
@@ -153,6 +152,7 @@ Azure 需要 2048 位的 **ssh-rsa** 格式密钥文件或等效的 .pem 文件�
 	+ Configuring certificate
 	+ Creating VM
 	info:    vm create command OK
+
 
 
 ## 连接到 VM
@@ -259,30 +259,29 @@ Azure 需要 2048 位的 **ssh-rsa** 格式密钥文件或等效的 .pem 文件�
 	RSA key fingerprint is dc:bb:e4:cc:59:db:b9:49:dc:71:a3:c8:37:36:fd:62.
 	Are you sure you want to continue connecting (yes/no)? yes
 	Warning: Permanently added 'testpemasm.chinacloudapp.cn,40.83.178.221' (RSA) to the list of known hosts.
-	Saving password to keychain failed
-	Identity added: /Users/user/.ssh/id_rsa.pub (/Users/user/.ssh/id_rsa.pub)
-	Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-28-generic x86_64)
-
+	
+    Welcome to Ubuntu 14.04.4 LTS (GNU/Linux 3.19.0-49-generic x86_64)
+	
 	* Documentation:  https://help.ubuntu.com/
 
-	System information as of Sat Oct 10 20:53:08 UTC 2015
+    System information as of Fri Apr 15 18:51:42 UTC 2016
 
-	System load: 0.52              Memory usage: 5%   Processes:       80
-	Usage of /:  45.3% of 1.94GB   Swap usage:   0%   Users logged in: 0
+    System load: 0.31              Memory usage: 2%   Processes:       213
+    Usage of /:  42.1% of 1.94GB   Swap usage:   0%   Users logged in: 0
 
-	Graph this data and manage this system at:
-		https://landscape.canonical.com/
+    Graph this data and manage this system at:
+    https://landscape.canonical.com/
 
-	Get cloud support with Ubuntu Advantage Cloud Guest:
-		http://www.ubuntu.com/business/services/cloud
+    Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
 
-	0 packages can be updated.
+    0 packages can be updated.
 	0 updates are security updates.
-
+	
 	The programs included with the Ubuntu system are free software;
 	the exact distribution terms for each program are described in the
 	individual files in /usr/share/doc/*/copyright.
-
+	
 	Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
 	applicable law.
 

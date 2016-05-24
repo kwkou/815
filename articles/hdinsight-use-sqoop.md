@@ -29,7 +29,9 @@
 
 在开始阅读本教程前，你必须具有：
 
-- **配备 Azure PowerShell 的工作站**。请参阅[安装 Azure PowerShell 1.0 和更高版本](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater)。
+- **配备 Azure PowerShell 的工作站**。
+
+    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 ##了解方案
 

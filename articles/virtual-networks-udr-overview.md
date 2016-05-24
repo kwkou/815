@@ -67,8 +67,6 @@
 1. BGP 路由（当使用 ExpressRoute 时）
 1. 系统路由
 
-若要了解如何创建用户定义路由，请参阅[如何在 Azure 中创建路由和启用 IP 转发](/documentation/articles/virtual-networks-udr-how-to#How-to-manage-routes)。
-
 >[AZURE.IMPORTANT] 用户定义路由仅适用于 Azure VM 和云服务。例如，如果你想要在本地网络和 Azure 之间添加防火墙虚拟设备，则需为 Azure 路由表创建用户定义路由，以便将目标为本地地址空间的所有流量转发到虚拟设备。但是，来自本地地址空间的传入流量将流经你的 VPN 网关或 ExpressRoute 线路，绕过虚拟设备直接进入 Azure 环境中。
 
 ## BGP 路由

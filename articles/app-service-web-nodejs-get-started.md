@@ -14,27 +14,21 @@
 
 # Azure 中的 Node.js Web 应用入门
 
-> [AZURE.SELECTOR]
-- [.Net](/documentation/articles/web-sites-dotnet-get-started)
-- [Node.js](/documentation/articles/app-service-web-nodejs-get-started)
-- [Java](/documentation/articles/web-sites-java-get-started)
-- [PHP - Git](/documentation/articles/web-sites-php-mysql-deploy-use-git)
-- [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
-- [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
+[AZURE.INCLUDE [tabs](../includes/app-service-web-get-started-nav-tabs.md)]
 
 本教程说明如何创建一个简单的 [Node.js](http://nodejs.org) 应用程序，然后通过 cmd.exe 或 bash 等命令行将它部署到 [Azure Web 应用](/documentation/services/web-sites)。本教程中的说明适用于任何能够运行 Node.js 的操作系统。
 
 ##<a name="prereq"></a> 先决条件
 
 - Node.js。安装二进制文件可从[此处](https://nodejs.org/)获取。
-- Yoeman。[此处](http://yeoman.io/)提供了安装说明。
+- Yeoman。[此处](http://yeoman.io/)提供了安装说明。
 - Git。安装二进制文件可从[此处](http://www.git-scm.com/downloads)获取。
 - Azure CLI。[此处](/documentation/articles/xplat-cli-install)提供了安装说明。
 - 一个 Azure 帐户。如果你没有帐户，可以[注册1元试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 ## 创建并部署简单的 Node.js Web 应用
 
-1. 打开所选的命令行终端以安装[适用于 Yoeman 的 Express 生成器](https://github.com/petecoop/generator-express)。
+1. 打开所选的命令行终端以安装[适用于 Yeoman 的 Express 生成器](https://github.com/petecoop/generator-express)。
 
         npm install -g generator-express
 

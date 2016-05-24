@@ -18,11 +18,9 @@
 
 查找在 Azure 中创建和管理基于 Windows 的虚拟机时需要参考的所有文档。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
-## 经典部署模型中的 Windows VM
-
-### 概述
+## 概述
 
 [关于虚拟机](/documentation/articles/virtual-machines-windows-about)
 
@@ -34,7 +32,7 @@
 
 
 
-### 环境设置
+## 环境设置
 
 [免费帐户](/pricing/1rmb-trial/)
  
@@ -43,7 +41,7 @@
 [安装 Azure CLI](/documentation/articles/xplat-cli-install)
 
 
-### 入门
+## 入门
 
 [在 Azure 经典门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)
 
@@ -52,7 +50,7 @@
 
 
 
-### 计划
+## 计划
 
 [关于经典虚拟机的映像](/documentation/articles/virtual-machines-windows-classic-about-images)
 
@@ -65,7 +63,7 @@
 [创建虚拟机的可用性集](/documentation/articles/virtual-machines-windows-classic-configure-availability)
 
 
-### 部署
+## 部署
 
 [创建运行 Windows 的自定义虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal)
 
@@ -80,7 +78,7 @@
 [将自定义数据注入到 Azure 虚拟机中](/documentation/articles/virtual-machines-windows-classic-inject-custom-data)
 
 
-### 管理
+## 管理
 
 [使用 Azure PowerShell 管理虚拟机](/documentation/articles/virtual-machines-windows-classic-manage-psh)
 
@@ -98,7 +96,7 @@
 
 
 
-### 配置
+## 配置
 
 [如何为 Windows VM 重置密码或远程桌面服务](/documentation/articles/virtual-machines-windows-reset-rdp)
 
@@ -110,7 +108,7 @@
 
 [如何在经典 Azure 虚拟机上设置终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)
 
-### 存储
+## 存储
 
 [关于 Azure 虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-windows-about-disks-vhds)
 	
@@ -120,7 +118,7 @@
 
 [使用 D 盘作为 Windows VM 上的数据驱动器](/documentation/articles/virtual-machines-windows-classic-change-drive-letter)
 
-### 联网
+## 联网
 
 [虚拟网络概述](/documentation/articles/virtual-networks-overview)
 
@@ -128,13 +126,11 @@
 	
 [使用 Azure PowerShell 管理 NSG](/documentation/articles/virtual-networks-create-nsg-classic-ps)
 
-### 开发
+## 开发
 
 [在 Visual Studio 中创建和管理 Azure 虚拟机](/documentation/articles/virtual-machines-windows-classic-manage-visual-studio)
 
 [使用 Visual Studio 创建用于Web 应用程序的虚拟机](/documentation/articles/virtual-machines-windows-classic-web-app-visual-studio)
-
-[如何在 Azure 虚拟机上的 .NET 中运行需要进行大量计算的任务](/documentation/articles/virtual-machines-windows-classic-run-compute-intensive-task)
 
 [如何在虚拟机上通过 Java 运行需要进行大量计算的任务](/documentation/articles/virtual-machines-windows-classic-java-run-compute-intensive-task)
 
@@ -142,7 +138,7 @@
 		
 
 
-### 工作负荷
+## 工作负荷
 
 [HPC Pack](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options)
 
@@ -156,7 +152,7 @@
 
 [Tomcat](/documentation/articles/virtual-machines-windows-classic-java-run-tomcat-app-server)
 
-### 引用
+## 引用
 [将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools)
 
 [服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
@@ -166,7 +162,7 @@
 [Azure 服务管理 PowerShell cmdlet 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn708504.aspx)
 
 
-### 故障排除
+## 故障排除
 
 [对运行 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)
 

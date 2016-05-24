@@ -25,7 +25,9 @@
 
 - **Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Windows）** 
 
-- **配备 Azure PowerShell 的工作站**。请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
+- **配备 Azure PowerShell 的工作站**。
+
+    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 ##<a id="powershell"></a>使用 Azure PowerShell 运行 MapReduce 作业
 

@@ -57,7 +57,12 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。它与 Had
 
 在开始阅读本教程前，你必须具有：
 
-- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell][powershell-install-configure]。若要执行 Windows PowerShell 脚本，必须以管理员身份运行 Azure PowerShell 并将执行策略设为 *RemoteSigned*。有关详细信息，请参阅[运行 Windows PowerShell 脚本][powershell-script]。
+- **配备 Azure PowerShell 的工作站**。
+
+	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+
+	若要执行 Windows PowerShell 脚本，必须以管理员身份运行 Azure PowerShell 并将执行策略设为 *RemoteSigned*。有关详细信息，请参阅[运行 Windows PowerShell 脚本][powershell-script]。
+
 - **一个 HDInsight 群集**。有关创建 HDInsight 群集的信息，请参阅[预配 HDInsight 群集][hdinsight-provision]或 [HDInsight 入门][hdinsight-get-started]。你将需要以下数据才能完成本教程：
 
 	<table border = "1">
@@ -675,7 +680,6 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 在本教程中，你已经学习了如何定义 Oozie 工作流、Oozie 协调器，以及如何使用 Azure PowerShell 运行 Oozie 协调器作业。若要了解更多信息，请参阅下列文章：
 
 - [开始使用 HDInsight][hdinsight-get-started]
-- [HDInsight Emulator 入门][hdinsight-get-started-emulator]
 - [将 Azure Blob 存储与 HDInsight 配合使用][hdinsight-storage]
 - [使用 Azure PowerShell 管理 HDInsight][hdinsight-admin-powershell]
 - [将数据上载到 HDInsight][hdinsight-upload-data]

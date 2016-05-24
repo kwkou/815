@@ -16,8 +16,8 @@
 # 为 Azure 准备基于 CentOS 的虚拟机
 
 
-- [为 Azure 准备 CentOS 6.x 虚拟机](#centos6)
-- [为 Azure 准备 CentOS 7.0+ 虚拟机](#centos7)
+- [为 Azure 准备 CentOS 6.x 虚拟机](#centos-6.x)
+- [为 Azure 准备 CentOS 7.0+ 虚拟机](#centos-7.0+)
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
@@ -27,6 +27,8 @@
 
 
 **CentOS 安装说明**
+
+- 请同时阅读[通用 Linux 安装笔记](/documentation/articles/virtual-machines-linux-create-upload-generic#general-linux-installation-notes)来查看更多为 Azure 准备 Linux 的提示。
 
 - Azure 不支持 VHDX 格式，仅支持**固定大小的 VHD**。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。
 
@@ -39,7 +41,7 @@
 - 所有 VHD 的大小必须是 1 MB 的倍数。
 
 
-## <a id="centos6"> </a>CentOS 6.x ##
+## <a id="centos-6.x"> </a>CentOS 6.x ##
 
 1. 在 Hyper-V 管理器中，选择虚拟机。
 
@@ -66,11 +68,10 @@
 		PEERDNS=yes
 		IPV6INIT=no
 
-6.	移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
+6.	修改 udev 规则，以避免产生以太网接口的静态规则。在 Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
 
-		# sudo mkdir -m 0700 /var/lib/waagent
-		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/
-		# sudo mv /etc/udev/rules.d/70-persistent-net.rules /var/lib/waagent/
+		# sudo ln -s /dev/null /etc/udev/rules.d/75-persistent-net-generator.rules
+		# sudo rm -f /etc/udev/rules.d/70-persistent-net.rules
 
 
 7. 通过运行以下命令，确保网络服务将在引导时启动：
@@ -201,7 +202,7 @@
 ----------
 
 
-## <a id="centos7"> </a>CentOS 7.0+ ##
+## <a id="centos-7.0+"> </a>CentOS 7.0+ ##
 
 **CentOS 7（和类似衍生产品）中的更改**
 
@@ -233,11 +234,9 @@
 		PEERDNS=yes
 		IPV6INIT=no
 
-5.	移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
+5.	修改 udev 规则，以避免产生以太网接口的静态规则。在 Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
 
-		# sudo mkdir -m 0700 /var/lib/waagent
-		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/ 2>/dev/null
-		# sudo mv /etc/udev/rules.d/70-persistent-net.rules /var/lib/waagent/ 2>/dev/null
+		# sudo ln -s /dev/null /etc/udev/rules.d/75-persistent-net-generator.rules
 
 6. 通过运行以下命令，确保网络服务将在引导时启动：
 
@@ -302,9 +301,9 @@
 
 10.	在 grub 配置中修改内核引导行，以使其包含 Azure 的其他内核参数。为此，请在文本编辑器中打开“/etc/default/grub”并编辑 `GRUB_CMDLINE_LINUX` 参数，例如：
 
-		GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0"
+		GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0 net.ifnames=0"
 
-	这还将确保所有控制台消息都发送到第一个串行端口，从而可以协助 Azure 支持人员调试问题。除此之外，建议*删除*以下参数：
+	这还将确保所有控制台消息都发送到第一个串行端口，从而可以协助 Azure 支持人员调试问题。这也关闭了新 CentOS 7 的 NIC 命名协议。除此之外，建议*删除*以下参数：
 
 		rhgb quiet crashkernel=auto
 
@@ -321,6 +320,7 @@
 13. 通过运行以下命令来安装 Azure Linux 代理：
 
 		# sudo yum install WALinuxAgent
+		# sudo systemctl enable waagent
 
 14.	不要在操作系统磁盘上创建交换空间
 

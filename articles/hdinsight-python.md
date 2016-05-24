@@ -191,6 +191,8 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 这些步骤使用 Azure PowerShell。如果尚未在开发计算机上安装并配置 Azure PowerShell，请在使用以下步骤之前，参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
+[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+
 1. 使用 Python 示例 [streaming.py](#streamingpy) 和 [jython.py](#jythonpy) 创建开发计算机上的文件的本地副本。
 
 2. 使用以下 PowerShell 脚本将 **streaming.py** 和 **jython.py** 文件上载到服务器。在脚本的前三行中替换为你的 Azure HDInsight 群集的名称，并替换为 **streaming.py** 和 **jython.py** 文件的路径。

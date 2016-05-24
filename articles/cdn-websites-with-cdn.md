@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="在 Azure Web 应用中使用 Azure CDN" 
 	description="本教程演示如何将 Web 应用部署到 Azure，以便从集成的 Azure CDN 终结点提供内容" 
-	services="app-service\web" 
+	services="app-service\web,cdn" 
 	documentationCenter=".net" 
 	authors="cephalin" 
 	manager="wpickett" 

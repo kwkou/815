@@ -15,8 +15,6 @@
 
 # 对在 Azure 虚拟机上运行的应用程序的访问进行故障排除
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
-
 [AZURE.INCLUDE [virtual-machines-common-troubleshoot-app-connection](../includes/virtual-machines-common-troubleshoot-app-connection.md)]
 
 <!---HONumber=Mooncake_0104_2016-->

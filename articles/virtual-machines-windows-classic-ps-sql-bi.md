@@ -37,36 +37,38 @@ Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。虚拟机�
 
 ![PowerShell](./media/virtual-machines-windows-classic-ps-sql-bi/IC660119.gif)以下 PowerShell 脚本返回 ImageName 中包含“SQL-Server”的 Azure 映像列表：
 
-	# assumes you have already uploaded a management certificate to your Azure Subscription. View the thumbprint value from the "settings" menu in Azure Management Portal
-	
+	# assumes you have already uploaded a management certificate to your Azure Subscription. View the thumbprint value from the "settings" menu in Azure classic portal.
+
 	$subscriptionID = ""    # REQUIRED: Provide your subscription ID.
 	$subscriptionName = "" # REQUIRED: Provide your subscription name.
 	$thumbPrint = "" # REQUIRED: Provide your certificate thumbprint.
 	$certificate = Get-Item cert:\currentuser\my\$thumbPrint # REQUIRED: If your certificate is in a different store, provide it here.-Ser  store is the one specified with the -ss parameter on MakeCert
-	
+
 	Set-AzureSubscription -SubscriptionName $subscriptionName -Certificate $certificate -SubscriptionID $subscriptionID
-	
+
+	Write-Host -foregroundcolor green "List of available gallery images where imagename contains 2016"
+	Write-Host -foregroundcolor green ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+	get-azurevmimage | where {$_.ImageName -Like "*SQL-Server-2016*"} | select imagename,category, location, label, description
+
 	Write-Host -foregroundcolor green "List of available gallery images where imagename contains 2014"
 	Write-Host -foregroundcolor green ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 	get-azurevmimage | where {$_.ImageName -Like "*SQL-Server-2014*"} | select imagename,category, location, label, description
-	
-	Write-Host -foregroundcolor green "List of available gallery images where imagename contains 2012"
-	Write-Host -foregroundcolor green ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-	get-azurevmimage | where {$_.ImageName -Like "*SQL-Server-2012*"} | select imagename,category, location, label, description
 
 有关 SQL Server 支持的版本和功能的详细信息，请参阅以下各部分：
 
 - [SQL Server 版本](https://www.microsoft.com/server-cloud/products/sql-server-editions/#fbid=Zae0-E6r5oh)
 
-- [SQL Server 2014 版本支持的功能](https://msdn.microsoft.com/zh-cn/library/cc645993.aspx)
+- [SQL Server 2016 版本支持的功能](https://msdn.microsoft.com/zh-cn/library/cc645993.aspx)
 
 ### SQL Server 虚拟机库映像上安装的 BI 功能
 
 下表总结了安装在适用于 SQL Server 的常见 Azure 虚拟机库映像上的商业智能功能”
 
-- SQL Server 2014 RTM Enterprise
+- SQL Server 2016 RC3
 
-- SQL Server 2014 Standard
+- SQL Server 2014 SP1 Enterprise
+
+- SQL Server 2014 SP1 Standard
 
 - SQL Server 2012 SP2 Enterprise
 
@@ -77,7 +79,7 @@ Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。虚拟机�
 |**Reporting Services 本机模式**|是|已安装但需要配置，包括报表管理器 URL。请参阅[配置 Reporting Services](#configure-reporting-services) 部分。|
 |**Reporting Services SharePoint 模式**|否|Azure 虚拟机库映像不包括 SharePoint 或 SharePoint 安装文件。<sup>1</sup>|
 |**Analysis Services 多维和数据挖掘 (OLAP)**|是|作为默认 Analysis Services 实例安装和配置|
-|**Analysis Services 表格**|否|在 SQL Server 2012 和 2014 映像中受支持但在默认情况下未安装。安装 Analysis Services 的另一个实例。请参阅本主题中的“安装其他 SQL Server 服务和功能”部分。|
+|**Analysis Services 表格**|否|在 SQL Server 2012、2014 和 2016 映像中受支持但在默认情况下未安装。安装 Analysis Services 的另一个实例。请参阅本主题中的“安装其他 SQL Server 服务和功能”部分。|
 |**用于 SharePoint 的 Analysis Services Power Pivot**|否|Azure 虚拟机库映像不包括 SharePoint 或 SharePoint 安装文件。<sup>1</sup>|
 
 <sup>1</sup> 有关 SharePoint 和 Azure 虚拟机的其他信息，请参阅[适用于 SharePoint 2013 的 Azure 体系结构](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)和 [Azure 虚拟机上的 SharePoint 部署](https://www.microsoft.com/download/details.aspx?id=34598)。
@@ -180,7 +182,7 @@ SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式�
 
 1. 单击“开始”，然后单击**所有程序**。
 
-1. 单击 **Microsoft SQL Server 2012**。
+1. 单击 **Microsoft SQL Server 2016**。
 
 1. 单击“配置工具”。
 
@@ -236,9 +238,9 @@ SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式�
 
 1. 在“进度和完成”页上单击“下一步”。
 
-**报表管理器 URL：**
+**2012 和 2014 的网页门户URL，或者报表管理器 URL：**
 
-1. 在左窗格中，单击“报表管理器 URL”。
+1. 在左窗格中，单击“网页门户URL”，或者“报表管理器 URL”。
 
 1. 单击“应用”。
 
@@ -256,20 +258,20 @@ SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式�
 
 1. 浏览到 VM 上的 http://localhost/reports。
 
-### 若要连接到远程报表管理器
+### 若要连接到远程 2012 和 2014 的网页门户，或者报表管理器
 
-如果想要从远程计算机连接到虚拟机上的报表管理器，请创建新的虚拟机 TCP 终结点。默认情况下，报表服务器侦听“端口 80”上的 HTTP 请求。如果您配置报表服务器 URL 使用其他端口，必须在下面的说明中指定该端口号。
+如果想要从远程计算机连接到虚拟机上的 2012 和 2014 网页门户，或者或者报表管理器，请创建新的虚拟机 TCP 终结点。默认情况下，报表服务器侦听“端口 80”上的 HTTP 请求。如果您配置报表服务器 URL 使用其他端口，必须在下面的说明中指定该端口号。
 
 1. 为虚拟机创建终结点 TCP 端口 80。有关详细信息，请参阅本文档中的[虚拟机终结点以及防火墙端口](#virtual-machine-endpoints-and-firewall-ports)部分。
 
 1. 在虚拟机的防火墙中打开端口 80。
 
-1. 使用 Azure 虚拟机“DNS 名称”作为 URL 中的服务器名称浏览到报表管理器。例如：
+1. 使用 Azure 虚拟机“DNS 名称”作为 URL 中的服务器名称浏览到网页门户，或者报表管理器。例如：
 
-	**报表管理器**：http://uebi.chinacloudapp.cn/reportserver
-	**报表服务器**：http://uebi.chinacloudapp.cn/reports
+	**报表服务器**：http://uebi.chinacloudapp.cn/reportserver
+	**网页服务器**：http://uebi.chinacloudapp.cn/reports
 
-	[为报表服务器访问配置防火墙](https://technet.microsoft.com/zh-cn/library/bb934283.aspx)
+	[为报表服务器访问配置防火墙](https://msdn.microsoft.com/zh-cn/library/bb934283.aspx)
 
 ### 创建报表并将其发布到 Azure 虚拟机
 
@@ -279,9 +281,11 @@ SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式�
 											
 	1. 使用管理权限启动你的浏览器。
 	
-	1. 浏览到虚拟机上的报表管理器，然后单击功能区中的“报表生成器”。
+	1. 浏览到虚拟机上的网页门户，然后选择右上角的“下载”图标。
 	
-	有关详细信息，请参阅[“安装、卸载和支持报表生成器”。](https://msdn.microsoft.com/zh-cn/library/ff519551.aspx)
+	1. 选择“报表生成器”。
+	
+	有关详细信息，请参阅[“启动报表生成器”。](https://msdn.microsoft.com/zh-cn/library/ms159221.aspx)
 
 - **SQL Server Data Tools**：VM：SQL Server Data Tools 安装在该虚拟机上并可用于在该虚拟机上创建**报表服务器项目**和报表。SQL Server Data Tools 可以将报表发布到虚拟机上的报表服务器。
 
@@ -305,11 +309,11 @@ SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式�
 
 1. 单击“开始”，然后单击“所有程序”。
 
-1. 单击 **Microsoft SQL Server 2014** 或 **Microsoft SQL Server 2012**，然后单击“配置工具”。
+1. 单击 **Microsoft SQL Server 2016**，**Microsoft SQL Server 2014** 或 **Microsoft SQL Server 2012**，然后单击“配置工具”。
 
 1. 单击“SQL Server 安装中心”。
 
-或运行 C:\\SQLServer\_12.0\_full\\setup.exe 或 C:\\SQLServer\_11.0\_full\\setup.exe
+或运行 C:\SQLServer\_13.0\_full\setup.exe，C:\\SQLServer\_12.0\_full\\setup.exe 或 C:\\SQLServer\_11.0\_full\\setup.exe
 
 >[AZURE.NOTE]首次运行 SQL Server 安装程序时可能会下载更多安装文件并需要重新启动虚拟机和重新启动 SQL Server 安装程序。
 ><p>如果需要反复自定义从 Azure 虚拟机中选择的映像，请考虑创建您自己的 SQL Server 映像。Analysis Services SysPrep 功能在 SQL Server 2012 SP1 CU2 中已启用。有关详细信息，请参阅[使用 SysPrep 安装 SQL Server 的注意事项](https://msdn.microsoft.com/zh-cn/library/ee210754.aspx)。
@@ -320,13 +324,13 @@ SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式�
 
 - [安装表格模式下的 Analysis Services](https://msdn.microsoft.com/zh-cn/library/hh231722.aspx)
 
-- [表格建模（Adventure Works 教程）](https://technet.microsoft.com/zh-cn/library/140d0b43-9455-4907-9827-16564a904268)
+- [表格建模（Adventure Works 教程）](https://msdn.microsoft.com/zh-cn/library/140d0b43-9455-4907-9827-16564a904268)
 
 **若要安装 Analysis Services 表格模式：**
 
 1. 在 SQL Server 安装向导中，单击左窗格中的“安装”，然后单击“新的 SQL Server 独立安装或向现有安装添加功能”。
 
-	- 如果您看到“浏览文件夹”，浏览到 c:\\SQLServer\_12.0\_full 或 c:\\SQLServer\_11.0\_full，然后单击“确定”。
+	- 如果您看到“浏览文件夹”，浏览到 c:\SQLServer\_13.0\_full，c:\\SQLServer\_12.0\_full 或 c:\\SQLServer\_11.0\_full，然后单击“确定”。
 
 1. 单击产品更新页面上的“下一步”。
 

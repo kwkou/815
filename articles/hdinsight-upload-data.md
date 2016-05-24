@@ -58,6 +58,8 @@ Microsoft 提供了以下实用程序让你使用 Azure Blob 存储：
 
 Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下步骤将数据上载到 Azure Blob 存储：
 
+[AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-cli.md)]
+
 1. [安装和配置适用于 Mac、Linux 和 Windows 的 Azure CLI](/documentation/articles/xplat-cli-install)。
 
 2. 打开命令提示符、bash 或其他 shell，然后使用以下方法对 Azure 订阅进行身份验证。
@@ -99,6 +101,8 @@ Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下
 ###<a id="powershell"></a>Azure PowerShell
 
 Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。有关配置工作站以运行 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+
+[AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-powershell.md)]
 
 **将本地文件上载到 Azure Blob 存储**
 

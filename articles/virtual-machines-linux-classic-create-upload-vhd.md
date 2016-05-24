@@ -28,13 +28,15 @@
 
 - **安装在 .vhd 文件中的 Linux 操作系统** - 你已将受支持的 Linux 操作系统安装到虚拟硬盘。存在多种工具可创建 .vhd 文件，例如，可以使用虚拟化解决方案（例如 Hyper-V）创建 .vhd 文件并安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。
 
-	**重要说明**：Azure 不支持更新的 VHDX 格式。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。
+	> [AZURE.NOTE] Azure 不支持更新的 VHDX 格式。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。
 
 	有关认可分发的列表，请参阅 [Azure 认可的分发中的 Linux](/documentation/articles/virtual-machines-linux-endorsed-distros)。有关 Linux 分发的常规列表，请参阅[有关非认可分发的信息](/documentation/articles/virtual-machines-linux-create-upload-generic)。
 
 - **Azure 命令行界面** - 安装和使用 [Azure 命令行界面](/documentation/articles/virtual-machines-command-line-tools)来上载 VHD。
 
 - **Azure Powershell 工具** - 还可以使用 `Add-AzureVhd` cmdlet 来上载 VHD。若要下载 Azure Powershell cmdlet，请参阅 [Azure 下载](/downloads/)。有关引用信息，请参阅 [Add-AzureVhd](https://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx)（可能为英文页面）。
+
+> [AZURE.TIP] Azure 不支持上传动态 VHD，所以你需要在上传之前把它转化成静态 VHD。你可以使用类似于 [Azure VHD Utilities for GO](https://github.com/Microsoft/azure-vhd-utils-for-go) 的工具来转化动态硬盘。
 
 <a id="prepimage"> </a>
 ## 步骤 1：准备要上载的映像
@@ -49,7 +51,7 @@ Azure 支持各种 Linux 分发（请参阅[认可的分发](/documentation/arti
 - **[Ubuntu](/documentation/articles/virtual-machines-linux-create-upload-ubuntu)**
 - **[其他 - 非认可分发](/documentation/articles/virtual-machines-linux-create-upload-generic)**
 
-另请参阅 **[Linux 安装说明](/documentation/articles/virtual-machines-linux-create-upload-generic#linuxinstall)**，以获取更多有关如何为 Azure 准备 Linux 映像的提示。
+另请参阅 **[Linux 安装说明](/documentation/articles/virtual-machines-linux-create-upload-generic#general-linux-installation-notes)**，以获取更多有关如何为 Azure 准备 Linux 映像的提示。
 
 按照上述指导中的步骤进行操作以后，你应该有了一个可以上载到 Azure 中的 VHD 文件。
 

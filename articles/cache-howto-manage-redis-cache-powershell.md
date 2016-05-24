@@ -32,7 +32,7 @@
 
 首先，必须使用以下命令登录到 Azure。
 
-	$china = Get-AzureRmEnvironment -Name AzureChinaCloud; Login-AzureRmAccount -Environment $china
+	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 

@@ -18,7 +18,6 @@
 > [AZURE.SELECTOR]
 - [Azure 管理门户](/documentation/articles/virtual-machines-windows-classic-tutorial)
 - [PowerShell - Windows](/documentation/articles/virtual-machines-windows-classic-create-powershell)
-- [PowerShell - Linux](/documentation/articles/virtual-machines-linux-classic-createpowershell)
 
 <!-- HHTML comment in to break between the selector and the note in the include below-->
 
