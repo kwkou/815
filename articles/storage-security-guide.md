@@ -16,7 +16,7 @@
 
 ##概述
 
-Azure 存储空间提供配套的安全性功能，这些功能相辅相成，可让开发人员共同构建安全的应用程序。存储帐户本身可以通过基于角色的访问控制和 Azure Active Directory 来保护。在应用程序和 Azure 之间传输数据时，可以使用[客户端加密](/documentation/articles/storage-client-side-encryption)、HTTPs 或 SMB 3.0 来保护数据。使用[存储服务加密](/documentation/articles/storage-service-encryption)写入 Azure 存储空间时，可将数据设置为自动加密。可以使用 [Azure 磁盘加密](/documentation/articles/azure-security-disk-encryption)将虚拟机所用的 OS 和数据磁盘设置为已加密。可以使用[共享访问签名](/documentation/articles/storage-dotnet-shared-access-signature-part-1)来授予对 Azure 存储空间中数据对象的委派访问权限。
+Azure 存储空间提供配套的安全性功能，这些功能相辅相成，可让开发人员共同构建安全的应用程序。存储帐户本身可以通过基于角色的访问控制和 Azure Active Directory 来保护。在应用程序和 Azure 之间传输数据时，可以使用[客户端加密](/documentation/articles/storage-client-side-encryption)、HTTPs 或 SMB 3.0 来保护数据。可以使用[共享访问签名](/documentation/articles/storage-dotnet-shared-access-signature-part-1)来授予对 Azure 存储空间中数据对象的委派访问权限。
 
 本文将概述其中每项可配合 Azure 存储空间使用的安全功能。提供的文章链接提供每项功能的详细信息，让你轻松地进一步探讨每个主题。
 
