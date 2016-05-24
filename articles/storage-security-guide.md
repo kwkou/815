@@ -34,9 +34,9 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
     此部分讨论如何在将数据传输到 Azure 存储空间或从中传出时提供保护。我们将讨论 HTTPS 的建议用法，以及 SMB 3.0 针对 Azure 文件共享使用的加密。同时还将探讨客户端加密，它可让你在将数据传输到客户端应用程序中的存储之前加密数据，以及从存储传出后解密数据。
 
--   静态加密
+<!---   静态加密
 
-    我们将讨论存储服务加密，以及如何为存储帐户启用此功能，使块 Blob 和页 Blob 可以在写入 Azure 存储空间时自动加密。此外，将探讨如何使用 Azure 磁盘加密，以及磁盘加密与存储服务加密 vegood lucrsus 客户端加密之间的基本差异和用例。我们将简要探讨美国政府针对计算机实施的FIPS 合规性。
+    我们将讨论存储服务加密，以及如何为存储帐户启用此功能，使块 Blob 和页 Blob 可以在写入 Azure 存储空间时自动加密。此外，将探讨如何使用 Azure 磁盘加密，以及磁盘加密与存储服务加密 vegood lucrsus 客户端加密之间的基本差异和用例。我们将简要探讨美国政府针对计算机实施的FIPS 合规性。-->
 
 -   使用存储分析审核 Azure 存储空间的访问
 
@@ -98,25 +98,25 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 ####资源
 
--   [Azure Active Directory Role-based Access Control（Azure Active Directory 基于角色的访问控制）](/documentation/articles/role-based-access-control-configure)
+<!---   [Azure Active Directory Role-based Access Control（Azure Active Directory 基于角色的访问控制）](/documentation/articles/role-based-access-control-configure)
 
     此文解释了 Azure Active Directory 基于角色的访问控制及其工作原理。
 
 -   [RBAC: Built in Roles（RBAC：内置角色）](/documentation/articles/role-based-access-built-in-roles)
 
-    此文详细说明了 RBAC 中所有可用的内置角色。
+    此文详细说明了 RBAC 中所有可用的内置角色。-->
 
 -   [了解资源管理器部署和经典部署](/documentation/articles/resource-manager-deployment-model)
 
     此文介绍了 Resource Manager 部署和经典部署模型，并说明使用 Resource Manager 和资源组的优点
 
--   [Azure Resource Manager 中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-windows-compare-deployment-models)
+<!---   [Azure Resource Manager 中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-windows-compare-deployment-models)
 
     本文介绍了 Azure 计算、网络和存储提供程序在 ARM 模式下的工作方式。
 
 -   [Managing Role-Based Access Control with the REST API（使用 REST API 管理基于角色的访问控制）](/documentation/articles/role-based-access-control-manage-access-rest)
 
-	此文说明如何使用 REST API 来管理 RBAC。
+	此文说明如何使用 REST API 来管理 RBAC。-->
 
 -   [Azure Storage Resource Provider REST API Reference（Azure 存储空间资源提供程序 REST API 参考）](https://msdn.microsoft.com/zh-cn/library/azure/mt163683.aspx)
 
@@ -354,7 +354,7 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 客户端加密也是一种可用于加密静态数据的方法，因为数据是以加密形式存储的。我们将在[静态加密](#encryption-at-rest)部分中详细介绍此功能。
 
-##静态加密
+<!--##静态加密
 
 有三项 Azure 功能可提供静态加密。Azure 磁盘加密可用于加密 IaaS 虚拟机中的 OS 和数据磁盘。其他两种（客户端加密和存储服务加密）都是用于加密 Azure 存储空间中的数据。让我们了解其中每项功能，然后进行比较，以确定在哪种情况下使用哪项功能。
 
@@ -374,7 +374,7 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
 如果你要利用在上述日期之前创建的存储帐户或经典存储帐户来尝试使用此功能，可以创建新的存储帐户，并使用 AzCopy 将数据复制到新帐户。预览期过后应该就不需要此操作。
 
-与大多数预览版一样，此功能在正式推出之前不应该用于生产环境。
+与大多数预览版一样，此功能在正式推出之前不应该用于生产环境。-->
 
 ###客户端加密
 
@@ -394,9 +394,9 @@ Azure 存储空间提供配套的安全性功能，这些功能相辅相成，�
 
     此文说明如何配合 Azure 密钥保管库使用客户端加密，包括如何使用 PowerShell 来创建 KEK 并将它存储在保管库中。
 
--   [Azure 存储空间的客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption)
+<!---   [Azure 存储空间的客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption)
 
-    此文介绍客户端加密，并提供使用存储客户端库从四个存储服务加密和解密资源的示例。此外介绍了 Azure 密钥保管库。
+    此文介绍客户端加密，并提供使用存储客户端库从四个存储服务加密和解密资源的示例。此外介绍了 Azure 密钥保管库。-->
 
 ###使用 Azure 磁盘加密来加密虚拟机所用的磁盘
 
@@ -424,7 +424,7 @@ Azure 磁盘加密解决方案支持以下三种客户加密方案：
 
 -   [Azure Disk Encryption for Windows and Linux IaaS Virtual Machines（适用于 Windows 和 Linux IaaS 虚拟机的 Azure 磁盘加密）](https://gallery.technet.microsoft.com/Azure-Disk-Encryption-for-a0018eb0)
 
-    此文介绍 Azure 磁盘加密预览版，并提供下载白皮书的链接。
+<!--    此文介绍 Azure 磁盘加密预览版，并提供下载白皮书的链接。
 
 ###Azure 磁盘加密、存储服务加密和客户端加密的比较
 
@@ -458,7 +458,7 @@ Azure 磁盘加密解决方案支持以下三种客户加密方案：
 
 如果使用 VHD 文件的存档或库作为创建新虚拟机的基础，可以创建新的存储帐户、启用存储服务加密，然后将 VHD 文件上载到该帐户。这些 VHD 文件将由 Azure 存储空间加密。
 
-如果已针对 VM 中的磁盘启用 Azure 磁盘加密，并对保存 VHD 文件的存储帐户启用存储服务加密，则它将正常运行；它会导致任何新写入的数据加密两次。
+如果已针对 VM 中的磁盘启用 Azure 磁盘加密，并对保存 VHD 文件的存储帐户启用存储服务加密，则它将正常运行；它会导致任何新写入的数据加密两次。-->
 
 ##存储分析
 
