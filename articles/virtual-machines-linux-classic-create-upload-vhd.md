@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="01/22/2016"
+	ms.date="04/12/2016"
 	wacn.date="05/24/2016"/>
 
 # 创建并上载包含 Linux 操作系统的虚拟硬盘

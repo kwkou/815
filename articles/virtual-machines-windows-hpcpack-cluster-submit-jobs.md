@@ -9,8 +9,8 @@
  tags="azure-resource-manager,azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="01/14/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="04/14/2016"
+	wacn.date="05/24/2016"/>
 
 # 将 HPC 作业从本地计算机提交到部署在 Azure 中的 HPC Pack 群集
 

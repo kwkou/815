@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/04/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="04/05/2016"
+	wacn.date="05/24/2016"/>
 
 # 使用 Azure PowerShell 管理 HDInsight 中的 Hadoop 群集
 

@@ -11,8 +11,8 @@
 
 <tags
    ms.service="virtual-machines-linux"
-   ms.date="12/08/2015"
-   wacn.date="02/17/2016"/>
+   ms.date="03/14/2016"
+   wacn.date="05/24/2016"/>
 
 # 使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Linux 虚拟机映像
 

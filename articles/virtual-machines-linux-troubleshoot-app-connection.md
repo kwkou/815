@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="11/17/2015"
+	ms.date="04/12/2016"
 	wacn.date="05/24/2016"/>
 
 # 对在 Azure 虚拟机上运行的应用程序的访问进行故障排除

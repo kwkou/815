@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="virtual-machines-linux" 
-	ms.date="12/17/2015" 
-	wacn.date="01/29/2016"/>
+	ms.date="03/25/2016" 
+	wacn.date="05/24/2016"/>
 
 
 # 在 Azure 中使用 Linux 虚拟机的根权限

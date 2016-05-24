@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="11/16/2015"
-	wacn.date="03/21/2016"/>
+	ms.date="04/15/2016"
+	wacn.date="05/24/2016"/>
 
 	
 # 使用经典部署模型创建的 Azure 虚拟机的常见问题

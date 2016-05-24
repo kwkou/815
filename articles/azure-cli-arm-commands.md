@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="11/18/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="03/07/2016"
+	wacn.date="05/24/2016"/>
 
 # 将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理器配合使用
 

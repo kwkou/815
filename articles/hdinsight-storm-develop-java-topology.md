@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/29/2016"
-	wacn.date="03/17/2016"/>
+	ms.date="04/11/2016"
+	wacn.date="05/24/2016"/>
 
 #使用 Apache Storm 和 HDInsight 上的 Maven 为基本的单词计数应用程序开发基于 Java 的拓扑
 

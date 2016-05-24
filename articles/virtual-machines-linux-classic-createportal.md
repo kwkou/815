@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="01/15/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="03/15/2016"
+	wacn.date="05/24/2016"/>
 
 	
 # 创建运行 Linux 的自定义虚拟机

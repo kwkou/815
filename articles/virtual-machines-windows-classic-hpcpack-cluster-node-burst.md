@@ -9,8 +9,8 @@
  tags="azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="01/08/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="04/13/2016"
+	wacn.date="05/24/2016"/>
 
 # 将按需“突发”节点（辅助角色实例）作为计算资源添加到 Azure 中的 HPC Pack 群集
 

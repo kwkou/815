@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="10/23/2015"
-	wacn.date="05/16/2016"/>
+	ms.date="04/08/2016"
+	wacn.date="05/24/2016"/>
 
 # 为 Azure VM 上的 SQL Serve 配置 Azure 密钥保管库集成
 

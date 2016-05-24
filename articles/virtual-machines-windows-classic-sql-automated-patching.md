@@ -9,8 +9,8 @@
 	tags="azure-resource-manager" />
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="02/03/2016"
-	wacn.date="03/28/2016" />
+	ms.date="04/08/2016"
+	wacn.date="05/24/2016" />
 
 # Azure 虚拟机中 SQL Server 的自动修补（经典）
 
