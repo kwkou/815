@@ -16,8 +16,6 @@
 
 # 将堆转储收集在 Blob 存储中，以便调试和分析 Hadoop 服务
 
-[AZURE.INCLUDE [heapdump-selector](../includes/hdinsight-selector-heap-dump.md)]
-
 堆转储包含应用程序的内存快照，其中包括创建转储时各变量的值。因此，它们在诊断发生在运行时的问题时很有用。可以自动收集 Hadoop 服务的堆转储，并将其放置在用户 Azure Blob 存储帐户中的 HDInsightHeapDumps/ 下。
 
 必须为各个群集上的各个服务启用堆转储收集。默认情况下，为群集关闭了此功能。这些堆转储可能很大，因此，在启用收集后，建议你监视保存这些转储的 Blob 存储帐户。

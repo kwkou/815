@@ -15,8 +15,6 @@
 
 [AZURE.INCLUDE [tabs](../includes/app-service-web-get-started-nav-tabs.md)]
 
-- [Node.js](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
-
 本教程演示如何通过 [Azure 管理门户](https://manage.windowsazure.cn)在 [Azure Web 应用](/documentation/services/web-sites/)中创建 Java Web 应用。
 
 > [AZURE.NOTE]若要完成本教程，您需要一个 Azure 帐户。如果你没有帐户，可以[注册试用版][]。
