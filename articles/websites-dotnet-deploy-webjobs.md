@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="01/08/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 使用 Visual Studio 部署 Web 作业
 
@@ -40,11 +40,9 @@
 
 ## 先决条件
 
-安装 Azure SDK 2.4 或更高版本后，便可以在 Visual Studio 2013 中使用 Web 作业部署功能：
+安装 Azure .NET SDK 后，便可以在 Visual Studio 2015 中使用 Web 作业部署功能：
 
-* [Azure SDK for Visual Studio 2013](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)。
-
-[Visual Studio 2013 Update 3](https://www.microsoft.com/zh-CN/downloads/details.aspx?FamilyID=769b58b3-9e2e-4b57-9070-2159fac2b5fb) 和更高版本的更新也包含了 Web 作业部署功能。
+* [Azure SDK for .NET (Visual Studio 2015)](http://go.microsoft.com/fwlink/?linkid=518003).
 
 ## <a id="convert"></a>为现有的控制台应用程序项目启用 Web 作业部署
 
@@ -130,10 +128,9 @@
 * 计划程序作业命名为 *{webappname}-{webjobname}*。例如：MyWebApp-MyWebJob。 
  
 >[AZURE.NOTE]
->
 >* 如果你配置了“定期作业”，并将周期频率设置为某个分钟数，则 Azure 计划程序服务不是免费的。其他频率（小时、天等）是免费的。
->* 如果你部署了某个 Web 作业，但后来想要更改该 Web 作业的类型并重新部署，则需要删除 webjobs-publish-settings.json 文件。这样，Visual Studio 就会再次显示发布选项，使你可以更改 Web 作业的类型。
->* 如果你部署了某个 Web 作业，并随后将运行模式从连续更改为非连续（或相反），则在你重新部署时，Visual Studio 将在 Azure 中创建新的 Web 作业。如果更改了其他计划设置但保持运行模式不变，或在计划模式与按需模式之间切换，则 Visual Studio 会更新现有的作业，而不是创建新的作业。
+><p>* 如果你部署了某个 Web 作业，但后来想要更改该 Web 作业的类型并重新部署，则需要删除 webjobs-publish-settings.json 文件。这样，Visual Studio 就会再次显示发布选项，使你可以更改 Web 作业的类型。
+><p>* 如果你部署了某个 Web 作业，并随后将运行模式从连续更改为非连续（或相反），则在你重新部署时，Visual Studio 将在 Azure 中创建新的 Web 作业。如果更改了其他计划设置但保持运行模式不变，或在计划模式与按需模式之间切换，则 Visual Studio 会更新现有的作业，而不是创建新的作业。
 
 ## <a id="publishsettings"></a>webjob-publish-settings.json
 

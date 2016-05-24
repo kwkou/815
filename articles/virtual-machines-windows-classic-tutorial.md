@@ -11,14 +11,13 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="01/06/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 在 Azure 管理门户中创建运行 Windows 的虚拟机
 
 > [AZURE.SELECTOR]
 - [Azure 管理门户](/documentation/articles/virtual-machines-windows-classic-tutorial)
 - [PowerShell - Windows](/documentation/articles/virtual-machines-windows-classic-create-powershell)
-- [PowerShell - Linux](/documentation/articles/virtual-machines-linux-classic-createpowershell)
 
 <!-- HHTML comment in to break between the selector and the note in the include below-->
 

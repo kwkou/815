@@ -10,7 +10,7 @@
 <tags
 	ms.service="cache"
 	ms.date="02/05/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 使用 Azure PowerShell 管理 Azure Redis 缓存
 
@@ -32,7 +32,7 @@
 
 首先，必须使用以下命令登录到 Azure。
 
-	$china = Get-AzureRmEnvironment -Name AzureChinaCloud; Login-AzureRmAccount -Environment $china
+	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 

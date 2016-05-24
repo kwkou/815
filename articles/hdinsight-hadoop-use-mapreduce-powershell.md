@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="02/04/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="05/24/2016"/>
 
 #使用 PowerShell 对 HDInsight 上的 Hadoop 运行 Hive 查询
 
@@ -25,7 +25,9 @@
 
 - **Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Windows）** 
 
-- **配备 Azure PowerShell 的工作站**。请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
+- **配备 Azure PowerShell 的工作站**。
+
+    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 ##<a id="powershell"></a>使用 Azure PowerShell 运行 MapReduce 作业
 

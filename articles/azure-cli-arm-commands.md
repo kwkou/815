@@ -11,7 +11,9 @@
 <tags
 	ms.service="multiple"
 	ms.date="03/07/2016"
-	wacn.date="05/05/2016"/>
+	wacn.date="05/24/2016"/>
+
+# 将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理器配合使用
 
 # Azure Resource Manager (arm) 模式下的 Azure CLI 命令
 

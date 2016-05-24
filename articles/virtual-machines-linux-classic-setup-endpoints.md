@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="01/06/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 如何在经典 Azure 虚拟机上设置终结点
 
@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
-在 Azure 管理门户中创建 Linux 虚拟机时，通常会为你自动创建常用终结点（如用于安全外壳 (SSH) 的终结点），具体取决于你选择的操作系统。你可以在创建虚拟机时或之后根据需要配置其他终结点。
+在 Azure 管理门户中创建 Linux 虚拟机时，通常会为你自动创建用于安全外壳 (SSH) 的终结点，具体取决于你选择的操作系统。你可以在创建虚拟机时或之后根据需要配置其他终结点。
 
 [AZURE.INCLUDE [virtual-machines-common-classic-setup-endpoints](../includes/virtual-machines-common-classic-setup-endpoints.md)]
 

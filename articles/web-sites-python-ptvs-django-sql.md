@@ -11,7 +11,7 @@
 <tags 
 	ms.service="app-service-web"
 	ms.date="02/25/2016"
-	wacn.date="04/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 
 
@@ -159,18 +159,9 @@
 
   	<!-- ![Publish Web Dialog](./media/web-sites-python-ptvs-django-sql/PollsCommonPublishWebSiteDialog.png) -->
 
-1.  单击“Azure Web 应用”。
+1.  单击“导入”，选择已下载的“发布配置文件”。
 
-1.  单击“新建”，新建一个 Web 应用。
-
-1.  填写以下字段，然后单击“创建”。
-	-	** Web 应用名称**
-	-	**Azure Web 应用计划**
-	-	**资源组**
-	-	**区域**
-	-	保持“数据库服务器”的“无数据库”设置不变
-
-  	<!-- ![Create Site on Azure Dialog](./media/web-sites-python-ptvs-django-sql/PollsCommonCreateWebSite.png) -->
+	如果还没有创建 Web 应用，可以登录 [Azure 管理门户](https://manage.windowsazure.cn/)创建一个，然后再“仪表板”的“速览”下，下载“发布配置文件”。
 
 1.  接受其他所有默认值，然后单击**发布**。
 

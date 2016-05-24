@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="12/15/2015"
-	wacn.date="01/29/2016"/>
+	wacn.date="05/24/2016"/>
 
 
 # 使用 Linux 诊断扩展监视 Linux VM 的性能和诊断数据
@@ -34,13 +34,9 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Azure 上运行的 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 
 ## 如何启用扩展
-通过 [Azure 门户](https://manage.windowsazure.cn)、Azure PowerShell 或 Azure CLI 脚本可以启用扩展。
-
-若要直接从 Azure 门户查看和配置系统和性能数据，请执行以下[步骤](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/ "Windows 博客 URL")。
-
+通过 Azure PowerShell 或 Azure CLI 脚本可以启用扩展。
 
 本文重点介绍如何通过 Azure CLI 命令启用和配置扩展。这让你能够直接从存储表读取和查看数据。
-
 
 ## 先决条件
 1. Azure Linux Agent 2.0.6 版或更高版本。请注意，大部分 Azure VM Linux 库映像都包含 2.0.6 版本或更高版本。你可以运行 **WAAgent -version** 以确认 VM 中安装的版本。如果 VM 正在运行的版本早于 2.0.6，则可以按照以下[说明](https://github.com/Azure/WALinuxAgent "说明")进行更新。
@@ -69,15 +65,13 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Azure 上运行的 
 ###   方案 2.自定义性能监视器指标  
 此节介绍如何自定义性能和诊断数据表。
 
-步骤 1。使用下一个示例中显示的内容创建名为 PrivateConfig.json 的文件。指定你想要收集的特定数据。
+步骤 1。使用方案 1 描述的内容创建名为 PrivateConfig.json 的文件。同时创建一个名为 PublicConfig.json 的文件，此文件会在下一个示例中出现。指定你想要收集的特定数据。
 
 有关所有受支持的提供程序和变量，请参阅此[文档](https://scx.codeplex.com/wikipage?title=xplatproviders)。你可以拥有多个查询，通过将更多查询追加到脚本中，你还可以将它们存储为多个表。
 
 默认始终收集 Rsyslog 数据。
 
 	{
-     	"storageAccountName":"storage account to receive data",
-     	"storageAccountKey":"key of the account",
       	"perfCfg":[
            	{"query":"SELECT PercentAvailableMemory, AvailableMemory, UsedMemory ,PercentUsedSwap FROM SCX_MemoryStatisticalInformation","table":"LinuxMemory"
            	}
@@ -85,17 +79,15 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Azure 上运行的 
 	}
 
 
-步骤 2。运行 **azure vm extension set vm\_name LinuxDiagnostic Microsoft.OSTCExtensions 2.* --private-config-path PrivateConfig.json**。
+步骤 2。运行 **azure vm extension set vm\_name LinuxDiagnostic Microsoft.OSTCExtensions '2.*' --private-config-path PrivateConfig.json --public-config-path PublicConfig.json**。
 
 
 ###   方案 3.上载自己的日志文件
 此节介绍如何收集特定的日志文件并将其上载到存储帐户。你需要指定日志文件的路径和用于存储日志的表名。你可以将多个文件/表条目添加到脚本，以拥有多个日志文件。
 
-步骤 1。使用以下内容创建名为 PrivateConfig.json 的文件。
+步骤 1。使用方案 1 描述的内容创建名为 PrivateConfig.json 的文件。使用以下内容创建另一个名为 PublicConfig.json 的文件。
 
 	{
-     	"storageAccountName":"the storage account to receive data",
-     	"storageAccountKey":"key of the account",
       	"fileCfg":[
            	{"file":"/var/log/mysql.err",
              "table":"mysqlerr"
@@ -104,21 +96,19 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Azure 上运行的 
 	}
 
 
-步骤 2。运行 **azure vm extension set vm\_name LinuxDiagnostic Microsoft.OSTCExtensions 2.* --private-config-path PrivateConfig.json**。
+步骤 2。运行 **azure vm extension set vm\_name LinuxDiagnostic Microsoft.OSTCExtensions '2.*' --private-config-path PrivateConfig.json --public-config-path PublicConfig.json**。
 
 
 ###   方案 4.禁用 Linux 监视器扩展
-步骤 1。使用以下内容创建名为 PrivateConfig.json 的文件。
+步骤 1。使用方案 1 描述的内容创建名为 PrivateConfig.json 的文件。使用以下内容创建另一个名为 PublicConfig.json 的文件。
 
 	{
-     	"storageAccountName":"the storage account to receive data",
-     	"storageAccountKey":"the key of the account",
      	“perfCfg”:[],
      	“enableSyslog”:”False”
 	}
 
 
-步骤 2。运行 **azure vm extension set vm\_name LinuxDiagnostic Microsoft.OSTCExtensions 2.* --private-config-path PrivateConfig.json**。
+步骤 2。运行 **azure vm extension set vm\_name LinuxDiagnostic Microsoft.OSTCExtensions 2.* --private-config-path PrivateConfig.json --public-config-path PublicConfig.json**。
 
 
 ## 查看数据

@@ -10,12 +10,10 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="11/17/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="03/17/2016"
+	wacn.date="05/24/2016"/>
 
 # 对在 Azure 虚拟机上运行的应用程序的访问进行故障排除
-
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 [AZURE.INCLUDE [virtual-machines-common-troubleshoot-app-connection](../includes/virtual-machines-common-troubleshoot-app-connection.md)]
 

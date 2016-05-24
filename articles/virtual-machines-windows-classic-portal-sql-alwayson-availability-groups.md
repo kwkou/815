@@ -8,14 +8,14 @@
 	editor="" />
 <tags 
 	ms.service="virtual-machines-windows"
-	ms.date="12/04/2015"
-	wacn.date="03/03/2016" />
+	ms.date="04/05/2015"
+	wacn.date="05/24/2016" />
 
 # 在 Azure 中配置 AlwaysOn 可用性组 (GUI)
 
 > [AZURE.SELECTOR]
-- [门户 - 经典](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)
-- [PowerShell - 经典](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups)
+- [门户](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)
+- [PowerShell](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups)
 
 本端到端教程介绍如何使用 Azure 虚拟机上运行的 SQL Server AlwaysOn 实施可用性组。
 

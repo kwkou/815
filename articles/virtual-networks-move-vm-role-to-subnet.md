@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/11/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="03/22/2016"
+	wacn.date="05/24/2016"/>
 
 # 如何将 VM 或角色实例移到其他子网
 

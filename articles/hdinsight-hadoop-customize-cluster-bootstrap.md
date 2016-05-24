@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="03/08/2016"
-	wacn.date="04/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 使用 Bootstrap 自定义 HDInsight 群集
 
@@ -29,6 +29,9 @@
 Bootstrap 的使用方式有 2 种：
 
 - 使用 Azure PowerShell
+
+	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+
 - 使用 .NET SDK
 
 有关在创建时在 HDInsight 群集上安装其他组件的信息，请参阅：

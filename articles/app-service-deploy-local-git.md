@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="03/31/2016"
-	wacn.date="05/16/2016"/>
+	wacn.date="05/24/2016"/>
     
 # 从本地 Git 部署到 Azure
 
@@ -62,8 +62,6 @@ Azure 支持用各种编程语言创建的应用程序。
 
 2. 在 Web 应用的页面上，单击“仪表板”。在“速览”下，单击“从源代码管理设置部署”，选择“本地 Git 存储库”，然后单击“下一步”。
 
-3. 如果这是你第一次在 Azure 中设置存储库，则需要为其创建登录凭据。你将使用它们从本地 Git 存储库登录到 Azure 的存储库和推送更改。在应用的“仪表板”中的“速览”下，单击“重置部署凭据”，然后配置部署用户名和密码。完成后，单击“确定”。
-
 ## <a id="Step4"></a>步骤 4：部署项目
 
 使用以下步骤通过本地 Git 将应用发布到 Azure。
@@ -87,9 +85,7 @@ Azure 支持用各种编程语言创建的应用程序。
        
 5. 在 Azure 管理门户中，最近推送的日志条目应显示在 Web 应用的“部署”页中。
 
-6. 单击应用边栏选项卡顶部的“浏览”按钮来验证是否已部署内容。
-
-	或者在 Azure 管理门户中，单击“浏览”按钮按钮来验证是否已部署内容。
+6. 在 Azure 管理门户中，单击“浏览”按钮按钮来验证是否已部署内容。
     
 ## <a id="Step5"></a>故障排除
 
@@ -158,7 +154,7 @@ Azure 支持用各种编程语言创建的应用程序。
 * [如何使用 Azure 命令行界面](/documentation/articles/xplat-cli-install)
 
 [Azure Web 应用]: /documentation/services/web-sites/
-[Azure Developer Center]: http://azure.microsoft.com/develop/overview/
+[Azure Developer Center]: /develop/overview/
 [Azure 管理门户]: https://manage.windowsazure.cn
 [Azure 门户]: https://portal.azure.cn
 [Git website]: http://git-scm.com

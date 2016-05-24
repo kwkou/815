@@ -9,21 +9,23 @@
 
 ## 对于多实例配置
 可以通过将 VM 从可用性集删除，以选择计划内维护影响部署在可用性集设置中的 VM 的时间。
+
 1.	在计划内维护 7 天前，向多实例配置中的 VM 发送电子邮件。受影响多实例 VM 的订阅 ID 和名称将包含在电子邮件的正文中。
 2.	在这 7 天中，可以通过从可用性集删除该区域中的多实例 VM，以选择实例的更新时间。此设置中的更改导致重新启动，因为虚拟机正在从一部以维护为目标的实体主机，移到另一部不是以维护为目标的实体主机。 
 3.	可以在经典门户中从可用性集删除 VM。 
    
-        a.	In the Classic portal, click on the VM and then select "configure." 
+    1.	在管理门户，点击 VM，然后选择 “配置”。 
         
-        b.	Under "settings", you can see which Availability Set the VM is in.
+    2.	在“设置”下，你会看到 VM 是在哪个可用性集。
         
-    ![可用性集选择](./media/virtual-machines-planned-maintenance-schedule/availabilitysetselection.png)
+    	![可用性集选择](./media/virtual-machines-planned-maintenance-schedule/availabilitysetselection.png)
 
-        c.	In the availability set dropdown menu, select "remove from availability set."
+    3.	在可用性集的拉下菜单，选择"从可用性集删除"。
         
-    ![从集中删除](./media/virtual-machines-planned-maintenance-schedule/availabilitysetselectionconfiguration.png)
+    	![从集中删除](./media/virtual-machines-planned-maintenance-schedule/availabilitysetselectionconfiguration.png)
 
-        d.	At the bottom, select "save." Select "yes" to acknowledge that this action will restart the VM.
+    4.	At the bottom, select "save." Select "yes" to acknowledge that this action will restart the VM.
+
 4.	这些 VM 将移到单实例主机，并且不在可用性集设置的计划内维护期间更新。
 5.	可用性集 VM 更新完成（根据原始电子邮件中所述的计划）之后，应该将 VM 添加回到其可用性集，它们将重新配置为多实例 VM。将 VM 从单实例移回多实例将导致重新启动。通常，跨整个 Azure 环境的所有多实例更新完成之后，将轮到单实例维护。
 

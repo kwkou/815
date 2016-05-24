@@ -9,8 +9,8 @@
 	tags="azure-service-management" />
 <tags 
 	ms.service="virtual-machines-windows"
-	ms.date="12/11/2015"
-	wacn.date="01/14/2016" />
+	ms.date="04/14/2016"
+	wacn.date="05/24/2016" />
 
 # 在 Azure 中托管的 Web 应用中使用 ReportViewer
 

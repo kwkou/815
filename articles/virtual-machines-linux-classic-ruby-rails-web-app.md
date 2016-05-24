@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="03/04/2016"
-	wacn.date="04/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 
 
@@ -66,9 +66,9 @@
 
 3. 使用以下命令安装 Rails：
 
-		sudo gem install rails --no-rdoc --no-ri
+		sudo gem install rails --no-rdoc --no-ri -V
 
-	使用 --no-rdoc 和 --no-ri 标志可跳过安装文档，这样可加快速度。
+	使用 --no-rdoc 和 --no-ri 标志可跳过安装文档，这样可加快速度。次命令很可能运行很长一段时间，所以添加 -V 将会显示关于安装进程的信息。
 
 ## 创建并运行应用
 
@@ -149,7 +149,7 @@
 
 [management-portal]: https://manage.windowsazure.cn/
 
-[tables]: /develop/ruby/
+[tables]: /documentation/articles/storage-ruby-how-to-use-table-storage
 
 [vm-instructions]: /documentation/articles/virtual-machines-linux-classic-createportal
 

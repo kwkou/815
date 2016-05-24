@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="01/05/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 
 # 将 SQL Server 数据库迁移到 Azure VM 中的 SQL Server
@@ -69,7 +69,7 @@
 
 如果要迁移到现有的 Azure VM，则需执行下列配置步骤：
 
-- 按照[预配 Azure 上的 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create#SSMS)的“在另一台计算机上从 SSMS 连接到 SQL Server VM 实例”一节中的步骤操作，将 Azure VM 和 SQL Server 实例配置为支持来自另一台计算机的连接。只有使用向导进行迁移时，才支持库中的 SQL Server 2014 和 SQL Server 2016 映像。
+- 按照[预配 Azure 上的 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-sql-connect)的“在另一台计算机上从 SSMS 连接到 SQL Server VM 实例”一节中的步骤操作，将 Azure VM 和 SQL Server 实例配置为支持来自另一台计算机的连接。只有使用向导进行迁移时，才支持库中的 SQL Server 2014 和 SQL Server 2016 映像。
 - 使用专用端口 11435 为 Azure 网关上的 SQL Server 云适配器服务配置一个打开的终结点。此端口在 Azure VM 上预配 SQL Server 2014 或 SQL Server 2016 时创建。云适配器还创建一项 Windows 防火墙规则，以允许其传入 TCP 连接在默认端口 11435 上通过。此终结点允许向导利用云适配器服务将本地实例中的备份文件复制到 Azure VM。有关详细信息，请参阅[用于 SQL Server 的云适配器](https://msdn.microsoft.com/zh-cn/library/dn169301.aspx)。
 
 	![创建云适配器终结点](./media/virtual-machines-windows-migrate-sql/cloud-adapter-endpoint.png)
@@ -128,7 +128,7 @@
 	![结果](./media/virtual-machines-windows-migrate-sql/results.png)
 
 13. 完成向导操作后，连接到你的虚拟机并确保数据库已迁移。
-14. 如果创建了新虚拟机，请按照[预配 Azure 上的 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create#SSMS)的“在另一台计算机上从 SSMS 连接到 SQL Server 虚拟机实例”一节中的步骤操作，以配置 Azure 虚拟机和 SQL Server 实例。
+14. 如果创建了新虚拟机，请按照[预配 Azure 上的 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-sql-connect)的“在另一台计算机上从 SSMS 连接到 SQL Server 虚拟机实例”一节中的步骤操作，以配置 Azure 虚拟机和 SQL Server 实例。
 
 ##<a name="backup-to-file-and-copy-to-vm-and-restore"></a> 备份到文件、复制到 VM 并还原
 
@@ -136,7 +136,7 @@
 
 1.	执行到本地位置的完整数据库备份。
 2.	创建或上载具有所需 SQL Server 版本的虚拟机。
-3.	按照[预配 Azure 上的 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-ps-sql-create#SSMS)中的步骤预配虚拟机。
+3.	按照[预配 Azure 上的 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-classic-sql-connect)中的步骤预配虚拟机。
 4.	使用远程桌面、Windows 资源管理器或命令提示符处的复制命令将备份文件复制到 VM。
 
 ##<a name="backup-to-url-and-restore"></a> 备份到 URL 并还原
@@ -159,7 +159,7 @@
 2.	使用 [Add-AzureVHD cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx) 将 VHD 文件上载到 Azure 存储空间。
 3.	使用上载的 VHD 部署新的虚拟机。
 
-> [AZURE.NOTE] 若要迁移整个应用程序，请考虑使用 [Azure Site Recovery](/home/features/site-recovery/)。
+> [AZURE.NOTE] 若要迁移整个应用程序，请考虑使用 [Azure Site Recovery](/documentation/articles/site-recovery-overview)。
 
 ## 后续步骤
 

@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="02/16/2016"
-	wacn.date="04/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 在 Azure 中配置自定义域名
 
@@ -23,7 +23,7 @@
 
 对于生产型 Web 应用，你可能希望用户看到自定义域名。本文介绍如何使用 [Azure Web 应用](/documentation/services/web-sites/)配置自定义域。
 
-如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure](/support/forums/) 上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。
+如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和 CSDN Azure](/support/forums/) 上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。
 
 [AZURE.INCLUDE [introfooter](../includes/custom-dns-web-site-intro-notes.md)]
 

@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="03/04/2016"
-	wacn.date="04/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 在 HDInsight 中配置 HBase 地域复制
 
@@ -42,7 +42,11 @@
 
 - **一个 Azure 订阅**。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅 [购买选项][azure-purchase-options]、[会员优惠][azure-member-offers] 或 [免费试用][azure-trial]。
 
-- **已安装并已配置 Azure PowerShell 的工作站**。有关说明，请参阅 [安装和配置 Azure PowerShell][powershell-install]。若要执行 PowerShell 脚本，必须以管理员身份运行 Azure PowerShell 并将执行策略设为 *RemoteSigned*。请参阅 [使用 Set-ExecutionPolicy cmdlet][2]。
+- **已安装并已配置 Azure PowerShell 的工作站**。
+
+	若要执行 PowerShell 脚本，必须以管理员身份运行 Azure PowerShell 并将执行策略设为 *RemoteSigned*。请参阅 [使用 Set-ExecutionPolicy cmdlet][2]。
+
+	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 - **已配置 VPN 连接和 DNS 的两个 Azure 虚拟网络**。有关说明，请参阅[在两个 Azure 虚拟网络之间配置 VPN 连接][hdinsight-hbase-replication-vnet]和[在两个 Azure 虚拟网络之间配置 DNS][hdinsight-hbase-replication-dns]。
 

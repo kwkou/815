@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何使用 Azure Redis Cache" 
+	pageTitle="如何使用 Azure Redis Cache | Azure" 
 	description="了解如何使用 Azure Redis 缓存提高 Azure 应用程序的性能" 
 	services="redis-cache,app-service" 
 	documentationCenter="" 
@@ -10,7 +10,7 @@
 <tags
 	ms.service="cache"
 	ms.date="01/21/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 如何使用 Azure Redis Cache
 
@@ -20,7 +20,8 @@
 - [Java](/documentation/articles/cache-java-get-started)
 - [Python](/documentation/articles/cache-python-get-started)
 
-本指南说明如何开始使用 **Azure Redis 缓存**。Azure Redis 缓存基于流行的开放源代码 Redis 缓存。它让您访问 Azure.cn 管理的安全专用的 Redis 缓存。使用 Azure Redis 缓存创建的缓存可从 Azure 内的任何应用程序进行访问。
+本指南说明如何开始使用 **Azure Redis 缓存**。Azure Redis 缓存基于流行的开放源代码 Redis 缓存。它让您访问 Azure.cn 管理的安全专用的 Redis 缓存。使用 Azure Redis 缓存创建的缓存可从 Azure 内的任何应用程序进行访问。 For a step-by-step tutorial of building an ASP.NET MVC web app with Redis Cache, see [How to create a Web App with Redis Cache](/documentation/articles/cache-web-app-howto). 需要使用 Redis 缓存的 ASP.NET MVC Web 应用的逐步教程，请查看[如何创建使用 Redis 缓存的 Web 应用](/documentation/articles/cache-web-app-howto)。
+
 
 Azure Redis 缓存提供以下层：
 
@@ -68,7 +69,7 @@ Azure Redis Cache 非常容易上手。若要开始使用，需要首先设置�
 
 ![管理 NuGet 包][NuGetMenu]
 
-在“联机搜索”文本框中键入 **StackExchange.Redis** 或 **StackExchange.Redis.StrongName**，从结果选择它，然后单击“安装”。
+在搜索文本框中键入 **StackExchange.Redis** 或 **StackExchange.Redis.StrongName**，从结果选择它，然后单击“安装”。
 
 >[AZURE.NOTE]如果你希望使用 **StackExchange.Redis** 客户端库强名称版本，请选择 **StackExchange.Redis.StrongName**；否则选择 **StackExchange.Redis**。
 

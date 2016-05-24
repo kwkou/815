@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="03/04/2016"
-	wacn.date="04/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 在两个 Azure 虚拟网络之间配置 VPN 连接  
 
@@ -42,7 +42,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 
 - **一个 Azure 订阅**。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅 [购买选项][azure-purchase-options]、[成员优惠][azure-member-offers] 或[免费试用][azure-trial]。
 
-- **已安装并已配置 Azure PowerShell 的工作站**。有关说明，请参阅[安装和配置 Azure PowerShell][powershell-install]。
+- **已安装并已配置 Azure PowerShell 的工作站**。
 
 	在运行 PowerShell 脚本之前，请确保你已使用以下 cmdlet 连接到 Azure 订阅：
 
@@ -52,6 +52,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 
 		Select-AzureSubscription <AzureSubscriptionName>
 
+	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 >[AZURE.NOTE]Azure 服务名称和虚拟机名称必须是唯一的。本教程中使用的名称是 Contoso-[Azure Service/VM name]-[CN/CE]。例如，Contoso-VNet-CN 是位于中国北部数据中心的 Azure 的虚拟网络；Contoso-DNS-CE 是位于美国东部数据中心的 DNS 服务器 VM。你必须选择适合自己的名称。
  

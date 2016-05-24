@@ -11,13 +11,13 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/12/2016"
-	wacn.date="05/12/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 创建 Linux 虚拟机的不同方式
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
-
 Azure 提供不同的方法来创建 VM，以符合不同的用户和目的。本文汇总了这些方法的差异，以及在创建 Linux 虚拟机时可使用的选项。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 ## 工具选项
 
@@ -25,11 +25,11 @@ Azure 提供不同的方法来创建 VM，以符合不同的用户和目的。�
 
 Azure 管理门户的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 [Azure 管理门户](https://manage.windowsazure.cn)创建 VM。如需一般性说明，请参阅[创建自定义虚拟机][]，然后从“库”中选择任意 Linux 映像。
 
-### 命令 Shell：Azure CLI 或 Azure PowerShell
+### 命令 Shell：Azure CLI
 
-如果你喜欢使用命令行界面，请选择适用于 Mac、Linux 和 Windows 用户的 Azure 命令行界面 (CLI) 或 Azure PowerShell，后者提供适用于 Azure 的 Windows PowerShell cmdlet 和自定义控制台。
+如果你喜欢使用命令行界面，请选择适用于 Mac、Linux 和 Windows 用户的 Azure 命令行界面 (CLI)。
 
-对于经典部署模型，请参阅[使用 Azure CLI 创建自定义 Linux 虚拟机](/documentation/articles/virtual-machines-linux-classic-create-custom)和[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机][]。
+对于经典部署模型，请参阅[使用 Azure CLI 创建自定义 Linux 虚拟机](/documentation/articles/virtual-machines-linux-classic-create-custom)。
 
 
 ### 开发环境：Visual Studio
@@ -69,7 +69,6 @@ Visual Studio 也支持创建 Azure 虚拟机。对于经典部署模型，请�
 [Equivalent Resource Manager and Service Management Commands for VM Operations with the Azure CLI for Mac, Linux, and Windows]: /documentation/articles/virtual-machines-windows-cli-manage
 [Deploy and Manage Virtual Machines using Azure Resource Manager Templates and the Azure CLI]: /documentation/articles/virtual-machines-linux-cli-deploy-templates
 [Deploy and Manage Virtual Machines using Azure Resource Manager Templates and PowerShell]: /documentation/articles/virtual-machines-windows-ps-manage
-[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-classic-createpowershell
 
 [How to Create a Custom Virtual Machine Running Linux in Azure]: /documentation/articles/virtual-machines-linux-classic-create-custom
 [如何使用 CLI 捕获将用作模板的 Linux 虚拟机]: /documentation/articles/virtual-machines-linux-classic-capture-image

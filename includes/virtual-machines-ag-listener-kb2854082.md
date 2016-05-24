@@ -1,4 +1,4 @@
-接下来，如果群集中的任何服务器运行的是 Windows Server 2008 R2 或 Windows Server 20012，你必须验证群集中的每个本地服务器或 Azure VM 上是否安装了修补程序 [KB2854082](https://support.microsoft.com/zh-cn/kb/2854082)。位于群集中但不在可用性组中的任何服务器或 VM 也应安装此修补程序。
+接下来，如果群集中的任何服务器运行的是 Windows Server 2008 R2 或 Windows Server 2012，你必须验证群集中的每个本地服务器或 Azure VM 上是否安装了修补程序 [KB2854082](https://support.microsoft.com/zh-cn/kb/2854082)。位于群集中但不在可用性组中的任何服务器或 VM 也应安装此修补程序。
 
 在每个群集节点的远程桌面会话中，将 [KB2854082](https://support.microsoft.com/zh-cn/kb/2854082) 下载到本地目录。然后，按顺序在每个群集节点上安装该修补程序。如果群集节点上当前运行了群集服务，修补程序安装结束后会重新启动服务器。
 

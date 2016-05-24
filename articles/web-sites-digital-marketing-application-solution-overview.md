@@ -10,10 +10,14 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="02/26/2016" 
-	wacn.date="04/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 在 Azure Web 应用上创建数字市场营销活动
 [Azure Web 应用](/documentation/services/web-sites/) Web 应用是数字市场营销活动的极佳选择。数字市场营销活动的持续时间通常较短，旨在促成短期市场营销目标。有两个要考虑的主要方案。在第一个方案中，第三方市场营销公司为其客户为促销期间创建并管理市场营销活动。第二个方案涉及市场营销公司创建数字市场营销活动资源，然后将资源的所有权转移给其客户。客户然后自己运行和管理数字市场营销活动。Azure Web 应用非常适合于这两种方案。
+
+以下是一个使用 Azure Web 应用的，全球，多频道数字市场营销活动。它展示了你简单地把 Azure Web 应用和其他服务组合起来，使用最小技术投入既能达到的效果。**点击图片中的图标即可了解更多。**
+
+<object type="image/svg+xml" data="./media/web-sites-digital-marketing-application-solution-overview/digital-marketing-notitle.svg" width="100%" height="100%"></object>
 
 > [AZURE.NOTE]
 > 本指南介绍了一些与在 Azure 中运行数字市场营销活动一致的最常见领域和任务。但是，还有其他你可以在 Azure 中实现的常见解决方案。若要查看这些解决方案，请参阅[全球网络影响力](/documentation/articles/web-sites-global-web-presence-solution-overview)和[业务应用程序](/documentation/articles/web-sites-business-application-solution-overview)中的其他指南。

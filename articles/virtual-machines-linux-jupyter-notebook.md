@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="11/10/2015"
-	wacn.date="12/31/2015"/>
+	wacn.date="05/24/2016"/>
 
 
 # Azure 上的 Jupyter Notebook
@@ -94,7 +94,7 @@
 	rm -rf anaconda/
 
 	# Update Jupyter to the latest install and generate its config file
-	sudo /anaconda3/bin/conda install -f jupyter -y
+	sudo /anaconda3/bin/conda install jupyter -y
 	/anaconda3/bin/jupyter-notebook --generate-config
 
 
@@ -126,7 +126,7 @@
     Verify password:
     sha1:b86e933199ad:a02e9592e59723da722.. (elided the rest for security)
 
-接下来，我们将编辑配置文件的配置文件，它是你所在目录中的 `jupyter_notebook_config.py` 文件。请注意，此文件可能不存在 - 只需创建它（如果不存在）。此文件包含多个字段，默认情况下会全部注释掉。你可以使用你喜欢的任何文本编辑器打开此文件，并应确保它至少具有以下内容。请务必将密码替换为前一步中的 sha1。
+接下来，我们将编辑配置文件的配置文件，它是你所在目录中的 `jupyter_notebook_config.py` 文件。请注意，此文件可能不存在 - 只需创建它（如果不存在）。此文件包含多个字段，默认情况下会全部注释掉。你可以使用你喜欢的任何文本编辑器打开此文件，并应确保它至少具有以下内容。请务必将 config 里的 c.NotebookApp.password 替换为前一步中的 sha1。
 
     c = get_config()
 
@@ -137,7 +137,7 @@
     c.NotebookApp.password = u'sha1:b86e933199ad:a02e9592e5 etc... '
 
     # Network and browser details. We use a fixed port (9999) so it matches
-    # our Azure setup, where we've allowed :wqtraffic on that port
+    # our Azure setup, where we've allowed traffic on that port
     c.NotebookApp.ip = '*'
     c.NotebookApp.port = 9999
     c.NotebookApp.open_browser = False

@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="01/13/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 故障排除：HTTP 502/503 错误导致 Web 应用不可用
 
@@ -41,8 +41,7 @@
 
 [Azure Web 应用](/home/features/web-site/)为每个步骤提供了多种选项。
 
-<a name="observe"></a>
-### 1\.观察和监视应用程序行为
+###<a name="observe"></a> 1\.观察和监视应用程序行为
 
 ####	监视你的 Web 应用
 
@@ -62,15 +61,13 @@
 
 -	[在 Azure 中监视 Web 应用](/documentation/articles/web-sites-monitor)
 
-<a name="collect"></a>
-### 2\.收集数据
+###<a name="collect"></a> 2\.收集数据
 
 ####	使用 FTP 诊断日志
 
 在你的网页的“仪表板”页面中，找到 FTP 诊断日志的链接，一般为 `ftp://********.ftp.chinacloudsites.chinacloudapi.cn/LogFiles`。点击进去，可以下载 eventlog.xml。
 
-<a name="mitigate"></a>
-### 3\.缓解问题
+###<a name="mitigate"></a> 3\.缓解问题
 
 ####	缩放 Web 应用
 

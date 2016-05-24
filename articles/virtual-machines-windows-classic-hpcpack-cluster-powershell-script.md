@@ -9,8 +9,8 @@
    tags="azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="01/08/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="04/05/2016"
+	wacn.date="05/24/2016"/>
 
 # 使用 HPC Pack IaaS 部署脚本在 Azure VM 中创建 Windows 高性能计算 (HPC) 群集
 

@@ -11,13 +11,10 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="01/22/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 为 Azure 准备 Oracle Linux 虚拟机
 
-
-- [为 Azure 准备 Oracle Linux 6.4+ 虚拟机](#oracle6)
-- [为 Azure 准备 Oracle Linux 7.0+ 虚拟机](#oracle7)
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
@@ -26,7 +23,9 @@
 本文假定你已在虚拟硬盘中安装了 Oracle Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。
 
 
-**Oracle Linux 安装说明**
+### Oracle Linux 安装说明
+
+- 请同时阅读[通用 Linux 安装笔记](/documentation/articles/virtual-machines-linux-create-upload-generic#general-linux-installation-notes)，以查看更多为 Azure 准备 Linux 的提示。
 
 - Hyper-V 和 Azure 同时支持 Oracle 的 Red Hat 兼容内核及其 UEK3（坚不可摧企业内核）。为了获得最佳结果，请务必在准备 Oracle Linux VHD 时更新到最新内核。
 
@@ -73,11 +72,10 @@
 		PEERDNS=yes
 		IPV6INIT=no
 
-6.	移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
+6.	修改 udev 规则，以避免产生以太网接口的静态规则。在 Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
 
-		# sudo mkdir -m 0700 /var/lib/waagent
-		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/ 2>/dev/null
-		# sudo mv /etc/udev/rules.d/70-persistent-net.rules /var/lib/waagent/ 2>/dev/null
+		# sudo ln -s /dev/null /etc/udev/rules.d/75-persistent-net-generator.rules
+		# sudo rm -f /etc/udev/rules.d/70-persistent-net.rules
 
 7. 通过运行以下命令，确保网络服务将在引导时启动：
 
@@ -165,11 +163,9 @@
 		PEERDNS=yes
 		IPV6INIT=no
 
-5.	移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
+5.	修改 udev 规则，以避免产生以太网接口的静态规则。在 Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
 
-		# sudo mkdir -m 0700 /var/lib/waagent
-		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/ 2>/dev/null
-		# sudo mv /etc/udev/rules.d/70-persistent-net.rules /var/lib/waagent/ 2>/dev/null
+		# sudo ln -s /dev/null /etc/udev/rules.d/75-persistent-net-generator.rules
 
 6. 通过运行以下命令，确保网络服务将在引导时启动：
 
@@ -186,7 +182,7 @@
 
 9.	在 grub 配置中修改内核引导行，以使其包含 Azure 的其他内核参数。为此，请在文本编辑器中打开“/etc/default/grub”并编辑 `GRUB_CMDLINE_LINUX` 参数，例如：
 
-		GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0"
+		GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0 net.ifnames=0"
 
 	这还将确保所有控制台消息都发送到第一个串行端口，从而可以协助 Azure 支持人员调试问题。除此之外，建议删除以下参数：
 
@@ -206,6 +202,7 @@
 12. 通过运行以下命令来安装 Azure Linux 代理：
 
 		# sudo yum install WALinuxAgent
+		# sudo systemctl enable waagent
 
 13.	不要在 OS 磁盘上创建交换空间。
 

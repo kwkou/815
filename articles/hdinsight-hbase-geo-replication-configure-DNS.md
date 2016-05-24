@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="03/04/2016"
-	wacn.date="04/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 在两个 Azure 虚拟网络之间配置 DNS
 
@@ -38,7 +38,7 @@
 
 - **一个 Azure 订阅**。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅 [免费试用][1rmb-trial]。
 
-- **已安装并已配置 Azure PowerShell 的工作站**。有关说明，请参阅 [安装和配置 Azure PowerShell][powershell-install]。
+- **已安装并已配置 Azure PowerShell 的工作站**。
 
 	在运行 PowerShell 脚本之前，请确保你已使用以下 cmdlet 连接到 Azure 订阅：
 
@@ -47,6 +47,8 @@
 	如果你有多个 Azure 订阅，请使用以下 cmdlet 来设置当前订阅：
 
 		Select-AzureSubscription <AzureSubscriptionName>
+
+	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 - **建立了 VPN 连接的两个 Azure 虚拟网络**。有关说明，请参阅 [在两个 Azure 虚拟网络之间配置 VPN 连接][hdinsight-hbase-replication-vnet]。
 

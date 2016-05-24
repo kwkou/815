@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="01/28/2016"
-	wacn.date="03/17/2016"/>
+	ms.date="03/28/2016"
+	wacn.date="05/24/2016"/>
 
 # 在混合云中设置用于测试的 SharePoint Intranet 场
 

@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/04/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="04/05/2016"
+	wacn.date="05/24/2016"/>
 
 # 使用 Azure CLI 管理 HDInsight 中的 Hadoop 群集
 
@@ -20,6 +20,8 @@
 了解如何使用 [Azure 命令行界面](/documentation/articles/xplat-cli-install)管理 Azure HDInsight 中的 Hadoop 群集。Azure CLI 是以 Node.js 实现的。可以在支持 Node.js 的任意平台上使用它。
 
 本文仅介绍如何将 Azure CLI 与 HDInsight 配合使用。有关如何使用 Azure CLI 的常规指南，请参阅[安装和配置 Azure CLI][azure-command-line-tools]。
+
+[AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-cli.md)]
 
 ##先决条件
 

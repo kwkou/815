@@ -10,18 +10,11 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="02/09/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="04/08/2016"
+	wacn.date="05/24/2016"/>
 
 #在 Azure Web 应用中创建 PHP-MySQL Web 应用并使用 Git 部署
 
-> [AZURE.SELECTOR]
-- [.Net](/documentation/articles/web-sites-dotnet-get-started)
-- [Node.js](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
-- [Java](/documentation/articles/web-sites-java-get-started)
-- [PHP - Git](/documentation/articles/web-sites-php-mysql-deploy-use-git)
-- [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
-- [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
 本教程演示如何创建 PHP-MySQL Web 应用以及如何使用 Git 将该 Web 应用部署到 [Azure Web 应用](/documentation/services/web-sites/)。你将使用计算机上已安装的 [PHP][install-php]、MySQL 命令行工具（[MySQL][install-mysql] 的一部分）和 [Git][install-git]。本教程中的说明适用于任何操作系统，包括 Windows、Mac 和 Linux。完成本指南之后，你将拥有一个在 Azure 中运行的 PHP/MySQL Web 应用。
 

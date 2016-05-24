@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="11/05/2015"
-    	wacn.date="12/17/2015"/>
+	ms.date="03/11/2016"
+    	wacn.date="05/24/2016"/>
 
 
 #捕获使用经典部署模型创建的 Azure Windows 虚拟机的映像。

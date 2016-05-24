@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-   ms.date="12/02/2015"
-	wacn.date="12/31/2015"/>
+   ms.date="03/22/2016"
+	wacn.date="05/24/2016"/>
 
 # 禁用、启用或删除配置文件
 

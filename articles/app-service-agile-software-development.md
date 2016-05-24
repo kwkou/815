@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="01/07/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="05/24/2016"/>
 
 
 # 使用 Azure Web 应用进行灵便软件开发 #
@@ -55,10 +55,9 @@
 -	最新的 [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/download/0.9.4-June2015/azure-powershell.0.9.4.msi) 软件
 	
 	>[AZURE.NOTE] 如果使用的是 Auzre PowerShell 1.0 或更高版本，需要对“deploy.ps1”进行大量修改。
-
-	> 1. 需要删除所有 `Switch-AzureMode` 命令。
-	> 2. 将 `Get-AzureResource` 替换为 `Get-AzureRmResource`，并删除 `-OutputObjectFormat` 参数
-	> 3. 将 `New-AzureResourceGroup` 解构为 `New-AzureRmResourceGroup` 和 `New-AzureRmResourceGroupDeployment`，例如 `New-AzureRmResourceGroup -Name $RG_Name -Location $RG_Location` 和 `New-AzureRmResourceGroupDeployment -Verbose -name $RG_Name -ResourceGroupName $RG_Name -TemplateFile ".\$TemplateFile" -TemplateParameterFile ".\temp.json" -ErrorAction Stop`
+	><p> 1. 需要删除所有 `Switch-AzureMode` 命令。
+	><p> 2. 将 `Get-AzureResource` 替换为 `Get-AzureRmResource`，并删除 `-OutputObjectFormat` 参数
+	><p> 3. 将 `New-AzureResourceGroup` 解构为 `New-AzureRmResourceGroup` 和 `New-AzureRmResourceGroupDeployment`，例如 `New-AzureRmResourceGroup -Name $RG_Name -Location $RG_Location` 和 `New-AzureRmResourceGroupDeployment -Verbose -name $RG_Name -ResourceGroupName $RG_Name -TemplateFile ".\$TemplateFile" -TemplateParameterFile ".\temp.json" -ErrorAction Stop`
 
 -	基本了解以下知识：
 	-	[Azure 资源管理器](/documentation/articles/resource-group-overview)模板部署
@@ -88,12 +87,10 @@
 		.\deploy.ps1 -RepoUrl https://github.com/<your_fork>/todoapp.git
 
 	>[AZURE.NOTE] 在使用这些模板之前，你需要进行以下编辑，以适应 Azure 中国区的云环境：
-
-	> 1. 打开文件“ProdAndStage.json”，然后搜索“sourcecontrols”。
-	> 2. 在块和 fater `"branch": "[parameters('branch')]"` 中添加 `"IsManualIntegration": true`
-	> 3. 在“ProdAndStage.json”和“deploy.ps1”中，将“West US”或“East US”替换为“China East”或“China North”
-
-	> 由于 Ibiza 门户尚未在 Azure 中国区推出，因此我们无法设置 GitHub 凭据。
+	><p> 1. 打开文件“ProdAndStage.json”，然后搜索“sourcecontrols”。
+	><p> 2. 在块和 fater `"branch": "[parameters('branch')]"` 中添加 `"IsManualIntegration": true`
+	><p> 3. 在“ProdAndStage.json”和“deploy.ps1”中，将“West US”或“East US”替换为“China East”或“China North”
+	><p> 由于 Ibiza 门户尚未在 Azure 中国区推出，因此我们无法设置 GitHub 凭据。
 
 4.	出现提示时，键入所需的用户名和密码来访问数据库。
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="登录到 VM | Azure"
+	pageTitle="登录到经典 Azure VM | Azure"
 	description="使用 Azure 门户登录到使用经典部署模型创建的 Windows 虚拟机。"
 	services="virtual-machines-windows"
 	documentationCenter=""
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="10/05/2015"
-	wacn.date="12/31/2015"/>
+	ms.date="03/11/2016"
+	wacn.date="05/24/2016"/>
 
 
 # 使用 Azure 门户登录到 Windows 虚拟机

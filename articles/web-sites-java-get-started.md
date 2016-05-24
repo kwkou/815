@@ -9,17 +9,13 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="03/04/2016"
-	wacn.date="04/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 在 Azure 中创建 Java Web 应用
 
-> [AZURE.SELECTOR]
-- [.Net](/documentation/articles/web-sites-dotnet-get-started)
+[AZURE.INCLUDE [tabs](../includes/app-service-web-get-started-nav-tabs.md)]
+
 - [Node.js](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
-- [Java](/documentation/articles/web-sites-java-get-started)
-- [PHP - Git](/documentation/articles/web-sites-php-mysql-deploy-use-git)
-- [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
-- [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
 本教程演示如何通过 [Azure 管理门户](https://manage.windowsazure.cn)在 [Azure Web 应用](/documentation/services/web-sites/)中创建 Java Web 应用。
 
@@ -64,16 +60,18 @@
 
 现在你已经使用应用程序容器创建了 Web 应用，请参阅“后续步骤”部分，了解有关将应用程序上载到该 Web 应用的信息。
 
-## 后续步骤
+##<a name="next-steps"></a> 后续步骤
 
 现在，你有了一台在 Azure 中运行的 Java 应用程序服务器。若要将你自己的代码部署到 Web 应用，请参阅[将应用程序或网页添加到 Java Web 应用](/documentation/articles/web-sites-java-add-app)。
 
 有关如何在 Azure 中开发 Java 应用程序的详细信息，请参阅 [Java 开发中心](/develop/java/)。
 
-<!-- External Links -->
+<!-- URL List -->
 [activate your MSDN subscriber benefits]: /pricing/1rmb-trial/
 [注册试用版]: /pricing/1rmb-trial/
 
 [Try Azure Websites]: https://tryappservice.azure.com/
+
+<!-- IMG List -->
 
 <!---HONumber=Mooncake_1207_2015-->

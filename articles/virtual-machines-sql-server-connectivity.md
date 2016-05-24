@@ -9,8 +9,8 @@
 	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="12/18/2015"
-	wacn.date="02/26/2016"/>
+	ms.date="03/24/2016"
+	wacn.date="05/24/2016"/>
 
 # 连接到 Azure 上的 SQL Server 虚拟机（经典部署）
 

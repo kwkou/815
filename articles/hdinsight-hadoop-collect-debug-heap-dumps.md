@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="02/04/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="05/24/2016"/>
 
 
 # 将堆转储收集在 Blob 存储中，以便调试和分析 Hadoop 服务
@@ -44,6 +44,8 @@
 ## <a name="powershell"></a>使用 Azure PowerShell 启用
 
 例如，若要使用 Azure PowerShell 为 jobhistoryserver 启用堆转储，请执行以下操作：
+
+[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 	$MapRedConfigValues = new-object 'Microsoft.WindowsAzure.Management.HDInsight.Cmdlet.DataObjects.AzureHDInsightMapReduceConfiguration'
 

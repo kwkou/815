@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="11/29/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="05/24/2016"/>
 # 使用 HDInsight Emulator（一个 Hadoop 沙盒）开始了解 Hadoop 生态系统
 
 本指南指导你开始使用 Microsoft HDInsight Emulator for Azure（以前称作 HDInsight Server 开发者预览版）中的 Hadoop 群集。HDInsight Emulator 附带来自 Hadoop 生态系统的与 Azure HDInsight 相同的组件。有关详细信息（包括与部署的版本有关的信息），请参阅 [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles/hdinsight-component-versioning-v1)。
@@ -72,8 +72,6 @@ Microsoft HDInsight Emulator 可通过 Microsoft Web 平台安装程序进行安
 ![模拟器窗口中列出的 Hadoop 生态系统服务。][image-hdi-emulator-services]
 
 默认情况下，不会启动与 HDInsight Emulator 相关的服务。若要启动这些服务，请在 Hadoop 命令行中，在 \\hdp（默认位置）下运行 **start\_local\_hdp\_services.cmd**。若要在重新启动计算机后自动启动这些服务，请运行 **set-onebox-autostart.cmd**。
-
-有关安装和运行 HDInsight Emulator 的已知问题，请参阅 [HDInsight Emulator 发行说明](/documentation/articles/hdinsight-emulator-release-notes)。安装日志位于 **C:\HadoopFeaturePackSetup\HadoopFeaturePackSetupTools\gettingStarted.winpkg.install.log**。
 
 ##<a name="vstools"></a>在 Emulator 中使用 HDInsight Tools for Visual Studio
 
@@ -468,7 +466,6 @@ HDInsight Emulator 也支持某些 Azure PowerShell cmdlet。这些 cmdlet 包�
 - [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 - [为 HDInsight 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
 - [为 HDInsight 开发 C# Hadoop 流式处理 MapReduce 程序](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs)
-- [HDInsight Emulator 发行说明](/documentation/articles/hdinsight-emulator-release-notes)
 - [讨论 HDInsight 的 MSDN 论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home)
 
 
@@ -480,7 +477,6 @@ HDInsight Emulator 也支持某些 Azure PowerShell cmdlet。这些 cmdlet 包�
 
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
 [hdinsight-emulator-install]: http://www.microsoft.com/web/gallery/install.aspx?appid=HDINSIGHT
-[hdinsight-emulator-release-notes]: /documentation/articles/hdinsight-emulator-release-notes
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-powershell-reference]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx

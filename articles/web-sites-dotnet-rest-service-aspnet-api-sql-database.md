@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="02/29/2016"
-	wacn.date="04/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 在 Azure Web 应用中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务
 
@@ -189,8 +189,6 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 	![添加控制器](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rrAC.png)
 
 6. 将控制器名设置为 **HomeController**。选择“联系人”作为模型类。单击“新建数据上下文”按钮并接受默认的“ContactManager.Models.ContactManagerContext”为“新的数据上下文类型”。单击**“添加”**。
-
-	![“添加控制器”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr9.png)
 
 	将出现一个提示对话框：“名为 HomeController 的文件已存在。是否希望将其替换？”。单击**“是”**。我们正在覆盖使用新项目创建的主控制器。我们将为联系人列表使用新的主控制器。
 

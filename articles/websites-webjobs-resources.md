@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="01/08/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 # Azure Web 作业文档资源
 
@@ -89,7 +89,8 @@ Azure 管理门户中的 Web 作业仪表板提供了强大的管理功能，可
 ##<a name="additionalsdk"></a>其他 WebJobs SDK 资源
 
 * [WebJobs SDK 发行说明](https://github.com/Azure/azure-webjobs-sdk/wiki/Release-Notes)
-* [WebJobs SDK 扩展的开源存储库](https://github.com/Azure/azure-webjobs-sdk-extensions)，包含[扩展性模型的详细指南](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview)。  
+* [WebJobs SDK 扩展的开源代码](https://github.com/Azure/azure-webjobs-sdk-extensions), ，包含[扩展性模型的详细指南](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview)。  
+* [WebJobs SDK 脚本的开源代码](https://github.com/Azure/azure-webjobs-sdk-script/)
 * [WebJobs SDK 源代码](https://github.com/Azure/azure-webjobs-sdk)
 * [使用 WebJobs SDK 将 FREB 文件上载到 Azure 存储空间的 Web 作业](http://thenextdoorgeek.com/post/WAWS-WebJob-to-upload-FREB-files-to-Azure-Storage-using-the-WebJobs-SDK)
 * [在 Azure 外部托管 Web 作业，获得 Azure 托管 Web 作业的日志记录优势](http://bypassion.dk/?p=510)

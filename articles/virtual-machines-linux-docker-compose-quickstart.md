@@ -10,8 +10,8 @@
 
 <tags
    ms.service="virtual-machines-linux"
-   ms.date="11/16/2015"
-   wacn.date="01/29/2016"/>
+   ms.date="03/02/2016"
+   wacn.date="05/24/2016"/>
 
 # 开始使用 Docker 和 Compose，在 Azure 虚拟机上定义和运行多容器应用程序
 

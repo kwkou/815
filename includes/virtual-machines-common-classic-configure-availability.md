@@ -43,10 +43,7 @@
 
 	从新虚拟机的仪表板中，单击“配置”可以看到该虚拟机属于新可用性集。
 
-若要使用 Azure PowerShell 命令创建 Azure 虚拟机并将它添加到新的或现有的可用性集，请参阅以下内容：
-
-- [使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-classic-createpowershell)
-- [使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell)
+若要使用 Azure PowerShell 命令创建 Azure 虚拟机并将它添加到新的或现有的可用性集，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell)
 
 ## <a id="addmachine"> </a>选项 2：将现有虚拟机添加到可用性集##
 

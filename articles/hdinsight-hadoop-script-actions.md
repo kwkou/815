@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="02/04/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 为 HDInsight 开发脚本操作脚本
 
@@ -26,6 +26,8 @@
 ## 示例脚本
 
 在 Windows 操作系统上预配 HDInsight 群集时，脚本操作为 Azure PowerShell 脚本。以下是有关配置站点配置文件的示例脚本：
+
+[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 	param (
 	    [parameter(Mandatory)][string] $ConfigFileName,
