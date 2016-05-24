@@ -9,12 +9,12 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="03/09/2016"
-   wacn.date="04/05/2016"/>
+   ms.date="03/28/2016"
+   wacn.date="05/23/2016"/>
 
 # 发生中断后在 SQL 数据仓库中恢复数据库
 
-异地还原让你能够从异地冗余备份还原数据库以创建新数据库。可以在任意 Azure 区域中的任何服务器上创建数据库。由于它使用异地冗余备份作为其源，因此即使由于停电而无法访问数据库，也能够用其恢复数据库。除了发生中断后进行恢复，异地还原也可以用于其他情况，例如将数据库迁移或复制到不同的服务器或区域。
+异地还原让你能够从异地冗余备份还原数据库以创建新数据库。可以在任意 Azure 区域中的任何服务器上创建数据库。由于异地还原使用异地冗余备份作为其源，因此即使由于停电而无法访问数据库，也能够用其恢复数据库。除了发生中断后进行恢复，异地还原也可以用于其他情况，例如将数据库迁移或复制到不同的服务器或区域。
 
 
 ## 何时启动恢复
@@ -37,16 +37,16 @@
 
 
 ### PowerShell
-使用 Azure PowerShell 以编程方式执行数据库恢复。若要下载 Azure PowerShell 模块，请运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)。可以通过运行 Get-Module -ListAvailable -Name Azure 来检查你的版本。本文基于  Azure PowerShell 版本 1.0.4。
+使用 Azure PowerShell 以编程方式执行数据库恢复。若要下载 Azure PowerShell 模块，请运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)。可以通过运行 Get-Module -ListAvailable -Name Azure 来检查你的版本。本文基于 Azure PowerShell 版本 1.0.4。
 
-若要恢复数据库，请使用 [Start-AzureSqlDatabaseRecovery][] cmdlet。
+若要恢复数据库，请使用 [Restore-AzureRmSqlDatabase][] cmdlet。
 
 1. 打开 Windows PowerShell。
 2. 连接到你的 Azure 帐户，并列出与你的帐户关联的所有订阅。
 3. 选择包含要还原的数据库的订阅。
 4. 获取要恢复的数据库。
 5. 创建对数据库的恢复请求。
-6. 监视恢复进度。
+6. 验证异地还原的数据库的状态。
 
 ```
 
@@ -55,17 +55,17 @@
     Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
     
     # Get the database you want to recover
-    $Database = Get-AzureRmSqlRecoverableDatabase -ServerName "<YourServerName>" –DatabaseName "<YourDatabaseName>"
+    $GeoBackup = Get-AzureRmSqlDatabaseGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>"
     
     # Recover database
-    $RecoveryRequest = Start-AzureSqlDatabaseRestore -SourceServerName "<YourSourceServerName>" -SourceDatabase $Database -TargetDatabaseName "<NewDatabaseName>" -TargetServerName "<YourTargetServerName>"
+    $GeoRestoredDatabase = Restore-AzureRmSqlDatabase –FromGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourTargetServer>" -TargetDatabaseName "<NewDatabaseName>" –ResourceId $GeoBackup.ResourceID
     
-    # Monitor progress of recovery operation
-    Get-AzureSqlDatabaseOperation -ServerName "<YourTargetServerName>" –OperationGuid $RecoveryRequest.RequestID
+    # Verify that the geo-restored database is online
+    $GeoRestoredDatabase.status
 
 ```
 
-请注意，如果服务器是 foo.database.chinacloudapi.cn，请使用“foo”作为上述 Powershell cmdlet 中的 -ServerName。
+>[AZURE.NOTE] 对于服务器 foo.database.chinacloudapi.cn，请使用“foo”作为上述 Powershell cmdlet 中的 -ServerName。
 
 ### REST API
 使用 REST 以编程方式执行数据库恢复。
@@ -89,7 +89,7 @@
 
 
 ## 后续步骤
-若要详细了解其他 Azure SQL 数据库版本的业务连续性功能，请阅读 [Azure SQL 数据库业务连续性概述][]。
+若要了解 Azure SQL 数据库版本的业务连续性功能，请阅读 [Azure SQL 数据库业务连续性概述][]。
 
 
 <!--Image references-->
@@ -99,7 +99,7 @@
 [Finalize a recovered database]: /documentation/articles/sql-database-recovered-finalize
 
 <!--MSDN references-->
-[Start-AzureSqlDatabaseRecovery]: https://msdn.microsoft.com/zh-cn/library/azure/dn720224.aspx
+[Restore-AzureRmSqlDatabase]: https://msdn.microsoft.com/zh-cn/library/mt693390.aspx
 [列出可恢复的数据库]: http://msdn.microsoft.com/zh-cn/library/azure/dn800984.aspx
 [获取可恢复的数据库]: http://msdn.microsoft.com/zh-cn/library/azure/dn800985.aspx
 [创建数据库恢复请求]: http://msdn.microsoft.com/zh-cn/library/azure/dn800986.aspx
@@ -109,4 +109,4 @@
 [Azure 门户]: https://manage.windowsazure.cn/
 [与支持人员联系]: https://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0516_2016-->
