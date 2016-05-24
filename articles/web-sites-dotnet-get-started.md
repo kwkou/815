@@ -14,13 +14,7 @@
 
 # 配合 Visual Studio 使用 Azure 中的 ASP.NET Web 应用入门
 
-> [AZURE.SELECTOR]
-- [.Net](/documentation/articles/web-sites-dotnet-get-started)
-- [Node.js](/documentation/articles/app-service-web-nodejs-get-started)
-- [Java](/documentation/articles/web-sites-java-get-started)
-- [PHP - Git](/documentation/articles/web-sites-php-mysql-deploy-use-git)
-- [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
-- [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
+[AZURE.INCLUDE [tabs](../includes/app-service-web-get-started-nav-tabs.md)]
 
 ## 概述
 
