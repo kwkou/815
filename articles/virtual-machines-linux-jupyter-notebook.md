@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="11/10/2015"
-	wacn.date="12/31/2015"/>
+	wacn.date="05/24/2016"/>
 
 
 # Azure 上的 Jupyter Notebook

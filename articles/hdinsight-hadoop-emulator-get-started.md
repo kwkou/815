@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="11/29/2015"
-	wacn.date="01/14/2016"/>
+	wacn.date="05/24/2016"/>
 # 使用 HDInsight Emulator（一个 Hadoop 沙盒）开始了解 Hadoop 生态系统
 
 本指南指导你开始使用 Microsoft HDInsight Emulator for Azure（以前称作 HDInsight Server 开发者预览版）中的 Hadoop 群集。HDInsight Emulator 附带来自 Hadoop 生态系统的与 Azure HDInsight 相同的组件。有关详细信息（包括与部署的版本有关的信息），请参阅 [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles/hdinsight-component-versioning-v1)。

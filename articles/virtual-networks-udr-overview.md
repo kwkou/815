@@ -9,7 +9,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="03/15/2016"
-	wacn.date="04/25/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 什么是用户定义的路由和 IP 转发？
 当在 Azure 中将虚拟机 (VM) 添加到虚拟网络 (VNet) 时，将会注意到 VM 能够自动通过网络进行相互通信。你不需要指定网关，即使这些 VM 位于不同子网中。存在从 Azure 到你自己的数据中心的混合连接时，这同样适用于从 VM 到公共 Internet 甚至到本地网络的通信。

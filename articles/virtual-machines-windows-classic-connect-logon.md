@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="10/05/2015"
-	wacn.date="12/31/2015"/>
+	wacn.date="05/24/2016"/>
 
 
 # 使用 Azure 门户登录到 Windows 虚拟机

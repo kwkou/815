@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="01/08/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 管理 Azure 的 HPC Pack 群集中计算节点的数量和可用性
 

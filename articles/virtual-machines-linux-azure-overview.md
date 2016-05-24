@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="02/01/2016"
-	wacn.date="05/12/2016"/>
+	wacn.date="05/24/2016"/>
 
 # Azure 和 Linux
 Azure 正在不断集结各种集成的公有云服务，包括分析、虚拟机、数据库、移动、网络、存储和 Web，因此很适合用于托管你的解决方案。Azure 提供可缩放的计算平台，允许你即用即付，而无需投资购买本地硬件。Azure 允许你根据客户端所需的任何规模，随时扩展和缩减你的解决方案。

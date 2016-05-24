@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="02/10/2016"
-	wacn.date="03/17/2016"/>
+	wacn.date="05/24/2016"/>
 
 #在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用
 

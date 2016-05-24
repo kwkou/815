@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="03/08/2016"
-	wacn.date="04/26/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 使用 Bootstrap 自定义 HDInsight 群集
 

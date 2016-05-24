@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="02/29/2016"
-	wacn.date="04/18/2016"/>
+	wacn.date="05/24/2016"/>
 
 
 # 在 Azure Web 应用中使用 Azure CDN

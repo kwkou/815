@@ -11,7 +11,7 @@
 <tags 
 	ms.service="virtual-machines-linux"
 	ms.date="12/15/2015" 
-	wacn.date="01/29/2016"/>
+	wacn.date="05/24/2016"/>
 
 #如何在 Azure 上将 SSH 用于 Linux 和 Mac
 

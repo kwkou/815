@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines-linux"
  	ms.date="02/04/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 使用 Microsoft HPC Pack 在 Azure 中创建和管理 Linux 高性能计算 (HPC) 群集时可用的选项
 

@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="12/15/2015"
-	wacn.date="01/29/2016"/>
+	wacn.date="05/24/2016"/>
 
 
 # 使用 Linux 诊断扩展监视 Linux VM 的性能和诊断数据

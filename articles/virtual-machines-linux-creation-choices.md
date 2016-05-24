@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/12/2016"
-	wacn.date="05/12/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 创建 Linux 虚拟机的不同方式
 

@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="03/10/2016"
-	wacn.date="05/16/2016"/>
+	wacn.date="05/24/2016"/>
 
 # 使用 Azure Powershell 创建 Windows 虚拟机 
 

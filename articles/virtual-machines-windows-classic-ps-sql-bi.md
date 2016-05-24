@@ -10,7 +10,7 @@
 <tags 
 	ms.service="virtual-machines-windows"
 	ms.date="12/11/2015"
-	wacn.date="01/14/2016" />
+	wacn.date="05/24/2016" />
 
 # Azure 虚拟机中的 SQL Server Business Intelligence
 
