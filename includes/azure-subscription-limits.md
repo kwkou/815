@@ -8,7 +8,7 @@
 每个订阅的 SQL 数据库服务器数|6|150
 每个订阅的 DNS 服务器|9|100
 每个订阅的保留的 IP|20|100
-每个订阅的 ExpressRoute 专用线路数|10|25
+每个订阅的 ExpressRoute 专用线路数|10|10
 每个订阅的托管服务证书数|400|400
 每个订阅的[地缘组](/documentation/articles/virtual-networks-migrate-to-regional-vnet)数|256|256
 每个区域每个订阅的 [Batch](/services/batch/) 帐户数|1|50
