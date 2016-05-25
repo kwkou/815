@@ -8,26 +8,26 @@
    editor=""/>
 <tags
    ms.service="expressroute"
-   ms.date="02/09/2016"
-   wacn.date="03/17/2016"/>
+   ms.date="04/12/2016"
+   wacn.date="05/16/2016"/>
 
 # ExpressRoute 常见问题
 
 
 ## 什么是 ExpressRoute？
-ExpressRoute 是一项 Azure 服务，允许你在 Microsoft Azure 数据中心与你的本地环境或第三方托管设施中的基础结构之间创建专用连接。ExpressRoute 连接不通过公共 Internet，与通过公共 Internet 的典型连接相比，提供更高的安全性、可靠性、速度和更低的延迟。
+ExpressRoute 是一项 Azure 服务，允许你在 Azure 数据中心与你的本地环境或第三方托管设施中的基础结构之间创建专用连接。ExpressRoute 连接不通过公共 Internet，与通过公共 Internet 的典型连接相比，提供更高的安全性、可靠性、速度和更低的延迟。
 
 ### 使用 ExpressRoute 和专用网络连接的好处是什么？
 ExpressRoute 连接不通过公共 Internet，与通过公共 Internet 的典型连接相比，提供更高的安全性、可靠性、速度和一贯较低的延迟。在某些情况下，使用 ExpressRoute 连接在本地设备和 Azure 之间传输数据可以产生显著的成本效益。
 
-### 可通过 ExpressRoute 支持哪些 Microsoft Azure 服务？
+### 可通过 ExpressRoute 支持哪些 Azure 服务？
 ExpressRoute 目前支持大多数 Azure 服务。
 
 ### 哪里提供该服务？
 参阅 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)了解服务上市区域和可用性。
 
-### 我如果未与 ExpressRoute 运营商合作伙伴之一建立合作伙伴关系，则如何使用 ExpressRoute 连接到 Microsoft Azure？
-你可以通过区域运营商来建立以太网连接到 Microsoft Azure支持的连接提供商。然后，你可以在连接服务商的位置与 Microsoft Azure 实现对接。查看 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)的最后一部分，以确定你的网络提供商是否处在任何 Exchange 位置中。然后，你可以从交换提供商订购一条 ExpressRoute 线路以连接到 Azure。
+### 我如果未与 ExpressRoute 运营商合作伙伴之一建立合作伙伴关系，则如何使用 ExpressRoute 连接到 Azure？
+你可以通过区域运营商来建立以太网连接到 Azure支持的连接提供商。然后，你可以在连接服务商的位置与 Azure 实现对接。查看 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)的最后一部分，以确定你的网络提供商是否处在任何 Exchange 位置中。然后，你可以从交换提供商订购一条 ExpressRoute 线路以连接到 Azure。
 
 ### ExpressRoute 的费用是多少？
 有关定价信息，请查看[定价详细信息](/home/features/expressroute/#price)。
@@ -47,8 +47,7 @@ ExpressRoute 目前支持大多数 Azure 服务。
 ## 支持的服务
 大多数 Azure 服务都通过 ExpressRoute 提供支持。
 
-- 与虚拟机和虚拟网络中部署的云服务的连接通过私有对等互联路径提供支持。
-
+- 与虚拟机和虚拟网络中部署的云服务的连接通过专用对等路径提供支持。
 - 可通过公共对等路径访问 Azure 网站。
 
 - 可通过公共对等路径访问所有其他服务。下面列出了例外情况 -
@@ -93,16 +92,16 @@ ExpressRoute 目前支持大多数 Azure 服务。
 否。我们不支持将第 2 层连接扩展到 Azure。
 
 ### 能否在我的订阅中有多条 ExpressRoute 线路？
-是的。你可以在订阅中有多条 ExpressRoute 线路。专用线路数的默认限制设置为 10。如果你需要增大限制，请联系 Microsoft Azure 支持。
+是的。你可以在订阅中有多条 ExpressRoute 线路。专用线路数的默认限制设置为 10。如果你需要增大限制，请联系 Azure 支持。
 
 ### 能否使用不同服务提供商的 ExpressRoute 线路？
 是的。你可以使用许多服务提供商的 ExpressRoute 线路。每条 ExpressRoute 线路将只与一个服务提供商相关联。
 
-### 如何将我的虚拟网络连接到 ExpressRoute 线路？
+### 如何将我的虚拟网络连接到 ExpressRoute 线路
 基本步骤如下所述：
 
 - 你必须建立一条 ExpressRoute 线路并让服务提供商启用它。
-- 你必须为私有对等互连配置 BGP（如果你使用的是连接提供商）。
+- 你或提供商必须配置 BGP 对等互连。
 - 你必须将虚拟网络连接到 ExpressRoute 线路。
 
 有关详细信息，请参阅 [ExpressRoute 线路预配工作流和线路状态](/documentation/articles/expressroute-workflows)。
@@ -128,7 +127,7 @@ ExpressRoute 目前支持大多数 Azure 服务。
 是的。如果你尚未通过 BGP 会话公布默认路由 (0.0.0.0/0) 或 Internet 路由前缀，你将能够从连接到 ExpressRoute 线路的虚拟网络连接到 Internet。
 
 ### 能否阻止与连接到 ExpressRoute 线路的虚拟网络建立 Internet 连接？
-是的。你可以发布默认路由 (0.0.0.0/0) 以阻止与虚拟网络内部署的虚拟机建立所有 Internet 连接，并通过 ExpressRoute 线路路由出所有流量。请注意，如果你播发默认路由，我们会强制将传送到通过公共对等互连提供的服务（如 Azure 存储空间和 SQL DB）的流量，传回到你的本地。你必须将路由器配置为通过公共对等路径或通过 Internet 将流量传回到 Azure。
+是的。你可以公布默认路由 (0.0.0.0/0) 以阻止与虚拟网络内部署的虚拟机建立所有 Internet 连接，并通过 ExpressRoute 线路路由出所有流量。请注意，如果你播发默认路由，我们会强制将传送到通过公共对等互连提供的服务（如 Azure 存储空间和 SQL DB）的流量，传回到你的本地。你必须将路由器配置为通过公共对等路径或通过 Internet 将流量传回到 Azure。
 
 ### 连接到同一 ExpressRoute 线路的虚拟网络能否互相对话？
 是的。连接到同一 ExpressRoute 线路的虚拟网络中部署的虚拟机可以彼此通信。
@@ -163,6 +162,7 @@ BGP 会话将被删除。当前缀计数低于限制后，将重置这些会话�
 2. 执行 DNS 查找，找到 **kms.core.chinacloudapi.cn** 的 IP 地址
 3. 然后执行以下两项操作之一，使密钥管理服务能够识别来自 Azure 的激活请求并遵照该请求。
 	- 在你的本地网络上，通过公共对等互连将发往 IP 地址（在步骤 2 中获得）的流量路由回到 Azure。
+	- 让你的 NSP 提供商通过公共对等互连将流量路由回到 Azure。
 
 ### 是否可以更改 ExpressRoute 线路的带宽？
 是的。你无需拆解 ExpressRoute 线路，就能提高它的带宽。必须跟进你的连接提供商，以确保他们更新其网络中的阈值，为提高的带宽提供支持。但是，你无法降低 ExpressRoute 线路的带宽。降低带宽意味着要拆解然后重新创建 ExpressRoute 线路。

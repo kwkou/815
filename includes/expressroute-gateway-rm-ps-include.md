@@ -63,6 +63,24 @@
 
 9. 创建网关。在此步骤中，**-GatewayType** 尤其重要。必须使用值 **ExpressRoute**。请注意，运行这些 cmdlet 后，可能需要 20 分钟或更多时间来创建网关。
 
-		New-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG -Location $Location -IpConfigurations $ipconf -GatewayType Expressroute
+		New-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG -Location $Location -IpConfigurations $ipconf -GatewayType Expressroute -GatewaySku Standard
 
-<!---HONumber=Mooncake_0328_2016-->
+## 验证是否已创建网关
+
+使用以下命令来验证是否已创建网关。
+
+	Get-AzureRmVirtualNetworkGateway -ResourceGroupName $RG
+
+## 重设网关大小
+
+有三个[网关 SKU](/documentation/articles/vpn-gateway-about-vpngateways)。你可以使用以下命令随时更改网关 SKU。
+
+	$gw = Get-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG
+	Resize-AzureRmVirtualNetworkGateway -VirtualNetworkGateway $gw -GatewaySku HighPerformance
+
+## 删除网关
+
+使用以下命令可删除网关
+
+	Remove-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG  
+<!---HONumber=Mooncake_0509_2016-->
