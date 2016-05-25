@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="03/04/2016"
-   wacn.date="04/05/2016"/>
+   ms.date="03/23/2016"
+   wacn.date="05/23/2016"/>
 
 # SQL 数据仓库中的并发性和工作负荷管理
 若要在大型 SQL 数据仓库提供可预测的性能，请实施所需的机制来管理工作负荷并发性和计算资源分配。

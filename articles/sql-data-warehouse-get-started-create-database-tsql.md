@@ -10,8 +10,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="03/03/2016"
-   wacn.date="04/11/2016"/>
+   ms.date="03/23/2016"
+   wacn.date="05/23/2016"/>
 
 # 使用 Transact-SQL (TSQL) 创建 SQL 数据仓库数据库
 

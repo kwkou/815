@@ -3,7 +3,7 @@
    description="有关在开发解决方案时将数据迁移到 Azure SQL 数据仓库的技巧。"
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="barbkess"
+   authors="lodipalm"
    manager="barbkess"
    editor=""/>
 
