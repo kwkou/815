@@ -10,8 +10,8 @@
 
 <tags
    ms.service="azure-security"
-   ms.date="12/10/2015"
-   wacn.date="01/29/2016"/>
+   ms.date="03/22/2016"
+   wacn.date="05/23/2016"/>
 
 #有关 Azure IaaS 上软件更新的最佳实践
 

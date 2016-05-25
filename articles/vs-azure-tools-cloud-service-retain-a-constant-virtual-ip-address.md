@@ -9,7 +9,7 @@
 <tags
    ms.service="multiple"
    ms.date="01/30/2016"
-   wacn.date="" />
+   wacn.date="05/23/2016" />
 
 # 如何为云服务保留固定的虚拟 IP 地址
 

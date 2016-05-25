@@ -9,7 +9,7 @@
 <tags
    ms.service="multiple"
    ms.date="04/18/2016"
-   wacn.date="" />
+   wacn.date="05/23/2016" />
 
 # 为 Azure 构建的命令行
 

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="azure-resource-manager" 
-	ms.date="12/02/2015" 
-	wacn.date="04/18/2016"/>
+	ms.date="03/21/2016"
+	wacn.date="05/23/2016"/>
 
 # 使用资源管理器执行审核操作
 

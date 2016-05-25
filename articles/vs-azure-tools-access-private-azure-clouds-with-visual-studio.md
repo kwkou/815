@@ -9,7 +9,7 @@
 <tags 
    ms.service="multiple"
    ms.date="04/18/2016"
-   wacn.date="" />
+   wacn.date="05/23/2016" />
 
 # 使用 Visual Studio 访问私有 Azure 云
 

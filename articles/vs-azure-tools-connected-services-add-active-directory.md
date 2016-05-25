@@ -6,7 +6,7 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
-<tags  ms.service="visual-studio-online"" ms.date="04/18/2016" wacn.date="" />
+<tags  ms.service="visual-studio-online"" ms.date="04/18/2016" wacn.date="05/23/2015" />
 
 # 在 Visual Studio 中使用连接服务添加 Azure Active Directory 
 
