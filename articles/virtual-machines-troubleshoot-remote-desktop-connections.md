@@ -12,9 +12,9 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/12/2016"
-	wacn.date="05/24/2016"/>
+	wacn.date="05/25/2016"/>
 
-# 对运行 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除
+# 对 Windows Azure 虚拟机的远程桌面连接进行基本故障排除
 
 与基于 Windows 的 Azure 虚拟机的远程桌面 (RDP) 连接可能会由于各种原因而失败。此问题可能出在 VM 上的远程桌面服务、网络连接或主机计算机上的远程桌面客户端。本文将帮助你找出原因并更正它们。
 

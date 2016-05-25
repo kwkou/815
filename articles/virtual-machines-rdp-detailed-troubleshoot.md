@@ -11,9 +11,9 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/06/2016"
-	wacn.date="05/24/2016"/>
+	wacn.date="05/25/2016"/>
 
-# 对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行详细故障排除
+# 对 Windows Azure 虚拟机的远程桌面连接进行详细故障排除
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
