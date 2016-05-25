@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="10/07/2015"
-	wacn.date="04/01/2016"/>
+	wacn.date="05/23/2016"/>
 
 # 使用 Azure 服务总线队列创建 .NET 多层应用程序
 
@@ -27,7 +27,7 @@
 
 [AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
-在本教程中，你将生成多层应用程序并在 Azure 云服务中运行它。前端将为 ASP.NET MVC Web 角色，后端将为辅助角色。你可以创建与前端相同的多层应用程序，作为将部署到 Azure Web 应用而不是云服务的 Web 项目。有关如何以不同方式处理 Azure Web 应用前端的说明，请参阅[后续步骤](#nextsteps)部分。
+在本教程中，你将生成多层应用程序并在 Azure 云服务中运行它。前端将为 ASP.NET MVC Web 角色，后端将为辅助角色。你可以创建与前端相同的多层应用程序，作为将部署到 Azure 网站而不是云服务的 Web 项目。有关如何以不同方式处理 Azure 网站前端的说明，请参阅[后续步骤](#nextsteps)部分。
 
 以下屏幕截图显示了已完成的应用程序。
 
@@ -51,7 +51,7 @@
 
 -   **负载量。** 在许多应用程序中，系统负载随时间而变化，而每个工作单元所需的处理时间通常为常量。使用队列在消息创建者与使用者之间中继意味着，只需将使用方应用程序（辅助）预配为适应平均负载而非最大负载。队列深度将随传入负载的变化而加大和减小。这将直接根据为应用程序加载提供服务所需的基础结构的数目来节省成本。
 
--   **负载平衡。** 随着负载增加，可添加更多的工作进程以从队列中读取。每条消息仅由一个辅助进程处理。另外，可通过此基于拉取的负载平衡来以最合理的方式使用辅助计算机，即使这些辅助计算机具有不同的处理能力（因为它们将以其最大速率拉取消息）也是如此。此模式通常称为*使用者竞争*模式。
+-   **负载平衡。** 随着负载增加，可添加更多的工作进程以从队列中读取。每条消息仅由一个辅助进程处理。另外，可通过此基于拉取的负载平衡来以最合理的方式使用辅助计算机，即使这些辅助计算机具有不同的处理能力（因为它们将以其最大速率拉取消息）也是如此。此模式通常称为“使用者竞争”模式。
 
     ![][2]
 
@@ -99,7 +99,7 @@
 
 5.  在确保命名空间名称可用后，选择应承载您的命名空间的国家或地区（确保使用在其中部署计算资源的同一国家/地区）。此外，请确保在命名空间“类型”字段中选择“消息”，在“消息层”字段中选择“标准”。
 
-    > [AZURE.IMPORTANT]选取要部署应用程序的**相同区域**。这将为您提供最佳性能。
+    > [AZURE.IMPORTANT] 选取要部署应用程序的**相同区域**。这将为你提供最佳性能。
 
 6.  单击“确定”复选标记。系统现已创建您的服务命名空间并已将其启用。您可能需要等待几分钟，因为系统将为您的帐户配置资源。
 
@@ -172,7 +172,7 @@
             }
         }
 
-2.  在“解决方案资源管理器”中，双击“Controllers\HomeController.cs”。在文件顶部添加以下 **using** 语句以包括针对你刚创建的模型以及服务总线的命名空间。
+2.  在“解决方案资源管理器”中，双击“Controllers\\HomeController.cs”。在文件顶部添加以下 **using** 语句以包括针对你刚创建的模型以及服务总线的命名空间。
 
         using FrontendWebRole.Models;
         using Microsoft.ServiceBus.Messaging;
@@ -231,7 +231,7 @@
 
 4.  在“生成”菜单中，单击“生成解决方案”以测试工作的准确性。
 
-5.  现在，你将为前面创建的 **Submit()** 方法创建视图。在 **Submit()** 方法内右键单击，然后选择“添加视图”。
+5.  现在，你将为前面创建的 “Submit()” 方法创建视图。在 “Submit()” 方法内右键单击，然后选择“添加视图”。
 
     ![][14]
 
@@ -239,21 +239,21 @@
 
     ![][15]
 
-7.  单击**“添加”**。
+7.  单击“添加”。
 
-8.  现在，请更改应用程序的显示名称。在“解决方案资源管理器”中，双击“Views\Shared\_Layout.cshtml”文件以在 Visual Studio 编辑器中将其打开。
+8.  现在，请更改应用程序的显示名称。在“解决方案资源管理器”中，双击“Views\\Shared\\_Layout.cshtml”文件以在 Visual Studio 编辑器中将其打开。
 
-9.  将每一处 **My ASP.NET Application** 替换为 **LITWARE'S Products**。
+9.  将每一处 “My ASP.NET Application” 替换为 “LITWARE'S Products”。
 
 10. 删除“Home”、“About”和“Contact”链接。删除突出显示的代码：
 
 	![][28]
 
-11. 最后，修改提交页以包含有关队列的一些信息。在“解决方案资源管理器”中，双击“Views\Home\Submit.cshtml”文件以在 Visual Studio 编辑器中将其打开。在 **&lt;h2>Submit&lt;/h2>** 后面添加以下行。**ViewBag.MessageCount** 目前为空。稍后你将填充它。
+11. 最后，修改提交页以包含有关队列的一些信息。在“解决方案资源管理器”中，双击“Views\\Home\\Submit.cshtml”文件以在 Visual Studio 编辑器中将其打开。在 “&lt;h2>Submit&lt;/h2>” 后面添加以下行。“ViewBag.MessageCount” 目前为空。稍后你将填充它。
 
         <p>Current number of orders in queue waiting to be processed: @ViewBag.MessageCount</p>
 
-12. 现在，你已实现你的 UI。你可以按 **F5** 运行应用程序并确认其按预期方式运行。
+12. 现在，你已实现你的 UI。你可以按 “F5” 运行应用程序并确认其按预期方式运行。
 
     ![][17]
 
@@ -424,9 +424,9 @@
 
 	![][23]
 
-5.  在“名称”框中，将项目命名为 **OrderProcessingRole**。然后单击“添加”。
+5.  在“名称”框中，将项目命名为 “OrderProcessingRole”。然后单击“添加”。
 
-6.  在“服务器资源管理器”中，右键单击服务命名空间的名称，然后单击“属性”。在 Visual Studio 的“属性”窗格中，第一个条目包含使用包含所需授权凭据的命名空间终结点填充的连接字符串。例如，请参阅以下屏幕截图。双击“ConnectionString”，然后按 **Ctrl+C** 将此字符串复制到剪贴板中。
+6.  在“服务器资源管理器”中，右键单击服务命名空间的名称，然后单击“属性”。在 Visual Studio 的“属性”窗格中，第一个条目包含使用包含所需授权凭据的命名空间终结点填充的连接字符串。例如，请参阅以下屏幕截图。双击“ConnectionString”，然后按 “Ctrl+C” 将此字符串复制到剪贴板中。
 
 	![][24]
 
@@ -436,11 +436,11 @@
 
 	![][25]
 
-9.  当你从队列中处理订单时，创建一个 **OnlineOrder** 类来表示这些订单。你可以重用已创建的类。在“解决方案资源管理器”中，右键单击“OrderProcessingRole”项目（右键单击项目而不是角色）。单击“添加”，然后单击“现有项”。
+9.  当你从队列中处理订单时，创建一个 “OnlineOrder” 类来表示这些订单。你可以重用已创建的类。在“解决方案资源管理器”中，右键单击“OrderProcessingRole”项目（右键单击项目而不是角色）。单击“添加”，然后单击“现有项”。
 
-10. 浏览到 **FrontendWebRole\Models** 的子文件夹，然后双击“OnlineOrder.cs”以将其添加到此项目中。
+10. 浏览到 “FrontendWebRole\\Models” 的子文件夹，然后双击“OnlineOrder.cs”以将其添加到此项目中。
 
-11. 在 **WorkerRole.cs** 中，将 **WorkerRole.cs** 中 **QueueName** 变量的值 `"ProcessingQueue"` 替换为 `"OrdersQueue"`，如以下代码所示。
+11. 在 “WorkerRole.cs” 中，将 “WorkerRole.cs” 中 “QueueName” 变量的值 `"ProcessingQueue"` 替换为 `"OrdersQueue"`，如以下代码所示。
 
 		// The name of your queue.
 		const string QueueName = "OrdersQueue";
@@ -475,7 +475,7 @@
 
 * [使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]  
 
-你可能需要在 Azure Web 应用而不是 Azure 云服务中实现多层应用程序的前端。若要详细了解 Web 应用和云服务之间的差异，请参阅 [Azure 执行模型][executionmodels]。
+你可能需要在 Azure 网站而不是 Azure 云服务中实现多层应用程序的前端。
 
 若要实施在本教程中以标准 Web 项目而不是云服务 Web 角色方式创建的应用程序，请遵循本教程中的步骤，但需注意以下差异：
 
@@ -492,7 +492,7 @@
   [1]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-100.png
   [sbqueuecomparison]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted
   [2]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-101.png
-  [获取工具和 SDK]: /develop/net/
+  [获取工具和 SDK]: http://go.microsoft.com/fwlink/?LinkId=271920
   [3]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-3.png
 
 
@@ -506,7 +506,6 @@
 
   [EventHubClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx
 
-  [Azure portal]: http://manage.windowsazure.cn
   [Azure 经典门户]: http://manage.windowsazure.cn
   [6]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-03.png
   [7]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-04.png
@@ -533,12 +532,11 @@
   [30]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-09.png
   [31]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-06.png
   [32]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-41.png
-  [33]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-4-2-WebPI.png
+  [33]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-42-webpi.png
   [35]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/multi-web-45.png
   [sbmsdn]: http://msdn.microsoft.com/zh-cn/library/azure/ee732537.aspx
-  [sbwacom]: /home/features/identity/
+  [sbwacom]: /documentation/services/service-bus/
   [sbwacomqhowto]: /documentation/articles/service-bus-dotnet-how-to-use-queues
   [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
-  [executionmodels]: /documentation/articles/fundamentals-application-models
-
-<!---HONumber=Mooncake_0104_2016-->
+  
+<!---HONumber=Mooncake_0516_2016-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何使用服务总线主题 (Ruby) | Microsoft Azure"
+	pageTitle="如何使用服务总线主题 (Ruby) | Azure"
 	description="了解如何在 Azure 中使用 Service Bus 主题和订阅。相关代码示例是针对 Ruby 应用程序编写的。"
 	services="service-bus"
 	documentationCenter="ruby"
@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="03/09/2016"
-	wacn.date="04/05/2016"/>
+	wacn.date="05/23/2016"/>
 
 
 
@@ -61,7 +61,7 @@
 
 ## 创建 Ruby 应用程序
 
-有关说明，请参阅[在 Azure 上创建 Ruby 应用程序](/develop/ruby/)。
+有关说明，请参阅[在 Azure 上创建 Ruby 应用程序](/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app)。
 
 ## 配置应用程序以使用 Service Bus
 
