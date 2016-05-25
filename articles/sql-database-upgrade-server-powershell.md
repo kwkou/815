@@ -43,8 +43,8 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 ## 准备升级
 
-- **升级所有 Web 和企业数据库**：请参阅下面的[升级所有 Web 和企业数据库](/documentation/articles/sql-database-v12-upgrade/#upgrade-all-web-and-business-databases)部分，或[使用 PowerShell 来升级数据库和服务器](/documentation/articles/sql-database-upgrade-server-powershell)。
-- **检查和暂停异地复制**：如果你的 Azure SQL 数据库已针对异地复制进行配置，则你应记录其当前配置并[停止异地复制](/documentation/articles/sql-database-geo-replication-portal/#remove-secondary-database)。升级完成后，请重新为异地复制配置数据库。
+- **升级所有 Web 和企业数据库**：请[使用 PowerShell 来升级数据库和服务器](/documentation/articles/sql-database-upgrade-server-powershell)。
+- **检查和暂停异地复制**：如果你的 Azure SQL 数据库已针对异地复制进行配置，则你应记录其当前配置并停止异地复制。升级完成后，请重新为异地复制配置数据库。
 - **如果客户端在 Azure VM 上，请打开这些端口**：如果客户端程序连接到 SQL 数据库 V12，而客户端运行在 Azure 虚拟机 (VM) 上，则必须打开虚拟机上的端口范围 11000-11999 和 14000-14999。有关详细信息，请参阅 [SQL 数据库 V12 的端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)。
 
 
@@ -182,12 +182,6 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 **警报：**在 Azure 门户中设置“警报”可在升级后的数据库 DTU 消耗量接近特定的高位时接收通知。你可以针对 DTU、CPU、IO 和日志等各种性能度量值，在 Azure 门户中设置数据库警报。浏览到你的数据库，然后在“设置”边栏选项卡中选择“警报规则”。
 
 例如，你可以针对“DTU 百分比”设置电子邮件警报，以便在过去 5 分钟平均 DTU 百分比值超过 75% 时发出警报。请参阅[接收警报通知](/documentation/articles/insights-receive-alert-notifications)，以了解有关如何配置警报通知的详细信息。
-
-
-
-## 后续步骤
- 
-- [更改数据库的服务层和性能级别](/documentation/articles/sql-database-scale-up)。
 
 
 

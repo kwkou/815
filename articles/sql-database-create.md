@@ -41,7 +41,6 @@ True author is: authors="sonalmm" , ms.author="sonalm".
 ## 相关链接
 
 - [SQL 数据库 V12 的新增功能](/documentation/articles/sql-database-v12-whats-new)
-- [规划和准备升级到 Azure SQL 数据库 V12](/documentation/articles/sql-database-v12-plan-prepare-upgrade)
 
 <!--Image references-->
 [1]: ./media/sql-database-create/firstscreenportal.png

@@ -89,7 +89,7 @@ SaaS 开发人员必须创建并管理数十、数百或甚至数千个 SQL 数�
 
 ### 异地复制
 
-标准异地复制适用于标准或高级弹性数据库池中的任何数据库。只要服务层相同，异地复制合作关系中的一个或所有数据库就可以处于一个弹性数据库池中。可以使用 [Azure 门户](/documentation/articles/sql-database-geo-replication-portal)、[PowerShell](/documentation/articles/sql-database-geo-replication-powershell) 或 [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql) 为弹性数据库池配置异地复制。
+标准异地复制适用于标准或高级弹性数据库池中的任何数据库。只要服务层相同，异地复制合作关系中的一个或所有数据库就可以处于一个弹性数据库池中。可以使用[PowerShell](/documentation/articles/sql-database-geo-replication-powershell) 或 [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql) 为弹性数据库池配置异地复制。
 
 ### 导入和导出
 

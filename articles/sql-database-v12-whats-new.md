@@ -92,7 +92,7 @@ SQL 数据库 V12 中的性能增强功能需要这些端口。
 
 
 - [行级安全性](http://msdn.microsoft.com/zh-cn/library/dn765131.aspx) (RLS)
-- [动态数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started)
+- [动态数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started-portal)
 - [包含的数据库](http://msdn.microsoft.com/zh-cn/library/ff929188.aspx)
 - 使用 GRANT、DENY、REVOKE 管理的[应用程序角色](http://msdn.microsoft.com/zh-cn/library/ms190998.aspx)
 - [透明数据加密](http://msdn.microsoft.com/zh-cn/library/0bf7e8ff-1416-4923-9c4c-49341e208c62.aspx) (TDE)
@@ -151,8 +151,6 @@ V12 提供大幅提高的恢复点目标 (RPO) 与预计恢复时间 (ERT)：
 
 V12 数据库只能托管在 V12 逻辑服务器上。V12 服务器只能托管 V12 数据库。
 
-
-如果你尚未在 V12 上运行，可以根据[就地升级到 SQL 数据库 V12](/documentation/articles/sql-database-v12-plan-prepare-upgrade) 中的步骤升级你的逻辑服务器。
 
 
 ## <a name="V12AzureSqlDbPreviewGaTable"></a> 正式版上市区域

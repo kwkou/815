@@ -18,7 +18,6 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-scale-up)
 - [PowerShell](/documentation/articles/sql-database-scale-up-powershell)
 
 
@@ -30,7 +29,7 @@
 
 
 - 若要对数据库进行降级，数据库应小于目标服务层允许的最大大小。 
-- 在启用了[异地复制](/documentation/articles/sql-database-geo-replication-portal)的情况下升级数据库时，必须先将次要数据库升级到所需的性能层，然后再升级主数据库。
+- 在启用了异地复制的情况下升级数据库时，必须先将次要数据库升级到所需的性能层，然后再升级主数据库。
 - 从高级服务层降级时，必须先终止所有异地复制关系。你可以按照[从中断中恢复](/documentation/articles/sql-database-disaster-recovery)主题中所述的步骤停止主数据库与活动次要数据库之间的复制过程。
 - 各服务层提供的还原服务是不同的。如果进行降级，你可能无法再还原到某个时间点，或者备份保留期变短。有关详细信息，请参阅 [Azure SQL 数据库备份和还原](/documentation/articles/sql-database-business-continuity)。
 - 所做的更改完成之前不会应用数据库的新属性。

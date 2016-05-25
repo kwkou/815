@@ -17,7 +17,6 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-manage-portal)
 - [SSMS](/documentation/articles/sql-database-manage-azure-ssms)
 - [PowerShell](/documentation/articles/sql-database-command-line-tools)
 

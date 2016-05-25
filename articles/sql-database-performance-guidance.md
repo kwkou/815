@@ -19,7 +19,7 @@
 
 Azure SQL 数据库具有三个[服务层](/documentation/articles/sql-database-service-tiers)：基本、标准和高级。所有这些服务层都会将提供给 Azure SQL 数据库的资源进行严格隔离，确保你获得可预知的性能。从“基本”层到“标准”层再到“高级”层，数据库能够确保实现的吞吐量是上升的。
 
->[AZURE.NOTE] 企业和 Web 版服务层将于 2015 年 9 月停用。有关详细信息，请参阅 [Web 和 Business Edition 版停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq)。有关将现有 Web 和企业数据库升级到新服务层的详细信息，请参阅[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-server-portal)。
+>[AZURE.NOTE] 企业和 Web 版服务层将于 2015 年 9 月停用。有关详细信息，请参阅 [Web 和 Business Edition 版停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq)。
 
 本文提供了一些指导，帮助你确定此预览版提供的哪个服务层适合你的应用程序，并提供了一些应用程序优化建议，让你充分利用 Azure SQL 数据库。
 
@@ -286,14 +286,6 @@ Azure SQL 数据库在每个服务器的 **master** 数据库的 **sys.resource\
 
 ## 优化方法
 本部分介绍可用于优化 Azure SQL 数据库的方法，该方法可使应用程序达到最佳性能并以尽可能低的性能级别运行。有许多方法可与传统的 SQL Server 优化最佳实践搭配使用，但有些方法专用于 Azure SQL 数据库。在某些情况下，可扩展传统的 SQL Server 方法，通过检查数据库使用的资源找到要进一步优化的区域，使这些方法也可在 Azure SQL 数据库上发挥作用。
-
-### Query Performance Insight 和索引顾问
-SQL 数据库在 Azure 管理门户中提供了两个工具来分析和解决数据库的性能问题：
-
-- [Query Performance Insight](/documentation/articles/sql-database-query-performance)
-- [索引顾问](/documentation/articles/sql-database-index-advisor)
-
-有关每个工具及其使用方法的详细信息，请参阅以前的链接。下面两个部分讲述缺失的索引和查询优化，其中提供的其他方法可以用于手动查找和纠正类似的性能问题。我们建议你首先在门户中尝试这些工具，以便更有效地诊断和纠正问题。特殊情况使用手动优化方式。
 
 ### 缺少索引
 OLTP 数据库性能有一个常见问题与物理数据库设计有关。设计和交付数据库架构时，经常不进行规模（负载或数据卷）测试。遗憾的是，在规模较小时，查询计划的性能可能尚可接受，但面对生产级数据卷时，性能就会大幅降低。此问题最常见的原因是缺乏相应的索引，无法满足筛选器或查询中的其他限制。这种情况经常导致表扫描，而此时索引搜寻即可满足要求。

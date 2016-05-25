@@ -47,7 +47,7 @@
 
 > [AZURE.IMPORTANT] 若要确保获得事务处理一致性 BACPAC 文件，应首先[创建数据库的副本](/documentation/articles/sql-database-copy)，然后导出该数据库副本。
 
-1.	转到 [Azure 门户](https://manage.windowsazure.cn)。
+1.	转到 [Azure 门户](https://portal.azure.cn)。
 2.	单击“SQL 数据库”。
 3.	单击要存档的数据库。
 4.	在 SQL 数据库边栏选项卡中，单击“导出”以打开“导出数据库”边栏选项卡：

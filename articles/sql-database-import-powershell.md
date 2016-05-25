@@ -17,7 +17,6 @@
 **单一数据库**
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-import)
 - [PowerShell](/documentation/articles/sql-database-import-powershell)
 - [SSMS](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-ssms)
 - [SqlPackage](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-sqlpackage)

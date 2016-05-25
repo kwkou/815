@@ -17,7 +17,6 @@
 > [AZURE.SELECTOR]
 - [SSMS](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-ssms)
 - [SqlPackage](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-sqlpackage)
-- [Azure 门户预览](/documentation/articles/sql-database-import)
 - [PowerShell](/documentation/articles/sql-database-import-powershell)
 
 本文说明如何使用 SQL Server Management Studio 中的“导出数据层应用程序”向导从 [BACPAC](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx#Anchor_4) 文件导入到 SQL 数据库。

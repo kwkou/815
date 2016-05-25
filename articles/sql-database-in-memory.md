@@ -495,12 +495,6 @@ SELECT DatabasePropertyEx(DB_NAME(), 'IsXTPSupported');
  - [In-Memory OLTP 不支持的 Transact-SQL 构造](http://msdn.microsoft.com/zh-cn/library/dn246937.aspx)
 
 
-## 后续步骤
-
-
-- 尝试[在现有的 Azure SQL 应用程序中使用 In-Memory OLTP](/documentation/articles/sql-database-in-memory-oltp-migration)。
-
-
 ## 其他资源
 
 #### 深入信息
@@ -522,7 +516,5 @@ SELECT DatabasePropertyEx(DB_NAME(), 'IsXTPSupported');
 - [SQL Server Data Tools 预览版 (SSDT)](http://msdn.microsoft.com/zh-cn/library/mt204009.aspx) 最新每月版本。
 
 - [适用于 SQL Server 的重放标记语言 (RML) 实用程序介绍](http://support.microsoft.com/zh-cn/kb/944837)
-
-- [监视内存中存储](/documentation/articles/sql-database-in-memory-oltp-monitoring)（适用于 In-Memory OLTP）。
 
 <!---HONumber=Mooncake_0321_2016-->

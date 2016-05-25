@@ -77,7 +77,7 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 ## 数据库复制错误
 
 
-下表包含了你在 Azure SQL 数据库中复制数据库时你可能会遇到的不同错误。有关详细信息，请参阅[复制 Azure SQL 数据库](/documentation/articles/sql-database-copy)。
+下表包含了你在 Azure SQL 数据库中复制数据库时你可能会遇到的不同错误。
 
 
 |错误代码|严重性|说明|

@@ -16,7 +16,6 @@
 # 使用 PowerShell 将 Azure SQL 数据库存档到 BACPAC 文件
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-export)
 - [PowerShell](/documentation/articles/sql-database-export-powershell)
 
 
@@ -26,7 +25,7 @@
 
 注意事项
 
-- 为保持存档的事务处理方式一致性，必须确保从 Azure SQL 数据库的[事务处理方式一致性副本](/documentation/articles/sql-database-copy)中导出或导入时没有发生写入活动。
+- 为保持存档的事务处理方式一致性，必须确保从 Azure SQL 数据库的事务处理方式一致性副本中导出或导入时没有发生写入活动。
 - 存档到 Azure blob 存储的 BACPAC 文件的大小上限为 200 GB。可使用 [SqlPackage](https://msdn.microsoft.com/zh-cn/library/hh550080.aspx) 命令提示实用工具将更大的 BACPAC 文件存档到本地存储。此实用程序随 Visual Studio 和 SQL Server 一起提供。你还可以[下载](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx)最新版本的 SQL Server Data Tools 以获取此实用程序。
 - 不支持使用 BACPAC 文件存档到 Azure 高级存储。
 - 如果导出操作超过 20 个小时，操作可能被取消。为提高导出过程中的性能，你可以进行如下操作：

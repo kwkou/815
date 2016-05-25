@@ -28,7 +28,7 @@ Error code 40613: "Database <x> on server <y> is not currently available. Please
 ## 解决暂时性连接问题的步骤
 1.	检查 [Azure 服务仪表板](https://azure.microsoft.com/status)在由应用程序报告错误期间是否发生任何已知的服务中断。
 2. 连接到云服务的应用程序（如 Azure SQL 数据库）应期望定期重新配置事件并实施重试逻辑来处理这些错误，而不是将它们作为应用程序错误展现给用户。请查看[暂时性错误](/documentation/articles/sql-database-connectivity-issues)部分和[最佳实践和设计指南](/documentation/articles/sql-database-connect-central-recommendations)，了解详细信息和常规重试策略。然后参阅[代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)以了解具体操作。
-3.	由于数据库即将达到其资源限制，因此错误看起来像是暂时性连接问题。请参阅[排查性能问题](/documentation/articles/sql-database-troubleshoot-performance)。
+3.	由于数据库即将达到其资源限制，因此错误看起来像是暂时性连接问题。
 4.	如果连接问题继续，或者应用程序遇到错误的持续时间超过 60 秒，或者在给定日期内看到错误多次发生，请通过选择[Azure 支持](/support/contact)站点上的“获取支持”提出 Azure 支持请求。
 
 ## 后续步骤
