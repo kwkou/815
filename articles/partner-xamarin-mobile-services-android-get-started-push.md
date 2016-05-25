@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="向 Xamarin Android 应用添加推送通知 | Microsoft Azure" 
+	pageTitle="向 Xamarin Android 应用添加推送通知 | Azure" 
 	description="了解如何使用 Azure 移动服务和 Azure 通知中心将推送通知配置为通过 Google Cloud Messaging 发送到 Xamarin.Android 应用程序。" 
 	documentationCenter="xamarin" 
 	authors="ggailey777" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="03/17/2016"
-	wacn.date="04/11/2016"/>
+	wacn.date="05/23/2016"/>
 
 # 向移动服务应用程序添加推送通知
 
@@ -24,11 +24,11 @@
 + 有效的 Google 帐户
 + [Google Cloud Messaging 客户端组件]。在学习本教程的过程中，你将要添加此组件。
 
-完成[移动服务入门]教程时，你应该已在项目中安装了 [Xamarin.Android] 和 [Azure 移动服务组件]。
+完成 [Get started with Mobile Services（移动服务入门）]教程时，你应该已在项目中安装了 Xamarin 和 [Azure 移动服务组件]。
 
 ## <a id="register"></a>启用 Google Cloud Messaging
 
-[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../includes/mobile-services-enable-Google-cloud-messaging.md)]
+[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../includes/mobile-services-enable-google-cloud-messaging.md)]
 
 ## <a id="configure"></a>配置移动服务以发送推送请求
 
@@ -62,25 +62,25 @@
 通过以下主题了解有关移动服务和通知中心的详细信息：
 
 * [身份验证入门 ](/documentation/articles/mobile-services-android-get-started-users)
-  </br>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
+  <br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
 
 * [什么是通知中心？](/documentation/articles/notification-hubs-overview)
-  </br>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
+  <br/>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
 
 * [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)
   </br>获取有关对通知中心解决方案进行故障排除和调试的指导。
 
-* [如何使用适用于移动服务的 .NET 客户端库](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
-  </br>了解有关如何将移动服务与 Xamarin C# 代码配合使用的详细信息。
+* [如何使用适用于移动服务的 .NET 客户端库](/documentation/articles/mobile-services-dotnet-how-to-use-client-library)
+  <br/>了解有关如何将移动服务与 Xamarin C# 代码配合使用的详细信息。
 
 * [移动服务服务器脚本参考](/documentation/articles/mobile-services-how-to-use-server-scripts)
-  </br>了解有关如何在移动服务中实施业务逻辑的详细信息。
+  <br/>了解有关如何在移动服务中实施业务逻辑的详细信息。
 
 <!-- URLs. -->
+[Get started with Mobile Services（移动服务入门）]: /documentation/articles/mobile-services-ios-get-started
 [移动服务入门]: /documentation/articles/mobile-services-ios-get-started
 
 [Google Cloud Messaging 客户端组件]: http://components.xamarin.com/view/GCMClient/
-[Xamarin.Android]: http://xamarin.com/download/
 [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
  
 

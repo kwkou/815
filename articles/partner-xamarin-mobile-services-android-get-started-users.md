@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="02/11/2016" 
-	wacn.date="04/11/2016"/>
+	wacn.date="05/23/2016"/>
 
 #  向移动服务应用程序添加身份验证
 
@@ -26,7 +26,7 @@
 
 本教程基于移动服务快速入门。此外，还必须先完成 [移动服务入门] 教程。
 
-完成本教程需要 Xamarin.Android 和 Android SDK 4.2 或更高版本。
+完成此教程要求在 Windows 上安装 Visual Studio with Xamarin，或在 Mac OS X 上安装 Xamarin Studio。[设置和安装 Visual Studio 和 Xamarin](https://msdn.microsoft.com/zh-cn/library/mt613162.aspx) 中提供了完整的安装说明。
 
 ## <a name="register"></a>注册应用程序以进行身份验证并配置移动服务
 
@@ -69,7 +69,7 @@
 
     这将会创建一个用于处理身份验证过程的新方法。将使用 Microsoft 帐户登录对用户进行身份验证。此时将出现一个对话框，其中显示了已经过身份验证的用户的 ID。如果未正常完成身份验证，你将无法继续操作。
 
-    > [AZURE.NOTE] 如果使用的标识提供者不是 Microsoft，请将传递给上述 **login** 方法的值更改为下列其中一项：WindowsAzureActiveDirectory。
+    > [AZURE.NOTE] 如果使用的标识提供者不是 Microsoft，请将传递给上述 **login** 方法的值更改为下列其中一项：_WindowsAzureActiveDirectory_。
 
 3. 在 **OnCreate** 方法中，在实例化 `MobileServiceClient` 对象的代码后面添加以下代码行。
 

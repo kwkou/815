@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="缩放 Azure SQL 数据库支持的移动服务 | Microsoft Azure" 
+	pageTitle="缩放 Azure SQL 数据库支持的移动服务 | Azure" 
 	description="了解如何诊断和修复 SQL 数据库支持的移动服务中的可扩展性问题" 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="02/23/2016" 
-	wacn.date="04/01/2016"/>
+	wacn.date="05/23/2016"/>
 
 # 扩展 Azure SQL 数据库支持的移动服务
 
@@ -51,7 +51,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 - **标准** - 用于预计进行多次并发数据库查询的生产服务
 - **高级** - 用于并发查询数量较多、高峰值负载，以及每次请求的预计延迟较低的大型生产服务。
 
-有关各层使用时机的详细信息，请参阅[使用新服务层的原因](http://msdn.microsoft.com/zh-cn/library/azure/dn369873.aspx#Reasons)
+有关各层使用时机的详细信息，请参阅[使用新服务层的原因]
 
 ###  分析数据库指标
 
@@ -161,7 +161,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
         public bool Complete { get; set; }
     }
 		 
-更多有关索引的详细信息，请参阅[实体框架中的索引批注][]。有关优化索引的更多提示，请参阅本文末尾的“高级索引”(#AdvancedIndexing)。
+更多有关索引的详细信息，请参阅[实体框架中的索引批注][]。有关优化索引的更多提示，请参阅本文末尾的“[高级索引](#AdvancedIndexing)”。
 
 <a name="Schema"></a>
 ##  架构设计
@@ -176,7 +176,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 查询数据库时要考虑的以下指南：
 
-- **始终在数据库中执行联接操作。** 你经常需要合并来自两个或更多表的记录，且这些要合并的记录共享相同的字段（称为*联接*）。此操作涉及到同时从两个表中提取所有实体，然后循环访问所有实体，因此，如果未正确执行此操作，可能会降低效率。此类操作最好在数据库中执行，但有时却很容易误由客户端执行，或者在移动服务代码中执行。
+- **始终在数据库中执行联接操作。** 你经常需要合并来自两个或更多表的记录，且这些要合并的记录共享相同的字段（称为联接）。此操作涉及到同时从两个表中提取所有实体，然后循环访问所有实体，因此，如果未正确执行此操作，可能会降低效率。此类操作最好在数据库中执行，但有时却很容易误由客户端执行，或者在移动服务代码中执行。
     - 请不要在应用程序代码中执行联接
     - 请不要在移动服务代码中执行联接。在使用 JavaScript 后端时，请注意，[table 对象](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554210.aspx)不处理联接。请务必直接使用 [mssql 对象](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554212.aspx)，以确保在数据库中执行联接。有关详细信息，请参阅[联接关系表](/documentation/articles/mobile-services-how-to-use-server-scripts/#joins)。如果使用 .NET 后端，并且通过 LINQ 查询，实体框架将在数据库级别自动处理联接。
 - **实现分页。** 查询数据库有时可能会导致大量记录返回到客户端。为了尽可能减少操作的大小和延迟，请考虑实现分页。
@@ -191,7 +191,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 假设您要向所有客户发送推送通知，提醒他们查看应用中的新内容。他们点击该通知时，该应用将启动，这样可能会触发调用您的移动服务，并根据 SQL 数据库执行查询。由于可能会有数百万客户在仅仅几分钟的跨度内执行该操作，将形成 SQL 负载高峰，该峰值大大高于您应用的稳定状态负载。通过在峰值期间将应用扩展到更高版本的 SQL 层，然后再回缩可解决这种问题，但这种解决方法需要手动干预，并且会导致成本上升。通常，细微调整移动服务体系结构可显著平衡访问 SQL 数据库的负载客户端，并消除问题需求峰值。这些调整通常可以轻松执行，而对客户体验的影响可降至最低。下面是一些示例：
 
 - **将负载分散到不同时间。** 如果你对特定事件（例如广播推送通知）的执行时间进行控制，并预期这些事件会产生需求上的高峰，且这些事件的执行时间并不重要，请考虑将其分散到不同时间。在上述示例中，或许你的应用程序客户可以在一天的不同时间分批获取新应用程序内容的通知，而无需在几乎相同的时间获取。请考虑将客户分成允许交错传送到每个批的组。使用通知中心时，应用附加标记以跟踪批，然后将推送通知传送到该标记，这样便可提供实现此策略的简单途径。有关标记的详细信息，请参阅[使用通知中心发送突发新闻](/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news)。
-- **在可能的情况下使用 Blob 和表存储。** 客户在高峰期所查看的内容经常是较为静态的，且不需要存储在 SQL 数据库中，因为你不可能需要对该内容的关系查询功能。在此情况下，请考虑将内容存储在 Blob 或表存储中。你可以直接从设备访问 Blob 存储中的公共 Blob。若要以安全方式访问 Blob 或使用表存储，必须通过移动服务自定义 API 保护存储访问密钥。有关详细信息，请参阅[使用移动服务将图像上载到 Azure 存储空间](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage)。
+- **在可能的情况下使用 Blob 和表存储。** 客户在高峰期所查看的内容经常是较为静态的，且不需要存储在 SQL 数据库中，因为你不可能需要对该内容的关系查询功能。在此情况下，请考虑将内容存储在 Blob 或表存储中。你可以直接从设备访问 Blob 存储中的公共 Blob。若要以安全方式访问 Blob 或使用表存储，必须通过移动服务自定义 API 保护存储访问密钥。有关详细信息，请参阅[使用移动服务将图像上载到 Azure 存储空间](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-upload-data-blob-storage)。
 - **使用内存中缓存**。另一种方法是将流量峰值期间通常访问的数据存储于内存中缓存，比如 [Azure 缓存](/documentaiton/services/cache/)。这意味着传入的请求能够从内存中提取所需的信息，而不是重复查询数据库。
 
 <a name="Advanced"></a>
@@ -216,7 +216,7 @@ Azure 经典门户提供内置管理体验，虽然限制更多，但无需本�
 6. 记下“连接到数据库”部分中的服务器地址，例如：*mcml4otbb9.database.chinacloudapi.cn*。
 
 #### SQL Server Management Studio
-1. 导航到[“SQL Server 版本 - Express”](http://www.microsoft.com/zh-cn/server-cloud/products/sql-server-editions/sql-server-express.aspx)
+1. 导航到“[SQL Server 版本 - Express](http://www.microsoft.com/zh-cn/server-cloud/products/sql-server-editions/sql-server-express.aspx)”
 2. 找到“SQL Server Management Studio”部分，然后选择下方的“下载”按钮。
 3. 完成安装步骤，直到成功运行该应用：
 
@@ -260,7 +260,7 @@ Azure 经典门户提供内置管理体验，虽然限制更多，但无需本�
 ####  高级指标
 
 
-如果使用基础层、标准层和高级层，管理门户可随时提供部分指标。无论你使用哪种层，都可以通过 **[sys.resource\\_stats](http://msdn.microsoft.com/zh-cn/library/dn269979.aspx)** 管理视图轻松获取所有度量值。请考虑下列查询：
+如果使用基础层、标准层和高级层，管理门户可随时提供部分指标。无论你使用哪种层，都可以通过 **[sys.resource\_stats](http://msdn.microsoft.com/zh-cn/library/dn269979.aspx)** 管理视图轻松获取所有度量值。请考虑下列查询：
 
     SELECT TOP 10 * 
     FROM sys.resource_stats 

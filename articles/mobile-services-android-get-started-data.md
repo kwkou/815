@@ -1,16 +1,16 @@
 <properties
-	pageTitle="开始使用 Android 上的数据（JavaScript 后端）| Microsoft Azure"
+	pageTitle="开始使用 Android 上的数据（JavaScript 后端）| Azure"
 	description="了解如何开始使用移动服务来利用 Android 应用中的数据（JavaScript 后端）。"
 	services="mobile-services"
 	documentationCenter="android"
 	authors="RickSaling"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="01/20/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="04/07/2016"
+	wacn.date="05/23/2016"/>
 
 # 将移动服务添加到现有 Android 应用（JavaScript 后端）
 
@@ -71,7 +71,7 @@
 
    	此时会将一个新项作为 insert 发送到移动服务。
 
-3. 在 [Azure 管理门户]中，单击“移动服务”，然后单击你的移动服务。
+3. 在 [Azure 管理门户](https://manage.windowsazure.cn)中，单击“移动服务”，然后单击你的移动服务。
 
 4. 单击“数据”选项卡，然后单击“浏览”。
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="适用于 Xamarin.Android 应用的移动服务入门 | Microsoft Azure"
+	pageTitle="适用于 Xamarin.Android 应用的移动服务入门 | Azure"
 	description="按照本教程进行操作，开始使用 Azure 移动服务进行 Xamarin Android 开发"
 	services="mobile-services"
 	documentationCenter="xamarin"
@@ -10,13 +10,13 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="01/14/2016"
-	wacn.date="04/11/2016"/>
+	wacn.date="05/23/2016"/>
 
 # <a name="getting-started"></a>移动服务入门
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
-本教程说明如何使用 Azure 移动服务向 Xamarin Android 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单待办事项列表应用程序。要创建的移动服务将使用支持的 .NET 语言，你可以使用 Visual Studio 来提供服务器端业务逻辑和管理移动服务。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本]。
+本教程说明如何使用 Azure 移动服务向 Xamarin Android 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单_待办事项列表_应用程序。要创建的移动服务将使用支持的 .NET 语言，你可以使用 Visual Studio 来提供服务器端业务逻辑和管理移动服务。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本]。
 
 >[AZURE.NOTE]本主题演示如何使用 Azure 经典门户创建新的移动服务项目。通过使用 Visual Studio 2013 Update 2，还可以向现有的 Visual Studio 解决方案添加新的移动服务项目。有关详细信息，请参阅[快速入门：添加移动服务（.NET 后端）](http://msdn.microsoft.com/zh-cn/library/windows/apps/dn629482.aspx)
 
@@ -39,6 +39,7 @@
 
 在本部分中，你将为移动服务下载新的 Xamarin.android 应用程序和服务项目。
 
+1. 如果尚未进行此操作，请安装 Visual Studio with Xamarin。有关说明，可查阅[设置和安装 Visual Studio 和 Xamarin](https://msdn.microsoft.com/zh-cn/library/mt613162.aspx)。你还可以使用 Mac OS X 计算机上的 Xamarin Studio，请参阅 [Mac 用户的设置、安装和验证](https://msdn.microsoft.com/zh-cn/library/mt488770.aspx)。  
 1. 在 [Azure 管理门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2. 在快速入门选项卡中，单击“选择平台”下的“Xamarin”，然后展开“创建新的 Xamarin 应用程序”。
@@ -49,13 +50,9 @@
 
   	![][7]
 
-3. 在本地计算机或虚拟机上下载并安装 [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=257546)（如果尚未这样做）。
+4. 在“下载你的服务并将其发布到云”下，选择“Android”并单击“下载”。
 
-4. 下载并安装 [Xamarin Studio] 或 Xamarin for Visual Studio（如果尚未这样做）。
-
-5. 在“下载你的服务并将其发布到云”下，选择“Android”并单击“下载”。
-
-  	随即将会下载一个解决方案，其中包含移动服务的项目，以及已连接到移动服务的示例待办事项列表应用程序的项目。将压缩的项目文件保存到本地计算机，并记下保存位置。
+  	随即将会下载一个解决方案，其中包含移动服务的项目，以及已连接到移动服务的示例_待办事项列表_应用程序的项目。将压缩的项目文件保存到本地计算机，并记下保存位置。
 
 6. 下载发布配置文件，将下载的文件保存到本地计算机，然后记下保存位置。
 
@@ -77,13 +74,14 @@
 
 	> [AZURE.NOTE]若要在 Android 模拟器中运行项目，必须至少定义一个 Android 虚拟设备 (AVD)。使用 AVD 管理器创建和管理这些设备。
 
-3. 在应用中键入有意义的文本（例如 Complete the tutorial），然后单击加号 (**+**) 图标。
+3. 在应用中键入有意义的文本（例如 _完成本教程_），然后单击加号 (**+**) 图标。
 
 	![][10]
 
 	这样可向在 Azure 中托管的新移动服务发送 POST 请求。来自请求的数据被插入到 TodoItem 表。移动服务返回存储在表中的项，数据显示在列表中。
 
-	> [AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.cs C# 文件中。
+	> [AZURE.NOTE] 
+   	你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.cs C# 文件中。
     
 ## 后续步骤
 完成快速入门后，请了解如何在移动服务中执行其他重要任务：
@@ -128,9 +126,4 @@
 [JavaScript 后端版本]: /documentation/articles/mobile-services-android-get-started
 [移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
 
-
-[Xamarin Studio]: http://xamarin.com/download
-[Xcode]: https://go.microsoft.com/fwLink/?LinkID=266532&clcid=0x409
-[Xamarin for Windows]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409
-
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0516_2016-->
