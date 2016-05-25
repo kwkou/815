@@ -1,65 +1,70 @@
 ﻿## 将消息发送到事件中心
-在本节中，您将编写用于将事件发送到事件中心的 Windows 控制台应用。
 
-1. 在 Visual Studio 中，使用"控制台应用程序"项目模板创建一个新的 Visual C# 桌面应用项目。将该项目命名为 **Sender**。
+在此部分中，你将编写用于将事件发送到事件中心的 Windows 控制台应用。
+
+1. 在 Visual Studio 中，使用**控制台应用程序**项目模板创建一个新的 Visual C# 桌面应用项目。将该项目命名为 **Sender**。
 
    	![][7]
 
-2. 在"解决方案资源管理器"中，右键单击该解决方案，然后单击"为解决方案管理 NuGet 程序包..."。 
+2. 在“解决方案资源管理器”中，右键单击该解决方案，然后单击“为解决方案管理 NuGet 包”。
 
-	此时将显示"管理 NuGet 程序包"对话框。
-
-3. 搜索  `Azure Service Bus`、单击"安装"，并接受使用条款。 
+3. 单击“浏览”选项卡，然后搜索 `Microsoft Azure Service Bus`。确保在“版本”框中指定项目名称（“Sender”）。单击“安装”并接受使用条款。
 
 	![][8]
 
-	这样便会下载、安装 <a href="https://www.nuget.org/packages/WindowsAzure.ServiceBus/">Azure 服务总线库 NuGet 程序包</a>并添加对它的引用。
+	这样便会下载、安装 <a href="https://www.nuget.org/packages/WindowsAzure.ServiceBus/">Azure 服务总线库 NuGet 包</a>并添加对它的引用。
 
 4. 在 **Program.cs** 文件顶部添加以下  `using` 语句：
 
-		using Microsoft.ServiceBus.Messaging;
+	```
+	using System.Threading;
+	using Microsoft.ServiceBus.Messaging;
+	```
 
-5. 将以下  `static` 字段添加到 **Program** 类，从而将值分别替换为您在上一节中创建的事件中心的名称和具有 **send** 权限的连接字符串：
+5. 将以下字段添加到 **Program** 类，从而将占位符值分别替换为你在上一节中创建的事件中心的名称和具有 **Send** 权限的连接字符串（**SendRule** 连接字符串）。请务必删除连接字符串的 `EntityPath` 后缀：
 
-		static string eventHubName = "{event hub name}";
-        static string connectionString = "{send connection string}";
+	```
+	static string eventHubName = "{Event Hub name}";
+	static string connectionString = "{send connection string}";
+	```
 
 6. 将以下方法添加到 **Program** 类：
 
-		static async Task SendingRandomMessages()
-        {
-            var eventHubClient = EventHubClient.CreateFromConnectionString(connectionString, eventHubName);
-            while (true)
-            {
-                try
-                {
-                    var message = Guid.NewGuid().ToString();
-                    Console.WriteLine("{0} > Sending message: {1}", DateTime.Now.ToString(), message);
-                    await eventHubClient.SendAsync(new EventData(Encoding.UTF8.GetBytes(message)));
-                }
-                catch (Exception exception)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("{0} > Exception: {1}", DateTime.Now.ToString(), exception.Message);
-                    Console.ResetColor();
-                }
+	```
+	static void SendingRandomMessages()
+	{
+	    var eventHubClient = EventHubClient.CreateFromConnectionString(connectionString, eventHubName);
+	    while (true)
+	    {
+	        try
+	        {
+	            var message = Guid.NewGuid().ToString();
+	            Console.WriteLine("{0} > Sending message: {1}", DateTime.Now, message);
+	            eventHubClient.Send(new EventData(Encoding.UTF8.GetBytes(message)));
+	        }
+	        catch (Exception exception)
+	        {
+	            Console.ForegroundColor = ConsoleColor.Red;
+	            Console.WriteLine("{0} > Exception: {1}", DateTime.Now, exception.Message);
+	            Console.ResetColor();
+	        }
 
-                await Task.Delay(200);
-            }
-        }
+	        Thread.Sleep(200);
+	    }
+	}
+	```
 
 	此方法会不断地将事件发送到事件中心，迟延为 200 毫秒。
 
 7. 最后，在 **Main** 方法中添加以下行：
 
-		Console.WriteLine("Press Ctrl-C to stop the sender process");
-        Console.WriteLine("Press Enter to start now");
-        Console.ReadLine();
-        SendingRandomMessages().Wait();
-        
-8. 点击**发送规则**的复制按钮并将连接字符串复制到记事本中。将";EntityPath=eventhub"（包括分号）从连接字符串后缀移除。这是一步是必须要做的，因为"EntitiyPath"的后缀代表的是一个实体级的连接字符串，但是我们使用`EventProcessorHost`类来访问事件中心时是命名空间级别。在处理**接收规则**连接字符串的时候也需要进行同样的操作。
+	```
+	Console.WriteLine("Press Ctrl-C to stop the sender process");
+	Console.WriteLine("Press Enter to start now");
+	Console.ReadLine();
+	SendingRandomMessages();
+	```
 
-    ![][9]
 
 <!-- Images -->
 [7]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png

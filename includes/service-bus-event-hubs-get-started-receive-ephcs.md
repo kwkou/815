@@ -14,17 +14,15 @@
 
     ![][12]
 
-    复制访问密钥，供本教程后面使用。
+    复制主访问密钥，供本教程后面使用。
 
 4. 在 Visual Studio 中，使用**控制台应用程序**项目模板创建一个新的 Visual C# 桌面应用项目。将该项目命名为 **Receiver**。
 
     ![][14]
 
-5. 在“解决方案资源管理器”中，右键单击该解决方案，然后单击“管理 NuGet 包”。
+5. 在“解决方案资源管理器”中，右键单击该解决方案，然后单击“为解决方案管理 NuGet 包”。
 
-	此时将显示“管理 NuGet 包”对话框。
-
-6. 搜索 `Azure Service Bus Event Hub - EventProcessorHost`、单击“安装”，并接受使用条款。
+6. 单击“浏览”选项卡，然后搜索 `Microsoft Azure Service Bus Event Hub - EventProcessorHost`。确保在“版本”框中指定项目名称（“Receiver”）。单击“安装”并接受使用条款。
 
     ![][13]
 
@@ -37,18 +35,9 @@
 	```
 	using Microsoft.ServiceBus.Messaging;
 	using System.Diagnostics;
-	using System.Threading.Tasks;
 	```
 
 	然后，用以下代码替换该类的正文：
-
-	```
-	using Microsoft.ServiceBus.Messaging;
-	using System.Diagnostics;
-	using System.Threading.Tasks;
-	```
-
-	Then, substitute the following code for the body of the class:
 
 	```
     class SimpleEventProcessor : IEventProcessor
@@ -90,25 +79,23 @@
             }
 	    }
 	}
-    ````
+    ```
 
 	此类将由 **EventProcessorHost** 调用，以处理从事件中心接收的事件。请注意，`SimpleEventProcessor` 类使用秒表以定期对 **EventProcessorHost** 上下文调用检查点方法。这将确保接收方重新启动时将会丢失的处理工作不会超过五分钟。
 
-9. 在文件顶部的 **Program** 类中，添加以下 `using` 语句：
+9. 在 **Program** 类中，在文件顶部添加以下 `using` 语句：
 
 	```
 	using Microsoft.ServiceBus.Messaging;
-	using Microsoft.Threading;
-	using System.Threading.Tasks;
 	```
 
-	然后，按如下所示在 `Program` 类中修改 `Main` 方法，并替换事件中心名称和之前在记事本中修改过的连接字符串，以及存储帐户和你在前面部分中复制的密钥：
+	然后，如下所示在 `Program` 类中修改 `Main` 方法，替换事件中心名称和 **ReceiveRule** 连接字符串，并存储帐户和你在前面部分中复制的密钥。请务必删除连接字符串的 `EntityPath` 后缀：
 
-     ```
+    ```
 	static void Main(string[] args)
     {
-      string eventHubConnectionString = "{event hub connection string}";
-      string eventHubName = "{event hub name}";
+      string eventHubConnectionString = "{Event Hub connection string}";
+      string eventHubName = "{Event Hub name}";
       string storageAccountName = "{storage account name}";
       string storageAccountKey = "{storage account key}";
       string storageConnectionString = string.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}", storageAccountName, storageAccountKey);
@@ -116,15 +103,17 @@
       string eventProcessorHostName = Guid.NewGuid().ToString();
       EventProcessorHost eventProcessorHost = new EventProcessorHost(eventProcessorHostName, eventHubName, EventHubConsumerGroup.DefaultGroupName, eventHubConnectionString, storageConnectionString);
       Console.WriteLine("Registering EventProcessor...");
-      eventProcessorHost.RegisterEventProcessorAsync<SimpleEventProcessor>().Wait();
+      var options = new EventProcessorOptions();
+      options.ExceptionReceived += (sender, e) => { Console.WriteLine(e.Exception); };
+      eventProcessorHost.RegisterEventProcessorAsync<SimpleEventProcessor>(options).Wait();
 
       Console.WriteLine("Receiving. Press enter key to stop worker.");
       Console.ReadLine();
       eventProcessorHost.UnregisterEventProcessorAsync().Wait();
     }
-	````
+	```
 
-> [AZURE.NOTE] 本教程使用单个 [EventProcessorHost][] 实例。若要增加吞吐量，建议运行多个 [EventProcessorHost][] 实例，如[扩大事件处理][]示例中所示。在那些情况下，为了对接收到的事件进行负载平衡，各个不同实例会自动相互协调。如果希望多个接收方都各自处理*全部*事件，则必须使用 **ConsumerGroup** 概念。在从不同计算机中接收事件时，根据部署 [EventProcessorHost][] 实例的计算机（或角色）来指定该实例的名称可能会很有用。有关这些主题的详细信息，请参阅[事件中心概述][]和[事件中心编程指南][]主题。
+> [AZURE.NOTE] 本教程使用单个 [EventProcessorHost][] 实例。若要增加吞吐量，建议运行多个 [EventProcessorHost][] 实例，如[扩大事件处理][]示例中所示。在那些情况下，为了对接收到的事件进行负载平衡，各个不同实例会自动相互协调。如果希望多个接收方都各自处理全部事件，则必须使用 **ConsumerGroup** 概念。在从不同计算机中接收事件时，根据部署 [EventProcessorHost][] 实例的计算机（或角色）来指定该实例的名称可能会很有用。有关这些主题的详细信息，请参阅[事件中心概述][]和[事件中心编程指南][]主题。
 
 <!-- Links -->
 [事件中心概述]: /documentation/articles/event-hubs-overview

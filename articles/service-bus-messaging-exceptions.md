@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线消息传送异常 | Microsoft Azure"
+   pageTitle="服务总线消息传送异常 | Azure"
    description="服务总线消息传送异常和建议的操作列表。"
    services="service-bus"
    documentationCenter="na"
@@ -9,11 +9,11 @@
 <tags 
    ms.service="service-bus"
    ms.date="01/25/2016"
-   wacn.date="03/28/2016" />
+   wacn.date="05/23/2016" />
 
 # 服务总线消息传送异常
 
-本文列出 Microsoft Azure 服务总线消息传送 API 生成的一些异常。这些参考信息可随时更改，请不时返回查看更新内容。
+本文列出了 Microsoft Azure 服务总线消息传送 API 生成的一些异常。这些参考信息可随时更改，请不时返回查看更新内容。
 
 ## 异常类别
 
@@ -25,7 +25,7 @@
 
 3.  暂时性异常（[Microsoft.ServiceBus.Messaging.MessagingException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingexception.aspx)、[Microsoft.ServiceBus.Messaging.ServerBusyException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.serverbusyexception.aspx)、[Microsoft.ServiceBus.Messaging.MessagingCommunicationException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingcommunicationexception.aspx)）。常规操作：重试操作或通知用户。
 
-4.  其他异常（[System.Transactions.TransactionException](https://msdn.microsoft.com/zh-cn/library/system.transactions.transactionexception.aspx)、[System.TimeoutException](https://msdn.microsoft.com/zh-cn/library/system.timeoutexception.aspx)、[Microsoft.ServiceBus.Messaging.MessageLockLostException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagelocklostexception.aspx)、[Microsoft.ServiceBus.Messaging.SessionLockLostException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sessionlocklostexception.aspx)）。常规操作：通常不需要处理这些异常来执行清理或中止操作。它们可用于跟踪。
+4.  其他异常（[System.Transactions.TransactionException](https://msdn.microsoft.com/zh-cn/library/system.transactions.transactionexception.aspx)、[System.TimeoutException](https://msdn.microsoft.com/zh-cn/library/system.timeoutexception.aspx)、[Microsoft.ServiceBus.Messaging.MessageLockLostException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagelocklostexception.aspx)、[Microsoft.ServiceBus.Messaging.SessionLockLostException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sessionlocklostexception.aspx)）。常规操作：特定于异常类型；请参考以下部分中的表。
 
 ## 异常类型
 
@@ -54,7 +54,7 @@
 | [MessagingEntityDisabledException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingentitydisabledexception.aspx) | 对已禁用的实体请求运行时操作。 | 激活实体。 | 如果在此期间该实体已激活，则重试可能会有帮助。 |
 | [NoMatchingSubscriptionException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.nomatchingsubscriptionexception.aspx) | 如果你向已启用预筛选的主题发送消息并且所有筛选器都不匹配，则服务总线将返回此异常。 | 确保至少有一个筛选器匹配。 | 重试不会解决问题。 |
 | [MessageSizeExceededException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagesizeexceededexception.aspx) | 消息负载超出 256K 限制。请注意，256K 限制是指总消息大小，可能包括系统属性和任何 .NET 开销。 | 减少消息负载的大小，然后重试操作。 | 重试不会解决问题。 |
-| [TransactionException](https://msdn.microsoft.com/zh-cn/library/system.transactions.transactionexception.aspx) | 环境事务 (*Transaction.Current*) 无效。该事务可能已完成或已中止。内部异常可能提供了更多信息。| | 重试不会解决问题。|
+| [TransactionException](https://msdn.microsoft.com/zh-cn/library/system.transactions.transactionexception.aspx) | 环境事务 (“Transaction.Current”) 无效。该事务可能已完成或已中止。内部异常可能提供了更多信息。| | 重试不会解决问题。| -
 | [TransactionInDoubtException](https://msdn.microsoft.com/zh-cn/library/system.transactions.transactionindoubtexception.aspx) | 尝试对有问题的事务执行操作，或者尝试提交事务时事务出现问题。| 应用程序必须处理此异常（作为特殊情况），因为该事务可能已提交。| - |
 
 ## 后续步骤
