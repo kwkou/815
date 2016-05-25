@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="03/14/2016"
-   wacn.date="04/05/2016"/>
+   ms.date="03/25/2016"
+   wacn.date="05/23/2016"/>
 
 # SQL 数据仓库中的表分区
 

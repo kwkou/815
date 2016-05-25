@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="03/03/2016"
-   wacn.date="04/11/2016"/>
+   ms.date="03/23/2016"
+   wacn.date="05/23/2016"/>
 
 # 故障排除
 以下主题列出了客户在使用 Azure SQL 数据仓库时经常遇到的一些问题。
