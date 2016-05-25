@@ -1,16 +1,16 @@
 <properties
-	pageTitle="Android 上的身份验证入门（JavaScript 后端）| Microsoft Azure"
+	pageTitle="Android 上的身份验证入门（JavaScript 后端）| Azure"
 	description="了解如何使用移动服务通过提供各种标识提供程序（包括 Microsoft 和 Azure Active Directory）对 Android 应用程序的用户进行身份验证（JavaScript 后端）。"
 	services="mobile-services"
 	documentationCenter="android"
 	authors="RickSaling"
-	manager="dwrede"
+	manager="erikre"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="01/20/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="04/07/2016"
+	wacn.date="05/23/2016"/>
 
 # 向移动服务 Android 应用添加身份验证（JavaScript 后端）
 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="适用于 Xamarin.Android 的移动服务入门 | Microsoft Azure" 
+	pageTitle="适用于 Xamarin.Android 的移动服务入门 | Azure" 
 	writer="craigd" 
 	description="了解如何对 Xamarin.Android 应用程序使用 Azure 移动服务。" 
 	documentationCenter="xamarin" 
@@ -11,7 +11,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="02/10/2016"
-	wacn.date="04/11/2016"/>
+	wacn.date="05/23/2016"/>
 
 #  <a name="getting-started"></a>移动服务入门
 
@@ -25,7 +25,7 @@
 
 ![][0]
 
-完成本教程需要 [Xamarin.Android]，该工具将安装 Xamarin Studio 和 Visual Studio 插件（在 Windows 上）以及最新的 Android 平台。需要使用 Android 4.2 SDK 或更高版本。
+完成本教程需要 XCode 和 Xamarin Studio（对于 OS X）或 Visual Studio（对于 Windows）以及联网的 Mac。[设置和安装 Visual Studio 和 Xamarin](https://msdn.microsoft.com/zh-cn/library/mt613162.aspx) 中提供了完整的安装说明。
 
 下载的快速入门项目包含适用于 Xamarin.Android 的 Azure 移动服务组件。尽管此项目面向 Android 4.2 或更高版本，但移动服务 SDK 只需要 Android 2.2 或更高版本。
 
@@ -55,7 +55,7 @@
 
 4. 在“下载并运行应用程序”下面单击“下载”。
 
-	随即将会下载已连接到移动服务的示例待办事项列表应用程序的项目。将压缩的项目文件保存到本地计算机，并记下保存位置。
+	随即将会下载已连接到移动服务的示例_待办事项列表_应用程序的项目。将压缩的项目文件保存到本地计算机，并记下保存位置。
 
 ##  运行 Android 应用程序
 
@@ -69,13 +69,14 @@
 
 	> [AZURE.NOTE]若要在 Android 模拟器中运行项目，必须至少定义一个 Android 虚拟设备 (AVD)。使用 AVD 管理器创建和管理这些设备。
 
-4. 在应用程序中键入有意义的文本（例如 Complete the tutorial），然后单击“添加”。
+4. 在应用程序中键入有意义的文本（例如 _完成本教程_），然后单击“添加”。
 
 	![][10]
 
 	这样可向在 Azure 中托管的新移动服务发送 POST 请求。来自请求的数据被插入到 TodoItem 表。移动服务返回存储在表中的项，数据显示在列表中。
 
-	> [AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.cs C# 文件中。
+	> [AZURE.NOTE] 
+   	你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.cs C# 文件中。
 
 6. 返回 [Azure 经典门户]，单击“数据”选项卡，然后单击“TodoItems”表。
 

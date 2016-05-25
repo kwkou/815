@@ -10,7 +10,7 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="02/11/2016"
-	wacn.date="04/11/2016"/>
+	wacn.date="05/23/2016"/>
 
 # 向移动服务应用程序添加身份验证
 
@@ -27,7 +27,7 @@
 
 本教程基于移动服务快速入门。此外，还必须先完成[移动服务入门]教程。
 
-完成本教程需要安装 [Xamarin.iOS]、XCode 6.0 和 iOS 7.0 或更高版本。
+完成本教程需要安装 [Xamarin Studio]、XCode 6.0 和 iOS 7.0 或更高版本。
 
 ## <a name="register"></a>注册应用程序以进行身份验证并配置移动服务
 
@@ -145,6 +145,6 @@
 [使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
 
 [已完成的示例项目]: http://go.microsoft.com/fwlink/p/?LinkId=331328
-[Xamarin.iOS]: http://xamarin.com/download
+[Xamarin Studio]: http://xamarin.com/download
 
 <!---HONumber=Mooncake_0118_2016-->

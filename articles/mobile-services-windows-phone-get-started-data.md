@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将移动服务添加到现有应用 (WP8) | Microsoft Azure" 
+	pageTitle="将移动服务添加到现有应用 (WP8) | Azure" 
 	description="了解如何使用来自 Azure 移动服务 Windows Phone 8 应用程序的数据。" 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="11/11/2015" 
-	wacn.date="03/21/2016"/>
+	wacn.date="05/23/2016"/>
 
 
 #  将移动服务添加到现有应用程序
@@ -163,7 +163,7 @@
 * [向应用程序添加推送通知](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push)
   <br/>了解如何使用移动服务将非常基本的推送通知发送到应用程序。
  
-* [移动服务 C# 操作方法概念性参考 ](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
+* [移动服务 C# 操作方法概念性参考 ](/documentation/articles/mobile-services-dotnet-how-to-use-client-library)
   <br/>了解有关如何将移动服务与 .NET 一起使用的详细信息。
  
 <!-- Anchors. -->

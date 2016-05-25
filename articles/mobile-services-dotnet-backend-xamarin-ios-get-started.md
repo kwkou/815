@@ -1,5 +1,5 @@
 <properties
-	pageTitle="用于 Xamarin iOS 应用的移动服务入门 | Microsoft Azure"
+	pageTitle="用于 Xamarin iOS 应用的移动服务入门 | Azure"
 	description="按照本教程进行操作，开始使用 Azure 移动服务进行 Xamarin iOS 开发"
 	services="mobile-services"
 	documentationCenter="xamarin"
@@ -10,13 +10,13 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="03/16/2016"
-	wacn.date="04/11/2016"/>
+	wacn.date="05/23/2016"/>
 
 # <a name="getting-started"></a>移动服务入门
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
-本教程说明如何使用 Azure 移动服务向 Xamarin iOS 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单待办事项列表应用程序。要创建的移动服务将使用支持的 .NET 语言，你可以使用 Visual Studio 来提供服务器端业务逻辑和管理移动服务。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本]。
+本教程说明如何使用 Azure 移动服务向 Xamarin iOS 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单_待办事项列表_应用程序。要创建的移动服务将使用支持的 .NET 语言，你可以使用 Visual Studio 来提供服务器端业务逻辑和管理移动服务。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本]。
 
 >[AZURE.NOTE]本主题演示如何使用 Azure 管理门户创建新的移动服务项目。通过使用 Visual Studio 2013 Update 2，还可以向现有的 Visual Studio 解决方案添加新的移动服务项目。有关详细信息，请参阅[快速入门：添加移动服务（.NET 后端）](http://msdn.microsoft.com/zh-cn/library/windows/apps/dn629482.aspx)
 
@@ -39,6 +39,7 @@
 
 在本部分中，你将为移动服务下载新的 Xamarin iOS 应用程序和服务项目。
 
+1. 如果尚未进行此操作，请安装 Visual Studio with Xamarin。有关说明，可查阅[设置和安装 Visual Studio 和 Xamarin](https://msdn.microsoft.com/zh-cn/library/mt613162.aspx)。你还可以使用 Mac OS X 计算机上的 Xamarin Studio，请参阅 [Mac 用户的设置、安装和验证](https://msdn.microsoft.com/zh-cn/library/mt488770.aspx)。
 1. 在 [Azure 管理门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2. 在快速入门选项卡中，单击“选择平台”下的“Xamarin”，然后展开“创建新的 Xamarin 应用程序”。
@@ -49,9 +50,6 @@
 
   	![][7]
 
-3. 在本地计算机或虚拟机上下载并安装 <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a>（如果尚未这么做）。
-
-4. 下载并安装 [Xcode] v4.4 或更高版本以及 [Xamarin Studio]。还可以使用 Xamarin for Visual Studio。
 
 5. 在“下载你的服务并将其发布到云”下，选择“iOS”并单击“下载”。
 
@@ -79,7 +77,7 @@
 
 2. 按“运行”按钮以生成客户端项目，并在 iPhone 模拟器中启动应用程序。
 
-3. 在应用中键入有意义的文本（例如 Complete the tutorial），然后单击加号 (**+**) 图标。
+3. 在应用中键入有意义的文本（例如 _完成本教程_），然后单击加号 (**+**) 图标。
 
 	![][10]
 
@@ -131,9 +129,4 @@
 [JavaScript 后端版本]: /documentation/articles/mobile-services-ios-get-started
 [移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
 
-
-[Xamarin Studio]: http://xamarin.com/download
-[Xcode]: https://go.microsoft.com/fwLink/?LinkID=266532&clcid=0x409
-[Xamarin for Windows]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409
-
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0516_2016-->

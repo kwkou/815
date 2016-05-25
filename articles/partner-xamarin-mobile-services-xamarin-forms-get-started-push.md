@@ -10,7 +10,7 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="03/18/2016"
-	wacn.date="04/11/2016"/>
+	wacn.date="05/23/2016"/>
 
 # 向 Xamarin.Forms 应用添加推送通知
 
@@ -27,7 +27,7 @@
 
 + IOS 8 设备（无法在 iOS 模拟器中测试推送通知）
 + iOS 开发人员计划成员身份
-+ [Xamarin.iOS Studio]
++ [Xamarin Studio]
 + [Azure 移动服务组件]
 + 有效的 Google 帐户
 + [Google Cloud Messaging 客户端组件]。在学习本教程的过程中，你将要添加此组件。
@@ -55,7 +55,7 @@
 
    	此时将显示“创建新表”对话框。
 
-3. 在“表名”中键入 TodoItem，然后单击勾选按钮。
+3. 在“表名”中键入 _TodoItem_，然后单击勾选按钮。
 
     ![][124]
 
@@ -222,7 +222,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
     此时将显示“上载证书”对话框。
 
-4. 单击“文件”，选择导出的 .p12 证书文件，输入“密码”，确保已选择正确的“模式”，单击勾选图标，然后单击“保存”。
+4. 单击“文件”，选择导出的 .p12 证书文件，输入密码，确保已选择正确的“模式”，单击勾选图标，然后单击“保存”。
 
     ![][20]
 
@@ -638,7 +638,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 3. 在顶部工具栏中，单击“运行”，然后选择你的应用。这将启动模拟器并运行该应用程序。
 
-  应用将从 GCM 检索 registrationId 并注册到通知中心。
+  应用将从 GCM 检索 *registrationId* 并注册到通知中心。
 
 4. 在应用中，添加新的任务。
 
@@ -828,7 +828,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 [127]: ./media/partner-xamarin-mobile-services-xamarin-forms-get-started-push/notification-area-received.png
 
 
-[Xamarin.iOS Studio]: http://xamarin.com/platform
+[Xamarin Studio]: http://xamarin.com/download
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
@@ -842,7 +842,6 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
 [completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331303
-[Xamarin.iOS]: http://xamarin.com/download
 [Google Cloud Messaging 客户端组件]: http://components.xamarin.com/view/GCMClient/
 [Xamarin.Forms Azure 推送通知初学者示例]: https://github.com/Azure/mobile-services-samples/tree/master/TodoListXamarinForms
 [已完成的 Xamarin.Forms Azure 推送通知示例]: https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithPushXamarinForms

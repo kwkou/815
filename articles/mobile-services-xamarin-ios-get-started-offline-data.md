@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在移动服务中使用脱机数据 (Xamarin iOS) | Microsoft Azure" 
+	pageTitle="在移动服务中使用脱机数据 (Xamarin iOS) | Azure" 
 	description="了解如何使用 Azure 移动服务向 Xamarin iOS 应用程序中的缓存和同步离线数据" 
 	documentationCenter="xamarin" 
 	authors="lindydonna" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="01/21/2016"
-	wacn.date="04/11/2016"/>
+	wacn.date="05/23/2016"/>
 
 #  在移动服务中使用脱机数据同步
 
@@ -39,14 +39,14 @@
 
 本教程需要的内容如下：
 
-* OS X 上带 [Xamarin 扩展]**或** [Xamarin Studio] 的 Visual Studio
-* XCode 4.5 和 iOS 6.0（或更高版本） 
-* 完成[移动服务入门]教程
+* Visual Studio with Xamarin。有关说明，请参阅[设置和安装 Visual Studio 和 Xamarin](https://msdn.microsoft.com/zh-cn/library/mt613162.aspx)。 
+* 安装了 Xcode v7.0 版或更高版本以及 Xamarin Studio Community 的 Mac。请参阅 [设置和安装 Visual Studio 和 Xamarin](https://msdn.microsoft.com/zh-cn/library/mt613162.aspx) 和 [Mac 用户的设置、安装和验证](https://msdn.microsoft.com/zh-cn/library/mt488770.aspx) (MSDN)。
+* 完成 [Get started with Mobile Services（移动服务入门）]教程。
+
 
 ##  <a name="review-offline"></a>查看移动服务同步代码
 
-Azure 移动服务脱机同步允许最终用户在无法访问网络时与本地数据库交互。若要在你的应用程序中使用这些功能，请将 `MobileServiceClient.SyncContext` 初始化到本地存储。然后，通过 `IMobileServiceSyncTable` 接口引用你的表。
-本部分将指导完成脱机同步 `QSTodoService.cs` 中的相关代码。
+Azure 移动服务脱机同步允许最终用户在无法访问网络时与本地数据库交互。若要在你的应用程序中使用这些功能，请将 `MobileServiceClient.SyncContext` 初始化到本地存储。然后，通过 `IMobileServiceSyncTable` 接口引用你的表。本部分将指导完成脱机同步 `QSTodoService.cs` 中的相关代码。
 
 1. 在 Visual Studio 中，打开你在完成[移动服务入门]教程后创建的项目。打开 `QSTodoService.cs` 文件。
 
@@ -93,7 +93,7 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
     在此示例中，我们检索远程中的所有记录 `TodoItem` 表中，但它也可能是要作为筛选依据传递查询的记录。`PullAsync()` 的第一个参数是用于增量同步的查询 ID；增量同步使用 `UpdatedAt` 时间戳以仅获取自上次同步以来修改的那些记录。查询 ID 应对于你的应用程序中的每个逻辑查询都是唯一的描述性字符串。若选择不要增量同步，请传递 `null` 作为查询 ID。此命令会检索每个请求的操作，这是可能效率低下上的所有记录。
 
-    >[AZURE.NOTE] 若要从设备本地存储区中删除已在移动设备数据库中删除的记录，应启用[软删除]。否则，你的应用程序应定期调用 `IMobileServiceSyncTable.PurgeAsync()` 以清除本地存储。
+    >[AZURE.NOTE] 若要从设备本地存储区中删除已在移动设备数据库中删除的记录，应启用“[软删除]”。否则，你的应用程序应定期调用 `IMobileServiceSyncTable.PurgeAsync()` 以清除本地存储。
 
     请注意，推送和请求操作可能会发生 `MobileServicePushFailedException`。
 
@@ -146,7 +146,7 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
 3. 登录到 [Azure 管理门户]，查看你的移动服务数据库。如果服务使用 JavaScript 后端，则你可以从移动服务的“数据”选项卡浏览数据。
 
-    如果将 .NET 后端用于移动服务，请在 Visual Studio 中，转到“服务器资源管理器”->“Azure”->“SQL 数据库”。右键单击数据库并选择“在 SQL Server 对象资源管理器中打开”。
+    如果将 .NET 后端用于移动服务，请在 Visual Studio 中，转到“服务器资源管理器”>“Azure”>“SQL 数据库”。右键单击数据库并选择“在 SQL Server 对象资源管理器中打开”。
 
     请注意，数据尚未在数据库和本地存储之间同步。
 
@@ -172,12 +172,11 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 <!-- URLs. -->
 [使用移动服务脱机支持处理冲突]: /documentation/articles/mobile-services-xamarin-ios-handling-conflicts-offline-data/
 [处理脱机支持的移动服务与冲突]: /documentation/articles/mobile-services-xamarin-ios-handling-conflicts-offline-data/
+[Get started with Mobile Services（移动服务入门）]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started/
 [移动服务入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started/
 [如何使用适用于 Azure 移动服务的 Xamarin 组件客户端]: /documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library/
 [软删除]: /documentation/articles/mobile-services-using-soft-delete/
 
-[Xamarin Studio]: http://xamarin.com/download
-[Xamarin 扩展]: http://xamarin.com/visual-studio
 [Azure 管理门户]: https://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0118_2016-->

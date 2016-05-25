@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="12/07/2015" 
-	wacn.date="01/29/2016"/>
+	wacn.date="05/23/2016"/>
 
 
 #  向移动服务应用程序添加推送通知
@@ -23,7 +23,7 @@
 
 本教程是在 TodoList 示例应用程序的基础上制作的。在开始本教程之前，必须先完成主题[将移动服务添加到现有应用程序]以将项目连接到移动服务。如果尚未连接移动服务，“添加推送通知”向导可为你创建此连接。
 
->[AZURE.NOTE]若要向 Windows Phone 8.1 应用商店应用程序发送推送通知，请遵照本教程的 [Windows 应用商店应用程序](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push)版本。
+>[AZURE.NOTE]若要向 Windows Phone 8.1 应用商店应用程序发送推送通知，请遵照本教程的 [Windows 应用商店应用程序](/documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-push)版本。
 
 ## <a id="update-app"></a>更新应用程序以注册通知
 
