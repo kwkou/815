@@ -8,8 +8,8 @@
    editor="" />
 <tags 
    ms.service="event-hubs"
-   ms.date="01/26/2016"
-   wacn.date="03/28/2016" />
+    ms.date="04/15/2016"
+   wacn.date="05/23/2016" />
 
 # Azure 事件中心概述
 
