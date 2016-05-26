@@ -106,7 +106,7 @@ Azure 事件中心是一种事件处理服务，用于向云提供大规模的�
 
 ##### 连接到分区
 
-为了使用事件中心内的事件，使用者必须连接到一个分区。如前所述，你始终要通过使用者组访问分区。作为分区使用者模式的一部分，在使用者组中，每个分区上每次只能有一个读取者处于活动状态。在直接连接到分区时，常见的做法是使用租用机制来协调读取者与特定分区的连接。这样，便可以做到一个使用者组中每分区只有一个活动的读取者。管理读取者序列中的位置是一项重要任务，这可以通过检查点来实现。使用 .NET 客户端的 [EventProcessorHost](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventprocessorhost.aspx) 类可以简化此功能。[EventProcessorHost](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventprocessorhost.aspx) 是智能使用者代理，下一部分对此做了介绍。
+为了使用事件中心内的事件，使用者必须连接到一个分区。如前所述，你始终要通过使用者组访问分区。作为分区使用者模式的一部分，在使用者组中，每个分区上每次只能有一个读取者处于活动状态。在直接连接到分区时，常见的做法是使用租用机制来协调读取者与特定分区的连接。这样，便可以做到一个使用者组中每分区只有一个活动的读取者。管理读取者序列中的位置是一项重要任务，这可以通过检查点来实现。使用 .NET 客户端的 [EventProcessorHost](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.eventprocessorhost.aspx) 类可以简化此功能。[EventProcessorHost](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventprocessorhost.aspx) 是智能使用者代理，下一部分对此做了介绍。
 
 ##### 读取事件
 
