@@ -304,7 +304,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 * 若要以更大的规模设置混合 HPC Pack 群集部署，请参阅 [Burst to Azure Worker Role Instances with Microsoft HPC Pack（使用 Microsoft HPC Pack 迸发到 Azure 辅助角色实例）](http://go.microsoft.com/fwlink/p/?LinkID=200493)。
 
-* 有关在 Azure 中创建 HPC Pack 群集的其他方法，包括使用 Azure 资源管理器模板，请参阅 [HPC cluster options with Microsoft HPC Pack in Azure（在 Azure 中使用 Microsoft HPC Pack 时的 HPC 群集选项）](/documentation/articles/virtual-machines-linux-hpcpack-cluster-options)。
+* 有关在 Azure 中创建 HPC Pack 群集的其他方法，包括使用 Azure 资源管理器模板，请参阅 [HPC cluster options with Microsoft HPC Pack in Azure（在 Azure 中使用 Microsoft HPC Pack 时的 HPC 群集选项）](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options)。
 * 有关 Azure 中的大型计算和 HPC 云解决方案范围的详细信息，请参阅 [Big Compute in Azure: Technical Resources for Batch and High Performance Computing (HPC)（Azure 中的大型计算：用于批处理和高性能计算 (HPC) 的技术资源）](/documentation/articles/big-compute-resources)。
 
 

@@ -18,7 +18,7 @@
 **单一数据库**
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-get-started)
+- [Azure 管理门户](/documentation/articles/sql-database-get-started)
 - [C#](/documentation/articles/sql-database-get-started-csharp)
 - [PowerShell](/documentation/articles/sql-database-get-started-powershell)
 

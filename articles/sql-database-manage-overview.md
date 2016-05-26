@@ -16,9 +16,9 @@
 
 本主题介绍并比较用于管理 Azure SQL 数据库的工具和选项，以便你可以挑选适合作业、业务以及你自己的工具。选择合适的工具取决于你管理的数据库数量、任务以及执行任务的频率。
 
-## Azure 门户
+## Azure 管理门户
 
-[Azure 门户](https://manage.windowsazure.cn)是一个基于 Web 的应用程序，你可以从中创建、更新和删除数据库及逻辑服务器并监视数据库活动。如果你是刚开始使用 Azure（管理少量的数据库）或需要快速执行某些操作，该工具是理想之选。
+[Azure 管理门户](https://manage.windowsazure.cn)是一个基于 Web 的应用程序，你可以从中创建、更新和删除数据库及逻辑服务器并监视数据库活动。如果你是刚开始使用 Azure（管理少量的数据库）或需要快速执行某些操作，该工具是理想之选。
 
 ## Visual Studio 中的 SQL Server Management Studio 和 SQL Server Data Tools
 
