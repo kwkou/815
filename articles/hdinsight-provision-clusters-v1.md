@@ -55,6 +55,7 @@
 	- Hadoop 群集：用于查询和分析工作负荷
 	- HBase 群集：用于 NoSQL 工作负荷
 	- Storm 群集：用于实时事件处理工作负荷
+	- Spark 群集：目前 Azure 中国还不支持
 
 	![HDInsight 群集](./media/hdinsight-provision-clusters-v1/hdinsight.clusters.png)
  
