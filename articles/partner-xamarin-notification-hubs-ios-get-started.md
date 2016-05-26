@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用通知中心针对 Xamarin 应用发送 iOS 推送通知 | Microsoft Azure"
+	pageTitle="使用通知中心针对 Xamarin 应用发送 iOS 推送通知 | Azure"
 	description="在本教程中，你将了解如何使用 Azure 通知中心将推送通知发送到 Xamarin iOS 应用程序。"
 	services="notification-hubs"
         keywords="ios 推送通知, 推送消息, 推送通知, 推送消息"
@@ -11,7 +11,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="02/15/2016"
-	wacn.date="05/09/2016"/>
+	wacn.date="05/26/2016"/>
 
 # 通知中心入门
 # 使用通知中心针对 Xamarin 应用发送 iOS 推送通知
@@ -42,28 +42,7 @@
 
 [AZURE.INCLUDE [通知中心：启用 Apple 推送通知](../includes/notification-hubs-enable-apple-push-notifications.md)]
 
-<!--
-##配置通知中心
 
-本部分将引导你使用创建的 **.p12** 推送证书创建新的通知中心并配置 APNS 身份验证。如果你想要使用已创建的通知中心，可以跳到步骤 5。
-
-[AZURE.INCLUDE [notification-hubs-portal-create-new-hub](../includes/notification-hubs-portal-create-new-hub.md)]
-
-
-<ol start="7">
-<li>
-<p>如果想要配置 APNS 连接，则在 Azure 门户中打开通知中心设置，并单击<b></b>“通知服务”，然后单击列表中的“Apple (APNS)”<b></b>项。完成后单击“上传证书”，并选择前面导出的 <b>.p12</b> 证书以及证书的密码。<b></b></p>
-<p>请务必选择<b></b>“沙盒”模式，因为你将在开发环境发送推送消息。仅当你想要将推送通知发送给从应用商店购买了你应用的用户时，才使用“生产”设置。<b></b></p>
-</li>
-</ol>
-&emsp;&emsp;![](./media/notification-hubs-ios-get-started/notification-hubs-apns.png)
-
-&emsp;&emsp;![](./media/notification-hubs-ios-get-started/notification-hubs-sandbox.png)
-
-
-你的通知中心现在已配置为使用 APNS，并且你有连接字符串用于注册你的应用和发送推送通知。
-
--->
 ##将你的应用连接到通知中心
 
 #### 创建新项目
