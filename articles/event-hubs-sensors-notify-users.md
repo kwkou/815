@@ -49,7 +49,6 @@
 
 - [Azure 事件中心]
 - 使用[事件中心教程]入门。
-- [使用事件中心的完整示例应用程序]。
 
 若要部署解决方案以便基于这些中心收到的数据来通知用户，请访问：
 
@@ -63,7 +62,7 @@
 [AppToNotifyUsers]: https://github.com/Azure-Samples/event-hubs-dotnet-user-notifications
 [Dynamics AX]: http://www.microsoft.com/zh-cn/dynamics/erp-ax-overview.aspx
 [Azure 网站]: /services/web-sites/
-[SQL Azure]: /services/sql-database/
+[SQL Azure]: /services/sql-databases/
 [HDInsight]: /services/hdinsight/
 [Cortana Analytics Suite]: http://www.microsoft.com/server-cloud/cortana-analytics-suite/Overview.aspx?WT.srch=1&WT.mc_ID=SEM_lLFwOJm3&bknode=BlueKai
 [Azure 通知中心]: /services/notification-hubs/
