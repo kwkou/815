@@ -170,6 +170,7 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 查看以下链接，了解有关 blob、表和队列的详细信息：
 
 [Azure 存储空间简介](/documentation/articles/storage-introduction)  
+
 - [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)
 - [通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables)
 - [通过 .NET 开始使用 Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues)
