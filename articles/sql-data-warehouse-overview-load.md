@@ -194,7 +194,6 @@ create statistics [<another name>] on [<Table Name>] ([<Another Column Name>]);
 <!--Other Web references-->
 [AZCopy 安装说明]: /documentation/articles/storage-use-azcopy/
 [适用于 SQL Server 的 Microsoft 命令行实用程序]: http://www.microsoft.com/zh-cn/download/details.aspx?id=36433
-[导入/导出]: /documentation/articles/storage-import-export-service/
 [Azure 存储空间文档]: /documentation/articles/storage-create-storage-account/
 [ExpressRoute 文档]: /documentation/services/expressroute/
 

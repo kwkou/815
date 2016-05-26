@@ -226,24 +226,24 @@ Removed as these two are not confirmed / supported under SQLDW
 ```
 WITH rg
 AS
-(   SELECT  pn.name									AS node_name
-	,		pn.[type]								AS node_type
-	,		pn.pdw_node_id							AS node_id
-	,		rp.name									AS pool_name
-    ,       rp.max_memory_kb*1.0/1024				AS pool_max_mem_MB
-    ,       wg.name									AS group_name
-    ,       wg.importance							AS group_importance
-    ,       wg.request_max_memory_grant_percent		AS group_request_max_memory_grant_pcnt
-    ,       wg.max_dop								AS group_max_dop
-    ,       wg.effective_max_dop					AS group_effective_max_dop
-	,		wg.total_request_count					AS group_total_request_count
-	,		wg.total_queued_request_count			AS group_total_queued_request_count
-	,		wg.active_request_count					AS group_active_request_count
-	,		wg.queued_request_count					AS group_queued_request_count
+(   SELECT  pn.name AS node_name
+	,		pn.[type] AS node_type
+	,		pn.pdw_node_id AS node_id
+	,		rp.name AS pool_name
+    ,       rp.max_memory_kb*1.0/1024 AS pool_max_mem_MB
+    ,       wg.name AS group_name
+    ,       wg.importance AS group_importance
+    ,       wg.request_max_memory_grant_percent	AS group_request_max_memory_grant_pcnt
+    ,       wg.max_dop AS group_max_dop
+    ,       wg.effective_max_dop AS group_effective_max_dop
+	,		wg.total_request_count AS group_total_request_count
+	,		wg.total_queued_request_count AS group_total_queued_request_count
+	,		wg.active_request_count AS group_active_request_count
+	,		wg.queued_request_count	AS group_queued_request_count
     FROM    sys.dm_pdw_nodes_resource_governor_workload_groups wg
-    JOIN    sys.dm_pdw_nodes_resource_governor_resource_pools rp    ON  wg.pdw_node_id  = rp.pdw_node_id
-															        AND wg.pool_id      = rp.pool_id
-	JOIN	sys.dm_pdw_nodes pn										ON	wg.pdw_node_id	= pn.pdw_node_id
+    JOIN    sys.dm_pdw_nodes_resource_governor_resource_pools rp ON wg.pdw_node_id = rp.pdw_node_id
+															        AND wg.pool_id = rp.pool_id
+	JOIN	sys.dm_pdw_nodes pn										ON	wg.pdw_node_id = pn.pdw_node_id
 	WHERE   wg.name like 'SloDWGroup%'
 	AND     rp.name = 'SloDWPool'
 )
@@ -340,12 +340,12 @@ WHERE	r.name IN ('mediumrc','largerc', 'xlargerc')
 若要识别保留在并发队列中的查询，始终可以引用 `sys.dm_pdw_exec_requests` DMV。
 
 ```
-SELECT 	 r.[request_id]									AS Request_ID
-		,r.[status]										AS Request_Status
-		,r.[submit_time]								AS Request_SubmitTime
-		,r.[start_time]									AS Request_StartTime
-        ,DATEDIFF(ms,[submit_time],[start_time])		AS Request_InitiateDuration_ms
-        ,r.resource_class                               AS Request_resource_class
+SELECT 	 r.[request_id]	AS Request_ID
+		,r.[status]	AS Request_Status
+		,r.[submit_time] AS Request_SubmitTime
+		,r.[start_time]	AS Request_StartTime
+        ,DATEDIFF(ms,[submit_time],[start_time]) AS Request_InitiateDuration_ms
+        ,r.resource_class AS Request_resource_class
 FROM    sys.dm_pdw_exec_requests r
 ;
 ```
@@ -372,8 +372,8 @@ DmsConcurrencyResourceType 引用数据移动操作生成的等待。
 
 ```
 SELECT  w.[wait_id]
-,       w.[session_id]
-,       w.[type]											AS Wait_type
+,       w.[session_id] 
+,       w.[type] AS Wait_type
 ,       w.[object_type]
 ,       w.[object_name]
 ,       w.[request_id]
@@ -381,26 +381,26 @@ SELECT  w.[wait_id]
 ,       w.[acquire_time]
 ,       w.[state]
 ,       w.[priority]
-,		SESSION_ID()										AS Current_session
-,		s.[status]											AS Session_status
+,		SESSION_ID() AS Current_session
+,		s.[status] AS Session_status
 ,		s.[login_name]
 ,		s.[query_count]
 ,		s.[client_id]
 ,		s.[sql_spid]
-,		r.[command]											AS Request_command
+,		r.[command] AS Request_command
 ,		r.[label]
-,		r.[status]											AS Request_status
+,		r.[status] AS Request_status
 ,		r.[submit_time]
 ,		r.[start_time]
 ,		r.[end_compile_time]
 ,		r.[end_time]
-,		DATEDIFF(ms,r.[submit_time],r.[start_time])			AS Request_queue_time_ms
-,		DATEDIFF(ms,r.[start_time],r.[end_compile_time])	AS Request_compile_time_ms
-,		DATEDIFF(ms,r.[end_compile_time],r.[end_time])		AS Request_execution_time_ms
+,		DATEDIFF(ms,r.[submit_time],r.[start_time]) AS Request_queue_time_ms
+,		DATEDIFF(ms,r.[start_time],r.[end_compile_time]) AS Request_compile_time_ms
+,		DATEDIFF(ms,r.[end_compile_time],r.[end_time]) AS Request_execution_time_ms
 ,		r.[total_elapsed_time]
 FROM    sys.dm_pdw_waits w
-JOIN    sys.dm_pdw_exec_sessions s  ON w.[session_id] = s.[session_id]
-JOIN    sys.dm_pdw_exec_requests r  ON w.[request_id] = r.[request_id]
+JOIN    sys.dm_pdw_exec_sessions s ON w.[session_id] = s.[session_id]
+JOIN    sys.dm_pdw_exec_requests r ON w.[request_id] = r.[request_id]
 WHERE	w.[session_id] <> SESSION_ID()
 ;
 ```
@@ -415,10 +415,10 @@ SELECT  [session_id]
 ,       [request_id]
 ,       [request_time]
 ,       [acquire_time]
-,       DATEDIFF(ms,[request_time],[acquire_time])  AS acquire_duration_ms
-,       [concurrency_slots_used]                    AS concurrency_slots_reserved
+,       DATEDIFF(ms,[request_time],[acquire_time]) AS acquire_duration_ms
+,       [concurrency_slots_used] AS concurrency_slots_reserved
 ,       [resource_class]
-,       [wait_id]                                   AS queue_position
+,       [wait_id] AS queue_position
 FROM    sys.dm_pdw_resource_waits
 WHERE	[session_id] <> SESSION_ID()
 ;

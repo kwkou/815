@@ -37,27 +37,27 @@ SQL DW 为 DBA 提供数个表类型选项：堆、群集索引 (CI) 和群集�
 若要在分区级别调整当前数据库的大小，请使用类似于下面的查询：
 
 ```
-SELECT      s.[name]                        AS      [schema_name]
-,           t.[name]                        AS      [table_name]
-,           i.[name]                        AS      [index_name]
-,           p.[partition_number]            AS      [partition_number]
-,           SUM(a.[used_pages]*8.0)         AS      [partition_size_kb]
-,           SUM(a.[used_pages]*8.0)/1024    AS      [partition_size_mb]
-,           SUM(a.[used_pages]*8.0)/1048576 AS      [partition_size_gb]
-,           p.[rows]                        AS      [partition_row_count]
-,           rv.[value]                      AS      [partition_boundary_value]
-,           p.[data_compression_desc]       AS      [partition_compression_desc]
+SELECT      s.[name] AS [schema_name]
+,           t.[name] AS [table_name]
+,           i.[name] AS [index_name]
+,           p.[partition_number] AS [partition_number]
+,           SUM(a.[used_pages]*8.0) AS [partition_size_kb]
+,           SUM(a.[used_pages]*8.0)/1024 AS [partition_size_mb]
+,           SUM(a.[used_pages]*8.0)/1048576 AS [partition_size_gb]
+,           p.[rows] AS [partition_row_count]
+,           rv.[value] AS [partition_boundary_value]
+,           p.[data_compression_desc] AS [partition_compression_desc]
 FROM        sys.schemas s
-JOIN        sys.tables t                    ON      t.[schema_id]         = s.[schema_id]
-JOIN        sys.partitions p                ON      p.[object_id]         = t.[object_id]
-JOIN        sys.allocation_units a          ON      a.[container_id]        = p.[partition_id]
-JOIN        sys.indexes i                   ON      i.[object_id]         = p.[object_id]
-                                            AND     i.[index_id]          = p.[index_id]
-JOIN        sys.data_spaces ds              ON      ds.[data_space_id]    = i.[data_space_id]
-LEFT JOIN   sys.partition_schemes ps        ON      ps.[data_space_id]    = ds.[data_space_id]
-LEFT JOIN   sys.partition_functions pf      ON      pf.[function_id]      = ps.[function_id]
-LEFT JOIN   sys.partition_range_values rv   ON      rv.[function_id]      = pf.[function_id]
-                                            AND     rv.[boundary_id]      = p.[partition_number]
+JOIN        sys.tables t ON t.[schema_id] = s.[schema_id]
+JOIN        sys.partitions p ON p.[object_id] = t.[object_id]
+JOIN        sys.allocation_units a ON a.[container_id] = p.[partition_id]
+JOIN        sys.indexes i ON i.[object_id] = p.[object_id]
+                                            AND i.[index_id] = p.[index_id]
+JOIN        sys.data_spaces ds ON ds.[data_space_id] = i.[data_space_id]
+LEFT JOIN   sys.partition_schemes ps ON ps.[data_space_id] = ds.[data_space_id]
+LEFT JOIN   sys.partition_functions pf ON pf.[function_id] = ps.[function_id]
+LEFT JOIN   sys.partition_range_values rv ON rv.[function_id] = pf.[function_id]
+                                            AND rv.[boundary_id] = p.[partition_number]
 WHERE       p.[index_id] <=1
 GROUP BY    s.[name]
 ,           t.[name]
@@ -93,18 +93,18 @@ FROM    sys.pdw_distributions
 查询资源调控器动态管理视图即可获取每个分布的内存分配信息。事实上，内存授予小于以下数据。但是，这可以提供指导，以便你在针对数据管理操作调整分区大小时使用。
 
 ```
-SELECT  rp.[name]								AS [pool_name]
-,       rp.[max_memory_kb]						AS [max_memory_kb]
-,       rp.[max_memory_kb]/1024					AS [max_memory_mb]
-,       rp.[max_memory_kb]/1048576				AS [mex_memory_gb]
-,       rp.[max_memory_percent]					AS [max_memory_percent]
-,       wg.[name]								AS [group_name]
-,       wg.[importance]							AS [group_importance]
-,       wg.[request_max_memory_grant_percent]	AS [request_max_memory_grant_percent]
-FROM    sys.dm_pdw_nodes_resource_governor_workload_groups	wg
-JOIN    sys.dm_pdw_nodes_resource_governor_resource_pools	rp ON wg.[pool_id] = rp.[pool_id]
+SELECT  rp.[name] AS [pool_name]
+,       rp.[max_memory_kb] AS [max_memory_kb]
+,       rp.[max_memory_kb]/1024 AS [max_memory_mb]
+,       rp.[max_memory_kb]/1048576 AS [mex_memory_gb]
+,       rp.[max_memory_percent] AS [max_memory_percent]
+,       wg.[name] AS [group_name]
+,       wg.[importance] AS [group_importance]
+,       wg.[request_max_memory_grant_percent] AS [request_max_memory_grant_percent]
+FROM    sys.dm_pdw_nodes_resource_governor_workload_groups wg
+JOIN    sys.dm_pdw_nodes_resource_governor_resource_pools rp ON wg.[pool_id] = rp.[pool_id]
 WHERE   wg.[name] like 'SloDWGroup%'
-AND     rp.[name]    = 'SloDWPool'
+AND     rp.[name] = 'SloDWPool'
 ;
 ```
 
