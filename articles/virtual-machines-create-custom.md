@@ -25,6 +25,6 @@
 
 ## 下一步
 
-你也可以使用经典门户[创建运行 Windows 的自定义虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal)。
+你也可以使用管理门户[创建运行 Windows 的自定义虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal)。
 
 <!---HONumber=Mooncake_0215_2016-->

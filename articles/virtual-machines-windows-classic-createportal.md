@@ -25,6 +25,6 @@
 
 ## 下一步
 
-你也可以使用经典门户[创建运行 Linux 的自定义虚拟机](/documentation/articles/virtual-machines-linux-classic-createportal)。
+你也可以使用管理门户[创建运行 Linux 的自定义虚拟机](/documentation/articles/virtual-machines-linux-classic-createportal)。
 
 <!---HONumber=Mooncake_0215_2016-->
