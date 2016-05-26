@@ -10,13 +10,12 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="01/15/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="05/26/2016"/>
 
 # 为 Azure 云服务配置自定义域名
 
 > [AZURE.SELECTOR]
-- [Azure portal](/documentation/articles/cloud-services-custom-domain-name-portal)
-- [Azure classic portal](/documentation/articles/cloud-services-custom-domain-name)
+- [Azure 管理门户](/documentation/articles/cloud-services-custom-domain-name)
 
 
 创建云服务时，Azure 会将其分配给 chinacloudapp.cn 的子域。例如，如果你的云服务名为"contoso"，你的用户将能够访问类似 http://contoso.chinacloudapp.cn 的 URL 上的应用程序。Azure 还会将分配一个虚拟 IP 地址。
