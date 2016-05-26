@@ -27,7 +27,7 @@
 * Java 开发人员工具包 (JDK) 1.7 或更高版本。
 * Eclipse IDE for Java EE Developers, Indigo 或更高版本。可以从 <http://www.eclipse.org/downloads/> 下载。
 * 基于 Java 的 Web 服务器或应用程序服务器的分发版，如 Apache Tomcat、GlassFish、JBoss 应用程序服务器、Jetty 或 IBM® WebSphere® Application Server Liberty Core。
-* Azure 订阅，可以从 <http://azure.microsoft.com/pricing/purchase-options/> 获取。
+* Azure 订阅，可以从 </pricing/purchase-options/> 获取。
 * Azure Toolkit for Eclipse。有关详细信息，请参阅[安装 Azure Toolkit for Eclipse][]。
 
 ## 创建 Hello World 应用程序 ##

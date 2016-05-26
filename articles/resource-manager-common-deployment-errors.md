@@ -17,7 +17,7 @@
 
 本主题介绍如何解决将资源部署到 Azure 时可能遇到的一些常见错误。有关排查部署问题的信息，请参阅 [Troubleshooting resource group deployments](/documentation/articles/resource-manager-troubleshoot-deployments-portal)（对资源组部署进行故障排除）。
 
-如果部署之前先验证模板和参数，则可以避免一些错误。有关验证模板的示例，请参阅 [Deploy resources with Azure Resource Manager template](resource-group-template-deploy.md)（使用 Azure Resource Manager 模板部署资源）。
+如果部署之前先验证模板和参数，则可以避免一些错误。有关验证模板的示例，请参阅 [Deploy resources with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy)（使用 Azure Resource Manager 模板部署资源）。
 
 ## 资源名称已存在
 
@@ -89,7 +89,7 @@
 
 ## 超出配额
 
-当部署超出配额（可能是根据资源组、订阅、帐户和其他范围指定的）时，你可能会遇到问题。例如，订阅可能配置为限制某个区域的核心数目。如果你尝试部署超过允许核心数目的虚拟机，将收到指出超过配额的错误消息。有关完整的配额信息，请参阅 [Azure 订阅和服务限制、配额与约束](./azure-subscription-service-limits.md)。
+当部署超出配额（可能是根据资源组、订阅、帐户和其他范围指定的）时，你可能会遇到问题。例如，订阅可能配置为限制某个区域的核心数目。如果你尝试部署超过允许核心数目的虚拟机，将收到指出超过配额的错误消息。有关完整的配额信息，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits)。
 
 若要检查订阅的核心配额，可以使用 Azure CLI 中的 `azure vm list-usage` 命令。以下示例演示了核心配额为 4 的免费试用帐户：
 
@@ -135,9 +135,7 @@
 
 你可能在部署期间收到错误，因为尝试部署资源的帐户或服务主体没有执行这些操作的访问权限。Azure Active Directory 可让你或你的系统管理员非常精确地控制哪些标识可以访问哪些资源。例如，如果帐户分配有“读取者”角色，它将无法创建新资源。在此情况下，你应会看到错误消息，指出授权失败。
 
-有关基于角色的访问控制的详细信息，请参阅 [Azure Role-Based Access Control](./active-directory/role-based-access-control-configure.md)（Azure 基于角色的访问控制）。
-
-除了基于角色的访问控制以外，部署操作可能还受限于订阅的策略。通过策略，管理员可以对订阅中所有资源部署强制实施约定。例如，管理员可以要求为某个资源类型提供特定的标记值。如果不满足策略要求，你将在部署期间收到错误。有关策略的详细信息，请参阅 [Use Policy to manage resources and control access](./resource-manager-policy.md)（使用策略来管理资源和控制访问）。
+除了基于角色的访问控制以外，部署操作可能还受限于订阅的策略。通过策略，管理员可以对订阅中所有资源部署强制实施约定。例如，管理员可以要求为某个资源类型提供特定的标记值。如果不满足策略要求，你将在部署期间收到错误。
 
 ## 检查资源提供程序注册
 
@@ -200,10 +198,6 @@
 
 若要注册提供程序，请参阅[使用资源提供程序注册订阅](https://msdn.microsoft.com/zh-cn/library/azure/dn790548.aspx)。
 
-## 自定义脚本扩展错误
-
-如果在部署虚拟机时遇到自定义脚本扩展错误，请参阅 [Troubleshooting Azure Windows VM extension failures](/documentation/articles/virtual-machines-windows-extensions-troubleshoot)（排查 Azure Windows VM 扩展失败）或 [Troubleshooting Azure Linux VM extension failures](/documentation/articles/virtual-machines-linux-extensions-troubleshoot)（排查 Azure Linux VM 扩展失败）。
-
 ## 了解部署何时准备就绪 
 
 Azure Resource Manager 部署成功返回所有提供程序时，将报告部署成功。但是，这不一定表示你的资源组“处于活动状态且可供用户使用”。例如，部署可能需要下载升级文件、等待其他非模板资源，或者安装复杂的脚本或 Azure 不知道的其他某个可执行活动（因为它不是提供程序正在跟踪的活动）。在这些情况下，可能要在一段时间后，你的资源才可供实际使用。因此，你应该预料到部署状态成功一段时间后，才能使用部署。
@@ -213,6 +207,5 @@ Azure Resource Manager 部署成功返回所有提供程序时，将报告部署
 ## 后续步骤
 
 - 若要了解审核操作，请参阅 [Audit operations with Resource Manager](/documentation/articles/resource-group-audit)（使用资源管理器执行审核操作）。
-- 若要了解部署期间要针对错误执行哪些操作，请参阅 [Troubleshooting resource group deployments](/documentation/articles/resource-manager-troubleshoot-deployments-portal)（对资源组部署进行故障排除）。
 
 <!---HONumber=Mooncake_0509_2016-->

@@ -200,8 +200,8 @@ Azure 模拟器提供了一个本地环境，可在将 Azure 应用程序部署�
 
 [Azure SDK for PHP]: /develop/php/
 [install ps and emulators]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-[服务定义 (.csdef)]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758711.aspx
-[服务配置 (.cscfg)]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758710.aspx
+[服务定义 (.csdef)]: https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx
+[服务配置 (.cscfg)]: https://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx
 [iis.net]: http://www.iis.net/
 [sql native client]: http://msdn.microsoft.com/zh-cn/sqlserver/aa937733.aspx
 [sqlsrv drivers]: http://php.net/sqlsrv
