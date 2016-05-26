@@ -14,7 +14,7 @@
 
 # 使用 HPC Pack IaaS 部署脚本在 Azure VM 中创建 Windows 高性能计算 (HPC) 群集
 
-在客户端计算机上运行 HPC Pack IaaS 部署 PowerShell 脚本，以在 Azure 基础结构服务 (IaaS) 中部署完整的 Windows 工作负荷 HPC Pack 群集。如果你想在 Azure 为 Windows 工作负荷部署 HPC Pack 集群，请参阅[使用 HPC Pack IaaS 部署脚本在 Azure VM 中创建 Linux 高性能计算 (HPC) 群集](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script)。
+在客户端计算机上运行 HPC Pack IaaS 部署 PowerShell 脚本，以在 Azure 基础结构服务 (IaaS) 中部署完整的 Windows 工作负荷 HPC Pack 群集。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
 

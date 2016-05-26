@@ -137,13 +137,6 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 8. [基础知识：如何为 Linux 重置密码或 SSH 属性](/documentation/articles/virtual-machines-linux-classic-reset-access)
 9. [基础知识：使用 Root](/documentation/articles/virtual-machines-linux-use-root-privileges)
 
-## Linux 高性能计算 (HPC)
-
-4.	[教程：Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster)
-5.	[教程：在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-namd)
-6.	[教程：设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-classic-rdma-cluster)
-
-
 ## 开发运营、管理和优化
 
 本部分开头介绍了一个博客条目，其中包含一系列视频 -- [视频：Azure 虚拟机：使用 Chef、Puppet 和 Docker 管理 Linux VM](http://azure.microsoft.com/blog/2014/12/15/azure-virtual-machines-using-chef-puppet-and-docker-for-managing-linux-vms/)。然而，进行开发、管理和优化涉及的面十分广泛，而且各种情况变化很快，因此在一开始的时候，你可以考虑将下表作为学习的目标。

@@ -16,8 +16,6 @@
 
 [AZURE.INCLUDE [virtual-machines-common-hpcpack-cluster-options](../includes/virtual-machines-common-hpcpack-cluster-options.md)]
 
-本文主要说的是使用 HPC Pack 运行 Windows HPC 工作流的选项。同时也有 [HPC Pack 运行 Linux HPC](/documentation/articles/virtual-machines-linux-hpcpack-cluster-options) 的选项。
-
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 ## 在 Azure VM 中运行 HPC Pack 群集
