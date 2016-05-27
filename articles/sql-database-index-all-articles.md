@@ -255,7 +255,7 @@
 | &nbsp; | 标题 | 说明 |
 | --: | :-- | :-- |
 | 134 | [SQL 数据库审核入门](/documentation/articles/sql-database-auditing-get-started) | SQL 数据库审核入门 |
-| 135 | [如何：使用 Azure 门户在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings) | 了解如何配置防火墙以允许 IP 地址访问 Azure SQL 数据库。 |
+| 135 | 如何：使用 Azure 门户在 SQL 数据库上配置防火墙设置 | 了解如何配置防火墙以允许 IP 地址访问 Azure SQL 数据库。 |
 | 136 | [使用 Azure 自动化管理 Azure SQL 数据库](/documentation/articles/automation-manage-sql-database) | 了解如何使用 Azure 自动化服务来方便管理 Azure SQL 数据库。 |
 | 137 | [使用动态管理视图监视 Azure SQL 数据库](/documentation/articles/sql-database-monitoring-with-dmvs) | 了解如何通过使用动态管理视图监视 Azure SQL 数据库来检测并诊断常见性能问题。 |
 | 138 | [概述：SQL 数据库的管理工具](/documentation/articles/sql-database-manage-overview) | 比较管理 Azure SQL 数据库的工具和选项 |

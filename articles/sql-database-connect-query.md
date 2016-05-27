@@ -44,9 +44,6 @@
  - [Visual Studio 的更多免费选项](http://www.visualstudio.com/products/free-developer-offers-vs.aspx)
  - 或者，使用本主题中稍后介绍的[步骤](#InstallVSForFree)，在 [Azure 门户](https://manage.windowsazure.cn)中安装 Visual Studio。
 
-
-<a name="InstallVSForFree" id="InstallVSForFree">
-
 &nbsp;
 
 ## 步骤 1：免费安装 Visual Studio Community
@@ -282,10 +279,6 @@
 
 
 [AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../includes/sql-database-include-ip-address-22-v12portal.md)]
-
-
-
-有关详细信息，请参阅<br/> [如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings)
 
 
 

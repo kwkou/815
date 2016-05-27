@@ -113,7 +113,4 @@
 
 - [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)
 
-
-- [如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings)
-
 <!---HONumber=Mooncake_0307_2016-->

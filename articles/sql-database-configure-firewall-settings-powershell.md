@@ -18,7 +18,6 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure Portal](/documentation/articles/sql-database-configure-firewall-settings)
 - [TSQL](/documentation/articles/sql-database-configure-firewall-settings-tsql)
 - [PowerShell](/documentation/articles/sql-database-configure-firewall-settings-powershell)
 - [REST API](/documentation/articles/sql-database-configure-firewall-settings-rest)

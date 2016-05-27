@@ -214,10 +214,6 @@
 [AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../includes/sql-database-include-ip-address-22-v12portal.md)]
 
 
-有关详细信息，请参阅
-[如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings)
-
-
 <a id="c-connection-ports" name="c-connection-ports"></a>
 
 ### 连接：端口

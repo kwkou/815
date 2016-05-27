@@ -22,7 +22,6 @@
 ##更改逻辑服务器的管理密码
 - 在 [Azure 门户](https://manage.windowsazure.cn)中，单击“SQL Server”，从列表中选择服务器，然后单击“重置密码”。
 ##帮助确保只允许经过授权的 IP 地址访问服务器
-- 请参阅[如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings)。
 
 ##在用户数据库中创建包含的数据库用户
 - 使用 [CREATE USER](https://msdn.microsoft.com/zh-cn/library/ms173463.aspx) 语句，并参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)。

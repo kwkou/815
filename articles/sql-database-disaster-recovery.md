@@ -106,7 +106,7 @@ Azure SQL 数据库提供以下功能，以便在服务中断后进行恢复：
 有关更改连接字符串的详细信息，请参阅[与 Azure SQL 数据库的连接：中心建议](/documentation/articles/sql-database-connect-central-recommendations)。
  
 ### 修改防火墙规则
-在服务器级别和数据库级别验证防火墙规则，并确保已启用从客户端计算机或 Azure 到服务器以及最近恢复的数据库的连接。有关详细信息，请参阅[如何：配置防火墙设置（Azure SQL 数据库）](/documentation/articles/sql-database-configure-firewall-settings)。
+在服务器级别和数据库级别验证防火墙规则，并确保已启用从客户端计算机或 Azure 到服务器以及最近恢复的数据库的连接。
 
 ### 验证服务器登录名和数据库用户
 

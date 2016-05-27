@@ -26,7 +26,7 @@
 
 
 - [以编程方式连接到 Azure SQL 数据库时的准则](http://msdn.microsoft.com/zh-cn/library/azure/ee336282.aspx) - 讨论了以下内容：
- - [端口和防火墙](/documentation/articles/sql-database-configure-firewall-settings)
+ - 端口和防火墙
  - 连接字符串
 - [Azure SQL 数据库资源管理](http://msdn.microsoft.com/zh-cn/library/azure/dn338083.aspx) - 讨论了以下内容：
  - 资源控制

@@ -52,7 +52,7 @@
 
 
 ### 如果连接失败
-确保创建的逻辑服务器防火墙允许来自本地计算机的连接。有关详细信息，请参阅[如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings)。
+确保创建的逻辑服务器防火墙允许来自本地计算机的连接。
 
 ## 运行示例查询
 

@@ -29,8 +29,6 @@
 
 [AZURE.INCLUDE [SSMS 连接](../includes/sql-database-sql-server-management-studio-connect-server-principal.md)]
 
-有关防火墙规则的详细信息，请参阅 [How to: Configure Firewall Settings (Azure SQL Database)（如何：配置防火墙设置（Azure SQL 数据库））](/documentation/articles/sql-database-configure-firewall-settings)。
-
 ## 运行示例查询
 
 连接到逻辑服务器后，你可以连接到数据库并运行示例查询。

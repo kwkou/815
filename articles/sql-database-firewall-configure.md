@@ -62,11 +62,11 @@ Azure SQL 数据库为 Azure 和其他基于 Internet 的应用程序提供关�
 
 ## 创建第一个服务器级防火墙规则
 
-第一个服务器级防火墙设置可以使用[ Azure 门户](https://manage.windowsazure.cn)进行创建，也可以使用 REST API 或 Azure PowerShell 通过编程方式创建。后续的服务器级防火墙规则可以使用这些方法或通过Transact-SQL来创建和管理。有关服务器级防火墙规则的详细信息，请参阅[如何：配置防火墙设置（Azure SQL 数据库）](/documentation/articles/sql-database-configure-firewall-settings)。
+第一个服务器级防火墙设置可以使用[ Azure 门户](https://manage.windowsazure.cn)进行创建，也可以使用 REST API 或 Azure PowerShell 通过编程方式创建。后续的服务器级防火墙规则可以使用这些方法或通过Transact-SQL来创建和管理。
 
 ## 创建数据库级防火墙规则
 
-在你配置第一个服务器级防火墙之后，你可能希望限制对特定数据库的访问。如果你在数据库级防火墙规则中指定的 IP 地址范围超出了在服务器级防火墙规则中指定的范围，则客户端若要访问数据库，其 IP 地址必须处于数据库级别范围内。对于每个数据库，最多可以有 128 个数据库级防火墙规则。可以通过 Transact-SQL 创建和管理主数据库和用户数据库的数据库级防火墙规则。有关详细信息，请参阅[如何：配置防火墙设置（Azure SQL 数据库）](/documentation/articles/sql-database-configure-firewall-settings)。
+在你配置第一个服务器级防火墙之后，你可能希望限制对特定数据库的访问。如果你在数据库级防火墙规则中指定的 IP 地址范围超出了在服务器级防火墙规则中指定的范围，则客户端若要访问数据库，其 IP 地址必须处于数据库级别范围内。对于每个数据库，最多可以有 128 个数据库级防火墙规则。可以通过 Transact-SQL 创建和管理主数据库和用户数据库的数据库级防火墙规则。
 
 ## 以编程方式管理防火墙规则
 
@@ -124,8 +124,6 @@ Azure SQL 数据库为 Azure 和其他基于 Internet 的应用程序提供关�
  - 改为获取你的客户端计算机的静态 IP 地址，然后将该 IP 地址作为防火墙规则添加。
 
 ## 另请参阅
-
-[如何：配置数据库防火墙设置（Azure SQL 数据库）](/documentation/articles/sql-database-configure-firewall-settings)
 
 [SQL Server 数据库引擎和 Azure SQL 数据库安全中心](https://msdn.microsoft.com/zh-cn/library/bb510589)
 

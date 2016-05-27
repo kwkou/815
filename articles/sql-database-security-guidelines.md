@@ -101,8 +101,6 @@ GO
 
 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)
 
-[如何：配置防火墙设置（Azure SQL 数据库）](/documentation/articles/sql-database-configure-firewall-settings)
-
 [在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins)
 
 [SQL Server 数据库引擎和 Azure SQL 数据库安全中心](https://msdn.microsoft.com/zh-cn/library/bb510589)
