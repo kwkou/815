@@ -71,6 +71,6 @@
     &lt;/html&gt;
 </PRE>
 
-[详细了解 Azure Active Directory](http://www.windowsazure.cn/home/features/identity/)
+[详细了解 Azure Active Directory](/home/features/identity/)
 
 <!---HONumber=64-->
