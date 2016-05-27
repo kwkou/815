@@ -1,5 +1,5 @@
 <properties
-   pageTitle="故障排除：“Active Directory”项缺失或不可用 | Microsoft Azure"
+   pageTitle="故障排除：“Active Directory”项缺失或不可用 | Azure"
    description="Azure 管理门户中未显示 Active Directory 菜单项时怎么办。"
    services="active-directory"
    documentationCenter="na"
