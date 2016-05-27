@@ -53,7 +53,7 @@
 
 ## 更改角色实例的数目
 
-若要提高云服务的性能，可根据用户或某个特定角色的预期负载的数目，更改正在运行的角色实例的数目。当云服务在 Azure 中运行时，将为每个角色实例创建单独的虚拟机。这将会影响部署此云服务的计费。有关计费的详细信息，请参阅 [Understand your bill for Azure（了解你的 Azure 帐单）](/documentation/articles/billing-understand-your-bill)。
+若要提高云服务的性能，可根据用户或某个特定角色的预期负载的数目，更改正在运行的角色实例的数目。当云服务在 Azure 中运行时，将为每个角色实例创建单独的虚拟机。这将会影响部署此云服务的计费。
 
 ### 更改角色的实例数目
 
@@ -131,7 +131,7 @@
 
 ## 将要使用的自定义设置添加到 Azure 云服务中
 
-服务配置文件中的自定义设置可让你为特定服务配置的字符串添加名称和值。你可以选择使用此设置来配置云服务中的功能，具体方法是：读取设置的值，然后使用该值来控制你的代码中的逻辑。无需重新生成服务包就可更改这些服务配置值；运行云服务时也可以进行更改。设置发生更改时，你的代码可以检查通知。请参阅 [RoleEnvironment.Changing 事件](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.changing.aspx)。
+服务配置文件中的自定义设置可让你为特定服务配置的字符串添加名称和值。你可以选择使用此设置来配置云服务中的功能，具体方法是：读取设置的值，然后使用该值来控制你的代码中的逻辑。无需重新生成服务包就可更改这些服务配置值；运行云服务时也可以进行更改。设置发生更改时，你的代码可以检查通知。请参阅 [RoleEnvironment.Changing 事件](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.changing.aspx)。
 
 可添加、移除或修改服务配置的自定义设置。对于不同的服务的配置，你可能需要这些字符串的不同值。
 
@@ -289,7 +289,7 @@
 
 ## 更改用于每个角色的虚拟机大小
 
-你可以设置每个角色的虚拟机大小。只能针对所有服务配置设置此大小。如果选择较小的计算机大小，将分配较少的 CPU 核心、内存和本地磁盘存储空间。分配的带宽也将较小。有关这些大小和分配的资源的详细信息，请参阅 [Sizes for Cloud Services（云服务的大小）](/documentatioin/articles/cloud-services-sizes-specs)。
+你可以设置每个角色的虚拟机大小。只能针对所有服务配置设置此大小。如果选择较小的计算机大小，将分配较少的 CPU 核心、内存和本地磁盘存储空间。分配的带宽也将较小。
 
 在 Azure 中每个虚拟机所需的资源将影响在 Azure 中运行云服务的成本。有关 Azure 计费的详细信息，请参阅 [Understand your bill for Azure（了解你的 Azure 帐单）](/documentation/articles/billing-understand-your-bill)。
 

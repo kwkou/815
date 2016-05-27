@@ -62,7 +62,7 @@
 
 ## 创建存储帐户
 
-存储帐户提供对 Blob、队列和表服务的访问权限。你可以使用 Visual Studio 或 [Azure 管理门户](http://go.microsoft.com/fwlink/?LinkId=253103)创建存储帐户。
+存储帐户提供对 Blob、队列和表服务的访问权限。你可以使用 Visual Studio 或 [Azure 管理门户](http://manage.windowsazure.cn)创建存储帐户。
 
 ### 使用 Visual Studio 创建存储帐户
 
@@ -143,7 +143,7 @@
 
         >[AZURE.NOTE] 如果你创建自定义终结点，则可以创建更复杂的连接字符串。当你使用此字符串格式时，可以指定包含已为 Blob 服务的存储帐户注册的自定义域名存储服务终结点。你还可以通过共享访问签名只授予对单个容器中的 Blob 资源的访问权限。有关如何创建自定义终结点的详细信息，请参阅 [Configure Azure Storage Connection Strings（配置 Azure 存储空间连接字符串）](/documentation/articles/storage-configure-connection-string/)。
 
-1. 若要保存这些连接字符串更改，请选择“确定”按钮，然后选择工具栏上的“保存”按钮。保存这些更改后，可以通过在代码中使用 [GetConfigurationSettingValue](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getconfigurationsettingvalue.aspx) 获取此连接字符串的值。将应用程序发布到 Azure 时，请选择包含连接字符串的 Azure 存储帐户的服务配置。发布应用程序后，验证应用程序是否按预期方式针对 Azure 存储服务正常工作
+1. 若要保存这些连接字符串更改，请选择“确定”按钮，然后选择工具栏上的“保存”按钮。保存这些更改后，可以通过在代码中使用 [GetConfigurationSettingValue](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getconfigurationsettingvalue.aspx) 获取此连接字符串的值。将应用程序发布到 Azure 时，请选择包含连接字符串的 Azure 存储帐户的服务配置。发布应用程序后，验证应用程序是否按预期方式针对 Azure 存储服务正常工作
 
 ## 后续步骤
 

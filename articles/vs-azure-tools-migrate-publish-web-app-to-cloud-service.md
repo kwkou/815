@@ -97,7 +97,7 @@
 
 ### 通过 Azure 管理门户使用 SQL 数据库实例
 
-1. 在 [Azure 管理门户](http://go.microsoft.com/fwlink/?LinkID=213885)中，选择“SQL 数据库”节点。
+1. 在 [Azure 管理门户](http://manage.windowsazure.cn)中，选择“SQL 数据库”节点。
 
   - 如果显示了要使用的 SQL 数据库实例，请选择打开它。
 
@@ -117,11 +117,11 @@
 
     此时将显示“启动 Azure 调试环境”对话框，并在浏览器中启动应用程序。有关如何在计算模拟器中启动每种类型的 Web 应用程序的具体信息，请参阅本部分中的表格。
 
-1. 若要设置应用程序的服务以将其发布到 Azure，你必须准备好一个 Microsoft 帐户和 Azure 订阅。使用以下主题中所述的步骤来设置服务：[Prepare to publish or deploy an Azure application from Visual Studio](vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio.md)（准备从 Visual Studio 发布或部署 Azure 应用程序）。
+1. 若要设置应用程序的服务以将其发布到 Azure，你必须准备好一个 Microsoft 帐户和 Azure 订阅。使用以下主题中所述的步骤来设置服务：[准备从 Visual Studio 发布或部署 Azure 应用程序](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio)。
 
 1. 若要将 Web 应用程序发布到 Azure，请打开 Web 项目的快捷菜单，然后选择“发布到 Azure”。
 
-    此时将显示“发布 Azure 应用程序”对话框，Visual Studio 将启动部署过程。有关如何发布应用程序的详细信息，请参阅 [Publishing a Cloud Service using the Azure Tools](vs-azure-tools-publishing-a-cloud-service.md)（使用 Azure Tools 发布云服务）中的 **Publish an Azure Application from Visual Studio**（从 Visual Studio 发布 Azure 应用程序）部分。
+    此时将显示“发布 Azure 应用程序”对话框，Visual Studio 将启动部署过程。有关如何发布应用程序的详细信息，请参阅 [使用 Azure Tools 发布云服务](/documentation/articles/vs-azure-tools-publishing-a-cloud-service)中的 **从 Visual Studio 发布 Azure 应用程序**部分。
 
     >[AZURE.NOTE] 你还可以从 Azure 项目发布 Web 应用程序。为此，请打开 Azure 项目的快捷菜单，然后选择“发布”。
 
@@ -202,6 +202,6 @@
 |工作流|WCF 工作流服务应用程序|
 
 ## 后续步骤
-关于发布的详细信息，请参阅 [Prepare to Publish or Deploy an Azure Application from Visual Studio](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio)（准备从 Visual Studio 发布或部署 Azure 应用程序）。另请参阅 [Setting Up Named Authentication Credentials](/documentation/articles/vs-azure-tools-setting-up-named-authentication-credentials)（设置命名的身份验证凭据）。
+关于发布的详细信息，请参阅 [准备从 Visual Studio 发布或部署 Azure 应用程序](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio)。另请参阅 [设置命名的身份验证凭据](/documentation/articles/vs-azure-tools-setting-up-named-authentication-credentials)。
 
 <!---HONumber=Mooncake_0509_2016-->

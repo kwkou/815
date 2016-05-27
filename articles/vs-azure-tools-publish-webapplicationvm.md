@@ -52,7 +52,7 @@ Publish-WebApplicationVM
 
 ### WebDeployPackage
 
-要发布到虚拟机的 Web 部署包的路径。可以在 Visual Studio 中使用“发布 Web”向导来创建此包。请参阅 [How to: Create a Web Deployment Package in Visual Studio（如何：在 Visual Studio 中创建 Web 部署包）](https://msdn.microsoft.com/library/dd465323.aspx)。
+要发布到虚拟机的 Web 部署包的路径。可以在 Visual Studio 中使用“发布 Web”向导来创建此包。请参阅 [如何：在 Visual Studio 中创建 Web 部署包](https://msdn.microsoft.com/zh-cn/library/dd465323.aspx)。
 
 |别名|无|
 |---|---|
@@ -112,7 +112,7 @@ Azure 中的 SQL 数据库的凭据。示例：-DatabaseServerPassword @{Name = 
 
 ## 备注
 
-有关如何使用脚本创建开发和测试环境的完整说明，请参阅[使用 Windows PowerShell 脚本发布到开发和测试环境](vs-azure-tools-publishing-using-powershell-scripts.md)。
+有关如何使用脚本创建开发和测试环境的完整说明，请参阅[使用 Windows PowerShell 脚本发布到开发和测试环境](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts)。
 
 JSON 配置文件指定要部署的内容的详细信息。它包括当你创建项目时指定的信息，如名称、地缘组、VHD 映像和虚拟机的大小。它还包括虚拟机上的终结点、要预配的数据库（如果有的话）和 Web 部署参数。以下代码显示一个示例 JSON 配置文件：
 

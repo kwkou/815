@@ -23,13 +23,13 @@
 
 在将 Web 应用程序发布到 Azure 之前，需要有一个 Microsoft 帐户和一个 Azure 订阅，并且必须将 Web 应用程序与 Azure 云服务关联。如果你已完成这些任务，则可以跳到下一部分。
 
-1. 获取 Microsoft 帐户和 Azure 订阅。可以在[此处](https://azure.microsoft.com/pricing/free-trial/)免费试用 Azure 订阅一个月
+1. 获取 Microsoft 帐户和 Azure 订阅。可以在[此处](/pricing/1rmb-trial/)免费试用 Azure 订阅一个月
 
-1. 在 Azure 上创建云服务和存储帐户。可以通过 Visual Studio 中的服务器资源管理器或使用 [Azure 管理门户](http://go.microsoft.com/fwlink/?LinkID=213885)执行此操作。
+1. 在 Azure 上创建云服务和存储帐户。可以通过 Visual Studio 中的服务器资源管理器或使用 [Azure 管理门户](http://manage.windowsazure.cn)执行此操作。
 
 1. 为 Azure 启用 Web 应用程序。若要启用 Web 应用程序以将其从 Visual Studio 发布到 Azure，必须将它与 Visual Studio 中的 Azure 云服务项目相关联。若要创建关联的云服务项目，请打开 Web 应用程序项目的快捷菜单，然后选择“转换”>“转换为 Azure 云服务项目”。
 
-1. 将云服务项目添加到解决方案后，请再次打开同一个快捷菜单并选择“发布”。有关如何为 Azure 启用应用程序的详细信息，请参阅 [How to: Migrate and Publish a Web Application to an Azure Cloud Service from Visual Studio](https://msdn.microsoft.com/library/azure/hh420322.aspx)（如何：通过 Visual Studio 将 Web 应用程序迁移和发布到 Azure 云服务）。
+1. 将云服务项目添加到解决方案后，请再次打开同一个快捷菜单并选择“发布”。
 
 >[AZURE.NOTE] 确保使用管理员凭据启动 Visual Studio（以管理员身份运行）。
 
@@ -85,7 +85,7 @@
 
     如果希望能够从远程连接到服务，请选中“为所有角色启用远程桌面”复选框。此选项主要用于故障排除。选中此复选框后，将显示“远程桌面配置”对话框。选择“设置”链接以更改配置。
 
-    选中“为所有 Web 角色启用 Web 部署”复选框以启用服务的 Web 部署。只有启用了远程桌面才能使用此功能。有关详细信息，请参阅 [[Publishing a Cloud Service using the Azure Tools](https://msdn.microsoft.com/library/azure/ff683672.aspx)](https://msdn.microsoft.com/library/azure/ff683672.aspx)（使用 Azure Tools 发布云服务）。有关 Web 部署的详细信息，请参阅 [[Publishing a Cloud Service using the Azure Tools](https://msdn.microsoft.com/library/azure/ff683672.aspx)](https://msdn.microsoft.com/library/azure/ff683672.aspx)（使用 Azure Tools 发布云服务）。
+    选中“为所有 Web 角色启用 Web 部署”复选框以启用服务的 Web 部署。只有启用了远程桌面才能使用此功能。有关详细信息，请参阅 [使用 Azure Tools 发布云服务](https://msdn.microsoft.com/zh-cn/library/azure/ff683672.aspx)。有关 Web 部署的详细信息，请参阅 [使用 Azure Tools 发布云服务](https://msdn.microsoft.com/zh-cn/library/azure/ff683672.aspx)。
 
 1. 选择“高级设置”选项卡。在“部署标签”字段中，接受默认名称，或输入所选的名称。若要将日期附加到部署标签，请保留选中相应的复选框。
 
@@ -101,7 +101,7 @@
 
     你可以选择更新部署的两个选项之一：增量或同时。增量部署每次更新一个已部署的实例，使应用程序保持连接并可供用户使用。同时部署一次性更新所有已部署的实例。同时更新的速度比增量更新要快，但如果选择此选项，应用程序在更新过程中可能不可用。
 
-    如果无法更新部署，则应选中此复选框；如果想要在更新部署失败时自动更新完整部署，请执行完整部署。完整部署将重置云服务的虚拟 IP (VIP) 地址。有关详细信息，请参阅 [How to: Retain a Constant Virtual IP Address for a Cloud Service](https://msdn.microsoft.com/library/azure/jj614593.aspx)（如何：为云服务保留固定的虚拟 IP 地址）。
+    如果无法更新部署，则应选中此复选框；如果想要在更新部署失败时自动更新完整部署，请执行完整部署。完整部署将重置云服务的虚拟 IP (VIP) 地址。有关详细信息，请参阅 [如何：为云服务保留固定的虚拟 IP 地址](https://msdn.microsoft.com/zh-cn/library/azure/jj614593.aspx)。
 
 
 1. 若要调试你的服务，请选中“启用 IntelliTrace”复选框；如果要部署“调试”配置并想要在 Azure 中调试云服务，请选中“为所有角色启用远程调试器”复选框以部署远程调试服务。
@@ -111,7 +111,7 @@
 
     >[AZURE.NOTE] 必须使用 Visual Studio Ultimate 来启用 IntelliTrace 或层交互分析 (TIP)，但不能同时启用两者。
 
-    有关详细信息，请参阅 [Debugging a Published Cloud Service with IntelliTrace and Visual Studio](https://msdn.microsoft.com/library/azure/ff683671.aspx)（使用 IntelliTrace 和 Visual Studio 调试已发布的云服务）和 [Testing the Performance of a Cloud Service](https://msdn.microsoft.com/library/azure/hh369930.aspx)（测试云服务的性能）。
+    有关详细信息，请参阅 [使用 IntelliTrace 和 Visual Studio 调试已发布的云服务](https://msdn.microsoft.com/zh-cn/library/azure/ff683671.aspx)和 [测试云服务的性能](https://msdn.microsoft.com/zh-cn/library/azure/hh369930.aspx)。
 
 1. 选择“下一步”查看应用程序的摘要页。
 
@@ -133,7 +133,7 @@
 
 [使用 IntelliTrace 和 Visual Studio 调试已发布的云服务](https://msdn.microsoft.com/zh-cn/library/azure/ff683671.aspx)
 
-[Testing the Performance of a Cloud Service](https://msdn.microsoft.com/zh-cn/library/azure/hh369930.aspx)（测试云服务的性能）
+[测试云服务的性能](https://msdn.microsoft.com/zh-cn/library/azure/hh369930.aspx)
 
 
 <!---HONumber=Mooncake_0509_2016-->

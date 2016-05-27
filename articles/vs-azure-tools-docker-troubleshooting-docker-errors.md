@@ -58,10 +58,6 @@
 
 ## 常见问题
 
-问：如何使用 Visual Studio 工具在 Azure 中创建新的启用 Docker 的 Linux 计算机？
-
-答：有关如何执行此操作的信息，请参阅[在 Docker 中托管网站](/documentation/articles/vs-azure-tools-docker-hosting-web-apps-in-docker)。
-
 问：支持哪些用于发布到 Linux Docker 容器的 Visual Studio 项目模板？
 
 答：Visual Studio 当前支持“C# 控制台应用程序（程序包）”和“C# ASP.NET 5 Preview Web 模板”，包括：

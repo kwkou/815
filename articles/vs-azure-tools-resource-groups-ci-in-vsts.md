@@ -10,7 +10,7 @@
  <tags
 	ms.service="azure-resource-manager"
 	ms.date="01/26/2016"
-	ms.author="tarcher" />
+	wacn.date="05/23/2016" />
 
 # 使用 Azure 资源组部署项目在 Visual Studio Team Services 中连续集成
 
@@ -30,7 +30,7 @@
 -	应用程序二进制文件
 
 ### 嵌套模板和配置脚本
-当你使用 Visual Studio 提供的模板（或以 Visual Studio 代码段生成的模板）时，PowerShell 脚本不但会暂存项目，而且会参数化用于不同部署的资源的 URI。脚本会将项目复制到 Azure 中的安全容器，为该容器创建 SaS 令牌，然后将该信息传递到模板部署。有关嵌套模板的详细信息，请参阅 [Create a template deployment（创建模板部署）](https://msdn.microsoft.com/library/azure/dn790564.aspx)。
+当你使用 Visual Studio 提供的模板（或以 Visual Studio 代码段生成的模板）时，PowerShell 脚本不但会暂存项目，而且会参数化用于不同部署的资源的 URI。脚本会将项目复制到 Azure 中的安全容器，为该容器创建 SaS 令牌，然后将该信息传递到模板部署。有关嵌套模板的详细信息，请参阅 [创建模板部署](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx)。
 
 ## 在 VS Team Services 中设置连续部署
 
@@ -95,7 +95,7 @@
         `azure account show`
     
 
-    1.	要获取服务主体 ID、服务主体密钥和租户 ID，请遵循 [Create Active Directory application and service principal using portal（使用门户创建 Active Directory 应用程序和服务主体）](resource-group-create-service-principal-portal.md)或 [Authenticating a service principal with Azure Resource Manager（通过 Azure 资源管理器对服务主体进行身份验证）](resource-group-authenticate-service-principal.md)的过程。
+    1.	要获取服务主体 ID、服务主体密钥和租户 ID，请遵循 [使用门户创建 Active Directory 应用程序和服务主体](/documentation/articles/resource-group-create-service-principal-portal)或 [通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)的过程。
 
     1.	在“添加 Azure 订阅”对话框中添加服务主体 ID、服务主体密钥和租户 ID 值，然后选择“确定”按钮。
 
@@ -117,7 +117,7 @@
 
     | 参数 | 说明|
     |---|---|
-    | -ResourceGroupLocation | 资源组所在的地理位置，例如 **eastus** 或 **'East US'**。（如果名称中有空格，请添加单引号。） 有关详细信息，请参阅 [Azure Regions](https://azure.microsoft.com/zh-cn/regions/)（Azure 区域）。| |
+    | -ResourceGroupLocation | 资源组所在的地理位置，例如 **China North** 或 **'China East'**。| |
     | -ResourceGroupName | 此部署使用的资源组名称。| |
     | -UploadArtifacts | 如果提供此参数，将指定需要从本地系统将项目上载到 Azure。仅当模板部署需要使用 PowerShell 脚本暂存其他项目（例如配置脚本或嵌套模板）时，才需要设置此开关。 |
     | -StorageAccountName | 用于暂存此部署的项目的存储帐户名称。仅当你要将项目复制到 Azure 时，才需要此参数。部署不会自动创建此存储帐户，因此必须事先提供此存储帐户。| |

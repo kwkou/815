@@ -29,7 +29,7 @@ Visual Studio 使用订阅 ID 和证书数据作为凭据。订阅文件（.publ
 
 从“新建/编辑订阅”对话框中，可以编辑订阅信息，如本主题后面所述。
 
-如果要自行创建证书，可以参阅 [Create and Upload a Management Certificate for Azure](https://msdn.microsoft.com/library/windowsazure/gg551722.aspx)（创建并上载管理证书）中所述的说明，然后将证书手动上载到管理门户。
+如果要自行创建证书，可以参阅 [创建并上载管理证书](/documentation/articles/cloud-services-certs-create/)（创建并上载管理证书）中所述的说明，然后将证书手动上载到管理门户。
 
 >[AZURE.NOTE] Visual Studio 管理云服务所需的凭据不同于针对 Azure 存储空间服务验证请求所需的凭据。
 

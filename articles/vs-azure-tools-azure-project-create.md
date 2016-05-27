@@ -38,7 +38,7 @@ Azure 云服务解决方案包含以下类型的项目：
 
 - **具有服务总线队列的辅助角色**
 
-    提供消息队列功能以便与辅助进程通信的服务总线队列。有关详细信息，请参阅[如何使用服务总线队列](http://go.microsoft.com/fwlink/?LinkId=260560)。
+    提供消息队列功能以便与辅助进程通信的服务总线队列。有关详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)。
 
 ## 在 Visual Studio 中创建 Azure 云服务项目
 

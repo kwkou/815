@@ -54,7 +54,7 @@
 
 ## WebDeployPackage
 
-要发布到网站的 Web 部署包的路径。可以在 Visual Studio 中使用“发布 Web”向导来创建此包。有关详细信息，请参阅 [Azure 云服务和 ASP.NET 入门](http://go.microsoft.com/fwlink/p/?LinkID=623089)。
+要发布到网站的 Web 部署包的路径。可以在 Visual Studio 中使用“发布 Web”向导来创建此包。有关详细信息，请参阅 [Azure 云服务和 ASP.NET 入门](/documentation/articles/vs-azure-tools-publish-webapplicationwebsite-windows-powershell-script/)。
 
 |参数|默认值|
 |---|---|
@@ -92,8 +92,6 @@ Azure 中的 SQL 数据库的用户名和密码。
 |接受通配符？|false|
 
 ## 备注
-
-有关如何使用脚本创建开发和测试环境的完整说明，请参阅[使用 Windows PowerShell 脚本发布到开发和测试环境](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts)。
 
 JSON 配置文件指定要部署的内容的详细信息。它包括当你创建项目时指定的信息，如网站的名称和用户名。它还包括要预配的数据库（如果有的话）。以下代码显示一个示例 JSON 配置文件：
 

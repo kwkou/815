@@ -30,9 +30,9 @@
 
 1. 安装包括 MSBuild 的 .NET Framework 4 或更高版本。
 
-1. 安装 [Azure 创作工具](http://go.microsoft.com/fwlink/?LinkId=394615)（查找 MicrosoftAzureAuthoringTools-x64.msi 或 MicrosoftAzureAuthoringTools-x86.msi）。
+1. 安装 [Azure 创作工具](/downloads)（查找 MicrosoftAzureAuthoringTools-x64.msi 或 MicrosoftAzureAuthoringTools-x86.msi）。
 
-1. 安装[用于 .NET 的 Azure 库](http://go.microsoft.com/fwlink/?LinkId=394616)（查找 MicrosoftAzureLibsForNet-x64.msi 或 MicrosoftAzureLibs-x86.msi）。
+1. 安装[用于 .NET 的 Azure 库](/downloads)（查找 MicrosoftAzureLibsForNet-x64.msi 或 MicrosoftAzureLibs-x86.msi）。
 
 1. 从另一台计算机上的 Visual Studio 复制 Microsoft.WebApplication.targets 文件。
 

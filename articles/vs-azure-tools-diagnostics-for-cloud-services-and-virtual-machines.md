@@ -185,7 +185,7 @@ Azure 诊断的配置方法有如下数种：
 ```
 ### 性能计数器
 
-性能计数器信息可以帮助你找到系统瓶颈，并优化系统和应用程序性能。有关详细信息，请参阅[在 Azure 应用程序中创建和使用性能计数器](https://msdn.microsoft.com/library/azure/hh411542.aspx)。如果要捕获性能计数器，请选中“启用性能计数器的传输”复选框。你可以增加或减少将事件日志传输至存储帐户的分钟数，方法是更改“传输周期(分钟)”值。选中与要跟踪的性能计数器对应的复选框。
+性能计数器信息可以帮助你找到系统瓶颈，并优化系统和应用程序性能。有关详细信息，请参阅[在 Azure 应用程序中创建和使用性能计数器](/documentation/articles/cloud-services-dotnet-diagnostics-performance-counters/)。如果要捕获性能计数器，请选中“启用性能计数器的传输”复选框。你可以增加或减少将事件日志传输至存储帐户的分钟数，方法是更改“传输周期(分钟)”值。选中与要跟踪的性能计数器对应的复选框。
 
   ![性能计数器](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC758147.png)
 
@@ -197,7 +197,7 @@ Azure 诊断的配置方法有如下数种：
 
   ![诊断基础结构日志](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC758148.png)
 
-  有关详细信息，请参阅[使用 Azure 诊断收集日志记录数据](https://msdn.microsoft.com/library/azure/gg433048.aspx)。
+  有关详细信息，请参阅[使用 Azure 诊断收集日志记录数据](/documentation/articles/cloud-services-dotnet-diagnostics/)。
 
 ### 日志目录
 

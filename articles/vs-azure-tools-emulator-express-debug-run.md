@@ -44,10 +44,10 @@
 
 - 无法访问 1000 以下的端口号。例如，如果您使用的某个身份验证提供程序通常使用低于 1000 的端口，则可能需要将此值更改为 1000 以上的端口号。
 
-- 适用于 Azure 计算模拟器的任何限制也适用于 Emulator Express。例如，每个部署的角色实例数不能超过 50 个。请参阅[在计算模拟器中运行 Azure 应用程序](http://go.microsoft.com/fwlink/p/?LinkId=623050)
+- 适用于 Azure 计算模拟器的任何限制也适用于 Emulator Express。例如，每个部署的角色实例数不能超过 50 个。请参阅[在计算模拟器中运行 Azure 应用程序](/documentation/articles/storage-use-emulator)
 
 ## 后续步骤
 
-[调试云服务](https://msdn.microsoft.com/zh-cn/library/azure/ee405479.aspx)
+[调试云服务](/documentation/articles/vs-azure-tools-performance-profiling-cloud-services/)
 
 <!---HONumber=Mooncake_0509_2016-->

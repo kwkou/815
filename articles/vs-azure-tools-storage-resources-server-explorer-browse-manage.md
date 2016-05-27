@@ -17,7 +17,7 @@
 
 若要在 Visual Studio 中查看服务器资源管理器，请在菜单栏上选择“查看”>“服务器资源管理器”。存储节点显示你要连接到的每个 Azure 订阅/证书下的所有存储帐户。如果你的存储帐户未出现，可以遵循[本主题稍后](#add-storage-accounts-by-using-server-explorer)的说明来添加你的帐户。
 
-从 Azure SDK 2.7 开始，你也可以使用新的云资源管理器来查看和管理 Azure 资源。有关详细信息，请参阅 [使用云资源管理器管理 Azure 资源](https://msdn.microsoft.com/zh-cn/library/azure/mt185741.aspx)。
+从 Azure SDK 2.7 开始，你也可以使用新的云资源管理器来查看和管理 Azure 资源。
 
 
 ## 在 Visual Studio 中查看和管理存储资源
@@ -121,11 +121,11 @@ Blob 节点显示所选存储帐户的容器列表。Blob 容器包含 Blob 文�
 
 - 当容器处于打开状态，可以在 Blob 容器视图中查看时，选择“上载 Blob”按钮。
 
-    可以选择一个或多个文件进行上载，可以上载任何类型的文件。“Azure 活动日志”将显示上载进度。有关处理 Blob 数据的详细信息，请参阅 [如何在 .NET 中使用 Azure Blob 存储服务](http://go.microsoft.com/fwlink/p/?LinkId=267911)。
+    可以选择一个或多个文件进行上载，可以上载任何类型的文件。“Azure 活动日志”将显示上载进度。有关处理 Blob 数据的详细信息，请参阅 [如何在 .NET 中使用 Azure Blob 存储服务](/documentation/articles/storage-dotnet-how-to-use-blobs/)。
 
 ### 查看传输到 Blob 的日志
 
-- 如果你正在使用 Azure 诊断来记录 Azure 应用程序中的数据，并且已将日志传输到存储帐户，则会看到 Azure 为这些日志创建的容器。在服务器资源管理器中查看这些日志是一种简便的确定应用程序问题的方法，尤其是当应用程序已部署到 Azure 时。有关 Azure 诊断的详细信息，请参阅 [使用 Azure 诊断收集日志记录数据](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx)。
+- 如果你正在使用 Azure 诊断来记录 Azure 应用程序中的数据，并且已将日志传输到存储帐户，则会看到 Azure 为这些日志创建的容器。在服务器资源管理器中查看这些日志是一种简便的确定应用程序问题的方法，尤其是当应用程序已部署到 Azure 时。有关 Azure 诊断的详细信息，请参阅 [使用 Azure 诊断收集日志记录数据](/documentation/articles/cloud-services-dotnet-diagnostics/)。
 
 ### 获取 Blob 的 URL
 
@@ -157,7 +157,7 @@ Blob 节点显示所选存储帐户的容器列表。Blob 容器包含 Blob 文�
 
 ![查看队列](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC651470.png)
 
-有关存储服务队列的详细信息，请参阅 [如何：使用队列存储服务](http://go.microsoft.com/fwlink/?LinkID=264702)。有关存储服务队列的 Web 服务的详细信息，请参阅 [队列服务的概念](http://go.microsoft.com/fwlink/?LinkId=264788)。有关如何使用 Visual Studio 将消息发送到存储服务队列的信息，请参阅 [将消息发送到存储服务队列](https://msdn.microsoft.com/zh-cn/library/azure/jj649344.aspx)。
+有关存储服务队列的详细信息，请参阅 [如何：使用队列存储服务](/documentation/articles/storage-dotnet-how-to-use-queues/)。有关存储服务队列的 Web 服务的详细信息，请参阅 [队列服务的概念](https://msdn.microsoft.com/zh-cn/library/azure/dd179353.aspx)。
 
 >[AZURE.NOTE] 存储服务队列不同于服务总线队列。有关服务总线队列的详细信息，请参阅“服务总线队列、主题和订阅”。
 
@@ -305,9 +305,5 @@ Azure 表存储服务可存储大量结构化数据。该服务是一个 NoSQL �
 - 在服务器资源管理器中，打开帐户名称的快捷菜单，然后选择“删除”。如果删除某个存储帐户，则也会删除该帐户的所有已保存密钥信息。
 
     >[AZURE.NOTE] 从服务器资源管理器中删除存储帐户不会影响到存储帐户或其所包含的任何数据，它只是将引用从服务器资源管理器中删除了。若要永久删除存储帐户，请使用 Azure 管理门户。
-
-## 后续步骤
-
-若要了解如何使用 Azure 存储空间服务，请参阅 [访问 Azure 存储空间服务](https://msdn.microsoft.com/zh-cn/library/azure/ee405490.aspx)。
 
 <!---HONumber=Mooncake_0503_2016-->

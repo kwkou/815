@@ -21,7 +21,7 @@ Visual Studio 提供了不同的选项让您调试 Azure 云服务和虚拟机�
 
 使用 Azure 计算模拟器调试本地计算机上的云服务可为您节省时间和金钱。部署某个服务之前在本地对其进行调试可以提高可靠性和性能，且不会产生计算时间的相关费用。但是，仅当您在 Azure 自身中运行云服务时，某些错误才可能会出现。如果您在发布服务时启用远程调试，然后将调试器附加到角色实例，则可以调试这些错误。
 
-该模拟器模拟 Azure 计算服务并在您的本地环境中运行，使您可以在部署云服务之前对其进行测试和调试。该模拟器将处理角色实例的生命周期，并提供对所模拟资源（如本地存储）的访问。当您从 Visual Studio 调试或运行服务时，Visual Studio 会自动将模拟器作为后台应用程序启动，然后将服务部署到模拟器。当模拟器在本地环境中运行时，您可以使用它来查看服务。可以运行完整版或速成版的模拟器。（从 Azure 2.3 开始，将默认安装速成版的模拟器。） 请参阅[使用 Emulator Express 在本地运行和调试云服务](https://msdn.microsoft.com/zh-cn/library/dn339018.aspx)。
+该模拟器模拟 Azure 计算服务并在您的本地环境中运行，使您可以在部署云服务之前对其进行测试和调试。该模拟器将处理角色实例的生命周期，并提供对所模拟资源（如本地存储）的访问。当您从 Visual Studio 调试或运行服务时，Visual Studio 会自动将模拟器作为后台应用程序启动，然后将服务部署到模拟器。当模拟器在本地环境中运行时，您可以使用它来查看服务。可以运行完整版或速成版的模拟器。（从 Azure 2.3 开始，将默认安装速成版的模拟器）。
 
 ### 调试本地计算机上的云服务
 
@@ -98,7 +98,7 @@ Visual Studio 提供了不同的选项让您调试 Azure 云服务和虚拟机�
 
 可以在 Visual Studio 中使用“服务器资源管理器”调试 Azure 虚拟机上运行的程序。在 Azure 虚拟机上启用远程调试时，Azure 将在该虚拟机上安装远程调试扩展。然后，您可以附加到虚拟机上的进程中，并像平时一样进行调试。
 
->[AZURE.NOTE] 可使用 Visual Studio 2015 中的“云资源管理器”对通过 Azure 资源管理器堆栈创建的虚拟机进行远程调试。有关详细信息，请参阅[使用云资源管理器管理 Azure 资源](http://go.microsoft.com/fwlink/?LinkId=623031)。
+>[AZURE.NOTE] 可使用 Visual Studio 2015 中的“云资源管理器”对通过 Azure 资源管理器堆栈创建的虚拟机进行远程调试。
 
 ### 调试 Azure 虚拟机
 
@@ -122,7 +122,7 @@ Visual Studio 提供了不同的选项让您调试 Azure 云服务和虚拟机�
 
     ![选择代码类型对话框](./media/vs-azure-tools-debug-cloud-services-virtual-machines/IC718346.png)
 
-1. 单击虚拟机上你想要调试的进程，然后单击“附加”。例如，如果您想要调试虚拟机上的某个 Web 应用，则可以选择 w3wp.exe 进程。有关详细信息，请参阅[在 Visual Studio 中调试一个或多个进程](https://msdn.microsoft.com/library/jj919165.aspx)和 [Azure 角色体系结构](http://blogs.msdn.com/b/kwill/archive/2011/05/05/windows-azure-role-architecture.aspx)。
+1. 单击虚拟机上你想要调试的进程，然后单击“附加”。例如，如果您想要调试虚拟机上的某个 Web 应用，则可以选择 w3wp.exe 进程。有关详细信息，请参阅[在 Visual Studio 中调试一个或多个进程](https://msdn.microsoft.com/zh-cn/library/jj919165.aspx)和 [Azure 角色体系结构](http://blogs.msdn.com/b/kwill/archive/2011/05/05/windows-azure-role-architecture.aspx)。
 
 ## 创建用于调试的 Web 项目和虚拟机
 
@@ -143,7 +143,7 @@ Visual Studio ASP.NET 项目提供了一个选项，让您创建可用于应用�
 
     **备注：**如果您尚未登录到 Azure 帐户，系统将要求您登录。
 
-1. 选择虚拟机的各项设置，然后单击“确定”。有关详细信息，请参阅[虚拟机](http://go.microsoft.com/fwlink/?LinkId=623033)。
+1. 选择虚拟机的各项设置，然后单击“确定”。
 
     为 DNS 名称输入的名称也就是虚拟机的名称。
 
@@ -184,6 +184,6 @@ Visual Studio ASP.NET 项目提供了一个选项，让您创建可用于应用�
 ## 后续步骤
 
 - 使用“Intellitrace”从发布服务器中收集调用和事件的日志。请参阅[使用 IntelliTrace 和 Visual Studio 调试已发布的云服务](http://go.microsoft.com/fwlink/?LinkID=623016)。
-- 使用“Azure 诊断”以记录在角色内运行的代码的详细信息，角色是否在开发环境或 Azure 中运行。请参阅[使用 Azure 诊断收集日志记录数据](http://go.microsoft.com/fwlink/p/?LinkId=400450)。
+- 使用“Azure 诊断”以记录在角色内运行的代码的详细信息，角色是否在开发环境或 Azure 中运行。请参阅[使用 Azure 诊断收集日志记录数据](/documentation/articles/cloud-services-dotnet-diagnostics/)。
 
 <!---HONumber=Mooncake_0516_2016-->

@@ -17,7 +17,7 @@
 
 云资源管理器旨在让你更轻松快速地在 Visual Studio IDE 中浏览和管理 Azure 资源。例如，它可让你在 Azure 门户或浏览器中打开 Web 应用、在其中附加调试工具，或者查看 Blob 容器的属性并在 Blob 容器编辑器中打开它。
 
-与 Microsoft Azure 预览门户一样，云资源管理器基于 Azure Resource Manager 堆栈。它可以识别 Azure 资源组等资源，以及 Logic Apps 和 API Apps 等 Azure 服务，并支持[基于角色的访问控制](../role-based-access-control-configure/) (RBAC)。若要查看已添加或更改的 Azure 资源，请在云资源管理器工具栏上选择“刷新”按钮。
+与 Microsoft Azure 预览门户一样，云资源管理器基于 Azure Resource Manager 堆栈。它可以识别 Azure 资源组等资源，以及 Logic Apps 和 API Apps 等 Azure 服务。若要查看已添加或更改的 Azure 资源，请在云资源管理器工具栏上选择“刷新”按钮。
 
 在安装 Visual Studio Tools for Azure SDK 2.7 的过程中会安装云资源管理器。
 
@@ -26,7 +26,7 @@
 - Visual Studio 2015 RTM。
 
 - Visual Studio Tools for Azure SDK。
-- 你还必须有一个 Azure 帐户并登录，才能在云资源管理器中查看 Azure 资源。如果你没有帐户，只需几分钟的时间就能创建一个帐户。如果你有 MSDN 订阅，请参阅 [MSDN 订户的 Azure 权益](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)。否则，请参阅[创建一个免费试用帐户](http://azure.microsoft.com/pricing/free-trial/)。
+- 你还必须有一个 Azure 帐户并登录，才能在云资源管理器中查看 Azure 资源。如果你没有帐户，只需几分钟的时间就能创建一个帐户。请参阅[创建试用帐户](/pricing/1rmb-trial/)。
 
 - 如果看不到云资源管理器，可以在菜单栏上选择“查看”、“其他窗口”、“云资源管理器”。
 

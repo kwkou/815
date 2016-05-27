@@ -15,7 +15,7 @@
 
 ## 概述
 
-若要筛选 Visual Studio **表设计器**中显示在 Azure 表中的数据，可以构造一个筛选器字符串并将其输入到筛选器字段中。筛选器字符串语法由 WCF 数据服务进行定义，与 SQL WHERE 子句类似，但通过 HTTP 请求发送给表服务。**表设计器**会为你处理正确的编码以便筛选所需的属性值，你只需要在筛选器字段中输入属性名、比较运算符、条件值以及可选的布尔运算符。无需像构造通过[存储空间服务 REST API 参考](http://go.microsoft.com/fwlink/p/?LinkId=400447)来查询表的 URL 那样包括 $filter 查询选项。
+若要筛选 Visual Studio **表设计器**中显示在 Azure 表中的数据，可以构造一个筛选器字符串并将其输入到筛选器字段中。筛选器字符串语法由 WCF 数据服务进行定义，与 SQL WHERE 子句类似，但通过 HTTP 请求发送给表服务。**表设计器**会为你处理正确的编码以便筛选所需的属性值，你只需要在筛选器字段中输入属性名、比较运算符、条件值以及可选的布尔运算符。无需像构造通过[存储空间服务 REST API 参考](https://msdn.microsoft.com/zh-cn/library/dd179355.aspx)来查询表的 URL 那样包括 $filter 查询选项。
 
 WCF 数据服务基于[开放数据协议](http://go.microsoft.com/fwlink/p/?LinkId=214805) (OData)。有关筛选系统查询选项 (**$filter**) 的详细信息，请参阅 [OData URI 约定规范](http://go.microsoft.com/fwlink/p/?LinkId=214806)。
 
@@ -41,7 +41,7 @@ WCF 数据服务基于[开放数据协议](http://go.microsoft.com/fwlink/p/?Lin
 
 - 筛选器字符串的所有部分都区分大小写。
 
-- 常量值的数据类型必须与属性的类型相同，这样筛选器才能返回有效的结果。有关支持的属性类型的详细信息，请参阅 [了解表服务数据模型](http://go.microsoft.com/fwlink/p/?LinkId=400448)。
+- 常量值的数据类型必须与属性的类型相同，这样筛选器才能返回有效的结果。有关支持的属性类型的详细信息，请参阅 [了解表服务数据模型](https://msdn.microsoft.com/zh-cn/library/dd179338.aspx)。
 
 ## 针对字符串属性进行筛选
 
@@ -89,7 +89,7 @@ WCF 数据服务基于[开放数据协议](http://go.microsoft.com/fwlink/p/?Lin
 
 ## 针对日期时间属性进行筛选
 
-若要对日期时间值进行筛选，请指定 **datetime** 关键字，后接单引号括起来的日期/时间常量。日期/时间常量必须采用组合的 UTC 格式，如 [设置 DateTime 属性值格式](http://go.microsoft.com/fwlink/p/?LinkId=400449)中所述。
+若要对日期时间值进行筛选，请指定 **datetime** 关键字，后接单引号括起来的日期/时间常量。日期/时间常量必须采用组合的 UTC 格式，如 [设置 DateTime 属性值格式](https://msdn.microsoft.com/zh-cn/library/azure/dd894027.aspx)中所述。
 
 以下示例将返回 CustomerSince 属性等于 2008-07-10 的实体：
 

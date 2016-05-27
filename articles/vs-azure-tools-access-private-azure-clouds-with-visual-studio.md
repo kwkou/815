@@ -35,8 +35,6 @@
 
 ## 后续步骤
 
-[从 Visual Studio 发布到 Azure 云服务](https://msdn.microsoft.com/zh-cn/library/azure/ee460772.aspx)
-
 [How to: Download and Import Publish Settings and Subscription Information（如何：下载并导入发布设置和订阅信息）](https://msdn.microsoft.com/zh-cn/library/dn385850(v=nav.70).aspx)
 
 
