@@ -1,71 +1,76 @@
-<properties title="Active Directory 身份验证入门" pageTitle="" metaKeywords="Azure, Getting Started, Active Directory" description="" services="active-directory" documentationCenter="" authors="ghogen, kempb" />
-
+<properties 
+	pageTitle="Azure Active Directory 入门（.NET 项目）" 
+	description="如何在 Visual Studio 中开始使用 Azure Active Directory" 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="patshea123" 
+	manager="douge" 
+	editor="tglee"/>
+  
 <tags 
-wacn.date="04/11/2015"
-ms.service="active-directory" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="02/02/2015" ms.author="ghogen, kempb"></tags>
+	ms.service="active-directory"  
+	ms.date="05/06/2015" 
+	wacn.date=""/>
+
+# Azure Active Directory 入门（.NET 项目）
 
 > [AZURE.SELECTOR]
->
 > -   [入门](/documentation/articles/vs-active-directory-dotnet-getting-started)
 > -   [发生了什么情况](/documentation/articles/vs-active-directory-dotnet-what-happened)
 
-## Azure Active Directory 入门（.NET 项目）
-
-##### 访问控制器需要身份验证
+##### 访问控制器需要身份验证 
 
 您项目中的所有控制器均带有 **Authorize** 属性。此属性要求用户先进行身份验证，然后才能访问这些控制器。若要允许匿名访问控制器，请从控制器删除此属性。如果您想要更详细地设置这些权限，请将该属性应用到需要身份验证的每个方法，而不是将它应用到控制器类。
 
 ##### 添加 SignIn/SignOut 控件
 
-若要将 SignIn/SignOut 控件添加到您的视图，您可以使用 \*\*\_LoginPartial.cshtml\*\* 分部视图将该功能添加到您的某个视图。下面是已添加到标准 \*\*\_Layout.cshtml\*\* 视图的功能的示例。（注意带有 navbar-collapse 类的 div 中的最后一个元素）：
+若要将 SignIn/SignOut 控件添加到你的视图，你可以使用 **_LoginPartial.cshtml** 分部视图将该功能添加到你的某个视图。下面是已添加到标准 **_Layout.cshtml** 视图的功能的示例。（注意带有 navbar-collapse 类的 div 中的最后一个元素）：
 
-<pre class="prettyprint">
-&lt;!DOCTYPE html&gt; 
-&lt;html&gt; 
-&lt;head&gt; 
-&lt;meta charset=&quot;utf-8&quot; /&gt; 
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; 
-&lt;title&gt;@ViewBag.Title - My ASP.NET Application&lt;/title&gt; 
-@Styles.Render(&quot;~/Content/css&quot;) 
-@Scripts.Render(&quot;~/bundles/modernizr&quot;) 
-&lt;/head&gt; 
-&lt;body&gt; 
-&lt;div class=&quot;navbar navbar-inverse navbar-fixed-top&quot;&gt; 
-&lt;div class=&quot;container&quot;&gt; 
-&lt;div class=&quot;navbar-header&quot;&gt; 
-&lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.navbar-collapse&quot;&gt; 
-&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt; 
-&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt; 
-&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt; 
-&lt;/button&gt; 
-@Html.ActionLink(&quot;Application name&quot;, &quot;Index&quot;, &quot;Home&quot;, new { area = &quot;&quot; }, new { @class = &quot;navbar-brand&quot; }) 
-&lt;/div&gt; 
-&lt;div class=&quot;navbar-collapse collapse&quot;&gt; 
-&lt;ul class=&quot;nav navbar-nav&quot;&gt; 
-&lt;li&gt;@Html.ActionLink(&quot;Home&quot;, &quot;Index&quot;, &quot;Home&quot;)&lt;/li&gt; 
-&lt;li&gt;@Html.ActionLink(&quot;About&quot;, &quot;About&quot;, &quot;Home&quot;)&lt;/li&gt; 
-&lt;li&gt;@Html.ActionLink(&quot;Contact&quot;, &quot;Contact&quot;, &quot;Home&quot;)&lt;/li&gt; 
-&lt;/ul&gt; 
-@Html.Partial(&quot;_LoginPartial&quot;) 
-&lt;/div&gt; 
-&lt;/div&gt; 
-&lt;/div&gt; 
-&lt;div class=&quot;container body-content&quot;&gt; 
-@RenderBody() 
-&lt;hr /&gt; 
-&lt;footer&gt; 
-&lt;p&gt;© @DateTime.Now.Year - My ASP.NET Application&lt;/p&gt; 
-&lt;/footer&gt; 
-&lt;/div&gt; 
-@Scripts.Render(&quot;~/bundles/jquery&quot;) 
-@Scripts.Render(&quot;~/bundles/bootstrap&quot;) 
-@RenderSection(&quot;scripts&quot;, required:false) 
-&lt;/body&gt; 
-&lt;/html&gt;
-</pre>
+<PRE class="prettyprint">
+    &lt;!DOCTYPE html&gt; 
+     &lt;html&gt; 
+     &lt;head&gt; 
+         &lt;meta charset="utf-8" /&gt; 
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; 
+        &lt;title&gt;@ViewBag.Title - My ASP.NET Application&lt;/title&gt; 
+        @Styles.Render("~/Content/css") 
+        @Scripts.Render("~/bundles/modernizr") 
+    &lt;/head&gt; 
+    &lt;body&gt; 
+        &lt;div class="navbar navbar-inverse navbar-fixed-top"&gt; 
+            &lt;div class="container"&gt; 
+                &lt;div class="navbar-header"&gt; 
+                    &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"&gt; 
+                        &lt;span class="icon-bar"&gt;&lt;/span&gt; 
+                        &lt;span class="icon-bar"&gt;&lt;/span&gt; 
+                        &lt;span class="icon-bar"&gt;&lt;/span&gt; 
+                    &lt;/button&gt; 
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" }) 
+                &lt;/div&gt; 
+                &lt;div class="navbar-collapse collapse"&gt; 
+                    &lt;ul class="nav navbar-nav"&gt; 
+                        &lt;li&gt;@Html.ActionLink("Home", "Index", "Home")&lt;/li&gt; 
+                        &lt;li&gt;@Html.ActionLink("About", "About", "Home")&lt;/li&gt; 
+                        &lt;li&gt;@Html.ActionLink("Contact", "Contact", "Home")&lt;/li&gt; 
+                    &lt;/ul&gt; 
+                    <span style="background-color:yellow">@Html.Partial("_LoginPartial")</span> 
+                &lt;/div&gt; 
+            &lt;/div&gt; 
+        &lt;/div&gt; 
+        &lt;div class="container body-content"&gt; 
+            @RenderBody() 
+            &lt;hr /&gt; 
+            &lt;footer&gt; 
+                &lt;p&gt;&amp;copy; @DateTime.Now.Year - My ASP.NET Application&lt;/p&gt; 
+            &lt;/footer&gt; 
+        &lt;/div&gt; 
+        @Scripts.Render("~/bundles/jquery") 
+        @Scripts.Render("~/bundles/bootstrap") 
+        @RenderSection("scripts", required: false) 
+    &lt;/body&gt; 
+    &lt;/html&gt;
+</PRE>
 
-[详细了解 Azure Active Directory][详细了解 Azure Active Directory]
+[详细了解 Azure Active Directory](http://www.windowsazure.cn/home/features/identity/)
 
-  [入门]: /zh-cn/documentation/articles/vs-active-directory-dotnet-getting-started/
-  [发生了什么情况]: /zh-cn/documentation/articles/vs-active-directory-dotnet-what-happened/
-  [详细了解 Azure Active Directory]: /manage/services/identity/
+<!---HONumber=64-->
