@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="billing-aog" ms.date="" wacn.date="5/27/2016"/>
+<tags ms.service="billing-aog" ms.date="" wacn.date="05/27/2016"/>
 
 #释放虚拟磁盘未使用空间来减少计费容量
 
@@ -18,7 +18,7 @@
  
 ![](./media/aog-virtual-machine-delete-vhd-unused/page-blob-schematic-diagram.png)
 
-为了改善这个问题，Azure 虚拟机支持了 TRIM 功能。这个功能原先用于来自于固态硬盘（SSD），用于释放写入过的空间。在 Azure 上，虚拟机操作系统通过这个命令来告知页 Blob 哪些空间可以释放，从而减少计费容量。现在大部分 Azure 上由 Microsoft 提供的映像所使用的操作系统都支持 TRIM 功能，包括所有 Windows 的映像，和较新的 Linux 映像（如所有 UBUNTU，centos 7.2，和 SUSE Linux Enterprise Server 12）。对 TRIM 功能支持的确切版本信息，请查询具体 Linux 发行版本提供商的技术文档。对于不支持的 TRIM 的 Linux 版本，可尝试安装[Linux Integration Services Version 4.1 for Hyper-V驱动](https://www.microsoft.com/en-us/download/confirmation.aspx?id=51612)，增加对 TRIM 的支持。
+为了改善这个问题，Azure 虚拟机支持了 TRIM 功能。这个功能原先用于来自于固态硬盘（SSD），用于释放写入过的空间。在 Azure 上，虚拟机操作系统通过这个命令来告知页 Blob 哪些空间可以释放，从而减少计费容量。现在大部分 Azure 上由 Microsoft 提供的映像所使用的操作系统都支持 TRIM 功能，包括所有 Windows 的映像，和较新的 Linux 映像（如所有 UBUNTU，centos 7.2，和 SUSE Linux Enterprise Server 12）。对 TRIM 功能支持的确切版本信息，请查询具体 Linux 发行版本提供商的技术文档。对于不支持的 TRIM 的 Linux 版本，可尝试安装 [Linux Integration Services Version 4.1 for Hyper-V驱动](https://www.microsoft.com/en-us/download/confirmation.aspx?id=51612)，增加对 TRIM 的支持。
 
 在 Windows 系统中，这个功能是通过驱动器优化提供的，默认每周会自动执行一次。当然也可以在“控制面板->系统和安全->对你的驱动器进行碎片整理和优化”中进行手动执行或更改设置。另一个必要条件是启用 UnMap，因为在 Azure 虚拟机上是默认不启用的，需要通过以下命令启用。
 
@@ -29,7 +29,7 @@
 	sudo /sbin/fstrim /mnt/data
 
 现在我们明白了虚拟磁盘计费的原理，就可以理解导致“已释放”空间被计费问题的原因。为了减少计费容量，首先要确定操作系统是否支持 TRIM 功能。尤其在 Linux 的情况下，各种不同的系统和版本的支持情况都略有不同，需要用户自己根据实际配置去确认和启用。如果系统支持，还须在必要时去执行它。为了方便维护，可以建一个计划任务来定期执行。
-最后，笔者再介绍一个用于查询 Azure 上的虚拟磁盘实际可计费大小的工具[https://github.com/sandrinodimattia/WindowsAzure-VhdSize/releases/tag/v1.0](https://github.com/sandrinodimattia/WindowsAzure-VhdSize/releases/tag/v1.0)。它由 Azure MVP，Sandrino Di Mattia 开发，默认用于国际版 Azure，也可用于中国版。用法：wazvhdsize.exe <存储账户名> <访问密钥> <VHD的URL>
+最后，笔者再介绍一个用于查询 Azure 上的虚拟磁盘实际可计费大小的工具 [https://github.com/sandrinodimattia/WindowsAzure-VhdSize/releases/tag/v1.0](https://github.com/sandrinodimattia/WindowsAzure-VhdSize/releases/tag/v1.0)。它由 Azure MVP，Sandrino Di Mattia 开发，默认用于国际版 Azure，也可用于中国版。用法：wazvhdsize.exe <存储账户名> <访问密钥> <VHD的URL>
 
 ![](./media/aog-virtual-machine-delete-vhd-unused/real-vhd-tool.png)
  
