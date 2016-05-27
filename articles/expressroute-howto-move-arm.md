@@ -34,7 +34,7 @@
 登录到 Azure 经典环境并收集服务密钥。可以使用以下 PowerShell 代码段来收集信息：
 
 	# Sign in to your Azure account
-	Add-AzureAccount
+	Add-AzureAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
 
 	# Select the appropriate Azure subscription
 	Select-AzureSubscription "<Enter Subscription Name here>"
