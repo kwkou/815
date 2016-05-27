@@ -17,9 +17,9 @@
 
 当应用程序连接到 Azure SQL 数据库时，你将收到以下错误消息：
 
-```
-Error code 40613: "Database <x> on server <y> is not currently available. Please retry the connection later. If the problem persists, contact customer support, and provide them the session tracing ID of <z>"
-```
+	
+	Error code 40613: "Database <x> on server <y> is not currently available. Please retry the connection later. If the problem persists, contact customer support, and provide them the session tracing ID of <z>"
+
 
 > [AZURE.NOTE] 此错误消息通常是暂时的（生存期较短）。
 

@@ -1,4 +1,4 @@
-> [AZURE.SELECTOR-LIST (语言 | 平台 & 深度)]
+> [AZURE.SELECTOR-LIST]
 - [(CSharp | Windows.Starter)](/documentation/articles/sql-database-develop-dotnet-simple)
 - [(CSharp | Windows.Retry logic)](/documentation/articles/sql-database-develop-csharp-retry-windows)
 - [(Java | Windows.Starter)](/documentation/articles/sql-database-develop-java-simple-windows)
