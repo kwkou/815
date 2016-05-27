@@ -17,7 +17,7 @@
 
 > [AZURE.SELECTOR]
 - [PowerShell - 资源管理器](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps)
-- [门户 - 经典](/documentation/articles/vpn-gateway-point-to-site-create)
+- [Azure 管理门户](/documentation/articles/vpn-gateway-point-to-site-create)
 
 点到站点设置可让你从客户端计算机单独创建与虚拟网络的安全连接。可通过从客户端计算机启动连接来建立 VPN 连接。如果你要从远程位置（例如从家里或会议室）连接到 VNet，或者只有少数几个需要连接到虚拟网络的客户端，则点到站点连接是绝佳的解决方案。
 

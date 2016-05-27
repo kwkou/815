@@ -16,8 +16,7 @@
 # 使用 Azure 门户创建具有站点到站点 VPN 连接的 Resource Manager VNet
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal)
-- [Azure 门户 - 经典](/documentation/articles/vpn-gateway-site-to-site-create)
+- [Azure 管理门户](/documentation/articles/vpn-gateway-site-to-site-create)
 - [PowerShell - 资源管理器](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)
 
 
