@@ -9,7 +9,7 @@
 <tags 
    ms.service="vpn-gateway"
    ms.date="03/10/2016"
-   wacn.date="05/09/2016" />
+   wacn.date="05/10/2016" />
 
 # VPN 网关常见问题
 

@@ -11,7 +11,7 @@
 <tags
    ms.service="vpn-gateway"
    ms.date="03/25/2016"
-   wacn.date="05/09/2016"/>
+   wacn.date="05/10/2016"/>
 
 # 使用 Azure 门户创建具有站点到站点 VPN 连接的 Resource Manager VNet
 

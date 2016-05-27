@@ -10,7 +10,7 @@
 <tags 
    ms.service="vpn-gateway"
    ms.date="02/24/2016"
-   wacn.date="05/09/2016" />
+   wacn.date="05/10/2016" />
 
 # 使用经典部署模型为 VPN 网关配置强制隧道
 

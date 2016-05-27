@@ -10,7 +10,7 @@
 <tags 
    ms.service="vpn-gateway"
    ms.date="03/15/2016"
-   wacn.date="05/09/2016" />
+   wacn.date="05/10/2016" />
 
 # 关于站点到站点 VPN 网关连接的 VPN 设备
 

@@ -10,7 +10,7 @@
 <tags 
    ms.service="vpn-gateway"
    ms.date="04/12/2016"
-   wacn.date="05/09/2016" />
+   wacn.date="05/10/2016" />
 
 # 使用 PowerShell 和 Azure 资源管理器配置强制隧道
 

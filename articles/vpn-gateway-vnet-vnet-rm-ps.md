@@ -11,7 +11,7 @@
 <tags
    ms.service="vpn-gateway"
    ms.date="03/15/2016"
-   wacn.date="05/09/2016"/>
+   wacn.date="05/10/2016"/>
 
 # 使用 Azure Resource Manager 和 PowerShell 配置 VNet 到 VNet 连接
 
@@ -24,7 +24,7 @@
 
 **关于 Azure 部署模型**
 
-[AZURE.INCLUDE [vpn-gateway-classic-rm](../includes/vpn-gateway-classic-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)]
 
 **VNet 到 VNet 的部署模型和工具**
 

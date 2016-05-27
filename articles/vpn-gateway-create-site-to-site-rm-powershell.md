@@ -11,7 +11,7 @@
 <tags
    ms.service="vpn-gateway"
    ms.date="03/16/2016"
-   wacn.date="05/09/2016"/>
+   wacn.date="05/10/2016"/>
 
 # 使用 PowerShell 和 Azure Resource Manager 创建具有站点到站点 VPN 连接的虚拟网络
 

@@ -10,7 +10,7 @@
 <tags 
    ms.service="vpn-gateway"
    ms.date="03/18/2016"
-   wacn.date="05/09/2016" />
+   wacn.date="05/10/2016" />
 
 # Azure VPN 网关连接拓扑
 

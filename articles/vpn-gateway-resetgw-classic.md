@@ -11,7 +11,7 @@
 <tags
    ms.service="vpn-gateway"
    ms.date="02/04/2016"
-   wacn.date="05/09/2016"/>
+   wacn.date="05/10/2016"/>
 
 # 使用 PowerShell 重置 Azure VPN 网关
 

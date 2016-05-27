@@ -9,7 +9,7 @@
 <tags 
    ms.service="vpn-gateway"
    ms.date="03/08/2016"
-   wacn.date="05/09/2016" />
+   wacn.date="05/10/2016" />
 
 # 关于虚拟网络的安全跨界连接
 

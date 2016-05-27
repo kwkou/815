@@ -11,7 +11,7 @@
 <tags 
    ms.service="vpn-gateway"
    ms.date="12/17/2015"
-   wacn.date="05/09/2016" />
+   wacn.date="05/10/2016" />
 
 # 将多个本地站点连接到虚拟网络
 

@@ -10,7 +10,7 @@
 <tags 
    ms.service="vpn-gateway"
    ms.date="03/28/2016"
-   wacn.date="05/09/2016"/>
+   wacn.date="05/10/2016"/>
 
 # 规划和设计 VPN 网关
 

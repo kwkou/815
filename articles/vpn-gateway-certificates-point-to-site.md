@@ -10,7 +10,7 @@
 <tags 
    ms.service="vpn-gateway"
    ms.date="01/15/2016"
-   wacn.date="05/09/2016" />
+   wacn.date="05/10/2016" />
 
 # 为点到站点配置使用自签名根证书
 
