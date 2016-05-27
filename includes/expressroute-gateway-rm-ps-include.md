@@ -11,7 +11,7 @@
 - Subnet1 地址空间 = “192.168.0.0/16”
 - 网关子网名称（GatewaySubnet）：“GatewaySubnet” 必须始终将网关子网命名为 *GatewaySubnet*。
 - 网关子网地址空间 = “192.168.200.0/26”
-- 区域（Location） =“美国东部”
+- 区域（Location） =“中国东部”
 - 网关名称（GWName） = “GW”
 - 网关 IP 名称（GWIPName） = “GWIP”
 - 网关 IP 配置名称（GWIPconfName） = “gwipconf”
@@ -23,14 +23,14 @@
 
 1. 连接到 Azure 订阅。 
 
-		Login-AzureRmAccount
+		Login-AzureRmAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
 		Get-AzureRmSubscription 
 		Select-AzureRmSubscription -SubscriptionName "Name of subscription"
 
 2. 声明此示例的变量。本示例将在以下例子中使用这些变量。请务必编辑此例子，以反映想要使用的设置。
 		
 		$RG = "TestRG"
-		$Location = "East US"
+		$Location = "China East"
 		$GWName = "GW"
 		$GWIPName = "GWIP"
 		$GWIPconfName = "gwipconf"
