@@ -1,7 +1,6 @@
-﻿<properties 
+<properties 
 	pageTitle="我的 WebApi 项目（Visual Studio Azure Active Directory 连接服务）发生了什么情况 | Azure " 
 	description="描述你使用 Visual Studio 连接到 Azure AD 的 MVC 项目 WebApi 发生了什么情况" 
-	services="active-directory" 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="patshea123" 
@@ -57,13 +56,13 @@
 ###您的 app.config 或 web.config 文件具有新的配置值。
 
 已添加以下配置条目。
-```
-	`<appSettings>
+
+	<appSettings>
     		<add key="ida:ClientId" value="ClientId from the new Azure AD App" />
     		<add key="ida:Tenant" value="Your selected Azure AD Tenant" />
     		<add key="ida:Audience" value="The App ID Uri from the wizard" />
-	</appSettings>`
-```
+	</appSettings>
+
 
 ###已创建 Azure AD 应用
 
@@ -103,11 +102,11 @@ NuGet 包引用已删除，文件已删除和备份。根据你的项目的状�
 
 添加了以下附加配置条目。
 
-```
-	`<appSettings>
+
+	<appSettings>
 	    <add key="ida:Password" value="Your Azure AD App's new password" />
-	</appSettings>`
-```
+	</appSettings>
+
 
 ###你的 Azure Active Directory 应用已更新
 你的 Azure Active Directory 应用已更新为包括“读取目录数据”权限，并已创建一个附加密钥，该密钥随后已用作 `web.config` 文件中的 *ida:Password*。
