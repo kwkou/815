@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="04/04/2016"
-	wacn.date="05/24/2016"/>
+	wacn.date="05/30/2016"/>
 
 #<a name="howtomonitor"></a>在 Azure 中监视 Web Apps
 

@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage"
 	ms.date="02/21/2016"
-	wacn.date="04/18/2016"/>
+	wacn.date="05/30/2016"/>
 
 # 开始使用 Azure 队列存储和 Visual Studio 连接服务（WebJob 项目）
 

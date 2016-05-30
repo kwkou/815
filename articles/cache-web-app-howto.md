@@ -10,7 +10,7 @@
 <tags
 	ms.service="cache"
 	ms.date="05/05/2016"
-	wacn.date=""/>
+	wacn.date="05/30/2016"/>
 
 # 如何使用 Redis 缓存创建 Web 应用
 

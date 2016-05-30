@@ -10,7 +10,7 @@
 <tags 
 	ms.service="multiple" 
 	ms.date="01/08/2016" 
-	wacn.date="02/26/2016"/>
+	wacn.date="05/30/2016"/>
 
 # 什么是 Azure SDK for .NET？
 

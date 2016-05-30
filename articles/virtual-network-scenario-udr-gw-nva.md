@@ -9,7 +9,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="05/05/2016"
-	wacn.date=""/>
+	wacn.date="05/30/2016"/>
 
 # 虚拟设备方案
 
