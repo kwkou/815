@@ -32,14 +32,13 @@
 -	[Azure 帐户](#azure-account)
 -	[带有用于 .NET 的 Azure SDK 的 Visual Studio 2015](#visual-studio-2015-with-the-azure-sdk-for-net)
 
-### Azure 帐户
+###<a name="azure-account"></a> Azure 帐户
 
 完成本教程需要有一个 Azure 帐户。你可以：
 
-* [免费注册 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=redis_cache_hero)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留帐户和使用免费的 Azure 服务和功能。
-* [激活 Visual Studio 订户权益](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=redis_cache_hero)。MSDN 订阅每月为你提供可用来试用付费版 Azure 服务的信用额度。
+* [注册一元 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=redis_cache_hero)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留帐户和使用免费的 Azure 服务和功能。
 
-### 带有用于 .NET 的 Azure SDK 的 Visual Studio 2015
+###<a name="visual-studio-2015-with-the-azure-sdk-for-net"></a> 带有用于 .NET 的 Azure SDK 的 Visual Studio 2015
 
 本教程专为带有用于 [.NET 2.8.2 的 Azure SDK](/documentation/articles/dotnet-sdk) 的 Visual Studio 2015 或更高版而编写。[单击此处下载最新的用于 Visual Studio 2015 的 Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003)。如果尚未安装 Visual Studio，则会随 SDK 一起自动安装。
 
@@ -69,7 +68,7 @@
 -	[添加控制器](#add-the-controller)
 -	[配置视图](#configure-the-views)
 
-### 添加模型
+###<a name="add-the-model"></a> 添加模型
 
 1. 右键单击解决方案资源管理器中的“模型”，然后选择“添加”>“类”。 
 
@@ -177,7 +176,7 @@
 			<add name="TeamContext" connectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Teams.mdf;Integrated Security=True" 	providerName="System.Data.SqlClient" />
 		</connectionStrings>
 
-### 添加控制器
+###<a name="add-the-controller"></a> 添加控制器
 
 1. 按“F6”生成项目。 
 2. 在“解决方案资源管理器”中，右键单击“Controllers”文件夹，然后选择“添加”，再选择“控制器”。
@@ -223,7 +222,7 @@
 	    );
 
 
-### 配置视图
+###<a name="configure-the-views"></a> 配置视图
 
 1. 在“解决方案资源管理器”中，先展开 **Views** 文件夹，再展开 **Shared** 文件夹，然后双击 **\_Layout.cshtml**。
 
@@ -245,7 +244,7 @@
 
 ![入门应用程序][cache-starter-application]
 
-## 配置应用程序以使用 Redis 缓存
+##<a name="configure-the-application-to-use-redis-cache"></a> 配置应用程序以使用 Redis 缓存
 
 在本教程的此部分，你需要对示例应用程序进行配置，以便使用 [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) 缓存客户端通过 Azure Redis 缓存实例来存储和检索 Contoso 团队统计信息。
 
@@ -255,7 +254,7 @@
 -	[更新用于缓存的“团队索引”视图](#update-the-teams-index-view-to-work-with-the-cache)
 
 
-### 配置应用程序以使用 StackExchange.Redis
+###<a name="configure-the-application-to-use-stackexchangeredis"></a> 配置应用程序以使用 StackExchange.Redis
 
 1. 若要使用 StackExchange.Redis NuGet 包配置客户端应用程序，请在“解决方案资源管理器”中右键单击项目，然后选择“管理 NuGet 包”。 
 
@@ -314,7 +313,7 @@
     ASP.NET 运行时合并了外部文件的内容以及 `<appSettings>` 元素中的标记。如果找不到指定的文件，运行时将忽略文件属性。应用程序的源代码中将不包括你的机密（连接到缓存的连接字符串）。将 Web 应用部署到 Azure 时，不会部署 `WebAppPlusCacheAppSecrests.config` 文件（这正是你所需要的）。可以通过多种方式在 Azure 中指定这些机密，而在本教程中，当你在后续的教程步骤中[预配 Azure 资源](#provision-the-azure-resources)时，系统将为你自动配置这些机密。有关如何在 Azure 中处理机密的详细信息，请参阅 [Best practices for deploying passwords and other sensitive data to ASP.NET and Azure Web App](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure)（将密码和其他敏感数据部署到 ASP.NET 和 Azure Web 应用的最佳做法）。
 
 
-### 更新 TeamsController 类，以便从缓存或数据库返回结果
+###<a name="update-the-teamscontroller-class-to-return-results-from-the-cache-or-the-database"></a> 更新 TeamsController 类，以便从缓存或数据库返回结果
 
 在此示例中，团队统计信息可以从数据库或缓存中检索。团队统计信息以序列化 `List<Team>` 的形式存储在缓存中，同时以排序集的形式按 Redis 数据类型存储。从排序集检索项目时，可以检索部分项目或所有项目，也可以查询特定项目。在此示例中，你将按胜利数在排序集中查询排名前 5 的团队。
 
@@ -539,7 +538,7 @@
         }
 
 
-### 更新用于缓存的 Create、Edit 和 Delete 方法
+###<a name="update-the-create-edit-and-delete-methods-to-work-with-the-cache"></a> 更新用于缓存的 Create、Edit 和 Delete 方法
 
 作为此示例一部分生成的基架代码包括用于添加、编辑和删除团队的方法。只要添加、编辑或删除了团队，缓存中的数据就变成了过时的数据。在本部分，你需要修改这三种清除缓存团队的方法，避免出现缓存与数据库不同步的情况。
 
@@ -608,7 +607,7 @@
 	    }
 
 
-### 更新用于缓存的“团队索引”视图
+###<a name="update-the-teams-index-view-to-work-with-the-cache"></a> 更新用于缓存的“团队索引”视图
 
 1. 在“解决方案资源管理器”中，先展开 **Views** 文件夹，再展开 **Teams** 文件夹，然后双击“Index.cshtml”。
 
@@ -661,7 +660,7 @@
 
 4. 按“F6”生成项目。
 
-## 预配 Azure 资源
+##<a name="provision-the-azure-resources"></a> 预配 Azure 资源
 
 若要在 Azure 中托管应用程序，必须先预配应用程序所需的 Azure 服务。本教程中的示例应用程序使用以下 Azure 服务。
 
@@ -680,9 +679,9 @@
 
     New-AzureRmResourceGroupDeployment -ResourceGroupName MyWebAppPlusCache -TemplateFile azuredeploy.json
 
-注意：可以使用参数对象来指定参数。有关详细信息，请参阅 [Deploy resources with Azure Resource Manager templates](https://azure.microsoft.com/zh-cn/documentation/articles/resource-group-template-deploy/)（使用 Azure Resource Manager 模板部署资源）。
+注意：可以使用参数对象来指定参数。有关详细信息，请参阅 [Deploy resources with Azure Resource Manager templates](/documentation/articles/resource-group-template-deploy/)（使用 Azure Resource Manager 模板部署资源）。
 
-## 将应用程序发布到 Azure
+##<a name="publish-the-application-to-azure"></a> 将应用程序发布到 Azure
 
 在教程的这一步中，你需要将应用程序发布到 Azure 并在云中运行。
 
@@ -721,18 +720,9 @@
 
 ## 完成应用程序的操作以后，删除相关资源
 
-完成示例性的教程应用程序以后，即可删除所用的 Azure 资源，以便节省成本和资源。如果你使用[预配 Azure 资源](#provision-the-azure-resources)部分的“部署到 Azure”按钮，并且你的所有资源都包含在同一资源组中，则可通过删除资源组这一个操作来删除所有资源。
+完成示例性的教程应用程序以后，即可删除所用的 Azure 资源，以便节省成本和资源。如果你的所有资源都包含在同一资源组中，则可通过删除资源组这一个操作来删除所有资源。
 
-1. 登录到 [Azure 门户](https://portal.azure.cn)，然后单击“资源组”。
-2. 将资源组的名称键入“筛选项目...”文本框中。
-3. 单击资源组右侧的“...”。
-4. 单击“删除”。
-
-    ![删除][cache-delete-resource-group]
-
-5. 键入资源组的名称，然后单击“删除”。
-
-    ![确认删除][cache-delete-confirm]
+	Remove-AzureRmResourceGroup -ResourceGroupName <your resource group>
 
 几分钟后，资源组及其包含的所有资源就会被删除。
 
