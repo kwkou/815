@@ -48,8 +48,6 @@ Azure SDK for .NET 将安装以下产品：
 * [将控制台应用程序项目发布到 Azure WebJobs](/documentation/articles/websites-dotnet-deploy-webjobs)。
 * [在创建新的 Web 项目或发布 Web 项目时创建 Azure 网站和 SQL 数据库资源](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
 * [在创建新网站时创建 PowerShell 部署脚本](http://msdn.microsoft.com/zh-cn/library/dn642480.aspx)。
-* [在服务器资源管理器中管理和故障诊断 Azure 网站](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#sitemanagement)。
-* [在调试模式下针对网站和 WebJobs 远程运行](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#remotedebug)。 
 
 >[AZURE.NOTE] 无需安装 Azure SDK for .NET 即可使用这些功能；它们还包括在 Visual Studio 更新中。
 

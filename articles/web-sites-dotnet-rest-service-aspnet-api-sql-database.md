@@ -714,7 +714,6 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 * [使用 MVC 的 Entity Framework 入门][EFCodeFirstMVCTutorial]
 * [ASP.NET MVC 5 简介](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)
 * [你的第一个 ASP.NET Web API](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api)
-* [调试 WAWS](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
 
 本教程和示例应用程序由 [Rick Anderson](http://blogs.msdn.com/b/rickandy/) 在 Tom Dykstra 和 Barry Dorrans 的帮助下编写完成。
 

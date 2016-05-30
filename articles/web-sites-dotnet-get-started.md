@@ -138,8 +138,6 @@
 
 如果你在企业网络中并尝试通过防火墙部署到 Azure，请确保已针对 Web 部署打开端口 443 和 8172。如果无法打开这些端口，请参阅下面的“后续步骤”部分以了解其他部署选项。
 
-在 Azure Web 应用中运行 ASP .NET Web 应用后，你可能想要深入了解可简化故障排解的 Visual Studio 功能。有关日志记录、远程调试等功能的信息，请参阅 [Troubleshooting Azure web apps in Visual Studio（在 Visual Studio 中对 Azure Web 应用进行故障排除）](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)。
-
 ##<a name="next-steps"></a>后续步骤
 
 在本教程中，你已了解如何创建简单的 Web 应用程序并将其部署到 Azure Web 应用。你可以通过以下相关主题和资源来详细了解 Azure Web 应用：
