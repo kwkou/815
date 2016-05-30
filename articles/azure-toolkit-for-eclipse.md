@@ -27,7 +27,6 @@
 * [Azure Toolkit for Eclipse 的新增功能]
 * [安装 Azure Toolkit for Eclipse]
 * [在 Eclipse 中为 Azure 创建 Hello World 应用程序]
-* [在 Eclipse 中创建 Azure 的 Hello World Web 应用]
 * [在 Eclipse 中显示 Package for Azure Libraries for Java 的 Javadoc 内容]
 
 ## 配置 Azure 项目设置 ##
@@ -35,7 +34,6 @@
 以下文章说明了如何使用 Azure Toolkit for Eclipse 来配置 Azure 项目的设置：
 
 * [Azure 项目属性]
-* [Azure 角色属性]
 * [Azure 服务终结点]
 * [Azure 存储帐户列表]
 * [启用会话相关性]

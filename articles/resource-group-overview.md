@@ -81,8 +81,6 @@
 
 有关定义模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
 
-有关如何构建你的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)。
-
 
 ## 标记
 
@@ -101,7 +99,6 @@
 
 你可以显式锁定关键资源，以防止用户删除或修改这些资源。有关详细信息，请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources)。
 
-有关最佳实践，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)
 
 ## 使用自定义策略管理资源
 
@@ -114,8 +111,6 @@
 有关 PowerShell 的信息，请参阅[将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager)和 [Azure 资源管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx)。
 
 有关 REST API 的信息，请参阅 [Azure 资源管理器 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)。
-
-有关使用门户的信息，请参阅[使用 Azure 门户管理 Azure 资源](/documentation/articles/resource-group-portal)。
 
 Azure 资源管理器支持跨域资源共享 (CORS)。使用 CORS 时，你可以从驻留在不同域中的 Web 应用程序调用资源管理器 REST API 或 Azure 服务 REST API。如果不支持 CORS，Web 浏览器将阻止一个域中的应用访问另一个域中的资源。资源管理器为所有具有有效身份验证凭据的请求启用 CORS。
 

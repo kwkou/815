@@ -60,7 +60,7 @@
 
 首先，请将你的 Web 应用注册到 Azure Active Directory (AD)。应用注册将在 Azure AD 中为你的应用创建一个中心标识。该标识保留有关应用程序的基本信息，例如应用程序用来进行身份验证和访问 Azure Resource Manager API 的 OAuth 客户端 ID、回复 URL 和凭据。应用注册还会记录应用程序在代表用户访问 Microsoft API 时所需的各种委派权限。
 
-[Create Active Directory application and service principal using portal](resource-group-create-service-principal-portal.md)（使用门户创建 Active Directory 应用程序和服务主体）主题说明了设置应用程序所要执行的所有步骤。请参阅该主题来创建具有以下属性的应用程序：
+[Create Active Directory application and service principal using portal](/documentation/articles/resource-group-create-service-principal-portal)（使用门户创建 Active Directory 应用程序和服务主体）主题说明了设置应用程序所要执行的所有步骤。请参阅该主题来创建具有以下属性的应用程序：
 
 - 名为 **CloudSense** 的 Web 应用程序
 - 采用 **http://{domain_name_of_your_directory}/{name_of_the_app}** 格式的登录 URL 和应用 ID URI。
@@ -142,7 +142,7 @@ Azure AD 对用户进行身份验证，并根据需要请求用户向应用授�
 - **颁发者**：检查 iss 声明以确保令牌颁发者是 Azure Active Directory：https://sts.windows.net/{tenant_id_of_the_directory}
 - **受众**：检查 aud 声明以确保为应用程序构建了令牌。该值必须是应用程序的客户端 ID。
 - **Nonce**：检查 nonce 声明以检查在授权请求中发送的 nonce 数据，确保应用程序已请求响应且未重播令牌。
-- **签名**：应用必须验证令牌是否已由 Azure Active Directory 签名。Azure AD 签名密钥经常滚动更新，因此应用必须每日轮询刷新的密钥，或在签名验证失败时签入刷新的密钥。有关详细信息，请参阅 [Important Information About Signing Key Rollover in Azure AD](https://msdn.microsoft.com/library/azure/dn641920.aspx)（有关 Azure AD 中签名密钥滚动更新的重要信息）。
+- **签名**：应用必须验证令牌是否已由 Azure Active Directory 签名。Azure AD 签名密钥经常滚动更新，因此应用必须每日轮询刷新的密钥，或在签名验证失败时签入刷新的密钥。有关详细信息，请参阅 [Important Information About Signing Key Rollover in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/dn641920.aspx)（有关 Azure AD 中签名密钥滚动更新的重要信息）。
 
 验证 **id\_token** 后，使用 oid 声明值作为用户的不变且不可重复使用的标识符。将 **unique\_name** 或 upn/email 声明用作用户可读的用户显示名称。也可以针对显示目的使用可选的 given\_name/family\_name 声明。
 
@@ -163,7 +163,7 @@ Azure AD 对用户进行身份验证，并根据需要请求用户向应用授�
 
     grant_type=authorization_code&code=AAABAAAAiL9Kn2Z*****L1nVMH3Z5ESiAA&redirect_uri=http%3A%2F%2Flocalhost%3A62080%2FAccount%2FSignIn&client_id=a0448380-c346-4f9f-b897-c18733de9394&client_secret=olna84E8*****goScOg%3D
 
-使用证书凭据时，请使用应用程序证书凭据的私钥来创建 JSON Web 令牌 (JWT) 并签名 (RSA SHA256)。[Authorization Code Grant Flow](https://msdn.microsoft.com/library/azure/dn645542.aspx)（授权代码授予流）中说明了该令牌的声明类型。请参考 [Active Directory Auth Library (.NET) code](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/blob/master/src/ADAL.NET/CryptographyHelper.cs)（Active Directory 身份验证库 (.NET) 代码）来为客户端断言 JWT 令牌签名。
+使用证书凭据时，请使用应用程序证书凭据的私钥来创建 JSON Web 令牌 (JWT) 并签名 (RSA SHA256)。[Authorization Code Grant Flow](https://msdn.microsoft.com/zh-cn/library/azure/dn645542.aspx)（授权代码授予流）中说明了该令牌的声明类型。请参考 [Active Directory Auth Library (.NET) code](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/blob/master/src/ADAL.NET/CryptographyHelper.cs)（Active Directory 身份验证库 (.NET) 代码）来为客户端断言 JWT 令牌签名。
 
 有关客户端身份验证的详细信息，请参阅 [Open ID Connect spec](http://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication)（Open ID Connect 规范）。下面是一个[示例客户端断言 JWT 令牌](https://www.authnauthz.com/OAuth/ParseJWTToken?token=eyJhbGciOiJSUzI1NiIsIng1dCI6IlFwcXdKZnJNZ003ekJ4M1hkM2NSSFdkYVFsTSJ9.eyJhdWQiOiJodHRwczpcL1wvbG9naW4ud2luZG93cy5uZXRcL2FhbHRlc3RzLm9ubWljcm9zb2Z0LmNvbVwvb2F1dGgyXC90b2tlbiIsImV4cCI6MTQyODk2Mjk5MSwiaXNzIjoiOTA4M2NjYjgtOGE0Ni00M2U3LTg0MzktMWQ2OTZkZjk4NGFlIiwianRpIjoiMmYyMjczMzQtZGQ3YS00NzZkLWFlOTYtYzg4NDQ4YTkxZGM0IiwibmJmIjoxNDI4OTYyMzkxLCJzdWIiOiI5MDgzY2NiOC04YTQ2LTQzZTctODQzOS0xZDY5NmRmOTg0YWUifQ.UXQE9H-FlwxYQmRVG0-p7pAX9TFgiRXcYr7GhbcC7ndIPHKpZ5tfHWPEgBl3ZVRvF2l8uA7HEV86T7t2w7OHhHwLBoW7XTgj-17hnV1CY21MwjrebPjaPIVITiilekKiBASfW2pmss3MjeOYcnBV2MuUnIgt4A_iUbF_-opRivgI4TFT4n17_3VPlChcU8zJqAMpt3TcAxC3EXXfh10Mw0qFfdZKqQOQxKHjnL8y7Of9xeB9BBD_b22JNRv0m7s0cYRx2Cz0cUUHw-ipHhWaW7YwhVRMfK6BMkaDUgaie4zFkcgHb7rm1z0rM1CvzIqP-Mwu3oEqYpY9cYo8nEjMyA)。
 
@@ -229,7 +229,7 @@ ASP.net MVC 示例应用的 [GetUserSubscription](https://github.com/dushyantgil
 
 ### 获取用户对订阅的权限
 
-只能为用户可管理访问权限的订阅显示连接/断开连接操作。对于每个订阅，可调用 [Resource Manager 列出权限](https://msdn.microsoft.com/library/azure/dn906889.aspx) API 来确定用户是否拥有订阅的“访问管理”权限。
+只能为用户可管理访问权限的订阅显示连接/断开连接操作。对于每个订阅，可调用 [Resource Manager 列出权限](https://msdn.microsoft.com/zh-cn/library/azure/dn906889.aspx) API 来确定用户是否拥有订阅的“访问管理”权限。
 
 ASP.net MVC 示例应用的 [UserCanManagerAccessForSubscription](https://github.com/dushyantgill/VipSwapper/blob/master/CloudSense/CloudSense/AzureResourceManagerUtil.cs#L132) 方法可实现此调用。
 
@@ -251,7 +251,7 @@ ASP.net MVC 示例应用的 [UserCanManagerAccessForSubscription](https://github
 
 用户的帐户可以在多个 Azure Active Directory 中。用户最初可能未指定正确的目录名称 - 在此情况下，所需的订阅不会显示在列表中。
 
-[Resource Manager 列出租户](https://msdn.microsoft.com/library/azure/dn790536.aspx) API 可列出包含用户帐户的所有目录的标识符列表。你可以调用该 API 来确定用户帐户是否出现在多个目录中，并选择性地向用户显示如下所示的消息：“找不到所需的订阅? 它可能位于你所属的其他 Azure Active Directory 中。请单击此处切换目录。”
+[Resource Manager 列出租户](https://msdn.microsoft.com/zh-cn/library/azure/dn790536.aspx) API 可列出包含用户帐户的所有目录的标识符列表。你可以调用该 API 来确定用户帐户是否出现在多个目录中，并选择性地向用户显示如下所示的消息：“找不到所需的订阅? 它可能位于你所属的其他 Azure Active Directory 中。请单击此处切换目录。”
 
 ASP.NET MVC 示例应用的 [GetUserOrganizations](https://github.com/dushyantgill/VipSwapper/blob/master/CloudSense/CloudSense/AzureResourceManagerUtil.cs#L20) 方法可实现此调用。
 
@@ -421,7 +421,7 @@ ASP.net MVC 示例应用程序的 [ServicePrincipalHasReadAccessToSubscription](
 
 #### 获取应用程序对订阅的权限
 
-若要检查应用程序是否对 Azure 订阅拥有所需的访问权限，你也可以调用 [Resource Manager 列出权限](https://msdn.microsoft.com/library/azure/dn906889.aspx) API，以类似于确定用户是否拥有对订阅的“访问管理”权限的方式进行检查。不过，这次请使用上一步骤中收到的仅限应用的访问令牌来调用权限 API。
+若要检查应用程序是否对 Azure 订阅拥有所需的访问权限，你也可以调用 [Resource Manager 列出权限](https://msdn.microsoft.com/zh-cn/library/azure/dn906889.aspx) API，以类似于确定用户是否拥有对订阅的“访问管理”权限的方式进行检查。不过，这次请使用上一步骤中收到的仅限应用的访问令牌来调用权限 API。
 
 ASP.NET MVC 示例应用的 [ServicePrincipalHasReadAccessToSubscription](https://github.com/dushyantgill/VipSwapper/blob/master/CloudSense/CloudSense/AzureResourceManagerUtil.cs#L203) 方法可实现此调用。
 
