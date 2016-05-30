@@ -2,7 +2,7 @@
 
 有关使用虚拟网络的详细信息，请参阅 [Virtual Network Overview](/documentation/articles/virtual-networks-overview)（虚拟网络概述）。
 
-1. 从浏览器导航到 [Azure 门户](http://portal.azure.cn)。如有必要，请使用 Azure 帐户登录。
+1. 从浏览器导航到 [Azure 门户](http://manage.windowsazure.cn)。如有必要，请使用 Azure 帐户登录。
 
 2. 单击“新建”>“网络”>“虚拟网络”。
 

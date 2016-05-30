@@ -11,7 +11,6 @@ CPU 时间（天）<sup>6</sup>|60 分钟|240 分钟|无限制，按标准[费�
 带宽|165 MB|无限制，收取[数据传输费率](/pricing/details/data-transfer/)|无限制，收取数据传输费率|无限制，收取数据传输费率|无限制，收取数据传输费率
 应用程序体系结构|32 位|32 位|32 位/64 位|32 位/64 位|32 位/64 位
 每个实例的 Web 套接字数<sup>7</sup>|5|35|350|不受限制|不受限制
-每个应用程序的并发[调试器连接](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)数|1|1|1|5|5
 [带 FTP/S 和 SSL 的 chinacloudsites.cn 子域](/documentation/articles/web-sites-configure-ssl-certificate)|X|X|X|X|X
 [自定义域](/documentation/articles/web-sites-custom-domain-name)支持||X|X|X|X
 自定义域 [SSL 支持](/documentation/articles/web-sites-configure-ssl-certificate)|||不受限制|无限制，包含 5 个 SNI SSL 和 1 个 IP SSL 连接|无限制，包含 5 个 SNI SSL 和 1 个 IP SSL 连接

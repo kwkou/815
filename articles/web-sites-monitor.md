@@ -103,11 +103,8 @@
 也可以从 Azure PowerShell 中使用 **Set-AzureWebsite** cmdlet 来启用诊断。如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 > [AZURE.NOTE] 应用程序日志记录依赖于你的应用程序生成的日志信息。用于生成日志信息的方法以及信息格式是特定于编写你的应用程序所使用的语言的。有关使用应用程序日志记录的语言特定的信息，请参见以下文章：
->
-> - **.NET** - [使用 Visual Studio 对 Azure 中的 Web 应用进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
-> - **Node.js** - [如何在 Azure 网站中调试 Node.js 应用程序](/documentation/articles/web-sites-nodejs-debug)
->
-> 只有 .NET 应用程序支持到表或 Blob 存储中的应用程序日志记录。
+><p> - **Node.js** - [如何在 Azure 网站中调试 Node.js 应用程序](/documentation/articles/web-sites-nodejs-debug)
+><p> 只有 .NET 应用程序支持到表或 Blob 存储中的应用程序日志记录。
 
 #### 网站诊断 ####
 

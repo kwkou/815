@@ -64,7 +64,6 @@
 
 ### 故障排除
 
-- 如果出现问题，您可以使用云中的诊断日志和实时调试[在 Visual Studio 中排除故障](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#remotedebug)。 
 - 在 Visual Studio 之外还提供了不同的诊断日志收集方法。请参阅[在 Azure 中启用 Web 应用的诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)。
 - 关于 Node.js 应用程序，请参阅[如何在 Azure 中调试 Node.js Web 应用](/documentation/articles/web-sites-nodejs-debug)。
 

@@ -65,7 +65,6 @@ Azure 管理门户中的 Web 作业仪表板提供了强大的管理功能，可
 * [Visual Studio 中 Azure Web 作业的新开发人员和调试功能](http://blogs.msdn.com/b/webdev/archive/2014/11/12/new-developer-and-debugging-features-for-azure-webjobs-in-visual-studio.aspx)
 * [查看 Web 作业仪表板](/documentation/articles/websites-dotnet-webjobs-sdk-get-started#view-the-webjobs-sdk-dashboard)
 * [如何使用 WebJobs SDK 写入日志并在仪表板中查看日志](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#logs)
-* [远程调试 Web 作业](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#remotedebugwj)
 * [谁写入了 Blob？](http://blogs.msdn.com/b/jmstall/archive/2014/02/19/who-wrote-that-blob.aspx) 
 * [在云中托管交互式代码](http://blogs.msdn.com/b/jmstall/archive/2014/04/26/hosting-interactive-code-in-the-cloud.aspx)
 * [在 Azure Web 作业中添加跟踪](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)

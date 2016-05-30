@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Azure 中的 Web 应用入门" 
-	description="了解如何轻松地在 Azure Web 应用中实时运行 Web 应用。在 5 分钟内学会如何进行实际开发并立即查看结果。" 
+	pageTitle="在 5 分钟内将第一个 Web 应用部署到 Azure" 
+	description="了解如何通过几个步骤来部署一个示例应用，从而轻松地在 Azure 中运行 Web 应用。在 5 分钟内学会如何进行实际开发并立即查看结果。" 
 	services="app-service\web"
 	documentationCenter=""
 	authors="cephalin" 
@@ -10,58 +10,68 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="04/04/2016"
-	wacn.date="05/16/2016"/>
+	ms.date="05/12/2016"
+	wacn.date=""/>
 	
-# Azure 中的 Web 应用入门
+# 在 5 分钟内将第一个 Web 应用部署到 Azure
 
-本教程帮助你快速开始将 Web 应用部署到 [Azure Web 应用](/documentation/services/web-sites)。只需执行少量的操作，就可以：
+[AZURE.INCLUDE [选项卡](../includes/app-service-web-get-started-nav-tabs.md)]
+
+本教程帮助你将第一个 Web 应用部署到 [Azure Web 应用](/documentation/services/web-sites)。Azure 允许你创建 Web 应用。
+
+只需执行少量的操作，就可以：
 
 - 部署示例 Web 应用（在 ASP.NET、PHP、Node.js、Java 或 Python 之间选择）。
 - 在短短几秒内看到应用实时运行。
-- 以推送 [Git](http://www.git-scm.com/) 提交内容的相同方式来更新 Web 应用。
+- 以[推送 Git 提交](https://git-scm.com/docs/git-push)的相同方式来更新 Web 应用。
 
 另外，将提供 [Azure 管理门户](https://manage.windowsazure.cn)的速览并探讨可用的功能。
 
 ## 先决条件
 
-若要完成本教程，你需要：
-
-- Git。可在[此处](http://www.git-scm.com/downloads)下载二进制安装文件。你应该能够从选择的命令行终端运行 `git --version`。 
-- 对 Git 有一个基本的了解。
-- Azure CLI。[此处](/documentation/articles/xplat-cli-install)提供了安装说明。你应该能够从选择的命令行终端运行 `azure --version`。
-- 一个 Azure 帐户。如果你没有帐户，可以[注册1元试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
+- [安装 Git](http://www.git-scm.com/downloads)。 
+- [安装 Azure CLI](/documentation/articles/xplat-cli-install)。 
+- 获取 Azure 帐户。如果你没有帐户，可以[注册试用版](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 ## 部署 Web 应用
 
 让我们将 Web 应用部署到 Azure。
 
-1. 打开新的 Windows 命令提示符、Linux Shell 或 OS X 终端，执行 `CD` 切换到工作目录，然后克隆示例应用，如下所示：
+1. 打开新的 Windows 命令提示符、PowerShell 窗口、Linux shell 或 OS X 终端。运行 `git --version` 和 `azure --version` 验证你的计算机上是否已安装 Git 和 Azure CLI。 
+
+    ![在 Azure 中测试第一个 Web 应用的 CLI 工具安装](./media/app-service-web-get-started/1-test-tools.png)
+
+    如果尚未安装这些工具，请参阅[先决条件](#Prerequisites)中的下载链接。
+
+1. 执行 `CD` 切换到工作目录并克隆示例应用，如下所示：
 
         git clone <github_sample_url>
 
-    对于 &lt;github\_sample\_url>，请使用下列其中一个 URL（根据所需的框架而定）：
+    ![在 Azure 中克隆第一个 Web 应用的应用示例代码](./media/app-service-web-get-started/2-clone-sample.png)
 
+    对于 *&lt;github\_sample\_url>*，请使用下列其中一个 URL（根据所需的框架而定）：
+
+    - HTML+CSS+JS：[https://github.com/Azure-Samples/app-service-web-html-get-started.git](https://github.com/Azure-Samples/app-service-web-html-get-started.git)
     - ASP.NET：[https://github.com/Azure-Samples/app-service-web-dotnet-get-started.git](https://github.com/Azure-Samples/app-service-web-dotnet-get-started.git)
     - PHP (CodeIgniter)：[https://github.com/Azure-Samples/app-service-web-php-get-started.git](https://github.com/Azure-Samples/app-service-web-php-get-started.git)
     - Node.js (Express)：[https://github.com/Azure-Samples/app-service-web-nodejs-get-started.git](https://github.com/Azure-Samples/app-service-web-nodejs-get-started.git) 
     - Java：[https://github.com/Azure-Samples/app-service-web-java-get-started.git](https://github.com/Azure-Samples/app-service-web-java-get-started.git)
     - Python (Django)：[https://github.com/Azure-Samples/app-service-web-python-get-started.git](https://github.com/Azure-Samples/app-service-web-python-get-started.git)
 
-2. 执行 `CD` 切换到示例应用的项目根目录。例如，
+2. 执行 `CD` 切换到示例应用的存储库。例如，
 
-        cd app-service-web-dotnet-get-started
+        cd app-service-web-html-get-started
 
 3. 如下所示登录到 Azure：
 
         azure login -e AzureChinaCloud -u <your account>
-    
-    根据提示继续登录你的 Azure 订阅。
 
-4. 在 Azure 中以下一个命令创建具有唯一应用名称的 Azure Web 应用资源。
+4. 在 Azure 中以下一个命令创建具有唯一应用名称的 Azure Web 应用资源。出现提示时，请指定所需区域数目。
 
         azure site create --git <app_name>
-      
+    
+    ![在 Azure 中创建第一个 Web 应用的 Azure 资源](./media/app-service-web-get-started/4-create-site.png)
+    
     >[AZURE.NOTE] 如果从未设置 Azure 订阅的部署凭据，系统将提示你进行创建。Azure 只将这些凭据（而不是 Azure 帐户凭据）用于 Git 部署与 FTP 登录。
     
     现在已在 Azure 中创建应用。而且当前的目录也已进行 Git 初始化并作为 Git 远程连接到新的 Azure Web 应用。
@@ -70,10 +80,10 @@
 4. 现在，将示例代码部署到新的 Azure Web 应用，如同使用 Git 推送任何代码一样：
 
         git push azure master 
+
+    ![在 Azure 中将代码推送到第一个 Web 应用](./media/app-service-web-get-started/5-push-code.png)
     
-    >[AZURE.NOTE] 系统将要求提供你的部署密码。如果你是 Azure Web 应用的新用户，请提供刚刚创建的部署密码，然后即可开始部署。
-    
-    `git push` 不仅将代码放在 Azure 中，也在部署引擎中触发部署任务。如果项目（存储库）根目录中有任何 package.json (Node.js) 或 requirements.txt (Python)，或 ASP.NET 项目中有 packages.config，则部署脚本将为你还原所需的包。
+    如果你使用了某种语言框架，看到的输出将与上面所示不同。这是因为，`git push` 不仅会将代码放在 Azure 中，而且会在部署引擎中触发部署任务。如果项目（存储库）根目录中有任何 package.json (Node.js) 或 requirements.txt (Python)，或 ASP.NET 项目中有 packages.config，则部署脚本将为你还原所需的包。你还可以[启用编写器扩展](/documentation/articles/web-sites-php-mysql-deploy-use-git#composer)，以在 PHP 应用中自动处理 composer.json 文件。
 
 祝贺你，你的应用已部署到 Azure Web 应用。
 
@@ -91,13 +101,9 @@
     git commit -m "<your_message>"
     git push azure master
 
-## 其他部署方式
-
-有多种方式可以部署 Web 应用，而从本地存储库进行 Git 部署只是其中一种方式。你可以直接从 Visual Studio 部署、从 GitHub 部署、通过 FTP 上载文件，等等。有关部署选项的详细信息，请参阅[将你的应用部署到 Azure Web 应用](/documentation/articles/web-sites-deploy)。
-
 ## 在 Azure 管理门户中查看应用
 
-现在，让我们转到 Azure 管理门户，查看所创建的应用：
+现在，让我们转到 Azure 管理门户，以查看所创建的应用：
 
 1. 使用具有 Azure 订阅的帐户登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
 
@@ -114,14 +120,6 @@ Azure Web 应用的门户页提供了一组丰富的设置和工具，让你对�
 
 ## 后续步骤
 
-将部署的应用提升到更高的级别。使用身份验证保护其安全。按需缩放。设置一些性能警报。所有这些操作只需按几下鼠标即可完成。
+- 除了使用 Git 和 Azure CLI 以外，还可以使用其他方式将 Web 应用部署到 Azure（请参阅 [Deploy your app to Azure Web App（将你的应用部署到 Azure Web 应用）](/documentation/articles/web-sites-deploy)）。根据你的语言框架找到所需的开发和部署步骤，只需在本文顶部选择你的框架即可。
 
-或者，进一步探索如何使用特定的语言框架创建适用于 Azure 的 Web 应用：
-
-- [在 Azure 中创建 ASP.NET Web 应用](/documentation/articles/web-sites-dotnet-get-started)
-- [在 Azure 中创建 PHP Web 应用](/documentation/articles/web-sites-php-mysql-deploy-use-git)
-- [在 Azure 中创建 Node.js Web 应用](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
-- [在 Azure 中创建 Java Web 应用](/documentation/articles/web-sites-java-get-started)
-- [在 Azure 中创建 Python Web 应用](/documentation/articles/web-sites-python-ptvs-django-mysql)
-
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0523_2016-->

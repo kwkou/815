@@ -18,7 +18,7 @@
 
 Azure 提供内置的诊断以帮助调试 [Azure Web 应用](/documentation/services/web-sites/)。在本文中，你将了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。
 
-本文通过 [Azure 管理门户](https://manage.windowsazure.cn)、Azure PowerShell 和 Azure 命令行界面 (Azure CLI) 来使用诊断日志。有关通过 Visual Studio 使用诊断日志的信息，请参阅[在 Visual Studio 中对 Azure 进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)。
+本文通过 [Azure 管理门户](https://manage.windowsazure.cn)、Azure PowerShell 和 Azure 命令行界面 (Azure CLI) 来使用诊断日志。
 
 ## <a name="whatisdiag"></a>Web 服务器诊断和应用程序诊断
 
@@ -38,7 +38,7 @@ Azure Web 应用为 Web 服务器和 Web 应用程序中的日志记录信息提
 
 	System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
 
-在运行时，你可以检索这些日志来协助进行故障排除。有关详细信息，请参阅[在 Visual Studio 中对 Azure Web 应用进行故障故障](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)。
+在运行时，你可以检索这些日志来协助进行故障排除。
 
 当你将内容发布到某个 Web 应用时，Azure Web 应用还将记录部署信息。此操作将自动执行，不会对部署日志记录进行配置设置。部署日志记录允许你确定部署失败的原因。例如，如果你使用的是自定义部署脚本，你可能会使用部署日志记录来确定该脚本失败的原因。
 
@@ -238,7 +238,6 @@ Web 服务器日志使用 [W3C 扩展日志文件格式](http://msdn.microsoft.c
 ##<a name="nextsteps"></a>后续步骤
 
 - [如何监视 Web Apps](/documentation/articles/web-sites-monitor/)
-- [在 Visual Studio 中对 Azure Web Apps 进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
 - [在 HDInsight 中分析 Web 应用日志](http://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)
  
 
