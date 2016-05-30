@@ -10,8 +10,8 @@
 
 <tags
    ms.service="best-practice"
-   ms.date="12/17/2015"
-   wacn.date="02/04/2016"/>
+   ms.date="04/06/2015"
+   wacn.date="05/23/2016"/>
 
 # 监视和诊断功能的设计指南
 
