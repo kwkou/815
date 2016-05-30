@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="01/08/2016"
-	wacn.date="05/24/2016"/>
+	wacn.date="05/30/2016"/>
 
 # Azure Web 作业文档资源
 

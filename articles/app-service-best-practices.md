@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="05/05/2016"
-	wacn.date=""/>
+	wacn.date="05/30/2016"/>
     
 # Azure 最佳实践
 

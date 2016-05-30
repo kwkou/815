@@ -9,7 +9,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="04/27/2016"
-	wacn.date=""/>
+	wacn.date="05/30/2016"/>
 
 # 虚拟网络 (VNet) 中的公共 IP 地址空间
 

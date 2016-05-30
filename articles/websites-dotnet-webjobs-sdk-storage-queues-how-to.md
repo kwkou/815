@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="02/29/2016"
-	wacn.date="04/26/2016"/>
+	wacn.date="05/30/2016"/>
 
 # 如何通过 WebJobs SDK 使用 Azure 队列存储
 
