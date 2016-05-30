@@ -27,7 +27,7 @@
 
 另外，将提供 [Azure 管理门户](https://manage.windowsazure.cn)的速览并探讨可用的功能。
 
-## 先决条件
+##<a name="Prerequisites"></a> 先决条件
 
 - [安装 Git](http://www.git-scm.com/downloads)。 
 - [安装 Azure CLI](/documentation/articles/xplat-cli-install)。 
@@ -83,7 +83,7 @@
 
     ![在 Azure 中将代码推送到第一个 Web 应用](./media/app-service-web-get-started/5-push-code.png)
     
-    如果你使用了某种语言框架，看到的输出将与上面所示不同。这是因为，`git push` 不仅会将代码放在 Azure 中，而且会在部署引擎中触发部署任务。如果项目（存储库）根目录中有任何 package.json (Node.js) 或 requirements.txt (Python)，或 ASP.NET 项目中有 packages.config，则部署脚本将为你还原所需的包。你还可以[启用编写器扩展](/documentation/articles/web-sites-php-mysql-deploy-use-git#composer)，以在 PHP 应用中自动处理 composer.json 文件。
+    如果你使用了某种语言框架，看到的输出将与上面所示不同。这是因为，`git push` 不仅会将代码放在 Azure 中，而且会在部署引擎中触发部署任务。如果项目（存储库）根目录中有任何 package.json (Node.js) 或 requirements.txt (Python)，或 ASP.NET 项目中有 packages.config，则部署脚本将为你还原所需的包。
 
 祝贺你，你的应用已部署到 Azure Web 应用。
 

@@ -132,7 +132,7 @@
 	> [AZURE.TIP] 可以启用“Web 单键发布”工具栏以快速完成部署。单击“视图”>“工具栏”，然后选择“Web 单键发布”。你可以通过工具栏选择一个配置文件，然后单击相关按钮进行发布，或者单击相关按钮以打开“发布 Web”向导。
 	> ![Web 单键发布工具栏](./media/web-sites-dotnet-get-started/weboneclickpublish.png)
 
-## 故障排除
+##<a name="troubleshooting"></a> 故障排除
 
 如果在学习本教程的过程中遇到问题，请确保你使用的是最新版本的 Azure SDK for .NET。检查版本的最简单方法是[下载 Azure SDK for Visual Studio 2015](http://go.microsoft.com/fwlink/?linkid=518003)。如果你已安装最新版本，Web 平台安装程序会指出不需要进行安装。
 
@@ -162,7 +162,5 @@
 	* [为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)
 
 * 当你不再使用 Web 应用和任何相关的 Azure 资源时，请删除包含这些资源的资源组。
-
-	有关如何在 Azure 门户中使用资源组的信息，请参阅 [Using the Azure Portal to deploy and manage your Azure resources（使用 Azure 门户部署和管理 Azure 资源）](/documentation/articles/resource-group-portal)。
 
 <!---HONumber=Mooncake_0523_2016-->

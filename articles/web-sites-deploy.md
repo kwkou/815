@@ -73,7 +73,7 @@ Azure Web 应用保留了应用程序框架（ASP.NET、PHP、Node.js 等等）�
 - 连续部署没有任何现成的解决方案。 
 
 ###<a name="vsts"></a>如何从本地 Git 部署
-在 [Azure 经典门户](https://manage.windowsazure.cn/)中，可以配置本地 Git 部署。
+在 [Azure 管理门户](https://manage.windowsazure.cn/)中，可以配置本地 Git 部署。
 
 * [从本地 Git 部署到 Azure Web 应用](/documentation/articles/app-service-deploy-local-git)。 
 * [从任何 git/hg 存储库发布到 Web Apps](http://blog.davidebbo.com/2013/04/publishing-to-azure-web-sites-from-any.html)。  
@@ -135,8 +135,6 @@ Visual Studio 支持所有这三种部署过程（FTP、Git 和 Web 部署），
 
 有关详细信息，请参阅以下资源：
 
-* [部署链接到 GitHub 存储库的 Web 应用](/documentation/articles/app-service-web-arm-from-github-provision)
-* [设置使用 SQL 数据库的 Web 应用](/documentation/articles/app-service-web-arm-with-sql-database-provision)
 * [使用 Azure 构建真实世界云应用 – 使一切自动化](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything)。电子书章节，其中介绍电子书中所示的示例应用程序如何使用 Windows PowerShell 脚本来创建 Azure 测试环境并部署到该环境中。请参阅[资源](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything#resources)部分以获取指向其他 Azure PowerShell 文档的链接。
 
 ###<a name="api"></a>使用 .NET 管理 API 自动进行部署
