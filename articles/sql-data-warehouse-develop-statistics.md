@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="03/23/2016"
-   wacn.date="05/23/2016"/>
+   ms.date="05/10/2016"
+   wacn.date="05/30/2016"/>
 
 # 管理 SQL 数据仓库中的统计信息
  SQL 数据仓库使用统计信息来评估以不同方式执行分布式查询的成本。如果统计信息准确，则查询优化器可以生成高质量查询计划来改善查询性能。
@@ -42,7 +42,7 @@
 仅当列位于复合 Join 或 Group By 子句中时，查询优化器才使用多列统计信息。复合筛选条件目前并不会受益于多列统计信息。
 
 开始进行 SQL 数据仓库开发时，实施以下模式是个不错的主意：
-- 对每个表上的每个列创建单列统计信息 
+- 对每个表上的每个列创建单列统计信息
 - 对 Join 和 Group By 子句中查询所用的列创建多列统计信息。
 
 在确定如何查询数据后，你可以修改此模型 - 尤其是在表的范围很广时。有关更高级的方法，请参阅 [实施统计信息管理](## 实施统计信息管理) 部分。
@@ -50,13 +50,50 @@
 ## 何时更新统计信息
 请务必在数据库管理日常工作中纳入更新统计信息。数据库中的数据发布改变时，就需要更新统计信息。否则，你可能会发现查询性能欠佳，而进一步排查查询问题所做的努力可能不值得。
 
-因此，在排查查询问题时，首先要询问的问题之一就是“统计信息是最新的吗？”
+最佳实践之一是每天在添加新日期后，更新有关日期列的统计信息。每次有新行载入数据仓库时，就会添加新的加载日期或事务日期。这些操作会更改数据分布情况并使统计信息过时。相反地，有关客户表中的国家/地区列的统计信息可能永远不需要更新，因为值的分布通常不会变化。假设客户间的分布固定不变，将新行添加到表变化并不会改变数据分布情况。但是，如果数据仓库只包含一个国家/地区，并且引入了来自新国家/地区的数据，从而导致存储了多个国家/地区的数据，那么，就绝对需要更新有关国家/地区列的统计信息。
 
-此问题不是可根据期限回答的问题。最新的统计信息对象有可能非常陈旧。当行数或特定列的值分布有重大变化时，*就*需要更新统计信息。
+在排查查询问题时，首先要询问的问题之一就是“统计信息是最新的吗？”
 
-例如，数据仓库中的日期列往往需要经常更新统计信息。每次有新行载入数据仓库时，就会添加新的加载日期或事务日期。这些操作会更改数据分布情况并使统计信息过时。
+此问题不可以根据数据期限提供答案。如果对基础数据未做重大更改，则最新的统计信息对象有可能非常陈旧。如果行数有明显变化或给定列的值分布有重大变化，则需要更新统计信息。
 
-相反地，客户表上性别列的统计信息可能永远不需要更新。假设客户间的分布固定不变，将新行添加到表变化并不会改变数据分布情况。不过，如果数据仓库只包含一种性别，而新的要求导致多种性别，则肯定需要更新性别列的统计信息。
+例如，**SQL Server**（不是 SQL 数据仓库）在以下情况下会自动更新这些统计信息：
+
+- 如果表中包含零行，则当你添加一行（或多行）时，则自动更新统计信息
+- 如果在最初包含不到 500 行的表中添加超过 500 行（例如，表最初包含 499 行，后来你添加了 500 行，总共 999 行），则会自动更新 
+- 行数超过 500 之后，必须额外添加 500 行并加上表大小的 20%，然后系统才会对统计信息执行自动更新
+
+由于系统未提供 DMV 来确定自上次更新统计信息以来表中的数据是否发生更改，因此，如果知道统计信息的期限的话，也许你可以大致猜出更新状态。可以使用以下查询来确定上次更新每个表的统计信息的时间。
+
+> [AZURE.NOTE] 请记住，如果给定列的值分布有重大变化，则应该更新统计信息，不管上次更新时间为何。
+
+```sql
+SELECT
+    sm.[name] AS [schema_name],
+    tb.[name] AS [table_name],
+    co.[name] AS [stats_column_name],
+    st.[name] AS [stats_name],
+    STATS_DATE(st.[object_id],st.[stats_id]) AS [stats_last_updated_date]
+FROM
+    sys.objects ob
+    JOIN sys.stats st
+        ON  ob.[object_id] = st.[object_id]
+    JOIN sys.stats_columns sc    
+        ON  st.[stats_id] = sc.[stats_id]
+        AND st.[object_id] = sc.[object_id]
+    JOIN sys.columns co    
+        ON  sc.[column_id] = co.[column_id]
+        AND sc.[object_id] = co.[object_id]
+    JOIN sys.types  ty    
+        ON  co.[user_type_id] = ty.[user_type_id]
+    JOIN sys.tables tb    
+        ON  co.[object_id] = tb.[object_id]
+    JOIN sys.schemas sm    
+        ON  tb.[schema_id] = sm.[schema_id]
+WHERE
+    st.[user_created] = 1;
+```
+
+例如，数据仓库中的日期列往往需要经常更新统计信息。每次有新行载入数据仓库时，就会添加新的加载日期或事务日期。这些操作会更改数据分布情况并使统计信息过时。相反地，客户表上性别列的统计信息可能永远不需要更新。假设客户间的分布固定不变，将新行添加到表变化并不会改变数据分布情况。不过，如果数据仓库只包含一种性别，而新的要求导致多种性别，则肯定需要更新性别列的统计信息。
 
 有关更多说明，请参阅 MSDN 上的[统计信息][]。
 
@@ -163,7 +200,7 @@ CREATE STATISTICS stats_2cols ON table1 (product_category, product_sub_category)
 创建统计信息的方法之一是在创建表后发出 CREATE STATISTICS 命令。
 
 ```
-CREATE TABLE dbo.table1 
+CREATE TABLE dbo.table1
 (
    col1 int
 ,  col2 int
@@ -378,7 +415,7 @@ JOIN    sys.columns         AS co ON    sc.[column_id]      = co.[column_id]
 JOIN    sys.types           AS ty ON    co.[user_type_id]   = ty.[user_type_id]
 JOIN    sys.tables          AS tb ON  co.[object_id]        = tb.[object_id]
 JOIN    sys.schemas         AS sm ON  tb.[schema_id]        = sm.[schema_id]
-WHERE   1=1 
+WHERE   1=1
 AND     st.[user_created] = 1
 ;
 ```
@@ -457,4 +494,4 @@ DBCC SHOW_STATISTICS (dbo.table1, stats_col1) WITH histogram, density_vector
 [sys.table\_types]: https://msdn.microsoft.com/zh-cn/library/bb510623.aspx
 [更新统计信息]: https://msdn.microsoft.com/zh-cn/library/ms187348.aspx
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0523_2016-->
