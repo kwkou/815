@@ -1,15 +1,15 @@
 <properties 
-   pageTitle="事件中心身份验证和安全模型概述 | Azure"
-   description="事件中心常见问题"
-   services="event-hubs"
-   documentationCenter="na"
-   authors="sethmanheim"
-   manager="timlt"
-   editor="" />
+    pageTitle="事件中心身份验证和安全模型概述 | Azure"
+    description="事件中心身份验证和安全模型概述。"
+    services="event-hubs"
+    documentationCenter="na"
+    authors="sethmanheim"
+    manager="timlt"
+    editor="" />
 <tags 
    ms.service="event-hubs"
-   ms.date="01/26/2016"
-   wacn.date="04/01/2016" />
+   ms.date="05/03/2016"
+   wacn.date="05/30/2016" />
 
 # 事件中心身份验证和安全模型概述
 
@@ -33,7 +33,7 @@
 
 ### 创建 SAS 密钥
 
-创建命名空间时，服务总线将生成名为 **RootManageSharedAccessKey** 的 256 位 SAS 密钥。此密钥授予对命名空间的发送、侦听和管理权限。你可以创建其他密钥。建议你生成一个密钥用于授予对特定事件中心的发送权限。建议你生成一个密钥用于授予对特定事件中心的发送权限。本主题的余下内容假设你已将此密钥命名为 `EventHubSendKey`。
+创建命名空间时，服务总线将生成名为 **RootManageSharedAccessKey** 的 256 位 SAS 密钥。此密钥授予对命名空间的发送、侦听和管理权限。你可以创建其他密钥。建议你生成一个密钥用于授予对特定事件中心的发送权限。本主题的余下内容假设你已将此密钥命名为 `EventHubSendKey`。
 
 在创建事件中心时，以下示例将创建一个仅限发送的密钥：
 
@@ -46,7 +46,7 @@ Uri uri = ServiceBusEnvironment.CreateServiceUri("sb", serviceNamespace, string.
 TokenProvider td = TokenProvider.CreateSharedAccessSignatureTokenProvider(namespaceManageKeyName, namespaceManageKey);
 NamespaceManager nm = new NamespaceManager(namespaceUri, namespaceManageTokenProvider);
 
-// Create Event hub with a SAS rule that allows sending to that Event hub
+// Create Event Hub with a SAS rule that enables sending to that Event Hub
 EventHubDescription ed = new EventHubDescription("MY_EVENT_HUB") { PartitionCount = 32 };
 string eventHubSendKeyName = "EventHubSendKey";
 string eventHubSendKey = SharedAccessAuthorizationRule.GenerateRandomKey();
@@ -141,13 +141,13 @@ ACS 支持通过多种方法创建服务标识、信赖方和规则，但最简�
 
 若要了解有关事件中心的详细信息，请访问以下主题：
 
-- [事件中心概述]。
-- [使用事件中心的完整示例应用程序]。
-- 使用服务总线队列的[队列消息解决方案]。
+- [事件中心概述]
+- [使用事件中心的完整示例应用程序]
+- 使用服务总线队列的[队列消息解决方案]
 
 [事件中心概述]: /documentation/articles/event-hubs-overview
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
-[队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
+[队列消息解决方案]: /documentation/articles/service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues
  
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0523_2016-->
