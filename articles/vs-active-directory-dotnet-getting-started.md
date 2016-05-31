@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory"  
 	ms.date="05/06/2015" 
-	wacn.date=""/>
+	wacn.date="05/27/2016"/>
 
 # Azure Active Directory 入门（.NET 项目）
 

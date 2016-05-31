@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="12/18/2015"
-	wacn.date=""/>	
+	wacn.date="05/27/2016"/>	
 
 # 我的 MVC 项目（Visual Studio Azure Active Directory 连接服务）发生了什么情况？
 

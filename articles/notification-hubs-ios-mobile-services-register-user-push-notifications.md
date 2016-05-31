@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="11/01/2015" 
-	wacn.date="04/13/2016"/>
+	wacn.date="05/31/2016"/>
 
 # 通过使用移动服务注册推送通知的当前用户
 
