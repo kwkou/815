@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="04/11/2016"
-	wacn.date="05/23/2016"/>
+	ms.date="05/11/2016"
+	wacn.date="05/30/2016"/>
 
 # Azure 订阅和服务限制、配额和约束
 
@@ -18,12 +18,15 @@
 
 本文档指定一些最常见的 Azure 限制。请注意，本文档目前未涵盖所有 Azure 服务。一段时间后，将展开并更新这些限制以包含多个平台。
 
-> [AZURE.NOTE]如果想要提高**默认限制**之上的限制，可以[打开免费的联机客户支持请求](/support/support-ticket-form/?l=zh-cn)。无法将这些限制提高到超过下表中的**最大限制**值。如果没有任何**最大限制**列，则指定的资源不具有可调整的限制。
+> [AZURE.NOTE]如果想要提高**默认限制**之上的限制，可以[打开免费的联机客户支持请求](/support/support-ticket-form/)。无法将这些限制提高到超过下表中的**最大限制**值。如果没有任何**最大限制**列，则指定的资源不具有可调整的限制。
+
+
 
 ## 服务特定的限制
 
 - [Active Directory](#active-directory-limits)
 - [Azure Redis Cache](#azure-redis-cache-limits)
+- [自动化](#automation-limits)
 - [备份](#backup-limits)
 - [批处理](#batch-limits)
 - [CDN](#cdn-limits)
@@ -44,6 +47,7 @@
 - [StorSimple 系统](#storsimple-system-limits)
 - [流分析](#stream-analytics-limits)
 - [订阅](#subscription-limits)
+- [流量管理器](#traffic-manager-limits)
 - [虚拟机](#virtual-machines-limits)
 
 <a id="subscription-limits"></a>
@@ -76,18 +80,28 @@
 <a id="storage-limits"></a>
 ### 存储限制
 
-#### 标准存储限制
+有关存储帐户限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
+
+#### 存储服务限制
 
 [AZURE.INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 
-有关存储帐户限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
+#### 虚拟机磁盘限制
+
+[AZURE.INCLUDE [azure-storage-limits-vm-disks](../includes/azure-storage-limits-vm-disks.md)]
+
+有关其他详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-linux-sizes)。
+
+**标准存储帐户**
+
+[AZURE.INCLUDE [azure-storage-limits-vm-disks-standard](../includes/azure-storage-limits-vm-disks-standard.md)]
+
+**高级存储帐户**
+
+[AZURE.INCLUDE [azure-storage-limits-vm-disks-premium](../includes/azure-storage-limits-vm-disks-premium.md)]
 
 
-#### 高级存储限制
 
-[AZURE.INCLUDE [azure-storage-limits-premium-storage](../includes/azure-storage-limits-premium-storage.md)]
-
-<a id="cloud-services-limits"></a>
 ### 云服务限制
 
 [AZURE.INCLUDE [azure-cloud-services-limits](../includes/azure-cloud-services-limits.md)]
@@ -128,7 +142,7 @@
 [AZURE.INCLUDE [azure-servicebus-limits](../includes/service-bus-quotas-table.md)]
 
 <a id="iot-hub-limits"></a>
-### IoT 中心 限制
+### IoT 中心限制
 
 [AZURE.INCLUDE [azure-iothub-limits](../includes/iot-hub-limits.md)]
 
@@ -171,7 +185,10 @@
 ### 多因素身份验证
 [AZURE.INCLUDE [azure-mfa-service-limits](../includes/azure-mfa-service-limits.md)]
 
-<a id="sql-database-limits"></a>
+<a id="automation-limits"></a>
+### 自动化限制
+[AZURE.INCLUDE [automation-limits](../includes/azure-automation-service-limits.md)]
+
 ### SQL 数据库限制
 
 有关 Azure SQL 数据库限制，请参阅 [SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
@@ -182,4 +199,4 @@
 
 [云服务的大小](/documentation/articles/cloud-services-sizes-specs)
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0523_2016-->
