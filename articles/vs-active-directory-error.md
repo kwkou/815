@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory"  
 	ms.date="12/10/2015" 
-	wacn.date=""/>
+	wacn.date="05/27/2016"/>
 
 # 身份验证检测期间的错误
 

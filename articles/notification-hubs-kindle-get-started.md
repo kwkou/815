@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="02/29/2016"
-	wcdn.date="05/18/2016"/>
+	wcdn.date="05/31/2016"/>
 
 # 通知中心入门（Kindle 应用）
 
@@ -277,4 +277,4 @@
 [5]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-cmd-window.png
 [6]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-new-java-class.png
 [7]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-notification.png
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0523_2016-->

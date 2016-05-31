@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="11/25/2015"
-	wacn.date="05/09/2016"/>
+	ms.date="05/05/2016"
+	wacn.date="05/31/2016"/>
 	
 # 通过百度开始使用通知中心
 
@@ -133,15 +133,15 @@
 
 	![][33]
 
-你将会看到“保存成功!”消息。
+你将会看到**“保存成功!”**消息。
 
 ##<a id="configure-hub"></a>配置通知中心
 
-1. 登录到 [Azure 管理门户]，然后单击屏幕底部的“+新建”。
+1. 登录到 [Azure 经典门户]，然后单击屏幕底部的“+新建”。
 
 2. 依次单击“应用程序服务”、“服务总线”、“通知中心”和“快速创建”。
- 
-3. 为你的**通知中心**提供名称，选择要在其中创建此通知中心的**区域**和**命名空间**，然后单击“创建新的通知中心”
+
+3. 为你的**通知中心**提供名称，选择要在其中创建此通知中心的**区域**和**命名空间**，然后单击“创建新的通知中心”。
 
   	![][17]
 
@@ -409,7 +409,7 @@
 
 * **Node.js**：[如何通过 Node.js 使用通知中心](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)。
 
-* **Azure 移动服务**：有关如何从与通知中心集成的 Azure 移动服务后端发送通知的示例，请参阅“移动服务中的推送通知入门”。
+* **Azure 移动服务**：有关如何从通知中心集成的 Azure 移动服务后端发送通知的示例，请参阅 [Add push notifications to your Mobile Services app](/documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-push)（将推送通知添加到移动服务应用）。
 
 * **Java/PHP**：有关如何使用 REST API 发送通知的示例，请参阅“如何通过 Java/PHP 使用通知中心”([Java](/documentation/articles/notification-hubs-java-backend-how-to) | [PHP](/documentation/articles/notification-hubs-php-backend-how-to))。
 
@@ -500,4 +500,4 @@
 [Azure 经典门户]: https://manage.windowsazure.cn/
 [百度门户]: http://www.baidu.com/
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0523_2016-->

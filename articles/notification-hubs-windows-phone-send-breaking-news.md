@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="03/28/2016" 
-	wacn.date="05/18/2016" />
+	wacn.date="05/31/2016" />
 
 # 使用通知中心发送突发新闻
 
@@ -186,7 +186,7 @@
     此类使用隔离存储区存储此设备要接收的新闻类别。它还包含用于通过[模板](/documentation/articles/notification-hubs-templates)通知注册来注册这些类别的方法。
 
 
-4. 在 App.xaml.cs 项目文件中，将以下属性添加到 **App** 类：将 `<hub name>` 和 `<connection string with listen access>` 占位符替换为通知中心名称和前面获取的 DefaultListenSharedAccessSignature 的连接字符串。
+4. 在 App.xaml.cs 项目文件中，将以下属性添加到 **App** 类：将 `<hub name>` 和 `<connection string with listen access>` 占位符替换为通知中心名称和前面获取的 *DefaultListenSharedAccessSignature* 的连接字符串。
 
 		public Notifications notifications = new Notifications("<hub name>", "<connection string with listen access>");
 
@@ -309,4 +309,4 @@
 
 
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0523_2016-->

@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="03/28/2016"
-	wacn.date="05/18/2016"/>
+	wacn.date="05/31/2016"/>
 
 # 路由和标记表达式
 
@@ -45,7 +45,7 @@
 	// Windows 8.1 / Windows Phone 8.1
 	var toast = @"<toast><visual><binding template=""ToastText01""><text id=""1"">" +
 	"You requested a Beatles notification</text></binding></visual></toast>";
-	outcome = await Notifications.Instance.Hub.SendWindowsNativeNotificationAsync(toast, "Beatles);
+	outcome = await Notifications.Instance.Hub.SendWindowsNativeNotificationAsync(toast, "Beatles");
 
 	// Windows 10
 	toast = @"<toast><visual><binding template=""ToastGeneric""><text id=""1"">" +
@@ -108,4 +108,4 @@
 	"You want info on the Red Socks</text></binding></visual></toast>";
 	outcome = await Notifications.Instance.Hub.SendWindowsNativeNotificationAsync(toast, userTag);
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0523_2016-->

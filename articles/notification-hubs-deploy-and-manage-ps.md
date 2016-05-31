@@ -159,4 +159,4 @@ else
 [New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx
 [Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/zh-cn/library/azure/dn495113.aspx
  
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0523_2016-->

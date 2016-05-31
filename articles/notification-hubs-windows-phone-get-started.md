@@ -3,7 +3,7 @@
 	description="在本教程中，你将了解如何使用 Azure 通知中心将通知推送到 Windows Phone 8 或 Windows Phone 8.1 Silverlight 应用程序。"
 	services="notification-hubs"
 	documentationCenter="windows"
-        keywords="推送通知,push notification,windows phone 推送"
+	keywords="推送通知,push notification,windows phone 推送"
 	authors="wesmc7777"
 	manager="dwrede"
 	editor="dwrede"/>
@@ -11,7 +11,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="03/10/2016"
-	wacn.date="05/18/2016"/>
+	wacn.date="05/31/2016"/>
 	
 	
 # 在 Windows Phone 上借助 Azure 通知中心发送推送通知
@@ -134,7 +134,7 @@
 
         Install-Package Microsoft.Azure.NotificationHubs
 
-	这将使用 <a href="http://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/">Microsoft.Azure.Notification Hubs NuGet 包</a>添加对 Azure 通知中心 SDK 的引用。
+	这将使用 <a href="http://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/">Microsoft.Azure.Notification Hubs NuGet 程序包</a>添加对 Azure 通知中心 SDK 的引用。
 
 4. 打开 `Program.cs` 文件 ，并添加以下 `using` 语句：
 
@@ -146,8 +146,8 @@
         {
             NotificationHubClient hub = NotificationHubClient
 				.CreateClientFromConnectionString("<connection string with full access>", "<hub name>");
-            string toast = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
-                "<wp:Notification xmlns:wp=\"WPNotification\">" +
+            string toast = "<?xml version="1.0" encoding="utf-8"?>" +
+                "<wp:Notification xmlns:wp="WPNotification">" +
                    "<wp:Toast>" +
                         "<wp:Text1>Hello from a .NET App!</wp:Text1>" +
                    "</wp:Toast> " +
@@ -157,7 +157,7 @@
 
 	确保将 `<hub name>` 占位符替换为出现在门户中的通知中心名称。此外，使用你在“配置通知中心”部分中获取的名称为 **DefaultFullSharedAccessSignature** 的连接字符串替换连接字符串占位符。
 
-	>[AZURE.NOTE]确保你使用的是具有**完全**访问权限的连接字符串，而不是具有**侦听**访问权限的连接字符串。侦听访问字符串无权发送通知。
+	>[AZURE.NOTE]确保你使用的是具有**完全**访问权限的连接字符串，而不是具有**侦听**访问权限的连接字符串。侦听访问字符串无权发送推送通知。
 
 6. 在 `Main` 方法中添加以下行：
 
@@ -207,9 +207,10 @@
   [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
   [toast 目录]: http://msdn.microsoft.com/library/windowsphone/develop/jj662938(v=vs.105).aspx
   [磁贴目录]: http://msdn.microsoft.com/library/windowsphone/develop/hh202948(v=vs.105).aspx
-  [使用通知中心向用户推送通知]:  /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
+  [使用通知中心将通知推送到用户]:  /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
   [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
   [toast 目录]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/jj662938(v=vs.105).aspx
   [磁贴目录]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/hh202948(v=vs.105).aspx
+[通知中心 - Windows Phone Silverlight 教程]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp
   [MPNS 身份验证模式]: http://msdn.microsoft.com/library/windowsphone/develop/ff941099.aspx
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0523_2016-->

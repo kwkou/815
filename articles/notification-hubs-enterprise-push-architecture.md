@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="02/29/2016" 
-	wacn.date="04/13/2016"/>
+	wacn.date="05/31/2016"/>
 
 # 企业推送架构指南
 
@@ -122,7 +122,7 @@
 
 2. **ReceiveAndSendNotification**
 
-	a.此项目使用 WindowsAzure.ServiceBus 和 Microsoft.Web.WebJobs.Publish Nuget 包，并基于[服务总线 Pub/Sub 编程]构建。
+	a.此项目使用 *WindowsAzure.ServiceBus* 和 *Microsoft.Web.WebJobs.Publish* Nuget 包，并基于[服务总线 Pub/Sub 编程]构建。
 
 	b.这是另一个 C# 控制台应用，我们将它作为 [Azure WebJob] 运行，因为它必须连续运行以侦听来自 LoB/后端系统的消息。它将是移动后端的一部分。
 
@@ -221,7 +221,7 @@
 	
 	b.确保应用程序已启用接收 toast 通知。
 
-	c.确保在应用启动时（替换 HubName 和 DefaultListenSharedAccessSignature 后）调用以下通知中心注册代码：
+	c.确保在应用启动时（替换 *HubName* 和 *DefaultListenSharedAccessSignature* 后）调用以下通知中心注册代码：
 
         private async void InitNotificationsAsync()
         {
@@ -268,4 +268,4 @@
 [通知中心 - Windows 通用教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [Azure 经典门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0523_2016-->
