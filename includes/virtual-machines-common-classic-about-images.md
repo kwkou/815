@@ -1,6 +1,6 @@
 在 Azure 中使用映像来提供包含操作系统的新虚拟机。一个映像也可能包含一个或多个数据磁盘。映像可从多个源获取：
 
--	Azure 在应用商店中提供映像。你可以找到最新版本的 Windows Server 和 Linux 操作系统的分发。一些映像还包含应用程序，如 SQL Server。MSDN 权益和 MSDN 即付即用订户有权访问其他映像。
+-	Azure 在库中提供映像。你可以找到最新版本的 Windows Server 和 Linux 操作系统的分发。一些映像还包含应用程序，如 SQL Server。
 -	开源社区通过 [VM 仓库](http://vmdepot.msopentech.com/List/Index)提供映像。
 -	你还可以通过捕获现有的 Azure 虚拟机用作映像或上载映像来在 Azure 中存储和使用自己的映像。
 
@@ -27,7 +27,9 @@
 -	**查找 VM 映像**：`Get-AzureVMImage | where {(gm –InputObject $_ -Name DataDiskConfigurations) -ne $null} | Select -Property Label, ImageName` 这通过筛选 DataDiskConfiguration 属性来完成，它仅适用于 VM 映像。此示例还仅根据标签和映像名称来筛选输出。
 -	**保存通用映像**：`Save-AzureVMImage –ServiceName "myServiceName" –Name "MyVMtoCapture" –OSState "Generalized" –ImageName "MyVmImage" –ImageLabel "This is my generalized image"`
 -	**保存专用映像**：`Save-AzureVMImage –ServiceName "mySvc2" –Name "MyVMToCapture2" –ImageName "myFirstVMImageSP" –OSState "Specialized" -Verbose`
->[Azure.Tip]如果要创建包含数据磁盘和操作系统磁盘的 VM 映像，OSState 参数是必需的。如果未使用此参数，该 cmdlet 将创建 OS 映像。该参数的值根据操作系统磁盘是否已准备好重用来指示映像是通用的还是专用的。
+
+	>[Azure.Tip]如果要创建包含数据磁盘和操作系统磁盘的 VM 映像，OSState 参数是必需的。如果未使用此参数，该 cmdlet 将创建 OS 映像。该参数的值根据操作系统磁盘是否已准备好重用来指示映像是通用的还是专用的。
+
 -	**删除映像**：`Remove-AzureVMImage –ImageName "MyOldVmImage"`
 
 ## 其他资源
