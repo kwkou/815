@@ -1,16 +1,16 @@
 <properties
-   pageTitle="如何使用 Azure PowerShell 命令创建一个空的云服务容器 | Azure"
-   description="本文介绍如何使用 PowerShell 脚本创建云服务容器和执行与云服务相关的管理操作"
+   pageTitle="使用 PowerShell 创建云服务容器 | Azure"
+   description="本文说明如何使用 PowerShell 创建云服务容器。该容器承载 Web 角色和辅助角色。"
    services="cloud-services"
    documentationCenter=".net"
    authors="cawaMS"
-   manager="paulyuk"
+   manager="timlt"
    editor=""/>
 
 <tags
    ms.service="cloud-services"
-   ms.date="02/09/2016"
-   wacn.date="03/18/2016"/>
+   ms.date="04/25/2016"
+   wacn.date="05/31/2016"/>
 
 # 使用 Azure PowerShell 命令可创建一个空的云服务容器
 本文介绍如何使用 Azure PowerShell cmdlet 快速创建云服务容器。请执行以下步骤：
@@ -44,4 +44,4 @@ Get-help New-AzureService
 
  * 若要将云服务项目发布到 Azure，请参阅[在 Azure 中持续交付云服务](/documentation/articles/cloud-services-dotnet-continuous-delivery)中的 **PublishCloudService.ps1** 代码示例。
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0523_2016-->

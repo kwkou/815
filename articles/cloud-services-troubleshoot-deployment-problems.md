@@ -1,5 +1,5 @@
 <properties
- pageTitle="解决云服务部署问题 | Azure"
+ pageTitle="排查云服务部署问题 | Azure"
  description="将云服务部署到 Azure 时，你可能会遇到几个常见问题。本文提供了部分问题的解决方案。"
    services="cloud-services"
    documentationCenter=""
@@ -9,8 +9,8 @@
    tags="top-support-issue"/>
 <tags
    ms.service="cloud-services"
-   ms.date="01/20/2016"
-   wacn.date="03/18/2016" />
+   ms.date="04/20/2016"
+   wacn.date="05/31/2016" />
 
 # 排查云服务部署问题
 
@@ -19,7 +19,7 @@
 可按如下所述找到“属性”窗格：
 
 * 在 Azure 门户中，依次单击云服务的部署、“所有设置”、“属性”。
-* 在 Azure 经典门户中，依次单击云服务的部署、“仪表板”，然后定位到页面右下角（在“速览”下面）。请注意，此窗格中没有“属性”标签。
+* 在 Azure 管理门户中，依次单击云服务的部署、“仪表板”，然后定位到页面右下角（在“速览”下面）。请注意，此窗格中没有“属性”标签。
 
 > [AZURE.NOTE] 你可以通过单击“属性”窗格右上角的图标将该窗格的内容复制到剪贴板。
 
@@ -83,4 +83,4 @@
 
 若要了解如何使用 Azure PaaS 计算机诊断数据对云服务角色问题进行故障排除，请参阅 [Kevin Williamson 博客系列](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx)。
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0523_2016-->

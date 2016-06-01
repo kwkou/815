@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Express (Node.js) 构建 Web 应用 | Azure" 
+	pageTitle="使用 Express 构建 Web 应用程序 (Node.js) | Azure" 
 	description="本教程以云服务教程为基础，演示如何使用 Express 模块。" 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="01/09/2016" 
-	wacn.date="03/24/2016"/>
+	ms.date="05/04/2016" 
+	wacn.date="05/31/2016"/>
 
 
 
@@ -134,4 +134,4 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
  
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0523_2016-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="为云服务配置 SSL | Azure" 
+	pageTitle="配置云服务的 SSL | Azure" 
 	description="了解如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护您的应用程序。这些示例使用 Azure 门户。" 
 	services="cloud-services" 
 	documentationCenter=".net" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="01/15/2016"
-	wacn.date="05/11/2016"/>
+	ms.date="04/19/2016"
+	wacn.date="05/31/2016"/>
 
 
 
@@ -39,7 +39,7 @@
 
 -   证书必须包含私钥。
 -   必须为密钥交换创建证书，并且该证书可导出到个人信息交换 (.pfx) 文件。
--   证书的使用者名称必须与用于访问云服务的域匹配。你无法从证书颁发机构 (CA) 处获取针对 chinacloudapp.cn 域的 SSL 证书。你必须获取在访问服务时要使用的自定义域名。在从 CA 处请求证书时，该证书的使用者名称必须与用于访问应用程序的自定义域名匹配。例如，如果自定义域名为 **contoso.com**，则将要从 CA 处请求用于 **.contoso.com** 或 **www.contoso.com** 的证书。
+-   证书的使用者名称必须与用于访问云服务的域匹配。你无法从证书颁发机构 (CA) 处获取针对 chinacloudapp.cn 域的 SSL 证书。你必须获取在访问服务时要使用的自定义域名。在从 CA 处请求证书时，该证书的使用者名称必须与用于访问应用程序的自定义域名匹配。例如，如果自定义域名为 **contoso.com**，则将要从 CA 处请求用于 **\*.contoso.com** 或 **www.contoso.com** 的证书。
 -   该证书必须使用至少 2048 位加密。
 
 出于测试目的，可以[创建](/documentation/articles/cloud-services-certs-create)并使用自签名证书。自签名证书不通过 CA 进行身份验证并可使用 chinacloudapp.cn 域作为网站 URL。例如，以下任务使用其公用名 (CN) 为 **sslexample.chinacloudapp.cn** 的自签名证书。
@@ -51,14 +51,25 @@
 
 必须将应用程序配置为使用此证书，并且必须添加 HTTPS 终结点。因此，需要更新服务定义和服务配置文件。
 
-1.  在你的开发环境中，打开服务定义文件 (CSDEF)，在 **WebRole** 节中添加 **Certificates** 节，并包含以下证书相关信息：
+1.  在你的开发环境中，打开服务定义文件 (CSDEF)，在 **WebRole** 节中添加 **Certificates** 节，并包含以下证书（和中间证书）的相关信息：
 
         <WebRole name="CertificateTesting" vmsize="Small">
         ...
             <Certificates>
                 <Certificate name="SampleCertificate" 
 							 storeLocation="LocalMachine" 
-                    		 storeName="CA"
+                    		 storeName="My"
+                             permissionLevel="limitedOrElevated" />
+                <!-- IMPORTANT! Unless your certificate is either
+                self-signed or signed directly by the CA root, you
+                must include all the intermediate certificates
+                here. You must list them here, even if they are
+                not bound to any endpoints. Failing to list any of
+                the intermediate certificates may cause hard-to-reproduce
+                interoperability problems on some clients.-->
+                <Certificate name="CAForSampleCertificate"
+                             storeLocation="LocalMachine"
+                             storeName="CA"
                              permissionLevel="limitedOrElevated" />
             </Certificates>
         ...
@@ -100,13 +111,16 @@
 
     对服务定义文件进行的所有必需更改已完成，但您仍需要将证书信息添加到服务配置文件中。
 
-4.  在你的服务配置文件 (CSCFG) ServiceConfiguration.Cloud.cscfg 中，在 **Role** 节中添加 **Certificates** 节，并将下面显示的示例指纹值替换为你的证书的指纹值：
+4.  在你的服务配置文件 (CSCFG) ServiceConfiguration.Cloud.cscfg 中，在 **Role** 节中添加 **Certificates**节，并将下面显示的示例指纹值替换为你的证书的指纹值：
 
         <Role name="Deployment">
         ...
             <Certificates>
                 <Certificate name="SampleCertificate" 
                     thumbprint="9427befa18ec6865a9ebdc79d4c38de50e6316ff" 
+                    thumbprintAlgorithm="sha1" />
+                <Certificate name="CAForSampleCertificate"
+                    thumbprint="79d4c38de50e6316ff9427befa18ec6865a9ebdc" 
                     thumbprintAlgorithm="sha1" />
             </Certificates>
         ...
@@ -120,14 +134,9 @@
 
 连接到该门户和...
 
-1. 通过以下任一方法选择你的云服务：
-    - 在门户中，选择“云服务”。（该选项位于**浏览全部/最近区域**。）
+1. 选择云服务：在门户中，选择“云服务”。（将位于“所有资源”部分。） 
     
-        ![发布云服务](./media/cloud-services-configure-ssl-certificate-portal/browse.png)
-    
-        **或者**
-        
-    - 在**浏览全部**下选择**筛选方法**下的“云服务”，并选择所需的云服务实例。
+    ![发布云服务](./media/cloud-services-configure-ssl-certificate-portal/browse.png)
 
 3. 打开云服务的“设置”。
 
@@ -164,4 +173,4 @@
 * 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name-portal)。
 * [管理云服务](/documentation/articles/cloud-services-how-to-manage-portal)。
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0523_2016-->

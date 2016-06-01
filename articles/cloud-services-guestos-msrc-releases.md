@@ -9,12 +9,25 @@
 
 <tags
    ms.service="cloud-services"
-   ms.date="03/23/2016"
-   wacn.date="05/12/2016"/>
+   ms.date="04/18/2016"
+   wacn.date="05/31/2016"/>
 
 # Azure 来宾 OS 
 
 下表显示了适用于 Azure 来宾 OS 的 Microsoft 安全响应中心 (MSRC) 更新。若要确定特定的更新是否适用于你使用的来宾 OS，请搜索本文。引入这些更新的特定[系列][family-explain]始终会包含这些更新。
+
+
+## 4 月来宾 OS 
+
+| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS16-037 | [3148531] | Internet Explorer 的累积安全更新 | 4\.31、3.38、2.50 | 2016 年 4 月 12 日 |  
+| MS16-039 | [3148522] | Microsoft 图形组件的安全更新 | 4\.31、3.38、2.50 | 2016 年 4 月 12 日 | 
+| MS16-040 | [3148541] | Microsoft XML 核心服务的安全更新 | 4\.31、3.38、2.50 | 2016 年 4 月 12 日 | 
+| MS16-044 | [3146706] | Windows OLE 的安全更新 | 4\.31、3.38、2.50 | 2016 年 4 月 12 日 | 
+| MS16-045 | [3143118] | Windows Hyper-V 的安全更新 | 4\.31、3.38 | 2016 年 4 月 12 日 | 
+| MS16-047 | [3148527] | 安全帐户管理器远程协议的安全更新 | 4\.31、3.38、2.50 | 2016 年 4 月 12 日 | 
+| MS16-048 | [3148528] | CSRSS 的安全更新 | 4\.31、3.38 | 2016 年 4 月 12 日 | 
 
 ## 3 月来宾 OS 
 
@@ -252,6 +265,14 @@
 | 不适用 | [2999802][2999802] | 在 Windows 中打印时，虚线变成实线 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
 | 不适用 | [2896881][2896881] | 在 Windows 中登录期间使用 AddPrinterConnection VBScript 命令映射用户的打印机时，登录时间过长 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
 
+[3148531]: http://support.microsoft.com/zh-cn/kb/3148531
+[3148522]: http://support.microsoft.com/zh-cn/kb/3148522
+[3148541]: http://support.microsoft.com/zh-cn/kb/3148541
+[3146706]: http://support.microsoft.com/zh-cn/kb/3146706
+[3143118]: http://support.microsoft.com/zh-cn/kb/3143118
+[3148527]: http://support.microsoft.com/zh-cn/kb/3148527
+[3148528]: http://support.microsoft.com/zh-cn/kb/3148528
+
 
 [3142015]: http://support.microsoft.com/zh-cn/kb/3142015
 [3143148]: http://support.microsoft.com/zh-cn/kb/3143148
@@ -428,4 +449,4 @@
 [family-explain]: /documentation/articles/cloud-services-guestos-update-matrix/#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0523_2016-->

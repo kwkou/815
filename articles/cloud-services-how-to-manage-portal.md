@@ -9,15 +9,16 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="01/20/2016"
-	wacn.date="05/11/2016"/>
+	ms.date="04/26/2016"
+	wacn.date="05/31/2016"/>
 
 
 # 如何管理云服务
 
 > [AZURE.SELECTOR]
-- [Azure 经典门户](/documentation/articles/cloud-services-how-to-manage)
 - [Azure 门户](/documentation/articles/cloud-services-how-to-manage-portal)
+- [Azure 管理门户](/documentation/articles/cloud-services-how-to-manage)
+
 
 在 Azure 门户的“云服务”区域中，可以更新服务角色或部署、将预留部署升级到生产环境、将资源链接到云服务，以便可以查看资源依赖关系并对资源进行整体缩放，以及删除云服务或部署。
 
@@ -38,15 +39,13 @@
 
 4. **可选**更新部署标签和存储帐户。
 
-5. 如果更新更改了角色数量或任何角色的大小，则选中“如果角色大小或数量发生改变，则允许更新”复选框以继续进行更新。
-
-	>[AZURE.WARNING] 请注意，如果你更改角色大小（即，托管角色实例的虚拟机大小）或角色数量，则必须重建每个角色实例（虚拟机）的映像，并且将会丢失所有本地数据。
-
-6. 如果任何服务角色只有一个角色实例，则选中“即使一个或多个角色包含单个实例也进行更新”复选框以继续进行升级。
+5. 如果任何服务角色只有一个角色实例，则选中“即使一个或多个角色包含单个实例也进行部署”以继续进行升级。
 
 	如果每个角色至少具有两个角色实例（虚拟机），那么 Azure 在云服务更新期间只能保证 99.95% 的服务可用性。这使得一台虚拟机可以在另一台虚拟机正更新时处理客户端请求。
 
-8. 单击“确定”开始更新服务。
+6. 如果你想在上载完包以后应用更新，请勾选“开始部署”。
+
+7. 单击“确定”开始更新服务。
 
 
 
@@ -74,7 +73,7 @@
 
 ## 如何：将资源链接到云服务
 
-Azure 门户不会像当前 Azure 经典门户一样将资源链接在一起。而是必须将其他资源部署到云服务正在使用的同一资源组。
+Azure 门户不会像当前 Azure 管理门户一样将资源链接在一起。而是必须将其他资源部署到云服务正在使用的同一资源组。
 
 ## 如何：删除部署和云服务
 
@@ -110,4 +109,4 @@ Azure 门户不会像当前 Azure 经典门户一样将资源链接在一起。�
 * 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name-portal)。
 * 配置 [SSL 证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal)。
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0523_2016-->

@@ -9,8 +9,8 @@
    tags="top-support-issue"/>
 <tags
    ms.service="cloud-services"
-   ms.date="01/20/2016"
-   wacn.date="03/18/2016" />
+   ms.date="04/20/2016"
+   wacn.date="05/31/2016" />
 
 # 导致角色回收的常见问题
 
@@ -52,8 +52,7 @@ Azure 是一个 64 位的环境。因此，针对 32 位目标编译的 .NET 程
 
 在将应用程序包部署到 Azure 之前，若要确保你的 `DiagnosticsConnectionString` 设置正确，请验证以下内容：
 
-- `DiagnosticsConnectionString` 设置指向 Azure 中的有效存储帐户。  
-  默认情况下，此设置指向模拟的存储帐户中，因此必须在部署应用程序包之前显式更改此设置。如果不更改此设置，则当角色实例尝试启动诊断监视器时，将引发异常。这可能导致角色实例无限期回收。
+- `DiagnosticsConnectionString` 设置指向 Azure 中的有效存储帐户。默认情况下，此设置指向模拟的存储帐户中，因此必须在部署应用程序包之前显式更改此设置。如果不更改此设置，则当角色实例尝试启动诊断监视器时，将引发异常。这可能导致角色实例无限期回收。
 
 - 连接字符串是使用以下[格式](/documentation/articles/storage-configure-connection-string)指定的。（协议必须指定为 HTTPS。） 将 *MyAccountName* 替换为你的存储帐户名称，将 *MyAccountKey* 替换为你的访问密钥：
 
@@ -63,7 +62,7 @@ Azure 是一个 64 位的环境。因此，针对 32 位目标编译的 .NET 程
 
 ## 导出的证书不含私钥
 
-若要在 SSL 下运行 Web 角色，必须确保导出的管理证书包含私钥。如果使用 *Windows 证书管理器*来导出证书，请务必对“导出私钥”选项选择“是”。该证书必须以 PFX 格式导出，这是当前支持的唯一格式。
+若要在 SSL 下运行 Web 角色，必须确保导出的管理证书包含私钥。如果使用 Windows 证书管理器来导出证书，请务必对“导出私钥”选项选择“是”。该证书必须以 PFX 格式导出，这是当前支持的唯一格式。
 
 ## 后续步骤
 
@@ -79,4 +78,4 @@ Azure 是一个 64 位的环境。因此，针对 32 位目标编译的 .NET 程
 [OnStop]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx
 [Run]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0523_2016-->
