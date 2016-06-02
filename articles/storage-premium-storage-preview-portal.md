@@ -347,7 +347,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 #### 创建 DS 系列虚拟机
 
 	azure vm create -z "Standard_DS2" -l "china east" -e 22 "premium-test-vm"
-		"b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-zh-CN-30GB" -u "myusername" -p "passwd@123"
+		"b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_10-amd64-server-20150202-zh-CN-30GB" -u "myusername" -p "passwd@123"
 
 #### 显示有关虚拟机的信息
 
