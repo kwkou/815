@@ -65,10 +65,10 @@
 
 `azure vm image list | grep Ubuntu-14_04`
 
-选择其中一个映像名称（例如 `b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB`），然后使用以下命令创建使用该映像的新 VM。
+选择其中一个映像名称（例如 `b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB`），然后使用以下命令创建使用该映像的新 VM。
 
 	
-	azure vm docker create -e 22 -l "China North" <vm-cloudservice name> "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB" <username> <password>
+	azure vm docker create -e 22 -l "China North" <vm-cloudservice name> "b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB" <username> <password>
 	
 
 其中：

@@ -80,8 +80,6 @@ HPC Pack 是在 Azure 和 Windows Server 技术基础之上构建的 Microsoft �
 
 Azure 提供一[系列大小](/documentation/articles/virtual-machines-windows-sizes)，包括能够连接到后端 RDMA 网络的计算密集型 [A8 和 A9](/documentation/articles/virtual-machines-windows-a8-a9-a10-a11-specs) 实例，以运行 Linux 和 Windows HPC 工作负荷。
 
-* [设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-classic-rdma-cluster)
-
 * [通过 Microsoft HPC Pack 设置 Windows RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-windows-classic-hpcpack-rdma-cluster)
 
 ## 体系结构蓝图

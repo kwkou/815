@@ -411,7 +411,7 @@ azure storage account create "premiumtestaccount" -l "East China" --type PLRS
 #### II.通过 Azure CLI 创建 DS 系列虚拟机
 
 	azure vm create -z "Standard_DS2" -l "East China" -e 22 "premium-test-vm"
-		"b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB" -u "myusername" -p "passwd@123"
+		"b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_10-amd64-server-20150202-en-us-30GB" -u "myusername" -p "passwd@123"
 
 显示有关虚拟机的信息
 
