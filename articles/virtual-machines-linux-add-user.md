@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="03/04/2016"
-	wacn.date=""/>
+	wacn.date="06/02/2016"/>
 
 # 将用户添加到 Azure VM
 
@@ -73,7 +73,7 @@
 
 ### 将单个 sudo 用户添加到 Azure VM
 
-使用 SSH 密钥登录到 Azure VM。如果未设置 SSH 公钥访问权限，请先阅读 [Using Public Key Authentication with Azure（对 Azure 使用公钥身份验证）](http://link.to/article)一文。
+使用 SSH 密钥登录到 Azure VM。
 
 `useradd` 命令将完成以下任务：
 

@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/07/2016"
-	wacn.date=""/>
+	wacn.date="06/02/2016"/>
 
 # 在 Azure 上优化 Linux VM
 
