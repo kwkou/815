@@ -1,6 +1,6 @@
 <properties
-	pageTitle="SQL Server IaaS 代理扩展 | Azure"
-	description="本主题介绍可使 Azure 上运行 SQL Server 的 VM 使用自动化功能的 SQL Server 代理扩展。"
+	pageTitle="SQL Server IaaS 代理扩展（经典）| Azure"
+	description="本主题介绍可使 Azure 上运行 SQL Server 的 VM 使用自动化功能的 SQL Server 代理扩展。它使用经典部署模式。"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="rothja"
@@ -13,13 +13,13 @@
 	ms.date="04/08/2016"
 	wacn.date="05/16/2016"/>
 
-# SQL Server IaaS 代理扩展
+# SQL Server IaaS 代理扩展（经典）
 
 通过此扩展能够使 Azure 虚拟机中的 SQL Server 利用本文章中列出的某些服务，这些服务仅在安装此扩展的情况下使用。为 Azure 门户中的 SQL Server 库映像自动安装此扩展。它可以在 Azure 中的任何 SQL Server VM 上进行安装，该 VM 已安装 Azure VM 来宾代理。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
- 
- 
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
+
+
 ## 先决条件
 使用 Powershell cmdlet 的要求：
 
@@ -33,9 +33,9 @@
 
 ## 服务适用于扩展
 
-- **SQL 自动备份**：此服务对 VM 中的 SQL Server 默认实例自动执行所有数据库的备份计划。有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的自动备份](/documentation/articles/virtual-machines-windows-classic-sql-automated-backup)。
-- **SQL 自动修补**：使用此服务能够配置维护时段，在此期间可能更新你的 VM，因此可以避免在工作负荷的高峰时间进行更新。有关详细信息，请参阅 [Azure 虚拟机中的 SQL Server 的自动修补](/documentation/articles/virtual-machines-windows-classic-sql-automated-patching)。
-- **Azure 密钥保管库集成**：此服务让你能够在 SQL Server VM 上自动安装和配置 Azure 密匙保管库。有关详细信息，请参阅[为 Azure VM上的 SQL Server 配置 Azure 密匙保管库集成](/documentation/articles/virtual-machines-windows-classic-ps-sql-keyvault)。
+- **SQL 自动备份**：此服务对 VM 中的 SQL Server 默认实例自动执行所有数据库的备份计划。有关详细信息，请参阅 [Azure 虚拟机（经典）中 SQL Server 的自动备份](/documentation/articles/virtual-machines-windows-classic-sql-automated-backup)。
+- **SQL 自动修补**：使用此服务能够配置维护时段，在此期间可能更新你的 VM，因此可以避免在工作负荷的高峰时间进行更新。有关详细信息，请参阅 [Azure 虚拟机（经典）中的 SQL Server 的自动修补](/documentation/articles/virtual-machines-windows-classic-sql-automated-patching)。
+- **Azure 密钥保管库集成**：此服务让你能够在 SQL Server VM 上自动安装和配置 Azure 密匙保管库。有关详细信息，请参阅[为 Azure VM（经典）上的 SQL Server 配置 Azure 密匙保管库集成](/documentation/articles/virtual-machines-windows-classic-ps-sql-keyvault)。
 
 ## 使用 Powershell 添加扩展
 如果使用 Azure 管理门户设置 SQL Server VM，将会自动安装该扩展。针对使用 Azure 管理门户配置的 SQL Server VM 或生成你自己的 SQL 许可证的 VM，可以使用 **Set-AzureVMSqlServerExtension** Azure PowerShell cmdlet 添加此扩展。
@@ -47,7 +47,7 @@ Set-AzureVMSqlServerExtension [[-ReferenceName] [String]] [-VM] IPersistentVM [[
 > [AZURE.NOTE] 建议省略 -Version 参数。省略之后，默认值就是最新版本的扩展。
 
 ### 示例
-下面的示例将使用 $abs 中定义的配置来配置自动备份设置（未在此处显示）。serviceName 是托管虚拟机的云服务名称。有关完整示例，请参阅 [Azure 虚拟机中 SQL Server 的自动备份](/documentation/articles/virtual-machines-windows-classic-sql-automated-backup)。
+下面的示例将使用 $abs 中定义的配置来配置自动备份设置（未在此处显示）。serviceName 是托管虚拟机的云服务名称。有关完整示例，请参阅 [Azure 虚拟机（经典）中 SQL Server 的自动备份](/documentation/articles/virtual-machines-windows-classic-sql-automated-backup)。
 
 	Get-AzureVM -ServiceName "serviceName" -Name "vmName" | Set-AzureVMSqlServerExtension -AutoBackupSettings $abs | Update-AzureVM**
 

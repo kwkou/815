@@ -19,7 +19,7 @@
 
 备份 SQL Server 数据库中的数据是防止应用程序或用户错误导致数据丢失而采取的策略的重要组成部分。对于 Azure 虚拟机 (VM) 上运行的 SQL Server 同样如此。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 
 对于 Azure VM 中运行的 SQL Server，可以使用附加的磁盘作为备份文件目标，通过本机备份和还原技术实现此目的。不过，你只能[根据虚拟机的大小](/documentation/articles/virtual-machines-windows-sizes)，将有限数量的磁盘附加到 Azure 虚拟机。磁盘管理开销也是一个考虑因素。
 

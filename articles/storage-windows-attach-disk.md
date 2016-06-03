@@ -15,7 +15,7 @@
 
 # 将数据磁盘附加到使用经典部署模型创建的 Windows 虚拟机
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-attach-disk-preview)。
 
 如果需要其他数据磁盘，可将空磁盘或现有的数据磁盘附加到 VM。在这两种情况下，磁盘是驻留在 Azure 存储帐户中的 .vhd 文件。如果是新磁盘，在附加磁盘之后，你也需要将它初始化，使其可供 Windows VM 使用。
 

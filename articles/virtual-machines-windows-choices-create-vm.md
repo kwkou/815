@@ -13,51 +13,37 @@
 	ms.date="03/11/2016"
 	wacn.date="05/16/2016"/>
 
-# 创建 Windows 虚拟机的不同方式
+# 使用资源管理器创建 Windows 虚拟机的不同方式
 
 Azure 提供不同方式来创建虚拟机，因为虚拟机适合于不同的用户和目的。这意味着，你需要在虚拟机及其创建方式上做出一些选择。本文提供了这些选项的摘要和说明链接。
 
-## 工具选项
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Microsoft 建议对大多数新的部署使用该模型，而不是经典部署模型。
 
-### GUI：Azure 门户
+
+## GUI：Azure 管理门户
 
 Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 Azure 门户创建虚拟机：
 
 [创建运行 Windows 的虚拟机][]
 
-### 命令 Shell：Azure CLI 或 Azure PowerShell
+>[AZURE.NOTE] 管理门户只能创建管理经典部署模型的虚拟机
 
-如果你喜欢使用命令行解释器，请选择适用于 Mac 和 Linux 用户的 Azure 命令行界面 (CLI) 或 Azure PowerShell，后者提供 cmdlet for Azure 和自定义控制台。
+## Azure PowerShell
 
-有关 Azure CLI，请参阅：
+如果你喜欢在命令外壳中工作，可以使用 Azure PowerShell。
 
-- [将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools).
+- [使用 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create)
+- [使用资源管理器模板创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-template)
 
-有关 Azure PowerShell，请参阅：
+## 模板
 
-- [在 Azure 中创建 SQL Server 虚拟机 (PowerShell)](/documentation/articles/virtual-machines-windows-classic-ps-sql-create)
-- [使用 PowerShell 来部署和管理虚拟机][]
+虚拟机需要资源的组合（如可用性集和存储账户）。你无需单独部署和管理每个资源，而可以创建一个 Azure 资源管理器模板，以单个协调操作部署和设置所有资源。
 
-## 操作系统和映像选项
+- [使用资源管理器模板创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-template)
 
-根据要运行的操作系统选择映像。Azure 及其合作伙伴提供了许多映像，其中一些映像包括应用程序和工具。或者，使用你自己的某一映像。使用此文中的信息查找你的应用程序所需的平台映像：[使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像][]。
+## Visual Studio
 
-<!-- LINKS -->
-[概述]: /documentation/articles/resource-group-overview
-
-[创建运行 Windows 的虚拟机]: /documentation/articles/virtual-machines-windows-classic-tutorial
-
-[适合使用针对 Mac、Linux 和 Windows 的 Azure CLI 进行虚拟机操作的等效资源管理器和服务管理命令]: /documentation/articles/virtual-machines-windows-cli-manage
-
-[使用 PowerShell 来部署和管理虚拟机]: /documentation/articles/virtual-machines-windows-classic-manage-psh
+[使用计算、网络和存储 .NET 库部署 Azure 资源](/documentation/articles/virtual-machines-windows-csharp)
 
 
-[使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像]: /documentation/articles/virtual-machines-linux-cli-ps-findimage
-
-[Sign in to the virtual machine]: /documentation/articles/virtual-machines-windows-classic-connect-logon
-
-[Base configuration test environment]: /documentation/articles/virtual-machines-windows-classic-test-config-env
-
-[Azure hybrid cloud test environments]: /documentation/articles/virtual-machines-windows-classic-hybrid-test-env
-
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0509_2016-->

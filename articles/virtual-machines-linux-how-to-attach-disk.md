@@ -15,8 +15,7 @@
 
 # 如何将数据磁盘附加到 Linux 虚拟机
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
-
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 
 你可以附加空磁盘和包含数据的磁盘。在这两种情况下，这些磁盘实际上是驻留在 Azure 存储帐户中的 .vhd 文件。此外，在附加磁盘之后，你将需要对其进行初始化，然后才能使用。
 

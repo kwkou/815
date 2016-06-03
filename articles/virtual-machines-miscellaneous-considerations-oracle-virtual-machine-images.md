@@ -14,9 +14,7 @@
 
 #有关 Oracle 虚拟机映像的其他注意事项
 
-
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
-
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 
 本文介绍 Azure 中基于 Oracle 软件映像的 Oracle 虚拟机的注意事项，这些映像用户可以自行上传，使用 Windows Server 作为操作系统。你也可以本地创建 VHD 然后上传到 Azure 来创建虚拟机。
 

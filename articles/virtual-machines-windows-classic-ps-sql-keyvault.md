@@ -18,7 +18,7 @@
 ## 概述
 SQL Server 加密功能多种多样，包括[透明数据加密 (TDE)](https://msdn.microsoft.com/zh-cn/library/bb934049.aspx)、[列级加密 (CLE)](https://msdn.microsoft.com/zh-cn/library/ms173744.aspx) 和[备份加密](https://msdn.microsoft.com/zh-cn/library/dn449489.aspx)。这些加密形式要求你管理和存储用于加密的加密密钥。Azure 密钥保管库 (AKV) 服务专用于在一个高度可用的安全位置改进这些密钥的安全性和管理。[SQL Server 连接器](http://www.microsoft.com/download/details.aspx?id=45344)使 SQL Server 能够使用 Azure 密钥保管库中的这些密钥。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 
 如果在本地计算机上运行 SQL Server，请[按照此处的步骤从本地 SQL Server 计算机访问 Azure 密钥保管库](https://msdn.microsoft.com/zh-cn/library/dn198405.aspx)。但对于 Azure VM 中的 SQL Server，你可以通过使用 *Azure 密钥保管库集成*功能节省时间。通过使用几个 Azure PowerShell cmdlet 来启用此功能，可以自动为 SQL VM 进行必要的配置以便访问密钥保管库。
 
@@ -39,7 +39,7 @@ SQL Server 加密功能多种多样，包括[透明数据加密 (TDE)](https://m
 ###<a name="create-an-azure-active-directory"></a> 创建 Azure Active Directory
 首先，你的订阅中需要具有 Azure Active Directory(AAD)。其优点之一是允许你为特定用户和应用程序授予对密钥保管库的权限。
 
-然后，将应用程序注册到 Azure AAD。这将为你提供一个服务主体帐户，使你有权访问 VM 所需的密钥保管库。在 Azure 密钥保管库文章中，你可以在[将应用程序注册到 Azure Active Directory]/documentation/articles/key-vault-get-started.#register) 部分中找到这些步骤，或者可以在[此博客文章](http://blogs.technet.com/b/kv/archive/2015/01/09/azure-key-vault-step-by-step.aspx)的**获取应用程序的标识**部分中看到这些步骤以及屏幕截图。请注意，在完成这些步骤之前，你需要在注册期间收集以下信息，之后在 SQL VM 上启用 Azure 密钥保管库集成时需要这些信息。
+然后，将应用程序注册到 Azure AAD。这将为你提供一个服务主体帐户，使你有权访问 VM 所需的密钥保管库。在 Azure 密钥保管库文章中，你可以在[将应用程序注册到 Azure Active Directory]/documentation/articles/key-vault-get-started#register) 部分中找到这些步骤，或者可以在[此博客文章](http://blogs.technet.com/b/kv/archive/2015/01/09/azure-key-vault-step-by-step.aspx)的**获取应用程序的标识**部分中看到这些步骤以及屏幕截图。请注意，在完成这些步骤之前，你需要在注册期间收集以下信息，之后在 SQL VM 上启用 Azure 密钥保管库集成时需要这些信息。
 
 - 添加应用程序后，在“配置”选项卡上找到**客户端 ID**。 
 	![Azure Active Directory 客户端 ID](./media/virtual-machines-sql-server-azure-key-vault-integration/aad-client-id.png)

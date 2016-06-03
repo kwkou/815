@@ -33,7 +33,7 @@ Azure 默认提供单个虚拟网络内包含的所有 VM 的 DNS 名称解析�
 
 ##<a name="azure-provided-name-resolution"></a> Azure 提供的名称解析
 
-除公共 DNS 名称解析之外，Azure 还为驻留在相同虚拟网络中的 VM 和角色实例提供内部名称解析。虽然 Azure 提供的名称解析不需要任何配置，但并不适合所有部署方案，如上表所示。
+除公共 DNS 名称解析之外，Azure 还为驻留在相同虚拟网络中的 VM 和角色实例提供内部名称解析。在基于 ARM 的虚拟网络中，整个虚拟网络的 DNS 后缀是一致的（因此不需要 FQDN），并且可以将 DNS 名称分配到 NIC 和 VM。虽然 Azure 提供的名称解析不需要任何配置，但并不适合所有部署方案，如上表所示。
 
 ### 功能和注意事项
 
@@ -120,7 +120,9 @@ DNS 转发还可用于在 VNet 之间进行 DNS 解析，可以通过本地计�
 
 ![VNet 间 DNS](./media/virtual-machines-linux-azure-dns/inter-vnet-dns.png)
 
-使用 Azure 提供的名称解析时，会通过 DHCP 为每个 VM 提供内部 DNS 后缀。使用你自己的名称解析解决方案时，不会向 VM 提供该后缀，因为该后缀会干扰其他 DNS 体系结构。若要通过 FQDN 来引用计算机，或者要在你的 VM 上配置后缀，则可通过 PowerShell.
+使用 Azure 提供的名称解析时，会通过 DHCP 为每个 VM 提供内部 DNS 后缀。使用你自己的名称解析解决方案时，不会向 VM 提供该后缀，因为该后缀会干扰其他 DNS 体系结构。若要通过 FQDN 来引用计算机，或者要在你的 VM 上配置后缀，则可通过 PowerShell 或 API 来确定该后缀：
+
+-  对于 Azure 资源管理托管的 VNet，可通过[网络接口卡](https://msdn.microsoft.com/zh-cn/library/azure/mt163668.aspx)资源获取后缀；或者，你可以运行命令 `azure network public-ip show <resource group> <pip name>` 来显示公共 IP 的详细信息，包括 NIC 的 FQDN。    
 
 如果你不想将查询转发到 Azure，则需提供你自己的 DNS 解决方案。你的 DNS 解决方案需满足以下条件：
 

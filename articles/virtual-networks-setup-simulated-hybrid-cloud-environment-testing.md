@@ -15,7 +15,7 @@
 
 # 设置用于测试的模拟混合云环境（经典部署模式）
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 
 本文将指导你通过两个独立的 Azure 虚拟网络，逐步使用Azure 创建用于测试的模拟混合云环境。当你没有直接的 Internet 连接和可用的公共 IP 地址时，可使用此配置作为[设置用于测试的混合云环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)的替代方法。这是生成的配置。
 

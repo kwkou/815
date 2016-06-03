@@ -23,8 +23,7 @@
 
 本教程使用 Ubuntu Server 14.04 LTS 进行了验证。如果你使用不同 Linux 分发，则可能需要修改安装 Rails 的步骤。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
-
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 
 ## 创建 Azure VM
 

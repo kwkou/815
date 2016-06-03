@@ -15,7 +15,7 @@
 
 # 在 Azure 上将 Cassandra 与 Linux 一起运行以及通过 Node.js 对其进行访问 
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 
 ## 概述
 Azure 是一种开放式的云平台，该平台运行 Microsoft 软件和非 Microsoft 软件，其中包括：操作系统、应用程序服务器、消息传递中间件，以及 SQL 数据库和 NoSQL 数据库，采用商业模型和开源模型。在包括 Azure 在内的公共云上构建可复原的服务需要针对应用程序服务器和存储层进行仔细的规划和周到的体系结构设计。Cassandra 具有分布式的存储体系结构，这自然有助于构建可用性高的系统，此类系统在发生群集故障时容错性很强。Cassandra 是云级别的 NoSQL 数据库，由 Apache Software Foundation 在 cassandra.apache.org 上进行维护；Cassandra 是以 Java 编写的，因此可以运行在 Windows 和 Linux 平台上。

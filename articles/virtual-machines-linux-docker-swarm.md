@@ -15,8 +15,7 @@
 
 # 如何将 docker 与 swarm 一起使用
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
-
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 
 本主题介绍非常简单的方法，以将 [docker](https://www.docker.com/) 与 [swarm](https://github.com/docker/swarm) 一起使用在 Azure 上创建 swarm 托管群集。它在 Azure 中创建四个虚拟机，其中一个虚拟机充当 swarm 管理器，而另外三个虚拟机则为 docker 主机群集的一部分。完成时，可以使用 swarm 查看群集，然后开始在其上使用 docker。此外，本主题中的 Azure CLI 调用将使用服务管理 (asm) 模式。
 

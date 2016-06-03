@@ -22,8 +22,7 @@
 
 本主题说明如何使用**内部负载平衡器 (ILB)** 为 AlwaysOn 可用性组配置侦听器。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
- 
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-int-listener)。
 
 你的可用性组可以仅包含本地副本或 Azure 副本，也可以跨越本地和 Azure 以实现混合配置。Azure 副本可以位于同一区域，也可以跨越使用多个虚拟网络 (VNet) 的多个区域。以下步骤假设你已[配置了一个可用性组](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)但是没有配置侦听器。
 
