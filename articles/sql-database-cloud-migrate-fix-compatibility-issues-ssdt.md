@@ -10,7 +10,7 @@
 <tags
    ms.service="sql-database"
    ms.date="03/22/2016"
-   wacn.date="05/16/2016"/>
+   wacn.date="05/16/2016"/> 
 
 # 使用 SQL Server Data Tools for Visual Studio 将 SQL Server 数据库迁移到 Azure SQL 数据库
 
