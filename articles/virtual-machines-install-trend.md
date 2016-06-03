@@ -16,8 +16,7 @@
 
 # 如何在 Windows VM 上安装和配置 Trend Micro Deep Security 即服务
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
-
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 
 本文演示了如何在运行 Windows Server 的新的或现有虚拟机 (VM) 上安装和配置 Trend Micro Deep Security 即服务。Deep Security 即服务包括反恶意软件保护、防火墙、入侵防御系统和完整性监视。
 

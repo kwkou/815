@@ -14,6 +14,8 @@
 
 # 使用 HPC Pack 设置一个运行 MPI 应用程序的 Windows RDMA 群集
 
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
+
 使用 [Microsoft HPC Pack](https://technet.microsoft.com/zh-cn/library/cc514029) 在 Azure 中设置一个 Windows RDMA 群集，以运行并行消息传递接口 (MPI) 应用程序。当你将基于 Windows Server 的实例设置为在 HPC Pack 群集中运行时，MPI 应用程序将通过 Azure 中基于远程直接内存访问 (RDMA) 技术的低延迟、高吞吐量网络高效地进行通信。
 
 ## HPC Pack 群集部署选项

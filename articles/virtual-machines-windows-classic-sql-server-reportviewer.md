@@ -14,8 +14,7 @@
 
 # 在 Azure 中托管的 Web 应用中使用 ReportViewer
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
-
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 
 你可以使用 Visual Studio ReportViewer 控件构建 Azure Web 应用，该控件用于显示存储在 Azure 虚拟机上的报表。ReportViewer 控件位于使用 ASP.NET Web 应用模板生成的 Web 应用中。
 

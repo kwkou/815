@@ -15,8 +15,7 @@
 
 本文演示如何在 Azure 中，基于 Windows Server 2012 上运行的由 Microsoft 提供的 Oracle WebLogic Server 12c 和 Oracle Database 12c 映像创建虚拟机。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]
-
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代经典部署模型。
 
 ##在 Azure 中创建 Oracle WebLogic Server 12c 和 Oracle Database 12c 虚拟机
 

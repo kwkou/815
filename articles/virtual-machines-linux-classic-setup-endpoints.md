@@ -17,7 +17,7 @@
 
 在 Azure 中使用经典部署模型创建的所有虚拟机都可以通过专用网络通道与同一云服务或虚拟网络中的其他虚拟机自动通信。但是，Internet 上的计算机或其他虚拟网络需要终结点才能定向虚拟机的入站网络流量。这篇文章也适用于 [Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 
 在 Azure 管理门户中创建 Linux 虚拟机时，通常会为你自动创建用于安全外壳 (SSH) 的终结点，具体取决于你选择的操作系统。你可以在创建虚拟机时或之后根据需要配置其他终结点。
 
