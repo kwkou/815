@@ -26,11 +26,11 @@
 多 NIC 目前有以下要求和约束：
 
 - 必须在 Azure 虚拟网络 (VNet) 中创建多 NIC VM。不支持非 VNet VM。 
-- 在单个云服务中，仅允许以下设置： 
+- 在单个云服务（经典部署）或资源组中，仅允许以下设置： 
 	- 该云服务中的所有 VM 都必须启用多 NIC，否则 
 	- 该云服务中的所有 VM 都必须使用单个 NIC 
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代经典部署模型。
  
 - 仅在“默认”NIC 上支持面向 Internet 的 VIP（经典部署）。默认 NIC 的 IP 只有一个对应的 VIP。 
 - 多 NIC VM 目前不支持实例级公共 IP (LPIP) 地址（经典部署）。 
