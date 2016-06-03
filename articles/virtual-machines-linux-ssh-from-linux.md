@@ -1,3 +1,5 @@
+<!-- ARM: tested -->
+
 <properties 
 	pageTitle="在 Linux 和 Mac 上使用 SSH | Azure" 
 	description="在 Linux 和 Mac 上为 Azure 上的资源管理器和经典部署模型生成和使用 SSH 密钥。" 
@@ -19,7 +21,7 @@
 - [Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows)
 - [Linux/Mac](/documentation/articles/virtual-machines-linux-ssh-from-linux)
 
-本主题介绍如何在 Linux 和 Mac 上使用 **ssh-keygen** 和 **openssl**，创建和使用 **ssh-rsa** 格式和 **.pem** 格式文件来基于 Linux 保护与 Azure VM 的通信。
+本主题介绍如何在 Linux 和 Mac 上使用 **ssh-keygen** 和 **openssl**，创建和使用 **ssh-rsa** 格式和 **.pem** 格式文件来基于 Linux 保护与 Azure VM 的通信。对于新部署，建议使用资源管理器部署模型创建基于 Linux 的 Azure 虚拟机，并采用 *ssh-rsa* 类型公钥文件或字符串（具体取决于部署客户端）。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
@@ -77,7 +79,64 @@ Azure 的基本 SSH 设置包括 2048 位的 **ssh-rsa** 公钥和私钥对（�
 
 ## 使用公钥文件创建 VM
 
-创建所需的文件后，有许多方式可创建一个 VM，你可以使用公钥/私钥交换安全地连接到它。几乎在所有情况下，当系统提示输入 ssh 密钥文件路径或字符串形式的文件内容时，可传递 .pub 文件。
+创建所需的文件后，有许多方式可创建一个 VM，你可以使用公钥/私钥交换安全地连接到它。几乎在所有情况下，特别是使用资源管理器部署，当系统提示输入 ssh 密钥文件路径或字符串形式的文件内容时，可传递 .pub 文件。
+
+### 示例：使用 id\_rsa.pub 文件创建 VM
+
+最常见的用法是以命令方式创建 VM 或上载模板以创建 VM。以下代码示例演示如何通过将公钥文件名（在本示例中，为默认的 `~/.ssh/id_rsa.pub` 文件）传递给 `azure vm create` 命令来在 Azure 中创建新的安全 Linux VM。（其他参数以前已创建。）
+
+	azure vm create \
+	--nic-name testnic \
+	--public-ip-name testpip \
+	--vnet-name testvnet \
+	--vnet-subnet-name testsubnet \
+	--storage-account-name computeteststore 
+	--image-urn canonical:UbuntuServer:14.04.3-LTS:latest \
+	--username ops \
+	-ssh-publickey-file ~/.ssh/id_rsa.pub \
+	testrg testvm chinaeast linux
+
+下一个示例演示如何将 **ssh-rsa** 格式与资源管理器模板和 Azure CLI 配合使用来创建受字符串形式的 `~/.ssh/id_rsa.pub` 用户名和内容保护的 Ubuntu VM。（在此示例中，将缩短公钥字符串以增加可读性。）
+
+你可以在 [GitHub](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json) 下载模板，然后运行下面的命令。
+
+>[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一下不支持的 VM 大小。
+
+	azure group deployment create \
+	--resource-group test-sshtemplate \
+	--template-file /path/to/azuredeploy.json \
+	--name mysshdeployment
+	info:    Executing command group deployment create
+	info:    Supply values for the following parameters
+	testnewStorageAccountName: testsshvmtemplate3
+	adminUserName: ops
+	sshKeyData: ssh-rsa AAAAB3NzaC1yc2EAAAADAQA+/L+rHIjz+nXTzxApgnP+iKDZco9 user@macbookpro
+	dnsNameForPublicIP: testsshvmtemplate
+	location: China East
+	vmName: sshvm
+	+ Initializing template configurations and parameters
+	+ Creating a deployment
+	info:    Created template deployment "mysshdeployment"
+	+ Waiting for deployment to complete
+	data:    DeploymentName     : mysshdeployment
+	data:    ResourceGroupName  : test-sshtemplate
+	data:    ProvisioningState  : Succeeded
+	data:    Timestamp          : 2015-10-08T00:12:12.2529678Z
+	data:    Mode               : Incremental
+	data:    CorrelationId      : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+	data:    DeploymentParameters :
+	data:    Name                   Type    Value
+
+	data:    newStorageAccountName  String  testtestsshvmtemplate3
+	data:    adminUserName          String  ops
+	data:    sshKeyData             String  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAkek3P6V3EhmD+xP+iKDZco9 user@macbookpro
+	data:    dnsNameForPublicIP     String  testsshvmtemplate
+	data:    location               String  China East
+	data:    vmSize                 String  Standard_A2
+	data:    vmName                 String  sshvm
+	data:    ubuntuOSVersion        String  14.04.2-LTS
+	info:    group deployment create command OK
+
 
 ### 示例：使用 .pem 文件创建 VM
 
@@ -106,7 +165,11 @@ Azure 的基本 SSH 设置包括 2048 位的 **ssh-rsa** 公钥和私钥对（�
 
 **ssh** 命令使用用户名、计算机的网络地址、连接到该地址的端口以及许多其他特殊变体来登录。（有关 **ssh** 的详细信息，可参阅这篇[有关 Secure Shell 的文章](https://en.wikipedia.org/wiki/Secure_Shell)）
 
-如果你要连接到经典部署云服务，则要使用的地址可能如下所示：
+如果你只是已指定子域和部署位置，则使用资源管理器部署的典型用法可能如下所示：
+
+	ssh user@subdomain.chinaeast.chinacloudapp.cn-p 22
+
+或者，如果你要连接到经典部署云服务，则要使用的地址可能如下所示：
 
 	ssh user@subdomain.chinacloudapp.cn -p 22
 
@@ -143,6 +206,55 @@ Azure 的基本 SSH 设置包括 2048 位的 **ssh-rsa** 公钥和私钥对（�
 	data:    Network Endpoints 0 virtualIPAddress "40.83.178.221"
 	data:    Network Endpoints 0 enableDirectServerReturn false
 	info:    vm show command OK
+
+### 使用资源管理器部署发现 Azure VM SSH 地址
+
+	azure vm show testrg testvm
+	info:    Executing command vm show
+	+ Looking up the VM "testvm"
+	+ Looking up the NIC "testnic"
+	+ Looking up the public ip "testpip"
+
+检查网络配置文件节：
+
+	data:    Network Profile:
+	data:      Network Interfaces:
+	data:        Network Interface #1:
+	data:          Id                        :/subscriptions/<guid>/resourceGroups/testrg/providers/Microsoft.Network/networkInterfaces/testnic
+	data:          Primary                   :true
+	data:          MAC Address               :00-0D-3A-21-8E-AE
+	data:          Provisioning State        :Succeeded
+	data:          Name                      :testnic
+	data:          Location                  :chinaeast
+	data:            Private IP alloc-method :Static
+	data:            Private IP address      :192.168.1.101
+	data:            Public IP address       :40.115.48.189
+	data:            FQDN                    :testsubdomain.chinaeast.chinacloudapp.cn
+	data:
+	data:    Diagnostics Instance View:
+	info:    vm show command OK
+
+如果你在创建 VM 时未使用默认 SSH 端口 22，则可以使用 `azure network nsg show` 命令发现哪些端口有入站规则，如下例所示：
+
+	azure network nsg show testrg testnsg
+	info:    Executing command network nsg show
+	+ Looking up the network security group "testnsg"
+	data:    Id                              : /subscriptions/<guid>/resourceGroups/testrg/providers/Microsoft.Network/networkSecurityGroups/testnsg
+	data:    Name                            : testnsg
+	data:    Type                            : Microsoft.Network/networkSecurityGroups
+	data:    Location                        : chinaeast
+	data:    Provisioning state              : Succeeded
+	data:    Security group rules:
+	data:    Name                           Source IP          Source Port  Destination IP  Destination Port  Protocol  Direction  Access  Priority
+	data:    -----------------------------  -----------------  -----------  --------------  ----------------  --------  ---------  ------  --------
+	data:    testnsgrule                    *                  *            *               22                Tcp       Inbound    Allow   1000
+	data:    AllowVnetInBound               VirtualNetwork     *            VirtualNetwork  *                 *         Inbound    Allow   65000
+	data:    AllowAzureLoadBalancerInBound  AzureLoadBalancer  *            *               *                 *         Inbound    Allow   65001
+	data:    DenyAllInBound                 *                  *            *               *                 *         Inbound    Deny    65500
+	data:    AllowVnetOutBound              VirtualNetwork     *            VirtualNetwork  *                 *         Outbound   Allow   65000
+	data:    AllowInternetOutBound          *                  *            Internet        *                 *         Outbound   Allow   65001
+	data:    DenyAllOutBound                *                  *            *               *                 *         Outbound   Deny    65500
+	info:    network nsg show command OK
 
 ### 示例：使用 .pem 密钥和经典部署的 SSH 会话的输出
 

@@ -72,7 +72,45 @@ b. `Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Serv
 
 此命令将 fDenyTSConnections 注册表值设为 0，以启用远程桌面连接。
 
+## Resource Manager 部署模型中的 Windows VM
 
+### VMAccess 扩展和 PowerShell
+
+确保已安装 Azure PowerShell 1.0 或更高版本，并且已使用 `Login-AzureRmAccount` cmdlet 登录到你的帐户。
+
+#### **重置本地管理员帐户密码**
+
+可以使用 [Set-AzureRmVMAccessExtension](https://msdn.microsoft.com/zh-cn/library/mt619447.aspx) PowerShell 命令来重置管理员密码或用户名。
+
+使用以下命令创建本地管理员帐户凭据：
+
+	$cred=Get-Credential
+
+如果你键入不同于当前帐户的名称，以下 VMAccess 扩展命令将重命名本地管理员帐户，将密码分配给该帐户，并发出远程桌面注销命令。如果本地管理员帐户处于禁用状态，则 VMAccess 扩展将启用它。
+
+使用 VM Access 扩展设置新凭据，如下所示：
+
+	Set-AzureRmVMAccessExtension -ResourceGroupName "myRG" -VMName "myVM" -Name "myVMAccess" -Location Westus -UserName $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
+
+
+将 `myRG`、`myVM`、`myVMAccess` 和位置替换为与你的设置相关的值。
+
+
+#### **重置远程桌面服务配置**
+
+可以使用 [Set-AzureRmVMExtension](https://msdn.microsoft.com/zh-cn/library/mt603745.aspx) 或 Set-AzureRmVMAccessExtension 来重置对 VM 的远程访问，如下所示。（将 `myRG`、`myVM`、`myVMAccess` 和 location 替换为你自己的值。）
+
+	Set-AzureRmVMExtension -ResourceGroupName "myRG" -VMName "myVM" -Name "myVMAccess" -ExtensionType "VMAccessAgent" -Publisher "Microsoft.Compute" -typeHandlerVersion "2.0" -Location Westus
+
+或者：<br>
+
+	Set-AzureRmVMAccessExtension -ResourceGroupName "myRG" -VMName "myVM" -Name "myVMAccess" -Location Westus
+
+
+> [AZURE.TIP] 这两个命令都在虚拟机中添加新的命名 VM 访问代理。无论何时，一个 VM 只能有一个 VM 访问代理。若要成功设置 VM 访问代理属性，请使用 `Remove-AzureRmVMAccessExtension` 或 `Remove-AzureRmVMExtension` 删除以前设置的访问代理。从 Azure PowerShell 版本 1.2.2 开始，如果将 `Set-AzureRmVMExtension` 与 `-ForceRerun` 选项结合使用，则无需执行此步骤。使用 `-ForceRerun` 时，请务必使用与前述命令设置的 VM 访问代理相同的名称。
+
+
+如果你仍然无法远程连接到虚拟机，请参阅 [Troubleshoot Remote Desktop connections to a Windows-based Azure virtual machine（对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除）](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)，以了解其他值得一试的步骤。
 ## 其他资源
 
 [Azure VM 扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features)

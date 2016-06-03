@@ -1,7 +1,7 @@
 如果本文未解答你的 Azure 问题，请访问 [MSDN 和 CSDN Azure 上的 Azure 论坛](/support/forums/)。你可以在这些论坛上发布你的问题。此外，你可以通过在 [Azure 支持](/support/contact/)站点上选择“获取支持”来发出 Azure 支持请求。
 
 ## 常规故障排除步骤
-### 排查常见的分配失败
+### 对经典部署模型中的常见分配失败进行故障排除
 
 这些步骤可帮助解决虚拟机中的许多分配失败：
 
@@ -10,6 +10,10 @@
 
 - 从云服务删除所有 VM，然后重新创建 VM。<br>
 	单击“虚拟机”> 你的虚拟机 >“删除”。然后，单击“新建”>“计算”>“从库中”>“我的磁盘”。
+
+### 对 Azure Resource Manager 部署模型中的常见分配失败进行故障排除
+
+新门户暂时还没上线，所以你可以通过 Azure PowerShell 或者 Azure CLI 停止，然后启动虚拟机。
 
 ## 背景信息
 ### 分配的工作原理
@@ -126,6 +130,17 @@ New\_General* 或 New\_VMSizeNotSupported*
 如果不需要地缘组，请为要添加的新资源创建新的区域虚拟网络，然后[将现有虚拟网络连接到新的虚拟网络](https://azure.microsoft.com/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/)。请参阅有关[区域虚拟网络](https://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/)的详细信息。
 
 此外，你也可以[将基于地缘组的虚拟网络迁移到区域虚拟网络](https://azure.microsoft.com/blog/2014/11/26/migrating-existing-services-to-regional-scope/)，然后重新添加所需的资源。
+
+## 针对 Azure Resource Manager 部署模型中的具体分配失败情况进行故障排除的步骤
+以下是造成分配请求被固定的常见分配案例。我们将在本文稍后深入探讨每一个案例。
+
+- 重设 VM 大小或向现有云服务添加 VM 或角色实例
+- 重新启动部分停止（已解除分配）的 VM
+- 重新启动完全停止（已解除分配）的 VM
+
+发生分配错误时，请查看以下是否有任何案例符合你所处的情况。使用 Azure 平台返回的分配错误来识别对应的案例。如果你的请求已固定到现有的群集，请删除一些固定约束，向更多群集展现你的请求，以增加分配成功的机会。
+
+一般而言，只要错误不指示“不支持所请求的 VM 大小”，你永远都可以稍后再试，因为到时群集可能释放足够的资源来满足你的请求。如果问题在于不支持所请求的 VM 大小，请参阅下面的解决方法。
 
 ## 分配案例：重设 VM 大小或向现有可用性集添加 VM
 **错误**

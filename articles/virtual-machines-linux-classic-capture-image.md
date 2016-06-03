@@ -16,7 +16,7 @@
 
 # 如何捕获经典 Linux 虚拟机以用作映像
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-linux-capture-image)。
 
 本文将演示如何捕获运行 Linux 的经典 Azure 虚拟机，以用作映像来创建其他虚拟机。此映像包括操作系统磁盘和附加到虚拟机的数据磁盘。它不包括网络配置，因此你在使用此映像创建其他虚拟机时需要进行网络配置。
 

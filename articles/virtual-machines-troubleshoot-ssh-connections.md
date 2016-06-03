@@ -56,6 +56,58 @@
 5. 检查 VM 的资源运行状况以了解是否有任何平台问题。<br>
 	“虚拟机”> 你的 Linux 虚拟机 >“监视”
 
+### 使用资源管理器部署模型创建的虚拟机
+
+若要解决使用资源管理器部署模型创建的虚拟机的常见 SSH 问题，请尝试以下步骤。
+
+#### 重置 SSH 连接
+
+[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
+
+通过使用 Azure CLI 确保已安装版本 2.0.5 或更高版本的 [Microsoft Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)。
+
+如果尚未安装 Azure CLI，请[安装 Azure CLI 并连接到 Azure 订阅](/documentation/articles/xplat-cli-install)，然后使用 `azure login` 命令登录。请确保你在资源管理器模式下：
+
+	azure config mode arm
+
+使用以下方法之一重置 SSH 连接：
+
+* 按以下示例所示使用 `vm reset-access` 命令。
+
+		azure vm reset-access -g YourResourceGroupName -n YourVirtualMachineName -r
+
+这将在虚拟机上安装 `VMAccessForLinux` 扩展。
+
+* 或者，使用以下内容创建名为 PrivateConf.json 的文件：
+
+		{  
+			"reset_ssh":"True"
+		}
+
+然后手动运行 `VMAccessForLinux` 扩展以重置 SSH 连接。
+
+	azure vm extension set "YourResourceGroupName" "YourVirtualMachineName" VMAccessForLinux Microsoft.OSTCExtensions "1.2" --private-config-path PrivateConf.json
+
+#### 重置 SSH 凭据
+
+* 运行 `vm reset-access` 命令以设置任何 SSH 凭据。
+
+		azure vm reset-access TestRgV2 TestVmV2 -u NewUser -p NewPassword
+
+在命令行上键入 `azure vm reset-access -h` 可以查看有关此命令的详细信息。
+
+* 或者，使用以下内容创建名为 PrivateConf.json 的文件。
+
+		{
+			"username":"NewUsername", "password":"NewPassword", "expiration":"2016-01-01", "ssh_key":"", "reset_ssh":false, "remove_user":""
+		}
+
+然后使用上述文件运行 Linux 扩展。
+
+	$azure vm extension set "testRG" "testVM" VMAccessForLinux Microsoft.OSTCExtensions "1.2" --private-config-path PrivateConf.json
+
+请注意，你可以遵循[如何为基于 Linux 的虚拟机重置密码或 SSH](/documentation/articles/virtual-machines-linux-classic-reset-access) 中的类似步骤来尝试其他不同的做法。请记得修改资源管理器模式的 Azure CLI 指令。
+
 
 ## SSH 错误的详细故障排除
 

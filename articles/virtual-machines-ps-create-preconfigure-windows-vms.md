@@ -1,6 +1,6 @@
 <properties
-	pageTitle="使用 Powershell 创建 Windows VM | Azure"
-	description="使用 Azure PowerShell 创建 Windows 虚拟机。"
+	pageTitle="使用 PowerShell 创建 Windows VM | Azure"
+	description="使用 Azure PowerShell 和经典部署模型创建 Windows 虚拟机。"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="cynthn"
@@ -13,13 +13,16 @@
 	ms.date="03/10/2016"
 	wacn.date="05/24/2016"/>
 
-# 使用 Azure Powershell 创建 Windows 虚拟机 
+# 使用 Powershell 和经典部署模型创建 Windows 虚拟机 
 
 > [AZURE.SELECTOR]
 - [Azure 管理门户](/documentation/articles/virtual-machines-windows-classic-tutorial)
 - [PowerShell - Windows](/documentation/articles/virtual-machines-windows-classic-create-powershell)
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] 
+<br>
+
+
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-windows-create-powershell)。
 
 
 这些步骤演示了如何使用构建基块方法自定义一组 Azure PowerShell 命令以创建和预配置基于 Windows 的 Azure 虚拟机。可以使用此过程快速创建用于新的基于 Windows 的虚拟机的命令集并扩展现有部署，或者创建多个命令集以快速构建出自定义开发/测试或 IT 专业环境。
@@ -151,7 +154,7 @@
 
 	New-AzureVM -ServiceName "<short name of the cloud service>" -VMs $vm1
 
-云服务的短名称是在 Azure 门户的云服务列表中或 Azure 门户的资源组列表中显示的名称。
+云服务的短名称是在 Azure 管理门户的云服务列表中。
 
 选项 2：在现有的云服务和虚拟网络中创建虚拟机。
 
@@ -168,7 +171,7 @@
 如果你要再次创建此虚拟机或类似的虚拟机，则可以：
 
 - 将此命令集保存为 PowerShell 脚本文件 (*.ps1)。
-- 在 Azure 门户的“自动化”部分中将此命令集保存为 Azure 自动化 Runbook。
+- 在 Azure 管理门户的“自动化”部分中将此命令集保存为 Azure 自动化 Runbook。
 
 ## <a id="examples"></a>示例
 
@@ -247,6 +250,14 @@
 	$svcname="Azure-TailspinToys"
 	$vnetname="AZDatacenter"
 	New-AzureVM -ServiceName $svcname -VMs $vm1 -VNetName $vnetname
+
+
+## 后续步骤
+
+如果需要大于 127 GB 的 OS 驱动器，你可以[展开 OS 驱动器](/documentation/articles/virtual-machines-windows-expand-os-disk)。
+
+
+
 
 
 <!---HONumber=Mooncake_0509_2016-->

@@ -15,8 +15,6 @@
 
 # 使用 Azure 管理门户创建运行 Linux 的虚拟机
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
-
 创建运行 Linux 的 Azure 虚拟机 (VM) 是一项很简单的操作。本教程演示如何使用 Azure 管理门户快速创建一个虚拟机，并使用 `.pem` 证书文件来保护与 VM 的 **SSH** 连接。你也可以[将自己的映像作为模板](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd)来创建 Linux VM。
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]

@@ -16,23 +16,21 @@
 
 # 使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Windows 虚拟机映像
 
-> [AZURE.NOTE]当你在本主题中搜索虚拟机映像时，你在 Azure 服务管理器模式下，使用最近安装的适用于 Mac、Linux 和 Windows 的 Azure 命令行接口，或者使用 Windows PowerShell。使用 Azure CLI 时，键入 `azure config mode asm` 即可进入该模式。使用 PowerShell 0.9 或之前版本时，请键入 `Switch-AzureMode AzureServiceManager`。
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Microsoft 建议对大多数新的部署使用该模型，而不是经典部署模型。
 
-## 常用映像表
+## 常用 Windows 映像表
 
-
-| PublisherName | 产品 | Name |
+| PublisherName | 产品 | SKU |
 |:---------------------------------|:-------------------------------------------|:---------------------------------|:--------------------|
-| Microsoft SharePoint Group | MicrosoftSharePointServer | 9619bdbee1584b6f80d684565a6eeb74__SharePoint-2013-Trial-3-26-2014 |
-| Microsoft SQL Server Group | SQL2014-WS2012R2 | 74bb2f0b8dcc47fbb2914b60ed940c35__SQL-Server-2014-RTM-12.0.2361.0-DataWarehousing-CHS-Win2012R2-cy14su05 |
-| Microsoft SQL Server Group | SQL2014-WS2012R2 | 74bb2f0b8dcc47fbb2914b60ed940c35__SQL-Server-2014-RTM-12.0.2361.0-Web-CHS-Win2012R2-cy14su05 |
-| Microsoft | WindowsServer | 55bc2b193643443bb879a78bda516fc8__Windows-Server-2012-Datacenter-20151021-zh.cn-127GB.vhd |
-| Microsoft | WindowsServer | 55bc2b193643443bb879a78bda516fc8__Windows-Server-2012-R2-20151021-zh.cn-127GB.vhd |
-| Microsoft | WindowsServer | 55bc2b193643443bb879a78bda516fc8__Win2K8R2SP1-Datacenter-20151021-zh.cn-127GB.vhd |
-| Microsoft | WindowsServer | 55bc2b193643443bb879a78bda516fc8__Windows-Server-Technical-Preview-20151118-en.us-127GB.vhd |
-| Microsoft Windows Server Essentials Group | WindowsServerEssentials | 0c5c79005aae478e8883bf950a861ce0__Windows-Server-2012-Essentials-20141204-zhcn |
-| Microsoft Windows Server HPC Pack team | WindowsServerHPCPack | 86f94d8ddf9d4aad9b064efb793ff4c2__HPC-Pack-2012R2-Update1-4.3.4660.0-WS2012R2-CHN |
-
+| MicrosoftSharePoint | MicrosoftSharePointServer | 2013 |
+| MicrosoftSQLServer | SQL2014-WS2012R2 | Enterprise-Optimized-for-DW |
+| MicrosoftSQLServer | SQL2014-WS2012R2 | Enterprise-Optimized-for-OLTP |
+| MicrosoftWindowsServer | WindowsServer | 2012-Datacenter |
+| MicrosoftWindowsServer | WindowsServer | 2012-R2-Datacenter |
+| MicrosoftWindowsServer | WindowsServer | 2008-R2-SP1 |
+| MicrosoftWindowsServer | WindowsServer | Windows-Server-Technical-Preview |
+| MicrosoftWindowsServerEssentials | WindowsServerEssentials | WindowsServerEssentials |
+| MicrosoftWindowsServerHPCPack | WindowsServerHPCPack | 2012R2 |
 
 [AZURE.INCLUDE [virtual-machines-common-cli-ps-findimage](../includes/virtual-machines-common-cli-ps-findimage.md)]
 

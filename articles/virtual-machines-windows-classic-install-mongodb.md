@@ -15,8 +15,7 @@
 
 #在 Windows VM 上安装 MongoDB
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]
-
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 
 [MongoDB][MongoDB] 是一个受欢迎的开源、高性能 NoSQL 数据库。使用 [Azure 管理门户][AzureManagementPortal]，你可以使用经典部署模型从映像库中创建运行 Windows Server 的虚拟机。然后，您可以在虚拟机上安装和配置 MongoDB 数据库。
 
