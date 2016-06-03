@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="02/03/2016"
-	wacn.date="03/18/2016"/>
+	ms.date="05/08/2016"
+	wacn.date="05/31/2016"/>
 
 # 在 Azure 中持续交付云服务
 
@@ -20,7 +20,7 @@
 
 开始之前，您应从 Visual Studio 中发布应用程序。这将确保所有资源在您尝试实现发布过程的自动化时可用并进行初始化。
 
-## 步骤 1：配置生成服务器
+## 1：配置生成服务器
 
 你必须先在生成服务器上安装必需的软件和工具，然后才能使用 MSBuild 创建 Azure 包。
 
@@ -34,7 +34,7 @@
 	在已安装 Visual Studio 的计算机上，此文件位于目录 C:\\Program Files(x86)\\MSBuild\\Microsoft\\VisualStudio\\v14.0\\WebApplications。您应将该文件复制到生成服务器上的同一目录中。
 5.  安装 [Azure Tools for Visual Studio](https://www.visualstudio.com/features/azure-tools-vs.aspx)。
 
-## 步骤 2：使用 MSBuild 命令生成包
+## 2：使用 MSBuild 命令生成包
 
 本部分介绍如何构造用于生成 Azure 包的 MSBuild 命令。在生成服务器上执行此步骤可确认所有内容配置正确并且 MSBuild 命令起到预期作用。你可将此命令行添加到生成服务器上的现有生成脚本中，也可在 TFS 生成定义中使用此命令行，如下一部分所述。有关命令行参数和 MSBuild 的详细信息，请参阅 [MSBuild 命令行参考](https://msdn.microsoft.com/zh-cn/library/ms164311%28v=vs.140%29.aspx)。
 
@@ -52,9 +52,9 @@
 
     此选项可缩写为 /t:Publish。安装 Azure SDK 后，MSBuild 中的 /t:Publish 选项不应与 Visual Studio 中的可用 Publish 命令混淆。/t:Publish 选项仅生成 Azure 包。其部署包的方式与 Visual Studio 中的 Publish 命令部署包的方式不同。
 
-    您也可以将项目名称指定为 MSBuild 参数。如果未指定，则将使用当前目录。有关 MSBuild 命令行选项的详细信息，请参阅 [MSBuild 命令行参考][1]。
+    您也可以将项目名称指定为 MSBuild 参数。如果未指定，则将使用当前目录。有关 MSBuild 命令行选项的详细信息，请参阅 [MSBuild 命令行参考](1)。
 
-4.  查找输出。默认情况下，此命令将创建与项目的根文件夹相关的目录，例如 *ProjectDir*\\bin\*Configuration*\\app.publish\\。在生成 Azure 项目时，将生成两个文件，即包文件本身和附带的配置文件：
+4.  查找输出。默认情况下，此命令将创建与项目的根文件夹相关的目录，例如 *ProjectDir*\\bin\\*Configuration*\\app.publish\\。在生成 Azure 项目时，将生成两个文件，即包文件本身和附带的配置文件：
 
     -   Project.cspkg
     -   ServiceConfiguration.*TargetProfile*.cscfg
@@ -71,7 +71,7 @@
 
     构造并测试相应的 MSBuild 命令行以生成项目并将其并入一个 Azure 包后，你可将此命令行添加到生成脚本中。如果生成服务器使用自定义脚本，则此过程将依赖自定义生成过程的细节。如果你要将 TFS 用作生成环境，则可按照下一步中的说明操作来将 Azure 包生成添加到生成过程中。
 
-## 步骤 3：使用 TFS Team Build 生成包
+## 3：使用 TFS Team Build 生成包
 
 如果你已将 Team Foundation Server (TFS) 设置为生成控制器并将生成服务器设置为 TFS 生成计算机，则可以选择为 Azure 包设置自动化生成。有关如何设置 Team Foundation Server 并将其用作生成系统的信息，请参阅[扩大生成系统][]。具体而言，以下过程假设你已根据[部署和配置生成服务器][]中所述配置了生成服务器，此外，你已创建了一个团队项目并在该团队项目中创建了一个云服务项目。
 
@@ -97,7 +97,7 @@
 
 5.  通过签入对项目的更改来测试生成步骤是否成功或对新生成进行排队。若要对新生成进行排队，请在团队资源管理器中，右键单击“所有生成定义”，然后选择“使新生成入队”。
 
-## 步骤 4：使用 Powershell 脚本发布包
+## 4：使用 PowerShell 脚本发布包
 
 本节介绍如何构造使用可选参数将云应用程序包输出发布到 Azure 的 Windows PowerShell 脚本。在执行自定义生成自动化中的生成步骤后，可以调用此脚本。也可以从 Visual Studio TFS Team Build 中的过程模板工作流活动中调用此脚本。
 
@@ -125,11 +125,11 @@
 
 6.  确保已在订阅中创建可通过发布脚本定位的有效云服务和存储帐户。存储帐户（Blob 存储）将用于在创建部署时上载和临时存储部署包和配置文件。
 
-    -   若要创建新的云服务，你可调用此脚本或使用 Azure 管理门户。云服务名称将用作完全限定域名中的前缀，因此该名称必须是唯一的。
+    -   若要创建新的云服务，你可调用此脚本或使用 [Azure 管理门户](https://manage.windowsazure.cn)。云服务名称将用作完全限定域名中的前缀，因此该名称必须是唯一的。
 
             New-AzureService -ServiceName "mytestcloudservice" -Location "China North" -Label "mytestcloudservice"
 
-    -   若要创建新的存储帐户，你可调用此脚本或使用 Azure 管理门户。存储帐户名称将用作完全限定域名中的前缀，因此该名称必须是唯一的。您可尝试使用与云服务相同的名称。
+    -   若要创建新的存储帐户，你可调用此脚本或使用 [Azure 管理门户](https://manage.windowsazure.cn)。存储帐户名称将用作完全限定域名中的前缀，因此该名称必须是唯一的。您可尝试使用与云服务相同的名称。
 
             New-AzureStorageAccount -ServiceName "mytestcloudservice" -Location "China North" -Label "mytestcloudservice"
 
@@ -141,7 +141,7 @@
 
         PowerShell c:\scripts\windowsazure\PublishCloudService.ps1 -environment Staging -serviceName mycloudservice -storageAccountName mystoragesaccount -packageLocation c:\drops\app.publish\ContactManager.Azure.cspkg -cloudConfigLocation c:\drops\app.publish\ServiceConfiguration.Cloud.cscfg -subscriptionDataFile c:\scripts\default.publishsettings
 
-    通常，此操作后跟测试运行验证和 VIP 交换。VIP 交换可通过 Azure 管理门户或使用 Move-Deployment cmdlet 执行。
+    通常，此操作后跟测试运行验证和 VIP 交换。VIP 交换可通过 [Azure 管理门户](https://manage.windowsazure.cn)或使用 Move-Deployment cmdlet 执行。
 
     **示例方案 2：**对专用测试服务的生产环境进行持续部署
 
@@ -165,7 +165,7 @@
 
         Add-AzureCertificate -serviceName 'mytestcloudservice' -certToDeploy (get-item cert:\CurrentUser\MY\C33B6C432C25581601B84C80F86EC2809DC224E8
 
-    或者，可以导出带私钥的证书文件 PFX，并使用 Azure 管理门户将证书上载到每个目标云服务。阅读以下文章以了解详细信息：[http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx][]。
+    或者，可以导出带私钥的证书文件 PFX，并使用 [Azure 管理门户](https://manage.windowsazure.cn)将证书上载到每个目标云服务。阅读以下文章以了解详细信息：[http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx][]。
 
     **升级部署与删除部署 -> 新建部署**
 
@@ -175,7 +175,7 @@
 
     >[AZURE.IMPORTANT] 默认情况下，此脚本将始终删除或替换现有部署（如果检测到这些部署）。这对于从没有用户/操作员提示的自动化中启用持续集成是必需的。
 
-## 步骤 5：使用 TFS Team Build 发布包
+## 5：使用 TFS Team Build 发布包
 
 此可选步骤会将 TFS Team Build 连接到步骤 4 中创建的脚本，这将其处理将包生成发布到 Azure 的过程。这就需要修改生成定义所使用的过程模板，使其在工作流结束时运行 Publish 活动。Publish 活动将执行从生成传入参数的 PowerShell 命令。MSBuild 目标和发布脚本的输出将传送到标准生成输出中。
 
@@ -566,4 +566,4 @@
   [5]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-05.png
   [6]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-06.png
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0523_2016-->

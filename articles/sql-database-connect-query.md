@@ -44,9 +44,6 @@
  - [Visual Studio 的更多免费选项](http://www.visualstudio.com/products/free-developer-offers-vs.aspx)
  - 或者，使用本主题中稍后介绍的[步骤](#InstallVSForFree)，在 [Azure 门户](https://manage.windowsazure.cn)中安装 Visual Studio。
 
-
-<a name="InstallVSForFree" id="InstallVSForFree">
-
 &nbsp;
 
 ## 步骤 1：免费安装 Visual Studio Community
@@ -54,37 +51,7 @@
 
 如果你需要安装 Visual Studio，可以：
 
-- 使用浏览器导航到 Visual Studio 产品网页（该网页提供免费下载及其他选项），免费安装 Visual Studio Community；或者
-- 让 [Azure 门户](https://manage.windowsazure.cn)指导你找到下载网页，这将在后面的部分进行介绍。
-
-
-### 通过 Azure 门户安装 Visual Studio
-
-
-1. 通过 [Azure 门户](https://manage.windowsazure.cn)（网址为 https://manage.windowsazure.cn/）登录。
-
-2. 单击“浏览*全部”>“SQL 数据库”。将打开边栏选项卡搜索数据库。
-
-3. 在顶部附近的筛选器文本框中，开始键入 **AdventureWorksLT** 数据库的名称。
-
-4. 当你在服务器上看到你的数据库行时，请单击该行。将为你的数据库打开边栏选项卡。
-
-5. 为方便起见，可单击以前每个边栏选项卡上的最小化控件。
-
-6. 单击数据库边栏选项卡顶部附近的“在 Visual Studio 中打开”按钮。将打开一个关于 Visual Studio 的新边栏选项卡，其中包含指向 Visual Studio 安装位置的链接。
-
-7. 单击“Community (免费)”链接或类似的链接。将添加新的网页。
-
-8. 使用新网页上的链接安装 Visual Studio。
-
-9. 安装 Visual Studio 后，请在“在 Visual Studio 中打开”边栏选项卡中，单击“在 Visual Studio 中打开”按钮。将打开 Visual Studio。
-
-10. 在 **SQL Server 对象资源管理器**窗格中，Visual Studio 会要求你在对话框中填写连接字符串字段。
- - 选择“SQL Server 身份验证”，而非“Windows 身份验证”。
- - 记住要指定自己的 **AdventureWorksLT** 数据库（对话框中的“选项”>“连接属性”）。
-
-11. 在“SQL Server 对象资源管理器”中，展开数据库的节点。
-
+- 使用浏览器导航到 Visual Studio 产品网页（该网页提供免费下载及其他选项），免费安装 Visual Studio Community。
 
 ## 步骤 2：在 Visual Studio 中创建新项目
 
@@ -312,10 +279,6 @@
 
 
 [AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../includes/sql-database-include-ip-address-22-v12portal.md)]
-
-
-
-有关详细信息，请参阅<br/> [如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings)
 
 
 

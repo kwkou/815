@@ -18,7 +18,7 @@
 
 本文中的示例 PowerShell 脚本用于估算 SQL 数据库服务器中用户数据库的聚合 eDTU 值。此脚本在运行时收集数据，而对于典型的生产工作负荷，你应至少运行该脚本一天。理想情况下，你想让这个脚本运行能够代表数据库的的典型工作负荷的时长 — 即足够长的时间以捕获代表数据库正常和高峰使用率的数据。运行此脚本一周或更长的时间可能会提供更准确的估计。
 
-此脚本非常适合用于评估不支持池的 v11 服务器上的数据库，也适合迁移到支持池的 v12 服务器。在 v12 服务器上， SQL 数据库有内置的智能，它能分析历史使用情况遥测数据并在更具成本效益的时候推荐使用池。有关如何使用此功能的信息，请参阅 [监视、管理弹性数据库池并调整其大小](/documentation/articles/sql-database-elastic-pool-manage-portal)
+此脚本非常适合用于评估不支持池的 v11 服务器上的数据库，也适合迁移到支持池的 v12 服务器。在 v12 服务器上， SQL 数据库有内置的智能，它能分析历史使用情况遥测数据并在更具成本效益的时候推荐使用池。
 
 > [AZURE.IMPORTANT] 运行该脚本时，必须一直打开 PowerShell 窗口。在运行脚本未达到所需的时间前，请不要关闭 PowerShell 窗口。
 
@@ -55,7 +55,7 @@
 - 警告: Switch-AzureMode cmdlet 已过时。
 - 警告: 无法获取 SQL Server 服务信息。尝试连接到 'Microsoft.Azure.Commands.Sql.dll' 上的 WMI 时失败并出现以下错误: RPC 服务器不可用。
 
-脚本完成时，会输出池要包含目标服务器中所有候选数据库所需要的 eDTU 估算数目。此估算的 eDTU 可用于创建和配置池。创建池并将数据库移动到池中后，请密切监控池数天，并根据需要对池 eDTU 配置进行调整。请参阅[监视、管理弹性数据库池并调整其大小](/documentation/articles/sql-database-elastic-pool-manage-portal)。
+脚本完成时，会输出池要包含目标服务器中所有候选数据库所需要的 eDTU 估算数目。此估算的 eDTU 可用于创建和配置池。创建池并将数据库移动到池中后，请密切监控池数天，并根据需要对池 eDTU 配置进行调整。
 
 [AZURE.INCLUDE [learn-about-deployment-models-classic-include](../includes/learn-about-deployment-models-classic-include.md)]
 

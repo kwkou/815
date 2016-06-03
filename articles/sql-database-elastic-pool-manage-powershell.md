@@ -1,7 +1,7 @@
 <properties 
     pageTitle="管理弹性数据库池 (PowerShell) | Azure" 
     description="了解如何使用 PowerShell 管理弹性数据库池。"  
-    services="sql-database" 
+	services="sql-database" 
     documentationCenter="" 
     authors="stevestein" 
     manager="jhubbard" 
@@ -9,27 +9,25 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="03/15/2016"
-    wacn.date="04/06/2016"/>
+    ms.date="04/01/2016"
+    wacn.date="05/16/2016"/>
 
-# 监视和管理弹性数据库池 (PowerShell) 
+# 使用 PowerShell 监视、管理弹性数据库池并调整其大小 
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-elastic-pool-manage-portal)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell)
 - [C#](/documentation/articles/sql-database-elastic-pool-manage-csharp)
-
+- [T-SQL](/documentation/articles/sql-database-elastic-pool-manage-tsql)
 
 了解如何使用 PowerShell cmdlet 管理[弹性数据库池](/documentation/articles/sql-database-elastic-pool)。
 
-> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-portal)。
+有关常见的错误代码，请参阅 [SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题](/documentation/articles/sql-database-develop-error-messages)。
+
+> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤使用 PowerShell 升级到 V12 并创建池。
 
 你需要运行 Azure PowerShell 1.0 或更高版本。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
-
-
-
-## 在弹性数据库池中创建新的弹性数据库
+## 在池中创建新的弹性数据库
 
 若要直接在池中创建新的数据库，请使用 [New-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619339.aspx) cmdlet 并设置 **ElasticPoolName** 参数。
 
@@ -37,34 +35,34 @@
 	New-AzureRmSqlDatabase -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
 
 
-## 将独立的数据库移动到弹性数据库池
+## 将独立的数据库移到池中
 
 若要将现有数据库移到池中，请使用 [Set-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619433.aspx) cmdlet 并设置 **ElasticPoolName** 参数。
 
 	Set-AzureRmSqlDatabase -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
 
 
-## 更改弹性数据库池的性能设置
+## 更改池的性能设置
 
-若要更改弹性数据库池的性能设置，请使用 [Set-AzureRmSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt603511.aspx) cmdlet。
+若要更改池的性能设置，请使用 [Set-AzureRmSqlElasticPool](https://msdn.microsoft.com/zh-cn/library/azure/mt603511.aspx) cmdlet。
 
     Set-AzureRmSqlElasticPool –ResourceGroupName “resourcegroup1” –ServerName “server1” –ElasticPoolName “elasticpool1” –Dtu 1200 –DatabaseDtuMax 100 –DatabaseDtuMin 50 
 
 
-## 获取弹性数据库池的操作状态
+## 获取池操作的状态
 
-你可以使用 [Get-AzureRmSqlElasticPoolActivity](https://msdn.microsoft.com/zh-cn/library/azure/mt603812.aspx) cmdlet 跟踪弹性数据库池的操作状态（包括创建和更新）。
+你可以使用 [Get-AzureRmSqlElasticPoolActivity](https://msdn.microsoft.com/zh-cn/library/azure/mt603812.aspx) cmdlet 跟踪池操作的状态（包括创建和更新）。
 
 	Get-AzureRmSqlElasticPoolActivity –ResourceGroupName “resourcegroup1” –ServerName “server1” –ElasticPoolName “elasticpool1” 
 
 
-## 获取将弹性数据库移入和移出弹性数据库池的状态
+## 获取将弹性数据库移入和移出池的状态
 
-你可以使用 [Get-AzureRmSqlDatabaseActivity](https://msdn.microsoft.com/zh-cn/library/azure/mt603687.aspx) cmdlet 跟踪弹性数据库的操作状态（包括创建和更新）。
+你可以使用 [Get-AzureRmSqlDatabaseActivity](https://msdn.microsoft.com/zh-cn/library/azure/mt603687.aspx) cmdlet 跟踪弹性数据库操作的状态（包括创建和更新）。
 
 	Get-AzureRmSqlDatabaseActivity -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
 
-## 获取弹性数据库池的使用情况数据
+## 获取池的使用情况数据
 
 可以检索的以资源池限制值百分比形式表示的指标：
 
@@ -107,7 +105,7 @@
 
 这些 API 与当前用来监视单独数据库的资源使用率的 (V12) API 相同，但存在以下语义差异
 
-* 就此 API 来说，检索的度量值将表示为为该弹性数据库池设置的单个 databaseDtuMax（或者 CPU、IO 等基础度量值的等效最大值）的百分比。例如，对于任何此类度量值来说，50% 的使用率表示特定资源消耗为父弹性数据库池中该资源的相应 DB 上限的 50%。 
+* 就此 API 来说，检索的指标将表示为为该池设置的单个 databaseDtuMax（或者 CPU、IO 等基础指标的等效最大值）的百分比。例如，对于任何此类指标来说，50% 的使用率表示特定资源消耗为父池中该资源的相应 DB 上限的 50%。 
 
 获取指标：
 
@@ -126,7 +124,13 @@
     foreach($e in $table) { Export-csv -Path c:\temp\metrics.csv -input $e -Append -NoTypeInformation}
 
 
-## 监视和管理弹性数据库池 PowerShell 示例
+## 弹性池操作延迟
+
+- 更改单个数据库的保障 eDTU 数 (DatabaseDtuMin) 或单个数据库的最大 eDTU 数 (DatabaseDtuMax) 通常在 5 分钟或更少的时间内完成。
+- 如何更改池的 eDTU/存储限制 (Dtu) 取决于池中所有数据库使用的空间总容量。更改平均起来每 100 GB 需要 90 分钟或更短的时间。例如，如果池中所有数据库使用的总空间为 200 GB，则更改池的 eDTU/存储限制时，预计延迟为 3 小时或更短的时间。
+
+
+## 监视和管理池 PowerShell 示例
 
 
     $subscriptionId = '<Azure subscription id>'
@@ -165,11 +169,6 @@
 
 ## 后续步骤
 
-- [创建弹性作业](/documentation/articles/sql-database-elastic-jobs-overview)弹性作业可以用来根据池中数据库的数目来运行 T-SQL 脚本。
+- [创建弹性作业](/documentation/articles/sql-database-elastic-jobs-overview)弹性作业可以根据池中数据库的数目来运行 T-SQL 脚本。
 
-
-## 弹性数据库参考
-
-有关弹性数据库和弹性数据库池的详细信息，包括 API 和错误详细信息，请参阅[弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference)。
-
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0509_2016-->

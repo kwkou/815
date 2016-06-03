@@ -70,7 +70,7 @@ ALTER ROLE db_datawriter ADD MEMBER ApplicationUser; -- allows ApplicationUser t
 * 精细[权限](https://msdn.microsoft.com/zh-cn/library/ms191291)可让你控制可以对数据库中单个列、表、视图、过程和其他对象执行的操作。
 * [模拟](https://msdn.microsoft.com/zh-cn/library/vstudio/bb669087)和[模块签名](https://msdn.microsoft.com/zh-cn/library/bb669102)可用于安全地暂时提升权限。
 * [行级安全性](https://msdn.microsoft.com/zh-cn/library/dn765131)可用于限制用户可访问的行。
-* [数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started)可用于限制敏感数据的公开。
+* [数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started-portal)可用于限制敏感数据的公开。
 * [存储过程](https://msdn.microsoft.com/zh-cn/library/ms190782)可用于限制可对数据库执行的操作。
 
 从 Azure 管理门户或使用 Azure 资源管理器 API 管理数据库和逻辑服务器的操作将会根据你的门户用户帐户的角色分配进行控制。有关此主题的详细信息，请参阅 [Azure 经典门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。

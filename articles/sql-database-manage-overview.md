@@ -3,24 +3,22 @@
 	description="比较管理 Azure SQL 数据库的工具和选项"
 	services="sql-database"
 	documentationCenter=""
-	authors="jeffgoll"
-	manager="jeffreyg"
-	editor="jeffreyg"/>
+	authors="stevestein"
+	manager="jhubbard"
+	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="01/22/2016"
-	wacn.date="03/29/2016"/>
+	ms.date="04/04/2016"
+	wacn.date="05/16/2016"/>
 
 # 概述：SQL 数据库的管理工具
 
 本主题介绍并比较用于管理 Azure SQL 数据库的工具和选项，以便你可以挑选适合作业、业务以及你自己的工具。选择合适的工具取决于你管理的数据库数量、任务以及执行任务的频率。
 
-## Azure 门户
+## Azure 管理门户
 
-[Azure 门户](https://manage.windowsazure.cn)是一个基于 Web 的应用程序，你可以从中创建、更新和删除数据库及逻辑服务器并监视数据库活动。如果你是刚开始使用 Azure（管理少量的数据库）或需要快速执行某些操作，该工具是理想之选。
-
-有关使用该门户的更多详细信息，请参阅[使用 Azure 管理门户管理 SQL 数据库](/documentation/articles/sql-database-manage-portal)。
+[Azure 管理门户](https://manage.windowsazure.cn)是一个基于 Web 的应用程序，你可以从中创建、更新和删除数据库及逻辑服务器并监视数据库活动。如果你是刚开始使用 Azure（管理少量的数据库）或需要快速执行某些操作，该工具是理想之选。
 
 ## Visual Studio 中的 SQL Server Management Studio 和 SQL Server Data Tools
 
@@ -32,4 +30,12 @@ Visual Studio 中的 SQL Server Management Studio (SSMS) 和 SQL Server Data Too
 
 有关使用命令行工具管理 Azure SQL 数据库的详细信息，请参阅[使用 PowerShell 管理 SQL 数据库](/documentation/articles/sql-database-command-line-tools)
 
-<!---HONumber=Mooncake_0321_2016-->
+## 弹性数据库工具
+使用弹性数据库工具执行如下操作：
+
+* 使用[弹性作业](/documentation/articles/sql-database-elastic-jobs-overview)针对一组数据库执行 T-SQL 脚本
+* 使用[拆分-合并工具](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)将多租户模型数据库移至单租户模型
+* 使用[弹性扩展客户端库](/documentation/articles/sql-database-elastic-database-client-library)管理单租户模型或多租户模型中的数据库。
+ 
+
+<!---HONumber=Mooncake_0509_2016-->

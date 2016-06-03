@@ -9,9 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="02/04/2016" 
-	wacn.date="03/18/2016"/>
-
+	ms.date="05/03/2016" 
+	wacn.date="05/31/2016"/>
 
 # 生成 Node.js 应用程序并将其部署到 Azure 云服务
 
@@ -21,16 +20,15 @@
 
 本教程演示如何创建一个在 Azure 云服务中运行的简单 Node.js 应用程序。云服务是 Azure 中可缩放的云应用程序构建基块。它们允许进行单独且独立的管理，并允许横向扩展应用程序的前端和后端组件。云服务为可靠托管每个角色提供强大的专用虚拟机。
 
-有关云服务以及如何将它们与 Azure 网站和虚拟机进行比较的更多信息，请参阅 [Azure 网站、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm)。
+有关云服务以及如何将它们与 Azure 网站和虚拟机进行比较的更多信息，请参阅 [Azure 网站、云服务和虚拟机的比较]。
 
->[AZURE.TIP] 想要构建一个简单的网站？ 如果你的方案只涉及一个简单的网站前端，则可以考虑[使用轻型 Web 应用](/documentation/articles/web-sites-nodejs-develop-deploy-mac)。随着你的 Web 应用的不断扩大和你的需求的变化，你可以轻松升级到云服务。
-
+>[AZURE.TIP] 想要构建一个简单的网站？ 如果你的方案只涉及一个简单的网站前端，则可以考虑 [使用轻型 Web 应用]。随着你的 Web 应用的不断扩大和你的需求的变化，你可以轻松升级到云服务。
 
 通过学习本教程，你将可以生成一个托管在 Web 角色中的简单 Web 应用程序。你将使用计算模拟器在本地测试你的应用程序，然后使用 PowerShell 命令行工具来部署该应用程序。
 
 该应用程序是一个简单的“hello world”应用程序：
 
-![Web 浏览器中显示“Hello World”网页](./media/cloud-services-nodejs-develop-deploy-app/node14.png)
+![Web 浏览器中显示“Hello World”网页][A web browser displaying the Hello World web page]
 
 ## 先决条件
 
@@ -46,25 +44,21 @@
 
 执行以下任务可创建一个新的 Azure 云服务项目以及基本的 Node.js 基架：
 
-
-1. 以管理员身份运行 **Windows PowerShell**。（在“开始”菜单或“开始”屏幕中，搜索 **Windows PowerShell**。）
+1. 以管理员身份运行 **Windows PowerShell**；在“开始”菜单或“开始”屏幕中，搜索 **Windows PowerShell**。
 
 2.  [将 PowerShell 连接](/documentation/articles/powershell-install-configure/#how-to-connect-to-your-subscription)到订阅。
-3.  输入以下 PowerShell cmdlet 来创建项目：
+
+3. 输入以下 PowerShell cmdlet 来创建项目：
 
         New-AzureServiceProject helloworld
 
-	![New-AzureService helloworld 命令的结果](./media/cloud-services-nodejs-develop-deploy-app/node9.png)
+	![New-AzureService helloworld 命令的结果][The result of the New-AzureService helloworld command]
 
 	**New-AzureServiceProject** cmdlet 将生成一个基本结构用于将 Node.js 应用程序发布到云服务。该结构包含向 Azure 发布应用程序所需的配置文件。该 cmdlet 还会将工作目录更改为服务的目录。
 
 	该 cmdlet 将创建以下文件：
 
-	-   **ServiceConfiguration.Cloud.cscfg**、
-        **ServiceConfiguration.Local.cscfg** 和 **ServiceDefinition.csdef**：
-        发布应用程序所需的特定于 Azure 的文件。
-        有关详细信息，请参阅
-        [创建 Azure 托管服务概述][]。
+	-   **ServiceConfiguration.Cloud.cscfg**、**ServiceConfiguration.Local.cscfg** 和 **ServiceDefinition.csdef**：发布应用程序所需的特定于 Azure 的文件。有关详细信息，请参阅[创建 Azure 托管服务概述]。
 
 	-   **deploymentSettings.json**：存储供 Azure PowerShell 部署 cmdlet 使用的本地设置。
 
@@ -72,12 +66,11 @@
 
         Add-AzureNodeWebRole
 
-	![Add-AzureNodeWebRole 命令的输出。](./media/cloud-services-nodejs-develop-deploy-app/node11.png)
+	![Add-AzureNodeWebRole 命令的输出][The output of the Add-AzureNodeWebRole command]
 
 	**Add-azurenodewebrole** cmdlet 将创建一个基本 Node.js 应用程序。它还会修改 **.csfg** 和 **.csdef** 文件，以添加新角色的配置条目。
 
 	> [AZURE.NOTE] 如果你不指定角色名称，将使用默认名称。可以提供一个名称作为第一个 cmdlet 参数：`Add-AzureNodeWebRole MyRole`
-
 
 Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（默认为 **WebRole1**）的目录中。代码如下：
 
@@ -88,12 +81,11 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 	    res.end('Hello World\n');
 	}).listen(port);
 
-此代码基本上与 [nodejs.org][] 网站上的“Hello World”示例相同，但它使用云环境分配的端口号。
+此代码基本上与 nodejs.org 网站上的“Hello World”示例相同，但它使用云环境分配的端口号。
 
 ## 将应用程序部署到 Azure
 
 [AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
-
 
 ### 下载 Azure 发布设置
 
@@ -114,7 +106,6 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 
 	> [AZURE.NOTE] 导入发布设置之后，请考虑删除下载的 .publishSettings 文件，因为它包含了可供他人访问你帐户的信息。
 
-
 ### 发布应用程序
 
 若要发布，请运行以下命令：
@@ -130,15 +121,14 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 
 发布成功之后，你将看到如下响应：
 
-![Publish-AzureService 命令的输出](./media/cloud-services-nodejs-develop-deploy-app/node19.png)
+![Publish-AzureService 命令的输出][The output of the Publish-AzureService command]
 
 > [AZURE.NOTE]
 部署应用程序并在首次发布该程序后使其可供使用可能需要花费几分钟时间。
 
 在部署完成后，系统会打开一个浏览器窗口并导航到云服务。
 
-
-![浏览器窗口中显示“Hello World”页面。URL 指示该页面托管在 Azure 上。](./media/cloud-services-nodejs-develop-deploy-app/node21.png)
+![显示“hello world”页面的浏览器窗口；URL 指示该页面托管在 Azure 上。][A browser window displaying the hello world page; the URL indicates the page is hosted on Azure.]
 
 你的应用程序现在正在 Azure 上运行。
 
@@ -148,10 +138,9 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 
 2.  如果存储帐户不存在，将创建一个新的**存储帐户**。Azure 存储帐户用于存储部署期间的应用程序包。在部署完成后，你可以安全删除该存储帐户。
 
-3.  如果云服务尚不存在，将创建一个新的**云服务**。**云服务**是一个容器，用于在将应用程序部署到 Azure 后托管该应用程序。有关详细信息，请参阅[创建 Azure 托管服务概述][]。
+3.  如果云服务尚不存在，将创建一个新的**云服务**。**云服务**是一个容器，用于在将应用程序部署到 Azure 后托管该应用程序。有关详细信息，请参阅[创建 Azure 托管服务概述]。
 
 4.  将部署包发布到 Azure。
-
 
 
 ## 停止并删除应用程序
@@ -164,7 +153,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 
 	停止服务可能需要花费几分钟时间。在服务停止时，你会收到一条指示服务已停止的消息。
 
-	![Stop-AzureService 命令的状态](./media/cloud-services-nodejs-develop-deploy-app/node48.png)
+	![Stop-AzureService 命令的状态][The status of the Stop-AzureService command]
 
 2.  若要删除服务，请调用以下 cmdlet：
 
@@ -174,28 +163,35 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 
 	删除服务可能需要花费几分钟时间。删除服务后，你将收到一条指示服务已被删除的消息。
 
-	![Remove-AzureService 命令的状态](./media/cloud-services-nodejs-develop-deploy-app/node49.png)
+	![Remove-AzureService 命令的状态][The status of the Remove-AzureService command]
 
-	> [AZURE.NOTE] 删除服务不会删除最初发布服务时所创建的存储帐户，并且你仍需为使用的存储付费。有关删除存储帐户的详细信息，请参阅[如何从 Azure 订阅中删除存储帐户](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh531562.aspx)。
+	> [AZURE.NOTE] 删除服务不会删除最初发布服务时所创建的存储帐户，并且你仍需为使用的存储付费。有关删除存储帐户的详细信息，请参阅[如何从 Azure 订阅中删除存储帐户]。
 
 ## 后续步骤
 
-有关详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs)。
+有关详细信息，请参阅 [Node.js 开发人员中心]。
 
-[The Windows Start menu with the Azure SDK Node.js entry expanded]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-menu.png
-[mkdir]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-6.png
+<!-- URL List -->
+
+[Azure 网站、云服务和虚拟机的比较]: /documentation/articles/choose-web-site-cloud-service-vm
+[使用轻型 Web 应用]:/documentation/articles/web-sites-nodejs-develop-deploy-mac">
+[Azure Powershell]: /documentation/articles/powershell-install-configure
+[Azure SDK for .NET 2.7]: http://www.microsoft.com/en-us/download/details.aspx?id=48178
+[将 PowerShell 连接]: /documentation/articles/powershell-install-configure/#how-to-connect-to-your-subscription
 [nodejs.org]: http://nodejs.org/
-[A directory listing of the helloworld folder.]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-7.png
-[创建 Azure 托管服务概述]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj155995.aspx
-[A directory listing of the WebRole1 folder]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-8.png
-[The menu displayed when right-clicking the Azure emulator from the task bar.]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-11.png
-[A browser window displaying http://www.azure.cn/ with the Trial link highlighted]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-12.png
-[A browser window displaying the liveID sign in page]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-13.png
-[Internet Explorer displaying the save as dialog for the publishSettings file.]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-14.png
+[如何从 Azure 订阅中删除存储帐户]: /documentation/articles/how-to-manage-a-storage-account
+[创建 Azure 托管服务概述]: /documentation/services/cloud-services/
+[Node.js 开发人员中心]: /develop/nodejs/
 
+<!-- IMG List -->
+
+[The result of the New-AzureService helloworld command]: ./media/cloud-services-nodejs-develop-deploy-app/node9.png
+[The output of the Add-AzureNodeWebRole command]: ./media/cloud-services-nodejs-develop-deploy-app/node11.png
+[A web browser displaying the Hello World web page]: ./media/cloud-services-nodejs-develop-deploy-app/node14.png
+[The output of the Publish-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node19.png
 [The full status output of the Publish-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node20.png
-[How to Delete a Storage Account from an Azure Subscription]: /documentation/articles/storage-manage-storage-account/
-[powershell-menu]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png
- 
+[A browser window displaying the hello world page; the URL indicates the page is hosted on Azure.]: ./media/cloud-services-nodejs-develop-deploy-app/node21.png
+[The status of the Stop-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node48.png
+[The status of the Remove-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node49.png
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0523_2016-->

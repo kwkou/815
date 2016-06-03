@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Runbook 输入参数 | Windows Azure"
+   pageTitle="Runbook 输入参数 | Azure"
    description="Runbook 输入参数可让你将数据传递到启动的 Runbook，以增加 Runbook 的弹性。本文介绍在 Runbook 中使用输入参数的不同方案。"
    services="automation"
    documentationCenter=""
@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags
    ms.service="automation"
-   ms.date="12/16/2015"
-   wacn.date="02/26/2016"/>
+   ms.date="04/04/2015"
+   wacn.date="05/13/2016"/>
 
 # Runbook 输入参数
 

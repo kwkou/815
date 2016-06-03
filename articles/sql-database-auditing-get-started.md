@@ -3,14 +3,14 @@
 	description="SQL 数据库审核入门"
 	services="sql-database"
 	documentationCenter=""
-	authors="jeffgoll"
-	manager="jeffreyg"
+	authors="ronitr"
+	manager="jhubbard"
 	editor=""/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="02/03/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="04/11/2016"
+	wacn.date="05/16/2016"/>
  
 # SQL 数据库审核入门
 Azure SQL 数据库审核可以跟踪数据库事件，并将审核的事件写入 Azure 存储帐户中的审核日志。一般而言，可以在基本、标准和高级服务层中使用审核功能。
@@ -25,7 +25,7 @@ Azure SQL 数据库审核可以跟踪数据库事件，并将审核的事件写�
 
 ##<a id="subheading-1"></a>Azure SQL 数据库审核基本信息
 
-以下部分介绍如何使用 Azure 门户配置审核。
+以下部分介绍如何使用 Azure 经典管理门户配置审核。
 
 SQL 数据库审核可让你：
 
@@ -33,7 +33,7 @@ SQL 数据库审核可让你：
 - **报告**数据库活动。可以使用预配置的报告和仪表板快速开始使用活动和事件报告。
 - **分析**报告。可以查找可疑事件、异常活动和趋势。
 
-> [AZURE.NOTE] 现在，你可以使用新的**威胁检测**功能（目前以预览版提供），针对可能表示出现安全威胁的异常数据库活动接收前瞻性的警报。可以在审核配置边栏选项卡中启用和配置威胁检测。有关更多详细信息，请参阅[威胁检测入门](/documentation/articles/sql-database-threat-detection-get-started)。
+> [AZURE.NOTE] 现在，你可以使用新的**威胁检测**功能（目前以预览版提供），针对可能表示出现安全威胁的异常数据库活动接收前瞻性的警报。可以在审核配置边栏选项卡中启用和配置威胁检测。
 
 你可以为以下事件类别配置审核：
 
@@ -67,9 +67,9 @@ SQL 数据库审核可让你：
 ![导航窗格][4]
 
 
-##<a id="subheading-4"></a>使用 Azure 经典门户为数据库设置审核
+##<a id="subheading-4"></a>使用 Azure 经典管理门户为数据库设置审核
 
-1. 启动 https://manage.windowsazure.cn/ 处的 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 通过 https://manage.windowsazure.cn/ 启动 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
 2. 单击要审核的 SQL 数据库/SQL Server，然后单击“审核和安全性”选项卡。
 
@@ -88,12 +88,6 @@ SQL 数据库审核可让你：
 6. 单击“保存”。
 
 
-
-
-##<a id="subheading-5">生产环境中的用法实践</a>
-本部分中的说明与以上屏幕截图相关。可以使用 [Azure 门户](https://manage.windowsazure.cn)或[ Azure 经典门户](https://manage.windowsazure.cn)。
-
-
 ##<a id="subheading-6"></a>重新生成存储密钥
 
 在生产环境中，你可能会定期刷新存储密钥。刷新密钥时，需要重新保存审核策略。过程如下：
@@ -103,11 +97,11 @@ SQL 数据库审核可让你：
 
 	![][8]
 
-2. 转到存储配置边栏选项卡，并**重新生成***主访问密钥*。
+2. 转到存储配置边栏选项卡，并**重新生成**主访问密钥。
 
 3. 返回审核配置边栏选项卡，将“存储访问密钥”从“辅助”切换为“主要”，然后单击“保存”。
 
-4. 返回存储 UI 并**重新生成***辅助访问密钥*（为下一个密钥刷新周期做好准备）。
+4. 返回存储 UI 并**重新生成**辅助访问密钥（为下一个密钥刷新周期做好准备）。
   
 ##<a id="subheading-7"></a>自动化
 可以使用多个 PowerShell cmdlet 来配置 Azure SQL 数据库中的审核：
@@ -127,7 +121,7 @@ SQL 数据库审核可让你：
 [Azure SQL 数据库审核基础知识]: #subheading-1
 [为数据库设置审核]: #subheading-2
 [分析审核日志和报告]: #subheading-3
-[使用 Azure 经典门户为数据库设置审核]: #subheading-4
+[使用 Azure 经典管理门户为数据库设置审核]: #subheading-4
 [Practices for usage in production]: #subheading-5
 [Storage Key Regeneration]: #subheading-6
 [Automation]: #subheading-7
@@ -146,4 +140,4 @@ SQL 数据库审核可让你：
 
  
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0503_2016-->

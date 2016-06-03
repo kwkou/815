@@ -3,14 +3,14 @@
 	description="本教程帮助你了解如何从 Web 应用程序使用 Azure 密钥保管库。" 
 	services="key-vault" 
 	documentationCenter="" 
-	authors="adamhurwitz"
+	authors="adhurwit"
 	manager=""
 	tags="azure-resource-manager"/>
 
 <tags 
 	ms.service="key-vault" 
-	ms.date="01/29/2016" 
-	wacn.date="03/18/2016"/>
+	ms.date="04/13/2016" 
+	wacn.date="05/13/2016"/>
 
 # 从 Web 应用程序使用 Azure 密钥保管库 #
 
@@ -145,11 +145,11 @@
 	# this is where the end date from the cert above is used
 	PS C:\> $yearfromnow = [System.DateTime]::Parse("2016-07-31") 
 	
-	PS C:\> $adapp = New-AzureADApplication -DisplayName "KVWebApp" -HomePage "http://kvwebapp" -IdentifierUris "http://kvwebapp" -KeyValue $credValue -KeyType "AsymmetricX509Cert" -KeyUsage "Verify" -StartDate $now -EndDate $yearfromnow
+	PS C:\> $adapp = New-AzureRmADApplication -DisplayName "KVWebApp" -HomePage "http://kvwebapp" -IdentifierUris "http://kvwebapp" -KeyValue $credValue -KeyType "AsymmetricX509Cert" -KeyUsage "Verify" -StartDate $now -EndDate $yearfromnow
 	
-	PS C:\> $sp = New-AzureADServicePrincipal -ApplicationId $adapp.ApplicationId
+	PS C:\> $sp = New-AzureRmADServicePrincipal -ApplicationId $adapp.ApplicationId
 	
-	PS C:\> Set-AzureKeyVaultAccessPolicy -VaultName 'contosokv' -ServicePrincipalName $sp.ServicePrincipalName -PermissionsToKeys all -ResourceGroupName 'contosorg'
+	PS C:\> Set-AzureRmKeyVaultAccessPolicy -VaultName 'contosokv' -ServicePrincipalName $sp.ServicePrincipalName -PermissionsToKeys all -ResourceGroupName 'contosorg'
 	
 	# get the thumbprint to use in your app settings
 	PS C:\>$x509.Thumbprint

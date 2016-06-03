@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="02/05/2016" 
-	wacn.date="03/29/2016"/>
+	ms.date="03/21/2016" 
+	wacn.date="04/18/2016"/>
 
 
 # SQL 数据库 V12 的新增功能
@@ -33,15 +33,20 @@
 ## 提高了与 SQL Server 的应用程序兼容性
 
 
-SQL 数据库 V12 的一个主要目标就是提高与 Microsoft SQL Server 2014 的兼容性。另外，在编程性方面，V12 能够与 SQL Server 兼容。例如：
+SQL 数据库 V12 的主要目标是提高与 Microsoft SQL Server 2014 的兼容性，以及在发布新版本的 SQL Server 时保持此兼容性。另外，在编程性方面，V12 能够与 SQL Server 兼容。例如：
 
 
-- 包括 [OVER](http://msdn.microsoft.com/zh-cn/library/ms189461.aspx) 的[开窗函数](http://msdn.microsoft.com/zh-cn/library/bb934097.aspx) 
+- 包括 [OVER](http://msdn.microsoft.com/zh-cn/library/ms189461.aspx) 的[开窗函数](http://msdn.microsoft.com/zh-cn/library/ms189798.aspx) 
+
 - [XML 索引](http://msdn.microsoft.com/zh-cn/library/bb934097.aspx)和[选择性 XML 索引](http://msdn.microsoft.com/zh-cn/library/jj670104.aspx)
+
 - [更改跟踪](http://msdn.microsoft.com/zh-cn/library/bb933875.aspx)
+
 - [SELECT...INTO](http://msdn.microsoft.com/zh-cn/library/ms188029.aspx)
+
 - [全文搜索](http://msdn.microsoft.com/zh-cn/library/ms142571.aspx)
 
+- [更改数据库范围的配置 (TRANSACT-SQL)](http://msdn.microsoft.com/zh-cn/library/mt629158.aspx)
 
 有关 SQL 数据库尚不支持的少部分功能，请参阅[此处](/documentation/articles/sql-database-transact-sql-information)。
 
@@ -49,7 +54,7 @@ SQL 数据库 V12 的一个主要目标就是提高与 Microsoft SQL Server 2014
 ## 更高级的性能，全新的性能级别
 
 
-在 V12 中，我们将分配给所有“高级”性能级别的数据库吞吐量单位 (DTU) 提高了 25% 且不收取额外的费用。使用如下所述的新功能可以进一步提高性能：
+在 V12 中，我们将分配给所有“高级”性能级别的数据库事务单位 (DTU) 提高了 25% 且不收取额外的费用。使用如下所述的新功能可以进一步提高性能：
 
 
 - 支持内存中[列存储索引](http://msdn.microsoft.com/zh-cn/library/gg492153.aspx)。
@@ -66,7 +71,8 @@ SQL 数据库 V12 的一个主要目标就是提高与 Microsoft SQL Server 2014
 - 14000-14999
 
 
-单击[此处](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)可了解有关 SQL 数据库 V12 的端口的详细信息。SQL 数据库 V12 中的性能增强功能需要这些端口。
+单击[此处](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)可了解有关 SQL 数据库 V12 的端口的详细信息。
+SQL 数据库 V12 中的性能增强功能需要这些端口。
 
 
 ## 更好支持云 SaaS 供应商
@@ -86,7 +92,7 @@ SQL 数据库 V12 的一个主要目标就是提高与 Microsoft SQL Server 2014
 
 
 - [行级安全性](http://msdn.microsoft.com/zh-cn/library/dn765131.aspx) (RLS)
-- [动态数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started)
+- [动态数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started-portal)
 - [包含的数据库](http://msdn.microsoft.com/zh-cn/library/ff929188.aspx)
 - 使用 GRANT、DENY、REVOKE 管理的[应用程序角色](http://msdn.microsoft.com/zh-cn/library/ms190998.aspx)
 - [透明数据加密](http://msdn.microsoft.com/zh-cn/library/0bf7e8ff-1416-4923-9c4c-49341e208c62.aspx) (TDE)
@@ -139,14 +145,12 @@ V12 提供大幅提高的恢复点目标 (RPO) 与预计恢复时间 (ERT)：
 确定版本的另一种方法是在数据库中运行 `SELECT @@version;` 语句，然后查看类似于下面的结果：
 
 
-- **12**.0.2000.10 &nbsp; *(version V12)*
-- **11**.0.9228.18 &nbsp; *(version V11)*
+- **12**.0.2000.10 &nbsp; (版本 V12)
+- **11**.0.9228.18 &nbsp; (版本 V11)
 
 
 V12 数据库只能托管在 V12 逻辑服务器上。V12 服务器只能托管 V12 数据库。
 
-
-如果你尚未在 V12 上运行，可以根据[就地升级到 SQL 数据库 V12](/documentation/articles/sql-database-v12-plan-prepare-upgrade) 中的步骤升级你的逻辑服务器。
 
 
 ## <a name="V12AzureSqlDbPreviewGaTable"></a> 正式版上市区域
@@ -155,4 +159,4 @@ V12 数据库只能托管在 V12 逻辑服务器上。V12 服务器只能托管 
 - 2015 年 7 月 31，所有区域都已发布正式版 (GA)。
 - V12 已于 2014 年 12 月发布，但仅以预览版提供。
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0411_2016-->

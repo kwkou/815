@@ -9,11 +9,11 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="01/15/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="04/19/2016"
+	wacn.date="05/31/2016"/>
 
 # Azure 云服务证书概述
-证书在 Azure 中用于云服务（[服务证书](#what-are-service-certificates)）以及用于通过管理 API 进行身份验证（[管理证书](#what-are-management-certificates)，适用于使用 Azure 经典门户而不是 ARM 的场合）。本主题同时提供了有关这两种证书类型的一般概述、如何[创建](#create)以及将其[部署](#deploy)到 Azure。
+证书在 Azure 中用于云服务（[服务证书](#what-are-service-certificates)）以及用于通过管理 API 进行身份验证（[管理证书](#what-are-management-certificates)，适用于使用 Azure 管理门户而不是 ARM 的场合）。本主题同时提供了有关这两种证书类型的一般概述、如何[创建](#create)以及将其[部署](#deploy)到 Azure。
 
 在 Azure 中使用的证书是 x.509 v3 证书，且可由另一个受信任的证书进行签名或可进行自签名。自签名的证书由其自己的创建者进行签名，因此，默认情况下不受信任。大多数浏览器可以忽略这一点。自签名的证书仅应由自己在开发和测试云服务时使用。
 
@@ -22,12 +22,12 @@ Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，�
 ## 什么是服务证书？
 服务证书被附加到云服务，可实现与服务之间的安全通信。例如，如果你部署了 Web 角色，将需要提供可对公开的 HTTPS 终结点进行身份验证的证书。在你的服务定义中定义的服务证书会自动部署到运行你的角色实例的虚拟机。
 
-你可以使用 Azure 经典门户或服务管理 API 将服务证书上载到 Azure 经典门户。服务证书与特定的云服务相关联，并分配到服务定义文件中的部署。
+你可以使用 Azure 管理门户或服务管理 API 将服务证书上载到 Azure 管理门户。服务证书与特定的云服务相关联，并分配到服务定义文件中的部署。
 
 可将服务证书和你的服务分开管理，并可由不同的个人进行管理。例如，一名开发人员可以上载服务包，该服务包引用 IT 管理员以前上载到 Azure 的证书。IT 管理员可以管理并续订更改服务配置的证书而无需上载新的服务包。这样之所以可行，是因为证书的逻辑名称及其存储名称和位置是在服务定义文件中指定的，而证书指纹是在服务配置文件中指定的。若要更新证书，只需上载新证书并更改服务配置文件中的指纹值。
 
 ## 什么是管理证书？
-管理证书允许你使用 Azure 经典门户提供的服务管理 API 进行身份验证。许多程序和工具（如 Visual Studio 或 Azure SDK）将使用这些证书来自动配置和部署各种 Azure 服务。这些并不真正与云服务相关。
+管理证书允许你使用 Azure 管理门户提供的服务管理 API 进行身份验证。许多程序和工具（如 Visual Studio 或 Azure SDK）将使用这些证书来自动配置和部署各种 Azure 服务。这些并不真正与云服务相关。
 
 >[AZURE.WARNING] 请小心！ 这些类型的证书允许任何使用它们进行身份验证的人管理与它们相关联的订阅。
 
@@ -47,7 +47,7 @@ Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，�
 * 使用者名称必须与用于访问云服务的域匹配。
     > 你无法获取 chinacloudapp.cn 域（或与 Azure 相关的任何域）的 SSL 证书；该证书的使用者名称必须与用于访问应用程序的自定义域名匹配。例如，**contoso.net**，而不是 **contoso.chinacloudapp.cn**。
 * 至少为 2048 位加密。
-* **仅服务证书**：客户端证书必须驻留在*个人*证书存储区。
+* **仅服务证书**：客户端证书必须驻留在个人证书存储区。
 
 有两种简单的方法可在 Windows 上创建证书，即使用 `makecert.exe` 实用程序或 IIS。
 
@@ -70,10 +70,8 @@ Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，�
 
 ## 后续步骤
 
-[上载服务证书到 Azure 经典门户](/documentation/articles/cloud-services-configure-ssl-certificate)（或 [Azure 门户](/documentation/articles/cloud-services-configure-ssl-certificate-portal)）并为云服务[对其进行配置](/documentation/articles/cloud-services-xml-certs)。
+[上载服务证书到 Azure 管理门户](/documentation/articles/cloud-services-configure-ssl-certificate)。
 
-将[管理 API 证书](/documentation/articles/azure-api-management-certs)上载到 Azure 经典门户。
+将[管理 API 证书](/documentation/articles/azure-api-management-certs)上载到 Azure 管理门户。
 
->[AZURE.NOTE] Azure 门户不使用管理证书来访问 API，而是使用用户帐户。
-
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0523_2016-->

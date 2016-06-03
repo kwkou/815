@@ -26,7 +26,7 @@
 
 若要连接到数据库，你需要服务器的完整名称 (***servername**.database.chinacloudapi.cn*)，该名称中包含要连接到的数据库。
 
-1. 转到 [Azure 门户](https://manage.windowsazure.cn)。
+1. 转到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 2. 浏览到要连接到的数据库。
 3. 找到完整的服务器名称：
 
@@ -52,7 +52,7 @@
 
 
 ### 如果连接失败
-确保创建的逻辑服务器防火墙允许来自本地计算机的连接。有关详细信息，请参阅[如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings)。
+确保创建的逻辑服务器防火墙允许来自本地计算机的连接。
 
 ## 运行示例查询
 

@@ -32,7 +32,7 @@
 ## 活动异地复制的功能
 活动异地复制提供以下基本功能：
 
-- **自动异步复制**：只能通过添加到现有数据库创建辅助数据库。辅助数据库只可在不同的 Azure SQL 数据库服务器中创建。创建完成之后，辅助数据库将填充从主数据库复制的数据。这个过程称为种子设定。创建辅助数据库并设定其种子后，会自动以异步方式将主数据库发生的更新复制到辅助数据库。也就是说，会先在主数据库上提交事务，然后将事务复制到辅助数据库。SQL 数据库可保证完成种子设定后，辅助数据库在事务上仍始终保持一致。有关创建辅助数据库的详细信息，请参阅[使用 Transact-SQL 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-transact-sql)和[使用 PowerShell 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-powershell)。请参阅[使用 Azure 门户为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-portal)，了解使用 Azure 门户创建辅助数据库的详细信息。
+- **自动异步复制**：只能通过添加到现有数据库创建辅助数据库。辅助数据库只可在不同的 Azure SQL 数据库服务器中创建。创建完成之后，辅助数据库将填充从主数据库复制的数据。这个过程称为种子设定。创建辅助数据库并设定其种子后，会自动以异步方式将主数据库发生的更新复制到辅助数据库。也就是说，会先在主数据库上提交事务，然后将事务复制到辅助数据库。SQL 数据库可保证完成种子设定后，辅助数据库在事务上仍始终保持一致。有关创建辅助数据库的详细信息，请参阅[使用 Transact-SQL 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-transact-sql)和[使用 PowerShell 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-powershell)。
 
 - **多个辅助数据库**：两个或更多个辅助数据库可以提高主数据库和应用程序的冗余和保护级别。如果存在多个辅助数据库，即使其中一个辅助数据库发生故障，应用程序仍会受到保护。如果只有一个辅助数据库，一旦它发生故障，应用程序就会遭受更高的风险，直到创建了新的辅助数据库。
 

@@ -8,8 +8,8 @@
    editor="tysonn"/>
 <tags 
    ms.service="application-gateway"
-   ms.date="01/21/2016"
-   wacn.date="03/18/2016"/>
+   ms.date="04/05/2016"
+   wacn.date="04/28/2016"/>
 
 # 创建具有内部负载平衡器 (ILB) 的应用程序网关
 

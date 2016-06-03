@@ -4,19 +4,18 @@
 	keywords="数据库选项,数据库性能"
 	services="sql-database"
 	documentationCenter=""
-	authors="jeffgoll"
-	manager="jeffreyg"
+	authors="carlrabeler"
+	manager="jhubbard"
 	editor="jeffreyg"/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="02/03/2016"
-	wacn.date="03/29/2016"/>
+	ms.date="03/25/2016"
+	wacn.date="05/16/2016"/>
 
 # SQL 数据库选项和性能：了解每个服务层提供的功能
- 
 
-[Azure SQL 数据库](/documentation/articles/sql-database-technical-overview)提供了多个服务层来处理不同类型的工作负荷。你可以随时更改服务层，不会给应用程序造成中断。你还可以使用定义的特征和定价[创建单一数据库](/documentation/articles/sql-database-get-started)。也可以通过创建弹性数据库池来管理多个数据库。在这两种情况下，层包括“基本”、“标准”和“高级”。但根据你是创建单一数据库还是创建弹性数据库池内的数据库，这些层中的数据库选项会有所不同。本文详述了这两个上下文中的服务层。
+[Azure SQL 数据库](/documentation/articles/sql-database-technical-overview)具有多个服务层，用于处理不同的工作负荷。你可以随时更改服务层，不会给应用程序造成中断。你还可以使用定义的特征和定价[创建单一数据库](/documentation/articles/sql-database-get-started)。也可以通过创建弹性数据库池来管理多个数据库。在这两种情况下，层包括“基本”、“标准”和“高级”。这些层中的数据库选项类似于单个数据库和弹性池，只是针对弹性池提供了其他注意事项。本文提供了单一数据库和弹性数据库的服务层的详细信息。
 
 ## 服务层和数据库选项
 基本、标准和高级服务层都提供 99.99% 的运行时间 SLA 和可预测的性能、灵活的业务连续性选项、安全功能和按小时计费。下表提供了最适用于不同应用程序工作负荷的层的示例。
@@ -27,69 +26,38 @@
 | **标准** | 大多数云应用程序的首选选项，支持多个并发查询。示例包括工作组或 Web 应用程序。 |
 | **高级** | 专为高事务量设计，支持大量并发用户，并且需要最高级别的业务连续性功能。示例包括支持任务关键型应用程序的数据库。 |
 
->[AZURE.NOTE] Web Edition 和 Business Edition 已停用。了解如何[升级 Web 和 Business Edition](/documentation/articles/sql-database-upgrade-new-service-tiers)。如果你打算继续使用 Web 和 Business Edition，请阅读[版本停用常见问题](/home/features/sql-database/#price/web-business)。
+>[AZURE.NOTE] Web Edition 和 Business Edition 已停用。如果你打算继续使用 Web 和 Business Edition，请阅读[版本停用常见问题](/home/features/sql-database/#price/web-business)。
 
-### 单一数据库服务层和性能级别
-对于单一数据库，每个服务层均包含多个性能级别，你可以灵活选择最适合工作负荷需求的级别。如果你需要向上或向下缩放，可以轻松更改数据库层，**且不会给应用程序造成任何中断。** 有关详细信息，请参阅[更改数据库服务层和性能级别](/documentation/articles/sql-database-scale-up)。
+## 单一数据库服务层和性能级别
+对于单一数据库，每个服务层内都具有多个性能级别。你可以灵活选择最能满足你的工作负荷需求的级别。如果你需要增加或减少工作负荷，可以轻松更改数据库层，**且不会给应用程序造成任何中断。** 
 
-此处列出的性能特征适用于使用 [SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new) 创建的数据库。在 Azure 中的基础硬件托管多个 SQL 数据库的情况下，你的数据库仍可确保获得一系列资源，单个数据库的预期性能特征不受影响。
+此处列出的性能特征适用于使用 [SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new) 创建的数据库。在 Azure 中的基础硬件托管多个数据库的情况下，你的数据库仍可确保获得一系列资源，数据库的预期性能特征将不受影响。
 
 [AZURE.INCLUDE [SQL 数据库服务层表](../includes/sql-database-service-tiers-table.md)]
-
 
 若要更好地了解 DTU，请参阅本主题中的 [DTU 部分](#understanding-dtus)。
 
 >[AZURE.NOTE] 如需本服务层表中所有其他行的详细说明，请参阅[服务层功能和限制](/documentation/articles/sql-database-performance-guidance/#service-tier-capabilities-and-limits)。
 
-### 弹性数据库池服务层和性能 (eDTU)
-除了创建和缩放单一数据库外，你还可以选择管理[弹性数据库池](/documentation/articles/sql-database-elastic-pool)中的多个数据库。弹性数据库池中的所有数据库共享一组公用资源。性能特征由弹性数据库事务单位 (eDTU) 数度量。与单一数据库一样，弹性数据库池有三个服务层：**基本**、**标准**和**高级**。对于弹性数据库，这三个服务层仍定义整体性能限制和多个功能。
+## 弹性池服务层和性能 (eDTU)
+除了创建和缩放单一数据库外，你还可以选择管理[弹性池](/documentation/articles/sql-database-elastic-pool)中的多个数据库。弹性池中的所有数据库共享一组公用资源。性能特征由弹性数据库事务单位 (eDTU) 数度量。与单一数据库一样，弹性池有三个服务层：**基本**、**标准**和**高级**。对于池，这三个服务层仍定义整体性能限制和多个功能。
 
-弹性数据库池允许这些数据库共享和使用 DTU 资源，而无需为该池中的数据库分配特定性能级别。例如，标准池中的单一数据库可使用 0 个 eDTU 到最大数据库 eDTU 数（服务层定义的 100 个 eDTU 或你配置的自定义数量）运转。这允许多个具有不同工作负荷的数据库有效地使用可用于整个池的 eDTU 资源。
+池允许弹性数据库共享和使用 DTU 资源，而无需为该池中的数据库分配特定性能级别。例如，标准池中的单一数据库可使用 0 个 eDTU 到最大数据库 eDTU 数（配置池时设置的）运转。这允许多个具有不同工作负荷的数据库有效地使用可用于整个池的 eDTU 资源。有关详细信息，请参阅[弹性池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)。
 
-下表描述了弹性数据库池服务层的特征。请参阅 [SQL 数据库弹性池参考](/documentation/articles/sql-database-elastic-pool-reference)以获取定义和更多详细信息。
+下表描述了池服务层的特征。
 
 [AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
 池中的每个数据库也遵循该层的单一数据库特征。例如，基本池具有每池最大会话数为 2400 - 28800 的限制，但该池中单个数据库具有 300 个会话数的数据库限制（即在上一节中指定的单个基本数据库的限制）。
 
-### 了解 DTU
+## 了解 DTU
 
 [AZURE.INCLUDE [SQL 数据库 DTU 说明](../includes/sql-database-understanding-dtus.md)]
 
-## 监视数据库性能
-若要监视 SQL 数据库的性能，首先需要监视所选数据库性能级别相关的资源利用率。通过以下方式公开这些相关数据：
-
-1.	Azure 门户。
-
-2.	用户数据库中以及包含用户数据库的服务器的 master 数据库中的动态管理视图。
-
-在 [Azure 门户](https://manage.windowsazure.cn)中，可以通过选择数据库并单击“监视”图表来监视单一数据库的利用率。这将显示“指标”窗口，可通过单击“编辑图表”按钮来对其进行更改。添加以下指标：
-
-- CPU 百分比
-- DTU 百分比
-- 数据 IO 百分比
-- 存储百分比
-
-添加这些指标后，你可以继续在“监视”图表上查看它们，并可在“指标”窗口上查看更多详细信息。所有这四个指标均显示相对于数据库的 **DTU** 的平均利用率百分比。
-
-![监视数据库服务层的性能。](./media/sql-database-service-tiers/sqldb_service_tier_monitoring.png)
-
-你还可以针对性能指标配置警报。单击“指标”窗口中的“添加警报”按钮。按照向导说明来配置警报。你可以选择在指标超出特定阈值或指标低于特定阈值时显示警报。
-
-例如，如果你预期数据库的工作负荷会增长，则可以选择配置在数据库的任何性能指标达到 80% 时发出电子邮件警报。你可以将此警报用作预警，以确定你何时需要切换到下一个更高的性能级别。
-
-性能指标还可以帮助你确定是否能够降级到更低的性能级别。假定你正在使用一个标准 S2 数据库并且所有性能指标均显示该数据库在任何给定时间平均的使用率不超过 10%。很可能该数据库在标准 S1 中会很好地正常工作。但是，在决定转换到更低的性能级别之前，请注意出现峰值或波动情况的工作负荷。
-
-在门户中公开的相同指标也可以通过系统视图查看：服务器的逻辑 **master** 数据库中的 [sys.resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn269979.aspx) 和用户数据库中的 [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx)（**sys.dm\_db\_resource\_stats** 将在每个基本、标准和高级用户数据库中创建。Web 和 Business Edition 数据库将返回空结果集）。如果需要在更长时间段内监视更粗粒度的数据，请使用 **sys.resource\_stats**。如果需要在较小的时间范围内监视更细粒度的数据，请使用 **sys.dm\_db\_resource\_stats**。有关详细信息，请参阅 [Azure SQL 数据库性能指南](/documentation/articles/sql-database-performance-guidance/#monitoring-resource-use-with-sysresourcestats)。
-
-对于弹性数据库池，可以使用本节中所述的技术来监视池中的单个数据库。但你还可以在总体上监视池。
-
 ## 后续步骤
-[SQL 数据库定价](/home/features/sql-database/#price)中提供了有关这些层的价格详细信息。
+- [SQL 数据库定价](/home/features/sql-database/#price)中提供了有关这些层的价格详细信息。
+- 了解有关[弹性数据库池](/documentation/articles/sql-database-elastic-pool-guidance)和[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)的详细信息。
+- 了解如何[监视单一数据库的性能](/documentation/articles/sql-database-single-database-monitor)。
+- 现在，你已了解有关 SQL 数据库层的信息，欢迎单击“试用”来试用这些[层](/pricing/1rmb-trial)，并了解[如何创建你的第一个 SQL 数据库](/documentation/articles/sql-database-get-started)。
 
-如果你有兴趣以组的形式管理多个数据库，请考虑[弹性数据库池](/documentation/articles/sql-database-elastic-pool-guidance)以及关联的[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)。
-
-现在，你已了解有关 SQL 数据库层的信息，欢迎单击试用来试用这些[层](/pricing/1rmb-trial)，并了解[如何创建你的第一个 SQL 数据库](/documentation/articles/sql-database-get-started)！
- 
-
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0509_2016-->

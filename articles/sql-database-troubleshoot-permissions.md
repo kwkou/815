@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="01/11/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="03/28/2016"
+	wacn.date="05/16/2016"/>
 
 #排查常见的 Azure SQL 数据库权限和访问问题
 使用本主题了解授予和删除对 Azure SQL 数据库的访问权限的快速步骤。如需更完整的信息，请参阅：
@@ -22,7 +22,6 @@
 ##更改逻辑服务器的管理密码
 - 在 [Azure 门户](https://manage.windowsazure.cn)中，单击“SQL Server”，从列表中选择服务器，然后单击“重置密码”。
 ##帮助确保只允许经过授权的 IP 地址访问服务器
-- 请参阅[如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings)。
 
 ##在用户数据库中创建包含的数据库用户
 - 使用 [CREATE USER](https://msdn.microsoft.com/zh-cn/library/ms173463.aspx) 语句，并参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)。
@@ -33,4 +32,4 @@
 ## 在虚拟 master 数据库中为高权限用户创建其他登录名
 -使用 [CREATE LOGIN](https://msdn.microsoft.com/zh-cn/library/ms189751.aspx) 语句，并参阅[管理 Azure SQL 数据库中的数据库和登录名](/documentation/articles/sql-database-manage-logins)的“管理登录名”部分以了解详细信息。
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0509_2016-->

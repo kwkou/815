@@ -3,27 +3,27 @@
 	description="本主题提供了一些指导，帮助你确定此预览版提供的哪个服务层适合你的应用程序，并提供了一些应用程序优化建议，让你充分利用 Azure SQL 数据库。"
 	services="sql-database"
 	documentationCenter="na"
-	authors="rothja"
-	manager="jeffreyg"
-	editor="monicar" />
+	authors="carlrabeler"
+	manager="jhubbard"
+	editor="" />
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="11/03/2015"
-	wacn.date="01/05/2016" />
+	ms.date="04/11/2016"
+	wacn.date="05/16/2016" />
 
 # Azure SQL 数据库的单一数据库性能指导
 
 ## 概述 
 
-Azure SQL 数据库提供三个[服务层](/documentation/articles/sql-database-service-tiers)：基本、标准和高级。所有这些服务层都会将提供给 Azure SQL 数据库的资源进行严格隔离，确保你获得可预知的性能。从“基本”层到“标准”层再到“高级”层，数据库能够确保实现的吞吐量是上升的。
+Azure SQL 数据库具有三个[服务层](/documentation/articles/sql-database-service-tiers)：基本、标准和高级。所有这些服务层都会将提供给 Azure SQL 数据库的资源进行严格隔离，确保你获得可预知的性能。从“基本”层到“标准”层再到“高级”层，数据库能够确保实现的吞吐量是上升的。
 
->[AZURE.NOTE]企业和 Web 版服务层将于 2015 年 9 月停用。有关详细信息，请参阅 [Web 和 Business Edition 版停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq)。有关将现有 Web 和企业数据库升级到新服务层的详细信息，请参阅[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-new-service-tiers)。
+>[AZURE.NOTE] 企业和 Web 版服务层将于 2015 年 9 月停用。有关详细信息，请参阅 [Web 和 Business Edition 版停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq)。
 
 本文提供了一些指导，帮助你确定此预览版提供的哪个服务层适合你的应用程序，并提供了一些应用程序优化建议，让你充分利用 Azure SQL 数据库。
 
->[AZURE.NOTE]本文侧重于 SQL 数据库中单一数据库的性能指导。有关弹性数据库池的性能指导，请参阅[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)。但请注意，本文中许多单一数据库的微调建议适用于具有类似性能优势的弹性池中的数据库。
+>[AZURE.NOTE] 本文侧重于 SQL 数据库中单一数据库的性能指导。有关弹性数据库池的性能指导，请参阅[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)。但请注意，本文中许多单一数据库的微调建议适用于具有类似性能优势的弹性池中的数据库。
 
 **作者：**Conor Cunningham、Kun Cheng、Jan Engelsberg
 
@@ -44,11 +44,11 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 所有服务层都提供所有这些功能，并且起点价格低廉，每月只需几美元。这远远低于采购并运行自有服务器的成本，意味着即使是最小的项目也可利用 Azure 而不必花费大量资金。
 
 ## 服务层有哪些不同之处？
-一共有三个服务层：基本、标准和高级。每个服务层都具有一个或多个性能级别，使你拥有以可预测方式运行数据库的能力。这种能力以[数据库事务单位 (DTU)](/documentation/articles/sql-database-technical-overview#understand-dtus) 表示。
+一共有三个服务层：基本、标准和高级。每个服务层都具有一个或多个性能级别，使你拥有以可预测方式运行数据库的能力。这种能力以[数据库事务单位 (DTU)](/documentation/articles/sql-database-technical-overview/#understand-dtus) 表示。
 
 基本服务层旨在针对每个数据库提供各小时内的良好性能可预测性。基本数据库的 DTU 旨在提供充足的资源，使不存在多个并发请求的小型数据库能够正常工作。
 
-标准服务层改进了存在多个并发请求的数据库（例如工作组和网站）的性能可预测性并使之更通畅地运行。通过使用标准服务层数据库，你可以根据每分钟的可预测性能调整数据库应用程序的规模。
+标准服务层改进了存在多个并发请求的数据库（例如工作组和 Web 应用程序）的性能可预测性并使之更通畅地运行。通过使用标准服务层数据库，你可以根据每分钟的可预测性能调整数据库应用程序的规模。
 
 高级服务层在性能方面提供的先进功能就是使每个高级数据库在每秒都拥有可预测的性能。通过使用高级服务层，你可以根据数据库的峰值负载调整数据库应用程序的规模，并消除在易受延迟影响的操作中性能变动可导致小型查询耗时超出预期的情况。此模型可大大简化需要明确表明最大资源需求、性能变动或查询延迟的应用程序所需的开发和产品验证环节。
 
@@ -94,7 +94,7 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 
 ### DTU
 
-**DTU** 是指数据库事务单位。它是 SQL 数据库中的度量单位，表示数据库基于实际度量（数据库事务）的相对性能。这包括通常需要针对联机事务处理 (OLTP) 请求执行的一组操作，按照在全部加载的条件下每秒可以完成多少个事务进行度量。若要获取有关 DTU 的详细信息，请参阅[了解 DTU](/documentation/articles/sql-database-technical-overview#understand-dtus)。有关如何度量 DTU 的详细信息，请参阅[基准概述](/documentation/articles/sql-database-benchmark-overview)。
+**DTU** 是指数据库事务单位。它是 SQL 数据库中的度量单位，表示数据库基于实际度量（数据库事务）的相对性能。这包括通常需要针对联机事务处理 (OLTP) 请求执行的一组操作，按照在全部加载的条件下每秒可以完成多少个事务进行度量。若要获取有关 DTU 的详细信息，请参阅[了解 DTU](/documentation/articles/sql-database-technical-overview/#understand-dtus)。有关如何度量 DTU 的详细信息，请参阅[基准概述](/documentation/articles/sql-database-benchmark-overview)。
 
 ### 时间点还原
 
@@ -104,16 +104,16 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 
 **灾难恢复**是指在主 SQL 数据库上从中断中恢复的能力。
 
-*异地还原*适用于所有服务层，不需支付额外的费用。发生中断时，你可以使用最新的地域冗余备份将数据库还原到任何 Azure 区域。
+异地还原适用于所有服务层，不需支付额外的费用。发生中断时，你可以使用最新的地域冗余备份将数据库还原到任何 Azure 区域。
 
 标准和活动异地复制提供的灾难恢复功能是类似的，但恢复点目标 (RPO) 要低得多。例如，使用异地还原，RPO 只需不到 1 小时的时间（换句话说，备份最多只需从 1 小时前开始）。但对于异地复制来说，RPO 只需不到 5 秒的时间。
 
 有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
 
 ### 最大内存中 OLTP 存储
-**最大内存中 OLTP 存储**是指可供高级数据库的[内存中 OLTP 预览版](/documentation/articles/sql-database-in-memory)使用的最大存储空间量。这有时也称为 *XTP 内存中存储*。你可以使用 Azure 门户或 **sys.dm\_db\_resource\_stats** 视图来监视内存中存储的使用情况。有关监视的详细信息，请参阅[监视内存中 OLTP 存储](/documentation/articles/sql-database-in-memory-oltp-monitoring)。
+**最大内存中 OLTP 存储**是指可供高级数据库的[内存中 OLTP 预览版](/documentation/articles/sql-database-in-memory)使用的最大存储空间量。这有时也称为 XTP 内存中存储。你可以使用 Azure 管理门户或 **sys.dm\_db\_resource\_stats** 视图来监视内存中存储的使用情况。有关监视的详细信息，请参阅[监视内存中 OLTP 存储](/documentation/articles/sql-database-in-memory-oltp-monitoring)。
 
->[AZURE.NOTE]内存中 OLTP 预览版目前仅适用于单一数据库，不适用于弹性数据库池中的数据库。
+>[AZURE.NOTE] 内存中 OLTP 预览版目前仅适用于单一数据库，不适用于弹性数据库池中的数据库。
 
 ### 最大并发请求数
 
@@ -135,7 +135,7 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 
 **最大并发登录数**表示尝试同时登录到数据库的用户或应用程序的数量限制。请注意，即使这些客户端使用相同的连接字符串，该服务也会对每个登录名进行身份验证。因此，如果 10 个用户全都使用相同的用户名和密码同时连接到数据库，则会有 10 个并发登录名。此限制仅针对使用登录名进行身份验证的那段时间。因此，如果这 10 个相同的用户依次连接到数据库，则并发登录名数就始终不会超过 1。
 
->[AZURE.NOTE]此限制目前不适用于弹性数据库池中的数据库。
+>[AZURE.NOTE] 此限制目前不适用于弹性数据库池中的数据库。
 
 没有任何查询或 DMV 可以显示并发登录名计数或历史记录。你可以通过分析用户和应用程序模式来了解登录频率。你还可以在测试环境中运行实际负荷，确保不会超过本主题所描述的这样或那样的限制。
 
@@ -164,12 +164,12 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 - [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx)
 - [sys.resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn269979.aspx)
 
->[AZURE.NOTE]也可以使用 Azure 管理门户来查看资源使用状况。有关示例，请参阅[服务层 - 监视性能](/documentation/articles/sql-database-service-tiers#monitoring-performance)。
+>[AZURE.NOTE] 也可以使用 Azure 管理门户来查看资源使用状况。有关示例，请参阅[服务层 - 监视性能](/documentation/articles/sql-database-service-tiers/#monitoring-performance)。
 
 ### 使用 sys.dm\_db\_resource\_stats
 [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx) 视图存在于每个 SQL 数据库中，提供了最近的相对于服务层的资源使用数据。CPU 平均百分比、数据 IO、日志写入以及内存每 15 秒记录一次，持续记录 1 小时。
 
-由于此视图提供了资源使用方面的更细致的信息，你应该首先使用 **sys.dm\_db\_resource\_stats ** 进行当前状态分析或故障排除。例如，以下查询显示了当前数据库在过去 1 小时的平均资源使用率和最大资源使用率：
+由于此视图提供了资源使用方面的更细致的信息，你应该首先使用 **sys.dm\_db\_resource\_stats** 进行当前状态分析或故障排除。例如，以下查询显示了当前数据库在过去 1 小时的平均资源使用率和最大资源使用率：
 
 	SELECT  
 	    AVG(avg_cpu_percent) AS 'Average CPU Utilization In Percent', 
@@ -198,7 +198,7 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 
 Azure SQL 数据库在每个服务器的 **master** 数据库的 **sys.resource\_stats** 视图中公开每个活动数据库使用的资源信息。表中的数据以 5 分钟为间隔收集而得。使用基本、标准和高级服务层，可能要在超过 5 分钟后表中才会出现数据，意味着这些数据更适合进行历史分析而非接近实时分析。查询 **sys.resource\_stats** 视图可以显示数据库的最近历史记录，以便验证所选取的保留是否在需要时提供所需的性能。
 
->[AZURE.NOTE]在以下示例中，你必须连接到逻辑 SQL 数据库服务器的 **master** 数据库才能查询 **sys.resource\_stats**。
+>[AZURE.NOTE] 在以下示例中，你必须连接到逻辑 SQL 数据库服务器的 **master** 数据库才能查询 **sys.resource\_stats**。
 
 以下示例演示如何公开此视图中的数据：
 
@@ -211,7 +211,7 @@ Azure SQL 数据库在每个服务器的 **master** 数据库的 **sys.resource\
 
 以下示例演示了如何使用 **sys.resource\_stats** 目录视图通过不同方式来了解 SQL 数据库的资源使用率。
 
->[AZURE.NOTE]**sys.resource\_stats** 的某些列在当前的 V12 数据库中已更改，因此以下示例中的示例性查询可能会生成错误。以后对本主题进行更新时，将会提供新版本的查询来解决此问题。
+>[AZURE.NOTE] **sys.resource\_stats** 的某些列在当前的 V12 数据库中已更改，因此以下示例中的示例性查询可能会生成错误。以后对本主题进行更新时，将会提供新版本的查询来解决此问题。
 
 1. 例如，若要查看过去一周数据库“userdb1”的资源用量，可运行以下查询。
 	
@@ -312,7 +312,7 @@ OLTP 数据库性能有一个常见问题与物理数据库设计有关。设计
 
 Azure SQL 数据库包含一些功能，可帮助向数据库管理员提示如何查找并修复常见的缺少索引情况。Azure SQL 数据库内置的动态管理视图 (DMV) 将查找其中索引会大幅降低运行查询的估算成本的查询编译。在查询执行期间，它跟踪每个查询计划的执行频率，以及执行查询计划与想象其中存在该索引的查询计划之间的差距。这样可以让数据库管理员迅速推测出哪些物理数据库设计更改可能减少给定数据库的总工作负荷成本及其真实工作负荷。
 
->[AZURE.NOTE]在使用 DMV 查找缺失的索引之前，请先查看与 [Query Performance Insight 和索引顾问](/documentation/articles/query-performance-insight-and-index-advisor)相关的部分。
+>[AZURE.NOTE] 在使用 DMV 查找缺失的索引之前，请先查看与 [Query Performance Insight 和索引顾问](#query-performance-insight-and-index-advisor)相关的部分。
 
 以下查询可用于计算得出可能缺少的索引。
 
@@ -447,7 +447,7 @@ SQL Server 中有一个常见的示例也适用于 Azure SQL 数据库，该示�
 
 ![查询优化](./media/sql-database-performance-guidance/query_tuning_4.png)
 
->[AZURE.NOTE]虽然此处使用的示例是特意选择的较小的示例，但非最佳参数的影响仍很大，对于较大的数据库尤为如此。这种区别在极端情况下对于快速情况和慢速情况可在数秒和数小时之间。
+>[AZURE.NOTE] 虽然此处使用的示例是特意选择的较小的示例，但非最佳参数的影响仍很大，对于较大的数据库尤为如此。这种区别在极端情况下对于快速情况和慢速情况可在数秒和数小时之间。
 
 你可检查 **sys.resource\_stats** 以确定给定测试使用的资源多于还是少于另一个测试。在比较数据时，请使测试相隔足够长的时间，以使其不会在 **sys.resource\_stats** 视图中的同一 5 分钟时间范围内重合。另请注意，本练习的目标是将使用的资源总量降至最低，而非将峰值资源本身降至最低。一般而言，优化一段产生延迟的代码也将减少资源消耗。请确保在任何应用程序中考虑进行的更改确为所需，不会对使用应用程序的任何人在使用查询提示时的客户体验产生负面影响。
 
@@ -456,7 +456,7 @@ SQL Server 中有一个常见的示例也适用于 Azure SQL 数据库，该示�
 ### 跨数据库分片
 由于 Azure SQL 数据库运行在商用硬件上，因此单一数据库的容量限制一般低于传统的本地 SQL Server 安装。因此，有许多客户使用分片技术在数据库操作不符合 Azure SQL 数据库中单一数据库的限制时，将这些操作分摊到多个数据库上。当今在 Azure SQL 数据库上使用分片技术的大多数客户将单个维度的数据拆分到多个数据库上。该方法涉及了解 OLTP 应用程序执行的事务经常仅适用于架构中的一行或少数几行。
 
->[AZURE.NOTE]SQL 数据库现在提供一个库来帮助分片。有关详细信息，请参阅[弹性数据库客户端库概述](/documentation/articles/sql-database-elastic-database-client-library)。
+>[AZURE.NOTE] SQL 数据库现在提供一个库来帮助分片。有关详细信息，请参阅[弹性数据库客户端库概述](/documentation/articles/sql-database-elastic-database-client-library)。
 
 例如，如果数据库包含客户、订单和订单详细信息（如 SQL Server 附带的传统示例 Northwind 数据库中所见），则可通过将客户与相关订单和订单详细信息集中在一起并保证其留在单一数据库内，将这些数据拆分到多个数据库中。应用程序将不同的客户拆分到多个数据库上，实际上就是将负载分散在多个数据库上。这样，客户不仅可以避免达到最大数据库大小限制，而且还使 Azure SQL 数据库能够处理明显大于不同性能级别限制的工作负荷，前提是每个数据库适合其 DTU。
 
@@ -479,4 +479,4 @@ SQL Server 用户经常将许多功能集中在单一数据库内。例如，如
 
 在 Azure SQL 数据库中的服务层使你能够增加在云中生成的应用程序的类型。再加上坚持不懈地优化应用程序，你的应用程序的性能可变得既强大又可预测。本文档概述了可根据某个性能级别优化数据库资源使用的推荐技术。优化是云模型中一个持续的过程，管理员可以通过服务层及其性能级别，在 Azure 平台上最大程度地提高性能，同时将成本降至最低。
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0509_2016-->

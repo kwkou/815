@@ -17,7 +17,6 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-geo-replication-portal)
 - [PowerShell](/documentation/articles/sql-database-geo-replication-powershell)
 - [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql)
 

@@ -9,8 +9,8 @@
    tags="top-support-issue"/>
 <tags
    ms.service="cloud-services"
-   ms.date="01/20/2016"
-   wacn.date="03/18/2016" />
+   ms.date="04/20/2016"
+   wacn.date="05/31/2016" />
 
 # 云服务 Web 角色/辅助角色的默认 TEMP 文件夹大小太小
 
@@ -77,4 +77,4 @@
 
 若要了解如何使用 Azure PaaS 计算机诊断数据对云服务角色问题进行故障排除，请查看 [Kevin Williamson 博客系列](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx)。
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0523_2016-->

@@ -4,19 +4,19 @@
    services="sql-database"
    documentationCenter=""
    authors="ronitr"
-   manager="jeffreyg"
+   manager="jhubbard"
    editor="v-romcal"/>
 
 <tags
    ms.service="sql-database"
-   ms.date="10/20/2015"
-   wacn.date="03/21/2016"/>
+   ms.date="04/11/2016"
+   wacn.date="05/16/2016"/>
 
 
 # SQL 数据库动态数据屏蔽入门（Azure 门户）
 
 > [AZURE.SELECTOR]
-- [动态数据屏蔽入门 - Azure 经典门户](/documentation/articles/sql-database-dynamic-data-masking-get-started-portal)
+- [Dynamic Data Masking - Azure 管理门户](/documentation/articles/sql-database-dynamic-data-masking-get-started-portal)
 
 ## 概述
 
@@ -60,7 +60,7 @@ DDM 建议引擎会将数据库中的某些字段标记为可能的敏感字段�
 
 ## 使用 Azure 门户为数据库设置动态数据屏蔽
 
-1. 启动 Azure 门户 ([https://manage.windowsazure.cn](https://manage.windowsazure.cn))。
+1. 启动 Azure 门户 ([https://portal.azure.cn](https://portal.azure.cn))。
 
 2. 导航到你要屏蔽的敏感数据所在数据库的设置边栏选项卡。
 
@@ -68,20 +68,23 @@ DDM 建议引擎会将数据库中的某些字段标记为可能的敏感字段�
 
 	* 或者，可以向下滚动到“操作”部分并单击“动态数据屏蔽”。
 
+    ![导航窗格](./media/sql-database-dynamic-data-masking-get-started/4_ddm_settings_tile.png)<br/><br/>
+
 
 4. 在“动态数据屏蔽”配置边栏选项卡中，你可能会看到一些数据库列，建议引擎已将这些列标记为需要进行屏蔽。若要接受这些建议，可直接针对一个或多个列单击“添加屏蔽”，然后系统就会根据该列的默认类型来创建屏蔽。你可以更改屏蔽函数，只需单击屏蔽规则，然后将屏蔽字段格式编辑成你所选择的其他格式即可。请确保单击“保存”以保存你的设置。
 
+    ![导航窗格](./media/sql-database-dynamic-data-masking-get-started/5_ddm_recommendations.png)<br/><br/>
 
 
 5. 若要为数据库中的任意列添加屏蔽，请在“动态数据屏蔽”配置边栏选项卡的顶部单击“添加屏蔽”以打开“添加屏蔽规则”配置边栏选项卡
 
-
+    ![导航窗格](./media/sql-database-dynamic-data-masking-get-started/6_ddm_add_mask.png)<br/><br/>
 
 6. 选择“架构”、“表”和“列”，以定义要屏蔽的指定字段。
 
 7. 从敏感数据屏蔽类别列表中选择“屏蔽字段格式”。
 
-
+    ![导航窗格](./media/sql-database-dynamic-data-masking-get-started/7_ddm_mask_field_format.png)<br/><br/>
 
 8. 在数据屏蔽规则边栏选项卡中单击“保存”，以更新动态数据屏蔽策略中的屏蔽规则集。
 
@@ -100,6 +103,6 @@ DDM 建议引擎会将数据库中的某些字段标记为可能的敏感字段�
 
 ## 使用 REST API 为数据库设置动态数据屏蔽
 
-请参阅 [对 Azure SQL 数据库的操作](https://msdn.microsoft.com/zh-cn/library/dn505719.aspx)。
+请参阅[对 Azure SQL 数据库的操作](https://msdn.microsoft.com/zh-cn/library/dn505719.aspx)。
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0509_2016-->

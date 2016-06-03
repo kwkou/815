@@ -32,7 +32,7 @@
 
 ## 后续步骤
 
-若要使用 Azure 门户创建和管理作业，请参阅[创建和管理弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-create-and-manage)。若要使用 PowerShell 创建作业，请参阅[使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）](/documentation/articles/sql-database-elastic-jobs-powershell)。
+若要使用 PowerShell 创建作业，请参阅[使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）](/documentation/articles/sql-database-elastic-jobs-powershell)。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

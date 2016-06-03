@@ -6,13 +6,13 @@
 	services="sql-database"
 	documentationCenter=""
 	authors="stevestein"
-	manager="jeffreyg"
+	manager="jhubbard"
 	editor="" />
 
 <tags
 	ms.service="sql-database"
-	ms.date="01/21/2016"
-	wacn.date="03/21/2016" />
+	ms.date="03/25/2016"
+	wacn.date="05/16/2016" />
 
 # 使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询
 
@@ -21,32 +21,19 @@
 - [SSMS](/documentation/articles/sql-database-connect-query-ssms)
 - [Excel](/documentation/articles/sql-database-connect-excel)
 
-本文介绍如何使用 SQL Server Management Studio (SSMS) 连接到 Azure SQL 数据库并使用 Transact-SQL (T-SQL) 语句执行简单查询。
+本文介绍如何使用最新版本的 SQL Server Management Studio (SSMS) 连接到 Azure SQL 数据库并使用 Transact-SQL (T-SQL) 语句执行简单查询。
 
-你首先需要有一个 Azure 中的 SQL 数据库。你可以按照 [Azure SQL 数据库入门](/documentation/articles/sql-database-get-started)中的说明快速创建一个 SQL 数据库。此处的示例基于你参考该文章创建的 AdventureWorks 示例数据库，但直到执行查询前，这些步骤适用于任何 SQL 数据库。
+[AZURE.INCLUDE [登录](../includes/azure-getting-started-portal-login.md)]
 
-## 安装并启动 SQL Server Management Studio (SSMS)
+[AZURE.INCLUDE [SSMS 安装](../includes/sql-server-management-studio-install.md)]
 
-使用 SQL 数据库时，应使用最新版本的 SSMS。请参阅[下载 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 以获取最新版本的 SSMS。使用最新版本时，如果有最新的更新，SSMS 会自动通知你。
-
-## 启动 SSMS 并连接到 SQL 数据库服务器
-
-1. 在 Windows 搜索框中键入“Microsoft SQL Server Management Studio”，然后单击桌面应用以启动 SSMS。
-2. 在“连接到服务器”对话框的“服务器名称”框中，键入托管你的 SQL 数据库的服务器名称，格式为 *&lt;servername>*.**database.chinacloudapi.cn**。
-3. 从“身份验证”列表中选择“SQL Server 身份验证”。
-4. 键入创建服务器时设置的“登录名”和“密码”，然后单击“连接”以连接到 SQL 数据库。
-
-	![SQL Server Management Studio：连接到 SQL 数据库服务器](./media/sql-database-connect-query-ssms/1-connect.png)
-
-### 如果连接失败
-
-连接失败的最常见原因是服务器名称（记住，*&lt;;servername>* 是逻辑服务器（而非数据库）的名称）、用户名或密码错误，以及出于安全原因，服务器不允许进行连接。如果你是第一次连接或因 IP 配置已更改而导致连接失败，则[最新版本的 SSMS](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 要求你提供你的 Azure 登录名，并为你在 Azure 中创建防火墙规则。如果你使用早期的版本，则错误消息中会报告 IP 地址，你需要将此 IP 地址添加到 Azure 中的服务器防火墙规则。请确保服务器的防火墙设置允许来自本地计算机 IP 地址的连接和 SSMS 客户端使用 IP 地址的连接。有时这二者不同。有关详细信息，请参阅[如何：配置防火墙设置（Azure SQL 数据库）](/documentation/articles/sql-database-configure-firewall-settings)。
+[AZURE.INCLUDE [SSMS 连接](../includes/sql-database-sql-server-management-studio-connect-server-principal.md)]
 
 ## 运行示例查询
 
-连接到逻辑服务器后，你可以连接到数据库并运行示例查询。如果没有使用 [Azure SQL 数据库入门](/documentation/articles/sql-database-get-started)中的 AdventureWorks 示例创建数据库，此查询将不会正常工作。请直接跳到“后续步骤”以了解详细信息。
+连接到逻辑服务器后，你可以连接到数据库并运行示例查询。
 
-1. 在“对象资源管理器”中，导航到 **AdventureWorks** 数据库。
+1. 在“对象资源管理器”中，导航到你对其拥有权限的服务器，例如 **AdventureWorks** 示例数据库。
 2. 右键单击数据库，然后选择“新建查询”。
 
 	![新建查询。连接到 SQL 数据库服务器：SQL Server Management Studio](./media/sql-database-connect-query-ssms/4-run-query.png)
@@ -71,4 +58,6 @@
 
 如果你不熟悉 T-SQL，请参阅[教程：编写 Transact-SQL 语句](https://msdn.microsoft.com/zh-cn/library/ms365303.aspx)和 [Transact-SQL 参考（数据库引擎）](https://msdn.microsoft.com/zh-cn/library/bb510741.aspx)。
 
-<!---HONumber=Mooncake_0307_2016-->
+若要开始创建数据库用户和数据库用户管理员，请参阅 [Azure SQL 数据库安全性入门](/documentation/articles/sql-database-get-started-security)
+
+<!---HONumber=Mooncake_0503_2016-->

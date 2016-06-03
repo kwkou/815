@@ -11,7 +11,7 @@
 <tags
    ms.service="sql-database"
    ms.date="01/22/2016"
-   wacn.date="03/29/2016"/>
+   wacn.date="05/16/2016"/>
 
 # 使用动态管理视图监视 Azure SQL 数据库
 

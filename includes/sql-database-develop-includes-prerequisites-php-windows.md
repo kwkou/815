@@ -5,9 +5,9 @@
 若要运行本主题中提供的 PHP 代码示例，你的客户端计算机必须已安装以下软件项目：
 
 
-- [Microsoft Drivers for PHP for Microsoft SQL Server](http://www.microsoft.com/download/details.aspx?id=20098)
+- [Microsoft Drivers for PHP for Microsoft SQL Server](http://www.microsoft.com/en-us/download/details.aspx?id=20098)
  - `SQLSRV32.EXE` 包含最新资料。
-- [Microsoft SQL Server Native Client 11.0](http://www.microsoft.com/zh-CN/download/details.aspx?id=36434)
+- [Microsoft SQL Server Native Client 11.0](http://www.microsoft.com/zh-cn/download/details.aspx?id=36434)
 - [Microsoft ODBC 驱动程序](https://www.microsoft.com/zh-cn/download/details.aspx?id=36434)
 - IIS Express
 - [PHP 5.6 for IIS Express](http://www.microsoft.com/web/downloads/platform.aspx)

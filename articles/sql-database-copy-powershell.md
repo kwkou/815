@@ -18,7 +18,6 @@
 **单一数据库**
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-copy)
 - [PowerShell](/documentation/articles/sql-database-copy-powershell)
 - [T-SQL](/documentation/articles/sql-database-copy-transact-sql)
 

@@ -37,7 +37,6 @@
 
 - [SSMS](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-ssms)
 - [SqlPackage](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-sqlpackage)
-- [Azure 门户](/documentation/articles/sql-database-import)
 - [PowerShell](/documentation/articles/sql-database-import-powershell)
 
 <!---HONumber=Mooncake_0104_2016-->

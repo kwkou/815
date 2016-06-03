@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="01/30/2016"
-	wacn.date="03/18/2016"/>
+	ms.date="04/19/2016"
+	wacn.date="05/31/2016"/>
 
 # 使用连续交付功能发布到 Azure 时如何启用远程调试
 
@@ -32,10 +32,10 @@
 
 ## 为虚拟机启用远程调试
 
-1. 创建一个 Azure 虚拟机。
-2. 在 [Azure 经典门户页](http://go.microsoft.com/fwlink/p/?LinkID=269851)上的虚拟机仪表板中，查看虚拟机的“RDP 证书指纹”。扩展配置中的 `ServerThumbprint` 值将使用此值。
+1. 创建一个 Azure 虚拟机。请参阅[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial)或[在 Visual Studio 中创建和管理 Azure 虚拟机](/documentation/articles/virtual-machines-windows-classic-manage-visual-studio)。
+2. 在 [Azure 管理门户页](http://go.microsoft.com/fwlink/p/?LinkID=269851)上的虚拟机仪表板中，查看虚拟机的“RDP 证书指纹”。扩展配置中的 `ServerThumbprint` 值将使用此值。
 3. 根据 [Azure 云服务的证书概述](/documentation/articles/cloud-services-certs-create)中所述创建客户端证书（保留 .pfx 和 RDP 证书指纹）。
-4. 根据[如何安装和配置 Azure PowerShell](/documentation/articles//powershell-install-configure) 中所述安装 Azure Powershell（0.7.4 或更高版本）。
+4. 根据[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中所述安装 Azure Powershell（0.7.4 或更高版本）。
 5. 运行以下脚本以启用 RemoteDebug 扩展。将路径和个人数据替换为你自己的数据，例如，你的订阅名称、服务名称和指纹。
 
 	>[AZURE.NOTE] 此脚本是针对 Visual Studio 2015 配置的。如果你使用的是 Visual Studio 2013，请修改下面的 `$referenceName` 和 `$extensionName` 赋值以使用 `RemoteDebugVS2013`（而不是使用 `RemoteDebugVS2015`）。
@@ -87,4 +87,4 @@
 
 6. 将证书导入到装有 Visual Studio 和 Azure SDK for .NET 的计算机。
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0523_2016-->
