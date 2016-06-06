@@ -17,7 +17,7 @@
 
 本文中的步骤将指导你通过经典部署模型和管理门户配置用于 ExpressRoute 的虚拟网络和网关。
 
-有关 Resource Manager 部署模型的说明，请参阅以下文章，其中将会指导你[使用 PowerShell 创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-ps)，以及[将 VPN 网关添加到 ExpressRoute 的 Resource Manager VNet](/documentation/articles/expressroute-howto-add-gateway-resource-manager)。
+有关 Resource Manager 部署模型的说明，请参阅以下文章，其中将会指导你使用 PowerShell 创建虚拟网络，以及[将 VPN 网关添加到 ExpressRoute 的 Resource Manager VNet](/documentation/articles/expressroute-howto-add-gateway-resource-manager)。
 
 **关于 Azure 部署模型**
 

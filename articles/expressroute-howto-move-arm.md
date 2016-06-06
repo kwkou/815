@@ -92,12 +92,12 @@
 
 运行以下命令获取 ExpressRoute 线路的详细信息：
 
-    get-azurededicatedcircuit
+    Get-AzureDedicatedCircuit
 
 服务密钥必须已列出。现在，你可以管理 ExpressRoute 线路的链接。以下文章将引导你了解如何管理 ExpressRoute 线路的链接：
 
-- [Link your virtual network to your ExpressRoute circuit in the Resource Manager deployment model（在 Resource Manager 部署模型中将虚拟网络链接到 ExpressRoute 线路）](/documentation/articles/expressroute-howto-linkvnet-arm)
-- [Link your virtual network to your ExpressRoute circuit in the classic deployment model（在经典部署模型中将虚拟网络链接到 ExpressRoute 线路）](/documentation/articles/expressroute-howto-linkvnet-classic)
+- [在 Resource Manager 部署模型中将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)
+- [在经典部署模型中将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)
 
 
 ## 在经典部署模型中禁用 ExpressRoute 线路

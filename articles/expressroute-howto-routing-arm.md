@@ -15,7 +15,6 @@
 # 创建和修改 ExpressRoute 线路的路由
 
 > [AZURE.SELECTOR]
-[Azure Portal - Resource Manager](/documentation/articles/expressroute-howto-routing-portal-resource-manager)
 [PowerShell - Resource Manager](/documentation/articles/expressroute-howto-routing-arm)
 [PowerShell - Classic](/documentation/articles/expressroute-howto-routing-classic)
 

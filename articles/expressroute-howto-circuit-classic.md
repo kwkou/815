@@ -71,7 +71,7 @@
 	
 	响应将包含服务密钥。你可以通过运行以下命令获取所有这些参数的详细说明。
 
-		get-help new-azurededicatedcircuit -detailed 
+		Get-Help New-AzureDedicatedCircuit -detailed 
 
 4. **列出所有 ExpressRoute 线路。**
 
@@ -104,7 +104,7 @@
 
 	你可以通过运行以下命令获取所有这些参数的详细说明。
 
-		get-help get-azurededicatedcircuit -detailed 
+		Get-Help Get-AzureDedicatedCircuit -detailed 
 
 5. **将服务密钥发送给连接提供商进行预配。**
 
@@ -148,7 +148,7 @@
 
 8. **将 VNet 链接到 ExpressRoute 线路。**
 
-	接下来，将 VNet 链接到 ExpressRoute 线路。如需分步说明，请参阅[将 ExpressRoute 线路链接到 VNet](/documentation/articles/expressroute-howto-linkvnet-classic)。如需为 ExpressRoute 创建虚拟网络，请参阅[为 ExpressRoute 创建虚拟网络](/documentation/articles/expressroute-howto-createvnet-classic)以获取相关说明。
+	接下来，将 VNet 链接到 ExpressRoute 线路。如需分步说明，请参阅[将 ExpressRoute 线路链接到 VNet](/documentation/articles/expressroute-howto-linkvnet-classic)。
 
 ##  获取 ExpressRoute 线路的状态
 
@@ -207,7 +207,7 @@
 		Sku                              : Standard
 		Status                           : Enabled
 
-现已在 Microsoft Azure 一侧调整好线路的大小。你必须联系连接提供商，让他们在那一边根据此更改更新配置。请注意，我们将从现在开始按照已更新的带宽选项为你计费。
+现已在 Azure 一侧调整好线路的大小。你必须联系连接提供商，让他们在那一边根据此更改更新配置。请注意，我们将从现在开始按照已更新的带宽选项为你计费。
 
 >[AZURE.IMPORTANT]但是，你无法在不中断的情况下降低 ExpressRoute 线路的带宽。带宽降级需要取消对 ExpressRoute 线路的预配，然后重新预配新的 ExpressRoute 线路。
 

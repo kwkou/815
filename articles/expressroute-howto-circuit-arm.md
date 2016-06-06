@@ -26,11 +26,11 @@
 
 若要创建 ExpressRoute 线路，你需要：
 - 获取最新版本的 Azure PowerShell 模块（版本 1.0 或更高）。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 页上的说明操作，以便获取有关如何配置计算机以使用 PowerShell 模块的分步指导。
-- 在开始配置之前，查看[先决条件](/documentation/articlesexpressroute-prerequisites)页和[工作流](/documentation/articlesexpressroute-workflows)页。
+- 在开始配置之前，查看[先决条件](/documentation/articles/expressroute-prerequisites)页和[工作流](/documentation/articles/expressroute-workflows)页。
 
 ## 创建和预配 ExpressRoute 线路
 
-### 步骤 1。登录到你的 Azure 帐户，然后选择你的订阅
+### 步骤 1. 登录到你的 Azure 帐户，然后选择你的订阅
 
 若要开始你的配置，请登录到你的 Azure 帐户。有关 PowerShell 的详细信息，请参阅[将 Windows PowerShell 与 Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager)。使用下面的示例来帮助你连接：
 
@@ -44,7 +44,7 @@
 
 	Select-AzureRmSubscription -SubscriptionId "<subscription ID>"
 
-### 步骤 2.获取支持的提供商、位置和带宽的列表。
+### 步骤 2. 获取支持的提供商、位置和带宽的列表。
 
 在创建 ExpressRoute 线路之前，你需要连接提供商、支持的位置和带宽选项的列表。PowerShell cmdlet `Get-AzureRmExpressRouteServiceProvider` 将返回此信息，你将在后面的步骤中使用该信息。
 
@@ -58,12 +58,12 @@
 
 	现在，你已准备好创建 ExpressRoute 线路。
 
-### 步骤 3.创建 ExpressRoute 线路。
+### 步骤 3. 创建 ExpressRoute 线路。
 
 如果你尚未有资源组，则在创建 ExpressRoute 线路之前，必须先创建一个资源组。为此，可以运行以下命令：
 
 
-	New-AzureRmResourceGroup -Name "ExpressRouteResourceGroup" -Location "West US"
+	New-AzureRmResourceGroup -Name "ExpressRouteResourceGroup" -Location "China North"
 
 以下示例演示如何通过北京的 Beijing Telecom Ethernet 创建 200 Mbps 的 ExpressRoute 线路。如果你使用的是其他提供商和其他设置，请在发出请求时替换该信息。
 
@@ -81,7 +81,7 @@
 		Get-Help New-AzureRmExpressRouteCircuit -detailed 
 
 
-### 步骤 4.列出所有 ExpressRoute 线路。
+### 步骤 4. 列出所有 ExpressRoute 线路。
 
 若要获取你所创建的所有 ExpressRoute 线路的列表，请运行 `Get-AzureRmExpressRouteCircuit` 命令：
 
@@ -147,7 +147,7 @@
 
 		Get-Help Get-AzureRmExpressRouteCircuit -detailed 
 
-### 步骤 5。将服务密钥发送给连接提供商进行预配。
+### 步骤 5. 将服务密钥发送给连接提供商进行预配。
 
 当你创建新的 ExpressRoute 线路时，线路将是以下状态：
 	
@@ -167,7 +167,7 @@
 		
 		Status                           : Enabled
 
-### 步骤 6.定期检查服务密钥的状态。
+### 步骤 6. 定期检查服务密钥的状态。
 
 检查服务密钥的状态，此状态在你的提供商已启用你的线路时会让你了解。配置线路后，“ServiceProviderProvisioningState”将显示为“Provisioned”，如以下例中所示：
 
@@ -199,13 +199,13 @@
 		ServiceKey                       : **************************************
 		Peerings                         : []
 
-### 步骤 7.创建路由配置。
+### 步骤 7. 创建路由配置。
 
 如需分步说明，请参阅 [ExpressRoute 线路路由配置](/documentation/articles/expressroute-howto-routing-arm)来创建和修改线路对等互连。
 
 >[AZURE.IMPORTANT] 这些说明只适用于由提供第 2 层连接服务的服务提供商创建的线路。如果你的服务提供商提供第 3 层托管服务（通常是 IPVPN，如 MPLS），则连接服务提供商将为你设置和管理路由。
 
-### 步骤 8。将虚拟网络链接到 ExpressRoute 线路。
+### 步骤 8. 将虚拟网络链接到 ExpressRoute 线路。
 
 接下来，将虚拟网络链接到 ExpressRoute 线路。在使用 Resource Manager 部署模式时，你可以使用[将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)文章。
 
@@ -272,7 +272,7 @@
 
 你可以通过运行以下命令获取所有这些参数的详细说明。
 
-		Get-Help Get-azurededicatedcircuit -detailed 
+		Get-Help Get-AzureDedicatedCircuit -detailed 
 
 ## 修改 ExpressRoute 线路
 
@@ -318,8 +318,8 @@
 
 请注意，如果你使用的资源超出了标准线路允许的范围，此操作可能会失败。
 
-- 从高级版降级到标准版之前，必须确保链接到线路的虚拟网络数少于 10 个。否则，你的更新请求将会失败，并且 Microsoft 将按高级版费率向你收费。
-- 你必须取消其他地理政治区域的所有虚拟网络的链接。否则，你的更新请求将失败，并且 Microsoft 将按高级版费率向你收费。
+- 从高级版降级到标准版之前，必须确保链接到线路的虚拟网络数少于 10 个。否则，你的更新请求将会失败，并且 Azure 将按高级版费率向你收费。
+- 你必须取消其他地理政治区域的所有虚拟网络的链接。否则，你的更新请求将失败，并且 Azure 将按高级版费率向你收费。
 - 路由表中专用对等互连的路由必须少于 4,000。如果你的路由表大小超出 4,000 个路由，则会删除 BGP 会话且不会重新启用它，除非已播发前缀的数目低于 4,000。
 
 ### 更新 ExpressRoute 线路带宽
@@ -334,7 +334,7 @@
 	Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
 
-将在 Microsoft 端调整线路的大小。然后，你必须联系连接提供商，让他们在那一边根据此更改更新配置。在你发出此通知后，Microsoft 将开始向你计收更新后的带宽选项费用。
+将在 Azure 端调整线路的大小。然后，你必须联系连接提供商，让他们在那一边根据此更改更新配置。在你发出此通知后，Azure 将开始向你计收更新后的带宽选项费用。
 
 **重要说明**：你无法在不中断的情况下降低 ExpressRoute 线路的带宽。带宽降级需要取消对 ExpressRoute 线路的预配，然后重新预配新的 ExpressRoute 线路。
 
@@ -351,7 +351,7 @@
 
 ### 控制对经典和 Resource Manager 环境的访问
 
-查看说明以[将 ExpressRoute 线路从经典移动到 Resource Manager 环境](/documentation/articles/expressroute-howto-move-arm)
+查看说明以[将 ExpressRoute 线路从经典移动到 Resource Manager 环境](/documentation/articles/expressroute-howto-move-arm)。
 
 ## 删除和取消预配 ExpressRoute 线路
 
@@ -362,9 +362,9 @@
 
 请注意，必须取消所有虚拟网络与 ExpressRoute 线路的链接，此操作才能成功。如果此操作失败，请检查是否有虚拟网络链接到了该线路。
 
-如果启用了 ExpressRoute 线路服务提供商预配状态，则状态将从已启用状态转为“禁用”。你必须通过服务提供商在他们那一侧取消对线路的预配。在服务提供商取消对线路的预配并通知我们之前，Microsoft 会继续保留资源并向你收费。
+如果启用了 ExpressRoute 线路服务提供商预配状态，则状态将从已启用状态转为“禁用”。你必须通过服务提供商在他们那一侧取消对线路的预配。在服务提供商取消对线路的预配并通知我们之前，Azure 会继续保留资源并向你收费。
 
-如果在你运行上述 cmdlet 之前，服务提供商已取消对线路的预配（服务提供商预配状态已设置为“未预配”），Microsoft 会取消对线路的预配，并停止向你收费。
+如果在你运行上述 cmdlet 之前，服务提供商已取消对线路的预配（服务提供商预配状态已设置为“未预配”），Azure 会取消对线路的预配，并停止向你收费。
 
 ## 后续步骤
 
