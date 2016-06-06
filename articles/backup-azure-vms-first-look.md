@@ -31,7 +31,7 @@
 
 ![VM 备份过程的高级视图](./media/backup-azure-vms-first-look/backupazurevm-classic.png)
 
->[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model)。本教程适用于可在 Azure 经典门户中创建的 VM。Azure 备份服务支持基于 Azure Resource Manager (ARM) 的 VM - 也称为 IaaS V2 VM。有关备份 ARM VM 的详细信息，请参阅 [First Look: Back up ARM VMs to a Recovery Services vault（先睹为快：将 ARM VM 备份到恢复服务保管库）](backup-azure-vms-first-look-arm.md)。
+>[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model)。本教程适用于可在 Azure 经典门户中创建的 VM。Azure 备份服务支持基于 Azure Resource Manager (ARM) 的 VM - 也称为 IaaS V2 VM。
 
 
 
@@ -80,7 +80,7 @@
 
     ![备份保管库列表](./media/backup-azure-vms-first-look/backup-vault-storage-options-border.png)
 
-    默认情况下，保管库具有异地冗余存储。如果这是你的主要备份，请选择异地冗余存储。如果你想要一个更便宜、但持久性不太高的选项，请选择本地冗余存储。请在 [Azure Storage replication overview（Azure 存储复制概述）](../storage/storage-redundancy.md)中深入了解异地冗余和本地冗余存储选项。
+    默认情况下，保管库具有异地冗余存储。如果这是你的主要备份，请选择异地冗余存储。如果你想要一个更便宜、但持久性不太高的选项，请选择本地冗余存储。请在 [Azure Storage replication overview（Azure 存储复制概述）](/documentation/articles/storage-redundancy)中深入了解异地冗余和本地冗余存储选项。
 
 选择好保管库的存储选项后，可以开始将 VM 与保管库相关联。若要开始关联，请发现及注册 Azure 虚拟机。
 
@@ -138,9 +138,9 @@
 
 ## 步骤 3 - 在虚拟机中安装 VM 代理
 
-Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。如果你的 VM 是从 Azure 库创建的，则该 VM 上已包含 VM 代理。你可以跳到[保护 VM](backup-azure-vms-first-look.md#step-4---protect-azure-virtual-machines)。
+Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。如果你的 VM 是从 Azure 库创建的，则该 VM 上已包含 VM 代理。你可以跳到[保护 VM](/documentation/articles/backup-azure-vms-first-look#step-4---protect-azure-virtual-machines)。
 
-如果你的 VM 是从本地数据中心迁移的，则该 VM 上可能尚未安装 VM 代理。必须先在虚拟机上安装 VM 代理，然后才能继续保护 VM。有关安装 VM 代理的详细步骤，请参阅[“Backup VMs”（备份 VM）一文中的“VM Agent”（VM 代理）部分](backup-azure-vms-prepare.md#vm-agent)。
+如果你的 VM 是从本地数据中心迁移的，则该 VM 上可能尚未安装 VM 代理。必须先在虚拟机上安装 VM 代理，然后才能继续保护 VM。有关安装 VM 代理的详细步骤，请参阅[“Backup VMs”（备份 VM）一文中的“VM Agent”（VM 代理）部分](/documentation/articles/backup-azure-vms-prepare#vm-agent)。
 
 
 ## 步骤 4 - 创建备份策略

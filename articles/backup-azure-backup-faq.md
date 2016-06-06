@@ -199,7 +199,7 @@
 答 12.是的，可以使用备份代理中的“更改属性”选项来调整带宽。调整带宽以及使用该带宽的时间。有关详细信息，请参阅 [Network Throttling（网络限制）](/documentation/articles/backup-configure-vault#enable-network-throttling)。
 
 **问 13.我的 Internet 带宽有限，不适用于我需要备份的数据量。是否有办法可将数据移到网络带宽较大的特定位置，然后将数据推送到 Azure？** <br/>
-答 13.可以通过标准的联机备份过程将数据备份到 Azure，或者使用 Azure 导入/导出服务将数据传输到 Azure 中的 Blob 存储。无法通过其他方法将数据备份到 Azure 存储空间。有关如何将 Azure 导入/导出服务与 Azure 备份配合使用的信息，请参阅 [Offline Backup workflow（脱机备份工作流）](/documentation/articles/backup-azure-backup-import-export) 一文。
+答 13.可以通过标准的联机备份过程将数据备份到 Azure，或者使用 Azure 导入/导出服务将数据传输到 Azure 中的 Blob 存储。无法通过其他方法将数据备份到 Azure 存储空间。
 
 
 ## 恢复

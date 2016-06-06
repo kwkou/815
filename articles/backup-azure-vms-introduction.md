@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure 中规划 VM 备份基础结构 | Microsoft Azure"
+	pageTitle="在 Azure 中规划 VM 备份基础结构 | Azure"
 	description="规划在 Azure 中备份虚拟机时的重要注意事项"
 	services="backup"
 	documentationCenter=""
@@ -11,7 +11,7 @@
 <tags
 	ms.service="backup"
 	ms.date="02/12/2016"
-	wacn.date="05/09/2016"/>
+	wacn.date="06/06/2016"/>
 
 # 在 Azure 中计划 VM 备份基础结构
 本文介绍在 Azure 中规划备份虚拟机时需要注意的重要事项。如果你已[准备好环境](/documentation/articles/backup-azure-vms-prepare)，则在开始[备份 VM](/documentation/articles/backup-azure-vms) 之前，下一步就是执行此操作。如果你需要有关 Azure 虚拟机的详细信息，请参阅[虚拟机文档](/documentation/services/virtual-machines/)。
