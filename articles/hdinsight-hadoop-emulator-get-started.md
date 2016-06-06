@@ -12,7 +12,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="05/05/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # 使用 Hadoop 沙盒开始了解 Hadoop 生态系统
 

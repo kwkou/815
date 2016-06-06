@@ -1,6 +1,6 @@
 <properties 
    pageTitle="在 HDInsight 中预配自定义 Hadoop 群集 | Azure" 
-   description="了解如何通过使用 Azure 经典门户、Azure PowerShell、命令行或 .NET SDK 预配自定义的 Azure HDInsight 群集。" 
+   description="了解如何通过使用 Azure 管理门户、Azure PowerShell、命令行或 .NET SDK 预配自定义的 Azure HDInsight 群集。" 
    services="hdinsight" 
    documentationCenter="" 
    authors="mumian" 
@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="04/28/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 #在 HDInsight 中设置 Hadoop 群集
 
@@ -361,7 +361,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 		# Create a new HDInsight cluster
 		New-AzureHDInsightCluster -Name $clusterName -Credential $credential -Location $location -DefaultStorageAccountName "$storageAccountName.blob.core.chinacloudapi.cn" -DefaultStorageAccountKey $storageAccountKey -DefaultStorageContainerName $containerName  -ClusterSizeInNodes $clusterNodes -ClusterType Hadoop
 
-	>[AZURE.NOTE] $hadoopUserName 和 $hadoopUserPassword 命令用于群集创建的 Hadoop 用户帐户。此帐户将用于连接到群集并运行作业。如果你在 Azure 经典门户中使用“快速创建”选项来设置群集，则默认 Hadoop 用户名为“admin”。不要将此帐户与远程桌面协议 (RDP) 用户帐户相混淆。RDP 用户帐户不能与 Hadoop 用户帐户相同。有关详细信息，请参阅 [使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集][hdinsight-admin-portal]。
+	>[AZURE.NOTE] $hadoopUserName 和 $hadoopUserPassword 命令用于群集创建的 Hadoop 用户帐户。此帐户将用于连接到群集并运行作业。如果你在 Azure 管理门户中使用“快速创建”选项来设置群集，则默认 Hadoop 用户名为“admin”。不要将此帐户与远程桌面协议 (RDP) 用户帐户相混淆。RDP 用户帐户不能与 Hadoop 用户帐户相同。有关详细信息，请参阅 [使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集][hdinsight-admin-portal]。
 
 	设置群集可能需要几分钟时间。
 

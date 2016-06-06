@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="05/10/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # 使用 Storm on HDInsight 从 Azure 事件中心处理事件 (C#)
 
@@ -64,7 +64,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 事件中心是此示例的数据源。按照下列步骤创建一个新的事件中心。
 
-1. 在 [Azure 经典门户](https://manage.windowsazure.cn)中，选择“新建”>“应用程序服务”>“服务总线”>“事件中心”>“自定义创建”。
+1. 在 [Azure 管理门户](https://manage.windowsazure.cn)中，选择“新建”>“应用程序服务”>“服务总线”>“事件中心”>“自定义创建”。
 
 2. 在“添加新事件中心”屏幕中，输入“事件中心名称”，选择要在其中创建中心的“区域”，然后创建新的命名空间或选择现有的命名空间。单击**箭头**继续。
 
@@ -93,7 +93,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 表存储用于保存从事件中心读取的值，你可以轻松地在 Visual Studio 中通过“服务器资源管理器”查看表存储。使用以下步骤创建新的表存储：
 
-1. 在 [Azure 经典门户](https://manage.windowsazure.cn)中，选择“新建”>“数据服务”>“存储”>“快速创建”。
+1. 在 [Azure 管理门户](https://manage.windowsazure.cn)中，选择“新建”>“数据服务”>“存储”>“快速创建”。
 
 	![快速创建存储](./media/hdinsight-storm-develop-csharp-event-hub-topology/storagecreate.png)
 
