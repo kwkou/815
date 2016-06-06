@@ -24,7 +24,7 @@ Azure 提供不同方式来创建虚拟机，因为虚拟机适合于不同的�
 
 Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 Azure 门户创建虚拟机：
 
-[创建运行 Windows 的虚拟机][]
+[创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal)
 
 >[AZURE.NOTE] 管理门户只能创建管理经典部署模型的虚拟机
 

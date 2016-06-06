@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="11/05/2015"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 
 # 如何捕获 Linux 虚拟机以用作资源管理器模板
