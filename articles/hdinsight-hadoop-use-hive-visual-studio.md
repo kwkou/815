@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="04/22/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 #使用适用于 Visual Studio 的 HDInsight 工具运行 Hive 查询
 
