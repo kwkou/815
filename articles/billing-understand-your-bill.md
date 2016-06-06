@@ -45,10 +45,6 @@ Azure 订阅的费用因资费套餐而异, 请注意，先前计费期间的最
 
     ![摘要 - 帐单 4](./media/billing-understand-your-bill/ContentViewaBillforMA4.png)
 
-6. 单击“下载发票”，查看先前帐单的副本。
-
-    ![摘要 - 帐单 5](./media/billing-understand-your-bill/ContentViewaBillforMA5.png)
-
 ### 详细使用情况
 “详细使用情况”下面的描述中提供了一个链接，单击该链接可定向到帐户门户，你可以在其中查看此订阅的详细使用情况。现在有两个版本可供下载：**.csv 版本 1** 包含旧的命名约定和使用量字段，而 **.csv 版本 2** 则包含每个类别的客户易记名称，以及其他有助于您了解在 Azure 上使用的服务的字段。请注意，.csv 版本 1 中没有 Azure Resource Manager 详细信息。在 .csv 版本 2 中可以找到 Azure Resource Manager 信息。
 
