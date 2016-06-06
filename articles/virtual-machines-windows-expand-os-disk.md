@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="03/08/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # 如何扩展 Azure 资源组中虚拟机的 OS 驱动器
 

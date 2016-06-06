@@ -11,9 +11,9 @@
 	tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines"
+	ms.service="virtual-machines-windows"
 	ms.date="10/08/2015"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # 使用资源管理器和 Azure PowerShell 创建并配置 Windows 虚拟机
 
@@ -122,7 +122,7 @@
 
 ### NAT 规则
 
-可以为基于资源管理器的虚拟机配置入站 NAT 规则，以允许来自 Internet 的传入流量并将其放入负载平衡集。在这两种情况下，都必须指定负载平衡器实例和其他设置。有关详细信息，请参阅[使用 Azure 资源管理器创建负载平衡器](../load-balancer/load-balancer-arm-powershell.md)。
+可以为基于资源管理器的虚拟机配置入站 NAT 规则，以允许来自 Internet 的传入流量并将其放入负载平衡集。在这两种情况下，都必须指定负载平衡器实例和其他设置。
 
 使用资源管理器部署模型创建的 VM 需要资源管理器虚拟网络。如果需要，请使用新虚拟机的至少一个子网创建基于资源管理器的新虚拟网络。以下示例显示了名为 **TestNet** 的新虚拟网络，其中包含名为 **frontendSubnet** 和 **backendSubnet** 的两个子网。
 
@@ -205,8 +205,6 @@ frontendSubnet 的子网索引为 0，backendSubnet 的子网索引为 1。
 - 要分配给 NIC 的负载平衡器实例的后端地址池的索引编号。
 - 要分配给 NIC 的入站 NAT 规则的索引编号。
 
-有关如何使用入站 NAT 规则创建负载平衡器实例的信息，请参阅[使用 Azure 资源管理器创建负载平衡器](../load-balancer/load-balancer-arm-powershell.md)。
-
 将以下几行复制到命令集，并指定所需的名称和索引编号。
 
 	$nicName="<name of the NIC of the VM>"
@@ -224,8 +222,6 @@ $nicName 字符串必须是资源组中唯一的字符串。最佳做法是将�
 
 - 前面创建的、针对负载平衡流量创建了规则的负载平衡器实例的名称。
 - 要分配给 NIC 的负载平衡器实例的后端地址池的索引编号。
-
-有关如何创建一个针对负载平衡流量指定规则的负载平衡器实例的信息，请参阅[使用 Azure 资源管理器创建负载平衡器](../load-balancer/load-balancer-arm-powershell.md)。
 
 将以下几行复制到命令集，并指定所需的名称和索引编号。
 
@@ -376,13 +372,9 @@ $nicName 字符串必须是资源组中唯一的字符串。最佳做法是将�
 
 ## 其他资源
 
-[Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-windows-compare-deployment-models)
-
 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)
 
 [使用资源管理器模板与 PowerShell 来部署和管理 Azure 虚拟机](/documentation/articles/virtual-machines-windows-ps-manage)
-
-[使用资源管理器模板和 PowerShell 创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-template)
 
 [如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 

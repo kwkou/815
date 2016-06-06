@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="03/29/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # Linux VM 扩展配置示例
 

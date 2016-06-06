@@ -28,19 +28,13 @@
 
 [VM、网站和云服务对比](/documentation/articles/choose-web-site-cloud-service-vm)
 
-[Azure Resource Manager 中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-windows-compare-deployment-models)
-
 [了解 Azure Resource Manager 部署](/documentation/articles/resource-group-overview)
 
 [Azure 中的虚拟机和容器](/documentation/articles/virtual-machines-windows-containers)
 
-[虚拟机缩放集概述](/documentation/articles/virtual-machines-windows-scale-sets-overview)
-
-
-
 ### 环境设置
 
-[免费帐户](https://azure.microsoft.com/free/)
+[试用帐户](/pricing/1rmb-trial/)
  
 [安装 Azure PowerShell](/documentation/articles/powershell-install-configure)
 
@@ -49,7 +43,6 @@
 
 
 ### 入门
-[Windows VM 的学习路径](https://azure.microsoft.com/documentation/learning-paths/virtual-machines/)
 
 [在 Azure 门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)
 
@@ -57,53 +50,30 @@
 
 [使用资源管理器和 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create)
 
-[如何登录到运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-connect-logon)
-
-
-
-
 ### 计划
 [虚拟机的大小](/documentation/articles/virtual-machines-windows-sizes)
 
-[关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-windows-a8-a9-a10-a11-specs)
-
 [Azure 虚拟机的计划内维护](/documentation/articles/virtual-machines-windows-planned-maintenance)
+
 [Azure 基础结构服务实施指南](/documentation/articles/virtual-machines-windows-infrastructure-service-guidelines)
 
 [管理虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability)
-
-[管理对资源的访问权限](/documentation/articles/role-based-access-control-configure)
 
 [使用标记整理 Azure 资源](/documentation/articles/resource-group-using-tags)
 
 
 ### 部署
-[使用 .NET 库和模板部署 Azure 资源](/documentation/articles/virtual-machines-windows-csharp-template)
 
 [如何在 Resource Manager 部署模型中捕获 Windows 虚拟机](/documentation/articles/virtual-machines-windows-capture-image)
-
-[上载 VM 映像](/documentation/articles/virtual-machines-windows-upload-image)
 
 [使用 Chef 自动执行 Azure 虚拟机部署](/documentation/articles/virtual-machines-windows-chef-automation)
 
 [使用资源管理器和 Azure PowerShell 创建并配置 Windows 虚拟机](/documentation/articles/virtual-machines-windows-create-powershell)
 
-[使用资源管理器模板创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-template)
-
-[使用 Azure Resource Manager 模板创建具有监视和诊断功能的 Windows 虚拟机](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template)
-
-[使用 Azure Resource Manager 模板部署常用应用程序框架](/documentation/articles/virtual-machines-windows-app-frameworks)
-
-
-
 ### 管理
 [适合使用 Azure 命令行界面执行 VM 任务的等效资源管理器和服务管理命令](/documentation/articles/virtual-machines-windows-cli-manage)
 	
 [将经典 VNet 连接到新的 VNet](/documentation/articles/virtual-networks-arm-asm-s2s-howto)
-	
-[如何在 Azure 中标记虚拟机](/documentation/articles/virtual-machines-windows-tag)
-
-[将自定义脚本扩展与 Azure 资源管理器模板配合使用](/documentation/articles/virtual-machines-windows-extensions-customscript)
 
 [使用 Azure 资源管理器与 PowerShell 来管理虚拟机](/documentation/articles/virtual-machines-windows-ps-manage)
 	
@@ -113,44 +83,24 @@
 
 [Azure 虚拟机中 SQL Server 的自动修补](/documentation/articles/virtual-machines-windows-classic-sql-automated-patching)
 
-[自动缩放虚拟机缩放集中的虚拟机](/documentation/articles/virtual-machines-windows-ps-vmss-create)
-
-
-
 ### 配置
 
 [如何为 Windows VM 重置密码或远程桌面服务](/documentation/articles/virtual-machines-windows-reset-rdp)
 
 [关于虚拟机扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features)
-	
-[在 Azure 门户中创建完全限定的域名](/documentation/articles/virtual-machines-windows-portal-create-fqdn)
 
 ### 存储
 
 [关于 Azure 虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-windows-about-disks-vhds)
-	
-[如何在 Azure 门户中附加数据磁盘](/documentation/articles/virtual-machines-windows-attach-disk-portal)
-
 
 ### 联网
 
 [虚拟网络概述](/documentation/articles/virtual-networks-overview)
-	
-[使用 Azure 门户管理 NSG](/documentation/articles/virtual-networks-create-nsg-arm-pportal)
-	
-[创建负载平衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps)
-
-	
 
 ### 开发
 
-[使用计算、网络和存储 .NET 库部署 Azure 资源](/documentation/articles/virtual-machines-windows-csharp)
-
-
 [使用 VM 扩展创作 Azure Resource Manager 模板](/documentation/articles/virtual-machines-windows-extensions-authoring-templates)
-
-[通过 Visual Studio 创建和部署](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy)
-		
+	
 [创作 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates)
 
 
@@ -159,11 +109,6 @@
 [HPC Pack](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options)
 
 [SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview)
-
-[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-windows-lob)
-
-[SharePoint](/documentation/articles/virtual-machines-windows-sharepoint-farm)
-
 
 ### 引用
 [将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理器配合使用](/documentation/articles/azure-cli-arm-commands)
@@ -182,23 +127,13 @@
 
 [PowerShell cmdlet 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn708514.aspx)
 
-[Azure 模板社区参考页](https://azure.microsoft.com/documentation/templates/)
-
-
-
 ### 故障排除
 
 [对运行 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)
 
-[Azure VM 扩展故障疑难解答](/documentation/articles/virtual-machines-windows-extensions-troubleshoot)
-
-[资源组部署疑难解答](/documentation/articles/resource-manager-troubleshoot-deployments-portal)
-
 [对在 Azure 虚拟机上运行的应用程序的访问进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-app-connection)
 
 [在 Azure 中创建、重新启动 VM 或调整其大小时排查分配失败](/documentation/articles/virtual-machines-windows-allocation-failure)
-
-
 
 ## 经典部署模型中的 Windows VM
 
@@ -327,8 +262,6 @@
 ### 工作负荷
 
 [HPC Pack](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options)
-
-[混合云测试环境](/documentation/articles/virtual-machines-windows-classic-hybrid-test-env)
 
 [MongoDB](/documentation/articles/virtual-machines-windows-classic-install-mongodb)
 

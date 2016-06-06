@@ -26,12 +26,12 @@
 在回答下面的规划问题之前，请考虑以下事项：
 
 - 你在 Azure 中创建的所有内容都由一个或多个资源组成。虚拟机 (VM) 是一种资源，VM 所用的网络适配器接口 (NIC) 是一个资源，NIC 所用的公共 IP 地址是一种资源，NIC 所连接到的 VNet 也是一种资源。
-- 你可在 [Azure 区域](https://azure.microsoft.com/regions/#services)和订阅中创建资源。并且资源只能连接到它们所属的同一区域和订阅中存在的 VNet。 
+- 你可在 Azure 区域和订阅中创建资源。并且资源只能连接到它们所属的同一区域和订阅中存在的 VNet。 
 - 你可以使用 Azure [VPN 网关](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps)将 VNet 彼此相连。你还可以通过这种方式跨区域和订阅连接 VNet。
 - 你可以使用 Azure 中提供的[连接选项](/documentation/articles/vpn-gateway-cross-premises-options)之一将 VNet 连接到本地网络。 
 - 不同资源可以在[资源组](/documentation/articles/resource-group-overview#resource-groups)中分组在一起，这样可便于将资源作一个单元来进行管理。资源组可以包含多个区域中的资源，只要这些资源属于同一订阅。
 
-### 定义要求
+###<a name="Define-requirements"></a> 定义要求
 
 使用下面的问题作为 Azure 网络设计的起点。
 
@@ -69,25 +69,25 @@ VNet 包含以下属性。
 |**name**|子网名称|最多 80 个字符的字符串。可以包含字母、数字、下划线、句点或连字符。必须以字母或数字开头。必须以字母、数字或下划线结尾。可以包含大写或小写字母。|
 |**位置**|Azure 位置（也称为区域）。|必须是有效的 Azure 位置之一。|
 |**addressPrefix**|在 CIDR 表示法中构成子网的单个地址前缀|必须是属于其中一个 VNet 地址空间的单个 CIDR 块。|
-|**networkSecurityGroup**|应用到子网的 NSG|请参阅 [NSG](/documentation/articles/resource-groups-networking#Network-Security-Group)|
-|**routeTable**|应用到子网的路由表|请参阅 [UDR](/documentation/articles/resource-groups-networking#Route-table)|
-|**ipConfigurations**|连接子网的 NIC 所用的 IP 配置对象集合|请参阅 [IP 配置](/documentation/articles/resource-groups-networking#IP-configurations)|
+|**networkSecurityGroup**|应用到子网的 NSG|请参阅 NSG|
+|**routeTable**|应用到子网的路由表|请参阅 UDR|
+|**ipConfigurations**|连接子网的 NIC 所用的 IP 配置对象集合|请参阅 IP 配置|
 
 ### 名称解析
 
 默认情况下，你的 VNet 使用 [Azure 提供的名称解析](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances#Azure-provided-name-resolution)来解析 VNet 内部和公共 Internet 上的名称。但是，如果你将 VNet 连接到本地数据中心，则需要提供 [你自己的 DNS 服务器](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances#Name-resolution-using-your-own-DNS-server)来解析网络之间的名称。
 
-### 限制
+###<a name="Limits"></a> 限制
 
 在设计解决方案之前，请确保查看所有[与 Azure 中的网络服务相关的限制](/documentation/articles/azure-subscription-service-limits#networking-limits)。可以通过开具支持票证增加某些限制。
 
 ### 基于角色的访问控制 (RBAC)
 
-你可以使用 [Azure RBAC](/documentation/articles/role-based-access-built-in-roles) 来控制不同用户可能对 Azure 中的不同资源具有的访问级别。这样就可以根据团队的需要分隔团队完成的工作。
+你可以使用 Azure RBAC 来控制不同用户可能对 Azure 中的不同资源具有的访问级别。这样就可以根据团队的需要分隔团队完成的工作。
 
 就虚拟网络而言，具有**网络参与者**角色的用户可以完全控制 Azure Resource Manager 虚拟网络资源。同样，具有**经典网络参与者**角色的用户可以完全控制经典虚拟网络资源。
 
->[AZURE.NOTE] 你还可以[创建自己的角色](/documentation/articles/role-based-access-control-configure)来分离管理需求。
+>[AZURE.NOTE] 你还可以创建自己的角色来分离管理需求。
 
 ## 设计
 
@@ -162,7 +162,7 @@ VNet 包含以下属性。
 - 每天应将每个位置中的数据库复制到其他 Azure 位置一次。
 - 每个应用程序应使用 5 个前端 Web 服务器、2 个应用程序服务器（如有必要）和 2 个数据库服务器。
 
-### 计划
+###<a name="Plan"></a> 计划
 
 应通过回答[定义要求](#Define-requirements)部分中的问题（如下所示）来开始你的设计规划。
 
@@ -258,8 +258,7 @@ VNet 包含以下属性。
 
 ## 后续步骤
 
-- 基于方案[部署虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-template-click)。
-- 了解如何对 IaaS VM 进行[负载平衡](/documentation/articles/load-balancer-overview)，以及如何[管理通过多个 Azure 区域的路由](/documentation/articles/traffic-manager-overview)。
+- 了解如何对 IaaS VM 进行负载平衡，以及如何[管理通过多个 Azure 区域的路由](/documentation/articles/traffic-manager-overview)。
 - 详细了解 [NSG 以及如何规划和设计](/documentation/articles/virtual-networks-nsg) NSG 解决方案。
 - 详细了解[跨界连接和 VNet 连接选项](/documentation/articles/vpn-gateway-cross-premises-options)。  
 

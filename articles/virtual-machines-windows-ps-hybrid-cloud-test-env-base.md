@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/01/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # 设置用于测试的混合云环境
 
@@ -43,7 +43,7 @@
 4.	创建站点到站点 VPN 连接。
 5.	配置 DC2。 
 
-如果你还没有 Azure 订阅，可以通过[试用 Azure](/pricing/1rmb-trial/) 注册免费帐户。如果你有 MSDN 或 Visual Studio 订阅，请参阅 [Monthly Azure credit for Visual Studio subscribers（Visual Studio 订户的每月 Azure 信用额度）](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)。
+如果你还没有 Azure 订阅，可以通过[试用 Azure](/pricing/1rmb-trial/) 注册试用帐户。
 
 >[AZURE.NOTE] Azure 中的虚拟机和虚拟网关在运行时会持续产生货币成本。在实施时，Azure VPN 网关将由两台 Azure 虚拟机组成。有关详细信息，请参阅[定价 - 虚拟网络](/home/features/networking/#price)。为了将运行 VPN 网关的费用降到最低，请创建测试环境，并尽可能快地执行所需的测试和演示。
 
@@ -329,6 +329,6 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
  
 ## 后续步骤
 
-- 在此环境中设置 [SharePoint intranet 场](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sp)、[基于 Web 的 LOB 应用程序](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-lob)或者 [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-dirsync)。
+- 在此环境中设置 [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-dirsync)。
 
 <!---HONumber=Mooncake_0425_2016-->
