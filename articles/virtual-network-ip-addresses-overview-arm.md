@@ -23,12 +23,10 @@
 
 > [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Microsoft 建议对大多数新的部署使用该模型，而不是[经典部署模型](/documentation/articles/virtual-network-ip-addresses-overview-classic)。
 
-如果你熟悉经典部署模型，请参阅 [differences in IP addressing between classic and Resource Manager（经典部署与 Resource Manager 之间的 IP 寻址差异）](/documentation/articles/virtual-network-ip-addresses-overview-classic#Differences-between-Resource-Manager-and-classic-deployments)。
-
 ## 公共 IP 地址
-公共 IP 地址可允许 Azure 资源与 Internet 以及面向公众的 Azure 服务（例如 [Azure Redis 缓存](/home/features/cache/)、[Azure 事件中心](/home/features/event-hubs/)、[SQL 数据库](/documentation/articles/sql-database-technical-overview)和 [Azure 存储空间](/documentation/articles/storage-introduction)）通信。
+公共 IP 地址可允许 Azure 资源与 Internet 以及面向公众的 Azure 服务（例如 [Azure Redis 缓存](/home/features/redis-cache/)、[Azure 事件中心](/home/features/event-hubs/)、[SQL 数据库](/documentation/articles/sql-database-technical-overview)和 [Azure 存储空间](/documentation/articles/storage-introduction)）通信。
 
-在 Azure Resource Manager 中，[公共 IP](/documentation/articles/resource-groups-networking#public-ip-address) 地址是具有其自身属性的资源。你可以将公共 IP 地址资源与以下任何资源相关联：
+在 Azure Resource Manager 中，公共 IP 地址是具有其自身属性的资源。你可以将公共 IP 地址资源与以下任何资源相关联：
 
 - 虚拟机 (VM)
 - 面向 Internet 的负载平衡器
@@ -60,7 +58,7 @@
 可以将公共 IP 地址与 [Windows](/documentation/articles/virtual-machines-windows-about) 或 [Linux](/documentation/articles/virtual-machines-linux-about) VM 相关联，只需将它分配到其**网络接口**即可。对于多网络接口 VM，只能将它分配到主要网络接口。你可以向 VM 分配动态或静态公共 IP 地址。
 
 ### 面向 Internet 的负载平衡器
-你可以将公共 IP 地址与 [Azure Load Balancer](/documentation/articles/load-balancer-overview) 相关联，只需将其分配给负载平衡器**前端**配置即可。此公共 IP 地址充当负载平衡型虚拟 IP 地址 (VIP)。你可以向负载平衡器前端分配动态或静态公共 IP 地址。你还可以为负载平衡器前端分配多个公共 IP 地址，从而启用[多 VIP](/documentation/articles/load-balancer-multivip) 方案，如包含基于 SSL 的网站的多租户环境。
+你可以将公共 IP 地址与 Azure Load Balancer 相关联，只需将其分配给负载平衡器**前端**配置即可。此公共 IP 地址充当负载平衡型虚拟 IP 地址 (VIP)。你可以向负载平衡器前端分配动态或静态公共 IP 地址。你还可以为负载平衡器前端分配多个公共 IP 地址，从而启用多 VIP 方案，如包含基于 SSL 的网站的多租户环境。
 
 ### VPN 网关
 [Azure VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways)用于将 Azure 虚拟网络 (VNet) 连接到其他 Azure VNet 或本地网络。必须将公共 IP 地址分配给其 **IP 配置**，才能与远程网络通信。目前只能向 VPN 网关分配动态公共 IP 地址。
@@ -111,7 +109,7 @@
 使用 Azure 托管的 DNS 服务器配置的 VM 可以将 VNet 中的所有 VM 的主机名解析为其专用 IP 地址。
 
 ### 内部负载平衡器 (ILB) 和应用程序网关
-你可以将专用 IP 地址分配给 [Azure 内部负载平衡器](/documentation/articles/load-balancer-internal-overview) (ILB) 或 [Azure 应用程序网关](/documentation/articles/application-gateway-introduction)的**前端**配置。此专用 IP 地址将用作内部终结点，仅供其虚拟网络 (VNet) 和连接到该 VNet 的远程网络中的资源访问。你可以将动态或静态专用 IP 地址分配给前端配置。
+你可以将专用 IP 地址分配给 Azure 内部负载平衡器 (ILB) 或 [Azure 应用程序网关](/documentation/articles/application-gateway-introduction)的**前端**配置。此专用 IP 地址将用作内部终结点，仅供其虚拟网络 (VNet) 和连接到该 VNet 的远程网络中的资源访问。你可以将动态或静态专用 IP 地址分配给前端配置。
 
 ### 概览
 下表显示了将专用 IP 地址关联到顶级资源时所依据的特定属性，以及能够使用的可能分配方法（动态或静态）。
@@ -128,6 +126,6 @@ Azure 中的[网络限制](/documentation/articles/azure-subscription-service-li
 
 ## 定价
 
-在大多数情况下，公共 IP 地址是免费的。使用其他和/或静态公共 IP 地址要收取少许费用。请确保你了解[公共 IP 的定价结构](/home/features/ip-addresses/#price)。
+在大多数情况下，公共 IP 地址是免费的。使用其他和/或静态公共 IP 地址要收取少许费用。
 
 <!---HONumber=Mooncake_0523_2016-->

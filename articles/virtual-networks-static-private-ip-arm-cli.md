@@ -32,7 +32,7 @@
 ## 如何在创建 VM 时指定静态专用 IP 地址
 若要在名为 *TestVNet* 的 VNet 的 *FrontEnd* 子网中使用静态专用 IP *192.168.1.101* 创建名为 *DNS01* 的 VM，请按照以下步骤进行操作：
 
-1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
+1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
 
 2. 运行 **azure config mode** 命令以切换到资源管理器模式，如下所示。
 
