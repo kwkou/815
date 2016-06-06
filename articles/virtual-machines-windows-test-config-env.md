@@ -50,7 +50,7 @@
 
 如果你还没有 Azure 帐户，可以在[试用 Azure](/pricing/1rmb-trial/) 中注册一个试用版。
 
-> [AZURE.NOTE] Azure 中的虚拟机在运行时会持续产生货币成本。此成本是针对你的试用、MSDN 订阅或付费订阅进行计费的。有关正在运行的 Azure 虚拟机的成本的详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/#price)和 [Azure 定价计算器](https://azure.microsoft.com/pricing/calculator/)。若要控制成本，请参阅[将 Azure 中的测试环境虚拟机的成本降至最低](#costs)。
+> [AZURE.NOTE] Azure 中的虚拟机在运行时会持续产生货币成本。此成本是针对你的试用、MSDN 订阅或付费订阅进行计费的。有关正在运行的 Azure 虚拟机的成本的详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/#price)和 [Azure 定价计算器](/pricing/calculator/)。若要控制成本，请参阅[将 Azure 中的测试环境虚拟机的成本降至最低](#costs)。
 
 ## 阶段 1：创建虚拟网络
 
@@ -181,7 +181,7 @@ DC1 是 corp.contoso.com Active Directory 域服务 (AD DS) 域的域控制器�
 
 	New-ADUser -SamAccountName User1 -AccountPassword (read-host "Set user password" -assecurestring) -name "User1" -enabled $true -PasswordNeverExpires $true -ChangePasswordAtLogon $false
 
-请注意，此命令会提示你提供 User1 帐户密码。由于此帐户将用于所有 CORP 域成员计算机的远程桌面连接，请选择一个强密码。若要检查其强度，请参阅[密码检查器：使用强密码](https://www.microsoft.com/security/pc-security/password-checker.aspx)。记录 User1 帐户密码，并将其存储在安全位置。
+请注意，此命令会提示你提供 User1 帐户密码。由于此帐户将用于所有 CORP 域成员计算机的远程桌面连接，请选择一个强密码。记录 User1 帐户密码，并将其存储在安全位置。
 
 接下来，将新的 User1 帐户配置为企业管理员。在管理员级 Windows PowerShell 命令提示符下运行此命令。
 
@@ -304,7 +304,7 @@ Azure 中的基本配置现已可用于应用程序开发和测试或其他测�
 
 ## 后续步骤
 
-- 使用 [Azure 门户](/documentation/articles/virtual-machines-windows-hero-tutorial)添加新虚拟机，或者建立[模拟混合云测试环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim).
+- 建立[模拟混合云测试环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim).
 
 
 ## <a id="costs"></a>将 Azure 中的测试环境虚拟机的成本降至最低
