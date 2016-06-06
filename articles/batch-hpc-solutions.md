@@ -1,6 +1,6 @@
 <properties
    pageTitle="云中的 Batch 和 HPC 解决方案 | Azure"
-   description="介绍 Azure 中的批处理和高性能计算（大型计算）应用方案和解决方案选项"
+   description="介绍 Azure 中的批处理和高性能计算（HPC 和大型计算）应用方案和解决方案选项"
    services="batch, virtual-machines, cloud-services"
    documentationCenter=""
    authors="dlepow"
@@ -9,7 +9,7 @@
 
 <tags
    ms.service="batch"
-   ms.date="01/21/2016"
+   ms.date="04/21/2016"
    wacn.date="06/06/2016"/>
 
 #  批处理( Batch )和 HPC 解决方案
@@ -29,7 +29,7 @@ Azure 还为开发人员和合作伙伴提供一整套功能、体系结构选�
 
 ## 背景：批处理 ( Batch )和 HPC 应用程序
 
-与 Web 应用和许多业务线应用程序不同，批处理 ( Batch )和 HPC 应用程序有确定的开始和结束时间，而且它们可以按照计划运行或按需运行。其中的大多数应用程序可分为两大类：*内在并行*（有时称为“高度并行”，因为它们解决的问题有助于使自身在多个计算机或处理器上并行运行）和*紧密耦合*。有关这些应用程序类型的详细信息，请参阅下表。某些 Azure 解决方案方法更适合一种类型或其他类型。
+与 Web 应用程序和许多业务线应用程序不同，批处理 ( Batch ) 和 HPC 应用程序有确定的开始和结束时间，而且它们可以按照计划运行或按需运行。其中的大多数应用程序可分为两大类：“内在并行”（有时称为“高度并行”，因为它们解决的问题有助于使自身在多个计算机或处理器上并行运行）和“紧密耦合”。有关这些应用程序类型的详细信息，请参阅下表。某些 Azure 解决方案方法更适合一种类型或其他类型。
 
 >[AZURE.NOTE]在批处理( Batch )和 HPC 解决方案中，应用程序的运行中实例通常称为*作业*，而每个作业可以划分成*任务*。应用程序的群集计算资源通常称为*计算节点*。
 
@@ -100,7 +100,7 @@ Azure 计算服务是大型计算解决方案的核心，不同的计算服务�
 ------------- | -----------
 **[云服务](/documentation/services/cloud-services)**<br/><br/> |• 可以在辅助角色实例中运行大型计算应用程序，辅助角色实例是运行某个 Windows Server 版本的虚拟机并且完全由 Azure 托管<br/><br/>• 可以较低的管理开销支持运行在平台即服务 (PaaS) 模型中的可缩放的可靠应用程序<br/><br/>• 可能需要额外的工具或开发来与现有的本地 HPC 群集解决方案进行集成
 **[虚拟机](/documentation/services/virtual-machines)**<br/><br/> |• 使用 Microsoft Hyper-V 技术提供计算基础结构即服务 (IaaS)<br/><br/>• 使你能够从标准 Windows Server 或 Linux 映像，或者你提供的映像和数据磁盘灵活地设置和管理永久性虚拟机<br/><br/>• 完全在云中运行本地计算群集工具和应用程序
-**[ 批处理( Batch )](/documentation/services/batch)**<br/><br/> |• 在完全托管的服务中运行大规模的并行与 批处理( Batch )工作负荷，例如图像渲染及媒体编码和转码<br/><br/>• 针对虚拟机的托管池提供作业计划和自动缩放<br/><br/>• 允许开发人员构建自定义大型计算解决方案或支持云的现有应用程序<br/>
+**[ 批处理( Batch )](/documentation/services/batch)**<br/><br/> |• 在完全托管的服务中运行大规模的并行与 批处理( Batch )工作负荷<br/><br/>• 针对虚拟机的托管池提供作业计划和自动缩放<br/><br/>• 允许开发人员构建自定义大型计算解决方案或支持云的现有应用程序<br/>
 
 ### 存储服务
 
@@ -144,4 +144,4 @@ Azure 计算服务是大型计算解决方案的核心，不同的计算服务�
 [burst_cluster]: ./media/batch-hpc-solutions/burst_cluster.png
 [batch_proc]: ./media/batch-hpc-solutions/batch_proc.png
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0530_2016-->

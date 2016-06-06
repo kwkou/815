@@ -1,15 +1,15 @@
 <properties
 	pageTitle="Azure Batch 功能概述 | Azure"
 	description="从开发的角度了解 Batch 服务的功能及其 API。"
-	services="batch" 
-	documentationCenter=".net" 
-	authors="yidingzhou" 
-	manager="timlt" 
+	services="batch"
+	documentationCenter=".net"
+	authors="yidingzhou"
+	manager="timlt"
 	editor=""/>
 
 <tags 
 	ms.service="batch" 
-	ms.date="03/11/2016"
+	ms.date="05/12/2016"
 	wacn.date="06/06/2016"/>
 	
 # Azure Batch 功能概述
@@ -111,7 +111,7 @@ Azure 批处理 ( Batch ) 池构建在核心 Azure 计算平台的顶层；批�
 	- 在大多数情况下，任务将独立运行而无需互相通信，但在某些应用程序中，任务必须相互通信。
 
 - 池中节点的**启动任务**
-	- 可以指定每当计算节点加入池和节点重新启动时要执行的*启动任务*。此任务通常用于安装在节点上运行的任务所使用的应用程序。
+	- 可以指定每当计算节点加入池和节点重新启动时要执行的“启动任务”。此任务通常用于安装在节点上运行的任务所使用的应用程序。
 
 ### <a name="job"></a>作业
 
@@ -151,6 +151,7 @@ Azure 批处理 ( Batch ) 池构建在核心 Azure 计算平台的顶层；批�
 
 与任何批处理 ( Batch ) 任务一样，除了指定要执行的**命令行**以外，还可以指定 [Azure 存储空间][azure_storage]中的**资源文件**列表。Azure 批处理 ( Batch ) 将先从 Azure 存储空间复制文件，然后再运行命令行。对于池启动任务，文件列表通常包含应用程序包或文件，但它还可能包含计算节点上运行的所有任务使用的引用数据。启动任务的命令行可能会执行 PowerShell 脚本或 `robocopy` 操作，例如，将应用程序文件复制到“共享”文件夹中，然后运行 MSI 或 `setup.exe`。
 
+> [AZURE.IMPORTANT] Batch 目前“仅”支持**常规用途**存储帐户类型，如 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account)的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account#create-a-storage-account)中步骤 5 所述。Batch 任务（包括标准任务、启动任务、作业准备和作业释放任务）“只能”指定位于**常规用途**存储帐户中的资源文件。
 通常，批处理 ( Batch ) 服务需要等待启动任务完成，然后认为节点已准备好分配任务，但这种行为是可配置的。
 
 如果某个计算节点上的启动任务失败，则节点的状态将会更新以反映失败状态，同时，该节点不可用于要分配的任务。如果从存储中复制启动任务的资源文件时出现问题，或由其命令行执行的进程返回了非零退出代码，则启动任务可能会失败。
@@ -249,7 +250,7 @@ Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储�
 
 为池指定**自动缩放公式**即可执行自动缩放。Batch 服务使用此公式来确定池中下一个缩放间隔（可以指定的间隔）的目标节点数目。
 
-可以通过指定一组缩放公式来实现应用程序自动缩放。这些公式用于确定在下一个缩放间隔内，池中的节点数目。例如，也许某个作业需要提交大量计划执行的任务。你可以将缩放公式分配到池，以根据当前的挂起任务数和这些任务的完成率来调整池的大小（节点数目）。批处理 ( Batch ) 服务将定期评估公式，并根据工作负荷来调整池的大小。
+例如，也许某个作业需要提交大量计划执行的任务。你可以将缩放公式分配到池，以根据当前的挂起任务数和这些任务的完成率来调整池中的节点数目。Batch 服务将定期评估公式，并根据工作负荷和公式设置来调整池的大小。
 
 缩放公式可以基于以下度量值：
 
@@ -412,4 +413,4 @@ Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储�
 [rest_offline]: https://msdn.microsoft.com/library/azure/mt637904.aspx
 [rest_online]: https://msdn.microsoft.com/library/azure/mt637907.aspx
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0530_2016-->

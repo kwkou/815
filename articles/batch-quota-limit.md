@@ -58,7 +58,7 @@
 
 	d.在“支持计划”中，选择“Azure 支持计划 - 开发人员”。
 
-	单击**“下一步”**。
+	单击“下一步”。
 
 4. 在“问题”边栏选项卡中执行以下操作：
 
@@ -82,4 +82,4 @@ Azure 支持人员将与你联系。完成请求最长需要 2 个工作日。
 
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.PNG
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0530_2016-->

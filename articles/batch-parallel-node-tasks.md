@@ -1,21 +1,22 @@
 <properties
-   pageTitle="通过并行任务最大限度地使用批处理 ( Batch ) 节点 | Azure"
-   description="在 Azure Batch 池的每个节点上运行并发任务时，通过减少所使用的计算节点数来提高效率并降低成本"
-   services="batch"
-   documentationCenter=".net"
-   authors="mmacy"
-   manager="timlt"
-   editor=""/>
-<tags
-	ms.service="batch"
-	ms.date="01/22/2016"
-	wacn.date="05/09/2016"/>
+	pageTitle="通过并行任务最大限度地使用 Batch 节点 | Azure"
+	description="通过减少所用的计算节点数并在 Azure Batch 池的每个节点上运行并发任务，来提高效率并降低成本"
+	services="batch"
+	documentationCenter=".net"
+	authors="mmacy"
+	manager="timlt"
+	editor="" />
+
+   <tags
+   	ms.service="batch"
+	ms.date="04/21/2016"
+   	wacn.date="06/06/2016"/>
 
 # 通过并发节点任务最大限度提高 Azure 批处理 ( Batch ) 计算资源的使用量
 
-在本文中，你将了解如何同时在 Azure 批处理 ( Batch ) 池的每个计算节点上运行多个任务。允许在池的计算节点上并行执行任务可以最大程度地利用池中的资源，减少所需的节点数目。对于某些工作负荷，这可以为你节省时间和金钱。
+了解如何同时在 Azure 批处理 ( Batch ) 池的每个计算节点上运行多个任务。允许在池的计算节点上并行执行任务可以最大程度地利用池中的资源，减少所需的节点数目。对于某些工作负荷，这可以缩短作业时间并降低成本。
 
-虽然某些情况下将一个节点的所有资源分配给单个任务更有利，但在更多情况下，最好是让多个任务共享这些资源：
+尽管在某些情况下，将一个节点的所有资源专用于单个任务会更有利，但在更多情况下，最好是让多个任务共享这些资源：
 
  - **尽量减少数据传输**：适用于任务可以共享数据的情况。在此方案中，将共享数据复制到较小数目的节点并在每个节点上并行执行任务可以大大减少数据传输费用，尤其是在复制到每个节点的数据必须跨地理区域传输的情况下。
 
@@ -51,7 +52,7 @@
 
 此 [Batch .NET][api_net] API 代码段演示了一个请求，该请求要求创建一个包含四个大型节点的池，每个节点最多四个任务。它指定了一个任务计划策略，要求先用任务填充一个节点，然后再将任务分配给池中的其他节点。有关如何使用 Batch .NET API 添加池的详细信息，请参阅 [BatchClient.PoolOperations.CreatePool][poolcreate_net]。
 
-```
+```csharp
 CloudPool pool =
     batchClient.PoolOperations.CreatePool(
         poolId: "mypool",
@@ -67,7 +68,7 @@ pool.Commit();
 
 此 [Batch REST][api_rest] API 代码段演示了一个请求，该请求要求创建一个包含两个大型节点的池，每个节点最多四个任务。有关如何使用 REST API 添加池的详细信息，请参阅[将池添加到帐户][rest_addpool]。
 
-```
+```json
 {
   "odata.metadata":"https://myaccount.myregion.batch.azure.com/$metadata#pools/@Element",
   "id":"mypool",
@@ -118,7 +119,7 @@ Duration: 00:08:48.2423500
 
 ![批处理 ( Batch ) 资源管理器热度地图][1]
 
-*批处理 ( Batch ) 资源管理器热图，其中显示了包含四个节点的池，每个节点当前正在执行四个任务*
+*批处理 ( Batch ) 资源管理器热度地图，其中显示了包含四个节点的池，每个节点当前正在执行四个任务*
 
 [api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
 [api_rest]: http://msdn.microsoft.com/library/azure/dn820158.aspx
@@ -133,6 +134,6 @@ Duration: 00:08:48.2423500
 [poolcreate_net]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.createpool.aspx
 [task_schedule]: https://msdn.microsoft.com/library/microsoft.azure.batch.cloudpool.taskschedulingpolicy.aspx
 
-[1]: ./media/batch-parallel-node-tasks\heat_map.png
+[1]: ./media/batch-parallel-node-tasks/heat_map.png
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0530_2016-->

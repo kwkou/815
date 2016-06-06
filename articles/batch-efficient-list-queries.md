@@ -8,8 +8,8 @@
 	editor="" />
 	
 <tags
-	ms.service="Batch"
-	ms.date="01/22/2016"
+	ms.service="batch"
+	ms.date="04/21/2016"
 	wacn.date="06/06/2016"/>
 # 有效地查询 Azure 批处理 ( batch ) 服务
 
@@ -21,14 +21,14 @@ Azure Batch 提供大型计算功能 -- 在生产环境中，作业、任务和�
 
 此 [Batch .NET][api_net] API 代码段检索每个与作业关联的任务，以及这些任务的全部 属性：
 
-```
+```csharp
 // Get a collection of all of the tasks and all of their properties for job-001
 IPagedEnumerable<CloudTask> allTasks = batchClient.JobOperations.ListTasks("job-001");
 ```
 
 但是，可以执行高效得多的列表查询。在 [JobOperations.ListTasks][net_list_tasks] 方法中提供 [ODATADetailLevel][odata] 对象即可实现此目的。此代码段仅返回已完成任务的 ID、命令行和计算节点信息属性：
 
-```
+```csharp
 // Configure an ODATADetailLevel specifying a subset of tasks and their properties to return
 ODATADetailLevel detailLevel = new ODATADetailLevel();
 detailLevel.FilterClause = "state eq 'completed'";
@@ -40,7 +40,7 @@ IPagedEnumerable<CloudTask> completedTasks = batchClient.JobOperations.ListTasks
 在上面的示例方案中，如果作业中存在数以千计的任务，则通常情况下，第二个查询的结果的返回速度将远远快于第一个查询。下面提供了有关使用 Batch .NET API 列出项时使用 ODATADetailLevel 的详细信息。
 
 > [AZURE.IMPORTANT]
-强烈建议你始终 将 ODATADetailLevel 对象提供给 .NET API 列表调用，以确保最大程度地提高应用程序的效率和性能。指定详细程度有助于缩短 Batch 服务响应时间、提高网络利用率，以及最大程度减少客户端应用程序的内存使用量。
+强烈建议你*始终* 将 ODATADetailLevel 对象提供给 .NET API 列表调用，以确保最大程度地提高应用程序的效率和性能。指定详细程度有助于缩短 Batch 服务响应时间、提高网络利用率，以及最大程度减少客户端应用程序的内存使用量。
 
 ## 高效查询工具
 
@@ -64,10 +64,10 @@ expand 字符串用于减少获取特定信息所需的 API 调用数。使用 e
 
 - 与 select 字符串类似，expand 字符串用于控制是否允许某些数据包括在列表查询结果中。
 - expand 字符串只有在列出作业、作业计划、任务和池中使用时才受支持。目前仅支持统计信息。
-- 当所有属性都是必需属性且没有指定 select 字符串时，必须 使用 expand 字符串来获取统计信息。如果使用了 select 字符串来获取属性的子集，则可在 select 字符串中指定 `stats`，不需指定 expand 字符串。
+- 当所有属性都是必需属性且没有指定 select 字符串时，“必须” 使用 expand 字符串来获取统计信息。如果使用了 select 字符串来获取属性的子集，则可在 select 字符串中指定 `stats`，不需指定 expand 字符串。
 - 此示例性 expand 字符串指定列表中的每个项都应返回统计信息：`stats`。
 
-> [AZURE.NOTE] 构造这三种查询字符串类型（filter、select 和 expand）中的任意一种类型时，必须确保属性名称和大小写与其 REST API 元素的对应项相匹配。例如，在使用 .NET [CloudTask](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask) 类时，你必须指定 **state** 而非 **State**，即使 .NET 属性为 [CloudTask.State](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.state)。请参阅下表中 .NET 和 REST API 之间的属性映射。
+> [AZURE.NOTE] 构造这三种查询字符串类型（filter、select 和 expand）中的任意一种类型时，必须确保属性名称和大小写与其 REST API 元素的对应项相匹配。例如，在使用 .NET [CloudTask](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask) 类时，必须指定 **state** 而非 **State**，即使 .NET 属性为 [CloudTask.State](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.state)。请参阅下表中 .NET 和 REST API 之间的属性映射。
 
 ### Filter、select 和 expand 字符串规范
 
@@ -83,13 +83,13 @@ expand 字符串用于减少获取特定信息所需的 API 调用数。使用 e
 
 在 [Batch .NET][api_net] API 中，将通过 [ODATADetailLevel][odata] 类来提供 filter、select 和 expand 字符串以列出相应操作。ODataDetailLevel 类有三个公共字符串属性，这些属性可以在构造函数中指定，也可以直接在对象上设置。然后，你可以将 ODataDetailLevel 对象作为参数传递给不同的列表操作，例如 [ListPools][net_list_pools]、[ListJobs][net_list_jobs] 和 [ListTasks][net_list_tasks]。
 
-- [ODATADetailLevel.FilterClause][odata_filter]：限制返回的项数。
-- [ODATADetailLevel.SelectClause][odata_select]：指定随每个项返回的属性值
-- [ODATADetailLevel.ExpandClause][odata_expand]：通过单个 API 调用检索所有项的数据，不必针对每个项分别进行调用。
+- [ODATADetailLevel][odata].[FilterClause][odata_filter]：限制返回的项数。
+- [ODATADetailLevel][odata].[SelectClause][odata_select]：指定随每个项返回的属性值。
+- [ODATADetailLevel][odata].[ExpandClause][odata_expand]：通过单个 API 调用检索所有项的数据，不必针对每个项分别进行调用。
 
 以下代码段使用 Batch .NET API 对 Batch 服务进行有效的查询，查询其中是否存在特定池集的统计信息。在此方案中，Batch 用户既有测试池又有生产池。测试池 ID 具有“test”前缀，生产池 ID 具有“prod”前缀。在代码段中，*myBatchClient* 是正确初始化的 [BatchClient](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient) 类实例。
 
-```
+```csharp
 // First we need an ODATADetailLevel instance on which to set the expand, filter, and select
 // clause strings
 ODATADetailLevel detailLevel = new ODATADetailLevel();
@@ -112,12 +112,12 @@ List<CloudPool> testPools = await myBatchClient.PoolOperations.ListPools(detailL
 
 ## Batch REST 到 .NET API 映射
 
-filter、select 和 expand 字符串中的属性名称必须反映其 REST API 对应项，不管是名称本身还是大小写。下表提供了 .NET 和 REST API 的对应项之间的映射。
+filter、select 和 expand 字符串中的属性名称“必须”反映其 REST API 对应项，不管是名称本身还是大小写。下表提供了 .NET 和 REST API 的对应项之间的映射。
 
 ### filter 字符串的映射
 
-- **.NET 列表方法**--此列中的每个 .NET API 方法都接受 [ODATADetailLevel][odata] 对象作为参数。
-- **REST 列表请求**--此列中的每个 REST API 页面都包含一个表，该表指定了 *filter* 字符串中允许的属性和操作。在构造 [ODATADetailLevel.FilterClause][odata_filter] 字符串时，你会使用这些属性名称和操作。
+- **.NET 列表方法**：此列中的每个 .NET API 方法都接受 [ODATADetailLevel][odata] 对象作为参数。
+- **REST 列表请求**：此列中的每个 REST API 页面都包含一个表，该表指定了 *filter* 字符串中允许的属性和操作。在构造 [ODATADetailLevel.FilterClause][odata_filter] 字符串时，你会使用这些属性名称和操作。
 
 | .NET 列表方法 | REST 列表请求 |
 |---|---|
@@ -134,8 +134,8 @@ filter、select 和 expand 字符串中的属性名称必须反映其 REST API �
 
 ### select 字符串的映射
 
-- **Batch .NET 类型**--Batch .NET API 类型。
-- **REST API 实体**--此列中的每一页都包含一个或多个表，其中列出了类型的 REST API 属性名称。在构造 *select* 字符串时使用这些属性名称。在构造 [ODATADetailLevel.SelectClause][odata_select] 字符串时，你会使用这些相同的属性名称。
+- **Batch .NET 类型**：Batch .NET API 类型。
+- **REST API 实体**：此列中的每一页都包含一个或多个表，其中列出了类型的 REST API 属性名称。在构造 *select* 字符串时使用这些属性名称。在构造 [ODATADetailLevel.SelectClause][odata_select] 字符串时，你会使用这些相同的属性名称。
 
 | Batch .NET 类型 | REST API 实体 |
 |---|---|
@@ -173,6 +173,8 @@ filter、select 和 expand 字符串中的属性名称必须反映其 REST API �
 
 ## 后续步骤
 
+### 高效列表查询代码示例
+
 请查看 GitHub 上的 [EfficientListQueries][efficient_query_sample] 示例项目，了解列表查询如何有效地影响应用程序的性能。此 C# 控制台应用程序创建大量的任务并将其添加到作业。然后，它对 [JobOperations.ListTasks][net_list_tasks] 方法进行多次调用，并传递配置了不同属性值的 [ODATADetailLevel][odata] 对象，以改变要返回的数据量。生成的输出如下所示：
 ```
 		Adding 5000 tasks to job jobEffQuery...
@@ -186,6 +188,11 @@ filter、select 和 expand 字符串中的属性名称必须反映其 REST API �
 		Sample complete, hit ENTER to continue...
 ```
 如所用时间信息中所示，限制返回的属性和项数可以大大缩短查询响应时间。你可以在 GitHub 的 [azure-batch-samples][github_samples] 存储库中查找此项目和其他示例项目。
+
+### Batch 论坛
+
+MSDN 上的 [Azure Batch 论坛][forum]是探讨 Batch 服务以及咨询其相关问题的不错场所。欢迎前往浏览这些帮忙解决“棘手问题”的贴子，并发布你在构建 Batch 解决方案时遇到的问题。
+
 
 [api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
 [api_net_listjobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
@@ -234,4 +241,4 @@ filter、select 和 expand 字符串中的属性名称必须反映其 REST API �
 [net_schedule]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjobschedule.aspx
 [net_task]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.aspx
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0530_2016-->
