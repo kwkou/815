@@ -267,6 +267,6 @@ batching 选项非常重要。默认情况下，库将逐个引入事件（单�
 
 ## 后续步骤
 
-本文详细探讨了**适用于 C 语言的 Azure IoT 设备 SDK** 中的 **IoTHubClient** 库的行为。参考这些信息可以充分了解 **IoTHubClient** 库的功能。[下一篇文章](iot-hub-device-sdk-c-serializer.md)将提供有关**序列化程序**库的类似详细信息。
+本文详细探讨了**适用于 C 语言的 Azure IoT 设备 SDK** 中的 **IoTHubClient** 库的行为。参考这些信息可以充分了解 **IoTHubClient** 库的功能。[下一篇文章](/documentation/articles/iot-hub-device-sdk-c-serializer)将提供有关**序列化程序**库的类似详细信息。
 
 <!---HONumber=Mooncake_0307_2016-->

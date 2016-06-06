@@ -72,6 +72,8 @@
 [IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide/#c2d
 [Azure 存储空间 - 如何使用 Blob]: /documentation/articles/storage-dotnet-how-to-use-blobs/#upload-a-blob-into-a-container
 
+[使用 IoT 中心发送云到设备的消息]: /documentation/articles/iot-hub-csharp-csharp-c2d
+
 <!-- Images -->
 
 <!---HONumber=Mooncake_0321_2016-->

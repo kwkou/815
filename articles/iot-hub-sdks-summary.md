@@ -25,7 +25,6 @@ Azure IoT 设备 SDK 包含的代码可帮助构建连接到 Azure IoT 中心服
 - [适用于 C 的 Azure IoT 设备 SDK][]，采用 ANSI C (C99) 编写，实现可移植性和广泛的平台兼容性。
 - [适用于 .NET 的 Azure IoT 设备 SDK][]
 - [适用于 Java 的 Azure IoT 设备 SDK][]
-- [适用于 Node.js 的 Azure IoT 设备 SDK][]
 - [适用于 Python 2.7 的 Azure IoT 设备 SDK][]
 
 ### 操作系统平台和硬件兼容性
@@ -40,7 +39,6 @@ Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中心进行交
 
 可从 GitHub 下载以下 IoT 服务 SDK：
 
-- [适用于 Node.js 的 Azure IoT 服务 SDK][]
 - [适用于 Java 的 Azure IoT 服务 SDK][]
 
 ## 联机 API 参考文档
@@ -52,8 +50,6 @@ Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中心进行交
 - [适用于 C 的 Azure IoT 设备 SDK][]
 - [适用于 Java 的 Azure IoT 设备 SDK][]
 - [适用于 Java 的 Azure IoT 服务 SDK][]
-- [适用于 Node.js 的 Azure IoT 设备 SDK][]
-- [适用于 Node.js 的 Azure IoT 服务 SDK][]
 
 [Azure IoT SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md
 [适用于 C 的 Azure IoT 设备 SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/c/readme.md
