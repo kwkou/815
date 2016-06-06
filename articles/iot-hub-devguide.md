@@ -561,7 +561,6 @@ SKU 还确定了 IoT 中心对所有操作强制实施的限制。
 现在你已了解开发 IoT 中心的概述，接下来请单击以下链接来了解更多信息：
 
 - [IoT 中心入门（教程）][lnk-get-started]
-- [操作系统平台和硬件兼容性][lnk-compatibility]
 - [Azure IoT 开发人员中心][lnk-iotdev]
 - [设计你的解决方案][lnk-guidance]
 
