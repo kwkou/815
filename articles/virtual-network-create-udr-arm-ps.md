@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="02/23/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 #使用 PowerShell 在资源管理器中创建用户定义的路由 (UDR)
 

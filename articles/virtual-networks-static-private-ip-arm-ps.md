@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="02/23/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # 如何在 Azure 资源管理器中使用 PowerShell 设置静态专用 IP 地址
 

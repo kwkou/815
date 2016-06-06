@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="03/15/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # 将经典 VNet 连接到新 VNet
 
@@ -197,37 +197,9 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 	>[AZURE.NOTE] 此操作可能需要几分钟。
 
-7. 从浏览器中导航到 https://portal.azure.cn/， 必要时输入你的凭据。
-8. 单击 Azure 门户中的 **RG1** 资源组磁铁，如下所示。
-
-	![VNet 仪表板](./media/virtual-networks-arm-asm-s2s/figure06.png)
-
-9. 请注意通过使用 ARM 模板添加到组中的资源。
-
 ### 步骤 2：在 ARM 中创建新 VM
 
-若要通过 Azure 门户在新 VNet 中创建 VM，请遵循以下说明。
-
-1. 从门户中，单击“新建”按钮，然后单击“计算”，再单击“Windows Server 2012 R2 Datacenter”。
-2. 在右窗格底部的“选择计算堆栈”中，选择“使用资源管理器堆栈”以在 ARM 中创建 VM（如下所述），然后单击“创建”。
-
-	![VNet 仪表板](./media/virtual-networks-arm-asm-s2s/figure07.png)
-
-3. 在“基本”边栏选项卡中，输入 VM 名称、用户名、密码、订阅、资源组和 VM 位置，然后单击“确定”。下图显示了此方案的设置。
-
-	![VNet 仪表板](./media/virtual-networks-arm-asm-s2s/figure08.png)
-
-4. 在“选择大小”边栏选项卡中，选择一个大小，然后单击“选择”。对于此方案，请选择 **D2**。
-5. 在“设置”边栏选项卡中，单击“虚拟网络”，然后单击 **vnet02**。
-6. 单击“子网”，然后单击 **Subnet1**，再单击“确定”。“摘要”边栏选项卡应如下所示。
-
-	![VNet 仪表板](./media/virtual-networks-arm-asm-s2s/figure09.png)
-
-7. 单击“确定”，然后单击“创建”以创建 VM。你将发现门户中出现一个新的磁贴，显示了正在设置的 VM，如下所示。
-
-	![VNet 仪表板](./media/virtual-networks-arm-asm-s2s/figure10.png)
-
-	>[AZURE.NOTE] 此操作可能需要几分钟。你可继续移动到本文档中的下一部分。
+请参考[使用资源管理器和 Azure PowerShell 创建并配置 Windows 虚拟机](/documentation/articles/virtual-machines-windows-create-powershell)或者[使用 Azure CLI 从头开始创建 Linux VM](/documentation/articles/virtual-machines-linux-create-cli-complete)。
 
 ##<a name="Connect-the-two-VNets"></a> 连接两个 VNet
 

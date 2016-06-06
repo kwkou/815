@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="03/22/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # 将经典 VNet 连接到新 VNet
 
