@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="01/07/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # 使用 Azure 资源管理器与 PowerShell 来管理虚拟机
 

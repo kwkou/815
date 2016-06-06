@@ -13,7 +13,7 @@
 <tags
    ms.service="virtual-machines-linux"
    ms.date="11/01/2015"
-   wacn.date=""/>
+   wacn.date="06/06/2016"/>
 
 # 将 Linux VM 的自定义脚本扩展与 Azure 资源管理器模板配合使用
 

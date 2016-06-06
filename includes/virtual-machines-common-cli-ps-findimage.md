@@ -97,13 +97,13 @@
 	data:    canonical  ubuntuserver  14.04.2-LTS  undefined  14.04.201507060  chinanorth  canonical:ubuntuserver:14.04.2-LTS:14.04.201507060
 	info:    vm image list command OK
 
-现在，你可以确切地选择想要使用的映像。若要使用你刚刚找到的 URN 信息快速创建 VM，或要使用包含该 URN 信息的模板，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](xplat-cli-azure-resource-manager.md)。
+现在，你可以确切地选择想要使用的映像。
 
 
 
 ## PowerShell
 
-使用 PowerShell 时，请键入 `Switch-AzureMode AzureResourceManager`。有关完整的更新和配置详细信息，请参阅[将 Azure CLI 与资源管理器配合使用](xplat-cli-azure-resource-manager.md)和[将 Azure PowerShell 与 Azure 资源管理器配合使用](../powershell-azure-resource-manager.md)。
+使用 PowerShell 时，请键入 `Switch-AzureMode AzureResourceManager`。有关完整的更新和配置详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。
 
 > [AZURE.NOTE] 在版本高于 1.0 的 Azure PowerShell 模块中，已删除 `Switch-AzureMode` cmdlet。如果使用 1.0 或更高版本，请将以下命令中的 `Azure` 部分替换为 `AzureRm`。如果使用低于 1.0 版本的 Azure PowerShell 模块，请使用以下命令，但必须先执行 `Switch-AzureMode AzureResourceManager`。
 
@@ -184,12 +184,6 @@
 	Windows-Server-Technical-Preview
 
 从此列表中复制选择的 SKU 名称，然后你将获得 **Set-AzureVMSourceImage** PowerShell cmdlet 或资源组模板文件的所有信息，而资源组模板文件需要你指定映像的发布者、产品和 SKU。
-
-### 视频演练
-
-此视频演示如何使用 PowerShell 完成上述步骤。
-
-[AZURE.VIDEO resource-groups-vm-searching-posh]
 
 
 <!--Image references-->
