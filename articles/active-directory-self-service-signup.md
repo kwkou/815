@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="什么是 Azure 的自助注册？| Microsoft Azure" 
+	pageTitle="什么是 Azure 的自助注册？| Azure" 
 	description="概述 Azure 的自助服务注册以及如何管理注册过程。" 
 	services="active-directory" 
 	documentationCenter="" 

@@ -1,9 +1,9 @@
 <properties
-	pageTitle="使用 DPM 在 Azure 上保护 SharePoint 场 | Azure"
-	description="本文概述如何使用 DPM 在 Azure 上保护 SharePoint 场"
+	pageTitle="在 Azure 中使用 DPM/Azure 备份服务器保护 SharePoint 场 | Azure"
+	description="本文概述如何在 Azure 中使用 DPM/Azure 备份服务器保护 SharePoint 场"
 	services="backup"
 	documentationCenter=""
-	authors="SamirMehta"
+	authors="giridharreddy"
 	manager="shreeshd"
 	editor=""/>
 
@@ -14,26 +14,26 @@
 
 
 # 将 SharePoint 场备份到 Azure
-你可以使用 System Center Data Protection Manager (DPM) 将 SharePoint 场备份到 Azure，其方法与备份其他数据源极为类似。Azure 提供灵活的备份计划来创建每日、每周、每月或每年备份点，并允许你针对各种备份点运行保留策略选项。DPM 可让你存储本地磁盘副本以实现更快的恢复时间目标 (RTO)，并对 Azure 运行具成本效益的长期保留目标。
+你可以使用 System Center Data Protection Manager (DPM) 将 SharePoint 场备份到 Azure，其方法与备份其他数据源极为类似。Azure 提供灵活的备份计划来创建每日、每周、每月或每年备份点，并允许你针对各种备份点运行保留策略选项。DPM 可让你存储本地磁盘副本以实现更快的恢复时间目标 (RTO)，并在 Azure 中经济高效地长期保留副本。
 
 ## SharePoint 支持的版本与相关保护方案
 DPM 的 Azure 备份支持以下方案。
 
 | 工作负载 | 版本 | Sharepoint 部署 | DPM 部署类型 | DPM - System Center 2012 R2 | 保护和恢复 |
 | -------- | ------- | --------------------- | ------------------- | --------------------------- | ----------------------- |
-| SharePoint | SharePoint 2013、SharePoint 2010、SharePoint 2007、SharePoint 3.0 | 作为物理服务器或 Hyper-V/VmWare 虚拟机部署的 SharePoint <br> -------------- <br> SQL AlwaysOn | 物理服务器或本地 Hyper-V 虚拟机 | 支持从 Update Rollup 5 备份到 Azure | 保护 SharePoint 场恢复：来自磁盘的场、数据库、文件或和列表项，以及来自 Azure 的恢复场和数据库 |
+| SharePoint | SharePoint 2013、SharePoint 2010、SharePoint 2007、SharePoint 3.0 | 作为物理服务器或 Hyper-V/VMware 虚拟机部署的 SharePoint <br> -------------- <br> SQL AlwaysOn | 物理服务器或本地 Hyper-V 虚拟机 | 支持从 Update Rollup 5 备份到 Azure | 保护 SharePoint 场恢复选项：从磁盘恢复点恢复场、数据库、文件或列表项。从 Azure 恢复点恢复场和数据库 |
 
 ## 开始之前
 在将 SharePoint 场备份到 Azure 之前，需要确保满足几个条件。
 
 ### 先决条件
-在继续之前，请确保符合使用 Azure 备份保护工作负荷的所有[先决条件](/documentation/articles/backup-azure-dpm-introduction)。先决条件包括如下任务：创建备份保管库、下载保管库凭据、安装 Azure 备份代理，以及向保管库注册服务器。
+在继续之前，请确保符合使用 Microsoft Azure 备份保护工作负荷的所有[先决条件](/documentation/articles/backup-azure-dpm-introduction#prerequisites)。先决条件包括如下任务：创建备份保管库、下载保管库凭据、安装 Azure 备份代理，以及在保管库中注册 DPM/Azure 备份服务器。
 
 ### DPM 代理
-必须在 SharePoint Server、SQL Server 以及属于 SharePoint 场的任何其他服务器上安装 DPM 代理。有关设置保护代理的详细信息，请参阅[设置保护代理](https://technet.microsoft.com/zh-cn/library/hh758039.aspx)。唯一的例外是，你只能在单个 Web 前端 (WFE) 服务器上安装代理。DPM 只需将 WFE 服务器上的代理作为保护的入口点。
+必须在 SharePoint Server、SQL Server 以及属于 SharePoint 场的任何其他服务器上安装 DPM 代理。有关设置保护代理的详细信息，请参阅 [设置保护代理](https://technet.microsoft.com/library/hh758034(v=sc.12).aspx)。唯一的例外是，你只能在单个 Web 前端 (WFE) 服务器上安装代理。DPM 只需将 WFE 服务器上的代理作为保护的入口点。
 
 ### SharePoint 场
-针对场中的每 1000 万个项，必须有至少 2 GB 的卷空间用于放置 DPM 文件夹。此空间对目录生成是必要的。为了使 DPM 恢复特定项（ Web 应用集合、站点、列表、文档库、文件夹、单个文档与列表项），目录生成将创建一个包含在每个内容数据库中的 URL 列表。你可以在 DPM 管理员控制台的“恢复”任务区域中，查看“可恢复项”窗格中的 URL 列表。
+针对场中的每 1000 万个项，必须有至少 2 GB 的卷空间用于放置 DPM 文件夹。此空间对目录生成是必要的。为了使 DPM 恢复特定项（网站集合、站点、列表、文档库、文件夹、单个文档与列表项），目录生成将创建一个包含在每个内容数据库中的 URL 列表。你可以在 DPM 管理员控制台的“恢复”任务区域中，查看“可恢复项”窗格中的 URL 列表。
 
 ### SQL Server
 DPM 以本地系统的形式运行，并备份 SQL Server 数据库，它需要对帐户具有 SQL Server 的 sysadmin 权限。在你想要备份的 SQL Server 上，将 NT AUTHORITY\\SYSTEM 设置为 *sysadmin*。
@@ -114,7 +114,7 @@ DPM 以本地系统的形式运行，并备份 SQL Server 数据库，它需要�
 
     ![Online_backup_schedule](./media/backup-azure-backup-sharepoint/specify-online-backup-schedule.png)
 
-    >[AZURE.NOTE]DPM 允许在每天的 2 个不同时间备份到 Azure。
+    >[AZURE.NOTE] DPM 允许在每天的 2 个不同时间备份到 Azure。Azure 备份还提供了一项功能，可让你使用 [Azure 备份网络限制](/documentation/articles/backup-configure-vault/#enable-network-throttling)来控制高峰期和非高峰期用于备份的 WAN 带宽量。
 
 11. 根据选择的备份计划，在“指定联机保留策略”屏幕上，选择每日、每周、每月和每年备份点的保留策略。
 
@@ -235,4 +235,4 @@ DPM 以本地系统的形式运行，并备份 SQL Server 数据库，它需要�
 - 查看 [System Center 2012 - Data Protection Manager 发行说明](https://technet.microsoft.com/zh-cn/library/jj860415.aspx)
 - 查看 [System Center 2012 SP1 中的 Data Protection Manager 发行说明](https://technet.microsoft.com/zh-cn/library/jj860394.aspx)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_0530_2016-->

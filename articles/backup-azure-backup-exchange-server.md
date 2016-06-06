@@ -1,16 +1,16 @@
 <properties
-	pageTitle="使用 System Center 2012 R2 DPM 将 Exchange Server 备份到 Azure 备份 | Microsoft Azure"
+	pageTitle="使用 System Center 2012 R2 DPM 将 Exchange Server 备份到 Azure 备份 | Azure"
 	description="了解如何使用 System Center 2012 R2 DPM 将 Exchange Server 备份到 Azure 备份"
 	services="backup"
 	documentationCenter=""
-	authors="Jim-Parker"
-	manager="jwhit"
+	authors="AnuragMehrotra"
+	manager="shivamg"
 	editor=""/>
 
 <tags 
 	ms.service="backup"
-	ms.date="12/08/2015"
-	wacn.date="01/12/2016"/>
+	ms.date="04/20/2015"
+	wacn.date="06/06/2016"/>
 
 
 # 使用 System Center 2012 R2 DPM 将 Exchange Server 备份到 Azure 备份
@@ -19,7 +19,7 @@
 ## 更新
 若要在 Azure 备份中成功注册 DPM 服务器，必须安装 System Center 2012 R2 DPM 的最新更新汇总和 Azure 备份代理的最新版本。从 [Microsoft 目录](http://catalog.update.microsoft.com/v7/site/Search.aspx?q=System%20Center%202012%20R2%20Data%20protection%20manager)获取最新的更新汇总。
 
->[AZURE.NOTE]对于本文中的示例，将会安装 Azure 备份代理 2.0.8719.0 版，并在 System Center 2012 R2 DPM 上安装更新汇总 6。
+>[AZURE.NOTE] 对于本文中的示例，将会安装 Azure 备份代理 2.0.8719.0 版，并在 System Center 2012 R2 DPM 上安装更新汇总 6。
 
 ## 先决条件
 在继续下一步之前，请确保符合使用 Microsoft Azure 备份保护工作负荷的所有[先决条件](/documentation/articles/backup-azure-dpm-introduction#prerequisites)。这些先决条件包括：
@@ -28,6 +28,7 @@
 - 代理和保管库凭据已下载到 DPM 服务器。
 - DPM 服务器上已安装代理。
 - 已使用保管库凭据注册 DPM 服务器。
+- 若要保护 Exchange 2016，请升级到 DPM 2012 R2 UR9 或更高版本
 
 ## DPM 保护代理  
 若要在 Exchange Server 上安装 DPM 保护代理，请遵循以下步骤：
@@ -128,4 +129,4 @@
 
 - [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_0530_2016-->

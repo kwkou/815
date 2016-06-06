@@ -1,5 +1,5 @@
 <properties
-   pageTitle="将数据从 Azure 还原到 Windows Server 或 Windows 客户端 | Microsoft Azure"
+   pageTitle="使用 Resource Manager 部署模型将数据还原到 Windows Server 或 Windows 客户端 | Azure"
    description="了解如何从 Windows Server 或 Windows 客户端还原。"
    services="backup"
    documentationCenter=""

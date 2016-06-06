@@ -14,7 +14,7 @@
 
 
 # 管理 Azure 备份保管库和服务器
-本文概述了可通过管理门户完成的备份管理任务。
+本文概述了可通过管理门户和 Microsoft Azure 备份代理完成的备份管理任务。
 
 >[AZURE.NOTE] 本文提供经典部署模型中的操作过程。
 ## 管理门户任务
@@ -59,4 +59,4 @@
 - 若要了解有关 Azure 备份的详细信息，请参阅 [Azure 备份概述](/documentation/articles/backup-introduction-to-azure-backup)
 - 访问 [Azure 备份论坛](http://go.microsoft.com/fwlink/p/?LinkId=290933)
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0530_2016-->
