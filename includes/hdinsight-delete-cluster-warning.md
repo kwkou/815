@@ -1,6 +1,6 @@
 
 
-> [AZURE.WARNING] 无论你是否使用 HDInsight 群集，HDInsight 群集都按分钟计费。请务必在使用完之后删除群集。有关删除群集的信息，请参阅[如何删除 HDInsight 群集](/documentation/articles/hdinsight-delete-cluster)。
+> [AZURE.WARNING] HDInsight 群集是基于分钟按比例收费，而不管你是否正在使用它们。请务必在使用完之后删除群集。有关删除群集的信息，请参阅[如何删除 HDInsight 群集](/documentation/articles/hdinsight-delete-cluster)。
 
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0530_2016-->
