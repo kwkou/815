@@ -11,7 +11,7 @@
 <tags
 	ms.service="batch"
 	ms.date="04/18/2016"
-	wacn.date="05/20/2016"/>
+	wacn.date="06/06/2016"/>
 
 # 自动缩放 Azure 批处理 ( Batch )池中的计算节点
 

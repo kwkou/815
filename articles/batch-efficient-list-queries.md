@@ -10,7 +10,7 @@
 <tags
 	ms.service="Batch"
 	ms.date="01/22/2016"
-	wacn.date="05/09/2016"/>
+	wacn.date="06/06/2016"/>
 # 有效地查询 Azure 批处理 ( batch ) 服务
 
 在本文中，你将了解如何通过减少查询 Batch 服务（使用 [Batch .NET][api_net] 库）时返回的数据量来提高 Azure Batch 应用程序的性能。

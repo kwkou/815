@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Batch 功能概述 | Microsoft Azure"
+	pageTitle="Azure Batch 功能概述 | Azure"
 	description="从开发的角度了解 Batch 服务的功能及其 API。"
 	services="batch" 
 	documentationCenter=".net" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="batch" 
 	ms.date="03/11/2016"
-	wacn.date="05/09/2016"/>
+	wacn.date="06/06/2016"/>
 	
 # Azure Batch 功能概述
 
@@ -34,7 +34,6 @@
 
 6. 监视作业进度并检索结果。
 
-> [AZURE.NOTE]你需要通过一个 [批处理 ( Batch ) 帐户](/documentation/articles/batch-account-create-portal)来使用批处理( Batch ) 服务，几乎所有的解决方案都使用 [Azure 存储][azure_storage]帐户来进行文件存储和检索。
 
 在以下部分中，你将了解上述工作流中提到的每个资源，以及其他可实现分布式计算方案的许多批处理 ( Batch ) 功能。
 
@@ -66,7 +65,7 @@
 
 ### <a name="computenode"></a>计算节点
 
-计算节点是专门为应用程序处理特定工作负荷的 Azure 虚拟机。节点大小确定了 CPU 核心数目、内存容量，以及分配给节点的本地文件系统大小。节点可以是除 A0 以外的任何[云服务节点大小](/documentation/articles/cloud_service_sizes)。
+计算节点是专门为应用程序处理特定工作负荷的 Azure 虚拟机。节点大小确定了 CPU 核心数目、内存容量，以及分配给节点的本地文件系统大小。节点可以是除 A0 以外的任何云服务节点大小。
 
 节点可以运行可执行文件和脚本，包括可执行文件 (.exe)、命令文件 (.cmd)、批处理 ( Batch ) 文件 (.bat) 和 PowerShell 脚本。节点还具有以下属性：
 
@@ -209,11 +208,11 @@ Azure 批处理 ( Batch ) 池构建在核心 Azure 计算平台的顶层；批�
 
 ### <a name="appkg"></a>应用程序包
 
-[应用程序包](/documentation/articles/batch-application-packages)功能可为池中的计算节点提供简单的应用程序管理和部署能力。通过应用程序包，可以轻松上载及管理多个版本的工作执行应用程序（包括二进制文件和支持文件），然后将一或多个这种类型的应用程序自动部署到池中的计算节点。
+应用程序包功能可为池中的计算节点提供简单的应用程序管理和部署能力。通过应用程序包，可以轻松上载及管理多个版本的工作执行应用程序（包括二进制文件和支持文件），然后将一或多个这种类型的应用程序自动部署到池中的计算节点。
 
 Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储及部署到计算节点的详细信息，因此可以简化代码和管理开销。
 
-若要了解应用程序包功能的详细信息，请参阅[使用 Azure Batch 应用程序包部署应用程序](/documentation/articles/batch-application-packages)。
+
 
 ## <a name="files"></a>文件和目录
 
