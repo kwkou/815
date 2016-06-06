@@ -62,10 +62,6 @@
 
 若要使用此代码段，需要创建证书文件并将其上载到 Azure。有关详细信息，请参阅 [Upload an Azure Management API Management Certificate（上载 Azure Management API 管理证书）](/documentation/articles/azure-api-management-certs)。
 
-##创建群集
-
-请参阅 [Create Linux-based clusters in HDInsight using the .NET SDK（使用 .NET SDK 在 HDInsight 中创建基于 Linux 的群集）](/documentation/articles/hdinsight-hadoop-create-linux-clusters-dotnet-sdk)。
-
 ##列出群集
 
 以下代码段列出了群集和一些属性：
@@ -85,7 +81,7 @@
     _hdinsightClient.DeleteCluster("<Cluster Name>");
     _hdinsightClient.DeleteClusterAsync("<Cluster Name>");
 
-##授予/撤消访问权限
+##<a name="grant/revoke-access"></a>授予/撤消访问权限
 
 HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样式的终结点）：
 
@@ -162,7 +158,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 
 [hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-portal-linux
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
