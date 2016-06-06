@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/04/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # 使用 Azure 模板创建受保护的 Linux VM
 
@@ -66,6 +66,6 @@ info:    group create command OK
 
 ## 后续步骤
 
-使用模板创建 Linux VM 后，你需要了解还有哪些应用框架可与模板配合使用。请搜索[模板库](https://azure.microsoft.com/documentation/templates/)来了解接下来要部署哪些应用框架。
+使用模板创建 Linux VM 后，你需要了解还有哪些应用框架可与模板配合使用。
 
 <!---HONumber=Mooncake_0425_2016-->

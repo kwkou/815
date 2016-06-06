@@ -13,7 +13,7 @@
 <tags
    ms.service="virtual-machines-linux"
    ms.date="09/01/2015"
-   wacn.date=""/>
+   wacn.date="06/06/2016"/>
 
 # 对 Azure Linux VM 扩展故障进行故障排除。
 

@@ -13,13 +13,13 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="11/01/2015"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # 使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机
 
 [AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
 
-本文说明如何使用 Azure 资源管理器模板和 Azure CLI 来执行以下常见任务，以便可以部署和管理 Azure 虚拟机。有关可用的其他模板，请参阅 [Azure 快速入门模板](https://azure.microsoft.com/documentation/templates/)和[使用模板的应用程序框架](/documentation/articles/virtual-machines-windows-app-frameworks)。
+本文说明如何使用 Azure 资源管理器模板和 Azure CLI 来执行以下常见任务，以便可以部署和管理 Azure 虚拟机。
 
 [AZURE.INCLUDE [virtual-machines-common-cli-deploy-templates](../includes/virtual-machines-common-cli-deploy-templates.md)]
 

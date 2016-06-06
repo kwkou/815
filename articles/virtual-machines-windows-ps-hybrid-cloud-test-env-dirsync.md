@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/01/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # 在混合云中设置 Office 365 目录同步 (DirSync) 以便进行测试
 
@@ -42,7 +42,7 @@
 2.	配置 Office 365 FastTrack 试用版。
 3.	配置 DirSync 服务器 (DS1)。
 
-如果你还没有 Azure 订阅，可以通过[试用 Azure](/pricing/1rmb-trial/) 注册免费帐户。如果你有 MSDN 或 Visual Studio 订阅，请参阅 [Monthly Azure credit for Visual Studio subscribers（Visual Studio 订户的每月 Azure 信用额度）](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)。
+如果你还没有 Azure 订阅，可以通过[试用 Azure](/pricing/1rmb-trial/) 注册试用帐户。
 
 ## 阶段 1：设置混合云环境
 
