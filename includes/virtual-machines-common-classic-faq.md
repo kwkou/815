@@ -40,7 +40,7 @@ Azure 只支持固定的 VHD 格式的虚拟硬盘。如果你想在 Azure 中�
 它们在很多方面与“第 1 代”Hyper-V VM 类似，但并非完全相同。两种类型都提供虚拟化的硬件，而 VHD 格式的虚拟硬盘是兼容的。这意味着你可以在 Hyper-V 与 Azure 之间移动它们。存在以下三大区别，这有时会令 Hyper-V 用户感到惊讶：
 
 - Azure 不提供对虚拟机的控制台访问。在 VM 完成启动之前，无法对其进行访问。
-- 大多数[大小](/documentation/articles/virtual-machines-linux-sizes)的 Azure VM 只有一个虚拟网络适配器，这意味着它们也只能有一个外部 IP 地址。（A8 和 A9 大小的 VM 可使用第二个网络适配器在实例之间进行应用程序通信，但仅限特定的方案。）
+- 大多数[大小](/documentation/articles/virtual-machines-linux-sizes)的 Azure VM 只有一个虚拟网络适配器，这意味着它们也只能有一个外部 IP 地址。
 - Azure VM 不支持第 2 代 Hyper-V VM 功能。有关这些功能的详细信息，请参阅 [Virtual Machine Specifications for Hyper-V（Hyper-V 虚拟机规范）](http://technet.microsoft.com/zh-cn/library/dn592184.aspx)和[第 2 代虚拟机概述](https://technet.microsoft.com/zh-cn/library/dn282285.aspx)。
 
 ## 这些虚拟机能否使用我现有的本地网络基础结构？
@@ -104,7 +104,6 @@ Windows VM 的其他选项包括：
 
 Azure 针对防病毒解决方案提供了多种选项，但需要用户自行管理。例如，你可能需要另外订阅反恶意软件的软件，并需要自行决定运行扫描和安装更新的时间。你可以在创建 Windows 虚拟机时添加具有适用于 Microsoft 反恶意软件、Symantec Endpoint Protection 或 TrendMicro Deep Security Agent 的 VM 扩展的防病毒支持，也可以稍后进行。Symantec 和 TrendMicro 扩展允许你使用免费的限时试用订阅或使用现有的企业订阅。Microsoft 反恶意软件是免费的。有关详细信息，请参阅：
 
-- [如何在 Azure VM 上安装和配置 Symantec Endpoint Protection](/documentation/articles/virtual-machines-windows-classic-install-symantec/)
 - [如何在 Azure VM 上安装和配置 Trend Micro Deep Security 即服务](/documentation/articles/virtual-machines-windows-classic-install-trend/)
 - [在 Azure 虚拟机上部署反恶意软件解决方案](https://azure.microsoft.com/zh-cn/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/)
 
