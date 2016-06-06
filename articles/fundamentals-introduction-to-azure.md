@@ -27,7 +27,7 @@ Azure 一直在不断扩大规模，因此很容易出现过载现象。基本�
 
 本文将使用**不同的组织**来讨论基于类似功能的服务，并调用属于大型服务一部分的重要子服务。
 
-![Azure 组件](./media/fundamentals-introduction-to-azure/AzureComponentsIntroNew780.png)
+![Azure 组件](./media/fundamentals-introduction-to-azure/AzureComponentsIntroNew780.jpg)
 
 *图：Azure 提供可通过 Internet 访问且在 Azure 数据中心运行的应用程序服务。*
 
@@ -134,6 +134,18 @@ Azure SQL 数据库以前称为 SQL Azure，它提供关系数据库管理系统
 
 如果你要创建需要关系存储的 Azure 应用程序（使用这些计算模型中的任何一个），则 SQL 数据库可能是一个不错的选择。但是，在云外运行的应用程序也可以使用该服务，所以还有很多其他方案。例如，可以从不同客户端系统（包括台式机、笔记本电脑、平板电脑和手机）访问存储在 SQL 数据库中的数据。而且，因为它通过复制提供内置的高可用性，所以使用 SQL 数据库有助于减少停机时间。
 
+### Azure MySQL 数据库
+![Azure MySQL 数据库](./media/fundamentals-introduction-to-azure/chart_update.png)
+
+*图：Azure 提供MySQL数据库来存储数据。*
+
+MySQL Database on Azure 是我们在 Azure 平台上推出的MySQL全托管数据库服务 。只需一到两分钟您即可在 Azure 上构建一个具备高可用性的 MySQL 数据库服务器 （提供99.9%SLA保障），而无需自己管理虚拟机或基础架构。MySQL Database on Azure 为客户提供了方便易用的管理和维护的功能和体验。您可以方便地监控数据库性能和资源的利用，并根据需要在不同的版本间切换。同时，MySQL Database on Azure 提供完善的备份恢复功能保障数据库高可靠性，支持长达30天的数据完整备份，以及7天内任意时间点恢复，以及灾难恢复功能。并且，MySQL Database on Azure服务采用MySQL社区版本，全面兼容 MySQL 的各种开发管理工具，你可以利用熟悉的语言和工具使用。
+
+对于您在数据库性能方面的需求，MySQL Database on Azure 服务提供了多个不同性能的版本支持您纵向扩展数据库，您可以根据当前的性能需求选择一个相匹配的版本，后续再根据应用的实际运行情况进行弹性扩展或收缩，使您不再需要反复计算数据库服务器的配置需求，您也不再需要为如何调节各方面的配置以得到最好的数据库性能而烦恼。同时，如果您的应用读多写少，MySQL Database on Azure的只读实例功能支持您横向扩展数据库，轻松应对高并发需求。
+
+并且，MySQL Database on Azure 支持本地到云端的数据库同步的功能，用户可以将 自建数据库或在虚机上搭建的MySQL 实例设为主库，把运行在 Azure 上的实例设为从库，通过标准的 MySQL 主从数据同步的方式同步数据到 Azure 以更好地满足企业各种混合云场景的需求。同时数据库同步的功能也可以帮助您实现更完善更灵活的云端迁移体验。
+
+对于最新功能、价格、文档等更全面的介绍，您可以访问[MySQL on Azure](/home/features/mysql/)服务介绍了解更多。
 
 ### 表
 ![Azure 存储表](./media/fundamentals-introduction-to-azure/StorageTablesIntroNew.png)
@@ -454,19 +466,15 @@ Azure 有很多随着时间的推移而变化的缓存技术。按照引入顺�
 例如，一个多次读取产品目录的应用程序可能从使用这种缓存中受益，因为它可以更快地获得其所需的数据。该技术还支持锁定，因此可用于读/写以及只读数据。只需改变一下配置，ASP.NET 应用程序就可以使用该服务存储会话数据。
 
 ### 内容传送网络
-![Azure CDN](./media/fundamentals-introduction-to-azure/CDNIntroNew.png) 
+![Azure CDN](./media/fundamentals-introduction-to-azure/CDNIntroNew.png)
 
 *图：可以在世界各地的站点上缓存 Blob 的副本。*
 
-假设你需要存储将由世界各地用户访问的 Blob 数据。例如，该数据或许是最新世界杯比赛的一个视频、驱动程序更新或受欢迎的电子书。在多个 Azure 数据中心存储数据的副本虽然有用，但如果用户太多，或许会供不应求。为获得更好的性能，可以使用 Azure CDN。
+假设您在 Azure storage blob 存储了一个游戏下载包，但是客户从全国各地来访问，由于距离、网络等原因会导致部分客户下载速度慢。此时，可以使用CDN自动将数据缓存到遍布全中国的数据中心内，当第一个客户访问后，CDN会从源站读取并缓存资源，第二个客户访问的时候，可以就近获得CDN缓存的内容，无需回源站读取，解决 Internet 网络拥挤的状况，缓解源站压力，同时提高用户访问网站和应用程序的响应速度。
 
-CDN 在全球拥有数十个网站，每个网站都可以存储 Azure Blob 的副本。当世界某地的一个用户首次访问特定 Blob 时，该 Blob 包含的信息将从 Azure 数据中心复制到该地区的本地 CDN 存储中。此后，来自该地区的访问将使用缓存在 CDN 中的 blob 副本，而无需全都涌向最近的 Azure 数据中心。因此世界各地的用户能够更快地访问频繁访问的数据。
+**CDN使用场景**
 
-**CDN 方案**
-
-通常将 CDN 用于媒体服务，在全世界提供视频。视频通常很大，需要大量的带宽。媒体服务在本页其他部分讨论。
-
-
+针对html网页文件，图片文件，JavaScript，CSS文件等的静态网页加速，软件安装包、游戏客户端、应用程序、影音等大文件的下载分发，以及在线视频网站、在线教育网站等以流媒体为主的视频点播和直播等多种业务类型加速。
 
 ## 大数据和大计算
 
