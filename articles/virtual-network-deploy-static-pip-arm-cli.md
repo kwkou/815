@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="03/15/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # 使用 Azure CLI 通过静态公共 IP 部署 VM
 

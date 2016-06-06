@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="04/27/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # Azure 中的 IP 地址
 可以将 IP 地址分配给与其他 Azure 资源通信的 Azure 资源，也可以将其分配给本地网络和 Internet。可以在 Azure 中使用两种类型的 IP 地址：
