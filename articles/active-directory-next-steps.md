@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="04/20/2015" 
-	wacn.date="05/13/2016"/>
+	wacn.date="06/03/2016"/>
 
 # Azure AD 的后续用途有哪些？
 
@@ -18,7 +18,7 @@
 - [什么是 Azure AD？](/documentation/articles/active-directory-whatis)
 - [工作原理](/documentation/articles/active-directory-works)
 - [入门](/documentation/articles/active-directory-get-started)
-- [了解详细信息](/documentation/articles/active-directory-learn-map)
+
 
 ## 在 Azure AD 中管理用户
 
@@ -26,11 +26,7 @@
 
 ## 同步和管理密码
 
-同步用户密码，使用户可以使用他们在登录本地网络时所用的同一个密码登录到 Microsoft 云服务（例如 Office 365、Dynamics CRM 和 Windows InTune）。[了解有关管理密码的详细信息](https://msdn.microsoft.com/zh-CN/library/azure/dn510386.aspx)。 
-
-## 在 Azure AD 中管理组
-
-使用组可以一次性向许多帐户分配一组公用的权限，而不用为每个帐户单独分配。你还可以从本地 Windows Server Active Directory 同步组。了解有关在 Azure Active Directory 中管理组的详细信息。[了解有关管理组的详细信息](https://msdn.microsoft.com/zh-CN/library/azure/dn532279.aspx)。 
+同步用户密码，使用户可以使用他们在登录本地网络时所用的同一个密码登录到 Microsoft 云服务（例如 Office 365、Dynamics CRM 和 Windows InTune）。[了解有关管理密码的详细信息](/documentation/articles/active-directory-passwords/)。 
 
 ## 对已注册的移动设备实施条件性访问策略
 

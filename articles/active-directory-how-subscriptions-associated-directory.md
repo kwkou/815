@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 订阅与 Azure AD 的关联方式 | Microsoft Azure"
+	pageTitle="Azure 订阅与 Azure AD 的关联方式 | Azure"
 	description="登录 Microsoft Azure 及相关问题（例如，Azure 订阅与 Azure Active Directory 之间的关系）。"
 	services="active-directory"
 	documentationCenter=""

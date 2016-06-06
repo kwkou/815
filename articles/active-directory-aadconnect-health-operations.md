@@ -74,7 +74,7 @@
 [//]: # "启动 RBAC 部分"
 ## 使用基于角色的访问控制来管理访问权限
 ### 概述
-Azure AD Connect Health 的[基于角色的访问控制](/documentation/articles/role-based-access-control-configure)可为全局管理员以外的用户和/或组提供对 Azure AD Connect Health 服务的访问。这是通过将角色分配到目标用户和/或组，并提供一个机制来限制目录中的全局管理员来实现的。
+Azure AD Connect Health 的基于角色的访问控制可为全局管理员以外的用户和/或组提供对 Azure AD Connect Health 服务的访问。这是通过将角色分配到目标用户和/或组，并提供一个机制来限制目录中的全局管理员来实现的。
 
 #### 角色
 Azure AD Connect Health 支持以下内置角色。
@@ -101,9 +101,7 @@ Azure AD Connect 支持两个级别的管理访问：
 ## 相关链接
 
 * [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health)
-* [适用于 AD FS 的 Azure AD Connect Health 代理安装](/documentation/articles/active-directory-aadconnect-health-agent-install-adfs)
 * [在 AD FS 中使用 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-adfs)
-* [使用用于同步的 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-sync)
 * [Azure AD Connect Health 常见问题](/documentation/articles/active-directory-aadconnect-health-faq)
 
 <!---HONumber=Mooncake_0509_2016-->

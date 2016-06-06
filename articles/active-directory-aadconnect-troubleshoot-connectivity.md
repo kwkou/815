@@ -41,7 +41,7 @@ Azure AD Connect 使用现代身份验证（使用 ADAL 库）来进行身份验
 | *.microsoftonline.com | HTTPS/443 | 用于配置 Azure AD 目录和导入/导出数据。|
 
 ## 向导中的错误
-安装向导使用两种不同的安全上下文。在“连接到 Azure AD”页上，使用的是当前登录的用户。在“配置”页上，改为[运行同步引擎服务的帐户](active-directory-aadconnect-accounts-permissions.md#azure-ad-connect-sync-service-accounts)。我们要做的是计算机的全局代理配置，因此如果出现问题，该问题很有可能已出现在向导的“连接到 Azure AD”页中。
+安装向导使用两种不同的安全上下文。在“连接到 Azure AD”页上，使用的是当前登录的用户。在“配置”页上，改为[运行同步引擎服务的帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions#azure-ad-connect-sync-service-accounts)。我们要做的是计算机的全局代理配置，因此如果出现问题，该问题很有可能已出现在向导的“连接到 Azure AD”页中。
 
 下面是在安装向导中看到的最常见错误。
 
@@ -49,7 +49,7 @@ Azure AD Connect 使用现代身份验证（使用 ADAL 库）来进行身份验
 当向导本身无法访问代理时，将出现此错误。
 ![nomachineconfig](./media/active-directory-aadconnect-troubleshoot-connectivity/nomachineconfig.png)
 
-- 如果你看到此错误，请验证是否已正确配置 [machine.config](active-directory-aadconnect-prerequisites.md#connectivity)。
+- 如果你看到此错误，请验证是否已正确配置 [machine.config](/documentation/articles/active-directory-aadconnect-prerequisites#connectivity)。
 - 如果配置看起来正确，请遵循[验证代理连接](#verify-proxy-connectivity)中的步骤，查看问题是否也出现在向导外部的位置。
 
 ### 无法访问 MFA 终结点

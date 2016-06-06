@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="09/28/2015"
-	wacn.date="04/28/2016" />
+	wacn.date="06/06/2016" />
 
 # 如何获取 Azure Active Directory 租户
 
@@ -27,10 +27,10 @@
 - [已有一个与组织帐户关联的现有 Azure 订阅](#use-an-organizational-azure-subscription)
 - [没有上述任何订阅，想要从头开始](#start-from-scratch)
 
-## 使用现有的 Office 365 订阅
+## <a name="use-an-existing-office-365-subscription"></a>使用现有的 Office 365 订阅
 如果你已有一个 Office 365 订阅，但没有 Azure 订阅（因此也就无法登录到 [Azure 管理门户](https://manage.windowsazure.cn)），请遵照[这些说明](https://technet.microsoft.com/zh-cn/library/dn832618.aspx)来访问你的 Azure AD 租户。
 
-## 使用 MSA Azure 订阅
+## <a name="use-an-msa-azure-subscription"></a>使用 MSA Azure 订阅
 如果你以前使用个人 Microsoft 帐户注册过 Azure 订阅，则你已经有了一个租户！ 在 [Azure 管理门户](https://manage.windowsazure.cn)中，你应该会在“所有项”和“Active Directory”的下面看到名为“默认租户”的租户。 你可以根据需要任意使用此租户 - 不过，有时你可能想要创建一个组织管理员帐户。
 
 为此，请执行下列步骤。或者，你可能想要创建新的租户，然后遵循类似的过程中在该租户中创建管理员。
@@ -52,11 +52,11 @@
 8.	若要更改临时密码，请使用此新用户帐户登录到 https://login.microsoftonline.com ，然后根据请求更改密码。
 
 
-## 使用组织 Azure 订阅
+## <a name="use-an-organizational-azure-subscription"></a>使用组织 Azure 订阅
 如果你以前使用组织帐户注册过 Azure 订阅，则你已经有了一个租户！ 在 [Azure 管理门户](https://manage.windowsazure.cn)中，你应该会在“所有项”和“Active Directory”的下面看到一个租户。 你可以根据需要任意使用此租户。你还可以想要使用门户左下角的“新建”按钮创建新租户。
 
 
-## 从头开始
+## <a name="tart-from-scratch"></a>从头开始
 如果上述所有方法都不起作用，请不要担心。只需访问 [https://account.windowsazure.cn/organization](https://account.windowsazure.cn/organization)，以新组织的身份注册 Azure。完成注册过程后，你将会获得自己的 Azure AD 租户，该租户使用了你在注册期间选择的域名。在 [Azure 管理门户](https://manage.windowsazure.cn)中，可以通过导航到左侧导航栏中“Active Directory”来查找你的租户。
 
 在注册 Azure 的过程中，你需要提供信用卡详细信息。你可以放心地继续注册 - 在 Azure AD 中发布应用程序或者创建新租户时，我们不会向你收费。

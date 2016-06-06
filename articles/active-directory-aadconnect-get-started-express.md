@@ -42,7 +42,7 @@
 ![欢迎使用 Azure AD Connect](./media/active-directory-aadconnect-get-started-express/express.png)
 5. 在“连接到 Azure AD”屏幕上，输入 Azure AD 的 Azure 全局管理员用户名和密码。单击“下一步”。
 ![连接到 AAD](./media/active-directory-aadconnect-get-started-express/connectaad.png)
-如果你收到错误消息并且出现了连接问题，请参阅[排查连接问题](active-directory-aadconnect-troubleshoot-connectivity.md)。
+如果你收到错误消息并且出现了连接问题，请参阅[排查连接问题](/documentation/articles/active-directory-aadconnect-troubleshoot-connectivity)。
 6. 在“连接到 AD DS”屏幕上，输入企业管理员帐户的用户名和密码。可以使用 NetBios 或 FQDN 格式输入域部分，即 FABRIKAM\\administrator 或 fabrikam.com\\administrator。单击“下一步”。
 ![欢迎使用 Azure AD Connect](./media/active-directory-aadconnect-get-started-express/connectad.png)
 7. 在“已准备好配置”屏幕上，单击“安装”。

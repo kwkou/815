@@ -9,11 +9,14 @@
 
 <tags 
 	ms.service="active-directory" 
-        ms.date="10/30/2015"
-	wacn.date="04/11/2015" />
+        ms.date="04/07/2016"
+	wacn.date="06/03/2016" />
 
 
 # 什么是 Azure Active Directory？
+
+
+
 
 
 Azure Active Directory (Azure AD) 是 Microsoft 提供的基于多租户云的目录和标识管理服务。
@@ -90,4 +93,4 @@ Azure AD 的多租户、地理分布、高可用性设计意味着你可以依�
 - [使用 Azure Active Directory 组管理对资源的访问](/documentation/articles/active-directory-manage-groups)
 
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0516_2016-->

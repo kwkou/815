@@ -11,7 +11,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="01/25/2016"
-	wacn.date="04/28/2016" />
+	wacn.date="06/03/2016" />
 
 # 管理 Azure AD 目录
 
@@ -59,7 +59,7 @@ Azure AD 在大多数 Microsoft 云服务的后面提供核心目录和身份管
 
 - [Azure](https://account.windowsazure.cn/organization)
 - [Office 365](http://products.office.com/zh-cn/business/compare-office-365-for-business-plans)
-- [Microsoft Intune](https://account.manage.microsoft.com/Signup/MainSignUp.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&ali=1)
+- [Microsoft Intune](https://account.manage.microsoft.com)
 
 ### 管理 Azure 设置的默认目录
 

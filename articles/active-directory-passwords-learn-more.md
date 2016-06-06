@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="详细了解：Azure AD 密码管理 | Microsoft Azure" 
+	pageTitle="详细了解：Azure AD 密码管理 | Azure" 
 	description="有关 Azure AD 密码管理的高级主题，内容包括密码写回的工作原理、密码写回安全性、密码重置门户的工作原理，以及密码重置使用的数据。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -8,9 +8,9 @@
 	editor="billmath"/>
 
 <tags 
-	ms.service="active-directory"  
+	ms.service="active-directory"
 	ms.date="02/16/2016" 
-	wacn.date="04/28/2016"/>
+	wacn.date="06/06/2016"/>
 
 # 了解有关密码管理的详细信息
 如果你已部署密码管理，或只是想要在部署之前深入了解密码管理工作原理的技术细节，则本部分可让你大致了解该服务背后的技术概念。本部分将介绍以下内容：

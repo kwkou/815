@@ -10,7 +10,7 @@
 <tags
    ms.service="active-directory"
    ms.date="04/15/2016"
-   wacn.date="05/16/2016"/>
+   wacn.date="06/03/2016"/>
 
 # Azure AD Connect：自动升级
 此功能是随内部版本 1.1.105.0（于 2016 年 2 月发布）一起推出的。
@@ -65,7 +65,6 @@
 | 结果消息 | 说明 |
 | --- | --- |
 | **UpgradeAborted** | |
-| UpgradeAbortedSyncExeInUse | 服务器上打开了[同步服务管理器 UI](/documentation/articles/active-directory-aadconnectsync-service-manager-ui)。
 | UpgradeAbortedInsufficientDiskSpace | 没有足够的磁盘空间用于支持升级。 |
 | UpgradeAbortedSyncOrConfigurationInProgress | 安装向导正在运行，或者在计划程序外部计划了同步。 |
 | **UpgradeNotSupported** | |

@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="active-directory" 
-        ms.date="03/04/2016" 
+    ms.date="03/04/2016" 
 	wacn.date="04/28/2016"/>
 
 # 如何查看 Azure Access Control 服务返回的 SAML

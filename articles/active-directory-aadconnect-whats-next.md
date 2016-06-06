@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="03/16/2016"
-	wacn.date="04/14/2016"/>
+	wacn.date="06/03/2016"/>
 
 # 后续步骤以及如何管理 Azure AD Connect
 以下属于高级操作主题，介绍如何根据组织的需要和要求自定义 Azure Active Directory Connect。
@@ -56,9 +56,6 @@
 如果需要运行同步工作，你可以通过再次运行 Azure AD Connect 向导来实现此目的。需要提供 Azure AD 凭据。在向导中，选择“自定义同步选项”任务，然后在向导中一直单击“下一步”。最后，请确保已选中“初始配置完成后立即开始同步过程”框。
 
 <center>![云](./media/active-directory-aadconnect-whats-next/startsynch.png)</center>
-
-有关“Azure AD Connect 同步：计划程序”的详细信息，请参阅 [Azure AD Connect 计划程序](/documentation/articles/active-directory-aadconnectsync-feature-scheduler)
-
 
 ## Azure AD Connect 中提供的其他任务
 在完成 Azure AD Connect 的初始安装后，你随时可以从 Azure AD Connect 启动页或桌面快捷方式再次启动向导。在再次运行向导的过程中，你会发现，它会以“其他任务”的形式提供一些新选项。

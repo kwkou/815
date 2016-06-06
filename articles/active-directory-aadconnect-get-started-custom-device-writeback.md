@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure AD Connect：启用设备写回 | Microsoft Azure"
+	pageTitle="Azure AD Connect：启用设备写回 | Azure"
 	description="本文档详细说明如何使用 Azure AD Connect 启用设备写回功能" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -8,7 +8,7 @@
 	editor="curtand"/>
 
 <tags 
-	ms.service="active-directory"  
+	ms.service="active-directory" 
 	ms.date="01/21/2016"
 	wacn.date="04/13/2016"/>
 
@@ -18,11 +18,10 @@
 
 对 ADFS（2012 R2 或更高版本）保护的应用程序（信赖方信任），启用基于设备的条件性访问。
 
-这可以提供额外的安全性，确保只有受信任的设备才能访问应用程序。有关条件性访问的详细信息，请参阅[使用条件性访问管理风险](/documentation/articles/active-directory-conditional-access)
+这可以提供额外的安全性，确保只有受信任的设备才能访问应用程序。
 
 >[AZURE.NOTE]设备写回需要 Azure AD Premium 订阅。
 
-。
 
 >[AZURE.IMPORTANT]设备必须位于用户所在的同一个林中。由于设备必须写回到单个林，此功能当前不支持具有多个用户林的部署。
 
@@ -126,7 +125,6 @@
 ![Troubleshoot6](./media/active-directory-aadconnect-get-started-custom-device-writeback/troubleshoot6.png)
 
 ## 其他信息
-- [使用条件性访问管理风险](/documentation/articles/active-directory-conditional-access)
 - [使用 Azure Active Directory Device Registration 设置本地条件性访问](https://msdn.microsoft.com/library/azure/dn788908.aspx)
 
 ## 后续步骤

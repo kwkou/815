@@ -15,7 +15,6 @@
 # 向“登录”和“访问面板”页添加公司品牌
 
 > [AZURE.NOTE]
-> 
 - 只有在升级到 Azure Active Directory 高级或基本版后，才可以使用公司品牌这一功能。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions)。
 - 在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国 21Vianet 运营的 Azure 服务目前不支持 Azure Active Directory 高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](http://feedback.azure.com/forums/169401-azure-active-directory)与我们联系。
 
@@ -171,7 +170,6 @@ Azure AD 中的某些可自定义的元素具有多个用例。公司徽标可�
 ## 后续步骤
 
 - [Azure Active Directory 高级版入门](/documentation/articles/active-directory-get-started-premium)
-- [查看访问和使用情况报告](/documentation/articles/active-directory-view-access-usage-reports)
 
 <!--Image references-->
 [1]: ./media/active-directory-add-company-branding/SignInPage_beforecustomization.png

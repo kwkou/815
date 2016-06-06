@@ -38,7 +38,7 @@
 - [SsprActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprActivityEvent)：列出密码重置事件可用的列
 - [SsprRegistrationActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprRegistrationActivityEvent)：列出密码重置注册事件可用的列
 
-## <a name"view-password-reset-registration-activity"></a>查看密码重置注册活动
+## <a name="view-password-reset-registration-activity"></a> 查看密码重置注册活动
 
 密码重置注册活动报告显示你的组织中已发生的所有密码重置注册。对于已在密码重置注册门户 ([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)) 成功注册身份验证信息的所有用户，密码重置注册都显示在此报告中。
 
@@ -130,7 +130,7 @@
 我们无法访问你的本地密码重置服务。检查同步计算机的事件日志|已失败
 我们在重置用户的本地密码时遇到问题。检查同步计算机的事件日志 | 已失败
 此用户不是密码重置用户组的成员。将此用户添加到该组以解决此问题。|已失败
-已对此租户完全禁用密码重置。若要解决此问题，请参阅[此文](http://aka.ms/ssprtroubleshoot)。 | 已失败
+已对此租户完全禁用密码重置。若要解决此问题，请参阅[此文](/documentation/articles/active-directory-passwords-getting-started/#enable-users-to-reset-their-azure-ad-passwords)。 | 已失败
 用户已成功重置密码|已成功
 
 ## 密码重置文档的链接

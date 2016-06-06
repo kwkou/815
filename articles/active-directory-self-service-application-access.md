@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Active Directory 的自助应用程序访问和委派管理 | Microsoft Azure"
+	pageTitle="Azure Active Directory 的自助应用程序访问和委派管理 | Azure"
 	description="本文介绍如何使用 Azure Active Directory 启用自助应用程序访问和委派管理"
 	services="active-directory"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="02/09/2016"
-	wacn.date="05/13/2016"/>
+	wacn.date="06/06/2016"/>
 
 #Azure Active Directory 的自助应用程序访问和委派管理
 
@@ -41,8 +41,6 @@
 **6：**若要选择配置访问请求的审批工作流，请将“授予访问权限之前需要审批”设置为“是”。然后可以使用“审批人”按钮选择一个或多个审批人。
 
 审批人可以是组织中具有 Azure AD 帐户并且可能负责帐户预配、许可或组织在授予应用访问权限前要求执行的任何其他业务流程的任何用户。审批人甚至可以是一个或多个共享帐户组的组所有者，可以将用户分配给其中一个组，使他们能够通过共享帐户进行访问。
-
-如果不需要审批，用户会立即将应用程序添加到其 Azure AD 访问面板。这适用于应用程序已设置了[自动用户预配](/documentation/articles/active-directory-saas-app-provisioning)，或已设置[“用户管理的”密码 SSO 模式](/documentation/articles/active-directory-appssoaccess-whatis#password-based-single-sign-on)，而该模式中的用户已有帐户并知道密码的情况。
 
 **7：**如果应用程序已设置为使用基于密码的单一登录，则审批人还可以使用一个选项来代表每个用户设置 SSO 凭据。有关详细信息，请参阅下一部分中有关委派访问管理的信息。
 
@@ -84,14 +82,6 @@
 
 ![][3]
 
-* **用户使用其自己的密码登录** – 在此模式下，分配的用户知道其应用程序的用户名和密码，并且他们在首次登录应用程序时，系统会提示输入这些信息。这相当于[用户管理凭据](/documentation/articles/active-directory-appssoaccess-whatis#password-based-single-sign-on)的密码 SSO 方案。
-
-* **用户使用我管理的独立帐户自动登录** – 在此模式下，分配的用户在登录应用程序时不需要输入或知道其应用程序特定的凭据，而是由审批人在使用“添加用户”磁贴分配访问权限之后为每个用户设置凭据。当用户单击其访问面板或 Office 365 中的应用程序时，系统会使用审批人设置的凭据将他们自动登录。这相当于[管理员管理凭据](/documentation/articles/active-directory-appssoaccess-whatis#password-based-single-sign-on)的密码 SSO 方案。
-
-* **用户使用我管理的单个帐户自动登录** - 这是一种特殊方案，适用于所有分配的用户有权使用单个共享帐户进行访问的情况。此选项的最常见用例就是社交媒体应用程序，其中，组织有单个“公司”帐户，多个用户需要对该帐户进行更新。这也相当于[管理员管理凭据](/documentation/articles/active-directory-appssoaccess-whatis#password-based-single-sign-on)的密码 SSO 方案。不过，选择此选项后，系统将提示审批人输入单个共享帐户的用户名和密码。完成后，所有分配的用户在单击 Azure AD 访问面板或 Office 365 中的应用程序时，将使用此帐户登录。
-
-##其他资源
-- [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index)
 
 <!--Image references-->
 [1]: ./media/active-directory-self-service-application-access/ssaa_admin.PNG

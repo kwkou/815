@@ -8,7 +8,7 @@
 	editor="karavar"/>
 
 <tags 
-	ms.service="active-directory"  
+	ms.service="active-directory"
 	ms.date="03/21/2016"
 	wacn.date="04/06/2016"/>
 
@@ -21,8 +21,6 @@ Azure AD Connect Health 可帮助你监视和深入了解本地标识基础结�
 ![什么是 Azure AD Connect Health](./media/active-directory-aadconnect-health/aadconnecthealth2.png)
 
 将来对 Azure AD Connect Health 所做的更新将会包括附加的监视功能，以及深入分析其他标识组件的功能。因此，它将通过标识透视图提供单个仪表板，让你能拥有更稳健的集成环境，使用户能够充分利用该环境来增强工作能力。
-
-<!-- <center>![What is Azure AD Connect Health](./media/active-directory-aadconnect-health/logo1.png)</center> -->
 
 ## 为何使用 Azure AD Connect Health
 
@@ -41,20 +39,7 @@ Azure AD Connect Health 可帮助你监视和深入了解本地标识基础结�
 以下视频将概述适用于 AD FS 的 Azure AD Connect Health
 
 
-<!--
-## [用于同步的 Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health-sync)
-用于同步的 Azure AD Connect Health 可以监视和提供有关本地 Active Directory 与 Azure Active Directory 之间发生的同步的信息。用于同步的 Azure AD Connect Health 提供以下关键功能集：
 
-- 使用警报进行监视，以便在 Azure AD Connect 服务器（即同步引擎）状况不正常时知道这一点
-- 关键警报电子邮件通知
-- 包括延迟图表以同步操作和趋势保持同步的同步操作见解操作如窗体添加的更新、删除。
-- 速览同步属性有关的信息、上次成功导出到 Azure AD
-
-以下视频将概述用于同步的 Azure AD Connect Health
-
-[Azure Active Directory Connect Health：监视同步引擎](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/Azure-Active-Directory-Connect-Health-Monitoring-the-sync-engine)
-
--->
 ## Azure AD Connect Health 入门
 Azure AD Connect Health 很容易入门。请遵循以下步骤进行配置：
 
@@ -66,18 +51,6 @@ Azure AD Connect Health 很容易入门。请遵循以下步骤进行配置：
 
 >[AZURE.NOTE]请记住在查看 Azure AD Connect Health 仪表板中的任何数据之前，你将需要在目标服务器上安装 Azure AD Connect Health 代理。
 
-<!--
-## 下载并安装 Azure AD Connect Health 代理
-
-- 请参阅 Azure AD Connect Health 的[要求](/documentation/articles/active-directory-aadconnect-health-agent-install#Requirements)
-
-- 若要开始使用适用于 AD FS 的 Azure AD Connect Health，可在此处下载最新版本的代理：[下载适用于 AD FS 的 Azure AD Connect Health 代理](http://go.microsoft.com/fwlink/?LinkID=518973)。
-[](active-directory-aadconnect-health-agent-install.md#installing-the-azure-ad-connect-health-agent-for-ad-fs)
-
-- 若要开始使用用于同步的 Azure AD Connect Health，请下载并安装[最新版本的 Azure AD Connect](http://go.microsoft.com/fwlink/?linkid=615771)。在安装 Azure AD Connect 的过程中，将会安装 Health 代理（版本 1.0.9125.0 或更高）。Azure AD Connect 支持从以前的版本就地升级。
-
--->
-
 ## Azure AD Connect Health 门户
 可以使用 Azure AD Connect Health 门户来查看警报、性能监视情况和使用情况分析。单击 https://aka.ms/aadconnecthealth 可转到 Azure AD Connect Health 的主边栏选项卡。你可以将边栏选项卡视为窗口。在主边栏选项卡上，你将看到“快速启动”、“Azure AD Connect Health 中的服务”和其他配置选项。在屏幕快照下方是上述每个选项卡的简短说明。部署代理后，Azure AD Connect Health 将监视服务的服务标识符。
 
@@ -86,10 +59,6 @@ Azure AD Connect Health 很容易入门。请遵循以下步骤进行配置：
 - **快速启动** – 选择此项将打开“快速启动”边栏选项卡。在这里，你可以通过选择“获取工具”来下载 Azure AD Connect Health 代理，可以访问文档，还可以提供反馈。
 
 - **Active Directory 联合身份验证服务** – 此项表示 Azure AD Connect Health 当前监视的所有 AD FS 服务。选择其中一个实例后，就会打开一个边栏选项卡，其中包含该服务实例的相关信息。该信息包括概述、属性、警报、监视情况，以及使用情况分析。在[此处](/documentation/articles/active-directory-aadconnect-health-adfs)阅读有关功能的详细信息。
-
-<!--
-- **Azure Active Directory Connect (Sync)** – 表示 Azure AD Connect Health 当前正在监视的 Azure AD Connect 服务器。如果选择该项，边栏选项卡将会打开，其中显示了有关 Azure AD Connect 服务器的信息。在[此处](/documentation/articles/active-directory-aadconnect-health-sync.md)阅读有关功能的详细信息。
--->
 
 - **配置** – 使用此项可打开或关闭以下功能：
 
