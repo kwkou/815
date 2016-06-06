@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="03/04/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="04/20/2016"
+	wacn.date=""/>
 
 #使用 Hive JDBC 驱动程序连接到 Azure HDInsight 上的 Hive
 
@@ -131,6 +131,28 @@ SQuirreL SQL 是一种 JDBC 客户端，可用于通过 HDInsight 群集远程�
 
 >[AZURE.NOTE] 此示例是针对全球 Azure 编写的。对于 Azure 中国区，需在连接字符串中将“azurehdinsight.net”替换为“azurehdinsight.cn”。
 
+##故障排除
+
+### 尝试打开 SQL 连接时发生意外错误。
+
+__症状__：连接到 HDInsight 群集版本 3.3 或 3.4 时，你可能会遇到意外的错误。此错误的堆栈跟踪的开头为以下行：
+
+    java.util.concurrent.ExecutionException: java.lang.RuntimeException: java.lang.NoSuchMethodError: org.apache.commons.codec.binary.Base64.<init>(I)V
+    at java.util.concurrent.FutureTas...(FutureTask.java:122)
+    at java.util.concurrent.FutureTask.get(FutureTask.java:206)
+
+__原因__：之所以出现此错误，是因为 SQuirreL 使用的 common-codec.jar 文件版本，与 Hive JDBC 组件所需的、从 HDInsight 群集下载的文件版本不匹配。
+
+__解决方法__：若要解决此错误，请使用以下步骤。
+
+1. 从 HDInsight 群集下载 common-codec jar 文件。
+
+        scp USERNAME@CLUSTERNAME:/usr/hdp/current/hive-client/lib/common-codec*.jar ./common-codec.jar
+
+2. 退出 SQuirreL，然后转到系统上安装 SQuirreL 的目录。在 SquirreL 目录中的 `lib` 目录下，将现有的 common-codec.jar 替换为从 HDInsight 群集下载的文件。
+
+3. 重新启动 SQuirreL。连接到 HDInsight 上的 Hive 时，应不再会出现该错误。
+
 ##后续步骤
 
 现在，你已了解如何将 JDBC 与 Hive 配合使用，请使用以下链接来学习 Azure HDInsight 的其他用法。
@@ -140,4 +162,4 @@ SQuirreL SQL 是一种 JDBC 客户端，可用于通过 HDInsight 群集远程�
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig)
 * [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0530_2016-->
