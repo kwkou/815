@@ -6,12 +6,12 @@
    authors="Blackmist"
    manager="paulettm"
    editor="cgronlun"
-   tags="azure-portal"/>
+	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="04/22/2016"
+	wacn.date=""/>
 
 #使用适用于 Visual Studio 的 HDInsight 工具运行 Hive 查询
 
@@ -19,7 +19,7 @@
 
 在本文中，你将了解如何使用适用于 Visual Studio 的 HDInsight 工具将 Hive 查询提交到 HDInsight 群集。
 
-> [AZURE.NOTE]本文档未详细描述示例中使用的 HiveQL 语句的作用。有关此示例中使用的 HiveQL 的详细信息，请参阅[将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)。
+> [AZURE.NOTE] 本文档未详细描述示例中使用的 HiveQL 语句的作用。有关此示例中使用的 HiveQL 的详细信息，请参阅[将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)。
 
 ##<a id="prereq"></a>先决条件
 
@@ -27,7 +27,13 @@
 
 * Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Windows）
 
-* Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)、Visual Studio 2013 [Update 3](https://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs) 或 [Visual Studio Express 2013](http://www.microsoft.com/download/details.aspx?id=40769)
+* Visual Studio（以下版本之一）：
+
+    包含 [Update 4](https://www.microsoft.com/download/details.aspx?id=44921) 的 Visual Studio 2013 Community/Professional/Premium/Ultimate
+
+    Visual Studio 2015 (Community/Enterprise)
+
+- HDInsight tools for Visual Studio。有关安装和配置这些工具的信息，请参阅 [Get started using Visual Studio Hadoop tools for HDInsight（开始使用 Visual Studio Hadoop tools for HDInsight）](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)。
 
 ##<a id="run"></a> 使用适用于 Visual Studio 的 HDInsight 工具运行 Hive 查询
 
@@ -46,15 +52,14 @@
     * **DROP TABLE**：删除表和数据文件（如果该表已存在）。
     * **CREATE EXTERNAL TABLE**：在 Hive 中创建新的“外部”表。外部表仅在 Hive 中存储表定义；数据会保留在原始位置。
 
-        > [AZURE.NOTE]当你预期以外部源更新基础数据（例如自动化数据上载过程），或以其他 MapReduce 操作更新基础数据，但希望 Hive 查询始终使用最新数据时，必须使用外部表。
-        > <p>删除外部表**不会**删除数据，只会删除表定义。
+        > [AZURE.NOTE] 当你预期以外部源更新基础数据（例如自动化数据上载过程），或以其他 MapReduce 操作更新基础数据，但希望 Hive 查询始终使用最新数据时，必须使用外部表。<p>删除外部表**不会**删除数据，只会删除表定义。
 
     * **ROW FORMAT**：告知 Hive 如何设置数据的格式。在此情况下，每个日志中的字段以空格分隔。
     * **STORED AS TEXTFILE LOCATION**：让 Hive 知道数据的存储位置（example/data 目录），并且数据已存储为文本。
     * **SELECT**：选择其列 **t4** 包含值 **[ERROR]** 的所有行计数。这应会返回值 **3**，因为有三个行包含此值。
     * **INPUT\_\_FILE\_\_NAME LIKE '%.log'** - 告诉 Hive，我们只应返回以 .log 结尾的文件中的数据。此项将搜索限定于包含数据的 sample.log 文件，使搜索不会返回与所定义架构不符的其他示例数据文件中的数据。
 
-3. 从工具栏中，选择你要用于此查询的“HDInsight 群集”，然后选择“提交”以 Hive 作业形式运行语句。“Hive 作业摘要”将会出现并显示有关正在运行的作业的信息。在“作业状态”更改为“已完成”之前，使用“刷新”链接刷新作业信息。
+3. 从工具栏中，选择你要用于此查询的“HDInsight 群集”，然后选择“提交到 WebHCat”，以便使用 WebHCat 以 Hive 作业形式运行语句。如果 HiveServer2 在你的群集版本上可用，则也可以使用“通过 HiveServer2 执行”按钮提交作业。“Hive 作业摘要”将会出现并显示有关正在运行的作业的信息。在“作业状态”更改为“已完成”之前，使用“刷新”链接刷新作业信息。
 
 4. 使用“作业输出”链接查看此作业的输出。它应该会显示 `[ERROR] 3`，这是 SELECT 语句返回的值。
 
@@ -69,7 +74,7 @@
 
     * **CREATE TABLE IF NOT EXISTS**：创建表（如果该表尚不存在）。由于未使用 **EXTERNAL** 关键字，因此这是一个内部表，它存储在 Hive 数据仓库中并完全受 Hive 的管理。
 
-        > [AZURE.NOTE]与 **EXTERNAL** 表不同，删除内部表会同时删除基础数据。
+        > [AZURE.NOTE] 与**外部**表不同，删除内部表会同时删除基础数据。
 
     * **STORED AS ORC**：以优化行纵栏表 (ORC) 格式存储数据。这是高度优化且有效的 Hive 数据存储格式。
     * **INSERT OVERWRITE ...SELECT**：从包含 **[ERROR]** 的 **log4jLogs** 表中选择行，然后将数据插入 **errorLogs** 表中。
@@ -114,11 +119,15 @@
 
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+
+
+
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [Powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
@@ -126,4 +135,4 @@
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0530_2016-->
