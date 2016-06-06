@@ -21,7 +21,7 @@
 ## 创建和管理弹性数据库池的先决条件
 
 - 弹性数据库池只能在 Azure SQL 数据库 V12 服务器中使用。若要升级到 V12 并将数据库迁移直接到池中，请参阅[升级到 Azure SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server-powershell)。
-- 在使用 [Azure 门户](https://manage.windowsazure.cn)、[PowerShell](/documentation/articles/sql-database-elastic-pool-create-powershell) 和 .NET 客户端库（仅限 Azure 资源管理器）时，支持创建和管理弹性数据库池；而[管理门户](https://manage.windowsazure.cn)和服务管理命令不受支持。
+- 在使用 [Azure 管理门户](https://manage.windowsazure.cn)、[PowerShell](/documentation/articles/sql-database-elastic-pool-create-powershell) 和 .NET 客户端库（仅限 Azure 资源管理器）时，支持创建和管理弹性数据库池；而[管理门户](https://manage.windowsazure.cn)和服务管理命令不受支持。
 - 此外，还支持使用 [Transact-SQL](#transact-sql) 创建新的弹性数据库，以及将现有数据库移入和移出弹性数据库池。
 
 

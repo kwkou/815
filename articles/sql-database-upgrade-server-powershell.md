@@ -16,7 +16,6 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-upgrade-server-portal)
 - [PowerShell](/documentation/articles/sql-database-upgrade-server-powershell)
 
 

@@ -12,7 +12,7 @@ articles/sql-database/sql-database-get-started-tutorial.md
 
 在 Azure 门户中使用以下步骤创建 Azure SQL 数据库逻辑服务器。
 
-1. 如果当前未连接，请连接到 [Azure 经典管理门户](http://manage.windowsazure.cn)。
+1. 如果当前未连接，请连接到 [Azure 管理门户](http://manage.windowsazure.cn)。
 2. 单击“新建”，键入“SQL 数据库”，然后单击“SQL 数据库(新建逻辑服务器)”。
 3. 单击“SQL 数据库(新建逻辑服务器)”。
 4. 单击“创建”打开一个模板，以创建可托管单一数据库和弹性数据库池的空逻辑服务器。

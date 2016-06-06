@@ -20,7 +20,7 @@
 - [SQL Server 数据库引擎和 Azure SQL 数据库安全中心](https://msdn.microsoft.com/zh-cn/library/bb510589)
 
 ##更改逻辑服务器的管理密码
-- 在 [Azure 门户](https://manage.windowsazure.cn)中，单击“SQL Server”，从列表中选择服务器，然后单击“重置密码”。
+- 在 [Azure 管理门户](https://manage.windowsazure.cn)中，单击“SQL Server”，从列表中选择服务器，然后单击“重置密码”。
 ##帮助确保只允许经过授权的 IP 地址访问服务器
 
 ##在用户数据库中创建包含的数据库用户

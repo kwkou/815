@@ -71,7 +71,7 @@
     $DatabaseName = "nameofdatabasetoexport"
     $BlobName = "filename.bacpac"
 
-在 [Azure 门户](https://manage.windowsazure.cn)中，浏览到你的存储帐户以获取这些值。你可以单击存储帐户边栏选项卡中的“所有设置”，然后单击“密钥”，找到主访问密钥。
+在 [Azure 管理门户](https://manage.windowsazure.cn)中，浏览到你的存储帐户以获取这些值。你可以在存储帐户的下方单击“管理访问密钥”来找到主访问密钥。
 
     $StorageName = "storageaccountname"
     $ContainerName = "blobcontainername"

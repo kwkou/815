@@ -33,8 +33,6 @@
 
 [AZURE.INCLUDE [登录](../includes/azure-getting-started-portal-login.md)]
 
-[AZURE.INCLUDE [创建 SQL 数据库逻辑服务器](../includes/sql-database-create-new-server-portal.md)]
-
 [AZURE.INCLUDE [创建 SQL 数据库数据库](../includes/sql-database-create-new-database-portal.md)]
 
 [AZURE.INCLUDE [创建 SQL 数据库数据库](../includes/sql-database-create-new-server-firewall-portal.md)]
