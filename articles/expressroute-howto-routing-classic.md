@@ -15,7 +15,6 @@
 # 使用 PowerShell 创建和修改 ExpressRoute 线路的路由
 
 > [AZURE.SELECTOR]
-[Azure Portal - Resource Manager](/documentation/articles/expressroute-howto-routing-portal-resource-manager)
 [PowerShell - Resource Manager](/documentation/articles/expressroute-howto-routing-arm)
 [PowerShell - Classic](/documentation/articles/expressroute-howto-routing-classic)
 
@@ -63,9 +62,9 @@
 
 		Bandwidth                        : 200
 		CircuitName                      : MyTestCircuit
-		Location                         : Silicon Valley
+		Location                         : Beijing
 		ServiceKey                       : *********************************
-		ServiceProviderName              : equinix
+		ServiceProviderName              : Beijing Telecom Ethernet
 		ServiceProviderProvisioningState : Provisioned
 		Sku                              : Standard
 		Status                           : Enabled
@@ -156,9 +155,9 @@
 
 		Bandwidth                        : 200
 		CircuitName                      : MyTestCircuit
-		Location                         : Silicon Valley
+		Location                         : Beijing
 		ServiceKey                       : *********************************
-		ServiceProviderName              : equinix
+		ServiceProviderName              : Beijing Telecom Ethernet
 		ServiceProviderProvisioningState : Provisioned
 		Sku                              : Standard
 		Status                           : Enabled
@@ -227,6 +226,7 @@
 ## 后续步骤
 
 下一步，[将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)。
+
 - 有关工作流的详细信息，请参阅 [ExpressRoute 工作流](/documentation/articles/expressroute-workflows)。
 - 有关线路对等互连的详细信息，请参阅 [ExpressRoute 线路和路由域](/documentation/articles/expressroute-circuit-peerings)。
 

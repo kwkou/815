@@ -95,7 +95,7 @@ ExpressRoute 线路相当于经典部署模型与 Resource Manager 部署模型�
 
 ## 后续步骤
 
-- 有关工作流信息，请参阅 [ExpressRoute circuit provisioning workflows and circuit states（ExpressRoute 线路预配工作流和线路状态）](/documentation/articles/expressroute-workflows)。
+- 有关工作流信息，请参阅 [ExpressRoute 线路预配工作流和线路状态](/documentation/articles/expressroute-workflows)。
 - 配置 ExpressRoute 连接。
 
 	- [创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-arm)
