@@ -10,14 +10,14 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/08/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 
 # 使用 CLI 在 Azure 上创建 Linux VM
 
 [AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
 
-本文说明如何使用 Azure CLI 的 `azure vm quick-create` 命令在 Azure 上快速创建 Linux 虚拟机。`quick-create` 命令可创建带基本的基础结构的 VM，你可以将其用于构建某一概念的原型并非常快速地进行测试。可以将其视为指向 Linux bash shell 的最快方法。此项目需要一个资源管理器模式下 (`azure config mode arm`) 的 Azure 帐户（[获取试用版](/pricing/1rmb-trial/)] 和 [Azure CLI](/documentation/articles/xplat-cli-install)。
+本文说明如何使用 Azure CLI 的 `azure vm quick-create` 命令在 Azure 上快速创建 Linux 虚拟机。`quick-create` 命令可创建带基本的基础结构的 VM，你可以将其用于构建某一概念的原型并非常快速地进行测试。可以将其视为指向 Linux bash shell 的最快方法。此项目需要一个资源管理器模式下 (`azure config mode arm`) 的 Azure 帐户（[获取试用版](/pricing/1rmb-trial/)）和 [Azure CLI](/documentation/articles/xplat-cli-install)。
 
 ## 快速命令摘要
 

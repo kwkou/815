@@ -11,7 +11,7 @@
 <tags
 	ms.service="multiple"
 	ms.date="03/07/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # Azure Resource Manager (arm) 模式下的 Azure CLI 命令
 
