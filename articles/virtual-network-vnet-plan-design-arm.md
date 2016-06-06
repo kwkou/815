@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="02/08/2016"
-	wacn.date=""/>
+	wacn.date="06/06/2016"/>
 
 # 规划和设计 Azure 虚拟网络
 
