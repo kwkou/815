@@ -27,7 +27,8 @@
 
 首先，需要将数据磁盘附加到虚拟机。
 
-- 若要使用管理门户，请参阅 [How to attach a data disk to a Windows virtual machine（如何将数据磁盘附加到 Windows 虚拟机）](/documentation/articles/virtual-machines-windows-classic-attach-disk)。 
+- 若要使用门户，请参阅 [How to attach a data disk in the Azure portal（如何在 Azure 门户中附加数据磁盘）](/documentation/articles/virtual-machines-windows-attach-disk-portal)
+- 若要使用经典门户，请参阅 [How to attach a data disk to a Windows virtual machine（如何将数据磁盘附加到 Windows 虚拟机）](/documentation/articles/virtual-machines-windows-classic-attach-disk)。 
 
 
 ## 将 pagefile.sys 暂时移到 C 驱动器
