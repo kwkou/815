@@ -13,7 +13,7 @@
 
 # 服务总线消息传送异常
 
-本文列出了 Microsoft Azure 服务总线消息传送 API 生成的一些异常。这些参考信息可随时更改，请不时返回查看更新内容。
+本文列出了 Azure 服务总线消息传送 API 生成的一些异常。这些参考信息可随时更改，请不时返回查看更新内容。
 
 ## 异常类别
 
@@ -61,7 +61,7 @@
 
 有关服务总线和事件中心 .NET API 的完整参考，请参阅 [MSDN 上的 Azure 参考信息](https://msdn.microsoft.com/zh-cn/library/azure/mt419900.aspx)。
 
-若要了解有关[服务总线](/home/feateures/service-bus/)的详细信息，请参阅以下主题。
+若要了解有关[服务总线](/home/features/messaging/)的详细信息，请参阅以下主题。
 
 - [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview)
 - [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="服务总线高级和标准消息传送定价层概述 | Microsoft Azure"
+	pageTitle="服务总线高级和标准消息传送定价层概述 | Azure"
 	description="服务总线高级和标准消息传送"
 	services="service-bus"
 	documentationCenter=".net"

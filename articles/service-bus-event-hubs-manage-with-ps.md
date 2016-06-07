@@ -78,7 +78,6 @@ catch [System.Exception]
 2. 如果找到该命名空间，则报告它找到的内容。
 3. 如果找不到该命名空间，则会创建该命名空间，然后检索新创建的命名空间。
 
-	``` powershell
 		
 		$Namespace = "MyServiceBusNS"
 		$Location = "China East"
@@ -99,16 +98,14 @@ catch [System.Exception]
 		    $CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
 		    Write-Host "The [$Namespace] namespace in the [$Location] region has been successfully created."
 		}
-	```
+
 若要设置其他 Service Bus 实体，请从 SDK 创建 `NamespaceManager` 对象的一个实例。可以使用 [Get-AzureSBAuthorizationRule] cmdlet 来检索用于提供连接字符串的授权规则。此示例在 `$NamespaceManager` 变量中存储对 `NamespaceManager` 实例的引用。此脚本稍后将使用 `$NamespaceManager` 来设置其他实体。
 
-	``` powershell
 	$sbr = Get-AzureSBAuthorizationRule -Namespace $Namespace
 	# Create the NamespaceManager object to create the Event Hub
 	Write-Output "Creating a NamespaceManager object for the [$Namespace] namespace..."
 	$NamespaceManager = [Microsoft.ServiceBus.NamespaceManager]::CreateFromConnectionString($sbr.ConnectionString);
 	Write-Output "NamespaceManager object for the [$Namespace] namespace has been successfully created."
-	```
 
 ## 设置其他 Service Bus 实体
 
@@ -122,38 +119,37 @@ catch [System.Exception]
 2. 如果不存在，将创建 `EventHubDescription` 并将其传递到 `NamespaceManager` 类的 `CreateEventHubIfNotExists` 方法。
 3. 确定事件中心可用后，请使用 `ConsumerGroupDescription` 和 `NamespaceManager` 创建使用者组。
 
-	``` powershell
 
-	$Path  = "MyEventHub"
-	$PartitionCount = 12
-	$MessageRetentionInDays = 7
-	$UserMetadata = $null
-	$ConsumerGroupName = "MyConsumerGroup"
 
-	# Check if the Event Hub already exists
-	if ($NamespaceManager.EventHubExists($Path))
-	{
-	    Write-Output "The [$Path] event hub already exists in the [$Namespace] namespace."  
-	}
-	else
-	{
-	    Write-Output "Creating the [$Path] event hub in the [$Namespace] namespace: PartitionCount=[$PartitionCount] MessageRetentionInDays=[$MessageRetentionInDays]..."
-	    $EventHubDescription = New-Object -TypeName Microsoft.ServiceBus.Messaging.EventHubDescription -ArgumentList $Path
-	    $EventHubDescription.PartitionCount = $PartitionCount
-	    $EventHubDescription.MessageRetentionInDays = $MessageRetentionInDays
-	    $EventHubDescription.UserMetadata = $UserMetadata
-	    $EventHubDescription.Path = $Path
-	    $NamespaceManager.CreateEventHubIfNotExists($EventHubDescription);
-	    Write-Output "The [$Path] event hub in the [$Namespace] namespace has been successfully created."
-	}
-
-	# Create the consumer group if it doesn't exist
-	Write-Output "Creating the consumer group [$ConsumerGroupName] for the [$Path] event hub..."
-	$ConsumerGroupDescription = New-Object -TypeName Microsoft.ServiceBus.Messaging.ConsumerGroupDescription -ArgumentList $Path, $ConsumerGroupName
-	$ConsumerGroupDescription.UserMetadata = $ConsumerGroupUserMetadata
-	$NamespaceManager.CreateConsumerGroupIfNotExists($ConsumerGroupDescription);
-	Write-Output "The consumer group [$ConsumerGroupName] for the [$Path] event hub has been successfully created."
-	```
+    	$Path  = "MyEventHub"
+    	$PartitionCount = 12
+    	$MessageRetentionInDays = 7
+    	$UserMetadata = $null
+    	$ConsumerGroupName = "MyConsumerGroup"
+    
+    	# Check if the Event Hub already exists
+    	if ($NamespaceManager.EventHubExists($Path))
+    	{
+    	    Write-Output "The [$Path] event hub already exists in the [$Namespace] namespace."  
+    	}
+    	else
+    	{
+    	    Write-Output "Creating the [$Path] event hub in the [$Namespace] namespace: PartitionCount=[$PartitionCount] MessageRetentionInDays=[$MessageRetentionInDays]..."
+    	    $EventHubDescription = New-Object -TypeName Microsoft.ServiceBus.Messaging.EventHubDescription -ArgumentList $Path
+    	    $EventHubDescription.PartitionCount = $PartitionCount
+    	    $EventHubDescription.MessageRetentionInDays = $MessageRetentionInDays
+    	    $EventHubDescription.UserMetadata = $UserMetadata
+    	    $EventHubDescription.Path = $Path
+    	    $NamespaceManager.CreateEventHubIfNotExists($EventHubDescription);
+    	    Write-Output "The [$Path] event hub in the [$Namespace] namespace has been successfully created."
+    	}
+    
+    	# Create the consumer group if it doesn't exist
+    	Write-Output "Creating the consumer group [$ConsumerGroupName] for the [$Path] event hub..."
+    	$ConsumerGroupDescription = New-Object -TypeName Microsoft.ServiceBus.Messaging.ConsumerGroupDescription -ArgumentList $Path, $ConsumerGroupName
+    	$ConsumerGroupDescription.UserMetadata = $ConsumerGroupUserMetadata
+    	$NamespaceManager.CreateConsumerGroupIfNotExists($ConsumerGroupDescription);
+    	Write-Output "The consumer group [$ConsumerGroupName] for the [$Path] event hub has been successfully created."
 
 ### 创建队列
 

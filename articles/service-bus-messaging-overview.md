@@ -25,7 +25,7 @@ Azure 服务总线消息传送是一项可靠的信息传送服务。此服务�
 
 ## 中继消息传送
 
-服务总线的[中继](/documentation/articles/service-bus-relay-overview)组件是一种集中式（但负载高度平衡的）服务，支持各种不同的传输协议和 Web 服务标准。包括 SOAP、WS-* 甚至 REST。[中继服务](service-bus-dotnet-how-to-use-relay.md)提供了各种不同的中继连接选项，并且可以在有可能时帮助协商直接对等连接。服务总线针对使用 Windows Communication Foundation (WCF) 的 .NET 开发人员在性能与可用性方面进行了优化，并且通过 SOAP 和 REST 接口提供到中继服务的完全访问。这样就可以将任何 SOAP 或 REST 编程环境与服务总线进行集成。
+服务总线的[中继](/documentation/articles/service-bus-relay-overview)组件是一种集中式（但负载高度平衡的）服务，支持各种不同的传输协议和 Web 服务标准。包括 SOAP、WS-* 甚至 REST。[中继服务](/documentation/articles/service-bus-dotnet-how-to-use-relay)提供了各种不同的中继连接选项，并且可以在有可能时帮助协商直接对等连接。服务总线针对使用 Windows Communication Foundation (WCF) 的 .NET 开发人员在性能与可用性方面进行了优化，并且通过 SOAP 和 REST 接口提供到中继服务的完全访问。这样就可以将任何 SOAP 或 REST 编程环境与服务总线进行集成。
 
 中继服务支持传统的单向消息传送、请求/响应消息传送和对等消息传送。它还支持 Internet 范围的事件分发，以实现发布 - 订阅方案和双向套接字通信，从而提高点到点通信效率。在中继消息模式中，本地服务会通过出站端口连接至中继服务，并创建双向套接字用于绑定至特定集合地址的通信。客户端然后可以通过将消息发送到抵达会合地址的中继服务来与内部服务通信。中继服务接着通过已部署的双向套接字将消息“中继”到本地服务。客户端不需要与本地服务建立直接连接，也不需要了解服务所在的位置，并且本地服务无需在防火墙上打开任何入站端口。
 
