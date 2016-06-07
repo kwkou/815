@@ -6,86 +6,59 @@
 	authors="iainfoulds"
 	manager="timlt"
 	editor=""
-	tags="azure-service-management,azure-resource-manager"/>
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/12/2016"
-	wacn.date="05/24/2016"/>
+	wacn.date=""/>
 
-# 创建 Linux 虚拟机的不同方式
+# 使用 Resource Manager 创建 Linux 虚拟机的不同方式
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
 
 Azure 提供不同的方法来创建 VM，以符合不同的用户和目的。本文汇总了这些方法的差异，以及在创建 Linux 虚拟机时可使用的选项。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+Azure Resource Manager 模板提供不同的方法来创建虚拟机，并将虚拟机及其不同资源作为一个逻辑部署单元进行管理。若要了解有关 Azure 资源管理器以及如何将资源作为一个单元管理的详细信息，请参阅[概述](/documentation/articles/resource-group-overview)。
 
 ## 工具选项
 
-### GUI：Azure 管理门户 
+### 命令 shell：Azure CLI 
 
-Azure 管理门户的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 [Azure 管理门户](https://manage.windowsazure.cn)创建 VM。如需一般性说明，请参阅[创建自定义虚拟机][]，然后从“库”中选择任意 Linux 映像。
+通过 CLI 使用 Azure 命令行界面。请参阅以下有关使用 Azure CLI 的教程：
 
-### 命令 Shell：Azure CLI
+* [Create a Linux VM from the CLI for dev and test（从 CLI 创建用于开发和测试的 Linux VM）](/documentation/articles/virtual-machines-linux-quick-create-cli) 
 
-如果你喜欢使用命令行界面，请选择适用于 Mac、Linux 和 Windows 用户的 Azure 命令行界面 (CLI)。
+* [使用 Azure 模板创建受保护的 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template)
 
-对于经典部署模型，请参阅[使用 Azure CLI 创建自定义 Linux 虚拟机](/documentation/articles/virtual-machines-linux-classic-create-custom)。
+### GUI：Azure 门户
 
+[Azure 门户](https://portal.azure.cn)的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 Azure 门户创建 VM：
 
-### 开发环境：Visual Studio
-
-Visual Studio 也支持创建 Azure 虚拟机。对于经典部署模型，请阅读[使用 Visual Studio 创建用于网站的虚拟机][]。
+* [使用 Azure 门户创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-portal-create) 
 
 ## 操作系统和映像选项
 
 根据要运行的操作系统选择映像。Azure 及其合作伙伴提供了许多映像，其中一些映像包括应用程序和工具。或者，使用你自己的某一映像。
 
-
 ### Azure 映像
 
-在所有上述文章中，你可以轻松使用现有 Azure 映像来创建虚拟机，并针对联网、负载平衡等目的自定义该虚拟机。门户将提供一个库，或者为 Azure 中的映像提供映像列表。你可以使用命令行获取类似的列表。例如，在 Azure CLI 中，运行 `azure vm image list` 可按位置和发布者获取所有可用映像的列表。
-
+在所有上述文章中，你可以轻松使用现有 Azure 映像来创建虚拟机，并针对联网、负载平衡等目的自定义该虚拟机。门户提供 Azure 库，其中包含 Azure 提供的映像。你可以使用命令行获取类似的列表。例如，在 Azure CLI 中，运行 `azure vm image list` 可按位置和发布者获取所有可用映像的列表。请参阅 [Navigate and select Azure virtual machine images with the Azure CLI（使用 Azure CLI 导航并选择 Azure 虚拟机映像）](/documentation/articles/virtual-machines-linux-cli-ps-findimage)。
 
 ### 使用你自己的映像
 
-通过 *捕获* 现有 Azure 虚拟机来使用基于该 VM 的映像，或者上载你自己的存储在虚拟硬盘 (VHD) 中的映像。对于经典部署模型，请参阅[如何使用 CLI 捕获将用作模板的 Linux 虚拟机][]和[创建并上载包含 Linux 操作系统的虚拟硬盘][]。
+通过捕获现有 Azure 虚拟机来使用基于该 VM 的映像，或者上载你自己的存储在虚拟硬盘 (VHD) 中的映像。有关详细信息，请参阅：
+
+* [Azure endorsed distributions（Azure 认可的分发版）](/documentation/articles/virtual-machines-linux-endorsed-distros)
+
+* [Information for non-endorsed distributions（有关未认可分发版的信息）](/documentation/articles/virtual-machines-linux-create-upload-generic)
+
+* [How to capture a Linux virtual machine as a Resource Manager template（如何捕获用作 Resource Manager 模板的 Linux 虚拟机）](/documentation/articles/virtual-machines-linux-capture-image)
 
 ## 后续步骤
 
-[登录到虚拟机][]
+* 尝试阅读以下教程之一，了解如何通过[门户](/documentation/articles/virtual-machines-linux-portal-create)、[CLI](/documentation/articles/virtual-machines-linux-quick-create-cli) 或 Azure Resource Manager [模板](/documentation/articles/virtual-machines-linux-cli-deploy-templates)创建 Linux VM。
 
-[附加数据磁盘][]
+* 创建 Linux VM 后，可以轻松[添加数据磁盘](/documentation/articles/virtual-machines-linux-add-disk)。
 
-## 其他资源
-
-[基本配置测试环境][]
-
-<!-- LINKS -->
-[overview]: /documentation/articles/resource-group-overview
-
-[Create a Virtual Machine Running Windows]: /documentation/articles/virtual-machines-windows-hero-tutorial
-[Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-quick-create-cli
-
-[Equivalent Resource Manager and Service Management Commands for VM Operations with the Azure CLI for Mac, Linux, and Windows]: /documentation/articles/virtual-machines-windows-cli-manage
-[Deploy and Manage Virtual Machines using Azure Resource Manager Templates and the Azure CLI]: /documentation/articles/virtual-machines-linux-cli-deploy-templates
-[Deploy and Manage Virtual Machines using Azure Resource Manager Templates and PowerShell]: /documentation/articles/virtual-machines-windows-ps-manage
-
-[How to Create a Custom Virtual Machine Running Linux in Azure]: /documentation/articles/virtual-machines-linux-classic-create-custom
-[如何使用 CLI 捕获将用作模板的 Linux 虚拟机]: /documentation/articles/virtual-machines-linux-classic-capture-image
-
-[创建并上载包含 Linux 操作系统的虚拟硬盘]: /documentation/articles/virtual-machines-linux-classic-create-upload-vhd
-
-[使用 Visual Studio 创建用于网站的虚拟机]: /documentation/articles/virtual-machines-linux-classic-web-app-visual-studio
-[Deploy Azure Resources Using the Compute, Network, and Storage .NET Libraries]: /documentation/articles/virtual-machines-windows-csharp
-
-[登录到虚拟机]: /documentation/articles/virtual-machines-linux-classic-log-on
-
-[附加数据磁盘]: /documentation/articles/virtual-machines-linux-classic-attach-disk
-
-[基本配置测试环境]: /documentation/articles/virtual-machines-windows-classic-test-config-env
-[Azure 混合云测试环境]: /documentation/articles/virtual-machines-windows-classic-hybrid-test-env
-
-[Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-quick-create-cli
-[创建自定义虚拟机]: /documentation/articles/virtual-machines-linux-classic-createportal
-
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0503_2016-->
