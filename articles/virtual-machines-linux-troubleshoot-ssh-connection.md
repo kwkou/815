@@ -44,7 +44,7 @@
 			 azure vm extension set vmname VMAccessForLinux Microsoft.OSTCExtensions 1.* --private-config-path PrivateConf.json
 	
 
-2. **重新启动**虚拟机。在 [Azure 管理门户](https://manage.windowsazure.cn)中，单击“虚拟机”> 你的 Windows 虚拟机 >“重新启动”。
+2. **重新启动**虚拟机。在 [Azure 管理门户](https://manage.windowsazure.cn)中，单击“虚拟机”> 你的 Linux 虚拟机 >“重新启动”。
 3. [调整虚拟机的大小](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx)。
 
 4. 按照[如何为基于 Linux 的虚拟机重置密码或 SSH](/documentation/articles/virtual-machines-linux-classic-reset-access) 中的说明，在虚拟机上执行以下操作：
