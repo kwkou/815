@@ -7,8 +7,8 @@
 	manager="adinah" 
 	editor=""/>
 <tags ms.service="storage"
-	ms.date="02/14/2016" 
-    wacn.date="04/11/2016"
+	ms.date="05/09/2016" 
+    wacn.date="06/06/2016"
     />
 # 启用 Azure 存储空间度量值并查看度量值数据
 
@@ -197,4 +197,4 @@
 ## 后续步骤：
 [启用存储日志记录和访问日志数据](https://msdn.microsoft.com/zh-cn/library/dn782840.aspx)
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0530_2016-->

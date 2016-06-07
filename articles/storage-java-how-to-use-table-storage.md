@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="如何通过 Java 使用表存储 | Azure" 
-	description="了解如何在 Azure 中使用表存储服务。代码示例用 Java 代码编写。" 
+	description="使用 Azure 表存储（一种 NoSQL 数据存储）将结构化数据存储在云中。"
 	services="storage" 
 	documentationCenter="java" 
 	authors="rmcmurray" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/29/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="05/04/2016"
+	wacn.date="06/06/2016"/>
 
 
 # 如何通过 Java 使用表存储
@@ -560,4 +560,4 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [ Azure 表：Upsert 和查询投影简介]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0530_2016-->

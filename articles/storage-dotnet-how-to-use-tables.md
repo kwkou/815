@@ -1,6 +1,6 @@
 <properties
 	pageTitle="通过 .NET 开始使用 Azure 表存储 | Azure"
-	description="使用 Azure 表存储和 Microsoft 的 NoSQL 数据存储将结构化的数据存储在云中。立即开始使用简单的表存储操作，包括创建和删除表和插入、更新、删除和查询数据。"
+	description="使用 Azure 表存储（一种 NoSQL 数据存储）将结构化数据存储在云中。"
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="04/07/2016"
-	wacn.date="05/16/2016"/>
+	ms.date="04/29/2016"
+	wacn.date="06/06/2016"/>
 
 
 # 通过 .NET 开始使用 Azure 表存储
@@ -452,10 +452,10 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
   [Blob9]: ./media/storage-dotnet-how-to-use-table-storage/blob9.png
 
   [“Upsert 和查询投影介绍”博客文章]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
-  [.NET 客户端库引用]: http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx
+  [.NET 客户端库引用]: https://msdn.microsoft.com/zh-cn/library/mt347887.aspx
   [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
   [配置连接字符串]: http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [空间]: http://nuget.org/packages/System.Spatial/5.0.2
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0530_2016-->

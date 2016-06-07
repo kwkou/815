@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="04/06/2016"
-	wacn.date="05/23/2016"/>
+	ms.date="04/29/2016"
+	wacn.date="06/06/2016"/>
 
 # 监视、诊断和排查 Azure 存储空间问题 
 
@@ -73,7 +73,7 @@
 
 ![][1]
 
-图 1：监视、诊断和故障排除
+*图 1：监视、诊断和故障排除*
 
 本指南的主要目标受众是开发使用 Azure 存储服务的联机服务的开发人员以及负责管理此类联机服务的 IT 专业人员。本指南的目标是：
 
@@ -484,7 +484,7 @@ Microsoft.WindowsAzure.Storage|错误|1|85d077ab -…|重试策略不允许重�
 
 - 通常，当你创建 SAS 供客户端立即使用时，不应设置开始时间。如果使用当前时间生成 SAS 的主机与存储服务之间存在较小的时钟差异，则存储服务有可能收到尚未生效的 SAS。
 - 不应在 SAS 上设置太短的到期时间。同样，生成 SAS 的主机与存储服务之间的较小时钟差异可能会导致 SAS 似乎早于预期到期。
-- SAS 密钥中的版本参数（例如 **sv=2015-04-05**）是否与您正在使用的存储客户端库的版本匹配？ 我们建议你始终使用最新版的[存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)。有关 SAS 令牌版本控制及客户端库版本的依赖项的详细信息，请参阅 [Azure 存储空间的新增功能](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/14/what-s-new-for-microsoft-azure-storage-at-teched-2014.aspx)。
+- SAS 密钥中的版本参数（例如 **sv=2015-04-05**）是否与您正在使用的存储客户端库的版本匹配？ 我们建议你始终使用最新版的[存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)。有关 SAS 令牌版本控制的详细信息，请参阅 [Azure 存储空间的新增功能](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/14/what-s-new-for-microsoft-azure-storage-at-teched-2014.aspx)。
 - 如果你重新生成存储访问密钥，则可能会使任何现有的 SAS 令牌无效。如果你生成的 SAS 令牌具有较长的到期时间供客户端应用程序缓存，这可能是个问题。
 
 如果你使用存储客户端库生成 SAS 令牌，则可轻松生成有效令牌。但是，如果您使用的是存储 REST API 并手动构造 SAS 令牌，则应仔细阅读 MSDN 上的主题<a href="http://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx" target="_blank">使用共享访问签名委托访问</a>。
@@ -614,7 +614,7 @@ e2d06d78-... | 重试策略不允许重试。操作失败，远程服务器返�
 
 > [AZURE.NOTE] 在排查客户端 JavaScript 问题时，可以使用 Internet Explorer 中的 F12 开发人员工具来跟踪浏览器与存储服务之间交换的消息。
 
-之所以发生这些错误是因为 Web 浏览器实施了“同源策略”安全限制，以防止网页调用与它来自的域不同的域中的 API。<a href="http://www.w3.org/Security/wiki/Same_Origin_Policy" target="_blank"></a>
+之所以发生这些错误是因为 Web 浏览器实施了“<a href="http://www.w3.org/Security/wiki/Same_Origin_Policy" target="_blank">同源策略</a>”安全限制，以防止网页调用与它来自的域不同的域中的 API。
 
 若要解决此 JavaScript 问题，可以为客户端访问的存储服务配置跨域资源共享 (CORS)。有关详细信息，请参阅 MSDN 上的 <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn535601.aspx" target="_blank">Azure 存储空间服务的跨域资源共享 (CORS) 支持</a>。
 
@@ -783,7 +783,7 @@ WireShark 将在 **packetlist** 窗口中突出显示存在的任何错误。您
 
 ![][7]
 
-您还可以选择查看 TCP 数据（如果应用程序层看到该数据），方法是右键单击 TCP 数据，然后选择“跟踪 TCP 流”。当你不使用捕获筛选器捕获转储时，此方法特别有用。有关详细信息，请参阅<a href="http://www.wireshark.org/docs/wsug_html_chunked/ChAdvFollowTCPSection.html" target="_blank">“此处”。</a>
+您还可以选择查看 TCP 数据（如果应用程序层看到该数据），方法是右键单击 TCP 数据，然后选择“跟踪 TCP 流”。当你不使用捕获筛选器捕获转储时，此方法特别有用。有关详细信息，请参阅“此处”。<a href="http://www.wireshark.org/docs/wsug_html_chunked/ChAdvFollowTCPSection.html" target="_blank"></a>
 
 ![][8]
 
@@ -903,7 +903,7 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 [附录 2：使用 Wireshark 捕获网络流量]: #appendix-2
 [附录 3：使用 Microsoft Message Analyzer 捕获网络流量]: #appendix-3
 [附录 4：使用 Excel 查看度量值和日志数据]: #appendix-4
-[附录 5：使用 Application Insights for Visual Studio Team Services 进行监视]: #appendix-5
+
 
 <!--Image references-->
 [1]: ./media/storage-monitoring-diagnosing-troubleshooting/overview.png
@@ -916,5 +916,4 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 [9]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-1.png
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-2.png
 
-
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0530_2016-->

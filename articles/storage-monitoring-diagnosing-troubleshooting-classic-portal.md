@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="04/06/2016"
-	wacn.date="05/23/2016"/>
+	ms.date="04/29/2016"
+	wacn.date="06/06/2016"/>
 
 # 监视、诊断和排查 Azure 存储空间问题
 
@@ -22,7 +22,7 @@
 
 若要成功管理此类应用程序，应主动监视这些应用程序，并了解如何诊断和排查这些应用程序及其相关技术的所有方面的问题。作为 Azure 存储服务的用户，你应持续监视你的应用程序所用的存储服务是否出现任何意外的行为更改（如比正常响应时间慢），并使用日志记录收集更详细的数据并深入地分析问题。从监视和日志记录获取的诊断信息将有助于确定应用程序所遇到问题的根本原因。然后，你可以排查该问题，并确定可以执行以更正该问题的相应步骤。Azure 存储空间是一项核心 Azure 服务，它是客户部署到 Azure 基础结构的大多数解决方案的重要组成部分。Azure 存储空间提供的功能可以简化监视、诊断和排查基于云的应用程序中的存储问题的过程。
 
-有关 Azure 存储空间应用程序中的端到端故障排除的动手指导，请参阅[端到端故障排除 - 使用 Azure 存储空间指标和日志记录、AzCopy 和 Message Analyzer](../storage-e2e-troubleshooting/)。
+有关 Azure 存储空间应用程序中的端到端故障排除的动手指导，请参阅[端到端故障排除 - 使用 Azure 存储空间指标和日志记录、AzCopy 和 Message Analyzer](/documentation/articles/storage-e2e-troubleshooting)。
 
 + [介绍]
 	+ [本指南的组织方式]
@@ -73,7 +73,7 @@
 
 ![][1]
 
-图 1：监视、诊断和故障排除
+*图 1：监视、诊断和故障排除*
 
 本指南的主要目标受众是开发使用 Azure 存储服务的联机服务的开发人员以及负责管理此类联机服务的 IT 专业人员。本指南的目标是：
 
@@ -104,7 +104,7 @@
 
 ![][2]
 
-图 2 在 Azure 经典门户中查看存储度量值
+*图 2 在 Azure 经典门户中查看存储度量值*
 
 你应通过以下方式持续监视 Azure 应用程序以确保它们正常运行并按预期执行操作：
 
@@ -403,7 +403,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 较高的 **AverageServerLatency** 值也可能是设计欠佳的表或查询的症状，它会导致扫描操作或执行追加/前面预置反模式。有关详细信息，请参阅“[度量值显示 PercentThrottlingError 增加]”。
 
-> [AZURE.NOTE]你可以找到一份包括此处应注意的其他问题的全面的核对清单：[设计基于可伸缩和高性能存储的应用程序清单](/documentation/articles/storage-performance-checklist)。
+> [AZURE.NOTE] 你可以在此处找到一份全面的性能清单：[Azure 存储空间性能和可伸缩性清单](/documentation/articles/storage-performance-checklist)。
 
 ### <a name="you-are-experiencing-unexpected-delays-in-message-delivery"></a>队列上的消息传递出现意外的延迟
 
@@ -481,7 +481,8 @@ Microsoft.WindowsAzure.Storage|错误|1|85d077ab -…|重试策略不允许重�
 
 - 通常，当你创建 SAS 供客户端立即使用时，不应设置开始时间。如果使用当前时间生成 SAS 的主机与存储服务之间存在较小的时钟差异，则存储服务有可能收到尚未生效的 SAS。
 - 不应在 SAS 上设置太短的到期时间。同样，生成 SAS 的主机与存储服务之间的较小时钟差异可能会导致 SAS 似乎早于预期到期。
-- SAS 密钥中的版本参数（例如 **sv=2012-02-12**）是否与您正在使用的存储客户端库的版本匹配。应始终使用最新版的存储客户端库。有关 SAS 令牌版本控制及客户端库版本的依赖项的详细信息，请参阅 <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/14/what-s-new-for-microsoft-azure-storage-at-teched-2014.aspx" target="_blank">Azure 存储空间的新增功能</a>。
+- SAS 密钥中的版本参数（例如 **sv=2012-02-12**）是否与您正在使用的存储客户端库的版本匹配。应始终使用最新版的存储客户端库。有关 SAS 令牌版本控制的详细信息，请参阅 [Azure 存储空间的新增功能](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/14/what-s-new-for-microsoft-azure-storage-at-teched-2014.aspx)。
+- 
 - 如果你重新生成存储访问密钥（在 Azure 经典门户中存储帐户的任意页上单击“管理访问密钥”），这可能会使任何现有的 SAS 令牌无效。如果你生成的 SAS 令牌具有较长的到期时间供客户端应用程序缓存，这可能是个问题。
 
 如果你使用存储客户端库生成 SAS 令牌，则可轻松生成有效令牌。但是，如果您使用的是存储 REST API 并手动构造 SAS 令牌，则应仔细阅读 MSDN 上的主题<a href="http://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx" target="_blank">使用共享访问签名委托访问</a>。
@@ -611,7 +612,7 @@ e2d06d78-... | 重试策略不允许重试。操作失败，远程服务器返�
 
 > [AZURE.NOTE]在排查客户端 JavaScript 问题时，可以使用 Internet Explorer 中的 F12 开发人员工具来跟踪浏览器与存储服务之间交换的消息。
 
-之所以发生这些错误是因为 Web 浏览器实施了<a href="http://www.w3.org/Security/wiki/Same_Origin_Policy" target="_blank">“同源策略”</a>安全限制，以防止网页调用与它来自的域不同的域中的 API。
+之所以发生这些错误是因为 Web 浏览器实施了“<a href="http://www.w3.org/Security/wiki/Same_Origin_Policy" target="_blank">同源策略</a>”安全限制，以防止网页调用与它来自的域不同的域中的 API。
 
 若要解决此 JavaScript 问题，可以为客户端访问的存储服务配置跨域资源共享 (CORS)。有关详细信息，请参阅 MSDN 上的 <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn535601.aspx" target="_blank">Azure 存储空间服务的跨域资源共享 (CORS) 支持</a>。
 
@@ -665,7 +666,7 @@ Timestamp|操作|结果|容器名称|客户端请求 ID
 请务必注意，这些操作已成功完成，因此不会影响其他度量值，如可用性。成功执行但可能会导致失败的 HTTP 状态代码的一些操作示例包括：
 - **ResourceNotFound**（未找到 404），例如，对不存在的 Blob 进行 GET 请求时生成。
 - **ResouceAlreadyExists**（冲突 409），例如，在资源已存在的情况下进行 **CreateIfNotExist** 操作时生成。
-- **ConditionNotMet**（未修改 304），例如，进行条件操作时生成，例如仅在自上次操作以来图像已更新时，客户端才会发送 **ETag** 值和一个 HTTP **If-None-Match** 标头来请求此图像。
+- **ConditionNotMet**（未修改 304），例如，进行条件操作时生成，例如仅在自上次操作以来映像已更新时，客户端才会发送 **ETag** 值和一个 HTTP **If-None-Match** 标头来请求此映像。
 
 可以在<a href="http://msdn.microsoft.com/zh-cn/library/azure/dd179357.aspx" target="_blank">常见的 REST API 错误代码</a>页上找到存储服务返回的常见 REST API 错误代码的列表。
 
@@ -829,7 +830,7 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 - 在“文本导入向导”的第 1 步中，选择“带分隔符”。
 
 在“文本导入向导”的第 1 步中，选择“分号”作为唯一的分隔符，然后选择双引号作为“文本限定符”。然后单击“完成”，并选择将数据放入工作簿中的位置。
-
+<!--
 ### <a name="appendix-5"></a>附录 5：使用 Application Insights for Visual Studio Team Services 进行监视
 
 在性能和可用性监视过程中，你还可以使用用于 Visual Studio Team Services 的 Application Insights 功能。此工具可以：
@@ -839,7 +840,7 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 
 在撰写本文时 Application Insights 处于预览状态。你可以在 <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn481095.aspx" target="_blank">MSDN 上的 Application Insights for Visual Studio Team Services</a> 中找到详细信息。
 
-
+-->
 <!--Anchors-->
 [介绍]: #introduction
 [本指南的组织方式]: #how-this-guide-is-organized
@@ -899,7 +900,7 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 [附录 2：使用 Wireshark 捕获网络流量]: #appendix-2
 [附录 3：使用 Microsoft Message Analyzer 捕获网络流量]: #appendix-3
 [附录 4：使用 Excel 查看度量值和日志数据]: #appendix-4
-[附录 5：使用 Application Insights for Visual Studio Team Services 进行监视]: #appendix-5
+
 
 <!--Image references-->
 [1]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/overview.png
@@ -913,4 +914,4 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 [9]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/mma-screenshot-1.png
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/mma-screenshot-2.png
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0530_2016-->
