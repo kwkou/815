@@ -76,7 +76,7 @@ Azure 服务总线中对 AMQP 1.0 的支持意味着现在可以通过一系列�
 
 **图 2：AMQP 1.0 客户端库表**
 
-有关如何获取和使用这些库以便用于服务总线的详细信息，请参阅 [服务总线 AMQP 开发人员指南][]。有关更多信息的链接，请参阅[后续步骤](/documenatation/articles/service-bus-java-amqp-overview/#next-steps)部分。
+有关如何获取和使用这些库以便用于服务总线的详细信息，请参阅 [服务总线 AMQP 开发人员指南][]。有关更多信息的链接，请参阅[后续步骤](/documentation/articles/service-bus-java-amqp-overview/#next-steps)部分。
 
 ## 摘要
 

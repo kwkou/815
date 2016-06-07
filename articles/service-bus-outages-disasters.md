@@ -37,7 +37,7 @@
 
 ## 针对数据中心中断或灾难进行保护
 
-若要允许在两个数据中心之间进行故障转移，你可以在每个数据中心中各创建一个服务总线服务命名空间。例如，服务总线服务命名空间 **contosoPrimary.servicebus.chinacloudapi.cn** 可能位于美国（北部/中部）区域，而 **contosoSecondary.servicebus.chinacloudapi.cn** 可能位于美国（南部/中部）区域。如果必须在数据中心中断的情况下仍可访问服务总线消息传送实体，你可以在两个命名空间中都创建该实体。
+若要允许在两个数据中心之间进行故障转移，你可以在每个数据中心中各创建一个服务总线服务命名空间。例如，服务总线服务命名空间 **contosoPrimary.servicebus.chinacloudapi.cn** 可能位于中国（北部）区域，而 **contosoSecondary.servicebus.chinacloudapi.cn** 可能位于中国（东部）区域。如果必须在数据中心中断的情况下仍可访问服务总线消息传送实体，你可以在两个命名空间中都创建该实体。
 
 有关详细信息，请参阅[异步消息传送模式和高可用性][]中的“Azure 数据中心内的服务总线故障”部分。
 
