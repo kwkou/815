@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="11/23/2015"
-	wacn.date="02/17/2016"/>
+	ms.date="05/09/2016"
+	wacn.date="06/06/2016"/>
 
 
 # 在本地 VMware 虚拟机或物理服务器与 Azure 之间设置保护
