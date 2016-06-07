@@ -52,7 +52,7 @@
 
 自动化帐户是 Azure 自动化资源的容器。它可以用来隔离环境，或者对工作流进行进一步的组织。如果你已创建自动化帐户，可以跳过此步骤。
 
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
 
 2. 单击“新建”>“管理”>“自动化帐户”
 

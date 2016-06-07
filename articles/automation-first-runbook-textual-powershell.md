@@ -33,8 +33,8 @@
 
 我们首先创建一个输出文本 *Hello World* 的简单 Runbook 。
 
-1.	在 Azure 门户中，打开你的自动化帐户。通过自动化帐户页面可快速查看此帐户中的资源。你应该已拥有某些资产。大多数资产都是自动包括在新的自动化帐户中的模块。你还应具有在[先决条件](#prerequisites)中提到的凭证资产。
-2.	单击“Runbook”磁贴打开 Runbook 列表。![RunbooksControl](./media/automation-first-runbook-textual-powershell/automation-runbooks-control.png)  
+1.	在 Azure 管理门户中，打开你的自动化帐户。通过自动化帐户页面可快速查看此帐户中的资源。你应该已拥有某些资产。大多数资产都是自动包括在新的自动化帐户中的模块。你还应具有在[先决条件](#prerequisites)中提到的凭证资产。
+2.	单击“Runbook”磁贴打开 Runbook 列表。 
 3.	通过单击“添加 Runbook”按钮创建一个新 Runbook，然后“创建新 Runbook”。
 4.	将该 Runbook 命名为 *MyFirstRunbook-PowerShell*。
 5.	在本例中，我们将要创建一个 PowerShell Runbook，因此请选择“Powershell”作为“Runbook 类型”。  
@@ -44,7 +44,9 @@
 
 你可以直接将代码键入 Runbook 中，或者通过“库”控件选择 cmdlet、Runbook 和资产，并使用任何相关的参数将它们添加到 Runbook。在本演练中，我们将直接键入 Runbook。
 
-1.	我们的 Runbook 目前是空的，请键入 *Write-Output "Hello World."*。![Hello World](./media/automation-first-runbook-textual-powershell/automation-helloworld.png)  
+1.	我们的 Runbook 目前是空的，请键入 *Write-Output "Hello World."*。
+	
+	![Hello World](./media/automation-first-runbook-textual-powershell/automation-helloworld.png)  
 2.	单击“保存”以保存 Runbook。  
 
 ## 步骤 3 - 测试 Runbook
@@ -71,7 +73,7 @@
 8.	关闭“输出”窗格。
 9.	单击“所有日志”打开 Runbook 作业的“流”窗格。应该只会在输出流中看到 *Hello World*，但此窗格也可以显示 Runbook 作业的其他流，例如，“详细”和“错误”（如果 Runbook 向其写入）。  
 10.	关闭“流”窗格和“作业”窗格以返回到 MyFirstRunbook-PowerShell 窗格。
-11.	单击“作业”打开此 Runbook 的“作业”窗格。这将列出此 Runbook 创建的所有作业。由于我们只运行该作业一次，应该只会看到一个列出的作业。![作业列表](./media/automation-first-runbook-textual-powershell/automation-job-list.png)  
+11.	单击“作业”打开此 Runbook 的“作业”窗格。这将列出此 Runbook 创建的所有作业。由于我们只运行该作业一次，应该只会看到一个列出的作业。
 12.	你可以在此作业上单击以打开我们启动 Runbook 时查看的相同的作业窗格。这样你就可以回溯并查看为特定 Runbook 创建的任何作业的详细信息。
 
 ## 步骤 5 - 添加身份验证来管理 Azure 资源
@@ -84,6 +86,7 @@
 4.	右键单击你的凭据，然后单击“添加到画布”。这将会添加凭据的 **Get-AutomationPSCredential** 活动。
 5.	在 **Get-AutomationPSCredential** 前面，输入 *$Credential =* 以将凭据分配给变量。
 6.	在下一行中键入 *Add-AzureAccount -Environment AzureChinaCloud -Credential $Credential*。  
+	
 	![凭据](./media/automation-first-runbook-textual-powershell/automation-get-credential.png)
 7.	单击“测试”窗格，以便我们可以测试 Runbook。 
 8.	单击“启动”以启动测试。完成后，你会获得包含帐户的订阅 ID、类型、租户的输出。这是对凭据有效的确认。
@@ -93,6 +96,7 @@
 在 Runbook 对 Azure 订阅进行身份验证后，我们可以管理资源。我们将添加一个命令用于启动虚拟机。你可以在你的 Azure 订阅中选取任何虚拟机，现在我们会将该名称硬编码到 cmdlet 中。
 
 1.	在 *Add-AzureAccount -Environment AzureChinaCloud* 后面，键入 *Start-AzureVM -Name 'VMName' -ServiceName 'VMServiceName'* 并提供要启动的虚拟机的名称和服务名称。  
+	
 	![StartVM](./media/automation-first-runbook-textual-powershell/automation-startvm.png)  
 2.	保存 Runbook，然后单击“测试”窗格，以便我们可以测试 Runbook。
 3.	单击“启动”以启动测试。一旦测试完成后，检查已启动的虚拟机。
@@ -101,7 +105,9 @@
 
 我们的 Runbook 目前会启动我们在 Runbook 中硬编码的虚拟机，但如果可以在启动 Runbook 时指定虚拟机，它会更有用。我们现在将输入参数添加到 Runbook，以提供该功能。
 
-1.	将 *VMName* 和 *VMServiceName* 的参数添加到 Runbook，并将这些变量与 **Start-AzureVM** cmdlet 配合使用，如下图所示。![添加参数](./media/automation-first-runbook-textual-powershell/automation-add-parameter.png)  
+1.	将 *VMName* 和 *VMServiceName* 的参数添加到 Runbook，并将这些变量与 **Start-AzureVM** cmdlet 配合使用，如下图所示。
+
+	![添加参数](./media/automation-first-runbook-textual-powershell/automation-add-parameter.png)  
 2.	保存 Runbook 并打开“测试”窗格。请注意，现在可以为将在测试中使用的两个输入变量提供值。
 3.	关闭“测试”窗格。
 4.	单击“发布”以发布 Runbook 的新版本。
