@@ -1,6 +1,6 @@
 ﻿<properties 
-   pageTitle="将 VMware 虚拟机和物理服务器从 Azure 故障回复到 VMware | Azure" 
-   description="本文介绍如何使用 Azure Site Recovery 来故障回复已复制到 Azure 的 VMware 虚拟机。" 
+   pageTitle="将 VMware 虚拟机和物理服务器故障回复到本地站点 | Azure"
+   description="了解在将 VMware VM 和物理服务器故障转移到 Azure 后，如何故障回复到本地站点。" 
    services="site-recovery" 
    documentationCenter="" 
    authors="ruturaj" 
@@ -9,400 +9,253 @@
 
 <tags
    ms.service="site-recovery"
-   ms.date="12/14/2015"
-   wacn.date="01/29/2016"/>
+   ms.date="05/10/2016"
+   wacn.date="06/06/2016"/>
+# 将 VMware 虚拟机和物理服务器故障回复到本地站点
 
-# 使用 Azure Site Recovery 将 VMware 虚拟机和物理服务器从 Azure 故障回复到 VMware
+> [AZURE.SELECTOR]
+
+- [Azure 管理门户](/documentation/articles/site-recovery-failback-azure-to-vmware-classic)
+- [Azure 管理门户（旧版）](/documentation/articles/site-recovery-failback-azure-to-vmware-classic-legacy)
+
+
+本文介绍如何将 Azure 虚拟机从 Azure 故障回复到本地站点。按照本[教程](/documentation/articles/site-recovery-vmware-to-azure-classic)将 VMware 虚拟机或 Windows/Linux 物理服务器从本地站点故障转移到 Azure 以后，请按本文中的说明来故障回复它们。
+
+
 
 ## 概述
 
-本文档介绍如何将 VMware 虚拟机和 Windows/Linux 物理服务器从 Azure 故障回复到本地站点。
+下图显示了这种情况下的故障回复体系结构。
 
-若要为此方案设置复制和故障转移，请遵循[此文章](/documentation/articles/site-recovery-vmware-to-azure)中的说明。使用站点恢复成功将 VMware 虚拟机或物理服务器故障转移到 Azure 后，这些计算机将会出现在 Azure 虚拟机选项卡中。
+当进程服务器在本地，而且你使用 ExpressRoute 时，使用以下体系结构。
 
->[AZURE.NOTE]只能将 VMware 虚拟机和 Windows/Linux 物理服务器从 Azure 故障回复到本地站点中的 VMware 虚拟机。如果你要故障回复物理机，则将它故障转移到 Azure 时，会将它转换成 Azure VM；将它故障回复到 VMware 时，会将它转换成 VMware VM。
+![Expressroute 的体系结构关系图](./media/site-recovery-failback-azure-to-vmware-classic/architecture.png)
 
-此图显示了故障转移和故障回复方案。蓝线是故障转移期间使用的连接。红线是故障回复期间使用的连接。箭头线将通过 Internet。
+当进程服务器在 Azure 上，而且你有 VPN 或 ExpressRoute 连接时，使用以下体系结构。
 
-![](./media/site-recovery-failback-azure-to-vmware/vconports.png)
+![VPN 的体系结构关系图](./media/site-recovery-failback-azure-to-vmware-classic/architecture2.png)
 
-## 步骤 1：在本地安装 vContinuum
+若要查看完整的端口列表以及故障回复体系结构关系图，请参阅下图
 
-需要在本地安装 vContinuum 服务器并将它指向配置服务器。
+![故障转移-故障回复所有端口](./media/site-recovery-failback-azure-to-vmware-classic/Failover-Failback.png)
 
-1.  [下载 vContinuum](http://go.microsoft.com/fwlink/?linkid=526305)。 
-2.  请下载 [vContinuum 更新版](http://go.microsoft.com/fwlink/?LinkID=533813)。
-3.  运行最新版本的安装程序以安装 vContinuum。在“欢迎”页上，单击“下一步”。![](./media/site-recovery-failback-azure-to-vmware/image2.png)
-4.  在向导的第一页上，指定 CX 服务器 IP 地址和 CX 服务器端口。选择“使用 HTTPS”。
+下面是故障回复的工作原理：
 
-	![](./media/site-recovery-failback-azure-to-vmware/image3.png)
-
-5.  在 Azure 中配置服务器 VM 的“仪表板”选项卡上查找配置服务器 IP 地址。![](./media/site-recovery-failback-azure-to-vmware/image4.png)
-
-6.  在 Azure 中配置服务器 VM 的“终结点”选项卡上查找配置服务器 HTTPS 公共端口。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image5.png)
-
-7. 在“CS 通行短语详细信息”页上，指定你在注册配置服务器时记下的通行短语。如果你不记得该通行短语，请查看配置服务器 VM 上的 **C:\\Program Files (x86)\\InMage Systems\\private\\connection.passphrase**。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image6.png)
-
-8.  在“选择目标位置”页上，指定要将 vContinuum 服务器安装到的位置，然后单击“安装”。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image7.png)
-
-9. 安装完成后，可以启动 vContinuum。
-    ![](./media/site-recovery-failback-azure-to-vmware/image8.png)
+- 故障转移到 Azure 以后，可通过以下几个阶段故障回复到本地站点：
+	- **阶段 1**：对 Azure VM 进行重新保护，使之开始复制回在本地站点运行的 VMware VM。 
+	- **阶段 2**：将 Azure VM 复制到本地站点以后，通过运行故障转移从 Azure 进行故障回复。
+	- **阶段 3**：对数据进行故障回复以后，对故障回复到的本地 VM 进行重新保护，使之开始复制到 Azure。
 
 
-## 步骤 2：在 Azure 中安装进程服务器 
+### 故障回复到原始或备用位置
 
-需要在 Azure 中安装一个进程服务器，以便 Azure 中的 VM 可以将数据发回到本地主目标服务器。
+如果你对某个 VMware VM 进行了故障转移，则可故障回复到同一源 VM，前提是该 VM 仍存在于本地。在这种情况下，仅对增量更改进行故障回复。请注意：
 
-1.  在 Azure 中的“配置服务器”页上，选择添加新的进程服务器。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image9.png)
-
-2.  指定进程服务器名称，然后指定用于连接到虚拟机的管理员用户名和密码。选择要将进程服务器注册到的配置服务器。此服务器应该是你用来保护虚拟机并对其进行故障转移的同一台服务器。
-3.  指定应在其中部署进程服务器的 Azure 网络。它与配置服务器应该是相同的网络。指定所选子网的唯一 IP 地址，然后开始部署。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image10.png)
-
-4.  将触发一个用于部署进程服务器的作业。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image11.png)
-
-5.  在 Azure 上部署进程服务器后，你可以使用指定的凭据登录到该服务器。以注册本地进程服务器时使用的相同方法注册该进程服务器。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image12.png)
-
->[AZURE.NOTE]故障回复期间，注册的服务器不会显示在站点恢复中的 VM 属性下。它们只会出现在它们注册到的配置服务器中的“服务器”选项卡下。可能需要在大约 10-15 分钟后，进程服务器才会出现在该选项卡中。
-
-
-## 步骤 3：在本地安装主目标服务器
-
-根据源虚拟机的操作系统，你需要在本地安装 Linux 或 Windows 主目标服务器。
-
-### 部署 Windows 主目标服务器
-
-vContinuum 安装程序中已捆绑 Windows 主目标。当你安装 vContinuum 时，主服务器也会部署在同一台计算机上，并注册到配置服务器。
-
-1.  若要开始部署，请在 ESX 主机本地创建一个空计算机，你需要将 VM 从 Auzre 恢复到该计算机。
-
-2.  确保至少有两个磁盘附加到 VM – 一个磁盘用于存储操作系统，另一个磁盘用作保留驱动器。
-
-3.  安装操作系统。
-
-4.  在服务器上安装 vContinuum。这也会完成主目标服务器的安装。
-
-### 部署 Linux 主目标服务器
-
-1.  若要开始部署，请在 ESX 主机本地创建一个空计算机，你需要将 VM 从 Auzre 恢复到该计算机。
-
-2.  确保至少有两个磁盘附加到 VM – 一个磁盘用于存储操作系统，另一个磁盘用作保留驱动器。
-
-3.  安装 Linux 操作系统。Linux 主目标系统不应为根或保留存储空间使用 LVM。默认情况下，Linux 主目标服务器已配置为避免发现 LVM 分区/磁盘。
-4.  可以创建的分区：
-
-	![](./media/site-recovery-failback-azure-to-vmware/image13.png)
-
-5.  在开始安装主目标之前，请执行以下安装后步骤。
-
-
-#### OS 安装后步骤
-
-若要获取 Linux 虚拟机中每个 SCSI 硬盘的 SCSI ID，请启用参数“disk.EnableUUID = TRUE”，如下所示：
-
-1. 关闭你的虚拟机。
-2. 在左侧面板中右键单击 VM 对应的条目，然后单击“编辑设置”。
-3. 单击“选项”选项卡。选择“高级”>“常规项”>“配置参数”。仅当计算机已关闭时，“配置参数”选项才可用。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image14.png)
-
-4. 查看是否存在包含 **disk.EnableUUID** 的行。如果存在该行并且其值设置为 **False**，请将该值覆盖为 **True**（不区分大小写）。如果存在该行并且其值设置为 true，请单击“取消”，然后在启动来宾操作系统后，在来宾操作系统中测试 SCSI 命令。如果不存在该行，请单击“添加行”。
-5. 在“名称”列中添加 disk.EnableUUID。将其值设置为 TRUE。添加上述值时请不要包括双引号。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image15.png)
-
-#### 下载并安装其他程序包
-
-注意：在下载并安装其他程序包之前，请确保系统已建立 Internet 连接。
-
-# yum install -y xfsprogs perl lsscsi rsync wget kexec-tools
-
-此命令将从 CentOS 6.6 存储库下载并安装下面的 15 个程序包：
-
-bc-1.06.95-1.el6.x86\_64.rpm
-
-busybox-1.15.1-20.el6.x86\_64.rpm
-
-elfutils-libs-0.158-3.2.el6.x86\_64.rpm
-
-kexec-tools-2.0.0-280.el6.x86\_64.rpm
-
-lsscsi-0.23-2.el6.x86\_64.rpm
-
-lzo-2.03-3.1.el6\_5.1.x86\_64.rpm
-
-perl-5.10.1-136.el6\_6.1.x86\_64.rpm
-
-perl-Module-Pluggable-3.90-136.el6\_6.1.x86\_64.rpm
-
-perl-Pod-Escapes-1.04-136.el6\_6.1.x86\_64.rpm
+- 如果你对物理服务器进行了故障转移，则会始终故障回复到新的 VMware VM。
+	- 在故障回复物理计算机之前，请注意：
+	- 当从 Azure 故障转移回复到 VMware 时，受保护的物理计算机将回复成虚拟机。
+	- 确保除了需要故障回复到的必要 ESX/ESXi 主机之外，还发现至少一台主目标服务器。
+- 如果故障回复到原始 VM，则需满足以下条件：
+	- 如果 VM 由 vCenter 服务器管理，主目标的 ESX 主机应该可以访问 VM 数据存储。
+	- 如果 VM 位于 ESX 主机上，但不由 vCenter 管理，则 VM 的硬盘必须位于 MT 的主机可访问的数据存储中。
+	- 如果 VM 位于 ESX 主机上但不使用 vCenter，则应完成针对 MT 的 ESX 主机的发现操作，然后才能进行重新保护。如果你要对物理服务器进行故障回复，此规则也同样适用。
+	- 另一选项（如果本地 VM 存在）是在进行故障回复之前删除它。然后，故障回复就会在与主目标 ESX 主机相同的主机上创建新的 VM。
 	
-perl-Pod-Simple-3.13-136.el6\_6.1.x86\_64.rpm
+- 故障回复到备用位置时，会将数据恢复到与本地主目标服务器所用数据存储和 ESX 主机相同的数据存储和 ESX 主机。
 
-perl-libs-5.10.1-136.el6\_6.1.x86\_64.rpm
 
-perl-version-0.77-136.el6\_6.1.x86\_64.rpm
+## 先决条件
 
-rsync-3.0.6-12.el6.x86\_64.rpm
+- 需要 VMware 环境才能对 VMware VM 和物理服务器进行故障回复。不支持故障回复到物理服务器。
+- 为了进行故障回复，你应该在最初设置保护时，就已经创建 Azure 网络。故障回复需要进行 VPN 或 ExpressRoute 连接，从 Azure VM 所在的 Azure 网络连接到本地站点。
+- 如果你要故障回复到的 VM 受 vCenter 服务器管理，则需确保你拥有在 vCenter 服务器上发现 VM 所必需的权限。[了解详细信息](/documentation/articles/site-recovery-vmware-to-azure-classic#vmware-permissions-for-vcenter-access)。
+- 如果 VM 上存在快照，重新保护会失败。你可以删除这些快照或磁盘。 
+- 故障回复之前，你需要创建多个组件：
+	- **在 Azure 中创建进程服务器**。这是你需要在故障回复过程中创建并保持运行的 Azure VM。完成故障回复后，可以删除该虚拟机。
+	- **创建主目标服务器**：主目标服务器发送和接收故障回复数据。在本地创建的管理服务器默认情况下已安装主目标服务器。但是，你可能需要创建单独的故障回复用主目标服务器，具体取决于故障回复流量。
+	- 如果你需要创建其他在 Linux 上运行的主目标服务器，，则需先设置 Linux VM，然后再安装主目标服务器，如下所示。
+- 执行故障回复时，配置服务器必须为本地服务器。故障回复期间，虚拟机必须位于配置服务器数据库中，而失败的故障回复将不会成功。因此，请确保定期计划服务器备份。发生灾难时，你需要使用相同的 IP 地址进行还原，让故障回复正常工作。
 
-snappy-1.1.0-1.el6.x86\_64.rpm
+## 故障回复策略
+若要复制回本地，你需要一个故障回复策略。在你创建正向策略时，将自动创建此策略。请注意：
 
-wget-1.12-5.el6\_6.1.x86\_64.rpm
+1. 此策略在创建过程中会与配置服务器自动关联。
+2. 此策略不能编辑。
+3. 此策略的设置值为（RPO 阈值 = 15 分钟，恢复点保留期 = 24 小时，应用一致性快照频率 = 60 分钟）
+![](./media/site-recovery-failback-azure-to-vmware-new/failback-policy.png)
 
-注意：如果源计算机为根设备或引导设备使用了 Reiser 或 XFS 文件系统，则应该在保护之前，在 Linux 主目标中下载并安装以下程序包。
+## 在 Azure 中设置进程服务器
 
-\# cd /usr/local
+需在 Azure 中安装进程服务器，以便 Azure VM 将数据发送回本地主目标服务器。
 
-\# wget
-<http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/kmod-reiserfs-0.0-1.el6.elrepo.x86_64.rpm>
+如果已将计算机作为经典资源进行保护（即，在 Azure 中恢复的 VM 为经典 VM），则需要在 Azure 中安装一台经典进程服务器。如果已将计算机恢复为 Resource Manager 部署类型，则需要一台 Resource Manager 部署类型的进程服务器。在其中部署进程服务器的 Azure 虚拟网络将选择相应类型。
 
-\# wget
-<http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm>
+1.  在“针对 VMware 和物理计算机”标题下的“保管库”>“设置”>“管理 Site Recovery 基础结构”>“配置服务器”中，选择配置服务器。单击“+ 进程服务器”
 
-\# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86\_64.rpm reiserfs-utils-3.6.21-1.el6.elrepo.x86\_64.rpm
+	![](./media/site-recovery-failback-azure-to-vmware-new/add-processserver.png)
 
-\# wget
-<http://mirror.centos.org/centos/6.6/os/x86_64/Packages/xfsprogs-3.1.1-16.el6.x86_64.rpm>
+2. 选择像“在 Azure 中部署故障回复进程服务器”一样部署进程服务器
 
-\# rpm -ivh xfsprogs-3.1.1-16.el6.x86\_64.rpm
+3. 选择已在其中恢复计算机的订阅。
 
-#### 应用自定义配置更改
+4. 接下来，选择在其中有已恢复计算机的 Azure 网络。进程服务器需要位于同一网络中，以使已恢复的 VM 和进程服务器可以通信。
 
-在应用这些更改之前，请确保已完成上一部分的操作，然后遵循以下步骤：
+5. 如果选择了经典部署网络 — 系统将要求你通过 Azure 库创建新的 VM 并将进程服务器安装于其中。
 
+	![](./media/site-recovery-failback-azure-to-vmware-new/add-classic.png)
+	
+	1. 映像的名称为 *Microsoft Azure Site Recovery 进程服务器 V2*。请确保选择经典作为部署模型。
+	
+		![](./media/site-recovery-failback-azure-to-vmware-new/templatename.png)
+	
+	2. 按照[此处提供](/documentation/articles/site-recovery-vmware-to-azure-classicz#step-5-install-the-management-server)的步骤安装进程服务器
+	
+6. 如果选择 *Resource Manager* Azure 网络，则需提供下列输入以部署服务器。
 
-1. 将 RHEL 6-64 统一代理二进制文件复制到新建的 OS。
+    1. 要将服务器部署到的资源组
+	
+	2. 为服务器提供一个名称
+	
+	3. 为其提供用户名密码，以便你登录
+	
+	4. 选择要将服务器部署到的存储帐户
+	
+	5. 选择要连接到它的特定子网和网络接口。请注意，你需要创建自己的[网络接口](/documentation/articles//virtual-networks-multiple-nics) (NIC)，并在部署时选择它。
+	
+		![](./media/site-recovery-failback-azure-to-vmware-new/psinputsadd.png)
+	
+	6. 单击“确定”。这将触发一个作业，该作业将创建一个具有进程服务器安装程序的 Resource Manager 部署类型虚拟机。你需要在 VM 中运行该安装程序，以便将服务器注册到配置服务器。为此，你可以按照[这些步骤](/documentation/articles/site-recovery-vmware-to-azure-classic#step-5-install-the-management-server)操作。
 
-2. 运行以下命令来解压缩二进制文件：**tar -zxvf <文件名>**
+	7. 将触发一个用于部署进程服务器的作业
 
-3. 运行以下命令来指定权限：# **chmod 755 ./ApplyCustomChanges.sh**
+7. 最后，进程服务器应列于“配置服务器”页的“关联服务器”部分下的“进程服务器”选项卡中。
+	![](./media/site-recovery-failback-azure-to-vmware-new/pslistingincs.png)
 
-4. 运行脚本：**# ./ApplyCustomChanges.sh**。仅在服务器上运行该脚本一次。运行该脚本后，重新启动服务器。
+		
+	>[AZURE.NOTE] 服务器不会显示在“VM 属性”下。它只显示在所注册到的管理服务器中的“服务器”选项卡下。可能需要大约 10-15 分钟才能显示进程服务器。
 
 
+## 在本地安装主目标服务器
 
-### 安装 Linux 服务器
+主目标服务器接收故障回复数据。主目标服务器会自动安装在本地管理服务器上，但如果你要对大量数据进行故障回复，则需安装另一主目标服务器。请按如下所述执行此操作：
 
+>[AZURE.NOTE] 如果你想要在 Linux 上安装主目标服务器，请遵循下一过程中的说明。
 
-1. [下载](http://go.microsoft.com/fwlink/?LinkID=529757)安装文件。
-2. 使用所选的 sftp 客户端实用程序，将该文件复制到 Linux 主目标虚拟机。或者，你可以登录到 Linux 主目标虚拟机，然后使用 wget 从提供的链接下载安装程序包
-3. 使用所选的 ssh 客户端登录到 Linux 主目标服务器虚拟机
-4. 如果你已通过 VPN 连接到部署了 Linux 主目标服务器的 Azure 网络，请使用虚拟机“仪表板”选项卡中显示的服务器内部 IP 地址和端口 22，通过安全 Shell 连接到 Linux 主目标服务器。
-5. 如果你要通过公共 Internet 连接来连接到 Linux 主目标服务器，请使用 Linux 主目标服务器的公共虚拟 IP 地址（从虚拟机“仪表板”选项卡获取）以及为 ssh 创建的公共终结点登录到 Linux 服务器。
-6. 从包含安装程序文件的目录运行 *“tar –xvzf Microsoft-ASR\_UA\_8.2.0.0\_RHEL6-64\*”*，以便从使用 gzip 压缩的 Linux 主目标服务器安装程序 tar 存档中提取文件。
+1. 如果你要在 Windows 上安装主目标服务器，请通过需在其中安装主目标服务器的 VM 打开“快速启动”页，然后下载 Azure Site Recovery 统一安装程序向导的安装文件。
+2. 运行安装程序，然后在“开始之前”中选择“添加额外的进程服务器以扩大部署”。
+3. 完成向导，完成方式与[安装管理服务器](/documentation/articles/site-recovery-vmware-to-azure-classic#step-5-install-the-management-server)时采用的方式相同。在“配置服务器详细信息”页上，指定此主目标服务器的 IP 地址，以及访问 VM 所需的密码。
 
-	![](./media/site-recovery-failback-azure-to-vmware/image16.png)
+### 将 Linux VM 安装为主目标服务器
+若要将运行主目标服务器的管理服务器安装为 Linux VM，至少需安装 CentOS 6.6 操作系统，检索每个 SCSI 硬盘的 SCSI ID，安装一些其他的程序包，然后应用某些自定义更改。
 
-7. 如果将安装程序文件提取到了其他目录，请切换到 tar 存档内容所提取到的目录。从此目录路径运行“sudo ./install.sh”。
+#### 安装 CentOS 6.6
 
-	![](./media/site-recovery-failback-azure-to-vmware/image17.png)
+1.	在管理服务器 VM 上至少安装 CentOS 6.6 操作系统。将 ISO 留在 DVD 驱动器中，然后启动系统。跳过介质测试，选择“US English”作为语言，选择“基本存储设备”，确保硬盘驱动器上没有任何重要数据，然后单击“是”，放弃所有数据。输入管理服务器的主机名，然后选择服务器网络适配器。在“编辑系统”对话框中选择“自动连接”，然后添加静态 IP 地址、网络和 DNS 设置。指定一个时区，以及一个用于访问管理服务器的根密码。 
+2.	当系统询问你的安装类型时，应选择“创建自定义布局”作为分区。单击“下一步”后，选择“免费”，然后单击“创建”。通过 **FS Type:** **ext4** 创建 **/**、**/var/crash** 和 **/home 分区**。创建交换分区，格式为 **FS Type: swap**。
+3.	如果发现有预先存在的设备，则会显示警告消息。单击“格式化”，以使用分区设置格式化驱动器。单击“将更改写入磁盘”以应用分区更改。
+4.	选择“安装引导加载程序”>“下一步”，在根分区上安装引导加载程序。
+5.	安装完成后，单击“重新启动”。
 
-8. 当系统提示你选择主角色时，请选择“2 (主目标)”。将其他交互式安装选项保留为其默认值。
-9. 等待安装完成，随后将显示主机配置界面。适用于 Linux 主目标服务器的主机配置实用程序是一个命令行实用程序。请不要调整 ssh 客户端实用程序窗口的大小。使用箭头键选择“全局”选项，然后在键盘上按 Enter。
 
-	![](./media/site-recovery-failback-azure-to-vmware/image18.png)
+#### 检索 SCSI ID
 
-	![](./media/site-recovery-failback-azure-to-vmware/image19.png)
+1. 安装后，检索 VM 中每个 SCSI 硬盘的 SCSI ID。为此，请先关闭管理服务器 VM，然后在 VMware 的 VM 属性中，右键单击“VM”条目 >“编辑设置”>“选项”。
+2. 选择“高级”>“常规项”，然后单击“配置参数”。当计算机正在运行时，此选项将处于停用状态。若要使其处于活动状态，必须关闭计算机。
+3. 如果 **disk.EnableUUID** 这一行存在，请确保将值设置为 **True**（区分大小写）。如果已进行了相应设置，则可先取消，然后在启动来宾操作系统后对其中的 SCSI 命令进行测试。 
+4.	如果该行不存在，请单击“添加行”，并在添加时将值设置为 **True**。不要使用双引号。
 
+#### 安装其他程序包
 
-10. 在“IP”字段中，输入配置服务器的内部 IP 地址（可在配置服务器 VM 的“仪表板”选项卡中找到），然后按 Enter。在“端口”中输入 **22**，然后按 Enter。
-11.  将“使用 HTTPS”保留为“是”，然后按 Enter。
-12.  输入在配置服务器上生成的通行短语。如果在 Windows 计算机中使用 PUTTY 客户端与 Linux 虚拟机建立 ssh 连接，则可以使用 Shift+Insert 来粘贴剪贴板的内容。使用 Ctrl+C 将通行短语复制到本地剪贴板，然后使用 Shift+Insert 粘贴通行短语。按 Enter。
-13.  使用右箭头键导航到退出按钮，然后按 Enter。等待安装完成。
+需下载和安装其他程序包。
 
-	![](./media/site-recovery-failback-azure-to-vmware/image20.png)
+1.	请确保主目标服务器已连接到 Internet。
+2.	运行以下命令，从 CentOS 存储库下载并安装 15 个程序包：**# yum install –y xfsprogs perl lsscsi rsync wget kexec-tools**。
+3.	如果所要保护的源计算机运行针对根设备或启动设备的 Linux wit Reiser 或 XFS 文件系统，则应下载和安装其他程序包，如下所示：
 
-如果出于某种原因而无法将 Linux 主目标服务器注册到配置服务器，可以通过从 /usr/local/ASR/Vx/bin/hostconfigcli 运行主机配置实用程序来再次注册（首先需要通过以超级用户身份运行 chmod，来设置对此目录的访问权限）。
+	- # cd /usr/local
+	- # wget [http://elrepo.org/linux/elrepo/el6/x86\_64/RPMS/kmod-reiserfs-0.0-1.el6.elrepo.x86\_64.rpm](http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/kmod-reiserfs-0.0-1.el6.elrepo.x86_64.rpm)
+	- # wget [http://elrepo.org/linux/elrepo/el6/x86\_64/RPMS/reiserfs-utils-3.6.21-1.el6.elrepo.x86\_64.rpm](http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm)
+	- # rpm –ivh kmod-reiserfs-0.0-1.el6.elrepo.x86\_64.rpm reiserfs-utils-3.6.21-1.el6.elrepo.x86\_64.rpm
+	- # wget [http://mirror.centos.org/centos/6.6/os/x86\_64/Packages/xfsprogs-3.1.1-16.el6.x86\_65.rpm](http://mirror.centos.org/centos/6.6/os/x86_64/Packages/xfsprogs-3.1.1-16.el6.x86_65.rpm)
+	- # rpm –ivh xfsprogs-3.1.1-16.el6.x86\_64.rpm
 
+#### 应用自定义更改
 
-#### 验证主目标注册
+在完成安装后步骤并安装程序包以后，请执行下述操作以应用自定义更改：
 
-可以通过 Azure Site Recovery 保管库中的“配置服务器”>“服务器详细信息”，来验证是否已成功将主目标服务器注册到配置服务器。
+1.	将 RHEL 6-64 统一代理二进制文件复制到 VM。运行以下命令来解压缩二进制文件：**tar –zxvf <file name>**
+2.	运行以下命令来指定权限：**# chmod 755 ./ApplyCustomChanges.sh**
+3.	运行脚本：**# ./ApplyCustomChanges.sh**。只应运行脚本一次。成功运行脚本后，重新启动服务器。
 
->[AZURE.NOTE]注册主目标服务器后，如果你收到指出虚拟机可能已从 Azure 中删除或者终结点未正确配置的错误，原因是在 Azure 中部署主目标时，主目标配置是通过 Azure 终结点检测的。不过，对于本地主目标服务器，事实并非如此。这不会影响故障回复，你可以忽略这些错误。
 
+## 运行故障回复
 
+### 重新保护 Azure VM
 
-## 步骤 4：在本地站点中保护虚拟机
+1.	在“保管库”>“复制的项”中，选择已故障转移的 VM，然后右键单击“重新保护”。也可以单击该计算机，然后从命令按钮中选择重新保护。
+2.	在边栏选项卡中，可以看到已选中“Azure 到本地”的保护方向。
+3.  在“主目标服务器”和“进程服务器”中，选择本地主目标服务器，以及 Azure VM 进程服务器。
+4.  选择要将本地磁盘恢复到的“数据存储”。删除本地 VM 并且需要创建新磁盘时，可使用此选项。如果磁盘已存在，但你仍然需要指定一个值，则忽略此选项。 
+5.	保留驱动器用于停止 VM 复制回本地的时间点。保留驱动器的部分条件如下所示，如果不符合这些条件，将不会为主目标服务器列出该驱动器。
+	a.卷不应用于任何其他目的（复制的目标，等等）
+	b.卷不应处于锁定模式。
+	c.卷不应为缓存卷。（该卷上不应存在 MT 安装。PS+MT 自定义安装卷不能用作保留卷。此处安装的 PS+MT 卷是 MT 的缓存卷。）
+	d.卷文件系统类型不应为 FAT 和 FAT32。
+	e.卷容量应为非零值。
+	f.Windows 的默认保留卷是 R 卷。
+	g.Linux 的默认保留卷是 /mnt/retention。
 
-在故障回复之前，你需要在本地站点中保护 VM。
+6.  将自动选择故障回复策略。
 
-### 开始之前
+7.	单击“确定”开始重新保护以后，作业就会开始将 VM 从 Azure 复制到本地站点。你可以在“作业”选项卡上跟踪进度。
 
-将 VM 故障转移到 Azure 时，将会为页面文件添加一个额外的临时驱动器。故障转移的 VM 通常不需要此额外驱动器，因为它可能已经为页面文件提供了一个专用的驱动器。在开始反向保护虚拟机之前，需要确保将此驱动器脱机，使它不会受到保护。请按如下所述执行此操作：
+如果要恢复到备用位置，则请选择针对主目标服务器配置的保留驱动器和数据存储。故障回复到本地站点时，故障回复保护计划中的 VMware VM 将使用与主目标服务器相同的数据存储。如果要将副本 Azure VM 恢复到相同的本地 VM，则本地 VM 所在的数据存储应与主目标服务器的相同。如果没有本地 VM，则会在重新保护期间创建一个新的。
+	![](./media/site-recovery-failback-azure-to-vmware-new/reprotectinputs.png)
 
-1.  打开“计算机管理”，然后选择“存储管理”列出已联机并已附加到计算机的磁盘。
-2.  选择附加到计算机的临时磁盘，然后选择它以使其脱机。 
 
-### 保护 VM
 
-1. 在管理门户中，查看虚拟机的状态并确保它们已故障转移。
+你也可以在恢复计划级别重新保护。如果有复制组，只能使用恢复计划对其进行重新保护。通过恢复计划重新保护时，需要为每台受保护的计算机提供上述值。
 
-	![](./media/site-recovery-failback-azure-to-vmware/image21.png)
+>[AZURE.NOTE] 应使用相同的主目标服务器重新保护复制组。如果使用不同的主目标服务器重新保护它们，则无法为其获取一个共同的时间点。
 
-2. 在计算机上启动 vContinuum。
+### 运行到本地站点的故障转移
 
-	![](./media/site-recovery-failback-azure-to-vmware/image8.png)
+在重新保护 VM 之后，你可以启动从 Azure 到本地的故障转移。
 
-3. 单击“新建保护”并选择操作系统类型。
+1.	在“复制的项”页中，选择该虚拟机，然后右键单击“未计划的故障转移”。
+2.	在“确认故障转移”中，验证故障转移方向（从 Azure 故障转移），然后选择要用于故障转移的恢复点（最新恢复点，或最新的应用一致性恢复点）。应用一致性点将在最新的时间点之后，并将导致丢失部分数据。
+3.	故障转移期间，Site Recovery 会关闭 Azure VM。查看故障回复是否按预期完成以后，即可查看 Azure VM 是否已按预期关闭。
 
-4.  在打开的新窗口中，选择你要故障回复的 VM 对应的“操作系统类型”>“获取详细信息”。在“主服务器详细信息”中，找到并选择你要保护的虚拟机。VM 将按照其在故障转移之前的 vCenter 主机名列出。
-5.  在选择要保护的虚拟机时（该虚拟机已故障转移到 Azure），会显示一个弹出窗口，其中提供了该虚拟机的两个条目。这是因为，配置服务器已检测到其中注册的虚拟机的两个实例。你需要删除本地 VM 的条目，以便可以保护正确的 VM。若要在此处标识正确的 Azure VM 条目，可先登录到 Azure VM，然后转到 C:\\Program Files (x86)\\Azure Site Recovery\\Application Data\\etc。在文件 drscout.conf 中，找到主机 ID。在 vContinuum 对话框中，保留在 VM 中发现其主机 ID 的条目。删除所有其他条目。若要选择正确的 VM，你可以参考其 IP 地址。本地 IP 地址范围将是本地 VM。
+### 重新保护本地站点
 
-	![](./media/site-recovery-failback-azure-to-vmware/image22.png)
+故障回复完成后，你需要提交虚拟机，以确保删除在 Azure 中恢复的 VM。
 
-	![](./media/site-recovery-failback-azure-to-vmware/image23.png)
+1. 右键单击受保护的项，然后单击“提交”。此时将触发一个作业，该作业将删除之前在 Azure 中恢复的虚拟机。
 
-6. 在 vCenter 服务器上停止该虚拟机。你也可以删除本地 VM。
-7. 然后指定要在其上保护 VM 的本地 MT 服务器。为此，请连接到要故障回复到的 vCenter 服务器。
+完成提交以后，数据会回到本地站点，但不受保护。若要再次开始复制到 Azure，请执行以下操作：
 
-	![](./media/site-recovery-failback-azure-to-vmware/image24.png)
+1.	在“保管库”>“设置”>“复制的项”中，选择已故障回复的 VM，然后单击“重新保护”。 
+2.  提供要用于将数据发送回 Azure 的进程服务器值。
+3.	单击“确定”开始重新保护作业。
 
-8. 根据要将 VM 恢复到的主机选择主目标服务器。
+完成重新保护后，VM 将复制回 Azure，这时你可以执行故障转移。
 
-	![](./media/site-recovery-failback-azure-to-vmware/image24.png)
 
-9. 提供每个虚拟机的复制选项。为此，你需要选择 VM 要恢复到的恢复端数据存储。下表汇总了需要为每个 VM 提供的不同选项。
+### 故障回复的常见问题
 
-	![](./media/site-recovery-failback-azure-to-vmware/image25.png)
+1. 如果执行只读的用户 vCenter 发现并保护虚拟机，操作将成功且故障转移可正常工作。在重新保护时，操作将失败，因为无法发现数据存储。征兆是重新保护时不会列出数据存储。若要解决此问题，可以使用具有适当权限的帐户更新 vCenter 凭据并重试该作业。[了解详细信息](/documentation/articles/site-recovery-vmware-to-azure-classic#vmware-permissions-for-vcenter-access)
+2. 在故障回复 Linux VM 并在本地运行它时，你会看到网络管理器程序包已从该计算机卸载。这是因为 VM 在 Azure 中恢复时，网络管理器程序包遭到删除。
+3. 当 VM 以静态 IP 地址配置且故障转移到 Azure 时，将通过 DHCP 获取 IP 地址。当故障转移回复到本地时，该 VM 会继续使用 DHCP 获取 IP 地址。如有需要，你需要手动登录到该计算机并将 IP 地址设置回静态地址。
+4. 如果使用 ESXi 5.5 免费版或 vSphere 6 虚拟机监控程序免费版，则故障转移会成功，但故障回复不会成功。需要升级为评估许可证才能启用故障回复。
 
-	**选项** | **选项建议值**
-	---|---
-	进程服务器 IP 地址 | 选择在 Azure 中部署的进程服务器
-	保留大小 (MB)| 
-	保留值 | 1
-	天/小时 | 天
-	一致性间隔 | 1
-	选择目标数据存储 | 恢复站点上提供的数据存储。该数据存储应有足够的空间，并且可用于要在其上还原虚拟机的 ESX 主机。
+## 使用 ExpressRoute 进行故障回复
 
+可以通过 VPN 连接或 Azure ExpressRoute 进行故障回复。若要使用 ExpressRoute，请注意：
 
-10. 配置故障转移到本地站点后虚拟机要获取的属性。下表汇总了这些属性。
+- 应在 Azure 虚拟网络上设置 ExpressRoute，源计算机会故障转移到该网络，而故障转移完成后，Azure VM 也将位于其中。
+- 在公共终结点上，数据将复制到 Azure 存储帐户。你应该在 ExpressRoute 中设置公共对等互连，以便通过进行 Site Recovery 复制的目标数据中心使用 ExpressRoute。
 
-	![](./media/site-recovery-failback-azure-to-vmware/image26.png)
 
-	**属性** | **详细信息**
-	---|---
-	网络配置| 对于检测到的每个网络适配器，请选择该适配器并单击“更改”以配置虚拟机的故障回复 IP 地址。 
-	硬件配置| 指定 VM 的 CPU 和内存。可向你正在尝试保护的所有 VM 应用设置。若要确定“CPU”和“内存”的正确值，可以参考 IAAS VM 角色大小，并查看分配的核心数和内存。
-	显示名称 | 在故障转移回到本地后，你可以重命名要在 vCenter 清单中显示的虚拟机。默认名称是虚拟机主机名。若要确定 VM 名称，可以参考保护组中的 VM 列表。
-	NAT 配置 | 下面将详细讨论
 
-	![](./media/site-recovery-failback-azure-to-vmware/image27.png)
 
-#### 配置 NAT 设置
-
-1. 若要启用虚拟机保护，需要建立两个通信通道。第一个通道在虚拟机和进程服务器之间建立。此通道从 VM 收集数据并将数据发送到进程服务器，后者将此数据发送到主目标服务器。如果要保护的 进程服务器和虚拟机位于同一个 Azure 虚拟网络上，则不需要使用 NAT 设置。否则需要指定 NAT 设置。在 Azure 中查看进程服务器的公共 IP 地址。 
-
-	![](./media/site-recovery-failback-azure-to-vmware/image28.png)
-
-2. 第二个通道在进程服务器和主目标服务器之间建立。是否选择使用 NAT 取决于是要使用基于 VPN 的连接，还是要通过 Internet 进行通信。如果你使用 VPN，请不要选择 NAT；仅当你使用 Internet 连接时，才选择 NAT。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image29.png)
-
-	![](./media/site-recovery-failback-azure-to-vmware/image30.png)
-
-3. 如果未按说明删除本地虚拟机，并且要故障回复到的数据存储仍然包含旧 VMDK，则你需要确保在新位置创建故障回复 VM。为此，请选择“高级”设置，然后在“文件夹名称设置”中指定要还原到的备用文件夹。将其他选项保留默认设置。将文件夹名称设置应用到所有服务器。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image31.png)
-
-4. 运行就绪状态检查，以确保虚拟机已准备好在本地受到保护。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image32.png)
-
-
-5. 等待检查完成。如果在所有 VM 上成功完成了检查，你可以指定保护计划的名称。然后单击“保护”按钮以开始保护。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image33.png)
-
-
-6. 你可以在 vContinuum 中监视进度。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image34.png)
-
-7. 完成“激活保护计划”步骤后，你可以在站点恢复门户中监视 VM 的保护。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image35.png)
-
-8. 你可以通过单击 VM 并监视其进度，来查看确切的状态。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image36.png)
-
-## 准备故障回复计划
-
-可以使用 vContinuum 来准备故障回复计划，使应用程序随时可以故障回复到本地站点。这些恢复计划与站点恢复中的恢复计划非常相似。
-
-1.  启动 vContinuum 并选择“管理计划”>“恢复”。 你可以查看已用于故障转移 VM 的所有计划的列表。这些计划同样可用于恢复。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image37.png)
-
-2. 选择保护计划，然后选择要在其中恢复的所有 VM。在选择每个 VM 时，你可以查看更多详细信息，包括目标 ESX 服务器和源 VM 磁盘。单击“下一步”启动恢复向导，然后选择要恢复的 VM。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image38.png)
-
-3. 你可以基于多个选项进行恢复，不过，我们建议使用“最新标记”并选择“对所有 VM 应用”，以确保使用虚拟机中的最新数据。
-4. 运行“就绪状态检查”。 这将会检查是否配置了正确的参数来启用 VM 恢复。如果所有检查都已成功，请单击“下一步”。否则，请查看日志并解决错误。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image39.png)
-
-8.  在“VM 配置”中，确保恢复设置正确。你可以根据需要更改 VM 设置。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image40.png)
-
-9. 查看要恢复的虚拟机列表并指定恢复顺序。请注意，VM 是使用计算机主机名列出的。可能很难将计算机主机名映射到虚拟机。若要映射名称，请在 Azure 中转到虚拟机的“仪表板”，然后查看 VM 主机名。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image41.png)
-
-10. 指定计划名称，然后选择“以后恢复”。我们建议选择“以后恢复”，因为初始保护可能不完整。
-11. 单击“恢复”，以保存计划或触发恢复（如果你选择了立即恢复而不是以后恢复）。你可以查看恢复状态，以了解该计划是否已保存。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image42.png)
-
-	![](./media/site-recovery-failback-azure-to-vmware/image43.png)
-
-## 恢复虚拟机
-
-创建计划后，你可以恢复虚拟机。在恢复之前，请检查虚拟机是否已完成同步。如果复制状态显示“正常”，则表示保护已完成，并且符合 RPO 阈值。可以在 VM 属性中检查运行状况。
-
-![](./media/site-recovery-failback-azure-to-vmware/image44.png)
-
-在启动恢复之前，请关闭 Azure 虚拟机。这可以确保不会出现裂脑，并且用户只能访问应用程序的一个副本。
-
-
-1.  启动保存的计划。在 vContinuum 中选择**监视**计划。这将会列出已运行的所有计划。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image45.png)
-
-2.  在“恢复”中选择该计划，然后单击“启动”。你可以监视恢复状态。在打开 VM 后，你可以在 vCenter 中连接到 VM。
-
-	![](./media/site-recovery-failback-azure-to-vmware/image46.png)
-
-## 故障回复后在 Azure 中重新保护
-
-完成故障回复后，你可能需要重新保护虚拟机。请按如下所述执行此操作：
-
-1.  检查本地虚拟机是否在正常工作，并且可以访问应用程序。
-2.  在 Azure Site Recovery 门户中，选择虚拟机并将其删除。选择禁用虚拟机的保护。这可以确保 VM 不再受保护。
-3.  在 Azure 中删除故障转移的 Azure 虚拟机
-4.  在 vSpehere 上删除旧虚拟机。这是以前故障转移到 Azure 的 VM。
-5.  在站点恢复门户中保护最近故障转移的 VM。VM 受保护后，你可以将它们添加到恢复计划。
- 
-## 后续步骤
-
-[阅读](/documentation/articles/site-recovery-vmware-to-azure)有关将 VMware 虚拟机复制到 Azure 的信息
-
- 
-
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0530_2016-->
