@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="04/15/2016"
-	wacn.date="05/05/2016"/>
+	ms.date="05/03/2016"
+	wacn.date="06/06/2016"/>
 # 使流分析数据转换输出输出到分析工具和数据存储选项
 
 创作流分析作业时，需考虑如何使用数据转换输出。如何查看流分析作业的结果？ 使用哪些工具来显示数据分析结果？ 数据存储选项是必需的吗？
@@ -182,4 +182,4 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0530_2016-->
