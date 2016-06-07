@@ -1,6 +1,6 @@
 <properties
 	pageTitle="如何通过 Java 使用 Azure Blob 存储 | Azure"
-	description="了解如何使用 Azure Blob 存储上载、下载、列出和删除 Blob 内容。用 Java 编写的示例。"
+	description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
 	services="storage"
 	documentationCenter="java"
 	authors="rmcmurray"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="02/29/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="05/04/2016"
+	wacn.date="06/06/2016"/>
 
 # 如何通过 Java 使用 Blob 存储
 
@@ -262,7 +262,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
 [Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
 [Azure 存储空间客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
-[Azure 存储 REST API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
+[Azure 存储 REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0530_2016-->

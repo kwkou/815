@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/14/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="05/09/2016"
+	wacn.date="06/06/2016"/>
 
 # 存储分析
 
@@ -197,12 +197,11 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 ### 存储分析日志记录  
 - [关于存储分析日志记录](https://msdn.microsoft.com/zh-cn/library/hh343262.aspx) 
 - [存储分析日志格式](https://msdn.microsoft.com/zh-cn/library/hh343259.aspx) 
-- [存储分析记录的操作和状态消息](https://msdn.microsoftcom/zh-cn/library/hh343260.aspx) 
+- [存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/hh343260.aspx) 
 
 ### 存储分析度量值
 - [关于存储分析度量值](https://msdn.microsoft.com/zh-cn/library/hh343258.aspx)
 - [存储分析度量值表结构](https://msdn.microsoft.com/zh-cn/library/hh343264.aspx) 
 - [存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/hh343260.aspx)  
 
-
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0530_2016-->

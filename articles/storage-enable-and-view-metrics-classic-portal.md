@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="02/14/2016" 
-	wacn.date="04/11/2016"/>
+	ms.date="05/09/2016" 
+	wacn.date="06/06/2016"/>
 
 # 启用存储度量值并查看度量值数据
 
@@ -18,13 +18,13 @@
 
 ## 概述
 
-对于存储服务，默认情况下不启用存储度量值。你可以使用 [Azure 管理门户](manage.windowsazure.cn)、Windows PowerShell 或以编程方式通过存储 API 启用监视。
+对于存储服务，默认情况下不启用存储度量值。你可以使用 [Azure 管理门户](https://manage.windowsazure.cn)、Windows PowerShell 或以编程方式通过存储 API 启用监视。
 
 启用存储度量值时，必须为数据选择保留期：此期限用于确定存储服务保留度量值并针对存储度量值所需的空间向你收费的时长。通常，由于分钟度量值需要大量额外的空间，因此，应对分钟度量值而非小时度量值使用较短的保留期。你应该选择恰当的保留期，以便有足够的时间分析数据，并下载任何需要保留下来进行脱机分析或报告的度量值。请记住，从存储帐户下载度量值数据时，你也需要付费。
 
 ## 如何使用 Azure 管理门户启用存储度量值
 
-在 [Azure 管理门户](manage.windowsazure.cn)中，你可以使用存储帐户的“配置”页控制存储度量值。对于监视，你可以为每个 Blob、表和队列设置级别和保留期（以天为单位）。在每种情况下，该级别都是以下选项之一：
+在 [Azure 管理门户](https://manage.windowsazure.cn)中，使用存储帐户的“配置”页控制存储度量值。对于监视，你可以为每个 Blob、表和队列设置级别和保留期（以天为单位）。在每种情况下，该级别都是以下选项之一：
 
 - 关 - 不收集任何度量值。
 
@@ -137,7 +137,7 @@
 
 上面的示例数据显示一分钟的所有记录（从上午 11:00 开始），因此，QueryEntities 请求数加 QueryEntity 请求数再加 UpdateEntity 请求数的和为 7，这是显示在 user:All 行上的总数。同样，通过计算 ((143.8 * 5) + 3 + 9)/7，可以在 user:All 行得到平均端到端延迟为 104.4286。
 
-你应该考虑在 Azure 经典门户中的“监视”页上设置警报，以便存储度量值自动通知你存储服务行为中发生的任何重要更改。如果你使用存储资源管理器工具下载这种采用分隔格式的度量值数据，则可以使用 Microsoft Excel 分析该数据。有关可用存储资源管理器工具的列表，请参阅博客文章 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。
+你应该考虑在 Azure 管理门户中的“监视”页上设置警报，以便存储度量值自动通知你存储服务行为中发生的任何重要更改。如果你使用存储资源管理器工具下载这种采用分隔格式的度量值数据，则可以使用 Microsoft Excel 分析该数据。有关可用存储资源管理器工具的列表，请参阅博客文章 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。
 
 
 
@@ -206,4 +206,4 @@
 ## 后续步骤：
 [启用存储分析日志记录和访问日志数据](https://msdn.microsoft.com/zh-cn/library/dn782840.aspx)
  
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0530_2016-->

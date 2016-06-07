@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="04/06/2016"
-	wacn.date="05/23/2016"/>
+	ms.date="05/09/2016"
+	wacn.date="06/06/2016"/>
 
 # 监视 Azure 门户中的存储帐户
 
@@ -153,4 +153,4 @@
 
 诊断日志保存在你的存储帐户下名为 $logs 的 Blob 容器中。有关访问 $logs 容器的信息，请参阅[关于存储分析日志记录](http://msdn.microsoft.com/zh-cn/library/azure/hh343262.aspx)。
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0530_2016-->
