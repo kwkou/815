@@ -38,7 +38,7 @@
 - **Azure 密钥保管库集成**：此服务让你能够在 SQL Server VM 上自动安装和配置 Azure 密匙保管库。有关详细信息，请参阅[为 Azure VM（经典）上的 SQL Server 配置 Azure 密匙保管库集成](/documentation/articles/virtual-machines-windows-classic-ps-sql-keyvault)。
 
 ## 使用 Powershell 添加扩展
-如果使用 Azure 管理门户设置 SQL Server VM，将会自动安装该扩展。针对使用 Azure 管理门户配置的 SQL Server VM 或生成你自己的 SQL 许可证的 VM，可以使用 **Set-AzureVMSqlServerExtension** Azure PowerShell cmdlet 添加此扩展。
+如果使用 [Azure 门户](/documentation/articles/virtual-machines-windows-portal-sql-server-provision)设置 SQL Server VM，将会自动安装该扩展。针对使用 Azure 经典门户配置的 SQL Server VM 或生成你自己的 SQL 许可证的 VM，可以使用 **Set-AzureVMSqlServerExtension** Azure PowerShell cmdlet 添加此扩展。
 
 ### 语法
 
