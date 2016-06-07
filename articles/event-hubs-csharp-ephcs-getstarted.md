@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.date="04/12/2016"
-	wacn.date="05/16/2016"/>
+	ms.date="05/13/2016"
+	wacn.date="06/06/2016"/>
 
 # 事件中心入门
 
@@ -20,43 +20,16 @@
 
 事件中心是一个服务，可用于处理来自连接设备和应用程序的大量事件数据（遥测）。将数据采集到事件中心后，可以使用任何实时分析提供程序或存储群集来转换和存储数据。这种大规模事件收集和处理功能是现代应用程序体系结构（包括物联网 (IoT)）的重要组件。
 
-本教程说明如何使用 Azure 管理门户创建事件中心。此外，还将说明如何使用以 C# 编写的控制台应用程序将消息收集到事件中心，以及如何使用 C# [事件处理程序主机]库并行检索这些消息。
+本教程说明如何使用 Azure 管理门户创建事件中心。此外，还将说明如何使用以 C# 编写的控制台应用程序将消息收集到事件中心，以及如何使用 C# [事件处理程序主机][]库并行检索这些消息。
 
 为了完成本教程，你需要有：
 
 + Microsoft Visual Studio 2013，或 Microsoft Visual Studio 2015。
 
-+ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
++ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
 
-## 创建事件中心
 
-1. 登录到 [Azure 管理门户]，然后单击屏幕底部的“新建”。
-
-2. 依次单击“App Service”、“服务总线”、“事件中心”、“快速创建”。
-
-   	![][1]
-
-3. 为你的事件中心键入名称，选择所需区域，然后单击“创建新事件中心”。
-
-   	![][2]
-
-4. 单击你刚创建的命名空间（通常为 ***事件中心名称*-ns**）。
-
-   	![][3]
-
-5. 单击页面顶部的“事件中心”选项卡，然后单击你刚创建的事件中心。
-
-   	![][4]
-
-6. 单击顶部的“配置”选项卡，添加具有“发送”权限的名为“SendRule”的规则，添加另一具有“管理、发送、侦听”权限的名为“ReceiveRule”的规则，然后单击“保存”。
-
-   	![][5]
-
-7. 单击页面顶部的“仪表板”选项卡，然后单击“连接信息”。记下两个连接字符串，或将其复制到某个位置，因为本教程稍后将要用到。
-
-   	![][6]
-
-现在，你的事件中心就创建好了，你已经有了收发事件所需的连接字符串。
+[AZURE.INCLUDE [event-hubs-create-event-hub](../includes/event-hubs-create-event-hub.md)]
 
 [AZURE.INCLUDE [service-bus-event-hubs-get-started-send-csharp](../includes/service-bus-event-hubs-get-started-send-csharp.md)]
 
@@ -75,7 +48,7 @@
  
 4. 再次右键单击“Receiver”解决方案，然后单击“属性”。随即显示“Receiver”属性页面。
 
-5. 单击“启动项目”，然后单击“多启动项目”按钮。将 **Receiver** 和 **Sender** 项目的“操作”框设置为“启动”。
+5. 单击“启动项目”，然后单击“多个启动项目”按钮。将 **Receiver** 和 **Sender** 项目的“操作”框设置为“启动”。
 
 	![][19]
 
@@ -105,13 +78,6 @@
 - [事件中心概述][]
 
 <!-- Images. -->
-[1]: ./media/event-hubs-csharp-ephcs-getstarted/create-event-hub1.png
-[2]: ./media/event-hubs-csharp-ephcs-getstarted/create-event-hub2.png
-[3]: ./media/event-hubs-csharp-ephcs-getstarted/create-event-hub3.png
-[4]: ./media/event-hubs-csharp-ephcs-getstarted/create-event-hub4.png
-[5]: ./media/event-hubs-csharp-ephcs-getstarted/create-event-hub5.png
-[6]: ./media/event-hubs-csharp-ephcs-getstarted/create-event-hub6.png
-
 [19]: ./media/event-hubs-csharp-ephcs-getstarted/create-eh-proj1.png
 [20]: ./media/event-hubs-csharp-ephcs-getstarted/create-eh-proj2.png
 [21]: ./media/event-hubs-csharp-ephcs-getstarted/run-csharp-ephcs1.png
@@ -126,4 +92,4 @@
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
  
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0530_2016-->
