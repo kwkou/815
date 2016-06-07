@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/01/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # Azure 混合云测试环境
 

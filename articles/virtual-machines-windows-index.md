@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="02/24/2016"
-	wacn.date="05/24/2016"/>
+	wacn.date="06/07/2016"/>
 
 # 适用于 Azure 中 Windows VM 的技术文章
 
@@ -204,7 +204,7 @@
 
 ### 入门
 
-[在 Azure 管理门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)
+[在 Azure 经典门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)
 
 [如何登录到运行 Windows Server 的经典虚拟机](/documentation/articles/virtual-machines-windows-classic-connect-logon)
 

@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/29/2015"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # Azure 资源管理器部署模型中 Windows 应用程序的 Azure 计算、网络和存储提供程序
 

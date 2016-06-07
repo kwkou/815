@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="12/11/2015"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # SharePoint Intranet 场工作负荷阶段 3：配置 SQL Server 基础结构
 

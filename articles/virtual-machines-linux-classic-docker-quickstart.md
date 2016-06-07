@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="01/04/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # 如何在 Azure 应用商店中快速开始使用 Docker
 
