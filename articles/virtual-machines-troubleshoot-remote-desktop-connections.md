@@ -41,7 +41,7 @@
 	登录 [Azure 管理门户](https://manage.windowsazure.cn) >“虚拟机”> 你的 Windows 虚拟机 >“重新启动”。
 
 - 调整 VM 大小可修复任何主机问题。<br>
-	登录 [Azure 管理门户](https://manage.windowsazure.cn) >“虚拟机”> 你的 Windows 虚拟机 >“配置”>“虚拟机大小”。有关详细步骤，请参阅[调整虚拟机的大小](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx)。
+	登录 [Azure 管理门户](https://manage.windowsazure.cn) >“虚拟机”> 你的 Windows 虚拟机 >“配置”>“虚拟机大小”。有关详细步骤，请参阅[调整虚拟机的大小](/documentation/articles/aog-virtual-machine-how-to-reset-vm-size)。
 
 - 检查 VM 的资源运行状况以了解是否有任何平台问题。<br>
 	登录 [Azure 管理门户](https://manage.windowsazure.cn) >“虚拟机”> 你的 Windows 虚拟机 >“监视器”。
