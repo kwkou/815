@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="09/22/2015"
-	wacn.date="" />
+	wacn.date="06/07/2016" />
 
 
 # 在 Azure 经典门户中使用 Docker VM 扩展

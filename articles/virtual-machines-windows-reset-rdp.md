@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/12/2016"
-	wacn.date="05/12/2016"/>
+	wacn.date="06/07/2016"/>
 
 # 如何在 Windows VM 中重置远程桌面服务或其登录密码
 

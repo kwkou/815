@@ -12,7 +12,7 @@
 <tags 
 	ms.service="virtual-machines"
 	ms.date="02/04/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # 在 Azure Resource Manager 虚拟机 (GUI) 中配置 AlwaysOn 可用性组
 
@@ -27,7 +27,7 @@
 
 本端到端教程介绍如何使用 Azure Resource Manager 虚拟机创建 SQL Server 可用性组。本教程将使用 Azure 边栏选项卡配置模板。当你完成本教程时，你将查看门户中的默认设置，键入所需设置，以及更新边栏选项卡。
 
->[AZURE.NOTE] 在 Azure 管理门户中，为 AlwaysOn 可用性组设置了一个包含侦听器的新库。该库可自动配置 AlwaysOn 可用性组所需的所有设置。有关详细信息，请参阅 [SQL Server AlwaysOn Offering in Azure classic portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx)（Azure 经典门户库中的 SQL Server AlwaysOn 产品）。
+>[AZURE.NOTE] 在 Azure 经典门户中，为 AlwaysOn 可用性组设置了一个包含侦听器的新库。该库可自动配置 AlwaysOn 可用性组所需的所有设置。有关详细信息，请参阅 [SQL Server AlwaysOn Offering in Azure classic portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx)（Azure 经典门户库中的 SQL Server AlwaysOn 产品）。
 
 完成本教程后，Azure 中的 SQL Server AlwaysOn 解决方案将包括以下要素：
 
