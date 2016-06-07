@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="02/03/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # 使用 Azure Resource Manager 模板部署常用应用程序框架
 

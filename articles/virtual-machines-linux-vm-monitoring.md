@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="02/08/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
    
 # 启用或禁用 Azure VM 监视
 

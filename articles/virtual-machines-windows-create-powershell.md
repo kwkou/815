@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="10/08/2015"
-	wacn.date="06/06/2016"/>
+	wacn.date="06/07/2016"/>
 
 # 使用资源管理器和 Azure PowerShell 创建并配置 Windows 虚拟机
 

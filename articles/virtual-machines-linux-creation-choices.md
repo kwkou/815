@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/12/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # 使用 Resource Manager 创建 Linux 虚拟机的不同方式
 

@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="02/03/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # 创建 SharePoint 服务器场
 

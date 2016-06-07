@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/13/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # 将策略应用到 Azure Resource Manager 虚拟机
 

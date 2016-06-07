@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="01/25/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # Azure Desired State Configuration 扩展处理程序简介 #
 

@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/01/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # 在混合云中设置用于测试的 SharePoint Intranet 场
 

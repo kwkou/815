@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="02/12/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # 在 Azure SUSE Linux VM 上测试 SAP NetWeaver
 

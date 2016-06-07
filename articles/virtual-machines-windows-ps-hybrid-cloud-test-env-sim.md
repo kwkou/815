@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/01/2016"
-	wacn.date="06/06/2016"/>
+	wacn.date="06/07/2016"/>
 
 # 设置用于测试的模拟混合云环境
 
