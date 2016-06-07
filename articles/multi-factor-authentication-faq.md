@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="04/07/2016" 
-	wacn.date="04/13/2016"/>
+	ms.date="05/12/2016" 
+	wacn.date="06/06/2016"/>
 
 # Azure 多重身份验证常见问题
 
@@ -21,7 +21,7 @@
 
 **问：如何获得 Azure 多重身份验证方面的帮助？**
 
-[搜索 Microsoft 知识库 (KB)](http://search.microsoft.com/zh-cn/supportresults.aspx?form=mssupport&q=phonefactor)
+[搜索 Microsoft 知识库 (KB)](http://search.microsoft.com/supportresults.aspx?form=mssupport&q=phonefactor)
 
 - 在 Microsoft 知识库 (KB) 中搜索有关 Azure 多重身份验证服务器 (Phone Factor) 支持的常见故障维修服务问题的技术解决方案。
 
@@ -108,4 +108,4 @@ Azure 多重身份验证服务通过短信聚合器发送短信。许多因素�
 
 
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0530_2016-->

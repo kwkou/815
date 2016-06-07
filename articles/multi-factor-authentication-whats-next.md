@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="02/26/2016" 
-	wacn.date="04/13/2016"/>
+	ms.date="05/12/2016" 
+	wacn.date="06/06/2016"/>
 
 # 配置 Azure 多重身份验证
 
@@ -95,7 +95,7 @@ Azure AD 支持与本地 Windows Server Active Directory 域服务 (AD DS) 联�
 
 
 
-1. 登录到 Azure 管理门户。
+1. 登录到 Azure 经典门户。
 2. 在左侧单击“Active Directory”。
 3. 在“目录”下单击要为其启用此功能的用户的目录。
 4. 在顶部单击“用户”。
@@ -152,4 +152,4 @@ Azure AD 支持与本地 Windows Server Active Directory 域服务 (AD DS) 联�
 
 
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0530_2016-->

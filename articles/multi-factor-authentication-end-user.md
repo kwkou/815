@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="multi-factor-authentication"  
-	ms.date="02/16/2016" 
+	ms.date="05/12/2016" 
 	wacn.date="04/13/2016"/>
 
 
@@ -26,7 +26,7 @@
 - **通过手机通话、短信还是移动应用** - 如果使用手机，请选择是要接听电话、接收短信还是使用移动应用。
 - **使用移动应用中的通知还是验证码** - 如果使用移动应用，请选择是要接收你需要回复的通知还是验证码。
 
-> [AZURE.NOTE]请注意，你的 IT 部门可能会禁用上述一个或多个选项。如果存在这种情况，在注册过程中这些禁用的选项将不可用。
+> [AZURE.NOTE]  请注意，你的 IT 部门可能会禁用上述一个或多个选项。如果存在这种情况，在注册过程中这些禁用的选项将不可用。
 
 在确定验证方法后，你可以开始注册。使用[设置体验](/documentation/articles/multi-factor-authentication-end-user-first-time)链接开始逐步完成注册过程。
 
@@ -45,4 +45,4 @@
 
  
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_0530_2016-->
