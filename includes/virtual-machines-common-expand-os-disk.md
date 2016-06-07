@@ -62,4 +62,6 @@
 
 	($vm.StorageProfile.DataDisks | Where {$_.Name -eq 'my-second-data-disk'})[0].DiskSizeGB = 1023
 
+如果想要了解如何将磁盘附加到 Azure Resource Manager VM，请参阅[此文](/documentation/articles/virtual-machines-windows-attach-disk-portal)。
+
 <!---HONumber=Mooncake_0425_2016-->
