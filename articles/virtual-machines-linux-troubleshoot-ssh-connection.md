@@ -12,13 +12,14 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/12/2016"
-	wacn.date="05/16/2016"/>
+	wacn.date="06/07/2016"/>
 
 # 对于基于 Linux 的 Azure 虚拟机的 Secure Shell (SSH) 连接进行故障排除
 
 有许多原因可能会导致在尝试连接到基于 Linux 的 Azure 虚拟机时出现 SSH 错误。本文将帮助你找出原因并更正它们。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
+
 
 如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和 CSDN 论坛](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Azure 支持常见问题](/support/faq/)。
 
@@ -31,30 +32,72 @@
 
 尝试以下步骤来解决最常见的 SSH 连接失败：
 
-1. 可以使用 Azure CLi 来重置 ssh 连接。
+1. 从 [Azure 门户](https://portal.azure.cn)<br>“重置远程访问” 单击“浏览”>“虚拟机(经典)”> 你的 Linux 虚拟机 >“重置远程...”。
 
-	- 首先，需要使用以下内容创建一个名为 PublicConf.json 的文件。
-	
-			{
-				"reset_ssh":"True"
-			}
+2. 重启虚拟机。<br> 在 [Azure 门户](https://portal.azure.cn)中，单击“浏览”>“虚拟机(经典)”> 你的 Linux 虚拟机 >“重新启动”。<br> 在 [Azure 经典门户](https://manage.windowsazure.cn)中，打开“虚拟机”>“实例”>“重新启动”。
 
-	- 然后，运行以下命令（用你的虚拟机名称替换“vmname”）。
-	
-			 azure vm extension set vmname VMAccessForLinux Microsoft.OSTCExtensions 1.* --private-config-path PrivateConf.json
-	
-
-2. **重新启动**虚拟机。在 [Azure 管理门户](https://manage.windowsazure.cn)中，单击“虚拟机”> 你的 Linux 虚拟机 >“重新启动”。
 3. [调整虚拟机的大小](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx)。
 
 4. 按照[如何为基于 Linux 的虚拟机重置密码或 SSH](/documentation/articles/virtual-machines-linux-classic-reset-access) 中的说明，在虚拟机上执行以下操作：
 
 	- 重置密码或 SSH 密钥。
-	- 创建新的 _sudo_ 用户帐户。
+	- 创建新的 “sudo” 用户帐户。
 	- 重置 SSH 配置。
 
-5. 检查 VM 的资源运行状况以了解是否有任何平台问题。<br>
-	“虚拟机”> 你的 Linux 虚拟机 >“监视”
+5. 检查 VM 的资源运行状况以了解是否有任何平台问题。<br> 单击“浏览”>“虚拟机(经典)”> 你的 Linux 虚拟机 >“设置”>“检查运行状况”。
+
+
+### 使用资源管理器部署模型创建的虚拟机
+
+若要解决使用资源管理器部署模型创建的虚拟机的常见 SSH 问题，请尝试以下步骤。
+
+#### 重置 SSH 连接
+
+[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
+
+通过使用 Azure CLI 确保已安装版本 2.0.5 或更高版本的 [Microsoft Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)。
+
+如果尚未安装 Azure CLI，请[安装 Azure CLI 并连接到 Azure 订阅](/documentation/articles/xplat-cli-install)，然后使用 `azure login` 命令登录。请确保你在资源管理器模式下：
+
+	azure config mode arm
+
+使用以下方法之一重置 SSH 连接：
+
+* 按以下示例所示使用 `vm reset-access` 命令。
+
+		azure vm reset-access -g YourResourceGroupName -n YourVirtualMachineName -r
+
+这将在虚拟机上安装 `VMAccessForLinux` 扩展。
+
+* 或者，使用以下内容创建名为 PrivateConf.json 的文件：
+
+		{  
+			"reset_ssh":"True"
+		}
+
+然后手动运行 `VMAccessForLinux` 扩展以重置 SSH 连接。
+
+	azure vm extension set "YourResourceGroupName" "YourVirtualMachineName" VMAccessForLinux Microsoft.OSTCExtensions "1.2" --private-config-path PrivateConf.json
+
+#### 重置 SSH 凭据
+
+* 运行 `vm reset-access` 命令以设置任何 SSH 凭据。
+
+		azure vm reset-access TestRgV2 TestVmV2 -u NewUser -p NewPassword
+
+在命令行上键入 `azure vm reset-access -h` 可以查看有关此命令的详细信息。
+
+* 或者，使用以下内容创建名为 PrivateConf.json 的文件。
+
+		{
+			"username":"NewUsername", "password":"NewPassword", "expiration":"2016-01-01", "ssh_key":"", "reset_ssh":false, "remove_user":""
+		}
+
+然后使用上述文件运行 Linux 扩展。
+
+	$azure vm extension set "testRG" "testVM" VMAccessForLinux Microsoft.OSTCExtensions "1.2" --private-config-path PrivateConf.json
+
+请注意，你可以遵循[如何为基于 Linux 的虚拟机重置密码或 SSH](/documentation/articles/virtual-machines-linux-classic-reset-access) 中的类似步骤来尝试其他不同的做法。请记得修改资源管理器模式的 Azure CLI 指令。
 
 ### 使用资源管理器部署模型创建的虚拟机
 
@@ -121,12 +164,17 @@
 
 首先，在门户中检查虚拟机的状态。
 
-在 [Azure 管理门户](https://manage.windowsazure.cn)中，针对采用经典部署模型的虚拟机：
+在 [Azure 经典门户](https://manage.windowsazure.cn)中，针对采用经典部署模型的虚拟机：
 
 1. 单击“虚拟机”>“VM 名称”。
 2. 单击 VM 的“仪表板”以查看 VM 的状态。
 3. 单击“监视器”，以查看计算、存储和网络资源的最近活动。
 4. 单击“终结点”以确保 SSH 流量有终结点。
+
+在 [Azure 门户](https://portal.azure.cn)中：
+
+1. 如需查找使用经典部署模型创建的虚拟机，请单击“浏览”>“虚拟机(经典)”>“VM 名称”。如需查找使用资源管理器创建的虚拟机，请单击“浏览”>“虚拟机”>“VM 名称”。该虚拟机的状态窗格中应显示“正在运行”。向下滚动以显示计算、存储和网络资源的最近活动。
+2. 单击“设置”以检查终结点、IP 地址和其他设置。若要确定使用资源管理器创建的虚拟机中的终结点，请检查是否定义了[网络安全组](/documentation/articles/virtual-networks-nsg)、规则是否应用于该组，以及在子网中是否引用了这些终结点。
 
 若要验证网络连接，请检查所配置的终结点，并了解是否可通过其他协议（例如 HTTP 或其他服务）连接到该 VM。
 
@@ -193,7 +241,7 @@
 
 如果可以与同一虚拟网络中的某个 VM 建立 SSH 连接，请检查：
 
-- 目标 VM 上 SSH 流量的终结点配置。终结点的专用 TCP 端口应与 VM 上的 SSH 服务正在侦听的 TCP 端口（默认值为 22）匹配。在 Azure 管理门户中使用“虚拟机”>“VM 名称”>“终结点”来验证 SSH TCP 端口号。
+- 目标 VM 上 SSH 流量的终结点配置。终结点的专用 TCP 端口应该与 VM 上的 SSH 服务正在侦听的 TCP 端口（默认为 22）匹配。对于在资源管理器部署模型中使用模板创建的 VM，请通过“浏览”>“虚拟机(v2)”>“VM 名称”>“设置”>“终结点”，验证 Azure 门户中的 SSH TCP 端口号。
 - 目标虚拟机上的 SSH 流量终结点的 ACL。ACL 允许你指定基于源 IP 地址允许或拒绝的从 Internet 传入的流量。错误配置的 ACL 可能会阻止 SSH 流量传入终结点。检查你的 ACL 以确保允许从你的代理服务器或其他边缘服务器的公共 IP 地址传入的流量。有关详细信息，请参阅[关于网络访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl)。
 
 若要将终结点从问题原因中排除，请删除当前终结点，然后创建一个新的终结点并指定 **SSH** 名称（公用和专用端口号为 TCP 端口 22）。有关详细信息，请参阅[在 Azure 中的虚拟机上设置终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints)。

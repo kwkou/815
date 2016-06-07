@@ -1,6 +1,6 @@
 <properties
-	pageTitle="在 Azure 管理门户中创建运行 Linux 的 Azure 虚拟机 | Azure"
-	description="在 Azure 管理门户中使用 Azure 资源组创建运行 Linux 的 Azure 虚拟机 (VM)。"
+	pageTitle="在 Azure 门户中创建运行 Linux 的 Azure 虚拟机 | Microsoft Azure"
+	description="在 Azure 门户中使用 Azure 资源组创建运行 Linux 的 Azure 虚拟机 (VM)。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="squillace"
@@ -11,47 +11,69 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="10/21/2015"
-	wacn.date="03/28/2016"/>
+	wacn.date="06/07/2016"/>
 
-# 使用 Azure 管理门户创建运行 Linux 的虚拟机
+# 使用 Azure 预览门户创建运行 Linux 的虚拟机
 
-创建运行 Linux 的 Azure 虚拟机 (VM) 是一项很简单的操作。本教程演示如何使用 Azure 管理门户快速创建一个虚拟机，并使用 `.pem` 证书文件来保护与 VM 的 **SSH** 连接。你也可以[将自己的映像作为模板](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd)来创建 Linux VM。
+> [AZURE.SELECTOR]
+- [Azure CLI](/documentation/articles/virtual-machines-linux-tutorial)
+- [Azure Preview Portal](/documentation/articles/virtual-machines-linux-portal-create)
+
+<br>[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
+
+创建运行 Linux 的 Azure 虚拟机 (VM) 是一项很简单的操作。本教程演示如何使用 Azure 预览门户快速创建一个虚拟机，并使用 `~/.ssh/id_rsa.pub` 公钥文件来保护到 VM 的 **SSH** 连接。你也可以[将自己的映像作为模板](/documentation/articles/virtual-machines-linux-create-upload-vhd)来创建 Linux VM。
+
+> [AZURE.NOTE]本教程创建的 Azure 虚拟机将由 Azure 资源组 API 管理。有关详细信息，请参阅 [Azure 资源组概述](/documentation/articles/resource-group-overview)。
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 ## 选择映像
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
+前往预览门户中的 Azure 应用商店，找到所需的 Windows Server VM 映像。
 
-2. 在门户的底部，单击“新建”>“计算”>“虚拟机”>“从库中”。在映像列表中选择“Ubuntu Server 14.04 LTS”。
+1. 登录[预览门户](https://manage.windowsazure.cn)。
+
+2. 在“中心”菜单上，单击“新建”>“计算”>“Ubuntu Server 14.04 LTS”。
 
 	![选择 VM 映像](./media/virtual-machines-linux-portal-create/chooseubuntuvm.png)
+
+	> [AZURE.TIP]若要查找其他映像，请单击“应用商店”，然后搜索或筛选可用的项。
+
+3. 在“Ubuntu Server 14.04 LTS”页面的底部，选择“使用资源管理器堆栈”以便在 Azure 资源管理器中创建 VM。请注意，对于大多数新的工作负荷，建议使用资源管理器堆栈。有关注意事项，请参阅 [Azure 资源管理器下的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
+
+4. 接下来，单击 ![创建按钮](./media/virtual-machines-linux-portal-create/createbutton.png)。
+
+	![更改为资源管理器计算堆栈](./media/virtual-machines-linux-portal-create/changetoresourcestack.png)
 
 ## 创建虚拟机
 
 选择映像后，可以对大多数配置使用 Azure 的默认设置并快速创建 VM。
 
-1. 在“虚拟机配置”上，输入要为 VM 起的**名称**和证书文件（在此例中为 `.pem` 文件）。有关详细信息，请参阅[如何在 Azure 中将 SSH 与 Linux 和 Mac 配合使用](/documentation/articles/virtual-machines-linux-ssh-from-linux)。
+1. 在“创建虚拟机”边栏选项卡上，单击“基本信息”。输入要用于 VM 的“名称”和公钥文件（在本例中，该文件来自 `~/.ssh/id_rsa.pub` 文件并采用 **ssh-rsa** 格式）。如果有多个订阅，请为新 VM 指定一个订阅，并指定一个新的或现有的**资源组**以及 Azure 数据中心的**位置**。
 
 	![](./media/virtual-machines-linux-portal-create/step-1-thebasics.png)
 
-	> [AZURE.NOTE] 如果不想使用公钥和私钥交换来保护 **ssh** 会话的安全，你还可以在此处选择用户名/密码身份验证并输入该信息。
+	> [AZURE.NOTE]如果不想使用公钥和私钥交换来保护 **ssh** 会话的安全，你还可以在此处选择用户名/密码身份验证并输入该信息。
 
-2. 选择定价**层**，并使用“大小”下拉菜单选择所需的相应 VM 大小。每种大小都指定了计算核心的数量、内存以及其他功能，比如对高级存储的支持，这将对价格产生影响。根据所选的映像，Azure 将自动推荐特定的大小。
+2. 单击“大小”并选择适合你需要的 VM 大小。每种大小都指定了计算核心的数量、内存以及其他功能，比如对高级存储的支持，这将对价格产生影响。根据所选的映像，Azure 将自动推荐特定的大小。完成后，单击 ![选择按钮](./media/virtual-machines-linux-portal-create/selectbutton-size.png)。
 
-	>[AZURE.NOTE] 高级存储可用于 DS 系列虚拟机，该虚拟机尚不可在门户中配置。但是，你可以使用 Azure PowerShell 创建 DS 系列虚拟机。高级存储是数据密集型工作负荷（如数据库）的最佳存储选项。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)。
+	>[AZURE.NOTE]某些地区的 DS 系列虚拟机提供高级存储。高级存储是数据密集型工作负荷（如数据库）的最佳存储选项。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)。
 
-3. 单击“下一步”按钮以查看新 VM 的存储和网络设置。对于第一个 VM，一般可以接受默认设置。
+3. 单击“设置”以查看新 VM 的存储和网络设置。对于第一个 VM，一般可以接受默认设置。如果选择了支持它的 VM 大小，则可以通过选择“磁盘类型”下的“高级(SSD)”来试用高级存储。完成后，单击 ![确定按钮](./media/virtual-machines-linux-portal-create/okbutton.png)。
 
 	![](./media/virtual-machines-linux-portal-create/step-3-settings.png)
 
-6. 单击“下一步”按钮，然后选择是否安装 VM 代理。请注意，**配置扩展**尚不可用于 Linux。
+6. 单击“摘要”以查看你的配置选择。查看或更新完设置后，单击 ![确定按钮](./media/virtual-machines-linux-portal-create/createbutton.png)。
 
-8. 单击“完成”按钮以创建虚拟机。创建虚拟机后，你将能够从虚拟机列表中看到它。
+	![创建摘要](./media/virtual-machines-linux-portal-create/summarybeforecreation.png)
+
+8. 当 Azure 创建 VM 时，你可以在“中心”菜单中的“通知”中跟踪进度。当 Azure 创建 VM 后，你将在启动板上看到它，除非你清除了“创建虚拟机”边栏选项卡中的“固定到启动板”。
+
+	> [AZURE.NOTE]请注意，与使用服务管理计算堆栈在云服务内创建 VM 不同的是，这种情况下的摘要不包含公共 DNS 名称。
 
 ## 使用 **ssh** 连接到你的 Azure Linux VM
 
-现在可以使用 **ssh** 以标准方式连接到 Ubuntu VM。可以从虚拟机列表中选择你的虚拟机并单击“仪表板”。你可以在该处找到**公共虚拟 IP (VIP) 地址**。
+现在可以使用 **ssh** 以标准方式连接到 Ubuntu VM。但是，你将需要通过打开 Azure VM 及其资源的相应磁贴来发现分配给该 VM 的 IP 地址。你可以通过以下方式打开磁贴：单击“浏览”，然后选择“最近”并查找你创建的 VM，或者在启动板上单击为你创建的磁贴。在任一情况下，都要找到并复制下图所示的“公共 IP 地址”的值。
 
 ![成功创建的摘要](./media/virtual-machines-linux-portal-create/successresultwithip.png)
 
@@ -89,16 +111,19 @@
 
 	ops@ubuntuvm:~$
 
+
+> [AZURE.NOTE]此外，还可以在门户中为虚拟机配置完全限定域名 (FQDN)。在[此处](/documentation/articles/virtual-machines-create-fqdn-on-portal)阅读有关 FQDN 的详细信息。
+
 ## 后续步骤
 
 若要了解有关 Azure 上的 Linux 的详细信息，请参阅：
 
-- [Azure 上的 Linux 和开源计算](/documentation/articles/virtual-machines-linux-opensource-links)
+- [Azure 上的 Linux 和开源计算](/documentation/articles/virtual-machines-linux-opensource)
 
-- [如何使用针对 Mac 和 Linux 的 Azure 命令行工具](/documentation/articles/azure-cli-arm-commands)
+- [如何使用针对 Mac 和 Linux 的 Azure 命令行工具](/documentation/articles/virtual-machines-command-line-tools)
 
-- [使用适用于 Linux 的 Azure CustomScript 扩展部署 LAMP 应用程序](/documentation/articles/virtual-machines-linux-classic-lamp-script)
+- [使用适用于 Linux 的 Azure CustomScript 扩展部署 LAMP 应用程序](/documentation/articles/virtual-machines-linux-script-lamp)
 
-- [Azure 上用于 Linux 的 Docker 虚拟机扩展](/documentation/articles/virtual-machines-linux-dockerextension)
+- [Azure 上用于 Linux 的 Docker 虚拟机扩展](/documentation/articles/virtual-machines-docker-vm-extension)
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_1221_2015-->

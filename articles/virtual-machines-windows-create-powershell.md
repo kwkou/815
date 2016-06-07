@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="10/08/2015"
-	wacn.date="06/06/2016"/>
+	wacn.date="06/07/2016"/>
 
 # 使用资源管理器和 Azure PowerShell 创建并配置 Windows 虚拟机
 
@@ -372,9 +372,13 @@ $nicName 字符串必须是资源组中唯一的字符串。最佳做法是将�
 
 ## 其他资源
 
+[Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-windows-compare-deployment-models)
+
 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)
 
 [使用资源管理器模板与 PowerShell 来部署和管理 Azure 虚拟机](/documentation/articles/virtual-machines-windows-ps-manage)
+
+[使用资源管理器模板和 PowerShell 创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-template)
 
 [如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 

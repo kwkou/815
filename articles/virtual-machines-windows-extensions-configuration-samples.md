@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="03/29/2016"
-	wacn.date="06/06/2016"/>
+	wacn.date="06/07/2016"/>
 
 # Azure Windows VM 扩展配置示例
 
@@ -347,6 +347,8 @@
           }
 
 ### Azure 诊断
+
+有关如何配置诊断的更多详细信息，请参阅 [Azure 诊断扩展](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template)
 
           {
             "publisher": "Microsoft.Azure.Diagnostics",

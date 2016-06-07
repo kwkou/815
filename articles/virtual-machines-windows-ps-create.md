@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/12/2016"
-	wacn.date="06/06/2016"/>
+	wacn.date="06/07/2016"/>
 
 # 使用 Resource Manager 和 PowerShell 创建 Windows VM
 
@@ -140,5 +140,6 @@
 ## 后续步骤
 
 - 查看 [Manage virtual machines using Azure Resource Manager and PowerShell（使用 Azure Resource Manager 和 PowerShell 管理虚拟机）](/documentation/articles/virtual-machines-windows-ps-manage)，了解如何管理刚创建的虚拟机。
+- 参考 [Create a Windows virtual machine with a Resource Manager template（使用 Resource Manager 模板创建 Windows 虚拟机）](/documentation/articles/virtual-machines-windows-ps-template)中的信息，通过模板创建虚拟机
 
 <!---HONumber=Mooncake_0425_2016-->

@@ -13,7 +13,7 @@
 <tags 
 	ms.service="virtual-machines-linux"
 	ms.date="12/15/2015" 
-	wacn.date="05/24/2016"/>
+	wacn.date="06/07/2016"/>
 
 #如何在 Azure 上将 SSH 用于 Linux 和 Mac
 
@@ -29,11 +29,12 @@
 
 ## 你需要哪些文件？
 
-Azure 的基本 SSH 设置包括 2048 位的 **ssh-rsa** 公钥和私钥对（默认情况下，**ssh-keygen** 会将这些文件存储为 **~/.ssh/id\_rsa** 和 **~/.ssh/id-rsa.pub**，除非更改默认值）以及从 **id\_rsa** 私钥文件生成的 `.pem` 文件，以供与管理门户的经典部署模型一起使用。
+Azure 的基本 SSH 设置包括 2048 位的 **ssh-rsa** 公钥和私钥对（默认情况下，**ssh-keygen** 会将这些文件存储为 **~/.ssh/id\_rsa** 和 **~/.ssh/id-rsa.pub**，除非更改默认值）以及从 **id\_rsa** 私钥文件生成的 `.pem` 文件，以供与经典门户的经典部署模型一起使用。
 
 以下是部署方案，你在每个方案中使用的文件类型为：
 
-2. 使用[管理门户](https://manage.windowsazure.cn)创建 VM 时必需使用 .pem 文件。使用 [Azure CLI](/documentation/articles/xplat-cli-install) 的经典部署也支持 .pem 文件。 
+1. 无论是哪种部署模型，使用[预览门户](https://manage.windowsazure.cn)的所有部署都必需使用 **ssh-rsa** 密钥。
+2. 使用[经典门户](https://manage.windowsazure.cn)创建 VM 时必需使用 .pem 文件。使用 [Azure CLI](/documentation/articles/xplat-cli-install) 的经典部署也支持 .pem 文件。 
 
 ## 创建密钥以用于 SSH
 
@@ -74,7 +75,7 @@ Azure 的基本 SSH 设置包括 2048 位的 **ssh-rsa** 公钥和私钥对（�
 
 ## 使用已有的 SSH 密钥
 
-如果你需要使用管理门户，可能需要基于密钥创建 `.pem` 文件。
+如果你需要使用经典门户，可能需要基于密钥创建 `.pem` 文件。
 
 ## 使用公钥文件创建 VM
 
@@ -139,7 +140,7 @@ Azure 的基本 SSH 设置包括 2048 位的 **ssh-rsa** 公钥和私钥对（�
 
 ### 示例：使用 .pem 文件创建 VM
 
-然后可以在管理门户或经典部署模式和 `azure vm create` 中使用 .pem 文件，如以下示例所示：
+然后可以在经典门户或经典部署模式和 `azure vm create` 中使用 .pem 文件，如以下示例所示：
 
 	azure vm create \
 	-l "China North" -n testpemasm \

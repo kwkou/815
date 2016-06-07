@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="01/25/2016"
-	wacn.date="05/24/2016"/>
+	wacn.date="06/07/2016"/>
 
 # Azure Desired State Configuration 扩展处理程序简介 #
 
@@ -20,11 +20,11 @@
 
 Azure VM 代理和关联的扩展是 Azure 基础结构服务的一部分。VM 扩展是软件组件，可以扩展 VM 功能和简化各种 VM 管理操作；例如，VMAccess 扩展可用于重置管理员的密码，自定义脚本扩展可用于在 VM 上执行脚本。
 
-本文将介绍 Azure PowerShell SDK 中包含的适用于 Azure VM 的 PowerShell Desired State Configuration (DSC) 扩展。使用新 cmdlet 可将 PowerShell DSC 配置上载到 PowerShell DSC 扩展启用的 Azure VM 并应用该配置。PowerShell DSC 扩展将调用 PowerShell DSC 在 VM 上启用收到的 DSC 配置。
+本文将介绍 Azure PowerShell SDK 中包含的适用于 Azure VM 的 PowerShell Desired State Configuration (DSC) 扩展。使用新 cmdlet 可将 PowerShell DSC 配置上载到 PowerShell DSC 扩展启用的 Azure VM 并应用该配置。PowerShell DSC 扩展将调用 PowerShell DSC 在 VM 上启用收到的 DSC 配置。也可以通过预览门户 UI 使用此功能。
 
 ## 先决条件 ##
 **本地计算机**
-若要与 Azure VM 扩展交互，需要使用 Azure PowerShell SDK。
+若要与 Azure VM 扩展交互，需要使用预览门户 UI 或 Azure PowerShell SDK。
 
 **来宾代理**
 要使用 DSC 配置进行配置的 Azure VM 需是支持 Windows Management Framework (WMF) 4.0 或 5.0 的 OS。有关支持的 OS 版本的完整列表，请参阅“DSC 扩展版本历史记录”。
@@ -40,7 +40,7 @@ Azure VM 代理和关联的扩展是 Azure 基础结构服务的一部分。VM �
 
 ## 体系结构概述 ##
 
-Azure DSC 扩展使用 Azure VM 代理框架来传送、启用和报告 Azure VM 上运行的 DSC 配置。DSC 扩展需要一个 .zip 文件，其中至少包含一个配置文档，以及通过 Azure PowerShell SDK 提供的一组参数。
+Azure DSC 扩展使用 Azure 代理框架来传送、启用和报告 Azure VM 上运行的 DSC 配置。DSC 扩展需要一个 .zip 文件，其中至少包含一个配置文档，以及通过 Azure PowerShell SDK 或门户 UI 提供的一组参数。
 
 首次调用该扩展时，它将运行安装过程。此过程将安装下面定义的 Windows Management Framework (WMF) 版本：
 
@@ -52,19 +52,41 @@ Azure DSC 扩展使用 Azure VM 代理框架来传送、启用和报告 Azure VM
 
 ## PowerShell cmdlet ##
 
-可将 Powershell cmdlet 与 ASM 配合使用，以便打包、发布和监视 DSC 扩展部署。下面列出的 cmdlet 是 ASM 模块。
+可将 Powershell cmdlet 与 ARM 或 ASM 配合使用，以便打包、发布和监视 DSC 扩展部署。下面列出的 cmdlet 是 ASM 模块，但是，可以将“Azure”替换为“AzureRM”以使用 ARM 模型。例如，`Publish-AzureVMDscConfiguration` 将使用 ASM，而 `Publish-AzureRmVMDscConfiguration` 将使用 ARM。
 
 `Publish-AzureVMDscConfiguration` 将检索配置文件，扫描其中是否有依赖的 DSC 资源，然后创建一个 .zip 文件，其中包含启用配置所需的配置和 DSC 资源。它还可以使用 `-ConfigurationArchivePath` 参数在本地创建包。否则，它会将 .zip 文件发布到 Azure Blob 存储，然后使用 SAS 令牌保护该文件。
 
 在此 cmdlet 创建的 .zip 文件中，存档文件夹根目录处提供了 .ps1 配置脚本。资源会将模块文件夹放置在存档文件夹中。
 
-`Set-AzureVMDscExtension` 将 PowerShell DSC 扩展所需的设置注入 VM 配置对象，然后，可以使用 `Update-AzureVM` 在 Azure VM 中应用此对象。
+`Set-AzureVMDscExtension` 将 PowerShell DSC 扩展所需的设置注入 VM 配置对象，然后，可以使用 `Update-AzureVm` 在 Azure VM 中应用此对象。
 
 `Get-AzureVMDscExtension` 可检索特定 VM 的 DSC 扩展状态。
 
 `Get-AzureVMDscExtensionStatus` 可检索一个或一组 VM 上由 DSC 扩展处理程序启用的 DSC 配置的状态。
 
 `Remove-AzureVMDscExtension` 可从给定的虚拟机中删除扩展处理程序。它**不会**删除配置、卸载 WMF 或更改虚拟机上已应用的设置。而只删除扩展处理程序。
+
+**ASM 和 ARM cmdlet 的主要差别**
+
+- ARM cmdlet 是同步的。ASM cmdlet 是异步的。
+- ResourceGroupName、VMName、ArchiveStorageAccountName、Version、Location 都是新的必需参数。
+- ArchiveResourceGroupName 是 ARM 的新可选参数。如果你的存储帐户所属的资源组与创建虚拟机的资源组不同，你可以指定此参数。
+- ConfigurationArchive 在 ARM 中名为 ArchiveBlobName
+- ContainerName 在 ARM 中名为 ArchiveContainerName
+- StorageEndpointSuffix 在 ARM 中名为 ArchiveStorageEndpointSuffix
+- 我们已将 -AutoUpdate 参数添加到 ARM，使扩展处理程序能够在有最新版本时自动更新。请注意，当发布了新版本的 WMF 时，这可能会导致 VM 重新启动。 
+
+## 预览门户功能 ##
+浏览到 VM。在“设置”->“管理”下面，单击“扩展”。此时将创建一个新窗格。单击“添加”，然后选择“PowerShell DSC”。
+
+门户需要输入信息。
+**配置模块或脚本**：这是必填字段。需要一个包含配置脚本的 .ps1 文件，或者需要一个 .zip 文件，其中的 .ps1 配置脚本位于根目录，所有依赖资源位于模块文件夹。可以使用 Azure PowerShell SDK 随附的 `Publish-AzureVMDscConfiguration -ConfigurationArchivePath` cmdlet 来创建该文件。系统会将 zip 文件上载到受 SAS 令牌保护的用户 Blob 存储。
+
+**配置数据 PSD1 文件**：这是可选字段。如果你的配置要求 .psd1 中有配置数据文件，请使用此字段来进行选择，然后将它上载到受 SAS 令牌保护的用户 Blob 存储。
+ 
+**配置的模块限定名称**：.ps1 文件可以包含多个配置函数。请输入配置 .ps1 脚本的名称，后面再加上 '' 和配置函数的名称。例如：
+
+**配置参数**：如果配置函数采用参数，请使用 `argumentName1=value1,argumentName2=value2` 格式在此处输入。请注意，此处的格式与通过 PowerShell cmdlet 或 ARM 模板接受配置参数的方式不同。
 
 ## 入门 ##
 
