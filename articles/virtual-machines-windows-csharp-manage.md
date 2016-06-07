@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/17/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # 使用 Azure Resource Manager 与 C 来管理 Azure 虚拟机#  
 

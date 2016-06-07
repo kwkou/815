@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="11/01/2015"
-	wacn.date="06/06/2016"/>
+	wacn.date="06/07/2016"/>
 
 # 使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机
 

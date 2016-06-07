@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="03/24/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # 为 Azure VM (Resource Manager) 上的 SQL Server 配置 Azure 密钥保管库集成
 

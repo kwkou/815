@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="03/25/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # 如何在 Azure 门户中将数据磁盘附加到 Windows VM。
 

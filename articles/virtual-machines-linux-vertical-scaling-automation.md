@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="03/29/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # 使用 Azure 自动化垂直缩放 Azure 虚拟机
 

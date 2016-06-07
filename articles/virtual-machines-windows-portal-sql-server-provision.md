@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="03/24/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # 在 Azure 门户中预配 SQL Server 虚拟机
 

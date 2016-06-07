@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="01/06/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # 使用 .NET 库和模板部署 Azure 资源
 

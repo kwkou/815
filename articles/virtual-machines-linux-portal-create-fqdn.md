@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="01/19/2016"
-	wacn.date=""/>
+	wacn.date="06/07/2016"/>
 
 # 在 Azure 门户中创建完全限定的域名
 
