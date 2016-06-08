@@ -28,11 +28,11 @@
 
 本文假定你具备以下条件：
 
-1. **Azure 订阅** - 如果你没有，请[免费建立一个 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如网站）。你的信用卡不会付费，除非你显式更改设置。你还可以[激活 MSDN 订户权益](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)。MSDN 订阅每月为你提供可用来试用付费版 Azure 服务的信用额度。
+1. **Azure 订阅** - 如果你没有，请[建立一个 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如网站）。
 
 2. **Azure PowerShell 1.0.x** - 确保你已安装了 Azure PowerShell 版本 1.0.x。如果你还没有安装它，请阅读[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。我们建议使用版本 1.0 及更高版本，因为新的资源管理器功能将不会添加到旧的 PowerShell 版本中。阅读 [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/) 可进一步了解有关版本之间的区别。
 
-3. **运行 Windows 操作系统的虚拟机** - 有许多工具可在本地创建虚拟机。例如，你可以使用 Hyper-V 管理器创建虚拟机和安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。有关支持哪些 Windows 操作系统的详细信息，请参阅 [Microsoft 服务器软件支持 Microsoft Azure 的虚拟机](https://support.microsoft.com/kb/2721672)。
+3. **运行 Windows 操作系统的虚拟机** - 有许多工具可在本地创建虚拟机。例如，你可以使用 Hyper-V 管理器创建虚拟机和安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。有关支持哪些 Windows 操作系统的详细信息，请参阅 [Microsoft 服务器软件支持 Azure 的虚拟机](https://support.microsoft.com/kb/2721672)。
 
 
 ## 请确保 VM 具有正确的文件格式
