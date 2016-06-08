@@ -24,7 +24,7 @@
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-linux.md)]
 
-## 如何：在 Linux 中初始化新的数据磁盘
+##<a name="how-to-initialize-a-new-data-disk-in-linux"></a> 如何：在 Linux 中初始化新的数据磁盘
 
 可以按照相同的说明使用如下所示的正确设备标识符来初始化多个数据磁盘。
 

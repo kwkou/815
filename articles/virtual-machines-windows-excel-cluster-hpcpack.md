@@ -57,7 +57,7 @@
 
     ![输入参数][parameters]
 
-    >[AZURE.NOTE]将在 Windows Server 2012 R2 上从 HPC Pack 2012 R2 的[最新应用商店映像](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/)自动创建头节点 VM。当前，该映像基于 HPC Pack 2012 R2 Update 3。
+    >[AZURE.NOTE]将在 Windows Server 2012 R2 上从 HPC Pack 2012 R2 的最新应用商店映像自动创建头节点 VM。当前，该映像基于 HPC Pack 2012 R2 Update 3。
     >
     >将从所选计算节点系列的最新映像创建计算节点 VM。为包含 Microsoft Excel Professional Plus 2013 的评估版本的最新 HPC Pack 计算节点映像选择 **ComputeNodeWithExcel** 选项。如果要为常规 SOA 会话或 Excel UDF 卸载部署群集，请选择 **ComputeNode** 选项（不会安装 Excel）。
 

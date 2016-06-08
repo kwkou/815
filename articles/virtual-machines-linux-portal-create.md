@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure 门户中创建运行 Linux 的 Azure 虚拟机 | Microsoft Azure"
+	pageTitle="在 Azure 门户中创建运行 Linux 的 Azure 虚拟机 | Azure"
 	description="在 Azure 门户中使用 Azure 资源组创建运行 Linux 的 Azure 虚拟机 (VM)。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -16,12 +16,12 @@
 # 使用 Azure 预览门户创建运行 Linux 的虚拟机
 
 > [AZURE.SELECTOR]
-- [Azure CLI](/documentation/articles/virtual-machines-linux-tutorial)
+- [Azure CLI](/documentation/articles/virtual-machines-linux-quick-create-cli)
 - [Azure Preview Portal](/documentation/articles/virtual-machines-linux-portal-create)
 
 <br>[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
 
-创建运行 Linux 的 Azure 虚拟机 (VM) 是一项很简单的操作。本教程演示如何使用 Azure 预览门户快速创建一个虚拟机，并使用 `~/.ssh/id_rsa.pub` 公钥文件来保护到 VM 的 **SSH** 连接。你也可以[将自己的映像作为模板](/documentation/articles/virtual-machines-linux-create-upload-vhd)来创建 Linux VM。
+创建运行 Linux 的 Azure 虚拟机 (VM) 是一项很简单的操作。本教程演示如何使用 Azure 预览门户快速创建一个虚拟机，并使用 `~/.ssh/id_rsa.pub` 公钥文件来保护到 VM 的 **SSH** 连接。你也可以[将自己的映像作为模板](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd)来创建 Linux VM。
 
 > [AZURE.NOTE]本教程创建的 Azure 虚拟机将由 Azure 资源组 API 管理。有关详细信息，请参阅 [Azure 资源组概述](/documentation/articles/resource-group-overview)。
 
@@ -31,7 +31,7 @@
 
 前往预览门户中的 Azure 应用商店，找到所需的 Windows Server VM 映像。
 
-1. 登录[预览门户](https://manage.windowsazure.cn)。
+1. 登录[预览门户](https://portal.azure.cn)。
 
 2. 在“中心”菜单上，单击“新建”>“计算”>“Ubuntu Server 14.04 LTS”。
 
@@ -39,7 +39,7 @@
 
 	> [AZURE.TIP]若要查找其他映像，请单击“应用商店”，然后搜索或筛选可用的项。
 
-3. 在“Ubuntu Server 14.04 LTS”页面的底部，选择“使用资源管理器堆栈”以便在 Azure 资源管理器中创建 VM。请注意，对于大多数新的工作负荷，建议使用资源管理器堆栈。有关注意事项，请参阅 [Azure 资源管理器下的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
+3. 在“Ubuntu Server 14.04 LTS”页面的底部，选择“使用资源管理器堆栈”以便在 Azure 资源管理器中创建 VM。请注意，对于大多数新的工作负荷，建议使用资源管理器堆栈。有关注意事项，请参阅 [Azure 资源管理器下的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-windows-compare-deployment-models)。
 
 4. 接下来，单击 ![创建按钮](./media/virtual-machines-linux-portal-create/createbutton.png)。
 
@@ -112,18 +112,18 @@
 	ops@ubuntuvm:~$
 
 
-> [AZURE.NOTE]此外，还可以在门户中为虚拟机配置完全限定域名 (FQDN)。在[此处](/documentation/articles/virtual-machines-create-fqdn-on-portal)阅读有关 FQDN 的详细信息。
+> [AZURE.NOTE]此外，还可以在门户中为虚拟机配置完全限定域名 (FQDN)。在[此处](/documentation/articles/virtual-machines-linux-portal-create-fqdn)阅读有关 FQDN 的详细信息。
 
 ## 后续步骤
 
 若要了解有关 Azure 上的 Linux 的详细信息，请参阅：
 
-- [Azure 上的 Linux 和开源计算](/documentation/articles/virtual-machines-linux-opensource)
+- [Azure 上的 Linux 和开源计算](/documentation/articles/virtual-machines-linux-opensource-links)
 
 - [如何使用针对 Mac 和 Linux 的 Azure 命令行工具](/documentation/articles/virtual-machines-command-line-tools)
 
-- [使用适用于 Linux 的 Azure CustomScript 扩展部署 LAMP 应用程序](/documentation/articles/virtual-machines-linux-script-lamp)
+- [使用适用于 Linux 的 Azure CustomScript 扩展部署 LAMP 应用程序](/documentation/articles/virtual-machines-linux-classic-lamp-script)
 
-- [Azure 上用于 Linux 的 Docker 虚拟机扩展](/documentation/articles/virtual-machines-docker-vm-extension)
+- [Azure 上用于 Linux 的 Docker 虚拟机扩展](/documentation/articles/virtual-machines-linux-dockerextension)
 
 <!---HONumber=Mooncake_1221_2015-->

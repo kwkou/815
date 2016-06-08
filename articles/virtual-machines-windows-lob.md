@@ -32,11 +32,11 @@
 
 ## 创建在 Azure 中托管的开发/测试业务线应用程序
 
-跨界虚拟网络通过站点到站点 VPN 或 ExpressRoute 连接与本地网络连接。如果你想要创建开发/测试环境，以模拟通过 VPN 连接访问应用程序并执行远程管理的最终配置和试验，请参阅[在混合云中设置基于 Web 的 LOB 应用程序用于测试](../virtual-network/virtual-networks-setup-lobapp-hybrid-cloud-testing.md)。
+跨界虚拟网络通过站点到站点 VPN 或 ExpressRoute 连接与本地网络连接。如果你想要创建开发/测试环境，以模拟通过 VPN 连接访问应用程序并执行远程管理的最终配置和试验，请参阅[在混合云中设置基于 Web 的 LOB 应用程序用于测试](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)。
 
 ![](./media/virtual-machines-windows-lob/CreateLOBAppHybridCloud_3.png)
  
-可以使用 [MSDN 订阅](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/)或 [Azure 试用版订阅](http://azure.microsoft.com/pricing/free-trial/)免费创建此开发/测试环境。
+可以使用 [Azure 试用版订阅](/pricing/1rmb-trial/)免费创建此开发/测试环境。
 
 下一步是在 Azure 中创建高可用性业务线应用程序。
 
