@@ -181,7 +181,7 @@ Azure 为整个解决方案提供库映像。若要查找模板，请执行以�
 
 - [Windows Server Backup 和存储池](http://technet.microsoft.com/zh-cn/library/dn390929.aspx)
 
-有关 SQL Server 配置最佳做法的详细信息，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-sql-server-performance-best-practices)
+有关 SQL Server 配置最佳做法的详细信息，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance)
 
 
 ###SQL Server 设置
