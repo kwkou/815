@@ -7,7 +7,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual-network" ms.date="" wacn.date="01/21/2016"/>
+<tags ms.service="virtual-network-aog" ms.date="" wacn.date="06/08/2016"/>
 
 #虚拟机添加相应端口并配置ACL
 
@@ -36,29 +36,29 @@
 
 1.	终结点-添加
 
-	![](./media/aog-virtual-network-add-endpoint-and-acl/endpoint-list.jpg)
+	![](./media/aog-virtual-network-add-endpoint-and-acl/endpoint-list.png)
 
 2.	添加独立终结点
 
-	![](./media/aog-virtual-network-add-endpoint-and-acl/add-endpoint.jpg) 
+	![](./media/aog-virtual-network-add-endpoint-and-acl/add-endpoint.png) 
  
 3.	名称（添加协议），其他默认即可 
  
-	![](./media/aog-virtual-network-add-endpoint-and-acl/endpoint-detail.jpg)
+	![](./media/aog-virtual-network-add-endpoint-and-acl/endpoint-detail.png)
  
 4.	添加的相应端口已在列表中
  
-	![](./media/aog-virtual-network-add-endpoint-and-acl/endpoint-result-list.jpg)
+	![](./media/aog-virtual-network-add-endpoint-and-acl/endpoint-result-list.png)
 
 ###配置ACL
 
 1.	管理ACL
  
-	![](./media/aog-virtual-network-add-endpoint-and-acl/acl-list.jpg)
+	![](./media/aog-virtual-network-add-endpoint-and-acl/acl-list.png)
 
 2. 添加允许或拒绝的远程子网
 
-	![](./media/aog-virtual-network-add-endpoint-and-acl/add-acl.jpg)
+	![](./media/aog-virtual-network-add-endpoint-and-acl/add-acl.png)
 
 ## <a id="resource"></a>相关参考资料
 

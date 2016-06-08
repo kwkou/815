@@ -6,10 +6,10 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual-machine" ms.date="" wacn.date="01/21/2016"/>
+<tags ms.service="virtual-machine-aog" ms.date="" wacn.date="06/08/2016"/>
 
 
-#自动化实现定时关闭虚拟机
+#使用本地计划任务定时关闭azure虚拟机
 
 ###本文包含以下内容
 
@@ -92,7 +92,7 @@ Register-ScheduledTask -TaskName $TaskName -InputObject $stopScheduledTask
 
 ![](./media/aog-virtual-machine-how-to-turn-off-vm-automatically/powershell-add-task-to-system.png)
  
-到指定时候后PowerShell开始关机。
+到指定时间powershell开始执行关闭虚拟机的操作。
 
 ![](./media/aog-virtual-machine-how-to-turn-off-vm-automatically/powershell-turn-down-vm.png)
  

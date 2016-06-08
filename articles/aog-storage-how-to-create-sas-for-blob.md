@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="storage" ms.date="" wacn.date="02/01/2016"/>
+<tags ms.service="storage-aog" ms.date="" wacn.date="06/08/2016"/>
 
 #如何为Azure存储的Blob创建SAS（共享访问签名）令牌
 
@@ -45,7 +45,7 @@
 	$containerName = 'sastest'
 
 	#PowerShell的方式创建storage操作的上下文
-	$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
+	$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
 	
 	#创建一个新的容器
 	$container = New-AzureStorageContainer -Context $storageContext -Name $containerName
@@ -101,7 +101,7 @@ PowerShell指令：[New-AzureStorageContainerSASToken](https://msdn.microsoft.co
 	$containerNameWithPolicy = 'sastestwithpolicy'
 
 	#PowerShell的方式创建storage操作的上下文
-	$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
+	$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
 	
 	#创建一个新的容器
 	$container = New-AzureStorageContainer -Context $storageContext -Name $containerNameWithPolicy

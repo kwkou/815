@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual-machine" ms.date="" wacn.date="12/18/2015"/>
+<tags ms.service="virtual-machine-aog" ms.date="" wacn.date="06/08/2015"/>
 
 #将虚拟机添加到可用性集中
 
@@ -37,9 +37,9 @@
  
 4. 从新虚拟机的仪表板中，单击“配置”，您会看到该虚拟机现在是新可用性集的一个成员
 
-	![](./media/aog-virtual-machine-add-vm-to-availability-group/show-result.jpg) 
+	![](./media/aog-virtual-machine-add-vm-to-availability-group/show-result.png) 
  
 ## <a id="note"></a>注意事项
 
 -	要放入相同可用性集的虚拟机必须属于相同的云服务。
--	虚拟机可能必须重新启动，以完成将其添加到可用性集的操作。
+-	将现有虚拟机添加到可用性集可能会导致虚拟机重新启动以最终确定它是可用性集中的成员。
