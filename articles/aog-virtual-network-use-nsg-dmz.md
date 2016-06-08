@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual-network-aog" ms.date="" wacn.date="01/21/2016"/>
+<tags ms.service="virtual-network-aog" ms.date="" wacn.date="06/08/2016"/>
 
 #使用NSG实现DMZ区域
 
@@ -111,7 +111,7 @@
 - \*：表示任何IP
 - **VIRTUAL_NETWORK**：表示所在虚拟网络内的IP地址
 - **INTERNET**：公网IP地址
-**ZURE_LOADBALANCER**：Azure的负载均衡转发过来的流量
+- **AZURE_LOADBALANCER**：Azure的负载均衡转发过来的流量
 
 **SourcePortRange和DestinationPortRange**：源和目的端口，通常为具体的端口号或者*（代表任何端口）
 

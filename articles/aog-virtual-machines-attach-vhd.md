@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual-machine-aog" ms.date="" wacn.date="02/01/2016"/>
+<tags ms.service="virtual-machine-aog" ms.date="" wacn.date="06/08/2016"/>
 
 #如何为虚拟机附加磁盘
 
@@ -28,7 +28,7 @@
 	Add-AzureDataDisk -VM $vm -CreateNew -DiskSizeInGB 10 -DiskLabel 'test' -LUN 0 -MediaLocation "https://portalvhdsw0kfpkwrwbyf2.blob.core.chinacloudapi.cn/vhds/pstest-sport1.vhd" | Update-AzureVM	
 
 	#附加存在于Azure存储中的数据磁盘
-	Add-AzureDataDisk -ImportFrom -MediaLocation "https://***.blob.core.chinacloudapi.cn/vhds/myvhdfile.vhd" -VM $vm -DiskLabel 'test' -LUN 0 | Update-AzureVM
+	Add-AzureDataDisk -ImportFrom -MediaLocation "https://***.blob.core.chinacloudapi.cn/vhds/myvhdfile.vhd" -VM $vm -DiskLabel 'test' -LUN 0 | Update-AzureVM 
 
 	#从已经存在的数据磁盘附加到虚拟机
 	#Get-AzureDisk获取可以附加的磁盘信息

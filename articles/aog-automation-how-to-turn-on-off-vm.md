@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="automation-aog" ms.date="" wacn.date="12/29/2015"/>
+<tags ms.service="automation-aog" ms.date="" wacn.date="06/08/2016"/>
 
 #使用Azure Automation实现自动开关虚拟机的操作
  
@@ -19,8 +19,7 @@
  
 ## <a id="create"></a>如何创建自动化账号和Runbook
  
-关于Azure Automation功能的使用请参考链接：
-https://www.azure.cn/documentation/articles/automation-create-runbook-from-samples/
+关于Azure Automation功能的使用请参考[链接](/documentation/articles/automation-create-runbook-from-samples)
  
 首先，我们需要创建一个自动化账号（Automation Account）：
 
@@ -60,7 +59,7 @@ https://www.azure.cn/documentation/articles/automation-create-runbook-from-sampl
 
 ![](./media/aog-automation-how-to-turn-on-off-vm/define-credential-name-password.jpg)
 
-**注意**： 这个步骤中的用户是通过AAD创建出来的，我们可以参考[这个链接](https://msdn.microsoft.com/zh-cn/library/azure/hh967632.aspx)来了解如何创建AAD用户。本例子是使用管理账号来做的， 
+**注意**： 这个步骤中的用户是通过AAD创建出来的，我们可以参考[这个链接](/documentation/articles/active-directory-create-users)来了解如何创建AAD用户。本例子是使用管理账号来做的， 
 
 完成后保存。
  

@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="virtual-network-aog" ms.date="" wacn.date="01/21/2016"/>
+<tags ms.service="virtual-network-aog" ms.date="" wacn.date="06/08/2016"/>
 
 #保留正在使用的VIP
 ###本文包含以下内容
@@ -17,7 +17,7 @@
 ## <a id="prep"></a>适用场景
 * 我们希望云服务有一个固定的IP，即使虚拟机以deallocated的方式关闭。
 * 用户忘记先保留VIP 而直接完成了部署。 希望不做任何服务调整的情况下保留正在使用的VIP资源。
-* 使用虚拟网络和没有使用虚拟网络均适用。
+* 建议使用在虚拟网络内。
 
 ## <a id="operation"></a>操作步骤
 1. 下载并安装最新版的Azure PowerShell，配置Azure 管理账户。参考链接：[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 
