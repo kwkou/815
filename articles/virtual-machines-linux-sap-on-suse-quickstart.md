@@ -9,7 +9,7 @@
    tags="azure-resource-manager"
    keywords=""/>
 <tags
-	ms.service="virtual-machines"
+	ms.service="virtual-machines-linux"
 	ms.date="02/12/2016"
 	wacn.date="06/07/2016"/>
 
@@ -29,19 +29,23 @@
 
 * 查找现有发布服务器（包括 SUSE）：
 
-	   PS : Get-AzureRmVMImagePublisher -Location "West Europe" | where-object { $\_.publishername -like "*US*" } CLI : azure vm image list-publishers westeurope | grep "US"
+		PS : Get-AzureRmVMImagePublisher -Location "West Europe" | where-object { $\_.publishername -like "*US*" }
+		CLI : azure vm image list-publishers westeurope | grep "US"
 
 * 从 SUSE 中查找现有产品/服务：
 
-	   PS : Get-AzureRmVMImageOffer -Location "West Europe" -Publisher "SUSE" CLI : azure vm image list-offers westeurope SUSE
+		PS : Get-AzureRmVMImageOffer -Location "West Europe" -Publisher "SUSE"
+		CLI : azure vm image list-offers westeurope SUSE
 
 * 查找 SUSE SLES 产品/服务：
 
-	   PS : Get-AzureRmVMImageSku -Location "West Europe" -Publisher "SUSE" -Offer "SLES" CLI : azure vm image list-skus westeurope SUSE SLES
+		PS : Get-AzureRmVMImageSku -Location "West Europe" -Publisher "SUSE" -Offer "SLES"
+		CLI : azure vm image list-skus westeurope SUSE SLES
 
 * 查找特定版本的 SLES SKU：
 
-	   PS : Get-AzureRmVMImage -Location "West Europe" -Publisher "SUSE" -Offer "SLES" -skus "12" CLI : azure vm image list westeurope SUSE SLES 12
+		PS : Get-AzureRmVMImage -Location "West Europe" -Publisher "SUSE" -Offer "SLES" -skus "12"
+		CLI : azure vm image list westeurope SUSE SLES 12
 
 ## 在 SUSE VM 中安装 WALinuxAgent
 
@@ -49,7 +53,7 @@
 
 - [OpenSUSE](http://software.opensuse.org/package/WALinuxAgent)
 
-- [Azure](virtual-machines-linux-endorsed-distros.md)
+- [Azure](/documentation/articles/virtual-machines-linux-endorsed-distros)
 
 - [SUSE](https://www.suse.com/communities/blog/suse-linux-enterprise-server-configuration-for-windows-azure/)
 
@@ -76,7 +80,7 @@
 
 ## 从本地将 SUSE VM 上载到 Azure
 
-有关从本地将 SUSE VM 上载到 Azure 的步骤说明，请参阅 [Prepare a SLES or openSUSE virtual machine for Azure（为 Azure 准备 SLES 或 openSUSE 虚拟机）](virtual-machines-linux-create-upload-vhd-suse.md)。
+有关从本地将 SUSE VM 上载到 Azure 的步骤说明，请参阅 [Prepare a SLES or openSUSE virtual machine for Azure（为 Azure 准备 SLES 或 openSUSE 虚拟机）](/documentation/articles/virtual-machines-linux-suse-create-upload-vhd)。
 
 例如，若要使用最终没有取消预配步骤的方法上载 VM 以保留现有 SAP 安装以及主机名，需要检查以下项：
 
@@ -96,8 +100,6 @@
 	   azure group deployment create "<deployment name>" -g "<resource group name>" --template-file "<../../filename.json>"
 
 有关 JSON 模板文件的详细信息，请参阅 [Authoring Azure Resource Manager templates（创作 Azure Resource Manager 模板）](/documentation/articles/resource-group-authoring-templates)。
-
-有关 CLI 和 Azure Resource Manager 的详细信息，请参阅 [Use the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager（将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure Resource Manager 配合使用）](xplat-cli-azure-resource-manager.md)。
 
 ## SAP 许可证和硬件密钥
 

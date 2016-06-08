@@ -88,7 +88,7 @@
 		```
 		<Metrics resourceId="/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/virtualMachines/MyWindowsVM" >
 		```
-	- 有关如何根据性能计数器和度量值配置生成度量值的详细信息，请参阅[存储中的 WAD 度量值表](virtual-machines-windows-extensions-diagnostics-template.md#wadmetrics-tables-in-storage)
+	- 有关如何根据性能计数器和度量值配置生成度量值的详细信息，请参阅[存储中的 WAD 度量值表](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template#wadmetrics-tables-in-storage)
 
 - 需要使用诊断存储帐户的名称对 **StorageAccount** 元素进行更新。
  
