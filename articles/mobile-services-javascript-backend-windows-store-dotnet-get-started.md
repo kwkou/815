@@ -34,11 +34,11 @@
 
 ## 创建新的通用 Windows 应用程序
 
-创建移动服务后，你可以在 Azure 经典门户中遵照一个简易的快速入门项目来创建新的通用 Windows 应用程序，或修改现有 Windows 应用商店或 Windows Phone 应用程序项目，以连接到你的移动服务。
+创建移动服务后，你可以在 Azure 管理门户中遵照一个简易的快速入门项目来创建新的通用 Windows 应用程序，或修改现有 Windows 应用商店或 Windows Phone 应用程序项目，以连接到你的移动服务。
 
 在本部分中，你将要创建一个连接到移动服务的新的通用 Windows 应用程序。
 
-1.  在 [Azure 经典门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1.  在 [Azure 管理门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
    
 2. 在快速入门选项卡中，单击“选择平台”下的“Windows”，然后展开“创建新的 Windows 应用商店应用程序”。
@@ -66,12 +66,6 @@
 
 * [脱机数据同步入门]  
   了解如何使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
-
-* [向移动服务应用程序添加身份验证][Get started with authentication]  
-  了解如何使用标识提供者对应用程序的用户进行身份验证。
-
-* [向应用添加推送通知][Get started with push notifications]
-了解如何向应用发送一条很基本的推送通知。
 
 * [如何使用 .NET 客户端库](/documentation/articles/mobile-services-dotnet-how-to-use-client-library)  
  了解如何查询移动服务、处理数据和访问自定义 API。

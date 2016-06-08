@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure 移动服务开发 PhoneGap/cordova 应用入门 | Microsoft Azure"
+	pageTitle="使用 Azure 移动服务开发 PhoneGap/cordova 应用入门 | Azure"
 	description="请按照本教程中的说明操作，开始使用用于 PhoneGap 开发的 Azure 移动服务（面向 iOS、, Android 和 Windows Phone）。"
 	services="mobile-services"
 	documentationCenter=""
@@ -48,7 +48,7 @@
 
 在本部分中，你将要创建一个连接到移动服务的新的 PhoneGap 应用程序。
 
-1.  在 [Azure 经典门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1.  在 [Azure 管理门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2. 在快速启动选项卡中，单击“选择平台”下的“PhoneGap”，然后展开“创建新的 PhoneGap 应用程序”。
 
@@ -109,7 +109,7 @@
 
 	> [AZURE.IMPORTANT]如果使用 PhoneGap 工具重新生成主项目，将会覆盖对此平台项目所做的更改。请根据以下部分中所述，在项目的 www 根目录中进行更改。
 
-4. 返回 [Azure 经典门户]，单击“数据”选项卡，然后单击“TodoItem”表。
+4. 返回 [Azure 管理门户]，单击“数据”选项卡，然后单击“TodoItem”表。
 
 	![](./media/mobile-services-javascript-backend-phonegap-get-started/mobile-data-tab.png)
 

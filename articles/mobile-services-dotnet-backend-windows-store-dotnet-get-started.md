@@ -24,7 +24,6 @@
 
 >[AZURE.NOTE]本主题说明如何使用 Azure 经典门户创建新的移动服务项目和通用 Windows 应用。通过使用 Visual Studio 2013 Update 3，还可以向现有的 Visual Studio 解决方案添加新的移动服务项目。有关详细信息，请参阅[将移动服务添加到现有应用程序](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data)。
 
->若要将移动服务添加到 Windows Phone 8.0 或 Windows Phone Silverlight 8.1 应用程序项目，请参阅[将移动服务添加到现有的 Windows Phone 应用程序](/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data)。
 
 [AZURE.INCLUDE [mobile-services-windows-universal-get-started](../includes/mobile-services-windows-universal-get-started.md)]
 
@@ -39,11 +38,11 @@
 
 ## 创建新的通用 Windows 应用程序
 
-创建移动服务后，你可以在 Azure 经典门户中遵照一个简易的快速入门项目来创建新应用程序或修改现有应用程序，以连接到你的移动服务。
+创建移动服务后，你可以在 Azure 管理门户中遵照一个简易的快速入门项目来创建新应用程序或修改现有应用程序，以连接到你的移动服务。
 
 在本部分中，你将要创建一个连接到移动服务的新的通用 Windows 应用程序。
 
-1. 在 [Azure 经典门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1. 在 [Azure 管理门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2.  在快速入门选项卡中，单击“选择平台”下的“Windows”，然后展开“创建新的 Windows 应用商店应用程序” 。
 
@@ -88,17 +87,8 @@
 
 完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
-* [将移动服务添加到现有应用程序][Get started with data]
-<br/>了解有关使用移动服务存储和查询数据的详细信息。
-
 * [脱机数据同步入门]
 <br/>了解如何使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
-
-* [向移动服务应用程序添加身份验证][Get started with authentication]
-<br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
-
-* [向应用程序添加推送通知][Get started with push notifications]
-<br/>了解如何向应用程序发送一条很基本的推送通知。
 
 * [移动服务 .NET 后端故障排除]
 <br/>了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。
@@ -123,7 +113,7 @@
 [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [JavaScript and HTML]: documentation/articles/mobile-services-win8-javascript/
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 管理门户]: https://manage.windowsazure.cn/
 [移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
 
 <!---HONumber=Mooncake_0118_2016-->

@@ -2,7 +2,7 @@
 
 按照下列步骤操作以创建新的移动服务。
 
-1.	登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。在导航窗格的底部，单击“+新建”。展开“计算”和“移动服务”，然后单击“创建”。
+1.	登录到 [Azure 管理门户](https://manage.windowsazure.cn/)。在导航窗格的底部，单击“+新建”。展开“计算”和“移动服务”，然后单击“创建”。
 
 	![](./media/mobile-services-create-new-service/mobile-create.png)
 
