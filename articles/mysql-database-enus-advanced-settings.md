@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="Setting MySQL Database on Azure Server Parameters – Azure Cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, parameters, customization, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL Database on Azure supports customizing some parameters to your own requirements. We will help you to understand the selectable ranges and intervals for different parameters." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="04/25/2016" wacn.date="04/25/2016"/>
+<tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
 
 #Setting MySQL Database on Azure server parameters
 > [AZURE.SELECTOR]

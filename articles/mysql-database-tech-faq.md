@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL服务问题 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,常见问题,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS,FAQ" description="针对用户在使用MySQL 数据库 on Azure中遇到的一些常见技术问题,提供快速解答。如果您仍存有疑问,欢迎联系技术支持。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="04/25/2016" wacn.date="04/25/2016"/>
+<tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
 
 #全部常见问题
 
@@ -99,6 +99,7 @@ workbench 6.3.5默认选择SSL连接, 且会使用“TLS-DHE-RSA-WITH-AES-256-CB
 当user name超过16个字符时，该客户端会自动截取前16个字符，造成连接的问题。建议您采用最新版本的SQLyog客户端，或其他MySQL的管理客户端，如MySQL workbench。
 
 ## **其他问题**<a id="step5"></a> 
+
 ## 关于数据库迁移的常见问题：
 ###导入TRIGGER, PROCEDURE, VIEW, FUNCTION, 或EVENT过程中报”Access denied; you need (at least one of) the SUPER privilege(s) for this operation” 错误。
 检查报错的语句有否使用DEFINER并使用非当前用户，比如DEFINER=`user`@`host`， 如果这样的话MySQL是要求SUPER权限来执行该语句，由于MySQL Database on Azure不提供用户SUPER权限（参考[服务限制](/documentation/articles/mysql-database-operation-limitation) ），导致运行该语句失败。您只需要把DEFINER从该语句删掉而使用缺省的当前用户就可以了。
