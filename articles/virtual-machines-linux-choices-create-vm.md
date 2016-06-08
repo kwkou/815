@@ -15,7 +15,7 @@
 
 # 使用 Resource Manager 创建 Linux 虚拟机的不同方式
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
+>[AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代经典部署模型。
 
 Azure 提供不同的方法来创建 VM，以符合不同的用户和目的。本文汇总了这些方法的差异，以及在创建 Linux 虚拟机时可使用的选项。
 
