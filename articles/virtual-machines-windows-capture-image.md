@@ -23,7 +23,7 @@
 
 ## 先决条件
 
-这些步骤假定你已使用 Resource Manager 部署模型创建了 Azure 虚拟机并配置了操作系统，包括附加任何数据磁盘和完成其他自定义事项（如安装应用程序）。如果你尚未完成此操作，请阅读[如何使用 Resource Manager 和 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager)。你可以同样轻松地使用 [Azure 门户](https://portal.azure.cn)创建 Windows 虚拟机。请阅读[如何在 Azure 门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。
+这些步骤假定你已使用 Resource Manager 部署模型创建了 Azure 虚拟机并配置了操作系统，包括附加任何数据磁盘和完成其他自定义事项（如安装应用程序）。如果你尚未完成此操作，请阅读[如何使用 Resource Manager 和 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create)。你可以同样轻松地使用 [Azure 门户](https://portal.azure.cn)创建 Windows 虚拟机。请阅读[如何在 Azure 门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)。
 
 
 ## 准备要进行映像捕获的 VM
