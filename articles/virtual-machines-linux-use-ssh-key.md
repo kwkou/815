@@ -33,7 +33,7 @@ Azure 的基本 SSH 设置包括 2048 位的 **ssh-rsa** 公钥和私钥对（�
 
 以下是部署方案，你在每个方案中使用的文件类型为：
 
-1. 无论是哪种部署模型，使用[预览门户](https://manage.windowsazure.cn)的所有部署都必需使用 **ssh-rsa** 密钥。
+1. 无论是哪种部署模型，使用[预览门户](https://portal.azure.cn)的所有部署都必需使用 **ssh-rsa** 密钥。
 2. 使用[经典门户](https://manage.windowsazure.cn)创建 VM 时必需使用 .pem 文件。使用 [Azure CLI](/documentation/articles/xplat-cli-install) 的经典部署也支持 .pem 文件。 
 
 ## 创建密钥以用于 SSH
