@@ -21,11 +21,11 @@
 
 1. 使用你的 Azure 帐户标识登录到 Azure 门户，然后单击左上角的“+ 新建”：
 
-    ![screen1](../media/virtual-machines-linux-quick-create-portal/screen1.png)
+    ![screen1](./media/virtual-machines-linux-quick-create-portal/screen1.png)
 
 2. 在“应用商店”中单击“虚拟机”，然后从“特色应用”映像列表中选择“Ubuntu Server 14.04 LTS”。确认底部显示的部署模型是 `Resource Manager`，然后单击“创建”。
 
-    ![screen2](../media/virtual-machines-linux-quick-create-portal/screen2.png)
+    ![screen2](./media/virtual-machines-linux-quick-create-portal/screen2.png)
 
 3. 在“基本信息”页上输入：
     - VM 的名称
@@ -36,27 +36,27 @@
 
     单击“确定”继续操作，然后选择 VM 大小，如下所示：
 
-    ![screen3](../media/virtual-machines-linux-quick-create-portal/screen3.png)
+    ![screen3](./media/virtual-machines-linux-quick-create-portal/screen3.png)
 
 4. 选择“DS1”大小（将在高级 SSD 上安装 Ubuntu），然后单击“选择”以配置设置。
 
-    ![screen4](../media/virtual-machines-linux-quick-create-portal/screen4.png)
+    ![screen4](./media/virtual-machines-linux-quick-create-portal/screen4.png)
 
 5. 在“设置”中，保留“存储”和“网络”的默认值，然后单击“确定”查看摘要。请注意，磁盘类型已通过选择 DS1（**S** 表示 SSD）设置为高级 SSD。
 
-    ![screen5](../media/virtual-machines-linux-quick-create-portal/screen5.png)
+    ![screen5](./media/virtual-machines-linux-quick-create-portal/screen5.png)
 
 6. 确认新 Ubuntu VM 的设置，然后单击“确定”。
 
-    ![screen6](../media/virtual-machines-linux-quick-create-portal/screen6.png)
+    ![screen6](./media/virtual-machines-linux-quick-create-portal/screen6.png)
 
 7. 打开门户仪表板并在“网络接口”中选择 NIC
 
-    ![screen7](../media/virtual-machines-linux-quick-create-portal/screen7.png)
+    ![screen7](./media/virtual-machines-linux-quick-create-portal/screen7.png)
 
 8. 打开 NIC 设置下面的公共 IP 地址菜单
 
-    ![screen8](../media/virtual-machines-linux-quick-create-portal/screen8.png)
+    ![screen8](./media/virtual-machines-linux-quick-create-portal/screen8.png)
 
 9. 使用 SSH 公钥通过 SSH 连接到公共 IP
 
