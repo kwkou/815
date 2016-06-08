@@ -34,7 +34,7 @@
 | 面向虚拟机的云服务 |	云服务是一个容器，用于容纳要求平台可用性和负载平衡的虚拟机。 | 使用新模型，云服务不再是创建虚拟机所必需的对象。 |
 | 可用性集 | 通过在虚拟机上配置相同的“AvailabilitySetName”来指出平台的可用性。容错域的最大数量为 2。 | 可用性集是 Microsoft.Compute 提供程序提供的一个资源。要求高可用性的虚拟机必须包含在可用性集中。现在，容错域的最大数量为 3。 |
 | 地缘组 |	创建虚拟网络需要地缘组。但是，随着区域虚拟网络的引入，不再需要地缘组了。 |为了简单起见，地缘组概念不再存在于通过 Azure Resource Manager 提供的 API 中。 |
-| 负载平衡 | 云服务的创建为部署的虚拟机提供了一个隐式负载平衡器。 | 负载平衡器是 Microsoft.Network 提供程序提供的一个资源。需要负载平衡的虚拟机的主网络接口应该引用负载平衡器。负载平衡器既可以是内部的，也可以是外部的。[了解详细信息。](/documentation/articles/resource-groups-networking) |
+| 负载平衡 | 云服务的创建为部署的虚拟机提供了一个隐式负载平衡器。 | 负载平衡器是 Microsoft.Network 提供程序提供的一个资源。需要负载平衡的虚拟机的主网络接口应该引用负载平衡器。负载平衡器既可以是内部的，也可以是外部的。 |
 |虚拟 IP 地址 | 虚拟机添加到云服务后，云服务将获得默认 VIP（虚拟 IP 地址）。虚拟 IP 地址是与隐式负载平衡器相关联的地址。 | 公共 IP 地址是 Microsoft.Network 提供程序提供的一个资源。公共 IP 地址既可以是静态（保留）的，也可以是动态的。可以将动态公共 IP 分配到一个负载平衡器。可以使用安全组保护公共 IP。 |
 |保留 IP 地址|	可以在 Azure 中保留一个 IP 地址并将其与一个云服务关联在一起，以确保该 IP 地址具有粘性。 | 可以在“静态”模式下创建公共 IP 地址，并且该地址提供与“保留 IP 地址”相同的功能。目前，静态公共 IP 只能分配到一个负载平衡器。 |
 |每个虚拟机一个公共 IP 地址 (PIP) | 公共 IP 地址也可以直接关联到虚拟机。 | 公共 IP 地址是 Microsoft.Network 提供程序提供的一个资源。公共 IP 地址既可以是静态（保留）的，也可以是动态的。但是，目前只有动态公共 IP 可分配到网络接口，每个虚拟机获得一个公共 IP。 |
@@ -56,7 +56,7 @@ Azure PowerShell 将拥有两种部署模式 - **AzureServiceManagement** 模式
 
 ### Azure CLI
 
-Azure 命令行接口 (Azure CLI) 将拥有两种部署模式 - **AzureServiceManagement** 模式和 **AzureResourceManager** 模式。AzureResourceManager 模式现在同时包含用于管理虚拟机、虚拟网络和存储帐户的命令。你可以在[此处](/documentation/articles/xplat-cli-azure-resource-manager)阅读详细内容。
+Azure 命令行接口 (Azure CLI) 将拥有两种部署模式 - **AzureServiceManagement** 模式和 **AzureResourceManager** 模式。AzureResourceManager 模式现在同时包含用于管理虚拟机、虚拟网络和存储帐户的命令。
 
 ### Visual Studio
 
@@ -90,4 +90,4 @@ Azure 命令行接口 (Azure CLI) 将拥有两种部署模式 - **AzureServiceMa
 
 **在哪里可以找到 Azure Resource Manager 模板的示例？**
 
-可以在 [Azure Resource Manager QuickStart Templates](https://azure.microsoft.com/documentation/templates/)（Azure Resource Manager 快速启动模板）中找到一系列广泛的初学者模板。
+可以在 [Azure Resource Manager QuickStart Templates](https://github.com/Azure/azure-quickstart-templates/)（Azure Resource Manager 快速启动模板）中找到一系列广泛的初学者模板。

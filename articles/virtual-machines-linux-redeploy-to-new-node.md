@@ -12,14 +12,14 @@
 	
 
 <tags
-	ms.service="virtual-machines"
+	ms.service="virtual-machines-linux"
 	ms.date="03/02/2016"
 	wacn.date="06/07/2016"/>
 
 
 # 将虚拟机重新部署到新的 Azure 节点
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
+>[AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代经典部署模型。
 
 [AZURE.INCLUDE [virtual-machines-common-redeploy-to-new-node](../includes/virtual-machines-common-redeploy-to-new-node.md)]
 

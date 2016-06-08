@@ -17,7 +17,7 @@
 
 # 在混合云中设置用于测试的 SharePoint Intranet 场
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
+>[AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代经典部署模型。
 
 本主题将指导你逐步创建混合云环境，以便测试在 Azure 中托管的 Intranet SharePoint 场。这是生成的配置。
 
@@ -41,7 +41,7 @@
 2.	配置 SQL Server 计算机 (SQL1)。
 3.	配置 SharePoint Server (SP1)。
 
-此工作负荷需要 Azure 订阅。如果你有 MSDN 或 Visual Studio 订阅，请参阅 [Monthly Azure credit for Visual Studio subscribers（Visual Studio 订户的每月 Azure 信用额度）](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)。
+此工作负荷需要 Azure 订阅。
 
 ## 阶段 1：设置混合云环境
 

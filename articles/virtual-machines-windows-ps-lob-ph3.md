@@ -21,7 +21,7 @@
 
 在 Azure 基础结构服务中部署高可用性业务线应用程序的这个阶段，你将配置两台运行 SQL Server 的计算机和一台群集多数节点计算机，然后将它们组合成 Windows Server 群集。
 
-你必须在转到[阶段 4](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase4) 之前完成此阶段。有关所有阶段，请参阅[在 Azure 中部署高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview)。
+你必须在转到[阶段 4](/documentation/articles/virtual-machines-windows-ps-lob-ph4) 之前完成此阶段。有关所有阶段，请参阅[在 Azure 中部署高可用性业务线应用程序](/documentation/articles/virtual-machines-windows-lob-overview)。
 
 > [AZURE.NOTE] 这些指令使用 Azure 映像库中的 SQL Server 映像并将收取让你使用 SQL Server 许可证的持续费用。还可以在 Azure 中创建虚拟机并安装你自己的 SQL Server 许可证，但你必须具有软件保障和许可移动性才能在虚拟机（包括 Azure 虚拟机）上使用 SQL Server 许可证。有关在虚拟机上安装 SQL Server 的详细信息，请参阅[安装 SQL Server](https://msdn.microsoft.com/zh-cn/library/bb500469.aspx)。
 
@@ -37,7 +37,7 @@
 - 表 ST，用于存储帐户
 - 表 A，用于可用性集
 
-回想一下，你在[阶段 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2) 中定义了表 M，并在[阶段 1](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase1) 中定义了表 V、表 S、表 ST 和表 A。
+回想一下，你在[阶段 2](/documentation/articles/virtual-machines-windows-ps-lob-ph2) 中定义了表 M，并在[阶段 1](/documentation/articles/virtual-machines-windows-ps-lob-ph1) 中定义了表 V、表 S、表 ST 和表 A。
 
 > [AZURE.NOTE] 以下命令集使用 Azure PowerShell 1.0 及更高版本。有关详细信息，请参阅 [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/)。
 
@@ -161,7 +161,7 @@
 6.	单击“确定”以关闭该窗口。
 7.	在左窗格中，展开“安全性文件夹”。
 8.	右键单击“登录名”，然后单击“新建登录名”。
-9.	在“登录名”中，键入 *domain*\\sqladmin（其中 *domain* 是在[阶段 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2) 中创建 sqladmin 帐户的域的名称）。 
+9.	在“登录名”中，键入 *domain*\\sqladmin（其中 *domain* 是在[阶段 2](/documentation/articles/virtual-machines-windows-ps-lob-ph2) 中创建 sqladmin 帐户的域的名称）。 
 10.	在“选择页”下，单击“服务器角色”，单击 “sysadmin”，然后单击“确定”。
 11.	关闭 SQL Server 2014 Management Studio。
 
@@ -178,7 +178,7 @@ SQL Server 服务需要客户端用于访问数据库服务器的端口。它还
 
 对于每个 SQL Server 虚拟机，以本地管理员身份注销。
 
-有关优化 Azure 中的 SQL Server 性能的信息，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-sql-server-performance-best-practices)。你还可以为业务线应用程序存储帐户禁用地域冗余存储 (GRS)，并使用存储空间来优化 IOP。
+有关优化 Azure 中的 SQL Server 性能的信息，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance)。你还可以为业务线应用程序存储帐户禁用地域冗余存储 (GRS)，并使用存储空间来优化 IOP。
 
 ## 配置群集多数节点服务器
 
@@ -210,7 +210,7 @@ SQL Server AlwaysOn 可用性组依赖于 Windows Server 的 Windows Server 故�
 
 由于 Azure 中的 DHCP 出现当前不符合 RFC 的行为，创建 Windows Server 故障转移群集 (WSFC) 群集可能会失败。有关详细信息，请在“Azure 虚拟机中的 SQL Server 的高可用性和灾难恢复”中搜索“Azure 网络中的 WSFC 群集行为”。但是，有一种变通解决方法。使用以下步骤创建群集。
 
-1.	使用在[阶段 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2) 中创建的 sqladmin 帐户登录到主 SQL Server 虚拟机。
+1.	使用在[阶段 2](/documentation/articles/virtual-machines-windows-ps-lob-ph2) 中创建的 sqladmin 帐户登录到主 SQL Server 虚拟机。
 2.	在“开始”屏幕中，键入“故障转移”，然后单击“故障转移群集管理器”。
 3.	在左窗格中，右键单击“故障转移群集管理器”，然后单击“创建群集”。
 4.	在“开始之前”页上，单击“下一步”。
@@ -236,11 +236,11 @@ SQL Server AlwaysOn 可用性组依赖于 Windows Server 的 Windows Server 故�
 
 ## 启用 AlwaysOn 可用性组
 
-下一步是使用 SQL Server 配置管理器启用 AlwaysOn 可用性组。请注意，SQL Server 中的可用性组与 Azure 可用性集不同。可用性组包含高度可用且可恢复的数据库。Azure 可用性集将虚拟机分配给不同容错域。有关容错域的详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-manage-availability)。
+下一步是使用 SQL Server 配置管理器启用 AlwaysOn 可用性组。请注意，SQL Server 中的可用性组与 Azure 可用性集不同。可用性组包含高度可用且可恢复的数据库。Azure 可用性集将虚拟机分配给不同容错域。有关容错域的详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability)。
 
 使用以下步骤在 SQL Server 上启用 AlwaysOn 可用性组。
 
-1.	使用在[阶段 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2) 中创建的 sqladmin 帐户登录到主 SQL Server 虚拟机。
+1.	使用在[阶段 2](/documentation/articles/virtual-machines-windows-ps-lob-ph2) 中创建的 sqladmin 帐户登录到主 SQL Server 虚拟机。
 2.	在“开始”屏幕上，键入“SQL Server 配置”，然后单击“SQL Server 配置管理器”。
 3.	在左窗格中，单击“SQL Server 服务”。
 4.	在内容窗格中，双击 “SQL Server (MSSQLSERVER)”。
@@ -251,11 +251,11 @@ SQL Server AlwaysOn 可用性组依赖于 Windows Server 的 Windows Server 故�
 
 下图使用占位符计算机名称显示成功完成此阶段后生成的配置。
 
-![](./media/virtual-machines-workload-high-availability-LOB-application-phase3/workload-lobapp-phase3.png)
+![](./media/virtual-machines-windows-ps-lob-ph3/workload-lobapp-phase3.png)
 
 ## 后续步骤
 
-- 若要继续配置此工作负荷，请使用[阶段 4](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase4)。
+- 若要继续配置此工作负荷，请使用[阶段 4](/documentation/articles/virtual-machines-windows-ps-lob-ph4)。
 
 
 <!---HONumber=Mooncake_0411_2016-->

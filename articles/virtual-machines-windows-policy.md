@@ -15,7 +15,7 @@
 
 # 将策略应用到 Azure Resource Manager 虚拟机
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型
+>[AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代经典部署模型。
 
 通过使用策略，组织可以在整个企业中强制实施各种约定和规则。强制实施所需行为有助于消除风险，同时为组织的成功做出贡献。在本文中，我们将介绍如何使用 Azure Resource Manager 策略来为组织中的虚拟机定义所需行为。
 
@@ -25,12 +25,6 @@
 2. 为虚拟机定义策略
 3. 创建策略
 4. 应用策略
-
-## Azure Resource Manager 策略 101
-
-若要开始使用 Azure Resource Manager 策略，我们建议你先阅读以下文章，然后继续执行本文中的步骤。以下文章介绍了策略的基本定义和结构以及如何评估策略，并提供了策略定义的各种示例。
-
-* [使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy)
 
 ## 为虚拟机定义策略
 
@@ -80,10 +74,7 @@
 
 #### 虚拟机属性字段
 
-下表描述了可在策略定义中用作字段的虚拟机属性。有关策略字段的详细信息，请参阅以下文章：
-
-* [字段和源](/documentation/articles/resource-manager-policy#fields-and-sources)
-
+下表描述了可在策略定义中用作字段的虚拟机属性。
 
 | 字段名称 | 说明 |
 |----------------|----------------------------------------------------|
@@ -94,15 +85,10 @@
 
 ## 创建策略
 
-可以直接使用 REST API 或 PowerShell cmdlet 轻松创建策略。有关创建策略的信息，请参阅以下文章：
-
-* [创建策略](/documentation/articles/resource-manager-policy#creating-a-policy)
-
+可以直接使用 REST API 或 PowerShell cmdlet 轻松创建策略。
 
 ## 应用策略
 
-创建策略后，需要根据定义的范围来应用它。范围可以是订阅、资源组甚至资源。有关应用策略的信息，请参阅以下文章：
-
-* [创建策略](/documentation/articles/resource-manager-policy#applying-a-policy)
+创建策略后，需要根据定义的范围来应用它。范围可以是订阅、资源组甚至资源。
 
 <!---HONumber=Mooncake_0425_2016-->
