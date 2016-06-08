@@ -216,7 +216,7 @@ Azure 通知中心提供用于向移动设备发送推送通知的易于使用�
   [Azure Service Bus Notification Hubs]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
   [Node.js Cloud Service]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
-  [Azure 门户]: https://portal.azure.cn
+  [Azure 门户]: http://manage.windowsazure.cn/
   [nodejswebsite]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
  
 

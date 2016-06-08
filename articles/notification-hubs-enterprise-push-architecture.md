@@ -247,7 +247,7 @@
 
 	![][5]
 
-4. 消息最初发送到正被 WebJob 中的服务总线订阅监视的服务总线主题。收到消息后，将创建通知并将其发送到移动应用。当你转到 [Azure 经典门户]中 Web 作业的“日志”链接时，可以仔细查看 Web 作业日志来确认处理：
+4. 消息最初发送到正被 WebJob 中的订阅监视的线主题。收到消息后，将创建通知并将其发送到移动应用。当你转到 [Azure 经典门户]中 Web 作业的“日志”链接时，可以仔细查看 Web 作业日志来确认处理：
 
 	![][6]
 
@@ -262,7 +262,7 @@
 <!-- Links -->
 [通知中心示例]: https://github.com/Azure/azure-notificationhubs-samples
 [Azure 移动服务]: /home/features/mobile-services/
-[Azure 服务总线]: /documentation/articles/fundamentals-service-bus-hybrid-solutions 
+[Azure 服务总线]: /documentation/articles/service-bus-fundamentals-hybrid-solutions/ 
 [服务总线 Pub/Sub 编程]: /documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions
 [Azure WebJob]: /documentation/articles/web-sites-create-web-jobs
 [通知中心 - Windows 通用教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
