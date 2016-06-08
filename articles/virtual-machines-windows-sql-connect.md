@@ -12,7 +12,7 @@
 <tags 
 	ms.service="virtual-machines-windows"
 	ms.date="12/18/2015"
-	wacn.date=""/>
+	wacn.date="06/08/2016"/>
 
 # 连接到 Azure (Resource Manager) 上的 SQL Server 虚拟机
 
