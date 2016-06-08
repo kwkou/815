@@ -105,7 +105,6 @@
 
 [Azure 虚拟机中 SQL Server 的自动修补](/documentation/articles/virtual-machines-windows-classic-sql-automated-patching)
 
-[自动缩放虚拟机缩放集中的虚拟机](/documentation/articles/virtual-machines-windows-ps-vmss-create)
 
 
 
@@ -128,8 +127,6 @@
 
 [虚拟网络概述](/documentation/articles/virtual-networks-overview)
 	
-[使用 Azure 门户管理 NSG](/documentation/articles/virtual-networks-create-nsg-arm-pportal)
-	
 
 ### 开发
 
@@ -148,9 +145,6 @@
 [SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview)
 
 [Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-windows-lob)
-
-[SharePoint](/documentation/articles/virtual-machines-windows-sharepoint-farm)
-
 
 ### 引用
 [将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理器配合使用](/documentation/articles/azure-cli-arm-commands)

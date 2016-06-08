@@ -38,6 +38,9 @@
 
 ## 通过 Azure PowerShell 使用资源管理器模板创建 Windows 虚拟机
 
+
+>[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一下不支持的 VM 大小。
+
 按照以下步骤，通过 Azure PowerShell 使用 Github 模板存储库中的资源管理器模板创建 Windows 虚拟机。
 
 ### 步骤 1：检查 JSON 文件中的模板

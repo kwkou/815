@@ -17,8 +17,7 @@
 
 # 使用 .NET 库和模板部署 Azure 资源
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
-
+>[AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代经典部署模型。
 
 使用资源组和模板，可以统一管理为你的应用程序提供支持的所有资源。本教程说明如何使用 Azure 资源管理库中的某些可用客户端，以及如何生成模板用于部署虚拟机、虚拟网络和存储帐户。
 
@@ -62,7 +61,7 @@
 
 ### 创建模板文件
 
-借助 Azure 资源管理器模板，你可以使用资源和关联部署参数的 JSON 描述来统一部署和管理 Azure 资源。在本教程中生成的模板非常类似于可在模板库中找到的模板。若要了解详细信息，请参阅[在中国北部部署简单的 Windows VM](https://azure.microsoft.com/documentation/templates/101-simple-windows-vm/)。
+借助 Azure 资源管理器模板，你可以使用资源和关联部署参数的 JSON 描述来统一部署和管理 Azure 资源。在本教程中生成的模板非常类似于可在模板库中找到的模板。
 
 在 Visual Studio 中执行以下操作：
 
