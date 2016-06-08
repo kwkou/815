@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="02/05/2016"
-	wacn.date=""/>
+	wacn.date="06/08/2016"/>
 
 # 将 Windows VM 映像上载到 Azure 以进行资源管理器部署
 

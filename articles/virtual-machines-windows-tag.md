@@ -11,7 +11,7 @@
 <tags
    ms.service="virtual-machines-windows"
    ms.date="11/10/2015"
-   wacn.date=""/>
+   wacn.date="06/08/2016"/>
 
 # 如何在 Azure 中标记 Windows 虚拟机
 
