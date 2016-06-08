@@ -39,7 +39,7 @@
 
 ## 你需要创建哪些密钥文件？
 
-Azure 的基本 SSH 设置包括从 **id\_rsa** 私钥文件生成的 `.pem` 文件，以供与管理门户的经典部署模型一起使用。
+Azure 的基本 SSH 设置包括从 **id\_rsa** 私钥文件生成的 `.pem` 文件，以供与经典门户的经典部署模型一起使用。
 
 使用[管理门户](https://manage.windowsazure.cn)创建 VM 时必需使用 .pem 文件。使用 [Azure CLI](/documentation/articles/xplat-cli-install) 的经典部署中也支持.pem 文件。
 
