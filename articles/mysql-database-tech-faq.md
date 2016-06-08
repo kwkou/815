@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL服务问题 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,常见问题,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS,FAQ" description="针对用户在使用MySQL 数据库 on Azure中遇到的一些常见技术问题,提供快速解答。如果您仍存有疑问,欢迎联系技术支持。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="04/25/2016" wacn.date="04/25/2016"/>
+<tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
 
 #全部常见问题
 
@@ -99,12 +99,6 @@ workbench 6.3.5默认选择SSL连接, 且会使用“TLS-DHE-RSA-WITH-AES-256-CB
 当user name超过16个字符时，该客户端会自动截取前16个字符，造成连接的问题。建议您采用最新版本的SQLyog客户端，或其他MySQL的管理客户端，如MySQL workbench。
 
 ## **其他问题**<a id="step5"></a> 
-
-## 关于数据库字符集和排序规则的常见问题：
-
-###如何设置Azure MySQL的字符集和排序规则？
-在创建Azure MySQL数据库时，数据库字符集和排序规则只能通过Azure管理门户或者PowerShell来设置。如果数据库创建完成后，用户想更改数据库字符集和排序顺序，可以通过Azure管理门户或者PowerShell，也可以通过数据库命令 "Alter Database..." 修改。
-
 
 ## 关于数据库迁移的常见问题：
 ###导入TRIGGER, PROCEDURE, VIEW, FUNCTION, 或EVENT过程中报”Access denied; you need (at least one of) the SUPER privilege(s) for this operation” 错误。

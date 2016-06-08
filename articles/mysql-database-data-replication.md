@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="如何配置数据同步复制到MySQL Database on Azure- Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,服务限制,数据复制，Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="帮助您了解如何通过数据同步功能将本地MySQL实例复制到云端。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="04/25/2016" wacn.date="04/25/2016"/>
+<tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
 
 #如何配置数据同步复制到MySQL Database on Azure
 > [AZURE.SELECTOR]

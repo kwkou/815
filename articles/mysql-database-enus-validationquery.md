@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="Configure a verification mechanism on the client to confirm the effectiveness of persistent connections – Azure Cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, connection pool, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="Configure a verification mechanism to ensure database access speeds" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="04/25/2016" wacn.date="04/25/2016"/>
+<tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
 
 > [AZURE.SELECTOR]
 - [中文版](/documentation/articles/mysql-database-validationquery)
