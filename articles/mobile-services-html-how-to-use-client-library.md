@@ -39,7 +39,7 @@
 	var MobileServiceClient = WindowsAzure.MobileServiceClient;
     var client = new MobileServiceClient('AppUrl', 'AppKey');
 
-必须将占位符 `AppUrl` 替换为移动服务的应用程序 URL，将 `AppKey` 替换为你从 [Azure 经典门户](http://manage.windowsazure.cn/)获取的应用程序密钥。
+必须将占位符 `AppUrl` 替换为移动服务的应用程序 URL，将 `AppKey` 替换为你从 [Azure 管理门户](http://manage.windowsazure.cn/)获取的应用程序密钥。
 
 >[AZURE.IMPORTANT]应用程序密钥用于针对移动服务筛选出随机请求，将随应用程序一起分发。由于此密钥未加密，因此不能被认为是安全的。为确保安全访问你的移动服务数据，你必须改为在允许用户访问前对用户进行身份验证。有关详细信息，请参阅[如何：对用户进行身份验证](#authentication)。
 
@@ -383,7 +383,7 @@
 
 ##<a name="authentication"></a>如何对用户进行身份验证
 
-移动服务支持使用各种外部标识提供者对应用程序用户进行身份验证和授权，这些提供者包括：Facebook、Google、Microsoft 帐户和 Twitter。你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。你还可以在服务器脚本中使用已经过身份验证的用户的标识来实施授权规则。有关详细信息，请参阅 [身份验证入门] 教程。
+移动服务支持使用 Microsoft 帐户和 Azure Active Direcotry 对应用程序用户进行身份验证和授权。你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。你还可以在服务器脚本中使用已经过身份验证的用户的标识来实施授权规则。有关详细信息，请参阅 [身份验证入门] 教程。
 
 >[AZURE.NOTE]在 PhoneGap 或 Cordova 应用程序中使用身份验证时，还必须向项目中添加以下插件：
 >
@@ -396,35 +396,21 @@
 ###服务器流
 若要让移动服务管理 Windows 应用商店或 HTML5 应用程序中的身份验证过程，必须将你的应用程序注册到标识提供者。然后，需要在移动服务中配置提供者提供的应用程序 ID 和机密。有关详细信息，请参阅[向应用程序添加身份验证](/documentation/articles/mobile-services-html-get-started-users)教程。
 
-注册标识提供者后，只需结合提供者的 [MobileServiceAuthenticationProvider] 值调用 [LoginAsync 方法]。例如，若要使用 Facebook 登录，请使用以下代码。
+注册标识提供者后，只需结合提供者的 [MobileServiceAuthenticationProvider] 值调用 [LoginAsync 方法]。例如，若要使用 microsoftaccount 登录，请使用以下代码。
 
-		client.login("facebook").done(function (results) {
+		client.login("microsoftaccount").done(function (results) {
 		     alert("You are now logged in as: " + results.userId);
 		}, function (err) {
 		     alert("Error: " + err);
 		});
 
-如果你使用的标识提供者不是 Facebook，请将传递给上述 `login` 方法的值更改为下列项之一：`microsoftaccount`、`facebook`、`twitter`、`google` 或 `windowsazureactivedirectory`。
+如果你使用的标识提供者不是 microsoftaccount，请将传递给上述 `login` 方法的值更改为 `windowsazureactivedirectory`。
 
 在此情况下，移动服务将通过以下方式管理 OAuth 2.0 身份验证流：显示选定提供者的登录页，并在用户成功使用标识提供者登录后生成移动服务身份验证令牌。[login] 函数在完成时将返回一个 JSON 对象 (**user**)，该对象分别在 **userId** 和 **authenticationToken** 字段中公开用户 ID 和移动服务身份验证令牌。你可以缓存此令牌，并在它过期之前重复使用。有关详细信息，请参阅“缓存身份验证令牌”。
 
 ###客户端流
 你的应用程序还能够独立联系标识提供者，然后将返回的令牌提供给移动服务以进行身份验证。使用此客户端流可为用户提供单一登录体验，或者从标识提供者中检索其他用户数据。
 
-####Facebook/Google SDK 基本示例
-
-此示例使用 Facebook 客户端 SDK 进行身份验证：
-
-	client.login(
-	     "facebook",
-	     {"access_token": token})
-	.done(function (results) {
-	     alert("You are now logged in as: " + results.userId);
-	}, function (err) {
-	     alert("Error: " + err);
-	});
-
-此示例假定由相应的提供程序 SDK 提供的令牌存储在 `token` 变量中。目前，不能使用 Twitter 进行客户端身份验证。
 
 ####Microsoft 帐户基本示例
 以下示例使用 Live SDK，该 SDK 使用 Microsoft 帐户来支持 Windows 应用商店应用程序的单一登录：

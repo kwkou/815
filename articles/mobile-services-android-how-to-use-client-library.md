@@ -44,7 +44,7 @@
 启用动态架构后，Azure 移动服务将基于 insert 或 update 请求中的对象自动生成新列。有关详细信息，请参阅[动态架构](https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx)。
 
 ##<a name="create-client"></a>如何创建移动服务客户端
-以下代码将创建用于访问移动服务的 [MobileServiceClient](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html) 对象。代码会进入在 *AndroidManifest.xml* 中指定为 **MAIN** 操作和 **LAUNCHER** 类别的 Activity 类的 `onCreate` 方法。
+以下代码将创建用于访问移动服务的 MobileServiceClient 对象。代码会进入在 *AndroidManifest.xml* 中指定为 **MAIN** 操作和 **LAUNCHER** 类别的 Activity 类的 `onCreate` 方法。
 
 		MobileServiceClient mClient = new MobileServiceClient(
 				"MobileServiceUrl", // Replace with the above Site URL
@@ -672,7 +672,7 @@
 
 你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。还可以使用已经过身份验证的用户的 ID 来修改请求。
 
-前两个任务可使用 [Azure 经典门户](https://manage.windowsazure.cn/)来完成。有关详细信息，请参阅[身份验证入门](/documentation/articles/mobile-services-android-get-started-users/)。
+前两个任务可使用 [Azure 管理门户](https://manage.windowsazure.cn/)来完成。有关详细信息，请参阅[身份验证入门](/documentation/articles/mobile-services-android-get-started-users/)。
 
 ### <a name="caching"></a>如何向应用程序添加身份验证代码
 

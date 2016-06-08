@@ -41,7 +41,7 @@
 
 现在，你已能够通过将移动服务与 Blob 服务集成安全地上载图片，请查看一些其他的后端服务和集成主题：
 
-+ [移动服务 .NET 操作方法概念性参考](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
++ [移动服务 .NET 操作方法概念性参考](/documentation/articles/mobile-services-dotnet-how-to-use-client-library)
 
      了解有关如何将移动服务与 .NET 一起使用的详细信息
  
@@ -57,8 +57,8 @@
 <!-- Images. -->
 
 <!-- URLs. -->
-[移动服务入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started
-[Azure Management Portal]: https://manage.windowsazure.cn
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
+[Azure 管理门户]: https://manage.windowsazure.cn
 [How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866
  

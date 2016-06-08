@@ -158,9 +158,6 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
 [AZURE.INCLUDE [mobile-services-offline-summary-csharp](../includes/mobile-services-offline-summary-csharp.md)]
 
-##  后续步骤
-
-* [如何使用适用于 Azure 移动服务的 Xamarin 组件客户端]
 
 <!-- Anchors. -->
 [查看移动服务同步代码]: #review-offline

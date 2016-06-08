@@ -1,5 +1,5 @@
 
-1. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中，单击“移动服务”> 你的移动服务 >“仪表板”，并记下“移动服务 URL”值。
+1. 在 [Azure 管理门户](https://manage.windowsazure.cn/)中，单击“移动服务”> 你的移动服务 >“仪表板”，并记下“移动服务 URL”值。
 
 2. 使用一个或多个以下身份验证提供者注册你的应用程序：
    * [Microsoft](/documentation/articles/mobile-services-how-to-register-microsoft-authentication)
@@ -7,7 +7,7 @@
    
 	记下标识提供者生成的客户端标识和客户端机密值。不要分发或共享客户端机密。
 
-3. 返回 [Azure 经典门户](https://manage.windowsazure.cn/)，单击“移动服务”> 你的移动服务 >“身份”> 你的标识提供者设置，然后输入你的提供者的客户端 ID 和密钥值。 
+3. 返回 [Azure 管理门户](https://manage.windowsazure.cn/)，单击“移动服务”> 你的移动服务 >“身份”> 你的标识提供者设置，然后输入你的提供者的客户端 ID 和密钥值。 
  
 现在，你已将应用和移动服务配置为使用你的身份验证提供者。可以选择对你想要支持的其他每个标识提供者重复所有这些步骤。
 

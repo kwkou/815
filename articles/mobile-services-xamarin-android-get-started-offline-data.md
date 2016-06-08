@@ -93,7 +93,9 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
     >[AZURE.NOTE]若要从设备本地存储区中删除已在移动设备数据库中删除的记录，应启用[软删除]。否则，你的应用程序应定期调用 `IMobileServiceSyncTable.PurgeAsync()` 以清除本地存储。
 
-    请注意，推送和请求操作可能会发生 `MobileServicePushFailedException`。下一篇教程[使用移动服务脱机支持处理冲突]说明了如何处理这些同步相关的异常。
+    请注意，推送和请求操作可能会发生 `MobileServicePushFailedException`。
+    
+    下一篇教程[使用移动服务脱机支持处理冲突]说明了如何处理这些同步相关的异常。
 
 5. 在 `ToDoActivity` 类中，`SyncAsync()` 方法之后修改数据的操作，将调用 `AddItem()` 和 `CheckItem()`。它也称为从 `OnRefreshItemsSelected()`，以便用户获取最新数据，只要它们推送“刷新”按钮。该应用程序还执行同步启动，因为 `ToDoActivity.OnCreate()` 调用 `OnRefreshItemsSelected()`。
 
@@ -146,7 +148,6 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 
 * [使用移动服务脱机支持处理冲突]
 
-* [如何使用适用于 Azure 移动服务的 Xamarin 组件客户端]
 
 <!-- Anchors. -->
 [查看移动服务同步代码]: #review-offline
@@ -161,7 +162,6 @@ Azure 移动服务脱机同步允许最终用户在无法访问网络时与本�
 [处理脱机支持的移动服务与冲突]: /documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data
 [Get started with Mobile Services（移动服务入门）]: /documentation/articles/partner-xamarin-mobile-services-android-get-started/
 [移动服务入门]: /documentation/articles/partner-xamarin-mobile-services-android-get-started
-[如何使用适用于 Azure 移动服务的 Xamarin 组件客户端]: /documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library
 [软删除]: /documentation/articles/mobile-services-using-soft-delete
 [Mobile Services SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0

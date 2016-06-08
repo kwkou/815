@@ -50,6 +50,7 @@
 
 2. 如果你有其他登录帐户，可以通过关闭、再删除、然后重新运行应用程序，来验证用户是否只能看到他们自己的数据。显示登录凭据对话框时，请输入一个不同的登录名，然后检查在前一登录名下输入的项是否未显示。
 
+
 <!-- Anchors. -->
 
 [Register server scripts]: #register-scripts
@@ -59,10 +60,11 @@
 
 <!-- URLs. -->
 
+
 [Windows Push Notifications & Live Connect]: http://go.microsoft.com/fwlink/p/?LinkID=257677
 [Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [My Apps dashboard]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[向现有移动服务应用添加身份验证]:/documentation/articles/ mobile-services-ios-get-started-users
+[向现有移动服务应用添加身份验证]: /documentation/articles/mobile-services-ios-get-started-users
 
 [Azure 管理门户]: https://manage.windowsazure.cn/
  
