@@ -18,7 +18,7 @@
 > [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
  
 
-开始使用 [Docker] 的最快方法是转到 Azure 应用商店，将 [Canonical] 创建的**“Ubuntu Server 上的 Docker”**映像模板与 [MSOpenTech] 结合使用来创建 VM。这将创建 Ubuntu Server VM 并自动安装 [Docker VM 扩展](/documentation/articles/virtual-machines-docker-linux-dockerextension)，同时在 Azure 上预安装并运行**最新** Docker 引擎。
+开始使用 [Docker] 的最快方法是转到 Azure 应用商店，将 [Canonical] 创建的**“Ubuntu Server 上的 Docker”**映像模板与 [MSOpenTech] 结合使用来创建 VM。这将创建 Ubuntu Server VM 并自动安装 [Docker VM 扩展](/documentation/articles/virtual-machines-linux-dockerextension)，同时在 Azure 上预安装并运行**最新** Docker 引擎。
 
 你可以使用 SSH 立即连接到该 VM，并直接开始使用 Docker 而不用执行任何其他操作。
 
@@ -34,19 +34,19 @@
 
 1. 现在，你已登录，请单击左下角的**“新建”**以创建新的 VM 映像。你可能会立即在横幅中看到相应映像：
 
-> ![在横幅中选择 Docker Ubuntu 映像](./media/virtual-machines-linux-classic-docker-quickstart/CreateNewDockerBanner.png)
+	![在横幅中选择 Docker Ubuntu 映像](./media/virtual-machines-linux-classic-docker-quickstart/CreateNewDockerBanner.png)
 
 2. 但如果没有，请在映像库中搜索它：
 
-> ![在映像库中找到该映像](./media/virtual-machines-linux-classic-docker-quickstart/DockerOnUbuntuServerMSOpenTech.png)
+	![在映像库中找到该映像](./media/virtual-machines-linux-classic-docker-quickstart/DockerOnUbuntuServerMSOpenTech.png)
 
 3. 提供实例的用户名和密码或 **.pub** 文件的内容（ssh-rsa 格式），以便使用证书启用 SSH。（下图显示了指定用户名和密码组合。） 然后，按底部的**“创建”**。
 
-> ![配置 VM 实例](./media/virtual-machines-linux-classic-docker-quickstart/CreateVMDockerUbuntuPwd.png)
+	![配置 VM 实例](./media/virtual-machines-linux-classic-docker-quickstart/CreateVMDockerUbuntuPwd.png)
 
 4. 并等到它运行。这根本不应该需要太多时间。
 
-> ![在门户中运行的 Docker 映像](./media/virtual-machines-linux-classic-docker-quickstart/DockerUbuntuRunning.png)
+	![在门户中运行的 Docker 映像](./media/virtual-machines-linux-classic-docker-quickstart/DockerUbuntuRunning.png)
 
 ## 使用 SSH 连接玩得开心
 

@@ -424,9 +424,5 @@
 5. 在 Visual Studio 中单击“启动”，然后使用用于订阅的相同用户名和密码登录到 Azure AD。
 
     你应会看到虚拟机的大小更改为 Standard\_A1
-    
-## 后续步骤
-
-如果部署出现问题，请参阅 [Troubleshooting resource group deployments with Azure Portal（使用 Azure 门户对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal)
 
 <!---HONumber=Mooncake_0425_2016-->

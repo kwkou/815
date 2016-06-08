@@ -69,7 +69,7 @@ Azure 虚拟机 (VM) 库包括几种内含 Microsoft SQL Server 的映像。你�
 * 单击“确定”对设置进行保存。<br/>
 
 ## 2\.选择虚拟机大小
-在“创建虚拟机”边栏选项卡的“大小”下选择虚拟机大小。Azure 门户将显示建议的大小。有关虚拟机大小的详细信息，请参阅[虚拟机的大小](/documentation/articles/virtual-machines-linux-sizes)。大小取决于所选模板。可以通过大小来估算每月运行 VM 的费用。针对服务器选择 VM 大小。有关 SQL Server VM 大小的考虑事项，请参阅 [SQL Server 在 Azure 虚拟机中的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance)。
+在“创建虚拟机”边栏选项卡的“大小”下选择虚拟机大小。Azure 门户将显示建议的大小。有关虚拟机大小的详细信息，请参阅[虚拟机的大小](/documentation/articles/virtual-machines-windows-sizes)。大小取决于所选模板。可以通过大小来估算每月运行 VM 的费用。针对服务器选择 VM 大小。有关 SQL Server VM 大小的考虑事项，请参阅 [SQL Server 在 Azure 虚拟机中的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance)。
 
 ## 3\.配置虚拟机设置
 在“创建虚拟机”边栏选项卡的“设置”下，为虚拟机配置 Azure 存储空间、网络和监视功能。
@@ -110,7 +110,7 @@ Azure 虚拟机 (VM) 库包括几种内含 Microsoft SQL Server 的映像。你�
 - “专用（虚拟网络内）”，允许从同一个虚拟网络中的计算机或服务连接到 SQL Server。
 
 
-**端口**：默认为 1433。你可以指定其他端口号。有关详细信息，请参阅[连接到 SQL Server 虚拟机（资源管理器）| Azure](virtual-machines-windows-sql-connect.md)。
+**端口**：默认为 1433。你可以指定其他端口号。有关详细信息，请参阅[连接到 SQL Server 虚拟机（资源管理器）| Azure](/documentation/articles/virtual-machines-windows-sql-connect)。
 
 
 
@@ -137,7 +137,7 @@ Azure 虚拟机 (VM) 库包括几种内含 Microsoft SQL Server 的映像。你�
 <br/>![SQL ARM 存储](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-arm-storage.png)
 <br/>
 
->[AZURE.NOTE] 存储配置限制取决于虚拟机大小。有关详细信息，请参阅[虚拟机的大小](/documentation/articles/virtual-machines-linux-sizes)
+>[AZURE.NOTE] 存储配置限制取决于虚拟机大小。有关详细信息，请参阅[虚拟机的大小](/documentation/articles/virtual-machines-windows-sizes)
 
 ### 修补
 **SQL 自动修补**：默认处于启用状态。Azure 可以通过自动修补来自动修补 SQL Server 和操作系统。指定进行维护的具体日期（星期几）、时间和时长。Azure 会在维护时段进行修补。维护时段计划使用 VM 的时间区域设置。如果你不希望 Azure 自动修补 SQL Server 和操作系统，请单击“禁用”。
@@ -196,7 +196,7 @@ Azure 虚拟机 (VM) 库包括几种内含 Microsoft SQL Server 的映像。你�
 
 如果你使用资源管理器通过门户来预配 SQL Server 虚拟机映像，则当你选择“公共”作为 SQL 连接选项并启用 SQL Server 身份验证时，系统已为你完成以下步骤。但是，若要通过 Internet 访问 SQL Server 实例，仍需完成一些步骤。
 
->[AZURE.NOTE] 如果你没有在预配过程中选择“公共”，则需执行其他步骤才能通过 Internet 访问 SQL Server 实例。有关详细信息，请参阅[连接到 SQL Server 虚拟机 (Resource Manager) | Azure](virtual-machines-windows-sql-connect.md)。
+>[AZURE.NOTE] 如果你没有在预配过程中选择“公共”，则需执行其他步骤才能通过 Internet 访问 SQL Server 实例。有关详细信息，请参阅[连接到 SQL Server 虚拟机 (Resource Manager) | Azure](/documentation/articles/virtual-machines-windows-sql-connect)。
 
 如果你只需在本地或只需在同一虚拟网络中访问虚拟机，则不需执行以下步骤。
 

@@ -137,7 +137,7 @@ WARNING: No swap limit support
 
 <!--Link references-->
 [如何从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展]: /documentation/articles/virtual-machines-docker-with-xplat-cli/
-[Azure Linux 代理]: virtual-machines-linux-agent-user-guide.md
+[Azure Linux 代理]: /documentation/articles/virtual-machines-linux-agent-user-guide
 [Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
 
 [使用 https 运行 Docker]: http://docs.docker.com/articles/https/
