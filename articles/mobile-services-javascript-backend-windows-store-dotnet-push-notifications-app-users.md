@@ -89,8 +89,8 @@
 
 
 <!-- URLs. -->
-[向应用程序添加身份验证]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
-[向应用程序添加推送通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+[向应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users
+[向应用程序添加推送通知]: /documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-push
 
 [Azure Management portal]: https://manage.windowsazure.cn/
 

@@ -23,7 +23,7 @@
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-create-custom-api](../includes/mobile-services-dotnet-backend-create-custom-api.md)]
 
-有关如何在应用中使用移动服务客户端库调用自定义 API 的信息，请参阅客户端 SDK 参考中的[调用自定义 API](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/#custom-api)。
+有关如何在应用中使用移动服务客户端库调用自定义 API 的信息，请参阅客户端 SDK 参考中的[调用自定义 API](/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#custom-api)。
 
 
 <!-- Anchors. -->

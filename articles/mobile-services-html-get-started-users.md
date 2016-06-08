@@ -39,7 +39,7 @@
 
 	随后将在本地计算机上启动用于托管新应用程序的 Web 服务器。
 
-4. 在 Web 浏览器中打开 URL <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> 以启动该应用程序。
+4. 在 Web 浏览器中打开 URL http://localhost:8000/ 以启动该应用程序。
 
 	无法加载数据。发生此异常的原因是应用程序尝试以未经身份验证的用户身份访问移动服务，但 _TodoItem_ 表现在要求身份验证。
 

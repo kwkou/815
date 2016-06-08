@@ -1,5 +1,5 @@
 <properties
-	pageTitle="自定义身份验证入门 | Microsoft Azure"
+	pageTitle="自定义身份验证入门 | Azure"
 	description="了解如何使用用户名和密码对用户进行身份验证。"
 	documentationCenter="Mobile"
 	authors="mattchenderson"
@@ -411,7 +411,7 @@
 
 
 <!-- URLs. -->
-[向应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
+[向应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
 [ClaimsIdentity]: https://msdn.microsoft.com/zh-cn/library/system.security.claims.claimsidentity(v=vs.110).aspx
 [ProviderCredentials]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.security.providercredentials.aspx

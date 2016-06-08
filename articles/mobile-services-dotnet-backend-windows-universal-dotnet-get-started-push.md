@@ -1,5 +1,5 @@
 <properties
-	pageTitle="向通用 Windows 8.1 应用添加推送通知 | Microsoft Azure"
+	pageTitle="向通用 Windows 8.1 应用添加推送通知 | Azure"
 	description="了解如何从 .NET 后端移动服务使用 Azure 通知中心向通用 Windows 8.1 应用发送推送通知。"
 	services="mobile-services,notification-hubs"
 	documentationCenter="windows"
@@ -105,7 +105,7 @@
 
 [什么是通知中心？]: /documentation/articles/notification-hubs-overview
 
-[如何使用适用于 Azure 移动服务的 .NET 客户端]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[如何使用适用于 Azure 移动服务的 .NET 客户端]: /documentation/articles/mobile-services-dotnet-how-to-use-client-library
 [MobileServiceClient]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
 
 <!---HONumber=Mooncake_0118_2016-->

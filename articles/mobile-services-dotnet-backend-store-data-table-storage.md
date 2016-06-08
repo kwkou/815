@@ -32,7 +32,7 @@
 
 3. 如果你尚未创建你的存储帐户，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account)。
 
-4. 在 [Azure 经典门户]中，单击“存储”，单击存储帐户，然后单击“管理密钥”。
+4. 在 [Azure 管理门户]中，单击“存储”，单击存储帐户，然后单击“管理密钥”。
 
 5. 记下“存储帐户名称”和“访问密钥”。
  
@@ -133,7 +133,7 @@
 
 + [使用混合连接来连接到本地 SQL Server](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started)</br>混合连接可让移动服务安全地连接到本地资产。这样，移动客户端便可以使用 Azure 访问你的本地数据。支持的资产包括静态 TCP 端口上运行的任何资源，例如 Microsoft SQL Server、MySQL、HTTP Web API 和大多数自定义 Web 服务。
 
-+ [使用移动服务将图像上载到 Azure 存储空间](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storaged)</br>说明如何扩展 TodoList 示例项目，以便将图像从应用上载到 Azure Blob 存储。
++ [使用移动服务将图像上载到 Azure 存储空间](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-upload-data-blob-storaged)</br>说明如何扩展 TodoList 示例项目，以便将图像从应用上载到 Azure Blob 存储。
 
 <!-- Anchors. -->
 [Create a non-relational store]: #create-store
@@ -146,7 +146,7 @@
 
 <!-- URLs. -->
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 管理门户]: https://manage.windowsazure.cn/
 [What is the Table Service]: /documentation/articles/storage-dotnet-how-to-use-tables/#what-is
 [MongoLab Add-on Page]: /gallery/store/mongolab/mongolab
  

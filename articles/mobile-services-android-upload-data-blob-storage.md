@@ -46,12 +46,12 @@
 ## 代码示例
 [此处](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages)提供了此应用的已完成客户端源代码部分。若要运行此代码，你必须先完成本教程的移动服务后端部分。
 
-## 在 Azure 经典门户中更新已注册的插入脚本
+## 在 Azure 管理门户中更新已注册的插入脚本
 
 [AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 
 
-## 更新快速入门应用以捕获和上载图像。
+## 更新快速入门应用以捕获和上载图像
 
 ### 引用 Azure 存储空间 Android 客户端库
 
@@ -383,10 +383,6 @@
 + [移动服务服务器脚本参考]
 
 	参考使用服务器脚本执行服务器端任务，并与其他 Azure 组件和外部资源集成的主题。
- 
-+ [移动服务 .NET 操作方法概念性参考]
-
-	了解有关如何将移动服务与 .NET 一起使用的详细信息
   
  
 <!-- Anchors. -->
@@ -410,7 +406,7 @@
 [Azure classic portal]: https://manage.windowsazure.cn/
 [How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866
-[移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+
 [App settings]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
  
 

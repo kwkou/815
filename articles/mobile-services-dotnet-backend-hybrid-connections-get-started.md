@@ -16,7 +16,7 @@
 # 使用混合连接从 Azure 移动服务连接到本地 SQL Server 
 
 
-当企业在过渡到云环境时，可能无法立即就将所有资产迁移到 Azure。使用混合连接，Azure 移动服务可以安全地连接到本地资产。这样，移动客户端便可以使用 Azure 访问你的本地数据。支持的资产包括静态 TCP 端口上运行的任何资源，例如 Microsoft SQL Server、MySQL、HTTP Web API 和大多数自定义 Web 服务。混合连接使用共享访问签名 (SAS) 授权，确保从移动服务和本地混合连接管理器到混合连接的连接安全。有关详细信息，请参阅[混合连接概述](/documentation/articles/integration-hybrid-connection-overview)。
+当企业在过渡到云环境时，可能无法立即就将所有资产迁移到 Azure。使用混合连接，Azure 移动服务可以安全地连接到本地资产。这样，移动客户端便可以使用 Azure 访问你的本地数据。支持的资产包括静态 TCP 端口上运行的任何资源，例如 Microsoft SQL Server、MySQL、HTTP Web API 和大多数自定义 Web 服务。混合连接使用共享访问签名 (SAS) 授权，确保从移动服务和本地混合连接管理器到混合连接的连接安全。
 
 在本教程中，你将学习如何修改 .NET 后端移动服务，以使用本地 SQL Server 数据库，而不是随服务一起提供的默认 Azure SQL 数据库。如[此文](http://blogs.msdn.com/b/azuremobile/archive/2014/05/12/connecting-to-an-external-database-with-node-js-backend-in-azure-mobile-services.aspx)中所述，JavaScript 后端移动服务也支持混合连接。
 
@@ -25,7 +25,7 @@
 
 本教程要求做好以下准备：
 
-- **现有的 .NET 后端移动服务**<br/>遵循[移动服务入门]教程，从 [Azure 经典门户]创建和下载新的 .NET 后端移动服务。
+- **现有的 .NET 后端移动服务**<br/>遵循[移动服务入门]教程，从 [Azure 管理门户]创建和下载新的 .NET 后端移动服务。
 
 [AZURE.INCLUDE [hybrid-connections-prerequisites](../includes/hybrid-connections-prerequisites.md)]
 
@@ -90,7 +90,7 @@
 
 在验证数据库连接后，需要为这个新的连接字符串添加应用设置，以便能够从 Azure 使用该连接字符串，并且能够将移动服务发布到 Azure。
 
-1. 在 [Azure 经典门户]中，浏览到你的移动服务。
+1. 在 [Azure 管理门户]中，浏览到你的移动服务。
 
 1. 单击“配置”选项卡，然后找到“连接字符串”部分。
 
@@ -122,7 +122,6 @@
 ##另请参阅##
  
 + [混合连接网站](http://azure.microsoft.com/zh-cn/services/biztalk-services/)
-+ [混合连接概述](/documentation/articles/integration-hybrid-connection-overview)
 + [BizTalk 服务：“仪表板”、“监视”、“缩放”、“配置”和“混合连接”选项卡](/documentation/articles/biztalk-dashboard-monitor-scale-tabs)
 + [如何对 .NET 后端移动服务进行数据模型更改](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)
 

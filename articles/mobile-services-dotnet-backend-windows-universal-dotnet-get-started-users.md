@@ -61,16 +61,10 @@
 [AZURE.INCLUDE [mobile-windows-universal-dotnet-authenticate-app-with-token](../includes/mobile-windows-universal-dotnet-authenticate-app-with-token.md)]
 
 
-## <a name="next-steps"></a>后续步骤
-
-在下一教程[移动服务用户的服务端授权][Authorize users with scripts]中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。
-
 ##另请参阅
 
 + [增强的用户功能](https://azure.microsoft.com/blog/2014/10/02/custom-login-scopes-single-sign-on-new-asp-net-web-api-updates-to-the-azure-mobile-services-net-backend/)<br/>
 你可以通过在 .NET 后端调用 **ServiceUser.GetIdentitiesAsync()** 方法，来获取标识提供者在你的移动服务中保留的其他用户数据。 
-
-+ [移动服务 .NET 操作方法概念性参考]<br/>了解有关如何将移动服务与 .NET 客户端配合使用的详细信息。
 
 
 <!-- Anchors. -->

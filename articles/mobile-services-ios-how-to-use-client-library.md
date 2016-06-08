@@ -256,7 +256,7 @@ Azure 移动服务支持两种身份验证工作流：
 
 ###  服务器托管登录
 
-以下是可以将服务器托管登录添加到[移动服务快速入门]项目的方式；你可以为其他项目使用类似的代码。有关详细信息，以及要查看端到端示例的运作方式，请参阅 [身份验证]。
+以下是可以将服务器托管登录添加到[移动服务快速入门]项目的方式；你可以为其他项目使用类似的代码。
 
 [AZURE.INCLUDE [mobile-services-ios-authenticate-app](../includes/mobile-services-ios-authenticate-app.md)]
 
@@ -316,7 +316,7 @@ Azure 移动服务支持两种身份验证工作流：
 [移动服务快速入门]: /documentation/articles/mobile-services-ios-get-started
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[身份验证]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
+
 [iOS SDK]: https://developer.apple.com/xcode
 
 [Handling Expired Tokens]: http://go.microsoft.com/fwlink/p/?LinkId=301955
