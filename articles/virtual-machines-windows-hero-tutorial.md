@@ -32,7 +32,7 @@
 
 <br>
 
->[AZURE.TIP] 使用门户时，如果你希望 VM 属于某个可用性集时，则需要在创建集中的第一个 VM 之前或其期间创建该可用性集。有关创建和使用可用性集的详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-manage-availability)。
+>[AZURE.TIP] 使用门户时，如果你希望 VM 属于某个可用性集时，则需要在创建集中的第一个 VM 之前或其期间创建该可用性集。有关创建和使用可用性集的详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability)。
 
 ## 选择 Windows 虚拟机映像
 
@@ -105,7 +105,7 @@
 
 ## 后续步骤
 
-* 使用 Azure PowerShell 和 Azure CLI 来[查找和选择虚拟机映像](/documentation/articles/resource-groups-vm-searching)。
+* 使用 Azure PowerShell 和 Azure CLI 来[查找和选择虚拟机映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage)。
 * 使用 [Azure Resource Manager 模板](https://github.com/Azure/azure-quickstart-templates/)自动部署和管理虚拟机和工作负荷。
 * 你也可以使用 Azure CLI 快速[创建 Linux 虚拟机](/documentation/articles/virtual-machines-linux-quick-create-cli)。
 

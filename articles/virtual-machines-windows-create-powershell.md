@@ -26,7 +26,7 @@
 
 [AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代[经典部署模型](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代[经典部署模型](/documentation/articles/virtual-machines-windows-classic-create-powershell)。
 
 以下步骤演示如何构建一组 Azure PowerShell 命令，以创建和配置 Azure 虚拟机。你可以使用此构建基块过程快速创建用于新的基于 Windows 的虚拟机的命令集并扩展现有部署。你还可以使用该过程创建多个命令集以快速构建出自定义开发/测试或 IT 专业环境。
 

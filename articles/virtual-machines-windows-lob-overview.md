@@ -83,7 +83,7 @@
 
 若要构建此配置的开发/测试环境或概念证明，请参阅[在混合云中设置基于 web 的 LOB 应用程序用于测试](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)。
 
-有关针对 Azure 设计 IT 工作负荷的其他信息，请参阅 [Azure 基础结构服务实现准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)。
+有关针对 Azure 设计 IT 工作负荷的其他信息，请参阅 [Azure 基础结构服务实现准则](/documentation/articles/virtual-machines-windows-infrastructure-service-guidelines)。
 
 ## 后续步骤
 
