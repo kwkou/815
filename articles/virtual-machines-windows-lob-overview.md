@@ -79,7 +79,7 @@
 
 - 如果你是经验丰富的基于 web 的业务线应用程序的实现者，请随意调整阶段 3 到阶段 5 中的说明并生成最适合你的需求的应用程序基础结构。 
 - 如果你已有现有 Azure 混合云实现，请随意调整或跳过阶段 1 和阶段 2 中的说明，以在相应子网上托管新应用程序的虚拟机。
-- 所有服务器都位于 Azure 虚拟网络中的单个子网上。如果要提供等效于子网隔离的附加安全性，则可以使用[网络安全组](../virtual-networks/virtual-networks-nsg.md)。
+- 所有服务器都位于 Azure 虚拟网络中的单个子网上。如果要提供等效于子网隔离的附加安全性，则可以使用[网络安全组](/documentation/articles/virtual-networks-nsg)。
 
 若要构建此配置的开发/测试环境或概念证明，请参阅[在混合云中设置基于 web 的 LOB 应用程序用于测试](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)。
 

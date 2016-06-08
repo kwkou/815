@@ -10,7 +10,7 @@
 	editor="monicar"
 	tags="azure-resource-manager" />
 <tags 
-	ms.service="virtual-machines"
+	ms.service="virtual-machines-windows"
 	ms.date="02/04/2016"
 	wacn.date="06/07/2016"/>
 
