@@ -315,7 +315,7 @@
 	}
 	```
 
-    >[AZURE.NOTE] 本教程创建运行 Windows Server 操作系统版本的虚拟机。若要详细了解如何选择其他映像，请参阅[使用 Windows PowerShell 和 Azure CLI 来导航和选择 Azure 虚拟机映像](/documentation/articles/resource-groups-vm-searching)。
+    >[AZURE.NOTE] 本教程创建运行 Windows Server 操作系统版本的虚拟机。若要详细了解如何选择其他映像，请参阅[使用 Windows PowerShell 和 Azure CLI 来导航和选择 Azure 虚拟机映像](/documentation/articles/virtual-machines-windows-cli-ps-findimage)。
 
 
 4. 保存创建的参数文件。
