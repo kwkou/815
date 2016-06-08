@@ -30,14 +30,14 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
 
-## 连接方案
+##<a name="connection-scenarios"></a> 连接方案
 
 客户端连接虚拟机上运行的 SQL Server 的方式取决于客户端的位置与计算机/网络配置。这些方案包括：
 
 - [通过 Internet 连接到 SQL Server](#connect-to-sql-server-over-the-internet)
 - [连接到同一虚拟网络中的 SQL Server](#connect-to-sql-server-in-the-same-virtual-network)
 
-### 通过 Internet 连接到 SQL Server
+###<a name="connect-to-sql-server-over-the-internet"></a> 通过 Internet 连接到 SQL Server
 
 若要从 Internet 连接到 SQL Server 数据库引擎，需完成多个必要的步骤，例如配置防火墙、启用 SQL 身份验证以及配置网络安全组。必须设置网络安全组规则，以便在端口 1433 上进行 TCP 通信。
 
@@ -55,9 +55,9 @@
 
 	"Server=sqlvmlabel.chinaeast.chinacloudapp.cn,1500;Integrated Security=false;User ID=<login_name>;Password=<your_password>"
 
->[AZURE.NOTE] 请务必注意，使用这种方法与 SQL Server 进行通信时，所有返回的数据被将视为数据中心的传出流量。这需要按一般的[出站数据传输价格](/home/features/data-transfers/#price)付费。即使在同一 Azure 数据中心内的另一个计算机或云服务中使用这种方法，也是如此，因为流量还是会通过 Azure 的公共负载平衡器。
+>[AZURE.NOTE] 请务必注意，使用这种方法与 SQL Server 进行通信时，所有返回的数据被将视为数据中心的传出流量。这需要按一般的[出站数据传输价格](/pricing/details/data-transfer/)付费。即使在同一 Azure 数据中心内的另一个计算机或云服务中使用这种方法，也是如此，因为流量还是会通过 Azure 的公共负载平衡器。
 
-### 连接到同一虚拟网络中的 SQL Server
+###<a name="connect-to-sql-server-in-the-same-virtual-network"></a> 连接到同一虚拟网络中的 SQL Server
 
 [虚拟网络](/documentation/articles/virtual-networks-overview)支持其他方案。你可以连接同一虚拟网络中的 VM，即使这些 VM 位于不同的资源组中。使用[站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create)，可以创建连接 VM 与本地网络和计算机的混合体系结构。
 
@@ -71,7 +71,7 @@
 
 请注意，在此方案中，你还可以指定 VM 的 IP 地址。
 
-## 在 Azure VM 中手动配置 SQL Server 连接的步骤
+##<a name="steps-for-manually-configuring-sql-server-connectivity-in-an-azure-vm"></a> 在 Azure VM 中手动配置 SQL Server 连接的步骤
 
 以下步骤演示了如何手动设置到 SQL Server 实例的连接，然后选择性地使用 SQL Server Management Studio (SSMS) 通过 Internet 进行连接。请注意，当你在门户中选择适当的 SQL Server 连接选项时，系统会为你完成下面的多项步骤。
 
