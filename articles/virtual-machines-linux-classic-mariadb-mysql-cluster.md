@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/15/2015"
-	wacn.date=""/>
+	wacn.date="06/08/2016"/>
 
 # MariaDB (MySQL) 群集 - Azure 教程
 

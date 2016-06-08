@@ -1,3 +1,5 @@
+<!-- Ibiza Portal -->
+
 <properties
 	pageTitle="使用 Azure 创建 LAMP 堆栈 | Azure"
 	description="了解如何在 Azure 中使用运行 Linux 的 Azure 虚拟机 (VM) 创建 LAMP 堆栈。"

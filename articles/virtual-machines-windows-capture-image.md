@@ -23,14 +23,14 @@
 
 ## 先决条件
 
-这些步骤假定你已使用 Resource Manager 部署模型创建了 Azure 虚拟机并配置了操作系统，包括附加任何数据磁盘和完成其他自定义事项（如安装应用程序）。如果你尚未完成此操作，请阅读[如何使用 Resource Manager 和 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create)。
+这些步骤假定你已使用 Resource Manager 部署模型创建了 Azure 虚拟机并配置了操作系统，包括附加任何数据磁盘和完成其他自定义事项（如安装应用程序）。如果你尚未完成此操作，请阅读[如何使用 Resource Manager 和 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager)。你可以同样轻松地使用 [Azure 门户](https://portal.azure.cn)创建 Windows 虚拟机。请阅读[如何在 Azure 门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。
 
 
 ## 准备要进行映像捕获的 VM
 
 本部分说明如何使 Windows 虚拟机通用化。在通用化过程中，将删除你在各个位置的所有个人帐户信息。当你要使用此 VM 映像快速部署类似的虚拟机时，通常需要执行此操作。
 
-1. 登录到 Windows 虚拟机。
+1. 登录到 Windows 虚拟机。在 [Azure 门户](https://portal.azure.cn)中，导航至“浏览”>“虚拟机”> 你的 Windows 虚拟机 >“连接”。
 
 2. 以管理员身份打开“命令提示符”窗口。
 
@@ -144,9 +144,14 @@
 	#Create the new VM
 	New-AzureRmVM -ResourceGroupName $rgName -Location $location -VM $vm
 
-你应该使用以下 PowerShell 命令进行查看：
+你应该在 [Azure 门户](https://portal.azure.cn)的“浏览”>“虚拟机”下查看新创建的 VM，或者使用以下 PowerShell 命令进行查看：
 
 	$vmList = Get-AzureRmVM -ResourceGroupName $rgName
 	$vmList.Name
+
+
+## 后续步骤
+
+若要使用 Azure PowerShell 管理新虚拟机，请阅读[使用 Azure Resource Manager 和 PowerShell 管理虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)。
 
 <!---HONumber=Mooncake_0411_2016-->
