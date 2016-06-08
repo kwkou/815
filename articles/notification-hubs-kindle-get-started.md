@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="02/29/2016"
-	wcdn.date="05/31/2016"/>
+	wacn.date="05/31/2016"/>
 
 # 通知中心入门（Kindle 应用）
 
