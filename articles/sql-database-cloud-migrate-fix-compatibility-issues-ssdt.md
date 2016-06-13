@@ -46,13 +46,16 @@
     
 	![替换文字](./media/sql-database-migrate-visualstudio-ssdt/07MigrateSSDT.png)
     
-## 使用 SQL Server Data Tools for Visual Studio 解决兼容性问题        
-  
-1.	双击第一个脚本以在查询窗口中打开该脚本，注释掉该脚本，然后执行该脚本。     
-	![替换文字](./media/sql-database-migrate-visualstudio-ssdt/08MigrateSSDT.png)    
+## 使用 SQL Server Data Tools for Visual Studio 解决兼容性问题      
+
+1.	双击第一个脚本以在查询窗口中打开该脚本，注释掉该脚本，然后执行该脚本。        
+
+  	 ![替换文字](./media/sql-database-migrate-visualstudio-ssdt/08MigrateSSDT.png)    
 
 2.	对包含不兼容项的每个脚本重复执行此过程，直到不再存在错误。    
+
 	![替换文字](./media/sql-database-migrate-visualstudio-ssdt/09MigrateSSDT.png)
+
 3.	当数据库无错误后，右键单击项目并选择“发布”以生成数据库并将其发布到源数据库副本（强烈建议至少在开始时使用副本）。     
  - 在发布前，根据源 SQL Server 版本（早于 SQL Server 2014），可能需要重置项目的目标平台才能进行部署。     
  - 如果迁移的是较早的 SQL Server 数据库，切勿向项目中引入任何不受源 SQL Server 支持的功能，除非先将数据库迁移到较新版本的 SQL Server。     
