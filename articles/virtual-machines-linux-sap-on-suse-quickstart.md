@@ -29,23 +29,23 @@
 
 * 查找现有发布服务器（包括 SUSE）：
 
-		PS : Get-AzureRmVMImagePublisher -Location "West Europe" | where-object { $\_.publishername -like "*US*" }
-		CLI : azure vm image list-publishers westeurope | grep "US"
+		PS : Get-AzureRmVMImagePublisher -Location "China East" | where-object { $\_.publishername -like "*US*" }
+		CLI : azure vm image list-publishers chinaeast | grep "US"
 
 * 从 SUSE 中查找现有产品/服务：
 
-		PS : Get-AzureRmVMImageOffer -Location "West Europe" -Publisher "SUSE"
-		CLI : azure vm image list-offers westeurope SUSE
+		PS : Get-AzureRmVMImageOffer -Location "China East" -Publisher "SUSE"
+		CLI : azure vm image list-offers chinaeast SUSE
 
 * 查找 SUSE SLES 产品/服务：
 
-		PS : Get-AzureRmVMImageSku -Location "West Europe" -Publisher "SUSE" -Offer "SLES"
-		CLI : azure vm image list-skus westeurope SUSE SLES
+		PS : Get-AzureRmVMImageSku -Location "China East" -Publisher "SUSE" -Offer "SLES"
+		CLI : azure vm image list-skus chinaeast SUSE SLES
 
 * 查找特定版本的 SLES SKU：
 
-		PS : Get-AzureRmVMImage -Location "West Europe" -Publisher "SUSE" -Offer "SLES" -skus "12"
-		CLI : azure vm image list westeurope SUSE SLES 12
+		PS : Get-AzureRmVMImage -Location "China East" -Publisher "SUSE" -Offer "SLES" -skus "12"
+		CLI : azure vm image list chinaeast SUSE SLES 12
 
 ## 在 SUSE VM 中安装 WALinuxAgent
 
