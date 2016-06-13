@@ -30,7 +30,7 @@ Azure 正在不断集结各种集成的公有云服务，包括分析、虚拟�
 ## 后勤：分发版、可用性、VM 大小和配额
 
 ### 分发版
-Azure 支持运行由多家合作伙伴提供和维护的众多热门 Linux 分发版。可以在 Azure 库中找到 CentOS、Debian、Red Hat Enterprise、Ubuntu 和 FreeBSD 等分发版。我们积极与各大 Linux 社区合作以便为认可的分发版列表添加更多成员。**[查看当前分发版](/documentation/articles/virtual-machines-linux-endorsed-distros)**如果你首选的 Linux 分发版目前不在库中，可以遵循**[此页](/documentation/articles/virtual-machines-linux-create-upload-generic)**上的指导来“自带 Linux”VM。
+Azure 支持运行由多家合作伙伴提供和维护的众多热门 Linux 分发版。可以在 Azure 库中找到 CentOS、Debian、Ubuntu 和 SUSE 等分发版。我们积极与各大 Linux 社区合作以便为认可的分发版列表添加更多成员。**[查看当前分发版](/documentation/articles/virtual-machines-linux-endorsed-distros)**如果你首选的 Linux 分发版目前不在库中，可以遵循**[此页](/documentation/articles/virtual-machines-linux-create-upload-generic)**上的指导来“自带 Linux”VM。
 
 ## 可用性和 Azure SLA
 为了使部署符合 99.95 的 VM 服务级别协议，必须部署两个或更多个在可用性集中运行工作负荷的 VM。这可确保 VM 分布在我们数据中心内的多个容错域，并使用不同的维护时段部署到主机。

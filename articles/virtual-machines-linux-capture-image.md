@@ -31,7 +31,7 @@
 
 - [使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机](/documentation/articles/virtual-machines-linux-cli-deploy-templates)
 
-例如，可以在美中地区创建一个名为 *MyResourceGroup* 的资源组。然后，使用类似于下方指令的 **azure vm quick-create** 命令在资源组中部署 Ubuntu 14.04 LTS VM。
+例如，可以在中国北部地区创建一个名为 *MyResourceGroup* 的资源组。然后，使用类似于下方指令的 **azure vm quick-create** 命令在资源组中部署 Ubuntu 14.04 LTS VM。
 
  	azure vm quick-create -g MyResourceGroup -n <your-virtual-machine-name> "chinanorth" -y Linux -Q canonical:ubuntuserver:14.04.2-LTS:latest -u <your-user-name> -p <your-password>
 
