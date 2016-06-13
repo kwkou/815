@@ -15,17 +15,17 @@
 
 # Azure 虚拟机中的 SQL Server 常见问题
 
-本主题提供有关运行 [Azure 虚拟机中的 SQL Server](/home/features/virtual-machines/sql-server/) 时出现的一些最常见问题的解答。
+本主题提供有关运行 [Azure 虚拟机中的 SQL Server](/home/features/virtual-machines#virtual-machine-SQLserver) 时出现的一些最常见问题的解答。
 
 ## 常见问题
 
 1. **如何创建装有 SQL Server 的 Azure 虚拟机？**
 
-	可通过两种方式来执行此操作。最简单的解决方法是创建包含 SQL Server 的虚拟机。有关注册 Azure 并从门户创建 SQL VM 的教程，请参阅 [Provision a SQL Server virtual machine in the Azure Portal（在 Azure 门户中预配 SQL Server 虚拟机）](/documentation/articles/virtual-machines-windows-portal-sql-server-provision)。也可以选择手动在 VM 上安装 SQL Server，并重复使用 [Azure 上通过软件保障实现的许可移动性](https://azure.microsoft.com/pricing/license-mobility/)提供的本地许可证。
+	可通过两种方式来执行此操作。最简单的解决方法是创建包含 SQL Server 的虚拟机。有关注册 Azure 并从门户创建 SQL VM 的教程，请参阅 [Provision a SQL Server virtual machine in the Azure Portal（在 Azure 门户中预配 SQL Server 虚拟机）](/documentation/articles/virtual-machines-windows-portal-sql-server-provision)。也可以选择手动在 VM 上安装 SQL Server，并重复使用 [Azure 上通过软件保障实现的许可移动性](/pricing/license-mobility/)提供的本地许可证。
 
 1. **SQL VM 与 SQL 数据库服务之间的差别是什么？**
 
-	从概念上讲，在 Azure 虚拟机上运行 SQL Server 与在远程数据中心运行 SQL Server 并没什么不同。相比之下，[SQL 数据库](/documentation/articles/sql-database-technical-overview)可提供数据库即服务。使用 SQL 数据库时，无法访问托管数据库的计算机。有关完整比较，请参阅 [Choose a cloud SQL Server option: Azure SQL (PaaS) Database or SQL Server on Azure VMs (IaaS)（选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)）](../sql-database/media/data-management-azure-sql-database-and-sql-server-iaas.md)。
+	从概念上讲，在 Azure 虚拟机上运行 SQL Server 与在远程数据中心运行 SQL Server 并没什么不同。相比之下，[SQL 数据库](/documentation/articles/sql-database-technical-overview)可提供数据库即服务。使用 SQL 数据库时，无法访问托管数据库的计算机。有关完整比较，请参阅 [Choose a cloud SQL Server option: Azure SQL (PaaS) Database or SQL Server on Azure VMs (IaaS)（选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)）](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas)。
 
 1. **如何将本地 SQL Server 数据库迁转到云中？**
 
@@ -41,11 +41,11 @@
 
 4. **如何在 Azure VM 上安装 SQL Server 的许可版本？**
 
-	将 SQL Server 安装媒体复制到 Windows Server VM 上，然后在 VM 上安装 SQL Server。出于许可原因，必须提供 [Azure 上通过软件保障实现的许可移动性](https://azure.microsoft.com/pricing/license-mobility/)。
+	将 SQL Server 安装媒体复制到 Windows Server VM 上，然后在 VM 上安装 SQL Server。出于许可原因，必须提供 [Azure 上通过软件保障实现的许可移动性](/pricing/license-mobility/)。
 
 5. **如果 VM 只用于备用/故障转移，是否仍必须支付 VM 的 SQL 费用？**
 
-	如果要通过库创建 SQL VM，则必须有独立的备用 SQL VM 许可证，这种许可证的价格是相同的。如果要使用[许可移动性](https://azure.microsoft.com/pricing/license-mobility/)在虚拟机上手动安装 SQL Server，可以选择使用一个免费的被动 SQL 实例来进行故障转移。请查看相关限制和要求。
+	如果要通过库创建 SQL VM，则必须有独立的备用 SQL VM 许可证，这种许可证的价格是相同的。如果要使用[许可移动性](/pricing/license-mobility/)在虚拟机上手动安装 SQL Server，可以选择使用一个免费的被动 SQL 实例来进行故障转移。请查看相关限制和要求。
 
 6. **如何将更新和服务包应用到 SQL Server VM？**
 
@@ -57,7 +57,7 @@
 
 9. **如何在 Azure VM 上安装 SQL Data Tools？**
 
-	从 [Microsoft SQL Server Data Tools - Business Intelligence for Visual Studio 2013 ](https://www.microsoft.com/download/details.aspx?id=42313) 下载并安装 SQL Data Tools。
+	从 [Microsoft SQL Server Data Tools - Business Intelligence for Visual Studio 2013 ](https://www.microsoft.com/zh-cn/download/details.aspx?id=42313) 下载并安装 SQL Data Tools。
 
 ## 资源
 

@@ -29,7 +29,7 @@
 
 * **Azure PowerShell** - 请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)，在客户端计算机上安装该软件。
 
-* **Azure 订阅** - 如果你没有订阅，只需要花费几分钟就能创建一个[免费帐户](https://azure.microsoft.com/free/)。对于较大的群集，请考虑即用即付订阅或其他购买选项。
+* **Azure 订阅** - 如果你没有订阅，只需要花费几分钟就能创建一个[试用帐户](/pricing/1rmb-trial/)。对于较大的群集，请考虑即用即付订阅或其他购买选项。
 
 * **核心配额** - 可能需要增大核心配额才能部署大型群集或多个 MATLAB 分布式计算服务器群集。若要增加配额，可免费[建立联机客户支持请求](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。
 
