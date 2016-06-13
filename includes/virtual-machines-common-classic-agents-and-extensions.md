@@ -19,7 +19,7 @@ Azure 虚拟机代理（VM 代理）是一个安全的轻型进程，用于在�
 
 在下列情况下启用 VM 代理：
 
--   通过使用管理门户中的**“快速创建”**方法或**“自定义创建”**方法创建虚拟机实例时，并确保选中**“安装 VM 代理”**复选框（如下图中所示）。有关详细信息，请参阅如何创建自定义 [Window](/documentation/articles/virtual-machines-windows-classic-createportal) 或者 [Linux](/documentation/articles/virtual-machines-linux-classic-createportal) 虚拟机。
+-   通过使用经典门户中的**“快速创建”**方法或**“自定义创建”**方法创建虚拟机实例时，并确保选中**“安装 VM 代理”**复选框（如下图中所示）。有关详细信息，请参阅如何创建自定义 [Window](/documentation/articles/virtual-machines-windows-classic-createportal) 或者 [Linux](/documentation/articles/virtual-machines-linux-classic-createportal) 虚拟机。
 
     ![VM 代理复选框](./media/virtual-machines-common-classic-agents-and-extensions/IC719409.png)
 
