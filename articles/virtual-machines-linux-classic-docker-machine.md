@@ -56,7 +56,7 @@
 
 		openssl x509 -inform pem -in mycert.pem -outform der -out mycert.cer
 
-2. 将证书的 .cer 文件上载到 Azure。在 [Azure 管理门户](https://manage.windowsazure.cn)中，单击服务区域左下角的“设置”（下面显示）
+2. 将证书的 .cer 文件上载到 Azure。在 [Azure 经典门户](https://manage.windowsazure.cn)中，单击服务区域左下角的“设置”（下面显示）
 
 	![][portalsettingsitem]
 
