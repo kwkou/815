@@ -26,8 +26,6 @@
 
     - “公共映像”列出操作系统和服务器软件（例如 Windows Server 和 SQL Server）的虚拟机映像。
 
-    - “MSDN 映像”列出 MSDN 订户可用软件（例如 Visual Studio 和 Microsoft Dynamics）的虚拟机映像。
-
     - “专用映像”列出你创建的专用化和通用化虚拟机映像。
 
     若要了解专用化和通用化虚拟机，请参阅 [VM Image（VM 映像）](https://azure.microsoft.com/blog/2014/04/14/vm-image-blog-post/)。有关如何将虚拟机转换成模板以便快速创建预配置的新虚拟机的信息，请参阅 [How to Capture a Windows Virtual Machine to Use as a Template（如何捕获一台用作模板的 Windows 虚拟机）](/documentation/articles/virtual-machines-windows-classic-capture-image/)。
