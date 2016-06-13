@@ -732,7 +732,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 ## 步骤 11：故障回复 Azure 中已故障转移的计算机
 
-[详细了解](/documentation/articles/site-recovery-failback-azure-to-vmware)如何将 Azure 中运行的已故障转移的计算机恢复到本地环境。
+[详细了解](/documentation/articles/site-recovery-failback-azure-to-vmware-classic-legacy)如何将 Azure 中运行的已故障转移的计算机恢复到本地环境。
 
 
 ## 管理进程服务器
