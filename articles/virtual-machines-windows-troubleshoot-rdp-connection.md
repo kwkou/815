@@ -119,6 +119,7 @@
 		prompt for credentials:i:1
 
 此 RDP 文件的地址部分包含：
+
 - 包含 VM 的云服务的完全限定域名（在本例中为“tailspin-azdatatier.chinacloudapp.cn”）。
 
 - 远程桌面流量终结点的外部 TCP 端口 (55919)。
