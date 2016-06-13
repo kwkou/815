@@ -22,8 +22,8 @@
 
 ## 快速命令
 
-	# In the following command examples, replace the values between &lt; and &gt; with the values from your own environment.
-	
+在以下命令行示例中，使用你自己环境的值替换掉 &lt; 和 &gt; 之间的值。
+
 	rick@ubuntu$ azure vm disk attach-new <myuniquegroupname> <myuniquevmname> <size-in-GB>
 
 ## 附加磁盘
