@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="03/05/2016"
-	wacn.date="04/18/2016"/>
+	wacn.date="06/13/2016"/>
 
 # 向经过身份验证的用户发送推送通知
 [AZURE.INCLUDE [mobile-services-selector-push-users](../includes/mobile-services-selector-push-users.md)]

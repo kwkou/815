@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="向通用 Windows 8.1 应用添加身份验证 | Microsoft Azure"
+	pageTitle="向通用 Windows 8.1 应用添加身份验证 | Azure"
 	description="了解如何使用移动服务通过提供各种标识提供者（包括 Microsoft 和 Azure Active Directory）对通用 Windows 8.1 应用的用户进行身份验证。" 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="03/06/2016"
-	wacn.date="04/11/2016"/>
+	wacn.date="06/13/2016"/>
 
 # 向移动服务应用程序添加身份验证 
 
@@ -42,7 +42,7 @@
 
 &nbsp;&nbsp;8.按 F5 键运行该 Windows 应用商店应用程序；验证启动该应用程序后，是否会引发状态代码为 401（“未授权”）的未处理异常。
    
-&nbsp;&nbsp;发生此异常的原因是应用尝试以未经身份验证的用户身份访问移动服务，但 TodoItem 表现在要求身份验证。
+发生此异常的原因是应用尝试以未经身份验证的用户身份访问移动服务，但 *TodoItem* 表现在要求身份验证。
 
 接下来，你需要更新应用程序，以便在从移动服务请求资源之前对用户进行身份验证。
 
@@ -50,7 +50,7 @@
 
 [AZURE.INCLUDE [mobile-windows-universal-dotnet-authenticate-app](../includes/mobile-windows-universal-dotnet-authenticate-app.md)]
 
->[AZURE.NOTE]如果已将 Windows 应用商店应用程序包信息注册到移动服务，则应该为 useSingleSignOn 参数提供 **true** 值以调用 <a href="http://go.microsoft.com/fwlink/p/?LinkId=311594" target="_blank">LoginAsync</a> 方法。如果不这样做，你的用户将继续显示登录提示每次调用 login 方法。
+>[AZURE.NOTE]如果已将 Windows 应用商店应用程序包信息注册到移动服务，则应该为 *useSingleSignOn* 参数提供 **true** 值以调用 <a href="http://go.microsoft.com/fwlink/p/?LinkId=311594" target="_blank">LoginAsync</a> 方法。如果不这样做，你的用户将继续显示登录提示每次调用 login 方法。
 
 ##<a name="tokens"></a>在客户端上存储授权令牌
 
@@ -60,6 +60,10 @@
 
 [AZURE.INCLUDE [mobile-windows-universal-dotnet-authenticate-app-with-token](../includes/mobile-windows-universal-dotnet-authenticate-app-with-token.md)]
 
+
+## <a name="next-steps"></a>后续步骤
+
+在下一教程[移动服务用户的服务端授权][Authorize users with scripts]中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。
 
 ##另请参阅
 
@@ -84,7 +88,7 @@
 [Get started with data]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
-[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts
+[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization
 [JavaScript and HTML]: /documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users
 
 [Azure 管理门户]: https://manage.windowsazure.cn/

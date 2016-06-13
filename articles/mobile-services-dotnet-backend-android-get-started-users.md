@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="04/11/2016"
-	wacn.date="05/23/2016"/>
+	wacn.date="06/13/2016"/>
 
 # 向移动服务 Android 应用添加身份验证
 
@@ -75,7 +75,7 @@
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
-[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-android-authorize-users-in-scripts
+[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization
 
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication

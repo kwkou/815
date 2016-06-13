@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="03/04/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="05/04/2016"
+	wacn.date="06/13/2016"/>
 
 # 使用 Azure 移动服务 .NET 后端创建排行榜应用程序
 
@@ -38,7 +38,7 @@ Web API 是一个开源框架，可为 .NET 开发人员提供创建 REST API �
 
 ## 关于示例应用程序
 
-*排行榜*显示游戏的玩家列表，以及每个玩家的分数和排名。排行榜可作为较大游戏的一部分，或作为单独的应用程序。排行榜是实际的应用程序，但简单易懂且可用于教程。下面是该应用程序的屏幕截图：
+排行榜显示游戏的玩家列表，以及每个玩家的分数和排名。排行榜可作为较大游戏的一部分，或作为单独的应用程序。排行榜是实际的应用程序，但简单易懂且可用于教程。下面是该应用程序的屏幕截图：
 
 ![][1]
 
@@ -260,8 +260,8 @@ DTO 是定义如何通过网络发送数据的对象。如果你希望有线格�
 
 从 `PlayerRankController` 中删除以下方法：
 
-- `PatchPlayerRank` 
-- `PostPlayerRank` 
+- `PatchPlayerRank`
+- `PostPlayerRank`
 - `DeletePlayerRank`
 
 然后，将以下代码添加到 `PlayerRankController`：

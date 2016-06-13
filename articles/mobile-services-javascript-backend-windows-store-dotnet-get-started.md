@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="03/16/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="05/11/2016"
+	wacn.date="06/13/2016"/>
 
 # <a name="getting-started"> </a>移动服务入门
 
@@ -67,6 +67,12 @@
 * [脱机数据同步入门]  
   了解如何使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
 
+* [向移动服务应用程序添加身份验证][Get started with authentication]  
+  了解如何使用标识提供者对应用程序的用户进行身份验证。
+
+* [向应用添加推送通知][Get started with push notifications]  
+  了解如何向应用发送一条很基本的推送通知。
+
 * [如何使用 .NET 客户端库](/documentation/articles/mobile-services-dotnet-how-to-use-client-library)  
  了解如何查询移动服务、处理数据和访问自定义 API。
 
@@ -85,8 +91,8 @@
 <!-- URLs. -->
 
 [脱机数据同步入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
-[Get started with authentication]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users
-[Get started with push notifications]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-push
 [Visual Studio 2013 Express for Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [Azure 经典门户]: https://manage.windowsazure.cn/
