@@ -59,7 +59,7 @@
 
 ## 为订阅添加 Azure 协同管理员权限
 
-现在，需要将新用户添加为订阅的协同管理员，以便新用户可以登录到管理门户。为此，在左下面板中单击“设置”。
+现在，需要将新用户添加为订阅的协同管理员，以便新用户可以登录到经典门户。为此，在左下面板中单击“设置”。
 
 ![](./media/virtual-machines-common-create-aad-work-id/thesettingswidget.png)
 

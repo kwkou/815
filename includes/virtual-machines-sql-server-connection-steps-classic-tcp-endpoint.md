@@ -4,7 +4,7 @@
 
 >[AZURE.NOTE] 如果你在同一云服务或虚拟网络中连接，则不需要创建一个公开访问的终结点。在这种情况下，你可以继续执行下一步。有关详细信息，请参阅[连接方案](/documentation/articles/virtual-machines-windows-classic-sql-connect#connection-scenarios)。
 
-1. 在 Azure 管理门户上，单击“虚拟机”。
+1. 在 Azure 经典门户上，单击“虚拟机”。
 	
 2. 单击你新创建的虚拟机。将显示有关你的虚拟机的信息。
 	
