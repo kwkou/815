@@ -72,7 +72,7 @@
 - sync
 - sys
 - tape
-- 测试
+- test
 - tcpdump
 - tty
 - users
@@ -116,7 +116,7 @@
 - shadow
 - sshd
 - sys
-- 测试
+- test
 - trusted
 - tty
 - users
@@ -175,7 +175,7 @@
 - sync
 - sys
 - tape
-- 测试
+- test
 - tcpdump
 - tty
 - users
