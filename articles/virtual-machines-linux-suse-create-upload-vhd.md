@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="05/09/2016"
-	wacn.date=""/>
+	wacn.date="06/13/2016"/>
 
 # 为 Azure 准备 SLES 或 openSUSE 虚拟机
 

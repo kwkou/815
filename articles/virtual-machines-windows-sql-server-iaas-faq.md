@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/27/2016"
-	wacn.date=""/>
+	wacn.date="06/13/2016"/>
 
 # Azure 虚拟机中的 SQL Server 常见问题
 

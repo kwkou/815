@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/20/2016"
-	wacn.date=""/>
+	wacn.date="06/13/2016"/>
 
 # 通过 Azure 驱动程序使用 Docker 计算机
 

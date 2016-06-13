@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/20/2016"
-	wacn.date=""/>
+	wacn.date="06/13/2016"/>
 
 # 如何使用 Linux 版 Azure VMAccess 扩展来重置访问权限、管理用户和检查磁盘
 

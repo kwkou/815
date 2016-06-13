@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/18/2016"
-	wacn.date=""/>
+	wacn.date="06/13/2016"/>
 
 
 #如何登录到运行 Linux 的虚拟机 #

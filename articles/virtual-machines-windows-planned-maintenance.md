@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/26/2016"
-	wacn.date=""/>
+	wacn.date="06/13/2016"/>
 
 # Azure 中虚拟机的计划内维护
 

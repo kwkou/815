@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="05/10/2016"
-	wacn.date=""/>
+	wacn.date="06/13/2016"/>
 
 
 
