@@ -19,7 +19,7 @@
 
 查找在经典部署模型中创建和管理基于 Linux 的虚拟机时需要参考的所有文档。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 ## 入门
 - [Azure 上的 Linux 简介](/documentation/articles/virtual-machines-linux-intro-on-azure)
@@ -105,8 +105,6 @@
 
 ## 故障排除
 - [对基于 Linux 的 Azure 虚拟机的安全外壳 (SSH) 连接进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection)
-- [排查在 Azure 中新建 Linux 虚拟机时遇到的经典部署问题](/documentation/articles/virtual-machines-linux-classic-troubleshoot-deployment-new-vm)  
-- [排查在 Azure 中重新启动或调整现有 Linux 虚拟机时遇到的经典部署问题](/documentation/articles/virtual-machines-linux-classic-restart-resize-error-troubleshooting) 
 
 
 ## 引用
@@ -118,12 +116,11 @@
 
 
 ## 常规链接
-下面是 Microsoft 博客、Technet 页和外部站点的链接，而不是上述 Azure.com 文档的链接。因为 Azure 和开源计算都在快速发展，所以几乎可以肯定地说，以下链接都已过时，*尽管*我们将尽最大努力来持续添加更新的主题并删除过时的主题。如果我们有遗漏，请在评论中告诉我们，或者向我们的 [GitHub 存储库](https://github.com/Azure/azure-content/)提交一个拉取请求。
+下面是 Microsoft 博客、Technet 页和外部站点的链接，而不是上述 Azure.com 文档的链接。因为 Azure 和开源计算都在快速发展，所以几乎可以肯定地说，以下链接都已过时，*尽管*我们将尽最大努力来持续添加更新的主题并删除过时的主题。如果我们有遗漏，请在评论中告诉我们，或者向我们的 [GitHub 存储库](https://github.com/wacn/techcontent)提交一个拉取请求。
 
 - [使用 Docker 容器在 Linux 上运行 ASP.NET 5](http://blogs.msdn.com/b/webdev/archive/2015/01/14/running-asp-net-5-applications-in-linux-containers-with-docker.aspx)
 - [如何从 OpenLogic 部署 CentOS VM 映像](https://azure.microsoft.com/blog/2013/01/11/deploying-openlogic-centos-images-on-windows-azure-virtual-machines/)
 - [SUSE 更新基础结构](https://forums.suse.com/showthread.php?5622-New-Update-Infrastructure)
-- [SUSE Linux Enterprise Server for SAP Cloud Appliance Library](https://azure.microsoft.com/marketplace/partners/suse/suselinuxenterpriseserver11sp3forsapcloudappliance/)
 - [通过 12 个步骤在 Azure 上构建具有高可用性的 Linux](http://blogs.technet.com/b/keithmayer/archive/2014/10/03/quick-start-guide-building-highly-available-linux-servers-in-the-cloud-on-microsoft-azure.aspx)
 - [使用 Azure CLI、node.js、jhawk 在 Azure 上自动预配 Linux](http://blogs.technet.com/b/keithmayer/archive/2014/11/24/step-by-step-automated-provisioning-for-linux-in-the-cloud-with-microsoft-azure-xplat-cli-json-and-node-js-part-1.aspx)
 - [Azure 上的 GlusterFS](http://dastouri.azurewebsites.net/gluster-on-azure-part-1/)
@@ -132,7 +129,6 @@
 - [在 Azure 中运行 FreeBSD](https://azure.microsoft.com/blog/2014/05/22/running-freebsd-in-azure/)
 - [轻松部署 FreeBSD](http://msopentech.com/blog/2014/10/24/easy-deploy-freebsd-microsoft-azure-vm-depot/)
 - [部署自定义的 FreeBSD 映像](http://msopentech.com/blog/2014/05/14/deploy-customize-freebsd-virtual-machine-image-microsoft-azure/)
-- [Kaspersky AV for Linux File Server](https://azure.microsoft.com/marketplace/partners/kaspersky-lab/kav-for-lfs-kav-for-lfs/)
 
 ### NoSQL
 
@@ -147,16 +143,10 @@
 
 ### 大型数据
 - [在 Azure Linux VM 上安装 Hadoop](http://blogs.msdn.com/b/benjguin/archive/2013/04/05/how-to-install-hadoop-on-windows-azure-linux-virtual-machines.aspx)
-- [Azure HDInsight](https://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/)
 
 ### 关系数据库
 - [Azure 中的 MySQL 高可用性体系结构](http://download.microsoft.com/download/6/1/C/61C0E37C-F252-4B33-9557-42B90BA3E472/MySQL_HADR_solution_in_Azure.pdf)
 - [使用 ILB 通过 corosync、pg\_bouncer 安装 Postgres](https://github.com/chgeuer/postgres-azure)
-
-### Linux 高性能计算 (HPC)
-
-- [快速入门模板：启动 SLURM 群集](https://github.com/Azure/azure-quickstart-templates/tree/master/slurm)（和[博客文章](http://blogs.technet.com/b/windowshpc/archive/2015/06/06/deploy-a-slurm-cluster-on-azure.aspx)）
-- [快速入门模板：使用 Linux 计算节点创建 HPC 群集](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/)
 
 ### 开发运营、管理和优化
 
