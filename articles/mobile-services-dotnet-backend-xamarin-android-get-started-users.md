@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="用于 Xamarin Android 应用的移动服务中的身份验证入门 | Microsoft Azure"
+	pageTitle="用于 Xamarin Android 应用的移动服务中的身份验证入门 | Azure"
 	description="了解如何使用移动服务通过各种标识提供程序（包括 Microsoft 和 Azure Active Directory 对 Xamarin Android 应用程序的用户进行身份验证。" 
 	services="mobile-services" 
 	documentationCenter="xamarin" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="12/01/2015" 
-	wacn.date="04/11/2016"/>
+	ms.date="05/11/2015" 
+	wacn.date="06/13/2016"/>
 
 # 移动服务中的身份验证入门
 
@@ -40,7 +40,7 @@
 <ol start="6">
 <li><p>在 Visual Studio 或 Xamarin Studio 中，运行设备或模拟器中的客户端项目。验证在应用程序启动后是否引发状态代码为 401（“未授权”）的未处理异常。</p>
    
-   	<p>发生此异常的原因是应用程序尝试以未经身份验证的用户身份访问移动服务，但 TodoItem 表现在要求身份验证。</p></li>
+   	<p>发生此异常的原因是应用程序尝试以未经身份验证的用户身份访问移动服务，但 <em>TodoItem</em> 表现在要求身份验证。</p></li>
 </ol>
 
 接下来，你需要更新应用程序，以便在从移动服务请求资源之前对用户进行身份验证。
@@ -102,7 +102,7 @@ In the next tutorial, [Service-side authorization of Mobile Services users][Auth
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-push
-[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts
+[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization
 [JavaScript and HTML]: /documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
 

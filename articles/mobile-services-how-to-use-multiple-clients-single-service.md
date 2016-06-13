@@ -9,7 +9,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="12/07/2015"
-	wacn.date="01/29/2016"/>
+	wacn.date="06/13/2016"/>
 
 #  通过单个移动服务支持多个设备平台
  
@@ -128,8 +128,6 @@
 
 可使用跨平台工具，这些工具在仍共享单一代码库（通常是 JavaScript）的同时，在移动设备上提供了更丰富的本机体验。移动服务通过提供以下开发平台的快速入门教程，可让你轻松创建和管理跨平台应用程序开发平台的后端服务：
 
-+ [**Appcelerator**](http://go.microsoft.com/fwlink/p/?LinkId=509987)<br/>Appcelerator 允许你使用 JavaScript 开发编译后可在所有移动设备平台上作为本机应用程序运行的单个应用程序。它在 UI 中提供了丰富的用户体验、对所有本机设备资源的访问权限以及本机应用程序性能。
- 
 + [**PhoneGap**](https://go.microsoft.com/fwLink/p/?LinkID=390707)**/**[**Cordova**](http://cordova.apache.org/)<br/>PhoneGap（Apache Cordova 项目的分发产品）是一个免费的开源框架，它允许你使用标准 Web API、HTML 和 JavaScript 开发可在 Android、iOS 和 Windows 设备上运行的单个应用程序。PhoneGap 提供了基于 Web 视图的 UI，但通过允许访问设备上的本机资源增强了用户体验，这些资源包括推送通知、加速计、相机、存储、地理位置和应用程序内浏览器。有关详细信息，请参阅 [PhoneGap 快速入门教程][PhoneGap]。
 	
 	现在 Visual Studio 还允许你使用用于 Visual Studio 的多设备混合应用程序扩展（它是预发行软件）构建跨平台的 Cordova 应用程序。有关详细信息，请参阅[使用 HTML 和 JavaScript 的多设备混合应用程序入门](http://msdn.microsoft.com/zh-cn/library/dn771545.aspx)。
@@ -140,7 +138,6 @@
 
 
 <!-- URLs -->
-[Azure Management portal]: https://manage.windowsazure.cn
 [Azure 通知中心]: /zh-cn/documentation/articles/notification-hubs-overview/
 [SSO Windows Store]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/
 [SSO Windows Phone]: /zh-cn/documentation/articles/mobile-services-windows-phone-single-sign-on/
