@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="04/07/2016"
-   wacn.date="05/05/2016"/>
+   ms.date="04/14/2016"
+   wacn.date="06/13/2016"/>
 
 # 在 Azure SQL 数据仓库中管理分布式表的数据偏斜
 本教程介绍如何识别哈希分布式表中的数据偏斜，并提供解决问题的建议。
@@ -23,6 +23,18 @@
 - 了解知道何时可解决数据偏斜的提示
 - 重新创建表以解决数据偏斜
 
+## DBCC PDW\_SHOWSPACEUSED
+
+识别数据偏斜的方法之一是使用 [DBCC PDW\_SHOWSPACEUSED()][]
+
+```sql
+-- Find data skew for a distributed table
+DBCC PDW_SHOWSPACEUSED('dbo.FactInternetSales');
+```
+
+这是一种非常快捷简便的方法，可以查看存储在数据库中每组 60 个分布区内的表行数目。请记住，为了获得最平衡的性能，分布式表中的行应该平均分散在所有分布区中。
+
+但是，如果你查询 Azure SQL 数据仓库动态管理视图 (DMV)，则可以执行更详细的分析。本文的余下部分将说明如何执行此操作。
 
 ## 步骤 1︰创建一个视图用于查找数据偏斜
 
@@ -35,35 +47,37 @@ WITH base
 AS
 (
 SELECT 
-	SUBSTRING(@@version,34,4)    AS  [build_number]
-,	GETDATE() AS [execution_time]
-,	DB_NAME() AS [database_name]
-,	s.name AS [schema_name]
-,	t. AS [table_name]
-,	QUOTENAME(s.name)+'.'+QUOTENAME(t.name) AS [two_part_name]
-,	nt.[name] AS [node_table_name]
-,	ROW_NUMBER() OVER(PARTITION BY nt.[name] ORDER BY (SELECT NULL)) AS [node_table_name_seq]
-,	tp.[distribution_policy_desc] AS [distribution_policy_name]
-,	nt.[distribution_id] AS [distribution_id]
-,	nt.[pdw_node_id] AS [pdw_node_id]
-,	pn.[type] AS [pdw_node_type]
-,	pn.[name] AS [pdw_node_name]
-,	nps.[partition_number] AS [partition_nmbr]
-,	nps.[reserved_page_count] AS [reserved_space_page_count]
-,	nps.[reserved_page_count] - nps.[used_page_count] AS [unused_space_page_count]
+	SUBSTRING(@@version,34,4)															AS  [build_number]
+,	GETDATE()																			AS  [execution_time]
+,	DB_NAME()																			AS  [database_name]
+,	s.name																				AS  [schema_name]
+,	t.name																				AS  [table_name]
+,	QUOTENAME(s.name)+'.'+QUOTENAME(t.name)												AS  [two_part_name]
+,	nt.[name]																			AS  [node_table_name]
+,	ROW_NUMBER() OVER(PARTITION BY nt.[name] ORDER BY (SELECT NULL))					AS  [node_table_name_seq]
+,	tp.[distribution_policy_desc]														AS  [distribution_policy_name]
+,	nt.[distribution_id]																AS  [distribution_id]
+,	nt.[pdw_node_id]																	AS  [pdw_node_id]
+,	pn.[type]																			AS	[pdw_node_type]
+,	pn.[name]																			AS	[pdw_node_name]
+,	nps.[partition_number]																AS	[partition_nmbr]
+,	nps.[reserved_page_count]															AS	[reserved_space_page_count]
+,	nps.[reserved_page_count] - nps.[used_page_count]									AS	[unused_space_page_count]
 ,	nps.[in_row_data_page_count] 
-	+ nps.[row_overflow_used_page_count] + nps.[lob_used_page_count] AS [data_space_page_count]
+	+ nps.[row_overflow_used_page_count] + nps.[lob_used_page_count]					AS  [data_space_page_count]
 ,	nps.[reserved_page_count] 
-    - (nps.[reserved_page_count] - nps.[used_page_count]) 
-	- ([in_row_data_page_count]+[row_overflow_used_page_count]+[lob_used_page_count]) AS [index_space_page_count]
-,	nps.[row_count] AS [row_count]
+	- (nps.[reserved_page_count] - nps.[used_page_count]) 
+	- ([in_row_data_page_count]+[row_overflow_used_page_count]+[lob_used_page_count])	AS  [index_space_page_count]
+,	nps.[row_count]																		AS  [row_count]
 from sys.schemas s
-join sys.tables t ON s.[schema_id] = t.[schema_id]
-join sys.pdw_table_distribution_properties tp ON t.[object_id] = tp.[object_id]
-join sys.pdw_table_mappings tm ON t.[object_id] = tm.[object_id]
-join sys.pdw_nodes_tables nt ON	tm.[physical_name] = nt.[name]
-join sys.dm_pdw_nodes pn ON nt.[pdw_node_id] = pn.[pdw_node_id]
-join sys.dm_pdw_nodes_db_partition_stats nps ON	nt.[object_id] = nps.[object_id] AND nt.[pdw_node_id] = nps.[pdw_node_id] AND nt.[distribution_id] = nps.[distribution_id]
+join sys.tables t								ON	s.[schema_id]			= t.[schema_id]
+join sys.pdw_table_distribution_properties	tp	ON	t.[object_id]			= tp.[object_id]
+join sys.pdw_table_mappings tm					ON	t.[object_id]			= tm.[object_id]
+join sys.pdw_nodes_tables nt					ON	tm.[physical_name]		= nt.[name]
+join sys.dm_pdw_nodes pn 						ON  nt.[pdw_node_id]		= pn.[pdw_node_id]
+join sys.dm_pdw_nodes_db_partition_stats nps	ON	nt.[object_id]			= nps.[object_id]
+												AND nt.[pdw_node_id]		= nps.[pdw_node_id]
+												AND nt.[distribution_id]	= nps.[distribution_id]
 )
 , size
 AS
@@ -141,7 +155,7 @@ ORDER BY [row_count] DESC
 
 ### 方法 1︰重新创建具有不同分布列的表
 
-解决数据偏斜的典型方法是重新创建具有不同分布列的表。如需选择哈希分布列的指引，请参阅 [Hash distribution（哈希分布）][]。本示例使用 [CTAS][] 来重新创建具有不同分布列的表。
+解决数据偏斜的典型方法是重新创建具有不同分布列的表。如需选择哈希分布列的指引，请参阅 [Hash distribution][]（哈希分布）。本示例使用 [CTAS][] 来重新创建具有不同分布列的表。
 
 ```sql
 CREATE TABLE [dbo].[FactInternetSales_CustomerKey] 
@@ -209,10 +223,11 @@ RENAME OBJECT [dbo].[FactInternetSales_ROUND_ROBIN] TO [FactInternetSales];
 
 <!--Article references-->
 [表设计]: /documentation/articles/sql-data-warehouse-develop-table-design
-[Hash distribution（哈希分布）]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key
+[Hash distribution]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key
 [哈希分布]: /documentation/articles/sql-data-warehouse-develop-hash-distribution-key
 
 <!--MSDN references-->
+[DBCC PDW\_SHOWSPACEUSED()]: https://msdn.microsoft.com/zh-cn/library/mt204028.aspx
 
 <!--Other Web references-->
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0606_2016-->
