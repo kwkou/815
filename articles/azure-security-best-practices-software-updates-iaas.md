@@ -10,8 +10,8 @@
 
 <tags
    ms.service="azure-security"
-   ms.date="03/22/2016"
-   wacn.date="05/23/2016"/>
+   ms.date="05/11/2016"
+   wacn.date="06/13/2016"/>
 
 #有关 Azure IaaS 上软件更新的最佳实践
 
@@ -115,4 +115,4 @@ Azure IaaS 的某些备份选项包括：
 
 使用本文中所述的指导原则可以帮助判断适用于 Azure IaaS 中虚拟机软件更新的最佳选项。传统数据中心与 Azure IaaS 之间的软件更新最佳实践有许多相似之处，因此建议评估当前的软件更新策略，以包含 Azure VM 并将本文中的相关最佳实践纳入整个软件更新过程。
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0606_2016-->
