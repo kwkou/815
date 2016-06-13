@@ -11,30 +11,26 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/04/2016"
-	wacn.date="05/24/2016"/>
+	wacn.date="06/13/2016"/>
 
 # 如何将数据磁盘附加到 Linux 虚拟机
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用 [Resource Manager 模型](/documentation/articles/virtual-machines-linux-add-disk)。
 
-你可以附加空磁盘和包含数据的磁盘。在这两种情况下，这些磁盘实际上是驻留在 Azure 存储帐户中的 .vhd 文件。此外，在附加磁盘之后，你将需要对其进行初始化，然后才能使用。
+你可以将空磁盘和包含数据的磁盘附加到 Azure VM。这两种类型的磁盘是驻留在 Azure 存储帐户中的 .vhd 文件。就像将任何磁盘添加到 Linux 计算机一样，连接之后需要将它初始化和格式化才可供使用。本文将详细说明如何附加空磁盘和附加包含数据的磁盘到 VM，以及初始化和格式化新磁盘的方法。
 
-> [AZURE.NOTE] 最佳做法是使用一个或多个不同的磁盘来存储虚拟机的数据。当你创建 Azure 虚拟机时，该虚拟机有一个操作系统磁盘和一个临时磁盘。**不要使用临时磁盘来存储保留数据。** 顾名思义，它仅提供临时存储。它不提供冗余或备份，因为它不驻留在 Azure 存储空间中。
+> [AZURE.NOTE] 最佳做法是使用一个或多个不同的磁盘来存储虚拟机的数据。当你创建 Azure 虚拟机时，该虚拟机有一个操作系统磁盘和一个临时磁盘。**不要使用临时磁盘来存储持久性数据。** 顾名思义，它仅提供临时存储。它不提供冗余或备份，因为它不驻留在 Azure 存储空间中。
 > 临时磁盘通常由 Azure Linux 代理管理并且自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。另一方面，数据磁盘可以由 Linux 内核命名为 `/dev/sdc` 这样的形式，而用户则需对该资源进行分区、格式化和安装。有关详细信息，请参阅 [Azure Linux 代理用户指南][Agent]。
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-linux.md)]
 
-## 如何：在 Linux 中初始化新的数据磁盘
+##<a name="how-to-initialize-a-new-data-disk-in-linux"></a> 在 Linux 中初始化新的数据磁盘
 
-可以按照相同的说明使用如下所示的正确设备标识符来初始化多个数据磁盘。
-
-1. 连接到虚拟机。有关说明，请参阅[如何登录到运行 Linux 的虚拟机][Logon]。
-
-
+1. 通过 SSH 连接到你的 VM。有关更多详细信息，请参阅[如何登录到运行 Linux 的虚拟机][Logon]。
 
 2. 接下来，你需要查找可供数据磁盘初始化的设备标识符。可通过两种方式实现该目的：
 
-	a) 在 SSH 窗口中，键入下面的命令：
+	a) 获取 SCSI 设备中的日志，例如，使用以下命令：
 
 			$sudo grep SCSI /var/log/messages
 
@@ -42,83 +38,83 @@
 
 	您可以在所示消息中找到最后添加的数据磁盘的标识符。
 
-	![获取磁盘消息](./media/virtual-machines-linux-classic-attach-disk/DiskMessages.png)
+	![获取磁盘消息](./media/virtual-machines-linux-classic-attach-disk/scsidisklog.png)
 
 	或
 
 	b) 使用 `lsscsi` 命令找出设备 ID。`lsscsi` 的安装可以通过 `yum install lsscsi`（在基于 Red Hat 的分发上）或 `apt-get install lsscsi`（在基于 Debian 的分发上）来进行。你可以通过 _lun_（即**逻辑单元号**）找到所要的磁盘。例如，所附加磁盘的 _lun_ 可以轻松地通过 `azure vm disk list <virtual-machine>` 来查看，如下所示：
 
-			~$ azure vm disk list ubuntuVMasm
+			~$ azure vm disk list TestVM
 			info:    Executing command vm disk list
 			+ Fetching disk images
 			+ Getting virtual machines
 			+ Getting VM disks
 			data:    Lun  Size(GB)  Blob-Name                         OS
 			data:    ---  --------  --------------------------------  -----
-			data:         30        ubuntuVMasm-2645b8030676c8f8.vhd  Linux
-			data:    1    10        test.VHD
-			data:    2    30        ubuntuVMasm-76f7ee1ef0f6dddc.vhd
+			data:         30        TestVM-2645b8030676c8f8.vhd  Linux
+			data:    0    100       TestVM-76f7ee1ef0f6dddc.vhd
 			info:    vm disk list command OK
 
 	将此结果与同一示例性虚拟机的 `lsscsi` 的输出进行比较：
 
-			adminuser@ubuntuVMasm:~$ lsscsi
+			ops@TestVM:~$ lsscsi
 			[1:0:0:0]    cd/dvd  Msft     Virtual CD/ROM   1.0   /dev/sr0
 			[2:0:0:0]    disk    Msft     Virtual Disk     1.0   /dev/sda
 			[3:0:1:0]    disk    Msft     Virtual Disk     1.0   /dev/sdb
 			[5:0:0:0]    disk    Msft     Virtual Disk     1.0   /dev/sdc
-			[5:0:0:1]    disk    Msft     Virtual Disk     1.0   /dev/sdd
-			[5:0:0:2]    disk    Msft     Virtual Disk     1.0   /dev/sde
 
 	每一行的元组中的最后一个数字就是 _lun_。有关详细信息，请参阅 `man lsscsi`。
 
-3. 在 SSH 窗口中，键入下面的命令以新建设备：
+3. 在提示符下，键入以下命令以创建新设备：
 
 		$sudo fdisk /dev/sdc
+
 
 4. 出现提示时，键入 **n** 以创建新分区。
 
 
-	![新建设备](./media/virtual-machines-linux-classic-attach-disk/DiskPartition.png)
+	![新建设备](./media/virtual-machines-linux-classic-attach-disk/fdisknewpartition.png)
 
 5. 出现提示时，键入 **p** 将该分区设置为主分区，键入 **1** 将其设置为第一分区，然后键入 Enter 以接受柱面的默认值。在某些系统上，它可以显示第一个和最后一个扇区（而不是柱面）的默认值。你可以选择接受这些默认值。
 
 
-	![创建分区](./media/virtual-machines-linux-classic-attach-disk/DiskCylinder.png)
+	![创建分区](./media/virtual-machines-linux-classic-attach-disk/fdisknewpartition.png)
 
 
 
 6. 键入 **p** 以查看有关分区磁盘的详细信息。
 
 
-	![列出磁盘信息](./media/virtual-machines-linux-classic-attach-disk/DiskInfo.png)
+	![列出磁盘信息](./media/virtual-machines-linux-classic-attach-disk/fdisknewpartition.png)
 
 
 
 7. 键入“w”以写入磁盘的设置。
 
 
-	![写入磁盘更改](./media/virtual-machines-linux-classic-attach-disk/DiskWrite.png)
+	![写入磁盘更改](./media/virtual-machines-linux-classic-attach-disk/fdiskwritedisk.png)
 
-8. 在新分区上创建文件系统。将分区数 (1) 追加到设备 ID 后面。例如，在 /dev/sdc1 新建一个 ext4 的分区：
+8. 现在，你可以在新分区上创建文件系统。在设备 ID 后面追加磁盘分区号（在以下示例中为 `/dev/sdc1`）。以下示例在 /dev/sdc1 上创建 ext4 磁盘分区：
 
 		# sudo mkfs -t ext4 /dev/sdc1
 
-	![创建文件系统](./media/virtual-machines-linux-classic-attach-disk/DiskFileSystem.png)
+	![创建文件系统](./media/virtual-machines-linux-classic-attach-disk/mkfsext4.png)
 
-	>[AZURE.NOTE] 请注意，对于 ext4 文件系统，SUSE Linux Enterprise 11 系统仅支持只读访问。对于这些系统，建议将新文件系统格式化为 ext3 而非 ext4。
+	>[AZURE.NOTE] 请注意，对于 ext4 文件系统，SuSE Linux Enterprise 11 系统仅支持只读访问。对于这些系统，建议将新文件系统格式化为 ext3 而非 ext4。
 
 
-9. 创建一个目录来装载新的文件系统。例如，可键入以下命令：
+9. 创建一个目录来装载新的文件系统，如下所示：
 
 		# sudo mkdir /datadrive
 
 
-10. 键入下面的命令以安装驱动器：
+10. 最后可以装载驱动器，如下所示：
 
 		# sudo mount /dev/sdc1 /datadrive
 
 	数据磁盘现在可以作为 **/datadrive** 使用。
+	
+	![创建目录，然后装载磁盘](./media/virtual-machines-linux-classic-attach-disk/mkdirandmount.png)
 
 
 11. 将新驱动器添加到 /etc/fstab：
@@ -144,7 +140,7 @@
 
 		UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults   1   2
 
-	另外，在基于 SUSE Linux 的系统上，您可能需要使用稍微不同的格式：
+	另外，在基于 SuSE Linux 的系统上，你可能需要使用稍微不同的格式：
 
 		/dev/disk/by-uuid/33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext3   defaults   1   2
 
@@ -172,4 +168,4 @@
 [Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide
 [Logon]: /documentation/articles/virtual-machines-linux-classic-log-on
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0606_2016-->
