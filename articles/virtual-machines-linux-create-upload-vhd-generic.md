@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="01/22/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="05/09/2016"
+	wacn.date="06/13/2016"/>
 
 # <a id="nonendorsed"> </a>有关未认可分发的信息 #
 
@@ -39,9 +39,9 @@
 
 ## <a id="linuxinstall" name="general-linux-installation-notes"> </a>常规 Linux 安装说明 ##
 
-- Azure 不支持 VHDX 格式，仅支持**固定大小的 VHD**。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。如果你使用 VirtualBox，这就意味着创建硬盘时，选择“固定大小”，而不是默认的动态分配。
+- Azure 不支持 VHDX 格式，仅支持**固定大小的 VHD**。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。如果你使用 VirtualBox，则意味着选择的是“固定大小”，而不是在创建磁盘时动态分配默认大小。
 
-- 在安装 Linux 系统时，建议使用标准分区而不是 LVM（通常是许多安装的默认值）。这将避免 LVM 与克隆 VM 发生名称冲突，特别是在 OS 磁盘需要连接到另一台 VM 以进行故障排除的情况下。如果首选，LVM 或 [RAID](/documentation/articles/virtual-machines-linux-configure-raid) 可以在数据磁盘上使用。
+- 在安装 Linux 系统时，建议使用标准分区而不是 LVM（通常是许多安装的默认值）。这将避免 LVM 与克隆 VM 发生名称冲突，特别是在 OS 磁盘需要连接到另一台 VM 以进行故障排除的情况下。如果需要，可以在数据磁盘上使用 [LVM](/documentation/articles/virtual-machines-linux-configure-lvm) 或 [RAID](/documentation/articles/virtual-machines-linux-configure-raid)。
 
 - 由于低于 2.6.37 的 Linux 内核版本中的 bug，更大的 VM 不支持 NUMA。此问题主要影响使用上游 Red Hat 2.6.32 内核的分发。手动安装的 Azure Linux 代理 (waagent) 将自动在 Linux 内核的 GRUB 配置中禁用 NUMA。
 
@@ -68,9 +68,9 @@
 
 ### 调整 VHD 大小 ###
 
-Azure 上的 VHD 映像必须已将虚拟大小调整为 1MB。通常情况下，使用 Hyper-V 创建的 VHD 应已正确调整。如果未正确调整 VHD，则在你尝试基于 VHD 创建*映像*时，可能会收到如下错误消息：
+Azure 上的 VHD 映像必须已将虚拟大小调整为 1MB。通常情况下，使用 Hyper-V 创建的 VHD 应已正确调整。如果未正确调整 VHD，则在你尝试基于 VHD 创建映像时，可能会收到如下错误消息：
 
-	"The VHD http://<mystorageaccount>.blob.core.chinacloudapi.cn/vhds/MyLinuxVM.vhd has an unsupported virtual size of 21475270656 bytes. The size must be a whole number (in MBs)." 
+	"The VHD http://<mystorageaccount>.blob.core.chinacloudapi.cn/vhds/MyLinuxVM.vhd has an unsupported virtual size of 21475270656 bytes. The size must be a whole number (in MBs)."
 
 若要修正此问题，可使用 Hyper-V 管理器控制台或 [Resize-VHD](http://technet.microsoft.com/zh-cn/library/hh848535.aspx) Powershell cmdlet 调整 VM 大小。如果你未在 Windows 环境中运行，则建议使用 qemu-img 转换（如果需要）并调整 VHD 大小。
 
@@ -154,7 +154,7 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
 
 	这还将确保所有控制台消息都发送到第一个串行端口，从而可以协助 Azure 支持人员调试问题。
 
-	除此之外，建议*删除*以下参数（如果存在）：
+	除此之外，建议删除以下参数（如果存在）：
 
 		rhgb quiet crashkernel=auto
 
@@ -189,6 +189,8 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
 		# export HISTSIZE=0
 		# logout
 
+	>[AZURE.NOTE] 运行 'waagent -force -deprovision' 之后，你可以在 Virtualbox 上看到以下错误：`[Errno 5] Input/output error`。此错误消息并不关键，可以忽略。
+
 - 然后，需要关闭虚拟机并将 VHD 上载到 Azure。
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0606_2016-->
