@@ -24,7 +24,7 @@
         
     	![从集中删除](./media/virtual-machines-planned-maintenance-schedule/availabilitysetselectionconfiguration.png)
 
-    4.	At the bottom, select "save." Select "yes" to acknowledge that this action will restart the VM.
+    4. 在底部，选择“保存”。选择“是”确认这个动作将重启 VM。
 
 4.	这些 VM 将移到单实例主机，并且不在可用性集设置的计划内维护期间更新。
 5.	可用性集 VM 更新完成（根据原始电子邮件中所述的计划）之后，应该将 VM 添加回到其可用性集，它们将重新配置为多实例 VM。将 VM 从单实例移回多实例将导致重新启动。通常，跨整个 Azure 环境的所有多实例更新完成之后，将轮到单实例维护。
