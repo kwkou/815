@@ -15,8 +15,7 @@
 
 # 使用 Azure Site Recovery 在本地 Hyper-V 虚拟机与 Azure 之间复制（不使用 VMM）
 
-> [AZURE.SELECTOR]
-- [Azure 管理门户](/documentation/articles/site-recovery-hyper-v-site-to-azure)
+
 
 
 阅读本文以了解如何部署 Site Recovery，以便当 Hyper-V 主机未在 System Center Virtual Machine Manager (VMM) 云中托管时，将 Hyper-V 虚拟机复制到 Azure。
