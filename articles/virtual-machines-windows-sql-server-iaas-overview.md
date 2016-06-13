@@ -15,7 +15,7 @@
 
 # Azure 虚拟机中的 SQL Server 概述
 
-[Azure 虚拟机上运行的 SQL Server](/home/features/virtual-machines/sql-server/) 可让你将 SQL Server 数据库托管在云中。例如，你可以将本地数据库迁移到预配置了 Windows Server 2012 R2 和 SQL Server 2014 Enterprise 版的 Azure VM。但是，也可以采用其他许多可能的方案，例如，支持高可用性或混合体系结构并连接到本地网络的多计算机配置。
+[Azure 虚拟机上运行的 SQL Server](/home/features/virtual-machines#virtual-machine-SQLserver) 可让你将 SQL Server 数据库托管在云中。例如，你可以将本地数据库迁移到预配置了 Windows Server 2012 R2 和 SQL Server 2014 Enterprise 版的 Azure VM。但是，也可以采用其他许多可能的方案，例如，支持高可用性或混合体系结构并连接到本地网络的多计算机配置。
 
 有关详尽概述，请观看以下视频：[Azure VM is the best platform for SQL Server 2016（Azure VM 是 SQL Server 2016 的最佳平台）](https://channel9.msdn.com/Events/DataDriven/SQLServer2016/Azure-VM-is-the-best-platform-for-SQL-Server-2016)。
 
@@ -25,10 +25,10 @@
 
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| SQL 产品 | 说明 |
 |---:|---|---|
-|![Azure 虚拟机中的 SQL Server](./media/virtual-machines-windows-sql-server-iaas-overview/sql-server-virtual-machine.png)|[Azure 虚拟机中的 SQL Server](/home/features/virtual-machines/sql-server/)|运行 Azure 虚拟机中的 SQL Server。在零售版 SQL Server 上直接管理虚拟机并运行数据库。 |
+|![Azure 虚拟机中的 SQL Server](./media/virtual-machines-windows-sql-server-iaas-overview/sql-server-virtual-machine.png)|[Azure 虚拟机中的 SQL Server](/home/features/virtual-machines#virtual-machine-SQLserver)|运行 Azure 虚拟机中的 SQL Server。在零售版 SQL Server 上直接管理虚拟机并运行数据库。 |
 |![SQL 数据库](./media/virtual-machines-windows-sql-server-iaas-overview/azure-sql-database.png)|[SQL 数据库](/home/features/sql-database/)|使用 SQL 数据库服务来访问和缩放数据库，而无需管理底层基础结构。|
-|![SQL 数据仓库](./media/virtual-machines-windows-sql-server-iaas-overview/azure-sql-data-warehouse.png)|[SQL 数据仓库](https://azure.microsoft.com/services/sql-data-warehouse/)|使用 Azure SQL 数据仓库来处理大量的关系与非关系数据。以服务形式提供可缩放的数据仓库功能。|
-|![SQL Server Stretch Database](./media/virtual-machines-windows-sql-server-iaas-overview/sql-server-stretch-database.png)|[SQL Server Stretch Database](https://azure.microsoft.com/services/sql-server-stretch-database/)|将本地事务数据从 Microsoft SQL Server 2016 动态延伸到 Azure。|
+|![SQL 数据仓库](./media/virtual-machines-windows-sql-server-iaas-overview/azure-sql-data-warehouse.png)|[SQL 数据仓库](/home/features/sql-data-warehouse)|使用 Azure SQL 数据仓库来处理大量的关系与非关系数据。以服务形式提供可缩放的数据仓库功能。|
+|![SQL Server Stretch Database](./media/virtual-machines-windows-sql-server-iaas-overview/sql-server-stretch-database.png)|[SQL Server Stretch Database](/home/features/sql-server-stretch-database)|将本地事务数据从 Microsoft SQL Server 2016 动态延伸到 Azure。|
 
 >[AZURE.NOTE] 有关 SQL VM 与 SQL 数据库之间的完整比较，请参阅 [Choose a cloud SQL Server option: Azure SQL (PaaS) Database or SQL Server on Azure VMs (IaaS)（选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)）](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas)。
 
@@ -55,7 +55,7 @@
 
 >[AZURE.NOTE] 客户体验改善计划 (CEIP) 默认情况下已启用。如果需要，可以在预配虚拟机后自定义或禁用 CEIP。以远程桌面连接到 VM，并运行 **SQL Server 错误和使用报告**实用工具。
 
-除了这些预配置的映像外，你还可以[创建不预装 SQL Server 的 Azure 虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial)。可以安装你有许可证的 SQL Server 的任何实例。可使用 [Azure 上通过软件保障实现的许可移动性](https://azure.microsoft.com/pricing/license-mobility/)将许可证迁移到 Azure，以便在 Azure 虚拟机中运行 SQL Server。在这种情况下，你只需为与虚拟机关联的 Azure 计算和存储[成本](/home/features/virtual-machines/#price)付费。
+除了这些预配置的映像外，你还可以[创建不预装 SQL Server 的 Azure 虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial)。可以安装你有许可证的 SQL Server 的任何实例。可使用 [Azure 上通过软件保障实现的许可移动性](/pricing/license-mobility/)将许可证迁移到 Azure，以便在 Azure 虚拟机中运行 SQL Server。在这种情况下，你只需为与虚拟机关联的 Azure 计算和存储[成本](/home/features/virtual-machines/#price)付费。
 
 为了确定 SQL Server 映像的最佳虚拟机配置设置，请查看 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-windows-sql-performance)。对于生产工作负荷，**DS3** 是 SQL Server Enterprise 版建议的最小虚拟机大小，**DS2** 是标准版建议的最小虚拟机大小。
 
@@ -66,8 +66,6 @@
 ## 高可用性
 
 如果你需要高可用性，请考虑配置 SQL Server 可用性组。这涉及虚拟网络中的多个 Azure VM。Azure 门户提供了一个模板用于设置此配置。有关详细信息，请参阅 [Configure an AlwaysOn availability group in Azure Resource Manager virtual machines（在 Azure Resource Manager 虚拟机中配置 AlwaysOn 可用性组）](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups)。
-
-如果你想要手动配置可用性组和关联的侦听器，请参阅 [Configure AlwaysOn Availability Groups in Azure VM（在 Azure VM 中配置 AlwaysOn 可用性组）](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual)。
 
 有关其他高可用性注意事项，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr)。
 

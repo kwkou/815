@@ -16,7 +16,7 @@
 - 重启虚拟机
 - 重新创建终结点/防火墙规则/网络安全组 (NSG) 规则
 	- [管理云服务终结点](/documentation/articles/cloud-services-enable-communication-role-instances)
-	- [管理网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-pportal)
+	- [管理网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-ps)
 - 从不同的位置（例如不同的 Azure 虚拟网络）进行连接
 - 重新部署虚拟机
 	- [重新部署 Windows VM](/documentation/articles/virtual-machines-windows-redeploy-to-new-node)
@@ -76,7 +76,7 @@
 - 目标 VM 上运行的入侵检测或网络监视软件允许流量。
 - 云服务终结点或网络安全组允许流量
 	- [管理云服务终结点](/documentation/articles/cloud-services-enable-communication-role-instances)
-	- [管理网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-pportal)
+	- [管理网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-ps)
 - VM 中在测试 VM 和你的 VM 之间的路径运行的单独组件（例如负载平衡器或防火墙）允许流量。
 
 在基于 Windows 的虚拟机上，使用具有高级安全性的 Windows 防火墙确定防火墙规则是否排除应用程序的入站和出站流量。

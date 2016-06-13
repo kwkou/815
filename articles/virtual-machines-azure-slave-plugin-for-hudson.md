@@ -188,7 +188,7 @@
 
 <!-- URL List -->
 
-[订阅配置文件]: http://go.microsoft.com/fwlink/?LinkID=396395
+[订阅配置文件]: https://manage.windowsazure.cn/publishsettings/Index?SchemaVersion=2.0
 
 <!-- IMG List -->
 
