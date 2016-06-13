@@ -41,14 +41,11 @@
 
 ## 创建并配置 Azure 虚拟机以托管 Django
 
-1. 按照[此处](/documentation/articles/virtual-machines-linux-portal-create)提供的说明可创建 Ubuntu Server 14.04 LTS 分发的 Azure 虚拟机。
+1. 按照[此处](/documentation/articles/virtual-machines-linux-portal-create)提供的说明可创建 Ubuntu Server 14.04 LTS 分发的 Azure 虚拟机。如果你喜欢，你可以选择密码登陆，而不是 SSH 公钥。
 
-	**注意：**你只需创建虚拟机。停在标题为创建虚拟机后如何登录该虚拟机的一节。
+1. 按照[这里](/documentation/articles/virtual-networks-create-nsg-arm-ps)的说明，编辑网络安全组，允许 http 访问端口 80
 
-1. 指示 Azure 将来自 Web 的端口 **80** 通信定向到虚拟机上的端口 **80**：
-	* 在 Azure 门户中导航到你新创建的虚拟机，然后单击“终结点”选项卡。
-	* 单击屏幕底部的“添加”按钮。![添加终结点](./media/virtual-machines-linux-python-django-web-app/mac-linux-django-helloworld-add-endpoint.png)
-	* 打开 TCP 协议的*公用端口 80 作为专用端口 80。![端口 80](./media/virtual-machines-linux-python-django-web-app/mac-linux-django-helloworld-port80.png)
+1. 默认情况下，你的心虚拟机没有完全限定域名（FQDN）。你可以按照[这里](/documentation/articles/virtual-machines-linux-portal-create-fqdn)的说明，创建一个。这个步骤对于本教程而言只是可选的。
 
 ## <a id="setup"> </a>设置开发环境
 
