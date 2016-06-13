@@ -14,7 +14,7 @@
 	wacn.date="06/07/2016" />
 
 
-# 在 Azure 经典门户中使用 Docker VM 扩展
+# 在 Azure 门户中使用 Docker VM 扩展
 
 > [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 

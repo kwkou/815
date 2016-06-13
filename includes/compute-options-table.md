@@ -7,4 +7,4 @@
 
 [web 应用]: /documentation/services/web-sites
 [虚拟机]: /documentation/articles/virtual-machines-windows-about
-[虚拟机]: /documentation/articles/cloud-services-choose-me
+[云服务]: /documentation/articles/cloud-services-choose-me

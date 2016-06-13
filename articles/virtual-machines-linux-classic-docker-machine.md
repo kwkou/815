@@ -37,7 +37,7 @@
 
 <br />
 
->  无论你使用哪种方法，你都必须直接在命令行上调用二进制文件或将二进制文件放在路径（例如 **/usr/local/bin**）上。请记住，确保通过键入 `chmod +x` &lt;*`binaryName`*&gt; 将它标记为可执行文件，其中 &lt;*`binaryName`*&gt; 是 Docker 计算机可执行文件的名称。本教程使用 **docker-machine\_linux-amd64**。
+>  无论你使用哪种方法，你都必须直接在命令行上调用二进制文件或将二进制文件放在路径（例如 **/usr/local/bin**）上。请记住，确保通过键入 `chmod +x <binaryName>`; 将它标记为可执行文件，其中 `<binaryName>` 是 Docker 计算机可执行文件的名称。本教程使用 **docker-machine\_linux-amd64**。
 
 ## 为 docker、计算机和 Azure 创建证书和密钥文件
 

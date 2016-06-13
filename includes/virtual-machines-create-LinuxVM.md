@@ -12,9 +12,9 @@
 
 4. 利用上述列表中的 Linux 映像，使用 `azure vm create` 创建新的虚拟机。此步骤将创建新的云服务以及新的存储帐户。你还可通过 `-c` 选项将此虚拟机连接到现有云服务。其还通过 `-e` 选项创建 SSH 终结点以登录到 Linux 虚拟机。
 
-        ~$ azure vm create "MyTestVM" b4590d9e3ed742e4a1d46e5424aa335e__suse-opensuse-13.1-20141216-x86-64 "adminUser" -z "Small" -e -l "China North"
+        ~$ azure vm create "MyTestVM" 250d269906be4694a10aee49a3385f2d__suse-opensuse-13.2-v20160302 "adminUser" -z "Small" -e -l "China North"
         info:    Executing command vm create
-        + Looking up image b4590d9e3ed742e4a1d46e5424aa335e__suse-opensuse-13.1-20141216-x86-64
+        + Looking up image 250d269906be4694a10aee49a3385f2d__suse-opensuse-13.2-v20160302
         Enter VM 'adminUser' password:*********
         Confirm password: *********
         + Looking up cloud service
@@ -27,7 +27,7 @@
 
     >[AZURE.NOTE]对于 Linux 虚拟机，你必须提供在 `vm create` 中提供 `-e` 选项；不能在创建虚拟机后启用 SSH。有关 SSH 的详细信息，请参阅[如何在 Azure 中将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-ssh-from-linux)。
 
-    请注意，映像 *b4590d9e3ed742e4a1d46e5424aa335e\_\_suse-opensuse-13.1-20141216-x86-64* 是我们在上述步骤中从映像列表中选择的映像。*MyTestVM* 是我们的新虚拟机的名称，*adminUser* 是我们将 SSH 用于虚拟机的用户名。你可以根据你的要求来替换这些变量。有关此命令的更多详细信息，请访问[使用 Azure 服务管理的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools)。
+    请注意，映像 *250d269906be4694a10aee49a3385f2d__suse-opensuse-13.2-v20160302* 是我们在上述步骤中从映像列表中选择的映像。*MyTestVM* 是我们的新虚拟机的名称，*adminUser* 是我们将 SSH 用于虚拟机的用户名。你可以根据你的要求来替换这些变量。有关此命令的更多详细信息，请访问[使用 Azure 服务管理的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools)。
 
 5. 新创建的 Linux 虚拟机将显示在由以下命令生成的列表中：
 
