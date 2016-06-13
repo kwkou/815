@@ -9,8 +9,8 @@
 
 <tags
     ms.service="multiple"
-    ms.date="03/04/2016" 
-    wacn.date="04/11/2016"/>
+    ms.date="05/04/2016" 
+    wacn.date="06/13/2016"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/dn268600.aspx -->
 
@@ -30,7 +30,7 @@ Azure 服务终结点确定你的应用程序是在全球 Azure 平台管理、�
 * 如果要使用中国 21Vianet 运营的 Azure，请从“活动集”下拉列表中选择“windowsazure.cn (中国)”并单击“确定”。
 * 如果要使用私有 Azure 平台：
     1. 单击“编辑”。
-    2. 此时将打开一个对话框，通知你“服务终结点”对话框将会关闭，但首选项集文件将保持打开。单击“确定”。
+    2. 此时将打开一个对话框，通知你“服务终结点”对话框将会关闭，但首选项集文件将保持打开。单击**“确定”**。
     3. 在 preferencesets.xml 文件中创建一个新的 `preferenceset` 元素。对于此新元素，请创建 `name`、`blob`、`management`、`portalURL` 和 `publishsettings` 属性，并为其添加对应于私有 Azure 平台的值。可以将提供给现有 `preferenceset` 元素的值作为模板。**注意**：用于 `blob` 属性的值必须在 URL 中包含文本“blob”。
     4. 保存并关闭 preferencesets.xml。
     5. 重新打开“服务终结点”对话框。
@@ -58,4 +58,4 @@ Azure 服务终结点确定你的应用程序是在全球 Azure 平台管理、�
 
 [ic719493]: ./media/azure-toolkit-for-eclipse-azure-service-endpoints/ic719493.png
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0606_2016-->

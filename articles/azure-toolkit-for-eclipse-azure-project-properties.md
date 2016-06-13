@@ -9,8 +9,8 @@
 
 <tags
     ms.service="multiple"
-    ms.date="03/04/2016" 
-    wacn.date="04/11/2016"/>
+    ms.date="05/04/2016" 
+    wacn.date="06/13/2016"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/jj835232.aspx -->
 
@@ -57,4 +57,4 @@
 
 [ic719480]: ./media/azure-toolkit-for-eclipse-azure-project-properties/ic719480.png
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0606_2016-->
