@@ -51,7 +51,7 @@
 
 
 ## 创建空的 SQL 数据库
-1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
 2. 单击“新建”>“数据 + 存储”>“SQL 数据库”。
 3. 在新服务器或现有服务器上创建名为 **Clinic** 的**空**数据库。如需在 Azure 经典管理门户中创建数据库的详细说明，请参阅[在数分钟内创建 SQL 数据库](/documentation/articles/sql-database-get-started)。
 

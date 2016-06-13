@@ -35,15 +35,6 @@ Azure SQL 数据库提供以下功能，以便在服务中断后进行恢复：
 ## 故障转移到异地复制的辅助数据库
 > [AZURE.NOTE] 你必须配置一个用于故障转移的辅助数据库。异地复制仅适用于标准和高级数据库。了解[如何配置异地复制](/documentation/articles/sql-database-business-continuity-design)
 
-###Azure 门户
-使用 Azure 门户终止与异地复制的辅助数据库的连续复制关系。
-
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn)
-2. 在屏幕左侧选择“浏览”，然后选择“SQL 数据库”
-3. 导航到你的数据库并选择它。 
-4. 在数据库边栏选项卡底部选择“异地复制映射”。
-4. 在“辅助数据库”下，右键单击你要恢复到的数据库名称所在的行，然后选择“故障转移”。
-
 ###PowerShell
 在 PowerShell 中使用 [Set-AzureRMSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt619393.aspx) cmdlet 启动故障转移到异地复制的辅助数据库。
 		
@@ -61,15 +52,6 @@ Azure SQL 数据库提供以下功能，以便在服务中断后进行恢复：
 在某个数据库发生中断的情况下，你可以使用异地还原从该数据库的最新异地冗余备份恢复该数据库。
 
 > [AZURE.NOTE] 恢复数据库会创建一个新的数据库。必须确保要恢复到的服务器具有足够的 DTU，可以容纳新数据库的容量。你可以通过[与支持人员联系](https://azure.microsoft.com/blog/azure-limits-quotas-increase-requests)来请求增加此配额。
-
-###Azure 门户（恢复到独立数据库）
-若要使用 Azure 门户中的“异地还原”来还原 SQL 数据库，请使用以下步骤。
-
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn)
-2. 在屏幕左侧选择“新建”，选择“数据和存储”，然后选择“SQL 数据库”。
-2. 选择“备份”作为源，然后选择要从中进行恢复的异地冗余备份。
-3. 指定余下的数据库属性，然后单击“创建”。
-4. 数据库还原过程随即将会开始，你可以使用屏幕左侧的“通知”监视还原进度。
 
 ###PowerShell 
 > [AZURE.NOTE] 当前异地还原与 PowerShell 的配合使用仅支持还原到独立数据库。若要异地还原到弹性数据库池，请使用 [Azure 门户](https://manage.windowsazure.cn)。

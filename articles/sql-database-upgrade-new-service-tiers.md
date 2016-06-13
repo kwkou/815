@@ -27,7 +27,7 @@ Azure SQL [Web 和企业数据库即将淘汰](/documentation/articles/sql-datab
 
 根据你的具体环境，服务可能会建议将部分或所有数据库升级到[弹性数据库池](/documentation/articles/sql-database-elastic-pool)。
 
-若要查看为已停用的数据库建议的服务层，可以使用 [Azure 门户](https://manage.windowsazure.cn)或 PowerShell。有关分步指导，请参阅：
+若要查看为已停用的数据库建议的服务层，可以使用 PowerShell。有关分步指导，请参阅：
 
 - [升级到 SQL 数据库 V12 (PowerShell)](/documentation/articles/sql-database-upgrade-server)
 
@@ -107,16 +107,6 @@ Azure SQL 数据库服务将在管理门户和“系统视图”中公开信息�
 
 ### 如何在新 Azure 管理门户中查看建议的服务层
 管理门户在将服务器升级到 Azure SQL 数据库 V12 的过程中，针对 Web 或企业数据库建议适当的服务层。该建议基于数据库资源消耗量的历史分析。
-
-**新管理门户**
-
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn)并浏览到包含 Web 或企业数据库的服务器。
-2. 单击服务器边栏选项卡中的“最新更新”部分。
-3. 单击“升级此服务器”。
-
-“升级此服务器”边栏选项卡现在会显示服务器上的 Web 或企业数据库列表，以及建议的服务层。
-
-
 
 ### 如何在管理门户中查看 DTU 消耗量
 管理门户可让你深入了解现有 Web 或企业数据库的 DTU 消耗。当前 Azure 门户中会提供 DTU 信息。

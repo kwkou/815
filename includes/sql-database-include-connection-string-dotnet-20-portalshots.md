@@ -10,16 +10,12 @@ Latest Freshness check:  2015-09-02 , GeneMi.
 ### 从 Azure 门户获取连接字符串
 
 
-使用 [Azure 经典门户](http://manage.windowsazure.cn)获取客户端程序与 Azure SQL 数据库进行交互所需的连接字符串：
+使用 [Azure 管理门户](http://manage.windowsazure.cn)获取客户端程序与 Azure SQL 数据库进行交互所需的连接字符串：
 
 
 1. 单击“浏览”>“SQL 数据库”。
-
-
-
+ 
 2. 在“SQL 数据库”边栏选项卡左上角附近的筛选器文本框中输入你的数据库的名称。
-
-
 
 3. 单击数据库所对应的行。
 
@@ -28,7 +24,6 @@ Latest Freshness check:  2015-09-02 , GeneMi.
 5. 在数据库边栏选项卡上，单击“显示数据库连接字符串”。
 
 6. 如果你想要使用 ADO.NET 连接库，可复制标为“ADO.NET”的字符串。
-
 
 
 7. 将连接字符串信息粘贴到客户端程序代码中。你需要将 {your\_password\_here} 替换为实际密码。

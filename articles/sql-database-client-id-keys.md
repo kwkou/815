@@ -21,7 +21,7 @@
 
 要创建新应用程序并注册，请执行以下操作：
 
-1. 登录[经典管理门户](https://manage.windowsazure.cn)（目前，注册应用程序需要在经典管理门户中完成）。
+1. 登录[管理门户](https://manage.windowsazure.cn)（目前，注册应用程序需要在经典管理门户中完成）。
 1. 在菜单中找到“Active Directory”，然后选择它。
 
     ![AAD][1]
@@ -67,7 +67,7 @@
 
 若要创建新应用程序并将其注册到正确的 Active Directory 中，请执行以下操作：
 
-1. 登录[经典管理门户](https://manage.windowsazure.cn)。
+1. 登录[管理门户](https://manage.windowsazure.cn)。
 1. 在菜单中找到“Active Directory”，然后选择它。
 
     ![AAD][1]
@@ -114,19 +114,6 @@
 3. 保存完成后找到并保存此客户端 ID 和密钥：
 
     ![Web 应用程序机密][14]
-
-
-
-## 获取域名
-
-身份验证代码中有时需要用到域名。轻松标识正确域名的一种方式是：
-
-1. 转到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
-2. 将鼠标悬停在右上角的名称上，并记下弹出窗口中显示的域。
-
-   
-
-
 
 
 ## 示例控制台应用程序

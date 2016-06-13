@@ -42,7 +42,7 @@
 - Visual Studio 2013 Update 4（或更高版本）。Microsoft 现在*免费*提供 Visual Studio Community。
  - [Visual Studio Community，下载](http://www.visualstudio.com/products/visual-studio-community-vs)
  - [Visual Studio 的更多免费选项](http://www.visualstudio.com/products/free-developer-offers-vs.aspx)
- - 或者，使用本主题中稍后介绍的[步骤](#InstallVSForFree)，在 [Azure 门户](https://manage.windowsazure.cn)中安装 Visual Studio。
+ - 或者，使用本主题中稍后介绍的[步骤](#InstallVSForFree)，在 [Azure 管理门户](https://manage.windowsazure.cn)中安装 Visual Studio。
 
 &nbsp;
 
@@ -88,7 +88,7 @@
 ## 步骤 4：获取连接字符串
 
 
-使用 [Azure 门户](https://manage.windowsazure.cn)复制需要连接到 SQL 数据库的连接字符串。
+使用 [Azure 管理门户](https://manage.windowsazure.cn)复制需要连接到 SQL 数据库的连接字符串。
 
 首次使用时，系统会将 Visual Studio 连接到 Azure SQL 数据库的 **AdventureWorksLT** 数据库。
 
@@ -274,7 +274,7 @@
 在将客户端计算机的 IP 地址添加到 SQL 数据库防火墙之前，客户端 C# 程序无法连接到 SQL 数据库。你的程序将失败，并显示简单的错误消息，指出必需的 IP 地址。
 
 
-可以使用 [Azure 门户](https://manage.windowsazure.cn)添加该 IP 地址。
+可以使用 [Azure 管理门户](https://manage.windowsazure.cn)添加该 IP 地址。
 
 
 
