@@ -211,9 +211,6 @@
 如果你忘记了配置 IP 地址，你的程序将失败，并显示简单的错误消息，指出所需的 IP 地址。
 
 
-[AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../includes/sql-database-include-ip-address-22-v12portal.md)]
-
-
 <a id="c-connection-ports" name="c-connection-ports"></a>
 
 ### 连接：端口
