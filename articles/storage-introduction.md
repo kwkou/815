@@ -196,7 +196,7 @@ Azure 存储空间资源可以通过任何发出 HTTP/HTTPS 请求的语言来�
 - [Azure PowerShell](/documentation/articles/powershell-install-configure)
 - [AzCopy 命令行实用程序](http://aka.ms/downloadazcopy)
 
-## 后续步骤
+##<a id="next-steps"></a> 后续步骤
 
 若要了解有关 Azure 存储空间的详细信息，请参阅以下资源：
 
