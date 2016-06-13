@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="11/17/2015"
-	wacn.date="03/21/2016"/>
+	wacn.date="06/13/2016"/>
 	
 # Linux VM 上的 Django Hello World Web 应用程序
 
@@ -55,7 +55,7 @@ Ubuntu Linux VM 已预安装了 Python 2.7，但它没有安装 Apache 或 Djang
 
 1.  启动新的**终端**窗口。
     
-1.  输入以下命令来连接到 Azure VM。如果未创建 FQDN，可使用 Azure 管理门户的虚拟机摘要中显示的公共 IP 地址进行连接。
+1.  输入以下命令来连接到 Azure VM。如果未创建 FQDN，可使用 Azure 经典门户的虚拟机摘要中显示的公共 IP 地址进行连接。
 
 		$ ssh yourusername@yourVmUrl
 
