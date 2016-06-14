@@ -9,10 +9,10 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="02/29/2016"
-	wacn.date="05/16/2016"/>
+	ms.date="05/12/2016"
+	wacn.date="06/14/2016"/>
 
-# Azure Active Directory Connect 常见问题
+# Azure AD Connect 常见问题
 
 ## 常规安装
 **问：如果 Azure AD 全局管理员已启用 2FA，安装是否能够正常进行？**  
@@ -78,4 +78,4 @@ Azure AD Connect 不支持 NetBios 名称包含句点“.”的本地林/域。
 
 - 使用此链接，以便通过 Azure 门户获取支持。 
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

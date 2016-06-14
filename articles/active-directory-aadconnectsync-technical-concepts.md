@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="02/16/2016"
-	wacn.date="04/28/2016"/>
+	ms.date="05/03/2016"
+	wacn.date="06/14/2016"/>
 
 
 # Azure AD Connect 同步：技术概念
@@ -86,4 +86,4 @@ metaverse 是相邻连接器空间中的所有已联接标识的合并视图。
 <!--Image references-->
 [1]: ./media/active-directory-aadsync-technical-concepts/ic750598.png
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

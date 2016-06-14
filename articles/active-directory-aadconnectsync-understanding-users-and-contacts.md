@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="02/16/2016"
-	wacn.date="05/18/2016"/>
+	ms.date="05/03/2016"
+	wacn.date="06/14/2016"/>
 
 
 # Azure AD Connect 同步：了解用户和联系人
@@ -56,4 +56,4 @@
  
 <!--Image references-->
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

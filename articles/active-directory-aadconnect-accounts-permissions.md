@@ -10,10 +10,10 @@
 <tags
    ms.service="active-directory"  
    ms.date="04/14/2016"
-   wacn.date="05/16/2016"/>
+   wacn.date="06/14/2016"/>
 
 
-# Azure AD Connect 所需的帐户和权限
+# Azure AD Connect：帐户和权限
 
 <a name="create-the-ad-ds-account"></a>Azure AD Connect 安装向导提供提供两种不同的路径：
 
@@ -129,4 +129,4 @@ Web 应用程序代理服务器 |对于列表中的每个服务器，如果运�
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

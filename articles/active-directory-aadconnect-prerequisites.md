@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="04/14/2016"
-   wacn.date="05/18/2016"/>
+   ms.date="05/10/2016"
+   wacn.date="06/14/2016"/>
 
 # Azure AD Connect 的先决条件
 本主题介绍 Azure AD Connect 的先决条件和硬件要求。
@@ -136,7 +136,6 @@ Azure AD Connect 依赖于 Microsoft PowerShell 和 .NET Framework 4.5.1。请�
 - 如果要将 Windows 集成身份验证用于 Intranet 中使用 Internet Explorer 的浏览器应用程序，请确保已将 AD FS 联合身份验证服务名称（例如 sts.contoso.com）添加到 IE 中的 Intranet 区域。此配置可以通过组策略进行控制，并可部署到所有已加入域的计算机中。
 
 ## Azure AD Connect 支持组件
-
 下面列出了 Azure AD Connect 在要安装 Azure AD Connect 的服务器上安装的组件。此列表针对基本快速安装。如果在“安装同步服务”页上选择使用不同的 SQL Server，则不会在本地安装 SQL Express LocalDB。
 
 - Azure AD Connect Health
@@ -144,7 +143,7 @@ Azure AD Connect 依赖于 Microsoft PowerShell 和 .NET Framework 4.5.1。请�
 - Microsoft SQL Server 2012 命令行实用工具
 - Microsoft SQL Server 2012 Express LocalDB
 - Microsoft SQL Server 2012 本机客户端
-- Microsoft Visual C++ 2013 Redistribution Package
+- Microsoft Visual C++ 2013 再分发包
 
 ## Azure AD Connect 的硬件要求
 下表显示了 Azure AD Connect 同步计算机的最低要求。
@@ -168,4 +167,4 @@ Azure AD Connect 依赖于 Microsoft PowerShell 和 .NET Framework 4.5.1。请�
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure Active Directory 中为预先集成的应用自定义 SAML 令牌中颁发的声明 | Microsoft Azure"
+	pageTitle="在 Azure Active Directory 中为预先集成的应用自定义 SAML 令牌中颁发的声明 | Azure"
 	description="了解如何在 Azure Active Directory 中为预先集成的应用自定义 SAML 令牌中颁发的声明"
 	services="active-directory"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="02/26/2016"
-	wacn.date="05/13/2016"/>
+	wacn.date="06/14/2016"/>
 
 #在 Azure Active Directory 中为预先集成的应用自定义 SAML 令牌中颁发的声明
 
@@ -61,4 +61,4 @@ Azure Active Directory 目前支持 Azure AD 应用库中数千个预先集成�
 [3]: ./media/active-directory-saml-claims-customization/claimscustomization3.png
 [4]: ./media/active-directory-saml-claims-customization/claimscustomization4.png
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0516_2016-->

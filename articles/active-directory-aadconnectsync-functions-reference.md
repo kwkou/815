@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect 同步：函数引用 | Azure"
+	pageTitle="Azure AD Connect 同步：函数参考 | Azure"
 	description="在 Azure AD Connect 同步中引用声明性设置表达式。"
 	services="active-directory"
 	documentationCenter=""
@@ -9,6 +9,7 @@
 
 <tags 
 	ms.service="active-directory"
+
 	ms.date="03/07/2016"
 	wacn.date="04/28/2016"/>
 
@@ -92,7 +93,7 @@ BitAnd 函数设置值的指定位。
 **备注：**  
 此函数将两个参数转换为二进制表示形式，并将位设置为：
 
-- 0 - 如果掩码和标志中相应位的其中一个或两个均为 0
+- 0 - 如果*掩码*和*标志*中相应位的其中一个或两个均为 0
 - 1 - 如果两个相应位均为 1。
 
 换而言之，除了当两个参数的相应位均为 1 时之外，所有情况下均返回 0。
@@ -196,7 +197,7 @@ Contains 函数寻找多值属性内的字符串
 ConvertFromBase64 函数将指定的 base64 编码值转换为规则的字符串。
 
 **语法：**  
-`str ConvertFromBase64(str source)` - 假定采用 Unicode 编码 <br>
+`str ConvertFromBase64(str source)` - 假定采用 Unicode 编码 <br> 
 `str ConvertFromBase64(str source, enum Encoding)`
 
 - source：Base64 编码的字符串  
@@ -903,7 +904,7 @@ RemoveDuplicates 函数使用多值字符串，并确保每个值都是唯一值
 返回净化的 proxyAddress 属性，其中所有重复值已被删除。
 
 ----------
-### 将
+### Replace
 
 **说明：**  
 Replace 函数将所有出现的某一字符串替换为另一个字符串。
@@ -1131,4 +1132,4 @@ UCase 函数将字符串中的所有字符都转换为大写形式。
 * [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis)
 * [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0606_2016-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 SCIM 启用从 Azure Active Directory 到应用程序的用户和组自动预配 | Microsoft Azure"
+	pageTitle="使用 SCIM 启用从 Azure Active Directory 到应用程序的用户和组自动预配 | Azure"
 	description="Azure Active Directory 可以使用 SCIM 协议规范中定义的接口，自动将用户和组预配到以 Web 服务为前端的任何应用程序或标识存储"
 	services="active-directory"
 	documentationCenter=""
@@ -693,4 +693,4 @@ Microsoft 提供的、用于实现 SCIM 服务的通用语言基础结构库将�
 [4]: ./media/active-directory-scim-provisioning/scim-figure-4.PNG
 [5]: ./media/active-directory-scim-provisioning/scim-figure-5.PNG
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0516_2016-->

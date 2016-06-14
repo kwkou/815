@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="工作原理：Azure AD 密码管理 | Microsoft Azure" 
+	pageTitle="工作原理：Azure AD 密码管理 | Azure" 
 	description="了解 Azure AD 密码管理的各个组件，包括用户可在何处注册、重置和更改其密码，以及管理员可在何处配置、报告和启用本地 Active Directory 密码管理。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -109,5 +109,4 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 [006]: ./media/active-directory-passwords-how-it-works/006.jpg "Image_006.jpg"
 [007]: ./media/active-directory-passwords-how-it-works/007.jpg "Image_007.jpg"
  
-
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0516_2016-->

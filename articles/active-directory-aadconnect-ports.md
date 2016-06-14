@@ -9,8 +9,9 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="02/09/2016"
-	wacn.date="04/06/2016"/>
+
+	ms.date="05/12/2016"
+	wacn.date="06/14/2016"/>
 
 # 混合标识所需的端口和协议
 
@@ -28,7 +29,7 @@
 |Kerberos|88 (TCP/UDP)| 对 AD 林进行 Kerberos 身份验证。
 |MS-RPC |135 (TCP/UDP)| 该端口绑定到 AD 林后，将在初始配置 Azure AD Connect 向导期间使用。
 |LDAP|389 (TCP/UDP)|用于从 AD 导入数据。数据将使用 Kerberos 签名和签章加密。
-|LDAP/SSL|636 (TCP/UDP)|用于从 AD 导入数据。数据传输经过签名和加密。  仅当你使用 SSL 时才使用该端口。
+|LDAP/SSL|636 (TCP/UDP)|用于从 AD 导入数据。数据传输经过签名和加密。仅当你使用 SSL 时才使用该端口。
 |RPC |1024-65353（随机高 RPC 端口）(TCP/UDP)|该端口绑定到 AD 林后，将在初始配置 Azure AD Connect 期间使用。
 
 ## 表 2 - Azure AD Connect 和 Azure AD
@@ -80,4 +81,4 @@
 ### 6b - 适用于 (AD FS/Sync) 和 Azure AD 的 Azure AD Connect Health 代理的终结点
 有关终结点的列表，请参阅 [Azure AD Connect Health 代理的要求部分](/documentation/articles/active-directory-aadconnect-health#requirements)
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

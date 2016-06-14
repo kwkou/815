@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect 同步：了解声明性设置表达式 | Microsoft Azure"
+	pageTitle="Azure AD Connect 同步：了解声明性预配表达式 | Azure"
 	description="说明声明性设置表达式"
 	services="active-directory"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="04/14/2016"
-	wacn.date="05/18/2016"/>
+	wacn.date="06/14/2016"/>
 
 
 # Azure AD Connect 同步：了解声明性预配表达式
@@ -61,7 +61,7 @@ Active Directory 连接器为入站同步规则提供以下参数：
 
 使用用户所在域的 netbios 名称填充 Metaverse 属性域的示例：
 
-`domain <- %Domain.Netbios%`
+`domain` <- `%Domain.Netbios%`
 
 ### 运算符
 
@@ -127,4 +127,4 @@ Active Directory 中的某些属性在架构中是多值，不过它们在 Activ
  
 <!--Image references-->
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->
