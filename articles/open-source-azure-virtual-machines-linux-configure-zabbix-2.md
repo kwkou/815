@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags
-	ms.service="open-source"
+	ms.service="open-source-website"
 	ms.date=""
 	wacn.date="06/14/2016"/>
  
