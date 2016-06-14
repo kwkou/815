@@ -31,11 +31,12 @@
 	- 4.2	[录入账户](#enter-account)  
 	- 4.3	[模拟场景](#simulations)  
 	- 4.4	[将测试订阅切换为生产订阅](#switch-to-production-subscription)  
-	- 4.5	[创建新的账户](#create-new-account)  
-	- 4.6	[创建新的订阅](#create-subscription)  
-	- 4.7	[将订阅名称重命名](#rename-subscription)  
-	- 4.8	[设置共同管理员](#config-coadmin)  
-	- 4.9	[总结](#enterprise-summary)  
+	- 4.5	[创建新的部门](#create-new-department)  
+	- 4.6	[创建新的账户](#create-new-account)  
+	- 4.7	[创建新的订阅](#create-subscription)  
+	- 4.8	[将订阅名称重命名](#rename-subscription)  
+	- 4.9	[设置共同管理员](#config-coadmin)  
+	- 4.10	[总结](#enterprise-summary)  
 5.	[查询 Azure 账单](#azure-billing)  
 	- 5.1	[前言](#azure-billing-foreword)
 	- 5.2	[查看总体使用情况](#azure-billing-overview)
@@ -43,28 +44,28 @@
 	- 5.4	[使用邮件通知](#email-notification)  
 	- 5.5	[关于 Azure 超额使用](#azure-billing-exceed)  
 
-##<a id="foreword"></a>1.前言  
+##<a id="foreword"></a>1. 前言  
 
-**本文原文为微软云构架师Lei Zhang所写，可访问其[个人博客](http://www.cnblogs.com/threestone/archive/2012/01/06/2382322.html)。**
+**本文原文为微软云构架师 Lei Zhang 所写，可访问其[个人博客](http://www.cnblogs.com/threestone/archive/2012/01/06/2382322.html)。**
 
-##<a id="reader"></a>2.读者
+##<a id="reader"></a>2. 读者
 Azure 是平台产品，本文只详细介绍如何管理 Azure 账户、订阅及查看相应的账单。本文适合 IT 管理人员和 Azure 账户运维人员阅读。
 
-##<a id="concept"></a>3.Azure China 基本概念
+##<a id="concept"></a>3. Azure China 基本概念
 
 ###<a id="msdn-subscription"></a>3.1 MSDN订阅
-我在 Azure Global 拥有测试账号或者MSDN订阅账号，这个账号可以在国内 Azure China 使用吗？  
+我在 Azure Global 拥有测试账号或者 MSDN 订阅账号，这个账号可以在国内 Azure China 使用吗？  
 
-回答:不可以。 Azure 在国内和国外有2套系统。  
+回答:不可以。 Azure 在国内和国外有 2 套系统。  
 
-(1)	Azure Global。域名是 azure.microsoft.com 。是由微软运营的，数据中心在中国大陆以外的地区。客户可以通过 Windows Live ID 登陆，MSDN 订阅用户每月可以免费试用一定额度的 Azure 资源。  
+(1)	Azure Global。域名是 azure.microsoft.com。是由微软运营的，数据中心在中国大陆以外的地区。客户可以通过 Windows Live ID 登陆，MSDN 订阅用户每月可以免费试用一定额度的 Azure 资源。  
 
-(2)	Azure China。域名是 www.azure.cn 。是由世纪互联运维的，与全球其他地区由微软运营的 Azure 服务在物理上和逻辑上都是独立的，数据中心在中国大陆有两个：北京和上海。用户无法通过 Windows Live ID 登陆。只能通过 Org ID 来进行使用。  
+(2)	Azure China。域名是 www.azure.cn。是由世纪互联运维的，与全球其他地区由微软运营的 Azure 服务在物理上和逻辑上都是独立的，数据中心在中国大陆有两个：北京和上海。用户无法通过 Windows Live ID 登陆。只能通过 Org ID 来进行使用。  
 
 ###<a id="orgid"></a>3.2 Org ID
 Org ID 是 Azure China 特殊的用户名系统。  
 
-一个企业用户可以使用 <username>@<OrgID>.partner.onmschina.cn 来登陆使用 Azure China。 
+一个企业用户可以使用 <username\>@<OrgID\>.partner.onmschina.cn 来登陆使用 Azure China。 
 
 比如公司名为 contoso 的企业，可以注册 Org ID 为 
 
@@ -79,11 +80,11 @@ Org ID 是 Azure China 特殊的用户名系统。
 	
 	admin@contoso.partner.onmschina.cn
 
-或者可以给员工xiaowang创建普通用户账号为  
+或者可以给员工 xiaowang 创建普通用户账号为  
 
 	xiaowang@contoso.partner.onmschina.cn
 
-以上2个账户的账户名称不同，密码也不同，通过分别使用不同的账户名称和密码，就可以管理使用 Azure China。
+以上 2 个账户的账户名称不同，密码也不同，通过分别使用不同的账户名称和密码，就可以管理使用 Azure China。
 
 ###<a id="subscription"></a>3.4 订阅
 订阅也是 Azure 非常重要的概念。  
@@ -138,7 +139,7 @@ Org ID 是 Azure China 特殊的用户名系统。
 	</tr>
 </table> 
 
-上表中，Mike 和 Tom 可以使用的订阅只有一个，他们可以使用订阅 Market，来使用 Azure 云服务。 xiaozhang 的账号不同，他可以使用 2 个订阅 (IT 和 Market)。xiaozhang 可以同时使用这2个不同的订阅，来使用 Azure 云服务。
+上表中，Mike 和 Tom 可以使用的订阅只有一个，他们可以使用订阅 Market，来使用 Azure 云服务。 xiaozhang 的账号不同，他可以使用 2 个订阅 (IT 和 Market)。xiaozhang 可以同时使用这 2 个不同的订阅，来使用 Azure 云服务。
 
 ###<a id="subscription-scenarios"></a>3.6 订阅的实际使用场景
 对于企业级客户来说，账户和订阅可以方便进行内部成本核算。  
@@ -184,9 +185,10 @@ Org ID 是 Azure China 特殊的用户名系统。
 
 -	**服务管理员**  
 服务管理员以及每个订阅的最多 199 个共同管理员能够访问和管理 Azure 管理门户内的订阅和开发项目。除非服务管理员同时具有其他两个角色之一，否则将没有企业门户的访问权限。  
+
 ![Enterprise Azure 角色和门户][1]  
 
-注意：Azure测试账号没有企业管理员。  
+注意：Azure 测试账号没有企业管理员。  
 
 ##<a id="use-azure-enterprise-portal"></a>4.使用 Azure 企业门户
 Azure 企业门户拥有以下功能：  
@@ -222,7 +224,7 @@ Azure 企业门户拥有以下功能：
 
 ###<a id="switch-to-production-subscription"></a>4.4 将测试订阅切换为生产订阅
 
-(1)	Contoso 企业管理员登陆 [Azure 企业门户](http://ea.windowsazure.cn)，用户名为测试账号的用户名  admin@contoso.partner.onmschina.cn 点击”添加账户”，如下图：
+(1)	Contoso 企业管理员登陆 [Azure 企业门户](http://ea.windowsazure.cn)，用户名为测试账号的用户名 admin@contoso.partner.onmschina.cn 点击”添加账户”，如下图：
 
 ![添加账户][2]
 
@@ -272,9 +274,9 @@ Azure 企业门户拥有以下功能：
 ![添加部门成功][10]
 
 ###<a id="create-new-account"></a>4.6 创建新的账户
-在上节中，Contoso 企业管理员 (Admin) 已经将测试订阅切换为生产订阅。现在为需要为 Market 部门创建一个新 Azure 账户  market@contoso.partner.onmschina.cn 
+在上节中，Contoso 企业管理员 (Admin) 已经将测试订阅切换为生产订阅。现在为需要为 Market 部门创建一个新 Azure 账户 market@contoso.partner.onmschina.cn 
 
-(1)	首先登陆 Office 365 平台，网址是 https://login.partner.microsoftonline.cn/ 输入用户名： admin@contoso.partner.onmschina.cn 和相应的密码。  
+(1)	首先登陆Office 365平台，网址是 https://login.partner.microsoftonline.cn/ 输入用户名： admin@contoso.partner.onmschina.cn 和相应的密码。  
 
 (2)	点击”+”，开始创建新的账户  
 
@@ -384,13 +386,13 @@ market@yumchina.partner.onmschina.cn 和系统分配的登陆密码
 
 从订阅角度来看，两个账户的关系如下：  
 
-(1)	企业管理员 (Admin) 是服务管理员无法查看到Market账户的订阅 (Marketing\_Subscription)  
+(1)	企业管理员 (Admin) 是服务管理员无法查看到 Market 账户的订阅 (Marketing\_Subscription)  
 
-(2)	Market账户也无法查看到企业管理员 (Admin) 的订阅  
+(2)	Market 账户也无法查看到企业管理员 (Admin) 的订阅  
 
 现在我们需要让企业管理员 (Admin) 有查看 Market 账户下订阅的权限。就需要将企业管理域 (Admin) 设置为 Market 账户下订阅的共同管理员。  
 
-(1)	首先我们以 Market 账户(market@contoso.partner.onmschina.cn)，登陆 [Azure 管理门户](https://manage.windowsazure.cn)  
+(1)	首先我们以 Market 账户 (market@contoso.partner.onmschina.cn)，登陆 [Azure 管理门户](https://manage.windowsazure.cn)  
 
 (2)	点击左侧列表中的”设置”，然后选择”管理员”，点击按钮”添加”  
 
@@ -408,15 +410,15 @@ market@yumchina.partner.onmschina.cn 和系统分配的登陆密码
 ###<a id="enterprise-summary"></a>4.10 总结
 经过本章节的操作后，我们可以发现：  
 
-**(1)	企业管理员(Admin)拥有的权限：**  
+**(1)	企业管理员 (Admin) 拥有的权限：**  
 
 &nbsp;&nbsp;&nbsp;&nbsp;a)	企业管理员，可以查看 Azure 账单使用情况  
 
 &nbsp;&nbsp;&nbsp;&nbsp;b)	账户管理员，拥有自己的订阅  
 
-&nbsp;&nbsp;&nbsp;&nbsp;c)	共同管理员，是market账户订阅 (Market_Subscription) 的协同管理员  
+&nbsp;&nbsp;&nbsp;&nbsp;c)	共同管理员，是 market 账户订阅 (Market_Subscription) 的协同管理员  
 
-**(2)	Market账户拥有的权限：**  
+**(2)	Market 账户拥有的权限：**  
 
 &nbsp;&nbsp;&nbsp;&nbsp;a)	账户管理域，拥有自己的订阅  
 
@@ -440,7 +442,7 @@ market@yumchina.partner.onmschina.cn 和系统分配的登陆密码
 
 3.	绿色的柱表示客户每月实际消耗  
 
-**注意：Azure 允许客户超额使用，即客户实际使用量大于客户账户的余额。  
+**注意：Azure 允许客户超额使用，即客户实际使用量大于客户账户的余额。
 
 比如一个客户 1 月份的账户余额为 10 万元，1 月份当月实际使用 11 万元。则超额消耗 1 万元。**
 
@@ -463,20 +465,20 @@ market@yumchina.partner.onmschina.cn 和系统分配的登陆密码
 ###<a id="azure-billing-details"></a>5.3 查看账单详细使用情况  
 Azure 可以通过下载 Excel 表示，将一段时间内 Azure 的详细账单，通过透视表的方式进行自定义查询。  
 
-1.我们点击报表，下载使用量  
+1.	我们点击报表，下载使用量  
 
 ![下载使用量][32]  
 
-2.点击上图的按钮，就可以下载使用量数据。如果未显示，则点击下图的”刷新”按钮  
+2.	点击上图的按钮，就可以下载使用量数据。如果未显示，则点击下图的”刷新”按钮  
 
 ![刷新][33]  
 
-3.下载完毕后，我们点击下载的 Excel 文件。全选第3行的列名，然后按 CTRL+SHIFT+END，选中所有的表格内容。
-4.然后点击”插入”->”数据透视表”。如下图：  
+3.	下载完毕后，我们点击下载的 Excel 文件。全选第 3 行的列名，然后按 CTRL+SHIFT+END，选中所有的表格内容。
+4.	然后点击”插入”->”数据透视表”。如下图：  
 
 ![数据透视表][34]  
 
-5.我们在透视表中，拖动字段。如下图：  
+5.	我们在透视表中，拖动字段。如下图：  
 
 ![字段][35]  
 
@@ -489,15 +491,15 @@ Azure 可以通过下载 Excel 表示，将一段时间内 Azure 的详细账单
 ###<a id="email-notification"></a>5.4 使用邮件通知
 当我们不想登陆 [Azure 企业门户](http://ea.windowsazure.cn)，想让系统定期发送 Azure 账单的情况。我们可以进行如下操作：  
 
-1.我们以企业管理员身份 (admin@contoso.partner.onmschina.cn) ，登陆 [Azure 企业门户](http://ea.windowsazure.cn)。  
+1.	我们以企业管理员身份 (admin@contoso.partner.onmschina.cn) ，登陆 [Azure 企业门户](http://ea.windowsazure.cn)。  
 
 ![登陆][37]  
 
-2.在添加联系人的弹出框中，我们可以输入相应的收件人邮箱地址：  
+2.	在添加联系人的弹出框中，我们可以输入相应的收件人邮箱地址：  
 
 ![添加联系人][38]  
 
-3.这样，就可以按照一定的通知频率。通知相应的收件人。您会收到类似如下图的邮件内容：  
+3.	这样，就可以按照一定的通知频率。通知相应的收件人。您会收到类似如下图的邮件内容：  
 
 ![添加联系人][39]  
 

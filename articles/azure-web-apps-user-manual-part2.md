@@ -14,8 +14,8 @@
 
 # Azure Web 应用用户手册 - 第二部分
 
-- [Azure Web 应用用户手册 - 第一部分](./azure-web-apps-user-manual-part1.md)
-- [Azure Web 应用用户手册 - 第三部分](./azure-web-apps-user-manual-part3.md)
+- [Azure Web 应用用户手册 - 第一部分](/documentation/articles/azure-web-apps-user-manual-part1)
+- [Azure Web 应用用户手册 - 第三部分](/documentation/articles/azure-web-apps-user-manual-part3)
 
 ## 目录
 4.&nbsp;[开始创建 Azure Web 应用](#section_4)
@@ -40,10 +40,10 @@
 
 如果企业内部需要进行内部成本核算，例如 IT 部门、销售部门、市场部门均需要使用 Azure，并且根据不同的部门的 Azure 实际使用量进行内部成本核算，就需要实现规划好三个不同的 Azure 订阅。在创建 Azure IaaS 相关资源的时候，将这些资源创建在不同的订阅下。
 
-具体可参考 [《Azure 企业门户管理手册》](XXX)。
+具体可参考 [《Azure 企业门户管理手册》](/documentation/articles/azure-ea-portal-user-manual)。
 
 ###<a name="section_4_2"></a> 4.2 选择订阅
-我们登陆 Azure [管理门户] (https://manage.windowsazure.cn)，输入账户和密码。
+我们登陆 Azure [管理门户](https://manage.windowsazure.cn)，输入账户和密码。
 
 点击右上角的订阅按钮，如下图:
 
@@ -192,13 +192,13 @@ Contoso 公司已经采购了 Azure China 服务，并且开发部门使用 Visu
 
 ###<a name="section_4_9"></a> 4.9 缩放 Azure Web 应用
 ####<a name="section_4_9_1"></a> 4.9.1 横向扩展 Azure Web 应用
-在[第 3.8 节](./azure-web-apps-user-manual-part1.md#section_3_8)中，已经介绍了 Azure Web 应用单个实例大小，如下：
+在[第 3.8 节](/documentation/articles/azure-web-apps-user-manual-part1#section_3_8)中，已经介绍了 Azure Web 应用单个实例大小，如下：
 
 * (1)	小型，配置为：单核心，1.75GB内存
 * (2)	中型，配置为：双核心，3.5GB内存
 * (3)	大型，配置为：四核心，7GB内存
 
-在[第 3.9 节](./azure-web-apps-user-manual-part1.md#section_3_9)中，介绍了 Azure Web 应用提供不同的服务类型，如下图所示：
+在[第 3.9 节](/documentation/articles/azure-web-apps-user-manual-part1#section_3_9)中，介绍了 Azure Web 应用提供不同的服务类型，如下图所示：
 
 <table border="1">
 <thead>

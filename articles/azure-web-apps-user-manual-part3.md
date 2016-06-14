@@ -14,8 +14,8 @@
 
 # Azure Web 应用用户手册 - 第三部分
 
-- [Azure Web 应用用户手册 - 第一部分](./azure-web-apps-user-manual-part1.md)
-- [Azure Web 应用用户手册 - 第二部分](./azure-web-apps-user-manual-part2.md)
+- [Azure Web 应用用户手册 - 第一部分](/documentation/articles/azure-web-apps-user-manual-part1)
+- [Azure Web 应用用户手册 - 第二部分](/documentation/articles/azure-web-apps-user-manual-part2)
 
 ## 目录
 - 5.&nbsp;[高级内容](#section_5)
@@ -96,7 +96,7 @@
 具体请参考[这篇文章](/documentation/articles/web-sites-php-configure)
 
 ####<a name="section_5_3_2"></a> 5.3.2 PHP 使用 Azure 存储
-在[第 3.10 节](./azure-web-apps-user-manual-part1.md#section_3_10)中，建议把 Web 项目文件的静态资源，比如图片、照片、视频等都保存在 Azure 存储里。
+在[第 3.10 节](/documentation/articles/azure-web-apps-user-manual-part1#section_3_10)中，建议把 Web 项目文件的静态资源，比如图片、照片、视频等都保存在 Azure 存储里。
 
 有关 PHP 使用 Azure 存储的详细内容，请参考[这篇文章](/documentation/articles/storage-php-how-to-use-blobs)
 
