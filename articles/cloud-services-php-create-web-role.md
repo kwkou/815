@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="04/08/2016"
-	wacn.date="05/23/2016"/>
+	wacn.date="06/13/2016"/>
 
 # 如何创建 PHP Web 角色和辅助角色
 
@@ -52,7 +52,7 @@ Azure 提供了三种计算模型以运行应用程序：Azure App Service、Azu
 > [AZURE.NOTE] `roleName` 参数是可选的。如果省略该参数，则将自动生成角色名称。创建的第一个 Web 角色将为 `WebRole1`，第二个 Web 角色为 `WebRole2`，依此类推。创建的第一个辅助角色将为 `WorkerRole1`，第二个辅助角色为 `WorkerRole2`，依此类推。  
 
 
-## 指定内置 PHP 版本
+## 指定内置 PHP 版本  
 
 在将 PHP Web 角色或辅助角色添加到项目时，将修改项目的配置文件，以便在部署应用程序的每个 Web 实例或辅助进程实例时在其上安装 PHP。若要查看默认情况下安装的 PHP 的版本，请运行以下命令：
 
@@ -74,30 +74,25 @@ Azure 提供了三种计算模型以运行应用程序：Azure App Service、Azu
 
 	PS C:\myProject> Set-AzureServiceProjectRole roleName php 5.4.0
 
-> [AZURE.NOTE] 可用的 PHP 版本将来可能会改变。
+> [AZURE.NOTE] 可用的 PHP 版本将来可能会改变。  
 
 ## 自定义内置 PHP 运行时  
 
-当按上述步骤进行操作时，你可以完全控制所安装的 PHP 运行时的配置，包括修改 `php.ini` 设置和启用扩展。  
-
-
-若要自定义内置 PHP 运行时，请执行下列步骤：   
-
+当按上述步骤进行操作时，你可以完全控制所安装的 PHP 运行时的配置，包括修改 php.ini 设置和启用扩展。  
   
-1. 将一个名为 `php` 的新文件夹添加到 Web 角色的 `bin` 目录。对于辅助角色，将该文件夹添加到角色的根目录。  
+若要自定义内置 PHP 运行时，请执行下列步骤： 
+  
+1. 将一个名为 php 的新文件夹添加到 Web 角色的 bin 目录。对于辅助角色，将该文件夹添加到角色的根目录。  
 
+2. 在 php 文件夹中，创建另一个名为 `ext` 的文件夹。将要启用的任何扩展名为 `.dll` 的文件（例如，`php_mongo.dll`）置于此文件夹中。   
 
-2. 在 `php` 文件夹中，创建另一个名为 `ext` 的文件夹。将要启用的任何扩展名为 `.dll` 的文件（例如，`php_mongo.dll`）置于此文件夹中。   
-
-
-3. 将 `php.ini` 文件添加到 `php` 文件夹中。启用任何自定义扩展，并在此文件中设置任何 PHP 指令。例如，若要打开 `display_errors` 并启用 `php_mongo.dll` 扩展，则 `php.ini` 文件的内容将如下所示：  
-
+3. 将 php.ini 文件添加到 php 文件夹中。启用任何自定义扩展，并在此文件中设置任何 PHP 指令。例如，若要打开 `display_errors` 并启用 `php_mongo.dll` 扩展，则 php.ini 文件的内容将如下所示：  
 
 		display_errors=On
 		extension=php_mongo.dll
 
 
-> [AZURE.NOTE] 所提供的 `php.ini` 文件中未显式设置的所有设置都将自动设为其默认值。但请记住，你可以添加整个 `php.ini` 文件。
+> [AZURE.NOTE] 所提供的 php.ini 文件中未显式设置的所有设置都将自动设为其默认值。但请记住，你可以添加整个 php.ini 文件。
 
 
 ## 使用你自己的 PHP 运行时  
@@ -110,13 +105,13 @@ Azure 提供了三种计算模型以运行应用程序：Azure App Service、Azu
 
 1. 创建一个 Azure 服务项目并添加 PHP Web 角色，如本主题前面所述。  
 
-2. 在位于 Web 角色的根目录中的 `bin` 文件夹中创建一个 `php` 文件夹，然后将 PHP 运行时（所有二进制文件、配置文件、子文件夹等）添加到该 `php` 文件夹中。  
+2. 在位于 Web 角色的根目录中的 bin 文件夹中创建一个 php 文件夹，然后将 PHP 运行时（所有二进制文件、配置文件、子文件夹等）添加到该 php 文件夹中。  
 
 3. （可选）如果 PHP 运行时使用 [Microsoft Drivers for PHP for SQL Server][sqlsrv drivers]，则需要将 Web 角色配置为在预配它时安装 [SQL Server Native Client 2012][sql native client]。为此，将 [sqlncli.msi x64 安装程序]添加到 Web 角色的根目录中的 `bin` 文件夹。下一步中所述的启动脚本将在设置角色时以静默方式运行安装程序。如果你的 PHP 运行时不使用 Microsoft Drivers for PHP for SQL Server，则可从下一步所示的脚本中删除以下行：  
 
 		msiexec /i sqlncli.msi /qn IACCEPTSQLNCLILICENSETERMS=YES
 
-4. 定义将 [Internet Information Services (IIS)][iis.net] 配置为使用 PHP 运行时来处理 `.php` 页的请求的启动任务。为此，请在文本编辑器中打开 `setup_web.cmd` 文件（位于 Web 角色的根目录的 `bin` 文件夹中），并将其内容替换为以下脚本：  
+4. 定义将 [Internet Information Services (IIS)][iis.net] 配置为使用 PHP 运行时来处理 .php 页的请求的启动任务。为此，请在文本编辑器中打开 `setup_web.cmd` 文件（位于 Web 角色的根目录的 bin 文件夹中），并将其内容替换为以下脚本：  
 
 		@ECHO ON
 		cd "%~dp0"
@@ -147,13 +142,13 @@ Azure 提供了三种计算模型以运行应用程序：Azure App Service、Azu
 
 1. 创建一个 Azure 服务项目并添加 PHP 辅助角色，如本主题前面所述。  
 
-2. 在辅助角色的根目录中创建一个 `php` 文件夹，然后将 PHP 运行时（所有二进制文件、配置文件、子文件夹等）添加到该 `php` 文件夹中。  
+2. 在辅助角色的根目录中创建一个 php 文件夹，然后将 PHP 运行时（所有二进制文件、配置文件、子文件夹等）添加到该 php 文件夹中。  
 
 3. （可选）如果 PHP 运行时使用 [Microsoft Drivers for PHP for SQL Server][sqlsrv drivers]，则需要将辅助角色配置为在预配它时安装 [SQL Server Native Client 2012][sql native client]。为此，将 [sqlncli.msi x64 安装程序]添加到辅助角色的根目录。下一步中所述的启动脚本将在设置角色时以静默方式运行安装程序。如果你的 PHP 运行时不使用 Microsoft Drivers for PHP for SQL Server，则可从下一步所示的脚本中删除以下行：  
 
 		msiexec /i sqlncli.msi /qn IACCEPTSQLNCLILICENSETERMS=YES
 
-4. 定义在设置角色时将 `php.exe` 可执行文件添加到辅助角色的 PATH 环境变量中的启动任务。为此，请在文本编辑器中打开 `setup_worker.cmd` 文件（位于辅助角色的根目录中），并将其内容替换为以下脚本：  
+4. 定义在设置角色时将 php.exe 可执行文件添加到辅助角色的 PATH 环境变量中的启动任务。为此，请在文本编辑器中打开 `setup_worker.cmd` 文件（位于辅助角色的根目录中），并将其内容替换为以下脚本：  
 
 		@echo on
 
