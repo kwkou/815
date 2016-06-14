@@ -75,183 +75,179 @@
  - 如果你想要重复运行脚本而不中断会话，可以很方便地选择注释掉 **Add-AzureAccount** 命令。
 
 
-![在准备运行脚本之前，必须准备好已装有 Azure 模块的 PowerShell ISE。][30_powershell_ise]
+		![在准备运行脚本之前，必须准备好已装有 Azure 模块的 PowerShell ISE。][30_powershell_ise]
 
 
-&nbsp;
-
-
-
-	## TODO: Before running, find all 'TODO' and make each edit!
-	
-	#--------------- 1 -----------------------
-	
-	
-	# You can comment out or skip this Add-AzureAccount command after the first run.
-	# Current PowerShell environment retains the successful outcome.
-	
-	'Expect a pop-up window in which you log in to Azure.'
-	
-	
-	Add-AzureRmAccount -EnvironmentName AzureChinaCloud
-	
-	#-------------- 2 ------------------------
-	
-	
-	'
-	TODO: Edit the values assigned to these variables, especially the first few!
-	'
-	
-	$subscriptionName       = 'YOUR_SUBSCRIPTION_NAME'
-	$policySasExpiryTime = '2016-01-28T23:44:56Z'
-	$policySasStartTime  = '2015-08-01'
-	
-	
-	$storageAccountName     = 'gmstorageaccountxevent'
-	$storageAccountLocation = 'China North'
-	$contextName            = 'gmcontext'
-	$containerName          = 'gmcontainerxevent'
-	$policySasToken      = 'gmpolicysastoken'
-	
-	
-	# Leave this value alone, as 'rwl'.
-	$policySasPermission = 'rwl'
-	
-	#--------------- 3 -----------------------
-	
-	
-	# The ending display lists your Azure subscriptions.
-	# One should match the $subscriptionName value you assigned
-	#   earlier in this PowerShell script. 
-	
-	'Choose an existing subscription for the current PowerShell environment.'
-	
-	
-	Select-AzureSubscription -SubscriptionName $subscriptionName
-	
-	
-	#-------------- 4 ------------------------
-	
-	
-	'
-	Clean-up the old Azure Storage Account after any previous run, 
-	before continuing this new run.'
-	
-	
-	If ($storageAccountName)
-	{
-	    Remove-AzureStorageAccount -StorageAccountName $storageAccountName
-	}
-	
-	#--------------- 5 -----------------------
-	
-	[System.DateTime]::Now.ToString()
-	
-	'
-	Create a storage account. 
-	This might take several minutes, will beep when ready.
-	  ...PLEASE WAIT...'
-	
-	New-AzureStorageAccount `
-	    -StorageAccountName $storageAccountName `
-	    -Location           $storageAccountLocation
-	
-	[System.DateTime]::Now.ToString()
-	
-	[System.Media.SystemSounds]::Beep.Play()
-	
-	
-	'
-	Get the primary access key for your storage account.
-	'
-	
-	
-	$primaryAccessKey_ForStorageAccount = `
-	    (Get-AzureStorageKey `
-	        -StorageAccountName $storageAccountName).Primary
-	
-	"`$primaryAccessKey_ForStorageAccount = $primaryAccessKey_ForStorageAccount"
-	
-	'Azure Storage Account cmdlet completed.
-	Remainder of PowerShell .ps1 script continues.
-	'
-	
-	#--------------- 6 -----------------------
-	
-	
-	# The context will be needed to create a container within the storage account.
-	
-	'Create a context object from the storage account and its primary access key.
-	'
-	
-	$context = New-AzureStorageContext `
-	    -StorageAccountName $storageAccountName `
-	    -StorageAccountKey  $primaryAccessKey_ForStorageAccount
-	
-	
-	'Create a container within the storage account.
-	'
-	
-	
-	$containerObjectInStorageAccount = New-AzureStorageContainer `
-	    -Name    $containerName `
-	    -Context $context
-	
-	
-	'Create a security policy to be applied to the SAS token.
-	'
-	
-	New-AzureStorageContainerStoredAccessPolicy `
-	    -Container  $containerName `
-	    -Context    $context `
-	    -Policy     $policySasToken `
-	    -Permission $policySasPermission `
-	    -ExpiryTime $policySasExpiryTime `
-	    -StartTime  $policySasStartTime 
-	
-	'
-	Generate a SAS token for the container.
-	'
-	Try
-	{
-	    $sasTokenWithPolicy = New-AzureStorageContainerSASToken `
-	        -Name    $containerName `
-	        -Context $context `
-	        -Policy  $policySasToken
-	}
-	Catch 
-	{
-	    $Error[0].Exception.ToString()
-	}
-	
-	#-------------- 7 ------------------------
-	
-	
-	'Display the values that YOU must edit into the Transact-SQL script next!:
-	'
-	
-	"storageAccountName: $storageAccountName"
-	"containerName:      $containerName"
-	"sasTokenWithPolicy: $sasTokenWithPolicy"
-	
-	'
-	REMINDER: sasTokenWithPolicy here might start with "?" character, which you must exclude from Transact-SQL.
-	'
-	
-	'
-	(Later, return here to delete your Azure Storage account. See the preceding - Remove-AzureStorageAccount -StorageAccountName $storageAccountName)'
-	
-	'
-	Now shift to the Transact-SQL portion of the two-part code sample!'
-	
-	# EOFile
+			## TODO: Before running, find all 'TODO' and make each edit!
+			
+			#--------------- 1 -----------------------
+			
+			
+			# You can comment out or skip this Add-AzureAccount command after the first run.
+			# Current PowerShell environment retains the successful outcome.
+			
+			'Expect a pop-up window in which you log in to Azure.'
+			
+			
+			Add-AzureRmAccount -EnvironmentName AzureChinaCloud
+			
+			#-------------- 2 ------------------------
+			
+			
+			'
+			TODO: Edit the values assigned to these variables, especially the first few!
+			'
+			
+			$subscriptionName       = 'YOUR_SUBSCRIPTION_NAME'
+			$policySasExpiryTime = '2016-01-28T23:44:56Z'
+			$policySasStartTime  = '2015-08-01'
+			
+			
+			$storageAccountName     = 'gmstorageaccountxevent'
+			$storageAccountLocation = 'China North'
+			$contextName            = 'gmcontext'
+			$containerName          = 'gmcontainerxevent'
+			$policySasToken      = 'gmpolicysastoken'
+			
+			
+			# Leave this value alone, as 'rwl'.
+			$policySasPermission = 'rwl'
+			
+			#--------------- 3 -----------------------
+			
+			
+			# The ending display lists your Azure subscriptions.
+			# One should match the $subscriptionName value you assigned
+			#   earlier in this PowerShell script. 
+			
+			'Choose an existing subscription for the current PowerShell environment.'
+			
+			
+			Select-AzureSubscription -SubscriptionName $subscriptionName
+			
+			
+			#-------------- 4 ------------------------
+			
+			
+			'
+			Clean-up the old Azure Storage Account after any previous run, 
+			before continuing this new run.'
+			
+			
+			If ($storageAccountName)
+			{
+			    Remove-AzureStorageAccount -StorageAccountName $storageAccountName
+			}
+			
+			#--------------- 5 -----------------------
+			
+			[System.DateTime]::Now.ToString()
+			
+			'
+			Create a storage account. 
+			This might take several minutes, will beep when ready.
+			  ...PLEASE WAIT...'
+			
+			New-AzureStorageAccount `
+			    -StorageAccountName $storageAccountName `
+			    -Location           $storageAccountLocation
+			
+			[System.DateTime]::Now.ToString()
+			
+			[System.Media.SystemSounds]::Beep.Play()
+			
+			
+			'
+			Get the primary access key for your storage account.
+			'
+			
+			
+			$primaryAccessKey_ForStorageAccount = `
+			    (Get-AzureStorageKey `
+			        -StorageAccountName $storageAccountName).Primary
+			
+			"`$primaryAccessKey_ForStorageAccount = $primaryAccessKey_ForStorageAccount"
+			
+			'Azure Storage Account cmdlet completed.
+			Remainder of PowerShell .ps1 script continues.
+			'
+			
+			#--------------- 6 -----------------------
+			
+			
+			# The context will be needed to create a container within the storage account.
+			
+			'Create a context object from the storage account and its primary access key.
+			'
+			
+			$context = New-AzureStorageContext `
+			    -StorageAccountName $storageAccountName `
+			    -StorageAccountKey  $primaryAccessKey_ForStorageAccount
+			
+			
+			'Create a container within the storage account.
+			'
+			
+			
+			$containerObjectInStorageAccount = New-AzureStorageContainer `
+			    -Name    $containerName `
+			    -Context $context
+			
+			
+			'Create a security policy to be applied to the SAS token.
+			'
+			
+			New-AzureStorageContainerStoredAccessPolicy `
+			    -Container  $containerName `
+			    -Context    $context `
+			    -Policy     $policySasToken `
+			    -Permission $policySasPermission `
+			    -ExpiryTime $policySasExpiryTime `
+			    -StartTime  $policySasStartTime 
+			
+			'
+			Generate a SAS token for the container.
+			'
+			Try
+			{
+			    $sasTokenWithPolicy = New-AzureStorageContainerSASToken `
+			        -Name    $containerName `
+			        -Context $context `
+			        -Policy  $policySasToken
+			}
+			Catch 
+			{
+			    $Error[0].Exception.ToString()
+			}
+			
+			#-------------- 7 ------------------------
+			
+			
+			'Display the values that YOU must edit into the Transact-SQL script next!:
+			'
+			
+			"storageAccountName: $storageAccountName"
+			"containerName:      $containerName"
+			"sasTokenWithPolicy: $sasTokenWithPolicy"
+			
+			'
+			REMINDER: sasTokenWithPolicy here might start with "?" character, which you must exclude from Transact-SQL.
+			'
+			
+			'
+			(Later, return here to delete your Azure Storage account. See the preceding - Remove-AzureStorageAccount -StorageAccountName $storageAccountName)'
+			
+			'
+			Now shift to the Transact-SQL portion of the two-part code sample!'
+			
+			# EOFile
 
 
 
-&nbsp;
 
 
-记下 PowerShell 脚本结束时输出的几个命名值。必须将这些值编辑成阶段 2 中使用的 Transact-SQL 脚本。
+
+		记下 PowerShell 脚本结束时输出的几个命名值。必须将这些值编辑成阶段 2 中使用的 Transact-SQL 脚本。
 
 
 ## 阶段 2：使用 Azure 存储空间容器的 Transact-SQL 代码

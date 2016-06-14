@@ -148,7 +148,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 ## 相关链接
 
 - [SQL 数据库 V12 的新增功能](/documentation/articles/sql-database-v12-whats-new)
-- [规划和准备升级到 SQL 数据库 V12](/documentation/articles/sql-database-v12-plan-prepare-upgrade)
+
 
 
 <!--Image references-->

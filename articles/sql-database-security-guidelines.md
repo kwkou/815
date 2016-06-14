@@ -21,7 +21,7 @@
 
 只能通过 TCP 端口 1433 使用 Azure SQL 数据库服务。若要从计算机访问 SQL 数据库，请确保你的防火墙允许 TCP 端口 1433 上的传出 TCP 通信。在连接过程中，来自 Azure 虚拟机的连接将重定向到每个辅助角色特有的不同 IP 地址和端口。该端口号在 11000 到 11999 的范围内。
 
-在你首次连接到 Azure SQL 数据库服务器之前，必须使用 [Azure 经典门户](https://manage.windowsazure.cn)或 [Azure 平台经典门户](https://manage.windowsazure.cn/microsoft.partner.onmschina.cn#Workspaces/All/dashboard)来配置 Azure SQL 数据库防火墙。你将需要创建一个服务器级防火墙设置，该设置允许从你的计算机或 Azure 连接到 Azure SQL 数据库服务器。如果要控制对 Azure SQL 数据库服务器内某些数据库的访问，请为相应数据库创建数据库级防火墙规则。有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)。
+在你首次连接到 Azure SQL 数据库服务器之前，必须使用 [Azure 管理门户](https://manage.windowsazure.cn)来配置 Azure SQL 数据库防火墙。你将需要创建一个服务器级防火墙设置，该设置允许从你的计算机或 Azure 连接到 Azure SQL 数据库服务器。如果要控制对 Azure SQL 数据库服务器内某些数据库的访问，请为相应数据库创建数据库级防火墙规则。有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)。
 
 ## 连接加密和证书验证
 
@@ -71,13 +71,13 @@ Active Directory 身份验证（集成安全性）在 SQL 数据库 V12 中以�
 - 在 ADO.NET 应用程序中执行 ``CREATE/ALTER/DROP LOGIN`` 和 ``CREATE/ALTER/DROP DATABASE`` 语句时，不允许使用参数化命令。有关详细信息，请参阅[命令和参数](https://msdn.microsoft.com/zh-cn/library/ms254953.aspx)。
 - 在执行 ``CREATE/ALTER/DROP DATABASE`` 和 ``CREATE/ALTER/DROP LOGIN`` 语句时，上述每个语句都必须是 Transact-SQL 批处理中的唯一语句。否则将会出错。例如，以下 Transact-SQL 将检查该数据库是否存在。如果该数据库存在，则调用 ``DROP DATABASE`` 语句以便删除该数据库。因为 ``DROP DATABASE`` 语句不是该批处理中的唯一语句，所以执行此 Transact-SQL 将导致错误。
 
-```
-IF EXISTS (SELECT [name]
-           FROM   [sys].[databases]
-           WHERE  [name] = N'database_name')
-     DROP DATABASE [database_name];
-GO
-```
+
+		IF EXISTS (SELECT [name]
+		           FROM   [sys].[databases]
+		           WHERE  [name] = N'database_name')
+		     DROP DATABASE [database_name];
+		GO
+
 
 - 在使用 ``FOR/FROM LOGIN`` 选项执行 ``CREATE USER`` 语句时，该语句必须是 Transact-SQL 批处理中的唯一语句。
 - 在使用 ``WITH LOGIN`` 选项执行 ``ALTER USER`` 语句时，该语句必须是 Transact-SQL 批处理中的唯一语句。

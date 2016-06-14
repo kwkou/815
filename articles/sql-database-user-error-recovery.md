@@ -30,16 +30,6 @@ Azure SQL 数据库始终会还原到新数据库。这些还原功能适用于�
 
 > [AZURE.NOTE] 还原数据库会创建一个新的数据库。必须确保要还原到的服务器具有足够的 DTU，可以容纳新数据库的容量。你可以通过与支持人员联系来请求增加此配额。
 
-###Azure 门户
-若要在 Azure 门户中使用时间点还原，请按以下步骤操作。
-
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn)
-2. 在屏幕左侧选择“浏览”，然后选择“SQL 数据库”。
-3. 导航到你的数据库并选择它。
-4. 在数据库边栏选项卡的顶部，选择“还原”。
-5. 指定数据库名称和时间点，然后单击“创建”。
-6. 数据库还原过程随即将会开始，你可以使用屏幕左侧的“通知”监视还原进度。
-
 ###PowerShell
 使用 PowerShell 以编程方式通过 [Start-AzureSqlDatabaseRestore](https://msdn.microsoft.com/zh-cn/library/dn720218.aspx?f=255&MSPPError=-2147217396) cmdlet 执行时间点还原操作。
 
@@ -65,17 +55,6 @@ Azure SQL 数据库始终会还原到新数据库。这些还原功能适用于�
 已删除的数据库的保留期由该数据库尚未删除时所在的服务层或者数据库存在的天数确定（以两者中较小的为准）。若要了解有关数据库保留期的详细信息，请阅读[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
 
 > [AZURE.NOTE] 还原数据库会创建一个新的数据库。必须确保要还原到的服务器具有足够的 DTU，可以容纳新数据库的容量。你可以通过与支持人员联系来请求增加此配额。
-
-###Azure 门户
-若要使用 Azure 门户来还原已删除的数据库，请执行以下步骤。
-
-1. 登录到 [Azure 门户](https://manage.windowsazure.cn)
-2. 在屏幕左侧选择“浏览”，然后选择“SQL Sever”。
-3. 导航到你的服务器并选择它。
-4. 在服务器的边栏选项卡上向下滚动到“操作”，然后单击“删除的数据库”磁贴。
-5. 选择要还原的已删除数据库。
-6. 指定数据库名称，然后单击“创建”。
-7. 数据库还原过程随即将会开始，你可以使用屏幕左侧的“通知”监视还原进度。
 
 ###PowerShell
 若要通过 PowerShell 还原已删除的数据库，请使用 [Start-AzureSqlDatabaseRestore](https://msdn.microsoft.com/zh-cn/library/dn720218.aspx?f=255&MSPPError=-2147217396) cmdlet。

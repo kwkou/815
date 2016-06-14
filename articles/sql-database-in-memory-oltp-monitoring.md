@@ -28,7 +28,7 @@
 
 ## 监视和警报
 
-可以在 Azure [门户](/documentation/articles/sql-database-service-tiers/#service-tiers-for-single-databases)中，通过[性能层的存储限制](https://manage.windowsazure.cn)百分比来监视内存中存储用量：
+可以在 Azure [管理门户](/documentation/articles/sql-database-service-tiers/#service-tiers-for-single-databases)中，通过[性能层的存储限制](https://manage.windowsazure.cn)百分比来监视内存中存储用量：
 
 - 在“数据库”边栏选项卡上，找出“资源使用率”框并单击“编辑”。
 - 然后选择度量值“In-Memory OLTP 存储”百分比。

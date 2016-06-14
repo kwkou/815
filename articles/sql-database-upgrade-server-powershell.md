@@ -38,8 +38,6 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 升级到 SQL 数据库 V12 的操作不可撤销。升级后，无法将服务器还原到 V11。
 
-升级到 V12 之后，[服务层建议](/documentation/articles/sql-database-service-tier-advisor)将不会立即可用，必须等到服务有时间评估新服务器上的工作负荷之后，才可供使用。
-
 ## 准备升级
 
 - **升级所有 Web 和企业数据库**：请[使用 PowerShell 来升级数据库和服务器](/documentation/articles/sql-database-upgrade-server-powershell)。
@@ -75,9 +73,6 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 若要获取有关服务器升级的建议，请运行以下 cmdlet：
 
     $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName “resourcegroup1” -ServerName “server1”
-
-有关详细信息，请参阅 [Azure SQL 数据库定价层建议](/documentation/articles/sql-database-service-tier-advisor)。
-
 
 
 ## 开始升级

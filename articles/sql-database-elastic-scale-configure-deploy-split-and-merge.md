@@ -87,7 +87,7 @@
 
 ### 将 PFX 文件上载到云服务
 
-转到 [Azure 门户](https://manage.windowsazure.cn)。
+转到 [Azure 管理门户](https://manage.windowsazure.cn)。
 
 1. 选择“云服务”。
 2. 选择您之前为拆分/合并服务创建的云服务。
@@ -117,7 +117,7 @@
 
 ### 部署你的拆分/合并服务
 
-1. 转到 [Azure 门户](https://manage.windowsazure.cn)。
+1. 转到 [Azure 管理门户](https://manage.windowsazure.cn)。
 2. 单击左侧的“云服务”选项卡，然后选择你之前创建的云服务。
 3. 单击“仪表板”。
 4. 选择过渡环境，然后单击“上载新的过渡部署”。
