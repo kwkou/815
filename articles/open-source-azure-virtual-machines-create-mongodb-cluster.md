@@ -9,7 +9,7 @@
 	editor=""/>
 
 <tags
-	ms.service="open-resource"
+	ms.service="open-source-mongodb"
 	ms.date=""
 	wacn.date="06/14/2016"/>
 
