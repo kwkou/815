@@ -16,8 +16,8 @@
 
 ## 目录
 
-- [安装 LAMP](install_lamp)
-- [访问网站](visit_website)
+- [安装 LAMP](#install_lamp)
+- [访问网站](#visit_website)
 
 LAMP 通常表示 Linux+Apache+MySQL/MariaDB+Perl/PHP/Python，LAMP 的各个组件不是一成不变的，并不局限于它最初的选择。作为一个解决方案套件，LAMP 非常适合构建动态网站和网站应用程序。
 
@@ -27,7 +27,7 @@ LAMP 通常表示 Linux+Apache+MySQL/MariaDB+Perl/PHP/Python，LAMP 的各个组
 
 连接到您的 LINUX 虚拟机。如果这是您第一次使用 Azure 的 LINUX 虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-classic-createportal/) 连接到虚拟机。
 
-不同的LINUX发行版在安装 LAMP 时有少许的不同。请根据您的 LINUX 版本选择对应的步骤。
+不同的 LINUX 发行版在安装 LAMP 时有少许的不同。请根据您的 LINUX 版本选择对应的步骤。
 
 **Redhat base Linux**: (以 CentOS 7.0, 64-bit system, MySQL Server 5.6, apache 2.4, php5 为例)
 
@@ -347,7 +347,7 @@ LAMP 通常表示 Linux+Apache+MySQL/MariaDB+Perl/PHP/Python，LAMP 的各个组
 
 ![](./media/open-source-azure-virtual-machines-lamp-website-kickstart/visit2.png)
 
-此图表明数据库读写操作均正常。从输出中我们可以看到创建了数据库名为testdb, 创建了表名为test01,插入了一条数据，值为jack. 这个jack就是在执行命令 `bash install_lamp.sh mysqlPassword insertValue` 时的 insertValue, 这里 insertValue 被 jack 代替。如果刷新浏览器，会再次插入 jack 的值到 test01 表。
+此图表明数据库读写操作均正常。从输出中我们可以看到创建了数据库名为 testdb, 创建了表名为 test01,插入了一条数据，值为 jack. 这个 jack 就是在执行命令 `bash install_lamp.sh mysqlPassword insertValue` 时的 insertValue, 这里 insertValue 被 jack 代替。如果刷新浏览器，会再次插入 jack 的值到 test01 表。
 
 如果测试完毕想要删除这些测试数据库和表，只需在 LINUX 虚拟机上执行以下命令:
 
