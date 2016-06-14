@@ -332,7 +332,7 @@
 | 167 | [Azure SQL 数据库的一般性限制和指导原则](/documentation/articles/sql-database-general-limitations) | 本页介绍 Azure SQL 数据库的某些一般性限制，以及互操作性和支持方面的问题。 |
 | 168 | [使用 PowerShell 复制 Azure SQL 数据库](/documentation/articles/sql-database-copy-powershell) | 使用 PowerShell 创建 Azure SQL 数据库的副本 |
 | 169 | [使用 Transact-SQL 复制 Azure SQL 数据库](/documentation/articles/sql-database-copy-transact-sql) | 使用 Transact-SQL 创建 Azure SQL 数据库的副本 |
-| 170 | [SQL 数据库定价层建议](/documentation/articles/sql-database-service-tier-advisor) | 在 Azure 门户中更改定价层时，提供的定价层建议将会推荐最适合用于运行现有 Azure SQL 数据库负载的层。定价层描述 SQL 数据库的服务层和性能级别。 |
+| 170 | SQL 数据库定价层建议 | 在 Azure 门户中更改定价层时，提供的定价层建议将会推荐最适合用于运行现有 Azure SQL 数据库负载的层。定价层描述 SQL 数据库的服务层和性能级别。 |
 | 171 | [MSDN 上的 SQL Server 2016 技术文档](http://msdn.microsoft.com/zh-cn/library/ms130214.aspx) | MSDN 上的 Microsoft SQL Server 2016 文档目录 (TOC) 的起始顶层节点。MSDN 上的大部分 SQL Server 文档也适用于 Azure SQL 数据库。 |
 
 

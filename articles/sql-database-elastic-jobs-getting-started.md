@@ -31,7 +31,7 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
 
 2.  在命令窗口中键入“1”，然后按 **Enter**。这会创建分片映射管理器，并将两个分片添加到服务器。然后键入“3”并按 **Enter**；重复该操作四次。这会在你的分片中插入示例数据行。
 
-3.  [Azure 门户](https://manage.windowsazure.cn)应会在 v12 服务器中显示三个新的数据库：
+3.  [Azure 管理门户](https://manage.windowsazure.cn)应会在 v12 服务器中显示三个新的数据库：
 
 	![Visual Studio 确认][2]
 
