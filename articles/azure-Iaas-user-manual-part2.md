@@ -14,8 +14,8 @@
 
 # Azure IaaS 用户手册 - 第二部分
 
-- [Azure IaaS 用户手册 - 第一部分](./azure-Iaas-user-manual-part1.md)
-- [Azure IaaS 用户手册 - 第三部分](./azure-Iaas-user-manual-part3.md)
+- [Azure IaaS 用户手册 - 第一部分](/documentation/articles/azure-Iaas-user-manual-part1)
+- [Azure IaaS 用户手册 - 第三部分](/documentation/articles/azure-Iaas-user-manual-part3)
 
 ##目录
 5.&nbsp;[开始创建 Azure 虚拟机](#section_5)
@@ -105,7 +105,7 @@ Contoso 公司已经采购了 Azure China 服务，计划把现有托管在 IDC 
 ####<a name="section_5_2_3"></a> 5.2.3 选择最合适的虚拟机配置
 <mark>首先请读者注意，传统的虚拟机化技术，CPU 是共享的。Azure 虚拟机，除了 A0 的虚拟机类型，它的 CPU 是和别的用户共享的。其他类型的虚拟机，比如 A1-A7，它的 CPU 是独占的，不是和别的用户共享的。</mark>
 
-如[第 4.4.2 章](./azure-Iaas-user-manual-part1.md#section_4_4_2)，Azure 虚拟机分为 A 系列和 D 系列，并且拥有不同的 CPU 和内存配置。
+如[第 4.4.2 章](/documentation/articles/azure-Iaas-user-manual-part1#section_4_4_2)，Azure 虚拟机分为 A 系列和 D 系列，并且拥有不同的 CPU 和内存配置。
 
 如果客户在传统 IDC 托管中已经部署了硬件服务器。则在 Azure 平台选择最接近的 Azure 虚拟机配置即可。
 
@@ -116,7 +116,7 @@ Contoso 公司已经采购了 Azure China 服务，计划把现有托管在 IDC 
 1.	相比 A 系列单台 VM 最大 8Core/56GB RAM 的配置，D 系列虚拟机单台最大的配置为 16Core/112GB RAM
 2.	D 系列的 CPU 性能比 A 系列提升约 60%
 
-其他内容，请参考[第 4.4.2 章](./azure-Iaas-user-manual-part1.md#section_4_4_2)。
+其他内容，请参考[第 4.4.2 章](/documentation/articles/azure-Iaas-user-manual-part1#section_4_4_2)。
 
 ####<a name="section_5_2_4"></a> 5.2.4 规划好高可用(非常重要)
 在 Azure 虚拟机中，用户也可以选择使用一台 Azure 虚拟机部署 AD Server，一台 Azure 虚拟机部署 Web 应用程序，使用另一台虚拟机部署 SQL Server。<mark>但是这样的场景是没有服务级别协议保障的。</mark>
@@ -146,7 +146,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 如果企业内部需要进行内部成本核算，例如 IT 部门、销售部门、市场部门均需要使用 Azure，并且根据不同的部门的 Azure 实际使用量进行内部成本核算，就需要实现规划好三个不同的 Azure 订阅。在创建 Azure IaaS 相关资源的时候，将这些资源创建在不同的订阅下。
 
-关于订阅相关的内容，请参考[《Azure 企业门户管理手册》](XXX)
+关于订阅相关的内容，请参考[《Azure 企业门户管理手册》](/documentation/articles/azure-ea-portal-user-manual)
 
 ####<a name="section_5_2_6"></a> 5.2.6 选择订阅(非常重要)
 我们登陆 Azure [管理门户](https://manage.windowsazure.cn))，输入账户和密码。
@@ -477,7 +477,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 	![vm_create16](./media/azure-Iaas-user-manual-part2/vm_create16.png)
 
-	关于终结点的内容，我们会在[第 6 章](section_6)做详细的介绍。
+	关于终结点的内容，我们会在[第 6 章](/documentation/articles/azure-Iaas-user-manual-part3#section_6)做详细的介绍。
 
 5.	最后我们点击确认，这样就完成创建第一个 AD Server。在虚拟机创建列表中就会显示”正在启动(正在配置)”
 
@@ -673,7 +673,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 ![vm_create28](./media/azure-Iaas-user-manual-part2/vm_create28.png)
 
-有关 SQL Server 虚拟机配置 Always-On 的文档，请参考 [MSDN 文档](https://msdn.microsoft.com/library/azure/dn249504.aspx)
+有关 SQL Server 虚拟机配置 Always-On 的文档，请参考 [文档](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups)
 
 #####<a name="section_5_4_4_7"></a> 5.4.4.7 总结
 一般情况下，创建 Azure 虚拟机之前需要做如下准备:

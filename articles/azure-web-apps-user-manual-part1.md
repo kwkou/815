@@ -14,8 +14,8 @@
 
 # Azure Web 应用用户手册 - 第一部分
 
-- [Azure Web 应用用户手册 - 第二部分](./azure-web-apps-user-manual-part2.md)
-- [Azure Web 应用用户手册 - 第三部分](./azure-web-apps-user-manual-part3.md)
+- [Azure Web 应用用户手册 - 第二部分](/documentation/articles/azure-web-apps-user-manual-part2)
+- [Azure Web 应用用户手册 - 第三部分](/documentation/articles/azure-web-apps-user-manual-part3)
 
 ## 目录
 1.	[前言](#section_1)
@@ -43,7 +43,7 @@
 ##<a name="section_2"></a> 2. 读者
 Azure 是平台产品，本文只详细介绍如何创建和管理 Azure Web 应用。本文适合开发人员阅读。
 
-另外本文会牵涉到部分 Azure 订阅相关内容，请读者先阅读 [《Azure 管理手册》](XXX)
+另外本文会牵涉到部分 Azure 订阅相关内容，请读者先阅读 [《Azure 管理手册》](/documentation/articles/azure-ea-portal-user-manual)
 
 ##<a name="section_3"></a> 3. Azure Web 应用相关服务
 ###<a name="section_3_1"></a> 3.1 Azure Web 应用的带宽问题

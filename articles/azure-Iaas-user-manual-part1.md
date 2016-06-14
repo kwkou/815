@@ -14,8 +14,8 @@
 
 # Azure IaaS 用户手册 - 第一部分
 
-- [Azure IaaS 用户手册 - 第二部分](./azure-Iaas-user-manual-part2.md)
-- [Azure IaaS 用户手册 - 第三部分](./azure-Iaas-user-manual-part3.md)
+- [Azure IaaS 用户手册 - 第二部分](/documentation/articles/azure-Iaas-user-manual-part2)
+- [Azure IaaS 用户手册 - 第三部分](/documentation/articles/azure-Iaas-user-manual-part3)
 
 ##目录
 1.	[前言](#section_1)
@@ -53,7 +53,7 @@
 ##<a name="section_2"></a> 2.	读者
 Azure 是平台产品，本章只详细介绍如何创建和管理 Azure 虚拟机。本文适合开发人员、IT 运维人员阅读。
 
-另外本文会牵涉到部分 Azure 订阅相关内容，请读者先阅读 [《Azure 管理手册》](/documentation/articles/azure-ea-user-manual)。
+另外本文会牵涉到部分 Azure 订阅相关内容，请读者先阅读 [《Azure 管理手册》](/documentation/articles/azure-ea-portal-user-manual)。
 
 ##<a name="section_3"></a> 3.	Azure IaaS相关技术
 1.	**Azure 底层是否由 System Center 和Hyper-V 构成?**
@@ -260,8 +260,8 @@ Azure 存储服务本身提供 99.9% 的服务级别协议，它提供三种高�
 	启用该功能后，在主要区域无法读取数据时，可使用辅助位置读取更高可用性。该功能为”选择使用”，要求存储账户进行跨地域冗余复制。
 
 	举个例子，假设我在上海数据中心(主要位置)创建了Azure Storage，Storage Name为leizhangstorage，并且开启了**读取访问地域冗余 (Read Access – Geo Redundant Storage, RA-GRS)。**
-	- (1)	我就可以通过 http://<accountname>.blob.core.chinacloudapi.cn 访问主要位置的 Azure 存储帐户。
-	- (2)	然后还可以通过 http://<accountname><mark>-secondary</mark>.blob.core.chinacloudapi.cn 访问辅助位置的 Azure 存储帐户
+	- (1)	我就可以通过 http://<accountname\>.blob.core.chinacloudapi.cn 访问主要位置的 Azure 存储帐户。
+	- (2)	然后还可以通过 http://<accountname\><mark>-secondary</mark>.blob.core.chinacloudapi.cn 访问辅助位置的 Azure 存储帐户
 	- (3)	在发生上海数据中心(主要位置)无法读取数据的时候，可以使用辅助位置的数据读取来提供高可用性。
 
 ####<a name="section_4_3_2"></a> 4.3.2 Azure存储服务的类型

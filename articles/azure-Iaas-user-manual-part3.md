@@ -14,8 +14,8 @@
 
 # Azure IaaS 用户手册 - 第三部分
 
-- [Azure IaaS 用户手册 - 第一部分](./azure-Iaas-user-manual-part1.md)
-- [Azure IaaS 用户手册 - 第二部分](./azure-Iaas-user-manual-part2.md)
+- [Azure IaaS 用户手册 - 第一部分](/documentation/articles/azure-Iaas-user-manual-part1)
+- [Azure IaaS 用户手册 - 第二部分](/documentation/articles/azure-Iaas-user-manual-part2)
 
 ##目录
 - 6.&nbsp;[高级内容](#section_6)
