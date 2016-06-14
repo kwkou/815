@@ -125,8 +125,8 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 1.	两台 AD Server 虚拟机，放在同一个<mark>可用性集 A</mark> 中。
 2.	两台 Web Server 虚拟机，放在另外一个<mark>可用性集 B</mark> 中。
-3.	两台 SQL Server 虚拟机，采用 SQL Server 2012 Enterprise 提供的 Always-On 功能，实现高可用性(High Availability)。且 SQL Server 所在的虚拟机需要在另外一个<mark>可用性集C</mark>中。
-4.	将具有相同功能的多台VM放置在同一个可用性集下。
+3.	两台 SQL Server 虚拟机，采用 SQL Server 2012 Enterprise 提供的 Always-On 功能，实现高可用性 (High Availability)。且 SQL Server 所在的虚拟机需要在另外一个<mark>可用性集C</mark>中。
+4.	将具有相同功能的多台 VM 放置在同一个可用性集下。
 
 这边还需要强调一下:
 
@@ -165,8 +165,8 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 如果您使用的是<mark>测试账户</mark>，只能有一个订阅，该订阅默认情况下可以使用的 Azure 资源为
 
 1.	计算能力：20 Core
-2.	Host Service： 即 DNS 地址，4个
-3.	存储账号：4个
+2.	Host Service： 即 DNS 地址，4 个
+3.	存储账号：4 个
 
 如果<mark>测试账户</mark>在测试过程中，需要的 Azure 资源超出测试账号默认提供的资源，请通过 Azure 销售团队，<mark>联系 Azure PMM Bill Jin</mark>。在 Bill 批准的情况下，再联系[世纪互联支持团队](/support/contact)，请世纪互联在后台将测试账户的订阅进行扩大。
 
@@ -176,15 +176,15 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 2.	Host Service： 即 DNS 地址，20 个
 3.	存储账号：20 个
 
-如果<mark>正式账户</mark>在使用过程中，需要的Azure资源超出订阅默认的 Azure 资源，<mark>请不要联系 PMM Bill Jin</mark>。请直接联系世纪互联支持团队，世纪互联会先审核相关请求，然后会将该订阅的相关资源进行扩大。
+如果<mark>正式账户</mark>在使用过程中，需要的 Azure 资源超出订阅默认的 Azure 资源，<mark>请不要联系 PMM Bill Jin</mark>。请直接联系世纪互联支持团队，世纪互联会先审核相关请求，然后会将该订阅的相关资源进行扩大。
 
-举个例子，比如 Contoso 公司需要在月底进行一次大型的 Digital Campaign 促销活动，需要使用 300个CPU Core，则可以提前联系世纪互联支持团队，让世纪互联运维团队将默认的 100 CPU Core 提升到 300个。
+举个例子，比如 Contoso 公司需要在月底进行一次大型的 Digital Campaign 促销活动，需要使用 300 个 CPU Core，则可以提前联系世纪互联支持团队，让世纪互联运维团队将默认的 100 CPU Core 提升到 300个。
 
 [世纪互联支持团队](/support/contact)
 
 ![scenario2](./media/azure-Iaas-user-manual-part2/scenario2.png)
 
-上图中，我们登陆 Azure [管理门户](https://manage.windowsazure.cn)，点击上图中的”设置”，”使用情况”，”选择订阅”，就可以查看到该订阅可以使用的Azure资源情况。
+上图中，我们登陆 Azure [管理门户](https://manage.windowsazure.cn)，点击上图中的”设置”，”使用情况”，”选择订阅”，就可以查看到该订阅可以使用的 Azure 资源情况。
 
 上图中，订阅名称为 ”Marketing_Subscription” 可以使用的 Azure 资源为
 
@@ -223,7 +223,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 1.	数据中心选择中国东部
 2.	虚拟网络
 
-	* (1)	我们创建 Azure 虚拟网络，命名为 ContosoVNet，同时设置虚拟网络的 IP Rang 为10.0.0.0 - 10.0.3.255
+	* (1)	我们创建 Azure 虚拟网络，命名为 ContosoVNet，同时设置虚拟网络的 IP Rang 为 10.0.0.0 - 10.0.3.255
 	* (2)	设置 3 个 Sub-net
 
 		<mark>AD-Subnet，IP Rang为10.0.0.0 – 10.0.0.255</mark>
@@ -280,7 +280,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 我们登陆 Azure [管理门户](https://manage.windowsazure.cn/))，输入相应的 Azure 账户名称和密码。
 
 ####<a name="section_5_4_1"></a> 5.4.1 创建虚拟网络(非常重要)
-1.	在 Azur e管理界面的左下角，点击”新建”按钮。如下图:
+1.	在 Azure 管理界面的左下角，点击”新建”按钮。如下图:
 
 	![vm_create](./media/azure-Iaas-user-manual-part2/vm_create.png)
 
@@ -296,7 +296,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 	![vm_create4](./media/azure-Iaas-user-manual-part2/vm_create4.png)
 
-	注意，因为我们需要使用 AD Server，这里的 DNS 就是 AD Server 的内网IP地址。
+	注意，因为我们需要使用 AD Server，这里的 DNS 就是 AD Server 的内网 IP 地址。
 
 	<mark>注意: 在 Azure 云环境，Azure 虚拟机的 Private IP，DNS Server 都必须通过虚拟网络来设置。我们不可以通过远程桌面连接 (Remote Desktop)，来修改 Azure 虚拟机的本地 TCP/IP 地址。如果这样操作的话，Azure 虚拟机会运行不正常。</mark>
 
@@ -391,7 +391,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 如果 VM01, VM02 都不关机的情况下，则第 3 台新创建的虚拟机 VM03 加入到 AD-Subnet 的 Azure 虚拟机自动获得下一个可用的内网 IP 地址为 10.0.0.6。
 
-还有一个问题需要读者注意。如果我们在上面创建的 3 台虚拟机，<mark>通过管理界面关机了，则这些内网IP地址会被释放</mark>。经过一段时间后，第一个通过管理界面开机的虚拟机(无论是 VM01，VM02，VM03)，会自动获得第一个可用的 IP 地址。
+还有一个问题需要读者注意。如果我们在上面创建的 3 台虚拟机，<mark>通过管理界面关机了，则这些内网 IP 地址会被释放</mark>。经过一段时间后，第一个通过管理界面开机的虚拟机(无论是 VM01，VM02，VM03)，会自动获得第一个可用的 IP 地址。
 
 假设我们将虚拟机通过管理界面关机。经过一段时间后，将 VM03 首先通过管理界面开机，则 VM03 会自动获得第一个可用的内网 IP 地址，为 10.0.0.4。
 
@@ -607,9 +607,9 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 2.	我们在创建<mark>第 2 台 Web Server</mark> 的时候，需要注意:
 
-	* (1)	复用之前我们已经创建的云服务ContosoWebCS
-	* (2)	选择对应的虚拟网络和存储账户，注意子网为Web-Subnet
-	* (3)	选择我们之前已经创建的可用性集WebAvbSet。
+	* (1)	复用之前我们已经创建的云服务 ContosoWebCS
+	* (2)	选择对应的虚拟网络和存储账户，注意子网为 Web-Subnet
+	* (3)	选择我们之前已经创建的可用性集 WebAvbSet。
 
 	如下图：
 
@@ -697,12 +697,12 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 1.	某些 Azure 虚拟机的高级功能，比如固定内网 IP，固定公网 IP，设置虚拟机时区等，都需要借助于 Azure PowerShell。Azure 管理界面不具备相应的功能。
 2.	当用户需要批量创建 Azure 虚拟机，批量配置虚拟机端口等，通过 Azure 管理界面就非常麻烦。
 
-####<a name="section_5_5_2"></a> 5.5.2 配置PowerShell
+####<a name="section_5_5_2"></a> 5.5.2 配置 PowerShell
 1.	我们在 Azure China [官方网站](/downloads)，安装 Azure PowerShell。如下图：
 
 	![vm_powershell](./media/azure-Iaas-user-manual-part2/vm_powershell.png)
 
-2.	安装完毕后，我们以管理员身份运行Azure PowerShell。如下图：
+2.	安装完毕后，我们以管理员身份运行 Azure PowerShell。如下图：
 
 	![vm_powershell2](./media/azure-Iaas-user-manual-part2/vm_powershell2.png)
 
@@ -728,7 +728,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 		Import-AzurePublishSettingsFile 'D:\内部使用-6-2-2014-credentials.publishsettings'
 
-	上面的命令实际上是将本地的 publishsettings 文件上传至 Azure China 的 Management Certificates。我们可以打开[管理门户](https://manage.windowsazure.cn)。点击设置，并选择管理证书，查看上传的publishsettings文件。如下图：
+	上面的命令实际上是将本地的 publishsettings 文件上传至 Azure China 的 Management Certificates。我们可以打开[管理门户](https://manage.windowsazure.cn)。点击设置，并选择管理证书，查看上传的 publishsettings 文件。如下图：
 
 	![vm_powershell4](./media/azure-Iaas-user-manual-part2/vm_powershell4.png)
 
@@ -761,7 +761,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 	![vm_powershell6](./media/azure-Iaas-user-manual-part2/vm_powershell6.png)
 
-	上图中，可以查看到，这里的 Azure PowerShell已经关联两个订阅，分为别POC和Internal Billing。
+	上图中，可以查看到，这里的 Azure PowerShell 已经关联两个订阅，分为别 POC 和 Internal Billing。
 
 2.	在某些情况下，我们要设置默认的订阅，那么我们可以执行以下命令：
 

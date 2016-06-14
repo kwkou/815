@@ -38,7 +38,7 @@
 
 ##<a id="section_1"></a> 1. 前言
 
-**本文原文为微软云构架师Lei Zhang所写，可访问其[个人博客](http://www.cnblogs.com/threestone/archive/2012/01/06/2382322.html)。**
+**本文原文为微软云构架师 Lei Zhang 所写，可访问其[个人博客](http://www.cnblogs.com/threestone/archive/2012/01/06/2382322.html)。**
 
 ##<a name="section_2"></a> 2. 读者
 Azure 是平台产品，本文只详细介绍如何创建和管理 Azure Web 应用。本文适合开发人员阅读。
@@ -82,7 +82,7 @@ Azure Web 应用是一个多租户的环境。Azure Web 应用架构借鉴了 Mi
 
 2.	**前端服务器 (Frontend)**
 
-	前端服务器是 Azure Web 应用系统的入口服务器。每个部署单元通常有多台前端服务器。Azure 负载均衡设备负责把客户的请求分发到前端服务器。前端服务器上安装有扩展的 IIS Application Request Routing(ARR)。 IIS ARR 是一个工作在HTTP层的负载均衡组件，它是前端服务器的最重要的组件。建议您阅读[这篇文章](http://www.iis.net/downloads/microsoft/application-request-routing)帮助您更好的理解前端服务器的工作原理。
+	前端服务器是 Azure Web 应用系统的入口服务器。每个部署单元通常有多台前端服务器。Azure 负载均衡设备负责把客户的请求分发到前端服务器。前端服务器上安装有扩展的 IIS Application Request Routing(ARR)。 IIS ARR 是一个工作在 HTTP 层的负载均衡组件，它是前端服务器的最重要的组件。建议您阅读[这篇文章](http://www.iis.net/downloads/microsoft/application-request-routing)帮助您更好的理解前端服务器的工作原理。
 
 	前端服务器主要提供三个功能：
 
@@ -92,11 +92,11 @@ Azure Web 应用是一个多租户的环境。Azure Web 应用架构借鉴了 Mi
 
 3.	**部署服务器 (Publishing Server)**
 
-	Azure Web 应用提供多种部署方式，比如 GIT，WebDeploy，FTP 等。只有 FTP 部署通过部署服务器完成。同时，FTP 提供了诊断日志下载功能。GIT 和WebDeploy 直接通过客户网站本身完成部署任务。
+	Azure Web 应用提供多种部署方式，比如 GIT，WebDeploy，FTP 等。只有 FTP 部署通过部署服务器完成。同时，FTP 提供了诊断日志下载功能。GIT 和 WebDeploy 直接通过客户网站本身完成部署任务。
 
 4.	**文件服务器 (File Server)**
 
-	文件服务器通过 Azure 云存储提供文件服务，包括客户网站文件，配置文件，诊断日志和临时文件等。客户的网站文件保存在文件服务器，工作服务器通过UNC共享路径的方式访问网站文件。
+	文件服务器通过 Azure 云存储提供文件服务，包括客户网站文件，配置文件，诊断日志和临时文件等。客户的网站文件保存在文件服务器，工作服务器通过 UNC 共享路径的方式访问网站文件。
 
 5.	**运行时数据库 (Runtime Database)**
 
@@ -192,7 +192,7 @@ Azure Web 应用提供四种不同的服务类型，如下图：
 
 	* (1)	如果在共享 (Shared) 模式下，<mark>客户的计算资源是和其他用户共享的，不是独享的</mark>。也就是说，共享 Web 应用的资源是和别的用户共享 CPU。
 	* (2)	一个 Azure 账户最多只能创建 100 个类型为共享的 Azure Web 应用
-	* (3)	在共享模式下，一个 Azure Web 应用最多能使用的存储大小为1GB
+	* (3)	在共享模式下，一个 Azure Web 应用最多能使用的存储大小为 1GB
 	* (4)	在共享模式下，一个 Azure Web App 每天仅有 240 分钟的 CPU 计算时间
 	* <mark>(5)	在共享模式下，Azure Web 应用支持横向扩展功能，且横向支持最多 6 个共享实例</mark>
 	* <mark>(6)	在共享模式下，Azure Web 应用是没有服务级别协议保障的</mark>
@@ -213,7 +213,7 @@ Azure Web 应用提供四种不同的服务类型，如下图：
 	* (3)	一个 Azure 账户可以创建无限多个类型为标准的 Azure Web 应用
 	* (4)	在标准模式下，一个 Azure Web 应用最多能使用的存储大小为 50GB
 	* (5)	在标准模式下，Azure Web 应用支持横向扩展功能，且横向支持最多 10 个独享的实例
-	* <mark>(6)	在标准模式下，Azure Web 应用支持99.9%的服务级别协议</mark>
+	* <mark>(6)	在标准模式下，Azure Web 应用支持 99.9% 的服务级别协议</mark>
 
 最后再强调一下，Azure Web 应用的服务类型，只有基本和标准下，才有服务级别协议保障。
 
@@ -248,7 +248,7 @@ Azure Global 的 IP Rang 信息，可以参考[这里](http://www.microsoft.com/
 
 Azure Web 应用是一个多租户的环境，每个部署单元有一个可以通过 Internet 访问的入口 IP (我们称之为 VIP)。
 
-所有的网站的DNS都指向该 VIP（配置 IP SSL 除外，采用 IP SSL 可以获得单独的公网入口 IP）。客户端的所有HTTP请求都发往该 VIP，Azure 的网络设备/服务负责进行地址转换并将请求转发到 Azure Web 应用的前端服务器。然后，由前端服务器将 HTTP 请求转发到对应的工作服务器。
+所有的网站的DNS都指向该 VIP（配置 IP SSL 除外，采用 IP SSL 可以获得单独的公网入口 IP）。客户端的所有 HTTP 请求都发往该 VIP，Azure 的网络设备/服务负责进行地址转换并将请求转发到 Azure Web 应用的前端服务器。然后，由前端服务器将 HTTP 请求转发到对应的工作服务器。
 
 架构图同 [3.4 节](#section_3_4)，如下：
 
@@ -256,7 +256,7 @@ Azure Web 应用是一个多租户的环境，每个部署单元有一个可以�
  
 在不使用 IP SSL 的情况下，所有 Azure 用户的 Azure Web 应用的入口公网 IP 地址 (Inbound VIP) 是共享的。
 
-如果客户部署在 Azure Web 应用需要调用外部的网络服务，比如 SQL Azure, MySQL，Bing MAPI API，等等。Azure Web 应用使用该 VIP 连接外部服务。部署在同一个部署单元的所有网站在调用外部网络服务时都使用该 VIP。随着网站数目的增加，单一的 VIP已经不能满足客户的需要。为此，我们增加了四个出口 VIP（入口 VIP 同时会作为出口 VIP）。具体信息如下：
+如果客户部署在 Azure Web 应用需要调用外部的网络服务，比如 SQL Azure, MySQL，Bing MAPI API，等等。Azure Web 应用使用该 VIP 连接外部服务。部署在同一个部署单元的所有网站在调用外部网络服务时都使用该 VIP。随着网站数目的增加，单一的 VIP 已经不能满足客户的需要。为此，我们增加了四个出口 VIP（入口 VIP 同时会作为出口 VIP）。具体信息如下：
 
 1.	部署单元：BJB-001 (Azure 北京数据中心)
 
@@ -303,7 +303,7 @@ Azure Web 应用提供四种不同的服务类型：
  
 1.	免费 (Free)
 
-	* (1)	在免费模式下，客户的 Web 应用是不收取费用的。但是每一个 Azure Web 应用每天仅有60分钟的CPU计算时间。
+	* (1)	在免费模式下，客户的 Web 应用是不收取费用的。但是每一个 Azure Web 应用每天仅有 60 分钟的 CPU 计算时间。
 	* <mark>(2)	在免费模式下，Azure Web 应用是没有服务级别协议保障的</mark>
 
 2.	共享 (Shared)
@@ -332,7 +332,7 @@ Azure Web 应用提供四种不同的服务类型：
 * <mark>(5)	只有在基本和标准模式下，Azure Web 应用才支持 99.9% 的服务级别协议</mark>
 
 ###<a name="section_3_13"></a> 3.13 Azure Web 应用停止计费
-<font color="red">最后强调一下，当我们关闭Azure Web 应用的时候，还是会继续计费的。如下图：</font>
+<font color="red">最后强调一下，当我们关闭 Azure Web 应用的时候，还是会继续计费的。如下图：</font>
 
 ![web_app](./media/azure-web-apps-user-manual-part1/web_app.png)
 

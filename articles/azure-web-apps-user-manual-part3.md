@@ -52,7 +52,7 @@
 
 	![deploy3](./media/azure-web-apps-user-manual-part3/deploy3.png)
 
-	上图红色区域，我们就可以在本地Git把代码库部署到 Azure Web 应用
+	上图红色区域，我们就可以在本地 Git 把代码库部署到 Azure Web 应用
 
 4.	或者我们从外部 Git 来部署，如下图：
 
@@ -65,7 +65,7 @@
 ###<a name="section_5_2"></a> 5.2 修改 Azure Web 应用时区
 1.	默认情况下，Azure Web 应用默认的系统时间是 UTC 时区。
 
-	比如我们在本地使用 Visual Studio 2013 创建 Web 应用项目，在 Default.aspx.cs输入以下代码：
+	比如我们在本地使用 Visual Studio 2013 创建 Web 应用项目，在 Default.aspx.cs 输入以下代码：
 
 		Label1.Text = DateTime.Now.ToString();
 
@@ -358,7 +358,7 @@
 
 	![java8](./media/azure-web-apps-user-manual-part3/java8.png)
 
-9.	打开当前目录下的 context.xml 文件，设置 context 的 reloadable 参数为"true"：
+9.	打开当前目录下的 context.xml 文件，设置 context 的 reloadable 参数为 "true"：
 
 	![java9](./media/azure-web-apps-user-manual-part3/java9.png)
 
@@ -418,7 +418,7 @@
 
 	![java14](./media/azure-web-apps-user-manual-part3/java14.png)
 
-####<a name="section_5_4_5"></a> 5.4.5 Java 8 下PermGen 及参数设置
+####<a name="section_5_4_5"></a> 5.4.5 Java 8 下 PermGen 及参数设置
 在上一章节中，我们定制化使用了 Java 8 环境，使用我们的测试页面打印出了 JVM 基本参数，但如果我们自己观察，会发现在 MXBeans 中，没有出现 PermGen 的使用数据，初始大小等信息，即使我们已经设置了大小：
 
 ![java15](./media/azure-web-apps-user-manual-part3/java15.png)
@@ -490,7 +490,7 @@
 
 2.	设置完毕后，我们可以点击上图的保存，或者立刻备份
 
-	备份完毕后，我们可以在 leiwebsite存储这个存储账号里。
+	备份完毕后，我们可以在 leiwebsite 存储这个存储账号里。
 
 	![backup6](./media/azure-web-apps-user-manual-part3/backup6.png)
 
@@ -535,7 +535,7 @@
 * <mark>(2)	客户拥有根域名或者一个二级域名，假设是 www.contoso.com.cn </mark>
 * <mark>(3)	客户的 DNS 供应商也一起参与</mark>
 
-我们本节实现的目标是：客户部署在 Azure Web 应用上的网站 (http://contosowebapp.chinacloudsites.cn)，使用自己备案过的DNS地址。
+我们本节实现的目标是：客户部署在 Azure Web 应用上的网站 (http://contosowebapp.chinacloudsites.cn)，使用自己备案过的 DNS 地址。
 
 1.	首先我们在缩放页面，把 Azure Web 应用设置为<mark>共享、基本或者标准。这有这三种才支持自定义域名，</mark>如下图：
 
@@ -574,7 +574,7 @@
 
 	<mark>世纪互联目前的流程是，先通知用户在规定时间内按要求对网站进行关闭。如用户不能在规定时间内按要求完成，或世纪互联无法联系到用户时，会采取暂停用户部署或订阅服务。</mark>
 
-4.	如果客户之前在 IDC 托管机房，或者其他网络接入商(如万网等)注册过顶级域名 (contoso.com.cn)，且该域名指向的公网IP地址不在 Azure 云平台。
+4.	如果客户之前在 IDC 托管机房，或者其他网络接入商(如万网等)注册过顶级域名 (contoso.com.cn)，且该域名指向的公网 IP 地址不在 Azure 云平台。
 
 	现在需要将 IP 指向到 Azure 云平台，根据现有的备案要求，需要用户到世纪互联提交备案信息，做新增接入操作。具体请联系世纪互联。
 
