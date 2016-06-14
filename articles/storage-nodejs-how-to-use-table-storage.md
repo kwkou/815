@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="如何通过 Node.js 使用 Azure 表存储 | Azure"
-	description="使用 Azure 表存储（一种 NoSQL 数据存储）将结构化数据存储在云中。"
+	description="了解如何使用 Azure 表存储。代码示例使用 Node.js API 编写。" 
 	services="storage" 
 	documentationCenter="nodejs" 
 	authors="MikeWasson" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="04/29/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="04/08/2016"
+	wacn.date="05/23/2016"/>
 
 
 # 如何通过 Node.js 使用 Azure 表存储
@@ -438,4 +438,4 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [使用 Azure 表服务的 Node.js Web 应用]: /documentation/articles/storage-nodejs-use-table-storage-web-site
   [在 Azure App Service 中创建 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0516_2016-->

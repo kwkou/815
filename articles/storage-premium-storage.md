@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="04/26/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="03/28/2016"
+	wacn.date="05/23/2016"/>
 
 
 # 高级存储：适用于 Azure 虚拟机工作负荷的高性能存储
