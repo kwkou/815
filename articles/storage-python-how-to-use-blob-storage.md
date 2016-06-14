@@ -1,6 +1,6 @@
 <properties
 	pageTitle="如何通过 Python 使用 Azure Blob 存储 | Azure"
-	description="了解如何通过 Python 使用 Azure Blob 服务上载、列出、下载和删除 Blob。"
+	description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
 	services="storage"
 	documentationCenter="python"
 	authors="emgerner-msft"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="02/29/2016"
-	wacn.date="04/18/2016"/>
+    ms.date="04/29/2016"
+	wacn.date="06/13/2016"/>
 
 # 如何通过 Python 使用 Azure Blob 存储
 
@@ -122,4 +122,4 @@
 [Python Azure 包]: https://github.com/Azure/azure-storage-python
 [Python Azure 存储服务包]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0606_2016-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="开始使用队列存储和 Visual Studio 连接服务 (ASP.NET 5) | Azure"
+	pageTitle="队列存储和 Visual Studio 连接服务入门 (ASP.NET 5) | Azure"
 	description="如何开始在 Visual Studio 中的 ASP.NET 5 项目中使用 Azure 队列存储"
 	services="storage"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="02/21/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="05/08/2016"
+	wacn.date="06/13/2016"/>
 
 # 开始使用队列存储和 Visual Studio 连接服务 (ASP.NET 5)
 
@@ -92,7 +92,9 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 ##读取和删除队列中的消息
 
-你的代码分两步从队列中删除消息（取消对消息的排队）。1.调用 **GetMessageAsync**，以获得队列中的下一条消息。从 **GetMessageAsync** 返回的消息将变为对从此队列读取消息的任何其他代码不可见。默认情况下，此消息将持续 30 秒不可见。2.若要完成从队列中删除消息的操作，请调用 **DeleteMessageAsync**。
+你的代码分两步从队列中删除消息（取消对消息的排队）。
+1. 调用 **GetMessageAsync**，以获得队列中的下一条消息。从 **GetMessageAsync** 返回的消息将变为对从此队列读取消息的任何其他代码不可见。默认情况下，此消息将持续 30 秒不可见。
+2.	若要完成从队列中删除消息的操作，请调用 **DeleteMessageAsync**。
 
 此删除消息的两步过程可确保，如果你的代码因硬件或软件故障而无法处理消息，则你的代码的其他实例可以获取相同消息并重试。以下代码将在处理消息后立即调用 **DeleteMessageAsync**。
 
@@ -160,4 +162,4 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 [AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../includes/vs-storage-dotnet-queues-next-steps.md)]
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0606_2016-->

@@ -8,8 +8,8 @@
 	editor="na" />
 <tags 
 	ms.service="storage"
-   ms.date="04/11/2016"
-	wacn.date="05/23/2016" />
+   ms.date="04/19/2016"
+	wacn.date="06/13/2016" />
 
 # Azure 存储空间可伸缩性和性能目标
 
@@ -18,8 +18,6 @@
 本主题介绍 Azure 存储空间的可伸缩性和性能主题。有关其他 Azure 限制的摘要，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits)。
 
 >[AZURE.NOTE] 所有存储帐户都在新的扁平网络拓扑上运行，无论它们在何时创建，都支持下文概述的可伸缩性和性能目标。有关 Azure 存储的扁平网络体系结构和可伸缩性的详细信息，请参阅 [Azure 存储空间：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)。
-
-<!-- -->
 
 >[AZURE.IMPORTANT] 以下所列的可伸缩性和性能目标为高端目标，但却是能够实现的。在任何情况下，你的存储帐户实现的请求速率和带宽取决于存储对象大小、使用的访问模式、应用程序执行的工作负荷类型。请务必测试你的服务，以确定其性能是否达到你的要求。如果可能，应避免流量速率突发峰值，并确保流量在各个分区上均匀分布。
 
@@ -36,7 +34,7 @@
 
 [AZURE.INCLUDE [azure-storage-limits-vm-disks](../includes/azure-storage-limits-vm-disks.md)]
 
-有关其他详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-linux-sizes)。
+请参阅 [Windows VM 大小](/documentation/articles/virtual-machines-windows-sizes)或 [Linux VM 大小](/documentation/articles/virtual-machines-linux-sizes)了解其他详细信息。
 
 ### 标准存储帐户
 
@@ -81,5 +79,4 @@
 - [Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist)
 - [Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
-
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0606_2016-->

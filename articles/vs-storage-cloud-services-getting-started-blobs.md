@@ -1,5 +1,5 @@
-<properties 
-	pageTitle="开始使用 blob 存储和 Visual Studio 连接服务（云服务）| Azure"
+<properties
+	pageTitle="Blob 存储和 Visual Studio 连接服务（云服务）入门 | Azure"
 	description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的云服务项目中使用 Azure Blob 存储"
 	services="storage"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage"
-	ms.date="02/21/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="05/08/2016"
+	wacn.date="06/13/2016"/>
 
 # 开始使用 Azure Blob 存储和 Visual Studio 连接服务（云服务项目）
 
@@ -157,7 +157,7 @@ Azure 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用块 Bl
 	Block blob of length 399751: https://<accountname>.blob.core.chinacloudapi.cn/photos/2011/photo7.jpg
 	Block blob of length 505623: https://<accountname>.blob.core.chinacloudapi.cn/photos/photo1.jpg
 
-有关详细信息，请参阅 [CloudBlobContainer.ListBlobs][]。
+有关详细信息，请参阅 [CloudBlobContainer.ListBlobs](https://msdn.microsoft.com/zh-cn/library/azure/dd135734.aspx)。
 
 ## 下载 Blob
 
@@ -236,4 +236,4 @@ Azure 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用块 Bl
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0606_2016-->

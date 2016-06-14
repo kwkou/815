@@ -1,5 +1,5 @@
 <properties
-	pageTitle="开始使用 blob 存储和 Visual Studio 连接服务 (ASP.NET 5) | Azure"
+	pageTitle="Blob 存储和 Visual Studio 连接服务入门 (ASP.NET 5) | Azure"
 	description="在使用 Visual Studio 连接服务创建存储帐户后，如何开始在 Visual Studio ASP.NET 5 项目中使用 Azure Blob 存储"
 	services="storage"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage"
-	ms.date="02/21/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="05/08/2016"
+	wacn.date="06/13/2016"/>
 
 # 开始使用 Azure Blob 存储和 Visual Studio 连接服务 (ASP.NET 5)
 
@@ -151,4 +151,4 @@ Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0606_2016-->
