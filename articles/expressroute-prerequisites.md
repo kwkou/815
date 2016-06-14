@@ -8,8 +8,8 @@
    editor=""/>
 <tags
    ms.service="expressroute"
-   ms.date="01/16/2016"
-   wacn.date="03/17/2016"/>
+   ms.date="04/19/2016"
+   wacn.date="06/06/2016"/>
 
 
 # ExpressRoute 先决条件  
@@ -45,7 +45,7 @@
 ## 后续步骤
 
 - 有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。
-- 查找服务提供商。请参阅 [ExpressRoute 合作伙伴和对等位置](/documentation/articles/expressroute-locations)。
+- 查找 ExpressRoute 连接服务提供商。请参阅 [ExpressRoute 合作伙伴和对等位置](/documentation/articles/expressroute-locations)。
 - 请参阅[路由](/documentation/articles/expressroute-routing)的要求。
 - 配置 ExpressRoute 连接。
 	- [创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)

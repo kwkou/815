@@ -1,15 +1,15 @@
 <properties
-   pageTitle="ExpressRoute 客户路由器配置示例 | Microsoft Azure"
+   pageTitle="ExpressRoute 客户路由器配置示例 | Azure"
    description="本页提供 Cisco 和 Juniper 路由器的路由器配置示例。"
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags
    ms.service="expressroute"
-   ms.date="01/16/2016"
-   wacn.date="03/17/2016"/>
+   ms.date="04/19/2016"
+   wacn.date="06/06/2016"/>
 
 # 用于设置和管理路由的路由器配置示例
 

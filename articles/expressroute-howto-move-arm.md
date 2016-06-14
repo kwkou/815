@@ -9,8 +9,8 @@
    tags="azure-resource-manager"/>
 <tags
    ms.service="expressroute"
-   ms.date="04/01/2016"
-   wacn.date="05/16/2016"/>
+   ms.date="05/05/2016"
+   wacn.date="06/06/2016"/>
 
 
 # 将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型
@@ -94,7 +94,7 @@
 
     Get-AzureDedicatedCircuit
 
-服务密钥必须已列出。现在，你可以管理 ExpressRoute 线路的链接。以下文章将引导你了解如何管理 ExpressRoute 线路的链接：
+服务密钥必须已列出。现在，你可以通过适用于经典 VNet 的标准经典部署模型命令以及适用于 ARM VNET 的标准 ARM 命令来管理到 ExpressRoute 线路的链接。以下文章将引导你了解如何管理 ExpressRoute 线路的链接：
 
 - [在 Resource Manager 部署模型中将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm)
 - [在经典部署模型中将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)
