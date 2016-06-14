@@ -9,7 +9,11 @@
 
 1. 登录到 [Azure 门户](http://manage.windowsazure.cn/)。
 
-2. 在 Azure 门户中，单击“新建”>“数据服务”>“恢复服务”>“备份保管库”>“快速创建”（请参阅下图）。
+2. 在 Azure 门户中，单击“新建”>“混合集成”>“备份”。单击“备份”时，会自动切换到经典门户（在“注释”之后显示）。
+
+    ![Ibiza 门户](./media/backup-create-vault-for-vms/Ibiza-portal-backup01.png)
+
+    >[AZURE.NOTE] 如果你的订阅上次是在经典门户中使用的，则你的订阅可能会在经典门户中打开。在此情况下，若要创建备份保管库，请单击“新建”>“数据服务”>“恢复服务”>“备份保管库”>“快速创建”（请参阅下图）。
 
     ![创建备份保管库](./media/backup-create-vault-for-vms/backup_vaultcreate.png)
 
@@ -31,4 +35,4 @@
 
     ![“仪表板”页中的虚拟机备份说明](./media/backup-create-vault-for-vms/vmbackup-instructions.png)
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0530_2016-->
