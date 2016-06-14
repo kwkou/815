@@ -22,7 +22,7 @@
 	- 6.1 [设置虚拟机端口映射](#section_6_1)
 	- 6.2 [设置虚拟机端口负载均衡](#section_6_2)
 	- 6.3 [设置负载均衡器规则](#section_6_3)
-	- 6.4 [设置Web服务器固定 IP](#section_6_4)
+	- 6.4 [设置 Web 服务器固定 IP](#section_6_4)
 	- 6.5 [超过 1TB 容量的磁盘](#section_6_5)
 - 7.	[后续运维及开发测试](#section_7)
 - 8.	[注意事项](#section_8)
@@ -105,7 +105,7 @@ Azure 虚拟机在默认情况下，只开启了 RDP 的端口和 PowerShell 的
 
 	![advance10](./media/azure-Iaas-user-manual-part3/advance10.png)
 
-9.	这样第  2台 ContosoWeb02 的虚拟机 80 端口的负载均衡器负载均衡器也设置好了
+9.	这样第 2 台 ContosoWeb02 的虚拟机 80 端口的负载均衡器负载均衡器也设置好了
 
 	![advance11](./media/azure-Iaas-user-manual-part3/advance11.png)
 
@@ -145,12 +145,12 @@ Azure Load Balancer (负载均衡器)的规则，是由五要素组成 source IP
 
 有关固定 IP 的详细内容，请参考 [这篇博客](http://www.cnblogs.com/threestone/p/4335382.html)。
 
-###<a name="section_6_5"></a> 6.5 超过1TB容量的磁盘
+###<a name="section_6_5"></a> 6.5 超过 1TB 容量的磁盘
 Azure 挂载的磁盘，单块最大容量为 1023GB。如果我们需要磁盘分区超过 1TB 的情况，请使用 Azure Storage Space。
 参考：http://www.cnblogs.com/threestone/p/3618113.html 
 
-6.6 高IOPS的Azure VM
-当我们需要更高的IOPS的时候，比如某些场景需要更高性能的磁盘读写，这时候就需要用到高级存储Premium Storage。
+6.6 高 IOPS 的 Azure VM
+当我们需要更高的 IOPS 的时候，比如某些场景需要更高性能的磁盘读写，这时候就需要用到高级存储 Premium Storage。
 
 具体可以参考[这篇博客](http://www.cnblogs.com/threestone/p/4860660.html)
 
@@ -173,7 +173,7 @@ Azure 挂载的磁盘，单块最大容量为 1023GB。如果我们需要磁盘�
 
 	遇到这种情况，只能把 DNS 删除，保留虚拟机的 VHD 并重新创建 Azure VM。这会产生虚拟机的临时下线。
 
-	<mark>从可配置的角度来说，建议用户在刚开始创建Azure虚拟机的时候，直接设置虚拟机配置为D系列。这样可以在D系列VM和A系列VM来回切换。</mark>
+	<mark>从可配置的角度来说，建议用户在刚开始创建 Azure 虚拟机的时候，直接设置虚拟机配置为 D 系列。这样可以在 D 系列 VM 和 A 系列 VM 来回切换。</mark>
 
 2.	虚拟机维护
 
@@ -181,7 +181,7 @@ Azure 挂载的磁盘，单块最大容量为 1023GB。如果我们需要磁盘�
 
 3.	Windows Update
 
-	默认情况下，Windows Server虚拟机创建完毕后，会自动打开 Windows Update，这样会导致在同一个可用性集的多台 Azure 虚拟机在更新操作系统补丁的时候重启，请 IT 管理员谨慎使用 Windows Update，防止不必要的服务器重启。
+	默认情况下，Windows Server 虚拟机创建完毕后，会自动打开 Windows Update，这样会导致在同一个可用性集的多台 Azure 虚拟机在更新操作系统补丁的时候重启，请 IT 管理员谨慎使用 Windows Update，防止不必要的服务器重启。
 
 4.	时区
 
@@ -217,7 +217,7 @@ Azure 挂载的磁盘，单块最大容量为 1023GB。如果我们需要磁盘�
 
 	建议用户在创建 Azure 虚拟机的时候，不要把所有的虚拟机磁盘都保存在同一个存储账号里。因为 1 个存储账号是有 IOPS 上限 20000。
 
-	<mark>建议每3台虚拟机使用同一个存储账号</mark>，第 4 台虚拟机使用另外一个存储账号。
+	<mark>建议每 3 台虚拟机使用同一个存储账号</mark>，第 4 台虚拟机使用另外一个存储账号。
 
 10.	将文件、图片、照片等二进制文件保存到 Azure 存储中，降低虚拟机的互联网带宽压力。
 
@@ -225,7 +225,7 @@ Azure 挂载的磁盘，单块最大容量为 1023GB。如果我们需要磁盘�
 
 11.	压力测试
 
-	Azure 本身提供 Anti-DDos 功能。当我们在项目上线之前，会通过客户端压力测试工具对 Azure 服务进行压力测试。这时候就需要预先填写Azure渗透性测试表
+	Azure 本身提供 Anti-DDos 功能。当我们在项目上线之前，会通过客户端压力测试工具对 Azure 服务进行压力测试。这时候就需要预先填写Azure 渗透性测试表
 
 	具体可以参考[这篇文章](http://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/documents/Penetration%20Test%20Questionnaire.docx)。
 

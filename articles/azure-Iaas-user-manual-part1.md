@@ -48,15 +48,15 @@
 
 ##<a name="section_1"></a> 1.	前言
 
-**本文原文为微软云构架师Lei Zhang所写，可访问其[个人博客](http://www.cnblogs.com/threestone/archive/2012/01/06/2382322.html)。**
+**本文原文为微软云构架师 Lei Zhang 所写，可访问其[个人博客](http://www.cnblogs.com/threestone/archive/2012/01/06/2382322.html)。**
 
 ##<a name="section_2"></a> 2.	读者
 Azure 是平台产品，本章只详细介绍如何创建和管理 Azure 虚拟机。本文适合开发人员、IT 运维人员阅读。
 
 另外本文会牵涉到部分 Azure 订阅相关内容，请读者先阅读 [《Azure 管理手册》](/documentation/articles/azure-ea-portal-user-manual)。
 
-##<a name="section_3"></a> 3.	Azure IaaS相关技术
-1.	**Azure 底层是否由 System Center 和Hyper-V 构成?**
+##<a name="section_3"></a> 3.	Azure IaaS 相关技术
+1.	**Azure 底层是否由 System Center 和 Hyper-V 构成?**
 
 	Azure 虽然支持 Hyper-V 的 VHD 直接上传至 Azure 云端进行管理，但是 Azure 底层技术是微软自己研发的、独有的技术，且不对外提供。如果客户想构建属于自己的私有云平台，可以使用 Azure Stack，采用微软的 System Center + Windows Server 产品，构建自己的私有云平台。
 
@@ -74,15 +74,15 @@ Azure 是平台产品，本章只详细介绍如何创建和管理 Azure 虚拟�
 
 	在传统 IDC 机房托管中，如果物理服务器发生了宕机，那所有的虚拟机都会宕机，需要人工或者监控软件来进行重新部署。
 
-	从文件高可用来说，Azure 虚拟机是以 VHD 格式保存的，并且在同一个数据中心做了三重冗余(支持跨数据中心的异地冗余)，保证 Azure 虚拟机底层 VHD 文件的99.9% 服务级别协议。
+	从文件高可用来说，Azure 虚拟机是以 VHD 格式保存的，并且在同一个数据中心做了三重冗余(支持跨数据中心的异地冗余)，保证 Azure 虚拟机底层 VHD 文件的 99.9% 服务级别协议。
 
-	从数据中心架构来说，Azure 具有自我管理的功能。Azure Fabric Controller 是管理 Azure 数据中心的中控管理系统，你可以认为他是Azure 数据中心的大脑。Azure Fabric Controller 本身是融合了很多微软系统管理技术的总成，包含对虚拟机的管理 (System Center Virtual Machine Manager)，对作业环境的管理 (System Center Operation Manager)等，在 Fabric Controller 中被发挥得淋漓尽致。
+	从数据中心架构来说，Azure 具有自我管理的功能。Azure Fabric Controller 是管理 Azure 数据中心的中控管理系统，你可以认为他是Azure 数据中心的大脑。Azure Fabric Controller 本身是融合了很多微软系统管理技术的总成，包含对虚拟机的管理 (System Center Virtual Machine Manager)，对作业环境的管理 (System Center Operation Manager) 等，在 Fabric Controller 中被发挥得淋漓尽致。
 
-	Azure Fabric Controller 负责自动化的管理数据中心内所有的实体服务器，包含由用户要求的 Azure Guest OS 的部署工作，定时的 Hotfix 修补，机器状态的监控，以及管理不同版本的VM镜像等重要核心工作。Fabric Controller 本身也具有高可用性。
+	Azure Fabric Controller 负责自动化的管理数据中心内所有的实体服务器，包含由用户要求的 Azure Guest OS 的部署工作，定时的 Hotfix 修补，机器状态的监控，以及管理不同版本的 VM 镜像等重要核心工作。Fabric Controller 本身也具有高可用性。
 
 	Fabric Controller 也处理虚拟机的健康管理工作 (Health Management) 工作，当 Azure Guest OS 发生死机时，<mark>会由 Fabric Controller 自动选择不同的实体机器重新部署与启动</mark>。
 
-	在单台 Guest OS的 情况下，当 Guest OS 宕机的时候，<mark>重新部署与启动 Guest OS 会需要花费一定的时间，会引起客户应用的短暂离线</mark>，所以 Azure 没有单个实例的 服务级别协议。
+	在单台 Guest OS 的 情况下，当 Guest OS 宕机的时候，<mark>重新部署与启动 Guest OS 会需要花费一定的时间，会引起客户应用的短暂离线</mark>，所以 Azure 没有单个实例的 服务级别协议。
 
 4.	**Azure 有没有单个实例的服务级别协议?**
 
@@ -182,7 +182,7 @@ Azure 是平台产品，本章只详细介绍如何创建和管理 Azure 虚拟�
 
 	<mark>注意：Azure 虚拟机 CPU 和 RAM 是固定搭配的，不可以按照用户的想法随意更改。</mark>
 
-##<a name="section_4"></a> 4.	Azure IaaS相关服务
+##<a name="section_4"></a> 4.	Azure IaaS 相关服务
 ###<a name="section_4_1"></a> 4.1 Azure 虚拟机的带宽问题
 这个问题请参考[这篇博客](http://www.cnblogs.com/threestone/p/4497625.html)。
 
@@ -191,7 +191,7 @@ Azure 虚拟网络是非常重要的概念，其主要作用有以下几点：
 
 1.	**将多台 Azure 虚拟机整合在统一网段或者子网里**
 
-	Azure 虚拟机具有两个IP地址，Public IP (VIP，<mark>注意其实是负载均衡器的 IP 地址，在这里近似认为是公网 IP</mark>) 和 Private IP。Public IP 是公网 IP，Azure China 的公网 IP 段请参考[这里](http://www.microsoft.com/en-us/download/details.aspx?id=42064)。
+	Azure 虚拟机具有两个 I P地址，Public IP (VIP，<mark>注意其实是负载均衡器的 IP 地址，在这里近似认为是公网 IP</mark>) 和 Private IP。Public IP 是公网 IP，Azure China 的公网 IP 段请参考[这里](http://www.microsoft.com/en-us/download/details.aspx?id=42064)。
 
 	Private IP 是内网 IP。Azure 数据中心的基础架构是非常强大的，通过 Private IP 我们可以实现数据中心内网的快速通信。
 
@@ -201,7 +201,7 @@ Azure 虚拟网络是非常重要的概念，其主要作用有以下几点：
 
 2.	**固定内网 IP 地址 (Private IP)**
 
-	在某些情况下，我们需要对 Azure 虚拟机固定内网IP地址，比如 AD 服务器，比如 Windows Server Cluster 集群，都需要依赖固定内网 IP 地址。这时候也需要使用 Azure 虚拟机网络。
+	在某些情况下，我们需要对 Azure 虚拟机固定内网 IP 地址，比如 AD 服务器，比如 Windows Server Cluster 集群，都需要依赖固定内网 IP 地址。这时候也需要使用 Azure 虚拟机网络。
 
 ###<a name="section_4_3"></a> 4.3 Azure 存储服务
 Azure 存储服务是云端的文件存储服务，简单理解是用户可以将本地的文件、图片、照片、虚拟机的 VHD (虚拟磁盘)等二进制文件保存在云端的存储服务中。
@@ -223,7 +223,7 @@ Azure 存储服务本身提供 99.9% 的服务级别协议，它提供三种高�
 
 2.	**跨数据中心的三重冗余 (Geo Redundant Storage, GRS)。**细心的用户会发现，Azure 在国外和国内的数据中心建设都是成对的，比如北京数据中心和上海数据中心。这是因为 Auzre 充分考虑了异地冗余的能力。在北京和上海数据中心之间会有专线连接，这个专线是内网数据中心之前数据同步专用的。
 
-	比如用户在上海数据中心(主要位置)创建了存储账号，并且开启了跨数据中心同步的能力。<mark>则上海数据中心是主节点，北京数据中心是备份节点。</mark>当用户往上海数据中心上传10GB电影，该电影文件不仅在上海数据中心做了三重冗余，在北京的数据中心(辅助位置)也会做三重冗余，文件一共做了六重冗余。举个例子，即使上海数据中心因为地震、战争、洪水完全被摧毁了，用户的数据还是安全的保存在北京的数据中心，文件真正做到了万无一失。
+	比如用户在上海数据中心(主要位置)创建了存储账号，并且开启了跨数据中心同步的能力。<mark>则上海数据中心是主节点，北京数据中心是备份节点。</mark>当用户往上海数据中心上传 10GB 电影，该电影文件不仅在上海数据中心做了三重冗余，在北京的数据中心(辅助位置)也会做三重冗余，文件一共做了六重冗余。举个例子，即使上海数据中心因为地震、战争、洪水完全被摧毁了，用户的数据还是安全的保存在北京的数据中心，文件真正做到了万无一失。
 
 	在 GRS 情况下，对于上海数据中心在来说，事务在同一个数据中心的三重冗余是同步执行的。
 
@@ -259,13 +259,13 @@ Azure 存储服务本身提供 99.9% 的服务级别协议，它提供三种高�
 
 	启用该功能后，在主要区域无法读取数据时，可使用辅助位置读取更高可用性。该功能为”选择使用”，要求存储账户进行跨地域冗余复制。
 
-	举个例子，假设我在上海数据中心(主要位置)创建了Azure Storage，Storage Name为leizhangstorage，并且开启了**读取访问地域冗余 (Read Access – Geo Redundant Storage, RA-GRS)。**
+	举个例子，假设我在上海数据中心(主要位置)创建了 Azure Storage，Storage Name为leizhangstorage，并且开启了**读取访问地域冗余 (Read Access – Geo Redundant Storage, RA-GRS)。**
 	- (1)	我就可以通过 http://<accountname\>.blob.core.chinacloudapi.cn 访问主要位置的 Azure 存储帐户。
 	- (2)	然后还可以通过 http://<accountname\><mark>-secondary</mark>.blob.core.chinacloudapi.cn 访问辅助位置的 Azure 存储帐户
 	- (3)	在发生上海数据中心(主要位置)无法读取数据的时候，可以使用辅助位置的数据读取来提供高可用性。
 
 ####<a name="section_4_3_2"></a> 4.3.2 Azure存储服务的类型
-Azure存储服务提供三种不同类型的存储服务: Blob, 表, 队列。
+Azure 存储服务提供三种不同类型的存储服务: Blob, 表, 队列。
 
 #####<a name="section_4_3_2_1"></a> 4.3.2.1 Blob
 Blob 就是保存大型二进制对象，比如用来存储文件、图片、文档等二进制格式的文件。
@@ -328,7 +328,7 @@ Blob 的命名规则：
 有关 Azure PaaS 平台的 Web Role/Worker Role 的内容，请参考[这篇博客](http://www.cnblogs.com/threestone/p/4201065.html)。
 
 #####<a name="section_4_3_2_3"></a> 4.3.2.3 表
-这里的 Azure 存储表是非关系型数据表，不能与 SQL Server 的表相混淆。用户可以近似认为 Azure 存储表是NoSQL。
+这里的 Azure 存储表是非关系型数据表，不能与 SQL Server 的表相混淆。用户可以近似认为 Azure 存储表是 NoSQL。
 
 ![storage2](./media/azure-Iaas-user-manual-part1/storage2.png)
 

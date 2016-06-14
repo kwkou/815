@@ -82,10 +82,10 @@ Contoso 公司已经采购了 Azure China 服务，并且开发部门使用 Visu
 	![web_app2](./media/azure-web-apps-user-manual-part2/web_app2.png)
 
 	注意上图中：
-	* (1)	名称就是我们输入的DNS名称
+	* (1)	名称就是我们输入的 DNS 名称
 	* (2)	定价层为免费，就是我们在服务类型中的免费 (Free) 模式
 
-7.	然后我们在IE浏览器中输入创建成功的 Azure Web 应用 DNS 地址：http://leiwebsite.chinacloudsites.cn/，就可以看到欢迎界面，如下图：
+7.	然后我们在 IE 浏览器中输入创建成功的 Azure Web 应用 DNS 地址：http://leiwebsite.chinacloudsites.cn/，就可以看到欢迎界面，如下图：
 
 	![web_app_browse](./media/azure-web-apps-user-manual-part2/web_app_browse.png)
 
@@ -151,7 +151,7 @@ Contoso 公司已经采购了 Azure China 服务，并且开发部门使用 Visu
 	![visual_studio11](./media/azure-web-apps-user-manual-part2/visual_studio11.png)
 
 ###<a name="section_4_8"></a> 4.8 将网站代码通过 FTP 部署
-1.	如果使用的是 Visual Studio，当通过以上两节内容，下载了发布配置文件并通过 Visual Studio Publish，也可以通过FTP进行发布，如下图：
+1.	如果使用的是 Visual Studio，当通过以上两节内容，下载了发布配置文件并通过 Visual Studio Publish，也可以通过 FTP 进行发布，如下图：
 
 	![visual_studio12](./media/azure-web-apps-user-manual-part2/visual_studio12.png)
 
@@ -194,9 +194,9 @@ Contoso 公司已经采购了 Azure China 服务，并且开发部门使用 Visu
 ####<a name="section_4_9_1"></a> 4.9.1 横向扩展 Azure Web 应用
 在[第 3.8 节](/documentation/articles/azure-web-apps-user-manual-part1#section_3_8)中，已经介绍了 Azure Web 应用单个实例大小，如下：
 
-* (1)	小型，配置为：单核心，1.75GB内存
-* (2)	中型，配置为：双核心，3.5GB内存
-* (3)	大型，配置为：四核心，7GB内存
+* (1)	小型，配置为：单核心，1.75GB 内存
+* (2)	中型，配置为：双核心，3.5GB 内存
+* (3)	大型，配置为：四核心，7GB 内存
 
 在[第 3.9 节](/documentation/articles/azure-web-apps-user-manual-part1#section_3_9)中，介绍了 Azure Web 应用提供不同的服务类型，如下图所示：
 

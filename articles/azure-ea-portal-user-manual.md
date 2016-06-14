@@ -18,8 +18,8 @@
 
 1.	[前言](#foreword)
 2.	[读者](#reader)	
-3.	[Azure China基本概念](#concept)  
-	- 3.1	[MSDN订阅](#msdn-subscription)  
+3.	[Azure China 基本概念](#concept)  
+	- 3.1	[MSDN 订阅](#msdn-subscription)  
 	- 3.2	[Org ID](#orgid)  
 	- 3.3	[账户](#account)  
 	- 3.4	[订阅](#subscription)  
@@ -53,7 +53,7 @@ Azure 是平台产品，本文只详细介绍如何管理 Azure 账户、订阅�
 
 ##<a id="concept"></a>3. Azure China 基本概念
 
-###<a id="msdn-subscription"></a>3.1 MSDN订阅
+###<a id="msdn-subscription"></a>3.1 MSDN 订阅
 我在 Azure Global 拥有测试账号或者 MSDN 订阅账号，这个账号可以在国内 Azure China 使用吗？  
 
 回答:不可以。 Azure 在国内和国外有 2 套系统。  
@@ -97,7 +97,7 @@ Org ID 是 Azure China 特殊的用户名系统。
 
 (2)	中国联通的手机账号也会告诉用户，这个月话费的详细账单和总费用。
 
-在 Azure 中，一个 EA(Enterprise Agreement) 合同可以创建无限多个订阅。  
+在 Azure 中，一个 EA (Enterprise Agreement) 合同可以创建无限多个订阅。  
 
 订阅就好比一张 SIM 卡。比如用户可以创建 ABC，XYZ 两个不同的订阅，并且可以在这 2 个不同的订阅中，创建和使用 Azure 服务，比如：虚拟机，存储，SQL 数据库等等。订阅就类似资源池的概念。  
 
@@ -228,15 +228,15 @@ Azure 企业门户拥有以下功能：
 
 ![添加账户][2]
 
-(2)	按照流程，将测试账户(admin@contoso.partner.onmschina.cn)添加为一个账户管理员  
+(2)	按照流程，将测试账户 (admin@contoso.partner.onmschina.cn) 添加为一个账户管理员  
 
 ![添加管理员][3]
 
-(3)	添加成功后，测试账户(admin@contoso.partner.onmschina.cn)将列在账户列表中
+(3)	添加成功后，测试账户 (admin@contoso.partner.onmschina.cn) 将列在账户列表中
 
 ![账户列表][4]  
 
-(4)	注销当前用户，以测试账户(admin@contoso.partner.onmschina.cn) 重新登陆 [Azure 企业门户](http://ea.windowsazure.cn)。登陆成功后，请点击”刷新订阅”  
+(4)	注销当前用户，以测试账户 (admin@contoso.partner.onmschina.cn) 重新登陆 [Azure 企业门户](http://ea.windowsazure.cn)。登陆成功后，请点击”刷新订阅”  
 
 ![刷新订阅][5]  
 
