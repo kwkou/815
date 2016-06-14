@@ -89,9 +89,9 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 		$sudo make TARGET=linux2628 PREFIX=/usr/local/haproxy
 		$sudo make install PREFIX=/usr/local/haproxy
 
-	其他的linux发行版本只在$sudo yum install gcc这步上有区别，比如：
+	其他的 linux 发行版本只在 $sudo yum install gcc 这步上有区别，比如：
 
-	Ubuntu 用 sudo apt-get install make gcc           #---》 Ubuntu默认没有安装make
+	Ubuntu 用 sudo apt-get install make gcc           #---》 Ubuntu 默认没有安装 make
 
 	SLES 用 sudo zypper install gcc
 
@@ -163,7 +163,7 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 		stats	uri	/haproxy-admin
 		stats	auth	admin:adminpass
 
-	重启HAProxy服务
+	重启 HAProxy 服务
 
 		$sudo /usr/local/haproxy/sbin/haproxy -f /usr/local/haproxy/haproxy.cfg -st `cat /usr/local/haproxy/haproxy.pid`
 
@@ -175,7 +175,7 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 
 	![](./media/open-source-azure-virtual-machines-linux-install-and-configure-haproxy/configure4.png)
 
-##<a namae="configure-session-binding"></a> 配置 session 绑定
+##<a name="configure-session-binding"></a> 配置 session 绑定
 
 有多种方式实现，下面介绍三种方式。
 
@@ -321,7 +321,7 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 		$sudo ldd haproxy|grep ssl
 		$sudo make install PREFIX=/usr/local/haproxy
 
-2. 修改 /usr/local/haproxy/haproxy.cfg 的内容。修改 defaults, frontend 和 backend 关于 mode http 的部分，将mode http 改成 mode tcp 。修改后内容如下
+2. 修改 /usr/local/haproxy/haproxy.cfg 的内容。修改 defaults, frontend 和 backend 关于 mode http 的部分，将 mode http 改成 mode tcp 。修改后内容如下
 
 		defaults
 		       mode    tcp
@@ -347,5 +347,5 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 3. 在 HAProxy VM 以及后端两台 web server 打开 443 端口。参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)
 4. 在 web server 配置 SSL。请参考 apache 官网 [https://httpd.apache.org/docs/2.2/ssl/](https://httpd.apache.org/docs/2.2/ssl/)
 
-更多关于HAProxy的详细信息请参考[官网](http://www.haproxy.org/)
+更多关于 HAProxy 的详细信息请参考[官网](http://www.haproxy.org/)
 
