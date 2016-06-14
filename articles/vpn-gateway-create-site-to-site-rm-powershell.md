@@ -169,7 +169,7 @@ Azure 使用指定的 IP 地址前缀来识别要发送到本地位置的流量�
 
 ## 9\.验证 VPN 连接
 
-VPN 连接有几种不同的验证方式。下面我们将讨论如何使用 Azure 门户和 PowerShell 执行基本验证。
+VPN 连接有几种不同的验证方式。下面我们将讨论如何使用 PowerShell 执行基本验证。
 
 [AZURE.INCLUDE [vpn-gateway-verify-connection-rm](../includes/vpn-gateway-verify-connection-rm-include.md)]
 
