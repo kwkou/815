@@ -23,7 +23,7 @@
 
 ## 先决条件
 
-1. 创建将用作拆分/合并状态数据库的 Azure SQL DB。转到 [Azure 门户](https://manage.windowsazure.cn)。创建新的 **SQL 数据库**。填写数据库名称并创建新的用户和密码。确保记录该名称和密码以供日后使用。
+1. 创建将用作拆分/合并状态数据库的 Azure SQL DB。转到 [Azure 管理门户](https://manage.windowsazure.cn)。创建新的 **SQL 数据库**。填写数据库名称并创建新的用户和密码。确保记录该名称和密码以供日后使用。
 
 2. 确保你的 Azure SQL DB 服务器允许 Azure 服务与其连接。在门户上的“防火墙设置”中，确保“允许访问 Azure 服务”设置设为“打开”。单击“保存”图标。
 
