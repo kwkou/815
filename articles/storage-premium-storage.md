@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="03/28/2016"
-	wacn.date="05/23/2016"/>
+	ms.date="04/26/2016"
+	wacn.date="06/13/2016"/>
 
 
 # 高级存储：适用于 Azure 虚拟机工作负荷的高性能存储
@@ -52,7 +52,11 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 
 高级存储支持 DS 系列、DSv2 系列 Azure 虚拟机 (VM)。DS 系列、DSv2 系列的 VM 可同时使用标准和高级存储磁盘。非 DS 的 VM 无法使用高级存储磁盘。有关可用 Azure VM 类型和大小的详细信息，请参阅 [Sizes for Virtual Machines（虚拟机大小）](/documentation/articles/virtual-machines-linux-sizes)。以下是 DS、DSv2 VM 的一些功能。
 
-**云服务**：可以将 DS 系列 VM 添加到仅包含 DS 系列 VM 的云服务。请不要将 DS 系列虚拟机添加到包含非 DS 系列 VM 的现有云服务。你可以将现有 VHD 迁移到只运行 DS 系列 VM 的新云服务。如果想要保留托管 DS 系列 VM 的新云服务的相同虚拟 IP 地址 (VIP)，请使用[保留 IP 地址](/documentation/articles/virtual-networks-instance-level-public-ip)。
+有关可用 Azure VM 类型和 Windows VM 大小的信息，请参阅 [Windows VM sizes（Windows VM 大小）](/documentation/articles/virtual-machines-windows-sizes)。有关 Linux VM 的 VM 类型和大小的信息，请参阅 [Linux VM sizes（Linux VM 大小）](/documentation/articles/virtual-machines-linux-sizes)。
+
+以下是 DS、DSv2 和 GS 系列 VM 的一些功能：
+
+**云服务**：可以将 DS 系列 VM 添加到仅包含 DS 系列 VM 的云服务。请不要将 DS 系列虚拟机添加到包含非 DS 系列 VM 的现有云服务。你可以将现有 VHD 迁移到只运行 DS 系列 VM 的新云服务。如果想要保留托管 DS 系列 VM 的新云服务的相同虚拟 IP 地址 (VIP)，请使用[保留 IP 地址](../virtual-network/virtual-networks-instance-level-public-ip.md)。
 
 **操作系统磁盘**：可以将 DS、DSv2 系列 Azure 虚拟机配置为使用标准存储帐户或高级存储帐户上托管的操作系统 (OS) 磁盘。如果 OS 磁盘只是用于引导，则你可以考虑使用基于标准存储的 OS 磁盘。这样既可以提高性价比，又可以在引导后提供类似于高级存储的性能。如果在除引导以外的 OS 磁盘上执行任何其他任务，请使用高级存储，因为它提供更好的性能。例如，如果你的应用程序要与 OS 磁盘相互读/写数据，则使用基于高级存储的 OS 磁盘可为 VM 提供更好的性能。
 
@@ -70,9 +74,11 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。如果你�
 目前，DS 系列上的最大 VM 是 STANDARD_DS14，它可以跨所有磁盘最高提供每秒 512 MB。
 请注意，这些限制只适用于磁盘流量，而不包括缓存命中和网络流量。VM 网络通信可以使用单独的带宽，这不同于高级存储磁盘的专用带宽。
 
-有关 DS 系列、DSv2 系列 VM 的最大 IOPS 与吞吐量（带宽）的最新信息，请参阅 [Sizes for Virtual Machines（虚拟机的大小）](/documentation/articles/virtual-machines-linux-sizes)。若要了解高级存储磁盘及其 IOPS 和吞吐量限制，请参阅本文的[使用高级存储时的可伸缩性和性能目标](#scalability-and-performance-targets-when-using-premium-storage)部分中的表格。
+有关 DS 系列、DSv2 系列 VM 的最大 IOPS 与吞吐量（带宽）的最新信息，请参阅 [Windows VM sizes（Windows VM 大小）](/documentation/articles/virtual-machines-windows-sizes)或 [Linux VM sizes（Linux VM 大小）](/documentation/articles/virtual-machines-linux-sizes)。
 
-## 高级存储的可伸缩性和性能目标
+若要了解高级存储磁盘及其 IOPS 和吞吐量限制，请参阅本文的[使用高级存储时的可伸缩性和性能目标](#scalability-and-performance-targets-when-using-premium-storage)部分中的表格。
+
+##<a id="scalability-and-performance-targets-when-using-premium-storage"></a>高级存储的可伸缩性和性能目标
 
 在本部分，我们将说明在使用高级存储时必须考虑的可缩放性和性能目标。
 
@@ -493,5 +499,4 @@ azure storage account create "premiumtestaccount" -l "East China" --type PLRS
 
 [Image1]: ./media/storage-premium-storage/Azure_attach_premium_disk.png
 
-
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0606_2016-->

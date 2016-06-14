@@ -8,8 +8,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="02/19/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="05/09/2016"
+	wacn.date="06/13/2016"/>
 
 # 对 Azure 存储空间使用 Azure PowerShell
 
@@ -232,7 +232,7 @@ Azure 存储上下文是 PowerShell 中用于封装存储凭据的对象。运�
 现在，你已设置计算机并已了解如何使用 Azure PowerShell 管理订阅和存储帐户。请转到下一部分，了解如何管理 Azure Blob 和 Blob 快照。
 
 ## 如何管理 Azure blob
-Azure Blob 存储是用于存储大量非结构化数据（例如文本或二进制数据）的服务，这些数据可通过 HTTP 或 HTTPS 从世界各地进行访问。本部分假设你已熟悉 Azure Blob 存储服务的概念。有关详细信息，请参阅[如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)和[Blob 服务概念](http://msdn.microsoft.com/zh-cn/library/azure/dd179376.aspx)。
+Azure Blob 存储是用于存储大量非结构化数据（例如文本或二进制数据）的服务，这些数据可通过 HTTP 或 HTTPS 从世界各地进行访问。本部分假设你已熟悉 Azure Blob 存储服务的概念。有关详细信息，请参阅[通过 .NET 开始使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)和[Blob 服务概念](http://msdn.microsoft.com/zh-cn/library/azure/dd179376.aspx)。
 
 ### 如何创建容器
 Azure 存储空间中的每个 Blob 都必须在容器中。你可以使用 New-AzureStorageContainer cmdlet 创建专用容器：
@@ -660,7 +660,7 @@ Azure 环境的部署独立于 Azure，例如[中国 21Vianet 运营的 AzureChi
     	$Ctx = New-AzureStorageContext -StorageAccountName $AccountName -StorageAccountKey $AccountKey> -Environment AzureChinaCloud
 
 
-- [面向全球 Azure 的 AzureCloud 与中国 21Vianet 运营的 AzureChinaCloud 之间的差异](https://msdn.microsoft.com/zh-cn/library/azure/dn578439.aspx)
+- [在中国区服务中创建应用程序时的差异概述](https://msdn.microsoft.com/zh-cn/library/azure/dn578439.aspx)
 
 ## 后续步骤
 在本指南中，你已了解如何使用 Azure PowerShell 管理 Azure 存储空间。下面是一些相关的文章和了解有关这些更多的资源。
@@ -713,4 +713,4 @@ Azure 环境的部署独立于 Azure，例如[中国 21Vianet 运营的 AzureChi
 [如何在美国政府部门和 Azure 中国区使用 Azure 存储空间]: #gov
 [后续步骤]: #next
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0606_2016-->

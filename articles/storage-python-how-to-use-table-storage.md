@@ -1,6 +1,6 @@
 <properties
 	pageTitle="如何通过 Python 使用表存储 | Azure"
-	description="了解如何通过 Python 使用表服务来创建和删除表，以及插入和查询表。"
+	description="使用 Azure 表存储（一种 NoSQL 数据存储）将结构化数据存储在云中。"
 	services="storage"
 	documentationCenter="python"
 	authors="emgerner-msft"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="02/11/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="04/29/2016"
+	wacn.date="06/13/2016"/>
 
 
 # 如何通过 Python 使用表存储
@@ -144,6 +144,5 @@
 
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
-[Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0606_2016-->

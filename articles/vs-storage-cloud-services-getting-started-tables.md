@@ -1,5 +1,5 @@
 <properties
-    pageTitle="开始使用表存储和 Visual Studio 连接服务（云服务）| Azure"
+    pageTitle="表存储和 Visual Studio 连接服务（云服务）入门 | Azure"
 	description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的云服务项目中使用 Azure 表存储"
 	services="storage"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-    ms.date="02/21/2016"
-	wacn.date="04/18/2016"/>
+    ms.date="05/08/2016"
+	wacn.date="06/13/2016"/>
 
 # 开始使用 Azure 表存储和 Visual Studio 连接服务（云服务项目）
 
@@ -191,6 +191,6 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 ## 后续步骤
 
-[AZURE.INCLUDE [vs-storage-dotnet-tables-next-steps](../includes/vs-storage-dotnet-blobs-next-steps.md)]
+[AZURE.INCLUDE [vs-storage-dotnet-tables-next-steps](../includes/vs-storage-dotnet-tables-next-steps.md)]
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0606_2016-->

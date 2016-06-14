@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 存储性能和可伸缩性清单"
+	pageTitle="Azure 存储空间的性能和可缩放性清单 | Azure"
 	description="在开发使用 Azure 存储的高性能应用程序时，一个经过验证的检查表。"
 	services="storage"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="03/18/2016"
-	wacn.date="04/18/2016"/>
+	ms.date="05/09/2016"
+	wacn.date="06/13/2016"/>
 
 # Azure 存储性能和可伸缩性清单
 
@@ -30,6 +30,7 @@
 |完成|	区域|	类别|	问题
 |----|------|-----------|-----------
 ||所有服务|	可伸缩性目标|[你的应用程序是否已经过设计，可以避免接近可伸缩性目标？](#subheading1)
+||所有服务|	可伸缩性目标|[你的命名约定是否旨在实现更好的负载平衡？](#subheading47)
 ||所有服务|	联网|	[客户端设备是否具有足够高的带宽和足够低的延迟，可以实现所需的性能？](#subheading2)
 ||所有服务|	联网|	[客户端设备是否具有足够高的高质量链接？](#subheading3)
 ||所有服务|	联网|	[客户端应用程序的位置是否“靠近”存储帐户？](#subheading4)
@@ -108,6 +109,15 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 -	有关存储冗余选项的信息，请参阅 [Azure 存储复制](/documentation/articles/storage-redundancy)和博客文章 [Azure 存储冗余选项和读取访问地域冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)。
 -	有关 Azure 服务定价的最新信息，请参阅 [Azure 定价](/pricing/overview/)。  
 
+###<a name="subheading47"></a>分区命名约定
+Azure 存储空间使用基于范围的分区方案来对系统进行缩放和负载平衡。分区键用于将数据分区成多个范围，这些范围在整个系统上经过负载平衡。这意味着，命名约定，如词汇顺序（例如 msftpayroll、msftperformance、msftemployees 等等）或使用时间戳（log20160101、log20160102、log20160102 等等）将本身出租给可能共置于同一分区服务器中的分区，直到负载平衡操作将它们拆分成较小的范围。例如，容器中的所有 Bob 接受单个服务器的服务，直到这些 Blob 的负载需要进一步重新平衡分区范围。同样，一组名称按词汇顺序排列的少量负载帐户可以接受单个服务器的服务，直到其中一个或所有帐户的负载请求它们拆分到多个分区服务器。每个负载平衡操作可能在操作期间影响存储调用的延迟。系统处理某个分区流量激增的能力受到单个分区服务器可缩放性的限制，直到负载平衡操作着手重新平衡分区键范围。  
+
+你可以遵循一些最佳实践来降低此类操作的频率。
+
+-	仔细检查帐户、容器、Blob、表和队列使用的命名约定。考虑使用最符合需求的哈希函数，在帐户名前加上 3 位数哈希。  
+-	如果使用时间戳记或数字标识符组织数据，必须确保使用的不是仅附加在后（或仅在前面加上）的流量模式。这些模式并不适合范围型的分区系统，并且可能导致所有流量进入单个分区并限制系统进行有效的负载平衡。例如，如果日常操作使用有时间戳的 Blob 对象，如 yyyymmdd，则该日常操作的所有流量都定向到由单个分区服务器服务的单个对象。查看每个 Blob 的限制和每个分区的限制是否符合需求，考虑是否需要将此操作拆分成多个 Blob。同样，如果在表中存储时序数据，则所有流量都可能定向到键命名空间的最后一个部分。如果必须使用时间戳或数字 ID，请在前面加上 3 位数哈希，或在时间戳前面加上时间的秒部分，如 ssyyyymmdd。如果定期执行列出和查询操作，请选择限制查询次数的哈希函数。对于其他情况，使用随机前缀便已足够。  
+-	有关 Azure 存储空间中使用的分区方案的其他信息，请参阅[此处](http://sigops.org/sosp/sosp11/current/2011-Cascais/printable/11-calder.pdf)的 SOSP 文档。
+
 ###联网
 虽然 API 调用有一定的影响，但通常情况下物理网络对应用程序的约束具有更大的性能影响。下面说明用户可能会遇到的某些限制。
 
@@ -119,7 +129,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 请注意，因错误和数据包丢失而导致的网络状况会降低有效吞吐量，任何网络的使用都是这样。WireShark 或 NetMon 可用于诊断此问题。
 
 #####有用的资源
-有关虚拟机大小和分配带宽的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)。
+有关虚拟机大小和分配带宽的详细信息，请参阅 [Windows VM sizes（Windows VM 大小）](/documentation/articles/virtual-machines-windows-sizes)或 [Linux VM sizes（Linux VM 大小）](/documentation/articles/virtual-machines-linux-sizes)。
 
 ####<a name="subheading4"></a>位置
 在任何分布式环境中，将客户端放置在服务器附近可提供最佳性能。若要以最低的延迟访问 Azure 存储空间，则最好是将客户端放置在同一 Azure 区域内。例如，如果您的 Azure Web 应用使用 Azure 存储空间，则应将二者都放置在同一个区域（例如美国西部或亚洲东南部）。这会降低延迟和成本 — 在本文撰写之际，同一个区域的带宽使用是免费的。
@@ -208,7 +218,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 ####<a name="subheading46"></a>并发访问单个对象的多个客户端
 如果你有大量的客户端并发访问单个对象，你将需要逐对象地考虑并考虑存储帐户的可伸缩性目标。可以访问单个对象的客户端的具体数目将根据各种因素（如同时请求对象的客户端的数目、对象的大小、网络连接等）而有所不同。
 
-如果对象可以通过 CDN（如网站服务提供的图像或视频）来进行分发，则应该使用 CDN。请参阅[此处](#subheading5)。
+如果对象可以通过 CDN（如网站服务提供的图像或视频）来进行分发，则应该使用 CDN。请参阅[此文](#subheading5)。
 
 在其他情况下，例如在数据保密的科学模拟下，你有两个选项。第一个选项是错开工作负荷的访问，以确保在一个时间段内访问对象，而不是同时访问对象。另一个选项是暂时将对象复制到多个存储帐户，从而增加每个对象和跨存储帐户的 IOPS 总数。经过有限的测试，我们发现大约 25 台 VM 可以同时并行下载 100GB 的 Blob（每台 VM 使用 32 个线程并行化下载）。如果你有 100 个客户端需要访问某个对象，请先将该对象复制到另一个存储帐户，然后让前 50 台 VM 访问第一个 Blob，让剩下的 50 台 VM 访问第二个 Blob。结果将根据应用程序的行为而异，你应该在设计期间对此进行测试。
 
@@ -249,7 +259,7 @@ Azure 存储团队发布了命令行工具“AzCopy”，该工具用于通过�
 -	C++：使用 blob_request_options::set_parallelism_factor 方法。   
 
 ####<a name="subheading22"></a>快速上载多个 Blob
-若要快速上载多个 Blob，请以并行方式上载。这要快于通过并行块上载方式一次上载一个 Blob，因为这种情况下上载会分布到存储服务的多个分区中。单个 Blob 仅支持 60 MB/秒（大约 480 Mbps）的吞吐量。在本文撰写之际，一个 GRS 帐户最多可支持 20 Gbps 的入口吞吐量，远远大于单个 Blob 支持的吞吐量。默认情况下 [AzCopy](#subheading18) 以并行方式执行上载操作，建议用于这种情形。
+若要快速上载多个 Blob，请以并行方式上载。这要快于通过并行块上载方式一次上载一个 Blob，因为这种情况下上载会分布到存储服务的多个分区中。单个 Blob 仅支持 60 MB/秒（大约 480 Mbps）的吞吐量。默认情况下 [AzCopy](#subheading18) 以并行方式执行上载操作，建议用于这种情形。
 
 ###<a name="subheading23"></a>选择正确的 Blob 类型
 Azure 存储空间支持两种类型的 Blob：页 Blob 和块 Blob。在使用情形已确定的情况下，选择何种 Blob 类型会影响到解决方案的执行情况和可伸缩性。需要以高效方式上载大量数据时，适合选择块 Blob：例如，客户端应用程序可能需要将照片或视频上载到 Blob 存储中。如果应用程序需要对数据执行随机写入，则应选择页 Blob：例如，Azure VHD 以页 Blob 方式存储。
@@ -392,4 +402,4 @@ Nagle 的算法已跨 TCP/IP 网络进行了广泛的实施，是一种改进网
 ##结束语
 本文讨论了部分最常用的、经过验证的做法，目的是优化使用 Azure 存储空间时的性能。我们建议每一位应用程序开发人员对照以上每条做法，对自己的应用程序进行评估，并考虑按照建议要求进行操作，以便优化使用 Azure 存储空间的应用程序的性能。
  
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0606_2016-->
