@@ -8,15 +8,16 @@
    editor="" />
 <tags
    ms.service="expressroute"
-   ms.date="04/06/2016"
-   wacn.date="05/16/2016" />
+   ms.date="05/11/2016"
+   wacn.date="06/06/2016" />
 
 # ExpressRoute 合作伙伴和对等位置
 本文中的表格提供有关 ExpressRoute 连接提供商、ExpressRoute 地理覆盖范围、通过 ExpressRoute 支持的 Azure 服务以及 ExpressRoute 系统集成商 (SI) 的信息。
 
-## ExpressRoute 连接提供商
-所有的 Azure 区域和位置都支持 ExpressRoute。以下地图提供了 Azure 区域和 ExpressRoute 位置的列表。ExpressRoute 位置是指 Microsoft Azure 与连接提供商对等互连的位置。
- 
+## <a name="partners"></a>ExpressRoute 连接服务提供商
+
+所有的 Azure 区域和位置都支持 ExpressRoute。以下地图提供了 Azure 区域和 ExpressRoute 位置的列表。ExpressRoute 位置是指 Microsoft 与多个服务提供商对等互连的位置。
+
 ![](./media/expressroute-locations/expressroute-locations-map.png)
 
 下表提供了Azure区域内 ExpressRoute 位置与 Azure 区域的映射。

@@ -8,13 +8,12 @@
    editor=""/>
 <tags
    ms.service="expressroute"
-   ms.date="03/21/2016"
-   wacn.date="05/16/2016"/>
-
+   ms.date="05/16/2016"
+   wacn.date="06/06/2016"/>
 
 # ExpressRoute 路由要求  
 
-若要使用 ExpressRoute 连接到 Microsoft Azure 云服务，你需要设置并管理路由。某些连接服务提供商以托管服务形式提供路由的设置和管理。请咨询连接服务提供商，以确定他们是否提供此类服务。如果不提供，则你必须遵守以下所述的要求。
+若要使用 ExpressRoute 连接到 Azure 云服务，你需要设置并管理路由。某些连接服务提供商以托管服务形式提供路由的设置和管理。请咨询连接服务提供商，以确定他们是否提供此类服务。如果不提供，则你必须遵守以下所述的要求。
 
 有关需要在设置后才能建立连接的路由会话的说明，请参阅[线路和路由域](/documentation/articles/expressroute-circuit-peerings)一文。
 
