@@ -15,12 +15,12 @@
 #Azure Linux虚拟机上的数据库的备份
 
 ##目录
-[备份 MySQL](#backup-mysql)  
-[Mysqldump](#mysqldump)  
-[主从复制](#primary-secondary)  
-[Xtrabackup](#xtrabackup)  
-[备份 Redis](#backup-redis)  
-[备份 MongoDB](#backup-mongodb)  
+- [备份 MySQL](#backup-mysql)  
+- [Mysqldump](#mysqldump)  
+- [主从复制](#primary-secondary)  
+- [Xtrabackup](#xtrabackup)  
+- [备份 Redis](#backup-redis)  
+- [备份 MongoDB](#backup-mongodb)  
 
 
 
@@ -43,9 +43,9 @@ Mysqldump 要求对备份的表至少有查询的权限，如果--single-transac
 
 1.通常有三种使用 mysqldump 的方式—备份一组表；备份一组数据库；备份整个数据库服务器—正如下面所示：
 
-	shell> **mysqldump [options] db_name [tbl_name ...]**  
-	shell> **mysqldump [options] --databases db_name ...**  
-	shell> **mysqldump [options] --all-databases**  
+	shell> mysqldump [options] db_name [tbl_name ...]  
+	shell> mysqldump [options] --databases db_name ...  
+	shell> mysqldump [options] --all-databases  
 
 比如有一个数据库叫做 shop, 它下面有一个表名叫 price, 下面的命令即把 price 表备份到 /tmp/price.sql  
 
@@ -153,6 +153,7 @@ show slave status\G 用来查看主从复制状态，得到结果如下图
 	select * from people;  
 
 如果结果类似下图，表明主从复制正常。  
+
 ![主从复制正常][3]
  
 
@@ -221,7 +222,8 @@ show slave status\G 用来查看主从复制状态，得到结果如下图
 	use shop;
 	select * from people;  
 
-如果结果类似下图，表明主从复制正常.  
+如果结果类似下图，表明主从复制正常. 
+ 
 ![主从复制正常][6]
  
 
@@ -290,6 +292,7 @@ show slave status\G 用来查看主从复制状态，得到结果如下图
 	select * from people;  
 
 如果结果类似下图，表明主从复制正常.  
+
 ![主从复制正常][9]
  
 
@@ -378,12 +381,11 @@ Percona XtraBackup 是开源的热备份工具—在备份的时候，不会锁�
 
 ##<a id="backup-redis"></a>备份Redis
 
-请参考文档“[在Azure Linux虚拟机上配置Redis集群.docx](#)” 中关于复制和集群的部分。
+请参考文档“[在Azure Linux虚拟机上配置Redis集群.docx](/documentation/articles/open-source-azure-virtual-machines-linux-configure-redis-cluster)” 中关于复制和集群的部分。
 
 
 ##<a id="backup-mongodb"></a>备份MongoDB
-l.
-请参考文档 “[在Azure Linux虚拟机上管理配置MongoDB集群.docx](#)” 中复制和分片的部分。  
+请参考文档 “[在Azure Linux虚拟机上管理配置MongoDB集群.docx](/documentation/articles/open-source-azure-virtual-machines-manage-mongodb-cluster)” 中复制和分片的部分。  
 
 亦可使用mongodb tools.具体请参考[官网](#https://docs.mongodb.com/manual/administration/backup/)
 
