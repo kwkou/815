@@ -1,15 +1,14 @@
 <properties 
 	pageTitle="使用 PowerShell 创建和管理弹性数据库作业" 
 	description="使用 PowerShell 管理 Azure SQL 数据库池" 
-	services="sql-database"
-	documentationCenter=""  
-	manager="jeffreyg" 
+	services="sql-database" documentationCenter=""  
+	manager="jhubbard" 
 	authors="ddove"/>
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="02/02/2016" 
-	wacn.date="03/21/2016" />
+	ms.date="05/03/2016" 
+	wacn.date="06/14/2016" />
 
 # 使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）
 
@@ -195,7 +194,7 @@
 
 ## 设置弹性数据库作业连接
 
-在使用作业 API 之前，需设置作业*控制数据库* 连接。如果运行此 cmdlet，则会在安装弹性数据库作业时触发一个弹出式凭据窗口，请求用户提供已创建的用户名/密码。本主题中提供的所有示例都假设已经执行第一个步骤。
+在使用作业 API 之前，需设置作业控制数据库连接。如果运行此 cmdlet，则会在安装弹性数据库作业时触发一个弹出式凭据窗口，请求用户提供已创建的用户名/密码。本主题中提供的所有示例都假设已经执行第一个步骤。
 
 建立与弹性数据库作业的连接：
 
@@ -203,9 +202,9 @@
 
 ## 弹性数据库作业中的已加密凭据
 
-数据库凭据可以插入密码已加密的作业*控制数据库*。必须存储凭据，使作业可以在稍后执行（使用作业计划）。
+数据库凭据可以插入密码已加密的作业控制数据库。必须存储凭据，使作业可以在稍后执行（使用作业计划）。
  
-加密是通过创建为安装脚本一部分的证书来进行的。安装脚本创建证书并将其上载到 Azure 云服务，以解密已存储的加密密码。Azure 云服务稍后在作业*控制数据库* 内存储公钥，让 PowerShell API 或 Azure 管理门户界面加密提供的密码，而不需要在本地安装证书。
+加密是通过创建为安装脚本一部分的证书来进行的。安装脚本创建证书并将其上载到 Azure 云服务，以解密已存储的加密密码。Azure 云服务稍后在作业控制数据库内存储公钥，让 PowerShell API 或 Azure 管理门户界面加密提供的密码，而不需要在本地安装证书。
  
 凭据密码经过加密后，无法供只能通过只读方式访问弹性数据库作业对象的用户访问。不过，具有弹性数据库作业对象读-写访问权限的恶意用户可能会提取密码。凭据设计为跨作业执行重复使用。在建立连接时，凭据将传递到目标数据库。适用于每个凭据的目标数据库目前并没有受到限制，因此恶意用户可以针对自己所控制的数据库来添加数据库目标。然后，该用户可以启动一个针对该数据库的作业，从而获取凭据的密码。
 
@@ -415,7 +414,7 @@
 
 ## 检索执行作业任务过程中出现的失败
 
-**JobTaskExecution 对象**包括任务生命周期的属性以及消息属性。如果作业任务执行失败，生命周期属性将设为 *Failed*，且消息属性将设为生成的异常消息及其堆栈。如果作业不成功，必须查看给定操作不成功的作业任务的详细信息。
+**JobTaskExecution 对象**包括任务生命周期的属性以及消息属性。如果作业任务执行失败，生命周期属性将设为 Failed，且消息属性将设为生成的异常消息及其堆栈。如果作业不成功，必须查看给定操作不成功的作业任务的详细信息。
 
 	$jobExecutionId = "{Job Execution Id}"
 	$jobTaskExecutions = Get-AzureSqlJobTaskExecution -JobExecutionId $jobExecutionId
@@ -529,7 +528,7 @@
 
 ### 将数据库添加到自定义数据库集合目标
 
-若要将数据库添加到特定的自定义集合，请使用 [**Add-AzureSqlJobChildTarget**](https://msdn.microsoft.com/zh-cn/library/mt346064.aspx) cmdlet。
+若要将数据库添加到特定的自定义集合，请使用 **Add-AzureSqlJobChildTarget** cmdlet。
 
 	$serverName = "{Database Server Name}"
 	$databaseName = "{Database Name}"
@@ -690,4 +689,4 @@
 [2]: ./media/sql-database-elastic-jobs-powershell/portal.png
 <!--anchors-->
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0530_2016-->

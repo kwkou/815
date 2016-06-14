@@ -9,7 +9,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="01/22/2016"
-	wacn.date="03/29/2016" />
+	wacn.date="06/14/2016" />
 
 # 用于分片的弹性查询（水平分区）入门
 
@@ -29,7 +29,7 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 	![命令提示符][1]
 
 2.  在命令窗口中键入“1”，然后按 **Enter**。这会创建分片映射管理器，并将两个分片添加到服务器。然后键入“3”并按 **Enter**；重复该操作四次。这会在你的分片中插入示例数据行。
-3.  [Azure 门户](https://manage.windowsazure.cn)应会在 v12 服务器中显示三个新的数据库：
+3.  [Azure 管理门户](https://manage.windowsazure.cn)应会在 v12 服务器中显示三个新的数据库：
 
 	![Visual Studio 确认][2]
 
@@ -138,4 +138,4 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0606_2016-->

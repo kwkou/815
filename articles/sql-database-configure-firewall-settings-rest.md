@@ -1,20 +1,20 @@
 <properties
-	pageTitle="如何：配置防火墙设置 | Azure"
+	pageTitle="如何：配置 Azure SQL 数据库防火墙 | Azure"
 	description="了解如何配置防火墙以允许 IP 地址访问 Azure SQL 数据库。"
 	services="sql-database"
 	documentationCenter=""
-	authors="BYHAM"
-	manager="jeffreyg"
+	authors="stevestein"
+	manager="jhubbard"
 	editor=""/>
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="02/04/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="05/09/2016"
+	wacn.date="06/14/2016"/>
 
 
-# 如何：使用 REST API 在 SQL 数据库上配置防火墙设置
+# 如何：使用 REST API 配置 Azure SQL 数据库防火墙
 
 
 > [AZURE.SELECTOR]
@@ -68,4 +68,6 @@ Azure SQL 数据库使用防火墙规则，以便允许连接到服务器和数�
 [2]: ./media/sql-database-configure-firewall-settings/AzurePortalFirewallSettings.png
 <!--anchors-->
 
-<!---HONumber=Mooncake_0307_2016-->
+ 
+
+<!---HONumber=Mooncake_0530_2016-->

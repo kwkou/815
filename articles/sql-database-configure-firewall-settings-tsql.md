@@ -1,20 +1,20 @@
 <properties
-	pageTitle="如何：配置防火墙设置 | Azure"
+	pageTitle="如何：配置 SQL 数据库防火墙 | Azure"
 	description="了解如何配置防火墙以允许 IP 地址访问 Azure SQL 数据库。"
 	services="sql-database"
 	documentationCenter=""
 	authors="BYHAM"
-	manager="jeffreyg"
+	manager="jhubbard"
 	editor=""/>
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="02/04/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="04/26/2016"
+	wacn.date="06/14/2016"/>
 
 
-# 如何：使用 TSQL 在 SQL 数据库上配置防火墙设置
+# 如何：使用 TSQL 配置 Azure SQL 数据库防火墙
 
 
 > [AZURE.SELECTOR]
@@ -30,10 +30,11 @@ Azure SQL 数据库使用防火墙规则，以便允许连接到服务器和数�
 
 ## 通过 Transact-SQL 管理服务器级别防火墙规则
 
-1. 通过经典门户或通过 SQL Server Management Studio 启动一个查询窗口。
-2. 验证你是否已连接到 master 数据库。
-3. 可以从查询窗口选择、创建、更新或删除服务器级别防火墙规则。
-4. 若要创建或更新服务器级别防火墙规则，执行 sp\_set\_firewall 规则存储过程。以下示例启用服务器 Contoso 上一系列 IP 地址。<br/>首先，查看已经存在哪些规则。
+只有服务器级别主体登录名或 Azure Active Directory 管理员才能使用 Transact-SQL 创建服务器级别防火墙规则。
+
+1. 启动查询窗口，并使用 SQL Server Management Studio 连接到虚拟 master 数据库。
+2. 可以从查询窗口选择、创建、更新或删除服务器级别防火墙规则。
+3. 若要创建或更新服务器级别防火墙规则，执行 sp\_set\_firewall 规则存储过程。以下示例启用服务器 Contoso 上一系列 IP 地址。<br/>首先，查看已经存在哪些规则。
 
 		SELECT * FROM sys.firewall_rules ORDER BY name;
 
@@ -46,23 +47,31 @@ Azure SQL 数据库使用防火墙规则，以便允许连接到服务器和数�
  
 		EXECUTE sp_delete_firewall_rule @name = N'ContosoFirewallRule'
  
- 
+ 有关这些存储过程的详细信息，请参阅 [sp\_set\_firewall\_rule](https://msdn.microsoft.com/zh-cn/library/dn270017.aspx) 和 [sp\_delete\_firewall\_rule](https://msdn.microsoft.com/zh-cn/library/dn270024.aspx)。
+
 ## 数据库级别防火墙规则
 
-1. 为你的 IP 地址创建服务器级别防火墙后，通过经典门户或通过 SQL Server Management Studio 启动一个查询窗口。
+只有对数据库具备**控制**权限的数据库用户（例如数据库所有者）才能创建数据库级别防火墙规则。
+
+1. 为你的 IP 地址创建服务器级别防火墙后，通过管理门户或通过 SQL Server Management Studio 启动一个查询窗口。
 2. 连接到你要为其创建数据库级别防火墙规则的数据库。
 
 	若要创建新的或更新现有的数据库级别防火墙规则，请执行 sp\_set\_database\_firewall\_rule 存储过程。以下示例创建名为 ContosoFirewallRule 的新防火墙规则。
  
-		EXEC sp_set_database_firewall_rule @name = N'ContosoFirewallRule', @start_ip_address = '192.168.1.11', @end_ip_address = '192.168.1.11'
+		EXEC sp_set_database_firewall_rule @name = N'ContosoFirewallRule', 
+		    @start_ip_address = '192.168.1.11', @end_ip_address = '192.168.1.11'
  
 	若要删除现有的数据库级别防火墙规则，请执行 sp\_delete\_database\_firewall\_rule 存储过程。以下示例删除名为 ContosoFirewallRule 的规则。
  
 		EXEC sp_delete_database_firewall_rule @name = N'ContosoFirewallRule'
 
+有关这些存储过程的详细信息，请参阅 [sp\_set\_database\_firewall\_rule](https://msdn.microsoft.com/zh-cn/library/dn270010.aspx) 和 [sp\_delete\_database\_firewall\_rule](https://msdn.microsoft.com/zh-cn/library/dn270030.aspx)。
 
 ## 后续步骤
 
-有关创建数据库的教程，请参阅[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)。有关从开放源代码或第三方应用程序连接到 Azure SQL 数据库的帮助，请参阅[以编程方式连接到 Azure SQL 数据库的指导原则](https://msdn.microsoft.com/zh-cn/library/azure/ee336282.aspx)。若要了解如何导航到数据库，请参阅[在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins)。
+有关创建数据库的教程，请参阅[使用 Azure 管理门户在几分钟内创建一个 SQL 数据库](/documentation/articles/sql-database-get-started)。
+有关从开放源代码或第三方应用程序连接到 Azure SQL 数据库的帮助，请参阅 [SQL 数据库的客户端快速入门代码示例](https://msdn.microsoft.com/zh-cn/library/azure/ee336282.aspx)。
+若要了解如何导航到数据库，请参阅[管理数据库的访问和登录安全](/documentation/articles/sql-database-manage-logins)。
 
-<!---HONumber=Mooncake_0307_2016-->
+
+<!---HONumber=Mooncake_0530_2016-->

@@ -4,13 +4,13 @@
 	services="sql-database" 
 	documentationCenter="" 
 	authors="stevestein" 
-	manager="jeffreyg" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="02/23/2016" 
-	wacn.date="04/06/2016"/>
+	ms.date="05/09/2016" 
+	wacn.date="06/14/2016"/>
 
 # 使用 PowerShell 管理 Azure SQL 数据库
 
@@ -21,29 +21,8 @@
 
 本主题提供了用于执行许多 Azure SQL 数据库任务的 PowerShell 命令。
 
+[AZURE.INCLUDE [启动 PowerShell 会话](../includes/sql-database-powershell.md)]
 
-若要运行 PowerShell cmdlet，需要已安装并运行 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
-
-
-
-## 配置你的凭据
-
-若要针对 Azure 订阅运行 PowerShell cmdlet，必须先与 Azure 帐户建立访问连接。运行以下项目，然后就会出现一个要求你输入凭据的登录屏幕。使用登录 Azure 经典管理门户时所用的相同电子邮件和密码。
-
-	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-
-成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
-
-
-## 选择 Azure 订阅
-
-若要选择要使用的订阅，你需要提供订阅 ID (**-SubscriptionId**) 或订阅名称 (**-SubscriptionName**)。你可以从前面的步骤中复制该信息，或者，如果你有多个订阅，你可以运行 **Get-AzureSubscription** cmdlet，然后从结果集中复制所需的订阅信息。
-
-使用你的订阅信息运行以下 cmdlet，以设置当前订阅：
-
-	Select-AzureRmSubscription -SubscriptionId 4cac86b0-1e56-bbbb-aaaa-000000000000
-
-针对前面刚刚选择的订阅运行以下命令。
 
 ## 创建资源组
 
@@ -106,7 +85,7 @@
 如果你要再次创建这些 Azure SQL 资源或类似资源，可以：
 
 - 将这个命令集另存为 PowerShell 脚本文件 (*.ps1)
-- 在 Azure 经典管理门户的“自动化”部分中，将这个命令集另存为 Azure 自动化 Runbook 
+- 在 Azure 管理门户的“自动化”部分中，将这个命令集另存为 Azure 自动化 Runbook 
 
 ## 后续步骤
 
@@ -122,4 +101,4 @@
 
 - [Azure SQL 数据库 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt574084.aspx)
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0530_2016-->

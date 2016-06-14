@@ -1,112 +1,107 @@
 <properties 
    pageTitle="SQL 数据库灾难恢复" 
-   description="了解在发生区域性的数据中心中断或故障后，如何使用 Azure SQL 数据库活动异地复制、标准异地复制和异地还原功能来恢复数据库。" 
+   description="了解在发生区域性的数据中心中断或故障后，如何使用 Azure SQL 数据库活动异地复制和异地还原功能来恢复数据库。" 
    services="sql-database" 
    documentationCenter="" 
    authors="elfisher" 
-   manager="jeffreyg" 
+   manager="jhubbard" 
    editor="monicar"/>
 
 <tags
    ms.service="sql-database"
-   ms.date="02/09/2016"
-   wacn.date="03/21/2016"/>
+   ms.date="05/10/2016"
+   wacn.date="06/14/2016"/>
 
-# 在中断后恢复 Azure SQL 数据库
+# 还原 Azure SQL 数据库或故障转移到辅助数据库
 
 Azure SQL 数据库提供以下功能，以便在服务中断后进行恢复：
 
-- 活动异地复制[（博客）](http://azure.microsoft.com/blog/2014/07/12/spotlight-on-sql-database-active-geo-replication)
-- 标准异地复制[（博客）](http://azure.microsoft.com/blog/2014/09/03/azure-sql-database-standard-geo-replication)
-- 异地还原[（博客）](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore)
-- 新的异地复制功能[（博客）](https://azure.microsoft.com/blog/spotlight-on-new-capabilities-of-azure-sql-database-geo-replication)
+- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview)
+- [异地还原](/documentation/articles/sql-database-geo-restore)
 
 若要了解有关应对灾难以及何时恢复数据库的信息，请访问[业务连续性设计](/documentation/articles/sql-database-business-continuity-design)页。
 
-##何时启动恢复 
+## 何时启动恢复
 
 恢复操作会影响应用程序。它要求更改 SQL 连接字符串，并可能会导致数据永久丢失。因此，仅当中断的持续时间超过了应用程序的 RTO 时，才应执行恢复操作。如果应用程序已部署到生产环境，你应该定期监视应用程序的运行状况，并使用以下数据点来声明有必要进行恢复：
 
-1. 应用程序层与数据库之间的连接发生永久性故障。
-2. Azure 门户显示了警报，指出区域中的某个事件会造成广泛的影响。
+1.	应用程序层与数据库之间的连接发生永久性故障。
+2.	Azure 管理门户显示了警报，指出区域中的某个事件会造成广泛的影响。
+3.	Azure SQL 数据库服务器标记为已降级。 
 
-> [AZURE.NOTE] 恢复数据库后，你可以根据[在恢复后配置数据库](#postrecovery)指南来配置该数据库，以便能够使用它。
+根据应用程序的停机容忍度和可能的业务责任，可以考虑下列恢复选项。
+
+## 等待服务恢复
+
+Azure 团队会努力尽快还原服务可用性，但视根本原因而定，有可能需要数小时或数天的时间。如果你的应用程序可以容忍长时间停机，则可以等待恢复完成。在此情况下，你不需要采取任何操作。在区域恢复后，应用程序的可用性将会还原。
 
 ## 故障转移到异地复制的辅助数据库
-> [AZURE.NOTE] 你必须配置一个用于故障转移的辅助数据库。异地复制仅适用于标准和高级数据库。了解[如何配置异地复制](/documentation/articles/sql-database-business-continuity-design)
 
-###PowerShell
-在 PowerShell 中使用 [Set-AzureRMSqlDatabaseSecondary](https://msdn.microsoft.com/zh-cn/library/mt619393.aspx) cmdlet 启动故障转移到异地复制的辅助数据库。
-		
-		$database = Get-AzureRMSqlDatabase –DatabaseName "mydb” –ResourceGroupName "rg2” –ServerName "srv2”
-		$database | Set-AzureRMSqlDatabaseSecondary –Failover -AllowDataLoss
+如果应用程序停机可能会带来业务责任，则应当在应用程序中使用异地复制的数据库。这样，应用程序在发生中断时，就可以快速还原其他区域的可用性。
 
-###REST API 
-使用 REST 以编程方式启动故障转移到辅助数据库。
+若要还原数据库的可用性，必须使用其中一种受支持的方法，启动到异地复制的辅助数据库的故障转移。
 
-1. 使用[获取复制链接](https://msdn.microsoft.com/zh-cn/library/mt600778.aspx)操作获取特定辅助数据库的复制链接。
-2. 使用[将辅助数据库设置为主数据库](https://msdn.microsoft.com/zh-cn/library/mt582027.aspx)，在允许数据丢失的情况下故障转移到辅助数据库。 
+
+请参考下列指南之一，故障转移到异地复制的辅助数据库：
+
+- [使用 PowerShell 故障转移到异地复制的辅助数据库](/documentation/articles/sql-database-geo-replication-powershell)
+- [使用 T-SQL 故障转移到异地复制的辅助数据库](/documentation/articles/sql-database-geo-replication-transact-sql) 
+
+
 
 ## 使用异地还原进行恢复
 
-在某个数据库发生中断的情况下，你可以使用异地还原从该数据库的最新异地冗余备份恢复该数据库。
+如果应用程序停机不会带来业务责任，则可以使用异地还原作为恢复应用程序数据库的方法。它会从其最新的异地冗余备份创建数据库的副本。
 
-> [AZURE.NOTE] 恢复数据库会创建一个新的数据库。必须确保要恢复到的服务器具有足够的 DTU，可以容纳新数据库的容量。你可以通过[与支持人员联系](https://azure.microsoft.com/blog/azure-limits-quotas-increase-requests)来请求增加此配额。
+请参考下列指南之一，将数据库异地还原到新的区域：
 
-###PowerShell 
-> [AZURE.NOTE] 当前异地还原与 PowerShell 的配合使用仅支持还原到独立数据库。若要异地还原到弹性数据库池，请使用 [Azure 门户](https://manage.windowsazure.cn)。
+- [使用 PowerShell 将数据库异地还原到新的区域](/documentation/articles/sql-database-geo-restore-powershell) 
 
-若要配合使用异地还原和 PowerShell 来还原 SQL 数据库，请使用 [start-AzureSqlDatabaseRecovery](https://msdn.microsoft.com/zh-cn/library/azure/dn720224.aspx) cmdlet 启动异地还原请求。
 
-		$Database = Get-AzureSqlRecoverableDatabase -ServerName "ServerName" –DatabaseName “DatabaseToBeRecovered"
-		$RecoveryRequest = Start-AzureSqlDatabaseRecovery -SourceDatabase $Database –TargetDatabaseName “NewDatabaseName” –TargetServerName “TargetServerName”
-		Get-AzureSqlDatabaseOperation –ServerName "TargetServerName" –OperationGuid $RecoveryRequest.RequestID
+## 恢复后配置数据库
 
-###REST API 
-
-使用 REST 以编程方式执行数据库恢复。
-
-1.	使用[列出可恢复的数据库](http://msdn.microsoft.com/zh-cn/library/azure/dn800984.aspx)操作获取可恢复数据库的列表。
-	
-2.	使用[获取可恢复的数据库](http://msdn.microsoft.com/zh-cn/library/azure/dn800985.aspx)操作获取你要恢复的数据库。
-	
-3.	使用[创建数据库恢复请求](http://msdn.microsoft.com/zh-cn/library/azure/dn800986.aspx)操作创建恢复请求。
-	
-4.	使用[数据库操作状态](http://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx)操作跟踪恢复状态。
- 
-## 在恢复后配置数据库<a name="postrecovery"></a>
-
-可以使用此任务清单来帮助你准备好将恢复的数据库投入生产。
+如果使用异地还原选项的异地复制故障转移，在服务中断后恢复应用程序，则必须确保已正确配置与新数据库的连接，以便恢复正常的应用程序功能。以下任务清单可帮助你准备好将恢复的数据库投入生产。
 
 ### 更新连接字符串
 
-验证应用程序的连接字符串指向最近恢复的数据库。如果存在以下情况之一，请更新你的连接字符串：
-
-  + 已恢复的数据库使用的名称不同于源数据库名称
-  + 已恢复的数据库所在的服务器不同于源服务器
+因为恢复的数据库将位于不同的服务器中，所以必须更新应用程序的连接字符串以指向该服务器。
 
 有关更改连接字符串的详细信息，请参阅[与 Azure SQL 数据库的连接：中心建议](/documentation/articles/sql-database-connect-central-recommendations)。
- 
-### 修改防火墙规则
-在服务器级别和数据库级别验证防火墙规则，并确保已启用从客户端计算机或 Azure 到服务器以及最近恢复的数据库的连接。
 
-### 验证服务器登录名和数据库用户
+### 配置防火墙规则
 
-验证应用程序使用的所有登录名是否在托管已恢复数据库的服务器上存在。重新创建缺少的登录名，并向其授予对已恢复数据库的适当权限。有关详细信息，请参阅[在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins)。
+需确保服务器和数据库上配置的防火墙规则与主服务器和主数据库上配置的防火墙规则匹配。有关详细信息，请参阅[如何：配置防火墙设置（Azure SQL 数据库）](/documentation/articles/sql-database-configure-firewall-settings-powershell)。
 
-验证已恢复数据库中的每个数据库用户是否与有效的服务器登录名关联。使用 ALTER USER 语句将用户映射到有效的服务器登录名。有关详细信息，请参阅 [ALTER USER](http://go.microsoft.com/fwlink/?LinkId=397486)。
 
+### 配置登录名和数据库用户
+
+需确保应用程序使用的所有登录名都存在于托管已恢复数据库的服务器上。有关详细信息，请参阅“如何在灾难恢复期间管理安全性”。有关详细信息，请参阅[异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config)
+
+>[AZURE.NOTE] 如果使用异地还原选项在服务中断后恢复，应在 DR 演练期间配置服务器防火墙规则和登录，以确保主服务器仍可用于检索其配置。因为异地还原会使用数据库备份，所以在服务中断期间可能无法使用此服务器级别配置。演练之后，可以删除已还原的数据库，但保留服务器及其配置，以供恢复过程使用。有关 DR 演练的详细信息，请参阅[执行灾难恢复演练](/documentation/articles/sql-database-disaster-recovery-drills)。
 
 ### 设置遥测警报
 
-验证现有的警报规则设置是否映射到已恢复的数据库。如果存在以下情况之一，请更新设置：
+需确保更新现有的警报规则设置，以便映射到恢复的数据库和不同的服务器。
 
-  + 已恢复的数据库使用的名称不同于源数据库名称
-  + 已恢复的数据库所在的服务器不同于源服务器
-
+有关数据库警报规则的详细信息，请参阅[接收警报通知](/documentation/articles/insights-receive-alert-notifications)和[跟踪服务运行状况](/documentation/articles/insights-service-health)。
 
 ### 启用审核
 
-如果需要通过审核来访问数据库，你需要在恢复数据库后启用审核。如果客户端应用程序使用了 *.database.secure.chinacloudapi.cn 模式的安全连接字符串，则就充分表明需要审核。有关详细信息，请参阅 [SQL 数据库审核入门](/documentation/articles/sql-database-auditing-get-started)。
+如果需要通过审核来访问数据库，你需要在恢复数据库后启用审核。如果客户端应用程序使用 *.database.secure.chinacloudapi.cn 模式的安全连接字符串，就充分表明需要审核。有关详细信息，请参阅 [SQL 数据库审核入门](/documentation/articles/sql-database-auditing-get-started)。
 
-<!---HONumber=Mooncake_0307_2016-->
+
+
+
+## 其他资源
+
+
+- [SQL 数据库业务连续性和灾难恢复](/documentation/articles/sql-database-business-continuity)
+- [时间点还原](/documentation/articles/sql-database-point-in-time-restore)
+- [异地还原](/documentation/articles/sql-database-geo-restore)
+- [活动异地复制](/documentation/articles/sql-database-geo-replication-overview)
+- [设计用于云灾难恢复的应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery)
+- [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize)
+- [异地复制的安全性配置](/documentation/articles/sql-database-geo-replication-security-config)
+- [SQL 数据库 BCDR 常见问题](/documentation/articles/sql-database-bcdr-faq)
+
+<!---HONumber=Mooncake_0530_2016-->

@@ -9,7 +9,7 @@
 <tags
     ms.service="sql-database"
     ms.date="04/04/2016"
-    wacn.date="05/16/2016" />
+    wacn.date="06/14/2016" />
 
 # Azure SQL 数据库弹性数据库查询概述（预览版）
 
@@ -27,8 +27,8 @@
 
 ## 弹性数据库查询方案
 
-目标是便于实现多个数据库参与生成单个总体结果中的行的查询方案。查询可以由用户或应用程序直接编写，也可以通过与数据库连接的工具间接编写。这在使用商业 BI 或数据集成工具创建报表或任何不能更改的应用程序时特别有用。
-使用弹性查询，你可以利用 Excel、PowerBI、Tableau 或 Cognos 等工具中熟悉的 SQL Server 连接体验跨多个数据库进行查询。弹性查询可让你通过 SQL Server Management Studio 或 Visual Studio 发出的查询轻松访问整个数据库集合，并便于实现从实体框架或其他 ORM 环境跨数据库查询。图 1 显示了这样一个方案：其中使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)的现有云应用程序在扩大的数据层的基础上构建，并且弹性查询用于跨数据库报告。
+目标是便于实现多个数据库参与生成单个总体结果中的行的查询方案。查询可以由用户或应用程序直接编写，也可以通过与数据库连接的工具间接编写。这在使用商业 BI 或数据集成工具创建报表或任何不能更改的应用程序时特别有用。使用弹性查询，你可以利用 Excel、PowerBI、Tableau 或 Cognos 等工具中熟悉的 SQL Server 连接体验跨多个数据库进行查询。
+弹性查询可让你通过 SQL Server Management Studio 或 Visual Studio 发出的查询轻松访问整个数据库集合，并便于实现从实体框架或其他 ORM 环境跨数据库查询。图 1 显示了这样一个方案：其中使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)的现有云应用程序在扩大的数据层的基础上构建，并且弹性查询用于跨数据库报告。
 
 **图 1** 在扩大的数据层上使用的弹性数据库查询
 
@@ -88,7 +88,8 @@
 *    [CREATE/DROP EXTERNAL DATA SOURCE](https://msdn.microsoft.com/zh-cn/library/dn935022.aspx) mydatasource of type **RDBMS**
 *    [CREATE/DROP EXTERNAL TABLE](https://msdn.microsoft.com/zh-cn/library/dn935021.aspx) mytable
 
-运行 DDL 语句后，你可以访问远程表“mytable”就像它是本地表一样。Azure SQL 数据库将自动打开与远程数据库的连接，处理远程数据库上的请求并返回结果。有关垂直分区方案所需的步骤的详细信息，可以在[垂直分区的弹性查询](/documentation/articles/sql-database-elastic-query-vertical-partitioning)中找到。
+运行 DDL 语句后，你可以访问远程表“mytable”就像它是本地表一样。Azure SQL 数据库将自动打开与远程数据库的连接，处理远程数据库上的请求并返回结果。
+有关垂直分区方案所需的步骤的详细信息，可以在[垂直分区的弹性查询](/documentation/articles/sql-database-elastic-query-vertical-partitioning)中找到。
 
 ### 水平分区 - 分片
 
@@ -100,7 +101,8 @@
 *    [CREATE/DROP EXTERNAL DATA SOURCE](https://msdn.microsoft.com/zh-cn/library/dn935022.aspx) mydatasource of type **SHARD\_MAP\_MANAGER**
 *    [CREATE/DROP EXTERNAL TABLE](https://msdn.microsoft.com/zh-cn/library/dn935021.aspx) mytable
 
-执行这些步骤后，你便可以访问水平分区的表“mytable”就像它是本地表一样。Azure SQL 数据库将自动打开与远程数据库（在其中表以物理方式存储）的多个并行连接，处理远程数据库上的请求并返回结果。有关水平分区方案所需的步骤的详细信息，可以在[水平分区的弹性查询](/documentation/articles/sql-database-elastic-query-horizontal-partitioning)中找到。
+执行这些步骤后，你便可以访问水平分区的表“mytable”就像它是本地表一样。Azure SQL 数据库将自动打开与远程数据库（在其中表以物理方式存储）的多个并行连接，处理远程数据库上的请求并返回结果。
+有关水平分区方案所需的步骤的详细信息，可以在[水平分区的弹性查询](/documentation/articles/sql-database-elastic-query-horizontal-partitioning)中找到。
 
 ## T-SQL 查询
 你定义外部数据源和外部表后，便可以使用常规 SQL Server 连接字符串连接到你在其中定义了外部表的数据库。然后可以通过该连接对外部表运行 T-SQL 语句，但具有下述限制。你可以在[水平分区](/documentation/articles/sql-database-elastic-query-horizontal-partitioning)和[垂直分区](/documentation/articles/sql-database-elastic-query-vertical-partitioning)的文档主题中找到 T-SQL 查询的详细信息和示例。
@@ -148,4 +150,4 @@
 
 <!--anchors-->
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

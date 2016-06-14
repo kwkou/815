@@ -1,5 +1,5 @@
 <properties
-	pageTitle="连接到带 C# 查询的 SQL 数据库 | Azure"
+	pageTitle="使用 C# 查询连接到 SQL 数据库 | Azure"
 	description="用 C# 编写用于查询和连接到 SQL 数据库的程序。有关 IP 地址、连接字符串、安全登录和免费 Visual Studio 的信息。"
 	services="sql-database"
 	keywords="c# 数据库查询, c# 查询, 连接到数据库, SQL C#"
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="02/05/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="04/25/2016"
+	wacn.date="06/14/2016"/>
 
 
 # 用 C&#x23; 编写用于查询和连接到 SQL 数据库的程序
@@ -39,10 +39,12 @@
  - 在几分钟内[创建演示数据库](/documentation/articles/sql-database-get-started)。
 
 
-- Visual Studio 2013 Update 4（或更高版本）。Microsoft 现在*免费*提供 Visual Studio Community。
+- Visual Studio 2013 Update 4（或更高版本）。Microsoft 现在免费提供 Visual Studio Community。
  - [Visual Studio Community，下载](http://www.visualstudio.com/products/visual-studio-community-vs)
  - [Visual Studio 的更多免费选项](http://www.visualstudio.com/products/free-developer-offers-vs.aspx)
- - 或者，使用本主题中稍后介绍的[步骤](#InstallVSForFree)，在 [Azure 管理门户](https://manage.windowsazure.cn)中安装 Visual Studio。
+
+
+<a name="InstallVSForFree" id="InstallVSForFree"></a>
 
 &nbsp;
 
@@ -65,7 +67,7 @@
 
 	![“新建项目”对话框][30-VSNewProject]
 
-2. 对于“名称”，请输入 **ConnectAndQuery\_Example**。单击**“确定”**。
+2. 对于“名称”，请输入 **ConnectAndQuery\_Example**。单击“确定”。
 
 
 ## 步骤 3：添加程序集引用以进行配置处理
@@ -80,15 +82,12 @@
 
 3. 向下滚动，然后单击以突出显示 **System.Configuration**。确保已选中其复选框。
 
-4. 单击**“确定”**。
+4. 单击“确定”。
 
 5. 通过菜单“生成”>“生成解决方案”编译程序。
 
 
 ## 步骤 4：获取连接字符串
-
-
-使用 [Azure 管理门户](https://manage.windowsazure.cn)复制需要连接到 SQL 数据库的连接字符串。
 
 首次使用时，系统会将 Visual Studio 连接到 Azure SQL 数据库的 **AdventureWorksLT** 数据库。
 
@@ -102,7 +101,7 @@
 1. 在 Visual Studio 中，从“解决方案资源管理器”窗格中打开 App.config 文件。
 
 2. 如下面的示例 App.config 代码示例所示，添加 **&#x3c;configuration&#x3e; &#x3c;/configuration&#x3e;** 元素。
- - 将 *{your\_placeholders}* 替换为你自己的实际值：
+ - 将 {your\_placeholders} 替换为你自己的实际值：
 
 			<?xml version="1.0" encoding="utf-8" ?>
 			<configuration>
@@ -274,10 +273,6 @@
 在将客户端计算机的 IP 地址添加到 SQL 数据库防火墙之前，客户端 C# 程序无法连接到 SQL 数据库。你的程序将失败，并显示简单的错误消息，指出必需的 IP 地址。
 
 
-可以使用 [Azure 管理门户](https://manage.windowsazure.cn)添加该 IP 地址。
-
-
-
 [AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../includes/sql-database-include-ip-address-22-v12portal.md)]
 
 
@@ -312,4 +307,4 @@
 
 [50-VSCopyToOutputDirectoryProperty]: ./media/sql-database-connect-query/connqry-vs-appconfig-copytoputputdir-h.png
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0530_2016-->

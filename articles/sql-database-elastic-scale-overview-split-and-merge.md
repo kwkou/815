@@ -7,9 +7,9 @@
     authors="ddove"/>
 
 <tags 
-    ms.service="sql-database"
-    ms.date="11/04/2015" 
-    wacn.date="03/29/2016" />
+    ms.service="sql-database" 
+    ms.date="02/02/2016" 
+    wacn.date="06/14/2016" />
 
 # 使用弹性数据库拆分/合并工具进行缩放
 
@@ -23,17 +23,17 @@
 
 1\.1.0 版拆分/合并工具具有从完成的请求中自动清除元数据的功能。配置选项控制该元数据在删除之前的保留时间。
 
-1\.0.0 版拆分/合并工具提供了以下改进：
-* 包含 .Net API 来衔接拆分/合并 – Web 角色现在是可选的
-* 分片键现在支持日期和时间类型
-* 现在还支持列表分片映射。
+拆分/合并工具 1.0.0 版提供了以下改进：
+* 包含 .Net API 来衔接拆分/合并 – Web 角色现在是可选的 
+* 分片键现在支持日期和时间类型 
+* 现在还支持列表分片映射。 
 * 请求中的范围边界可以更轻松地符合存储在分片映射中的范围。
-* 为改善可用性，现在还支持多个辅助角色实例。
+* 为改善可用性，现在还支持多个辅助角色实体。 
 * 与拆分/合并操作一起存储的凭据现为静态加密。
 
 ## 如何升级
 
-1. 从 NuGet 下载最新版本的拆分/合并包，如[下载拆分/合并包](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge#download-the-Split-Merge-packages)中所述。
+1. 从 NuGet 下载最新版本的拆分/合并包，如[下载拆分/合并包](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge/#download-the-Split-Merge-packages)中所述。
 2. 更改拆分/合并部署的云服务配置文件，以反映新的配置参数。新的必需参数是用于加密的证书的相关信息。执行此操作的简单方法是将下载的新配置模板文件与现有配置进行比较。请确保添加 Web 和辅助角色的“DataEncryptionPrimaryCertificateThumbprint”与“DataEncryptionPrimary”设置。
 3. 将更新部署到 Azure 之前，请确保当前运行的所有拆分/合并操作都已完成。做法很简单，可以针对进行中的请求，查询拆分/合并元数据数据库中的 RequestStatus 和 PendingWorkflows 表。
 4. 使用新包和更新的服务配置文件，在 Azure 订阅中更新拆分/合并的现有云服务部署。
@@ -241,4 +241,4 @@
 [3]: ./media/sql-database-elastic-scale-overview-split-and-merge/diagnostics-config.png
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0606_2016-->

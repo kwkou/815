@@ -1,17 +1,17 @@
 <properties
-   pageTitle="云业务连续性 - 数据库恢复 | Azure"
+   pageTitle="云业务连续性 — 数据库恢复 | Azure"
    description="了解 Azure SQL 数据库如何支持云业务连续性和数据库恢复以及如何帮助保持运行任务关键型云应用程序。"
    keywords="业务连续性, 云业务连续性, 数据库灾难恢复, 数据库恢复"
    services="sql-database"
    documentationCenter=""
    authors="elfisher"
-   manager="jeffreyg"
+   manager="jhubbard"
    editor="monicar"/>
 
 <tags
    ms.service="sql-database"
-   ms.date="02/09/2016"
-   wacn.date="05/05/2016"/>
+   ms.date="05/10/2016"
+   wacn.date="06/14/2016"/>
 
 # 概述：云业务连续性与使用 SQL 数据库进行数据库灾难恢复
 
@@ -60,8 +60,7 @@
 | --- |--- | --- | ---
 | 时间点还原 | 7 天内的任何还原点 | 14 天内的任何还原点 | 35 天内的任何还原点
 | 异地还原 | ERT < 12 小时，RPO < 1 小时 | ERT < 12 小时，RPO < 1 小时 | ERT < 12 小时，RPO < 1 小时
-| 标准异地复制 | 不包括 | ERT < 30 秒，RPO < 5 秒 | ERT < 30 秒，RPO < 5 秒
-| 活动异地复制 | 不包括 | 不包括 | ERT < 30 秒，RPO < 5 秒
+| 活动异地复制 | ERT < 30 秒，RPO < 5 秒 | ERT < 30 秒，RPO < 5 秒 | ERT < 30 秒，RPO < 5 秒
 
 提供这些功能是为了解决前面列出的方案。有关如何选择特定功能的指导，请参阅[业务连续性设计](/documentation/articles/sql-database-business-continuity-design)部分。
 
@@ -70,18 +69,14 @@
 
 ###时间点还原
 
-时间点还原旨在将数据库还原到以前的某个时间点。它使用服务自动为每个用户数据库维护的数据库备份、增量备份和事务日志备份。此功能适用于所有服务层。基本、标准和高级数据库的还原期限分别为 7 天、14 天和 35 天。有关如何使用时间点还原的详细信息，请参阅[在人为失误后恢复](/documentation/articles/sql-database-user-error-recovery)。
+[时间点还原](/documentation/articles/sql-database-point-in-time-restore)旨在将数据库还原到以前的某个时间点。它使用服务自动为每个用户数据库维护的数据库备份、增量备份和事务日志备份。此功能适用于所有服务层。基本、标准和高级数据库的还原期限分别为 7 天、14 天和 35 天。有关如何使用时间点还原的详细信息，请参阅[在人为失误后恢复](/documentation/articles/sql-database-user-error-recovery)。
 
 ###异地还原
 
-异地还原也适用于基本、标准和高级数据库。当数据库由于它所在的区域发生事故而不可用时，异地还原会提供默认的恢复选项。与时间点还原一样，异地还原依赖于异地冗余的 Azure 存储空间中的数据库备份。它会从异地复制的备份副本中还原，因此可以灵活应对主要区域中的存储中断。有关如何使用异地还原的详细信息，请参阅[在中断后恢复](/documentation/articles/sql-database-disaster-recovery)。
-
-###标准异地复制
-
-标准异地复制适用于标准和高级数据库。它专为可以使用标准服务层的容量，但恢复要求超出了异地复制的能力的应用程序而设计。主数据库发生故障时，你可以启动向 DR 配对区域中存储的不可读辅助数据库的故障转移。有关如何配置异地复制的详细信息，请参阅[业务连续性设计](/documentation/articles/sql-database-business-continuity-design)；有关如何故障转移到辅助数据库的详细信息，请参阅[在中断后恢复](/documentation/articles/sql-database-disaster-recovery)。
+[异地还原](/documentation/articles/sql-database-geo-restore)也适用于基本、标准和高级数据库。当数据库由于它所在的区域发生事故而不可用时，异地还原会提供默认的恢复选项。与时间点还原一样，异地还原依赖于异地冗余的 Azure 存储空间中的数据库备份。它会从异地复制的备份副本中还原，因此可以灵活应对主要区域中的存储中断。有关如何使用异地还原的详细信息，请参阅[在中断后恢复](/documentation/articles/sql-database-disaster-recovery)。
 
 ###活动异地复制
 
-活动异地复制适用于所有服务层。它专为恢复要求最为苛刻的写入密集型应用程序而设计。使用活动异地复制，最多可以在不同区域中的服务器上创建四个可读辅助数据库。你可以像使用标准异地复制时一样启动向任何辅助数据库的故障转移。此外，活动异地复制可用于支持应用程序升级或重定位方案，以及只读工作负荷的负载平衡。有关如何配置异地复制的详细信息，请参阅[业务连续性设计](/documentation/articles/sql-database-business-continuity-design)；有关如何故障转移到辅助数据库的详细信息，请参阅[在中断后恢复](/documentation/articles/sql-database-disaster-recovery)。有关如何在不停机的情况下实现应用程序升级的详细信息，请参阅[在不停机的情况下升级应用程序](/documentation/articles/sql-database-business-continuity-application-upgrade)。
+[活动异地复制](/documentation/articles/sql-database-geo-replication-overview)适用于所有数据库层。它专为恢复要求超出了异地还原的能力的应用程序而设计。使用活动异地复制，最多可以在不同区域中的服务器上创建四个可读辅助数据库。可以启动到任何辅助数据库的故障转移。此外，活动异地复制可用于支持应用程序升级或重定位方案，以及只读工作负荷的负载平衡。有关如何在不停机的情况下实现应用程序升级的详细信息，请参阅[在不停机的情况下升级应用程序](/documentation/articles/sql-database-business-continuity-application-upgrade)。
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0530_2016-->

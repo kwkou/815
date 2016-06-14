@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="02/23/2016"
-	wacn.date="04/06/2016" />
+	wacn.date="06/14/2016" />
 
 # 弹性数据库拆分/合并工具教程
 
@@ -330,4 +330,4 @@
 [5]: ./media/sql-database-elastic-scale-configure-deploy-split-and-merge/storage.png
  
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0606_2016-->
