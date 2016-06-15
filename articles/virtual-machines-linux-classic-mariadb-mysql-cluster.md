@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/15/2015"
-	wacn.date=""/>
+	wacn.date="06/08/2016"/>
 
 # MariaDB (MySQL) 群集 - Azure 教程
 
@@ -51,11 +51,11 @@
 3. 查找 CentOS 7 虚拟机映像的名称
 
 		azure vm image list | findstr CentOS        
-该输出将如 `5112500ae3b842c8b9c604889f8753c3__OpenLogic-CentOS-70-20140926` 所示。在以下步骤中使用该名称。
+该输出将如 `f1179221e23b4dbb89e39d70e5bc9e72__OpenLogic-CentOS-70-20160329` 所示。在以下步骤中使用该名称。
 
 4. 创建 VM 模板，将 **/path/to/key.pem** 替换为已生成的 .pem SSH 密钥的存储位置路径
 
-		azure vm create --virtual-network-name mariadbvnet --subnet-names mariadb --blob-url "http://mariadbstorage.blob.core.chinacloudapi.cn/vhds/mariadbhatemplate-os.vhd"  --vm-size Medium --ssh 22 --ssh-cert "/path/to/key.pem" --no-ssh-password mariadbtemplate 5112500ae3b842c8b9c604889f8753c3__OpenLogic-CentOS-70-20140926 azureuser
+		azure vm create --virtual-network-name mariadbvnet --subnet-names mariadb --blob-url "http://mariadbstorage.blob.core.chinacloudapi.cn/vhds/mariadbhatemplate-os.vhd"  --vm-size Medium --ssh 22 --ssh-cert "/path/to/key.pem" --no-ssh-password mariadbtemplate f1179221e23b4dbb89e39d70e5bc9e72__OpenLogic-CentOS-70-20160329 azureuser
         
 5. 将 4 个 500GB 的数据磁盘附加到 VM，以便在 RAID 配置中使用
 
