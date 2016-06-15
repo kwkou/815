@@ -91,7 +91,7 @@
   <tr>
     <td>@</td>
     <td>A（地址）</td>
-    <td>168.62.48.183</td>
+    <td>42.159.129.12</td>
   </tr>
   <tr>
     <td>www</td>
@@ -102,7 +102,7 @@
 
 假设自定义域名为 contoso.com，则会创建以下记录：
 
-- **contoso.com** 映射到 168.62.48.183。
+- **contoso.com** 映射到 42.159.129.12。
 - **www.contoso.com** 映射到 **contoso.chinacloudsites.cn**。
 
 ##<a name="awverify"></a> 创建 awverify 记录（仅 A 记录）
