@@ -159,37 +159,42 @@ MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。�
 
  ![4](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-4.png)  
 
-1.个节点的基本信息如下  
-<table class="table table-bordered table-striped table-condensed" width="1">
-   <tr>
+
+
+
+
+
+1. 个节点的基本信息如下  
+	<table class="table table-bordered table-striped table-condensed" width="1">
+ 	  <tr>
       <th>操作系统</th>
       <th>MongoDB 版本号</th>
       <th>端口号(默认配置)</th>   
       <th>数据库存放目录(默认配置)</th>
       <th>日志存放目录(默认配置)</th>
-   </tr>  
-  <tr>
+  	 </tr>  
+  	<tr>
       <td>CentOS 7.0</td>
       <td>3.2</td>
       <td>27017</td>
       <td>/var/lib/mongo</td>
       <td>/var/log/mongodb/mongod.log</td>
-   </tr>
-  <tr>
+   	</tr>
+  	<tr>
       <td>Ubuntu 14.04</td>
       <td>3.2</td>
       <td>27017</td>
       <td>/var/lib/mongodb</td>
       <td>/var/log/mongodb/mongod.log</td>
-  </tr>
- <tr>
+ 	 </tr>
+ 	<tr>
       <td>SLES 12</td>
       <td>3.2</td>
       <td>27017</td>
       <td>/var/lib/mongo</td>
       <td>/var/log/mongodb/mongod.log</td>
-  </tr>
-</table>
+ 	 </tr>
+	</table>
 
 2.	在Azure虚机管理界面中打开以上三个节点的27017端口，具体操作请参考[链接](/documentation/articles/virtual-machines-set-up-endpoints/)。  
 3.	确保这三个节点能够互相连接。建议都位于同一个数据中心下，比如区域都是中国东部或者中国北部，以降低网络延迟。  
@@ -317,54 +322,56 @@ Query Routers (或者叫 mongos ) 负责与用户程序打交道，同时“引�
 Config servers 保存分片集群元数据信息。  
 
 ###<a name="config-MongoDB-neafcluster"></a>配置 MongoDB 分片集群  
-1.	使用上图作为此次分片集群的结构。5个节点的基本信息如下：  
-<table class="table table-bordered table-striped table-condensed" width="1">
-   <tr>
+
+
+1. 使用上图作为此次分片集群的结构。5个节点的基本信息如下：  
+	<table class="table table-bordered table-striped table-condensed" width="1">
+  	 <tr>
       <th>操作系统</th>
       <th>MongoDB 版本号</th>
       <th>角色</th>   
       <th>IP 地址</th>
       <th>端口号</th>
-   </tr>  
-  <tr>
+   	</tr>  
+  	<tr>
       <td>CentOS 7.0</td>
       <td>3.2</td>
       <td>router</td>
       <td>10.2.0.1</td>
       <td>27017</td>
-   </tr>
-  <tr>
+   	</tr>
+  	<tr>
       <td>CentOS 7.0</td>
       <td>3.2</td>
       <td>router</td>
       <td>10.2.0.2</td>
       <td>27017</td>
-  </tr>
- <tr>
+  	</tr>
+ 	<tr>
       <td>CentOS 7.0</td>
       <td>3.2</td>
       <td>Config server</td>
       <td>10.2.0.3</td>
       <td>27019</td>
-  </tr>
- <tr>
+  	</tr>
+ 	<tr>
       <td>CentOS 7.0</td>
       <td>3.2</td>
       <td>shard1复制集</td>
       <td>10.2.0.4</td>
       <td>27017</td>
-  </tr>
-  <tr>
+ 	 </tr>
+ 	 <tr>
       <td>CentOS 7.0</td>
       <td>3.2</td>
       <td>shard1复制集</td>
       <td>10.2.0.5</td>
       <td>27017</td>
-  </tr>
-</table> 
+ 	 </tr>
+	</table> 
 注意：10.2.0.4 和10.2.0.5 是属于同一个复制集集群, 由于实验环境限制，我这里只演示了一个复制集集群分片的方法，生产情况会有多个复制集集群的分片，以及至少三个 config servers。  
-2.	在每个节点上安装mongodb包。  
-3.	在Azure虚机管理界面中打开以上三个节点的27017端口，并保证每个节点能互相访问。建议都位于同一个数据中心下，比如区域都是中国东部或者中国北部，以降低网络延迟。然后修改 /etc/mongod.conf  
+2. 在每个节点上安装mongodb包。  
+3. 在Azure虚机管理界面中打开以上三个节点的27017端口，并保证每个节点能互相访问。建议都位于同一个数据中心下，比如区域都是中国东部或者中国北部，以降低网络延迟。然后修改 /etc/mongod.conf  
 ```
 $sudo sed -i 's/\(bindIp\)/#\1/' /etc/mongod.conf
 ```   
@@ -375,19 +382,19 @@ $sudo sed -i 's/\(bindIp\)/#\1/' /etc/mongod.conf
 ```   
 在其中一个shard节点执行如下命令    
 ```
-    $mongo
-    >use admin
-    >config={ _id:"repset", members:[
-    {_id:0,host:"10.2.0.4:27017"},
-    {_id:1,host:”10.2.0.5:27017"}]
-    }
-    >rs.initiate(config)
-    >rs.status()
+   		 $mongo
+   		 >use admin
+   		 >config={ _id:"repset", members:[
+   		 {_id:0,host:"10.2.0.4:27017"},
+   		 {_id:1,host:”10.2.0.5:27017"}]
+   		 }
+   		 >rs.initiate(config)
+  		  >rs.status()
 ```   
 到另一个 shard 节点验证    
 ```
-    $mongo
-    >rs.status()
+  		 $mongo
+   		>rs.status()
 ```  
 5.	到 Config server(10.2.0.3) 执行如下   
 ```
@@ -404,18 +411,18 @@ $sudo sed -i 's/\(bindIp\)/#\1/' /etc/mongod.conf
 ```  
 添加复制集主节点到分片集群, 从节点会自动添加进来   
 ```
-    >sh.addShard("repset/10.2.0.4:27017")  #假设10.2.0.4为主节点
+   		>sh.addShard("repset/10.2.0.4:27017")  #假设10.2.0.4为主节点
 ```  
 启用 sharding  
 ```
-    >use admin
-    >db.runCommand({enableSharding: "<database-name>" })
-    >sh.status() 
+    	>use admin
+    	>db.runCommand({enableSharding: "<database-name>" })
+    	>sh.status() 
 ```      
 给集合分片
 ```
-    >sh.shardCollection("<database-name >.<collection>", shard-key-pattern)
-    比如，sh.shardCollection("records.people", { "zipcode": 1, "name": 1 } )
+    	>sh.shardCollection("<database-name >.<collection>", shard-key-pattern)
+    	比如，sh.shardCollection("records.people", { "zipcode": 1, "name": 1 } )
 ```  
 
 关于更多分片集群配置操作，可以参考 [MongoDB 官方文档](https://docs.mongodb.com/manual/core/sharding-introduction/)。

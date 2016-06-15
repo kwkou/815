@@ -37,16 +37,17 @@
 >[AZURE.NOTE]参数使用注意事项
 >VmName: 需保证唯一性，该参数将作为DNS前缀。  
 >DNSNamePrefix：必须小写，需保证唯一性，该参数将作为DNS前缀。  
->ZabbixServerIPAddress：可选项，指定Zabbix服务器地址，安装MongoDB过程中会在虚拟机上自动安装Zabbix agent。    
+>ZabbixServerIPAddress：可选项，指定Zabbix服务器地址，安装MongoDB过程中会在虚拟机上自动安装Zabbix agent。      
 
->[AZURE.WARNING]]PowerShell脚本运行注意事项  
+PowerShell脚本运行注意事项
+>[AZURE.WARNING]PowerShell脚本运行注意事项  
 需要以管理员权限运行 PowerShell，使用之前需运行如下命令：  
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted  
 
 ###1.在Azure虚拟机上搭建单节点 MongoDB
 默认情况下，以下脚本将创建1台 CentOS 虚机，构成一个单节点 MongoDB。
 以下将介绍两种方式搭建 MongoDB：
-**Azure PowerShell 方式** 
+**Azure PowerShell 方式**  
 你需要下载 PowerShell 脚本 [mongodb-singlenode-deploy.ps1](http://mirrors.blob.core.chinacloudapi.cn/mongodb/mongodb-singlenode-deploy.ps1)，按照以下示例运行 mongodb-install-centos.ps1 脚本，即可在资源组 rg1 中生成一台 CentOS 虚拟机，接着会在该虚机上安装单节点 MongoDB。  
 
 ```PS C:\mongodb> .\mongodb-singlenode-deploy.ps1 -ResourceGroupName rg1 -AdminUserName azureuser -AdminPassword “YOUR-PASSWORD”  -CentosVersion 6.5 -VmName mongodbserver```  
@@ -179,11 +180,15 @@ connecting to: admin
  ![1](./media/open-source-azure-virtual-machines-create-mongodb-cluster/open-source-azure-virtual-machines-create-mongodb-cluster-1.png)  
 
 **Azure PowerShell方式**  
+
 你需要下载PowerShell脚本 [mongodb-sharding-deploy.ps1](http://mirrors.blob.core.chinacloudapi.cn/mongodb/mongodb-sharding-deploy.ps1)，按照以下示例运行 mongodb- sharding-deploy.ps1 脚本，即可在资源组rg1中生成多台 CentOS 虚拟机，接着会在该虚机上搭建具备主从复制节点及分片集群的 MongoDB，创建过程大概需要1 小时15分钟。  
+
 ```
 PS C:\mongodb>.\mongodb-sharding-deploy.ps1 -ResourceGroupName rg1 -CentosVersion 7.2 -AdminUsername azureuser -AdminPassword “YOUR-PASSWORD” -MongoUsername mongoadmin -MongoPassword “YOUR-PASSWORD” -DNSNamePrefix mongoshard
 ```  
+
 **Azure CLI 方式**  
+
 你需要在安装好 Azure CLI 的机器上，运行如下命令下载 azuredeploy.parameters-mongodb-centos.json 参数配置文件：  
 ```
 wget http://msmirrors.blob.core.chinacloudapi.cn/mongodb/mongodb-sharding-centos/azuredeploy.parameters.json -O azuredeploy.parameters.json
