@@ -15,7 +15,7 @@
 
 # MariaDB (MySQL) 群集 - Azure 教程
 
-<p>我们正在创建的是 [MariaDB](https://mariadb.org/en/about/) 的多主机 [Galera](http://galeracluster.com/products/) 群集，这是 MySQL 的嵌入式替代版本，具有稳健性、可扩展性和可靠性，可在 Azure 虚拟机上的高度可用环境中使用。</p>
+我们正在创建的是 [MariaDB](https://mariadb.org/en/about/) 的多主机 [Galera](http://galeracluster.com/products/) 群集，这是 MySQL 的嵌入式替代版本，具有稳健性、可扩展性和可靠性，可在 Azure 虚拟机上的高度可用环境中使用。
 
 ## 体系结构概述
 
@@ -127,7 +127,7 @@
 
      - 将当前 MySQL 目录复制到其新位置，然后删除旧目录
     
-    		cpcp -avr /var/lib/mysql /mnt/data  
+    		cpccp -avr /var/lib/mysql /mnt/data  
     		rm -rf /var/lib/mysql
       
      - 相应地设置新目录上的权限
