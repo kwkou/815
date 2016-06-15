@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Linux虚拟机上的数据库的备份 | Azure"
+   pageTitle="Azure Linux 虚拟机上的数据库的备份 | Azure"
    description="本文介绍如何在 Azure Linux 虚拟机上备份 MySQL、Redis、MongoDB 数据库"
    services="open-source"
    documentationCenter=""
@@ -12,7 +12,7 @@
    ms.date=""
    wacn.date="06/14/2016"/>
 
-#Azure Linux虚拟机上的数据库的备份
+#Azure Linux 虚拟机上的数据库的备份
 
 ##目录
 - [备份 MySQL](#backup-mysql)  
@@ -379,12 +379,12 @@ Percona XtraBackup 是开源的热备份工具—在备份的时候，不会锁�
 2.请参考上面的备份恢复过程。注意 <font color='red'>--defaults-file=/etc/mysql/my.cnf , 不是 /etc/my.cnf</font>
 
 
-##<a id="backup-redis"></a>备份Redis
+##<a id="backup-redis"></a>备份 Redis
 
 请参考文档“[在Azure Linux虚拟机上配置Redis集群.docx](/documentation/articles/open-source-azure-virtual-machines-linux-configure-redis-cluster)” 中关于复制和集群的部分。
 
 
-##<a id="backup-mongodb"></a>备份MongoDB
+##<a id="backup-mongodb"></a>备份 MongoDB
 请参考文档 “[在Azure Linux虚拟机上管理配置MongoDB集群.docx](/documentation/articles/open-source-azure-virtual-machines-manage-mongodb-cluster)” 中复制和分片的部分。  
 
 亦可使用mongodb tools.具体请参考[官网](#https://docs.mongodb.com/manual/administration/backup/)
