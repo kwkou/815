@@ -41,7 +41,7 @@
 
 ##	<a name="introduction"></a>介绍
 MongoDB 是一个跨平台的面向文档的 NoSQL 数据库，本文档介绍如何在Azure虚拟机上配置管理 MongoDB 集群。
-## <a name="#install-MongoDB"></a>在虚拟机上手动安装 MongoDB
+## <a name="install-MongoDB"></a>在虚拟机上手动安装 MongoDB
 如果您还没有 Azure Linux 虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/) 创建 Linux 虚拟机。
 如果这是您第一次使用Azure的Linux虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/) 如何使用虚拟机。
 
@@ -140,24 +140,24 @@ $sudo kill $MongoPid
 MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。复制集的成员有以下几种：主节点，从节点，投票节点。
 主节点接收所有写操作。
 
- ![0](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-manage-MongoDB-0.png)  
+ ![0](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-0.png)  
 
 从节点通过应用主节点传来的数据变动操作来保持其数据集与主节点的一致，从节点也可以通过增加额外的参数配置来对应特殊的需求。
 
- ![1](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-manage-MongoDB-1.png)  
+ ![1](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-1.png)  
 
 我们也可以为复制集设置一个投票节点 ，投票节点其本身并不包含数据集。但是，一旦当前的主节点不可用时，投票节点就会参与到新的主节点选举的投票中。  
 
- ![2](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-manage-MongoDB-2.png)  
+ ![2](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-2.png)  
 
 ###<a name="config-copy-cluster"></a>配置复制集集群
 我们以下图所示的三节点为例
 
- ![3](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-manage-MongoDB-3.png)  
+ ![3](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-3.png)  
 
 自动故障切换:
 
- ![4](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-manage-MongoDB-4.png)  
+ ![4](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-4.png)  
 
 1.个节点的基本信息如下  
 <table class="table table-bordered table-striped table-condensed" width="1">
@@ -201,44 +201,42 @@ MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。�
 在 Ubuntu 节点执行如下命令  
 ```#mongod --dbpath /var/lib/mongodb/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork```
 6.	使用 mongo shell 连接到复制集的一个成员。在一个节点上执行以下命令（请根据实际情况填写IP地址）：  
-```
-    $mongo
-    >use admin
-    >config = { _id:"repset", members:[
-    {_id:0,host:"CentOS Node IP:27017"},
-    {_id:1,host:"Ubuntu Node IP:27017"},
-    {_id:2,host:"SLES Node IP:27017" }]
-    }
-```  
+	``` $mongo
+	    >use admin
+	    >config = { _id:"repset", members:[
+	    {_id:0,host:"CentOS Node IP:27017"},
+	    {_id:1,host:"Ubuntu Node IP:27017"},
+	    {_id:2,host:"SLES Node IP:27017" }]
+	    }```  
 初始化复制集    
 ```>rs.initiate(config)```  
 验证复制集配置  
-```
-    >rs.status()
-    >rs.conf()
+``` 
+		>rs.status()  
+		>rs.conf()
 ```  
 登录到其他两个节点验证   
 ```  
-    $mongo
-    >rs.status()
-    >rs.conf()
+		$mongo
+		>rs.status()
+		>rs.conf()
 ```  
 7.	验证数据复制。  
 到主节点执行  
 ```
-    $mongo
-    >db
-    >db. mycol.insert({"title":"MongoDB Overview"})
-    >show collections
-    >db.mycol.find()
+    	$mongo
+    	>db
+    	>db. mycol.insert({"title":"MongoDB Overview"})
+    	>show collections
+    	>db.mycol.find()
 ```  
 登录到其他两个节点执行  
 ```
-    >mongo
-    >db
-    >db.getMongo().setSlaveOk()
-    >show collections
-    >db.mycol.find()
+    	>mongo
+    	>db
+    	>db.getMongo().setSlaveOk()
+    	>show collections
+    	>db.mycol.find()
 ```  
 如果我们能看到和主节点同样的结果，表明复制集配置成功。   
 ###<a name="auto-trouble-switch"></a>自动故障切换  
@@ -256,14 +254,14 @@ MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。�
 3.	到原先的主节点，重启 mongod 进程  
 在 CentOS 和 SLES 节点执行如下命令：  
 ```
-	    `#`mongod --dbpath /var/lib/mongo/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork 
-	    `#`mongo
+	    #mongod --dbpath /var/lib/mongo/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork 
+	    #mongo
 	    >rs.status()
 ```  
 在Ubuntu节点执行如下命令：  
 ```
-	    `#`mongod --dbpath /var/lib/mongodb --replSet repset --logpath /var/log/mongodb/mongod.log --fork 
-	    `#`mongo
+	    #mongod --dbpath /var/lib/mongodb --replSet repset --logpath /var/log/mongodb/mongod.log --fork 
+	    #mongo
 	    >rs.status()
 ```  
 您会看到它的状态变成从节点了。重新加入了此复制集。  
@@ -283,7 +281,7 @@ MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。�
 ###<a name="add-childnode"></a>添加从节点  
 1.	在想要添加到复制集的节点上执行(如果是 Ubuntu OS, dbpath 则是 /var/lib/mongodb )    
 ```
-`#`mongod --dbpath /var/lib/mongo/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork
+		#mongod --dbpath /var/lib/mongo/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork
 ```  
 2.	在主节点上执行   
 ```
@@ -308,11 +306,11 @@ MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。�
 ###<a name="introduction-2"></a>介绍
 分片( Sharding )是使用多个机器存储数据的方法,MongoDB使用分片以支持巨大的数据存储量与对数据操作  
 
-![5](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-manage-MongoDB-5.png)  
+![5](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-5.png)  
 
 MongoDB 分片
 
- ![6](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-manage-MongoDB-6.png)  
+ ![6](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-6.png)  
 
 Shards 保存数据。为了提供高可用性和数据一致性，在生产环境的分片集群中，每一个 shards 都是一个复制集。
 Query Routers (或者叫 mongos ) 负责与用户程序打交道，同时“引流”到合适的 shards 上。客户端发送一个请求，然后被路由至某个 shards, 再返回结果给客户端。一个分片集群可以有多个 mongos。
@@ -373,7 +371,7 @@ $sudo sed -i 's/\(bindIp\)/#\1/' /etc/mongod.conf
 4.	配置复制集(在shard节点配置，即10.2.0.4，10.2.0.5)  
 每个shard节点启动 mongod 进程  
 ```
-`#` mongod --dbpath /var/lib/mongo/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork
+		#mongod --dbpath /var/lib/mongo/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork
 ```   
 在其中一个shard节点执行如下命令    
 ```
@@ -393,16 +391,16 @@ $sudo sed -i 's/\(bindIp\)/#\1/' /etc/mongod.conf
 ```  
 5.	到 Config server(10.2.0.3) 执行如下   
 ```
-`#`mongod --configsvr --dbpath /var/lib/mongo/ --logpath /var/log/mongodb/mongod.log --fork
+		#mongod --configsvr --dbpath /var/lib/mongo/ --logpath /var/log/mongodb/mongod.log --fork
 ```   
 6.	router节点设置  
 登录到每个router节点执行    
 ```
-`#` mongos --configdb 10.2.0.3 --logpath /var/log/mongodb/mongod.log --fork
+		#mongos --configdb 10.2.0.3 --logpath /var/log/mongodb/mongod.log --fork
 ```  
 在一个 router 节点上执行  
 ``` 
-    `#` mongo  
+		#mongo  
 ```  
 添加复制集主节点到分片集群, 从节点会自动添加进来   
 ```
