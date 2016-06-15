@@ -38,7 +38,7 @@
 
 1. 创建地缘组，以将资源保存在一起
 
-		azure account affinity-group create mariadbcluster --location "North Europe" --label "MariaDB Cluster"
+		azure account affinity-group create mariadbcluster --location "China North" --label "MariaDB Cluster"
         
 2. 创建虚拟网络
 
@@ -127,7 +127,7 @@
 
      - 将当前 MySQL 目录复制到其新位置，然后删除旧目录
     
-    		cp -avr /var/lib/mysql /mnt/data  
+    		cpcp -avr /var/lib/mysql /mnt/data  
     		rm -rf /var/lib/mysql
       
      - 相应地设置新目录上的权限
