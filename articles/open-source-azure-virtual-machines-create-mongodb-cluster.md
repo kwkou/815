@@ -74,7 +74,7 @@ azure group deployment create rg1 DeployMongoDB --template-uri $TemplateUri –e
 ###2.	在Azure虚拟机上搭建包含主从复制节点的 MongoDB    
 默认情况下，以下脚本将创建3台 CentOS 虚机，组成一个 MongoDB 复制集，该复制集将包含一个 Pirmary 节点和2个 Secondary 节点，架构如下图所示：  
 
-  ![6](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-create-MongoDB-0.png)  
+  ![0](./media/open-source-azure-virtual-machines-create-mongodb-cluster/open-source-azure-virtual-machines-create-mongodb-cluster-0.png)  
 
 以下将介绍两种方式搭建 MongoDB：  
 **Azure PowerShell 方式**  
@@ -176,7 +176,7 @@ connecting to: admin
 ###3.	在 Azure 虚拟机上搭建 MongoDB 分片集群  
 默认情况下，以下脚本将创建11台 CentOS 虚机，包含：2台 router 服务器, 3台 config 服务器，2个分片，每个分片带有1个 Priamry 节点和2个 Secondary 节点，总计11个节点，架构如下图所示：  
 
- ![6](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-create-MongoDB-1.png)  
+ ![1](./media/open-source-azure-virtual-machines-create-mongodb-cluster/open-source-azure-virtual-machines-create-mongodb-cluster-1.png)  
 
 **Azure PowerShell方式**  
 你需要下载PowerShell脚本 [mongodb-sharding-deploy.ps1](http://mirrors.blob.core.chinacloudapi.cn/mongodb/mongodb-sharding-deploy.ps1)，按照以下示例运行 mongodb- sharding-deploy.ps1 脚本，即可在资源组rg1中生成多台 CentOS 虚拟机，接着会在该虚机上搭建具备主从复制节点及分片集群的 MongoDB，创建过程大概需要1 小时15分钟。  
@@ -200,7 +200,7 @@ azure group deployment create rg1 DeployMongoDB --template-uri $TemplateUri -e a
 ```mongo mongodbserver.chinanorth.cloudapp.chinacloudapi.cn:27017/test```   
 你也可以直接登录 MongoDB 服务器查看状态，运行如下命令：    
 ```  
-$ mongo -u mongoadmin -p “YOUR-PASSWORD”  --eval 'db.runCommand({listshards:1})'
+$mongo -u mongoadmin -p “YOUR-PASSWORD”  --eval 'db.runCommand({listshards:1})'
 MongoDB shell version: 3.2.6
 connecting to: admin
 {
