@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Linux虚拟机远程连接安全贴士 | Azure"
+   pageTitle="Linux 虚拟机远程连接安全贴士 | Azure"
    description="本文介绍如何安全的远程连接到 Linux 虚拟机"
    services="open-source"
    documentationCenter=""
@@ -13,7 +13,7 @@
    wacn.date="06/14/2016"/>
 
 
-#Linux虚拟机远程连接安全贴士
+#Azure Linux 虚拟机远程连接安全贴士
 
 在 Azure 上创建 Linux 虚拟机很容易。虚拟机创建完后 SSH 端口 22 是默认打开的，并不设任何限制，这样我们可以用 SSH 通过公共网络连到虚拟机。SSH 通常来讲还是安全的。我们连的时候也需要提供密码或密钥。但开着这样通用的端口总是安全隐患。而且，通过 “快速创建” 方式建出来的虚拟机默认 azureuser 为虚拟机用户名。如果密码设的又弱的话，虚拟机很容易会被侵入，造成更大的损失。要完全免去安全隐患，最好是不暴露任何 SSH 端口，但这有可能不太现实。 如果一定要暴露，建议采取一些保护措施。
  
@@ -35,7 +35,7 @@
  
 ![为 SSH 端口配置 ACL][4]
  
-以上简单几步，就可以让你更安全的远程连接到 Linux 虚拟机。如果你希望进一步加强安全性，可以参考 [Network tutorial](/documentation/services/networking) 来利用网络功能对虚拟机做更好的隔离，比如部署点到站点 VPN 或网络安全组。  
+以上简单几步，就可以让你更安全的远程连接到 Azure Linux 虚拟机。如果你希望进一步加强安全性，可以参考 [Network tutorial](/documentation/services/networking) 来利用网络功能对虚拟机做更好的隔离，比如部署点到站点 VPN 或网络安全组。  
 
 <!--image references-->
 [1]: ./media/open-source-azure-virtual-machines-linux-rdp-security-guide/open-source-azure-virtual-machines-linux-rdp-security-guide-1.png  

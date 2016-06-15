@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在Azure中自己搭建Nginx Web服务器 | Azure"
+   pageTitle="在 Azure 中自己搭建 Nginx Web 服务器 | Azure"
    description="本文介绍如何微软的公有云平台 Azure 中搭建 Nginx Web 服务器。"
    services="open-source"
    documentationCenter=""
@@ -13,7 +13,7 @@
    wacn.date="06/14/2016"/>
 
 
-#在Azure中自己搭建Nginx Web服务器
+#在 Azure 中自己搭建 Nginx Web 服务器
 
 Nginx 是一款轻量级的 Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，并在一个 BSD-like 协议下发行。这篇文章介绍如何微软的公有云平台 Azure 中搭建 Nginx Web 服务器。   
 
@@ -25,7 +25,7 @@ Nginx 是一款轻量级的 Web 服务器/反向代理服务器及电子邮件�
 您可以在 Azure上 选择您喜欢的 Linux 发行版并创建一台虚拟机，当然 Azure 也允许您自带自己的 Linux 虚拟机。  
 ![创建 Linux 虚拟机][1]
  
-##安装Nginx
+##安装 Nginx
 1.在 CentOS 上安装自带 NGINX 软件包  
 
 1.1  首先您需要添加NGINX yum安装源。  
@@ -89,7 +89,7 @@ Nginx 是一款轻量级的 Web 服务器/反向代理服务器及电子邮件�
  
 ![查看状态][3]  
 
-##在Azure端中配置可以从公网访问虚拟机中部署的网站
+##在 Azure 端中配置可以从公网访问虚拟机中部署的网站
 
 Azure 虚拟机默认只开放对应 VIP 地址的有限端口，用于远程连接或管理。新建网站如果需要通过虚拟 IP 地址某端口访问，则需要在该虚拟机上添加此服务终端节点（endpoint）。此操作可以通过 Azure 管理门户网站或通过 PowerShell 进行。  
 ![添加服务终端节点][4]
