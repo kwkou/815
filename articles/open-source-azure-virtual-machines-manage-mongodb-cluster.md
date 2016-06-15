@@ -6,30 +6,36 @@
 	documentationCenter=""
 	authors=""
 	manager=""
-	editor=""/>
+	editor="Lingli"/>
 
 <tags
-	ms.service="open-resource-mongodb" 
-	ms.date=""
-	wacn.date="06/14/2016"/>
+	ms.service="open-resource" 
+	wacn.date="06/15/2016"/>
 
 #在Azure虚拟机上管理配置MongoDB集群
 
-目录  
-[介绍](#introduction)  
-[安装 MongoDB](#install-MongoDB)  
-- [Redhat based Linux](#Redhat-based-Linux)  
-- [Ubuntu](#Ubuntu)  
-- [SUSE](#SUSE)  
-[配置管理复制集的集群](#config-cluster)  
-- [介绍](#introduction-1)   
-- [配置复制集集群](#config-copy-cluster)  
-- [自动故障切换](#auto-trouble-switch)  
-- [移除从节点](#remove-childnode)  
-- [添加从节点](#add-childnode)  
-- [修改复制集设置](#modify-copycluster-config)  
-[配置管理MongoDB分片集群](#manage-config-MongoDB-neafcluster)  
-- [介绍](#introduction-2)  
+##目录  
+
+[介绍](#introduction)
+
+[安装 MongoDB](#install-MongoDB)
+
+- [Redhat based Linux](#Redhat-based-Linux)
+- [Ubuntu](#Ubuntu)
+- [SUSE](#SUSE)
+
+[配置管理复制集的集群](#config-cluster)
+
+- [介绍](#introduction-1)
+- [配置复制集集群](#config-copy-cluster)
+- [自动故障切换](#auto-trouble-switch)
+- [移除从节点](#remove-childnode)
+- [添加从节点](#add-childnode)
+- [修改复制集设置](#modify-copycluster-config)
+
+[配置管理MongoDB分片集群](#manage-config-MongoDB-neafcluster)
+
+- [介绍](#introduction-2)
 - [配置MongoDB分片集群](#config-MongoDB-neafcluster)
 
 
@@ -133,17 +139,26 @@ $sudo kill $MongoPid
 复制是在多台服务器间同步数据的过程，提供冗余，增加了数据可用性，数据在不同服务器上的多份副本提供了容错性。在某些场合，复制增加了读能力，因为可以把用户的读请求分发到不同的服务器上。利用复制的特性可以用在灾难恢复，报告，备份等场景中。
 MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。复制集的成员有以下几种：主节点，从节点，投票节点。
 主节点接收所有写操作。
- ![0](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-0.png)  
+
+ ![0](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-manage-MongoDB-0.png)  
+
 从节点通过应用主节点传来的数据变动操作来保持其数据集与主节点的一致，从节点也可以通过增加额外的参数配置来对应特殊的需求。
- ![1](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-1.png)  
+
+ ![1](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-manage-MongoDB-1.png)  
+
 我们也可以为复制集设置一个投票节点 ，投票节点其本身并不包含数据集。但是，一旦当前的主节点不可用时，投票节点就会参与到新的主节点选举的投票中。  
- ![2](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-2.png)  
+
+ ![2](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-manage-MongoDB-2.png)  
 
 ###<a name="config-copy-cluster"></a>配置复制集集群
 我们以下图所示的三节点为例
- ![3](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-3.png)  
+
+ ![3](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-manage-MongoDB-3.png)  
+
 自动故障切换:
- ![4](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-4.png)  
+
+ ![4](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-manage-MongoDB-4.png)  
+
 1.个节点的基本信息如下  
 <table class="table table-bordered table-striped table-condensed" width="1">
    <tr>
@@ -292,9 +307,13 @@ MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。�
 ##<a name="manage-config-MongoDB-neafcluster"></a>配置管理 MongoDB 分片集群
 ###<a name="introduction-2"></a>介绍
 分片( Sharding )是使用多个机器存储数据的方法,MongoDB使用分片以支持巨大的数据存储量与对数据操作  
-![5](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-5.png)  
+
+![5](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-manage-MongoDB-5.png)  
+
 MongoDB 分片
- ![6](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-6.png)  
+
+ ![6](./media/open-source-manage-MongoDB-cluster-in-azure-vm/open-source-manage-MongoDB-6.png)  
+
 Shards 保存数据。为了提供高可用性和数据一致性，在生产环境的分片集群中，每一个 shards 都是一个复制集。
 Query Routers (或者叫 mongos ) 负责与用户程序打交道，同时“引流”到合适的 shards 上。客户端发送一个请求，然后被路由至某个 shards, 再返回结果给客户端。一个分片集群可以有多个 mongos。
 Config servers 保存分片集群元数据信息。  
