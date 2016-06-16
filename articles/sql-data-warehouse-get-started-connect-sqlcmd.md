@@ -34,10 +34,7 @@
 
 1. 转到 [Azure 管理门户](https://manage.windowsazure.cn)。
 2. 浏览到要连接到的数据库。
-3. 找出完整的服务器名称（我们将在下面的步骤中使用此名称）：
-
-![][1]
-
+3. 点击“仪表板”，找出完整的服务器名称（我们将在下面的步骤中使用此名称）：
 
 ## 使用 sqlcmd 连接到 SQL 数据仓库
 
@@ -71,6 +68,5 @@ C:\>sqlcmd -S <Server Name>.database.chinacloudapi.cn -d <Database> -U <User> -P
 
 
 <!--Image references-->
-[1]: ./media/sql-data-warehouse-get-started-connect/get-server-name.png
 
 <!---HONumber=Mooncake_0530_2016-->

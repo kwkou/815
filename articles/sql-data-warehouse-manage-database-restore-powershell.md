@@ -60,7 +60,7 @@ $ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.window
 $DatabaseName="<YourDatabaseName>"
 $NewDatabaseName="<YourDatabaseName>"
 
-Login-AzureRmAccount
+Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 Get-AzureRmSubscription
 Select-AzureRmSubscription -SubscriptionName $SubscriptionName
 
@@ -107,7 +107,7 @@ $ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.window
 $DatabaseName="<YourDatabaseName>"
 $NewDatabaseName="<YourDatabaseName>"
 
-Login-AzureRmAccount
+Login-AzureRmAccount -EnvironmentName AzureChianCloud
 Get-AzureRmSubscription
 Select-AzureRmSubscription -SubscriptionName $SubscriptionName
 
@@ -139,7 +139,7 @@ $RestoredDatabase.status
 
 ```Powershell
 
-Login-AzureRmAccount
+Login-AzureRmAccount -EnvironmentName AzureChianCloud
 Get-AzureRmSubscription
 Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
 

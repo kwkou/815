@@ -94,7 +94,7 @@
 [如何查看和提高 DTU 配额]: https://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/
 
 <!--Other Web references-->
-[Azure Portal]: https://portal.azure.com/
+[Azure Portal]: https://manage.windowsazure.cn/
 [Microsoft Web Platform Installer]: https://aka.ms/webpi-azps
 
 <!---HONumber=Mooncake_0606_2016-->

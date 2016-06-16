@@ -32,7 +32,7 @@
 1. 打开 Windows PowerShell。
 2. 运行此 cmdlet 以登录到 Azure Resource Manager 中。
 
-	```Powershell
+	```
 	Login-AzureRmAccount–EnvironmentName AzureChinaCloud
 	```
 	
@@ -44,7 +44,7 @@
 
 4.  创建数据库。此示例将在名为“mywesteuroperesgp1”的资源组中的名为“sqldwserver1”的服务器中创建一个名为“mynewsqldw”且服务目标级别为“DW400”的新数据库。**注意：创建新的 SQL 数据仓库数据库可能会导致新的计费费用。有关定价的更多详细信息，请参阅 [SQL 数据仓库定价][]。**
 
-	```Powershell
+	```
 	New-AzureRmSqlDatabase -RequestedServiceObjectiveName "DW400" -DatabaseName "mynewsqldw" -ServerName "sqldwserver1" -ResourceGroupName "mywesteuroperesgp1" -Edition "DataWarehouse"
 	```
 

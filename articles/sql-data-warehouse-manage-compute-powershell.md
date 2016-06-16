@@ -124,13 +124,13 @@ $resultDatabase
 [Performance scalability overview]: /documentation/articles/sql-data-warehouse-overview-scalability
 
 <!--MSDN references-->
-[Resume-AzureRmSqlDatabase]: https://msdn.microsoft.com/library/mt619347.aspx
-[Suspend-AzureRmSqlDatabase]: https://msdn.microsoft.com/library/mt619337.aspx
-[Set-AzureRmSqlDatabase]: https://msdn.microsoft.com/library/mt619433.aspx
+[Resume-AzureRmSqlDatabase]: https://msdn.microsoft.com/zh-cn/library/mt619347.aspx
+[Suspend-AzureRmSqlDatabase]: https://msdn.microsoft.com/zh-cn/library/mt619337.aspx
+[Set-AzureRmSqlDatabase]: https://msdn.microsoft.com/zh-cn/library/mt619433.aspx
 
 
 <!--Other Web references-->
 
-[Azure portal]: http://portal.azure.com/
+[Azure portal]: http://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0606_2016-->
