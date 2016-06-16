@@ -234,7 +234,7 @@ Azure SQL 数据库是在云中运行的关系数据库即服务。它基于 Mic
 
 - 将一起使用的数据分组到同一个分片，并避免执行需要访问保存在多个分片中的数据的操作。请记住，使用弹性数据库时，分片本身就是 SQL 数据库，而 Azure SQL 数据库不支持跨数据库联接（这些操作必须在客户端执行）。另请记住，使用 Azure SQL 数据库时，引用完整性条件约束、触发器和一个数据库中的存储过程无法引用另一个数据库中的对象。因此请不要设计在分片之间具有依赖性的系统。但是，SQL 数据库可以包含表（保存查询和其他操作常用的引用数据副本）。这些表并不一定属于任何特定 shardlet。跨分片复制此数据有助于消除联接跨数据库的数据的需要。在理想的情况下，此类数据应该是静态或缓慢移动的，以最大限度地减少复制工作量并减少数据变陈旧的可能性。
 
-	> [AZURE.NOTE] 尽管 Azure SQL 数据库不支持跨数据库联接，但你可以使用弹性数据库 API 执行跨分片查询。这些查询可以透明方式循环访问分片映射引用的所有 shardlet 中保存的数据。弹性数据库 API 将跨分片查询分解成一系列独立查询（每个数据库一个），然后将结果合并在一起。有关详细信息，请参阅 Microsoft 网站上的 [Multi-shard querying]（多分片查询）页。
+	> [AZURE.NOTE] 尽管 Azure SQL 数据库不支持跨数据库联接，但你可以使用弹性数据库 API 执行跨分片查询。这些查询可以透明方式循环访问分片映射引用的所有 shardlet 中保存的数据。弹性数据库 API 将跨分片查询分解成一系列独立查询（每个数据库一个），然后将结果合并在一起。
 
 - 存储在属于相同分片映射的 shardlet 中的数据应该具有相同的架构。例如，创建的列表分片映射不应指向包含租户数据的某些 shardlet 和其他包含产品信息的 shardlet。弹性数据库不会强制实施此规则，但如果每个 shardlet 都有不同的架构，则数据管理和查询将变得非常复杂。在上述示例中，不错的解决方案是创建两个列表分片映射；一个引用租户数据，另一个指向产品信息。请记住，属于不同 shardlet 的数据可以存储在相同的分片中。
 
@@ -458,15 +458,13 @@ Redis 网站上的 [Partitioning: how to split data among multiple Redis instanc
 - Microsoft 网站上的 [Azure Storage table design guide]（Azure 存储表设计指南）一文包含有关在 Azure 表存储中分区数据的详细信息。
 - Microsoft 网站上的 [Using Azure Content Delivery Network]（使用 Azure 内容交付网络）页介绍了如何使用 Azure 内容交付网络复制保存在 Azure Blob 存储中的数据。
 - Microsoft 网站上的 [Manage DocumentDB capacity needs]（管理 DocumentDB 容量需求）页包含有关 Azure DocumentDB 数据库如何分配资源的信息。
-- Microsoft 网站上的 [What is Azure Search?]（什么是 Azure 搜索？）页全面介绍了 Azure 搜索提供的功能。
-- Microsoft 网站上的 [Service limits in Azure Search]（Azure 搜索中的服务限制）页包含有关每个 Azure 搜索实例的容量的信息。
 - Microsoft 网站上的 [Supported data types (Azure Search)]（支持的数据类型（Azure 搜索））页汇总了你可以在可搜索文档和索引中使用的数据类型。
 - Microsoft 网站上的 [Azure Redis Cache]（Azure Redis 缓存）页提供了 Azure Redis 缓存的介绍。
 - Redis 网站上的 [Partitioning: how to split data among multiple Redis instances]（分区：如何在多个 Redis 实例之间拆分数据）页提供了有关如何使用 Redis 实施分区的信息。
 - Microsoft 网站上的 [Running Redis on a CentOS Linux VM in Azure]（在 Azure 中的 CentOS Linux VM 上运行 Redis）页逐步讲解了一个示例，演示如何构建和配置作为 Azure VM 运行的 Redis 节点。
 - Redis 网站上的 [Data types]（数据类型）页介绍了可在 Redis 和 Azure Redis 缓存中使用的数据类型。
 
-[Azure Redis Cache]: /services/cache/
+[Azure Redis Cache]: /services/redis-cache/
 [Azure Storage Scalability and Performance Targets]: /documentation/articles/storage-scalability-targets
 [Azure Storage Table Design Guide]: /documentation/articles/storage-table-design-guide
 [Building a Polyglot Solution]: https://msdn.microsoft.com/zh-cn/library/dn313279.aspx
