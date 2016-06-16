@@ -46,13 +46,13 @@
 
 用于获取所有员工信息的简单 select 语句示例：
 
-```sql
+```
 SELECT * FROM DimEmployee;
 ```
 
 下面是一个更复杂的查询示例，它使用构造（例如 GROUP BY）来查看每天所有销售活动的总金额：
 
-```sql
+```
 SELECT OrderDateKey, SUM(SalesAmount) AS TotalSales
 FROM FactInternetSales
 GROUP BY OrderDateKey

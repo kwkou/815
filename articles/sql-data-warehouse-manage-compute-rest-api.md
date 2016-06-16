@@ -1,5 +1,5 @@
 <properties
-   pageTitle="管理 Azure SQL 数据仓库中的计算能力 (REST) | Microsoft Azure"
+   pageTitle="管理 Azure SQL 数据仓库中的计算能力 (REST) | Azure"
    description="用于管理计算能力的 PowerShell 任务。通过调整 DWU 缩放计算资源。或者，暂停和恢复计算资源来节省成本。"
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -96,6 +96,6 @@ POST https://management.azure.com/subscriptions{subscription-id}/resourceGroups/
 
 <!--Other Web references-->
 
-[Azure portal]: http://portal.azure.com/
+[Azure portal]: http://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0606_2016-->
