@@ -295,6 +295,8 @@
 
 在使用 Azure CLI 的机器上运行以下命令。命令参数结构是：`azure vm endpoint create-multiple <MachineName> <PublicPort>:<VMPort>:<Protocol>:<EnableDirectServerReturn>:<Load Balanced Set Name>:<ProbeProtocol>:<ProbePort>`
 
+>[AZURE.NOTE] 以下的命令只适用于 Azure CLI 0.8，更新的版本的 endpoints-config 已经变更为 `<public-port>:<local-port>:<protocol>:<idle-timeout>:<direct-server-return>:<probe-protocol>:<probe-port>:<probe-path>:<probe-interval>:<probe-timeout>:<load-balanced-set-name>:<internal-load-balancer-name>:<load-balancer-distribution>`
+
 	azure vm endpoint create-multiple mariadb1 3306:3306:tcp:false:MySQL:tcp:3306
     azure vm endpoint create-multiple mariadb2 3306:3306:tcp:false:MySQL:tcp:3306
     azure vm endpoint create-multiple mariadb3 3306:3306:tcp:false:MySQL:tcp:3306
