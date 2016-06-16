@@ -12,7 +12,7 @@
 <tags
    ms.service="sql-database"
    ms.date="03/22/2016"
-   wacn.date="05/16/2016"/>
+   wacn.date="06/14/2016"/>
 
 # SQL 数据库安全：管理数据库的访问和登录安全  
 
@@ -82,7 +82,7 @@ CREATE LOGIN login1 WITH password='<ProvidePassword>';
 
 #### 使用新登录名
 
-为了使用你创建的登录名连接到 Azure SQL 数据库，你必须首先通过使用 ``CREATE USER`` 命令为每个登录名授予数据库级别权限。有关详细信息，请参阅下面的授予登录名数据库访问权限一节。
+为了使用你创建的登录名连接到 Azure SQL 数据库，你必须首先通过使用 ``CREATE USER`` 命令为每个登录名授予数据库级别权限。有关详细信息，请参阅下面的**授予登录名数据库访问权限**一节。
 
 因为某些工具以不同方式实现表格格式数据流 (TDS)，所以，你可能需要使用 ``<login>@<server>`` 表示法将 Azure SQL 数据库服务器名称追加到连接字符串中的登录名。在这些情况下，使用 ``@`` 符号分隔登录名和 Azure SQL 数据库服务器名称。例如，如果你的登录名为 **login1**，并且你的 Azure SQL 数据库服务器的完全限定名称为 **servername.database.chinacloudapi.cn**，则你的连接字符串的用户名参数应为：**login1@servername**。此限制将限制你可为登录名选择的文本。有关详细信息，请参阅 [CREATE LOGIN (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms189751.aspx)。
 
@@ -143,7 +143,7 @@ CREATE DATABASE database1;
 
 > [AZURE.NOTE] 创建登录名时必须使用强密码。有关详细信息，请参阅[强密码](https://msdn.microsoft.com/zh-cn/library/ms161962.aspx)。
 
-以下示例演示了如何在与登录名 **login1** 相对应的数据库 database1 中创建名为 **login1User** 的数据库用户。若要执行以下示例，首先必须使用在 **database1** 中拥有“更改任意用户”权限的登录名与该数据库建立新连接。以 **db\_owner** 角色成员连接的任何用户（例如创建该数据库的登录名）都拥有该权限。
+以下示例演示了如何在与登录名 **login1** 相对应的数据库 **database1** 中创建名为 **login1User** 的数据库用户。若要执行以下示例，首先必须使用在 database1 中拥有“更改任意用户”权限的登录名与该数据库建立新连接。以 **db\_owner** 角色成员连接的任何用户（例如创建该数据库的登录名）都拥有该权限。
 
 ```
 -- Establish a new connection to the database1 database
@@ -174,4 +174,4 @@ SELECT * FROM sys.databases;
 [Azure SQL 数据库安全指导原则和限制](/documentation/articles/sql-database-security-guidelines)
 [通过使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication)
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

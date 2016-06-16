@@ -4,14 +4,14 @@
 	services="sql-database"
 	documentationCenter=""
 	authors="jodebrui"
-	manager="jeffreyg"
+	manager="jhubbard"
 	editor="MightyPen"/>
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="11/16/2015"
-	wacn.date="12/22/2015"/>
+	ms.date="02/11/2016"
+	wacn.date="06/14/2016"/>
 
 
 # 使用 In-Memory（预览版）改善 SQL 数据库中的应用程序性能
@@ -27,7 +27,7 @@
 SELECT DatabasePropertyEx(Db_Name(), 'IsXTPSupported');
 ```
 
-*XTP* 代表*极端事务处理* (Extreme Transaction Processing)
+*XTP* 代表极端事务处理 (Extreme Transaction Processing)
 
 如果现有的数据库必须迁移到新的 V12 高级数据库，你可以使用以下方法导出再导入你的数据。
 
@@ -37,7 +37,7 @@ SELECT DatabasePropertyEx(Db_Name(), 'IsXTPSupported');
 
 - [门户](https://manage.windowsazure.cn)中的“导出”功能。[](/documentation/articles/sql-database-export)
 
-- 最新 [SSMS.exe](http://msdn.microsoft.com/zh-cn/library/mt238290.aspx) (SQL Server Management Studio) 中的“导出数据层应用程序”功能。
+- [最新SSMS.exe](http://msdn.microsoft.com/zh-cn/library/mt238290.aspx) (SQL Server Management Studio) 中的“导出数据层应用程序”功能。
  1. 在“对象资源管理器”中，展开“数据库”节点。
  2. 右键单击你的数据库节点。
  3. 单击“任务”>“导出数据层应用程序”。
@@ -63,7 +63,9 @@ SELECT DatabasePropertyEx(Db_Name(), 'IsXTPSupported');
 
 SSMS 包含可以针对具有活动工作负荷的数据库运行的“事务性能分析概述”报告。该报告识别要迁移到 In-Memory OLTP 的候选表和存储过程。
 
-在 SSMS 中，若要生成报告，请执行以下操作：-在“对象资源管理器”中，右键单击你的数据库节点。- 单击“报告”>“标准报告”>“事务性能分析概述”。
+若要在 SSMS 中生成报告，请执行以下操作：
+- 在“对象资源管理器”中，右键单击你的数据库节点。
+- 单击“报告”>“标准报告”>“事务能分析概述”。
 
 有关详细信息，请参阅[确定是否应将某个表或存储过程移植到 In-Memory OLTP](http://msdn.microsoft.com/zh-cn/library/dn205133.aspx)。
 
@@ -217,7 +219,7 @@ CREATE PROCEDURE schemaname.procedurename
 
 建议你监视在生产环境中实施 In-Memory 后的性能影响：
 
-- [监视内存中存储](/documentation/articles/sql-database-in-memory-oltp-monitoring/)。
+- [监视内存中存储](/documentation/articles/sql-database-in-memory-oltp-monitoring)。
 
 - [使用动态管理视图监视 Azure SQL 数据库](/documentation/articles/sql-database-monitoring-with-dmvs)
 
@@ -230,4 +232,5 @@ CREATE PROCEDURE schemaname.procedurename
 
 - [内存优化顾问](http://msdn.microsoft.com/zh-cn/library/dn284308.aspx)
 
-<!---HONumber=Mooncake_1207_2015-->
+
+<!---HONumber=Mooncake_0606_2016-->

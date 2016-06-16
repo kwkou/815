@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="02/14/2016"
-	wacn.date="03/24/2016"/>
+	wacn.date="06/14/2016"/>
 
 # 将数据库还原到以前的时间点、还原已删除的数据库，或者在数据中心服务中断的情况下进行恢复
 
@@ -38,4 +38,4 @@ Azure 还在不同的区域提供每个数据库的备份（异地冗余的备�
 
 - 在 [Azure 管理门户](http://portal.azure.cn)中，依次单击“新建”、“数据和存储”、“SQL 数据库”，然后选择“备份”作为数据库源。有关详细信息，请参阅[在中断后恢复 Azure SQL 数据库](/documentation/articles/sql-database-disaster-recovery)。
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0606_2016-->

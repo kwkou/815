@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="02/23/2016"
-	wacn.date="04/18/2016"/>
+	wacn.date="06/14/2016"/>
 
 # 用于 SQL 数据库和 SQL Server 的连接库
 
@@ -65,4 +65,4 @@
 https://zh.wikipedia.org/wiki/Draft:Microsoft_SQL_Server_Libraries/Drivers
 -->
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0606_2016-->

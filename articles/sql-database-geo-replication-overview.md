@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="03/07/2016"
-	wacn.date="04/06/2016" />
+	wacn.date="06/14/2016" />
 
 # Azure SQL 数据库的活动异地复制
 
@@ -48,7 +48,7 @@
 
 - **保持凭据和防火墙规则同步**：我们建议将[数据库防火墙规则](/documentation/articles/sql-database-firewall-configure)用于异地复制数据库，以便可以使用数据库复制这些规则，以确保所有辅助数据库具有与主数据库相同的防火墙配置。这样就不再需要客户手动配置和维护承载主数据库和辅助数据库的服务器上的防火墙规则。同样，将[包含的数据库用户](/documentation/articles/sql-database-manage-logins)用于数据访问可确保主数据库和辅助数据库始终具有相同的用户凭据，以便在发生故障转移时，将不会因登录名和密码不匹配而产生中断。通过添加 [Azure Active Directory](/documentation/articles/active-directory-whatis)，客户可以管理主数据库和辅助数据库的用户访问权限，且不再需要同时管理数据库中的凭据。
 
-- **Azure Resource Manager API 和基于角色的安全性**：活动异地复制包括一组用于管理的 [Azure Resource Manager (ARM) API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx)，其中包括 [基于 ARM 的 PowerShell cmdlet](/documentation/articles/sql-database-geo-replication-powershell)。这些 API 需要使用资源组，并支持基于角色的安全 (RBAC)。有关如何实现访问角色的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+- **Azure 资源管理器 API 和基于角色的安全性**：活动异地复制包括一组用于管理的 [Azure 资源管理器 (ARM) API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx)，其中包括 [基于 ARM 的 PowerShell cmdlet](/documentation/articles/sql-database-geo-replication-powershell)。这些 API 需要使用资源组，并支持基于角色的安全 (RBAC)。有关如何实现访问角色的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
 
 >[AZURE.NOTE] 向后兼容支持现有 [Azure SQL 服务管理（经典）REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn505719.aspx) 和 [Azure SQL 数据库（经典）cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn546723.aspx)。不过，仅在基于 ARM 的 [Azure SQL REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx) 和基于 ARM 的 [Azure SQL 数据库 PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt574084.aspx) 中支持活动异地复制的多种新功能。
 
@@ -60,4 +60,4 @@
 ## 后续步骤
 有关 SQL 数据库的其他业务连续性功能的信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0606_2016-->

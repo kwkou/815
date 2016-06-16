@@ -8,10 +8,9 @@
 	editor=""/>
 
 <tags
-   ms.service="sql-database"
-   ms.date="03/29/2016"
-   wacn.date="05/16/2016" />
-
+	ms.service="sql-database"
+	ms.date="03/29/2016"
+	wacn.date="06/14/2016" />
 
 
 # 使用 PowerShell 更改 SQL 数据库的服务层和性能级别（定价层）
@@ -124,4 +123,4 @@
 - [SQL 数据库文档](/documentation/services/sql-databases)
 - [Azure SQL 数据库 Cmdlet](http://msdn.microsoft.com/zh-cn/library/mt574084.aspx)
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

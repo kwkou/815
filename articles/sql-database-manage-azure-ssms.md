@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database" 
 	ms.date="03/07/2016" 
-	wacn.date="04/18/2016"/>
+	wacn.date="06/14/2016"/>
 
 
 # 使用 SQL Server Management Studio 管理 Azure SQL 数据库 
@@ -143,4 +143,4 @@ SQL 数据库支持多个您可用于监视单个数据库的动态管理视图�
         ORDER BY 2 DESC;
  
  
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0606_2016-->
