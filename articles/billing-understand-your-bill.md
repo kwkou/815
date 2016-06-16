@@ -18,8 +18,6 @@
 
 Azure 订阅的费用因资费套餐而异, 请注意，先前计费期间的最多 24 小时潜在使用量可以纳入你的当前计费期间。
 
-有关消费和资费套餐的详细信息，请参阅 [Azure 购买选项](/pricing/purchase-options/)页。
-
 ## 查看 Azure 帐单：
 
 在 [Azure 帐户门户](https://account.windowsazure.cn/subscriptions)中，你可以查看当前的帐单。
