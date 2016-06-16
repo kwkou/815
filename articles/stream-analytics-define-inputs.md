@@ -72,7 +72,7 @@ FROM Input
 ## 创建 IoT 中心数据流输入
 
 Azure Iot 中心是已针对 IoT 进行优化，具有高度可缩放性的发布-订阅事件引入器。
-需要注意的是，来自流分析中 IoT 中心的事件默认时间戳是事件到达 IoT 中心的时间戳，即 EventEnqueuedUtcTime。若要在事件负载中使用时间戳以流方式处理数据，必须使用 [TIMESTAMP BY](https://msdn.microsoft.com/library/azure/dn834998.aspx) 关键字。
+需要注意的是，来自流分析中 IoT 中心的事件默认时间戳是事件到达 IoT 中心的时间戳，即 EventEnqueuedUtcTime。若要在事件负载中使用时间戳以流方式处理数据，必须使用 [TIMESTAMP BY](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx) 关键字。
 
 ### 使用者组
 
