@@ -14,7 +14,7 @@
 
 3. 在查询窗口中，编辑并使用以下 Transact-SQL 语句在用户数据库中创建包含的用户。
 
-    ```CREATE USER user1 WITH PASSWORD ='p@ssw0rd1';
+		CREATE USER user1 WITH PASSWORD ='p@ssw0rd1';
 
      ![SQL Server Management Studio：连接到 SQL 数据库服务器](./media/sql-database-create-new-database-user/sql-database-create-new-database-user-3.png)
 
