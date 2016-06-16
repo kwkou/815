@@ -147,7 +147,7 @@ ACS 支持通过多种方法创建服务标识、信赖方和规则，但最简�
 
 [事件中心概述]: /documentation/articles/event-hubs-overview
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
-[队列消息解决方案]: /documentation/articles/service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues
+[队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
  
 
 <!---HONumber=Mooncake_0523_2016-->
