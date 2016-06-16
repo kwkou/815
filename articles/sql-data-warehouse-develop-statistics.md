@@ -66,32 +66,31 @@
 
 > [AZURE.NOTE] 请记住，如果给定列的值分布有重大变化，则应该更新统计信息，不管上次更新时间为何。
 
-```sql
-SELECT
-    sm.[name] AS [schema_name],
-    tb.[name] AS [table_name],
-    co.[name] AS [stats_column_name],
-    st.[name] AS [stats_name],
-    STATS_DATE(st.[object_id],st.[stats_id]) AS [stats_last_updated_date]
-FROM
-    sys.objects ob
-    JOIN sys.stats st
-        ON  ob.[object_id] = st.[object_id]
-    JOIN sys.stats_columns sc    
-        ON  st.[stats_id] = sc.[stats_id]
-        AND st.[object_id] = sc.[object_id]
-    JOIN sys.columns co    
-        ON  sc.[column_id] = co.[column_id]
-        AND sc.[object_id] = co.[object_id]
-    JOIN sys.types  ty    
-        ON  co.[user_type_id] = ty.[user_type_id]
-    JOIN sys.tables tb    
-        ON  co.[object_id] = tb.[object_id]
-    JOIN sys.schemas sm    
-        ON  tb.[schema_id] = sm.[schema_id]
-WHERE
-    st.[user_created] = 1;
-```
+    SELECT
+        sm.[name] AS [schema_name],
+        tb.[name] AS [table_name],
+        co.[name] AS [stats_column_name],
+        st.[name] AS [stats_name],
+        STATS_DATE(st.[object_id],st.[stats_id]) AS [stats_last_updated_date]
+    FROM
+        sys.objects ob
+        JOIN sys.stats st
+            ON  ob.[object_id] = st.[object_id]
+        JOIN sys.stats_columns sc    
+            ON  st.[stats_id] = sc.[stats_id]
+            AND st.[object_id] = sc.[object_id]
+        JOIN sys.columns co    
+            ON  sc.[column_id] = co.[column_id]
+            AND sc.[object_id] = co.[object_id]
+        JOIN sys.types  ty    
+            ON  co.[user_type_id] = ty.[user_type_id]
+        JOIN sys.tables tb    
+            ON  co.[object_id] = tb.[object_id]
+        JOIN sys.schemas sm    
+            ON  tb.[schema_id] = sm.[schema_id]
+    WHERE
+        st.[user_created] = 1;
+
 
 例如，数据仓库中的日期列往往需要经常更新统计信息。每次有新行载入数据仓库时，就会添加新的加载日期或事务日期。这些操作会更改数据分布情况并使统计信息过时。相反地，客户表上性别列的统计信息可能永远不需要更新。假设客户间的分布固定不变，将新行添加到表变化并不会改变数据分布情况。不过，如果数据仓库只包含一种性别，而新的要求导致多种性别，则肯定需要更新性别列的统计信息。
 
@@ -199,23 +198,21 @@ CREATE STATISTICS stats_2cols ON table1 (product_category, product_sub_category)
 
 创建统计信息的方法之一是在创建表后发出 CREATE STATISTICS 命令。
 
-```
-CREATE TABLE dbo.table1
-(
-   col1 int
-,  col2 int
-,  col3 int
-)
-WITH
-  (
-    CLUSTERED COLUMNSTORE INDEX
-  )
-;
-
-CREATE STATISTICS stats_col1 on dbo.table1 (col1);
-CREATE STATISTICS stats_col2 on dbo.table2 (col2);
-CREATE STATISTICS stats_col3 on dbo.table3 (col3);
-```
+    CREATE TABLE dbo.table1
+    (
+       col1 int
+    ,  col2 int
+    ,  col3 int
+    )
+    WITH
+      (
+        CLUSTERED COLUMNSTORE INDEX
+      )
+    ;
+    
+    CREATE STATISTICS stats_col1 on dbo.table1 (col1);
+    CREATE STATISTICS stats_col2 on dbo.table2 (col2);
+    CREATE STATISTICS stats_col3 on dbo.table3 (col3);
 
 ### H.使用存储过程基于数据库中的所有列创建统计信息
 
@@ -223,86 +220,85 @@ SQL 数据仓库不提供相当于 SQL Server 中 [sp\_create\_stats][] 的系�
 
 这可以帮助你开始进行数据库设计。你可以根据需要任意改写此存储过程。
 
-```
-CREATE PROCEDURE    [dbo].[prc_sqldw_create_stats]
-(   @create_type    tinyint -- 1 default 2 Fullscan 3 Sample
-,   @sample_pct     tinyint
-)
-AS
+    CREATE PROCEDURE    [dbo].[prc_sqldw_create_stats]
+    (   @create_type    tinyint -- 1 default 2 Fullscan 3 Sample
+    ,   @sample_pct     tinyint
+    )
+    AS
+    
+    IF @create_type NOT IN (1,2,3)
+    BEGIN
+        THROW 151000,'Invalid value for @stats_type parameter. Valid range 1 (default), 2 (fullscan) or 3 (sample).',1;
+    END;
+    
+    IF @sample_pct IS NULL
+    BEGIN;
+        SET @sample_pct = 20;
+    END;
+    
+    IF OBJECT_ID('tempdb..#stats_ddl') IS NOT NULL
+    BEGIN;
+    	DROP TABLE #stats_ddl;
+    END;
+    
+    CREATE TABLE #stats_ddl
+    WITH    (   DISTRIBUTION    = HASH([seq_nmbr])
+            ,   LOCATION        = USER_DB
+            )
+    AS
+    WITH T
+    AS
+    (
+    SELECT      t.[name]                        AS [table_name]
+    ,           s.[name]                        AS [table_schema_name]
+    ,           c.[name]                        AS [column_name]
+    ,           c.[column_id]                   AS [column_id]
+    ,           t.[object_id]                   AS [object_id]
+    ,           ROW_NUMBER()
+                OVER(ORDER BY (SELECT NULL))    AS [seq_nmbr]
+    FROM        sys.[tables] t
+    JOIN        sys.[schemas] s         ON  t.[schema_id]       = s.[schema_id]
+    JOIN        sys.[columns] c         ON  t.[object_id]       = c.[object_id]
+    LEFT JOIN   sys.[stats_columns] l   ON  l.[object_id]       = c.[object_id]
+                                        AND l.[column_id]       = c.[column_id]
+                                        AND l.[stats_column_id] = 1
+    LEFT JOIN	sys.[external_tables] e	ON	e.[object_id]		= t.[object_id]
+    WHERE       l.[object_id] IS NULL
+    AND			e.[object_id] IS NULL -- not an external table
+    )
+    SELECT  [table_schema_name]
+    ,       [table_name]
+    ,       [column_name]
+    ,       [column_id]
+    ,       [object_id]
+    ,       [seq_nmbr]
+    ,       CASE @create_type
+            WHEN 1
+            THEN    CAST('CREATE STATISTICS '+QUOTENAME('stat_'+table_schema_name+ '_' + table_name + '_'+column_name)+' ON '+QUOTENAME(table_schema_name)+'.'+QUOTENAME(table_name)+'('+QUOTENAME(column_name)+')' AS VARCHAR(8000))
+            WHEN 2
+            THEN    CAST('CREATE STATISTICS '+QUOTENAME('stat_'+table_schema_name+ '_' + table_name + '_'+column_name)+' ON '+QUOTENAME(table_schema_name)+'.'+QUOTENAME(table_name)+'('+QUOTENAME(column_name)+') WITH FULLSCAN' AS VARCHAR(8000))
+            WHEN 3
+            THEN    CAST('CREATE STATISTICS '+QUOTENAME('stat_'+table_schema_name+ '_' + table_name + '_'+column_name)+' ON '+QUOTENAME(table_schema_name)+'.'+QUOTENAME(table_name)+'('+QUOTENAME(column_name)+') WITH SAMPLE '+@sample_pct+'PERCENT' AS VARCHAR(8000))
+            END AS create_stat_ddl
+    FROM T
+    ;
+    
+    DECLARE @i INT              = 1
+    ,       @t INT              = (SELECT COUNT(*) FROM #stats_ddl)
+    ,       @s NVARCHAR(4000)   = N''
+    ;
+    
+    WHILE @i <= @t
+    BEGIN
+        SET @s=(SELECT create_stat_ddl FROM #stats_ddl WHERE seq_nmbr = @i);
+    
+        PRINT @s
+        EXEC sp_executesql @s
+        SET @i+=1;
+    END
+    
+    DROP TABLE #stats_ddl;
 
-IF @create_type NOT IN (1,2,3)
-BEGIN
-    THROW 151000,'Invalid value for @stats_type parameter. Valid range 1 (default), 2 (fullscan) or 3 (sample).',1;
-END;
-
-IF @sample_pct IS NULL
-BEGIN;
-    SET @sample_pct = 20;
-END;
-
-IF OBJECT_ID('tempdb..#stats_ddl') IS NOT NULL
-BEGIN;
-	DROP TABLE #stats_ddl;
-END;
-
-CREATE TABLE #stats_ddl
-WITH    (   DISTRIBUTION    = HASH([seq_nmbr])
-        ,   LOCATION        = USER_DB
-        )
-AS
-WITH T
-AS
-(
-SELECT      t.[name]                        AS [table_name]
-,           s.[name]                        AS [table_schema_name]
-,           c.[name]                        AS [column_name]
-,           c.[column_id]                   AS [column_id]
-,           t.[object_id]                   AS [object_id]
-,           ROW_NUMBER()
-            OVER(ORDER BY (SELECT NULL))    AS [seq_nmbr]
-FROM        sys.[tables] t
-JOIN        sys.[schemas] s         ON  t.[schema_id]       = s.[schema_id]
-JOIN        sys.[columns] c         ON  t.[object_id]       = c.[object_id]
-LEFT JOIN   sys.[stats_columns] l   ON  l.[object_id]       = c.[object_id]
-                                    AND l.[column_id]       = c.[column_id]
-                                    AND l.[stats_column_id] = 1
-LEFT JOIN	sys.[external_tables] e	ON	e.[object_id]		= t.[object_id]
-WHERE       l.[object_id] IS NULL
-AND			e.[object_id] IS NULL -- not an external table
-)
-SELECT  [table_schema_name]
-,       [table_name]
-,       [column_name]
-,       [column_id]
-,       [object_id]
-,       [seq_nmbr]
-,       CASE @create_type
-        WHEN 1
-        THEN    CAST('CREATE STATISTICS '+QUOTENAME('stat_'+table_schema_name+ '_' + table_name + '_'+column_name)+' ON '+QUOTENAME(table_schema_name)+'.'+QUOTENAME(table_name)+'('+QUOTENAME(column_name)+')' AS VARCHAR(8000))
-        WHEN 2
-        THEN    CAST('CREATE STATISTICS '+QUOTENAME('stat_'+table_schema_name+ '_' + table_name + '_'+column_name)+' ON '+QUOTENAME(table_schema_name)+'.'+QUOTENAME(table_name)+'('+QUOTENAME(column_name)+') WITH FULLSCAN' AS VARCHAR(8000))
-        WHEN 3
-        THEN    CAST('CREATE STATISTICS '+QUOTENAME('stat_'+table_schema_name+ '_' + table_name + '_'+column_name)+' ON '+QUOTENAME(table_schema_name)+'.'+QUOTENAME(table_name)+'('+QUOTENAME(column_name)+') WITH SAMPLE '+@sample_pct+'PERCENT' AS VARCHAR(8000))
-        END AS create_stat_ddl
-FROM T
-;
-
-DECLARE @i INT              = 1
-,       @t INT              = (SELECT COUNT(*) FROM #stats_ddl)
-,       @s NVARCHAR(4000)   = N''
-;
-
-WHILE @i <= @t
-BEGIN
-    SET @s=(SELECT create_stat_ddl FROM #stats_ddl WHERE seq_nmbr = @i);
-
-    PRINT @s
-    EXEC sp_executesql @s
-    SET @i+=1;
-END
-
-DROP TABLE #stats_ddl;
-```
 
 若要使用此过程对表中的所有列创建统计信息，只需调用该过程即可。
 
@@ -384,41 +380,40 @@ UPDATE STATISTICS dbo.table1;
 
 此视图将统计信息相关的列以及 [STATS\_DATE()][] 函数的结果合并在一起。
 
-```
-CREATE VIEW dbo.vstats_columns
-AS
-SELECT
-        sm.[name]                           AS [schema_name]
-,       tb.[name]                           AS [table_name]
-,       st.[name]                           AS [stats_name]
-,       st.[filter_definition]              AS [stats_filter_defiinition]
-,       st.[has_filter]                     AS [stats_is_filtered]
-,       STATS_DATE(st.[object_id],st.[stats_id])
-                                            AS [stats_last_updated_date]
-,       co.[name]                           AS [stats_column_name]
-,       ty.[name]                           AS [column_type]
-,       co.[max_length]                     AS [column_max_length]
-,       co.[precision]                      AS [column_precision]
-,       co.[scale]                          AS [column_scale]
-,       co.[is_nullable]                    AS [column_is_nullable]
-,       co.[collation_name]                 AS [column_collation_name]
-,       QUOTENAME(sm.[name])+'.'+QUOTENAME(tb.[name])
-                                            AS two_part_name
-,       QUOTENAME(DB_NAME())+'.'+QUOTENAME(sm.[name])+'.'+QUOTENAME(tb.[name])
-                                            AS three_part_name
-FROM    sys.objects                         AS ob
-JOIN    sys.stats           AS st ON    ob.[object_id]      = st.[object_id]
-JOIN    sys.stats_columns   AS sc ON    st.[stats_id]       = sc.[stats_id]
-                            AND         st.[object_id]      = sc.[object_id]
-JOIN    sys.columns         AS co ON    sc.[column_id]      = co.[column_id]
-                            AND         sc.[object_id]      = co.[object_id]
-JOIN    sys.types           AS ty ON    co.[user_type_id]   = ty.[user_type_id]
-JOIN    sys.tables          AS tb ON  co.[object_id]        = tb.[object_id]
-JOIN    sys.schemas         AS sm ON  tb.[schema_id]        = sm.[schema_id]
-WHERE   1=1
-AND     st.[user_created] = 1
-;
-```
+    CREATE VIEW dbo.vstats_columns
+    AS
+    SELECT
+            sm.[name]                           AS [schema_name]
+    ,       tb.[name]                           AS [table_name]
+    ,       st.[name]                           AS [stats_name]
+    ,       st.[filter_definition]              AS [stats_filter_defiinition]
+    ,       st.[has_filter]                     AS [stats_is_filtered]
+    ,       STATS_DATE(st.[object_id],st.[stats_id])
+                                                AS [stats_last_updated_date]
+    ,       co.[name]                           AS [stats_column_name]
+    ,       ty.[name]                           AS [column_type]
+    ,       co.[max_length]                     AS [column_max_length]
+    ,       co.[precision]                      AS [column_precision]
+    ,       co.[scale]                          AS [column_scale]
+    ,       co.[is_nullable]                    AS [column_is_nullable]
+    ,       co.[collation_name]                 AS [column_collation_name]
+    ,       QUOTENAME(sm.[name])+'.'+QUOTENAME(tb.[name])
+                                                AS two_part_name
+    ,       QUOTENAME(DB_NAME())+'.'+QUOTENAME(sm.[name])+'.'+QUOTENAME(tb.[name])
+                                                AS three_part_name
+    FROM    sys.objects                         AS ob
+    JOIN    sys.stats           AS st ON    ob.[object_id]      = st.[object_id]
+    JOIN    sys.stats_columns   AS sc ON    st.[stats_id]       = sc.[stats_id]
+                                AND         st.[object_id]      = sc.[object_id]
+    JOIN    sys.columns         AS co ON    sc.[column_id]      = co.[column_id]
+                                AND         sc.[object_id]      = co.[object_id]
+    JOIN    sys.types           AS ty ON    co.[user_type_id]   = ty.[user_type_id]
+    JOIN    sys.tables          AS tb ON  co.[object_id]        = tb.[object_id]
+    JOIN    sys.schemas         AS sm ON  tb.[schema_id]        = sm.[schema_id]
+    WHERE   1=1
+    AND     st.[user_created] = 1
+    ;
+
 
 ## DBCC SHOW\_STATISTICS() 示例
 
