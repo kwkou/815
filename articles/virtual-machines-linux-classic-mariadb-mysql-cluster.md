@@ -55,7 +55,7 @@
 
 4. 创建 VM 模板，将 **/path/to/key.pem** 替换为已生成的 .pem SSH 密钥的存储位置路径
 
-		azure vm create --virtual-network-name mariadbvnet --subnet-names mariadb --blob-url "http://mariadbstorage.blob.core.chinacloudapi.cn/vhds/mariadbhatemplate-os.vhd"  --vm-size Medium --ssh 22 --ssh-cert "/path/to/key.pem" --no-ssh-password mariadbtemplate f1179221e23b4dbb89e39d70e5bc9e72__OpenLogic-CentOS-70-20160329 azureuser
+		azure vm create --virtual-network-name mariadbvnet --subnet-names mariadb --blob-url "http://mariadbstorage.blob.core.chinacloudapi.cn/vhds/mariadbhatemplate-os.vhd"  --vm-size Medium --ssh 22 --ssh-cert "/path/to/key.pem" --no-ssh-password mariadbhatemplate f1179221e23b4dbb89e39d70e5bc9e72__OpenLogic-CentOS-70-20160329 azureuser
         
 5. 将 4 个 500GB 的数据磁盘附加到 VM，以便在 RAID 配置中使用
 
@@ -132,7 +132,7 @@
       
      - 相应地设置新目录上的权限
         
-        	chown -R mysql:mysql /mnt/data && chmod -R 755 /mnt/data/  
+        	chochown -R mysql:mysql /mnt/data && chmod -R 755 /mnt/data/  
             
      - 创建一个符号链接，将旧目录指向 RAID 分区上的新位置
     
@@ -152,11 +152,11 @@
             
     - 保护 MySQL 安装、设置根密码、删除匿名用户，禁用远程根登录并删除测试数据库
     		
-            mysql_secure_installation
+            mysql_smysql_secure_installation
             
     - 在数据库上创建一个用户，以便在群集操作中使用，也可以选择在应用程序中使用
    
-			mysql -u root -p
+			mysql -mysql -u root -p
 			GRANT ALL PRIVILEGES ON *.* TO 'cluster'@'%' IDENTIFIED BY 'p@ssw0rd' WITH GRANT OPTION; FLUSH PRIVILEGES;
             exit
    
