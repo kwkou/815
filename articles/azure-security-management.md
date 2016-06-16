@@ -106,8 +106,8 @@ Azure 提供了安全机制来帮助管理员管理 Azure 云服务和虚拟机�
 - 将 RD 网关加入管理员工作站所在的同一个[管理域](http://technet.microsoft.com/zh-cn/library/bb727085.aspx)。当你在具有对 Azure AD 的单向信任的域中使用站点到站点 IPsec VPN 或 ExpressRoute 时，或者要联合本地 AD DS 实例与 Azure AD 之间的凭据时，就必须这样做。
 - 配置[客户端连接授权策略](http://technet.microsoft.com/zh-cn/library/cc753324.aspx)，让 RD 网关验证客户端计算机名称是否有效（已加入域）并可以访问 Azure 管理门户。
 - 针对 [Azure VPN](/documentation/services/vpn-gateway/) 使用 IPsec 以进一步防止管理流量遭到窃听和令牌失窃，或考虑使用通过 [Azure ExpressRoute](https://azure.microsoft.com/documentation/services/expressroute/) 建立隔离的 Internet 链路。
-- 针对通过 RD 网关登录的管理员启用多重身份验证（通过 [Azure Multi-Factor Authentication](/documentation/articles/multi-factor-authentication/multi-factor-authentication)）或智能卡身份验证。
-- 在 Azure 中配置源 [IP 地址限制](http://azure.microsoft.com/blog/2013/08/27/confirming-dynamic-ip-address-restrictions-in-windows-azure-web-sites/)或[网络安全组](virtual-network/virtual-networks-nsg.md)以将允许的管理终结点数目降到最低。
+- 针对通过 RD 网关登录的管理员启用多重身份验证或智能卡身份验证。
+- 在 Azure 中配置源 [IP 地址限制](http://azure.microsoft.com/blog/2013/08/27/confirming-dynamic-ip-address-restrictions-in-windows-azure-web-sites/)或[网络安全组](/documentation/articles/virtual-network/virtual-networks-nsg)以将允许的管理终结点数目降到最低。
 
 ## 安全指导原则
 
@@ -121,7 +121,7 @@ Azure 提供了安全机制来帮助管理员管理 Azure 云服务和虚拟机�
 
 ### 连接
 
-有多种机制可供帮助保护客户端与 Azure 虚拟网络的连接。在这些机制中，[站点到站点 VPN](https://channel9.msdn.com/series/Azure-Site-to-Site-VPN) (S2S) 和[点到站点 VPN](vpn-gateway/vpn-gateway-point-to-site-create.md) (P2S) 支持使用行业标准 IPsec (S2S) 或[安全套接字隧道协议](https://technet.microsoft.com/magazine/2007.06.cableguy.aspx) (SSTP) (P2S) 来进行加密和隧道传输。当 Azure 连接到面向公众的 Azure 服务管理（例如 Azure 管理门户）时，Azure 需要超文本安全传输协议 (HTTPS)。
+有多种机制可供帮助保护客户端与 Azure 虚拟网络的连接。在这些机制中，[站点到站点 VPN](https://channel9.msdn.com/series/Azure-Site-to-Site-VPN) (S2S) 和[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create) (P2S) 支持使用行业标准 IPsec (S2S) 或[安全套接字隧道协议](https://technet.microsoft.com/magazine/2007.06.cableguy.aspx) (SSTP) (P2S) 来进行加密和隧道传输。当 Azure 连接到面向公众的 Azure 服务管理（例如 Azure 管理门户）时，Azure 需要超文本安全传输协议 (HTTPS)。
 
 未通过 RD 网关连接到 Azure 的独立强化工作站应使用基于 SSTP 的点到站点 VPN 来与 Azure 虚拟网络建立初始连接，然后从 VPN 隧道与各个虚拟机建立 RDP 连接。
 
