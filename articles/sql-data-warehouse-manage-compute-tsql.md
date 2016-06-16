@@ -15,8 +15,6 @@
 # 管理 Azure SQL 数据仓库中的计算能力 (T-SQL)
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-data-warehouse-overview-manage-compute)
-- [门户](/documentation/articles/sql-data-warehouse-manage-compute-portal)
 - [PowerShell](/documentation/articles/sql-data-warehouse-manage-compute-powershell)
 - [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api)
 - [TSQL](/documentation/articles/sql-data-warehouse-manage-compute-tsql)
@@ -30,8 +28,6 @@
 - 通过调整 DWU 更改计算资源
 
 若要暂停或恢复某个数据库，请在本文顶部选择其他平台选项之一。
-
-若要了解相关信息，请参阅[管理计算能力概述][]。
 
 <a name="current-dwu-bk"></a>
 

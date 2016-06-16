@@ -84,7 +84,7 @@ SQL 数据仓库几乎支持 SQL Server 所能支持的所有 T-SQL 构造。[�
 [迁移代码]: /documentation/articles/sql-data-warehouse-migrate-code
 [create a SQL Data Warehouse database instance]: /documentation/articles/sql-data-warehouse-get-started-provision
 [安装 bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp
-[安装 sqlcmd]: /documentation/articles/sql-data-warehouse-get-started-connect-query-sqlcmd
+[安装 sqlcmd]: /documentation/articles/sql-data-warehouse-get-started-connect-query
 
 <!--Other Web references-->
 [适用于 SQL 数据仓库的 Adventure Works 示例脚本]: https://migrhoststorage.blob.core.windows.net/sqldwsample/AdventureWorksSQLDW2012.zip
