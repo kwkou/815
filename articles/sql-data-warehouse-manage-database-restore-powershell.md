@@ -15,7 +15,6 @@
 # 备份和还原 Azure SQL 数据仓库中的一个数据库 (PowerShell)
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-data-warehouse-overview-manage-database-restore)
 - [门户](/documentation/articles/sql-data-warehouse-manage-database-restore-portal)
 - [PowerShell](/documentation/articles/sql-data-warehouse-manage-database-restore-powershell)
 - [REST](/documentation/articles/sql-data-warehouse-manage-database-restore-rest-api)
@@ -52,35 +51,35 @@
 6. 将数据库还原到所需的还原点。
 7. 验证已还原的数据库是否处于联机状态。
 
-```Powershell
+```
 
-$SubscriptionName="<YourSubscriptionName>"
-$ResourceGroupName="<YourResourceGroupName>"
-$ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.windows.net
-$DatabaseName="<YourDatabaseName>"
-$NewDatabaseName="<YourDatabaseName>"
-
-Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-Get-AzureRmSubscription
-Select-AzureRmSubscription -SubscriptionName $SubscriptionName
-
-# List the last 10 database restore points
-((Get-AzureRMSqlDatabaseRestorePoints -ResourceGroupName $ResourceGroupName -ServerName $ServerName -DatabaseName ($DatabaseName).RestorePointCreationDate)[-10 .. -1]
-
-# Or list all restore points
-Get-AzureRmSqlDatabaseRestorePoints -ResourceGroupName $ResourceGroupName -ServerName $ServerName -DatabaseName $DatabaseName
-
-# Get the specific database to restore
-$Database = Get-AzureRmSqlDatabase -ResourceGroupName $ResourceGroupName -ServerName $ServerName -DatabaseName $DatabaseName
-
-# Pick desired restore point using RestorePointCreationDate
-$PointInTime="<RestorePointCreationDate>"  
-
-# Restore database from a restore point
-$RestoredDatabase = Restore-AzureRmSqlDatabase –FromPointInTimeBackup –PointInTime $PointInTime -ResourceGroupName $Database.ResourceGroupName -ServerName $Database.$ServerName -TargetDatabaseName $NewDatabaseName –ResourceId $Database.ResourceID
-
-# Verify the status of restored database
-$RestoredDatabase.status
+    $SubscriptionName="<YourSubscriptionName>"
+    $ResourceGroupName="<YourResourceGroupName>"
+    $ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.windows.net
+    $DatabaseName="<YourDatabaseName>"
+    $NewDatabaseName="<YourDatabaseName>"
+    
+    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+    Get-AzureRmSubscription
+    Select-AzureRmSubscription -SubscriptionName $SubscriptionName
+    
+    # List the last 10 database restore points
+    ((Get-AzureRMSqlDatabaseRestorePoints -ResourceGroupName $ResourceGroupName -ServerName $ServerName -DatabaseName ($DatabaseName).RestorePointCreationDate)[-10 .. -1]
+    
+    # Or list all restore points
+    Get-AzureRmSqlDatabaseRestorePoints -ResourceGroupName $ResourceGroupName -ServerName $ServerName -DatabaseName $DatabaseName
+    
+    # Get the specific database to restore
+    $Database = Get-AzureRmSqlDatabase -ResourceGroupName $ResourceGroupName -ServerName $ServerName -DatabaseName $DatabaseName
+    
+    # Pick desired restore point using RestorePointCreationDate
+    $PointInTime="<RestorePointCreationDate>"  
+    
+    # Restore database from a restore point
+    $RestoredDatabase = Restore-AzureRmSqlDatabase –FromPointInTimeBackup –PointInTime $PointInTime -ResourceGroupName $Database.ResourceGroupName -ServerName $Database.$ServerName -TargetDatabaseName $NewDatabaseName –ResourceId $Database.ResourceID
+    
+    # Verify the status of restored database
+    $RestoredDatabase.status
 
 ```
 
@@ -99,26 +98,26 @@ $RestoredDatabase.status
 5. 还原已删除的数据库。
 6. 验证已还原的数据库是否处于联机状态。
 
-```Powershell
+```
 
-$SubscriptionName="<YourSubscriptionName>"
-$ResourceGroupName="<YourResourceGroupName>"
-$ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.windows.net
-$DatabaseName="<YourDatabaseName>"
-$NewDatabaseName="<YourDatabaseName>"
-
-Login-AzureRmAccount -EnvironmentName AzureChianCloud
-Get-AzureRmSubscription
-Select-AzureRmSubscription -SubscriptionName $SubscriptionName
-
-# Get the deleted database to restore
-$DeletedDatabase = Get-AzureRmSqlDeletedDatabaseBackup -ResourceGroupName $ResourceGroupNam -ServerName $ServerName -DatabaseName $DatabaseName
-
-# Restore deleted database
-$RestoredDatabase = Restore-AzureRmSqlDatabase –FromDeletedDatabaseBackup –DeletionDate $DeletedDatabase.DeletionDate -ResourceGroupName $DeletedDatabase.ResourceGroupName -ServerName $DeletedDatabase.ServerName -TargetDatabaseName $NewDatabaseName –ResourceId $DeletedDatabase.ResourceID
-
-# Verify the status of restored database
-$RestoredDatabase.status
+    $SubscriptionName="<YourSubscriptionName>"
+    $ResourceGroupName="<YourResourceGroupName>"
+    $ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.windows.net
+    $DatabaseName="<YourDatabaseName>"
+    $NewDatabaseName="<YourDatabaseName>"
+    
+    Login-AzureRmAccount -EnvironmentName AzureChianCloud
+    Get-AzureRmSubscription
+    Select-AzureRmSubscription -SubscriptionName $SubscriptionName
+    
+    # Get the deleted database to restore
+    $DeletedDatabase = Get-AzureRmSqlDeletedDatabaseBackup -ResourceGroupName $ResourceGroupNam -ServerName $ServerName -DatabaseName $DatabaseName
+    
+    # Restore deleted database
+    $RestoredDatabase = Restore-AzureRmSqlDatabase –FromDeletedDatabaseBackup –DeletionDate $DeletedDatabase.DeletionDate -ResourceGroupName $DeletedDatabase.ResourceGroupName -ServerName $DeletedDatabase.ServerName -TargetDatabaseName $NewDatabaseName –ResourceId $DeletedDatabase.ResourceID
+    
+    # Verify the status of restored database
+    $RestoredDatabase.status
 
 ```
 
@@ -137,20 +136,20 @@ $RestoredDatabase.status
 5. 创建对数据库的恢复请求。
 6. 验证异地还原的数据库的状态。
 
-```Powershell
+```
 
-Login-AzureRmAccount -EnvironmentName AzureChianCloud
-Get-AzureRmSubscription
-Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
-
-# Get the database you want to recover
-$GeoBackup = Get-AzureRmSqlDatabaseGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>"
-
-# Recover database
-$GeoRestoredDatabase = Restore-AzureRmSqlDatabase –FromGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourTargetServer>" -TargetDatabaseName "<NewDatabaseName>" –ResourceId $GeoBackup.ResourceID
-
-# Verify that the geo-restored database is online
-$GeoRestoredDatabase.status
+    Login-AzureRmAccount -EnvironmentName AzureChianCloud
+    Get-AzureRmSubscription
+    Select-AzureRmSubscription -SubscriptionName "<Subscription_name>"
+    
+    # Get the database you want to recover
+    $GeoBackup = Get-AzureRmSqlDatabaseGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourServerName>" -DatabaseName "<YourDatabaseName>"
+    
+    # Recover database
+    $GeoRestoredDatabase = Restore-AzureRmSqlDatabase –FromGeoBackup -ResourceGroupName "<YourResourceGroupName>" -ServerName "<YourTargetServer>" -TargetDatabaseName "<NewDatabaseName>" –ResourceId $GeoBackup.ResourceID
+    
+    # Verify that the geo-restored database is online
+    $GeoRestoredDatabase.status
 
 ```
 
