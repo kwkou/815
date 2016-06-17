@@ -369,7 +369,6 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 - 若要了解如何创建资源管理器模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
 - 若要了解部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
-- 若要了解如何对失败的部署进行故障排除，请参阅 [Azure 中的资源组部署疑难解答](/documentation/articles/resource-group-deploy-debug)。
 
 
 <!---HONumber=Mooncake_0425_2016-->
