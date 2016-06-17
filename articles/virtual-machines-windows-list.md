@@ -9,7 +9,6 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="05/05/2016"
 	wacn.date="05/05/2016"/>
 
 # Azure中支持的 Windows 虚拟机镜像
