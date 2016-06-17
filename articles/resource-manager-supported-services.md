@@ -205,7 +205,7 @@ Azure Active Directory 可以使用 Resource Manager 来为订阅启用基于角
 
     azure location list
 
-你也可以使用 **jq** 之类的工具来筛选位置结果。若要了解有关 jq 等工具的信息，请参阅[与 Azure 交互的有用工具](/documentation/articles/resource-group-deploy-debug/#useful-tools-to-interact-with-azure)。
+你也可以使用 **jq** 之类的工具来筛选位置结果。
 
     azure location list --json | jq '.[] | select(.name == "Microsoft.Web/sites")'
 
