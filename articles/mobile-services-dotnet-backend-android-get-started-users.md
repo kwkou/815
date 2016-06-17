@@ -74,7 +74,7 @@
 <!-- URLs. -->
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
-[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
+
 [Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization
 
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library

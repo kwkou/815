@@ -94,8 +94,6 @@
 * [身份验证入门](/documentation/articles/mobile-services-android-get-started-users)
 	<br/>了解如何对应用程序用户进行身份验证。
 
-* [推送通知入门](/documentation/articles/mobile-services-javascript-backend-android-get-started-push)
-  <br/>了解如何使用移动服务将非常基本的推送通知发送到应用程序。
 
 <!-- Anchors. -->
 [Download the Android app project]: #download-app

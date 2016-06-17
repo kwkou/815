@@ -92,8 +92,6 @@
 * [身份验证入门]
 <br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
 
-* [推送通知入门]
-<br/>了解如何向应用程序发送一条很基本的推送通知。
 
 * [移动服务 .NET 后端故障排除]
 <br/>了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。
@@ -118,7 +116,7 @@
 <!-- URLs. -->
 [脱机数据同步入门]: /documentation/articles/mobile-services-xamarin-android-get-started-offline-data
 [身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-users
-[推送通知入门]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-push
+
 [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [JavaScript and HTML]: /documentation/articles/mobile-services-win8-javascript

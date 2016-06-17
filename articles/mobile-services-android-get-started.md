@@ -75,8 +75,7 @@
 * [身份验证入门]
 <br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
 
-* [推送通知入门 ]
-<br/>了解如何向应用程序发送一条很基本的推送通知。
+
 
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
@@ -86,7 +85,7 @@
 [Get started (Eclipse)]: /documentation/articles/mobile-services-android-get-started-ec
 [数据处理入门]: /documentation/articles/mobile-services-android-get-started-data
 [身份验证入门]: /documentation/articles/mobile-services-android-get-started-users
-[推送通知入门 ]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
+
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
 [Azure 管理门户]: https://manage.windowsazure.cn/
