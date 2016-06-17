@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="" pageTitle="使用PowerShell管理使用MySQL Database on Azure - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="本文主要介绍如何使用PowerShell脚本快速搭建使用MySQL服务。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />  
+<properties linkid="" urlDisplayName="" pageTitle="使用PowerShell管理使用MySQL Database on Azure - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,Azure 资源管理器,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="本文主要介绍如何使用PowerShell脚本快速搭建使用MySQL服务。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />  
 
 <tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
 

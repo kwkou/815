@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="" pageTitle="MySQL on Azure上的时区配置 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="在MySQL on Azure上如何配置时区" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />  
+<properties linkid="" urlDisplayName="" pageTitle="MySQL on Azure上的时区配置 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,时区配置,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="在MySQL on Azure上如何配置时区" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />  
 
 <tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
 
