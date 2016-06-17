@@ -80,8 +80,6 @@
 ## <a name="next-steps"></a>后续步骤
 完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
-* [向应用程序添加推送通知]
-<br/>了解如何向应用程序发送一条很基本的推送通知。
 
 * [向应用添加身份验证]
   <br/>了解如何将后端数据的访问权限限制为应用的特定注册用户。
@@ -115,7 +113,7 @@
 
 <!-- URLs. -->
 [Get started (Eclipse)]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-ec
-[向应用程序添加推送通知]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
+
 [向应用添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-auth
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 [Android Studio]: https://developer.android.com/sdk/index.html

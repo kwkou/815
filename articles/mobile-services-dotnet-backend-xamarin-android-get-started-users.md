@@ -101,7 +101,7 @@ In the next tutorial, [Service-side authorization of Mobile Services users][Auth
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-users
-[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-push
+
 [Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization
 [JavaScript and HTML]: /documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users
 [Azure Management Portal]: https://manage.windowsazure.cn/

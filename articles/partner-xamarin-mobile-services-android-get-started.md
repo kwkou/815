@@ -95,8 +95,6 @@
 * [身份验证入门]
  了解如何使用标识提供程序对应用程序的用户进行身份验证。
 
-* [推送通知入门 ]
- 了解如何向应用程序发送一条很基本的推送通知。
 
 
 
@@ -128,7 +126,7 @@
 [Get started with data]: /documentation/articles/partner-xamarin-mobile-services-android-get-started-data
 [脱机数据同步入门]: /documentation/articles/mobile-services-xamarin-android-get-started-offline-data
 [身份验证入门]: /documentation/articles/partner-xamarin-mobile-services-android-get-started-users
-[推送通知入门 ]: /documentation/articles/partner-xamarin-mobile-services-android-get-started-push
+
 [Xamarin.Android]: http://xamarin.com/download
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [WindowsAzure.com]: http://www.windowsazure.com/

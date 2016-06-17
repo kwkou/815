@@ -302,7 +302,7 @@
 
 请注意，在此示例中，注册包含两个标记。有关 Windows 应用的详细信息，请参阅[向应用添加推送通知](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push)。
 
-Xamarin 应用需要一些额外的代码才能将 iOS 或 Android 应用上运行的 Xamarin 应用分别注册到 Apple Push Notification 服务 (APNS) 和 Google Cloud Messaging (GCM) 服务。有关详细信息，请参阅**向应用添加推送通知** ([Xamarin.iOS](/documentation/articles/partner-xamarin-mobile-services-ios-get-started-push/#add-push) | [Xamarin.Android](/documentation/articles/partner-xamarin-mobile-services-android-get-started-push/#add-push))。
+Xamarin 应用需要一些额外的代码才能将 iOS 或 Android 应用上运行的 Xamarin 应用分别注册到 Apple Push Notification 服务 (APNS) 和 Google Cloud Messaging (GCM) 服务。有关详细信息，请参阅**向应用添加推送通知** ([Xamarin.iOS](/documentation/articles/partner-xamarin-mobile-services-ios-get-started-push/#add-push)。
 
 >[AZURE.NOTE]当你需要发送通知给特定的已注册用户时，必须在注册之前要求身份验证，然后验证是否已授权该用户注册特定标记。例如，必须检查以确保用户注册的标记不是其他人的用户 ID。有关详细信息，请参阅[向经过身份验证的用户发送推送通知](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users)。
 
