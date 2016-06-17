@@ -9,7 +9,7 @@
 	editor="Lingli"/>
 
 <tags
-	ms.service="open-resource" 
+	ms.service="open-source-MongoDB" 
 	wacn.date="06/15/2016"/>
 
 #在Azure虚拟机上管理配置MongoDB集群
