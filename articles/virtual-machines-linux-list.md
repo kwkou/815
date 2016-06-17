@@ -9,7 +9,6 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="05/05/2016"
 	wacn.date="05/05/2016"/>
 
 # Azure中支持的 Linux 虚拟机镜像
