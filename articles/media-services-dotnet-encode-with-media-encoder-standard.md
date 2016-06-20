@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/03/2016"  
-	wacn.date="03/17/2016"/>
+ 	ms.date="05/03/2016"
+	wacn.date="06/20/2016"/>
 
 
 #如何使用媒体编码器标准版对资产进行编码
@@ -33,11 +33,15 @@
 
 媒体编码器标准使用[此处](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)所述的编码器预设之一进行配置。
 
-###MES 输入和输出元数据
+###输入和输出元数据
 
-[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783120.aspx)说明了编码器输入元数据。
+如果你使用 MES 为输入资产（或资产）编码，在该编码任务成功完成时，你便能获取输出资产。输出资产包含视频、音频、缩略图、清单等等，具体视你使用的编码预设而定。
 
-[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx)说明了编码器输出元数据。
+输出资产还包含提供输入资产相关元数据的文件。元数据 XML 文件的名称采用下列格式：<asset_id>\_metadata.xml（例如，41114ad3-eb5e-4c57-8d92-5354e2b7d4a4\_metadata.xml），其中 <asset_id> 是输入资产的 AssetId 值。[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783120.aspx)描述了此输入元数据 XML 的架构。
+
+输出资产还包含提供输出资产相关元数据的文件。元数据 XML 文件的名称采用下列格式：<source_file_name>\_manifest.xml（例如，BigBuckBunny\_manifest.xml）。[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx)描述了此输出元数据 XML 的架构。
+
+如果想要检查这两个元数据文件中的任意一个，可以创建 SAS 定位器并将文件下载到本地计算机。你可以就如何创建 SAS 定位器并下载使用媒体服务 .NET SDK 扩展的文件找到相关示例。
 
 
 ##示例
@@ -133,5 +137,4 @@
 
 [如何使用媒体编码器标准通过 .NET 来生成缩略图](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes)
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset)
-
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0613_2016-->

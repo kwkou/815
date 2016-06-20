@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/03/2016"  
-	wacn.date="03/17/2016"/>
+ 	ms.date="04/18/2016"    
+	wacn.date="06/20/2016"/>
 
 #Azure 媒体服务分片 MP4 实时引入规范
 
@@ -197,7 +197,7 @@ Azure 媒体服务的 ISO 分片 MP4 实时引入使用长时间运行的标准 
 3. 使用独立的服务器（编码器）实例来编码和发送 (1) 与 (2) 中所提到的冗余流。 
 
 
-[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
 
 
 [image1]: ./media/media-services-fmp4-live-ingest-overview/media-services-image1.png
@@ -209,5 +209,4 @@ Azure 媒体服务的 ISO 分片 MP4 实时引入使用长时间运行的标准 
 [image7]: ./media/media-services-fmp4-live-ingest-overview/media-services-image7.png
 
  
-
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0613_2016-->

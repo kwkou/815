@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="01/28/2016"
-	wacn.date="03/17/2016"/>
+ 	ms.date="04/18/2016" 
+	wacn.date="06/20/2016"/>
 
 
 #动态打包
@@ -68,4 +68,5 @@ Azure 媒体服务可用于向多种客户端技术（例如，iOS、XBOX、Silv
 - Dolby Digital MP4 文件。
 - Dolby Digital 平滑流文件。
 
-<!---HONumber=Mooncake_0307_2016-->
+
+<!---HONumber=Mooncake_0613_2016-->

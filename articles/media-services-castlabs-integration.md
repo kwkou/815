@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/03/2016" 
-	wacn.date="03/17/2016"/>
+	ms.date="04/18/2016"    
+	wacn.date="06/20/2016"/>
 
 
 #使用 castLabs 将 Widevine 许可证传送到 Azure 媒体服务
@@ -87,7 +87,7 @@ jti|有关此令牌的唯一标识符（每个令牌只能在 castLabs 系统中
 5.	运行该程序。
 
 
-若要使用 Web 应用(STS)，请执行以下操作：
+若要使用 Web 应用程序 (STS)，请执行以下操作：
 
 1.	更改 web.config 以设置 castlabs 商家 ID、STS 配置和共享密钥。
 2.	部署到 Azure 网站。
@@ -108,4 +108,5 @@ jti|有关此令牌的唯一标识符（每个令牌只能在 castLabs 系统中
 7.	更新播放器。
 8.	视频应正在播放。
 
-<!---HONumber=Mooncake_0307_2016-->
+
+<!---HONumber=Mooncake_0613_2016-->

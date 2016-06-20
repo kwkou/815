@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/03/2016"
-	wacn.date="03/17/2016"/>
+	ms.date="04/18/2016"
+	wacn.date="06/20/2016"/>
 
 
 #如何：传送流内容
@@ -18,7 +18,7 @@
 > [AZURE.SELECTOR]
 - [REST](/documentation/articles/media-services-rest-deliver-streaming-content)
 - [.NET](/documentation/articles/media-services-deliver-streaming-content)
-- [Portal](/documentation/articles/media-services-manage-content#publish)
+- [管理门户](/documentation/articles/media-services-manage-content#publish)
 
 ##概述
 
@@ -158,6 +158,6 @@
 
 ##另请参阅
 
-[下载资产](/documentation/articles/media-services-deliver-asset-download) [配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy)
-
-<!---HONumber=Mooncake_0307_2016-->
+[下载资产](/documentation/articles/media-services-deliver-asset-download) 
+[配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy)
+<!---HONumber=Mooncake_0613_2016-->

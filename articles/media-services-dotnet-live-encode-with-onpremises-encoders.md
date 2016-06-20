@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何使用本地编码器进行实时编码" 
+	pageTitle="如何使用本地编码器执行实时流式处理" 
 	description="本主题演示如何使用 .NET 通过本地编码器进行实时编码。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -9,10 +9,10 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/03/2016"  
-	wacn.date="03/17/2016"/>
+ 	ms.date="05/05/2016"  
+	wacn.date="06/20/2016"/>
 
-#如何使用本地编码器进行实时编码
+#如何使用本地编码器执行实时流式处理
 
 ##先决条件
 
@@ -26,7 +26,7 @@
 建议阅读以下文章：
 
 - [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)
-- [使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-manage-channels-overview)
+- [使用本地编码器执行实时流式处理以创建多比特率流](/documentation/articles/media-services-live-streaming-with-onprem-encoders)
  
 
 ##示例
@@ -385,4 +385,5 @@
 		    }
 		}
 
-<!---HONumber=Mooncake_0307_2016-->
+
+<!---HONumber=Mooncake_0613_2016-->

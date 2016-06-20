@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/11/2016"  
-	wacn.date="03/17/2016"/>
+ 	ms.date="05/03/2016"
+	wacn.date="06/20/2016"/>
 
 
 #使用媒体服务 .NET SDK 管理资产和相关的实体
@@ -368,4 +368,6 @@
 	}
 	
 
-<!---HONumber=Mooncake_0307_2016-->
+
+
+<!---HONumber=Mooncake_0613_2016-->

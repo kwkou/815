@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/03/2016" 
-	wacn.date="03/17/2016"/>
+	ms.date="04/18/2016"   
+	wacn.date="06/20/2016"/>
 
 
 
@@ -59,23 +59,23 @@
 2.	在“文件”菜单中，单击“新建”，然后单击“项目”。
 3.	在“新建项目”对话框中，键入或选择以下值：
 
-名称|值
+Name|值
 ---|---
 模板组|已安装/模板/Visual C#/Windows 应用商店
 模板|空白应用程序(XAML)
-名称|SSPlayer
+Name|SSPlayer
 位置|C:\\SSTutorials
 解决方案名称|SSPlayer
 创建解决方案的目录|(选定)
 
-4.	单击**“确定”**。
+4.	单击“确定”。
 
 **添加对平滑流式处理客户端 SDK 的引用**
 
 1.	在解决方案资源管理器中，右键单击“SSPlayer”，然后单击“添加引用”。
 2.	键入或选择以下值：
 
-名称|值
+Name|值
 ---|---
 引用组|Windows/扩展
 引用|选择适用于 Windows 8 和 Microsoft Visual C++ 运行时程序包的 Microsoft 平滑流式处理客户端 SDK
@@ -133,7 +133,7 @@
 
 	MediaElement 控件用于播放媒体。在下一课，我们将使用名为 sliderProgress 的滚动条控件来控制媒体进度。
 
-3.	按 **CTRL+S** 保存文件。
+3.	按 “CTRL+S” 保存文件。
 
 MediaElement 控件并非原本就支持平滑流式处理内容。若要启用平滑流式处理支持，必须按文件扩展名和 MIME 类型注册平滑流式处理字节流处理程序。若要注册，可以使用 Windows.Media 命名空间的 MediaExtensionManager.RegisterByteStremHandler 方法。
 
@@ -199,7 +199,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 		#endregion
 
 	现已定义 sliderProgress\_PointerPressed 事件处理程序。若要使它正常工作，还需要执行其他操作，本教程的下一课将予以介绍。
-6.	按 **CTRL+S** 保存文件。
+6.	按 “CTRL+S” 保存文件。
 
 完成的代码隐藏文件应如下所示：
 
@@ -270,7 +270,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 		    "application/vnd.ms-sstr+xml", 
 		propertySet);
 
-6.	按 **CTRL+S** 保存文件。
+6.	按 “CTRL+S” 保存文件。
 
 **添加自适应源管理器级别事件处理程序**
 
@@ -290,10 +290,9 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 4.	在 **MainPage** 构造函数的末尾，添加以下行以订阅自适应源打开事件：
 	
-	adaptiveSourceManager.AdaptiveSourceOpenedEvent += 
-	    new AdaptiveSourceOpenedEventHandler(mediaElement\_AdaptiveSourceOpened);
+	adaptiveSourceManager.AdaptiveSourceOpenedEvent += new AdaptiveSourceOpenedEventHandler(mediaElement\_AdaptiveSourceOpened);
 
-5.	按 **CTRL+S** 保存文件。
+5.	按 “CTRL+S” 保存文件。
 
 **添加自适应源级别事件处理程序**
 
@@ -332,7 +331,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 		adaptiveSource.AdaptiveSourceFailedEvent += 
 		    mediaElement_AdaptiveSourceFailed;
 	
-5.	按 **CTRL+S** 保存文件。
+5.	按 “CTRL+S” 保存文件。
 
 相同的事件也可以在自适应源管理器级别使用，因此可用于处理应用程序中所有媒体元素通用的功能。每个 AdaptiveSource 包含其自身的事件，所有 AdaptiveSource 事件将级联在 AdaptiveSourceManager 下面。
 
@@ -364,7 +363,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 		mediaElement.MediaEnded += MediaEnded;
 		mediaElement.MediaFailed += MediaFailed;
 
-4.	按 **CTRL+S** 保存文件。
+4.	按 “CTRL+S” 保存文件。
 
 **添加滚动条相关的代码**
 
@@ -480,7 +479,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 	sliderProgress.Width = mediaElement.Width;
 	setupTimer();
 
-8.	按 **CTRL+S** 保存文件。
+8.	按 “CTRL+S” 保存文件。
 
 **编译和测试应用程序**
 
@@ -539,7 +538,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 			</StackPanel>
 		</Grid>
 
-4. 按 **CTRL+S** 保存更改。
+4. 按 “CTRL+S” 保存更改。
 
 
 **修改代码隐藏文件**
@@ -793,7 +792,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 		 </ListBox>
 		</StackPanel>
 
-3. 按 **CTRL+S** 保存更改
+3. 按 “CTRL+S” 保存更改
 
 
 **修改代码隐藏文件**
@@ -980,4 +979,4 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 [CodeViewPic]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-2.png
  
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0613_2016-->

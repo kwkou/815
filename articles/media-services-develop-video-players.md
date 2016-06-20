@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/03/2016"
-	wacn.date="03/17/2016"/>
+	ms.date="04/18/2016"
+	wacn.date="06/20/2016"/>
 
 
 #开发视频播放器应用程序
@@ -63,7 +63,7 @@ Azure 媒体服务通过“Windows 媒体平台：播放器框架”提供广告
 有关在实时流式处理视频中隐藏字幕和广告支持的信息，请参阅[支持的隐藏字幕和广告插入标准](/documentation/articles/media-services-manage-channels-overview#closed-captioning-and-ad-insertion)。
 
 
-[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
 
 ##另请参阅
 
@@ -72,4 +72,4 @@ Azure 媒体服务通过“Windows 媒体平台：播放器框架”提供广告
 [GitHub dash.js 存储库](https://github.com/Dash-Industry-Forum/dash.js)
  
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0613_2016-->
