@@ -20,7 +20,7 @@
 
 ## 先决条件
 
-本主题假设你已有一个有效的 Azure 订阅（[注册试用版](/pricing/1rmb-trial/)），[已安装 Azure CLI](/documentation/articles/xplat-cli-install) 并已在 Azure 订阅中预配 VM。在使用 Azure 执行任何操作之前，必须向订阅进行身份验证。若要使用 Azure CLI 进行身份验证，只需键入 `azure login` 启动交互式过程。
+本主题假设你已有一个有效的 Azure 订阅（[注册试用版](/pricing/1rmb-trial/)），[已安装 Azure CLI](/documentation/articles/xplat-cli-install) 并已在 Azure 订阅中预配 VM。在使用 Azure 执行任何操作之前，必须向订阅进行身份验证。若要使用 Azure CLI 进行身份验证，只需键入 `azure login -e AzureChinaCloud` 启动交互式过程。
 
 ## Azure OS 磁盘
 

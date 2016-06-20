@@ -18,7 +18,7 @@
 本文向你介绍如何通过 Azure 门户将新磁盘和现有磁盘附加到虚拟机。你也可以[在 Azure 门户中给 Windows 虚拟机附加数据磁盘](/documentation/articles/virtual-machines-windows-attach-disk-portal)。在开始之前，请查看以下提示：
 
 - 虚拟机的大小决定了可以附加多少个磁盘。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-linux-sizes)。
-- 要使用高级存储，需要使用 DS 系列或 GS 序列虚拟机。可以从高级存储帐户和标准存储帐户通过这些虚拟机使用磁盘。高级存储只在某些区域可用。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)。
+- 要使用高级存储，需要使用 DS 系列虚拟机。可以从高级存储帐户和标准存储帐户通过这些虚拟机使用磁盘。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)。
 - 附加到虚拟机的磁盘实际上是 Azure 存储帐户中的 .vhd 文件。有关详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-linux-about-disks-vhds)。
 - 对于新磁盘，你不必首先创建它，因为 Azure 将在附加磁盘时创建该磁盘。
 - 对于现有磁盘，Azure 存储帐户中必须要有可用的 .vhd 文件。你可以使用已经存在的 .vhd（如果该磁盘没有附加到另一虚拟机），或者将你自己的 .vhd 文件上载到存储帐户。
