@@ -189,4 +189,8 @@
         ---------  -------------------  ----------  ------------
                                   True          OK  OK
 
+## 后续步骤
+
+如果部署出现问题，请参阅 [Troubleshooting resource group deployments with Azure Portal（使用 Azure 门户对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal)
+
 <!---HONumber=Mooncake_0613_2016-->

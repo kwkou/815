@@ -2,7 +2,7 @@
 
 <properties
 	pageTitle="使用 Azure 资源管理器的基本配置测试环境"
-	description="了解如何在使用 Resource Manager 的 Azure 中创建模拟简化 Intranet 的简单开发/测试环境。"
+	description="了解如何在 Azure 中创建模拟简化 Intranet 的简单开发/测试环境。"
 	documentationCenter=""
 	services="virtual-machines-windows"
 	authors="JoeDavies-MSFT"
@@ -12,12 +12,12 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="01/21/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="04/25/2016"
+	wacn.date=""/>
 
 # 基本配置测试环境
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代[经典部署模型](/documentation/articles/virtual-machines-base-configuration-test-environment)。
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Microsoft 建议对大多数新的部署使用该模型，而不是[经典部署模型](/documentation/articles/virtual-machines-windows-classic-test-config-env)。
 
 本文为你提供在 Azure 虚拟网络中使用 Resource Manager 中创建的虚拟机创建基本配置测试环境的分步说明。
 
@@ -94,7 +94,7 @@
 	$saName="<storage account name>"
 	New-AzureRMStorageAccount -Name $saName -ResourceGroupName $rgName -Type Standard_LRS -Location $locName
 
-接下来，你可以创建将托管基本配置的公司网络子网的 TestLab Azure 虚拟网络，以及使用网络安全组保护它。
+接下来，你可以创建将托管基本配置的公司网络子网的 TestLab Azure 虚拟网络，并使用网络安全组对它进行保护。
 
 	$rgName="<name of your new resource group>"
 	$locName="<Azure location name, such as China North>"
@@ -138,26 +138,26 @@ DC1 是 corp.contoso.com Active Directory 域服务 (AD DS) 域的域控制器�
 接下来，连接到 DC1 虚拟机。
 
 1.	在 Azure 门户中单击“虚拟机”，然后单击“DC1”虚拟机。  
-2.	在 “DC1” 窗格中，单击“连接”。
+2.	在“DC1”窗格中，单击“连接”。
 3.	出现提示时，打开 DC1.rdp 下载文件。
-4.	遇到远程桌面连接消息框提示时，单击“连接”。
+4.	遇到远程桌面连接消息框提示时，单击**“连接”**。
 5.	当系统提示你输入凭据时，请使用以下凭据：
 - 名称：**DC1\**[本地管理员帐户名称]
 - 密码：[本地管理员帐户密码]
-6.	当系统使用引用证书的远程桌面连接消息框提示你时，单击“是”。
+6.	当系统使用引用证书的远程桌面连接消息框提示你时，单击**“是”**。
 
 接下来，将额外的数据磁盘添加为驱动器盘符为 F: 的新卷。
 
-1.	在服务器管理器的左窗格中，单击“文件和存储服务”，然后单击“磁盘”。
+1.	在服务器管理器的左窗格中，单击**“文件和存储服务”**，然后单击**“磁盘”**。
 2.	在内容窗格的“磁盘”组中，单击“磁盘 2”（其“分区”设置为“未知”）。
-3.	单击“任务”，然后单击“新建卷”。
-4.	在新建卷向导的“开始之前”页上，单击“下一步”。
+3.	单击**“任务”**，然后单击**“新建卷”**。
+4.	在新建卷向导的“开始之前”页上，单击**“下一步”**。
 5.	在“选择服务器和磁盘”页上，单击“磁盘 2”，然后单击“下一步”。出现提示时，单击“确定”。
-6.	在“指定卷的大小”页上，单击“下一步”。
-7.	在“分配到驱动器号或文件夹”页上，单击“下一步”。
-8.	在“选择文件系统设置”页上，单击“下一步”。
-9.	在“确认选择”页上，单击“创建”。
-10.	完成后，单击“关闭”。
+6.	在“指定卷的大小”页上，单击**“下一步”**。
+7.	在“分配到驱动器号或文件夹”页上，单击**“下一步”**。
+8.	在“选择文件系统设置”页上，单击**“下一步”**。
+9.	在“确认选择”页上，单击**“创建”**。
+10.	完成后，单击**“关闭”**。
 
 接下来，将 DC1 配置为 corp.contoso.com 域的域控制器和 DNS 服务器。在管理员级 Windows PowerShell 命令提示符下运行这些命令。
 
@@ -169,19 +169,19 @@ DC1 是 corp.contoso.com Active Directory 域服务 (AD DS) 域的域控制器�
 在 DC1 重启后，重新连接到 DC1 虚拟机。
 
 1.	在 Azure 门户中单击“虚拟机”，然后单击“DC1”虚拟机。
-2.	在“DC1”窗格中，单击“连接”。
-3.	当系统提示你打开 DC1.rdp 时，单击“打开”。
-4.	遇到远程桌面连接消息框提示时，单击“连接”。
+2.	在“DC1”窗格中，单击“**连接**”。
+3.	当系统提示你打开 DC1.rdp 时，单击**“打开”**。
+4.	遇到远程桌面连接消息框提示时，单击**“连接”**。
 5.	当系统提示你输入凭据时，请使用以下凭据：
 - 名称：**CORP\**[本地管理员帐户名称]
 - 密码：[本地管理员帐户密码]
-6.	当引用证书的远程桌面连接消息框提示你时，单击“是”。
+6.	当引用证书的远程桌面连接消息框提示你时，单击**“是”**。
 
 接下来，在 Active Directory 中创建登录到 CORP 域成员计算机时将使用的用户帐户。在管理员级 Windows PowerShell 命令提示符下运行此命令。
 
 	New-ADUser -SamAccountName User1 -AccountPassword (read-host "Set user password" -assecurestring) -name "User1" -enabled $true -PasswordNeverExpires $true -ChangePasswordAtLogon $false
 
-请注意，此命令会提示你提供 User1 帐户密码。由于此帐户将用于所有 CORP 域成员计算机的远程桌面连接，请选择一个强密码。记录 User1 帐户密码，并将其存储在安全位置。
+请注意，此命令会提示你提供 User1 帐户密码。由于此帐户将用于所有 CORP 域成员计算机的远程桌面连接，请*选择一个强密码*。记录 User1 帐户密码，并将其存储在安全位置。
 
 接下来，将新的 User1 帐户配置为企业管理员。在管理员级 Windows PowerShell 命令提示符下运行此命令。
 
@@ -250,7 +250,7 @@ APP1 提供 Web 服务和文件共享服务。
 
 CLIENT1 在 Contoso Intranet 中充当典型笔记本电脑、平板电脑或台式计算机。
 
-> [AZURE.NOTE] 以下命令集创建运行 Windows Server 2012 R2 Datacenter 的 CLIENT1，所有类型的 Azure 订阅都可以执行此操作。如果你有一个基于 MSDN 的 Azure 订阅，则可使用 [Azure 门户](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)创建运行 Windows 10、Windows 8 或 Windows 7的 CLIENT1。
+> [AZURE.NOTE] 以下命令集创建运行 Windows Server 2012 R2 Datacenter 的 CLIENT1，所有类型的 Azure 订阅都可以执行此操作。如果你有一个基于 MSDN 的 Azure 订阅，则可使用 [Azure 门户](/documentation/articles/virtual-machines-windows-hero-tutorial)创建运行 Windows 10、Windows 8 或 Windows 7的 CLIENT1。
 
 首先，填写资源组的名称、Azure 位置和存储帐户名称，并在本地计算机上的 Azure PowerShell 命令提示符下运行这些命令以为 CLIENT1 创建 Azure 虚拟机。
 
@@ -285,16 +285,16 @@ CLIENT1 在 Contoso Intranet 中充当典型笔记本电脑、平板电脑或台
 
 接下来，验证是否可以从 CLIENT1 访问 APP1 上的 Web 资源和文件共享资源。
 
-1.	在服务器管理器的树窗格中，单击“本地服务器”。
-2.	在“CLIENT1 的属性”中，单击“IE 增强的安全配置”旁边的“启用”。
-3.	在“Internet Explorer 增强的安全配置”中，对“管理员”和“用户”单击“关闭”，然后单击“确定”。
-4.	在“开始”屏幕中，单击“Internet Explorer”，然后单击“确定”。
-5.	在地址栏中，键入 “http://app1.corp.contoso.com/”， 然后按 Enter。你应看到 APP1 的默认 Internet 信息服务网页。
+1.	在服务器管理器的树窗格中，单击**“本地服务器”**。
+2.	在**“CLIENT1 的属性”**中，单击**“IE 增强的安全配置”**旁边的**“启用”**。
+3.	在**“Internet Explorer 增强的安全配置”**中，对**“管理员”**和**“用户”**单击**“关闭”**，然后单击**“确定”**。
+4.	在“开始”屏幕中，单击**“Internet Explorer”**，然后单击**“确定”**。
+5.	在地址栏中，键入 **http://app1.corp.contoso.com/**，然后按 Enter。你应看到 APP1 的默认 Internet 信息服务网页。
 6.	在桌面任务栏上，单击“文件资源管理器”图标。
-7.	在地址栏中，键入 “\\\app1\\Files”，然后按 Enter。
+7.	在地址栏中，键入 **\\\app1\\Files**，然后按 Enter。
 8.	你应看到显示文件共享文件夹的内容的文件夹窗口。
-9.	在“文件”共享文件夹窗口中，双击 “Example.txt” 文件。你应看到 Example.txt 文件的内容。
-10.	关闭“example.txt - 记事本”和“文件”共享文件夹窗口。
+9.	在**“文件”**共享文件夹窗口中，双击 **Example.txt** 文件。你应看到 Example.txt 文件的内容。
+10.	关闭**“example.txt - 记事本”**和**“文件”**共享文件夹窗口。
 
 这是你的最后配置。
 
@@ -304,7 +304,8 @@ Azure 中的基本配置现已可用于应用程序开发和测试或其他测�
 
 ## 后续步骤
 
-- 建立[模拟混合云测试环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim).
+- 使用 [Azure 门户](/documentation/articles/virtual-machines-windows-hero-tutorial)添加新虚拟机。
+- 构建[模拟的混合云测试环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim)。
 
 
 ## <a id="costs"></a>将 Azure 中的测试环境虚拟机的成本降至最低
@@ -334,4 +335,4 @@ Azure 中的基本配置现已可用于应用程序开发和测试或其他测�
 	Start-AzureRMVM -ResourceGroupName $rgName -Name "APP1"
 	Start-AzureRMVM -ResourceGroupName $rgName -Name "CLIENT1"
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0613_2016-->
