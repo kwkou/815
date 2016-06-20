@@ -12,7 +12,7 @@
 <tags 
 	ms.service="virtual-machines"
 	ms.date="04/22/2016"
-	wacn.date=""/>
+	wacn.date="06/20/2016"/>
 
 # 在 Azure VM (GUI) 中配置 AlwaysOn 可用性组
 
