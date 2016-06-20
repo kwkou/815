@@ -1,16 +1,16 @@
 
 <properties
-	pageTitle="在Azure虚拟机上管理配置MongoDB集群 | Azure"
-	description="了解如何管理配置MongoDB集群"
-	services="open-resource"
+	pageTitle="在 Azure 虚拟机上管理配置 MongoDB 集群 | Azure "
+	description="了解如何管理配置 MongoDB 集群"
+	services=" open-resource "
 	documentationCenter=""
 	authors=""
 	manager=""
 	editor="Lingli"/>
 
 <tags
-	ms.service="open-source-MongoDB" 
-	wacn.date="06/15/2016"/>
+	ms.service="open-source-mongodb" 
+	wacn.date="06/20/2016"/>
 
 #在Azure虚拟机上管理配置MongoDB集群
 
