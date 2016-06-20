@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="04/17/2016"
-	wacn.date=""/>
+	wacn.date="06/20/2016"/>
 
 # 在 Azure 中为 AlwaysOn 可用性组配置内部负载平衡器
 

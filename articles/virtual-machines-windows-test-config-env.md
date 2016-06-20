@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/25/2016"
-	wacn.date=""/>
+	wacn.date="06/20/2016"/>
 
 # 基本配置测试环境
 

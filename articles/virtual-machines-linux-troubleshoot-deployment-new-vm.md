@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="05/06/2016"
-	wacn.date=""/>
+	wacn.date="06/20/2016"/>
 
 # 排查在 Azure 中新建 Linux 虚拟机时遇到的 Resource Manager 部署问题
 

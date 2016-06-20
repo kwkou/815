@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/06/2016"
-	wacn.date=""/>
+	wacn.date="06/20/2016"/>
 
 # 如何在 Azure 中标记 Linux 虚拟机
 

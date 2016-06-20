@@ -13,7 +13,7 @@
 <tags 
 	ms.service="virtual-machines-windows"
 	ms.date="05/05/2016"
-	wacn.date=""/>
+	wacn.date="06/20/2016"/>
 
 # 在 Azure 门户中创建第一个 Windows 虚拟机
 
