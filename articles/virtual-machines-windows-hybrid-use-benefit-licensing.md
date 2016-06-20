@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="05/03/2016"
-	wacn.date=""/>
+	wacn.date="06/20/2016"/>
 
 # 适用于 Windows Server 的 Azure Hybrid Use Benefit
 

@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/29/2016"
-	wacn.date=""/>
+	wacn.date="06/20/2016"/>
 
 # 在创建期间使用 cloud-init 自定义 Linux VM
 
