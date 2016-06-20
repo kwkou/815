@@ -12,7 +12,7 @@
 	ms.service="open-source-mongodb" 
 	wacn.date="06/20/2016"/>
 
-#在Azure虚拟机上管理配置MongoDB集群
+#在 Azure 虚拟机上管理配置 MongoDB 集群
 
 ##目录  
 
