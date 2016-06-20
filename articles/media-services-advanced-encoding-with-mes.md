@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="03/27/2016"    
-	wacn.date="05/16/2016"/>
+	ms.date="04/24/2016"    
+	wacn.date="06/20/2016"/>
 
 
 #使用媒体编码器标准版进行高级编码
@@ -27,6 +27,7 @@
 - [在输入不包含音频时插入静音曲目](/documentation/articles/media-services-custom-mes-presets-with-dotnet#silent_audio)
 - [禁用自动取消隔行扫描](/documentation/articles/media-services-custom-mes-presets-with-dotnet#deinterlacing)
 - [仅音频预设](/documentation/articles/media-services-custom-mes-presets-with-dotnet#audio_only)
+- [连接两个或更多个视频文件](/documentation/articles/media-services-custom-mes-presets-with-dotnet#concatenate)
 
 ##<a id="encoding_with_dotnet"></a>使用媒体服务 .NET SDK 进行编码
 
@@ -233,12 +234,12 @@
 
 ##<a id="thumbnails"></a>生成缩略图
 
-本部分说明如何自定义生成缩略图的预设。下面定义的预设包含有关如何将文件编码的信息，以及生成缩略图时所需的信息。你可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，以及添加生成缩略图的代码。
+本部分说明如何自定义生成缩略图的预设。下面定义的预设包含有关如何将文件编码的信息，以及生成缩略图时所需的信息。你可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并添加生成缩略图的代码。
 
 >[AZURE.NOTE]如果要编码为单比特率视频，以下预设中的 **SceneChangeDetection** 设置只能设为 true。如果要编码为多比特率视频并将 **SceneChangeDetection** 设为 true，则编码器将返回错误。
 
 
-有关架构的信息，请参阅[此主题](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)。
+有关架构的信息，请参阅[此](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)主题。
 
 请务必仔细阅读[注意事项](/documentation/articles/media-services-custom-mes-presets-with-dotnet#considerations)部分。
 
@@ -432,17 +433,16 @@
 
 	你可以随意混搭使用表示法。
 	
-	此外，Start 还支持特殊的宏 {Best}，它会尝试判断第一个“有意义”的内容帧。 
-	注意：（Start 设置为 {Best} 时，将忽略 Step 与 Range）
+	此外，Start 还支持特殊的宏 {Best}，它会尝试判断第一个“有意义”的内容帧。注意：（Start 设置为 {Best} 时，将忽略 Step 与 Range）
 	
 	- 默认值：Start:{Best}
 - 需要显式提供每个图像格式的输出格式：Jpg/Png/BmpFormat。MES 会将 JpgVideo（如果已指定）与 JpgFormat 进行匹配，依此类推。OutputFormat 引入了新的图像编解码器特定宏 {Index}，需要为图像输出格式提供该宏一次（且只需一次）。
 
-##<a id="trim_video"></a>修剪视频（裁剪）
+##<a id="trim_video"></a>剪裁视频（剪辑）
 
-本部分说明如何修改编码器预设，以裁剪或修剪其输入为所谓的夹层文件或按需文件的输入视频。也可以使用编码器来裁剪或修剪从实时流捕获或存档的资产 – [此博客](https://azure.microsoft.com/blog/sub-clipping-and-live-archive-extraction-with-media-encoder-standard/)提供了详细信息。
+本部分说明如何修改编码器预设，以裁剪或修剪其输入为所谓的夹层文件或按需文件的输入视频。也可以使用编码器来剪辑或剪裁从实时流捕获或存档的资产 — [此博客](https://azure.microsoft.com/blog/sub-clipping-and-live-archive-extraction-with-media-encoder-standard/)提供了详细信息。
 
-若要修剪视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设并修改 **Sources** 元素（如下所示）。StartTime 的值需与输入视频的绝对时间戳匹配。例如，如果输入视频第一帧的时间戳为 12:00:10.000，则 StartTime 应大于或等于 12:00:10.000。在以下示例中，假设输入视频的起始时间戳为零。请注意，**Sources** 应位于架构顶部。
+若要剪裁视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设并修改 **Sources** 元素（如下所示）。StartTime 的值需与输入视频的绝对时间戳匹配。例如，如果输入视频第一帧的时间戳为 12:00:10.000，则 StartTime 应大于或等于 12:00:10.000。在以下示例中，假设输入视频的起始时间戳为零。请注意，**Sources** 应位于预设的开始处。
  
 ###<a id="json"></a>JSON 预设
 	
@@ -566,7 +566,7 @@
 
 ###XML 预设
 	
-若要修剪视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设并修改 **Sources** 元素（如下所示）。
+若要剪裁视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设并修改 **Sources** 元素（如下所示）。
 
 	<?xml version="1.0" encoding="utf-16"?>
 	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://www.windowsazure.cn/media/encoding/Preset/2014/03">
@@ -695,7 +695,7 @@
 >
 >不支持覆盖层不透明度设置。
 >
->源视频文件和覆盖层文件必须位于同一个资产中。
+>源视频文件和覆盖层图像文件必须位于相同的资产中，而且视频文件需要设置为此资产中的主文件。
 
 ###JSON 预设
 	
@@ -744,7 +744,7 @@
 	      "KeyFrameInterval": "00:00:02",
 	      "H264Layers": [
 	        {
-	          "Profile": "Baseline",
+	          "Profile": "Auto",
 	          "Level": "auto",
 	          "Bitrate": 1045,
 	          "MaxBitrate": 1045,
@@ -753,8 +753,8 @@
 	          "EntropyMode": "Cavlc",
 	          "AdaptiveBFrame": true,
 	          "Type": "H264Layer",
-	          "Width": "400",
-	          "Height": "400",
+	          "Width": "640",
+	          "Height": "360",
 	          "FrameRate": "0/1"
 	        }
 	      ],
@@ -773,6 +773,7 @@
 	    }
 	  ]
 	}
+
 
 ###XML 预设
 	
@@ -813,10 +814,10 @@
 	      <H264Layers>
 	        <H264Layer>
 	          <Bitrate>1045</Bitrate>
-	          <Width>400</Width>
-	          <Height>400</Height>
+	          <Width>640</Width>
+	          <Height>360</Height>
 	          <FrameRate>0/1</FrameRate>
-	          <Profile>Baseline</Profile>
+	          <Profile>Auto</Profile>
 	          <Level>auto</Level>
 	          <BFrames>0</BFrames>
 	          <ReferenceFrames>3</ReferenceFrames>
@@ -837,7 +838,8 @@
 	  </Outputs>
 	</Preset>
 
-##<a id="silent_audio"></a>在输入不包含音频时插入静音曲目
+
+##<a id="silent_audio"></a>在输入不包含音频时插入静音音轨
 
 默认情况下，如果你要向编码器发送仅包含视频而不包含音频的输入，输出资产将包含仅有视频数据的文件。某些播放器可能无法处理此类输出流。对于这种方案，你可以使用此设置来强制编码器将静音曲目添加到输出。
 
@@ -944,9 +946,119 @@
 	  ]
 	}
 
+##<a id="concatenate"></a>连接两个或更多个视频文件
+
+以下示例演示如何生成预设来连接两个或更多个视频文件。最常见的应用场景：你想在主视频中添加标题或预告片。预期使用场合：当一起编辑的视频文件共享相同的属性（视频分辨率、帧速率、音轨计数等）时。务必注意不要混合使用不同帧速率或不同音轨数的视频。
+
+###要求和注意事项
+
+- 输入视频应只有一个音轨。
+- 输入视频的帧速率应该都相同。
+- 必须将视频上载到不同的资产，并将视频设置为每个资产中的主文件。
+- 需要知道视频的持续时间。
+- 以下预设示例假设所有输入视频的起始时间戳都为零。如果视频具有不同的起始时间戳（通常是实时存档的情况），则需要修改 StartTime 值。
+- JSON 预设会显式引用输入资产的 AssetID 值。
+- 示例代码假设 JSON 预设已保存到本地文件（例如“C:\\supportFiles\\preset.json”）。同时假设已通过上载两个视频文件创建了两个资产，并且你知悉生成的 AssetID 值。
+- 代码片段和 JSON 预设显示连接两个视频文件的示例。你可以将其扩展至两个以上的视频，方法是：
+
+	1. 重复调用 task. InputAssets.Add() 以便依次添加更多视频。
+	2. 通过按相同顺序添加更多条目，对 JSON 中的“Sources”元素进行相应编辑。 
+
+
+###.NET 代码
+
+	
+	IAsset asset1 = _context.Assets.Where(asset => asset.Id == "nb:cid:UUID:606db602-efd7-4436-97b4-c0b867ba195b").FirstOrDefault();
+	IAsset asset2 = _context.Assets.Where(asset => asset.Id == "nb:cid:UUID:a7e2b90f-0565-4a94-87fe-0a9fa07b9c7e").FirstOrDefault();
+	
+	// Declare a new job.
+	IJob job = _context.Jobs.Create("Media Encoder Standard Job for Concatenating Videos");
+	// Get a media processor reference, and pass to it the name of the 
+	// processor to use for the specific task.
+	IMediaProcessor processor = GetLatestMediaProcessorByName("Media Encoder Standard");
+	
+	// Load the XML (or JSON) from the local file.
+	string configuration = File.ReadAllText(@"c:\supportFiles\preset.json");
+	
+	// Create a task
+	ITask task = job.Tasks.AddNew("Media Encoder Standard encoding task",
+	    processor,
+	    configuration,
+	    TaskOptions.None);
+	
+	// Specify the input videos to be concatenated (in order).
+	task.InputAssets.Add(asset1);
+	task.InputAssets.Add(asset2);
+	// Add an output asset to contain the results of the job. 
+	// This output is specified as AssetCreationOptions.None, which 
+	// means the output asset is not encrypted. 
+	task.OutputAssets.AddNew("Output asset",
+	    AssetCreationOptions.None);
+	
+	job.StateChanged += new EventHandler<JobStateChangedEventArgs>(JobStateChanged);
+	job.Submit();
+	job.GetExecutionProgressTask(CancellationToken.None).Wait();
+
+###JSON 预设
+
+使用你想连接的资产 ID 以及每个视频的适当时间段，更新你的自定义预设。
+
+	{
+	  "Version": 1.0,
+	  "Sources": [
+	    {
+	      "AssetID": "606db602-efd7-4436-97b4-c0b867ba195b",
+	      "StartTime": "00:00:01",
+	      "Duration": "00:00:15"
+	    },
+	    {
+	      "AssetID": "a7e2b90f-0565-4a94-87fe-0a9fa07b9c7e",
+	      "StartTime": "00:00:02",
+	      "Duration": "00:00:05"
+	    }
+	  ],
+	  "Codecs": [
+	    {
+	      "KeyFrameInterval": "00:00:02",
+	      "SceneChangeDetection": true,
+	      "H264Layers": [
+	        {
+	          "Level": "auto",
+	          "Bitrate": 1800,
+	          "MaxBitrate": 1800,
+	          "BufferWindow": "00:00:05",
+	          "BFrames": 3,
+	          "ReferenceFrames": 3,
+	          "AdaptiveBFrame": true,
+	          "Type": "H264Layer",
+	          "Width": "640",
+	          "Height": "360",
+	          "FrameRate": "0/1"
+	        }
+	      ],
+	      "Type": "H264Video"
+	    },
+	    {
+	      "Channels": 2,
+	      "SamplingRate": 48000,
+	      "Bitrate": 128,
+	      "Type": "AACAudio"
+	    }
+	  ],
+	  "Outputs": [
+	    {
+	      "FileName": "{Basename}_{Width}x{Height}_{VideoBitrate}.mp4",
+	      "Format": {
+	        "Type": "MP4Format"
+	      }
+	    }
+	  ]
+	}
+	
+
 
 ##另请参阅 
 
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset)
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0613_2016-->

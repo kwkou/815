@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/03/2016"
-	wacn.date="03/17/2016"/>
+	ms.date="04/18/2016"
+	wacn.date="06/20/2016"/>
 
 
 # 创建 Azure 媒体服务帐户
@@ -21,7 +21,7 @@
 - [REST](http://msdn.microsoft.com/zh-cn/library/azure/dn194267.aspx)
 
 
-> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。有关详细信息，请参阅 [ 1 元试用](/pricing/free-trial/?WT.mc_id=A261C142F)。
+> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。有关详细信息，请参阅 [ 1 元试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
  
 使用 Azure 管理门户，你可以快速创建 Azure 媒体服务帐户。你可以使用自己的帐户访问媒体服务，这些服务使你能够在 Azure 中存储、加密、编码、管理和流式传输媒体内容。创建媒体服务帐户时，你还将在此帐户所在的地理区域内创建一个关联的媒体服务帐户（或使用现有存储帐户）。
 
@@ -68,7 +68,7 @@
 
 此外，你还可以查看使用 Azure 媒体服务 SDK 完成以下任务的代码：上载、编码和发布视频。你可以单击“编写一些代码”部分下的某个链接，复制代码并在应用程序中使用该代码。
 
-[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
 
 
 ## 后续步骤
@@ -89,4 +89,4 @@
 
   [Azure 管理门户]: http://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0613_2016-->

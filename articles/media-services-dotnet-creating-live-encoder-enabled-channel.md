@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 .NET SDK 创建频道，以执行从单比特率流到多比特率流的实时编码" 
+	pageTitle="如何使用 Azure 媒体服务执行实时流式处理以通过 .NET 创建多比特率流" 
 	description="本教程将指导你使用 .NET SDK 完成创建频道的步骤，该频道接收单比特率实时流，并将其编码为多比特率流。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -9,11 +9,11 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="03/08/2016"
-	wacn.date="04/05/2016"/>
+	ms.date="05/05/2016"
+	wacn.date="06/20/2016"/>
 
 
-#使用 .NET SDK 创建频道，以执行从单比特率流到多比特率流的实时编码
+#如何使用 Azure 媒体服务执行实时流式处理以通过 .NET 创建多比特率流
 
 > [AZURE.SELECTOR]
 - [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
@@ -27,7 +27,7 @@
 
 本教程将指导你完成创建**频道**的步骤，该频道接收单比特率实时流，并将其编码为多比特率流。
 
-如需与能够进行实时编码的频道相关的更多概念信息，请参阅 [使用执行从单比特率到多比特率流的实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+有关为实时编码启用的通道的更多相关概念信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
 
 
 ##常见的实时流方案
@@ -516,4 +516,4 @@
 
 如果本主题不包含你所期待的内容、缺少某些内容，或在其他方面不符合你的需求，请使用下面的 Disqus 会话向我们提供反馈。
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0613_2016-->

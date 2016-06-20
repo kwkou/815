@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="01/28/2016" 
-	wacn.date="03/17/2016"/>
+ 	ms.date="04/18/2016"
+	wacn.date="06/20/2016"/>
 
 
 #如何使用媒体编码器标准通过 .NET 来生成缩略图
@@ -369,5 +369,4 @@
 ##另请参阅 
 
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset)
-
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0613_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="03/02/2016"   
-	wacn.date="04/05/2016"/>
+ 	ms.date="05/03/2016" 
+	wacn.date="06/20/2016"/>
 
 #使用 NewTek TriCaster 编码器发送单比特率实时流
 
@@ -155,4 +155,4 @@
 请参阅[故障排除](/documentation/articles/media-services-troubleshooting-live-streaming)主题以获取相关指导。
 
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0613_2016-->
