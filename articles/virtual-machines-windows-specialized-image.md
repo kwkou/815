@@ -1,4 +1,4 @@
-<!-- ARM: tested -->
+<!-- Ibiza Portal -->
 
 <properties
 	pageTitle="创建 Windows VM 的副本 | Azure"
@@ -18,7 +18,7 @@
 # 如何在 Resource Manager 部署模型中创建 Windows 虚拟机的副本
 
 
-本文说明如何使用 Azure PowerShell 在 Resource Manager 部署模型中创建运行 Windows 的 Azure 虚拟机 (VM) 副本。其中说明如何创建 Azure VM 的**_专用_**映像，此映像可维护用户帐户和其他来自原始 VM 的状态数据。使用专用映像可将 Windows VM 从经典部署模型移植到 Resource Manager 部署模型，或为创建于 Resource Manager 部署模型中的 Windows VM 创建备份副本。你可以使用此方法来通过 OS 和数据磁盘进行复制，然后设置网络资源以创建新虚拟机。
+本文说明如何使用 Azure PowerShell 与 Azure 门户在 Resource Manager 部署模型中创建运行 Windows 的 Azure 虚拟机 (VM) 副本。其中说明如何创建 Azure VM 的**_专用_**映像，此映像可维护用户帐户和其他来自原始 VM 的状态数据。使用专用映像可将 Windows VM 从经典部署模型移植到 Resource Manager 部署模型，或为创建于 Resource Manager 部署模型中的 Windows VM 创建备份副本。你可以使用此方法来通过 OS 和数据磁盘进行复制，然后设置网络资源以创建新虚拟机。
 
 如果需要创建类似于 Windows VM 的批量部署，应该使用通用映像。有关信息请参阅 [How to capture a Windows virtual machine（如何捕获 Windows 虚拟机）](/documentation/articles/virtual-machines-windows-capture-image)。
 
@@ -48,12 +48,12 @@
 
 	- 如果你想要**_复制_**源虚拟机，请**停止**并**解除分配**该虚拟机。
 	
-		- 对于使用经典部署模型创建的 VM，可以使用[管理门户](https://manage.windowsazure.cn)，然后单击“虚拟机”> *你的 VM* >“停止”，或使用 PowerShell 命令 `Stop-AzureVM -ServiceName <yourServiceName> -Name <yourVmName>`。 
+		- 对于使用经典部署模型创建的 VM，可以使用[门户](https://portal.azure.cn)，然后单击“浏览”>“虚拟机(经典)”> *你的 VM* >“停止”，或使用 PowerShell 命令 `Stop-AzureVM -ServiceName <yourServiceName> -Name <yourVmName>`。 
 		
-		- 对于使用 Resource Manager 部署模型创建的 VM，你可以使用 PowerShell 命令 `Stop-AzureRmVM -ResourceGroupName <yourResourceGroup> -Name <yourVmName>`。
+		- 对于使用 Resource Manager 部署模型创建的 VM，你可以登录到门户，然后单击“浏览”>“虚拟机(经典)”> *你的 VM* >“停止”，或使用 PowerShell 命令 `Stop-AzureRmVM -ResourceGroupName <yourResourceGroup> -Name <yourVmName>`。请注意，门户中的 VM“状态”将从“正在运行”更改为“已停止(已解除分配)”。
 
 	
-	- 如果你想要**_迁移_**源虚拟机，请**删除**该 VM 并使用剩余的 VHD。在[管理门户](https://manage.windowsazure.cn)中**浏览**到虚拟机并单击“删除” > “保留附加的磁盘”。对于使用 Resource Manager 部署模型所创建的源 VM，可以使用 PowerShell 命令 `Remove-AzureRmVm -ResourceGroupName <yourResourceGroup> -Name <yourVmName>`。
+	- 如果你想要**_迁移_**源虚拟机，请**删除**该 VM 并使用剩余的 VHD。在[门户](https://portal.azure.cn)中**浏览**到虚拟机并单击“删除”。
 	
 1. 查找存储帐户中的访问密钥，其中包含源 VHD，以及要在其中复制 VHD 以创建新 VM 的存储帐户。要从中复制 VHD 的帐户密钥称为源密钥，将它复制到的帐户称为目标密钥。有关访问密钥的详细信息，请阅读 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account)。
 
@@ -61,7 +61,7 @@
 	
 	- 对于使用 Resource Manager 部署模型所创建的源 VM，或对于要用于新 VM 的存储帐户，请单击“浏览”>“存储帐户”> *你的存储帐户* >“配置”>“访问密钥”，然后复制标签为“key1”的密钥。
 
-1. 获取用于访问源和目标存储帐户的 URL。在管理门户中，**浏览**到你的存储帐户并单击“Blob”。然后单击托管源 VHD 的容器（例如，经典部署模型的 *vhds*），或要将 VHD 复制到的容器。单击容器的“属性”并复制标签为“URL”的文本。我们需要用到源和目标容器的 URL。这些 URL 看起来类似于 `https://myaccount.blob.core.chinacloudapi.cn/mycontainer`。
+1. 获取用于访问源和目标存储帐户的 URL。在门户中，**浏览**到你的存储帐户并单击“Blob”。然后单击托管源 VHD 的容器（例如，经典部署模型的 *vhds*），或要将 VHD 复制到的容器。单击容器的“属性”并复制标签为“URL”的文本。我们需要用到源和目标容器的 URL。这些 URL 看起来类似于 `https://myaccount.blob.core.chinacloudapi.cn/mycontainer`。
 
 1. 在本地计算机上打开命令窗口，然后导航到安装 AzCopy 的文件夹。路径类似于 *C:\\Program Files (x86)\\Microsoft SDKs\\Azure\\AzCopy*。从该处运行以下命令：
 </br>
@@ -107,7 +107,7 @@
 	$dataDiskName = $vmName + "dataDisk"
 	$vm = Add-AzureRmVMDataDisk -VM $vm -Name $dataDiskName -VhdUri $dataDiskUri -Lun 0 -CreateOption attach
 	
-数据磁盘和 OS 磁盘的 URL 类似于：`https://StorageAccountName.blob.core.chinacloudapi.cn/BlobContainerName/DiskName.vhd`。
+数据磁盘和 OS 磁盘的 URL 类似于：`https://StorageAccountName.blob.core.chinacloudapi.cn/BlobContainerName/DiskName.vhd`。可通过以下方法在门户上找到此信息：浏览到目标存储容器，单击复制的 OS 或数据 VHD，然后复制 **URL** 的内容。
 	
 	#Create the new VM
 	New-AzureRmVM -ResourceGroupName $rgName -Location $location -VM $vm
@@ -119,10 +119,12 @@
 	                         True         OK OK
 
 
-你应该者使用以下 PowerShell 命令进行查看：
+你应该在 [Azure 门户](https://portal.azure.cn)的“浏览”>“虚拟机”下查看新创建的 VM，或者使用以下 PowerShell 命令进行查看：
 
 	$vmList = Get-AzureRmVM -ResourceGroupName $rgName
 	$vmList.Name
+
+若要登录到新虚拟机，请在[门户](https://portal.azure.cn)中**浏览**到该 VM，单击“连接”，然后打开远程桌面 RDP 文件。使用原始虚拟机的帐户凭据登录到新虚拟机。
 
 
 ## 后续步骤
