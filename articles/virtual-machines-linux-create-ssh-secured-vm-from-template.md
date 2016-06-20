@@ -23,9 +23,7 @@
 
 ## 快速命令摘要
 
-```bash
-chrisl@fedora$ azure group create -n <exampleRGname> -l <exampleAzureRegion> [--template-uri <URL> | --template-file <path> | <template-file> -e <parameters.json file>]
-```
+	chrisl@fedora$ azure group create -n <exampleRGname> -l <exampleAzureRegion> [--template-uri <URL> | --template-file <path> | <template-file> -e <parameters.json file>]
 
 ## 详细演练
 
@@ -37,30 +35,28 @@ Azure Resource Manager 模板是一个 JSON 文件，可用于简单的一次性
 
 以下代码示例演示如何调用 `azure group create`，以使用[此 Azure Resource Manager 模板](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json)同时创建资源组和部署受 SSH 保护的 Linux VM。请记住，在示例中必须使用环境中唯一的名称。本示例使用 `quicksecuretemplate` 作为资源组名称，使用 `securelinux` 作为 VM 名称，使用 `quicksecurelinux` 作为子域名。
 
->[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一下不支持的 VM 大小。
+>[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一些不支持的 VM 大小。
 
-```bash
-chrisl@fedora$ azure group create -n quicksecuretemplate -l chinaeast --template-file /path/to/azuredeploy.json
-info:    Executing command group create
-+ Getting resource group quicksecuretemplate
-+ Creating resource group quicksecuretemplate
-info:    Created resource group quicksecuretemplate
-info:    Supply values for the following parameters
-adminUserName: ops
-sshKeyData: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDRZ/XB8p8uXMqgI8EoN3dWQw... user@contoso.com
-dnsLabelPrefix: quicksecurelinux
-vmName: securelinux
-+ Initializing template configurations and parameters
-+ Creating a deployment
-info:    Created template deployment "azuredeploy"
-data:    Id:                  /subscriptions/<guid>/resourceGroups/quicksecuretemplate
-data:    Name:                quicksecuretemplate
-data:    Location:            chinaeast
-data:    Provisioning State:  Succeeded
-data:    Tags: null
-data:
-info:    group create command OK
-```
+	chrisl@fedora$ azure group create -n quicksecuretemplate -l chinaeast --template-file /path/to/azuredeploy.json
+	info:    Executing command group create
+	+ Getting resource group quicksecuretemplate
+	+ Creating resource group quicksecuretemplate
+	info:    Created resource group quicksecuretemplate
+	info:    Supply values for the following parameters
+	adminUserName: ops
+	sshKeyData: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDRZ/XB8p8uXMqgI8EoN3dWQw... user@contoso.com
+	dnsLabelPrefix: quicksecurelinux
+	vmName: securelinux
+	+ Initializing template configurations and parameters
+	+ Creating a deployment
+	info:    Created template deployment "azuredeploy"
+	data:    Id:                  /subscriptions/<guid>/resourceGroups/quicksecuretemplate
+	data:    Name:                quicksecuretemplate
+	data:    Location:            chinaeast
+	data:    Provisioning State:  Succeeded
+	data:    Tags: null
+	data:
+	info:    group create command OK
 
 你可以使用 `--template-uri` 参数创建新的资源组和部署 VM，或者使用 `--template-file` 参数并以模板文件路径作为参数在本地下载或创建模板并传递模板。Azure CLI 将提示你输入模板所需的参数。
 

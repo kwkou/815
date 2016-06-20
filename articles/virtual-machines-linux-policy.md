@@ -31,46 +31,42 @@
 企业中常用的一种方案可能是，只允许其用户在经测试可与 LOB 应用程序兼容的特定操作系统中创建虚拟机。使用 Azure Resource Manager 策略可以通过几个步骤完成此任务。
 在此策略示例中，我们将只允许创建 Ubuntu 14.04.2-LTS 虚拟机。策略定义如下所示
 
-```
-"if": {
-  "allOf": [
-    {
-      "field": "type",
-      "equals": "Microsoft.Compute/virtualMachines"
-    },
-    {
-      "not": {
-        "allOf": [
-          {
-            "field": "Microsoft.Compute/virtualMachines/imagePublisher",
-            "equals": "Canonical"
-          },
-          {
-            "field": "Microsoft.Compute/virtualMachines/imageOffer",
-            "equals": "UbuntuServer"
-          },
-          {
-            "field": "Microsoft.Compute/virtualMachines/imageSku",
-            "equals": "14.04.2-LTS"
-          }
-        ]
-      }
-    }
-  ]
-},
-"then": {
-  "effect": "deny"
-}
-```
+	"if": {
+	  "allOf": [
+	    {
+	      "field": "type",
+	      "equals": "Microsoft.Compute/virtualMachines"
+	    },
+	    {
+	      "not": {
+	        "allOf": [
+	          {
+	            "field": "Microsoft.Compute/virtualMachines/imagePublisher",
+	            "equals": "Canonical"
+	          },
+	          {
+	            "field": "Microsoft.Compute/virtualMachines/imageOffer",
+	            "equals": "UbuntuServer"
+	          },
+	          {
+	            "field": "Microsoft.Compute/virtualMachines/imageSku",
+	            "equals": "14.04.2-LTS"
+	          }
+	        ]
+	      }
+	    }
+	  ]
+	},
+	"then": {
+	  "effect": "deny"
+	}
 
 可以轻松修改上述策略，以允许在虚拟机部署中使用经过以下更改的任何 Ubuntu LTS 映像
 
-```
-{
-  "field": "Microsoft.Compute/virtualMachines/imageSku",
-  "like": "*LTS"
-}
-```
+	{
+	  "field": "Microsoft.Compute/virtualMachines/imageSku",
+	  "like": "*LTS"
+	}
 
 #### 虚拟机属性字段
 
