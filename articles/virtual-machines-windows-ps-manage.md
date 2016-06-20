@@ -1,8 +1,8 @@
 <!-- ARM: tested -->
 
 <properties
-	pageTitle="管理 Azure Resource Manager VM | Azure"
-	description="使用 Azure 资源管理器、模板与 PowerShell 来管理虚拟机。"
+	pageTitle="使用 Resource Manager 和 PowerShell 管理 VM | Azure"
+	description="使用 Azure Resource Manager 与 PowerShell 来管理虚拟机。"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="davidmu1"
@@ -12,208 +12,181 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="01/07/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="04/18/2016"
+	wacn.date=""/>
 
-# 使用 Azure 资源管理器与 PowerShell 来管理虚拟机
-
-> [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/virtual-machines-windows-ps-manage)
-- [CLI](/documentation/articles/virtual-machines-linux-cli-deploy-templates)
+# 使用 Resource Manager 与 PowerShell 来管理 Azure 虚拟机
 
 [AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
 
-<br>
+## 安装 Azure PowerShell
+ 
+有关如何安装最新版 Azure PowerShell 的信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)。选择要使用的订阅，然后登录到你的 Azure 帐户。
 
+## 设置变量
 
-管理 Azure 中的资源时，可充分利用 Azure PowerShell 和 Resource Manager 模板的强大功能和灵活性。你可以使用本文中的任务管理虚拟机资源。
+本文中的所有命令都需要虚拟机所在资源组的名称以及要管理的虚拟机的名称。将 **$rgName** 的值替换为包含虚拟机的资源组的名称。将 **$vmName** 的值替换为 VM 的名称。创建变量。
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代[经典部署模型](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)。
+        $rgName = "resource group name"
+        $vmName = "VM name"
 
-这些任务仅使用 PowerShell：
+## 显示有关虚拟机的信息
 
-- [显示有关虚拟机的信息](#displayvm)
-- [启动虚拟机](#start)
-- [停止虚拟机](#stop)
-- [重新启动虚拟机](#restart)
-- [删除虚拟机](#delete)
-
-[AZURE.INCLUDE [powershell 预览](../includes/powershell-preview-inline-include.md)]
-
-## <a id="displayvm"></a>显示有关虚拟机的信息
-
-在下面的命令中，将“资源组名称”替换为包含该虚拟机的资源组名称，将 “VM 名称”替换为该虚拟机名称，然后运行该命令：
-
-	Get-AzureRmVM -ResourceGroupName "resource group name" -Name "VM name"
+获取虚拟机信息。
+  
+        Get-AzureRmVM -ResourceGroupName $rgName -Name $vmName
 
 它会返回类似于下面的内容：
 
+        ResourceGroupName        : rg1
+        Id                       : /subscriptions/{subscription-id}/resourceGroups/
+                                    rg1/providers/Microsoft.Compute/virtualMachines/vm1
+        Name                     : vm1
+        Type                     : Microsoft.Compute/virtualMachines
+        Location                 : centralus
+        Tags                     : {}
+        AvailabilitySetReference : {
+                                     "id": "/subscriptions/{subscription-id}/resourceGroups/
+                                       rg1/providers/Microsoft.Compute/availabilitySets/av1"
+                                   }
+        Extensions               : []
+        HardwareProfile          : {
+                                     "vmSize": "Standard_A0"
+                                   }
+        InstanceView             : null
+        NetworkProfile           : {
+                                     "networkInterfaces": [
+                                       {
+                                         "properties.primary": null,
+                                         "id": "/subscriptions/{subscription-id}/resourceGroups/
+                                           rg1/providers/Microsoft.Network/networkInterfaces/nc1"
+                                       }
+                                     ]
+                                   }
+        OSProfile                : {
+                                     "computerName": "vm1",
+                                     "adminUsername": "myaccount1",
+                                     "adminPassword": null,
+                                     "customData": null,
+                                     "windowsConfiguration": {
+                                       "provisionVMAgent": true,
+                                       "enableAutomaticUpdates": true,
+                                       "timeZone": null,
+                                       "additionalUnattendContents": [],
+                                       "winRM": null
+                                     },
+                                     "linuxConfiguration": null,
+                                     "secrets": []
+                                   }
+        Plan                     : null
+        ProvisioningState        : Succeeded
+        StorageProfile           : {
+                                     "imageReference": {
+                                       "publisher": "MicrosoftWindowsServer",
+                                       "offer": "WindowsServer",
+                                       "sku": "2012-R2-Datacenter",
+                                       "version": "latest"
+                                     },
+                                     "osDisk": {
+                                       "osType": "Windows",
+                                       "encryptionSettings": null,
+                                       "name": "osdisk",
+                                       "vhd": {
+                                         "Uri": "http://sa1.blob.core.chinacloudapi.cn/vhds/osdisk1.vhd"
+                                       }
+                                       "image": null,
+                                       "caching": "ReadWrite",
+                                       "createOption": "FromImage"
+                                     }
+                                     "dataDisks": [],
+                                   }
+        DataDiskNames            : {}
+        NetworkInterfaceIDs      : {/subscriptions/{subscription-id}/resourceGroups/
+                                     rg1/providers/Microsoft.Network/networkInterfaces/nc1}
 
-	ResourceGroupName        : rg1
-	Id                       : /subscriptions/{subscription-id}/resourceGroups/
-															rg1/providers/Microsoft.Compute/virtualMachines/vm1
-	Name                     : vm1
-	Type                     : Microsoft.Azure.Management.Compute.Models.VirtualMachineGetResponse
-	Location                 : chinanorth
-	Tags                     : {}
-	AvailabilitySetReference : null
-	Extensions               : []
-	HardwareProfile          :  {
-																"VirtualMachineSize": "Standard_D1"
-															}
-	InstanceView             : null
-	Location                 : chinanorth
-	Name                     : vm1
-	NetworkProfile           :  {
-																"NetworkInterfaces": [
-																	{
-																		"Primary": null,
-																		"ReferenceUri": "/subscriptions/{subscription-id}/resourceGroups/
-																		rg1/providers/Microsoft.Network/networkInterfaces/nc1"
-																	}
-																]
-															}
-	OSProfile                :  {
-																"AdminPassword": null,
-																"AdminUsername": "WinAdmin1",
-																"ComputerName": "vm1",
-																"CustomData": null,
-																"LinuxConfiguration": null,
-																"Secrets": [],
-																"WindowsConfiguration": {
-																	"AdditionalUnattendContents": [],
-																	"EnableAutomaticUpdates": true,
-																	"ProvisionVMAgent": true,
-																	"TimeZone": null,
-																	"WinRMConfiguration": null
-																}
-															}
-	Plan                     : null
-	ProvisioningState        : Succeeded
-	StorageProfile           : 	{
-																"DataDisks": [],
-																"ImageReference": {
-																	"Offer": "WindowsServer",
-																	"Publisher": "MicrosoftWindowsServer",
-																	"Sku": "2012-R2-Datacenter",
-																	"Version": "latest"
-																},
-																"OSDisk": {
-																	"OperatingSystemType": "Windows",
-																	"Caching": "ReadWrite",
-																	"CreateOption": "FromImage",
-																	"Name": "osdisk",
-																	"SourceImage": null,
-																	"VirtualHardDisk": {
-																		"Uri": "http://sa1.blob.core.chinacloudapi.cn/vhds/osdisk1.vhd"
-																	}
-																}
-															}
-	DataDiskNames            :  {}
-	NetworkInterfaceIDs      : { /subscriptions/{subscription-id}/resourceGroups/
-																rg1/providers/Microsoft.Network/networkInterfaces/nc1}
+## 启动虚拟机
 
-如果你想要观看完成此任务的视频，请看一看此视频：
+启动虚拟机。
 
-[AZURE.VIDEO displaying-information-about-a-virtual-machine-in-microsoft-azure-with-powershell]
+        Start-AzureRmVM -ResourceGroupName $rgName -Name $vmName
 
-## <a id="start"></a>启动虚拟机
+几分钟后，将返回类似于下面的内容：
 
-在下面的命令中，将“资源组名称”替换为包含该虚拟机的资源组名称，将 “VM 名称”替换为该虚拟机名称，然后运行该命令：
+        RequestId  IsSuccessStatusCode  StatusCode  ReasonPhrase
+        ---------  -------------------  ----------  ------------
+                                  True          OK  OK
 
-	Start-AzureRmVM -ResourceGroupName "resource group name" -Name "VM name"
+## 停止虚拟机
 
-它会返回类似于下面的内容：
+停止虚拟机。
 
-	Status              : Succeeded
-	StatusCode          : OK
-	RequestId           : 06935ddf-6e89-48d2-b46a-229493e3e9d1
-	Output              :
-	Error               :
-	StartTime           : 4/28/2015 11:10:35 AM -07:00
-	EndTime             : 4/28/2015 11:11:41 AM -07:00
-	TrackingOperationId : c1aa0a70-4f4f-4d6c-a8ac-7ea35c004ce0
-
-如果你想要观看完成此任务的视频，请看一看此视频：
-
-[AZURE.VIDEO start-stop-restart-and-delete-vms-in-microsoft-azure-with-powershell]
-
-## <a id="stop"></a>停止虚拟机
-
-在下面的命令中，将“资源组名称”替换为包含该虚拟机的资源组名称，将 “VM 名称”替换为该虚拟机名称，然后运行该命令：
-
-	Stop-AzureRmVM -ResourceGroupName "resource group name" -Name "VM name"
+	    Stop-AzureRmVM -ResourceGroupName $rgName -Name $vmName
 
 系统会提示你进行确认：
 
-	Virtual machine stopping operation
-	This cmdlet will stop the specified virtual machine. Do you want to continue?
-	[Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"):
+        Virtual machine stopping operation
+        This cmdlet will stop the specified virtual machine. Do you want to continue?
+        [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"):
+        
+输入 **Y** 以停止虚拟机。
+
+几分钟后，将返回类似于下面的内容：
+
+        RequestId  IsSuccessStatusCode  StatusCode  ReasonPhrase
+        ---------  -------------------  ----------  ------------
+                                  True          OK  OK
+
+## 重新启动虚拟机
+
+重启虚拟机。
+
+        $rgName = "resource group name"
+        $vmName = "VM name"
+        Restart-AzureRmVM -ResourceGroupName $rgName -Name $vmName
 
 它会返回类似于下面的内容：
 
-	Status              : Succeeded
-	StatusCode          : OK
-	RequestId           : aac41de1-b85d-4429-9a3d-040b922d2e6d
-	Output              :
-	Error               :
-	StartTime           : 4/28/2015 11:10:35 AM -07:00
-	EndTime             : 4/28/2015 11:11:41 AM -07:00
-	TrackingOperationId : e1705973-d266-467e-8655-920016145347
+        RequestId  IsSuccessStatusCode  StatusCode  ReasonPhrase
+        ---------  -------------------  ----------  ------------
+                                  True          OK  OK
 
-如果你想要观看完成此任务的视频，请看一看此视频：
+## 删除虚拟机
 
-[AZURE.VIDEO start-stop-restart-and-delete-vms-in-microsoft-azure-with-powershell]
+删除虚拟机。
 
-## <a id="restart"></a>重新启动虚拟机
-
-在下面的命令中，将“资源组名称”替换为包含该虚拟机的资源组名称，将 “VM 名称”替换为该虚拟机名称，然后运行该命令：
-
-	Restart-AzureRmVM -ResourceGroupName "resource group name" -Name "VM name"
-
-它会返回类似于下面的内容：
-
-	Status              : Succeeded
-	StatusCode          : OK
-	RequestId           : 4b05891c-fdff-4c9a-89ca-e4f1d7691aed
-	Output              :
-	Error               :
-	StartTime           : 1/5/2016 12:06:53 PM -08:00
-	EndTime             : 1/5/2016 12:06:54 PM -08:00
-	TrackingOperationId : 5aeeab89-45ab-41b9-84ef-9e9a7e732207
-
-
-如果你想要观看完成此任务的视频，请看一看此视频：
-
-[AZURE.VIDEO start-stop-restart-and-delete-vms-in-microsoft-azure-with-powershell]
-
-## <a id="delete"></a>删除虚拟机
-
-在下面的命令中，将“资源组名称”替换为包含该虚拟机的资源组名称，将 “VM 名称”替换为该虚拟机名称，然后运行该命令：
-
-	Remove-AzureRmVM -ResourceGroupName "resource group name" -Name "VM name"
+        $rgName = "resource group name"
+        $vmName = "VM name"
+	    Remove-AzureRmVM -ResourceGroupName $rgName -Name $vmName
 
 > [AZURE.NOTE] 可以使用 **-Force** 参数跳过确认提示。
 
 如果你没有使用 -Force 参数，系统会提示你进行确认：
 
-	Virtual machine removal operation
-	This cmdlet will remove the specified virtual machine. Do you want to continue?
-	[Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"):
+	    Virtual machine removal operation
+	    This cmdlet will remove the specified virtual machine. Do you want to continue?
+	    [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"):
 
 它会返回类似于下面的内容：
 
-	Status              : Succeeded
-	StatusCode          : OK
-	RequestId           : 2d723b40-ce1f-4b11-a603-dc659a13b6f0
-	Output              :
-	Error               :
-	StartTime           : 1/5/2016 12:10:28 PM -08:00
-	EndTime             : 1/5/2016 12:12:12 PM -08:00
-	TrackingOperationId : d138ab29-83bf-4948-9d13-dab87db1a639
+        RequestId  IsSuccessStatusCode  StatusCode  ReasonPhrase
+        ---------  -------------------  ----------  ------------
+                                  True          OK  OK
 
-如果你想要观看完成此任务的视频，请看一看此视频：
+## 更新虚拟机
 
-[AZURE.VIDEO start-stop-restart-and-delete-vms-in-microsoft-azure-with-powershell]
+本示例演示如何更新虚拟机的大小。
+        
+        $vmSize = "Standard_A1"
+        $vm = Get-AzureRmVM -ResourceGroupName $rgName -Name $vmName
+        $vm.HardwareProfile.vmSize = $vmSize
+        Update-AzureRmVM -ResourceGroupName $rgName -VM $vm
+    
+    See [Sizes for virtual machines in Azure](/documentation/articles/virtual-machines-windows-sizes) for a list of available sizes for a virtual machine.
 
-<!---HONumber=Mooncake_0411_2016-->
+它会返回类似于下面的内容：
+
+        RequestId  IsSuccessStatusCode  StatusCode  ReasonPhrase
+        ---------  -------------------  ----------  ------------
+                                  True          OK  OK
+
+<!---HONumber=Mooncake_0613_2016-->
