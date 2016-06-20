@@ -40,7 +40,6 @@ editor="Eric Chen" />
 
 - [应用程序之间的消息](/documentation/articles/service-bus-python-how-to-use-queues)
 - [使用发布/订阅消息传递](/documentation/articles/service-bus-python-how-to-use-topics-subscriptions)
-- [使用 Blitline 处理图像](/documentation/articles/store-blitline-how-to-use)
 - [全部显示](/develop/python/app-services)
 
 ###参考文档

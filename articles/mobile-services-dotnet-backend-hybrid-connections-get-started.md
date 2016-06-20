@@ -122,7 +122,7 @@
 ##另请参阅##
  
 + [混合连接网站](http://azure.microsoft.com/zh-cn/services/biztalk-services/)
-+ [BizTalk 服务：“仪表板”、“监视”、“缩放”、“配置”和“混合连接”选项卡](/documentation/articles/biztalk-dashboard-monitor-scale-tabs)
+<!--+ [BizTalk 服务：“仪表板”、“监视”、“缩放”、“配置”和“混合连接”选项卡](/documentation/articles/biztalk-dashboard-monitor-scale-tabs)-->
 + [如何对 .NET 后端移动服务进行数据模型更改](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)
 
 <!-- IMAGES -->

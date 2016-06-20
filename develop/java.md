@@ -54,7 +54,7 @@ editor="Eric Chen" />
 - [DocumentDB](/documentation/articles/documentdb-java-application) / [API](http://dl.windowsazure.com/documentdb/javadoc)-->
 - [媒体服务](/documentation/articles/media-services-java-how-to-use) / [API](http://dl.windowsazure.com/javadoc) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx)
 - [队列服务](/documentation/articles/storage-java-how-to-use-queue-storage) / [API](http://dl.windowsazure.com/storage/javadoc) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
-- [SendGrid](/documentation/articles/store-sendgrid-java-how-to-send-email) / [API](https://sendgrid.com/docs/API_Reference/index.html)
+<!--- [SendGrid](/documentation/articles/store-sendgrid-java-how-to-send-email) / [API](https://sendgrid.com/docs/API_Reference/index.html)-->
 - [服务总线队列](/documentation/articles/service-bus-java-how-to-use-queues) / [API](http://dl.windowsazure.com/javadoc) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh780717)
 - [服务总线主题](/documentation/articles/service-bus-java-how-to-use-topics-subscriptions) / [API](http://dl.windowsazure.com/javadoc) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh780717)
 - [服务运行时](http://msdn.microsoft.com/zh-cn/library/azure/hh690948.aspx) / [API](http://dl.windowsazure.com/javadoc)

@@ -33,9 +33,9 @@
 <p>Access Control 是一项 Azure 服务，可用于轻松对需要访问您的 Web 应用程序和服务的用户进行身份验证，而不必在代码中添加复杂的身份验证逻辑因素。该服务还提供与 Windows Identity Foundation (WIF) 的集成，支持常用 Web 身份提供程序（包括 Windows Live ID、Yahoo），并且支持 ADFS 2.0。</p>
 <h3>如何： <a href="/documentation/articles/active-directory-java-view-saml-returned-by-access-control/">查看 Azure Access Control 服务返回的 SAML</a></h3>
 <p>当用户成功登录时，Access Control 服务会向您的应用程序返回安全声明标记语言 (SAML)。</p>
-<h2 id="header-4">图像处理</h2>
+<!--<h2 id="header-4">图像处理</h2>
 <h3>功能指南： <a href="/documentation/articles/store-blitline-how-to-use/">Blitline 图像处理服务</a></h3>
-<p>Blitline 是一项基于云计算的图像处理服务。本指南介绍如何访问 Blitline 服务以及如何将作业提交到 Blitline。</p>
+<p>Blitline 是一项基于云计算的图像处理服务。本指南介绍如何访问 Blitline 服务以及如何将作业提交到 Blitline。</p>-->
 <h2 id="header-5">消息传送和集成</h2>
 <h3>功能指南： <a href="/documentation/articles/service-bus-java-how-to-use-queues/">Service Bus 队列</a></h3>
 <p>Service Bus 队列提供简单且有保证的先入先出消息传送策略，支持一系列标准协议（REST、AMQP 和 WS*）以及用于将消息放入/推出队列的 API。</p>

@@ -16,9 +16,8 @@
 <h2 id="header-1">Caching 和 CDN</h2>
 <h3>如何： <a href="/documentation/articles/cdn-how-to-use/">使用 CDN 提供高带宽内容</a></h3>
 <p>通过在各地的物理节点缓存 blob 和静态内容，Azure 内容交付网络 (CDN) 为交付高带宽内容提供了一个全局解决方案。此常见任务介绍如何启用 CDN 以及如何添加、访问和删除内容。</p>
-<h2 id="header-2">其他服务</h2>
-<!--
+<!--<h2 id="header-2">其他服务</h2>
 <h3>功能指南： <a href="/documentation/articles/store-sendgrid-nodejs-how-to-send-email/">通过 SendGrid 发送电子邮件</a></h3>
-<p>Azure 应用程序可以使用 SendGrid 来包括电子邮件功能。SendGrid 提供了可靠的电子邮件传递服务、实时分析和灵活的 API，使用户能够轻松地将服务合并到他们的 Azure 应用程序中。</p>-->
+<p>Azure 应用程序可以使用 SendGrid 来包括电子邮件功能。SendGrid 提供了可靠的电子邮件传递服务、实时分析和灵活的 API，使用户能够轻松地将服务合并到他们的 Azure 应用程序中。</p>
 <h3>功能指南： <a href="/documentation/articles/store-blitline-how-to-use/">Blitline 图像处理服务</a></h3>
-<p>Blitline 是一项基于云计算的图像处理服务。本指南介绍如何访问 Blitline 服务以及如何将作业提交到 Blitline。</p>
+<p>Blitline 是一项基于云计算的图像处理服务。本指南介绍如何访问 Blitline 服务以及如何将作业提交到 Blitline。</p>-->

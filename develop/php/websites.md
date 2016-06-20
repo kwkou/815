@@ -41,8 +41,8 @@
 <h2 id="header-2">配置</h2>
 <h3>如何：<a href="/documentation/articles/web-sites-php-configure/">在网站中配置 PHP</a></h3>
 <p>默认情况下，Azure 网站已启用 PHP。本文说明如何更改默认 PHP 运行时的配置，提供自定义 PHP 运行时以及启用扩展。</p>
-<h3>如何：<a href="/documentation/articles/web-sites-transform-extend/">转换和扩展网站</a></h3>
-<p>通过使用 XML 文档转换 (XDT) 声明，你可以转换 Azure 网站中的 ApplicationHost.config 文件。还可以使用 XDT 声明添加私有网站扩展，以实现自定义网站管理操作。本文中包含一个示例 PHP Manager 网站扩展，可实现通过 Web 界面管理 PHP 设置。</p>
+<!--<h3>如何：<a href="/documentation/articles/web-sites-transform-extend/">转换和扩展网站</a></h3>
+<p>通过使用 XML 文档转换 (XDT) 声明，你可以转换 Azure 网站中的 ApplicationHost.config 文件。还可以使用 XDT 声明添加私有网站扩展，以实现自定义网站管理操作。本文中包含一个示例 PHP Manager 网站扩展，可实现通过 Web 界面管理 PHP 设置。</p>-->
 <h3>如何：<a href="/documentation/articles/web-sites-custom-domain-name/">为 Azure 网站配置自定义域名</a></h3>
 <p>当你创建网站时，Azure 会提供 azurewebsites.net 域的友好子域，以便你的用户可以使用类似 http://&lt;mysite&gt;.azurewebsites.net. 的 URL 访问你的网站。但是，如果你将网站配置为标准模式，则可将该网站映射到你自己的域名，例如 contoso.com。</p>
 <h3>如何：<a href="/documentation/articles/web-sites-configure-ssl-certificate/">为 Azure 网站配置 SSL</a></h3>
