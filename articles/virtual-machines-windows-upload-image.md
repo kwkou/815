@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="05/06/2016"
-	wacn.date=""/>
+	wacn.date="06/20/2016"/>
 
 # 将 Windows VM 映像上载到 Azure 以进行资源管理器部署
 
@@ -26,7 +26,7 @@
 
 本文假设你具备以下条件：
 
-- **Azure 订阅** - 如果你没有 Azure 订阅，请[免费注册 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)，然后[激活 MSDN 订户权益](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)。
+- **Azure 订阅** - 如果你没有 Azure 订阅，请[注册 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 - **Azure PowerShell 1.0 或更高版本** - 如果你还没有安装它，请阅读 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)。
 
@@ -147,7 +147,7 @@ Azure 只能接受以 VHD 文件格式保存的[第 1 代虚拟机](http://blogs
 
 
 </br>
-<a id="uploadvm"></a>
+<a id="uploadvm" name="upload-the-vm-image-to-your-storage-account"></a>
 
 ## 将 VM 映像上载到你的存储帐户
 

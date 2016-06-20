@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/18/2016"
-	wacn.date=""/>
+	wacn.date="06/20/2016"/>
 
 # 使用 C# 和 Resource Manager 模板部署 Azure 虚拟机
 
@@ -81,7 +81,7 @@
 
 ### 创建模板文件
 
-借助 Azure 资源管理器模板，你可以使用资源和关联部署参数的 JSON 描述来统一部署和管理 Azure 资源。在本教程中生成的模板非常类似于可在模板库中找到的模板。若要了解详细信息，请参阅 [Deploy a simple Windows VM in China North（在中国北部部署简单的 Windows VM）](https://azure.microsoft.com/documentation/templates/101-vm-simple-windows/)。
+借助 Azure 资源管理器模板，你可以使用资源和关联部署参数的 JSON 描述来统一部署和管理 Azure 资源。在本教程中生成的模板非常类似于可在模板库中找到的模板。
 
 在 Visual Studio 中执行以下操作：
 
@@ -492,7 +492,6 @@ Azure 资源管理器将从 Azure 存储帐户访问模板文件和参数文件�
 
 ## 后续步骤
 
-- 如果部署出现问题，后续措施是参阅 [Troubleshooting resource group deployments with Azure Portal（使用 Azure 门户对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal)
 - 查看 [Manage virtual machines using Azure Resource Manager and PowerShell（使用 Azure Resource Manager 和 PowerShell 管理虚拟机）](/documentation/articles/virtual-machines-windows-ps-manage)，了解如何管理刚创建的虚拟机。
 
 <!---HONumber=Mooncake_0613_2016-->
