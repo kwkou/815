@@ -302,6 +302,6 @@
     New-AzureRmVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $VirtualMachine
 
 ## 后续步骤
-创建虚拟机后，你可以使用 RDP 和设置连接来连接虚拟机。有关详细信息，请参阅 [Connect to a SQL Server Virtual Machine on Azure (Resource Manager)（连接到 Azure 上的 SQL Server 虚拟机 (Resource Manager)）](/documentation/articles/virtual-machines-windows-sql-connect)。
+创建虚拟机后，你可以使用 RDP 和设置连接来连接虚拟机。
 
 <!---HONumber=Mooncake_0613_2016-->

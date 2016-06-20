@@ -34,7 +34,7 @@
 
 1. 已在计算机上安装 **AzCopy 工具**。有关详细信息，请参阅 [Transfer data with AzCopy commandline tool（使用 AzCopy 命令行工具传输数据）](/documentation/articles/storage-use-azcopy)。
 
-1. 一个**资源组**，其中创建了**存储帐户**和 **Blob 容器**。VHD 将复制到该资源组。有关使用现有存储帐户或创建新帐户的步骤，请阅读[创建或查找 Azure 存储帐户](/documentation/articles/virtual-machines-windows-upload-image#createstorage)部分。
+1. 一个**资源组**，其中创建了**存储帐户**和 **Blob 容器**。VHD 将复制到该资源组。
 
 
 
@@ -57,9 +57,9 @@
 	
 1. 查找存储帐户中的访问密钥，其中包含源 VHD，以及要在其中复制 VHD 以创建新 VM 的存储帐户。要从中复制 VHD 的帐户密钥称为源密钥，将它复制到的帐户称为目标密钥。有关访问密钥的详细信息，请阅读 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account)。
 
-	- 如果源 VM 是使用经典部署模型创建的，请单击“浏览”>“存储帐户(经典)”> *你的存储帐户* >“配置”>“密钥”，然后复制标签为“主访问密钥”的密钥。 
+	- 如果源 VM 是使用经典部署模型创建的，请单击“存储空间”> *你的存储帐户* >“管理访问密钥”，然后复制标签为“主访问密钥”的密钥。 
 	
-	- 对于使用 Resource Manager 部署模型所创建的源 VM，或对于要用于新 VM 的存储帐户，请单击“浏览”>“存储帐户”> *你的存储帐户* >“配置”>“访问密钥”，然后复制标签为“key1”的密钥。
+	- 对于使用 Resource Manager 部署模型所创建的源 VM，在 Azure CLI 中使用 `Get-AzureRmStorageAccountKey   -ResourceGroupName <yourResourceGroup> Name <yourStorageAccount>`。
 
 1. 获取用于访问源和目标存储帐户的 URL。在管理门户中，**浏览**到你的存储帐户并单击“Blob”。然后单击托管源 VHD 的容器（例如，经典部署模型的 *vhds*），或要将 VHD 复制到的容器。单击容器的“属性”并复制标签为“URL”的文本。我们需要用到源和目标容器的 URL。这些 URL 看起来类似于 `https://myaccount.blob.core.chinacloudapi.cn/mycontainer`。
 
