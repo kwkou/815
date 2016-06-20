@@ -12,7 +12,8 @@
 	ms.service="open-source-mongodb"
 	wacn.date="06/20/2016"/>
 
-#在Azure虚拟机上快速搭建MongoDB集群
+#在 Azure 虚拟机上快速搭建 MongoDB 集群
+
 [MongoDB](https://www.mongodb.org/) 是目前在 NoSQL 市场上非常受欢迎的一个数据库，本文介绍如何使用 Azure PowerShell 和 Azure CLI 在 Azure 虚拟机上搭建单节点 MongoDB（测试使用）和包含主从复制以及分片集群的多节点 MongoDB（生产环境使用）。
 
 >[AZURE.NOTE]说明目前脚本仅支持 CentOS (6.5, 6.6, 6.7, 7.0, 7.1, 7.2)。
