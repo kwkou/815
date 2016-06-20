@@ -10,7 +10,7 @@
    editor="monicar"/>
 
 <tags
-	ms.service="virtual-machines"
+	ms.service="virtual-machines-windows"
 	ms.date="04/17/2016"
 	wacn.date="06/20/2016"/>
 
@@ -215,7 +215,7 @@ Azure 将创建探测。Azure 使用探测来测试哪个 SQL Server 具有可�
 
 现在，群集包含可用性组侦听器资源。
 
-## 2\.使侦听器联机
+##<a name="2-bring-the-listener-online"></a> 2\.使侦听器联机
 
 配置可用性组侦听器资源后，可将侦听器联机，以便应用程序使用侦听器连接到可用性组中的数据库。
 
