@@ -121,7 +121,7 @@
 
 ## 创建存储帐户
 
-虚拟机需要使用存储资源来存储操作系统磁盘及 SQL Server 数据和日志文件。为简单起见，我们将为两者创建单个磁盘。稍后你可以使用 [Add-Azure Disk](https://msdn.microsoft.com/zh-cn/library/azure/dn495252.aspx) cmdlet 来附加其他磁盘，以便将 SQL Server 数据和日志文件放在专用磁盘上。我们将使用 [New-AzureRmStorageAccount](https://msdn.microsoft.com/zh-cn/library/mt607148.aspx) cmdlet，以前面初始化的变量所定义的存储帐户名、存储名称和位置在新资源组中创建存储帐户。
+虚拟机需要使用存储资源来存储操作系统磁盘及 SQL Server 数据和日志文件。为简单起见，我们将为两者创建单个磁盘。稍后你可以使用 [Add-AzureDisk](https://msdn.microsoft.com/zh-cn/library/azure/dn495252.aspx) cmdlet 来附加其他磁盘，以便将 SQL Server 数据和日志文件放在专用磁盘上。我们将使用 [New-AzureRmStorageAccount](https://msdn.microsoft.com/zh-cn/library/mt607148.aspx) cmdlet，以前面初始化的变量所定义的存储帐户名、存储名称和位置在新资源组中创建存储帐户。
 
 执行以下 cmdlet 来创建新的存储帐户。
 
