@@ -57,7 +57,7 @@
 
 通过使用 Azure CLI 确保已安装版本 2.0.5 或更高版本的 [Microsoft Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)。
 
-如果尚未安装 Azure CLI，请[安装 Azure CLI 并连接到 Azure 订阅](/documentation/articles/xplat-cli-install)，然后使用 `azure login` 命令登录。请确保你在资源管理器模式下：
+如果尚未安装 Azure CLI，请[安装 Azure CLI 并连接到 Azure 订阅](/documentation/articles/xplat-cli-install)，然后使用 `azure login -e AzureChinaCloud` 命令登录。请确保你在资源管理器模式下：
 
 	azure config mode arm
 
@@ -109,7 +109,7 @@
 
 通过使用 Azure CLI 确保已安装版本 2.0.5 或更高版本的 [Microsoft Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide)。
 
-如果尚未安装 Azure CLI，请[安装 Azure CLI 并连接到 Azure 订阅](/documentation/articles/xplat-cli-install)，然后使用 `azure login` 命令登录。请确保你在资源管理器模式下：
+如果尚未安装 Azure CLI，请[安装 Azure CLI 并连接到 Azure 订阅](/documentation/articles/xplat-cli-install)，然后使用 `azure login -e AzureChinaCloud` 命令登录。请确保你在资源管理器模式下：
 
 	azure config mode arm
 
