@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/26/2016"
-	wacn.date=""/>
+	wacn.date="06/20/2016"/>
 
 # 如何在 Resource Manager 部署模型中创建 Linux 虚拟机的副本
 

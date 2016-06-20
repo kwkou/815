@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="05/02/2016"
-	wacn.date=""/>
+	wacn.date="06/20/2016"/>
 
 # 创建多个 Azure 虚拟机
 
