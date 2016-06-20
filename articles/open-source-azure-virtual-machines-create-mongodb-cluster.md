@@ -29,7 +29,7 @@
 
 		New-AzureRmResourceGroup -Name "YOUR-RESOURCE-GROUP-NAME" -Location "China East"
 
-- 如果你选择Azure CLI方式搭建 MongoDB，那么请[安装 Azure CLI](/documentation/articles/xplat-cli-install)。然后请确保你是处于[资源管理器模式](/documentation/articles/resource-manager-deployment-model)下，可通过运行以下命令来验证：
+- 如果你选择 Azure CLI 方式搭建 MongoDB，那么请[安装 Azure CLI](/documentation/articles/xplat-cli-install)。然后请确保你是处于[资源管理器模式](/documentation/articles/resource-manager-deployment-model)下，可通过运行以下命令来验证：
 		
 		azure config mode asm
 
@@ -44,12 +44,12 @@
 ##开始动手
 
 >[AZURE.NOTE]参数使用注意事项
->VmName: 需保证唯一性，该参数将作为DNS前缀。  
->DNSNamePrefix：必须小写，需保证唯一性，该参数将作为DNS前缀。  
->ZabbixServerIPAddress：可选项，指定Zabbix服务器地址，安装MongoDB过程中会在虚拟机上自动安装Zabbix agent。      
+>VmName: 需保证唯一性，该参数将作为 DNS 前缀。  
+>DNSNamePrefix：必须小写，需保证唯一性，该参数将作为 DNS 前缀。  
+>ZabbixServerIPAddress：可选项，指定 Zabbix 服务器地址，安装 MongoDB 过程中会在虚拟机上自动安装 Zabbix agent。      
 
 PowerShell脚本运行注意事项
->[AZURE.WARNING]PowerShell脚本运行注意事项  
+>[AZURE.WARNING]PowerShell 脚本运行注意事项  
 需要以管理员权限运行 PowerShell，使用之前需运行如下命令：  
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted  
 
