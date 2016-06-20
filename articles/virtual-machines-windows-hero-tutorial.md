@@ -19,14 +19,14 @@
 
 本教程说明如何在片刻之间轻松地在 Azure 门户中创建 Windows VM。
 
-如果没有 Azure 订阅，只需要花费几分钟就能创建一个[免费帐户](https://azure.microsoft.com/free/)。
+如果没有 Azure 订阅，只需要花费几分钟就能创建一个[试用帐户](/pricing/1rmb-trial/)。
 
 下面是本教程的[视频演练](https://channel9.msdn.com/Blogs/Azure-Documentation-Shorts/Create-A-Virtual-Machine-Running-Windows-In-The-Azure-Preview-Portal)。
 
 
 ## 从应用商店中选择 VM 映像
 
-我们将使用 Windows Server 2012 R2 Datacenter 映像作为示例，但这只是 Azure 提供的众多映像的其中一个。映像选择取决于订阅。例如，桌面映像可能适用于 [MSDN 订户](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)。
+我们将使用 Windows Server 2012 R2 Datacenter 映像作为示例，但这只是 Azure 提供的众多映像的其中一个。
 
 1. 登录到 [Azure 门户](https://portal.azure.cn)。
 

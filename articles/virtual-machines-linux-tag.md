@@ -25,7 +25,7 @@
 
 ## 使用 Azure CLI 进行标记
 
-还支持通过 Azure CLI 针对已创建的资源进行标记。若要开始，请设置 [Azure CLI 环境][]。通过 Azure CLI 登录到你的订阅，并切换到 Resource Manager 模式 (`azure config mode arm`)。
+还支持通过 Azure CLI 针对已创建的资源进行标记。若要开始，请设置 Azure CLI 环境。通过 Azure CLI 登录到你的订阅，并切换到 Resource Manager 模式 (`azure config mode arm`)。
 
 你可以使用此命令查看给定虚拟机的所有属性，包括标记：
 
@@ -47,7 +47,7 @@
 ## 后续步骤
 
 * 若要详细了解如何标记 Azure 资源，请参阅 [Azure Resource Manager Overview（Azure Resource Manager 概述）][]和 [Using Tags to organize your Azure Resources（使用标记来组织 Azure 资源）][]。
-* 若要了解标记如何帮助你管理 Azure 资源的使用，请参阅 [Understanding your Azure Bill（了解你的 Azure 帐单）][]和 [Gain insights into your Azure resource consumption（深入了解你的 Azure 资源消耗）][]。
+* 若要了解标记如何帮助你管理 Azure 资源的使用，请参阅 [Understanding your Azure Bill（了解你的 Azure 帐单）][]。
 
 
 

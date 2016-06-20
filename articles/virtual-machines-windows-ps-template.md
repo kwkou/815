@@ -25,7 +25,7 @@
 
 ## 步骤 1：创建模板文件
 
-你可以使用 [Authoring Azure Resource Manager templates（创作 Azure Resource Manager 模板）](/documentation/articles/resource-group-authoring-templates)中的信息来创建自己的模板。也可以从 [Azure 快速入门模板](https://azure.microsoft.com/documentation/templates/)部署创建的模板。本文使用的示例类似于 [Deploy a simple Windows VM in China North（在中国北部部署简单的 Windows VM）](https://azure.microsoft.com/documentation/templates/101-vm-simple-windows/)中所述的模板。
+你可以使用 [Authoring Azure Resource Manager templates（创作 Azure Resource Manager 模板）](/documentation/articles/resource-group-authoring-templates)中的信息来创建自己的模板。也可以从 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/)部署创建的模板。
 
 1. 打开偏好的文本编辑器，并将以下 JSON 信息复制到名为 *VirtualMachineTemplate.json* 的新文件中：
 
@@ -279,7 +279,6 @@
 
 ## 后续步骤
 
-- 如果部署出现问题，后续措施是参阅 [Troubleshooting resource group deployments with Azure Portal（使用 Azure 门户对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal)
 - 查看 [Manage virtual machines using Azure Resource Manager and PowerShell（使用 Azure Resource Manager 和 PowerShell 管理虚拟机）](/documentation/articles/virtual-machines-windows-ps-manage)，了解如何管理刚创建的虚拟机。
 
 <!---HONumber=Mooncake_0613_2016-->
