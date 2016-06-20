@@ -16,7 +16,7 @@
 
 # 适用于 Windows Server 的 Azure Hybrid Use Benefit
 
-对于配合软件保证使用 Windows Server 的客户，可将本地 Windows Server 许可证带到 Azure，并以较低的成本在 Azure 中运行 Windows Server VM。Azure Hybrid Use Benefit 可让你在 Azure 中运行 Windows Server VM，且只需支付基本计算费用。有关详细信息，请参阅 [Azure Hybrid Use Benefit 许可页](https://azure.microsoft.com/pricing/hybrid-use-benefit/)。本文说明如何在 Azure 中部署 Windows Server VM，以利用此许可权益。
+对于配合软件保证使用 Windows Server 的客户，可将本地 Windows Server 许可证带到 Azure，并以较低的成本在 Azure 中运行 Windows Server VM。Azure Hybrid Use Benefit 可让你在 Azure 中运行 Windows Server VM，且只需支付基本计算费用。
 
 > [AZURE.NOTE] 如果要利用 Azure Hybrid Use Benefit，就不能使用 Azure 库映像来部署 Windows Server VM。必须使用 PowerShell 或 Resource Manager 模板部署 VM，以将 VM 正确注册为符合基本计算费率折扣资格。
 
