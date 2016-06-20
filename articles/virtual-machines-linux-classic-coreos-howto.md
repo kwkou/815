@@ -99,15 +99,15 @@ CoreOS 的 `etcd` 守护程序需要发现 ID，以自动查询群集中的所�
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 
 1. 如果尚未安装 [Azure 命令行界面 (Azure CLI)]，请先执行安装并使用工作或学校 ID 登录，或下载 .publishsettings 文件并将其导入你的帐户。
-2. 上传 CoreOS 映像。Azure 中国目前还没有 CoreOS 映像，所以用户想要使用 CoreOS，需要自行上传。假设用户上传的镜像为：
+2. 上传 CoreOS 映像。Azure 中国目前还没有 CoreOS 映像，所以用户想要使用 CoreOS，需要自行上传。假设用户上传的映像为：
 
-		2b171e93f07c4903bcad35bda10acf22\_\_CoreOS-Stable-522.6.0
+	CoreOS-Stable-522.6.0
 
 3. 键入 `azure service create <cloud-service-name>`（其中的 <*cloud-service-name*> 是你的 CoreOS 云服务的名称）可创建用于基本群集的云服务。此示例使用 **`coreos-cluster`** 作为名称；你将需要重用所选名称来创建云服务内部的 CoreOS VM 实例。
 
 4. 使用 **azure vm create** 命令可连接到你的云服务，并可在其中创建新的 CoreOS VM。你将在 **--ssh-cert** 选项中传递 X.509 证书的位置。通过键入以下命令创建你的第一个 VM 映像，请记得使用你创建的云服务名称替换 **coreos-cluster**：
 
-		azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem --no-ssh-password --vm-name=node-1 --connect=coreos-cluster --location='China East' 2b171e93f07c4903bcad35bda10acf22__CoreOS-Stable-522.6.0 core
+		azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem --no-ssh-password --vm-name=node-1 --connect=coreos-cluster --location='China East' CoreOS-Stable-522.6.0 core
 	
 
 5. 通过重复步骤 4 中的命令来创建第二个节点，使用 **node-2** 替换 **--vm-name** 值，并使用 2022 替换 **--ssh** 端口值。

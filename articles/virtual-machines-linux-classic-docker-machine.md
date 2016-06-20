@@ -33,7 +33,7 @@
 
 你还可以按照[提供给虚拟机](https://github.com/docker/machine#contributing)的步骤自己构建 **docker-machine**。为执行此生成你应准备好下载多达 1 GB 或更多的内容，但通过这样做你可以按所需方式准确地自定义自己的体验。
 
-> [AZURE.NOTE] 你或许可以创建指向它的平台版本的[符号链接](http://en.wikipedia.org/wiki/Symbolic_link)，但本教程使用二进制文件直接非常清楚地演示行为。结果是，不是使用 **docker-machine** 文档所演示的 `docker-machine env` 等命令，本教程改用 `docker-machine_linux-amd64 env`。是创建符号链接还是直接使用二进制文件名称直接取决于你，但如果你更改所用的名称，请记得修改下面的说明中的名称。
+> [AZURE.NOTE] 你或许可以创建指向它的平台版本的[符号链接](https://zh.wikipedia.org/wiki/符号链接)，但本教程使用二进制文件直接非常清楚地演示行为。结果是，不是使用 **docker-machine** 文档所演示的 `docker-machine env` 等命令，本教程改用 `docker-machine_linux-amd64 env`。是创建符号链接还是直接使用二进制文件名称直接取决于你，但如果你更改所用的名称，请记得修改下面的说明中的名称。
 
 <br />
 
