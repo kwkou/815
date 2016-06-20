@@ -90,7 +90,7 @@ Azure 平台支持基于角色的身份验证控制，从而支持对 Azure Web 
 -	基于 GAC 的程序集 – Azure Web 应用不允许将程序集部署到全局程序集缓存 (GAC) 中。因此，如果迁移的应用程序在本地利用此功能，请考虑将这些程序集移到该应用程序的 bin 文件夹。
 -	IIS5 兼容模式 – Azure Web 应用不支持 IIS5 兼容模式，因此每个 Azure Web 应用实例和父 Azure Web 应用实例下的所有 Web 应用均在单个应用程序池内相同的工作进程中运行。
 -	使用 COM 库 – Azure Web 应用不允许 COM 组件在平台上注册。因此如果该应用程序正在使用 COM 组件，就需要将这些在托管代码中进行重写并使用该应用程序进行部署。
--	ISAPI 筛选器 – Azure Web 应用可支持 ISAPI 筛选器。需要将它们部署为应用程序的一部分，并在 Web 应用的 web.config 文件中进行注册。有关详细信息，请参阅 [http://aka.ms/azurewebsitesxdt](/documentation/articles/web-sites-transform-extend)。 
+-	ISAPI 筛选器 – Azure Web 应用可支持 ISAPI 筛选器。需要将它们部署为应用程序的一部分，并在 Web 应用的 web.config 文件中进行注册。 
 
 考虑完这些主题之后，您的 Web 应用已准备好支持云。如果一些主题没有完全被满足也不用担心，迁移工具将为迁移提供最佳支持。
 
