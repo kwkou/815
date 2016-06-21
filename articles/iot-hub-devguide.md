@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="02/03/2016"
- wacn.date="05/05/2016"/>
+ wacn.date="05/30/2016"/>
 
 # Azure IoT 中心开发人员指南
 
@@ -61,7 +61,7 @@ Azure IoT 中心属于多租户服务，向各种执行组件公开功能。下�
 
 概括地说，设备标识注册表是支持 REST 的设备标识资源集合。以下部分将详细说明设备标识资源属性，以及支持对注册表中的标识执行的操作。
 
-> [AZURE.NOTE] 有关可用来与设备标识注册表交互的 HTTP 协议和 SDK 的详细信息，请参阅 [IoT 中心 API 和 SDK][lnk-apis-sdks]。
+> [AZURE.NOTE] 有关可用来与设备标识注册表交互的 HTTP 协议和 SDK 的更多详细信息，请参阅 [IoT 中心 API 和 SDK][lnk-apis-sdks]。
 
 ### 设备标识属性 <a id="deviceproperties"></a>
 
@@ -116,107 +116,17 @@ IoT 解决方案通常具有不同的解决方案特定存储，其中包含应�
 - 在预配协调过程中。有关详细信息，请参阅[设计你的解决方案 - 设备预配][lnk-guidance-provisioning]。
 - 你出于任何原因认为设备遭到入侵或未经授权。
 
-### 导出设备标识 <a id="importexport"></a>
+### 导入和导出设备标识 <a id="importexport"></a>
 
-导出是长时间运行的操作，它使用客户提供的 Blob 容器来保存从标识注册表读取的设备标识数据。
+可以使用 [IoT 中心资源提供程序终结点](#endpoints)上的异步操作，从 IoT 中心的标识注册表批量导出设备标识。导出是长时间运行的作业，它使用客户提供的 blob 容器来保存从标识注册表读取的设备标识数据：
 
-可以使用 [IoT 中心资源提供程序终结点](#endpoints)上的异步操作，从 IoT 中心的标识注册表批量导出设备标识。
+- 有关导入和导出 API 的详细信息，请参阅 [Azure IoT 中心 — 资源提供程序 API][lnk-resource-provider-apis]。
+- 若要了解有关如何运行导入和导出作业的详细信息，请参阅[批量管理 IoT 中心的设备标识][lnk-bulk-identity]。
 
-以下是可以对导出作业执行的操作：
+可以使用 [IoT 中心资源提供程序终结点](#endpoints)上的异步操作，将设备标识批量导入 IoT 中心的标识注册表。导入是长时间运行的作业，它使用客户提供的 blob 容器中的数据，将设备标识数据写入设备标识注册表。
 
-* 创建导出作业
-* 检索正在运行的作业的状态
-* 取消正在运行的作业
-
-> [AZURE.NOTE] 在任意给定时间，每个中心只可以有一项正在运行的作业。
-
-有关导入和导出 API 的详细信息，请参阅 [Azure IoT 中心 - 资源提供程序 API][lnk-resource-provider-apis]。
-
-若要详细了解如何运行导入和导出操作，请参阅[批量管理 IoT 中心的设备标识][lnk-bulk-identity]
-
-### 导出作业
-
-所有导出作业都具有以下属性：
-
-| 属性 | 选项 | 说明 |
-| -------- | ------- | ----------- |
-| jobId | 由系统生成，创建时被忽略 | |
-| creationTime | 由系统生成，创建时被忽略 | |
-| endOfProcessingTime | 由系统生成，创建时被忽略 | |
-| type | 只读 | **ExportDevices** |
-| status | 由系统生成，创建时被忽略 | **Enqueued**、**Started**、**Completed**、**Failed** |
-| 进度 | 由系统生成，创建时被忽略 | 完成百分比的整数值。 |
-| outputBlobContainerURI | 所有作业都需要 | 具有 Blob 容器写入权限的 Blob 共享访问签名 URI（请参阅[创建 SAS 并将其用于 Blob 服务][lnk-createuse-sas]）。用于输出作业的状态和结果。 |
-| excludeKeysInExport | 可选 | 如果为 **false**，则密钥将包含在导出输出中；否则像为 **null** 时一样导出密钥。默认值为 **false**。 |
-| failureReason | 由系统生成，创建时被忽略 | 如果状态为 **Failed**，则为包含原因的字符串。 |
-
-导出作业使用 Blob 共享访问签名 URI 作为参数。这会授予 Blob 容器的写入权限，使作业能够输出其结果。
-
-该作业将输出结果写入名为 **devices.txt** 的文件中指定的 Blob 容器。此文件包含按[设备标识属性](#deviceproperties)中的指定序列化为 JSON 的设备标识。如果 **excludeKeysInExport** 参数设置为 **true**，则 **devices.txt** 文件中每个设备的身份验证值将设置为 **null**。
-
-**示例**：
-
-    
-    {"id":"devA","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}}
-    {"id":"devB","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}}
-    {"id":"devC","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}}
-
-
-### 导入设备标识
-
-导入是长时间运行的操作，它使用客户提供的 Blob 容器中的数据，将设备标识数据写入设备标识注册表。
-
-可以使用 [IoT 中心资源提供程序终结点](#endpoints)上的异步操作，将设备标识批量导入 IoT 中心的标识注册表。
-
-以下是可以对导入作业执行的操作：
-
-* 创建导入作业
-* 检索正在运行的作业的状态
-* 取消正在运行的作业
-
-> [AZURE.NOTE] 在任意给定时间，每个中心只可以有一项正在运行的作业。
-
-有关导入和导出 API 的详细信息，请参阅 [Azure IoT 中心 - 资源提供程序 API][lnk-resource-provider-apis]。
-
-若要详细了解如何运行导入和导出操作，请参阅[批量管理 IoT 中心的设备标识][lnk-bulk-identity]
-
-### 导入作业
-
-所有导入作业都具有以下属性：
-
-| 属性 | 选项 | 说明 |
-| -------- | ------- | ----------- |
-| jobId | 由系统生成，创建时被忽略 | |
-| creationTime | 由系统生成，创建时被忽略 | |
-| endOfProcessingTime | 由系统生成，创建时被忽略 | |
-| type | 只读 | **ImportDevices** |
-| status | 由系统生成，创建时被忽略 | **Enqueued**、**Started**、**Completed**、**Failed** |
-| 进度 | 由系统生成，创建时被忽略 | 完成百分比的整数值。 |
-| outputBlobContainerURI | 所有作业都需要 | 具有 Blob 容器写入权限的 Blob 共享访问签名 URI（请参阅[创建 SAS 并将其用于 Blob 服务][lnk-createuse-sas]）。用于输出作业的状态。 |
-| inputBlobContainerURI | 必填 | 具有 Blob 容器读取权限的 Blob 共享访问签名 URI（请参阅[创建 SAS 并将其用于 Blob 服务][lnk-createuse-sas]）。作业从此 Blob 中读取要导入的设备信息。 |
-| failureReason | 由系统生成，创建时被忽略 | 如果状态为 **Failed**，则为包含原因的字符串。 |
-
-导入作业使用两个 Blob 共享访问签名 URI 作为参数。其中一个 URI 向 Blob 容器授予写入权限以让作业输出其状态，另一个 URI 向 Blob 容器授予读取权限以让作业读取其输入数据。
-
-作业从名为 **devices.txt** 的文件中指定的 Blob 容器读取输入数据。此文件包含按[设备标识属性](#deviceproperties)中的指定序列化为 JSON 的设备标识。可以通过添加 **importMode** 属性重写每个设备的默认导入行为。此属性接受以下值之一：
-
-| importMode | 说明 |
-| -------- | ----------- |
-| **createOrUpdate** | 如果不存在具有指定 **ID** 的设备，则表示是新注册的设备。<br/>如果设备已存在，则以所提供的输入数据覆盖现有信息，而不管 **ETag** 值为何。 |
-| **create** | 如果不存在具有指定 **ID** 的设备，则表示是新注册的设备。<br/>如果设备已存在，则在日志文件中写入错误。 |
-| **更新** | 如果已存在具有指定 **ID** 的设备，则以提供的输入数据覆盖现有信息，而不管 **ETag** 值为何。<br/>如果设备不存在，则在日志文件中写入错误。 |
-| **updateIfMatchETag** | 如果已存在具有指定 **ID** 的设备，则仅当 **ETag** 匹配时，才以提供的输入数据覆盖现有信息。<br/>如果设备不存在，则在日志文件中写入错误。<br/>如果 **ETag** 不匹配，则在日志文件中写入错误。 |
-| **createOrUpdateIfMatchETag** | 如果不存在具有指定 **ID** 的设备，则表示是新注册的设备。<br/>如果设备已存在，则仅当 **ETag** 匹配时，才以提供的输入数据覆盖现有信息。<br/>如果 **ETag** 不匹配，则在日志文件中写入错误。 |
-| **删除** | 如果已存在具有指定 **ID** 的设备，则将它删除，而不管 **ETag** 值为何。<br/>如果设备不存在，则在日志文件中写入错误。 |
-| **deleteIfMatchETag** | 如果已存在具有指定 **ID** 的设备，则仅当 **ETag** 匹配时才将它删除。如果设备不存在，则在日志文件中写入错误。<br/>如果 ETag 不匹配，则在日志文件中写入错误。 |
-
-**示例**：
-
-
-    {"id":"devA","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}, "importMode":"delete"}
-    {"id":"devB","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}, "importMode":"createOrUpdate"}
-    {"id":"devC","eTag":"MQ==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"123","secondaryKey":"123"}}, "importMode":"create"}
-
+- 有关导入和导出 API 的详细信息，请参阅 [Azure IoT 中心 — 资源提供程序 API][lnk-resource-provider-apis]。
+- 若要了解有关如何运行导入和导出作业的详细信息，请参阅[批量管理 IoT 中心的设备标识][lnk-bulk-identity]。
 
 ## 安全性 <a id="security"></a>
 
@@ -224,7 +134,7 @@ IoT 解决方案通常具有不同的解决方案特定存储，其中包含应�
 
 ### 访问控制 <a id="accesscontrol"></a>
 
-IoT 中心使用以下一组*权限*向每个 IoT 中心终结点授予访问权限。权限可根据功能限制对 IoT 中心的访问。
+IoT 中心使用以下一组权限向每个 IoT 中心的终结点授予访问权限。权限可根据功能限制对 IoT 中心的访问。
 
 * **RegistryRead**。授予对设备标识注册表的读取访问权限。有关详细信息，请参阅[设备标识注册表](#device-identity-registry)。
 * **RegistryReadWrite**。授予对设备标识注册表的读取和写入访问权限。有关详细信息，请参阅[设备标识注册表](#device-identity-registry)。
@@ -249,7 +159,7 @@ IoT 中心使用以下一组*权限*向每个 IoT 中心终结点授予访问权
 - 运行时设备业务逻辑组件使用 service 策略。
 - 各个设备的连接使用 IoT 中心的标识注册表中存储的凭据。
 
-有关 IoT 中心安全主题的指导，请参阅[设计你的解决方案][lnk-guidance-security]中的“安全性”部分。
+有关 IoT 中心安全性主题的指导，请参阅[设计你的解决方案][lnk-guidance-security]中的“安全性”部分。
 
 ### 身份验证
 
@@ -257,9 +167,9 @@ Azure IoT 中心可根据共享访问策略和设备标识注册表安全凭据�
 
 安全凭据（例如对称密钥）永远不会通过网络发送。
 
-> [AZURE.NOTE] 如同 [Azure Resource Manager][lnk-azure-resource-manager] 中的所有提供程序一样，Azure IoT 中心资源提供程序也是通过 Azure 订阅受到保护。
+> [AZURE.NOTE] 如同 [Azure Resource Manager][lnk-azure-resource-manager] 中的所有提供程序一样，Azure IoT 中心资源提供程序也通过 Azure 订阅受到保护。
 
-有关如何构建并使用安全令牌的详细信息，请参阅 [IoT 中心安全令牌][lnk-sas-tokens]文章中。
+有关如何构造并使用安全令牌的详细信息，请参阅 [IoT 中心安全令牌][lnk-sas-tokens]一文。
 
 #### 协议详情
 
@@ -271,20 +181,21 @@ HTTP 通过在**授权**请求标头中包含有效的令牌来实施身份验�
 
 对于 AMQP 基于声明的安全性，标准将指定如何传输这些令牌。
 
-在 SASL PLAIN 中，**username** 可以是：
+在 SASL PLAIN 中，**用户名**可以是：
 
 * 如果是中心级别的令牌，则为 `{policyName}@sas.root.{iothubName}`。
 * 如果是设备范围的令牌，则为 `{deviceId}`。
 
-在这两种情况下，Password 字段都包含令牌，如 [IoT 中心安全令牌][lnk-sas-tokens]文章中所述。
+在这两种情况下，密码字段都包含令牌，如 [IoT 中心安全令牌][lnk-sas-tokens]一文中所述。
 
 使用 MQTT 时，CONNECT 数据包具有用作 ClientId 的 deviceId，在 Username 字段中具有 {iothubhostname}/{deviceId}，在 Password 字段中具有 SAS 令牌。{iothubhostname} 应是 IoT 中心的完整 CName（例如，contoso.azure-devices.net）。
 
 ##### 示例： #####
 
-Username（DeviceId 区分大小写）：`iothubname.azure-devices.net/DeviceId`
+用户名（DeviceId 区分大小写）：
+`iothubname.azure-devices.net/DeviceId`
 
-Password（使用设备资源管理器生成 SAS）：`SharedAccessSignature sr=iothubname.azure-devices.net%2fdevices%2fDeviceId&sig=kPszxZZZZZZZZZZZZZZZZZAhLT%2bV7o%3d&se=1487709501`
+密码（使用设备资源管理器生成 SAS）：`SharedAccessSignature sr=iothubname.azure-devices.net%2fdevices%2fDeviceId&sig=kPszxZZZZZZZZZZZZZZZZZAhLT%2bV7o%3d&se=1487709501`
 
 > [AZURE.NOTE] [Azure IoT 中心 SDK][lnk-apis-sdks] 在连接到服务时自动生成令牌。在某些情况下，SDK 不支持所有的协议或所有身份验证方法。
 
@@ -297,7 +208,7 @@ Password（使用设备资源管理器生成 SAS）：`SharedAccessSignature sr=
 
 ### 设置中心级凭据的范围
 
-可以通过使用受限资源 URI 创建令牌，来设置中心级安全策略的范围。例如，要从设备发送设备到云的消息的终结点是 **/devices/{deviceId}/messages/events**。在创建了只能用于代表设备 **deviceId** 发送消息的令牌后，你还可以使用中心级别的共享访问策略和 **DeviceConnect** 权限对 resourceURI 为 **/devices/{deviceId}** 的令牌进行签名。
+可以通过使用受限资源 URI 创建令牌，来设置中心级安全策略的范围。例如，要从设备发送设备到云的消息的终结点是 **/devices/{deviceId}/messages/events**。还可以使用包含 **DeviceConnect** 权限的中心级别共享访问策略对 resourceURI 为 **/devices/{deviceId}** 的令牌进行签名，从而创建只能用于代表设备 **deviceId** 发送消息的令牌。
 
 此机制类似于[事件中心发布者策略][lnk-event-hubs-publisher-policy]，你可以按照[设计你的解决方案][lnk-guidance-security]的“安全性”部分中所述实施自定义身份验证方法。
 
@@ -332,9 +243,9 @@ IoT 中心消息包含：
 | EnqueuedTime | IoT 中心收到消息的日期和时间。 |
 | CorrelationId | 响应消息中的字符串属性，通常包含采用“请求-答复”模式的请求的 MessageId。 |
 | UserId | 用于指定消息的源。如果消息是由 IoT 中心生成的，则设置为 `{iot hub name}`。 |
-| Ack | 在云到设备的消息中用于请求 IoT 中心因为设备使用消息而生成反馈消息。可能的值：**none**（默认值）：不生成任何反馈消息。**positive**：如果消息已完成，则接收反馈消息。**negative**：如果消息未由设备完成就过期（或已达到最大传送计数），则收到反馈消息。**full**：positive 和 negative。有关详细信息，请参阅[消息反馈](#feedback)。 |
-| ConnectionDeviceId | 由 IoT 中心对设备到云的消息进行设置。包含发送消息的设备的 **deviceId**。 |
-| ConnectionDeviceGenerationId | 由 IoT 中心对设备到云的消息进行设置。包含发送消息的设备的 **generationId**（根据[设备标识属性](#deviceproperties)）。 |
+| Ack | 在云到设备的消息中用于请求 IoT 中心因为设备使用消息而生成反馈消息。可能的值：**none**（默认值）：不生成任何反馈消息；**positive**：如果消息已完成，则接收反馈消息；**negative**：如果消息未由设备完成就过期（或已达到最大传送计数），则收到反馈消息；**full**：positive 和 negative。有关详细信息，请参阅[消息反馈](#feedback)。 |
+| ConnectionDeviceId | 由 IoT 中心对设备到云的消息进行设置。它包含发送消息的设备的 **deviceId**。 |
+| ConnectionDeviceGenerationId | 由 IoT 中心对设备到云的消息进行设置。它包含发送消息的设备的 **generationId**（根据[设备标识属性](#deviceproperties)）。 |
 | ConnectionAuthMethod | 由 IoT 中心对设备到云的消息进行设置。用于验证发送消息的设备的身份验证方法的相关信息。有关详细信息，请参阅[设备到云的反欺骗技术](#antispoofing)。|
 
 ### 选择通信协议 <a id="amqpvshttp"></a>
@@ -357,6 +268,8 @@ IoT 中心实现 MQTT v3.1.1 协议，但具有以下限制和特定行为：
 
   * **不支持 QoS 2**：如果设备客户端使用 **QoS 2** 发布消息，IoT 中心将关闭网络连接。当设备客户端使用 **QoS 2** 订阅主题时，IoT 中心将在 **SUBACK** 数据包中授予最大 QoS 级别 1。
   * **保留**：如果设备客户端发布 RETAIN 标志设置为 1 的消息，IoT 中心将在消息中添加 **x-opt-retain** 应用程序属性。这意味着 IoT 中心不会持续保留消息，而是将它传递到后端应用程序。
+  
+有关更多详细信息，请参阅 [IoT 中心 MQTT 支持][lnk-mqtt-support]一文。
 
 最后请检查 [Azure IoT 协议网关][lnk-azure-protocol-gateway]，你可以通过它部署直接与 IoT 中心连接的高性能自定义协议网关。Azure IoT 协议网关可让你自定义设备协议，以适应要重建的 MQTT 部署或其他自定义协议。此方法的代价是需要自我托管和运行自定义协议网关。
 
@@ -368,19 +281,19 @@ IoT 中心实施设备到云的消息传送的方式类似于[事件中心][lnk-
 
 这种实现具有以下含义：
 
-* 与事件中心的“事件”类似，设备到云的消息可持久保留在 IoT 中心多达 7 天（请参阅[设备到云的配置选项](#d2cconfiguration)）。
-* 设备到云的消息分区存放到创建时设置的一组固定数据分区中（请参阅[设备到云的配置选项](#d2cconfiguration)）。
-* 与事件中心类似，读取设备到云消息的客户端必须处理数据分区和检查点。请参阅[事件中心 - 使用事件][lnk-event-hubs-consuming-events]。
+* 与事件中心的事件类似，设备到云的消息可持久保留在 IoT 中心多达 7 天（请参阅[设备到云的配置选项](#d2cconfiguration)）。
+* 设备到云的消息分区存放到创建时设置的一组固定分区中（请参阅[设备到云的配置选项](#d2cconfiguration)）。
+* 与事件中心类似，读取设备到云消息的客户端必须处理数据分区和检查点。请参阅[事件中心 — 使用事件][lnk-event-hubs-consuming-events]。
 * 如同事件中心的事件，设备到云的消息最大可为 256 Kb，而且可分成多个批以优化发送。批最大可为 256 Kb，最多包含 500 条消息。
 
 不过，IoT 中心的设备到云与事件中心之间还有一些重要差异：
 
 * 如[安全性](#security)部分中所述，IoT 中心允许基于设备的身份验证和访问控制。
 * IoT 中心允许同时连接数百万个设备（请参阅[配额和限制](#throttling)），而事件中心则限制为每个命名空间 5000 个 AMQP 连接。
-* IoT 中心不允许使用 **PartitionKey** 进行任意数据分区。设备到云的消息根据其原始 **deviceId** 进行分区。
+* IoT 中心不允许使用 **PartitionKey** 进行任意分区。设备到云的消息根据其原始 **deviceId** 进行分区。
 * IoT 中心的缩放方式与事件中心稍有不同。有关详细信息，请参阅[缩放 IoT 中心][lnk-guidance-scale]。
 
-请注意，这并不表示在所有情况下都能使用 IoT 中心代替事件中心。例如，在某些事件处理计算中，可能需要在分析数据流之前，根据不同属性或字段重新分区事件。在这种情况下，你可以使用事件中心来减少流处理管道的两个部分。有关详细信息，请参阅 [Azure 事件中心概述][lnk-eventhub-partitions]中的“分区”。
+请注意，这并不表示在所有情况下都能使用 IoT 中心代替事件中心。例如，在某些事件处理计算中，可能需要在分析数据流之前，根据不同属性或字段重新分区事件。在这种情况下，你可以使用事件中心来减少流处理管道的两个部分。有关详细信息，请参阅 [Azure 事件中心概述][lnk-eventhub-partitions]中的分区。
 
 有关如何使用设备到云的消息传送的详细信息，请参阅 [IoT 中心 API 和 SDK][lnk-apis-sdks]。
 
@@ -390,7 +303,7 @@ IoT 中心实施设备到云的消息传送的方式类似于[事件中心][lnk-
 
 在许多情况下，除了遥测数据点之外，设备还会发送消息以及要求执行和处理应用程序业务逻辑层的请求。例如，必须在后端触发特定操作的关键警报，或者对由后端发送的命令做出的设备响应。
 
-有关这类消息的最佳处理方式，请参阅[设备到云的处理][lnk-guidance-d2c-processing]。
+有关这类消息的最佳处理方式的详细信息，请参阅[设备到云的处理][lnk-guidance-d2c-processing]。
 
 #### 设备到云的配置选项 <a id="d2cconfiguration"></a>
 
@@ -401,7 +314,7 @@ IoT 中心公开以下属性让你控制设备到云的消息传送。
 
 此外，类似于事件中心，IoT 中心也可让你管理设备到云接收终结点上的“使用者组”。
 
-可以使用 [Azure 门户][lnk-management-portal]修改上述所有属性，或通过 [Azure IoT 中心 - 资源提供程序 API][lnk-resource-provider-apis] 以编程方式进行修改。
+可以使用 [Azure 门户][lnk-management-portal]修改上述所有属性，或通过 [Azure IoT 中心 — 资源提供程序 API][lnk-resource-provider-apis] 以编程方式进行修改。
 
 #### 反欺骗属性 <a id="antispoofing"></a>
 
@@ -425,7 +338,7 @@ IoT 中心公开以下属性让你控制设备到云的消息传送。
 
 ### 云到设备 <a id="c2d"></a>
 
-如[终结点](#endpoints)部分中所详述，可以通过面向服务的终结点 (**/messages/devicebound**) 发送云到设备的消息，设备可通过特定于设备的终结点 (**/devices/{deviceId}/messages/devicebound**) 接收这些消息。
+如[终结点](#endpoints)部分中所详述，你可以通过面向服务的终结点 (**/messages/devicebound**) 发送云到设备的消息，设备可通过特定于设备的终结点 (**/devices/{deviceId}/messages/devicebound**) 接收这些消息。
 
 每个云到设备的消息都以单个设备为目标，并将 **to** 属性设置为 **/devices/{deviceId}/messages/devicebound**。
 
@@ -441,13 +354,14 @@ IoT 中心公开以下属性让你控制设备到云的消息传送。
 
 ![云到设备的消息生命周期][img-lifecycle]
 
-当服务发送消息时，该消息被视为已入队。当设备想要接收消息时，IoT 中心将锁定该消息（将状态设置为**不可见**），以便让同一设备上的其他线程开始接收其他消息。当设备线程完成消息的处理时，将通过完成消息来通知 IoT 中心。
+当服务发送消息时，该消息被视为已排队。当设备想要接收消息时，IoT 中心将锁定该消息（将状态设置为“不可见”），以便让同一设备上的其他线程开始接收其他消息。当设备线程完成消息的处理后，将通过完成消息来通知 IoT 中心。
 
 设备还可以：
-- 拒绝消息，这会使 IoT 中心将此消息设置为**死信**状态。
-- 放弃消息，这会使 IoT 中心将消息放回队列，并将状态设置为**已入队**。
 
-线程可能无法处理消息，且不通知 IoT 中心。在此情况下，在可见性（或锁定）超时时间之后（默认为一分钟），消息自动从**不可见**状态转换回**已入队**状态。消息可以在**已入队**与**不可见**状态之间转换的次数，以 IoT 中心上最大传送计数属性中指定的次数为限。在该转换次数之后，IoT 中心会将消息的状态设置为**死信**。同样，IoT 中心也会在消息的到期时间之后（请参阅[生存时间](#ttl)），将消息的状态设置为**死信**。
+- 拒绝消息，这会使 IoT 中心将此消息设置为“死信”状态。
+- 放弃消息，这会使 IoT 中心将消息放回队列，并将状态设置为“已排队”。
+
+线程可能无法处理消息，且不通知 IoT 中心。在此情况下，在可见性（或锁定）超时时间之后（默认值为一分钟），消息自动从“不可见”状态转换回“已排队”状态。消息可以在“已排队”与“不可见”状态之间转换的次数，以 IoT 中心上最大传送计数属性中指定的次数为上限。在该转换次数之后，IoT 中心会将消息的状态设置为“死信”。同样，IoT 中心也会在消息的到期时间之后（请参阅[生存时间](#ttl)），将消息的状态设置为“死信”。
 
 有关云到设备消息的教程，请参阅 [Azure IoT 中心云到设备的消息入门][lnk-getstarted-c2d-tutorial]。有关不同 API 和 SDK 如何公开云到设备功能的参考主题，请参阅 [IoT 中心 API 和 SDK][lnk-apis-sdks]。
 
@@ -463,8 +377,8 @@ IoT 中心公开以下属性让你控制设备到云的消息传送。
 
 当你发送云到设备的消息时，服务可以请求传送每条消息的反馈（关于该消息的最终状态）。
 
-- 如果将 **Ack** 属性设置为 **positive**，则当且仅当云到设备的消息达到**已完成**状态时，IoT 中心才生成反馈消息。
-- 如果将 **Ack** 属性设置为 **negative**，则当且仅当云到设备的消息达到**死信**状态时，IoT 中心才生成反馈消息。
+- 如果将 **Ack** 属性设置为 **positive**，则当且仅当云到设备的消息达到“已完成”状态时，IoT 中心才生成反馈消息。
+- 如果将 **Ack** 属性设置为 **negative**，则当且仅当云到设备的消息达到“死信”状态时，IoT 中心才生成反馈消息。
 - 如果将 **Ack** 属性设置为 **full**，则 IoT 中心在上述任一情况下都会生成反馈消息。
 
 > [AZURE.NOTE] 当 **Ack** 为 **full** 时，如果未收到任何反馈消息，即表示反馈消息已过期，并且服务无法得知原始消息发生了什么状况。实际上，服务应该确保它可以在反馈过期之前对其进行处理。最长过期时间是两天，因此当发生失败时，应该有相当充裕的时间可以让服务启动并正常执行。
@@ -485,7 +399,7 @@ IoT 中心公开以下属性让你控制设备到云的消息传送。
 | -------- | ----------- |
 | EnqueuedTimeUtc | 指示消息结果出现时的时间戳。例如，设备已完成或消息已过期。 |
 | OriginalMessageId | 此反馈信息所属的云到设备消息的 **MessageId**。 |
-| StatusCode | 必须是整数。在 IoT 中心生成的反馈消息中使用。<br/>0 = 成功 <br/> 1 = 消息已过期 <br/> 2 = 超出最大传送计数 <br/> 3 = 消息被拒绝 |
+| StatusCode | 必须是整数。在 IoT 中心生成的反馈消息中使用。<br/> 0 = 成功 <br/> 1 = 消息已过期 <br/> 2 = 超出最大传送计数 <br/> 3 = 消息被拒绝 |
 | 说明 | **StatusCode** 的字符串值。 |
 | DeviceId | 此反馈信息所属的云到设备消息的目标设备的 **DeviceId**。 |
 | DeviceGenerationId | 此反馈信息所属的云到设备消息的目标设备的 **DeviceGenerationId**。 |
@@ -495,22 +409,22 @@ IoT 中心公开以下属性让你控制设备到云的消息传送。
 
 **示例**。这是反馈消息的正文示例。
 
-
-    [
-      {
-        "OriginalMessageId": "0987654321",
-        "EnqueuedTimeUtc": "2015-07-28T16:24:48.789Z",
-        "StatusCode": 0
-        "Description": "Success",
-        "DeviceId": "123",
-        "DeviceGenerationId": "abcdefghijklmnopqrstuvwxyz"
-      },
-      {
-        ...
-      },
-      ...
-    ]
-
+```
+[
+  {
+    "OriginalMessageId": "0987654321",
+    "EnqueuedTimeUtc": "2015-07-28T16:24:48.789Z",
+    "StatusCode": 0
+    "Description": "Success",
+    "DeviceId": "123",
+    "DeviceGenerationId": "abcdefghijklmnopqrstuvwxyz"
+  },
+  {
+    ...
+  },
+  ...
+]
+```
 
 #### 云到设备的配置选项 <a id="c2dconfiguration"></a>
 
@@ -542,15 +456,16 @@ SKU 还确定了 IoT 中心对所有操作强制实施的限制。
 | 限制 | 每个中心的值 |
 | -------- | ------------- |
 | 标识注册表操作（创建、检索、列出、更新、删除） | 100/分钟/单位，最高 5000/分钟 |
-| 设备连接 | 120/秒/单位（适用于 S2）, 12/秒/单位（适用于 S1）。<br/>最小值为 100/秒。<br/>例如，两个 S1 单位是 2*12 = 24/秒，但是在所有单位中至少有 100/秒。如果有 9 个 S1 单位，则所有单位就有 108/秒 (9*12)。 |
-| 设备到云的发送 | 120/秒/单位（适用于 S2）, 12/秒/单位（适用于 S1）。<br/>最小值为 100/秒。<br/>例如，两个 S1 单位是 2*12 = 24/秒，但是在所有单位中至少有 100/秒。如果有 9 个 S1 单位，则所有单位就有 108/秒 (9*12)。 |
+| 设备连接 | 120/秒/单位（适用于 S2）, 12/秒/单位（适用于 S1）。<br/>最小值为 100/秒。<br/>例如，两个 S1 单位是 2\*12 = 24/秒，但是在所有单位中至少有 100/秒。如果有 9 个 S1 单位，则所有单位就有 108/秒 (9\*12)。 |
+| 设备到云的发送 | 120/秒/单位（适用于 S2）, 12/秒/单位（适用于 S1）。<br/>最小值为 100/秒。<br/>例如，两个 S1 单位是 2\*12 = 24/秒，但是在所有单位中至少有 100/秒。如果有 9 个 S1 单位，则所有单位就有 108/秒 (9\*12)。 |
 | 云到设备的发送 | 100/分钟/单位 |
 | 云到设备的接收 | 1000/分钟/单位 |
 
-必须清楚地知道，设备连接限制控制可与 IoT 中心建立新设备连接的频率，并不是控制同时连接的设备数上限。该限制取决于为中心预配的单位数。
+必须清楚地知道，设备连接限制控制可与 IoT 中心建立新设备连接的速率，而不是控制同时连接的设备数上限。该限制取决于为中心预配的单位数。
 
 例如，如果你购买的是单一 S1 单位，则限制为每秒 100 个连接。这意味着，若要连接 100,000 台设备，至少需要花费 1000 秒（大约 16 分钟）。但是，同时连接的设备数可与你在设备标识注册表中注册的设备数相同。
 
+[IoT 中心限制和你][lnk-throttle-blog]博客文章深入讨论了 IoT 中心限制行为。
 
 **注意**。无论何时，都可以通过增加 IoT 中心预配的单位来提高配额或限制。
 
@@ -608,6 +523,8 @@ SKU 还确定了 IoT 中心对所有操作强制实施的限制。
 [lnk-iotdev]: /develop/iot/
 [lnk-bulk-identity]: /documentation/articles/iot-hub-bulk-identity-mgmt
 [lnk-eventhub-partitions]: /documentation/articles/event-hubs-overview/#partitions
+[lnk-mqtt-support]: /documentation/articles/iot-hub-mqtt-support
+[lnk-throttle-blog]: https://azure.microsoft.com/blog/iot-hub-throttling-and-you/
 
 
 <!---HONumber=Mooncake_0307_2016-->

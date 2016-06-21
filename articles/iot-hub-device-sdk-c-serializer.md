@@ -9,8 +9,8 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="11/10/2015"
-     wacn.date="03/18/2016"/>
+     ms.date="02/23/2016"
+     wacn.date="05/30/2016"/>
 
 # 适用于 C 语言的 Azure IoT 设备 SDK – 有关序列化程序的详细信息
 
@@ -44,11 +44,11 @@ END_NAMESPACE(WeatherStation);
 
 在命名空间内部运行的是模型定义。在本例中，有一个风速计模型。同样，你可以任意命名此模型，但通常会针对想要与 IoT 中心交换的设备或数据类型来命名。
 
-模型包含可以引入 IoT 中心的事件的定义（*数据*），以及可以从 IoT 中心接收的消息（*操作*）。如同在示例中所见，事件具有类型和名称；操作具有一个名称和可选参数（各有一个类型）。
+模型包含可以引入 IoT 中心的事件的定义（数据），以及可以从 IoT 中心接收的消息（操作）。如同在示例中所见，事件具有类型和名称；操作具有一个名称和可选参数（各有一个类型）。
 
 本示例并未演示 SDK 支持的其他数据类型。我们将在稍后讨论。
 
-> [AZURE.NOTE] IoT 中心将设备发送给它的数据视为*事件*，而建模语言将其视为*数据*（使用 **WITH\_DATA** 来定义）。同样，IoT 中心将发送给设备的数据视为*消息*，而建模语言将其视为*操作*（使用 **WITH\_ACTION** 来定义）。请注意，本文中可能会换用这些术语。
+> [AZURE.NOTE] IoT 中心将设备发送给它的数据视为事件，而建模语言将其视为数据（使用 **WITH\_DATA** 来定义）。同样，IoT 中心将发送给设备的数据视为消息，而建模语言将其视为操作（使用 **WITH\_ACTION** 来定义）。请注意，本文中可能会换用这些术语。
 
 ### 支持的数据类型
 
@@ -187,7 +187,7 @@ EDM_DATE_TIME_OFFSET GetDateTimeOffset(time_t time)
 
 此示例演示使用**序列化程序**库的优点 -- 它可让我们将 JSON 发送到云，而不需要在应用程序中显式处理序列化。我们只需考虑如何在模型中设置数据事件的值，然后调用简单的 API 将这些事件发送到云。
 
-有了此信息，我们便可以定义包含受支持数据类型范围的模型，这些数据类型包括复杂类型（甚至可以包含其他复杂类型内的复杂类型）。不过，上述示例生成的序列化 JSON 突显了一个重点。*如何*利用**序列化程序**库发送数据完全确定了 JSON 的构成形式。此特定要点就是接下来要讨论的内容。
+有了此信息，我们便可以定义包含受支持数据类型范围的模型，这些数据类型包括复杂类型（甚至可以包含其他复杂类型内的复杂类型）。不过，上述示例生成的序列化 JSON 突显了一个重点。如何利用**序列化程序**库发送数据完全确定了 JSON 的构成形式。此特定要点就是接下来要讨论的内容。
 
 ## 有关序列化的详细信息
 
@@ -245,18 +245,18 @@ if (SERIALIZE(&destination, &destinationSize, thermostat->Temperature) == IOT_AG
 上述代码使用前面介绍的帮助器 **GetDateTimeOffset**。此代码将序列化与发送事件的任务明确区分，原因在稍后将渐趋明朗。前面的代码将温度事件以序列化方式发送到缓冲区。**sendMessage** 是一个帮助器函数（包含在 **simplesample\_amqp** 中），可将事件发送到 IoT 中心：
 
 ```
-    static void sendMessage(IOTHUB_CLIENT_HANDLE iotHubClientHandle, const unsigned char* buffer, size_t size)
+static void sendMessage(IOTHUB_CLIENT_HANDLE iotHubClientHandle, const unsigned char* buffer, size_t size)
+{
+    static unsigned int messageTrackingId;
+    IOTHUB_MESSAGE_HANDLE messageHandle = IoTHubMessage_CreateFromByteArray(buffer, size);
+    if (messageHandle != NULL)
     {
-        static unsigned int messageTrackingId;
-        IOTHUB_MESSAGE_HANDLE messageHandle = IoTHubMessage_CreateFromByteArray(buffer, size);
-        if (messageHandle != NULL)
-        {
-            IoTHubClient_SendEventAsync(iotHubClientHandle, messageHandle, sendCallback, (void*)(uintptr_t)messageTrackingId);
-    
-            IoTHubMessage_Destroy(messageHandle);
-        }
-        free((void*)buffer);
+        IoTHubClient_SendEventAsync(iotHubClientHandle, messageHandle, sendCallback, (void*)(uintptr_t)messageTrackingId);
+
+        IoTHubMessage_Destroy(messageHandle);
     }
+    free((void*)buffer);
+}
 ```
 
 此代码是前一部分所述的 **SendAsync** 帮助器的子集，因此不在此赘述。
@@ -368,7 +368,7 @@ if (SERIALIZE(&destination, &destinationSize, thermostat->Temperature, thermosta
 
 {"Temperature":75, "Humidity":45}
 
-这样似乎很奇怪，因为模型将**温度**和**湿度**定义为两个*独立的*事件：
+这样似乎很奇怪，因为模型将**温度**和**湿度**定义为两个独立的事件：
 
 ```
 DECLARE_MODEL(Thermostat,
@@ -420,7 +420,7 @@ if (SERIALIZE(&destination, &destinationSize, thermostat->Temperature, thermosta
 {"Temperature":75, "Humidity":45, "Time":"2015-09-17T18:45:56Z"}
 ```
 
-有时，你可能只想将模型的*某些*属性发送到云（尤其是当模型包含大量数据事件时）。这时，只发送数据事件的子集相当有用，就像前面的示例一样：
+有时，你可能只想将模型的某些属性发送到云（尤其是当模型包含大量数据事件时）。这时，只发送数据事件的子集相当有用，就像前面的示例一样：
 
 ```
 {"Temperature":75, "Time":"2015-09-17T18:45:56Z"}
@@ -523,17 +523,26 @@ EXECUTE_COMMAND_RESULT SetAirResistance(ContosoAnemometer* device, int Position)
 
 ## 宏配置
 
-如果使用**序列化程序**库，以下是要注意的 SDK 要点：
+如果使用的是**序列化程序**库，那么可在 azure-c-shared-utility 库中找到要注意的 SDK 的重要组成部分。
+如果使用 --recursive 选项从 GitHub 中克隆了 Azure-iot-sdks 存储库，那么可在此处找到此共享的实用程序库：
 
 ```
-.\\c\\common\\tools\\macro\_utils\_h\_generator.
+.\\c\\azure-c-shared-utility
 ```
 
-此文件夹包含名为 **macro\_utils\_h\_generator.sln** 的 Visual Studio 解决方案。
+如果没有克隆此库，则可以在[此处](https://github.com/Azure/azure-c-shared-utility)找到它。
 
-  ![](./media/iot-hub-device-sdk-c-serializer/01-macro_utils_h_generator.PNG)
+在此共享的实用程序库中，可找到以下文件夹：
 
-此解决方案中的程序在 .\\c\\common\\inc 目录中生成 **macro\_utils.h** 文件。SDK 随附了一个默认的 macro\_utils.h 文件。此解决方案可让你修改某些参数，然后根据这些参数重新创建标头文件。
+```
+azure-c-shared-utility\\macro\_utils\_h\_generator.
+```
+
+此文件夹包含名为 **macro\_utils\_h\_generator.sln** 的 Visual Studio 解决方案：
+
+  ![](media/iot-hub-device-sdk-c-serializer/01-macro_utils_h_generator.PNG)
+
+此解决方案中的程序将生成 **macro\_utils.h** 文件。SDK 随附了一个默认的 macro\_utils.h 文件。此解决方案可让你修改某些参数，然后根据这些参数重新创建标头文件。
 
 要注意两个重要参数：**nArithmetic** 和 **nMacroParameters**，这些参数是在 macro\_utils.tt 的以下两行中定义：
 
@@ -561,13 +570,13 @@ WITH_DATA(int, MyData)
 
   ![](./media/iot-hub-device-sdk-c-serializer/02-nMacroParametersCompilerErrors.PNG)
 
-**nArithmetic** 参数主要与宏语言的内部工作有关，而与应用程序没有太大的关系。它控制你可以在模型中指定的成员总数，包括 **DECLARE\_STRUCT** 宏。如果你看到这样的编译器错误，应该尝试提高 **nArithmetic** 的值：
+**nArithmetic** 参数主要与宏语言的内部工作有关，而与应用程序没有太大的关系。该参数可以控制你在模型中（包括 **DECLARE\_STRUCT** 宏）指定的成员总数。如果你开始看到这样的编译器错误，应该尝试增大 **nArithmetic** 的值：
 
    ![](./media/iot-hub-device-sdk-c-serializer/03-nArithmeticCompilerErrors.PNG)
 
 如果想要更改这些参数，请修改 macro\_utils.tt 文件中的值，重新编译 macro\_utils\_h\_generator.sln 解决方案，然后运行编译后的程序。执行此操作后，将生成新的 macro\_utils.h 文件并将其放在 .\\common\\inc 目录中。
 
-若要使用新版 macro\_utils.h，请从解决方案中删除**序列化程序** NuGet 包，然后在它的位置包含**序列化程序** Visual Studio 项目。这样，便可以让代码针对序列化程序库的源代码进行编译。这包括更新的 macro\_utils.h。如果你要对 **simplesample\_amqp** 执行此操作，请先从解决方案中删除序列化程序库的 NuGet 包：
+若要使用新版 macro\_utils.h，请从解决方案中删除**序列化程序** NuGet 包，然后在它的位置添加**序列化程序** Visual Studio 项目。这样，便可以让代码针对序列化程序库的源代码进行编译。这包括更新的 macro\_utils.h。如果你要对 **simplesample\_amqp** 执行此操作，请先从解决方案中删除序列化程序库的 NuGet 包：
 
    ![](./media/iot-hub-device-sdk-c-serializer/04-serializer-github-package.PNG)
 
@@ -581,15 +590,15 @@ WITH_DATA(int, MyData)
 
 现在当你编译解决方案时，更新的 macro\_utils.h 就会包含在二进制文件中。
 
-请注意，将这些值增大到足够高的数目可能会超出编译器限制。此时，**nMacroParameters** 是要考虑的主要参数。C99 规范规定，宏定义中至少允许 127 个参数。Microsoft 编译器完全遵循此规范（限制为 127），因此无法将 **nMacroParameters** 提高到超过默认值。其他编译器可能允许这么做（例如 GNU 编译器支持更高的限制）。
+请注意，将这些值增大到足够高的数目可能会超出编译器限制。对于这一点，**nMacroParameters** 是要考虑的主要参数。C99 规范规定，宏定义中至少允许 127 个参数。Microsoft 编译器完全遵循此规范（限制为 127），因此无法将 **nMacroParameters** 增大到超过默认值。其他编译器可能允许这么做（例如 GNU 编译器支持更高的限制）。
 
-到目前为止，我们几乎已经讨论了如何使用**序列化程序**库编写代码所要知道的一切知识。在做出总结之前，让我们先从以前的文章回顾一些你可能想知道的主题。
+到目前为止，我们介绍了有关如何使用**序列化程序**库编写代码你所要知道的几乎所有内容。在做出总结之前，让我们先从以前的文章回顾一些你可能想知道的主题。
 
 ## 较低级别 API
 
-此文着重讲解的示例应用程序是 **simplesample\_amqp**。此示例使用较高级别（非“LL”）API 来发送事件和接收消息。如果你使用这些 API，将运行后台线程来处理事件发送和消息接收。不过，你可以使用较低级别 (LL) API 来消除此后台线程的使用，并掌握发送事件或从云接收消息时的明确控制权。
+本文着重介绍的示例应用程序为 **simplesample\_amqp**。此示例使用较高级别（非“LL”）API 来发送事件和接收消息。如果你使用这些 API，将运行后台线程来处理事件发送和消息接收。不过，你可以使用较低级别 (LL) API 来消除此后台线程的使用，并掌握发送事件或从云接收消息时的明确控制权。
 
-如[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient)中所述，有一组由较高级别 API 组成的函数：
+如[前一篇文章](iot-hub-device-sdk-c-iothubclient.md)中所述，有一组由较高级别 API 组成的函数：
 
 -   IoTHubClient\_CreateFromConnectionString
 
@@ -611,7 +620,7 @@ WITH_DATA(int, MyData)
 
 -   IoTHubClient\_LL\_Destroy
 
-请注意，较低级别 API 的工作原理与前面文章中所述的完全相同。如果你想要使用后台线程来处理事件发送和消息接收，可以使用第一组 API。如果你想要掌握与 IoT 中心之间发送和接收数据时的明确控制权，可以使用第二组 API。上述任何一组 API 使用**序列化程序**库的效果都完全相同。
+请注意，较低级别 API 的工作原理与前面文章中所述的完全相同。如果你想要使用后台线程来处理事件发送和消息接收，可以使用第一组 API。如果你想要掌握与 IoT 中心之间发送和接收数据时的明确控制权，可以使用第二组 API。上述任何一组 API 都可以很好地配合使用**序列化程序**库。
 
 有关如何将较低级别 API 与**序列化程序**库配合使用的示例，请参阅 **simplesample\_http** 应用程序。
 
@@ -631,7 +640,7 @@ Map_AddOrUpdate(propMap, "SequenceNumber", propText);
 
 最后，如果使用**序列化程序**库，则可以使用 **IoTHubClient\_LL\_SetOption** 来设置配置选项，就像使用 **IoTHubClient** 库时一样。
 
-有一个功能对**序列化程序**库来说是独一无二的，即初始化 API。在开始使用此库之前，必须先调用 **serializer\_init**：
+**序列化程序**库所具有的一个独特功能为初始化 API。在开始使用此库之前，必须先调用 **serializer\_init**：
 
 ```
 serializer_init(NULL);
@@ -645,12 +654,12 @@ serializer_init(NULL);
 serializer_deinit();
 ```
 
-除此之外，上面列出的所有其他功能在**序列化程序**库中的运行方式均与在 **IoTHubClient** 库中的运行方式相同。有关任何这些主题的详细信息，请参阅本系列教程中的[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient)。
+除此之外，上面列出的所有其他功能在**序列化程序**库中的运行方式均与在 **IoTHubClient** 库中的运行方式相同。有关这些主题中任何一个主题的详细信息，请参阅本系列教程中的[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient)。
 
 ## 后续步骤
 
-本文详细说明了**适用于 C 语言的 Azure IoT 设备 SDK** 中包含的**序列化程序**库的独特方面。通过文中提供的信息，你应该能充分了解如何使用模型来发送事件和接收来自 IoT 中心的消息。
+本文详细介绍了**适用于 C 语言的 Azure IoT 设备 SDK** 中包含的**序列化程序**库的独特方面。通过文中提供的信息，你应该能充分了解如何使用模型来发送事件和接收来自 IoT 中心的消息。
 
-由三部分构成的、有关如何使用**适用于 C 语言的 Azure IoT 设备 SDK** 来开发应用程序的系列教程到此结束。这些信息应该不仅足以让你入门，还能让你彻底了解 API 的工作原理。请了解其他信息，因为还有一些 SDK 中的示例未涵盖在本文中。除此之外，[SDK 文档](https://github.com/Azure/azure-iot-sdks)也是获取其他信息的绝佳资源。
+本文还结束了有关如何使用**适用于 C 语言的 Azure IoT 设备 SDK** 来开发应用程序的由三个部分组成的系列教程的学习。这些信息应该不仅足以让你入门，还能让你彻底了解 API 的工作原理。请了解其他信息，因为还有一些 SDK 中的示例未涵盖在本文中。除此之外，[SDK 文档](https://github.com/Azure/azure-iot-sdks)是获取其他信息的绝佳资源。
 
 <!---HONumber=Mooncake_0307_2016-->

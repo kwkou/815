@@ -1,5 +1,5 @@
 <properties
- pageTitle="导入和导出 IoT 中心设备标识 | Microsoft Azure"
+ pageTitle="导入和导出 IoT 中心设备标识 | Azure"
  description="有关批量管理 IoT 中心设备标识的概念和 .NET 代码段"
  services="iot-hub"
  documentationCenter=".net"
@@ -9,14 +9,14 @@
 
 <tags
  ms.service="iot-hub"
- ms.date="02/03/2016"
- wacn.date="03/18/2016"/>
+ ms.date="04/29/2016"
+ wacn.date="05/30/2016"/>
 
 # 批量管理 IoT 中心的设备标识
 
 每个 IoT 中心都有一个设备标识注册表，用于在服务中创建各设备的资源（例如包含即时云到设备消息的队列），以及让你访问面向设备的终结点。本文说明如何在设备标识注册表中批量导入和导出设备标识。
 
-导入和导出操作在*作业*的上下文中进行，可让用户对 IoT 中心执行批量服务操作。
+导入和导出操作在作业的上下文中进行，可让用户对 IoT 中心执行批量服务操作。
 
 **RegistryManager** 类包含使用**作业**框架的 **ExportDevicesAsync** 和 **ImportDevicesAsync** 方法。这些方法可让你导出、导入和同步整个 IoT 中心设备注册表。
 
@@ -65,15 +65,15 @@ while(true)
 
 **ExportDevicesAsync** 方法需要两个参数：
 
-*  包含 Blob 容器 URI 的*字符串*。此 URI 必须包含可授予容器写入权限的 SAS 令牌。作业在此容器中创建用于存储序列化导出设备数据的块 Blob。SAS 令牌必须包含这些权限：
+*  包含 Blob 容器 URI 的字符串。此 URI 必须包含可授予容器写入权限的 SAS 令牌。作业在此容器中创建用于存储序列化导出设备数据的块 Blob。SAS 令牌必须包含这些权限：
     
     ```
     SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.Delete
     ```
 
-*  指示你是否要在导出数据中排除身份验证密钥的*布尔值*。如果为 **false**，则身份验证密钥将包含在导出输出中；否则像为 **null** 时一样导出密钥。
+*  指示你是否要在导出数据中排除身份验证密钥的布尔值。如果为 **false**，则身份验证密钥将包含在导出输出中；否则像为 **null** 时一样导出密钥。
 
-以下 C# 代码段演示如何启动导出作业，然后执行轮询以完成作业：
+下面的 C# 代码段演示了如何启动在导出数据中包含设备身份验证密钥的导出作业，然后对完成情况进行轮询：
 
 ```
 // Call an export job on the IoT Hub to retrieve all devices
@@ -127,21 +127,21 @@ using (var streamReader = new StreamReader(await blob.OpenReadAsync(AccessCondit
 
 ## 导入设备
 
-**RegistryManager** 类中的 **ImportDevicesAsync** 方法可让你在 IoT 中心设备注册表中执行批量导入和同步操作。与 **ExportDevicesAsync** 方法一样，**ImportDevicesAsync** 方法使用作业框架。
+**RegistryManager** 类中的 **ImportDevicesAsync** 方法可让你在 IoT 中心设备注册表中执行批量导入和同步操作。与 **ExportDevicesAsync** 方法一样，**ImportDevicesAsync** 方法也使用**作业**框架。
 
 请谨慎使用 **ImportDevicesAsync** 方法，因为除了在设备标识注册表中预配新设备以外，此方法也会更新和删除现有设备。
 
 > [AZURE.WARNING]  导入操作不可撤消。请始终先使用 **ExportDevicesAsync** 方法将现有数据备份到另一个 Blob 容器，再对设备标识注册表进行批量更改。
 
-**ImportDevicesAsync** 方法需要两个参数：
+**ImportDevicesAsync** 方法有两个参数：
 
-*  一个*字符串*，其中包含 [Azure 存储](/documentation/services/storage/) Blob 容器 URI 作为作业的*输入*。此 URI 必须包含可授予容器读取权限的 SAS 令牌。此容器必须包含名为 **devices.txt** 的 Blob，而此 Blob 中包含要导入到设备标识注册表的序列化设备数据。导入数据必须包含使用 **ExportImportDevice** 作业所创建的相同 JSON 格式的设备信息。SAS 令牌必须包含这些权限：
+*  一个字符串，其中包含作为作业的输入的 [Azure 存储](/documentation/services/storage/) Blob 容器的 URI。此 URI 必须包含可授予容器读取权限的 SAS 令牌。此容器必须包含名为 **devices.txt** 的 Blob，而此 Blob 中包含要导入到设备标识注册表的序列化设备数据。导入数据必须包含使用 **ExportImportDevice** 作业所创建的相同 JSON 格式的设备信息。SAS 令牌必须包含这些权限：
 
     ```
     SharedAccessBlobPermissions.Read
     ```
 
-*  一个*字符串*，其中包含 [Azure 存储](/documentation/services/storage/) Blob 容器 URI 作为作业的*输出*。作业在此容器中创建块 Blob，用于存储来自已完成的导入**作业**的任何错误信息。SAS 令牌必须包含这些权限：
+*  一个字符串，其中包含作为作业的输出的 [Azure 存储](/documentation/services/storage/) Blob 容器的 URI。作业在此容器中创建块 Blob，用于存储已完成的导入**作业**中的任何错误信息。SAS 令牌必须包含这些权限：
     
     ```
     SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.Delete
@@ -167,7 +167,7 @@ JobProperties importJob = await registryManager.ImportDevicesAsync(containerSasU
 
 可以在单个 **ImportDevicesAsync** 调用中执行上述操作的任意组合。例如，可以同时注册新设备并删除或更新现有设备。配合 **ExportDevicesAsync** 方法一起使用时，可以将某个 IoT 中心内的所有设备迁移到另一个 IoT 中心。
 
-可以在每个设备的导入序列化数据中使用可选 **importMode** 属性控制每个设备的导入过程。**importMode** 属性具有以下选项：
+可以在每个设备的导入序列化数据中使用可选 **importMode** 属性来控制每个设备的导入过程。**importMode** 属性具有以下选项：
 
 | importMode | 说明 |
 | -------- | ----------- |
@@ -179,7 +179,7 @@ JobProperties importJob = await registryManager.ImportDevicesAsync(containerSasU
 | **删除** | 如果已存在具有指定 **ID** 的设备，则将它删除，而不管 **ETag** 值为何。<br/>如果设备不存在，则在日志文件中写入错误。 |
 | **deleteIfMatchETag** | 如果已存在具有指定 **ID** 的设备，则仅当 **ETag** 匹配时才将它删除。如果设备不存在，则在日志文件中写入错误。<br/>如果 ETag 不匹配，则在日志文件中写入错误。 |
 
-> [AZURE.NOTE] 如果序列化数据未显式定义设备的 **importMode** 标志，则在导入操作期间将默认为 **createOrUpdate**。
+> [AZURE.NOTE] 如果序列化数据未显式定义设备的 **importMode** 标志，则在导入操作期间将默认使用 **createOrUpdate**。
 
 ## 导入设备示例 – 批量预配设备 
 
