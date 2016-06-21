@@ -68,11 +68,11 @@
 
 1. 单击“+新建”，然后在“应用商店”搜索窗口中键入“资源组”。
 
- ![资源组](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/01-resourcegroupsymbol.png)
+	![资源组](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/01-resourcegroupsymbol.png)
 
 1. 单击“资源组” 
 
- ![新建资源组](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/01-newresourcegroup.png)
+	![新建资源组](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/01-newresourcegroup.png)
 
 1. 单击“创建”。 
 
@@ -98,17 +98,17 @@ Azure 将创建新资源组，并在门户中固定资源组的快捷方式。
 
 1. 在 Azure 门户上单击新资源组，然后单击“+”将新项添加到该资源组。Azure 随即打开“全部”边栏选项卡。 
 
- ![新建项](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/02-newiteminrg.png)
+	![新建项](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/02-newiteminrg.png)
 
 1. 搜索“虚拟网络”。
 
- ![搜索虚拟网络](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/04-findvirtualnetwork.png)
+	![搜索虚拟网络](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/04-findvirtualnetwork.png)
 
 1. 单击“虚拟网络”。
 
 1. 在“虚拟网络”边栏选项卡中，单击“Resource Manager”部署模型，然后单击“创建”。
 
- ![创建虚拟网络](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/05-createvirtualnetwork.png)
+	![创建虚拟网络](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/05-createvirtualnetwork.png)
  
 
  
