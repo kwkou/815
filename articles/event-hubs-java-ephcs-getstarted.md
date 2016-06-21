@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.date="03/08/2016"
-	wacn.date="04/14/2016"/>
+	ms.date="05/13/2016"
+	wacn.date="06/20/2016"/>
 
 # 事件中心入门
 
@@ -32,39 +32,8 @@
 
 + 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="/zh-cn/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
 
-## 创建事件中心
+[AZURE.INCLUDE [event-hubs-create-event-hub](../includes/event-hubs-create-event-hub.md)]
 
-1. 登录到 [Azure 管理门户]，然后单击屏幕底部的“新建”。
-
-2. 依次单击“App Service”、“服务总线”、“事件中心”、“快速创建”。
-
-	![][1]
-
-3. 为你的事件中心键入名称，选择所需区域，然后单击“创建新事件中心”。
-
-	![][2]
-
-4. 单击你刚创建的命名空间（通常为 ***事件中心名称*-ns**）。
-
-	![][3]
-
-5. 单击页面顶部的“事件中心”选项卡，然后单击你刚创建的事件中心。
-
-	![][4]
-
-6. 单击页面顶部的“配置”选项卡，添加具有“发送”权限的名为“SendRule”的规则，添加另一具有“管理、发送、侦听”权限的名为“ReceiveRule”的规则，然后单击“保存”。
-
-	![][5]
-
-7. 在同一页上，记下为 **SendRule** 生成的密钥。
-
-	![][6b]
-
-8. 单击页面顶部的“仪表板”选项卡，然后单击“连接信息”。记下两个连接字符串。
-
-	![][6]
-
-现在，你的事件中心就创建好了，你已经有了收发事件所需的连接字符串。
 
 [AZURE.INCLUDE [service-bus-event-hubs-get-started-send-java](../includes/service-bus-event-hubs-get-started-send-java.md)]
 
@@ -94,15 +63,6 @@
 有关详细信息，请参阅 [Java 开发人员中心](/develop/java/)。
 
 <!-- Images. -->
-[1]: ./media/event-hubs-java-ephcs-getstarted/create-event-hub1.png
-[2]: ./media/event-hubs-java-ephcs-getstarted/create-event-hub2.png
-[3]: ./media/event-hubs-java-ephcs-getstarted/create-event-hub3.png
-[4]: ./media/event-hubs-java-ephcs-getstarted/create-event-hub4.png
-[5]: ./media/event-hubs-java-ephcs-getstarted/create-event-hub5.png
-[6]: ./media/event-hubs-java-ephcs-getstarted/create-event-hub6.png
-[6b]: ./media/event-hubs-java-ephcs-getstarted/create-event-hub6b.png
-
-
 [21]: ./media/event-hubs-java-ephcs-getstarted/run-csharp-ephcs1.png
 [22]: ./media/event-hubs-java-ephcs-getstarted/run-csharp-ephcs2.png
 
@@ -110,9 +70,9 @@
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [事件处理程序主机]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [事件中心概述]: /documentation/articles/event-hubs-overview
-[使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
-[使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
+[使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
+[使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
  
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0613_2016-->
