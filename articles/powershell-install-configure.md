@@ -2,15 +2,15 @@
 	pageTitle="如何安装和配置 Azure PowerShell"
 	description="了解如何安装和配置 Azure PowerShell。"
 	editor="tysonn"
-	manager="stevenka"
+	manager="dongill"
 	documentationCenter=""
 	services=""
 	authors="coreyp-at-msft"/>
 
 <tags
 	ms.service="multiple"
-	ms.date="01/06/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="04/22/2016"
+	wacn.date="06/20/2016"/>
 
 # 如何安装和配置 Azure PowerShell#
 
@@ -18,59 +18,65 @@
 - [PowerShell](/documentation/articles/powershell-install-configure)
 - [Azure CLI](/documentation/articles/xplat-cli-install)
 
-##什么是 Azure PowerShell？#
-Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。你可以使用 cmdlet 来创建、测试、部署和管理通过 Azure 平台传送的解决方案和服务。在大多数情况下，这些 cmdlet 可让你执行在 Azure 管理门户中可以执行的任务，例如，创建和配置云服务、虚拟机、虚拟网络和 Web 应用。
+##什么是 Azure PowerShell？
+Azure PowerShell 是一组模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。你可以使用 cmdlet 来创建、测试、部署和管理通过 Azure 平台传送的解决方案和服务。在大多数情况下，这些 cmdlet 可让你执行在 Azure 管理门户中可以执行的任务，例如，创建和配置云服务、虚拟机、虚拟网络和 Web 应用。
 
 <a id="Install"></a>
 ## 步骤 1：安装
 
 以下是安装 Azure PowerShell 的两种方法。你可以通过 WebPI 或 PowerShell 库进行安装：
 
-> [AZURE.NOTE] 在安装后，你可能需要重新启动才能看到 Windows PowerShell 集成脚本环境 (ISE) 中的所有命令。
-
 ###从 WebPI 安装 Azure PowerShell
 
-从 WebPI 安装 Azure PowerShell 1.0 和更高版本的方法与安装 0.9.x 版本是一样的。下载 [Azure PowerShell](http://aka.ms/webpi-azps) 并开始安装。如果你已安装 Azure PowerShell 0.9.x，系统将提示你卸载 0.9.x。如果你从 PowerShell 库安装了 Azure PowerShell 模块，安装程序将要求你在安装之前删除该模块，以确保 Azure PowerShell 环境一致。
+从 WebPI 安装 Azure PowerShell 1.0 和更高版本的方法与安装 0.9.x 版本是一样的。下载 [Azure PowerShell](http://aka.ms/webpi-azps) 并开始安装。如果安装了 Azure PowerShell 0.9.x，将在升级期间卸载版本 0.9.x。如果从 PowerShell 库安装了 Azure PowerShell 模块，安装程序将在安装之前自动删除这些模块，以确保 Azure PowerShell 环境一致。
 
-> [AZURE.NOTE] 如果已安装 PowerShell 库 Azure 模块，则安装程序将自动删除这些模块。这是为了防止混淆已安装的模块与其所在的位置。PowerShell 库模块通常安装在 **%ProgramFiles%\\WindowsPowerShell\\Modules** 中。WebPI 安装程序将在 **%ProgramFiles%\\Microsoft SDKs\\Azure\\PowerShell** 中安装 Azure 模块。**PowerShellGet** 将卸载模块，如果在卸载时加载了模块依赖项，则会留下锁定的 .dll 及其文件夹。如果在安装过程中发生错误，请删除 **%ProgramFiles%\\WindowsPowerShell\\Modules** 文件夹中的 Azure* 文件夹。
+> [AZURE.NOTE] 如果之前从 PowerShell 库安装了 Azure 模块，安装程序将自动删除这些模块。这是为了防止混淆已安装的模块版本及其所在的位置。PowerShell 库模块通常安装在 **%ProgramFiles%\\WindowsPowerShell\\Modules** 中。相反，WebPI 安装程序将在 **%ProgramFiles(x86)%\\Microsoft SDKs\\Azure\\PowerShell** 中安装 Azure 模块。如果在安装过程中发生错误，可以手动删除 **%ProgramFiles%\\WindowsPowerShell\\Modules** 文件夹中的 Azure* 文件夹，然后重试安装。
 
-如果已通过 PowerShell 库安装了 Azure PowerShell，但想要使用 WebPI 安装，则 WebPI 安装将自动删除从该库中安装的 cmdlet。
+一旦完成安装，你的 ```$env:PSModulePath``` 设置中应会有包含 Azure PowerShell cmdlet 的目录。
 
-> [AZURE.NOTE] 从 WebPI 安装时，会发生一个有关 PowerShell **$env:PSModulePath** 的已知问题。如果你的计算机由于系统更新或其他安装而需要重新启动，有可能会导致 **$env:PSModulePath** 不包含 Azure PowerShell 的安装路径。可以通过重新启动计算机来更正此问题。
+> [AZURE.NOTE] 从 WebPI 安装时，会发生一个有关 PowerShell **$env:PSModulePath** 的已知问题。如果你的计算机由于系统更新或其他安装而需要重新启动，有可能会导致更新 **$env:PSModulePath** 不包含 Azure PowerShell 的安装路径。如果发生这种情况，当你在安装或升级之后尝试使用 Azure PowerShell cmdlet 时，可能会看到“cmdlet 无法识别”消息。如果发生这种情况，重启计算机应该可以解决该问题。
 
-###从库安装 Azure PowerShell
+如果尝试加载或执行 cmdlet，会收到如下消息：
 
-使用以下命令从库安装 Azure PowerShell 1.0 或更高版本：
+```
+    PS C:\> Get-AzureRmResource
+    Get-AzureRmResource : The term 'Get-AzureRmResource' is not recognized as the name of a cmdlet, function,
+    script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is
+    correct and try again.
+    At line:1 char:1
+    + Get-AzureRmResource
+    + ~~~~~~~~~~~~~~~~~~~~~~~
+        + CategoryInfo          : ObjectNotFound: (get-azurermresourcefork:String) [], CommandNotFoundException
+        + FullyQualifiedErrorId : CommandNotFoundException
+```
+
+这可以通过以下方法更正：重新启动计算机，或者按照以下方式从 C:\Program Files\WindowsPowerShell\Modules\Azure\XXXX\ 导入 cmdlet（其中 XXXX 是所安装 PowerShell 的版本）：
+```
+import-module "C:\\Program Files\\WindowsPowerShell\\Modules\\Azure\\XXXX\\azure.psd1" 
+import-module "C:\\Program Files\\WindowsPowerShell\\Modules\\Azure\\XXXX\\expressroute\\expressroute.psd1" 
+```
+
+###从 PowerShell 库安装 Azure PowerShell
+
+在提升的 Windows PowerShell 或 PowerShell 集成脚本环境 (ISE) 提示符下，使用以下命令从 PowerShell 库安装 Azure PowerShell 1.3.0 或更高版本：
 
     # Install the Azure Resource Manager modules from the PowerShell Gallery
     Install-Module AzureRM
-    Install-AzureRM
 
     # Install the Azure Service Management module from the PowerShell Gallery
     Install-Module Azure
 
-    # Import AzureRM modules for the given version manifest in the AzureRM module
-    Import-AzureRM
-
-    # Import Azure Service Management module
-    Import-Module Azure
-
 ####有关这些命令的详细信息
 
-- **Install-Module AzureRM** 为 AzureRM 模块安装引导模块。此模块包含的 cmdlet 可帮助你以安全一致的方式更新、卸载和导入 AzureRM 模块。AzureRM 模块包含所需的模块和版本范围（最小和最大）列表，以确保不会对 AzureRM 的主要版本引入重大更改。有关语义版本的更多信息，请参阅 [semver.org](http://semver.org)。这意味着你可以使用 AzureRM 特定版本来创作你自己的 cmdlet，并了解所有通过引导程序安装的模块不会引入重大更改。
-- **Install-AzureRM** 安装引导模块中声明的所有模块。
+- **Install-Module AzureRM** 为 Azure Resource Manager cmdlet 安装汇总模块。AzureRM 模块取决于每个 Azure Resource Manager 模块的特定版本范围。包含的版本范围可以确保在安装同一主要版本的 AzureRM 模块时，不包含重大的模块更改。安装 AzureRM 模块时，会从 PowerShell 库下载并安装先前未安装的所有 Azure Resource Manager 模块。有关 Azure PowerShell 模块所用的语义版本控制的详细信息，请参阅 [semver.org](http://semver.org)。 
 - **Install-Module Azure** 安装 Azure 模块。此模块是 Azure PowerShell 0.9.x 中的服务管理模块。这应该没有任何重要更改，而且可与前一版本的 Azure 模块互换。
-- **Import-AzureRM** 导入 AzureRM 模块的模块与版本列表中的所有模块。这可确保加载的 Azure PowerShell 模块在 AzureRM 模块所需的版本范围内。
-- **Import-Module Azure** 导入 Azure 服务管理模块。请注意，Azure 模块和 AzureRM 模块将载入你的 PowerShell 会话，并可一起使用。
-
 
 ## 步骤 2：启动
-你可以通过标准的 Windows PowerShell 控制台或 PowerShell 集成脚本环境 (ISE) 运行 cmdlet。
-您用于打开控制台的方法取决于您正在运行的 Windows 的版本：
+你可以通过标准的 Windows PowerShell 控制台或 PowerShell 集成脚本环境 (ISE) 运行 cmdlet。您用于打开控制台的方法取决于您正在运行的 Windows 的版本：
 
-- 在至少运行 Windows 8 或 Windows Server 2012 的计算机上，您可以使用内置搜索。从“开始”屏幕开始键入 power。此时将返回范围内的应用列表，包括 Windows PowerShell。若要打开控制台，请单击任一应用程序。（要将应用程序固定在“开始”屏幕，请右键单击此图标。）
+- 在至少运行 Windows 8 或 Windows Server 2012 的计算机上，您可以使用内置搜索。从“开始”屏幕开始键入 power。此时将返回范围内的应用列表，包括 Windows PowerShell。若要打开控制台，请单击任一应用程序。（若要将应用固定在“开始”屏幕，请右键单击此图标。）
 
-- 在运行早于 Windows 8 或 Windows Server 2012 的版本的计算机上，请使用“开始”菜单。在“开始”菜单上，单击“所有程序”，单击“附件”，单击“Windows PowerShell”文件夹，，然后单击“Windows PowerShell”。
+- 在运行早于 Windows 8 或 Windows Server 2012 的版本的计算机上，请使用“开始”菜单。从“开始”菜单中，依次单击“所有程序”、“附件”、“Windows PowerShell”文件夹和“Windows PowerShell”。
 
 也可以运行 **Windows PowerShell ISE**，使用菜单项和键盘快捷方式来执行可在 Windows PowerShell 控制台中执行的许多相同任务。若要使用 ISE，请在 Windows PowerShell 控制台、Cmd.exe 或“运行”框中，键入 **powershell\_ise.exe**。
 
@@ -78,9 +84,6 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 
     # To make sure the Azure PowerShell module is available after you install
     Get-Module –ListAvailable 
-	
-	# If the Azure PowerShell module is not listed when you run Get-Module, you may need to import it
-    Import-Module Azure 
 	
     # To login to Azure Resource Manager
     Login-AzureRmAccount -EnvironmentName AzureChinaCloud
@@ -104,9 +107,6 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
     # View your current Azure PowerShell session context
     # Note: the CurrentStorageAccount is now set in your session context
     Get-AzureRmContext
-
-    # To import the Azure.Storage data plane module (blob, queue, table)
-    Import-Module Azure.Storage
 
     # To list all of the blobs in all of your containers in all of your accounts
     Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
@@ -178,4 +178,4 @@ cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订
 有关可帮助你了解如何使用脚本来管理 Azure 的示例脚本和说明，请参阅[脚本中心](http://go.microsoft.com/fwlink/p/?LinkId=321940)。
 
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0613_2016-->
