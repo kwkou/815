@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.date="03/08/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="05/13/2016"
+	wacn.date="06/20/2016"/>
 
 # 事件中心入门
 
@@ -32,35 +32,7 @@
 
 + 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/zh-cn/pricing/1rmb-trial/)。
 
-## 创建事件中心
-
-1. 登录到 [Azure 管理门户]，然后单击屏幕底部的“新建”。
-
-2. 依次单击“App Service”、“服务总线”、“事件中心”、“快速创建”。
-
-	![][1]
-
-3. 为你的事件中心键入名称，选择所需区域，然后单击“创建新事件中心”。
-
-	![][2]
-
-4. 单击你刚创建的命名空间（通常为 ***事件中心名称*-ns**）。
-
-	![][3]
-
-5. 单击页面顶部的“事件中心”选项卡，然后单击你刚创建的事件中心。
-
-	![][4]
-
-6. 单击页面顶部的“配置”选项卡，添加具有“发送”权限的名为“SendRule”的规则，添加另一具有“侦听”权限的名为“ReceiveRule”的规则，然后单击“保存”。
-
-	![][5]
-
-7. 在同一页上，记下为 **SendRule** 和 **ReceiveRule** 生成的密钥。
-
-	![][6c]
-
-现在，你的事件中心就创建好了，你已经有了收发事件所需的连接字符串。
+[AZURE.INCLUDE [event-hubs-create-event-hub](../includes/event-hubs-create-event-hub.md)]
 
 [AZURE.INCLUDE [service-bus-event-hubs-get-started-send-c](../includes/service-bus-event-hubs-get-started-send-c.md)]
 
@@ -86,14 +58,6 @@
 - [使用 SCP.NET 和 C# 在 Storm 和 HDInsight 上开发流式数据处理应用程序]是有关使用 C# 编写 Storm 管道的教程。
 
 <!-- Images. -->
-[1]: ./media/event-hubs-c-storm-getstarted/create-event-hub1.png
-[2]: ./media/event-hubs-c-storm-getstarted/create-event-hub2.png
-[3]: ./media/event-hubs-c-storm-getstarted/create-event-hub3.png
-[4]: ./media/event-hubs-c-storm-getstarted/create-event-hub4.png
-[5]: ./media/event-hubs-c-storm-getstarted/create-event-hub5.png
-[6]: ./media/event-hubs-getstarted/create-event-hub6.png
-[6c]: ./media/event-hubs-c-storm-getstarted/create-event-hub6c.png
-
 [23]: ./media/event-hubs-c-storm-getstarted/receive-storm3.png
 
 <!-- Links -->
@@ -107,4 +71,4 @@
 [使用 SCP.NET 和 C# 在 Storm 和 HDInsight 上开发流式数据处理应用程序]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology
  
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0613_2016-->
