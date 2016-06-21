@@ -1,6 +1,16 @@
-<properties pageTitle="Azure VM 上的 Windows Server Active Directory" description="你可以在 Azure 虚拟机上运行 Windows Server Active Directory 域服务 (AD DS) 或 Active Directory 联合身份验证服务 (AD FS)。" services="active-directory" documentationCenter="" authors="Justinha" manager="terrylan" editor="LisaToft"/>
+<properties 
+	pageTitle="Azure VM 上的 Windows Server Active Directory | Azure" 
+	description="你可以在 Azure 虚拟机上运行 Windows Server Active Directory 域服务 (AD DS) 或 Active Directory 联合身份验证服务 (AD FS)。" 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="markusvi" 
+	manager="stevenpo" 
+	tags="azure-classic-portal"/>
 
-<tags ms.service="active-directory" ms.date="04/27/2015" wacn.date="06/26/2015"/>
+<tags 
+	ms.service="active-directory" 
+	ms.date="04/07/2016" 
+	wacn.date="06/21/2016"/>
 
 
 # Azure VM 上的 Windows Server Active Directory
@@ -24,4 +34,8 @@
 - [以组织身份注册 Azure](/documentation/articles/sign-up-organization)
 - [Azure 标识](/documentation/articles/fundamentals-identity)
 
-<!---HONumber=61-->
+
+
+
+
+<!---HONumber=Mooncake_0613_2016-->

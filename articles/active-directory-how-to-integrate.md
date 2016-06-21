@@ -10,7 +10,7 @@
 <tags
    ms.service="active-directory"
    ms.date="02/02/2016"
-   wacn.date="06/03/2016" />
+   wacn.date="06/21/2016" />
 
 # 与 Azure Active Directory 集成
 
@@ -89,4 +89,4 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 [使用 Azure AD 登录用户](/documentation/articles/active-directory-authentication-scenarios)
 
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0613_2016-->

@@ -1,5 +1,5 @@
-<properties 
-	pageTitle="Azure Active Directory 版本" 
+<properties
+	pageTitle="Azure Active Directory 版本 | Azure"
 	description="一个介绍 Azure Active Directory 的免费版和付费版选项的主题。Azure Active Directory Basic 是免费版，而 Azure Active Directory Premium 是付费版。"
 	services="active-directory" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="02/16/2016"
-	wacn.date="06/03/2016" />
+	ms.date="05/12/2016"
+	wacn.date="06/21/2016" />
 
 # Azure Active Directory 版本
 
@@ -36,7 +36,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 ##比较正式推出的功能
 
-> [AZURE.NOTE] 有关此数据的不同视图，请参阅 [Azure Active Directory Capabilities（Azure Active Directory 功能）](https://www.microsoft.com/server-cloud/products/azure-active-directory/Features.aspx)。
+> [AZURE.NOTE] 有关此数据的不同视图，请参阅 [Azure Active Directory 功能](https://www.microsoft.com/en/server-cloud/products/azure-active-directory/features.aspx)。
 
 | | Azure AD Free | Azure AD Basic | Azure AD Premium |
 | ---                      | :-:           | :-:            | :-:              |
@@ -339,4 +339,4 @@ Microsoft 标识管理器服务器软件权限随 Windows Server 许可证（任
 <!--Image references-->
 [12]: ./media/active-directory-editions/ic195031.png
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0613_2016-->

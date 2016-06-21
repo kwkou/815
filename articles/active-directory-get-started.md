@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="02/01/2016"
-	wacn.date="06/03/2016"/>
+	ms.date="05/16/2016"
+	wacn.date="06/21/2016"/>
 
 # 如何开始使用 Azure AD
 
@@ -18,7 +18,7 @@
 > [AZURE.SELECTOR]
 - [什么是 Azure AD？](/documentation/articles/active-directory-whatis)
 - [工作原理](/documentation/articles/active-directory-works)
-- [后续步骤](/documentation/articles/active-directory-next-steps)
+- [入门](/documentation/articles/active-directory-get-started)<br> 
 - [后续步骤](/documentation/articles/active-directory-next-steps)<br>
 
 [了解详细信息](/documentation/articles/active-directory-learn-map)<br>
@@ -49,4 +49,4 @@
 * [Azure 标识](/documentation/articles/fundamentals-identity)
 
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0613_2016-->

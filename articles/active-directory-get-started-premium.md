@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="10/30/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="04/18/2016"
+	wacn.date="06/21/2016"/>
 
 # Azure Active Directory 高级版入门
 
@@ -136,6 +136,4 @@ Azure Active Directory 有三个版本：免费版 (Free)、基本版 (Basic) �
 [11]: ./media/active-directory-get-started-premium/Assignlicensespicker.png
 [12]: ./media/active-directory-get-started-premium/Usagelocation.png
 
-
-
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0613_2016-->

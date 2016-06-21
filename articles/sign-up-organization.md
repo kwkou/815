@@ -1,33 +1,34 @@
-<properties linkid="manage-services-identity-organization-account" urlDisplayName="Organization accounts" pageTitle="Sign up for Azure as an organization" metaKeywords="" description="Learn how you can use an organizational account to leverage the existing user accounts, policies, settings, or on-premise server deployments you already have improve efficiencies between your organization's on-premises identity infrastructure and Azure AD." metaCanonical="" services="active-directory" documentationCenter="" title="Sign up for Azure as an organization" authors="" solutions="" manager="" editor="" />
-<tags ms.service="active-directory"
-    ms.date="12/01/2014"
-    wacn.date="04/11/2015"
-    />
+<properties
+	pageTitle="以组织身份注册 Azure"
+	description="了解如何通过工作或学校帐户，来利用现有的用户帐户、策略、设置或已有的本地服务器部署，以及提高组织的本地标识基础结构与 Azure AD 之间的效率。"
+	services="active-directory"
+	documentationCenter=""
+	authors="markusvi"
+	manager="stevenpo"
+	editor=""/>
 
-# 作为组织注册 Azure
+<tags
+	ms.service="active-directory"
+	ms.date="04/07/2016"
+	wacn.date="06/21/2016"/>
 
-[WACOM.INCLUDE [免责声明](../includes/disclaimer.md)]
 
-在不久之前，你只能使用 Microsoft 帐户 (Windows Live ID) 注册一个新的 Azure 订阅。Azure 现在支持使用下列两种帐户方法之一进行注册：
+# 以组织身份注册 Azure
 
--   **Microsoft 帐户**（由你创建以供个人使用）- 提供对所有面向用户的 Microsoft 产品和云服务（如 Outlook (Hotmail)、Messenger、SkyDrive、MSN、Xbox LIVE 或 Office Live）的访问。注册 Outlook 将自动创建带 @Outlook.com 地址的 Microsoft 帐户。创建 Microsoft 帐户后，可将其用于访问与用户相关的 Microsoft 云服务和/或 Azure。[了解详细信息][了解详细信息]
+直到最近，您只能使用 Microsoft 帐户 (Windows Live ID) 注册一个新的 Microsoft Azure 订阅。Azure 现在支持使用下列两种帐户方法之一进行注册：
 
--   **组织帐户**（由管理员颁发以供企业/学院使用）- 提供对所有小型、中型和企业业务级 Microsoft 云服务（如 Azure、Windows Intune 或 Office 365）的访问。当你作为组织注册这些服务中的任一服务时，将在 Azure Active Directory 中自动设置基于云的租户以代表你的组织。[了解详细信息][1]
+* **Microsoft 帐户**（由你创建以供个人使用）— 提供对所有面向使用者的 Microsoft 产品和云服务（如 Outlook (Hotmail)、Messenger、OneDrive、MSN、Xbox LIVE 或 Office 365）的访问。注册 Outlook.com 邮箱将自动创建 Microsoft 帐户。创建 Microsoft 帐户后，可将其用于访问与使用者相关的 Microsoft 云服务或 Azure。[了解详细信息](http://www.microsoft.com/account/default.aspx)
 
-    创建此租户后，管理员可将组织帐户发给其每个员工/学生，并根据他们需要访问的云服务订阅（如 Azure）将许可分配给这些帐户。
+* **工作或学校帐户**（由管理员针对商业/学术用途颁发）— 提供对所有小型、中型和企业业务级 Microsoft 云服务（例如 Azure、Microsoft Intune 或 Office 365）的访问。当你以组织身份注册其中某个服务时，系统会在 Azure Active Directory 中自动预配一个基于云的目录，以代表你的组织。[了解详细信息](active-directory-administer.md)
 
-是否要作为组织注册 Azure？[**立即注册**][**立即注册**]
+	此目录创建后，管理员即可创建用户，并根据其需要访问的云服务订阅（例如 Azure），向其分配许可证。
+
+是否要作为组织注册 Azure？ [**立即注册**](/pricing/purchase-options/)
 
 **其他资源**
 
--   [Azure AD 是什么？][Azure AD 是什么？]
--   [TechNet 上的 Azure AD 库][TechNet 上的 Azure AD 库]
--   [MSDN 上的 Azure AD 库][MSDN 上的 Azure AD 库]
+* [Microsoft Azure 博客](http://azure.microsoft.com/blog/)
+* [什么是 Azure AD？](/documentation/articles/active-directory-whatis)
+* [在云中使用本地标识基础结构](/documentation/articles/active-directory-aadconnect)
 
-  [免责声明]: ../includes/disclaimer.md
-  [了解详细信息]: http://windows.microsoft.com/zh-cn/windows-live/sign-in-what-is-microsoft-account
-  [1]: http://technet.microsoft.com/zh-cn/library/jj573650
-  [**立即注册**]: https://account.windowsazure.cn/organization
-  [Azure AD 是什么？]: /documentation/articles/active-directory-whatis
-  [TechNet 上的 Azure AD 库]: http://technet.microsoft.com/zh-cn/library/hh967619.aspx
-  [MSDN 上的 Azure AD 库]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj673460.aspx
+<!---HONumber=Mooncake_0613_2016-->

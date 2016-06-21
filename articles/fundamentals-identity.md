@@ -1,9 +1,19 @@
-<properties linkid="dev-net-fundamentals-identity" urlDisplayName="Identity" pageTitle="Azure Identity" metaKeywords="Azure identity, Azure Active Directory, Azure AD, cloud identity ad, cloud active directory" description="Learn about using Active Directory in Azure." metaCanonical="" services="active-directory" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
-<tags ms.service="active-directory"
-    ms.date="09/01/2014"
-    wacn.date="04/11/2015"
-    />
+<properties
+	pageTitle="Azure 标识"
+	description="了解如何在 Azure 中使用 Active Directory。"
+	services="active-directory"
+	documentationCenter=".net"
+	authors="curtand"
+	manager="stevenpo"
+	editor=""/>
 
-[WACOM.INCLUDE [标识](../includes/identity.md)]
+<tags
+	ms.service="multiple"
+	ms.date="01/05/2016"
+	wacn.date="06/21/2016"/>
 
-  [标识]: ../includes/identity.md
+
+# Azure 标识管理基础知识
+[AZURE.INCLUDE [identity](../includes/identity.md)]
+
+<!---HONumber=Mooncake_0613_2016-->

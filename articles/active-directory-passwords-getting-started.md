@@ -1,5 +1,5 @@
 <properties
-	pageTitle="入门：Azure AD 密码管理 | Microsoft Azure"
+	pageTitle="入门：Azure AD 密码管理 | Azure"
 	description="使用户能够重置其自己的密码和了解密码重置先决条件，并启用密码写回来管理 Active Directory 中的本地密码。"
 	services="active-directory"
 	keywords="Active Directory 密码管理, 密码管理, 重置 Azure AD 密码"
@@ -11,7 +11,7 @@
 <tags 
 	ms.service="active-directory"  
 	ms.date="02/16/2016" 
-	wacn.date="04/28/2016"/>
+	wacn.date="06/21/2016"/>
 
 # 密码管理入门
 只要完成几个简单的步骤，就能让你的用户管理他们自己的云 Azure Active Directory 密码或本地 Active Directory 密码。在确保符合几个简单的先决条件之后，你将在不知不觉中为整个组织启用密码更改和重置。本文将引导你完成以下操作思路：
@@ -44,12 +44,12 @@
 - 创建 AAD 租户。有关详细信息，请参阅 [Azure AD 入门](/trial/get-started-active-directory/)。
 - 获取 Azure 订阅。有关详细信息，请参阅[什么是 Azure AD 租户？](/documentation/articles/active-directory-administer#what-is-an-azure-ad-tenant)
 - 将你的 AAD 租户与 Azure 订阅相关联。有关详细信息，请参阅 [Azure 订阅与 Azure AD 的关联方式](https://msdn.microsoft.com/zh-cn/library/azure/dn629581.aspx)。
-- 升级到 Azure AD Premium 或 Basic。有关详细信息，请参阅 [Azure Active Directory 版本](/home/features/identity/#price)。
+- 升级到 Azure AD Premium、Basic 或使用 O365 付费许可证。有关详细信息，请参阅 [Azure Active Directory 版本](/pricing/details/active-directory/)。
 
-  >[AZURE.NOTE] 若要为云用户启用自助密码重置，必须升级到 Azure AD Premium、Azure AD Basic 或 O365 付费许可证。若要为本地用户启用自助密码重置，必须升级到 Azure AD Premium。有关详细信息，请参阅“Azure Active Directory 版本”。这些信息包括以下任务的详细说明：如何注册 Azure AD Premium 或 Basic、如何激活你的许可计划并激活 Azure AD 访问权限，以及如何为管理员和用户帐户分配访问权限。
+  >[AZURE.NOTE] 若要为云用户启用自助密码重置，必须升级到 Azure AD Premium、Azure AD Basic 或 O365 付费许可证。中国 Azure 暂时没有Premium。 若要为本地用户启用自助密码重置，必须升级到 Azure AD Premium。有关详细信息，请参阅“Azure Active Directory 版本”。这些信息包括以下任务的详细说明：如何注册 Azure AD Premium 或 Basic、如何激活你的许可计划并激活 Azure AD 访问权限，以及如何为管理员和用户帐户分配访问权限。
 
 - 在 AAD 目录中创建至少一个管理员帐户和一个用户帐户。
-- 为所创建的管理员和用户帐户分配 AAD Premium 或 Basic 许可证。
+- 为所创建的管理员和用户帐户分配 AAD Premium、Basic 或 O365 付费许可证。
 
 ### <a name="step-1-configure-password-reset-policy"></a>步骤 1：配置密码重置策略
 若要配置用户密码重置策略，请完成以下步骤：
@@ -73,7 +73,7 @@
 
     ![][004]
 
-6.	若要配置用户密码重置策略，请将“可进行密码重置的用户”开关滑动到“是”设置。这将显示更多控件，通过这些控件你可以配置此功能在目录中的工作方式。根据需要随意自定义密码重置。如果你想详细了解每个密码重置策略控件的作用，请参阅[自定义：Azure AD 密码管理](/documentation/articles/active-directory-passwords-customize)。
+6.	若要配置用户密码重置策略，请将“可进行密码重置的用户”开关滑动到“是”设置。这将显示更多控件，通过这些控件你可以配置此功能如何在你目录中工作。根据需要随意自定义密码重置。如果你想详细了解每个密码重置策略控件的作用，请参阅[自定义：Azure AD 密码管理](/documentation/articles/active-directory-passwords-customize)。
 
     ![][005]
 

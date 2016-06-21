@@ -8,8 +8,8 @@
    editor="mbaldwin" />
 <tags
    ms.service="active-directory"
-   ms.date="09/17/2015"
-   wacn.date="01/29/2016" />
+   ms.date="03/18/2016"
+   wacn.date="06/21/2016" />
 
 # Azure Active Directory 图形 API
 
@@ -50,16 +50,16 @@ Azure Active Directory 图形 API 通过 REST API 终结点提供对 Azure AD �
 
 图形 API 可实现许多应用程序方案。以下方案最常见：
 
-- **业务线（单租户）应用程序**：在此方案中，一位企业开发人员为一个进行了 Office 365 订阅的组织工作。该开发人员要构建一个 Web 应用，该应用程序可与 Azure AD 交互以执行为用户分配许可证等任务。此任务需要访问图形 API，因此该开发人员在 Azure AD 中注册了单租户应用程序，并为图形 API 配置读取和写入权限。然后，该应用程序被配置为使用自己的凭据或当前登录用户的凭据来获取调用图形 API 所需的令牌。
+- **业务线（单租户）应用程序**：在此方案中，一位企业开发人员为一个进行了 Office 365 订阅的组织工作。该开发人员要构建一个 Web 应用程序，该应用程序可与 Azure AD 交互以执行为用户分配许可证等任务。此任务需要访问图形 API，因此该开发人员在 Azure AD 中注册了单租户应用程序，并为图形 API 配置读取和写入权限。然后，该应用程序被配置为使用自己的凭据或当前登录用户的凭据来获取调用图形 API 所需的令牌。
 
-- **“软件即服务”应用程序（多租户）：**在此方案中，独立软件供应商 (ISV) 要开发一个为使用 Azure AD 的其他组织提供用户管理功能的托管多租户 Web 应用。这些功能需要访问目录对象，因此该应用程序需要调用图形 API。开发人员在 Azure AD 中注册该应用程序，将它配置为需要对图形 API 的读取和写入权限，然后启用了外部访问，这样其他组织便可以同意在其目录中使用该应用程序。当其他组织中的用户首次向该应用程序进行身份验证时，他们会看到一个同意对话框，该对话框包含应用程序请求的权限。然后，授予许可将为该应用程序提供对用户目录中的图形 API 的请求权限。
+- **“软件即服务”应用程序（多租户）：**在此方案中，独立软件供应商 (ISV) 要开发一个为使用 Azure AD 的其他组织提供用户管理功能的托管多租户 Web 应用程序。这些功能需要访问目录对象，因此该应用程序需要调用图形 API。开发人员在 Azure AD 中注册该应用程序，将它配置为需要对图形 API 的读取和写入权限，然后启用了外部访问，这样其他组织便可以同意在其目录中使用该应用程序。当其他组织中的用户首次向该应用程序进行身份验证时，他们会看到一个同意对话框，该对话框包含应用程序请求的权限。然后，授予许可将为该应用程序提供对用户目录中的图形 API 的请求权限。有关同意框架的详细信息，请参阅[同意框架概述](/documentation/articles/active-directory-integrating-applications)。
 
 ## 另请参阅
 
-<!-- [Azure AD 图形 API 快速入门指南](/documentation/articles/active-directory-graph-api-quickstart)-->
+[Azure AD 图形 API 快速入门指南](/documentation/articles/active-directory-graph-api-quickstart)
 
-[AD Graph REST 文档](https://msdn.microsoft.com/library/azure/hh974476.aspx)
+[AD Graph REST 文档](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog)
 
 [Azure Active Directory 开发人员指南](/documentation/articles/active-directory-developers-guide)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0613_2016-->
