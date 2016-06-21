@@ -10,7 +10,7 @@
 <tags
    ms.service="sql-data-warehouse"
    ms.date="03/03/2016"
-   wacn.date="04/11/2016"/>
+   wacn.date="06/20/2016"/>
 
 #在 SQL 数据仓库中利用其他服务
 除了本身的核心功能以外，SQL 数据仓库还允许用户利用 Azure 中的其他许多服务。具体而言，我们目前已采取多种措施深度集成了以下服务：
@@ -25,12 +25,12 @@ Azure 流分析是复杂、完全托管的基础结构，用于处理和使用�
 
 + **作业输出**：将流分析作业的输出直接发送到 SQL 数据仓库。
 
-有关详细信息，请参阅[与 Azure 流分析集成](/documentation/articles/sql-data-warehouse-integrate-azure-stream-analytics)或 [Azure 流分析文档](/documentation/services/stream-analytics)。
+有关详细信息，请参阅[与 Azure 流分析集成](/documentation/articles/sql-data-warehouse-integrate-azure-stream-analytics)或 [Azure 流分析文档](/documentation/services/stream-analytics/)。
 
 <!--Image references-->
 
 <!--Article references-->
-[development overview]: /documentation/articles/sql-data-warehouse-overview-develop
+[development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 [Azure Data Factory]: /documentation/articles/sql-data-warehouse-integrate-azure-data-factory
 [Azure Machine Learning]: /documentation/articles/sql-data-warehouse-integrate-azure-machine-learning
@@ -42,4 +42,4 @@ Azure 流分析是复杂、完全托管的基础结构，用于处理和使用�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0613_2016-->
