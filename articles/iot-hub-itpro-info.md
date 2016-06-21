@@ -9,8 +9,8 @@
 
 <tags
  ms.service="iot-hub"
- ms.date="02/03/2016"
- wacn.date="03/18/2016"/>
+ ms.date="04/29/2016"
+ wacn.date="05/30/2016"/>
 
 # 配置和管理对 IoT 中心的访问权限
 
@@ -26,14 +26,15 @@
 | AMQP | 5671 |
 | 基于 WebSockets 的 AMQP | 443 |
 | MQTT | 8883 |
+| LWM2M（设备管理） | 5684 |
 
-在 Azure 区域中创建 IoT 中心后，该中心将在其生存期内保留同一个 IP 地址。但是，为维持服务质量，如果 Microsoft 将 IoT 中心转移到不同的缩放单位，则将为中心分配新 IP 地址。
+在 Azure 区域中创建 IoT 中心后，该中心将在其生存期内保留同一个 IP 地址。但是，为了维持服务质量，如果 Microsoft 将 IoT 中心转移到不同的缩放单位，则将为中心分配新 IP 地址。
 
 ## IoT 中心和安全性
 
-只有已注册到 IoT 中心的设备才能与该 IoT 中心通信。已注册的设备必须获得 *DeviceConnect* 权限。设备通过包含令牌（该令牌在设备发出的每个请求中封装设备唯一 ID）来标识自身，中心将检查令牌的有效性，以及设备是否未列入方块列表（*DeviceConnect* 权限已吊销）。
+只有已注册到 IoT 中心的设备才能与该 IoT 中心通信。已注册的设备必须获得 DeviceConnect 权限。设备通过包含令牌（该令牌在设备发出的每个请求中封装设备唯一 ID）来标识自身，中心将检查令牌的有效性，以及设备是否未列入黑名单（DeviceConnect 权限已吊销）。
 
-对 IoT 中心内的其他管理终结点的访问权限也是通过一组权限进行控制的：*iothubowner*、*service*、*registryRead* 和 *registryReadWrite*。连接到 IoT 中心的所有客户端管理应用程序都必须包含具有相应权限的令牌。
+对 IoT 中心内的其他管理终结点的访问权限也是通过一组权限进行控制的：iothubowner、service、registryRead 和 registryReadWrite。连接到 IoT 中心的所有客户端管理应用程序都必须包含具有相应权限的令牌。
 
 ## 后续步骤
 

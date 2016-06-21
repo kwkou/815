@@ -10,7 +10,7 @@
 <tags
      ms.service="iot-hub"
      ms.date="03/22/2016"
-     wacn.date="05/05/2016"/>
+     wacn.date="05/30/2016"/>
 
 # 适用于 Node.js 的 Azure IoT 中心入门
 

@@ -9,8 +9,8 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="02/12/2016"
-     wacn.date="05/05/2016"/>
+     ms.date="05/03/2016"
+     wacn.date="05/30/2016"/>
 
 # 教程：使用 C# 程序和 REST API 创建 IoT 中心
 
@@ -57,7 +57,7 @@
     using Newtonsoft.Json;
     ```
     
-7. 在 Program.cs 中，将占位符值替换为以下静态变量。在本教程前面的介绍中，你已记下 **ApplicationId**、**SubscriptionId**、**TenantId** 和 **Password**。**Resource group name** 是创建 IoT 中心时要使用的资源组名称，可以是现有的资源组或新资源组。**IoT 中心名称**是要创建的 IoT 中心的名称，例如 **MyIoTHub**（请注意此名称必须全局唯一）。**Deployment name** 是部署的名称，例如 **Deployment\_01**。
+7. 在 Program.cs 中，将占位符值替换为以下静态变量。在本教程前面的介绍中，你已记下 **ApplicationId**、**SubscriptionId**、**TenantId** 和 **Password**。**Resource group name** 是创建 IoT 中心时要使用的资源组名称，可以是现有的资源组或新资源组。**IoT 中心名称**是要创建的 IoT 中心的名称，例如 **MyIoTHub**（请注意，此名称必须全局唯一，因此应当包含你的姓名或姓名的首字母缩写）。**Deployment name** 是部署的名称，例如 **Deployment\_01**。
 
     ```
     static string applicationId = "{Your ApplicationId}";
@@ -66,7 +66,7 @@
     static string password = "{Your application Password}";
     
     static string rgName = "{Resource group name}";
-    static string iotHubName = "{IoT Hub name}";
+    static string iotHubName = "{IoT Hub name including your initials}";
     ```
 
 [AZURE.INCLUDE [iot-hub-get-access-token](../includes/iot-hub-get-access-token.md)]
@@ -134,7 +134,7 @@
       Thread.Sleep(10000);
       HttpResponseMessage deploymentstatus = client.GetAsync(asyncStatusUri).Result;
       body = deploymentstatus.Content.ReadAsStringAsync().Result;
-    } while (body == "{'Status':'Running'}");
+    } while (body == "{'Status\':'Running'}");
     ```
 
 6. 将以下代码添加到 **CreateIoTHub** 方法末尾，以检索创建的 IoT 中心密钥并将其输出到控制台：

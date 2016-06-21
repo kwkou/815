@@ -9,8 +9,8 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="12/21/2015"
-     wacn.date="05/05/2016"/>
+     ms.date="03/22/2016"
+     wacn.date="05/30/2016"/>
 
 # 适用于 Java 的 Azure IoT 中心入门
 
@@ -40,9 +40,9 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个物联网 (Io
 
 若要完成本教程，你需要以下各项：
 
-+ Java SE 8。
++ Java SE 8。<br/>[准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Java。
 
-+ Maven 3。
++ Maven 3。<br/>[准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Maven。
 
 + 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][lnk-free-trial]。
 

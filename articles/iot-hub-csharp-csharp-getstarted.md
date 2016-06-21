@@ -10,7 +10,7 @@
 <tags
      ms.service="iot-hub"
      ms.date="03/22/2016"
-     wacn.date="05/05/2016"/>
+     wacn.date="05/30/2016"/>
 
 # 适用于 .NET 的 Azure IoT 中心入门
 
@@ -18,7 +18,7 @@
 
 ## 介绍
 
-Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备和一个解决方案后端之间实现安全可靠的双向通信。IoT 项目面临的最大挑战之一是如何可靠且安全地将设备连接到解决方案后端。为了解决此难题，IoT 中心：
+Azure IoT 中心是一项完全托管的服务，可在数百万个物联网 (IoT) 设备和一个解决方案后端之间实现安全可靠的双向通信。IoT 项目面临的最大挑战之一是如何可靠且安全地将设备连接到解决方案后端。为了解决此难题，IoT 中心：
 
 - 提供可靠的设备到云和云到设备的超大规模消息传送。
 - 使用每个设备的安全凭据和访问控制来实现安全通信。
@@ -50,7 +50,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 现在，你已准备就绪，可以运行应用程序了。
 
-1.	在 Visual Studio 的解决方案资源管理器中右键单击你的解决方案，然后单击“设置启动项目”。选择“多个启动项目”，然后针对 **ReadDeviceToCloudMessages** 和 **SimulatedDevice** 项目选择“启动”作为“操作”。
+1.	在 Visual Studio 的解决方案资源管理器中右键单击你的解决方案，然后单击“设置启动项目”。选择“多个启动项目”，然后针对“ReadDeviceToCloudMessages”和“SimulatedDevice”项目选择“启动”作为“操作”。
 
    	![][41]
 
@@ -67,14 +67,17 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 在本教程中，你已在门户中配置了新的 IoT 中心，然后在中心的标识注册表中创建了设备标识。你已使用此设备标识来让模拟设备应用向中心发送设备到云的消息，并创建了用于显示中心所接收消息的应用。可以使用以下教程继续探索 IoT 中心功能和其他 IoT 方案：
 
-- [使用 IoT 中心发送云到设备的消息][lnk-c2d-tutorial]说明了如何将消息发送到设备，并处理 IoT 中心生成的传送反馈。
-- [处理设备到云的消息][lnk-process-d2c-tutorial]说明了如何可靠处理来自设备的遥测数据和交互消息。
-- [从设备上载文件][lnk-upload-tutorial]介绍了使用云到设备的消息来帮助从设备上载文件的模式。
+- [使用 IoT 中心发送云到设备的消息][lnk-c2d-tutorial]介绍了如何将消息发送到设备，并处理 IoT 中心生成的传送反馈。
+- [处理设备到云的消息][lnk-process-d2c-tutorial]介绍了如何可靠地处理来自设备的遥测数据和交互消息。
+- [从设备上载文件][lnk-upload-tutorial]介绍了一种模式，该模式利用云到设备的消息来帮助从设备上载文件。
 
 <!-- Images. -->
 [41]: ./media/iot-hub-csharp-csharp-getstarted/run-apps1.png
 [42]: ./media/iot-hub-csharp-csharp-getstarted/run-apps2.png
 [43]: ./media/iot-hub-csharp-csharp-getstarted/usage.png
+[10]: ./media/iot-hub-csharp-csharp-getstarted/create-identity-csharp1.png
+[11]: ./media/iot-hub-csharp-csharp-getstarted/create-identity-csharp2.png
+[12]: ./media/iot-hub-csharp-csharp-getstarted/create-identity-csharp3.png
 
 <!-- Links -->
 [lnk-c2d-tutorial]: /documentation/articles/iot-hub-csharp-csharp-c2d
