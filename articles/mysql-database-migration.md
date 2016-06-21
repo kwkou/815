@@ -54,7 +54,7 @@ MySQL Database on Azure兼容MySQL 5.5 和 MySQL 5.6，所以绝大部分应用�
 
 9.1 在您的客户端通过mysql.exe连接新创建的MySQL服务器 （注意：如果您不是从Azure的VM上导入数据您需要把客户端加入IP白名单中）： 
 
-	mysqlmysql -h<服务器地址> -P<端口号> –u<用户名> -p<密码> 
+	mymysqlmysql --h<服务器地址> -P<端口号> –u<用户名> -p<密码> 
 
 9.2 从SQL命令行导入数据： 
 	
