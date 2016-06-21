@@ -42,7 +42,7 @@ MySQL Database on Azure兼容MySQL 5.5 和 MySQL 5.6，所以绝大部分应用�
 7.从当前数据库服务器导出应用数据库到一个文件。您可以用您熟悉的工具比如mysqldump，workbench，等等。下面是用mysqldump导出数据库的例子: 
 
 
-	mysqldump --databases <数据库名> --single-transaction --order-by-primary -r <备份文件名> --routines -h<服务器地址> -P<端口号> –u<用户名> -p<密码> 
+	mysqldumysqldump --databases <数据库名> --single-transaction --order-by-primary -r <备份文件名> --routines -h<服务器地址> -P<端口号> –u<用户名> -p<密码> 
 
 
 8.如果数据文件比较大，建议先把数据文件传输到Azure上的一台VM上（应在同一个数据中心），您可以用您熟悉的数据传输工具（比如FTP或AzCopy等），这样可以避免因网络连接中断导致整个数据传输过程失败。如果备份文件很大，可以压缩后上传。 
@@ -54,7 +54,7 @@ MySQL Database on Azure兼容MySQL 5.5 和 MySQL 5.6，所以绝大部分应用�
 
 9.1 在您的客户端通过mysql.exe连接新创建的MySQL服务器 （注意：如果您不是从Azure的VM上导入数据您需要把客户端加入IP白名单中）： 
 
-	mysql -h<服务器地址> -P<端口号> –u<用户名> -p<密码> 
+	mysqlmysql -h<服务器地址> -P<端口号> –u<用户名> -p<密码> 
 
 9.2 从SQL命令行导入数据： 
 	
