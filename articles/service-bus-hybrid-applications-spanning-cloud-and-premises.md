@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="启用跨云和本地的混合应用程序 | Microsoft Azure" 
+	pageTitle="启用跨云和本地的混合应用程序 | Azure" 
 	description="了解如何构建跨云和本地的混合应用程序。" 
 	services="service-bus" 
 	documentationCenter=".net" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="01/26/2016" 
-	wacn.date="03/28/2016"/>
+	ms.date="05/06/2016" 
+	wacn.date="06/21/2016"/>
 
 # 启用跨云和本地的混合应用程序
 

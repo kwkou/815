@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 Node.js 使用服务总线主题 | Microsoft Azure" 
+	pageTitle="如何通过 Node.js 使用服务总线主题 | Azure" 
 	description="了解如何在来自 Node.js 应用的 Azure 中使用服务总线主题和订阅。" 
 	services="service-bus" 
 	documentationCenter="nodejs" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="02/08/2016" 
-	wacn.date="03/28/2016"/>
+	ms.date="05/10/2016" 
+	wacn.date="06/21/2016"/>
 
 
 # 如何使用服务总线主题和订阅

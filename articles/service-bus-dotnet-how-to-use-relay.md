@@ -9,19 +9,19 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="10/07/2015"
-	wacn.date="01/14/2016"/>
+	ms.date="05/06/2016"
+	wacn.date="06/21/2016"/>
 
 
 # 如何使用 Azure 服务总线中继服务
 
-本文介绍如何使用服务总线中继服务。相关示例用 C# 编写并使用服务总线程序集（服务总线程序集是 Azure .NET SDK 的一部分）中包含的 Windows Communication Foundation (WCF) API 及扩展。有关服务总线中继的详细信息，请参阅[服务总线中继消息传送](/documentation/articles/service-bus-relay-overview)概述。
+本文介绍如何使用服务总线中继服务。相关示例用 C# 编写并使用服务总线程序集中包含的 Windows Communication Foundation (WCF) API 及扩展。有关服务总线中继的详细信息，请参阅[服务总线中继消息传送](/documentation/articles/service-bus-relay-overview)概述。
 
 [AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 ## 什么是服务总线中继？
 
-[服务总线*中继*服务](/documentation/articles/service-bus-relay-overview)使你能构建可在 Azure 数据中心和你自己的本地企业环境中运行的混合应用程序。服务总线中继可简化这一过程，它允许你安全地向公有云公开位于企业网络内的 Windows Communication Foundation (WCF) 服务，而无需打开防火墙连接，也无需对企业网络基础结构进行彻底的更改。
+[服务总线“中继”服务](/documentation/articles/service-bus-relay-overview)使你能构建可在 Azure 数据中心和你自己的本地企业环境中运行的混合应用程序。服务总线中继可简化这一过程，它允许你安全地向公有云公开位于企业网络内的 Windows Communication Foundation (WCF) 服务，而无需打开防火墙连接，也无需对企业网络基础结构进行彻底的更改。
 
 ![中继概念](./media/service-bus-dotnet-how-to-use-relay/sb-relay-01.png)
 
@@ -31,7 +31,7 @@
 
 ## 创建服务命名空间
 
-若要开始在 Azure 中使用服务总线中继，必须先创建一个服务命名空间。命名空间提供了用于对应用程序中的 Service Bus 资源进行寻址的范围容器。
+若要开始在 Azure 中使用服务总线中继，必须先创建一个命名空间。命名空间提供了用于对应用程序中的 Service Bus 资源进行寻址的范围容器。
 
 创建服务命名空间：
 
@@ -50,7 +50,7 @@
 
 5.  在确保命名空间名称可用后，选择应承载您的命名空间的国家或地区（确保使用在其中部署计算资源的同一国家/地区）。
 
-	> [AZURE.IMPORTANT]选取要选择用于部署应用程序的*相同区域*。这将为您提供最佳性能。
+	> [AZURE.IMPORTANT] 选取要选择用于部署应用程序的“相同区域”。这将为您提供最佳性能。
 
 6.	将对话框中的其他字段保留为其默认值（“消息传送”和“标准”层），然后单击复选标记。系统现已创建命名空间并已将其启用。您可能需要等待几分钟，因为系统将为您的帐户配置资源。
 
@@ -76,9 +76,7 @@
 
 ## 获取服务总线 NuGet 包
 
-服务总线 NuGet 包是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。利用 NuGet Visual Studio 扩展，可以轻松地在 Visual Studio 和 Visual Studio Express 中安装和更新库和工具。服务总线 NuGet 包是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。
-
-要在你的应用程序中安装 NuGet 包，请执行以下操作：
+[服务总线 NuGet 包](https://www.nuget.org/packages/WindowsAzure.ServiceBus)是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。要在你的应用程序中安装 NuGet 包，请执行以下操作：
 
 1.  在解决方案资源管理器中，右键单击“引用”，然后单击“管理 NuGet 包”。
 2.  搜索“服务总线”并选择“Azure 服务总线”项。单击“安装”以完成安装，然后关闭以下对话框。
@@ -266,14 +264,10 @@ using (var ch = cf.CreateChannel())
 
 现在，你已了解服务总线中继服务的基础知识，请访问以下链接以了解更多信息。
 
+- [服务总线中继消息传送概述](/documentation/articles/service-bus-relay-overview)
 - [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
-- [如何使用 Service Bus 中继服务](/documentation/articles/service-bus-dotnet-how-to-use-relay)
 - 从 [Azure 示例][]下载服务总线示例，或参阅[服务总线示例概述][]。
 
-  [Create a Service Namespace]: #create_namespace
-  [Obtain the Default Management Credentials for the Namespace]: #obtain_credentials
-  [Get the Service Bus NuGet Package]: #get_nuget_package
-  [How to: Use Service Bus to Expose and Consume a SOAP Web Service  with TCP]: #how_soap
   [Azure 经典门户]: http://manage.windowsazure.cn
   [使用服务总线进行共享访问签名身份验证]: /documentation/articles/service-bus-shared-access-signature-authentication
   [Azure 示例]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2

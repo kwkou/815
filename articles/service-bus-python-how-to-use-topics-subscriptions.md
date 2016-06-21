@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="01/26/2016" 
-	wacn.date="03/28/2016"/>
+	ms.date="05/06/2016" 
+	wacn.date="06/21/2016"/>
 
 # 如何使用服务总线主题和订阅
 
@@ -119,7 +119,7 @@ for i in range(5):
 	bus_service.send_topic_message('mytopic', msg)
 ```
 
-Service Bus 主题支持最大为 256 MB 的消息（标头最大为 64 MB，其中包括标准和自定义应用程序属性）。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。有关配额的详细信息，请参阅 [Azure 队列和服务总线队列][]。
+Service Bus 主题支持最大为 256 MB 的消息（标头最大为 64 MB，其中包括标准和自定义应用程序属性）。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。有关配额的详细信息，请参阅[服务总线配额][]。
 
 ## 从订阅接收消息
 
@@ -176,6 +176,6 @@ bus_service.delete_subscription('mytopic', 'HighMessages')
 [Python Azure 包]: https://pypi.python.org/pypi/azure
 [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
 [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
-[Azure 队列和服务总线队列]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas
+[服务总线配额]: /documentation/articles/service-bus-quotas
 
 <!---HONumber=Mooncake_0104_2016-->

@@ -8,8 +8,8 @@
    editor="tysonn" /> 
 <tags 
    ms.service="service-bus"
-   ms.date="10/07/2015"
-   wacn.date="01/14/2016" />
+   ms.date="05/06/2016"
+   wacn.date="06/21/2016" />
 
 # 使用 AMQP 1.0 通过 Java 使用服务总线
 

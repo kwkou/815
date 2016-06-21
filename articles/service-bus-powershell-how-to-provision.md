@@ -1,6 +1,6 @@
 <properties
 	pageTitle="使用 PowerShell 管理服务总线 | Azure"
-	description="使用 PowerShell 脚本而不是 .NET 来管理服务总线"
+	description="使用 PowerShell 脚本管理服务总线"
 	services="service-bus"
 	documentationCenter=".net"
 	authors="sethmanheim"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="02/08/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="05/02/2016"
+	wacn.date="06/21/2016"/>
 
 # 使用 PowerShell 管理服务总线
 
@@ -41,25 +41,24 @@ Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和�
 
 下面说明如何在 PowerShell 脚本中实现这些步骤：
 
+```
+try
+{
+    # WARNING: Make sure to reference the latest version of Microsoft.ServiceBus.dll
+    Write-Output "Adding the [Microsoft.ServiceBus.dll] assembly to the script..."
+    $scriptPath = Split-Path (Get-Variable MyInvocation -Scope 0).Value.MyCommand.Path
+    $packagesFolder = (Split-Path $scriptPath -Parent) + "\packages"
+    $assembly = Get-ChildItem $packagesFolder -Include "Microsoft.ServiceBus.dll" -Recurse
+    Add-Type -Path $assembly.FullName
 
-    try
-    {
-        # WARNING: Make sure to reference the latest version of Microsoft.ServiceBus.dll
-        Write-Output "Adding the [Microsoft.ServiceBus.dll] assembly to the script..."
-        $scriptPath = Split-Path (Get-Variable MyInvocation -Scope 0).Value.MyCommand.Path
-        $packagesFolder = (Split-Path $scriptPath -Parent) + "\packages"
-        $assembly = Get-ChildItem $packagesFolder -Include "Microsoft.ServiceBus.dll" -Recurse
-        Add-Type -Path $assembly.FullName
-    
-        Write-Output "The [Microsoft.ServiceBus.dll] assembly has been successfully added to the script."
-    }
-    
-    catch [System.Exception]
-    {
-        Write-Error("Could not add the Microsoft.ServiceBus.dll assembly to the script. Make sure you build the solution before running the provisioning script.")
-    }
+    Write-Output "The [Microsoft.ServiceBus.dll] assembly has been successfully added to the script."
+}
 
-
+catch [System.Exception]
+{
+    Write-Error("Could not add the Microsoft.ServiceBus.dll assembly to the script. Make sure you build the solution before running the provisioning script.")
+}
+```
 
 ## 设置 Service Bus 命名空间
 
@@ -152,6 +151,20 @@ Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和�
     	$NamespaceManager.CreateConsumerGroupIfNotExists($ConsumerGroupDescription);
     	Write-Output "The consumer group [$ConsumerGroupName] for the [$Path] event hub has been successfully created."
 
+## 将命名空间迁移到另一个 Azure 订阅
+
+通过运行以下顺序的命令，可在 Azure 订阅之间移动命名空间。若要执行此操作，命名空间必须已经处于活动状态，而且运行 PowerShell 命令的用户必须既是源订阅又是目标订阅的管理员。
+
+```
+# Create a new resource group in target subscription
+Select-AzureRmSubscription -SubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff'
+New-AzureRmResourceGroup -Name 'targetRP' -Location 'China East'
+
+# Move namespace from source subscription to target subscription
+Select-AzureRmSubscription -SubscriptionId 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+$res = Find-AzureRmResource -ResourceNameContains mynamespace -ResourceType 'Microsoft.ServiceBus/namespaces'
+Move-AzureRmResource -DestinationResourceGroupName 'targetRP' -DestinationSubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff' -ResourceId $res.ResourceId
+```
 
 ## 后续步骤
 

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="02/08/2016" 
-	wacn.date="03/28/2016"/>
+	ms.date="05/10/2016" 
+	wacn.date="06/21/2016"/>
 # 如何使用服务总线主题和订阅
 
 [AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
@@ -228,13 +228,13 @@ for($i = 0; $i < 5; $i++){
 }
 ```
 
-Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。队列大小的上限为 5 GB。有关配额的详细信息，请参阅 [Azure 队列和服务总线队列][]。
+Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。队列大小的上限为 5 GB。有关配额的详细信息，请参阅[服务总线配额][]。
 
 ## 从订阅接收消息
 
 从订阅接收消息的最佳方式是使用 **ServiceBusRestProxy->receiveSubscriptionMessage** 方法。收到的消息可在两种不同模式下工作：**ReceiveAndDelete**（默认）和 **PeekLock**。
 
-当使用 **ReceiveAndDelete** 模式时，接收是一个单步操作，即，当服务总线接收订阅中的消息读取请求时，它会将消息标记为“正在使用”并将其返回给应用程序。**ReceiveAndDelete** 模式是最简单的模式，最适合应用程序允许出现故障时不处理消息的方案。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于 Service Bus 会将消息标记为“将使用”，因此当应用程序重启并重新开始使用消息时，它会丢失在发生崩溃前使用的消息。
+当使用 **ReceiveAndDelete** 模式时，接收是一个单步操作 - 即，当服务总线接收订阅中的消息读取请求时，它会将消息标记为“正在使用”并将其返回给应用程序。**ReceiveAndDelete** 模式是最简单的模式，最适合应用程序允许出现故障时不处理消息的方案。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于 Service Bus 会将消息标记为“将使用”，因此当应用程序重启并重新开始使用消息时，它会丢失在发生崩溃前使用的消息。
 
 在 **PeekLock** 模式下，接收消息会变成一个两阶段操作，这将能够支持不能允许丢失消息的应用程序。当 Service Bus 收到请求时，它会查找下一条要使用的消息，锁定该消息以防其他使用者接收，然后将该消息返回到应用程序。在应用程序处理完消息（或以可靠方式存储消息以供将来处理）后，它通过将收到的消息传送到 **ServiceBusRestProxy->deleteMessage** 来完成接收过程的第二个阶段。当服务总线发现 **deleteMessage** 调用时，它会将消息标记为“正在使用”并将其从队列中删除。
 
@@ -330,6 +330,6 @@ $serviceBusRestProxy->deleteSubscription("mytopic", "mysubscription");
 [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
 [sqlfilter]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
 [require-once]: http://php.net/require_once
-[Azure 队列和服务总线队列]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas
+[服务总线配额]: /documentation/articles/service-bus-quotas
 
 <!---HONumber=82-->
