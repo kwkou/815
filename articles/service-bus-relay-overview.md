@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="01/26/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="05/06/2016"
+	wacn.date="06/21/2016"/>
 
 
 # 服务总线中继消息传送
@@ -27,7 +27,7 @@
 
 ## 后续步骤
 
-有关服务总线中继的深入详细信息，请参阅以下主题。
+有关服务总线中继的详细信息，请参阅以下主题。
 
 - [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 

@@ -5,11 +5,11 @@
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
-   editor="tysonn" /> 
+   editor="" /> 
 <tags 
    ms.service="service-bus"
-   ms.date="10/15/2015"
-   wacn.date="01/14/2016" />
+   ms.date="05/06/2016"
+   wacn.date="06/21/2016" />
 
 # 使用 AMQP 1.0 通过 .NET 使用服务总线
 

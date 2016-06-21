@@ -9,8 +9,8 @@
 
 <tags
     ms.service="service-bus"
-    ms.date="10/07/2015"
-    wacn.date="01/21/2016"/>
+    ms.date="05/09/2016"
+    wacn.date="06/21/2016"/>
 
 # 如何使用 Service Bus 队列
 
@@ -22,13 +22,9 @@
 
 [AZURE.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
 
-## 配置应用程序以使用 Service Bus
-
-在您创建使用 Service Bus 的应用程序时，必须添加对 Service Bus 程序集的引用并包括相应的命名空间。
-
 ## 添加服务总线 NuGet 包
 
-服务总线 **NuGet** 包是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。利用 NuGet Visual Studio 扩展，可以轻松地在 Visual Studio 和 Visual Studio Express 中安装和更新库和工具。服务总线 NuGet 包是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。
+[服务总线 NuGet 包](https://www.nuget.org/packages/WindowsAzure.ServiceBus)是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。要在你的应用程序中安装 NuGet 包，请执行以下操作：
 
 要在你的应用程序中安装 NuGet 包，请执行以下操作：
 
@@ -44,13 +40,13 @@
 服务总线使用连接字符串来存储终结点和凭据。你可以将连接字符串置于配置文件中，而不是对其进行硬编码：
 
 - 当使用 Azure 云服务时，建议你使用 Azure 服务配置系统（.csdef 和 .cscfg 文件）来存储连接字符串。
-- 在使用 Azure Web 应用或 Azure 虚拟机时，建议使用 .NET 配置系统（如 Web.config 文件）来存储连接字符串。
+- 在使用 Azure 网站或 Azure 虚拟机时，建议使用 .NET 配置系统（如 Web.config 文件）来存储连接字符串。
 
 在上述两种情况下，你都可以使用 [CloudConfigurationManager.GetSetting][GetSetting] 方法检索连接字符串，本文稍后部分将对此进行介绍。
 
-### 使用云服务时配置连接字符串
+### 配置连接字符串
 
-该服务配置机制是 Azure 云服务项目特有的，它使你能够从 [Azure 经典门户][]动态更改配置设置，而无需重新部署你的应用程序。例如，向服务定义 (.csdef) 文件中添加 `Setting` 标签，如以下示例所示。
+利用该服务配置机制，你可以从 [Azure 经典门户][]动态更改配置设置，而无需重新部署应用程序。例如，向服务定义 (.csdef) 文件中添加 `Setting` 标签，如以下示例所示。
 
 ```
 <ServiceDefinition name="Azure1">
@@ -80,9 +76,9 @@
 
 使用从 Azure 经典门户检索到的共享访问签名 (SAS) 密钥名称和密钥值，如上一部分中所述。
 
-### 在使用 Web 应用或 Azure 虚拟机时配置连接字符串
+### 在使用网站或 Azure 虚拟机时配置连接字符串
 
-在使用 Web 应用或虚拟机时，建议你使用 .NET 配置系统（如 **Web.config**）。你可以使用 `<appSettings>` 元素存储连接字符串：
+在使用网站或虚拟机时，建议你使用 .NET 配置系统（如 **Web.config**）。你可以使用 `<appSettings>` 元素存储连接字符串：
 
 ```
 <configuration>
@@ -179,7 +175,7 @@ for (int i=0; i<5; i++)
 }
 ```
 
-服务总线队列支持[最大为 256 Kb 的消息](/documentation/articles/service-bus-quotas)（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。如果启用了分区，则上限更高。有关详细信息，请参阅[分区消息实体](/documentation/articles/service-bus-partitioning)。
+服务总线队列支持[最大为 256 Kb 的消息](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas)（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。如果启用了分区，则上限更高。有关详细信息，请参阅[分区消息传送实体](/documentation/articles/service-bus-partitioning)。
 
 ## 如何从队列接收消息
 
@@ -233,7 +229,7 @@ Client.OnMessage((message) =>
 还存在与队列中已锁定消息关联的超时，并且如果应用程序无法在锁定超时到期之前处理消息（例如，如果应用程序崩溃），服务总线将自动解锁该消息并使它可再次被接收。
 
 如果应用程序在处理消息之后，但在发出 [Complete][] 请求之前发生崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的 [MessageId](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.messageid.aspx) 属性来实现，该属性在多次传送尝试中保持不变。
-
+ 
 ## 后续步骤
 
 现在，你已了解有关 Service Bus 队列的基础知识，单击下面的链接可了解更多信息。

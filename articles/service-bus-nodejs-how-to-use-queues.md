@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何通过 Node.js 使用服务总线队列 | Microsoft Azure" 
+	pageTitle="如何通过 Node.js 使用服务总线队列 | Azure" 
 	description="了解如何在来自 Node.js 应用程序的 Azure 中使用服务总线队列。" 
 	services="service-bus" 
 	documentationCenter="nodejs" 
@@ -9,14 +9,14 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="01/26/2016" 
-	wacn.date="03/28/2016"/>
+	ms.date="05/06/2016" 
+	wacn.date="06/21/2016"/>
 
 # 如何使用 Service Bus 队列
 
 [AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
 
-本文介绍了如何使用服务总线队列。示例用 JavaScript 编写并使用 Node.js Azure 模块。涉及的任务包括**创建队列**、**发送和接收消息**以及**删除队列**。有关队列的详细信息，请参阅 [后续步骤][] 部分。
+本文介绍如何通过 Node.js 使用服务总线队列。示例用 JavaScript 编写并使用 Node.js Azure 模块。涉及的任务包括**创建队列**、**发送和接收消息**以及**删除队列**。有关队列的详细信息，请参阅 [后续步骤][] 部分。
 
 [AZURE.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
 
@@ -142,7 +142,7 @@ serviceBusService.sendQueueMessage('myqueue', message, function(error){
 });
 ```
 
-Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。有关配额的详细信息，请参阅 [Azure 队列和服务总线队列][]。
+Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。有关配额的详细信息，请参阅[服务总线配额][]。
 
 ## 从队列接收消息
 
@@ -182,7 +182,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 ## 后续步骤
 
-若要了解更多信息，请参阅下列资源。
+若要了解有关队列的详细信息，请参阅以下资源。
 
 -   [队列、主题和订阅][]
 -   GitHub 上的 [Azure SDK for Node][] 存储库
@@ -196,6 +196,6 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   [创建 Node.js 应用程序并将其部署到 Azure 网站]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
   [使用存储构建 Node.js 云服务]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
   [使用存储构建 Node.js Web 应用程序]: /documentation/articles/storage-nodejs-how-to-use-table-storage
-  [Azure 队列和服务总线队列]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas
+  [服务总线配额]: /documentation/articles/service-bus-quotas
 
 <!---HONumber=Mooncake_0104_2016-->

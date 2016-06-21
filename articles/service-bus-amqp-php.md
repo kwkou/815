@@ -5,11 +5,11 @@
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
-   editor="tysonn" /> 
+   editor="" /> 
 <tags 
    ms.service="service-bus"
-   ms.date="10/07/2015"
-   wacn.date="11/27/2015" />
+   ms.date="05/66/2016"
+   wacn.date="06/21/2016" />
 
 # 使用 AMQP 1.0 通过 PHP 使用服务总线
 
@@ -108,7 +108,7 @@ Console.WriteLine();
 | double | double |
 | 布尔值 | bool |
 | 字符串 | 字符串 |
-| object | 对象 |
+| 对象 | 对象 |
 
 #### 服务总线 .NET API 到 PHP
 

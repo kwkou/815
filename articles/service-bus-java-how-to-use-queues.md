@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何通过 Java 使用服务总线队列 | Microsoft Azure"
+	pageTitle="如何通过 Java 使用服务总线队列 | Azure"
 	description="了解如何在 Azure 中使用 Service Bus 队列。用 Java 编写的代码示例。"
 	services="service-bus"
 	documentationCenter="java"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="01/26/2016"
-	wacn.date="04/01/2016"/>
+	ms.date="05/06/2016"
+	wacn.date="06/21/2016"/>
 
 # 如何使用 Service Bus 队列
 
