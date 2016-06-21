@@ -35,10 +35,7 @@ If your system can accept a relatively long period of downtime (for example, 1-2
 6\. Once all the preparatory work is complete, start the migration. First close the application or run it in read-only mode (if supported), as this will avoid the creation of new data during the migration process.
 
 
-7\. Export the application database from the current database server to a file. You can use a tool that you are familiar with, such as mysqldump or Workbench. The following example uses mysqldump to export a database:
-
-
-	mysqldumysqldump --databases <database name> --single-transaction --order-by-primary -r <backup file name> --routines -h<server address> -P<port number> –u<user name> -p<password> 
+7\. Export the application database from the current database server to a file. You can use a tool that you are familiar with, such as mysqldump or Workbench. The following example uses mysqldump to export a database: mysqldump --databases <database name\> --single-transaction --order-by-primary -r <backup file name\> --routines -h<server address\> -P<port number\> –u<user name\> -p<password\> 
 
 
 8\. If the database file is relatively large, first transfer the database file to a VM (which should be in the same data center) on Azure. You can do this using a data transfer tool that you are familiar with, such as FTP or AzCopy. This method prevents the entire database transfer process from failing if the Internet connection drops out. If the backup file is very large, you can compress it before uploading.
@@ -47,14 +44,10 @@ If your system can accept a relatively long period of downtime (for example, 1-2
 9\. Import the database data into the target database. You can use a tool that you are familiar with, such as mysql.exe or Workbench. The following example uses mysql.exe to import the database.
 
 
+9\.1 Connect to the newly created MySQL server on your client using mysql.exe (note: if you are not importing the data from a VM on Azure, you need to add the client to the IP safe list): mysql -h<server address\> -P<port number\> –u<user name\> -p<password\>
+ 
 
-9\.1 Connect to the newly created MySQL server on your client using mysql.exe (note: if you are not importing the data from a VM on Azure, you need to add the client to the IP safe list):
-
-	mymysql -h<server address> -P<port number> –u<user name> -p<password> 
-
-9\.2 Import the data from the SQL command line:
-	
-	source <backup file name>; 
+9\.2 Import the data from the SQL command line: source <backup file name\>; 
 
 
 10\. Direct the newly deployed application to the migrated database and complete the remaining application migration steps.
