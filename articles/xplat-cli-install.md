@@ -59,7 +59,7 @@ docker run -it microsoft/azure-cli
 ```
 azure help
 ```
-> [AZURE.NOTE]在一些 Linux 分发版上，你可能会收到错误（/usr/bin/env: ¡®node¡¯: 没有此类文件或目录），此错误来自于将安装在 /usr/bin/nodejs 的最新 nodejs 安装。若要修复此错误，请运行以下命令来创建 /usr/bin/node 的符号链接
+> [AZURE.NOTE]在一些 Linux 分发版上，你可能会收到错误（/usr/bin/env: ‘node’: 没有此类文件或目录），此错误来自于将安装在 /usr/bin/nodejs 的最新 nodejs 安装。若要修复此错误，请运行以下命令来创建 /usr/bin/node 的符号链接
 
 ```
 sudo ln -s /usr/bin/nodejs /usr/bin/node

@@ -113,7 +113,7 @@ import-module "C:\\Program Files\\WindowsPowerShell\\Modules\\Azure\\XXXX\\expre
 
 
 ## 步骤 3：连接
-cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订阅，可以购买一个。有关说明，请参阅[如何购买 Azure](http://go.microsoft.com/fwlink/p/?LinkId=320795)。
+cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订阅，可以购买一个。有关说明，请参阅[如何购买 Azure](https://www.azure.cn/pricing/overview/)。
 
 1. 键入 **Login-AzureRmAccount -EnvironmentName AzureChinaCloud**
 
@@ -144,8 +144,6 @@ cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订
 
 > 有关使用工作或学校帐户注册 Azure 的详细信息，请参阅[以组织身份注册 Azure](/documentation/articles/sign-up-organization)。
 
-> 有关 Azure 中的身份验证和订阅管理的详细信息，请参阅[管理帐户、订阅和管理角色](http://go.microsoft.com/fwlink/?LinkId=324796)。
-
 ### 查看帐户和订阅详细信息
 
 你可以具有多个帐户和订阅以供 Azure PowerShell 使用。可以通过多次运行 **Add-AzureRmAccount -EnvironmentName AzureChinaCloud** 来添加多个帐户。
@@ -171,7 +169,7 @@ cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订
 
 若要详细了解如何使用 cmdlet，请参阅以下资源：
 
-有关使用 Windows PowerShell 的基本说明，请参阅[使用 Windows PowerShell](http://go.microsoft.com/fwlink/p/?LinkId=321939)。
+有关使用 Windows PowerShell 的基本说明，请参阅[使用 Windows PowerShell](https://msdn.microsoft.com/powershell/scripting/getting-started/fundamental/using-windows-powershell)。
 
 有关cmdlet的参考信息, 请参阅 [Azure 命令行参考](https://msdn.microsoft.com/zh-cn/library/azure/jj554330.aspx).
 
