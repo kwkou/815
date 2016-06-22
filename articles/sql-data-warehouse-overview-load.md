@@ -35,20 +35,6 @@
 
 如需教程，请参阅[将数据从 Azure Blob 存储载入 SQL 数据仓库 (PolyBase)][]。
 
-### 2\.使用 Azure 数据工厂
-
-如需简化 PolyBase 使用方式，可创建一个 Azure 数据工厂管道，以便使用 PolyBase 将数据从 Azure Blob 存储载入 SQL 数据仓库。这配置起来很快速，因为不需定义 T-SQL 对象。若需在不导入的情况下查询外部数据，请使用 T-SQL。
-
-加载过程摘要：
-
-2. 将数据格式化为 UTF-8，因为 PolyBase 目前不支持 UTF-16。
-2. 将数据移到 Azure Blob 存储并存储在文本文件中。
-3. 创建 Azure 数据工厂管道，以便引入数据。使用 PolyBase 选项。
-4. 计划和运行管道。
-
-如需教程，请参阅[将数据从 Azure Blob 存储载入 SQL 数据仓库（Azure 数据工厂）][]。
-
-
 ## 从 SQL Server 加载
 若要将数据从 SQL Server 加载到 SQL 数据仓库，你可以使用 Integration Services (SSIS)，可以传输平面文件，还可以将磁盘寄送到 Microsoft。继续阅读下去，你会看到各种不同加载过程的摘要，以及教程链接。
 
@@ -113,7 +99,6 @@
 
 <!--Article references-->
 [将数据从 Azure Blob 存储载入 SQL 数据仓库 (PolyBase)]: /documentation/articles/sql-data-warehouse-load-from-azure-blob-storage-with-polybase
-[将数据从 Azure Blob 存储载入 SQL 数据仓库（Azure 数据工厂）]: /documentation/articles/sql-data-warehouse-load-from-azure-blob-storage-with-data-factory
 [将数据从 SQL Server 加载到 Azure SQL 数据仓库 (SSIS)]: /documentation/articles/sql-data-warehouse-load-from-sql-server-with-integration-services
 [将数据从 SQL Server 加载到 Azure SQL 数据仓库 (bcp)]: /documentation/articles/sql-data-warehouse-load-from-sql-server-with-bcp
 [Load data from SQL Server to Azure SQL Data Warehouse (AZCopy)]: /documentation/articles/sql-data-warehouse-load-from-sql-server-with-azcopy
@@ -121,13 +106,13 @@
 [加载示例数据库]: /documentation/articles/sql-data-warehouse-load-sample-databases
 [迁移概述]: /documentation/articles/sql-data-warehouse-overview-migrate
 [解决方案合作伙伴]: /documentation/articles/sql-data-warehouse-solution-partners
-[开发概述]: sql-data-warehouse-overview-develop
+[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop
 [统计信息]: /documentation/articles/sql-data-warehouse-develop-statistics
 
 <!--MSDN references-->
 
 <!--Other Web references-->
-[导入/导出]: https://azure.microsoft.com/documentation/articles/storage-import-export-service/
+[导入/导出]: /documentation/articles/storage-import-export-service/
 
 
 

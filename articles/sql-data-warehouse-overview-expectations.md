@@ -68,7 +68,7 @@ SQL 数据仓库将数据存储在一个或多个计算节点上，每个节点�
 
 <!--Article references-->
 [创建支持票证]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket
-[入门]: /documentation/articles/sql-data-warehouse-get-started-provision
+[入门]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell
 
 <!--MSDN references-->
 

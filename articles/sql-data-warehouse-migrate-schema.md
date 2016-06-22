@@ -65,31 +65,28 @@ SQL 数据仓库支持常见的业务数据类型：
 
 你可以使用此查询来识别数据仓库中包含不兼容类型的列：
 
-```
-SELECT  t.[name]
-,       c.[name]
-,       c.[system_type_id]
-,       c.[user_type_id]
-,       y.[is_user_defined]
-,       y.[name]
-FROM sys.tables  t
-JOIN sys.columns c on t.[object_id]    = c.[object_id]
-JOIN sys.types   y on c.[user_type_id] = y.[user_type_id]
-WHERE y.[name] IN
-                (   'geography'
-                ,   'geometry'
-                ,   'hierarchyid'
-                ,   'image'
-                ,   'ntext'
-                ,   'sql_variant'
-                ,   'text'
-                ,   'timestamp'
-                ,   'xml'
-                )
-AND  y.[is_user_defined] = 1
-;
-
-```
+    SELECT  t.[name]
+    ,       c.[name]
+    ,       c.[system_type_id]
+    ,       c.[user_type_id]
+    ,       y.[is_user_defined]
+    ,       y.[name]
+    FROM sys.tables  t
+    JOIN sys.columns c on t.[object_id]    = c.[object_id]
+    JOIN sys.types   y on c.[user_type_id] = y.[user_type_id]
+    WHERE y.[name] IN
+                    (   'geography'
+                    ,   'geometry'
+                    ,   'hierarchyid'
+                    ,   'image'
+                    ,   'ntext'
+                    ,   'sql_variant'
+                    ,   'text'
+                    ,   'timestamp'
+                    ,   'xml'
+                    )
+    AND  y.[is_user_defined] = 1
+    ;
 
 该查询包含同样不受支持的任何用户定义数据类型。
 

@@ -35,19 +35,14 @@
 
 首先，使用服务器管理员登录名连接到服务器上的 master 数据库，并创建新的服务器登录名。
 
-```sql
--- Connect to master database and create a login
-CREATE LOGIN ApplicationLogin WITH PASSWORD = 'strong_password';
-
-```
+    -- Connect to master database and create a login
+    CREATE LOGIN ApplicationLogin WITH PASSWORD = 'strong_password';
 
 然后，使用服务器管理员登录名连接到 SQL 数据仓库数据库，并基于刚刚创建的服务器登录名创建数据库用户。
 
-```sql
--- Connect to SQL DW database and create a database user
-CREATE USER ApplicationUser FOR LOGIN ApplicationLogin;
+    -- Connect to SQL DW database and create a database user
+    CREATE USER ApplicationUser FOR LOGIN ApplicationLogin;
 
-```
 
 有关如何向 SQL 数据库进行身份验证的详细信息，请参阅 [Managing databases and logins in Azure SQL Database（在 Azure SQL 数据库中管理数据库和登录）][]和 [使用 Azure Active Directory 身份验证连接到 SQL 数据库或 SQL 数据仓库][]。
 
@@ -56,10 +51,8 @@ CREATE USER ApplicationUser FOR LOGIN ApplicationLogin;
 
 授权是指你可以在 Azure SQL 数据仓库数据库中执行哪些操作，这由你的用户帐户角色成员身份和权限来控制。作为最佳实践，你应向用户授予所需的最低权限。Azure SQL 数据仓库可让你在 T-SQL 中使用角色方便管理这种权限：
 
-```sql
-EXEC sp_addrolemember 'db_datareader', 'ApplicationUser'; -- allows ApplicationUser to read data
-EXEC sp_addrolemember 'db_datawriter', 'ApplicationUser'; -- allows ApplicationUser to write data
-```
+    EXEC sp_addrolemember 'db_datareader', 'ApplicationUser'; -- allows ApplicationUser to read data
+    EXEC sp_addrolemember 'db_datawriter', 'ApplicationUser'; -- allows ApplicationUser to write data
 
 用于连接的服务器管理员帐户是 db\_owner 所有者的成员，该帐户有权在数据库中执行任何操作。请保存此帐户，以便部署架构升级并执行其他管理操作。权限受到更多限制的“ApplicationUser”帐户可让用户使用应用程序所需的最低权限从应用程序连接到数据库。
 
@@ -69,18 +62,11 @@ EXEC sp_addrolemember 'db_datawriter', 'ApplicationUser'; -- allows ApplicationU
 - 除了 db\_datareader 和 db\_datawriter 以外的[数据库角色][]可用于创建权力较大的应用程序用户帐户或权力较小的管理帐户。内置的固定的数据库角色可以方便地用来授予权限，但可能会导致所授权限超出需要的情况。
 - [存储过程][]可用于限制可对数据库执行的操作。
 
-从 Azure 经典门户或使用 Azure Resource Manager API 管理数据库和逻辑服务器的操作将会根据你的门户用户帐户的角色分配进行控制。有关此主题的详细信息，请参阅 [Role-based access control in Azure Portal（Azure 门户中基于角色的访问控制）][]。
-
 ## 加密
 
 Azure SQL 数据仓库将会帮助你通过使用[透明数据加密][]来加密处于“静止”状态或存储在数据库文件的数据，从而保护你的数据。必须是管理员或 dbmanager 角色的成员才能在 master 数据库中启用 TDE。若要加密你的数据库，请连接到服务器上的 master 数据库，并执行：
 
-
-```sql
-
-ALTER DATABASE [AdventureWorks] SET ENCRYPTION ON;
-
-```
+    ALTER DATABASE [AdventureWorks] SET ENCRYPTION ON;
 
 你也可以通过 [Azure 门户][]中的数据库设置启用透明数据加密。有关详细信息，请参阅[透明数据加密 (TDE) 入门][]。
 
@@ -104,7 +90,7 @@ ALTER DATABASE [AdventureWorks] SET ENCRYPTION ON;
 [Managing databases and logins in Azure SQL Database（在 Azure SQL 数据库中管理数据库和登录）]: https://msdn.microsoft.com/zh-cn/library/ee336235.aspx
 [权限]: https://msdn.microsoft.com/zh-cn/library/ms191291.aspx
 [存储过程]: https://msdn.microsoft.com/zh-cn/library/ms190782.aspx
-[透明数据加密]: http://go.microsoft.com/fwlink/?LinkId=526242
+[透明数据加密]: https://msdn.microsoft.com/zh-cn/library/dn948096.aspx
 [Azure 门户]: https://manage.windowsazure.cn/
 
 <!--Other Web references-->
