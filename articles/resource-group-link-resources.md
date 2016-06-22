@@ -30,7 +30,7 @@
 
 若要定义已部署的资源之间的链接，请运行：
 
-    PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/{provider-namespace}/{resource-type}/{resource-name}/providers/Microsoft.Resources/links/{link-name}?api-version={api-version}
+    PUT https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/{provider-namespace}/{resource-type}/{resource-name}/providers/Microsoft.Resources/links/{link-name}?api-version={api-version}
 
 将 {subscription-id} 替换为订阅 id。将 {resource-group}、{provider-namespace}、{resource-type} 和 {resource-name} 替换为标识链接中的第一个资源的值。将 {link-name} 替换为要创建的链接名称。将 2015-01-01 用于 api-version。
 

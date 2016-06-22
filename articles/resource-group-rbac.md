@@ -231,18 +231,18 @@
    
 若要发现支持的 api 版本，请运行：
 
-      GET https://management.azure.com/providers/Microsoft.Authorization?api-version=2015-01-01
+      GET https://management.chinacloudapi.cn/providers/Microsoft.Authorization?api-version=2015-01-01
 
 对于本主题，可以使用版本 `2014-10-01-preview`。
 
 ###创建角色分配
 获取可用的角色定义。
 
-    GET https://management.azure.com/subscriptions/{subscription-id}/providers/Microsoft.Authorization/roleDefinitions?api-version=2014-10-01-preview
+    GET https://management.chinacloudapi.cn/subscriptions/{subscription-id}/providers/Microsoft.Authorization/roleDefinitions?api-version=2014-10-01-preview
 
 创建角色分配。
 
-    PUT https://management.azure.com/subscriptions/{subscription-id}/providers/Microsoft.Authorization/roleAssignments/{role-assignment-id}?api-version=2014-10-01-preview
+    PUT https://management.chinacloudapi.cn/subscriptions/{subscription-id}/providers/Microsoft.Authorization/roleAssignments/{role-assignment-id}?api-version=2014-10-01-preview
     {
       "properties": {
           "roleDefinitionId": "/subscriptions/{subscription-id}/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
@@ -254,7 +254,7 @@
 
 ###删除角色分配
 
-      Delete  https://management.azure.com/subscriptions/{subscription-id}/providers/Microsoft.Authorization/roleAssignments/{role-assignment-id}?api-version=2014-10-01-preview
+      Delete  https://management.chinacloudapi.cn/subscriptions/{subscription-id}/providers/Microsoft.Authorization/roleAssignments/{role-assignment-id}?api-version=2014-10-01-preview
 
 
 ## 后续步骤
