@@ -10,29 +10,13 @@
 <tags
 	ms.service="app-service-web"
 	ms.date=""
-	wacn.date="06/13/2016"/>
+	wacn.date="06/22/2016"/>
 
 # Azure Web 应用用户手册 - 第二部分
 
 - [Azure Web 应用用户手册 - 第一部分](/documentation/articles/azure-web-apps-user-manual-part1)
 - [Azure Web 应用用户手册 - 第三部分](/documentation/articles/azure-web-apps-user-manual-part3)
 
-## 目录
-4.&nbsp;[开始创建 Azure Web 应用](#section_4)
-
-- 4.1 [规划好 Azure 订阅](#section_4_1)
-- 4.2 [选择订阅](#section_4_2)
-- 4.3 [模拟场景](#section_4_3)
-- 4.4 [创建一个空的 Azure Web 应用](#section_4_4)
-- 4.5 [下载发布配置文件](#section_4_5)
-- 4.6 [创建一个 Hello World 项目](#section_4_6)
-- 4.7 [将网站代码通过 Visual Studio 部署](#section_4_7)
-- 4.8 [将网站代码通过 FTP 部署](#section_4_8)
-- 4.9 [缩放 Azure Web 应用](#section_4_9)
-	- 4.9.1 [横向扩展 Azure Web 应用](#section_4_9_1)
-	- 4.9.2 [动态缩放 Azure Web 应用](#section_4_9_2)
-- 4.10 [配置 Azure Web 应用](#section_4_10)
-- 4.11 [监控 Azure Web 应用](#section_4_11)
 
 ##<a name="section_4"></a> 4. 开始创建 Azure Web 应用
 ###<a name="section_4_1"></a> 4.1 规划好 Azure 订阅

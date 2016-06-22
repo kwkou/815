@@ -10,39 +10,9 @@
 <tags
 	ms.service="ea-portal"
 	ms.date=""
-	wacn.date="06/13/2016"/>
+	wacn.date="06/22/2016"/>
 
 #Azure 企业门户管理手册
-
-##目录
-
-1.	[前言](#foreword)
-2.	[读者](#reader)	
-3.	[Azure China 基本概念](#concept)  
-	- 3.1	[MSDN 订阅](#msdn-subscription)  
-	- 3.2	[Org ID](#orgid)  
-	- 3.3	[账户](#account)  
-	- 3.4	[订阅](#subscription)  
-	- 3.5	[账户和订阅的关系](#account-subscription-relation)  
-	- 3.6	[订阅的实际使用场景](#subscription-scenarios)  
-	- 3.7	[账户权限](#account-permission)  
-4.	[使用 Azure 企业门户](#use-azure-enterprise-portal)	
-	- 4.1	[前言](#enterprise-foreword)  
-	- 4.2	[录入账户](#enter-account)  
-	- 4.3	[模拟场景](#simulations)  
-	- 4.4	[将测试订阅切换为生产订阅](#switch-to-production-subscription)  
-	- 4.5	[创建新的部门](#create-new-department)  
-	- 4.6	[创建新的账户](#create-new-account)  
-	- 4.7	[创建新的订阅](#create-subscription)  
-	- 4.8	[将订阅名称重命名](#rename-subscription)  
-	- 4.9	[设置共同管理员](#config-coadmin)  
-	- 4.10	[总结](#enterprise-summary)  
-5.	[查询 Azure 账单](#azure-billing)  
-	- 5.1	[前言](#azure-billing-foreword)
-	- 5.2	[查看总体使用情况](#azure-billing-overview)
-	- 5.3	[查看账单详细使用情况](#azure-billing-details)  
-	- 5.4	[使用邮件通知](#email-notification)  
-	- 5.5	[关于 Azure 超额使用](#azure-billing-exceed)  
 
 ##<a id="foreword"></a>1. 前言  
 
