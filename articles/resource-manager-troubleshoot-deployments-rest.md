@@ -71,7 +71,7 @@
 
 3. 使用[列出所有模板部署操作](https://msdn.microsoft.com/zh-cn/library/azure/dn790518.aspx)操作来获取有关部署操作的信息。
 
-        GET https://manage.windowsazure.cn/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}/operations?$skiptoken={skiptoken}&api-version={api-version}
+        GET https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}/operations?$skiptoken={skiptoken}&api-version={api-version}
 
     响应根据部署期间在 **debugSetting** 属性中指定的内容包含请求和/或响应信息。
     
