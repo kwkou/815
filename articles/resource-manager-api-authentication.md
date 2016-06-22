@@ -217,7 +217,7 @@ ASP.net MVC 示例应用的 [GetUserSubscription](https://github.com/dushyantgil
 
 下面是列出订阅的示例请求：
 
-    GET https://management.azure.com/subscriptions?api-version=2014-04-01-preview HTTP/1.1
+    GET https://management.chinacloudapi.cn/subscriptions?api-version=2014-04-01-preview HTTP/1.1
 
     Authorization: Bearer eyJ0eXAiOiJKV1QiLC***lwO1mM7Cw6JWtfY2lGc5A
 
@@ -235,7 +235,7 @@ ASP.net MVC 示例应用的 [UserCanManagerAccessForSubscription](https://github
 
 以下示例演示如何请求用户对订阅的权限。83cfe939-2402-4581-b761-4f59b0a041e4 是订阅的 ID。
 
-    GET https://management.azure.com/subscriptions/83cfe939-2402-4581-b761-4f59b0a041e4/providers/microsoft.authorization/permissions?api-version=2014-07-01-preview HTTP/1.1
+    GET https://management.chinacloudapi.cn/subscriptions/83cfe939-2402-4581-b761-4f59b0a041e4/providers/microsoft.authorization/permissions?api-version=2014-07-01-preview HTTP/1.1
 
     Authorization: Bearer eyJ0eXAiOiJKV1QiLC***lwO1mM7Cw6JWtfY2lGc5A
 
@@ -257,7 +257,7 @@ ASP.NET MVC 示例应用的 [GetUserOrganizations](https://github.com/dushyantgi
 
 下面是列出目录的示例请求：
 
-    GET https://management.azure.com/tenants?api-version=2014-04-01-preview HTTP/1.1
+    GET https://management.chinacloudapi.cn/tenants?api-version=2014-04-01-preview HTTP/1.1
 
     Authorization: Bearer eyJ0eXAiOiJKV1Qi****8DJf1UO4a-ZZ_TJmWFlwO1mM7Cw6JWtfY2lGc5A
 
@@ -350,7 +350,7 @@ ASP.net MVC 示例应用的 [GetRoleId](https://github.com/dushyantgill/VipSwapp
 
 以下请求示例演示如何获取 Azure RBAC 角色标识符。09cbd307-aa71-4aca-b346-5f253e6e3ebb 是订阅的 ID。
 
-    GET https://management.azure.com/subscriptions/09cbd307-aa71-4aca-b346-5f253e6e3ebb/providers/Microsoft.Authorization/roleDefinitions?api-version=2014-07-01-preview HTTP/1.1
+    GET https://management.chinacloudapi.cn/subscriptions/09cbd307-aa71-4aca-b346-5f253e6e3ebb/providers/Microsoft.Authorization/roleDefinitions?api-version=2014-07-01-preview HTTP/1.1
 
     Authorization: Bearer eyJ0eXAiOiJKV*****fY2lGc5
 
@@ -386,7 +386,7 @@ ASP.net MVC 示例应用的 [GrantRoleToServicePrincipalOnSubscription](https://
 
 将 RBAC 角色分配到应用程序的示例请求：
 
-    PUT https://management.azure.com/subscriptions/09cbd307-aa71-4aca-b346-5f253e6e3ebb/providers/microsoft.authorization/roleassignments/4f87261d-2816-465d-8311-70a27558df4c?api-version=2014-10-01-preview HTTP/1.1
+    PUT https://management.chinacloudapi.cn/subscriptions/09cbd307-aa71-4aca-b346-5f253e6e3ebb/providers/microsoft.authorization/roleassignments/4f87261d-2816-465d-8311-70a27558df4c?api-version=2014-10-01-preview HTTP/1.1
 
     Authorization: Bearer eyJ0eXAiOiJKV1QiL*****FlwO1mM7Cw6JWtfY2lGc5
     Content-Type: application/json
