@@ -58,6 +58,6 @@
 [迁移文档]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
 <!--Other Web references--> 
-[下载迁移实用程序]: https://migrhoststorage.blob.core.chinacloudapi.cn/sqldwsample/DataWarehouseMigrationUtility.zip
+[下载迁移实用程序]: https://migrhoststorage.blob.core.windows.net/sqldwsample/DataWarehouseMigrationUtility.zip
 
 <!---HONumber=Mooncake_0613_2016-->

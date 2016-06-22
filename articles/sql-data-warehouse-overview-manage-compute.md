@@ -16,7 +16,6 @@
 
 > [AZURE.SELECTOR]
 - [概述](/documentation/articles/sql-data-warehouse-overview-manage-compute)
-- [门户](/documentation/articles/sql-data-warehouse-manage-compute-portal)
 - [PowerShell](/documentation/articles/sql-data-warehouse-manage-compute-powershell)
 - [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api)
 - [TSQL](/documentation/articles/sql-data-warehouse-manage-compute-tsql)
@@ -151,6 +150,6 @@ SQL 数据仓库的性能以线性方式缩放，在几秒内就能从某个计�
 
 <!--Other Web references-->
 
-[Azure portal]: http://portal.azure.com/
+[Azure portal]: http://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0613_2016-->
