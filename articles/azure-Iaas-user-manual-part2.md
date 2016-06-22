@@ -10,55 +10,12 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date=""
-	wacn.date="06/13/2016"/>
+	wacn.date="06/22/2016"/>
 
 # Azure IaaS 用户手册 - 第二部分
 
 - [Azure IaaS 用户手册 - 第一部分](/documentation/articles/azure-Iaas-user-manual-part1)
 - [Azure IaaS 用户手册 - 第三部分](/documentation/articles/azure-Iaas-user-manual-part3)
-
-##目录
-5.&nbsp;[开始创建 Azure 虚拟机](#section_5)
-
-- 5.1 [模拟场景](#section_5_1)
-- 5.2 [规划](#section_5_2)
-	- 5.2.1 [如何选择 Azure 数据中心](#section_5_2_1)
-	- 5.2.2 [Azure 是如何解决大并发](#section_5_2_2)
-	- 5.2.3 [选择最合适的虚拟机配置](#section_5_2_3)
-	- 5.2.4 [规划好高可用(非常重要)](#section_5_2_4)
-	- 5.2.5 [规划好 Azure 订阅(非常重要)](#section_5_2_5)
-	- 5.2.6 [选择订阅(非常重要)](#section_5_2_6)
-	- 5.2.7 [查看该订阅中可使用的 Azure 资源](#section_5_2_7)
-- 5.3 [创建 Azure 虚拟机](#section_5_3)
-	- 5.3.1 [说明](#section_5_3_1)
-	- 5.3.2 [规划](#section_5_3_2)
-- 5.4 [使用 Azure 管理界面创建虚拟机](#section_5_4)
-	- 5.4.1 [创建虚拟网络(非常重要)](#section_5_4_1)
-	- 5.4.2 [创建存储账号](#section_5_4_2)
-	- 5.4.3 [创建虚拟机说明](#section_5_4_3)
-	- 5.4.4 [使用管理界面创建 Azure 虚拟机](#section_5_4_4)
-		- 5.4.4.1 [注意事项(非常重要)](#section_5_4_4_1)
-		- 5.4.4.2 [创建第一台 AD Server](#section_5_4_4_2)
-		- 5.4.4.3 [创建第二台 AD Server](#section_5_4_4_3)
-		- 5.4.4.4 [观察 AD Server](#section_5_4_4_4)
-		- 5.4.4.5 [创建 Web Server](#section_5_4_4_5)
-		- 5.4.4.6 [创建 SQL Server 虚拟机(非常重要)](#section_5_4_4_6)
-		- 5.4.4.7 [总结(非常重要)](#section_5_4_4_7)
-- 5.5 [使用 Azure PowerShell 创建虚拟机](#section_5_5)
-	- 5.5.1 [说明](#section_5_5_1)
-	- 5.5.2 [配置 PowerShell](#section_5_5_2)
-	- 5.5.3 [使用 PowerShell 创建 Windows VM(非常重要)](#section_5_5_3)
-	- 5.5.4 [使用 PowerShell 创建 Linux VM](#section_5_5_4)
-- 5.6 [管理 Azure 虚拟机](#section_5_6)
-	- 5.6.1 [远程桌面连接 WindowsVM (非常重要)](#section_5_6_1)
-	- 5.6.2 [Linux SSH](#section_5_6_2)
-	- 5.6.3 [挂载磁盘](#section_5_6_3)
-	- 5.6.4 [存储账号中查看磁盘](#section_5_6_4)
-	- 5.6.5 [Azure 临时磁盘(非常重要)](#section_5_6_5)
-	- 5.6.6 [卸载磁盘](#section_5_6_6)
-	- 5.6.7 [虚拟机关机(非常重要)](#section_5_6_7)
-	- 5.6.8 [删除 Azure 虚拟机](#section_5_6_8)
-	- 5.6.9 [虚拟机监控](#section_5_6_9)
 
 ##<a name="section_5"></a> 5.	开始创建 Azure 虚拟机
 ###<a name="section_5_1"></a> 5.1 模拟场景

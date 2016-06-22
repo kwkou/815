@@ -10,31 +10,13 @@
 <tags
 	ms.service="app-service-web"
 	ms.date=""
-	wacn.date="06/13/2016"/>
+	wacn.date="06/22/2016"/>
 
 # Azure Web 应用用户手册 - 第一部分
 
 - [Azure Web 应用用户手册 - 第二部分](/documentation/articles/azure-web-apps-user-manual-part2)
 - [Azure Web 应用用户手册 - 第三部分](/documentation/articles/azure-web-apps-user-manual-part3)
 
-## 目录
-1.	[前言](#section_1)
-2.	[读者](#section_2)
-3.	[Azure Web 应用相关服务](#section_3)
-	- 3.1 [Azure Web 应用的带宽问题](#section_3_1)
-	- 3.2 [什么是 Azure Web 应用](#section_3_2)
-	- 3.3 [Azure Web 应用支持的开发语言](#section_3_3)
-	- 3.4 [Azure Web 应用架构](#section_3_4)
-	- 3.5 [Azure Web 应用会话保持](#section_3_5)
-	- 3.6 [Azure Web 应用文件同步](#section_3_6)
-	- 3.7 [Azure Web 应用如何解决大并发](#section_3_7)
-	- 3.8 [Azure Web 应用单个实例大小](#section_3_8)
-	- 3.9 [Azure Web 应用服务类型](#section_3_9)
-	- 3.10 [Azure Web 应用使用静态资源](#section_3_10)
-	- 3.11 [Azure Web 应用公网IP](#section_3_11)
-	- 3.12 [Azure Web 应用成本分析](#section_3_12)
-	- 3.13 [Azure Web 应用停止计费(非常重要)](#section_3_13)
-	- 3.14 [Azure Web 应用限制](#section_3_14)
 
 ##<a id="section_1"></a> 1. 前言
 

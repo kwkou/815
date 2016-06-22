@@ -10,29 +10,13 @@
 <tags
 	ms.service="app-service-web"
 	ms.date=""
-	wacn.date="06/13/2016"/>
+	wacn.date="06/22/2016"/>
 
 # Azure Web 应用用户手册 - 第三部分
 
 - [Azure Web 应用用户手册 - 第一部分](/documentation/articles/azure-web-apps-user-manual-part1)
 - [Azure Web 应用用户手册 - 第二部分](/documentation/articles/azure-web-apps-user-manual-part2)
 
-## 目录
-- 5.&nbsp;[高级内容](#section_5)
-	- 5.1 [使用源代码管理器管理 Azure Web 应用](#section_5_1)
-	- 5.2 [修改 Azure Web 应用时区](#section_5_2)
-	- 5.3 [PHP 开发者必读](#section_5_3)
-		- 5.3.1 [在 Azure Web 应用配置 PHP](#section_5_3_1)
-		- 5.3.2 [PHP使用 Azure 存储](#section_5_3_2)
-	- 5.4 [Java 开发者必读](#section_5_4)
-		- 5.4.1 [Azure Web 应用 Java 运行环境基本配置](#section_5_4_1)
-		- 5.4.2 [Azure Web 应用发布 Java Web 应用](#section_5_4_2)
-		- 5.4.3 [定制化 Azure Web App 提供的默认的 Tomcat 和 JDK 环境](#section_5_4_3)
-		- 5.4.4 [定制化使用您自己的 Tomcat 版本和 JDK 环境](#section_5_4_4)
-		- 5.4.5 [Java 8 下 PermGen 及参数设置](#section_5_4_5)
-	- 5.5 [Azure Web 应用备份](#section_5_5)
-	- 5.6 [Azure Web 应用设置CNAME解析](#section_5_6)
-- 6. [注意事项](#section_6)
 
 ##<a name="section_5"></a> 5. 高级内容
 ###<a name="section_5_1"></a> 5.1 使用源代码管理器管理 Azure Web 应用

@@ -10,41 +10,12 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date=""
-	wacn.date="06/13/2016"/>
+	wacn.date="06/22/2016"/>
 
 # Azure IaaS 用户手册 - 第一部分
 
 - [Azure IaaS 用户手册 - 第二部分](/documentation/articles/azure-Iaas-user-manual-part2)
 - [Azure IaaS 用户手册 - 第三部分](/documentation/articles/azure-Iaas-user-manual-part3)
-
-##目录
-1.	[前言](#section_1)
-2.	[读者](#section_2)
-3.	[Azure IaaS 相关技术](#section_3)
-4.	[Azure IaaS 相关服务](#section_4)
-	- 4.1 [Azure 虚拟机的带宽问题](#section_4_1)
-	- 4.2 [Azure 虚拟网络 (Azure Virtual Network)](#section_4_2)
-	- 4.3 [Azure 存储服务](#section_4_3)
-		- [4.3.1 Azure 存储服务的冗余](#section_4_3_1)
-		- [4.3.2 Azure 存储服务的类型](#section_4_3_2)
-			- 4.3.2.1 [Blob](#section_4_3_2_1)
-			- 4.3.2.2 [Queue](#section_4_3_2_2)
-			- 4.3.2.3 [Table](#section_4_3_2_3)
-			- 4.3.2.4 [File](#section_4_3_2_4)
-	- 4.4 [Azure 虚拟机](#section_4_4)
-		- 4.4.1 [Azure 虚拟机操作系统](#section_4_4_1)
-		- 4.4.2 [Azure 虚拟机类型](#section_4_4_2)
-			- 4.4.2.1 [A 系列虚拟机](#section_4_4_2_1)
-			- 4.4.2.2 [D 系列虚拟机](#section_4_4_2_2)
-			- 4.4.2.3 [标准类型 vs 基本类型](#section_4_4_2_3)
-	- 4.5 [Azure 成本分析](#section_4_5)
-		- 4.5.1 [虚拟网络成本分析](#section_4_5_1)
-		- 4.5.2 [存储服务成本](#section_4_5_2)
-		- 4.5.3 [虚拟机成本](#section_4_5_3)
-		- 4.5.4 [流量成本](#section_4_5_4)
-		- 4.5.5 [存储事务](#section_4_5_5)
-		- 4.5.6 [其他成本](#section_4_5_6)
-		- 4.5.7 [成本分析案例](#section_4_5_7)
 
 ##<a name="section_1"></a> 1.	前言
 

@@ -10,22 +10,13 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date=""
-	wacn.date="06/13/2016"/>
+	wacn.date="06/22/2016"/>
 
 # Azure IaaS 用户手册 - 第三部分
 
 - [Azure IaaS 用户手册 - 第一部分](/documentation/articles/azure-Iaas-user-manual-part1)
 - [Azure IaaS 用户手册 - 第二部分](/documentation/articles/azure-Iaas-user-manual-part2)
 
-##目录
-- 6.&nbsp;[高级内容](#section_6)
-	- 6.1 [设置虚拟机端口映射](#section_6_1)
-	- 6.2 [设置虚拟机端口负载均衡](#section_6_2)
-	- 6.3 [设置负载均衡器规则](#section_6_3)
-	- 6.4 [设置 Web 服务器固定 IP](#section_6_4)
-	- 6.5 [超过 1TB 容量的磁盘](#section_6_5)
-- 7.	[后续运维及开发测试](#section_7)
-- 8.	[注意事项](#section_8)
 
 ##<a name="section_6"></a> 6.	高级内容
 ###<a name="section_6_1"></a> 6.1 设置虚拟机端口映射
