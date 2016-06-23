@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="03/02/2016"
-	wacn.date="04/06/2016"/>
+	ms.date="05/09/2016"
+	wacn.date="05/23/2016"/>
 
 # 始终加密 - 使用数据库加密保护 SQL 数据库中的敏感数据并将加密密钥存储在 Windows 证书存储中
 
@@ -47,19 +47,6 @@
 - [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 13.0.700.242 或更高版本。
 - [.NET Framework 4.6](https://msdn.microsoft.com/zh-cn/library/w0x726c2.aspx) 或更高版本（在客户端计算机上）。
 - [Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)。
-
-
-
-## 创建空的 SQL 数据库
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
-2. 单击“新建”>“数据 + 存储”>“SQL 数据库”。
-3. 在新服务器或现有服务器上创建名为 **Clinic** 的**空**数据库。如需在 Azure 经典管理门户中创建数据库的详细说明，请参阅[在数分钟内创建 SQL 数据库](/documentation/articles/sql-database-get-started)。
-
-你需要在本教程的后面部分用到该连接字符串，因此，在创建数据库以后，请浏览到新的 Clinic 数据库，然后复制连接字符串（你可以随时获取该连接字符串，但我们已经处于门户中，因此很容易复制它）。
-
-1. 单击“SQL 数据库”>“Clinic”>“显示数据库连接字符串”。
-2. 复制 **ADO.NET** 的连接字符串：
-
 
 ## 使用 SSMS 连接到数据库
 

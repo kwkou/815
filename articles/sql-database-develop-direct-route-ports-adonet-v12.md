@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="02/05/2016" 
-	wacn.date="03/21/2016"/>
+	ms.date="04/25/2016" 
+	wacn.date="05/23/2016"/>
 
 
 # 用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口

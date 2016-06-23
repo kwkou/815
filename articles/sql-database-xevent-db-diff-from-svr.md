@@ -11,8 +11,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="02/05/2016" 
-	wacn.date="03/29/2016"/>
+	ms.date="04/25/2016" 
+	wacn.date="05/23/2016"/>
 
 
 # SQL 数据库中的扩展事件

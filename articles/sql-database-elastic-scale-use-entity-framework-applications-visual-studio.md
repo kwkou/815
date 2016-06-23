@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="02/04/2016" 
-	wacn.date="03/29/2016"/>
+	ms.date="05/03/2016" 
+	wacn.date="05/23/2016"/>
 
 # 将弹性数据库客户端库与实体框架配合使用 
  
