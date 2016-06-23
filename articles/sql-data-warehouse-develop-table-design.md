@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="03/23/2016"
-   wacn.date="05/23/2016"/>
+   ms.date="05/14/2016"
+   wacn.date="06/20/2016"/>
 
 # SQL 数据仓库中的表设计 #
 SQL 数据仓库是一种大规模并行处理 (MPP) 分布式数据库系统。它将数据存储在许多不同的位置（称为**分布区**）。每个**分布区**类似于一个桶，可在数据仓库中存储唯一的数据子集。通过将数据和处理能力分布于多个节点，SQL 数据仓库能够提供极大的缩放性 — 远超任何单一系统。
@@ -34,7 +34,7 @@ SQL 数据仓库支持常见的业务数据类型：
 - **binary**
 - **bit**
 - **char**
-- **日期**
+- **date**
 - **datetime**
 - **datetime2**
 - **datetimeoffset**
@@ -48,8 +48,10 @@ SQL 数据仓库支持常见的业务数据类型：
 - **smalldatetime**
 - **smallint**
 - **smallmoney**
+- **sysname**
 - **time**
 - **tinyint**
+- **uniqueidentifier**
 - **varbinary**
 - **varchar**
 
@@ -71,19 +73,12 @@ WHERE y.[name] IN
                 ,   'hierarchyid'
                 ,   'image'
                 ,   'ntext'
-                ,   'numeric'
                 ,   'sql_variant'
-                ,   'sysname'
                 ,   'text'
                 ,   'timestamp'
-                ,   'uniqueidentifier'
                 ,   'xml'
                 )
-
-OR  (   y.[name] IN (  'nvarchar','varchar','varbinary')
-    AND c.[max_length] = -1
-    )
-OR  y.[is_user_defined] = 1
+AND  y.[is_user_defined] = 1
 ;
 
 ```

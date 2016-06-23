@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="03/08/2016"
-   wacn.date="04/11/2016"/>
+   ms.date="05/02/2016"
+   wacn.date="06/20/2016"/>
 
 # 语言元素
 
