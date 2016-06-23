@@ -10,8 +10,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="03/24/2016"
-   wacn.date="05/16/2016"/>
+   ms.date="04/19/2016"
+   wacn.date="06/20/2016"/>
 
 # 解决使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误
 
