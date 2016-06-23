@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="08/19/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="05/03/2016"
+	wacn.date="06/20/2016"/>
 	
 # Azure 流分析和 Power BI：用于对流式数据进行实时分析的实时仪表板
 

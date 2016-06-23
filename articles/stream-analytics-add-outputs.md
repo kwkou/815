@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="03/18/2016" 
-	wacn.date="04/11/2016"/>
+	ms.date="05/03/2016" 
+	wacn.date="06/20/2016"/>
 
 # 如何配置流分析作业的数据输出
 

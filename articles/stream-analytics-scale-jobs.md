@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="03/18/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="05/03/2016"
+	wacn.date="06/20/2016"/>
 
 # 扩展 Azure 流分析作业，以增加流数据处理吞吐量
 

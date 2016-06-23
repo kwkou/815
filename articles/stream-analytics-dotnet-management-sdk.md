@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="02/16/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="05/03/2016"
+	wacn.date="06/20/2016"/>
 
 
 # 管理 .NET SDK：设置和运行使用 .NET 版 Azure 流分析 API 的分析作业
