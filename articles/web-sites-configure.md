@@ -1,9 +1,9 @@
 <properties 
 	pageTitle="在 Azure 中配置 Web 应用" 
 	description="如何在 Azure 中配置 Web 应用" 
-	services="app-service" 
+	services="app-service\web" 
 	documentationCenter="" 
-	authors="erikre" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
@@ -41,7 +41,7 @@
 
 <a name="platform"></a> **平台**。选择是要在 32 位还是 64 位环境中运行 Web 应用。64 位环境需要“基本”或“标准”模式。“免费”和“共享”模式始终在 32 位环境下运行。
 
-**Web 套接字**。设为“打开”以启用 WebSocket 协议；例如，如果你的 Web 应用使用 [ASP.NET SignalR](http://www.asp.net/signalr) 或 [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio)。
+**Web 套接字**。设为“打开”以启用 WebSocket 协议；例如，如果你的 Web 应用使用 [ASP.NET SignalR] 或 [socket.io]。
 
 <a name="alwayson"></a> **始终可用**。默认情况下，Web 应用如果已处于空闲状态相当一段时间，则是未加载的状态。这样可以让系统节省资源。在“基本”或“标准”模式下，你可以启用“始终可用”，以始终保持加载应用。如果你的应用运行连续的 Web 作业，则应启用“始终可用”，否则这些 Web 作业可能无法可靠运行。
 
@@ -128,10 +128,10 @@
 
 对于 PHP、Python、Java 和 Node 应用程序，这些设置将在运行时作为环境变量提供，并且用连接类型作为前缀。下面列出了环境变量前缀：
 
-- SQL Server：SQLCONNSTR\_
-- MySQL：MYSQLCONNSTR\_
-- SQL 数据库：SQLAZURECONNSTR\_
-- 自定义：CUSTOMCONNSTR\_
+- SQL Server：`SQLCONNSTR_`
+- MySQL：`MYSQLCONNSTR_`
+- SQL 数据库：`SQLAZURECONNSTR_`
+- 自定义：`CUSTOMCONNSTR_`
 
 例如，如果 MySql 连接字符串被命名为 `connectionstring1`，则会通过环境变量 `MYSQLCONNSTR_connectionString1` 访问该字符串。
 
@@ -156,10 +156,30 @@ Web 应用可能会使用根据 URL 路由的模块，而不是提供静态内�
 
 ## 后续步骤
 
-- [配置自定义域名](/documentation/articles/web-sites-custom-domain-name)
-- [启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)
-- [在 Azure 中缩放 Web 应用](/documentation/articles/web-sites-scale)
-- [Azure 中的 Web Apps 的监视基础知识](/documentation/articles/web-sites-monitor)
+- [在 Azure Web 应用配置自定义域名]
+- [为 Azure Web 应用启用 HTTPS]
+- [在 Azure 中缩放 Web 应用]
+- [Azure 中的 Web Apps 的监视基础知识]
  
+<!-- URL List -->
+
+[ASP.NET SignalR]: http://www.asp.net/signalr
+[Azure Portal]: https://portal.azure.cn/
+[在 Azure Web 应用配置自定义域名]: /documentation/articles/web-sites-custom-domain-name
+[Deploy to Staging Environments for Web Apps in Azure]: /documentation/articles/web-sites-staged-publishing
+[为 Azure Web 应用启用 HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate
+[How to: Monitor web endpoint status]: http://go.microsoft.com/fwLink/?LinkID=279906
+[Azure 中的 Web Apps 的监视基础知识]: /documentation/articles/web-sites-monitor
+[pipeline mode]: http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application
+[在 Azure 中缩放 Web 应用]: /documentation/articles/web-sites-scale
+[socket.io]: /documentation/articles/web-sites-nodejs-chat-app-socketio
+[Try Azure Web App]: https://tryappservice.azure.com/
+[Using Git to deploy Web Apps in Azure]: /documentation/articles/web-sites-publish-source-control
+
+<!-- IMG List -->
+
+[configure01]: ./media/web-sites-configure/configure01.png
+[configure02]: ./media/web-sites-configure/configure02.png
+[configure03]: ./media/web-sites-configure/configure03.png
 
 <!---HONumber=Mooncake_0411_2016-->

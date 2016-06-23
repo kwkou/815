@@ -141,15 +141,15 @@ __症状__：连接到 HDInsight 群集版本 3.3 或 3.4 时，你可能会遇�
     at java.util.concurrent.FutureTas...(FutureTask.java:122)
     at java.util.concurrent.FutureTask.get(FutureTask.java:206)
 
-__原因__：之所以出现此错误，是因为 SQuirreL 使用的 common-codec.jar 文件版本，与 Hive JDBC 组件所需的、从 HDInsight 群集下载的文件版本不匹配。
+__原因__：之所以出现此错误，是因为 SQuirreL 使用的 commons-codec.jar 文件版本，与 Hive JDBC 组件所需的、从 HDInsight 群集下载的文件版本不匹配。
 
 __解决方法__：若要解决此错误，请使用以下步骤。
 
-1. 从 HDInsight 群集下载 common-codec jar 文件。
+1. 从 HDInsight 群集下载 commons-codec jar 文件。
 
-        scp USERNAME@CLUSTERNAME:/usr/hdp/current/hive-client/lib/common-codec*.jar ./common-codec.jar
+        scp USERNAME@CLUSTERNAME:/usr/hdp/current/hive-client/lib/commons-codec*.jar ./commons-codec.jar
 
-2. 退出 SQuirreL，然后转到系统上安装 SQuirreL 的目录。在 SquirreL 目录中的 `lib` 目录下，将现有的 common-codec.jar 替换为从 HDInsight 群集下载的文件。
+2. 退出 SQuirreL，然后转到系统上安装 SQuirreL 的目录。在 SquirreL 目录中的 `lib` 目录下，将现有的 commons-codec.jar 替换为从 HDInsight 群集下载的文件。
 
 3. 重新启动 SQuirreL。连接到 HDInsight 上的 Hive 时，应不再会出现该错误。
 

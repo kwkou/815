@@ -36,14 +36,16 @@ Azure HDInsight 的主要优势之一就是隔离数据存储和计算。HDInsig
 - 删除 HDInsight 群集。
 
 在附录中，你可以找到有关上载航班延误数据、创建/上载 Hive 查询字符串和针对 Sqoop 作业准备 Azure SQL 数据库的说明。
-<a id="prerequisite"> </a>
-###先决条件
+
+###<a id="prerequisite"></a> 先决条件
 
 在开始阅读本教程前，你必须具有：
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 
-- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+- **配备 Azure PowerShell 的工作站**。
+
+	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 **本教程中使用的文件**
 
@@ -60,7 +62,7 @@ Azure HDInsight 的主要优势之一就是隔离数据存储和计算。HDInsig
 </table>
 
 
-##创建群集并运行 Hive/Sqoop 作业
+##<a name="runjob"></a> 创建群集并运行 Hive/Sqoop 作业
 
 Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的方法是为作业创建群集，并在作业完成之后删除作业。以下脚本覆盖了整个过程。有关创建 HDInsight 群集和运行 Hive 作业的详细信息，请参阅[在 HDInsight 中创建 Hadoop 群集][hdinsight-provision]和[将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]。
 
@@ -795,7 +797,6 @@ HiveQL 脚本将执行以下操作：
 * [将 Sqoop 与 HDInsight 配合使用][hdinsight-use-sqoop]
 * [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
 * [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
-* [为 HDInsight 开发 C# Hadoop 流式处理程序][hdinsight-develop-streaming]
 
 
 

@@ -618,6 +618,10 @@ SCP.Net 版本 0.9.4.203 引入了专用于事件中心 Spout（从事件中心�
 
 有关 HDInsight 的其他用法和其他 Storm on HDinsight 示例，请参阅以下主题：
 
+**Microsoft SCP.NET**
+
+* [SCP 编程指引](/documentation/articles/hdinsight-storm-scp-programming-guide)
+
 **Apache Storm on HDInsight**
 
 -	[使用 Apache Storm on HDInsight 部署和监视拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology)

@@ -150,9 +150,9 @@ Kudu 部署引擎按以下顺序确定要使用哪个 Node.js 引擎：
         git commit -m "<your commit message>"
         git push azure master
    
-   现已配置 iisnode。接下来的步骤演示如何访问这些日志。
+    现已配置 iisnode。接下来的步骤演示如何访问这些日志。
      
-4. 使用 FT P浏览到 \\site\\wwwroot\\iisnode
+4. 使用 FTP 浏览到 \\site\\wwwroot\\iisnode
 
 6. 单编辑要阅读的日志。如果需要，也可以下载或删除。
 

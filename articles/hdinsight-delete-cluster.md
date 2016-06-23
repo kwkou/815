@@ -26,8 +26,6 @@ HDInsight 群集按小时收费，因此在不再需要使用群集时，就应�
 
 ##Azure PowerShell
 
-> [AZURE.NOTE] 如果你尚未安装和配置 Azure PowerShell，请使用[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 文档中的步骤。
-
 在 PowerShell 提示符处，使用以下命令删除群集：
 
     Remove-AzureHDInsightCluster -Name CLUSTERNAME
@@ -35,8 +33,6 @@ HDInsight 群集按小时收费，因此在不再需要使用群集时，就应�
 将 __CLUSTERNAME__ 替换为 HDInsight 群集的名称。
 
 ##Azure CLI
-
-> [AZURE.NOTE] 如果你尚未安装和配置 Azure CLI，请使用[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install) 文档中的步骤。
 
 在提示符处，使用以下命令删除群集：
 

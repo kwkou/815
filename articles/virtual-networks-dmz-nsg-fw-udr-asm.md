@@ -111,15 +111,15 @@ VNETLocal 始终是该特定网络的 VNet 的已定义地址前缀（也就是�
 
 3. 上述路由条目将覆盖默认的“0.0.0.0/0”路由，但默认的 10.0.0.0/16 规则仍然存在，以允许 VNet 中的流量直接路由到目标，而不是路由到网络虚拟设备。若要纠正此行为，必须添加以下规则。
 
-	    Get-AzureRouteTable $BERouteTableName `
-	        |Set-AzureRoute -RouteName "Internal traffic to FW" -AddressPrefix $VNetPrefix `
+	    Get-AzureRouteTable $BERouteTableName | `
+	        Set-AzureRoute -RouteName "Internal traffic to FW" -AddressPrefix $VNetPrefix `
 	        -NextHopType VirtualAppliance `
 	        -NextHopIpAddress $VMIP[0]
 
 4. 此时要做出选择。在上述两个路由中，所有流量都会路由到防火墙进行评估，甚至单个子网中的流量也是如此。这可能是你想要的结果，但若要允许子网中的流量直接在本地路由而不要防火墙的介入，则你可以添加第三个特定规则。此路由指明，目标为本地子网的地址可以直接路由到该位置 (NextHopType = VNETLocal)。
 
-	    Get-AzureRouteTable $BERouteTableName `
-	        |Set-AzureRoute -RouteName "Allow Intra-Subnet Traffic" -AddressPrefix $BEPrefix `
+	    Get-AzureRouteTable $BERouteTableName | `
+	        Set-AzureRoute -RouteName "Allow Intra-Subnet Traffic" -AddressPrefix $BEPrefix `
 	        -NextHopType VNETLocal
 
 5.	最后，在创建路由表并填入用户定义的路由后，必须立即将路由表绑定到子网。在脚本中，前端路由表还绑定到了前端子网。下面是后端子网的绑定脚本。
@@ -139,8 +139,8 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 
 1.	调用代表虚拟设备的 VM 实例（在本例中为防火墙），并启用 IP 转发（注意：以货币符号开头的任何红色项（例如 $VMName[0]）均为本文“参考”部分的脚本中的用户定义变量。以方括号括住的零 [0] 代表 VM 阵列中的第一个 VM，为了使示例脚本无须修改即可运行，第一个 VM (VM 0) 必须是防火墙）：
 
-		Get-AzureVM -Name $VMName[0] -ServiceName $ServiceName[0] `
-		   |Set-AzureIPForwarding -Enable
+		Get-AzureVM -Name $VMName[0] -ServiceName $ServiceName[0] | `
+		   Set-AzureIPForwarding -Enable
 
 ## 网络安全组 (NSG)
 此示例将构建一个 NSG 组，然后加载单个规则。此组接着只绑定到前端和后端子网（不绑定到 SecNet）。以声明性的方式构建以下规则：

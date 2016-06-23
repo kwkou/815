@@ -17,12 +17,21 @@
 
 有时，你可能需要配置配置文件，包括：
 
+- clusterIdentity.xml
 - core-site.xml
+- gateway.xml
+- hbase-env.xml
+- hbase-site.xml
 - hdfs-site.xml
-- mapred-site.xml
-- yarn-site.xml
+- hive-env.xml
 - hive-site.xml
+- mapred-site
 - oozie-site.xml
+- oozie-env.xml
+- storm-site.xml
+- tez-site.xml
+- webhcat-site.xml
+- yarn-site.xml
 
 群集无法保留重置映像所造成的更改。有关重置映像的详细信息，请参阅[由于操作系统升级而重新启动角色实例](http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx)。若要在群集生存期保留更改，你可以在创建过程中使用 HDInsight 群集自定义。这是更改群集的配置，以及发生这些 Azure 重置映像、重新引导和重新启动事件后保留配置的推荐方法。这些配置更改将在服务启动之前应用，因此无需重新启动服务。
 

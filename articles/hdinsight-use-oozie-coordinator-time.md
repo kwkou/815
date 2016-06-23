@@ -61,9 +61,7 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。它与 Had
 
 	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
-	若要执行 Windows PowerShell 脚本，必须以管理员身份运行 Azure PowerShell 并将执行策略设为 *RemoteSigned*。有关详细信息，请参阅[运行 Windows PowerShell 脚本][powershell-script]。
-
-- **一个 HDInsight 群集**。有关创建 HDInsight 群集的信息，请参阅[预配 HDInsight 群集][hdinsight-provision]或 [HDInsight 入门][hdinsight-get-started]。你将需要以下数据才能完成本教程：
+- **一个 HDInsight 群集**。有关创建 HDInsight 群集的信息，请参阅[创建 HDInsight 群集][hdinsight-provision]或 [HDInsight 入门][hdinsight-get-started]。你将需要以下数据才能完成本教程：
 
 	<table border = "1">
 	<tr><th>群集属性</th><th>Windows PowerShell 变量名</th><th>值</th><th>说明</th></tr>

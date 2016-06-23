@@ -25,7 +25,7 @@
 	| Set-AzureSubnet –SubnetNames Subnet-2 `
 	| Update-AzureVM
 
-如果你为 VM 指定了静态 DIP，则必须清除该设置，然后才能将 VM 移到新子网。在这种情况下，请使用以下代码：
+如果你为 VM 指定了静态内部私有 IP，则必须清除该设置，然后才能将 VM 移到新子网。在这种情况下，请使用以下代码：
 
 	Get-AzureVM -ServiceName TestVMCloud -Name TestVM `
 	| Remove-AzureStaticVNetIP `

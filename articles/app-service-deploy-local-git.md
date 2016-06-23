@@ -3,7 +3,7 @@
 	description="了解如何实现从本地 Git 部署到 Azure Web 应用。"
 	services="app-service"
 	documentationCenter=""
-	authors="dariac"
+	authors="dariagrigoriu"
 	manager="wpickett"
 	editor="mollybos"/>
 

@@ -97,7 +97,7 @@
 	- 将“prepend domain-name-servers 127.0.0.1;”添加到“/etc/dhclient-eth0.conf”
 	- 重新启动网络服务（“service network restart”），以将缓存设置为本地 DNS 解析程序
 
-> [AZURE.NOTE]：该“dnsmasq”包只是适用于 Linux 的众多 DNS 缓存中的一个。在使用之前，请检查其是否适合你的特定需求，并且确认你没有安装其他缓存。
+> [AZURE.NOTE]该“dnsmasq”包只是适用于 Linux 的众多 DNS 缓存中的一个。在使用之前，请检查其是否适合你的特定需求，并且确认你没有安装其他缓存。
 
 **客户端重试：**
 
@@ -127,11 +127,13 @@ resolv.conf 文件通常是自动生成的，不应进行编辑。添加“optio
 
 虚拟网络中的 DNS 服务器可以将 DNS 查询转发到 Azure 的递归解析程序，以便解析该虚拟网络中的主机名。例如，在 Azure 中运行的域控制器 (DC) 可以响应自身域的 DNS 查询，而将所有其他查询转发到 Azure。这样一来，VM 就可以查看你的本地资源（通过 DC）以及 Azure 提供的主机名（通过转发器）。可以通过虚拟 IP 168.63.129.16 访问 Azure 的递归解析程序。
 
-DNS 转发还可用于在 VNet 之间进行 DNS 解析，可以通过本地计算机来解析 Azure 提供的主机名。为了解析 VM 的主机名，DNS 服务器 VM 必须驻留在同一虚拟网络中，并且必须配置为将主机名查询转发到 Azure。由于 DNS 后缀在每个 VNet 中是不同的，因此可使用条件性转发规则将 DNS 查询发送到正确的 VNet 进行解析。下图显示了如何通过两个 VNet 和一个本地网络使用该方法在 VNet 之间进行 DNS 解析：
+DNS 转发还可用于在 VNet 之间进行 DNS 解析，可以通过本地计算机来解析 Azure 提供的主机名。为了解析 VM 的主机名，DNS 服务器 VM 必须驻留在同一虚拟网络中，并且必须配置为将主机名查询转发到 Azure。由于 DNS 后缀在每个 VNet 中是不同的，因此可使用条件性转发规则将 DNS 查询发送到正确的 VNet 进行解析。下图显示了如何通过两个 VNet 和一个本地网络使用该方法在 VNet 之间进行 DNS 解析。 一个 DNS 转发器示例可以在 [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/301-dns-forwarder) 找到。
 
 ![VNet 间 DNS](./media/virtual-networks-name-resolution-for-vms-and-role-instances/inter-vnet-dns.png)
 
-使用 Azure 提供的名称解析时，会通过 DHCP 为每个 VM 提供内部 DNS 后缀。使用你自己的名称解析解决方案时，不会向 VM 提供该后缀，因为该后缀会干扰其他 DNS 体系结构。若要通过 FQDN 来引用计算机，或者要在你的 VM 上配置后缀，则可通过 PowerShell 或 API 来确定该后缀：
+使用 Azure 提供的名称解析时，会通过 DHCP 为每个 VM 提供内部 DNS 后缀（*.internal.chinacloudapp.cn）。这使主机名解析成 internal.chinacloudapp.cn 区间内的主机记录。使用你自己的名称解析解决方案时，不会向 VM 提供该 IDNS 后缀，因为该后缀会干扰其他 DNS 体系结构（如 domain-joined 案例）。
+
+如果需要，可通过 PowerShell 或 API 来确定该后缀：
  
 -  在经典部署模型中，该后缀可通过 [Get Deployment API](https://msdn.microsoft.com/zh-cn/library/azure/ee460804.aspx) 调用或 [Get-AzureVM -Debug](https://msdn.microsoft.com/zh-cn/library/azure/dn495236.aspx) cmdlet 来获取。
 
