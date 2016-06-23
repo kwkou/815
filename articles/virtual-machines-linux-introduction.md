@@ -62,7 +62,7 @@ Azure Linux 代理包含自动检测此名称更改的功能，并会相应地�
  - [如何插入自定义数据](/documentation/articles/virtual-machines-linux-classic-inject-custom-data)
  - [Azure 上的自定义数据和 Cloud-Init](http://azure.microsoft.com/blog/2014/04/21/custom-data-and-cloud-init-on-windows-azure/)
  - [使用 Cloud-Init 创建 Azure 交换分区](https://wiki.ubuntu.com/AzureSwapPartitions)
- - [如何在 Azure 上使用 CoreOS](/documentation/articles/virtual-machines-linux-classic-coreos-howto)
+ - [如何在 Azure 上使用 CoreOS](https://coreos.com/os/docs/latest/booting-on-azure.html)
 
 
 ## 虚拟机映像捕获

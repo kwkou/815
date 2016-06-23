@@ -21,9 +21,6 @@
 
 <br>
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代经典部署模型。
-
-
 本教程介绍如何在 Azure 中使用 Linux 虚拟机托管基于 Django 的网站。本教程假定您之前未使用过 Azure。完成本指南之后，你将能够在云中启动和运行基于 Django 的应用程序。
 
 你将了解如何执行以下操作：
@@ -41,7 +38,7 @@
 
 ## 创建并配置 Azure 虚拟机以托管 Django
 
-1. 按照[此处](/documentation/articles/virtual-machines-linux-portal-create)提供的说明可创建 Ubuntu Server 14.04 LTS 分发的 Azure 虚拟机。如果你喜欢，你可以选择密码登陆，而不是 SSH 公钥。
+1. 按照[此处](/documentation/articles/virtual-machines-linux-quick-create-portal)提供的说明可创建 Ubuntu Server 14.04 LTS 分发的 Azure 虚拟机。如果你喜欢，你可以选择密码登陆，而不是 SSH 公钥。
 
 1. 按照[这里](/documentation/articles/virtual-networks-create-nsg-arm-ps)的说明，编辑网络安全组，允许 http 访问端口 80
 

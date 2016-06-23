@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Azure 中配置 AlwaysOn 可用性组 (GUI)"
+	pageTitle="在 Azure VM 中配置 AlwaysOn 可用性组 - 经典"
 	description="在 Azure 虚拟机中创建 AlwaysOn 可用性组。本教程主要使用用户界面和工具而不是脚本。"
 	services="virtual-machines-windows"
 	documentationCenter="na"
@@ -11,15 +11,15 @@
 	ms.date="04/05/2015"
 	wacn.date="05/24/2016" />
 
-# 在 Azure 中配置 AlwaysOn 可用性组 (GUI)
+# 在 Azure 中配置 AlwaysOn 可用性组 - 经典
 
 > [AZURE.SELECTOR]
-- [门户](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)
-- [PowerShell](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups)
+- [Resource Manager: 自动](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups)
+- [Resource Manager: 手动](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual)
+- [经典: UI](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)
+- [经典: PowerShell](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups)
 
 本端到端教程介绍如何使用 Azure 虚拟机上运行的 SQL Server AlwaysOn 实施可用性组。
-
->[AZURE.NOTE]在 Azure 经典门户中，为包含 AlwaysOn 可用性组设置了一个包含侦听器的新库。该库可自动为你配置 AlwaysOn 可用性组的所有设置。有关详细信息，请参阅 [Azure 门户库中的 SQL Server AlwaysOn 产品](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx)。若要使用 PowerShell，请参阅同一方案的[教程：Azure 中的 AlwaysOn 可用性组 (PowerShell)](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups)。
 
 完成本教程后，Azure 中的 SQL Server AlwaysOn 解决方案将包括以下要素：
 

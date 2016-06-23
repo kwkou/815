@@ -3,8 +3,8 @@
 	description="在部署之前，了解 Azure 中 Windows Server 上的 Oracle VM 支持的配置以及限制。"
 	services="virtual-machines-windows"
 	documentationCenter=""
-	manager=""
-	authors="bbenz"
+	manager="timlt"
+	authors="rickstercdn"
 	tags="azure-service-management"/>
 
 <tags
@@ -13,8 +13,6 @@
 	wacn.date="12/31/2015" />
 
 #有关 Oracle 虚拟机映像的其他注意事项
-
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 
 本文介绍 Azure 中基于 Oracle 软件映像的 Oracle 虚拟机的注意事项，这些映像用户可以自行上传，使用 Windows Server 作为操作系统。你也可以本地创建 VHD 然后上传到 Azure 来创建虚拟机。
 
@@ -41,14 +39,10 @@ Azure 为每个虚拟机分配内部 IP 地址。除非虚拟机是虚拟网络�
 
 根据是要优先考虑数据库的读操作性能还是写操作性能，考虑两种附加多个磁盘的不同方法：
 
-- **Oracle ASM 本身**与使用 Windows Server 2012 存储池的方法相比，可能会导致更好的写操作性能，但会导致更差的读操作 IOPS。下图在逻辑上描绘了此安排。  
+- **Oracle ASM 本身**与使用磁盘数组的方法相比，可能会导致更好的写操作性能，但会导致更差的读操作 IOPS。下图在逻辑上描绘了此安排。  
 	![](./media/virtual-machines-windows-classic-oracle-considerations/image2.png)
 
-- 如果你的数据库主要执行读操作，或者重视读操作的性能多于写操作的性能，**使用 Windows Server 2012 存储池的 Oracle ASM** 可能会导致更好的读操作 IOPS 性能。需要基于 Windows Server 2012 操作系统的映像。有关存储池的详细信息，请参阅[在独立服务器上部署存储空间](http://technet.microsoft.com/zh-cn/library/jj822938.aspx)。在此安排中，附加磁盘的两个相等子集将先“条带化”在一起作为两个存储池卷中的物理磁盘，然后再将这些卷添加到 ASM 磁盘组中。下图在逻辑上描绘了此安排。
-
-	![](./media/virtual-machines-windows-classic-oracle-considerations/image3.png)
-
->[AZURE.IMPORTANT]逐条评估写性能和读性能之间的得失。使用这些方法时的实际结果可能会有所不同。
+>[AZURE.IMPORTANT]逐条评估写性能和读性能之间的得失。使用这方法时的实际结果可能会有所不同。
 
 ### 高可用性和灾难恢复注意事项
 
@@ -60,7 +54,7 @@ Azure 为每个虚拟机分配内部 IP 地址。除非虚拟机是虚拟网络�
 
 ##Oracle WebLogic Server 虚拟机映像
 
--  **仅企业版支持群集。** 如果你使用的是获得 Microsoft 许可的 WebLogic Server 映像（具体而言，是使用 Windows Server 作为操作系统的映像），则仅当使用 WebLogic Server 企业版时，才授权你使用 WebLogic 群集。不要将群集用于 WebLogic Server 标准版。
+-  **仅企业版支持群集。** 仅当使用 WebLogic Server 企业版时，才授权你使用 WebLogic 群集。不要将群集用于 WebLogic Server 标准版。
 
 -  **连接超时：**如果你的应用程序依赖于与另一个 Azure 云服务（例如，数据库层服务）的公共终结点的连接，Azure 可能会在处于非活动状态 4 分钟后关闭这些打开的连接。这可能会影响依赖于连接池的功能和应用程序，因于处于非活动状态的时间超过该限制的连接可能不再保持有效。如果这会影响你的应用程序，请考虑对连接池启用“保持活动状态”逻辑。
 

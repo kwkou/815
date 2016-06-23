@@ -15,15 +15,9 @@
 
 # 使用 Resource Manager 创建 Linux 虚拟机的不同方式
 
->[AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代经典部署模型。
-
 Azure 提供不同的方法来创建 VM，以符合不同的用户和目的。本文汇总了这些方法的差异，以及在创建 Linux 虚拟机时可使用的选项。
 
-Azure Resource Manager 模板提供不同的方法来创建虚拟机，并将虚拟机及其不同资源作为一个逻辑部署单元进行管理。若要了解有关 Azure 资源管理器以及如何将资源作为一个单元管理的详细信息，请参阅[概述](/documentation/articles/resource-group-overview)。
-
-## 工具选项
-
-### 命令 shell：Azure CLI 
+## Azure CLI 
 
 通过 CLI 使用 Azure 命令行界面。请参阅以下有关使用 Azure CLI 的教程：
 
@@ -31,11 +25,11 @@ Azure Resource Manager 模板提供不同的方法来创建虚拟机，并将虚
 
 * [使用 Azure 模板创建受保护的 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template)
 
-### GUI：Azure 门户
+## Azure 门户
 
 [Azure 门户](https://portal.azure.cn)的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 Azure 门户创建 VM：
 
-* [使用 Azure 门户创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-portal-create) 
+* [使用 Azure 门户创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-quick-create-portal) 
 
 ## 操作系统和映像选项
 
@@ -57,7 +51,7 @@ Azure Resource Manager 模板提供不同的方法来创建虚拟机，并将虚
 
 ## 后续步骤
 
-* 尝试阅读以下教程之一，了解如何通过[门户](/documentation/articles/virtual-machines-linux-portal-create)、[CLI](/documentation/articles/virtual-machines-linux-quick-create-cli) 或 Azure Resource Manager [模板](/documentation/articles/virtual-machines-linux-cli-deploy-templates)创建 Linux VM。
+* 尝试阅读以下教程之一，了解如何通过[门户](/documentation/articles/virtual-machines-linux-quick-create-portal)、[CLI](/documentation/articles/virtual-machines-linux-quick-create-cli) 或 Azure Resource Manager [模板](/documentation/articles/virtual-machines-linux-cli-deploy-templates)创建 Linux VM。
 
 * 创建 Linux VM 后，可以轻松[添加数据磁盘](/documentation/articles/virtual-machines-linux-add-disk)。
 
