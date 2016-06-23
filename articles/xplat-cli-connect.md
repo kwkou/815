@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="12/29/2015"
-	wacn.date="03/21/2015"/>
+	ms.date="04/08/2016"
+	wacn.date="06/20/2016"/>
 
 # 从 Azure 命令行界面 (Azure CLI) 连接到 Azure 订阅
 

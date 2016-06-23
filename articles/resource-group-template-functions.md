@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="02/22/2016"
-   wacn.date="04/18/2016"/>
+   ms.date="05/06/2016"
+   wacn.date="06/20/2016"/>
 
 # Azure 资源管理器模板函数
 

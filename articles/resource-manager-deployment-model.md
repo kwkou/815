@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="03/23/2016"
-   wacn.date="05/23/2016"/>
+   ms.date="05/13/2016"
+   wacn.date="06/20/2016"/>
 
 # 了解资源管理器部署和经典部署
 

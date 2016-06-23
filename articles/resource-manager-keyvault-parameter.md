@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="02/09/2016"
-   wacn.date="03/21/2016"/>
+   ms.date="05/16/2016"
+   wacn.date="06/20/2016"/>
 
 # 在部署期间传递安全值
 
