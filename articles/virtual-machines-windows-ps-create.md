@@ -33,15 +33,22 @@
 
 1. 获取可以创建资源的可用位置列表。
 
-	    Get-AzureLocation | sort Name | Select Name
+	    Get-AzureRmLocation | sort Location | Select Location
 
-2. 使用列表中的位置（例如 **China North**）替换 **$locName** 的值。创建变量。
+	你会看到类似这样的输出：
 
-        $locName = "location name"
+        Location
+        --------
+        China North
+        China East
+
+2. 使用列表中的位置替换 **$locName** 的值。创建变量。
+
+        $locName = "China North"
         
 3. 使用新资源组的名称替换 **$rgName** 的值。创建变量和资源组。
 
-        $rgName = "resource group name"
+        $rgName = "mygroup1"
         New-AzureRmResourceGroup -Name $rgName -Location $locName
     
 ## 步骤 3：创建存储帐户
@@ -50,15 +57,15 @@
 
 1. 使用存储帐户名称替换 **$stName** 的值（仅限小写字母和数字）。测试名称的唯一性。
 
-        $stName = "storage account name"
-        Test-AzureName -Storage $stName
+        $stName = "mystorage1"
+        Get-AzureRmStorageAccountNameAvailability $stName
 
-    如果此命令返回 **False**，则你建议的名称是唯一的。
+    如果此命令返回 **True**，则你建议的名称是唯一的。
     
 2. 现在，请运行以下命令来创建存储帐户。
     
         $storageAcc = New-AzureRmStorageAccount -ResourceGroupName $rgName -Name $stName -Type "Standard_LRS" -Location $locName
-        
+
 ## 步骤 4：创建虚拟网络
 
 所有虚拟机都必须与虚拟网络关联。

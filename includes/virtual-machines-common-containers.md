@@ -110,7 +110,7 @@ Docker 有自己的 VM 创建工具集 ([docker-machine](/documentation/articles
 
 [Deis](http://deis.io/overview/) 是一种开放源“平台即服务”(PaaS)，可帮助在你自己的服务器上轻松部署和管理应用程序。Deis 构建在 Docker 和 CoreOS 的基础之上，可提供轻型 PaaS，其中包含一个受 Heroku 启发的工作流。
 
-[CoreOS](/documentation/articles/virtual-machines-linux-classic-coreos-howto) 是一种 Linux 分发，可提供优化的占用空间和 Docker 支持，且具有名为 [rkt](https://github.com/coreos/rkt) 的自有容器系统，还有一个名为 [fleet](/documentation/articles/virtual-machines-linux-classic-coreos-fleet-get-started) 的容器组管理工具。
+[CoreOS](https://coreos.com/os/docs/latest/booting-on-azure.html) 是一种 Linux 分发，可提供优化的占用空间和 Docker 支持，且具有名为 [rkt](https://github.com/coreos/rkt) 的自有容器系统，还有一个名为 [fleet](https://coreos.com/using-coreos/clustering/) 的容器组管理工具。
 
 Ubuntu 是另一个非常受欢迎的 Linux 分发，可以非常好地支持 Docker，还支持 [Linux（LXC 式）群集](https://help.ubuntu.com/lts/serverguide/lxc.html)。
 
@@ -151,7 +151,7 @@ Azure 上的 Docker：
 - [适用于 Azure 上 的 Linux 的 Docker VM 扩展](/documentation/articles/virtual-machines-linux-dockerextension)
 - [Azure Docker VM 扩展用户指南](https://github.com/Azure/azure-docker-extension/blob/master/README.md)
 - [从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展](/documentation/articles/virtual-machines-linux-classic-cli-use-docker)
-- [如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-linux-classic-docker-machine)
+- [如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-linux-docker-machine)
 - [如何在 Azure 上将 docker 与 swarm 一起使用](/documentation/articles/virtual-machines-linux-docker-swarm)
 - [在 Azure 上使用 Docker 和 Compose 入门](/documentation/articles/virtual-machines-linux-docker-compose-quickstart)
 - [对包含在容器内的应用程序的 `compose`](https://github.com/Azure/azure-docker-extension#11-public-configuration-keys) 提供内置支持
@@ -159,11 +159,11 @@ Azure 上的 Docker：
 
 Linux 分发和 Azure 示例：
 
-- [CoreOS](/documentation/articles/virtual-machines-linux-classic-coreos-howto)
+- [CoreOS](https://coreos.com/os/docs/latest/booting-on-azure.html)
 
 配置、群集管理和容器协调：
 
-- [CoreOS 上的 Fleet](/documentation/articles/virtual-machines-linux-classic-coreos-fleet-get-started)
+- [CoreOS 上的 Fleet](https://coreos.com/using-coreos/clustering/)
 
 -	Kubernetes
 	- [使用 CoreOS 和 Weave 实现 Kubernetes 群集部署自动化的完整指南](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/coreos/azure/README.md#kubernetes-on-azure-with-coreos-and-weave)

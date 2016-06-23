@@ -21,8 +21,6 @@
 
 本文概述如何使用自定义脚本扩展编写 Azure 资源管理器模板，用于引导 Linux 或 Windows VM 上的工作负荷。
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代 [经典部署模型](/documentation/articles/virtual-machines-extensions-customscript)。
-
 [AZURE.INCLUDE [virtual-machines-common-extensions-customscript](../includes/virtual-machines-common-extensions-customscript.md)]
 
 ## Linux VM 模板示例
@@ -41,8 +39,8 @@
       "type": "CustomScriptForLinux",
       "typeHandlerVersion": "1.2",
       "settings": {
-      "fileUris": [ "https: //raw.githubusercontent.com/Azure/azure-quickstart-templates/master/mongodb-on-ubuntu/mongo-install-ubuntu.sh                        ],
-      "commandToExecute": "shmongo-install-ubuntu.sh"
+      "fileUris": [ "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/mongodb-on-ubuntu/mongo-install-ubuntu.sh"],
+      "commandToExecute": "sh mongo-install-ubuntu.sh"
       }
     }
     }

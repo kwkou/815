@@ -2,7 +2,9 @@
 
 ###<a name="configure-a-dns-label-for-the-public-ip-address"></a> 配置用于公共 IP 地址的 DNS 标签
 
-若要从 Internet 连接到 SQL Server 数据库引擎，请首先配置用于公共 IP 地址的 DNS 标签。请注意，如果你打算只连接到同一虚拟网络中的 SQL Server 实例，或者只进行本地连接，则此步骤不是必需的。
+若要从 Internet 连接到 SQL Server 数据库引擎，请首先配置用于公共 IP 地址的 DNS 标签。
+
+> [AZURE.NOTE] 如果你打算只连接到同一虚拟网络中的 SQL Server 实例，或者只进行本地连接，则此步骤不是必需的。
 
 若要创建 DNS 标签，请首先在门户中选择“虚拟机”。选择要显示其属性的 SQL Server VM。
 

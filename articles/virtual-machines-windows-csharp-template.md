@@ -37,9 +37,9 @@
 
 1. 获取可以创建资源的可用位置列表。
 
-	    Get-AzureLocation | sort Name | Select Name
+	    Get-AzureRmLocation | sort Location | Select Location
 
-2. 使用列表中的位置（例如 **China North**）替换 **$locName** 的值。创建变量。
+2. 使用列表中的位置（例如 **chinanorth**）替换 **$locName** 的值。创建变量。
 
         $locName = "location name"
         
@@ -63,14 +63,14 @@
 1. 将 $stName 的值替换为存储帐户的名称（仅限小写字母和数字）。测试名称的唯一性。
 
         $stName = "storage account name"
-        Test-AzureName -Storage $stName
+        Get-AzureRmStorageAccountNameAvailability $stName
 
-    如果此命令返回 **False**，则你建议的名称是唯一的。
+    如果此命令返回 **True**，则你建议的名称是唯一的。
     
 2. 现在，请运行以下命令来创建存储帐户。
     
         New-AzureRmStorageAccount -ResourceGroupName $rgName -Name $stName -Type "Standard_LRS" -Location $locName
-        
+
 3. 将 {blob-storage-endpoint} 替换为你帐户中 Blob 存储的终结点。将 {storage-account-name} 替换为你的存储帐户名称。将 {primary-storage-key} 替换为主存储密钥。运行以下命令以创建用于存储文件的容器。可以从 Azure 门户获取终结点和密钥值。
 
         $ConnectionString = "DefaultEndpointsProtocol=http;BlobEndpoint={blob-storage-endpoint};AccountName={storage-account-name};AccountKey={primary-storage-key}"
@@ -452,8 +452,8 @@ Azure 资源管理器将从 Azure 存储帐户访问模板文件和参数文件�
           credential,
           groupName",
           storageName,
-          deploymentName}",
-          subscriptionId}");
+          deploymentName,
+          subscriptionId);
         Console.ReadLine();
 
 ##步骤 7：添加代码以删除资源

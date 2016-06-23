@@ -15,8 +15,6 @@
 
 # 将策略应用到 Azure Resource Manager 虚拟机
 
->[AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代经典部署模型。
-
 通过使用策略，组织可以在整个企业中强制实施各种约定和规则。强制实施所需行为有助于消除风险，同时为组织的成功做出贡献。在本文中，我们将介绍如何使用 Azure Resource Manager 策略来为组织中的虚拟机定义所需行为。
 
 下面概述了实现此目的的步骤

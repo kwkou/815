@@ -17,6 +17,8 @@
 
 本主题提供有关运行 [Azure 虚拟机中的 SQL Server](/home/features/virtual-machines#virtual-machine-SQLserver) 时出现的一些最常见问题的解答。
 
+[AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
+
 ## 常见问题
 
 1. **如何创建装有 SQL Server 的 Azure 虚拟机？**

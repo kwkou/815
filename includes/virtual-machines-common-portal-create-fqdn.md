@@ -1,8 +1,6 @@
+## 快速步骤
 
-
-在 [Azure 门户](https://portal.azure.cn)中使用“Resource Manager”部署模型创建虚拟机时，该门户会自动为虚拟机创建一个公共 IP 资源。可以使用此 IP 地址远程访问虚拟机。虽然默认情况下门户不创建[完全限定域名](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)（简称 FQDN），但在创建虚拟机以后，创建完全限定域名相当容易。本文演示了创建 DNS 名称或 FQDN 的步骤。
-
-本文假设你已在门户中登录到你的订阅，并使用“Resource Manager”创建了一个具有可用映像的虚拟机。虚拟机开始运行后可按照以下步骤操作。
+本文假设你已在门户中登录到你的订阅，并使用 Resource Manager 部署模型创建了一个具有可用映像的虚拟机。虚拟机开始运行后可按照以下步骤操作。
 
 1.  在门户中查看虚拟机设置，然后单击公共 IP 地址。
 
@@ -22,5 +20,3 @@
 
     ![已创建 FQDN](./media/virtual-machines-common-portal-create-fqdn/fqdnCreated.PNG)
 
-
-    你现在可以使用此 DNS 名称远程连接至虚拟机。例如，连接到完全限定域名为 `testdnslabel.centralus.chinacloudapp.cn` 且用户名为 `adminuser` 的 Linux 虚拟机时，使用 `SSH adminuser@testdnslabel.centralus.chinacloudapp.cn`。

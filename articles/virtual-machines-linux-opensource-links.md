@@ -49,7 +49,7 @@
 - [从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展](/documentation/articles/virtual-machines-linux-classic-cli-use-docker)
 - [在 Azure 门户中使用 Docker VM 扩展](/documentation/articles/virtual-machines-linux-classic-portal-use-docker)
 - [在 Azure 库中使用 Docker 快速入门](/documentation/articles/virtual-machines-linux-classic-docker-quickstart)
-- [如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-linux-classic-docker-machine)
+- [如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-linux-docker-machine)
 
 ### Ubuntu
 - [如何：MySQL 群集](/documentation/articles/virtual-machines-linux-classic-mysql-cluster)
@@ -59,9 +59,7 @@
 - [如何：安装和运行 MySQL](/documentation/articles/virtual-machines-linux-classic-mysql-on-opensuse)
 
 ### CoreOS
-- [如何：在 Azure 上使用 CoreOS](/documentation/articles/virtual-machines-linux-classic-coreos-howto)
-- [如何：开始在 Azure 上的 CoreOS 上使用 Fleet 和 Docker](/documentation/articles/virtual-machines-linux-classic-coreos-fleet-get-started)
-
+- [如何：在 Azure 上使用 CoreOS](https://coreos.com/os/docs/latest/booting-on-azure.html)
 
 ## 规划
 - [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-linux-infrastructure-service-guidelines)

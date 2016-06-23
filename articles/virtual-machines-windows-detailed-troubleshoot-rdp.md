@@ -15,13 +15,13 @@
 
 # 对 Windows Azure 虚拟机的远程桌面连接进行详细故障排除
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
-
 本文提供详细的故障排除步骤，用于为基于 Windows 的 Azure 虚拟机诊断和修复复杂的远程桌面错误。
 
 > [AZURE.IMPORTANT] 若要消除更常见的远程桌面错误，请务必先阅读[远程桌面的基本故障排除文章](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)，然后再继续。
 
-如果你收到的远程桌面错误消息与[基本远程桌面故障排除指南](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)中所述的任何特定错误消息都不相似，可以按照这些步骤操作并尝试找出远程桌面（或 [RDP](https://zh.wikipedia.org/wiki/远程桌面协议)）客户端无法连接到 Azure VM 上的 RDP 服务的原因。
+如果你收到的远程桌面错误消息与[基本远程桌面故障排除指南](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)中所述的任何特定错误消息都不相似，可以按照这些步骤操作并尝试找出远程桌面（或 RDP）客户端无法连接到 Azure VM 上的 RDP 服务的原因。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 如果你对本文中的任何点需要更多帮助，可以联系 [MSDN Azure 和 CSDN 论坛](/support/forums/)上的 Azure 专家。或者，你也可以提出 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Azure 支持常见问题](/support/faq/)。
 
@@ -43,7 +43,7 @@
 在继续进行详细故障排除之前，
 
 - 检查 Azure 经典门户中虚拟机的状态，或者检查 Azure 经典门户中是否存在任何明显问题
-- 按照[基本故障排除指南中常见 RDP 错误的快速修复步骤](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection#quickfixrdp)操作
+- 按照[基本故障排除指南中常见 RDP 错误的快速修复步骤](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)操作
 
 
 在执行这些步骤后，尝试通过远程桌面重新连接到 VM。

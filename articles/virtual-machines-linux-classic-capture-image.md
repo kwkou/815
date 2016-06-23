@@ -29,7 +29,7 @@ Azure 将映像存储在“映像”下。这也是你上载和存储任何映�
 
 ## 捕获虚拟机
 
-1. 使用所选 SSH 客户端连接到虚拟机。有关详细信息，请参阅[如何登录到运行 Linux 的虚拟机][]。
+1. 使用所选 SSH 客户端[连接到虚拟机](/documentation/articles/virtual-machines-linux-classic-log-on)。
 
 2. 在 SSH 窗口中，键入以下命令。请注意，`waagent` 的输出结果可能会因此实用程序的版本而略有差异：
 
@@ -87,7 +87,6 @@ Azure 将映像存储在“映像”下。这也是你上载和存储任何映�
 **另请参阅：**[Azure Linux 代理用户指南](/documentation/articles/virtual-machines-linux-agent-user-guide)
 
 [Azure 经典门户]: http://manage.windowsazure.cn
-[如何登录到运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-classic-log-on
 [关于 Azure 中的虚拟机映像]: /documentation/articles/virtual-machines-linux-classic-about-images
 [如何创建自定义虚拟机]: /documentation/articles/virtual-machines-linux-classic-create-custom
 [How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/virtual-machines-linux-classic-attach-disk

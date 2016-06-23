@@ -17,8 +17,6 @@
 
 # 在混合云中设置用于测试的 SharePoint Intranet 场
 
->[AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代经典部署模型。
-
 本主题将指导你逐步创建混合云环境，以便测试在 Azure 中托管的 Intranet SharePoint 场。这是生成的配置。
 
 ![](./media/virtual-machines-windows-ps-hybrid-cloud-test-env-sp/virtual-machines-windows-ps-hybrid-cloud-test-env-sp-ph3.png)
