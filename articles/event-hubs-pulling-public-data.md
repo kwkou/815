@@ -9,8 +9,8 @@
 
 <tags 
    ms.service="event-hubs"
-   ms.date="02/05/2016"
-   wacn.date="03/28/2016" />
+    ms.date="04/26/2016"
+   wacn.date="06/20/2016" />
 
 # 将公共数据拉取到 Azure 事件中心中
 
