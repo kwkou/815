@@ -133,21 +133,6 @@
 
 	conconfig mode [options] <modename>
 
-
-## azure feature：用于管理帐户功能的命令
-
-**列出订阅可用的所有功能**
-
-	feature list [options]
-
-**显示一个功能**
-
-	feature show [options] <providerName> <featureName>
-
-**注册资源提供程序的预览功能**
-
-	feature register [options] <providerName> <featureName>
-
 ## azure group：用于管理资源组的命令
 
 **创建新的资源组**
