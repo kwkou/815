@@ -8,8 +8,8 @@
 	editor="" />
 <tags 
 	ms.service="visual-studio-online"
-	ms.date="02/04/2016"
-	wacn.date="" />
+	ms.date="05/08/2016"
+	wacn.date="06/20/2016" />
 
 # 在 Visual Studio 中调试云服务或虚拟机
 

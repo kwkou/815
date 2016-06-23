@@ -8,8 +8,8 @@
    editor="" />
 <tags
    ms.service="multiple"
-   ms.date="01/30/2016"
-   wacn.date="05/16/2016" />
+   ms.date="05/08/2016"
+   wacn.date="06/20/2016" />
 
 # 如何：通过 Visual Studio 将 Web 应用程序迁移和发布到 Azure 云服务
 

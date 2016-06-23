@@ -8,8 +8,8 @@
    editor="" />
 <tags 
    ms.service="storage"
-   ms.date="04/18/2016"
-   wacn.date="05/16/2016" />
+   ms.date="05/08/2016"
+   wacn.date="06/20/2016" />
 
 # 在 Visual Studio 中配置和使用存储模拟器
 

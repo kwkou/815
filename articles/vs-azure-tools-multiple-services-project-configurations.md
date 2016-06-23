@@ -8,8 +8,8 @@
    editor="" />
 <tags
    ms.service="multiple"
-   ms.date="01/30/2016"
-   wacn.date="05/16/2016" />
+   ms.date="05/08/2016"
+   wacn.date="06/20/2016" />
 
 # 使用多种服务配置来配置 Azure 项目
 
