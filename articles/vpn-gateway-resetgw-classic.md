@@ -10,8 +10,8 @@
 
 <tags
    ms.service="vpn-gateway"
-   ms.date="02/04/2016"
-   wacn.date="05/10/2016"/>
+   ms.date="04/26/2016"
+   wacn.date="06/24/2016"/>
 
 # 使用 PowerShell 重置 Azure VPN 网关
 
@@ -36,19 +36,19 @@
 
 下面的示例将重置名为“ContosoVNet”的虚拟网络的 Azure VPN 网关。
  
-			D:\PS> Reset-AzureVNetGateway –VnetName “ContosoVNet” 
-
-	 		Error          :
-	 		HttpStatusCode : OK
-	 		Id             : f1600632-c819-4b2f-ac0e-f4126bec1ff8
-	 		Status         : Successful
-			RequestId      : 9ca273de2c4d01e986480ce1ffa4d6d9
-			StatusCode     : OK
+	Reset-AzureVNetGateway –VnetName “ContosoVNet” 
+	
+	Error          :
+	HttpStatusCode : OK
+	Id             : f1600632-c819-4b2f-ac0e-f4126bec1ff8
+	Status         : Successful
+	RequestId      : 9ca273de2c4d01e986480ce1ffa4d6d9
+	StatusCode     : OK
 
 
 如果在首次重新启动后未恢复连接，再次发出同一命令以重新启动第二个 VM 实例（新活动网关）。如果连续请求两次重新启动，则重新启动这两个 VM 实例（活动和备用）的时间可能会略长一些。这种情况将导致 VPN 连接出现较长的时间间隔，VM 需要最多 2 到 4 分钟才能完成重新启动。
 
-在两次重新启动之后，如果你仍然遇到跨界连接问题，请从 Azure 管理门户开具支持票证以联系 Azure 支持部门。
+在两次重新启动之后，如果你仍然遇到跨界连接问题，请从 Azure 管理门户开具支持票证以联系 Azure 支持。
 
 
 ## 后续步骤
@@ -61,4 +61,4 @@
 
 
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0613_2016-->

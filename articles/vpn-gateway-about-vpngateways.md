@@ -9,16 +9,16 @@
    tags="azure-resource-manager,azure-service-management"/>
 <tags 
    ms.service="vpn-gateway"
-   ms.date="03/18/2016"
-   wacn.date="05/10/2016" />
+   ms.date="05/12/2016"
+   wacn.date="06/24/2016" />
 
 # 关于 VPN 网关
 
 VPN 网关（也称为 Azure 虚拟网络网关）用于在虚拟网络和本地位置之间发送网络流量。VPN 网关还用于在 Azure 的多个虚拟网络之间发送流量 （VNet 到 VNet）。以下部分将讨论与 VPN 网关相关的项。
 
-用于创建 VPN 网关的说明取决于用于创建虚拟网络的部署模型。例如，如果你使用经典部署模型创建 VNet，将使用经典部署模型的指导原则和说明来创建及配置 VPN 网关。你无法为经典部署模型虚拟网络创建 Resource Manager VPN 网关。
+用于创建 VPN 网关的说明取决于用于创建虚拟网络的部署模型。例如，如果你使用经典部署模型创建 VNet，将使用经典部署模型的指导原则和说明来创建及配置 VPN 网关。你无法为经典部署模型虚拟网络创建 资源管理器 VPN 网关。
 
-有关部署模型的详细信息，请参阅 [Understanding Resource Manager and classic deployment models（了解 Resource Manager 和经典部署模型）](/documentation/articles/resource-manager-deployment-model)。
+有关部署模型的详细信息，请参阅 [Understanding 资源管理器 and classic deployment models（了解 资源管理器 和经典部署模型）](/documentation/articles/resource-manager-deployment-model)。
 
 
 ## <a name="gwsub"></a>网关子网
@@ -35,16 +35,17 @@ VPN 网关（也称为 Azure 虚拟网络网关）用于在虚拟网络和本地
 
 	Add-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.3.0/27
 
+>[AZURE.IMPORTANT] 确保未对 GatewaySubnet 应用网络安全组 (NSG)，因为这可能会导致连接失败。
 
 ## <a name="gwtype"></a>网关类型
 
-网关类型指定网关本身如何进行连接，它是 Resource Manager 部署模型的必需配置设置。请勿将网关类型与 VPN 类型混为一谈，后者指定的是 VPN 的路由类型。`-GatewayType` 的可用值为：
+网关类型指定网关本身如何进行连接，它是 资源管理器 部署模型的必需配置设置。请勿将网关类型与 VPN 类型混为一谈，后者指定的是 VPN 的路由类型。`-GatewayType` 的可用值为：
 
 - Vpn
 - ExpressRoute
 
 
-此 Resource Manager 部署模型示例将 -GatewayType 指定为 *Vpn*。在创建网关时，你必须确保用于配置的网关类型正确。
+此 资源管理器 部署模型示例将 -GatewayType 指定为 Vpn。在创建网关时，你必须确保用于配置的网关类型正确。
 
 	New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg -Location 'China North' -IpConfigurations $gwipconfig -GatewayType Vpn -VpnType RouteBased
 
@@ -64,13 +65,13 @@ VPN 网关（也称为 Azure 虚拟网络网关）用于在虚拟网络和本地
 
 
 下表显示网关类型和估计的聚合吞吐量。
-网关 SKU 之间并无定价差异。有关定价的信息，请参阅 [VPN 网关定价](/home/features/vpn-gateway/#price)。此表适用于 Resource Manager 与经典部署模型。
+网关 SKU 之间并无定价差异。有关定价的信息，请参阅 [VPN 网关定价](/home/features/vpn-gateway#price)。此表适用于 资源管理器 与经典部署模型。
 
 [AZURE.INCLUDE [vpn-gateway-table-gwtype-aggthroughput](../includes/vpn-gateway-table-gwtype-aggtput-include.md)]
 
 ## <a name="vpntype"></a>VPN 类型
 
-每个配置需要特定的 VPN 类型才能正常运行。如果要合并两个配置，例如创建连往相同 VNet 的站点到站点连接和点到站点连接，你必须使用同时符合这两个连接要求的 VPN 类型。在点到站点和站点到站点并存连接的情况下，使用 Azure Resource Manager 部署模型时必须使用基于路由的 VPN 类型，而使用经典部署模式时必须使用动态网关。
+每个配置需要特定的 VPN 类型才能正常运行。如果要合并两个配置，例如创建连往相同 VNet 的站点到站点连接和点到站点连接，你必须使用同时符合这两个连接要求的 VPN 类型。在点到站点和站点到站点并存连接的情况下，使用 Azure 资源管理器 部署模型时必须使用基于路由的 VPN 类型，而使用经典部署模式时必须使用动态网关。
 
 在创建配置时，需选择连接所需的 VPN 类型。
 
@@ -78,13 +79,13 @@ VPN 网关（也称为 Azure 虚拟网络网关）用于在虚拟网络和本地
 
 [AZURE.INCLUDE [vpn-gateway-vpntype](../includes/vpn-gateway-vpntype-include.md)]
 
-此 Resource Manager 部署模型示例将 `-VpnType` 指定为 RouteBased。在创建网关时，你必须确保用于配置的 -VpnType 正确。
+此 资源管理器 部署模型示例将 `-VpnType` 指定为 RouteBased。在创建网关时，你必须确保用于配置的 -VpnType 正确。
 
 	New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg -Location 'China North' -IpConfigurations $gwipconfig -GatewayType Vpn -VpnType RouteBased
 
 ## <a name="connectiontype"></a>连接类型
 
-每个配置需要特定的连接类型。`-ConnectionType` 的可用 Resource Manager PowerShell 值为：
+每个配置需要特定的连接类型。`-ConnectionType` 的可用 资源管理器 PowerShell 值为：
 
 - IPsec
 - Vnet2Vnet
@@ -96,15 +97,15 @@ VPN 网关（也称为 Azure 虚拟网络网关）用于在虚拟网络和本地
 	New-AzureRmVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName testrg -Location 'China North' -VirtualNetworkGateway1 $gateway1 -LocalNetworkGateway2 $local -ConnectionType IPsec -RoutingWeight 10 -SharedKey 'abc123'
 
 
-## <a name="lng"></a>局域网网关
+## <a name="lng"></a>本地网关
 
 局域网网关通常是指你的本地位置。在经典部署模型中，局域网网关称为本地站点。指定局域网网关的名称（即本地 VPN 设备的公共 IP 地址），并指定位于本地位置的地址前缀。Azure 将查看网络流量的目标地址前缀、查阅你为局域网网关指定的配置，并相应地路由数据包。你可以根据需要修改这些地址前缀。
 
 
 
-### 修改地址前缀 - Resource Manager
+### 修改地址前缀 - 资源管理器
 
-修改地址前缀的过程根据是否已创建 VPN 网关而有所不同。请参阅以下文章部分：[Modify address prefixes for a local network gateway（修改局域网网关的地址前缀）](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/#modify)。
+修改地址前缀的过程根据是否已创建 VPN 网关而有所不同。请参阅以下文章部分：[修改本地网关的地址前缀](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/#modify)。
 
 在以下示例中，你可以看到要指定名为 MyOnPremiseWest 的局域网网关，其中包含两个 IP 地址前缀。
 
@@ -135,4 +136,4 @@ VPN 网关（也称为 Azure 虚拟网络网关）用于在虚拟网络和本地
 
  
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0613_2016-->

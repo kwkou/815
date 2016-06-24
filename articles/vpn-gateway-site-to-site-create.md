@@ -10,8 +10,8 @@
 
 <tags
    ms.service="vpn-gateway"
-   ms.date="03/16/2016"
-   wacn.date="05/10/2016"/>
+   ms.date="05/13/2016"
+   wacn.date="06/24/2016"/>
 
 # 使用 Azure 管理门户创建具有站点到站点 VPN 连接的虚拟网络
 
@@ -25,6 +25,8 @@
 **关于 Azure 部署模型**
 
 [AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)]
+
+## 连接关系图
  
 ![站点到站点示意图](./media/vpn-gateway-site-to-site-create/site2site.png "站点到站点")
 
@@ -32,7 +34,7 @@
 
 [AZURE.INCLUDE [vpn-gateway-table-site-to-site](../includes/vpn-gateway-table-site-to-site-include.md)]
  
-如果你要将 VNet 连接在一起，但不想要与某个本地位置建立连接，请参阅 [Configure a VNet-to-VNet connection for the classic deployment model（为经典部署模型配置 VNet 到 VNet 连接）](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)或 [Configure a VNet-to-VNet connection for the Resource Manager deployment model（为 Resource Manager 部署模型配置 VNet 到 VNet 连接）](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps)。
+如果你想要将多个 VNet 连接到一起，但又不想创建连接到本地位置的连接，请参阅[为经典部署模型配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)。如果你正在寻找不同类型的连接配置，请参阅 [VPN 网关连接拓扑](/documentation/articles/vpn-gateway-topology)一文。
 
  
 ## 开始之前
@@ -59,7 +61,7 @@
 输入以下信息。
 
 - **名称** - 为虚拟网络命名。例如，ChinaEastVNet。在部署你的 VM 和 PaaS 实例时，将使用此虚拟网络名称，因此最好不要让此名称太复杂。
-- **位置**：位置直接与你想让资源 (VM) 驻留在的物理位置（区域）有关。例如，如果你希望部署到此虚拟网络的 VM 的物理位置位于*中国东部*，请选择该位置。创建虚拟网络后，将无法更改与虚拟网络关联的区域。
+- **位置**：位置直接与你想让资源 (VM) 驻留在的物理位置（区域）有关。例如，如果你希望部署到此虚拟网络的 VM 的物理位置位于中国东部，请选择该位置。创建虚拟网络后，将无法更改与虚拟网络关联的区域。
 
 ## “DNS 服务器和 VPN 连接”页
 
@@ -98,10 +100,10 @@
 
 ## 配置虚拟网络网关
 
-接下来，你将配置虚拟网络网关，以便创建安全的站点到站点连接。请参阅 [Configure a virtual network gateway in the Azure management portal（在 Azure 管理门户中配置虚拟网络网关）](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp)。
+接下来，你将配置虚拟网络网关，以便创建安全的站点到站点连接。请参阅[在 Azure 管理门户中配置虚拟网络网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp)。
 
 ## 后续步骤
 
 连接完成后，即可将虚拟机添加到虚拟网络。有关详细信息，请参阅[虚拟机](/documentation/services/virtual-machines)文档。
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0613_2016-->

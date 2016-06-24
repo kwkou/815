@@ -9,12 +9,12 @@
    tags="azure-service-management,azure-resource-manager"/>
 <tags 
    ms.service="vpn-gateway"
-   ms.date="03/28/2016"
-   wacn.date="05/10/2016"/>
+   ms.date="04/20/2016"
+   wacn.date="06/24/2016"/>
 
 # 规划和设计 VPN 网关
 
-规划和设计跨界连接与 VNet 到 VNet 连接可能很简单，也可以非常复杂，具体取决于你的网络需求。
+规划和设计跨界配置和 VNet 到 VNet 配置可以很简单，也可以相当复杂，具体取决于你的网络需求。本文将详细介绍基本规划和设计注意事项。
 
 ## 规划
 
@@ -43,7 +43,8 @@
 ### <a name="gwrequire"></a>2.根据 VPN 类型和 SKU 考虑网关要求
 
 
-在创建 VPN 网关时，你需要指定想要使用的网关 SKU。共有 3 种 VPN 网关 SKU：
+在创建 VPN 网关时，你需要指定想要使用的网关 SKU。 
+共有 3 种 VPN 网关 SKU：
 
 - 基本
 - 标准
@@ -56,7 +57,7 @@
 ### 3\.网关类型和聚合吞吐量估计
 
 下表显示网关类型和估计的聚合吞吐量。估计的聚合吞吐量可能是设计时的决定因素。
-网关 SKU 之间并无定价差异。有关定价的信息，请参阅 [VPN 网关定价](/home/features/vpn-gateway/#price)。此表适用于 Resource Manager 与经典部署模型。
+网关 SKU 之间并无定价差异。有关定价的信息，请参阅 [VPN 网关定价](/home/features/vpn-gateway#price)。此表适用于资源管理器与经典部署模型。
 
 [AZURE.INCLUDE [vpn-gateway-table-gwtype-aggtput](../includes/vpn-gateway-table-gwtype-aggtput-include.md)]
 
@@ -77,7 +78,7 @@
 
 ### 1\.选择连接拓扑
 
-首先请阅读[Connection toplogies（连接拓扑）](/documentation/articles/vpn-gateway-topology)一文。该文章包含基本原理图、每种拓扑的部署模型（Resource Manager 或经典）和可用来部署配置的部署工具。
+首先请阅读[Connection toplogies（连接拓扑）](/documentation/articles/vpn-gateway-topology)一文。该文章包含基本原理图、每种拓扑的部署模型（资源管理器或经典）和可用来部署配置的部署工具。
 
 ### 2\.了解设计基础知识
 
@@ -103,7 +104,7 @@
 
 #### <a name="gwtype"></a>关于网关类型
 
-为拓扑选择正确的网关类型至关重要。如果选择了错误的类型，你的网关将无法正常工作。网关类型指定网关本身如何进行连接，它是 Resource Manager 部署模型的必需配置设置。
+为拓扑选择正确的网关类型至关重要。如果选择了错误的类型，你的网关将无法正常工作。网关类型指定网关本身如何进行连接，它是资源管理器部署模型的必需配置设置。
 
 网关类型包括：
 
@@ -122,7 +123,7 @@
 
 #### <a name="vpntype"></a>关于 VPN 类型
 
-每个配置需要特定的 VPN 类型才能正常运行。如果要合并两个配置，例如创建连往相同 VNet 的站点到站点连接和点到站点连接，你必须使用同时符合这两个连接要求的 VPN 类型。在点到站点和站点到站点并存连接的情况下，使用 Azure Resource Manager 部署模型时必须使用基于路由的 VPN 类型，而使用经典部署模式时必须使用动态网关。
+每个配置需要特定的 VPN 类型才能正常运行。如果要合并两个配置，例如创建连往相同 VNet 的站点到站点连接和点到站点连接，你必须使用同时符合这两个连接要求的 VPN 类型。在点到站点和站点到站点并存连接的情况下，使用 Azure 资源管理器部署模型时必须使用基于路由的 VPN 类型，而使用经典部署模式时必须使用动态网关。
 
 [AZURE.INCLUDE [vpn-gateway-vpntype](../includes/vpn-gateway-vpntype-include.md)]
 
@@ -144,7 +145,7 @@
 
 对于大多数配置，你可以配置强制隧道。借助强制隧道，你可以通过站点到站点 VPN 隧道，将全部 Internet 绑定流量重定向或“强制”返回到本地位置，以进行检查和审核。这是很多企业 IT 策略的关键安全要求。
 
-没有强制隧道，来自 Azure 中虚拟机的 Internet 绑定流量会始终通过 Azure 网络基础设施直接连接到 Internet。没有该选项，您无法对流量进行检查或审核。未经授权的 Internet 访问可能会导致信息泄漏或其他类型的安全漏洞。有关配置强制隧道的详细信息，请参阅 [About forced tunneling for the classic deployment model（关于经典部署模型的强制隧道）](/documentation/articles/vpn-gateway-about-forced-tunneling)和 [About forced tunneling for the Resource Manager deployment model（关于 Resource Manager 部署模型的强制隧道）](/documentation/articles/vpn-gateway-about-forced-tunneling)。
+没有强制隧道，来自 Azure 中虚拟机的 Internet 绑定流量会始终通过 Azure 网络基础设施直接连接到 Internet。没有该选项，您无法对流量进行检查或审核。未经授权的 Internet 访问可能会导致信息泄漏或其他类型的安全漏洞。有关配置强制隧道的详细信息，请参阅 [About forced tunneling for the classic deployment model（关于经典部署模型的强制隧道）](/documentation/articles/vpn-gateway-about-forced-tunneling)和 [About forced tunneling for the Resource Manager deployment model（关于资源管理器部署模型的强制隧道）](/documentation/articles/vpn-gateway-about-forced-tunneling)。
 
 **强制隧道示意图**
 
@@ -159,9 +160,9 @@
 
 ## 后续步骤
 
-请参阅 [VPN Gateway FAQ（VPN 网关常见问题）](/documentation/articles/vpn-gateway-vpn-faq)和 [About VPN Gateways（关于 VPN 网关）](/documentation/articles/vpn-gateway-about-vpngateways)，以获取可帮助你进行设计的详细信息。有关连接拓扑的详细信息，请参阅 [Connection toplogies（连接拓扑](/documentation/articles/vpn-gateway-topology)）。
+请参阅 [VPN Gateway FAQ（VPN 网关常见问题）](/documentation/articles/vpn-gateway-vpn-faq)和 [About VPN Gateways（关于 VPN 网关）](/documentation/articles/vpn-gateway-about-vpngateways)，以获取可帮助你进行设计的详细信息。有关连接拓扑的详细信息，请参阅 [Connection toplogies（连接拓扑）](/documentation/articles/vpn-gateway-topology)。
 
 
 
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0613_2016-->
