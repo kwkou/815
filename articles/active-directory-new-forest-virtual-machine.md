@@ -2,7 +2,7 @@
 	pageTitle="在 Azure 虚拟网络中安装 Active Directory 林" 
 	description="本教程介绍如何在 Azure 虚拟网络上的虚拟机 (VM) 中创建新的 Active Directory 林。" 
 	services="active-directory, virtual-network"
-    	keywords="active directory 虚拟机, 安装 active directory 林, azure active directory 视频"
+    keywords="active directory 虚拟机, 安装 active directory 林, azure active directory 视频"
 	documentationCenter="" 
 	authors="markusvi" 
 	manager="stevenpo" 
@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="01/25/2016" 
-	wacn.date="05/13/2016"/>
+	ms.date="04/07/2016" 
+	wacn.date="06/24/2016"/>
 
 
 # 在 Azure 虚拟网络中安装新的 Active Directory 林
@@ -136,4 +136,4 @@
 <!--Image references-->
 [1]: ./media/active-directory-new-forest-virtual-machine/AD_Forest.png
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0516_2016-->

@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="active-directory" 
-    	ms.date="05/04/2016" 
+    ms.date="05/04/2016" 
 	wacn.date="06/21/2016"/>
 
 # 如何查看 Azure Access Control 服务返回的 SAML
@@ -191,8 +191,8 @@ Azure 访问服务控制筛选器是一个社区技术预览版。作为预发�
 [Run the application]: #run_application
 [Next steps]: #next_steps
 [访问控制服务 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
-[使用 Eclipse 在 Azure 访问控制服务中对 Web 用户进行身份验证]: /zh-cn/documentation/articles/active-directory-java-authenticate-users-access-control-eclipse
-[如何使用 Eclipse 向 Azure 访问控制服务对 Web 用户进行身份验证]: /zh-cn/documentation/articles/active-directory-java-authenticate-users-access-control-eclipse
+[使用 Eclipse 在 Azure 访问控制服务中对 Web 用户进行身份验证]: /documentation/articles/active-directory-java-authenticate-users-access-control-eclipse
+[如何使用 Eclipse 向 Azure 访问控制服务对 Web 用户进行身份验证]: /documentation/articles/active-directory-java-authenticate-users-access-control-eclipse
 [saml_output]: ./media/active-directory-java-view-saml-returned-by-access-control/SAML_Output.png
  
 <!---HONumber=Mooncake_0613_2016-->
