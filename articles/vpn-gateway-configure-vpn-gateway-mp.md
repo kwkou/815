@@ -4,14 +4,14 @@
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-service-management"/>
 
 <tags 
    ms.service="vpn-gateway"
-   ms.date="02/23/2016"
-   wacn.date="05/10/2016" />
+   ms.date="05/09/2016"
+   wacn.date="06/24/2016" />
 
 # 配置经典部署模型的 VPN 网关
 
@@ -25,7 +25,7 @@
 
 **关于本文**
 
-本文是针对使用[管理门户](https://manage.windowsazure.cn)（而不是 Azure 门户）的经典部署模型编写的。编写有关 Resource Manager 部署模型的文章后，我们将在此处提供其链接。
+本文是针对使用[管理门户](https://manage.windowsazure.cn)的经典部署模型编写的。编写有关 资源管理器 部署模型的文章后，我们将在此处提供其链接。
 
 **关于 Azure 部署模型**
 
@@ -33,7 +33,7 @@
 
 ## 配置概述
 
-以下过程将引导你在 Azure 管理门户中配置 VPN 网关。这些步骤适用于使用服务管理模式创建并显示在 Azure 管理门户中的 VNet 网关。这些步骤不适合使用管理门户来完成，也不适用于使用 Resource Manager 模式配置的 VNet。在 [Create a virtual network with a site-to-site connection using Azure Resource Manager and PowerShell（使用 Azure Resource Manager 和 PowerShell 创建具有站点到站点连接的虚拟网络）](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)中，可以找到使用 Resource Manager 模式为虚拟网络创建 VNet 网关的相关信息。
+以下过程将引导你在 Azure 管理门户中配置 VPN 网关。这些步骤适用于使用服务管理模式创建并显示在 Azure 管理门户中的 VNet 网关。这些步骤不适合使用管理门户来完成，也不适用于使用资源管理器 模式配置的 VNet。在 [Create a virtual network with a site-to-site connection using Azure Resource Manager and PowerShell（使用 Azure 资源管理器 和 PowerShell 创建具有站点到站点连接的虚拟网络）](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)中，可以找到使用资源管理器 模式为虚拟网络创建 VNet 网关的相关信息。
 
 
 1. [为 VNet 创建 VPN 网关](#create-a-vpn-gateway)
@@ -158,11 +158,9 @@
 
 ## 后续步骤
 
-你可以在以下文章中了解有关虚拟网络跨界连接的详细信息：[About secure cross-premises connections for virtual networks（关于虚拟网络的安全跨界连接）](/documentation/articles/vpn-gateway-cross-premises-options)。
-
 你可以将虚拟机添加到虚拟网络。请参阅[如何创建自定义虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal)。
 
-如果你想要配置点到站点 VPN 连接，请参阅 [Configure a point-to-site VPN connection（配置点到站点 VPN 连接）](/documentation/articles/vpn-gateway-point-to-site-create)。
+如果要配置点到站点 VPN 连接，请参阅[配置点到站点 VPN 连接](/documentation/articles/vpn-gateway-point-to-site-create)。
 
  
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0613_2016-->

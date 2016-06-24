@@ -9,8 +9,8 @@
    tags="azure-resource-manager"/>
 <tags 
    ms.service="vpn-gateway"
-   ms.date="01/15/2016"
-   wacn.date="05/10/2016" />
+   ms.date="04/26/2016"
+   wacn.date="06/24/2016" />
 
 # 为点到站点配置使用自签名根证书
 

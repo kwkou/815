@@ -9,8 +9,8 @@
   tags="azure-resource-manager, azure-service-management"/>
 <tags 
    ms.service="vpn-gateway"
-   ms.date="03/15/2016"
-   wacn.date="05/10/2016" />
+   ms.date="04/29/2016"
+   wacn.date="06/24/2016" />
 
 # 关于站点到站点 VPN 网关连接的 VPN 设备
 
@@ -54,8 +54,9 @@
 | Juniper | ISG | ScreenOS 6.3（基于策略和基于路由） | [Juniper 示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/ISG) | [Juniper 示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/ISG) |
 | Juniper | SSG | ScreenOS 6.2（基于策略和基于路由） | [Juniper 示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/SSG) | [Juniper 示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/SSG) |
 | Microsoft | 路由和远程访问服务 | Windows Server 2012 | 不兼容 | [Microsoft 示例](http://go.microsoft.com/fwlink/p/?LinkId=717761) |
+| 打开系统 AG | 任务控制安全网关 | 不适用 | [安装指南](https://www.open.ch/_pdf/Azure/AzureVPNSetup_Installation_Guide.pdf) | [安装指南](https://www.open.ch/_pdf/Azure/AzureVPNSetup_Installation_Guide.pdf) |
 | Openswan | Openswan | 2\.6.32 | （即将支持） | 不兼容 |
-| Palo Alto Networks | 运行 PAN-OS 5.0 或更高版本的所有设备 | PAN-OS 5x 或更高版本 | [Palo Alto Networks](https://support.paloaltonetworks.com) | 不兼容 |
+| Palo Alto Networks | 运行 PAN-OS 的所有设备 | PAN-OS 6.1.5 或更高版本（基于策略）、PAN-OS 7.0.5 或更高版本（基于路由） | [配置说明](https://live.paloaltonetworks.com/t5/Configuration-Articles/How-to-Configure-VPN-Tunnel-Between-a-Palo-Alto-Networks/ta-p/59065) | [配置说明](https://live.paloaltonetworks.com/t5/Integration-Articles/Configuring-IKEv2-VPN-for-Microsoft-Azure-Environment/ta-p/60340) |
 | Watchguard | 全部 | Fireware XTM v11.x | [配置说明](http://customers.watchguard.com/articles/Article/Configure-a-VPN-connection-to-a-Windows-Azure-virtual-network) | 不兼容 |
 
 
@@ -71,7 +72,7 @@
 **编辑示例的步骤：**
 
 1. 使用记事本打开示例。 
-1. 搜索所有 \<text\> 字符串并将其替换为与你的环境相关的值。请确保包含 < and >。指定名称时，你选择的名称应是唯一的。如果命令无效，请查看你的设备制造商文档。
+1. 搜索所有 < text > 字符串并将其替换为与你的环境相关的值。请确保包含 < and >。指定名称时，你选择的名称应是唯一的。如果命令无效，请查看你的设备制造商文档。
 
 | **示例文本** | **更改为** |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------------|
@@ -139,9 +140,8 @@
 | 14 | AH MD5（具有 ESP DES null HMAC），不建议生命周期 | AH MD5（具有 ESP DES MD5），无生命周期 |
 | 15 | AH SHA1（具有 ESP DES SHA1），无生命周期 | ESP SHA，无生命周期 |
 | 16 | AH MD5（具有 ESP DES MD5），无生命周期 | ESP MD5，无生命周期 |
-| 17 | - | AH SHA，无生命周期|
+| 17 | - | AH SHA，无生命周期 |
 | 18 | - | AH MD5，无生命周期 |
-
 
 
 - 你可以对基于路由的高性能 VPN 网关指定 IPsec ESP NULL 加密。基于 Null 的加密不对传输中的数据提供保护，仅应在需要最大吞吐量和最小延迟时才使用。客户端可以在 VNet 到 VNet 通信方案中选择使用此方法，或者要在解决方案中的其他位置应用加密时使用此方法。
@@ -153,4 +153,4 @@
 
 
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0613_2016-->
