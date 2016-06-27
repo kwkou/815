@@ -11,7 +11,7 @@
 <tags
     ms.service="sql-database"
     ms.date="01/20/2016"
-    wacn.date="03/29/2016"/>
+    wacn.date="06/14/2016"/>
 
 # 使用 PowerShell cmdlet 创建新的 SQL 数据库并执行常见的数据库设置任务 
 
@@ -52,7 +52,7 @@
 
 ## 数据库设置：创建资源组、服务器和防火墙规则
 
-现在，你已经有了针对所选 Azure 订阅运行 cmdlet 所需的访问权限，因此下一步是建立一个资源组，使其中包含创建数据库所需的服务器。你可以编辑下一个命令，以便使用所选择的有效位置。运行 **(Get-AzureRmLocation | where-object {$\_.Name -eq "Microsoft.Sql/servers" }).Locations**，以便获取有效位置的列表。
+现在，你已经有了针对所选 Azure 订阅运行 cmdlet 所需的访问权限，因此下一步是建立一个资源组，使其中包含创建数据库所需的服务器。你可以编辑下一个命令，以便使用所选择的有效位置。运行 **(Get-AzureRmLocation | where-object {$\_.Name -eq "Microsoft.Sql/servers" }).Locations** 以获取有效位置的列表。
 
 运行以下命令来创建新资源组：
 
@@ -138,4 +138,4 @@ SQL 数据库在 Azure SQL 数据库服务器中创建。运行 **New-AzureRmSql
 
 - [Azure SQL 数据库](/documentation/services/sql-databases)
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0606_2016-->

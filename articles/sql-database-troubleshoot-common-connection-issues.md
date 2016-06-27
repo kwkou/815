@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="03/29/2016"
-	wacn.date="05/16/2016"/>
+	wacn.date="06/14/2016"/>
 
 # 排查 Azure SQL 数据库的常见连接问题
 [AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
@@ -38,4 +38,4 @@ Azure SQL 数据库的连接问题可以统括分类为以下类型之一：
 4.	在仪表板中检查服务运行状况。如果你认为没有区域性的中断，请参阅[在中断后恢复](/documentation/articles/sql-database-disaster-recovery)，以了解恢复到新区域的步骤。
 5.	如果仍存在连接问题，你可以通过在 [Azure 支持](/support/contact)站点上选择“获取支持”来发出 Azure 支持请求。
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0606_2016-->

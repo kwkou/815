@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="03/24/2016"
-	wacn.date="05/16/2016"/>
+	wacn.date="06/14/2016"/>
 
 
 # 有关 Azure SQL 数据库服务的所有主题
@@ -348,4 +348,4 @@
 
 - 学习路径图：[sql-database-elastic-scale](http://azure.microsoft.com/documentation/learning-paths/sql-database-elastic-scale)
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

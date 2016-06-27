@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="03/25/2016"
-	wacn.date="05/16/2016"/>
+	wacn.date="06/14/2016"/>
 
 # SQL 数据库选项和性能：了解每个服务层提供的功能
 
@@ -60,4 +60,4 @@
 - 了解如何[监视单一数据库的性能](/documentation/articles/sql-database-single-database-monitor)。
 - 现在，你已了解有关 SQL 数据库层的信息，欢迎单击“试用”来试用这些[层](/pricing/1rmb-trial)，并了解[如何创建你的第一个 SQL 数据库](/documentation/articles/sql-database-get-started)。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

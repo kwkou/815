@@ -11,7 +11,7 @@
 <tags
    ms.service="sql-database"
    ms.date="02/16/2016"
-   wacn.date="03/24/2016"/>
+   wacn.date="06/14/2016"/>
 
 # Azure SQL 数据库安全指导原则和限制
 
@@ -105,4 +105,4 @@ Active Directory 身份验证（集成安全性）在 SQL 数据库 V12 中以�
 
 [SQL Server 数据库引擎和 Azure SQL 数据库安全中心](https://msdn.microsoft.com/zh-cn/library/bb510589)
 
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0606_2016-->

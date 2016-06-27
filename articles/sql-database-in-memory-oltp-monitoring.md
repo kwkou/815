@@ -11,12 +11,12 @@
 <tags
 	ms.service="sql-database"
 	ms.date="02/11/2016"
-	wacn.date="03/29/2016"/>
+	wacn.date="06/14/2016"/>
 
 
 # 监视 In-Memory OLTP 存储
 
-使用 [In-Memory](/documentation/articles/sql-database-in-memory) 时，内存优化表中的数据和表变量将驻留在内存中 OLTP 存储内。每个高级服务层都有最大的内存中存储大小，如 [SQL 数据库服务层](/documentation/articles/sql-database-service-tiers/#service-tiers-for-single-databases)一文中所述。一旦超过此限制，插入和更新操作可能会开始失败（错误 41805）。到时，你需要删除数据以回收内存，或升级数据库的性能层。
+使用 In-Memory 时，内存优化表中的数据和表变量将驻留在内存中 OLTP 存储内。每个高级服务层都有最大的内存中存储大小，如 [SQL 数据库服务层](/documentation/articles/sql-database-service-tiers/#service-tiers-for-single-databases)一文中所述。一旦超过此限制，插入和更新操作可能会开始失败（错误 41805）。到时，你需要删除数据以回收内存，或升级数据库的性能层。
 
 ## 确定数据是否在内存中存储容量限制范围内
 
@@ -54,4 +54,4 @@
 ## 后续步骤
 了解有关[使用动态管理视图监视 Azure SQL 数据库](/documentation/articles/sql-database-monitoring-with-dmvs)的详细信息
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0606_2016-->

@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="04/11/2016"
-	wacn.date="05/16/2016" />
+	wacn.date="06/14/2016" />
 
 # Azure SQL 数据库的单一数据库性能指导
 
@@ -19,7 +19,7 @@
 
 Azure SQL 数据库具有三个[服务层](/documentation/articles/sql-database-service-tiers)：基本、标准和高级。所有这些服务层都会将提供给 Azure SQL 数据库的资源进行严格隔离，确保你获得可预知的性能。从“基本”层到“标准”层再到“高级”层，数据库能够确保实现的吞吐量是上升的。
 
->[AZURE.NOTE] 企业和 Web 版服务层将于 2015 年 9 月停用。有关详细信息，请参阅 [Web 和 Business Edition 版停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq)。
+>[AZURE.NOTE] 企业和 Web 版服务层将于 2015 年 9 月停用。有关详细信息，请参阅 [Web 和 Business Edition 版停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq)。有关将现有 Web 和企业数据库升级到新服务层的详细信息，请参阅[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-server-portal)。
 
 本文提供了一些指导，帮助你确定此预览版提供的哪个服务层适合你的应用程序，并提供了一些应用程序优化建议，让你充分利用 Azure SQL 数据库。
 
@@ -109,9 +109,6 @@ Microsoft 还在 Azure SQL 数据库中加入许多自动管理功能，如自�
 标准和活动异地复制提供的灾难恢复功能是类似的，但恢复点目标 (RPO) 要低得多。例如，使用异地还原，RPO 只需不到 1 小时的时间（换句话说，备份最多只需从 1 小时前开始）。但对于异地复制来说，RPO 只需不到 5 秒的时间。
 
 有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
-
-### 最大内存中 OLTP 存储
-**最大内存中 OLTP 存储**是指可供高级数据库的[内存中 OLTP 预览版](/documentation/articles/sql-database-in-memory)使用的最大存储空间量。这有时也称为 XTP 内存中存储。你可以使用 Azure 管理门户或 **sys.dm\_db\_resource\_stats** 视图来监视内存中存储的使用情况。有关监视的详细信息，请参阅[监视内存中 OLTP 存储](/documentation/articles/sql-database-in-memory-oltp-monitoring)。
 
 >[AZURE.NOTE] 内存中 OLTP 预览版目前仅适用于单一数据库，不适用于弹性数据库池中的数据库。
 
@@ -479,4 +476,4 @@ SQL Server 用户经常将许多功能集中在单一数据库内。例如，如
 
 在 Azure SQL 数据库中的服务层使你能够增加在云中生成的应用程序的类型。再加上坚持不懈地优化应用程序，你的应用程序的性能可变得既强大又可预测。本文档概述了可根据某个性能级别优化数据库资源使用的推荐技术。优化是云模型中一个持续的过程，管理员可以通过服务层及其性能级别，在 Azure 平台上最大程度地提高性能，同时将成本降至最低。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

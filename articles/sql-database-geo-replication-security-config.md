@@ -3,15 +3,15 @@
 	description="本主题介绍管理 SQL 数据库的标准或活动异地复制方案时的安全注意事项。"
 	services="sql-database"
 	documentationCenter="na"
-	authors="rothja"
-	manager="jeffreyg"
+	authors="carlrabeler"
+	manager="jhubbard"
 	editor="monicar" />
 
 
 <tags
 	ms.service="sql-database"
-	ms.date="10/22/2015"
-	wacn.date="05/16/2016" />
+	ms.date="02/01/2016"
+	wacn.date="06/14/2016" />
 
 # 标准异地复制或活动异地复制的安全性配置
 
@@ -23,7 +23,7 @@
 
 对于包含的用户，如果有多个数据库使用相同的登录名，则你必须为每个数据库单独管理该用户（例如密码更改），而不是在服务器级管理登录名。
 
->[AZURE.NOTE]如果你想要单独更改主数据库和辅助数据库的读取访问权限，必须使用传统的登录名和用户。包含的用户无法独立于主数据库在辅助数据库上管理。
+>[AZURE.NOTE] 如果你想要单独更改主数据库和辅助数据库的读取访问权限，必须使用传统的登录名和用户。包含的用户无法独立于主数据库在辅助数据库上管理。
 
 ## 使用传统的登录名和用户
 如果你要使用传统的登录名和用户（而不是包含的用户），必须采取额外的步骤以确保相同的登录名存在于辅助数据库服务器上。以下部分概述了相关的步骤和其他注意事项。
@@ -63,7 +63,7 @@
 	FROM [sys].[database_principals]
 	WHERE [type_desc] = 'SQL_USER'
 
->[AZURE.NOTE]**INFORMATION\_SCHEMA** 和 **sys** 用户具有 *NULL* SID，**guest** SID 为 **0x00**。如果数据库创建者是服务器管理员而不是 **DbManager** 的成员，则 **dbo** SID 可能以 *0x01060000000001648000000000048454* 开头。
+>[AZURE.NOTE] **INFORMATION\_SCHEMA** 和 **sys** 用户具有 *NULL* SID，**guest** SID 为 **0x00**。如果数据库创建者是服务器管理员而不是 **DbManager** 的成员，则 **dbo** SID 可能以 *0x01060000000001648000000000048454* 开头。
 
 #### 3\.在目标服务器上生成登录名：
 最后一个步骤是转到一个或多个目标服务器，并使用相应的 SID 生成登录名。基本语法如下。
@@ -72,7 +72,7 @@
 	WITH PASSWORD = <login password>,
 	SID = <desired login SID>
 
->[AZURE.NOTE]如果你要授予用户对辅助数据库而不是主数据库的访问权限，你可以使用以下语法更改主服务器上的用户登录名来实现此目的。
+>[AZURE.NOTE] 如果你要授予用户对辅助数据库而不是主数据库的访问权限，你可以使用以下语法更改主服务器上的用户登录名来实现此目的。
 >
 >ALTER LOGIN <login name> DISABLE
 >
@@ -94,4 +94,4 @@
 ## 后续步骤
 有关 SQL 数据库的异地复制和其他业务连续性功能的详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_0606_2016-->

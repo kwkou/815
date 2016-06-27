@@ -10,7 +10,7 @@
 <tags
     ms.service="sql-database"
     ms.date="02/12/2016"
-    wacn.date="03/29/2016"/>
+    wacn.date="06/14/2016"/>
 
 # 使用 Transact-SQL 为 Azure SQL 数据库配置异地复制
 
@@ -229,4 +229,4 @@
 - [业务连续性概述](/documentation/articles/sql-database-business-continuity)
 - [SQL 数据库文档](/home/features/sql-database)
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0606_2016-->

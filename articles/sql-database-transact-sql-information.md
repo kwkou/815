@@ -11,7 +11,7 @@
 <tags
    ms.service="sql-database"
    ms.date="02/18/2016"
-   wacn.date="04/18/2016"/>
+   wacn.date="06/14/2016"/>
 
 # Azure SQL 数据库 Transact-SQL 的差异
 
@@ -103,4 +103,5 @@ Transact-SQL 参考包含从 SQL Server 2008 到最新版本的相关主题。�
 
 在某些情况下，产品中可能使用了某个主题的常规主旨，但产品之间存在细微的差异。在适当的情况下，我们会在主题的中间位置指出差异。
 
-<!---HONumber=Mooncake_0411_2016-->
+
+<!---HONumber=Mooncake_0606_2016-->

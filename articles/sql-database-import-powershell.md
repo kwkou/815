@@ -10,7 +10,7 @@
 <tags
     ms.service="sql-database"
     ms.date="02/05/2016"
-    wacn.date="03/29/2016"/>
+    wacn.date="06/14/2016"/>
 
 # 使用 PowerShell 导入 BACPAC 文件以创建新的 Azure SQL 数据库
 
@@ -36,7 +36,7 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
 - 要导入的数据库的 .bacpac 文件 (BACPAC)。BACPAC 需位于 [Azure 存储帐户（经典）](/documentation/articles/storage-create-storage-account)blob 容器中。
 
 
-> [AZURE.IMPORTANT] 本文包含的命令适用于最高版本为 1.0（*但不含*）的 Azure PowerShell。可以使用 **Get-Module azure | format-table version** 命令查看 Azure PowerShell 的版本。
+> [AZURE.IMPORTANT] 本文包含的命令适用于最高版本为 1.0（但不含）的 Azure PowerShell。可以使用 **Get-Module azure | format-table version** 命令查看 Azure PowerShell 的版本。
 
 
 
@@ -148,4 +148,4 @@ Blob 名称是你想要从中创建的数据库的现有 .bacpac 文件的名称
 - [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills)
 - [SQL 数据库文档](/documentation/services/sql-databases)
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0606_2016-->
