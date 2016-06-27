@@ -8,8 +8,8 @@
    editor="bruceper" />
 <tags
    ms.service="key-vault"
-   ms.date="03/07/2016"
-   wacn.date="04/18/2016" />
+   ms.date="04/29/2016"
+   wacn.date="06/27/2016" />
 
 # Azure 密钥保管库开发人员指南
 
@@ -59,10 +59,12 @@
 
 ## 操作方法
 
-以下文章和方案提供了特定于任务的指导：
+以下文章和方案提供了特定于任务的指导，方便你使用 Azure 密钥保管库：
 
-- [在部署期间传递安全值（如密码）](/documentation/articles/resource-manager-keyvault-parameter)
-- 有关将密钥保管库与 Azure 集成和结合使用的特定于任务的指导，请参阅[针对密钥保管库的 Ryan Jones ARM 模板示例](https://github.com/rjmax/ArmExamples/tree/master/keyvaultexamples)
+- [如何在部署期间传递安全值（如密码）](/documentation/articles/resource-manager-keyvault-parameter)- 当你需要在部署期间以参数形式传递安全值（例如密码）时，可以将该值存储为 Azure 密钥保管库中的机密，并在其他资源管理模板中引用该值。
+- [如何使用密钥保管库，以便通过 SQL Server 进行可扩展的密钥管理](https://msdn.microsoft.com/zh-cn/library/dn198405.aspx) - 适用于 Azure 密钥保管库的 SQL Server 连接器允许 SQL Server 和 VM 中的 SQL 将 Azure 密钥保管库服务用作可扩展密钥管理 (EKM) 提供程序，以便保护其针对应用程序链接的加密密钥；透明数据加密、备份加密和列级加密。
+
+如需更多将密钥保管库与 Azure 集成和结合使用的特定于任务的指导，请参阅 [Ryan Jones ARM template examples for Key Vault（针对密钥保管库的 Ryan Jones ARM 模板示例）](https://github.com/rjmax/ArmExamples/tree/master/keyvaultexamples)。
 
 ## 支持库
 
@@ -70,4 +72,8 @@
 
 - [Azure 密钥保管库扩展](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/1.0.0)为 Azure 密钥保管库提供了扩展功能。
 
-<!---HONumber=Mooncake_0411_2016-->
+## 其他密钥保管库资源
+- [密钥保管库博客](http://aka.ms/kvblog)
+- [密钥保管库论坛](http://aka.ms/kvforum)
+
+<!---HONumber=Mooncake_0620_2016-->
