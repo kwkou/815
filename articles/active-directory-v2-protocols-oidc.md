@@ -69,13 +69,13 @@ OpenID Connect 是构建在 OAuth 2.0 基础之上的身份验证协议，可用
 #### 成功的响应
 使用 `response_mode=form_post` 的成功响应如下所示：
 
-```
-POST /myapp/ HTTP/1.1
-Host: localhost
-Content-Type: application/x-www-form-urlencoded
+		
+		POST /myapp/ HTTP/1.1
+		Host: localhost
+		Content-Type: application/x-www-form-urlencoded
+		
+		id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&state=12345
 
-id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&state=12345
-```
 
 | 参数 | 说明 |
 | ----------------------- | ------------------------------- |
@@ -85,13 +85,13 @@ id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&state=12345
 #### 错误响应
 错误响应可能也发送到 `redirect_uri`，让应用可以适当地处理：
 
-```
-POST /myapp/ HTTP/1.1
-Host: localhost
-Content-Type: application/x-www-form-urlencoded
 
-error=access_denied&error_description=the+user+canceled+the+authentication
-```
+		POST /myapp/ HTTP/1.1
+		Host: localhost
+		Content-Type: application/x-www-form-urlencoded
+		
+		error=access_denied&error_description=the+user+canceled+the+authentication
+
 
 | 参数 | 说明 |
 | ----------------------- | ------------------------------- |
@@ -125,10 +125,10 @@ When you wish to sign the user out of the  app, it is not sufficient to clear yo
 
 You can simply redirect the user to the `end_session_endpoint` listed in the OpenID Connect metadata document:
 
-```
-GET https://login.microsoftonline.com/common/oauth2/v2.0/logout?
-post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
-```
+
+		GET https://login.microsoftonline.com/common/oauth2/v2.0/logout?
+		post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
+
 
 | Parameter | | Description |
 | ----------------------- | ------------------------------- | ------------ |
@@ -141,7 +141,7 @@ post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 
 完整的 OpenID Connect 登录和令牌获取流如下所示 - 下面详细描述了每个步骤。
 
-![OpenId Connect Swimlanes](../media/active-directory-v2-flows/convergence_scenarios_webapp_webapi.png)
+![OpenId Connect Swimlanes](./media/active-directory-v2-flows/convergence_scenarios_webapp_webapi.png)
 
 ## 获取访问令牌
 若要获取访问令牌，需要稍微修改上述登录请求：
@@ -159,7 +159,7 @@ post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 		https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
 		&state=12345						 				 // Any value, provided by your app
 		&nonce=678910										 // Any value, provided by your app
-		```
+		
 
 > [AZURE.TIP] 单击下面的链接以执行此请求！ 登录之后，你的浏览器应重定向至地址栏中具有 `id_token` 和 `code` 的 `https://localhost/myapp/`。请注意，此请求会使用 `response_mode=query`（仅用于教程）。建议使用 `response_mode=form_post`。<a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=id_token+code&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=query&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&state=12345&nonce=678910" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
 
@@ -168,13 +168,13 @@ post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 #### 成功的响应
 使用 `response_mode=form_post` 的成功响应如下所示：
 
-```
-POST /myapp/ HTTP/1.1
-Host: localhost
-Content-Type: application/x-www-form-urlencoded
 
-id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...&state=12345
-```
+		POST /myapp/ HTTP/1.1
+		Host: localhost
+		Content-Type: application/x-www-form-urlencoded
+		
+		id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...&state=12345
+
 
 | 参数 | 说明 |
 | ----------------------- | ------------------------------- |
@@ -185,13 +185,13 @@ id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&code=AwABAA
 #### 错误响应
 错误响应可能也发送到 `redirect_uri`，让应用可以适当地处理：
 
-```
-POST /myapp/ HTTP/1.1
-Host: localhost
-Content-Type: application/x-www-form-urlencoded
 
-error=access_denied&error_description=the+user+canceled+the+authentication
-```
+		POST /myapp/ HTTP/1.1
+		Host: localhost
+		Content-Type: application/x-www-form-urlencoded
+		
+		error=access_denied&error_description=the+user+canceled+the+authentication
+
 
 | 参数 | 说明 |
 | ----------------------- | ------------------------------- |

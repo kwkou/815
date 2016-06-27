@@ -62,7 +62,7 @@
 - **密码管理活动报告**：管理员可以深入了解发生在其组织中的密码重置和注册活动。 
 - **密码写回**：从云管理本地密码，因此，所有上述方案都可以由经过联合身份验证的或密码同步的用户本人或其代表来执行。密码写回功能需要 Azure AD Premium。有关详细信息，请参阅“Azure AD Premium 入门”。
 
-## <a name="why-use-azure-ad-password-reset"></a>为何使用 Azure AD 密码管理？
+## <a name="why-use-azure-ad-password-reset"></a>为何使用 Azure AD 密码重置？
 以下是应该使用 Azure AD 密码管理功能的某些原因
 
 - **降低成本** - 支持人员辅助的密码重置通常占组织 IT 部门 20% 的费用
@@ -246,5 +246,4 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 * [**常见问题**](/documentation/articles/active-directory-passwords-faq) - 获取常见问题的解答
 * [**故障排除**](/documentation/articles/active-directory-passwords-troubleshoot) - 了解如何快速排查服务的问题
 * [**了解更多**](/documentation/articles/active-directory-passwords-learn-more) - 深入探索服务工作原理的技术细节
-
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->

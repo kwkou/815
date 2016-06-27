@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory"  
 	ms.date="02/16/2016" 
-	wacn.date="04/28/2016"/>
+	wacn.date="06/27/2016"/>
 
 # 密码管理常见问题
 下面是与密码管理相关的所有方面的一些常见问题。
@@ -168,4 +168,4 @@
 [001]: ./media/active-directory-passwords-faq/001.jpg "Image_001.jpg"
 [002]: ./media/active-directory-passwords-faq/002.jpg "Image_002.jpg"
  
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->

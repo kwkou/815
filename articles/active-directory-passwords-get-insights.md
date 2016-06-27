@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="深入分析：Azure AD 密码管理报告 | Microsoft Azure" 
+	pageTitle="深入分析：Azure AD 密码管理报告 | Azure" 
 	description="本文介绍如何使用报告来深入分析组织中的密码管理操作。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory"  
 	ms.date="02/16/2016" 
-	wacn.date="04/28/2016"/>
+	wacn.date="06/27/2016"/>
 
 # 如何使用密码管理报告获取 Operational Insights
 本部分介绍如何使用 Azure Active Directory 的密码管理报告来查看组织中用户对密码重置和更改的使用情况。
@@ -151,5 +151,4 @@
 [002]: ./media/active-directory-passwords-get-insights/002.jpg "Image_002.jpg"
 [003]: ./media/active-directory-passwords-get-insights/003.jpg "Image_003.jpg"
  
-
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->

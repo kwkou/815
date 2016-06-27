@@ -8,9 +8,9 @@
 	editor="billmath"/>
 
 <tags 
-	ms.service="active-directory"
+	ms.service="active-directory"  
 	ms.date="02/16/2016" 
-	wacn.date="06/06/2016"/>
+	wacn.date="06/27/2016"/>
 
 # 了解有关密码管理的详细信息
 如果你已部署密码管理，或只是想要在部署之前深入了解密码管理工作原理的技术细节，则本部分可让你大致了解该服务背后的技术概念。本部分将介绍以下内容：
@@ -375,4 +375,4 @@ Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthentic
 [001]: ./media/active-directory-passwords-learn-more/001.jpg "Image_001.jpg"
 [002]: ./media/active-directory-passwords-learn-more/002.jpg "Image_002.jpg"
  
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->

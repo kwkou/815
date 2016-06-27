@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="02/20/2016"
-	wacn.date=""/>
+	wacn.date="06/27/2016"/>
 
 # 将登录凭据添加到 Windows 桌面应用
 
@@ -29,7 +29,7 @@ v2.0 终结点可让你快速地将身份验证添加桌面应用，同时支持
 
 本教程的代码[在 GitHub 上](https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet)维护。若要遵照该代码，你可以[下载 .zip 格式应用骨架](https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet/archive/skeleton.zip)，或克隆该骨架：
 
-```git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet.git```
+		git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet.git
 
 本教程末尾也提供完成的应用。
 
@@ -45,9 +45,9 @@ v2.0 终结点可让你快速地将身份验证添加桌面应用，同时支持
 
 -	首先，使用包管理器控制台将 ADAL 添加到 TodoListClient 项目。
 
-```
-PM> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory -ProjectName TodoListClient -IncludePrerelease
-```
+
+		PM> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory -ProjectName TodoListClient -IncludePrerelease
+
 
 -	在 TodoListClient 项目中打开 `app.config`。替换 `<appSettings>` 节中的元素值，以反映你在应用注册门户中输入的值。只要使用 ADAL，你的代码就会引用这些值。
     -	`ida:ClientId` 是从门户复制的、应用的**应用程序 ID**。
@@ -60,174 +60,174 @@ ADAL 遵守的基本原理是，每当应用程序需要访问令牌时，你只
 
 -	在 `TodoListClient` 项目中，打开 `MainWindow.xaml.cs` 并找到 `OnInitialized(...)` 方法。第一步是初始化应用程序的 `AuthenticationContext`（ADAL 的主类）。你将在此处传递 ADAL 与 Azure AD 通信时所需的坐标，并告诉 ADAL 如何缓存令牌。
 
-```C#
-protected override async void OnInitialized(EventArgs e)
-{
-		base.OnInitialized(e);
+		C#
+		protected override async void OnInitialized(EventArgs e)
+		{
+				base.OnInitialized(e);
+		
+				authContext = new AuthenticationContext(authority, new FileCache());
+				AuthenticationResult result = null;
+				...
+		}
 
-		authContext = new AuthenticationContext(authority, new FileCache());
-		AuthenticationResult result = null;
-		...
-}
-```
 
 - 当应用程序启动时，我们希望检查并查看用户是否已登录应用。但是，我们不想在此时调用登录 UI，而是让用户单击“登录”才执行此操作。另外，请在 `OnInitialized(...)` 方法中：
 
-```C#
-// As the app starts, we want to check to see if the user is already signed in.
-// You can do so by trying to get a token from ADAL, passing in the parameter
-// PromptBehavior.Never.  This forces ADAL to throw an exception if it cannot
-// get a token for the user without showing a UI.
-
-try
-{
-		result = await authContext.AcquireTokenAsync(new string[] { clientId }, null, clientId, redirectUri, new PlatformParameters(PromptBehavior.Never, null));
-
-		// If we got here, a valid token is in the cache.  Proceed to
-		// fetch the user's tasks from the TodoListService via the
-		// GetTodoList() method.
-
-		SignInButton.Content = "Clear Cache";
-		GetTodoList();
-}
-catch (AdalException ex)
-{
-		if (ex.ErrorCode == "user_interaction_required")
-		{
-				// If user interaction is required, the app should take no action,
-				// and simply show the user the sign in button.
-		}
-		else
-		{
-				// Here, we catch all other AdalExceptions
-
-				string message = ex.Message;
-				if (ex.InnerException != null)
-				{
-						message += "Inner Exception : " + ex.InnerException.Message;
-				}
-				MessageBox.Show(message);
-		}
-}
-```
-
-- 如果用户未登录而按下“登录”按钮，我们希望调用登录 UI 并让用户输入其凭据。实现“登录”按钮处理程序：
-
-```C#
-private async void SignIn(object sender = null, RoutedEventArgs args = null)
-{
-		// TODO: Sign the user out if they clicked the "Clear Cache" button
-
-		// If the user clicked the 'Sign-In' button, force
-		// ADAL to prompt the user for credentials by specifying
-		// PromptBehavior.Always.  ADAL will get a token for the
-		// TodoListService and cache it for you.
-
-		AuthenticationResult result = null;
+		C#
+		// As the app starts, we want to check to see if the user is already signed in.
+		// You can do so by trying to get a token from ADAL, passing in the parameter
+		// PromptBehavior.Never.  This forces ADAL to throw an exception if it cannot
+		// get a token for the user without showing a UI.
+		
 		try
 		{
-				result = await authContext.AcquireTokenAsync(new string[] { clientId }, null, clientId, redirectUri, new PlatformParameters(PromptBehavior.Always, null));
+				result = await authContext.AcquireTokenAsync(new string[] { clientId }, null, clientId, redirectUri, new PlatformParameters(PromptBehavior.Never, null));
+		
+				// If we got here, a valid token is in the cache.  Proceed to
+				// fetch the user's tasks from the TodoListService via the
+				// GetTodoList() method.
+		
 				SignInButton.Content = "Clear Cache";
 				GetTodoList();
 		}
 		catch (AdalException ex)
 		{
-				// If ADAL cannot get a token, it will throw an exception.
-				// If the user canceled the login, it will result in the
-				// error code 'authentication_canceled'.
-
-				if (ex.ErrorCode == "authentication_canceled")
+				if (ex.ErrorCode == "user_interaction_required")
 				{
-						MessageBox.Show("Sign in was canceled by the user");
+						// If user interaction is required, the app should take no action,
+						// and simply show the user the sign in button.
 				}
 				else
 				{
-						// An unexpected error occurred.
+						// Here, we catch all other AdalExceptions
+		
 						string message = ex.Message;
 						if (ex.InnerException != null)
 						{
 								message += "Inner Exception : " + ex.InnerException.Message;
 						}
-
 						MessageBox.Show(message);
 				}
-
-				return;
 		}
 
-}
-```
+
+- 如果用户未登录而按下“登录”按钮，我们希望调用登录 UI 并让用户输入其凭据。实现“登录”按钮处理程序：
+		
+		C#
+		private async void SignIn(object sender = null, RoutedEventArgs args = null)
+		{
+				// TODO: Sign the user out if they clicked the "Clear Cache" button
+		
+				// If the user clicked the 'Sign-In' button, force
+				// ADAL to prompt the user for credentials by specifying
+				// PromptBehavior.Always.  ADAL will get a token for the
+				// TodoListService and cache it for you.
+		
+				AuthenticationResult result = null;
+				try
+				{
+						result = await authContext.AcquireTokenAsync(new string[] { clientId }, null, clientId, redirectUri, new PlatformParameters(PromptBehavior.Always, null));
+						SignInButton.Content = "Clear Cache";
+						GetTodoList();
+				}
+				catch (AdalException ex)
+				{
+						// If ADAL cannot get a token, it will throw an exception.
+						// If the user canceled the login, it will result in the
+						// error code 'authentication_canceled'.
+		
+						if (ex.ErrorCode == "authentication_canceled")
+						{
+								MessageBox.Show("Sign in was canceled by the user");
+						}
+						else
+						{
+								// An unexpected error occurred.
+								string message = ex.Message;
+								if (ex.InnerException != null)
+								{
+										message += "Inner Exception : " + ex.InnerException.Message;
+								}
+		
+								MessageBox.Show(message);
+						}
+		
+						return;
+				}
+		
+		}
+
 
 - 如果用户成功登录，ADAL 将为你接收和缓存令牌，然后你可以放心地继续调用 `GetTodoList()` 方法。获取用户任务的剩余步骤是实现 `GetTodoList()` 方法。
 
-```C#
-private async void GetTodoList()
-{
-		AuthenticationResult result = null;
-		try
+		C#
+		private async void GetTodoList()
 		{
-				// Here, we try to get an access token to call the TodoListService
-				// without invoking any UI prompt.  PromptBehavior.Never forces
-				// ADAL to throw an exception if it cannot get a token silently.
-
-				result = await authContext.AcquireTokenAsync(new string[] { clientId }, null, clientId, redirectUri, new PlatformParameters(PromptBehavior.Never, null));
-		}
-		catch (AdalException ex)
-		{
-				// ADAL couldn't get a token silently, so show the user a message
-				// and let them click the Sign-In button.
-
-				if (ex.ErrorCode == "user_interaction_required")
+				AuthenticationResult result = null;
+				try
 				{
-						MessageBox.Show("Please sign in first");
-						SignInButton.Content = "Sign In";
+						// Here, we try to get an access token to call the TodoListService
+						// without invoking any UI prompt.  PromptBehavior.Never forces
+						// ADAL to throw an exception if it cannot get a token silently.
+		
+						result = await authContext.AcquireTokenAsync(new string[] { clientId }, null, clientId, redirectUri, new PlatformParameters(PromptBehavior.Never, null));
 				}
-				else
+				catch (AdalException ex)
 				{
-						// In any other case, an unexpected error occurred.
-
-						string message = ex.Message;
-						if (ex.InnerException != null)
+						// ADAL couldn't get a token silently, so show the user a message
+						// and let them click the Sign-In button.
+		
+						if (ex.ErrorCode == "user_interaction_required")
 						{
-								message += "Inner Exception : " + ex.InnerException.Message;
+								MessageBox.Show("Please sign in first");
+								SignInButton.Content = "Sign In";
 						}
-						MessageBox.Show(message);
+						else
+						{
+								// In any other case, an unexpected error occurred.
+		
+								string message = ex.Message;
+								if (ex.InnerException != null)
+								{
+										message += "Inner Exception : " + ex.InnerException.Message;
+								}
+								MessageBox.Show(message);
+						}
+		
+						return;
 				}
+		
+				// Once the token has been returned by ADAL,
+		    // add it to the http authorization header,
+		    // before making the call to access the To Do list service.
+		
+		    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", result.Token);
+		
+				...
 
-				return;
-		}
-
-		// Once the token has been returned by ADAL,
-    // add it to the http authorization header,
-    // before making the call to access the To Do list service.
-
-    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", result.Token);
-
-		...
-...
 
 
 - When the user is done managing their To-Do List, they may finally sign out of the app by clicking the "Clear Cache" button.
 
-```C#
-private async void SignIn(object sender = null, RoutedEventArgs args = null)
-{
-		// If the user clicked the 'clear cache' button,
-		// clear the ADAL token cache and show the user as signed out.
-		// It's also necessary to clear the cookies from the browser
-		// control so the next user has a chance to sign in.
-
-		if (SignInButton.Content.ToString() == "Clear Cache")
+		C#
+		private async void SignIn(object sender = null, RoutedEventArgs args = null)
 		{
-				TodoList.ItemsSource = string.Empty;
-				authContext.TokenCache.Clear();
-				ClearCookies();
-				SignInButton.Content = "Sign In";
-				return;
-		}
+				// If the user clicked the 'clear cache' button,
+				// clear the ADAL token cache and show the user as signed out.
+				// It's also necessary to clear the cookies from the browser
+				// control so the next user has a chance to sign in.
+		
+				if (SignInButton.Content.ToString() == "Clear Cache")
+				{
+						TodoList.ItemsSource = string.Empty;
+						authContext.TokenCache.Clear();
+						ClearCookies();
+						SignInButton.Content = "Sign In";
+						return;
+				}
+		
+				...
 
-		...
-```
 
 ## 运行
 
@@ -237,7 +237,7 @@ private async void SignIn(object sender = null, RoutedEventArgs args = null)
 
 [此处以 .zip 格式提供了](https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet/archive/complete.zip)完整示例（不包括配置值），你也可以从 GitHub 克隆该示例：
 
-```git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet.git```
+		git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-NativeClient-DotNet.git
 
 ## 后续步骤
 

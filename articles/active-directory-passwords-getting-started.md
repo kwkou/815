@@ -107,11 +107,11 @@
 
     ![][009]
 
-4.	一旦用户验证这两条信息后，将用其提供的数据更新其个人资料。本例中，已手动指定**办公电话**号码，因此用户可将其用作重置密码的联系方式。
+4.	一旦用户验证这两条信息后，将用其提供的数据更新其个人资料。本例中，已手动指定**办公电话号码**，因此用户可将其用作重置密码的联系方式。
 
     ![][010]
 
-### <a name="step-3-reset-your-azure-ad-password-as-a-user"></a>步骤 3：以用户身份重置 Azure AD 密码
+### <a name="step-3-reset-your-azure-ad-password-as-a-user"></a>步骤 3：以用户身份重置密码
 由于你已配置用户重置策略并为用户指定了联系人详细信息，此用户将可以进行自助密码重置。
 
 #### 执行自助密码重置
@@ -306,7 +306,7 @@ Azure AD Connect 发行版或版本号为 **1.0.0419.0911** 或更高的 Azure A
 ## 密码重置文档的链接
 以下是所有 Azure AD 密码重置文档页面的链接：
 
-* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password) - 了解如何以系统用户的身份重置或更改自己的密码
+* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password) — 了解如何以系统用户的身份重置或更改自己的密码
 * [**工作原理**](/documentation/articles/active-directory-passwords-how-it-works) - 了解六个不同的服务组件及其功能
 * [**自定义**](/documentation/articles/active-directory-passwords-customize) - 了解如何根据组织的需求自定义服务的外观和行为
 * [**最佳实践**](/documentation/articles/active-directory-passwords-best-practices) - 了解如何快速部署且有效管理组织的密码
@@ -350,4 +350,4 @@ Azure AD Connect 发行版或版本号为 **1.0.0419.0911** 或更高的 Azure A
 [031]: ./media/active-directory-passwords-getting-started/031.jpg "Image_031.jpg"
 [032]: ./media/active-directory-passwords-getting-started/032.jpg "Image_032.jpg"
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->

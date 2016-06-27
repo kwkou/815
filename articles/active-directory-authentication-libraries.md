@@ -59,4 +59,4 @@
 
 [Azure Active Directory 代码示例](/documentation/articles/active-directory-code-samples)
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0613_2016-->

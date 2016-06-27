@@ -10,7 +10,7 @@
 <tags 
        ms.service="active-directory" 
 	ms.date="05/16/2016"
-       wacn.date="06/21/2016"/>
+       wacn.date="06/27/2016"/>
 
 # Azure AD 的后续用途有哪些？
 
@@ -41,4 +41,4 @@ Azure AD 设备注册会利用当用户登录时用于验证设备的标识来�
 
 
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0620_2016-->

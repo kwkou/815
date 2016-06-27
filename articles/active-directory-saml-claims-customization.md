@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="02/26/2016"
-	wacn.date="06/14/2016"/>
+	wacn.date="06/27/2016"/>
 
 #在 Azure Active Directory 中为预先集成的应用自定义 SAML 令牌中颁发的声明
 
@@ -54,6 +54,10 @@ Azure Active Directory 目前支持 Azure AD 应用库中数千个预先集成�
 
 **注意：**仅当在使用 [Azure AD Connect 工具](/documentation/articles/active-directory-aadconnect)从本地 Active Directory 同步用户数据时，才支持 **user.onpremisesecurityidentifier** 和 **user.onpremisesamaccountname**。
 
+## 相关文章
+
+- [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index)
+- [排查基于 SAML 的单一登录问题](/documentation/articles/active-directory-saml-debugging)
 	
 <!--Image references-->
 [1]: ./media/active-directory-saml-claims-customization/claimscustomization1.png
@@ -61,4 +65,4 @@ Azure Active Directory 目前支持 Azure AD 应用库中数千个预先集成�
 [3]: ./media/active-directory-saml-claims-customization/claimscustomization3.png
 [4]: ./media/active-directory-saml-claims-customization/claimscustomization4.png
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0620_2016-->

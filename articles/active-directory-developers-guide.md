@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Active Directory 开发人员指南 | Microsoft Azure"
+   pageTitle="Azure Active Directory 开发人员指南 | Azure"
    description="本文提供面向开发人员的 Azure Active Directory 资源的综合性指南。"
    services="active-directory"
    documentationCenter="dev-center-name"
@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="01/06/2016"
-   wacn.date="04/28/2016"/>
+   ms.date="04/02/2016"
+   wacn.date="06/27/2016"/>
 
 
 # Azure Active Directory 开发人员指南
@@ -23,9 +23,11 @@
 
 2. [Active Directory 身份验证方案](/documentation/articles/active-directory-authentication-scenarios)：利用 Azure Active Directory 中的简化身份验证来登录应用程序。
 
-5. [Azure Active Directory 图形 API](/documentation/articles/active-directory-graph-api)：使用 Azure Active Directory 图形 API 通过 REST API 终结点以编程方式访问 Azure AD。请注意，也可通过 [Microsoft Graph](https://graph.microsoft.io/) 访问 Azure AD 图形 API。Microsoft Graph 是统一的 API，可让你通过单个 REST API 终结点和单个访问令牌访问多个 Microsoft 云服务 API。
+3. [将应用程序与 Azure Active Directory 集成](/documentation/articles/active-directory-integrating-applications)：了解如何从 Azure Active Directory 添加、更新和删除应用程序，以及有关集成应用的品牌准则。
 
-6. [Azure Active Directory 身份验证库](/documentation/articles/active-directory-authentication-libraries)：使用适用于 [.NET](https://msdn.microsoft.com/library/azure/mt417579.aspx)、[JavaScript](https://github.com/AzureAD/azure-activedirectory-library-for-js)、[Objective-C](https://github.com/AzureAD/azure-activedirectory-library-for-objc) 和[其他语言](/documentation/articles/active-directory-authentication-libraries)的 Azure 身份验证库轻松对用户进行身份验证以获取访问令牌。
+4. [Azure Active Directory 图形 API](/documentation/articles/active-directory-graph-api)：使用 Azure Active Directory 图形 API 通过 REST API 终结点以编程方式访问 Azure AD。请注意，也可通过 [Microsoft Graph](https://graph.microsoft.io/) 访问 Azure AD 图形 API。Microsoft Graph 是统一的 API，可让你通过单个 REST API 终结点和单个访问令牌访问多个 Microsoft 云服务 API。
+
+5. [Azure Active Directory 身份验证库](/documentation/articles/active-directory-authentication-libraries)：使用适用于 [.NET](https://msdn.microsoft.com/library/azure/mt417579.aspx)、[JavaScript](https://github.com/AzureAD/azure-activedirectory-library-for-js)、[Objective-C](https://github.com/AzureAD/azure-activedirectory-library-for-objc)、[Android](http://search.maven.org/remotecontent?filepath=com/microsoft/aad/adal/o) 和[其他语言](/documentation/articles/active-directory-authentication-libraries)的 Azure 身份验证库轻松对用户进行身份验证以获取访问令牌。
 
 ## 入门
 
@@ -35,17 +37,17 @@
 
 |[![iOS](./media/active-directory-developers-guide/ios.png)](/documentation/articles/active-directory-devquickstarts-ios)|[![Android](./media/active-directory-developers-guide/android.png)](active-directory-devquickstarts-android)|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-dotnet)| [![Windows Phone](./media/active-directory-developers-guide/windows.png)](active-directory-devquickstarts-windowsphone)|[![Windows 应用商店](./media/active-directory-developers-guide/windows.png)](active-directory-devquickstarts-windowsstore)|[![Xamarin](./media/active-directory-developers-guide/xamarin.png)](active-directory-devquickstarts-xamarin)|[![Cordova](./media/active-directory-developers-guide/cordova.png)](active-directory-devquickstarts-cordova)
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:
-|[iOS](active-directory-devquickstarts-ios)|[Android](/documentation/articles/active-directory-devquickstarts-android)|[.NET](active-directory-devquickstarts-dotnet)|[Windows Phone](active-directory-devquickstarts-windowsphone)|[Windows 应用商店](active-directory-devquickstarts-windowsstore)|[Xamarin](active-directory-devquickstarts-xamarin)|[Cordova](active-directory-devquickstarts-cordova)
+|[iOS](/documentation/articles/active-directory-devquickstarts-ios)|[Android](/documentation/articles/active-directory-devquickstarts-android)|[.NET](/documentation/articles/active-directory-devquickstarts-dotnet)|[Windows Phone](/documentation/articles/active-directory-devquickstarts-windowsphone)|[Windows 应用商店](/documentation/articles/active-directory-devquickstarts-windowsstore)|[Xamarin](/documentation/articles/active-directory-devquickstarts-xamarin)|[Cordova](/documentation/articles/active-directory-devquickstarts-cordova)
 
 ### Web 应用程序快速入门指南
 
 |[![.NET](./media/active-directory-developers-guide/net.png)](/documentation/articles/active-directory-devquickstarts-webapp-dotnet)|[![Java](./media/active-directory-developers-guide/java.png)](/documentation/articles/active-directory-devquickstarts-webapp-java)|[![Javascript](./media/active-directory-developers-guide/javascript.png)](/documentation/articles/active-directory-devquickstarts-angular)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](/documentation/articles/active-directory-devquickstarts-openidconnect-nodejs)
-|:--:|:--:|:--:|
-|[.NET](/documentation/articles/active-directory-devquickstarts-webapp-dotnet)|[Javascript](/documentation/articles/active-directory-devquickstarts-angular)|[Node.js](active-directory-devquickstarts-openidconnect-nodejs)
+|:--:|:--:|:--:|:--:|
+|[.NET](/documentation/articles/active-directory-devquickstarts-webapp-dotnet)|[Java](/documentation/articles/active-directory-devquickstarts-webapp-java)|[Javascript](/documentation/articles/active-directory-devquickstarts-angular)|[Node.js](/documentation/articles/active-directory-devquickstarts-openidconnect-nodejs)
 
 ### Web API 快速入门指南
 
-|[![.NET](./media/active-directory-developers-guide/net.png)](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](active-directory-devquickstarts-webapi-nodejs)
+|[![.NET](./media/active-directory-developers-guide/net.png)](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](/documentation/articles/active-directory-devquickstarts-webapi-nodejs)
 |:--:|:--:|
 |[.NET](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)|[Node.js](/documentation/articles/active-directory-devquickstarts-webapi-nodejs)
 
@@ -65,6 +67,8 @@
 - [了解 Azure Active Directory 应用程序清单](/documentation/articles/active-directory-application-manifest)
 - [使用 Office 365 API 创建应用](https://msdn.microsoft.com/office/office365/howto/getting-started-Office-365-APIs)
 - [将适用于 Office 365 的 Web 应用提交到卖家仪表板](https://msdn.microsoft.com/office/office365/howto/submit-web-apps-seller-dashboard)
+- 了解如何使用 ADAL 在 [Android](/documentation/articles/active-directory-sso-android) 和 [iOS](/documentation/articles/active-directory-sso-ios) 设备上启用跨应用 SSO
+- [预览：如何构建可以使用个人帐户和工作或学校帐户来登录用户的应用](/documentation/articles/active-directory-appmodel-v2-overview)
 
 ## 引用
 
@@ -79,6 +83,7 @@
 
 - [Azure Active Directory 示例](https://github.com/azure-samples?query=active-directory)：浏览示例列表的最简单办法是使用[代码示例的索引](/documentation/articles/active-directory-code-samples)。
 
+- [ADAL for .NET](https://msdn.microsoft.com/library/azure/mt417579.aspx)：.NET 身份验证库文档。
 
 ### Graph API
 
@@ -86,13 +91,9 @@
 
 - [图形 API 权限范围](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes)：用于控制应用对租户中目录数据的访问权限的 OAuth 2.0 权限范围。
 
-### 身份验证库
-
-- [.NET](https://msdn.microsoft.com/library/azure/mt417579.aspx)：.NET 身份验证库文档。
-
 ### 身份验证协议
 
-- **[SAML 2.0 协议参考](https://msdn.microsoft.com/zh-cn/library/azure/dn195591.aspx)**：SAML 2.0 协议使应用程序能够为其用户提供单一登录体验。
+- [SAML 2.0 协议参考](https://msdn.microsoft.com/library/azure/dn195591.aspx)：SAML 2.0 协议使应用程序能够为其用户提供单一登录体验。
 
 
 - [OAuth 2.0 协议参考](https://msdn.microsoft.com/library/azure/dn645545.aspx)：可以使用 OAuth 2.0 协议授权访问 Azure Active Directory 租户中的 Web 应用程序和 Web API。
@@ -103,7 +104,7 @@
 
 - [WS 联合身份验证 1.2 协议参考](https://msdn.microsoft.com/library/azure/dn903702.aspx)：Web Services 联合身份验证版本 1.2 规范中指定了 WS 联合身份验证 1.2 协议。
 
-- [支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims)：你可以通过本指南来了解和评估 SAML 2.0 令牌和 JSON Web 令牌 (JWT) 令牌中的声明。
+- [支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims)：你可以通过本指南来了解和评估 SAML 2.0 令牌与 JSON Web 令牌 (JWT) 令牌中的声明。
 
 ## 社交
 
@@ -115,4 +116,4 @@
 
 - [Twitter 上的 Azure Active Directory](https://twitter.com/azuread)：以 140 个或更少的字符发布的 Azure Active Directory 公告。
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0613_2016-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="自定义：Azure AD 密码管理 | Microsoft Azure" 
+	pageTitle="自定义：Azure AD 密码管理 | Azure" 
 	description="如何根据需要在 Azure AD 中自定义密码管理外观、行为和通知。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -10,10 +10,10 @@
 <tags 
 	ms.service="active-directory"  
 	ms.date="02/16/2016" 
-	wacn.date="04/28/2016"/>
+	wacn.date="06/27/2016"/>
 
 # 自定义密码管理以符合组织的需求
-为了尽可能地向用户提供最佳体验，我们建议你了解并试用你可以使用的所有密码管理配置选项。事实上，你可以通过转到 [Azure 管理门户](https://manage.windowsazure.cn)中“Active Directory 扩展”的配置选项卡立即开始了解。本主题将指导你完成所有不同的密码管理自定义，你可以从 [Azure 管理门户](https://manage.windowsazure.cn)中你目录的“配置”选项卡以管理员身份进行这些自定义，这些自定义包括：
+为了尽可能地向用户提供最佳体验，我们建议你了解并试用你可以使用的所有密码管理配置选项。事实上，你可以转到 [Azure 管理门户](https://manage.windowsazure.cn)的“Active Directory 扩展”中的配置选项卡，立即开始探索。本主题将引导你从 [Azure 管理门户](https://manage.windowsazure.cn)中目录的“配置”选项卡，完成管理员可以进行的不同密码管理自定义，包括：
 
 | 主题 | |
 | --------- | --------- |
@@ -856,7 +856,7 @@
 ## 密码重置文档的链接
 以下是所有 Azure AD 密码重置文档页面的链接：
 
-* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password) - 了解如何以系统用户的身份重置或更改自己的密码
+* [**重置自己的密码**](/documentation/articles/active-directory-passwords-update-your-own-password) — 了解如何以系统用户的身份重置或更改自己的密码
 * [**工作原理**](/documentation/articles/active-directory-passwords-how-it-works) - 了解六个不同的服务组件及其功能
 * [**入门**](/documentation/articles/active-directory-passwords-getting-started) - 了解如何让用户重置及更改云密码或本地密码
 * [**最佳实践**](/documentation/articles/active-directory-passwords-best-practices) - 了解如何快速部署且有效管理组织的密码
@@ -868,4 +868,4 @@
 
 [001]: ./media/active-directory-passwords-customize/001.jpg "Image_001.jpg"
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->
