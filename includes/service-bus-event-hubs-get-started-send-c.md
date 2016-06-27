@@ -12,7 +12,7 @@
 3. 下载 [Qpid Proton 库](http://qpid.apache.org/proton/index.html)并提取它，例如：
 
 	```
-	wget http://apache.fastbull.org/qpid/proton/0.7/qpid-proton-0.7.tar.gz
+	wget http://archive.apache.org/dist/qpid/proton/0.7/qpid-proton-0.7.tar.gz
 	tar xvfz qpid-proton-0.7.tar.gz
 	```
 

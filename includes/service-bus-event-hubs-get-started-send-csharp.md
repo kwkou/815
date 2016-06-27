@@ -19,6 +19,9 @@
 
     	using System.Threading;
     	using Microsoft.ServiceBus.Messaging;
+=======
+5. 将以下字段添加到 **Program** 类，并将占位符值分别替换为你在上一节中创建的事件中心的名称和前面保存的命名空间级别连接字符串。
+>>>>>>> ed3f204d98ab110efeea73c94edaa70bb6974466
 
 
 5. 将以下字段添加到 **Program** 类，从而将占位符值分别替换为你在上一节中创建的事件中心的名称和连接字符串。
@@ -63,5 +66,4 @@
 <!-- Images -->
 [7]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
 [8]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp2.png
-[9]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp3.png
 <!--HONumber=41-->

@@ -5,18 +5,18 @@
 	documentationCenter=".net" 
 	authors="sethmanheim" 
 	manager="timlt" 
-	editor="mattshel"/>
+	editor=""/>
 
 <tags 
 	ms.service="service-bus" 
 	ms.date="05/10/2016" 
-	wacn.date="06/21/2016"/>
+	wacn.date="06/27/2016"/>
 
 
 
 # 服务总线的 AMQP 1.0 支持
 
-Azure 服务总线云服务和 [Windows Server 服务总线（服务总线 1.1）](https://msdn.microsoft.com/zh-cn/library/dn282144.aspx)均支持高级消息队列协议 (AMQP) 1.0。AMQP 让您能够使用开放标准协议构建跨平台的混合应用程序。你可以借助使用不同语言和框架构建的且运行在不同操作系统上的组件来构建应用程序。所有这些组件均可连接到服务总线，并且能够高效且完全无损地无缝交换结构化业务消息。
+Azure 服务总线云服务和本地 [Windows Server 服务总线（服务总线 1.1）](https://msdn.microsoft.com/zh-cn/library/dn282144.aspx)均支持高级消息队列协议 (AMQP) 1.0。AMQP 让您能够使用开放标准协议构建跨平台的混合应用程序。你可以借助使用不同语言和框架构建的且运行在不同操作系统上的组件来构建应用程序。所有这些组件均可连接到服务总线，并且能够高效且完全无损地无缝交换结构化业务消息。
 
 ## 简介：什么是 AMQP 1.0，为何它很重要？
 
@@ -57,7 +57,7 @@ AMQP 1.0 是一种国际标准，已通过 ISO 和 IEC 的认证，认证编号�
 *    随时可找到知识渊博的工作人员
 *    风险较低且可控
 
-## AMQP 1.0 和 Service Bus
+## AMQP 1.0 和服务总线
 
 Azure 服务总线中对 AMQP 1.0 的支持意味着现在可以通过一系列使用有效的二进制协议的平台利用队列和发布/订阅中转消息传送功能。此外，你还可以生成由结合使用多个语言、框架和操作系统构建的组件组成的应用程序。
 

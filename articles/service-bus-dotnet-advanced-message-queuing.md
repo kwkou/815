@@ -5,32 +5,32 @@
 	documentationCenter=".net" 
 	authors="sethmanheim" 
 	manager="timlt" 
-	editor="tysonn"/>
+	editor=""/>
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="10/08/2015" 
-	wacn.date="01/14/2016"/>
+	ms.date="05/10/2016" 
+	wacn.date="06/27/2016"/>
 
 # 如何将 AMQP 1.0 与服务总线 .NET API 一起使用
 
 高级消息队列协议 (AMQP) 1.0 是一个高效、可靠的线级消息传送协议，可用于构建可靠的跨平台消息传送应用程序。
 
-在 Service Bus 中支持 AMQP 1.0 意味着可以通过一系列使用有效的二进制协议的平台利用队列和发布/订阅中转消息传送功能。此外，你还可以生成由结合使用多个语言、框架和操作系统构建的组件组成的应用程序。
+在服务总线中支持 AMQP 1.0 意味着可以通过一系列使用有效的二进制协议的平台利用队列和发布/订阅中转消息传送功能。此外，你还可以生成由结合使用多个语言、框架和操作系统构建的组件组成的应用程序。
 
-本文说明如何使用服务总线 .NET API 通过 .NET 应用程序来使用服务总线中转消息传送功能（队列和发布/订阅主题）。有一个配套文章，该文说明如何使用标准 Java 消息服务 (JMS) API 执行相同的操作。使用 AMQP 1.0，可以同时使用以下两个指南来了解跨平台消息。
+本文说明如何使用服务总线 .NET API 通过 .NET 应用程序来使用服务总线中转消息传送功能（队列和发布/订阅主题）。有一个[配套文章](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)，该文说明如何使用标准 Java 消息服务 (JMS) API 执行相同的操作。使用 AMQP 1.0，可以同时使用以下两个指南来了解跨平台消息。
 
 ## 服务总线入门
 
-本文假定你已拥有包含名为“queue1”的队列的服务总线命名空间。 如果没有，则可以使用 [Azure 经典门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)。
+本文假定你已拥有包含名为“queue1”的队列的服务总线命名空间。 如果没有，则可以使用 [Azure 管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)。
 
 ## 下载服务总线 SDK
 
-AMQP 1.0 支持在 Service Bus SDK 2.1 版或更高版本中提供。可从以下位置的 NuGet 中下载最新的 SDK：[http://nuget.org/packages/WindowsAzure.ServiceBus/](http://nuget.org/packages/WindowsAzure.ServiceBus/)。
+AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。可从以下位置的 NuGet 中下载最新的 SDK：[http://nuget.org/packages/WindowsAzure.ServiceBus/](http://nuget.org/packages/WindowsAzure.ServiceBus/)。
 
 ## 编写 .NET 应用程序
 
-默认情况下，Service Bus .NET 客户端库使用基于 SOAP 的专用协议与 Service Bus 服务通信。若要使用 AMQP 1.0 而非默认协议，需要 Service Bus 连接字符串上的显式配置，如下一节所述。除了此更改之外，在使用 AMQP 1.0 时应用程序代码基本保持不变。
+默认情况下，服务总线 .NET 客户端库使用基于 SOAP 的专用协议与服务总线服务通信。若要使用 AMQP 1.0 而非默认协议，需要服务总线连接字符串上的显式配置，如下一节所述。除了此更改之外，在使用 AMQP 1.0 时应用程序代码基本保持不变。
 
 在当前版本中，有一些在使用 AMQP 时不受支持的 API 功能。这些不受支持的功能将在后面的[不支持的功能和限制](#unsupported-features-and-restrictions)部分中列出。在使用 AMQP 时，一些高级配置设置还具有不同的含义。在本文中没有使用这些设置，但在[服务总线 AMQP 概述](/documentation/articles/service-bus-amqp-dotnet/#unsupported-features-restrictions-and-behavioral-differences)中提供了更多详细信息。
 
@@ -59,7 +59,7 @@ AMQP 1.0 支持在 Service Bus SDK 2.1 版或更高版本中提供。可从以�
 Endpoint=sb://[namespace].servicebus.chinacloudapi.cn;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp
 ```
 
-其中 `[namespace]` 和 `[SAS key]` 是从 [Azure 经典门户][]获取的。有关详细信息，请参阅 [如何使用服务总线队列][]。
+其中 `[namespace]` 和 `[SAS key]` 是从 [Azure 管理门户][]获取的。有关详细信息，请参阅 [如何使用服务总线队列][]。
 
 在使用 AMQP 时，在连接字符串后面追加了 `;TransportType=Amqp`，以通知客户端库使用 AMQP 1.0 连接到服务总线。
 
@@ -69,7 +69,7 @@ Endpoint=sb://[namespace].servicebus.chinacloudapi.cn;SharedAccessKeyName=RootMa
 
 ### 使用服务总线队列的简单 .NET 应用程序
 
-以下示例向 Service Bus 队列发送消息以及从中接收消息。
+以下示例向服务总线队列发送消息以及从中接收消息。
 
 ```
 // SimpleSenderReceiver.cs
@@ -289,7 +289,7 @@ exit
 
 ## <a name="unsupported-features-and-restrictions"></a>不支持的功能和限制
 
-在使用 AMQP 时，.NET Service Bus API 的以下功能目前不受支持：
+在使用 AMQP 时，.NET 服务总线 API 的以下功能目前不受支持：
 
 * 事务
 * 通过传输目标发送
@@ -302,22 +302,23 @@ exit
 * 会话锁定续订
 * 一些微小的行为差异
 
-有关详细信息，请参阅[服务总线 AMQP 概述](/documentation/articles/service-bus-amqp-dotnet)。此主题包括不受支持的 API 的详细列表。
+有关详细信息，请参阅[服务总线 AMQP 概述](/documentation/articles/service-bus-amqp-dotnet)。本文包括不受支持的 API 的详细列表。
 
 ## 摘要
 
-本主题介绍了如何使用 AMQP 1.0 和服务总线 .NET API 通过 .NET 访问服务总线中转消息传送功能（队列和发布/订阅主题）。
+本文介绍了如何使用 AMQP 1.0 和服务总线 .NET API 通过 .NET 访问服务总线中转消息传送功能（队列和发布/订阅主题）。
 
-也可以通过其他语言（包括 Java、C、Python 和 PHP）使用 Service Bus AMQP 1.0。使用这些语言构建的组件可以使用服务总线中的 AMQP 1.0 可靠且完全无损地交换消息。有关详细信息，请参阅[服务总线 AMQP 概述](/documentation/articles/service-bus-amqp-dotnet)。
+也可以通过其他语言（包括 Java、C、Python 和 PHP）使用服务总线 AMQP 1.0。使用这些语言构建的组件可以使用服务总线中的 AMQP 1.0 可靠且完全无损地交换消息。有关详细信息，请参阅[服务总线 AMQP 概述](/documentation/articles/service-bus-amqp-dotnet)。
 
 ## 后续步骤
 
 现在，你已阅读服务总线和 AMQP 与 .NET 的概述，请参阅以下链接了解详细信息。
 
-* [Azure Service Bus 中的 AMQP 1.0 支持](/documentation/articles/service-bus-amqp-overview)
+* [Azure 服务总线中的 AMQP 1.0 支持](/documentation/articles/service-bus-amqp-overview)
 * [如何将 Java 消息服务 (JMS) API 用于服务总线 和 AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)
-* [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
+* [如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
  
-[Azure 经典门户]: http://manage.windowsazure.cn
+[Azure 管理门户]: http://manage.windowsazure.cn
+[如何使用服务总线队列]: /documentation/articles/service-bus-dotnet-how-to-use-queues
 
 <!---HONumber=Mooncake_0104_2016-->

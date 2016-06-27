@@ -9,21 +9,21 @@
 <tags 
    ms.service="service-bus"
    ms.date="05/06/2016"
-   wacn.date="06/21/2016" />
+   wacn.date="06/27/2016" />
 
 # 使用 AMQP 1.0 通过 Java 使用服务总线
 
 [AZURE.INCLUDE [service-bus-selector-amqp](../includes/service-bus-selector-amqp.md)]
 
-Java 消息服务 (JMS) 是一种标准 API，用于处理 Java 平台上面向消息的中间件。Azure 服务总线已使用 Apache Qpid 项目开发的基于 AMQP 1.0 的 JMS 客户端库进行测试。此库支持完整的 JMS 1.1 API，并可用于任何 AMQP 1.0 兼容的消息服务。在适用于 Windows Server 的服务总线（本地服务总线）中也支持此方案。有关详细信息，请参阅[适用于 Windows Server 的服务总线中的 AMQP][]。
+Java 消息服务 (JMS) 是一种标准 API，用于处理 Java 平台上面向消息的中间件。Azure 服务总线已使用 Apache Qpid 项目开发的基于 AMQP 1.0 的 JMS 客户端库进行测试。此库支持完整的 JMS 1.1 API，并可用于任何 AMQP 1.0 兼容的消息服务。[Windows Server 服务总线](https://msdn.microsoft.com/zh-cn/library/dn282144.aspx)（本地服务总线）中也支持此方案。有关详细信息，请参阅[适用于 Windows Server 的服务总线中的 AMQP][]。
 
 ## 下载 Apache Qpid AMQP 1.0 JMS 客户端库
 
 有关下载 Apache Qpid JMS AMQP 1.0 客户端库的最新版本的信息，请访问 [http://people.apache.org/~rgodfrey/qpid-java-amqp-1-0-client-jms.html](http://people.apache.org/~rgodfrey/qpid-java-amqp-1-0-client-jms.html)。
 
-使用 Service Bus 构建和运行 JMS 应用程序时必须将以下 4 个 JAR 文件从 Apache Qpid JMS AMQP 1.0 分发存档添加到 Java CLASSPATH：
+使用服务总线构建和运行 JMS 应用程序时必须将以下 4 个 JAR 文件从 Apache Qpid JMS AMQP 1.0 分发存档添加到 Java CLASSPATH：
 
--   geronimo-jms_1.1_spec-[version].jar
+-   geronimo-jms\_1.1\_spec-[version].jar
 
 -   qpid-amqp-1-0-client-[version].jar
 
@@ -39,44 +39,44 @@ JMS 使用 Java 命名和目录接口 (JNDI) 创建逻辑名称和物理名称�
 
 Qpid 属性文件 JNDI 提供程序是使用以下格式的属性文件配置的：
 
+```
+# servicebus.properties – sample JNDI configuration
 
-    # servicebus.properties – sample JNDI configuration
-    
-    # Register a ConnectionFactory in JNDI using the form:
-    # connectionfactory.[jndi_name] = [ConnectionURL]
-    connectionfactory.SBCONNECTIONFACTORY = amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
-    
-    # Register some queues in JNDI using the form
-    # queue.[jndi_name] = [physical_name]
-    # topic.[jndi_name] = [physical_name]
-    topic.TOPIC = topic1
-    queue.QUEUE = queue1
+# Register a ConnectionFactory in JNDI using the form:
+# connectionfactory.[jndi_name] = [ConnectionURL]
+connectionfactory.SBCONNECTIONFACTORY = amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
 
+# Register some queues in JNDI using the form
+# queue.[jndi_name] = [physical_name]
+# topic.[jndi_name] = [physical_name]
+topic.TOPIC = topic1
+queue.QUEUE = queue1
+```
 
 #### 配置连接工厂
 
 用于在 Qpid 属性文件 JNDI 提供程序中定义 **ConnectionFactory** 的条目的格式如下：
 
+```
+connectionfactory.[jndi_name] = [ConnectionURL]
+```
 
-    connectionfactory.[jndi_name] = [ConnectionURL]
+其中 `[jndi\_name]` 和 `[ConnectionURL]` 具有以下含义：
 
-
-其中 `[jndi_name]` 和 `[ConnectionURL]` 具有以下含义：
-
-| Name | 含义 | | | | |
+| 名称 | 含义 | | | | |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------|---|---|---|---|
-| `[jndi_name]` | 连接工厂的逻辑名称。通过使用 JNDI `IntialContext.lookup()` 方法在 Java 应用程序中解析此名称。 | | | | |
+| `[jndi\_name]` | 连接工厂的逻辑名称。通过使用 JNDI `IntialContext.lookup()` 方法在 Java 应用程序中解析此名称。 | | | | |
 | `[ConnectionURL]` | 用于向 AMQP 代理提供包含所需信息的 JMS 库的 URL。 | | | | |
 
 连接 URL 的格式如下：
 
-
-    amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
-
+```
+amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
+```
 
 其中 `[namespace]`、`[username]` 和 `[password]` 具有以下含义：
 
-| Name | 含义 | | | | |
+| 名称 | 含义 | | | | |
 |---------------|--------------------------------------------------------------------------------|---|---|---|---|
 | `[namespace]` | 从 [Azure 经典门户][]获取的服务总线命名空间。 | | | | |
 | `[username]` | 从 [Azure 经典门户][]获取的服务总线颁发者名称。 | | | | |
@@ -93,25 +93,25 @@ Qpid 属性文件 JNDI 提供程序是使用以下格式的属性文件配置的
 
 那么，为了定义名为 `SBCONNECTIONFACTORY` 的 **ConnectionFactory** 对象，配置字符串将如下所示：
 
-
-    connectionfactory.SBCONNECTIONFACTORY = amqps://owner:abcdefg@test.servicebus.chinacloudapi.cn
-
+```
+connectionfactory.SBCONNECTIONFACTORY = amqps://owner:abcdefg@test.servicebus.chinacloudapi.cn
+```
 
 #### 配置目标
 
 用于在 Qpid 属性文件 JNDI 提供程序中定义目标的条目的格式如下：
 
+```
+queue.[jndi_name] = [physical_name]
+topic.[jndi_name] = [physical_name]
+```
 
-    queue.[jndi_name] = [physical_name]
-    topic.[jndi_name] = [physical_name]
+其中 `[jndi\_name]` 和 `[physical\_name]` 具有以下含义：
 
-
-其中 `[jndi_name]` 和 `[physical_name]` 具有以下含义：
-
-| Name | 含义 |
+| 名称 | 含义 |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| `[jndi_name]` | 目标的逻辑名称。通过使用 JNDI `IntialContext.lookup()` 方法在 Java 应用程序中解析此名称。 |
-| `[physical\name]` | 应用程序在其中发送或接收消息的 Service Bus 实体的名称。 |
+| `[jndi\_name]` | 目标的逻辑名称。通过使用 JNDI `IntialContext.lookup()` 方法在 Java 应用程序中解析此名称。 |
+| `[physical\name]` | 应用程序在其中发送或接收消息的服务总线实体的名称。 |
 
 注意以下事项：
 
@@ -312,11 +312,11 @@ JMS 消息支持以下类型的应用程序属性：**boolean**、**byte**、**s
 | JMS 属性类型 | .NET 属性类型 |
 |-------------------|--------------------|
 | Byte | sbyte |
-| 整数 | int |
+| Integer | int |
 | Float | float |
 | Double | double |
-| 布尔 | bool |
-| String | 字符串 |
+| Boolean | bool |
+| String | string |
 
 [BrokeredMessage][] 类型支持以下类型的应用程序属性：**byte**、**sbyte**、**char**、**short**、**ushort**、**int**、**uint**、**long**、**ulong**、**float**、**double**、**decimal**、**bool**、**Guid**、**string**、**Uri**、**DateTime**、**DateTimeOffset** 和 **TimeSpan**。以下 .NET 代码显示如何使用上述每种属性类型在 [BrokeredMessage][] 对象上设置属性。
 
@@ -355,27 +355,27 @@ JMS 消息支持以下类型的应用程序属性：**boolean**、**byte**、**s
 
 下表显示如何将 .NET 属性类型映射到 JMS 属性类型。
 
-| .NET 属性类型 | JMS 属性类型 | 说明                                                                                                                                                                            |
+| .NET 属性类型 | JMS 属性类型 | 说明 |
 |--------------------|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| byte               | UnsignedByte      | -                                                                                                                                                                      |
-| sbyte              | Byte              | -                                                                                                                                                                     |
-| char               | Character         | -                                                                                                                                                                     |
-| short              | Short             | -                                                                                                                                                                     |
-| ushort             | UnsignedShort     | -                                                                                                                                                                     |
-| int                | Integer           | -                                                                                                                                                                     |
-| uint               | UnsignedInteger   | -                                                                                                                                                                     |
-| long               | Long              | -                                                                                                                                                                     |
-| ulong              | UnsignedLong      | -                                                                                                                                                                     |
-| float              | Float             | -                                                                                                                                                                     |
-| double             | Double            | -                                                                                                                                                                     |
-| decimal            | BigDecimal        | -                                                                                                                                                                     |
-| bool               | Boolean           | -                                                                                                                                                                     |
-| Guid               | UUID              | -                                                                                                                                                                     |
-| string             | String            | -                                                                                                                                                                     |
-| DateTime           | Date              | -                                                                                                                                                                     |
-| DateTimeOffset     | DescribedType     | 映射到 AMQP 类型的 DateTimeOffset.UtcTicks：<type name=”datetime-offset” class=restricted source=”long”> <descriptor name=”com.microsoft:datetime-offset” /></type> |
-| TimeSpan           | DescribedType     | 映射到 AMQP 类型的 Timespan.Ticks：<type name=”timespan” class=restricted source=”long”> <descriptor name=”com.microsoft:timespan” /></type>                        |
-| Uri                | DescribedType     | 映射到 AMQP 类型的 Uri.AbsoluteUri：<type name=”uri” class=restricted source=”string”> <descriptor name=”com.microsoft:uri” /></type>                               |
+| byte | UnsignedByte | - |
+| sbyte | Byte | - |
+| char | Character | - |
+| short | Short | - |
+| ushort | UnsignedShort | - |
+| int | Integer | - |
+| uint | UnsignedInteger | - |
+| long | Long | - |
+| ulong | UnsignedLong | - |
+| float | Float | - |
+| double | Double | - |
+| decimal | BigDecimal | - |
+| bool | Boolean | - |
+| Guid | UUID | - |
+| string | String | - |
+| DateTime | Date | - |
+| DateTimeOffset | DescribedType | 映射到 AMQP 类型的 DateTimeOffset.UtcTicks：<type name=”datetime-offset” class=restricted source=”long”> <descriptor name=”com.microsoft:datetime-offset” /></type> |
+| TimeSpan | DescribedType | 映射到 AMQP 类型的 Timespan.Ticks：<type name=”timespan” class=restricted source=”long”> <descriptor name=”com.microsoft:timespan” /></type> |
+| Uri | DescribedType | 映射到 AMQP 类型的 Uri.AbsoluteUri：<type name=”uri” class=restricted source=”string”> <descriptor name=”com.microsoft:uri” /></type> |
 
 ### 标准标头
 
@@ -393,7 +393,7 @@ JMS 消息支持以下类型的应用程序属性：**boolean**、**byte**、**s
 | JMSPriority      | 当前不可用             | 服务总线不支持消息优先级。                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | JMSRedelivered   | 当前不可用             | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | JMSReplyTo       | 消息。ReplyTo          | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| JMSTimestamp     | Message.EnqueuedTimeUtc        | Conversion                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| JMSTimestamp | Message.EnqueuedTimeUtc | 转换 |
 | JMSType          | Message.Properties[“jms-type”] | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 #### 服务总线 .NET API 到 JMS
