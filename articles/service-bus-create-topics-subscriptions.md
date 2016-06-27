@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
     ms.date="03/16/2016"
-   wacn.date="04/05/2016" />
+   wacn.date="06/27/2016" />
 
 # 创建使用服务总线主题和订阅的应用程序
 
@@ -25,7 +25,7 @@ Azure 服务总线支持一组基于云的、面向消息的中间件技术，�
 
 要解决这一要求，系统必须“分接”出销售数据流。我们仍然希望 POS 终端发送的每条消息像从前一样被发送到库存管理系统，但我们还需要每条消息的另一个副本，用于向商店所有者显示仪表板视图。
 
-在任何类似于此的情况下，当需要每条消息供多方使用时，可以使用服务总线*主题*。主题提供发布/订阅模式，在该模式中，会为向主题注册的一个或多个订阅提供每个已发布消息。相比之下，使用队列时每条消息由单个使用方接收。
+在任何类似于此的情况下，当需要每条消息供多方使用时，可以使用服务总线主题。主题提供发布/订阅模式，在该模式中，会为向主题注册的一个或多个订阅提供每个已发布消息。相比之下，使用队列时每条消息由单个使用方接收。
 
 将消息发送到某主题的方式与将它们发送到队列的方式相同。但是，不会直接从该主题中接收消息；而是从订阅中接收消息。你可以将主题订阅视为接收发送至该主题的消息副本的虚拟队列。从订阅接收消息的方式与从队列接收的方式相同。
 
@@ -89,7 +89,7 @@ bm.Properties["MachineID"] = "POS_1";
 将消息发送到主题的最简单方法是使用 [CreateMessageSender](https://msdn.microsoft.com/zh-cn/library/azure/hh322659.aspx) 从 [MessagingFactory](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx) 实例直接创建 [MessageSender](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagesender.aspx) 对象。
 
 ```
-MessageSender sender = factory.CreateMessageSender("DataCollectionQueue");
+MessageSender sender = factory.CreateMessageSender("DataCollectionTopic");
 sender.Send(bm);
 ```
 
@@ -115,7 +115,7 @@ catch (Exception e)
 
 ## 订阅筛选器
 
-到目前为止，本文中发送到主题的所有消息都可供所有已注册订阅使用。这里的关键词是“可供使用”。 虽然服务总线订阅可以看到发送到主题的所有消息，但你也可以仅将这些消息的一个子集复制到虚拟订阅队列。使用订阅*筛选器*执行此操作。创建订阅时，可以用 SQL92 样式谓词的形式提供筛选器表达式，对消息的属性进行操作，包括系统属性（例如 [Label](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx)）和应用程序属性（例如以上示例中的 **StoreName**）。
+到目前为止，此方案中发送到主题的所有消息都可供所有已注册订阅使用。这里的关键词是“可供使用”。 虽然服务总线订阅可以看到发送到主题的所有消息，但你也可以仅将这些消息的一个子集复制到虚拟订阅队列。使用订阅筛选器执行此操作。创建订阅时，可以用 SQL92 样式谓词的形式提供筛选器表达式，对消息的属性进行操作，包括系统属性（例如 [Label](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx)）和应用程序属性（例如以上示例中的 **StoreName**）。
 
 推演此方案以说明这一点，向我们的零售方案中加入第二家零售店。来自两家零售店所有 POS 终端的销售数据仍必须路由到集中库存管理系统，但使用仪表板工具的零售店经理只对本店绩效感兴趣。可以使用订阅筛选来实现此目的。请注意，当 POS 终端发布消息时，会在消息上设置 **StoreName** 应用程序属性。给定两个零售店，例如 **Redmond** 和 **Seattle**，Redmond 商店中的 POS 终端使其销售数据带上等于 **Redmond** 的 **StoreName** 戳记，而 Seattle 商店 POS 终端使用的 **StoreName** 等于 **Seattle**。Redmond 商店经理仅希望查看来自其 POS 终端的数据。系统将如下所示：
 

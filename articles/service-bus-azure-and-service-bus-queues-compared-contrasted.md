@@ -9,11 +9,11 @@
 <tags 
    ms.service="service-bus"
    ms.date="11/18/2015"
-   wacn.date="01/14/2016"/>
+   wacn.date="05/27/2016"/>
 
 # Azure 队列和服务总线队列 - 比较与对照
 
-本文分析 Azure 目前提供的以下两种队列类型之间的差异和相似性：Azure 队列和服务总线队列。通过使用该信息，您可以比较和对照这两种技术，并可以明智地决定哪种解决方案最符合您的需要。
+本文分析 Azure 目前提供的以下两种队列类型之间的不同点和相似点：Azure 队列和服务总线队列。通过使用该信息，您可以比较和对照这两种技术，并可以明智地决定哪种解决方案最符合您的需要。
 
 ## 介绍
 
@@ -81,17 +81,17 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 本部分比较 Azure 队列和服务总线队列提供的一些基础队列功能。
 
-|比较条件|Azure 队列|Service Bus 队列|
+|比较条件|Azure 队列|服务总线队列|
 |---|---|---|
 |排序保障|**否**<br/><br>有关详细信息，请参阅“其他信息”部分中的第一个注意事项。</br>|**是 - 先入先出 (FIFO)**<br/><br>（通过使用消息传送会话）|
 |传递保障|**至少一次**|**至少一次**<br/><br/>**最多一次**|
-|事务支持|**否**|**是**<br/><br/>（通过使用本地事务）|
+|原子操作支持|**否**|**是**<br/><br/>|
 |接收行为|**非阻塞**<br/><br/>（如果没有发现新消息，则立即完成）|**阻塞（带超时/不带超时）**<br/><br/>（提供长轮询，或[“Comet 技术”](http://go.microsoft.com/fwlink/?LinkId=613759)）<br/><br/>**非阻塞**<br/><br/>（仅通过使用 .NET 托管 API）|
 |推送样式 API|**否**|**是**<br/><br/>[OnMessage](https://msdn.microsoft.com/zh-cn/library/azure/jj908682.aspx)和**OnMessage 会话** .NET API。|
 |接收模式|**扫视与租赁**|**扫视与锁定**<br/><br/>**接收与删除**|
 |独占访问模式|**基于租赁**|**基于锁定**|
-|租赁/锁定持续时间|**30 秒（默认值）**<br/><br/>**7 天7 天（最大值）（你可以使用 [UpdateMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage.aspx) API 来续订或释放消息租赁。）|**60 秒（默认值）**<br/><br/>你可以使用 [RenewLock](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.brokeredmessage.renewlock.aspx) API 续订消息锁。|
-|租赁/锁定精度|**消息级别**<br/><br/>（每条消息可以具有不同的超时值，你可以在处理消息时，根据需要使用 [UpdateMessage](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage.aspx) API 来更新超时值）|**队列级别**<br/><br/>（每个队列都具有一个适用于其中所有消息的锁定精度，但是你可以使用 [RenewLock](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.brokeredmessage.renewlock.aspx) API 续订该锁。）|
+|租赁/锁定持续时间|**30 秒（默认值）**<br/><br/>**7 天7 天（最大值）**（你可以使用 [UpdateMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage.aspx) API 来续订或释放消息租赁。）|**60 秒（默认值）**<br/><br/>你可以使用 [RenewLock](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.brokeredmessage.renewlock.aspx) API 续订消息锁。|
+|租赁/锁定精度|**消息级别**<br/><br/>（每条消息可以具有不同的超时值，你可以在处理消息时，根据需要使用 [UpdateMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage.aspx) API 来更新超时值）|**队列级别**<br/><br/>（每个队列都具有一个适用于其中所有消息的锁定精度，但是你可以使用 [RenewLock](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.brokeredmessage.renewlock.aspx) API 续订该锁。）|
 |成批接收|**是**<br/><br/>（在检索消息时显式指定消息计数，最多可达 32 条消息）|**是**<br/><br/>（隐式启用预提取属性或通过使用事务显式启用）|
 |成批发送|**否**|**是**<br/><br/>（通过使用事务或客户端批处理）|
 
@@ -129,7 +129,7 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 本部分比较 Azure 队列和服务总线队列提供的高级功能。
 
-|比较条件|Azure 队列|Service Bus 队列|
+|比较条件|Azure 队列|服务总线队列|
 |---|---|---|
 |计划的传递|**是**|**是**|
 |自动死信|**否**|**是**|
@@ -138,7 +138,7 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 |就地更新|**是**|**是**|
 |服务器端事务日志|**是**|**否**|
 |存储度量值|**是**<br/><br/>**分钟度量值**：提供可用性、TPS、API 调用计数、错误计数等指标的实时度量值，所有这些值都是实时的（每分钟进行汇总，并在生产过程中发生后几分钟之内报告）。有关详细信息，请参阅[关于存储分析度量值](https://msdn.microsoft.com/zh-cn/library/azure/hh343258.aspx)。|**是**<br/><br/>（通过调用 [GetQueues](https://msdn.microsoft.com/zh-cn/library/azure/hh293128.aspx) 进行大容量查询）|
-|状态管理|**否**|**是**<br/><br/>[Microsoft.ServiceBus.Messaging.EntityStatus.Active](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.entitystatus.aspx)、[Microsoft.ServiceBus.Messaging.EntityStatus.Disabled](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.entitystatus.aspx)、[Microsoft.ServiceBus.Messaging.EntityStatus.SendDisabled](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.entitystatus.aspx)、[Microsoft.ServiceBus.Messaging.EntityStatus.ReceiveDisabled](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.entitystatus.aspx)|
+|状态管理|**否**|**是**<br/><br/>[Microsoft.ServiceBus.Messaging.EntityStatus.Active](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.entitystatus.aspx)、[Microsoft.ServiceBus.Messaging.EntityStatus.Disabled](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.entitystatus.aspx)、[Microsoft.ServiceBus.Messaging.EntityStatus.SendDisabled](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.entitystatus.aspx)、[Microsoft.ServiceBus.Messaging.EntityStatus.ReceiveDisabled](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.entitystatus.aspx)|
 |消息自动转发|**否**|**是**|
 |清除队列函数|**是**|**否**|
 |消息组|**否**|**是**<br/><br/>（通过使用消息传送会话）|
@@ -171,10 +171,10 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 本部分从适用的容量和配额角度比较 Azure 队列和服务总线队列。
 
-|比较条件|Azure 队列|Service Bus 队列|
+|比较条件|Azure 队列|服务总线队列|
 |---|---|---|
 |最大队列大小|**200 TB**<br/><br/>（限制为单个存储帐户容量）|**1 GB 到 80 GB**<br/><br/>（在创建队列和[启用分区](/documentation/articles/service-bus-partitioning)时定义 – 请参阅“其他信息”部分）|
-|最大消息大小|**64 KB**<br/><br/>（使用 **Base64** 编码时为 48 KB）<br/><br/>Azure 可以通过合并队列和 Blob 支持大消息 – 单个项目排队的消息最多达到 200GB。|**256 KB**<br/><br/>（同时包含标题和正文，最大标题大小：64 KB）|
+|最大消息大小|**64 KB**<br/><br/>（使用 **Base64** 编码时为 48 KB）<br/><br/>Azure 可以通过合并队列和 Blob 支持大消息 – 单个项目排队的消息最多达到 200GB。|**256 KB** 或 **1 MB**<br/><br/>（包括标头和正文，最大标头大小：64 KB）。<br/><br/>取决于[服务层](/docuementation/articles/service-bus-premium-messaging)。|
 |最大消息 TTL|**7 天**|**不受限制**|
 |最大队列数|**不受限制**|**10,000**<br/><br/>（每个服务命名空间，可以增加）|
 |并发客户端的最大数目|**不受限制**|**Unlimited**<br/><br/>（100 个并发连接限制仅适用于基于 TCP 协议的通信）|
@@ -187,7 +187,7 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 - 在 Azure 队列中，如果消息的内容不属于 XML 安全内容，则必须对其进行 **Base64** 编码。如果你使用 **Base64** 编码此消息，则用户负载可高达 48 KB，而不是 64 KB。
 
-- 对于服务总线队列，存储在队列中的每条消息由两个部分组成：标头和正文。消息的总大小不能超过 256 KB。
+- 对于服务总线队列，存储在队列中的每条消息由两个部分组成：标头和正文。消息的总大小不能超过服务层支持的最大消息大小。
 
 - 当客户端通过 TCP 协议与服务总线队列进行通信时，到单个服务总线队列的最大并发连接数不得超过 100。此数值在发送者和接收者之间共享。如果达到此配额，将拒绝后续的其他连接请求，调用代码将收到一个异常。使用基于 REST 的 API 连接到队列的客户端不受此限制。
 
@@ -197,7 +197,7 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 本部分对 Azure 队列和服务总线队列提供的管理功能进行了比较。
 
-|比较条件|Azure 队列|Service Bus 队列|
+|比较条件|Azure 队列|服务总线队列|
 |---|---|---|
 |管理协议|**基于 HTTP/HTTPS 的 REST**|**基于 HTTPS 的 REST**|
 |运行时协议|**基于 HTTP/HTTPS 的 REST**|**基于 HTTPS 的 REST**<br/><br/>**AMQP 1.0 标准（具有 TLS 的 TCP）**|
@@ -207,7 +207,7 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 |PHP API|**是**|**是**|
 |Node.js API|**是**|**是**|
 |任意元数据支持|**是**|**否**|
-|队列命名规则|**长度最多为 63 个字符**<br/><br/>（队列名称中的字母必须小写）|**长度最多为 260 个字符**<br/><br/>（队列名称不区分大小写）|
+|队列命名规则|**长度最多为 63 个字符**<br/><br/>（队列名称中的字母必须小写）|**长度最多为 260 个字符**<br/><br/>（队列路径和名称不区分大小写）|
 |获取队列长度函数|**是**<br/><br/>（在消息超出 TTL 但未删除的情况下的近似值）|**是**<br/><br/>（精确时间点值）|
 |Peek 函数|**是**|**是**|
 
@@ -227,7 +227,7 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 本部分从性能角度对 Azure 队列和服务总线队列进行比较。
 
-|比较条件|Azure 队列|Service Bus 队列|
+|比较条件|Azure 队列|服务总线队列|
 |---|---|---|
 |最大吞吐量|**每秒高达 2,000 条消息**<br/><br/>（基于 1 KB 消息时的基准值）|**每秒高达 2,000 条消息**<br/><br/>（基于 1 KB 消息时的基准值）|
 |平均延迟|**10 毫秒**<br/><br/>（禁用 [TCP Nagle](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/06/25/nagle-s-algorithm-is-not-friendly-towards-small-requests.aspx)）|**20-25 毫秒**|
@@ -251,7 +251,7 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 本部分讨论 Azure 队列和服务总线队列支持的身份验证和授权功能。
 
-|比较条件|Azure 队列|Service Bus 队列|
+|比较条件|Azure 队列|服务总线队列|
 |---|---|---|
 |身份验证|**对称密钥**|**对称密钥**|
 |安全模型|通过 SAS 令牌进行的委托访问。|SAS|
@@ -286,9 +286,9 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 以下文章提供了有关使用 Azure 队列或服务总线队列的更多指导和信息。
 
-- [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
+- [如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
 - [如何使用队列存储服务](/documentation/articles/storage-dotnet-how-to-use-queues)
-- [使用 Service Bus 中转消息传递改善性能的最佳实践](/documentation/articles/service-bus-performance-improvements)
+- [使用服务总线中转消息传递改善性能的最佳实践](/documentation/articles/service-bus-performance-improvements)
 - [Azure 服务总线中的队列和主题简介](http://www.code-magazine.com/article.aspx?quickid=1112041)
 - [服务总线开发人员指南](http://www.cloudcasts.net/devguide/)
 - [Azure 表和队列深入介绍](http://www.microsoftpdc.com/2009/SVC09)

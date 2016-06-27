@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="10/06/2015" 
-	wacn.date="11/27/2015"/>
+	ms.date="05/10/2016" 
+	wacn.date="06/27/2016"/>
 
 # 使用消息传送构建可靠弹性的云应用 
  
@@ -18,9 +18,9 @@
  
 ## 探究
 
-- [Azure 服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
-- [基于队列的负载调节模式](http://msdn.microsoft.com/zh-cn/library/dn589783.aspx)
-- [让使用者竞争](http://msdn.microsoft.com/zh-cn/library/dn568101.aspx)
+- [Azure 服务总线基础](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
+- [基于队列的负载均衡模式](http://msdn.microsoft.com/zh-cn/library/dn589783.aspx)
+- [使用者竞争](http://msdn.microsoft.com/zh-cn/library/dn568101.aspx)
 - [客户案例](https://customers.microsoft.com/Pages/Home.aspx)
  
 ## 构建
@@ -33,6 +33,7 @@
 ## 热门
 - [Azure 队列和 Azure 服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted)
 - [服务总线 REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/hh780717.aspx)
+- [服务总线 RP REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/mt639375.aspx)
 
 ## 相关服务
 - [云服务](/zh-cn/documentation/services/cloud-services/) 

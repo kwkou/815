@@ -28,7 +28,9 @@
 
 	这样，便会下载、安装 [Azure 服务总线事件中心 — EventProcessorHost NuGet 程序包](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost)并添加对该程序包的引用，包括其所有依赖项。
 
-7. 右键单击 **Receiver** 项目，单击“添加”，然后单击“类”。将新类命名为 **SimpleEventProcessor**，然后单击“确定”以创建该类。
+7. 右键单击 **Receiver** 项目，单击“添加”，然后单击“类”。将新类命名为 **SimpleEventProcessor**，然后单击“添加”以创建该类。
+
+	![][15]
 
 8. 在 SimpleEventProcessor.cs 文件的顶部添加以下语句：
 
@@ -121,6 +123,7 @@
 [11]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp2.png
 [12]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp3.png
 [13]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp1.png
-[14]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
+[14]: ./media/service-bus-event-hubs-getstarted/create-receiver-csharp1.png
+[15]: ./media/service-bus-event-hubs-getstarted/create-receiver-csharp2.png
 
 <!---HONumber=Mooncake_0104_2016-->
