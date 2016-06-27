@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="key-vault"
-	ms.date="01/08/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="04/29/2016"
+	wacn.date="06/27/2016"/>
 
 # 使用 CLI 管理密钥保管库 #
 在大多数区域中提供了 Azure 密钥保管库。有关详细信息，请参阅[密钥保管库定价页](/home/features/key-vault/#price)。
@@ -51,6 +51,8 @@
 还可阅读以下教程以熟悉如何在 Azure 跨平台命令行接口中使用 Azure 资源管理器：
 
 - [如何安装和配置 Azure 跨平台命令行接口](/documentation/articles/xplat-cli-install)
+- [将 Azure 跨平台命令行接口用于 Azure 资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)
+
 
 ## 连接到订阅
 
@@ -100,6 +102,12 @@
 
 第一个参数是资源组名称，第二个参数是位置。对于位置，请使用命令 `azure location list` 来了解如何针对本示例中的位置指定替代位置。如需更多信息，请键入：`azure help location`
 
+## 注册密钥保管库资源提供程序
+请确保在你的订阅中注册密钥保管库资源提供程序：
+
+`azure provider register Microsoft.KeyVault`
+
+此操作每个订阅仅需执行一次。
 
 
 ## 创建密钥保管库
@@ -113,7 +121,7 @@
 此命令的输出会显示你刚刚创建的密钥保管库的属性。两个最重要的属性是：
 
 - **名称**：在本示例中为 ContosoKeyVault。你将在其他密钥保管库 cmdlet 中使用此名称。
-- **vaultUri**：在本示例中为 https://contosokeyvault.vault.chinacloudapi.cn。 通过其 REST API 使用保管库的应用程序必须使用此 URI。
+- **vaultUri**：在本示例中为 https://contosokeyvault.vault.chinacloudapi.cn 。通过其 REST API 使用保管库的应用程序必须使用此 URI。
 
 你的 Azure 帐户现已获取在此密钥保管库上执行任何作业的授权。而且没有其他人有此授权。
 
@@ -164,7 +172,7 @@
 3. 单击“应用程序”。如果你的目录中尚未添加任何应用程序，则此页只会显示“添加应用程序”链接。单击该链接，或者单击命令栏上的“添加”。
 4.	在“添加应用程序”向导的“要执行什么操作?”页面上，单击“添加我的组织正在开发的应用程序”。
 5.	在“向我们说明你的应用程序”页上，指定应用程序名称，然后选择“WEB 应用程序和/或 WEB API”（默认值）。单击“下一步”图标。
-6.	在“应用程序属性”页上，为你的 Web 应用程序指定“登录 URL”和“应用程序ID URI”。如果你的应用程序没有这些值，可以在此步骤中虚构这些值（例如，可以在两个框中指定 http://test1.contoso.com）。这些 Web 应用是否存在并不重要；重要的是目录中每个应用程序的应用程序 ID URI 都不相同。目录会使用此字符串来识别你的应用程序。
+6.	在“应用程序属性”页上，为你的 Web 应用程序指定“登录 URL”和“应用程序ID URI”。如果你的应用程序没有这些值，可以在此步骤中虚构这些值（例如，可以在两个框中指定 http://test1.contoso.com ）。这些网站是否存在并不重要；重要的是目录中每个应用程序的应用程序 ID URI 都不相同。目录会使用此字符串来识别你的应用程序。
 7.	单击“完成”图标以保存向导中的更改。
 8.	在“快速启动”页上，单击“映配置”。
 9.	滚动到“密钥”部分，选择持续时间，然后单击“保存”。页面将会刷新，随后显示密钥值。你必须使用此密钥值和“客户端 ID”值来配置应用程序。（有关此配置的说明仅适用于特定的应用程序。）
@@ -179,11 +187,13 @@
 
 例如，如果保管库名称是 ContosoKeyVault，要授权的应用程序的客户端 ID 为 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed，而你希望授权应用程序使用保管库中的密钥来进行解密和签名，那么，请执行以下操作：
 
-    azure keyvault set-policy --vault-name 'ContosoKeyVault' --spn 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed --perm-to-keys '["decrypt","sign"]'
+    azure keyvault set-policy --vault-name 'ContosoKeyVault' --spn 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed --perms-to-keys '["decrypt","sign"]'
 
-如果你想要授权同一应用程序读取保管库中的机密，请运行以下命令：
+>[AZURE.NOTE] 如果你是在 Windows 命令提示符下运行，则应将单引号替换为双引号，并对内部双引号进行转义操作。例如："[\"decrypt\",\"sign\"]"。
 
-	azure keyvault set-policy --vault-name 'ContosoKeyVault' --spn 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed --perm-to-secrets '["get"]'
+如果要授权同一应用程序读取保管库中的机密，请运行以下命令：
+
+	azure keyvault set-policy --vault-name 'ContosoKeyVault' --spn 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed --perms-to-secrets '["get"]'
 
 
 ## 删除密钥保管库以及关联的密钥和机密
@@ -226,4 +236,4 @@
 
 有关编程参考，请参阅 [Azure 密钥保管库开发人员指南](/documentation/articles/key-vault-developers-guide)。
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0620_2016-->
