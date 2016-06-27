@@ -5,13 +5,13 @@
     keywords="c# 数据库,sql 开发"
     documentationCenter=""
     authors="stevestein"
-    manager="jeffreyg"
+    manager="jhubbard"
     editor=""/>
 
 <tags
     ms.service="sql-database"
-    ms.date="02/23/2016"
-    wacn.date="04/06/2016"/>
+    ms.date="05/03/2016"
+    wacn.date="06/14/2016"/>
 
 # C&#x23; 数据库开发：为 SQL 数据库创建和配置弹性数据库池
 
@@ -24,7 +24,8 @@
 
 > [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-powershell)。
 
-这些示例使用了[适用于 .NET 的 Azure SQL 数据库库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)。为简明起见，我们已分开列出各个代码段，并在本文底部的某个部分中提供了一个示例控制台应用程序，其中结合了所有命令。
+这些示例使用了[适用于 .NET 的 Azure SQL 数据库库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)。
+为简明起见，我们已分开列出各个代码段，并在本文底部的某个部分中提供了一个示例控制台应用程序，其中结合了所有命令。
 
 
 > [AZURE.NOTE] 适用于 .NET 的 Azure SQL 数据库库目前以预览版提供。
@@ -44,7 +45,7 @@
 
 ## 使用 Azure Active Directory 配置身份验证
 
-在开始使用 C# 进行 SQL 开发之前，必须在 Azure 门户中完成一些任务。首先请通过设置所需的身份验证，使应用程序能够访问 REST API。
+在开始使用 C# 进行 SQL 开发之前，必须在 Azure 管理门户中完成一些任务。首先请通过设置所需的身份验证，使应用程序能够访问 REST API。
 
 [Azure 资源管理器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx) 使用 Azure Active Directory 进行身份验证，而不是早期 Azure 服务管理 REST API 使用的证书。
 
@@ -93,7 +94,6 @@
 2. 单击“保存”。
 
 
-
 **其他 AAD 资源**
 
 在[这篇有用的博客文章](http://www.cloudidentity.com/blog/2013/09/12/active-directory-authentication-library-adal-v1-for-net-general-availability)中，可以找到有关使用 Azure Active Directory 进行身份验证的其他信息。
@@ -135,7 +135,7 @@
     // Resource group parameters
     ResourceGroup resourceGroupParameters = new ResourceGroup()
     {
-        Location = "China East"
+        Location = "China North"
     };
 
     //Create a resource group
@@ -154,7 +154,7 @@
     // Create a server
     ServerCreateOrUpdateParameters serverParameters = new ServerCreateOrUpdateParameters()
     {
-        Location = "China East",
+        Location = "China North",
         Properties = new ServerCreateOrUpdateProperties()
         {
             AdministratorLogin = "ServerAdmin",
@@ -228,7 +228,7 @@
     // Create elastic pool: configure create or update parameters and properties explicitly
     ElasticPoolCreateOrUpdateParameters newPoolParameters = new ElasticPoolCreateOrUpdateParameters()
     {
-        Location = "China East",
+        Location = "China North",
         Properties = new ElasticPoolCreateOrUpdateProperties()
         {
             Edition = "Standard",
@@ -269,7 +269,7 @@
 
 ## 将现有数据库移入弹性数据库池
 
-创建一个池后，你还可以使用 Transact-SQL 将现有数据库移入和移出一个池。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL)。
+创建池后，还可以使用 Transact-SQL 将现有数据库移入和移出池。有关详细信息，请参阅[使用 Transact-SQL 监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-tsql)。*
 
 以下示例将现有的 Azure SQL 数据库移到池中：
 
@@ -301,7 +301,7 @@
 
 ## 在弹性数据库池中创建新数据库
 
-创建一个池后，你还可以使用 Transact-SQL 在池中创建新的弹性数据库。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL)。
+创建一个池后，你还可以使用 Transact-SQL 在池中创建新的弹性数据库。有关详细信息，请参阅[使用 Transact-SQL 监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-tsql)。
 
 以下示例将直接在池中创建一个新的数据库：
 
@@ -413,7 +413,7 @@
             // Resource group parameters
             ResourceGroup resourceGroupParameters = new ResourceGroup()
             {
-                Location = "China East"
+                Location = "China North"
             };
 
             //Create a resource group
@@ -429,7 +429,7 @@
             // Create a server
             ServerCreateOrUpdateParameters serverParameters = new ServerCreateOrUpdateParameters()
             {
-                Location = "China East",
+                Location = "China North",
                 Properties = new ServerCreateOrUpdateProperties()
                 {
                     AdministratorLogin = "ServerAdmin",
@@ -546,9 +546,6 @@
 
 [Azure 资源管理 API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)
 
-[弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference)。
-
-
 <!--Image references-->
 [1]: ./media/sql-database-elastic-pool-csharp/aad.png
 [2]: ./media/sql-database-elastic-pool-csharp/permissions.png
@@ -560,4 +557,4 @@
 [8]: ./media/sql-database-elastic-pool-csharp/add-application2.png
 [9]: ./media/sql-database-elastic-pool-csharp/clientid.png
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0530_2016-->

@@ -11,14 +11,14 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="03/25/2016"
-	wacn.date="05/16/2016" />
+	ms.date="05/09/2016"
+	wacn.date="06/14/2016" />
 
 # 使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询
 
 > [AZURE.SELECTOR]
-- [C#](/documentation/articles/sql-database-connect-query)
 - [SSMS](/documentation/articles/sql-database-connect-query-ssms)
+- [C#](/documentation/articles/sql-database-connect-query)
 - [Excel](/documentation/articles/sql-database-connect-excel)
 
 本文介绍如何使用最新版本的 SQL Server Management Studio (SSMS) 连接到 Azure SQL 数据库并使用 Transact-SQL (T-SQL) 语句执行简单查询。
@@ -60,4 +60,4 @@
 
 若要开始创建数据库用户和数据库用户管理员，请参阅 [Azure SQL 数据库安全性入门](/documentation/articles/sql-database-get-started-security)
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0530_2016-->

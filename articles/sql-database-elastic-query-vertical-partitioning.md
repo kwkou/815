@@ -3,13 +3,13 @@
     description="如何在垂直分区上设置跨数据库查询"    
     services="sql-database"
     documentationCenter=""  
-    manager="jeffreyg"
+    manager="jhubbard"
     authors="torsteng"/>
 
 <tags
     ms.service="sql-database"
-    ms.date="01/06/2016"
-    wacn.date="05/16/2016" />
+    ms.date="04/11/2016"
+    wacn.date="06/14/2016" />
 
 # 适用于跨数据库查询的弹性数据库查询（垂直分区）
 
@@ -48,7 +48,7 @@
     DROP MASTER KEY;   
 
  
-请确保 *< username>* 中不包括任何 *“@servername”* 后缀。
+请确保 *< username>* 中不包括任何“@servername”后缀。
 
 ### 1\.2 外部数据源
 
@@ -185,4 +185,4 @@ DATA\_SOURCE 子句定义用于外部表的外部数据源（即，在垂直分�
 
 <!--anchors-->
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0606_2016-->

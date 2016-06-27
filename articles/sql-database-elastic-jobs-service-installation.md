@@ -9,12 +9,12 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="03/24/2016" 
-	wacn.date="05/16/2016"/>
+	ms.date="05/02/2016" 
+	wacn.date="06/14/2016"/>
 
 # 安装弹性数据库作业概述
 
-可以通过 PowerShell 或 Azure 管理门户安装[弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-overview)。只有安装了 PowerShell 包，才能获取使用 PowerShell API 创建和管理作业的权限。此外，PowerShell API 目前提供的功能明显多于门户。
+可以通过 PowerShell 或 Azure 管理门户安装[**弹性数据库作业**](/documentation/articles/sql-database-elastic-jobs-overview)。只有安装了 PowerShell 包，才能获取使用 PowerShell API 创建和管理作业的权限。此外，PowerShell API 目前提供的功能明显多于门户。
 
 如果你从现有的**弹性数据库池**通过门户安装了**弹性数据库作业**，最新的 Powershell 预览包含用于升级现有安装的脚本。强烈建议将安装升级到最新的**弹性数据库作业**组件，以便利用通过 PowerShell API 公开的新功能。
 
@@ -30,7 +30,7 @@
 
 		PS C:\>.\nuget install Microsoft.Azure.SqlDatabase.Jobs -prerelease
 
-    **弹性数据库作业**文件放在本地目录中名为 **Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x**（其中的 x.x.xxxx.x 表示版本号）的文件夹内。PowerShell cmdlet（包括所需的客户端.dll）位于 **tools\\ElasticDatabaseJobs** 子目录中，用于安装、升级和卸载的 PowerShell 脚本也位于 **tools** 子目录中。
+    **弹性数据库作业**文件放在本地目录中名为 **Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x**（其中的 *x.x.xxxx.x* 表示版本号）的文件夹内。PowerShell cmdlet（包括所需的客户端.dll）位于 **tools\\ElasticDatabaseJobs** 子目录中，用于安装、升级和卸载的 PowerShell 脚本也位于 **tools** 子目录中。
 
 3. 键入 cd tools，导航到 Microsoft.Azure.SqlDatabase.Jobs.x.x.xxx.x 文件夹下的 tools 子目录，例如：
 
@@ -70,7 +70,7 @@
 
 	<tr>
 	<td>ResourceGroupLocation</td>
-	<td>提供用于保存新建 Azure 组件的 Azure 位置。此参数默认为“中国东部”位置。</td>
+	<td>提供用于保存新建 Azure 组件的 Azure 位置。此参数默认为“中国北部”位置。</td>
 </tr>
 
 <tr>
@@ -157,4 +157,4 @@
 [4]: ./media/sql-database-elastic-jobs-service-installation/not-done.png
  
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0530_2016-->

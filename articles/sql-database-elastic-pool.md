@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="04/04/2016"
-	wacn.date="05/16/2016" />
+	wacn.date="06/14/2016"
 
 
 # 什么是 Azure 弹性数据库池？
@@ -64,7 +64,7 @@ SaaS 开发人员必须创建并管理数十、数百或甚至数千个 SQL 数�
 
 ## 弹性数据库作业
 
-通过池，可以通过运行[弹性作业](/documentation/articles/sql-database-elastic-jobs-overview)中的脚本来简化管理任务。弹性数据库作业可消除与大量数据库有关的大部分麻烦。若要开始，请参阅[弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started)。
+通过池，可以通过运行**[弹性作业](/documentation/articles/sql-database-elastic-jobs-overview)**中的脚本来简化管理任务。弹性数据库作业可消除与大量数据库有关的大部分麻烦。若要开始，请参阅[弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started)。
 
 有关其他工具的详细信息，请参阅[弹性数据库工具学习路线图](https://azure.microsoft.com/documentation/learning-paths/sql-database-elastic-scale)。
 
@@ -80,7 +80,7 @@ SaaS 开发人员必须创建并管理数十、数百或甚至数千个 SQL 数�
 * 标准池：可还原到过去 14 天内的任何点。
 * 高级池：可还原到过去 35 天内的任何点。
 
-在预览期，池中的数据库将还原到相同池中的新数据库。删除的数据库始终还原为池外的独立数据库，因而将使用该服务层的最低性能层级。例如，标准池中删除的弹性数据库将还原为 S0 数据库。你可以通过 Azure 门户或以编程方式使用 REST API 执行数据库还原操作。PowerShell cmdlet 支持即将推出。
+在预览期，池中的数据库将还原到相同池中的新数据库。删除的数据库始终还原为池外的独立数据库，因而将使用该服务层的最低性能层级。例如，标准池中删除的弹性数据库将还原为 S0 数据库。你可以以编程方式使用 REST API 执行数据库还原操作。PowerShell cmdlet 支持即将推出。
 
 ### 异地还原
 
@@ -99,4 +99,4 @@ SaaS 开发人员必须创建并管理数十、数百或甚至数千个 SQL 数�
 <!--Image references-->
 [1]: ./media/sql-database-elastic-pool/databases.png
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

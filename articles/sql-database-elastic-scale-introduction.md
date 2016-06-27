@@ -10,7 +10,7 @@
 <tags
     ms.service="sql-database"
     ms.date="04/04/2016"
-    wacn.date="05/16/2016"/>
+    wacn.date="06/14/2016"/>
 
 # 弹性数据库功能概述
 
@@ -64,7 +64,7 @@
 
 ## 单租户和多租户模式
 
-分片是一项可跨许多独立的数据库分发大量相同结构数据的技术。这项技术尤其受到为最终客户或企业创建软件即服务 (SaaS) 产品的云开发人员的欢迎。这些最终客户通常称为“租户”。需要分片的原因有很多：
+*分片*是一项可跨许多独立的数据库分发大量相同结构数据的技术。这项技术尤其受到为最终客户或企业创建软件即服务 (SaaS) 产品的云开发人员的欢迎。这些最终客户通常称为“租户”。需要分片的原因有很多：
 
 * 数据总量过大而超出单个数据库的限制范围
 * 整个工作负载的事务吞吐量超出单个数据库的容量
@@ -105,4 +105,4 @@
 [3]: ./media/sql-database-elastic-scale-introduction/overview.png
 [4]: ./media/sql-database-elastic-scale-introduction/single_v_multi_tenant.png
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

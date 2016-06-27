@@ -1,18 +1,18 @@
 <properties
-    pageTitle="管理弹性数据库池 (C#) | Azure"
+    pageTitle="使用 C# 监视和管理弹性数据库池 | Azure"
     description="使用 C# 数据库开发技术来管理 Azure SQL 数据库弹性数据库池。"
     services="sql-database"
     documentationCenter=""
-    authors="stevestein"
+    authors="sidneyh"
     manager="jhubbard"
     editor=""/>
 
 <tags
     ms.service="sql-database"
-    ms.date="04/11/2016"
-    wacn.date="05/16/2016"/>
+    ms.date="04/28/2016"
+    wacn.date="06/14/2016"/>
 
-# 使用 C&#x23; 管理弹性数据库池并调整其大小；
+# 使用 C&#x23; 监视和管理弹性数据库池 
 
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell)
@@ -26,15 +26,52 @@
 
 > [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤使用 PowerShell 升级到 V12 并创建池。
 
-这些示例使用[适用于 .NET 的 SQL 数据库库](https://msdn.microsoft.com/zh-cn/library/azure/mt349017.aspx)，因此你需要安装此库。你可以通过在 Visual Studio 中的[程序包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)中运行以下命令（“工具”>“NuGet 程序包管理器”>“程序包管理器控制台”）来进行安装：
+此示例使用[适用于 .NET 的 SQL 数据库库](https://msdn.microsoft.com/zh-cn/library/azure/mt349017.aspx)安装库，方法是在 Visual Studio 的[程序包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)（“工具”>“NuGet 程序包管理器”>“程序包管理器控制台”）中运行以下命令：
 
     PM> Install-Package Microsoft.Azure.Management.Sql –Pre
 
 
-## 更新池
+## 将数据库移入弹性池
 
+你可将独立的数据库移入或移出池。
 
-    // Retrieve existing pool properties
+    // Retrieve current database properties.
+
+    currentDatabase = sqlClient.Databases.Get("resourcegroup-name", "server-name", "Database1").Database;
+
+    // Configure create or update parameters with existing property values, override those to be changed.
+    DatabaseCreateOrUpdateParameters updatePooledDbParameters = new DatabaseCreateOrUpdateParameters()
+    {
+        Location = currentDatabase.Location,
+        Properties = new DatabaseCreateOrUpdateProperties()
+        {
+            Edition = "Standard",
+            RequestedServiceObjectiveName = "ElasticPool",
+            ElasticPoolName = "ElasticPool1",
+            MaxSizeBytes = currentDatabase.Properties.MaxSizeBytes,
+            Collation = currentDatabase.Properties.Collation,
+        }
+    };
+
+    // Update the database.
+    var dbUpdateResponse = sqlClient.Databases.CreateOrUpdate("resourcegroup-name", "server-name", "Database1", updatePooledDbParameters);
+
+## 列出弹性池中的数据库
+
+要在池中检索所有数据库，可调用 [ListDatabases](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.management.sql.elasticpooloperationsextensions.listdatabases) 方法。
+
+    //List databases in the elastic pool
+    DatabaseListResponse dbListInPool = sqlClient.ElasticPools.ListDatabases("resourcegroup-name", "server-name", "ElasticPool1");
+    Console.WriteLine("Databases in Elastic Pool {0}", "server-name.ElasticPool1");
+    foreach (Database db in dbListInPool)
+    {
+        Console.WriteLine("  Database {0}", db.Name);
+    }
+
+## 更改池的性能设置
+
+检索现有池属性。修改值并执行 CreateOrUpdate 方法。
+
     var currentPool = sqlClient.ElasticPools.Get("resourcegroup-name", "server-name", "ElasticPool1").ElasticPool;
 
     // Configure create or update parameters with existing property values, override those to be changed.
@@ -54,79 +91,15 @@
     newPoolResponse = sqlClient.ElasticPools.CreateOrUpdate("resourcegroup-name", "server-name", "ElasticPool1", newPoolParameters);
 
 
-
-## 将现有数据库移入池中
-
-
-    // Update database service objective to add the database to a pool
-
-    // Retrieve current database properties
-    currentDatabase = sqlClient.Databases.Get("resourcegroup-name", "server-name", "Database1").Database;
-
-    // Configure create or update parameters with existing property values, override those to be changed.
-    DatabaseCreateOrUpdateParameters updatePooledDbParameters = new DatabaseCreateOrUpdateParameters()
-    {
-        Location = currentDatabase.Location,
-        Properties = new DatabaseCreateOrUpdateProperties()
-        {
-            Edition = "Standard",
-            RequestedServiceObjectiveName = "ElasticPool",
-            ElasticPoolName = "ElasticPool1",
-            MaxSizeBytes = currentDatabase.Properties.MaxSizeBytes,
-            Collation = currentDatabase.Properties.Collation,
-        }
-    };
-
-    // Update the database
-    var dbUpdateResponse = sqlClient.Databases.CreateOrUpdate("resourcegroup-name", "server-name", "Database1", updatePooledDbParameters);
-
-
-
-
-## 在池中创建新数据库
-
-
-    // Create a new database in the pool
-
-    // Create a database: configure create or update parameters and properties explicitly
-    DatabaseCreateOrUpdateParameters newPooledDatabaseParameters = new DatabaseCreateOrUpdateParameters()
-    {
-        Location = currentServer.Location,
-        Properties = new DatabaseCreateOrUpdateProperties()
-        {
-            Edition = "Standard",
-            RequestedServiceObjectiveName = "ElasticPool",
-            ElasticPoolName = "ElasticPool1",
-            MaxSizeBytes = 268435456000, // 250 GB,
-            Collation = "SQL_Latin1_General_CP1_CI_AS"
-        }
-    };
-
-    var poolDbResponse = sqlClient.Databases.CreateOrUpdate("resourcegroup-name", "server-name", "Database2", newPooledDatabaseParameters);
-
-
-
-## 列出池中的所有数据库
-
-以下示例将列出池中的所有数据库：
-
-    //List databases in the elastic pool
-    DatabaseListResponse dbListInPool = sqlClient.ElasticPools.ListDatabases("resourcegroup-name", "server-name", "ElasticPool1");
-    Console.WriteLine("Databases in Elastic Pool {0}", "server-name.ElasticPool1");
-    foreach (Database db in dbListInPool)
-    {
-        Console.WriteLine("  Database {0}", db.Name);
-    }
-
 ## 弹性池操作延迟
 
-- 更改单个数据库的保障 eDTU 数 (databaseDtuMin) 或单个数据库的最大 eDTU 数 (databaseDtuMax) 通常在 5 分钟或更少的时间内完成。
-- 如何更改池的 eDTU/存储限制 (storageMB) 取决于池中所有数据库使用的空间总容量。更改平均起来每 100 GB 需要 90 分钟或更短的时间。例如，如果池中所有数据库使用的总空间为 200 GB，则更改池的 eDTU/存储限制时，预计延迟为 3 小时或更短的时间。
+- 更改每个数据库的最小 eDTU 数或每个数据库的最大 eDTU 数通常可在 5 分钟或更少的时间内完成。
+- 更改每个池的 eDTU 数取决于池中所有数据库使用的空间总量。更改平均起来每 100 GB 需要 90 分钟或更短的时间。例如，如果池中所有数据库使用的总空间为 200 GB，则更改每个池的池 eDTU 时，预计延迟为 3 小时或更短的时间。
 
 
 ## 管理池 C&#x23; 示例
 
-运行此示例需要以下库。你可以通过在 Visual Studio 中的[程序包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)中运行以下命令（“工具”>“NuGet 程序包管理器”>“程序包管理器控制台”）来进行安装
+运行此示例需要以下库。你可以通过在 Visual Studio 中的[程序包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)（“工具”>“NuGet 程序包管理器”>“程序包管理器控制台”）中运行以下命令来进行安装
 
     PM> Install-Package Microsoft.Azure.Management.Sql –Pre
     PM> Install-Package Microsoft.Azure.Management.Resources –Pre
@@ -446,13 +419,13 @@
     }
     }
 
-
-
 ## 其他资源
-
 
 - [SQL 数据库](/documentation/services/sql-databases)
 - [Azure 资源管理 API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)
-- [弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference)
+- [使用 C# 创建新的弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-csharp)
+- [何时使用弹性数据库池？](/documentation/articles/sql-database-elastic-pool-guidance)
+- 请参阅[使用 Azure SQL 数据库扩展](/documentation/articles/sql-database-elastic-scale-introduction)：使用弹性数据库工具扩展、移动数据、查询或创建事务。
 
-<!---HONumber=Mooncake_0509_2016-->
+
+<!---HONumber=Mooncake_0530_2016-->

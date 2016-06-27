@@ -1,15 +1,15 @@
-<properties
-	pageTitle="Upgrade to the latest elastic database client library | Azure" 
-	description="Upgrade apps and libraries using Nuget" 
+<properties	
+	pageTitle="升级到最新的弹性数据库客户端库 | Azure" 
+	description="使用 Nuget 升级应用程序和库" 
 	services="sql-database" 
 	documentationCenter="" 
-	manager="jeffreyg" 
+	manager="jhubbard" 
 	authors="ddove"/>
 
 <tags 
-	ms.service="sql-database"
-	ms.date="11/04/2015" 
-	wacn.date="05/16/2016" />
+	ms.service="sql-database" 
+	ms.date="04/04/2016" 
+	wacn.date="06/14/2016" />
 
 # 升级到最新的弹性数据库客户端库
 
@@ -40,9 +40,11 @@
 
 1. 在[此处](http://nuget.org/nuget.exe)下载 NuGet 的最新命令行实用工具并将其保存到一个文件夹。 
 
-2. 打开命令提示符，导航到同一文件夹，并发出命令：`nuget install Microsoft.Azure.SqlDatabase.ElasticScale.Client`
+2. 打开命令提示符，导航到同一文件夹，并发出命令：
+`nuget install Microsoft.Azure.SqlDatabase.ElasticScale.Client`
 
-3. 导航到包含你刚下载的新客户端 DLL 版本的子文件夹，例如：`cd .\Microsoft.Azure.SqlDatabase.ElasticScale.Client.1.0.0\lib\net45`
+3. 导航到包含你刚下载的新客户端 DLL 版本的子文件夹，例如：
+`cd .\Microsoft.Azure.SqlDatabase.ElasticScale.Client.1.0.0\lib\net45`
 
 4. 从[脚本中心](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-Database-Elastic-6442e6a9)下载弹性数据库客户端升级 scriptlet，并将其保存到包含 DLL 的同一文件夹中。
 
@@ -91,5 +93,4 @@
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-upgrade-client-library/nuget-upgrade.png
  
-
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_0606_2016-->

@@ -10,7 +10,7 @@
 <tags
     ms.service="sql-database"
     ms.date="04/01/2016"
-    wacn.date="05/16/2016"/>
+    wacn.date="06/14/2016"/>
 
 # 使用 PowerShell 监视、管理弹性数据库池并调整其大小 
 
@@ -169,6 +169,6 @@
 
 ## 后续步骤
 
-- [创建弹性作业](/documentation/articles/sql-database-elastic-jobs-overview)弹性作业可以根据池中数据库的数目来运行 T-SQL 脚本。
+- [创建弹性作业](/documentation/articles/sql-database-elastic-jobs-overview)弹性作业可以根据池中数据库的数量来运行 T-SQL 脚本。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

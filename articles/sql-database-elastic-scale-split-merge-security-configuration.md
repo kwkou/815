@@ -1,19 +1,20 @@
 <properties 
     pageTitle="弹性缩放安全配置 | Azure" 
     description="设置用于加密的 x409 证书" 
-    metaKeywords="Elastic Database certificates security" 
-    services="sql-database" documentationCenter="" 
+    metaKeywords="弹性数据库证书安全性" 
+    services="sql-database"
+    documentationCenter="" 
     manager="jhubbard" 
     authors="torsteng"/>
 
 <tags 
     ms.service="sql-database" 
-    ms.date="02/04/2016" 
-    wacn.date="03/29/2016" />
+    ms.date="02/23/2016" 
+    wacn.date="06/14/2016" />
 
 # 拆分合并安全配置  
 
-若要使用拆分/合并服务，必须正确配置安全性。该服务是 Azure SQL 数据库弹性扩展功能的一部分。有关详细信息，请参阅[弹性缩放拆分和合并服务教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。
+若要使用拆分/合并服务，必须正确配置安全性。该服务是 Azure SQL 数据库弹性缩放功能的一部分。有关详细信息，请参阅[弹性缩放拆分和合并服务教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。
 
 ## 配置证书
 
@@ -130,7 +131,8 @@
 
 在服务配置文件的 <AccessControl name=""> 节中配置访问控制组中的规则。
 
-在网络访问控制列表文档中对格式进行了说明。例如，若要仅允许范围 100.100.0.0 到 100.100.255.255 中的 IP 访问 HTTPS 终结点，规则将如下所示：
+在网络访问控制列表文档中对格式进行了说明。
+例如，若要仅允许范围 100.100.0.0 到 100.100.255.255 中的 IP 访问 HTTPS 终结点，规则将如下所示：
 
     <AccessControl name="Retricted">
       <Rule action="permit" description="Some" order="1" remoteSubnet="100.100.0.0/16"/>
@@ -203,8 +205,8 @@
         pvk2pfx -pvk MySSL.pvk -spc MySSL.cer
 
 输入密码，然后使用以下选项导出证书：
-* 是，导出私钥。
-* * 导出所有扩展属性
+* 是，导出私钥
+* 导出所有扩展属性
 
 ## 从证书存储中导出 SSL 证书
 
@@ -212,7 +214,8 @@
 * 依次单击“操作”->“所有任务”->“导出...”
 * 使用以下选项将证书导出到 .PFX 文件中：
     * 是，导出私钥
-    * 包括证书路径中的所有证书（如果可能）*导出所有扩展属性
+    * 包括证书路径中的所有证书（如果可能）
+    * 导出所有扩展属性
 
 ## 将 SSL 证书上载到云服务
 
@@ -352,7 +355,9 @@
 * 在打开的“证书”对话框中，选择“详细信息”选项卡
 * 确保“显示”可显示全部内容
 * 选择列表中名为“Thumbprint”的字段
-* 复制指纹值 ** 删除第一个数字前面的不可见 Unicode 字符 ** 删除所有空格
+* 复制指纹的值
+* 删除第一个数字前不可见的 Unicode 字符
+* 删除所有空格
 
 ## 在服务配置文件中配置允许的客户端
 
@@ -376,7 +381,10 @@
 
     MyID.pvk and MyID.cer with the filename for the encryption certificate
 
-输入密码，然后使用以下选项导出证书：* 是，导出私钥 * 导出所有扩展属性 * 将证书上载到云服务时，你将需要密码。
+输入密码，然后使用以下选项导出证书：
+*    是，导出私钥
+*    导出所有扩展属性
+*    将证书上载到云服务时，你将需要密码。
 
 ## 从证书存储中导出加密证书
 
@@ -454,7 +462,7 @@
 7.     选择所需的存储。
 8.     单击“完成”。
        
-	* 如果已选中“受信任的根证书颁发机构”存储，请单击“是”。
+    * 如果已选中“受信任的根证书颁发机构”存储，请单击“是”。
 9.     在所有对话框窗口上单击“确定”。
 
 ## 上载证书
@@ -478,5 +486,4 @@
 对此数据库中存储的凭据进行加密。但是，最佳做法是，确保服务部署的 Web 角色和辅助角色保持最新且是安全的，因为它们都有权访问元数据数据库和用于加密和解密存储凭据的证书。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
-
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0606_2016-->

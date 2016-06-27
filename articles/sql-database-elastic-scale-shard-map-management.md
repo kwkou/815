@@ -10,11 +10,12 @@
 <tags 
 	ms.service="sql-database" 
 	ms.date="02/05/2016" 
-	wacn.date="03/29/2016"/>
+	wacn.date="06/14/2016"/>
 
 # 分片映射管理
 
 在分片数据库环境中，[**分片映射**](/documentation/articles/sql-database-elastic-scale-glossary)将维护相关信息，以便应用程序可以根据**分片键**的值连接到相应的数据库。了解如何构建这些映射对于分片映射管理至关重要。对于 Azure SQL 数据库，请使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)的 [ShardMapManager 类](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.aspx)来管理分片映射。
+ 
 
 ## 分片映射
  
@@ -64,9 +65,9 @@
 
 在客户端库中，分片映射管理器是分片映射的集合。由 ShardMapManager 实例管理的数据保存在以下三个位置中：
 
-1. **全局分片映射 (GSM)** ：可为其所有的分片映射指定某个数据库以用作存储库。将自动创建特殊的表和存储过程以管理信息。这通常是小型数据库且可轻松进行访问，但不应用于满足应用程序的其他需求。这些表位于名为 **\_\_ShardManagement** 的特殊架构中。
+1. 全局分片映射 (GSM)：可为其所有的分片映射指定某个数据库以用作存储库。将自动创建特殊的表和存储过程以管理信息。这通常是小型数据库且可轻松进行访问，但不应用于满足应用程序的其他需求。这些表位于名为 **\_\_ShardManagement** 的特殊架构中。
 
-2. **局部分片映射 (LSM)** ：修改指定为分片的每个数据库，以包含多个小表和特殊存储过程，其中包括特定于该分片的分片映射信息并对其进行管理。对于 GSM 中的信息而言，该信息是冗余的，但应用程序通过该信息可验证缓存的分片映射信息，而无需将所有负载置于 GSM 上；应用程序可使用 LSM 确定缓存的映射是否仍然有效。与每个分片上的 LSM 对应的表也位于架构 **\_\_ShardManagement** 中。
+2. 局部分片映射 (LSM)：修改指定为分片的每个数据库，以包含多个小表和特殊存储过程，其中包括特定于该分片的分片映射信息并对其进行管理。对于 GSM 中的信息而言，该信息是冗余的，但应用程序通过该信息可验证缓存的分片映射信息，而无需将所有负载置于 GSM 上；应用程序可使用 LSM 确定缓存的映射是否仍然有效。与每个分片上的 LSM 对应的表也位于架构 **\_\_ShardManagement** 中。
 
 3. **应用程序缓存**：每个用于访问 **ShardMapManager** 对象的应用程序实例都可维护其映射的本地内存中缓存。它存储最近检索到的路由信息。
 
@@ -76,7 +77,7 @@ ShardMapManager 对象使用[工厂](https://msdn.microsoft.com/zh-cn/library/az
 
 在应用程序的初始化代码内，每个应用域只应实例化 **ShardMapManager** 一次。**ShardMapManager** 可包含任意数量的分片映射。尽管对于许多应用程序而言，单个分片映射可能是足够的，但有时针对不同的架构或出于特定目的，需使用不同的数据库集，在这些情况下多个分片可能更合适。
 
-在此代码中，应用程序尝试使用 [TryGetSqlShardMapManager 方法](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.trygetsqlshardmapmanager.aspx)打开现有的 **ShardMapManager** 。如果表示全局 **ShardMapManager** (GSM) 的对象尚未存在于数据库内，则客户端库将在此处使用 [CreateSqlShardMapManager 方法](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.createsqlshardmapmanager.aspx)创建这些对象。
+在此代码中，应用程序尝试使用 [TryGetSqlShardMapManager 方法](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.trygetsqlshardmapmanager.aspx)打开现有的 ShardMapManager。如果表示全局 ShardMapManager (GSM) 的对象尚未存在于数据库内，则客户端库将在此处使用 [CreateSqlShardMapManager 方法](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.createsqlshardmapmanager.aspx)创建这些对象。
 
     // Try to get a reference to the Shard Map Manager 
  	// via the Shard Map Manager database.  
@@ -125,7 +126,7 @@ ShardMapManager 对象使用[工厂](https://msdn.microsoft.com/zh-cn/library/az
 2. 将两个不同分片的元数据添加到分片映射。 
 3. 将添加各种键范围映射，并且将显示分片映射的整体内容。 
 
-编写的代码可在发生错误时重新运行该方法。每个请求将测试是否存在某个分片或映射，然后尝试创建该分片或映射。该代码假设已在由字符串 **shardServer** 引用的服务器中创建名为 **sample\_shard\_0**、 **sample\_shard\_1** 和 **sample\_shard\_2** 的数据库。
+编写的代码可在发生错误时重新运行该方法。每个请求将测试是否存在某个分片或映射，然后尝试创建该分片或映射。该代码假设已在由字符串 shardServer 引用的服务器中创建名为 sample\_shard\_0、sample\_shard\_1 和 sample\_shard\_2 的数据库。
 
     public void CreatePopulatedRangeMap(ShardMapManager smm, string mapName) 
         {            
@@ -254,7 +255,7 @@ ShardMapManager 对象使用[工厂](https://msdn.microsoft.com/zh-cn/library/az
 
     请注意，拆分和合并操作**不更改键值要映射到的分片**。拆分操作可将现有的范围拆分为两个部分，但在映射到相同分片时同时保留这两个部分。对在已映射到相同分片的两个相邻的范围进行合并操作，从而可将其合并到单个范围中。若要在分片之间移动点或范围本身，需要将 **UpdateMapping** 与移动的实际数据结合使用，才能进行协调。当需要移动数据时，你可以使用弹性数据库工具中随附的**拆分/合并**服务，以将分片映射的更改与数据移动相协调。
 
-* 将单独的点或范围重新映射（或移动）到不同的分片：请使用 **[UpdateMapping](https://msdn.microsoft.com/zh-cn/library/azure/dn824207.aspx)**。
+* 将单独的点或范围重新映射（或移动）到不同的分片：请使用 [UpdateMapping](https://msdn.microsoft.com/zh-cn/library/azure/dn824207.aspx)。
 
     由于可能需要将数据从一个分片移动到另一个分片，以便与 **UpdateMapping** 操作保持一致，因此你将需要单独执行此移动，但需要结合使用这些方法。
 
@@ -277,4 +278,4 @@ ShardMapManager 对象使用[工厂](https://msdn.microsoft.com/zh-cn/library/az
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0606_2016-->
