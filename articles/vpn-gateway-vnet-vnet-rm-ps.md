@@ -344,7 +344,7 @@ cmdlet 运行完毕后，通过滚动查看该值。在下面的 PowerShell 输�
 	LocalNetworkGateway2Text   :
 	PeerText                   :
 	ResourceGroupName          : TestRG1
-	Location                   : ChinaEast
+	Location                   : chinaeast
 	ResourceGuid               : 173489d1-37e2-482c-b8b8-6ca69fc3e069
 	Tag                        : {}
 	TagsTable                  :

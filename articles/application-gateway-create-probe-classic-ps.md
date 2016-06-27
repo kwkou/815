@@ -106,6 +106,7 @@
             <Timeout>15</Timeout>
             <UnhealthyThreshold>5</UnhealthyThreshold>
         </Probe>
+      </Probes>
     <BackendAddressPools>
         <BackendAddressPool>
             <Name>pool1</Name>

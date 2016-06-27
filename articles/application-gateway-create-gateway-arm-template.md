@@ -50,6 +50,9 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 1. 导航到[创建应用程序网关](https://github.com/Azure/azure-quickstart-templates/tree/master/101-application-gateway-create)。
 2. 单击 **azuredeploy.json**，然后单击 **RAW**。
+
+	>[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一些不支持的 VM 大小。
+
 3. 将该文件保存到你计算机上的本地文件夹。
 4. 如果你熟悉 Azure 资源管理器模板，则跳到步骤 7。
 5. 打开刚保存的文件，并查看 **parameters** 下第 5 行中的内容。Azure 资源管理器模板参数提供了在部署过程中可以填充的值的占位符。
@@ -75,7 +78,7 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 	- **name**。资源的名称。请注意 **[parameters('applicationGatewayName')]** 的使用，这意味着在部署过程中将通过用户输入或参数文件输入的方式提供该名称。
 	- **properties**。资源的属性列表。此模板在应用程序网关创建期间，使用虚拟网络与公共 IP 地址。
 
-7. 导航回 https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-create/。
+7. 导航回 [https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-create/]()。
 8. 单击 **azuredeploy-paremeters.json**，然后单击 **RAW**。
 9. 将该文件保存到你计算机上的本地文件夹。
 10. 打开刚保存的文件并编辑参数的值。使用以下值来部署本方案中所述的应用程序网关。
@@ -140,11 +143,11 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 如有必要，请使用 **New-AzureResourceGroup** cmdlet 来创建新资源组。在下面的示例中，将在“中国东部”位置创建名为 AppgatewayRG 的新资源组。
 
 	 New-AzureRmResourceGroup -Name AppgatewayRG -Location "China East"
-		VERBOSE: 5:38:49 PM - Created resource group 'AppgatewayRG' in location 'ChinaEast'
+		VERBOSE: 5:38:49 PM - Created resource group 'AppgatewayRG' in location 'chinaeast'
 
 
 		ResourceGroupName : AppgatewayRG
-		Location          : ChinaEast
+		Location          : chinaeast
 		ProvisioningState : Succeeded
 		Tags              :
 		Permissions       :
@@ -196,11 +199,11 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 3. 如有必要，请运行 **azure group create** 命令以创建新资源组，如下所示。请注意命令的输出。在输出后显示的列表说明了所用的参数。有关资源组的详细信息，请访问 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。
 
-		azure group create -n appgatewayRG -l ChinaEast
+		azure group create -n appgatewayRG -l chinaeast
 
 **-n（或 --name）**。新资源组的名称。在本方案中为 appgatewayRG。
 
-**-l（或 --location）**。将在其中创建新资源组的 Azure 区域。在本方案中为 ChinaEast。
+**-l（或 --location）**。将在其中创建新资源组的 Azure 区域。在本方案中为 chinaeast。
 
 4. 运行 **azure group deployment create** cmdlet 以使用你在前面下载并修改的模板和参数文件部署新虚拟网络。在输出后显示的列表说明了所用的参数。
 
@@ -236,33 +239,6 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 **-e（或 --parameters-file）**。Azure 资源管理器 参数文件的路径。
 
-## 使用“单击部署”来部署 Azure 资源管理器模板
-
-“单击部署”是另一种使用 Azure 资源管理器模板的方式。这是将模板与 Azure 门户配合使用的简便方法。
-
-
-### 步骤 1
-转到[创建使用公共 IP 的应用程序网关](https://azure.microsoft.com/documentation/templates/101-application-gateway-public-ip)。
-
-
-### 步骤 2
-
-单击**“部署到 Azure”**。
-
-### 步骤 3
-
-在门户上填写部署模板的参数，然后单击“确定”。
-
-### 步骤 4
-
-选择“法律条款”，然后单击“购买”。
-
-### 步骤 5
-
-在“自定义部署”边栏选项卡上，单击“创建”。
-
-
-
 ## 后续步骤
 
 如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](/documentation/articles/application-gateway-ssl)。
@@ -271,7 +247,6 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 
 如需负载平衡选项的其他常规信息，请参阅：
 
-<!--- [Azure 负载平衡器](/documentation/services/load-balancer)-->
 - [Azure 流量管理器](/documentation/services/traffic-manager)
 
 <!---HONumber=Mooncake_0425_2016-->
