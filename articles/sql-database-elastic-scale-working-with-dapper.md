@@ -8,8 +8,8 @@
 
 <tags 
 	ms.service="sql-database"
-	ms.date="11/04/2015" 
-	wacn.date="03/29/2016"/>
+	ms.date="04/26/2016" 
+	wacn.date="05/23/2016"/>
 
 # 将弹性数据库客户端库与 Dapper 配合使用 
 

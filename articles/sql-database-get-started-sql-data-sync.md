@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="04/04/2016"
-	wacn.date="05/16/2016"/>
+	ms.date="04/26/2016"
+	wacn.date="05/23/2016"/>
 
 
 #Azure SQL 数据同步入门（预览版）

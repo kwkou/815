@@ -8,8 +8,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="02/02/2016" 
-	wacn.date="03/29/2016" />
+	ms.date="05/02/2016" 
+	wacn.date="05/23/2016" />
 
 # 具有弹性数据库工具和行级安全性的多租户应用程序 
 
