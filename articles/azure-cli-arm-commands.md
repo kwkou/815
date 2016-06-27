@@ -10,10 +10,10 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="03/07/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="05/05/2016"
+	wacn.date="06/27/2016"/>
 
-# Azure Resource Manager (arm) 模式下的 Azure CLI 命令
+# Resource Manager 模式下的 Azure CLI 命令
 
 > [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Microsoft 建议对大多数新的部署使用该模型，而不是[经典部署模型](/documentation/articles/virtual-machines-command-line-tools)。
 
@@ -1298,7 +1298,10 @@
 	--no-tags                                    remove all existing tags
 	-s, --subscription <subscription>            the subscription identifier
 
-<br> network public-ip list [选项] <resource-group>
+<br>
+
+	network public-ip list [options] <resource-group> 
+	
 列出资源组中的所有公共 IP 资源。
 
 	azure network public-ip list -g myresourcegroup
@@ -1679,7 +1682,9 @@
 
 **使用默认资源创建 VM**
 
-	vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>
+    vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>
+    
+>[AZURE.TIP]从 CLI 版本 0.10 开始，你可以为某些常用的应用商店映像提供“UbuntuLTS”或“Win2012R2Datacenter”之类的简短别名作为 `image-urn`。针对选项运行 `azure help vm quick-create`。另外，从版本 0.10 开始，`azure vm quick-create` 默认使用高级存储，前提是所选区域提供该存储。
 
 **列出帐户中的虚拟机**
 
@@ -1755,4 +1760,4 @@
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0620_2016-->

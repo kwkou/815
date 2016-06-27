@@ -4,12 +4,12 @@
    services="automation"
    documentationCenter=""
    authors="mgoedtel"
-   manager="stevenka"
+   manager="jwhit"
    editor="tysonn" />
 <tags 
    ms.service="automation"
-   ms.date="02/23/2016"
-   wacn.date="04/20/2016" />
+   ms.date="04/21/2016"
+   wacn.date="" />
 
 # Azure 自动化中的子 Runbook
 
@@ -26,14 +26,12 @@
 
 调用内联的子 Runbook 的参数可以是任意数据类型（包括复杂对象），并且不会进行 [JSON 序列化](/documentation/articles/automation-starting-a-runbook/#runbook-parameters)，因为当你使用 Azure 管理门户或 Start-AzureAutomationRunbook cmdlet 启动 Runbook 时会进行这种序列化。
 
-在通过内联执行调用 PowerShell 工作流子 Runbook 时，你只需使用 Runbook 的名称。
-
 ### 示例
 
 下面的示例将调用一个测试子 Runbook，该 Runbook 接受三个参数：一个复杂对象、一个整数和一个布尔值。该子 Runbook 的输出将分配到某个变量。在本示例中，子 Runbook 属于 PowerShell 工作流 Runbook
 
-	$vm = Get-AzureVM –ServiceName "MyVM" –Name "MyVM"
-	$output = Test-ChildRunbook –VM $vm –RepeatCount 2 –Restart $true
+	$vm = Get-AzureRmVM –ResourceGroupName "LabRG" –Name "MyVM"
+    $output = PSWF-ChildRunbook –VM $vm –RepeatCount 2 –Restart $true
 
 ##  使用 cmdlet 启动子 Runbook
 
@@ -69,15 +67,15 @@
 | | 内联| Cmdlet|
 |:---|:---|:---|
 |作业|子 Runbook 在父级所在的同一个作业中运行。|为子 Runbook 创建单独的作业。|
-|执行|父 Runbook 等待子 Runbook 完成，然后继续。|子 Runbook 启动后，父 Runbook 立即继续。|
-|输出|父 Runbook 可以直接从子 Runbook 获取输出。|父 Runbook 必须从子 Runbook 作业检索输出。|
+|执行|父 Runbook 等待子 Runbook 完成，然后继续。|父 Runbook 会在子 Runbook 启动后立刻继续运行，或父 Runbook 会等待子作业完成。|
+|输出|父 Runbook 可以直接从子 Runbook 获取输出。|父 Runbook 必须检索子 Runbook 作业的输出，或父 Runbook 可以直接从子 Runbook 获取输出。|
 |Parameters|子 Runbook 参数的值需单独指定，并且可以使用任意数据类型。|子 Runbook 参数值必须组合成单个哈希表，并且只能包含简单数据类型、数组和利用 JSON 序列化的对象数据类型。|
 |自动化帐户|父 Runbook 只能使用同一自动化帐户中的子 Runbook。|父 Runbook 可以使用同一 Azure 订阅（甚至还包括不同的订阅，如果你已连接到该订阅的话）中任意自动化帐户内的子 Runbook。|
 |发布|在发布父 Runbook 之前必须先发布子 Runbook。|必须在启动父 Runbook 前的任意时间发布子 Runbook。|
 
-## 相关文章
+## 后续步骤
 
 - [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook)
 - [Azure 自动化中的 Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages)
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0620_2016-->
