@@ -191,7 +191,7 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 [Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?LinkID=516990&clcid=0x409
 [Setting up a Linux VM via the Azure portal]: /documentation/articles/create-and-configure-opensuse-vm-in-portal
 [How to use the Azure Command-Line Interface]: /documentation/articles/crossplat-cmd-tools
-[创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-portal-create
+[创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-quick-create-portal
 [使用 Django 创建 Web 应用]: /documentation/articles/web-sites-python-create-deploy-django-app
 [使用 Bottle 创建 Web 应用]: /documentation/articles/web-sites-python-create-deploy-bottle-app
 [使用 Flask 创建 Web 应用]: /documentation/articles/web-sites-python-create-deploy-flask-app

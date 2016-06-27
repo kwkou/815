@@ -199,7 +199,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 ### 步骤 2：在 ARM 中创建新 VM
 
-请参考[使用资源管理器和 Azure PowerShell 创建并配置 Windows 虚拟机](/documentation/articles/virtual-machines-windows-create-powershell)或者[使用 Azure CLI 从头开始创建 Linux VM](/documentation/articles/virtual-machines-linux-create-cli-complete)。
+请参考[使用资源管理器和 Azure PowerShell 创建并配置 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-create)或者[使用 Azure CLI 从头开始创建 Linux VM](/documentation/articles/virtual-machines-linux-create-cli-complete)。
 
 ##<a name="Connect-the-two-VNets"></a> 连接两个 VNet
 

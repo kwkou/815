@@ -77,7 +77,7 @@
 | 30 | [SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples) | 提供 Node.js on Linux、Python on Mac OS、Java 和 Windows、Enterprise Library 和其他许多平台上的 Azure SQL 数据库客户端的代码示例与驱动程序。 |
 | 31 | [代码示例：Enterprise Library 6 中的用 C# 编写的用于连接 SQL 数据库的重试逻辑](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows) | Enterprise Library 旨在简化云服务的客户端程序的多个任务，包括集成暂时性故障的重试逻辑。 |
 | 32 | [连接到 SQL 数据库：最佳实践和设计准则](/documentation/articles/sql-database-connect-central-recommendations) | 一个入门主题，其中收集了通过 ADO.NET 和 PHP 等技术连接到 Azure SQL 数据库的客户端程序的相关链接和最佳实践建议。 |
-| 33 | [创建包含成员资格、OAuth 和 SQL 数据库的安全 ASP.NET Web 窗体应用并部署到 Azure App Service](/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database) | 本教程说明如何生成整合了 SQL 数据库的安全 ASP.NET 4.5 Web 窗体 Web 应用程序并将其部署到 Azure。 |
+| 33 | [创建包含成员资格、OAuth 和 SQL 数据库的安全 ASP.NET Web 窗体应用并部署到 Azure App Service](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database) | 本教程说明如何生成整合了 SQL 数据库的安全 ASP.NET 4.5 Web 窗体 Web 应用程序并将其部署到 Azure。 |
 | 34 | [获取客户端 ID 和密钥以便从代码连接到 SQL 数据库](/documentation/articles/sql-database-client-id-keys) | 获取客户端 ID 和密钥以便从代码访问 SQL 数据库。 |
 | 35 | [如何在 .NET 应用程序中使用 Azure SQL 数据库](/documentation/articles/sql-database-dotnet-how-to-use) | SQL 数据库入门。了解如何创建 SQL 数据库实例，以及如何使用 ADO.NET、ODBC 和 EntityClient Provider 与该实例建立连接。 |
 | 36 | [扩展 Azure SQL 数据库支持的移动服务](/documentation/articles/mobile-services-sql-scale-guidance) | 了解如何诊断和修复 SQL 数据库支持的移动服务中的可扩展性问题 |
