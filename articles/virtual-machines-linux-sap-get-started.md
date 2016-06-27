@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="05/17/2016"
-	wacn.date=""/>
+	wacn.date="06/27/2016"/>
 
 # 在 Linux 虚拟机 (VM) 上使用 SAP
 

@@ -13,7 +13,7 @@
 <tags 
 	ms.service="virtual-machines-linux"
 	ms.date="05/17/2016"
-	wacn.date=""/>
+	wacn.date="06/27/2016"/>
 
 # Azure 虚拟机 (VM) 上的 SAP NetWeaver — DBMS 部署指南
 
