@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="05/02/2016"
-	wacn.date=""/>
+	wacn.date="06/27/2016"/>
 
 # 在 Linux 和 Mac 上为 Azure 中的 Linux VM 创建 SSH 密钥
 

@@ -10,7 +10,7 @@
 <tags
    ms.service="automation"
    ms.date="05/10/2016"
-   wacn.date="06/17/2016" />
+   wacn.date="06/27/2016" />
 
 # Azure 自动化安全
 Azure 自动化让你可以通过其他云提供程序针对 Azure、本地中的资源来自动执行任务。为了使 Runbook 执行所需操作，Runbook 必须有权使用订阅中所需的最小权限来安全地访问资源。  

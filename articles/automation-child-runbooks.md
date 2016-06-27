@@ -9,7 +9,7 @@
 <tags 
    ms.service="automation"
    ms.date="04/21/2016"
-   wacn.date="" />
+   wacn.date="06/27/2016" />
 
 # Azure 自动化中的子 Runbook
 

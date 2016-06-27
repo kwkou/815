@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="05/03/2016"
-	wacn.date=""/>
+	wacn.date="06/27/2016"/>
 
 
 # 使用 CLI 在 Azure 上创建 Linux VM

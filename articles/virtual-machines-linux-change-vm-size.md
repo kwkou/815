@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="05/16/2016"
-	wacn.date=""/>
+	wacn.date="06/27/2016"/>
 
 
 # 如何调整 Linux VM 的大小

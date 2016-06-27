@@ -10,7 +10,7 @@
 <tags
    ms.service="vpn-gateway"
    ms.date="05/02/2016"
-   wacn.date="06/24/2016"/>
+   wacn.date="06/27/2016"/>
 
 
 # 为经典部署模型配置 VNet 到 VNet 连接

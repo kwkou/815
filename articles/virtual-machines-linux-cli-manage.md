@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="04/11/2016"
-	wacn.date=""/>
+	wacn.date="06/27/2016"/>
 
 # Linux 和 Mac 上的常用 Azure CLI 命令
 
