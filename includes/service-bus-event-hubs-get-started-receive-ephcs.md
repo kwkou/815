@@ -32,86 +32,78 @@
 
 8. 在 SimpleEventProcessor.cs 文件的顶部添加以下语句：
 
-	```
-	using Microsoft.ServiceBus.Messaging;
-	using System.Diagnostics;
-	```
+    	using Microsoft.ServiceBus.Messaging;
+    	using System.Diagnostics;
 
 	然后，用以下代码替换该类的正文：
 
-	```
-    class SimpleEventProcessor : IEventProcessor
-	{
-	    Stopwatch checkpointStopWatch;
-
-	    async Task IEventProcessor.CloseAsync(PartitionContext context, CloseReason reason)
-	    {
-	        Console.WriteLine("Processor Shutting Down. Partition '{0}', Reason: '{1}'.", context.Lease.PartitionId, reason);
-	        if (reason == CloseReason.Shutdown)
-	        {
-	            await context.CheckpointAsync();
-	        }
-	    }
-
-	    Task IEventProcessor.OpenAsync(PartitionContext context)
-	    {
-	        Console.WriteLine("SimpleEventProcessor initialized.  Partition: '{0}', Offset: '{1}'", context.Lease.PartitionId, context.Lease.Offset);
-	        this.checkpointStopWatch = new Stopwatch();
-	        this.checkpointStopWatch.Start();
-	        return Task.FromResult<object>(null);
-	    }
-
-	    async Task IEventProcessor.ProcessEventsAsync(PartitionContext context, IEnumerable<EventData> messages)
-	    {
-	        foreach (EventData eventData in messages)
-	        {
-	            string data = Encoding.UTF8.GetString(eventData.GetBytes());
-
-	            Console.WriteLine(string.Format("Message received.  Partition: '{0}', Data: '{1}'",
-	                context.Lease.PartitionId, data));
-	        }
-
-	        //Call checkpoint every 5 minutes, so that worker can resume processing from 5 minutes back if it restarts.
-	        if (this.checkpointStopWatch.Elapsed > TimeSpan.FromMinutes(5))
-            {
-                await context.CheckpointAsync();
-                this.checkpointStopWatch.Restart();
-            }
-	    }
-	}
-    ```
+        class SimpleEventProcessor : IEventProcessor
+    	{
+    	    Stopwatch checkpointStopWatch;
+    
+    	    async Task IEventProcessor.CloseAsync(PartitionContext context, CloseReason reason)
+    	    {
+    	        Console.WriteLine("Processor Shutting Down. Partition '{0}', Reason: '{1}'.", context.Lease.PartitionId, reason);
+    	        if (reason == CloseReason.Shutdown)
+    	        {
+    	            await context.CheckpointAsync();
+    	        }
+    	    }
+    
+    	    Task IEventProcessor.OpenAsync(PartitionContext context)
+    	    {
+    	        Console.WriteLine("SimpleEventProcessor initialized.  Partition: '{0}', Offset: '{1}'", context.Lease.PartitionId, context.Lease.Offset);
+    	        this.checkpointStopWatch = new Stopwatch();
+    	        this.checkpointStopWatch.Start();
+    	        return Task.FromResult<object>(null);
+    	    }
+    
+    	    async Task IEventProcessor.ProcessEventsAsync(PartitionContext context, IEnumerable<EventData> messages)
+    	    {
+    	        foreach (EventData eventData in messages)
+    	        {
+    	            string data = Encoding.UTF8.GetString(eventData.GetBytes());
+    
+    	            Console.WriteLine(string.Format("Message received.  Partition: '{0}', Data: '{1}'",
+    	                context.Lease.PartitionId, data));
+    	        }
+    
+    	        //Call checkpoint every 5 minutes, so that worker can resume processing from 5 minutes back if it restarts.
+    	        if (this.checkpointStopWatch.Elapsed > TimeSpan.FromMinutes(5))
+                {
+                    await context.CheckpointAsync();
+                    this.checkpointStopWatch.Restart();
+                }
+    	    }
+    	}
 
 	此类将由 **EventProcessorHost** 调用，以处理从事件中心接收的事件。请注意，`SimpleEventProcessor` 类使用秒表以定期对 **EventProcessorHost** 上下文调用检查点方法。这将确保接收方重新启动时将会丢失的处理工作不会超过五分钟。
 
 9. 在 **Program** 类中，在文件顶部添加以下 `using` 语句：
 
-	```
-	using Microsoft.ServiceBus.Messaging;
-	```
+	    using Microsoft.ServiceBus.Messaging;
 
-	然后，如下所示在 `Program` 类中修改 `Main` 方法，替换事件中心名称和 **ReceiveRule** 连接字符串，并存储帐户和你在前面部分中复制的密钥。请务必删除连接字符串的 `EntityPath` 后缀：
+	然后，如下所示在 `Program` 类中修改 `Main` 方法，替换事件中心名称和连接字符串，并存储帐户和你在前面部分中复制的密钥。
 
-    ```
-	static void Main(string[] args)
-    {
-      string eventHubConnectionString = "{Event Hub connection string}";
-      string eventHubName = "{Event Hub name}";
-      string storageAccountName = "{storage account name}";
-      string storageAccountKey = "{storage account key}";
-      string storageConnectionString = string.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}", storageAccountName, storageAccountKey);
-
-      string eventProcessorHostName = Guid.NewGuid().ToString();
-      EventProcessorHost eventProcessorHost = new EventProcessorHost(eventProcessorHostName, eventHubName, EventHubConsumerGroup.DefaultGroupName, eventHubConnectionString, storageConnectionString);
-      Console.WriteLine("Registering EventProcessor...");
-      var options = new EventProcessorOptions();
-      options.ExceptionReceived += (sender, e) => { Console.WriteLine(e.Exception); };
-      eventProcessorHost.RegisterEventProcessorAsync<SimpleEventProcessor>(options).Wait();
-
-      Console.WriteLine("Receiving. Press enter key to stop worker.");
-      Console.ReadLine();
-      eventProcessorHost.UnregisterEventProcessorAsync().Wait();
-    }
-	```
+    	static void Main(string[] args)
+        {
+          string eventHubConnectionString = "{Event Hub connection string}";
+          string eventHubName = "{Event Hub name}";
+          string storageAccountName = "{storage account name}";
+          string storageAccountKey = "{storage account key}";
+          string storageConnectionString = string.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1};EndpointSuffix=core.chinacloudapi.cn", storageAccountName, storageAccountKey);
+    
+          string eventProcessorHostName = Guid.NewGuid().ToString();
+          EventProcessorHost eventProcessorHost = new EventProcessorHost(eventProcessorHostName, eventHubName, EventHubConsumerGroup.DefaultGroupName, eventHubConnectionString, storageConnectionString);
+          Console.WriteLine("Registering EventProcessor...");
+          var options = new EventProcessorOptions();
+          options.ExceptionReceived += (sender, e) => { Console.WriteLine(e.Exception); };
+          eventProcessorHost.RegisterEventProcessorAsync<SimpleEventProcessor>(options).Wait();
+    
+          Console.WriteLine("Receiving. Press enter key to stop worker.");
+          Console.ReadLine();
+          eventProcessorHost.UnregisterEventProcessorAsync().Wait();
+        }
 
 > [AZURE.NOTE] 本教程使用单个 [EventProcessorHost][] 实例。若要增加吞吐量，建议运行多个 [EventProcessorHost][] 实例，如[扩大事件处理][]示例中所示。在那些情况下，为了对接收到的事件进行负载平衡，各个不同实例会自动相互协调。如果希望多个接收方都各自处理全部事件，则必须使用 **ConsumerGroup** 概念。在从不同计算机中接收事件时，根据部署 [EventProcessorHost][] 实例的计算机（或角色）来指定该实例的名称可能会很有用。有关这些主题的详细信息，请参阅[事件中心概述][]和[事件中心编程指南][]主题。
 
