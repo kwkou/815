@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.date="05/10/2016"
-	wacn.date="06/14/2016"
+	wacn.date="06/14/2016" />
 
 
 # 使用 PowerShell 还原已删除的 Azure SQL 数据库
