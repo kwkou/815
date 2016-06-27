@@ -20,14 +20,7 @@
 本主题介绍 Azure SQL 数据库新版本 V12 相比版本 V11 具有的诸多优点。
 
 
-我们继续向 V12 添加功能。因此，我们鼓励你访问我们的针对 Azure 的服务更新网页并使用其筛选器：
-
-
-- 筛选为 [SQL 数据库服务](https://azure.microsoft.com/updates/?service=sql-database)。
-- 筛选为针对 SQL 数据库功能的正式发布 [(GA) 公告](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability)。
-
-
-有关 SQL 数据库资源限制的最新信息：<br/>[Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
+我们继续向 V12 添加功能。 有关 SQL 数据库资源限制的最新信息：[Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
 
 
 ## 提高了与 SQL Server 的应用程序兼容性
@@ -97,7 +90,7 @@ SQL 数据库 V12 中的性能增强功能需要这些端口。
 - 使用 GRANT、DENY、REVOKE 管理的[应用程序角色](http://msdn.microsoft.com/zh-cn/library/ms190998.aspx)
 - [透明数据加密](http://msdn.microsoft.com/zh-cn/library/0bf7e8ff-1416-4923-9c4c-49341e208c62.aspx) (TDE)
 - [通过使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication)
- - SQL 数据库现在支持 Azure Active Directory 身份验证，该身份验证是使用 Azure Active Directory (Azure AD) 中的标识连接到 SQL 数据库的一种机制。通过 Azure Active Directory 身份验证，可以在一个中心位置中集中管理数据库用户和其他 Microsoft 服务的标识。
+ - SQL 数据库现在支持 Azure Active Directory 身份验证，该身份验证是使用 Azure Active Directory (Azure AD) 中的标识连接到 SQL 数据库的一种机制。通过 Azure Active Directory 身份验证，可以在一个中心位置中集中管理数据库用户和其他 Azure 服务的标识。
 - [始终加密](https://msdn.microsoft.com/zh-cn/library/mt163865.aspx)（预览版）使得加密对于应用程序来说是透明的，从而让客户端能够加密客户端应用程序中的敏感数据，不必与 SQL 数据库共享加密密钥。
 
 
@@ -131,18 +124,7 @@ V12 提供大幅提高的恢复点目标 (RPO) 与预计恢复时间 (ERT)：
 ## 已开始使用 V12 了吗？
 
 
-执行以下操作可以轻松判断你是否在早期版本的 SQL 数据库服务上运行数据库或逻辑服务器：
-
-
-1. 转到 [Azure 门户](https://manage.windowsazure.cn)。
-2. 单击“浏览”。
-3. 单击“SQL Server”。
-4. 服务器或数据库旁边的图标会告知实情：
- - ![V12 服务器的图标](./media/sql-database-v12-whats-new/v12_icon.png) **V12 逻辑服务器**
- - ![早期版本服务器的图标](./media/sql-database-v12-whats-new/earlier_icon.png) **早期版本的逻辑服务器**
-
-
-确定版本的另一种方法是在数据库中运行 `SELECT @@version;` 语句，然后查看类似于下面的结果：
+执行以下操作可以轻松判断你是否在早期版本的 SQL 数据库服务上运行数据库或逻辑服务器，是在数据库中运行 `SELECT @@version;` 语句，然后查看类似于下面的结果：
 
 
 - **12**.0.2000.10 &nbsp; (版本 V12)
