@@ -72,14 +72,14 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 若要获取有关服务器升级的建议，请运行以下 cmdlet：
 
-    $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName “resourcegroup1” -ServerName “server1”
+    $hint = Get-AzureRmSqlServerUpgradeHint -ResourceGroupName “Default-SQL-ChinaEast” -ServerName “Your_Server _Name”
 
 
 ## 开始升级
 
 若要开始服务器升级，请运行以下 cmdlet：
 
-    Start-AzureRmSqlServerUpgrade -ResourceGroupName “resourcegroup1” -ServerName “server1” -ServerVersion 12.0 -DatabaseCollection $hint.Databases -ElasticPoolCollection $hint.ElasticPools  
+    Start-AzureRmSqlServerUpgrade -ResourceGroupName “Default-SQL-ChinaEast” -ServerName “Your_Server _Name” -ServerVersion 12.0 -DatabaseCollection $hint.Databases -ElasticPoolCollection $hint.ElasticPools  
 
 
 运行此命令时，升级过程将开始。你可以自定义建议的输出并将已编辑的建议提供给此 cmdlet 。
@@ -172,10 +172,10 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 - [使用动态管理视图监视 Azure SQL 数据库](/documentation/articles/sql-database-monitoring-with-dmvs)
 
 
+<!--
+**警报：**在 Azure 管理门户中设置“警报”可在升级后的数据库 DTU 消耗量接近特定的高位时接收通知。你可以针对 DTU、CPU、IO 和日志等各种性能度量值，在 Azure 管理门户中设置数据库警报。浏览到你的数据库，然后在“设置”边栏选项卡中选择“警报规则”。
 
-**警报：**在 Azure 门户中设置“警报”可在升级后的数据库 DTU 消耗量接近特定的高位时接收通知。你可以针对 DTU、CPU、IO 和日志等各种性能度量值，在 Azure 门户中设置数据库警报。浏览到你的数据库，然后在“设置”边栏选项卡中选择“警报规则”。
-
-例如，你可以针对“DTU 百分比”设置电子邮件警报，以便在过去 5 分钟平均 DTU 百分比值超过 75% 时发出警报。请参阅[接收警报通知](/documentation/articles/insights-receive-alert-notifications)，以了解有关如何配置警报通知的详细信息。
+例如，你可以针对“DTU 百分比”设置电子邮件警报，以便在过去 5 分钟平均 DTU 百分比值超过 75% 时发出警报。请参阅[接收警报通知](/documentation/articles/insights-receive-alert-notifications)，以了解有关如何配置警报通知的详细信息。-->
 
 
 
