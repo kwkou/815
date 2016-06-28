@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="01/05/2016"
-	wacn.date="04/28/2016"/>
+	ms.date="04/26/2016"
+	wacn.date="06/27/2016"/>
 
 # Azure AD 术语
 
@@ -41,4 +41,4 @@ Microsoft Online Services 登录助手 | 此登录助手是安装在客户端计
 
 
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->

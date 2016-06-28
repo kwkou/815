@@ -128,4 +128,4 @@ v2.0 终结点颁发的令牌中的声明与正式版 Azure AD 终结点颁发�
 ## 限制
 使用 v2.0 终结点时有一些要注意的限制。请参阅 [v2.0 限制文档](/documentation/articles/active-directory-v2-limitations)，以了解特定的方案是否存在任何限制。
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->

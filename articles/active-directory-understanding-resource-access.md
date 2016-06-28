@@ -9,8 +9,9 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="02/11/2016"
-        wacn.date="05/11/2016"/>
+
+        ms.date="05/03/2016"
+        wacn.date="06/27/2016"/>
 
 
 # 了解 Azure 中的资源访问权限
@@ -66,4 +67,4 @@ Azure 中的访问控制首先体现在计费方面。Azure 帐户的所有者�
 [2]: ./media/active-directory-understanding-resource-access/IC707932.png
 [3]: ./media/active-directory-understanding-resource-access/IC707933.png
 [4]: ./media/active-directory-understanding-resource-access/IC707934.png
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0620_2016-->

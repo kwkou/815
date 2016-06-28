@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="02/16/2016" 
-	wacn.date="04/28/2016"/>
+	wacn.date="06/27/2016"/>
 
 # 如何更新自己的密码
 如果你不确定如何管理自己的工作或学校帐户密码，来这里就对了！ 请阅读以下内容，了解如何执行常见的步骤，例如更改密码、重置密码或注册密码重置。
@@ -250,4 +250,4 @@
 [013]: ./media/active-directory-passwords-update-your-own-password/013.jpg "Image_013.jpg"
 [014]: ./media/active-directory-passwords-update-your-own-password/014.jpg "Image_014.jpg"
 [015]: ./media/active-directory-passwords-update-your-own-password/015.jpg "Image_015.jpg"
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->

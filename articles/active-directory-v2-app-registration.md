@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="02/20/2016"
-	wacn.date="06/24/2016"/>
+	wacn.date="06/27/2016"/>
 
 # 如何使用 v2.0 终结点注册应用
 
@@ -43,4 +43,4 @@
 
 [AZURE.INCLUDE [active-directory-v2-quickstart-table](../includes/active-directory-v2-quickstart-table.md)]
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0620_2016-->

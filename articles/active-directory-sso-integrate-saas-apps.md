@@ -10,8 +10,8 @@
 
 <tags
       ms.service="active-directory"
-      ms.date="02/09/2016"
-      wacn.date="06/24/2016"/>
+    ms.date="04/26/2016"
+      wacn.date="06/27/2016"/>
 
 # 将 Azure Active Directory 单一登录与 SaaS 应用相集成  
 
@@ -53,7 +53,7 @@ Azure AD 提供多种可自定义的方式来向组织中的用户部署应用�
 
 针对某些应用程序的 SSO 可在应用程序本身的登录界面上完成，但对于其他应用程序，用户必须通过中心门户（例如“[我的应用](http://myapps.microsoft.com)”或“[Office365](http://portal.office.com/myapps)”）来登录。请在 [Azure Active Directory 的应用程序访问与单一登录是什么](/documentation/articles/active-directory-appssoaccess-whatis)中了解有关不同类型的 SSO 及其用户体验的详细信息。
 
-另一个有用的资源是[开发人员指导](/documentation/articles/active-directory-applications-guiding-developers-for-lob-applications)一文中的*隐藏用户许可*。
+另一个有用的资源是[开发人员指导](/documentation/articles/active-directory-applications-guiding-developers-for-lob-applications)一文中的隐藏用户许可。
 
 ## 后续步骤
 
@@ -68,4 +68,4 @@ Azure.com 库中还提供了有关这些问题的更多详细信息，请先阅�
 
 - [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index)
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0620_2016-->

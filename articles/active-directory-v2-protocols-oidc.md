@@ -34,7 +34,6 @@ OpenID Connect 是构建在 OAuth 2.0 基础之上的身份验证协议，可用
 - 请求必须包含 `nonce` 参数
 
 
-
 		// Line breaks for legibility only
 		
 		GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?

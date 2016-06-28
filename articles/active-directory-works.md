@@ -15,6 +15,9 @@
 
 
 # Azure Active Directory 的工作原理
+
+###本主题的其他相关文章
+
 > [AZURE.SELECTOR]
 - [什么是 Azure AD](/documentation/articles/active-directory-whatis)
 - [它的工作原理是怎样的？](/documentation/articles/active-directory-works)
@@ -48,4 +51,4 @@ Azure AD 支持多个最广泛使用的身份验证和授权协议。[了解有�
 * [Azure 标识](/documentation/articles/fundamentals-identity)
 
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0620_2016-->

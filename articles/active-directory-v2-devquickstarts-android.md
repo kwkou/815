@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="02/20/2016"
-	wacn.date="06/24/2016"/>
+	wacn.date="06/27/2016"/>
 
 # 使用 v2.0 终结点将登录帐户添加到 Android 应用
 
@@ -19,4 +19,4 @@
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](active-directory-v2-limitations.md)。
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->

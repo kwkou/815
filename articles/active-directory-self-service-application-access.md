@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="02/09/2016"
-	wacn.date="06/06/2016"/>
+	wacn.date="06/27/2016"/>
 
 #Azure Active Directory 的自助应用程序访问和委派管理
 
@@ -88,4 +88,4 @@
 [2]: ./media/active-directory-self-service-application-access/ssaa_ap_manage_app.PNG
 [3]: ./media/active-directory-self-service-application-access/ssaa_ap_manage_app_config.PNG
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->

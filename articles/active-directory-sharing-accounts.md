@@ -10,7 +10,7 @@
  <tags
 	ms.service="active-directory"
  	ms.date="02/09/2016"  
- 	wacn.date="06/24/2016"/>
+ 	wacn.date="06/27/2016"/>
 
 # 使用 Azure AD 共享帐户
 
@@ -34,7 +34,7 @@
 
 Azure AD 提供使用共享帐户的新方法，从而可以消除这些缺点。
 
-通过使用访问面板并选择最适合该应用程序的单一登录类型，Azure AD 管理员可以配置用户可访问的应用程序。在这些类型中，*基于密码的单一登录*可在登录该应用的过程中，让 Azure AD 充当某种“代理”。
+通过使用访问面板并选择最适合该应用程序的单一登录类型，Azure AD 管理员可以配置用户可访问的应用程序。在这些类型中，基于密码的单一登录可在登录该应用的过程中，让 Azure AD 充当某种“代理”。
 
 用户使用他们的组织帐户登录一次即可。这与他们平时用来访问桌面或电子邮件的帐户相同。他们只能发现和访问分配给他们的那些应用程序。使用共享帐户时，此应用程序列表可以包含任意数目的共享凭据。最终用户不需要记住或写下他们可能要使用的多个帐户。
 
@@ -66,4 +66,4 @@ Azure AD 支持任何 Enterprise Mobility Suite (EMS)、高级或基本许可用
 - [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index)
 
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->

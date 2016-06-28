@@ -693,4 +693,4 @@ Microsoft 提供的、用于实现 SCIM 服务的通用语言基础结构库将�
 [4]: ./media/active-directory-scim-provisioning/scim-figure-4.PNG
 [5]: ./media/active-directory-scim-provisioning/scim-figure-5.PNG
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_0620_2016-->
