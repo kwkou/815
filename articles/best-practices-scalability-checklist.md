@@ -4,14 +4,14 @@
    services=""
    documentationCenter="na"
    authors="dragon119"
-   manager="masimms"
+   manager="christb"
    editor=""
    tags=""/>
 
 <tags
    ms.service="best-practice"
    ms.date="03/26/2016"
-   wacn.date="05/17/2016"/>
+   wacn.date="06/27/2016"/>
 
 # 可伸缩性清单
 
@@ -62,4 +62,4 @@
 - **考虑尽量减少服务帐户数**。例如，可以使用特定的帐户来访问对连接有限制（或在所维持的连接数较少的情况下性能更佳）的资源或服务。此方法常用于数据库之类的服务，但可能会影响相关功能，导致无法准确地审核操作（如果对原始用户进行了模拟）。
 - **进行性能分析和负载测试**（可以在开发过程中、测试例程中以及最终发布之前进行），确保应用程序的性能和缩放符合需要。此测试应在与生产平台同类的硬件上进行，其数据和用户负载的类型和数量也应与在生产环境中会遇到的情况相同。有关详细信息，请参阅 [测试云服务的性能](/documentation/articles/vs-azure-tools-performance-profiling-cloud-services)。
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0620_2016-->
