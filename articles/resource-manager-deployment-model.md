@@ -1,34 +1,30 @@
 <properties
-   pageTitle="了解资源管理器与经典部署模型之间的差异"
+   pageTitle="Resource Manager 和经典部署 | Azure"
    description="介绍资源管理器部署模型与经典（或服务管理）部署模型之间的差异。"
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
-   manager="wpickett"
-   editor=""/>
+   manager="timlt"
+   editor="tysonn"/>
 
 <tags
    ms.service="azure-resource-manager"
    ms.date="05/13/2016"
-   wacn.date="06/20/2016"/>
+   wacn.date="06/27/2016"/>
 
-# 了解资源管理器部署和经典部署
+# Azure Resource Manager 与经典部署：了解部署模型和资源的状态
 
-资源管理器部署模型提供了一种新的方式来部署和管理构成应用程序的服务。这一新模型包含与经典部署模型的重要差异，这两个模型彼此之间并不完全兼容。若要简化资源部署和管理，Microsoft 建议您为新资源使用资源管理器，如果可能，请通过资源管理器重新部署现有资源。
+在本主题中，你将了解 Azure Resource Manager 和经典部署模型、资源的状态，以及为何要使用不同的模型来部署资源。Resource Manager 部署模型包含与经典部署模型的重要差异，这两个模型彼此之间并不完全兼容。若要简化资源部署和管理，Microsoft 建议您为新资源使用资源管理器，如果可能，请通过资源管理器重新部署现有资源。
 
-您也可能知道经典部署模型就是服务管理模型。
-
-本主题介绍了这两个模型之间的差异，以及从经典模型转换到资源管理器时可能遇到的一些问题。它提供了模型的概述，但并未详细介绍各项服务之间的差异。
-
-许多资源可同时在经典模型和资源管理器中正常运行，不会出现问题。即使是在经典模型中创建的，这些资源也能完全支持资源管理器。您可以在无需任何顾虑或额外努力的情况下转换到资源管理器。
-
-但是，由于模型之间的体系结构差异，一些资源提供程序会提供两个版本的资源（一个用于经典模型，一个用于资源管理器）。区分两个模型的资源提供程序包括：
+对于大多数资源，你可以过渡到 Resource Manager 而不会出现任何问题。但是，由于模型之间的体系结构差异，一些资源提供程序会提供两个版本的资源（一个用于经典模型，一个用于资源管理器）。区分两个模型的资源提供程序包括：
 
 - **计算** - 对虚拟机和可选可用性集的实例提供支持。
 - **存储** - 对所需的存储帐户提供支持，存储帐户存储虚拟机的 VHD，包括其操作系统和其附加的数据磁盘。
-- **网络** - 对所需的 NIC、虚拟机 IP 地址和虚拟网络内的子网及可选的网络安全组提供支持。
+- **网络** - 对所需的 NIC、虚拟机 IP 地址和虚拟网络内的子网及可选的负载平衡器、负载平衡器 IP 地址和网络安全组提供支持。
 
-对于这些资源类型，您必须知道使用的是哪个版本，因为支持的操作会有所不同。
+对于这些资源类型，您必须知道使用的是哪个版本，因为支持的操作会有所不同。如果你已准备好将资源从经典部署迁移到 Resource Manager 部署，请参阅 [Platform supported migration of IaaS resources from Classic to Azure Resource Manager（平台支持从经典部署迁移到 Azure Resource Manager 部署的 IaaS 资源）](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager)。
+
+若要了解应使用哪种模型来部署资源，让我们回顾这两个模型。
 
 ## 资源管理器的特性
 
@@ -154,4 +150,4 @@
 - 若要了解如何创建声明性部署模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
 - 若要查看用于部署模板的命令，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->

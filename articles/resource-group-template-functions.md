@@ -4,8 +4,8 @@
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
-   manager="wpickett"
-   editor=""/>
+   manager="timlt"
+   editor="tysonn"/>
 
 <tags
    ms.service="azure-resource-manager"
@@ -32,7 +32,7 @@
 - [sub](#sub)
 
 
-<a id="add" /></a>
+<a id="add"/></a>
 ### 添加
 
 **add(operand1, operand2)**
@@ -45,7 +45,7 @@
 | operand2 | 是 | 要使用的第二个操作数。
 
 
-<a id="copyindex" /></a>
+<a id="copyindex"/></a>
 ### copyIndex
 
 **copyIndex(offset)**
@@ -55,7 +55,7 @@
 此函数始终配合 **copy** 对象使用。有关使用 **copyIndex** 的示例，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)。
 
 
-<a id="div" /></a>
+<a id="div"/></a>
 ### div
 
 **div(operand1, operand2)**
@@ -68,7 +68,7 @@
 | operand2 | 是 | 除数，不得为 0。
 
 
-<a id="int" /></a>
+<a id="int"/></a>
 ### int
 
 **int(valueToConvert)**
@@ -89,7 +89,7 @@
     }
 
 
-<a id="length" /></a>
+<a id="length"/></a>
 ### length
 
 **length(array 或 string)**
@@ -101,7 +101,7 @@
         "count": "[length(parameters('siteNames'))]"
     }
 
-有关在数组中使用此函数的详细信息，请参阅[在 Azure 资源管理器中创建多个资源实例](resource-group-create-multiple.md)。
+有关在数组中使用此函数的详细信息，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)。
 
 或者，你可以在字符串中使用：
 
@@ -113,7 +113,7 @@
     }
 
 
-<a id="mod" /></a>
+<a id="mod"/></a>
 ### mod
 
 **mod(operand1, operand2)**
@@ -127,7 +127,7 @@
 
 
 
-<a id="mul" /></a>
+<a id="mul"/></a>
 ### mul
 
 **mul(operand1, operand2)**
@@ -140,7 +140,7 @@
 | operand2 | 是 | 要使用的第二个操作数。
 
 
-<a id="sub" /></a>
+<a id="sub"/></a>
 ### sub
 
 **sub(operand1, operand2)**
@@ -172,7 +172,7 @@
 
 若要获取字符串或数组中的字符数，请参阅 [length](#length)。
 
-<a id="base64" /></a>
+<a id="base64"/></a>
 ### base64
 
 **base64 (inputString)**
@@ -190,7 +190,7 @@
       "authorizationHeader": "[concat('Basic ', base64(variables('usernameAndPassword')))]"
     }
 
-<a id="concat" /></a>
+<a id="concat"/></a>
 ### concat
 
 **concat (arg1, arg2, arg3, ...)**
@@ -221,18 +221,18 @@
      }
         
 
-<a id="padleft" /></a>
+<a id="padleft"/></a>
 ### padLeft
 
-**padLeft(stringToPad, totalLength, paddingCharacter)**
+**padLeft(valueToPad, totalLength, paddingCharacter)**
 
 通过向左侧添加字符直至到达指定的总长度返回右对齐的字符串。
   
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
-| stringToPad | 是 | 要右对齐的字符串。
+| valueToPad | 是 | 要右对齐的字符串或整数。
 | totalLength | 是 | 返回字符串中的字符总数。
-| paddingCharacter | 是 | 要用于向左填充直到达到总长度的字符。
+| paddingCharacter | 否 | 要用于向左填充直到达到总长度的字符。默认值为空格。
 
 以下示例演示如何通过添加零字符直到字符串达到 10 个字符进而填充该用户提供的参数值。如果原始的参数值超过 10 个字符，将不会添加任何字符。
 
@@ -243,7 +243,7 @@
         "paddedAppName": "[padLeft(parameters('appName'),10,'0')]"
     }
 
-<a id="replace" /></a>
+<a id="replace"/></a>
 ### replace
 
 **replace(originalString, oldCharacter, newCharacter)**
@@ -265,7 +265,7 @@
         "newidentifier": "[replace(parameters('identifier'),'-','')]"
     }
 
-<a id="split" /></a>
+<a id="split"/></a>
 ### split
 
 **split(inputString, delimiter)**
@@ -287,7 +287,7 @@
         "stringPieces": "[split(parameters('inputString'), ',')]"
     }
 
-<a id="string" /></a>
+<a id="string"/></a>
 ### 字符串
 
 **string(valueToConvert)**
@@ -296,18 +296,34 @@
 
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
-| valueToConvert | 是 | 要转换为字符串的值。该值的类型只能是布尔值、整数或字符串。
+| valueToConvert | 是 | 要转换为字符串的值。可以转换任何类型的值，包括对象和数组。
 
 以下示例将用户提供的参数值转换为字符串。
 
     "parameters": {
-        "appId": { "type": "int" }
+      "jsonObject": {
+        "type": "object",
+        "defaultValue": {
+          "valueA": 10,
+          "valueB": "Example Text"
+        }
+      },
+      "jsonArray": {
+        "type": "array",
+        "defaultValue": [ "a", "b", "c" ]
+      },
+      "jsonInt": {
+        "type": "int",
+        "defaultValue": 5
+      }
     },
     "variables": { 
-        "stringValue": "[string(parameters('appId'))]"
+      "objectString": "[string(parameters('jsonObject'))]",
+      "arrayString": "[string(parameters('jsonArray'))]",
+      "intString": "[string(parameters('jsonInt'))]"
     }
 
-<a id="substring" /></a>
+<a id="substring"/></a>
 ### substring
 
 **substring(stringToParse, startIndex, length)**
@@ -329,7 +345,7 @@
         "prefix": "[substring(parameters('inputString'), 0, 3)]"
     }
 
-<a id="tolower" /></a>
+<a id="tolower"/></a>
 ### toLower
 
 **toLower(stringToChange)**
@@ -349,7 +365,7 @@
         "lowerCaseAppName": "[toLower(parameters('appName'))]"
     }
 
-<a id="toupper" /></a>
+<a id="toupper"/></a>
 ### toUpper
 
 **toUpper(stringToChange)**
@@ -369,7 +385,7 @@
         "upperCaseAppName": "[toUpper(parameters('appName'))]"
     }
 
-<a id="trim" /></a>
+<a id="trim"/></a>
 ### trim
 
 **trim (stringToTrim)**
@@ -389,19 +405,19 @@
         "trimAppName": "[trim(parameters('appName'))]"
     }
 
-<a id="uniquestring" /></a>
+<a id="uniquestring"/></a>
 ### uniqueString
 
 **uniqueString (stringForCreatingUniqueString, ...)**
 
-执行所提供字符串的 64 位哈希来创建唯一的字符串。当你需要创建资源的唯一名称时，此函数很有帮助。提供表示结果唯一性级别的参数值。可以指定该名称对于你的订阅、资源组或部署是否唯一。
+根据作为参数提供的值创建唯一字符串。当你需要创建资源的唯一名称时，此函数很有帮助。提供表示结果唯一性级别的参数值。可以指定该名称对于你的订阅、资源组或部署是否唯一。
 
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
 | stringForCreatingUniqueString | 是 | 哈希函数中用于创建唯一字符串的基本字符串。
 | 根据需要使用其他参数 | 否 | 你可以添加任意数目的字符串，以创建指定唯一性级别的值。
 
-返回的值不是完全随机字符串，而是哈希函数的结果。返回的值长度为 13 个字符。不保证是全局唯一。你可以根据命名约定使用前缀来组合值，以创建更友好的名称。
+返回的值不是随机字符串，而是哈希函数的结果。返回的值长度为 13 个字符。不保证是全局唯一。你可能需要根据命名约定使用前缀来组合值，以创建更容易识别的名称。
 
 以下示例演示显示如何使用 uniqueString 来创建不同的通用级唯一值。
 
@@ -424,7 +440,7 @@
         "type": "Microsoft.Storage/storageAccounts", 
         ...
 
-<a id="uri" /></a>
+<a id="uri"/></a>
 ### uri
 
 **uri (baseUri, relativeUri)**
@@ -462,7 +478,7 @@
 
 若要从资源、资源组或订阅获取值，请参阅[资源函数](#resource-functions)。
 
-<a id="deployment" /></a>
+<a id="deployment"/></a>
 ### 部署
 
 **deployment()**
@@ -508,7 +524,7 @@
     }  
 
 
-<a id="parameters" /></a>
+<a id="parameters"/></a>
 ### 参数
 
 **parameters (parameterName)**
@@ -535,7 +551,7 @@
        }
     ]
 
-<a id="variables" /></a>
+<a id="variables"/></a>
 ### variables
 
 **variables (variableName)**
@@ -553,24 +569,25 @@
 资源管理器提供以下用于获取资源值的函数：
 
 - [listkeys](#listkeys)
+- [list*](#list)
 - [providers](#providers)
 - [reference](#reference)
 - [resourceGroup](#resourcegroup)
 - [resourceId](#resourceid)
 - [订阅](#subscription)
 
-若要从参数、变量或当前部署获取值，请参阅[部署值函数](#deployment-value-functions)。
+若要从参数、变量或当前部署获取值，请参阅 [Deployment value functions（部署值函数）](#deployment-value-functions)。
 
-<a id="listkeys" /></a>
+<a id="listkeys"/></a>
 ### listKeys
 
 **listKeys (resourceName or resourceIdentifier, apiVersion)**
 
-返回存储帐户的密钥。可以使用 [resourceId 函数](#resourceid)或使用格式 **providerNamespace/resourceType/resourceName** 指定 resourceId。可以使用该函数来获取 primaryKey 和 secondaryKey。
+返回支持 listKeys 操作的任何资源类型的键。可以使用 [resourceId 函数](./#resourceid)或使用格式 **providerNamespace/resourceType/resourceName** 指定 resourceId。可以使用该函数来获取 primaryKey 和 secondaryKey。
   
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------
-| resourceName 或 resourceIdentifier | 是 | 存储帐户的唯一标识符。
+| resourceName 或 resourceIdentifier | 是 | 资源的唯一标识符。
 | apiVersion | 是 | 资源运行时状态的 API 版本。
 
 以下示例演示了如何从 outputs 节中的存储帐户返回密钥。
@@ -582,7 +599,7 @@
       } 
     } 
 
-<a id="list" /></a>
+<a id="list"/></a>
 ### list*
 
 **list* (resourceName or resourceIdentifier, apiVersion)**
@@ -595,7 +612,7 @@
 
     azure provider operations show --operationSearchString */apiapps/* --json | jq ".[] | select (.operation | contains("list"))"
 
-<a id="providers" /></a>
+<a id="providers"/></a>
 ### providers
 
 **providers (providerNamespace, [resourceType])**
@@ -607,7 +624,7 @@
 | providerNamespace | 是 | 提供程序的命名空间
 | resourceType | 否 | 指定的命名空间中的资源类型。
 
-将使用以下格式返回支持的每个类型：
+将使用以下格式返回支持的每个类型；不保证进行数组排序：
 
     {
         "resourceType": "",
@@ -624,7 +641,7 @@
 	    }
     }
 
-<a id="reference" /></a>
+<a id="reference"/></a>
 ### reference
 
 **reference (resourceName or resourceIdentifier, [apiVersion])**
@@ -638,8 +655,7 @@
 
 **reference** 函数从运行时状态派生其值，因此不能在 variables 节中使用。可以在模板的 outputs 节中使用它。
 
-如果在相同的模板内设置了引用的资源，则可使用 reference 函数来隐式声明一个资源依赖于另一个资源。另外，不需要使用 **dependsOn** 属性。
-只有当引用的资源已完成部署后，才会对函数求值。
+如果在相同的模板内设置了引用的资源，则可使用 reference 函数来隐式声明一个资源依赖于另一个资源。另外，不需要使用 **dependsOn** 属性。只有当引用的资源已完成部署后，才会对函数求值。
 
 以下示例引用同一模板中部署的存储帐户。
 
@@ -668,15 +684,6 @@
 		}
 	}
 
-如果你现在想要直接在模板中指定 API 版本，可以使用 [providers](#providers) 函数并检索一个值（例如最新版本），如下所示。
-
-    "outputs": {
-		"BlobUri": {
-			"value": "[reference(concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).primaryEndpoints.blob]",
-			"type" : "string"
-		}
-	}
-
 以下示例引用不同资源组中的存储帐户。
 
     "outputs": {
@@ -686,7 +693,7 @@
 		}
 	}
 
-<a id="resourcegroup" /></a>
+<a id="resourcegroup"/></a>
 ### resourceGroup
 
 **resourceGroup()**
@@ -711,10 +718,10 @@
        }
     ]
 
-<a id="resourceid" /></a>
+<a id="resourceid"/></a>
 ### resourceId
 
-**resourceId ([resourceGroupName], resourceType, resourceName1, [resourceName2]...)**
+**resourceId ([subscriptionId], [resourceGroupName], resourceType, resourceName1, [resourceName2]...)**
 
 返回资源的唯一标识符。如果资源名称不确定或未设置在相同的模板内，请使用此函数。将使用以下格式返回标识符：
 
@@ -722,6 +729,7 @@
       
 | 参数 | 必选 | 说明
 | :---------------: | :------: | :----------
+| subscriptionId | 否 | 可选订阅 ID。默认值为当前订阅。如果要检索另一个订阅中的资源，请指定此值。
 | resourceGroupName | 否 | 可选的资源组名称。默认值为当前资源组。如果要检索另一个资源组中的资源，请指定此值。
 | resourceType | 是 | 资源类型，包括资源提供程序命名空间。
 | resourceName1 | 是 | 资源的名称。
@@ -730,7 +738,7 @@
 以下示例演示了如何检索网站和数据库的资源 ID。网站存在于名为 **myWebsitesGroup** 的资源组中，而数据库存在于此模板的当前资源组中。
 
     [resourceId('myWebsitesGroup', 'Microsoft.Web/sites', parameters('siteName'))]
-    [resourceId('Microsoft.SQL/servers/databases', parameters('serverName'),parameters('databaseName'))]
+    [resourceId('Microsoft.SQL/servers/databases', parameters('serverName'), parameters('databaseName'))]
     
 通常，在替代资源组中使用存储帐户或虚拟网络时，需要使用此函数。存储帐户或虚拟网络可能用于多个资源组中；因此，你不想要在删除单个资源组时删除它们。以下示例演示了如何轻松使用外部资源组中的资源：
 
@@ -775,7 +783,7 @@
       }]
     }
 
-<a id="subscription" /></a>
+<a id="subscription"/></a>
 ### 订阅
 
 **subscription()**
@@ -805,4 +813,4 @@
 - 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)
 
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_0620_2016-->

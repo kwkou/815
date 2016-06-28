@@ -10,7 +10,7 @@
 <tags
 	ms.service="azure-resource-manager"
 	ms.date="04/18/2016"
-	wacn.date="06/20/2016"/>
+	wacn.date="06/27/2016"/>
 
 
 # 使用标记来组织 Azure 资源
@@ -82,7 +82,9 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
 
 标记直接存在于资源和资源组中，因此，若要查看已应用了哪些标记，只需使用 **Get-AzureRmResource** 或 **Get-AzureRmResourceGroup** 获取资源或资源组。让我们从一个资源组着手。
 
-    PS C:\> Get-AzureRmResourceGroup -Name tag-demo-group
+    Get-AzureRmResourceGroup -Name tag-demo-group
+
+此 cmdlet 将返回有关资源组的元数据的多个片段，包括已应用了哪些标记（如果有）。
 
     ResourceGroupName : tag-demo-group
     Location          : chinaeast
@@ -93,12 +95,11 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
                     Dept         Finance
                     Environment  Production
 
+获取某个资源的元数据时，不会直接显示标记。
 
-此 cmdlet 将返回有关资源组的元数据的多个片段，包括已应用了哪些标记（如果有）。
+    Get-AzureRmResource -ResourceName tfsqlserver -ResourceGroupName tag-demo-group
 
-获取某个资源的元数据时，不会直接显示标记。如下所示，标记只作为 Hashtable 对象进行展示。
-
-    PS C:\> Get-AzureRmResource -ResourceName tfsqlserver -ResourceGroupName tag-demo-group
+你会在结果中看到，标记只作为 Hashtable 对象显示。
 
     Name              : tfsqlserver
     ResourceId        : /subscriptions/{guid}/resourceGroups/tag-demo-group/providers/Microsoft.Sql/servers/tfsqlserver
@@ -112,25 +113,36 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
 
 可以通过检索 **Tags** 属性来查看实际标记。
 
-    PS C:\> (Get-AzureRmResource -ResourceName tfsqlserver -ResourceGroupName tag-demo-group).Tags | %{ $_.Name + ": " + $_.Value }
+    (Get-AzureRmResource -ResourceName tfsqlserver -ResourceGroupName tag-demo-group).Tags | %{ $_.Name + ": " + $_.Value }
+   
+该操作返回格式化结果：
+    
     Dept: Finance
     Environment: Production
 
 建议检索具有特定标记和值的所有资源或资源组，而不是查看特定资源组或资源的标记。若要获取具有特定标记的资源组，请结合 **-Tag** 参数使用 **Find-AzureRmResourceGroup** cmdlet。
 
-    PS C:\> Find-AzureRmResourceGroup -Tag @{ Name="Dept"; Value="Finance" } | %{ $_.Name }
+    Find-AzureRmResourceGroup -Tag @{ Name="Dept"; Value="Finance" } | %{ $_.Name }
+    
+该操作返回带有该标记值的资源组的名称。
+   
     tag-demo-group
     web-demo-group
 
 若要获取具有特定标记和值的所有资源，请使用 **Find-AzureRmResource** cmdlet。
 
-    PS C:\> Find-AzureRmResource -TagName Dept -TagValue Finance | %{ $_.ResourceName }
+    Find-AzureRmResource -TagName Dept -TagValue Finance | %{ $_.ResourceName }
+    
+该操作返回带有该标记值的资源的名称。
+    
     tfsqlserver
     tfsqldatabase
 
 若要向当前没有标记的资源组添加标记，只需使用 **Set-AzureRmResourceGroup** 命令并指定一个标记对象。
 
-    PS C:\> Set-AzureRmResourceGroup -Name test-group -Tag @( @{ Name="Dept"; Value="IT" }, @{ Name="Environment"; Value="Test"} )
+    Set-AzureRmResourceGroup -Name test-group -Tag @( @{ Name="Dept"; Value="IT" }, @{ Name="Environment"; Value="Test"} )
+
+该操作返回带有新的标记值的资源组。
 
     ResourceGroupName : test-group
     Location          : southcentralus
@@ -141,15 +153,15 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
                     Dept          IT
                     Environment   Test
                     
-可以使用 **SetAzureRmResource** 命令向当前没有标记的资源添加标记。
+可以使用 **Set-AzureRmResource** 命令向当前没有标记的资源添加标记。
 
-    PS C:\> Set-AzureRmResource -Tag @( @{ Name="Dept"; Value="IT" }, @{ Name="Environment"; Value="Test"} ) -ResourceId /subscriptions/{guid}/resourceGroups/test-group/providers/Microsoft.Web/sites/examplemobileapp
+    Set-AzureRmResource -Tag @( @{ Name="Dept"; Value="IT" }, @{ Name="Environment"; Value="Test"} ) -ResourceId /subscriptions/{guid}/resourceGroups/test-group/providers/Microsoft.Web/sites/examplemobileapp
 
 标记作为一个整体进行更新，因此，如果要将一个标记添加到已标记的资源，需要使用一个数组，其中包含您要保留的所有标记。若要执行此操作，可以先选择现有标记，将新标记添加到该标记集，然后重新应用所有标记。
 
-    PS C:\> $tags = (Get-AzureRmResourceGroup -Name tag-demo).Tags
-    PS C:\> $tags += @{Name="status";Value="approved"}
-    PS C:\> Set-AzureRmResourceGroup -Name test-group -Tag $tags
+    $tags = (Get-AzureRmResourceGroup -Name tag-demo).Tags
+    $tags += @{Name="status";Value="approved"}
+    Set-AzureRmResourceGroup -Name test-group -Tag $tags
 
 若要删除一个或多个标记，只需保存不包含您要删除的标记的数组。
 
@@ -157,7 +169,7 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
 
 若要使用 PowerShell 获取订阅中所有标记的列表，请使用 **Get-AzureRmTag** cmdlet。
 
-    PS C:/> Get-AzureRmTag
+    Get-AzureRmTag
     Name                      Count
     ----                      ------
     env                       8
@@ -172,6 +184,9 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
 标记直接存在于资源和资源组中，因此，若要查看已应用了哪些标记，只需使用 **azure group show** 获取资源组及其资源。
 
     azure group show -n tag-demo-group
+    
+该操作返回有关资源组的元数据，包括任何应用到其中的标记。
+    
     info:    Executing command group show
     + Listing resource groups
     + Listing resources for the group
@@ -192,6 +207,9 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
 若要仅获取资源组的标记，请使用 JSON 实用工具，例如 [jq](http://stedolan.github.io/jq/download/)。
 
     azure group show -n tag-demo-group --json | jq ".tags"
+    
+该操作返回该资源组的标记。
+    
     {
       "Dept": "Finance",
       "Environment": "Production" 
@@ -200,6 +218,9 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
 使用 **azure resource show** 可以查看特定资源的标记。
 
     azure resource show -g tag-demo-group -n tfsqlserver -r Microsoft.Sql/servers -o 2014-04-01-preview --json | jq ".tags"
+    
+该操作返回该资源的标记。
+    
     {
       "Dept": "Finance",
       "Environment": "Production"
@@ -208,12 +229,18 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
 如下所示，可以检索具有特定标记和值的所有资源。
 
     azure resource list --json | jq ".[] | select(.tags.Dept == "Finance") | .name"
+    
+该操作返回带有该标记的资源的名称。
+    
     "tfsqlserver"
     "tfsqlserver/tfsqldata"
 
 标记作为一个整体进行更新，因此，如果要向已标记的资源添加一个标记，需要检索要保留的现有全部标记。若要为资源组设置标记值，请使用 **azure group set** 并提供该资源组的所有标记。
 
     azure group set -n tag-demo-group -t Dept=Finance;Environment=Production;Project=Upgrade
+    
+将返回带新标记的资源组的摘要。
+    
     info:    Executing command group set
     ...
     data:    Name:                tag-demo-group
@@ -231,9 +258,9 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
 
 ## 标记和计费
 
-对于受支持的服务，您可以使用标记对计费数据进行分组。如果您针对不同组织运行多个虚拟机，可以使用标记根据成本中心对使用情况进行分组。您还可以使用标记根据运行时环境对成本进行分类；例如，在生产环境中运行的虚拟机的计费使用情况。
+对于受支持的服务，您可以使用标记对计费数据进行分组。例如，[与 Azure Resource Manager 集成的虚拟机](/documentation/articles/virtual-machines-windows-compare-deployment-models)可让你定义并应用标签来组织虚拟机的计费使用情况。如果您针对不同组织运行多个虚拟机，可以使用标记根据成本中心对使用情况进行分组。您还可以使用标记根据运行时环境对成本进行分类；例如，在生产环境中运行的虚拟机的计费使用情况。
 
-你可以通过  [Azure 帐户门户](https://account.windowsazure.cn/)或 [EA 门户](https://ea.azure.com)下载的使用情况逗号分隔值 (CSV) 文件来检索有关标记的信息。有关 REST API 操作，请参阅 [Azure 计费 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c)。
+你可以通过 [Azure 资源使用情况与费率卡 API](/documentation/articles/billing-usage-rate-card-overview) 或者可从 [Azure 帐户门户](https://account.windowsazure.cn/)或 [EA 门户](https://ea.azure.com)下载的使用情况逗号分隔值 (CSV) 文件来检索有关标记的信息。有关以编程方式访问计费信息的详细信息，请参阅[深入了解你的 Microsoft Azure 资源消耗](/documentation/articles/billing-usage-rate-card-overview)。有关 REST API 操作，请参阅 [Azure 计费 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c)。
 
 在你为支持标记和计费的服务下载使用情况 CSV 时，标记将显示在“标记”列中。有关更多详细信息，请参阅[了解 Azure 的计费](/documentation/articles/billing-understand-your-bill)。
 
@@ -241,6 +268,7 @@ Resource Manager 当前不支持处理标记名称和值对象。但可以传递
 
 ## 后续步骤
 
-- 有关部署资源时使用 Azure PowerShell 的说明，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。
+- 有关部署资源时使用 Azure PowerShell 的说明，请参阅[将 Azure PowerShell 与 Azure Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager)。
+- 有关使用门户的说明，请参阅[使用 Azure 门户管理 Azure 资源](/documentation/articles/resource-group-portal)  
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->
