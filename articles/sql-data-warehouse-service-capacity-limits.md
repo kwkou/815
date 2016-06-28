@@ -1,55 +1,62 @@
 <properties
    pageTitle="SQL 数据仓库容量限制 | Azure"
-   description="SQL 数据仓库的数据库、表、连接和查询的最大值。"
+   description="SQL 数据仓库的连接、数据库、表和查询的最大值。"
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="sonyama"
+   authors="sonyam"
    manager="barbkess"
    editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="04/12/2016"
-   wacn.date="05/05/2016"/>
+   ms.date="05/13/2016"
+   wacn.date="06/27/2016"/>
 
 # SQL 数据仓库容量限制
 
-用于支持大部分所需的分析工作负荷，同时确保每个单独查询具有获取最佳性能所需的资源的最大值。
+下表包含 Azure SQL 数据仓库的各个组件允许的最大值。
 
-## 服务
+
+## 工作负荷管理
 
 | 类别 | 说明 | 最大值 |
-| :---------------- | :------------------------------------------- | :----------------- |
-| 数据库 | 最大大小 | 压缩后 60 TB<br/><br/>SQL 数据仓库允许每个数据库的磁盘上有多达 60 TB 的原始空间。磁盘上的空间是永久表的压缩大小。此空间与 tempdb 或日志空间无关，因此，此空间专用于永久表。聚集列存储压缩估计为 5 倍，这意味着当所有表都是聚集列存储（默认的表类型）时，未压缩的数据库大小可能增长到大约 300 TB。在公共预览期结束时，60 TB 限制将增加到 240 TB，这样，大部分数据库应可增长到超过 1 PB 的未压缩数据。|
-| 数据库 | 并发打开的会话 | 1024<br/><br/>我们支持最多 1024 个活动连接，它们可同时将请求提交到每个 SQL 数据仓库数据库。请注意，实际可并发执行的查询数量是有限制的。当超出限制时，请求进入内部队列等待处理。|
+| :------------------ | :------------------------------------------- | :----------------- |
+| 数据仓库单位 (DWU)| 计算、内存和 IO 资源 | 2000 |
+| 数据库连接 | 并发打开的会话 | 1024<br/><br/>我们支持最多 1024 个活动连接，每个活动连接可同时将请求提交到 SQL 数据仓库数据库。请注意，实际可并发执行的查询数量是有限制的。当超出并发限制时，请求将进入内部队列等待处理。|
 | 数据库连接 | 预处理语句的最大内存 | 20 MB |
-| 工作负荷管理 | 并发查询数上限 | 32<br/><br/>SQL 数据仓库有 32 个单位的并发性，称为并发槽。<br/><br/>如果所有查询运行时使用默认的一个并发槽资源分配，则可以有 32 个并发用户查询。实际上，并发查询上限取决于服务级别目标 (SLO) 和每个查询的资源要求。资源不可用时，查询在内部队列中等待。有关详细信息，请参阅 [Concurrency and workload management（并发性和工作负荷管理）][]。|
-| 工作负荷管理 | 每个服务级别目标 (SLO) 的并发槽上限 |这是每个服务级别可用于运行查询，且查询需要额外 CPU 和内存资源的并发槽数目。对于工作负荷管理，可以使用内置的资源类来增加查询的 CPU 和内存资源。运行时使用的资源越多，查询需要的并发槽就越多。<br/><br/>某些查询不在资源类下运行。此类查询使用一个并发单位，且不占用下面所列的任何并发槽。有关 SQL 数据仓库在资源类中运行（和不运行）的查询列表，请参阅 [Concurrency and workload management（并发性和工作负荷管理）][]。<br/><br/>DWU100 = 4<br/><br/>DWU200 = 8<br/><br/>DWU300 = 12<br/><br/>DWU400 = 16<br/><br/>DWU500 = 20<br/><br/>DWU600 = 24<br/><br/>DWU1000 = 40<br/><br/>DWU1200 = 48<br/><br/>DWU1500 = 60 |
+| 工作负荷管理 | 并发查询数上限 | 32<br/><br/>默认情况下，SQL 数据仓库可执行最多 32 个并发查询，剩余的查询将排队。<br/><br/>当为用户分配了更高的资源类时，并发级别可能会降低。某些查询（如 DMV 查询）始终可以运行。有关详细信息，请参阅 [Concurrency and workload management（并发性和工作负荷管理）][]。|
 
 
 ## 数据库对象
 
 | 类别 | 说明 | 最大值 |
 | :---------------- | :------------------------------------------- | :----------------- |
+| 数据库 | 最大大小 | 磁盘上压缩后 60 TB<br/><br/>SQL 数据仓库允许每个数据库的磁盘上最多有 60 TB 的原始空间。磁盘上的空间是永久表的压缩大小。此空间与 tempdb 或日志空间无关，因此，此空间专用于永久表。聚集列存储压缩估计为 5 倍，这意味着当所有表都是聚集列存储（默认的表类型）时，未压缩的数据库大小可能增长到大约 300 TB。在公共预览期结束时，60 TB 限制将增加到 240 TB，这样，大部分数据库应可增长到超过 1 PB 的未压缩数据。|
 | 表 | 最大大小 | 磁盘上压缩后 60 TB |
 | 表 | 每个数据库的表数 | 20 亿 |
 | 表 | 每个表的列数 | 1024 个列 |
 | 表 | 每个列的字节数 | 8000 字节 |
-| 表 | 每行的字节数，定义的大小 | 8060 字节<br/><br/>每行的字节数计算方式同于已启用页面压缩的 SQL Server。与 SQL Server 一样，SQL 数据仓库支持行溢出存储，使可变长度列能够脱行推送。主记录中只存储脱行推送行的可变长度列的 24 字节根。有关详细信息，请参阅 SQL Server 联机丛书中的 [Row-Overflow Data Exceeding 8 KB（超过 8 KB 的行溢出数据）](https://msdn.microsoft.com/zh-cn/library/ms186981.aspx)主题。<br/><br/>有关 SQL 数据仓库数据类型大小的列表，请参阅 [CREATE TABLE (Azure SQL Data Warehouse) (CREATE TABLE (Azure SQL 数据仓库))](https://msdn.microsoft.com/zh-cn/library/mt203953.aspx)。 |
-| 表 | 每行的字节数，移动数据时的内部缓冲区大小 | 32,768<br/><br/>注意：目前有此限制，但即将删除。<br/><br/>在分布式 SQL 数据仓库系统中，SQL 数据仓库使用内部缓冲区来移动行。负责移动行的服务称为数据移动服务 (DMS)，它以不同于 SQL Server 的格式存储行。<br/><br/>如果行无法填入内部缓冲区，将发生查询编译错误或内部数据移动错误。若要避免此问题，请参阅[有关 DMS 缓冲区大小的详细信息](#details-about-the-dms-buffer-size)。|
+| 表 | 每行的字节数，定义的大小 | 8060 字节<br/><br/>每行字节数的计算方式同于已启用页面压缩的 SQL Server。与 SQL Server 一样，SQL 数据仓库支持行溢出存储，使可变长度列能够脱行推送。主记录中只存储脱行推送行的可变长度列的 24 字节根。有关详细信息，请参阅 SQL Server 联机丛书中的 [Row-Overflow Data Exceeding 8 KB（超过 8 KB 的行溢出数据）][]主题。<br/><br/>有关 SQL 数据仓库数据类型大小的列表，请参阅 [CREATE TABLE (Azure SQL Data Warehouse)（CREATE TABLE（Azure SQL 数据仓库））][]。 |
 | 表 | 每个表的分区数 | 15,000<br/><br/>为了实现高性能，我们建议在满足你的业务需求的情况下尽量减少所需的分区数。随着分区数目的增长，数据定义语言 (DDL) 和数据操作语言 (DML) 操作的开销也会增长，导致性能下降。|
 | 表 | 每个分区边界值的字符数。| 4000 |
 | 索引 | 每个表的非聚集索引数。 | 999<br/><br/>仅适用于行存储表。|
-| 索引 | 每个表的聚集索引数。 | 1<br><br/>适用于行存储和列存储表。|
+| 索引 | 每个表的聚集索引数。 | 1<br><br/>适用于行存储表和列存储表。|
 | 索引 | 列存储索引行组中的行数 | 1,024<br/><br/>将每个列存储索引实现为多个列存储索引。请注意，如果在 SQL 数据仓库列存储索引中插入 1,024 行，那么这些行并不都在同一行组。|
 | 索引 | 聚集列存储索引的并发生成数。 | 32<br/><br/>当所有聚集列存储索引均在不同表中生成时适用。每个表只允许一个聚集列存储索引生成。其他请求将在队列中等待。|
-| 索引 | 索引键大小。 | 900 字节。<br/><br/>仅适用于行存储索引。<br/><br/>如果创建索引时列中的现有数据未超过 900 字节，那么可以创建最大值超过 900 字节的 varchar 列上的索引。但是，以后导致总大小超过 900 字节的对列的 INSERT 或 UPDATE 操作将失败。|
+| 索引 | 索引键大小。 | 900 字节。<br/><br/>仅适用于行存储索引。<br/><br/>如果创建索引时列中的现有数据未超过 900 字节，那么可以创建最大大小超过 900 字节的 varchar 列上的索引。但是，以后导致总大小超过 900 字节的对列的 INSERT 或 UPDATE 操作将失败。|
 | 索引 | 每个索引的键列数。 | 16<br/><br/>仅适用于行存储索引。聚集列存储索引包括所有列。|
 | 统计信息 | 组合的列值的大小。 | 900 字节。 |
 | 统计信息 | 每个统计对象的列数。 | 32 |
 | 统计信息 | 每个表的列上创建的统计信息条数。 | 30,000 |
 | 存储过程 | 最大嵌套级数。 | 8 |
 | 查看 | 每个视图的列数 | 1,024 |
+
+
+## 加载
+
+| 类别 | 说明 | 最大值 |
+| :---------------- | :------------------------------------------- | :----------------- |
+| Polybase 加载 | 每行的字节数 | 32768<br/><br/>Polybase 加载限制为加载小于 32k 的行，并且无法加载到 VARCHR(MAX)、NVARCHAR(MAX) 或 VARBINARY(MAX)。虽然此限制目前仍存在，但将很快去除。<br/><br/>
 
 
 ## 查询
@@ -66,8 +73,7 @@
 | SELECT | 每个 JOIN 的列数 | 1024 列<br/><br/>JOIN 中的列数始终不得超过 1024。无法保证最大值始终为 1024。如果 JOIN 计划需要列数多于 JOIN 结果的临时表，那么将 1024 限制应用于此临时表。 |
 | SELECT | 每个 GROUP BY 列的字节数。 | 8060<br/><br/>GROUP BY 子句中的列的字节数最大为 8060 字节。|
 | SELECT | 每个 ORDER BY 列的字节数 | 8060 字节。<br/><br/>ORDER BY 子句中的列的字节数最大为 8060 字节。|
-| 每个语句的标识符和常量数 | 被引用的标识符和常量的数量。 | 65,535<br/><br/>SQL 数据仓库限制一条查询的单个表达式中可包含的标识符和常量数。此限制为 65,535。超过此数字将导致 SQL Server 错误 8632。有关详细信息，请参阅 [Internal error: An expression services limit has been reached (内部错误：已达到表达式服务限制)](http://support.microsoft.com/kb/913050/)。|
-
+| 每个语句的标识符和常量数 | 被引用的标识符和常量的数量。 | 65,535<br/><br/>SQL 数据仓库限制一条查询的单个表达式中可包含的标识符和常量数。此限制为 65,535。超过此数字将导致 SQL Server 错误 8632。有关详细信息，请参阅 [Internal error: An expression services limit has been reached（内部错误：已达到表达式服务限制）][]。|
 
 
 ## Metadata
@@ -85,139 +91,6 @@
 | sys.dm\_pdw\_sql\_requests | sys.dm\_pdw\_exec\_requests 中存储的最近 1000 个 SQL 请求。 |
 
 
-## 有关 DMS 缓冲区大小的详细信息
-
-SQL 数据仓库使用内部缓冲区在后端计算节点之间移动行。负责移动行的服务称为数据移动服务 (DMS)，它并使用不同于 SQL Server 的存储格式。
-
-为了改善并行查询性能，DMS 将所有可变长度数据填补到 SQL 数据库定义的大小上限。例如，`nvarchar(2000) NOT NULL` 的值 'hello' 在 DMS 缓冲区中实际使用 4002 个字节。2000 个字符的每个字符使用 2 个字节，再加上 NULL 终止符的 2 个字节。
-
-> [AZURE.NOTE] 当 DMS 尝试移动的行超过 32,768 个字节的 DMS 缓冲区大小时，将发生内部错误。如果行大小超过 DMS 缓冲区大小，你需要修改表定义，使行可放入 DMS 缓冲区。
-
-### 如何确定 DMS 缓冲区的行大小
-此示例说明 DMS 定义的可变长度数据大小，然后演示如何计算行的 DMS 缓冲区大小。
- 
-在 DMS 缓冲区中，可变长度的数据大小是以下各项的总和：
-
-- 定义的字符大小。
-- NULL 类型使用 8 个字节作为 NULL 指示符。
-- ASCII 类型使用 1 个字节作为 NULL 终止符。
-- Unicode 类型使用 2 个字节作为 NULL 终止符。
-             
-| 数据类型 | DMS 缓冲区大小 |
-| :---------------------- | :-------------------------- |                
-| char(1000) NULL | 1009 字节 = 1000 +8 + 1 |
-| char(1000) NOT NULL | 1001 字节 = 1000 + 1 |
-| nchar(1000 NULL | 2010 字节 = 2000 + 8 + 2 |
-| varchar(1000) NULL | 1009 字节 = 1000 + 8 + 1 |
-| varchar(1000) NOT NULL | 1009 字节 = 1000 + 1 |
-| nvarchar(1000) NULL | 2010 字节 = 2000 + 8 + 2 |
-| nvarchar(1000) NOT NULL | 2010 字节 = 2000 + 2 |
-                
-在 DMS 缓冲区中，固定宽度列使用 SQL Server 本机大小。如果类型可为 null，DMS 需要额外的 8 字节。关于 SQL Server 大小，请参阅 sys.types 中的 max\_length 字段。
-
-例如：
-
-| 固定宽度数据类型 | DMS 缓冲区大小 |
-| :-------------------- | :----------------- |
-| int NULL | 12 字节 = 4 + 8 |
-| int NOT NULL | 4 字节 = 4 + 0 | 
-                
-以下行的 DMS 定义缓冲区大小合计为 31,134 字节，可放入 DMS 缓冲区。
-
-| 列 | 数据类型 | 列大小 |
-| :----- | :------------------ | :------------------------ |
-| col1 | datetime2 (7) NULL | 20 字节 = 8 + 8 |
-| col2 | float (4) NULL | 12 字节 = 4 + 8 |
-| col3 | nchar (6) NULL | 22 字节 = 12 + 8 + 2 |
-| col4 | char (7000) NULL | 7009 字节 = 7000 + 8 + 1 |
-| col5 | nvarchar (4000) | 8002 字节 = 8000 + 2. |
-| col6 | varchar (8000) NULL | 8009 字节 = 8000 + 8 + 1 |
-| col7 | varbinary (8000) | 8000 字节 |
-| col8 | binary (60) | 60 字节 |
-                
-              
-### 超出 DMS 缓冲区大小的示例
-
-此示例演示如何成功将行插入 SQL 数据仓库，但之后当 DMS 由于与分布区不兼容的联接而需要移动行时，将导致 DMS 溢出错误。学到的经验是创建可放入 DMS 缓冲区的较小行。
-
-在以下示例中，我们将创建表 T1。当所有 nvarchar 变量都有 4000 个 Unicode 字符时，最大可能的行大小超过 40,000 字节，这已超过 DMS 缓冲区大小上限。
-
-由于 nvarchar 实际定义的大小使用 26 字节，而行定义小于 8060 字节，因此可放在 SQL Server 页中。因此，即使当 DMS 尝试将此行加载到 DMS 缓冲区时失败，CREATE TABLE 语句也仍可成功。
-
-```sql
-CREATE TABLE T1
-  (
-    c0 int NOT NULL,
-    CustomerKey int NOT NULL,
-    c1 nvarchar(4000),
-    c2 nvarchar(4000),
-    c3 nvarchar(4000),
-    c4 nvarchar(4000),
-    c5 nvarchar(4000)
-  )
-WITH ( DISTRIBUTION = HASH (c0) )
-;
-```
-
-下一个步骤演示我们可以成功地使用 INSERT 将数据插入表中。此语句不使用 DMS，而是直接将数据加载到 SQL Server，因此不会引发 DMS 缓冲区溢出失败。集成服务也会成功加载此行。</para>
-
-```sql
---The INSERT operation succeeds because the row is inserted directly into SQL Server without requiring DMS to buffer the row.
-INSERT INTO T1
-VALUES (
-    25,
-    429817,
-    N'Each row must fit into the DMS buffer size of 32,768 bytes.',
-    N'Each row must fit into the DMS buffer size of 32,768 bytes.',
-    N'Each row must fit into the DMS buffer size of 32,768 bytes.',
-    N'Each row must fit into the DMS buffer size of 32,768 bytes.',
-    N'Each row must fit into the DMS buffer size of 32,768 bytes.'
-  )
-```
-
-为了准备演示数据移动，此示例创建了第二个表，其中的 CustomerKey 用作分布列。
-
-```sql
---This second table is distributed on CustomerKey. 
-CREATE TABLE T2
-  (
-    c0 int NOT NULL,
-    CustomerKey int NOT NULL,
-    c1 nvarchar(4000),
-    c2 nvarchar(4000),
-    c3 nvarchar(4000),
-    c4 nvarchar(4000),
-    c5 nvarchar(4000)
-  )
-WITH ( DISTRIBUTION = HASH (CustomerKey) )
-;
-
-INSERT INTO T2
-VALUES (
-    32,
-    429817,
-    N'Each row must fit into the DMS buffer size of 32,768 bytes.',
-    N'Each row must fit into the DMS buffer size of 32,768 bytes.',
-    N'Each row must fit into the DMS buffer size of 32,768 bytes.',
-    N'Each row must fit into the DMS buffer size of 32,768 bytes.',
-    N'Each row must fit into the DMS buffer size of 32,768 bytes.'
-  )
-```
-由于这两个表不是根据 CustomerKey 分布的，T1 和 T2 之间根据 CustomerKey 的联接与分布区不兼容。DMS 需要加载至少一个行，并将它复制到不同的分布区。
-
-```sql
-SELECT * FROM T1 JOIN T2 ON T1.CustomerKey = T2.CustomerKey;
-```
-
-如同预期，DMS 无法执行该联接，因为当填补 nvarchar 列时，行超过 32,768 字节的 DMS 缓冲区大小。将出现以下错误消息。
-
-```sql
-Msg 110802, Level 16, State 1, Line 126
-
-An internal DMS error occurred that caused this operation to fail. Details: Exception: Microsoft.SqlServer.DataWarehouse.DataMovement.Workers.DmsSqlNativeException, Message: SqlNativeBufferReader.ReadBuffer, error in OdbcReadBuffer: SqlState: , NativeError: 0, 'COdbcReadConnection::ReadBuffer: not enough buffer space for one row | Error calling: pReadConn-&gt;ReadBuffer(pBuffer, bufferOffset, bufferLength, pBytesRead, pRowsRead) | state: FFFF, number: 81, active connections: 8', Connection String: Driver={SQL Server Native Client 11.0};APP=DmsNativeReader:P13521-CMP02\sqldwdms (4556) - ODBC;Trusted_Connection=yes;AutoTranslate=no;Server=P13521-SQLCMP02,1500
-```
-
-
 ## 后续步骤
 有关更多参考信息，请参阅 [SQL 数据仓库参考概述][]。
 
@@ -225,9 +98,11 @@ An internal DMS error occurred that caused this operation to fail. Details: Exce
 
 <!--Article references-->
 [SQL 数据仓库参考概述]: /documentation/articles/sql-data-warehouse-overview-reference
-[并发性和工作负荷管理]: /documentation/articles/sql-data-warehouse-develop-concurrency
+[Concurrency and workload management（并发性和工作负荷管理）]: /documentation/articles/sql-data-warehouse-develop-concurrency
 
 <!--MSDN references-->
+[Row-Overflow Data Exceeding 8 KB（超过 8 KB 的行溢出数据）]: https://msdn.microsoft.com/zh-cn/library/ms186981.aspx
+[CREATE TABLE (Azure SQL Data Warehouse)（CREATE TABLE（Azure SQL 数据仓库））]: https://msdn.microsoft.com/zh-cn/library/mt203953.aspx
+[Internal error: An expression services limit has been reached（内部错误：已达到表达式服务限制）]: https://support.microsoft.com/kb/913050
 
-
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0620_2016-->
