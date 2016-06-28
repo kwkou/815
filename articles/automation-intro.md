@@ -41,7 +41,7 @@ Runbook 是 Azure 自动化中执行某些自动化过程的一组任务。它�
 
 ## 获取模块和配置 
 
-你可以获取包含 cmdlet 的 [PowerShell 模块](/documentation/articles/automation-runbook-gallery#modules-in-powershell-gallery)，这些 cmdlet 可以用于 [PowerShell 库](http://www.powershellgallery.com/)中的 Runbook。你可以下载并手动导入它们。你不能直接从 Azure 管理门户安装这些模块，但可以在下载之后进行安装，就像使用其他模块一样。
+你可以获取包含 cmdlet 的 PowerShell 模块，这些 cmdlet 可以用于 [PowerShell 库](http://www.powershellgallery.com/)中的 Runbook。你可以下载并手动导入它们。你不能直接从 Azure 管理门户安装这些模块，但可以在下载之后进行安装，就像使用其他模块一样。
 
 
 ## Azure 自动化实际应用示例 
@@ -73,7 +73,7 @@ Runbook 是 Azure 自动化中执行某些自动化过程的一组任务。它�
 * [Azure PowerShell cmdlet](http://msdn.microsoft.com/zh-cn/library/jj156055.aspx) 提供了有关使用 Windows PowerShell 自动完成 Azure 操作的信息。Runbook 使用这些 cmdlet 来处理 Azure 资源。 
 * [管理博客](https://azure.microsoft.com/blog/tag/azure-automation)提供有关 Azure 自动化以及 Microsoft 的其他管理技术的最新信息。欢迎订阅 Azure 自动化博客，随时了解 Azure 自动化团队提供的最新信息。 
 * [自动化论坛](http://go.microsoft.com/fwlink/p/?LinkId=390561)允许您提出有关 Azure 自动化的问题，并将由 Microsoft 和自动化社区提供解答。 
-* [Azure 自动化 Cmdlet](https://msdn.microsoft.com/zh-cn/library/mt244122.aspx) 提供有关管理任务自动化的信息。它包含的 cmdlet 可用于管理自动化帐户、资产、Runbook。
+* [Azure 自动化 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690262.aspx) 提供有关管理任务自动化的信息。它包含的 cmdlet 可用于管理自动化帐户、资产、Runbook。
 
 
 ## 我是否可以提供反馈？ 
