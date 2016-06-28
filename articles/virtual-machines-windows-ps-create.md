@@ -150,7 +150,6 @@
                                   
 ## 后续步骤
 
-- 如果部署出现问题，后续措施是参阅 [Troubleshooting resource group deployments with Azure Portal（使用 Azure 门户对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal)
 - 查看 [Manage virtual machines using Azure Resource Manager and PowerShell（使用 Azure Resource Manager 和 PowerShell 管理虚拟机）](/documentation/articles/virtual-machines-windows-ps-manage)，了解如何管理刚创建的虚拟机。
 - 参考 [Create a Windows virtual machine with a Resource Manager template（使用 Resource Manager 模板创建 Windows 虚拟机）](/documentation/articles/virtual-machines-windows-ps-template)中的信息，通过模板创建虚拟机
 
