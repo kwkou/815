@@ -17,8 +17,6 @@
 
 # 设置用于测试的混合云环境
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
-
 本主题将指导你逐步使用 Azure 创建混合云环境，以便进行测试。这是生成的配置。
 
 ![](./media/virtual-machines-windows-ps-hybrid-cloud-test-env-base/virtual-machines-windows-ps-hybrid-cloud-test-env-base-ph5.png)
@@ -329,6 +327,6 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
  
 ## 后续步骤
 
-- 在此环境中设置 [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-dirsync)。
+- 在此环境中设置 [SharePoint intranet 场](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sp)、[基于 Web 的 LOB 应用程序](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-lob)或者 [Office 365 目录同步 (DirSync) 服务器](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-dirsync)。
 
 <!---HONumber=Mooncake_0425_2016-->

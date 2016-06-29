@@ -19,7 +19,7 @@
 
 ##在 Azure 中创建 Oracle WebLogic Server 12c 和 Oracle Database 12c 虚拟机
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
 
 2. 单击“新建”>“计算”>“从库中”。
 

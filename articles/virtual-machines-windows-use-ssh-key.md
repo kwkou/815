@@ -39,9 +39,9 @@
 
 ## 你需要创建哪些密钥文件？
 
-Azure 的基本 SSH 设置包括从 **id\_rsa** 私钥文件生成的 `.pem` 文件，以供与管理门户的经典部署模型一起使用。
+Azure 的基本 SSH 设置包括从 **id\_rsa** 私钥文件生成的 `.pem` 文件，以供与经典门户的经典部署模型一起使用。
 
-使用[管理门户](https://manage.windowsazure.cn)创建 VM 时必需使用 .pem 文件。使用 [Azure CLI](/documentation/articles/xplat-cli-install) 的经典部署中也支持.pem 文件。
+使用[经典门户](https://manage.windowsazure.cn)创建 VM 时必需使用 .pem 文件。使用 [Azure CLI](/documentation/articles/xplat-cli-install) 的经典部署中也支持.pem 文件。
 
 > [AZURE.NOTE] 如果你计划管理使用经典部署模型部署的服务，则可能还要创建 **.cer** 格式的文件来上载到门户，尽管这不涉及 **ssh** 或连接到 Linux VM，但这是本文的主题。若要在 windows 上创建那些文件，请键入<br />openssl.exe x509 -outform der -in myCert.pem -out myCert.cer
 
@@ -105,7 +105,7 @@ Azure 的基本 SSH 设置包括从 **id\_rsa** 私钥文件生成的 `.pem` 文
 
 4.	回答询问的问题。
 5.	应已创建两个文件：`myPrivateKey.key` 和 `myCert.pem`。
-6.	如果你要直接使用 API，而不使用管理门户，请使用以下命令将 `myCert.pem` 转换为 `myCert.cer`（DER 编码的 X509 证书）：
+6.	如果你要直接使用 API，而不使用经典门户，请使用以下命令将 `myCert.pem` 转换为 `myCert.cer`（DER 编码的 X509 证书）：
 
 		# openssl.exe  x509 -outform der -in myCert.pem -out myCert.cer
 
@@ -143,7 +143,7 @@ Azure 的基本 SSH 设置包括从 **id\_rsa** 私钥文件生成的 `.pem` 文
 
 1.	从以下位置下载并安装 putty：[http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 2.	运行 putty.exe
-3.	从管理门户使用 IP 填充主机名：
+3.	从经典门户使用 IP 填充主机名：
 
 	![linuxputtyconfig](./media/virtual-machines-linux-ssh-from-linux/linuxputtyconfig.png)
 

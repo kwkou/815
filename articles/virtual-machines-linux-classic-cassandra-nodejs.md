@@ -114,7 +114,7 @@ Cassandra 的上述数据中心感知型复制和一致性模型可以很方便�
 |JRE	|[JRE 8](http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) |8U5|
 |JNA	|[JNA](https://github.com/twall/jna) | 3.2.7|
 |Cassandra|[Apache Cassandra 2.0.8](http://www.apache.org/dist/cassandra/2.0.8/apache-cassandra-2.0.8-bin.tar.gz)| 2.0.8|
-|Ubuntu	|[Azure 管理门户](http://www.azure.cn) |14.04 LTS|
+|Ubuntu	|[Azure 经典门户](http://www.azure.cn) |14.04 LTS|
 
 由于下载 JRE 需要手动接受 Oracle 许可证，为了简化部署，可先将所有必需软件下载到桌面，然后再将其上载到进行群集部署之前需要创建的 Ubuntu 模板映像中。
 
@@ -126,7 +126,7 @@ Cassandra 的上述数据中心感知型复制和一致性模型可以很方便�
 Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如何在 Azure 上通过 Linux 使用 SSH（可能为英文页面）上的说明进行操作来生成公/私钥对。如果你打算在 Windows 或 Linux 上将 putty.exe 用作 SSH 客户端，则必须使用 puttygen.exe 将 PEM 编码的 RSA 私钥转换为 PPK 格式。可在以上网页中找到有关此操作的说明。
 
 ####步骤 2：创建 Ubuntu 模板 VM
-若要创建模板 VM，请登录到 Azure 管理门户并按以下顺序操作：依次单击“新建”、“计算”、“虚拟机”、“从库中”、“Ubuntu”、“Ubuntu Server 14.04 LTS”，然后单击右键头。有关介绍如何创建 Linux VM 的教程，请参阅创建运行 Linux 的虚拟机（可能为英文页面）。
+若要创建模板 VM，请登录到 Azure 经典门户并按以下顺序操作：依次单击“新建”、“计算”、“虚拟机”、“从库中”、“Ubuntu”、“Ubuntu Server 14.04 LTS”，然后单击右键头。有关介绍如何创建 Linux VM 的教程，请参阅创建运行 Linux 的虚拟机（可能为英文页面）。
 
 在“虚拟机配置”屏幕 #1 中输入以下信息：
 
@@ -296,7 +296,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 
 ##单区域部署过程
 **步骤 1：创建虚拟网络**
-登录到 Azure 管理门户，然后使用下表中的属性创建虚拟网络。请参阅[在 Azure 管理门户中配置只使用云的虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal)，以了解此过程的详细步骤。
+登录到 Azure 经典门户，然后使用下表中的属性创建虚拟网络。请参阅[在 Azure 经典门户中配置只使用云的虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal)，以了解此过程的详细步骤。
 
 <table>
 <tr><th>VM 属性名称</th><th>值</th><th>备注</th></tr>
@@ -344,7 +344,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 3.	将内部负载平衡器添加到云服务，然后将其附加到“数据”子网
 4.	对于以前创建的每个 VM，可以通过一个已连接到以前创建的内部负载平衡器的负载平衡集添加进行 Thrift 通信的负载平衡终结点
 
-以上过程可以通过 Azure 管理门户来执行；使用 Windows 计算机（如果无法访问 Windows 计算机，则可使用 Azure 上的 VM）；使用以下 PowerShell 脚本自动预配所有 8 个 VM。
+以上过程可以通过 Azure 经典门户来执行；使用 Windows 计算机（如果无法访问 Windows 计算机，则可使用 Azure 上的 VM）；使用以下 PowerShell 脚本自动预配所有 8 个 VM。
 
 **列表 1：适用于预配虚拟机的 PowerShell 脚本**
 		
@@ -463,7 +463,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 将利用已完成的单区域部署，并在安装第二个区域时重复相同的过程。单区域部署和多区域部署的主要区别是 VPN 隧道，设置该隧道是为了进行区域间通信；我们一开始将进行网络安装，并完成 VM 预配和 Cassandra 配置。
 
 ###步骤 1：在第二个区域创建虚拟网络
-登录到 Azure 管理门户，然后使用下表中的属性创建虚拟网络。请参阅[在 Azure 管理门户中配置只使用云的虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal)，以了解此过程的详细步骤。
+登录到 Azure 经典门户，然后使用下表中的属性创建虚拟网络。请参阅[在 Azure 经典门户中配置只使用云的虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal)，以了解此过程的详细步骤。
 
 <table>
 <tr><th>属性名称    </th><th>值	</th><th>备注</th></tr>
@@ -492,7 +492,7 @@ Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映�
 
 
 ###步骤 3：将“本地”网络映射到相应的 VNET
-在 Azure 管理门户中，选择每个 VNET，单击“配置”，选中“连接到本地网络”，然后按照以下详细信息选择本地网络：
+在 Azure 经典门户中，选择每个 VNET，单击“配置”，选中“连接到本地网络”，然后按照以下详细信息选择本地网络：
 
 
 | 虚拟网络 | 本地网络 |
@@ -517,7 +517,7 @@ Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映�
 使用以下 Powershell 脚本更新每个 VPN 网关的 IPSec 密钥 [使用这两个网关的 sake 密钥]：Set-AzureVNetGatewayKey -VNetName hk-vnet-china-east -LocalNetworkSiteName hk-lnet-map-to-china-north -SharedKey D9E76BKK Set-AzureVNetGatewayKey -VNetName hk-vnet-china-north -LocalNetworkSiteName hk-lnet-map-to-china-east -SharedKey D9E76BKK
 
 ###步骤 7：建立 VNET 到 VNET 连接
-在 Azure 管理门户中，使用这两个虚拟网络的“仪表板”菜单建立网关到网关连接。使用底部工具栏中的“连接”菜单项。几分钟后，仪表板会以图形方式显示连接详细信息。
+在 Azure 经典门户中，使用这两个虚拟网络的“仪表板”菜单建立网关到网关连接。使用底部工具栏中的“连接”菜单项。几分钟后，仪表板会以图形方式显示连接详细信息。
 
 ###步骤 8：在区域 #2 中创建虚拟机 
 按照相同步骤创建区域 #1 部署中描述的 Ubuntu 映像，或者将映像 VHD 文件复制到区域 #2 中的 Azure 存储帐户，然后创建该映像。使用该映像，将下列虚拟机创建到新的云服务 hk-c-svc-china-east 中：

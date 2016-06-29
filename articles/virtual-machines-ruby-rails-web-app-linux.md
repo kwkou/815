@@ -29,11 +29,11 @@
 
 首先，使用 Linux 映像创建 Azure VM。
 
-若要创建 VM，可以使用 Azure 管理门户或 Azure 命令行界面 (CLI)。
+若要创建 VM，可以使用 Azure 经典门户或 Azure 命令行界面 (CLI)。
 
-### Azure 管理门户
+### Azure 经典门户
 
-1. 登录到 [Azure 管理门户](http://manage.windowsazure.cn)
+1. 登录到 [Azure 经典门户](http://manage.windowsazure.cn)
 2. 单击“新建”>“计算”>“虚拟机”>“快速创建”。选择 Linux 映像。
 3. 输入密码。
 
@@ -92,7 +92,7 @@
 
 ## 添加终结点
 
-1. 转到 [Azure 管理门户][management-portal]并选择你的 VM。
+1. 转到 [Azure 经典门户][management-portal]并选择你的 VM。
 
 	![虚拟机列表][vmlist]
 

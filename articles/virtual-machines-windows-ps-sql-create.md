@@ -16,6 +16,10 @@
 
 # 使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)
 
+> [AZURE.SELECTOR]
+- [门户](/documentation/articles/virtual-machines-windows-portal-sql-server-provision)
+- [PowerShell](/documentation/articles/virtual-machines-windows-ps-sql-create)
+
 [AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
 
 ## 概述
@@ -34,7 +38,7 @@
 
 ## 配置你的订阅
 
-打开 Windows PowerShell，并通过运行以下 cmdlet 来建立 Azure 帐户的访问权限。随后将出现一个用于输入凭据的登录屏幕。使用登录 Azure 管理门户时所用的相同电子邮件和密码。
+打开 Windows PowerShell，并通过运行以下 cmdlet 来建立 Azure 帐户的访问权限。随后将出现一个用于输入凭据的登录屏幕。使用登录 Azure 门户时所用的相同电子邮件和密码。
 
 	Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 
@@ -241,6 +245,8 @@
 
 虚拟机已创建。请注意，由于为虚拟机磁盘指定的存储帐户是高级存储帐户，因此将创建标准存储帐户用于启动诊断。
 
+现在，你可以在 Azure 门户中查看此计算机，以查看[其公共 IP 地址与完全限定的域名](/documentation/articles/virtual-machines-windows-portal-sql-server-provision#Connect)。
+
 ## 示例脚本
 
 以下脚本包含本教程的完整 PowerShell 脚本。其中假设你已将 Azure 订阅设置为配合使用 **Add-AzureRmAccount** 和 **Select-AzureRmSubscription** 命令。
@@ -302,6 +308,6 @@
     New-AzureRmVM -ResourceGroupName $ResourceGroupName -Location $Location -VM $VirtualMachine
 
 ## 后续步骤
-创建虚拟机后，你可以使用 RDP 和设置连接来连接虚拟机。
+创建虚拟机后，你可以使用 RDP 和设置连接来连接虚拟机。有关详细信息，请参阅 [Connect to a SQL Server Virtual Machine on Azure (Resource Manager)（连接到 Azure 上的 SQL Server 虚拟机 (Resource Manager)）](/documentation/articles/virtual-machines-windows-sql-connect)。
 
 <!---HONumber=Mooncake_0613_2016-->

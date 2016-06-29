@@ -1,6 +1,6 @@
 <properties writer="kathydav" editor="tysonn" manager="timlt" />
 
-1. 登录到 [Azure 管理门户](http://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典门户](http://manage.windowsazure.cn)。
 
 2. 在窗口底部的命令栏上，单击“新建”。
 

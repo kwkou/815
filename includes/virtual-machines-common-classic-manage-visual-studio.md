@@ -2,7 +2,7 @@
 
 ## 在服务器资源管理器中创建 Azure 虚拟机
 
-你可以在 [Azure 管理门户](https://manage.windowsazure.cn/)中创建虚拟机，同时，也可以在“服务器资源管理器”中使用命令创建 Azure 中的虚拟机。例如，可以使用虚拟机在常见的负载平衡式公共终结点后面提供一个前端。
+你可以在 [Azure 经典门户](https://manage.windowsazure.cn/)中创建虚拟机，同时，也可以在“服务器资源管理器”中使用命令创建 Azure 中的虚拟机。例如，可以使用虚拟机在常见的负载平衡式公共终结点后面提供一个前端。
 
 ### 创建新虚拟机
 
@@ -34,7 +34,7 @@
 
 1. 在“虚拟机基本设置”页上，输入计算机名称，然后添加虚拟机的规格（包含大小）以及用户名和密码。完成后，单击“下一步”。
 
-    将通过远程桌面使用新名称和密码来登录计算机，因此最好能记下新名称和密码，以免忘记。在 Visual Studio 中创建 Azure 虚拟机之后，可以在 [Azure 管理门户](https://manage.windowsazure.cn/)中更改其大小和其他设置。
+    将通过远程桌面使用新名称和密码来登录计算机，因此最好能记下新名称和密码，以免忘记。在 Visual Studio 中创建 Azure 虚拟机之后，可以在 [Azure 经典门户](https://manage.windowsazure.cn/)中更改其大小和其他设置。
 
     >[AZURE.NOTE] 如果你选择大一点的虚拟机，将会产生额外的费用。详情请参阅[虚拟机价格详情](/home/features/virtual-machines/#price)
 
@@ -46,7 +46,7 @@
 
 1. 如果你希望虚拟机属于可用性集（也是可选操作），请选中“指定可用性集”复选框，然后在下拉列表框中选择可用性集。完成后，选择“下一步”按钮。
 
-    将虚拟机添加到可用性集可帮助确保在出现网络故障、本地磁盘硬件故障以及任何计划内停机时，应用程序仍然可用。需要使用 [Azure 管理门户](https://manage.windowsazure.cn/)来创建虚拟网络、子网和可用性集。有关详细信息，请参阅管理虚拟机的可用性：[Windows](/documentation/articles/virtual-machines-windows-manage-availability/) 或者 [Linux](/documentation/articles/virtual-machines-linux-manage-availability/)。
+    将虚拟机添加到可用性集可帮助确保在出现网络故障、本地磁盘硬件故障以及任何计划内停机时，应用程序仍然可用。需要使用 [Azure 经典门户](https://manage.windowsazure.cn/)来创建虚拟网络、子网和可用性集。有关详细信息，请参阅管理虚拟机的可用性：[Windows](/documentation/articles/virtual-machines-windows-manage-availability/) 或者 [Linux](/documentation/articles/virtual-machines-linux-manage-availability/)。
 
 1. 在“终结点”页上，指定要提供给虚拟机用户使用的公共终结点。例如，除了默认启用的远程桌面和 PowerShell 终结点以外，可以选择启用 HTTP（端口 80）。若要添加终结点，请在“端口名称”下拉列表框中选择一个终结点，然后选择“添加”按钮。若要删除终结点，请选择终结点列表中名称旁边的红色 **X**。
 
@@ -136,7 +136,7 @@
 
 ### 删除检查点
 
-1. 转到 [Azure 管理门户](https://manage.windowsazure.cn/)。
+1. 转到 [Azure 经典门户](https://manage.windowsazure.cn/)。
 
 1. 在虚拟机配置页上，选择页面顶部的“映像”选项卡。
 
@@ -150,6 +150,6 @@
 
 ## 后续步骤
 
-若要了解有关创建虚拟机的详细信息，请参阅 [Create a Virtual Machine Running Linux（创建运行 Linux 的虚拟机）](/documentation/articles/virtual-machines-linux-quick-create-cli)和 [Create a virtual machine running Windows in the Azure preview portal（在 Azure 管理门户中创建运行 Windows 的虚拟机）](/documentation/articles/virtual-machines-windows-classic-tutorial)。
+若要了解有关创建虚拟机的详细信息，请参阅 [Create a Virtual Machine Running Linux（创建运行 Linux 的虚拟机）](/documentation/articles/virtual-machines-linux-quick-create-cli)和 [Create a virtual machine running Windows in the Azure preview portal（在 Azure 预览门户中创建运行 Windows 的虚拟机）](/documentation/articles/virtual-machines-windows-hero-tutorial)。
 
 <!---HONumber=Mooncake_0425_2016-->
