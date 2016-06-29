@@ -21,7 +21,7 @@
 
 
 ##如何对 Azure 使用 Docker VM 扩展
-若要对 Azure 使用 Docker VM，你必须安装 0.8.6 版本以上的 [Azure 命令行界面 ](https://github.com/Azure/azure-sdk-tools-xplat)(Azure CLI) （截至本文编写时的最新版本为 0.8.10）。可以在 Mac、Linux 和 Windows 上安装 Azure CLI。
+若要对 Azure 使用 Docker VM，你必须安装 0.8.6 版本以上的 [Azure 命令行界面 ](https://github.com/Azure/azure-sdk-tools-xplat)(Azure CLI) （截至本文编写时的最新版本为 0.10.0）。可以在 Mac、Linux 和 Windows 上安装 Azure CLI。
 
 
 在 Azure 上使用 Docker 的整个过程相当简单：
@@ -35,7 +35,7 @@
 
 若要安装和配置 Azure CLI，请参阅[如何安装 Azure 命令行界面](/documentation/articles/xplat-cli-install)。若要确认安装，请在命令提示符下键入 `azure`，片刻之后，你就会看到 Azure CLI ASCII 图文，其中列出了可用的基本命令。如果安装正常，你应该可以键入 `azure help vm`，并看到列出的其中一个命令是“docker”。
 
-> [AZURE.NOTE] Docker 提供适用于 Windows 的安装程序 [Boot2Docker](https://docs.docker.com/installation/windows/)，你也可以使用该安装程序自动创建可以配合用作 docker 主机的 Azure VM 使用的 docker 客户端。
+> [AZURE.NOTE] Docker 提供适用于 Windows 的工具 [Docker Machine](https://docs.docker.com/installation/windows/)，你也可以使用该安装程序自动创建可以配合用作 docker 主机的 Azure VM 使用的 docker 客户端。
 
 ### 将 Azure CLI 连接到你的 Azure 帐户
 在使用 Azure CLI 之前，必须将 Azure 帐户凭据与平台上的 Azure CLI 相关联。[如何连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)部分说明了如何下载和导入 **.publishsettings** 文件，或者将 Azure CLI 与组织 ID 相关联。在Bash或终端会话下键入一下Azure CLI命令来链接到Azure账户,并将其中的<username\>和<password\>分别替换为您自己的用户名和密码。
@@ -63,10 +63,10 @@
 
 `azure vm image list | grep Ubuntu-14_04`
 
-选择其中一个映像名称（例如 `b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB`），然后使用以下命令创建使用该映像的新 VM。
+选择其中一个映像名称（例如 `b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_3-LTS-amd64-server-20160516-en-us-30GB`），然后使用以下命令创建使用该映像的新 VM。
 
 	
-	azure vm docker create -e 22 -l "China North" <vm-cloudservice name> "b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB" <username> <password>
+	azure vm docker create -e 22 -l "China North" <vm-cloudservice name> "b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_3-LTS-amd64-server-20160516-en-us-30GB" <username> <password>
 	
 
 其中：
@@ -150,7 +150,9 @@
 
 ## 后续步骤
 
-现在，你可以转到 [Docker 用户指南]并开始使用你的 Docker VM。<!-- 若要在新门户中创建启用 Docker 的 VM，请参阅[如何在门户中使用 Docker VM 扩展]。 -->
+* 现在，你可以转到 [Docker 用户指南]并开始使用你的 Docker VM。
+
+* Azure Docker VM 扩展同样支持 Docker Compose，可以使用声明 YAML 文件来让一个 developer-modeled 应用程序跨越任意环境，并生成一致的部署。请参阅[开始使用 Docker 和 Compose，在 Azure 虚拟机上定义和运行多容器应用程序]
 
 <!--Anchors-->
 [Subheading 1]: #subheading-1
@@ -168,8 +170,10 @@
 [Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-hero-tutorial
 [Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
 [Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
+[如何在门户中使用 Docker VM 扩展]: /documentation/articles/virtual-machines-linux-classic-portal-use-docker
 
 [Docker 用户指南]: https://docs.docker.com/userguide/
  
+[开始使用 Docker 和 Compose，在 Azure 虚拟机上定义和运行多容器应用程序]: /documentation/articles/virtual-machines-linux-docker-compose-quickstart
 
 <!---HONumber=Mooncake_0215_2016-->
