@@ -50,6 +50,10 @@
 
 若要登录到 Linux 服务器，最简单的方法是使用 SSH 公钥和私钥，但比起使用密码登录 Azure 中的 Linux 或 BSD VM，使用[公钥加密](https://en.wikipedia.org/wiki/Public-key_cryptography)安全得多，因为密码非常容易遭到暴力破解。公钥可与任何人共享；但只有你（或本地安全基础结构）才拥有你的私钥。创建的 SSH 私钥将通过[安全密码](https://www.xkcd.com/936/)进行保护，此密码只是用于访问 SSH 私钥，并且**不是**用户帐户密码。任何拥有私钥但没有密码的人都可以使用安装的公钥来访问任何服务器。如果没有密码，就不能使用私钥。
 
+
+本文将创建 *ssh-rsa* 格式的密钥文件，因为它们是 Resource Manager 上的部署建议使用的文件，并且也是在[门户](https://portal.azure.cn)上进行经典部署和资源管理员部署时所要使用的文件。
+
+
 ## 创建 SSH 密钥
 
 Azure 需要至少 2048 位采用 ssh-rsa 格式的公钥和私钥。为了创建密钥对，我们将使用 `ssh-keygen`（询问一系列问题），然后编写私钥和匹配的公钥。在创建 Azure VM 时传递公钥内容，此内容将复制到 Linux VM。当你登录时，此内容将与安全存储在本地的私钥配合使用，以便对你进行身份验证。
@@ -195,6 +199,7 @@ Azure 需要至少 2048 位采用 ssh-rsa 格式的公钥和私钥。为了创�
 下一步是使用新 SSH 公钥创建 Azure Linux VM。使用 SSH 公钥作为登录名创建的 Azure VM 受到的保护优于使用默认登录方法密码创建的 Azure VM。默认情况下，使用 SSH 密钥作为登录名的 Azure VM 配置为禁用密码登录，以避免暴力破解企图。
 
 - [使用 Azure 模板创建安全 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template)
+- [使用 Azure 门户创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal)
 - [使用 Azure CLI 创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli)
 
 <!---HONumber=Mooncake_0620_2016-->

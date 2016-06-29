@@ -1,6 +1,6 @@
 <properties
 	pageTitle="在经典 Linux 虚拟机上设置终结点 | Azure"
-	description="了解如何在 Azure 管理门户中设置终结点以允许与 Azure 中的 Linux 虚拟机通信。"
+	description="了解如何在 Azure 经典门户中设置终结点以允许与 Azure 中的 Linux 虚拟机通信。"
 	services="virtual-machines-linux"
 	documentationCenter=""
 	authors="cynthn"
@@ -19,7 +19,7 @@
 
 > [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
-在 Azure 管理门户中创建 Linux 虚拟机时，通常会为你自动创建用于安全外壳 (SSH) 的终结点，具体取决于你选择的操作系统。你可以在创建虚拟机时或之后根据需要配置其他终结点。
+在 Azure 经典门户中创建 Linux 虚拟机时，通常会为你自动创建用于安全外壳 (SSH) 的终结点，具体取决于你选择的操作系统。你可以在创建虚拟机时或之后根据需要配置其他终结点。
 
 [AZURE.INCLUDE [virtual-machines-common-classic-setup-endpoints](../includes/virtual-machines-common-classic-setup-endpoints.md)]
 

@@ -30,6 +30,17 @@
 
 ### Azure 门户
 
+对于使用经典部署模型创建的虚拟机，可以使用 [Azure 门户](https://portal.azure.cn)来重置远程桌面服务。单击“浏览”>“虚拟机(经典)”> 你的 Windows 虚拟机 >“重置远程...”。将显示以下页。
+
+
+![重置 RDP 配置页](./media/virtual-machines-windows-reset-rdp/Portal-RDP-Reset-Windows.png)
+
+还可以尝试重置本地管理员帐户的名称和密码。单击“浏览”>“虚拟机(经典)”> 你的 Windows 虚拟机 >“所有设置”>“重置密码”。将显示以下页。
+
+![密码重置页](./media/virtual-machines-windows-reset-rdp/Portal-PW-Reset-Windows.png)
+
+输入新用户名和密码，然后单击“保存”。
+
 ### VMAccess 扩展和 PowerShell
 
 确保在虚拟机上安装 VM 代理。只要 VM 代理可用，就不需要事先安装 VMAccess 扩展。使用以下命令验证是否已在虚拟机上安装 VM 代理。（分别将“myCloudService”和“myVM”替换为云服务和 VM 的名称。若要了解这些信息，可运行不带任何参数的 `Get-AzureVM`。）
@@ -73,6 +84,9 @@ b. `Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Serv
 此命令将 fDenyTSConnections 注册表值设为 0，以启用远程桌面连接。
 
 ## Resource Manager 部署模型中的 Windows VM
+
+Azure 门户目前不支持重置使用 Azure Resource Manager 创建的虚拟机的远程访问或登录凭据。
+
 
 ### VMAccess 扩展和 PowerShell
 

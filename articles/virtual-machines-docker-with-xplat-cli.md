@@ -152,7 +152,7 @@
 
 * 现在，你可以转到 [Docker 用户指南]并开始使用你的 Docker VM。
 
-* Azure Docker VM 扩展同样支持 Docker Compose，可以使用声明 YAML 文件来让一个 developer-modeled 应用程序跨越任意环境，并生成一致的部署。请参阅[开始使用 Docker 和 Compose，在 Azure 虚拟机上定义和运行多容器应用程序]
+* Azure Docker VM 扩展同样支持 Docker Compose，可以使用声明 YAML 文件来让一个 developer-modeled 应用程序跨越任意环境，并生成一致的部署。请参阅[开始使用 Docker 和 Compose，在 Azure 虚拟机上定义和运行多容器应用程序]()
 
 <!--Anchors-->
 [Subheading 1]: #subheading-1

@@ -17,8 +17,7 @@
 
 本文介绍如何使用 Azure 快速入门模板或（可选）Azure PowerShell 部署脚本将 Microsoft HPC Pack 群集部署在 Azure 基础结构服务 (IaaS) 上。你将使用设计为使用 HPC Pack 运行 Microsoft Excel 或面向服务的体系结构 (SOA) 工作负荷的 Azure 库 VM 映像。你可以使用群集从本地客户端计算机运行简单的 Excel HPC 和 SOA 服务。Excel HPC 服务提供 Excel 工作簿卸载和 Excel 用户定义的函数或 UDF。
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型。
-
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 下图在较高级别显示了将创建的 HPC Pack 群集。
 
@@ -36,6 +35,47 @@
 
 
 ## 步骤 1。在 Azure 中设置 HPC Pack 群集
+
+我们将向你介绍两种设置群集的方法：第一种，使用 Azure 快速入门模板和 Azure 门户；第二种，使用 Azure PowerShell 部署脚本。
+
+
+### 使用快速入门模板
+使用 Azure 快速入门模板可在 Azure 门户中快速轻松地部署 HPC Pack 群集。当你在预览门户中打开该模板时，将显示简单的 UI，你可以在其中输入群集的设置。下面是相关步骤。
+
+>[AZURE.TIP]如果需要，你可以使用 [Azure 应用商店模板](https://portal.azure.cn/?feature.relex=*%2CHubsExtension#create/microsofthpc.newclusterexcelcn)来专门为 Excel 工作负荷创建类似的群集。步骤与下文中的内容稍有不同。
+
+1.  访问 [GitHub 上的“创建 HPC 群集”模板页](https://github.com/Azure/azure-quickstart-templates/tree/master/create-hpc-cluster)。如果需要，查看有关该模板和源代码的信息。
+
+2.  单击“部署到 Azure”以启动使用 Azure 门户中的模板的部署。
+
+    ![将模板部署到 Azure][github]
+
+3.  在门户中，按照以下步骤输入 HPC 群集模板的参数。
+
+    a.在“参数”页上，输入模板参数的值。（单击每个设置旁边的图标可获得帮助信息。） 下面的屏幕中将显示示例值。本示例将在 “hpc.local” 域中创建名为 “hpc01” 的新 HPC Pack 群集，该群集由 1 个头节点和 2 个计算节点组成。将从包括 Microsoft Excel 的 HPC Pack VM 映像创建计算节点。
+
+    ![输入参数][parameters]
+
+    >[AZURE.NOTE]将在 Windows Server 2012 R2 上从 HPC Pack 2012 R2 的最新应用商店映像自动创建头节点 VM。当前，该映像基于 HPC Pack 2012 R2 Update 3。
+    ><P>将从所选计算节点系列的最新映像创建计算节点 VM。为包含 Microsoft Excel Professional Plus 2013 的评估版本的最新 HPC Pack 计算节点映像选择 **ComputeNodeWithExcel** 选项。如果要为常规 SOA 会话或 Excel UDF 卸载部署群集，请选择 **ComputeNode** 选项（不会安装 Excel）。
+
+    b.选择订阅。
+
+    c.为群集创建新资源组，如 *hpc01RG*。
+
+    d.选择资源组的位置，例如“中国北部”。
+
+    e.在“法律条款”页上，查看条款。如果你同意，请单击“创建”。在完成为模板设置值后，单击“创建”。
+
+4.  在部署完成时（通常需要花费大约 30 分钟），从群集头节点导出群集证书文件。在稍后的步骤中，将在客户端计算机上导入此公用证书以为安全 HTTP 绑定提供服务器端身份验证。
+
+    a.从 Azure 门户通过远程桌面连接到头节点。
+
+     ![连接到头节点][connect]
+
+    b.在证书管理器中使用标准过程导出不带私钥的头节点证书（位于 Cert:\\LocalMachine\\My 下）。在此示例中，导出 “CN = hpc01.chinaeast.chinacloudapp.cn”。
+
+    ![导出证书][cert]
 
 ### 使用 HPC Pack IaaS 部署脚本
 

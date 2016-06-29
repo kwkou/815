@@ -142,7 +142,7 @@
 
         New-AzureRmVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-    你应会在 PowerShell 窗口中看到成功状态：
+    你应会在 Azure 门户中看到资源组及其所有资源，并会在 PowerShell 窗口中看到成功状态：
 
         RequestId  IsSuccessStatusCode  StatusCode  ReasonPhrase
         ---------  -------------------  ----------  ------------
@@ -151,6 +151,6 @@
 ## 后续步骤
 
 - 查看 [Manage virtual machines using Azure Resource Manager and PowerShell（使用 Azure Resource Manager 和 PowerShell 管理虚拟机）](/documentation/articles/virtual-machines-windows-ps-manage)，了解如何管理刚创建的虚拟机。
-
+- 参考 [Create a Windows virtual machine with a Resource Manager template（使用 Resource Manager 模板创建 Windows 虚拟机）](/documentation/articles/virtual-machines-windows-ps-template)中的信息，通过模板创建虚拟机
 
 <!---HONumber=Mooncake_0620_2016-->

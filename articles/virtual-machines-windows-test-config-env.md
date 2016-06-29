@@ -250,7 +250,7 @@ APP1 提供 Web 服务和文件共享服务。
 
 CLIENT1 在 Contoso Intranet 中充当典型笔记本电脑、平板电脑或台式计算机。
 
-> [AZURE.NOTE] 以下命令集创建运行 Windows Server 2012 R2 Datacenter 的 CLIENT1，所有类型的 Azure 订阅都可以执行此操作。如果你有一个基于 MSDN 的 Azure 订阅，则可使用 [Azure 门户](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)创建运行 Windows 10、Windows 8 或 Windows 7的 CLIENT1。
+> [AZURE.NOTE] 以下命令集创建运行 Windows Server 2012 R2 Datacenter 的 CLIENT1，所有类型的 Azure 订阅都可以执行此操作。如果你有一个基于 MSDN 的 Azure 订阅，则可使用 [Azure 门户](/documentation/articles/virtual-machines-windows-hero-tutorial)创建运行 Windows 10、Windows 8 或 Windows 7的 CLIENT1。
 
 首先，填写资源组的名称、Azure 位置和存储帐户名称，并在本地计算机上的 Azure PowerShell 命令提示符下运行这些命令以为 CLIENT1 创建 Azure 虚拟机。
 
@@ -304,7 +304,8 @@ Azure 中的基本配置现已可用于应用程序开发和测试或其他测�
 
 ## 后续步骤
 
-- 建立[模拟混合云测试环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim).
+- 使用 [Azure 门户](/documentation/articles/virtual-machines-windows-hero-tutorial)添加新虚拟机。
+- 构建[模拟的混合云测试环境](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim)。
 
 
 ## <a id="costs"></a>将 Azure 中的测试环境虚拟机的成本降至最低

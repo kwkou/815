@@ -39,7 +39,7 @@
 
 按照[此处][portal-vm-linux]提供的说明可创建 *Ubuntu* 分发的虚拟机。本教程使用 Ubuntu Server 14.04 LTS。我们将假定用户名为 *azureuser*。
 
-此步骤同时适用于 Linux 和 Windows VM。稍后我们将配置 Jupyter 以在端口 9999 上运行其 notebook 服务器。若要使此端口向公众提供的情况下，我们必须在 Azure 管理门户中创建一个终结点。此终结点打开 Azure 防火墙中的一个端口，并将公用端口 （HTTPS，443） 映射到虚拟机 (9999) 上的专用端口。
+此步骤同时适用于 Linux 和 Windows VM。稍后我们将配置 Jupyter 以在端口 9999 上运行其 notebook 服务器。若要使此端口向公众提供的情况下，我们必须在 Azure 经典门户中创建一个终结点。此终结点打开 Azure 防火墙中的一个端口，并将公用端口 （HTTPS，443） 映射到虚拟机 (9999) 上的专用端口。
 
 若要创建一个终结点，请转到 VM 仪表板单击"终结点"，然后"添加终结点"，创建新的终结点 （在此示例中称为 ipython_nb）。对于协议，443 （对于公共端口和专用端口 9999 选取 TCP:
 
@@ -197,7 +197,7 @@ Jupyter Notebook 为交互访问 Azure 上的 Python 生态系统的功能提供
 
 有关详细信息，请参阅 [Python 开发人员中心](/develop/python/)。
 
-[portal-vm-linux]: /documentation/articles/virtual-machines-linux-portal-create/
+[portal-vm-linux]: /documentation/articles/virtual-machines-linux-quick-create-portal/
 [存储库]: https://github.com/ipython/ipython
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 

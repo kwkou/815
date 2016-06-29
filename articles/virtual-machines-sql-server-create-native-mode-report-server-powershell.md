@@ -25,7 +25,7 @@
 
 - “Azure 订阅”：验证你的 Azure 订阅中可用的核心数。如果你创建的建议 VM 大小为 **A3**，你需要 **4** 个可用核心。如果你使用的 VM 大小为 **A2**，你需要 **2** 个可用核心。
 	
-	- 若要验证你的订阅的核心限制，在 Azure 管理门户中，单击右侧窗格中的“设置”，然后单击顶部菜单中的“使用情况”。
+	- 若要验证你的订阅的核心限制，在 Azure 经典门户中，单击右侧窗格中的“设置”，然后单击顶部菜单中的“使用情况”。
 	
 	- 若要增加核心配额，请联系 [Azure 支持](/support/contact/)。有关 VM 大小信息，请参阅 [Azure 的虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)。
 
@@ -37,7 +37,7 @@
 
 ## 步骤 1：设置 Azure 虚拟机
 
-1. 浏览到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 浏览到 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 1. 单击左侧窗格中的“虚拟机”。
 
@@ -677,7 +677,7 @@
 
 ## 如果使用的不是 VM，将成本降到最低
 
->[AZURE.NOTE]为了在不使用 Azure 虚拟机时尽可能减少费用，可从 Azure 门户关闭 VM。如果使用 VM 内的 Windows 电源选项来关闭 VM，仍将为 VM 支付相同的金额。若要减少费用，你需要在 Azure 管理门户中关闭 VM。如果你不再需要该 VM，请记住删除 VM 和关联的 .vhd 文件以避免产生存储费用。有关详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/#price)中的常见问题部分。
+>[AZURE.NOTE]为了在不使用 Azure 虚拟机时尽可能减少费用，可从 Azure 门户关闭 VM。如果使用 VM 内的 Windows 电源选项来关闭 VM，仍将为 VM 支付相同的金额。若要减少费用，你需要在 Azure 经典门户中关闭 VM。如果你不再需要该 VM，请记住删除 VM 和关联的 .vhd 文件以避免产生存储费用。有关详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/#price)中的常见问题部分。
 
 ## 更多信息
 

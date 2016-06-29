@@ -34,11 +34,13 @@
 
 ### 上载 Windows Server VHD
 
-若要在 Azure 中部署 Windows Server VM，必须先创建包含基本 Windows Server 版本的 VHD。必须先通过 Sysprep 妥善准备此 VHD，再将其上载到 Azure。准备好 VHD 之后，即可使用 `Add-AzureRmVhd` cmdlet 将 VHD 上载到 Azure 存储帐户，如下所示：
+若要在 Azure 中部署 Windows Server VM，必须先创建包含基本 Windows Server 版本的 VHD。必须先通过 Sysprep 妥善准备此 VHD，再将其上载到 Azure。请[详细了解 VHD 要求和 Sysprep 进程](/documentation/articles/virtual-machines-windows-upload-image)。准备好 VHD 之后，即可使用 `Add-AzureRmVhd` cmdlet 将 VHD 上载到 Azure 存储帐户，如下所示：
 
 ```
 Add-AzureRmVhd -ResourceGroupName MyResourceGroup -Destination "https://mystorageaccount.blob.core.chinacloudapi.cn/vhds/myvhd.vhd" -LocalFilePath 'C:\Path\To\myvhd.vhd'
 ```
+
+你还可以进一步了解[将 VHD 上载到 Azure 的过程](/documentation/articles/virtual-machines-windows-upload-image#upload-the-vm-image-to-your-storage-account)。
 
 > [AZURE.TIP] 本文重点说明 Windows Server VM 的部署，不过你也可以使用相同的方式来部署 Windows 客户端 VM。在以下示例中，请将 `Server` 相应替换为 `Client`。
 

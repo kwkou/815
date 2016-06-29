@@ -2,7 +2,8 @@
 	pageTitle="Configuring Oracle GoldenGate in VMs | Azure"
 	description="Step through a tutorial for setting up and implementing Oracle GoldenGate on Azure Windows Server VMs for high availability and disaster recovery."
 	services="virtual-machines-windows"
-	authors="bbenz"
+	authors="rickstercdn"
+	manager="timlt"
 	documentationCenter=""
 	tags="azure-service-management"/>
 <tags
@@ -27,7 +28,7 @@ Oracle GoldenGate 包含以下主要组件：Extract、Data Pump、Replicat、Tr
 
 - 你已使用 Windows Server 上的 Oracle 企业版映像中提供的平台在 Azure 中创建了两个虚拟机 (VM)。有关信息，请参阅 [Azure 虚拟机](/documentation/services/virtual-machines/)。确保这些虚拟机位于[相同的云服务](/documentation/articles/virtual-machines-windows-load-balance)和相同的[虚拟网络](/documentation/services/networking/)中，以确保它们可以通过持久性专用 IP 地址相互访问。
 
-- 已在 Azure 管理门户中将站点 A 的虚拟机名称设置为“MachineGG1”，将站点 B 的虚拟机名称设置为“MachineGG2”。
+- 已在 Azure 经典门户中将站点 A 的虚拟机名称设置为“MachineGG1”，将站点 B 的虚拟机名称设置为“MachineGG2”。
 
 - 已在站点 A 和站点 B 上分别创建测试数据库“TestGG1”和“TestGG2”。
 
@@ -86,7 +87,7 @@ Oracle GoldenGate 包含以下主要组件：Extract、Data Pump、Replicat、Tr
 ##1.在站点 A 和站点 B 上安装数据库
 本部分介绍如何在站点 A 和站点 B 上执行数据库必备组件安装。你必须在两个站点上执行本部分所述的所有步骤：站点 A 和站点 B。
 
-首先，通过管理门户与站点 A 和站点 B 建立远程桌面连接。打开 Windows 命令提示符，然后创建 Oracle GoldenGate 安装文件的主目录：
+首先，通过经典门户与站点 A 和站点 B 建立远程桌面连接。打开 Windows 命令提示符，然后创建 Oracle GoldenGate 安装文件的主目录：
 
 	mkdir C:\OracleGG
 
@@ -276,7 +277,7 @@ Oracle GoldenGate Manager 执行许多功能，例如，启动其他 GoldenGate 
 
 ###在站点 A 上创建 Extract 和 Data Pump 进程
 
-需要在站点 A 和站点 B 上创建 Extract 和 Data Pump 进程。通过管理门户与站点 A 和站点 B 建立远程桌面连接。打开 GGSCI 命令解释器窗口。在站点 A 上运行以下命令：
+需要在站点 A 和站点 B 上创建 Extract 和 Data Pump 进程。通过经典门户与站点 A 和站点 B 建立远程桌面连接。打开 GGSCI 命令解释器窗口。在站点 A 上运行以下命令：
 
 	GGSCI (MachineGG1) 14> add extract ext1 tranlog begin now
 	EXTRACT added.
