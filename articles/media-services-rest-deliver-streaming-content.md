@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/03/2016"  
-	wacn.date="03/28/2016"/>
+ 	ms.date="04/18/2016"  
+	wacn.date="06/27/2016"/>
 
 
 #如何：传送流内容
@@ -179,4 +179,4 @@ URL：**路径** + 资产文件 mp4 名称
 ##另请参阅
 
 [配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy)
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0620_2016-->

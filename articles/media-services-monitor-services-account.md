@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/03/2016"
-	wacn.date="03/21/2016"/>
+	ms.date="04/18/2016" 
+	wacn.date="06/27/2016"/>
 
 
 
@@ -59,5 +59,4 @@ Azure 媒体服务仪表板显示了可用于管理媒体服务帐户的使用�
 [storage_options_scoped]: ./media/media-services-monitor-services-account/storagemonitoringoptions_scoped.png
 
  
-
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0620_2016-->

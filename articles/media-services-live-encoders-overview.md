@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="配置本地实时编码器" 
+	pageTitle="如何在使用 Azure 媒体服务时配置本地编码器以创建多比特率流" 
 	description="本主题列出的本地实时编码器可用于捕获实时事件，并将单比特率实时流发送到 AMS 通道（已启用实时编码）以供进一步处理。本主题列出了演示如何配置所列编码器的教程链接。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -9,12 +9,11 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/03/2016"  
-	wacn.date="03/21/2016"/>
+	ms.date="05/05/2016"
+	wacn.date="06/27/2016"/>
 
 
-
-#配置本地实时编码器
+#如何在使用 Azure 媒体服务时配置本地编码器以创建多比特率流
 
 本主题列出的本地实时编码器可用于捕获实时事件，并将单比特率实时流发送到 AMS 通道（已启用实时编码）以供进一步处理。本主题还列出了演示如何配置所列编码器的教程链接。
 
@@ -38,6 +37,5 @@
 
 ## 另请参阅
 
-[使用能够通过 Azure 媒体服务执行实时编码的通道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
-
-<!---HONumber=Mooncake_0314_2016-->
+[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+<!---HONumber=Mooncake_0620_2016-->

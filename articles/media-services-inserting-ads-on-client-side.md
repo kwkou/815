@@ -9,15 +9,15 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/03/2016"
-	wacn.date="03/17/2016"/>
+	ms.date="04/18/2016"
+	wacn.date="06/27/2016"/>
 
 
 #在客户端上插入广告
 
 此主题涵盖有关如何在客户端上插入多种类型的广告的信息。
 
-有关在实时流式处理视频中隐藏式字幕和广告支持的详细信息，请参阅[支持的隐藏式字幕和广告插入标准](/documentation/articles/media-services-manage-channels-overview#cc_and_ads)。
+有关在实时流式处理视频中隐藏式字幕和广告支持的详细信息，请参阅[支持的隐藏式字幕和广告插入标准](/documentation/articles/media-services-live-streaming-with-onprem-encoders#cc_and_ads)。
 
 >[AZURE.NOTE] Azure Media Player 目前不支持广告。
 
@@ -618,7 +618,9 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
         [self logFrameworkError];
     }
          
-   以下示例演示如何安排早期绑定 VAST 广告。
+
+以下示例演示如何安排早期绑定 VAST 广告。
+
     //Example:4 Schedule an early binding VAST ad
     //Download the VAST file
     if (![framework.adResolver downloadManifest:&manifest withURL:[NSURL URLWithString:@"http://portalvhdsq3m25bf47d15c.blob.core.chinacloudapi.cn/vast/PlayerTestVAST.xml"]])
@@ -626,7 +628,8 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
         [self logFrameworkError];
     }
     else
-        { adLinearTime.startTime = 7;
+    {
+        adLinearTime.startTime = 7;
         adLinearTime.duration = 0;
         
 		// Create AdInfo instance
@@ -809,4 +812,4 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
 
 [开发视频播放器应用程序](/documentation/articles/media-services-develop-video-players)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0620_2016-->

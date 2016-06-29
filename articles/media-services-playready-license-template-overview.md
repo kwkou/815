@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/03/2016"  
-	wacn.date="03/21/2016"/>
+ 	ms.date="04/18/2016"  
+	wacn.date="06/27/2016"/>
 
 #媒体服务 PlayReady 许可证模板概述
 
@@ -297,4 +297,6 @@ XML 符合 PlayReady 许可证模板 XML 架构部分中定义的 PlayReady 许�
 	  <xs:element name="ScmsRestriction" nillable="true" type="tns:ScmsRestriction" />
 	</xs:schema>
 
-<!---HONumber=Mooncake_0314_2016-->
+
+
+<!---HONumber=Mooncake_0620_2016-->

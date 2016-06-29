@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="04/07/2016" 
-	wacn.date="05/16/2016"/>
+ 	ms.date="05/03/2016" 
+	wacn.date="06/27/2016"/>
 
 
 #使用 PlayReady 和/或 Widevine DRM 动态通用加密
@@ -308,33 +308,30 @@ Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://www.micro
 		            return inputAsset;
 		        }
 		
-		
-		        static public IAsset EncodeToAdaptiveBitrateMP4Set(IAsset inputAsset)
-		        {
-		            var encodingPreset = "H264 Adaptive Bitrate MP4 Set 720p";
-		
-		            IJob job = _context.Jobs.Create(String.Format("Encoding into Mp4 {0} to {1}",
-		                                    inputAsset.Name,
-		                                    encodingPreset));
-		
-		            var mediaProcessors =
-		                _context.MediaProcessors.Where(p => p.Name.Contains("Media Encoder")).ToList();
-		
-		            var latestMediaProcessor =
-		                mediaProcessors.OrderBy(mp => new Version(mp.Version)).LastOrDefault();
-		
-		
-		
-		            ITask encodeTask = job.Tasks.AddNew("Encoding", latestMediaProcessor, encodingPreset, TaskOptions.None);
-		            encodeTask.InputAssets.Add(inputAsset);
-		            encodeTask.OutputAssets.AddNew(String.Format("{0} as {1}", inputAsset.Name, encodingPreset), AssetCreationOptions.StorageEncrypted);
-		
-		            job.StateChanged += new EventHandler<JobStateChangedEventArgs>(JobStateChanged);
-		            job.Submit();
-		            job.GetExecutionProgressTask(CancellationToken.None).Wait();
-		
-		            return job.OutputMediaAssets[0];
-		        }
+			    static public IAsset EncodeToAdaptiveBitrateMP4Set(IAsset inputAsset)
+			    {
+			        var encodingPreset = "H264 Multiple Bitrate 720p";
+			
+			        IJob job = _context.Jobs.Create(String.Format("Encoding into Mp4 {0} to {1}",
+			                                inputAsset.Name,
+			                                encodingPreset));
+			
+			        var mediaProcessors =
+			            _context.MediaProcessors.Where(p => p.Name.Contains("Media Encoder Standard")).ToList();
+			
+			        var latestMediaProcessor =
+			            mediaProcessors.OrderBy(mp => new Version(mp.Version)).LastOrDefault();
+			
+			        ITask encodeTask = job.Tasks.AddNew("Encoding", latestMediaProcessor, encodingPreset, TaskOptions.None);
+			        encodeTask.InputAssets.Add(inputAsset);
+			        encodeTask.OutputAssets.AddNew(String.Format("{0} as {1}", inputAsset.Name, encodingPreset), 	AssetCreationOptions.StorageEncrypted);
+			
+			        job.StateChanged += new EventHandler<JobStateChangedEventArgs>(JobStateChanged);
+			        job.Submit();
+			        job.GetExecutionProgressTask(CancellationToken.None).Wait();
+			
+			        return job.OutputMediaAssets[0];
+			    }
 		
 		
 		        static public IContentKey CreateCommonTypeContentKey(IAsset asset)
@@ -538,7 +535,7 @@ Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://www.micro
 			        // For example: https://amsaccount1.keydelivery.mediaservices.chinacloudapi.cn/Widevine/?KID=268a6dcb-18c8-4648-8c95-f46429e4927c.  
 			        // The WidevineBaseLicenseAcquisitionUrl (used below) also tells Dynamaic Encryption 
 			        // to append /? KID =< keyId > to the end of the url when creating the manifest.
-			        // As a result Widevine license aquisition URL will have KID appended twice, 
+			        // As a result Widevine license acquisition URL will have KID appended twice, 
 			        // so we need to remove the KID that in the URL when we call GetKeyDeliveryUrl.
 			
 		            Uri widevineUrl = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.Widevine);
@@ -628,4 +625,4 @@ Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://www.micro
 [使用 AMS 配置 Widevine 打包](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
 
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0620_2016-->

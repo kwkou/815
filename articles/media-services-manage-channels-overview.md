@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用从本地编码器接收多比特率实时流的频道" 
+	pageTitle="使用本地编码器执行实时流式处理以创建多比特率流" 
 	description="本主题介绍如何设置接收来自本地编码器的多比特的实时流的频道。然后，该流可以使用以下自适应流式处理协议之一通过一个或多个流式处理终结点传递给客户端播放应用程序：HLS、平滑流、MPEG DASH、HDS。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -9,16 +9,16 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/03/2016"  
-	wacn.date="03/21/2016"/>
+	ms.date="05/03/2016"
+	wacn.date="06/27/2016"/>
 
-#使用从本地编码器接收多比特率实时流的频道
+#使用本地编码器执行实时流式处理以创建多比特率流
 
 ##概述
 
 在 Azure 媒体服务中，**频道**表示用于处理实时流内容的管道。**频道**通过以下方式接收实时输入流：
 
-- 本地实时编码器将多比特率 **RTMP** 或 **平滑流**（分片 MP4）发送到频道。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Live、Telestream Wirecast 和 Tricaster 转码器。引入的流将会直接通过**频道**，而不会经过任何进一步的处理。你的实时编码器可以 lso 发送单比特率流，但不是建议使用。收到请求时，媒体服务会将该流传递给客户。
+- 本地实时编码器将多比特率 **RTMP** 或 **平滑流**（分片 MP4）发送到频道。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Live、Telestream Wirecast 和 Tricaster 转码器。引入的流将会直接通过，而不会经过任何进一步的处理。你的实时编码器可以 lso 发送单比特率流，但不是建议使用。收到请求时，媒体服务会将该流传递给客户。
 
 
 下图表示的是一个使用本地实时编码器输出多比特率 RTMP 或分片 MP4 流（平滑流式处理）的实时流式处理工作流。
@@ -59,8 +59,6 @@
 2. （可选）可以向实时编码器发信号，以启动广告。将广告插入到输出流中。
 1. 在要停止对事件进行流式传输和存档时，停止节目。
 1. 删除节目（并选择性地删除资产）。     
-
-[实时流式处理任务](/documentation/articles/media-services-manage-channels-overview#tasks)部分将链接到演示如何完成上述任务的主题。
 
 ##<a id="channel"></a>通道及其相关组件的说明
 
@@ -139,7 +137,7 @@
 
 ####允许的 IP 地址
 
-你可以定义允许向此频道发布视频的 IP 地址。允许的 IP 地址可以指定为单个 IP 地址（例如 ‘10.0.0.1’）或指定为使用一个 IP 地址和 CIDR 子网掩码的 IP 范围（例如 ‘10.0.0.1/22’）或指定为使用一个 IP 地址和点分十进制子网掩码的 IP 范围（例如 ‘10.0.0.1(255.255.252.0)’）。
+你可以定义允许向此频道发布视频的 IP 地址。允许的 IP 地址可以指定为单个 IP 地址（例如“10.0.0.1”）、使用一个 IP 地址和 CIDR 子网掩码的 IP 范围（例如“10.0.0.1/22”），或使用一个 IP 地址和点分十进制子网掩码的 IP 范围（例如“10.0.0.1(255.255.252.0)”）。
 
 如果未指定 IP 地址并且没有规则定义，则不会允许任何 IP 地址。若要允许任何 IP 地址，请创建一个规则并设置 0.0.0.0/0。
 
@@ -153,7 +151,7 @@
 
 在频道开始摄取数据后，你可以预览流。
 
-请注意，当前，不管指定了哪种输入类型，都只能以分片 MP4 (Smooth Streaming) 格式来传送预览流。你还可以使用 Azure 管理门户中承载的播放器来查看你的流。
+请注意，当前，不管指定了哪种输入类型，都只能以分片 MP4 (Smooth Streaming) 格式来传送预览流。你可以使用 [http://smf.chinacloudapp.cn/healthmonitor](http://smf.chinacloudapp.cn/healthmonitor) 播放器来测试平滑流。你还可以使用 Azure 管理门户中承载的播放器来查看你的流。
 
 
 ####允许的 IP 地址
@@ -243,7 +241,7 @@ SCTE-35|用来提示广告插入的数字信号系统。下游接收器使用该
 [AZURE.INCLUDE [media-services-selector-manage-channels](../includes/media-services-selector-manage-channels.md)]
 
 
-[AZURE.INCLUDE [media-services-user-voice-include](../includes/media-services-user-voice-include.md)]
+
 
 
 
@@ -258,4 +256,4 @@ SCTE-35|用来提示广告插入的数字信号系统。下游接收器使用该
 [live-overview]: ./media/media-services-manage-channels-overview/media-services-live-streaming-current.png
  
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0620_2016-->

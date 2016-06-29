@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/11/2016"  
-	wacn.date="03/28/2016"/>
+ 	ms.date="05/03/2016" 
+	wacn.date="06/27/2016"/>
 
 #使用 REST API 管理媒体服务实体
 
@@ -27,7 +27,7 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
 - 更新实体 
 - 删除实体 
 
->[AZURE.NOTE]使用媒体服务 REST API 时，需注意以下事项：
+>[AZURE.NOTE] 使用媒体服务 REST API 时，需注意以下事项：
 >
 >访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use)。
 
@@ -161,4 +161,4 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
 
 
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0620_2016-->

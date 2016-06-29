@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="04/07/2016" 
-	wacn.date="05/16/2016"/>
+ 	ms.date="05/03/2016" 
+	wacn.date="06/27/2016"/>
 
 #使用 AES-128 动态加密和密钥传送服务
 
@@ -416,7 +416,7 @@
 		            // This output is specified as AssetCreationOptions.None, which 
 		            // means the output asset is not encrypted. 
 		            task.OutputAssets.AddNew("Output asset",
-		                AssetCreationOptions.None);
+		                AssetCreationOptions.StorageEncrypted);
 		
 		            job.StateChanged += new EventHandler<JobStateChangedEventArgs>(JobStateChanged);
 		            job.Submit();
@@ -622,4 +622,4 @@
 
 
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0620_2016-->
