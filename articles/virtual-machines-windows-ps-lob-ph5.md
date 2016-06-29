@@ -12,8 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="01/28/2016"
-	wacn.date="06/07/2016"/>
+	ms.date="05/04/2016"
+	wacn.date="06/29/2016"/>
 
 # 业务线应用程序工作负荷阶段 5：创建可用性组并添加应用程序数据库
 

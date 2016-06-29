@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="virtual-machines-windows"
-	ms.date="12/17/2015" 
-	wacn.date="06/07/2016"/>
+	ms.date="05/04/2016" 
+	wacn.date="06/29/2016"/>
 
 # Azure 基础结构服务工作负荷：高可用性业务线应用程序
 

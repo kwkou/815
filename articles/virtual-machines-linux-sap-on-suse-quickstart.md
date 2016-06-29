@@ -10,8 +10,8 @@
    keywords=""/>
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="02/12/2016"
-	wacn.date="06/13/2016"/>
+	ms.date="05/04/2016"
+	wacn.date="06/29/2016"/>
 
 # 在 Azure SUSE Linux VM 上测试 SAP NetWeaver
 
