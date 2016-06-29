@@ -10,7 +10,7 @@
 <tags 
 	ms.service="virtual-machines-linux" 
 	ms.date="03/25/2016" 
-	wacn.date="05/24/2016"/>
+	wacn.date="06/13/2016"/>
 
 
 
@@ -72,7 +72,7 @@
 - sync
 - sys
 - tape
-- 测试
+- test
 - tcpdump
 - tty
 - users
@@ -116,7 +116,7 @@
 - shadow
 - sshd
 - sys
-- 测试
+- test
 - trusted
 - tty
 - users
@@ -175,7 +175,7 @@
 - sync
 - sys
 - tape
-- 测试
+- test
 - tcpdump
 - tty
 - users

@@ -13,8 +13,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="03/01/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="04/29/2016"
+	wacn.date="06/27/2016"/>
 
 # 将磁盘添加到 Linux VM
 
@@ -22,15 +22,18 @@
 
 ## 快速命令
 
-	# In the following command examples, replace the values between &lt; and &gt; with the values from your own environment.
+在以下命令示例中，请将 &lt; 与 &gt; 之间的值替换为你自己环境中的值。
 	
-	rick@ubuntu$ azure vm disk attach-new <myuniquegroupname> <myuniquevmname> <size-in-GB>
+	azure vm disk attach-new <myuniquegroupname> <myuniquevmname> <size-in-GB>
 
 ## 附加磁盘
 
 连接新的磁盘很快。键入 `azure vm disk attach-new <myuniquegroupname> <myuniquevmname> <size-in-GB>` 即可为 VM 创建和连接新的 GB 磁盘。如果你未显式标识存储帐户，则创建的任何磁盘将位于 OS 磁盘所在的同一个存储帐户中。你应该会看到类似下面的屏幕：
 
 	azure vm disk attach-new myuniquegroupname myuniquevmname 5
+
+输出
+
 	info:    Executing command vm disk attach-new
 	+ Looking up the VM "myuniquevmname"
 	info:    New data disk location: https://cliexxx.blob.core.chinacloudapi.cn/vhds/myuniquevmname-20150526-0xxxxxxx43.vhd
@@ -45,6 +48,9 @@
 需要使用 SSH 访问 Azure VM 才能分区、格式化和装入新磁盘以供 Linux VM 使用。如果你不熟悉如何使用 **ssh** 进行连接，请注意，该命令采用 `ssh <username>@<FQDNofAzureVM> -p <the ssh port>` 格式，如下所示：
 
 	ssh ops@myuni-china-1432328437727-pip.chinanorth.chinacloudapp.cn -p 22
+
+输出
+
 	The authenticity of host 'myuni-china-1432328437727-pip.chinanorth.chinacloudapp.cn (191.239.51.1)' can't be established.
 	ECDSA key fingerprint is bx:xx:xx:xx:xx:xx:xx:xx:xx:x:x:x:x:x:x:xx.
 	Are you sure you want to continue connecting (yes/no)? yes
@@ -80,6 +86,9 @@
 现在，你已连接到 VM，可以连接磁盘了。首先，使用 `dmesg | grep SCSI` 来查找磁盘（用于发现新磁盘的方法可能各不相同）。在本示例中，键入的内容如下所示：
 
 	dmesg | grep SCSI
+
+输出
+
 	[    0.294784] SCSI subsystem initialized
 	[    0.573458] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
 	[    7.110271] sd 2:0:0:0: [sda] Attached SCSI disk
@@ -89,6 +98,9 @@
 而在本主题中，`sdc` 磁盘是我们所需要的。现在使用 `sudo fdisk /dev/sdc` 对磁盘进行分区 -- 假定在你的示例中，磁盘为 `sdc`，则应将其设置为分区 1 中的主磁盘，并接受其他默认设置值。
 
 	sudo fdisk /dev/sdc
+
+输出
+
 	Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
 	Building a new DOS disklabel with disk identifier 0x2a59b123.
 	Changes will remain in memory only, until you decide to write them.
@@ -130,6 +142,9 @@
 同时，还需将文件系统写入分区，只需使用 **mkfs** 命令指定文件系统类型和设备名称即可。在本主题中，我们将使用上面提供的 `ext4` 和 `/dev/sdc1`：
 
 	sudo mkfs -t ext4 /dev/sdc1
+
+输出
+
 	mke2fs 1.42.9 (4-Feb-2014)
 	Discarding device blocks: done
 	Filesystem label=
@@ -162,6 +177,9 @@
 数据磁盘现在可以作为 `/datadrive` 使用。
 
 	ls
+
+输出
+
 	bin   datadrive  etc   initrd.img  lib64       media  opt   root  sbin  sys  usr  vmlinuz
 	boot  dev        home  lib         lost+found  mnt    proc  run   srv   tmp  var
 
@@ -173,4 +191,4 @@
 - 请查看[优化 Linux 计算机性能](/documentation/articles/virtual-machines-linux-optimization)的建议，以确保 Linux VM 正确配置。
 - 通过添加更多的磁盘来扩展存储容量，并[配置 RAID](/documentation/articles/virtual-machines-linux-configure-raid) 以提高性能。
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0620_2016-->

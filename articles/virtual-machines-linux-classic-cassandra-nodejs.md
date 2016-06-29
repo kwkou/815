@@ -108,13 +108,13 @@ Cassandra 的上述数据中心感知型复制和一致性模型可以很方便�
 ##软件配置
 在部署过程中使用以下软件版本：
 
-<table>
-<tr><th>软件</th><th>源</th><th>版本</th></tr>
-<tr><td>JRE	</td><td>[JRE 8](http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) </td><td>8U5</td></tr>
-<tr><td>JNA	</td><td>[JNA](https://github.com/twall/jna) </td><td> 3.2.7</td></tr>
-<tr><td>Cassandra</td><td>[Apache Cassandra 2.0.8](http://www.apache.org/dist/cassandra/2.0.8/apache-cassandra-2.0.8-bin.tar.gz)</td><td> 2.0.8</td></tr>
-<tr><td>Ubuntu	</td><td>[Azure 管理门户](http://www.azure.cn) </td><td>14.04 LTS</td></tr>
-</table>
+
+|软件|源|版本|
+| ---- | ----- | ---- |
+|JRE	|[JRE 8](http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) |8U5|
+|JNA	|[JNA](https://github.com/twall/jna) | 3.2.7|
+|Cassandra|[Apache Cassandra 2.0.8](http://www.apache.org/dist/cassandra/2.0.8/apache-cassandra-2.0.8-bin.tar.gz)| 2.0.8|
+|Ubuntu	|[Azure 管理门户](http://www.azure.cn) |14.04 LTS|
 
 由于下载 JRE 需要手动接受 Oracle 许可证，为了简化部署，可先将所有必需软件下载到桌面，然后再将其上载到进行群集部署之前需要创建的 Ubuntu 模板映像中。
 
@@ -300,7 +300,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 
 <table>
 <tr><th>VM 属性名称</th><th>值</th><th>备注</th></tr>
-<tr><td>Name</td><td>vnet-cass-west-us</td><td></td></tr>	
+<tr><td>Name</td><td>vnet-cass-china-north</td><td></td></tr>	
 <tr><td>区域</td><td>中国北部</td><td></td></tr>	
 <tr><td>DNS 服务器	</td><td>无</td><td>将其忽略，因为我们不使用 DNS 服务器</td></tr>
 <tr><td>配置点到站点 VPN</td><td>无</td><td> 将其忽略</td></tr>
@@ -321,20 +321,20 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 数据和 Web 子网可以通过网络安全组进行保护，此方面的内容不在本文讲述范围之内。
 
 **步骤 2：预配虚拟机**
-使用前面创建的映像，我们可以在云服务器“hk-c-svc-west”中创建以下虚拟机并将其绑定到相应的子网，如下所示：
+使用前面创建的映像，我们可以在云服务器“hk-c-svc-north”中创建以下虚拟机并将其绑定到相应的子网，如下所示：
 
 <table>
 <tr><th>计算机名称    </th><th>子网	</th><th>IP 地址	</th><th>可用性集</th><th>DC/机架</th><th>种子？</th></tr>
-<tr><td>hk-c1-west-us	</td><td>数据	</td><td>10.1.2.4	</td><td>hk-c-aset-1	</td><td>dc =WESTUS 机架 =rack1 </td><td>是</td></tr>
-<tr><td>hk-c2-west-us	</td><td>数据	</td><td>10.1.2.5	</td><td>hk-c-aset-1	</td><td>dc =WESTUS 机架 =rack1	</td><td>否 </td></tr>
-<tr><td>hk-c3-west-us	</td><td>数据	</td><td>10.1.2.6	</td><td>hk-c-aset-1	</td><td>dc =WESTUS 机架 =rack2	</td><td>是</td></tr>
-<tr><td>hk-c4-west-us	</td><td>数据	</td><td>10.1.2.7	</td><td>hk-c-aset-1	</td><td>dc =WESTUS 机架 =rack2	</td><td>否 </td></tr>
-<tr><td>hk-c5-west-us	</td><td>数据	</td><td>10.1.2.8	</td><td>hk-c-aset-2	</td><td>dc =WESTUS 机架 =rack3	</td><td>是</td></tr>
-<tr><td>hk-c6-west-us	</td><td>数据	</td><td>10.1.2.9	</td><td>hk-c-aset-2	</td><td>dc =WESTUS 机架 =rack3	</td><td>否 </td></tr>
-<tr><td>hk-c7-west-us	</td><td>数据	</td><td>10.1.2.10	</td><td>hk-c-aset-2	</td><td>dc =WESTUS 机架 =rack4	</td><td>是</td></tr>
-<tr><td>hk-c8-west-us	</td><td>数据	</td><td>10.1.2.11	</td><td>hk-c-aset-2	</td><td>dc =WESTUS 机架 =rack4	</td><td>否 </td></tr>
-<tr><td>hk-w1-west-us	</td><td>Web	</td><td>10.1.1.4	</td><td>hk-w-aset-1	</td><td>                       </td><td>不适用</td></tr>
-<tr><td>hk-w2-west-us	</td><td>Web	</td><td>10.1.1.5	</td><td>hk-w-aset-1	</td><td>                       </td><td>不适用</td></tr>
+<tr><td>hk-c1-china-north	</td><td>数据	</td><td>10.1.2.4	</td><td>hk-c-aset-1	</td><td>dc =CHINANORTH rack =rack1 </td><td>是</td></tr>
+<tr><td>hk-c2-china-north	</td><td>数据	</td><td>10.1.2.5	</td><td>hk-c-aset-1	</td><td>dc =CHINANORTH rack =rack1	</td><td>否 </td></tr>
+<tr><td>hk-c3-china-north	</td><td>数据	</td><td>10.1.2.6	</td><td>hk-c-aset-1	</td><td>dc =CHINANORTH rack =rack2	</td><td>是</td></tr>
+<tr><td>hk-c4-china-north	</td><td>数据	</td><td>10.1.2.7	</td><td>hk-c-aset-1	</td><td>dc =CHINANORTH rack =rack2	</td><td>否 </td></tr>
+<tr><td>hk-c5-china-north	</td><td>数据	</td><td>10.1.2.8	</td><td>hk-c-aset-2	</td><td>dc =CHINANORTH rack =rack3	</td><td>是</td></tr>
+<tr><td>hk-c6-china-north	</td><td>数据	</td><td>10.1.2.9	</td><td>hk-c-aset-2	</td><td>dc =CHINANORTH rack =rack3	</td><td>否 </td></tr>
+<tr><td>hk-c7-china-north	</td><td>数据	</td><td>10.1.2.10	</td><td>hk-c-aset-2	</td><td>dc =CHINANORTH rack =rack4	</td><td>是</td></tr>
+<tr><td>hk-c8-china-north	</td><td>数据	</td><td>10.1.2.11	</td><td>hk-c-aset-2	</td><td>dc =CHINANORTH rack =rack4	</td><td>否 </td></tr>
+<tr><td>hk-w1-china-north	</td><td>Web	</td><td>10.1.1.4	</td><td>hk-w-aset-1	</td><td>                       </td><td>不适用</td></tr>
+<tr><td>hk-w2-china-north	</td><td>Web	</td><td>10.1.1.5	</td><td>hk-w-aset-1	</td><td>                       </td><td>不适用</td></tr>
 </table>
 
 创建以上 VM 列表需要完成以下过程：
@@ -354,19 +354,19 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 		#The process: 1. create Azure Storage account, 2. create virtual network, 3.create the VM template, 2. crate a list of VMs from the template
 		
 		#fundamental variables - change these to reflect your subscription
-		$country="us"; $region="west"; $vnetName = "your_vnet_name";$storageAccount="your_storage_account"
+		$country="china"; $region="north"; $vnetName = "your_vnet_name";$storageAccount="your_storage_account"
 		$numVMs=8;$prefix = "hk-cass";$ilbIP="your_ilb_ip"
 		$subscriptionName = "Azure_subscription_name"; 
 		$vmSize="ExtraSmall"; $imageName="your_linux_image_name"
 		$ilbName="ThriftInternalLB"; $thriftEndPoint="ThriftEndPoint"
 		
 		#generated variables
-		$serviceName = "$prefix-svc-$region-$country"; $azureRegion = "$region $country"
+		$serviceName = "$prefix-svc-$country-$region"; $azureRegion = "$country $region"
 		
 		$vmNames = @()
 		for ($i=0; $i -lt $numVMs; $i++)
 		{
-		   $vmNames+=("$prefix-vm"+($i+1) + "-$region-$country" );
+		   $vmNames+=("$prefix-vm"+($i+1) + "$country-$region" );
 		}
 		
 		#select an Azure subscription already imported into Powershell session
@@ -407,15 +407,15 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 
 * 编辑 $CASS\_HOME/conf/cassandra-rackdc.properties 以指定数据中心和机架属性：
       
-       dc =EASTUS，机架 =rack1
+       dc =CHINAEAST, rack =rack1
 
 * 编辑 cassandra.yaml，将种子节点配置如下：
      
-       种子：“10.1.2.4,10.1.2.6,10.1.2.8,10.1.2.10”
+       Seeds: "10.1.2.4,10.1.2.6,10.1.2.8,10.1.2.10"
 
 **步骤 4：启动 VM 并测试群集**
 
-登录到其中一个节点（例如 hk-c1-west-us），然后运行以下命令以查看群集的状态：
+登录到其中一个节点（例如 hk-c1-china-north），然后运行以下命令以查看群集的状态：
        
        nodetool -h 10.1.2.4 -p 7199 status 
 
@@ -436,8 +436,8 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 ## 测试单区域群集
 使用以下步骤测试群集：
 
-1.    使用 Powershell 命令 Get-AzureInternalLoadbalancer cmdlet 获取内部负载平衡器的 IP 地址（例如 10.1.2.101）。该命令的语法如下所示：Get-AzureLoadbalancer -ServiceName "hk-c-svc-west-us" [显示内部负载平衡器及其 IP 地址的详细信息]
-2.	使用 Putty 或 ssh 登录到 Web 场 VM（例如 hk-w1-west-us）
+1.    使用 Powershell 命令 Get-AzureInternalLoadbalancer cmdlet 获取内部负载平衡器的 IP 地址（例如 10.1.2.101）。该命令的语法如下所示：Get-AzureLoadbalancer -ServiceName "hk-c-svc-china-north" [显示内部负载平衡器及其 IP 地址的详细信息]
+2.	使用 Putty 或 ssh 登录到 Web 场 VM（例如 hk-w1-china-north）
 3.	执行 $CASS\_HOME/bin/cqlsh 10.1.2.101 9160 
 4.	使用以下 CQL 命令验证群集是否正常工作：
 
@@ -467,7 +467,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 
 <table>
 <tr><th>属性名称    </th><th>值	</th><th>备注</th></tr>
-<tr><td>Name	</td><td>vnet-cass-east-us</td><td></td></tr>	
+<tr><td>Name	</td><td>vnet-cass-china-east</td><td></td></tr>	
 <tr><td>区域	</td><td>中国东部</td><td></td></tr>	
 <tr><td>DNS 服务器		</td><td></td><td>将其忽略，因为我们不使用 DNS 服务器</td></tr>
 <tr><td>配置点到站点 VPN</td><td></td><td>		将其忽略</td></tr>
@@ -487,8 +487,8 @@ Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映�
 
 | 网络名称 | VPN 网关地址 | 地址空间 | 备注 |
 | ------------ | ------------------- | ------------- | ------- |
-| hk-lnet-map-to-east-us | 23\.1.1.1 | 10\.2.0.0/16 | 在创建本地网络时，请提供一个占位符网关地址。创建网关后需填充实际的网关地址。请确保地址空间与相应的远程 VNET 完全匹配；在本示例中，该 VNET 是在中国东部地区创建的。 |
-| hk-lnet-map-to-west-us | 23\.2.2.2 | 10\.1.0.0/16 | 在创建本地网络时，请提供一个占位符网关地址。创建网关后需填充实际的网关地址。请确保地址空间与相应的远程 VNET 完全匹配；在本示例中，该 VNET 是在中国北部地区创建的。 |
+| hk-lnet-map-to-china-east | 23\.1.1.1 | 10\.2.0.0/16 | 在创建本地网络时，请提供一个占位符网关地址。创建网关后需填充实际的网关地址。请确保地址空间与相应的远程 VNET 完全匹配；在本示例中，该 VNET 是在中国东部地区创建的。 |
+| hk-lnet-map-to-china-north | 23\.2.2.2 | 10\.1.0.0/16 | 在创建本地网络时，请提供一个占位符网关地址。创建网关后需填充实际的网关地址。请确保地址空间与相应的远程 VNET 完全匹配；在本示例中，该 VNET 是在中国北部地区创建的。 |
 
 
 ###步骤 3：将“本地”网络映射到相应的 VNET
@@ -497,8 +497,8 @@ Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映�
 
 | 虚拟网络 | 本地网络 |
 | --------------- | ------------- |
-| hk-vnet-west-us | hk-lnet-map-to-east-us |
-| hk-vnet-east-us | hk-lnet-map-to-west-us |
+| hk-vnet-china-north | hk-lnet-map-to-china-east |
+| hk-vnet-china-east | hk-lnet-map-to-china-north |
 
 
 ###步骤 4：在 VNET1 和 VNET2 上创建网关
@@ -509,31 +509,31 @@ Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映�
 
 <table>
 <tr><th>本地网络    </th><th>虚拟网络网关</th></tr>
-<tr><td>hk-lnet-map-to-east-us </td><td>hk-vnet-west-us 的网关</td></tr>
-<tr><td>hk-lnet-map-to-west-us </td><td>hk-vnet-east-us 的网关</td></tr>
+<tr><td>hk-lnet-map-to-china-east </td><td>hk-vnet-china-north 的网关</td></tr>
+<tr><td>hk-lnet-map-to-china-north </td><td>hk-vnet-china-east 的网关</td></tr>
 </table>
 
 ###步骤 6：更新共享密钥
-使用以下 Powershell 脚本更新每个 VPN 网关的 IPSec 密钥 [使用这两个网关的 sake 密钥]：Set-AzureVNetGatewayKey -VNetName hk-vnet-east-us -LocalNetworkSiteName hk-lnet-map-to-west-us -SharedKey D9E76BKK Set-AzureVNetGatewayKey -VNetName hk-vnet-west-us -LocalNetworkSiteName hk-lnet-map-to-east-us -SharedKey D9E76BKK
+使用以下 Powershell 脚本更新每个 VPN 网关的 IPSec 密钥 [使用这两个网关的 sake 密钥]：Set-AzureVNetGatewayKey -VNetName hk-vnet-china-east -LocalNetworkSiteName hk-lnet-map-to-china-north -SharedKey D9E76BKK Set-AzureVNetGatewayKey -VNetName hk-vnet-china-north -LocalNetworkSiteName hk-lnet-map-to-china-east -SharedKey D9E76BKK
 
 ###步骤 7：建立 VNET 到 VNET 连接
 在 Azure 管理门户中，使用这两个虚拟网络的“仪表板”菜单建立网关到网关连接。使用底部工具栏中的“连接”菜单项。几分钟后，仪表板会以图形方式显示连接详细信息。
 
 ###步骤 8：在区域 #2 中创建虚拟机 
-按照相同步骤创建区域 #1 部署中描述的 Ubuntu 映像，或者将映像 VHD 文件复制到区域 #2 中的 Azure 存储帐户，然后创建该映像。使用该映像，将下列虚拟机创建到新的云服务 hk-c-svc-east-us 中：
+按照相同步骤创建区域 #1 部署中描述的 Ubuntu 映像，或者将映像 VHD 文件复制到区域 #2 中的 Azure 存储帐户，然后创建该映像。使用该映像，将下列虚拟机创建到新的云服务 hk-c-svc-china-east 中：
 
 
 | 计算机名称 | 子网 | IP 地址 | 可用性集 | DC/机架 | 种子？ |
 | ------------ | ------ | ---------- | ---------------- | ------- | ----- |
-| hk-c1-east-us | 数据 | 10\.2.2.4 | hk-c-aset-1 | dc =EASTUS 机架 =rack1 | 是 |
-| hk-c2-east-us | 数据 | 10\.2.2.5 | hk-c-aset-1 | dc =EASTUS 机架 =rack1 | 否 |
-| hk-c3-east-us | 数据 | 10\.2.2.6 | hk-c-aset-1 | dc =EASTUS 机架 =rack2 | 是 |
-| hk-c5-east-us | 数据 | 10\.2.2.8 | hk-c-aset-2 | dc =EASTUS 机架 =rack3 | 是 |
-| hk-c6-east-us | 数据 | 10\.2.2.9 | hk-c-aset-2 | dc =EASTUS 机架 =rack3 | 否 |
-| hk-c7-east-us | 数据 | 10\.2.2.10 | hk-c-aset-2 | dc =EASTUS 机架 =rack4 | 是 |
-| hk-c8-east-us | 数据 | 10\.2.2.11 | hk-c-aset-2 | dc =EASTUS 机架 =rack4 | 否 |
-| hk-w1-east-us | Web | 10\.2.1.4 | hk-w-aset-1 | 不适用 | 不适用 |
-| hk-w2-east-us | Web | 10\.2.1.5 | hk-w-aset-1 | 不适用 | 不适用 |
+| hk-c1-china-east | 数据 | 10\.2.2.4 | hk-c-aset-1 | dc =CHINAEAST rack =rack1 | 是 |
+| hk-c2-china-east | 数据 | 10\.2.2.5 | hk-c-aset-1 | dc =CHINAEAST rack =rack1 | 否 |
+| hk-c3-china-east | 数据 | 10\.2.2.6 | hk-c-aset-1 | dc =CHINAEAST rack =rack2 | 是 |
+| hk-c5-china-east | 数据 | 10\.2.2.8 | hk-c-aset-2 | dc =CHINAEAST rack =rack3 | 是 |
+| hk-c6-china-east | 数据 | 10\.2.2.9 | hk-c-aset-2 | dc =CHINAEAST rack =rack3 | 否 |
+| hk-c7-china-east | 数据 | 10\.2.2.10 | hk-c-aset-2 | dc =CHINAEAST rack =rack4 | 是 |
+| hk-c8-china-east | 数据 | 10\.2.2.11 | hk-c-aset-2 | dc =CHINAEAST rack =rack4 | 否 |
+| hk-w1-china-east | Web | 10\.2.1.4 | hk-w-aset-1 | 不适用 | 不适用 |
+| hk-w2-china-east | Web | 10\.2.1.5 | hk-w-aset-1 | 不适用 | 不适用 |
 
 
 遵循与区域 #1 相同的说明，但使用 10.2.xxx.xxx 地址空间。
@@ -543,7 +543,7 @@ Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映�
 
 1. 编辑 $CASS\_HOME/conf/cassandra-rackdc.properties 以指定下述格式的数据中心和机架属性：
 
-    	dc =EASTUS
+    	dc =CHINAEAST
     	rack =rack1
 
 2. 编辑 cassandra.yaml 以配置种子节点：
@@ -559,17 +559,17 @@ Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映�
 到目前为止，Cassandra 已部署到 16 个节点，每个 Azure 区域 8 个节点。这些节点具有通用的群集名称和种子节点配置，因此属于同一群集。使用以下过程测试群集：
 
 ###步骤 1：使用 PowerShell 获取这两个区域的内部负载平衡器 IP
-- Get-AzureInternalLoadbalancer -ServiceName "hk-c-svc-west-us"
-- Get-AzureInternalLoadbalancer -ServiceName "hk-c-svc-east-us"  
+- Get-AzureInternalLoadbalancer -ServiceName "hk-c-svc-china-north"
+- Get-AzureInternalLoadbalancer -ServiceName "hk-c-svc-china-east"  
 
-    请注意显示的 IP 地址（例如西部 - 10.1.2.101，东部 - 10.2.2.101）。
+    请注意显示的 IP 地址（例如北部 - 10.1.2.101，东部 - 10.2.2.101）。
 
-###步骤 2：登录到 hk-w1-west-us 以后，在西部地区执行以下命令
+###步骤 2：登录到 hk-w1-china-north 以后，在北部地区执行以下命令
 1.    执行 $CASS\_HOME/bin/cqlsh 10.1.2.101 9160 
 2.	执行以下 CQL 命令：
 
 		CREATE KEYSPACE customers_ks
-		WITH REPLICATION = { 'class' : 'NetworkToplogyStrategy', 'WESTUS' : 3, 'EASTUS' : 3};
+		WITH REPLICATION = { 'class' : 'NetworkToplogyStrategy', 'CHINANORTH' : 3, 'CHINAEAST' : 3};
 		USE customers_ks;
 		CREATE TABLE Customers(customer_id int PRIMARY KEY, firstname text, lastname text);
 		INSERT INTO Customers(customer_id, firstname, lastname) VALUES(1, 'John', 'Doe');
@@ -584,7 +584,7 @@ Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映�
 | 2 | Jane | Doe |
 
 
-###步骤 3：登录到 hk-w1-east-us 以后，在东部地区执行以下命令：
+###步骤 3：登录到 hk-w1-china-east 以后，在东部地区执行以下命令：
 1.    执行 $CASS\_HOME/bin/cqlsh 10.2.2.101 9160 
 2.	执行以下 CQL 命令：
 
@@ -594,7 +594,7 @@ Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映�
 		INSERT INTO Customers(customer_id, firstname, lastname) VALUES (2, 'Jane', 'Doe');
 		SELECT * FROM Customers;
 
-你所看到的显示内容与西部地区的显示内容应该是相同的：
+你所看到的显示内容与北部地区的显示内容应该是相同的：
 
 
 | customer\_id | 名 | 姓 |
@@ -603,7 +603,7 @@ Azure 虚拟网络中的本地网络是一个代理地址空间，该空间映�
 | 2 | Jane | Doe |
 
 
-再执行一些插入操作，你会看到这些插入内容复制到群集的 west-us 部分。
+再执行一些插入操作，你会看到这些插入内容复制到群集的 china-north 部分。
 
 ## 从 Node.js 测试 Cassandra 群集
 使用以前在“Web”层创建的某个 Linux VM，我们可以执行一个简单的 Node.js 脚本，以便读取以前插入的数据

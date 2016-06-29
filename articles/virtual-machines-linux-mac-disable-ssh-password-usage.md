@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="01/29/2016"
-	wacn.date="05/12/2016"/>
+	wacn.date="06/07/2016"/>
 
 # 通过配置 SSHD 禁用 Linux VM 上的 SSH 密码
 
@@ -31,7 +31,7 @@
 
 ## 介绍
 
-[SSH 定义](https://en.wikipedia.org/wiki/Secure_Shell)
+[SSH 定义](https://zh.wikipedia.org/wiki/Secure_Shell)
 
 SSHD 是在 Linux VM 上运行的 SSH 服务器。SSH 是从 MacBook 或 Linux 工作站上的 shell 运行的客户端。SSH 也是用于保护和加密工作站与 Linux VM 的通信的协议。
 

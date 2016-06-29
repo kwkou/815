@@ -18,7 +18,7 @@
 
 > [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-linux-quick-create-cli)。
 
-本主题介绍如何通过 Azure CLI 使用经典部署模型创建*自定义*虚拟机。我们将使用 Azure 上可用**映像**中的 Linux 映像。Azure CLI 命令提供以下配置选项以及其他配置选项：
+本主题介绍如何通过 Azure CLI 使用经典部署模型创建*自定义*虚拟机（VM）。我们将使用 Azure 上可用**映像**中的 Linux 映像。Azure CLI 命令提供以下配置选项以及其他配置选项：
 
 - 将 VM 连接到虚拟网络
 - 将 VM 添加到现有云服务

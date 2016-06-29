@@ -22,7 +22,7 @@
 
 本教程演示如何使用 Azure PowerShell cmdlet 创建采用 **Azure Resource Manager** 部署模型的单个 Azure 虚拟机。在本教程中，我们将从 SQL 库中的映像创建使用单个磁盘驱动器的单个虚拟机。我们将为虚拟机要使用的存储、网络和计算资源创建新的提供程序。如果上述任何资源存在现有的提供程序，你可以改用这些提供程序。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)] 经典部署模型。如果需要阅读本主题的经典版本，请参阅 [Provision a SQL Server virtual machine using Azure PowerShell Classic（使用 Azure PowerShell Classic 预配 SQL Server 虚拟机）](/documentation/articles/virtual-machines-windows-classic-ps-sql-create)。
+如果需要阅读本主题的经典版本，请参阅 [Provision a SQL Server virtual machine using Azure PowerShell Classic（使用 Azure PowerShell Classic 预配 SQL Server 虚拟机）](/documentation/articles/virtual-machines-windows-classic-ps-sql-create)。
 
 ## 先决条件
 

@@ -2,7 +2,8 @@
 	pageTitle="Configuring Oracle Data Guard in VMs | Azure"
 	description="Step through a tutorial for setting up and implementing Oracle Data Guard on Azure virtual machines for high availability and disaster recovery."
 	services="virtual-machines-windows"
-	authors="bbenz"
+	authors="rickstercdn"
+	manager="timlt"
 	documentationCenter=""
 	tags="azure-service-management"/>
 <tags
@@ -11,8 +12,6 @@
 	wacn.date="08/29/2015"/>
 
 #为 Azure 配置 Oracle Data Guard
-
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 
 本教程将演示如何在 Azure 虚拟机环境中设置和实施 Oracle Data Guard，实现高可用性和灾难恢复。本教程重点介绍对非 RAC Oracle Database 的单向复制。
 
