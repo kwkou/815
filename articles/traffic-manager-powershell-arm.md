@@ -3,7 +3,7 @@
    description="使用包含 Azure 资源管理器 (ARM) 预览版的流量管理器 PowerShell"
    services="traffic-manager"
    documentationCenter="na"
-   authors="joaoma"
+   authors="jtuliani"
    manager="carmonm"
    editor="tysonn" />
 <tags
@@ -11,7 +11,7 @@
 	ms.date="03/17/2016"
 	wacn.date="04/26/2016"/>
 
-# Azure 流量管理器预览版对 Azure 资源管理器的支持
+# Azure 流量管理器对 Azure 资源管理器的支持
 Azure 资源管理器 (ARM) 是针对 Azure 中的服务的新管理框架。现在，你可以使用基于 Azure 资源管理器的 API 和工具来管理 Azure 流量管理器配置文件。
 
 ## 资源模型
@@ -20,7 +20,7 @@ Azure 流量管理器是使用名为流量管理器配置文件的一系列设�
 
 在 ARM 中，每个流量管理器配置文件由类型为“TrafficManagerProfiles”、受“Microsoft.Network”资源提供程序管理的 ARM 资源表示。在 REST API 级别，每个配置文件的 URI 如下：
 
-	https://manage.windowsazure.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/trafficManagerProfiles/{profile-name}?api-version={api-version}
+	https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/trafficManagerProfiles/{profile-name}?api-version={api-version}
 
 ## 与 Azure 流量管理器服务管理 API 的比较
 
@@ -38,8 +38,6 @@ Azure 流量管理器是使用名为流量管理器配置文件的一系列设�
 目前，在 ARM 对 Azure 流量管理器的支持中有少量限制：
 
 - 使用现有（非 ARM）Azure 服务管理 (ASM) API、工具和“经典”门户创建的流量管理器配置文件无法通过 ARM 使用，反之亦然。目前不支持将配置文件从 ASM 迁移到 ARM API，除非是通过删除该配置文件然后又重新创建的方式。
-
-- 通过 ARM API、ARM PowerShell 和 ARM 模式 Azure CLI 支持“嵌套式”流量管理器终结点。当前在 Azure 管理门户（还使用 ARM API）中不支持这些终结点。
 
 - “AzureEndpoints”类型的流量管理器终结点在引用 Web 应用时，只能引用默认（生产）[Web 应用槽](/documentation/articles/web-sites-staged-publishing)。尚不支持自定义槽。一种解决方法是，可以使用“ExternalEndpoints”类型配置自定义槽。
 
@@ -127,9 +125,9 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 例如，若要更改配置文件 TTL，请执行以下操作：
 
-	PS C:\> $profile = Get-AzureTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG
+	PS C:\> $profile = Get-AzureRmTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG
 	PS C:\> $profile.Ttl = 300
-	PS C:\> Set-AzureTrafficManagerProfile -TrafficManagerProfile $profile
+	PS C:\> Set-AzureRmTrafficManagerProfile -TrafficManagerProfile $profile
 
 ##<a name="adding-traffic-manager-endpoints"></a> 添加流量管理器终结点
 有三种类型的流量管理器终结点：
@@ -295,12 +293,12 @@ Disable-AzureRmTrafficManagerProfile cmdlet 会提示你进行确认，该提示
 此 cmdlet 将提示你确认。可以使用可选的“-Force”开关来取消此提示。
 也可以使用配置文件对象指定要删除的配置文件：
 
-	PS C:\> $profile = Get-AzureTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG
-	PS C:\> Remove-AzureTrafficManagerProfile -TrafficManagerProfile $profile [-Force]
+	PS C:\> $profile = Get-AzureRmTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG
+	PS C:\> Remove-AzureRmTrafficManagerProfile -TrafficManagerProfile $profile [-Force]
 
 还可以通过管道执行此序列：
 
-	PS C:\> Get-AzureTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG | Remove-AzureTrafficManagerProfile [-Force]
+	PS C:\> Get-AzureRmTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG | Remove-AzureTrafficManagerProfile [-Force]
 
 ## 后续步骤
 

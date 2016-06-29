@@ -18,7 +18,7 @@
 
 基于 URL 的路由将新的规则类型引入应用程序网关。应用程序网关有 2 种规则类型：基本和 PathBasedRouting。基本规则类型针对后端池提供轮循机制服务，而 PathBasedRouting 除了轮循机制分发以外，还在选择后端池时考虑请求 URL 的路径模式。
 
->[AZURE.IMPORTANT] PathPattern：要匹配的路径模式列表。每个模式必须以 / 开始，只允许在后接“/”的末尾处添加 *。发送到路径匹配器的字符串不会在第一个 ? 或 # 之后包含任何文本，这些字符是不允许的。
+>[AZURE.IMPORTANT] PathPattern：要匹配的路径模式列表。每个模式必须以 / 开始，只允许在末尾处添加 \*。允许的例子有 /xyz, /xyz\* 或者 /xyz/\*。发送到路径匹配器的字符串不会在第一个 ? 或 # 之后包含任何文本，这些字符是不允许的。
 
 ## 方案
 在以下示例中，应用程序网关使用两个后端服务器池来为 contoso.com 提供流量：视频服务器池和图像服务器池。
@@ -171,7 +171,7 @@ Azure Resource Manager 要求所有资源组指定一个位置。此位置将用
     
 	$imagePathRule = New-AzureRmApplicationGatewayPathRuleConfig -Name "pathrule1" -Paths "/image/*" -BackendAddressPool $pool1 -BackendHttpSettings $poolSetting01
 
-	$videoPathRule = New-AzureRmApplicationGatewayPathRuleConfig -Name "pathrule2" -Paths "/video/*" -BackendAddressPool $pool2 -BackendHttpSettings $poolSetting01
+	$videoPathRule = New-AzureRmApplicationGatewayPathRuleConfig -Name "pathrule2" -Paths "/video/*" -BackendAddressPool $pool2 -BackendHttpSettings $poolSetting02
 
 如果路径不匹配任何预定义的路径规则，规则路径映射配置也会配置默认的后端地址池。
 
@@ -192,7 +192,7 @@ Azure Resource Manager 要求所有资源组指定一个位置。此位置将用
 	$appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-RG -Location "China North" -BackendAddressPools $pool1,$pool2 -BackendHttpSettingsCollection $poolSetting01, $poolSetting02 -FrontendIpConfigurations $fipconfig01 -GatewayIpConfigurations $gipconfig -FrontendPorts $fp01 -HttpListeners $listener -UrlPathMaps $urlPathMap -RequestRoutingRules $rule01 -Sku $sku
 
 ## 获取应用程序网关
-	$getgw =  Get-AzureRmApplicationGateway -Name $appgwName -ResourceGroupName $rgname
+	$getgw =  Get-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-RG
 
 
 <!---HONumber=Mooncake_0328_2016-->

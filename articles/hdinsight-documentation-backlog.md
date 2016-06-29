@@ -23,7 +23,7 @@
 自动化 | 更新的文章涉及[如何创建 Storm 群集和运行 Storm 初学者示例](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)以使用 ARM 模板 | 1 | [已完成](/documentation/articles/hdinsight-apache-storm-tutorial-get-started#create-a-storm-cluster) | [@mumian](https://github.com/mumian) | -
 存储 | 文章说明了 WASB 和数据湖存储选项 | 2 | 待执行 | [@mumian](https://github.com/mumian) | -
 性能 | MapReduce 应用程序性能优化指南 | 1 | 待执行 | [@blackmist](https://github.com/blackmist) | -
-开发 | 有关使用 Sqoop 的 Curl 和 Rest API 示例 | 2 | 待执行 | [@mumian](https://github.com/mumian) | Jon Kennerly |
+开发 | 有关使用 Sqoop 的 Curl 和 Rest API 示例 | 2 | [已完成](/documentation/articles/hdinsight-hadoop-use-sqoop-curl) | [@mumian](https://github.com/mumian) | Jon Kennerly |
 
 
 ## 如何提供有关积压工作的反馈

@@ -47,6 +47,7 @@
 
 3. 在 CLI 中输入以下语句，以使用示例数据创建名为 **log4jLogs** 的新表：
 
+        set hive.execution.engine=tez;
         DROP TABLE log4jLogs;
         CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
         ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '

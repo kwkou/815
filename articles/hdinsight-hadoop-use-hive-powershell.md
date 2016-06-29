@@ -27,6 +27,8 @@
 - **Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Windows）** 
 - **配备 Azure PowerShell 的工作站**。
 
+    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+
 ##<a id="powershell"></a>使用 Azure PowerShell 运行 Hive 查询
 
 Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Hive 查询。从内部来讲，这是通过使用 REST 调用 HDInsight 群集上运行的 [WebHCat](https://cwiki.apache.org/confluence/display/Hive/WebHCat)（以前称为 Templeton）实现的。

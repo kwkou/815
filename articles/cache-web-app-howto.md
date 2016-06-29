@@ -14,6 +14,13 @@
 
 # 如何使用 Redis 缓存创建 Web 应用
 
+> [AZURE.SELECTOR]
+- [.NET](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache)
+- [ASP.NET](/documentation/articles/cache-web-app-howto)
+- [Node.js](/documentation/articles/cache-nodejs-get-started)
+- [Java](/documentation/articles/cache-java-get-started)
+- [Python](/documentation/articles/cache-python-get-started)
+
 本教程将向你介绍如何使用 Visual Studio 2015 创建 ASP.NET Web 应用程序并将其部署到 Azure 中的 Web 应用。该示例应用程序显示了数据库中的团队统计信息列表，并显示了使用 Azure Redis 缓存通过缓存存储和检索数据的不同方式。完成本教程后，你将有一个运行的 Web 应用，该应用可以对数据库执行读写操作，已通过 Azure Redis 缓存进行优化，并且托管在 Azure 中。
 
 学习内容：

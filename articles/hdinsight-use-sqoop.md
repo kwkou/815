@@ -13,7 +13,7 @@
 	ms.date="04/06/2016"
 	wacn.date="05/24/2016"/>
 
-#将 Sqoop 与 HDInsight 中的 Hadoop 配合使用 (Windows)
+#将 Sqoop 与 HDInsight 中的 Hadoop 配合使用
 
 [AZURE.INCLUDE [sqoop-selector](../includes/hdinsight-selector-use-sqoop.md)]
 
@@ -24,14 +24,6 @@
 [Sqoop][sqoop-user-guide-1.4.4] 是一种为在 Hadoop 群集和关系数据库之间传输数据而设计的工具。可以使用此工具将数据从关系数据库管理系统 (RDBMS)（如 SQL Server、MySQL 或 Oracle）中导入到 Hadoop 分布式文件系统 (HDFS)，在 Hadoop 中使用 MapReduce 或 Hive 转换数据，然后回过来将数据导出到 RDBMS。在本教程中，你要为你的关系数据库使用 SQL Server 数据库。
 
 有关 HDInsight 群集上支持的 Sqoop 版本，请参阅 [HDInsight 提供的群集版本有哪些新功能？][hdinsight-versions]。
-
-###<a name="prerequisites"></a>先决条件
-
-在开始阅读本教程前，你必须具有：
-
-- **配备 Azure PowerShell 的工作站**。
-
-    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 ##了解方案
 

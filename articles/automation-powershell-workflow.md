@@ -139,7 +139,7 @@ InlineScript 使用如下所示的语法。
 有关使用 InlineScript 的进一步信息，请参阅[在工作流中运行 Windows PowerShell 命令](http://technet.microsoft.com/zh-cn/library/jj574197.aspx)和 [about\_InlineScript](http://technet.microsoft.com/zh-cn/library/jj649082.aspx)。
 
 
-## 并行处理
+##<a name="parallel-processing"></a> 并行处理
 
 Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行而不是按顺序执行一组命令。
 

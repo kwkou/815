@@ -203,6 +203,6 @@
 
 你可以将虚拟机添加到虚拟网络。请参阅[如何创建自定义虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal)。
 
-如果你需要有关虚拟网络的更多信息，请参阅[虚拟网络文档](/documentation/services/virtual-network)页。
+如果你需要有关虚拟网络的更多信息，请参阅[虚拟网络文档](/documentation/services/networking/)页。
 
 <!---HONumber=Mooncake_0425_2016-->

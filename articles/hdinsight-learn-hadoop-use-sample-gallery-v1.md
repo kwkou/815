@@ -49,7 +49,7 @@
 [hdinsight.twitter.sample]: ./media/hdinsight-learn-hadoop-use-sample-gallery-v1/HDInsight-Twitter-Trend-Analysis-sample.png
 
 <!--Link references-->
-[hdinsight.learn.map]: /documentation/articles/hdinsight-learn-map
+[hdinsight.learn.map]: https://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/
 [hdinsight.infographic]: http://go.microsoft.com/fwlink/?linkid=523960
 [azure.portal]: https://manage.windowsazure.cn
 

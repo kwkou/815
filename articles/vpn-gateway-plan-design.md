@@ -19,7 +19,7 @@
 ## 规划
 
 
-### <a name="compare"></a>1.跨界连接选项比较
+### <a name="compare"></a>跨界连接选项比较
 
 如果你决定要安全地将本地站点连接到虚拟网络，可以使用三种不同的方式实现此目的：站点到站点、点到站点和 ExpressRoute。比较可用的不同跨界连接。选择的选项可能取决于不同的考虑因素，例如：
 
@@ -40,7 +40,7 @@
 
 
 
-### <a name="gwrequire"></a>2.根据 VPN 类型和 SKU 考虑网关要求
+### <a name="gwrequire"></a>根据 VPN 类型和 SKU 考虑网关要求
 
 
 在创建 VPN 网关时，你需要指定想要使用的网关 SKU。 
@@ -54,7 +54,7 @@
 
 
 
-### 3\.网关类型和聚合吞吐量估计
+###<a name="aggthroughput"></a> 网关类型和聚合吞吐量估计
 
 下表显示网关类型和估计的聚合吞吐量。估计的聚合吞吐量可能是设计时的决定因素。
 网关 SKU 之间并无定价差异。有关定价的信息，请参阅 [VPN 网关定价](/home/features/vpn-gateway#price)。此表适用于资源管理器与经典部署模型。
@@ -63,7 +63,7 @@
 
 
 
-### <a name="wf"></a>4.工作流
+### <a name="wf"></a>工作流
 
 以下列表概述了云连接的常用工作流：
 
@@ -76,11 +76,11 @@
 
 ## 设计
 
-### 1\.选择连接拓扑
+###<a name="topologies"></a> 连接拓扑
 
 首先请阅读[Connection toplogies（连接拓扑）](/documentation/articles/vpn-gateway-topology)一文。该文章包含基本原理图、每种拓扑的部署模型（资源管理器或经典）和可用来部署配置的部署工具。
 
-### 2\.了解设计基础知识
+###<a name="designbasics"></a> 设计基础知识
 
 以下部分介绍了 VPN 网关基础知识。此外，你需要考虑[网络服务限制](/documentation/articles/azure-subscription-service-limits/#networking-limits)。
 
@@ -111,7 +111,7 @@
 - Vpn
 - ExpressRoute
 
-#### 关于连接类型
+####<a name="connectiontype"></a> 关于连接类型
 
 每个配置需要特定的连接类型。连接类型包括：
 
@@ -132,16 +132,16 @@
 
 [AZURE.INCLUDE [vpn-gateway-table-vpntype](../includes/vpn-gateway-table-vpntype-include.md)]
 
-### <a name="devices"></a>3.为站点到站点连接选择 VPN 设备
+### <a name="devices"></a> 为站点到站点连接选择 VPN 设备
 
 若要配置站点到站点连接，不管你使用哪种部署模型，都需要以下各项：
 
 - 与 Azure VPN 网关兼容的 VPN 设备
 - 不在 NAT 后面的面向公众的 IPv4 IP 地址
 
-你需要有配置 VPN 设备的经验才能创建站点到站点配置。有关 VPN 设备的详细信息，请参阅 [About VPN devices（关于 VPN 设备）](/documentation/articles/vpn-gateway-about-vpn-devices)。“VPN 设备”一文包含有关已验证的设备的信息、未验证的设备的要求，以及每个设备的设备配置文档（如果有）的链接。
+你需要有配置 VPN 设备的经验。有关 VPN 设备的详细信息，请参阅 [About VPN devices（关于 VPN 设备）](/documentation/articles/vpn-gateway-about-vpn-devices)。“VPN 设备”一文包含有关已验证的设备的信息、未验证的设备的要求，以及每个设备的设备配置文档（如果有）的链接。
 
-### <a name="forcedtunnel"></a>4.考虑强制隧道路由
+### <a name="forcedtunnel"></a> 考虑强制隧道路由
 
 对于大多数配置，你可以配置强制隧道。借助强制隧道，你可以通过站点到站点 VPN 隧道，将全部 Internet 绑定流量重定向或“强制”返回到本地位置，以进行检查和审核。这是很多企业 IT 策略的关键安全要求。
 

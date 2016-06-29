@@ -39,7 +39,7 @@
 5.	选择“启动 Runbook”消息旁边的“查看作业”，或选择 Runbook 的“作业”选项卡以查看 Runbook 作业的状态。
 
 
-## 使用 Windows PowerShell 启动 Runbook
+##<a name="starting-a-runbook-with-windows-powershell"></a> 使用 Windows PowerShell 启动 Runbook
 
 可以在 Windows PowerShell 中使用 [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690259.aspx) 启动 Runbook。以下示例代码将启动名为 Test-Runbook 的 Runbook。
 
@@ -63,7 +63,7 @@ Start-AzureAutomationRunbook 将返回一个作业对象，启动 Runbook 后，
 	$params = @{"FirstName"="Joe";"LastName"="Smith";"RepeatCount"=2;"Show"=$true}
 	Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" –Parameters $params
 
-## Runbook 参数
+##<a name="runbook-parameters"></a> Runbook 参数
 
 当你使用 Azure 管理门户或 Windows PowerShell 启动 Runbook 时，系统将通过 Azure 自动化 Web 服务发送指令。此服务不支持复杂数据类型的参数。如果需要提供复杂参数的值，则必须根据 [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks) 中所述，以内联方式从另一个 Runbook 调用该参数值。
 

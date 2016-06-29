@@ -65,7 +65,7 @@
 
 6. 保存所做的更改，并将网络配置[导入](/documentation/articles/virtual-networks-using-network-configuration-file)到 Azure。
 
->[AZURE.INFO]此迁移不会导致你的服务出现任何停机情况。
+>[AZURE.NOTE]此迁移不会导致你的服务出现任何停机情况。
 
 ## 地缘组和 VM
 
