@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/03/2016"  
-	wacn.date="03/21/2016"/>
+ 	ms.date="05/03/2016" 
+	wacn.date="06/27/2016"/>
 
 
 #使用现有播放器播放内容
@@ -27,14 +27,14 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
  
 请注意以下事项：
 
-- **媒体服务内容播放器**从默认的流式处理终结点播放。如果要从非默认流式处理终结点播放，请使用其他播放器。例如 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
+- **媒体服务内容播放器**从默认的流式处理终结点播放。如果要从非默认流式处理终结点播放，请使用其他播放器。例如 [Azure 媒体播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
  
 
 ![AMSPlayer][AMSPlayer]
 
 ###Azure 媒体播放器
 
-使用 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)以下列任意格式播放你的内容（清除或受保护）：
+使用 [Azure 媒体播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html) 以下列任意格式播放你的内容（清除或受保护）：
 
 - 平滑流
 - MPEG DASH
@@ -49,6 +49,10 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
 [http://aestoken.azurewebsites.net](http://aestoken.azurewebsites.net)
 
 ###Silverlight 播放器
+
+####监视
+
+[http://smf.chinacloudapp.cn/healthmonitor](http://smf.chinacloudapp.cn/healthmonitor)
 
 ####带令牌的 PlayReady
 
@@ -77,5 +81,4 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
 
  
 [AMSPlayer]: ./media/media-services-playback-content-with-existing-players/media-services-portal-player.png
-
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0620_2016-->

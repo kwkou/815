@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="01/31/2016"  
-	wacn.date="03/21/2016"/>
+	ms.date="04/25/2016"  
+	wacn.date="06/27/2016"/>
 
 
 # 使用 Azure 管理门户创建从本地编码器接收多比特率实时流的通道
@@ -18,7 +18,7 @@
 [AZURE.INCLUDE [media-services-selector-manage-channels](../includes/media-services-selector-manage-channels.md)]
 
 
-本教程将指导你完成实施一个基本媒体服务实时传送视频流应用程序的步骤，在该应用程序中，某个通道将从本地实时编码器接收多比特率实时流。有关使用通道和相关组件的详细概述，请参阅[使用从本地编码器接收多比特率实时流的通道](/documentation/articles/media-services-manage-channels-overview)。
+本教程将指导你完成实施一个基本媒体服务实时传送视频流应用程序的步骤，在该应用程序中，某个通道将从本地实时编码器接收多比特率实时流。有关使用通道和相关组件的详细概述，请参阅[使用从本地编码器接收多比特率实时流的通道](/documentation/articles/media-services-live-streaming-with-onprem-encoders)。
 
 在本教程中，将使用 Azure 管理门户完成以下任务：
 
@@ -44,7 +44,7 @@
 
 使用实时流时，本地实时编码器（在本例中为 Wirecast）会将多比特率实时流引入你的通道。当用户请求流时，媒体服务会使用动态打包将源流重新打包成自适应比特率流（HLS、DASH 或平滑流）。
 
-若要利用动态打包，你需要获取计划从中传送内容的*流式处理终结点*的至少一个流式处理单元。
+若要利用动态打包，你需要获取计划从中传送内容的流式处理终结点的至少一个流式处理单元。
 
 若要更改流式处理保留单元数，请执行以下操作：
 
@@ -84,13 +84,13 @@
 
 ![ingesturls](./media/media-services-portal-get-started-with-live/media-services-ingest-urls.png)
 
-有关引入 URL 的详细信息，请参阅[使用本地编码器向通道发送多比特率实时流](/documentation/articles/media-services-manage-channels-overview)。
+有关引入 URL 的详细信息，请参阅[使用本地编码器向通道发送多比特率实时流](/documentation/articles/media-services-live-streaming-with-onprem-encoders)。
 
 ## 配置实时编码器并引入实时流
 
 >[AZURE.NOTE] 此步骤需要上一步中提到的通道引入 URL。
 
-有关如何配置 Wirecast 并开始引入流的详细信息，请参阅 [Wirecast 配置](http://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)。
+有关如何配置 Wirecast 并开始引入流的详细信息，请参阅 [Wirecast 配置](https://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)。
 
 >[AZURE.NOTE] 如果出于任何原因停止了编码器，然后需要重新启动它，则应先重置通道，方法是在 Azure 管理门户中单击“重置”命令。
 
@@ -186,7 +186,7 @@
 - 除非你想要继续以按需流式处理形式提供实时事件的存档，否则你可以停止流式处理终结点。如果频道处于停止状态，将不会产生任何费用。
 
 
-##后续步骤
+
 
 ### 想要寻找其他内容吗？
 
@@ -194,11 +194,11 @@
 
 
 ## 其他资源
-- [使用 Azure 管理门户开始实时流式处理](http://azure.microsoft.com/blog/getting-started-with-live-streaming-using-the-azure-management-portal/)
+- [使用 Azure 管理门户开始实时流式处理](https://azure.microsoft.com/blog/getting-started-with-live-streaming-using-the-azure-management-portal/)
 
 <!-- URLs. -->
 [Azure Management Portal]: http://manage.windowsazure.cn/
 
 <!-- Images -->
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0620_2016-->

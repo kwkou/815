@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="03/10/2016"  
-	wacn.date="04/05/2016"/>
+ 	ms.date="04/18/2016"  
+	wacn.date="06/27/2016"/>
 
 #如何将媒体服务与 Java 结合使用
 
@@ -138,7 +138,7 @@
 			// Create the Blob Writer using the Locator
 			uploader = mediaService.createBlobWriter(uploadLocator);
 			
-			File file = new File("BigBuckBunny.mp4");//(ConnectToAMSView.class.getClassLoader().getResource("").getPath() + fileName);
+			File file = new File("BigBuckBunny.mp4"); 
 			
 			// The local file that will be uploaded to your Media Services account
 			InputStream input = new FileInputStream(file);
@@ -264,5 +264,4 @@
   [Media Services Client Development]: /documentation/articles/media-services-develop-video-players
 
  
-
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0620_2016-->

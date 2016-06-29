@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/03/2016"  
-	wacn.date="03/21/2016"/>
+	ms.date="04/18/2016"
+	wacn.date="06/27/2016"/>
 
 
 #<a id="managemediaservicesorigins"></a>如何在媒体服务帐户中管理流式处理终结点
@@ -49,7 +49,7 @@
 
 ##<a name="scale_streaming_endpoints"></a>缩放流式处理终结点
 
-流式处理单元为你提供了可按照 200 Mbps 的增量购买的专用出口容量和其他功能（当前包括[动态打包功能](/documentation/articles/media-services-dynamic-packaging-overview)）。默认情况下，流式处理在共享实例模型中配置，该模型的服务器资源（例如计算机、出口容量等）与所有其他用户共享。若要增加流式处理吞吐量，建议购买流式处理单元。
+流式处理单元为你提供了可按照 200 Mbps 的增量购买的专用出口容量和其他功能（当前包括[动态打包功能](/documentation/articles/media-services-dynamic-packaging-overview)）默认情况下，流式处理在共享实例模型中配置，该模型的服务器资源（例如计算机、出口容量等）与所有其他用户共享。若要增加流式处理吞吐量，建议购买流式处理单元。
 
 可以使用 .NET SDK、REST API 或 Azure 管理门户进行缩放。
 
@@ -99,12 +99,12 @@
 
 4. 你可以为 Adobe Flash 客户端指定跨域访问策略（有关详细信息，请参阅[跨域策略文件规范](http://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html)），以及为 Microsoft Silverlight 客户端指定客户端访问策略（有关详细信息，请参阅 [跨域边界提供服务](https://msdn.microsoft.com/zh-cn/library/cc197955(v=vs.95).aspx)。
 
-5. 还可以通过单击**“配置”**按钮配置自定义主机名。有关详细信息，请参阅 [StreamingEndpont](https://msdn.microsoft.com/zh-cn/library/dn783468.aspx) 主题中的 **CustomHostNames** 属性。
+5. 还可以通过单击“配置”按钮配置自定义主机名。有关详细信息，请参阅 [StreamingEndpont](https://msdn.microsoft.com/zh-cn/library/dn783468.aspx) 主题中的 **CustomHostNames** 属性。
 
 
 ##<a id="enable_cdn"></a>启用 Azure CDN 集成
 
-可以指定为流式处理终结点启用 Azure CDN 集成（默认禁用。）
+可以指定为流式处理终结点启用 Azure CDN 集成（默认禁用）。
 
 若要将 Azure CDN 集成设置为 true：
 
@@ -137,5 +137,4 @@
 [configure-origin]: ./media/media-services-manage-origins/media-services-origins-configure.png
 [configure-origin-configure-custom-host-names]: ./media/media-services-manage-origins/media-services-configure-custom-host-names.png
  
-
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0620_2016-->

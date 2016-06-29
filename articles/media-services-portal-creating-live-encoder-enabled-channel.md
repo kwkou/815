@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Azure 管理门户可创建通道，以执行从单比特率到多比特率流的实时编码" 
+	pageTitle="如何使用 Azure 媒体服务执行实时流式处理以通过 Azure 管理门户创建多比特率流" 
 	description="本教程将指导你使用 Azure 管理门户完成创建通道的步骤，该通道接收单比特率实时流，并将其编码为多比特率流。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -9,11 +9,11 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="03/08/2016"
-	wacn.date="04/05/2016"/>
+ 	ms.date="05/05/2016" 
+	wacn.date="06/27/2016"/>
 
 
-#使用 Azure 管理门户可创建通道，以执行从单比特率到多比特率流的实时编码
+#如何使用 Azure 媒体服务执行实时流式处理以通过 Azure 管理门户创建多比特率流
 
 > [AZURE.SELECTOR]
 - [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
@@ -22,7 +22,7 @@
 
 本教程将指导你完成创建**频道**的步骤，该频道接收单比特率实时流，并将其编码为多比特率流。
 
->[AZURE.NOTE]如需与能够进行实时编码的频道相关的更多概念信息，请参阅 [使用执行从单比特率到多比特率流的实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+>[AZURE.NOTE]有关为实时编码启用的通道的更多相关概念信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
 
 ##常见的实时流方案
 
@@ -105,7 +105,7 @@
 2.	选择“频道”页。
 3.	选择“添加+”以添加新频道。
 
-选择**“标准”**编码类型。此类型指定要创建能够进行实时编码的频道。这意味着传入单比特率流将发送到频道，并使用指定的实时编码器设置编码为多比特率流。有关详细信息，请参阅[使用执行从单比特率到多比特率流的实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+选择**“标准”**编码类型。此类型指定要创建能够进行实时编码的频道。这意味着传入单比特率流将发送到频道，并使用指定的实时编码器设置编码为多比特率流。有关详细信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
 
 ![standard0][standard0]
 
@@ -115,7 +115,7 @@
 - 单比特率 RTMP
 - RTP (MPEG-TS)：RTP 上的 MPEG-2 传输流。
 
-有关每个协议的详细说明，请参阅[使用执行从单比特率到多比特率流的实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+有关每个协议的详细说明，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
 
 ![standard1][standard1]
 
@@ -123,7 +123,7 @@
 
 在**“广告配置”**页上，可以指定 Ad 标记信号源。使用门户时，只能选择“API”，它指示频道内的实时编码器应侦听异步 Ad 标记 API。使用门户时，只能选择“API”。
 
-有关详细信息，请参阅[使用执行从单比特率到多比特率流的实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+有关详细信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
 
 ![standard2][standard2]
 
@@ -144,7 +144,7 @@
 
 ![standard5][standard5]
 
-有关详细信息，请参阅[使用执行从单比特率到多比特率流的实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
+有关详细信息，请参阅[使用 Azure 媒体服务执行实时流式处理以创建多比特率流](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
 
 
 ##获取引入 URL
@@ -261,4 +261,4 @@
 [standard3]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard3.png
 [standard4]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard4.png
 [standard5]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard_encode.png
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0620_2016-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/03/2016"  
-	wacn.date="03/17/2016"/>
+ 	ms.date="04/18/2016"  
+	wacn.date="06/27/2016"/>
 
 #实现故障转移流式处理方案
 
@@ -795,7 +795,7 @@
 		    sb.Append(", "AccessPolicyId" : "" + accessPolicyId + """);
 		    sb.Append(", "Type" : "" + locatorType + """);
 		    if (startTime != DateTime.MinValue)
-		        sb.Append(", "StartTime" : "" + startTime.ToString("G", CultureInfo.CreateSpecificCulture("zh-CN")) + """);
+		        sb.Append(", "StartTime" : "" + startTime.ToString("G", CultureInfo.CreateSpecificCulture("zh-cn")) + """);
 		    if (!string.IsNullOrEmpty(locatorIdToReplicate))
 		        sb.Append(", "Id" : "" + locatorIdToReplicate + """);
 		    sb.Append("}");
@@ -959,4 +959,4 @@
 
 现在，你可以使用流量管理器在两个数据中心之间路由请求，因此可在任何中断情况下进行故障转移。
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0620_2016-->

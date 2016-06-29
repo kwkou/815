@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/03/2016"  
-	wacn.date="03/21/2016"/>
+	ms.date="04/18/2016"
+	wacn.date="06/27/2016"/>
 
 
 #使用 PowerShell 管理 Azure 媒体服务帐户
@@ -108,5 +108,4 @@ Azure 媒体服务使用 Azure 存储空间来存储媒体内容。当你创建�
 
 
  
-
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0620_2016-->

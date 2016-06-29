@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/03/2016"  
-	wacn.date="03/28/2016"/>
+ 	ms.date="04/18/2016"  
+	wacn.date="06/27/2016"/>
 
 
 #配额和限制
@@ -20,4 +20,4 @@
 [AZURE.INCLUDE [azure-mediaservices-limits](../includes/azure-mediaservices-limits.md)]
 
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0620_2016-->

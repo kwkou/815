@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/04/2016"   
-	wacn.date="03/21/2016"/>
+	ms.date="04/25/2016"   
+	wacn.date="06/21/2016"/>
 
 
 # 使用 Azure 管理门户管理 Azure 媒体服务的内容
@@ -92,16 +92,16 @@
 
 请注意，除了能够使用动态打包功能以外，点播流保留单元也为你提供可购买的专用流出容量（以 200 Mbps 为增量来购买）。默认情况下，点播流在共享实例模型中配置，该模型的服务器资源（例如计算机、出口容量等）与所有其他用户共享。若要增加按需流式处理吞吐量，建议购买按需流式处理保留单位。
 
-本部分介绍通过 Azure 管理门户使用 Azure 媒体编码器为内容编码时可以执行的步骤。
+本部分介绍通过 Azure 管理门户使用媒体编码器标准版为内容编码时可以执行的步骤。
 
 1.  选择要编码的文件。如果此文件类型支持编码，则“内容”页底部将启用“处理”按钮。
-4. 在“处理”对话框中，选择“Azure 媒体编码器”处理器。
+4. 在“处理”对话框中，选择“媒体编码器标准版”处理器。
 5. 选择其中一个“编码配置”。
 
 ![Process2][process2]
 
 
-[媒体编码器标准的任务预设字符串](https://msdn.microsoft.com/zh-cn/library/mt269960)主题说明了每个预设的含义。
+[媒体编码器标准版的任务预设字符串](https://msdn.microsoft.com/zh-cn/library/mt269960)主题说明了每个预设的含义。
 
 5. 然后，输入所需的友好输出内容名称或接受默认值。然后，单击勾选按钮开始编码操作，你可以在门户底部跟踪进度。
 6. 按“确定”。
@@ -205,4 +205,4 @@ SAS URL 采用以下格式：
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-manage-content/media-services-portal-player.png
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0620_2016-->

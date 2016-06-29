@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="03/01/2016"   
-	wacn.date="04/05/2016"/>
+ 	ms.date="05/03/2016"    
+	wacn.date="06/27/2016"/>
 
 
 # 使用 Azure 媒体包装器完成静态打包任务
@@ -19,7 +19,7 @@
 
 ## 概述
 
-要通过 Internet 传送数字视频，你必须对媒体进行压缩。数字视频文件相当大，可能因过大而无法通过 Internet 传送或者无法在你客户的设备上正常显示。编码是压缩视频和音频以便你的客户能够查看媒体的过程。视频经过编码后即可放入不同的文件容器中。将编码后的媒体放入容器这一过程称为打包。以 MP4 文件为例，你可以使用 Azure 媒体包装器将其转换为平滑流式处理或 HLS 内容。有关详细信息，请参阅[编码与打包](http://blog-ndrouin.chinacloudsites.cn/streaming-media-terminology-explained/)。
+要通过 Internet 传送数字视频，你必须对媒体进行压缩。数字视频文件相当大，可能因过大而无法通过 Internet 传送或者无法在你客户的设备上正常显示。编码是压缩视频和音频以便你的客户能够查看媒体的过程。视频经过编码后即可放入不同的文件容器中。将编码后的媒体放入容器这一过程称为打包。以 MP4 文件为例，你可以使用 Azure 媒体包装器将其转换为平滑流式处理或 HLS 内容。
 
 媒体服务支持动态和静态打包。使用静态打包时，需要以客户要求的各种格式创建内容副本。使用动态打包，你只需要创建一个包含一组自适应比特率 MP4 或平滑流文件的资产。然后，按需流式处理服务器会确保你的用户以选定的协议按清单或分段请求中的指定格式接收流。因此，你只需以单一存储格式存储文件并为其付费，然后媒体服务服务就会基于客户端的请求构建并提供相应响应。
 
@@ -50,7 +50,7 @@
 	<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 	<smil xmlns="http://www.w3.org/2001/SMIL20/Language">
 	  <head>
-	<!-- Tells the server that these input files are MP4s - specific to Dynamic Packaging -->
+	<!-- Tells the server that these input files are MP4s – specific to Dynamic Packaging -->
 	    <meta name="formats" content="mp4" /> 
 	  </head>
 	  <body>
@@ -1436,4 +1436,4 @@
 	}
 
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_0620_2016-->

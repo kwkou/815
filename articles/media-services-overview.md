@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="02/02/2016"
-	wacn.date="03/21/2016"/>
+ 	ms.date="05/03/2016" 
+	wacn.date="06/27/2016"/>
 
 #Azure 媒体服务概述和常见方案
 
@@ -45,16 +45,17 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 	此外，请学习如何以编程方式进行[连接](/documentation/articles/media-services-dotnet-connect_programmatically)。
 4. （推荐）分配一个或多个缩放单位。建议为生产环境中的应用程序分配一个或多个扩展单元。有关详细信息，请参阅[管理流式处理终结点](/documentation/articles/media-services-manage-origins)。
 
-##概念
+##概念和概述
 
-有关详细信息，请参阅[概念](/documentation/articles/media-services-concepts)。
+有关 Azure 媒体服务的概念，请参阅[概念](/documentation/articles/media-services-concepts)。
 
+有关介绍 Azure 媒体服务所有主要组件的操作说明系列文章，请参阅 [Azure 媒体服务分步教程](https://docs.com/fukushima-shigeyuki/3439/english-azure-media-services-step-by-step-series)。此系列文章全面概述了各个概念，并使用 AMSE 工具演示了 AME 任务。请注意 AMSE 工具是一种 Windows 工具。可以使用 [AMS SDK for.NET](https://github.com/Azure/azure-sdk-for-media-services)、[Azure SDK for Java](https://github.com/Azure/azure-sdk-for-java) 或 [Azure PHP SDK](https://github.com/Azure/azure-sdk-for-php) 以编程方式完成的大多数任务也可以使用此工具来完成。
 
 ##<a id="vod_scenarios"></a>使用 Azure 媒体服务交付按需媒体：常见方案和任务
 
 本部分描述常见方案并提供相关主题的链接。下图显示了参与点播内容交付的主要媒体服务平台部分。
 
-![VoD 工作流][vod-overview]
+![VoD 工作流](./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png)
 
 
 ###保护存储中的内容并以明文（非加密）形式交付流式处理媒体
@@ -170,7 +171,7 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 
 ![实时工作流][live-overview2]
 
-有关详细信息，请参阅[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-manage-channels-overview)。
+有关详细信息，请参阅[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-live-streaming-with-onprem-encoders)。
 
 ##使用内容
 
@@ -194,11 +195,6 @@ Azure 媒体服务提供你所需的工具，以便你创建适用于大多数�
 
 [Azure 支持](/support/contact/)为 Azure（包括媒体服务）提供支持选项。
 
-##模式与实践指南
-
-[模式与实践指南](https://wamsg.codeplex.com/)
-[联机文档](https://msdn.microsoft.com/zh-cn/library/dn735912.aspx)
-[可下载的电子书](https://www.microsoft.com/download/details.aspx?id=42629)
 
 
 ##服务级别协议 (SLA)
@@ -218,4 +214,4 @@ Azure 媒体服务提供你所需的工具，以便你创建适用于大多数�
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0620_2016-->

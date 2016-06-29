@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="02/03/2016"  
-	wacn.date="03/21/2016"/>
+	ms.date="04/18/2016" 
+	wacn.date="06/27/2016"/>
 
 
 #使用 Azure 媒体服务传递实时流式处理事件
@@ -62,7 +62,11 @@
 
 ![实时工作流][live-overview2]
 
-有关详细信息，请参阅[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-manage-channels-overview)。
+有关详细信息，请参阅[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-live-streaming-with-onprem-encoders)。
+
+
+
+
 
 
 ##相关主题
@@ -79,5 +83,4 @@
 
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
-
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0620_2016-->
