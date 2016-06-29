@@ -94,13 +94,13 @@ JWT 包含三个段（以 `.` 字符分隔）。第一个段称为**标头**，�
 
 Id\_Token 使用行业标准非对称式加密算法（例如 RSA 256）进行签名。Id\_token 标头包含用于签名令牌的密钥和加密方法的相关信息：
 
-```
-{
-  "typ": "JWT",
-  "alg": "RS256",
-  "kid": "MnC_VZcATfM5pOYiJHMba9goEKY"
-}
-```
+
+		{
+		  "typ": "JWT",
+		  "alg": "RS256",
+		  "kid": "MnC_VZcATfM5pOYiJHMba9goEKY"
+		}
+
 
 `alg` 声明表示用于对令牌进行签名的算法，而 `kid` 声明表示用于对令牌进行签名的特定公钥。
 
@@ -108,9 +108,9 @@ Id\_Token 使用行业标准非对称式加密算法（例如 RSA 256）进行�
 
 可以使用位于以下位置的 OpenID Connect 元数据文档来获取验证签名所需的签名密钥数据：
 
-```
-https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration
-```
+
+		https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration
+
 
 > [AZURE.TIP] 在浏览器中尝试打开此 URL！
 

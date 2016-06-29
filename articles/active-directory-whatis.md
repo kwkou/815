@@ -15,10 +15,6 @@
 
 # 什么是 Azure Active Directory？
 
-
-
-
-
 Azure Active Directory (Azure AD) 是 Microsoft 提供的基于多租户云的目录和标识管理服务。
 
 对于 IT 管理员而言，Azure AD 提供经济实惠、易于使用的解决方案，使员工和业务合作伙伴能够使用单一登录 (SSO) 功能来访问[数千种云 SaaS 应用程序](http://blogs.technet.com/b/ad/archive/2014/09/03/50-saas-apps-now-support-federation-with-azure-ad.aspx)，例如 Office365、Salesforce.com、DropBox 和 Concur。
@@ -30,10 +26,6 @@ Azure AD 还包含整套标识管理功能，例如多重身份验证、设备�
 此外，只需[单击四下](http://blogs.technet.com/b/ad/archive/2014/08/04/connecting-ad-and-azure-ad-only-4-clicks-with-azure-ad-connect.aspx)，Azure AD 就能与现有的 Windows Server Active Directory 集成，使组织能够运用现有的本地标识管理系统投资来管理对基于云的 SaaS 应用程序的访问。
 
 如果你是 Office365、Azure 或 Dynamics CRM Online 的客户，你可能不知道自己已在使用 Azure AD。每个 Office365、Azure 和 Dynamics CRM 租户实际上都已经是 Azure AD 租户。每当有需要时，你就可以开始使用该租户来为 Azure AD 集成的其他数千种云应用程序管理访问权限！
-
-
-
-
 
 <center>![Azure AD Connect 堆栈](./media/active-directory-whatis/Azure_Active_Directory.png) </center>
 
@@ -57,9 +49,6 @@ Azure AD 的多租户、地理分布、高可用性设计意味着你可以依�
 -	实施一致性的自助应用程序访问管理，使企业主能够快速采取行动，同时降低 IT 成本和管理开销。
 -	利用安全报告和监视来监视应用程序使用情况并防止企业受到严重威胁。
 -	对本地应用程序进行安全的移动（远程）访问。
-
-
-
 
 
 

@@ -74,15 +74,15 @@
 
 使用 `response_mode=fragment` 和 `response_type=id_token+token` 的成功响应如下所示（包含换行符以方便阅读）：
 
-```
-GET https://localhost/myapp/#
-access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
-&token_type=Bearer
-&expires_in=3599
-&scope=https%3a%2f%2fgraph.microsoft.com%2fmail.read 
-&id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
-&state=12345
-```
+
+		GET https://localhost/myapp/#
+		access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
+		&token_type=Bearer
+		&expires_in=3599
+		&scope=https%3a%2f%2fgraph.microsoft.com%2fmail.read 
+		&id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
+		&state=12345
+
 
 | 参数 | 说明 |
 | ----------------------- | ------------------------------- |
@@ -97,11 +97,11 @@ access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q..
 #### 错误响应
 错误响应可能也发送到 `redirect_uri`，让应用可以适当地处理：
 
-```
-GET https://localhost/myapp/#
-error=access_denied
-&error_description=the+user+canceled+the+authentication
-```
+		
+		GET https://localhost/myapp/#
+		error=access_denied
+		&error_description=the+user+canceled+the+authentication
+
 
 | 参数 | 说明 |
 | ----------------------- | ------------------------------- |
@@ -130,25 +130,25 @@ error=access_denied
 
 在正常的 OpenID Connect/OAuth 流中，可以通过对 v2.0 `/token` 终结点进行请求来实现此目的。但是，v2.0 终结点不支持 CORS 请求，因此进行 AJAX 调用以获取和刷新令牌是不可能的。相反，你可以在隐藏的 iframe 中使用隐式流，以获取其他 Web API 的新令牌：
 
-```
-// Line breaks for legibility only
 
-https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
-&response_type=token
-&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
-&scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&response_mode=fragment
-&state=12345&nonce=678910
-&prompt=none
-&domain_hint=organizations
-&login_hint=myuser@mycompany.com
-```
+		// Line breaks for legibility only
+		
+		https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
+		client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+		&response_type=token
+		&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
+		&scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&response_mode=fragment
+		&state=12345&nonce=678910
+		&prompt=none
+		&domain_hint=organizations
+		&login_hint=myuser@mycompany.com
+		
 
 > [AZURE.TIP] 请尝试将以下请求粘贴到浏览器中！（如果希望成功，请先修改 domain\_hint 和 login\_hint 值）
 
-```
-https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&response_mode=fragment&state=12345&nonce=678910&prompt=none&domain_hint=organizations&login_hint=myuser@mycompany.com
-```
+
+		https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&response_mode=fragment&state=12345&nonce=678910&prompt=none&domain_hint=organizations&login_hint=myuser@mycompany.com
+
 
 | 参数 | | 说明 |
 | ----------------------- | ------------------------------- | --------------- |
@@ -169,14 +169,14 @@ https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de7
 #### 成功的响应
 使用 `response_mode=fragment` 的成功响应如下所示：
 
-```
-GET https://localhost/myapp/#
-access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
-&state=12345
-&token_type=Bearer
-&expires_in=3600
-&scope=https%3A%2F%2Fgraph.windows.net%2Fdirectory.read
-```
+
+		GET https://localhost/myapp/#
+		access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
+		&state=12345
+		&token_type=Bearer
+		&expires_in=3600
+		&scope=https%3A%2F%2Fgraph.windows.net%2Fdirectory.read
+
 
 | 参数 | 说明 |
 | ----------------------- | ------------------------------- |
@@ -189,11 +189,11 @@ access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q..
 #### 错误响应
 错误响应可能也发送到 `redirect_uri`，让应用可以适当地处理。如果 `prompt=none`，预期的错误将为：
 
-```
-GET https://localhost/myapp/#
-error=user_authentication_required
-&error_description=the+request+could+not+be+completed+silently
-```
+		
+		GET https://localhost/myapp/#
+		error=user_authentication_required
+		&error_description=the+request+could+not+be+completed+silently
+
 
 | 参数 | 说明 |
 | ----------------------- | ------------------------------- |
@@ -218,10 +218,10 @@ When you wish to sign the user out of the  app, it is not sufficient to clear yo
 
 You can simply redirect the user to the `end_session_endpoint` listed in the OpenID Connect metadata document:
 
-```
-GET https://login.microsoftonline.com/common/oauth2/v2.0/logout?
-post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
-```
+		
+		GET https://login.microsoftonline.com/common/oauth2/v2.0/logout?
+		post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
+
 
 | Parameter | | Description |
 | ----------------------- | ------------------------------- | ------------ |

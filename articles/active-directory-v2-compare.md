@@ -17,7 +17,7 @@
 如果你熟悉 Azure Active Directory 或过去已将应用与 Azure AD 集成，v2.0 终结点中可能有一些预料不到的差异。本文档汇总了这些差异来帮助你了解。
 
 > [AZURE.NOTE]
-	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](active-directory-v2-limitations.md)。
+	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations)。
 
 
 ## Microsoft 帐户和 Azure AD 帐户
@@ -58,21 +58,21 @@ v2.0 终结点只能在下列新位置中注册：[apps.dev.microsoft.com](https
 
 这一切都适用于 v2.0 终结点。应用程序仍可作为资源、定义范围并由 URI 标识。客户端应用程序仍可请求访问这些范围。但是，客户端用于请求这些权限的方式已改变。在过去，Azure AD 的 OAuth 2.0 授权请求可能如下所示：
 
-```
-GET https://login.microsoftonline.com/common/oauth2/authorize?
-client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
-&resource=https%3A%2F%2Fgraph.windows.net%2F
-...
-```
+
+		GET https://login.microsoftonline.com/common/oauth2/authorize?
+		client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
+		&resource=https%3A%2F%2Fgraph.windows.net%2F
+		...
+
 
 其中 **resource** 参数指示客户端应用请求授权的资源。Azure AD 根据 Azure 门户中的静态设置计算应用程序所需的权限，并据以发出令牌。现在，相同的 OAuth 2.0 授权请求如下所示：
 
-```
-GET https://login.microsoftonline.com/common/v2.0/oauth2/authorize?
-client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
-&scope=https%3A%2F%2Fgraph.windows.net%2Fdirectory.read%20https%3A%2F%2Fgraph.windows.net%2Fdirectory.write
-...
-```
+
+		GET https://login.microsoftonline.com/common/v2.0/oauth2/authorize?
+		client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
+		&scope=https%3A%2F%2Fgraph.windows.net%2Fdirectory.read%20https%3A%2F%2Fgraph.windows.net%2Fdirectory.write
+		...
+
 
 其中 **scope** 参数指示应用请求授权的资源和权限。所需的资源仍是请求中最新的 - 它只包含在 scope 参数的每个值中。以此方式使用 scope 参数可让 v2.0 终结点更符合 OAuth 2.0 规范，并且更贴近常见的行业实践。它还可以让应用执行下一节中所述的[增量同意](#incremental-and-dynamic-consent)。
 
@@ -89,12 +89,12 @@ client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
 
 通过 v2.0 终结点，可以在运行时**动态**指定应用在一般使用期间所需的权限。为此，可以在授权请求的 `scope` 参数中包含范围，以便在任何指定的时间点指定应用所需的范围：
 
-```
-GET https://login.microsoftonline.com/common/v2.0/oauth2/authorize?
-client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
-&scope=https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.read%20https%3A%2F%2Fgraph.windows.net%2Fdirectory.write
-...
-```
+
+		GET https://login.microsoftonline.com/common/v2.0/oauth2/authorize?
+		client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
+		&scope=https%3A%2F%2Fgraph.chinacloudapi.cn%2Fdirectory.read%20https%3A%2F%2Fgraph.windows.net%2Fdirectory.write
+		...
+
 
 应用程序的上述请求权限可读取 Azure AD 用户的目录数据，以及将数据写入到其目录。如果用户过去曾针对此特定应用程序同意这些权限，他们只要输入其凭据并登录应用程序。如果用户未曾同意这些权限的任何一项，v2.0 终结点请求用户同意这些权限。若要了解详细信息，可以阅读[权限、同意和范围](/documentation/articles/active-directory-v2-scopes)。
 

@@ -49,17 +49,17 @@ Azure AD 实施 [OAuth 2.0](/documentation/articles/active-directory-v2-protocol
 
 在 [OpenID Connect 或 OAuth 2.0](/documentation/articles/active-directory-v2-protocols) 授权请求中，应用程序可以使用 `scope` 查询参数来请求它所需的权限。例如，当用户登录应用程序时，应用程序发送如下所示的请求（包含换行符以便于阅读）：
 
-```
-GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
-&response_type=code
-&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
-&response_mode=query
-&scope=
-https%3A%2F%2Fgraph.microsoft.com%2Fcalendar.read%20
-https%3A%2F%2Fgraph.microsoft.com%2Fmail.send
-&state=12345
-```
+
+		GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
+		client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+		&response_type=code
+		&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
+		&response_mode=query
+		&scope=
+		https%3A%2F%2Fgraph.microsoft.com%2Fcalendar.read%20
+		https%3A%2F%2Fgraph.microsoft.com%2Fmail.send
+		&state=12345
+
 
 `scope` 参数是应用程序所请求的范围列表（以空格分隔）。将范围值附加到资源的标识符（应用程序 ID URI）可指示每个范围。上述请求表示应用程序需要相应的权限来读取用户的邮箱，以及以用户身分发送邮件。
 
@@ -73,20 +73,20 @@ https%3A%2F%2Fgraph.microsoft.com%2Fmail.send
 
 在用户同意应用程序的权限之后，应用程序即可获取访问令牌，而这些令牌表示应用程序访问资源的权限。给定的访问令牌只能用于单个资源，但其内部编码是应用程序已获得该资源的特有权限。若要获取访问令牌，应用程序可以对 v2.0 令牌终结点发出请求：
 
-```
-POST common/oauth2/v2.0/token HTTP/1.1
-Host: https://login.microsoftonline.com
-Content-Type: application/json
 
-{
-	"grant_type": "authorization_code",
-	"client_id": "6731de76-14a6-49ae-97bc-6eba6914391e",
-	"scope": "https://outlook.office.com/mail.read https://outlook.office.com/mail.send",
-	"code": "AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq..."
-	"redirect_uri": "https://localhost/myapp",
-	"client_secret": "zc53fwe80980293klaj9823"  // NOTE: Only required for web apps
-}
-```
+		POST common/oauth2/v2.0/token HTTP/1.1
+		Host: https://login.microsoftonline.com
+		Content-Type: application/json
+		
+		{
+			"grant_type": "authorization_code",
+			"client_id": "6731de76-14a6-49ae-97bc-6eba6914391e",
+			"scope": "https://outlook.office.com/mail.read https://outlook.office.com/mail.send",
+			"code": "AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq..."
+			"redirect_uri": "https://localhost/myapp",
+			"client_secret": "zc53fwe80980293klaj9823"  // NOTE: Only required for web apps
+		}
+
 
 然后，生成的访问令牌可用于资源的 HTTP 请求 - 它可靠地指示应用程序具有适当权限可执行给定任务的资源。
 

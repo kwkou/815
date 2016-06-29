@@ -17,14 +17,14 @@
 OpenID Connect 是构建在 OAuth 2.0 基础之上的身份验证协议，可用于将用户安全登录到 Web 应用程序。使用 v2.0 终结点的 OpenID Connect 实现，可以将登录和 API 访问权限添加到基于 Web 的应用程序中。本指南与语言无关，说明如何实现上述目的，并介绍在不使用我们的任何开放源代码库的情况下，如何发送和接收 HTTP 消息。
 
 > [AZURE.NOTE]
-	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](active-directory-v2-limitations.md)。
+	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations)。
     
 [OpenID Connect](http://openid.net/specs/openid-connect-core-1_0.html) 扩展了 OAuth 2.0 授权协议，可用作“身份验证”协议，让你使用 OAuth 执行单一登录。它引入了 `id_token` 的概念，这是一种安全令牌，可让客户端验证用户的标识，并获取有关用户的基本配置文件信息。由于它扩展了 OAuth 2.0，因此还可让应用程序安全地获取 **access\_tokens**，而这些令牌可用于访问[授权服务器](/documentation/articles/active-directory-v2-protocols#the-basics)保护的资源。如果要构建的 [Web 应用程序](/documentation/articles/active-directory-v2-flows#web-apps)托管在服务器中并通过浏览器访问，我们建议使用 OpenID Connect。
 
 ## 协议图 - 登录
 最基本的登录流包含以下步骤 - 下面详细描述了每个步骤。
 
-![OpenId Connect Swimlanes](../media/active-directory-v2-flows/convergence_scenarios_webapp.png)
+![OpenId Connect Swimlanes](./media/active-directory-v2-flows/convergence_scenarios_webapp.png)
 
 ## 发送登录请求
 当 Web 应用需要验证用户时，可以将用户定向到 `/authorize` 终结点。此请求类似于 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols-oauth-code)的第一个阶段，不过有几个重要的区别：
