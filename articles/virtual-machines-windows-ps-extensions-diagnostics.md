@@ -12,7 +12,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="12/15/2015"
-	wacn.date="06/06/2016"/>
+	wacn.date="06/07/2016"/>
 
 
 # 使用 PowerShell 在运行 Windows 的 Azure 虚拟机中启用诊断

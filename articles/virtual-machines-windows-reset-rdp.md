@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="04/12/2016"
-	wacn.date="05/12/2016"/>
+	wacn.date="06/07/2016"/>
 
 # 如何在 Windows VM 中重置远程桌面服务或其登录密码
 
@@ -111,6 +111,7 @@ b. `Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Serv
 
 
 如果你仍然无法远程连接到虚拟机，请参阅 [Troubleshoot Remote Desktop connections to a Windows-based Azure virtual machine（对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除）](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)，以了解其他值得一试的步骤。
+
 ## 其他资源
 
 [Azure VM 扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features)

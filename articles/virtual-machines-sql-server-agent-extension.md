@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="05/11/2016"
-	wacn.date="06/27/2016"/>
+	ms.date="04/08/2016"
+	wacn.date="06/07/2016"/>
 
 # SQL Server IaaS 代理扩展（经典）
 

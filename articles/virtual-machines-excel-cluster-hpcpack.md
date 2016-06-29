@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="02/19/2016"
-	wacn.date="05/16/2016"/>
+	wacn.date="06/07/2016"/>
 
 # 开始使用 Azure 中的 HPC Pack 群集运行 Excel 和 SOA 工作负荷
 

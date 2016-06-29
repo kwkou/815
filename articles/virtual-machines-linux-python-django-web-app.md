@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="11/17/2015"
-	wacn.date="03/21/2016"/>
+	wacn.date="06/13/2016"/>
 	
 # Linux VM 上的 Django Hello World Web 应用程序
 

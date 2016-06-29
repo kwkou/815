@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="02/03/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="06/07/2016"/>
 
 # 将数据磁盘附加到使用经典部署模型创建的 Windows 虚拟机
 
