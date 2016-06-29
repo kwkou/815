@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="04/22/2016"
+	wacn.date="06/29/2016"/>
 
 
 #在 HDInsight 中的 Hadoop 上将 C# 用户定义函数与 Hive 和 Pig 流式处理配合使用

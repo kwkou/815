@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="01/06/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="04/19/2016"
+	wacn.date="06/29/2016"/>
 
 # 在 Azure 管理门户中创建运行 Windows 的虚拟机
 

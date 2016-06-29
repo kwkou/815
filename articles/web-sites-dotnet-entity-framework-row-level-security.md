@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="01/25/2016"
-	wacn.date="03/17/2016"/>
+	ms.date="04/25/2016"
+	wacn.date="06/29/2016"/>
 
 # 教程：使用多租户数据库和 Entity Framework 及行级别安全性的 Web 应用
 

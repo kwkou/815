@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cache"
-	ms.date="01/21/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="04/28/2016"
+	wacn.date="06/29/2016"/>
 
 # 如何使用 Azure Redis Cache
 

@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/28/2016"
-	wacn.date="03/17/2016"/>
+	ms.date="04/28/2016"
+	wacn.date="06/29/2016"/>
 
 
 #使用 Power Query 将 Excel 连接到 Hadoop

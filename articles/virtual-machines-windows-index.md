@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="02/24/2016"
-	wacn.date="06/07/2016"/>
+	ms.date="04/20/2016"
+	wacn.date="06/29/2016"/>
 
 # 适用于 Azure 中 Windows VM 的技术文章
 

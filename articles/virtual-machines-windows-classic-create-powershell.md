@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="03/10/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="05/05/2016"
+	wacn.date="06/29/2016"/>
 
 # 使用 Powershell 和经典部署模型创建 Windows 虚拟机 
 

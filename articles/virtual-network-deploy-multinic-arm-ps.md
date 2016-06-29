@@ -12,8 +12,8 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="11/20/2015"
-	wacn.date="06/06/2016"/>
+	ms.date="02/02/2016"
+	wacn.date="06/29/2016"/>
 
 #使用 PowerShell 部署多 NIC VM
 

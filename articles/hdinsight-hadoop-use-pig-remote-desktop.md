@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="04/22/2016"
+	wacn.date="06/29/2016"/>
 
 #从远程桌面连接运行 Pig 作业
 

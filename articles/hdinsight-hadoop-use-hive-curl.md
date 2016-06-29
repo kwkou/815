@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/16/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="05/03/2016"
+	wacn.date="06/29/2016"/>
 
 #使用 Curl 在 HDInsight 中以 Hadoop 运行 Hive 查询
 

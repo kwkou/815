@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/04/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="04/26/2016"
+	wacn.date="06/29/2016"/>
 
 #使用 PowerShell 运行 Pig 作业
 

@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/01/2016"
-	wacn.date="04/12/2016"/>
+	ms.date="04/19/2016"
+	wacn.date="06/29/2016"/>
 
 # 使用 HDInsight 上的 Storm 和 HBase 按时间对事件进行关联
 

@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="12/08/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="04/18/2016"
+	wacn.date="06/29/2016"/>
 
 
 #将自定义数据注入到 Azure 虚拟机中

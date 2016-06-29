@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cache"
-	ms.date="02/05/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="04/27/2016"
+	wacn.date="06/29/2016"/>
 
 # 使用 Azure PowerShell 管理 Azure Redis 缓存
 

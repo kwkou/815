@@ -9,8 +9,8 @@ editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/16/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="04/20/2016"
+	wacn.date="06/29/2016"/>
 
 #在 HDInsight 群集创建过程中添加 Hive 库
 

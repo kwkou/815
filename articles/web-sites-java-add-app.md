@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="app-service-web"
-	ms.date="03/04/2016" 
-	wacn.date="04/26/2016"/>
+	ms.date="05/04/2016" 
+	wacn.date="06/29/2016"/>
 
 # 将 Java 应用程序添加到 Azure Web 应用
 
