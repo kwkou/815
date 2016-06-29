@@ -9,8 +9,8 @@
  tags="azure-service-management-windows"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="12/08/2015"
-	wacn.date="01/29/2016"/>
+	ms.date="04/15/2016"
+	wacn.date="06/29/2016"/>
 
 #管理虚拟机扩展
 

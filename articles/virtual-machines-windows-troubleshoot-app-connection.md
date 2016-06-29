@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="03/17/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="04/21/2016"
+	wacn.date="06/29/2016"/>
 
 # 对在 Azure 虚拟机上运行的应用程序的访问进行故障排除
 

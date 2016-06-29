@@ -12,8 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="01/29/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="05/13/2016"
+	wacn.date="06/29/2016"/>
 
 
 # 如何在 Resource Manager 部署模型中捕获 Windows 虚拟机

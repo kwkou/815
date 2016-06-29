@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="virtual-machines-windows"
-	ms.date="04/05/2016"
-	wacn.date="05/24/2016" />
+	ms.date="05/08/2016"
+	wacn.date="06/29/2016" />
 
 # 将本地 AlwaysOn 可用性组扩展到 Azure
 

@@ -8,8 +8,8 @@
 	editor="monicar" />
 <tags 
 	ms.service="virtual-machines-windows"
-	ms.date="04/05/2016"
-	wacn.date="05/24/2016" />
+	ms.date="05/02/2016"
+	wacn.date="06/29/2016" />
 
 # Azure 虚拟机中的 SQL Server 的应用程序模式和开发策略
 

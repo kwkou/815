@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="01/22/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="05/09/2016"
+	wacn.date="06/29/2016"/>
 
 # 为 Azure 准备 Ubuntu 虚拟机
 

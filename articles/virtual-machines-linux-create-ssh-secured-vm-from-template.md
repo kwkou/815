@@ -12,8 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="04/04/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="04/27/2016"
+	wacn.date="06/29/2016"/>
 
 # 使用 Azure 模板创建受保护的 Linux VM
 
