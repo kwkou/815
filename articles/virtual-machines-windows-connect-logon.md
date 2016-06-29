@@ -12,8 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="01/21/2016"
-	wacn.date="06/07/2016"/>
+	ms.date="05/05/2016"
+	wacn.date="06/29/2016"/>
 
 # 如何连接并登录到运行 Windows 的 Azure 虚拟机 
 

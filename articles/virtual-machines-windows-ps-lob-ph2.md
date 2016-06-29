@@ -12,8 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="01/21/2016"
-	wacn.date="06/07/2016"/>
+	ms.date="04/01/2016"
+	wacn.date="06/29/2016"/>
 
 # 业务线应用程序工作负荷阶段 2：配置域控制器
 

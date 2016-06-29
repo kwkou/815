@@ -10,8 +10,8 @@
 
 <tags
    ms.service="virtual-machines-windows"
-   ms.date="11/01/2015"
-   wacn.date="06/07/2016"/>
+   ms.date="03/29/2016"
+   wacn.date="06/29/2016"/>
 
 # 将 Windows VM 的自定义脚本扩展与 Azure 资源管理器模板配合使用
 

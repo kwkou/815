@@ -12,8 +12,8 @@
 
 <tags
    ms.service="virtual-machines-windows"
-   ms.date="09/01/2015"
-   wacn.date="06/07/2016"/>
+   ms.date="03/29/2016"
+   wacn.date="06/29/2016"/>
 
 # 对 Azure Windows VM 扩展故障进行故障排除。
 
