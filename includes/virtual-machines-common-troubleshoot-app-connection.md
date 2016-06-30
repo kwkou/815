@@ -19,6 +19,8 @@
 	- [管理网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-ps)
 - 从不同的位置（例如不同的 Azure 虚拟网络）进行连接
 - 重新部署虚拟机
+	- [重新部署 Windows VM](/documentation/articles/virtual-machines-windows-redeploy-to-new-node)
+	- [重新部署 Linux VM](/documentation/articles/virtual-machines-linux-redeploy-to-new-node)
 - 重新创建虚拟机
 
 有关详细信息，请参阅[终结点连接（RDP/SSH/HTTP 等故障）疑难解答](https://social.msdn.microsoft.com/Forums/azure/538a8f18-7c1f-4d6e-b81c-70c00e25c93d/troubleshooting-endpoint-connectivity-rdpsshhttp-etc-failures?forum=WAVirtualMachinesforWindows)。
