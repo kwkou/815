@@ -192,7 +192,6 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 如需负载平衡选项的其他常规信息，请参阅：
 
-- [Azure 负载平衡器](/documentation/services/load-balancer)
 - [Azure 流量管理器](/documentation/services/traffic-manager)
 
 <!---HONumber=Mooncake_0328_2016-->

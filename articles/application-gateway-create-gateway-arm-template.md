@@ -78,7 +78,10 @@ Azure 应用程序网关是第 7 层负载平衡器。它在不同服务器之�
 	- **name**。资源的名称。请注意 **[parameters('applicationGatewayName')]** 的使用，这意味着在部署过程中将通过用户输入或参数文件输入的方式提供该名称。
 	- **properties**。资源的属性列表。此模板在应用程序网关创建期间，使用虚拟网络与公共 IP 地址。
 
-7. 导航回 [https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-create/]()。
+7. 导航回 [https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-create/](https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-create/)。
+
+	>[AZURE.NOTE] 你从 GitHub 仓库 "azure-quickstart-templates" 中下载的模板，需要做一些修改才能适用于 Azure 中国云环境。例如，替换一些终结点 -- "blob.core.windows.net" 替换成 "blob.core.chinacloudapi.cn"，"cloudapp.azure.com" 替换成 "chinacloudapp.cn"；改掉一些不支持的 VM 映像，还有，改掉一些不支持的 VM 大小。
+
 8. 单击 **azuredeploy-paremeters.json**，然后单击 **RAW**。
 9. 将该文件保存到你计算机上的本地文件夹。
 10. 打开刚保存的文件并编辑参数的值。使用以下值来部署本方案中所述的应用程序网关。

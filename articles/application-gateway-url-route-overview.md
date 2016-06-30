@@ -57,7 +57,7 @@ UrlPathMap 元素是用于指定后端服务器池映射的路径模式。这是
 
 >[AZURE.NOTE] PathPattern：这是要匹配的路径模式列表。每个模式必须以 / 开始，只允许在后接“/”的末尾处添加 *。发送到路径匹配器的字符串不会在第一个 ? 或 # 之后包含任何文本，这些字符在这里是不允许的。
 
-有关详细信息，可以查看[使用基于 URL 的路由的 ARM 模板](https://azure.microsoft.com/documentation/templates/201-application-gateway-url-path-based-routing)。
+有关详细信息，可以查看[使用基于 URL 的路由的 ARM 模板](https://github.com/Azure/azure-quickstart-templates/tree/master/201-application-gateway-url-path-based-routing)。
 
 ## PathBasedRouting 规则
 
