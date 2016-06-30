@@ -10,7 +10,7 @@
 <tags 
    ms.service="vpn-gateway"
    ms.date="05/12/2016"
-   wacn.date="06/24/2016" />
+   wacn.date="06/30/2016" />
 
 # 关于 VPN 网关
 
@@ -49,7 +49,7 @@ VPN 网关（也称为 Azure 虚拟网络网关）用于在虚拟网络和本地
 
 	New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg -Location 'China North' -IpConfigurations $gwipconfig -GatewayType Vpn -VpnType RouteBased
 
-## <a name="gwsku"></a>网关 SKU
+## <a name="gwsku" id="gateway-skus"></a>网关 SKU
 
 在创建 VPN 网关时，你需要指定想要使用的网关 SKU。共有 3 种 VPN 网关 SKU：
 
@@ -120,7 +120,7 @@ VPN 网关（也称为 Azure 虚拟网络网关）用于在虚拟网络和本地
 
 必须确保你要使用的 VPN 设备支持配置所需的 VPN 类型。有关兼容的 VPN 设备的详细信息，请参阅[关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices)。
 
-## 网关要求
+##<a name="gateway-requirements"></a> 网关要求
 
 
 [AZURE.INCLUDE [vpn-gateway-table-requirements](../includes/vpn-gateway-table-requirements-include.md)]

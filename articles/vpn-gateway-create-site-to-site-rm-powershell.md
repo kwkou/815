@@ -11,7 +11,7 @@
 <tags
    ms.service="vpn-gateway"
    ms.date="05/13/2016"
-   wacn.date="06/24/2016"/>
+   wacn.date="06/30/2016"/>
 
 # 使用 PowerShell 和 Azure 资源管理器创建具有站点到站点 VPN 连接的虚拟网络
 
@@ -193,7 +193,7 @@ VPN 连接有几种不同的验证方式。下面我们将讨论如何使用 Azu
 
 ## 后续步骤
 
-- 连接完成后，即可将虚拟机添加到虚拟网络。请参阅[创建虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial)以获取相关步骤。
+- 连接完成后，即可将虚拟机添加到虚拟网络。请参阅[创建虚拟机](/documentation/articles/virtual-machines-windows-creation-choices)以获取相关步骤。
 
 - 有关 BGP 的信息，请参阅 [BGP 概述](/documentation/articles/vpn-gateway-bgp-overview)和[如何配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps)。
 
