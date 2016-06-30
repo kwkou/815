@@ -11,7 +11,7 @@
 <tags 
    ms.service="vpn-gateway"
    ms.date="05/09/2016"
-   wacn.date="06/24/2016" />
+   wacn.date="06/30/2016" />
 
 # 配置经典部署模型的 VPN 网关
 

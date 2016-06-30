@@ -11,7 +11,7 @@
 <tags
    ms.service="vpn-gateway"
    ms.date="04/15/2016"
-   wacn.date="06/24/2016"/>
+   wacn.date="06/30/2016"/>
 
 # 如何使用 Azure 资源管理器 和 PowerShell 在 Azure VPN 网关上配置 BGP
 
