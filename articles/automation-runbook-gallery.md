@@ -37,7 +37,7 @@
 
 ###<a name="AddRunbook"></a> 将 Runbook 添加到 Runbook 库
 
-Microsoft 建议你将 Runbook 添加到你认为对其他客户有用的 Runbook 库中。你可以通过连同以下详细信息[将 Runbook 上载到脚本中心](http://gallery.technet.microsoft.com/site/upload)，来添加 Runbook。
+Azure 建议你将 Runbook 添加到你认为对其他客户有用的 Runbook 库中。你可以通过连同以下详细信息[将 Runbook 上载到脚本中心](http://gallery.technet.microsoft.com/site/upload)，来添加 Runbook。
 
 - 你必须为向导中要显示的 Runbook 指定“Azure”作为“类别”，指定“自动化”作为“子类别”。  
 

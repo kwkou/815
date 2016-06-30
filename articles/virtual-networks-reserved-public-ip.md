@@ -16,7 +16,7 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 A
 
 若要防止 IP 地址更改，可将其设置为保留 IP 地址。保留 IP 只能用作 VIP，可确保云服务的 IP 地址即使在关闭资源或释放资源的情况下也是相同的。此外，你还可以将用作 VIP 的现有动态 IP 转换为保留 IP 地址。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-network-ip-addresses-overview-arm)。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-network-ip-addresses-overview-arm)。
 
 请确保你了解 [IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-classic)在 Azure 中的工作原理。
 

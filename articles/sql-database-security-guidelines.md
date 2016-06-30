@@ -45,7 +45,7 @@ Active Directory 身份验证（集成安全性）在 SQL 数据库 V12 中以�
 
 [SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new) 允许用户使用包含的数据库用户在数据库中进行身份验证。有关详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)、[CREATE USER (Transact-SQL)](https://technet.microsoft.com/zh-cn/library/ms173463.aspx) 和[包含的数据库](https://technet.microsoft.com/zh-cn/library/ff929071.aspx)。
 
-> [AZURE.NOTE] Microsoft 建议使用包含的数据库用户提高可缩放性。
+> [AZURE.NOTE] Azure 建议使用包含的数据库用户提高可缩放性。
 
 数据库引擎将关闭空闲超过 30 分钟的连接。该连接必须重新登录才可供使用。
 

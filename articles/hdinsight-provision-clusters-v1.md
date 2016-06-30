@@ -465,7 +465,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 在使用 Azure CLI 之前，你必须配置工作站和 Azure 之间的连接。Azure CLI 使用你的 Azure 订阅信息连接到你的帐户。可从 Azure 的发布设置文件中获取此信息。稍后可以导入发布设置文件作为永久性本地配置设置，Azure CLI 会将此设置用于后续操作。你只需导入你的发布设置一次。
 
-> [AZURE.NOTE] 发布设置文件包含敏感信息。Microsoft 建议你删除该文件或采取其他措施来加密包含该文件的用户文件夹。在 Windows 上，修改文件夹属性或使用 BitLocker 驱动程序加密。
+> [AZURE.NOTE] 发布设置文件包含敏感信息。Azure 建议你删除该文件或采取其他措施来加密包含该文件的用户文件夹。在 Windows 上，修改文件夹属性或使用 BitLocker 驱动程序加密。
 
 
 1.	打开终端窗口。
@@ -491,7 +491,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 - 下载并导入 Azure 帐户发布设置
 
 
-Azure CLI 可通过 NPM 或 Windows 安装程序来安装。Microsoft 建议你只使用这两个选项中的一个来进行安装。
+Azure CLI 可通过 NPM 或 Windows 安装程序来安装。Azure 建议你只使用这两个选项中的一个来进行安装。
 
 **使用 NPM 安装 Azure CLI**
 
@@ -524,7 +524,7 @@ Azure CLI 可通过 NPM 或 Windows 安装程序来安装。Microsoft 建议你�
 
 在使用 Azure CLI 之前，你必须配置工作站和 Azure 之间的连接。Azure CLI 使用你的 Azure 订阅信息连接到你的帐户。可从 Azure 的发布设置文件中获取此信息。稍后可以导入发布设置文件作为永久性本地配置设置，Azure CLI 会将此设置用于后续操作。你只需导入你的发布设置一次。
 
-> [AZURE.NOTE] 发布设置文件包含敏感信息。Microsoft 建议你删除该文件或采取其他措施来加密包含该文件的用户文件夹。在 Windows 上，修改文件夹属性或使用 BitLocker。
+> [AZURE.NOTE] 发布设置文件包含敏感信息。Azure 建议你删除该文件或采取其他措施来加密包含该文件的用户文件夹。在 Windows 上，修改文件夹属性或使用 BitLocker。
 
 
 1.	打开**命令提示符**。

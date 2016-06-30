@@ -19,7 +19,7 @@
 
 如果在 HPC Pack 群集中部署 Azure“突发”节点，或者在 Azure VM 中创建 HPC Pack 群集，你可能希望有一种方法能够根据群集上的当前工作负荷自动增大或减小 Azure 计算资源（例如核心）的数目。这可让你更有效地使用你的 Azure 资源并控制其成本。为此，可以设置 HPC Pack 群集属性 **AutoGrowShrink**。或者，使用随 HPC Pack 一起安装的 **AzureAutoGrowShrink.ps1** HPC PowerShell 脚本。
 
-> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ## 设置 AutoGrowShrink 群集属性
 

@@ -38,7 +38,7 @@
 
 注册订阅后，在 Azure 中部署 SQL Server 虚拟机的最简单方法是在 Azure 中预配 SQL Server 计算机库映像。这些映像包括 VM 定价中的 SQL Server 许可。
 
-请务必注意，用于创建和管理 Azure 虚拟机的模型有二种：经典模型和 Resource Manager 模型。Microsoft 建议大多数新部署使用资源管理器模型。有关详细信息，请参阅 [Understanding Resource Manager deployment and classic deployment（了解 Resource Manager 部署和经典部署）](/documentation/articles/resource-manager-deployment-model)。每个主题应明确描述其目标模型，除非和本文一样同时适用于经典和 Resource Manager 模型。
+请务必注意，用于创建和管理 Azure 虚拟机的模型有二种：经典模型和 Resource Manager 模型。Azure 建议大多数新部署使用资源管理器模型。有关详细信息，请参阅 [Understanding Resource Manager deployment and classic deployment（了解 Resource Manager 部署和经典部署）](/documentation/articles/resource-manager-deployment-model)。每个主题应明确描述其目标模型，除非和本文一样同时适用于经典和 Resource Manager 模型。
 
 ## 选择 SQL VM 映像
 下表提供了虚拟机库中提供的 SQL Server 映像的矩阵。单击表格中任一链接可创建该版本与操作系统的 VM。

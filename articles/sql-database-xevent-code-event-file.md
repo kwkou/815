@@ -47,7 +47,7 @@
 - SQL Server Management Studio (ssms.exe) 2015 年 8 月预览版或更高版本。可从以下位置下载最新的 ssms.exe：
  - 标题为[下载 SQL Server Management Studio](http://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 的主题。
  - [直接指向下载位置的链接。](http://go.microsoft.com/fwlink/?linkid=616025)
- - Microsoft 建议定期更新 ssms.exe。在某些情况下，ssms.exe 将每个月更新。
+ - Azure 建议定期更新 ssms.exe。在某些情况下，ssms.exe 将每个月更新。
 
 
 - 你必须安装 [Azure PowerShell 模块](http://go.microsoft.com/?linkid=9811175)。
