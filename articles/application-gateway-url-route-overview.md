@@ -9,7 +9,7 @@
 <tags
    ms.service="application-gateway"
    ms.date="04/05/2016"
-   wacn.date="04/28/2016"/>
+   wacn.date="06/30/2016"/>
 
 # 基于 URL 路径的路由概述
 

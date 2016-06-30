@@ -9,7 +9,7 @@
 <tags
    ms.service="application-gateway"
    ms.date="03/03/2016"
-   wacn.date="04/05/2016"/>
+   wacn.date="06/30/2016"/>
 
 # 使用 Azure 资源管理器配置应用程序网关以进行 SSL 卸载
 
