@@ -10,7 +10,7 @@
 <tags
 	ms.service="automation"
 	ms.date="05/10/2016"
-	wacn.date="06/27/2016"/>
+	wacn.date="06/30/2016"/>
 
 # Azure 自动化概述
 
@@ -62,17 +62,13 @@ Runbook 是 Azure 自动化中执行某些自动化过程的一组任务。它�
 
 [Service Management 自动化(SMA)](http://technet.microsoft.com/zh-cn/library/dn469260.aspx) 用于自动处理私有云中的管理任务。它作为 [Azure Pack](https://www.microsoft.com/server-cloud/) 的组件本地安装在你的数据中心中。SMA 和 Azure 自动化使用基于 Windows PowerShell 工作流的相同的 Runbook 格式。
 
-[System Center 2012 Orchestrator](http://technet.microsoft.com/zh-cn/library/hh237242.aspx) 适用于本地资源的自动化。它使用与 Azure 自动化和 Service Management 自动化不同的 Runbook 格式，并且具有图形界面，可用于创建 Runbook 而无需编写任何脚本。它的 Runbook 由专门为 Orchestrator 编写的集成包中的活动构成。
-
-
 ## 从哪里可以获得详细信息？ 
 
 我们提供了多种资源，以帮助您了解有关 Azure 自动化的信息以及学习如何创建您自己的 Runbook。
 
 * “Azure 自动化库”就是您当前正在查看的资源。该库中的文章提供了有关配置和管理 Azure 自动化以及创作自己的 Runbook 的完整文档。 
 * [Azure PowerShell cmdlet](http://msdn.microsoft.com/zh-cn/library/jj156055.aspx) 提供了有关使用 Windows PowerShell 自动完成 Azure 操作的信息。Runbook 使用这些 cmdlet 来处理 Azure 资源。 
-* [管理博客](https://azure.microsoft.com/blog/tag/azure-automation)提供有关 Azure 自动化以及 Microsoft 的其他管理技术的最新信息。欢迎订阅 Azure 自动化博客，随时了解 Azure 自动化团队提供的最新信息。 
-* [自动化论坛](http://go.microsoft.com/fwlink/p/?LinkId=390561)允许您提出有关 Azure 自动化的问题，并将由 Microsoft 和自动化社区提供解答。 
+* [自动化论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=azureautomation)允许您提出有关 Azure 自动化的问题，并将由 Microsoft 和自动化社区提供解答。 
 * [Azure 自动化 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690262.aspx) 提供有关管理任务自动化的信息。它包含的 cmdlet 可用于管理自动化帐户、资产、Runbook。
 
 

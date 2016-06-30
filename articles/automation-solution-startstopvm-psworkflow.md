@@ -9,7 +9,7 @@
 <tags 
 	ms.service="automation"
 	ms.date="01/27/2016"
-	wacn.date="03/22/2016" />
+	wacn.date="06/30/2016" />
 
 # Azure 自动化解决方案 - 启动和停止虚拟机
 
@@ -30,8 +30,9 @@
 | Start-AzureVMs | [启动 Azure 经典 VM](https://gallery.technet.microsoft.com/Start-Azure-Classic-VMs-86ef746b) | PowerShell 工作流 | 启动 Azure 订阅者中的所有经典虚拟机，或者启动所有具有特定服务名称的虚拟机。 |
 | Stop-AzureVMs | [停止 Azure 经典 VM](https://gallery.technet.microsoft.com/Stop-Azure-Classic-VMs-7a4ae43e) | PowerShell 工作流 | 停止自动化帐户中的所有虚拟机，或者停止所有具有特定服务名称的虚拟机。 |
 
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
 
-## 安装解决方案
+##<a id="installing-the-solution"></a> 安装解决方案
 
 ### 1\.安装 Runbook
 
@@ -48,7 +49,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 | 凭据 | AzureCredential | 包含帐户凭据，该帐户有权在 Azure 订阅中启动和停止虚拟机。此外，你也可以在 **Add-AzureAccount -Environment AzureChinaCloud** 活动的 **Credential** 参数中指定其他凭据。 |
 | 变量 | AzureSubscriptionId | 包含你的 Azure 订阅的订阅 ID。 |
 
-## 使用解决方案
+##<a id="using-the-solution"></a> 使用解决方案
 
 ### 参数
 

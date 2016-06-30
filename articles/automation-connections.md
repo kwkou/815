@@ -9,7 +9,7 @@
 <tags
    ms.service="automation"
    ms.date="01/27/2016"
-   wacn.date="03/22/2016" />
+   wacn.date="06/30/2016" />
 
 # Azure 自动化中的连接资产
 
@@ -69,7 +69,7 @@
 
 ## 在 Runbook 中使用连接
 
-在 Runbook 中使用 **Get-AutomationConnection** cmdlet 检索连接。此活动检索连接中的不同字段的值，并将它们按[哈希表](http://go.microsoft.com/fwlink/?LinkID=324844)返回，该哈希表随后可用于 Runbook 中适当的命令。
+在 Runbook 中使用 **Get-AutomationConnection** cmdlet 检索连接。此活动检索连接中的不同字段的值，并将它们按[哈希表](https://technet.microsoft.com/zh-cn/library/hh847780.aspx)返回，该哈希表随后可用于 Runbook 中适当的命令。
 
 ### 文本 Runbook 示例
 下面的示例命令演示如何使用前面示例中的 Twilio 连接从 Runbook 中发送短信。此处使用的 Send-TwilioSMS 活动具有两个参数集，它们分别使用不同方法对 Twilio 服务进行身份验证。其中一个使用连接对象，而另一个对“帐户 SID”和“授权令牌”使用单个参数。此示例中显示了这两种方法。

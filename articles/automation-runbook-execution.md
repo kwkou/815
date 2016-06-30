@@ -9,7 +9,7 @@
 <tags
    ms.service="automation"
    ms.date="03/21/2016"
-   wacn.date="04/20/2016" />
+   wacn.date="06/30/2016" />
 
 # 在 Azure 自动化中执行 Runbook
 
@@ -29,7 +29,7 @@
 | 状态| 说明|
 |:---|:---|
 |已完成|作业已成功完成。|
-|已失败| 就 PowerShell 脚本 Runbook 来说，是指 Runbook 无法启动或作业遇到异常。 |
+|已失败| 对于 PowerShell 工作流的 Runbook，Runbook 无法编译。 |
 |失败，正在等待资源|作业失败，因为它已达到[公平份额](#fairshare)限制三次，并且每次都已从同一个检查点或 Runbook 开始处启动。|
 |已排队|作业正在等待提供自动化工作线程的资源，以便能够启动。|
 |正在启动|作业已分配给工作线程，并且系统正在将它启动。|
@@ -86,7 +86,7 @@ Runbook 仪表板显示单个 Runbook 的摘要。摘要图表显示在给定的
 
 ## 公平份额
 
-为了在云中的所有 Runbook 之间共享资源，Azure 自动化在任何作业运行 3 小时后都会将其暂时卸载。PowerShell 工作流 Runbook 将会从上一个[检查点](http://technet.microsoft.com/zh-cn/library/dn469257.aspx#bk_Checkpoints)进行恢复。在此期间，该作业将显示“正在运行，正在等待资源”状态。如果该 Runbook 没有检查点或者作业在卸载之前尚未达到第一个检查点，则会从开始处重启。PowerShell Runbook 始终从头开始重新启动，因为它们不支持检查点。
+为了在云中的所有 Runbook 之间共享资源，Azure 自动化在任何作业运行 3 小时后都会将其暂时卸载。PowerShell 工作流 Runbook 将会从上一个[检查点](http://technet.microsoft.com/zh-cn/library/dn469257.aspx#bk_Checkpoints)进行恢复。在此期间，该作业将显示“正在运行，正在等待资源”状态。如果该 Runbook 没有检查点或者作业在卸载之前尚未达到第一个检查点，则会从开始处重启。
 
 如果 Runbook 连续三次从同一个检查点或者从 Runbook 的开始处重启，则会终止并显示状态“失败，正在等待资源”。这是为了防止 Runbook 无限期运行而无法完成，因为在不重新卸载的情况下，它们无法到达下一个检查点。在此情况下，你将会收到以下异常和失败。
 
