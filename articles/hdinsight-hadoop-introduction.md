@@ -220,8 +220,6 @@ HDInsight 群集为以下特定于 Hadoop 生态系统的语言提供支持：
 
 * [Azure SQL 数据库](/documentation/services/sql-databases/)：有关 SQL 数据库的文档、教程和视频。
 
-* [Azure 管理门户上的 SQL 数据库](/documentation/articles/sql-database-manage-portal)：一种轻量版易用型数据库管理工具，用于在云中管理 SQL 数据库。
-
 * [Adventure Works for SQL 数据库](http://msftdbprodsamples.codeplex.com/releases/view/37304)：SQL 数据库示例数据库的下载页。
 
 ### Microsoft 商业智能（适用于 Windows 上的 HDInsight）

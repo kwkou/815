@@ -22,9 +22,9 @@
 为了完成本教程，你需要满足以下条件。
 
 - Azure 订阅创建新存储帐户。如果你没有订阅，可以[注册试用版](/pricing/1rmb-trial)。
-- 用于保存 Runbook 的[自动化帐户](/documentation/articles/automation-configuring)。
+- 用于保存 Runbook 的自动化帐户。
 - Azure 虚拟机。我们将停止并启动该计算机，因此其不应为生产用计算机。
-- 用于对 Azure 资源进行身份验证的 [Azure Active Directory 和自动化资产](/documentation/articles/automation-configuring)。此用户必须有权启动和停止虚拟机。
+- 用于对 Azure 资源进行身份验证的 Azure Active Directory 和自动化资产。此用户必须有权启动和停止虚拟机。
 
 ## 步骤 1 - 创建新的 Runbook
 
@@ -81,7 +81,7 @@
 2.  我们不再需要 **Write-Output** 行，因此请直接删除它。
 3.  将光标放在大括号之间的空白行上。
 3.  单击“插入”>“设置”>“获取 Windows PowerShell 凭据”，然后选择所需的凭据。
-4.  如果你没有凭据，可以通过单击“管理”>“添加凭据”来创建一个凭据。有关详细信息，请参阅 [Azure Active Directory 用户和自动化凭据资产](/documentation/articles/automation-configuring)。
+4.  如果你没有凭据，可以通过单击“管理”>“添加凭据”来创建一个凭据。
 5.  在 **Get-AutomationPSCredential** 前面，输入 *$Credential =* 以将凭据分配给变量。 
 3.  在下一行中键入 *Add-AzureAccount -Credential $Credential –Environment AzureChinaCloud*。
 

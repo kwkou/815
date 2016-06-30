@@ -136,7 +136,7 @@
 4.	完成所有作业任务后，控制器会将作业更新为已完成状态。在作业执行期间，可以随时使用 PowerShell API 来查看作业执行的当前状态。PowerShell API 返回的所有时间都以 UTC 表示。如果需要，你可以启动取消请求来停止作业。 
 
 ## 后续步骤
-[安装组件](/documentation/articles/sql-database-elastic-jobs-service-installation)，然后[创建一个登录名并将其添加到数据库组的每个数据库中](/documentation/articles/sql-database-security)。若要进一步了解作业创建和管理过程，请参阅[创建和管理弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-create-and-manage)。另请参阅[弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started)。
+[安装组件](/documentation/articles/sql-database-elastic-jobs-service-installation)，然后[创建一个登录名并将其添加到数据库组的每个数据库中](/documentation/articles/sql-database-security)。另请参阅[弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started)。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

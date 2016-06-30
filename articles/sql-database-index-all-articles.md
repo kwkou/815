@@ -93,7 +93,6 @@
 | 39 | Azure SQL 数据库 Query Performance Insight | 查询性能监视可以识别 Azure SQL 数据库中 CPU 消耗最大的查询。 |
 | 40 | 更改 SQL 数据库的服务层和性能级别（定价层） | “更改 Azure SQL 数据库的服务层和性能级别”介绍如何扩展或缩减 SQL 数据库。更改 Azure SQL 数据库的定价层。 |
 | 41 | [弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started) | 大致介绍 Azure SQL 数据库的弹性数据库工具功能，包括易于使用的示例应用。 |
-| 42 | [SQL 数据库中的 In-Memory（预览版）入门](/documentation/articles/sql-database-in-memory) | SQL In-Memory 技术大幅提升了事务和分析工作负荷的性能。了解如何利用这些技术。 |
 | 43 | [如何使用批处理来改善 SQL 数据库应用程序的性能](/documentation/articles/sql-database-use-batching-to-improve-performance) | 本主题提供有关数据库批处理操作大幅改善 Azure SQL 数据库应用程序速度和缩放性的证据。尽管这些批处理方法适用于任何 SQL Server 数据库，但本文将重点放在 Azure 上。 |
 | 44 | [监视 In-Memory OLTP 存储](/documentation/articles/sql-database-in-memory-oltp-monitoring) | 估算和监视 XTP 内存中存储用量与容量；解决容量错误 41823 |
 | 45 | [弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance) | 弹性数据库池是由一组弹性数据库共享的可用资源的集合。本文提供相关的指导来帮助你评估是否适合对一组数据库使用弹性数据库池。 |

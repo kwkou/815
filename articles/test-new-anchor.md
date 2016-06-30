@@ -22,8 +22,6 @@ V.0625.1
 
 ##test direct reference of md file
 
-See the Azure Automation [Getting Started Tutorial](/documentation/articles/automation-create-runbook-from-samples)
-
 > [AZURE.TIP] Subscribe to the [Guest OS Update RSS Feed][rss] to receive the most timely notification on all Guest OS changes. Changes mentioned on that feed will be integrated into this page approximately every week.
 
 > [AZURE.IMPORTANT] To ensure that your service works as expected, you must deploy it to Guest OS release that is compatible with the version of the Azure SDK used to develop your service. If you do not, the deployed service may exhibit errors in the cloud that were not apparent in the development environment.
