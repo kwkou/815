@@ -19,7 +19,7 @@
 
 Azure SQL 数据库具有三个[服务层](/documentation/articles/sql-database-service-tiers)：基本、标准和高级。所有这些服务层都会将提供给 Azure SQL 数据库的资源进行严格隔离，确保你获得可预知的性能。从“基本”层到“标准”层再到“高级”层，数据库能够确保实现的吞吐量是上升的。
 
->[AZURE.NOTE] 企业和 Web 版服务层将于 2015 年 9 月停用。有关详细信息，请参阅 [Web 和 Business Edition 版停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq)。有关将现有 Web 和企业数据库升级到新服务层的详细信息，请参阅[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-server-portal)。
+>[AZURE.NOTE] 企业和 Web 版服务层将于 2015 年 9 月停用。有关详细信息，请参阅 [Web 和 Business Edition 版停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq)。
 
 本文提供了一些指导，帮助你确定此预览版提供的哪个服务层适合你的应用程序，并提供了一些应用程序优化建议，让你充分利用 Azure SQL 数据库。
 

@@ -19,8 +19,6 @@
  
 ## <a id="create"></a>如何创建自动化账号和Runbook
  
-关于Azure Automation功能的使用请参考[链接](/documentation/articles/automation-create-runbook-from-samples)
- 
 首先，我们需要创建一个自动化账号（Automation Account）：
 
 ![](./media/aog-automation-how-to-turn-on-off-vm/create-automation-account.jpg) 

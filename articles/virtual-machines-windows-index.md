@@ -68,7 +68,7 @@
 
 [使用 Chef 自动执行 Azure 虚拟机部署](/documentation/articles/virtual-machines-windows-chef-automation)
 
-[使用资源管理器和 Azure PowerShell 创建并配置 Windows 虚拟机](/documentation/articles/virtual-machines-windows-create-powershell)
+[使用资源管理器和 Azure PowerShell 创建并配置 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-create)
 
 ### 管理
 [适合使用 Azure 命令行界面执行 VM 任务的等效资源管理器和服务管理命令](/documentation/articles/virtual-machines-windows-cli-manage)

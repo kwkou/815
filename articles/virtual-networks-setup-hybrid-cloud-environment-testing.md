@@ -289,7 +289,7 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
 
 ##<a id="costs"></a> 最大程度地降低此环境的持续使用成本
 
-若要将在此环境中运行虚拟机的成本降到最低，请尽快执行所需的测试和演示，然后删除它们或关闭虚拟机（在不使用时进行）。例如，你可以在每个营业日结束时使用 Azure 自动化和 Runbook 来自动关闭 Test\_VNET 虚拟网络中的虚拟机。有关详细信息，请参阅 [Azure 自动化入门](/documentation/articles/automation-create-runbook-from-samples)。
+若要将在此环境中运行虚拟机的成本降到最低，请尽快执行所需的测试和演示，然后删除它们或关闭虚拟机（在不使用时进行）。例如，你可以在每个营业日结束时使用 Azure 自动化和 Runbook 来自动关闭 Test\_VNET 虚拟网络中的虚拟机。
 
 在实施时，Azure VPN 网关将由两台 Azure 虚拟机组成，因此会产生持续的货币成本。有关详细信息，请参阅[定价 - 虚拟网络](/home/features/networking/#price)。若要将 VPN 网关的成本降到最低，请创建测试环境并尽快执行所需测试和演示，或者通过这些步骤删除该网关。
 
