@@ -16,7 +16,7 @@
 
 # 在 Azure Resource Manager 虚拟机 (GUI) 中配置 AlwaysOn 可用性组
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代经典模型。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典模型。
 
 
 本端到端教程介绍如何使用 Azure Resource Manager 虚拟机创建 SQL Server 可用性组。本教程将使用 Azure 边栏选项卡配置模板。当你完成本教程时，你将查看门户中的默认设置，键入所需设置，以及更新边栏选项卡。

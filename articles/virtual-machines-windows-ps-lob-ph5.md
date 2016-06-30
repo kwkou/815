@@ -17,7 +17,7 @@
 
 # 业务线应用程序工作负荷阶段 5：创建可用性组并添加应用程序数据库
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代经典部署模型。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
 
 在 Azure 基础结构服务中部署高可用性组业务线应用程序的这个最后阶段，你将创建新的 SQL Server AlwaysOn 可用性组，并添加应用程序数据库。
 

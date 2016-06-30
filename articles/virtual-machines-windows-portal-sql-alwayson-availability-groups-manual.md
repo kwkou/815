@@ -26,7 +26,7 @@
 
 本端到端教程介绍如何使用 Azure Resource Manager 虚拟机上运行的 SQL Server AlwaysOn 实施可用性组。
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Microsoft 建议对大多数新的部署使用该模型，而不是 Resource Manager 模型。
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是 Resource Manager 模型。
 
 完成本教程后，Azure 中的 SQL Server AlwaysOn 解决方案将包括以下要素：
 
