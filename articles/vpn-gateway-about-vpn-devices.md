@@ -60,7 +60,7 @@
 | Watchguard | 全部 | Fireware XTM v11.x | [配置说明](http://customers.watchguard.com/articles/Article/Configure-a-VPN-connection-to-a-Windows-Azure-virtual-network) | 不兼容 |
 
 
-## 非验证的 VPN 设备
+##<a name="devices-not-on-the-compatible-list"></a> 非验证的 VPN 设备
 
 如果你没有看到你的设备列在“已验证的 VPN 设备”表（见上）中，该设备仍有可能适用于站点到站点连接。请确保你的 VPN 设备符合[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/#gateway-requirements)一文“网关要求”部分列出的最低要求。满足最低要求的设备也应该兼容 VPN 网关。请联系你的设备制造商了解更多支持和配置说明。
 
