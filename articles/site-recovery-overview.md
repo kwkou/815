@@ -42,13 +42,13 @@ Site Recovery 可帮助做到这一点，因为它能协调工作负荷和应用
 
 **REPLICATE** | **REPLICATE FROM** | **REPLICATE TO** | **ARTICLE**
 ---|---|---|---
-VMware VM 上运行的工作负荷 | 本地 VMware 服务器 | Azure 存储空间 | [部署](/documentation/articles/site-recovery-vmware-to-azure-classic)
+VMware VM 上运行的工作负荷 | 本地 VMware 服务器 | Azure 存储空间 | 部署
 VMware VM 上运行的工作负荷 | 本地 VMware 服务器 | 辅助 VMware 站点 | [部署](/documentation/articles/site-recovery-vmware-to-vmware) 
 Hyper-V VM 上运行的工作负荷 | VMM 云中的本地 Hyper-V 主机服务器 | Azure 存储空间 | [部署](/documentation/articles/site-recovery-vmm-to-azure)
 Hyper-V VM 上运行的工作负荷 | VMM 云中的本地 Hyper-V 主机服务器 | 辅助 VMM 站点 | [部署](/documentation/articles/site-recovery-vmm-to-vmm)
 Hyper-V VM 上运行的工作负荷 | 使用 SAN 存储的 VMM 云中的本地 Hyper-V 主机服务器| 具有 SAN 存储的辅助 VMM 站点 | [部署](/documentation/articles/site-recovery-vmm-san)
 Hyper-V VM 上运行的工作负荷 | 本地 Hyper-V 站点（无 VMM） | Azure 存储空间 | [部署](/documentation/articles/site-recovery-hyper-v-site-to-azure)
-物理 Windows/Linux 服务器上运行的工作负荷 | 本地物理服务器 | Azure 存储空间 | [部署](/documentation/articles/site-recovery-vmware-to-azure-classic)
+物理 Windows/Linux 服务器上运行的工作负荷 | 本地物理服务器 | Azure 存储空间 | 部署
 物理 Windows/Linux 服务器上运行的工作负荷 | 本地物理服务器 | 辅助数据中心 | [部署](/documentation/articles/site-recovery-vmware-to-vmware) 
 
 

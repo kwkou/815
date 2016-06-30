@@ -19,8 +19,8 @@
 本文介绍如何使用 Site Recovery 在 Azure 区域之间迁移 Azure VM。开始之前，请注意：
 
 - 目前只能迁移。这意味着，你可以将 VM 从一个 Azure 区域故障转移到另一个 Azure 区域，但不能重新对其进行故障回复。
-- 本文汇总并使用[将 VMware 虚拟机或物理服务器复制到 Azure](/documentation/articles/site-recovery-vmware-to-azure-classic)（提供了复制设置的最新增强版说明）中完整描述的许多步骤。迁移时，建议你遵循本文获取详细说明。
-- **你不应该再使用**此[旧版文章](/documentation/articles/site-recovery-vmware-to-azure-classic-legacy)中的说明。
+
+
 
 请将任何评论或问题发布到本文底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)。
 
@@ -29,17 +29,17 @@
 
 以下是执行此部署所需的组件：
 
-- **管理服务器**：运行 Windows Server 2012 R2 作为管理服务器的本地 VM。在此服务器上安装 Site Recovery 组件（包括配置服务器和进程服务器）。阅读[管理服务器注意事项](/documentation/articles/site-recovery-vmware-to-azure-classic#management-server-considerations)和[本地先决条件](/documentation/articles/site-recovery-vmware-to-azure-classic#on-premises-prerequisites)，了解详细信息。
+- **管理服务器**：运行 Windows Server 2012 R2 作为管理服务器的本地 VM。在此服务器上安装 Site Recovery 组件（包括配置服务器和进程服务器）。
 - **IaaS 虚拟机**：你想要迁移的虚拟机。
 
 ## 部署步骤
 
-1. [创建保管库](/documentation/articles/site-recovery-vmware-to-azure-classic#step-1-create-a-vault)。
-2. [部署管理服务器](/documentation/articles/site-recovery-vmware-to-azure-classic#Step-5-install-the-management-server)。
+1. 创建保管库。
+2. 部署管理服务器。
 3. 在部署管理服务器之后，验证它能与你要迁移的 VM 通信。
-4. [创建保护组](/documentation/articles/site-recovery-vmware-to-azure-classic#step-8-create-a-protection-group)。保护组包含共享相同复制设置的受保护计算机。指定组的复制设置，这些设置将被应用到添加到该组的所有计算机。
-5. [安装移动服务](/documentation/articles/site-recovery-vmware-to-azure-classic#step-9-install-the-mobility-service)。你要保护的每个虚拟机需要安装移动服务。此服务将数据发送到进程服务器。可以手动安装移动服务，也可以在启用了虚拟机保护后由进程服务器自动推送并安装。请注意，要迁移的 IaaS 虚拟机上的防火墙规则应配置为允许此服务的推送安装。
-6. [为计算机启用保护](/documentation/articles/site-recovery-vmware-to-azure-classic#step-10-enable-protection-for-a-machine)。将想要保护的计算机添加到复制组中。 
+4. 创建保护组。保护组包含共享相同复制设置的受保护计算机。指定组的复制设置，这些设置将被应用到添加到该组的所有计算机。
+5. 安装移动服务。你要保护的每个虚拟机需要安装移动服务。此服务将数据发送到进程服务器。可以手动安装移动服务，也可以在启用了虚拟机保护后由进程服务器自动推送并安装。请注意，要迁移的 IaaS 虚拟机上的防火墙规则应配置为允许此服务的推送安装。
+6. 为计算机启用保护。将想要保护的计算机添加到复制组中。 
 7. 你可以使用虚拟机的 IP 地址发现要迁移到 Azure 的 IaaS 虚拟机。在 Azure 中的虚拟机仪表板上找到此地址。
 8. 在你创建的保护组的选项卡上，单击“添加计算机”>“物理计算机”。
 

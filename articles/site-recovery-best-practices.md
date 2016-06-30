@@ -44,7 +44,7 @@
 
 
 
-
+<!--
 ## 复制 VMware VM 和物理服务器的要求
 
 此表汇总了将 VMware VM 和 Windows/Linux 物理服务器复制到 Azure 和辅助站点的要求。
@@ -62,7 +62,7 @@
 **Azure 虚拟网络** | 你需要一个 Azure 虚拟网络，以便发生故障转移时 Azure VM 能够连接到其中。若要在故障转移后进行故障回复，需要设置从 Azure 网络到本地站点的 VPN 连接（或 Azure ExpressRoute）。 | 不适用
 **受保护的计算机** | 至少一个 VMware 虚拟机或物理 Windows/Linux 服务器。在部署过程中，将在要复制的每个计算机上安装移动服务。 | 至少一个 VMware 虚拟机或物理 Windows/Linux 服务器。在部署过程中，将在要复制的每个计算机上安装统一代理。
 **连接** | 如果管理服务器将通过代理连接到站点恢复，则需要确保代理服务器可以连接到特定 URL。 | 配置服务器需要访问 Internet。
-**详细信息** | [详细的部署先决条件](/documentation/articles/site-recovery-vmware-to-azure-classic#before-you-start-deployment)。 | [下载](http://download.microsoft.com/download/E/0/8/E08B3BCE-3631-4CED-8E65-E3E7D252D06D/InMage_Scout_Standard_User_Guide_8.0.1.pdf) InMage Scout 用户指南。
+**详细信息** | 详细的部署先决条件 | [下载](http://download.microsoft.com/download/E/0/8/E08B3BCE-3631-4CED-8E65-E3E7D252D06D/InMage_Scout_Standard_User_Guide_8.0.1.pdf) InMage Scout 用户指南。-->
 
 ##<a id="virtual-machines"></a> Azure 虚拟机要求
 
@@ -72,8 +72,8 @@
 **功能** | **要求** | **详细信息**
 ---|---|---
 Hyper-V 主机 | 应运行 Windows Server 2012 R2 | 如果操作系统不受支持，先决条件检查将会失败
-VMware 虚拟机监控程序 | 支持的操作系统 | [检查要求](/documentation/articles/site-recovery-vmware-to-azure-classic#before-you-start-deployment) 
-来宾操作系统 | 对于从 Hyper-V 到 Azure 的复制，站点恢复支持 [Azure 支持](https://technet.microsoft.com/zh-cn/library/cc794868%28v=ws.10%29.aspx)的所有操作系统。<br/><br/>对于 VMware 和物理服务器复制，请检查 Windows 和 Linux [先决条件](/documentation/articles/site-recovery-vmware-to-azure-classic.md#before-you-start-deployment) | 如果不支持，先决条件检查将会失败。 
+VMware 虚拟机监控程序 | 支持的操作系统 | 检查要求
+来宾操作系统 | 对于从 Hyper-V 到 Azure 的复制，站点恢复支持 [Azure 支持](https://technet.microsoft.com/zh-cn/library/cc794868%28v=ws.10%29.aspx)的所有操作系统。<br/><br/>对于 VMware 和物理服务器复制，请检查 Windows 和 Linux 先决条件 | 如果不支持，先决条件检查将会失败。 
 来宾操作系统体系结构 | 64 位 | 如果不支持，先决条件检查将会失败
 操作系统磁盘大小 | 最大 1023 GB | 如果不支持，先决条件检查将会失败
 操作系统磁盘计数 | 1 | 如果不支持，先决条件检查将会失败。
@@ -114,8 +114,7 @@ FC 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
 
 了解并比较常规部署要求后，你可以阅读详细的先决条件并开始部署每个方案。
 
-- [将 VMware 虚拟机复制到 Azure](/documentation/articles/site-recovery-vmware-to-azure-classic)
-- [将物理服务器复制到 Azure](/documentation/articles/site-recovery-vmware-to-azure-classic)
+
 - [将 VMM 云中的 Hyper-V 服务器复制到 Azure](/documentation/articles/site-recovery-vmm-to-azure)
 - [将 Hyper-V 虚拟机（不使用 VMM）复制到 Azure](/documentation/articles/site-recovery-hyper-v-site-to-azure)
 - [将 Hyper-V VM 复制到辅助站点](/documentation/articles/site-recovery-vmm-to-vmm)

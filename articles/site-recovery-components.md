@@ -27,14 +27,14 @@
 
 部署站点恢复可在许多方案中协调复制：
 
-- **复制 VMware 虚拟机**：可将本地 VMware 虚拟机复制到 [Azure](/documentation/articles/site-recovery-vmware-to-azure-classic) 或[辅助数据中心](/documentation/articles/site-recovery-vmware-to-vmware)。
+- **复制 VMware 虚拟机**：可将本地 VMware 虚拟机复制到[辅助数据中心](/documentation/articles/site-recovery-vmware-to-vmware)。
 - **复制物理机**：可将运行 Windows 或 Linux 的物理机复制到 [Azure](/documentation/articles/site-recovery-vmware-to-azure) 或[辅助数据中心](/documentation/articles/site-recovery-vmware-to-vmware)。
 - **复制在 System Center VMM 云中管理的 Hyper-V VM**：可将 VMM 云中的本地 Hyper-V 虚拟机复制到 [Azure](/documentation/articles/site-recovery-vmm-to-azure) 或[辅助数据中心](/documentation/articles/site-recovery-vmm-to-vmm)。
 - **复制 Hyper-V VM（不包括 VMM）**：可以将不由 VMM 管理的 Hyper-V VM 复制到 [Azure](/documentation/articles/site-recovery-hyper-v-site-to-azure)。
 - **迁移 VM**：可以使用站点恢复在区域之间[迁移 Azure IaaS VM](/documentation/articles/site-recovery-migrate-azure-to-azure)，或者[将 AWS Windows 实例迁移](/documentation/articles/site-recovery-migrate-aws-to-azure)到 Azure IaaS VM。目前仅支持迁移，这意味着你可以故障转移这些 VM，但无法故障回复。
 
 Site Recovery 可以复制这些 VM 和物理服务器上运行的大多数应用。可以在 [What workloads can Azure Site Recovery protect?（Azure Site Recovery 可以保护哪些工作负荷？）](/documentation/articles/site-recovery-workload)中获取受支持应用的完整摘要
-
+<!--
 ## 将本地 VMware 虚拟机或物理服务器复制到 Azure
 
 目前有两个不同的体系结构可用于将 VMware VM 或物理 Windows/Linux 服务器复制到 Azure：
@@ -46,7 +46,7 @@ Site Recovery 可以复制这些 VM 和物理服务器上运行的大多数应�
 
 ![增强版](./media/site-recovery-components/arch-enhanced.png)
 ![增强版](./media/site-recovery-components/arch-enhanced2.png)
-
+-->
 ### 本地
 下面是在本地需要的项：
 
@@ -77,7 +77,7 @@ Site Recovery 可以复制这些 VM 和物理服务器上运行的大多数应�
 
 ![增强版故障回复](./media/site-recovery-components/enhanced-failback.png)
 
-[详细了解](/documentation/articles/site-recovery-vmware-to-azure-classic#before-you-start-deployment)增强型部署要求。
+
 [详细了解](/documentation/articles/site-recovery-failback-azure-to-vmware-classic)如何故障回复增强型部署。
 
 

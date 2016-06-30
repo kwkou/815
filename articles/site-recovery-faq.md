@@ -48,7 +48,7 @@
 
 ### 如果 Hyper-V 在客户端操作系统上运行，我可以保护 VM 吗？
 
-不可以。VM 必须位于在受支持的 Windows 服务器计算机上运行的 Hyper-V 主机服务器上。如果需要保护客户端计算机，可以将其作为物理计算机复制到 [Azure](/documentation/articles/site-recovery-vmware-to-azure-classic) 或[辅助数据中心](/documentation/articles/site-recovery-vmware-to-vmware)。
+不可以。VM 必须位于在受支持的 Windows 服务器计算机上运行的 Hyper-V 主机服务器上。如果需要保护客户端计算机，可以将其作为物理计算机复制[辅助数据中心](/documentation/articles/site-recovery-vmware-to-vmware)。
 
 
 ### 我可以使用站点恢复来保护哪些工作负荷？
@@ -63,15 +63,15 @@ Site Recovery 可以复制受支持 VM 或物理服务器上运行的任何工�
 ### 如果我只有一个 VMM 服务器，可以部署站点恢复来配合 VMM 吗？ 
 
 是的。你可以将 VMM 云中 Hyper-V 服务器上的 VM 复制到 Azure，或者在同一台服务器上的 VMM 云之间进行复制。对于本地到本地复制，我们建议在主站点与辅助站点中都部署一个 VMM 服务器。[了解详细信息](/documentation/articles/site-recovery-single-vmm)
-
+<!--
 ### 我可以保护哪些物理服务器？
 
-可以将运行受支持的 Windows 或 Linux 操作系统的物理服务器复制到 Azure 或辅助站点来进行保护。[了解](/documentation/articles/site-recovery-vmware-to-azure-classic#before-you-start-deployment)有关 Azure 或辅助站点复制的操作系统要求。
-请注意，发生故障转移时，复制到 Azure 存储空间的物理服务器将作为 Azure 中的 VM 运行。当你进行从 Azure 到本地站点的故障回复时，故障回复到物理服务器当前不受支持。仅可以故障回复到 VMware 上运行的虚拟机。
+可以将运行受支持的 Windows 或 Linux 操作系统的物理服务器复制到 Azure 或辅助站点来进行保护。有关 Azure 或辅助站点复制的操作系统要求。
+请注意，发生故障转移时，复制到 Azure 存储空间的物理服务器将作为 Azure 中的 VM 运行。当你进行从 Azure 到本地站点的故障回复时，故障回复到物理服务器当前不受支持。仅可以故障回复到 VMware 上运行的虚拟机。-->
 
 ### 我可以保护哪些 VMware VM？
 
-若要保护 VMware VM，则需要 vSphere 虚拟机监控程序和运行 VMware 工具的虚拟机。我们还建议你使用 VMware vCenter 服务器托管虚拟机监控程序。[了解](/documentation/articles/site-recovery-vmware-to-azure-classic#before-you-start-deployment)有关复制 VMware 服务器和 VM 到 Azure 或辅助站点的精确要求。
+若要保护 VMware VM，则需要 vSphere 虚拟机监控程序和运行 VMware 工具的虚拟机。我们还建议你使用 VMware vCenter 服务器托管虚拟机监控程序。
 
 ### 我可以使用站点恢复来管理分支机构的灾难恢复吗？
 
@@ -137,7 +137,7 @@ Site Recovery 可以复制受支持 VM 或物理服务器上运行的任何工�
 
 ### 可以使用动态磁盘来复制虚拟机吗？
 
-复制 Hyper-V 虚拟机时，支持使用动态磁盘。如果使用[增强版部署](/documentation/articles/site-recovery-vmware-to-azure-classic)，复制 VMware VM 和物理计算机时也支持使用动态磁盘。请注意，OS 磁盘必须是基本磁盘。
+复制 Hyper-V 虚拟机时，支持使用动态磁盘。
 
 ### 可以限制针对 Hyper-V 复制流量分配的带宽吗？
 - 如果在两个本地站点上的 Hyper-V VM 之间进行复制，你可以使用 Windows QoS。下面是一个示例脚本： 
@@ -150,7 +150,7 @@ Site Recovery 可以复制受支持 VM 或物理服务器上运行的任何工�
     	Set-OBMachineSetting -WorkDay $mon, $tue -StartWorkHour "9:00:00" -EndWorkHour "18:00:00" -WorkHourBandwidth (512*1024) -NonWorkHourBandwidth (2048*1024)
 
 - [了解更多](https://support.microsoft.com/zh-cn/kb/3056159)有关限制 Hyper-V 流量的信息。
-- [了解更多](/documentation/articles/site-recovery-vmware-to-azure-classic#capacity-planning)有关限制 VMware 复制到 Azure 的信息。
+
 
 
 ## 故障转移
