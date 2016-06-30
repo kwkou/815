@@ -141,8 +141,4 @@
 13.  单击“启动”以启动 Runbook。键入要启动的虚拟机的 **VMName** 和 **VMServiceName**。
 14.  一旦 Runbook 完成后，检查已启动的虚拟机。
 
-## 相关文章
-
--	[我的第一个 PowerShell Runbook](/documentation/articles/automation-first-runbook-textual-PowerShell)
-
 <!---HONumber=Mooncake_0411_2016-->
