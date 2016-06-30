@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="01/21/2016"
-	wacn.date="06/07/2016"/>
+	ms.date="03/25/2016"
+	wacn.date="06/29/2016"/>
 
 # 如何在 Azure 门户中给 Linux 虚拟机附加数据磁盘
 

@@ -16,7 +16,7 @@
 
 欢迎使用 Azure Site Recovery！ 请以此文章作为开端，快速了解 Site Recovery 服务以及它如何有助于业务连续性和灾难恢复 (BCDR) 策略。
 
-Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文同时适用于这两种模型。Microsoft 建议大多数新部署使用资源管理器模型。
+Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文同时适用于这两种模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ## 概述
 

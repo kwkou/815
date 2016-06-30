@@ -31,7 +31,7 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Azure 上运行的 
 - 此[文档](https://scx.codeplex.com/wikipage?title=xplatproviders)中指定的所有系统数据。
 - 用户指定的日志文件。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ## 如何启用扩展
 通过 Azure PowerShell 或 Azure CLI 脚本可以启用扩展。

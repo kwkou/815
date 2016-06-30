@@ -128,7 +128,7 @@ Azure AD Connect 支持以“暂存模式”安装第二个服务器。使用此
 如果想要在不同的数据中心拥有多个备份，也可以配置多个暂存服务器。
 
 ## 多个 Azure AD 目录
-Microsoft 建议组织在 Azure AD 中部署单个目录。
+Azure 建议组织在 Azure AD 中部署单个目录。
 在打算使用多个 Azure AD 目录之前，请参阅以下主题，其中介绍了可让你使用单个目录的常见方案。
 
 ![MultiForestMultiDirectory](./media/active-directory-aadconnect-topologies/MultiForestMultiDirectory.png)

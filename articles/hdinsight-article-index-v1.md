@@ -1,6 +1,6 @@
 <properties
    pageTitle="Azure 门户的 HDInsight 文章索引 | Azure"
-   description="包含指向 Azure 门户上有关 HDInsight 的文章的链接的索引页。Microsoft 建议使用 Azure 门户在 HDInsight 上创建新的 Hadoop 群集。"
+   description="包含指向 Azure 门户上有关 HDInsight 的文章的链接的索引页。Azure 建议使用 Azure 门户在 HDInsight 上创建新的 Hadoop 群集。"
    services="hdinsight"
    documentationCenter="na"
    authors="cjgronlund"

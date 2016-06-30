@@ -19,7 +19,7 @@
 
 作为示例，本文展示了怎么使用后台 MariaDB SQL 数据库快速设置 WordPress 博客，然而你也可以使用 Compose 来设置更加复杂的应用程序。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用[资源管理器模型](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-wordpress-mysql)。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-wordpress-mysql)。
 
 ## 步骤 1：将 Linux VM 设置为 Docker 主机
 

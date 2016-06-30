@@ -17,7 +17,7 @@
 
 # 基本配置测试环境
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Microsoft 建议对大多数新的部署使用该模型，而不是[经典部署模型](/documentation/articles/virtual-machines-windows-classic-test-config-env)。
+> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是[经典部署模型](/documentation/articles/virtual-machines-windows-classic-test-config-env)。
 
 本文为你提供在 Azure 虚拟网络中使用 Resource Manager 中创建的虚拟机创建基本配置测试环境的分步说明。
 

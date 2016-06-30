@@ -26,7 +26,7 @@ Visual Studio 中的 SQL Server Management Studio (SSMS) 和 SQL Server Data Too
 
 ## 命令行工具
 
-你可以使用诸如 PowerShell 之类的命令行工具管理数据库和弹性数据库池，并自动执行 Azure 资源部署。Microsoft 建议在生产环境中使用此工具来管理大量的数据库并自动进行部署和资源更改。
+你可以使用诸如 PowerShell 之类的命令行工具管理数据库和弹性数据库池，并自动执行 Azure 资源部署。Azure 建议在生产环境中使用此工具来管理大量的数据库并自动进行部署和资源更改。
 
 有关使用命令行工具管理 Azure SQL 数据库的详细信息，请参阅[使用 PowerShell 管理 SQL 数据库](/documentation/articles/sql-database-command-line-tools)
 
