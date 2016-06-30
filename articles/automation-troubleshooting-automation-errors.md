@@ -21,7 +21,7 @@
 ### 场景：登录 Azure 帐户失败
 
 **错误：** 
-你在使用 Add-AzureAccount -Environment AzureChinaCloud或 Login-AzureRmAccount -EnvironmentName AzureChinaCloud 命令时收到“Unknown\_user\_type: 用户类型未知”错误。
+你在使用 Add-AzureAccount -Environment AzureChinaCloud 或 Login-AzureRmAccount -EnvironmentName AzureChinaCloud 命令时收到“Unknown\_user\_type: 用户类型未知”错误。
 
 **错误原因：**
 如果凭据资产名称无效或者用于设置自动化凭据资产的用户名和密码无效，则会出现此错误。
@@ -36,7 +36,7 @@
         $Cred = Get-Credential  
         #Using Azure Service Management   
         Add-AzureAccount -Environment AzureChinaCloud –Credential $Cred  
-        #Using Azure 资源管理器  
+        #Using Azure Resource Manager  
         Login-AzureRmAccount -EnvironmentName AzureChinaCloud –Credential $Cred
 
 3. 如果无法在本地进行身份验证，则意味着你尚未设置好 Azure Active Directory 凭据。请参阅[使用 Azure Active Directory 向 Azure 进行身份验证](https://azure.microsoft.com/blog/azure-automation-authenticating-to-azure-using-azure-active-directory)博客文章，了解如何正确设置 Azure Active Directory 帐户。
@@ -45,7 +45,7 @@
 ### 场景：找不到 Azure 订阅
 
 **错误：**
-使用 Select-AzureSubscription 或 Select-AzureRmSubscription cmdlet 时，你收到“找不到名为 ``<subscription name>`` 的订阅”错误。
+使用 Select-AzureSubscription 或 Select-AzureRmSubscription cmdlet 时，你收到“找不到名为 `<subscription name>` 的订阅”错误。
 
 **错误原因：**
 如果订阅名称无效或者未将正尝试获取订阅详细信息的 Azure Active Directory 用户配置为订阅的管理员，则会出现此错误。
@@ -72,7 +72,7 @@
 ## 解决使用 Runbook 时的常见错误
 ### 场景：Runbook 因反序列化的对象而失败
 
-**错误：**Runbook 失败，出现错误“无法绑定参数 ``<ParameterName>``。无法将反序列化 ``<ParameterType>`` 类型的 ``<ParameterType>`` 值转换成 ``<ParameterType>`` 类型”。
+**错误：**Runbook 失败，出现错误“无法绑定参数 `<ParameterName>`。无法将反序列化 `<ParameterType>` 类型的 `<ParameterType>` 值转换成 `<ParameterType>` 类型”。
 
 **错误原因：**如果你的 Runbook 为 PowerShell 工作流，则会将复杂对象以反序列化格式进行存储，以便在工作流暂停的情况下保留 Runbook 状态。
 
@@ -80,8 +80,6 @@
 
 1. 如果你要将复杂对象从一个 cmdlet 传送到另一个 cmdlet，则可将这两个 cmdlet 包装在 InlineScript 中。  
 2. 传递复杂对象中你所需要的名称或值，不必传递整个对象。  
-
-3. 使用 PowerShell Runbook，而不使用 PowerShell 工作流 Runbook。
 
 
 ### 场景：Runbook 作业失败，因为超过了分配的配额
@@ -97,14 +95,14 @@ Runbook 作业失败，出现“已达到此订阅的每月总作业运行时间
 
 1. 登录到 Azure 订阅  
 2. 选择要升级的自动化帐户  
-3. 单击“设置”>“定价层和使用情况”>“定价层”  
-4. 在“选择你的定价层”边栏选项卡中，选择“基本”    
+3. 单击“缩放”
+4. 在“常规”中的“自动化计划”，选择“基本”    
 
 
 ### 场景：在执行 Runbook 时无法识别 Cmdlet
 
 **错误：**
-Runbook 作业失败，出现“``<cmdlet name>``: 无法将术语 ``<cmdlet name>`` 视为 cmdlet 名称、函数、脚本文件或可运行程序”错误。
+Runbook 作业失败，出现“`<cmdlet name>`: 无法将术语 `<cmdlet name>` 视为 cmdlet 名称、函数、脚本文件或可运行程序”错误。
 
 **错误原因：**
 当 PowerShell 引擎找不到你要在 Runbook 中使用的 cmdlet 时，则会导致此错误。这可能是因为，帐户中缺少包含该 cmdlet 的模块、与 Runbook 名称存在名称冲突，或者该 cmdlet 也存在于其他模块中，而自动化无法解析该名称。
@@ -114,7 +112,7 @@ Runbook 作业失败，出现“``<cmdlet name>``: 无法将术语 ``<cmdlet nam
 
 - 检查输入的 cmdlet 名称是否正确。  
 
-- 确保 cmdlet 存在于你的自动化帐户中，且没有冲突。若要验证 cmdlet 是否存在，请在编辑模式下打开 Runbook，然后搜索你希望在库中找到的 cmdlet，或者运行 **Get-Command ``<CommandName>``**。验证该 cmdlet 可供帐户使用且与其他 cmdlet 或 Runbook 不存在名称冲突以后，可将其添加到画布上，并确保你使用的是 Runbook 中的有效参数集。
+- 确保 cmdlet 存在于你的自动化帐户中，且没有冲突。若要验证 cmdlet 是否存在，请在编辑模式下打开 Runbook，然后搜索你希望在库中找到的 cmdlet，或者运行 **`Get-Command <CommandName>`**。验证该 cmdlet 可供帐户使用且与其他 cmdlet 或 Runbook 不存在名称冲突以后，可将其添加到画布上，并确保你使用的是 Runbook 中的有效参数集。
 
 - 如果存在名称冲突且 cmdlet 可在两个不同的模块中使用，则可使用 cmdlet 的完全限定名称来解决此问题。例如，你可以使用 **ModuleName\\CmdletName**。
 
@@ -146,7 +144,7 @@ Runbook 作业失败，出现“``<cmdlet name>``: 无法将术语 ``<cmdlet nam
 
 - 该模块的文件夹中缺少依赖项。
 
-- 使用了 **New-AzureRmAutomationModule** cmdlet 来上载该模块，但你尚未提供完整的存储路径，或者尚未使用可公开访问的 URL 来加载该模块。
+- 使用了 **New-AzureAutomationModule** cmdlet 来上载该模块，但你尚未提供完整的存储路径，或者尚未使用可公开访问的 URL 来加载该模块。
 
 **疑难解答提示：**
 下述解决方案中的任何一种都可以解决此问题：
@@ -163,12 +161,10 @@ Runbook 作业失败，出现“``<cmdlet name>``: 无法将术语 ``<cmdlet nam
 
 如果你在完成上述疑难解答步骤以后仍对本文中的内容存有疑问，你可以：
 
-- 从 Azure 专家那里获取帮助。向 [MSDN Azure 或堆栈溢出论坛](/support/forums)提交问题。
+- 从 Azure 专家那里获取帮助。向 [MSDN Azure 或 CSDN](/support/forums)提交问题。
 
-- 提出 Azure 支持事件。转到[](/support/contact)“Azure 支持站点”，单击“技术和帐单支持”下的“获得支持”。
+- 提出 Azure 支持事件。转到“[Azure 支持站点](/support/contact)”，单击“技术和帐单支持”下的“获得支持”。
 
-- 如果你正在寻找 Azure 自动化 Runbook 解决方案或集成模块，请在[脚本中心](https://azure.microsoft.com/documentation/scripts)发布脚本请求。
-
-- 将关于 Azure 自动化的反馈或功能请求发布在[用户之声](https://feedback.azure.com/forums/34192--general-feedback)。
+- 将关于 Azure 自动化的反馈或功能请求发布在[用户之声](/product-feedback)。
 
 <!---HONumber=Mooncake_0411_2016-->

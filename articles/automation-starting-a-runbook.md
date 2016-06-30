@@ -30,7 +30,7 @@
 
 ![Runbook 体系结构](./media/automation-starting-runbook/runbooks-architecture.png)
 
-## 使用 Azure 管理门户启动 Runbook
+##<a name="starting-a-runbook-with-the-azure-portal"></a> 使用 Azure 管理门户启动 Runbook
 
 1.	在 Azure 管理门户中，选择“自动化”，然后单击自动化帐户的名称。
 2.	选择“Runbook”选项卡。

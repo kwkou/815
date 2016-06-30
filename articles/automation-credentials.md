@@ -63,7 +63,7 @@
 
 ## 使用 PowerShell 凭据
 
-在 Runbook 中使用 **Get-AutomationPSCredential** 活动检索凭据资产。此操作将返回“PSCredential 对象”，您可将其用于需要 PSCredential 参数的活动或 cmdlet。[](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscredential.aspx)还可以检索要单独使用的凭据对象的属性。该对象具有一个用于用户名和安全密码的属性，或者您可以使用 **GetNetworkCredential** 方法返回 [NetworkCredential](http://msdn.microsoft.com/zh-cn/library/system.net.networkcredential.aspx) 对象，该对象将提供该密码的不安全版本。
+在 Runbook 中使用 **Get-AutomationPSCredential** 活动检索凭据资产。此操作将返回“[PSCredential 对象](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscredential.aspx)”，您可将其用于需要 PSCredential 参数的活动或 cmdlet。还可以检索要单独使用的凭据对象的属性。该对象具有一个用于用户名和安全密码的属性，或者您可以使用 **GetNetworkCredential** 方法返回 [NetworkCredential](http://msdn.microsoft.com/zh-cn/library/system.net.networkcredential.aspx) 对象，该对象将提供该密码的不安全版本。
 
 ### 文本 Runbook 示例
 
