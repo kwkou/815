@@ -9,7 +9,7 @@
 <tags
    ms.service="automation"
    ms.date="01/27/2016"
-   wacn.date="03/22/2016" />
+   wacn.date="06/30/2016" />
 
 # Azure 自动化中的连接资产
 

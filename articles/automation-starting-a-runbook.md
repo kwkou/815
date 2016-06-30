@@ -10,7 +10,7 @@
  <tags
    ms.service="automation"
    ms.date="02/23/2016"
-   wacn.date="04/20/2016"/>
+   wacn.date="06/30/2016"/>
 
 # 在 Azure 自动化中启动 Runbook
 

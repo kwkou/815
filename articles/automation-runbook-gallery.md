@@ -9,7 +9,7 @@
 <tags
 	ms.service="automation"
 	ms.date="03/02/2016"
-	wacn.date="04/20/2016" />
+	wacn.date="06/30/2016" />
 
 
 # Azure 自动化的 Runbook 和模块库

@@ -9,7 +9,7 @@
 <tags 
    ms.service="automation"
    ms.date="02/23/2016"
-   wacn.date="03/24/2016" />
+   wacn.date="06/30/2016" />
 
 # Azure 自动化中的变量资产
 

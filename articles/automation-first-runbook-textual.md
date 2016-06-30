@@ -10,7 +10,7 @@
 <tags
     ms.service="automation"
     ms.date="05/16/2016"
-    wacn.date="06/29/2016"/>
+    wacn.date="06/30/2016"/>
 
 
 # 我的第一个 PowerShell 工作流 Runbook

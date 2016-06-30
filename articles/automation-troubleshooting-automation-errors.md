@@ -10,7 +10,7 @@
 <tags
    ms.service="automation"
    ms.date="03/21/2016"
-   wacn.date="04/20/2016"/>
+   wacn.date="06/30/2016"/>
 
 # Azure 自动化中常见错误的疑难解答提示
 
