@@ -15,7 +15,7 @@
 
 # 使用 Azure 资源管理器模板创建具有监视和诊断功能的 Windows 虚拟机
 
-> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Microsoft 建议大多数新部署使用资源管理器模型替代经典部署模型。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。
 
 Azure 诊断扩展可在基于 Windows 的 Azure 虚拟机上提供监视和诊断功能。通过将该扩展纳入为 Azure 资源管理器模板的一部分，可以在虚拟机上启用这些功能。有关将任何扩展纳入为虚拟机模板一部分的详细信息，请参阅[使用 VM 扩展创作 Azure 资源管理器模板](/documentation/articles/virtual-machines-windows-extensions-authoring-templates)。本文介绍如何将 Azure 诊断扩展添加到 Windows 虚拟机模板中。
   

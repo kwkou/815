@@ -15,7 +15,7 @@
 
 # 如何在 Azure 应用商店中快速开始使用 Docker
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
  
 
 开始使用 [Docker] 的最快方法是转到 Azure 应用商店，将 [Canonical] 创建的**“Ubuntu Server 上的 Docker”**映像模板与 [MSOpenTech] 结合使用来创建 VM。这将创建 Ubuntu Server VM 并自动安装 [Docker VM 扩展](/documentation/articles/virtual-machines-linux-dockerextension)，同时在 Azure 上预安装并运行**最新** Docker 引擎。
