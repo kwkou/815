@@ -19,7 +19,7 @@
 - [Legacy](/documentation/articles/site-recovery-failback-azure-to-vmware-classic-legacy)
 
 
-本文介绍如何将 Azure 虚拟机从 Azure 故障回复到本地站点。按照本[教程](/documentation/articles/site-recovery-vmware-to-azure-classic)将 VMware 虚拟机或 Windows/Linux 物理服务器从本地站点故障转移到 Azure 以后，请按本文中的说明来故障回复它们。
+本文介绍如何将 Azure 虚拟机从 Azure 故障回复到本地站点。
 
 
 
@@ -57,7 +57,7 @@
 
 - 需要 VMware 环境才能对 VMware VM 和物理服务器进行故障回复。不支持故障回复到物理服务器。
 - 为了进行故障回复，你应该在最初设置保护时，就已经创建 Azure 网络。故障回复需要进行 VPN 或 ExpressRoute 连接，从 Azure VM 所在的 Azure 网络连接到本地站点。
-- 如果你要故障回复到的 VM 受 vCenter 服务器管理，则需确保你拥有在 vCenter 服务器上发现 VM 所必需的权限。[了解详细信息](/documentation/articles/site-recovery-vmware-to-azure-classic#vmware-permissions-for-vcenter-access)。
+- 如果你要故障回复到的 VM 受 vCenter 服务器管理，则需确保你拥有在 vCenter 服务器上发现 VM 所必需的权限。
 - 如果 VM 上存在快照，重新保护会失败。你可以删除这些快照或磁盘。 
 - 故障回复之前，你需要创建多个组件：
 	- **在 Azure 中创建进程服务器**。这是你需要在故障回复过程中创建并保持运行的 Azure VM。完成故障回复后，可以删除该虚拟机。
@@ -93,7 +93,7 @@
 
 1. 如果你要在 Windows 上安装主目标服务器，请通过需在其中安装主目标服务器的 VM 打开“快速启动”页，然后下载 Azure Site Recovery 统一安装程序向导的安装文件。
 2. 运行安装程序，然后在“开始之前”中选择“添加额外的进程服务器以横向扩展部署”。
-3. 完成向导，完成方式与[安装管理服务器](/documentation/articles/site-recovery-vmware-to-azure-classic#step-5-install-the-management-server)时采用的方式相同。在“配置服务器详细信息”页上，指定此主目标服务器的 IP 地址，以及访问 VM 所需的密码。
+3. 完成向导。在“配置服务器详细信息”页上，指定此主目标服务器的 IP 地址，以及访问 VM 所需的密码。
 
 ### 将 Linux VM 安装为主目标服务器
 若要将运行主目标服务器的管理服务器安装为 Linux VM，至少需安装 Cent)S 6.6 操作系统，检索每个 SCSI 硬盘的 SCSI ID，安装一些其他的程序包，然后应用某些自定义更改。

@@ -19,8 +19,8 @@
 本文介绍如何使用 Site Recovery 将在 AWS 中运行的 Windows 实例迁移到 Azure。开始之前，请注意：
 
 - 目前只能迁移。这意味着可以从 AWS 故障转移到 Azure，但不能重新对其进行故障回复。
-- 本文汇总并使用[将 VMware 虚拟机或物理服务器复制到 Azure](/documentation/articles/site-recovery-vmware-to-azure-classic)（提供了复制设置的最新增强版说明）中完整描述的许多步骤。迁移时，建议你遵循本文获取详细说明。
-- **你不应该再使用**此[旧版文章](/documentation/articles/site-recovery-vmware-to-azure-classic-legacy)中的说明。
+
+
 
 请将任何评论或问题发布到本文底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)
 
@@ -29,20 +29,20 @@
 
 以下是开始之前需要满足的条件：
 
-- **管理服务器**：运行 Windows Server 2012 R2 作为管理服务器的本地 VM。在此服务器上安装 Site Recovery 组件（包括配置服务器和进程服务器）。阅读[管理服务器注意事项](/documentation/articles/site-recovery-vmware-to-azure-classic#management-server-considerations)和[本地先决条件](/documentation/articles/site-recovery-vmware-to-azure-classic#on-premises-prerequisites)，了解详细信息。
+- **管理服务器**：运行 Windows Server 2012 R2 作为管理服务器的本地 VM。在此服务器上安装 Site Recovery 组件（包括配置服务器和进程服务器）。
 - **EC2 VM 实例**：你想要迁移然后再保护的实例。
 
 ## 部署步骤
 
-1. [创建保管库](/documentation/articles/site-recovery-vmware-to-azure-classic#step-1-create-a-vault)
-2. [部署管理服务器](/documentation/articles/site-recovery-vmware-to-azure-classic#Step-5-install-the-management-server)。
+1. 创建保管库
+2. 部署管理服务器
 3. 部署管理服务器之后，验证该服务器是否能够与要迁移的 EC2 实例通信。
-4. [创建保护组](/documentation/articles/site-recovery-vmware-to-azure-classic#step-8-create-a-protection-group)。保护组包含共享相同复制设置的受保护计算机。指定组的复制设置，这些设置将被应用到添加到该组的所有计算机。 
-5. [安装移动服务](/documentation/articles/site-recovery-vmware-to-azure-classic#step-9-install-the-mobility-service)。你要保护的每个虚拟机需要安装移动服务。此服务将数据发送到进程服务器。可以手动安装移动服务，也可以在启用了虚拟机保护后由进程服务器自动推送并安装。要迁移的 EC2 实例上的防火墙规则应配置为允许此服务的推送安装。EC2 实例的安全组应具有以下规则：
+4. 创建保护组。保护组包含共享相同复制设置的受保护计算机。指定组的复制设置，这些设置将被应用到添加到该组的所有计算机。 
+5. 安装移动服务。你要保护的每个虚拟机需要安装移动服务。此服务将数据发送到进程服务器。可以手动安装移动服务，也可以在启用了虚拟机保护后由进程服务器自动推送并安装。要迁移的 EC2 实例上的防火墙规则应配置为允许此服务的推送安装。EC2 实例的安全组应具有以下规则：
 
 	![防火墙规则](./media/site-recovery-migrate-aws-to-azure/migrate-firewall.png)
 
-6. [为计算机启用保护](/documentation/articles/site-recovery-vmware-to-azure-classic#step-10-enable-protection-for-a-machine)。将想要保护的计算机添加到复制组中。
+6. 为计算机启用保护。将想要保护的计算机添加到复制组中。
 
 	![启用保护](./media/site-recovery-migrate-aws-to-azure/migrate-add-machines.png)
 
