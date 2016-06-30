@@ -11,14 +11,14 @@
 <tags  
    ms.service="application-gateway"
    ms.date="03/22/2016"
-   wacn.date="04/28/2016" />
+   wacn.date="06/30/2016" />
 
 # 使用 PowerShell 创建 Azure 应用程序网关（经典）的自定义探测
 
 
 [AZURE.INCLUDE [azure-probe-intro-include](../includes/application-gateway-create-probe-intro-include.md)]。
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-classic-include.md)] [资源管理器模型](/documentation/articles/application-gateway-create-probe-ps)。
+> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Microsoft 建议大多数新部署使用[资源管理器模型](/documentation/articles/application-gateway-create-probe-ps)。
 
 
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../includes/azure-ps-prerequisites-include.md)]

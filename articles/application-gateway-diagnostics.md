@@ -11,13 +11,13 @@
 <tags 
    ms.service="application-gateway"
    ms.date="04/11/2016"
-   wacn.date="05/30/2016" />
+   wacn.date="06/30/2016" />
 
 #应用程序网关的诊断日志记录
 
 可以在 Azure 中使用不同类型的日志对应用程序网关进行管理和故障排除。所有日志都可以从 Azure blob 存储中提取并在不同工具（如 Excel 和 PowerBI）中查看。你可以了解有关下面的列表中不同类型日志的详细信息。
 
-- **审核日志：**可以使用 [Azure 审核日志](/documentation/articles/insights-debugging-with-events)（以前称为操作日志）查看提交到你的 Azure 订阅的所有操作及其状态。
+- **审核日志：**可以使用 Azure 审核日志（以前称为操作日志）查看提交到你的 Azure 订阅的所有操作及其状态。
 - **访问日志：**你可以使用此日志来查看应用程序网关访问模式并分析重要信息，包括调用方的 IP、请求的 URL、响应延迟、返回问代码、输入和输出字节数。每隔 300 秒会收集一次访问日志。此日志包含每个应用程序网关实例的一条记录。应用程序网关实例可以由“instanceId”属性标识。
 - **性能日志：**你可以使用此日志来查看应用程序网关实例的执行情况。此日志会捕获每个实例的性能信息，包括提供的请求总数、吞吐量（以字节为单位）、失败的请求计数、正常和不正常的后端实例计数。每隔 60 秒会收集一次性能日志。
 
@@ -34,11 +34,11 @@
 
 		Set-AzureRmDiagnosticSetting  -ResourceId /subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/Microsoft.Network/applicationGateways/<application gateway name> -StorageAccountId /subscriptions/<subscriptionId>/resourceGroups/<resource group name>/providers/Microsoft.Storage/storageAccounts/<storage account name> -Enabled $true 	
 
->[AZURE.INFORMATION] 审核日志不需要单独的存储帐户。使用存储来记录访问和性能需支付服务费用。
+>[AZURE.NOTE] 审核日志不需要单独的存储帐户。使用存储来记录访问和性能需支付服务费用。
 
 
 ## 审核日志
-默认情况下由 Azure 生成此日志（以前称为“操作日志”）。日志在 Azure 的事件日志存储区中保留 90 天。通过阅读[查看事件和审核日志](/documentation/articles/insights-debugging-with-events)一文可了解有关这些日志的详细信息。
+默认情况下由 Azure 生成此日志（以前称为“操作日志”）。日志在 Azure 的事件日志存储区中保留 90 天。
 
 ## 访问日志
 只有你按照上述步骤基于每个应用程序网关启用了该日志，才会生成该日志。数据存储在你启用日志记录时指定的存储帐户中。应用程序网关的每次访问均以 JSON 格式记录下来，如下所示。
