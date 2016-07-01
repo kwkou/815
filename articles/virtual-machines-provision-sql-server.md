@@ -9,8 +9,8 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="04/08/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="04/20/2016"
+	wacn.date="06/29/2016"/>
 
 # 在 Azure PowerShell 中创建 SQL Server 虚拟机（经典）
 

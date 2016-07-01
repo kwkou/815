@@ -8,8 +8,8 @@
 	editor="monicar" />
 <tags 
 	ms.service="virtual-machines-windows"
-	ms.date="12/04/2015"
-	wacn.date="05/24/2016" />
+	ms.date="05/04/2016"
+	wacn.date="06/29/2016" />
 
 # 在 Azure 中配置 AlwaysOn 可用性组 (PowerShell)
 

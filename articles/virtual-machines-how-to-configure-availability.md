@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="01/07/2016"
-	wacn.date="02/26/2016"/>
+	ms.date="04/19/2016"
+	wacn.date="06/29/2016"/>
 
 # 如何在经典部署模型中为虚拟机配置可用性集
 
