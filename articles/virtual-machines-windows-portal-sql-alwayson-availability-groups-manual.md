@@ -16,10 +16,6 @@
 
 # 在 Azure VM (GUI) 中配置 AlwaysOn 可用性组
 
-> [AZURE.SELECTOR]
-- [模板](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups)
-- [手动](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual)
-
 <br/>
 
 
@@ -48,13 +44,11 @@
 
 请注意，这是一个可能的配置。例如，你可最大程度减少 2 副本可用性组的虚拟机数目，以便通过将域控制器作为 2 节点 WSFC 群集中的仲裁文件共享见证服务器来节省 Azure 中的计算时间。通过此方法，上述配置中的 VM 数目可以减少一个。
 
->[AZURE.NOTE] 完成本教程需要很长的时间。你也可以自动构建这整个解决方案。在 Azure 门户中，为 AlwaysOn 可用性组设置了一个包含侦听器的库。该库可自动为你配置 AlwaysOn 可用性组的所有设置。有关详细信息，请参阅 [Portal - Resource Manager（门户 - Resource Manager）](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups)。
-
 本教程的假设条件如下：
 
 - 你已有一个 Azure 帐户。
 
-- 你已经知道如何使用 GUI 从虚拟机库预配 SQL Server VM。有关详细信息，请参阅[在 Azure 上预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision)
+- 你已经知道如何从虚拟机库预配 SQL Server VM。有关详细信息，请参阅[使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)](/documentation/articles/virtual-machines-windows-ps-sql-create)
 
 - 你已经深入了解 AlwaysOn 可用性组。有关详细信息，请参阅 [AlwaysOn 可用性组 (SQL Server)](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx)。
 

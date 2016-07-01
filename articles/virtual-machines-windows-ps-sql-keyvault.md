@@ -35,7 +35,7 @@ SQL Server 加密功能多种多样，包括[透明数据加密 (TDE)](https://m
 
 ![SQL ARM Azure 密钥保管库集成](./media/virtual-machines-windows-ps-sql-keyvault/azure-sql-arm-akv.png)
 
-有关预配的详细演练，请参阅[在 Azure 门户中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision)。
+有关预配的详细演练，请参阅[使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)](/documentation/articles/virtual-machines-windows-ps-sql-create)。
 
 如果你需要在现有的 VM 上启用 AKV 集成，可以使用模板。有关详细信息，请参阅[Azure quickstart template for Azure Key Vault integration（用于 Azure 密钥保管库集成的 Azure 快速入门模板）](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-sql-existing-keyvault-update)。
 

@@ -18,7 +18,7 @@
 
 本主题说明如何在资源管理器模型中运行的 Azure 虚拟机上创建 SQL Server AlwaysOn 可用性组的内部负载平衡器。当 SQL Server 实例位于 Azure 虚拟机时，AlwaysOn 可用性组需要负载平衡器。负载平衡器存储可用性组侦听器的 IP 地址。如果可用性组跨多个区域，则每个区域都需要一个负载平衡器。
 
-若要完成此任务，需要在 Resource Manager 模型中的 Azure 虚拟机上部署 SQL Server AlwaysOn 可用性组。这两个 SQL Server 虚拟机必须属于同一个可用性集。可以使用 [Microsoft 模板](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups)在 Azure Resource Manager 中自动创建 AlwaysOn 可用性组。此模板将自动为你创建内部负载平衡器。
+若要完成此任务，需要在 Resource Manager 模型中的 Azure 虚拟机上部署 SQL Server AlwaysOn 可用性组。这两个 SQL Server 虚拟机必须属于同一个可用性集。
 
 如果需要，你可以[手动配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual)。
 

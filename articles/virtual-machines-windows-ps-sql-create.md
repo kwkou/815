@@ -16,10 +16,6 @@
 
 # 使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)
 
-> [AZURE.SELECTOR]
-- [门户](/documentation/articles/virtual-machines-windows-portal-sql-server-provision)
-- [PowerShell](/documentation/articles/virtual-machines-windows-ps-sql-create)
-
 [AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
 
 ## 概述
@@ -245,7 +241,7 @@
 
 虚拟机已创建。请注意，由于为虚拟机磁盘指定的存储帐户是高级存储帐户，因此将创建标准存储帐户用于启动诊断。
 
-现在，你可以在 Azure 门户中查看此计算机，以查看[其公共 IP 地址与完全限定的域名](/documentation/articles/virtual-machines-windows-portal-sql-server-provision#Connect)。
+现在，你可以在 Azure 门户中查看此计算机，以查看其公共 IP 地址与完全限定的域名。
 
 ## 示例脚本
 

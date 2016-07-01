@@ -198,6 +198,6 @@ Azure 提供两个选项用于在云中托管 SQL Server 工作负荷：
 ## 后续步骤
 - 若要开始使用 SQL 数据库，请参阅 [SQL Database tutorial: Create a SQL database in minutes using the Azure portal（SQL 数据库教程：使用 Azure 门户在几分钟内创建一个 SQL 数据库）](/documentation/articles/sql-database-get-started)。
 - 请参阅 [SQL Database pricing（SQL 数据库定价）](/home/features/sql-database/#price)
-- 若要开始在 Azure VM 上使用 SQL Server，请参阅 [Provision a SQL Server virtual machine in Azure（在 Azure 中预配 SQL Server 虚拟机）](/documentation/articles/virtual-machines-windows-portal-sql-server-provision)。
+- 若要开始在 Azure VM 上使用 SQL Server，请参阅 [使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)](/documentation/articles/virtual-machines-windows-ps-sql-create)。
 
 <!---HONumber=Mooncake_0503_2016-->

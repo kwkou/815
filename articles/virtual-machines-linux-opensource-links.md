@@ -47,8 +47,6 @@
 
 ### Docker
 - [从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展](/documentation/articles/virtual-machines-linux-classic-cli-use-docker)
-- [在 Azure 门户中使用 Docker VM 扩展](/documentation/articles/virtual-machines-linux-classic-portal-use-docker)
-- [在 Azure 库中使用 Docker 快速入门](/documentation/articles/virtual-machines-linux-classic-docker-quickstart)
 - [如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-linux-docker-machine)
 
 ### Ubuntu
