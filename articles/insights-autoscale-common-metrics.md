@@ -14,7 +14,7 @@
 
 # Azure Insights 自动缩放常用指标
 
-利用 Azure Insights 自动缩放，你可以根据遥测数据（指标）增加或减少正在运行的实例数。本文档介绍了你可能想要使用的常用指标。在云服务和服务器场的 Azure 门户中，你可以选择要作为缩放依据的资源指标。不过，你也可以选择其他资源的任何指标来作为缩放依据。
+利用 Azure Insights 自动缩放，你可以根据遥测数据（指标）增加或减少正在运行的实例数。本文档介绍了你可能想要使用的常用指标。在云服务和服务器场的 Azure 门户预览中，你可以选择要作为缩放依据的资源指标。不过，你也可以选择其他资源的任何指标来作为缩放依据。
 
 下面介绍了有关如何找到并列出要作为缩放依据的指标的详细信息。下列信息对于缩放虚拟机缩放集同样适用。
 
@@ -160,7 +160,7 @@ Get-AzureRmMetricDefinition -ResourceId <resource_id> | Format-Table -Property N
 ## 常用的存储指标
 你可以将存储队列长度作为缩放依据，它是存储队列中的消息数目。存储队列长度是一个特殊指标，所应用的阈值将为每个实例的消息数。这意味着，如果有两个实例，且如果阈值设置为 100，则当队列中的消息总数为 200 时将进行缩放。例如，每个实例 100 条消息。
 
-你可以在 Azure 门户的“设置”边栏选项卡中进行此配置。若使用 VM 缩放集，你可以将 ARM 模板中的“自动缩放”设置更新为使用 metricName 作为 ApproximateMessageCount，并传递存储队列的 ID 作为 metricResourceUri。
+你可以在 Azure 门户预览的“设置”边栏选项卡中进行此配置。若使用 VM 缩放集，你可以将 ARM 模板中的“自动缩放”设置更新为使用 metricName 作为 ApproximateMessageCount，并传递存储队列的 ID 作为 metricResourceUri。
 
 
 ```
@@ -181,6 +181,6 @@ Get-AzureRmMetricDefinition -ResourceId <resource_id> | Format-Table -Property N
 "metricResourceUri": "/subscriptions/s1/resourceGroups/rg1/providers/Microsoft.ServiceBus/namespaces/mySB/queues/myqueue"
 ```
 
->[AZURE.NOTE] 若使用服务总线，则不存在资源组这一概念，但 Azure Resource Manager 会为每个区域创建一个默认资源组。此资源组通常采用“Default-ServiceBus-[region]”的格式。例如，“Default-ServiceBus-EastAsia”等。
+>[AZURE.NOTE] 若使用服务总线，则不存在资源组这一概念，但 Azure Resource Manager 会为每个区域创建一个默认资源组。此资源组通常采用“Default-ServiceBus-[region]”的格式。
 
 <!---HONumber=Mooncake_0503_2016-->

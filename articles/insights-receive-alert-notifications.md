@@ -29,14 +29,17 @@
 2. 单击**操作**可重用功能区中的**警报规则**磁贴。
 
 3. 单击**添加通知**命令。
+
     ![添加警报](./media/insights-receive-alert-notifications/Insights_AddAlert.png)
 
 4. 可以命名警报规则，并选择显示在通知电子邮件中的说明。
 
 5. 当选择**指标**时，将为该指标选择一个条件和阈值。这是 Azure 用于监视并显示警报活动的时间段。
+
     ![条件和阈值](./media/insights-receive-alert-notifications/Insights_ConditionAndThreshold.png)
 
 6. 还可以选择**事件**，并在某个事件发生时获得通知。 
+
     ![事件](./media/insights-receive-alert-notifications/Insights_Events.png)
 
 7. 最后，可以选择向责任管理员发送电子邮件通知。
@@ -57,7 +60,6 @@
 * [为你的警报配置 webhook](/documentation/articles/insights-webhooks-alerts) 可将通知路由到各个通道
 * [监视服务指标](/documentation/articles/insights-how-to-customize-monitoring)以确保你的服务可用且响应迅速。
 * [启用监视和诊断](/documentation/articles/insights-how-to-use-diagnostics)以收集有关服务的详细高频率指标。
-
 * 在要确切了解代码在云中的执行情况时[监视应用程序性能](/documentation/articles/insights-perf-analytics)。
 * [查看事件并审核日志](/documentation/articles/insights-debugging-with-events)以了解在服务中发生的所有事件。
 * [跟踪服务运行状况](/documentation/articles/insights-service-health)以在 Azure 遇到性能下降或服务中断时及时发现。

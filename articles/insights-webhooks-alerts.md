@@ -100,11 +100,10 @@ POST 操作将为所有基于指标的警报包含以下 JSON 负载和架构。
 |properties |N |可选 |<Key  Value>对集合（即字典<String  String>），包括有关事件的详细信息。properties 字段是可选的。在自定义用户界面或基于逻辑应用的工作流中，用户可以输入键/值，该键/值可通过负载传递。将自定义属性传递回 webhook 的替代方法是通过 webhook URI 本身（作为查询参数）|
 
 
->[AZURE.NOTE] 不能通过门户使用属性字段。在我们即将发布的 Insights SDK 版本中，可以通过警报 API 设置属性。
+>[AZURE.NOTE] 不能通过门户预览使用属性字段。在我们即将发布的 Insights SDK 版本中，可以通过警报 API 设置属性。
 
 ## 后续步骤
 
-要了解更多背景，请在[将 Azure 警报与 PagerDuty 集成](http://go.microsoft.com/fwlink/?LinkId=627080)视频中了解有关 Azure 警报和 webhook 的详细信息。
 
 若要了解以编程方式创建 webhook 的方法，请参阅[使用 Azure Insights SDK (C#) 借助 Webhook 创建警报](https://code.msdn.microsoft.com/Create-Azure-Alerts-with-b938077a)。
 

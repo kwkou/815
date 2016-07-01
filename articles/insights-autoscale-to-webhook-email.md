@@ -24,14 +24,14 @@
 
 
 ## 云服务和 Web Apps
-可以从 Azure 门户选择加入云服务和服务器场 (Web Apps)。
+可以从 Azure 门户预览选择加入云服务和服务器场 (Web Apps)。
 
 - 选择**缩放依据**指标。
 
-![缩放依据](./media/insights-autoscale-to-webhook-email/insights-autoscale-scale-by.png)
+    ![缩放依据](./media/insights-autoscale-to-webhook-email/insights-autoscale-scale-by.png)
 
 ## 虚拟机缩放集
-对于较新的基于 ARM 的虚拟机（虚拟机缩放集），可以使用 REST API、PowerShell 和 CLI 对此进行配置。门户界面尚不可用。
+对于较新的基于 ARM 的虚拟机（虚拟机缩放集），可以使用 REST API、PowerShell 和 CLI 对此进行配置。门户预览界面尚不可用。
 
 
 ## webhook 中的身份验证

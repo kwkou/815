@@ -13,7 +13,7 @@
 
 # 监视 Azure 网站性能
 
-在 [Azure 门户预览](http://portal.azure.cn)中，可以设置监视以收集有关 [Azure 网站](/documentation/articles/app-service-web-overview)或[虚拟机](/documentation/articles/virtual-machines-about)中的应用程序依赖项的统计信息和详细信息。
+在 [Azure 门户预览](http://portal.azure.cn)中，可以设置监视以收集有关 Azure 网站或[虚拟机](/documentation/articles/virtual-machines-about)中的应用程序依赖项的统计信息和详细信息。
 
 Azure 通过利用扩展来支持应用程序性能监视（即 APM）。这些扩展会安装到应用程序中，收集数据并报告回给监视服务。
 
@@ -27,11 +27,11 @@ Application Insights 和 New Relic 是两个可用的性能监视扩展。若要
 
     如果要检测 Web 应用：
 
-![设置，扩展，添加，Application Insights](./media/insights-perf-analytics/05-extend.png)
+    ![设置，扩展，添加，Application Insights](./media/insights-perf-analytics/05-extend.png)
 
-或者，如果使用的是虚拟机：
+    或者，如果使用的是虚拟机：
 
-![单击“分析”磁贴](./media/insights-perf-analytics/10-vm1.png)
+    ![单击“分析”磁贴](./media/insights-perf-analytics/10-vm1.png)
 
 ### 对于 Application Insights 是可选的：使用 SDK 重新生成
 
@@ -45,7 +45,6 @@ Application Insights 可以通过将 SDK 安装到应用中来提供更详细的
 
 可以通过在开发计算机中运行应用来测试遥测，也可以只是继续进行并重新发布它。
 
-SDK 提供了一个 API，以便你可以[编写自定义遥测](/documentation/articles/app-insights-api-custom-events-metrics)来跟踪使用情况。
 
 ## 浏览数据
 
@@ -53,22 +52,24 @@ SDK 提供了一个 API，以便你可以[编写自定义遥测](/documentation/
 
 1. 然后，在 Web 应用或虚拟机边栏选项卡中会看到安装的扩展。
 2. 单击表示应用程序的行以导航到该提供程序：
+
 ![单击刷新](./media/insights-perf-analytics/06-overview.png)
 
 还可以使用“浏览”直接转到所使用的 Application Insights 组件或 New Relic 帐户。
 
 进入边栏选项卡之后，例如对于 Application Insights，可以：
+
 - 打开性能：
 
-![在 Application Insights 概述边栏选项卡中，单击“性能”磁贴](./media/insights-perf-analytics/07-dependency.png)
+    ![在 Application Insights 概述边栏选项卡中，单击“性能”磁贴](./media/insights-perf-analytics/07-dependency.png)
 
 - 钻取以查看单个请求：
 
-![在网格中，单击依赖项以查看相关请求。](./media/insights-perf-analytics/08-requests.png)
+    ![在网格中，单击依赖项以查看相关请求。](./media/insights-perf-analytics/08-requests.png)
 
 - 下面是一个示例，它演示在某个 SQL 依赖项方面所花费的时间量，包括 SQL 调用数和相关统计信息（如平均持续时间和标准偏差）。 
 
-![](./media/insights-perf-analytics/01-example.png)
+    ![](./media/insights-perf-analytics/01-example.png)
 
 
 

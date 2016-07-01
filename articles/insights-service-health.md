@@ -21,9 +21,11 @@
 1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
 
 2. 在**主页**中，你会看到名为**服务运行状况**的磁贴
+
     ![主页](./media/insights-service-health/Insights_Home.png)
 
 3. 单击该磁贴会在 Azure 中显示所有区域的列表。可以单击任何区域以查看该区域的服务运行状况历史记录。
+
     ![主页](./media/insights-service-health/Insights_Regions.png)
 
 4. 还可以通过单击表中的事件查看各个事件的详细信息。
@@ -31,6 +33,7 @@
 ## 浏览完整的服务运行状况日志
 
 2. 单击“浏览”，然后选择“审核日志”。  
+
     ![浏览中心](./media/insights-service-health/Insights_Browse.png)
 
 3. 这时，将打开一个边栏选项卡，其中显示过去 7 天影响你的任何订阅的所有事件。此列表中将显示服务运行状况条目，但可能很难找到它们，因为列表可能非常大。
@@ -38,11 +41,13 @@
 4. 单击**筛选器**命令。
 
 5. 选择**事件类别**，然后选择**服务运行状况**：
+
     ![所有事件](./media/insights-service-health/Insights_Filter.png)
 
 6. 单击**更新**。
 
 7. 现在，可以看到影响你的订阅的所有服务运行状况事件︰
+
     ![资源组](./media/insights-service-health/Insights_HealthEvent.png)
 
 8. 从这里可以转到详细信息边栏选项卡，以查看该事件的具体细节。

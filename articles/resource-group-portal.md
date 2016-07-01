@@ -19,7 +19,7 @@
 
 本主题演示了如何将 [Azure 门户预览](https://portal.azure.cn)与 [Azure 资源管理器](/documentation/articles/resource-group-overview)配合使用，以部署和管理 Azure 资源。
 
-目前，并非每种服务都支持门户或资源管理器。对于这些服务，你需要使用[经典门户](https://manage.windowsazure.cn)。
+目前，并非每种服务都支持门户预览或资源管理器。对于这些服务，你需要使用[经典门户](https://manage.windowsazure.cn)。
 
 也可以通过 Azure PowerShell 和 Azure CLI 来管理资源。有关使用这些接口的详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。
 
@@ -68,7 +68,7 @@
 
 2. 可以查看代表解决方案的 JavaScript 对象表示法 (JSON)，以此熟悉模板语法。
 
-通过门户，可以生成表示资源组当前状态的模板，或检索特定部署所用的模板。在本主题中说明了两个选项。
+通过门户预览，可以生成表示资源组当前状态的模板，或检索特定部署所用的模板。在本主题中说明了两个选项。
 
 已更改资源组，并且需要检索其当前状态的 JSON 表示法时，导出资源组的模板很有用。但是，生成的模板只包含最少的参数数目，但不包含任何变量。模板中大部分的值为硬编码。在部署所生成的模板之前，你可能想要将更多的值转换成参数，以便针对不同的环境自定义部署。
 
