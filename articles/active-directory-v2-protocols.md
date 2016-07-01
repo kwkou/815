@@ -23,7 +23,7 @@ v2.0 终结点可以使用 Azure AD，通过行业标准协议（OpenID Connect 
 ## 基础知识
 几乎在所有的 OAuth 和 OpenID Connect 流中，都有四个参与交换的对象：
 
-![OAuth 2.0 角色](../media/active-directory-v2-flows/protocols_roles.png)
+![OAuth 2.0 角色](./media/active-directory-v2-flows/protocols_roles.png)
 
 - **授权服务器**是 v2.0 终结点。它负责确保用户的标识、授予和吊销对资源的访问权限，以及颁发令牌。它也称为标识提供者：安全处理与用户信息、用户访问权，以及流中合作对象彼此间信任关系有关的任何项目。
 - **资源所有者**通常是用户。它是拥有数据的一方，并且有权允许第三方访问该数据或资源。

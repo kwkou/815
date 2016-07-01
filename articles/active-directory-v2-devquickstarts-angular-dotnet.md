@@ -223,6 +223,6 @@
 
 - [GitHub 上的 Azure 示例 >>](https://github.com/Azure-Samples)
 - [堆栈溢出网站上的 Azure AD >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
-- [Azure.com](/documentation/services/active-directory/) 上的 Azure AD 文档 >>
+- [Azure.com](/documentation/services/identity/) 上的 Azure AD 文档 >>
 
 <!---HONumber=Mooncake_0516_2016-->

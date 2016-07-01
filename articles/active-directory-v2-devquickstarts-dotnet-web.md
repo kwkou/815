@@ -162,7 +162,7 @@
 
 
 ## 显示用户信息
-使用 OpenID Connect 对用户进行身份验证时，v2.0 终结点将向应用返回 id\_token，其中包含有关用户的[声明](active-directory-v2-tokens.md#id_tokens)或断言。你可以使用这些声明来个性化应用程序：
+使用 OpenID Connect 对用户进行身份验证时，v2.0 终结点将向应用返回 id\_token，其中包含有关用户的[声明](/documentation/articles/active-directory-v2-tokens#id_tokens)或断言。你可以使用这些声明来个性化应用程序：
 
 - 打开 `Controllers\HomeController.cs` 文件。可以通过 `ClaimsPrincipal.Current` 安全主体对象访问控制器中的用户声明。
 
@@ -201,7 +201,9 @@
 [使用 v2.0 终结点保护 Web API >>](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)
 
 有关更多资源，请查看：
+
 - [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview)
+
 - [堆栈溢出“azure-active-directory”标记 >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
 <!---HONumber=Mooncake_0516_2016-->

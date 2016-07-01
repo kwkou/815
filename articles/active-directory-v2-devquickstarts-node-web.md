@@ -413,6 +413,7 @@ app.listen(3000);
 [使用 v2.0 终结点保护 node.js Web API >>](/documentation/articles/active-directory-v2-devquickstarts-node-api)
 
 有关更多资源，请查看：
+
 - [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview)
 - [堆栈溢出“azure-active-directory”标记 >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 

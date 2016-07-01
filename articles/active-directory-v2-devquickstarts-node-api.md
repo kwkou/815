@@ -848,6 +848,7 @@ Passport 使用适用于它的所有策略（Twitter、Facebook 等），所有�
 [使用 v2.0 终结点保护 Node.js Web 应用 >>](/documentation/articles/active-directory-v2-devquickstarts-node-web)
 
 有关更多资源，请查看：
+
 - [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview)
 - [堆栈溢出“azure-active-directory”标记 >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 

@@ -26,12 +26,12 @@
 但是，如果你不想要使用单一页面应用程序中的库，而是自行发送协议消息，请遵循下面的常规步骤。
 
 > [AZURE.NOTE]
-	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](active-directory-v2-limitations.md)。
+	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations)。
     
 ## 协议图
 整个隐式登录流如下所示 - 下面将详细描述每个步骤。
 
-![OpenId Connect Swimlanes](../media/active-directory-v2-flows/convergence_scenarios_implicit.png)
+![OpenId Connect Swimlanes](./media/active-directory-v2-flows/convergence_scenarios_implicit.png)
 
 ## 发送登录请求
 

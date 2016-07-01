@@ -190,6 +190,7 @@ catch (AdalException ee)
 ## 后续步骤
 
 有关更多资源，请查看：
+
 - [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview)
 - [堆栈溢出“adal”标记 >>](http://stackoverflow.com/questions/tagged/adal)
 

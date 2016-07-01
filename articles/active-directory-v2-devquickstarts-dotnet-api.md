@@ -156,7 +156,9 @@ Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentat
 [从 Web 应用调用 Web API >>](/documentation/articles/active-directory-v2-devquickstarts-webapp-webapi-dotnet)
 
 有关更多资源，请查看：
+
 - [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview)
+
 - [堆栈溢出“azure-active-directory”标记 >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
 <!---HONumber=Mooncake_0516_2016-->

@@ -246,6 +246,7 @@ ADAL 遵守的基本原理是，每当应用程序需要访问令牌时，你只
 - [使用 v2.0 终结点保护 TodoListService Web API >>](/documentation/articles/active-directory-v2-devquickstarts-dotnet-api)
 
 有关更多资源，请查看：
+
 - [v2.0 开发人员指南 >>](/documentation/articles/active-directory-appmodel-v2-overview)
 - [堆栈溢出“adal”标记 >>](http://stackoverflow.com/questions/tagged/adal)
 
