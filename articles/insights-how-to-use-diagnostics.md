@@ -25,6 +25,7 @@ Azure 中的诊断、监视和指标数据会保存到所选择的存储帐户�
 1. 转到“新建”并选择感兴趣的资源。 
 
 2. 选择“可选配置”。
+
     ![诊断边栏选项卡](./media/insights-how-to-use-diagnostics/Insights_CreateTime.png)
 
 3. 选择“诊断”，然后单击“打开”。需要选择要将诊断保存到其中的存储帐户。向存储帐户发送诊断时，会针对存储和事务向你收取正常数据费率。
@@ -33,13 +34,14 @@ Azure 中的诊断、监视和指标数据会保存到所选择的存储帐户�
 
 ## 为现有资源更改设置
 
-如果已创建了资源并且要更改诊断设置（例如更改数据收集级别），则可以直接在 Azure 门户中执行该操作。
+如果已创建了资源并且要更改诊断设置（例如更改数据收集级别），则可以直接在 Azure 门户预览中执行该操作。
 
 1. 转到相应资源，然后单击“设置”命令。
 
 2. 选择“诊断”。
 
 3. “诊断”边栏选项卡包含该资源的所有可能诊断和监视收集数据。对于某些资源，还可以为数据选择“保留期”策略，以从存储帐户中清理它。 
+
     ![存储诊断](./media/insights-how-to-use-diagnostics/Insights_StorageDiagnostics.png)
 
 4. 选择了设置之后，单击“保存”命令。如果你是首次启用它，则监视数据可能需要一小段时间才会显示。
@@ -61,11 +63,11 @@ Azure 中的诊断、监视和指标数据会保存到所选择的存储帐户�
 
 ## 后续步骤
 
-* 每当操作事件发生或指标超过阈值时[接收警报通知](documentation/articles/insights-receive-alert-notifications)。
-* [监视服务指标](documentation/articles/insights-how-to-customize-monitoring)以确保你的服务可用且响应迅速。
-* [自动缩放实例计数](documentation/articles/insights-how-to-scale)以确保服务基于需求进行缩放。
-* 在要确切了解代码在云中的执行情况时[监视应用程序性能](documentation/articles/insights-perf-analytics)。
-* [查看事件并审核日志](documentation/articles/insights-debugging-with-events)以了解在服务中发生的所有事件。
-* [跟踪服务运行状况](documentation/articles/insights-service-health)以在 Azure 遇到性能下降或服务中断时及时发现。 
+* 每当操作事件发生或指标超过阈值时[接收警报通知](/documentation/articles/insights-receive-alert-notifications)。
+* [监视服务指标](/documentation/articles/insights-how-to-customize-monitoring)以确保你的服务可用且响应迅速。
+* [自动缩放实例计数](/documentation/articles/insights-how-to-scale)以确保服务基于需求进行缩放。
+* 在要确切了解代码在云中的执行情况时[监视应用程序性能](/documentation/articles/insights-perf-analytics)。
+* [查看事件并审核日志](/documentation/articles/insights-debugging-with-events)以了解在服务中发生的所有事件。
+* [跟踪服务运行状况](/documentation/articles/insights-service-health)以在 Azure 遇到性能下降或服务中断时及时发现。 
  
 <!---HONumber=Mooncake_0503_2016-->
