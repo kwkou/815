@@ -9,8 +9,8 @@
 	tags="azure-service-management"/>
 <tags 
 	ms.service="virtual-machines-windows"
-	ms.date="12/11/2015"
-	wacn.date="01/14/2016" />
+	ms.date="05/13/2016"
+	wacn.date="06/29/2016" />
 
 # 使用 PowerShell 创建运行本机模式报表服务器的 Azure VM
 
