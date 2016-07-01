@@ -1,4 +1,4 @@
-
+<!-- Ibiza portal: tested -->
 
 可用性集可帮助虚拟机在停机期间（例如维护期间）保持可用。在可用性集中放置两个或更多个类似配置的虚拟机，将可针对虚拟机运行的应用程序或服务创建保持其可用性所需的冗余。有关工作原理的详细信息，请参阅管理虚拟机的可用性：[Windows](/documentation/articles/virtual-machines-windows-manage-availability) 或者 [Linux](/documentation/articles/virtual-machines-linux-manage-availability)。
 

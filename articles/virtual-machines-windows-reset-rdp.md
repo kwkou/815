@@ -1,3 +1,5 @@
+<!-- Ibiza portal: tested -->
+
 <properties
 	pageTitle="在 Windows VM 上重置密码或远程桌面 | Azure"
 	description="在使用资源管理器部署模型创建的 Windows VM 上重置管理员密码或远程桌面服务。"

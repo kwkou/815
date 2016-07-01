@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- Ibiza portal: tested -->
 
 ### 为 VM 配置网络安全组入站规则
 

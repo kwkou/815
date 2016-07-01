@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- Ibiza portal: tested -->
 
 <properties
    pageTitle="计算、网络 和存储提供程序 | Azure"

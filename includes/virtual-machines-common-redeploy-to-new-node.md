@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- Ibiza portal: tested -->
 
 如果你不知道如何通过远程桌面 (RDP) 来连接到基于 Windows 的 Azure 虚拟机，或者不知道如何通过 SSH 来连接到基于 Linux 的 Azure 虚拟机，则可参考本文来自行解决问题，不需要反复地求助于支持和调整虚拟机大小。当你通过 Azure PowerShell 来调用重新部署操作时，Azure 会重新部署你的虚拟机。
 

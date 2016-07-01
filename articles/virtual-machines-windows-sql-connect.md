@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- ARM: tested -->
 
 <properties 
 	pageTitle="连接到 SQL Server 虚拟机 (Resource Manager) | Azure"
@@ -26,7 +26,7 @@
 
 但在 SQL Server 连接方面，有一些 Azure VM 特定的设置。本文将介绍一些[常规连接方案](#connection-scenarios)，并提供[在 Azure VM 中配置 SQL Server 连接的详细步骤](#steps-for-manually-configuring-sql-server-connectivity-in-an-azure-vm)。
 
-本文的重点在于如何连接已存在的使用资源管理器模型部署的 SQL 服务器 VM。关于预配和连接的完整演练，请参阅[在 Azure 上预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision)。
+本文的重点在于如何连接已存在的使用资源管理器模型部署的 SQL 服务器 VM。关于预配和连接的完整演练，请参阅[使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)](/documentation/articles/virtual-machines-windows-ps-sql-create)。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
 
@@ -41,11 +41,7 @@
 
 若要从 Internet 连接到 SQL Server 数据库引擎，需完成多个必要的步骤，例如配置防火墙、启用 SQL 身份验证以及配置网络安全组。必须设置网络安全组规则，以便在端口 1433 上进行 TCP 通信。
 
-如果你使用 Resource Manager 通过门户来预配 SQL Server 虚拟机映像，则当你选择“公共”作为 SQL 连接选项时，系统会为你完成以下步骤：
-
-![](./media/virtual-machines-windows-sql-connect/sql-vm-portal-connectivity.png)
-
-如果不是在进行预配，则可按照[本文中手动配置连接的步骤](#steps-for-manually-configuring-sql-server-connectivity-in-an-azure-vm)来手动配置 SQL Server 和虚拟机。
+按照[本文中手动配置连接的步骤](#steps-for-manually-configuring-sql-server-connectivity-in-an-azure-vm)来手动配置 SQL Server 和虚拟机。
 
 完成此步骤以后，任何可以访问 Internet 的客户端都可以连接到 SQL Server 实例，只需指定虚拟机的公共 IP 地址或分配到该 IP 地址的 DNS 标签即可。如果 SQL Server 端口为 1433，则不需在连接字符串中进行指定。
 

@@ -1,3 +1,5 @@
+<!-- Ibiza Portal: tested -->
+
 <properties
    pageTitle="启用或禁用 Azure VM 监视"
    description="介绍如何启用或禁用 Azure VM 监视"

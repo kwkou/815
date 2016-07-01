@@ -1,4 +1,4 @@
-<!-- Ibiza Portal -->
+<!-- Ibiza portal: tested -->
 
 <properties
    pageTitle="排查 Linux VM 部署问题 - RM | Azure"

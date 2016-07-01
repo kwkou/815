@@ -1,3 +1,5 @@
+<!-- Ibiza portal: tested -->
+
 1. 在 Azure 门户中，导航到“新建”>“网络”>“本地网关”。
 
 	![创建局域网网关](./media/vpn-gateway-add-lng-rm-portal-include/addlng250.png)

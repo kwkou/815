@@ -1,3 +1,5 @@
+<!-- ARM: tested -->
+
 <properties
 	pageTitle="使用 Azure Resource Manager 和 C# 管理 VM | Azure"
 	description="使用 Azure Resource Manager 和 C# 来管理虚拟机。"

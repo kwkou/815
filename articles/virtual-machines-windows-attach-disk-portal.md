@@ -1,3 +1,5 @@
+<!-- Ibiza portal: tested -->
+
 <properties
 	pageTitle="将数据磁盘附加到 Windows VM |Azure"
 	description="如何使用资源管理器部署模型在 Azure 门户中将新磁盘或现有数据磁盘附加到 Windows VM。"

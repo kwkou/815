@@ -1,4 +1,4 @@
-<!-- Ibiza Portal -->
+<!-- Ibiza portal: tested -->
 
 <properties
 	pageTitle="上载 Windows VHD 用于资源管理器 | Azure"

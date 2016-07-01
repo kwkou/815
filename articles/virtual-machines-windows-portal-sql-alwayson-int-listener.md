@@ -1,4 +1,4 @@
-<!-- Ibiza Portal -->
+<!-- Ibiza portal: tested -->
 
 <properties
    pageTitle="为 Azure 虚拟机中的 SQL Server AlwaysOn 可用性组创建侦听器"

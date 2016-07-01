@@ -1,4 +1,4 @@
-
+<!-- Ibiza portal: tested -->
 
 ## 将计算、网络和存储集成到 Azure 资源管理器部署模型下的优点
 

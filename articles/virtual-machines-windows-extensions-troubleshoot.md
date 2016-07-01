@@ -1,4 +1,4 @@
-<!-- ARM -->
+<!-- ARM: tested -->
 
 <properties
    pageTitle="对 Windows VM 扩展故障进行故障排除 | Microsoft Azure"
