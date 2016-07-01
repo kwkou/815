@@ -170,7 +170,6 @@
 [Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-hero-tutorial
 [Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
 [Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
-[如何在门户中使用 Docker VM 扩展]: /documentation/articles/virtual-machines-linux-classic-portal-use-docker
 
 [Docker 用户指南]: https://docs.docker.com/userguide/
  

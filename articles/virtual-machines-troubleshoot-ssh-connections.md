@@ -1,4 +1,4 @@
-<!-- ARM -->
+<!-- Ibiza portal: tested -->
 
 <properties
 	pageTitle="对 Azure VM 的 SSH 连接进行故障排除 | Azure"
