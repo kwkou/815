@@ -1,4 +1,4 @@
-<!-- Ibiza Portal -->
+<!-- Ibiza portal: tested -->
 
 <properties
 	pageTitle="使用 C# 和 Resource Manager 模板部署 VM | Azure"

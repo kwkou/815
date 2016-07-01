@@ -1,4 +1,4 @@
-<!-- Ibiza Portal -->
+<!-- Ibiza portal: tested -->
 
 <properties
    pageTitle="VM 重新启动或大小调整问题 | Azure"

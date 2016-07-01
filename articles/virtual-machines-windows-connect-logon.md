@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- Ibiza portal: tested -->
 
 <properties
 	pageTitle="连接到 Windows Server VM | Azure"

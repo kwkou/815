@@ -1,3 +1,5 @@
+<!-- Ibiza Portal: tested -->
+
 <properties
 	pageTitle="给 Linux 虚拟机附加数据磁盘 | Azure"
 	description="如何使用资源管理器部署模型在 Azure 门户中将新磁盘或现有数据磁盘附加到 Linux VM。"

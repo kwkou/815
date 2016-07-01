@@ -1,4 +1,4 @@
-<!-- Ibiza Portal -->
+<!-- Ibiza portal: tested -->
 
 <properties
 	pageTitle="创建第一个 Windows VM | Azure"

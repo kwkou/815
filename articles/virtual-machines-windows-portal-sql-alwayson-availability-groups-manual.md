@@ -1,4 +1,4 @@
-<!-- Ibiza Portal -->
+<!-- Ibiza Portal: tested -->
 
 <properties
 	pageTitle="手动配置 AlwaysOn 可用性组 ARM (GUI) | Azure"

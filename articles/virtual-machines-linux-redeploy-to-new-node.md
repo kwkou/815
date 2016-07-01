@@ -1,4 +1,4 @@
-<!-- ARM -->
+<!-- Ibiza portal: tested -->
 
 <properties 
 	pageTitle="重新部署虚拟机 | Azure" 

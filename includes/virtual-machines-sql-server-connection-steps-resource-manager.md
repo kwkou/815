@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- Ibiza portal: tested -->
 
 ###<a name="configure-a-dns-label-for-the-public-ip-address"></a> 配置用于公共 IP 地址的 DNS 标签
 

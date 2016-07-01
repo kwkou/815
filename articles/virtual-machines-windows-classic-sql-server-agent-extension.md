@@ -1,4 +1,4 @@
-<!-- Ibiza Portal -->
+<!-- Ibiza Portal: tested -->
 
 <properties
 	pageTitle="适用于 SQL Server VM 的 SQL Server 代理扩展（经典）| Azure"

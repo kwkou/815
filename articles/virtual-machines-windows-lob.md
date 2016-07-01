@@ -1,3 +1,5 @@
+<!-- ARM: tested -->
+
 <properties 
 	pageTitle="Azure 中的业务线应用程序 | Microsoft Azure" 
 	description="了解 Azure 中的业务线应用程序的价值、设置测试环境，以及部署高可用性配置。" 

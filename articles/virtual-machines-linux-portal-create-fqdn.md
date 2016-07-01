@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- Ibiza portal: tested -->
 
 <properties
    pageTitle="在 Azure 门户中为 VM 创建 FQDN | Azure"

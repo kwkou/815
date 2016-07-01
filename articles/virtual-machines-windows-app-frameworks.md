@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- Ibiza Portal: tested -->
 
 <properties
    pageTitle="使用模板部署常用应用程序框架 | Azure"

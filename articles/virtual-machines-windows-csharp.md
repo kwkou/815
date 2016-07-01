@@ -1,4 +1,4 @@
-<!-- Ibiza Portal -->
+<!-- Ibiza portal: tested -->
 
 <properties
 	pageTitle="使用 C# 部署 Azure 资源 | Azure"

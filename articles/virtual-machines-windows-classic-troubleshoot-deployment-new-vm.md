@@ -1,4 +1,4 @@
-<!-- Ibiza Portal -->
+<!-- Ibiza Portal: tested -->
 
 <properties
    pageTitle="排查 Windows VM 经典部署问题 | Azure"

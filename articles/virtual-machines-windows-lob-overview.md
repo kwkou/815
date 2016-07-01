@@ -1,3 +1,5 @@
+<!-- ARM: tested -->
+
 <properties 
 	pageTitle="部署业务线应用程序 | Microsoft Azure" 
 	description="在 Azure 中通过 SQL Server AlwaysOn 可用性组分五个阶段部署基于 web 的高可用性业务线应用程序。" 

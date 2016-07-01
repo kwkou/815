@@ -1,3 +1,5 @@
+<!-- need to customize -->
+
 <properties
     pageTitle="使用 Azure 门户创建 Linux VM | Azure"
     description="使用 Azure 门户创建 Linux VM。"
