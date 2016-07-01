@@ -14,7 +14,6 @@
 # 在 Azure 中配置 AlwaysOn 可用性组 - 经典
 
 > [AZURE.SELECTOR]
-- [Resource Manager: 自动](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups)
 - [Resource Manager: 手动](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual)
 - [经典: UI](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups)
 - [经典: PowerShell](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups)
