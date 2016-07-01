@@ -54,7 +54,7 @@ Azure 中的诊断、监视和指标数据会保存到所选择的存储帐户�
 - **.NET 指标**：有关虚拟机上运行的 .NET 和 ASP.NET 应用程序的指标
 - **SQL 指标**：如果在运行 Microsoft SQL Service，这些是其性能指标
 - **Windows 事件应用程序日志**：发送到应用程序通道的 Windows 事件
-- **Windows 事件系统日志**：发送到系统通道的 Windows 事件。这还包括来自 [Microsoft 反恶意软件](http://go.microsoft.com/fwlink/?LinkID=404171&clcid=0x409)的所有事件。 
+- **Windows 事件系统日志**：发送到系统通道的 Windows 事件。
 - **Windows 事件安全日志**：发送到安全通道的 Windows 事件
 - **诊断基础结构日志**：有关诊断收集基础结构的日志记录
 - **IIS 日志**：有关 IIS 服务器的日志
