@@ -20,7 +20,7 @@ Service Fabric 群集由群集资源本身及众多其他 Azure 资源组成。�
 
 ## 删除 Service Fabric 群集所在的整个资源组 (RG)
 
-这是确保删除与你的群集相关联的所有资源（包括资源组）的最简方法。可使用 PowerShell 或通过 Azure 门户删除资源组。如果你的资源组中有与 Service Fabric 群集不相关的资源，你可以删除特定资源。
+这是确保删除与你的群集相关联的所有资源（包括资源组）的最简方法。可使用 PowerShell 或通过 Azure 门户预览删除资源组。如果你的资源组中有与 Service Fabric 群集不相关的资源，你可以删除特定资源。
 
 ### 使用 Azure PowerShell 删除资源组
 
@@ -36,9 +36,9 @@ Remove-AzureRmResourceGroup -Name <name of ResouceGroup> -Force
 
 如果未使用 *-Force* 选项，则将提示你确认删除。确认后，即删除 RG 及其包含的所有资源。
 
-### 在 Azure 门户中删除资源组  
+### 在 Azure 门户预览中删除资源组  
 
-1. 登录到 [Azure 门户](https://portal.azure.cn)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
 2. 导航到要删除的 Service Fabric 群集。
 3. 在群集基本信息页上单击资源组名称。
 4. 此时将显示“资源组基本信息”页面。
@@ -58,9 +58,9 @@ Remove-AzureRmResourceGroup -Name <name of ResouceGroup> -Force
 
 ***Tag#2：***键 = resourceName，值 = ServiceFabric
 
-### 在 Azure 门户中删除特定资源
+### 在 Azure 门户预览中删除特定资源
 
-1. 登录到 [Azure 门户](https://portal.azure.cn)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
 2. 导航到要删除的 Service Fabric 群集。
 3. 在“基本信息”边栏选项卡上转到“所有设置”。
 4. 在“设置”边栏选项卡中，单击“资源管理”之下的“标记”。

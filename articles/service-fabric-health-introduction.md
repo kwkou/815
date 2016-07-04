@@ -253,70 +253,70 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 ## 示例：报告和评估应用程序运行状况
 下列示例在源 **MyWatchdog** 中的应用程序 **fabric:/WordCount** 上通过 PowerShell 发送运行状况报告。运行状况报告包含有关“错误”运行状况状态下的运行状况属性可用性的信息，含无限 TimeToLive。然后，它会查询应用程序运行状况，此查询会返回已聚合运行状况状态错误和运行状况事件列表中的已报告运行状况事件。
 
-```powershell
-PS C:\> Send-ServiceFabricApplicationHealthReport –ApplicationName fabric:/WordCount –SourceId "MyWatchdog" –HealthProperty "Availability" –HealthState Error
 
-PS C:\> Get-ServiceFabricApplicationHealth fabric:/WordCount
+	PS C:\> Send-ServiceFabricApplicationHealthReport –ApplicationName fabric:/WordCount –SourceId "MyWatchdog" –HealthProperty "Availability" –HealthState Error
+
+	PS C:\> Get-ServiceFabricApplicationHealth fabric:/WordCount
 
 
-ApplicationName                 : fabric:/WordCount
-AggregatedHealthState           : Error
-UnhealthyEvaluations            :
-                                  Error event: SourceId='MyWatchdog', Property='Availability'.
+	ApplicationName                 : fabric:/WordCount
+	AggregatedHealthState           : Error
+	UnhealthyEvaluations            :
+                                  	Error event: SourceId='MyWatchdog', Property='Availability'.
 
-ServiceHealthStates             :
-                                  ServiceName           : fabric:/WordCount/WordCountService
-                                  AggregatedHealthState : Error
+	ServiceHealthStates             :
+                                  	ServiceName           : fabric:/WordCount/WordCountService
+                                  	AggregatedHealthState : Error
 
-                                  ServiceName           : fabric:/WordCount/WordCountWebService
-                                  AggregatedHealthState : Ok
+                                  	ServiceName           : fabric:/WordCount/WordCountWebService
+                                  	AggregatedHealthState : Ok
 
-DeployedApplicationHealthStates :
-                                  ApplicationName       : fabric:/WordCount
-                                  NodeName              : _Node_0
-                                  AggregatedHealthState : Ok
+	DeployedApplicationHealthStates :
+                                  	ApplicationName       : fabric:/WordCount
+                                  	NodeName              : _Node_0
+                                  	AggregatedHealthState : Ok
 
-                                  ApplicationName       : fabric:/WordCount
-                                  NodeName              : _Node_2
-                                  AggregatedHealthState : Ok
+                                  	ApplicationName       : fabric:/WordCount
+                                  	NodeName              : _Node_2
+                                  	AggregatedHealthState : Ok
 
-                                  ApplicationName       : fabric:/WordCount
-                                  NodeName              : _Node_3
-                                  AggregatedHealthState : Ok
+                                  	ApplicationName       : fabric:/WordCount
+                                  	NodeName              : _Node_3
+                                  	AggregatedHealthState : Ok
 
-                                  ApplicationName       : fabric:/WordCount
-                                  NodeName              : _Node_4
-                                  AggregatedHealthState : Ok
+                                  	ApplicationName       : fabric:/WordCount
+                                  	NodeName              : _Node_4
+                                  	AggregatedHealthState : Ok
 
-                                  ApplicationName       : fabric:/WordCount
-                                  NodeName              : _Node_1
-                                  AggregatedHealthState : Ok
+                                  	ApplicationName       : fabric:/WordCount
+                                  	NodeName              : _Node_1
+                                  	AggregatedHealthState : Ok
 
-HealthEvents                    :
-                                  SourceId              : System.CM
-                                  Property              : State
-                                  HealthState           : Ok
-                                  SequenceNumber        : 360
-                                  SentAt                : 3/22/2016 7:56:53 PM
-                                  ReceivedAt            : 3/22/2016 7:56:53 PM
-                                  TTL                   : Infinite
-                                  Description           : Application has been created.
-                                  RemoveWhenExpired     : False
-                                  IsExpired             : False
-                                  Transitions           : Error->Ok = 3/22/2016 7:56:53 PM, LastWarning = 1/1/0001 12:00:00 AM
+	HealthEvents                    :
+                                  	SourceId              : System.CM
+                                  	Property              : State
+                                  	HealthState           : Ok
+                                  	SequenceNumber        : 360
+                                  	SentAt                : 3/22/2016 7:56:53 PM
+                                  	ReceivedAt            : 3/22/2016 7:56:53 PM
+                                  	TTL                   : Infinite
+                                  	Description           : Application has been created.
+                                  	RemoveWhenExpired     : False
+                                  	IsExpired             : False
+                                  	Transitions           : Error->Ok = 3/22/2016 7:56:53 PM, LastWarning = 1/1/0001 12:00:00 AM
 
-                                  SourceId              : MyWatchdog
-                                  Property              : Availability
-                                  HealthState           : Error
-                                  SequenceNumber        : 131032204762818013
-                                  SentAt                : 3/23/2016 3:27:56 PM
-                                  ReceivedAt            : 3/23/2016 3:27:56 PM
-                                  TTL                   : Infinite
-                                  Description           :
-                                  RemoveWhenExpired     : False
-                                  IsExpired             : False
-                                  Transitions           : Ok->Error = 3/23/2016 3:27:56 PM, LastWarning = 1/1/0001 12:00:00 AM
-```
+                                  	SourceId              : MyWatchdog
+                                  	Property              : Availability
+                                  	HealthState           : Error
+                                  	SequenceNumber        : 131032204762818013
+                                  	SentAt                : 3/23/2016 3:27:56 PM
+                                  	ReceivedAt            : 3/23/2016 3:27:56 PM
+                                  	TTL                   : Infinite
+                                  	Description           :
+                                  	RemoveWhenExpired     : False
+                                  	IsExpired             : False
+                                  	Transitions           : Ok->Error = 3/23/2016 3:27:56 PM, LastWarning = 1/1/0001 12:00:00 AM
+
 
 ## 运行状况模型用法
 利用运行状况模型，云服务和基础 Service Fabric 平台可进行缩放，因为监视和运行状况判断分布在群集内的不同监视器中。其他系统在群集级别具有单个集中式服务，该服务分析服务发出的所有“可能”有用的信息。此方法会妨碍其可伸缩性。此外，它不允许使用它们收集非常具体的信息来帮助识别问题和潜在问题，并尽可能接近根本原因。

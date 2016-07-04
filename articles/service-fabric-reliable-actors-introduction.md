@@ -14,7 +14,7 @@
 
 # Service Fabric Reliable Actors 简介
 
-Reliable Actors 是基于[虚拟执行组件](http://research.microsoft.com/zh-cn/projects/orleans/)模式的 Service Fabric 应用程序框架。Reliable Actors API 提供单一线程编程模型，该模型是基于 Service Fabric 所提供的可扩展性和可靠性保证构建的。
+Reliable Actors 是基于虚拟执行组件模式的 Service Fabric 应用程序框架。Reliable Actors API 提供单一线程编程模型，该模型是基于 Service Fabric 所提供的可扩展性和可靠性保证构建的。
 
 ## 什么是执行组件？
 执行组件是一个使用单线程执行的计算和状态的独立单元。[执行组件模式](https://en.wikipedia.org/wiki/Actor_model)是并发或分布式系统的计算模型，在此系统中大量执行组件可同时并且相互独立地执行。执行组件可相互进行通信，并且它们可以创建更多执行组件。
@@ -79,16 +79,16 @@ Service Fabric 执行组件是虚拟的，这表示其生存期不依赖于其�
 #### 执行组件代理
 Reliable Actors 客户端 API 提供一个执行组件实例和一个执行组件客户端之间的通信。若要与执行组件进行通信，客户端需创建实现执行组件接口的执行组件代理对象。客户端通过调用代理对象上的方法与执行组件进行交互。执行组件代理可以用于从客户端到执行组件以及从执行组件到执行组件的通信。
 
-```csharp
-// Create a randomly distributed actor ID
-ActorId actorId = ActorId.NewId();
 
-// This only creates a proxy object, it does not activate an actor or invoke any methods yet.
-IMyActor myActor = ActorProxy.Create<IMyActor>(actorId, new Uri("fabric:/MyApp/MyActorService"));
+	// Create a randomly distributed actor ID
+	ActorId actorId = ActorId.NewId();
 
-// This will invoke a method on the actor. If an actor with the given ID does not exist, it will be activated by this method call.
-await myActor.DoWorkAsync();
-```
+	// This only creates a proxy object, it does not activate an actor or invoke any methods yet.
+	IMyActor myActor = ActorProxy.Create<IMyActor>(actorId, new Uri("fabric:/MyApp/MyActorService"));
+
+	// This will invoke a method on the actor. If an actor with the given ID does not exist, it will be activated by this method call.
+	await myActor.DoWorkAsync();
+
 
 请注意用于创建执行组件代理对象的两条信息为执行组件 ID 和应用程序名称。执行组件 ID 唯一标识执行组件，而应用程序名称标识在其中部署执行组件的 [Service Fabric 应用程序](/documentation/articles/service-fabric-reliable-actors-platform#service-fabric-application-model-concepts-for-actors)。
 

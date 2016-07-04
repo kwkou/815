@@ -13,7 +13,7 @@
    wacn.date="07/04/2016"/>
 
 # Reliable Services 基于 WCF 的通信堆栈
-Reliable services 框架使服务创作者能够选择他们要用于其服务的通信堆栈。他们可以通过从 [CreateServiceReplicaListeners 或 CreateServiceInstanceListeners](/documentation/articles/service-fabric-reliable-service-communication) 方法返回的 **ICommunicationListener**，来插入所选的通信堆栈。对于想要使用基于 Windows Communication Foundation (WCF) 的通信的服务创作者，该框架提供了基于 WCF 的通信堆栈实现。
+Reliable services 框架使服务创作者能够选择他们要用于其服务的通信堆栈。他们可以通过从 [CreateServiceReplicaListeners 或 CreateServiceInstanceListeners](/documentation/articles/service-fabric-reliable-services-communication) 方法返回的 **ICommunicationListener**，来插入所选的通信堆栈。对于想要使用基于 Windows Communication Foundation (WCF) 的通信的服务创作者，该框架提供了基于 WCF 的通信堆栈实现。
 
 ## WCF 通信侦听器
 特定于 WCF 的 **ICommunicationListener** 实现由 **Microsoft.ServiceFabric.Services.Communication.Wcf.Runtime.WcfCommunicationListener** 类提供。
@@ -31,56 +31,55 @@ public interface ICalculator
 
 我们可以通过下列方式在服务中创建 WCF 通信侦听器。
 
-```csharp
 
-protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
-{
-    return new[] { new ServiceReplicaListener((context) =>
-        new WcfCommunicationListener<ICalculator>(
-            wcfServiceObject:this,
-            serviceContext:context,
-            //
-            // The name of the endpoint configured in the ServiceManifest under the Endpoints section
-            // that identifies the endpoint that the WCF ServiceHost should listen on.
-            //
-            endpointResourceName: "WcfServiceEndpoint",
 
-            //
-            // Populate the binding information that you want the service to use.
-            //
-            listenerBinding: WcfUtility.CreateTcpListenerBinding()
-        )
-    )};
-}
+	protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
+	{
+    	return new[] { new ServiceReplicaListener((context) =>
+        	new WcfCommunicationListener<ICalculator>(
+            	wcfServiceObject:this,
+            	serviceContext:context,
+            	//
+            	// The name of the endpoint configured in the ServiceManifest under the Endpoints section
+            	// that identifies the endpoint that the WCF ServiceHost should listen on.
+            	//
+            	endpointResourceName: "WcfServiceEndpoint",
 
-```
+            	//
+            	// Populate the binding information that you want the service to use.
+            	//
+            	listenerBinding: WcfUtility.CreateTcpListenerBinding()
+        	)
+    	)};
+	}
+
 
 ## 为 WCF 通信堆栈编写客户端
-为编写客户端以便使用 WCF 与服务进行通信，该框架提供了 **WcfClientCommunicationFactory**，这是特定于 WCF 的 [ClientCommunicationFactoryBase](/documentation/articles/service-fabric-reliable-service-communication) 实现。
+为编写客户端以便使用 WCF 与服务进行通信，该框架提供了 **WcfClientCommunicationFactory**，这是特定于 WCF 的 [ClientCommunicationFactoryBase](/documentation/articles/service-fabric-reliable-services-communication) 实现。
 
-```csharp
 
-public WcfCommunicationClientFactory(
-    Binding clientBinding = null,
-    IEnumerable<IExceptionHandler> exceptionHandlers = null,
-    IServicePartitionResolver servicePartitionResolver = null,
-    string traceId = null,
-    object callback = null);
-```
+
+	public WcfCommunicationClientFactory(
+    	Binding clientBinding = null,
+    	IEnumerable<IExceptionHandler> exceptionHandlers = null,
+    	IServicePartitionResolver servicePartitionResolver = null,
+    	string traceId = null,
+    	object callback = null);
+
 
 可以从 **WcfCommunicationClientFactory** 创建的 **WcfCommunicationClient** 访问 WCF 通信通道。
 
-```csharp
 
-public class WcfCommunicationClient : ServicePartitionClient<WcfCommunicationClient<ICalculator>>
-   {
-       public WcfCommunicationClient(ICommunicationClientFactory<WcfCommunicationClient<ICalculator>> communicationClientFactory, Uri serviceUri, ServicePartitionKey partitionKey = null, TargetReplicaSelector targetReplicaSelector = TargetReplicaSelector.Default, string listenerName = null, OperationRetrySettings retrySettings = null)
+
+	public class WcfCommunicationClient : ServicePartitionClient<WcfCommunicationClient<ICalculator>>
+   	{
+       	public WcfCommunicationClient(ICommunicationClientFactory<WcfCommunicationClient<ICalculator>> communicationClientFactory, Uri serviceUri, ServicePartitionKey partitionKey = null, TargetReplicaSelector targetReplicaSelector = TargetReplicaSelector.Default, string listenerName = null, OperationRetrySettings retrySettings = null)
            : base(communicationClientFactory, serviceUri, partitionKey, targetReplicaSelector, listenerName, retrySettings)
-       {
-       }
-   }
+       	{
+       	}
+   	}
 
-```
+
 
 客户端代码可以使用 **WcfCommunicationClientFactory** 以及用于实现 **ServicePartitionClient** 的 **WcfCommunicationClient** 来确定服务终结点，并与服务通信。
 

@@ -123,31 +123,28 @@ Service Fabric 提供了三个分区方案可供选择：
 
 5. 设置分区数。打开 AlphabetPartitions 项目的 ApplicationPackageRoot 文件夹中的 Applicationmanifest.xml 文件，然后将参数 Processing\_PartitionCount 更新为 26，如下所示。
 
-    ```xml
-    <Parameter Name="Processing_PartitionCount" DefaultValue="26" />
-    ```
-    
-    还需要更新 ApplicationManifest.xml 中 StatefulService 元素的 LowKey 和 HighKey 属性，如下所示。
+		<Parameter Name="Processing_PartitionCount" DefaultValue="26" />
 
-    ```xml
-    <Service Name="Processing">
-      <StatefulService ServiceTypeName="ProcessingType" TargetReplicaSetSize="[Processing_TargetReplicaSetSize]" MinReplicaSetSize="[Processing_MinReplicaSetSize]">
-        <UniformInt64Partition PartitionCount="[Processing_PartitionCount]" LowKey="0" HighKey="25" />
-      </StatefulService>
-    </Service>
-    ```
+   	还需要更新 ApplicationManifest.xml 中 StatefulService 元素的 LowKey 和 HighKey 属性，如下所示。
+
+    	<Service Name="Processing">
+      	<StatefulService ServiceTypeName="ProcessingType" TargetReplicaSetSize="[Processing_TargetReplicaSetSize]" MinReplicaSetSize="[Processing_MinReplicaSetSize]">
+        	<UniformInt64Partition PartitionCount="[Processing_PartitionCount]" LowKey="0" HighKey="25" />
+      	</StatefulService>
+    	</Service>
+    
 
 6. 要使访问可以访问，请通过添加 Alphabet.Processing 服务的 ServiceManifest.xml（位于 PackageRoot 文件夹中）的终结点元素，在某个端口上打开终结点，如下所示：
 
-    ```xml
-    <Endpoint Name="ProcessingServiceEndpoint" Port="8089" Protocol="http" Type="Internal" />
-    ```
+    
+    	<Endpoint Name="ProcessingServiceEndpoint" Port="8089" Protocol="http" Type="Internal" />
+    
 
     现在服务已配置为侦听具有 26 个分区的内部终结点。
 
 7. 接下来，需要重写 Processing 类的 `CreateServiceReplicaListeners()` 方法。
 
-    >[AZURE.NOTE] 对于此示例，我们假定你使用一个简单 HttpCommunicationListener。有关 Reliable Service 通信的详细信息，请参阅 [Reliable Service 通信模型](service-fabric-reliable-services-communication.md)。
+    >[AZURE.NOTE] 对于此示例，我们假定你使用一个简单 HttpCommunicationListener。有关 Reliable Service 通信的详细信息，请参阅 [Reliable Service 通信模型](/documentation/articles/service-fabric-reliable-services-communication)。
 
 8. 副本所侦听的 URL 的建议模式是以下格式：`{scheme}://{nodeIp}:{port}/{partitionid}/{replicaid}/{guid}`。因此，你要将通信侦听器配置为侦听正确的终结点以及使用此模式。
 
@@ -155,75 +152,74 @@ Service Fabric 提供了三个分区方案可供选择：
 
     额外 GUID 在其中用于辅助副本也针对只读请求进行侦听的高级情况。如果是这种情况，则要确保在从主副本转换为辅助副本时使用新的唯一地址，以强制客户端重新解析地址。“+”在此处用作地址，以便副本在所有可用主机（IP、FQDM、localhost 等）上进行侦听 下面的代码演示一个示例。
 
-    ```CSharp
-    protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
-    {
-         return new[] { new ServiceReplicaListener(context => this.CreateInternalListener(context))};
-    }
-    private ICommunicationListener CreateInternalListener(ServiceContext context)
-    {
+    	protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
+    	{
+         	return new[] { new ServiceReplicaListener(context => this.CreateInternalListener(context))};
+    	}
+    	private ICommunicationListener CreateInternalListener(ServiceContext context)
+    	{
             
-         EndpointResourceDescription internalEndpoint = context.CodePackageActivationContext.GetEndpoint("ProcessingServiceEndpoint");
-         string uriPrefix = String.Format(
-                "{0}://+:{1}/{2}/{3}-{4}/",
-                internalEndpoint.Protocol,
-                internalEndpoint.Port,
-                context.PartitionId,
-                context.ReplicaOrInstanceId,
-                Guid.NewGuid());
+         	EndpointResourceDescription internalEndpoint = context.CodePackageActivationContext.GetEndpoint("ProcessingServiceEndpoint");
+         	string uriPrefix = String.Format(
+                	"{0}://+:{1}/{2}/{3}-{4}/",
+                	internalEndpoint.Protocol,
+                	internalEndpoint.Port,
+                	context.PartitionId,
+                	context.ReplicaOrInstanceId,
+                	Guid.NewGuid());
 
-         string nodeIP = FabricRuntime.GetNodeContext().IPAddressOrFQDN;
+         	string nodeIP = FabricRuntime.GetNodeContext().IPAddressOrFQDN;
 
-         string uriPublished = uriPrefix.Replace("+", nodeIP);
-         return new HttpCommunicationListener(uriPrefix, uriPublished, this.ProcessInternalRequest);
-    }
-    ```
+         	string uriPublished = uriPrefix.Replace("+", nodeIP);
+         	return new HttpCommunicationListener(uriPrefix, uriPublished, this.ProcessInternalRequest);
+    	}
+
 
     此外，值得注意的是发布的 URL 与侦听 URL 前缀略有不同。该侦听 URL 提供给 HttpListener。发布的 URL 是发布到 Service Fabric 命名服务（用于服务发现）的 URL。客户端会通过该发现服务请求此地址。客户端获取的地址需要具有节点的实际 IP 或 FQDN 才能连接。因此需要将“+”替换为节点的 IP 或 FQDN，如上所示。
 
 9. 最后一步是将处理逻辑添加到服务，如下所示。
 
-    ```CSharp
-    private async Task ProcessInternalRequest(HttpListenerContext context, CancellationToken cancelRequest)
-    {
-        string output = null;
-        string user = context.Request.QueryString["lastname"].ToString();
 
-        try
-        {
-            output = await this.AddUserAsync(user);
-        }
-        catch (Exception ex)
-        {
-            output = ex.Message;
-        }
+    	private async Task ProcessInternalRequest(HttpListenerContext context, CancellationToken cancelRequest)
+    	{
+        	string output = null;
+        	string user = context.Request.QueryString["lastname"].ToString();
 
-        using (HttpListenerResponse response = context.Response)
-        {
-            if (output != null)
-            {
-                byte[] outBytes = Encoding.UTF8.GetBytes(output);
-                response.OutputStream.Write(outBytes, 0, outBytes.Length);
-            }
-        }
-    }
-    private async Task<string> AddUserAsync(string user)
-    {
-        IReliableDictionary<String, String> dictionary = await this.StateManager.GetOrAddAsync<IReliableDictionary<String, String>>("dictionary");
+        	try
+        	{
+            	output = await this.AddUserAsync(user);
+        	}
+        	catch (Exception ex)
+        	{
+            	output = ex.Message;
+        	}
 
-        using (ITransaction tx = this.StateManager.CreateTransaction())
-        {
-            bool addResult = await dictionary.TryAddAsync(tx, user.ToUpperInvariant(), user);
+        	using (HttpListenerResponse response = context.Response)
+        	{
+            	if (output != null)
+            	{
+                	byte[] outBytes = Encoding.UTF8.GetBytes(output);
+                	response.OutputStream.Write(outBytes, 0, outBytes.Length);
+            	}
+        	}
+    	}
+    	private async Task<string> AddUserAsync(string user)
+    	{
+        	IReliableDictionary<String, String> dictionary = await this.StateManager.GetOrAddAsync<IReliableDictionary<String, String>>("dictionary");
 
-            await tx.CommitAsync();
+        	using (ITransaction tx = this.StateManager.CreateTransaction())
+        	{
+            	bool addResult = await dictionary.TryAddAsync(tx, user.ToUpperInvariant(), user);
 
-            return String.Format(
-                "User {0} {1}",
-                user,
-                addResult ? "sucessfully added" : "already exists");
-        }
-    }
-    ```
+            	await tx.CommitAsync();
+
+            	return String.Format(
+                	"User {0} {1}",
+                	user,
+                	addResult ? "sucessfully added" : "already exists");
+        	}
+    	}
+
 
     `ProcessInternalRequest` 会读取用于调用分区的查询字符串参数值，并调用 `AddUserAsync` 以将姓氏添加到可靠字典 `dictionary`。
 
@@ -237,115 +233,114 @@ Service Fabric 提供了三个分区方案可供选择：
 
 12. 在 Alphabet.WebApi 服务的 ServiceManifest.xml 中更新终结点信息，以打开端口，如下所示。
 
-    ```xml
-    <Endpoint Name="WebApiServiceEndpoint" Protocol="http" Port="8081"/>
-    ```
+    
+    	<Endpoint Name="WebApiServiceEndpoint" Protocol="http" Port="8081"/>
+    
 
 13. 需要在 Web 类中返回 ServiceInstanceListeners 的集合。同样，可以选择实现简单 HttpCommunicationListener。
 
-    ```CSharp
-    protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
-    {
-        return new[] {new ServiceInstanceListener(context => this.CreateInputListener(context))};
-    }
-    private ICommunicationListener CreateInputListener(ServiceContext context)
-    {
-        // Service instance's URL is the node's IP & desired port
-        EndpointResourceDescription inputEndpoint = context.CodePackageActivationContext.GetEndpoint("WebApiServiceEndpoint")
-        string uriPrefix = String.Format("{0}://+:{1}/alphabetpartitions/", inputEndpoint.Protocol, inputEndpoint.Port);
-        var uriPublished = uriPrefix.Replace("+", FabricRuntime.GetNodeContext().IPAddressOrFQDN);
-        return new HttpCommunicationListener(uriPrefix, uriPublished, this.ProcessInputRequest);
-    }
-    ```
+    
+    	protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
+    	{
+        	return new[] {new ServiceInstanceListener(context => this.CreateInputListener(context))};
+    	}
+    	private ICommunicationListener CreateInputListener(ServiceContext context)
+    	{
+        	// Service instance's URL is the node's IP & desired port
+        	EndpointResourceDescription inputEndpoint = context.CodePackageActivationContext.GetEndpoint("WebApiServiceEndpoint")
+        	string uriPrefix = String.Format("{0}://+:{1}/alphabetpartitions/", inputEndpoint.Protocol, inputEndpoint.Port);
+        	var uriPublished = uriPrefix.Replace("+", FabricRuntime.GetNodeContext().IPAddressOrFQDN);
+        	return new HttpCommunicationListener(uriPrefix, uriPublished, this.ProcessInputRequest);
+    	}
+    
 
 14. 现在需要实现处理逻辑。HttpCommunicationListener 在请求进入时调用 `ProcessInputRequest`。那么，我们来继续进行，添加下面的代码。
 
-    ```CSharp
-    private async Task ProcessInputRequest(HttpListenerContext context, CancellationToken cancelRequest)
-    {
-        String output = null;
-        try
-        {
-            string lastname = context.Request.QueryString["lastname"];
-            char firstLetterOfLastName = lastname.First();
-            ServicePartitionKey partitionKey = new ServicePartitionKey(Char.ToUpper(firstLetterOfLastName) - 'A');
+    
+    	private async Task ProcessInputRequest(HttpListenerContext context, CancellationToken cancelRequest)
+    	{
+        	String output = null;
+        	try
+        	{
+            	string lastname = context.Request.QueryString["lastname"];
+            	char firstLetterOfLastName = lastname.First();
+            	ServicePartitionKey partitionKey = new ServicePartitionKey(Char.ToUpper(firstLetterOfLastName) - 'A');
 
-            ResolvedServicePartition partition = await this.servicePartitionResolver.ResolveAsync(alphabetServiceUri, partitionKey, cancelRequest);
-            ResolvedServiceEndpoint ep = partition.GetEndpoint();
+            	ResolvedServicePartition partition = await this.servicePartitionResolver.ResolveAsync(alphabetServiceUri, partitionKey, cancelRequest);
+            	ResolvedServiceEndpoint ep = partition.GetEndpoint();
                 
-            JObject addresses = JObject.Parse(ep.Address);
-            string primaryReplicaAddress = (string)addresses["Endpoints"].First();
+            	JObject addresses = JObject.Parse(ep.Address);
+            	string primaryReplicaAddress = (string)addresses["Endpoints"].First();
 
-            UriBuilder primaryReplicaUriBuilder = new UriBuilder(primaryReplicaAddress);
-            primaryReplicaUriBuilder.Query = "lastname=" + lastname;
+            	UriBuilder primaryReplicaUriBuilder = new UriBuilder(primaryReplicaAddress);
+            	primaryReplicaUriBuilder.Query = "lastname=" + lastname;
 
-            string result = await this.httpClient.GetStringAsync(primaryReplicaUriBuilder.Uri);
+            	string result = await this.httpClient.GetStringAsync(primaryReplicaUriBuilder.Uri);
 
-            output = String.Format(
-                    "Result: {0}. <p>Partition key: '{1}' generated from the first letter '{2}' of input value '{3}'. <br>Processing service partition ID: {4}. <br>Processing service replica address: {5}",
-                    result,
-                    partitionKey,
-                    firstLetterOfLastName,
-                    lastname,
-                    partition.Info.Id,
-                    primaryReplicaAddress);
-        }
-        catch (Exception ex) { output = ex.Message; }
+            	output = String.Format(
+                    	"Result: {0}. <p>Partition key: '{1}' generated from the first letter '{2}' of input value '{3}'. <br>Processing service partition ID: {4}. <br>Processing service replica address: {5}",
+                    	result,
+                    	partitionKey,
+                    	firstLetterOfLastName,
+                    	lastname,
+                    	partition.Info.Id,
+                    	primaryReplicaAddress);
+        	}
+        	catch (Exception ex) { output = ex.Message; }
 
-        using (var response = context.Response)
-        {
-            if (output != null)
-            {
-                output = output + "added to Partition: " + primaryReplicaAddress;
-                byte[] outBytes = Encoding.UTF8.GetBytes(output);
-                response.OutputStream.Write(outBytes, 0, outBytes.Length);
-            }
-        }
-    }
-    ```
+        	using (var response = context.Response)
+        	{
+            	if (output != null)
+            	{
+                	output = output + "added to Partition: " + primaryReplicaAddress;
+                	byte[] outBytes = Encoding.UTF8.GetBytes(output);
+                	response.OutputStream.Write(outBytes, 0, outBytes.Length);
+            	}
+        	}
+    	}
+    
 
     让我们逐步演练其步骤。代码将查询字符串参数 `lastname` 的第一个字母为读入到一个字符中。随后，它通过从姓氏第一个字母的十六进制值减去 `A` 的十六进制值，来确定字母的分区键。
 
-    ```CSharp
-    string lastname = context.Request.QueryString["lastname"];
-    char firstLetterOfLastName = lastname.First();
-    ServicePartitionKey partitionKey = new ServicePartitionKey(Char.ToUpper(firstLetterOfLastName) - 'A');
-    ```
+    
+    	string lastname = context.Request.QueryString["lastname"];
+    	char firstLetterOfLastName = lastname.First();
+    	ServicePartitionKey partitionKey = new ServicePartitionKey(Char.ToUpper(firstLetterOfLastName) - 'A');
+    
 
     请记住，对于此示例，我们在使用 26 个分区，其中每个分区有一个分区键。接下来，我们通过对 `servicePartitionResolver` 对象使用 `ResolveAsync` 方法，来获取此键的服务分区 `partition`。`servicePartitionResolver` 定义为
 
-    ```CSharp
-    private readonly ServicePartitionResolver servicePartitionResolver = ServicePartitionResolver.GetDefault();
-    ```
+    
+    	private readonly ServicePartitionResolver servicePartitionResolver = ServicePartitionResolver.GetDefault();
+    
 
     `ResolveAsync` 方法采用服务 URI、分区键和取消标记作为参数。处理服务的服务 URI 是 `fabric:/AlphabetPartitions/Processing`。接下来，我们会获取分区的终结点。
 
-    ```CSharp
-    ResolvedServiceEndpoint ep = partition.GetEndpoint()
-    ```
+    
+    	ResolvedServiceEndpoint ep = partition.GetEndpoint()
+    
 
     最后，我们会构建终结点 URL 以及查询字符串，并调用处理服务。
 
-    ```CSharp
-    JObject addresses = JObject.Parse(ep.Address);
-    string primaryReplicaAddress = (string)addresses["Endpoints"].First();
+    
+    	JObject addresses = JObject.Parse(ep.Address);
+    	string primaryReplicaAddress = (string)addresses["Endpoints"].First();
 
-    UriBuilder primaryReplicaUriBuilder = new UriBuilder(primaryReplicaAddress);
-    primaryReplicaUriBuilder.Query = "lastname=" + lastname;
+    	UriBuilder primaryReplicaUriBuilder = new UriBuilder(primaryReplicaAddress);
+    	primaryReplicaUriBuilder.Query = "lastname=" + lastname;
 
-    string result = await this.httpClient.GetStringAsync(primaryReplicaUriBuilder.Uri);
-    ```
+    	string result = await this.httpClient.GetStringAsync(primaryReplicaUriBuilder.Uri);
+    
 
     处理完成之后，我们会将输出写回。
 
 15. 最后一步是测试服务。Visual Studio 将应用程序参数用于本地和云部署。要在本地测试具有 26 个分区服务，需要在 AlphabetPartitions 项目的 ApplicationParameters 文件夹中更新 `Local.xml` 文件，如下所示：
 
-    ```xml
-    <Parameters>
-      <Parameter Name="Processing_PartitionCount" Value="26" />
-      <Parameter Name="WebApi_InstanceCount" Value="1" />
-    </Parameters>
-    ```
+		<Parameters>
+			<Parameter Name="Processing_PartitionCount" Value="26" />
+			<Parameter Name="WebApi_InstanceCount" Value="1" />
+		</Parameters>
+    
 
 16. 完成部署之后，便可以在 Service Fabric 资源管理器中检查服务及其所有分区。
     

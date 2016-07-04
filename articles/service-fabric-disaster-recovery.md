@@ -89,7 +89,7 @@ protected virtual Task<bool> OnDataLoss(CancellationToken cancellationToken)
 - 阅读有关灾难恢复和高可用性的其他资源。Microsoft 已发布大量有关这些主题的指导。尽管其中有些文档提到其他产品中使用的特定技术，但也包含了许多可在 Service Fabric 上下文中应用的一般性最佳实践：
  - [可用性核对清单](/documentation/articles/best-practices-availability-checklist)
  - [执行灾难恢复演练](/documentation/articles/sql-database-disaster-recovery-drills)
- - [Azure 应用程序的灾难恢复和高可用性][dr-ha-guide]
+
 
 
 <!-- External links -->

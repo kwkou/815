@@ -62,43 +62,43 @@ Service Fabric 报告器可监视感兴趣的已标识条件。它们会根据�
 
 以下命令将创建结构客户端，并指定一旦添加报告就应该尽快发送。在可重试的错误或超时发生时，每 40 秒重试一次。
 
-```csharp
-var clientSettings = new FabricClientSettings()
-{
-    HealthOperationTimeout = TimeSpan.FromSeconds(120),
-    HealthReportSendInterval = TimeSpan.FromSeconds(0),
-    HealthReportRetrySendInterval = TimeSpan.FromSeconds(40),
-};
-var fabricClient = new FabricClient(clientSettings);
-```
+
+	var clientSettings = new FabricClientSettings()
+	{
+    	HealthOperationTimeout = TimeSpan.FromSeconds(120),
+    	HealthReportSendInterval = TimeSpan.FromSeconds(0),
+    	HealthReportRetrySendInterval = TimeSpan.FromSeconds(40),
+	};
+	var fabricClient = new FabricClient(clientSettings);
+
 
 通过 PowerShell 创建与群集的连接时，可以指定相同的参数。以下命令将启动与本地群集的连接：
 
-```powershell
-PS C:\> Connect-ServiceFabricCluster -HealthOperationTimeoutInSec 120 -HealthReportSendIntervalInSec 0 -HealthReportRetrySendIntervalInSec 40
-True
 
-ConnectionEndpoint   :
-FabricClientSettings : {
-                       ClientFriendlyName                   : PowerShell-1944858a-4c6d-465f-89c7-9021c12ac0bb
-                       PartitionLocationCacheLimit          : 100000
-                       PartitionLocationCacheBucketCount    : 1024
-                       ServiceChangePollInterval            : 00:02:00
-                       ConnectionInitializationTimeout      : 00:00:02
-                       KeepAliveInterval                    : 00:00:20
-                       HealthOperationTimeout               : 00:02:00
-                       HealthReportSendInterval             : 00:00:00
-                       HealthReportRetrySendInterval        : 00:00:40
-                       NotificationGatewayConnectionTimeout : 00:00:00
-                       NotificationCacheUpdateTimeout       : 00:00:00
-                       }
-GatewayInformation   : {
-                       NodeAddress                          : localhost:19000
-                       NodeId                               : 1880ec88a3187766a6da323399721f53
-                       NodeInstanceId                       : 130729063464981219
-                       NodeName                             : Node.1
-                       }
-```
+	PS C:\> Connect-ServiceFabricCluster -HealthOperationTimeoutInSec 120 -HealthReportSendIntervalInSec 0 -HealthReportRetrySendIntervalInSec 40
+	True
+
+	ConnectionEndpoint   :
+	FabricClientSettings : {
+                       		ClientFriendlyName                   : PowerShell-1944858a-4c6d-465f-89c7-9021c12ac0bb
+                       		PartitionLocationCacheLimit          : 100000
+                       		PartitionLocationCacheBucketCount    : 1024
+                       		ServiceChangePollInterval            : 00:02:00
+                       		ConnectionInitializationTimeout      : 00:00:02
+                       		KeepAliveInterval                    : 00:00:20
+                       		HealthOperationTimeout               : 00:02:00
+                       		HealthReportSendInterval             : 00:00:00
+                       		HealthReportRetrySendInterval        : 00:00:40
+                       		NotificationGatewayConnectionTimeout : 00:00:00
+                       		NotificationCacheUpdateTimeout       : 00:00:00
+                       		}
+	GatewayInformation   : {
+                       		NodeAddress                          : localhost:19000
+                       		NodeId                               : 1880ec88a3187766a6da323399721f53
+                       		NodeInstanceId                       : 130729063464981219
+                       		NodeName                             : Node.1
+                       		}
+
 
 > [AZURE.NOTE] 若要确保未授权的服务无法针对群集中的实体报告运行状况，可将服务器配置为只接受来自受保护客户端的请求。由于报告是通过 `FabricClient` 来完成的，这表示 `FabricClient` 必须启用安全性才能与群集通信，例如使用 Kerberos 或证书身份验证。详细了解[群集安全性](/documentation/articles/service-fabric-cluster-security)。
 
@@ -167,117 +167,117 @@ GatewayInformation   : {
 
 以下示例演示如何从群集内的监视器定期发送报告。该监视器会检查能否从节点内访问外部资源。应用程序内的服务清单需要该资源。如果无法访问该资源，应用程序内的其他服务仍然可以正常运行。因此，会在已部署的服务包实体上每隔 30 秒发送一次报告。
 
-```csharp
-private static Uri ApplicationName = new Uri("fabric:/WordCount");
-private static string ServiceManifestName = "WordCount.Service";
-private static string NodeName = FabricRuntime.GetNodeContext().NodeName;
-private static Timer ReportTimer = new Timer(new TimerCallback(SendReport), null, 30 * 1000, 30 * 1000);
-private static FabricClient Client = new FabricClient(new FabricClientSettings() { HealthReportSendInterval = TimeSpan.FromSeconds(0) });
 
-public static void SendReport(object obj)
-{
-    // Test whether the resource can be accessed from the node
-    HealthState healthState = this.TestConnectivityToExternalResource();
+	private static Uri ApplicationName = new Uri("fabric:/WordCount");
+	private static string ServiceManifestName = "WordCount.Service";
+	private static string NodeName = FabricRuntime.GetNodeContext().NodeName;
+	private static Timer ReportTimer = new Timer(new TimerCallback(SendReport), null, 30 * 1000, 30 * 1000);
+	private static FabricClient Client = new FabricClient(new FabricClientSettings() { HealthReportSendInterval = TimeSpan.FromSeconds(0) });
 
-    // Send report on deployed service package, as the connectivity is needed by the specific service manifest
-    // and can be different on different nodes
-    var deployedServicePackageHealthReport = new DeployedServicePackageHealthReport(
-        ApplicationName,
-        ServiceManifestName,
-        NodeName,
-        new HealthInformation("ExternalSourceWatcher", "Connectivity", healthState));
+	public static void SendReport(object obj)
+	{
+    	// Test whether the resource can be accessed from the node
+    	HealthState healthState = this.TestConnectivityToExternalResource();
 
-    // TODO: handle exception. Code omitted for snippet brevity.
-    // Possible exceptions: FabricException with error codes
-    // FabricHealthStaleReport (non-retryable, the report is already queued on the health client),
-    // FabricHealthMaxReportsReached (retryable; user should retry with exponential delay until the report is accepted).
-    Client.HealthManager.ReportHealth(deployedServicePackageHealthReport);
-}
-```
+    	// Send report on deployed service package, as the connectivity is needed by the specific service manifest
+    	// and can be different on different nodes
+    	var deployedServicePackageHealthReport = new DeployedServicePackageHealthReport(
+        	ApplicationName,
+        	ServiceManifestName,
+        	NodeName,
+        	new HealthInformation("ExternalSourceWatcher", "Connectivity", healthState));
+
+    	// TODO: handle exception. Code omitted for snippet brevity.
+    	// Possible exceptions: FabricException with error codes
+    	// FabricHealthStaleReport (non-retryable, the report is already queued on the health client),
+    	// FabricHealthMaxReportsReached (retryable; user should retry with exponential delay until the report is accepted).
+    	Client.HealthManager.ReportHealth(deployedServicePackageHealthReport);
+	}
+
 
 ### PowerShell
 用户可使用 **Send-ServiceFabric*EntityType*HealthReport** 发送运行状况报告。
 
 以下示例演示如何定期报告某个节点上的 CPU 值。应每隔 30 秒发送一次报告，报告生存时间为 2 分钟。如果过期，就表示报告器有问题，因此会错误地评估该节点。当 CPU 高于阈值时，报告的运行状况为警告。当 CPU 保持高于阈值超过设置的时间时，则将其报告为错误。否则，报告器发送的运行状况为“正常”。
 
-```powershell
-PS C:\> Send-ServiceFabricNodeHealthReport -NodeName Node.1 -HealthState Warning -SourceId PowershellWatcher -HealthProperty CPU -Description "CPU is above 80% threshold" -TimeToLiveSec 120
 
-PS C:\> Get-ServiceFabricNodeHealth -NodeName Node.1
-NodeName              : Node.1
-AggregatedHealthState : Warning
-UnhealthyEvaluations  :
-                        Unhealthy event: SourceId='PowershellWatcher', Property='CPU', HealthState='Warning', ConsiderWarningAsError=false.
+	PS C:\> Send-ServiceFabricNodeHealthReport -NodeName Node.1 -HealthState Warning -SourceId PowershellWatcher -HealthProperty CPU -Description "CPU is above 80% threshold" -TimeToLiveSec 120
 
-HealthEvents          :
-                        SourceId              : System.FM
-                        Property              : State
-                        HealthState           : Ok
-                        SequenceNumber        : 5
-                        SentAt                : 4/21/2015 8:01:17 AM
-                        ReceivedAt            : 4/21/2015 8:02:12 AM
-                        TTL                   : Infinite
-                        Description           : Fabric node is up.
-                        RemoveWhenExpired     : False
-                        IsExpired             : False
-                        Transitions           : ->Ok = 4/21/2015 8:02:12 AM
+	PS C:\> Get-ServiceFabricNodeHealth -NodeName Node.1
+	NodeName              : Node.1
+	AggregatedHealthState : Warning
+	UnhealthyEvaluations  :
+                        	Unhealthy event: SourceId='PowershellWatcher', Property='CPU', HealthState='Warning', ConsiderWarningAsError=false.
 
-                        SourceId              : PowershellWatcher
-                        Property              : CPU
-                        HealthState           : Warning
-                        SequenceNumber        : 130741236814913394
-                        SentAt                : 4/21/2015 9:01:21 PM
-                        ReceivedAt            : 4/21/2015 9:01:21 PM
-                        TTL                   : 00:02:00
-                        Description           : CPU is above 80% threshold
-                        RemoveWhenExpired     : False
-                        IsExpired             : False
-                        Transitions           : ->Warning = 4/21/2015 9:01:21 PM
-```
+	HealthEvents          :
+                        	SourceId              : System.FM
+                        	Property              : State
+                        	HealthState           : Ok
+                        	SequenceNumber        : 5
+                        	SentAt                : 4/21/2015 8:01:17 AM
+                        	ReceivedAt            : 4/21/2015 8:02:12 AM
+                        	TTL                   : Infinite
+                        	Description           : Fabric node is up.
+                        	RemoveWhenExpired     : False
+                        	IsExpired             : False
+                        	Transitions           : ->Ok = 4/21/2015 8:02:12 AM
+
+                        	SourceId              : PowershellWatcher
+                        	Property              : CPU
+                        	HealthState           : Warning
+                        	SequenceNumber        : 130741236814913394
+                        	SentAt                : 4/21/2015 9:01:21 PM
+                        	ReceivedAt            : 4/21/2015 9:01:21 PM
+                        	TTL                   : 00:02:00
+                        	Description           : CPU is above 80% threshold
+                        	RemoveWhenExpired     : False
+                        	IsExpired             : False
+                        	Transitions           : ->Warning = 4/21/2015 9:01:21 PM
+
 
 以下示例会在副本上报告暂时性警告。它先获取分区 ID，再获取所需服务的副本 ID。然后从 **PowershellWatcher** 发送有关 **ResourceDependency** 属性的报告。此报告只需存在 2 分钟，就从存储中自动删除。
 
-```powershell
-PS C:\> $partitionId = (Get-ServiceFabricPartition -ServiceName fabric:/WordCount/WordCount.Service).PartitionId
 
-PS C:\> $replicaId = (Get-ServiceFabricReplica -PartitionId $partitionId | where {$_.ReplicaRole -eq "Primary"}).ReplicaId
+	PS C:\> $partitionId = (Get-ServiceFabricPartition -ServiceName fabric:/WordCount/WordCount.Service).PartitionId
 
-PS C:\> Send-ServiceFabricReplicaHealthReport -PartitionId $partitionId -ReplicaId $replicaId -HealthState Warning -SourceId PowershellWatcher -HealthProperty ResourceDependency -Description "The external resource that the primary is using has been rebooted at 4/21/2015 9:01:21 PM. Expect processing delays for a few minutes." -TimeToLiveSec 120 -RemoveWhenExpired
+	PS C:\> $replicaId = (Get-ServiceFabricReplica -PartitionId $partitionId | where {$_.ReplicaRole -eq "Primary"}).ReplicaId
 
-PS C:\> Get-ServiceFabricReplicaHealth  -PartitionId $partitionId -ReplicaOrInstanceId $replicaId
+	PS C:\> Send-ServiceFabricReplicaHealthReport -PartitionId $partitionId -ReplicaId $replicaId -HealthState Warning -SourceId PowershellWatcher -HealthProperty ResourceDependency -Description "The external resource that the primary is using has been rebooted at 4/21/2015 9:01:21 PM. Expect processing delays for a few minutes." -TimeToLiveSec 120 -RemoveWhenExpired
+
+	PS C:\> Get-ServiceFabricReplicaHealth  -PartitionId $partitionId -ReplicaOrInstanceId $replicaId
 
 
-PartitionId           : 8f82daff-eb68-4fd9-b631-7a37629e08c0
-ReplicaId             : 130740415594605869
-AggregatedHealthState : Warning
-UnhealthyEvaluations  :
-                        Unhealthy event: SourceId='PowershellWatcher', Property='ResourceDependency', HealthState='Warning', ConsiderWarningAsError=false.
+	PartitionId           : 8f82daff-eb68-4fd9-b631-7a37629e08c0
+	ReplicaId             : 130740415594605869
+	AggregatedHealthState : Warning
+	UnhealthyEvaluations  :
+                        	Unhealthy event: SourceId='PowershellWatcher', Property='ResourceDependency', HealthState='Warning', ConsiderWarningAsError=false.
 
-HealthEvents          :
-                        SourceId              : System.RA
-                        Property              : State
-                        HealthState           : Ok
-                        SequenceNumber        : 130740768777734943
-                        SentAt                : 4/21/2015 8:01:17 AM
-                        ReceivedAt            : 4/21/2015 8:02:12 AM
-                        TTL                   : Infinite
-                        Description           : Replica has been created.
-                        RemoveWhenExpired     : False
-                        IsExpired             : False
-                        Transitions           : ->Ok = 4/21/2015 8:02:12 AM
+	HealthEvents          :
+                        	SourceId              : System.RA
+                        	Property              : State
+                        	HealthState           : Ok
+                        	SequenceNumber        : 130740768777734943
+                        	SentAt                : 4/21/2015 8:01:17 AM
+                        	ReceivedAt            : 4/21/2015 8:02:12 AM
+                        	TTL                   : Infinite
+                        	Description           : Replica has been created.
+                        	RemoveWhenExpired     : False
+                        	IsExpired             : False
+                        	Transitions           : ->Ok = 4/21/2015 8:02:12 AM
 
-                        SourceId              : PowershellWatcher
-                        Property              : ResourceDependency
-                        HealthState           : Warning
-                        SequenceNumber        : 130741243777723555
-                        SentAt                : 4/21/2015 9:12:57 PM
-                        ReceivedAt            : 4/21/2015 9:12:57 PM
-                        TTL                   : 00:02:00
-                        Description           : The external resource that the primary is using has been rebooted at 4/21/2015 9:01:21 PM. Expect processing delays for a few minutes.
-                        RemoveWhenExpired     : True
-                        IsExpired             : False
-                        Transitions           : ->Warning = 4/21/2015 9:12:32 PM
-```
+                        	SourceId              : PowershellWatcher
+                        	Property              : ResourceDependency
+                        	HealthState           : Warning
+                        	SequenceNumber        : 130741243777723555
+                        	SentAt                : 4/21/2015 9:12:57 PM
+                        	ReceivedAt            : 4/21/2015 9:12:57 PM
+                        	TTL                   : 00:02:00
+                        	Description           : The external resource that the primary is using has been rebooted 	at 4/21/2015 9:01:21 PM. Expect processing delays for a few minutes.
+                        	RemoveWhenExpired     : True
+                        	IsExpired             : False
+                        	Transitions           : ->Warning = 4/21/2015 9:12:32 PM
+
 
 ## 后续步骤
 

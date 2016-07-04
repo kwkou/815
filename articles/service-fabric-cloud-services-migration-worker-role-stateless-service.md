@@ -224,38 +224,36 @@ private void CodePackageActivationContext_ConfigurationPackageModifiedEvent(obje
 ### 云服务
 云服务中的启动入口点是在 ServiceDefintion.csdef 中针对每个角色配置的。
 
-```xml
 
-<ServiceDefinition>
-    <Startup>
-        <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple" >
-            <Environment>
-                <Variable name="MyVersionNumber" value="1.0.0.0" />
-            </Environment>
-        </Task>
-    </Startup>
-    ...
-</ServiceDefinition>
 
-```
+	<ServiceDefinition>
+    	<Startup>
+        	<Task commandLine="Startup.cmd" executionContext="limited" taskType="simple" >
+            	<Environment>
+                	<Variable name="MyVersionNumber" value="1.0.0.0" />
+            	</Environment>
+        	</Task>
+    	</Startup>
+    	...
+	</ServiceDefinition>
+
 
 ### Service Fabric
 
 Service Fabric 中的启动入口点是在 ServiceManifest.xml 中针对每个服务配置的。
 
-```xml
 
-<ServiceManifest>
-  <CodePackage Name="Code" Version="1.0.0">
-    <SetupEntryPoint>
-      <ExeHost>
-        <Program>Startup.bat</Program>
-      </ExeHost>
-    </SetupEntryPoint>
-    ...
-</ServiceManifest>
 
-``` 
+	<ServiceManifest>
+  	<CodePackage Name="Code" Version="1.0.0">
+    	<SetupEntryPoint>
+      	<ExeHost>
+        	<Program>Startup.bat</Program>
+      	</ExeHost>
+    	</SetupEntryPoint>
+    	...
+	</ServiceManifest>
+
 
 ## 有关开发环境的说明
 

@@ -242,7 +242,7 @@ PS D:\temp>
 <!--Image references-->
 [appmodel-diagram]: ./media/service-fabric-application-model/application-model.png
 [cluster-imagestore-apptypes]: ./media/service-fabric-application-model/cluster-imagestore-apptypes.png
-[cluster-application-instances]: media/service-fabric-application-model/cluster-application-instances.png
+[cluster-application-instances]: ./media/service-fabric-application-model/cluster-application-instances.png
 [vs-package-command]: ./media/service-fabric-application-model/vs-package-command.png
 
 <!--Link references--In actual articles, you only need a single period before the slash-->

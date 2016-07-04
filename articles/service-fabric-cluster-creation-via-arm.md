@@ -38,11 +38,11 @@
 
 1. 可以从 [GitHub 上的 Azure 快速入门模板库](https://github.com/Azure/azure-quickstart-templates)获取示例模板，然后对其进行更改。
 
-2. 可以登录到 Azure 门户，然后使用 Service Fabric 门户页来生成可自定义的模板。为此，请执行以下步骤：
+2. 可以登录到 Azure 门户预览，然后使用 Service Fabric 门户页来生成可自定义的模板。为此，请执行以下步骤：
 
-    a.登录到 [Azure 门户](https://portal.azure.cn/)。
+    a.登录到 [Azure 门户预览](https://portal.azure.cn/)。
 
-    b.完成[通过 Azure 门户创建 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal)一文中所述的群集创建过程，但不要单击“创建”，而是转到“摘要”并下载模板，如以下屏幕截图所示。
+    b.完成[通过 Azure 门户预览创建 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal)一文中所述的群集创建过程，但不要单击“创建”，而是转到“摘要”并下载模板，如以下屏幕截图所示。
 
  ![Service Fabric 群集页的屏幕截图，其中显示了用于下载 Resource Manager 模板的链接][DownloadTemplate]
 

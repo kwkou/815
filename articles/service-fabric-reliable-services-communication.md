@@ -20,18 +20,18 @@
 
 Reliable Services API 为服务通信使用一个简单的接口。若要打开服务的终结点，只需实现此接口即可：
 
-```csharp
 
-public interface ICommunicationListener
-{
-    Task<string> OpenAsync(CancellationToken cancellationToken);
 
-    Task CloseAsync(CancellationToken cancellationToken);
+	public interface ICommunicationListener
+	{
+    	Task<string> OpenAsync(CancellationToken cancellationToken);
 
-    void Abort();
-}
+    	Task CloseAsync(CancellationToken cancellationToken);
 
-```
+    	void Abort();
+	}
+
+
 
 然后，可以通过在基于服务的类方法重写中返回通信侦听器实现来添加该实现。
 
@@ -87,15 +87,15 @@ protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListe
 
 最后，在[服务清单](/documentation/articles/service-fabric-application-model)中有关终结点的节下面描述服务所需的终结点。
 
-```xml
-<Resources>
-    <Endpoints>
-      <Endpoint Name="WebServiceEndpoint" Protocol="http" Port="80" />
-      <Endpoint Name="OtherServiceEndpoint" Protocol="tcp" Port="8505" />
-    <Endpoints>
-</Resources>
 
-```
+	<Resources>
+    	<Endpoints>
+      		<Endpoint Name="WebServiceEndpoint" Protocol="http" Port="80" />
+      		<Endpoint Name="OtherServiceEndpoint" Protocol="tcp" Port="8505" />
+    	<Endpoints>
+	</Resources>
+
+
 
 通信侦听器可以从 `ServiceContext` 中的 `CodePackageActivationContext` 访问分配给它的终结点资源。然后侦听器在打开时开始侦听请求。
 
@@ -228,26 +228,26 @@ public class MyCommunicationClientFactory : CommunicationClientFactoryBase<MyCom
 
 `TryHandleException` 针对给定异常做出决定。如果它**不知道**要对异常做出哪些决定，则应返回 **false**。如果它**知道**如何做决定，则应该相应地设置结果并返回 **true**。
  
-```csharp
-class MyExceptionHandler : IExceptionHandler
-{
-    public bool TryHandleException(ExceptionInformation exceptionInformation, OperationRetrySettings retrySettings, out ExceptionHandlingResult result)
-    {
-        // if exceptionInformation.Exception is known and is transient (can be retried without re-resolving)
-        result = new ExceptionHandlingRetryResult(exceptionInformation.Exception, true, retrySettings, retrySettings.DefaultMaxRetryCount);
-        return true;
+
+	class MyExceptionHandler : IExceptionHandler
+	{
+    	public bool TryHandleException(ExceptionInformation exceptionInformation, OperationRetrySettings retrySettings, out ExceptionHandlingResult result)
+    	{
+        	// if exceptionInformation.Exception is known and is transient (can be retried without re-resolving)
+        	result = new ExceptionHandlingRetryResult(exceptionInformation.Exception, true, retrySettings, retrySettings.DefaultMaxRetryCount);
+        	return true;
 
 
-        // if exceptionInformation.Exception is known and is not transient (indicates a new service endpoint address must be resolved)
-        result = new ExceptionHandlingRetryResult(exceptionInformation.Exception, false, retrySettings, retrySettings.DefaultMaxRetryCount);
-        return true;
+        	// if exceptionInformation.Exception is known and is not transient (indicates a new service endpoint address must be resolved)
+        	result = new ExceptionHandlingRetryResult(exceptionInformation.Exception, false, retrySettings, retrySettings.DefaultMaxRetryCount);
+        	return true;
 
-        // if exceptionInformation.Exception is unknown (let the next IExceptionHandler attempt to handle it)
-        result = null;
-        return false;
-    }
-}
-```
+        	// if exceptionInformation.Exception is unknown (let the next IExceptionHandler attempt to handle it)
+        	result = null;
+        	return false;
+    	}
+	}
+
 ### 汇总
 使用以通信协议生成的 `ICommunicationClient`、`ICommunicationClientFactory` 和 `IExceptionHandler`，`ServicePartitionClient` 会将它全部包装在一起，并为这些组件提供错误处理和服务分区地址解析循环。
 

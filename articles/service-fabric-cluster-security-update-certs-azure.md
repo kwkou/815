@@ -21,8 +21,8 @@
 ## 添加辅助证书
 若要添加另一个证书作为辅助证书，必须将该证书上载到 Azure 密钥保管库，然后将它部署到群集中的 VM。有关更多信息，请参阅 [Deploy certificates to VMs from a customer-managed key vault](http://blogs.technet.com/b/kv/archive/2015/07/14/vm_2d00_certificates.aspx)（将证书从客户管理的密钥保管库部署到 VM）。
 
-1. [将 X.509 证书上载到密钥保管库](/documentation/articles/service-fabric-cluster-azure-secure-with-certs#step-2-upload-the-x509-certificate-to-the-key-vault)
-2. 登录到 [Azure 门户](https://portal.azure.cn/)并浏览到要将此证书添加到的群集资源。
+1. 将 X.509 证书上载到密钥保管库  
+2. 登录到 [Azure 门户预览](https://portal.azure.cn/)并浏览到要将此证书添加到的群集资源。
 3. 在“设置”下面，单击证书配置并输入辅助证书指纹。
 4. 单击“保存”。随即将开始部署，在部署成功完成后，你可以使用主证书或辅助证书在群集上执行管理操作。
 
@@ -31,7 +31,7 @@
 ## 删除证书
 下面是删除旧证书，以使群集不使用它的过程：
 
-1. 登录到 [Azure 门户](https://portal.azure.cn/)并导航到群集的安全设置。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn/)并导航到群集的安全设置。
 2. 删除其中的一个证书。
 3. 单击“保存”，随即将开始部署。部署完成后，删除的证书不再可用于连接到群集。
 

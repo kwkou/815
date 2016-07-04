@@ -52,20 +52,20 @@
 5. 保存更改后的 ApplicationManifest.xml 文件。
 6. 以管理员身份运行以下 PowerShell 脚本，将应用程序复制到映像存储：
 
-```powershell
-# Deploy the WordCount and upgrade applications
-$applicationPathWordCount = "C:\Temp\WordCount"
-$applicationPathUpgrade = "C:\Temp\WordCountUpgrade"
 
-# LOCAL:
-$imageStoreConnection = "file:C:\SfDevCluster\Data\ImageStoreShare"
-$cluster = 'localhost:19000'
+		# Deploy the WordCount and upgrade applications
+		$applicationPathWordCount = "C:\Temp\WordCount"
+		$applicationPathUpgrade = "C:\Temp\WordCountUpgrade"
 
-Connect-ServiceFabricCluster $cluster
+		# LOCAL:
+		$imageStoreConnection = "file:C:\SfDevCluster\Data\ImageStoreShare"
+		$cluster = 'localhost:19000'
 
-Copy-ServiceFabricApplicationPackage -ApplicationPackagePath $applicationPathWordCount -ImageStoreConnectionString $imageStoreConnection
-Copy-ServiceFabricApplicationPackage -ApplicationPackagePath $applicationPathUpgrade -ImageStoreConnectionString $imageStoreConnection
-```
+		Connect-ServiceFabricCluster $cluster
+
+		Copy-ServiceFabricApplicationPackage -ApplicationPackagePath $applicationPathWordCount -ImageStoreConnectionString $imageStoreConnection
+		Copy-ServiceFabricApplicationPackage -ApplicationPackagePath $applicationPathUpgrade -ImageStoreConnectionString $imageStoreConnection
+
 
 在 PowerShell 脚本执行完毕之后，此应用程序即可运行。
 

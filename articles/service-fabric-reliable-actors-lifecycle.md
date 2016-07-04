@@ -105,6 +105,7 @@ await myActorServiceProxy.DeleteActorAsync(actorToDelete, cancellationToken)
 ```
 
 删除一个执行组件将出现以下结果，具体取决于当前执行组件是否处于活动状态：
+
 - **活动执行组件**
  - 执行组件从活动的执行组件列表中删除并停用。
  - 将永久删除该执行组件的状态。

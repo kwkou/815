@@ -59,14 +59,14 @@ New-ServiceFabricService -ApplicationName $applicationName -ServiceName $service
 
 ```csharp
 ServicePlacementPreferPrimaryDomainPolicyDescription primaryDomain = new ServicePlacementPreferPrimaryDomainPolicyDescription();
-primaryDomain.DomainName = "fd:/EastUs/";
+primaryDomain.DomainName = "fd:/ChinaEast/";
 serviceDescription.PlacementPolicies.Add(invalidDomain);
 ```
 
 Powershell：
 
 ```posh
-New-ServiceFabricService -ApplicationName $applicationName -ServiceName $serviceName -ServiceTypeName $serviceTypeName –Stateful -MinReplicaSetSize 2 -TargetReplicaSetSize 3 -PartitionSchemeSingleton -PlacementPolicy @("PreferredPrimaryDomain,fd:/EastUs")
+New-ServiceFabricService -ApplicationName $applicationName -ServiceName $serviceName -ServiceTypeName $serviceTypeName –Stateful -MinReplicaSetSize 2 -TargetReplicaSetSize 3 -PartitionSchemeSingleton -PlacementPolicy @("PreferredPrimaryDomain,fd:/ChinaEast")
 ```
 
 ## 要求在所有域之间分布副本，并且不允许打包

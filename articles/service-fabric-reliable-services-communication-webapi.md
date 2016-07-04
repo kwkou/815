@@ -170,14 +170,14 @@ internal static class Program
 
 Reliable Services API 提供通信入口点，可在其中插入通信堆栈，以便用户和客户端能够连接到服务：
 
-```csharp
 
-protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
-{
-    ...
-}
 
-```
+	protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
+	{
+    	...
+	}	
+
+
 
 Web 服务器（以及可能在将来使用的任何其他通信堆栈，如 WebSockets）应使用 ICommunicationListener 接口与系统正确集成。这样做的原因会在后续步骤中表现得更明显。
 
@@ -285,15 +285,15 @@ public class OwinCommunicationListener : ICommunicationListener
 
 在 PackageRoot\\ServiceManifest.xml 中配置 HTTP 终结点：
 
-```xml
 
-<Resources>
-    <Endpoints>
-        <Endpoint Name="ServiceEndpoint" Type="Input" Protocol="http" Port="8281" />
-    </Endpoints>
-</Resources>
 
-```
+	<Resources>
+    	<Endpoints>
+        	<Endpoint Name="ServiceEndpoint" Type="Input" Protocol="http" Port="8281" />
+    	</Endpoints>
+	</Resources>
+
+
 
 此步骤很重要，因为服务主机进程要在受限制的凭据（在 Windows 上的网络服务）之下运行。这意味着服务并没有自行设置 HTTP 终结点的访问权限。通过使用终结点配置，Service Fabric 知道要为服务侦听的 URL 设置适当的访问控制列表 (ACL)。Service Fabric 还提供了一个标准位置用于配置终结点。
 
@@ -381,38 +381,38 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 最后，实现 CloseAsync 和 Abort 以停止 Web 服务器。可以通过释放在 OpenAsync 过程中创建的服务器句柄来停止 Web 服务器。
 
-```csharp
-public Task CloseAsync(CancellationToken cancellationToken)
-{
-    this.eventSource.ServiceMessage(this.serviceContext, "Closing web server");
+
+	public Task CloseAsync(CancellationToken cancellationToken)
+	{
+    	this.eventSource.ServiceMessage(this.serviceContext, "Closing web server");
             
-    this.StopWebServer();
+    	this.StopWebServer();
 
-    return Task.FromResult(true);
-}
+    	return Task.FromResult(true);
+	}
 
-public void Abort()
-{
-    this.eventSource.ServiceMessage(this.serviceContext, "Aborting web server");
+	public void Abort()
+	{
+    	this.eventSource.ServiceMessage(this.serviceContext, "Aborting web server");
     
-    this.StopWebServer();
-}
+    	this.StopWebServer();
+	}
 
-private void StopWebServer()
-{
-    if (this.serverHandle != null)
-    {
-        try
-        {
-            this.serverHandle.Dispose();
-        }
-        catch (ObjectDisposedException)
-        {
-            // no-op
-        }
-    }
-}
-```
+	private void StopWebServer()
+	{
+    	if (this.serverHandle != null)
+    	{
+        	try
+        	{
+            	this.serverHandle.Dispose();
+        	}
+        	catch (ObjectDisposedException)
+        	{
+            	// no-op
+        	}
+    	}
+	}
+
 
 在此实现示例中，CloseAsync 和 Abort 都只是停止 Web 服务器。你可以选择在 CloseAsync 中运行更妥善协调的 Web 服务器关机。例如，关机可以等待正在进行的请求在返回之前完成。
 
@@ -652,17 +652,17 @@ New-ServiceFabricService -ApplicationName "fabric:/WebServiceApplication" -Servi
 
 也可以在 Visual Studio 无状态服务项目中定义默认服务时设置：
 
-```xml
 
-<DefaultServices>
-  <Service Name="WebService">
-    <StatelessService ServiceTypeName="WebServiceType" InstanceCount="-1">
-      <SingletonPartition />
-    </StatelessService>
-  </Service>
-</DefaultServices>
 
-```
+	<DefaultServices>
+  		<Service Name="WebService">
+    		<StatelessService ServiceTypeName="WebServiceType" InstanceCount="-1">
+      		<SingletonPartition />
+    	</StatelessService>
+  		</Service>
+	</DefaultServices>
+
+
 
 有关如何创建应用程序和服务实例的详细信息，请参阅[部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications)。
 

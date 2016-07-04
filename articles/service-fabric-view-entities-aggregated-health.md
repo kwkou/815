@@ -1,7 +1,7 @@
 <properties
    pageTitle="如何查看 Azure Service Fabric 实体的聚合运行状况 | Azure"
    description="说明如何通过运行状况查询和常规查询来查询、查看和评估 Azure Service Fabric 实体聚合运行状况。"
-   services="service-fabric"HealthManager
+   services="service-fabric"
    documentationCenter=".net"
    authors="oanapl"
    manager="timlt"

@@ -57,56 +57,54 @@
 
 * **接口项目 (MyActor.Interfaces)**。这是包含执行组件的接口定义的项目。在 MyActor.Interfaces 项目中，你可以定义在解决方案中执行组件所使用的接口。可在任何项目中使用任何名称定义执行组件接口。不过，因为该接口定义了执行组件实现和调用执行组件的客户端所共享的执行组件协定，所以合理的做法是在独立于执行组件实现的程序集中定义接口，并且其他多个项目可以共享接口。
 
-```csharp
-public interface IMyActor : IActor
-{
-    Task<string> HelloWorld();
-}
-```
+
+	public interface IMyActor : IActor
+	{
+    	Task<string> HelloWorld();
+	}
+
 
 * **执行组件服务项目 (MyActor)**。这是用于定义要托管执行组件的 Service Fabric 服务的项目。它包含执行组件的实现。执行组件实现是派生自基类型 `Actor` 的一个类，用于实现 MyActor.Interfaces 项目中定义的接口。
 
-```csharp
-[StatePersistence(StatePersistence.Persisted)]
-internal class MyActor : Actor, IMyActor
-{
-    public Task<string> HelloWorld()
-    {
-        return Task.FromResult("Hello world!");
-    }
-}
-```
+
+	[StatePersistence(StatePersistence.Persisted)]
+	internal class MyActor : Actor, IMyActor
+	{
+    	public Task<string> HelloWorld()
+    	{
+        	return Task.FromResult("Hello world!");
+    	}
+	}
+
 
 执行组件服务必须使用 Service Fabric 运行时中的服务类型注册。为了使执行组件服务能够运行执行组件实例，还必须向执行组件服务注册你的执行组件类型。`ActorRuntime` 注册方法将为执行组件执行此操作。
 
-```csharp
-internal static class Program
-{
-    private static void Main()
-    {
-        try
-        {
-            ActorRuntime.RegisterActorAsync<MyActor>(
-                (context, actorType) => new ActorService(context, actorType, () => new MyActor())).GetAwaiter().GetResult();
 
-            Thread.Sleep(Timeout.Infinite);
-        }
-        catch (Exception e)
-        {
-            ActorEventSource.Current.ActorHostInitializationFailed(e.ToString());
-            throw;
-        }
-    }
-}
+	internal static class Program
+	{
+    	private static void Main()
+    	{
+        	try
+        	{
+            	ActorRuntime.RegisterActorAsync<MyActor>(
+                	(context, actorType) => new ActorService(context, actorType, () => new MyActor())).GetAwaiter().GetResult();
 
-```
+            	Thread.Sleep(Timeout.Infinite);
+        	}
+        	catch (Exception e)
+        	{
+            	ActorEventSource.Current.ActorHostInitializationFailed(e.ToString());
+            	throw;
+        	}
+    	}
+	}
+
+
 
 如果在 Visual Studio 中从新项目开始，并且只有一个执行组件定义，那么默认情况下，在 Visual Studio 生成的代码中包含此注册。如果在服务中定义其他执行组件，则需要使用以下操作添加执行组件注册：
 
-```csharp
- ActorRuntime.RegisterActorAsync<MyOtherActor>();
+	ActorRuntime.RegisterActorAsync<MyOtherActor>();
 
-```
 
 > [AZURE.TIP] Service Fabric 执行组件运行时发出一些[与执行组件方法相关的事件和性能计数器](/documentation/articles/service-fabric-reliable-actors-diagnostics#actor-method-events-and-performance-counters)。它们可用于进行诊断和性能监视。
 

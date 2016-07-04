@@ -97,7 +97,7 @@
 登录到你的 Azure 帐户。如果此 PowerShell 命令由于某些原因而失败，你应该检查 Azure PowerShell 是否已正确安装。
 
 ```
-Login-AzureRmAccount
+Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 ```
 
 运行以下命令获取有关负载平衡器的详细信息，在值中，你将会找到 **inboundNatPools** 的描述：

@@ -61,7 +61,7 @@ Azure Service Fabric 可简化可靠的无状态服务和有状态服务的编�
 
 - [配置有状态 Reliable Services](/documentation/articles/service-fabric-reliable-services-configuration)
 
-- [Service Fabric 运行状况简介](/documentation/articles/service-fabric-health-introduction.md)
+- [Service Fabric 运行状况简介](/documentation/articles/service-fabric-health-introduction)
 
 - [使用系统运行状况报告进行故障排除](/documentation/articles/service-fabric-understand-and-troubleshoot-with-system-health-reports)
 

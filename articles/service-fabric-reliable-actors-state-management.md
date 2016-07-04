@@ -131,7 +131,7 @@ class MyActor : Actor, IMyActor
 
 状态管理器检索方法将返回对本地内存中对象的引用。只是在本地内存中修改此对象并不会永久存储该对象。从状态管理器检索和修改对象时，必须将它重新插入状态管理器才能永久保存。
 
-可以使用无条件的 Set（相当于 `dictionary["key"] = value` 语法）来插入状态：
+可以使用无条件的 Set（相当于 **dictionary["key"] = value** 语法）来插入状态：
 
 ```csharp
 [StatePersistence(StatePersistence.Persisted)]
