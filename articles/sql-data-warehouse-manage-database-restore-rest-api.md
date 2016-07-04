@@ -15,6 +15,7 @@
 # 备份和还原 Azure SQL 数据仓库中的一个数据库 (REST API)
 
 > [AZURE.SELECTOR]
+- [概述](/documentation/articles/sql-data-warehouse-overview-manage-database-restore)
 - [门户](/documentation/articles/sql-data-warehouse-manage-database-restore-portal)
 - [PowerShell](/documentation/articles/sql-data-warehouse-manage-database-restore-powershell)
 - [REST](/documentation/articles/sql-data-warehouse-manage-database-restore-rest-api)

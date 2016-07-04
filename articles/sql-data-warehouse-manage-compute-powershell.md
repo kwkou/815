@@ -15,6 +15,7 @@
 # 管理 Azure SQL 数据仓库中的计算能力 (PowerShell)
 
 > [AZURE.SELECTOR]
+- [概述](/documentation/articles/sql-data-warehouse-overview-manage-compute)
 - [PowerShell](/documentation/articles/sql-data-warehouse-manage-compute-powershell)
 - [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api)
 - [TSQL](/documentation/articles/sql-data-warehouse-manage-compute-tsql)
@@ -44,11 +45,9 @@
 1. 打开 Azure PowerShell。 
 2. 在 PowerShell 提示符下，运行以下命令以登录到 Azure Resource Manager，然后选择你的订阅。
 
-    ```PowerShell
-    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-    Get-AzureRmSubscription
-    Select-AzureRmSubscription -SubscriptionName "MySubscription"
-    ```
+        Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+        Get-AzureRmSubscription
+        Select-AzureRmSubscription -SubscriptionName "MySubscription"
 
 <a name="scale-performance-bk"></a>
 <a name="scale-compute-bk"></a>

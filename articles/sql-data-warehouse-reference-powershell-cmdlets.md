@@ -23,14 +23,13 @@
 1. 打开 Windows PowerShell。 
 2. 在 PowerShell 提示符下，运行以下命令以登录到 Azure Resource Manager，然后选择你的订阅。
 
-    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-    Get-AzureRmSubscription
-    Select-AzureRmSubscription -SubscriptionName "MySubscription"
+        Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+        Get-AzureRmSubscription
+        Select-AzureRmSubscription -SubscriptionName "MySubscription"
 
 ## 暂停 SQL 数据仓库示例
 
 暂停名为“Server01”的服务器上托管的名为“Database02”的数据库。 该服务器位于名为“ResourceGroup1”的 Azure 资源组中。
-
 
     Suspend-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup1" –ServerName "Server01" –DatabaseName "Database02"
 
@@ -44,12 +43,9 @@
 
 恢复“Server01”的服务器上托管的“Database02”数据库的运行。 该服务器包含在名为“ResourceGroup1”的资源组中。
 
-```Powershell
-Resume-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup1" –ServerName "Server01" -DatabaseName "Database02"
-```
+    Resume-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup1" –ServerName "Server01" -DatabaseName "Database02"
 
 作为一种变体，此示例可从“ResourceGroup1”资源组包含的“Server01”服务器中检索“Database02”数据库。 它通过管道将检索到的对象传递给 [Resume-AzureRmSqlDatabase][]。
-
 
 	$database = Get-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup1" –ServerName "Server01" –DatabaseName "Database02"
 	$resultDatabase = $database | Resume-AzureRmSqlDatabase
