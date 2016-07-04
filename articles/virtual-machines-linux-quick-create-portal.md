@@ -1,4 +1,4 @@
-<!-- need to customize -->
+<!-- customized -->
 
 <properties
     pageTitle="使用 Azure 门户创建 Linux VM | Azure"
@@ -25,9 +25,7 @@
 
     ![screen1](./media/virtual-machines-linux-quick-create-portal/screen1.png)
 
-2. 在“应用商店”中单击“虚拟机”，然后从“特色应用”映像列表中选择“Ubuntu Server 14.04 LTS”。确认底部显示的部署模型是 `Resource Manager`，然后单击“创建”。
-
-    ![screen2](./media/virtual-machines-linux-quick-create-portal/screen2.png)
+2. 在“应用商店”中单击“虚拟机”，单击“查看全部”，然后从列表中选择“CentOS-based 7.2 - OpenLogic”。确认底部显示的部署模型是 `资源管理器`，然后单击“创建”。
 
 3. 在“基本信息”页上输入：
     - VM 的名称
@@ -40,7 +38,7 @@
 
     ![screen3](./media/virtual-machines-linux-quick-create-portal/screen3.png)
 
-4. 选择“DS1”大小（将在高级 SSD 上安装 Ubuntu），然后单击“选择”以配置设置。
+4. 选择“DS1”大小（将在高级 SSD 上安装 CentOS），然后单击“选择”以配置设置。
 
     ![screen4](./media/virtual-machines-linux-quick-create-portal/screen4.png)
 
@@ -48,7 +46,7 @@
 
     ![screen5](./media/virtual-machines-linux-quick-create-portal/screen5.png)
 
-6. 确认新 Ubuntu VM 的设置，然后单击“确定”。
+6. 确认新 CentOS VM 的设置，然后单击“确定”。
 
     ![screen6](./media/virtual-machines-linux-quick-create-portal/screen6.png)
 
@@ -63,7 +61,7 @@
 9. 使用 SSH 公钥通过 SSH 连接到公共 IP
 
 ```
-ssh -i ~/.ssh/azure_id_rsa ubuntu@13.91.99.206
+ssh -i ~/.ssh/azure_id_rsa centos@13.91.99.206
 ```
 
 ## 后续步骤
