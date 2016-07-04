@@ -508,6 +508,5 @@ DocumentDB - 顺序记录导入程序具有下列高级附加选项︰
 
 ## 后续步骤
 
-- 若要详细了解 DocumentDB，请访问[学习路径](/documentation/learning-paths/documentdb/)。
 
 <!---HONumber=Mooncake_0523_2016-->

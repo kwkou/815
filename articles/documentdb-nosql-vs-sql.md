@@ -56,11 +56,11 @@ NoSQL 是一种与 SQL 数据库截然不同的数据库。NoSQL 常用来指代
 
 然后你可以使用其他 Azure 服务生成此解决方案：
 
-- 可以通过 Web 应用使用 [Azure 搜索](/services/search/)以使用户能够搜索帖子。
-- [Azure App Services](/services/app-service/) 可用来托管应用程序和后台进程。
-- [Azure Blob 存储](/services/storage/)可用来存储包括图像的完整的用户配置文件。
-- [Azure SQL 数据库](/services/sql-database/)可用来存储大量数据，例如登录信息和使用情况分析数据。
-- [Azure 机器学习](/services/machine-learning/)可用来构建知识和智能，它们可以提供进程的反馈，并有助于向适当的用户提供适当的内容。
+- 可以通过 Web 应用使用 [Azure 搜索](/documentation/services/search/)以使用户能够搜索帖子。
+- [Azure App Services](/documentation/services/app-service/) 可用来托管应用程序和后台进程。
+- [Azure Blob 存储](/documentation/services/storage/)可用来存储包括图像的完整的用户配置文件。
+- [Azure SQL 数据库](/documentation/services/sql-database/)可用来存储大量数据，例如登录信息和使用情况分析数据。
+- [Azure 机器学习](/documentation/services/machine-learning/)可用来构建知识和智能，它们可以提供进程的反馈，并有助于向适当的用户提供适当的内容。
 
 此社交网站只是 NoSQL 数据库是针对作业的适当数据模型的其中一种方案。如果你对阅读有关此方案以及如何在社交媒体应用程序中对 DocumentDB 的数据建模的详细信息感兴趣，请参阅 [Going social with DocumentDB（使用 DocumentDB 进行社交）](/documentation/articles/documentdb-social-media-apps)。
 
@@ -115,12 +115,12 @@ Microsoft 提供了五种 SQL 产品/服务：
 我们邀请你通过免费试用 SQL 和 NoSQL，了解有关二者的详细信息。
 
 - 对于所有 Azure 服务，你可以注册 [free one-month trial（一个月试用版）](/pricing/free-trial/)，并收到 200 美元专用在任何 Azure 服务上。
-    - [Azure DocumentDB](/services/documentdb/)
-    - [作为 HDInsight 一部分的 Azure HBase](/services/hdinsight/)
-    - [Azure Redis Cache](/services/cache/)
-    - [Azure SQL 数据仓库（预览版）](/services/sql-data-warehouse/)
-    - [Azure SQL 数据库](/services/sql-database/)
-    - [Azure 表存储](/services/storage/)
+    - [Azure DocumentDB](/documentation/services/documentdb/)
+    - [作为 HDInsight 一部分的 Azure HBase](/documentation/services/hdinsight/)
+    - [Azure Redis Cache](/documentation/services/cache/)
+    - [Azure SQL 数据仓库（预览版）](/documentation/services/sql-data-warehouse/)
+    - [Azure SQL 数据库](/documentation/services/sql-database/)
+    - [Azure 表存储](/documentation/services/storage/)
 
 - 你可以注册[虚拟机上 SQL Server 2016 的评估版](/marketplace/partners/microsoft/sqlserver2016ctp33evaluationwindowsserver2012r2/)或下载 [SQL Server 评估版](/evalcenter/evaluate-sql-server-2016)。
     - [SQL Server](https://www.microsoft.com/server-cloud/products/sql-server-2016/)

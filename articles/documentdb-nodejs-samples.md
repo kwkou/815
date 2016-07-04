@@ -31,7 +31,7 @@
 
 1. 你需要一个 Azure 帐户以使用这些 Node.js 示例：
     - 可以[免费建立一个 Azure 帐户](/pricing/free-trial/)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如网站）。你的信用卡将永远不会付费，除非你显式更改设置并要求付费。
-   - 你可以[激活 Visual Studio 订户权益](/pricing/member-offers/msdn-benefits-details/)：Visual Studio 订阅每月为你提供可用来试用付费版 Azure 服务的信用额度。
+
 2. 你还需要 [Node.js SDK](/documentation/articles/documentdb-sdk-node)。 
 
     > [AZURE.NOTE] 每个示例都是独立的，自行对自身进行设置并在完成后自行进行清理。因此，这些示例对 [DocumentClient.createCollection](http://azure.github.io/azure-documentdb-node/DocumentClient.html) 发出多个调用。每次执行完此操作，均会按照正在创建的集合的性能等级，向你的订阅收取使用 1 小时的费用。

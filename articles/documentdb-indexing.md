@@ -24,7 +24,7 @@
 
 ##<a id="HowDocumentDBIndexingWorks"></a> DocumentDB 索引的工作原理
 
-[Microsoft Azure DocumentDB](/services/documentdb/) 是专为 JSON 构建的真正的架构自由的数据库。它不需要任何架构或辅助索引定义来实现大规模的数据索引。这样，就可以使用 DocumentDB 快速定义并循环访问应用程序数据模型。将文档添加到集合时，DocumentDB 会自动为所有文档属性编制索引，以供查询时使用。借助自动索引，你可以存储属于完全任意架构的文档，而无需担心架构或辅助索引。
+[Microsoft Azure DocumentDB](/documentation/services/documentdb/) 是专为 JSON 构建的真正的架构自由的数据库。它不需要任何架构或辅助索引定义来实现大规模的数据索引。这样，就可以使用 DocumentDB 快速定义并循环访问应用程序数据模型。将文档添加到集合时，DocumentDB 会自动为所有文档属性编制索引，以供查询时使用。借助自动索引，你可以存储属于完全任意架构的文档，而无需担心架构或辅助索引。
 
 为了消除数据库和应用程序编程模型之间的阻抗失配，DocumentDB 利用 JSON 的简洁性以及没有架构规范的优势。它不对文档作任何假设，除了实例的具体值以外，还允许 DocumentDB 集合中的文档改变架构。与其他文档数据库相比，DocumentDB 的数据库引擎直接在 JSON 语法级别工作，仍然不受文档架构概念的限制，并且打破了文档的结构和实例值之间的界限。进而使它能够自动索引文档，而无需架构或辅助索引。
 

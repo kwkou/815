@@ -11,11 +11,11 @@
 <tags
 	ms.service="documentdb"
 	ms.date="03/30/2016"
-	wacn.date="06/29/2016"/>
+	wacn.date="07/04/2016"/>
 
 # 使用 DocumentDB 文档资源管理器查看、编辑、创建和上传 JSON 文档
 
-本文概述了 [Microsoft Azure DocumentDB](/services/documentdb/) 文档资源管理器，这是一个 Azure 门户工具，它使用 DocumentDB 查看、编辑、创建、上传和筛选 JSON 文档。
+本文概述了 [Microsoft Azure DocumentDB](/documentation/services/documentdb/) 文档资源管理器，这是一个 Azure 门户工具，它使用 DocumentDB 查看、编辑、创建、上传和筛选 JSON 文档。
 
 ## 启动文档资源管理器
 
@@ -151,7 +151,5 @@ Azure 门户中的文档资源管理器只是在 DocumentDB 中使用文档的�
 ## 后续步骤
 
 有关文档资源管理器中支持的 DocumentDB SQL 语法的详细信息，请参阅 [SQL 查询和 SQL 语法](/documentation/articles/documentdb-sql-query)一文或打印 [SQL 查询备忘单](/documentation/articles/documentdb-sql-query-cheat-sheet)。
-
-[学习路径](/documentation/learning-paths/documentdb/)也是一项有用的资源，它可以指导你了解关于 DocumentDB 的更多信息。
 
 <!---HONumber=Mooncake_0425_2016-->

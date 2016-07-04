@@ -42,7 +42,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
 ### 设置你的 Azure 帐户和订阅
 
-如果你还没有 Azure 订阅，但是有 Visual Studio 订阅，则可以激活 [Visual Studio 订户权益](/pricing/member-offers/msdn-benefits-details/)，或者注册获取[试用版](https://www.azure.cn/pricing/1rmb-trial/)。
+如果你还没有 Azure 订阅，请注册获取[试用版](https://www.azure.cn/pricing/1rmb-trial/)。
 
 需有一个工作或学校帐户或者一个 Microsoft 帐户标识，才能使用 Azure 资源管理模板。如果你有其中一个帐户，请键入以下命令。
 
@@ -345,7 +345,6 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
 若要详细了解 DocumentDB，请浏览以下资源：
 
--	[DocumentDB 学习路径](https://azure.microsoft.com/documentation/learning-paths/documentdb/)
 -	[DocumentDB 资源模型和概念](/documentation/articles/documentdb-resources)
 
 

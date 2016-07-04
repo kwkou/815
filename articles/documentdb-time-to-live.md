@@ -153,7 +153,4 @@ TTL 应用于整个文档。如果只是想要使文档的一部分属性过期�
 若要了解有关 Azure DocumentDB 的详细信息，请参阅该服务的[文档](/documentation/services/documentdb/)页。
 
 
-
-
-
 <!---HONumber=Mooncake_0627_2016-->
