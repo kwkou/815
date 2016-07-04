@@ -1,10 +1,11 @@
 <!-- Ibiza portal: tested -->
 
-可用性集可帮助虚拟机在停机期间（例如维护期间）保持可用。在可用性集中放置两个或更多个类似配置的虚拟机，将可针对虚拟机运行的应用程序或服务创建保持其可用性所需的冗余。有关工作原理的详细信息，请参阅管理虚拟机的可用性：[Windows](/documentation/articles/virtual-machines-windows-manage-availability) 或者 [Linux](/documentation/articles/virtual-machines-linux-manage-availability)。
 
-同时使用可用性集和负载平衡终结点是帮助确保应用程序一直可用并有效运行的最佳实践。有关负载平衡终结点的详细信息，请参阅 Azure 基础结构服务的负载平衡：[Windows](/documentation/articles/virtual-machines-windows-load-balance) 或者 [Linux](/documentation/articles/virtual-machines-linux-load-balance)。
+可用性集可帮助虚拟机在停机期间（例如维护期间）保持可用。在可用性集中放置两个或更多个类似配置的虚拟机，将可针对虚拟机运行的应用程序或服务创建保持其可用性所需的冗余。有关工作原理的详细信息，请参阅“管理 [Windows](/documentation/articles/virtual-machines-windows-manage-availability) 或 [Linux](/documentation/articles/virtual-machines-linux-manage-availability) 虚拟机的可用性”。
 
-在经典部署模型中，可以使用以下两个选项中的一个，将虚拟机放入可用性集：
+同时使用可用性集和负载平衡终结点是帮助确保应用程序一直可用并有效运行的最佳实践。有关负载平衡终结点的详细信息，请参阅“Azure 基础结构服务的负载平衡”（[Windows](/documentation/articles/virtual-machines-windows-load-balance) 或 [Linux](/documentation/articles/virtual-machines-linux-load-balance)）。
+
+可以使用以下两个选项中的一个，将经典虚拟机添加到可用性集中：
 
 - [选项 1：同时创建虚拟机和可用性集][]。然后，在创建新的虚拟机时将虚拟机添加到该集。
 - [选项 2：将现有虚拟机添加到可用性集][]。
@@ -13,57 +14,55 @@
 
 ## <a id="createset"> </a>选项 1：同时创建虚拟机和可用性集##
 
-可以使用 Azure 经典门户或 Azure PowerShell 命令来执行此操作。
+可以使用 Azure 门户预览或 Azure PowerShell 命令来执行此操作。
 
-要使用 Azure 经典门户，请执行以下操作：
+若要使用 Azure 门户预览：
 
-1. 登录到 Azure 经典门户（如果你尚未这么做）。
+1. 如果你尚未登录 Azure 门户预览，请先登录。
 
-2. 在命令栏上，单击“新建”。
+2. 在中心菜单中，单击“+ 新建”，然后单击“虚拟机”。
+    
+    ![Alt 图像文本](./media/virtual-machines-common-classic-configure-availability/ChooseVMImage.png)
 
-3. 单击“虚拟机”，然后单击“从库中”。
+3. 选择要使用的应用商店虚拟机映像。可以选择创建 Linux 或 Windows 虚拟机。
 
-4. 使用前两个屏幕来选择映像、用户名和密码等。有关详细信息，请参阅[创建运行 Windows 的虚拟机][]。
+4. 对于所选的虚拟机，确认部署模型已设置为“经典”，然后单击“创建”
+    
+    ![Alt 图像文本](./media/virtual-machines-common-classic-configure-availability/ChooseClassicModel.png)
 
-5. 在第三个屏幕中，你可以配置网络资源、存储和可用性。请执行以下操作：
+5. 输入虚拟机名称、用户名和密码（适用于 Windows 虚拟机）或 SSH 公钥（适用于 Linux 虚拟机）。
 
-	1. 选择适当的云服务。保留“创建新的云服务”的配置（除非打算将此新虚拟机添加到现有的虚拟机云服务）。然后，在“云服务 DNS 名称”下输入名称。此 DNS 名称将成为用于联系虚拟机的 URI 的一部分。云服务充当通信和隔离组。同一云服务中的所有虚拟机可以彼此通信、可以设置负载平衡，以及放入同一个可用性集。
+6. 选择 VM 大小，然后单击“选择”以继续。
 
-	2. 如果你打算使用虚拟网络，请在“区域/地缘组/虚拟网络”下指定一个虚拟网络。**重要说明**：如果你希望虚拟机使用虚拟网络，则必须在创建虚拟机时将虚拟机加入虚拟网络。创建虚拟机后，不能将它加入虚拟网络。有关详细信息，请参阅[虚拟网络概述][]。
+7. 选择“可选配置 > 可用性集”，并选择要将虚拟机添加到的可用性集。
+    
+    ![Alt 图像文本](./media/virtual-machines-common-classic-configure-availability/ChooseAvailabilitySet.png)
 
-	3. 创建可用性集。在“可用性集”下，保留“创建可用性集”的设置。然后，键入该集的名称。
+8. 查看配置设置。完成后，单击“创建”。
 
-	4. 创建默认终结点，并根据需要添加更多终结点。也可以稍后再添加终结点。
-
-	![创建新虚拟机的可用性集](./media/virtual-machines-common-classic-configure-availability/VMavailabilityset.png)
-
-6. 在第四个屏幕上，选择要安装的扩展。扩展提供简化管理虚拟机的功能，例如运行反恶意软件或重置密码。有关详细信息，请参阅 Azure VM 代理和 VM 扩展：[Windows](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions) 或者 [Linux](/documentation/articles/virtual-machines-linux-classic-agents-and-extensions)。
-
-7.	单击箭头以创建虚拟机和可用性集。
-
-	从新虚拟机的仪表板中，单击“配置”可以看到该虚拟机属于新可用性集。
+9. 当 Azure 创建虚拟机时，你可以在中心菜单中的“虚拟机”下跟踪进度。
 
 若要使用 Azure PowerShell 命令创建 Azure 虚拟机并将它添加到新的或现有的可用性集，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell)
 
 ## <a id="addmachine"> </a>选项 2：将现有虚拟机添加到可用性集##
 
-在 Azure 经典门户中，可以将现有虚拟机添加到现有可用性集，或为现有虚拟机创建新的可用性集。（请记住，同一可用性集中的虚拟机必须属于同一云服务。） 步骤几乎完全相同。使用 Azure PowerShell 时，可以将虚拟机添加到现有可用性集。
+在 Azure 门户预览中，可以将现有经典虚拟机添加到现有可用性集，或为现有经典虚拟机创建新的可用性集。（请记住，同一可用性集中的虚拟机必须属于同一云服务。） 步骤几乎完全相同。使用 Azure PowerShell 时，可以将虚拟机添加到现有可用性集。
 
-1. 如果您尚未这么做，请登录到 Azure 经典门户。
+1. 如果你尚未登录 Azure 门户预览，请先登录。
 
-2. 在命令栏中，单击“虚拟机”。
+2. 在“中心”菜单中，单击“虚拟机(经典)”。
+    
+    ![Alt 图像文本](./media/virtual-machines-common-classic-configure-availability/ChooseClassicVM.png)
 
 3. 从虚拟机列表中，选择想要添加到集中的虚拟机的名称。
 
-4. 从虚拟机名称下面的选项卡中，单击“配置”。
+4. 从虚拟机**设置**中选择“可用性集”。
+    
+    ![Alt 图像文本](./media/virtual-machines-common-classic-configure-availability/AvailabilitySetSettings.png)
 
-5. 在“设置”部分中，找到“可用性集”。执行下列操作之一：
-
-	A.选择“创建可用性集”，然后键入集的名称。
-
-	B.选择“选择可用性集”，然后从列表中选择一个集。
-
-	![创建现有虚拟机的可用性集](./media/virtual-machines-common-classic-configure-availability/VMavailabilityExistingVM.png)
+5. 选择要将虚拟机添加到的可用性集。虚拟机必须与可用性集属于同一云服务。
+    
+    ![Alt 图像文本](./media/virtual-machines-common-classic-configure-availability/AvailabilitySetPicker.png)
 
 6. 单击“保存”。
 
@@ -73,14 +72,19 @@
 
 >[AZURE.NOTE] 虚拟机可能必须重新启动，以完成将其添加到可用性集的操作。
 
+## 其他资源
+
+[有关经典虚拟机的文章][]
 
 <!-- LINKS -->
 [选项 1：同时创建虚拟机和可用性集]: #createset
 [选项 2：将现有虚拟机添加到可用性集]: #addmachine
 
-[Azure 基础结构服务的负载平衡]: /documentation/articles/virtual-machines-linux-load-balance
-[管理虚拟机的可用性]: /documentation/articles/virtual-machines-linux-manage-availability
-[创建运行 Windows 的虚拟机]: /documentation/articles/virtual-machines-windows-classic-tutorial
-[虚拟网络概述]: /documentation/articles/virtual-networks-overview
+[Load balancing for Azure infrastructure services]: /documentation/articles/virtual-machines-linux-load-balance
+[Manage the availability of virtual machines]: /documentation/articles/virtual-machines-linux-manage-availability
 
-<!---HONumber=Mooncake_0215_2016-->
+[Create a virtual machine running Windows]: /documentation/articles/virtual-machines-windows-hero-tutorial
+[Virtual Network overview]: /documentation/articles/virtual-networks-overview
+[有关经典虚拟机的文章]: /documentation/articles/?tag=azure-service-management&service=virtual-machines
+
+<!---HONumber=Mooncake_0627_2016-->

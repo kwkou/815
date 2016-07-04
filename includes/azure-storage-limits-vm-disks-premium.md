@@ -15,6 +15,15 @@
 磁盘大小 | 128 GiB | 512 GiB | 1024 GiB (1 TB)
 每个磁盘的最大 IOPS | 500 | 2300 | 5000
 每个磁盘的最大吞吐量 | 每秒 100 MB | 每秒 150 MB | 每秒 200 MB
-重度使用的磁盘数上限 | 62 | 41 | 31
+每个存储帐户的磁盘的最大数目 | 280 | 70 | 35
 
-<!---HONumber=Mooncake_0104_2016-->
+**虚拟机磁盘：每个 VM 的限制**
+
+资源|默认限制
+---|---
+每个 VM 的最大 IOPS|GS5 VM 为 80,000 IOPS<sup>1</sup>
+每个 VM 的最大吞吐量|GS5 VM 为 2,000 MB/秒<sup>1</sup>
+
+有关其他 VM 大小的限制，<sup>1</sup>指 [VM 大小](/documentation/articles/virtual-machines-linux-sizes)。
+
+<!---HONumber=Mooncake_0627_2016-->
