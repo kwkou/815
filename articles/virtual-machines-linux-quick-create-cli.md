@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
 
-本文说明如何使用 Azure CLI 的 `azure vm quick-create` 命令在 Azure 上快速部署 Linux 虚拟机。`quick-create` 命令部署周围具有基本基础结构的 VM，可让你快速创建原型或测试概念（可以将它视为实现 Linux bash shell 的最快方式）。本文中的操作需要一个 Azure 帐户（[获取试用帐户](/pricing/1rmb-trial/)）、已登录 (`azure login -e AzureChinaCloud`) 且处于 Resource Manager 模式 (`azure config mode arm`) 的 [Azure CLI](/documentation/articles/xplat-cli-install)。也可以使用 [Azure 门户](/documentation/articles/virtual-machines-linux-quick-create-portal)快速部署 Linux VM。
+本文说明如何使用 Azure CLI 的 `azure vm quick-create` 命令在 Azure 上快速部署 Linux 虚拟机。`quick-create` 命令部署周围具有基本基础结构的 VM，可让你快速创建原型或测试概念（可以将它视为实现 Linux bash shell 的最快方式）。本文中的操作需要一个 Azure 帐户（[获取试用帐户](/pricing/1rmb-trial/)）、已登录 (`azure login -e AzureChinaCloud`) 且处于 Resource Manager 模式 (`azure config mode arm`) 的 [Azure CLI](/documentation/articles/xplat-cli-install)。也可以使用 [Azure 门户预览](/documentation/articles/virtual-machines-linux-quick-create-portal)快速部署 Linux VM。
 
 ## 快速命令摘要
 

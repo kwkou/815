@@ -34,7 +34,7 @@
 
 ## 配置你的订阅
 
-打开 Windows PowerShell，并通过运行以下 cmdlet 来建立 Azure 帐户的访问权限。随后将出现一个用于输入凭据的登录屏幕。使用登录 Azure 门户时所用的相同电子邮件和密码。
+打开 Windows PowerShell，并通过运行以下 cmdlet 来建立 Azure 帐户的访问权限。随后将出现一个用于输入凭据的登录屏幕。使用登录 Azure 门户预览时所用的相同电子邮件和密码。
 
 	Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 
@@ -241,7 +241,7 @@
 
 虚拟机已创建。请注意，由于为虚拟机磁盘指定的存储帐户是高级存储帐户，因此将创建标准存储帐户用于启动诊断。
 
-现在，你可以在 Azure 门户中查看此计算机，以查看其公共 IP 地址与完全限定的域名。
+现在，你可以在 Azure 门户预览中查看此计算机，以查看其公共 IP 地址与完全限定的域名。
 
 ## 示例脚本
 

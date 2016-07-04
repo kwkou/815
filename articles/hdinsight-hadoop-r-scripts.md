@@ -33,7 +33,7 @@ R 与 Azure Blob 存储 (WASB) 兼容，这样，存储在此的数据可以在 
 
 ## 安装 R
 
-用于在 HDInsight 群集上安装 R 的[示例脚本](https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1)可从 Azure 存储中的只读 Blob 获得。本部分提供有关如何在使用 Azure 门户创建群集时使用示例脚本的说明。
+用于在 HDInsight 群集上安装 R 的[示例脚本](https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1)可从 Azure 存储中的只读 Blob 获得。本部分提供有关如何在使用 Azure 经典门户创建群集时使用示例脚本的说明。
 
 > [AZURE.NOTE] 示例脚本是随同 HDInsight 群集版本 3.1 一起引入的。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning-v1)。
 
@@ -59,7 +59,7 @@ R 与 Azure Blob 存储 (WASB) 兼容，这样，存储在此的数据可以在 
 ## 运行 R 脚本
 本部分介绍如何在安装有 HDInsight 的 Hadoop 群集上运行 R 脚本。
 
-1. **与群集建立远程桌面连接**：在门户中，对创建的安装有 R 的群集启用远程桌面，然后连接到该群集。有关说明，请参阅[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)。
+1. **与群集建立远程桌面连接**：在经典门户中，对创建的安装有 R 的群集启用远程桌面，然后连接到该群集。有关说明，请参阅[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)。
 
 2. **打开 R 控制台**：R 安装将 R 控制台的链接放置在头节点的桌面上。单击它以打开 R 控制台。
 

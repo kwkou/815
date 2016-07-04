@@ -56,7 +56,7 @@
 
 	> [AZURE.NOTE] 存储帐户必须与 HDInsight 共置于同一数据中心。存储帐户类型不能为 ZRS，因为 ZRS 不支持表。
 
-	有关使用 Azure 管理门户创建 Azure 存储帐户的信息，请参阅 [创建、管理或删除存储帐户][azure-create-storageaccount]。
+	有关使用 Azure 经典门户创建 Azure 存储帐户的信息，请参阅 [创建、管理或删除存储帐户][azure-create-storageaccount]。
 	
 	如果你已有存储帐户但是不知道帐户名称和帐户密钥，则可以使用以下命令来检索该信息：
 	
@@ -67,7 +67,7 @@
 		-- Lists the keys for a Storage account
 		azure storage account keys list "<Storage Account Name>"
 
-	有关使用 Azure 管理门户获取信息的详细信息，请参阅 [创建、管理或删除存储帐户][azure-create-storageaccount] 中的“查看、复制和重新生成存储访问密钥”部分。
+	有关使用 Azure 经典门户获取信息的详细信息，请参阅 [创建、管理或删除存储帐户][azure-create-storageaccount] 中的“查看、复制和重新生成存储访问密钥”部分。
 
 - **(可选)默认 Blob 容器**：如果容器不存在，可使用 **azure hdinsight cluster create** 命令创建它。如果选择预先创建容器，可以使用以下命令：
 

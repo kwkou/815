@@ -2,7 +2,7 @@
 
 <properties
 	pageTitle="连接到 Windows Server VM | Azure"
-	description="了解如何使用 Azure 门户和 Resource Manager 部署模型连接并登录到 Windows Server VM。"
+	description="了解如何使用 Azure 门户预览和 Resource Manager 部署模型连接并登录到 Windows Server VM。"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="cynthn"
@@ -17,11 +17,11 @@
 
 # 如何连接并登录到运行 Windows 的 Azure 虚拟机 
 
-你将在 Azure 门户中使用“连接”按钮来启动远程桌面（RDP）会话。首先，你将连接到虚拟机，然后将登录。
+你将在 Azure 门户预览中使用“连接”按钮来启动远程桌面（RDP）会话。首先，你将连接到虚拟机，然后将登录。
 
 ## 连接到虚拟机
 
-1. 如果你尚未登录 [Azure 门户](https://portal.azure.cn/)，请先登录。
+1. 如果你尚未登录 [Azure 门户预览](https://portal.azure.cn/)，请先登录。
 
 2.	在“中心”菜单中，单击“虚拟机”。
 

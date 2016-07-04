@@ -46,7 +46,7 @@
 
 ### 入门
 
-[在 Azure 门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)
+[在 Azure 经典门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)
 
 [使用资源管理器创建 Windows 虚拟机的不同方式](/documentation/articles/virtual-machines-windows-creation-choices)
 
@@ -114,13 +114,13 @@
 
 [关于虚拟机扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features)
 	
-[在 Azure 门户中创建完全限定的域名](/documentation/articles/virtual-machines-windows-portal-create-fqdn)
+[在 Azure 门户预览中创建完全限定的域名](/documentation/articles/virtual-machines-windows-portal-create-fqdn)
 
 ### 存储
 
 [关于 Azure 虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-windows-about-disks-vhds)
 	
-[如何在 Azure 门户中附加数据磁盘](/documentation/articles/virtual-machines-windows-attach-disk-portal)
+[如何在 Azure 门户预览中附加数据磁盘](/documentation/articles/virtual-machines-windows-attach-disk-portal)
 
 
 ### 联网

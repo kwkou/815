@@ -7,11 +7,7 @@
 
 创建备份保管库的步骤：
 
-1. 登录到 [Azure 门户](http://manage.windowsazure.cn/)。
-
-2. 在 Azure 门户中，单击“新建”>“混合集成”>“备份”。单击“备份”时，会自动切换到经典门户（在“注释”之后显示）。
-
-    ![Ibiza 门户](./media/backup-create-vault-for-vms/Ibiza-portal-backup01.png)
+1. 登录到 [Azure 经典门户](http://manage.windowsazure.cn/)。
 
     >[AZURE.NOTE] 如果你的订阅上次是在经典门户中使用的，则你的订阅可能会在经典门户中打开。在此情况下，若要创建备份保管库，请单击“新建”>“数据服务”>“恢复服务”>“备份保管库”>“快速创建”（请参阅下图）。
 
@@ -23,7 +19,7 @@
 
 5. 在“订阅”中，选择要与备份保管库关联的订阅。仅当组织帐户与多个 Azure 订阅关联时，才会有多个选项。
 
-5. 单击“创建保管库”。创建备份保管库可能需要一段时间。可以在门户底部监视状态通知。
+5. 单击“创建保管库”。创建备份保管库可能需要一段时间。可以在经典门户底部监视状态通知。
 
     ![创建保管库 toast 通知](./media/backup-create-vault-for-vms/creating-vault.png)
 

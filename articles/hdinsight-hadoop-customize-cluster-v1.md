@@ -20,7 +20,7 @@ HDInsight 提供了一个称为**脚本操作**的配置选项，该脚本操作
 > [AZURE.NOTE]只有在随附 Windows 操作系统的 HDInsight 群集 3.1 或更高版本上才支持脚本操作。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning-v1)。
 > <P>脚本操作是标准 Azure HDInsight 订阅免费提供的功能之一。
 
-你也可以使用多种其他方法来自定义 HDInsight 群集，例如包含其他存储帐户、更改 hadoop 配置文件（core-site.xml、hive-site.xml 等），或者将共享库（例如 Hive、Oozie）添加到群集中的共同位置。这些自定义可以通过使用 Azure PowerShell、Azure HDInsight .NET SDK 或 Azure 门户来完成。有关详细信息，请参阅[使用自定义选项在 HDInsight 中设置 Hadoop 群集][hdinsight-provision-cluster]。
+你也可以使用多种其他方法来自定义 HDInsight 群集，例如包含其他存储帐户、更改 hadoop 配置文件（core-site.xml、hive-site.xml 等），或者将共享库（例如 Hive、Oozie）添加到群集中的共同位置。这些自定义可以通过使用 Azure PowerShell、Azure HDInsight .NET SDK 或 Azure 经典门户来完成。有关详细信息，请参阅[使用自定义选项在 HDInsight 中设置 Hadoop 群集][hdinsight-provision-cluster]。
 
 ## 群集设置过程中的脚本操作
 
@@ -39,7 +39,7 @@ HDInsight 提供了一个称为**脚本操作**的配置选项，该脚本操作
 
 ## 调用脚本操作脚本
 
-可以从 Azure 门户、Azure PowerShell 或 HDInsight.NET SDK 使用脚本操作脚本。
+可以从 Azure 经典门户、Azure PowerShell 或 HDInsight.NET SDK 使用脚本操作脚本。
 
 HDInsight 提供了多个脚本用于在 HDInsight 群集上安装以下组件：
 
@@ -51,7 +51,7 @@ Name | 脚本
 
 
 
-**从 Azure 门户**
+**从 Azure 经典门户**
 
 1. 根据[使用自定义选项预配群集](/documentation/articles/hdinsight-provision-clusters-v1#portal)中的说明，使用“自定义创建”选项开始预配群集。 
 2. 在向导的“脚本操作”页上，单击“添加脚本操作”，以提供有关脚本操作的详细信息，如下所示：

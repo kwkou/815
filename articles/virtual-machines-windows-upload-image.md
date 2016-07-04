@@ -68,11 +68,11 @@ Azure 只能接受以 VHD 文件格式保存的[第 1 代虚拟机](http://blogs
 <a id="createstorage"></a>
 ## 创建或查找 Azure 存储帐户
 
-你需要在 Azure 中拥有存储帐户，才能上载 VM 映像。你可以使用现有存储帐户，也可以创建新的存储帐户。可以使用 Azure 门户或 PowerShell 来执行此操作。
+你需要在 Azure 中拥有存储帐户，才能上载 VM 映像。你可以使用现有存储帐户，也可以创建新的存储帐户。可以使用 Azure 门户预览或 PowerShell 来执行此操作。
 
-### 使用 Azure 门户创建或查找 Azure 存储帐户
+### 使用 Azure 门户预览创建或查找 Azure 存储帐户
 
-1. 登录到[门户](https://portal.azure.cn)。
+1. 登录到[门户预览](https://portal.azure.cn)。
 
 2. 单击“浏览”>“存储帐户”。
 
@@ -254,7 +254,7 @@ Azure 只能接受以 VHD 文件格式保存的[第 1 代虚拟机](http://blogs
 		--------- ------------------- ---------- ------------
 		                         True         OK OK
 
-你应该在 [Azure 门户](https://portal.azure.cn)的“浏览”>“虚拟机”下查看新创建的 VM，或者使用以下 PowerShell 命令进行查看：
+你应该在 [Azure 门户预览](https://portal.azure.cn)的“浏览”>“虚拟机”下查看新创建的 VM，或者使用以下 PowerShell 命令进行查看：
 
 	$vmList = Get-AzureRmVM -ResourceGroupName $rgName
 	$vmList.Name

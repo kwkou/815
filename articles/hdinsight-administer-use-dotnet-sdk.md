@@ -102,7 +102,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 >[AZURE.NOTE] 授予/撤消访问权限时，你将重设群集用户的用户名和密码。
 
-也可以使用门户完成此操作。请参阅 [Administer HDInsight by using the Azure Portal（使用 Azure 门户管理 HDInsight）][hdinsight-admin-portal]。
+也可以使用经典门户完成此操作。请参阅 [Administer HDInsight by using the Azure Portal（使用 Azure 经典门户管理 HDInsight）][hdinsight-admin-portal]。
 
 ##更新 HTTP 用户凭据
 
@@ -141,7 +141,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 ## 另请参阅
 * [HDInsight .NET SDK 参考文档](https://msdn.microsoft.com/zh-cn/library/mt271028.aspx)
-* [Administer HDInsight by using the Azure Portal（使用 Azure 门户管理 HDInsight）][hdinsight-admin-portal]
+* [Administer HDInsight by using the Azure Portal（使用 Azure 经典门户管理 HDInsight）][hdinsight-admin-portal]
 * [使用命令行界面管理 HDInsight][hdinsight-admin-cli]
 * [创建 HDInsight 群集][hdinsight-provision]
 * [将数据上载到 HDInsight][hdinsight-upload-data]

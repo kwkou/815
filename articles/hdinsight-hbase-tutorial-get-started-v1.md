@@ -35,10 +35,10 @@
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
-**通过使用 Azure 门户设置 HBase 群集**
+**通过使用 Azure 经典门户设置 HBase 群集**
 
 
-1. 登录到 [Azure 门户][azure-management-portal]。
+1. 登录到 [Azure 经典门户][azure-management-portal]。
 2. 单击左下方的“新建”，然后依次单击“数据服务”、“HDInsight”、“HBase”。
 
 	>[AZURE.NOTE]你还可以使用“自定义创建”选项。
@@ -74,7 +74,7 @@
 
 **使用 HBase shell**
 
-1. 使用 RDP 连接到 HDInsight 中的 HBase 群集。有关 RDP 的说明，请参阅[使用 Azure 门户在 HDInsight 中管理 Hadoop 群集][hdinsight-manage-portal]。
+1. 使用 RDP 连接到 HDInsight 中的 HBase 群集。有关 RDP 的说明，请参阅[使用 Azure 经典门户在 HDInsight 中管理 Hadoop 群集][hdinsight-manage-portal]。
 2. 在 RDP 会话中，单击桌面上的“Hadoop 命令行”快捷方式。
 3. 打开 HBase shell：
 
@@ -162,7 +162,7 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 
 **打开群集仪表板**
 
-1. 登录到 [Azure 门户][azure-management-portal]。
+1. 登录到 [Azure 经典门户][azure-management-portal]。
 2. 单击左窗格中的“HDINSIGHT”。你将会看到群集的列表，包括你在本教程中创建的群集。
 3. 单击你要在其中运行 Hive 作业的群集名称。
 4. 单击该页底部的“查询控制台”，以打开群集仪表板。它将在不同的浏览器标签中打开网页。

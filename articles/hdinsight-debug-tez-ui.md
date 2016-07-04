@@ -67,7 +67,7 @@ Tez UI 包含数据的前提是使用 Tez 引擎的作业当前正在运行或�
 
 > [AZURE.NOTE] Tez UI 只能从群集头节点的桌面使用，因此必须使用远程桌面来连接到头节点。
 
-1. 在 [Azure 管理门户](https://manage.windowsazure.cn)中，选择你的 HDInsight 群集。在 HDInsight 页的底部，单击“配置”。此时谁显示“配置”页
+1. 在 [Azure 经典门户](https://manage.windowsazure.cn)中，选择你的 HDInsight 群集。在 HDInsight 页的底部，单击“配置”。此时谁显示“配置”页
 
 2. 在“配置”页中，选择“连接”连接到群集头节点。出现提示时，使用群集远程桌面用户的用户名和密码来验证连接。
 

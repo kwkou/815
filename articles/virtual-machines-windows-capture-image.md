@@ -23,14 +23,14 @@
 
 ## 先决条件
 
-这些步骤假定你已使用 Resource Manager 部署模型创建了 Azure 虚拟机并配置了操作系统，包括附加任何数据磁盘和完成其他自定义事项（如安装应用程序）。如果你尚未完成此操作，请阅读[如何使用 Resource Manager 和 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create)。你可以同样轻松地使用 [Azure 门户](https://portal.azure.cn)创建 Windows 虚拟机。请阅读[如何在 Azure 门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)。
+这些步骤假定你已使用 Resource Manager 部署模型创建了 Azure 虚拟机并配置了操作系统，包括附加任何数据磁盘和完成其他自定义事项（如安装应用程序）。如果你尚未完成此操作，请阅读[如何使用 Resource Manager 和 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create)。你可以同样轻松地使用 [Azure 门户预览](https://portal.azure.cn)创建 Windows 虚拟机。请阅读[如何在 Azure 门户预览中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)。
 
 
 ## 准备要进行映像捕获的 VM
 
 本部分说明如何使 Windows 虚拟机通用化。在通用化过程中，将删除你在各个位置的所有个人帐户信息。当你要使用此 VM 映像快速部署类似的虚拟机时，通常需要执行此操作。
 
-1. 登录到 Windows 虚拟机。在 [Azure 门户](https://portal.azure.cn)中，导航至“浏览”>“虚拟机”> 你的 Windows 虚拟机 >“连接”。
+1. 登录到 Windows 虚拟机。在 [Azure 门户预览](https://portal.azure.cn)中，导航至“浏览”>“虚拟机”> 你的 Windows 虚拟机 >“连接”。
 
 2. 以管理员身份打开“命令提示符”窗口。
 
@@ -46,7 +46,7 @@
 
 	![运行 Sysprep](./media/virtual-machines-windows-capture-image/SysprepGeneral.png)
 
-5.	Sysprep 关闭虚拟机。它在 Azure 门户中的状态将变为“已停止”。
+5.	Sysprep 关闭虚拟机。它在 Azure 门户预览中的状态将变为“已停止”。
 
 
 </br>
@@ -80,15 +80,15 @@
 
 		Stop-AzureRmVM -ResourceGroupName YourResourceGroup -Name YourWindowsVM
 
-	你会看到，Azure 门户中该 VM 的“状态”已从“已停止”变为“已停止(已解除分配)”。
+	你会看到，Azure 门户预览中该 VM 的“状态”已从“已停止”变为“已停止(已解除分配)”。
 
-	>[AZURE.TIP] 你还可以在 PowerShell 中查找虚拟机的状态，方法是使用：</br> `$vm = Get-AzureRmVM -ResourceGroupName YourResourceGroup -Name YourWindowsVM -status`</br> `$vm.Statuses`</br> “DisplayStatus”字段对应于 Azure 门户中显示的“状态”。
+	>[AZURE.TIP] 你还可以在 PowerShell 中查找虚拟机的状态，方法是使用：</br> `$vm = Get-AzureRmVM -ResourceGroupName YourResourceGroup -Name YourWindowsVM -status`</br> `$vm.Statuses`</br> “DisplayStatus”字段对应于 Azure 门户预览中显示的“状态”。
 
 4. 接下来，你需要将虚拟机的状态设置为“通用化”。请注意，你需要执行此步骤，因为 Azure 无法理解上述通用化步骤 (`sysprep`) 的执行方式。
 
 		Set-AzureRmVm -ResourceGroupName YourResourceGroup -Name YourWindowsVM -Generalized
 
-	>[AZURE.NOTE] 上面设置的通用化状态不会显示在门户中。不过，你可以使用上述提示中显示的 Get-AzureRmVM 命令进行验证。
+	>[AZURE.NOTE] 上面设置的通用化状态不会显示在门户预览中。不过，你可以使用上述提示中显示的 Get-AzureRmVM 命令进行验证。
 
 5. 使用以下命令将虚拟机映像捕获到目标存储容器。
 
@@ -96,7 +96,7 @@
 
 	`-Path` 变量是可选的，可以用于在本地保存 JSON 模板。`-DestinationContainerName` 变量是需在其中保存映像的容器的名称。存储的映像的 URL 将类似于 `https://YourStorageAccountName.blob.core.chinacloudapi.cn/system/Microsoft.Compute/Images/YourImagesContainer/YourTemplatePrefix-osDisk.xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.vhd`。该 URL 在创建时所使用的存储帐户与原始虚拟机的相同。
 
-	>[AZURE.NOTE] 若要查找你的映像的位置，请打开本地 JSON 文件模板。转到“资源”>“storageProfile”>“osDisk”>“映像”>“URI”部分即可查找映像的完整路径。目前尚无简便方法可查找门户中的这些映像，因为存储帐户中的 system 容器处于隐藏状态。因此，虽然 `-Path` 变量为可选变量，但最好是使用它，一方面可以在本地保存模板，另一方面可以轻松查找映像 URL。你也可以在门户里确认这个 URI；它会被复制到一个名为 **system** 的 blob。
+	>[AZURE.NOTE] 若要查找你的映像的位置，请打开本地 JSON 文件模板。转到“资源”>“storageProfile”>“osDisk”>“映像”>“URI”部分即可查找映像的完整路径。目前尚无简便方法可查找门户预览中的这些映像，因为存储帐户中的 system 容器处于隐藏状态。因此，虽然 `-Path` 变量为可选变量，但最好是使用它，一方面可以在本地保存模板，另一方面可以轻松查找映像 URL。你也可以在门户预览里确认这个 URI；它会被复制到一个名为 **system** 的 blob。
 
 ## 从捕获的映像部署新的 VM
 
@@ -144,7 +144,7 @@
 	#Create the new VM
 	New-AzureRmVM -ResourceGroupName $rgName -Location $location -VM $vm
 
-你应该在 [Azure 门户](https://portal.azure.cn)的“浏览”>“虚拟机”下查看新创建的 VM，或者使用以下 PowerShell 命令进行查看：
+你应该在 [Azure 门户预览](https://portal.azure.cn)的“浏览”>“虚拟机”下查看新创建的 VM，或者使用以下 PowerShell 命令进行查看：
 
 	$vmList = Get-AzureRmVM -ResourceGroupName $rgName
 	$vmList.Name

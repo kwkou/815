@@ -36,7 +36,7 @@ Azure 将映像存储在**“我的映像”**下。你上载的任何映像都�
 
 ##捕获虚拟机
 
-1. 在 [Azure 门户](http://manage.windowsazure.cn)中，**连接**到虚拟机。有关说明，请参阅[如何登录到运行 Windows Server 的虚拟机][]。
+1. 在 [Azure 经典门户](http://manage.windowsazure.cn)中，**连接**到虚拟机。有关说明，请参阅[如何登录到运行 Windows Server 的虚拟机][]。
 
 2.	以管理员身份打开“命令提示符”窗口。
 
@@ -52,9 +52,9 @@ Azure 将映像存储在**“我的映像”**下。你上载的任何映像都�
 
 	![运行 Sysprep](./media/virtual-machines-windows-classic-capture-image/SysprepGeneral.png)
 
-7.	Sysprep 将关闭虚拟机，这会在 Azure 门户中将虚拟机的状态更改为**“已停止”**。
+7.	Sysprep 将关闭虚拟机，这会在 Azure 经典门户中将虚拟机的状态更改为**“已停止”**。
 
-8.	在 Azure 门户中，单击**“虚拟机”**，然后选择要捕获的虚拟机。
+8.	在 Azure 经典门户中，单击**“虚拟机”**，然后选择要捕获的虚拟机。
 
 9.	在命令栏中，单击**“捕获”**。
 

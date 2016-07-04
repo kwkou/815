@@ -23,7 +23,7 @@
 
 ### 对 Azure Resource Manager 部署模型中的常见分配失败进行故障排除
 
-新门户暂时还没上线，所以你可以通过 Azure PowerShell 或者 Azure CLI 停止，然后启动虚拟机。
+新门户预览暂时还没上线，所以你可以通过 Azure PowerShell 或者 Azure CLI 停止，然后启动虚拟机。
 
 ## 背景信息
 ### 分配的工作原理

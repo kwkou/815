@@ -1,6 +1,6 @@
 <properties 
    pageTitle="在 HDInsight 中预配自定义 Hadoop 群集 | Azure" 
-   description="了解如何通过使用 Azure 管理门户、Azure PowerShell、命令行或 .NET SDK 预配自定义的 Azure HDInsight 群集。" 
+   description="了解如何通过使用 Azure 经典门户、Azure PowerShell、命令行或 .NET SDK 预配自定义的 Azure HDInsight 群集。" 
    services="hdinsight" 
    documentationCenter="" 
    authors="mumian" 
@@ -109,7 +109,7 @@
 
 	HDInsight 群集允许你在预配期间配置两个用户帐户：
 
-	- HTTP 用户。默认用户名是在 Azure 管理门户上使用基本配置创建的 admin。
+	- HTTP 用户。默认用户名是在 Azure 经典门户上使用基本配置创建的 admin。
 	- RDP 用户（Windows 群集）：用于通过 RDP 连接到群集。在创建帐户时，必须将过期日期设置为从当天算起的 90 天。 
   
  
@@ -194,7 +194,7 @@
 
 ### 使用脚本操作自定义群集
 
-你可以在设置期间通过使用脚本安装其他组件或自定义群集配置。此类脚本可通过**脚本操作**调用，脚本操作是一种配置选项，可通过 Azure 管理门户、HDInsight Windows PowerShell cmdlet 或 HDInsight .NET SDK 使用。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)。
+你可以在设置期间通过使用脚本安装其他组件或自定义群集配置。此类脚本可通过**脚本操作**调用，脚本操作是一种配置选项，可通过 Azure 经典门户、HDInsight Windows PowerShell cmdlet 或 HDInsight .NET SDK 使用。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)。
 
 
 ### 使用 Azure 虚拟网络
@@ -220,18 +220,18 @@
 
 ##<a name="cluster-creation-methods"></a> 预配工具
 
-- Azure 管理门户
+- Azure 经典门户
 - Azure PowerShell
 - .NET SDK
 - CLI
 
-###<a name="portal"></a> 使用 Azure 管理门户
+###<a name="portal"></a> 使用 Azure 经典门户
 
 你可以参考 [基本配置选项] 和 [高级配置选项] 以获取有关字段的说明。
 
 **通过使用“自定义创建”选项创建 HDInsight 群集**
 
-1. 登录到 [Azure 管理门户][azure-management-portal]。
+1. 登录到 [Azure 经典门户][azure-management-portal]。
 2. 单击页面底部的“+ 新建'，然后依次单击“数据服务”、“HDINSIGHT”和“自定义创建”。
 3. 在“群集详细信息”页上，键入或选择以下值：
 
@@ -361,7 +361,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 		# Create a new HDInsight cluster
 		New-AzureHDInsightCluster -Name $clusterName -Credential $credential -Location $location -DefaultStorageAccountName "$storageAccountName.blob.core.chinacloudapi.cn" -DefaultStorageAccountKey $storageAccountKey -DefaultStorageContainerName $containerName  -ClusterSizeInNodes $clusterNodes -ClusterType Hadoop
 
-	>[AZURE.NOTE] $hadoopUserName 和 $hadoopUserPassword 命令用于群集创建的 Hadoop 用户帐户。此帐户将用于连接到群集并运行作业。如果你在 Azure 管理门户中使用“快速创建”选项来设置群集，则默认 Hadoop 用户名为“admin”。不要将此帐户与远程桌面协议 (RDP) 用户帐户相混淆。RDP 用户帐户不能与 Hadoop 用户帐户相同。有关详细信息，请参阅 [使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集][hdinsight-admin-portal]。
+	>[AZURE.NOTE] $hadoopUserName 和 $hadoopUserPassword 命令用于群集创建的 Hadoop 用户帐户。此帐户将用于连接到群集并运行作业。如果你在 Azure 经典门户中使用“快速创建”选项来设置群集，则默认 Hadoop 用户名为“admin”。不要将此帐户与远程桌面协议 (RDP) 用户帐户相混淆。RDP 用户帐户不能与 Hadoop 用户帐户相同。有关详细信息，请参阅 [使用 Azure 经典门户管理 HDInsight 中的 Hadoop 群集][hdinsight-admin-portal]。
 
 	设置群集可能需要几分钟时间。
 
@@ -475,7 +475,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 	![HDI.Linux.CLIAccountDownloadImport](./media/hdinsight-provision-clusters-v1/HDI.Linux.CLIAccountDownloadImport.png)
 
-	该命令将启动要从中下载发布设置文件的网页。如果网页未打开，请单击终端窗口中的链接以打开浏览器页并登录到该门户。
+	该命令将启动要从中下载发布设置文件的网页。如果网页未打开，请单击终端窗口中的链接以打开浏览器页并登录到该经典门户。
 
 3.	将发布设置文件下载到计算机。
 5.	从命令提示符窗口，运行以下命令以导入发布设置文件：
@@ -558,7 +558,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 	出现指定位置的提示时，请选择 HDInsight 群集可以设置到的位置。该存储位置必须与 HDInsight 群集所在的位置相同。目前，只有**中国北部**和**中国东部**区域可以托管 HDInsight 群集。
 
-有关使用 Azure 管理门户创建 Azure 存储帐户的信息，请参阅 [Create, manage, or delete a storage account（创建、管理或删除存储帐户）](/documentation/articles/storage-create-storage-account)。
+有关使用 Azure 经典门户创建 Azure 存储帐户的信息，请参阅 [Create, manage, or delete a storage account（创建、管理或删除存储帐户）](/documentation/articles/storage-create-storage-account)。
 
 如果你已有存储帐户但是不知道帐户名称和帐户密钥，则可以使用以下命令来检索该信息：
 
@@ -571,7 +571,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 	-- Lists the keys for a Storage account
 	azure storage account keys list <StorageAccountName>
 
-有关使用 Azure 管理门户获取信息的详细信息，请参阅 [Create, manage, or delete a storage account（创建、管理或删除存储帐户）](/documentation/articles/storage-create-storage-account)中的 How to: View, copy and regenerate storage access keys（如何：查看、复制和重新生成存储访问密钥）部分。
+有关使用 Azure 经典门户获取信息的详细信息，请参阅 [Create, manage, or delete a storage account（创建、管理或删除存储帐户）](/documentation/articles/storage-create-storage-account)中的 How to: View, copy and regenerate storage access keys（如何：查看、复制和重新生成存储访问密钥）部分。
 
 HDInsight 群集还需要在存储帐户中提供一个容器。如果你提供的存储帐户尚不包含容器，*azure hdinsight cluster create* 命令将提示你输入容器名称，然后会创建该容器。但是，如果你想要预先创建容器，则可以使用以下命令：
 

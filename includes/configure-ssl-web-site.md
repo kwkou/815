@@ -371,7 +371,7 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 
 > [AZURE.NOTE] 将应用从**免费**层切换到**标准**层之前，你应该删除订阅已有的支出上限，否则如果你在计费周期结束之前达到你的上限，可能会出现你的应用变得不可用的风险。有关共享和**标准**层的详细信息，请参阅[定价详细信息][pricing]。
 
-1. 在浏览器中，打开[管理门户][portal]。
+1. 在浏览器中，打开[经典门户][portal]。
 
 2. 在“Web Apps”选项卡中，单击你的网站的名称。
 
@@ -392,7 +392,7 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 
 在执行本部分中的这些步骤之前，必须将某个自定义域名与你的应用相关联。有关详细信息，请参阅[为 Web 应用配置自定义域名][customdomain]。
 
-1.	在你的浏览器中，打开 [Azure 管理门户][portal]。
+1.	在你的浏览器中，打开 [Azure 经典门户][portal]。
 
 2. 在“Web Apps”选项卡中，单击站点名称，然后选择“配置”选项卡。
 
@@ -497,7 +497,7 @@ URL 重写规则在存储于应用程序根目录中的 **web.config** 文件内
 - [Azure 网站中解锁的设置选项](https://azure.microsoft.com/zh-cn/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)
 - [启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)
 - [在 Azure 中配置 Web 应用](/documentation/articles/web-sites-configure)
-- [Azure 管理门户](https://manage.windowsazure.cn)
+- [Azure 经典门户](https://manage.windowsazure.cn)
 
 [customdomain]: /documentation/articles/web-sites-custom-domain-name
 [iiscsr]: http://technet.microsoft.com/zh-cn/library/cc732906(WS.10).aspx

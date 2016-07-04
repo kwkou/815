@@ -16,8 +16,8 @@
 # 使用 PowerShell 和 Azure 资源管理器创建具有站点到站点 VPN 连接的虚拟网络
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal)
-- [Azure 管理门户](/documentation/articles/vpn-gateway-site-to-site-create)
+- [Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal)
+- [Azure 经典门户](/documentation/articles/vpn-gateway-site-to-site-create)
 - [PowerShell - 资源管理器](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)
 
 本文将指导你使用 Azure 资源管理器 部署模型创建一个虚拟网络和一个连接到本地网络的站点到站点 VPN 连接。站点到站点连接可以用于跨界和混合配置。
@@ -181,7 +181,7 @@ Azure 使用指定的 IP 地址前缀来识别要发送到本地位置的流量�
 
 ## 9\.验证 VPN 连接
 
-VPN 连接有几种不同的验证方式。下面我们将讨论如何使用 Azure 门户和 PowerShell 执行基本验证。
+VPN 连接有几种不同的验证方式。下面我们将讨论如何使用 Azure 门户预览和 PowerShell 执行基本验证。
 
 [AZURE.INCLUDE [vpn-gateway-verify-connection-rm](../includes/vpn-gateway-verify-connection-rm-include.md)]
 

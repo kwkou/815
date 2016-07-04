@@ -61,7 +61,7 @@
 
 1. 在“新建 ASP.NET 项目”对话框中，选择“MVC”，然后单击“确定”。确保取消选中“在云中托管”，然后单击“确定”。
 
-	如果尚未创建 Web 应用，请转到 [Azure 管理门户](https://manage.windowsazure.cn)创建一个。然后，在 Web 应用“仪表板”中的“速览”下，单击“发布配置文件”。
+	如果尚未创建 Web 应用，请转到 [Azure 经典门户](https://manage.windowsazure.cn)创建一个。然后，在 Web 应用“仪表板”中的“速览”下，单击“发布配置文件”。
 
 2. 右键单击你的解决方案，然后单击“发布…”
 
@@ -413,7 +413,7 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Bson**、**MongoDB.Driver** 
 
 	private string connectionString = "mongodb://<vm-dns-name>";
 
-将 `<vm-dns-name>` 替换为运行 MongoDB 的虚拟机（在本教程的[创建虚拟机并安装 MongoDB][] 步骤中创建）的 DNS 名。若要查找虚拟机的 DNS 名，请转到 Azure 管理门户，选择“虚拟机”并找到“DNS 名”。
+将 `<vm-dns-name>` 替换为运行 MongoDB 的虚拟机（在本教程的[创建虚拟机并安装 MongoDB][] 步骤中创建）的 DNS 名。若要查找虚拟机的 DNS 名，请转到 Azure 经典门户，选择“虚拟机”并找到“DNS 名”。
 
 如果虚拟机的 DNS 名是“testlinuxvm.chinacloudapp.cn”而 MongoDB 在默认端口 27017 进行侦听，连接字符串代码行将如下所示：
 
@@ -438,7 +438,7 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Bson**、**MongoDB.Driver** 
 ###<a id="createwebsite"></a>创建 Azure 网站###
 本部分中，你将创建一个 Azure 网站。
 
-1. 打开 Web 浏览器并浏览至 [Azure 管理门户][AzurePortal]。使用您的 Azure 帐户进行登录。 
+1. 打开 Web 浏览器并浏览至 [Azure 经典门户][AzurePortal]。使用您的 Azure 帐户进行登录。 
 2. 在页面底部，依次单击“+新建”、“网站”和“速览”。
 3. 为应用程序的 URL 输入唯一的前缀。
 4. 选择区域。
@@ -475,7 +475,7 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Bson**、**MongoDB.Driver** 
 
 现在，你已将 ASP.NET 应用程序成功部署到 Azure Web Apps。查看 Web 应用：
 
-1. 登录到 Azure 管理门户。
+1. 登录到 Azure 经典门户。
 2. 单击“Web Apps”。 
 3. 在“Web Apps”列表中选择你的 Web 应用。
 

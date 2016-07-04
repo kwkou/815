@@ -24,7 +24,7 @@
 
 发布某个 Runbook 时，必须事先发布它所调用的任何子 Runbook。这是因为，在编译 Runbook 时，Azure 自动化将会生成与任何子 Runbook 的关联。如果未进行这种关联，父 Runbook 看似发布正常，但在启动时会生成异常。如果发生这种情况，你可以重新发布父 Runbook，以正确引用子 Runbook。如果由于已创建关联而更改了任何子 Runbook，则你不需重新发布父 Runbook。
 
-调用内联的子 Runbook 的参数可以是任意数据类型（包括复杂对象），并且不会进行 [JSON 序列化](/documentation/articles/automation-starting-a-runbook/#runbook-parameters)，因为当你使用 Azure 管理门户或 Start-AzureAutomationRunbook cmdlet 启动 Runbook 时会进行这种序列化。
+调用内联的子 Runbook 的参数可以是任意数据类型（包括复杂对象），并且不会进行 [JSON 序列化](/documentation/articles/automation-starting-a-runbook/#runbook-parameters)，因为当你使用 Azure 经典门户或 Start-AzureAutomationRunbook cmdlet 启动 Runbook 时会进行这种序列化。
 
 ### 示例
 

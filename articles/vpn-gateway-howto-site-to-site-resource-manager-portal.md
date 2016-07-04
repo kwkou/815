@@ -1,7 +1,7 @@
 <!-- Ibiza Portal: tested -->
 
 <properties
-   pageTitle="使用 Azure Resource Manager 和 Azure 门户创建具有站点到站点 VPN 连接的虚拟网络 | Azure"
+   pageTitle="使用 Azure Resource Manager 和 Azure 门户预览创建具有站点到站点 VPN 连接的虚拟网络 | Azure"
    description="本文将指导你完成使用资源管理器模型创建 VNet 并使用 S2S VPN 网关连接将其连接到你的本地网络。"
    services="vpn-gateway"
    documentationCenter="na"
@@ -15,15 +15,15 @@
    ms.date="05/13/2016"
    wacn.date="06/08/2016"/>
 
-# 使用 Azure 门户和 Azure Resource Manager 创建具有站点到站点 VPN 连接的 VNet
+# 使用 Azure 门户预览和 Azure Resource Manager 创建具有站点到站点 VPN 连接的 VNet
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal)
-- [Azure 管理门户](/documentation/articles/vpn-gateway-site-to-site-create)
+- [Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal)
+- [Azure 经典门户](/documentation/articles/vpn-gateway-site-to-site-create)
 - [PowerShell - Resource Manager](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)
 
 
-本文将指导你使用 Azure Resource Manager 部署模型和 Azure 门户创建一个虚拟网络和一个连接到本地网络的站点到站点 VPN 连接。在以下步骤中，你将创建 VNet、添加网关子网、网关、本地站点及连接。此外，还需要配置 VPN 设备。
+本文将指导你使用 Azure Resource Manager 部署模型和 Azure 门户预览创建一个虚拟网络和一个连接到本地网络的站点到站点 VPN 连接。在以下步骤中，你将创建 VNet、添加网关子网、网关、本地站点及连接。此外，还需要配置 VPN 设备。
 
 
 
@@ -146,7 +146,7 @@
 
 ## 9\.验证 VPN 连接
 
-你可以在门户中或使用 PowerShell 验证 VPN 连接。
+你可以在门户预览中或使用 PowerShell 验证 VPN 连接。
 
 [AZURE.INCLUDE [vpn-gateway-verify-connection-rm](../includes/vpn-gateway-verify-connection-rm-include.md)]
 

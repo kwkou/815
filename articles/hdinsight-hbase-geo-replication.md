@@ -65,7 +65,7 @@
 
 在[在两个 Azure 虚拟网络之间配置 VPN 连接][hdinsight-hbase-replication-vnet]中，你已分别在欧洲数据中心和美国数据中心各创建了一个虚拟网络。这两个虚拟网络将通过 VPN 连接。在本课中，你将要在其中的每个虚拟网络中设置 HBase 群集。在本教程的后面，你将使其中一个 HBase 群集复制另一个 HBase 群集。
 
-Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如，将 *hbase.replication* 设置为 *true*。如果设置群集后在配置文件中设置该值，你将在重新创建群集映像后丢失该设置。有关详细信息，请参阅[在 HDInsight 中预配 Hadoop 群集][hdinsight-provision]。使用自定义选项设置 HDInsight 群集的选项之一是使用 Azure PowerShell。
+Azure 经典门户不支持使用自定义配置选项设置 HDInsight 群集。例如，将 *hbase.replication* 设置为 *true*。如果设置群集后在配置文件中设置该值，你将在重新创建群集映像后丢失该设置。有关详细信息，请参阅[在 HDInsight 中预配 Hadoop 群集][hdinsight-provision]。使用自定义选项设置 HDInsight 群集的选项之一是使用 Azure PowerShell。
 
 
 **在 Contoso-VNet-CN 中预配 HBase 群集**
@@ -154,7 +154,7 @@ Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如
 
 **查找两个 HBase 群集的域后缀**
 
-1. 通过 RDP 访问 **Contoso-HBase-EU**。有关说明，请参阅[使用 Azure 门户在 HDInsight 中管理 Hadoop 群集][hdinsight-manage-portal]。它实际上是群集的 headnode0。
+1. 通过 RDP 访问 **Contoso-HBase-EU**。有关说明，请参阅[使用 Azure 门户预览在 HDInsight 中管理 Hadoop 群集][hdinsight-manage-portal]。它实际上是群集的 headnode0。
 2. 打开 Windows PowerShell 控制台或命令提示符。
 3. 运行 **ipconfig**，并记下**特定于连接的 DNS 后缀**。
 4. 请不要关闭 RDP 会话。稍后你要使用它来测试域名解析。

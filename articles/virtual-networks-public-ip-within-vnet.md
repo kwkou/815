@@ -23,7 +23,7 @@
 
 像添加专用 IP 地址范围一样添加公共 IP 地址范围 - 使用 netcfg 文件添加配置。可以在创建 VNet 时添加公共 IP 地址范围，也可以稍后再来添加。以下示例演示了在同一个 VNet 中配置的公共和专用 IP 地址空间。
 
-![门户中的公共 IP 地址](./media/virtual-networks-public-ip-within-vnet/IC775684.png)
+![经典门户中的公共 IP 地址](./media/virtual-networks-public-ip-within-vnet/IC775684.png)
 
 ## 是否有任何限制？
 

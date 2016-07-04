@@ -31,11 +31,11 @@ Azure 应用商店包含用于 Bottle、Django 和 Flask 框架的模板。如�
 - [使用 Flask 创建 Web 应用](/documentation/articles/web-sites-python-create-deploy-flask-app)
 
 
-##<a name="website-creation-on-portal"></a> 在 Azure 管理门户中创建 Web 应用
+##<a name="website-creation-on-portal"></a> 在 Azure 经典门户中创建 Web 应用
 
-本教程使用现有 Azure 订阅以及对 Azure 管理门户的访问权限。
+本教程使用现有 Azure 订阅以及对 Azure 经典门户的访问权限。
 
-如果你没有现成的 Web 应用，则可从 [Azure 管理门户](https://manage.windowsazure.cn)创建一个。单击左下角的“新建”按钮。将出现一个窗口。依次单击“计算”、“Web 应用”和“快速创建”。
+如果你没有现成的 Web 应用，则可从 [Azure 经典门户](https://manage.windowsazure.cn)创建一个。单击左下角的“新建”按钮。将出现一个窗口。依次单击“计算”、“Web 应用”和“快速创建”。
 
 ![](./media/web-sites-python-configure/configure-python-create-website.png)
 

@@ -19,7 +19,7 @@
  
 你将学习以下内容：
 
-* 如何使用 Azure 管理门户创建 Web 应用和 MySQL 数据库。由于 Web 应用默认已启用 PHP，因此运行 PHP 代码没有任何特殊要求。
+* 如何使用 Azure 经典门户创建 Web 应用和 MySQL 数据库。由于 Web 应用默认已启用 PHP，因此运行 PHP 代码没有任何特殊要求。
 * 如何使用 FTP 将应用程序发布到 Azure。
  
 通过按照本教程中的说明进行操作，你将在 PHP 中构建简单的注册 Web 应用。将在 Web 应用中托管应用程序。以下是已完成应用程序的屏幕快照：
@@ -31,8 +31,8 @@
 
 按照以下步骤创建 Web 应用和 MySQL 数据库：
 
-1. 登录到 [Azure 管理门户][management-portal]。
-2. 单击该门户左下的“+ 新建”图标。
+1. 登录到 [Azure 经典门户][management-portal]。
+2. 单击该经典门户左下的“+ 新建”图标。
 
 	![创建新的 Azure Web 应用][new-website]
 

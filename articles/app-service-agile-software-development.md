@@ -110,7 +110,7 @@
 
 7.	脚本完成后，请返回浏览到前端的地址 (http://ToDoApp*&lt;unique_string>*master.chinacloudsites.cn/)，以查看在生产环境中运行的应用程序。
  
-5.	登录到 [Azure 管理门户](https://manage.windowsazure.cn/)并查看创建的内容。
+5.	登录到 [Azure 经典门户](https://manage.windowsazure.cn/)并查看创建的内容。
 
 	你应该可以看到两个 Web 应用，其中一个 Web 应用的名称包含 `Api` 后缀。你还会看到 SQL 数据库和服务器、App Service 计划，以及 Web 应用的过渡槽。浏览不同的资源，并将它们与 *&lt;repository\_root>*\\ARMTemplates\\ProdAndStage.json 进行比较，以查看它们在模板中的配置方式。
 
@@ -164,7 +164,7 @@
 
 ![](./media/app-service-agile-software-development/test-1-github-view.png)
 
-[Azure 管理门户](https://manage.windowsazure.cn)中应该有六个 Web 应用（一共三组，每组两个 Web 应用）：
+[Azure 经典门户](https://manage.windowsazure.cn)中应该有六个 Web 应用（一共三组，每组两个 Web 应用）：
  
 >[AZURE.NOTE] 请注意，ProdandStage.json 将生产环境指定为使用**标准**定价层，这适合生产应用程序的缩放性。
 

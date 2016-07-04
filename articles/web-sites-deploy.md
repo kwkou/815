@@ -50,7 +50,7 @@ Azure Web 应用保留了应用程序框架（ASP.NET、PHP、Node.js 等等）�
 ### <a name="howtoftp"></a>如何通过将文件手动复制到 Azure 进行部署
 将文件复制到 Azure 涉及几个简单步骤：
 
-1. 假设你已建立部署凭据，请转到“设置”>“属性”获取 FTP 连接信息，然后复制“FTP/开发用户”、“FTP 主机名”和“FTPS 主机名”的值。请复制 Azure 门户中显示的“FTP/部署用户”值（包括应用名称），以便为 FTP 服务器提供适当的上下文。
+1. 假设你已建立部署凭据，请转到“设置”>“属性”获取 FTP 连接信息，然后复制“FTP/开发用户”、“FTP 主机名”和“FTPS 主机名”的值。请复制 Azure 经典门户中显示的“FTP/部署用户”值（包括应用名称），以便为 FTP 服务器提供适当的上下文。
 2. 从 FTP 客户端，使用收集到的连接信息连接到你的应用。
 3. 将你的文件及其各自的目录结构复制到 Azure 中的 **/site/wwwroot** 目录（或者将 Web 作业复制到 **/site/wwwroot/App\_Data/Jobs/** 目录）。
 4. 浏览到你的应用的 URL 以验证该应用是否正在正常运行。 
@@ -73,7 +73,7 @@ Azure Web 应用保留了应用程序框架（ASP.NET、PHP、Node.js 等等）�
 - 连续部署没有任何现成的解决方案。 
 
 ###<a name="vsts"></a>如何从本地 Git 部署
-在 [Azure 管理门户](https://manage.windowsazure.cn/)中，可以配置本地 Git 部署。
+在 [Azure 经典门户](https://manage.windowsazure.cn/)中，可以配置本地 Git 部署。
 
 * [从本地 Git 部署到 Azure Web 应用](/documentation/articles/app-service-deploy-local-git)。 
 * [从任何 git/hg 存储库发布到 Web Apps](http://blog.davidebbo.com/2013/04/publishing-to-azure-web-sites-from-any.html)。  
@@ -151,7 +151,7 @@ Visual Studio 支持所有这三种部署过程（FTP、Git 和 Web 部署），
 
 有关详细信息，请参阅以下资源：
 
-* [Azure 命令行工具](/downloads/#cmd-line-tools)。Azure.com 中有关命令行工具信息的门户页面。
+* [Azure 命令行工具](/downloads/#cmd-line-tools)。Azure.cn 中有关命令行工具信息的门户页面。
 
 ###<a name="webdeploy"></a>从 Web 部署命令行进行部署
 

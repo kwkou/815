@@ -1,8 +1,8 @@
 <!-- ARM: tested -->
 
 <properties 
-   pageTitle="如何使用 Azure 门户在 ARM 模式下设置静态专用 IP | Azure"
-   description="了解专用 IP (DIP) 以及如何在 ARM 模式下使用 Azure 门户对其进行管理"
+   pageTitle="如何使用 Azure 门户预览在 ARM 模式下设置静态专用 IP | Azure"
+   description="了解专用 IP (DIP) 以及如何在 ARM 模式下使用 Azure 门户预览对其进行管理"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -15,7 +15,7 @@
 	ms.date="02/04/2016"
 	wacn.date=""/>
 
-# 如何在 Azure 门户中设置静态专用 IP 地址
+# 如何在 Azure 门户预览中设置静态专用 IP 地址
 
 [AZURE.INCLUDE [virtual-networks-static-private-ip-selectors-arm-include](../includes/virtual-networks-static-private-ip-selectors-arm-include.md)]
 
@@ -29,14 +29,14 @@
 
 ## 如何创建用于测试静态专用 IP 地址的 VM
 
-在 Resource Manager 部署模型中创建 VM 时，不能使用 Azure 门户设置静态专用 IP 地址。必须先创建 VM，然后再将其专用 IP 设置为静态。
+在 Resource Manager 部署模型中创建 VM 时，不能使用 Azure 门户预览设置静态专用 IP 地址。必须先创建 VM，然后再将其专用 IP 设置为静态。
 
 若要在名为 TestVNet 的 VNet 的 FrontEnd 子网中创建名为 DNS01 的 VM，请按以下步骤操作。
 
 1. 从浏览器导航到 http://portal.azure.cn， 如有必要，请使用 Azure 帐户登录。
 2. 单击“新建”>“计算”>“Windows Server 2012 R2 Datacenter”（注意此时“选择部署模型”列表已显示“Resource Manager”），然后单击“创建”，如下图所示。
 
-	![在 Azure 门户中创建 VM](./media/virtual-networks-static-ip-arm-pportal/figure01.png)
+	![在 Azure 门户预览中创建 VM](./media/virtual-networks-static-ip-arm-pportal/figure01.png)
 
 3. 在“基本信息”边栏选项卡中，输入要创建的 VM 的名称（在我们的方案中为 DNS01）、本地管理员帐户和密码，如下图所示。
 
@@ -60,13 +60,13 @@
 
 7. 在“摘要”边栏选项卡中，单击“确定”。请注意下方显示在仪表板中的磁贴。
 
-	![在 Azure 门户中创建 VM](./media/virtual-networks-static-ip-arm-pportal/figure06.png)
+	![在 Azure 门户预览中创建 VM](./media/virtual-networks-static-ip-arm-pportal/figure06.png)
 
 ## 如何检索 VM 的静态专用 IP 地址信息
 
 若要查看使用以上步骤创建的 VM 的静态专用 IP 地址信息，请执行以下步骤。
 
-1. 在 Azure 门户中，单击“全部浏览”>“虚拟机”>“DNS01”>“所有设置”>“网络接口”，然后单击列出的唯一网络接口。
+1. 在 Azure 门户预览中，单击“全部浏览”>“虚拟机”>“DNS01”>“所有设置”>“网络接口”，然后单击列出的唯一网络接口。
 
 	![部署 VM 磁贴](./media/virtual-networks-static-ip-arm-pportal/figure07.png)
 
@@ -80,7 +80,7 @@
 1. 从上面所示的“IP 地址”边栏选项卡中，单击“分配”下面的“静态”。
 2. 键入 192.168.1.101 作为“IP 地址”，然后单击“保存”。
 
-	![在 Azure 门户中创建 VM](./media/virtual-networks-static-ip-arm-pportal/figure09.png)
+	![在 Azure 门户预览中创建 VM](./media/virtual-networks-static-ip-arm-pportal/figure09.png)
 
 >[AZURE.NOTE] 单击“保存”后，如果你注意到分配仍设置为“动态”，则表示你键入的 IP 地址已被使用。请尝试其他 IP 地址。
 

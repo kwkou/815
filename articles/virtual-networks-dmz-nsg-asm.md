@@ -159,7 +159,7 @@
 13.	前端子网上没有出站规则，因此允许响应，Internet 用户将收到请求的网页。
 
 #### （*允许*）通过 RDP 访问后端
-1.	Internet 上的服务器管理员在 BackEnd001.CloudApp.Net:xxxxx 上请求 AppVM01 的 RDP 会话，其中 xxxxx 是通过 RDP 访问 AppVM01 所用的随机分配端口号（在 Azure 管理门户上或通过 PowerShell 可以找到分配的端口）
+1.	Internet 上的服务器管理员在 BackEnd001.CloudApp.Net:xxxxx 上请求 AppVM01 的 RDP 会话，其中 xxxxx 是通过 RDP 访问 AppVM01 所用的随机分配端口号（在 Azure 经典门户上或通过 PowerShell 可以找到分配的端口）
 2.	后端子网开始处理入站规则：
   1.	NSG 规则 1 (DNS) 不适用，将转到下一规则
   2.	NSG 规则 2 (RDP) 适用，允许流量，停止处理规则

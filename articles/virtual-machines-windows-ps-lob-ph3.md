@@ -111,7 +111,7 @@
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-> [AZURE.NOTE] 由于这些虚拟机用于 Intranet 应用程序，因此未为它们分配公共 IP 地址或 DNS 域名标签，也未向 Internet 公开。但是，这也意味着你无法从 Azure 门户连接到它们。当你查看虚拟机的属性时，“连接”按钮将不可用。使用虚拟机的专用 IP 地址或 Intranet DNS 名称通过“远程桌面连接”附件或其他远程桌面工具可以连接到虚拟机。
+> [AZURE.NOTE] 由于这些虚拟机用于 Intranet 应用程序，因此未为它们分配公共 IP 地址或 DNS 域名标签，也未向 Internet 公开。但是，这也意味着你无法从 Azure 门户预览连接到它们。当你查看虚拟机的属性时，“连接”按钮将不可用。使用虚拟机的专用 IP 地址或 Intranet DNS 名称通过“远程桌面连接”附件或其他远程桌面工具可以连接到虚拟机。
 
 ## 配置运行 SQL Server 的计算机
 

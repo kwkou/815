@@ -41,7 +41,7 @@ Azure 自动化会自动删除并永久移除 90 天之前的作业。
 
 ### Runbook
 
-可以使用 Azure 管理门户或 Windows PowerShell 中的 [Get-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690269.aspx) cmdlet 将 Runbook 导出到脚本文件。可以根据[创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook) 中所述，将这些脚本文件导入另一个自动化帐户。
+可以使用 Azure 经典门户或 Windows PowerShell 中的 [Get-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690269.aspx) cmdlet 将 Runbook 导出到脚本文件。可以根据[创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook) 中所述，将这些脚本文件导入另一个自动化帐户。
 
 
 ### 集成模块
@@ -50,7 +50,7 @@ Azure 自动化会自动删除并永久移除 90 天之前的作业。
 
 ### 资产
 
-你无法从 Azure 自动化导出[资产](https://msdn.microsoft.com/zh-cn/library/dn939988.aspx)。使用 Azure 管理门户时，必须记下变量、凭据、证书、连接和计划的详细信息。然后，必须手动创建你导入到另一个自动化中的 Runbook 使用的任何资产。
+你无法从 Azure 自动化导出[资产](https://msdn.microsoft.com/zh-cn/library/dn939988.aspx)。使用 Azure 经典门户时，必须记下变量、凭据、证书、连接和计划的详细信息。然后，必须手动创建你导入到另一个自动化中的 Runbook 使用的任何资产。
 
 你可以使用 [Azure cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690262.aspx) 来检索未加密资产的详细信息，然后保存这些资产供将来参考，或者在另一个自动化帐户中创建等效的资产。
 

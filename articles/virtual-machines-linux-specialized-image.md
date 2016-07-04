@@ -19,7 +19,7 @@
 
 
 
-本文说明如何使用 Azure CLI 与 Azure 门户在 Resource Manager 部署模型中创建运行 Linux 的 Azure 虚拟机 (VM) 副本。其中说明如何创建 Azure VM 的**_专用_**映像，此映像可维护用户帐户和其他来自原始 VM 的状态数据。使用专用映像可将 Linux VM 从经典部署模型移植到 Resource Manager 部署模型，或为创建于 Resource Manager 部署模型中的 Linux VM 创建备份副本。你可以使用此方法来通过 OS 和数据磁盘进行复制，然后设置网络资源以创建新虚拟机。
+本文说明如何使用 Azure CLI 与 Azure 门户预览在 Resource Manager 部署模型中创建运行 Linux 的 Azure 虚拟机 (VM) 副本。其中说明如何创建 Azure VM 的**_专用_**映像，此映像可维护用户帐户和其他来自原始 VM 的状态数据。使用专用映像可将 Linux VM 从经典部署模型移植到 Resource Manager 部署模型，或为创建于 Resource Manager 部署模型中的 Linux VM 创建备份副本。你可以使用此方法来通过 OS 和数据磁盘进行复制，然后设置网络资源以创建新虚拟机。
 
 如果需要创建类似于 Linux VM 的批量部署，应该使用*通用*映像。有关信息请参阅 [How to capture a Linux virtual machine（如何捕获 Linux 虚拟机）](/documentation/articles/virtual-machines-linux-capture-image)。
 
@@ -46,9 +46,9 @@
 
 1. 先执行以下两个选项之一，以释放源 VM 使用的 VHD：
 
-	- 如果你想要**_复制_**源虚拟机，请**停止**并**解除分配**该虚拟机。在门户中，单击“浏览”>“虚拟机”或“虚拟机(经典)”> *你的 VM* >“停止”。对于在 Resource Manager 部署模型中创建的 VM，也可以使用 Azure CLI 命令 `azure vm stop <yourResourceGroup> <yourVmName>` 后接 `azure vm deallocate <yourResourceGroup> <yourVmName>`。请注意，门户中的 VM“状态”将从“正在运行”更改为“已停止(已解除分配)”。
+	- 如果你想要**_复制_**源虚拟机，请**停止**并**解除分配**该虚拟机。在门户预览中，单击“浏览”>“虚拟机”或“虚拟机(经典)”> *你的 VM* >“停止”。对于在 Resource Manager 部署模型中创建的 VM，也可以使用 Azure CLI 命令 `azure vm stop <yourResourceGroup> <yourVmName>` 后接 `azure vm deallocate <yourResourceGroup> <yourVmName>`。请注意，门户预览中的 VM“状态”将从“正在运行”更改为“已停止(已解除分配)”。
 	
-	- 如果你想要**_迁移_**源虚拟机，请**删除**该 VM 并使用剩余的 VHD。在[门户](https://portal.azure.cn)中**浏览**到虚拟机并单击“删除”。
+	- 如果你想要**_迁移_**源虚拟机，请**删除**该 VM 并使用剩余的 VHD。在[门户预览](https://portal.azure.cn)中**浏览**到虚拟机并单击“删除”。
 	
 1. 找到包含源 VHD 的存储帐户的访问密钥。有关访问密钥的详细信息，请阅读 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account)。
 
@@ -101,7 +101,7 @@
 	$azure vm create -g <yourResourceGroup> -n <yourVmName> -f <yourNicName> -d <UriOfYourOsDisk> -x <UriOfYourDataDisk> -e <DataDiskSizeGB> -Y -l <yourLocation> -y Linux -z "Standard_A1" -o <DestinationStorageAccountName> -R <DestinationStorageAccountBlobContainer>
 
 	
-数据磁盘和 OS 磁盘的 URL 类似于：`https://StorageAccountName.blob.core.chinacloudapi.cn/BlobContainerName/DiskName.vhd`。可通过以下方法在门户上找到此信息：浏览到存储容器，单击复制的 OS 或数据 VHD，然后复制 **URL** 的内容。
+数据磁盘和 OS 磁盘的 URL 类似于：`https://StorageAccountName.blob.core.chinacloudapi.cn/BlobContainerName/DiskName.vhd`。可通过以下方法在门户预览上找到此信息：浏览到存储容器，单击复制的 OS 或数据 VHD，然后复制 **URL** 的内容。
 	
 	
 如果此命令成功，你会看到类似于下面的输出：
@@ -119,7 +119,7 @@
 	+ Creating VM "redhatcopy"
 	info:    vm create command OK
 
-你应会在 [Azure 门户](https://portal.azure.cn)的“浏览”>“虚拟机”下看到新建的 VM。
+你应会在 [Azure 门户预览](https://portal.azure.cn)的“浏览”>“虚拟机”下看到新建的 VM。
 
 使用所选的 SSH 客户端连接到新虚拟机，然后使用原始虚拟机的帐户凭据（例如 `ssh OldAdminUser@<IPaddressOfYourNewVM>`）。有关通过 SSH 连接到 Linux VM 的详细信息，请阅读 [How to use SSH with Linux on Azure（如何使用 SSH 连接 Azure 中的 Linux）](/documentation/articles/virtual-machines-linux-ssh-from-linux)。
 

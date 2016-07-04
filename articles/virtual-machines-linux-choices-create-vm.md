@@ -25,11 +25,11 @@ Azure 提供不同的方法来创建 VM，以符合不同的用户和目的。�
 
 * [使用 Azure 模板创建受保护的 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template)
 
-## Azure 门户
+## Azure 门户预览
 
-[Azure 门户](https://portal.azure.cn)的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 Azure 门户创建 VM：
+[Azure 门户预览](https://portal.azure.cn)的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 Azure 门户预览创建 VM：
 
-* [使用 Azure 门户创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-quick-create-portal) 
+* [使用 Azure 门户预览创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-quick-create-portal) 
 
 ## 操作系统和映像选项
 
@@ -37,7 +37,7 @@ Azure 提供不同的方法来创建 VM，以符合不同的用户和目的。�
 
 ### Azure 映像
 
-在所有上述文章中，你可以轻松使用现有 Azure 映像来创建虚拟机，并针对联网、负载平衡等目的自定义该虚拟机。门户提供 Azure 库，其中包含 Azure 提供的映像。你可以使用命令行获取类似的列表。例如，在 Azure CLI 中，运行 `azure vm image list` 可按位置和发布者获取所有可用映像的列表。请参阅 [Navigate and select Azure virtual machine images with the Azure CLI（使用 Azure CLI 导航并选择 Azure 虚拟机映像）](/documentation/articles/virtual-machines-linux-cli-ps-findimage)。
+在所有上述文章中，你可以轻松使用现有 Azure 映像来创建虚拟机，并针对联网、负载平衡等目的自定义该虚拟机。门户预览提供 Azure 库，其中包含 Azure 提供的映像。你可以使用命令行获取类似的列表。例如，在 Azure CLI 中，运行 `azure vm image list` 可按位置和发布者获取所有可用映像的列表。请参阅 [Navigate and select Azure virtual machine images with the Azure CLI（使用 Azure CLI 导航并选择 Azure 虚拟机映像）](/documentation/articles/virtual-machines-linux-cli-ps-findimage)。
 
 ### 使用你自己的映像
 
@@ -51,7 +51,7 @@ Azure 提供不同的方法来创建 VM，以符合不同的用户和目的。�
 
 ## 后续步骤
 
-* 尝试阅读以下教程之一，了解如何通过[门户](/documentation/articles/virtual-machines-linux-quick-create-portal)、[CLI](/documentation/articles/virtual-machines-linux-quick-create-cli) 或 Azure Resource Manager [模板](/documentation/articles/virtual-machines-linux-cli-deploy-templates)创建 Linux VM。
+* 尝试阅读以下教程之一，了解如何通过[门户预览](/documentation/articles/virtual-machines-linux-quick-create-portal)、[CLI](/documentation/articles/virtual-machines-linux-quick-create-cli) 或 Azure Resource Manager [模板](/documentation/articles/virtual-machines-linux-cli-deploy-templates)创建 Linux VM。
 
 * 创建 Linux VM 后，可以轻松[添加数据磁盘](/documentation/articles/virtual-machines-linux-add-disk)。
 

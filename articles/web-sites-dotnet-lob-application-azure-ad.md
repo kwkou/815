@@ -55,15 +55,15 @@
 
 2.	根据[如何将示例作为单租户应用运行](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims#how-to-run-the-sample-as-a-single-tenant-app)中的说明设置 Azure Active Directory 应用程序和项目。请务必遵照所有有关将多租户应用程序转换为单租户应用程序的说明。
 
-3.	在刚刚创建的 Azure Active Directory 应用程序的 [Azure 管理门户](https://manage.windowsazure.cn)视图中，单击“用户”选项卡。然后，将所需的用户分配到所需的角色。
+3.	在刚刚创建的 Azure Active Directory 应用程序的 [Azure 经典门户](https://manage.windowsazure.cn)视图中，单击“用户”选项卡。然后，将所需的用户分配到所需的角色。
 
-	>[AZURE.NOTE]如果除了分配到用户以外，还要将角色分配到组，则必须将你的 Azure Active Directory 租户升级到 [Active Directory Premium](/home/features/identity/#price)。在应用程序的门户 UI 中，如果你看到的是“用户”选项卡而不是“用户和组”选项卡，你可以转到 Azure Active Directory 租户的“许可证”选项卡来试用 Azure Active Directory Premium。
+	>[AZURE.NOTE]如果除了分配到用户以外，还要将角色分配到组，则必须将你的 Azure Active Directory 租户升级到 [Active Directory Premium](/home/features/identity/#price)。在应用程序的经典门户 UI 中，如果你看到的是“用户”选项卡而不是“用户和组”选项卡，你可以转到 Azure Active Directory 租户的“许可证”选项卡来试用 Azure Active Directory Premium。
 
 3.	配置完应用程序后，在 Visual Studio 中键入 `F5` 以运行 ASP.NET 应用程序。
 
-4.	加载应用程序后，单击“登录”，并使用在 Azure 管理门户中具有管理员角色的用户身份登录。
+4.	加载应用程序后，单击“登录”，并使用在 Azure 经典门户中具有管理员角色的用户身份登录。
 
-5.	如果你已正确配置 Azure Active Directory 应用程序，并在 Web.config 中设置了相应的设置，则应会重定向到登录页。你只需使用在 Azure 管理门户中创建 Azure Active Directory 应用程序时所用的帐户登录，因为该帐户是 Azure Active Directory 应用程序的默认所有者。
+5.	如果你已正确配置 Azure Active Directory 应用程序，并在 Web.config 中设置了相应的设置，则应会重定向到登录页。你只需使用在 Azure 经典门户中创建 Azure Active Directory 应用程序时所用的帐户登录，因为该帐户是 Azure Active Directory 应用程序的默认所有者。
 	
 ##<a name="bkmk_deploy"></a> 将示例应用程序部署到 Azure Web 应用
 
@@ -75,7 +75,7 @@
 
 2. 单机“导入”，选择已下载的“发布配置文件”。
 
-	如果还没有创建 Web 应用，可以登录 [Azure 管理门户](https://manage.windowsazure.cn/)创建一个，然后再“仪表板”的“速览”下，下载“发布配置文件”。
+	如果还没有创建 Web 应用，可以登录 [Azure 经典门户](https://manage.windowsazure.cn/)创建一个，然后再“仪表板”的“速览”下，下载“发布配置文件”。
 
 7. 在“目标 URL”中，将 **http** 更改为 **https**。将整个 URL 复制到文本编辑器。稍后将要用到它。然后，单击“下一步”。
 
@@ -89,7 +89,7 @@
 
 9. 此时请不要单击“发布”转到 Web 发布过程，而是单击“关闭”。单击“是”保存对发布配置文件所做的更改。
 
-2. 在 [Azure 管理门户](https://manage.windowsazure.cn)中转到你的 Azure Active Directory 租户，然后单击“应用程序”选项卡。
+2. 在 [Azure 经典门户](https://manage.windowsazure.cn)中转到你的 Azure Active Directory 租户，然后单击“应用程序”选项卡。
 
 2. 单击页面底部的“添加”。
 
@@ -105,7 +105,7 @@
 
 2.	创建应用程序后，根据前面[定义应用程序角色](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims#step-2-define-your-application-roles)中的说明以相同的方式更新应用程序清单。
 
-3.	在刚刚创建的 Azure Active Directory 应用程序的 [Azure 管理门户](https://manage.windowsazure.cn)视图中，单击“用户”选项卡。然后，将所需的用户分配到所需的角色。
+3.	在刚刚创建的 Azure Active Directory 应用程序的 [Azure 经典门户](https://manage.windowsazure.cn)视图中，单击“用户”选项卡。然后，将所需的用户分配到所需的角色。
 
 6. 单击“配置”选项卡。
 
@@ -136,7 +136,7 @@
 
 2. 单击“发布”以发布到 Azure Web 应用。
 
-完成此操作后，将在 Azure 管理门户中配置两个 Azure Active Directory 应用程序，一个用于 Visual Studio 中的调试环境，另一个用于 Azure 中发布的 Web 应用。在调试期间，将使用 Web.config 中的应用程序设置来使**调试**配置适用于 Azure Active Directory，发布配置（默认情况下，会发布**版本**配置）后，将上载转换的 Web.config，其中包含 Web.Release.config 中的应用程序设置更改。
+完成此操作后，将在 Azure 经典门户中配置两个 Azure Active Directory 应用程序，一个用于 Visual Studio 中的调试环境，另一个用于 Azure 中发布的 Web 应用。在调试期间，将使用 Web.config 中的应用程序设置来使**调试**配置适用于 Azure Active Directory，发布配置（默认情况下，会发布**版本**配置）后，将上载转换的 Web.config，其中包含 Web.Release.config 中的应用程序设置更改。
 
 如果你想要附加到已发布的 Web 应用调试器（必须上载的已发布的 Web 应用中的代码的调试符号），你可以创建的调试配置对于 Azure 调试，但使用的 Azure Active Directory 设置从 Web.Release.config 自己自定义 Web.config 转换（例如 Web.AzureDebug.config）克隆。这样，你可以跨不同的环境中维护静态配置。
 

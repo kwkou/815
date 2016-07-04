@@ -78,7 +78,7 @@
 
 [AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
 
-从 Azure 门户启动 DC2 计算机（如果需要）。
+从 Azure 门户预览启动 DC2 计算机（如果需要）。
 
 接下来，在本地计算机上的 Azure PowerShell 命令提示符下使用这些命令创建适用于 DS1 的 Azure 虚拟机。在运行这些命令之前，请填写变量值并删除 < and > 字符。
 
@@ -100,7 +100,7 @@
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name DS1-TestVNET-OSDisk -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-接下来，在 Azure 门户中使用本地管理员帐户的凭据连接到 DS1 虚拟机。
+接下来，在 Azure 门户预览中使用本地管理员帐户的凭据连接到 DS1 虚拟机。
 
 接下来，配置 Windows 防火墙规则，以允许进行基本的连接测试所需的流量。在 DS1 上的管理员级 Windows PowerShell 命令提示符下，运行这些命令。
 
@@ -116,7 +116,7 @@
 
 当系统提示你为 **Add-Computer** 命令提供域帐户凭据时，请使用 CORP\\User1 帐户。
 
-重新启动后，在 Azure 门户中使用 CORP\\User1 帐户和密码连接到 DS1。
+重新启动后，在 Azure 门户预览中使用 CORP\\User1 帐户和密码连接到 DS1。
 
 接下来，在管理员级别的 Windows PowerShell 命令提示符下使用以下命令在 DS1 上安装 .NET 3.5。
 

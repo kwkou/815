@@ -37,7 +37,7 @@
    
 <a name="install"></a>
 
-## 使用门户安装 Giraph
+## 使用经典门户安装 Giraph
 
 1. 根据[使用自定义选项在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1#portal)中的说明，使用“自定义创建”选项开始创建群集。 
 2. 在向导的“脚本操作”页上，单击“添加脚本操作”，以提供有关脚本操作的详细信息，如下所示：

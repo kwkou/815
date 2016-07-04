@@ -59,7 +59,7 @@
 
 1. 单击**“确定”**。
 
-如果尚未创建 Web 应用，请转到 [Azure 管理门户](https://manage.windowsazure.cn)创建一个。然后，在 Web 应用“仪表板”页中的“速览”下，下载“发布配置文件”。
+如果尚未创建 Web 应用，请转到 [Azure 经典门户](https://manage.windowsazure.cn)创建一个。然后，在 Web 应用“仪表板”页中的“速览”下，下载“发布配置文件”。
 
 ### 设置页眉和页脚
 
@@ -546,9 +546,9 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 4. 右键单击 Web 应用并选择“停止”。
 
-	也可以从 [Azure 管理门户](https://manage.windowsazure.cn)中选择 Web 应用，然后单击页面底部的“停止”图标。
+	也可以从 [Azure 经典门户](https://manage.windowsazure.cn)中选择 Web 应用，然后单击页面底部的“停止”图标。
 
-	![停止 Web 应用门户](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/stopweb.png)
+	![停止 Web 应用经典门户](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/stopweb.png)
 
 ### 删除 AddToRoleAsync、发布和测试
 
@@ -564,7 +564,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 	
 4. 单击“开始预览”按钮。只会部署需要更新的文件。
 
-5. 从 Visual Studio 或门户启动 Web 应用。“Web 应用停止时无法发布”。
+5. 从 Visual Studio 或经典门户启动 Web 应用。“Web 应用停止时无法发布”。
 
 	![启动 Web 应用](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss15.png)
 
@@ -633,8 +633,8 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 * 预配 SQL 数据库时出错 - 确保已安装最新的 SDK。2.8.1 之前的版本存在一个 bug，在某些情况下，当 VS 尝试创建数据库服务器或数据库时，该 bug 会导致错误。
 * 创建 Azure 资源时出现错误消息“你的订阅产品类型不支持该操作” - 同上。
 * 部署时出错 - 建议查看[基本 ASP.NET 部署](/documentation/articles/web-sites-dotnet-get-started)一文。该部署方案较为简单，如果你遇到相同的问题，也许可以轻松地识别原因。例如，在某些企业环境中，企业防火墙可能会阻止 Web Deploy 与 Azure 建立所需的连接类型。
-* 部署时无法在“发布 Web”向导中选择连接字符串 - 如果你使用另一种方法来创建 Azure 资源（例如，尝试部署到在门户中创建的 Web 应用和 SQL 数据库），SQL 数据库可能与 Web 应用不相关联。最简单的解决方案是根据本教程中所示，使用 VS 创建新的 Web 应用和数据库。不需要从头开始学习本教程 - 在“发布 Web”向导中，可以选择创建新的 web 应用，此时会出现你在创建项目时所看到的相同 Azure 资源创建对话框。
-* 有关 Google 或 Facebook 开发人员门户的指导已过时 - 在本教程末尾的 Disqus 专门注释。
+* 部署时无法在“发布 Web”向导中选择连接字符串 - 如果你使用另一种方法来创建 Azure 资源（例如，尝试部署到在经典门户中创建的 Web 应用和 SQL 数据库），SQL 数据库可能与 Web 应用不相关联。最简单的解决方案是根据本教程中所示，使用 VS 创建新的 Web 应用和数据库。不需要从头开始学习本教程 - 在“发布 Web”向导中，可以选择创建新的 web 应用，此时会出现你在创建项目时所看到的相同 Azure 资源创建对话框。
+* 有关 Google 或 Facebook 开发人员经典门户的指导已过时 - 在本教程末尾的 Disqus 专门注释。
 
 ## 后续步骤
 

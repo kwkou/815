@@ -63,9 +63,9 @@
 
 要使用存储操作，你需要一个 Azure 存储帐户。可通过以下步骤创建存储帐户。
 
-1.  登录到 [Azure 门户]。
+1.  登录到 [Azure 经典门户]。
 
-2. 单击门户左下角的**新建**图标，然后单击**数据 + 存储** > **存储**。提供存储帐户一个唯一名称。
+2. 单击经典门户左下角的**新建**图标，然后单击**数据 + 存储** > **存储**。提供存储帐户一个唯一名称。
 
 1.  依次单击**数据服务**、**存储**和**快速创建**。
 
@@ -125,7 +125,7 @@
 
 1.  单击“导入”，选择已下载的“发布配置文件”。
 
-	如果还没有创建 Web 应用，可以登录 [Azure 管理门户](https://manage.windowsazure.cn/)创建一个，然后再“仪表板”的“速览”下，下载“发布配置文件”。
+	如果还没有创建 Web 应用，可以登录 [Azure 经典门户](https://manage.windowsazure.cn/)创建一个，然后再“仪表板”的“速览”下，下载“发布配置文件”。
 
 1.  接受其他所有默认值，然后单击**发布**。
 
@@ -137,7 +137,7 @@
 
 在此部分中，我们将配置 Web 应用实例的环境变量。
 
-1.  在 [Azure 门户]，通过单击**浏览** > **Web Apps** > 您的 Web 应用名称来打开 Web 应用的边栏选项卡。
+1.  在 [Azure 经典门户]，通过单击**浏览** > **Web Apps** > 您的 Web 应用名称来打开 Web 应用的边栏选项卡。
 
 1.  在 Web 应用边栏选项卡中，单击**所有设置**，然后单击**应用程序设置**。
 
@@ -178,7 +178,7 @@
 [如何从 Python 使用表存储服务]: /documentation/articles/storage-python-how-to-use-table-storage
 
 <!--External Link references-->
-[Azure 门户]: https://manage.windowsazure.cn
+[Azure 经典门户]: https://manage.windowsazure.cn
 [Azure SDK for .NET]: /downloads/
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.1 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189

@@ -37,7 +37,7 @@ Azure 流量管理器是使用名为流量管理器配置文件的一系列设�
 ## 限制
 目前，在 ARM 对 Azure 流量管理器的支持中有少量限制：
 
-- 使用现有（非 ARM）Azure 服务管理 (ASM) API、工具和“经典”门户创建的流量管理器配置文件无法通过 ARM 使用，反之亦然。目前不支持将配置文件从 ASM 迁移到 ARM API，除非是通过删除该配置文件然后又重新创建的方式。
+- 使用现有（非 ARM）Azure 服务管理 (ASM) API、工具和经典门户创建的流量管理器配置文件无法通过 ARM 使用，反之亦然。目前不支持将配置文件从 ASM 迁移到 ARM API，除非是通过删除该配置文件然后又重新创建的方式。
 
 - “AzureEndpoints”类型的流量管理器终结点在引用 Web 应用时，只能引用默认（生产）[Web 应用槽](/documentation/articles/web-sites-staged-publishing)。尚不支持自定义槽。一种解决方法是，可以使用“ExternalEndpoints”类型配置自定义槽。
 
@@ -45,7 +45,7 @@ Azure 流量管理器是使用名为流量管理器配置文件的一系列设�
 
 这些说明使用了需要通过以下步骤进行配置的 Azure PowerShell。
 
-非 PowerShell 用户或非 Windows 用户可以通过 Azure CLI 执行类似操作。所有操作（管理“嵌套式”流量管理器配置文件除外）都可以通过 Azure 管理门户进行。
+非 PowerShell 用户或非 Windows 用户可以通过 Azure CLI 执行类似操作。所有操作（管理“嵌套式”流量管理器配置文件除外）都可以通过 Azure 经典门户进行。
 
 ### 步骤 1
 安装最新的 Azure PowerShell（可从 Azure 下载页获取）。

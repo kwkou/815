@@ -87,7 +87,7 @@
 
 您可通过以下步骤创建数据库。
 
-1.  登录 [Azure 门户]。
+1.  登录 [Azure 经典门户]。
 
 1.  在导航窗格的底部，依次单击“新建”、“数据服务”和“SQL 数据库”。
 
@@ -161,7 +161,7 @@
 
 1.  单击“导入”，选择已下载的“发布配置文件”。
 
-	如果还没有创建 Web 应用，可以登录 [Azure 管理门户](https://manage.windowsazure.cn/)创建一个，然后再“仪表板”的“速览”下，下载“发布配置文件”。
+	如果还没有创建 Web 应用，可以登录 [Azure 经典门户](https://manage.windowsazure.cn/)创建一个，然后再“仪表板”的“速览”下，下载“发布配置文件”。
 
 1.  接受其他所有默认值，然后单击**发布**。
 
@@ -188,7 +188,7 @@
 [Python 开发人员中心]: /develop/python/
 [Azure 云服务]: /documentation/articles/cloud-services-python-ptvs
 <!--External Link references-->
-[Azure 门户]: https://manage.windowsazure.cn
+[Azure 经典门户]: https://manage.windowsazure.cn
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Python Tools 2.2 for Visual Studio 示例 VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025

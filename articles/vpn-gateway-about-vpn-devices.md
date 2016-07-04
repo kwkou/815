@@ -85,8 +85,8 @@
 | &lt;SP\_AzureNetworkSubnetMask&gt; | 指定子网掩码。示例：255.255.0.0 |
 | &lt;SP\_OnPremisesNetworkIpRange&gt; | 指定本地范围。示例：10.2.1.0 |
 | &lt;SP\_OnPremisesNetworkSubnetMask&gt; | 指定本地子网掩码。示例：255.255.255.0 |
-| &lt;SP\_AzureGatewayIpAddress&gt; | 此信息特定于你的虚拟网络，位于管理门户的“网关 IP 地址”中。 |
-| &lt;SP\_PresharedKey&gt; | 此信息特定于你的虚拟网络，位于管理门户的“管理密钥”中。 |
+| &lt;SP\_AzureGatewayIpAddress&gt; | 此信息特定于你的虚拟网络，位于经典门户的“网关 IP 地址”中。 |
+| &lt;SP\_PresharedKey&gt; | 此信息特定于你的虚拟网络，位于经典门户的“管理密钥”中。 |
 
 
 

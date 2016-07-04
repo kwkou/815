@@ -67,9 +67,9 @@ PowerShell 工作流 Runbook 中的参数定义采用以下常规格式，其中
 
 ### 启动 Runbook 并分配参数
 
-Runbook 有多种启动方式：通过 Azure 门户 UI、PowerShell cmdlet、REST API 或 SDK。下面介绍了启动 Runbook 和分配参数的不同方法。
+Runbook 有多种启动方式：通过 Azure 经典门户 UI、PowerShell cmdlet、REST API 或 SDK。下面介绍了启动 Runbook 和分配参数的不同方法。
 
-- **使用 Azure 门户启动已发布的 Runbook 并分配参数**
+- **使用 Azure 经典门户启动已发布的 Runbook 并分配参数**
 
 当你[启动 Runbook](/documentation/articles/automation-starting-a-runbook#starting-a-runbook-with-the-azure-portal) 时，“启动 Runbook”边栏选项卡将会打开，你可以为刚刚创建的参数配置值。
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure 管理门户创建具有站点到站点 VPN 网关连接的虚拟网络 | Azure"
+   pageTitle="使用 Azure 经典门户创建具有站点到站点 VPN 网关连接的虚拟网络 | Azure"
    description="创建使用 S2S VPN 网关连接的 VNet，以便通过经典部署模型进行跨界配置和混合配置。"
    services="vpn-gateway"
    documentationCenter=""
@@ -13,15 +13,15 @@
    ms.date="05/13/2016"
    wacn.date="06/24/2016"/>
 
-# 使用 Azure 管理门户创建具有站点到站点 VPN 连接的虚拟网络
+# 使用 Azure 经典门户创建具有站点到站点 VPN 连接的虚拟网络
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal)
-- [Azure 管理门户](/documentation/articles/vpn-gateway-site-to-site-create)
+- [Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal)
+- [Azure 经典门户](/documentation/articles/vpn-gateway-site-to-site-create)
 - [PowerShell - 资源管理器](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)
 
 
-本文将指导你创建一个虚拟网络，并与本地网络建立站点到站点 VPN 连接。站点到站点连接可以用于跨界和混合配置。本文适用于经典部署模型并使用 Azure 管理门户。
+本文将指导你创建一个虚拟网络，并与本地网络建立站点到站点 VPN 连接。站点到站点连接可以用于跨界和混合配置。本文适用于经典部署模型并使用 Azure 经典门户。
 
 **关于 Azure 部署模型**
 
@@ -51,7 +51,7 @@
 
 ## 创建虚拟网络
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 2. 在屏幕左下角，单击“新建”。在导航窗格中，单击“网络服务”，然后单击“虚拟网络”。单击“自定义创建”以启动配置向导。
 
@@ -95,13 +95,13 @@
 - **添加子网**：包括起始 IP 和地址计数。附加的子网不是必需的，但你可能需要为具有静态 DIP 的 VM 创建一个单独的子网。或者，你可能需要在子网中拥有与其他角色实例分开的 VM。
 - **添加网关子网**：单击此项可添加网关子网。网关子网仅用于此虚拟网络网关，并且是此配置必需的。
 
-单击页面底部的复选标记，此时将开始创建虚拟网络。创建完成时，将在 Azure 管理门户的“网络”页上看到“状态”下列出的“已创建”。在创建 VNet 之后，你就可以配置虚拟网络网关。
+单击页面底部的复选标记，此时将开始创建虚拟网络。创建完成时，将在 Azure 经典门户的“网络”页上看到“状态”下列出的“已创建”。在创建 VNet 之后，你就可以配置虚拟网络网关。
 
 [AZURE.INCLUDE [vpn-gateway-no-nsg](../includes/vpn-gateway-no-nsg-include.md)]
 
 ## 配置虚拟网络网关
 
-接下来，你将配置虚拟网络网关，以便创建安全的站点到站点连接。请参阅[在 Azure 管理门户中配置虚拟网络网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp)。
+接下来，你将配置虚拟网络网关，以便创建安全的站点到站点连接。请参阅[在 Azure 经典门户中配置虚拟网络网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp)。
 
 ## 后续步骤
 

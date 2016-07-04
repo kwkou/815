@@ -14,7 +14,7 @@
 	Set-AzureRmVM -Redeploy -ResourceGroupName $rgname -Name $vmname 
 
 
-在运行该命令的同时，请在 [Azure 门户](https://portal.azure.cn)中查看你的虚拟机。请注意，VM 的“状态”更改如下：
+在运行该命令的同时，请在 [Azure 门户预览](https://portal.azure.cn)中查看你的虚拟机。请注意，VM 的“状态”更改如下：
 
 1. 初始“状态”为“正在运行”
 

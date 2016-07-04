@@ -44,7 +44,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 1. 访问 [Azure 管理控制台](https://manage.windowsazure.cn/)。
 
-2. 在门户左侧的栏中，选择“设置”。
+2. 在经典门户左侧的栏中，选择“设置”。
 
 3. 在页面右侧显示的信息中，找到你要使用的订阅，并记下“订阅 ID”列中的值。
 

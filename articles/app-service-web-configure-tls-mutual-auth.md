@@ -20,7 +20,7 @@
 > **注意：**如果你通过 HTTP 而不是 HTTPS 访问你的站点，你将不会收到任何客户端证书。因此，如果应用程序需要客户端证书，则你不应允许通过 HTTP 对应用程序发出请求。
 
 ## 将 Web 应用配置为使用客户端证书身份验证 ##
-若要将 Web 应用设置为要求使用客户端证书，你需要为 Web 应用添加 clientCertEnabled 站点设置并将该设置指定为 true。目前无法通过门户中的管理体验进行此设置，你需要使用 REST API 来实现此目的。
+若要将 Web 应用设置为要求使用客户端证书，你需要为 Web 应用添加 clientCertEnabled 站点设置并将该设置指定为 true。目前无法通过经典门户中的管理体验进行此设置，你需要使用 REST API 来实现此目的。
 
 你可以使用 [ARMClient 工具](https://github.com/projectkudu/ARMClient)轻松创建 REST API 调用。使用该工具登录之后，需要发出以下命令：
 

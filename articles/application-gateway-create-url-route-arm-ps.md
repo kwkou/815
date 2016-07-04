@@ -46,7 +46,7 @@
 
 ## 创建新的应用程序网关
 
-使用 Azure 管理门户和 Azure Resource Manager 的差别在于创建应用程序网关的顺序和需要配置的项。
+使用 Azure 经典门户和 Azure Resource Manager 的差别在于创建应用程序网关的顺序和需要配置的项。
 
 使用 Resource Manager，组成应用程序网关的所有项都将分开配置，然后放在一起创建应用程序网关资源。
 

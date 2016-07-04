@@ -16,7 +16,7 @@
 # 使用 Azure 资源管理器和 PowerShell 配置 VNet 到 VNet 连接
 
 > [AZURE.SELECTOR]
-- [Azure 管理门户](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)
+- [Azure 经典门户](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)
 - [PowerShell - Azure 资源管理器](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps)
 
 本文将引导你使用资源管理器部署模型和 PowerShell 来创建虚拟网络间的连接。虚拟网络可以位于来自相同或不同订阅的相同或不同区域中。
@@ -312,9 +312,9 @@
 
 以下示例演示如何验证连接。请务必根据环境更改值。
 
-### 使用 Azure 门户验证连接
+### 使用 Azure 门户预览验证连接
 
-可以在 Azure 门户中验证 VPN 连接，方法是导航到“虚拟网络网关”> 单击你的网关名称 >“设置”>“连接”。选择连接名称即可在“连接”边栏选项卡中查看详细信息。
+可以在 Azure 门户预览中验证 VPN 连接，方法是导航到“虚拟网络网关”> 单击你的网关名称 >“设置”>“连接”。选择连接名称即可在“连接”边栏选项卡中查看详细信息。
 
 
 ### 使用 PowerShell 验证连接

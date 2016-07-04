@@ -142,7 +142,7 @@
 
         New-AzureRmVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-    你应会在 Azure 门户中看到资源组及其所有资源，并会在 PowerShell 窗口中看到成功状态：
+    你应会在 Azure 门户预览中看到资源组及其所有资源，并会在 PowerShell 窗口中看到成功状态：
 
         RequestId  IsSuccessStatusCode  StatusCode  ReasonPhrase
         ---------  -------------------  ----------  ------------

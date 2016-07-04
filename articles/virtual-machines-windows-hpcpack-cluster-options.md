@@ -28,7 +28,7 @@
 
 * [教程：开始使用 Azure 中的 HPC Pack 群集运行 Excel 和 SOA 工作负荷](/documentation/articles/virtual-machines-windows-excel-cluster-hpcpack)
 
-### 使用 Azure 门户手动部署
+### 使用 Azure 经典门户手动部署
 
 * [在 Azure VM 中设置 HPC Pack 群集的头节点](/documentation/articles/virtual-machines-windows-hpcpack-cluster-headnode)
 

@@ -32,7 +32,7 @@
 
 ##<a id="run"></a>使用查询控制台运行 Hive 查询
 
-1. 打开 <a href="https://manage.windowsazure.cn" target="_blank">Azure 管理门户</a>，并选择你的 HDInsight 群集。在页面底部选择“查询控制台”。出现提示时，输入你在创建群集时使用的用户名和密码。
+1. 打开 <a href="https://manage.windowsazure.cn" target="_blank">Azure 经典门户</a>，并选择你的 HDInsight 群集。在页面底部选择“查询控制台”。出现提示时，输入你在创建群集时使用的用户名和密码。
 
 2. 在页面顶部的链接中，选择“Hive 编辑器”。此时将显示一个窗体，你可以在其中输入要在 HDInsight 群集上运行的 HiveQL 语句。
 

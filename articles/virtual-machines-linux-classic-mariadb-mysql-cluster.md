@@ -219,9 +219,9 @@
         chkconfig mysql off
 		waagent -deprovision	
 		
-11. 通过门户捕获 VM。（目前，[Azure CLI 工具中的问题 #1268] 描述的事实是，Azure CLI 工具所捕获的映像并没有捕获所附加的数据磁盘。）
+11. 通过经典门户捕获 VM。（目前，[Azure CLI 工具中的问题 #1268] 描述的事实是，Azure CLI 工具所捕获的映像并没有捕获所附加的数据磁盘。）
 
-	- 通过门户关闭机器
+	- 通过经典门户关闭机器
     - 单击“捕获”并将映像名称指定为 **mariadb-galera-image**，然后提供描述并选中“我已运行 waagent”。![捕获虚拟机](./media/virtual-machines-linux-classic-mariadb-mysql-cluster/Capture.png)![捕获虚拟机](./media/virtual-machines-linux-classic-mariadb-mysql-cluster/Capture2.PNG)
 	
 ## 创建群集
@@ -301,7 +301,7 @@
     azure vm endpoint create-multiple mariadb2 3306:3306:tcp:false:MySQL:tcp:3306
     azure vm endpoint create-multiple mariadb3 3306:3306:tcp:false:MySQL:tcp:3306
 	
-最后，由于 CLI 将负载平衡器的探测时间间隔设置为 15 秒（可能有点太长了），可以在门户中的“终结点”下更改任一 VM 的该时间间隔
+最后，由于 CLI 将负载平衡器的探测时间间隔设置为 15 秒（可能有点太长了），可以在经典门户中的“终结点”下更改任一 VM 的该时间间隔
 
 ![编辑终结点](./media/virtual-machines-linux-classic-mariadb-mysql-cluster/Endpoint.PNG)
 

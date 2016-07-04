@@ -32,11 +32,11 @@ Apache Storm 是一个可扩展的、具有容错能力的分布式实时计算�
 
 Storm on HDInsight 使用 Azure Blob 存储来存储提交到群集的日志文件和拓扑。使用以下步骤来创建用于群集的 Azure 存储帐户：
 
-1.登录到 [Azure 管理门户](http://manage.windowsazure.cn/)。
+1.登录到 [Azure 经典门户](http://manage.windowsazure.cn/)。
 
 2. 单击左下角的“新建”，依次指向“数据服务”和“存储”，然后单击“快速创建”。
 
-	![在 Azure 管理门户中，可以使用“快速创建”来设置新的存储帐户。](./media/hdinsight-apache-storm-tutorial-get-started/HDI.StorageAccount.QuickCreate.png)
+	![在 Azure 经典门户中，可以使用“快速创建”来设置新的存储帐户。](./media/hdinsight-apache-storm-tutorial-get-started/HDI.StorageAccount.QuickCreate.png)
 
 3. 输入“URL”、“位置”和“复制”的信息，然后单击“创建存储帐户”。为 HDInsight 创建存储时，请不要选择地缘组。你将在存储列表中看到新的存储帐户。
 
@@ -46,13 +46,13 @@ Storm on HDInsight 使用 Azure Blob 存储来存储提交到群集的日志文�
 
 有关创建存储帐户的详细信息，请参阅<a href="/documentation/articles/storage-create-storage-account/" target="_blank">如何创建存储帐户</a>。
 
-##在 Azure 管理门户中预配 Storm 群集
+##在 Azure 经典门户中预配 Storm 群集
 
-当你设置 HDInsight 群集时，便设置了包含 Apache Storm 和相关应用程序的 Azure 计算资源。你还可以使用 Azure 管理门户、适用于 HDInsight 的 Azure PowerShell cmdlet 或 HDInsight .NET SDK 为其他版本创建 Hadoop 群集。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。有关不同 HDInsight 版本及其服务级别协议 (SLA) 的信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning-v1)页。
+当你设置 HDInsight 群集时，便设置了包含 Apache Storm 和相关应用程序的 Azure 计算资源。你还可以使用 Azure 经典门户、适用于 HDInsight 的 Azure PowerShell cmdlet 或 HDInsight .NET SDK 为其他版本创建 Hadoop 群集。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。有关不同 HDInsight 版本及其服务级别协议 (SLA) 的信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning-v1)页。
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 2. 在左窗格中单击“HDInsight”，然后单击页面左下角的“+新建”。
 
@@ -78,9 +78,9 @@ Storm on HDInsight 使用 Azure Blob 存储来存储提交到群集的日志文�
 
 ### <a id="connect"></a>连接到仪表板
 
-仪表板位于 **https://&lt;clustername>.azurehdinsight.cn//**，其中 **clustername** 是群集的名称。群集的 Azure 管理门户页底部也提供了仪表板的链接。
+仪表板位于 **https://&lt;clustername>.azurehdinsight.cn//**，其中 **clustername** 是群集的名称。群集的 Azure 经典门户页底部也提供了仪表板的链接。
 
-![包含 Storm“仪表板”链接的 Azure 管理门户](./media/hdinsight-apache-storm-tutorial-get-started/dashboard-link.png) 
+![包含 Storm“仪表板”链接的 Azure 经典门户](./media/hdinsight-apache-storm-tutorial-get-started/dashboard-link.png) 
 
 > [AZURE.NOTE]在连接到仪表板时，系统将提示你输入用户名和密码。这是创建群集时所用的管理员名称 (**admin**) 和密码。
 

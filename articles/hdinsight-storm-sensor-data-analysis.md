@@ -87,7 +87,7 @@
 
 事件中心是此示例的数据源。按照下列步骤创建一个新的事件中心。
 
-1. 在 [Azure 管理门户](https://manage.windowsazure.cn)中，选择“新建”|“服务总线”|“事件中心”|“自定义创建”。
+1. 在 [Azure 经典门户](https://manage.windowsazure.cn)中，选择“新建”|“服务总线”|“事件中心”|“自定义创建”。
 
 2. 在“添加新事件中心”对话框中，输入“事件中心名称”，选择要在其中创建中心的“区域”，然后创建新的命名空间或选择现有的命名空间。最后，单击箭头以继续。
 
@@ -109,7 +109,7 @@
 
 ### 创建 Storm on HDInsight 群集
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
 
 2. 在左窗格中单击“HDInsight”，然后单击页面左下角的“+新建”。
 
@@ -254,7 +254,7 @@
 
 1. 若要将仪表板部署到 Azure Web 应用，请遵循[构建 Node.js Web 应用并将其部署到 Azure](/documentation/articles/web-sites-nodejs-develop-deploy-mac) 中的步骤。记下 Web 应用的 URL，它类似于 **mywebsite.chinacloudsites.cn**。
 
-2. 创建 Web 应用后，转到 Azure 管理门户中的站点，然后选择“配置”选项卡。启用“Web 套接字”，然后在页面底部单击“保存”。
+2. 创建 Web 应用后，转到 Azure 经典门户中的站点，然后选择“配置”选项卡。启用“Web 套接字”，然后在页面底部单击“保存”。
 
 2. 打开 **hdinsight-eventhub-example\\TemperatureMonitor\\src\\main\\java\\com\\microsoft\\examples\\bolts\\DashboardBolt.java** 并将以下行更改为指向已发布仪表板的 URL：
 
@@ -284,7 +284,7 @@
 
 如果你打算对本示例使用 HBase，必须创建 Azure 虚拟网络并在其中包含 Storm on HDInsight 群集和 HBase on HDInsight 群集。
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 2. 在页面底部，单击“+新建”>“网络服务”>“虚拟网络”>“快速创建”。
 
@@ -319,7 +319,7 @@
 
 ### 在虚拟网络中创建 Storm 和 HBase 群集
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
 
 2. 在左窗格中单击“HDInsight”，然后单击页面左下角的“+新建”。
 

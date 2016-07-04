@@ -1,8 +1,8 @@
 <!-- Ibiza Portal: tested -->
 
-若要使用 Azure 门户创建 VNet，请遵循以下步骤。请注意，提供的屏幕截图用作示例。请务必替换为你自己的值。有关使用虚拟网络的详细信息，请参阅 [Virtual Network Overview](/documentation/articles/virtual-networks-overview)（虚拟网络概述）。
+若要使用 Azure 门户预览创建 VNet，请遵循以下步骤。请注意，提供的屏幕截图用作示例。请务必替换为你自己的值。有关使用虚拟网络的详细信息，请参阅 [Virtual Network Overview](/documentation/articles/virtual-networks-overview)（虚拟网络概述）。
 
-1. 从浏览器导航到 [Azure 门户](http://manage.windowsazure.cn)。如有必要，请使用 Azure 帐户登录。
+1. 从浏览器导航到 [Azure 门户预览](http://manage.windowsazure.cn)。如有必要，请使用 Azure 帐户登录。
 
 2. 单击“新建”>“网络”>“虚拟网络”。
 
@@ -13,7 +13,7 @@
 
 	![选择“资源管理器”。](./media/vpn-gateway-basic-vnet-rm-portal-include/resourcemanager250.png)
 
-4. 在“创建虚拟网络”边栏选项卡上，配置 VNet 设置。在此边栏选项卡中，你将添加第一个地址空间和单个子网地址范围。完成创建 VNet 之后，可以返回并添加其他子网和地址空间。这是门户当前的一项限制。你随时可以通过在门户中编辑 VNet 属性或使用 PowerShell，来重新更新这些值。使用的值取决于要创建的配置。请务必参考计划的配置值。
+4. 在“创建虚拟网络”边栏选项卡上，配置 VNet 设置。在此边栏选项卡中，你将添加第一个地址空间和单个子网地址范围。完成创建 VNet 之后，可以返回并添加其他子网和地址空间。这是门户预览当前的一项限制。你随时可以通过在门户预览中编辑 VNet 属性或使用 PowerShell，来重新更新这些值。使用的值取决于要创建的配置。请务必参考计划的配置值。
 
 	![创建虚拟网络边栏选项卡](./media/vpn-gateway-basic-vnet-rm-portal-include/createavnet250.png)
 

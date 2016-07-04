@@ -63,7 +63,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 
 **在 North-CNrope 创建名为 Contoso-VNet-CN 的虚拟网络**
 
-1.	登录到 [Azure 门户][azure-portal]。
+1.	登录到 [Azure 经典门户][azure-portal]。
 2.	单击“新建”、“网络服务”、“虚拟网络”、“自定义创建”。
 3.	输入：
 
@@ -136,7 +136,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 
 **创建与 Contoso-VNet-CN 网络地址空间匹配的名为 Contoso-LNet-CN 的本地网络**
 
-1. 在 Azure 门户中，单击“新建”、“网络服务”、“虚拟网络”、“添加本地网络”。
+1. 在 Azure 经典门户中，单击“新建”、“网络服务”、“虚拟网络”、“添加本地网络”。
 3. 输入：
 
 	- **名称**：Contoso-LNet-CN
@@ -167,7 +167,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 
 **在 Contoso-VNet-CN 与 Contoso-LNet-CE 之间配置站点到站点连接**
 
-1.	在 Azure 门户中，单击左侧窗格中的“网络”。
+1.	在 Azure 经典门户中，单击左侧窗格中的“网络”。
 2.	单击“Contoso-VNet-CN”。
 3.	单击“配置”选项卡。
 4.	选中“连接到本地网络”。
@@ -179,7 +179,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 
 **为 Contoso-VNet-CN 创建 VPN 网关**
 
-1.	在 Azure 门户中，单击“仪表板”选项卡。
+1.	在 Azure 经典门户中，单击“仪表板”选项卡。
 4.	在页面底部单击“创建网关”，然后单击“动态路由”。
 5.	单击“是”确认。请注意页面上的网关图形将更改为黄色，并显示“正在创建网关”。创建网关通常需要大约 15 分钟时间。
 
@@ -197,7 +197,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 
 **为 Contoso-LNet-CN 配置 VPN 设备 IP 地址**
 
-1.	在 Azure 门户中，单击左侧窗格中的“网络”。
+1.	在 Azure 经典门户中，单击左侧窗格中的“网络”。
 2.	在顶部单击“本地网络”。
 3.	单击“Contoso-LNet-CN”，然后在底部单击“编辑”。
 4.	更新“VPN 设备 IP 地址”。这是你从 Contoso-VNET-CN 的“仪表板”选项卡获取的地址。
@@ -210,7 +210,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 
 ###设置 VNet 网关密钥
 
-VNet 网关使用共享密钥对虚拟网络之间的连接进行身份验证。不能从 Azure 门户配置该密钥。必须使用 PowerShell 或 .NET SDK 来配置。
+VNet 网关使用共享密钥对虚拟网络之间的连接进行身份验证。不能从 Azure 经典门户配置该密钥。必须使用 PowerShell 或 .NET SDK 来配置。
 
 **设置密钥**
 
@@ -225,7 +225,7 @@ VNet 网关使用共享密钥对虚拟网络之间的连接进行身份验证。
 
 ##检查 VPN 连接 
 
-在未将任何 VM 部署到 VNet 的情况下，你可以在 Azure 门户中使用“VNet 仪表板”页上的虚拟网络可视示意图检查连接状态：
+在未将任何 VM 部署到 VNet 的情况下，你可以在 Azure 经典门户中使用“VNet 仪表板”页上的虚拟网络可视示意图检查连接状态：
 
 ![HDInsight HBase 复制虚拟网络 VPN 连接状态][img-vpn-status]
   

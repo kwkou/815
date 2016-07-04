@@ -1,6 +1,6 @@
 <properties
 	pageTitle="登录到经典 Azure VM | Azure"
-	description="使用 Azure 门户登录到使用经典部署模型创建的 Windows 虚拟机。"
+	description="使用 Azure 经典门户登录到使用经典部署模型创建的 Windows 虚拟机。"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="cynthn"
@@ -14,11 +14,11 @@
 	wacn.date="06/29/2016"/>
 
 
-# 使用 Azure 门户登录到 Windows 虚拟机
+# 使用 Azure 经典门户登录到 Windows 虚拟机
 
 
 
-在 Azure 门户中，使用“连接”按钮启动远程桌面会话，然后登录到 Windows VM。
+在 Azure 经典门户中，使用“连接”按钮启动远程桌面会话，然后登录到 Windows VM。
 
 是否要连接到 Linux VM？ 请参阅[如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-classic-log-on)。
 
@@ -26,7 +26,7 @@
 
 ## 连接到虚拟机
 
-1. 登录到 Azure 门户。
+1. 登录到 Azure 经典门户。
 
 2. 单击“虚拟机”，然后选择虚拟机。
 

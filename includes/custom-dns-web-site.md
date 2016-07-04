@@ -36,7 +36,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 在 Web 应用上设置自定义域名只适用于 Azure Web 应用的共享和标准模式。将 Web 应用从免费 Web 应用模式切换到共享或标准 Web 应用模式之前，必须先取消 Web 应用订阅已有的支出上限。有关共享和标准模式定价的详细信息，请参阅[定价详细信息][PricingDetails]。
 
-1. 在浏览器中，打开[管理门户][portal]。
+1. 在浏览器中，打开[经典门户][portal]。
 2. 在" Web 应用"选项卡中，单击您的 Web 应用的名称。
 
 	![][standardmode1]
@@ -102,7 +102,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 1. 使用下列方法之一查找分配给您的 Web 应用的 **.azurewebsite.net** 域名。
 
-	* 登录到 [Azure 管理门户][portal]，依次选择您的 Web 应用、"仪表板"，然后在"速览"部分中查找" Web 应用 URL"条目。
+	* 登录到 [Azure 经典门户][portal]，依次选择您的 Web 应用、"仪表板"，然后在"速览"部分中查找" Web 应用 URL"条目。
 
 	* 安装和配置 [Azure Powershell](/documentation/articles/powershell-install-configure)，然后使用以下命令：
 
@@ -145,7 +145,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 ###将域名添加到 Web 应用
 
-在域名的 CNAME 记录已传播后，必须将其与您的 Web 应用关联。您可以使用 Azure 跨平台命令行界面或 Azure 管理门户将 CNAME 记录定义的自定义域名添加到您的 Web 应用。
+在域名的 CNAME 记录已传播后，必须将其与您的 Web 应用关联。您可以使用 Azure 跨平台命令行界面或 Azure 经典门户将 CNAME 记录定义的自定义域名添加到您的 Web 应用。
 
 **使用命令行工具添加域名**
 
@@ -163,9 +163,9 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 此命令返回的列表应当包含自定义域名以及默认的 **.azurewebsite.net** 条目。
 
-**使用 Azure 管理门户添加域名**
+**使用 Azure 经典门户添加域名**
 
-1. 在浏览器中，打开 [Azure 管理门户][portal]。
+1. 在浏览器中，打开 [Azure 经典门户][portal]。
 
 2. 在" Web 应用"选项卡中，单击您的 Web 应用的名称、选择"仪表板"，然后从页面底部选择"管理域"。
 
@@ -183,7 +183,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 若要创建 A 记录，必须首先找到您的 Web 应用的 IP 地址。然后，使用您的注册机构提供的工具在 DNS 表中为您的自定义域添加一个条目。每个注册机构指定 A 记录的方法类似但略有不同，但概念是相同的。除了创建 A 记录之外，还必须创建 Azure 用来验证 A 记录的 CNAME 记录。
 
-1. 在浏览器中，打开 [Azure 管理门户][portal]。
+1. 在浏览器中，打开 [Azure 经典门户][portal]。
 
 2. 在" Web 应用"选项卡中，单击您的 Web 应用的名称、选择"仪表板"，然后从屏幕底部选择"管理域"。
 
@@ -241,7 +241,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 ###将域名添加到 Web 应用
 
-在域名的 **awverify** CNAME 记录已传播后，必须将 A 记录定义的自定义域与您的 Web 应用相关联。您可以使用 Azure 跨平台命令行界面或 Azure 管理门户将 A 记录定义的自定义域名添加到您的 Web 应用。
+在域名的 **awverify** CNAME 记录已传播后，必须将 A 记录定义的自定义域与您的 Web 应用相关联。您可以使用 Azure 跨平台命令行界面或 Azure 经典门户将 A 记录定义的自定义域名添加到您的 Web 应用。
 
 **使用命令行工具添加域名**
 
@@ -259,9 +259,9 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 此命令返回的列表应当包含自定义域名以及默认的 **.azurewebsite.net** 条目。
 
-**使用 Azure 管理门户添加域名**
+**使用 Azure 经典门户添加域名**
 
-1. 在浏览器中，打开 [Azure 管理门户][portal]。
+1. 在浏览器中，打开 [Azure 经典门户][portal]。
 
 2. 在" Web 应用"选项卡中，单击您的 Web 应用的名称、选择"仪表板"，然后从页面底部选择"管理域"。
 
@@ -290,7 +290,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 [配置您的域注册机构中的 CNAME]: #bkmk_configurecname
 [在您的域注册机构上配置 CNAME 验证记录]: #bkmk_configurecname
 [为域名配置 A 记录]:#bkmk_configurearecord
-[在管理门户中设置域名]: #bkmk_setcname
+[在经典门户中设置域名]: #bkmk_setcname
 
 <!-- Links -->
 

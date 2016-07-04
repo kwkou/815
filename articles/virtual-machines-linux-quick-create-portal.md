@@ -1,8 +1,8 @@
 <!-- customized -->
 
 <properties
-    pageTitle="使用 Azure 门户创建 Linux VM | Azure"
-    description="使用 Azure 门户创建 Linux VM。"
+    pageTitle="使用 Azure 门户预览创建 Linux VM | Azure"
+    description="使用 Azure 门户预览创建 Linux VM。"
     services="virtual-machines-linux"
     documentationCenter=""
     authors="vlivech"
@@ -16,12 +16,12 @@
 	ms.date="04/29/2016"
 	wacn.date="06/29/2016"/>
 
-# 使用门户在 Azure 上创建 Linux VM
+# 使用门户预览在 Azure 上创建 Linux VM
 
-本文说明如何使用 [Azure 门户](https://portal.azure.cn/)快速创建 Linux 虚拟机。唯一的要求是 [Azure 帐户](/pricing/1rmb-trial/)和 [SSH 公钥与私钥文件](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys)。
+本文说明如何使用 [Azure 门户预览](https://portal.azure.cn/)快速创建 Linux 虚拟机。唯一的要求是 [Azure 帐户](/pricing/1rmb-trial/)和 [SSH 公钥与私钥文件](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys)。
 
 
-1. 使用你的 Azure 帐户标识登录到 Azure 门户，然后单击左上角的“+ 新建”：
+1. 使用你的 Azure 帐户标识登录到 Azure 门户预览，然后单击左上角的“+ 新建”：
 
     ![screen1](./media/virtual-machines-linux-quick-create-portal/screen1.png)
 
@@ -50,7 +50,7 @@
 
     ![screen6](./media/virtual-machines-linux-quick-create-portal/screen6.png)
 
-7. 打开门户仪表板并在“网络接口”中选择 NIC
+7. 打开门户预览仪表板并在“网络接口”中选择 NIC
 
     ![screen7](./media/virtual-machines-linux-quick-create-portal/screen7.png)
 

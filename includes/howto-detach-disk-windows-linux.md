@@ -12,7 +12,7 @@
 如果你不知道磁盘名称或要在分离磁盘之前验证磁盘名称，请按照以下步骤进行操作。
 
 
-1. 如果你尚未登录 [Azure 门户](http://manage.windowsazure.cn)，请先登录。
+1. 如果你尚未登录 [Azure 经典门户](http://manage.windowsazure.cn)，请先登录。
 
 2. 依次单击“虚拟机”、虚拟机名称和“仪表板”。
 

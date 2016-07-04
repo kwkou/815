@@ -56,7 +56,8 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Azure 上运行的 
 
 	{
      	"storageAccountName":"the storage account to receive data",
-     	"storageAccountKey":"the key of the account"
+     	"storageAccountKey":"the key of the account"，
+    	"endpoint":"table.core.chinacloudapi.cn"
 	}
 
 步骤 2。运行 **azure vm extension set vm\_name LinuxDiagnostic Microsoft.OSTCExtensions 2.\* --private-config-path PrivateConfig.json**。

@@ -31,7 +31,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 2. [创建一个新 VNet 环境](#Create-a-new-VNet-environment)。
 3. [连接两个 VNet](#Connect-the-two-VNets)。
 
-你将按顺序执行上述步骤，首先使用经典 Azure 管理工具，包括经典门户、网络配置文件和 Azure 服务管理器 PowerShell cmdlet；然后转为使用新的管理工具，包括新 Azure 门户、ARM 模板和 ARM PowerShell cmdlet。
+你将按顺序执行上述步骤，首先使用经典 Azure 管理工具，包括经典门户、网络配置文件和 Azure 服务管理器 PowerShell cmdlet；然后转为使用新的管理工具，包括新 Azure 门户预览、ARM 模板和 ARM PowerShell cmdlet。
 
 >[AZURE.IMPORTANT] 互相连接的 VNet 之间不能有 CIDR 块冲突。确保每个 VNet 都有独特的 CIDR 块！
 
@@ -128,9 +128,9 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 ### 步骤 3：为经典 VNet 创建 VPN 网关 
 
-若要使用经典 Azure 门户为 vnet01 创建 VPN 网关，请遵循以下说明。
+若要使用经典 Azure 门户预览为 vnet01 创建 VPN 网关，请遵循以下说明。
 
-1. 在 https://manage.windowsazure.cn 处打开经典 Azure 门户。如有必要，可指定你的凭据。
+1. 在 https://manage.windowsazure.cn 处打开经典 Azure 门户预览。如有必要，可指定你的凭据。
 2. 向下滚动“所有项目”列表，并单击“网络”。
 3. 在虚拟网络列表上，单击 **vnet01**，然后单击“配置”。
 4. 在“站点到站点连接”下，选中“连接到本地网络”复选框。
@@ -271,13 +271,13 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 			-LocalNetworkGateway2 $vnet01gateway -ConnectionType IPsec `
 			-RoutingWeight 10 -SharedKey 'abc123'
 
-3. 在 https://manage.windowsazure.cn 处打开 Azure 门户，必要时输入你的凭据。
+3. 在 https://manage.windowsazure.cn 处打开 Azure 门户预览，必要时输入你的凭据。
 4. 在“所有项目”下，向下滚动并单击“网络”，然后单击 **vnet01**，再单击“仪表板”。请注意 **vnet01** 与 **vnet02** 之间的连接现已建立，如下所示。
 
 	![VNet 仪表板](./media/virtual-networks-arm-asm-s2s/figure11.png)
 
-5. 尽管你可以管理经典 VNet 及其来自经典门户的连接，但还是建议使用新的 Azure 门户。要打开新门户，请导航到 https://portal.azure.cn。
-6. 在新门户中，单击“浏览全部”，然后单击“虚拟网络(经典)”，再单击 **vnet01**。请注意以下所示的“VPN 连接”窗格。
+5. 尽管你可以管理经典 VNet 及其来自经典门户的连接，但还是建议使用新的 Azure 门户预览。要打开新门户预览，请导航到 https://portal.azure.cn。
+6. 在新门户预览中，单击“浏览全部”，然后单击“虚拟网络(经典)”，再单击 **vnet01**。请注意以下所示的“VPN 连接”窗格。
 
 	![VNet 仪表板](./media/virtual-networks-arm-asm-s2s/figure12.png)
 
@@ -285,7 +285,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 现在已经连接了两个 VNet，是时候从一个 VM 对另一个 VM 发起 ping 操作，以测试连接了。你将需要更改其中一个 VM 的防火墙设置以允许 ICMP，然后从另一个 VM 对该 VM 发起 ping 操作。若要执行此操作，请遵循以下说明。
 
-1. 从 Azure 门户中，单击“浏览全部”，然后单击“虚拟机”，再单击 **VM02**。
+1. 从 Azure 门户预览中，单击“浏览全部”，然后单击“虚拟机”，再单击 **VM02**。
 2. 从 **VM02** 边栏选项卡中，单击“连接”。如有需要，可单击浏览器安全性横幅上的“打开”以打开 RDP 文件。
 3. 在“远程桌面连接”对话框中，单击“连接”。
 4. 在“Windows 安全性”对话框中，输入你的 VM 用户名和密码。 
@@ -304,7 +304,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 		Default Gateway . . . . . . . . . : 10.2.0.101
 
 10. 写下 VM 的 IP 地址。在此方案中，是 **10.2.0.101**。你将从另一个 VM 对该地址发起 ping 操作，以测试 VNet 之间的连接。
-11. 从 Azure 门户的左窗格中，单击“虚拟机(经典)”并单击 **VM01**，然后单击“连接”。如有需要，可单击浏览器安全性横幅上的“打开”以打开 RDP 文件。
+11. 从 Azure 门户预览的左窗格中，单击“虚拟机(经典)”并单击 **VM01**，然后单击“连接”。如有需要，可单击浏览器安全性横幅上的“打开”以打开 RDP 文件。
 12. 在“远程桌面连接”对话框中，单击“连接”。
 13. 在“Windows 安全性”对话框中，输入你的 VM 用户名和密码。 
 14. 在“远程桌面连接”对话框中，单击“是”。

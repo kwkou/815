@@ -20,11 +20,11 @@ Azure 提供不同方式来创建虚拟机，因为虚拟机适合于不同的�
 > [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型。
 
 
-## GUI：Azure 经典门户
+## Azure 门户预览
 
-Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 Azure 门户创建虚拟机：
+Azure 门户预览的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 Azure 门户预览创建虚拟机：
 
-[创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal)
+[创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial)
 
 >[AZURE.NOTE] 经典门户只能创建管理经典部署模型的虚拟机
 

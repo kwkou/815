@@ -1,6 +1,6 @@
 <properties
 	pageTitle="适用于 Azure 上的 Linux 的 Docker 虚拟机扩展"
-	description="介绍 Docker 和容器、Azure 虚拟机扩展，并提供有关通过 Azure CLI 和门户创建 Docker 容器的其他资源的链接。"
+	description="介绍 Docker 和容器、Azure 虚拟机扩展，并提供有关通过 Azure CLI 创建 Docker 容器的其他资源的链接。"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="squillace"
