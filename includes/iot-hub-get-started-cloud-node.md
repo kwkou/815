@@ -71,6 +71,7 @@
 在本部分中，你将创建一个 Node.js 控制台应用程序，用于读取来自 IoT 中心的设备到云消息。IoT 中心公开与[事件中心][lnk-event-hubs-overview]兼容的终结点，以让你读取设备到云的消息。为了简单起见，本教程创建的基本读取器不适用于高吞吐量部署。[处理设备到云的消息][lnk-processd2c-tutorial]教程说明了如何大规模处理设备到云的消息。[事件中心入门][lnk-eventhubs-tutorial]教程更详细说明了如何处理来自事件中心的消息，此教程也适用于 IoT 中心事件中心兼容的终结点。
 
 > [AZURE.NOTE] 读取设备到云消息的事件中心兼容终结点始终使用 AMQPS 协议。
+
 1. 新建名为 **readdevicetocloudmessages** 的空文件夹。在 **readdevicetocloudmessages** 文件夹中，于命令提示符下使用以下命令创建新的 package.json 文件。接受所有默认值：
 
     ```
