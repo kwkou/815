@@ -34,7 +34,7 @@
 
 ![就地升级](./media/active-directory-aadconnect-upgrade-previous-version/inplaceupgrade.png)
 
-如果你已更改默认的同步规则，这些规则将在系统升级完成之后重置为默认配置。为了确保配置在每次升级之后得到保留，请务必按照 [Best practices for changing the default configuration（更改默认配置的最佳实践）](active-directory-aadconnectsync-best-practices-changing-default-configuration)中所述的步骤来更改配置。
+如果你已更改默认的同步规则，这些规则将在系统升级完成之后重置为默认配置。为了确保配置在每次升级之后得到保留，请务必按照 [Best practices for changing the default configuration（更改默认配置的最佳实践）](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration)中所述的步骤来更改配置。
 
 ## 交叉迁移
 如果服务器部署很复杂或者对象很多，在活动的系统上进行就地升级可能不切合实际。某些客户可能要花费好几天时间来升级系统，并且系统在升级期间无法处理任何增量更改。

@@ -9,7 +9,6 @@
 
 <tags
    ms.service="active-directory"
-
    ms.date="04/20/2016"
    wacn.date="06/14/2016"/>
 

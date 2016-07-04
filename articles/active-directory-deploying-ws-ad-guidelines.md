@@ -32,7 +32,7 @@
 
 本文重点介绍混合部署方案的要求，这种方案是将 Windows Server AD DS 或 AD FS 的一部分部署在本地，还有一部分则部署在 Azure 虚拟机上。本文首先介绍在 Azure 虚拟机上以及在本地运行 Windows Server AD DS 和 AD FS 之间的关键区别以及影响设计和部署的重要决策。本文的其余部分更详细地介绍每个决策点的准则以及如何将这些准则应用于不同的部署方案。
 
-本文不讨论如何配置 [Azure Active Directory](http://azure.microsoft.com/services/active-directory/) - 一种基于 REST 的服务，用于为云应用程序提供身份管理和访问控制功能。但是，Azure Active Directory (Azure AD) 和 Windows Server AD DS 旨在协同使用以为当前的混合 IT 环境和新式应用程序提供身份和访问管理解决方案。要帮助了解 Windows Server AD DS 与 Azure AD 之间的区别和关系，请设想以下情况：
+本文不讨论如何配置 [Azure Active Directory](/documentation/services/identity/) - 一种基于 REST 的服务，用于为云应用程序提供身份管理和访问控制功能。但是，Azure Active Directory (Azure AD) 和 Windows Server AD DS 旨在协同使用以为当前的混合 IT 环境和新式应用程序提供身份和访问管理解决方案。要帮助了解 Windows Server AD DS 与 Azure AD 之间的区别和关系，请设想以下情况：
 
 1. 使用 Azure 将本地数据中心扩展到云中时，可能在云中 Azure 虚拟机上运行 Windows Server AD DS。
 2. 你可以使用 Azure AD 允许用户单一登录到软件即服务 (SaaS) 应用程序。例如，Microsoft Office 365 使用此项技术，并且在 Azure 或其他云平台上运行的应用程序也可使用它。

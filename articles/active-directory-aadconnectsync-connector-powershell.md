@@ -322,10 +322,10 @@ Windows PowerShell 连接器可以用作密码更改/重置的目标。
 
 若要确定同步服务服务帐户的安全标识符 (SID)，请运行以下 PowerShell 命令：
 
-```
-$account = New-Object System.Security.Principal.NTAccount "<domain><username>"
-$account.Translate([System.Security.Principal.SecurityIdentifier]).Value
-```
+
+		$account = New-Object System.Security.Principal.NTAccount "<domain><username>"
+		$account.Translate([System.Security.Principal.SecurityIdentifier]).Value
+
 
 对以下文件系统文件夹的读取权限：
 
