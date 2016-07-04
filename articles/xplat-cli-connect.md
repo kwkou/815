@@ -1,3 +1,4 @@
+<!-- Remove authandsub -->
 <properties
 	pageTitle="通过 CLI 登录到 Azure | Azure"
 	description="从适用于 Mac、Linux 和 Windows 的 Azure 命令行界面 (Azure CLI) 连接到 Azure 订阅"
@@ -25,11 +26,11 @@ Azure CLI 是一组开源且跨平台的命令，可以用于 Azure 平台。本
 
 * **下载并使用发布设置文件** - 这将在本地计算机上安装证书，只要订阅和证书有效，你就可以执行管理任务。此方法只允许你使用经典（服务管理）命令。
 
-有关身份验证和订阅管理的详细信息，请参阅[基于帐户的身份验证和基于证书的身份验证之间的区别是什么][authandsub]。
+<!-- 有关身份验证和订阅管理的详细信息，请参阅[基于帐户的身份验证和基于证书的身份验证之间的区别是什么][authandsub]。 -->
 
 如果你没有 Azure 帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][free-trial]。
 
->[AZURE.NOTE] 如果你使用的是早于版本 0.9.10 的 Azure CLI 版本，则只能将 `azure login` 命令用于工作或学校帐户标识，对于 Microsoft 帐户标识不起作用。但是，使用 Azure CLI 版本 0.9.10 及更高版本，你可以通过交互式 `azure login` 命令使用任何标识登录到你的帐户。
+>[AZURE.NOTE] 如果你使用的是早于版本 0.9.10 的 Azure CLI 版本，则只能将 `azure login -e AzureChinaCloud` 命令用于工作或学校帐户标识，对于 Microsoft 帐户标识不起作用。但是，使用 Azure CLI 版本 0.9.10 及更高版本，你可以通过交互式 `azure login -e AzureChinaCloud` 命令使用任何标识登录到你的帐户。
 >
 CLI 版本 0.9.9 及更高版本支持多重身份验证。
 
@@ -37,16 +38,16 @@ CLI 版本 0.9.9 及更高版本支持多重身份验证。
 
 ## 使用交互式登录方法
 
-使用 `azure login` 命令（不带任何参数）- 使用以下任一标识以交互方式进行身份验证：
+使用 `azure login -e AzureChinaCloud` 命令（不带任何参数）- 使用以下任一标识以交互方式进行身份验证：
 
 - 工作或学校帐户标识（需要多重身份验证）或
 - Microsoft 帐户标识（如果你想要访问资源管理器部署模式功能）
 
 > [AZURE.NOTE]  在这两种情况下，都将使用 Azure Active Directory 进行身份验证和授权。如果你使用 Microsoft 帐户标识，登录过程将访问你的 Azure Active Directory 默认域。（如果你注册了免费试用版，你可能未意识到 Azure Active Directory 为你的帐户创建了默认域。）
 
-以交互方式登录非常简单：键入 `azure login` 并按照提示进行操作，如下所示：
+以交互方式登录非常简单：键入 `azure login -e AzureChinaCloud` 并按照提示进行操作，如下所示：
 
-	azure login -e AzureChinaCloud -u <username> -p <password>                                                                                                                                                                                         
+	azure login -e AzureChinaCloud
 	info:    Executing command login
 	info:    To sign in, use a web browser to open the page http://aka.ms/devicelogin. Enter the code XXXXXXXXX to authenticate. If you're signing in as an Azure AD application, use the --username and --password parameters.
 
@@ -62,9 +63,9 @@ CLI 版本 0.9.9 及更高版本支持多重身份验证。
 ## 使用非交互式登录（使用工作或学校帐户）
 
 
-非交互式登录方法仅适用于工作或学校帐户，也称为*组织帐户*。此帐户由你的组织管理，并在组织的 Azure Active Directory 中定义。你可以[创建组织帐户](#create-an-organizational-account)（如果你没有），也可以[基于 Microsoft 帐户 ID 创建工作或学校 ID](/documentation/articles/virtual-machines-windows-create-aad-work-id)。这需要在 `azure login` 命令中指定用户名或用户名和密码，如下所示：
+非交互式登录方法仅适用于工作或学校帐户，也称为*组织帐户*。此帐户由你的组织管理，并在组织的 Azure Active Directory 中定义。你可以[创建组织帐户](#create-an-organizational-account)（如果你没有），也可以[基于 Microsoft 帐户 ID 创建工作或学校 ID](/documentation/articles/virtual-machines-windows-create-aad-work-id)。这需要在 `azure login -e AzureChinaCloud` 命令中指定用户名或用户名和密码，如下所示：
 
-	azure login -u ahmet@contoso.partner.onmschina.cn
+	azure login -e AzureChinaCloud -u ahmet@contoso.partner.onmschina.cn
 	info:    Executing command login
 	Password: *********
 	|info:    Added subscription Visual Studio Ultimate with MSDN
@@ -73,7 +74,7 @@ CLI 版本 0.9.9 及更高版本支持多重身份验证。
 
 在系统提示时输入你的密码。
 
-如果这是你首次使用这些凭据登录，系统将要求你确认是否希望缓存身份验证令牌。如果你以前使用了 `azure logout` 命令（下面进行说明），也会出现此提示。若要为自动化方案避开此提示，请运行带有 `-q` 参数的 `azure login`。
+如果这是你首次使用这些凭据登录，系统将要求你确认是否希望缓存身份验证令牌。如果你以前使用了 `azure logout` 命令（下面进行说明），也会出现此提示。若要为自动化方案避开此提示，请运行带有 `-q` 参数的 `azure login -e AzureChinaCloud`。
 
 * **若要注销**，请使用以下命令：
 

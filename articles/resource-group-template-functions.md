@@ -583,7 +583,7 @@
 
 **listKeys (resourceName or resourceIdentifier, apiVersion)**
 
-返回支持 listKeys 操作的任何资源类型的键。可以使用 [resourceId 函数](./#resourceid)或使用格式 **providerNamespace/resourceType/resourceName** 指定 resourceId。可以使用该函数来获取 primaryKey 和 secondaryKey。
+返回支持 listKeys 操作的任何资源类型的键。可以使用 [resourceId 函数](#resourceid)或使用格式 **providerNamespace/resourceType/resourceName** 指定 resourceId。可以使用该函数来获取 primaryKey 和 secondaryKey。
   
 | 参数 | 必选 | 说明
 | :--------------------------------: | :------: | :----------

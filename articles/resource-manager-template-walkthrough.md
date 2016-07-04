@@ -24,11 +24,11 @@
 
 ![体系结构](./media/resource-group-overview/arm_arch.png)
 
-本主题将指导你完成为该基础结构创建 Resource Manager 模板的步骤。你创建的最后一个模板基于名为 [2 VMs in a Load Balancer and load balancing rules（负载平衡器中的 2 个 VM 和负载平衡规则）](https://azure.microsoft.com/documentation/templates/201-2-vms-loadbalancer-lbrules/)的快速入门模板。
+本主题将指导你完成为该基础结构创建 Resource Manager 模板的步骤。你创建的最后一个模板基于名为 [2 VMs in a Load Balancer and load balancing rules（负载平衡器中的 2 个 VM 和负载平衡规则）](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-loadbalancer-lbrules)的快速入门模板。
 
 但是，要立即构建所有这些还有很多工作要做，因此，让我们首先创建一个存储帐户并将其部署。你掌握如何创建存储帐户后，可添加其他资源并重新部署模板以完成基础结构。
 
->[AZURE.NOTE] 创建模板时，你可以使用任何类型的编辑器。Visual Studio 提供了可简化模板开发的工具，但你不需要 Visual Studio 即可完成本教程。有关使用 Visual Studio 创建 Web 应用和 SQL 数据库部署的教程，请参阅 [Creating and deploying Azure resource groups through Visual Studio（通过 Visual Studio 创建和部署 Azure 资源组）](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy)。
+>[AZURE.NOTE] 创建模板时，你可以使用任何类型的编辑器。Visual Studio 提供了可简化模板开发的工具，但你不需要 Visual Studio 即可完成本教程。<!-- 有关使用 Visual Studio 创建 Web 应用和 SQL 数据库部署的教程，请参阅 [Creating and deploying Azure resource groups through Visual Studio（通过 Visual Studio 创建和部署 Azure 资源组）](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy)。 -->
 
 ## 创建 Resource Manager 模板
 
@@ -115,7 +115,7 @@
 
 
 	# create a new resource group
-	New-AzureRmResourceGroup -Name ExampleResourceGroup -Location "West Europe"
+	New-AzureRmResourceGroup -Name ExampleResourceGroup -Location "China East"
 
 	# deploy the template to the resource group
 	New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateFile azuredeploy.json

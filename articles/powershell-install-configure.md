@@ -1,3 +1,4 @@
+<!-- Remove script center -->
 <properties
 	pageTitle="如何安装和配置 Azure PowerShell"
 	description="了解如何安装和配置 Azure PowerShell。"
@@ -173,7 +174,7 @@ cmdlet 需要使用你的订阅来管理你的服务。如果你没有 Azure 订
 
 有关cmdlet的参考信息, 请参阅 [Azure 命令行参考](https://msdn.microsoft.com/zh-cn/library/azure/jj554330.aspx).
 
-有关可帮助你了解如何使用脚本来管理 Azure 的示例脚本和说明，请参阅[脚本中心](http://go.microsoft.com/fwlink/p/?LinkId=321940)。
+<!-- 有关可帮助你了解如何使用脚本来管理 Azure 的示例脚本和说明，请参阅[脚本中心](http://go.microsoft.com/fwlink/p/?LinkId=321940)。 -->
 
 
 <!---HONumber=Mooncake_0613_2016-->

@@ -34,12 +34,12 @@
           {
             "properties": {
               "templateLink": {
-                "uri": "http://mystorageaccount.blob.core.windows.net/templates/template.json",
+                "uri": "http://mystorageaccount.blob.core.chinacloudapi.cn/templates/template.json",
                 "contentVersion": "1.0.0.0",
               },
               "mode": "Incremental",
               "parametersLink": {
-                "uri": "http://mystorageaccount.blob.core.windows.net/templates/parameters.json",
+                "uri": "http://mystorageaccount.blob.core.chinacloudapi.cn/templates/parameters.json",
                 "contentVersion": "1.0.0.0",      
               },
               "debugSetting": {
@@ -82,7 +82,7 @@
             ...
             "request":{
               "content":{
-                "location":"West US",
+                "location":"China East",
                 "properties":{
                   "accountType": "Standard_LRS"
                 }
@@ -100,7 +100,7 @@
 
 4. 使用[列出订阅中的管理事件](https://msdn.microsoft.com/zh-cn/library/azure/dn931934.aspx)操作，从审核日志中获取部署的事件。
 
-        GET https://manage.windowsazure.cn/subscriptions/{subscription-id}/providers/microsoft.insights/eventtypes/management/values?api-version={api-version}&$filter={filter-expression}&$select={comma-separated-property-names}
+        GET https://manage.chinacloudapi.cn/subscriptions/{subscription-id}/providers/microsoft.insights/eventtypes/management/values?api-version={api-version}&$filter={filter-expression}&$select={comma-separated-property-names}
 
 
 ## 后续步骤
