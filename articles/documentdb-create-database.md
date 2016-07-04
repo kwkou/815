@@ -16,7 +16,7 @@
 # 如何使用 Azure 门户创建 DocumentDB 数据库
 
 
-若要使用 Microsoft Azure DocumentDB，你必须拥有 [DocumentDB 帐户](/documentation/articles/documentdb-create-account)、数据库、集合和文档。本教程说明如何在 Microsoft Azure 门户中创建 DocumentDB 数据库。有关如何使用某个 SDK 创建数据库的信息，请参阅[创建 DocumentDB 数据库的其他方法](/documentation/articles/#other-ways-to-create-a-documentdb-database)。
+若要使用 Microsoft Azure DocumentDB，你必须拥有 [DocumentDB 帐户](/documentation/articles/documentdb-create-account)、数据库、集合和文档。本教程说明如何在 Microsoft Azure 门户中创建 DocumentDB 数据库。有关如何使用某个 SDK 创建数据库的信息，请参阅[创建 DocumentDB 数据库的其他方法](#other-ways-to-create-a-documentdb-database)。
 
 ![屏幕截图：演示如何创建数据库，突出显示“浏览”边栏选项卡上的“DocumentDB 帐户”以及“DocumentDB 帐户”边栏选项卡上的 DocumentDB 帐户](./media/documentdb-create-database/docdb-database-creation-1-2.png)
 
@@ -24,7 +24,7 @@
 
 2.  在“DocumentDB 帐户”边栏选项卡中，选择要在其中添加 DocumentDB NoSQL 数据库的帐户。如果你没有任何列出的帐户，则需要[创建一个 DocumentDB 帐户](/documentation/articles/documentdb-create-account)。
 
-    ![屏幕截图：演示如何创建数据库，突出显示“添加数据库”按钮、“ID”框和“确定”按钮](/documentation/articles/./media/documentdb-create-database/docdb-database-creation-3-5.png)
+    ![屏幕截图：演示如何创建数据库，突出显示“添加数据库”按钮、“ID”框和“确定”按钮](./media/documentdb-create-database/docdb-database-creation-3-5.png)
 
 3. 在“DocumentDB 帐户”边栏选项卡中单击“添加数据库”。
 
@@ -34,11 +34,11 @@
 
 6. 新的数据库现在便会出现在“DocumentDB 帐户”边栏选项卡上的“数据库”可重用功能区中。
  
-	![屏幕截图：“DocumentDB 帐户”边栏选项卡中的新数据库](/documentation/articles/./media/documentdb-create-database/docdb-database-creation-6.png)
+	![屏幕截图：“DocumentDB 帐户”边栏选项卡中的新数据库](./media/documentdb-create-database/docdb-database-creation-6.png)
 
-## 创建 DocumentDB 数据库的其他方法
+## <a name="other-ways-to-create-a-documentdb-database"></a>创建 DocumentDB 数据库的其他方法
 
-数据库不一定要使用门户来创建，你也可以使用 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet) 或 [REST API](/documentation/articles/https://msdn.microsoft.com/library/mt489072.aspx) 来创建数据库。有关使用 .NET SDK 处理数据库的信息，请参阅 [.NET 数据库示例](/documentation/articles/documentdb-dotnet-samples#database-examples)。有关使用 Node.js SDK 处理数据库的信息，请参阅 [Node.js 数据库示例](/documentation/articles/documentdb-nodejs-samples#database-examples)。
+数据库不一定要使用门户来创建，你也可以使用 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet) 或 [REST API](https://msdn.microsoft.com/library/mt489072.aspx) 来创建数据库。有关使用 .NET SDK 处理数据库的信息，请参阅 [.NET 数据库示例](/documentation/articles/documentdb-dotnet-samples#database-examples)。有关使用 Node.js SDK 处理数据库的信息，请参阅 [Node.js 数据库示例](/documentation/articles/documentdb-nodejs-samples#database-examples)。
 
 ## 后续步骤
 

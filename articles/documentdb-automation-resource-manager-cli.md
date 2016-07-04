@@ -12,7 +12,7 @@
 <tags 
 	ms.service="documentdb" 
 	ms.date="03/04/2016" 
-	wacn.date="06/28/2016"/>
+	wacn.date="07/01/2016"/>
 
 # 使用 Azure Resource Manager 模板和 Azure CLI 自动创建 DocumentDB 帐户
 
@@ -42,7 +42,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
 ### 设置你的 Azure 帐户和订阅
 
-如果你还没有 Azure 订阅，但是有 Visual Studio 订阅，则可以激活 [Visual Studio 订户权益](/pricing/member-offers/msdn-benefits-details/)，或者注册获取[免费试用版](/pricing/free-trial/)。
+如果你还没有 Azure 订阅，但是有 Visual Studio 订阅，则可以激活 [Visual Studio 订户权益](/pricing/member-offers/msdn-benefits-details/)，或者注册获取[试用版](https://www.azure.cn/pricing/1rmb-trial/)。
 
 需有一个工作或学校帐户或者一个 Microsoft 帐户标识，才能使用 Azure 资源管理模板。如果你有其中一个帐户，请键入以下命令。
 
@@ -141,7 +141,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
  - `<resourcegroupname>` 只能使用字母数字字符、句点、下划线、“-”字符和括号，且不能以句点结尾。 
  - `<databaseaccountname>` 只能使用小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。
- - `<databaseaccountlocation>` 必须是已正式推出 DocumentDB 的区域之一。[Azure 区域页面](/regions/#services)会提供当前的区域列表。
+ - `<databaseaccountlocation>` 必须是已正式推出 DocumentDB 的区域之一。[Azure 区域页面](https://azure.microsoft.com/regions/#services)会提供当前的区域列表。
 
 输入示例：
 
@@ -237,7 +237,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 	azure group create <resourcegroupname> <databaseaccountlocation>
 
  - `<resourcegroupname>` 只能使用字母数字字符、句点、下划线、“-”字符和括号，且不能以句点结尾。 
- - `<databaseaccountlocation>` 必须是已正式推出 DocumentDB 的区域之一。[Azure 区域页面](/regions/#services)会提供当前的区域列表。
+ - `<databaseaccountlocation>` 必须是已正式推出 DocumentDB 的区域之一。[Azure 区域页面](https://azure.microsoft.com/regions/#services)会提供当前的区域列表。
 
 输入示例：
 
@@ -309,7 +309,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
 在此命令返回之后，在帐户更改为**在线**状态以准备好可供使用之前，该帐户将会进入**正在创建**状态数分钟的时间。你可以在 [Azure 门户](https://portal.azure.cn)中的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
-## 故障排除
+## <a name="troubleshooting"></a>故障排除
 
 如果在创建资源组或数据库帐户时收到错误（例如 `Deployment provisioning state was not successful`），有几个故障排除选项可供使用。
 
@@ -325,7 +325,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
     	azure group log show new_res_group --last-deployment
 
-    有关其他信息，则请参阅 [Azure 中的资源组部署故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-cli)。
+    
 
 - Azure 门户中也会提供错误信息，如下列屏幕截图所示。导航到错误信息的步骤：单击跳转栏中的“资源组”，选择发生错误的资源组，接着在“资源组”边栏选项卡的“概要”区域中单击“上次部署”的日期，然后在“部署历史记录”边栏选项卡中选择失败的部署，之后在“部署”边栏选项卡中单击带有红色感叹号的“操作详细信息”。失败部署的状态消息显示在“操作详细信息”边栏选项卡中。
 
@@ -341,14 +341,13 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
 创建数据库后，你必须向数据库[添加一个或多个集合](/documentation/articles/documentdb-create-collection)，然后向集合[添加文档](/documentation/articles/documentdb-view-json-document-explorer)。
 
-当集合中有文档后，你就可以利用门户中的[查询资源管理器](/documentation/articles/documentdb-query-collections-query-explorer)、[REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 或某个 [SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx)，来针对文档使用 [DocumentDB SQL](/documentation/articles/documentdb-sql-query) [执行查询](documentdb-sql-query.md#executing-queries)。
+当集合中有文档后，你就可以利用门户中的[查询资源管理器](/documentation/articles/documentdb-query-collections-query-explorer)、[REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 或某个 [SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx)，来针对文档使用 [DocumentDB SQL](/documentation/articles/documentdb-sql-query) [执行查询](/documentation/articles/documentdb-sql-query#executing-queries)。
 
 若要详细了解 DocumentDB，请浏览以下资源：
 
 -	[DocumentDB 学习路径](https://azure.microsoft.com/documentation/learning-paths/documentdb/)
 -	[DocumentDB 资源模型和概念](/documentation/articles/documentdb-resources)
 
-有关可用的其他模板，请参阅 [Azure 快速启动模板](/documentation/templates/)。
 
 
 <!---HONumber=Mooncake_0425_2016-->

@@ -21,12 +21,10 @@
 
 若要使用 Microsoft Azure DocumentDB 构建数据库，必须：
 
-- 有一个 Azure 帐户。如果你没有 Azure 帐户，可以获取[免费 Azure 帐户](/free)。 
+- 有一个 Azure 帐户。如果你没有 Azure 帐户，可以获取[试用 Azure 帐户](https://www.azure.cn/pricing/1rmb-trial/)。 
 - 创建一个 DocumentDB 帐户。  
 
-可以使用 Azure 门户、Azure Resource Manager 模板或 Azure 命令行接口 (CLI) 来创建 DocumentDB 帐户。本文说明如何使用 Azure 门户创建数据库帐户。若要使用 Azure Resource Manager 或 Azure CLI 创建帐户，请参阅 [Automate DocumentDB database account creation（自动创建 DocumentDB 数据库帐户）](documentdb-automation-resource-manager-cli.md)。
-
-你是 DocumentDB 新手吗？ 观看 Scott Hanselman 制作的[这部](https://azure.microsoft.com/documentation/videos/create-documentdb-on-azure/)四分钟的视频，了解如何在在线门户中完成最常见的任务。
+可以使用 Azure 门户、Azure Resource Manager 模板或 Azure 命令行接口 (CLI) 来创建 DocumentDB 帐户。本文说明如何使用 Azure 门户创建数据库帐户。若要使用 Azure Resource Manager 或 Azure CLI 创建帐户，请参阅 [Automate DocumentDB database account creation（自动创建 DocumentDB 数据库帐户）](/documentation/articles/documentdb-automation-resource-manager-cli)。
 
 [AZURE.INCLUDE [documentdb-create-dbaccount](../includes/documentdb-create-dbaccount.md)]
 
@@ -36,7 +34,7 @@
 
 - C# .NET 示例，位于 GitHub 上 [azure-documentdb-net](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples) 存储库的 [DatabaseManagement](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/DatabaseManagement) 项目中。
 - Azure 门户，如[使用 Azure 门户创建 DocumentDB 数据库](/documentation/articles/documentdb-create-database)中所述。
-- 综合教程：[.NET](/documentation/articles/documentdb-get-started)、[.NET MVC](documentdb-dotnet-application.md)、[Java](/documentation/articles/documentdb-java-application)、[Node.js](documentdb-nodejs-application.md) 或 [Python](/documentation/articles/documentdb-python-application)。
+- 综合教程：[.NET](/documentation/articles/documentdb-get-started)、[.NET MVC](/documentation/articles/documentdb-dotnet-application)、[Java](/documentation/articles/documentdb-java-application)、[Node.js](/documentation/articles/documentdb-nodejs-application) 或 [Python](/documentation/articles/documentdb-python-application)。
 - [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet)。DocumentDB 有 .NET、Java、Python、Node.js 和 JavaScript API SDK。
 
 
@@ -46,7 +44,6 @@
 
 若要详细了解 DocumentDB，请浏览以下资源：
 
--	[DocumentDB 学习路径](https://azure.microsoft.com/documentation/learning-paths/documentdb/)
 -	[DocumentDB 资源模型和概念](/documentation/articles/documentdb-resources)
 
 <!---HONumber=Mooncake_0627_2016-->

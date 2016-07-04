@@ -29,7 +29,7 @@
 
 在按照本教程中的说明操作之前，请确保已有下列各项：
 
-- Azure 订阅。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[购买选项](https://azure.microsoft.com/pricing/purchase-options/)、[成员优惠](https://azure.microsoft.com/pricing/member-offers/)或[免费试用](https://azure.microsoft.com/pricing/free-trial/)。
+- Azure 订阅。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[购买选项](/pricing/purchase-options/)或[免费试用](/pricing/free-trial/)。
 
 ##<a id="CreateDB"></a>步骤 1：下载模板文件 ##
 让我们从下载模板文件开始，我们将在本教程中使用这些文件。
@@ -45,7 +45,7 @@
 
 > [AZURE.TIP] 该模板不会验证下面输入的 Web 应用名称和 DocumentDB 帐户名称是否 a) 有效以及 b) 可用。强烈建议在提交部署之前，先确认你打算提供的名称的可用性。
 
-1. 登录到 [Azure 门户](https://portal.azure.com)，单击“新建”并搜索“模板部署”。
+1. 登录到 [Azure 门户](https://portal.azure.cn)，单击“新建”并搜索“模板部署”。
 	![模板部署 UI 的屏幕截图](./media/documentdb-create-documentdb-website/TemplateDeployment1.png)
 
 2. 选择模板部署项并单击“创建” 
@@ -140,7 +140,7 @@
 
 祝贺你！ 你已使用 Azure Resource Manager 模板部署了 DocumentDB、App Service Web 应用以及示例 Web 应用程序。
 
-- 若要了解有关 DocumentDB 的详细信息，请单击[此处](http://azure.com/docdb)。
+- 若要了解有关 DocumentDB 的详细信息，请单击[此处](/services/documentdb/)。
 - 若要了解有关 Azure App Service Web Apps 的详细信息，请单击[此处](http://go.microsoft.com/fwlink/?LinkId=325362)。
 - 若要了解有关 Azure Resource Manager 模板的详细信息，请单击[此处](https://msdn.microsoft.com/library/azure/dn790549.aspx)。
 

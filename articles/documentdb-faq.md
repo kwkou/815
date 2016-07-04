@@ -21,7 +21,7 @@
 ### 什么是 Microsoft Azure DocumentDB？ 
 Microsoft Azure DocumentDB 是高度可缩放的 NoSQL 文档数据库即服务，可针对无架构数据提供丰富的查询，帮助提供可靠的可配置性能，并支持快速开发，这一切都通过一个托管平台来实现，而该平台有 Microsoft Azure 强大的功能与影响力作为后盾。如果 Web、移动、游戏和 IoT 应用程序的关键要求是可预测的吞吐量、低延迟和无架构数据模型，那么，DocumentDB 无疑是最合适的解决方案。DocumentDB 通过本机 JSON 数据模型提供架构灵活性和丰富索引，并且对集成的 JavaScript 提供多文档事务性支持。
   
-有关部署和使用此服务的更多数据库问题、解答及说明，请参阅 [DocumentDB 文档页面](/documentation/services/documentdb/)。
+有关部署和使用此服务的更多数据库问题、解答及说明，请参阅 [DocumentDB 文档页面](/home/features/documentdb/)。
 
 ### DocumentDB 是何种数据库？
 DocumentDB 是面向 NoSQL 文档的数据库，以 JSON 格式存储数据。DocumentDB 支持嵌套的独立数据结构，可通过丰富的 DocumentDB [SQL 查询语法](/documentation/articles/documentdb-sql-query)来查询。DocumentDB 通过[存储过程、触发器和用户定义函数](/documentation/articles/documentdb-programming)，提供服务器端 JavaScript 的高性能事务处理功能。该数据库还支持可由开发人员调整的一致性级别以及相关联的[性能级别](/documentation/articles/documentdb-performance-levels)。
@@ -56,7 +56,7 @@ DocumentDB 是面向 NoSQL 文档的数据库，以 JSON 格式存储数据。Do
 请参考 [DocumentDB 定价详细信息](/pricing/details/documentdb/)页面了解详细信息。DocumentDB 使用量费用取决于正在使用的集合数目、集合的在线小时数，以及每个集合的已使用存储和已预配吞吐量。
 
 ### 有免费的帐户吗？
-如果你不熟悉 Azure，可以注册 [Azure 免费帐户](/pricing/free-trial/)，这样可以得到 30 天试用期和 200 美元的 Azure 信用额度，让你试用所有 Azure 服务。或者，如果你有 Visual Studio 订阅，就有资格免费获取[每月 150 美元的 Azure 信用额度](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)，可用于任何 Azure 服务。
+如果你不熟悉 Azure，可以注册 [Azure 试用帐户](/pricing/free-trial/)，这样可以得到 30 天试用期和 200 美元的 Azure 信用额度，让你试用所有 Azure 服务。
 
 ### 如何获取 DocumentDB 的其他帮助？
 如果你需要任何帮助，请在 [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-documentdb)或 [Azure DocumentDB MSDN 开发人员论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureDocumentDB)联系我们，或者安排[与 DocumentDB 工程团队进行 1 对 1 交谈](http://www.askdocdb.com/)。
@@ -70,20 +70,20 @@ DocumentDB 是面向 NoSQL 文档的数据库，以 JSON 格式存储数据。Do
 主密钥是用于访问帐户的所有资源的安全令牌。拥有此密钥的人对数据库帐户中的所有资源具有读取和写入访问权。分发主密钥时要格外谨慎。[Azure 门户][azure-portal]的**密钥**边栏选项卡中提供主要主密钥和辅助主密钥。有关密钥的详细信息，请参阅[查看、复制和重新生成访问密钥](/documentation/articles/documentdb-manage-account#keys)。
 
 ### 我如何创建数据库？
-你可以如[创建 DocumentDB 数据库](/documentation/articles/documentdb-create-database)中所述使用 [Azure 门户]()、利用某个 [DocumentDB SDK](/documentation/articles/documentdb-dotnet) 或通过 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 来创建数据库。
+你可以如[创建 DocumentDB 数据库](/documentation/articles/documentdb-create-database)中所述使用 [Azure 门户]()、利用某个 [DocumentDB SDK](/documentation/articles/documentdb-dotnet-samples) 或通过 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 来创建数据库。
 
 ### 什么是集合？
 集合是 JSON 文档和相关联的 JavaScript 应用程序逻辑的容器。集合是一个计费实体，其中[成本](/documentation/articles/documentdb-performance-levels)由与集合关联的性能级别确定。集合可以跨一个或多个分区/服务器，并且能扩展以处理几乎无限制增长的存储或吞吐量。
 
-集合也是 DocumentDB 的计费实体。每个集合根据预配的吞吐量和使用的存储空间按小时计费。有关详细信息，请参阅 [DocumentDB 定价](https://azure.microsoft.com/pricing/details/documentdb/)。
+集合也是 DocumentDB 的计费实体。每个集合根据预配的吞吐量和使用的存储空间按小时计费。有关详细信息，请参阅 [DocumentDB 定价](/pricing/details/documentdb/)。
 
 ### 我如何设置用户和权限？
-你可以使用某个 [DocumentDB SDK](/documentation/articles/documentdb-dotnet) 或通过 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 来创建用户和权限。
+你可以使用某个 [DocumentDB SDK](/documentation/articles/documentdb-dotnet-samples) 或通过 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 来创建用户和权限。
 
 ## 针对 Microsoft Azure DocumentDB 进行开发的相关数据库问题
 
 ### 如何开始针对 DocumentDB 进行开发？
-[SDK](/documentation/articles/documentdb-dotnet) 适用于 .NET、Python、Node.js、JavaScript 和 Java。开发人员也可以利用 [RESTful HTTP API](https://msdn.microsoft.com/library/azure/dn781481.aspx)，从各种平台、使用各种语言与 DocumentDB 资源进行交互。
+[SDK](/documentation/articles/documentdb-dotnet-samples) 适用于 .NET、Python、Node.js、JavaScript 和 Java。开发人员也可以利用 [RESTful HTTP API](https://msdn.microsoft.com/library/azure/dn781481.aspx)，从各种平台、使用各种语言与 DocumentDB 资源进行交互。
 
 GitHub 上提供 DocumentDB [.NET](/documentation/articles/documentdb-dotnet-samples)、[Java](https://github.com/Azure/azure-documentdb-java)、[Node.js](/documentation/articles/documentdb-nodejs-samples) 和 [Python](/documentation/articles/documentdb-python-samples) SDK 的示例。
 
@@ -112,7 +112,7 @@ DocumentDB 通过 JavaScript 存储过程和触发器支持语言集成式事务
 
 
 
-[azure-portal]: https://portal.azure.com
+[azure-portal]: https://portal.azure.cn
 [query]: /documentation/articles/documentdb-sql-query
  
 <!---HONumber=Mooncake_0425_2016-->
