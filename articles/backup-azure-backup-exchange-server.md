@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="backup"
-	ms.date="04/20/2015"
-	wacn.date="06/06/2016"/>
+	ms.date="05/19/2016"
+	wacn.date="09/04/2016"/>
 
 
 # 使用 System Center 2012 R2 DPM 将 Exchange Server 备份到 Azure 备份
@@ -91,7 +91,7 @@
 
     ![指定联机备份计划](./media/backup-azure-backup-exchange-server/specify-online-backup-schedule.png)
 
-    >[AZURE.NOTE]请注意，在线恢复点基于快速完全恢复点。因此，必须将在线恢复点安排在针对快速完全恢复点指定的时间之后。
+    >[AZURE.NOTE] 请注意，在线恢复点基于快速完全恢复点。因此，必须将在线恢复点安排在针对快速完全恢复点指定的时间之后。
 
 16. 配置“Azure 备份”的保留策略，然后单击“下一步”。
 
@@ -129,4 +129,4 @@
 
 - [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq)
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0627_2016-->
