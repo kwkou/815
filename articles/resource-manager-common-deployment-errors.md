@@ -1,3 +1,4 @@
+<!-- Remove arm-troubleshoot-portal -->
 <properties
    pageTitle="常见的 Azure 部署错误 | Azure"
    description="介绍如何解决使用 Azure Resource Manager 部署时遇到的常见错误。"
@@ -15,7 +16,7 @@
 
 # 解决使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误
 
-本主题介绍如何解决将资源部署到 Azure 时可能遇到的一些常见错误。有关排查部署问题的信息，请参阅 [Troubleshooting resource group deployments（对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal)。
+本主题介绍如何解决将资源部署到 Azure 时可能遇到的一些常见错误。<!-- 有关排查部署问题的信息，请参阅 [Troubleshooting resource group deployments（对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal)。-->
 
 如果部署之前先验证模板和参数，则可以避免一些错误。有关验证模板的示例，请参阅 [Deploy resources with Azure Resource Manager template（使用 Azure Resource Manager 模板部署资源）](/documentation/articles/resource-group-template-deploy)。
 
@@ -95,7 +96,7 @@
 
 ### REST API
 
-对于 REST API，请参阅[获取有关资源提供程序的信息](https://msdn.microsoft.com/library/azure/dn790534.aspx)。
+对于 REST API，请参阅[获取有关资源提供程序的信息](https://msdn.microsoft.com/zh-cn/library/azure/dn790534.aspx)。
 
 ## 超出配额
 

@@ -49,9 +49,7 @@
 
 在 Docker 主机中，运行：
 
-```
-docker run -it microsoft/azure-cli
-```
+    docker run -it microsoft/azure-cli
 
 ## 运行 Azure CLI 命令
 安装了 Azure CLI 之后，你将可以从命令行用户界面（Bash、终端、命令提示符等）运行 **azure** 命令。例如，若要运行帮助命令，请键入以下命令：

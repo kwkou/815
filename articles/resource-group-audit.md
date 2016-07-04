@@ -1,3 +1,4 @@
+<!-- Remove rm-troubleshoot-portal -->
 <properties
 	pageTitle="使用 Resource Manager 执行审核操作 | Azure"
 	description="使用资源管理器中的审核日志查看用户操作和错误。显示 PowerShell、Azure CLI 和 REST。"
@@ -22,9 +23,9 @@
 - 操作的状态
 - 其他可能有助于你研究操作的属性的值
 
-[AZURE.INCLUDE [resource-manager-audit-limitations](../includes/resource-manager-audit-limitations)]
+[AZURE.INCLUDE [resource-manager-audit-limitations](../includes/resource-manager-audit-limitations.md)]
 
-本主题着重于审核操作。若要了解如何使用审核日志对部署进行故障排除，请参阅 [Azure 中的资源组部署故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal)。
+本主题着重于审核操作。 <!-- 若要了解如何使用审核日志对部署进行故障排除，请参阅 [Azure 中的资源组部署故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal)。 -->
 
 可以通过 Azure PowerShell、Azure CLI、Insights REST API 或 [Insights .NET 库](https://www.nuget.org/packages/Microsoft.Azure.Insights/)检索审核日志中的信息。
 
@@ -85,7 +86,7 @@
 
 ## 查看审核日志的 REST API
 
-可用于处理审核日志的 REST 操作属于 [Insights REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931943.aspx)。若要检索审核日志事件，请参阅[列出订阅中的管理事件](https://msdn.microsoft.com/library/azure/dn931934.aspx)。
+可用于处理审核日志的 REST 操作属于 [Insights REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931943.aspx)。若要检索审核日志事件，请参阅[列出订阅中的管理事件](https://msdn.microsoft.com/zh-cn/library/azure/dn931934.aspx)。
 
 ## 后续步骤
 

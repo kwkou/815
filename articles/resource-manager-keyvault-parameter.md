@@ -1,3 +1,4 @@
+<!-- Remove best-practices-rm-security -->
 <properties
    pageTitle="通过 Resource Manager 模板使用密钥保管库机密 | Azure"
    description="说明在部署期间如何以参数形式从密钥保管库传递机密。"
@@ -98,7 +99,7 @@
 ## 后续步骤
 
 - 有关密钥保管库的一般信息，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started)。
-- 有关对虚拟机使用密钥保管库的信息，请参阅 [Azure Resource Manager 的安全注意事项](/documentation/articles/best-practices-resource-manager-security)。
+<!-- - 有关对虚拟机使用密钥保管库的信息，请参阅 [Azure Resource Manager 的安全注意事项](/documentation/articles/best-practices-resource-manager-security)。 -->
 - 有关引用密钥机密的完整示例，请参阅[密钥保管库示例](https://github.com/rjmax/ArmExamples/tree/master/keyvaultexamples)。
 
 <!---HONumber=Mooncake_0314_2016-->
