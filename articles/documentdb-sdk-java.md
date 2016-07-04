@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="05/02/2016" 
-	wacn.date="06/29/2016"/>
+	ms.date="06/14/2016" 
+	wacn.date="07/04/2016"/>
 
 # DocumentDB SDK
 
@@ -31,6 +31,11 @@
 </table></br>
 
 ## 发行说明
+
+### <a name="1.8.0"/>[1\.8.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.8.0)
+  - 添加了对多区域数据库帐户的支持。
+  - 添加对自动重试限制请求的支持，并提供了选项用于自定义最大重试次数和最大重试等待时间。请参阅 RetryOptions 和 ConnectionPolicy.getRetryOptions()。 
+  - 已弃用基于 IPartitionResolver 的自定义分区代码。请使用分区集合来提高存储和吞吐量。 
 
 ### <a name="1.7.1"/>[1\.7.1](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.7.1)
 - 对限制添加了重试策略支持。  
@@ -79,6 +84,7 @@ Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便
 
 | 版本 | 发布日期 | 停用日期 
 | ---	  | ---	         | ---
+| [1\.8.0](#1.8.0) | 2016 年 6 月 14 日 |---
 | [1\.7.1](#1.7.1) | 2016 年 4 月 30 日 |---
 | [1\.7.0](#1.7.0) | 2016 年 4 月 27 日 |---
 | [1\.6.0](#1.6.0) | 2016 年 3 月 29 日 |---
@@ -89,13 +95,13 @@ Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便
 | [1\.2.0](#1.2.0) | 2015 年 8 月 5 日 |---
 | [1\.1.0](#1.1.0) | 2015 年 7 月 9 日 |---
 | [1\.0.1](#1.0.1) | 2015 年 5 月 12 日 |---
-| [1\.0.0](#1.0.0) |2015 年 4 月 7 日 |---
-|0.9.5-prelease |2015 年 3 月 9 日 |2016 年 2 月 29 日 
-|0.9.4-prelease |2015 年 2 月 17 日 |2016 年 2 月 29 日 
-|0.9.3-prelease |2015 年 1 月 13 日 |2016 年 2 月 29 日 
-|0.9.2-prelease |2014 年 12 月 19 日 |2016 年 2 月 29 日 
-|0.9.1-prelease |2014 年 12 月 19 日 |2016 年 2 月 29 日 
-|0.9.0-prelease |2014 年 12 月 10 日 |2016 年 2 月 29 日
+| [1\.0.0](#1.0.0) | 2015 年 4 月 7 日 |---
+|0.9.5-prelease | 2015 年 3 月 9 日 | 2016 年 2 月 29 日
+|0.9.4-prelease | 2015 年 2 月 17 日 | 2016 年 2 月 29 日
+|0.9.3-prelease | 2015 年 1 月 13 日 | 2016 年 2 月 29 日
+|0.9.2-prelease | 2014 年 12 月 19 日 | 2016 年 2 月 29 日
+|0.9.1-prelease | 2014 年 12 月 19 日 | 2016 年 2 月 29 日
+|0.9.0-prelease | 2014 年 12 月 10 日 | 2016 年 2 月 29 日
 
 ## 常见问题
 [AZURE.INCLUDE [documentdb sdk 常见问题](../includes/documentdb-sdk-faq.md)]
@@ -104,4 +110,4 @@ Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便
 
 要了解有关 DocumentDB 的详细信息，请参阅 [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_0627_2016-->

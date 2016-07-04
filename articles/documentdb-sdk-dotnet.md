@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="05/06/2016" 
+	ms.date="06/14/2016" 
 	wacn.date="06/29/2016"/>
 
 # DocumentDB SDK
@@ -31,6 +31,14 @@
 </table></br>
 
 ## 发行说明
+
+### <a name="1.8.0"/>[1\.8.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.8.0)
+  - 添加了对多区域数据库帐户的支持。
+  - 添加了对重试限制请求的支持。用户可以通过配置 ConnectionPolicy.RetryOptions 属性来自定义重试次数和最长等待时间。
+  - 添加新的 IDocumentClient 接口，用于定义所有 DocumenClient 属性和方法的签名。在做出此项更改的同时，已将用于创建 IQueryable 和 IOrderedQueryable 的扩展方法更改为 DocumentClient 类本身的方法。
+  - 添加了配置选项用于设置给定 DocumentDB 终结点 URI 的 ServicePoint.ConnectionLimit。使用 ConnectionPolicy.MaxConnectionLimit 可以更改默认值（设置为 50）。
+  - 已弃用 IPartitionResolver 及其实现。对 IPartitionResolver 的支持现已过时。建议使用分区集合来提高存储和吞吐量。
+
 
 ### <a name="1.7.1"/>[1\.7.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.7.1)
   - 向采用 RequestOptions 作为参数的基于 Uri 的 ExecuteStoredProcedureAsync 方法添加了重载。
@@ -109,7 +117,7 @@
 - GA SDK
 
 > [AZURE.NOTE]
-预览版和 GA 版之间的 NuGet 程序包名称有所更改。我们从 **Microsoft.Azure.Documents.Client** 移动到了 **Microsoft.Azure.DocumentDB** <br/>
+预览版和 GA 版之间的 NuGet 程序包名称有所更改。从 **Microsoft.Azure.Documents.Client** 移动到了 **Microsoft.Azure.DocumentDB** <br/>
 
 
 ### <a name="0.9.x-preview"/>[0\.9.x-preview](https://www.nuget.org/packages/Microsoft.Azure.Documents.Client)
@@ -129,10 +137,11 @@ Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便
  
 | 版本 | 发布日期 | 停用日期 
 | ---	  | ---	         | ---
-| [1\.7.1](#1.7.1) | 2016 年 5 月 6 日 |--- 
-| [1\.7.0](#1.7.0) | 2016 年 4 月 26 日 |--- 
-| [1\.6.3](#1.6.3) | 2016 年 4 月 8 日 |---
-| [1\.6.2](#1.6.2) | 2016 年 3 月 29 日 |---
+| [1\.8.0](#1.8.0) | 2016 年 6 月 14 日 |---
+| [1\.7.1](#1.7.1) | 2016 年 5 月 6 日 |---
+| [1\.7.0](#1.7.0) | 2016 年 4 月 26 日 |---
+| [1\.6.3](#1.6.3) |2016 年 4 月 8 日 |---
+| [1\.6.2](#1.6.2) |2016 年 3 月 29 日 |---
 | [1\.5.3](#1.5.3) | 2016 年 2 月 19 日 |---
 | [1\.5.2](#1.5.2) | 2015 年 12 月 14 日 |---
 | [1\.5.1](#1.5.1) | 2015 年 11 月 23 日 |---
@@ -143,10 +152,10 @@ Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便
 | [1\.2.0](#1.2.0) | 2015 年 7 月 6 日 |---
 | [1\.1.0](#1.1.0) | 2015 年 4 月 30 日 |---
 | [1\.0.0](#1.0.0) | 2015 年 4 月 8 日 |---
-| [0\.9.3-prelease](#0.9.x-preview) | 2015 年 3 月 12 日 |2016 年 2 月 29 日 
-| [0\.9.2-prelease](#0.9.x-preview) | 2015 年 1 月 |2016 年 2 月 29 日 
-| [.9.1-prelease](#0.9.x-preview) | 2014 年 10 月 13 日 |2016 年 2 月 29 日 
-| [0\.9.0-prelease](#0.9.x-preview) | 2014 年 8 月 21 日 |2016 年 2 月 29 日
+| [0\.9.3-prelease](#0.9.x-preview) | 2015 年 3 月 12 日 | 2016 年 2 月 29 日
+| [0\.9.2-prelease](#0.9.x-preview) | 2015 年 1 月 | 2016 年 2 月 29 日
+| [.9.1-prelease](#0.9.x-preview) | 2014 年 10 月 13 日 | 2016 年 2 月 29 日
+| [0\.9.0-prelease](#0.9.x-preview) | 2014 年 8 月 21 日 | 2016 年 2 月 29 日
 
 ## 常见问题
 [AZURE.INCLUDE [documentdb sdk 常见问题](../includes/documentdb-sdk-faq.md)]
@@ -155,4 +164,4 @@ Microsoft 将在停用一款 SDK 之前至少 **12 个月**发出通知，以便
 
 要了解有关 DocumentDB 的详细信息，请参阅 [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_0627_2016-->

@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="documentdb"
-	ms.date="02/26/2016"
-	wacn.date="06/29/2016"/>
+	ms.date="05/31/2016"
+	wacn.date="07/04/2016"/>
 
 # DocumentDB 的 Power BI 教程：使用 Power BI 连接器可视化数据
 [PowerBI.com](https://powerbi.microsoft.cn/) 是一个在线服务，在此处你可以创建和共享包含对你和你的组织来说很重要的数据的仪表板和报表。Power BI Desktop 是一个专用的报表创作工具，使你能够从各种数据源检索数据、合并和转换数据、创建功能强大的报表和可视化效果以及将报表发布到 Power BI。使用最新版本的 Power BI Desktop，你现在可以通过 Power BI 的 DocumentDB 连接器连接到你的 DocumentDB 帐户。
@@ -85,13 +85,13 @@
 6. 如下所示指定你想要从其中检索数据的 DocumentDB 帐户终结点 URL，然后单击“确定”。可以在 Azure 门户的“密钥”边栏选项卡中的 URI 框检索 URL，或者可以使用上文提供的演示帐户信息。有关详细信息，请参阅[密钥](/documentation/articles/documentdb-manage-account#keys)。
 
 
-	注意。在本教程中，我们不会指定数据库名称、集合名称或 SQL 语句，因为这些字段都为可选。相反，我们将使用导航器来选择数据库和集合以指定数据来源。
+	*注意。在本教程中，我们不会指定数据库名称、集合名称或 SQL 语句，因为这些字段都为可选。相反，我们将使用导航器来选择数据库和集合以指定数据来源。*
 
     ![DocumentDB Power BI 连接器的 Power BI 教程 - 桌面连接窗口](./media/documentdb-powerbi-visualize/power_bi_connector_pbiconnectwindow.png)
 
 7. 如果你是首次连接到此终结点，则将提示你输入帐户密钥。输入帐户密钥并单击“连接”。
 
-	注意。我们建议你在生成报表时使用只读密钥。这将防止主密钥不必要地暴露于潜在的安全风险中。只读密钥从 Azure 门户的“只读密钥”边栏选项卡中可用，或者你可以使用上文提供的演示帐户信息。
+	*注意。我们建议你在生成报表时使用只读密钥。这将防止主密钥不必要地暴露于潜在的安全风险中。只读密钥从 Azure 门户的“只读密钥”边栏选项卡中可用，或者你可以使用上文提供的演示帐户信息。*
 
     ![DocumentDB Power BI 连接器的 Power BI 教程 - 帐户密钥](./media/documentdb-powerbi-visualize/power_bi_connector_pbidocumentdbkey.png)
 
@@ -100,7 +100,7 @@
 
 10. 现在，选择你要从其中检索数据的集合，例如 volcano1。
 
-	注意。预览窗格显示“记录”项的列表。文档在 Power BI 中表示为一种“记录”类型。同样，文档内部的嵌套 JSON 块也是“记录”。
+	*注意。预览窗格显示“记录”项的列表。文档在 Power BI 中表示为一种“记录”类型。同样，文档内部的嵌套 JSON 块也是“记录”。*
 
     ![DocumentDB Power BI 连接器的 Power BI 教程 - 导航器窗口](./media/documentdb-powerbi-visualize/power_bi_connector_pbinavigator.png)
 
@@ -125,7 +125,7 @@
 
 6. 中心窗格现在显示“列表”类型的坐标列。如教程的开头所示，本教程中的 GeoJSON 数据是“点”类型，纬度值和经度值记录在坐标数组中。
 
-	注意。coordinates[0] 元素表示经度，coordinates[1] 表示纬度。
+	*注意。coordinates[0] 元素表示经度，coordinates[1] 表示纬度。*
 	![DocumentDB Power BI 连接器的 Power BI 教程 - 坐标列表](./media/documentdb-powerbi-visualize/power_bi_connector_pbiresultflattenlist.png)
 
 7. 若要平展坐标数组，我们需创建名为“经纬度”的**自定义列**。选择“添加列”功能区并单击“添加自定义列”。应出现“添加自定义列”窗口。
@@ -134,7 +134,7 @@
 
 9. 接下来，为新列指定自定义公式。对于我们的示例，我们将如下所示，使用以下公式连接逗号分隔的纬度值和经度值：Text.From([coordinates]{1})&","&Text.From([coordinates]{0})。单击**“确定”**。
 
-    注意。有关数据分析表达式 (DAX)（包括 DAX 函数）的详细信息，请访问 [Power BI Desktop 中的 DAX Basic](https://support.powerbi.com/knowledgebase/articles/554619-dax-basics-in-power-bi-desktop)。
+    *注意。有关数据分析表达式 (DAX)（包括 DAX 函数）的详细信息，请访问 [Power BI Desktop 中的 DAX Basic](https://support.powerbi.com/knowledgebase/articles/554619-dax-basics-in-power-bi-desktop)。*
 
     ![DocumentDB Power BI 连接器的 Power BI 教程 - 添加自定义列](./media/documentdb-powerbi-visualize/power_bi_connector_pbicustomlatlong.png)
 
@@ -192,4 +192,4 @@
 - 若要了解更多有关 Power BI 的信息，请单击[此处](https://powerbi.microsoft.com/documentation/powerbi-service-get-started/)
 - 若要了解有关 DocumentDB 的详细信息，请单击[此处](/documentation/services/documentdb/)。
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_0627_2016-->
