@@ -9,8 +9,8 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="04/15/2016"
-     wacn.date="05/05/2016"/>
+     ms.date="06/20/2016"
+     wacn.date="07/04/2016"/>
 
 # OS 平台和硬件与设备 SDK 的兼容性
 

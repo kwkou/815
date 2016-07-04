@@ -9,8 +9,8 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="02/23/2016"
-     wacn.date="05/30/2016"/>
+     ms.date="05/17/2016"
+     wacn.date="07/04/2016"/>
 
 # 适用于 C 语言的 Azure IoT 设备 SDK – 有关序列化程序的详细信息
 

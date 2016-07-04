@@ -10,7 +10,7 @@
 <tags
      ms.service="iot-hub"
      ms.date="04/20/2016"
-     wacn.date="05/30/2016"/>
+     wacn.date="07/04/2016"/>
 
 
 # IoT 网关 SDK（Beta 版）– 使用 Linux 通过模拟设备发送设备至云消息
@@ -49,7 +49,7 @@
     [ 
         {
             "module name" : "IoTHub",
-            "module path" : "./build/modules/iothub_http/libiothub_http_hl.so",
+            "module path" : "./build/modules/iothubhttp/libiothubhttp_hl.so",
             "args" : 
             {
                 "IoTHubName" : "{Your IoT hub name}",
@@ -58,7 +58,7 @@
         },
         {
             "module name" : "mapping",
-            "module path" : "./build/modules/mac_iothub_id_map/libmac_iothub_id_map_hl.so",
+            "module path" : "./build/modules/identitymap/libidentitymap_hl.so",
             "args" : 
             [
                 {

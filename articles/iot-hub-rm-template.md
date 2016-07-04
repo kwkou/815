@@ -9,8 +9,8 @@
 
 <tags
      ms.service="iot-hub"
-     ms.date="05/03/2016"
-     wacn.date="05/30/2016"/>
+     ms.date="05/31/2016"
+     wacn.date="07/04/2016"/>
 
 # 使用 C# 程序和 ARM 模板创建 IoT 中心
 
@@ -37,7 +37,7 @@
 
 2. 在解决方案资源管理器中右键单击你的项目，然后单击“管理 NuGet 包”。
 
-3. 在 NuGet 包管理器中，选中“包括预发行版”，然后搜索 **Microsoft.Azure.Management.Resources**。单击“安装”，在“审阅更改”中单击“确定”，然后单击“我接受”以接受许可证。
+3. 在 NuGet 包管理器中，选中“包括预发行版”，然后搜索 **Microsoft.Azure.Management.ResourceManager**。单击“安装”，在“审阅更改”中单击“确定”，然后单击“我接受”以接受许可证。
 
 4. 在 NuGet 包管理器中，搜索 **Microsoft.IdentityModel.Clients.ActiveDirectory**。单击“安装”，在“审阅更改”中单击“确定”，然后单击“我接受”以接受许可证。
 
@@ -47,8 +47,8 @@
 
     ```
     using System;
-    using Microsoft.Azure.Management.Resources;
-    using Microsoft.Azure.Management.Resources.Models;
+    using Microsoft.Azure.Management.ResourceManager;
+    using Microsoft.Azure.Management.ResourceManager.Models;
     using Microsoft.IdentityModel.Clients.ActiveDirectory;
     using Microsoft.Rest;
     ```
