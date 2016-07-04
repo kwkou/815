@@ -9,7 +9,7 @@
 | Active Directory | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc) |
 | Apache | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/apache2-on-ubuntu-vm) |
 | Couchbase | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/couchbase-on-ubuntu) |
-| DataStax | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/datastax-on-ubuntu) |
+| DataStax | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/datastax) |
 | Django | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/django-app) |
 | Docker | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu) |
 | Elasticsearch | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/elasticsearch) |
@@ -22,7 +22,7 @@
 | Spark | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/spark-ubuntu-multidisks) |
 | Tomcat | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/openjdk-tomcat-ubuntu-vm) |
 | WordPress | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/wordpress-single-vm-ubuntu) |
-| ZooKeeper | | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/zookeeper-cluster-ubuntu-vm) |
+| ZooKeeper | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/zookeeper-cluster-ubuntu-vm) |
 
 除了这些模板，你也可以在 [GitHub 仓库](https://github.com/Azure/azure-quickstart-templates/)中搜索模板。
 
