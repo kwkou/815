@@ -1,10 +1,10 @@
 <properties linkid="" urlDisplayName="" pageTitle="Connect efficiently to MySQL Database on Azure – Azure cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, connection pool, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="Making sensible use of connection pooling to access MySQL Database on Azure will optimize performance. This article explains how to use connection pooling to more effectively access MySQL Database on Azure and provides sample code that uses Java and PHP as examples for your reference." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
+<tags ms.service="mysql" ms.date="07/04/2016" wacn.date="" wacn.lang="en" />
 # Connect efficiently to MySQL Database on Azure<sup style="color: #a5ce00; font-weight: bold; text-transform: uppercase; font-family: 'Arial'; font-size: 20px;" class="wa-previewTag"></sup>
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/mysql-database-connection-pool)
-- [In English](/documentation/articles/mysql-database-enus-connection-pool)
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/mysql-database-connection-pool)
+- [English](/documentation/articles/mysql-database-enus-connection-pool)
 
 
 Database connections are a limited resource, so making sensible use of connection pooling to access MySQL Database on Azure optimizes performance.

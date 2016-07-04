@@ -1,11 +1,11 @@
 <properties linkid="" urlDisplayName="" pageTitle="如何迁移数据库至MySQL Database on Azure- Azure 微软云" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，连接池,应用迁移，connection pool, Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="
 通过SSL加密访问数据库，可以保障您访问的安全性，本文介绍如何下载并配置SSL证书。目前MySQL Database on Azure支持利用公钥在服务器端进行加密验证。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
+<tags ms.service="mysql" ms.date="" wacn.date="07/04/2016" wacn.lang="cn" />
 
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/mysql-database-migration)
-- [In English](/documentation/articles/mysql-database-enus-migration)
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/mysql-database-migration)
+- [English](/documentation/articles/mysql-database-enus-migration)
 
 # 迁移数据库至MySQL Database on Azure
 本文概括介绍迁移用用数据库到MySQL Database on Azure的方式和需要考虑的注意事项。

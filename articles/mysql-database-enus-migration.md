@@ -1,10 +1,10 @@
 <properties linkid="" urlDisplayName="" pageTitle="Migrate a database to MySQL Database on Azure – Azure Cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, connection pool, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="Using SSL encryption to access databases helps ensure that your access is secure. This article explains how to download and configure SSL certificates. MySQL Database on Azure currently supports the use of public keys to perform encryption and verification on the server side." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
+<tags ms.service="mysql" ms.date="07/04/2016" wacn.date="" wacn.lang="en" />
 
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/mysql-database-migration)
-- [In English](/documentation/articles/mysql-database-enus-migration)
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/mysql-database-migration)
+- [English](/documentation/articles/mysql-database-enus-migration)
 
 # Migrate a database to MySQL Database on Azure
 

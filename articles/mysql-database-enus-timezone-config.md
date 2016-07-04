@@ -1,10 +1,10 @@
 <properties linkid="" urlDisplayName="" pageTitle="Time zone configuration on MySQL on Azure – Azure Cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, beginner’s guide, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="Time zone configuration on MySQL on Azure" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
+<tags ms.service="mysql" ms.date="07/04/2016" wacn.date="" wacn.lang="en" />
 
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/mysql-database-timezone-config)
-- [In English](/documentation/articles/mysql-database-enus-timezone-config)
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/mysql-database-timezone-config)
+- [English](/documentation/articles/mysql-database-enus-timezone-config)
 
 ## Time zone configuration on MySQL on Azure
 

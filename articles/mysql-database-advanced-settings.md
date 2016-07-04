@@ -1,12 +1,12 @@
 <properties linkid="" urlDisplayName="" pageTitle="定制MySQL 数据库 on Azure服务器参数 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,参数,定制,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL 数据库 on Azure支持您根据需求定制化服务器部分参数,帮您了解不同参数的设置范围和区间。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
+<tags ms.service="mysql" ms.date="" wacn.date="07/04/2016" wacn.lang="cn" />
 
 #定制MySQL 数据库 on Azure服务器参数
 
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/mysql-database-advanced-settings)
-- [In English](/documentation/articles/mysql-enus-database-advanced-settings)
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/mysql-database-advanced-settings)
+- [English](/documentation/articles/mysql-enus-database-advanced-settings)
 
 MySQL 数据库 on Azure支持您对服务器部分参数进行自定义设置，下表中列出可配置的参数，默认值，以及可选范围。
 

@@ -1,11 +1,11 @@
 <properties linkid="" urlDisplayName="" pageTitle="Understand the service limitations of MySQL Database on Azure – Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, service restrictions and limitations, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="This article helps you understand the service limitations of MySQL Database on Azure during the period of this public preview version. Contact technical support if you have any questions about specific operations." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
+<tags ms.service="mysql" ms.date="07/04/2016" wacn.date="" wacn.lang="en" />
 
 #Service limitations of MySQL Database on Azure
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/mysql-database-operation-limitation)
-- [In English](/documentation/articles/mysql-database-enus-operation-limitation)
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/mysql-database-operation-limitation)
+- [English](/documentation/articles/mysql-database-enus-operation-limitation)
 
 MySQL Database on Azure currently has the following limitations. If you have any questions, contact technical support.
 
