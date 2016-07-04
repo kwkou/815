@@ -3,14 +3,14 @@
  description="Azure IoT 中心设备管理概述：设备克隆、设备查询、设备作业"
  services="iot-hub"
  documentationCenter=""
- authors="ellenfosborne"
+ authors="juanjperez"
  manager="timlt"
  editor=""/>
 
 <tags
  ms.service="iot-hub"
  ms.date="04/29/2016"
- wacn.date="05/30/2016"/>
+ wacn.date="07/04/2016"/>
 
 # IoT 中心设备管理概述（预览版）
 
@@ -20,7 +20,7 @@ Azure IoT 中的设备管理主要包括三个概念：
 
 1.  **设备克隆**：物理设备在 IoT 中心的表示形式。
 
-2.  **设备查询**：可查找设备克隆并生成理解设备克隆的聚合。例如，可查找固件版本为 1.0 的所有设备克隆。
+2.  **设备查询**：可查找设备克隆并生成多个理解设备克隆的聚合。例如，可运行查询来查找固件版本为 1.0 的所有设备克隆。
 
 3.  **设备作业**：对一个或多个物理设备执行的操作，如固件更新、重启以及恢复出厂设置。
 
@@ -101,16 +101,7 @@ DM 客户端库在设备管理方面主要负责以下两项任务：
 
 ## 后续步骤
 
-若要了解有关 Azure IoT 中心设备管理功能的详细信息，可学习以下教程：
-
-- [Azure IoT 中心设备管理入门][lnk-get-started]
-
-- [如何使用设备克隆][lnk-tutorial-twin]
-
-- [如何使用查询查找设备克隆][lnk-tutorial-queries]
-
-- [如何使用设备作业更新设备固件][lnk-tutorial-jobs]
-
+若要继续了解 Azure IoT 中心设备管理功能，请参阅 [Azure IoT 中心设备管理入门][lnk-get-started]教程。
 
 <!-- Images and links -->
 [img-twin]: ./media/iot-hub-device-management-overview/image1.png
@@ -121,8 +112,6 @@ DM 客户端库在设备管理方面主要负责以下两项任务：
 [lnk-library-c]: /documentation/articles/iot-hub-device-management-library
 [lnk-get-started]: /documentation/articles/iot-hub-device-management-get-started
 [lnk-tutorial-twin]: /documentation/articles/iot-hub-device-management-device-twin
-[lnk-tutorial-queries]: /documentation/articles/iot-hub-device-management-device-query
-[lnk-tutorial-jobs]: /documentation/articles/iot-hub-device-management-device-jobs
 [lnk-apidocs]: http://azure.github.io/azure-iot-sdks/
 [lnk-query-samples]: https://github.com/Azure/azure-iot-sdks/blob/dmpreview/doc/get_started/dm_queries/query-samples.md
 

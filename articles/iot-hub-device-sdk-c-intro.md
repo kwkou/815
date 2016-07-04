@@ -10,7 +10,7 @@
 <tags
      ms.service="iot-hub"
      ms.date="03/29/2016"
-     wacn.date="05/30/2016"/>
+     wacn.date="07/04/2016"/>
 
 # 适用于 C 语言的 Azure IoT 设备 SDK 简介
 
@@ -39,8 +39,7 @@
   ![](./media/iot-hub-device-sdk-c-intro/02-CFolder.PNG)
 
 * 此 SDK 的核心实现可在 **iothub\_client** 文件夹中找到，此文件夹包含 SDK 的最低 API 层的实现：**IoTHubClient** 库。此 **IoTHubClient** 库包含实现原始消息传送的 API，即将消息发送到 IoT 中心以及从 IoT 中心接收消息。如果你使用此库，就需负责实现消息序列化（最终使用下面描述的序列化程序示例），但与 IoT 中心通信的其他细节则由系统为你处理。
-* **serializer** 文件夹包含帮助器函数和示例代码，演示了使用客户端库向 Azure IoT 中心发送消息之前如何序列化数据。请注意使用序列化程序不是必需的，仅为了提供便利。如果你使用**序列化程序**库，首先需要定义一个模型，以指定要发送到 IoT 中心的事件以及预期要从 IoT 中心接收的消息。定义此模型后，SDK 将提供一个 API 界面，让你轻松处理事件和消息，而无需担心序列化细节。
-此库依赖于其他使用一些协议（AMQP、MQTT）实现传输的开放源代码库。
+* **serializer** 文件夹包含帮助器函数和示例代码，演示了使用客户端库向 Azure IoT 中心发送消息之前如何序列化数据。请注意使用序列化程序不是必需的，仅为了提供便利。如果你使用**序列化程序**库，首先需要定义一个模型，以指定要发送到 IoT 中心的事件以及预期要从 IoT 中心接收的消息。定义此模型后，SDK 将提供一个 API 界面，让你轻松处理事件和消息，而无需担心序列化细节。此库依赖于其他使用一些协议（AMQP、MQTT）实现传输的开放源代码库。
 * **IoTHubClient** 库依赖于其他开放源代码库：
    * [Azure C 共享实用程序](https://github.com/Azure/azure-c-shared-utility)库，此库在一些 Azure 相关的 C SDK 中为所需的基本任务（如字符串、列表操作、IO 等）提供常用功能
    * [Azure uAMQP](https://github.com/Azure/azure-uamqp-c) 库，此库是针对资源约束设备的 AMQP 的客户端实现的优化。
@@ -146,7 +145,10 @@ Windows 版本的 **iothub\_client\_sample\_ampq** 应用程序包含以下 Visu
 
 此解决方案只包含一个项目。值得注意的是，此解决方案中安装了四个 NuGet 包：
 
-  ![](./media/iot-hub-device-sdk-c-intro/17-iothub-client-sample-amqp-githubpackages.PNG)
+- Microsoft.Azure.C.SharedUtility
+- Microsoft.Azure.IoTHub.AmqpTransport
+- Microsoft.Azure.IoTHub.IoTHubClient
+- Microsoft.Azure.uamqp
 
 在使用 SDK 时始终需要 **Microsoft.Azure.C.SharedUtility** 包。由于此示例依赖于 AMQP，因此还必须包括 **Microsoft.Azure.uamqp** 和 **Microsoft.Azure.IoTHub.AmqpTransport** 包（HTTP 和 MQTT 有对应的包）。由于此示例使用 **IoTHubClient** 库，因此还必须在解决方案中包含 **Microsoft.Azure.IoTHub.IoTHubClient** 包。
 
@@ -258,7 +260,11 @@ azure-iot-sdks 存储库中的 **serializer** 文件夹中有一个 **samples** 
 
 如同前面的示例，此示例也包含多个 NuGet 包：
 
-  ![](./media/iot-hub-device-sdk-c-intro/18-simplesample_amqp-githubpackages.PNG)
+- Microsoft.Azure.C.SharedUtility
+- Microsoft.Azure.IoTHub.AmqpTransport
+- Microsoft.Azure.IoTHub.IoTHubClient
+- Microsoft.Azure.IoTHub.Serializer
+- Microsoft.Azure.uamqp
 
 其中的大多数包已在前面的示例中出现过，但 **Microsoft.Azure.IoTHub.Serializer** 是新的。在使用**序列化程序**库时将用到它。
 
@@ -278,7 +284,7 @@ IOTHUB_CLIENT_HANDLE iotHubClientHandle = IoTHubClient_CreateFromConnectionStrin
 ContosoAnemometer* myWeather = CREATE_MODEL_INSTANCE(WeatherStation, ContosoAnemometer);
 ```
 
-对 **serializer\_init** 函数进行的调用是一次性调用，用于初始化基础库。然后，需调用 **IoTHubClient\_CreateFromConnectionString** 函数，这是 **IoTHubClient** 示例中的同一 API。此调用将设置设备连接字符串（也可用于选择要使用的协议）。请注意，本示例使用 AMQP 作为传输方式，但也可以使用 HTTP。
+对 **serializer\_init** 函数进行的调用是一次性调用，用于初始化底层库。然后，需调用 **IoTHubClient\_CreateFromConnectionString** 函数，这是 **IoTHubClient** 示例中的同一 API。此调用将设置设备连接字符串（也可用于选择要使用的协议）。请注意，本示例使用 AMQP 作为传输方式，但也可以使用 HTTP。
 
 最后，调用 **CREATE\_MODEL\_INSTANCE** 函数。请注意，**WeatherStation** 是模型的命名空间，**ContosoAnemometer** 是模型的名称。创建模型实例后，可以使用它来开始发送事件和接收消息。但是，必须了解模型是什么。
 
@@ -375,7 +381,7 @@ void sendCallback(IOTHUB_CLIENT_CONFIRMATION_RESULT result, void* userContextCal
 
 ### 接收消息
 
-接收消息的方式类似于在 **IoTHubClient** 库中接收消息的方式。首先，需要注册消息回调函数：
+接收消息的方式类似于在 **IoTHubClient** 库中处理消息。首先，需要注册消息回调函数：
 
 ```
 IoTHubClient_SetMessageCallback(iotHubClientHandle, IoTHubMessage, myWeather)
@@ -459,5 +465,6 @@ serializer_deinit();
 ## 后续步骤
 
 本文介绍了有关使用**适用于 C 语言的 Azure IoT 设备 SDK**中的库的基本知识。其中提供了足够的信息来让你了解 SDK 中包含哪些组件及其体系结构，以及如何开始使用 Windows 示例。下一篇文章通过讲解[有关 IoTHubClient 库的详细信息](/documentation/articles/iot-hub-device-sdk-c-iothubclient)来继续介绍该 SDK。
+若要了解如何使用**适用于 C 的 Azure IoT 设备 SDK** 中的设备管理功能，请参阅[适用于 C 语言的 Azure IoT 中心设备管理库简介](/documentation/articles/iot-hub-device-management-library)。
 
 <!---HONumber=Mooncake_0307_2016-->

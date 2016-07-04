@@ -10,7 +10,7 @@
 <tags
      ms.service="iot-hub"
      ms.date="04/20/2016"
-     wacn.date="05/30/2016"/>
+     wacn.date="07/04/2016"/>
 
 
 # IoT 网关 SDK（Beta 版）– 使用 Windows 通过模拟设备发送设备至云消息
@@ -22,7 +22,7 @@
 开始之前，必须：
 
 - [设置开发环境][lnk-setupdevbox]，以便在 Windows 上使用 SDK。
-- 在 Azure 订阅中创建 IoT 中心，将需要中心的名称来完成此演练。如果还没有 Azure 订阅，可以获取一个[帐户][lnk-free-trial]。
+- 在 Azure 订阅中[创建 IoT 中心][lnk-create-hub]，将需要中心的名称来完成此演练。如果还没有 Azure 订阅，可以获取一个[帐户][lnk-free-trial]。
 - 将两个设备添加到 IoT 中心，并记下其 ID 和设备密钥。可使用[设备资源管理器或 iothub-explorer][lnk-explorer-tools] 工具来将设备添加到在上一步中创建的 IoT 中心，并检索其密钥。
 
 生成示例：
@@ -47,7 +47,7 @@
     [ 
         {
             "module name" : "IoTHub",
-            "module path" : "C:\\azure-iot-gateway-sdk\\modules\\iothub_http\\Debug\\iothub_http_hl.dll",
+            "module path" : "C:\\azure-iot-gateway-sdk\\modules\\iothubhttp\\Debug\\iothubhttp_hl.dll",
             "args" : 
             {
                 "IoTHubName" : "{Your IoT hub name}",
@@ -56,7 +56,7 @@
         },
         {
             "module name" : "mapping",
-            "module path" : "C:\\azure-iot-gateway-sdk\\modules\\mac_iothub_id_map\\Debug\\mac_iothub_id_map_hl.dll",
+            "module path" : "C:\\azure-iot-gateway-sdk\\modules\\identitymap\\Debug\\identitymap_hl.dll",
             "args" : 
             [
                 {

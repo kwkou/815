@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="04/29/2016"
- wacn.date="05/30/2016"/>
+ wacn.date="07/04/2016"/>
 
 # 引入 Azure IoT 中心设备管理 (DM) 客户端库
 

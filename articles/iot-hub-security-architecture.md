@@ -10,8 +10,8 @@
 
 <tags
  ms.service="iot-hub"
- ms.date="05/16/2016"
- wacn.date="05/30/2016"/>
+ ms.date="06/03/2016"
+ wacn.date="07/04/2016"/>
  
 [AZURE.INCLUDE [iot-security-architecture](../includes/iot-security-architecture.md)]
 
