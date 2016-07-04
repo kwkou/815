@@ -14,7 +14,7 @@
     
 # 使用 Azure DocumentDB 中的地理空间数据
 
-本文将介绍 [Azure DocumentDB](/services/documentdb/) 中的地理空间功能。在阅读本文之后，你将能够回答以下问题：
+本文将介绍 [Azure DocumentDB](/documentation/services/documentdb/) 中的地理空间功能。在阅读本文之后，你将能够回答以下问题：
 
 - 我如何在 Azure DocumentDB 中存储空间数据？
 - 我如何使用 SQL 和 LINQ 查询 Azure DocumentDB 中的地理空间数据？

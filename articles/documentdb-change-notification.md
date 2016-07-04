@@ -541,7 +541,7 @@ QueryDocuments 操作会对 API 应用执行 HTTP POST 操作。
 
 
 
-下一个操作是将文档保存到 [Azure Blog 存储](https://azure.microsoft.com/services/storage/)。
+下一个操作是将文档保存到 [Azure Blog 存储](/documentation/services/storage/)。
 
 > [AZURE.NOTE] Blob 存储需要 Azure 存储帐户。你必须预配 Azure Blob 存储帐户，并添加名为 patients 的新 Blob。有关详细信息，请参阅[开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)。
 
@@ -1152,5 +1152,4 @@ EmailTo | 将会收到电子邮件通知的电子邮件地址
 ## 后续步骤
 请下载并使用 [Github](https://github.com/HEDIDIN/DocDbNotifications) 上提供的逻辑应用代码。竭诚邀请你在该应用程序基础上进行构建，并将更改提交到存储库。
 
-若要详细了解 DocumentDB，请访问[学习路径](https://azure.microsoft.com/documentation/learning-paths/documentdb/)。
 <!---HONumber=Mooncake_0627_2016-->

@@ -113,6 +113,4 @@ Azure 门户中的脚本资源管理器只是在 DocumentDB 中使用存储过�
 
 在[存储过程、数据库触发器和 UDF](/documentation/articles/documentdb-programming) 一文中了解有关 DocumentDB 服务器端编程的详细信息。
 
-[学习路径](/documentation/learning-paths/documentdb/)也是一项有用的资源，它可以指导你了解关于 DocumentDB 的更多信息。
-
 <!---HONumber=Mooncake_0425_2016-->

@@ -178,7 +178,7 @@ Azure 搜索可实现它们称之为[索引器](https://msdn.microsoft.com/libra
 
 由于想要深入了解，你可能会认为自己需要更多数学科学方面的知识才能提取出简单数据库和文件之外的这些模式和信息，其实不然。
 
-[Azure 机器学习](/services/machine-learning/)（[Cortana Intelligence 套件](https://www.microsoft.com/en/server-cloud/cortana-analytics-suite/overview.aspx)的一部分）是一个全面托管的云服务，使你可以在简单的拖放界面中使用算法创建工作流、为 [R] (https://en.wikipedia.org/wiki/R_(programming_language)) 中你自己的算法进行编码，或使用部分已生成的或现有的 API（如[文本分析](https://gallery.cortanaanalytics.com/MachineLearningAPI/Text-Analytics-2)、[内容审查方](https://www.microsoft.com/moderator)或[建议](https://gallery.cortanaanalytics.com/MachineLearningAPI/Recommendations-2)）。
+
 
 ## 结束语
 
@@ -192,5 +192,5 @@ Azure 搜索可实现它们称之为[索引器](https://msdn.microsoft.com/libra
 
 阅读[对 DocumentDB 中的数据进行建模](/documentation/articles/documentdb-modeling-data)一文，了解有关数据建模的详细信息。如需了解 DocumentDB 其他用例信息，请参阅 [DocumentDB 的常见用例](/documentation/articles/documentdb-use-cases)。
 
-或跟随 [DocumentDB 学习路径](/documentation/learning-paths/documentdb/)了解关于 DocumentDB 的详细信息。
+
 <!---HONumber=Mooncake_0627_2016-->

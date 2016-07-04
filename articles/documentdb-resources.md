@@ -115,7 +115,7 @@ DocumentDB REST API 支持资源寻址和由 ID 和 \_rid 属性提出的请求�
 ## 数据库帐户
 你可以使用 Azure 订阅创建一个或多个 DocumentDB 数据库帐户。将给予每个标准层数据库帐户最少一个 S1 集合的容量。
 
-你可以通过在 [http://portal.azure.com/](https://portal.azure.cn/) 的 Azure 门户[创建和管理 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account)。创建和管理数据库帐户需要具有管理访问权限，并且只能在你的 Azure 订阅下执行。
+你可以通过在 [http://portal.azure.cn/](https://portal.azure.cn/) 的 Azure 门户[创建和管理 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account)。创建和管理数据库帐户需要具有管理访问权限，并且只能在你的 Azure 订阅下执行。
 
 ### 数据库帐户属性
 作为设置和管理数据库帐户的一部分，你可以配置并读取以下属性：

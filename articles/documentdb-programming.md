@@ -17,10 +17,6 @@
 
 了解 DocumentDB 的语言如何集成、JavaScript 的事务执行如何使开发人员以 JavaScript 本机编写**存储过程**、**触发器**和**用户定义的函数 (UDF)**。这让你能够编写可以在数据库存储分区上直接传送和执行的数据库程序应用程序逻辑。
 
-我们建议通过观看下面的视频入门，该视频中 Andrew Liu 简单介绍了 DocumentDB 服务器端数据库编程模型。
-
-> [AZURE.VIDEO azure-demo-a-quick-intro-to-azure-documentdbs-server-side-javascript]
-
 然后，返回到本文，你将在其中了解以下问题的答案：
 
 - 如何使用 JavaScript 编写存储过程、触发器或 UDF？

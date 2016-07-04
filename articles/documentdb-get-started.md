@@ -608,6 +608,6 @@ DocumentDB 支持删除 JSON 文档。
 
 [documentdb-create-account]: /documentation/articles/documentdb-create-account
 [documentdb-manage]: /documentation/articles/documentdb-manage
-[keys]: media/documentdb-get-started/nosql-tutorial-keys.png
+[keys]: ./media/documentdb-get-started/nosql-tutorial-keys.png
 
 <!---HONumber=Mooncake_0627_2016-->

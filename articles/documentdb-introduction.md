@@ -11,7 +11,7 @@
 <tags 
 	ms.service="documentdb" 
 	ms.date="03/30/2016" 
-	wacn.date="06/28/2016"/>
+	wacn.date="07/04/2016"/>
 
 # DocumentDB 简介：一种 NoSQL JSON 数据库
 
@@ -19,8 +19,8 @@ Azure DocumentDB 是一个完全托管的 NoSQL 数据库服务，其构建目�
 
 要快速了解此 JSON 数据库和在实际操作中使用该数据库，请遵循以下三个步骤：
 
-1. 观看两分钟的[什么是 DocumentDB？](/documentation/videos/what-is-azure-documentdb/)视频，该视频介绍了使用 DocumentDB 具有哪些优势。
-2. 观看三分钟的[在 Azure 上创建 DocumentDB](/documentation/videos/create-documentdb-on-azure/) 视频，该视频重点介绍了如何通过 Azure 门户开始使用 DocumentDB。
+1. 观看两分钟的[什么是 DocumentDB？](https://azure.microsoft.com/documentation/videos/what-is-azure-documentdb/)视频，该视频介绍了使用 DocumentDB 具有哪些优势。
+2. 观看三分钟的[在 Azure 上创建 DocumentDB](https://azure.microsoft.com/documentation/videos/create-documentdb-on-azure/) 视频，该视频重点介绍了如何通过 Azure 门户开始使用 DocumentDB。
 3. 请访问[数据游乐园](http://www.documentdb.com/sql/demo)，你可以在其中学习不同的查询语法，以便了解 DocumentDB 中提供的丰富的查询功能。接着前往“沙盒”选项卡并运行你自己的自定义 SQL 查询，并对 DocumentDB 进行试用。
 
 然后返回到本文中，我们将更加深入的探讨该数据库，你将了解以下问题的答案：
@@ -99,9 +99,7 @@ DocumentDB 中的 JavaScript 执行是在关系型数据库系统所支持的概
 如果你没有 Azure 帐户，则可以：
 
 - 注册 [Azure 试用版](/pricing/free-trial/)，将为你提供 30 天试用期和 200 美元用于试用所有 Azure 服务。 
-- 如果你有 MSDN 订阅，那么你有资格免费获取[每月 150 美元的 Azure 信用额度](/pricing/member-offers/msdn-benefits-details/)用于任何 Azure 服务。 
 
-然后，当你准备好了解更多信息，请访问我们的[学习途径](https://azure.microsoft.com/documentation/learning-paths/documentdb/)浏览所有可供你使用的学习资源。
 
 
 [1]: ./media/documentdb-introduction/json-database-resources1.png

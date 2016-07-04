@@ -43,7 +43,7 @@ DocumentDB 的一个常见用例就是存储和查询 Web 和移动应用程序�
 
 与各种社交网络集成的应用程序必须响应这些网络中不断更改的架构。由于 DocumentDB 中的数据默认自动编制索引，因此可以随时查询数据。因此，这些应用程序可以根据其各自的需求灵活地检索投影。
 
-许多社交应用程序在全球范围内运行并表现出不可预测的使用模式。因此，当应用程序层能根据用量需求缩放时，缩放数据存储的灵活性至关重要。可通过在 DocumentDB 帐户之下添加额外的数据分区来进行扩大。也可在多个区域中创建额外的 DocumentDB 帐户。有关 DocumentDB 服务区域可使用性的信息，请参阅 [Azure 区域](/regions/#services)。
+许多社交应用程序在全球范围内运行并表现出不可预测的使用模式。因此，当应用程序层能根据用量需求缩放时，缩放数据存储的灵活性至关重要。可通过在 DocumentDB 帐户之下添加额外的数据分区来进行扩大。也可在多个区域中创建额外的 DocumentDB 帐户。有关 DocumentDB 服务区域可使用性的信息，请参阅 [Azure 区域](https://azure.microsoft.com/regions/#services)。
 
 ## 目录数据
 目录数据使用方案涉及存储和查询人员、地点、产品等实体的一组属性。目录数据的部分示例包括用户帐户、产品目录、设备的 IoT 注册表和物料系统清单。此数据的属性可能会随时间的推移而发生变化和更改以满足应用程序要求。
@@ -87,7 +87,7 @@ Microsoft Azure 提供了可为 IoT 用例所利用的丰富服务。Azure IoT �
 
 ## 后续步骤
  
-若要开始使用 DocumentDB，你可以创建一个[帐户](/pricing/free-trial/)，然后按照我们[学习路径](/documentation/learning-paths/documentdb/)了解 DocumentDB 和查找所需的信息。
+若要开始使用 DocumentDB，你可以创建一个[帐户](https://www.azure.cn/pricing/free-trial/)
 
 或者，如果想要了解有关使用 DocumentDB 的客户的详细信息，可以参阅下面的客户案例：
 
