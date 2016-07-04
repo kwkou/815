@@ -183,7 +183,7 @@ Visual Studio ASP.NET 项目提供了一个选项，让您创建可用于应用�
 
 ## 后续步骤
 
-- 使用“Intellitrace”从发布服务器中收集调用和事件的日志。请参阅[使用 IntelliTrace 和 Visual Studio 调试已发布的云服务](http://go.microsoft.com/fwlink/?LinkID=623016)。
+- 使用“Intellitrace”从发布服务器中收集调用和事件的日志。请参阅[使用 IntelliTrace 和 Visual Studio 调试已发布的云服务](/documentation/articles/vs-azure-tools-intellitrace-debug-published-cloud-services/。
 - 使用“Azure 诊断”以记录在角色内运行的代码的详细信息，角色是否在开发环境或 Azure 中运行。请参阅[使用 Azure 诊断收集日志记录数据](/documentation/articles/cloud-services-dotnet-diagnostics/)。
 
 <!---HONumber=Mooncake_0516_2016-->

@@ -20,7 +20,7 @@
 
 - **运行应用会导致 PowerShell 打开、显示错误，然后关闭。浏览器页面未打开。**
 
-	这可能是由于执行 `docker-compose-up` 期间出错。如要查看该错误，请执行以下步骤：
+	这可能是由于执行 **docker-compose-up** 期间出错。如要查看该错误，请执行以下步骤：
 
 	1. 打开 `Properties\launchSettings.json` 文件
 	

@@ -28,13 +28,11 @@
 
 1. 创建默认 Docker 主机实例。
 
-    ```
-    docker-machine create --driver virtualbox default
-    ```
+        docker-machine create --driver virtualbox default
  
 1. 验证默认实例是否已配置且在运行。（你应该会看到名为“default”的实例正在运行。
 
-		docker-machine ls 
+        docker-machine ls
 		
 	![][0]
  

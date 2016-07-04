@@ -1,3 +1,4 @@
+<!-- Remove script center in ACOM -->
 <properties
    pageTitle="使用 Windows PowerShell 脚本发布到开发和测试环境 | Azure"
    description="了解如何使用 Windows PowerShell 脚本通过 Visual Studio 发布到开发和测试环境。"
@@ -331,6 +332,6 @@ JSON 文件是在 **Configurations** 文件夹中创建的，其中包含的配�
 
 ## 后续步骤
 
-请阅读 [Scripting with Windows PowerShell（使用 Windows PowerShell 编写脚本）](https://technet.microsoft.com/zh-cn/library/bb978526.aspx)以详细了解 PowerShell 脚本功能，并在[脚本中心](https://azure.microsoft.com/documentation/scripts/)参阅其他 Azure PowerShell 脚本。
+请阅读 [Scripting with Windows PowerShell（使用 Windows PowerShell 编写脚本）](https://technet.microsoft.com/zh-cn/library/bb978526.aspx)以详细了解 PowerShell 脚本功能。
 
 <!---HONumber=Mooncake_0620_2016-->

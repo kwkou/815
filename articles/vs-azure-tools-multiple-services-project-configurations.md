@@ -55,7 +55,7 @@ Web 角色的属性页与辅助角色的属性页类似，不过存在少许差�
 
 ## “设置”页
 
-可以在“设置”页上为服务添加配置设置。配置设置是名称-值对。角色中运行的代码可以使用 [Azure 托管库](http://go.microsoft.com/fwlink?LinkID=171026)提供的类，在运行时读取配置设置的值。具体而言，[GetConfigurationSettingValue](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getconfigurationsettingvalue.aspx) 方法将在运行时返回命名配置设置的值。
+可以在“设置”页上为服务添加配置设置。配置设置是名称-值对。角色中运行的代码可以使用 [Azure 托管库](https://msdn.microsoft.com/zh-cn/library/azure/dn602775(v=azure.11).aspx)提供的类，在运行时读取配置设置的值。具体而言，[GetConfigurationSettingValue](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getconfigurationsettingvalue.aspx) 方法将在运行时返回命名配置设置的值。
 
 ### 将连接字符串配置为存储帐户
 

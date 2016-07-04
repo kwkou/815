@@ -103,7 +103,6 @@ Visual Studio 2015 Tools for Docker 可让 ASP .NET Core RC2 Web 应用开发人
 - [Docker Tools for Visual Studio Team Services](http://aka.ms/dockertoolsforvsts) - 生成和部署 docker 容器
 - [Docker Tools for Visual Studio Code](http://aka.ms/dockertoolsforvscode) - 用于编辑 docker 文件的语言服务，随后将推出更多 e2e 方案
 - [Windows 容器信息](http://aka.ms/containers) - Windows Server 和 Nano Server 信息
-- [Azure 容器服务](https://azure.microsoft.com/services/container-service/) - [Azure 容器服务内容](http://aka.ms/AzureContainerService)
 
 ## 各种 Docker 工具
 
