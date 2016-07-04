@@ -3,13 +3,13 @@
    description="排查 SQL 数据仓库问题。"
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="TwoUnder"
+   authors="sonyam"
    manager="barbkess"
    editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.date="03/23/2016"
+   ms.date="05/15/2016"
    wacn.date="05/23/2016"/>
 
 # 故障排除
