@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Azure Resource Manager 模板部署 DocumentDB 和 Azure App Service Web Apps | Microsoft Azure" 
+	pageTitle="使用 Azure Resource Manager 模板部署 DocumentDB 和 Azure App Service Web Apps | Azure" 
 	description="了解如何使用 Azure Resource Manager 模板部署 DocumentDB 帐户、Azure App Service Web Apps 以及示例 Web 应用程序。" 
 	services="documentdb, app-service\web" 
 	authors="stephbaron" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="documentdb" 
 	ms.date="05/04/2016" 
-	wacn.date=""/>
+	wacn.date="07/04/2016"/>
 
 # 使用 Azure Resource Manager 模板部署 DocumentDB 和 Azure App Service Web Apps #
 
