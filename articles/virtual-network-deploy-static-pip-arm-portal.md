@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="02/04/2016"
-	wacn.date=""/>
+	wacn.date="07/04/2016"/>
 
 # 使用 Azure 门户预览通过静态公共 IP 部署 VM
 

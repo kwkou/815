@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="04/27/2016"
-	wacn.date=""/>
+	wacn.date="07/04/2016"/>
 
 # 使用模板通过静态公共 IP 部署 VM
 

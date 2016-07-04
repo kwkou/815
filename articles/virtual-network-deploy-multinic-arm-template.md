@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="02/02/2016"
-	wacn.date=""/>
+	wacn.date="07/04/2016"/>
 
 # 使用模板部署多 NIC VM
 
