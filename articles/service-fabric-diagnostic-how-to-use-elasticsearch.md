@@ -52,7 +52,7 @@ Service Fabric 运行时会使用 ETW 来获取诊断信息（跟踪）。它也
 
     用你计算机上的 Git 位置替换 `<Git installation folder>`；默认值为 **"C:\\Program Files\\Git"**。请注意第一个路径开头的分号字符。
 
-4. 确保你已登录到 Azure（通过 [`Add-AzureRmAccount`](https://msdn.microsoft.com/zh-cn/library/mt619267.aspx) cmdlet），并且已选择应该用来创建弹性搜索群集的订阅。你可以使用 `Get-AzureRmContext` 和 `Get-AzureRmSubscription` cmdlet 来验证是否选择了正确的订阅。
+4. 确保你已登录到 Azure（通过 [Add-AzureRmAccount](https://msdn.microsoft.com/zh-cn/library/mt619267.aspx) cmdlet），并且已选择应该用来创建弹性搜索群集的订阅。你可以使用 `Get-AzureRmContext` 和 `Get-AzureRmSubscription` cmdlet 来验证是否选择了正确的订阅。
 
 5. 如果你尚未将当前目录更改为 ES-MultiNode 文件夹，请更改。
 
@@ -231,14 +231,14 @@ namespace Stateless1
 
 Elasticsearch 连接数据应该放在服务配置文件 (**PackageRoot\\Config\\Settings.xml**) 中的单独节中。该节的名称必须与传递给 `FabricConfigurationProvider` 构造函数的值对应，例如：
 
-```xml
-<Section Name="ElasticSearchEventListener">
-  <Parameter Name="serviceUri" Value="http://myBigCluster.chinaeast.chinacloudapp.cn/es/" />
-  <Parameter Name="userName" Value="(ES user name)" />
-  <Parameter Name="password" Value="(ES user password)" />
-  <Parameter Name="indexNamePrefix" Value="myapp" />
-</Section>
-```
+
+	<Section Name="ElasticSearchEventListener">
+  		<Parameter Name="serviceUri" Value="http://myBigCluster.chinaeast.chinacloudapp.cn/es/" />
+  		<Parameter Name="userName" Value="(ES user name)" />
+  		<Parameter Name="password" Value="(ES user password)" />
+  		<Parameter Name="indexNamePrefix" Value="myapp" />
+	</Section>
+
 `serviceUri`、`userName` 和 `password` 的值分别对应于 Elasticsearch 群集终结点地址、Elasticsearch 用户名和密码。`indexNamePrefix` 是 Elasticsearch 索引的前缀；Microsoft.Diagnostics.Listeners 库会每天创建其数据的新索引。
 
 ### 验证

@@ -47,11 +47,11 @@
 
 ## 后续步骤
 ### 创建 Azure 群集
-Service Fabric SDK 提供一个用于开发和测试的本地群集。若要在 Azure 中创建群集，请参阅 [Setting up a Service Fabric cluster from the Azure portal（从 Azure 门户设置 Service Fabric 群集）][create-cluster-in-portal]。
-
+Service Fabric SDK 提供一个用于开发和测试的本地群集。若要在 Azure 中创建群集，请参阅 [Setting up a Service Fabric cluster from the Azure portal（从 Azure 门户预览设置 Service Fabric 群集）][create-cluster-in-portal]。
+<!--
 ### 尝试使用合作群集免费部署到 Azure
 
-如果你要尝试在 Azure 中部署和管理应用程序且不设置自己的群集，可以使用免费的[合作群集服务](http://tryazureservicefabric.chinaeast.chinacloudapp.cn/)。
+如果你要尝试在 Azure 中部署和管理应用程序且不设置自己的群集，可以使用免费的[合作群集服务](http://tryazureservicefabric.chinaeast.chinacloudapp.cn/)。-->
 
 ### 将应用程序发布到 Azure
 可以直接从 Visual Studio 将应用程序发布到 Azure 群集。若要了解操作方法，请参阅 [Publishing your application to Azure（将应用程序发布到 Azure）][publish-app-to-azure]。

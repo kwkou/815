@@ -1,8 +1,8 @@
 
 <!--preview portal-->
 <properties
-   pageTitle="从 Azure 门户创建 Service Fabric 群集 | Azure"
-   description="从 Azure 门户创建 Service Fabric 群集。"
+   pageTitle="从 Azure 门户预览创建 Service Fabric 群集 | Azure"
+   description="从 Azure 门户预览创建 Service Fabric 群集。"
    services="service-fabric"
    documentationCenter=".net"
    authors="ChackDan"
@@ -15,20 +15,20 @@
    wacn.date="07/04/2016"/>
 
 
-# 从 Azure 门户创建 Service Fabric 群集
+# 从 Azure 门户预览创建 Service Fabric 群集
 
 本页面帮助你设置 Azure Service Fabric 群集。订阅必须有足够的核心用于部署将构成此群集的 IaaS VM。
 
 
 ## 搜索 Service Fabric 群集资源
 
-1. 登录到 [Azure 门户](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
 
 2. 单击“+ 新建”添加新的资源模板。在“全部”下面的“应用商店”中搜索你的模板，该模板名为“Service Fabric 群集”。
 
     a.单击顶层的“应用商店”。
 
-    b.在“全部内容”下面输入“Fabric”并按 Enter。有时自动筛选器无法工作，因此请务必按 Enter。![在 Azure 门户上搜索 Service Fabric 群集模板的屏幕截图。][SearchforServiceFabricClusterTemplate]
+    b.在“全部内容”下面输入“Fabric”并按 Enter。有时自动筛选器无法工作，因此请务必按 Enter。![在 Azure 门户预览上搜索 Service Fabric 群集模板的屏幕截图。][SearchforServiceFabricClusterTemplate]
 
 3. 从列表中选择“Service Fabric 群集”。
 
@@ -90,7 +90,7 @@
 
 10. 不需要配置“放置属性”，因为系统添加了“NodeTypeName”的默认放置属性。如果应用程序有需要，可以添加更多属性。
 
-11. 你不需要配置“容量属性”，不过我们建议你配置，因为你可以在应用程序中使用它将负载报告给系统，从而影响系统在 Service Fabric 群集中所做的位置和资源平衡决策。请先阅读[此文档](/documentaiton/articles/service-fabric-cluster-resource-manager-architecture)，以了解有关 Service Fabric 资源平衡的详细信息。
+11. 你不需要配置“容量属性”，不过我们建议你配置，因为你可以在应用程序中使用它将负载报告给系统，从而影响系统在 Service Fabric 群集中所做的位置和资源平衡决策。请先阅读[此文档](/documentation/articles/service-fabric-cluster-resource-manager-architecture)，以了解有关 Service Fabric 资源平衡的详细信息。
 
 12. 针对所有节点类型继续执行上述步骤。
 
@@ -108,7 +108,7 @@
 
 有关安全注意事项和说明的文档，请参阅 [Service Fabric cluster security（Service Fabric 群集安全性）](/documentation/articles/service-fabric-cluster-security)。
 
-![Azure 门户上安全配置的屏幕截图。][SecurityConfigs]
+![Azure 门户预览上安全配置的屏幕截图。][SecurityConfigs]
 
 
 ## 步骤 4 - 完成群集创建
@@ -210,6 +210,7 @@ Connect-serviceFabricCluster -ConnectionEndpoint <Cluster FQDN>:19000 -KeepAlive
 ## 后续步骤
 
 创建群集后，请了解有关保护群集和部署应用的详细信息：
+
 - [在 Visual Studio 中管理 Service Fabric 应用程序](/documentation/articles/service-fabric-manage-application-in-visual-studio)
 - [Service Fabric 群集安全性](/documentation/articles/service-fabric-cluster-security)
 - [Service Fabric 运行状况模型简介](/documentation/articles/service-fabric-health-introduction)

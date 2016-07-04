@@ -39,7 +39,6 @@ Get-AzureRmVmss -ResourceGroupName <RGname> -VMScaleSetName <VM Scale Set name>
 
 当前，自动缩放功能不受应用程序可能向 Service Fabric 报告的负荷所影响。因此当前你获得的自动缩放纯粹受每个 VM 缩放集实例发出的性能计数器所影响。
 
-请按照以下说明[为每个 VM 缩放集设置自动缩放](/documentation/articles/virtual-machine-scale-sets-autoscale-overview)。
 
 >[AZURE.NOTE] 在减少方案中，除非节点类型具有金级或银级持续性级别，否则需要使用相应节点名称来调用 [Remove-ServiceFabricNodeState cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125993.aspx)。
 

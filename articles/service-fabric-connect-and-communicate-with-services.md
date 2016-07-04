@@ -52,13 +52,13 @@ Azure 中的 Service Fabric 群集位于 Azure Load Balancer 之后。发送到�
 
 1. 编写侦听端口 80 的服务。在服务的 ServiceManifest.xml 中配置端口 80，并在服务中打开一个侦听器，例如自承载的 Web 服务器。
  
-    ```xml
-    <Resources>
-        <Endpoints>
-            <Endpoint Name="WebEndpoint" Protocol="http" Port="80" />
-        </Endpoints>
-    </Resources>
-    ```
+
+    	<Resources>
+        	<Endpoints>
+            	<Endpoint Name="WebEndpoint" Protocol="http" Port="80" />
+        	</Endpoints>
+    	</Resources>
+
     ```csharp
         class HttpCommunicationListener : ICommunicationListener
         {
@@ -100,11 +100,11 @@ Azure 中的 Service Fabric 群集位于 Azure Load Balancer 之后。发送到�
 
     ![在节点类型上打开端口][4]
 
-3. 创建了群集之后，在群集的资源组中配置 Azure Load Balancer 以在端口 80 上转发流量。通过 Azure 门户创建群集时，会为每个已配置的自定义终结点端口自动设置此项。
+3. 创建了群集之后，在群集的资源组中配置 Azure Load Balancer 以在端口 80 上转发流量。通过 Azure 门户预览创建群集时，会为每个已配置的自定义终结点端口自动设置此项。
 
     ![在 Azure Load Balancer 中转发流量][5]
 
-4. Azure Load Balancer 使用探测来确定是否要将流量发送到特定节点。探测会定期检查每个节点上的终结点以确定节点是否正在进行响应。如果探测未能在配置的次数之后收到响应，则负载平衡器会停止将流量发送到该节点。通过 Azure 门户创建群集时，会为每个已配置的自定义终结点端口自动设置探测。
+4. Azure Load Balancer 使用探测来确定是否要将流量发送到特定节点。探测会定期检查每个节点上的终结点以确定节点是否正在进行响应。如果探测未能在配置的次数之后收到响应，则负载平衡器会停止将流量发送到该节点。通过 Azure 门户预览创建群集时，会为每个已配置的自定义终结点端口自动设置探测。
 
     ![在 Azure Load Balancer 中转发流量][8]
 
@@ -120,7 +120,7 @@ Reliable Services 框架附带几个预建的通信选项。你可以根据所�
 * **WCF**：如果具备将 WCF 用作通信框架的现有代码，则可将 `WcfCommunicationListener` 用于服务器端，并将 `WcfCommunicationClient` 和 `ServicePartitionClient` 类用于客户端。有关更多详细信息，请参阅有关[通信堆栈的基于 WCF 的实现](/documentation/articles/service-fabric-reliable-services-communication-wcf)的此文章。
 
 ## 使用自定义协议和其他通信框架
-服务可以使用任何协议或框架进行通信，无论它是 TCP 套接字上的自定义二进制协议，还是通过 [Azure 事件中心](/home/features/event-hubs/)或 [Azure IoT 中心](/home/features/services/iot-hub/)实现的流式处理事件。Service Fabric 提供了通信 API，你可以将通信堆栈插入其中，同时将用于发现和连接的所有工作与你分离。有关更多详细信息，请参阅有关 [Reliable Service 通信模型](/documentation/articles/service-fabric-reliable-services-communication)的此文章。
+服务可以使用任何协议或框架进行通信，无论它是 TCP 套接字上的自定义二进制协议，还是通过 [Azure 事件中心](/home/features/event-hubs/)或 [Azure IoT 中心](/home/features/iot-hub/)实现的流式处理事件。Service Fabric 提供了通信 API，你可以将通信堆栈插入其中，同时将用于发现和连接的所有工作与你分离。有关更多详细信息，请参阅有关 [Reliable Service 通信模型](/documentation/articles/service-fabric-reliable-services-communication)的此文章。
 
 ## 后续步骤
 

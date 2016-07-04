@@ -40,21 +40,21 @@ Azure Service Fabric 应用程序包含一个或多个运行你的代码的服�
 
  - 名为 RunAsync 的开放式入口点方法，可在其中开始执行任何工作负荷，包括长时间运行的计算工作负荷。
 
-```csharp
-protected override async Task RunAsync(CancellationToken cancellationToken)
-{
-    ...
-}
-```
+
+		protected override async Task RunAsync(CancellationToken cancellationToken)
+		{
+    		...
+		}
+
 
  - 一个通信入口点，可在其中插入选择的通信堆栈，例如 ASP.NET Web API。这就是你可以开始接收来自用户和其他服务请求的位置。
 
-```csharp
-protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
-{
-    ...
-}
-```
+
+		protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
+		{
+    		...
+		}
+
 
 在本教程中，我们将重点放在 `RunAsync()` 入口点方法上。这是你可以立即开始运行代码的位置。
 项目模板包括 `RunAsync()` 的示例实现，该实现递增滚动计数。
@@ -191,7 +191,7 @@ using (ITransaction tx = this.StateManager.CreateTransaction())
 
 服务开始运行之后，可以在“诊断事件”窗口中查看生成的 Windows 事件跟踪 (ETW) 事件。请注意，应用程序中会同时显示无状态服务和有状态服务的事件。可以通过单击“暂停”按钮来暂停流。然后，可以通过展开该消息来检查消息的详细信息。
 
->[AZURE.NOTE] 在运行应用程序之前，请确保正在运行本地开发群集。有关设置本地环境的信息，请查看[入门指南](service-fabric-get-started.md)。
+>[AZURE.NOTE] 在运行应用程序之前，请确保正在运行本地开发群集。有关设置本地环境的信息，请查看[入门指南](/documentation/articles/service-fabric-get-started)。
 
 ![在 Visual Studio 中查看诊断事件](./media/service-fabric-reliable-services-quick-start/hello-stateful-Output.png)
 
@@ -200,7 +200,7 @@ using (ITransaction tx = this.StateManager.CreateTransaction())
 
 [在 Visual Studio 中调试 Service Fabric 应用程序](/documentation/articles/service-fabric-debugging-your-application)
 
-[入门：Service Fabric Web API 服务与 OWIN 自托管 | Microsoft Azure](/documentation/articles/service-fabric-reliable-services-communication-webapi)
+[入门：Service Fabric Web API 服务与 OWIN 自托管 | Azure](/documentation/articles/service-fabric-reliable-services-communication-webapi)
 
 [深入了解 Reliable Collections](/documentation/articles/service-fabric-reliable-services-reliable-collections)
 

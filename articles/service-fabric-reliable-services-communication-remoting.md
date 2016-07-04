@@ -60,13 +60,13 @@ class MyService : StatelessService, IMyService
 若要使用远程处理堆栈在服务上调用方法，可以通过 `Microsoft.ServiceFabric.Services.Remoting.Client.ServiceProxy` 类对此服务使用本地代理。`ServiceProxy` 方法通过使用此服务实现的相同接口来创建本地代理。使用此代理，你只需在此接口上远程调用方法。
 
 
-```csharp
 
-IHelloWorldStateful helloWorldClient = ServiceProxy.Create<IHelloWorldStateful>(new Uri("fabric:/MyApplication/MyHelloWorldService"));
 
-string message = await helloWorldClient.GetHelloWorld();
+	IHelloWorldStateful helloWorldClient = ServiceProxy.Create<IHelloWorldStateful>(new Uri("fabric:/MyApplication/MyHelloWorldService"));
 
-```
+	string message = await helloWorldClient.GetHelloWorld();
+
+
 
 此远程处理框架将服务引发的异常传播到客户端。因此，在客户端使用 `ServiceProxy` 的异常处理逻辑可直接处理服务引发的异常。
 

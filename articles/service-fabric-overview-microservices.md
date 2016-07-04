@@ -142,7 +142,7 @@ Service Fabric 的目标是将使用微服务方法构建应用程序时的复�
 	* [Service Fabric 概述](/documentation/articles/service-fabric-overview)
 
 
-[Image1]: media/service-fabric-overview-microservices/monolithic-vs-micro.png
-[Image2]: media/service-fabric-overview-microservices/statemonolithic-vs-micro.png
+[Image1]: ./media/service-fabric-overview-microservices/monolithic-vs-micro.png
+[Image2]: ./media/service-fabric-overview-microservices/statemonolithic-vs-micro.png
 
 <!---HONumber=Mooncake_0425_2016-->

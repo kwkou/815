@@ -181,12 +181,12 @@ SetupEntrypoint 元素用于指定在启动服务代码之前应执行的任何�
 
 ### 终结点
 
-```xml
-<Endpoints>
-   <Endpoint Name="NodeAppTypeEndpoint" Protocol="http" Port="3000" Type="Input" />
-</Endpoints>
 
-```
+	<Endpoints>
+   		<Endpoint Name="NodeAppTypeEndpoint" Protocol="http" Port="3000" Type="Input" />
+	</Endpoints>
+
+
 `Endpoint` 元素指定应用程序可以侦听的终结点。在此示例中，Node.js 应用程序侦听端口 3000。
 
 ## 编辑应用程序清单文件

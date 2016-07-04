@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 MongoDB 部署 Node.js 应用程序 | Microsoft Azure"
+   pageTitle="使用 MongoDB 部署 Node.js 应用程序 | Azure"
    description="演练如何打包多个来宾可执行文件以部署到 Azure Service Fabric 群集"
    services="service-fabric"
    documentationCenter=".net"
@@ -100,36 +100,36 @@
 ```
 在此示例中，Node.js Web 服务器会侦听端口 3000，所以你需要更新 ServiceManifest.xml 文件中的终结点信息，如下所示。
 
-```xml
-<Resources>
-      <Endpoints>
-     	<Endpoint Name="NodeServiceEndpoint" Protocol="http" Port="3000" Type="Input" />
-      </Endpoints>
-</Resources>
-```
+
+	<Resources>
+      	<Endpoints>
+     		<Endpoint Name="NodeServiceEndpoint" Protocol="http" Port="3000" Type="Input" />
+      	</Endpoints>
+	</Resources>
+
 既然你已打包 Node.js 应用程序，你可以继续打包 MongoDB。如前文所述，你现在进行的步骤并非特定于 Node.js 和 MongoDB 的步骤。事实上，它们适用于所有要打包在一起以作为一个 Service Fabric 应用程序的应用程序。
 
 为了打包 MongoDB，你会想要确定你打包 Mongod.exe 和 Mongo.exe。这两个二进制文件都位于 MongoDB 安装目录的 `bin` 目录中。目录结构类似于下面的结构。
 
-```
-|-- MongoDB
-	|-- bin
-        |-- mongod.exe
-        |-- mongo.exe
-        |-- anybinary.exe
-```
+
+	|-- MongoDB
+		|-- bin
+        	|-- mongod.exe
+        	|-- mongo.exe
+        	|-- anybinary.exe
+
 Service Fabric 需要使用类似于下面的命令来启动 MongoDB，因此打包 MongoDB 时，你需要使用 `/ma` 参数。
 
-```
-mongod.exe --dbpath [path to data]
-```
+
+	mongod.exe --dbpath [path to data]
+
 > [AZURE.NOTE] 如果你将 MongoDB 数据目录放在节点的本地目录中，当节点发生故障时，将不会保留数据。你应该使用持久存储或实现 MongoDB 副本集以防止数据丢失。
 
 在 PowerShell 或命令行界面中，我们会使用下列参数来运行打包工具：
 
-```
-.\ServiceFabricAppPackageUtil.exe /source: [yourdirectory]\MongoDB' /target:'[yourtargetdirectory]' /appname:MongoDB /exe:'bin\mongod.exe' /ma:'--dbpath [path to data]' /AppType:NodeAppType
-```
+
+	.\ServiceFabricAppPackageUtil.exe /source: [yourdirectory]\MongoDB' /target:'[yourtargetdirectory]' /appname:MongoDB /exe:'bin\mongod.exe' /ma:'--dbpath [path to data]' /AppType:NodeAppType
+
 
 为了将 MongoDB 添加到你的 Service Fabric 应用程序包，你必须确定 /target 参数指向已经包含应用程序清单及 Node.js 应用程序的同一个目录。此外，还需要确定你使用的是相同的 ApplicationType 名称。
 
@@ -137,58 +137,58 @@ mongod.exe --dbpath [path to data]
 
 让我们浏览到该目录并检查已创建的工具。
 
-```
-|--[yourtargetdirectory]
-    |-- MyNodeApplication
-    |-- MongoDB
-        |-- C
-            |--bin
-                |-- mongod.exe
-                |-- mongo.exe
-                |-- etc.
-        |-- config
-		    |--Settings.xml
-	    |-- ServiceManifest.xml
-    |-- ApplicationManifest.xml
-```
+
+	|--[yourtargetdirectory]
+    	|-- MyNodeApplication
+    	|-- MongoDB
+        	|-- C
+            	|--bin
+                	|-- mongod.exe
+                	|-- mongo.exe
+                	|-- etc.
+        	|-- config
+		    	|--Settings.xml
+	    	|-- ServiceManifest.xml
+    	|-- ApplicationManifest.xml
+
 如你所见，工具已将新文件夹“MongoDB”添加到包含 MongoDB 二进制文件的目录中。如果打开 `ApplicationManifest.xml` 文件，可以看到包现在包含 Node.js 应用程序和 MongoDB。以下代码会显示应用程序清单的内容。
 
-```xml
-<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="MyNodeApp" ApplicationTypeVersion="1.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
-   <ServiceManifestImport>
-      <ServiceManifestRef ServiceManifestName="MongoDB" ServiceManifestVersion="1.0" />
-   </ServiceManifestImport>
-   <ServiceManifestImport>
-      <ServiceManifestRef ServiceManifestName="NodeService" ServiceManifestVersion="1.0" />
-   </ServiceManifestImport>
-   <DefaultServices>
-      <Service Name="MongoDBService">
-         <StatelessService ServiceTypeName="MongoDB">
-            <SingletonPartition />
-         </StatelessService>
-      </Service>
-      <Service Name="NodeServiceService">
-         <StatelessService ServiceTypeName="NodeService">
-            <SingletonPartition />
-         </StatelessService>
-      </Service>
-   </DefaultServices>
-</ApplicationManifest>  
-```
+
+	<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="MyNodeApp" ApplicationTypeVersion="1.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+   	<ServiceManifestImport>
+      	<ServiceManifestRef ServiceManifestName="MongoDB" ServiceManifestVersion="1.0" />
+   	</ServiceManifestImport>
+   	<ServiceManifestImport>
+      	<ServiceManifestRef ServiceManifestName="NodeService" ServiceManifestVersion="1.0" />
+   	</ServiceManifestImport>
+   	<DefaultServices>
+      	<Service Name="MongoDBService">
+         	<StatelessService ServiceTypeName="MongoDB">
+            	<SingletonPartition />
+         	</StatelessService>
+      	</Service>
+      	<Service Name="NodeServiceService">
+         	<StatelessService ServiceTypeName="NodeService">
+            	<SingletonPartition />
+         	</StatelessService>
+      	</Service>
+   	</DefaultServices>
+	</ApplicationManifest>  
+
 
 最后一个步骤是要使用以下 PowerShell 脚本，将应用程序发布到本地 Service Fabric 群集：
 
-```
-Connect-ServiceFabricCluster localhost:19000
 
-Write-Host 'Copying application package...'
-Copy-ServiceFabricApplicationPackage -ApplicationPackagePath '[yourtargetdirectory]' -ImageStoreConnectionString 'file:C:\SfDevCluster\Data\ImageStoreShare' -ApplicationPackagePathInImageStore 'NodeAppType'
+	Connect-ServiceFabricCluster localhost:19000
 
-Write-Host 'Registering application type...'
-Register-ServiceFabricApplicationType -ApplicationPathInImageStore 'NodeAppType'
+	Write-Host 'Copying application package...'
+	Copy-ServiceFabricApplicationPackage -ApplicationPackagePath '[yourtargetdirectory]' -ImageStoreConnectionString 'file:C:\SfDevCluster\Data\ImageStoreShare' -ApplicationPackagePathInImageStore 'NodeAppType'
 
-New-ServiceFabricApplication -ApplicationName 'fabric:/NodeApp' -ApplicationTypeName 'NodeAppType' -ApplicationTypeVersion 1.0  
-```
+	Write-Host 'Registering application type...'
+	Register-ServiceFabricApplicationType -ApplicationPathInImageStore 'NodeAppType'
+
+	New-ServiceFabricApplication -ApplicationName 'fabric:/NodeApp' -ApplicationTypeName 'NodeAppType' -ApplicationTypeVersion 1.0  
+
 
 >[AZURE.NOTE] 使用 Visual Studio，可以通过调试 (F5) 或使用发布向导在本地发布应用程序。
 

@@ -21,7 +21,7 @@ Azure Service Fabric 允许在运行 Windows Server 的任何虚拟机或计算�
 
 >[AZURE.NOTE] 此独立产品目前以预览版提供。如果你想要立即下载一份 EULA，请[单击此处](http://go.microsoft.com/fwlink/?LinkID=733084)。
 
-<a id="downloadpackage">
+<a id="downloadpackage"></a>
 ## 下载 Service Fabric 独立包
 
 
@@ -110,10 +110,12 @@ Azure Service Fabric 允许在运行 Windows Server 的任何虚拟机或计算�
 - [群集安全性](/documentation/articles/service-fabric-cluster-security)
 
 若要开始开发和部署应用，请阅读以下文章：
+
 - [Service Fabric SDK 及其入门](/documentation/articles/service-fabric-get-started)
 - [在 Visual Studio 中管理 Service Fabric 应用程序](/documentation/articles/service-fabric-manage-application-in-visual-studio)。
 
 阅读有关 Azure 群集和独立群集的详细信息：
+
 - [Overview of the standalone cluster creation feature and a comparison with Azure-managed clusters（独立群集创建功能的概述及其与 Azure 托管群集的比较）](/documentation/articles/service-fabric-deploy-anywhere)
 
 <!---HONumber=Mooncake_0627_2016-->

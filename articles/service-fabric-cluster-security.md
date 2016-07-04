@@ -36,7 +36,7 @@ Service Fabric 群集是你拥有的资源。为了防止未经授权访问资�
 
 当你创建群集时，Service Fabric 将使用指定为节点类型配置一部分的 X.509 服务器证书。本文末尾概述了这些证书是什么，以及如何获取或创建这些证书。
 
-在 Azure 上运行的群集也可以使用 Azure Active Directory (AAD) 来保护对管理终结点的访问。若要了解如何创建所需的 AAD 项目、如何在创建群集时填充这些项目，以及之后如何连接到这些群集，请参阅 [Create a Service Fabric cluster using Azure Active Directory for client authentication](service-fabric-cluster-security-client-auth-with-aad.md)（创建使用 Azure Active Directory 进行客户端身份验证的 Service Fabric 群集）。
+在 Azure 上运行的群集也可以使用 Azure Active Directory (AAD) 来保护对管理终结点的访问。若要了解如何创建所需的 AAD 项目、如何在创建群集时填充这些项目，以及之后如何连接到这些群集，请参阅 [Create a Service Fabric cluster using Azure Active Directory for client authentication](service-fabric-cluster-security-client-auth-with-aad)（创建使用 Azure Active Directory 进行客户端身份验证的 Service Fabric 群集）。
 
 ## 基于角色的访问控制 (RBAC)
 访问控制可让群集管理员针对不同的用户组限制特定群集操作的访问权限，使群集更加安全。连接到群集的客户端支持两种不同的访问控制类型：管理员和用户。管理员对管理功能（包括读取/写入功能）拥有完全访问权限。默认情况下，用户只有管理功能的读取访问权限（例如查询功能），以及解析应用程序和服务的能力。可在创建群集时为每个角色提供不同的证书，以指定管理员和用户客户端角色。有关默认访问控制设置以及如何更改默认设置的详细信息，请参阅 [Role based access control for clients](/documentation/articles/service-fabric-cluster-security-roles)（客户端的基于角色的访问控制）。

@@ -21,45 +21,45 @@ Service Fabric 群集资源管理器不是负责处理管理操作（如应用�
 
 有关资源管理器何时发出运行状况警告的另一个示例是你定义了放置约束（例如 "NodeColor == Blue"），而资源管理器检测到违反该约束的情况。对于自定义约束以及资源管理器强制实施的默认约束（例如容错域和升级域约束），我们将采取这两种措施。下面是此类运行状况报告的示例。在这种情况下，运行状况报告适用于系统服务的分区之一，因为该分区的副本暂时打包成少量的升级域，这类似于连续失败时发生的情况：
 
-```posh
-PS C:\Users\User > Get-WindowsFabricPartitionHealth -PartitionId '00000000-0000-0000-0000-000000000001'
+
+	PS C:\Users\User > Get-WindowsFabricPartitionHealth -PartitionId '00000000-0000-0000-0000-000000000001'
 
 
-PartitionId           : 00000000-0000-0000-0000-000000000001
-AggregatedHealthState : Warning
-UnhealthyEvaluations  :
-                        Unhealthy event: SourceId='System.PLB', Property='ReplicaConstraintViolation_UpgradeDomain', HealthState='Warning', ConsiderWarningAsError=false.
+	PartitionId           : 00000000-0000-0000-0000-000000000001
+	AggregatedHealthState : Warning
+	UnhealthyEvaluations  :
+                        	Unhealthy event: SourceId='System.PLB', Property='ReplicaConstraintViolation_UpgradeDomain', HealthState='Warning', ConsiderWarningAsError=false.
 
-ReplicaHealthStates   :
-                        ReplicaId             : 130766528804733380
-                        AggregatedHealthState : Ok
+	ReplicaHealthStates   :
+                        	ReplicaId             : 130766528804733380
+                        	AggregatedHealthState : Ok
 
-                        ReplicaId             : 130766528804577821
-                        AggregatedHealthState : Ok
+                        	ReplicaId             : 130766528804577821
+                        	AggregatedHealthState : Ok
 
-                        ReplicaId             : 130766528854889931
-                        AggregatedHealthState : Ok
+                        	ReplicaId             : 130766528854889931
+                        	AggregatedHealthState : Ok
 
-                        ReplicaId             : 130766528804577822
-                        AggregatedHealthState : Ok
+                        	ReplicaId             : 130766528804577822
+                        	AggregatedHealthState : Ok
 
-                        ReplicaId             : 130837073190680024
-                        AggregatedHealthState : Ok
+                        	ReplicaId             : 130837073190680024
+                        	AggregatedHealthState : Ok
 
-HealthEvents          :
-                        SourceId              : System.PLB
-                        Property              : ReplicaConstraintViolation_UpgradeDomain
-                        HealthState           : Warning
-                        SequenceNumber        : 130837100116930204
-                        SentAt                : 8/10/2015 7:53:31 PM
-                        ReceivedAt            : 8/10/2015 7:53:33 PM
-                        TTL                   : 00:01:05
-                        Description           : The Load Balancer has detected a Constraint Violation for this Replica: fabric:/System/FailoverManagerService Secondary Partition 00000000-0000-0000-0000-000000000001 is
-                        violating the Constraint: UpgradeDomain Details: Node -- 3d1a4a68b2592f55125328cd0f8ed477  Policy -- Packing
-                        RemoveWhenExpired     : True
-                        IsExpired             : False
-                        Transitions           : Ok->Warning = 8/10/2015 7:13:02 PM, LastError = 1/1/0001 12:00:00 AM
-```
+	HealthEvents          :
+                        	SourceId              : System.PLB
+                        	Property              : ReplicaConstraintViolation_UpgradeDomain
+                        	HealthState           : Warning
+                        	SequenceNumber        : 130837100116930204
+                        	SentAt                : 8/10/2015 7:53:31 PM
+                        	ReceivedAt            : 8/10/2015 7:53:33 PM
+                        	TTL                   : 00:01:05
+                        	Description           : The Load Balancer has detected a Constraint Violation for this Replica: fabric:/System/FailoverManagerService Secondary Partition 00000000-0000-0000-0000-000000000001 is
+                        	violating the Constraint: UpgradeDomain Details: Node -- 3d1a4a68b2592f55125328cd0f8ed477  Policy -- Packing
+                        	RemoveWhenExpired     : True
+                        	IsExpired             : False
+                        	Transitions           : Ok->Warning = 8/10/2015 7:13:02 PM, LastError = 1/1/0001 12:00:00 AM
+
 
 下面是此运行状况消息指出的情况：
 

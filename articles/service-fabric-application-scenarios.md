@@ -61,7 +61,7 @@ Azure 中的 Service Fabric 平台非常适合以下类别的应用程序和服�
 
 [Service Fabric 服务分区](/documentation/articles/service-fabric-concepts-partitioning)
 
-[Image1]: media/service-fabric-application-scenarios/AppwithStatelessServices.jpg
-[Image2]: media/service-fabric-application-scenarios/AppwithStatefulServices.jpg
+[Image1]: ./media/service-fabric-application-scenarios/AppwithStatelessServices.jpg
+[Image2]: ./media/service-fabric-application-scenarios/AppwithStatefulServices.jpg
 
 <!---HONumber=Mooncake_0418_2016-->

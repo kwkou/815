@@ -39,7 +39,7 @@ Service Fabric 群集提供其管理功能的各种入口点（包括基于 Web 
     .\SetupApplications.ps1 -TenantId '690ec069-8200-4068-9d01-5aaf188e557a' -ClusterName 'mycluster' -WebApplicationReplyUrl 'https://mycluster.chinaeast.chinacloudapp.cn:19080/Explorer/index.html'
     ```
 
-    可以通过在 Azure 管理门户中查看租户的 URL 来查找 **TenantId**。该 URL 中嵌入的 GUID 就是 TenantId。例如：
+    可以通过在 Azure 经典管理门户中查看租户的 URL 来查找 **TenantId**。该 URL 中嵌入的 GUID 就是 TenantId。例如：
 
     https://<i></i>manage.windowsazure.cn/microsoft.onmicrosoft.com#Workspaces/ActiveDirectoryExtension/Directory/**690ec069-8200-4068-9d01-5aaf188e557a**/users
 
@@ -49,7 +49,7 @@ Service Fabric 群集提供其管理功能的各种入口点（包括基于 Web 
 
     https://&lt;cluster_domain&gt;:19080/Explorer
 
-    系统将提示你登录到具有 AAD 租户管理权限的帐户。在你完成此操作后，脚本将继续创建 Web 和本机应用程序来代表 Service Fabric 群集。如果你在 [Azure 管理门户][azure-management-portal]中查看租户的应用程序，应会看到两个新条目：
+    系统将提示你登录到具有 AAD 租户管理权限的帐户。在你完成此操作后，脚本将继续创建 Web 和本机应用程序来代表 Service Fabric 群集。如果你在 [Azure 经典管理门户][azure-management-portal]中查看租户的应用程序，应会看到两个新条目：
 
     - *ClusterName*\_Cluster
     - *ClusterName*\_Client
@@ -78,7 +78,7 @@ clusterApplication 表示在上一部分创建的 Web 应用程序。你可以�
 
 ## 将用户分配到角色
 
-创建用于表示群集的应用程序后，需要将用户分配到 Service Fabric 支持的角色：只读和管理员。可以使用 [Azure 管理门户][azure-management-portal]来执行此操作。
+创建用于表示群集的应用程序后，需要将用户分配到 Service Fabric 支持的角色：只读和管理员。可以使用 [Azure 经典管理门户][azure-management-portal]来执行此操作。
 
 1. 导航到你的租户，然后选择“应用程序”。
 2. 选择名称类似于 `myTestCluster_Cluster` 的 Web 应用程序。

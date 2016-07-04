@@ -66,7 +66,7 @@
 
 4.	登录到 Azure PowerShell：
 
-    a.运行命令 `Login-AzureRmAccount`。
+    a.运行命令 `Login-AzureRmAccount -EnvironmentName AzureChinaCloud`。
 
     b.在出现的对话框中，输入你的 Azure 凭据。
 
@@ -96,7 +96,7 @@
 | --- | --- |
 | KeyVaultLocation | 任何值。此参数必须与你打算在其中创建群集的位置匹配。 |
 | CertificateSecretName | 任何值。 |
-| CertificateDnsName | 必须匹配群集的 DNS 名称。示例：`mycluster.westus.azure.cloudapp.net` |
+| CertificateDnsName | 必须匹配群集的 DNS 名称。 |
 | SecureCertificatePassword | 任何值。在生成计算机上导入证书时，使用此参数。 |
 | KeyVaultResourceGroupName | 任何值。但是，请勿使用计划用于群集的资源组名称。 |
 | KeyVaultName | 任何值。 |
@@ -116,7 +116,7 @@
 
 如果还没有计算机，可以使用预安装的 Visual Studio 2015 快速预配 Azure 虚拟机 (VM)。为此，请按以下步骤操作：
 
-1. 登录到 [Azure 门户](https://portal.azure.cn)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
 
 2. 选择屏幕左上角的“新建”命令。
 
@@ -403,7 +403,7 @@
 
 前面的说明为每个生成创建新的群集，并在生成的末尾删除它。如果你希望改为让每个生成执行应用程序升级（到现有群集），请使用以下步骤：
 
-1.	按照[这些说明](/documentation/articles/service-fabric-cluster-creation-via-portal)，通过 Azure 门户或 Azure PowerShell 手动创建测试群集。
+1.	按照[这些说明](/documentation/articles/service-fabric-cluster-creation-via-portal)，通过 Azure 门户预览或 Azure PowerShell 手动创建测试群集。
 
 2.	按照[这些说明](/documentation/articles/service-fabric-visualstudio-configure-upgrade)配置发布配置文件，以支持应用程序升级。
 
