@@ -1,6 +1,6 @@
 <properties
 	pageTitle="使用 Resource Manager 执行审核操作 | Azure"
-	description="使用资源管理器中的审核日志查看用户操作和错误。显示 Azure 门户、PowerShell、Azure CLI 和 REST。"
+	description="使用资源管理器中的审核日志查看用户操作和错误。显示 PowerShell、Azure CLI 和 REST。"
 	services="azure-resource-manager"
 	documentationCenter=""
 	authors="tfitzmac"
@@ -26,35 +26,7 @@
 
 本主题着重于审核操作。若要了解如何使用审核日志对部署进行故障排除，请参阅 [Azure 中的资源组部署故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal)。
 
-可以通过 Azure 门户、Azure PowerShell、Azure CLI、Insights REST API 或 [Insights .NET 库](https://www.nuget.org/packages/Microsoft.Azure.Insights/)检索审核日志中的信息。
-
-## 查看审核日志的门户
-
-1. 若要通过门户查看审核日志，请先选择“浏览”，然后选择“审核日志”。
-
-    ![选择审核日志](./media/resource-group-audit/select-audit-logs.png)
-
-2. 在“审核日志”边栏选项卡中，你将看到订阅中所有资源组的最新操作摘要。其中包括表示操作的时间与状态的图形，以及操作的列表。
-
-    ![显示操作](./media/resource-group-audit/audit-summary.png)
-
-3. 若要查看特定类型的操作，你可以通过筛选让相关操作显示在审核日志边栏选项卡中。选择边栏选项卡顶部的“筛选”。
-
-    ![筛选日志](./media/resource-group-audit/filter-logs.png)
-
-4. 在“筛选器”边栏选项卡中，你可以选择许多不同的条件来限制显示的操作数。例如，你可以查看特定用户在过去一周执行的所有操作。
-
-    ![设置筛选选项](./media/resource-group-audit/set-filter.png)
-
-更新审核日志的视图之后，你只会看到符合指定条件的操作。下次你查看审核日志时，这些设置仍会保留，因此可能需要更改这些值才能扩展操作视图。
-
-你还可以自动筛选特定的资源，只需从该资源边栏选项卡中选择审核日志即可。在门户中，选择要审核的资源，然后选择“审核日志”。
-
-![审核资源](./media/resource-group-audit/audit-by-resource.png)
-
-请注意，将通过过去一周的所选资源对审核日志进行自动筛选。
-
-![按资源筛选](./media/resource-group-audit/filtered-by-resource.png)
+可以通过 Azure PowerShell、Azure CLI、Insights REST API 或 [Insights .NET 库](https://www.nuget.org/packages/Microsoft.Azure.Insights/)检索审核日志中的信息。
 
 ## 查看审核日志的 PowerShell
 
