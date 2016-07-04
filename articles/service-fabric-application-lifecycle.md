@@ -35,7 +35,7 @@
 3. 随后，应用程序开发人员构建使用不同服务类型的应用程序。
 4. 应用程序开发人员以声明的方式，通过引用构成服务的服务清单并相应地重写并参数化构成服务的不同配置与部署设置，描述了应用程序清单中的应用程序类型。
 
-有关示例，请参阅 [Reliable Actors 入门](service-fabric-reliable-actors-get-started.md)和 [Reliable Services 入门](/documentation/articles/service-fabric-reliable-services-quick-start)。
+有关示例，请参阅 [Reliable Actors 入门](/documentation/articles/service-fabric-reliable-actors-get-started)和 [Reliable Services 入门](/documentation/articles/service-fabric-reliable-services-quick-start)。
 
 ## 部署
 1. 应用程序管理员通过在应用程序清单中指定相应的 **ApplicationType** 元素的参数，将定制应用程序类型定制为将被部署到 Service Fabric 群集的特定应用程序。
