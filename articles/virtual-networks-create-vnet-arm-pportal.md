@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="03/15/2016"
-	wacn.date=""/>
+	wacn.date="07/04/2016"/>
 
 # 使用 Azure 门户预览创建虚拟网络
 

@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-network"
 	ms.date="02/23/2016"
-	wacn.date=""/>
+	wacn.date="07/04/2016"/>
 
 #在 Resource Manager 中使用模板创建用户定义的路由 (UDR)
 

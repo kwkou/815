@@ -13,7 +13,7 @@
 <tags  
    ms.service="virtual-network"
    ms.date="02/04/2016"
-   wacn.date="" />
+   wacn.date="07/04/2016" />
 
 # 如何使用门户预览管理 NSG
 
