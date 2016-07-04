@@ -1,3 +1,4 @@
+<!-- Remove data-factory -->
 <properties
    pageTitle="Azure SQL 数据仓库最佳实践 | Azure"
    description="开发 Azure SQL 数据仓库解决方案时应了解的建议和最佳实践。这些内容可帮助你取得成功。"
@@ -42,7 +43,7 @@ SQL 数据仓库的一个重要功能，是能够在不使用它时予以暂停�
 ## 使用 PolyBase 快速加载和导出数据
 SQL 数据仓库支持通过多种工具（包括 Azure 数据工厂、PolyBase、BCP）来加载和导出数据。对于少量的数据，性能不是那么重要，任何工具都可以满足需求。但是，当要加载或导出大量数据，或者需要快速的性能时，PolyBase 是最佳选择。PolyBase 使用 SQL 数据仓库的 MPP（大规模并行处理）体系结构，因此加载和导出巨量数据的速度比其他任何工具更快。可使用 CTAS 或 INSERT INTO 来运行 PolyBase 加载。**使用 CTAS 可以减少事务日志记录，是加载数据最快的方法。** Azure 数据工厂也支持 PolyBase 加载。PolyBase 支持各种不同的文件格式，包括 Gzip 文件。**若要在使用 gzip 文本文件时获得最大的吞吐量，请将文件分成 60 个以上的文件让加载有最大化的并行度。** 若要更快的总吞吐量，请考虑并行加载数据。
 
-另请参阅 [Load data into SQL Data Warehouse][]（将数据载入 SQL 数据仓库）、[Guide for using PolyBase in SQL Data Warehouse][]（在 SQL 数据仓库中使用 PolyBase 的指南）、[Azure SQL Data Warehouse loading patterns and strategies][]（Azure SQL 数据仓库加载模式和策略）、[Load Data with Azure Data Factory][]（使用 Azure 数据工厂加载数据）、[Move data to and from Azure SQL Data Warehouse using Azure Data Factory][]（使用 Azure 数据工厂将数据移入和移出 Azure SQL 数据仓库）、[CREATE EXTERNAL FILE FORMAT (Transact-SQL)][]、[Create Table As Select (CTAS) in SQL Data Warehouse][]（SQL 数据仓库中的 Create Table As Select (CTAS)）
+另请参阅 [Load data into SQL Data Warehouse][]（将数据载入 SQL 数据仓库）、[Guide for using PolyBase in SQL Data Warehouse][]（在 SQL 数据仓库中使用 PolyBase 的指南）、[Azure SQL Data Warehouse loading patterns and strategies][]（Azure SQL 数据仓库加载模式和策略）、[CREATE EXTERNAL FILE FORMAT (Transact-SQL)][]、[Create Table As Select (CTAS) in SQL Data Warehouse][]（SQL 数据仓库中的 Create Table As Select (CTAS)）
 
 ## 哈希分布大型表
 默认情况下，表是以轮循机制分布的。这可让用户更容易开始创建表，而不必确定应该如何分布其表。轮循机制表在某些工作负荷中执行良好，但通常选择分布列的执行性能将更好。按列分布表的性能远远高于轮循机制表的最常见例子是联接两个大型事实表。例如，如果有一个依 order\_id 分布的订单表，以及一个也是依 order\_id 分布的事务表，如果将订单数据联接到事务表上的 order\_id，此查询将变成传递查询，也就是数据移动操作将被消除。更少的步骤代表更快的查询。更少的数据移动也将让查询更快。这种解释只是大致的梗概。加载分布的表时，请确保传入数据的分布键没有排序，因为这将拖慢加载速度。有关选择分布列如何能提升性能，以及如何在 CREATE TABLES 语句的 WITH 子句中定义分布表的详细信息，请参阅以下链接。
@@ -117,9 +118,9 @@ SQL 数据仓库有多个 DMV 可用于监视查询执行。以下监视相关�
 [Monitor your workload using DMVs]: /documentation/articles/sql-data-warehouse-manage-monitor
 [Move data to and from Azure SQL Data Warehouse using Azure Data Factory]: /documentation/articles/data-factory-azure-sql-data-warehouse-connector
 [Optimizing transactions for SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-best-practices-transactions
-[Pause compute resources]: /documentation/articles/sql-data-warehouse-overview-scalability#pause-compute-bk
-[Resume compute resources]: /documentation/articles/sql-data-warehouse-overview-scalability#resume-compute-bk
-[Scale compute resources]: /documentation/articles/sql-data-warehouse-overview-scalability#scale-performance-bk
+[Pause compute resources]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#pause-compute-bk
+[Resume compute resources]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#resume-compute-bk
+[Scale compute resources]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#scale-performance-bk
 [Table design in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-table-design
 [Table partitions in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-table-partitions
 [Temporary tables in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-temporary-tables

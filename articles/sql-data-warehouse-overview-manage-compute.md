@@ -1,3 +1,4 @@
+<!-- manage-portal only in ibiza portal -->
 <properties
    pageTitle="管理 Azure SQL 数据仓库中的计算能力（概述）| Azure"
    description="Azure SQL 数据仓库中的性能横向扩展功能。通过调整 DWU 数目进行横向扩展，或者通过暂停和恢复计算资源来节省成本。"
@@ -57,7 +58,6 @@ DWU 以 100 个块为单位进行分配，但并非所有块都可用。DWU 增�
  
 若要调整 DWU，可以使用以下任何单个方法。
 
-- [通过 Azure 门户缩放计算能力][]
 - [通过 PowerShell 缩放计算能力][]
 - [通过 REST API 缩放计算能力][]
 - [通过 TSQL 缩放计算能力][]
@@ -93,7 +93,6 @@ SQL 数据仓库的性能以线性方式缩放，在几秒内就能从某个计�
 
 若要暂停数据库，请使用下列任意方法之一。
 
-- [通过 Azure 门户暂停计算][]
 - [通过 PowerShell 暂停计算][]
 - [通过 REST API 暂停计算][]
 
@@ -105,7 +104,6 @@ SQL 数据仓库的性能以线性方式缩放，在几秒内就能从某个计�
 
 若要恢复数据库，请使用下列任意方法之一。
 
-- [通过 Azure 门户恢复计算][]
 - [通过 PowerShell 恢复计算][]
 - [通过 REST API 恢复计算][]
 
@@ -123,19 +121,16 @@ SQL 数据仓库的性能以线性方式缩放，在几秒内就能从某个计�
 
 <!--Article references-->
 
-[通过 Azure 门户缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-tasks-portal#task-1-scale-performance
-[通过 PowerShell 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-tasks-powershell#task-1-scale-performance
-[通过 REST API 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-tasks-rest-api#task-1-scale-performance
-[通过 TSQL 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-tasks-tsql
+[通过 PowerShell 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-powershell#task-1-scale-performance
+[通过 REST API 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-rest-api#task-1-scale-performance
+[通过 TSQL 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-tsql
 
 [容量限制]: /documentation/articles/sql-data-warehouse-service-capacity-limits
 
-[通过 Azure 门户暂停计算]: /documentation/articles/sql-data-warehouse-manage-scale-out-tasks#task-2-pause-compute
-[通过 PowerShell 暂停计算]: /documentation/articles/sql-data-warehouse-manage-scale-out-tasks-powershell#task-2-pause-compute
-[通过 REST API 暂停计算]: /documentation/articles/sql-data-warehouse-manage-scale-out-tasks-rest-api#task-2-pause-compute
-[通过 Azure 门户恢复计算]: /documentation/articles/sql-data-warehouse-manage-scale-out-tasks#task-3-resume-compute
-[通过 PowerShell 恢复计算]: /documentation/articles/sql-data-warehouse-manage-scale-out-tasks-powershell#task-3-resume-compute
-[通过 REST API 恢复计算]: /documentation/articles/sql-data-warehouse-manage-scale-out-tasks-rest-api#task-3-resume-compute
+[通过 PowerShell 暂停计算]: /documentation/articles/sql-data-warehouse-manage-compute-powershell/#scale-compute-bk
+[通过 REST API 暂停计算]: /documentation/articles/sql-data-warehouse-manage-compute-rest-api/#scale-compute-bk
+[通过 PowerShell 恢复计算]: /documentation/articles/sql-data-warehouse-manage-compute-powershell/#resume-compute-bk
+[通过 REST API 恢复计算]: /documentation/articles/sql-data-warehouse-manage-compute-rest-api/#resume-compute-bk
 
 [并发模型]: /documentation/articles/sql-data-warehouse-develop-concurrency
 [设计表]: /documentation/articles/sql-data-warehouse-develop-table-design

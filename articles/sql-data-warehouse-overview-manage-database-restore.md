@@ -1,3 +1,4 @@
+<!-- This page was renamed sql-data-warehouse-restore-database-overview in ACOM -->
 <properties
    pageTitle="Azure SQL 数据仓库中的数据还原（概述）| Azure"
    description="在 Azure SQL 数据仓库中恢复数据库时的数据库还原选项概述。"
@@ -70,7 +71,7 @@
 [Azure 存储冗余选项]: /documentation/articles/storage-redundancy#read-access-geo-redundant-storage
 [Backup and restore tasks]: /documentation/articles/sql-data-warehouse-database-restore-portal
 [Finalize a recovered database]: /documentation/articles/sql-database-recovered-finalize
-[管理概述]: /documentation/articles/sql-data-warehouse-overview-management
+[管理概述]: /documentation/articles/sql-database-business-continuity/
 
 <!--MSDN references-->
 
