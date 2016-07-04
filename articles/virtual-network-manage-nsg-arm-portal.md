@@ -130,7 +130,7 @@
 
 ![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure12.png)
 
-### 取消 NSG 与 NIC 之间的关联
+###<a name="Dissociate-an-NSG-from-a-NIC"></a> 取消 NSG 与 NIC 之间的关联
 
 若要取消 **NSG-FrontEnd** NSG 与 **TestNICWeb1** NIC 之间的关联，请按照以下步骤进行操作。
 
@@ -141,7 +141,7 @@
 
 >[AZURE.NOTE] 还可使用此边栏选项卡将 NIC 关联到任意现有 NSG。
 
-### 取消 NSG 与子网之间的关联
+###<a name="Dissociate-an-NSG-from-a-subnet"></a> 取消 NSG 与子网之间的关联
 
 若要取消 **NSG-FrontEnd** NSG 与 **FrontEnd** 子网之间的关联，请按照以下步骤进行操作。
 
@@ -176,7 +176,7 @@
 6. 如果列出了任何子网，请单击子网，并按照[取消 NSG 与 NIC 之间的关联](#Dissociate-an-NSG-from-a-subnet)中的步骤 2 和步骤 3 进行操作。
 7. 向左滚动到“NSG-FrontEnd”边栏选项卡，然后单击“删除”>“是”。
 
-[Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure16.png)
+![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure16.png)
 
 ## 后续步骤
 
