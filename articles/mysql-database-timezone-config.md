@@ -1,10 +1,10 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL on Azure上的时区配置 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,时区配置,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="在MySQL on Azure上如何配置时区" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />  
 
-<tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
+<tags ms.service="mysql" ms.date="" wacn.date="07/04/2016" wacn.lang="cn" />
 
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/mysql-database-timezone-config)
-- [In English](/documentation/articles/mysql-database-enus-timezone-config)
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/mysql-database-timezone-config)
+- [English](/documentation/articles/mysql-database-enus-timezone-config)
 
 ## MySQL on Azure上的时区配置
 

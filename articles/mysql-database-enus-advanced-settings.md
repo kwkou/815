@@ -1,11 +1,11 @@
 <properties linkid="" urlDisplayName="" pageTitle="Setting MySQL Database on Azure Server Parameters – Azure Cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, parameters, customization, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL Database on Azure supports customizing some parameters to your own requirements. We will help you to understand the selectable ranges and intervals for different parameters." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
+<tags ms.service="mysql" ms.date="07/04/2016" wacn.date="" wacn.lang="en" />
 
 #Setting MySQL Database on Azure server parameters
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/mysql-database-advanced-settings)
-- [In English](/documentation/articles/mysql-database-enus-advanced-settings)
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/mysql-database-advanced-settings)
+- [English](/documentation/articles/mysql-database-enus-advanced-settings)
 
 MySQL Database on Azure supports custom settings for some parameters. The following table lists these parameters, their default values, and their selectable ranges.
 

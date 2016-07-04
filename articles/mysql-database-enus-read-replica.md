@@ -1,12 +1,12 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL Service Questions – Microsoft Azure Cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, FAQ, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="Provides quick answers for common technical questions encountered by users when using MySQL Database on Azure. Contact technical support if you have any further questions." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="05/28/2016" wacn.date="05/28/2016"/>
+<tags ms.service="mysql" ms.date="07/04/2016" wacn.date="" wacn.lang="en" />
 
 # MySQL master-subordinate replication and read-only instances
 
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/mysql-database-read-replica)
-- [In English](/documentation/articles/mysql-database-enus-read-replica)
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/mysql-database-read-replica)
+- [English](/documentation/articles/mysql-database-enus-read-replica)
 
 
 The **MySQL Database on Azure** option on the Azure portal supports the use of the replicate function to create subordinate instances, also known as slave instances, for a MySQL instance. All changes to the master instance will be replicated to the subordinate instance. You can use this function as a simple way to implement flexible expansion and overcome the access restrictions on an individual database instance, which reduces the running load and increases availability.
