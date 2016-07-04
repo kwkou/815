@@ -76,7 +76,7 @@ Azure AD 允许对支持 SAML 2.0、WS 联合身份验证或 OpenID Connect 协�
 
 对于基于密码的 SSO，最终用户的浏览器可以是：
 
-- Windows 7 或更高版本上的 Internet Explorer 8、9、10 和 11（另请参阅 [IE Extension Deployment Guide（IE 扩展部署指南）](/documentation/articles/active-directory-saas-ie-group-policy.m)）
+- Windows 7 或更高版本上的 Internet Explorer 8、9、10 和 11（另请参阅 [IE Extension Deployment Guide（IE 扩展部署指南）](/documentation/articles/active-directory-saas-ie-group-policy)）
 - Chrome -- 在 Windows 7 或更高版本上，以及在 MacOS X 或更高版本上
 - Firefox 26.0 或更高版本 -- 在 Windows XP SP2 或更高版本上，以及在 Mac OS X 10.6 或更高版本上
 

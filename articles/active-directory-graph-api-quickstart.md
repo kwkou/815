@@ -88,7 +88,7 @@ Azure Active Directory (AD) 图形 API 通过 OData REST API 终结点提供对 
 
 4. 在紧靠在“发布”下拉列表下面的字段中，键入以下内容：
 
-    ```
+
 Host: graph.windows.net
 Authorization: your access token
 Content-Type: application/json

@@ -27,7 +27,7 @@
 	- **现有 Microsoft 帐户的用户** – 将现有 Microsoft 使用者帐户添加到你的目录（例如 Outlook 帐户）
 	- **另一个 Azure AD 目录中的用户** - 将源自另一个 Azure AD 目录的用户帐户添加到你的目录。仅当你也是另一目录的成员时，才可以选择该目录中的用户。
 5. 根据“用户类型”输入用户名、电子邮件地址，或者上载指定了电子邮件地址的 CSV 文件。
-6. 在该用户的“配置文件”页上，提供名字和姓氏、用户友好名称，并从“角色”列表中选择用户角色。有关用户和管理员角色的详细信息，请参阅 [Assigning administrator roles in Azure AD（在 Azure AD 中分配管理员角色）](active-directory-assign-admin-roles.md)。指定是否要**启用 Multi-Factor Authentication**。
+6. 在该用户的“配置文件”页上，提供名字和姓氏、用户友好名称，并从“角色”列表中选择用户角色。有关用户和管理员角色的详细信息，请参阅 [Assigning administrator roles in Azure AD（在 Azure AD 中分配管理员角色）](/documentation/articles/active-directory-assign-admin-roles)。指定是否要**启用 Multi-Factor Authentication**。
 7. 在“获取临时密码”页上，选择“创建”。
 
 > [AZURE.IMPORTANT]

@@ -138,7 +138,7 @@ SRE 是一个资源套件工具，将随 Azure AD Connect 同步一起安装。�
 
 举例来说，我们将查看同步规则“In from AD – User AccountEnabled”。我们将在 SRE 中标记此行，并选择“编辑”。
 
-由于这是一条现成的规则，因此在打开该规则时将看到警告。你不应该[对现成规则进行任何更改](active-directory-aadconnectsync-best-practices-changing-default-configuration)，因此系统会询问你的意图为何。在本例中，你只想要查看规则，因此请选择“否”。
+由于这是一条现成的规则，因此在打开该规则时将看到警告。你不应该[对现成规则进行任何更改](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration)，因此系统会询问你的意图为何。在本例中，你只想要查看规则，因此请选择“否”。
 
 ![入站同步规则](./media/active-directory-aadconnectsync-understanding-default-configuration/warningeditrule.png)
 
