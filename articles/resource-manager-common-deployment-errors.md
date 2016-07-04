@@ -6,7 +6,7 @@
    tags=""
    authors="tfitzmac"
    manager="timlt"
-   editor=""/>
+   editor="tysonn"/>
 
 <tags
    ms.service="azure-resource-manager"
@@ -15,9 +15,19 @@
 
 # 解决使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误
 
-本主题介绍如何解决将资源部署到 Azure 时可能遇到的一些常见错误。有关排查部署问题的信息，请参阅 [Troubleshooting resource group deployments](/documentation/articles/resource-manager-troubleshoot-deployments-portal)（对资源组部署进行故障排除）。
+本主题介绍如何解决将资源部署到 Azure 时可能遇到的一些常见错误。有关排查部署问题的信息，请参阅 [Troubleshooting resource group deployments（对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal)。
 
-如果部署之前先验证模板和参数，则可以避免一些错误。有关验证模板的示例，请参阅 [Deploy resources with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy)（使用 Azure Resource Manager 模板部署资源）。
+如果部署之前先验证模板和参数，则可以避免一些错误。有关验证模板的示例，请参阅 [Deploy resources with Azure Resource Manager template（使用 Azure Resource Manager 模板部署资源）](/documentation/articles/resource-group-template-deploy)。
+
+## 无效的模板或资源
+
+如果收到的错误指出模板或资源的属性无效，则你的模板可能缺少字符。使用模板表达式时容易出此错误，因为该表达式括在引号中，因此 JSON 仍然进行验证，而你的编辑器可能未检测到此错误。例如，存储帐户的以下名称分配包含一组方括号、三个函数、三组圆括号、一组单引号和一个属性：
+
+    "name": "[concat('storage', uniqueString(resourceGroup().id))]",
+
+如果未提供所有匹配的语法，该模板将生成一个与你的意图有很大差异的值。
+
+你将收到一个错误，指出模板或资源无效，具体取决于缺少的字符在模板中的位置。该错误也可能会指出部署过程无法处理模板语言表达式。当你收到此类错误时，请仔细检查表达式语法。
 
 ## 资源名称已存在
 
@@ -28,7 +38,7 @@
 
 ## 部署期间找不到资源
 
-如果可能，Resource Manager 将通过并行创建资源来优化部署。如果资源必须在另一个资源之后部署，则你需要在模板中使用 **dependsOn** 元素创建与其他资源的依赖关系。例如，在部署 Web 应用时，App Service 计划必须存在。如果未指定该 Web 应用与 App Service 计划的依赖关系，Resource Manager 将同时创建这两个资源。你将收到一条错误消息，指出找不到 App Service 计划资源，因为尝试在 Web 应用上设置属性时它尚不存在。在 Web 应用中设置依赖关系可避免此错误。
+如果可能，Resource Manager 将通过并行创建资源来优化部署。如果一个资源必须在另一个资源之后部署，则你需要在模板中使用 **dependsOn** 元素创建与其他资源的依赖关系。例如，在部署 Web 应用时，App Service 计划必须存在。如果未指定该 Web 应用与 App Service 计划的依赖关系，Resource Manager 将同时创建这两个资源。你将收到一条错误消息，指出找不到 App Service 计划资源，因为尝试在 Web 应用上设置属性时它尚不存在。在 Web 应用中设置依赖关系可避免此错误。
 
     {
       "apiVersion": "2015-08-01",
@@ -46,7 +56,7 @@
 
 ### PowerShell
 
-使用 **Get-AzureRmResourceProvider** 获取特定资源提供程序的支持类型和位置。
+使用 **Get-AzureRmResourceProvider** 获取特定资源提供程序支持的类型和位置。
 
     Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web
 
@@ -110,7 +120,7 @@
     serviceRequestId:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
     statusMessage:{"error":{"code":"OperationNotAllowed","message":"Operation results in exceeding quota limits of Core. Maximum allowed: 4, Current in use: 4, Additional requested: 2."}}
 
-或者在 PowerShell 中，使用 **Get-AzureRmVMUsage** cmdlet。
+或者在 PowerShell 中，可以使用 **Get-AzureRmVMUsage** cmdlet。
 
     Get-AzureRmVMUsage
     
@@ -198,6 +208,10 @@
 
 若要注册提供程序，请参阅[使用资源提供程序注册订阅](https://msdn.microsoft.com/zh-cn/library/azure/dn790548.aspx)。
 
+## 自定义脚本扩展错误
+
+如果在部署虚拟机时遇到自定义脚本扩展错误，请参阅 [Troubleshooting Azure Windows VM extension failures（排查 Azure Windows VM 扩展失败错误）](/documentation/articles/virtual-machines-windows-extensions-troubleshoot)或 [Troubleshooting Azure Linux VM extension failures（排查 Azure Linux VM 扩展失败错误）](/documentation/articles/virtual-machines-linux-extensions-troubleshoot)。
+
 ## 了解部署何时准备就绪 
 
 Azure Resource Manager 部署成功返回所有提供程序时，将报告部署成功。但是，这不一定表示你的资源组“处于活动状态且可供用户使用”。例如，部署可能需要下载升级文件、等待其他非模板资源，或者安装复杂的脚本或 Azure 不知道的其他某个可执行活动（因为它不是提供程序正在跟踪的活动）。在这些情况下，可能要在一段时间后，你的资源才可供实际使用。因此，你应该预料到部署状态成功一段时间后，才能使用部署。
@@ -206,6 +220,7 @@ Azure Resource Manager 部署成功返回所有提供程序时，将报告部署
 
 ## 后续步骤
 
-- 若要了解审核操作，请参阅 [Audit operations with Resource Manager](/documentation/articles/resource-group-audit)（使用资源管理器执行审核操作）。
+- 若要了解审核操作，请参阅 [Audit operations with Resource Manager（使用 Resource Manager 执行审核操作）](/documentation/articles/resource-group-audit)。
+- 若要了解部署期间为确定错误执行哪些操作，请参阅 [Troubleshooting resource group deployments（对资源组部署进行故障排除）](/documentation/articles/resource-manager-troubleshoot-deployments-portal)。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0620_2016-->

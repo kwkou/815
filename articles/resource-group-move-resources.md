@@ -1,16 +1,16 @@
 <properties 
-	pageTitle="将资源移到新的资源组" 
-	description="使用 Azure PowerShell 或 REST API 将资源移到 Azure 资源管理器的新的资源组中。" 
+	pageTitle="将资源移到新的资源组 | Azure" 
+	description="使用 Azure Resource Manager 将资源移到新的资源组或订阅。" 
 	services="azure-resource-manager" 
 	documentationCenter="" 
 	authors="tfitzmac" 
-	manager="wpickett" 
-	editor=""/>
+	manager="timlt" 
+	editor="tysonn"/>
 
 <tags 
 	ms.service="azure-resource-manager" 
 	ms.date="05/12/2016" 
-	wacn.date="06/20/2016"/>
+	wacn.date="06/27/2016"/>
 
 # 将资源移动到新的资源组或订阅中
 
