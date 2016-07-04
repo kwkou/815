@@ -173,7 +173,7 @@ DocumentDB 是真正无架构的数据库系统。无需为 JSON 文档假设或
 -	选择是否要在索引中包括特定的路径或文档中的模式或从索引中将其排除。你可以通过分别设置集合中的 indexingPolicy 上的 includedPaths 和 excludedPaths 来实现这一点。你还可以配置用于特定路径模式的存储和性能权衡的范围和哈希查询。 
 -	在同步（一致）和异步（延迟）索引更新之间进行选择。默认情况下，每次在集合中插入、替换或删除文档时同步更新索引。这个行为让查询能够使用与文档读取相同的一致性级别。虽然 DocumentDB 针对写入进行了优化，且支持文档持续写入，以及同步索引维护和提供一致的查询服务，但你也可以配置某些集合，使其索引延迟更新。延迟索引编制可大大提高写入性能，非常适合主要具有大量读取操作的集合的批量引入方案。
 
-可以通过对集合执行 PUT 更改索引策略。这可以通过[客户端 SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx)、[Azure 门户](https://portal.azure.com) 或 [Azure DocumentDB REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 来实现。
+可以通过对集合执行 PUT 更改索引策略。这可以通过[客户端 SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx)、[Azure 门户](https://portal.azure.cn) 或 [Azure DocumentDB REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 来实现。
 
 ### 查询集合
 集合中的文档可以具有任意的数据库架构，而你无需提前提供任何架构或辅助索引，就可以查询集合中的文档。你可以使用 [DocumentDB SQL 语法](https://msdn.microsoft.com/library/azure/dn782250.aspx)查询集合，该语法通过基于 JavaScript 的 UDF 提供丰富的分层、关系和空间运算符以及扩展性。JSON 语法允许将 JSON 文档建模为树，其中标签作为树节点。DocumentDB 的自动索引编制技术和 DocumentDB SQL 方言都利用了此语法。DocumentDB 查询语言包含三个主要方面：
@@ -440,9 +440,9 @@ DocumentDB 用户是指对权限进行分组的逻辑命名空间。DocumentDB �
 有关通过 HTTP 命令使用资源的详细信息，请参阅 [RESTful interactions with DocumentDB resources（RESTful 与 DocumentDB 资源的交互）](https://msdn.microsoft.com/library/azure/mt622086.aspx)。
 
 
-[1]: media/documentdb-resources/resources1.png
-[2]: media/documentdb-resources/resources2.png
-[3]: media/documentdb-resources/resources3.png
+[1]: ./media/documentdb-resources/resources1.png
+[2]: ./media/documentdb-resources/resources2.png
+[3]: ./media/documentdb-resources/resources3.png
 
 
 <!---HONumber=Mooncake_0425_2016-->

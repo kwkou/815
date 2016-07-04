@@ -19,7 +19,7 @@
 
 我已使用 BizTalk 服务器许多年，这是使用 [WCF LOB 适配器](https://msdn.microsoft.com/library/bb798128.aspx)时非常常见的案例。因此，我决定试试看能否在 DocumentDB 中对新增和/或已修改的文档重现此功能。
 
-本文概述了更改通知解决方案的组件，其中包括[触发器](/documentation/articles/documentdb-programming#trigger)和[逻辑应用](/documentation/articles/app-service-logic-what-are-logic-apps)。重要代码段以内联方式提供，你可以在 [GitHub](https://github.com/HEDIDIN/DocDbNotifications) 上获取整个解决方案。
+本文概述了更改通知解决方案的组件，其中包括[触发器](/documentation/articles/documentdb-programming#trigger)。重要代码段以内联方式提供，你可以在 [GitHub](https://github.com/HEDIDIN/DocDbNotifications) 上获取整个解决方案。
 
 ## 使用案例
 
@@ -56,15 +56,15 @@ IT 部门表示他们可以轻松提供此通知。他们还表示可以将文�
 
 3. 将此值 POST 到 API 应用，这会进行 DocumentDB 查询。此值用于查询中。
 
-    ```SQL
+    SQL
      	SELECT * FROM Patients p WHERE (p._ts >= @unixTimeStamp)
-    ```
+    
 
-    > [AZURE.NOTE] \_ts 表示所有 DocumentDB 资源的时间戳元数据。
+> [AZURE.NOTE] \_ts 表示所有 DocumentDB 资源的时间戳元数据。
 
 4. 如果找到文档，则会将响应正文发送到 Azure Blob 存储。
 
-    > [AZURE.NOTE] Blob 存储需要 Azure 存储帐户。你必须预配 Azure Blob 存储帐户，并添加名为 patients 的新 Blob。有关详细信息，请参阅[关于 Azure 存储帐户](../storage/storage-create-storage-account.md)和[开始使用 Azure Blob 存储](../storage/storage-dotnet-how-to-use-blobs.md)。
+> [AZURE.NOTE] Blob 存储需要 Azure 存储帐户。你必须预配 Azure Blob 存储帐户，并添加名为 patients 的新 Blob。有关详细信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)和[开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)。
 
 5. 最后会发送电子邮件，通知收件人已找到的文档数目。如果找不到任何文档，电子邮件正文将为“0 Documents Found”。
 
@@ -543,7 +543,7 @@ QueryDocuments 操作会对 API 应用执行 HTTP POST 操作。
 
 下一个操作是将文档保存到 [Azure Blog 存储](https://azure.microsoft.com/services/storage/)。
 
-> [AZURE.NOTE] Blob 存储需要 Azure 存储帐户。你必须预配 Azure Blob 存储帐户，并添加名为 patients 的新 Blob。有关详细信息，请参阅[开始使用 Azure Blob 存储](../storage/storage-dotnet-how-to-use-blobs.md)。
+> [AZURE.NOTE] Blob 存储需要 Azure 存储帐户。你必须预配 Azure Blob 存储帐户，并添加名为 patients 的新 Blob。有关详细信息，请参阅[开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)。
 
 ### 创建文件
 
@@ -620,7 +620,7 @@ QueryDocuments 操作会对 API 应用执行 HTTP POST 操作。
 
 此代码通过设计器中的操作生成。你不需要修改此代码。
 
-如果不熟悉如何使用 Azure Blob API，请参阅[开始使用 Azure Blob 存储 API](../connectors/connectors-create-api-azureblobstorage.md)。
+如果不熟悉如何使用 Azure Blob API，请参阅[开始使用 Azure Blob 存储 API](/documentation/articles/connectors-create-api-azureblobstorage)。
 
 #### 操作
 
@@ -1099,7 +1099,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 
 		powershell
 		
-			ArmClient.exe post https://management.azure.com/subscriptions/[YOUR SUBSCRIPTION ID/resourcegroups/[YOUR RESOURCE GROUP]/providers/Microsoft.Logic/workflows/[YOUR LOGIC APP NAME/triggers/manual/listcallbackurl?api-version=2015-08-01-preview
+			ArmClient.exe post https://management.azure.cn/subscriptions/[YOUR SUBSCRIPTION ID/resourcegroups/[YOUR RESOURCE GROUP]/providers/Microsoft.Logic/workflows/[YOUR LOGIC APP NAME/triggers/manual/listcallbackurl?api-version=2015-08-01-preview
 
 
 
