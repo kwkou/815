@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="02/20/2016"
-	wacn.date=""/>
+	wacn.date="07/04/2016"/>
 
 # v2.0 终结点的类型
 v2.0 终结点支持各种现代应用体系结构的身份验证，所有这些体系结构基于行业标准协议 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols#oauth2-authorization-code-flow) 和/或 [OpenID Connect](/documentation/articles/active-directory-v2-protocols#openid-connect-sign-in-flow)。本文档简要介绍你可以构建的应用类型（无论你使用哪种语言或平台）。其中将会帮助你了解一些高级方案，然后你便可以[开始编写代码](/documentation/articles/active-directory-appmodel-v2-overview#getting-started)。

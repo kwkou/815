@@ -12,7 +12,7 @@
    <tags
       ms.service="active-directory"
       ms.date="03/28/2016"
-      wacn.date=""/>
+      wacn.date="07/04/2016"/>
 
 # Azure AD 图形 API 快速入门
 
@@ -76,7 +76,7 @@ Azure Active Directory (AD) 图形 API 通过 OData REST API 终结点提供对 
 
 在以下示例中，你将使用 Fiddler Web 调试器在 Azure AD 目录中创建一个新的安全组“MyTestGroup”。
 
-**获取访问令牌**：若要访问 Azure AD Graph，客户端需要先成功地向 Azure AD 进行身份验证。有关详细信息，请参阅 [Azure AD 的身份验证方案](active-directory-authentication-scenarios.md)。
+**获取访问令牌**：若要访问 Azure AD Graph，客户端需要先成功地向 Azure AD 进行身份验证。有关详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios)。
 
 **编写和运行查询**：请完成以下步骤。
 
@@ -92,20 +92,19 @@ Azure Active Directory (AD) 图形 API 通过 OData REST API 终结点提供对 
 Host: graph.windows.net
 Authorization: your access token
 Content-Type: application/json
-```
 
-    > [AZURE.NOTE] 将 &lt;your access token&gt; 替换为你的 Azure AD 目录的访问令牌。
+ > [AZURE.NOTE] 将 &lt;your access token&gt; 替换为你的 Azure AD 目录的访问令牌。
 
 5. 在“请求正文”字段中键入以下内容：
 
-    ```
+    
         {
             "displayName":"MyTestGroup",
             "mailNickname":"MyTestGroup",
             "mailEnabled":"false",
             "securityEnabled": true
         }
-```
+
 
     有关创建组的详细信息，请参阅[创建组](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/groups-operations#CreateGroup)。
 

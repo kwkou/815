@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="04/20/2016"
-	wacn.date=""/>
+	wacn.date="07/04/2016"/>
 
 # 将自定义域名添加到 Azure Active Directory
 
@@ -45,7 +45,7 @@
 
 如果未与本地 Windows Server Active Directory 联合，DNS 条目位于“添加域”向导的第二页。
 
-如果你要配置用于联合的域，将定向到下载 Azure AD Connect 工具的页。请运行 Azure AD Connect 工具来[获取需要在域名注册机构添加的 DNS 条目](active-directory-aadconnect-get-started-custom.md#verify-the-azure-ad-domain-selected-for-federation)。Azure AD Connect 工具也会验证 Azure AD 的域名。
+如果你要配置用于联合的域，将定向到下载 Azure AD Connect 工具的页。请运行 Azure AD Connect 工具来[获取需要在域名注册机构添加的 DNS 条目](/documentation/articles/active-directory-aadconnect-get-started-custom#verify-the-azure-ad-domain-selected-for-federation)。Azure AD Connect 工具也会验证 Azure AD 的域名。
 
 ## 将 DNS 条目添加到 DNS 区域文件
 
@@ -71,7 +71,7 @@
 
 4.  在命令栏上选择“验证”，然后在对话框中选择“验证”。
 
-祝贺你操作成功！ 现在，你可以[分配包含自定义域名的用户名](active-directory-add-domain-add-users.md)。如果在验证域名时遇到任何问题，请参阅[故障排除](#troubleshooting)部分。
+祝贺你操作成功！ 现在，你可以[分配包含自定义域名的用户名](/documentation/articles/active-directory-add-domain-add-users)。如果在验证域名时遇到任何问题，请参阅[故障排除](#troubleshooting)部分。
 
 ## 故障排除
 无法验证自定义域名的原因有多种。我们从最常见到最不常见的原因逐一分析。

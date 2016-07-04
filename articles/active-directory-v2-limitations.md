@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="03/18/2016"
-	wacn.date=""/>
+	wacn.date="07/04/2016"/>
 # 我是否应使用 v2.0 终结点？
 
 当你创建与 Azure Active Directory 集成的应用程序时，必须判断 v2.0 终结点和身份验证协议是否符合需求。原有的 Azure AD 应用模型依然完全受到支持，并且在某些方面比 v2.0 的功能更丰富。但是，v2.0 终结点为开发人员[带来了明显的优势](/documentation/articles/active-directory-v2-compare)，使你更乐于使用新的编程模型。随着时间的推移，v2.0 将发展到包含所有 Azure AD 功能，到时你只需使用 v2.0 终结点即可。
