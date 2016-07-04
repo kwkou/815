@@ -4,14 +4,14 @@
 	keywords="应用程序开发, 数据库教程, 了解 node.js, node.js 教程, documentdb, azure, Microsoft azure"
 	services="documentdb" 
 	documentationCenter="nodejs" 
-	authors="ryancrawcour" 
+	authors="aliuy" 
 	manager="jhubbard" 
 	editor="cgronlun"/>
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="02/03/2016" 
-	wacn.date="06/29/2016"/>
+	ms.date="04/18/2016" 
+	wacn.date="07/04/2016"/>
 
 # <a name="_Toc395783175"></a>使用 DocumentDB 生成 Node.js Web 应用程序
 
@@ -44,7 +44,7 @@
 
 在按照本文中的说明操作之前，你应确保已拥有下列项：
 
-- 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/free-trial/)。
+- 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/free-trial/)。
 - [Node.js][] 版本 v0.10.29 或更高版本。
 - [Express 生成器](http://www.expressjs.com/starter/generator.html)（你可以通过 `npm install express-generator -g` 安装它）
 - [Git][]。
@@ -179,8 +179,7 @@
 				
 		module.exports = DocDBUtils;
 
-> [AZURE.TIP] createCollection 采用一个用以指定集合 Offer 类型的可选 requestOptions 参数。如果没有提供任何 requestOptions.offerType 值，则将使用默认 Offer 类型创建集合。
-有关 DocumentDB Offer 类型的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels)
+> [AZURE.TIP] createCollection 采用一个用以指定集合 Offer 类型的可选 requestOptions 参数。如果没有提供任何 requestOptions.offerType 值，则将使用默认 Offer 类型创建集合。有关 DocumentDB Offer 类型的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels)
 		
 3. 保存并关闭 **docdbUtils.js** 文件。
 
@@ -570,4 +569,4 @@
 [Github]: https://github.com/Azure-Samples/documentdb-node-todo-app
  
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0627_2016-->

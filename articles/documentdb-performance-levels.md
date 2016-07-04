@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="04/08/2016" 
-	wacn.date=""/>
+	ms.date="05/16/2016" 
+	wacn.date="07/04/2016"/>
 
 # DocumentDB 中的性能级别
 
@@ -171,4 +171,4 @@ DocumentDB 集合允许你根据应用程序的查询模式和性能需求来对
 
 [1]: ./media/documentdb-performance-levels/documentdb-change-collection-performance7-9.png
 [2]: ./media/documentdb-performance-levels/documentdb-change-collection-performance10-11.png
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_0627_2016-->

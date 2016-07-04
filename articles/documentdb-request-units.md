@@ -13,8 +13,12 @@
 	wacn.date="06/29/2016"/>
 
 #DocumentDB 中的请求单位
+现已推出：DocumentDB [请求单位计算器](https://www.documentdb.com/capacityplanner)。详细了解如何[估计吞吐量需求](documentdb-request-units.md#estimating-throughput-needs)。
 
-本文概述了 [Microsoft Azure DocumentDB](/services/documentdb/) 中的请求单位。
+![吞吐量计算器][5]
+
+##介绍
+本文概述了 [Microsoft Azure DocumentDB](/documentation/services/documentdb/) 中的请求单位。
 
 阅读本文之后，你将能够回答以下问题：
 
@@ -50,6 +54,30 @@ DocumentDB 通过保留资源提供了快速且可预测的性能，以满足应
 
 > [AZURE.NOTE] 用于 1 KB 文档的 1 个请求单位基线通过自链接或文档的ID 与简单的 GET 对应。
 
+###使用请求单位计算器
+若要帮助客户微调其吞吐量估算，可以使用一个基于 Web 的[请求单位计算器](https://www.documentdb.com/capacityplanner)来帮助估计典型操作的请求单位要求，包括：
+
+- 文档创建（写入）
+- 文档读取
+- 文档删除
+
+该工具易于使用：
+
+1. 上载一个或多个有代表性的 JSON 文档。
+
+	![将文档上载到请求单位计算器][2]
+
+2. 输入所需的文档创建、读取和删除操作数目（以秒为单位）。
+
+	![在请求单位计算器中输入吞吐量要求][3]
+
+3. 单击“计算”，然后查看结果。
+
+	![请求单位计算器结果][4]
+
+>[AZURE.NOTE]如果文档类型与已编制索引之属性的大小与数目截然不同，请将每个典型文档的类型示例上载到该工具，然后计算结果。
+
+###使用 DocumentDB 请求费用响应标头
 每个来自 DocumentDB 服务的响应都包含一个包含用于请求的请求单位的自定义标头 (x-ms-request-charge)。此标头也可通过 DocumentDB SDK 访问。在 .NET SDK 中，RequestCharge 是 ResourceResponse 对象的属性。对于查询，在 Azure 门户中的 DocumentDB 查询资源管理器提供了用于执行的查询的请求费用信息。
 
 ![检查查询资源管理器中的 RU 费用][1]
@@ -175,5 +203,9 @@ DocumentDB 通过保留资源提供了快速且可预测的性能，以满足应
 若要了解有关 DocumentDB 的详细信息，请参阅 Azure DocumentDB [文档](/documentation/services/documentdb/)。
 
 [1]: ./media/documentdb-request-units/queryexplorer.png
+[2]: ./media/documentdb-request-units/RUEstimatorUpload.png
+[3]: ./media/documentdb-request-units/RUEstimatorDocuments.png
+[4]: ./media/documentdb-request-units/RUEstimatorResults.png
+[5]: ./media/documentdb-request-units/RUCalculator2.png
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0627_2016-->

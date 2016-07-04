@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="03/30/2016" 
-	wacn.date="06/29/2016"/>
+	ms.date="06/20/2016" 
+	wacn.date="07/04/2016"/>
 
 # DocumentDB 分层资源模型和概念
 
@@ -445,4 +445,4 @@ DocumentDB 用户是指对权限进行分组的逻辑命名空间。DocumentDB �
 [3]: ./media/documentdb-resources/resources3.png
 
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0627_2016-->

@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="documentdb"
-	ms.date="02/23/2016"
-	wacn.date="06/29/2016"/>
+	ms.date="05/24/2016"
+	wacn.date="07/04/2016"/>
 
 # 使用查询资源管理器对 DocumentDB 编写、编辑和运行 SQL 查询 
 
@@ -76,4 +76,4 @@ Azure 门户中的查询资源管理器只是一种对 DocumentDB 运行 SQL 查
 有关查询资源管理器中支持的 DocumentDB SQL 语法的详细信息，请参阅 [SQL 查询和 SQL 语法](/documentation/articles/documentdb-sql-query)一文或打印 [SQL 查询备忘单](/documentation/articles/documentdb-sql-query-cheat-sheet)。
 也许你还可以尝试使用[查询板块](https://www.documentdb.com/sql/demo)，使用其中的数据集示例联机测试查询。
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0627_2016-->

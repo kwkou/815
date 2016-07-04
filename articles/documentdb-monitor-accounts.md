@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通过使用 Azure 门户监视 DocumentDB 帐户 | Azure"
+	pageTitle="监视 DocumentDB 请求和存储 | Azure"
 	description="了解如何监视你的 DocumentDB 帐户的性能指标（如请求和服务器错误）以及使用情况指标（如存储消耗）。"
 	services="documentdb"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="documentdb"
-	ms.date="03/10/2016"
-	wacn.date="06/29/2016"/>
+	ms.date="06/10/2016"
+	wacn.date="07/04/2016"/>
 
 # 在 Azure 门户中监视 DocumentDB 帐户使用情况
 
@@ -89,6 +89,16 @@ Azure 门户使你能够创建并排的指标图表。
 - 若要使用 REST API，请[在集合上执行 GET](https://msdn.microsoft.com/library/mt489073.aspx)。集合的配额和使用情况信息将返回到响应中的 x-ms-resource-quota 和 x-ms-resource-usage 标头中。
 - 若要使用 .NET SDK，请使用 [DocumentClient.ReadDocumentCollectionAsync](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.readdocumentcollectionasync.aspx) 方法，它将返回 [ResourceResponse](https://msdn.microsoft.com/library/dn799209.aspx)，其包含大量使用情况属性，例如 **CollectionSizeUsage**、**DatabaseUsage**、**DocumentUsage** 等。
 
+若要访问其他指标，请使用 [Azure Insights SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights)。可以通过调用以下命令来检索可用的指标定义：
+
+    https://management.azure.com/subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroup}/providers/Microsoft.DocumentDb/databaseAccounts/{DocumentDBAccountName}/metricDefinitions?api-version=2015-04-08 
+
+用于检索各个指标的查询使用以下格式：
+
+    https://management.azure.com/subscriptions/{SubecriptionId}/resourceGroups/{ResourceGroup}/providers/Microsoft.DocumentDb/databaseAccounts/{DocumentDBAccountName}/metrics?api-version=2015-04-08&$filter=%28name.value%20eq%20%27Total%20Requests%27%29%20and%20timeGrain%20eq%20duration%27PT5M%27%20and%20startTime%20eq%202016-06-03T03%3A26%3A00.0000000Z%20and%20endTime%20eq%202016-06-10T03%3A26%3A00.0000000Z
+
+有关详细信息，请参阅 [Retrieving Resource Metrics via the Azure Insights API（通过 Azure Insights API 检索资源指标）](https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/02/23/retrieving-resource-metrics-via-the-azure-insights-api/)。
+
 ## 故障排除
 如果你的监视磁贴显示**无可用数据**消息，并且你最近向数据库提出过请求或添加过数据，则可以编辑该磁贴以反映最新的使用情况。
 
@@ -106,4 +116,4 @@ Azure 门户使你能够创建并排的指标图表。
 ## 后续步骤
 若要了解有关 DocumentDB 容量的详细信息，请参阅[管理 DocumentDB 容量](/documentation/articles/documentdb-manage)。
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_0627_2016-->
