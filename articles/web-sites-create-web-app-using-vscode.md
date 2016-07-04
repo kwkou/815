@@ -129,9 +129,9 @@ ASP.NET 5/DNX（.NET 执行环境）是精简的 .NET 堆栈，用于构建在 O
 
 3. 关闭你的浏览器。在**命令窗口**中，按 **Ctrl+C** 关闭应用程序并关闭**命令窗口**。
 
-## 在 Azure 管理门户中创建 Web 应用
+## 在 Azure 经典门户中创建 Web 应用
 
-创建你的应用程序的第一步是通过 Azure 管理门户创建 Web 应用。为此，你将需要登录到该门户，然后单击左下角的新建按钮。将出现一个窗口。单击“快速创建”，输入 URL，然后选择“创建 Web 应用”。
+创建你的应用程序的第一步是通过 Azure 经典门户创建 Web 应用。为此，你将需要登录到该经典门户，然后单击左下角的新建按钮。将出现一个窗口。单击“快速创建”，输入 URL，然后选择“创建 Web 应用”。
 
 ![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
 
@@ -208,7 +208,7 @@ ASP.NET 5/DNX（.NET 执行环境）是精简的 .NET 堆栈，用于构建在 O
 
 		http://SampleWebAppDemo.chinacloudsites.cn
  
-* 在 Azure 管理门户中，找到 Web 应用的 Web 应用边栏选项卡，然后单击“浏览”以查看应用
+* 在 Azure 经典门户中，找到 Web 应用的 Web 应用边栏选项卡，然后单击“浏览”以查看应用
 * 在默认浏览器中查看你的应用。
 
 ![Azure Web 应用](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)

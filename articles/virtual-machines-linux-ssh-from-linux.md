@@ -33,7 +33,7 @@ Azure 的基本 SSH 设置包括 2048 位的 **ssh-rsa** 公钥和私钥对（�
 
 以下是部署方案，你在每个方案中使用的文件类型为：
 
-1. 无论是哪种部署模型，使用[预览门户](https://portal.azure.cn)的所有部署都必需使用 **ssh-rsa** 密钥。
+1. 无论是哪种部署模型，使用[门户预览](https://portal.azure.cn)的所有部署都必需使用 **ssh-rsa** 密钥。
 2. 使用[经典门户](https://manage.windowsazure.cn)创建 VM 时必需使用 .pem 文件。使用 [Azure CLI](/documentation/articles/xplat-cli-install) 的经典部署也支持 .pem 文件。 
 
 ## 创建密钥以用于 SSH
@@ -63,13 +63,13 @@ Azure 的基本 SSH 设置包括 2048 位的 **ssh-rsa** 公钥和私钥对（�
 
 	通常情况下，**ssh-keygen** 实现将添加注释，通常为计算机的用户名和主机名。你可以使用 `-C` 选项指定特定注释。
 
-3. 从 `~/.ssh/id_rsa` 文件创建 .pem 文件，使你能够使用Azure 门户。使用 **openssl**，如下所示：
+3. 从 `~/.ssh/id_rsa` 文件创建 .pem 文件，使你能够使用Azure 门户预览。使用 **openssl**，如下所示：
 
 		openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out myCert.pem
 
 	如果要从不同的私钥文件创建 .pem 文件，请修改 `-key` 参数。
 
-> [AZURE.NOTE]如果你计划管理使用经典部署模型部署的服务，则可能还要创建 **.cer** 格式的文件来上载到门户，尽管这不涉及 **ssh** 或连接到 Linux VM，但这是本文的主题。若要在 Linux 或 Mac 上创建这些文件，请键入：<br /> openssl  x509 -outform der -in myCert.pem -out myCert.cer
+> [AZURE.NOTE]如果你计划管理使用经典部署模型部署的服务，则可能还要创建 **.cer** 格式的文件来上载到门户预览，尽管这不涉及 **ssh** 或连接到 Linux VM，但这是本文的主题。若要在 Linux 或 Mac 上创建这些文件，请键入：<br /> openssl  x509 -outform der -in myCert.pem -out myCert.cer
 
 将 .pem 文件转换为 DER 编码的 X509 证书文件。
 

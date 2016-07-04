@@ -59,7 +59,7 @@
 
 虚拟网络还可让你将 Azure VM 加入域。这是对 SQL Server 使用 Windows 身份验证的唯一方式。其他连接方案需要使用用户名和密码进行 SQL 身份验证。
 
-如果你使用门户通过 Resource Manager 来预配 SQL Server 虚拟机映像，则可选择“专用”作为 SQL 连接选项，以便在虚拟网络上设置通信所需的适当防火墙规则。如果不是在进行预配，则可按照[本文中手动配置连接的步骤](#steps-for-manually-configuring-sql-server-connectivity-in-an-azure-vm)来手动配置 SQL Server 和虚拟机。但如果你计划配置域环境和 Windows 身份验证，则不需要使用本文中的步骤来配置 SQL 身份验证和登录。你也不需要配置通过 Internet 进行访问的网络安全组规则。
+如果你使用门户预览通过 Resource Manager 来预配 SQL Server 虚拟机映像，则可选择“专用”作为 SQL 连接选项，以便在虚拟网络上设置通信所需的适当防火墙规则。如果不是在进行预配，则可按照[本文中手动配置连接的步骤](#steps-for-manually-configuring-sql-server-connectivity-in-an-azure-vm)来手动配置 SQL Server 和虚拟机。但如果你计划配置域环境和 Windows 身份验证，则不需要使用本文中的步骤来配置 SQL 身份验证和登录。你也不需要配置通过 Internet 进行访问的网络安全组规则。
 
 假设你已在虚拟网络中配置 DNS，则可在连接字符串中指定 SQL Server VM 计算机名来连接 SQL Server 实例。以下示例还假设同时已配置 Windows 身份验证，并且用户已获得访问 SQL Server 实例的权限。
 
@@ -69,7 +69,7 @@
 
 ##<a name="steps-for-manually-configuring-sql-server-connectivity-in-an-azure-vm"></a> 在 Azure VM 中手动配置 SQL Server 连接的步骤
 
-以下步骤演示了如何手动设置到 SQL Server 实例的连接，然后选择性地使用 SQL Server Management Studio (SSMS) 通过 Internet 进行连接。请注意，当你在门户中选择适当的 SQL Server 连接选项时，系统会为你完成下面的多项步骤。
+以下步骤演示了如何手动设置到 SQL Server 实例的连接，然后选择性地使用 SQL Server Management Studio (SSMS) 通过 Internet 进行连接。请注意，当你在门户预览中选择适当的 SQL Server 连接选项时，系统会为你完成下面的多项步骤。
 
 你必须先完成下列各部分中描述的下列任务，然后才能从其他 VM 或 Internet 连接到 SQL Server 的实例：
 

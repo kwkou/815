@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Runbook 设置"
-   description="介绍 Azure Automation 中 Runbook 的配置设置，以及如何使用 Azure 管理门户和 Windows PowerShell 更改这些设置。"
+   description="介绍 Azure Automation 中 Runbook 的配置设置，以及如何使用 Azure 经典门户和 Windows PowerShell 更改这些设置。"
    services="automation"
    documentationCenter=""
    authors="bwren"
@@ -31,11 +31,11 @@ Azure Automation 中的每个 Runbook 都提供了多个设置用于帮助标识
 
 ## 更改 Runbook 设置
 
-### 使用 Azure 管理门户更改 Runbook 设置
+### 使用 Azure 经典门户更改 Runbook 设置
 
-你可以在 Azure 管理门户中通过 Runbook 的“配置”页更改 Runbook 的设置。
+你可以在 Azure 经典门户中通过 Runbook 的“配置”页更改 Runbook 的设置。
 
-1. 在 Azure 管理门户中，选择“自动化”，然后单击自动化帐户的名称。
+1. 在 Azure 经典门户中，选择“自动化”，然后单击自动化帐户的名称。
 1. 选择“Runbook”选项卡。
 1. 单击 Runbook 的名称。
 1. 选择“配置”选项卡。

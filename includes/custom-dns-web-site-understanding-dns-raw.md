@@ -38,7 +38,7 @@ CNAME 记录将*特定的* DNS 名称（例如 **mail.contoso.com** 或 **www.co
 
 你可以按照以下步骤找到 Web 应用的 IP 地址以及 **awverify** 名称和 **.chinacloudsites.cn** 名称：
 
-1. 在你的浏览器中，打开 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 在你的浏览器中，打开 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 2. 在“Web Apps”边栏选项卡中，单击 Web 应用的名称，选择“配置”，然后从页面底部选择“自定义域和 SSL”。
 

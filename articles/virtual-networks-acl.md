@@ -17,7 +17,7 @@
 
 > [AZURE.IMPORTANT]建议你尽可能地使用网络安全组 (NSG) 而不是 ACL。若要了解有关 NSG 的详细信息，请参阅[什么是网络安全组](/documentation/articles/virtual-networks-nsg)。
 
-可以使用 PowerShell 或在管理门户中配置 ACL。若要使用 PowerShell 配置网络 ACL，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl-powershell)。若要使用管理门户配置网络 ACL，请参阅[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
+可以使用 PowerShell 或在经典门户中配置 ACL。若要使用 PowerShell 配置网络 ACL，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl-powershell)。若要使用经典门户配置网络 ACL，请参阅[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
 
 使用网络 ACL 可以实现以下目的：
 

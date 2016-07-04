@@ -16,7 +16,7 @@
 
 # 在 Azure 上优化 Linux VM
 
-通过命令行或门户创建运行 Linux 虚拟机 (VM) 是一项很简单的操作。本教程说明如何在 Azure 平台上设置 VM 以确保优化其性能。本主题使用 Ubuntu Server VM，不过你也可以用自己的映像来创建 Linux 虚拟机。
+通过命令行或门户预览创建运行 Linux 虚拟机 (VM) 是一项很简单的操作。本教程说明如何在 Azure 平台上设置 VM 以确保优化其性能。本主题使用 Ubuntu Server VM，不过你也可以用自己的映像来创建 Linux 虚拟机。
 
 ## 先决条件
 

@@ -15,7 +15,7 @@
 
 **重要说明**：如果您希望您的虚拟机使用虚拟网络，以便可以按主机名直接连接到它或者设置跨界连接，则请确保在创建虚拟机时指定虚拟网络。仅当创建虚拟机后，才能将该虚拟机配置为加入虚拟网络。有关虚拟网络的更多信息，请参见 [Azure 虚拟网络概述](https://msdn.microsoft.com/zh-CN/library/azure/jj156007.aspx)。
 
-1. 登录到 [Azure 管理门户](http://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典门户](http://manage.windowsazure.cn)。
 
 2. 在命令栏上，单击"新建"。
 
@@ -60,7 +60,7 @@
 	![成功创建自定义虚拟机](./media/howto-custom-create-vm/VMSuccessWindows.png)
 
 ##后续步骤##
-创建虚拟机后，将自动启动它。当门户显示状态为正在运行时，您可以登录到该虚拟机。有关说明，请参阅以下文章之一：
+创建虚拟机后，将自动启动它。当经典门户显示状态为正在运行时，您可以登录到该虚拟机。有关说明，请参阅以下文章之一：
 
 - [如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-classic-log-on)
 - [如何登录到运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-classic-connect-logon)

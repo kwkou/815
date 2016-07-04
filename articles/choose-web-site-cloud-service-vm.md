@@ -46,7 +46,7 @@ Azure Web 应用是大多数 Web 应用的最佳选择。部署和管理都已�
 
 ### <a id="onprem"></a> 我需要具有后台处理的 Web 前端和数据库后端，运行与本地资产集成的业务应用程序。
 
-Azure Web 应用是针对复杂业务应用程序的理想解决方案。你可以通过该 Web 应用开发应用，这些应用可以在负载平衡平台上自动缩放、使用 Active Directory 进行保护并连接到本地资源。使用该 Web 应用，可以通过世界级管理门户和 API 轻松地管理这些应用，并且还能通过应用洞察工具深入了解客户使用这些应用的情况。使用新的 [Webjobs][] 功能，能够将后台进程和任务作为 Web 层的一部分运行。Azure Web 应用提供了三个 9 的 SLA 并使你能够：
+Azure Web 应用是针对复杂业务应用程序的理想解决方案。你可以通过该 Web 应用开发应用，这些应用可以在负载平衡平台上自动缩放、使用 Active Directory 进行保护并连接到本地资源。使用该 Web 应用，可以通过世界级经典门户和 API 轻松地管理这些应用，并且还能通过应用洞察工具深入了解客户使用这些应用的情况。使用新的 [Webjobs][] 功能，能够将后台进程和任务作为 Web 层的一部分运行。Azure Web 应用提供了三个 9 的 SLA 并使你能够：
 
 * 在自愈性自动修补云平台上安全可靠地运行应用程序。 
 * 跨数据中心的全球网络进行自动缩放。
@@ -67,7 +67,7 @@ Azure Web 应用是用于托管公司 Web 应用的理想解决方案。通过�
 
 ### <a id="iis6"></a> 我具有在 Windows Server 2003 上运行的 IIS6 应用程序。
 
-利用 Azure Web 应用，可以轻松避免在迁移较旧的 IIS6 应用程序时带来的基础结构成本。Microsoft 已经创建[易于使用的迁移工具和详细的迁移指南](https://www.movemetowebsites.net/)，你可以利用它检查兼容性，并确定需要进行的任何更改。因为与 Visual Studio、TFS 和常见的 CMS 工具集成，所以能够更轻松地将 IIS6 应用程序直接部署到云中。部署后，Azure 管理门户可以提供强大的管理工具，帮助你通过缩减规模管理成本，并根据需要扩展规模来满足业务要求。使用迁移工具可以：
+利用 Azure Web 应用，可以轻松避免在迁移较旧的 IIS6 应用程序时带来的基础结构成本。Microsoft 已经创建[易于使用的迁移工具和详细的迁移指南](https://www.movemetowebsites.net/)，你可以利用它检查兼容性，并确定需要进行的任何更改。因为与 Visual Studio、TFS 和常见的 CMS 工具集成，所以能够更轻松地将 IIS6 应用程序直接部署到云中。部署后，Azure 经典门户可以提供强大的管理工具，帮助你通过缩减规模管理成本，并根据需要扩展规模来满足业务要求。使用迁移工具可以：
 
 * 轻松快速地将旧版 Windows Server 2003 Web 应用迁移到云中。
 * 选择在本地保留附加的 SQL 数据库，以创建混合应用程序。 
@@ -230,7 +230,7 @@ Azure Web 应用是用于托管公司 Web 应用的理想解决方案。通过�
    <td valign="middle">X</td>
    <td valign="middle">X</td>
    <td valign="middle">X</td>
-   <td valign="middle">云服务可以通过 ClearDB 的产品集成 MySQL-as-a-service，但不作为管理门户工作流的一部分。</td>
+   <td valign="middle">云服务可以通过 ClearDB 的产品集成 MySQL-as-a-service，但不作为经典门户工作流的一部分。</td>
 </tr>
 <tr>
    <td valign="middle"><p>支持 ASP.NET、经典 ASP、Node.js、PHP、Python</p></td>

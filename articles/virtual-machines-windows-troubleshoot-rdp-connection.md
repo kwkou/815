@@ -33,7 +33,7 @@
 
 这些步骤可能会帮助解决使用经典部署模型创建的 Azure 虚拟机中的大部分远程桌面连接失败。在执行每个步骤之后，请尝试重新连接到 VM。
 
-- 从 [Azure 门户](https://portal.azure.cn)重置远程桌面服务可修复 RDP 服务器的启动问题。选择“浏览”>“虚拟机(经典)”> 你的 Windows 虚拟机 >“重置远程...”。
+- 从 [Azure 门户预览](https://portal.azure.cn)重置远程桌面服务可修复 RDP 服务器的启动问题。选择“浏览”>“虚拟机(经典)”> 你的 Windows 虚拟机 >“重置远程...”。
 
 - 重新启动虚拟机可解决其他启动问题。选择“浏览”>“虚拟机(经典)”> 你的 Windows 虚拟机 >“重新启动”。
 
@@ -52,7 +52,7 @@
 
 这些步骤可能会帮助解决使用 Resource Manager 部署模型创建的 Azure 虚拟机中的大部分远程桌面连接失败。在执行每个步骤之后，请尝试重新连接到 VM。
 
-> [AZURE.TIP] 如果门户中的“连接”按钮灰显，并且你未通过 [Express Route](/documentation/articles/expressroute-introduction) 或[站点到站点 VPN](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal) 连接连接到 Azure，则必须先为 VM 创建并分配一个公共 IP 地址才能使用 RDP。请阅读有关 [Azure 中的公共 IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-arm)的详细信息。
+> [AZURE.TIP] 如果门户预览中的“连接”按钮灰显，并且你未通过 [Express Route](/documentation/articles/expressroute-introduction) 或[站点到站点 VPN](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal) 连接连接到 Azure，则必须先为 VM 创建并分配一个公共 IP 地址才能使用 RDP。请阅读有关 [Azure 中的公共 IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-arm)的详细信息。
 
 - 使用 PowerShell 重置远程访问。
 	- 如果尚未安装 PowerShell，请使用 Azure Active Directory 方法[安装 Azure PowerShell 并连接到你的 Azure 订阅](/documentation/articles/powershell-install-configure)。请注意，在 Azure PowerShell 版本 1.0.x 中，无需切换到 Resource Manager 模式。
@@ -97,7 +97,7 @@
 
 原因：用于远程桌面服务器角色的 120 天许可宽限期已过期，你需要安装许可证。
 
-一种解决方法是，从门户保存 RDP 文件的本地副本，然后在 PowerShell 命令提示符下运行此命令以进行连接。这将仅禁用该连接的许可：
+一种解决方法是，从门户预览保存 RDP 文件的本地副本，然后在 PowerShell 命令提示符下运行此命令以进行连接。这将仅禁用该连接的许可：
 
 		mstsc <File name>.RDP /admin
 
@@ -113,7 +113,7 @@
 
 - 如果你在组织的 Intranet 上，请确保你的计算机有权访问代理服务器，并可以向其发送 HTTPS 流量。
 
-- 如果你使用的是本地存储的 RDP 文件，请尝试使用门户生成的 RDP 文件。这将确保你使用的是虚拟机或云服务的正确 DNS 名称以及虚拟机的终结点端口。下面是门户生成的示例 RDP 文件：
+- 如果你使用的是本地存储的 RDP 文件，请尝试使用门户预览生成的 RDP 文件。这将确保你使用的是虚拟机或云服务的正确 DNS 名称以及虚拟机的终结点端口。下面是门户预览生成的示例 RDP 文件：
 
 		full address:s:tailspin-azdatatier.chinacloudapp.cn:55919
 		prompt for credentials:i:1

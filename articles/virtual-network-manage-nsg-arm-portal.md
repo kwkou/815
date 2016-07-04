@@ -1,8 +1,8 @@
 <!-- ARM: tested -->
 
 <properties 
-   pageTitle="在 Resource Manager 中使用预览门户管理 NSG | Azure"
-   description="了解如何在 Resource Manager 中使用预览门户管理现有 NSG"
+   pageTitle="在 Resource Manager 中使用门户预览管理 NSG | Azure"
+   description="了解如何在 Resource Manager 中使用门户预览管理现有 NSG"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -15,7 +15,7 @@
 	ms.date="03/14/2016"
 	wacn.date=""/>
 
-# 使用预览门户管理 NSG
+# 使用门户预览管理 NSG
 
 [AZURE.INCLUDE [virtual-network-manage-arm-selectors-include.md](../includes/virtual-network-manage-nsg-arm-selectors-include.md)]
 
@@ -35,21 +35,21 @@
 1. 从浏览器导航到 http://portal.azure.cn， 如有必要，请使用 Azure 帐户登录。
 2. 单击“浏览 >”>“网络安全组”。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure1.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure1.png)
 
 3. 在“网络安全组”边栏选项卡中查看 NSG 列表。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure2.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure2.png)
 
 若要在 **RG-NSG** 资源组中查看 NSG 列表，请按照以下步骤进行操作。
 
 1. 单击“资源组 >”>“RG-NSG”>“...”。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure3.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure3.png)
 
 2. 在资源列表中，查找显示 NSG 图标的项，如以下“资源”边栏选项卡中所示。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure4.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure4.png)
 		 
 ### 列出 NSG 的所有规则
 
@@ -58,11 +58,11 @@
 1. 在“网络安全组”边栏选项卡或上示“资源”边栏选项卡中，单击“NSG-FrontEnd”。
 2. 在“设置”选项卡中，单击“入站安全规则”。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure5.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure5.png)
 
 3. “入站安全规则”边栏选项卡如下所示。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure6.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure6.png)
 
 4. 在“设置”选项卡中，单击“出站安全规则”以查看出站规则。
 
@@ -75,7 +75,7 @@
 1. 在“网络安全组”边栏选项卡或上示“资源”边栏选项卡中，单击“NSG-FrontEnd”。
 2. 在“设置”选项卡中，单击“子网”以查看与 NSG 关联的子网。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure7.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure7.png)
 
 3. 在“设置”选项卡中，单击“网络接口”以查看与 NSG 关联的 NIC。
 
@@ -91,11 +91,11 @@
 2. 在“设置”选项卡中，单击“入站安全规则”。
 3. 在“入站安全规则”边栏选项卡中，单击“添加”。然后在“添加入站安全规则”边栏选项卡中，填充如下所示的值，然后单击“确定”。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure8.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure8.png)
 
 4. 几秒钟后，即可在“入站安全规则”边栏选项卡中查看新规则。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure9.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure9.png)
 
 ### 更改规则
 
@@ -105,7 +105,7 @@
 2. 在“设置”选项卡中，单击上面创建的规则。
 3. 在“allow-https”边栏选项卡中，对“Source”属性进行如下更改，然后单击“保存”。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure10.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure10.png)
 
 ### 删除规则
 
@@ -115,7 +115,7 @@
 2. 在“设置”选项卡中，单击上面创建的规则。
 3. 在“allow-https”边栏选项卡中，单击“删除”，然后单击“是”。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure11.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure11.png)
 
 ## 管理关联项
 
@@ -128,16 +128,16 @@
 1. 在“网络安全组”边栏选项卡或上示“资源”边栏选项卡中，单击“NSG-FrontEnd”。
 2. 在“设置”选项卡中，单击“网络接口”>“关联”>“TestNICWeb1”。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure12.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure12.png)
 
 ###<a name="Dissociate-an-NSG-from-a-NIC"></a> 取消 NSG 与 NIC 之间的关联
 
 若要取消 **NSG-FrontEnd** NSG 与 **TestNICWeb1** NIC 之间的关联，请按照以下步骤进行操作。
 
-1. 在 Azure 门户中，单击“资源组 >”>“RG-NSG”>“...”>“TestNICWeb1”。
+1. 在 Azure 门户预览中，单击“资源组 >”>“RG-NSG”>“...”>“TestNICWeb1”。
 2. 在“TestNICWeb1”边栏选项卡中，单击“更改安全性...”>“无”。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure13.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure13.png)
 
 >[AZURE.NOTE] 还可使用此边栏选项卡将 NIC 关联到任意现有 NSG。
 
@@ -145,20 +145,20 @@
 
 若要取消 **NSG-FrontEnd** NSG 与 **FrontEnd** 子网之间的关联，请按照以下步骤进行操作。
 
-1. 在 Azure 门户中，单击“资源组 >”>“RG-NSG”>“...”>“TestVNet”。
+1. 在 Azure 门户预览中，单击“资源组 >”>“RG-NSG”>“...”>“TestVNet”。
 2. 在“设置”边栏选项卡中，单击“子网”>“FrontEnd”>“网络安全组”>“无”。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure14.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure14.png)
 
 3. 在“FrontEnd”边栏选项卡中，单击“保存”。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure15.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure15.png)
 
 ### 将 NSG 关联到子网
 
 若要再次将 **NSG-FrontEnd** NSG 关联到 **FronEnd** 子网，请按照以下步骤进行操作。
 
-1. 在 Azure 门户中，单击“资源组 >”>“RG-NSG”>“...”>“TestVNet”。
+1. 在 Azure 门户预览中，单击“资源组 >”>“RG-NSG”>“...”>“TestVNet”。
 2. 在“设置”边栏选项卡中，单击“子网”>“FrontEnd”>“网络安全组”>“NSG-FrontEnd”。
 3. 在“FrontEnd”边栏选项卡中，单击“保存”。
 
@@ -168,7 +168,7 @@
 
 仅当 NSG 不与任何资源关联时，才能删除 NSG。若要删除 NSG，请按照以下步骤进行操作。
 
-1. 在 Azure 门户中，单击“资源组 >”>“RG-NSG”>“...”>“NSG-FrontEnd”。
+1. 在 Azure 门户预览中，单击“资源组 >”>“RG-NSG”>“...”>“NSG-FrontEnd”。
 2. 在“设置”边栏选项卡中，单击“网络接口”。
 3. 如果列出了任何 NIC，请按照[取消 NSG 与 NIC 之间的关联](#Dissociate-an-NSG-from-a-NIC)中的步骤 2 进行操作。
 4. 对每个 NIC 重复步骤 3。
@@ -176,7 +176,7 @@
 6. 如果列出了任何子网，请单击子网，并按照[取消 NSG 与 NIC 之间的关联](#Dissociate-an-NSG-from-a-subnet)中的步骤 2 和步骤 3 进行操作。
 7. 向左滚动到“NSG-FrontEnd”边栏选项卡，然后单击“删除”>“是”。
 
-![Azure 门户 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure16.png)
+![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure16.png)
 
 ## 后续步骤
 

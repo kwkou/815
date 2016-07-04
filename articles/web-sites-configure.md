@@ -15,7 +15,7 @@
 
 # 在 Azure 中配置 Web 应用 #
 
-本主题介绍如何使用 [Azure 管理门户](https://manage.windowsazure.cn/)配置 Web 应用。
+本主题介绍如何使用 [Azure 经典门户](https://manage.windowsazure.cn/)配置 Web 应用。
 
 ##<a name="howtochangeconfig"></a>如何更改网站的配置选项
 
@@ -23,7 +23,7 @@
 
 若要设置网站的配置选项，请执行以下操作：
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中，打开网站的管理页。
+1. 在[经典门户](https://manage.windowsazure.cn/)中，打开网站的管理页。
 1. 单击“配置”选项卡。
 
 “配置”选项卡包含以下部分：

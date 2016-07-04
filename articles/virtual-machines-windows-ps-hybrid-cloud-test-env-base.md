@@ -278,7 +278,7 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name DC2-TestVNET-OSDisk -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-接下来，在 Azure 门户中使用本地管理员帐户的凭据连接到新的 DC2 虚拟机。
+接下来，在 Azure 门户预览中使用本地管理员帐户的凭据连接到新的 DC2 虚拟机。
 
 接下来，配置 Windows 防火墙规则，以允许进行基本的连接测试所需的流量。在 DC2 上的管理员级 Windows PowerShell 命令提示符下运行以下命令：
 
@@ -309,7 +309,7 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
 
 由于 TestVNET 虚拟网络有自己的 DNS 服务器 (DC2)，因此必须将 TestVNET 虚拟网络配置为使用此 DNS 服务器。
 
-1.	在 Azure 门户的左窗格中，单击虚拟网络图标，然后单击“TestVNET”。
+1.	在 Azure 门户预览的左窗格中，单击虚拟网络图标，然后单击“TestVNET”。
 2.	在“设置”选项卡中，单击“DNS 服务器”。
 3.	在“主 DNS 服务器”中，键入 **192.168.0.4** 以替换 10.0.0.4。
 4.	单击“保存”。

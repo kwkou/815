@@ -23,25 +23,25 @@
 
 接下来，在“编辑参数”部分中，可以填写标记的值。
 
-![通过 Azure 门户编辑标记](./media/virtual-machines-common-tag/edit-tags-in-azure-portal.png)
+![通过 Azure 门户预览编辑标记](./media/virtual-machines-common-tag/edit-tags-in-azure-portal.png)
 
 单击“创建”使用标记值部署此模板。
 
 
-## 通过门户进行标记
+## 通过门户预览进行标记
 
-使用标记创建资源后，可以在门户中查看、添加和删除该标记。
+使用标记创建资源后，可以在门户预览中查看、添加和删除该标记。
 
 选择标记图标，以查看标记：
 
-![Azure 门户中的标记图标](./media/virtual-machines-common-tag/azure-portal-tags-icon.png)
+![Azure 门户预览中的标记图标](./media/virtual-machines-common-tag/azure-portal-tags-icon.png)
 
-通过定义你自己的键/值对，使用门户添加新标记并将其保存。
+通过定义你自己的键/值对，使用门户预览添加新标记并将其保存。
 
-![通过 Azure 门户添加新标记](./media/virtual-machines-common-tag/azure-portal-add-new-tag.png)
+![通过 Azure 门户预览添加新标记](./media/virtual-machines-common-tag/azure-portal-add-new-tag.png)
 
 新标记现在应在资源的标记列表中显示。
 
-![Azure 门户中保存的新标记](./media/virtual-machines-common-tag/azure-portal-saved-new-tag.png)
+![Azure 门户预览中保存的新标记](./media/virtual-machines-common-tag/azure-portal-saved-new-tag.png)
 
 <!---HONumber=Mooncake_1221_2015-->

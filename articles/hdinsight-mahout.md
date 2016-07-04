@@ -404,7 +404,7 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 Mahout 安装在 HDInsight 3.1 群集上，它可以通过使用以下步骤手动安装在 HDInsight 3.0 或 HDInsight 2.1 群集上：
 
-1. 要使用的 Mahout 版本取决于群集的 HDInsight 版本。可以通过在 Azure 门户中查看群集的属性找到群集版本。
+1. 要使用的 Mahout 版本取决于群集的 HDInsight 版本。可以通过在 Azure 经典门户中查看群集的属性找到群集版本。
 
   * __对于 HDInsight 2.1__，可以下载包含 [Mahout 0.9](http://repo2.maven.org/maven2/org/apache/mahout/mahout-core/0.9/mahout-core-0.9-job.jar) 的 Java 存档 (JAR) 文件。
 

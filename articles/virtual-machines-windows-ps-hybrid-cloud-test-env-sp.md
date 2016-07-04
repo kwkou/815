@@ -55,9 +55,9 @@
 
 [AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
 
-从 Azure 门户启动 DC2 计算机（如果需要）。
+从 Azure 门户预览启动 DC2 计算机（如果需要）。
 
-在 Azure 门户中使用 CORP\\User1 凭据连接到 DC2。
+在 Azure 门户预览中使用 CORP\\User1 凭据连接到 DC2。
 
 接下来，创建一个 SharePoint 场管理员帐户。打开 DC2 上的管理员级 Windows PowerShell 提示符，然后运行此命令。
 
@@ -89,7 +89,7 @@
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-完成后，在 Azure 门户中使用本地管理员帐户连接到 SQL1。
+完成后，在 Azure 门户预览中使用本地管理员帐户连接到 SQL1。
 
 接下来，请配置 Windows 防火墙规则，允许进行基本的连接测试所需的以及 SQL Server 所需的通信。在 SQL1 上管理员级 Windows PowerShell 命令提示符下运行这些命令。
 
@@ -125,7 +125,7 @@
 
 当系统提示你为 **Add-Computer** 命令提供域帐户凭据时，请使用 CORP\\User1 帐户。
 
-重新启动后，在 Azure 门户中使用本地管理员帐户连接到 SQL1。
+重新启动后，在 Azure 门户预览中使用本地管理员帐户连接到 SQL1。
 
 接下来对 SQL Server 2014 进行配置，以便将 F: 驱动器用于新的数据库和用户帐户权限。
 
@@ -174,7 +174,7 @@
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-接下来，在 Azure 门户中使用本地管理员帐户的凭据连接到 SP1 虚拟机。
+接下来，在 Azure 门户预览中使用本地管理员帐户的凭据连接到 SP1 虚拟机。
 
 接下来，配置 Windows 防火墙规则，以允许进行基本的连接测试所需的流量。在 SP1 上的 Windows PowerShell 命令提示符下运行以下命令。
 
@@ -190,7 +190,7 @@
 
 当系统提示你为 **Add-Computer** 命令提供域帐户凭据时，请使用 CORP\\User1 帐户。
 
-重新启动后，在 Azure 门户中使用 CORP\\User1 帐户和密码连接到 SP1。
+重新启动后，在 Azure 门户预览中使用 CORP\\User1 帐户和密码连接到 SP1。
 
 接下来，为新的 SharePoint 场和默认工作站网站配置 SP1。
 

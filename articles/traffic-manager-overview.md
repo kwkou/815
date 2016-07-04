@@ -53,8 +53,8 @@
 2. **确定流量管理器域的名称**。考虑为域使用带有唯一前缀的名称。域的后半部分（即 trafficmanager.cn）是固定的。有关详细信息，请参阅[最佳实践](#best-practices)。
 3. **确定要使用的监视配置**。无论使用哪种流量路由方法，流量管理器都会监视终结点以确保它们联机。在你配置监视设置之后，流量管理器不会将流量定向到监视系统判定为脱机的终结点，除非它检测到所有终结点均已脱机，或无法检测配置文件中包含的任一终结点的状态。有关监视的详细信息，请参阅[流量管理器监视](/documentation/articles/traffic-manager-monitoring)。
 4. **确定要使用的流量路由方法**。有三种不同的流量路由方法。请花一些时间了解哪种方法最适合你的要求。如果你以后需要更改方法，随时可以更改。另请注意，每种方法都需要稍微不同的配置步骤。有关流量路由方法的信息，请参阅[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods)。
-5. **创建配置文件并配置设置**。可以使用 REST API、Windows PowerShell 或管理门户来创建流量管理器配置文件并配置设置。有关详细信息，请参阅[如何配置流量管理器设置](#how-to-configure-traffic-manager-settings)。以下步骤假定你将使用管理门户中的“快速创建”。 
-   - **创建流量管理器配置文件** - 若要使用管理门户中的“快速创建”创建配置文件，请参阅[管理流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles)。
+5. **创建配置文件并配置设置**。可以使用 REST API、Windows PowerShell 或经典门户来创建流量管理器配置文件并配置设置。有关详细信息，请参阅[如何配置流量管理器设置](#how-to-configure-traffic-manager-settings)。以下步骤假定你将使用经典门户中的“快速创建”。 
+   - **创建流量管理器配置文件** - 若要使用经典门户中的“快速创建”创建配置文件，请参阅[管理流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles)。
    - **配置流量路由方法设置** – 在“快速创建”期间，你必须为配置文件选择流量路由方法。在完成“快速创建”步骤之后，可以随时更改此设置。有关配置步骤，请参阅与流量路由方法对应的主题：[配置“性能”流量路由方法](/documentation/articles/traffic-manager-configure-performance-routing-method)、[配置“故障转移”流量路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method)、[配置“轮循机制”流量路由方法](/documentation/articles/traffic-manager-configure-round-robin-routing-method)。
    
    >[AZURE.NOTE]“轮循机制”流量路由方法现在支持将网络流量进行加权分布。但是，目前必须使用 REST API 或 Windows PowerShell 配置权重。有关详细信息和示例配置，请参阅 Azure 博客中的 [Azure 流量管理器外部终结点与通过 PowerShell 实施的加权轮循机制](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/)。
@@ -70,21 +70,21 @@
 
 ## 如何配置流量管理器设置
 
-可以使用管理门户、REST API 和 Windows PowerShell cmdlet 来配置流量管理器设置。
+可以使用经典门户、REST API 和 Windows PowerShell cmdlet 来配置流量管理器设置。
 
-虽然并非每个 REST API 元素都在管理门户中可见，但是许多设置使用上述任一方法都可以获得。有关 REST API 用法的详细信息，请参阅[流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)。
+虽然并非每个 REST API 元素都在经典门户中可见，但是许多设置使用上述任一方法都可以获得。有关 REST API 用法的详细信息，请参阅[流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)。
 
 有关用于流量管理器的 Windows PowerShell cmdlet 的详细信息，请参阅 [Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)。
 
->[AZURE.NOTE]当前不支持使用管理门户为“轮循机制”流量路由方法和嵌套的配置文件配置外部终结点（类型=“任何”）权重。必须使用 REST（请参阅[创建定义](https://msdn.microsoft.com/zh-cn/library/azure/hh758257.aspx)）或 Windows PowerShell（请参阅 [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn690257.aspx)）。
+>[AZURE.NOTE]当前不支持使用经典门户为“轮循机制”流量路由方法和嵌套的配置文件配置外部终结点（类型=“任何”）权重。必须使用 REST（请参阅[创建定义](https://msdn.microsoft.com/zh-cn/library/azure/hh758257.aspx)）或 Windows PowerShell（请参阅 [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn690257.aspx)）。
 
-### 在管理门户中配置设置
+### 在经典门户中配置设置
 
-在管理门户中，你可以通过使用“快速创建”创建你的流量管理器配置文件。“快速创建”允许你创建基本的配置文件。在创建配置文件后，可以配置其他设置，或者编辑你以前配置的设置。有关使用“快速创建”来创建你的流量管理器配置文件的详细信息，请参阅[管理流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles)。
+在经典门户中，你可以通过使用“快速创建”创建你的流量管理器配置文件。“快速创建”允许你创建基本的配置文件。在创建配置文件后，可以配置其他设置，或者编辑你以前配置的设置。有关使用“快速创建”来创建你的流量管理器配置文件的详细信息，请参阅[管理流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles)。
 
-你可以在管理门户中配置以下设置：
+你可以在经典门户中配置以下设置：
 
-- **DNS 前缀** – 你创建的唯一前缀。配置文件按前缀显示在管理门户中。
+- **DNS 前缀** – 你创建的唯一前缀。配置文件按前缀显示在经典门户中。
 - **DNS TTL** – DNS 生存时间 (TTL) 值控制客户端本地缓存名称服务器在 Azure 流量管理器 DNS 系统中查询已更新 DNS 条目的频率。
 - **订阅** – 选择你的配置文件将对应于的订阅。请注意，仅当你有多个订阅时，才会显示此选项。
 - **流量路由方法** – 你希望流量管理器用于处理流量路由的方式。
@@ -95,11 +95,11 @@
 
 可以通过使用 REST API 创建和配置流量管理器配置文件。有关详细信息，请参阅[流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)。
 
-- **配置文件** – 配置文件包含你创建的域名前缀。每个配置文件都与你的订阅相对应。你可以为每个订阅创建多个配置文件。配置文件名称在管理门户中是可见的。你所创建的、包含在配置文件中的名称被称为你的“流量管理器域”。
-- **定义** – 定义包含策略设置和监视设置。定义与配置文件相对应。每个配置文件只能有一个定义。定义本身在管理门户中不可见，但在管理门户中可以看到定义的许多设置，并可对其进行配置。
+- **配置文件** – 配置文件包含你创建的域名前缀。每个配置文件都与你的订阅相对应。你可以为每个订阅创建多个配置文件。配置文件名称在经典门户中是可见的。你所创建的、包含在配置文件中的名称被称为你的“流量管理器域”。
+- **定义** – 定义包含策略设置和监视设置。定义与配置文件相对应。每个配置文件只能有一个定义。定义本身在经典门户中不可见，但在经典门户中可以看到定义的许多设置，并可对其进行配置。
 - **DNS 选项** – 每个定义都包含 DNS 选项。这是配置 DNS TTL 的位置。
-- **监视器** – 每个定义都包含监视设置。这是配置协议、端口、相对路径和文件名的位置。在管理门户中，可以看到监视设置，也可以对其进行配置。有关详细信息，请参阅[流量管理器监视](/documentation/articles/traffic-manager-monitoring)。
-- **策略** – 每个定义都包含策略设置。策略是指定流量路由方法和终结点的位置。策略本身在管理门户中不可见，但在管理门户中可以看到策略的某些设置，并可对其进行配置。有关详细信息，请参阅[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods)。
+- **监视器** – 每个定义都包含监视设置。这是配置协议、端口、相对路径和文件名的位置。在经典门户中，可以看到监视设置，也可以对其进行配置。有关详细信息，请参阅[流量管理器监视](/documentation/articles/traffic-manager-monitoring)。
+- **策略** – 每个定义都包含策略设置。策略是指定流量路由方法和终结点的位置。策略本身在经典门户中不可见，但在经典门户中可以看到策略的某些设置，并可对其进行配置。有关详细信息，请参阅[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods)。
 
 ## 通过使用 Windows PowerShell 配置设置
 
@@ -107,7 +107,7 @@
 
 ## 最佳实践
 
-- **使前缀唯一并易于理解** – 流量管理器配置文件的 DNS 名称必须唯一。你只能控制 DNS 名称的第一部分。流量管理器域名仅用于标识及定向客户端请求。客户端计算机将永远不会向最终用户显示这些名称。但是，配置文件由此域名予以标识，因此，你必须能够快速地将此域名与管理门户中列出的其他域名区分开来。
+- **使前缀唯一并易于理解** – 流量管理器配置文件的 DNS 名称必须唯一。你只能控制 DNS 名称的第一部分。流量管理器域名仅用于标识及定向客户端请求。客户端计算机将永远不会向最终用户显示这些名称。但是，配置文件由此域名予以标识，因此，你必须能够快速地将此域名与经典门户中列出的其他域名区分开来。
 - **使用点号来增强唯一性或使域名易读** – 也可以使用句点来分隔域名前缀部分。如果计划在流量管理器中创建多个策略，请使用一致的层次结构来区分服务。例如，Contoso 拥有针对 Web、计费和实用工具管理的全局服务。这三个策略应为 *web.contoso.trafficmanager.cn*、*bill.contoso.trafficmanager.cn* 和 *util.contoso.trafficmanager.cn*。设置云服务或 Web 应用时，请使用包含位置的名称。例如，*web-us-contoso.chinacloudapp.cn* 和 *web-asia-contoso.chinacloudapp.cn*。你将受限于 DNS 施加的各种限制。假定一个域名是一个点号分隔的标签序列（“标签.标签.标签.标签.等等”）。截至本文档撰写时，流量管理器中对域名的限制如下：
    - 每个标签最多可以包含 63 个字符。
    - 标签总数不能超过 40 个。因为 trafficmanager.cn 占用两个标签，所以前缀可以使用 38 个。
@@ -119,7 +119,7 @@
 - **配置文件中的所有终结点应为相同的操作和端口提供服务** – 如果混用终结点，则客户端调用的终结点将更有可能无法为其请求提供服务。
 - **配置文件中的所有云服务都必须使用相同的监视设置** – 只能选择单个路径和文件用于监视给定定义中的所有终结点。可以在“相对路径和文件名”文本框中输入“/”，使监视尝试访问默认路径和文件名。
 - **发生临时更改时禁用终结点，而不是更改配置** – 在很多情况下，你可能想要使某个终结点脱机。只需在配置文件中禁用单个终结点，而不必从配置文件中删除相应的终结点。这样，该终结点仍保留在配置文件中，但是，配置文件的行为看起来就像是该终结点不包含在其中一样。这种做法非常适合用于临时删除处于维护模式或者正在重新部署的终结点。在终结点启动并重新运行后，你可以再次启用它。有关详细信息，请参阅[在流量管理器中管理终结点](/documentation/articles/traffic-manager-endpoints)。
-- **进行临时更改时禁用配置文件而不删除它** – 你可能希望使整个配置文件脱机，而不是仅使在其中指定的个别终结点脱机。若要做到这一点，请禁用配置文件。禁用某个配置文件时，所有设置都将保留可供你在管理门户中进行编辑，并且当你希望重新使用该配置文件时，可以快速而容易地使其重新联机。有关详细信息，请参阅[在流量管理器中管理终结点](/documentation/articles/traffic-manager-endpoints)。
+- **进行临时更改时禁用配置文件而不删除它** – 你可能希望使整个配置文件脱机，而不是仅使在其中指定的个别终结点脱机。若要做到这一点，请禁用配置文件。禁用某个配置文件时，所有设置都将保留可供你在经典门户中进行编辑，并且当你希望重新使用该配置文件时，可以快速而容易地使其重新联机。有关详细信息，请参阅[在流量管理器中管理终结点](/documentation/articles/traffic-manager-endpoints)。
 - **存储** – 使用流量管理器时，需要考虑的一个重要方面是如何设计存储的位置和分布。针对流量管理器设计和部署应用程序时，应考虑端到端事务以及数据将如何流动。
 - **SQL Azure** – 与存储设计类似，当你将终结点扩展到多个地理区域时，它可以分析应用程序状态和数据要求。
 
@@ -153,7 +153,7 @@
 
 如果流量管理器将用户定向到具有少数正常运行的终结点的子配置文件，则可能会使这些终结点过载，从而导致性能问题。为了防止出现这种情况，可以为父流量管理器配置文件配置正常运行的终结点数的阈值，以确定该父配置文件的子配置文件中的任何终结点是否均可接收流量。例如，如果要确保在子配置文件内至少有三个正常运行的终结点，可将此阈值设为 3。在图 4 的示例中，你将在顶层流量管理器配置文件中配置此阈值。
 
-若要将流量管理器配置文件添加为终结点并配置最小数量的正常运行终结点，必须使用 REST（请参阅[创建定义](https://msdn.microsoft.com/zh-cn/library/azure/hh758257.aspx)）或 Windows PowerShell（请参阅 [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn690257.aspx)）。而不能使用管理门户。
+若要将流量管理器配置文件添加为终结点并配置最小数量的正常运行终结点，必须使用 REST（请参阅[创建定义](https://msdn.microsoft.com/zh-cn/library/azure/hh758257.aspx)）或 Windows PowerShell（请参阅 [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn690257.aspx)）。而不能使用经典门户。
 
 ## 流量管理器图表
 

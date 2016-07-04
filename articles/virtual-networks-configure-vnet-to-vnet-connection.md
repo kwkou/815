@@ -1,6 +1,6 @@
 <properties
    pageTitle="配置 VNet 到 VNet 连接 | Azure"
-   description="如何使用 PowerShell 和 Azure 管理门户在相同或不同的订阅或区域中将 Azure 虚拟网络连接在一起。本文适用于使用经典部署模型创建的 VNet。"
+   description="如何使用 PowerShell 和 Azure 经典门户在相同或不同的订阅或区域中将 Azure 虚拟网络连接在一起。本文适用于使用经典部署模型创建的 VNet。"
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
@@ -16,11 +16,11 @@
 # 为经典部署模型配置 VNet 到 VNet 连接
 
 > [AZURE.SELECTOR]
-- [Azure 管理门户](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)
+- [Azure 经典门户](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)
 - [PowerShell - Azure 资源管理器](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps)
 
 
-本文将引导你执行相关步骤，以便使用经典部署模型（也称为服务管理）来创建虚拟网络并将其连接到一起。以下步骤使用 Azure 管理门户和 PowerShell 的组合。
+本文将引导你执行相关步骤，以便使用经典部署模型（也称为服务管理）来创建虚拟网络并将其连接到一起。以下步骤使用 Azure 经典门户和 PowerShell 的组合。
 
 **关于 Azure 部署模型**
 
@@ -82,7 +82,7 @@
 
 在此过程中，我们将指导你完成连接两个虚拟网络：VNet1 和 VNet2。你需要具有丰富的网络知识，以便能够改用与你的网络设计要求相符的 IP 地址范围。将一个 Azure 虚拟网络连接到另一个 Azure 虚拟网络的操作与通过站点到站点 (S2S) VPN 连接到本地网络的操作相同。
 
-此过程主要使用 Azure 管理门户，但你必须使用 Azure PowerShell cmdlet 来连接 VPN 网关。
+此过程主要使用 Azure 经典门户，但你必须使用 Azure PowerShell cmdlet 来连接 VPN 网关。
 
 
 
@@ -107,7 +107,7 @@ VNet1：地址空间 = 10.1.0.0/16；区域 = 中国东部
 
 VNet2：地址空间 = 10.2.0.0/16；区域 = 中国北部
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 2. 在屏幕左下角，单击“新建”。在导航窗格中，单击“网络服务”，然后单击“虚拟网络”。单击“自定义创建”以启动配置向导。
 
@@ -138,7 +138,7 @@ VNet2：地址空间 = 10.2.0.0/16；区域 = 中国北部
   - **地址空间** - 包括起始 IP 和地址计数。请验证你指定的地址空间不与本地网络的任一个地址空间相重叠。对于本示例，我们将对 VNet1 使用 10.1.0.0/16。
   - **添加子网** - 包括起始 IP 和地址计数。附加的子网不是必需的，但你可能需要为具有静态 DIP 的 VM 创建一个单独的子网。或者，你可能需要在子网中拥有与其他角色实例分开的 VM。
 
-**单击复选标记**（位于该页右下角），此时将开始创建你的虚拟网络。创建完成时，将在 Azure 管理门户的“网络”页上看到“状态”下列出的“已创建”。
+**单击复选标记**（位于该页右下角），此时将开始创建你的虚拟网络。创建完成时，将在 Azure 经典门户的“网络”页上看到“状态”下列出的“已创建”。
 
 ## 步骤 3 - 创建另一个虚拟网络
 
@@ -150,7 +150,7 @@ VNet2：地址空间 = 10.2.0.0/16；区域 = 中国北部
 
 ## 步骤 4 - 添加本地网络
 
-创建 VNet 到 VNet 配置时，需要将每个 VNet 配置为互相将对方标识为本地网络站点。在此过程中，你要将每个 VNet 配置为本地网络。如果以前已配置了 VNet，请在 Azure 管理门户中以类似的操作将它们添加为本地网络。
+创建 VNet 到 VNet 配置时，需要将每个 VNet 配置为互相将对方标识为本地网络站点。在此过程中，你要将每个 VNet 配置为本地网络。如果以前已配置了 VNet，请在 Azure 经典门户中以类似的操作将它们添加为本地网络。
 
 1. 在屏幕左下角，单击“新建”。在导航窗格中，单击“网络服务”，然后单击“虚拟网络”。单击“添加本地网络”
 
@@ -162,7 +162,7 @@ VNet2：地址空间 = 10.2.0.0/16；区域 = 中国北部
 
 4. 将 VNet1 配置为本地网络后，请返回前面的屏幕，并使用对应于 VNet2 的值配置该 VNet。
 
-5. 现在，将每个 VNet 作为本地网络指向另一个 VNet。在 Azure 管理门户中，转到 VNet1 的“配置”页。在“站点到站点连接”下，选择“连接到本地网络”，然后选择“VNET2”作为本地网络。
+5. 现在，将每个 VNet 作为本地网络指向另一个 VNet。在 Azure 经典门户中，转到 VNet1 的“配置”页。在“站点到站点连接”下，选择“连接到本地网络”，然后选择“VNET2”作为本地网络。
 
   ![连接到本地网络](./media/virtual-networks-configure-vnet-to-vnet-connection/IC736058.jpg)
 

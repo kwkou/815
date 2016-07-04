@@ -63,7 +63,7 @@
 
 ### 连接到你的 Azure 订阅并创建资源组
 
-1. 登录到 [Azure 门户](http://portal.azure.cn)。 
+1. 登录到 [Azure 门户预览](http://portal.azure.cn)。 
 
 1. 单击“+新建”，然后在“应用商店”搜索窗口中键入“资源组”。
 
@@ -81,11 +81,11 @@
 
 1. 选择一个位置。该位置是将运行可用性组的 Azure 位置。对于本教程，我们将在一个 Azure 位置构建所有资源。
 
-1. 确认已选中“固定到仪表板”。此可选设置将在 Azure 门户仪表板上放置资源组的快捷方式。
+1. 确认已选中“固定到仪表板”。此可选设置将在 Azure 门户预览仪表板上放置资源组的快捷方式。
 
 1. 单击“创建”以创建资源组。
 
-Azure 将创建新资源组，并在门户中固定资源组的快捷方式。
+Azure 将创建新资源组，并在门户预览中固定资源组的快捷方式。
 
 ### 创建网络和子网
 
@@ -95,7 +95,7 @@ Azure 将创建新资源组，并在门户中固定资源组的快捷方式。
 
 若要创建虚拟网络，请执行以下操作：
 
-1. 在 Azure 门户上单击新资源组，然后单击“+”将新项添加到该资源组。Azure 随即打开“全部”边栏选项卡。 
+1. 在 Azure 门户预览上单击新资源组，然后单击“+”将新项添加到该资源组。Azure 随即打开“全部”边栏选项卡。 
 
 	![新建项](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/02-newiteminrg.png)
 
@@ -130,7 +130,7 @@ Azure 将创建新资源组，并在门户中固定资源组的快捷方式。
 
    ![配置虚拟网络](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/06-configurevirtualnetwork.png)
 
-Azure 会将你返回到门户仪表板，并在创建新网络时发出通知。
+Azure 会将你返回到门户预览仪表板，并在创建新网络时发出通知。
 
 ### 创建第二个子网
 
@@ -189,7 +189,7 @@ Azure 会将你返回到门户仪表板，并在创建新网络时发出通知�
 | **容错域** | 3 | 3 |
 | **更新域** | 5 | 3 |
 
-创建可用性集之后，请返回到 Azure 门户中的资源组。
+创建可用性集之后，请返回到 Azure 门户预览中的资源组。
 
 ## 创建并配置域控制器
 
@@ -242,7 +242,7 @@ Azure 将创建虚拟机。
 
 执行以下步骤，将 **ad-primary-dc** 计算机配置为 corp.contoso.com 的域控制器。
 
-1. 在门户中打开 **SQL-HA-RG** 资源组，然后选择 **ad-primary-dc** 计算机。在 **ad-primary-dc** 边栏选项卡中，单击“连接”，打开用于远程桌面访问的 RDP 文件。
+1. 在门户预览中打开 **SQL-HA-RG** 资源组，然后选择 **ad-primary-dc** 计算机。在 **ad-primary-dc** 边栏选项卡中，单击“连接”，打开用于远程桌面访问的 RDP 文件。
 
 	![连接到虚拟机](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/20-connectrdp.png)
 
@@ -258,7 +258,7 @@ Azure 将创建虚拟机。
 
 1. 选择“Active Directory 域服务”和“DNS 服务器”角色。出现提示时，添加这些角色所需的任何其他功能。
 
-	>[AZURE.NOTE] 你将收到无静态 IP 地址的验证警告。如果你要测试配置，请单击“继续”。对于生产方案，请在 Azure 门户中将 IP 地址设置为静态，或[使用 PowerShell 设置域控制器计算机的静态 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip)。
+	>[AZURE.NOTE] 你将收到无静态 IP 地址的验证警告。如果你要测试配置，请单击“继续”。对于生产方案，请在 Azure 门户预览中将 IP 地址设置为静态，或[使用 PowerShell 设置域控制器计算机的静态 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip)。
 
 	![添加角色对话框](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC784624.png)
 
@@ -289,11 +289,11 @@ Azure 将创建虚拟机。
 
 ### 配置第二个域控制器
 
-在主域控制器重新启动之后，可以配置第二个域控制器。此可选步骤适用于实现高可用性。若要完成此步骤，需要知道域控制器的专用 IP 地址。可以从 Azure 门户获取此信息。遵循以下步骤配置第二个域控制器。
+在主域控制器重新启动之后，可以配置第二个域控制器。此可选步骤适用于实现高可用性。若要完成此步骤，需要知道域控制器的专用 IP 地址。可以从 Azure 门户预览获取此信息。遵循以下步骤配置第二个域控制器。
 
 1. 重新登录到 **ad-primary-dc** 计算机。 
 
-1. 打开远程桌面并通过 IP 地址连接到第二个域控制器。如果你不知道第二个域控制器的 IP 地址，请转到 Azure 门户并查看分配给第二个域控制器的网络接口的地址。
+1. 打开远程桌面并通过 IP 地址连接到第二个域控制器。如果你不知道第二个域控制器的 IP 地址，请转到 Azure 门户预览并查看分配给第二个域控制器的网络接口的地址。
 
 1. 将首选 DNS 服务器地址更改为域控制器的地址。
 
@@ -319,7 +319,7 @@ Azure 将创建虚拟机。
 
 	![使用 NSLOOKUP 查找 DC 的 IP 地址](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC664954.png)
 
-  >[AZURE.NOTE] 设置 DNS 后，你可以断开与成员服务器之间的 RDP 会话。为此，可从 Azure 门户重新启动 VM。
+  >[AZURE.NOTE] 设置 DNS 后，你可以断开与成员服务器之间的 RDP 会话。为此，可从 Azure 门户预览重新启动 VM。
 
 
 1. 单击“确定”，然后“关闭”以提交更改。你现在能够将该 VM 加入到 **corp.contoso.com** 中。
@@ -437,7 +437,7 @@ Azure 将创建虚拟机。
 
 	![使用 NSLOOKUP 查找 DC 的 IP 地址](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC664954.png)
 
-  >[AZURE.NOTE] 设置 DNS 后，你可以断开与成员服务器之间的 RDP 会话。为此，可从 Azure 门户重新启动 VM。
+  >[AZURE.NOTE] 设置 DNS 后，你可以断开与成员服务器之间的 RDP 会话。为此，可从 Azure 门户预览重新启动 VM。
 
 
 1. 单击“确定”，然后“关闭”以提交更改。你现在能够将该 VM 加入到 **corp.contoso.com** 中。
@@ -764,7 +764,7 @@ Azure 将创建虚拟机。
 
 ### 在 Azure 中创建负载平衡器
 
-1. 在 Azure 门户中，转到 **SQL-HA-RG**，然后单击“+ 添加”。
+1. 在 Azure 门户预览中，转到 **SQL-HA-RG**，然后单击“+ 添加”。
 
 1. 搜索“负载平衡器”。选择 Microsoft 发布的负载平衡器，然后单击“创建”。
 
@@ -827,7 +827,7 @@ Azure 将创建虚拟机。
 
 1. 单击“资源”选项卡，然后展开刚创建的客户端访问点。右键单击 IP 资源，然后单击“属性”。记下 IP 地址的名称。你将在 PowerShell 脚本的 `$IPResourceName` 变量中使用此名称。
 
-1. 单击“IP 地址”下面的“静态 IP 地址”，并将静态 IP 地址设置为在 Azure 门户上用于 **sqlLB** 负载平衡器的相同地址。请注意，你还要在 PowerShell 脚本的 `$ILBIP` 变量中使用这同一个 IP 地址。为此地址启用 NetBIOS，然后单击“确定”。
+1. 单击“IP 地址”下面的“静态 IP 地址”，并将静态 IP 地址设置为在 Azure 门户预览上用于 **sqlLB** 负载平衡器的相同地址。请注意，你还要在 PowerShell 脚本的 `$ILBIP` 变量中使用这同一个 IP 地址。为此地址启用 NetBIOS，然后单击“确定”。
 
 1. 在当前托管主副本的群集节点上，打开已提升权限的 PowerShell ISE，然后将以下命令粘贴到新脚本中。
 

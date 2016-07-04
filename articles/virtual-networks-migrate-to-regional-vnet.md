@@ -21,7 +21,7 @@
 
 ## 创建和迁移到区域 VNet
 
-今后，在创建新的 VNet 时，可以使用*区域*。你可以将此视为管理门户中的一个选项。请注意，在网络配置文件中，这显示为*位置*。
+今后，在创建新的 VNet 时，可以使用*区域*。你可以将此视为经典门户中的一个选项。请注意，在网络配置文件中，这显示为*位置*。
 
 >[AZURE.IMPORTANT]尽管从技术上讲仍可以创建与地缘组关联的虚拟网络，但是，没有令人信服的理由让人这么做。许多新功能，例如网络安全组，仅当使用区域 VNet 时才可用，而不能用于与地缘组关联的虚拟网络。
 
@@ -35,7 +35,7 @@
 
 提前迁移适用于拥有支持合同的客户。若要选择提前迁移，请执行以下步骤：
 
-1. 在**管理门户**的 VNet 页上，单击右上角的“联系 Microsoft 支持”。
+1. 在**经典门户**的 VNet 页上，单击右上角的“联系 Microsoft 支持”。
 
 	![VNet 区域迁移请求](./media/virtual-networks-migrate-to-regional-vnet/IC790447.png)
 
@@ -51,7 +51,7 @@
 
 3. 先决条件：必须已为你的 VNet 启用迁移，才能执行以下步骤。如果你收到确认（如果是提前迁移请求），或此页已更新可反映启用了所有 VNet 以进行迁移，则会知道 VNet 已启用。
 
-4. 导出网络配置文件。可以使用 PowerShell 或管理门户。有关使用管理门户的说明，请参阅[使用网络配置文件配置 VNet](/documentation/articles/virtual-networks-using-network-configuration-file)。
+4. 导出网络配置文件。可以使用 PowerShell 或经典门户。有关使用经典门户的说明，请参阅[使用网络配置文件配置 VNet](/documentation/articles/virtual-networks-using-network-configuration-file)。
 
 5. 编辑网络配置文件，将旧值替换为新值。
 

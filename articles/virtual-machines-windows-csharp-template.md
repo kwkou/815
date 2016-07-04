@@ -71,7 +71,7 @@
     
         New-AzureRmStorageAccount -ResourceGroupName $rgName -Name $stName -Type "Standard_LRS" -Location $locName
 
-3. 将 {blob-storage-endpoint} 替换为你帐户中 Blob 存储的终结点。将 {storage-account-name} 替换为你的存储帐户名称。将 {primary-storage-key} 替换为主存储密钥。运行以下命令以创建用于存储文件的容器。可以从 Azure 门户获取终结点和密钥值。
+3. 将 {blob-storage-endpoint} 替换为你帐户中 Blob 存储的终结点。将 {storage-account-name} 替换为你的存储帐户名称。将 {primary-storage-key} 替换为主存储密钥。运行以下命令以创建用于存储文件的容器。可以从 Azure 门户预览获取终结点和密钥值。
 
         $ConnectionString = "DefaultEndpointsProtocol=http;BlobEndpoint={blob-storage-endpoint};AccountName={storage-account-name};AccountKey={primary-storage-key}"
         $ctx = New-AzureStorageContext -ConnnectionString $ConnectionString
@@ -484,11 +484,11 @@ Azure 资源管理器将从 Azure 存储帐户访问模板文件和参数文件�
 
 2.	在显示“已接受”状态之后按 **Enter**。
 
-	控制台应用程序从头到尾完成运行大约需要 5 分钟时间。在按 Enter 开始删除资源之前，你可能需要在 Azure 门户中花几分钟时间来验证资源的创建。
+	控制台应用程序从头到尾完成运行大约需要 5 分钟时间。在按 Enter 开始删除资源之前，你可能需要在 Azure 门户预览中花几分钟时间来验证资源的创建。
 
-3. 在 Azure 门户中浏览到“审核日志”，以查看资源的状态：
+3. 在 Azure 门户预览中浏览到“审核日志”，以查看资源的状态：
 
-	![在 Azure 门户中浏览审核日志](./media/virtual-machines-windows-csharp-template/crpportal.png)
+	![在 Azure 门户预览中浏览审核日志](./media/virtual-machines-windows-csharp-template/crpportal.png)
 
 ## 后续步骤
 

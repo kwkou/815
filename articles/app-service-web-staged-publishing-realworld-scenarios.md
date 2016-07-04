@@ -229,7 +229,7 @@
 	require_once(ABSPATH . 'wp-settings.php');
 
 #### 设置过渡环境
-假设你已在 Azure Web 上运行了 WordPress Web 应用，请登录 [Azure 管理门户](http://manage.windowsazure.cn)并转到该 WordPress Web 应用。
+假设你已在 Azure Web 上运行了 WordPress Web 应用，请登录 [Azure 经典门户](http://manage.windowsazure.cn)并转到该 WordPress Web 应用。
 单击“仪表板”->“速览”->“添加新部署槽”以创建名为 stage 的部署槽。部署槽是与上面创建的主要 web 应用共享相同资源的另一个 web 应用。
 
 #### 配置环境特定的应用设置
@@ -307,7 +307,7 @@
 
 > [AZURE.NOTE] 上述脚本是针对 Azure PowerShell 1.0.2 或更高版本编写的。对于更低的版本，请相应地更改命令。有关详细信息，请参阅博客[在中国使用的 Azure PowerShell 1.0.0 或更高版本](http://blogs.msdn.com/b/azchina/archive/2015/12/18/azure-powershell-1.0.0_e54e0a4e48722c6728572d4efd56_azure_7f4f28758476e86c0f618b4e7998_.aspx)。
 
-必须使用此 PowerShell 脚本（或其他类似的方式，如 Azure CLI）来执行交换，以保留每个槽的应用设置。如果在 Azure 管理门户中执行交换，则执行交换操作时，网站的应用设置、连接字符串配置将不会跨环境移动，因此，如果存在任何数据库更改，在中断生产网站时将看不到这些更改。
+必须使用此 PowerShell 脚本（或其他类似的方式，如 Azure CLI）来执行交换，以保留每个槽的应用设置。如果在 Azure 经典门户中执行交换，则执行交换操作时，网站的应用设置、连接字符串配置将不会跨环境移动，因此，如果存在任何数据库更改，在中断生产网站时将看不到这些更改。
 
 
  > [AZURE.NOTE]

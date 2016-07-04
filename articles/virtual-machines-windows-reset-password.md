@@ -22,7 +22,7 @@
 
 如果你由于忘记了密码或远程桌面服务配置有问题而无法连接到 Windows 虚拟机，你可以重置本地管理员密码或重置远程桌面服务配置。
 
-根据虚拟机的部署模型，可以使用 Azure 门户或 Azure PowerShell 中的 VM Access 扩展。如果使用 PowerShell，请务必在工作计算机上安装最新的 PowerShell 模块，并登录 Azure 订阅。有关详细步骤，请阅读 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)。
+根据虚拟机的部署模型，可以使用 Azure 门户预览或 Azure PowerShell 中的 VM Access 扩展。如果使用 PowerShell，请务必在工作计算机上安装最新的 PowerShell 模块，并登录 Azure 订阅。有关详细步骤，请阅读 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure)。
 
 
 > [AZURE.TIP] 可以使用 `Import-Module Azure; Get-Module Azure | Format-Table Version` 来检查安装的 PowerShell 版本。
@@ -30,9 +30,9 @@
 
 ## 经典部署模型中的 Windows VM
 
-### Azure 门户
+### Azure 门户预览
 
-对于使用经典部署模型创建的虚拟机，可以使用 [Azure 门户](https://portal.azure.cn)来重置远程桌面服务。单击“浏览”>“虚拟机(经典)”> 你的 Windows 虚拟机 >“重置远程...”。将显示以下页。
+对于使用经典部署模型创建的虚拟机，可以使用 [Azure 门户预览](https://portal.azure.cn)来重置远程桌面服务。单击“浏览”>“虚拟机(经典)”> 你的 Windows 虚拟机 >“重置远程...”。将显示以下页。
 
 
 ![重置 RDP 配置页](./media/virtual-machines-windows-reset-rdp/Portal-RDP-Reset-Windows.png)
@@ -52,7 +52,7 @@
 
 如果 **write-host** 命令显示 **True**，则已安装 VM 代理。如果该命令显示 **False**，请参阅 Azure 博客文章 [VM 代理和扩展 - 第 2 部分](https://azure.microsoft.com/zh-cn/blog/vm-agent-and-extensions-part-2/)中的说明和下载链接。
 
-如果虚拟机是使用门户创建的，请检查 `$vm.GetInstance().ProvisionGuestAgent` 是否返回 **True**。如果不是，请使用以下命令进行设置：
+如果虚拟机是使用门户预览创建的，请检查 `$vm.GetInstance().ProvisionGuestAgent` 是否返回 **True**。如果不是，请使用以下命令进行设置：
 
 	$vm.GetInstance().ProvisionGuestAgent = $true
 
@@ -87,7 +87,7 @@ b. `Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Serv
 
 ## Resource Manager 部署模型中的 Windows VM
 
-Azure 门户目前不支持重置使用 Azure Resource Manager 创建的虚拟机的远程访问或登录凭据。
+Azure 门户预览目前不支持重置使用 Azure Resource Manager 创建的虚拟机的远程访问或登录凭据。
 
 
 ### VMAccess 扩展和 PowerShell

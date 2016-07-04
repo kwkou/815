@@ -55,7 +55,7 @@
 
 **解决方法**
 
-若要解决这两个错误，请在门户中删除当前映像，[从当前 VHD 重新捕获映像](/documentation/articles/virtual-machines-windows-capture-image)，该映像将带有与该 OS（通用/专用）相同的设置。
+若要解决这两个错误，请在门户预览中删除当前映像，[从当前 VHD 重新捕获映像](/documentation/articles/virtual-machines-windows-capture-image)，该映像将带有与该 OS（通用/专用）相同的设置。
 
 ## 问题：自定义/库/应用商店映像；分配失败
 当新的 VM 请求被固定到不支持所请求的 VM 大小、或没有可用空间可处理请求的群集时，便会发生此错误。

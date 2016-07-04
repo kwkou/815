@@ -53,9 +53,9 @@ SQL Server IaaS 代理扩展支持以下管理任务：
 
 ## 状态
 
-验证是否已安装扩展的方法之一是在 Azure 门户中查看代理状态。在虚拟机边栏选项卡中选择“所有设置”，然后单击“扩展”。随后应会列出 **SQLIaaSAgent** 扩展。
+验证是否已安装扩展的方法之一是在 Azure 门户预览中查看代理状态。在虚拟机边栏选项卡中选择“所有设置”，然后单击“扩展”。随后应会列出 **SQLIaaSAgent** 扩展。
 
-![Azure 门户中的 SQL Server IaaS 代理扩展](./media/virtual-machines-windows-classic-sql-server-agent-extension/azure-sql-server-iaas-agent-portal.png)
+![Azure 门户预览中的 SQL Server IaaS 代理扩展](./media/virtual-machines-windows-classic-sql-server-agent-extension/azure-sql-server-iaas-agent-portal.png)
 
 也可以使用 **Get-AzureVMSqlServerExtension** Azure Powershell cmdlet。
 
@@ -63,9 +63,9 @@ SQL Server IaaS 代理扩展支持以下管理任务：
 
 ## 删除   
 
-在 Azure 门户中，可以通过单击虚拟机属性的“扩展”边栏选项卡中的省略号来卸载扩展。然后单击“删除”。
+在 Azure 门户预览中，可以通过单击虚拟机属性的“扩展”边栏选项卡中的省略号来卸载扩展。然后单击“删除”。
 
-![在 Azure 门户中卸载 SQL Server IaaS 代理扩展](./media/virtual-machines-windows-classic-sql-server-agent-extension/azure-sql-server-iaas-agent-uninstall.png)
+![在 Azure 门户预览中卸载 SQL Server IaaS 代理扩展](./media/virtual-machines-windows-classic-sql-server-agent-extension/azure-sql-server-iaas-agent-uninstall.png)
 
 也可以使用 **Remove-AzureVMSqlServerExtension** Powershell cmdlet。
 

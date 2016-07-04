@@ -2,7 +2,7 @@
 
 <properties
 	pageTitle="将数据磁盘附加到 Windows VM |Azure"
-	description="如何使用资源管理器部署模型在 Azure 门户中将新磁盘或现有数据磁盘附加到 Windows VM。"
+	description="如何使用资源管理器部署模型在 Azure 门户预览中将新磁盘或现有数据磁盘附加到 Windows VM。"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="cynthn"
@@ -15,9 +15,9 @@
 	ms.date="05/09/2016"
 	wacn.date="06/29/2016"/>
 
-# 如何在 Azure 门户中将数据磁盘附加到 Windows VM。
+# 如何在 Azure 门户预览中将数据磁盘附加到 Windows VM。
 
-本文向你介绍如何通过 Azure 门户将新磁盘和现有磁盘附加到 Windows 虚拟机。你也可以[在 Azure 门户中将磁盘数据附加到 Linux VM](/documentation/articles/virtual-machines-linux-attach-disk-portal)。在开始之前，请查看以下提示：
+本文向你介绍如何通过 Azure 门户预览将新磁盘和现有磁盘附加到 Windows 虚拟机。你也可以[在 Azure 门户预览中将磁盘数据附加到 Linux VM](/documentation/articles/virtual-machines-linux-attach-disk-portal)。在开始之前，请查看以下提示：
 
 - 虚拟机的大小决定了可以附加多少个磁盘。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)。
 - 要使用高级存储，需要使用 DS 系列或 GS 序列虚拟机。可以从高级存储帐户和标准存储帐户通过这些虚拟机使用磁盘。高级存储只在某些区域可用。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage)。

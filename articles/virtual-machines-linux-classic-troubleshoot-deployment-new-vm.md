@@ -29,7 +29,7 @@
 
 若要开始故障排除，请收集审核日志，以识别与问题相关的错误。
 
-在 Azure 门户中，单击“浏览”>“虚拟机”> 你的 Windows 虚拟机 >“设置”>“审核日志”。
+在 Azure 门户预览中，单击“浏览”>“虚拟机”> 你的 Windows 虚拟机 >“设置”>“审核日志”。
 
 [AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-issue1](../includes/virtual-machines-troubleshoot-deployment-new-vm-issue1-include.md)]
 
@@ -55,7 +55,7 @@
 
 **解决方法：**
 
-若要解决这两个错误，请在门户中删除当前映像，[从当前 VHD 重新捕获映像](/documentation/articles/virtual-machines-linux-classic-capture-image)，该映像将带有与该 OS（通用/专用）相同的设置。
+若要解决这两个错误，请在经典门户中删除当前映像，[从当前 VHD 重新捕获映像](/documentation/articles/virtual-machines-linux-classic-capture-image)，该映像将带有与该 OS（通用/专用）相同的设置。
 
 ## 问题：自定义/库/应用商店映像；分配失败
 当新的 VM 请求被发送到没有可用空间可处理请求、或不支持所请求的 VM 大小的群集，便发生此错误。在相同的云服务中不可混合不同系列的 VM。因此，如果想要创建和云服务可支持大小不同的新 VM，计算请求将失败。

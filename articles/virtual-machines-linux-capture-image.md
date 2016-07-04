@@ -174,7 +174,7 @@ VM 预配完成并运行后，你可能想要连接和安装数据磁盘。请�
 * 在相同或不同的虚拟网络中新建 NIC
 * 使用修改后的模板 JSON 文件在你设置虚拟网络的资源组中创建部署
 
-如果你希望网络在你从映像创建 VM 时自动设置，请从 GitHub 使用 [101-vm-from-user-image template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image)。此模板会从你的自定义映像创建 VM 以及必要的虚拟网络、公共 IP 地址和 NIC 资源。若要在 Azure 门户中演练使用此模板，请参阅 [如何使用 ARM 模板从自定义映像创建虚拟机](http://codeisahighway.com/how-to-create-a-virtual-machine-from-a-custom-image-using-an-arm-template/)。
+如果你希望网络在你从映像创建 VM 时自动设置，请从 GitHub 使用 [101-vm-from-user-image template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image)。此模板会从你的自定义映像创建 VM 以及必要的虚拟网络、公共 IP 地址和 NIC 资源。若要在 Azure 门户预览中演练使用此模板，请参阅 [如何使用 ARM 模板从自定义映像创建虚拟机](http://codeisahighway.com/how-to-create-a-virtual-machine-from-a-custom-image-using-an-arm-template/)。
 
 ## 使用 azure vm create 命令
 

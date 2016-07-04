@@ -35,7 +35,7 @@
 
 1. 导航到[模板页](https://github.com/Azure/azure-quickstart-templates/tree/master/IaaS-Story/11-MultiNIC)。
 2. 在模板页中“父资源组”的右侧，单击“部署到 Azure”。
-3. 如果需要，更改参数值，然后按照 Azure 预览门户中的步骤部署资源组。
+3. 如果需要，更改参数值，然后按照 Azure 门户预览中的步骤部署资源组。
 
 > [AZURE.IMPORTANT]请确保你的存储帐户名称是唯一的。不能在 Azure 中有重复的存储帐户名称。
 

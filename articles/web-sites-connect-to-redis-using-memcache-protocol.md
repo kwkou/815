@@ -72,7 +72,7 @@ Web Apps Memcache 填充码可以与任何应用程序一起使用，前提是�
 
 ### 启用 php\_memcache 扩展
 
-下载文件之后，将 **php\_memcache.dll** 解压缩并上载到 **d:\\home\\site\\wwwroot\\bin\\ext\** 目录。将 php\_memcache.dll 上载到 Web 应用后，你需要启用 PHP 运行时的扩展。若要在 Azure 管理门户中启用 Memcache 扩展，请打开 Web 应用的“配置”，然后添加键为 **PHP\_EXTENSIONS**、值为 **bin\\ext\\php\_memcache.dll** 的新应用设置。
+下载文件之后，将 **php\_memcache.dll** 解压缩并上载到 **d:\\home\\site\\wwwroot\\bin\\ext\** 目录。将 php\_memcache.dll 上载到 Web 应用后，你需要启用 PHP 运行时的扩展。若要在 Azure 经典门户中启用 Memcache 扩展，请打开 Web 应用的“配置”，然后添加键为 **PHP\_EXTENSIONS**、值为 **bin\\ext\\php\_memcache.dll** 的新应用设置。
 
 
 > [AZURE.NOTE] 如果 Web 应用需要加载多个 PHP 扩展，则 PHP\_EXTENSIONS 的值应为由逗号分隔的 DLL 文件相对路径的列表。
