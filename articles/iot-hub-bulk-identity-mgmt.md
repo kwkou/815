@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="04/29/2016"
- wacn.date="05/30/2016"/>
+ wacn.date="07/04/2016"/>
 
 # 批量管理 IoT 中心的设备标识
 
@@ -331,5 +331,7 @@ static string GetContainerSasUri(CloudBlobContainer container)
 在本文中，你已学习如何对 IoT 中心内的设备标识注册表执行批量操作。可以使用以下文章继续探索 IoT 中心功能和其他 IoT 方案：
 
 - [以编程方式创建 IoT 中心](/documentation/articles/iot-hub-rm-template)
+- [IoT 中心使用情况度量值](/documentation/articles/iot-hub-metrics)
+- [IoT 中心操作监视](/documentation/articles/iot-hub-operations-monitoring)
 
 <!---HONumber=Mooncake_0307_2016-->

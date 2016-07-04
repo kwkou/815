@@ -10,7 +10,7 @@
 <tags
      ms.service="iot-hub"
      ms.date="03/22/2016"
-     wacn.date="05/30/2016"/>
+     wacn.date="07/04/2016"/>
 
 # 适用于 .NET 的 Azure IoT 中心入门
 
@@ -26,7 +26,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个物联网 (Io
 
 本教程演示如何：
 
-<!-- - 使用 Azure 门户创建 IoT 中心。 -->
+- 使用 Azure 门户创建 IoT 中心。
 - 在 IoT 中心内创建设备标识。
 - 创建一个模拟设备，用于将遥测数据发送到云后端，以及从云后端接收命令。
 
@@ -44,6 +44,43 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个物联网 (Io
 
 + 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][lnk-free-trial]。
 
+## 创建 IoT 中心
+
+需要为模拟设备创建 IoT 中心以供连接。以下步骤说明如何使用 Azure 门户完成此任务。
+
+1. 登录到 [Azure 门户][lnk-portal]。
+
+2. 在跳转栏中，依次单击“新建”、“物联网”、“Azure IoT 中心”。
+
+    ![][1]
+
+3. 在“IoT 中心”边栏选项卡中，选择 IoT 中心的配置。
+
+    ![][2]
+
+   * 在“名称”框中，输入 IoT 中心的名称。如果该**名称**有效且可用，“名称”框中会出现绿色的勾选标记。
+   * 选择**定价层和缩放层**。本教程不需要特定的层。
+   * 在“资源组”中，创建新资源组或选择现有的资源组。有关详细信息，请参阅[使用资源组管理 Azure 资源][lnk-resource-groups]。
+   * 在“位置”中，选择要托管 IoT 中心的位置。  
+
+4. 选择 IoT 中心配置选项后，单击“创建”。Azure 可能需要几分钟时间来创建 IoT 中心。若要检查状态，可以在“启动板”或“通知”面板中监视进度。
+
+    ![][3]
+
+5. 成功创建 IoT 中心后，请打开新 IoT 中心的边栏选项卡，记下“主机名”，然后单击“钥匙”图标。
+
+    ![][4]
+
+6. 单击“iothubowner”策略，然后复制并记下“iothubowner”边栏选项卡中的连接字符串。
+
+    ![][5]
+
+现已创建 IoT 中心，因此已具有完成本教程的其余部分所需的主机名称和连接字符串。
+
+[AZURE.INCLUDE [iot-hub-get-started-cloud-csharp](../includes/iot-hub-get-started-cloud-csharp.md)]
+
+
+[AZURE.INCLUDE [iot-hub-get-started-device-csharp](../includes/iot-hub-get-started-device-csharp.md)]
 
 
 ## 运行应用程序
@@ -72,6 +109,11 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个物联网 (Io
 - [从设备上载文件][lnk-upload-tutorial]介绍了一种模式，该模式利用云到设备的消息来帮助从设备上载文件。
 
 <!-- Images. -->
+[1]: ./media/iot-hub-csharp-csharp-getstarted/create-iot-hub1.png
+[2]: ./media/iot-hub-csharp-csharp-getstarted/create-iot-hub2.png
+[3]: ./media/iot-hub-csharp-csharp-getstarted/create-iot-hub3.png
+[4]: ./media/iot-hub-csharp-csharp-getstarted/create-iot-hub4.png
+[5]: ./media/iot-hub-csharp-csharp-getstarted/create-iot-hub5.png
 [41]: ./media/iot-hub-csharp-csharp-getstarted/run-apps1.png
 [42]: ./media/iot-hub-csharp-csharp-getstarted/run-apps2.png
 [43]: ./media/iot-hub-csharp-csharp-getstarted/usage.png
