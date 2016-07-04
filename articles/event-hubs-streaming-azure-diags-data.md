@@ -1,3 +1,4 @@
+<!-- Add ";EndpointSuffix=core.chinacloudapi.cn to stroage links -->
 <properties 
    pageTitle="使用事件中心流式处理热路径中的 Azure 诊断数据"
    description="说明如何使用事件中心从端到端配置 Azure 诊断，包括常见方案的指导。"
@@ -190,7 +191,7 @@ Azure 诊断提供了灵活的方法用于收集来自计算 VM 的指标和日�
 	            string eventHubName = "<EventHub Name>";
 	            string storageAccountName = "<Storage Account Name>";
 	            string storageAccountKey = "<Storage Account Key>”;
-	            string storageConnectionString = string.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}", storageAccountName, storageAccountKey);
+	            string storageConnectionString = string.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1};EndpointSuffix=core.chinacloudapi.cn", storageAccountName, storageAccountKey);
 	
 	            string eventProcessorHostName = Guid.NewGuid().ToString();
 	            EventProcessorHost eventProcessorHost = new EventProcessorHost(eventProcessorHostName, eventHubName, EventHubConsumerGroup.DefaultGroupName, eventHubConnectionString, storageConnectionString);
