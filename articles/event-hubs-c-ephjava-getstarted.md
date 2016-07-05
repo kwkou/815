@@ -1,6 +1,6 @@
 <properties
-	pageTitle="通过 Java 使用事件中心入门 | Azure"
-	description="遵循本教程开始使用 Azure 事件中心，以通过 Java 发送事件，并使用 EventProcessorHost 通过 C# 接收事件。"
+	pageTitle="通过 C 使用事件中心入门 | Azure"
+	description="遵循本教程开始使用 Azure 事件中心，以通过 C 发送事件，并使用 EventProcessorHost 通过 Java 接收事件。"
 	services="event-hubs"
 	documentationCenter=""
 	authors="fsautomata"
@@ -22,33 +22,33 @@
 
 有关详细信息，请参阅[事件中心概述][]。
 
-本教程介绍如何使用以 Java 编写的控制台应用程序将消息引入事件中心，以及如何使用 C# [事件处理程序主机][]库并行检索这些消息。
+在本教程中，你将学习如何使用用 C 编写的控制台应用程序将消息引入事件中心，以及如何使用 C# [事件处理程序主机][]库并行检索这些消息。
 
-若要完成本教程，你需要以下各项：
+为了完成本教程，你将需要以下内容：
 
-+ Java 开发环境。对于本教程，我们将采用 [Eclipse](https://www.eclipse.org/)。
++ C 语言开发环境。对于本教程，我们假设 gcc 堆栈位于使用 Ubuntu 14.04 的 [Azure Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli) 上。有关其他环境的说明，将在外部链接中提供。
 
-+ [Microsoft Visual Studio](http://visualstudio.com)
++ Microsoft Visual Studio Express for Windows
 
-+ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
++ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="/pricing/1rmb-trial" target="_blank">Azure 试用</a>。
 
 [AZURE.INCLUDE [event-hubs-create-event-hub](../includes/event-hubs-create-event-hub.md)]
 
-[AZURE.INCLUDE [service-bus-event-hubs-get-started-send-java](../includes/service-bus-event-hubs-get-started-send-java.md)]
+[AZURE.INCLUDE [service-bus-event-hubs-get-started-send-c](../includes/service-bus-event-hubs-get-started-send-c.md)]
 
-[AZURE.INCLUDE [service-bus-event-hubs-get-started-receive-ephcs](../includes/service-bus-event-hubs-get-started-receive-ephcs.md)]
+[AZURE.INCLUDE [service-bus-event-hubs-get-started-receive-ephjava](../includes/service-bus-event-hubs-get-started-receive-ephcs.md)]
 
 ## 运行应用程序
 
 现在，你已准备就绪，可以运行应用程序了。
 
-1.	从 Visual Studio 中运行 **Receiver** 项目，然后等待它为所有分区启动接收方。
+1.	运行 **Receiver** 项目。
 
 	![][21]
 
-2.	运行 **Sender** 项目。
+2.	运行 **Sender** 程序，然后就会看到事件出现在接收方窗口中。
 
-	![][22]
+	![][24]
 
 ## 后续步骤
 
@@ -57,20 +57,18 @@
 - [使用事件中心的完整示例应用程序][]。
 - [使用事件中心扩大事件处理][]示例。
 - 使用服务总线队列的[队列消息解决方案][]。
-
-有关详细信息，请参阅 [Java 开发人员中心](/develop/java/)。
+- [事件中心概述][]
 
 <!-- Images. -->
-[21]: ./media/event-hubs-java-ephcs-getstarted/run-csharp-ephcs1.png
-[22]: ./media/event-hubs-java-ephcs-getstarted/java-send.png
+[21]: ./media/event-hubs-c-ephjava-getstarted/ephjava.png
+[24]: ./media/event-hubs-c-ephjava-getstarted/receive-eph-c.png
 
 <!-- Links -->
-[Azure 经典管理门户]: https://manage.windowsazure.cn/
+[Azure classic portal]: https://manage.windowsazure.cn/
 [事件处理程序主机]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [事件中心概述]: /documentation/articles/event-hubs-overview
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
 [使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues
- 
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0627_2016-->
