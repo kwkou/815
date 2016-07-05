@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Azure 门户中启用存储度量值 | Azure" 
+	pageTitle="在 Azure 门户预览中启用存储度量值 | Azure" 
 	description="如何为 Blob、队列、表和文件服务启用存储度量值" 
 	services="storage" 
 	documentationCenter="" 
@@ -8,7 +8,7 @@
 	editor=""/>
 <tags ms.service="storage"
 	ms.date="05/09/2016" 
-    wacn.date="06/06/2016"
+    wacn.date="07/05/2016"
     />
 # 启用 Azure 存储空间度量值并查看度量值数据
 
@@ -16,13 +16,15 @@
 
 ## 概述
 
-对于存储服务，默认情况下不启用存储度量值。你可以通过 [Azure 管理门户](https://manage.windowsazure.cn)或 Windows PowerShell 启用监视，也可以通过存储客户端库以编程方式启用监视。
+
+对于存储服务，默认情况下不启用存储度量值。你可以通过 [Azure 门户预览](https://portal.azure.cn)或 Windows PowerShell 启用监视，也可以通过存储客户端库以编程方式启用监视。
 
 启用存储度量值时，必须为数据选择保留期：此期限用于确定存储服务保留度量值并针对存储度量值所需的空间向你收费的时长。通常，由于分钟度量值需要大量额外的空间，因此，应对分钟度量值而非小时度量值使用较短的保留期。你应该选择恰当的保留期，以便有足够的时间分析数据，并下载任何需要保留下来进行脱机分析或报告的度量值。请记住，从存储帐户下载度量值数据时，你也需要付费。
 
-## 如何使用管理门户启用度量值
+## 如何使用 Azure 门户预览启用度量值
 
-请按照下列步骤来启用 [Azure 门户](https://manage.windowsazure.cn)中的度量值：
+请按照下列步骤来启用 [Azure 门户预览](https://portal.azure.cn)中的度量值：
+
 
 1. 导航到你的存储帐户。 
 1. 打开“设置”边栏选项卡，然后选择“诊断”。
@@ -30,7 +32,8 @@
 1. 选择你希望监视的服务的度量值。
 2. 指定用来指示保留度量值和日志数据的时间长度的保留期策略。
 
-请注意，管理门户目前不允许你在存储帐户中配置分钟度量值；你必须通过 PowerShell 或编程方式启用分钟度量值。
+请注意，[Azure 门户预览](https://portal.azure.cn)目前不允许你在存储帐户中配置分钟度量值；必须通过 PowerShell 或编程方式启用分钟度量值。
+
 
 ## 如何使用 PowerShell 启用度量值
 
@@ -88,14 +91,16 @@
     
 ## 查看存储度量值
 
-在将存储分析度量值配置为监视存储帐户后，存储分析将使用存储帐户在一组已知表中记录度量值。可以将图表配置为每小时查看 [Azure 门户](https://manage.windowsazure.cn)中的度量值：
 
-1. 导航到你在 [Azure 门户](https://manage.windowsazure.cn)中的存储帐户。
-2. 在“监视”部分中，单击“添加磁贴”以添加一个新图表。在“磁贴库”，选择想要查看的度量值并将其拖到“监视”部分。
-3. 若要编辑哪些度量值在图表中显示，单击“编辑”链接。可以通过选择或取消选择单个度量值来进行添加或删除。
-4. 完成编辑度量值后，单击“保存”。
+在将存储分析度量值配置为监视存储帐户后，存储分析将使用存储帐户在一组已知表中记录度量值。可以将图表配置为每小时查看 [Azure 门户预览](https://portal.azure.cn)中的度量值：
 
-如果你要为长期存储下载度量值或在本地分析这些度量值，则需要使用工具或编写一些代码来读取表。你必须下载分析用的分钟度量值。如果你在存储帐户中列出所有表，则这些表不会显示，但你可以按名称直接访问它们。很多第三方存储浏览工具都识别这些表，并允许你直接查看它们（有关可用工具的列表，请参阅博客文章 [Microsoft Azure 存储空间资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)）。
+1. 导航到你在 [Azure 门户预览](https://portal.azure.cn)中的存储帐户。
+2. 在“监视”部分中，单击“添加磁贴”以添加一个新图表。在“磁贴库”中，选择想要查看的度量值并将其拖到“监视”部分。
+3. 若要编辑哪些度量值在图表中显示，请单击“编辑”链接。可以通过选择或取消选择单个度量值来进行添加或删除。
+4. 完成度量值编辑后，单击“保存”。
+
+
+如果你要为长期存储下载度量值或在本地分析这些度量值，则需要使用工具或编写一些代码来读取表。你必须下载分析用的分钟度量值。如果你在存储帐户中列出所有表，则这些表不会显示，但你可以按名称直接访问它们。很多第三方存储浏览工具都识别这些表，并允许你直接查看它们（有关可用工具的列表，请参阅博客文章 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)）。
 
 ### 每小时度量值
 - $MetricsHourPrimaryTransactionsBlob
@@ -110,7 +115,7 @@
 ### 容量
 - $MetricsCapacityBlob
 
-你可以在[存储分析度量表架构](https://msdn.microsoft.com/zh-cn/library/azure/hh343264.aspx)中找到这些表的架构的完整详细信息。以下示例行仅显示一部分可用列，但也说明了存储度量值在采用相应方式保存这些度量值时展现的一些重要功能：
+你可以在[存储分析度量值表架构](https://msdn.microsoft.com/zh-cn/library/azure/hh343264.aspx)上为这些表找到完整的架构详细信息。以下示例行仅显示一部分可用列，但也说明了存储度量值在采用相应方式保存这些度量值时展现的一些重要功能：
 
 | PartitionKey | RowKey | Timestamp | TotalRequests | TotalBillableRequests | TotalIngress | TotalEgress | 可用性 | AverageE2ELatency | AverageServerLatency | PercentSuccess |
 |---------------|:------------------:|-----------------------------:|---------------|-----------------------|--------------|-------------|--------------|-------------------|----------------------|----------------|
@@ -128,7 +133,8 @@
 
 上面的示例数据显示一分钟的所有记录（从上午 11:00 开始），因此，QueryEntities 请求数加 QueryEntity 请求数再加 UpdateEntity 请求数的和为 7，这是显示在 user:All 行上的总数。同样，通过计算 ((143.8 * 5) + 3 + 9)/7，可以在 user:All 行得到平均端到端延迟为 104.4286。
 
-你应该考虑在管理门户中的"监视"页上设置警报，以便存储度量值自动通知你存储服务行为中发生的任何重要更改。如果你使用存储资源管理器工具下载这种采用分隔格式的度量值数据，则可以使用 Microsoft Excel 分析该数据。有关可用存储资源管理器工具的列表，请参阅博客文章 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。
+你应该考虑在 [Azure 门户预览](https://portal.azure.cn)中的“监视”页上设置警报，以便存储度量值自动通知你存储服务行为中发生的任何重要更改。如果你使用存储资源管理器工具下载这种采用分隔格式的度量值数据，则可以使用 Microsoft Excel 分析该数据。有关可用存储资源管理器工具的列表，请参阅博客文章 [Azure 存储空间资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。
+
 
 
 
