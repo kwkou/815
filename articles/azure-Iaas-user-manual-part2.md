@@ -19,7 +19,7 @@
 
 ##<a name="section_5"></a> 3.	开始创建 Azure 虚拟机
 ###<a name="section_5_1"></a> 3.1 模拟场景
-A 公司已经采购了 Azure 服务，计划把现有托管在 IDC 的企业官网迁移到 Azure 云平台上。该企业官网面向的用户群主要是华东地区的用户。
+Contoso 公司已经采购了 Azure 服务，计划把现有托管在 IDC 的企业官网迁移到 Azure 云平台上。该企业官网面向的用户群主要是华东地区的用户。
 
 该企业官网部署需要服务器列表如下：
 
@@ -38,7 +38,7 @@ A 公司已经采购了 Azure 服务，计划把现有托管在 IDC 的企业官
 
 1.	**选择的 Azure 数据中心离最终用户越近越好**
 
-	考虑到 A 公司的企业官网主要的用户群在华东地区，建议 A 公司将应用部署到 Azure 在中国东部的数据中心。
+	考虑到 Contoso 公司的企业官网主要的用户群在华东地区，建议 Contoso 公司将应用部署到 Azure 在中国东部的数据中心。
 
 2.	**如果需要在 Azure 部署多台应用服务器，则需要将所有的应用服务器放在同一个数据中心**
 
@@ -103,12 +103,8 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 如果企业内部需要进行内部成本核算，例如 IT 部门、销售部门、市场部门均需要使用 Azure，并且根据不同部门的 Azure 实际使用量进行内部成本核算，就需要实现规划好三个不同的 Azure 订阅。在创建 Azure IaaS 相关资源的时候，将这些资源创建在不同的订阅下。
 
-关于订阅相关的内容，请参考[《Azure 企业门户管理手册》](/documentation/articles/azure-ea-portal-user-manual)
-
-
 ####<a name="section_5_2_6"></a> 3.2.6 选择订阅
-登陆 Azure [经典管理门户](https://manage.windowsazure.cn))，输入账户和密码。
-
+登陆 Azure [经典管理门户](https://manage.windowsazure.cn)，输入账户和密码。
 
 点击右上角的订阅按钮，如下图:
 
@@ -129,15 +125,13 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 如果<mark>正式账户</mark>在使用过程中，需要的 Azure 资源超出订阅默认的 Azure 资源，请直接联系世纪互联支持团队，世纪互联会先审核相关请求，然后会将该订阅的相关资源进行扩大。
 
-比如 A 公司需要在月底进行一次大型的数字营销活动，需要使用 300 个 CPU Core，则可以提前联系世纪互联支持团队，让世纪互联运维团队将默认的 100 CPU Core 提升到 300个。
+比如 Contoso 公司需要在月底进行一次大型的数字营销活动，需要使用 300 个 CPU Core，则可以提前联系世纪互联支持团队，让世纪互联运维团队将默认的 100 CPU Core 提升到 300个。
 
 [世纪互联支持团队](/support/contact)
 
 ![scenario2](./media/azure-Iaas-user-manual-part2/scenario2.png)
 
-
 上图中，登陆 Azure [经典管理门户](https://manage.windowsazure.cn)，点击上图中的 ”设置”，”使用情况”，”选择订阅”，就可以查看到该订阅可以使用的 Azure 资源情况。
-
 
 上图中，订阅名称为 ”Marketing_Subscription” 可以使用的 Azure 资源为
 
@@ -229,9 +223,8 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 接下来的几章将详细介绍如何创建 Azure 虚拟机。
 
-
 ###<a name="section_5_4"></a> 3.4 使用 Azure 管理界面创建虚拟机
-登陆 Azure [经典管理门户](https://manage.windowsazure.cn/))，输入相应的 Azure 账户名称和密码。
+登陆 Azure [经典管理门户](https://manage.windowsazure.cn/)，输入相应的 Azure 账户名称和密码。
 
 
 ####<a name="section_5_4_1"></a> 3.4.1 创建虚拟网络
@@ -243,7 +236,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 	![vm_create2](./media/azure-Iaas-user-manual-part2/vm_create2.png)
 
-3.	在弹出的窗口中，将名称命名为 ContosoVNet，位置我们选择 ”中国东部”
+3.	在弹出的窗口中，将名称命名为 ContosoVNet，位置选择 ”中国东部”
 
 	![vm_create3](./media/azure-Iaas-user-manual-part2/vm_create3.png)
 
@@ -356,7 +349,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 如果需要固定内网 IP 地址，请直接阅读[第 3.5 章](#section_5_5)，<mark>只有通过 PowerShell 创建的虚拟机，内网 IP 地址才是固定的</mark>。
 
 >[AZURE.IMPORTANT]
->使用管理界面创建的 Azure 虚拟机，默认时区是 UTC 时区。而我们平时使用的时区是 UTC+8 (北京时区)。
+>使用管理界面创建的 Azure 虚拟机，默认时区是 UTC 时区。而平时使用的时区是 UTC+8 (北京时区)。
 
 #####<a name="section_5_4_4_2"></a> 3.4.4.2 创建第一台 AD Server
 根据在 [3.3.2 节](#section_5_3_2)的规划，需要创建 2 台 Azure AD Server，配置如下：
@@ -402,7 +395,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 首先创建第一台 AD Server。步骤如下：
 
-1.	在 Azure [经典管理门户](https://manage.windowsazure.cn/))。选择新建，计算，虚拟机，从库中。如下图：
+1.	在 Azure [经典管理门户](https://manage.windowsazure.cn/)。选择新建，计算，虚拟机，从库中。如下图：
 
 	![vm_create12](./media/azure-Iaas-user-manual-part2/vm_create12.png)
 
@@ -685,7 +678,6 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 	上面的命令实际上是将本地的 publishsettings 文件上传至 Azure 中国的 Management Certificates。您可以打开[经典管理门户](https://manage.windowsazure.cn)。点击设置，并选择管理证书，查看上传的 publishsettings 文件。如下图：
 
-
 	![vm_powershell4](./media/azure-Iaas-user-manual-part2/vm_powershell4.png)
 
 7.	这样，本地计算机就和 Azure 中国建立了可靠安全的连接了。在不删除上传的 Management Certificates 情况下，下次运行 Azure PowerShell 将不必再次运行上面的运行。接下来可以运行您的命令了。
@@ -844,9 +836,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 ![vm_powershell8](./media/azure-Iaas-user-manual-part2/vm_powershell8.png)
 
-
-我们打开 Azure 经典管理门户，会发现新创建的 ContosoAD01 显示为正在启动，如下图:
-
+打开 Azure 经典管理门户，会发现新创建的 ContosoAD01 显示为正在启动，如下图:
 
 ![vm_powershell9](./media/azure-Iaas-user-manual-part2/vm_powershell9.png)
 
@@ -910,7 +900,6 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 2.	<mark>D 盘，临时磁盘。只能用来保存临时文件，数据会有丢失的风险。</mark>
 
 假设要挂载更多的磁盘，可以在 Azure [经典管理门户](https://manage.windowsazure.cn)，选中某一台虚拟机，然后点击附加空磁盘。如下图
-
 
 ![vm_manage6](./media/azure-Iaas-user-manual-part2/vm_manage6.png)
 
@@ -993,7 +982,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 ![vm_manage12](./media/azure-Iaas-user-manual-part2/vm_manage12.png)
 
 1.	C 盘，操作系统盘。默认为 127GB。重启数据不会丢失。
-2.	D 盘，临时磁盘。只能用来保存临时文件，<mark>数据会有丢失的风险。这块盘的 IOPS 会比较高，我们可以把临时文件保存在这块盘上。</mark>
+2.	D 盘，临时磁盘。只能用来保存临时文件，<mark>数据会有丢失的风险。这块盘的 IOPS 会比较高，可以把临时文件保存在这块盘上。</mark>
 3.	E 盘，通过管理界面挂载上去的磁盘。最大容量为 1023GB。重启数据不会丢失。
 
 ####<a name="section_5_6_6"></a> 3.6.6 卸载磁盘
