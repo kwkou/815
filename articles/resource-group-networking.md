@@ -24,7 +24,7 @@
 - Node.JS SDK
 - Java SDK
 - Azure CLI
-- Azure 门户
+- Azure 门户预览
 - ARM 模板语言
 
 随着网络资源提供程序的引入，你可以利用以下优势：
@@ -49,7 +49,7 @@
 ![网络资源模型](./media/resource-groups-networking/Figure2.png)
 
 ## REST API
-如前所述，你可以通过各种界面（包括 REST API、.NET SDK、Node.JS SDK、Java SDK、PowerShell、CLI、Azure 门户和模板）管理网络资源。
+如前所述，你可以通过各种界面（包括 REST API、.NET SDK、Node.JS SDK、Java SDK、PowerShell、CLI、Azure 门户预览和模板）管理网络资源。
 
 Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结构：
 
@@ -331,9 +331,9 @@ VPN 网关的关键属性包括：
 你可以使用 PowerShell、AzureCLI 或通过在 GitHub 中执行单击部署，从模板向 Azure 部署服务。若要在 GitHub 中从模板部署服务，请执行以下步骤：
 
 1. 从 GitHub 打开 template3 文件。例如，打开[包含两个子网的虚拟网络](https://github.com/Azure/azure-quickstart-templates/tree/master/101-virtual-network)。
-2. 单击**部署到 Azure**，然后使用你的凭据登录到 Azure 门户。
+2. 单击**部署到 Azure**，然后使用你的凭据登录到 Azure 门户预览。
 3. 验证模板，然后单击**保存**。
-4. 单击**编辑参数**并为 vnet 和子网选择一个位置，例如“美国西部”。
+4. 单击**编辑参数**并为 vnet 和子网选择一个位置，例如“中国东部”。
 5. 根据需要更改 **ADDRESSPREFIX** 和 **SUBNETPREFIX** 参数，然后单击**确定**。
 6. 单击**选择资源组**，然后单击要将 vnet 和子网添加到的资源组。或者，可以通过单击**或新建**创建新的资源组。
 3. 单击**创建**。请注意磁贴显示了**正在设置模板部署**。完成部署后，你将看到一个类似于下面的屏幕。
