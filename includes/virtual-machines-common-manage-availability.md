@@ -14,7 +14,7 @@
 
 
 ###<a name="configure-multiple-virtual-machines-in-an-availability-set-for-redundancy"></a> 在可用性集中配置多个虚拟机以确保冗余
-若要为应用程序提供冗余，建议你将两个或更多虚拟机组合到一个可用性集中。这种配置可以确保在发生计划内或计划外维护事件时，至少有一个虚拟机可用，因此满足 99.95% Azure SLA 的要求。有关详细信息，请参阅[虚拟机的 SLA](https://azure.microsoft.com/support/legal/sla/virtual-machines/)。
+若要为应用程序提供冗余，建议你将两个或更多虚拟机组合到一个可用性集中。这种配置可以确保在发生计划内或计划外维护事件时，至少有一个虚拟机可用，因此满足 99.95% Azure SLA 的要求。有关详细信息，请参阅[虚拟机的 SLA](/support/sla/virtual-machines)。
 
 > [AZURE.IMPORTANT] 避免将单实例虚拟机单独地置于可用性集中。此配置中的虚拟机并不符合 SLA 保证，在出现 Azure 计划内维护事件时就会停机。
 

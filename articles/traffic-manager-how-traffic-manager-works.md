@@ -43,7 +43,7 @@ Contoso Corp 开发了一个新的合作伙伴门户。此门户的 URL 将是 h
 
 > 因此，你不能直接将流量管理器用于裸域。我们建议你通过简单的 HTTP 重定向将针对“contoso.com”的请求定向到某个备用名称（例如“www.contoso.com”），以便解决此问题。
 
-## 客户端如何使用流量管理器进行连接
+##<a name="how-clients-connect-using-traffic-manager"></a> 客户端如何使用流量管理器进行连接
 
 当最终用户请求页面 https://partners.contoso.com/login.aspx （如以上示例所述）时，其客户端将执行以下步骤，以便解析 DNS 名称并建立连接。
 
