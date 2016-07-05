@@ -34,7 +34,7 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 - 若要使用高级存储，你必须有一个高级存储帐户。若要了解如何创建高级存储帐户，请参阅[为磁盘创建和使用高级存储帐户](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk)。
 
-- 高级存储已在 [Azure 经典门户](https://manage.windowsazure.cn)中中提供并可通过以下 SDK 库来访问：[存储 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) 版本 2014-02-14 或更高版本；[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 版本 2014-10-01 或更高版本；[Azure PowerShell](/documentation/articles/powershell-install-configure) 版本 0.8.10 或更高版本。
+- 高级存储已在 [Azure 经典管理门户](https://manage.windowsazure.cn)中中提供并可通过以下 SDK 库来访问：[存储 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) 版本 2014-02-14 或更高版本；[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 版本 2014-10-01 或更高版本；[Azure PowerShell](/documentation/articles/powershell-install-configure) 版本 0.8.10 或更高版本。
 
 - 以下地区提供受限的高级存储：中国东部。
 
@@ -48,19 +48,19 @@ Azure VM 支持附加多个高级存储磁盘，使你的应用程序可以具�
 
 - 高级存储帐户无法映射到自定义域名。
 
-- 存储分析目前不支持高级存储。若要使用高级存储帐户上的磁盘分析 VM 的性能度量值，请使用基于操作系统的工具，如 [Windows 性能监视器](https://technet.microsoft.com/zh-cn/library/cc749249.aspx)（对于 Windows VM）和 [IOSTAT](http://linux.die.net/man/1/iostat)（对于 Linux VM）。你还可以在 Azure 经典门户上启用 Azure VM 诊断。有关详细信息，请参阅[使用 Azure Diagnostics 扩展监视 Azure 虚拟机](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/)。
+- 存储分析目前不支持高级存储。若要使用高级存储帐户上的磁盘分析 VM 的性能度量值，请使用基于操作系统的工具，如 [Windows 性能监视器](https://technet.microsoft.com/zh-cn/library/cc749249.aspx)（对于 Windows VM）和 [IOSTAT](http://linux.die.net/man/1/iostat)（对于 Linux VM）。你还可以在 Azure 经典管理门户上启用 Azure VM 诊断。有关详细信息，请参阅[使用 Azure Diagnostics 扩展监视 Azure 虚拟机](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/)。
 
 ## 使用高级存储磁盘
 可通过两种方式使用高级存储磁盘：
 
 - 首先创建新的高级存储帐户，然后在创建 VM 时使用它。
-- 创建新的 DS 系列 VM。创建 VM 时，你可以选择以前创建的高级存储帐户、创建新的高级存储帐户，或者让 Azure 经典门户创建默认的高级帐户。
+- 创建新的 DS 系列 VM。创建 VM 时，你可以选择以前创建的高级存储帐户、创建新的高级存储帐户，或者让 Azure 经典管理门户创建默认的高级帐户。
 
 Azure 使用存储帐户作为操作系统和数据磁盘的容器。换句话说，如果你创建 Azure DS 系列的 VM 并选择 Azure 高级存储帐户，操作系统和数据磁盘会存储在该存储帐户中。
 
 
 有关将现有的虚拟机迁移到高级存储的信息，请参阅[迁移到 Azure 高级存储](/documentation/articles/storage-migration-to-premium-storage)。
-为充分利用高级存储的优点，请先使用帐户类型 *Premium_LRS* 创建一个高级存储帐户。为此，可以使用 [Azure 经典门户](https://manage.windowsazure.cn)、[Azure PowerShell](/documentation/articles/powershell-install-configure) 或[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)。有关分步说明，请参阅[为磁盘创建和使用高级存储帐户](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk)。
+为充分利用高级存储的优点，请先使用帐户类型 *Premium_LRS* 创建一个高级存储帐户。为此，可以使用 [Azure 经典管理门户](https://manage.windowsazure.cn)、[Azure PowerShell](/documentation/articles/powershell-install-configure) 或[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)。有关分步说明，请参阅[为磁盘创建和使用高级存储帐户](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk)。
 
 ### 重要说明：
 

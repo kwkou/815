@@ -35,10 +35,10 @@
 
 ##计费影响
 
-一旦通过 API 将实时编码通道的状态转换为“正在运行”，就会开始计费。你也可以在 Azure 经典门户或 Azure 媒体服务资源管理器工具 (https://github.com/Azure/Azure-Media-Services-Explorer/releases/tag/v3.37.0.0) 中查看状态。
+一旦通过 API 将实时编码通道的状态转换为“正在运行”，就会开始计费。你也可以在 Azure 经典管理门户或 Azure 媒体服务资源管理器工具 (https://github.com/Azure/Azure-Media-Services-Explorer/releases/tag/v3.37.0.0) 中查看状态。
 
-下表显示了通道状态如何映射为 API 和 Azure 经典门户中的计费状态。请注意，API 与门户 UX 之间的状态略有不同。一旦通过 API 将通道置于“正在运行”状态，或者在 Azure 经典门户中将它设置为“就绪”或“正在流式处理”状态，就会开始计费。
-若要阻止通道进一步向你计费，你必须通过 API 或 Azure 经典门户停止通道。在使用完实时编码通道时，你需要亲自停止通道。不停止编码通道会导致持续计费。
+下表显示了通道状态如何映射为 API 和 Azure 经典管理门户中的计费状态。请注意，API 与门户 UX 之间的状态略有不同。一旦通过 API 将通道置于“正在运行”状态，或者在 Azure 经典管理门户中将它设置为“就绪”或“正在流式处理”状态，就会开始计费。
+若要阻止通道进一步向你计费，你必须通过 API 或 Azure 经典管理门户停止通道。在使用完实时编码通道时，你需要亲自停止通道。不停止编码通道会导致持续计费。
 
 ###<a id="states"></a>通道状态及其如何映射到计费模式 
 
@@ -99,7 +99,7 @@
 
 3. 创建节目。
 
-	使用 Azure 经典门户时，创建节目的同时还会创建资源。
+	使用 Azure 经典管理门户时，创建节目的同时还会创建资源。
 
 	使用 .NET SDK 或 REST 时，你需要创建一个资源并指定在创建节目时要使用该资源。 
 1. 发布与节目关联的资源。   
@@ -246,7 +246,7 @@
 
 在频道开始摄取数据后，你可以预览流。
 
->[AZURE.NOTE]当前，不管指定了哪种输入类型，都只能以分片 MP4（平滑流）格式来传送预览流。你可以使用 [http://smf.chinacloudapp.cn/healthmonitor](http://smf.chinacloudapp.cn/healthmonitor) 播放器来测试平滑流。你还可以使用 Azure 经典门户中承载的播放器来查看你的流。
+>[AZURE.NOTE]当前，不管指定了哪种输入类型，都只能以分片 MP4（平滑流）格式来传送预览流。你可以使用 [http://smf.chinacloudapp.cn/healthmonitor](http://smf.chinacloudapp.cn/healthmonitor) 播放器来测试平滑流。你还可以使用 Azure 经典管理门户中承载的播放器来查看你的流。
 
 ###允许的 IP 地址
 

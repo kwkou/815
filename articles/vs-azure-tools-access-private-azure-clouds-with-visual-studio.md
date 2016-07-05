@@ -19,7 +19,7 @@
 
 ## 在 Visual Studio 中访问私有 Azure 云
 
-1. 在私有云的经典门户中下载你的发布设置文件，或与管理员联系以获取发布设置文件。在 Azure 的公共版中，用于下载的链接是 [https://manage.windowsazure.cn/publishsettings/](https://manage.windowsazure.cn/publishsettings/)。（下载的文件的扩展名应为 .publishsettings。）
+1. 在私有云的经典管理门户中下载你的发布设置文件，或与管理员联系以获取发布设置文件。在 Azure 的公共版中，用于下载的链接是 [https://manage.windowsazure.cn/publishsettings/](https://manage.windowsazure.cn/publishsettings/)。（下载的文件的扩展名应为 .publishsettings。）
 
 1. 在 Visual Studio 中的“服务器资源管理器”中，选择“Azure”节点，然后在快捷菜单上选择“管理订阅”命令。
 

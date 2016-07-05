@@ -29,7 +29,7 @@ Visual Studio 使用订阅 ID 和证书数据作为凭据。订阅文件（.publ
 
 从“新建/编辑订阅”对话框中，可以编辑订阅信息，如本主题后面所述。
 
-如果要自行创建证书，可以参阅 [创建并上载管理证书](/documentation/articles/cloud-services-certs-create/)（创建并上载管理证书）中所述的说明，然后将证书手动上载到经典门户。
+如果要自行创建证书，可以参阅 [创建并上载管理证书](/documentation/articles/cloud-services-certs-create/)（创建并上载管理证书）中所述的说明，然后将证书手动上载到经典管理门户。
 
 >[AZURE.NOTE] Visual Studio 管理云服务所需的凭据不同于针对 Azure 存储空间服务验证请求所需的凭据。
 
@@ -49,15 +49,15 @@ Visual Studio 使用订阅 ID 和证书数据作为凭据。订阅文件（.publ
 
 1. 选择“复制完整路径”按钮。证书（.cer 文件）的路径将复制到剪贴簿。
 
-    >[AZURE.IMPORTANT] 若要从 Visual Studio 中发布 Azure 应用程序，必须将此证书上载到经典门户。
+    >[AZURE.IMPORTANT] 若要从 Visual Studio 中发布 Azure 应用程序，必须将此证书上载到经典管理门户。
 
-1. 将证书上载到 Azure 经典门户，请执行以下操作：
+1. 将证书上载到 Azure 经典管理门户，请执行以下操作：
 
     1. 选择“Azure 门户”链接。
 
-         此时将打开 [Azure 经典门户](http://go.microsoft.com/fwlink/?LinkID=213885)。
+         此时将打开 [Azure 经典管理门户](http://go.microsoft.com/fwlink/?LinkID=213885)。
 
-    1. 使用你的 Microsoft 帐户登录到 Azure 经典门户，然后选择“云服务”按钮。
+    1. 使用你的 Microsoft 帐户登录到 Azure 经典管理门户，然后选择“云服务”按钮。
 
     1. 选择所需的云服务。
 

@@ -16,7 +16,7 @@
 如果你有密码管理方面的问题，我们随时可提供帮助。你可能会遇到的大多数问题都可以通过以下简单故障排除步骤来解决，请阅读以下内容来排查你的部署问题：
 
 * [**你需要帮助时应提供的信息**](#information-to-include-when-you-need-help)
-* [**Azure 经典门户中的密码管理配置问题**](#troubleshoot-password-reset-configuration-in-the-azure-management-portal)
+* [**Azure 经典管理门户中的密码管理配置问题**](#troubleshoot-password-reset-configuration-in-the-azure-management-portal)
 * [**密码重置注册门户的问题**](#troubleshoot-the-password-reset-registration-portal)
 * [**密码重置门户的问题**](#troubleshoot-the-password-reset-portal)
 * [**密码写回的问题**](#troubleshoot-password-writeback)
@@ -44,7 +44,7 @@
 包含这些信息将有助于我们尽快为你解决问题。
 
 
-##  <a name="troubleshoot-password-reset-configuration-in-the-azure-management-portal"></a>在 Azure 经典门户中排查密码重置配置问题
+##  <a name="troubleshoot-password-reset-configuration-in-the-azure-management-portal"></a>在 Azure 经典管理门户中排查密码重置配置问题
 如果你在配置密码重置时遇到错误，可以遵循以下故障排除步骤来解决错误：
 
 <table>
@@ -67,10 +67,10 @@
           </tr>
           <tr>
             <td>
-              <p>我在 Azure 经典门户的“配置”选项卡下未看到“用户密码重置策略”部分<strong></strong><strong></strong>。</p>
+              <p>我在 Azure 经典管理门户的“配置”选项卡下未看到“用户密码重置策略”部分<strong></strong><strong></strong>。</p>
             </td>
             <td>
-              <p>Azure 经典门户的“配置”选项卡中未显示“用户密码重置策略”部分<strong></strong><strong></strong>。</p>
+              <p>Azure 经典管理门户的“配置”选项卡中未显示“用户密码重置策略”部分<strong></strong><strong></strong>。</p>
             </td>
             <td>
               <p>如果未向执行此操作的管理员分配 AAD Premium 或 AAD Basic 许可证，则会发生这种情况。</p>
@@ -105,7 +105,7 @@
               <p>我看不到“将密码写回到本地”配置选项<strong></strong></p>
             </td>
             <td>
-              <p>“将密码写回到本地”选项未显示在 Azure 经典门户中的“配置”选项卡下方<strong></strong><strong></strong></p>
+              <p>“将密码写回到本地”选项未显示在 Azure 经典管理门户中的“配置”选项卡下方<strong></strong><strong></strong></p>
             </td>
             <td>
               <p>仅当你已下载 Azure AD Connect 并配置了密码写回时，此选项才可见。完成此操作后，此选项才会出现，并允许你启用或禁用从云写回功能。</p>
@@ -143,7 +143,7 @@
               <p>你的管理员没有允许你使用此功能。</p>
             </td>
             <td>
-              <p>将“可进行密码重置的用户”标志切换为“是”，并点击 Azure 经典门户目录配置选项卡中的“保存”<strong></strong><strong></strong><strong></strong>。你必须向执行此操作的管理员分配 Azure AD Premium 或 Azure AD Basic 许可证。</p>
+              <p>将“可进行密码重置的用户”标志切换为“是”，并点击 Azure 经典管理门户目录配置选项卡中的“保存”<strong></strong><strong></strong><strong></strong>。你必须向执行此操作的管理员分配 Azure AD Premium 或 Azure AD Basic 许可证。</p>
             </td>
           </tr>
           <tr>
@@ -154,7 +154,7 @@
               <p>你的管理员没有允许你使用此功能。</p>
             </td>
             <td>
-              <p>在 Azure 经典门户中的“许可证”选项卡下方向此用户分配 Azure AD Premium 或 Azure AD Basic 许可证<strong></strong>。你必须向执行此操作的管理员分配 Azure AD Premium 或 Azure AD Basic 许可证。</p>
+              <p>在 Azure 经典管理门户中的“许可证”选项卡下方向此用户分配 Azure AD Premium 或 Azure AD Basic 许可证<strong></strong>。你必须向执行此操作的管理员分配 Azure AD Premium 或 Azure AD Basic 许可证。</p>
             </td>
           </tr>
           <tr>
@@ -210,7 +210,7 @@
               <p>如果你愿意，我们可以联系你所在组织的管理员为你重置密码。</p>
             </td>
             <td>
-              <p>将“可进行密码重置的用户”标志切换为“是”，并点击 Azure 经典门户目录配置选项卡中的“保存”<strong></strong><strong></strong><strong></strong>。你必须向执行此操作的管理员分配 Azure AD Premium 或 Azure AD Basic 许可证。</p>
+              <p>将“可进行密码重置的用户”标志切换为“是”，并点击 Azure 经典管理门户目录配置选项卡中的“保存”<strong></strong><strong></strong><strong></strong>。你必须向执行此操作的管理员分配 Azure AD Premium 或 Azure AD Basic 许可证。</p>
             </td>
           </tr>
           <tr>
@@ -221,7 +221,7 @@
               <p>虽然我们无法自动重置非管理员帐户密码，但我们可以联系你所在组织的管理员为你执行这一操作。</p>
             </td>
             <td>
-              <p>在 Azure 经典门户中的“许可证”选项卡下方向此用户分配 Azure AD Premium 或 Azure AD Basic 许可证<strong></strong>。你必须向执行此操作的管理员分配 Azure AD Premium 或 Azure AD Basic 许可证。</p>
+              <p>在 Azure 经典管理门户中的“许可证”选项卡下方向此用户分配 Azure AD Premium 或 Azure AD Basic 许可证<strong></strong>。你必须向执行此操作的管理员分配 Azure AD Premium 或 Azure AD Basic 许可证。</p>
             </td>
           </tr>
           <tr>
@@ -583,10 +583,10 @@
               <p>由用户重置的密码写回功能可以正常使用，但由用户更改的或由管理员为用户重置的密码写回功能无法正常使用。</p>
             </td>
             <td>
-              <p>尝试通过 Azure 经典门户代表用户重置密码时，你将看到一条消息：“在本地环境中运行的密码重置服务不支持管理员重置用户密码。请升级到最新版本的 AAD Sync 以解决此问题。”</p>
+              <p>尝试通过 Azure 经典管理门户代表用户重置密码时，你将看到一条消息：“在本地环境中运行的密码重置服务不支持管理员重置用户密码。请升级到最新版本的 AAD Sync 以解决此问题。”</p>
             </td>
             <td>
-              <p>当同步引擎的版本不支持所使用的特定密码写回操作时，将会发生这种情况。1.0.0419.0911 以上的 AAD Sync 版本支持所有密码管理操作，包括密码重置写回、密码更改写回，以及管理员通过 Azure 经典门户启动的密码重置写回。&#160; 1.0.6862 以上的 DirSync 版本仅支持密码重置写回。若要解决此问题，强烈建议你安装最新版本的 AAD Sync 或 Azure Active Directory Connect（有关详细信息，请参阅<a href="/documentation/articles/active-directory-aadconnect#download-azure-ad-connect">目录集成工具</a>），这样既能解决此问题，又可以在你的组织中充分利用密码写回功能。</p>
+              <p>当同步引擎的版本不支持所使用的特定密码写回操作时，将会发生这种情况。1.0.0419.0911 以上的 AAD Sync 版本支持所有密码管理操作，包括密码重置写回、密码更改写回，以及管理员通过 Azure 经典管理门户启动的密码重置写回。&#160; 1.0.6862 以上的 DirSync 版本仅支持密码重置写回。若要解决此问题，强烈建议你安装最新版本的 AAD Sync 或 Azure Active Directory Connect（有关详细信息，请参阅<a href="/documentation/articles/active-directory-aadconnect#download-azure-ad-connect">目录集成工具</a>），这样既能解决此问题，又可以在你的组织中充分利用密码写回功能。</p>
             </td>
           </tr>
         </tbody></table>

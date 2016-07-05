@@ -16,7 +16,7 @@ Service Bus 主题和订阅支持发布/订阅消息通信模型。在使用主�
 
 创建命名空间：
 
-1.  登录到 [Azure 经典门户][]。
+1.  登录到 [Azure 经典管理门户][]。
 
 2.  在门户的左侧导航窗格中，单击“服务总线”。
 
@@ -48,7 +48,7 @@ Service Bus 主题和订阅支持发布/订阅消息通信模型。在使用主�
 4.  记下主密钥，或将其复制到剪贴板。
 
 
-  [Azure 经典门户]: http://manage.windowsazure.cn
+  [Azure 经典管理门户]: http://manage.windowsazure.cn
   [0]: ./media/service-bus-java-how-to-create-topic/sb-queues-13.png
   [2]: ./media/service-bus-java-how-to-create-topic/sb-queues-04.png
   [3]: ./media/service-bus-java-how-to-create-topic/sb-queues-09.png

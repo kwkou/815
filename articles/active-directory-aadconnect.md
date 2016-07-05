@@ -38,7 +38,7 @@ Azure Active Directory Connect 由三个主要部分组成，分别是同步服�
 
 - 同步 - 此组件负责创建用户、组和其他对象。它还负责确保本地用户和组的标识信息与云匹配。
 - AD FS - 联合身份验证是 Azure AD Connect 的可选部件，可用于使用本地 AD FS 基础结构配置混合环境。组织可以使用此部件来解决复杂的部署，例如域加入 SSO、实施 AD 登录策略和智能卡或第三方 MFA。
-- 运行状况监视 - Azure AD Connect Health 提供可靠监视，并在 Azure 经典门户中提供一个中心位置用于查看此活动。有关更多信息，请参阅 [Azure Active Directory Connect Health](/documentation/articles/active-directory-aadconnect-health)。
+- 运行状况监视 - Azure AD Connect Health 提供可靠监视，并在 Azure 经典管理门户中提供一个中心位置用于查看此活动。有关更多信息，请参阅 [Azure Active Directory Connect Health](/documentation/articles/active-directory-aadconnect-health)。
 
 ## 安装 Azure AD Connect
 

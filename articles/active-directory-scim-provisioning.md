@@ -55,7 +55,7 @@ Azure Active Directory 可配置为将已分配的用户和组预配到实现[�
 
 **连接到支持 SCIM 的应用程序：**
 
-1.	在 Web 浏览器中，从 https://manage.windowsazure.cn 启动 Azure 经典门户。
+1.	在 Web 浏览器中，从 https://manage.windowsazure.cn 启动 Azure 经典管理门户。
 2.	浏览到“Active Directory”>“目录”>“[你的目录]”>“应用程序”，然后选择“添加”>“从库中添加应用程序”。
 3.	选择左侧的“自定义”选项卡，输入应用程序的名称，然后单击复选标记图标以创建应用对象。
 
@@ -124,7 +124,7 @@ Azure Active Directory 可配置为将已分配的用户和组预配到实现[�
 
 **在 Azure AD 中注册示例 SCIM 终结点：**
 
-1.	在 Web 浏览器中，从 https://manage.windowsazure.cn 启动 Azure 经典门户。
+1.	在 Web 浏览器中，从 https://manage.windowsazure.cn 启动 Azure 经典管理门户。
 2.	浏览到“Active Directory”>“目录”>“[你的目录]”>“应用程序”，然后选择“添加”>“从库中添加应用程序”。
 3.	选择左侧的“自定义”选项卡，输入类似于“SCIM 测试应用”的名称，然后单击复选标记图标以创建应用对象。请注意，创建的应用程序对象代表要预配和实现登一登入的目标应用程序，而不只是 SCIM 终结点。
 

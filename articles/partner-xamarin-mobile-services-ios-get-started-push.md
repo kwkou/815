@@ -151,7 +151,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
   	记下文件名和导出的证书的位置。
 
-2. 登录到 [Azure 经典门户]，单击“移动服务”，然后单击你的应用。
+2. 登录到 [Azure 经典管理门户]，单击“移动服务”，然后单击你的应用。
 
    	![][18]
 
@@ -271,9 +271,9 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 你的应用现已更新，可支持推送通知。
 
-## <a name="update-scripts"></a>在 Azure 经典门户中更新已注册的插入脚本
+## <a name="update-scripts"></a>在 Azure 经典管理门户中更新已注册的插入脚本
 
-1. 在 [Azure 经典门户]中，单击“数据”选项卡，然后单击“TodoItem”表。
+1. 在 [Azure 经典管理门户]中，单击“数据”选项卡，然后单击“TodoItem”表。
 
    	![][21]
 
@@ -387,7 +387,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 [Xamarin 设备设置]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
 
 
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 [apns 对象]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
 [completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331303

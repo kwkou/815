@@ -39,7 +39,7 @@
 	var MobileServiceClient = WindowsAzure.MobileServiceClient;
     var client = new MobileServiceClient('AppUrl', 'AppKey');
 
-必须将占位符 `AppUrl` 替换为移动服务的应用程序 URL，将 `AppKey` 替换为你从 [Azure 经典门户](http://manage.windowsazure.cn/)获取的应用程序密钥。
+必须将占位符 `AppUrl` 替换为移动服务的应用程序 URL，将 `AppKey` 替换为你从 [Azure 经典管理门户](http://manage.windowsazure.cn/)获取的应用程序密钥。
 
 >[AZURE.IMPORTANT]应用程序密钥用于针对移动服务筛选出随机请求，将随应用程序一起分发。由于此密钥未加密，因此不能被认为是安全的。为确保安全访问你的移动服务数据，你必须改为在允许用户访问前对用户进行身份验证。有关详细信息，请参阅[如何：对用户进行身份验证](#authentication)。
 

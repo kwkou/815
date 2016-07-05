@@ -46,7 +46,7 @@
 ## 代码示例
 [此处](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages)提供了此应用的已完成客户端源代码部分。若要运行此代码，你必须先完成本教程的移动服务后端部分。
 
-## 在 Azure 经典门户中更新已注册的插入脚本
+## 在 Azure 经典管理门户中更新已注册的插入脚本
 
 [AZURE.INCLUDE [mobile-services-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 

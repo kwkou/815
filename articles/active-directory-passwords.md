@@ -58,7 +58,7 @@
 
 - **自助密码更改**：可让最终用户或管理员就可以更改过期的或未过期的密码，而无需请求管理员或帮助台提供支持。
 - **自助密码重置**：最终用户或管理员可以自行重置密码，而无需请求管理员或帮助台提供支持。自助密码重置功能需要 Azure AD 高级或基本版。有关详细信息，请参阅“Azure Active Directory 版本”。
-- **管理员启动的密码重置**：管理员可以通过 [Azure 经典门户](https://manage.windowsazure.cn)重置某个最终用户的或其他管理员的密码。
+- **管理员启动的密码重置**：管理员可以通过 [Azure 经典管理门户](https://manage.windowsazure.cn)重置某个最终用户的或其他管理员的密码。
 - **密码管理活动报告**：管理员可以深入了解发生在其组织中的密码重置和注册活动。 
 - **密码写回**：从云管理本地密码，因此，所有上述方案都可以由经过联合身份验证的或密码同步的用户本人或其代表来执行。密码写回功能需要 Azure AD Premium。有关详细信息，请参阅“Azure AD Premium 入门”。
 
@@ -131,7 +131,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 ## <a name="manage-your-users-passwords"></a>管理用户的密码
 | 主题 | |
 | --------- | --------- |
-| 如何从 O365 经典门户重置用户的密码？ | [在 Office 365 中重置用户的密码](https://support.office.com/article/Reset-a-user-s-password-7A5D073B-7FAE-4AA5-8F96-9ECD041ABA9C) |
+| 如何从 O365 经典管理门户重置用户的密码？ | [在 Office 365 中重置用户的密码](https://support.office.com/article/Reset-a-user-s-password-7A5D073B-7FAE-4AA5-8F96-9ECD041ABA9C) |
 | 如何使用 PowerShell 重置用户的密码？ | [使用 Set-MsolUserPassword 重置用户的密码](https://msdn.microsoft.com/library/azure/dn194140.aspx) |
 
 
@@ -150,8 +150,8 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 | 如何解决密码重置的问题 | [排查密码重置门户问题](/documentation/articles/active-directory-passwords-troubleshoot#troubleshoot-the-password-reset-portal) |
 | 如何解决密码写回问题 | [排查密码写回问题](/documentation/articles/active-directory-passwords-troubleshoot#troubleshoot-password-writeback) |
 | 如何解决密码写回连接问题 | [排查密码写回连接问题](/documentation/articles/active-directory-passwords-troubleshoot#troubleshoot-password-writeback-connectivity) |
-| 如何解决密码重置配置问题 | [在 Azure 经典门户中排查密码重置配置问题](/documentation/articles/active-directory-passwords-troubleshoot#troubleshoot-password-reset-configuration-in-the-azure-management-portal) |
-| 如何解决密码重置报告问题 | [在 Azure 经典门户中排查密码管理报告问题](/documentation/articles/active-directory-passwords-troubleshoot#troubleshoot-password-management-reports-in-the-azure-management-portal) |
+| 如何解决密码重置配置问题 | [在 Azure 经典管理门户中排查密码重置配置问题](/documentation/articles/active-directory-passwords-troubleshoot#troubleshoot-password-reset-configuration-in-the-azure-management-portal) |
+| 如何解决密码重置报告问题 | [在 Azure 经典管理门户中排查密码管理报告问题](/documentation/articles/active-directory-passwords-troubleshoot#troubleshoot-password-management-reports-in-the-azure-management-portal) |
 | 如何解决密码重置注册问题 | [排查密码重置注册门户问题](/documentation/articles/active-directory-passwords-troubleshoot#troubleshoot-the-password-reset-registration-portal) |
 | 密码写回事件日志错误代码 | [密码写回事件日志错误代码](/documentation/articles/active-directory-passwords-troubleshoot#password-writeback-event-log-error-codes) |
 
@@ -204,7 +204,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 
 ####在登录 Azure 和联合应用时强制密码重置注册 - 2015 年 7 月
 
-- 除了在登录 myapps.microsoft.com 时强制注册以外，我们现在支持在登录 Azure 经典门户和任何联合单一登录应用程序期间强制注册
+- 除了在登录 myapps.microsoft.com 时强制注册以外，我们现在支持在登录 Azure 经典管理门户和任何联合单一登录应用程序期间强制注册
 
 ####安全提问本地化支持 - 2015 年 5 月
 

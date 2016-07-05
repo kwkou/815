@@ -285,12 +285,12 @@ Microsoft 标识平台使用 URL 来调用中转站，然后将控制权返回�
 
 例如：x msauth mytestiosapp://com.myapp.mytestapp
 
-需要使用 [Azure 经典门户](https://manage.windowsazure.cn/)在应用注册中指定此重定向 URI。有关 Azure AD 应用注册的详细信息，请参阅[与 Azure Active Directory 集成](/documentation/articles/active-directory-how-to-integrate)。
+需要使用 [Azure 经典管理门户](https://manage.windowsazure.cn/)在应用注册中指定此重定向 URI。有关 Azure AD 应用注册的详细信息，请参阅[与 Azure Active Directory 集成](/documentation/articles/active-directory-how-to-integrate)。
 
 
 ##### 步骤 3a：在应用和开发人员门户添加重定向 URI，以支持基于证书的身份验证
 
-为支持基于证书身份验证第二个“msauth”需要在应用程序中注册和 [Azure 经典门户](https://manage.windowsazure.cn/)处理证书身份验证，如果你想要在你的应用程序中添加该功能的支持。
+为支持基于证书身份验证第二个“msauth”需要在应用程序中注册和 [Azure 经典管理门户](https://manage.windowsazure.cn/)处理证书身份验证，如果你想要在你的应用程序中添加该功能的支持。
 
 `msauth://code/<broker-redirect-uri-in-url-encoded-form>`
 

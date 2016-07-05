@@ -132,7 +132,7 @@
 有关创建测试证书的详细信息，请参阅[如何：创建自己的测试证书](https://msdn.microsoft.com/zh-cn/library/ff699202.aspx)
 
 
-**将证书与 Azure AD 应用程序相关联** 既然你拥有一个证书，你需要将其与 Azure AD 应用程序相关联。但当前 Azure 经典门户不支持此操作。你需要改用 Powershell。以下是你需要运行的命令：
+**将证书与 Azure AD 应用程序相关联** 既然你拥有一个证书，你需要将其与 Azure AD 应用程序相关联。但当前 Azure 经典管理门户不支持此操作。你需要改用 Powershell。以下是你需要运行的命令：
 
 	$x509 = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2
 	

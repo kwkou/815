@@ -15,7 +15,7 @@ As of circa 2015-09-04, the following topics might include this include:
 -->
 
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)（网址为 http://manage.windowsazure.cn/）。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)（网址为 http://manage.windowsazure.cn/）。
 
 2. 滚动并单击“SQL 数据库”。
 

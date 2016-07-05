@@ -16,7 +16,7 @@
 
 > [AZURE.SELECTOR]
 - [Azure 门户预览](/documentation/articles/cloud-services-custom-domain-name-portal)
-- [Azure 经典门户](/documentation/articles/cloud-services-custom-domain-name)
+- [Azure 经典管理门户](/documentation/articles/cloud-services-custom-domain-name)
 
 创建云服务时，Azure 会将其分配给 **chinacloudapp.cn** 的子域。例如，如果你的云服务名为"contoso"，你的用户将能够访问类似 http://contoso.chinacloudapp.cn 的 URL 上的应用程序。Azure 还会将分配一个虚拟 IP 地址。
 

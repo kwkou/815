@@ -20,11 +20,11 @@ Azure 媒体服务仪表板显示了可用于管理媒体服务帐户的使用�
 
 你可以监视由编码器中的输入和输出数据表示的已排队编码作业数、失败的编码任务数、活动的编码作业数，以及与媒体服务帐户关联的 Blob 存储使用率。此外，如果要将内容流式传输给客户，你可以检索各种流式处理度量值。你可以选择监视过去 6 小时、24 小时或 7 天的数据。
  
->[AZURE.NOTE] 在 Azure 经典门户中监视存储数据会产生相关的额外费用。有关详细信息，请参阅[存储分析和计费](https://msdn.microsoft.com/zh-cn/library/azure/hh360997.aspx)。
+>[AZURE.NOTE] 在 Azure 经典管理门户中监视存储数据会产生相关的额外费用。有关详细信息，请参阅[存储分析和计费](https://msdn.microsoft.com/zh-cn/library/azure/hh360997.aspx)。
 
 ##<a id="configuremonitoring"></a>如何：监视媒体服务帐户
 
-1. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中，单击“媒体服务”，然后单击媒体服务帐户名以打开仪表板。 
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，单击“媒体服务”，然后单击媒体服务帐户名以打开仪表板。 
 
 	![MediaServices\_Dashboard][dashboard]
 

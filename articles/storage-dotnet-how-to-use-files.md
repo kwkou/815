@@ -71,7 +71,7 @@ The [Azure preview portal](https://ms.portal.azure.com/) provides a user interfa
 
 ### 为存储帐户和密钥创建上下文
 
-现在，将创建存储帐户上下文。该上下文封装了存储帐户名称和帐户密钥。有关从[经典门户](https://manage.windowsazure.cn)复制帐户密钥的说明，请参阅[查看和复制存储访问密钥](/documentation/articles/storage-create-storage-account#view-and-copy-storage-access-keys)。
+现在，将创建存储帐户上下文。该上下文封装了存储帐户名称和帐户密钥。有关从[经典管理门户](https://manage.windowsazure.cn)复制帐户密钥的说明，请参阅[查看和复制存储访问密钥](/documentation/articles/storage-create-storage-account#view-and-copy-storage-access-keys)。
 
 请将下面示例中的 `storage-account-name` 和 `storage-account-key` 替换为你的存储帐户名称和密钥：
 
@@ -146,8 +146,8 @@ Get-AzureStorageFile 将返回任何传入的目录对象的文件和目录列�
 为了演示如何装载 Azure 文件共享，现在我们将创建一个运行 Windows 的 Azure 虚拟机，并远程登录到它内部以装载共享。
 
 
-1. 首先，按照[在 Azure 经典门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)中的说明创建新的 Azure 虚拟机。
-2. 接下来，按照[使用 Azure 经典门户登录到 Windows 虚拟机](/documentation/articles/virtual-machines-log-on-windows-server)中的说明远程登录到虚拟机。
+1. 首先，按照[在 Azure 经典管理门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)中的说明创建新的 Azure 虚拟机。
+2. 接下来，按照[使用 Azure 经典管理门户登录到 Windows 虚拟机](/documentation/articles/virtual-machines-log-on-windows-server)中的说明远程登录到虚拟机。
 3. 在该虚拟机上打开 PowerShell 窗口。
 
 ### 保存虚拟机的存储帐户凭据

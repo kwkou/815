@@ -23,7 +23,7 @@
 
 > [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。有关详细信息，请参阅 [ 1 元试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
  
-使用 Azure 经典门户，你可以快速创建 Azure 媒体服务帐户。你可以使用自己的帐户访问媒体服务，这些服务使你能够在 Azure 中存储、加密、编码、管理和流式传输媒体内容。创建媒体服务帐户时，你还将在此帐户所在的地理区域内创建一个关联的媒体服务帐户（或使用现有存储帐户）。
+使用 Azure 经典管理门户，你可以快速创建 Azure 媒体服务帐户。你可以使用自己的帐户访问媒体服务，这些服务使你能够在 Azure 中存储、加密、编码、管理和流式传输媒体内容。创建媒体服务帐户时，你还将在此帐户所在的地理区域内创建一个关联的媒体服务帐户（或使用现有存储帐户）。
 
 本文介绍如何使用“快速创建”方法创建新的媒体服务帐户，然后将该帐户与存储帐户关联。
 
@@ -42,7 +42,7 @@
 
 ##<a id="quick"></a> 使用“快速创建”创建媒体服务帐户
 
-1. 在 [Azure 经典门户][]中，依次单击“新建”、“媒体服务”和“快速创建”。
+1. 在 [Azure 经典管理门户][]中，依次单击“新建”、“媒体服务”和“快速创建”。
 
 ![媒体服务快速创建](./media/media-services-create-account/wams-QuickCreate.png)
 
@@ -87,6 +87,6 @@
 <!-- URLs. -->
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
 
-  [Azure 经典门户]: http://manage.windowsazure.cn/
+  [Azure 经典管理门户]: http://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0613_2016-->

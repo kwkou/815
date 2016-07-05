@@ -16,20 +16,20 @@
 
 你的组织购买了一个或多个域名来开展业务，而你的用户将使用企业域名来登录你的企业网络。使用 Azure Active Directory (Azure AD) 时，也可以将企业域名添加到 Azure AD。这样，你便可以在目录中分配用户熟悉的用户名，例如“alice@contoso.com”。 过程很简单：
 
-- 在 Azure 经典门户的“添加域”向导中添加域名
+- 在 Azure 经典管理门户的“添加域”向导中添加域名
 
-- 在 Azure AD 经典门户或 Azure AD Connect 工具中获取 DNS 条目
+- 在 Azure AD 经典管理门户或 Azure AD Connect 工具中获取 DNS 条目
 
 - 在 DNS 注册机构的网站上，将域名的 DNS 条目添加到 DNS 区域文件中
 
-- 在 Azure AD 经典门户或 Azure AD Connect 工具中验证域名
+- 在 Azure AD 经典管理门户或 Azure AD Connect 工具中验证域名
 
 
 在验证自定义域名之前，用户必须使用类似于“alice@contoso.onmicrosoft.com”的用户名登录，此类名称使用目录的初始域名。如果需要多个自定义域名，例如“contoso.com”和“contosobank.com”，最多可以添加 900 个域名。请使用本文中的相同步骤来添加每个域名。
 
 ## 将自定义域名添加到目录
 
-1. 使用充当 Azure AD 目录全局管理员的用户帐户登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
+1. 使用充当 Azure AD 目录全局管理员的用户帐户登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 
 2. 在“Active Directory”中打开你的目录，然后选择“域”选项卡。
 
@@ -61,7 +61,7 @@
 
 如果“添加域”向导仍保持打开，请在向导的第三页上选择“验证”。在验证之前，请等待一段时间（最长一个小时）来传播 DNS 条目。
 
-如果“添加域”向导未保持打开，可以在 [Azure 经典门户](https://manage.windowsazure.cn/)中验证域。
+如果“添加域”向导未保持打开，可以在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中验证域。
 
 1.  使用充当 Azure AD 目录全局管理员的用户帐户登录。
 

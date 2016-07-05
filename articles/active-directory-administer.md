@@ -49,7 +49,7 @@ Azure AD 在大多数 Microsoft 云服务的后面提供核心目录和身份管
 
 ### 将 Azure AD 目录与新的 Azure 订阅相关联
 
-可以将新的 Azure 订阅，与用于对现有 Office 365 或 Microsoft Intune 订阅的登录进行身份验证的相同目录进行关联。请使用你的工作或学校帐户登录到 Azure 经典门户。经典门户将返回一条消息，指出找不到该帐户的任何订阅。选择"注册 Azure"，你的目录将可用于在门户中进行管理。有关详细信息，请参阅[在 Azure 中管理 Office 365 订阅的目录](/documentation/articles/active-directory-how-subscriptions-associated-directory#manage-the-directory-for-your-office-365-subscription-in-azure)。
+可以将新的 Azure 订阅，与用于对现有 Office 365 或 Microsoft Intune 订阅的登录进行身份验证的相同目录进行关联。请使用你的工作或学校帐户登录到 Azure 经典管理门户。经典管理门户将返回一条消息，指出找不到该帐户的任何订阅。选择"注册 Azure"，你的目录将可用于在门户中进行管理。有关详细信息，请参阅[在 Azure 中管理 Office 365 订阅的目录](/documentation/articles/active-directory-how-subscriptions-associated-directory#manage-the-directory-for-your-office-365-subscription-in-azure)。
 
 <!--For a video about common usage questions for Azure AD, see [Azure Active Directory - Common Sign-up, sign-in and usage questions](http://channel9.msdn.com/Series/Windows-Azure-Active-Directory/WAADCommonSignupsigninquestions).-->
 
@@ -73,7 +73,7 @@ Azure AD 在大多数 Microsoft 云服务的后面提供核心目录和身份管
 
 ## 如何管理目录数据
 
-作为一个或多个 Microsoft 云服务订阅的管理员，你可以使用 Azure 经典门户、Microsoft Intune 帐户门户或 Office 365 管理中心来管理你的组织目录数据。你还可以下载并运行[用于 Windows PowerShell 的 Azure Active Directory 模块](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx) cmdlet 来帮助管理 Azure AD 中存储的数据。 
+作为一个或多个 Microsoft 云服务订阅的管理员，你可以使用 Azure 经典管理门户、Microsoft Intune 帐户门户或 Office 365 管理中心来管理你的组织目录数据。你还可以下载并运行[用于 Windows PowerShell 的 Azure Active Directory 模块](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx) cmdlet 来帮助管理 Azure AD 中存储的数据。 
 
 通过上述任一门户（或 cmdlet），你可以执行以下操作：
 
@@ -81,7 +81,7 @@ Azure AD 在大多数 Microsoft 云服务的后面提供核心目录和身份管
 - 管理你组织订阅的相关云服务
 - 设置与目录服务的本地集成
 
-Azure 经典门户、Office 365 管理中心、Microsoft Intune 帐户门户和 Azure AD cmdlet 均从与组织的目录关联的 Azure AD 的单个共享实例读取数据并将数据写入到该实例中，如下图所示。门户（或 cmdlet）通过这种方式充当用于输入和/或修改目录数据的前端接口。
+Azure 经典管理门户、Office 365 管理中心、Microsoft Intune 帐户门户和 Azure AD cmdlet 均从与组织的目录关联的 Azure AD 的单个共享实例读取数据并将数据写入到该实例中，如下图所示。门户（或 cmdlet）通过这种方式充当用于输入和/或修改目录数据的前端接口。
 
 ![][2]
 
@@ -91,7 +91,7 @@ Azure 经典门户、Office 365 管理中心、Microsoft Intune 帐户门户和 
 
 ## 如何添加和管理多个目录？
 
-可以在 Azure 经典门户中添加 Azure AD 目录。在左侧选择“Active Directory”扩展，然后单击“添加”。
+可以在 Azure 经典管理门户中添加 Azure AD 目录。在左侧选择“Active Directory”扩展，然后单击“添加”。
 
 可将每个目录作为完全独立的资源进行管理：每个目录都是一个具有完整功能的对等方，在逻辑上独立于你所管理的其他目录；目录之间不存在父子关系。目录之间的这种独立性包括资源独立性、管理独立性和同步独立性。 
 
@@ -121,9 +121,9 @@ Azure AD 要求删除目录之前必须符合特定的条件。这可以降低�
 
 需检查以下条件：
 
-- 该目录中的唯一用户是将要删除该目录的全局管理员。只有在删除所有其他用户后，才能删除该目录。如果用户是从本地同步的，则需要关闭同步，并且必须使用经典门户或用于 Windows PowerShell 的 Azure 模块从云目录中删除这些用户。不要求删除组或联系人，例如，从 Office 365 管理中心添加的联系人。
+- 该目录中的唯一用户是将要删除该目录的全局管理员。只有在删除所有其他用户后，才能删除该目录。如果用户是从本地同步的，则需要关闭同步，并且必须使用经典管理门户或用于 Windows PowerShell 的 Azure 模块从云目录中删除这些用户。不要求删除组或联系人，例如，从 Office 365 管理中心添加的联系人。
 - 该目录中不能有任何应用程序。只有在删除所有应用程序后，才能删除该目录。 
-- 与该目录关联的任何 Microsoft Online Services（例如 Microsoft Azure、Office 365 或 Azure AD Premium）不能存在任何订阅。例如，如果在 Azure 中为你创建了一个默认目录，并且你的 Azure 订阅仍然依赖于此目录进行身份验证，则你不能删除此目录。类似地，如果其他用户已将订阅与某个目录相关联，则你无法删除该目录。若要将你的订阅与其他目录相关联，请登录到 Azure 经典门户，并在左侧导航窗格中单击“设置”。然后，在“订阅”页的底部单击“编辑目录”。有关 Azure 订阅的详细信息，请参阅 [Azure 订阅与 Azure AD 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory)。 
+- 与该目录关联的任何 Microsoft Online Services（例如 Microsoft Azure、Office 365 或 Azure AD Premium）不能存在任何订阅。例如，如果在 Azure 中为你创建了一个默认目录，并且你的 Azure 订阅仍然依赖于此目录进行身份验证，则你不能删除此目录。类似地，如果其他用户已将订阅与某个目录相关联，则你无法删除该目录。若要将你的订阅与其他目录相关联，请登录到 Azure 经典管理门户，并在左侧导航窗格中单击“设置”。然后，在“订阅”页的底部单击“编辑目录”。有关 Azure 订阅的详细信息，请参阅 [Azure 订阅与 Azure AD 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory)。 
 
     > [AZURE.NOTE]
     > 如果用户是使用工作或学校帐户登录的，则该用户不得尝试删除其主目录。例如，如果用户是作为 joe@contoso.onmicrosoft.com 登录的，则该用户不能删除默认域为 contoso.onmicrosoft.com 的目录。

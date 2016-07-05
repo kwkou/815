@@ -96,7 +96,7 @@
 [使用 PowerBI 可视化数据]: /documentation/articles/sql-data-warehouse-get-started-visualize-with-power-bi
 
 <!--Other-->
-[Azure 经典门户]: https://manage.windowsazure.cn
+[Azure 经典管理门户]: https://manage.windowsazure.cn
 
 <!--Image references-->
 

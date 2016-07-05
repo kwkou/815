@@ -19,7 +19,7 @@
 
 > [AZURE.SELECTOR]
 - [Azure 门户预览](/documentation/articles/cloud-services-how-to-configure-portal)
-- [Azure 经典门户](/documentation/articles/cloud-services-how-to-configure)
+- [Azure 经典管理门户](/documentation/articles/cloud-services-how-to-configure)
 
 你可以在 Azure 门户预览中配置最常使用的云服务设置。或者，如果你希望直接更新配置文件，则可以下载要更新的服务配置文件，然后上载更新文件并使用配置更改更新云服务。无论使用哪种方法，配置更新都将应用于所有角色实例。
 
@@ -38,7 +38,7 @@
 ![Azure 云服务设置边栏选项卡](./media/cloud-services-how-to-configure-portal/cs-settings-blade.png)
 
 >[AZURE.NOTE]
-不能使用 **Azure 门户预览**更改用于云服务的操作系统，仅可通过 [Azure 经典门户](http://manage.windowsazure.cn)更改此设置。详细信息见[此处](/documentation/articles/cloud-services-how-to-configure/#update-a-cloud-service-configuration-file)。
+不能使用 **Azure 门户预览**更改用于云服务的操作系统，仅可通过 [Azure 经典管理门户](http://manage.windowsazure.cn)更改此设置。详细信息见[此处](/documentation/articles/cloud-services-how-to-configure/#update-a-cloud-service-configuration-file)。
 
 ## 监视
 
@@ -67,7 +67,7 @@
 
 ## 重新启动、重置映像或远程桌面
 
-此时无法使用 **Azure 门户预览**配置远程桌面。不过，你可以通过 [Azure 经典门户](/documentation/articles/cloud-services-role-enable-remote-desktop)、[PowerShell](/documentation/articles/cloud-services-role-enable-remote-desktop-powershell) 或 [Visual Studio](/documentation/articles/vs-azure-tools-remote-desktop-roles) 对其进行设置。
+此时无法使用 **Azure 门户预览**配置远程桌面。不过，你可以通过 [Azure 经典管理门户](/documentation/articles/cloud-services-role-enable-remote-desktop)、[PowerShell](/documentation/articles/cloud-services-role-enable-remote-desktop-powershell) 或 [Visual Studio](/documentation/articles/vs-azure-tools-remote-desktop-roles) 对其进行设置。
 
 首先，单击云服务实例
 

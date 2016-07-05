@@ -17,7 +17,7 @@
 
 > [AZURE.SELECTOR]
 - [Azure 门户预览](/documentation/articles/cloud-services-how-to-manage-portal)
-- [Azure 经典门户](/documentation/articles/cloud-services-how-to-manage)
+- [Azure 经典管理门户](/documentation/articles/cloud-services-how-to-manage)
 
 
 在 Azure 门户预览的“云服务”区域中，可以更新服务角色或部署、将预留部署升级到生产环境、将资源链接到云服务，以便可以查看资源依赖关系并对资源进行整体缩放，以及删除云服务或部署。
@@ -73,7 +73,7 @@
 
 ## 如何：将资源链接到云服务
 
-Azure 门户预览不会像当前 Azure 经典门户一样将资源链接在一起。而是必须将其他资源部署到云服务正在使用的同一资源组。
+Azure 门户预览不会像当前 Azure 经典管理门户一样将资源链接在一起。而是必须将其他资源部署到云服务正在使用的同一资源组。
 
 ## 如何：删除部署和云服务
 

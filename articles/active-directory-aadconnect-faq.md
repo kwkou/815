@@ -76,6 +76,6 @@ Azure AD Connect 不支持 NetBios 名称包含句点“.”的本地林/域。
 
 [Azure AD Connect 客户支持](https://manage.windowsazure.cn/?getsupport=true)
 
-- 使用此链接，以便通过 Azure 经典门户获取支持。 
+- 使用此链接，以便通过 Azure 经典管理门户获取支持。 
 
 <!---HONumber=Mooncake_0606_2016-->

@@ -67,7 +67,7 @@
 
 Azure 模块将读取环境变量 AZURE_STORAGE_ACCOUNT 和 AZURE_STORAGE_ACCESS_KEY 或 AZURE_STORAGE_CONNECTION_STRING 以获取连接到您的 Azure 存储帐户所需的信息。如果未设置这些环境变量，则必须在调用 **TableService** 时指定帐户信息。
 
-有关在经典门户中为 Azure Web 应用设置环境变量的示例，请参阅[使用 Azure 表服务的 Node.js Web 应用]
+有关在经典管理门户中为 Azure Web 应用设置环境变量的示例，请参阅[使用 Azure 表服务的 Node.js Web 应用]
 
 ## 创建表
 
@@ -429,7 +429,7 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
   [OData.org]: http://www.odata.org/
   [使用 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx
-  [Azure 经典门户]: http://manage.windowsazure.cn
+  [Azure 经典管理门户]: http://manage.windowsazure.cn
 
   [生成 Node.js 应用程序并将其部署到 Azure 云服务]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
   [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/

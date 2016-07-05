@@ -29,7 +29,7 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 	![命令提示符][1]
 
 2.  在命令窗口中键入“1”，然后按 **Enter**。这会创建分片映射管理器，并将两个分片添加到服务器。然后键入“3”并按 **Enter**；重复该操作四次。这会在你的分片中插入示例数据行。
-3.  [Azure 经典门户](https://manage.windowsazure.cn)应会在 v12 服务器中显示三个新的数据库：
+3.  [Azure 经典管理门户](https://manage.windowsazure.cn)应会在 v12 服务器中显示三个新的数据库：
 
 	![Visual Studio 确认][2]
 
@@ -39,7 +39,7 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 
 ## 创建弹性查询数据库
 
-1. 打开 [Azure 经典门户](https://manage.windowsazure.cn)并登录。
+1. 打开 [Azure 经典管理门户](https://manage.windowsazure.cn)并登录。
 2. 在与分片设置相同的服务器中创建新的 Azure SQL 数据库。将数据库命名为“ElasticDBQuery”。
 
 	![Azure 门户和定价层][3]

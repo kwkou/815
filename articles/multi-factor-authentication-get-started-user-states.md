@@ -27,7 +27,7 @@ Enabled |用户已加入 Multi-Factor Authentication。|否。它们继续工作
 
 ### 查看用户的状态
 --------------------------------------------------------------------------------
-1.  以管理员身份登录到 **Azure 经典门户**。
+1.  以管理员身份登录到 **Azure 经典管理门户**。
 2.  在左侧单击“Active Directory”。
 3.  在“目录”下单击要为其启用此功能的用户的目录。
 ![单击目录](./media/multi-factor-authentication-get-started-cloud/directory1.png)
@@ -38,7 +38,7 @@ Enabled |用户已加入 Multi-Factor Authentication。|否。它们继续工作
 ![单击目录](./media/multi-factor-authentication-get-started-user-states/userstate1.png)
 
 ###将状态从已禁用更改为已启用
-1.  以管理员身份登录到 **Azure 经典门户**。
+1.  以管理员身份登录到 **Azure 经典管理门户**。
 2.  在左侧单击“Active Directory”。
 3.  在“目录”下单击要为其启用此功能的用户的目录。
 ![单击目录](./media/multi-factor-authentication-get-started-cloud/directory1.png)
@@ -57,7 +57,7 @@ Enabled |用户已加入 Multi-Factor Authentication。|否。它们继续工作
 10.  启用用户后，建议你通过电子邮件通知他们。它还应该通知他们如何使用其非浏览器应用以避免被锁定。
 
 ### 将状态从已启用/强制更改为已禁用
-1.  以管理员身份登录到 **Azure 经典门户**。
+1.  以管理员身份登录到 **Azure 经典管理门户**。
 2.  在左侧单击“Active Directory”。
 3.  在“目录”下单击要为其启用此功能的用户的目录。
 ![单击目录](./media/multi-factor-authentication-get-started-cloud/directory1.png)

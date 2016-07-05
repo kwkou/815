@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在经典门户中创建 AD 应用程序和服务主体 | Azure"
+   pageTitle="在经典管理门户中创建 AD 应用程序和服务主体 | Azure"
    description="介绍如何创建新的 Active Directory 应用程序和服务主体，在 Azure Resource Manager 中将此服务主体与基于角色的访问控制配合使用可以管理对资源的访问权限。"
    services="azure-resource-manager"
    documentationCenter="na"
@@ -12,12 +12,12 @@
    ms.date="04/18/2016"
    wacn.date="06/27/2016"/>
 
-# 使用经典门户创建 Active Directory 应用程序和服务主体
+# 使用经典管理门户创建 Active Directory 应用程序和服务主体
 
 ## 概述
-当你的自动化进程或应用程序需要访问或修改资源时，你可以使用经典门户来创建 Active Directory 应用程序。你可以使用应用程序自身的标识或应用程序的登录用户标识执行应用程序。这两种应用程序身份验证方法分别称为交互式（用户登录）和非交互式（应用程序提供自身的凭据）方法。在非交互式模式下，必须为角色分配正确的权限，以便对应用程序的标识进行操作。如果你的应用以无人参与方式运行，例如以后端进程方式运行，则必须使用非交互身份验证。
+当你的自动化进程或应用程序需要访问或修改资源时，你可以使用经典管理门户来创建 Active Directory 应用程序。你可以使用应用程序自身的标识或应用程序的登录用户标识执行应用程序。这两种应用程序身份验证方法分别称为交互式（用户登录）和非交互式（应用程序提供自身的凭据）方法。在非交互式模式下，必须为角色分配正确的权限，以便对应用程序的标识进行操作。如果你的应用以无人参与方式运行，例如以后端进程方式运行，则必须使用非交互身份验证。
 
-本主题说明如何使用经典门户创建新的应用程序。目前，你必须使用经典门户来创建新的 Active Directory 应用程序。可以使用经典门户将应用程序添加到角色。
+本主题说明如何使用经典管理门户创建新的应用程序。目前，你必须使用经典管理门户来创建新的 Active Directory 应用程序。可以使用经典管理门户将应用程序添加到角色。
 
 你也可以通过 Azure PowerShell 或 Azure CLI 执行这些步骤。若要使用 PowerShell 或 CLI 处理服务主体的详细信息，请参阅[使用 Azure Resource Manager 对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)。
 
@@ -34,7 +34,7 @@
 
 对于交互式和非交互式应用程序，必须创建并配置 Active Directory 应用程序。
 
-1. 通过 [Azure 经典门户](https://manage.windowsazure.cn/)登录到你的 Azure 帐户。
+1. 通过 [Azure 经典管理门户](https://manage.windowsazure.cn/)登录到你的 Azure 帐户。
 
 2. 在左侧窗格中选择“Active Directory”。
 
@@ -141,7 +141,7 @@
 
 ## 将应用程序分配到角色
 
-如果应用程序不是以登录用户的标识来运行，则你必须将应用程序分配到角色，以授予它执行操作的权限。若要将应用程序分配到角色，请从经典门户切换到 [Azure 门户预览](https://portal.azure.com)。你必须确定要将应用程序添加到哪个角色以及作用域。若要了解有关可用角色的信息，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles)。可将作用域设置为订阅、资源组或资源级别。作用域的较低级别将继承权限（例如，将某个应用程序添加到资源组的“读取者”角色意味着该应用程序可以读取该资源组及其包含的所有资源）。
+如果应用程序不是以登录用户的标识来运行，则你必须将应用程序分配到角色，以授予它执行操作的权限。若要将应用程序分配到角色，请从经典管理门户切换到 [Azure 门户预览](https://portal.azure.com)。你必须确定要将应用程序添加到哪个角色以及作用域。若要了解有关可用角色的信息，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles)。可将作用域设置为订阅、资源组或资源级别。作用域的较低级别将继承权限（例如，将某个应用程序添加到资源组的“读取者”角色意味着该应用程序可以读取该资源组及其包含的所有资源）。
 
 1. 在门户预览中，导航到你要将应用程序分配到的作用域级别。对于本主题，你可以导航到资源组，然后从资源组边栏选项卡中选择“访问”图标。
 
@@ -167,7 +167,7 @@
 
      ![显示](./media/resource-group-create-service-principal-portal/show-app.png)
 
-有关通过门户预览将用户和应用程序分配到角色的详细信息，请参阅[使用 Azure 经典门户管理访问权限](../role-based-access-control-configure/#manage-access-using-the-azure-management-portal)。
+有关通过门户预览将用户和应用程序分配到角色的详细信息，请参阅[使用 Azure 经典管理门户管理访问权限](../role-based-access-control-configure/#manage-access-using-the-azure-management-portal)。
 
 ## 在代码中获取访问令牌
 

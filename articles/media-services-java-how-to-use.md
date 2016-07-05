@@ -18,7 +18,7 @@
 
 ##<a id="setup-account"></a>为媒体服务设置 Azure 帐户
 
-若要设置你的媒体服务帐户，请使用 Azure 经典门户。请参阅主题[如何创建媒体服务帐户](/documentation/articles/media-services-create-account)。在 Azure 经典门户中创建帐户后，便可以设置你的计算机以进行媒体服务开发。
+若要设置你的媒体服务帐户，请使用 Azure 经典管理门户。请参阅主题[如何创建媒体服务帐户](/documentation/articles/media-services-create-account)。在 Azure 经典管理门户中创建帐户后，便可以设置你的计算机以进行媒体服务开发。
 
 ##<a id="setup-dev"></a>完成设置以进行媒体服务开发
 

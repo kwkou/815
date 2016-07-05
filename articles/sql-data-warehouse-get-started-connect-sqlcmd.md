@@ -32,7 +32,7 @@
 
 若要连接到数据库，你需要服务器的完整名称 (***servername**.database.chinacloudapi.cn*)，该名称中包含要连接到的数据库。
 
-1. 转到 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 转到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 2. 浏览到要连接到的数据库。
 3. 点击“仪表板”，找出完整的服务器名称（我们将在下面的步骤中使用此名称）：
 

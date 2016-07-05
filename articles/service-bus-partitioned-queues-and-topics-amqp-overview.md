@@ -70,7 +70,7 @@ receivedMessage.Complete();
 
 ### 创建分区主题
 
-可以通过 [Azure 经典门户][]和服务总线 SDK 创建分区主题。若要创建分区主题，请在 [TopicDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.aspx) 实例中将 [EnablePartitioning](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.enablepartitioning.aspx) 属性设置为 **true**。以下代码演示如何使用服务总线 SDK 创建分区主题。
+可以通过 [Azure 经典管理门户][]和服务总线 SDK 创建分区主题。若要创建分区主题，请在 [TopicDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.aspx) 实例中将 [EnablePartitioning](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.enablepartitioning.aspx) 属性设置为 **true**。以下代码演示如何使用服务总线 SDK 创建分区主题。
 	
 ```
 // Create partitioned topic
@@ -114,6 +114,6 @@ receivedMessage.Complete();
 *    [如何将 Java 消息服务 (JMS) API 用于服务总线和 AMQP 1.0](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)
 *    [如何将 AMQP 1.0 与服务总线 .NET API 一起使用](/documentation/articles/service-bus-dotnet-advanced-message-queuing)
 
-[Azure 经典门户]: http://manage.windowsazure.cn
+[Azure 经典管理门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->

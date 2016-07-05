@@ -22,7 +22,7 @@
 2. 通过 System Center Operations Manager 使用 Azure Management Pack 来进行
 3. 使用其他监视工具来访问传输到 Azure 存储空间的诊断数据。有关详细信息，请参阅[在 Azure 存储空间中存储和查看诊断数据](https://msdn.microsoft.com/zh-cn/library/azure/hh411534.aspx)。  
 
-有关在 [Azure 经典门户](http://manage.windowsazure.cn)中监视应用程序性能的详细信息，请参阅[如何监视云服务](https://www.azure.com/manage/services/cloud-services/how-to-monitor-a-cloud-service)。
+有关在 [Azure 经典管理门户](http://manage.windowsazure.cn)中监视应用程序性能的详细信息，请参阅[如何监视云服务](https://www.azure.com/manage/services/cloud-services/how-to-monitor-a-cloud-service)。
 
 有关创建日志记录和跟踪策略以及使用诊断和其他技术排查问题及优化 Azure 应用程序的其他深入指南，请参阅[有关开发 Azure 应用程序的问题排查最佳实践](https://msdn.microsoft.com/zh-cn/library/azure/hh771389.aspx)。
 
@@ -91,7 +91,7 @@ Azure 缓存性能计数器数据和其他诊断信息。此数据适用于在�
 
 ## 步骤 1：通过性能计数器收集和存储数据
 
-在将诊断文件添加到 Visual Studio 解决方案中后，你可以在 Azure 应用程序中配置性能计数器数据的收集和存储。通过将性能计数器添加到诊断文件可做到这一点。首先在实例中收集诊断数据（包括性能计数器）。随后该数据将保留到 Azure 表服务中的 WADPerformanceCountersTable 表中，因此你还需要指定应用程序中的存储帐户。如果在计算模拟器中本地测试应用程序，则也可在存储模拟器中本地存储诊断数据。你必须先转到 [Azure 经典门户](http://manage.windowsazure.cn)并创建存储帐户，然后才能存储诊断数据。最佳做法是将存储帐户置于与 Azure 应用程序相同的地理位置，从而消除外部宽带成本并减少延迟。
+在将诊断文件添加到 Visual Studio 解决方案中后，你可以在 Azure 应用程序中配置性能计数器数据的收集和存储。通过将性能计数器添加到诊断文件可做到这一点。首先在实例中收集诊断数据（包括性能计数器）。随后该数据将保留到 Azure 表服务中的 WADPerformanceCountersTable 表中，因此你还需要指定应用程序中的存储帐户。如果在计算模拟器中本地测试应用程序，则也可在存储模拟器中本地存储诊断数据。你必须先转到 [Azure 经典管理门户](http://manage.windowsazure.cn)并创建存储帐户，然后才能存储诊断数据。最佳做法是将存储帐户置于与 Azure 应用程序相同的地理位置，从而消除外部宽带成本并减少延迟。
 
 ### 将性能计数器添加到诊断文件
 
@@ -143,7 +143,7 @@ counterSpecifier 属性指定要收集的性能计数器。sampleRate 属性指�
 
 设置连接字符串：
 
-1. 使用常用文本编辑器打开 ServiceConfiguration.Cloud.cscfg 文件并为存储设置连接字符串。将在 Azure 经典门户的存储帐户仪表板的“管理密钥”下找到 AccountName 和 AccountKey 值。
+1. 使用常用文本编辑器打开 ServiceConfiguration.Cloud.cscfg 文件并为存储设置连接字符串。将在 Azure 经典管理门户的存储帐户仪表板的“管理密钥”下找到 AccountName 和 AccountKey 值。
 
     ```
     <ConfigurationSettings>

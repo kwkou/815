@@ -23,7 +23,7 @@
 
 ## JavaScript、Node.JS 和 Python（只是为了举几例）
 
-选择数据库时，你不必学习新语言。SQL 数据库提供许多适用于你正在使用的平台（即 Linux、Mac OS 或 Windows）的代码示例，可帮助你开始使用。此外，Azure 经典门户、PowerShell 和 REST API 可帮助你在开发时提高工作效率。
+选择数据库时，你不必学习新语言。SQL 数据库提供许多适用于你正在使用的平台（即 Linux、Mac OS 或 Windows）的代码示例，可帮助你开始使用。此外，Azure 经典管理门户、PowerShell 和 REST API 可帮助你在开发时提高工作效率。
 
 [阅读文档](https://msdn.microsoft.com/zh-cn/library/mt654049%28v=sql.1%29.aspx)
 

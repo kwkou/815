@@ -65,7 +65,7 @@
 
 - 通过以下方法之一创建：
 
-  - [Azure 经典门户](https://manage.windowsazure.cn)
+  - [Azure 经典管理门户](https://manage.windowsazure.cn)
 
         ![Azure portal](./media/resource-manager-deployment-model/azure-portal.png)
 
@@ -82,7 +82,7 @@
   - 适用于 REST 操作的[服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)。
   - Azure CLI 命令在 **asm** 或默认模式下运行。
 
-你仍可以使用 Azure 经典门户来管理通过经典部署创建的资源。
+你仍可以使用 Azure 经典管理门户来管理通过经典部署创建的资源。
 
 ## 使用资源管理器和资源组的好处
 

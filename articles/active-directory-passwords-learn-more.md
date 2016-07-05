@@ -32,7 +32,7 @@
 - **支持使用 AD FS 或其他联合技术的用户重置密码。** 使用密码写回功能，只要联合用户帐户同步到你的 Azure AD 租户，用户就能够从云中管理他们的本地 AD 密码。
 - **支持使用密码哈希同步的用户重置密码。** 当密码重置服务检测到同步用户帐户已启用密码哈希同步时，我们会同时重置此帐户的本地密码和云密码。
 - **支持从访问面板和 Office 365 更改密码。** 当联合或密码同步用户更改其过期或未过期的密码时，我们将这些密码写回到你的本地 AD 环境。
-- **支持管理员从 [**Azure 经典门户**](https://manage.windowsazure.cn)重置密码时写回密码。**无论何时管理员在 [Azure 经典门户](https://manage.windowsazure.cn)中重置用户的密码，只要该用户已联合或密码已同步，我们便还会设置管理员在本地 AD 上选择的密码。Office 经典门户当前不支持此功能。
+- **支持管理员从 [**Azure 经典管理门户**](https://manage.windowsazure.cn)重置密码时写回密码。**无论何时管理员在 [Azure 经典管理门户](https://manage.windowsazure.cn)中重置用户的密码，只要该用户已联合或密码已同步，我们便还会设置管理员在本地 AD 上选择的密码。Office 经典管理门户当前不支持此功能。
 - **实施本地 AD 密码策略。** 当用户重置其密码时，在将重置提交到该目录之前，我们要确保它符合你的本地 AD 策略。这包括历史记录、复杂性、年龄、密码筛选器以及你在本地 AD 中定义的所有其他密码限制。
 - **不需要任何入站防火墙规则。** 密码写回功能使用 Azure 服务总线中继作为底层通信通道，这意味着你无需打开防火墙上的任何入站端口即可使用此功能（仅限 443 出站）。
 - **本地 Active Directory 的受保护组中存在的用户帐户不支持。** 有关受保护组的详细信息，请参阅 [Active Directory 中的受保护帐户和组](https://technet.microsoft.com/zh-cn/library/dn535499.aspx)。
@@ -134,7 +134,7 @@
               <p>使用位置：</p>
               <p>密码重置门户</p>
               <p>设置位置：</p>
-              <p>可从 PowerShell、DirSync、Azure 经典门户和 Office 经典门户设置 PhoneNumber</p>
+              <p>可从 PowerShell、DirSync、Azure 经典管理门户和 Office 经典管理门户设置 PhoneNumber</p>
             </td>
             <td>
               <p>+ccc xxxyyyzzzz（例如 +1 1234567890）</p>
@@ -177,7 +177,7 @@
               <p>注册门户</p>
               <p>设置位置： </p>
               <p>可从密码重置注册门户或 MFA 注册门户设置 AuthenticationPhone。</p>
-              <p>可从 PowerShell、DirSync、Azure 经典门户和 Office 经典门户设置 MobilePhone</p>
+              <p>可从 PowerShell、DirSync、Azure 经典管理门户和 Office 经典管理门户设置 MobilePhone</p>
             </td>
             <td>
               <p>+ccc xxxyyyzzzz（例如 +1 1234567890）</p>
@@ -221,7 +221,7 @@
               <p>注册门户</p>
               <p>设置位置： </p>
               <p>可从密码重置注册门户或 MFA 注册门户设置 AuthenticationEmail。</p>
-              <p>可从 PowerShell、Azure 经典门户和 Office 经典门户设置 AlternateEmail</p>
+              <p>可从 PowerShell、Azure 经典管理门户和 Office 经典管理门户设置 AlternateEmail</p>
             </td>
             <td>
               <p>
@@ -248,7 +248,7 @@
               <p>密码重置门户</p>
               <p>注册门户 </p>
               <p>设置位置： </p>
-              <p>只能通过 Azure 经典门户设置安全问题。</p>
+              <p>只能通过 Azure 经典管理门户设置安全问题。</p>
               <p>只能通过注册门户设置给定用户的安全问题答案。</p>
             </td>
             <td>

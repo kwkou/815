@@ -27,7 +27,7 @@
 
 ### 获取 Azure 服务总线的连接字符串
 
-1. 登录到 [Azure 经典门户](http://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典管理门户](http://manage.windowsazure.cn)。
 
 2. 在左侧列中，单击“服务总线”。
 

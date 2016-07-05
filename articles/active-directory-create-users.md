@@ -18,7 +18,7 @@
 
 ## 添加用户
 
-1. 使用充当目录全局管理员的帐户登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 使用充当目录全局管理员的帐户登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 2. 选择“Active Directory”，然后选择组织目录的名称。
 3. 选择“用户”选项卡，然后在命令栏中选择“添加用户”。
 4. 在“告诉我们有关此用户的信息”页上的“用户类型”下，选择下列其中一项：
@@ -72,7 +72,7 @@
 
 ### 目前支持 Azure AD 外部用户访问的服务
 
-- **Azure 经典门户**：允许身为多个目录的管理员的外部用户管理这些目录。
+- **Azure 经典管理门户**：允许身为多个目录的管理员的外部用户管理这些目录。
 - **SharePoint Online**：如果启用外部共享，则允许外部用户访问 SharePoint Online 的已授权资源。
 - **Dynamics CRM**：如果用户通过 PowerShell 获得许可，则允许外部用户访问 Dynamics CRM 中的已授权资源。
 - **Dynamics AX**：如果用户通过 PowerShell 获得许可，则允许外部用户访问 Dynamics AX 中的已授权资源。适用于 [Azure AD 外部用户](#known-limitations-of-azure-ad-external-users)和[来宾用户](#guest-user-management-and-limitations)的限制同样适用于 Dynamics AX 中的外部用户。
@@ -99,9 +99,9 @@
 
 ## 设置用户访问策略
 
-目录的**“配置”**选项卡包含用于控制外部用户访问权限的选项。这些选项只能由目录全局管理员在 Azure 经典门户中更改。目前不支持 PowerShell 或 API 方法。
+目录的**“配置”**选项卡包含用于控制外部用户访问权限的选项。这些选项只能由目录全局管理员在 Azure 经典管理门户中更改。目前不支持 PowerShell 或 API 方法。
 
-若要在 Azure 经典门户中打开“配置”选项卡，请选择“Active Directory”，然后选择目录的名称。
+若要在 Azure 经典管理门户中打开“配置”选项卡，请选择“Active Directory”，然后选择目录的名称。
 
 ![Azure Active Directory 中的“配置”选项卡][1]
 

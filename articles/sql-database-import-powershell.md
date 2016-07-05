@@ -70,7 +70,7 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
     $DatabaseName = "databasename"
 
 
-以下变量来自 BACPAC 所处的存储帐户。在 [Azure 经典门户](https://manage.windowsazure.cn)中，浏览到你的存储帐户以获取这些值。你可以单击存储帐户边栏选项卡中的“所有设置”，然后单击“密钥”，找到主访问密钥。
+以下变量来自 BACPAC 所处的存储帐户。在 [Azure 经典管理门户](https://manage.windowsazure.cn)中，浏览到你的存储帐户以获取这些值。你可以单击存储帐户边栏选项卡中的“所有设置”，然后单击“密钥”，找到主访问密钥。
 
 Blob 名称是你想要从中创建的数据库的现有 .bacpac 文件的名称。需要包括 .bacpac 扩展名。
 

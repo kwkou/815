@@ -86,7 +86,7 @@
 
 ###<a name="section_5_4"></a> 5.4 Java 开发者必读
 ####<a name="section_5_4_1"></a> 5.4.1 Azure Web 应用 Java 运行环境基本配置
-1.	登入 Azure 的经典门户，创建一个测试的 website 应用 myjavasite, 如下所示：
+1.	登入 Azure 的经典管理门户，创建一个测试的 website 应用 myjavasite, 如下所示：
 
 	![web_create2](./media/azure-web-apps-user-manual-part3/web_create2.png)
 

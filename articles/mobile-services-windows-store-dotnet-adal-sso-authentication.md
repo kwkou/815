@@ -75,7 +75,7 @@
 
 ###创建本机应用程序注册
 
-1. 在[Azure 经典门户]中浏览到“Active Directory”，然后单击你的目录。
+1. 在[Azure 经典管理门户]中浏览到“Active Directory”，然后单击你的目录。
 
     ![][7]
 
@@ -152,7 +152,7 @@
             } 
         }
 
-6. 在上面的 `AuthenticateAsync` 方法的代码中，将 **INSERT-AUTHORITY-HERE** 替换为在其中进行应用程序设置的租户的名称，格式应为 https://login.chinacloudapi.cn/tenant-name.onmicrosoft.com。 可以在 [Azure 经典门户]中从 Azure Active Directory 的“域”选项卡复制此值。
+6. 在上面的 `AuthenticateAsync` 方法的代码中，将 **INSERT-AUTHORITY-HERE** 替换为在其中进行应用程序设置的租户的名称，格式应为 https://login.chinacloudapi.cn/tenant-name.onmicrosoft.com。 可以在 [Azure 经典管理门户]中从 Azure Active Directory 的“域”选项卡复制此值。
 
 7. 在上面的 `AuthenticateAsync` 方法的代码中，将 **INSERT-RESOURCE-URI-HERE** 替换为你的移动服务的“应用程序 ID URI”。如果你按照[如何向 Azure Active Directory 注册]主题进行操作，你的应用程序 ID URI 应该类似于 https://todolist.azure-mobile.net/login/aad 。
 
@@ -201,7 +201,7 @@
 
 <!-- URLs. -->
 [如何向 Azure Active Directory 注册]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication/
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
 [Windows 开发人员中心仪表板]: http://go.microsoft.com/fwlink/p/?LinkID=266734

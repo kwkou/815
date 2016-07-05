@@ -16,7 +16,7 @@
 
 > [AZURE.SELECTOR]
 
-- [Azure 经典门户](/documentation/articles/site-recovery-vmm-to-azure-classic)
+- [Azure 经典管理门户](/documentation/articles/site-recovery-vmm-to-azure-classic)
 - [PowerShell](/documentation/articles/site-recovery-deploy-with-powershell)
 
 

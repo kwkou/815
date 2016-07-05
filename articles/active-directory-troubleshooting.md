@@ -1,6 +1,6 @@
 <properties
    pageTitle="故障排除：“Active Directory”项缺失或不可用 | Azure"
-   description="Azure 经典门户中未显示 Active Directory 菜单项时怎么办。"
+   description="Azure 经典管理门户中未显示 Active Directory 菜单项时怎么办。"
    services="active-directory"
    documentationCenter="na"
    authors="msmbaldwin"
@@ -14,7 +14,7 @@
 
 # 故障排除：“Active Directory”项缺失或不可用
 
-关于使用 Azure Active Directory 功能和服务的很多说明都以“转到 Azure 经典门户并单击‘Active Directory’”开头。 但是，如果未出现 Active Directory 扩展或菜单项或者它被标记为“不可用”，你该怎么办？ 本主题旨在提供帮助。其中描述了 **Active Directory** 未出现或不可用的情况，并解释了如何继续执行操作。
+关于使用 Azure Active Directory 功能和服务的很多说明都以“转到 Azure 经典管理门户并单击‘Active Directory’”开头。 但是，如果未出现 Active Directory 扩展或菜单项或者它被标记为“不可用”，你该怎么办？ 本主题旨在提供帮助。其中描述了 **Active Directory** 未出现或不可用的情况，并解释了如何继续执行操作。
 
 ## 缺少 Active Directory
 

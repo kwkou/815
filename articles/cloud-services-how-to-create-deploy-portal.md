@@ -19,7 +19,7 @@
 
 > [AZURE.SELECTOR]
 - [Azure 门户预览](/documentation/articles/cloud-services-how-to-create-deploy-portal)
-- [Azure 经典门户](/documentation/articles/cloud-services-how-to-create-deploy)
+- [Azure 经典管理门户](/documentation/articles/cloud-services-how-to-create-deploy)
 
 Azure 门户预览为你提供两种创建和部署云服务的方法：“快速创建”和“自定义创建”。
 
@@ -48,7 +48,7 @@ Azure 门户预览为你提供两种创建和部署云服务的方法：“快�
 
 - 如果你要部署使用安全套接字层 (SSL) 进行数据加密的云服务，请[为应用程序配置 SSL](/documentation/articles/cloud-services-configure-ssl-certificate-portal/#modify)。
 
-- 如果要配置与角色实例的远程桌面连接，请[为这些角色配置远程桌面](/documentation/articles/cloud-services-role-enable-remote-desktop)。这只能在经典门户中进行。
+- 如果要配置与角色实例的远程桌面连接，请[为这些角色配置远程桌面](/documentation/articles/cloud-services-role-enable-remote-desktop)。这只能在经典管理门户中进行。
 
 - 如果要为云服务配置详细监视，请为云服务启用 Azure 诊断。“最少监视”（默认监视级别）使用从角色实例（虚拟机）的主机操作系统中收集到的性能计数器。“详细监视”根据角色实例中的性能数据收集其他度量信息，以便对处理应用程序期间出现的问题进行进一步分析。若要了解如何启用 Azure 诊断，请参阅[在 Azure 中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)。
 
@@ -60,7 +60,7 @@ Azure 门户预览为你提供两种创建和部署云服务的方法：“快�
 
 - 如果任何角色实例需要证书，请创建这些证书。云服务需要带有私钥的 .pfx 文件。你可以在创建和部署云服务时[将这些证书上载到 Azure]()。
 
-- 如果你计划将云服务部署到关联组，请创建关联组。可以使用关联组将你的云服务和其他 Azure 服务部署到某个区域中的同一位置。你可以在 Azure 经典门户的“网络”区域中的“地缘组”页上创建地缘组。
+- 如果你计划将云服务部署到关联组，请创建关联组。可以使用关联组将你的云服务和其他 Azure 服务部署到某个区域中的同一位置。你可以在 Azure 经典管理门户的“网络”区域中的“地缘组”页上创建地缘组。
 
 
 ## 创建和部署

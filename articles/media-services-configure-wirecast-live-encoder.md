@@ -22,7 +22,7 @@
 
 本主题说明了如何配置 [Telestream Wirecast](http://www.telestream.net/wirecast/overview.htm) 实时编码器，以便将单比特率流发送到 AMS 频道进行实时编码。有关详细信息，请参阅[使用能够通过 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
 
-本教程演示了如何通过 Azure 媒体服务浏览器 (AMSE) 工具管理 Azure 媒体服务 (AMS)。此工具仅在 Windows 电脑上运行。如果你使用的是 Mac 或 Linux，则可使用 Azure 经典门户创建[频道](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel#create-a-channel)和[节目](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program)。
+本教程演示了如何通过 Azure 媒体服务浏览器 (AMSE) 工具管理 Azure 媒体服务 (AMS)。此工具仅在 Windows 电脑上运行。如果你使用的是 Mac 或 Linux，则可使用 Azure 经典管理门户创建[频道](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel#create-a-channel)和[节目](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program)。
 
 
 ##先决条件

@@ -17,7 +17,7 @@
 
 所有 Azure 服务都向用户提供操作日志消息以记录与管理操作有关的详细信息。在 Azure 流分析中，此信息用可于调试目的，例如查看作业状态、作业进度和失败消息，跟踪作业在一段时间内的进度（从开始、处理直到输出）。
 
-## 在 Azure 经典门户中查找操作日志
+## 在 Azure 经典管理门户中查找操作日志
 
 可以通过两种方式访问操作日志：
 
@@ -43,13 +43,13 @@
 
 可以按时间范围和状态进行筛选，来查看你的作业的日志。
 
-在 Azure 经典门户中，单击窗口底部的“详细信息”按钮可查看选定事件的更多信息。
+在 Azure 经典管理门户中，单击窗口底部的“详细信息”按钮可查看选定事件的更多信息。
 
   ![选择详细信息](./media/stream-analytics-operation-logs/03-stream-analytics-operation-logs.png)
 
 ## 调试失败的作业
 
-在 Azure 经典门户中，单击“搜索”图标并键入“failed”。这样，系统将显示包含失败状态的所有日志。
+在 Azure 经典管理门户中，单击“搜索”图标并键入“failed”。这样，系统将显示包含失败状态的所有日志。
 
   ![调试失败的作业](./media/stream-analytics-operation-logs/04-stream-analytics-operation-logs.png)
 

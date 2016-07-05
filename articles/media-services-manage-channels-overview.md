@@ -49,7 +49,7 @@
 
 3. 创建节目。
 
-	使用 Azure 经典门户时，创建节目的同时还会创建资源。
+	使用 Azure 经典管理门户时，创建节目的同时还会创建资源。
 
 	使用 .NET SDK 或 REST 时，你需要创建一个资源并指定在创建节目时要使用该资源。 
 1. 发布与节目关联的资源。   
@@ -151,7 +151,7 @@
 
 在频道开始摄取数据后，你可以预览流。
 
-请注意，当前，不管指定了哪种输入类型，都只能以分片 MP4 (Smooth Streaming) 格式来传送预览流。你可以使用 [http://smf.chinacloudapp.cn/healthmonitor](http://smf.chinacloudapp.cn/healthmonitor) 播放器来测试平滑流。你还可以使用 Azure 经典门户中承载的播放器来查看你的流。
+请注意，当前，不管指定了哪种输入类型，都只能以分片 MP4 (Smooth Streaming) 格式来传送预览流。你可以使用 [http://smf.chinacloudapp.cn/healthmonitor](http://smf.chinacloudapp.cn/healthmonitor) 播放器来测试平滑流。你还可以使用 Azure 经典管理门户中承载的播放器来查看你的流。
 
 
 ####允许的 IP 地址

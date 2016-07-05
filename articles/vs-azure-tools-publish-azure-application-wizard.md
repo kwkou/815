@@ -25,7 +25,7 @@
 
 1. 获取 Microsoft 帐户和 Azure 订阅。可以在[此处](/pricing/1rmb-trial/)免费试用 Azure 订阅一个月
 
-1. 在 Azure 上创建云服务和存储帐户。可以通过 Visual Studio 中的服务器资源管理器或使用 [Azure 经典门户](http://manage.windowsazure.cn)执行此操作。
+1. 在 Azure 上创建云服务和存储帐户。可以通过 Visual Studio 中的服务器资源管理器或使用 [Azure 经典管理门户](http://manage.windowsazure.cn)执行此操作。
 
 1. 为 Azure 启用 Web 应用程序。若要启用 Web 应用程序以将其从 Visual Studio 发布到 Azure，必须将它与 Visual Studio 中的 Azure 云服务项目相关联。若要创建关联的云服务项目，请打开 Web 应用程序项目的快捷菜单，然后选择“转换”>“转换为 Azure 云服务项目”。
 
@@ -39,7 +39,7 @@
 
 ### 选择订阅
 
-1. 在首次使用向导之前，你必须登录。选择“登录”链接。根据提示登录到 Azure 经典门户，并提供你的 Azure 用户名和密码。 
+1. 在首次使用向导之前，你必须登录。选择“登录”链接。根据提示登录到 Azure 经典管理门户，并提供你的 Azure 用户名和密码。 
 
     ![这是一个发布向导屏幕](./media/vs-azure-tools-publish-azure-application-wizard/IC799159.png)
 
@@ -47,7 +47,7 @@
 
 1. 在“选择订阅”列表中，选择要用于此部署的订阅。
 
-   如果你选择“<管理...>”，将显示“管理订阅”对话框，你可以选择要使用的订阅和用户帐户。“帐户”选项卡显示所有帐户，“订阅”选项卡显示与帐户关联的所有订阅。你也可以选择要从中使用 Azure 资源的区域，并从 Azure 经典门户创建或导入订阅的证书。如果你从订阅文件导入了任何订阅，关联的证书将显示在“证书”选项卡下。完成后，请选择“关闭”按钮。
+   如果你选择“<管理...>”，将显示“管理订阅”对话框，你可以选择要使用的订阅和用户帐户。“帐户”选项卡显示所有帐户，“订阅”选项卡显示与帐户关联的所有订阅。你也可以选择要从中使用 Azure 资源的区域，并从 Azure 经典管理门户创建或导入订阅的证书。如果你从订阅文件导入了任何订阅，关联的证书将显示在“证书”选项卡下。完成后，请选择“关闭”按钮。
 
     ![Manage subscriptions](./media/vs-azure-tools-publish-azure-application-wizard/IC799160.png)
 

@@ -98,9 +98,9 @@
 
 如果你熟悉 Windows 性能监视，则可以将存储度量值视为 Windows 性能监视器计数器的 Azure 存储空间等效项。在存储度量值中您将找到一组综合度量值（相当于 Windows 性能监视器术语中的计数器），例如服务可用性、向服务发送的请求总数或向服务发出的成功请求的百分比（有关可用度量值的完整列表，请参阅 MSDN 上的<a href="http://msdn.microsoft.com/zh-cn/library/azure/hh343264.aspx" target="_blank">存储分析度量表架构</a>）。你可以指定希望存储服务每隔一小时还是每隔一分钟收集和聚合一次度量值。有关如何启用度量值和监视存储帐户的详细信息，请参阅 MSDN 上的<a href="http://msdn.microsoft.com/zh-cn/library/dn782843.aspx" target="_blank">启用存储度量值</a>。
 
-你可以选择要将哪些每小时度量值显示在 [Azure 经典门户](https://manage.windowsazure.cn)中，并配置规则以便在每小时度量值超过特定阈值时，通过电子邮件通知管理员（有关详细信息，请参阅页面<a href="http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx" target="_blank">如何：在 Azure 中接收警报通知和管理警报规则</a>）。存储服务将尽最大努力收集度量值，但可能无法记录每个存储操作。
+你可以选择要将哪些每小时度量值显示在 [Azure 经典管理门户](https://manage.windowsazure.cn)中，并配置规则以便在每小时度量值超过特定阈值时，通过电子邮件通知管理员（有关详细信息，请参阅页面<a href="http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx" target="_blank">如何：在 Azure 中接收警报通知和管理警报规则</a>）。存储服务将尽最大努力收集度量值，但可能无法记录每个存储操作。
 
-在 Azure 经典门户中，你可以查看存储帐户的度量值，如可用性、请求总数和平均延迟数。也已设置通知规则，以便在可用性下降到低于某个级别时向管理员发出警报。通过查看此数据，一个可能的调查方面是表服务成功百分比低于 100%（有关详细信息，请参阅“[度量值显示低 PercentSuccess，或者分析日志项包含事务状态为 ClientOtherErrors 的操作]”一节）。
+在 Azure 经典管理门户中，你可以查看存储帐户的度量值，如可用性、请求总数和平均延迟数。也已设置通知规则，以便在可用性下降到低于某个级别时向管理员发出警报。通过查看此数据，一个可能的调查方面是表服务成功百分比低于 100%（有关详细信息，请参阅“[度量值显示低 PercentSuccess，或者分析日志项包含事务状态为 ClientOtherErrors 的操作]”一节）。
 
 你应通过以下方式持续监视 Azure 应用程序以确保它们正常运行并按预期执行操作：
 
@@ -117,18 +117,18 @@
 
 ### <a name="monitoring-service-health"></a>监视服务运行状况
 
-可以使用 Azure 经典门户（网址为 <a href="https://manage.windowsazure.cn" target="_blank">https://manage.windowsazure.cn</a>）查看全球所有 Azure 区域中的存储服务（及其他 Azure 服务）的运行状况。这使你可以立即了解是否有不受你控制的问题正在影响你的应用程序所使用的区域中的存储服务。
+可以使用 Azure 经典管理门户（网址为 <a href="https://manage.windowsazure.cn" target="_blank">https://manage.windowsazure.cn</a>）查看全球所有 Azure 区域中的存储服务（及其他 Azure 服务）的运行状况。这使你可以立即了解是否有不受你控制的问题正在影响你的应用程序所使用的区域中的存储服务。
 
-此外，[Azure 经典门户](https://manage.windowsazure.cn)还可以提供影响各种 Azure 服务的事件的通知。
+此外，[Azure 经典管理门户](https://manage.windowsazure.cn)还可以提供影响各种 Azure 服务的事件的通知。
 注意：此信息以前未在 Azure 服务仪表板（网址为：<a href="/support/service-dashboard/" target="_blank">https://www.azure.cn/support/service-dashboard/</a>）上与历史数据一起提供。
 
-虽然此[经典门户](https://manage.windowsazure.cn)从 Azure 数据中心内部收集运行状况信息（由内而外监视），但你也可以考虑采用由外而内方法来生成定期从多个位置访问 Azure 托管的 Web 应用的综合事务。<a href="http://www.keynote.com/solutions/monitoring/web-monitoring" target="_blank">Keynote</a>、<a href="https://www.gomeznetworks.com/?g=1" target="_blank">Gomez</a> 和 Application Insights for Visual Studio Online 提供的服务是这种由外而内方法的示例。有关 Application Insights for Visual Studio Team Services 的详细信息，请参阅附录“[附录 5：使用 Application Insights for Visual Studio Team Services 进行监视]”。
+虽然此[经典管理门户](https://manage.windowsazure.cn)从 Azure 数据中心内部收集运行状况信息（由内而外监视），但你也可以考虑采用由外而内方法来生成定期从多个位置访问 Azure 托管的 Web 应用的综合事务。<a href="http://www.keynote.com/solutions/monitoring/web-monitoring" target="_blank">Keynote</a>、<a href="https://www.gomeznetworks.com/?g=1" target="_blank">Gomez</a> 和 Application Insights for Visual Studio Online 提供的服务是这种由外而内方法的示例。有关 Application Insights for Visual Studio Team Services 的详细信息，请参阅附录“[附录 5：使用 Application Insights for Visual Studio Team Services 进行监视]”。
 
 ### <a name="monitoring-capacity"></a>监视容量
 
 存储度量值仅存储 Blob 服务的容量度量值，因为 Blob 通常占所存储数据的最大比例（撰写本文时，尚不能使用存储度量值来监视表和队列的容量）。如果您已为 Blob 服务启用监视，则可以在 **$MetricsCapacityBlob** 表中找到此数据。存储度量值每天记录一次此数据，然后您可以使用 **RowKey** 的值来确定某行是否包含与用户数据（值 **data**）或分析数据（值 **analytics**）相关的实体。每个存储的实体均包含有关所用的存储量（**Capacity**，以字节为单位）、当前的容器数 (**ContainerCount**) 以及存储帐户中正在使用的 Blob 数 (**ObjectCount**) 的信息。有关 **$MetricsCapacityBlob** 表中存储的容量度量值的详细信息，请参阅 MSDN 上的<a href="http://msdn.microsoft.com/zh-cn/library/azure/hh343264.aspx" target="_blank">存储分析度量表架构</a>。
 
-> [AZURE.NOTE] 你应监视这些值以便获取“你已接近存储帐户的容量限制”的早期警告。在经典门户中，你可以添加警报规则，以便在聚合存储使用量超过或低于指定阈值时通知你。
+> [AZURE.NOTE] 你应监视这些值以便获取“你已接近存储帐户的容量限制”的早期警告。在经典管理门户中，你可以添加警报规则，以便在聚合存储使用量超过或低于指定阈值时通知你。
 
 若要帮助估算各种存储对象（如 Blob）的大小，请参阅博客文章<a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx" target="_blank">了解 Azure 存储空间计费 - 带宽、事务和容量</a>。
 
@@ -138,7 +138,7 @@
 
 任何小于 100% 的值指示某些存储请求将失败。您可以通过检查度量值数据中显示具有不同错误类型（如 **ServerTimeoutError**）的请求数的其他列来了解失败原因。由于以下原因您应该会看到 **Availability** 暂时低于 100%：比如在该服务移动分区以更好地负载平衡请求时，出现暂时性服务器超时；客户端应用程序中的重试逻辑应处理此类间歇性情况。页面 <a href="http://msdn.microsoft.com/zh-cn/library/azure/hh343260.aspx" target="_blank"></a> 列出了存储度量值在其“可用性”计算中包括的事务类型。
 
-在[经典门户](https://manage.windowsazure.cn)中，你可以添加警报规则，以便在某项服务的“可用性”低于指定阈值时通知你。
+在[经典管理门户](https://manage.windowsazure.cn)中，你可以添加警报规则，以便在某项服务的“可用性”低于指定阈值时通知你。
 
 本指南的“[故障排除指南]”一节将介绍与可用性相关的一些常见存储服务问题。
 
@@ -152,7 +152,7 @@
 
 通常，对于作为出现需要调查的问题的指示器的任何这些值，你将监视其意外更改。
 
-在[经典门户](https://manage.windowsazure.cn)中，你可以添加警报规则，以便在此服务的任何性能度量值低于或超过你指定的阈值时通知你。
+在[经典管理门户](https://manage.windowsazure.cn)中，你可以添加警报规则，以便在此服务的任何性能度量值低于或超过你指定的阈值时通知你。
 
 本指南的“[故障排除指南]”一节将介绍与性能相关的一些常见存储服务问题。
 
@@ -177,7 +177,7 @@
 
 ### <a name="service-health-issues"></a>服务运行状况问题
 
-服务运行状况问题通常不受你控制。[经典门户](https://manage.windowsazure.cn)提供了有关 Azure 服务（包括存储服务）当前存在的任何问题的信息。如果你在创建存储帐户时选择了启用读取访问地域冗余存储，则在主位置中的数据不可用时，你的应用程序可以暂时切换到辅助位置中的只读副本。为此，您的应用程序必须能够在使用主存储位置和辅助存储位置之间切换，并能够在降低的功能模式下使用只读数据。使用 Azure 存储客户端库，可以定义重试策略，以便在从主存储读取失败时可以从辅助存储读取。你的应用程序还需要注意辅助位置中的数据是否最终一致。有关详细信息，请参阅博客文章<a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/04/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx" target="_blank">Azure 存储冗余选项和读取访问地域冗余存储</a>。
+服务运行状况问题通常不受你控制。[经典管理门户](https://manage.windowsazure.cn)提供了有关 Azure 服务（包括存储服务）当前存在的任何问题的信息。如果你在创建存储帐户时选择了启用读取访问地域冗余存储，则在主位置中的数据不可用时，你的应用程序可以暂时切换到辅助位置中的只读副本。为此，您的应用程序必须能够在使用主存储位置和辅助存储位置之间切换，并能够在降低的功能模式下使用只读数据。使用 Azure 存储客户端库，可以定义重试策略，以便在从主存储读取失败时可以从辅助存储读取。你的应用程序还需要注意辅助位置中的数据是否最终一致。有关详细信息，请参阅博客文章<a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/04/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx" target="_blank">Azure 存储冗余选项和读取访问地域冗余存储</a>。
 
 ### <a name="performance-issues"></a>性能问题
 
@@ -350,7 +350,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 ### <a name="metrics-show-high-AverageE2ELatency-and-low-AverageServerLatency"></a>度量值显示高 AverageE2ELatency 和低 AverageServerLatency
 
-下面的来自[经典门户](https://manage.windowsazure.cn)监视工具的插图显示了一个示例，其中 **AverageE2ELatency** 明显高于 **AverageServerLatency**。
+下面的来自[经典管理门户](https://manage.windowsazure.cn)监视工具的插图显示了一个示例，其中 **AverageE2ELatency** 明显高于 **AverageServerLatency**。
 
 ![][4]
 
@@ -795,7 +795,7 @@ WireShark 将在 **packetlist** 窗口中突出显示存在的任何错误。您
 
 #### 使用 Microsoft Message Analyzer 配置 Web 跟踪会话
 
-若要使用 Microsoft Message Analyzer 为 HTTP 和 HTTPS 通信配置 Web 跟踪会话，请运行 Microsoft Message Analyzer 应用程序的，然后在“文件”菜单上单击“捕获/跟踪”。在可用的跟踪方案列表中，选择“Web 代理”。然后在“跟踪方案配置”面板的 **HostnameFilter** 文本框中，添加存储终结点的名称（你可以在[经典门户](https://manage.windowsazure.cn)中查找这些名称）。例如，如果您的 Azure 存储帐户的名称是 **contosodata**，则应将以下内容添加到 **HostnameFilter** 文本框：
+若要使用 Microsoft Message Analyzer 为 HTTP 和 HTTPS 通信配置 Web 跟踪会话，请运行 Microsoft Message Analyzer 应用程序的，然后在“文件”菜单上单击“捕获/跟踪”。在可用的跟踪方案列表中，选择“Web 代理”。然后在“跟踪方案配置”面板的 **HostnameFilter** 文本框中，添加存储终结点的名称（你可以在[经典管理门户](https://manage.windowsazure.cn)中查找这些名称）。例如，如果您的 Azure 存储帐户的名称是 **contosodata**，则应将以下内容添加到 **HostnameFilter** 文本框：
 
     contosodata.blob.core.chinacloudapi.cn contosodata.table.core.chinacloudapi.cn contosodata.queue.core.chinacloudapi.cn
 

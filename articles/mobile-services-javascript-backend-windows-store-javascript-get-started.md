@@ -30,9 +30,9 @@
 
 ## 创建新的 Windows 应用商店应用程序
 
-创建移动服务后，你可以在 Azure 经典门户中按照简单的快速入门来创建一个新的可连接到移动服务的 Windows 应用商店 8.1 JavaScript 应用。
+创建移动服务后，你可以在 Azure 经典管理门户中按照简单的快速入门来创建一个新的可连接到移动服务的 Windows 应用商店 8.1 JavaScript 应用。
 
-1.  在 [Azure 经典门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1.  在 [Azure 经典管理门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 
 2. 在快速入门选项卡中，单击“选择平台”下的“Windows”，然后展开“创建新的 Windows 应用商店应用程序”。
@@ -59,7 +59,7 @@
 
 4. （可选）再次运行应用，并注意在应用启动后将从移动服务加载在上一步中保存的数据。
  
-4. 返回 [Azure 经典门户]，单击“数据”选项卡，然后单击“TodoItems”表。
+4. 返回 [Azure 经典管理门户]，单击“数据”选项卡，然后单击“TodoItems”表。
 
    	这使您可以浏览此应用插入表中的数据。
 
@@ -81,6 +81,6 @@
 <!-- URLs. -->
 [Visual Studio 2013 Express for Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0118_2016-->

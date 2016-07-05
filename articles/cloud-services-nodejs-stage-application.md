@@ -30,9 +30,9 @@
     Publish-AzureServiceProject -Slot staging
     ```
 
-2.  登录到 [Azure 经典门户]并选择“云服务”。创建云服务并且“过渡”列状态已更新为“正在运行”后，单击该服务名称。
+2.  登录到 [Azure 经典管理门户]并选择“云服务”。创建云服务并且“过渡”列状态已更新为“正在运行”后，单击该服务名称。
 
-	![显示正运行服务的经典门户][cloud-service]
+	![显示正运行服务的经典管理门户][cloud-service]
 
 3.  选择“仪表板”，然后选择“过渡”。
 
@@ -50,7 +50,7 @@
 
 > [AZURE.NOTE] 此步骤假定您已将应用程序部署到生产环境，并且暂存了它的升级版本。
 
-1.  登录到 [Azure 经典门户]，单击“云服务”，然后选择服务名称。
+1.  登录到 [Azure 经典管理门户]，单击“云服务”，然后选择服务名称。
 
 2.  从“仪表板”中选择“过渡”，然后单击页面底部的“交换”。将打开“VIP 交换”对话框。
 
@@ -64,7 +64,7 @@
 
 - [如何在 Azure 中通过交换 VIP 来将服务升级部署到生产]
 
-[Azure 经典门户]: http://manage.windowsazure.cn
+[Azure 经典管理门户]: http://manage.windowsazure.cn
 [cloud-service]: ./media/cloud-services-nodejs-stage-application/staging-cloud-service-running.png
 [cloud-service-dashboard]: ./media/cloud-services-nodejs-stage-application/cloud-service-dashboard-staging.png
 [cloud-service-staging-url]: ./media/cloud-services-nodejs-stage-application/cloud-service-staging-url.png

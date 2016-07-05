@@ -41,7 +41,7 @@
     <p>客户端密钥和程序包 SID 是重要的安全凭据。请勿与任何人分享这些密钥或将密钥随应用程序分发。</p>
 	</div>
 
-10. 登录到 [Azure 经典门户][]，单击“移动服务” ，然后单击你的应用程序。
+10. 登录到 [Azure 经典管理门户][]，单击“移动服务” ，然后单击你的应用程序。
 
     ![][7]
 
@@ -71,7 +71,7 @@
   [4]: ./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-edit-app.png
   [5]: ./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-edit2-app.png
   [6]: ./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-app-push-auth.png
-  [Azure 经典门户]: https://manage.windowsazure.cn/
+  [Azure 经典管理门户]: https://manage.windowsazure.cn/
   [7]: ./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-selection.png
   [8]: ./media/mobile-services-javascript-backend-register-windows-store-app/mobile-enable-enhanced-push.png
   [移动服务定价详细信息]: http://go.microsoft.com/fwlink/p/?LinkID=311786

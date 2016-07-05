@@ -51,17 +51,17 @@
 
 如果使用内部 SQL Server 数据库的 Web 应用程序具有连接字符串，必须将此连接字符串改为使用 Azure 托管的 SQL 数据库实例。
 
->[AZURE.IMPORTANT] 你的订阅必须允许你使用 SQL 数据库。如果从 Azure 经典门户访问订阅，便可确定订阅提供的服务。以下说明适用于已发行的经典门户。如果你使用预览经典门户，请跳到下一过程。|
+>[AZURE.IMPORTANT] 你的订阅必须允许你使用 SQL 数据库。如果从 Azure 经典管理门户访问订阅，便可确定订阅提供的服务。以下说明适用于已发行的经典管理门户。如果你使用预览经典管理门户，请跳到下一过程。|
 
 ### 为连接字符串使用 Web 角色中的 SQL 数据库实例
 
-1. 若要在 Azure 经典门户中创建 SQL 数据库的实例，请执行以下文章中所述的步骤：[Create a SQL Database Server](http://go.microsoft.com/fwlink/?LinkId=225109)（创建 SQL 数据库服务器）。
+1. 若要在 Azure 经典管理门户中创建 SQL 数据库的实例，请执行以下文章中所述的步骤：[Create a SQL Database Server](http://go.microsoft.com/fwlink/?LinkId=225109)（创建 SQL 数据库服务器）。
 
     >[AZURE.NOTE] 为 SQL 数据库实例设置防火墙规则时，必须选中“允许其他 Azure 服务访问此服务器”复选框。
 
 1. 若要创建用于连接字符串的 SQL 数据库实例，请在下一部分中执行以下文章中所述的步骤：[Create a SQL Database](http://go.microsoft.com/fwlink/?LinkId=225110)（创建 SQL 数据库）。
 
-1. 若要复制 ADO.NET 连接字符串以用作你的连接字符串，请在 Azure 经典门户中执行以下步骤。
+1. 若要复制 ADO.NET 连接字符串以用作你的连接字符串，请在 Azure 经典管理门户中执行以下步骤。
 
   1. 选择“数据库”按钮，然后打开创建 SQL 数据库实例所用订阅的节点。
 
@@ -95,9 +95,9 @@
 
 1. 保存已修改的文件，然后重新发布应用程序。
 
-### 通过 Azure 经典门户使用 SQL 数据库实例
+### 通过 Azure 经典管理门户使用 SQL 数据库实例
 
-1. 在 [Azure 经典门户](http://manage.windowsazure.cn)中，选择“SQL 数据库”节点。
+1. 在 [Azure 经典管理门户](http://manage.windowsazure.cn)中，选择“SQL 数据库”节点。
 
   - 如果显示了要使用的 SQL 数据库实例，请选择打开它。
 
@@ -131,7 +131,7 @@
 
 1. （可选）若要取消部署过程，请打开活动日志中的行项目的快捷菜单，并选择“取消并删除”。这会停止部署过程，并从 Azure 中删除部署环境。
 
-    >[AZURE.NOTE] 若要在已完成部署后删除此部署环境，必须使用 Azure 经典门户。
+    >[AZURE.NOTE] 若要在已完成部署后删除此部署环境，必须使用 Azure 经典管理门户。
 
 1. （可选）启动角色实例后，Visual Studio 将自动在“云资源管理器”的“Azure 计算”节点中显示部署环境。可以从此位置查看单个角色实例的状态。
 
@@ -164,7 +164,7 @@
 
 1. 若要创建可用于 ASP.NET 动态实体 Web 应用程序的 SQL Azure 数据库，必须遵循以下过程中的步骤：本主题前面的**为应用程序使用 SQL Azure 数据库**。
 
-1. 从 Azure 经典门户添加此数据库所需的表和字段。
+1. 从 Azure 经典管理门户添加此数据库所需的表和字段。
 
 1. 在 web.config 文件中，这种类型的应用程序的连接字符串具有以下格式：
 

@@ -17,7 +17,7 @@
 本主题说明如何允许服务主体（例如自动化的过程、应用程序或服务）访问订阅中的其他资源。借助 Azure 资源管理器，可以使用基于角色的访问控制向服务主体授予允许的操作，并对该服务主体进行身份验证。
 
 本主题演示如何使用适用于 Mac、Linux 和 Windows 的 Azure PowerShell 或 Azure CLI 来创建应用程序和服务主体，为服务主体分配角色，以及以服务主体身份进行验证。如果你未安装 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
-如果你未安装 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。有关使用经典门户执行这些步骤的信息，请参阅[使用经典门户创建 Active Directory 应用程序和服务主体](/documentation/articles/resource-group-create-service-principal-portal)
+如果你未安装 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。有关使用经典管理门户执行这些步骤的信息，请参阅[使用经典管理门户创建 Active Directory 应用程序和服务主体](/documentation/articles/resource-group-create-service-principal-portal)
 
 ## 概念
 1. Azure Active Directory - 云的标识与访问管理服务。有关详细信息，请参阅[什么是 Azure Active Directory](/documentation/articles/active-directory-whatis)
@@ -515,7 +515,7 @@
 
 ## 后续步骤
   
-- 若要了解有关使用服务主体的经典门户的信息，请参阅[使用 Azure 经典门户创建新的 Azure 服务主体](/documentation/articles/resource-group-create-service-principal-portal)  
+- 若要了解有关使用服务主体的经典管理门户的信息，请参阅[使用 Azure 经典管理门户创建新的 Azure 服务主体](/documentation/articles/resource-group-create-service-principal-portal)  
 - 有关在 Azure 资源管理器中实现安全性的指南，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)
 
 

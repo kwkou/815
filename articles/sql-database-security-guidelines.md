@@ -21,7 +21,7 @@
 
 只能通过 TCP 端口 1433 使用 Azure SQL 数据库服务。若要从计算机访问 SQL 数据库，请确保你的防火墙允许 TCP 端口 1433 上的传出 TCP 通信。在连接过程中，来自 Azure 虚拟机的连接将重定向到每个辅助角色特有的不同 IP 地址和端口。该端口号在 11000 到 11999 的范围内。
 
-在你首次连接到 Azure SQL 数据库服务器之前，必须使用 [Azure 经典门户](https://manage.windowsazure.cn)来配置 Azure SQL 数据库防火墙。你将需要创建一个服务器级防火墙设置，该设置允许从你的计算机或 Azure 连接到 Azure SQL 数据库服务器。如果要控制对 Azure SQL 数据库服务器内某些数据库的访问，请为相应数据库创建数据库级防火墙规则。有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)。
+在你首次连接到 Azure SQL 数据库服务器之前，必须使用 [Azure 经典管理门户](https://manage.windowsazure.cn)来配置 Azure SQL 数据库防火墙。你将需要创建一个服务器级防火墙设置，该设置允许从你的计算机或 Azure 连接到 Azure SQL 数据库服务器。如果要控制对 Azure SQL 数据库服务器内某些数据库的访问，请为相应数据库创建数据库级防火墙规则。有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure)。
 
 ## 连接加密和证书验证
 

@@ -45,7 +45,7 @@
 
 ## 使用 Azure Active Directory 配置身份验证
 
-在开始使用 C# 进行 SQL 开发之前，必须在 Azure 经典门户中完成一些任务。首先请通过设置所需的身份验证，使应用程序能够访问 REST API。
+在开始使用 C# 进行 SQL 开发之前，必须在 Azure 经典管理门户中完成一些任务。首先请通过设置所需的身份验证，使应用程序能够访问 REST API。
 
 [Azure 资源管理器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx) 使用 Azure Active Directory 进行身份验证，而不是早期 Azure 服务管理 REST API 使用的证书。
 

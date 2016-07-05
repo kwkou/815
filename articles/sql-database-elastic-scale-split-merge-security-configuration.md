@@ -467,7 +467,7 @@
 
 ## 上载证书
 
-在 [Azure 经典门户](https://manage.windowsazure.cn)中：
+在 [Azure 经典管理门户](https://manage.windowsazure.cn)中：
 
 1. 选择“云服务”。
 2. 选择云服务。

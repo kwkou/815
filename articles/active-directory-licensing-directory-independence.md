@@ -35,7 +35,7 @@
 
 ##添加 Azure AD 目录
 
-若要在 Azure 经典门户中添加 Azure AD 目录，请选择左侧的 Azure Active Directory 扩展，然后点击“添加”。
+若要在 Azure 经典管理门户中添加 Azure AD 目录，请选择左侧的 Azure Active Directory 扩展，然后点击“添加”。
 
 > [AZURE.NOTE]   与其他 Azure 资源不同，你的目录不是 Azure 订阅的子资源。如果你取消 Azure 订阅或让其过期，则仍可以使用 Azure PowerShell、Azure 图形 API 或其他界面（例如 Office 365 管理中心）访问目录数据。还可以将其他订阅与目录相关联。
 

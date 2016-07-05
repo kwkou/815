@@ -54,8 +54,8 @@
 ### <a name="step-1-configure-password-reset-policy"></a>步骤 1：配置密码重置策略
 若要配置用户密码重置策略，请完成以下步骤：
  
-1.	打开你选择的浏览器并转到 [Azure 经典门户](https://manage.windowsazure.cn)。
-2.	在 [Azure 经典门户](https://manage.windowsazure.cn)的左侧导航栏上，找到 **Active Directory 扩展**。
+1.	打开你选择的浏览器并转到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
+2.	在 [Azure 经典管理门户](https://manage.windowsazure.cn)的左侧导航栏上，找到 **Active Directory 扩展**。
 
     ![Azure AD 中的密码管理][001]
 
@@ -86,7 +86,7 @@
 ### <a name="step-2-add-contact-data-for-your-test-user"></a>步骤 2：为测试用户添加联系人数据
 关于如何为你所在组织中的用户指定用于密码重置的数据，你有几种选择。
 
--	在 [Azure 经典门户](https://manage.windowsazure.cn)或 [Office 365 经典门户](https://portal.partner.microsoftonline.cn)中编辑用户
+-	在 [Azure 经典管理门户](https://manage.windowsazure.cn)或 [Office 365 经典管理门户](https://portal.partner.microsoftonline.cn)中编辑用户
 -	使用 AAD Connect 将用户属性从本地 Active Directory 域同步到 Azure AD
 -	使用 Windows PowerShell 编辑用户属性
 -	通过将用户引导至位于 [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup) 的注册门户，使用户能够注册其自己的数据
@@ -204,7 +204,7 @@ Azure AD Connect 发行版或版本号为 **1.0.0419.0911** 或更高的 Azure A
 
 如果此版本号大于或等于 **1.0.0419.0911**，或者你要安装 Azure AD Connect，则你可以跳至[步骤 2：通过 UI 或 powershell 在 Azure AD Connect 中启用密码写回并验证](#step-2-enable-password-writeback-in-azure-ad-connect)。
 
- > [AZURE.NOTE] 如果是首次安装 Azure AD Connect 工具，建议遵循一些最佳实践，为目录同步准备好环境。在安装 Azure AD Connect 工具之前，必须在 [Office 365 管理门户](https://portal.partner.microsoftonline.cn)或 [Azure 经典门户](https://manage.windowsazure.cn)中激活目录同步。有关详细信息，请参阅[管理 Azure AD Connect](/documentation/articles/active-directory-aadconnect-whats-next)。
+ > [AZURE.NOTE] 如果是首次安装 Azure AD Connect 工具，建议遵循一些最佳实践，为目录同步准备好环境。在安装 Azure AD Connect 工具之前，必须在 [Office 365 管理门户](https://portal.partner.microsoftonline.cn)或 [Azure 经典管理门户](https://manage.windowsazure.cn)中激活目录同步。有关详细信息，请参阅[管理 Azure AD Connect](/documentation/articles/active-directory-aadconnect-whats-next)。
 
 
 ### <a name="step-2-enable-password-writeback-in-azure-ad-connect"></a>步骤 2：在 Azure AD Connect 中启用密码写回
@@ -219,7 +219,7 @@ Azure AD Connect 发行版或版本号为 **1.0.0419.0911** 或更高的 Azure A
 
 4.	完成向导，最后一页将汇总更改并包括密码写回配置更改。
 
-> [AZURE.NOTE] 你随时可以禁用密码写回，方法是重新运行此向导并取消选择该功能，或者在 [Azure 经典门户](https://manage.windowsazure.cn)上你目录的“配置”选项卡的“用户密码重置策略”部分中，将“密码写回到本地目录”设置设为“否”。有关自定义密码重置体验的详细信息，请查看[自定义：Azure AD 密码管理](/documentation/articles/active-directory-passwords-customize)。
+> [AZURE.NOTE] 你随时可以禁用密码写回，方法是重新运行此向导并取消选择该功能，或者在 [Azure 经典管理门户](https://manage.windowsazure.cn)上你目录的“配置”选项卡的“用户密码重置策略”部分中，将“密码写回到本地目录”设置设为“否”。有关自定义密码重置体验的详细信息，请查看[自定义：Azure AD 密码管理](/documentation/articles/active-directory-passwords-customize)。
 
 #### 使用 Windows PowerShell 启用密码写回
 1.	在你的**目录同步计算机**上，打开一个新的**权限提升的 Windows PowerShell 窗口**。
@@ -229,7 +229,7 @@ Azure AD Connect 发行版或版本号为 **1.0.0419.0911** 或更高的 Azure A
 5.	运行以下 cmdlet 启用密码写回：`Set-ADSyncAADPasswordResetConfiguration –Connector $aadConnectorName –Enable $true`
 
 > [AZURE.NOTE] 如果系统提示你输入凭据，请确保你为 AzureADCredential 指定的管理员帐户是**云管理员帐户（在 Azure AD 中创建）**，而不是联合帐户（在本地 AD 中创建并同步到 Azure AD 中）。
-> [AZURE.NOTE] 你可以通过 PowerShell 禁用密码写回，方法是根据上述相同说明重复操作（不过要在步骤中传递 `$false`），或者或者在 [Azure 经典门户](https://manage.windowsazure.cn)上你目录的“配置”选项卡的“用户密码重置策略”部分中，将“密码写回到本地目录”设置设为“否”。
+> [AZURE.NOTE] 你可以通过 PowerShell 禁用密码写回，方法是根据上述相同说明重复操作（不过要在步骤中传递 `$false`），或者或者在 [Azure 经典管理门户](https://manage.windowsazure.cn)上你目录的“配置”选项卡的“用户密码重置策略”部分中，将“密码写回到本地目录”设置设为“否”。
 
 #### 验证配置是否成功
 配置成功之后，你将在 Windows PowerShell 窗口中看到消息“密码重置写回已启用”，或者在配置 UI 中看到成功消息。

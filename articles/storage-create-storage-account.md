@@ -1,6 +1,6 @@
 <properties
 	pageTitle="如何创建、管理或删除存储帐户 | Azure"
-	description="创建新的存储帐户、管理访问密钥，或删除 Azure 经典门户中的存储帐户。"
+	description="创建新的存储帐户、管理访问密钥，或删除 Azure 经典管理门户中的存储帐户。"
 	services="storage"
 	documentationCenter=""
 	authors="tamram"
@@ -61,7 +61,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 ##<a id="create-a-storage-account"></a> 创建存储帐户
 
-1. 登录到[经典门户](https://manage.windowsazure.cn)。
+1. 登录到[经典管理门户](https://manage.windowsazure.cn)。
 
 2. 依次单击“新建”、“存储”和“快速创建”。
 
@@ -105,7 +105,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 - 文件服务：http://*mystorageaccount*.file.core.chinacloudapi.cn
 
-创建存储帐户后，你可以在 Azure 经典门户的存储仪表板上看到该帐户的终结点。
+创建存储帐户后，你可以在 Azure 经典管理门户的存储仪表板上看到该帐户的终结点。
 
 用于访问存储帐户中某个对象的 URL 是通过将存储帐户中对象的位置附加到终结点而构建的。例如，Blob 地址可能具有以下格式：http://*mystorageaccount*.blob.core.chinacloudapi.cn/*mycontainer*/*myblob*。
 
@@ -115,7 +115,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
  *地缘组* 是你的 Azure 服务和 VM 及 Azure 存储帐户的地理分组。通过定位同一数据中心或靠近目标用户受众的计算机工作负载，地缘组可提高服务性能。此外，当某个存储帐户中的数据被另一个服务访问，而该服务是同一个地缘组的一部分时，不会对出口流量收费。
 
-> [AZURE.NOTE] 若要创建地缘组，请打开经典门户的“设置”<b></b>区域，单击“地缘组”<b></b>，然后单击“添加地缘组”<b></b>或“添加”<b></b>按钮。你也可以使用 Azure 服务管理 API 创建和管理地缘组。请参阅<a href="http://msdn.microsoft.com/zh-cn/library/azure/ee460798.aspx">对地缘组的操作</a>以了解更多信息。
+> [AZURE.NOTE] 若要创建地缘组，请打开经典管理门户的“设置”<b></b>区域，单击“地缘组”<b></b>，然后单击“添加地缘组”<b></b>或“添加”<b></b>按钮。你也可以使用 Azure 服务管理 API 创建和管理地缘组。请参阅<a href="http://msdn.microsoft.com/zh-cn/library/azure/ee460798.aspx">对地缘组的操作</a>以了解更多信息。
 
 ##<a id="view-copy-and-regenerate-storage-access-keys"></a> 查看、复制和重新生成存储访问密钥
 
@@ -123,13 +123,13 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 > [AZURE.NOTE] 我们建议你避免与其他人共享你的存储访问密钥。若要允许不提供你的访问密钥即可访问存储空间资源，可使用*共享访问签名*。共享访问签名可用于访问你的帐户中的资源，访问时间间隔由你定义，访问权限由你指定。请参阅[共享访问签名教程](/documentation/articles/storage-dotnet-shared-access-signature-part-1)以了解更多信息。
 
-在[经典门户](http://manage.windowsazure.cn)中，可使用仪表板或“存储”页上的“管理密钥”查看、复制和重新生成用于访问 Blob、表和队列服务的存储访问密钥。
+在[经典管理门户](http://manage.windowsazure.cn)中，可使用仪表板或“存储”页上的“管理密钥”查看、复制和重新生成用于访问 Blob、表和队列服务的存储访问密钥。
 
 ### 复制存储访问密钥  
 
 你可以使用“管理密钥”复制要在连接字符串中使用的存储访问密钥。连接字符串需要在进行身份验证时使用存储帐户名称和密钥。有关配置连接字符串以访问 Azure 存储服务的信息，请参阅[配置连接字符串](/documentation/articles/storage-configure-connection-string)。
 
-1. 在[经典门户](http://manage.windowsazure.cn)中，单击“存储”，然后单击存储帐户名称以打开仪表板。
+1. 在[经典管理门户](http://manage.windowsazure.cn)中，单击“存储”，然后单击存储帐户名称以打开仪表板。
 
 2. 单击“管理密钥”。
 
@@ -155,7 +155,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 1. 更新应用程序代码中的连接字符串以引用存储帐户的辅助访问密钥。
 
-2. 为你的存储帐户重新生成主访问密钥。在[经典门户](http://manage.windowsazure.cn)中，从仪表板或“配置”页，单击“管理密钥”。单击主访问密钥下的“重新生成”，然后单击“是”以确认要生成新密钥。
+2. 为你的存储帐户重新生成主访问密钥。在[经典管理门户](http://manage.windowsazure.cn)中，从仪表板或“配置”页，单击“管理密钥”。单击主访问密钥下的“重新生成”，然后单击“是”以确认要生成新密钥。
 
 3. 更新代码中的连接字符串以引用新的主访问密钥。
 
@@ -169,7 +169,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 >
 > 如果你的存储帐户包含用于 Azure 虚拟机的 VHD 文件，则必须删除使用这些 VHD 文件的任何映像和磁盘，然后才能删除存储帐户。首先，如果虚拟机正在运行，则停止运行，然后将其删除。若要删除磁盘，请导航到“磁盘”选项卡，然后在那里删除存所有磁盘。若要删除映像，请导航到“映像”选项卡，然后删除存储在帐户中的任何映像。
 
-1. 在[经典门户](http://manage.windowsazure.cn)中，单击“存储”。
+1. 在[经典管理门户](http://manage.windowsazure.cn)中，单击“存储”。
 
 2. 单击存储帐户条目中除名称以外的任何位置，然后单击“删除”。
 

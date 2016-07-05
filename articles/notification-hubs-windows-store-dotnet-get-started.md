@@ -148,7 +148,7 @@
 
     此代码从 WNS 检索应用的通道 URI，然后将该通道 URI 注册到你的通知中心。
 
-    >[AZURE.NOTE]确保将“中心名称”占位符替换为在 [Azure 经典门户]的“通知中心”选项卡中显示的通知中心名称（例如，上例中的 **mynotificationhub2**）。此处，使用在上一部分中获取的 **DefaultListenSharedAccessSignature** 连接字符串替换连接字符串占位符。
+    >[AZURE.NOTE]确保将“中心名称”占位符替换为在 [Azure 经典管理门户]的“通知中心”选项卡中显示的通知中心名称（例如，上例中的 **mynotificationhub2**）。此处，使用在上一部分中获取的 **DefaultListenSharedAccessSignature** 连接字符串替换连接字符串占位符。
 
 5. 在 App.xaml.cs 中 **OnLaunched** 事件处理程序的上方，添加对新 **InitNotificationsAsync** 方法的以下调用：
 

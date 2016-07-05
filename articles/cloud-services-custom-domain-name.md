@@ -56,7 +56,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或通配符�
 
 1. 使用下列方法之一找到分配给你的云服务的 **.chinacloudapp.cn** 域名。
 
-    * 登录到 [Azure 经典门户]，依次选择你的云服务、“仪表板”，然后在“速览”部分中查找“站点 URL”条目。
+    * 登录到 [Azure 经典管理门户]，依次选择你的云服务、“仪表板”，然后在“速览”部分中查找“站点 URL”条目。
     
         ![显示站点 URL 的速览部分][csurl]
     
@@ -96,7 +96,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或通配符�
 
 1. 使用以下方法之一来获取您的云服务的 IP 地址。
     
-    * 登录到 [Azure 经典门户]，依次选择你的云服务、“仪表板”，然后在“速览”部分中查找“公共虚拟 IP (VIP)地址”条目。
+    * 登录到 [Azure 经典管理门户]，依次选择你的云服务、“仪表板”，然后在“速览”部分中查找“公共虚拟 IP (VIP)地址”条目。
     
         ![显示 VIP 的速览部分][vip]
     
@@ -151,7 +151,7 @@ Azure 中的 IP 地址默认为动态 IP 地址。你将很可能想使用[保�
 [Expose Your Data on a Custom Domain]: #access-data
 [VIP swaps]: http://msdn.microsoft.com/zh-cn/library/ee517253.aspx
 [Create a CNAME record that associates the subdomain with the storage account]: #create-cname
-[Azure 经典门户]: https://manage.windowsazure.cn
+[Azure 经典管理门户]: https://manage.windowsazure.cn
 [Validate Custom Domain dialog box]: http://i.msdn.microsoft.com/dynimg/IC544437.jpg
 [vip]: ./media/cloud-services-custom-domain-name/csvip.png
 [csurl]: ./media/cloud-services-custom-domain-name/csurl.png

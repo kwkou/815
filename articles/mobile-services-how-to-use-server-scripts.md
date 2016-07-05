@@ -86,7 +86,7 @@
 
 你可以使用下列方式之一定义可注册到表操作的服务器脚本：
 
-+ 通过 [Azure 经典门户]。在给定表的“脚本”选项卡中访问表操作的脚本。下面显示了已注册到 `TodoItem` 表的插入脚本的默认代码。你可以使用自己的自定义业务逻辑重写此代码。
++ 通过 [Azure 经典管理门户]。在给定表的“脚本”选项卡中访问表操作的脚本。下面显示了已注册到 `TodoItem` 表的插入脚本的默认代码。你可以使用自己的自定义业务逻辑重写此代码。
 
 	![1][1]
 	
@@ -333,7 +333,7 @@
 
 你可以使用下列方式之一定义可注册到自定义 API 终结点中 HTTP 方法的服务器脚本：
 
-+ 通过 [Azure 经典门户]。可以在“API”选项卡中创建和修改自定义 API 脚本。服务器脚本代码位于给定自定义 API 的“脚本”选项卡中。下面显示了向 `CompleteAll` 自定义 API 终结点发出的 POST 请求调用的脚本。 
++ 通过 [Azure 经典管理门户]。可以在“API”选项卡中创建和修改自定义 API 脚本。服务器脚本代码位于给定自定义 API 的“脚本”选项卡中。下面显示了向 `CompleteAll` 自定义 API 终结点发出的 POST 请求调用的脚本。 
 
 	![2][2]
 	
@@ -440,17 +440,17 @@ HTTP GET 请求可按如下所示调用上述自定义 API 示例中的两个路
 
 ## <a name="scheduler-scripts"></a>作业计划程序
 
-移动服务允许你定义按固定计划以作业形式执行或通过 Azure 经典门户按需执行的服务器脚本。计划的作业可用于执行周期性任务，例如，清理表数据和批处理。有关详细信息，请参阅[计划作业]。
+移动服务允许你定义按固定计划以作业形式执行或通过 Azure 经典管理门户按需执行的服务器脚本。计划的作业可用于执行周期性任务，例如，清理表数据和批处理。有关详细信息，请参阅[计划作业]。
 
 注册到计划作业的脚本具有一个与计划作业同名的主函数。由于 HTTP 请求不调用计划的脚本，没有可由服务器运行时传递的上下文，因此该函数不采用任何参数。与其他类型的脚本一样，你可以使用子例程函数并需要使用共享模块。有关详细信息，请参阅[源代码管理、共享代码和 Helper 函数]。
 
 ### <a name="scheduler-scripts"></a>如何：定义计划的作业脚本
 
-可将一个服务器脚本分配到移动服务计划程序中定义的作业。这些脚本属于该作业，并根据作业计划执行。（你也可以使用 [Azure 经典门户]按需运行作业。） 定义计划作业的脚本不带参数，因为移动服务不会向它传递任何数据；该脚本作为常规 JavaScript 函数执行，不直接与移动服务交互。
+可将一个服务器脚本分配到移动服务计划程序中定义的作业。这些脚本属于该作业，并根据作业计划执行。（你也可以使用 [Azure 经典管理门户]按需运行作业。） 定义计划作业的脚本不带参数，因为移动服务不会向它传递任何数据；该脚本作为常规 JavaScript 函数执行，不直接与移动服务交互。
 
 可通过下列方式之一定义计划作业：
 
-+ 通过 [Azure 经典门户]中的计划程序的“脚本”选项卡：
++ 通过 [Azure 经典管理门户]中的计划程序的“脚本”选项卡：
 
 	![3][3]
 
@@ -918,7 +918,7 @@ Stream|不支持
 
 若要写入日志，请使用全局 [console 对象]。使用 **log** 或 **info** 函数记录信息级警告。**warning** 和 **error** 函数将记录其对应级别，这些级别已在日志中予以标注。
 
-> [AZURE.NOTE]若要查看移动服务的日志，请登录到 [Azure 经典门户](https://manage.windowsazure.cn/)，选择你的移动服务，然后选择“日志”选项卡。
+> [AZURE.NOTE]若要查看移动服务的日志，请登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)，选择你的移动服务，然后选择“日志”选项卡。
 
 你还可以使用 [console 对象]的日志记录功能通过参数来设置消息格式。以下示例向消息字符串提供了一个参数形式的 JSON 对象：
 
@@ -1015,7 +1015,7 @@ Stream|不支持
 [验证数据]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj631638.aspx
 [修改请求]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj631635.aspx
 [修改响应]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj631631.aspx
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 [计划作业]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj860528.aspx
 [使用服务器脚本在移动服务中验证和修改数据]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/
 [用于管理 Azure 移动服务的命令]: /zh-cn/documentation/articles/command-line-tools/#Commands_to_manage_mobile_services/#Mobile_Scripts

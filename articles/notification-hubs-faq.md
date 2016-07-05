@@ -170,7 +170,7 @@ Azure 通知中心支持在 [Azure 经典管理门户]中查看遥测数据。�
 >[AZURE.NOTE] 成功的通知仅表示推送通知已传递到外部推送通知服务（例如 Apple 的 APNS、Google 的 GCM 等等）。由 PNS 负责将通知传递到目标设备。PNS 通常不会向第三方公开传递指标。
 
 我们还提供了以编程方式导出遥测数据的功能（在**标准**层）。有关详细信息，请参阅 [NH — 指标示例]。
-[Azure 经典门户]: https://manage.windowsazure.cn
+[Azure 经典管理门户]: https://manage.windowsazure.cn
 [通知中心定价]: /home/features/notification-hubs/#price
 [通知中心 SLA]: /support/legal/sla
 [案例研究 - Sochi]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=7942

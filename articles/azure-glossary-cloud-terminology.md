@@ -80,8 +80,8 @@ Azure 术语以及上述两份参考文档提供了适用于 Azure 和云行业�
 在网络中的计算机之间分散传入流量的资源。在 Azure 中，负载平衡器将流量分散到负载平衡器集内定义的虚拟机。[负载平衡器](/documentation/articles/load-balancer-overview)可以面向 Internet，也可以是内部的。
 
 
-### <a name="portal"></a>经典门户  
-用于部署和管理 Azure 服务的安全 Web 门户 ：[Azure 经典门户](http://manage.windowsazure.cn/)
+### <a name="portal"></a>经典管理门户  
+用于部署和管理 Azure 服务的安全 Web 门户 ：[Azure 经典管理门户](http://manage.windowsazure.cn/)
 
 
 ### <a name="resource"></a>资源  
@@ -100,7 +100,7 @@ Resource Manager 中的容器，用于保存应用程序的相关资源。资源
 
 
 ### <a name="resourceprovider"></a>资源提供程序  
-一种服务，提供可以通过 Resource Manager 进行部署和管理的资源。每个资源提供程序提供用于处理所部署资源的操作。可以通过 Azure 经典门户、Azure PowerShell 和多个编程 SDK 来访问资源提供程序。  
+一种服务，提供可以通过 Resource Manager 进行部署和管理的资源。每个资源提供程序提供用于处理所部署资源的操作。可以通过 Azure 经典管理门户、Azure PowerShell 和多个编程 SDK 来访问资源提供程序。  
 另请参阅 [Azure Resource Manager overview（Azure Resource Manager 概述）](/documentation/articles/resource-group-overview)
 
 

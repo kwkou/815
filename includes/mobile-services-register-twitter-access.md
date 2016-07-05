@@ -15,7 +15,7 @@
 	+ **访问令牌**
 	+ **访问令牌机密**
 
-4. 登录到 [Azure 经典门户]，单击“移动服务”，然后单击你的移动服务。
+4. 登录到 [Azure 经典管理门户]，单击“移动服务”，然后单击你的移动服务。
 
 5. 单击“标识”选项卡，输入从 Twitter 获取的“使用者密钥”和“使用者机密”值，然后单击“保存”。
 
@@ -32,7 +32,7 @@
 
 <!-- URLs. -->
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 [Register your apps for Twitter login with Mobile Services]: /documentation/articles/mobile-services-how-to-register-twitter-authentication
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [应用设置]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

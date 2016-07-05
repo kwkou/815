@@ -18,11 +18,11 @@
 
 ## 设置 Azure AD 目录的主域名
 
-创建目录后，初始域名（例如“contoso.onmicrosoft.com”）也是目录的主域名。当你在 [Azure 经典门户](https://manage.windowsazure.cn/)或其他门户（如 Office 365 管理门户）中创建新用户时，主域是新用户的默认域名。这简化了管理员在门户中创建新用户的过程。
+创建目录后，初始域名（例如“contoso.onmicrosoft.com”）也是目录的主域名。当你在 [Azure 经典管理门户](https://manage.windowsazure.cn/)或其他门户（如 Office 365 管理门户）中创建新用户时，主域是新用户的默认域名。这简化了管理员在门户中创建新用户的过程。
 
 若要更改目录的主域名，请执行以下操作：
 
-1.  使用充当 Azure AD 目录全局管理员的用户帐户登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
+1.  使用充当 Azure AD 目录全局管理员的用户帐户登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 
 2.  在左侧导航栏上选择“Active Directory”。
 

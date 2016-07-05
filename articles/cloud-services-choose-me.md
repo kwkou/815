@@ -45,7 +45,7 @@ Azure 云服务是适合你的选择吗？ Azure 提供了用于运行应用程�
 ## 缩放和管理
 使用云服务，你无需创建虚拟机。相反，你提供一个配置文件，告知 Azure 每个 VM 需要多少个角色实例（如**三个 Web 角色实例**和**两个辅助角色实例**），平台将为你创建它们。虽然你仍然要选择这些后备 VM 应该是[什么大小](/documentation/articles/cloud-services-sizes-specs)，但是你无需亲自显式创建它们。如果你的应用程序需要处理更大的负载，则可以要求增加 VM，Azure 将创建这些实例。如果负载降低，则可以关闭这些实例并停止为它们付费。
 
-通常通过两个步骤就能使云服务应用程序可供用户使用。首先，开发人员[将应用程序上载](/documentation/articles/cloud-services-how-to-create-deploy)到该平台的暂存区域。当开发人员准备好使应用程序上线后，他们会使用 Azure 经典门户请求将其投入生产。[暂存与生产之间的这种切换](/documentation/articles/cloud-services-nodejs-stage-application)无需停机就可完成，这使运行的应用程序可在不打扰其用户的情况下升级到新版本。
+通常通过两个步骤就能使云服务应用程序可供用户使用。首先，开发人员[将应用程序上载](/documentation/articles/cloud-services-how-to-create-deploy)到该平台的暂存区域。当开发人员准备好使应用程序上线后，他们会使用 Azure 经典管理门户请求将其投入生产。[暂存与生产之间的这种切换](/documentation/articles/cloud-services-nodejs-stage-application)无需停机就可完成，这使运行的应用程序可在不打扰其用户的情况下升级到新版本。
 
 ## 监视
 云服务还提供监视功能。和 Azure 虚拟机一样，它将检测到发生故障的物理服务器，并在新的计算机上重新启动原先在该服务器上运行的 VM。云服务不仅检测硬件故障，还检测发生故障的 VM 和应用程序。与虚拟机不同，它在每个 Web 角色和辅助角色中都存在有代理，因此它能够在发生故障时启动新的 VM 和应用程序实例。

@@ -63,7 +63,7 @@ Azure Active Directory 有三个版本：免费版 (Free)、基本版 (Basic) �
 如果你以前用过 Microsoft Azure，则可以转到 [http://manage.windowsazure.cn](http://manage.windowsazure.cn) 以分配新的许可证（有关更多详细信息，请参阅[步骤 4](#step-4-assign-license-to-user-accounts)）。
 
 如果你不曾用过 Microsoft Azure，则可以单击电子邮件中的“登录”或转到 [Azure Active Directory 访问权限激活页](https://account.windowsazure.cn/signup?offer=MS-AZR-0110P)。
-这两种方法都会带你完成一系列步骤，以帮助你通过 Azure 经典门户访问目录。
+这两种方法都会带你完成一系列步骤，以帮助你通过 Azure 经典管理门户访问目录。
 
 ![][4]
 
@@ -79,7 +79,7 @@ Azure Active Directory 有三个版本：免费版 (Free)、基本版 (Basic) �
 
 ![][7]
 
-你可能已在以前的使用过程中获得了对 Azure 的访问权限，此外，你可以通过激活更多的 Azure 订阅将“Azure Active Directory 访问权限”升级为 Azure 完全访问权限。在这些情况下，Azure 经典门户会提供更多功能。
+你可能已在以前的使用过程中获得了对 Azure 的访问权限，此外，你可以通过激活更多的 Azure 订阅将“Azure Active Directory 访问权限”升级为 Azure 完全访问权限。在这些情况下，Azure 经典管理门户会提供更多功能。
 
 ![][8]
 
@@ -87,7 +87,7 @@ Azure Active Directory 有三个版本：免费版 (Free)、基本版 (Basic) �
 
 ![][9]
 
-订阅中的新管理员也可以通过此链接激活他们对 Azure 经典门户的访问权限。
+订阅中的新管理员也可以通过此链接激活他们对 Azure 经典管理门户的访问权限。
 
 ## 步骤 4：向用户帐户分配许可证
 
@@ -95,7 +95,7 @@ Azure Active Directory 有三个版本：免费版 (Free)、基本版 (Basic) �
 
 向用户分配许可证：
 
-1. 以你想要自定义的目录的全局管理员身份登录 Azure 经典门户。
+1. 以你想要自定义的目录的全局管理员身份登录 Azure 经典管理门户。
 2. 单击“Active Directory”，然后选择你要在其中分配许可证的目录。
 3. 选择“许可证”选项卡，选择“Active Directory Premium”或“企业移动套件”，然后单击“分配”。
 

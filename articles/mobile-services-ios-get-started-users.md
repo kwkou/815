@@ -19,7 +19,7 @@
 
 在本教程中，你将要使用支持的标识提供者向[移动服务快速入门教程]项目添加身份验证。
 
-建议你先完成[移动服务快速入门教程]。或者，只需从 [Azure 经典门户]下载快速启动 iOS 项目：单击“移动服务”> 你的移动服务 > 左上角的云登录名 > “iOS” >“创建新的 iOS 应用”>“下载并运行应用”>“Objective-C”>“下载”。如果尚未创建 TodoItem 表，在单击“下载”之前，请记住单击“创建 TodoItem 表”。
+建议你先完成[移动服务快速入门教程]。或者，只需从 [Azure 经典管理门户]下载快速启动 iOS 项目：单击“移动服务”> 你的移动服务 > 左上角的云登录名 > “iOS” >“创建新的 iOS 应用”>“下载并运行应用”>“Objective-C”>“下载”。如果尚未创建 TodoItem 表，在单击“下载”之前，请记住单击“创建 TodoItem 表”。
 
 ## <a name="register"></a>注册应用程序以进行身份验证
 
@@ -79,6 +79,6 @@
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
 [Authorize users with scripts]: /documentation/articles/mobile-services-ios-authorize-users-in-scripts
 
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0215_2016-->

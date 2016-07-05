@@ -14,7 +14,7 @@ wacn.date="11/12/2015"/>
 # 为 Azure 云服务中的角色设置远程桌面连接
 
 >[AZURE.SELECTOR]
-- [Azure 经典门户](/documentation/articles/cloud-services-role-enable-remote-desktop)
+- [Azure 经典管理门户](/documentation/articles/cloud-services-role-enable-remote-desktop)
 - [PowerShell](/documentation/articles/cloud-services-role-enable-remote-desktop-powershell)
 - [Visual Studio](https://msdn.microsoft.com/zh-cn/library/gg443832.aspx)
 
@@ -24,7 +24,7 @@ wacn.date="11/12/2015"/>
 你可以在开发过程中通过在服务定义中加入远程桌面模块来在你的角色中启用远程桌面连接，也可以通过远程桌面扩展选择启用远程桌面。首选方法是使用远程桌面扩展，因为即使在部署应用程序后，也能启用远程桌面，而不必重新部署你的应用程序。
 
 
-## 从经典门户配置远程桌面
+## 从经典管理门户配置远程桌面
 门户使用远程桌面扩展方法，以便即使在部署应用程序之后，也能启用远程桌面。使用云服务的“配置”页，可以启用远程桌面、更改用于连接虚拟机的本地 Administrator 帐户、身份验证使用的证书，以及设置到期日期。
 
 
@@ -57,7 +57,7 @@ wacn.date="11/12/2015"/>
 ## 远程到角色实例
 对角色启用远程桌面后，你可以通过各种工具远程连接到角色实例。
 
-若要从经典门户连接到角色实例，请执行以下操作：
+若要从经典管理门户连接到角色实例，请执行以下操作：
     
   1.   单击“实例”打开“实例”页。
   2.   选择一个配置了远程桌面的角色实例。

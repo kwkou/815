@@ -118,7 +118,7 @@ SendGrid 的 .NET 类库名为 **SendGridMail**。其中包含以下命名空间
 
 发送电子邮件都需要你提供SendGrid 帐户凭据（用户名和密码）或 SendGrid API 密钥。API 密钥是首选方法。如需有关如何配置 API 密钥的详细信息，请访问我们的[文档](https://sendgrid.com/docs/Classroom/Send/api_keys.html)
 
-你可以通过 Azure 经典门户存储这些凭据，方法是单击“配置”，然后在“应用设置”下添加键/值对。
+你可以通过 Azure 经典管理门户存储这些凭据，方法是单击“配置”，然后在“应用设置”下添加键/值对。
 
  ![Azure 应用设置][azure_app_settings]
 

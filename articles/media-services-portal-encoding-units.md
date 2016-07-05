@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何使用 Azure 经典门户缩放媒体处理"
+	pageTitle="如何使用 Azure 经典管理门户缩放媒体处理"
 	description="了解如何通过指定要为帐户设置的“按需流式处理保留单位”和“编码保留单位”数，缩放媒体服务。"
 	services="media-services"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	wacn.date="05/16/2016"/>
 
 
-# 如何使用 Azure 经典门户缩放媒体处理
+# 如何使用 Azure 经典管理门户缩放媒体处理
 
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/media-services-dotnet-encoding-units)
@@ -53,7 +53,7 @@
 
 若要更改保留单位类型和保留单位数目，请执行以下操作：
 
-1. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中单击“媒体服务”。然后，单击媒体服务的名称。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中单击“媒体服务”。然后，单击媒体服务的名称。
 
 2. 选择“编码”页。
 

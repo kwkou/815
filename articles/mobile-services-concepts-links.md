@@ -14,7 +14,7 @@
 
 # 移动服务的概念
 
-下面链接的主题提供有关 Azure 移动服务的具体行为的信息。Azure 经典门户中也提供了这些主题作为帮助信息。
+下面链接的主题提供有关 Azure 移动服务的具体行为的信息。Azure 经典管理门户中也提供了这些主题作为帮助信息。
 
 [AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 

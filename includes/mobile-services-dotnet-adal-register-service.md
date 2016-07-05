@@ -5,7 +5,7 @@
 
 1. 遵循[如何向 Azure Active Directory 注册]主题向 Azure Active Directory 注册你的应用程序。
 
-2. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中，返回到 Azure Active Directory 扩展，并单击你的活动目录
+2. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，返回到 Azure Active Directory 扩展，并单击你的活动目录
 
 3. 单击“应用程序”选项卡，然后单击你的应用程序。
 
@@ -33,7 +33,7 @@
             }
         ],
 
-6. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中，再次针对应用程序单击“管理清单”，然后单击“上载清单”。浏览到你刚更新的应用程序清单的位置，然后上载该清单。
+6. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，再次针对应用程序单击“管理清单”，然后单击“上载清单”。浏览到你刚更新的应用程序清单的位置，然后上载该清单。
 
 <!-- URLs. -->
 [如何向 Azure Active Directory 注册]: /zh-cn/documentation/articles/mobile-services-how-to-register-active-directory-authentication/

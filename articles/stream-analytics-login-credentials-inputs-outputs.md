@@ -32,7 +32,7 @@ Azure 流分析目前不允许在作业运行时替换输入/输出上的凭据�
 对于其他输入/输出，请执行第 2 部分。
 
 ###Blog 存储/表存储
-1.  在 Azure 经典门户上，转到“存储”扩展：  
+1.  在 Azure 经典管理门户上，转到“存储”扩展：  
 
     ![graphic1][graphic1]
 
@@ -56,7 +56,7 @@ Azure 流分析目前不允许在作业运行时替换输入/输出上的凭据�
 7.  继续完成第 2 部分。
 
 ###事件中心
-1.  转到 Azure 经典门户的 Service Bus 扩展：  
+1.  转到 Azure 经典管理门户的 Service Bus 扩展：  
     
     ![graphic6][graphic6]
 
@@ -94,9 +94,9 @@ Azure 流分析目前不允许在作业运行时替换输入/输出上的凭据�
 
 ###SQL 数据库
 
->[AZURE.NOTE] 注意：你将需要连接到 SQL 数据库服务。我们将根据 Azure 经典门户上的管理经验来演示如何这样做，不过，你也可以选择使用某些客户端工具，例如 SQL Server Management Studio。
+>[AZURE.NOTE] 注意：你将需要连接到 SQL 数据库服务。我们将根据 Azure 经典管理门户上的管理经验来演示如何这样做，不过，你也可以选择使用某些客户端工具，例如 SQL Server Management Studio。
 
-1.  转到 Azure 经典门户的 SQL 数据库扩展：  
+1.  转到 Azure 经典管理门户的 SQL 数据库扩展：  
     
     ![graphic14][graphic14]
 
@@ -152,7 +152,7 @@ Azure 流分析目前不允许在作业运行时替换输入/输出上的凭据�
 16. 继续完成第 2 部分。
 
 ##第 2 部分：停止流分析作业
-1.  转到 Azure 经典门户的流分析扩展：  
+1.  转到 Azure 经典管理门户的流分析扩展：  
     
     ![graphic26][graphic26]
 

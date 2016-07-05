@@ -29,7 +29,7 @@ Azure 服务总线使用多个消息中转站来处理消息，并用多个消�
 
 若要将分区队列和主题用于 Azure 服务总线，请使用 Azure SDK 2.2 版或更高版本，或在 HTTP 请求中指定 `api-version=2013-10`。
 
-你可以创建 1、2、3、4 或 5 GB 大小的服务总线队列和主题（默认值为 1 GB）。启用分区时，服务总线将为指定的每份大小创建 16 个分区。因此，如果你创建了一个大小为 5 GB 的队列，共有 16 个分区，最大队列大小为 (5 * 16) = 80 GB。可以通过在 [Azure 经典门户][]上查看分区队列或主题的条目，来了解该队列或主题的最大大小。
+你可以创建 1、2、3、4 或 5 GB 大小的服务总线队列和主题（默认值为 1 GB）。启用分区时，服务总线将为指定的每份大小创建 16 个分区。因此，如果你创建了一个大小为 5 GB 的队列，共有 16 个分区，最大队列大小为 (5 * 16) = 80 GB。可以通过在 [Azure 经典管理门户][]上查看分区队列或主题的条目，来了解该队列或主题的最大大小。
 
 有多种方法可以创建分区的队列或主题。当从你的应用程序中创建队列或主题时，可以通过分别将 [QueueDescription.EnablePartitioning][] 或 [TopicDescription.EnablePartitioning][] 属性设置为 **true** 来启用队列或主题的分区。这些属性必须在队列或主题创建时设置。不可能更改现有队列或主题上的这些属性。例如：
 
@@ -41,7 +41,7 @@ td.EnablePartitioning = true;
 ns.CreateTopic(td);
 ```
 
-或者，你可以在 Visual Studio 中或在 [Azure 经典门户][]中创建分区的队列或主题。当在门户中创建新的队列或主题时，请选中队列或主题窗口的“配置”选项卡中的“启用分区”选项。在 Visual Studio 中，单击“新队列”或“新主题”对话框中的“启用分区”复选框。
+或者，你可以在 Visual Studio 中或在 [Azure 经典管理门户][]中创建分区的队列或主题。当在门户中创建新的队列或主题时，请选中队列或主题窗口的“配置”选项卡中的“启用分区”选项。在 Visual Studio 中，单击“新队列”或“新主题”对话框中的“启用分区”复选框。
 
 ## 使用分区键
 
@@ -124,7 +124,7 @@ Azure 服务总线支持从分区实体、向分区的实体或在分区的实�
 请参阅[针对服务总线分区队列和主题的 AMQP 1.0 支持][]的讨论，了解有关分区消息传送实体的详细信息。
 
   [服务总线体系结构]: /documentation/articles/service-bus-architecture
-  [Azure 经典门户]: http://manage.windowsazure.cn
+  [Azure 经典管理门户]: http://manage.windowsazure.cn
   [QueueDescription.EnablePartitioning]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx
   [TopicDescription.EnablePartitioning]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.enablepartitioning.aspx
   [BrokeredMessage.SessionId]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.sessionid.aspx

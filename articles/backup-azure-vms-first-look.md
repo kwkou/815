@@ -24,14 +24,14 @@
 若要备份 VM，需要执行五个主要步骤：
 
 ![第一步](./media/backup-azure-vms-first-look/step-one.png)创建一个备份保管库，或指定现有的备份保管库。<br/>
-![第二步](./media/backup-azure-vms-first-look/step-two.png)使用 Azure 经典门户来发现并注册虚拟机。<br/>
+![第二步](./media/backup-azure-vms-first-look/step-two.png)使用 Azure 经典管理门户来发现并注册虚拟机。<br/>
 ![第三步](./media/backup-azure-vms-first-look/step-three.png)安装 VM 代理。<br/>
 ![第四步](./media/backup-azure-vms-first-look/step-four.png)创建用于保护虚拟机的策略。<br/>
 ![第五步](./media/backup-azure-vms-first-look/step-five.png)运行备份。
 
 ![VM 备份过程的高级视图](./media/backup-azure-vms-first-look/backupazurevm-classic.png)
 
->[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model)。本教程适用于可在 Azure 经典门户中创建的 VM。Azure 备份服务支持基于 Azure Resource Manager (ARM) 的 VM - 也称为 IaaS V2 VM。
+>[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model)。本教程适用于可在 Azure 经典管理门户中创建的 VM。Azure 备份服务支持基于 Azure Resource Manager (ARM) 的 VM - 也称为 IaaS V2 VM。
 
 
 
@@ -39,9 +39,9 @@
 
 备份保管库是存储所有按时间创建的备份和恢复点的实体。备份保管库还包含将应用到要备份的虚拟机的备份策略。
 
-1. 登录到 [Azure 经典门户](http://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典管理门户](http://manage.windowsazure.cn/)。
 
-2. 在 Azure 经典门户的左下角单击“新建”。
+2. 在 Azure 经典管理门户的左下角单击“新建”。
 
     ![单击“新建”菜单](./media/backup-azure-vms-first-look/new-button.png)
 
@@ -61,7 +61,7 @@
 
     ![创建保管库 toast 通知](./media/backup-azure-vms-first-look/backup-vaultcreate.png)
 
-7. 单击“创建保管库”。创建备份保管库可能需要一段时间。可以在经典门户底部监视状态通知。
+7. 单击“创建保管库”。创建备份保管库可能需要一段时间。可以在经典管理门户底部监视状态通知。
 
     ![创建保管库 toast 通知](./media/backup-azure-vms-first-look/create-vault-demo.png)
 
@@ -87,9 +87,9 @@
 ## 步骤 2 - 发现并注册 Azure 虚拟机
 向保管库注册 VM 之前，请运行发现过程以识别所有新 VM。随后将返回订阅中的虚拟机列表和其他信息，例如云服务名称、区域等。
 
-1. 登录到 [Azure 经典门户](http://manage.windowsazure.cn/)
+1. 登录到 [Azure 经典管理门户](http://manage.windowsazure.cn/)
 
-2. 在 Azure 经典门户中，单击“恢复服务”打开恢复服务保管库列表。
+2. 在 Azure 经典管理门户中，单击“恢复服务”打开恢复服务保管库列表。
     ![选择工作负荷](./media/backup-azure-vms-first-look/recovery-services-icon.png)
 
 3. 从保管库列表中，选择要备份 VM 的保管库。
@@ -146,10 +146,10 @@ Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。�
 ## 步骤 4 - 创建备份策略
 在触发初始备份作业之前，请设置计划来规定何时创建备份快照。规定备份快照创建时间以及快照保留时长的计划就是备份策略。保留期信息基于祖父-父-子备份轮转方案。
 
-1. 导航到备份保管库（位于 Azure 经典门户的“恢复服务”下），然后单击“注册的项”。
+1. 导航到备份保管库（位于 Azure 经典管理门户的“恢复服务”下），然后单击“注册的项”。
 2. 从下拉菜单中选择“Azure 虚拟机”。
 
-    ![在经典门户中选择工作负荷](./media/backup-azure-vms/select-workload.png)
+    ![在经典管理门户中选择工作负荷](./media/backup-azure-vms/select-workload.png)
 
 3. 单击页面底部的“保护”。
     ![单击“保护”](./media/backup-azure-vms-first-look/protect-icon.png)

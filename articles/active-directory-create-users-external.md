@@ -18,7 +18,7 @@
 
 ## 添加用户
 
-1. 使用充当目录全局管理员的帐户登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 使用充当目录全局管理员的帐户登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
 2. 选择 **Active Directory**，然后打开你的目录。
 
@@ -38,7 +38,7 @@
 > - 若要跨域添加具有相同用户主体名称 (UPN) 的用户帐户，例如，你可以**先**添加 geoffgrisso@contoso.onmschina.cn，**再**添加 geoffgrisso@contoso.com。
 > - **不要**在添加 geoffgrisso@contoso.onmschina.cn 之前添加 geoffgrisso@contoso.com。此顺序非常重要，事后想要撤消操作将很麻烦。
 
-如果你更改身份与本地 Active Directory 服务同步的用户的信息，则无法更改 Azure 经典门户中的用户信息。若要更改该用户信息，请使用本地 Active Directory 管理工具。
+如果你更改身份与本地 Active Directory 服务同步的用户的信息，则无法更改 Azure 经典管理门户中的用户信息。若要更改该用户信息，请使用本地 Active Directory 管理工具。
 
 ## 创建外部用户
 
@@ -59,7 +59,7 @@
 
 ### 目前支持 Azure AD 外部用户访问的服务
 
-- **Azure 经典门户**：允许身为多个目录的管理员的外部用户管理这些目录。
+- **Azure 经典管理门户**：允许身为多个目录的管理员的外部用户管理这些目录。
 - **SharePoint Online**：如果启用外部共享，则允许外部用户访问 SharePoint Online 的已授权资源。
 - **Dynamics CRM**：如果用户通过 PowerShell 获得许可，则允许外部用户访问 Dynamics CRM 中的已授权资源。
 - **Dynamics AX**：如果用户通过 PowerShell 获得许可，则允许外部用户访问 Dynamics AX 中的已授权资源。适用于 [Azure AD 外部用户](#known-limitations-of-azure-ad-external-users)和[来宾用户](#guest-user-management-and-limitations)的限制同样适用于 Dynamics AX 中的外部用户。

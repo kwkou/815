@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure 经典门户创建从本地编码器接收多比特率实时流的通道 | Azure"
+	pageTitle="使用 Azure 经典管理门户创建从本地编码器接收多比特率实时流的通道 | Azure"
 	description="本教程将指导你完成实施一个基本媒体服务实时传送视频流应用程序的步骤，在该应用程序中，某个通道将从本地实时编码器接收多比特率实时流。"
 	services="media-services"
 	documentationCenter=""
@@ -13,14 +13,14 @@
 	wacn.date="06/27/2016"/>
 
 
-# 使用 Azure 经典门户创建从本地编码器接收多比特率实时流的通道
+# 使用 Azure 经典管理门户创建从本地编码器接收多比特率实时流的通道
 
 [AZURE.INCLUDE [media-services-selector-manage-channels](../includes/media-services-selector-manage-channels.md)]
 
 
 本教程将指导你完成实施一个基本媒体服务实时传送视频流应用程序的步骤，在该应用程序中，某个通道将从本地实时编码器接收多比特率实时流。有关使用通道和相关组件的详细概述，请参阅[使用从本地编码器接收多比特率实时流的通道](/documentation/articles/media-services-live-streaming-with-onprem-encoders)。
 
-在本教程中，将使用 Azure 经典门户完成以下任务：
+在本教程中，将使用 Azure 经典管理门户完成以下任务：
 
 2.  配置流式处理终结点。
 3.  创建通道。
@@ -38,7 +38,7 @@
 - 可以发送多比特率实时流的摄像头和编码器。
 
 
-## 使用 Azure 经典门户配置流式处理终结点
+## 使用 Azure 经典管理门户配置流式处理终结点
 
 使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流式处理，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
@@ -48,7 +48,7 @@
 
 若要更改流式处理保留单元数，请执行以下操作：
 
-1. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中单击“媒体服务”。然后，单击媒体服务的名称。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中单击“媒体服务”。然后，单击媒体服务的名称。
 
 2. 选择“流式处理终结点”页。然后，单击要修改的流式处理终结点。
 
@@ -67,7 +67,7 @@
 
 ## 创建通道
 
-在 Azure 经典门户中选择“通道”页。然后单击“新建”。在“创建新的实时通道”页中输入通道的名称。
+在 Azure 经典管理门户中选择“通道”页。然后单击“新建”。在“创建新的实时通道”页中输入通道的名称。
 
 ![createchannel](./media/media-services-portal-get-started-with-live/media-services-create-channel.png)
 
@@ -92,7 +92,7 @@
 
 有关如何配置 Wirecast 并开始引入流的详细信息，请参阅 [Wirecast 配置](https://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)。
 
->[AZURE.NOTE] 如果出于任何原因停止了编码器，然后需要重新启动它，则应先重置通道，方法是在 Azure 经典门户中单击“重置”命令。
+>[AZURE.NOTE] 如果出于任何原因停止了编码器，然后需要重新启动它，则应先重置通道，方法是在 Azure 经典管理门户中单击“重置”命令。
 
 
 ## 创建和管理节目
@@ -155,7 +155,7 @@
 
 ## 播放内容
 
-若要为用户提供一个可用来流式传输内容的 URL，你首先需要通过创建定位符（当你使用 Azure 经典门户发布资产时，系统已经为你创建了定位符）来发布资产（如上一部分中所述）。定位符提供对资产中所含文件的访问权限。
+若要为用户提供一个可用来流式传输内容的 URL，你首先需要通过创建定位符（当你使用 Azure 经典管理门户发布资产时，系统已经为你创建了定位符）来发布资产（如上一部分中所述）。定位符提供对资产中所含文件的访问权限。
 
 根据你要用来播放内容的流式处理协议，你可能需要修改从频道\\节目的**“发布 URL”**链接获取的 URL。
 
@@ -194,7 +194,7 @@
 
 
 ## 其他资源
-- [使用 Azure 经典门户开始实时流式处理](https://azure.microsoft.com/blog/getting-started-with-live-streaming-using-the-azure-management-portal/)
+- [使用 Azure 经典管理门户开始实时流式处理](https://azure.microsoft.com/blog/getting-started-with-live-streaming-using-the-azure-management-portal/)
 
 <!-- URLs. -->
 [Azure Management Portal]: http://manage.windowsazure.cn/

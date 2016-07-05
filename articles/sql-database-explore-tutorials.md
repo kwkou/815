@@ -169,7 +169,7 @@
 
 | 教程 | 说明 |
 |---|---|---| 
-| [Azure SQL 数据同步入门（预览版）](/documentation/articles/sql-database-get-started-sql-data-sync) | 在本教程中，你将了解使用 Azure 经典门户的 Azure SQL 数据同步的基础知识。 |
+| [Azure SQL 数据同步入门（预览版）](/documentation/articles/sql-database-get-started-sql-data-sync) | 在本教程中，你将了解使用 Azure 经典管理门户的 Azure SQL 数据同步的基础知识。 |
 ||||
 
 <!---HONumber=Mooncake_0530_2016-->

@@ -176,7 +176,7 @@ Azure 挂载的磁盘，单块最大容量为 1023GB。如果我们需要磁盘�
 
 4.	时区
 
-	使用 Azure [经典门户](https://manage.windowsazure.cn)创建的 Azure 虚拟机，默认的时区都是 UTC 时区。我们需要通过 Remote Desktop 或者 SSH，在操作系统中，将时区修改为 UTC+8 时区，对应北京时间。
+	使用 Azure [经典管理门户](https://manage.windowsazure.cn)创建的 Azure 虚拟机，默认的时区都是 UTC 时区。我们需要通过 Remote Desktop 或者 SSH，在操作系统中，将时区修改为 UTC+8 时区，对应北京时间。
 
 5.	Ping命令
 
@@ -188,7 +188,7 @@ Azure 挂载的磁盘，单块最大容量为 1023GB。如果我们需要磁盘�
 
 	我们通过远程桌面连接或者是 SSH，关闭 Azure 虚拟机，是会继续收取 Azure 计算费用的。
 
-	只有通过 Azure [经典门户](https://manage.windowsazure.cn)，选中相应的 Azure 虚拟机，并点击关闭按钮。这样 Azure 虚拟机才不会继续收取计算费用
+	只有通过 Azure [经典管理门户](https://manage.windowsazure.cn)，选中相应的 Azure 虚拟机，并点击关闭按钮。这样 Azure 虚拟机才不会继续收取计算费用
 
 7.	Public Port 连接安全性
 

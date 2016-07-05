@@ -23,7 +23,7 @@
 
 1. 在服务器资源管理器中选择虚拟机，然后选择 F4 键显示其属性窗口。
 
-    下表显示了可用的属性，但这些属性都是只读的。若要更改属性，请使用 [Azure 经典门户](http://manage.windowsazure.cn)。
+    下表显示了可用的属性，但这些属性都是只读的。若要更改属性，请使用 [Azure 经典管理门户](http://manage.windowsazure.cn)。
 
   	|属性|说明|
   	|---|---|
@@ -31,12 +31,12 @@
   	|环境|对于虚拟机，此属性的值始终为“生产”。|
   	|名称|虚拟机的名称。|
   	|大小|虚拟机的大小，此值反映可用的内存和磁盘空间量。有关详细信息，请参阅“How To: Configure Virtual Machine Sizes”（如何：配置虚拟机大小）。|
-  	|状态|值包括“正在启动”、“已启动”、“正在停止”、“已停止”和“正在检索状态”。如果出现“正在检索状态”，则表示当前状态未知。此属性的值不同于 [Azure 经典门户](http://manage.windowsazure.cn)上使用的值。|
-  	|SubscriptionID|你的 Azure 帐户的订阅 ID。可以通过在 [Azure 经典门户](http://manage.windowsazure.cn)上查看订阅的属性来显示此信息。|
+  	|状态|值包括“正在启动”、“已启动”、“正在停止”、“已停止”和“正在检索状态”。如果出现“正在检索状态”，则表示当前状态未知。此属性的值不同于 [Azure 经典管理门户](http://manage.windowsazure.cn)上使用的值。|
+  	|SubscriptionID|你的 Azure 帐户的订阅 ID。可以通过在 [Azure 经典管理门户](http://manage.windowsazure.cn)上查看订阅的属性来显示此信息。|
 
 1. 选择一个终结点节点，然后查看“属性”窗口。
 
-1. 下表描述了可用的终结点属性，但这些属性都是只读的。若要添加或编辑虚拟机的终结点，请使用 [Azure 经典门户](http://manage.windowsazure.cn)。
+1. 下表描述了可用的终结点属性，但这些属性都是只读的。若要添加或编辑虚拟机的终结点，请使用 [Azure 经典管理门户](http://manage.windowsazure.cn)。
 
   	|属性|说明|
   	|---|---|

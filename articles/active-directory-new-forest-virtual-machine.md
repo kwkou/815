@@ -44,7 +44,7 @@
 
 ## 创建 Azure 虚拟网络
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 2. 创建虚拟网络。单击“网络”>“创建虚拟网络”。使用下表中的值来完成向导操作。 
 
 	在此向导页上... | 指定这些值
@@ -61,7 +61,7 @@
 
 若要使用 Windows PowerShell 而不是 UI 创建 VM，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
-1. 在 Azure 经典门户中，单击“添加”>“计算”>“虚拟机”>“从库中”。使用以下值来完成向导。除非建议或必须使用其他值，否则请接受默认的设置值。
+1. 在 Azure 经典管理门户中，单击“添加”>“计算”>“虚拟机”>“从库中”。使用以下值来完成向导。除非建议或必须使用其他值，否则请接受默认的设置值。
 
     在此向导页上... | 指定这些值
 	------------- | -------------
