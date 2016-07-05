@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="05/03/2016"
+	ms.date="06/15/2016"
 	wacn.date="05/30/2016"/>
 # 数据连接：了解从事件到流分析的数据流输入
 
@@ -36,7 +36,7 @@
 
 应对每个流分析事件中心输入进行配置，使之拥有自己的使用者组。如果作业包含自联接或多个输入，部分输入可能会由下游的多个读取器读取，这会影响单个使用者组中的读取器数目。为了避免超出针对事件中心设置的每个分区每个使用者组 5 个读取器的限制，最好是为每个流分析作业指定一个使用者组。请注意还有一项限制，即每个事件中心最多只能有 20 个使用者组。有关详细信息，请参阅[事件中心编程指南](/documentation/articles/event-hubs-programming-guide)。
 
-## 将事件中心配置为输入数据流
+### 将事件中心配置为输入数据流
 
 下表在属性说明中介绍了事件中心输入选项卡中的每个属性：
 
@@ -61,24 +61,26 @@
 
 例如，你可以编写类似以下的查询：
 
-````
-SELECT
-	EventProcessedUtcTime,
-	EventEnqueuedUtcTime,
-	PartitionId
-FROM Input
-````
+
+	SELECT
+		EventProcessedUtcTime,
+		EventEnqueuedUtcTime,
+		PartitionId
+	FROM Input
+
 
 ## 创建 IoT 中心数据流输入
 
 Azure Iot 中心是已针对 IoT 进行优化，具有高度可缩放性的发布-订阅事件引入器。
 需要注意的是，来自流分析中 IoT 中心的事件默认时间戳是事件到达 IoT 中心的时间戳，即 EventEnqueuedUtcTime。若要在事件负载中使用时间戳以流方式处理数据，必须使用 [TIMESTAMP BY](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx) 关键字。
 
+> [AZURE.NOTE] 只能处理使用 DeviceClient 属性发送的消息。
+
 ### 使用者组
 
 应对每个流分析 IoT 中心输入进行配置，使之拥有自己的使用者组。如果作业包含自联接或多个输入，部分输入可能会由下游的多个读取器读取，这会影响单个使用者组中的读取器数目。为了避免超出针对 IoT 中心设置的每个分区每个使用者组 5 个读取器的限制，最好是为每个流分析作业指定一个使用者组。
 
-## 将 IoT 中心配置为数据流输入
+### 将 IoT 中心配置为数据流输入
 
 下表在属性说明中介绍了 IoT 中心输入选项卡中的每个属性：
 
@@ -142,7 +144,8 @@ Azure Iot 中心是已针对 IoT 进行优化，具有高度可缩放性的发�
 </tr>
 <tr>
 <td>路径前缀模式 [可选]</td>
-<td>用于对指定容器中的 blob 进行定位的文件路径。在路径中，你可以选择指定一个或多个使用以下 3 个变量的实例：<BR>{date}、{time}、<BR>{partition}<BR>示例 1：cluster1/logs/{date}/{time}/{partition}<BR>示例 2：cluster1/logs/{date}<P>请注意，“*”不是路径前缀允许使用的值。仅允许使用有效的 <a HREF="https://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx">Azure blob 字符</a>。</td>
+<td>用于对指定容器中的 blob 进行定位的文件路径。
+在路径中，你可以选择指定一个或多个使用以下 3 个变量的实例：<BR>{date}、{time}、<BR>{partition}<BR>示例 1：cluster1/logs/{date}/{time}/{partition}<BR>示例 2：cluster1/logs/{date}<P>请注意，“*”不是路径前缀允许使用的值。仅允许使用有效的 <a HREF="https://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx">Azure blob 字符</a>。</td>
 </tr>
 <tr>
 <td>日期格式 [可选]</td>
@@ -178,13 +181,13 @@ Azure Iot 中心是已针对 IoT 进行优化，具有高度可缩放性的发�
 
 例如，你可以编写类似以下的查询：
 
-````
-SELECT
-	BlobName,
-	EventProcessedUtcTime,
-	BlobLastModifiedUtcTime
-FROM Input
-````
+
+	SELECT
+		BlobName,
+		EventProcessedUtcTime,
+		BlobLastModifiedUtcTime
+	FROM Input
+
 
 
 ## 获取帮助
@@ -200,10 +203,10 @@ FROM Input
 
 <!--Link references-->
 [stream.analytics.developer.guide]: /documentation/articles/stream-analytics-developer-guide
-[stream.analytics.scale.jobs]: /documentation/articlesstream-analytics-scale-jobs
-[stream.analytics.introduction]: /documentation/articlesstream-analytics-introduction
-[stream.analytics.get.started]: /documentation/articlesstream-analytics-get-started
+[stream.analytics.scale.jobs]: /documentation/articles/stream-analytics-scale-jobs
+[stream.analytics.introduction]: /documentation/articles/stream-analytics-introduction
+[stream.analytics.get.started]: /documentation/articles/stream-analytics-get-started
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Mooncake_0314_2016-->
+<!---HONumber=Mooncake_0627_2016-->
