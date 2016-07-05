@@ -93,7 +93,7 @@ Azure AD 中的应用程序是使用 2 个对象表示的：应用程序对象�
 * 注册/登录到 [Office 365](http://products.office.com/zh-CN) 等  Microsoft Online Services
     * 当你订阅 Office 365 或开始试用时，将在目录中创建一个或多个服务主体，表示传递所有与 Office 365 关联的功能的各种服务。
     * 某些 Office 365 服务（如 SharePoint）会不断地创建服务主体，以允许在组件（包括工作流）之间进行安全通信。
-* 在 Azure 管理门户中添加你正在开发的应用程序，具体请参阅：https://msdn.microsoft.com/zh-cn/library/azure/dn132599.aspx
+* 在 Azure 经典门户中添加你正在开发的应用程序，具体请参阅：https://msdn.microsoft.com/zh-cn/library/azure/dn132599.aspx
 * 使用 Visual Studio 添加你正在开发的应用程序，具体请参阅：
     * [ASP.Net 身份验证方法](http://www.asp.net/visual-studio/overview/2013/creating-web-projects-in-visual-studio#orgauthoptions)
     * [连接的服务](http://blogs.msdn.com/b/visualstudio/archive/2014/11/19/connecting-to-cloud-services.aspx)
@@ -117,11 +117,11 @@ Azure AD 中的应用程序是使用 2 个对象表示的：应用程序对象�
 * 用户为了业务目的使用其组织帐户登录/注册应用程序是一个好现象。如果他们以后离开了组织，他们将无法访问所用应用程序中的帐户。
 * 记录与哪个应用程序共享了哪些数据是一个很好的做法。数据的流动性比以往更明显，因此，明确记录哪个用户与哪些应用程序共享了哪些数据会很有用。
 * 为 oAuth 使用 Azure AD 的应用程序将明确决定用户可向应用程序授予哪些权限，以及哪些权限需要管理员的许可。不言而喻，只有管理员才能授予较大范围的更重要的权限。
-* 添加应用程序和允许应用程序访问其数据的用户将会添加到审核事件，以便你可以在 Azure 管理门户中查看审核报告，以确定应用程序是如何添加到目录中的。
+* 添加应用程序和允许应用程序访问其数据的用户将会添加到审核事件，以便你可以在 Azure 经典门户中查看审核报告，以确定应用程序是如何添加到目录中的。
 
 **注意：**到目前为止，Microsoft 本身已使用默认配置运行了好几个月。
 
-总而言之，我们可以防止目录中的用户添加应用程序，并可防止他们通过在 Azure 管理门户中修改目录配置，来决定要与应用程序共享哪些信息。可以在 Azure 管理门户中通过目录的“配置”选项卡访问以下配置。
+总而言之，我们可以防止目录中的用户添加应用程序，并可防止他们通过在 Azure 经典门户中修改目录配置，来决定要与应用程序共享哪些信息。可以在 Azure 经典门户中通过目录的“配置”选项卡访问以下配置。
 
 ![用于配置集成应用程序设置的 UI 屏幕截图][app_settings]
 

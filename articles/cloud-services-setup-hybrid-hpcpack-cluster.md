@@ -80,7 +80,7 @@
 	![完成][install_hpc7]
 
 ## 准备 Azure 订阅
-使用 [Azure 管理门户](https://manage.windowsazure.cn)来执行以下 Azure 订阅步骤。之所以需要些步骤，是为了之后你可以从本地头节点部署 Azure 节点。
+使用 [Azure 经典门户](https://manage.windowsazure.cn)来执行以下 Azure 订阅步骤。之所以需要些步骤，是为了之后你可以从本地头节点部署 Azure 节点。
 
 - 上载管理证书（头节点和 Azure 之间的安全连接所需的）
 
@@ -93,7 +93,7 @@
 ### 上载默认管理证书
 HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书的自签名证书，你可以将此证书作为 Azure 管理证书上载。此证书是为进行测试和概念证明部署提供的。
 
-1. 从头节点计算机登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 从头节点计算机登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 2. 单击“设置”>“管理证书”。
 
@@ -111,7 +111,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 >[AZURE.NOTE]为了获得最佳性能，请在同一地理区域中创建云服务和存储帐户（在后面的步骤中）。
 
-1. 在管理门户中的命令栏上，单击“新建”。
+1. 在经典门户中的命令栏上，单击“新建”。
 
 2. 单击“计算”>“云服务”>“快速创建”。
 
@@ -121,7 +121,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 ### 创建 Azure 存储帐户
 
-1. 在管理门户中的命令栏上，单击“新建”。
+1. 在经典门户中的命令栏上，单击“新建”。
 
 2. 依次单击**“数据服务”**>**“存储”**>**“快速创建”**。
 
@@ -228,7 +228,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 3. 几分钟后，Azure 节点将完成预配并且处于“脱机”状态。在此状态下，角色实例尽管在运行，但不会接受群集作业。
 
-4. 若要确认角色实例正在运行，请在[管理门户](https://manage.windowsazure.cn)中单击“云服务”> 你的云服务名称 >“实例”。
+4. 若要确认角色实例正在运行，请在[经典门户](https://manage.windowsazure.cn)中单击“云服务”> 你的云服务名称 >“实例”。
 
 	![运行实例][view_instances1]
 
@@ -292,7 +292,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 	![未部署节点][stop_node4]
 
-4. 若要确认角色实例是否不再在 Azure 中运行，请在[管理门户](https://manage.windowsazure.cn)中单击“云服务”> 你的云服务名称 >“实例”。将不会有任何实例部署在生产环境中。
+4. 若要确认角色实例是否不再在 Azure 中运行，请在[经典门户](https://manage.windowsazure.cn)中单击“云服务”> 你的云服务名称 >“实例”。将不会有任何实例部署在生产环境中。
 
 	![无实例][view_instances2]
 

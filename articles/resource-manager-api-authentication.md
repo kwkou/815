@@ -82,7 +82,7 @@ Azure AD 还支持应用程序的证书凭据：创建自签名证书、保留�
 
 你必须要求用户提供两项信息：
 
-1. **目录域名**：与用户的 Azure 订阅关联的 Azure Active Directory 域名。必须将 OAuth 2.0 授权请求发送到此 Azure AD。用户可通过导航到 Azure 门户并选择右上角的帐户，来找到其 Azure AD 的域名。你可以向用户提供类似于下面的可视化说明： 
+1. **目录域名**：与用户的 Azure 订阅关联的 Azure Active Directory 域名。必须将 OAuth 2.0 授权请求发送到此 Azure AD。用户可通过导航到 Azure 门户预览并选择右上角的帐户，来找到其 Azure AD 的域名。你可以向用户提供类似于下面的可视化说明： 
 
      ![](./media/resource-manager-api-authentication/show-directory.png)
    
@@ -429,7 +429,7 @@ ASP.NET MVC 示例应用的 [ServicePrincipalHasReadAccessToSubscription](https:
 
 将相应的 RBAC 角色分配到订阅上的应用程序服务主体后，应用程序可以使用 Azure Resource Manager 的仅限应用的访问令牌来持续进行监视/管理。
 
-如果订阅所有者使用 Azure 管理门户或命令行工具删除应用程序的角色分配，应用程序将再也无法访问该订阅。在此情况下，你应该通知用户，与订阅的连接是通过应用程序外部提供的，并为他们提供“修复”连接的选项。“修复”只是重新创建脱机删除的角色分配。
+如果订阅所有者使用 Azure 经典门户或命令行工具删除应用程序的角色分配，应用程序将再也无法访问该订阅。在此情况下，你应该通知用户，与订阅的连接是通过应用程序外部提供的，并为他们提供“修复”连接的选项。“修复”只是重新创建脱机删除的角色分配。
 
 
 ## 断开连接订阅

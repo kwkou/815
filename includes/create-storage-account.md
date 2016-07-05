@@ -1,6 +1,6 @@
 若要使用 Azure 存储空间，您将需要一个存储帐户。可通过以下步骤创建存储帐户。（您还可以通过使用 Azure 服务管理客户端库或服务管理 [REST API] 来创建存储帐户。）
 
-1.  登录到 [Azure 管理门户]。
+1.  登录到 [Azure 经典门户]。
 
 2.  在导航窗格的底部，单击"新建"。
 
@@ -19,7 +19,7 @@
 6.  单击"创建存储帐户"。
 
 [使用 REST API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh264518.aspx
-[Azure 管理门户]: http://manage.windowsazure.cn
+[Azure 经典门户]: http://manage.windowsazure.cn
 [plus-new]: ./media/create-storage-account/plus-new.png
 [quick-create-storage]: ./media/create-storage-account/quick-storage-2.png
 <!--HONumber=41-->

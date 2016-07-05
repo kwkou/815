@@ -176,13 +176,13 @@ IP 筛选器可以防止来宾 VM 执行以下操作：
 
 存储在云中的数据必须具有足够的安全措施来防止遭到攻击，并且需要在传输过程中保持机密性和完整性。这其中包括网络控制，同时结合使用组织的基于策略的、可审核的身份和访问管理机制。
 
-内置加密技术使你能够在部署内部和部署之间、Azure 区域之间以及从 Azure 到本地数据中心之间对通信进行加密。管理员通过[远程桌面会话](/documentation/articles/virtual-machines-log-on-windows-server)、[远程 Windows PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2013/09/07/weekend-scripter-remoting-the-cloud-with-windows-azure-and-powershell.aspx) 和 [Azure 管理门户](http://manage.windowsazure.cn)对虚拟机进行的访问始终加密。
+内置加密技术使你能够在部署内部和部署之间、Azure 区域之间以及从 Azure 到本地数据中心之间对通信进行加密。管理员通过[远程桌面会话](/documentation/articles/virtual-machines-log-on-windows-server)、[远程 Windows PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2013/09/07/weekend-scripter-remoting-the-cloud-with-windows-azure-and-powershell.aspx) 和 [Azure 经典门户](http://manage.windowsazure.cn)对虚拟机进行的访问始终加密。
 
 为了安全地将你的本地数据中心扩展到云，Azure 提供了[站点到站点 VPN](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell) 和[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create) 以及通过 [ExpressRoute](/documentation/articles/expressroute-introduction) 进行的专用链接（通过 VPN 连接到 Azure 虚拟网络会进行加密）。
 
 ### Azure 如何实现安全的远程访问
 
-连接到 Azure 门户时，必须始终进行身份验证，并且需要 SSL/TLS。你可以配置管理证书，以便进行安全管理。完全支持各种行业标准安全协议，例如 [SSTP](https://technet.microsoft.com/zh-cn/magazine/2007.06.cableguy.aspx) 和 [IPsec](https://en.wikipedia.org/wiki/IPsec)。
+连接到 Azure 经典门户时，必须始终进行身份验证，并且需要 SSL/TLS。你可以配置管理证书，以便进行安全管理。完全支持各种行业标准安全协议，例如 [SSTP](https://technet.microsoft.com/zh-cn/magazine/2007.06.cableguy.aspx) 和 [IPsec](https://en.wikipedia.org/wiki/IPsec)。
 
 使用 [Azure ExpressRoute](/documentation/articles/expressroute-introduction)，可在 Azure 数据中心与你的本地环境或共同租用环境中的基础结构之间创建专用连接。ExpressRoute 连接不通过公共 Internet 。与常用的基于 Internet 的链接相比，这些链接更可靠，速度更快，延迟更低，安全性更高。在某些情况下，使用 ExpressRoute 连接在本地和 Azure 之间传输数据还可以产生显著的成本效益。
 

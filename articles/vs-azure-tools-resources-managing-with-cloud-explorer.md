@@ -15,9 +15,9 @@
 
 ##概述
 
-云资源管理器旨在让你更轻松快速地在 Visual Studio IDE 中浏览和管理 Azure 资源。例如，它可让你在 Azure 门户或浏览器中打开 Web 应用、在其中附加调试工具，或者查看 Blob 容器的属性并在 Blob 容器编辑器中打开它。
+云资源管理器旨在让你更轻松快速地在 Visual Studio IDE 中浏览和管理 Azure 资源。例如，它可让你在 Azure 门户预览或浏览器中打开 Web 应用、在其中附加调试工具，或者查看 Blob 容器的属性并在 Blob 容器编辑器中打开它。
 
-与 Microsoft Azure 预览门户一样，云资源管理器基于 Azure Resource Manager 堆栈。它可以识别 Azure 资源组等资源，以及 Logic Apps 和 API Apps 等 Azure 服务。若要查看已添加或更改的 Azure 资源，请在云资源管理器工具栏上选择“刷新”按钮。
+与 Microsoft Azure 门户预览一样，云资源管理器基于 Azure Resource Manager 堆栈。它可以识别 Azure 资源组等资源，以及 Logic Apps 和 API Apps 等 Azure 服务。若要查看已添加或更改的 Azure 资源，请在云资源管理器工具栏上选择“刷新”按钮。
 
 在安装 Visual Studio Tools for Azure SDK 2.7 的过程中会安装云资源管理器。
 
@@ -62,7 +62,7 @@
 
 ![资源视图下拉列表](./media/vs-azure-tools-resources-managing-with-cloud-explorer/IC819516.png)
 
-- “资源类型”视图（也是 Azure 门户上使用的通用视图）按类型分类来显示 Azure 资源，例如 Web 应用、存储帐户和虚拟机。这类似于 Azure 资源在服务器资源管理器中的显示方式。
+- “资源类型”视图（也是 Azure 门户预览上使用的通用视图）按类型分类来显示 Azure 资源，例如 Web 应用、存储帐户和虚拟机。这类似于 Azure 资源在服务器资源管理器中的显示方式。
 
 - “资源组”视图按关联的 Azure 资源组将 Azure 资源分类。
 
@@ -79,7 +79,7 @@
 
 - “属性”选项卡显示资源的属性，例如其类型、区域设置和关联的资源组。
 
-每个资源都有“在门户中打开”操作。当你选择此操作时，云资源管理器将在 Azure 门户中显示所选的资源。在导航到深度嵌套的资源时，此功能特别方便。
+每个资源都有“在门户中打开”操作。当你选择此操作时，云资源管理器将在 Azure 门户预览中显示所选的资源。在导航到深度嵌套的资源时，此功能特别方便。
 
 根据 Azure 资源，还可能会显示其他操作和属性值。例如，除了“在门户中打开”，Web Apps 和 Logic Apps 还提供“在浏览器中打开”和“附加调试器”操作。当你选择存储帐户 Blob、队列或表时，将显示用于打开编辑器的操作。Azure 应用具有“URL”和“状态”属性，而存储资源具有键和连接字符串属性。
 

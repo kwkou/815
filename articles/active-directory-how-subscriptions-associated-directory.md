@@ -85,7 +85,7 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 
 ![][3]
 
-你有两个同名的用户帐户，一个在 Azure AD 中，而另一个在 Microsoft 使用者帐户系统中。应该选取与要使用的 Azure 订阅关联的帐户。如果出现错误，指明此用户不存在订阅，则可能是你选择了错误的选项。请注销后重试。有关可能会阻止登录的错误的详细信息，请参阅[在管理门户中排查“我们找不到任何与你的帐户关联的订阅”错误](https://social.msdn.microsoft.com/Forums/zh-cn/f952f398-f700-41a1-8729-be49599dd7e2/troubleshooting-we-were-unable-to-find-any-subscriptions-associated-with-your-account-errors-in?forum=windowsazuremanagement)。
+你有两个同名的用户帐户，一个在 Azure AD 中，而另一个在 Microsoft 使用者帐户系统中。应该选取与要使用的 Azure 订阅关联的帐户。如果出现错误，指明此用户不存在订阅，则可能是你选择了错误的选项。请注销后重试。有关可能会阻止登录的错误的详细信息，请参阅[在经典门户中排查“我们找不到任何与你的帐户关联的订阅”错误](https://social.msdn.microsoft.com/Forums/zh-cn/f952f398-f700-41a1-8729-be49599dd7e2/troubleshooting-we-were-unable-to-find-any-subscriptions-associated-with-your-account-errors-in?forum=windowsazuremanagement)。
 
 ## <a name="manage-the-directory-for-your-office-365-subscription-in-azure"></a>在 Azure 中管理 Office 365 订阅的目录
 

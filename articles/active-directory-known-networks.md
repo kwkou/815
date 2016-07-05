@@ -30,7 +30,7 @@
 
 ###若要添加组织的公共 IP 地址范围，请执行以下步骤： 
 
-1.	登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1.	登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 2.	在左窗格中，单击“Active Directory”。<br><br>![云应用程序发现的工作原理](./media/active-directory-known-networks/known-netwoks-01.png)
 

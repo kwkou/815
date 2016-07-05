@@ -72,7 +72,7 @@
 
 - **DefaultEndpointsProtocol** - 你可以选择 HTTP 或 HTTPS。但是，强烈建议使用 HTTPS。
 - **帐户名** - 存储帐户的名称
-- **帐户密钥** - 如果你使用 [Azure 管理门户](https://manage.windowsazure.cn)，请在该门户中导航到你的存储帐户，然后单击“管理访问密钥”。 
+- **帐户密钥** - 如果你使用 [Azure 经典门户](https://manage.windowsazure.cn)，请在该门户中导航到你的存储帐户，然后单击“管理访问密钥”。 
 
 下面是该密钥在你的应用程序中的显示方式：
 
@@ -135,7 +135,7 @@ Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下�
         }];
     }
 
-可通过查看 [Azure 管理门户](http://manage.windowsazure.cn)或任意[存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)并验证 newcontainer 存在于存储帐户的容器列表中来确认此操作有效。
+可通过查看 [Azure 经典门户](http://manage.windowsazure.cn)或任意[存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)并验证 newcontainer 存在于存储帐户的容器列表中来确认此操作有效。
 
 ## 设置容器权限
 默认情况下，容器的权限配置为**私有**访问权限。但是，容器提供了几个不同的容器访问权限选项：
@@ -200,7 +200,7 @@ Azure 存储空间中的每个 Blob 都必须驻留在一个容器中。以下�
          }];
      }
 
-你可以通过查看[Azure 管理门户](http://manage.windowsazure.cn)或任何[存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)并验证容器 *containerpublic* 是否包含该 blob *sampleblob* 来确认此操作是否正常工作。在此示例中，我们使用了公共容器，因此你还可以通过转到 blob URI 来验证此操作是否正常工作：
+你可以通过查看[Azure 经典门户](http://manage.windowsazure.cn)或任何[存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)并验证容器 *containerpublic* 是否包含该 blob *sampleblob* 来确认此操作是否正常工作。在此示例中，我们使用了公共容器，因此你还可以通过转到 blob URI 来验证此操作是否正常工作：
 
     https://nameofyourstorageaccount.blob.core.chinacloudapi.cn/containerpublic/sampleblob
 

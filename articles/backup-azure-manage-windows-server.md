@@ -14,11 +14,11 @@
 
 
 # 管理 Azure 备份保管库和服务器
-本文概述了可通过管理门户和 Microsoft Azure 备份代理完成的备份管理任务。
+本文概述了可通过经典门户和 Microsoft Azure 备份代理完成的备份管理任务。
 
 >[AZURE.NOTE] 本文提供经典部署模型中的操作过程。
-## 管理门户任务
-1. 登录到[管理门户](https://manage.windowsazure.cn)。
+## 经典门户任务
+1. 登录到[经典门户](https://manage.windowsazure.cn)。
 2. 单击“恢复服务”，然后单击备份保管库的名称以查看“快速启动”页。
 
     ![管理 Azure 备份选项卡](./media/backup-azure-manage-windows-server/rs-left-nav.png)

@@ -84,7 +84,7 @@
 |resourceName |是|	所缩放的目标资源的名称|
 |resourceType |是|	三个支持的值：“microsoft.classiccompute/domainnames/slots/roles”— 云服务角色、“microsoft.compute/virtualmachinescalesets”— 虚拟机缩放集和“Microsoft.Web/serverfarms”— Web 应用|
 |resourceId |是|所缩放的目标资源的 ARM ID|
-|portalLink |是 |指向目标资源摘要页的 Azure 门户链接|
+|portalLink |是 |指向目标资源摘要页的 Azure 门户预览链接|
 |oldCapacity|	是 |自动缩放执行缩放操作时的当前（旧）实例计数|
 |newCapacity|	是 |自动缩放将资源缩放到的新实例计数|
 |Properties|	否|	可选。<Key  Value> 对集合（例如，字典 <String  String>）。properties 字段是可选的。在自定义用户界面或基于逻辑应用的工作流中，可以输入可使用负载传递的键和值。将自定义属性传递回传出 webhook 调用的替代方法是使用 webhook URI 本身（作为查询参数）|

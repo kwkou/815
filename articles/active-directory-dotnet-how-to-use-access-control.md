@@ -29,7 +29,7 @@ ACS 具有以下可用功能：
 -   支持常用 Web 标识提供程序 (IP)，包括 Microsoft 帐户（以前称为 Windows Live ID）、Google、Yahoo 和 Facebook。
 -   支持 Active Directory 联合身份验证服务 (AD FS) 2.0。
 -   一项基于开放数据协议 (OData) 的管理服务，该服务提供对 ACS 设置的编程访问。
--   一个允许对 ACS 设置进行管理访问的管理门户。
+-   一个允许对 ACS 设置进行管理访问的经典门户。
 
 有关 ACS 的详细信息，请参阅[访问控制服务 2.0][]。
 
@@ -79,7 +79,7 @@ ACS 在基于声明的标识主体的基础上构建，它是一种创建针对�
 
 要在 Azure 中使用 Active Directory Access Control，请创建 Access Control 命名空间。该命名空间提供了一个唯一范围，用于在应用程序中对 ACS 资源进行寻址。
 
-1.  登录到 [Azure 管理门户][] (https://manage.WindowsAzure.cn))。
+1.  登录到 [Azure 经典门户][] (https://manage.WindowsAzure.cn))。
     
 2.  单击“Active Directory”。
 
@@ -157,11 +157,11 @@ Azure 将创建并激活该命名空间。
 
     ![][444]
 
-	Visual Studio 请求有关 Access Control 命名空间的信息。输入您之前创建的命名空间名称（在上述图像中对此进行测试，但您将具有其他命名空间）。切换回 Azure 管理门户来获取对称密钥。
+	Visual Studio 请求有关 Access Control 命名空间的信息。输入您之前创建的命名空间名称（在上述图像中对此进行测试，但您将具有其他命名空间）。切换回 Azure 经典门户来获取对称密钥。
 
 	![][17]
 
-4.  在 Azure 管理门户中，单击访问控制命名空间，然后单击“管理”。
+4.  在 Azure 经典门户中，单击访问控制命名空间，然后单击“管理”。
 
 	![][8]
 
@@ -177,7 +177,7 @@ Azure 将创建并激活该命名空间。
 
 	![][20]
 
-	Visual Studio 使用有关命名空间的信息来连接到 ACS 管理门户，并获取命名空间的设置，包括标识提供程序、领域和返回 URL。
+	Visual Studio 使用有关命名空间的信息来连接到 ACS 经典门户，并获取命名空间的设置，包括标识提供程序、领域和返回 URL。
 
 8.	选择“Windows Live ID”（Microsoft 帐户）并单击“确定”。
 
@@ -276,21 +276,21 @@ Azure 将创建并激活该命名空间。
 
 有关在应用程序中使用声明的详细信息，请参阅 [Windows Identity Foundation 库](http://msdn.microsoft.com/zh-cn/library/hh377151.aspx)。
 
-## 在 ACS 管理门户中查看应用程序
+## 在 ACS 经典门户中查看应用程序
 
 Visual Studio 中的身份验证和访问工具会自动将您的应用程序与 ACS 集成。
 
 在选择“使用 Azure Access Control”选项并运行应用程序时，身份验证和访问工具会将应用程序添加为信赖方，将应用程序配置为使用选定的标识提供程序，并生成和选择应用程序的默认声明转换规则。
 
-您可以在 ACS 管理门户中检查和更改这些配置设置。使用下列步骤可查看门户中的更改。
+您可以在 ACS 经典门户中检查和更改这些配置设置。使用下列步骤可查看门户中的更改。
 
-1.	登录到 [Microsoft Azure 管理门户](http://manage.windowsazure.cn)。
+1.	登录到 [Microsoft Azure 经典门户](http://manage.windowsazure.cn)。
 
 2.	单击“Active Directory”。
 
 	![][8]
 
-3.	选择一个访问控制命名空间，然后单击“管理”。此操作将打开 ACS 管理门户。
+3.	选择一个访问控制命名空间，然后单击“管理”。此操作将打开 ACS 经典门户。
 
 	![][9]
 
@@ -312,11 +312,11 @@ Visual Studio 中的身份验证和访问工具会自动将您的应用程序与
 
 	![][12]
 
-在下一节中，我们将使用 ACS 管理门户的功能来对 Web 应用程序进行更改 -- 只是为了说明此操作是多么容易完成。
+在下一节中，我们将使用 ACS 经典门户的功能来对 Web 应用程序进行更改 -- 只是为了说明此操作是多么容易完成。
 
 ## 添加标识提供程序
 
-下面我们使用 ACS 管理门户来更改 MvcACS 应用程序的身份验证。在此示例中，我们将添加 Google 作为 MvcACS 的标识提供程序。
+下面我们使用 ACS 经典门户来更改 MvcACS 应用程序的身份验证。在此示例中，我们将添加 Google 作为 MvcACS 的标识提供程序。
 
 1.	单击“标识提供者”（位于导航菜单中），然后单击“添加”。
 
@@ -368,7 +368,7 @@ Visual Studio 中的身份验证和访问工具会自动将您的应用程序与
 
   [访问控制服务 2.0]: http://msdn.microsoft.com/zh-cn/library/hh147631.aspx
   [标识和访问工具]: http://go.microsoft.com/fwlink/?LinkID=245849
-  [Azure 管理门户]: http://manage.windowsazure.cn
+  [Azure 经典门户]: http://manage.windowsazure.cn
 
   [0]: ./media/active-directory-dotnet-how-to-use-access-control/acs-01.png
   [1]: ./media/active-directory-dotnet-how-to-use-access-control/acsCreateNamespace.png

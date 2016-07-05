@@ -14,7 +14,7 @@
 
 # 使用 Azure 资源管理器模板部署资源
 
-本主题介绍如何使用 Azure 资源管理器模板向 Azure 部署资源。其中将说明如何使用 Azure PowerShell、Azure CLI、REST API 或 Azure 门户部署资源。
+本主题介绍如何使用 Azure 资源管理器模板向 Azure 部署资源。其中将说明如何使用 Azure PowerShell、Azure CLI、REST API 或 Azure 门户预览部署资源。
 
 在使用模板部署应用程序定义时，可以提供参数值来自定义如何创建资源。以内联方式或者在参数文件中指定这些参数的值。
 

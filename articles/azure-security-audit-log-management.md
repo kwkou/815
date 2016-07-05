@@ -551,12 +551,12 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
 ## Azure Active Directory 报告
 Azure Active Directory (Azure AD) 包括一组安全、使用情况和审核日志报告，让您清楚地了解 Azure AD 租户的完整性和安全性。例如，Azure AD 能够自动分析用户活动和显示异常访问，然后通过客户可见的报告提供这一功能。
 
-通过“Active Directory”>“目录”下的“[Azure 管理门户](https://manage.windowsazure.cn/)”提供这些报告。其中一些报告是免费的，而其他报告作为 Azure AD Premium 版本的一部分功能提供。有关 Azure AD 报告的详细信息，请参阅[查看访问和使用情况报告](http://msdn.microsoft.com/zh-cn/library/azure/dn283934.aspx)。
+通过“Active Directory”>“目录”下的“[Azure 经典门户](https://manage.windowsazure.cn/)”提供这些报告。其中一些报告是免费的，而其他报告作为 Azure AD Premium 版本的一部分功能提供。有关 Azure AD 报告的详细信息，请参阅[查看访问和使用情况报告](http://msdn.microsoft.com/zh-cn/library/azure/dn283934.aspx)。
 
 ## Azure 操作日志
-与您的 Azure 订阅资源相关的操作日志还可通过管理门户中的“操作日志”功能提供。
+与您的 Azure 订阅资源相关的操作日志还可通过经典门户中的“操作日志”功能提供。
 
-若要查看“操作日志”，请打开“[Azure 管理门户](https://manage.windowsazure.cn/)”，依次单击“管理服务”和“操作日志”。
+若要查看“操作日志”，请打开“[Azure 经典门户](https://manage.windowsazure.cn/)”，依次单击“管理服务”和“操作日志”。
 
 ## <a name="diagnostics"></a>支持 Azure 诊断的数据源
 

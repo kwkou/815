@@ -34,13 +34,13 @@
 
 你可以通过以下方式来设置容器权限：
 
-- 通过 [Azure 管理门户](https://manage.windowsazure.cn/)。
+- 通过 [Azure 经典门户](https://manage.windowsazure.cn/)。
 - 通过使用存储客户端库或 REST API 以编程方式进行。
 - 通过使用 PowerShell 进行。若要了解如何通过 Azure PowerShell 来设置容器权限，请参阅[对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full#how-to-manage-azure-blobs)。
 
-### 通过 Azure 门户设置容器权限
+### 通过 Azure 经典门户设置容器权限
 
-若要通过 Azure 门户设置容器权限，请按以下步骤操作：
+若要通过 Azure 经典门户设置容器权限，请按以下步骤操作：
 
 1. 导航到存储帐户的仪表板。
 2. 从列表中选择容器名称。请注意，你必须在“名称”列的右侧单击来选择容器名称。单击该名称即可向下钻取到相应容器以显示其 blob。

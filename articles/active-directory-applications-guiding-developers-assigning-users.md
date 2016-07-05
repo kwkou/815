@@ -16,7 +16,7 @@
 在将用户和组分配到应用程序之前，你必须要求用户分配。若要了解如何要求用户分配，请参阅 [Requiring User Assignment](/documentation/articles/active-directory-applications-guiding-developers-requiring-user-assignment)（要求用户分配）一文。
 
 ## 将用户分配到应用程序
-1. 使用管理员帐户登录到 Azure 门户。
+1. 使用管理员帐户登录到 Azure 门户预览。
 2. 在主菜单中单击“所有项”。
 3. 选择要用于应用程序的目录。
 4. 单击“应用程序”选项卡。

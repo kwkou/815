@@ -18,11 +18,11 @@
 # 如何创建和部署云服务
 
 > [AZURE.SELECTOR]
-- [Azure 管理门户](/documentation/articles/cloud-services-how-to-create-deploy)
+- [Azure 经典门户](/documentation/articles/cloud-services-how-to-create-deploy)
 
-Azure 管理门户为你提供两种创建和部署云服务的方法：“快速创建”和“自定义创建”。
+Azure 经典门户为你提供两种创建和部署云服务的方法：“快速创建”和“自定义创建”。
 
-本主题介绍如何使用“快速创建”方法创建新的云服务，然后使用“上载”在 Azure 中上载和部署云服务包。使用此方法时，Azure 管理门户在你进行操作时将提供方便的链接供你完成所有要求。如果你在创建云服务后已准备好对其进行部署，则可以使用“自定义创建”同时执行这两项操作。
+本主题介绍如何使用“快速创建”方法创建新的云服务，然后使用“上载”在 Azure 中上载和部署云服务包。使用此方法时，Azure 经典门户在你进行操作时将提供方便的链接供你完成所有要求。如果你在创建云服务后已准备好对其进行部署，则可以使用“自定义创建”同时执行这两项操作。
 
 > [AZURE.NOTE] 如果你计划从 Visual Studio Team Services (VSTS) 发布云服务，请使用“快速创建”，然后从“快速启动”或仪表板设置 VSTS 发布。有关详细信息，请参阅[使用 Visual Studio Team Services 向 Azure 持续传送项目][TFSTutorialForCloudService]，或查看“快速启动”页的帮助。
 
@@ -59,12 +59,12 @@ Azure 管理门户为你提供两种创建和部署云服务的方法：“快�
 
 - 如果任何角色实例需要证书，请创建这些证书。云服务需要带有私钥的 .pfx 文件。你可以在创建和部署云服务时[将这些证书上载到 Azure](/documentation/articles/cloud-services-configure-ssl-certificate/#step-3-upload-a-certificate)。
 
-- 如果你计划将云服务部署到关联组，请创建关联组。可以使用关联组将你的云服务和其他 Azure 服务部署到某个区域中的同一位置。你可以在 Azure 管理门户的“网络”区域中的“地缘组”页上创建地缘组。
+- 如果你计划将云服务部署到关联组，请创建关联组。可以使用关联组将你的云服务和其他 Azure 服务部署到某个区域中的同一位置。你可以在 Azure 经典门户的“网络”区域中的“地缘组”页上创建地缘组。
 
 
 ## 如何：使用“快速创建”创建云服务
 
-1. 在 [Azure 管理门户](http://manage.windowsazure.cn)中，单击“新建”>“计算”>“云服务”>“快速创建”。
+1. 在 [Azure 经典门户](http://manage.windowsazure.cn)中，单击“新建”>“计算”>“云服务”>“快速创建”。
 
 	![云服务\_快速创建](./media/cloud-services-how-to-create-deploy/CloudServices_QuickCreate.png)
 
@@ -85,7 +85,7 @@ Azure 管理门户为你提供两种创建和部署云服务的方法：“快�
 
 ## 如何：为云服务上载证书
 
-1. 在 [Azure 管理门户](http://manage.windowsazure.cn)中单击“云服务”，单击云服务的名称，然后单击“证书”。
+1. 在 [Azure 经典门户](http://manage.windowsazure.cn)中单击“云服务”，单击云服务的名称，然后单击“证书”。
 
 	![云服务\_快速创建](./media/cloud-services-how-to-create-deploy/CloudServices_EmptyDashboard.png)
 
@@ -106,7 +106,7 @@ Azure 管理门户为你提供两种创建和部署云服务的方法：“快�
 
 ## 如何：部署云服务
 
-1. 在 [Azure 管理门户](http://manage.windowsazure.cn)中单击“云服务”，单击云服务的名称，然后单击“仪表板”。
+1. 在 [Azure 经典门户](http://manage.windowsazure.cn)中单击“云服务”，单击云服务的名称，然后单击“仪表板”。
 
 2. 单击“上载新的生产部署”或“上载”。
 

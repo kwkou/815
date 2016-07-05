@@ -27,7 +27,7 @@
 具体可参考 [《Azure 企业门户管理手册》](/documentation/articles/azure-ea-portal-user-manual)。
 
 ###<a name="section_4_2"></a> 4.2 选择订阅
-我们登陆 Azure [管理门户](https://manage.windowsazure.cn)，输入账户和密码。
+我们登陆 Azure [经典门户](https://manage.windowsazure.cn)，输入账户和密码。
 
 点击右上角的订阅按钮，如下图:
 
@@ -42,7 +42,7 @@ Contoso 公司已经采购了 Azure China 服务，并且开发部门使用 Visu
 2.	Visual Studio 2013
 
 ###<a name="section_4_4"></a> 4.4 创建一个空的 Azure Web 应用
-1.	我们登录 Azure [管理门户](https://manage.windowsazure.cn)
+1.	我们登录 Azure [经典门户](https://manage.windowsazure.cn)
 2.	输入相应的用户名和密码
 3.	点击 Azure 管理界面左下角的新建图标，如下图：
 
@@ -74,7 +74,7 @@ Contoso 公司已经采购了 Azure China 服务，并且开发部门使用 Visu
 	![web_app_browse](./media/azure-web-apps-user-manual-part2/web_app_browse.png)
 
 ###<a name="section_4_5"></a> 4.5 下载发布配置文件
-1.	我们回到 Azure [管理门户](https://manage.windowsazure.cn)
+1.	我们回到 Azure [经典门户](https://manage.windowsazure.cn)
 2.	点击之前创建的 Azure Web 应用名称，如下图红色部分：
 
 	![web_app3](./media/azure-web-apps-user-manual-part2/web_app3.png)
@@ -141,7 +141,7 @@ Contoso 公司已经采购了 Azure China 服务，并且开发部门使用 Visu
 
 	![visual_studio13](./media/azure-web-apps-user-manual-part2/visual_studio13.png)
 
-2.	介绍一下通过 Azure [管理门户](https://manage.windowsazure.cn)，来发布 Azure Web 应用。
+2.	介绍一下通过 Azure [经典门户](https://manage.windowsazure.cn)，来发布 Azure Web 应用。
 
 	我们点击创建成功的 Azure Web 应用，如下图红色区域：
 
@@ -200,7 +200,7 @@ Contoso 公司已经采购了 Azure China 服务，并且开发部门使用 Visu
 </tbody>
 </table>
 
-1.	我们在 Azure [管理门户](https://manage.windowsazure.cn)，点击缩放:
+1.	我们在 Azure [经典门户](https://manage.windowsazure.cn)，点击缩放:
 
 	![scale2](./media/azure-web-apps-user-manual-part2/scale2.png)
 

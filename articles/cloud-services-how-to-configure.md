@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何配置云服务（管理门户）| Azure" 
+	pageTitle="如何配置云服务（经典门户）| Azure" 
 	description="了解如何在 Azure 中配置云服务。了解如何更新云服务配置以及配置对角色实例的远程访问。" 
 	services="cloud-services" 
 	documentationCenter="" 
@@ -18,17 +18,17 @@
 # 如何配置云服务
 
 > [AZURE.SELECTOR]
-- [Azure管理门户](/documentation/articles/cloud-services-how-to-configure)
+- [Azure经典门户](/documentation/articles/cloud-services-how-to-configure)
 
-你可以在 Azure 管理门户中配置最常使用的云服务设置。或者，如果你希望直接更新配置文件，则可以下载要更新的服务配置文件，然后上载更新文件并使用配置更改更新云服务。无论使用哪种方法，配置更新都将应用于所有角色实例。
+你可以在 Azure 经典门户中配置最常使用的云服务设置。或者，如果你希望直接更新配置文件，则可以下载要更新的服务配置文件，然后上载更新文件并使用配置更改更新云服务。无论使用哪种方法，配置更新都将应用于所有角色实例。
 
-Azure 管理门户还允许你[为 Azure 云服务中的角色启用远程桌面连接](/documentation/articles/cloud-services-role-enable-remote-desktop)
+Azure 经典门户还允许你[为 Azure 云服务中的角色启用远程桌面连接](/documentation/articles/cloud-services-role-enable-remote-desktop)
 
 如果每个角色至少具有两个角色实例，那么 Azure 在配置更新期间只能确保 99.95% 的服务可用性。这使得一台虚拟机可以在另一台虚拟机正更新时处理客户端请求。有关详细信息，请参阅[服务级别协议](/support/legal/sla)。
 
 ## 更改云服务
 
-1. 在 [Azure 管理门户](http://manage.windowsazure.cn)中依次单击“云服务”、云服务的名称、“配置”。
+1. 在 [Azure 经典门户](http://manage.windowsazure.cn)中依次单击“云服务”、云服务的名称、“配置”。
 
     ![配置页](./media/cloud-services-how-to-configure/CloudServices_ConfigurePage1.png)
     

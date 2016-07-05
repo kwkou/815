@@ -116,9 +116,9 @@ New-AzureRmResourceGroup -Name MyIoTRG1 -Location "China East"
 
 4. 输出将显示你创建的 IoT 中心的密钥。
 
-5. 若要验证应用程序中是否添加了新 IoT 中心，你可以访问[门户][lnk-azure-portal]并查看资源列表，或使用 **Get-AzureRmResource** PowerShell cmdlet。
+5. 若要验证应用程序中是否添加了新 IoT 中心，你可以访问[门户预览][lnk-azure-portal]并查看资源列表，或使用 **Get-AzureRmResource** PowerShell cmdlet。
 
-> [AZURE.NOTE] 本示例应用程序将添加用于对你计费的 S1 标准 IoT 中心。可以通过[门户][lnk-azure-portal]删除该 IoT 中心，或者在完成后使用 **Remove-AzureRmResource** PowerShell cmdlet。
+> [AZURE.NOTE] 本示例应用程序将添加用于对你计费的 S1 标准 IoT 中心。可以通过[门户预览][lnk-azure-portal]删除该 IoT 中心，或者在完成后使用 **Remove-AzureRmResource** PowerShell cmdlet。
 
 ## 后续步骤
 

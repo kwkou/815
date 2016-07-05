@@ -24,7 +24,7 @@
 
 有两种方法可用于将你的自定义域指向你的存储帐户的 Blob 终结点。最简单方法是创建一个 CNAME 记录，将你的自定义域和子域映射到 Blob 终结点。CNAME 记录是一种 DNS 功能，用于将源域映射到目标域。在此情况下，源域是你的自定义域和子域 -- 请注意，始终需要子域。目标域是你的 Blob 服务终结点。
 
-但是，将你的自定义域映射到 Blob 终结点的过程会导致域在你在 [Azure 管理门户](https://manage.windowsazure.cn)中注册域时出现短暂的停机时间。如果你的自定义域目前所支持的应用程序的服务级别协议 (SLA) 要求不能有停机时间，则可以使用 Azure **asverify** 子域提供中间注册步骤，以便用户在 DNS 映射进行时能够访问你的域。
+但是，将你的自定义域映射到 Blob 终结点的过程会导致域在你在 [Azure 经典门户](https://manage.windowsazure.cn)中注册域时出现短暂的停机时间。如果你的自定义域目前所支持的应用程序的服务级别协议 (SLA) 要求不能有停机时间，则可以使用 Azure **asverify** 子域提供中间注册步骤，以便用户在 DNS 映射进行时能够访问你的域。
 
 下表显示了用于访问名为 **mystorageaccount** 的存储帐户中的 Blob 数据的示例 URL。为存储帐户注册的自定义域是 **www.contoso.com**：
 
@@ -44,7 +44,7 @@ Blob|**默认 URL：** http://mystorageaccount.blob.core.chinacloudapi.cn/mycont
 
 每个注册机构指定 CNAME 记录的方法类似但略有不同，但概念是相同的。请注意，许多基本域注册程序包不提供 DNS 配置，因此，您可能需要首先升级您的域注册程序包，然后才能创建 CNAME 记录。
 
-1.  在 [Azure 管理门户](https://manage.windowsazure.cn)中，导航到“存储”选项卡。
+1.  在 [Azure 经典门户](https://manage.windowsazure.cn)中，导航到“存储”选项卡。
 
 2.  在“存储”选项卡中，单击要为其映射自定义域的存储帐户的名称。
 
@@ -70,7 +70,7 @@ Blob|**默认 URL：** http://mystorageaccount.blob.core.chinacloudapi.cn/mycont
 
 该 asverify 子域是 Azure 能够识别的一个特殊子域。通过将 **asverify** 追加到你自己的子域，可以使 Azure 能够识别你的自定义域且不需要修改针对该域的 DNS 记录。一旦您修改该域的 DNS 记录，它将映射到 Blob 终结点且没有停机时间。
 
-1.  在 [Azure 管理门户](https://manage.windowsazure.cn)中，导航到“存储”选项卡。
+1.  在 [Azure 经典门户](https://manage.windowsazure.cn)中，导航到“存储”选项卡。
 
 2.  在“存储”选项卡中，单击要为其映射自定义域的存储帐户的名称。
 

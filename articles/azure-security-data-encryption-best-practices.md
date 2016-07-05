@@ -127,7 +127,7 @@ Azure 磁盘加密使用 [Azure 密钥保管库](https://azure.microsoft.com/ser
  
 可以通过专用高速 WAN 链接（例如 [ExpressRoute](https://azure.microsoft.com/services/expressroute/)）移动较大的数据集。如果选择使用 ExpressRoute，则还可以使用 [SSL/TLS](https://support.microsoft.com/kb/257591) 或其他协议，在应用程序级别加密数据，以提供额外的保护。
  
-如果通过 Azure 门户与 Azure 存储空间交互，则所有事务都将通过 HTTPS 发生。也可以使用基于 HTTPS 的[存储 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) 来与 [Azure 存储空间](https://azure.microsoft.com/services/storage/)和 [Azure SQL 数据库](https://azure.microsoft.com/services/sql-database/)交互。
+如果通过 Azure 门户预览与 Azure 存储空间交互，则所有事务都将通过 HTTPS 发生。也可以使用基于 HTTPS 的[存储 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) 来与 [Azure 存储空间](https://azure.microsoft.com/services/storage/)和 [Azure SQL 数据库](https://azure.microsoft.com/services/sql-database/)交互。
 
 无法保护传输中数据的组织比较容易遭受[中间人攻击](https://technet.microsoft.com/zh-cn/library/gg195821.aspx)、[窃听](https://technet.microsoft.com/zh-cn/library/gg195641.aspx)和会话劫持。这些攻击可能是获取机密数据访问权限的第一步。
 

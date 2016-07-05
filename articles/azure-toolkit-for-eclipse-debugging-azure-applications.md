@@ -32,7 +32,7 @@
 1. 重新生成项目：在 Eclipse 菜单中，单击“项目”，然后单击“全部生成”。
 1. 将应用程序部署到 Azure 中的过渡环境。
     >[AZURE.IMPORTANT] 如前所述，强烈建议你在大多数情况下都通过计算模拟器进行调试，仅当需要进一步调试时才在过渡环境中调试。不建议在生产环境中进行调试。
-1. 准备好部署到 Azure 后，请从 [Azure 管理门户][]获取部署的 DNS 名称。过渡部署的 DNS 名称格式为 http://*&lt;guid&gt;*.cloudapp.net，其中，*&lt;guid&gt;* 是 Azure 分配的 GUID 值。
+1. 准备好部署到 Azure 后，请从 [Azure 经典门户][]获取部署的 DNS 名称。过渡部署的 DNS 名称格式为 http://*&lt;guid&gt;*.cloudapp.net，其中，*&lt;guid&gt;* 是 Azure 分配的 GUID 值。
 1. 在 Eclipse 的项目资源管理器中，右键单击“WorkerRole1”，单击“Azure”，然后单击“调试”。
 1. 在“WorkerRole1 调试属性”对话框中：
     1. 选中“为此角色启用远程调试”。
@@ -121,7 +121,7 @@
 <!-- URL List -->
 
 [Azure Java 开发人员中心]: /develop/java/
-[Azure 管理门户]: http://manage.windowsazure.cn
+[Azure 经典门户]: http://manage.windowsazure.cn
 [适用于 Eclipse 的 Azure 工具包]: /documentation/articles/azure-toolkit-for-eclipse/
 [在 Eclipse 中为 Azure 创建 Hello World 应用程序]: /documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/
 [安装 Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/

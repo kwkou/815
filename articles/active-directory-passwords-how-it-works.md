@@ -15,14 +15,14 @@
 # 密码管理的工作原理
 Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件。请单击每个链接以了解有关该组件的详细信息。
 
-- [**密码管理配置门户**](#password-management-configuration-portal) – 管理员可以通过导航到 [Azure 管理门户](https://manage.windowsazure.cn)中其目录的“配置”选项卡来控制如何在其租户中管理密码的不同方面。
+- [**密码管理配置门户**](#password-management-configuration-portal) – 管理员可以通过导航到 [Azure 经典门户](https://manage.windowsazure.cn)中其目录的“配置”选项卡来控制如何在其租户中管理密码的不同方面。
 - [**用户注册门户**](#user-registration-portal) – 用户可以通过此网络门户自行注册以进行密码重置。
 - [**用户密码重置门户**](#user-password-reset-portal) – 用户可以使用一系列符合管理员控制的密码重置策略的质询来重置其自己的密码
 - [**用户密码更改门户**](#user-password-change-portal) – 用户可以通过使用此网络门户输入旧密码并选择一个新密码来随时更改其自己的密码
 - [**Azure AD Connect 的密码写回组件**](#password-writeback-component-of-azure-ad-connect) - 管理员可以选择在安装 Azure AD Connect 时启用“密码写回”功能，以便从云中管理联合或密码同步用户的密码。
 
 ## <a name="password-management-configuration-portal"></a>密码管理配置门户
-你可以使用 [Azure 管理门户](https://manage.windowsazure.cn)为特定目录配置密码管理策略，此操作可通过导航到目录的“配置”选项卡中的“用户密码重置策略”部分来完成。从此配置页面，可以控制如何在你的组织中管理密码的许多方面，其中包括：
+你可以使用 [Azure 经典门户](https://manage.windowsazure.cn)为特定目录配置密码管理策略，此操作可通过导航到目录的“配置”选项卡中的“用户密码重置策略”部分来完成。从此配置页面，可以控制如何在你的组织中管理密码的许多方面，其中包括：
 
 - 针对目录中的所有用户启用和禁用密码重置
 - 设置用户为重置其密码必须通过的质询数量（一个或两个）
@@ -40,9 +40,9 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 - 提供在用户重置密码遇到问题时将向其显示的自定义帮助服务台电子邮件或 URL
 - 启用或禁用密码写回功能（使用 AAD Connect 部署了写回时）
 - 查看密码写回代理的状态（使用 AAD Connect 部署了写回时）
-- 用户自己的密码被重置时向用户发送电子邮件通知（在 [Azure 管理门户](https://manage.windowsazure.cn)的“通知”部分）
-- 其他管理员重置管理员自己的密码时向管理员发送电子邮件通知（在 [Azure 管理门户](https://manage.windowsazure.cn)的“通知”部分）
-- 通过使用租户品牌自定义功能在用户密码重置门户和密码重置电子邮件中标注你所在组织的徽标和名称（在 [Azure 管理门户](https://manage.windowsazure.cn)的“目录属性”部分）
+- 用户自己的密码被重置时向用户发送电子邮件通知（在 [Azure 经典门户](https://manage.windowsazure.cn)的“通知”部分）
+- 其他管理员重置管理员自己的密码时向管理员发送电子邮件通知（在 [Azure 经典门户](https://manage.windowsazure.cn)的“通知”部分）
+- 通过使用租户品牌自定义功能在用户密码重置门户和密码重置电子邮件中标注你所在组织的徽标和名称（在 [Azure 经典门户](https://manage.windowsazure.cn)的“目录属性”部分）
 
 若要详细了解有关在组织中配置密码管理的信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)。
 

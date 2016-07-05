@@ -61,7 +61,7 @@
 
 ### <a name="account"></a>帐户
 
-批处理 ( Batch ) 帐户是批处理 ( Batch ) 服务中唯一标识的实体。所有处理都与一个批处理 ( Batch ) 帐户相关联。当你使用批处理( Batch ) 服务执行操作时，需要同时用到帐户名和帐户密钥。若要创建批处理( Batch ) 帐户，请查看[在 Azure 门户中创建和管理 Azure 批处理 ( Batch )  帐户](/documentation/articles/batch-account-create-portal)。
+批处理 ( Batch ) 帐户是批处理 ( Batch ) 服务中唯一标识的实体。所有处理都与一个批处理 ( Batch ) 帐户相关联。当你使用批处理( Batch ) 服务执行操作时，需要同时用到帐户名和帐户密钥。若要创建批处理( Batch ) 帐户，请查看[在 Azure 经典门户中创建和管理 Azure 批处理 ( Batch )  帐户](/documentation/articles/batch-account-create-portal)。
 
 ### <a name="computenode"></a>计算节点
 

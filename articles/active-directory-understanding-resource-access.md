@@ -1,6 +1,6 @@
 <properties 
         pageTitle="了解 Azure 中的资源访问权限 | Azure" 
-        description="本主题介绍有关使用订阅管理员在整个 Azure 门户中控制资源访问权限的概念。" 
+        description="本主题介绍有关使用订阅管理员在整个 Azure 门户预览中控制资源访问权限的概念。" 
         services="active-directory" 
         documentationCenter="" 
         authors="markusvi" 
@@ -17,7 +17,7 @@
 # 了解 Azure 中的资源访问权限
 
 
-> [AZURE.NOTE] 本主题介绍有关使用订阅管理员在整个 Azure 门户中控制资源访问权限的概念。
+> [AZURE.NOTE] 本主题介绍有关使用订阅管理员在整个 Azure 门户预览中控制资源访问权限的概念。
 
 为了针对改进用户的 Azure 资源访问管理体验奠定基础，Azure 经典门户和服务管理 API 已在 2013 年 10 月与 Azure Active Directory 进行集成。Azure Active Directory 已经提供了出色的功能，例如用户管理、本地目录同步、多重身份验证和应用程序访问控制。自然，这些功能也可用于全面管理 Azure 资源。
 

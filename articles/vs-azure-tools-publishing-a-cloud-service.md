@@ -15,7 +15,7 @@
 
 通过使用 Azure Tools for Microsoft Visual Studio，你可直接从 Visual Studio 发布 Azure 应用程序。Visual Studio 支持以集成方式将云服务发布到暂存或生产环境中。
 
-在发布 Azure 应用程序之前，你必须准备好一个 Azure 订阅。此外还必须设置应用程序使用的云服务和存储帐户。可以在 [Azure 管理门户](http://manage.windowsazure.cn)中完成这些设置。
+在发布 Azure 应用程序之前，你必须准备好一个 Azure 订阅。此外还必须设置应用程序使用的云服务和存储帐户。可以在 [Azure 经典门户](http://manage.windowsazure.cn)中完成这些设置。
 
 >[AZURE.IMPORTANT] 发布时，可以选择云服务的部署环境。你还必须选择用来存储部署的应用程序包的存储帐户。部署后，从存储帐户中删除应用程序包。
 
@@ -31,7 +31,7 @@
 
 发布 Azure 应用程序时，可以执行以下任务之一：
 
-- 创建服务包：可以使用此包和服务配置文件，从 [Azure 管理门户](http://manage.windowsazure.cn)中，将应用程序发布到部署环境。
+- 创建服务包：可以使用此包和服务配置文件，从 [Azure 经典门户](http://manage.windowsazure.cn)中，将应用程序发布到部署环境。
 
 - 从 Visual Studio 中发布 Azure 项目：若要将应用程序直接发布到 Azure，请使用发布向导。有关信息，请参阅 [发布 Azure 应用程序向导](/documentation/articles/vs-azure-tools-publish-azure-application-wizard)。
 
@@ -49,13 +49,13 @@
 
   1. 若要创建该包，请选择“打包”链接。
 
-      文件资源管理器将显示新创建包的文件位置。你可以复制此位置，以便能够从 Azure 管理门户使用它。
+      文件资源管理器将显示新创建包的文件位置。你可以复制此位置，以便能够从 Azure 经典门户使用它。
 
-  1. 若要将此包发布到部署环境，必须在创建云服务时使用此位置作为“包位置”，且必须通过 [Azure 管理门户](http://manage.windowsazure.cn)将此包部署到环境中。
+  1. 若要将此包发布到部署环境，必须在创建云服务时使用此位置作为“包位置”，且必须通过 [Azure 经典门户](http://manage.windowsazure.cn)将此包部署到环境中。
 
 1. （可选）若要取消部署过程，请在活动日志中的行项目的快捷菜单中选择“取消并删除”。这会停止部署过程，并从 Azure 中删除部署环境。
 
-    >[AZURE.NOTE] 若要在已完成部署后删除此部署环境，必须使用 Azure 管理门户。
+    >[AZURE.NOTE] 若要在已完成部署后删除此部署环境，必须使用 Azure 经典门户。
 
 1. （可选）启动角色实例后，Visual Studio 将自动在服务器资源管理器的“云服务”节点中显示部署环境。你可以从此位置查看单个角色实例的状态。请参阅 [使用云资源管理器管理 Azure 资源](/documentation/articles/vs-azure-tools-resources-managing-with-cloud-explorer)。下图显示了仍处于“正在初始化”状态中的角色实例：
 
@@ -115,7 +115,7 @@
 
 1. 默认情况下，Web 部署使用受信任的自签名证书，因此不建议上载敏感数据。如果你需要保护敏感数据的进程，可以添加 SSL 证书用于 Web 部署连接。此证书需是你从证书颁发机构 (CA) 获取的可信证书。
 
-    若要针对每个 Web 角色的每台虚拟机确保 Web 部署安全，必须将你要用于 Web 部署的可信证书上载到 [Azure 管理门户](http://mamage.windowsazure.cn)。这可以确保在发布应用程序时，将证书添加到为 Web 角色创建的虚拟机。
+    若要针对每个 Web 角色的每台虚拟机确保 Web 部署安全，必须将你要用于 Web 部署的可信证书上载到 [Azure 经典门户](http://mamage.windowsazure.cn)。这可以确保在发布应用程序时，将证书添加到为 Web 角色创建的虚拟机。
 
 1. 若要将受信任的 SSL 证书添加到 IIS 以用于远程连接，请遵循以下步骤：
 
@@ -123,7 +123,7 @@
 
       浏览器将提示你下载 .RDP 文件。
 
-  1. 若要添加 SSL 证书，请在 IIS 管理器中打开管理服务。在 IIS 管理器中，通过在“操作”窗格中打开“绑定”链接来启用 SSL。此时将显示“添加站点绑定”对话框。选择“添加”，然后在“类型”下拉列表中选择“HTTPS”。在 **SSL 证书**列表中，选择你已上载到 Azure 管理门户并已由 CA 签名的 SSL 证书。有关详细信息，请参阅 [配置管理服务的连接设置](https://technet.microsoft.com/zh-cn/library/cc770458(WS.10).aspx)。
+  1. 若要添加 SSL 证书，请在 IIS 管理器中打开管理服务。在 IIS 管理器中，通过在“操作”窗格中打开“绑定”链接来启用 SSL。此时将显示“添加站点绑定”对话框。选择“添加”，然后在“类型”下拉列表中选择“HTTPS”。在 **SSL 证书**列表中，选择你已上载到 Azure 经典门户并已由 CA 签名的 SSL 证书。有关详细信息，请参阅 [配置管理服务的连接设置](https://technet.microsoft.com/zh-cn/library/cc770458(WS.10).aspx)。
 
       >[AZURE.NOTE] 如果你添加受信任的 SSL 证书，“发布向导”中不再会显示黄色警告三角形。
 

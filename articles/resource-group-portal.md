@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用 Azure 门户管理 Azure 资源 | Azure" 
-	description="使用 Azure 门户和 Azure 资源管理来部署和管理资源。演示如何标记资源并查看审核日志。" 
+	pageTitle="使用 Azure 门户预览管理 Azure 资源 | Azure" 
+	description="使用 Azure 门户预览和 Azure 资源管理来部署和管理资源。演示如何标记资源并查看审核日志。" 
 	services="azure-resource-manager,azure-portal" 
 	documentationCenter="" 
 	authors="tfitzmac" 
@@ -13,7 +13,7 @@
 	wacn.date="05/09/2016"/>
 
 
-# 使用 Azure 门户部署和管理 Azure 资源
+# 使用 Azure 门户预览部署和管理 Azure 资源
 
 ## 介绍
 

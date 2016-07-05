@@ -1,6 +1,6 @@
 <properties
-	pageTitle="在门户中的自动缩放云服务 | Azure"
-	description="了解如何使用门户在 Azure 中为云服务 Web 角色或辅助角色配置自动缩放规则。"
+	pageTitle="在门户预览中的自动缩放云服务 | Azure"
+	description="了解如何使用门户预览在 Azure 中为云服务 Web 角色或辅助角色配置自动缩放规则。"
 	services="cloud-services"
 	documentationCenter=""
 	authors="Thraka"
@@ -15,7 +15,7 @@
 
 # 如何自动缩放云服务
 
-在 Azure 管理门户的“缩放”页中，你可以手动缩放 Web 角色或辅助角色，或者根据 CPU 负载或消息队列启用自动缩放。
+在 Azure 经典门户的“缩放”页中，你可以手动缩放 Web 角色或辅助角色，或者根据 CPU 负载或消息队列启用自动缩放。
 
 >[AZURE.NOTE] 本文着重于云服务 Web 和辅助角色。如果你直接创建虚拟机，该虚拟机将托管在云服务中。其中有些信息适用于这些类型的虚拟机。缩放虚拟机的可用性集其实只是根据配置的缩放规则将其关闭或打开。有关虚拟机和可用性集的详细信息，请参阅 [Manage the Availability of Virtual Machines（管理虚拟机的可用性）](/documentation/articles/virtual-machines-windows-classic-configure-availability)
 
@@ -42,7 +42,7 @@
 - 特定日期
 - 特定日期范围
 
-可以在 [Azure 管理门户](https://manage.windowsazure.cn)上的“云服务”>“[你的云服务]”>“缩放”>“[生产或过渡]”页中完成此配置。
+可以在 [Azure 经典门户](https://manage.windowsazure.cn)上的“云服务”>“[你的云服务]”>“缩放”>“[生产或过渡]”页中完成此配置。
 
 单击你要更改的每个角色对应的“设置计划时间”按钮。
 
@@ -54,7 +54,7 @@
 
 在“缩放”页上，你可以手动增加或减少云服务中正在运行的实例数。此设置针对已创建的每个计划进行，或者在尚未创建计划时随时进行。
 
-1. 在[Azure 管理门户](https://manage.windowsazure.cn)中单击“云服务”，然后单击云服务名称以打开仪表板。
+1. 在[Azure 经典门户](https://manage.windowsazure.cn)中单击“云服务”，然后单击云服务名称以打开仪表板。
 
     > [AZURE.TIP] 如果未看到你的云服务，可能需要从“生产”更改为“过渡”，或者进行相反的切换。
 
@@ -80,7 +80,7 @@
 
 这会缩放平均 CPU 使用量百分比高于或低于指定的阈值；创建或删除角色实例。
 
-1. 在[Azure 管理门户](https://manage.windowsazure.cn)中单击“云服务”，然后单击云服务名称以打开仪表板。
+1. 在[Azure 经典门户](https://manage.windowsazure.cn)中单击“云服务”，然后单击云服务名称以打开仪表板。
 
     > [AZURE.TIP] 如果未看到你的云服务，可能需要从“生产”更改为“过渡”，或者进行相反的切换。
 
@@ -104,7 +104,7 @@
 
 这会自动缩放队列中的消息数目高于或低于指定的阈值；创建或删除角色实例。
 
-1. 在[Azure 管理门户](https://manage.windowsazure.cn)中单击“云服务”，然后单击云服务名称以打开仪表板。
+1. 在[Azure 经典门户](https://manage.windowsazure.cn)中单击“云服务”，然后单击云服务名称以打开仪表板。
 
     > [AZURE.TIP] 如果未看到你的云服务，可能需要从“生产”更改为“过渡”，或者进行相反的切换。
 
@@ -123,7 +123,7 @@
 
 通常当你缩放角色时，最好同时缩放应用程序正在使用的数据库。如果将数据库链接到云服务，可以单击相应的链接来访问该资源的缩放设置。
 
-1. 在[Azure 管理门户](https://manage.windowsazure.cn)中单击“云服务”，然后单击云服务名称以打开仪表板。
+1. 在[Azure 经典门户](https://manage.windowsazure.cn)中单击“云服务”，然后单击云服务名称以打开仪表板。
 
     > [AZURE.TIP] 如果未看到你的云服务，可能需要从“生产”更改为“过渡”，或者进行相反的切换。
 

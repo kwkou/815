@@ -74,8 +74,8 @@
 
 - [使用 Azure AD 管理对应用的访问](/documentation/articles/active-directory-managing-access-to-apps)
 - [使用 Azure AD 连接器自动化](/documentation/articles/active-directory-saas-app-provisioning)
-- 使用 Azure 门户[将用户分配到应用程序](/documentation/articles/active-directory-applications-guiding-developers-assigning-users)。
-- 使用 Azure 门户[将组分配到应用程序](/documentation/articles/active-directory-applications-guiding-developers-assigning-groups)。
+- 使用 Azure 经典门户[将用户分配到应用程序](/documentation/articles/active-directory-applications-guiding-developers-assigning-users)。
+- 使用 Azure 经典门户[将组分配到应用程序](/documentation/articles/active-directory-applications-guiding-developers-assigning-groups)。
 - [共享帐户](/documentation/articles/active-directory-sharing-accounts)
 
 ## 集成自定义应用程序

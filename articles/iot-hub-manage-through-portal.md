@@ -1,6 +1,6 @@
 <properties
-	 pageTitle="使用 Azure 门户管理 IoT 中心 | Azure"
-	 description="概述如何通过 Azure 门户创建和管理 Azure IoT 中心"
+	 pageTitle="使用 Azure 门户预览管理 IoT 中心 | Azure"
+	 description="概述如何通过 Azure 门户预览创建和管理 Azure IoT 中心"
 	 services="iot-hub"
 	 documentationCenter=""
 	 authors="nasing"
@@ -12,11 +12,11 @@
 	 ms.date="03/14/2016"
 	 wacn.date="07/04/2016"/>
 
-# 通过 Azure 门户管理 IoT 中心
+# 通过 Azure 门户预览管理 IoT 中心
 
 ## 介绍
 
-本文介绍如何通过 Azure 门户开始使用 Azure IoT 中心、如何查找 IoT 中心以及如何创建和管理 IoT 中心。
+本文介绍如何通过 Azure 门户预览开始使用 Azure IoT 中心、如何查找 IoT 中心以及如何创建和管理 IoT 中心。
 
 ## 在哪里可以找到 IoT 中心
 

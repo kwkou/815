@@ -143,7 +143,7 @@ JSON 文件是在 **Configurations** 文件夹中创建的，其中包含的配�
 
 你可以编辑 JSON 配置，以更改运行发布脚本时的行为。`cloudService` 和 `virtualMachine` 节是必需的，但是，如果你不需要 `databases` 节，则可以将它删除。在 Visual Studio 生成的默认配置文件中为空的属性是可选的；在默认配置文件中具有值的属性是必需的。
 
-如果你的网站具有多个部署环境（称为槽），而并非仅在 Azure 中有单个生产站点，则可将槽位名称包括在在 JSON 配置文件的网站名称中。例如，如果你的网站的名称为 **mysite**，该网站的一个槽的名称为 **test**，则 URI 为 mysite-test.chinacloudapp.cn，但在配置文件中使用的正确名称为 mysite(test)。只有当网站和槽已在订阅中存在时，才能这样做。如果它们不存在，请运行脚本而不指定槽位，从而创建网站，然后在 Azure 管理门户中创建槽位，从而使用未修改的网站名称来运行脚本。有关网站的部署槽的详细信息，请参阅 [Set up staging environments for web sites in Azure App Service（为 Azure App Service 中的网站设置过渡环境）](/documentation/articles/web-sites-staged-publishing)。
+如果你的网站具有多个部署环境（称为槽），而并非仅在 Azure 中有单个生产站点，则可将槽位名称包括在在 JSON 配置文件的网站名称中。例如，如果你的网站的名称为 **mysite**，该网站的一个槽的名称为 **test**，则 URI 为 mysite-test.chinacloudapp.cn，但在配置文件中使用的正确名称为 mysite(test)。只有当网站和槽已在订阅中存在时，才能这样做。如果它们不存在，请运行脚本而不指定槽位，从而创建网站，然后在 Azure 经典门户中创建槽位，从而使用未修改的网站名称来运行脚本。有关网站的部署槽的详细信息，请参阅 [Set up staging environments for web sites in Azure App Service（为 Azure App Service 中的网站设置过渡环境）](/documentation/articles/web-sites-staged-publishing)。
 
 ## 如何运行发布脚本
 

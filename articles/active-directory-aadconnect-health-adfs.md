@@ -21,7 +21,7 @@ Azure AD Connect Health 警报部分将提供活动警报列表。每个警报�
 
 选择警报后，将获取到额外信息、可用于解决警报的方法步骤以及其他文档的链接。
 
-![Azure AD Connect Health 门户](./media/active-directory-aadconnect-health/alert2.png)
+![Azure AD Connect Health 门户预览](./media/active-directory-aadconnect-health/alert2.png)
 
 
 
@@ -30,7 +30,7 @@ Azure AD Connect Health 使用情况分析可分析联合服务器的身份验�
 
 >[AZURE.NOTE] 若要将使用情况分析与 AD FS 结合使用，必须确保启用了 AD FS 审核。有关详细信息，请参阅[为 AD FS 启用审核](/documentation/articles/active-directory-aadconnect-health-agent-install#enable-auditing-for-ad-fs)。
 
-![Azure AD Connect Health 门户](./media/active-directory-aadconnect-health/report1.png)
+![Azure AD Connect Health 门户预览](./media/active-directory-aadconnect-health/report1.png)
 
 若要选择其他度量值、指定时间范围或更改分组，只需右键单击使用情况分析图表并选择“编辑图表”。然后就可以指定时间范围、更改或选择度量值以及更改分组。可以查看基于不同"度量值"的身份验证流量分布，并使用以下所述的相关"分组依据"参数对每个度量值进行分组。
 
@@ -54,7 +54,7 @@ Azure AD Connect Health 使用情况分析可分析联合服务器的身份验�
 Azure AD Connect Health 性能监视提供有关度量值的监视信息。选择“监视”框将打开提供度量值详细信息的边栏选项卡。
 
 
-![Azure AD Connect Health 门户](./media/active-directory-aadconnect-health/perf1.png)
+![Azure AD Connect Health 门户预览](./media/active-directory-aadconnect-health/perf1.png)
 
 
 通过选择边栏选项卡顶部的“筛选器”选项，你可以按服务器进行筛选，以查看单个服务器的度量值。若要更改度量值，只需右键单击监视边栏选项卡下的监视图表，并选择“编辑图表”。然后在打开的新边栏选项卡中，你可以从下拉列表中选择其他度量值，并指定查看性能数据的时间范围。
@@ -70,7 +70,7 @@ AD FS 服务器上身份验证请求失败的常见原因之一就是请求所�
 
 Azure AD Connect Health for ADFS 提供一份报告，内容有关因为用户名或密码无效而登录尝试失败的前 50 个用户。处理场中所有 AD FS 服务器所生成的审核事件即可实现此目的
 
-![Azure AD Connect Health 门户](./media/active-directory-aadconnect-health-adfs/report1a.png)
+![Azure AD Connect Health 门户预览](./media/active-directory-aadconnect-health-adfs/report1a.png)
 
 你可以在这份报告中轻松获取以下信息：
 
@@ -84,7 +84,7 @@ Azure AD Connect Health for ADFS 提供一份报告，内容有关因为用户�
 - 每天由于用户名/密码不正确而登录失败的总数。
 - 每天登录失败的唯一用户总数。
 
-![Azure AD Connect Health 门户](./media/active-directory-aadconnect-health-adfs/report2a.png)
+![Azure AD Connect Health 门户预览](./media/active-directory-aadconnect-health-adfs/report2a.png)
 
 该报告提供以下信息：
 

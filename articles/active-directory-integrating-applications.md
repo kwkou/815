@@ -89,7 +89,7 @@
 
 #### 添加对 Web API 的访问权限
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 1. 在左侧菜单中单击“Active Directory”图标，然后单击所需的目录。
 
@@ -182,7 +182,7 @@
 
 ##### 为外部用户启用对你的应用程序的访问权限
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 
 1. 在左侧菜单中单击“Active Directory”图标，然后单击所需的目录。
 
@@ -208,7 +208,7 @@ Web 应用程序也可为用户提供注册体验。如果你确实提供注册�
 
 ##### 启用 OAuth 2.0 隐式授权
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
 1. 在左侧菜单中单击“Active Directory”图标，然后单击所需的目录。
 1. 在顶部菜单中，单击“应用程序”，然后单击要配置的应用程序。“快速启动”页将显示单一登录信息和其他配置信息。
 1. 在命令栏中单击“管理清单”按钮，然后选择“下载清单”。

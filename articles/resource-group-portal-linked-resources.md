@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="磁贴库中相关的资源与链接的资源" 
-	description="了解 Azure 预览门户的磁贴库中显示的相关资源和链接资源。" 
+	description="了解 Azure 门户预览的磁贴库中显示的相关资源和链接资源。" 
 	services="azure-portal" 
 	documentationCenter="" 
 	authors="adamabdelhamed" 

@@ -124,7 +124,7 @@ Name                 WorkloadType       BackupManagementType BackupTime         
 DefaultPolicy        AzureVM            AzureVM              4/14/2016 5:00:00 PM
 ```
 
-> [AZURE.NOTE] PowerShell 中 BackupTime 字段的时区是 UTC。但是，在 Azure 门户中显示备份时间时，该时间将会根据你的本地时区调整。
+> [AZURE.NOTE] PowerShell 中 BackupTime 字段的时区是 UTC。但是，在 Azure 经典门户中显示备份时间时，该时间将会根据你的本地时区调整。
 
 一个备份保护策略至少与一个保留策略相关联。保留策略定义在 Azure 备份中保留恢复点的时限。使用 Get-AzureRmRecoveryServicesBackupRetentionPolicyObject 可以查看默认保留策略。同理，可以使用 Get-AzureRmRecoveryServicesBackupSchedulePolicyObject 获取默认计划策略。计划和保留策略对象将用作 New-AzureRmRecoveryServicesBackupProtectionPolicy cmdlet 的输入。
 
@@ -181,11 +181,11 @@ WorkloadName     Operation            Status               StartTime            
 V2VM        Backup               InProgress            4/23/2016 5:00:30 PM            cf4b3ef5-2fac-4c8e-a215-d2eba4124f27
 ```
 
-> [AZURE.NOTE]：PowerShell 中的 StartTime 和 EndTime 字段时区为 UTC。但是，在 Azure 门户中显示时间时，该时间将会根据你的本地时区调整。
+> [AZURE.NOTE]：PowerShell 中的 StartTime 和 EndTime 字段时区为 UTC。但是，在 Azure 经典门户中显示时间时，该时间将会根据你的本地时区调整。
 
 ## 监视备份作业
 
-在 Azure 备份中，大多数长时间运行的操作都是作为作业来建模的。这样可以轻松地跟踪相关进度，不必让 Azure 门户始终打开。
+在 Azure 备份中，大多数长时间运行的操作都是作为作业来建模的。这样可以轻松地跟踪相关进度，不必让 Azure 经典门户始终打开。
 
 若要获取正在进行的作业的最新状态，请使用 Get-AzureRMRecoveryservicesBackupJob cmdlet。
 
@@ -244,9 +244,9 @@ BackupManagementType        : AzureVM
 
 ### 还原磁盘
 
-通过 Azure 门户执行还原操作与通过 Azure PowerShell 执行还原操作存在很大的不同。如果使用 PowerShell，还原操作将在从恢复点还原磁盘和配置信息时停止。它不会创建虚拟机。
+通过 Azure 经典门户执行还原操作与通过 Azure PowerShell 执行还原操作存在很大的不同。如果使用 PowerShell，还原操作将在从恢复点还原磁盘和配置信息时停止。它不会创建虚拟机。
 
-> [AZURE.WARNING] Restore-AzureRMRecoveryServicesBackupItem 不会创建 VM，而只是将磁盘还原到指定的存储帐户。这不同于 Azure 门户中发生的情况。
+> [AZURE.WARNING] Restore-AzureRMRecoveryServicesBackupItem 不会创建 VM，而只是将磁盘还原到指定的存储帐户。这不同于 Azure 经典门户中发生的情况。
 
 ```
 PS C:\> $restorejob = Restore-AzureRMRecoveryServicesBackupItem -RecoveryPoint $rp[0] -StorageAccountName DestAccount

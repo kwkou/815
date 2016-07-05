@@ -33,7 +33,7 @@
 ## 为虚拟机启用远程调试
 
 1. 创建一个 Azure 虚拟机。请参阅[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial)或[在 Visual Studio 中创建和管理 Azure 虚拟机](/documentation/articles/virtual-machines-windows-classic-manage-visual-studio)。
-2. 在 [Azure 管理门户页](http://go.microsoft.com/fwlink/p/?LinkID=269851)上的虚拟机仪表板中，查看虚拟机的“RDP 证书指纹”。扩展配置中的 `ServerThumbprint` 值将使用此值。
+2. 在 [Azure 经典门户页](http://go.microsoft.com/fwlink/p/?LinkID=269851)上的虚拟机仪表板中，查看虚拟机的“RDP 证书指纹”。扩展配置中的 `ServerThumbprint` 值将使用此值。
 3. 根据 [Azure 云服务的证书概述](/documentation/articles/cloud-services-certs-create)中所述创建客户端证书（保留 .pfx 和 RDP 证书指纹）。
 4. 根据[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中所述安装 Azure Powershell（0.7.4 或更高版本）。
 5. 运行以下脚本以启用 RemoteDebug 扩展。将路径和个人数据替换为你自己的数据，例如，你的订阅名称、服务名称和指纹。

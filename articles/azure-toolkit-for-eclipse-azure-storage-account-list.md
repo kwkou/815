@@ -32,7 +32,7 @@
 ## 使用发布设置文件导入存储帐户 ##
 
 1. 在“存储帐户”对话框中，单击“从发布设置文件导入”。
-2. （如果你已到本地计算机上保存了发布设置文件，请跳过此步骤。） 在“导入订阅信息”对话框中，单击“下载发布设置文件”。如果你尚未登录到 Azure 帐户，则系统将提示你登录。然后系统将提示你保存 Azure 发布设置文件。（你可以忽略登录页中显示的最终说明 - 它们是由 Azure 门户提供的，适用于 Visual Studio 用户。） 请将该文件保存到本地计算机。
+2. （如果你已到本地计算机上保存了发布设置文件，请跳过此步骤。） 在“导入订阅信息”对话框中，单击“下载发布设置文件”。如果你尚未登录到 Azure 帐户，则系统将提示你登录。然后系统将提示你保存 Azure 发布设置文件。（你可以忽略登录页中显示的最终说明 - 它们是由 Azure 经典门户提供的，适用于 Visual Studio 用户。） 请将该文件保存到本地计算机。
 3. 仍在“导入订阅信息”对话框中，单击“浏览”按钮，选择先前在本地保存的发布设置文件，然后单击“打开”。
 4. 单击“确定”关闭“导入订阅信息”对话框。
 
@@ -51,9 +51,9 @@
 
 ## 将现有存储帐户添加到列表 ##
 
-1. 如果你没有 Azure 存储帐户，可以遵照上面“创建新的存储帐户”部分中列出的步骤创建一个存储帐户。（或者，你也可以在 [Azure 管理门户][]中创建新的存储帐户。）
+1. 如果你没有 Azure 存储帐户，可以遵照上面“创建新的存储帐户”部分中列出的步骤创建一个存储帐户。（或者，你也可以在 [Azure 经典门户][]中创建新的存储帐户。）
 2. 在“存储帐户”对话框中，单击“添加”。
-3. 在“添加存储帐户”对话框中，输入“名称”和“访问密钥”的值。这必须是现有 Azure 存储帐户的帐户名称和访问密钥。使用 [Azure 管理门户][]的“存储”部分来查看你的存储帐户名称和密钥。“添加存储帐户”对话框如下所示。
+3. 在“添加存储帐户”对话框中，输入“名称”和“访问密钥”的值。这必须是现有 Azure 存储帐户的帐户名称和访问密钥。使用 [Azure 经典门户][]的“存储”部分来查看你的存储帐户名称和密钥。“添加存储帐户”对话框如下所示。
 
     ![][ic719497]
 
@@ -86,7 +86,7 @@
 
 [Azure Java 开发人员中心]: /develop/java/
 [适用于 Eclipse 的 Azure 工具包]: /documentation/articles/azure-toolkit-for-eclipse/
-[Azure 管理门户]: http://manage.windowsazure.cn
+[Azure 经典门户]: http://manage.windowsazure.cn
 [在 Eclipse 中为 Azure 创建 Hello World 应用程序]: /documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/
 [安装 Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
 [What's New in the Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-whats-new/

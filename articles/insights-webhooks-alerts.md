@@ -96,7 +96,7 @@ POST 操作将为所有基于指标的警报包含以下 JSON 负载和架构。
 |resourceType |Y | |受影响资源的资源类型|
 |resourceId |Y | |URI 中唯一标识该资源的资源 ID|
 |resourceRegion |Y | |受影响资源的区域/位置|
-|portalLink |Y | |指向资源摘要页的直接 azure 门户链接|
+|portalLink |Y | |指向资源摘要页的直接 azure 门户预览链接|
 |properties |N |可选 |<Key  Value>对集合（即字典<String  String>），包括有关事件的详细信息。properties 字段是可选的。在自定义用户界面或基于逻辑应用的工作流中，用户可以输入键/值，该键/值可通过负载传递。将自定义属性传递回 webhook 的替代方法是通过 webhook URI 本身（作为查询参数）|
 
 

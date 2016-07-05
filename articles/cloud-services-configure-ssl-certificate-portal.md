@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="配置云服务的 SSL | Azure" 
-	description="了解如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护您的应用程序。这些示例使用 Azure 门户。" 
+	description="了解如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护您的应用程序。这些示例使用 Azure 门户预览。" 
 	services="cloud-services" 
 	documentationCenter=".net" 
 	authors="Thraka" 
@@ -18,7 +18,7 @@
 # 在 Azure 中为应用程序配置 SSL
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
+- [Azure 门户预览](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
 - [Azure 经典门户](/documentation/articles/cloud-services-configure-ssl-certificate)
 
 安全套接字层 (SSL) 加密是用于保护通过 Internet 发送的数据的最常见方法。此常见任务讨论了如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护你的应用程序。
@@ -132,9 +132,9 @@
 
 ## 步骤 3：上载证书
 
-连接到该门户和...
+连接到该门户预览和...
 
-1. 选择云服务：在门户中，选择“云服务”。（将位于“所有资源”部分。） 
+1. 选择云服务：在门户预览中，选择“云服务”。（将位于“所有资源”部分。） 
     
     ![发布云服务](./media/cloud-services-configure-ssl-certificate-portal/browse.png)
 
@@ -164,7 +164,7 @@
 
     >[AZURE.TIP] 若要对过渡部署而非生产部署使用 SSL，你首先需要确定用于过渡部署的 URL。一旦部署了你的云服务后，过渡环境的 URL 由**部署 ID** GUID 决定，其格式为：`https://deployment-id.chinacloudapp.cn/`
       
-    >创建一个证书，该证书具有与基于 GUID 的 URL 相同的公用名 (CN)（例如，**328187776e774ceda8fc57609d404462.chinacloudapp.cn**），再使用门户将该证书添加到过渡云服务，将该证书的信息添加到你的 CSDEF 和 CSCFG 文件，重新打包你的应用程序，然后更新过渡部署以使用新的包和 CSCFG 文件。
+    >创建一个证书，该证书具有与基于 GUID 的 URL 相同的公用名 (CN)（例如，**328187776e774ceda8fc57609d404462.chinacloudapp.cn**），再使用门户预览将该证书添加到过渡云服务，将该证书的信息添加到你的 CSDEF 和 CSCFG 文件，重新打包你的应用程序，然后更新过渡部署以使用新的包和 CSCFG 文件。
 
 ## 后续步骤
 

@@ -106,7 +106,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 关于订阅相关的内容，请参考[《Azure 企业门户管理手册》](/documentation/articles/azure-ea-portal-user-manual)
 
 ####<a name="section_5_2_6"></a> 5.2.6 选择订阅(非常重要)
-我们登陆 Azure [管理门户](https://manage.windowsazure.cn))，输入账户和密码。
+我们登陆 Azure [经典门户](https://manage.windowsazure.cn))，输入账户和密码。
 
 点击右上角的订阅按钮，如下图:
 
@@ -141,7 +141,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 ![scenario2](./media/azure-Iaas-user-manual-part2/scenario2.png)
 
-上图中，我们登陆 Azure [管理门户](https://manage.windowsazure.cn)，点击上图中的”设置”，”使用情况”，”选择订阅”，就可以查看到该订阅可以使用的 Azure 资源情况。
+上图中，我们登陆 Azure [经典门户](https://manage.windowsazure.cn)，点击上图中的”设置”，”使用情况”，”选择订阅”，就可以查看到该订阅可以使用的 Azure 资源情况。
 
 上图中，订阅名称为 ”Marketing_Subscription” 可以使用的 Azure 资源为
 
@@ -153,7 +153,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 ####<a name="section_5_3_1"></a> 5.3.1 说明
 我们在创建 Azure 服务的时候，可以通过以下两种方式来创建
 
-1.	使用 Azure [管理门户](https://manage.windowsazure.cn)
+1.	使用 Azure [经典门户](https://manage.windowsazure.cn)
 
 	优势：
 	* (1)	可以通过用户界面的方式，创建相应的 Azure 虚拟机，方便简单。
@@ -234,7 +234,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 我们会在接下来几章详细介绍如何创建 Azure 虚拟机。
 
 ###<a name="section_5_4"></a> 5.4 使用 Azure 管理界面创建虚拟机
-我们登陆 Azure [管理门户](https://manage.windowsazure.cn/))，输入相应的 Azure 账户名称和密码。
+我们登陆 Azure [经典门户](https://manage.windowsazure.cn/))，输入相应的 Azure 账户名称和密码。
 
 ####<a name="section_5_4_1"></a> 5.4.1 创建虚拟网络(非常重要)
 1.	在 Azure 管理界面的左下角，点击”新建”按钮。如下图:
@@ -404,7 +404,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 我们首先创建第一台 AD Server。步骤如下：
 
-1.	在 Azure [管理门户](https://manage.windowsazure.cn/))。选择新建，计算，虚拟机，从库中。如下图：
+1.	在 Azure [经典门户](https://manage.windowsazure.cn/))。选择新建，计算，虚拟机，从库中。如下图：
 
 	![vm_create12](./media/azure-Iaas-user-manual-part2/vm_create12.png)
 
@@ -685,7 +685,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 		Import-AzurePublishSettingsFile 'D:\内部使用-6-2-2014-credentials.publishsettings'
 
-	上面的命令实际上是将本地的 publishsettings 文件上传至 Azure China 的 Management Certificates。我们可以打开[管理门户](https://manage.windowsazure.cn)。点击设置，并选择管理证书，查看上传的 publishsettings 文件。如下图：
+	上面的命令实际上是将本地的 publishsettings 文件上传至 Azure China 的 Management Certificates。我们可以打开[经典门户](https://manage.windowsazure.cn)。点击设置，并选择管理证书，查看上传的 publishsettings 文件。如下图：
 
 	![vm_powershell4](./media/azure-Iaas-user-manual-part2/vm_powershell4.png)
 
@@ -845,7 +845,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 ![vm_powershell8](./media/azure-Iaas-user-manual-part2/vm_powershell8.png)
 
-我们打开 Azure 管理门户，会发现新创建的 ContosoAD01 显示为正在启动，如下图:
+我们打开 Azure 经典门户，会发现新创建的 ContosoAD01 显示为正在启动，如下图:
 
 ![vm_powershell9](./media/azure-Iaas-user-manual-part2/vm_powershell9.png)
 
@@ -908,7 +908,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 1.	C 盘，操作系统盘，默认为 127GB
 2.	<mark>D 盘，临时磁盘。只能用来保存临时文件，数据会有丢失的风险。</mark>
 
-假设我们要挂载更多的磁盘，我们可以在 Azure [管理门户](https://manage.windowsazure.cn)，选中某一台虚拟机，然后点击附加空磁盘。如下图
+假设我们要挂载更多的磁盘，我们可以在 Azure [经典门户](https://manage.windowsazure.cn)，选中某一台虚拟机，然后点击附加空磁盘。如下图
 
 ![vm_manage6](./media/azure-Iaas-user-manual-part2/vm_manage6.png)
 
@@ -1010,7 +1010,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 ####<a name="section_5_6_7"></a> 5.6.7 虚拟机关机(非常重要)
 <mark>注意：我们通过远程桌面连接或者是 SSH，关闭 Azure 虚拟机，是会继续收取 Azure 计算费用的。</mark>
 
-只有通过 Azure [管理门户](https://manage.windowsazure.cn)，选中相应的 Azure 虚拟机，并点击关闭按钮。如下图：
+只有通过 Azure [经典门户](https://manage.windowsazure.cn)，选中相应的 Azure 虚拟机，并点击关闭按钮。如下图：
 
 ![vm_manage14](./media/azure-Iaas-user-manual-part2/vm_manage14.png)
 

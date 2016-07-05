@@ -34,8 +34,8 @@ editor="Eric Chen" />
 - [对资产进行编码](/zh-cn/documentation/articles/media-services-encode-asset)
 - [用 PlayReady 加密](/zh-cn/documentation/articles/media-services-protect-asset)
 - [检查作业进度](/zh-cn/documentation/articles/media-services-check-job-progress)
-- [在门户中进行监视](/zh-cn/documentation/articles/media-services-monitor-services-account)
-- [管理门户中的内容](/zh-cn/documentation/articles/media-services-manage-content)
+- [在经典门户中进行监视](/zh-cn/documentation/articles/media-services-monitor-services-account)
+- [经典门户中的内容](/zh-cn/documentation/articles/media-services-manage-content)
 - [全部显示](/zh-cn/develop/media-services/resources)
 
 ###传送
