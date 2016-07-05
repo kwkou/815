@@ -1,3 +1,4 @@
+<!-- Remove portal -->
 <properties
    pageTitle="在 Azure SQL 数据仓库中管理数据库 | Azure"
    description="管理 SQL 数据仓库数据库的概述。包括管理工具、DWU 和向外扩展性能，对查询性能进行故障排除，建立良好的安全策略，以及从数据损坏或区域中断还原数据库。"
@@ -32,10 +33,10 @@ SQL 数据仓库自动执行管理数据库的许多方面的操作。例如，�
 
 可以使用多种工具来管理 SQL 数据仓库中的数据库。管理数据库时，你将为需要执行的每种类型的任务制定工具首选项。
 
-### Azure 门户
+<!-- ### Azure 门户
 [Azure 门户][]是一个基于 Web 的门户，你可以从中创建、更新和删除数据库以及监视数据库资源。如果你刚开始使用 Azure、管理少量的数据仓库数据库或需要快速执行某些操作，该工具是理想之选。
 
-若要开始使用 Azure 门户，请参阅[创建 SQL 数据仓库（Azure 门户）][]。
+若要开始使用 Azure 门户，请参阅[创建 SQL 数据仓库（Azure 门户）][]。 -->
 
 ### Visual Studio 中的 SQL Server Data Tools
 使用 Visual Studio 中的 [SQL Server Data Tools][] (SSDT)，可以连接到你的数据库并对其进行管理和开发。如果你是熟悉 Visual Studio 或其他集成开发环境 (IDE) 的应用程序开发人员，请尝试使用 Visual Studio 中的 SSDT。

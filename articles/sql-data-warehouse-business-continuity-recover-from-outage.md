@@ -1,3 +1,4 @@
+<!-- Remove azure portal -->
 <properties
    pageTitle="发生中断后在 SQL 数据仓库中恢复数据库 | Azure"
    description="发生中断后在 SQL 数据仓库中恢复数据库的步骤。"
@@ -21,7 +22,7 @@
 恢复操作在恢复时要求更改 SQL 连接字符串，并可能会导致数据永久丢失。因此，仅当中断的持续时间超过了应用程序的 RTO 时，才应执行恢复操作。使用以下数据点来声明有必要进行恢复：
 
 - 数据库永久连接故障。
-- Azure 门户显示了警报，指出区域中的某个事件会造成广泛的影响。
+<!-- - Azure 门户显示了警报，指出区域中的某个事件会造成广泛的影响。 -->
 
 
 ## 使用异地还原进行恢复
@@ -98,6 +99,6 @@
 [数据库操作状态]: http://msdn.microsoft.com/zh-cn/library/azure/dn720371.aspx
 
 <!--Other Web references-->
-[Azure 门户]: https://manage.windowsazure.cn/
+<!-- [Azure 门户]: https://manage.windowsazure.cn/ -->
 
 <!---HONumber=Mooncake_0405_2016-->
