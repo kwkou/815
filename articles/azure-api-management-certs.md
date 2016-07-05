@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="上载 Azure Management API 证书 | Azure" 
-	description="了解如何为 Azure 经典门户上载 Management API 证书。" 
+	description="了解如何为 Azure 经典管理门户上载 Management API 证书。" 
 	services="cloud-services" 
 	documentationCenter=".net" 
 	authors="Thraka" 
@@ -15,7 +15,7 @@
 
 # 上载 Azure Management API 管理证书
 
-管理证书允许你使用 Azure 提供的服务管理 API 进行身份验证。许多程序和工具（如 Visual Studio 或 Azure SDK）将使用这些证书来自动配置和部署各种 Azure 服务。**这仅适用于 Azure 经典门户**。
+管理证书允许你使用 Azure 提供的服务管理 API 进行身份验证。许多程序和工具（如 Visual Studio 或 Azure SDK）将使用这些证书来自动配置和部署各种 Azure 服务。**这仅适用于 Azure 经典管理门户**。
 
 >[AZURE.WARNING] 请小心！ 这些类型的证书允许任何使用它们进行身份验证的人管理与它们相关联的订阅。
 

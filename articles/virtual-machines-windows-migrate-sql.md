@@ -63,7 +63,7 @@
 
 ### 获取“将 SQL Server 数据库部署到 Azure VM”向导的最新版本
 
-使用 Microsoft SQL Server Management Studio for SQL Server 的最新版本，以确保具有“将 SQL Server 数据库部署到 Azure VM”向导的最新版本。此向导的最新版本包含对 Azure 经典门户的最新更新，并且支持库中最新的 Azure VM 映像（此向导的较旧版本可能不支持）。若要获取 Microsoft SQL Server Management Studio for SQL Server 的最新版本，请[下载它](http://download.microsoft.com/download/0/6/4/06471151-0668-485E-8CD0-D7D8297EE357/SSMS_BurnInstaller_June2015/SSMS-Web-Setup.exe)并将其安装在与计划迁移的数据库和 Internet 建立了连接的客户端计算机上。
+使用 Microsoft SQL Server Management Studio for SQL Server 的最新版本，以确保具有“将 SQL Server 数据库部署到 Azure VM”向导的最新版本。此向导的最新版本包含对 Azure 经典管理门户的最新更新，并且支持库中最新的 Azure VM 映像（此向导的较旧版本可能不支持）。若要获取 Microsoft SQL Server Management Studio for SQL Server 的最新版本，请[下载它](http://download.microsoft.com/download/0/6/4/06471151-0668-485E-8CD0-D7D8297EE357/SSMS_BurnInstaller_June2015/SSMS-Web-Setup.exe)并将其安装在与计划迁移的数据库和 Internet 建立了连接的客户端计算机上。
 
 ### 配置现有的 Azure 虚拟机和 SQL Server 实例（如果适用）
 

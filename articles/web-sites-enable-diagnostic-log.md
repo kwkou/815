@@ -18,7 +18,7 @@
 
 Azure 提供内置的诊断以帮助调试 [Azure Web 应用](/documentation/services/web-sites/)。在本文中，你将了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。
 
-本文通过 [Azure 经典门户](https://manage.windowsazure.cn)、Azure PowerShell 和 Azure 命令行界面 (Azure CLI) 来使用诊断日志。
+本文通过 [Azure 经典管理门户](https://manage.windowsazure.cn)、Azure PowerShell 和 Azure 命令行界面 (Azure CLI) 来使用诊断日志。
 
 ## <a name="whatisdiag"></a>Web 服务器诊断和应用程序诊断
 
@@ -44,15 +44,15 @@ Azure Web 应用为 Web 服务器和 Web 应用程序中的日志记录信息提
 
 ## <a name="enablediag"></a>如何启用诊断
 
-可通过在 [Azure 经典门户](https://manage.windowsazure.cn)中访问 Azure 网站的“配置”页启用诊断。在“配置”页面上，使用“应用程序诊断”和“网站诊断”部分来启用或禁用日志记录。
+可通过在 [Azure 经典管理门户](https://manage.windowsazure.cn)中访问 Azure 网站的“配置”页启用诊断。在“配置”页面上，使用“应用程序诊断”和“网站诊断”部分来启用或禁用日志记录。
 
 启用“应用程序诊断”时，还必须选择“日志记录级别”，并确定是将日志记录到“文件系统”、“表存储”还是记录到“Blob 存储”。三种存储位置都为记录的事件提供同样的基本信息，但与记录到“文件系统”相比，“表存储”和“Blob 存储”记录有额外信息，如实例 ID、线程 ID 以及更详细的时间戳（刻度格式）。
 
 启用“网站诊断”时，必须为“Web 服务器日志记录”选择“存储”或“文件系统”。选择“存储”允许你选择存储帐户，然后日志会写入一个 Blob 容器。“站点诊断”的所有其他日志仅写入文件系统。
 
-在[经典门户](https://manage.windowsazure.cn) Web 应用的“配置”选项卡中，你可以选择“存储”或“文件系统”进行“Web 服务器日志记录”。选择“存储”允许你选择存储帐户，然后日志会写入一个 Blob 容器。“站点诊断”的所有其他日志仅写入文件系统。
+在[经典管理门户](https://manage.windowsazure.cn) Web 应用的“配置”选项卡中，你可以选择“存储”或“文件系统”进行“Web 服务器日志记录”。选择“存储”允许你选择存储帐户，然后日志会写入一个 Blob 容器。“站点诊断”的所有其他日志仅写入文件系统。
 
-[经典门户](https://manage.windowsazure.cn) Web 应用的“配置”选项卡还包含用于应用程序诊断的其他设置：
+[经典管理门户](https://manage.windowsazure.cn) Web 应用的“配置”选项卡还包含用于应用程序诊断的其他设置：
 
 * **文件系统** - 将应用程序诊断信息存储到 Web 应用文件系统。可以通过 FTP 访问这些文件，或者，使用 Azure PowerShell 或 Azure 命令行界面 (Azure CLI) 将这些文件作为 Zip 存档下载。
 * **表存储** - 将应用程序诊断信息存储在指定的 Azure 存储帐户和表名中。
@@ -90,7 +90,7 @@ Azure Web 应用为 Web 服务器和 Web 应用程序中的日志记录信息提
 
 ### FTP
 
-若要使用 FTP 访问诊断信息，请在[经典门户](https://manage.windowsazure.cn)中访问 Web 应用的“仪表板”。在“速览”部分，使用“FTP 诊断日志”链接通过 FTP 访问日志文件。“部署/FTP 用户”项列出了应该用于访问 FTP 站点的用户名。
+若要使用 FTP 访问诊断信息，请在[经典管理门户](https://manage.windowsazure.cn)中访问 Web 应用的“仪表板”。在“速览”部分，使用“FTP 诊断日志”链接通过 FTP 访问日志文件。“部署/FTP 用户”项列出了应该用于访问 FTP 站点的用户名。
 
 > [AZURE.NOTE] 如果“部署/FTP 用户”未设置或忘记了该用户的密码，可通过使用“仪表板”中“速览”部分的“重置部署凭据”链接创建新用户和密码。
 

@@ -69,11 +69,11 @@
 
 若要开始在 Azure 中使用服务总线功能，必须先创建一个服务命名空间。命名空间提供了用于对应用程序中的 Service Bus 资源进行寻址的范围容器。
 
-你可以使用[Azure 经典门户][]或 Visual Studio 服务器资源管理器管理命名空间和服务总线消息传送实体，但只能在门户内创建新命名空间。
+你可以使用[Azure 经典管理门户][]或 Visual Studio 服务器资源管理器管理命名空间和服务总线消息传送实体，但只能在门户内创建新命名空间。
 
-### 使用 Azure 经典门户创建命名空间：
+### 使用 Azure 经典管理门户创建命名空间：
 
-1.  登录到 [Azure 经典门户][]。
+1.  登录到 [Azure 经典管理门户][]。
 
 2.  在门户的左侧导航窗格中，单击“服务总线”。
 
@@ -93,7 +93,7 @@
 
 	![][38]
 
-你创建的命名空间随后将显示在 Azure 经典门户中，不过需要花费一段时间来激活。请等到状态变为“活动”后再继续。
+你创建的命名空间随后将显示在 Azure 经典管理门户中，不过需要花费一段时间来激活。请等到状态变为“活动”后再继续。
 
 ## 获取命名空间的默认管理凭据
 
@@ -248,7 +248,7 @@
             }
         }
 
-15. 在解决方案资源管理器中，双击“App.config”文件以在 Visual Studio 编辑器中将其打开。将 “&lt;system.ServiceModel&gt;” 的内容替换为以下 XML 代码。确保将 “yourServiceNamespace” 替换为你的服务命名空间的名称，并将 “yourKey” 替换为之前从 Azure 经典门户中检索到的 SAS 密钥：
+15. 在解决方案资源管理器中，双击“App.config”文件以在 Visual Studio 编辑器中将其打开。将 “&lt;system.ServiceModel&gt;” 的内容替换为以下 XML 代码。确保将 “yourServiceNamespace” 替换为你的服务命名空间的名称，并将 “yourKey” 替换为之前从 Azure 经典管理门户中检索到的 SAS 密钥：
 
         <system.serviceModel>
           <extensions>
@@ -543,7 +543,7 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
 
 以下步骤演示了如何停止和删除应用程序。
 
-1.  登录到 [Azure 经典门户][]，单击“云服务”，然后单击服务的名称。
+1.  登录到 [Azure 经典管理门户][]，单击“云服务”，然后单击服务的名称。
 
 2.  单击“仪表板”选项卡，然后单击“停止”以暂时挂起应用程序。单击“启动”即可重新启动它。单击“删除”即可从 Azure 中完全删除应用程序，但无法将其还原。
 
@@ -565,7 +565,7 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
   [3]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-42-webpi.png
 
 
-  [Azure 经典门户]: http://manage.windowsazure.cn
+  [Azure 经典管理门户]: http://manage.windowsazure.cn
   [5]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/sb-queues-03.png
   [6]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/sb-queues-04.png
 

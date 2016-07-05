@@ -14,7 +14,7 @@
     
 # 从本地 Git 部署到 Azure
 
-本教程说明如何将应用从本地计算机上的 Git 存储库部署到 [Azure Web 应用]。Azure 支持结合 [Azure 经典门户]中的“本地 Git”部署选项使用此方法。  
+本教程说明如何将应用从本地计算机上的 Git 存储库部署到 [Azure Web 应用]。Azure 支持结合 [Azure 经典管理门户]中的“本地 Git”部署选项使用此方法。  
 在根据[此处](/documentation/articles/app-service-web-get-started)所述使用 [Azure 命令行界面]创建 Azure Web 应用时，将自动执行本文中所述的许多 Git 命令。
 
 ## 先决条件
@@ -58,7 +58,7 @@ Azure 支持用各种编程语言创建的应用程序。
 
 执行以下步骤可为你的 Azure Web 应用启用 Git 存储库。
 
-1. 登录到 [Azure 经典门户](https://management.windowsazure.cn/)。
+1. 登录到 [Azure 经典管理门户](https://management.windowsazure.cn/)。
 
 2. 在 Web 应用的页面上，单击“仪表板”。在“速览”下，单击“从源代码管理设置部署”，选择“本地 Git 存储库”，然后单击“下一步”。
 
@@ -66,7 +66,7 @@ Azure 支持用各种编程语言创建的应用程序。
 
 使用以下步骤通过本地 Git 将应用发布到 Azure。
 
-1. 在 Azure 经典门户中，单击 Web 应用的“部署”。可以在此处复制 Git URL。
+1. 在 Azure 经典管理门户中，单击 Web 应用的“部署”。可以在此处复制 Git URL。
 
 	“Git URL”是从本地存储库到部署的远程引用。在后续步骤中，你将要用到此 URL。
 
@@ -81,11 +81,11 @@ Azure 支持用各种编程语言创建的应用程序。
 
 		git push azure master
 
-	当你在 Azure 经典门户中重置部署凭据时，系统将提示你输入以前创建的密码。输入该密码（请注意，在键入密码时，Gitbash 不会将星号回显到控制台）。
+	当你在 Azure 经典管理门户中重置部署凭据时，系统将提示你输入以前创建的密码。输入该密码（请注意，在键入密码时，Gitbash 不会将星号回显到控制台）。
        
-5. 在 Azure 经典门户中，最近推送的日志条目应显示在 Web 应用的“部署”页中。
+5. 在 Azure 经典管理门户中，最近推送的日志条目应显示在 Web 应用的“部署”页中。
 
-6. 在 Azure 经典门户中，单击“浏览”按钮按钮来验证是否已部署内容。
+6. 在 Azure 经典管理门户中，单击“浏览”按钮按钮来验证是否已部署内容。
     
 ## <a id="Step5"></a>故障排除
 
@@ -97,7 +97,7 @@ Azure 支持用各种编程语言创建的应用程序。
 
 **原因**：如果应用无法启动和运行，则会出现此错误。
 
-**解决方法**：在 Azure 经典门户中启动应用。在应用运行之前，Git 部署无法进行。
+**解决方法**：在 Azure 经典管理门户中启动应用。在应用运行之前，Git 部署无法进行。
 
 
 ****
@@ -155,7 +155,7 @@ Azure 支持用各种编程语言创建的应用程序。
 
 [Azure Web 应用]: /documentation/services/web-sites/
 [Azure Developer Center]: /develop/overview/
-[Azure 经典门户]: https://manage.windowsazure.cn
+[Azure 经典管理门户]: https://manage.windowsazure.cn
 [Azure 门户预览]: https://portal.azure.cn
 [Git website]: http://git-scm.com
 [Installing Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git

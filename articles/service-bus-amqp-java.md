@@ -78,9 +78,9 @@ amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
 
 | 名称 | 含义 | | | | |
 |---------------|--------------------------------------------------------------------------------|---|---|---|---|
-| `[namespace]` | 从 [Azure 经典门户][]获取的服务总线命名空间。 | | | | |
-| `[username]` | 从 [Azure 经典门户][]获取的服务总线颁发者名称。 | | | | |
-| `[password]` | 从 [Azure 经典门户][]获取的 URL 编码形式的服务总线颁发者密钥。 | | | | |
+| `[namespace]` | 从 [Azure 经典管理门户][]获取的服务总线命名空间。 | | | | |
+| `[username]` | 从 [Azure 经典管理门户][]获取的服务总线颁发者名称。 | | | | |
+| `[password]` | 从 [Azure 经典管理门户][]获取的 URL 编码形式的服务总线颁发者密钥。 | | | | |
 
 > [AZURE.NOTE]必须手动为密码进行 URL 编码。在 [http://www.w3schools.com/tags/ref\_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp) 上提供了一个有用的 URL 编码实用工具。
 
@@ -439,6 +439,6 @@ JMS 消息支持以下类型的应用程序属性：**boolean**、**byte**、**s
 [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
 [服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview
-[Azure 经典门户]: http://manage.windowsazure.cn
+[Azure 经典管理门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->

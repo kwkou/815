@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure 经典门户管理 HDInsight 中的 Hadoop 群集 | Azure"
+	pageTitle="使用 Azure 经典管理门户管理 HDInsight 中的 Hadoop 群集 | Azure"
 	description="了解如何管理 HDInsight 服务。创建 HDInsight 群集，打开交互式 JavaScript 控制台，然后打开 Hadoop 命令控制台。"
 	services="hdinsight"
 	documentationCenter=""
@@ -12,12 +12,12 @@
 	ms.date="04/28/2016"
 	wacn.date="06/29/2016"/>
 
-# 使用 Azure 经典门户管理 HDInsight 中的 Hadoop 群集
+# 使用 Azure 经典管理门户管理 HDInsight 中的 Hadoop 群集
 
-使用 [Azure 经典门户](https://manage.windowsazure.cn)，可以预配 Azure HDInsight 中的 Hadoop 群集、更改 Hadoop 用户密码，以及启用远程桌面协议 (RDP) 以便访问群集上的 Hadoop 命令控制台。
+使用 [Azure 经典管理门户](https://manage.windowsazure.cn)，可以预配 Azure HDInsight 中的 Hadoop 群集、更改 Hadoop 用户密码，以及启用远程桌面协议 (RDP) 以便访问群集上的 Hadoop 命令控制台。
 
 ## 其他用于管理 HDInsight 的工具
-除了 Azure 经典门户外，还有其他可用于管理 HDInsight 的工具。
+除了 Azure 经典管理门户外，还有其他可用于管理 HDInsight 的工具。
 
 - 有关使用 Azure PowerShell 管理 HDInsight 的详细信息，请参阅[使用 Azure PowerShell 管理 HDInsight](/documentation/articles/hdinsight-administer-use-powershell)。
 
@@ -33,7 +33,7 @@
 
 ##设置 HDInsight 群集
 
-你可以在 Azure 经典门户中使用“快速创建”或“自定义创建”选项预配 HDInsight 群集。有关说明，请参阅以下链接：
+你可以在 Azure 经典管理门户中使用“快速创建”或“自定义创建”选项预配 HDInsight 群集。有关说明，请参阅以下链接：
 
 - [使用“快速创建”设置群集](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 - [使用“自定义创建”设置群集](/documentation/articles/hdinsight-provision-clusters-v1#portal)
@@ -62,7 +62,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在
 
 **更改 HDInsight 群集用户名和密码**
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 2. 单击左窗格中的“HDINSIGHT”。这将显示已部署的 HDInsight 群集的列表。
 3. 单击要重设用户名和密码的 HDInsight 群集。
 4. 在页面顶部，单击“配置”。
@@ -79,7 +79,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在
 
 **启用远程桌面**
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 2. 单击左窗格中的“HDINSIGHT”。这将显示已部署的 HDInsight 群集的列表。
 3. 单击你要连接到的 HDInsight 群集。
 4. 在页面顶部，单击“配置”。
@@ -97,7 +97,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在
 
 **使用 RDP 连接到群集**
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 2. 单击左窗格中的“HDINSIGHT”。这将显示已部署的 HDInsight 群集的列表。
 3. 单击你要连接到的 HDInsight 群集。
 4. 在页面顶部，单击“配置”。
@@ -113,7 +113,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在
 
 2. 浏览到证书所在的位置，右键单击该证书，单击“安装证书”，然后将证书安装到计算机的个人存储。编辑证书属性，以便为证书指定一个友好名称。
 
-3. 将证书导入 Azure 经典门户。在经典门户中，单击页面左下角的“设置”，然后单击“管理证书”。在页面底部，单击“上载”，然后按照说明上载你在前一步骤中创建的 .cer 文件。
+3. 将证书导入 Azure 经典管理门户。在经典管理门户中，单击页面左下角的“设置”，然后单击“管理证书”。在页面底部，单击“上载”，然后按照说明上载你在前一步骤中创建的 .cer 文件。
 
 	![HDI.ClusterCreate.UploadCert][image-hdiclustercreate-uploadcert]
 
@@ -128,13 +128,13 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 - Oozie
 - Templeton
 
-默认情况下，将授权这些服务进行访问。你可以从 Azure 经典门户撤消/授予访问权限。
+默认情况下，将授权这些服务进行访问。你可以从 Azure 经典管理门户撤消/授予访问权限。
 
 >[AZURE.NOTE]授予/撤消访问权限时，你将重设群集用户的用户名和密码。
 
 **授予/撤消 HTTP Web 服务访问权限**
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 2. 单击左窗格中的“HDINSIGHT”。这将显示已部署的 HDInsight 群集的列表。
 3. 单击要配置的 HDInsight 群集。
 4. 在页面顶部，单击“配置”。
@@ -150,7 +150,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 **打开 Hadoop 命令行**
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 2. 单击左窗格中的“HDINSIGHT”。这将显示已部署的 Hadoop 群集的列表。
 3. 单击你要连接到的 HDInsight 群集。
 3. 单击页面顶部的“配置”。
@@ -175,7 +175,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 
 ##后续步骤
-在本文中，你学习了如何使用 Azure 经典门户创建 HDInsight 群集以及如何打开 Hadoop 命令行工具。若要了解更多信息，请参阅下列文章：
+在本文中，你学习了如何使用 Azure 经典管理门户创建 HDInsight 群集以及如何打开 Hadoop 命令行工具。若要了解更多信息，请参阅下列文章：
 
 * [使用 Azure PowerShell 管理 HDInsight](/documentation/articles/hdinsight-administer-use-powershell)
 * [使用 Azure CLI 管理 HDInsight](/documentation/articles/hdinsight-administer-use-command-line)

@@ -66,7 +66,7 @@
 
 5. 	在 Visual Studio 中，打开 *C#\\Mvc5Mobile.sln* 文件。
 
-6.	登录到[经典门户](https://manage.windowsazure.cn/)，然后单击已退出的网站或创建新网站。
+6.	登录到[经典管理门户](https://manage.windowsazure.cn/)，然后单击已退出的网站或创建新网站。
 
 7.	在“仪表板”中的“速览”下，单击“下载发布配置文件”
 

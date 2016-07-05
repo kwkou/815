@@ -214,7 +214,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 1. 关闭浏览器和控制台应用程序窗口。
 
-2. 转到 [Azure 经典门户](http://manage.windowsazure.cn/)，然后单击具有数据库的 Web 应用。
+2. 转到 [Azure 经典管理门户](http://manage.windowsazure.cn/)，然后单击具有数据库的 Web 应用。
 
 3. 转到 Web 应用的**仪表板**，下载发布配置文件
 
@@ -258,7 +258,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 ### 将 Web 应用配置为使用你的 Azure SQL 数据库和存储帐户。
 
-最佳安全做法是[避免将敏感信息（如连接字符串）放置在源代码存储库中存储的文件内](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets)。Azure 提供了一种方法来做到这一点：你可以在 Azure 环境中设置连接字符串和其他设置值，在 Azure 中运行应用程序时，ASP.NET 配置 API 将自动提取这些值。你可以使用**服务器资源管理器**、Azure 经典门户、Windows PowerShell 或跨平台命令行接口在 Azure 中设置这些值。有关详细信息，请参阅[应用程序字符串和连接字符串的工作原理](/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)。
+最佳安全做法是[避免将敏感信息（如连接字符串）放置在源代码存储库中存储的文件内](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets)。Azure 提供了一种方法来做到这一点：你可以在 Azure 环境中设置连接字符串和其他设置值，在 Azure 中运行应用程序时，ASP.NET 配置 API 将自动提取这些值。你可以使用**服务器资源管理器**、Azure 经典管理门户、Windows PowerShell 或跨平台命令行接口在 Azure 中设置这些值。有关详细信息，请参阅[应用程序字符串和连接字符串的工作原理](/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)。
 
 在本部分中，你将使用**服务器资源管理器**在 Azure 中设置连接字符串值。
 
@@ -276,13 +276,13 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 9. 单击“保存”。
 
-	![Azure 经典门户中的连接字符串](./media/websites-dotnet-webjobs-sdk-get-started/azconnstr.png)
+	![Azure 经典管理门户中的连接字符串](./media/websites-dotnet-webjobs-sdk-get-started/azconnstr.png)
 
 10. 在“服务器资源管理器”中右键单击该 Web 应用，然后单击“停止”。
 
 12. Web 应用停止后，请再次右键单击该 Web 应用，然后单击“启动”。
 
-	Web 作业在你发布时会自动启动，但在你进行配置更改时会停止。若要重新启动它，可以重新启动 Web 应用或者在 [Azure 经典门户](https://manage.windowsazure.cn/)中重新启动 Web 作业。一般而言，建议你在进行配置更改后重新启动 Web 应用。
+	Web 作业在你发布时会自动启动，但在你进行配置更改时会停止。若要重新启动它，可以重新启动 Web 应用或者在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中重新启动 Web 作业。一般而言，建议你在进行配置更改后重新启动 Web 应用。
 
 9. 刷新地址栏中包含 Web 应用 URL 的浏览器窗口。
 
@@ -294,11 +294,11 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 11.	几秒钟后请刷新页面，随后将会显示缩略图。
 
-	如果未显示缩略图，你可能需要等待一分钟左右，让 Web 作业重新启动。如果经过一段时间后刷新页面时仍未显示缩略图，原因可能是 Web 作业未自动启动。在此情况下，转到[经典门户](https://manage.windowsazure.cn)页中 Web 应用的“Web 作业”选项卡，然后单击“启动”。
+	如果未显示缩略图，你可能需要等待一分钟左右，让 Web 作业重新启动。如果经过一段时间后刷新页面时仍未显示缩略图，原因可能是 Web 作业未自动启动。在此情况下，转到[经典管理门户](https://manage.windowsazure.cn)页中 Web 应用的“Web 作业”选项卡，然后单击“启动”。
 
 ###<a name="view-the-webjobs-sdk-dashboard"></a>查看 Web 作业 SDK 仪表板
 
-1. 在[经典门户](https://manage.windowsazure.cn)中，选择你的 Web 应用。
+1. 在[经典管理门户](https://manage.windowsazure.cn)中，选择你的 Web 应用。
 
 2. 单击“Web 作业”选项卡。
 
@@ -316,7 +316,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 	单击此页上的“重放函数”会导致 WebJobs SDK 框架再次调用该函数，使你可以首先更改传递给该函数的数据。
 
->[AZURE.NOTE] 完成测试后，请删除 Web 应用和 SQL 数据库实例。Web 应用是免费的，但 SQL 数据库实例和存储帐户是计费的（由于较小，因此费用很低）。此外，如果保持 Web 应用运行，则找到你的 URL 的任何人都可以创建和查看广告。在经典门户中，转到 Web 应用的“仪表板”选项卡，然后单击页面底部的“删除”按钮。然后，你可以选中用于同时删除 SQL 数据库实例的复选框。如果你只是想要暂时防止其他人访问 Web 应用，请单击“停止”。在这种情况下，SQL 数据库和存储帐户会继续计费。当你不再需要 SQL 数据库和存储帐户时，可以遵循类似的过程将其删除。
+>[AZURE.NOTE] 完成测试后，请删除 Web 应用和 SQL 数据库实例。Web 应用是免费的，但 SQL 数据库实例和存储帐户是计费的（由于较小，因此费用很低）。此外，如果保持 Web 应用运行，则找到你的 URL 的任何人都可以创建和查看广告。在经典管理门户中，转到 Web 应用的“仪表板”选项卡，然后单击页面底部的“删除”按钮。然后，你可以选中用于同时删除 SQL 数据库实例的复选框。如果你只是想要暂时防止其他人访问 Web 应用，请单击“停止”。在这种情况下，SQL 数据库和存储帐户会继续计费。当你不再需要 SQL 数据库和存储帐户时，可以遵循类似的过程将其删除。
 
 ## <a id="create"></a>从头开始创建应用程序
 
@@ -578,7 +578,7 @@ ContosoAdsContext 类指定 DbSet 集合中使用的 Ad 类，实体框架将存
 		<li>@Html.ActionLink("Free stuff", "Index", "Ad", new { category = (int)Category.FreeStuff }, null)</li>
 		<li>@Html.ActionLink("All", "Index", "Ad", null, null)</li>
 
-###<a name="ResolveBlobName"></a> ContosoAdsWeb - AdController.cs
+###<a name="ResolveBlobName" id="resolveblobname"></a> ContosoAdsWeb - AdController.cs
 
 在 *AdController.cs* 文件中，构造函数调用 `InitializeStorage` 方法来创建 Azure 存储客户端库对象，它提供一个用于处理 Blob 和队列的 API。
 

@@ -259,7 +259,7 @@
 
 ## 后续步骤
 
-- 若要了解有关使用服务主体管理订阅中的应用程序的访问权限的详细信息，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)和[使用 Azure 经典门户创建新的 Azure 服务主体](/documentation/articles/resource-group-create-service-principal-portal)。
+- 若要了解有关使用服务主体管理订阅中的应用程序的访问权限的详细信息，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)和[使用 Azure 经典管理门户创建新的 Azure 服务主体](/documentation/articles/resource-group-create-service-principal-portal)。
 - 若要了解有关组织中的审核操作的详细信息，请参阅[使用资源管理器执行审核操作](/documentation/articles/resource-group-audit)。
 
  

@@ -16,7 +16,7 @@
 
 [AZURE.INCLUDE [选项卡](../includes/app-service-web-get-started-nav-tabs.md)]
 
-本教程说明如何创建一个简单的 [Node.js][NODEJS] 应用程序，然后通过 cmd.exe 或 bash 等命令行环境将它部署到 [Azure Web 应用] 中的 [Web 应用]。本教程中的说明适用于任何能够运行 Node.js 的操作系统。
+本教程说明如何创建一个简单的 [Node.js][NODEJS] 应用程序，然后通过 cmd.exe 或 bash 等命令行环境将它部署到 [Azure Web 应用]。本教程中的说明适用于任何能够运行 Node.js 的操作系统。
 
 <a name="prereq"></a>
 ## 先决条件
@@ -195,7 +195,6 @@ Kudu 部署引擎按以下顺序确定要使用哪个 Node.js 引擎：
 - [Azure Web Apps: Node.js](http://blogs.msdn.com/b/silverlining/archive/2012/06/14/windows-azure-websites-node-js.aspx)
 - [Node.js 开发人员中心](/develop/nodejs/)
 - [Azure 中的 Web 应用入门](/documentation/articles/app-service-web-get-started)
-- [探索神秘无比的 Kudu 调试控制台]
 
 <!-- URL List -->
 

@@ -108,7 +108,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 
 |部署工具|经典|
 |---|---|---|
-|经典门户|![否][red]|
+|经典管理门户|![否][red]|
 |PowerShell|<a href="/documentation/articles/virtual-networks-create-nsg-classic-ps">![是][green]</a>|
 |Azure CLI|<a href="/documentation/articles/virtual-networks-create-nsg-classic-cli">![是][green]</a>|
 
@@ -136,7 +136,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 |**说明**|**默认限制**|**含义**|
 |---|---|---|
 |可与子网、VM 关联的 NSG 数目|1|这意味着不能对 NSG 进行组合。确保给定资源集所需的所有规则已包括在单一 NSG 中。|
-|每个区域每个订阅的 NSG 数目|100|默认情况下，你在 Azure 经典门户中创建的每个 VM 都会创建一个新的 NSG。如果你允许此默认行为，则会很快用光 NSG。请确保在设计时牢记此限制，根据需要将资源分成多个区域或订阅。 |
+|每个区域每个订阅的 NSG 数目|100|默认情况下，你在 Azure 经典管理门户中创建的每个 VM 都会创建一个新的 NSG。如果你允许此默认行为，则会很快用光 NSG。请确保在设计时牢记此限制，根据需要将资源分成多个区域或订阅。 |
 |每个 NSG 的 NSG 规则数|200|使用各种 IP 和端口，确保不超过此限制。 |
 
 >[AZURE.IMPORTANT] 在设计解决方案之前，请确保查看所有[与 Azure 中的网络服务相关的限制](/documentation/articles/azure-subscription-service-limits#networking-limits)。可以通过开具支持票证增加某些限制。

@@ -42,7 +42,7 @@
 
     > [AZURE.NOTE]客户端密钥和程序包 SID 是重要的安全凭据。请勿与任何人分享这些密钥或将密钥随应用分发。
 
-11. 登录到 [Azure 经典门户](https://manage.windowsazure.cn/)，单击“移动服务”，然后单击你的应用。
+11. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)，单击“移动服务”，然后单击你的应用。
 
    	![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-selection.png)
 

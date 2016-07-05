@@ -18,7 +18,7 @@
 
 本教程说明如何使用 Azure 移动服务向 Xamarin Android 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单_待办事项列表_应用程序。要创建的移动服务将使用支持的 .NET 语言，你可以使用 Visual Studio 来提供服务器端业务逻辑和管理移动服务。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本]。
 
->[AZURE.NOTE]本主题演示如何使用 Azure 经典门户创建新的移动服务项目。通过使用 Visual Studio 2013 Update 2，还可以向现有的 Visual Studio 解决方案添加新的移动服务项目。有关详细信息，请参阅[快速入门：添加移动服务（.NET 后端）](http://msdn.microsoft.com/zh-cn/library/windows/apps/dn629482.aspx)
+>[AZURE.NOTE]本主题演示如何使用 Azure 经典管理门户创建新的移动服务项目。通过使用 Visual Studio 2013 Update 2，还可以向现有的 Visual Studio 解决方案添加新的移动服务项目。有关详细信息，请参阅[快速入门：添加移动服务（.NET 后端）](http://msdn.microsoft.com/zh-cn/library/windows/apps/dn629482.aspx)
 
 以下是完成的应用程序的屏幕快照：
 
@@ -35,7 +35,7 @@
 
 ## 创建新的 Xamarin Android 应用程序
 
-创建移动服务后，你可以在经典门户中遵照一个简易的快速入门项目来创建新应用或修改现有应用，以连接到你的移动服务。
+创建移动服务后，你可以在经典管理门户中遵照一个简易的快速入门项目来创建新应用或修改现有应用，以连接到你的移动服务。
 
 在本部分中，你将为移动服务下载新的 Xamarin.android 应用程序和服务项目。
 

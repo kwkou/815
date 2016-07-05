@@ -30,7 +30,7 @@
 ## 步骤 1 - 发现 Azure 虚拟机
 为确保在注册之前能够识别任何添加到订阅中的新虚拟机 (VM)，请先运行发现过程。该过程将在 Azure 上查询订阅中的虚拟机列表和其他信息，例如云服务名称、区域等。
 
-1. 登录到[经典门户](http://manage.windowsazure.cn/)
+1. 登录到[经典管理门户](http://manage.windowsazure.cn/)
 
 2. 在 Azure 服务列表中，单击“恢复服务”打开备份和站点恢复保管库的列表。
     ![打开保管库列表](./media/backup-azure-vms/choose-vault-list.png)

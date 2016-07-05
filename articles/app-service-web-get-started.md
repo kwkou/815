@@ -25,7 +25,7 @@
 - 在短短几秒内看到应用实时运行。
 - 以[推送 Git 提交](https://git-scm.com/docs/git-push)的相同方式来更新 Web 应用。
 
-另外，将提供 [Azure 经典门户](https://manage.windowsazure.cn)的速览并探讨可用的功能。
+另外，将提供 [Azure 经典管理门户](https://manage.windowsazure.cn)的速览并探讨可用的功能。
 
 ##<a name="Prerequisites"></a> 先决条件
 
@@ -101,17 +101,17 @@
     git commit -m "<your_message>"
     git push azure master
 
-## 在 Azure 经典门户中查看应用
+## 在 Azure 经典管理门户中查看应用
 
-现在，让我们转到 Azure 经典门户，以查看所创建的应用：
+现在，让我们转到 Azure 经典管理门户，以查看所创建的应用：
 
-1. 使用具有 Azure 订阅的帐户登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 使用具有 Azure 订阅的帐户登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
 2. 在左栏中，单击“Web Apps”。
 
-3. 单击刚刚创建的 Azure Web 应用，以在经典门户中打开。
+3. 单击刚刚创建的 Azure Web 应用，以在经典管理门户中打开。
 
-Azure Web 应用的经典门户页提供了一组丰富的设置和工具，让你对应用进行配置、监视、保护和故障排除。请花点时间执行一些简单的任务，让自己熟悉此界面：
+Azure Web 应用的经典管理门户页提供了一组丰富的设置和工具，让你对应用进行配置、监视、保护和故障排除。请花点时间执行一些简单的任务，让自己熟悉此界面：
 
 - 停止应用
 - 重新启动应用

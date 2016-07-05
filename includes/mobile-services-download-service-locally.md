@@ -1,6 +1,6 @@
 1. 如果你尚未安装 Visual Studio，请下载和安装 [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934) 或更高版本。
  
-2. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中，单击新的移动服务，在快速启动页中单击“Android”平台，然后在“开始”下，展开“创建新的 Android 应用”。
+2. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，单击新的移动服务，在快速启动页中单击“Android”平台，然后在“开始”下，展开“创建新的 Android 应用”。
 
     ![](./media/mobile-services-download-service-locally/download-service-project.png)
 

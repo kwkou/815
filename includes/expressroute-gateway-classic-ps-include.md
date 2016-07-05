@@ -1,4 +1,4 @@
-你必须先创建 VNet 和网关子网，然后再处理以下任务。有关详细信息，请参阅[使用经典门户配置虚拟网络](/documentation/articles/expressroute-howto-vnet-portal-classic)一文。
+你必须先创建 VNet 和网关子网，然后再处理以下任务。有关详细信息，请参阅[使用经典管理门户配置虚拟网络](/documentation/articles/expressroute-howto-vnet-portal-classic)一文。
 
 ## 添加网关
 

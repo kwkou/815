@@ -10,7 +10,7 @@
 
 #如何为虚拟机附加磁盘
 
-关于如何在经典门户网站上附加磁盘请阅读[这篇文章](/documentation/articles/virtual-machines-windows-classic-attach-disk)
+关于如何在经典管理门户网站上附加磁盘请阅读[这篇文章](/documentation/articles/virtual-machines-windows-classic-attach-disk)
 
 >使用Powershell前有关Azure PowerShell的安装、配置和连接到订阅请阅读[这篇文章](/documentation/articles/powershell-install-configure)
 

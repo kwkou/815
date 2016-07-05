@@ -17,13 +17,13 @@
 
 ##<a name="creating-a-new-runbook"></a> 创建新的 Runbook
 
-你可以使用其中一个 Azure 经典门户或 Windows PowerShell 在 Azure 自动化中创建一个新的 Runbook。一旦创建 Runbook，你就可以利用[了解 PowerShell 工作流](/documentation/articles/automation-powershell-workflow)中的信息对其进行编辑。
+你可以使用其中一个 Azure 经典管理门户或 Windows PowerShell 在 Azure 自动化中创建一个新的 Runbook。一旦创建 Runbook，你就可以利用[了解 PowerShell 工作流](/documentation/articles/automation-powershell-workflow)中的信息对其进行编辑。
 
-### 使用 Azure 经典门户创建新的 Azure 自动化 Runbook
+### 使用 Azure 经典管理门户创建新的 Azure 自动化 Runbook
 
-你只能使用 Azure 经典门户中的 PowerShell 工作流 Runbook。
+你只能使用 Azure 经典管理门户中的 PowerShell 工作流 Runbook。
 
-1. 在 Azure 经典门户中，依次单击“新建”、“应用程序服务”、“自动化”、“Runbook”、“快速创建”。
+1. 在 Azure 经典管理门户中，依次单击“新建”、“应用程序服务”、“自动化”、“Runbook”、“快速创建”。
 2. 输入所需的信息，然后单击“创建”。Runbook 名称必须以字母开头，可以使用字母、数字、下划线和短划线。
 3. 若要立即编辑 Runbook，则请单击“编辑 Runbook”。否则，请单击“确定”。
 4. 新的 Runbook 将出现在“Runbook”选项卡中。
@@ -44,10 +44,10 @@
 
 如果该文件包含多个 PowerShell 工作流，导入将失败。必须将每个工作流保存到各自的文件中，并分别导入每个工作流。
 
-### 使用 Azure 经典门户通过文件导入 Runbook
-可通过以下过程将脚本文件导入 Azure 自动化。请注意，你只能通过此经典门户将 .ps1 文件导入 PowerShell 工作流 Runbook。
+### 使用 Azure 经典管理门户通过文件导入 Runbook
+可通过以下过程将脚本文件导入 Azure 自动化。请注意，你只能通过此经典管理门户将 .ps1 文件导入 PowerShell 工作流 Runbook。
 
-1. 在 Azure 经典门户中，选择“自动化”，然后选择一个自动化帐户。
+1. 在 Azure 经典管理门户中，选择“自动化”，然后选择一个自动化帐户。
 2. 单击“导入”。
 3. 单击“浏览文件”，找到要导入的脚本文件。
 4. 若要立即编辑 Runbook，则请单击“编辑 Runbook”。否则，请单击“确定”。
@@ -74,9 +74,9 @@
 
 创建或导入新的 Runbook 时，必须先将其发布，然后才能导入。Azure 自动化中的每个 Runbook 都有草稿版和已发布版。只有已发布版才能用来运行，只有草稿版才能用来编辑。已发布版不受对草稿版所做的任何更改的影响。当草稿版可以使用时，你可以发布草稿版，这样草稿版就会覆盖已发布版。
 
-## 使用 Azure 经典门户发布 Runbook
+## 使用 Azure 经典管理门户发布 Runbook
 
-1. 在 Azure 经典门户中打开 Runbook。
+1. 在 Azure 经典管理门户中打开 Runbook。
 1. 在屏幕顶部，单击“创作”。
 1. 在屏幕底部，单击“发布”，然后在出现验证消息时单击“是”。
 

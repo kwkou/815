@@ -50,11 +50,11 @@
 
 ## 创建虚拟网络和域控制器服务器
 
-你将从一个新的 Azure 试用帐户开始。完成帐户设置后，你会进入 Azure 经典门户的主页屏幕。
+你将从一个新的 Azure 试用帐户开始。完成帐户设置后，你会进入 Azure 经典管理门户的主页屏幕。
 
 1. 单击该页左下角的“新建”按钮，如下所示。
 
-	![在经典门户中单击“新建”](./media/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/IC665511.gif)
+	![在经典管理门户中单击“新建”](./media/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/IC665511.gif)
 
 1. 依次单击“网络服务”、“虚拟网络”、“自定义创建”，如下所示。
 
@@ -81,7 +81,7 @@
 |虚拟机配置|**云服务** = 创建新的云服务<br/>**云服务 DNS 名称** = 唯一的云服务名称<br/>**DNS 名称** = 唯一名称（例如：ContosoDC123）<br/>**区域/地缘组/虚拟网络** = ContosoNET<br/>**虚拟网络子网** = Back(10.10.2.0/24)<br/>**存储帐户** = 使用自动生成的存储帐户<br/>**可用性集** =（无）|
 |虚拟机选项|使用默认值|
 
-配置完新虚拟机后，请等待对 VM 设置完成。此过程要用一些时间才能完成，并且，如果你单击 Azure 经典门户中的“虚拟机”选项卡，则可以看到 ContosoDC 逐一经历状态“正在启动(预配)”、“已停止”、“正在启动”、“正在运行(预配)”和最后的“正在运行”。
+配置完新虚拟机后，请等待对 VM 设置完成。此过程要用一些时间才能完成，并且，如果你单击 Azure 经典管理门户中的“虚拟机”选项卡，则可以看到 ContosoDC 逐一经历状态“正在启动(预配)”、“已停止”、“正在启动”、“正在运行(预配)”和最后的“正在运行”。
 
 现在已成功预配 DC 服务器。接下来，请在 DC 服务器上配置 Active Directory 域。
 
@@ -89,7 +89,7 @@
 
 在以下步骤中，你可以将 ContosoDC 计算机配置为 corp.contoso.com 的域控制器。
 
-1. 在经典门户中，选择 **ContosoDC** 计算机。在“仪表板”选项卡上，单击“连接”以打开用于远程桌面访问 RDP 文件。
+1. 在经典管理门户中，选择 **ContosoDC** 计算机。在“仪表板”选项卡上，单击“连接”以打开用于远程桌面访问 RDP 文件。
 
 	![连接到虚拟机](./media/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/IC784622.png)
 
@@ -181,7 +181,7 @@
 
 ## 创建 SQL Server VM
 
-接下来，创建三个 VM，包括 WSFC 群集节点和两个 SQL Server VM。若要创建每个 VM，请返回到 Azure 经典门户，然后依次单击“新建”、“计算”、“虚拟机”和“从库中”。然后，使用下表中的模板来帮助创建 VM。
+接下来，创建三个 VM，包括 WSFC 群集节点和两个 SQL Server VM。若要创建每个 VM，请返回到 Azure 经典管理门户，然后依次单击“新建”、“计算”、“虚拟机”和“从库中”。然后，使用下表中的模板来帮助创建 VM。
 
 |Page|VM1|VM2|VM3|
 |---|---|---|---|

@@ -25,7 +25,7 @@
 相同区域中的共置最适合用于组成解决方案的 Azure 资源（例如 Web 应用），以及用于保存内容或数据的数据库或存储帐户。创建资源时，应确保它们位于同一个 Azure 区域，除非有具体的业务或设计理由需要将它们放在不同的区域。
 
 ## <a name="memoryresources"></a>当应用消耗的内存超出预期时
-如果你通过监视或者参考服务建议，发现应用消耗的内存超出指定的预期值，请考虑使用 [Azure 自动修复功能](https://azure.microsoft.com/blog/auto-healing-windows-azure-web-sites)。自动修复功能的选项之一是根据内存阈值采取自定义操作。这些操作的范围包括发出电子邮件通知、通过内存转储提供调查依据，以及通过回收工作进程在现场消除问题。可以根据这篇有关 [Azure 支持站点扩展](https://azure.microsoft.com/blog/additional-updates-to-support-site-extension-for-azure-app-service-web-apps)的博文中所述，通过 web.config 或者友好的用户界面来配置自动修复。
+如果你通过监视或者参考服务建议，发现应用消耗的内存超出指定的预期值，请考虑使用 [Azure 自动修复功能](https://azure.microsoft.com/blog/auto-healing-windows-azure-web-sites)。自动修复功能的选项之一是根据内存阈值采取自定义操作。这些操作的范围包括发出电子邮件通知、通过内存转储提供调查依据，以及通过回收工作进程在现场消除问题。
 
 ## <a name="CPUresources"></a>当应用消耗的 CPU 超出预期时
 如果你通过监视或者参考服务建议，发现应用消耗的 CPU 超出预期，或者反复出现 CPU 高峰，请考虑向上缩放或向外缩放 App Service 计划。如果你的应用程序是有状态的，则向上缩放是唯一选项；如果你的应用程序是无状态的，则向外缩放可以提供更高的灵活性和更大的缩放潜力。

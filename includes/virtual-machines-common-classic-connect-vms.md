@@ -10,8 +10,8 @@
 
 若要连接虚拟网络中的虚拟机，请执行以下步骤：
 
-1.	在 [Azure 经典门户](/documentation/articles/virtual-networks-create-vnet-classic-portal)中创建虚拟网络。
-2.	为部署创建一组云服务，以反映可用性集和负载平衡的设计。在 Azure 经典门户中，针对每一个云服务，单击“新建”>“计算”>“云服务”>“自定义创建”。
+1.	在 [Azure 经典管理门户](/documentation/articles/virtual-networks-create-vnet-classic-portal)中创建虚拟网络。
+2.	为部署创建一组云服务，以反映可用性集和负载平衡的设计。在 Azure 经典管理门户中，针对每一个云服务，单击“新建”>“计算”>“云服务”>“自定义创建”。
 3.	若要逐一创建新的虚拟机，请单击“新建”>“计算”>“虚拟机”>“从库中”。为 VM 选择正确的云服务和虚拟网络。如果云服务已加入虚拟网络，系统会为你选定服务名称。
 
 ![为虚拟机选择云服务](./media/virtual-machines-common-classic-connect-vms/VMConfig1.png)
@@ -20,7 +20,7 @@
 
 若要连接独立云服务中的虚拟机，请执行以下步骤：
 
-1.	在 [Azure 经典门户](http://manage.windowsazure.cn)中创建云服务。单击“新建”>“计算”>“云服务”>“自定义创建”。或者，当你创建第一个虚拟机时，可以为你的部署创建云服务。
+1.	在 [Azure 经典管理门户](http://manage.windowsazure.cn)中创建云服务。单击“新建”>“计算”>“云服务”>“自定义创建”。或者，当你创建第一个虚拟机时，可以为你的部署创建云服务。
 
 2.	创建虚拟机时，请选择上一个步骤中创建的云服务名称。
 

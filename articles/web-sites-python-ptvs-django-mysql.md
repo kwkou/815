@@ -16,11 +16,7 @@
 
 [AZURE.INCLUDE [选项卡](../includes/app-service-web-get-started-nav-tabs.md)]
 
-在本教程中，你将使用 [Python Tools for Visual Studio](PTVS) 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。你将了解如何使用在 Azure 上托管的 MySQL 服务、如何将 Web 应用配置为使用 MySQL，以及如何将 Web 应用发布到 [Azure Web Apps](/documentation/services/web-sites/) 中。
-
-> [AZURE.NOTE] 本教程中所包含的信息在下面的视频中也有提供：
-> 
-> [PTVS 2.1：具有 MySQL 的 Django 应用][video]
+在本教程中，你将使用 [Python Tools for Visual Studio] (PTVS) 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。你将了解如何使用在 Azure 上托管的 MySQL 服务、如何将 Web 应用配置为使用 MySQL，以及如何将 Web 应用发布到 [Azure Web Apps](/documentation/services/web-sites/) 中。
 
 请参阅 [Python 开发人员中心]以获取更多文章，这些文章介绍了如何通过 PTVS（使用 Bottle、Flask 和 Django Web 框架）、MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure Web Apps。虽然本文将着重介绍 Azure Web 应用，但 [Azure 云服务]的开发步骤也是类似的。
 
@@ -87,7 +83,7 @@
 
 您可通过以下步骤创建数据库。
 
-1. 登录到 [Azure 经典门户]。
+1. 登录到 [Azure 经典管理门户]。
 
 1.  在导航窗格的底部。
 
@@ -141,7 +137,7 @@
 
 1.  单击“导入”，然后选择已下载的“发布配置文件”。
 
-	如果你尚未创建 Web 应用，可登录到 [Azure Management Portal（Azure 经典门户）](https://manage.windowsazure.cn/)创建一个，然后转到“仪表板”页，在“速览”下下载“发布配置文件”。
+	如果你尚未创建 Web 应用，可登录到 [Azure Management Portal（Azure 经典管理门户）](https://manage.windowsazure.cn/)创建一个，然后转到“仪表板”页，在“速览”下下载“发布配置文件”。
 
 1. 接受其他所有默认值，然后单击**发布**。
 
@@ -171,7 +167,7 @@
 
 <!--External Link references-->
 
-[Azure 经典门户]: https://manage.windowsazure.cn
+[Azure 经典管理门户]: https://manage.windowsazure.cn
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Python Tools 2.2 for Visual Studio 示例 VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025

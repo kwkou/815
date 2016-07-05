@@ -35,7 +35,7 @@
 
 ## 创建虚拟机
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 2. 依次单击“新建”、“计算”、“虚拟机”和“从库中”。
 3. 在“虚拟机映像选择”对话框中，选择“JDK 7 Windows Server 2012”。请注意，万一你安装的是还不能在 JDK 7 中运行的旧应用程序，可选择 **JDK 6 Windows Server 2012**。
 4. 单击**“下一步”**。
@@ -58,7 +58,7 @@
 
 ## 远程登录到虚拟机的步骤
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 2. 单击“虚拟机”。
 3. 单击你要登录到的虚拟机的名称。
 4. 启动虚拟机后，可以使用页面底部的弹出菜单来进行连接。
@@ -84,7 +84,7 @@
 若要从外部计算机查看 Tomcat 的运行，则需要创建一个终结点并开放一个端口。
 
 ## 为虚拟机创建终结点
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 2. 单击“虚拟机”。
 3. 单击正在运行 Java 应用程序服务器的虚拟机的名称。
 4. 单击“终结点”。

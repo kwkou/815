@@ -28,7 +28,7 @@
 
 ![角色设计器将诊断数据发送到 Application Insights][2]
 
-3) 在弹出的对话框中，选择要向其发送 Azure 诊断数据的 Application Insights 资源。该对话框可让你从订阅中选择现有的 Application Insights 资源，或者为 Application Insights 资源手动指定检测键。如果你没有 Application Insights 资源，可以通过单击“创建新资源”链接创建一个，这会在浏览器窗口中打开 Azure 经典门户，你可以在其中创建 Application Insights 资源。有关创建 Application Insights 资源的详细信息，请参阅[创建新的 Application Insights 资源](/documentation/articles/app-insights-create-new-resource)
+3) 在弹出的对话框中，选择要向其发送 Azure 诊断数据的 Application Insights 资源。该对话框可让你从订阅中选择现有的 Application Insights 资源，或者为 Application Insights 资源手动指定检测键。如果你没有 Application Insights 资源，可以通过单击“创建新资源”链接创建一个，这会在浏览器窗口中打开 Azure 经典管理门户，你可以在其中创建 Application Insights 资源。有关创建 Application Insights 资源的详细信息，请参阅[创建新的 Application Insights 资源](/documentation/articles/app-insights-create-new-resource)
 
 ![选择 Application Insights 资源][3]
 

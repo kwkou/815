@@ -1,6 +1,6 @@
-如果需要域，你可以直接在 [Azure 经典门户](https://manage.windowsazure.cn)上购买域。请使用以下步骤来购买域名，然后将其分配给 Web 应用。
+如果需要域，你可以直接在 [Azure 经典管理门户](https://manage.windowsazure.cn)上购买域。请使用以下步骤来购买域名，然后将其分配给 Web 应用。
 
-1. 在你的浏览器中，打开 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 在你的浏览器中，打开 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
 2. 在“Web 应用”选项卡中，单击 Web 应用的名称，选择“设置”，然后选择“自定义域和 SSL”。
 

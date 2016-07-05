@@ -42,7 +42,7 @@
 
 ## 增加配额
 
-在 Azure 门户中使用以下步骤请求增加配额（也可以在 [Azure 经典门户](https://manage.windowsazure.cn/)中请求增加）。
+在 Azure 门户中使用以下步骤请求增加配额（也可以在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中请求增加）。
 
 1. 在门户的仪表板中，单击“帮助 + 支持”。
 

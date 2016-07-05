@@ -26,7 +26,7 @@ Azure 门户预览的图形用户界面是一种试用虚拟机的简便方式�
 
 [创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial)
 
->[AZURE.NOTE] 经典门户只能创建管理经典部署模型的虚拟机
+>[AZURE.NOTE] 经典管理门户只能创建管理经典部署模型的虚拟机
 
 ## Azure PowerShell
 

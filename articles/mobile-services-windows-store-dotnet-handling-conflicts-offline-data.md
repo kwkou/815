@@ -153,7 +153,7 @@
 [脱机数据入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 [脱机数据处理入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 [SQLite for Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 [Handling Database Conflicts]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/#test-app
 [移动服务示例 GitHub 存储库]: http://go.microsoft.com/fwlink/?LinkId=512865
 [Todo 脱机移动服务示例]: http://go.microsoft.com/fwlink/?LinkId=512866

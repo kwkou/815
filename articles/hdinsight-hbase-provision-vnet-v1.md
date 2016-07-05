@@ -43,9 +43,9 @@
 
 在设置 HBase 群集前，你需要拥有 Azure 虚拟网络。
 
-**通过使用 Azure 经典门户创建虚拟网络**
+**通过使用 Azure 经典管理门户创建虚拟网络**
 
-1. 登录到 [Azure 经典门户][azure-portal]。
+1. 登录到 [Azure 经典管理门户][azure-portal]。
 2. 单击左下角的“新建”，然后依次单击“网络服务”、“虚拟网络”和“快速创建”。
 3. 键入或选择以下值：
 
@@ -78,9 +78,9 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 > [AZURE.NOTE]HDInsight 群集使用 Azure Blob 存储来存储数据。有关详细信息，请参阅[在 HDInsight 中将 Azure Blob 存储与 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。你需要存储帐户和 Blob 存储容器。存储帐户位置必须与虚拟网络位置和群集位置匹配。
 
-像其他 HDInsight 群集，HBase 群集要求将 Azure 存储帐户和 Blob 存储容器作为默认文件系统。存储帐户位置必须与虚拟网络位置和群集位置匹配。有关详细信息，请参阅[在 HDInsight 中将 Azure Blob 存储与 Hadoop 配合使用][hdinsight-storage]。在设置 HBase 群集时，你可以选择创建新群集或使用现有群集。此过程演示如何使用 Azure 经典门户创建存储帐户和 Blob 存储容器。
+像其他 HDInsight 群集，HBase 群集要求将 Azure 存储帐户和 Blob 存储容器作为默认文件系统。存储帐户位置必须与虚拟网络位置和群集位置匹配。有关详细信息，请参阅[在 HDInsight 中将 Azure Blob 存储与 Hadoop 配合使用][hdinsight-storage]。在设置 HBase 群集时，你可以选择创建新群集或使用现有群集。此过程演示如何使用 Azure 经典管理门户创建存储帐户和 Blob 存储容器。
 
-1. 登录到 [Azure 经典门户][azure-portal]。
+1. 登录到 [Azure 经典管理门户][azure-portal]。
 2. 单击左下角的“新建”，依次指向“数据服务”和“存储”，然后单击“快速创建”。
 
 3. 键入或选择以下值：
@@ -99,11 +99,11 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 11. 输入容器名称。该容器将用作 HBase 群集的默认容器。默认情况下，默认容器名称与群集名称匹配。将“访问”字段保留为“私有”。  
 12. 单击复选标记以创建容器。
 
-**通过使用 Azure 经典门户设置 HBase 群集**
+**通过使用 Azure 经典管理门户设置 HBase 群集**
 
 > [AZURE.NOTE]有关通过使用 Azure PowerShell 预配新 HBase 群集的信息，请参阅[使用 Azure PowerShell 预配 HBase 群集](#powershell)。
 
-1. 登录到 [Azure 经典门户][azure-portal]。
+1. 登录到 [Azure 经典管理门户][azure-portal]。
 
 2. 单击左下角的“新建”，依次指向“数据服务”和“HDINSIGHT”，然后单击“自定义创建”。
 
@@ -170,7 +170,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
         <p>如果选择创建新存储或使用其他 Azure 订阅中的存储，则必须指定默认容器名称</p>
     </td></tr>
 	<tr><td>其他存储帐户</td>
-		<td>如果需要，请为群集指定其他存储帐户。HDInsight 支持多个存储帐户。一个群集可以使用的其他存储帐户数没有限制。但是，如果你通过使用 Azure 经典门户创建群集，则由于 UI 限制，你最多只能创建七个存储帐户。指定的每个其他存储帐户将在向导中添加一个额外的“存储帐户”页，以便你在此指定帐户信息。<strong></strong>例如，在以上屏幕截图中，未选择其他存储帐户，因此，不会将额外的页添加到向导中。</td></tr>
+		<td>如果需要，请为群集指定其他存储帐户。HDInsight 支持多个存储帐户。一个群集可以使用的其他存储帐户数没有限制。但是，如果你通过使用 Azure 经典管理门户创建群集，则由于 UI 限制，你最多只能创建七个存储帐户。指定的每个其他存储帐户将在向导中添加一个额外的“存储帐户”页，以便你在此指定帐户信息。<strong></strong>例如，在以上屏幕截图中，未选择其他存储帐户，因此，不会将额外的页添加到向导中。</td></tr>
 	</table>单击右箭头。
 
 7. 在“脚本操作”页上，选中右下角的复选标记。请勿单击“添加脚本操作”按钮，因为本教程不需要自定义群集安装程序。
@@ -297,7 +297,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 		这将返回 DNS 后缀。例如 **yourclustername.b4.internal.chinacloudapp.cn**。
 
-	> [AZURE.NOTE]你还可以使用远程桌面来连接到 HBase 群集（你将连接到头节点），并从命令提示符运行 **ipconfig** 来获取 DNS 后缀。有关启用远程桌面协议 (RDP) 并使用 RDP 连接到群集的说明，请参阅[使用 Azure 经典门户在 HDInsight 中管理 Hadoop 群集][hdinsight-admin-portal]。
+	> [AZURE.NOTE]你还可以使用远程桌面来连接到 HBase 群集（你将连接到头节点），并从命令提示符运行 **ipconfig** 来获取 DNS 后缀。有关启用远程桌面协议 (RDP) 并使用 RDP 连接到群集的说明，请参阅[使用 Azure 经典管理门户在 HDInsight 中管理 Hadoop 群集][hdinsight-admin-portal]。
 	> <p>![hdinsight.hbase.dns.surffix][img-dns-surffix]
 
 
@@ -362,7 +362,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 
 3. 单击“运行脚本”，或按 **F5**。
-4. 若要验证群集，可以在 Azure 经典门户中检查该群集，也可以在底部窗格中运行以下 Azure PowerShell cmdlet：
+4. 若要验证群集，可以在 Azure 经典管理门户中检查该群集，也可以在底部窗格中运行以下 Azure PowerShell cmdlet：
 
 	Get-AzureHDInsightCluster
 

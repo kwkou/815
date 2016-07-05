@@ -43,7 +43,7 @@
 
 ### 在 Azure 中创建 Active Directory (AD)
 
-如果你的 Azure 订阅中还没有 Active Directory (AD)，请使用你的 Microsoft 帐户登录 [Azure 经典门户][]。如果你有多个订阅，请单击“订阅”并选择要用于此项目的订阅的默认目录。然后单击“应用”切换到该订阅视图。
+如果你的 Azure 订阅中还没有 Active Directory (AD)，请使用你的 Microsoft 帐户登录 [Azure 经典管理门户][]。如果你有多个订阅，请单击“订阅”并选择要用于此项目的订阅的默认目录。然后单击“应用”切换到该订阅视图。
 
 1. 从左侧菜单中选择“Active Directory”。单击“新建 > 目录 > 自定义创建”。
 
@@ -62,7 +62,7 @@
 
 Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对于使用服务管理 API 代表订阅所有者管理订阅资源的客户端应用程序，你可以使用这些 X.509 v3 证书来对其进行身份验证。
 
-此过程中的代码使用自签名证书在 Azure 上进行身份验证。对于此过程，你需要事先创建一个证书并将其上载到 [Azure 经典门户][]。这包括以下步骤：
+此过程中的代码使用自签名证书在 Azure 上进行身份验证。对于此过程，你需要事先创建一个证书并将其上载到 [Azure 经典管理门户][]。这包括以下步骤：
 
 - 生成表示客户端证书的 PFX 文件，并将其保存在本地。
 - 从 PFX 文件生成管理证书（CER 文件）。
@@ -106,7 +106,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 
 #### 上载证书
 
-若要将自签名证书上载到 Azure，请转到经典门户中的“设置”页，然后单击“管理证书”选项卡。单击页面底部的“上载”，然后导航到你创建的 CER 文件的所在位置。
+若要将自签名证书上载到 Azure，请转到经典管理门户中的“设置”页，然后单击“管理证书”选项卡。单击页面底部的“上载”，然后导航到你创建的 CER 文件的所在位置。
 
 
 #### 将 PFX 文件转换为 JKS
@@ -238,7 +238,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 - `domainName` 应按照以上所示进行指定。
 
 > **注意：**每次运行此应用程序时，
-> 你需要更改 `webAppName` 和 `appServicePlanName` 的值（或在 Azure 经典门户上删除 Web 应用），
+> 你需要更改 `webAppName` 和 `appServicePlanName` 的值（或在 Azure 经典管理门户上删除 Web 应用），
 > 然后再次运行应用程序。否则，
 > 由于 Azure 上已存在相同的资源，所以执行会失败。
 
@@ -340,12 +340,12 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
     
     ----------
 
-登录到 Azure 经典门户并单击“Web Apps”。在数分钟内，新 Web 应用应会出现在“Web Apps”列表中。
+登录到 Azure 经典管理门户并单击“Web Apps”。在数分钟内，新 Web 应用应会出现在“Web Apps”列表中。
 
 
 ## 将应用程序部署到 Web 应用
 
-运行 AzureWebDemo 并创建新 Web 应用后，请登录经典门户，单击“Web Apps”，然后在“Web Apps”列表中选择“WebDemoWebApp”。在 Web 应用的仪表板页上，单击“浏览”（或单击 URL `webdemowebapp.chinacloudsites.cn`）导航到该 Web 应用。你将会看到一个空白的占位符页，因为尚未将任何内容发布到 Web 应用。
+运行 AzureWebDemo 并创建新 Web 应用后，请登录经典管理门户，单击“Web Apps”，然后在“Web Apps”列表中选择“WebDemoWebApp”。在 Web 应用的仪表板页上，单击“浏览”（或单击 URL `webdemowebapp.chinacloudsites.cn`）导航到该 Web 应用。你将会看到一个空白的占位符页，因为尚未将任何内容发布到 Web 应用。
 
 接下来，你要创建一个“Hello World”应用程序并将其部署到 Web 应用。
 
@@ -445,7 +445,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 
 确保已运行 **AzureWebDemo** 应用程序来创建 Web 应用。你会将文件转移到此位置。
 
-1. 登录到经典门户并单击“Web Apps”。确保“WebDemoWebApp”已显示在 Web Apps 列表中，并确保它正在运行。单击“WebDemoWebApp”以打开其“仪表板”页。
+1. 登录到经典管理门户并单击“Web Apps”。确保“WebDemoWebApp”已显示在 Web Apps 列表中，并确保它正在运行。单击“WebDemoWebApp”以打开其“仪表板”页。
 
 2. 在“仪表板”页的“速览”下，单击“设置部署凭据”（如果你已有部署凭据，则此选项应为“重置部署凭据”）。
 
@@ -490,7 +490,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 
 发布应用程序之前，你需要更改几项配置设置，使 Web 应用可以托管 Java 应用程序。
 
-1. 在经典门户中，转到 Web 应用的“仪表板”页，然后单击“配置”。在“配置”页上指定以下设置。
+1. 在经典管理门户中，转到 Web 应用的“仪表板”页，然后单击“配置”。在“配置”页上指定以下设置。
 
 2. 在“Java 版本”中，默认值为“关闭”；选择你的应用程序所针对的 Java 版本，例如 1.7.0\_51。完成此操作后，还请确保“Web 容器”已设置为 Tomcat 服务器的版本。
 
@@ -533,7 +533,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 
 1. 上载 WAR 文件并确认 Tomcat 服务器已创建解包的 `JSPHello` 目录后，请浏览到 `http://webdemowebapp.chinacloudsites.cn/JSPHello` 以运行该应用程序。
 
-    > **注意：**如果从经典门户单击“浏览”，则可能获得默认网页，
+    > **注意：**如果从经典管理门户单击“浏览”，则可能获得默认网页，
     网页显示“已成功创建此基于 Java 的 Web 应用。
     ” 你可能需要刷新网页才能查看应用程序输出，
     而不是默认网页。
@@ -570,6 +570,6 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 [密钥和证书管理工具 (keytool)]: http://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html
 [WebSiteManagementClient]: http://azure.github.io/azure-sdk-for-java/com/microsoft/azure/management/websites/WebSiteManagementClient.html
 [WebSpaceNames]: http://azure.github.io/azure-sdk-for-java/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
-[Azure 经典门户]: https://manage.windowsazure.cn
+[Azure 经典管理门户]: https://manage.windowsazure.cn
 
 <!---HONumber=79-->

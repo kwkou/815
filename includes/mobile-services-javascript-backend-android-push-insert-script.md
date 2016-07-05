@@ -1,5 +1,5 @@
 ﻿
-1. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中，单击“数据”选项卡，然后单击“TodoItem”表。 
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，单击“数据”选项卡，然后单击“TodoItem”表。 
  
 2. 在 **todoitem** 中，单击“脚本”选项卡，然后选择“插入”。
    

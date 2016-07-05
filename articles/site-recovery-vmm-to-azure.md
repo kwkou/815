@@ -15,7 +15,7 @@
 #  将 VMM 云中的 Hyper-V 虚拟机复制到 Azure
 
 > [AZURE.SELECTOR]
-- [Azure 经典门户](/documentation/articles/site-recovery-vmm-to-azure)
+- [Azure 经典管理门户](/documentation/articles/site-recovery-vmm-to-azure)
 - [PowerShell — 经典](/documentation/articles/site-recovery-deploy-with-powershell)
 
 

@@ -42,7 +42,7 @@
 
 		azure account download
 
-这将会打开默认浏览器，并提示你登录到 Azure 经典门户。登录后，将会下载你的 `.publishsettings` 文件。请记下此文件的保存位置。
+这将会打开默认浏览器，并提示你登录到 Azure 经典管理门户。登录后，将会下载你的 `.publishsettings` 文件。请记下此文件的保存位置。
 
 接下来，通过运行以下命令导入 `.publishsettings` 文件，并将 `<path-to-settings-file>` 替换为 `.publishsettings` 文件的路径：
 

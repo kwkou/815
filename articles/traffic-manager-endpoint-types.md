@@ -91,12 +91,12 @@ PublicIPAddress 资源为 Azure Resource Manager 资源，在 Azure 服务管理
 
 如果禁用配置文件中的所有终结点，或者禁用配置文件本身，则 DNS 查询会收到“NXDOMAIN”响应。这等同于删除了配置文件的情况。
 
-## 常见问题
+##<a name="faq"></a> 常见问题
 
 ### 能否将流量管理器用于多个订阅的终结点？
-是的。具体操作取决于你是使用流量管理器的服务管理 API 还是 Resource Manager API。[Azure 门户预览](https://portal.azure.cn)使用 Resource Manager，[经典门户](https://manage.windowsazure.cn)使用服务管理。
+是的。具体操作取决于你是使用流量管理器的服务管理 API 还是 Resource Manager API。[Azure 门户预览](https://portal.azure.cn)使用 Resource Manager，[经典管理门户](https://manage.windowsazure.cn)使用服务管理。
 
-在 Resource Manager 中，可以将任何订阅中的终结点添加到流量管理器，只要配置流量管理器配置文件的人员具有对该终结点的读取访问权限。可以使用 [Azure Resource Manager 基于角色的访问控制 (RBAC)](/documentation/articles/role-based-access-control-configure) 授予这些权限。
+在 Resource Manager 中，可以将任何订阅中的终结点添加到流量管理器，只要配置流量管理器配置文件的人员具有对该终结点的读取访问权限。可以使用 Azure Resource Manager 基于角色的访问控制 (RBAC) 授予这些权限。
 
 在服务管理中，流量管理器要求任何配置为 Azure 终结点的云服务或 Web 应用都必须与流量管理器配置文件位于相同的订阅中。可以将其他订阅中的云服务终结点作为“外部”终结点添加到流量管理器（这些终结点仍按“内部”终结点费率计费）。不能使用其他订阅中的 Web Apps。
 

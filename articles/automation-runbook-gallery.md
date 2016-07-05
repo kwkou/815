@@ -20,15 +20,15 @@
 
 ##<a name="runbooks-in-runbook-gallery"></a> Runbook 库中的 Runbook
 
-[Runbook 库](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=RootCategory&f[0].Value=WindowsAzure&f[1].Type=SubCategory&f[1].Value=WindowsAzure_automation&f[1].Text=Automation)提供各种来自 Microsoft 的 Runbook，以及可导入 Azure 自动化中的社区。你可以从 [TechNet 脚本中心](http://gallery.technet.microsoft.com)托管的库下载 Runbook，或者在 Azure 经典门户中直接从该库导入 Runbook。
+[Runbook 库](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=RootCategory&f[0].Value=WindowsAzure&f[1].Type=SubCategory&f[1].Value=WindowsAzure_automation&f[1].Text=Automation)提供各种来自 Microsoft 的 Runbook，以及可导入 Azure 自动化中的社区。你可以从 [TechNet 脚本中心](http://gallery.technet.microsoft.com)托管的库下载 Runbook，或者在 Azure 经典管理门户中直接从该库导入 Runbook。
 
-直接从 Runbook 库导入只能使用 Azure 经典门户来完成，而不能使用 Windows PowerShell 执行此功能。
+直接从 Runbook 库导入只能使用 Azure 经典管理门户来完成，而不能使用 Windows PowerShell 执行此功能。
 
 >[AZURE.NOTE] 你应验证从 Runbook 库获取的任何 Runbook 的内容，在生产环境中安装和运行这些 Runbook 时，请谨慎操作。
 
-### 使用 Azure 经典门户从 Runbook 库导入 Runbook
+### 使用 Azure 经典管理门户从 Runbook 库导入 Runbook
 
-1. 在 Azure 经典门户中，单击“添加”>“应用程序服务”>“自动化”>“Runbook”>“从库中”。
+1. 在 Azure 经典管理门户中，单击“添加”>“应用程序服务”>“自动化”>“Runbook”>“从库中”。
 2. 选择一个类别以查看相关的 Runbook，然后选择一个 Runbook 以查看其详细信息。选择所需的 Runbook 后，单击右箭头按钮。![Runbook 库](./media/automation-runbook-gallery/runbook-gallery.png)
 3. 查看该 Runbook 的内容，并记下说明中所述的任何要求。完成后，单击右箭头按钮。
 4. 输入 Runbook 详细信息，然后单击复选标记按钮。Runbook 名称已填入。

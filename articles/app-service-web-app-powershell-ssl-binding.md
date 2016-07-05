@@ -28,7 +28,7 @@
 
     New-AzureRmWebAppSSLBinding -ResourceGroupName myresourcegroup -WebAppName mytestapp -CertificateFilePath PathToPfxFile -CertificatePassword PlainTextPwd -Name www.contoso.com
 
-请注意，在将 SSL 绑定添加到 Web 应用之前，必须已经配置主机名（自定义域）。如果未配置主机名，则在运行 New-AzureRmWebAppSSLBinding 时会收到“主机名不存在”错误。你可以直接从经典门户或使用 Azure PowerShell 添加主机名。以下 PowerShell 代码段可以在运行 New-AzureRmWebAppSSLBinding 之前配置主机名。
+请注意，在将 SSL 绑定添加到 Web 应用之前，必须已经配置主机名（自定义域）。如果未配置主机名，则在运行 New-AzureRmWebAppSSLBinding 时会收到“主机名不存在”错误。你可以直接从经典管理门户或使用 Azure PowerShell 添加主机名。以下 PowerShell 代码段可以在运行 New-AzureRmWebAppSSLBinding 之前配置主机名。
   
     $webApp = Get-AzureRmWebApp -Name mytestapp -ResourceGroupName myresourcegroup  
     $hostNames = $webApp.HostNames  

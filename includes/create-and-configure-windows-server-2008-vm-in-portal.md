@@ -9,9 +9,9 @@
 
 可按照以下步骤创建虚拟机：
 
-1. 使用您的 Azure 帐户登录 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 使用您的 Azure 帐户登录 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
-2. 在经典门户中，在网页的左下角依次单击“+新建”、“虚拟机”，然后单击“从库中”。
+2. 在经典管理门户中，在网页的左下角依次单击“+新建”、“虚拟机”，然后单击“从库中”。
 	![新建虚拟机][Image1]
 
 3. 选择一个 Windows Server 2008 R2 SP1 虚拟机映像，然后单击页面右下角的下一步箭头。

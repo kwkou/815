@@ -64,6 +64,6 @@
     Add-AzureEndpoint -VM $vm -Name $endpoint.Name -Protocol $endpoint.Protocol.ToLower() -PublicPort $endpoint.PublicPort -LocalPort $endpoint.LocalPort | Update-AzureVM
     }
 
-在经典门户网站上可以看到最终结果：
+在经典管理门户网站上可以看到最终结果：
 
 ![](./media/aog-virtual-machines-ps-add-endpoint/batch-add-endpoint-result.PNG)

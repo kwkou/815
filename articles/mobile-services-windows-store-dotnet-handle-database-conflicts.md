@@ -257,7 +257,7 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 
 以下步骤将指导你完成添加服务器更新脚本并对其进行测试的过程。
 
-1. 登录到 [Azure 经典门户]，单击“移动服务”，然后单击你的应用。
+1. 登录到 [Azure 经典管理门户]，单击“移动服务”，然后单击你的应用。
 
    	![][7]
 
@@ -373,7 +373,7 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 [向应用程序添加身份验证]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
 [向应用程序添加推送通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
 
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268374
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268375
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkId=271146

@@ -65,7 +65,7 @@ Azure 模块将读取环境变量 AZURE_SERVICEBUS_NAMESPACE 和 AZURE_SERVICEBU
 
 有关在 Azure 云服务的配置文件中设置环境变量的示例，请参阅[使用存储构建 Node.js 云服务][]。
 
-有关在 [Azure 经典门户][]中为 Azure 网站设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用程序][]。
+有关在 [Azure 经典管理门户][]中为 Azure 网站设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用程序][]。
 
 ## 创建主题
 
@@ -288,7 +288,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 ## 删除主题和订阅
 
-主题和订阅具有持久性，必须通过 [Azure 经典门户][]或以编程方式显式删除。以下示例演示了如何删除名为 `MyTopic` 的主题：
+主题和订阅具有持久性，必须通过 [Azure 经典管理门户][]或以编程方式显式删除。以下示例演示了如何删除名为 `MyTopic` 的主题：
 
     serviceBusService.deleteTopic('MyTopic', function (error) {
         if (error) {
@@ -314,7 +314,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
   [Azure SDK for Node]: https://github.com/WindowsAzure/azure-sdk-for-node
 
-  [Azure 经典门户]: http://manage.windowsazure.cn
+  [Azure 经典管理门户]: http://manage.windowsazure.cn
   [SqlFilter.SqlExpression]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx

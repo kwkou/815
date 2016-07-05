@@ -11,11 +11,11 @@
     您可以重新启动此应用，以查看更改是否已持久保存在 Azure 中的数据库内。你也可以使用 Azure 经典门户来检查数据库：后续两个步骤将会执行此操作以查看数据库中的更改。
 
 
-4. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中，单击与移动服务关联的数据库对应的“管理”。
+4. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，单击与移动服务关联的数据库对应的“管理”。
 
     ![](./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/manage-sql-azure-database.png)
 
-5. 在 Azure 经典门户中，执行查询以查看 Windows 应用商店应用所做的更改。你的查询应类似于以下查询，不过，请使用你的数据库名称而不是 `todolist`。
+5. 在 Azure 经典管理门户中，执行查询以查看 Windows 应用商店应用所做的更改。你的查询应类似于以下查询，不过，请使用你的数据库名称而不是 `todolist`。
 
         SELECT * FROM [todolist].[todoitems]
 

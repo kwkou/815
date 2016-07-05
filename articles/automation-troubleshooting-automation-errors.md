@@ -66,7 +66,7 @@
 
 **错误原因：**如果你对 Azure 帐户设置了多重身份验证，则不能使用 Azure Active Directory 用户向 Azure 进行身份验证，而只能使用证书或服务主体向 Azure 进行身份验证。
 
-**疑难解答提示：**若要将证书用于 Azure 服务管理 cmdlet，请参阅[创建并添加管理 Azure 服务所需的证书](http://blogs.technet.com/b/orchestrator/archive/2014/04/11/managing-azure-services-with-the-microsoft-azure-automation-preview-service.aspx)。 若要将服务主体用于 Azure 资源管理器 cmdlet，请参阅[使用 Azure 经典门户创建服务主体](/documentation/articles/resource-group-create-service-principal-portal)和[通过 Azure 资源管理器 对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)。
+**疑难解答提示：**若要将证书用于 Azure 服务管理 cmdlet，请参阅[创建并添加管理 Azure 服务所需的证书](http://blogs.technet.com/b/orchestrator/archive/2014/04/11/managing-azure-services-with-the-microsoft-azure-automation-preview-service.aspx)。 若要将服务主体用于 Azure 资源管理器 cmdlet，请参阅[使用 Azure 经典管理门户创建服务主体](/documentation/articles/resource-group-create-service-principal-portal)和[通过 Azure 资源管理器 对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)。
 
 
 ## 解决使用 Runbook 时的常见错误
@@ -88,7 +88,7 @@
 Runbook 作业失败，出现“已达到此订阅的每月总作业运行时间配额”错误。
 
 **错误原因：**
-当作业执行时间超过你帐户的 500 分钟免费配额时，就会出现此错误。此配额适用于所有类型的作业执行任务，例如测试作业、从经典门户启动作业、使用 Webhook 执行作业，以及通过 Azure 经典门户或数据中心计划要执行的作业。若要详细了解自动化的定价，请参阅 [Automation pricing（自动化定价）](/home/features/automation/#price)。
+当作业执行时间超过你帐户的 500 分钟免费配额时，就会出现此错误。此配额适用于所有类型的作业执行任务，例如测试作业、从经典管理门户启动作业、使用 Webhook 执行作业，以及通过 Azure 经典管理门户或数据中心计划要执行的作业。若要详细了解自动化的定价，请参阅 [Automation pricing（自动化定价）](/home/features/automation/#price)。
 
 **疑难解答提示：**
 如果你想要每月使用 500 分钟以上的处理时间，则需将订阅从免费层改为基本层。你可以通过下述步骤升级到基本层：

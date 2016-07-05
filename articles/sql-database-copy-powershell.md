@@ -43,7 +43,7 @@
 
 ## 配置你的凭据，然后选择你的订阅
 
-首先必须与 Azure 帐户建立访问连接，因此请启动 PowerShell，然后运行以下 cmdlet。在登录屏幕中，输入登录 Azure 经典门户时所用的相同电子邮件和密码。
+首先必须与 Azure 帐户建立访问连接，因此请启动 PowerShell，然后运行以下 cmdlet。在登录屏幕中，输入登录 Azure 经典管理门户时所用的相同电子邮件和密码。
 
 	Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 

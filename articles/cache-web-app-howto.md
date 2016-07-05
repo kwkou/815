@@ -698,7 +698,7 @@
 
 2. 单击“导入”，然后选择已下载的“发布配置文件”。
 
-	如果你尚未创建 Web 应用，可登录到 [Azure Management Portal](https://manage.windowsazure.cn/)（Azure 经典门户）创建一个，然后转到“仪表板”页，在“速览”下下载“发布配置文件”。
+	如果你尚未创建 Web 应用，可登录到 [Azure Management Portal](https://manage.windowsazure.cn/)（Azure 经典管理门户）创建一个，然后转到“仪表板”页，在“速览”下下载“发布配置文件”。
 
 4. 单击“验证连接”对设置进行验证，然后单击“发布”。
 

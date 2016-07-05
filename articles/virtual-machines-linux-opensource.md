@@ -26,7 +26,7 @@
 - [使用经典部署模型创建的 Azure 虚拟机的常见问题](/documentation/articles/virtual-machines-linux-classic-faq)
 - [关于虚拟机的映像](/documentation/articles/virtual-machines-linux-classic-about-images)
 - [上载自己的发行版映像](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd)（以及使用 [Azure 认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros)的说明）
-- [使用 Azure 经典门户登录到 Linux VM](/documentation/articles/virtual-machines-linux-classic-log-on)
+- [使用 Azure 经典管理门户登录到 Linux VM](/documentation/articles/virtual-machines-linux-classic-log-on)
 
 ## 设置
 

@@ -39,7 +39,7 @@
 
 	-或-
 
-	在 [Azure 经典门户](https://manage.windowsazure.cn)中，选择“虚拟机”>“实例”>“重新启动”。
+	在 [Azure 经典管理门户](https://manage.windowsazure.cn)中，选择“虚拟机”>“实例”>“重新启动”。
 
 - 将虚拟机重新部署到新的 Azure 节点。有关如何执行此操作的信息，请参阅 [Redeploy Virtual Machine to new Azure node（将虚拟机重新部署到新的 Azure 节点）](/documentation/articles/virtual-machines-windows-redeploy-to-new-node)。
 
@@ -118,7 +118,7 @@
 
 首先，在门户中检查虚拟机的状态。
 
-在 [Azure 经典门户](https://manage.windowsazure.cn)中，针对使用经典部署模型创建的虚拟机执行以下操作：
+在 [Azure 经典管理门户](https://manage.windowsazure.cn)中，针对使用经典部署模型创建的虚拟机执行以下操作：
 
 1. 选择“虚拟机”> VM 名称。
 2. 选择 VM 的“仪表板”以查看 VM 的状态。

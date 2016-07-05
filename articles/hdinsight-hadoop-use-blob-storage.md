@@ -91,13 +91,13 @@ Blob 存储可用于结构化和非结构化数据。Blob 存储容器将数据�
 默认的 Blob 容器存储群集特定的信息，如作业历史记录和日志。请不要多个 HDInsight 群集之间共享默认的 Blob 容器。这可能会损坏作业历史记录，群集将出现异常行为。建议对每个群集使用不同的容器，并将共享数据放入在所有相关群集的部署中指定的链接存储帐户，而不是放入默认存储帐户。有关配置链接存储帐户的详细信息，请参阅[创建 HDInsight 群集][hdinsight-creation]。但是，在删除原始的 HDInsight 群集后，你可以重用默认存储容器。对于 HBase 群集，实际上可以通过使用已删除的 HBase 群集使用的默认 Blob 存储容器创建新的 HBase 群集来保留 HBase 表架构和数据。
 
 
-### 使用 Azure 经典门户
+### 使用 Azure 经典管理门户
 
-在 Azure 经典门户中预配 HDInsight 群集时，有两个选项：“快速创建”和“自定义创建”。“快速创建”选项要求提前创建好 Azure 存储帐户。有关说明，请参阅[如何创建存储帐户][azure-storage-create]。
+在 Azure 经典管理门户中预配 HDInsight 群集时，有两个选项：“快速创建”和“自定义创建”。“快速创建”选项要求提前创建好 Azure 存储帐户。有关说明，请参阅[如何创建存储帐户][azure-storage-create]。
 
 使用“快速创建”选项时，你可以选择现有存储帐户。设置过程将创建一个与 HDInsight 群集同名的新容器。如果已存在同名的容器，将使用 <clusterName>-<x>，例如 *myHDIcluster-1*。此容器将用作默认文件系统。
 
-![在 Azure 经典门户中对 HDInsight 中的新 Hadoop 群集使用“快速创建”。][img-hdi-quick-create]
+![在 Azure 经典管理门户中对 HDInsight 中的新 Hadoop 群集使用“快速创建”。][img-hdi-quick-create]
 
 使用“自定义创建”时，对于默认存储空间帐户，你可以选择以下选项之一：
 

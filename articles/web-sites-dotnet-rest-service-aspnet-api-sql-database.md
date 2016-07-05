@@ -47,7 +47,7 @@
 
 	![“新建 ASP.NET 项目”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.png)
 
-如果你在 Azure 中还没有 Web 应用，则可以转到 [Azure 经典门户](http://manage.windowsazure.cn)创建一个。创建 Web 应用后，请转到“仪表板”，在“速览”下可以下载发布配置文件。在本文的发布部分中，你将需要它。
+如果你在 Azure 中还没有 Web 应用，则可以转到 [Azure 经典管理门户](http://manage.windowsazure.cn)创建一个。创建 Web 应用后，请转到“仪表板”，在“速览”下可以下载发布配置文件。在本文的发布部分中，你将需要它。
 
 如果你有数据库服务器，请使用它来创建新的数据库。数据库服务器是非常宝贵的资源，而且你通常会想要在同一台服务器上创建多个数据库来进行测试和开发，而不是在每个数据库中各创建一个数据库服务器。请确保你的 Web 应用和数据库位于相同区域中。
 

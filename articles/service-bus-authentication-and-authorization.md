@@ -41,7 +41,7 @@ Azure.NET SDK 2.0 版和更高版本支持服务总线的 SAS 身份验证。SAS
 
 ## ACS 身份验证
 
-使用 ACS 的服务总线身份验证通过随附的“-sb”ACS 命名空间进行管理。如果你想为服务总线命名空间创建随附 ACS 命名空间，则不能使用 Azure 经典门户创建服务总线命名空间，而必须使用 [New-AzureSBNamespace](https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx) PowerShell cmdlet 来创建命名空间。例如：
+使用 ACS 的服务总线身份验证通过随附的“-sb”ACS 命名空间进行管理。如果你想为服务总线命名空间创建随附 ACS 命名空间，则不能使用 Azure 经典管理门户创建服务总线命名空间，而必须使用 [New-AzureSBNamespace](https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx) PowerShell cmdlet 来创建命名空间。例如：
 
 ```
 New-AzureSBNamespace <namespaceName> "<Region>” -CreateACSNamespace $true

@@ -29,7 +29,7 @@ Azure 服务总线提供两个综合性消息传送解决方案：一是通过�
 
 1. 若要创建服务命名空间，请遵循[如何：创建或修改服务总线服务命名空间](https://msdn.microsoft.com/zh-cn/library/azure/hh690931.aspx)中概述的步骤。
 
-1. 在 [Azure 经典门户][]的主窗口中，单击在上一步中创建的命名空间的名称。
+1. 在 [Azure 经典管理门户][]的主窗口中，单击在上一步中创建的命名空间的名称。
 
 3. 单击**“配置”**。
 
@@ -628,7 +628,7 @@ namespace Microsoft.ServiceBus.Samples
 
 1. 运行该应用程序之前，必须确保已创建服务命名空间并已获得 SAS 密钥，如[简介和先决条件](#introduction-and-prerequisites)中所述。
 
-1. 打开浏览器并转到 [Azure 经典门户][]。
+1. 打开浏览器并转到 [Azure 经典管理门户][]。
 
 3. 单击左侧树中的“服务总线”。
 
@@ -646,6 +646,6 @@ namespace Microsoft.ServiceBus.Samples
 - [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 - [服务总线体系结构](/documentation/articles/service-bus-architecture)
 
-[Azure 经典门户]: http://manage.windowsazure.cn
+[Azure 经典管理门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->

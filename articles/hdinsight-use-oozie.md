@@ -456,7 +456,7 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 
 **检查作业错误日志**
 
-若要对工作流进行故障排除，可从群集头节点找到 Oozie 日志文件，位置是 *C:\\apps\\dist\\oozie-3.3.2.1.3.2.0-05\\oozie-win-distro\\logs\\Oozie.log* 或 *C:\\apps\\dist\\oozie-4.0.0.2.0.7.0-1528\\oozie-win-distro\\logs\\Oozie.log*。有关 RDP 的信息，请参阅[在 HDInsight 中使用 Azure 经典门户管理 Hadoop 群集][hdinsight-admin-portal]。
+若要对工作流进行故障排除，可从群集头节点找到 Oozie 日志文件，位置是 *C:\\apps\\dist\\oozie-3.3.2.1.3.2.0-05\\oozie-win-distro\\logs\\Oozie.log* 或 *C:\\apps\\dist\\oozie-4.0.0.2.0.7.0-1528\\oozie-win-distro\\logs\\Oozie.log*。有关 RDP 的信息，请参阅[在 HDInsight 中使用 Azure 经典管理门户管理 Hadoop 群集][hdinsight-admin-portal]。
 
 **重新运行教程**
 

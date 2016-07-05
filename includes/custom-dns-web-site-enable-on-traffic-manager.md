@@ -6,7 +6,7 @@
 
 > [AZURE.NOTE] 如果在添加终结点时你的 Web 应用未列出，请验证是否已将其配置为**标准** App Service 计划模式。必须将 Web 应用配置为**标准**模式，流量管理器才起作用。
 
-1. 在你的浏览器中，打开 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 在你的浏览器中，打开 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
 2. 在“Web Apps”选项卡中，单击 Web 应用的名称，选择“设置”，然后选择“自定义域和 SSL”
 

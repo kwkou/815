@@ -17,7 +17,7 @@
 
 > [AZURE.SELECTOR]
 - [Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal)
-- [Azure 经典门户](/documentation/articles/vpn-gateway-site-to-site-create)
+- [Azure 经典管理门户](/documentation/articles/vpn-gateway-site-to-site-create)
 - [PowerShell - 资源管理器](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)
 
 本文将指导你使用 Azure 资源管理器 部署模型创建一个虚拟网络和一个连接到本地网络的站点到站点 VPN 连接。站点到站点连接可以用于跨界和混合配置。

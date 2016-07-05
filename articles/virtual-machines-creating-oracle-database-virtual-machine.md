@@ -1,6 +1,6 @@
 <properties
-	pageTitle="使用 Azure 经典门户创建 Oracle Database VM | Azure"
-	description="了解如何使用经典部署模型和 Azure 经典门户创建虚拟机，并在虚拟机中创建 Oracle Database。"
+	pageTitle="使用 Azure 经典管理门户创建 Oracle Database VM | Azure"
+	description="了解如何使用经典部署模型和 Azure 经典管理门户创建虚拟机，并在虚拟机中创建 Oracle Database。"
 	services="virtual-machines-windows"
 	authors="bbenz"
 	documentationCenter=""
@@ -19,7 +19,7 @@
 
 ##在 Azure 中创建 Oracle Database VM
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 
 2. 单击“新建”>“计算”>“从库中”。
 
@@ -46,7 +46,7 @@
 
 ##在 Azure 中使用 Oracle Database VM 创建数据库
 
-1.	登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
+1.	登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 
 2.	单击**“虚拟机”**。
 
@@ -142,7 +142,7 @@
 
 ### 为端口 1521 创建公共终结点
 
-1.	登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
+1.	登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 
 2.	单击“浏览”。
 
@@ -169,9 +169,9 @@
 10. 单击**“确定”**。
 
 ##启用 Oracle Database Enterprise Manager 远程访问
-如果你想要启用对 Oracle Database Enterprise Manager 的远程访问，请在防火墙中打开端口 5500，并在 Azure 经典门户中为端口 5500 创建一个虚拟机终结点（使用前述步骤打开端口 1521，并为端口 1521 创建终结点）。然后，打开一个浏览器并导航到采用 `http://<<unique_domain_name>>:5500/em` 格式的 URL，以从远程计算机运行 Oracle Enterprise Manager。
+如果你想要启用对 Oracle Database Enterprise Manager 的远程访问，请在防火墙中打开端口 5500，并在 Azure 经典管理门户中为端口 5500 创建一个虚拟机终结点（使用前述步骤打开端口 1521，并为端口 1521 创建终结点）。然后，打开一个浏览器并导航到采用 `http://<<unique_domain_name>>:5500/em` 格式的 URL，以从远程计算机运行 Oracle Enterprise Manager。
 
-> [AZURE.NOTE] （可以通过以下方式确定 <<*unique_domain_name*>> 的值：在 [Azure 经典门户](https://manage.windowsazure.cn/)中单击“虚拟机”，然后选择你要用于运行 Oracle Database 的虚拟机）。
+> [AZURE.NOTE] （可以通过以下方式确定 <<*unique_domain_name*>> 的值：在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中单击“虚拟机”，然后选择你要用于运行 Oracle Database 的虚拟机）。
 
 ##配置常用选项和高级选项套装
 如果选择“包含常用选项的 Oracle Database”或“包含高级选项套装的 Oracle Database”，则下一步是在 Oracle 安装中配置附加功能。由于配置可能会根据你对每个组件的需求而有很大的不同，因此，请参阅 Oracle 文档，以获取有关在 Windows 上设置这些产品的说明。

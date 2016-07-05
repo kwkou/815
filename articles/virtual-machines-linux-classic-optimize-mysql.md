@@ -33,12 +33,12 @@
 本文假定你已经创建 Linux 虚拟机，并且安装和配置了 MYSQL。有关入门的详细信息，请参阅“如何在 Azure 上安装 MySQL”。
 
 ###在 Azure 上设置 RAID
-以下步骤显示如何使用 Azure 经典门户在 Azure 上创建 RAID。你也可以使用 Windows PowerShell 脚本设置 RAID。 
+以下步骤显示如何使用 Azure 经典管理门户在 Azure 上创建 RAID。你也可以使用 Windows PowerShell 脚本设置 RAID。 
 在本示例中，我们将使用 4 个磁盘配置 RAID 0。
 
 ####步骤 1：向虚拟机添加数据磁盘  
 
-在 Azure 经典门户的“虚拟机”页上，单击要向其添加数据磁盘的虚拟机。在本示例中，该虚拟机为 mysqlnode1。
+在 Azure 经典管理门户的“虚拟机”页上，单击要向其添加数据磁盘的虚拟机。在本示例中，该虚拟机为 mysqlnode1。
 
 ![][1]
 

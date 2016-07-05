@@ -69,7 +69,7 @@
 上述 NSG 规则非常类似于[示例 1 - 使用 NSG 构建简单的外围网络][Example1]中的 NSG 规则。请查看该文档中的 NSG 说明，以详细了解每个 NSG 规则及其属性。
 
 ## 防火墙规则
-电脑上必须安装管理客户端才能管理防火墙和创建所需的配置。有关如何管理设备的信息，请参阅防火墙（或其他 NVA）供应商提供的文档。本部分的余下内容将介绍如何通过供应商的管理客户端（即，不使用 Azure 经典门户或 PowerShell）来配置防火墙本身。
+电脑上必须安装管理客户端才能管理防火墙和创建所需的配置。有关如何管理设备的信息，请参阅防火墙（或其他 NVA）供应商提供的文档。本部分的余下内容将介绍如何通过供应商的管理客户端（即，不使用 Azure 经典管理门户或 PowerShell）来配置防火墙本身。
 
 有关下载客户端和连接到本示例所用 Barracuda 的说明，可在以下位置找到：[Barracuda NG Admin](https://techlib.barracuda.com/NG61/NGAdmin)
 
@@ -134,7 +134,7 @@
 16.	前端子网上没有出站规则，因此允许响应，Internet 用户将收到请求的网页。
 
 #### （允许）通过 RDP 访问后端
-1.	Internet 上的服务器管理员在 BackEnd001.CloudApp.Net:xxxxx 上请求与 AppVM01 的 RDP 会话，其中 xxxxx 是通过 RDP 访问 AppVM01 所用的随机分配端口号（在 Azure 经典门户上或通过 PowerShell 可以找到分配的端口）
+1.	Internet 上的服务器管理员在 BackEnd001.CloudApp.Net:xxxxx 上请求与 AppVM01 的 RDP 会话，其中 xxxxx 是通过 RDP 访问 AppVM01 所用的随机分配端口号（在 Azure 经典管理门户上或通过 PowerShell 可以找到分配的端口）
 2.	防火墙只在 FrontEnd001.CloudApp.Net 地址上侦听，因此不参与此流量的传送
 3.	后端子网开始处理入站规则：
   1.	NSG 规则 1 (DNS) 不适用，将转到下一规则

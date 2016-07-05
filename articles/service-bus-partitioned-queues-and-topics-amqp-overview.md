@@ -32,7 +32,7 @@ Azure 服务总线现在支持用于服务总线**分区队列和主题**的高�
 
 ### 创建分区队列
 
-可以使用 [Azure 经典门户][]和服务总线 SDK 创建分区队列。若要创建分区队列，请在 [QueueDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.aspx) 实例中将 [EnablePartitioning](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx) 属性设置为 **true**。以下代码演示如何使用服务总线 SDK 创建分区队列。
+可以使用 [Azure 经典管理门户][]和服务总线 SDK 创建分区队列。若要创建分区队列，请在 [QueueDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.aspx) 实例中将 [EnablePartitioning](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx) 属性设置为 **true**。以下代码演示如何使用服务总线 SDK 创建分区队列。
  
 ```
 // Create partitioned queue

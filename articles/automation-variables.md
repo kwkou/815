@@ -13,13 +13,13 @@
 
 # Azure 自动化中的变量资产
 
-变量资产是可供自动化帐户中的所有 Runbook 使用的值。可以从 Azure 经典门户、Windows PowerShell 和 Runbook 中创建、修改和检索变量资产。自动化变量可用于以下方案：
+变量资产是可供自动化帐户中的所有 Runbook 使用的值。可以从 Azure 经典管理门户、Windows PowerShell 和 Runbook 中创建、修改和检索变量资产。自动化变量可用于以下方案：
 
 - 在多个 Runbook 之间共享某个值。
 
 - 在同一 Runbook 中的多个作业之间共享某个值。
 
-- 从经典门户或通过 Runbook 使用的 Windows PowerShell 命令行管理某个值。
+- 从经典管理门户或通过 Runbook 使用的 Windows PowerShell 命令行管理某个值。
 
 自动化变量将保留，以便在 Runbook 失败时它们仍然继续可用。这也允许一个 Runbook 设置的值随后由另一个 Runbook 使用，或由同一 Runbook 在下次运行时使用。
 
@@ -29,7 +29,7 @@
 
 ##<a id="variable-types"></a> 变量类型
 
-当使用 Azure 经典门户创建变量时，你必须通过下拉列表指定一个数据类型，以便经典门户可以显示用于输入变量值的相应控件。该变量并不局限于此数据类型，但如果您想要指定不同类型的值，则必须使用 Windows PowerShell 设置该变量。如果指定为“未定义”，则该变量的值将设置为 **$null**，并且你必须使用 [Set-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913767.aspx) cmdlet 或 **Set-AutomationVariable** 活动来设置该值。无法在该经典门户中创建或更改复杂变量类型的值，但您可以使用 Windows PowerShell 提供任何类型的值。复杂类型将作为 [PSCustomObject](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscustomobject.aspx) 返回。
+当使用 Azure 经典管理门户创建变量时，你必须通过下拉列表指定一个数据类型，以便经典管理门户可以显示用于输入变量值的相应控件。该变量并不局限于此数据类型，但如果您想要指定不同类型的值，则必须使用 Windows PowerShell 设置该变量。如果指定为“未定义”，则该变量的值将设置为 **$null**，并且你必须使用 [Set-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913767.aspx) cmdlet 或 **Set-AutomationVariable** 活动来设置该值。无法在该经典管理门户中创建或更改复杂变量类型的值，但您可以使用 Windows PowerShell 提供任何类型的值。复杂类型将作为 [PSCustomObject](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscustomobject.aspx) 返回。
 
 您可以通过创建一个数组或哈希表并将其保存到变量，来将多个值存储到单一变量。
 
@@ -55,7 +55,7 @@
 
 ## 创建新的自动化变量
 
-### 使用 Azure 经典门户创建新变量
+### 使用 Azure 经典管理门户创建新变量
 
 1. 在你的自动化帐户中，单击窗口顶部的“资产”。
 1. 在窗口底部，单击“添加设置”。

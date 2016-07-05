@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Azure 经典门户快捷键 | Azure"
-   description="本文始终列出可在整个 Azure 经典门户中使用的最新快捷键。单个服务可能有其自身的专用快捷键。"
+   pageTitle="Azure 经典管理门户快捷键 | Azure"
+   description="本文始终列出可在整个 Azure 经典管理门户中使用的最新快捷键。单个服务可能有其自身的专用快捷键。"
    services="cloud-services"
    documentationCenter=""
    authors="curtand"
@@ -12,7 +12,7 @@
    ms.date="12/01/2015"
    wacn.date="03/18/2016"/>
 
-# Azure 经典门户快捷键
+# Azure 经典管理门户快捷键
 
 ## 打开中心
 
@@ -44,6 +44,6 @@
 
 ## 后续步骤
 
-更好地了解 Azure 经典门户：http://www.azure.cn/。
+更好地了解 Azure 经典管理门户：http://www.azure.cn/。
 
 <!---HONumber=Mooncake_0104_2016-->

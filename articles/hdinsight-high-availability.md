@@ -46,7 +46,7 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 
 
 ## 检查活动头节点服务的状态
-若要确定哪个头节点处于活动状态，并检查该头节点上运行的服务状态，你必须通过使用远程桌面协议 (RDP) 连接到 Hadoop 群集。有关 RDP 说明，请参阅[使用 Azure 经典门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp)。一旦远程连接到了该群集，请双击位于桌面上的“Hadoop 服务可用状态”图标，以便通过相关状态来了解 Namenode、Jobtracker、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行，如果是 HDI 3.0，则可通过相关状态来了解 Namenode、Resource Manager、History Server、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行。
+若要确定哪个头节点处于活动状态，并检查该头节点上运行的服务状态，你必须通过使用远程桌面协议 (RDP) 连接到 Hadoop 群集。有关 RDP 说明，请参阅[使用 Azure 经典管理门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp)。一旦远程连接到了该群集，请双击位于桌面上的“Hadoop 服务可用状态”图标，以便通过相关状态来了解 Namenode、Jobtracker、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行，如果是 HDI 3.0，则可通过相关状态来了解 Namenode、Resource Manager、History Server、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行。
 
 ![](./media/hdinsight-high-availability/Hadoop.Service.Availability.Status.png)
 

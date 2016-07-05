@@ -19,7 +19,7 @@
 
 > [AZURE.SELECTOR]
 - [Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal)
-- [Azure 经典门户](/documentation/articles/vpn-gateway-site-to-site-create)
+- [Azure 经典管理门户](/documentation/articles/vpn-gateway-site-to-site-create)
 - [PowerShell - Resource Manager](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)
 
 

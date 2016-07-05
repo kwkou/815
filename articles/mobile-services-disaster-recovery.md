@@ -26,7 +26,7 @@
 	
 + **备份移动服务脚本**
 
-	我们建议你将移动服务脚本存储在源代码管理系统（例如 [Team Foundation Service] 或 [GitHub]）中，而不只是依赖于移动服务自身中的副本。你可以使用移动服务[源代码管理功能]或[使用 Azure CLI] 通过 Azure 经典门户下载这些脚本。请特别注意 Azure 经典门户中标记为“预览”的功能，因为不保证你能够恢复这些脚本，你可能需要从自己的源代码管理原件进行恢复。
+	我们建议你将移动服务脚本存储在源代码管理系统（例如 [Team Foundation Service] 或 [GitHub]）中，而不只是依赖于移动服务自身中的副本。你可以使用移动服务[源代码管理功能]或[使用 Azure CLI] 通过 Azure 经典管理门户下载这些脚本。请特别注意 Azure 经典管理门户中标记为“预览”的功能，因为不保证你能够恢复这些脚本，你可能需要从自己的源代码管理原件进行恢复。
 	
 + **保留辅助移动服务**
 
@@ -75,13 +75,13 @@
 		info:    Migration complete. It may take 30 minutes for DNS to resolve to the migrated site.
 		info:    mobile migrate command OK
 
-    > [AZURE.NOTE] 完成该命令后，可能需要经过几分钟时间，你才能在 Azure 经典门户中看到更改。
+    > [AZURE.NOTE] 完成该命令后，可能需要经过几分钟时间，你才能在 Azure 经典管理门户中看到更改。
 
 5. 验证是否已正确恢复所有脚本，方法是将其与源代码管理中的原件进行比较。大多数情况下，脚本会自动恢复且不会丢失数据，但如果你发现存在差异，可以手动恢复该脚本。
 
 6. 确保恢复后的服务能够与 Azure SQL 数据库通信。recover 命令将恢复移动服务，但会保留与原始数据库的连接。如果 Azure 主区域中的问题也影响到了数据库，则恢复后的服务可能仍然不会正常运行。你可以使用 Azure 服务仪表板来检查给定区域的数据库状态。如果原始数据库不工作，则你可以恢复它：
 	+ 根据 [SQL 数据库业务连续性指南]中所述，将 Azure SQL 数据库恢复到你刚刚在其中恢复了移动服务的 Azure 区域。
-	+ 在 Azure 经典门户中，在移动服务的“配置”选项卡上选择“更改数据库”，然后选择刚刚恢复的数据库。
+	+ 在 Azure 经典管理门户中，在移动服务的“配置”选项卡上选择“更改数据库”，然后选择刚刚恢复的数据库。
 
 7. 现在，你的移动服务已托管在不同的物理位置。你需要更新发布和/或 git 凭据，以便更新正在运行的站点。
 	+ 如果你使用 **.NET 后端**，请按[发布移动服务](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/#publish-your-mobile-service)中所述重新设置发布配置文件。这会更新发布详细信息，以指向新的服务位置。
@@ -109,7 +109,7 @@
 [Github]: https://github.com/
 [源代码管理功能]: /documentation/articles/mobile-services-store-scripts-source-control
 [使用 Azure CLI]: /documentation/articles/mobile-services-manage-command-line-interface
-[Azure 经典门户]: http://manage.windowsazure.cn/
+[Azure 经典管理门户]: http://manage.windowsazure.cn/
 [Azure 服务仪表板]: /zh-cn/support/service-dashboard/
 [使用 Azure CLI 自动操作移动服务]: /documentation/articles/mobile-services-manage-command-line-interface
 

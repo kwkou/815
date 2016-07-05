@@ -85,7 +85,7 @@ HDInsight 群集要求在 Azure 存储帐户中创建 Blob 容器：
 	# List the keys for a Storage account
 	Get-AzureStorageKey -StorageAccountName $storageAccountName
 
-有关使用经典门户获取信息的详细信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)的“查看、复制和重新生成存储访问密钥”部分。
+有关使用经典管理门户获取信息的详细信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)的“查看、复制和重新生成存储访问密钥”部分。
 
 **创建 Azure 存储帐户**
 
@@ -220,7 +220,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 >[AZURE.NOTE] 授予/撤消访问权限时，你将重设群集用户的用户名和密码。
 
-也可以使用经典门户完成此操作。请参阅[使用 Azure 经典门户管理 HDInsight][hdinsight-admin-portal]。
+也可以使用经典管理门户完成此操作。请参阅[使用 Azure 经典管理门户管理 HDInsight][hdinsight-admin-portal]。
 
 ##更新 HTTP 用户凭据
 
@@ -267,7 +267,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 ## 另请参阅
 * [HDInsight cmdlet 参考文档][hdinsight-powershell-reference]
-* [使用 Azure 经典门户管理 HDInsight][hdinsight-admin-portal]
+* [使用 Azure 经典管理门户管理 HDInsight][hdinsight-admin-portal]
 * [使用命令行界面管理 HDInsight][hdinsight-admin-cli]
 * [创建 HDInsight 群集][hdinsight-provision]
 * [将数据上载到 HDInsight][hdinsight-upload-data]

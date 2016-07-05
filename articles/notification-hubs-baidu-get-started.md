@@ -137,7 +137,7 @@
 
 ##<a id="configure-hub"></a>配置通知中心
 
-1. 登录到 [Azure 经典门户]，然后单击屏幕底部的“+新建”。
+1. 登录到 [Azure 经典管理门户]，然后单击屏幕底部的“+新建”。
 
 2. 依次单击“应用程序服务”、“服务总线”、“通知中心”和“快速创建”。
 
@@ -260,7 +260,7 @@
 				public static String NotificationHubConnectionString = "...";
 			}
 
-	使用前面从百度云项目中检索到的内容设置 **API\_KEY** 的值，使用 Azure 经典门户中的通知中心名称设置 **NotificationHubName**，并使用 Azure 经典门户中的 DefaultListenSharedAccessSignature 设置 **NotificationHubConnectionString**。
+	使用前面从百度云项目中检索到的内容设置 **API\_KEY** 的值，使用 Azure 经典管理门户中的通知中心名称设置 **NotificationHubName**，并使用 Azure 经典管理门户中的 DefaultListenSharedAccessSignature 设置 **NotificationHubConnectionString**。
 
 11. 添加一个名为 **DemoApplication.java** 的新类，并向此类中添加以下代码：
 
@@ -395,7 +395,7 @@
 ##<a id="send"></a>向应用程序发送通知
 
 
-在 Azure 经典门户中通过通知中心上的调试选项卡（如以下屏幕中所示）来发送通知，可以在应用中测试通知的接收情况。
+在 Azure 经典管理门户中通过通知中心上的调试选项卡（如以下屏幕中所示）来发送通知，可以在应用中测试通知的接收情况。
 
 ![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-debug.png)
 
@@ -456,7 +456,7 @@
 
 该应用将从百度推送通知服务检索“userId”和“channelId”，并注册到通知中心。
 
-若要发送测试通知，可以使用 Azure 经典门户的调试选项卡。如果你为 Visual Studio 生成了 .NET 控制台应用程序，只需在 Visual Studio 中按 F5 键以运行该应用程序。该应用程序将发送一条通知，该通知显示在设备或模拟器的顶部通知区域。
+若要发送测试通知，可以使用 Azure 经典管理门户的调试选项卡。如果你为 Visual Studio 生成了 .NET 控制台应用程序，只需在 Visual Studio 中按 F5 键以运行该应用程序。该应用程序将发送一条通知，该通知显示在设备或模拟器的顶部通知区域。
 
 
 <!-- Images. -->
@@ -497,7 +497,7 @@
 <!-- URLs. -->
 [移动服务 Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
 [百度推送 Android SDK]: http://developer.baidu.com/wiki/index.php?title=docs/cplat/push/sdk/clientsdk
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 [百度门户]: http://www.baidu.com/
 
 <!---HONumber=Mooncake_0523_2016-->

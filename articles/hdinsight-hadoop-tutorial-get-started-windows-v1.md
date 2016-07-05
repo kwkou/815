@@ -55,10 +55,10 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 **创建 Azure 存储帐户**
 
-1. 登录到 [Azure 经典门户][azure-management-portal]。
+1. 登录到 [Azure 经典管理门户][azure-management-portal]。
 2. 单击左下角的“新建”，然后如图所示输入值。
 
-	![在 Azure 经典门户中，可以使用“快速创建”来设置新的存储帐户。][image-hdi-storageaccount-quickcreate]
+	![在 Azure 经典管理门户中，可以使用“快速创建”来设置新的存储帐户。][image-hdi-storageaccount-quickcreate]
 
 从列表中选择新存储帐户，然后单击页面底部的“管理访问密钥”。记下“主访问密钥”（或“辅助访问密钥”- 任一密钥都有效）。本教程后面的步骤中将会用到此密钥。有关详细信息，请参阅[如何创建存储帐户][azure-create-storageaccount]。
 
@@ -71,7 +71,7 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 **设置 Hadoop 群集**
 
-1. 登录到 [Azure 经典门户][azure-management-portal]。
+1. 登录到 [Azure 经典管理门户][azure-management-portal]。
 
 2. 单击左下角的“新建”，然后如图所示输入值。
 
@@ -102,14 +102,14 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 -- COMMENTED OUT TEXT ENDS -->
 
->[AZURE.NOTE]这些步骤将预配 HDInsight 群集版本 3.1。若要使用其他版本创建群集，请使用经典门户中的“自定义”创建方法，或使用 Azure PowerShell。有关各版本之间的差异的信息，请参阅 [HDInsight 提供的群集版本有哪些新功能？][hdinsight-versions]。有关使用“自定义创建”选项的信息，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。
+>[AZURE.NOTE]这些步骤将预配 HDInsight 群集版本 3.1。若要使用其他版本创建群集，请使用经典管理门户中的“自定义”创建方法，或使用 Azure PowerShell。有关各版本之间的差异的信息，请参阅 [HDInsight 提供的群集版本有哪些新功能？][hdinsight-versions]。有关使用“自定义创建”选项的信息，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。
 
 
-##<a name="sample"></a>从经典门户运行示例数据
+##<a name="sample"></a>从经典管理门户运行示例数据
 
-成功设置的 HDInsight 群集提供包括入门库的查询控制台以直接从经典门户运行示例。通过浏览一些基本方案，你可以使用示例了解如何使用 HDInsight。这些示例提供所有必要组件，比如要分析的数据和要对数据运行的查询。若要了解有关入门库中的示例的详细信息，请参阅[使用 HDInsight 入门库了解 HDInsight 中的 Hadoop](/documentation/articles/hdinsight-learn-hadoop-use-sample-gallery-v1)。
+成功设置的 HDInsight 群集提供包括入门库的查询控制台以直接从经典管理门户运行示例。通过浏览一些基本方案，你可以使用示例了解如何使用 HDInsight。这些示例提供所有必要组件，比如要分析的数据和要对数据运行的查询。若要了解有关入门库中的示例的详细信息，请参阅[使用 HDInsight 入门库了解 HDInsight 中的 Hadoop](/documentation/articles/hdinsight-learn-hadoop-use-sample-gallery-v1)。
 
-**若要运行示例**，请从 Azure 经典门户中单击你想要运行示例的群集名称，然后单击页面底部的“查询控制台”。从打开的网页中，单击“入门库”选项卡，然后在“示例”类别下，单击要运行的示例。按照网页上的说明完成示例。下表列出了几个示例，并提供了有关每个示例的作用的详细信息。
+**若要运行示例**，请从 Azure 经典管理门户中单击你想要运行示例的群集名称，然后单击页面底部的“查询控制台”。从打开的网页中，单击“入门库”选项卡，然后在“示例”类别下，单击要运行的示例。按照网页上的说明完成示例。下表列出了几个示例，并提供了有关每个示例的作用的详细信息。
 
 示例 | 它有什么作用？
 ------ | ---------------
@@ -118,14 +118,14 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 
 
-##<a name="hivequery"></a>从经典门户运行 Hive 查询
+##<a name="hivequery"></a>从经典管理门户运行 Hive 查询
 现在，你的 HDInsight 群集已设置完毕，下一步是运行 Hive 作业以查询示例 Hive 表。我们将使用 HDInsight 群集随附的 *hivesampletable*。该表包含有关移动设备制造商、平台和型号的数据。对此表运行 Hive 查询可按特定制造商检索移动设备的数据。
 
 > [AZURE.NOTE]HDInsight Tools for Visual Studio 随附了 Azure SDK for .NET 2.5 或更高版本。使用 Visual Studio 中的工具可以连接到 HDInsight 群集、创建 Hive 表和运行 Hive 查询。有关详细信息，请参阅 [HDInsight Hadoop Tools for Visual Studio 入门][1]。
 
 **从群集仪表板运行 Hive 作业**
 
-1. 登录到 [Azure 经典门户][azure-management-portal]。
+1. 登录到 [Azure 经典管理门户][azure-management-portal]。
 2. 单击左窗格中的“HDINSIGHT”。你将会看到所创建的群集的列表，包括你刚刚在上一部分中创建的群集。
 3. 单击要用于运行 Hive 作业的群集名称，然后单击页面底部的“查询控制台”。
 4. 这会在另一个浏览器选项卡中打开一个网页。输入 Hadoop 用户帐户和密码。默认用户名为 **admin**；密码是你在设置群集时所输入的密码。仪表板类似于：
@@ -134,7 +134,7 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 	页面顶部有多个选项卡。默认选项卡为“Hive 编辑器”，而其他选项卡为“作业历史记录”和“文件浏览器”。使用仪表板可以提交 Hive 查询、检查 Hadoop 作业日志，以及浏览 WASB 文件。
 
-	> [AZURE.NOTE]请注意，网页的 URL 为 *&lt;ClusterName&gt;.azurehdinsight.cn*。因此，如果不从经典门户打开仪表板，也可以在 Web 浏览器中使用 URL 打开仪表板。
+	> [AZURE.NOTE]请注意，网页的 URL 为 *&lt;ClusterName&gt;.azurehdinsight.cn*。因此，如果不从经典管理门户打开仪表板，也可以在 Web 浏览器中使用 URL 打开仪表板。
 
 6. 在“Hive 编辑器”选项卡上，为“查询名称”输入 **HTC20**。查询名称为作业标题。在查询窗格中，按下图所示输入 Hive 查询：
 

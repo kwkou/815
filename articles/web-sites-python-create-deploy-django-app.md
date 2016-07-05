@@ -47,9 +47,9 @@
 
 
 <a name="website-creation-on-portal"></a>
-## 在经典门户中创建 Web 应用
+## 在经典管理门户中创建 Web 应用
 
-创建你的应用程序的第一步是通过 Azure 经典门户创建 Web 应用。为此，你将需要登录到该经典门户，然后单击左下角的新建按钮。将出现一个窗口。单击“快速创建”，输入 URL，然后选择“创建 Web 应用”。
+创建你的应用程序的第一步是通过 Azure 经典管理门户创建 Web 应用。为此，你将需要登录到该经典管理门户，然后单击左下角的新建按钮。将出现一个窗口。单击“快速创建”，输入 URL，然后选择“创建 Web 应用”。
 
 ![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
 
@@ -150,7 +150,7 @@ Python 虚拟环境。如果在站点上尚不存在兼容的虚拟环境，请�
 
 ### 克隆存储库
 
-首先，使用 Azure 经典门户 Web 应用上提供的 url 来克隆存储库。
+首先，使用 Azure 经典管理门户 Web 应用上提供的 url 来克隆存储库。
 
 ![](./media/web-sites-python-create-deploy-django-app/ptvs-git-clone.png)
 
@@ -229,7 +229,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 ### 克隆存储库
 
-首先，使用在 Azure 经典门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -318,7 +318,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 ### 克隆存储库
 
-首先，使用在 Azure 经典门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -461,7 +461,7 @@ Django 有收集静态文件的概念。这将从原始位置取用所有静态�
  
 在实践中，可能需要做一些更复杂的事来处理调试和发布模式间的切换以及获取主机名。
 
-可以通过 Azure 经典门户“配置”页上的“应用设置”部分设置环境变量。这可用于设置可能不希望其出现在源（连接字符串、密码等）的值，或者希望在 Azure 与本地计算机间进行不同设置的值。在 `settings.py` 中，可以使用 `os.getenv` 查询环境变量。
+可以通过 Azure 经典管理门户“配置”页上的“应用设置”部分设置环境变量。这可用于设置可能不希望其出现在源（连接字符串、密码等）的值，或者希望在 Azure 与本地计算机间进行不同设置的值。在 `settings.py` 中，可以使用 `os.getenv` 查询环境变量。
 
 <a name="using-a-database"></a>
 ## 使用数据库

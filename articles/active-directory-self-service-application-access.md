@@ -26,7 +26,7 @@
 
 若要启用自助应用程序访问和配置最终用户可以添加或请求哪些应用程序，请遵循以下说明。
 
-**1：**登录 [Azure 经典门户](https://manage.windowsazure.cn/)。
+**1：**登录 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 
 **2：**在“Active Directory”部分下选择你的目录，然后选择“应用程序”选项卡。
 

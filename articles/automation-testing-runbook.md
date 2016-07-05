@@ -16,7 +16,7 @@
 
 即使草稿版正在运行，该 Runbook 也仍会正常执行工作流，并针对环境中的资源执行任何操作。因此，你只能在非生产资源中测试 Runbook。
 
-## 在 Azure 经典门户中测试 Runbook
+## 在 Azure 经典管理门户中测试 Runbook
 
 1. [打开 Runbook 的草稿版](/documentation/articles/automation-edit-textual-runbook/#to-edit-a-runbook-with-the-azure-portal)。
 2. 单击“测试”按钮开始测试。如果 Runbook 包含参数，则会显示一个对话框让你提供用于测试的值。
