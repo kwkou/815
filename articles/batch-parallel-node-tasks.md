@@ -52,36 +52,38 @@
 
 此 [Batch .NET][api_net] API 代码段演示了一个请求，该请求要求创建一个包含四个大型节点的池，每个节点最多四个任务。它指定了一个任务计划策略，要求先用任务填充一个节点，然后再将任务分配给池中的其他节点。有关如何使用 Batch .NET API 添加池的详细信息，请参阅 [BatchClient.PoolOperations.CreatePool][poolcreate_net]。
 
-```csharp
-CloudPool pool =
-    batchClient.PoolOperations.CreatePool(
-        poolId: "mypool",
-		targetDedicated: 4
-		virtualMachineSize: "large",
-		cloudServiceConfiguration: new CloudServiceConfiguration(osFamily: "4"));
-pool.MaxTasksPerComputeNode = 4;
-pool.TaskSchedulingPolicy = new TaskSchedulingPolicy(ComputeNodeFillType.Pack);
-pool.Commit();
-```
+csharp
+
+		CloudPool pool =
+		    batchClient.PoolOperations.CreatePool(
+		        poolId: "mypool",
+				targetDedicated: 4
+				virtualMachineSize: "large",
+				cloudServiceConfiguration: new CloudServiceConfiguration(osFamily: "4"));
+		pool.MaxTasksPerComputeNode = 4;
+		pool.TaskSchedulingPolicy = new TaskSchedulingPolicy(ComputeNodeFillType.Pack);
+		pool.Commit();
+
 
 ## Batch REST 示例
 
 此 [Batch REST][api_rest] API 代码段演示了一个请求，该请求要求创建一个包含两个大型节点的池，每个节点最多四个任务。有关如何使用 REST API 添加池的详细信息，请参阅[将池添加到帐户][rest_addpool]。
 
-```json
-{
-  "odata.metadata":"https://myaccount.myregion.batch.azure.com/$metadata#pools/@Element",
-  "id":"mypool",
-  "vmSize":"large",
-  "cloudServiceConfiguration": {
-    "osFamily":"4",
-    "targetOSVersion":"*",
-  }
-  "targetDedicated":2,
-  "maxTasksPerNode":4,
-  "enableInterNodeCommunication":true,
-}
-```
+json
+
+		{
+		  "odata.metadata":"https://myaccount.myregion.batch.azure.com/$metadata#pools/@Element",
+		  "id":"mypool",
+		  "vmSize":"large",
+		  "cloudServiceConfiguration": {
+		    "osFamily":"4",
+		    "targetOSVersion":"*",
+		  }
+		  "targetDedicated":2,
+		  "maxTasksPerNode":4,
+		  "enableInterNodeCommunication":true,
+		}
+
 
 > [AZURE.NOTE] 只能在创建池时设置 `maxTasksPerNode` 元素和 [MaxTasksPerComputeNode][maxtasks_net] 属性。创建完池以后，不能对上述元素和属性进行修改。
 
@@ -91,23 +93,23 @@ pool.Commit();
 
 此 C# 控制台应用程序使用 [Batch .NET][api_net] 库来创建包含一个或多个计算节点的池，并在这些节点上执行其数量可以配置的任务，以便模拟可变负荷。应用程序的输出指定了哪些节点执行了每个任务。该应用程序还提供了作业参数和持续时间的摘要。下面显示了同一个应用程序运行两次后的输出摘要部分。
 
-```
-Nodes: 1
-Node size: large
-Max tasks per node: 1
-Tasks: 32
-Duration: 00:30:01.4638023
-```
+
+		Nodes: 1
+		Node size: large
+		Max tasks per node: 1
+		Tasks: 32
+		Duration: 00:30:01.4638023
+
 
 第一次执行示例应用程序时，结果显示，在池中只有一个节点且使用默认的一个节点一个任务设置的情况下，作业持续时间超过 30 分钟。
 
-```
-Nodes: 1
-Node size: large
-Max tasks per node: 4
-Tasks: 32
-Duration: 00:08:48.2423500
-```
+
+		Nodes: 1
+		Node size: large
+		Max tasks per node: 4
+		Tasks: 32
+		Duration: 00:08:48.2423500
+
 
 第二次运行示例应用程序时，显示作业持续时间显著缩短。这是因为该池已被配置为每个节点四个任务，因此可以并行执行任务，使得作业可以在大约四分之一的时间内完成。
 

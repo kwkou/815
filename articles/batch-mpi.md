@@ -35,19 +35,19 @@
 
 多实例任务需要有已启用**节点间通信**和**已禁用并发任务执行**的池。如果尝试在已禁用节点间通信，或 maxTasksPerNode 值大于 1 的池中执行多实例任务，则永远不排定任务 -- 它无限期停留在“活动”状态。本代码段显示如何使用 Batch .NET 库创建这种池。
 
-```
-CloudPool myCloudPool =
-	myBatchClient.PoolOperations.CreatePool(
-		poolId: "MultiInstanceSamplePool",
-		targetDedicated: 3
-		virtualMachineSize: "small",
-		cloudServiceConfiguration: new CloudServiceConfiguration(osFamily: "4"));
 
-// Multi-instance tasks require inter-node communication, and those nodes
-// must run only one task at a time.
-myCloudPool.InterComputeNodeCommunicationEnabled = true;
-myCloudPool.MaxTasksPerComputeNode = 1;
-```
+		CloudPool myCloudPool =
+			myBatchClient.PoolOperations.CreatePool(
+				poolId: "MultiInstanceSamplePool",
+				targetDedicated: 3
+				virtualMachineSize: "small",
+				cloudServiceConfiguration: new CloudServiceConfiguration(osFamily: "4"));
+		
+		// Multi-instance tasks require inter-node communication, and those nodes
+		// must run only one task at a time.
+		myCloudPool.InterComputeNodeCommunicationEnabled = true;
+		myCloudPool.MaxTasksPerComputeNode = 1;
+
 
 此外，多实例任务只在 **2015 年 12 月 14 日之后创建的池**中的节点上执行。
 
@@ -57,22 +57,22 @@ myCloudPool.MaxTasksPerComputeNode = 1;
 
 若要使用多实例任务来执行 MPI 应用程序，首先需要将 MPI 软件安装到池中的计算节点。这是使用 [StartTask][net_starttask] 的好时机，每当节点加入池或重新启动时，它就会执行。此代码段创建 StartTask 将 MS-MPI 安装包指定为[资源文件][net_resourcefile]，并指定将于资源文件下载到节点之后执行的命令行。
 
-```
-// Create a StartTask for the pool which we use for installing MS-MPI on
-// the nodes as they join the pool (or when they are restarted).
-StartTask startTask = new StartTask
-{
-    CommandLine = "cmd /c MSMpiSetup.exe -unattend -force",
-    ResourceFiles = new List<ResourceFile> { new ResourceFile("https://mystorageaccount.blob.core.windows.net/mycontainer/MSMpiSetup.exe", "MSMpiSetup.exe") },
-    RunElevated = true,
-    WaitForSuccess = true
-};
-myCloudPool.StartTask = startTask;
+		
+		// Create a StartTask for the pool which we use for installing MS-MPI on
+		// the nodes as they join the pool (or when they are restarted).
+		StartTask startTask = new StartTask
+		{
+		    CommandLine = "cmd /c MSMpiSetup.exe -unattend -force",
+		    ResourceFiles = new List<ResourceFile> { new ResourceFile("https://mystorageaccount.blob.core.windows.net/mycontainer/MSMpiSetup.exe", "MSMpiSetup.exe") },
+		    RunElevated = true,
+		    WaitForSuccess = true
+		};
+		myCloudPool.StartTask = startTask;
+		
+		// Commit the fully configured pool to the Batch service to actually create
+		// the pool and its compute nodes.
+		await myCloudPool.CommitAsync();
 
-// Commit the fully configured pool to the Batch service to actually create
-// the pool and its compute nodes.
-await myCloudPool.CommitAsync();
-```
 
 > [AZURE.NOTE] 当在 Batch 中使用多实例任务实现 MPI 方案时，不限于只能使用 MS-MPI。任何 MPI 标准实现只要与为池中的计算节点指定的操作系统兼容都可使用。
 
@@ -80,28 +80,28 @@ await myCloudPool.CommitAsync();
 
 我们已讨论池的要求和 MPI 包安装，现在让我们创建多实例任务。在此代码段中，我们将创建一个标准 [CloudTask][net_task]，然后配置其 [MultiInstanceSettings][net_multiinstance_prop] 属性。如上所述，多实例任务不是独特的任务类型，而只是已配置多实例设置的标准 Batch 任务。
 
-```
-// Create the multi-instance task. Its command line is the "application command"
-// and will be executed *only* by the primary, and only after the primary and
-// subtasks execute the CoordinationCommandLine.
-CloudTask myMultiInstanceTask = new CloudTask(id: "mymultiinstancetask",
-    commandline: "cmd /c mpiexec.exe -wdir %AZ_BATCH_TASK_SHARED_DIR% MyMPIApplication.exe");
+		
+		// Create the multi-instance task. Its command line is the "application command"
+		// and will be executed *only* by the primary, and only after the primary and
+		// subtasks execute the CoordinationCommandLine.
+		CloudTask myMultiInstanceTask = new CloudTask(id: "mymultiinstancetask",
+		    commandline: "cmd /c mpiexec.exe -wdir %AZ_BATCH_TASK_SHARED_DIR% MyMPIApplication.exe");
+		
+		// Configure the task's MultiInstanceSettings. The CoordinationCommandLine will be executed by
+		// the primary and all subtasks.
+		myMultiInstanceTask.MultiInstanceSettings =
+		    new MultiInstanceSettings(numberOfNodes) {
+		    CoordinationCommandLine = @"cmd /c start cmd /c ""%MSMPI_BIN%\smpd.exe"" -d",
+		    CommonResourceFiles = new List<ResourceFile> {
+		    new ResourceFile("https://mystorageaccount.blob.core.windows.net/mycontainer/MyMPIApplication.exe",
+		                     "MyMPIApplication.exe")
+		    }
+		};
+		
+		// Submit the task to the job. Batch will take care of splitting it into subtasks and
+		// scheduling them for execution on the nodes.
+		await myBatchClient.JobOperations.AddTaskAsync("mybatchjob", myMultiInstanceTask);
 
-// Configure the task's MultiInstanceSettings. The CoordinationCommandLine will be executed by
-// the primary and all subtasks.
-myMultiInstanceTask.MultiInstanceSettings =
-    new MultiInstanceSettings(numberOfNodes) {
-    CoordinationCommandLine = @"cmd /c start cmd /c ""%MSMPI_BIN%\smpd.exe"" -d",
-    CommonResourceFiles = new List<ResourceFile> {
-    new ResourceFile("https://mystorageaccount.blob.core.windows.net/mycontainer/MyMPIApplication.exe",
-                     "MyMPIApplication.exe")
-    }
-};
-
-// Submit the task to the job. Batch will take care of splitting it into subtasks and
-// scheduling them for execution on the nodes.
-await myBatchClient.JobOperations.AddTaskAsync("mybatchjob", myMultiInstanceTask);
-```
 
 ## 主要任务和子任务
 
@@ -109,10 +109,10 @@ await myBatchClient.JobOperations.AddTaskAsync("mybatchjob", myMultiInstanceTask
 
 系统分配范围介于 0 到 numberOfInstances-1 的整数 ID 给这些任务。ID 为 0 的任务是主要任务，其他所有 ID 都是子任务。例如，如果为任务创建以下多实例设置，则主要任务的 ID 为 0，而子任务的 ID 为 1 到 9。
 
-```
-int numberOfNodes = 10;
-myMultiInstanceTask.MultiInstanceSettings = new MultiInstanceSettings(numberOfNodes);
-```
+		
+		int numberOfNodes = 10;
+		myMultiInstanceTask.MultiInstanceSettings = new MultiInstanceSettings(numberOfNodes);
+
 
 ## 协调命令和应用程序命令
 
@@ -120,17 +120,17 @@ myMultiInstanceTask.MultiInstanceSettings = new MultiInstanceSettings(numberOfNo
 
 阻止调用协调命令 -- 在所有子任务的协调命令成功返回之前，Batch 不执行应用程序命令。因此，协调命令应该启动任何所需的后台服务，确认它们已准备好可供使用，然后退出。例如，在使用 MS-MPI 第 7 版的方案中，此协调命令在节点上启动 SMPD 服务，然后退出：
 
-```
-cmd /c start cmd /c ""%MSMPI_BIN%\smpd.exe"" -d
-```
+
+		cmd /c start cmd /c ""%MSMPI_BIN%\smpd.exe"" -d
+
 
 请注意此协调命令中使用 `start`。这是必需的，因为 `smpd.exe` 应用程序不会在执行后立即返回。如果不使用 [start][cmd_start] 命令，此协调命令就不返回，因此将阻止执行应用程序命令。
 
 只有主要任务执行**应用程序命令**（为多实例任务执行的命令行）。就 MS MPI 应用程序而言，这是使用 `mpiexec.exe` 来执行已启用 MPI 的应用程序。例如，以下是使用 MS-MPI 第 7 版的方案所执行的应用程序命令：
 
-```
-cmd /c ""%MSMPI_BIN%\mpiexec.exe"" -c 1 -wdir %AZ_BATCH_TASK_SHARED_DIR% MyMPIApplication.exe
-```
+
+		cmd /c ""%MSMPI_BIN%\mpiexec.exe"" -c 1 -wdir %AZ_BATCH_TASK_SHARED_DIR% MyMPIApplication.exe
+
 
 ## 资源文件
 
@@ -166,42 +166,41 @@ cmd /c ""%MSMPI_BIN%\mpiexec.exe"" -c 1 -wdir %AZ_BATCH_TASK_SHARED_DIR% MyMPIAp
 
 以下代码段演示如何获取子任务信息，以及从它们执行所在的节点请求文件的内容。
 
-```
-// Obtain the job and the multi-instance task from the Batch service
-CloudJob boundJob = batchClient.JobOperations.GetJob("mybatchjob");
-CloudTask myMultiInstanceTask = boundJob.GetTask("mymultiinstancetask");
+		
+		// Obtain the job and the multi-instance task from the Batch service
+		CloudJob boundJob = batchClient.JobOperations.GetJob("mybatchjob");
+		CloudTask myMultiInstanceTask = boundJob.GetTask("mymultiinstancetask");
+		
+		// Now obtain the list of subtasks for the task
+		IPagedEnumerable<SubtaskInformation> subtasks = myMultiInstanceTask.ListSubtasks();
+		
+		// Asynchronously iterate over the subtasks and print their stdout and stderr
+		// output if the subtask has completed
+		await subtasks.ForEachAsync(async (subtask) =>
+		{
+		    Console.WriteLine("subtask: {0}", subtask.Id);
+		    Console.WriteLine("exit code: {0}", subtask.ExitCode);
+		
+		    if (subtask.State == TaskState.Completed)
+		    {
+		        ComputeNode node =
+					await batchClient.PoolOperations.GetComputeNodeAsync(subtask.ComputeNodeInformation.PoolId,		                                                                 subtask.ComputeNodeInformation.ComputeNodeId);
+		
+		        NodeFile stdOutFile = await node.GetNodeFileAsync(subtask.ComputeNodeInformation.TaskRootDirectory + "\" + Constants.StandardOutFileName);
+		        NodeFile stdErrFile = await node.GetNodeFileAsync(subtask.ComputeNodeInformation.TaskRootDirectory + "\" + Constants.StandardErrorFileName);
+		        stdOut = await stdOutFile.ReadAsStringAsync();
+		        stdErr = await stdErrFile.ReadAsStringAsync();
+		
+		        Console.WriteLine("node: {0}:", node.Id);
+		        Console.WriteLine("stdout.txt: {0}", stdOut);
+		        Console.WriteLine("stderr.txt: {0}", stdErr);
+		    }
+		    else
+		    {
+		        Console.WriteLine("\tSubtask {0} is in state {1}", subtask.Id, subtask.State);
+		    }
+		});
 
-// Now obtain the list of subtasks for the task
-IPagedEnumerable<SubtaskInformation> subtasks = myMultiInstanceTask.ListSubtasks();
-
-// Asynchronously iterate over the subtasks and print their stdout and stderr
-// output if the subtask has completed
-await subtasks.ForEachAsync(async (subtask) =>
-{
-    Console.WriteLine("subtask: {0}", subtask.Id);
-    Console.WriteLine("exit code: {0}", subtask.ExitCode);
-
-    if (subtask.State == TaskState.Completed)
-    {
-        ComputeNode node =
-			await batchClient.PoolOperations.GetComputeNodeAsync(subtask.ComputeNodeInformation.PoolId,
-                                                                 subtask.ComputeNodeInformation.ComputeNodeId);
-
-        NodeFile stdOutFile = await node.GetNodeFileAsync(subtask.ComputeNodeInformation.TaskRootDirectory + "\" + Constants.StandardOutFileName);
-        NodeFile stdErrFile = await node.GetNodeFileAsync(subtask.ComputeNodeInformation.TaskRootDirectory + "\" + Constants.StandardErrorFileName);
-        stdOut = await stdOutFile.ReadAsStringAsync();
-        stdErr = await stdErrFile.ReadAsStringAsync();
-
-        Console.WriteLine("node: {0}:", node.Id);
-        Console.WriteLine("stdout.txt: {0}", stdOut);
-        Console.WriteLine("stderr.txt: {0}", stdErr);
-    }
-    else
-    {
-        Console.WriteLine("\tSubtask {0} is in state {1}", subtask.Id, subtask.State);
-    }
-});
-```
 
 ## 后续步骤
 
