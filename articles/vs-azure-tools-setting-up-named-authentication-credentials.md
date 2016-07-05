@@ -53,7 +53,7 @@ Visual Studio 使用订阅 ID 和证书数据作为凭据。订阅文件（.publ
 
 1. 将证书上载到 Azure 经典管理门户，请执行以下操作：
 
-    1. 选择“Azure 门户”链接。
+    1. 选择“Azure 经典门户”链接。
 
          此时将打开 [Azure 经典管理门户](http://go.microsoft.com/fwlink/?LinkID=213885)。
 
