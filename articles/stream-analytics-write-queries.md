@@ -26,7 +26,7 @@
 
 2.	新的作业有一个查询模板来帮助你开始。查询模板执行一种“传递”查询，将来自输入的所有字段投射到输出。
 
-    - 如果你已经为你的作业定义了至少一个输入和一个输出，则可以用你希望首先使用的输入和输出的别名代替占位符 "[YourOutputAlias]" 和 "[YourInputAlias]"。此外，你仍然可以在 Azure 门户中编写和测试你的查询而无需在作业上定义输入和输出。
+    - 如果你已经为你的作业定义了至少一个输入和一个输出，则可以用你希望首先使用的输入和输出的别名代替占位符 "[YourOutputAlias]" 和 "[YourInputAlias]"。此外，你仍然可以在 Azure 经典门户中编写和测试你的查询而无需在作业上定义输入和输出。
     - 如果你希望执行除简单传递以外的更多处理，则可以编辑查询定义。要开始编写查询，请阅读[此处](/documentation/articles/stream-analytics-stream-analytics-query-patterns)提供的某些常见查询模式。  
   
     ![查询数据窗口](./media/stream-analytics-write-queries/2-stream-analytics-write-queries.png)

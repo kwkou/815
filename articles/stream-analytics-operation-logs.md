@@ -22,7 +22,7 @@
 可以通过两种方式访问操作日志：
 
 - 流分析作业的仪表板  
-- Azure 门户中的管理服务  
+- Azure 经典门户中的管理服务  
 
 ## 流分析作业的仪表板
 
@@ -32,9 +32,9 @@
 
 ## 管理服务
 
-在 Azure 门户中手动导航到流分析和其他服务的操作日志：
+在 Azure 经典门户中手动导航到流分析和其他服务的操作日志：
 
-1.	在 **Azure 门户** 中单击“管理服务”[](https://manage.windowsazure.cn)。
+1.	在 **Azure 经典门户** 中单击“管理服务”[](https://manage.windowsazure.cn)。
 2.	在“类型”中选择“流分析”，在“服务名称”中选择作业的名称。  
 
   ![选择流分析](./media/stream-analytics-operation-logs/02-stream-analytics-operation-logs.png)
