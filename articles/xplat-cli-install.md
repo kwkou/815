@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="04/20/2016"
-	wacn.date="06/20/2016"/>
+	ms.date="05/23/2016"
+	wacn.date="07/04/2016"/>
 
 # 安装 Azure CLI
 
@@ -19,30 +19,31 @@
 - [PowerShell](/documentation/articles/powershell-install-configure)
 - [Azure CLI](/documentation/articles/xplat-cli-install)
 
-快速安装 Azure 命令行界面 (Azure CLI)，以便使用一组基于 shell 的开源命令在 Azure 中创建和管理资源。可以使用多个安装选项：使用针对不同操作系统提供的安装包之一、从 npm 包安装，或者在 Docker 主机中以容器的形式安装 Azure CLI。有关更多选项和背景信息，请参阅 [GitHub](https://github.com/azure/azure-xplat-cli) 上的项目存储库。
+快速安装 Azure 命令行界面 (Azure CLI)，以便使用一组基于 shell 的开源命令在 Azure 中创建和管理资源。你有多种安装选择：从 npm 包安装（需要 Node.js 和 npm）、使用针对不同操作系统提供的安装包，或者在 Docker 主机中以容器的形式安装 Azure CLI。有关更多选项和背景信息，请参阅 [GitHub](https://github.com/azure/azure-xplat-cli) 上的项目存储库。
 
 
 安装了 Azure CLI 之后，你将能够[将它与 Azure 订阅连接](/documentation/articles/xplat-cli-connect)，并从命令行接口（Bash、终端、命令提示符等）运行 **azure** 命令，以使用 Azure 资源。
 
 
-## 使用安装程序
-
-提供以下安装程序包：
-
-* [Windows 安装程序][windows-installer]
-
-* [OS X 安装程序][mac-installer]
-
-* [Linux 安装程序][linux-installer]
-
 
 ## 安装 npm 包
 
-如果你的系统上已安装最新的 Node.js 和 npm，请运行以下命令来安装 Azure CLI 包。（在 Linux 分发版中，可能需要使用 **sudo** 才能成功运行 __npm__ 命令。）
+若要从 npm 包安装 CLI，需要在系统上安装最新的 Node.js 和 npm。然后，运行以下命令安装 Azure CLI 包。（在 Linux 分发版中，你可能需要使用 **sudo** 才能成功运行 __npm__ 命令。）
 
 	npm install azure-cli -g
 
 > [AZURE.NOTE]如果需要为操作系统安装或更新 Node.js 和 npm，请参阅 [Nodejs.org](https://nodejs.org/en/download/package-manager/) 上的文档。我们建议安装最新的 Node.js LTS 版本 (4.x)。如果你使用旧版本，可能会遇到安装错误。
+
+## 使用安装程序
+
+以下安装程序包也可供下载：
+
+
+* [OS X 安装程序][mac-installer]
+
+* [Windows 安装程序][windows-installer]
+
+* [Linux tar 文件][linux-installer]（需要 Node.js 和 npm）- 通过运行 `sudo npm install -g <path to downloaded tar file>` 安装
 
 
 ## 使用 Docker 容器
@@ -54,33 +55,44 @@
 ## 运行 Azure CLI 命令
 安装了 Azure CLI 之后，你将可以从命令行用户界面（Bash、终端、命令提示符等）运行 **azure** 命令。例如，若要运行帮助命令，请键入以下命令：
 
-```
-azure help
-```
+    azure help
+
 > [AZURE.NOTE]在一些 Linux 分发版上，你可能会收到错误（/usr/bin/env: ‘node’: 没有此类文件或目录），此错误来自于将安装在 /usr/bin/nodejs 的最新 nodejs 安装。若要修复此错误，请运行以下命令来创建 /usr/bin/node 的符号链接
 
-```
-sudo ln -s /usr/bin/nodejs /usr/bin/node
-```
+    sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 若要查看安装的 Azure CLI 版本，请键入以下命令：
 
-```
-azure --version
-```
+    azure --version
 
-你现在已准备就绪！ 若要访问所有 CLI 命令以使用自己的资源，请[从 Azure CLI 连接到你的 Azure 订阅](/documentation/articles/xplat-cli-connect)。
+你现在已准备就绪！ 若要访问所有 CLI 命令以使用自己的资源，请[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)。
 
->[AZURE.NOTE] 当你第一次使用 Azure CLI 版本 0.9.20 或更高版本时，会看到一条消息，询问你是否要允许 Microsoft 收集你如何使用 CLI 的相关信息。参与为自愿性质。如果你选择参与，只要运行 `azure telemetry --disable` 即可随时停止参与。若要随时启用参与，请运行 `azure telemetry --enable`。
+>[AZURE.NOTE] 当你第一次使用 Azure CLI 版本 0.9.20 或更高版本时，会看到一条消息，询问你是否要允许 Microsoft 收集你如何使用 CLI 的相关信息。参与为自愿性质。如果选择参与，通过运行 `azure telemetry --disable` 即可随时停止参与。若要随时启用参与，请运行 `azure telemetry --enable`。
 
 
 ## 更新 CLI
 
-Microsoft 会频繁发布 Azure CLI 的更新版本。使用适用于你的操作系统的安装程序重新安装 CLI；如果已安装最新的 Node.js 和 npm，请键入以下命令（在 Linux 分发版上可能需要使用 **sudo**）进行更新。
+Microsoft 会频繁发布 Azure CLI 的更新版本。使用适用于你的操作系统的安装程序重新安装 CLI，如果已安装最新的 Node.js 和 npm，请键入以下命令（在 Linux 分发版上可能需要使用 **sudo**）进行更新。
 
-```
-npm update -g azure-cli
-```
+    npm update -g azure-cli
+
+## 启用 tab 自动补全
+
+Mac 和 Linux 支持 tab 自动补全 CLI 命令。
+
+如要在 zsh 中启用，运行：
+
+
+	echo '. <(azure --completion)' >> .zshrc
+
+
+若要在 bash 中启用，运行：
+
+
+	azure --completion >> ~/azure.completion.sh
+	echo 'source ~/azure.completion.sh' >> ~/.bash_profile
+
+
 
 ## 后续步骤 
 
@@ -98,4 +110,4 @@ npm update -g azure-cli
 [cliasm]: /documentation/articles/virtual-machines-command-line-tools
 [cliarm]: /documentation/articles/azure-cli-arm-commands
 
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_0627_2016-->

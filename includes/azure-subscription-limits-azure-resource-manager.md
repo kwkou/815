@@ -11,7 +11,7 @@
 每个订阅的[云服务数](/documentation/articles/fundamentals-application-models)|已过时<sup>3</sup>|已过时<sup>3</sup>
 每个订阅的[地缘组](/documentation/articles/virtual-networks-migrate-to-regional-vnet)数|已过时<sup>3</sup>|已过时<sup>3</sup>
 
-<sup>1</sup>默认限制根据产品类别类型（例如免费试用、即用即付，等等）而有所不同。
+<sup>1</sup>默认限制根据产品类别类型（例如试用、即用即付，等等）而有所不同。
 
 <sup>2</sup>可以联系支持人员来提高限制。
 
