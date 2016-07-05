@@ -38,11 +38,11 @@
 
 ## 创建新的通用 Windows 应用程序
 
-创建移动服务后，你可以在 Azure 管理门户中遵照一个简易的快速入门项目来创建新应用程序或修改现有应用程序，以连接到你的移动服务。
+创建移动服务后，你可以在 Azure 经典门户中遵照一个简易的快速入门项目来创建新应用程序或修改现有应用程序，以连接到你的移动服务。
 
 在本部分中，你将要创建一个连接到移动服务的新的通用 Windows 应用程序。
 
-1. 在 [Azure 管理门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1. 在 [Azure 经典门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2.  在快速入门选项卡中，单击“选择平台”下的“Windows”，然后展开“创建新的 Windows 应用商店应用程序” 。
 
@@ -121,7 +121,7 @@
 [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [JavaScript and HTML]: documentation/articles/mobile-services-win8-javascript/
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
 
 <!---HONumber=Mooncake_0118_2016-->

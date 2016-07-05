@@ -18,7 +18,7 @@
 **单一数据库**
 
 > [AZURE.SELECTOR]
-- [Azure 管理门户](/documentation/articles/sql-database-get-started)
+- [Azure 经典门户](/documentation/articles/sql-database-get-started)
 - [C#](/documentation/articles/sql-database-get-started-csharp)
 - [PowerShell](/documentation/articles/sql-database-get-started-powershell)
 
@@ -55,7 +55,7 @@
 
 若要创建新应用程序并将其注册到正确的 Active Directory 中，请执行以下操作：
 
-1. 转到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 转到 [Azure 经典门户](https://manage.windowsazure.cn)。
 1. 在左侧选择“Active Directory”服务，选择用来对应用程序进行身份验证的目录，然后单击该目录的名称。
 
     ![试用 SQL 数据库：设置 Azure Active Directory (AAD)。][1]

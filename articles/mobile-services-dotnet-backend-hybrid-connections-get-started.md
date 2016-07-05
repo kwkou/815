@@ -25,7 +25,7 @@
 
 本教程要求做好以下准备：
 
-- **现有的 .NET 后端移动服务**<br/>遵循[移动服务入门]教程，从 [Azure 管理门户]创建和下载新的 .NET 后端移动服务。
+- **现有的 .NET 后端移动服务**<br/>遵循[移动服务入门]教程，从 [Azure 经典门户]创建和下载新的 .NET 后端移动服务。
 
 [AZURE.INCLUDE [hybrid-connections-prerequisites](../includes/hybrid-connections-prerequisites.md)]
 
@@ -90,7 +90,7 @@
 
 在验证数据库连接后，需要为这个新的连接字符串添加应用设置，以便能够从 Azure 使用该连接字符串，并且能够将移动服务发布到 Azure。
 
-1. 在 [Azure 管理门户]中，浏览到你的移动服务。
+1. 在 [Azure 经典门户]中，浏览到你的移动服务。
 
 1. 单击“配置”选项卡，然后找到“连接字符串”部分。
 

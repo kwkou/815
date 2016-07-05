@@ -103,7 +103,7 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 
 如果你已经拥有一个数据库，通过连接到该数据库（例如使用 SQL Server Management Studio）并执行 `SELECT @@VERSION;` 来验证其是否托管在 SQL 数据库 V12 中。SQL 数据库 V12 中数据库的预期输出至少是 **Microsoft SQL Azure (RTM) - 12.0**。
 
-如果你的数据库未在 SQL 数据库 V12 中托管，请访问 Azure 管理门户将数据库迁移到 SQL 数据库 V12。
+如果你的数据库未在 SQL 数据库 V12 中托管，请访问 Azure 经典门户将数据库迁移到 SQL 数据库 V12。
 
 或者，可以按照[创建第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)中列出的步骤，在 SQL 数据库 V12 中创建一个新数据库。**提示**：请先阅读下一步，然后再为新的数据库选择订阅。
 
@@ -115,7 +115,7 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 
 以下过程提供分步说明，介绍如何更改给定订阅的关联目录。
 
-1. 使用 Azure 订阅管理员身份连接到 [Azure 管理门户](https://manage.windowsazure.cn)。
+1. 使用 Azure 订阅管理员身份连接到 [Azure 经典门户](https://manage.windowsazure.cn)。
 2. 在左侧标题中，选择“设置”。
 3. 在设置屏幕中显示你的订阅。如果未显示所需订阅，请单击顶部的“订阅”，下拉“按目录筛选”框，并选择包含你的订阅的目录，然后单击“应用”。
 
@@ -181,7 +181,7 @@ Set-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23"
 –ServerName "demo_server" -DisplayName "DBA_Group" -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353f"
 ```
 
-> [AZURE.NOTE] 在 **DisplayName** 不唯一时，需要使用 Azure AD **ObjectID**。若要检索 **ObjectID** 和 **DisplayName** 值，请使用 Azure 管理门户的 Active Directory 部分，并查看用户或组的属性。
+> [AZURE.NOTE] 在 **DisplayName** 不唯一时，需要使用 Azure AD **ObjectID**。若要检索 **ObjectID** 和 **DisplayName** 值，请使用 Azure 经典门户的 Active Directory 部分，并查看用户或组的属性。
 
 下面的示例针对 Azure SQL Server 的当前 Azure AD 管理员返回相关信息：
 

@@ -40,11 +40,11 @@
 
 ## 创建新的 Android 应用程序
 
-创建移动服务后，你可以在 Azure 管理门户中遵照一个简易的快速入门项目来创建新应用程序或修改现有应用程序，以连接到你的移动服务。
+创建移动服务后，你可以在 Azure 经典门户中遵照一个简易的快速入门项目来创建新应用程序或修改现有应用程序，以连接到你的移动服务。
 
 在本部分中，你将要创建一个连接到移动服务的新的 Android 应用程序。
 
-1.  在 **Azure 管理门户**中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1.  在 **Azure 经典门户**中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2. 在快速入门选项卡中，单击“选择平台”下的“Android”，然后展开“创建新的 Android 应用程序”。
 
@@ -88,6 +88,6 @@
 
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0118_2016-->

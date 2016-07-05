@@ -204,7 +204,7 @@ Azure AD Connect 发行版或版本号为 **1.0.0419.0911** 或更高的 Azure A
 
 如果此版本号大于或等于 **1.0.0419.0911**，或者你要安装 Azure AD Connect，则你可以跳至[步骤 2：通过 UI 或 powershell 在 Azure AD Connect 中启用密码写回并验证](#step-2-enable-password-writeback-in-azure-ad-connect)。
 
- > [AZURE.NOTE] 如果是首次安装 Azure AD Connect 工具，建议遵循一些最佳实践，为目录同步准备好环境。在安装 Azure AD Connect 工具之前，必须在 [Office 365 管理门户](https://portal.partner.microsoftonline.cn)或 [Azure 管理门户](https://manage.windowsazure.cn)中激活目录同步。有关详细信息，请参阅[管理 Azure AD Connect](/documentation/articles/active-directory-aadconnect-whats-next)。
+ > [AZURE.NOTE] 如果是首次安装 Azure AD Connect 工具，建议遵循一些最佳实践，为目录同步准备好环境。在安装 Azure AD Connect 工具之前，必须在 [Office 365 管理门户](https://portal.partner.microsoftonline.cn)或 [Azure 经典门户](https://manage.windowsazure.cn)中激活目录同步。有关详细信息，请参阅[管理 Azure AD Connect](/documentation/articles/active-directory-aadconnect-whats-next)。
 
 
 ### <a name="step-2-enable-password-writeback-in-azure-ad-connect"></a>步骤 2：在 Azure AD Connect 中启用密码写回

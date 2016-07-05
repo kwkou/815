@@ -32,7 +32,7 @@
 
 3. 如果你尚未创建你的存储帐户，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account)。
 
-4. 在 [Azure 管理门户]中，单击“存储”，单击存储帐户，然后单击“管理密钥”。
+4. 在 [Azure 经典门户]中，单击“存储”，单击存储帐户，然后单击“管理密钥”。
 
 5. 记下“存储帐户名称”和“访问密钥”。
  
@@ -146,7 +146,7 @@
 
 <!-- URLs. -->
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [What is the Table Service]: /documentation/articles/storage-dotnet-how-to-use-tables/#what-is
 [MongoLab Add-on Page]: /gallery/store/mongolab/mongolab
  

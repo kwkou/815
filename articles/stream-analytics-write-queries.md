@@ -20,7 +20,7 @@
 
 ## 编写查询： ##
 
-1. 在 Azure 管理门户上的流分析作业中，单击“查询”。
+1. 在 Azure 经典门户上的流分析作业中，单击“查询”。
 
     ![选择查询](./media/stream-analytics-write-queries/1-stream-analytics-write-queries.png)
 

@@ -47,7 +47,7 @@ Azure 诊断提供了灵活的方法用于收集来自计算 VM 的指标和日�
 
 在本示例中，事件中心 URL 设置为事件中心的完全限定的命名空间（ServiceBus 命名空间 +“/”+ 事件中心名称）。
 
-事件中心 URL 在[Azure 管理门户](https://manage.windowsazure.cn)中的“事件中心”仪表板上显示。
+事件中心 URL 在[Azure 经典门户](https://manage.windowsazure.cn)中的“事件中心”仪表板上显示。
 
 “接收器”名称可以设置为任何有效的字符串，前提是在整个配置文件中一致地使用相同的值。
 
@@ -60,7 +60,7 @@ Azure 诊断提供了灵活的方法用于收集来自计算 VM 的指标和日�
 	    <EventHub Url="https://diags-mycompany-ns.servicebus.chinacloudapi.cn/diageventhub" SharedAccessKeyName="SendRule" SharedAccessKey="9B3SwghJOGEUvXigc6zHPInl2iYxrgsKHZoy4nm9CUI=" />
 	  </PrivateConfig>
 
-**SharedAccessKeyName** 必须匹配已在 **ServiceBus/EventHub** 命名空间中定义的 SAS 密钥和策略。此操作可通过以下方式完成：浏览到[Azure 管理门户](https://manage.windowsazure.cn)中的事件中心仪表板，单击“配置”选项卡，然后设置具有“发送”权限的命名策略（例如，“SendRule”）。**StorageAccount** 也已在 **PrivateConfig** 中声明。不需要在此处更改值，特别是当它们可正常运行时。在本示例中，我们将值保留空白，这是下游资产将设置值的符号，例如 ServiceConfiguration.Cloud.cscfg 环境配置文件将设置环境的适当名称和密钥。
+**SharedAccessKeyName** 必须匹配已在 **ServiceBus/EventHub** 命名空间中定义的 SAS 密钥和策略。此操作可通过以下方式完成：浏览到[Azure 经典门户](https://manage.windowsazure.cn)中的事件中心仪表板，单击“配置”选项卡，然后设置具有“发送”权限的命名策略（例如，“SendRule”）。**StorageAccount** 也已在 **PrivateConfig** 中声明。不需要在此处更改值，特别是当它们可正常运行时。在本示例中，我们将值保留空白，这是下游资产将设置值的符号，例如 ServiceConfiguration.Cloud.cscfg 环境配置文件将设置环境的适当名称和密钥。
 
 >[AZURE.WARNING] 请注意，事件中心 SAS 密钥以纯文本存储在 .wadcfgx 文件中。有时这会签入源代码管理，或作为生成服务器中的资产，因此应该适当地保护。建议在此处使用具有“仅发送”权限的 SAS 密钥，使任何恶意用户最多只能写入事件中心而永远无法侦听或进行管理。
 

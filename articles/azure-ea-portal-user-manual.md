@@ -154,7 +154,7 @@ Org ID 是 Azure China 特殊的用户名系统。
 账户所有者可为其账户添加订阅，针对单独的订阅更新服务管理员和共同管理员、查看其账户的使用量数据，以及在企业管理员提供了访问权限的情况下查看账户费用。除非账户所有者同时具有企业管理员权限，否则将看不到资金承诺余额。
 
 -	**服务管理员**  
-服务管理员以及每个订阅的最多 199 个共同管理员能够访问和管理 Azure 管理门户内的订阅和开发项目。除非服务管理员同时具有其他两个角色之一，否则将没有企业门户的访问权限。  
+服务管理员以及每个订阅的最多 199 个共同管理员能够访问和管理 Azure 经典门户内的订阅和开发项目。除非服务管理员同时具有其他两个角色之一，否则将没有企业门户的访问权限。  
 
 ![Enterprise Azure 角色和门户][1]  
 
@@ -362,7 +362,7 @@ market@yumchina.partner.onmschina.cn 和系统分配的登陆密码
 
 现在我们需要让企业管理员 (Admin) 有查看 Market 账户下订阅的权限。就需要将企业管理域 (Admin) 设置为 Market 账户下订阅的共同管理员。  
 
-(1)	首先我们以 Market 账户 (market@contoso.partner.onmschina.cn)，登陆 [Azure 管理门户](https://manage.windowsazure.cn)  
+(1)	首先我们以 Market 账户 (market@contoso.partner.onmschina.cn)，登陆 [Azure 经典门户](https://manage.windowsazure.cn)  
 
 (2)	点击左侧列表中的”设置”，然后选择”管理员”，点击按钮”添加”  
 
@@ -372,7 +372,7 @@ market@yumchina.partner.onmschina.cn 和系统分配的登陆密码
 
 ![添加协同管理员账号][25]  
 
-(4)	然后我们注销当前登录，以企业管理员 (admin) 身份，登陆 [Azure 管理门户](https://manage.windowsazure.cn)
+(4)	然后我们注销当前登录，以企业管理员 (admin) 身份，登陆 [Azure 经典门户](https://manage.windowsazure.cn)
 可以查看到，企业管理员 (admin) 即使自己订阅的服务管理员，又是 market 账户订阅 (Market\_Subscription) 的协同管理员。  
 
 ![添加协同管理员账号][26] 

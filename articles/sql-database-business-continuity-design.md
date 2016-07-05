@@ -46,7 +46,7 @@
 
 ##如何启用异地复制
 
-你可以使用 Azure 管理门户或通过调用 REST API 或 PowerShell 命令来启用异地复制。
+你可以使用 Azure 经典门户或通过调用 REST API 或 PowerShell 命令来启用异地复制。
 
 
 ###PowerShell

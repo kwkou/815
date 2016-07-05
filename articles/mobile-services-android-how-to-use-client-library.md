@@ -672,7 +672,7 @@
 
 你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。还可以使用已经过身份验证的用户的 ID 来修改请求。
 
-前两个任务可使用 [Azure 管理门户](https://manage.windowsazure.cn/)来完成。有关详细信息，请参阅[身份验证入门](/documentation/articles/mobile-services-android-get-started-users/)。
+前两个任务可使用 [Azure 经典门户](https://manage.windowsazure.cn/)来完成。有关详细信息，请参阅[身份验证入门](/documentation/articles/mobile-services-android-get-started-users/)。
 
 ### <a name="caching"></a>如何向应用程序添加身份验证代码
 

@@ -29,7 +29,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 <a name="Diagnosing"></a>
 ##  诊断问题
 
-如果你怀疑移动服务出现欠载问题，首先需要在 [Azure 管理门户]中查看服务的“仪表板”选项卡。以下几点需要验证：
+如果你怀疑移动服务出现欠载问题，首先需要在 [Azure 经典门户]中查看服务的“仪表板”选项卡。以下几点需要验证：
 
 - 用量计量表（包括“API 调用”和“活动设备”计量表）未超出配额
 - “终结点监视”状态指示服务处于上升阶段（仅支持服务正使用标准层以及终结点监视已启用的情况） 
@@ -57,7 +57,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 如果您已对不同数据库层有所了解，我们将探讨数据库性能指标，以帮助我们探寻在各层内部以及各层之间进行扩展的原因。
 
-1. 启动 [Azure 管理门户]。
+1. 启动 [Azure 经典门户]。
 2. 在移动服务 (Mobile Services) 选项卡中选择您希望使用的服务。
 3. 选择“配置”选项卡。
 4. 在“数据库设置”部分中选择“SQL 数据库”名称。这样可导航到门户中的 Azure SQL 数据库选项卡。
@@ -94,11 +94,11 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 1. 如果你希望为某数据库设置警报，导航到该数据库的“监视”选项卡
 2. 确保如上节所述显示相关指标。
 3. 选择你希望为其设置警报的指标，然后选择“添加规则”
-    ![Azure 管理门户 - SQL 警报][PortalSqlAddAlert]
+    ![Azure 经典门户 - SQL 警报][PortalSqlAddAlert]
 4. 提供警报名称及描述
-    ![Azure 管理门户-SQL 警报名称和说明][PortalSqlAddAlert2]
+    ![Azure 经典门户-SQL 警报名称和说明][PortalSqlAddAlert2]
 5. 指定用于警报阈值的值。请考虑使用 **80%**，以便有时间做出反应。此外，请务必指定你主动监控的电子邮箱地址。
-    ![Azure 管理门户 - SQL 警报阈值和电子邮件][PortalSqlAddAlert3]
+    ![Azure 经典门户 - SQL 警报阈值和电子邮件][PortalSqlAddAlert3]
 
 有关诊断 SQL 问题的详细信息，请参阅本文末尾的[高级诊断](#AdvancedDiagnosing)。
 
@@ -139,7 +139,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 若要设置 JavaScript 后端中某一列的索引，请执行以下操作：
 
-1. 在 [Azure 管理门户]中打开你的移动服务。
+1. 在 [Azure 经典门户]中打开你的移动服务。
 2. 单击“数据”选项卡。
 3. 选择你想要修改的表。
 4. 单击“列”选项卡。
@@ -444,7 +444,7 @@ Azure 经典门户提供内置管理体验，虽然限制更多，但无需本�
 
 <!-- LINKS -->
 
-[Azure 管理门户]: http://manage.windowsazure.cn
+[Azure 经典门户]: http://manage.windowsazure.cn
 
 [Azure SQL 数据库文档]: /documentation/services/sql-database/
 [Managing SQL Database using SQL Server Management Studio]: http://go.microsoft.com/fwlink/p/?linkid=309723&clcid=0x409

@@ -18,7 +18,7 @@
 
 本教程说明如何使用 Azure 移动服务向 Xamarin iOS 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单_待办事项列表_应用程序。要创建的移动服务将使用支持的 .NET 语言，你可以使用 Visual Studio 来提供服务器端业务逻辑和管理移动服务。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本]。
 
->[AZURE.NOTE]本主题演示如何使用 Azure 管理门户创建新的移动服务项目。通过使用 Visual Studio 2013 Update 2，还可以向现有的 Visual Studio 解决方案添加新的移动服务项目。有关详细信息，请参阅[快速入门：添加移动服务（.NET 后端）](http://msdn.microsoft.com/zh-cn/library/windows/apps/dn629482.aspx)
+>[AZURE.NOTE]本主题演示如何使用 Azure 经典门户创建新的移动服务项目。通过使用 Visual Studio 2013 Update 2，还可以向现有的 Visual Studio 解决方案添加新的移动服务项目。有关详细信息，请参阅[快速入门：添加移动服务（.NET 后端）](http://msdn.microsoft.com/zh-cn/library/windows/apps/dn629482.aspx)
 
 以下是完成的应用程序的屏幕快照：
 
@@ -40,7 +40,7 @@
 在本部分中，你将为移动服务下载新的 Xamarin iOS 应用程序和服务项目。
 
 1. 如果尚未进行此操作，请安装 Visual Studio with Xamarin。有关说明，可查阅[设置和安装 Visual Studio 和 Xamarin](https://msdn.microsoft.com/zh-cn/library/mt613162.aspx)。你还可以使用 Mac OS X 计算机上的 Xamarin Studio，请参阅 [Mac 用户的设置、安装和验证](https://msdn.microsoft.com/zh-cn/library/mt488770.aspx)。
-1. 在 [Azure 管理门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1. 在 [Azure 经典门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2. 在快速入门选项卡中，单击“选择平台”下的“Xamarin”，然后展开“创建新的 Xamarin 应用程序”。
 
@@ -125,7 +125,7 @@
 [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [JavaScript and HTML]: /documentation/articles/mobile-services-win8-javascript
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [JavaScript 后端版本]: /documentation/articles/mobile-services-ios-get-started
 [移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
 

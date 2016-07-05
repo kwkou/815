@@ -283,7 +283,7 @@
 
 <!-- URLs. -->
 [移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users
-[ Azure 管理门户]: https://manage.windowsazure.cn/
+[ Azure 经典门户]: https://manage.windowsazure.cn/
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [适用于 iOS 的通知中心操作方法指南]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532

@@ -22,7 +22,7 @@
 
 本主题说明了如何配置 [NewTek TriCaster](http://newtek.com/products/tricaster-40.html) 实时编码器，以便将单比特率流发送到 AMS 频道进行实时编码。有关详细信息，请参阅[使用能够通过 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
 
-本教程演示了如何通过 Azure 媒体服务浏览器 (AMSE) 工具管理 Azure 媒体服务 (AMS)。此工具仅在 Windows 电脑上运行。如果你使用的是 Mac 或 Linux，则可使用 Azure 管理门户创建[频道](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel#create-a-channel)和[节目](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program)。
+本教程演示了如何通过 Azure 媒体服务浏览器 (AMSE) 工具管理 Azure 媒体服务 (AMS)。此工具仅在 Windows 电脑上运行。如果你使用的是 Mac 或 Linux，则可使用 Azure 经典门户创建[频道](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel#create-a-channel)和[节目](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program)。
 
 >[AZURE.NOTE]使用 Tricaster 将贡献源发送到已启用实时编码的 AMS 通道时，如果你使用了 Tricaster 的某些功能（例如，在源之间快速剪切，或者切入/切出静态图像），则你的实时事件可能会出现视频/音频抖动。AMS 团队正在努力解决这些问题，在此之前，不建议你使用这些功能。
 

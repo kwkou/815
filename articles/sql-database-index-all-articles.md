@@ -182,7 +182,7 @@
 | 88 | [业务连续性常见问题](/documentation/articles/sql-database-bcdr-faq) | 客户所提出的，有关 Azure SQL 数据库中用于实现业务连续性和灾难恢复的内置功能和可选功能的常见问题与解答。 |
 | 89 | [使用 SQL 数据库中的异地复制功能为云灾难恢复设计应用程序](/documentation/articles/sql-database-designing-cloud-solutions-for-disaster-recovery) | 了解如何使用 Azure SQL 数据库中应用程序数据备份的异地复制功能为业务连续性规划设计云灾难恢复解决方案。 |
 | 90 | [业务连续性设计](/documentation/articles/sql-database-business-continuity-design) | 选择指南.本部分将提供有关如何选择要使用的 BCDR 功能以及何时使用这些功能的指南。这包括使用 SQL DB 自动获取的内容的说明。 |
-| 91 | [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize) | 时间点还原, Azure SQL 数据库, 还原数据库, 恢复数据库, Azure 管理门户, Azure 管理门户 |
+| 91 | [确认已恢复的 Azure SQL 数据库](/documentation/articles/sql-database-recovered-finalize) | 时间点还原, Azure SQL 数据库, 还原数据库, 恢复数据库, Azure 经典门户, Azure 经典门户 |
 | 92 | [如何从 Azure SQL 数据库备份中还原单个表](/documentation/articles/sql-database-cloud-migrate-restore-single-table-azure-backup) | 了解如何从 Azure SQL 数据库备份中还原单个表。 |
 | 93 | [如何将 Azure 存储空间用于 SQL Server 备份和还原](/documentation/articles/storage-use-storage-sql-server-backup-restore) | 将 SQL Server 和 SQL 数据库备份到 Azure 存储空间。介绍了将 SQL 数据库备份到 Azure 存储空间的好处，以及需要哪些 SQL Server 和 Azure 存储空间组件 |
 | 94 | 导入 BACPAC 文件以创建新的 Azure SQL 数据库 | 通过导入现有的 BACPAC 文件创建新的 Azure SQL 数据库。 |
@@ -236,7 +236,7 @@
 | 121 | [始终加密 - 使用数据库加密保护 SQL 数据库中的敏感数据并将加密密钥存储在 Windows 证书存储中](/documentation/articles/sql-database-always-encrypted) | 在数分钟内保护 SQL 数据库中的敏感数据。 |
 | 122 | [Azure SQL 数据库安全指导原则和限制](/documentation/articles/sql-database-security-guidelines) | 了解与安全性相关的 Azure SQL 数据库指导原则和限制。 |
 | 123 | [通过使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication) | 了解如何通过使用 Azure Active Directory 身份验证连接到 SQL 数据库 |
-| 124 | [SQL 数据库动态数据屏蔽入门（Azure 管理门户）](/documentation/articles/sql-database-dynamic-data-masking-get-started-portal) | 如何开始在 Azure 管理门户中使用 SQL 数据库动态数据屏蔽 |
+| 124 | [SQL 数据库动态数据屏蔽入门（Azure 经典门户）](/documentation/articles/sql-database-dynamic-data-masking-get-started-portal) | 如何开始在 Azure 经典门户中使用 SQL 数据库动态数据屏蔽 |
 | 125 | SQL 数据库动态数据屏蔽入门（Azure 门户） | 如何开始在 Azure 门户中使用 SQL 数据库动态数据屏蔽 |
 | 126 | SQL 数据库威胁检测入门 | 如何开始在 Azure 门户中使用 SQL 数据库威胁检测 |
 | 127 | [如何配置 Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure) | 了解如何配置使用服务器级和数据库级防火墙规则的 SQL 数据库防火墙以管理访问权限。 |
@@ -306,7 +306,7 @@
 | 156 | [Azure SQL 数据同步入门（预览版）](/documentation/articles/sql-database-get-started-sql-data-sync) | 本教程帮助你 Azure SQL 数据同步（预览版）入门。 |
 | 157 | [使用 PowerShell 管理 Azure SQL 数据库](/documentation/articles/sql-database-command-line-tools) | 使用 PowerShell 管理 Azure SQL 数据库。 |
 | 158 | [使用 SQL Server Management Studio 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms) | 了解如何使用 SQL Server Management Studio 管理 SQL 数据库服务器和数据库。 |
-| 159 | 使用 Azure 门户管理 Azure SQL 数据库 | 了解如何使用 Azure 管理门户管理云中的关系数据库。 |
+| 159 | 使用 Azure 门户管理 Azure SQL 数据库 | 了解如何使用 Azure 经典门户管理云中的关系数据库。 |
 | 160 | [在 Azure RemoteApp 中使用 SQL Server Management Studio 连接到 SQL 数据库](/documentation/articles/sql-database-ssms-remoteapp) | 通过本教程了解如何在连接到 SQL 数据库时使用 Azure RemoteApp 中的 SQL Server Management Studio 进行安全和性能操作 |
 
 

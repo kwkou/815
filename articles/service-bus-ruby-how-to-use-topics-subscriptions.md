@@ -36,7 +36,7 @@
 
 ## 创建服务命名空间
 
-若要开始在 Azure 中使用服务总线队列，必须先创建一个服务命名空间。命名空间提供了用于对应用程序中的 Service Bus 资源进行寻址的范围容器。必须通过命令行界面创建命名空间，因为 [Azure 管理门户][] 不会使用 ACS 连接创建命名空间。
+若要开始在 Azure 中使用服务总线队列，必须先创建一个服务命名空间。命名空间提供了用于对应用程序中的 Service Bus 资源进行寻址的范围容器。必须通过命令行界面创建命名空间，因为 [Azure 经典门户][] 不会使用 ACS 连接创建命名空间。
 
 创建命名空间：
 
@@ -57,7 +57,7 @@
        ![Copy key](./media/service-bus-ruby-how-to-use-topics-subscriptions/defaultkey.png)
 
 > [AZURE.NOTE]
-> 登录到 [Azure 管理门户][] 并导航到命名空间的连接信息后，也可以看到此密钥。
+> 登录到 [Azure 经典门户][] 并导航到命名空间的连接信息后，也可以看到此密钥。
 
 ## 创建 Ruby 应用程序
 
@@ -214,7 +214,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 ## 删除主题和订阅
 
-主题和订阅具有持久性，必须通过 [Azure 管理门户](https://manage.windowsazure.cn)或以编程方式显式删除。下面的示例演示如何删除名为“test-topic”的主题：
+主题和订阅具有持久性，必须通过 [Azure 经典门户](https://manage.windowsazure.cn)或以编程方式显式删除。下面的示例演示如何删除名为“test-topic”的主题：
 
 ```
 azure_service_bus_service.delete_topic("test-topic")
@@ -233,6 +233,6 @@ azure_service_bus_service.delete_subscription("test-topic", "high-messages")
 -   请参阅[队列、主题和订阅](/documentation/articles/service-bus-queues-topics-subscriptions)。
 -   [SqlFilter](http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx) 的 API 参考。
 -	访问 GitHub 上的 [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
-[Azure 管理门户]: http://manage.windowsazure.cn
+[Azure 经典门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->

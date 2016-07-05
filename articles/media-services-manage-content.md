@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何使用 Azure 管理门户管理 Azure 媒体服务的媒体内容" 
+	pageTitle="如何使用 Azure 经典门户管理 Azure 媒体服务的媒体内容" 
 	description="了解如何管理 Azure 媒体服务中的媒体内容。包括：上载、索引、编码、加密以及发布。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -13,10 +13,10 @@
 	wacn.date="06/21/2016"/>
 
 
-# 使用 Azure 管理门户管理 Azure 媒体服务的内容
+# 使用 Azure 经典门户管理 Azure 媒体服务的内容
 
 
-本主题说明如何使用 Azure 管理门户来管理媒体服务帐户中的媒体内容。
+本主题说明如何使用 Azure 经典门户来管理媒体服务帐户中的媒体内容。
 
 本主题说明如何直接从门户执行以下内容操作：
 
@@ -35,7 +35,7 @@
 [AZURE.INCLUDE [media-services-selector-upload-files](../includes/media-services-selector-upload-files.md)]
 
 
-1. 在 [Azure 管理门户](http://manage.windowsazure.cn)中，单击“媒体服务”，然后单击媒体服务帐户名。
+1. 在 [Azure 经典门户](http://manage.windowsazure.cn)中，单击“媒体服务”，然后单击媒体服务帐户名。
 2. 选择“内容”页。 
 3. 单击该页上或者门户底部的“上载”按钮。 
 4. 在“上载内容”对话框中，浏览到所需的资产文件。单击该文件，然后单击“打开”或按 **Enter**。
@@ -59,9 +59,9 @@
 - [.NET](/documentation/articles/media-services-index-content)
 - [门户](/documentation/articles/media-services-manage-content#index)
 
-使用 Azure 媒体索引器，可以使媒体文件内容可供搜索，并为隐藏的字幕和关键字生成全文本脚本。你可以根据下面所示的步骤，使用 Azure 管理门户为内容编制索引。但是，如果你想要以更大的力度控制文件和索引作业的完成方式，可以使用适用于 .NET 的媒体服务 SDK 或 REST API。有关详细信息，请参阅[使用 Azure 媒体索引器为媒体文件编制索引](/documentation/articles/media-services-index-content)。
+使用 Azure 媒体索引器，可以使媒体文件内容可供搜索，并为隐藏的字幕和关键字生成全文本脚本。你可以根据下面所示的步骤，使用 Azure 经典门户为内容编制索引。但是，如果你想要以更大的力度控制文件和索引作业的完成方式，可以使用适用于 .NET 的媒体服务 SDK 或 REST API。有关详细信息，请参阅[使用 Azure 媒体索引器为媒体文件编制索引](/documentation/articles/media-services-index-content)。
 
-下面的步骤演示如何使用 Azure 管理门户为内容编制索引。
+下面的步骤演示如何使用 Azure 经典门户为内容编制索引。
 
 1. 选择要编制索引的文件。如果此文件类型支持索引，则“内容”页底部将启用“处理”按钮。
 1. 按“处理”按钮。
@@ -92,7 +92,7 @@
 
 请注意，除了能够使用动态打包功能以外，点播流保留单元也为你提供可购买的专用流出容量（以 200 Mbps 为增量来购买）。默认情况下，点播流在共享实例模型中配置，该模型的服务器资源（例如计算机、出口容量等）与所有其他用户共享。若要增加按需流式处理吞吐量，建议购买按需流式处理保留单位。
 
-本部分介绍通过 Azure 管理门户使用媒体编码器标准版为内容编码时可以执行的步骤。
+本部分介绍通过 Azure 经典门户使用媒体编码器标准版为内容编码时可以执行的步骤。
 
 1.  选择要编码的文件。如果此文件类型支持编码，则“内容”页底部将启用“处理”按钮。
 4. 在“处理”对话框中，选择“媒体编码器标准版”处理器。
@@ -144,7 +144,7 @@
 
 若要为用户提供一个可用来流式传输内容或下载内容的 URL，你首先需要通过创建定位符来“发布”资产。定位符提供对资产中所含文件的访问权限。媒体服务支持两种类型的定位符：用于流媒体（例如 MPEG DASH、HLS 或平滑流式处理）的 OnDemandOrigin 定位符，以及用于下载媒体文件的访问签名 (SAS) 定位符。
 
-当你使用 Azure 管理门户发布资产时，系统将为你创建定位符并提供基于 OnDemantOrigin 的 URL（如果你的资产包含 .ism 文件）或 SAS URL。
+当你使用 Azure 经典门户发布资产时，系统将为你创建定位符并提供基于 OnDemantOrigin 的 URL（如果你的资产包含 .ism 文件）或 SAS URL。
 
 SAS URL 采用以下格式：
 
@@ -181,7 +181,7 @@ SAS URL 采用以下格式：
 
 ## 如何：从门户播放内容
 
-**Azure 管理门户**提供了可用于测试视频的内容播放器。
+**Azure 经典门户**提供了可用于测试视频的内容播放器。
 
 单击所需的视频，然后单击门户底部的“播放”按钮。
  

@@ -24,7 +24,7 @@
 
 ## 创建媒体服务帐户
 
-使用 Azure 管理门户、.NET SDK 或 REST API 来创建 Azure 媒体服务帐户。
+使用 Azure 经典门户、.NET SDK 或 REST API 来创建 Azure 媒体服务帐户。
 
 <a id="setup_dev_env"></a>
 ## 设置开发环境  

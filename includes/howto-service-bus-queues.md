@@ -18,7 +18,7 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 创建服务命名空间：
 
-1.  登录到 [Azure 管理门户][]。
+1.  登录到 [Azure 经典门户][]。
 
 2.  在管理门户的左侧导航窗格中，单击“Service Bus”。
 
@@ -64,6 +64,6 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
     
 5.  记下该密钥或将其复制到剪贴板。
 
-  [Azure 管理门户]: http://manage.windowsazure.cn
+  [Azure 经典门户]: http://manage.windowsazure.cn
 
 <!---HONumber=82-->

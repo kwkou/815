@@ -25,7 +25,7 @@
 
 ## 配置 VNet 和网关
 
-1. 登录到 [Azure 管理门户](http://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典门户](http://manage.windowsazure.cn)。
 
 2. 在屏幕左下角，单击“新建”。在导航窗格中，单击“网络服务”，然后单击“虚拟网络”。单击“自定义创建”以启动配置向导。
 

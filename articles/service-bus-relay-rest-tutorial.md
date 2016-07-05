@@ -23,7 +23,7 @@
 
 ### 创建服务命名空间并获取 SAS 密钥
 
-1. 若要创建服务命名空间，请访问 [Azure 管理门户][]。单击左侧的“服务总线”，然后单击“创建”。为你的命名空间键入一个名称，然后单击复选标记。
+1. 若要创建服务命名空间，请访问 [Azure 经典门户][]。单击左侧的“服务总线”，然后单击“创建”。为你的命名空间键入一个名称，然后单击复选标记。
 
 2. 在门户的主窗口中，单击在上一步中创建的服务命名空间的名称。
 
@@ -296,7 +296,7 @@ namespace Microsoft.ServiceBus.Samples
   
 	此步骤将配置一个服务，该服务使用前面定义的默认 **webHttpRelayBinding**。此外，它还使用下一步骤中定义的默认 **sbTokenProvider**。
 
-6. 在 `<services>` 元素的后面，使用以下内容创建 `<behaviors>` 元素，并将 “SAS\_KEY” 替换为你在通过 [Azure 管理门户][] 执行步骤 1 时获取的*共享访问签名* (SAS) 密钥。
+6. 在 `<services>` 元素的后面，使用以下内容创建 `<behaviors>` 元素，并将 “SAS\_KEY” 替换为你在通过 [Azure 经典门户][] 执行步骤 1 时获取的*共享访问签名* (SAS) 密钥。
   
 	```
 	<behaviors>
@@ -577,6 +577,6 @@ namespace Microsoft.ServiceBus.Samples
 - [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions/#relays)
 
 - [如何使用服务总线中继服务](/documentation/articles/service-bus-dotnet-how-to-use-relay)
-[Azure 管理门户]: http://manage.windowsazure.cn
+[Azure 经典门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->

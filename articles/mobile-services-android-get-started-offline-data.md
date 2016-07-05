@@ -177,12 +177,12 @@ One thing which is important to point out: if there are pending changes in the l
 
 3. 查看 Azure *TodoItem* 表的内容。验证新项是否“未”同步到服务器：
 
-   - 对于 JavaScript 后端，请转到 Azure 管理门户，然后单击“数据”选项卡查看 `TodoItem` 表的内容。
+   - 对于 JavaScript 后端，请转到 Azure 经典门户，然后单击“数据”选项卡查看 `TodoItem` 表的内容。
    - 对于 .NET 后端，请使用 SQL 工具（如 *SQL Server Management Studio*）或 REST 客户端（如 *Fiddler* 或 *Poistman*）查看表内容。
 
 4. 在设备或模拟器中打开 WiFi。接下来，按“刷新”按钮。
 
-5. 在 Azure 管理门户中再次查看 TodoItem 数据。新的和更改的 TodoItem 现在应会出现。
+5. 在 Azure 经典门户中再次查看 TodoItem 数据。新的和更改的 TodoItem 现在应会出现。
 
 
 ## 后续步骤

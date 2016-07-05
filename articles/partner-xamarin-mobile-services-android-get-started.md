@@ -78,7 +78,7 @@
 	> [AZURE.NOTE] 
    	你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.cs C# 文件中。
 
-6. 返回 [Azure 管理门户]，单击“数据”选项卡，然后单击“TodoItems”表。
+6. 返回 [Azure 经典门户]，单击“数据”选项卡，然后单击“TodoItems”表。
 
 	![][11]
 
@@ -130,6 +130,6 @@
 [Xamarin.Android]: http://xamarin.com/download
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [WindowsAzure.com]: http://www.windowsazure.com/
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0118_2016-->

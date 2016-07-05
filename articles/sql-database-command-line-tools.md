@@ -85,7 +85,7 @@
 如果你要再次创建这些 Azure SQL 资源或类似资源，可以：
 
 - 将这个命令集另存为 PowerShell 脚本文件 (*.ps1)
-- 在 Azure 管理门户的“自动化”部分中，将这个命令集另存为 Azure 自动化 Runbook 
+- 在 Azure 经典门户的“自动化”部分中，将这个命令集另存为 Azure 自动化 Runbook 
 
 ## 后续步骤
 

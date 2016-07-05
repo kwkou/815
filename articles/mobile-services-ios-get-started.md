@@ -29,9 +29,9 @@
 
 ##  创建新的 iOS 应用程序
 
-你可以在 Azure 管理门户中遵照一个简易的快速入门项目来创建与你的移动服务连接的新应用程序：
+你可以在 Azure 经典门户中遵照一个简易的快速入门项目来创建与你的移动服务连接的新应用程序：
 
-1. 在 [Azure 管理门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1. 在 [Azure 经典门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
 2. 在“快速启动”选项卡中，单击“选择平台”下的“iOS”，然后展开“创建新的 iOS 应用程序”。此时将显示步骤，描述如何创建与移动服务连接的 iOS 应用程序。
 
@@ -83,7 +83,7 @@
 [向现有应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
 [向现有应用程序添加推送通知]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[Azure 管理门户]: https://manage.windowsazure.cn/
+[Azure 经典门户]: https://manage.windowsazure.cn/
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [.NET 后端版本]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
 

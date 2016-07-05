@@ -125,7 +125,7 @@ Azure SDK 团队已发布新版 [Azure SDK for PHP](http://github.com/Azure/azur
 
 ##<a id="oct_changes_15"></a>2015 年 10 月版本
 
-Azure 媒体服务 (AMS) 现已在以下数据中心推出：巴西南部、印度西部、印度南部和印度中部。现在你可以使用 Azure 管理门户[创建媒体服务帐户](/documentation/articles/media-services-create-account#create-a-media-services-account-using-quick-create)，以及执行[此处](/documentation/services/media-services/)所述的各项任务。不过，这些数据中心未启用实时编码。此外，并非所有类型的编码保留单位都可用于这些数据中心。
+Azure 媒体服务 (AMS) 现已在以下数据中心推出：巴西南部、印度西部、印度南部和印度中部。现在你可以使用 Azure 经典门户[创建媒体服务帐户](/documentation/articles/media-services-create-account#create-a-media-services-account-using-quick-create)，以及执行[此处](/documentation/services/media-services/)所述的各项任务。不过，这些数据中心未启用实时编码。此外，并非所有类型的编码保留单位都可用于这些数据中心。
 
 - 巴西南部：只可以使用标准和基本编码保留单位
 - 印度西部、印度南部和印度中部：只可以使用基本编码保留单位
@@ -314,9 +314,9 @@ Azure 媒体服务 .NET SDK 当前版本为 3.1.0.1。
 ### <a id="sept_14_breaking_changes"></a>重大更改
 
 * **原点**重命名为了 [StreamingEndpoint]。
-* 使用“Azure 管理门户”进行编码然后发布 MP4 文件的默认行为发生变化。
+* 使用“Azure 经典门户”进行编码然后发布 MP4 文件的默认行为发生变化。
 
-以前，使用 Azure 管理门户发布单文件 MP4 视频资产时，将创建一个 SAS URL（你可以通过 SAS URL 从 BLOB 存储下载视频）。目前，使用 Azure 管理门户编码并发布单文件 MP4 视频资产时，生成的 URL 将指向 Azure 媒体服务流式处理终结点。此更改不会影响 MP4 视频，此类视频直接上载到媒体服务，并且不经 Azure 媒体服务编码立即发布。
+以前，使用 Azure 经典门户发布单文件 MP4 视频资产时，将创建一个 SAS URL（你可以通过 SAS URL 从 BLOB 存储下载视频）。目前，使用 Azure 经典门户编码并发布单文件 MP4 视频资产时，生成的 URL 将指向 Azure 媒体服务流式处理终结点。此更改不会影响 MP4 视频，此类视频直接上载到媒体服务，并且不经 Azure 媒体服务编码立即发布。
 
 目前，你可以采用如下两个选项来解决该问题。
 

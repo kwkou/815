@@ -32,9 +32,9 @@ Microsoft 在幕后执行许多性能基准测试，以判断需要多少硬件�
 ## 向上和向下缩放计算资源
 不管使用哪种云存储，借助 SQL 数据仓库的弹性，你可以使用数据仓库单位 (DWU) 的可调缩放性扩大、收缩或暂停计算容量。这样你就可以将计算能力弹性调整为最适合业务的计算能力。
 
-若要提升计算能力，可以使用 Azure 管理门户中的缩放滑块将更多 DWU 添加到服务。你还可以通过 T-SQL、REST API 或 Azure Powershell cmdlet 来添加 DWU。尽管向上和向下缩放计算能力会取消所有运行中或已排队的活动，但此操作可在几秒内完成，使你能够以更大或更小的计算能力继续操作。
+若要提升计算能力，可以使用 Azure 经典门户中的缩放滑块将更多 DWU 添加到服务。你还可以通过 T-SQL、REST API 或 Azure Powershell cmdlet 来添加 DWU。尽管向上和向下缩放计算能力会取消所有运行中或已排队的活动，但此操作可在几秒内完成，使你能够以更大或更小的计算能力继续操作。
 
-在 [Azure 管理门户][]中，可以单击 SQL 数据仓库页面顶部的“缩放”图标，然后使用滑块增加或减少应用到数据仓库的 DWU 数量，然后单击“保存”。如果你想要以编程方式更改缩放级别，以下 T-SQL 代码演示了如何针对 SQL 数据仓库调整 DWU 分配：
+在 [Azure 经典门户][]中，可以单击 SQL 数据仓库页面顶部的“缩放”图标，然后使用滑块增加或减少应用到数据仓库的 DWU 数量，然后单击“保存”。如果你想要以编程方式更改缩放级别，以下 T-SQL 代码演示了如何针对 SQL 数据仓库调整 DWU 分配：
 
 ```sql
 ALTER DATABASE MySQLDW
@@ -56,7 +56,7 @@ SQL 数据仓库的独到之处就是能够根据需要暂停和恢复计算。�
 
 > [AZURE.NOTE] 由于存储和计算能力相互独立，因此你的存储不受暂停的影响。
 
-可以通过 [Azure 管理门户][]的 REST API 或 Powershell 来暂停和恢复计算。暂停取消所有运行中或已排队的活动；要继续使用时，可在几秒内恢复计算资源。
+可以通过 [Azure 经典门户][]的 REST API 或 Powershell 来暂停和恢复计算。暂停取消所有运行中或已排队的活动；要继续使用时，可在几秒内恢复计算资源。
 
 若要使用 Azure Powershell 暂停和继续服务，首先需要按如下所示导入 AzureRM.Sql 模块：
 
@@ -92,6 +92,6 @@ Resume-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "
 
 <!--Other Web references-->
 
-[Azure 管理门户]: https://manage.windowsazure.cn
+[Azure 经典门户]: https://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0425_2016-->

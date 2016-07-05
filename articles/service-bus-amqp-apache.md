@@ -17,7 +17,7 @@
 
 本部分演示如何使用 Azure 虚拟机创建 CentOS Linux VM，以及如何下载、构建和安装 Apache Qpid Proton-C 库及 Python 和 PHP 语言绑定。完成这些步骤后，你将能够运行本指南附带的 Python 和 PHP 示例。
 
-第一步是使用 [Azure 管理门户][]执行的。以下屏幕截图显示了如何创建名为“scott-centos”的 CentOS VM：
+第一步是使用 [Azure 经典门户][]执行的。以下屏幕截图显示了如何创建名为“scott-centos”的 CentOS VM：
 
 ![Azure Linux VM 上的 Proton][0]
 
@@ -25,7 +25,7 @@
 
 ![Azure Linux VM 上的 Proton][1]
 
-若要登录到计算机，必须知道 SSH 的终结点端口。可以通过 [Azure 管理门户][]选择新创建的 VM 并单击“终结点”选项卡从门户中获取此值。以下屏幕截图显示此计算机的公共 SSH 端口为 57146。
+若要登录到计算机，必须知道 SSH 的终结点端口。可以通过 [Azure 经典门户][]选择新创建的 VM 并单击“终结点”选项卡从门户中获取此值。以下屏幕截图显示此计算机的公共 SSH 端口为 57146。
 
 ![Azure Linux VM 上的 Proton][2]
 
@@ -109,6 +109,6 @@
 [2]: ./media/service-bus-amqp-apache/amqp-apache-3.png
 [3]: ./media/service-bus-amqp-apache/amqp-apache-4.png
 
-[Azure 管理门户]: http://manage.windowsazure.cn
+[Azure 经典门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->

@@ -42,7 +42,7 @@
 
     -   **禁用 | 将数据保留在 Azure 中**。为表禁用SQL Server Stretch Database。放弃表的远程数据，使其保留在 Azure 中。
 
-        放弃远程数据和禁用延伸不会删除远程数据。如果你想要删除远程数据，必须使用 Azure 管理门户删除远程表。
+        放弃远程数据和禁用延伸不会删除远程数据。如果你想要删除远程数据，必须使用 Azure 经典门户删除远程表。
 
 ### 使用 Transact-SQL 为表禁用SQL Server Stretch Database
 
@@ -62,7 +62,7 @@
     ALTER TABLE <table_name>
        SET ( REMOTE_DATA_ARCHIVE = OFF_WITHOUT_DATA_RECOVERY ( MIGRATION_STATE = PAUSED ) ) ;
     ```
-    放弃远程数据和禁用延伸不会删除远程数据。如果你想要删除远程数据，必须使用 Azure 管理门户删除远程表。
+    放弃远程数据和禁用延伸不会删除远程数据。如果你想要删除远程数据，必须使用 Azure 经典门户删除远程表。
 
 ## 为数据库禁用SQL Server Stretch Database
 在为某个数据库禁用SQL Server Stretch Database之前，必须对该数据库中已启用延伸的每个表禁用SQL Server Stretch Database。
@@ -82,7 +82,7 @@ ALTER DATABASE <database name>
 ```
 
 ## 删除已启用延伸的数据库
-删除已启用SQL Server Stretch Database的数据库会删除本地数据库，但不会删除远程数据。如果你想要删除远程数据，必须使用 Azure 管理门户删除远程数据库。
+删除已启用SQL Server Stretch Database的数据库会删除本地数据库，但不会删除远程数据。如果你想要删除远程数据，必须使用 Azure 经典门户删除远程数据库。
 
 ## 另请参阅
 [ALTER DATABASE SET 选项 (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/bb522682.aspx)

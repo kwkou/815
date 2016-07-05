@@ -14,7 +14,7 @@
 
 
 #Azure SQL 数据同步入门（预览版）
-在本教程中，你将了解使用 Azure 管理门户的 Azure SQL 数据同步的基础知识。
+在本教程中，你将了解使用 Azure 经典门户的 Azure SQL 数据同步的基础知识。
 
 本教程假定你之前未使用过 SQL Server 和 Azure SQL 数据库。在本教程中，你将创建一个完全配置且按既定计划同步的混合（SQL Server 和 SQL 数据库实例）同步组。
 

@@ -16,7 +16,7 @@ Service Bus 主题和订阅支持发布/订阅消息通信模型。在使用主�
 
 创建命名空间：
 
-1.  登录到 [Azure 管理门户][]。
+1.  登录到 [Azure 经典门户][]。
 
 2.  在门户的左侧导航窗格中，单击“服务总线”。
 
@@ -56,7 +56,7 @@ Service Bus 主题和订阅支持发布/订阅消息通信模型。在使用主�
 4.  在“访问连接信息”对话框中，找到包含 SAS 密钥和密钥名称的连接字符串。记下这些值，因为你稍后将使用此信息来对命名空间执行操作。
 
 
-  [Azure 管理门户]: http://manage.windowsazure.cn
+  [Azure 经典门户]: http://manage.windowsazure.cn
   [0]: ./media/howto-service-bus-topics/sb-queues-13.png
   [2]: ./media/howto-service-bus-topics/sb-queues-04.png
   [3]: ./media/howto-service-bus-topics/sb-queues-09.png

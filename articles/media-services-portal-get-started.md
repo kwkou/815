@@ -1,6 +1,6 @@
 <properties
-	pageTitle="开始使用 Azure 管理门户按需传送内容 | Azure"
-	description="本教程将引导你完成使用 Azure 媒体服务和 Azure 管理门户实施视频点播 (VoD) 内容传送应用程序的步骤。"
+	pageTitle="开始使用 Azure 经典门户按需传送内容 | Azure"
+	description="本教程将引导你完成使用 Azure 媒体服务和 Azure 经典门户实施视频点播 (VoD) 内容传送应用程序的步骤。"
 	services="media-services"
 	documentationCenter=""
 	authors="Juliako"
@@ -13,13 +13,13 @@
 	wacn.date="04/05/2016"/>
 
 
-# 开始使用 Azure 管理门户按需传送内容
+# 开始使用 Azure 经典门户按需传送内容
 
 
 [AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started.md)]
 
 
-本教程将引导你完成使用 Azure 管理门户实施基本视频点播 (VoD) 内容传送应用程序的步骤。
+本教程将引导你完成使用 Azure 经典门户实施基本视频点播 (VoD) 内容传送应用程序的步骤。
 
 > [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
@@ -36,7 +36,7 @@
 
 ## 创建 Azure 媒体服务帐户
 
-1. 在 [Azure 管理门户](https://manage.windowsazure.cn/)中，依次单击“新建”、“媒体服务”和“快速创建”。
+1. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中，依次单击“新建”、“媒体服务”和“快速创建”。
 
 	![媒体服务快速创建](./media/media-services-portal-get-started/wams-QuickCreate.png)
 
@@ -76,7 +76,7 @@
 
 若要更改流式处理保留单元数，请执行以下操作：
 
-1. 在 [Azure 管理门户](https://manage.windowsazure.cn/)中单击“媒体服务”。然后，单击媒体服务的名称。
+1. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中单击“媒体服务”。然后，单击媒体服务的名称。
 
 2. 选择“流式处理终结点”页。然后，单击要修改的流式处理终结点。
 
@@ -95,7 +95,7 @@
 ## 上载内容
 
 
-1. 在 [Azure 管理门户](http://manage.windowsazure.cn)中，单击“媒体服务”，然后单击媒体服务帐户名。
+1. 在 [Azure 经典门户](http://manage.windowsazure.cn)中，单击“媒体服务”，然后单击媒体服务帐户名。
 2. 选择“内容”页。
 3. 单击该页上或者门户底部的“上载”按钮。
 4. 在“上载内容”对话框中，浏览到所需的资产文件。单击该文件，然后单击“打开”或按 Enter。
@@ -135,7 +135,7 @@
 
 ### 编码
 
-本部分介绍通过 Azure 管理门户使用 Azure 媒体编码器为内容编码时可以执行的步骤。
+本部分介绍通过 Azure 经典门户使用 Azure 媒体编码器为内容编码时可以执行的步骤。
 
 1.  选择要编码的文件。如果此文件类型支持编码，则“内容”页底部将启用“处理”按钮。
 4. 在“处理”对话框中，选择“Azure 媒体编码器”处理器。
@@ -161,7 +161,7 @@
 
 若要为用户提供一个可用来流式传输内容或下载内容的 URL，你首先需要通过创建定位符来“发布”资产。定位符提供对资产中所含文件的访问权限。媒体服务支持两种类型的定位符：用于流媒体（例如 MPEG DASH、HLS 或平滑流式处理）的 OnDemandOrigin 定位符，以及用于下载媒体文件的访问签名 (SAS) 定位符。
 
-当你使用 Azure 管理门户发布资产时，系统将为你创建定位符并提供基于 OnDemand 的 URL（如果你的资产包含 .ism 文件）或 SAS URL。
+当你使用 Azure 经典门户发布资产时，系统将为你创建定位符并提供基于 OnDemand 的 URL（如果你的资产包含 .ism 文件）或 SAS URL。
 
 SAS URL 采用以下格式。
 
@@ -198,7 +198,7 @@ SAS URL 采用以下格式。
 
 ## 从门户播放内容
 
-Azure 管理门户提供了可用于测试视频的内容播放器。
+Azure 经典门户提供了可用于测试视频的内容播放器。
 
 单击所需的视频，然后单击门户底部的“播放”按钮。
 

@@ -41,7 +41,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 1. 使用下列方法之一查找分配给您的云服务的 **.chinacloudapp.cn** 域名。
 
-  * 登录到 [Azure 管理门户]，依次选择您的云服务、"仪表板"，然后在"速览"部分中查找" Web 应用 URL"条目。
+  * 登录到 [Azure 经典门户]，依次选择您的云服务、"仪表板"，然后在"速览"部分中查找" Web 应用 URL"条目。
 
   		  ![显示 Web 应用 URL 的速览部分][csurl]
 
@@ -86,7 +86,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 1. 使用以下方法之一来获取您的云服务的 IP 地址。
 
-  * 登录到 [Azure 管理门户]，依次选择您的云服务、"仪表板"，然后在"速览"部分中查找"公共虚拟 IP (VIP) 地址"条目。
+  * 登录到 [Azure 经典门户]，依次选择您的云服务、"仪表板"，然后在"速览"部分中查找"公共虚拟 IP (VIP) 地址"条目。
 
    		 ![显示 VIP 的速览部分][vip]
 
@@ -133,7 +133,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
   [在自定义域中公开应用程序]: #access-data
   [VIP 交换]: http://msdn.microsoft.com/zh-cn/library/ee517253.aspx
   [创建将子域与存储帐户相关联的 CNAME 记录]: #create-cname
-  [Azure 管理门户]: https://manage.windowsazure.cn
+  [Azure 经典门户]: https://manage.windowsazure.cn
   ["验证自定义域"对话框]: http://i.msdn.microsoft.com/dynimg/IC544437.jpg
   [如何将 CDN 内容映射到自定义域]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg680307.aspx
   [vip]: ./media/custom-dns/csvip.png
