@@ -1,5 +1,5 @@
 <properties
-	pageTitle="进行备份 Azure 虚拟机所需的环境准备 | Microsoft Azure"
+	pageTitle="进行备份 Azure 虚拟机所需的环境准备 | Azure"
 	description="确保对环境进行准备，以便在 Azure 中备份虚拟机"
 	services="backup"
 	documentationCenter=""
@@ -109,23 +109,23 @@
 
 1. 对于 Windows 计算机，请在提升的命令提示符处运行以下命令：
 
-    ```
-    netsh winhttp set proxy http://<proxy IP>:<proxy port>
-    ```
-    这样就会设置计算机范围的代理配置，可以用于任何传出的 HTTP/HTTPS 流量。
+    
+		netsh winhttp set proxy http://<proxy IP>:<proxy port>
+    
+  这样就会设置计算机范围的代理配置，可以用于任何传出的 HTTP/HTTPS 流量。
 
 2. 对于 Linux 计算机，可将以下代码行添加到 ```/etc/environment``` 文件：
 
-    ```
-    http_proxy=http://<proxy IP>:<proxy port>
-    ```
+    
+		http_proxy=http://<proxy IP>:<proxy port>
+    
 
   将以下代码行添加到 ```/etc/waagent.conf``` 文件：
 
-    ```
-    HttpProxy.Host=<proxy IP>
-    HttpProxy.Port=<proxy port>
-    ```
+    
+	    HttpProxy.Host=<proxy IP>
+	    HttpProxy.Port=<proxy port>
+	    
 
 **B) 在代理服务器上允许传入连接：**
 
@@ -145,7 +145,7 @@
     ![创建新规则](./media/backup-azure-vms-prepare/firewall-03.png)
 
     - 对于“协议类型”，请选择“TCP”
-    - 对于“本地端口”，请选择“特定端口”，然后在下面的字段中指定已配置的 ```<Proxy Port>```。
+    - 对于“本地端口”，请选择“特定端口”，然后在下面的字段中指定已配置的 `<Proxy Port>`。
     - 对于“远程端口”，请选择“所有端口”
 
     至于该向导的其余部分，可一路单击到最后，然后为此规则指定一个名称。
@@ -154,12 +154,12 @@
 
 在 Azure PowerShell 命令提示符处键入以下命令：
 
-```
-Get-AzureNetworkSecurityGroup -Name "NSG-lockdown" |
-Set-AzureNetworkSecurityRule -Name "allow-proxy " -Action Allow -Protocol TCP -Type Outbound -Priority 200 -SourceAddressPrefix "10.0.0.5/32" -SourcePortRange "*" -DestinationAddressPrefix Internet -DestinationPortRange "80-443"
-```
 
-此命令会向 NSG 添加一个例外，允许从 10.0.0.5 上的任何端口流向端口 80 (HTTP) 或 443 (HTTPS) 上的任何 Internet 地址的 TCP 流量。如果你需要访问公共 Internet 中的特定端口，请确保也将它添加到 ```-DestinationPortRange```。
+		Get-AzureNetworkSecurityGroup -Name "NSG-lockdown" |
+		Set-AzureNetworkSecurityRule -Name "allow-proxy " -Action Allow -Protocol TCP -Type Outbound -Priority 200 -SourceAddressPrefix "10.0.0.5/32" -SourcePortRange "*" -DestinationAddressPrefix Internet -DestinationPortRange "80-443"
+
+
+此命令会向 NSG 添加一个例外，允许从 10.0.0.5 上的任何端口流向端口 80 (HTTP) 或 443 (HTTPS) 上的任何 Internet 地址的 TCP 流量。如果你需要访问公共 Internet 中的特定端口，请确保也将它添加到 `-DestinationPortRange`。
 
 确保使用与你的部署相对应的详细信息替换示例中的名称。
 

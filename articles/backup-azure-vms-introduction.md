@@ -32,10 +32,10 @@
 
 Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完全备份](http://blogs.technet.com/b/filecab/archive/2008/05/21/what-is-the-difference-between-vss-full-backup-and-vss-copy-backup-in-windows-server-2008.aspx)的详细信息）。若要启用 VSS 复制备份，需要在 VM 上设置以下注册表项。
 
-```
-[HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\BCDRAGENT]
-"USEVSSCOPYBACKUP"="TRUE"
-```
+
+		[HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\BCDRAGENT]
+		"USEVSSCOPYBACKUP"="TRUE"
+
 
 
 此表介绍了一致性类型，以及在 Azure VM 备份和还原过程中，这些一致性类型会在何种条件下出现。
