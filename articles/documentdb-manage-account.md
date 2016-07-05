@@ -1,7 +1,7 @@
 <properties
-	pageTitle="通过 Azure 门户管理 DocumentDB 帐户 | Azure"
-	description="了解如何通过 Azure 门户管理你的 DocumentDB 帐户。查找有关使用 Azure 门户查看、复制、删除和访问帐户的指南。"
-	keywords="Azure 门户、documentdb、azure、Microsoft azure"
+	pageTitle="通过 Azure 门户预览管理 DocumentDB 帐户 | Azure"
+	description="了解如何通过 Azure 门户预览管理你的 DocumentDB 帐户。查找有关使用 Azure 门户预览查看、复制、删除和访问帐户的指南。"
+	keywords="Azure 门户预览、documentdb、azure、Microsoft azure"
 	services="documentdb"
 	documentationCenter=""
 	authors="AndrewHoh"
@@ -15,7 +15,7 @@
 
 # 如何管理 DocumentDB 帐户
 
-了解如何设置全球一致性级别，以及管理多个区域以实现数据的全局可用性。此外，了解如何使用密钥，以及如何在 Azure 门户中删除帐户。
+了解如何设置全球一致性级别，以及管理多个区域以实现数据的全局可用性。此外，了解如何使用密钥，以及如何在 Azure 门户预览中删除帐户。
 
 ## <a id="consistency"></a>管理 DocumentDB 一致性设置
 
@@ -23,7 +23,7 @@
 
 ### 指定 DocumentDB 帐户的默认一致性
 
-1. 在 [Azure 门户](https://portal.azure.cn/)中，访问你的 DocumentDB 帐户。
+1. 在 [Azure 门户预览](https://portal.azure.cn/)中，访问你的 DocumentDB 帐户。
 2. 在帐户边栏选项卡中，如果“设置”边栏选项卡尚未打开，请单击“所有设置”。
 ![默认一致性会话][5]
 
@@ -31,7 +31,7 @@
     ![默认一致性会话][6]
 
 4. 在“默认一致性”边栏选项卡中，选择新的一致性级别，然后单击“保存”。
-5. 可通过 Azure 门户通知中心监控操作的进度。
+5. 可通过 Azure 门户预览通知中心监控操作的进度。
 
 > [AZURE.NOTE] 可能需要几分钟对你的 DocumentDB 帐户的默认一致性设置更改才会生效。
 
@@ -41,7 +41,7 @@ DocumentDB 已在大部分 [Azure 区域][azureregions]中推出。为数据库�
 
 > [AZURE.NOTE] 目前，可将新区域添加到 2016 年 6 月 13 日或之后创建的新 DocumentDB 帐户。在应用商店中选择“Azure DocumentDB - 多区域数据库帐户”以创建多区域帐户。6 月 13 日之前创建的帐户在不久之后就能支持全局可用性。
 
-1. 在 [Azure 门户](https://portal.azure.com/)的跳转栏中，单击“DocumentDB 帐户”。
+1. 在 [Azure 门户预览](https://portal.azure.com/)的跳转栏中，单击“DocumentDB 帐户”。
 2. 在“DocumentDB 帐户”边栏选项卡中，选择要修改的数据库帐户。
 3. 在帐户边栏选项卡中，如果“所有设置”边栏选项卡尚未打开，请单击“所有设置”。
 4. 在“所有设置”边栏选项卡中，单击“添加/删除区域”。
@@ -73,9 +73,9 @@ DocumentDB 已在大部分 [Azure 区域][azureregions]中推出。为数据库�
 ## <a id="keys"></a>查看、复制和重新生成访问密钥
 当你创建 DocumentDB 帐户时，服务生成两个主访问密钥，用于访问 DocumentDB 帐户时的身份验证。提供两个访问密钥后，DocumentDB 支持在不中断你的 DocumentDB 帐户连接的情况下重新生成密钥。
 
-在“Microsoft Azure 门户”中，在“DocumentDB 帐户”边栏选项卡的的“Essentials”栏中访问“密钥”边栏选项卡，以查看、复制和重新生成用于访问 DocumentDB 帐户的访问密钥。[](https://portal.azure.cn/)
+在“Microsoft Azure 门户预览”中，在“DocumentDB 帐户”边栏选项卡的的“Essentials”栏中访问“密钥”边栏选项卡，以查看、复制和重新生成用于访问 DocumentDB 帐户的访问密钥。[](https://portal.azure.cn/)
 
-![Azure 门户屏幕截图，密钥边栏选项卡](./media/documentdb-manage-account/keys.png)
+![Azure 门户预览屏幕截图，密钥边栏选项卡](./media/documentdb-manage-account/keys.png)
 
 另一种方法是从“所有设置”边栏选项卡访问“密钥”条目。
 
@@ -85,15 +85,15 @@ DocumentDB 已在大部分 [Azure 区域][azureregions]中推出。为数据库�
 
 它还包括为用户提供 DocumentDB 的只读访问权限的只读密钥。读取和查询为只读操作，而创建、删除和替换则不是。
 
-### 在 Azure 门户中查看并复制访问密钥
+### 在 Azure 门户预览中查看并复制访问密钥
 
-1.      在 [Azure 门户](https://portal.azure.cn/)中，访问你的 DocumentDB 帐户。 
+1.      在 [Azure 门户预览](https://portal.azure.cn/)中，访问你的 DocumentDB 帐户。 
 
 2. 在“DocumentDB 帐户”边栏选项卡的“概要”栏中，单击“密钥”。
 
 3.      在“密钥”边栏选项卡中，单击你想要复制的密钥右侧的“复制”按钮。
 
-  ![在 Azure 门户中查看并复制访问密钥，密钥边栏选项卡](./media/documentdb-manage-account/copykeys.png)
+  ![在 Azure 门户预览中查看并复制访问密钥，密钥边栏选项卡](./media/documentdb-manage-account/copykeys.png)
 
 ### 重新生成访问密钥
 
@@ -105,7 +105,7 @@ DocumentDB 已在大部分 [Azure 区域][azureregions]中推出。为数据库�
 
 1.      更新应用程序代码中的访问密钥以引用 DocumentDB 帐户的辅助访问密钥。
 
-2.      为你的 DocumentDB 帐户重新生成主访问密钥。在 [Azure 门户](https://portal.azure.cn/)中，访问你的 DocumentDB 帐户。
+2.      为你的 DocumentDB 帐户重新生成主访问密钥。在 [Azure 门户预览](https://portal.azure.cn/)中，访问你的 DocumentDB 帐户。
 
 3. 在“DocumentDB 帐户”边栏选项卡的“概要”栏中，单击“密钥”。
 
@@ -118,12 +118,12 @@ DocumentDB 已在大部分 [Azure 区域][azureregions]中推出。为数据库�
 > [AZURE.NOTE] 可能需要几分钟时间才能使用新生成的密钥来访问你的 DocumentDB 帐户。
 
 ## <a id="delete"></a>删除 DocumentDB 帐户
-若要从 Azure 门户中删除不再使用的 DocumentDB 帐户，请使用“DocumentDB 帐户”边栏选项卡中的“删除”命令。
+若要从 Azure 门户预览中删除不再使用的 DocumentDB 帐户，请使用“DocumentDB 帐户”边栏选项卡中的“删除”命令。
 
-![如何在 Azure 门户中删除 DocumentDB 帐户](./media/documentdb-manage-account/deleteaccountconfirmation.png)
+![如何在 Azure 门户预览中删除 DocumentDB 帐户](./media/documentdb-manage-account/deleteaccountconfirmation.png)
 
 
-1. 在 [Azure 门户](https://portal.azure.cn)中，访问你要删除的 DocumentDB 帐户。
+1. 在 [Azure 门户预览](https://portal.azure.cn)中，访问你要删除的 DocumentDB 帐户。
 2. 在“DocumentDB 帐户”边栏选项卡中，单击“删除帐户”。
 3. 在生成的确认边栏选项卡中，键入 DocumentDB 帐户名称以确认你想要删除该帐户。
 4. 单击确认边栏选项卡上的“删除”按钮。

@@ -16,7 +16,7 @@
 # 了解 DocumentDB 中的存储和可预测性能的预配信息
 DocumentDB 是一个全面托管的，面向可扩展文档的针对 JSON 文档的 NoSQL 数据库服务。使用 DocumentDB，你无需租用虚拟机、部署软件或监视数据库。DocumentDB 由 Microsoft 工程师操作和持续监视，以提供一流的可用性、性能和数据保护。
 
-你可以通过在 [Azure 门户](https://portal.azure.com/)中[创建数据库帐户](/documentation/articles/documentdb-create-account)来开始使用 DocumentDB。DocumentDB 使用固态硬盘 (SSD) 支持的存储和吞吐量的单位数来提供。这些单位数是通过在数据库帐户中创建数据库集合来设置的。每个集合都有预留的吞吐量。如果应用程序的吞吐量需求改变，你可以通过为每个集合设置[性能级别](/documentation/articles/documentdb-performance-levels)来动态更改此预留值。
+你可以通过在 [Azure 门户预览](https://portal.azure.com/)中[创建数据库帐户](/documentation/articles/documentdb-create-account)来开始使用 DocumentDB。DocumentDB 使用固态硬盘 (SSD) 支持的存储和吞吐量的单位数来提供。这些单位数是通过在数据库帐户中创建数据库集合来设置的。每个集合都有预留的吞吐量。如果应用程序的吞吐量需求改变，你可以通过为每个集合设置[性能级别](/documentation/articles/documentdb-performance-levels)来动态更改此预留值。
 
 当你的应用程序超出一个或多个集合的性能级别时，将按每个集合限制请求。这意味着一些应用程序请求可能成功，而另一些则可能受限制。
 
@@ -25,7 +25,7 @@ DocumentDB 是一个全面托管的，面向可扩展文档的针对 JSON 文档
 ## 数据库帐户和管理资源
 作为 Azure 用户，你可以设置一个或多个 DocumentDB 数据库帐户。每个数据库帐户都有一个管理资源配额，包括数据库、用户和权限。这些资源的使用需要遵循[限制和配额](/documentation/articles/documentdb-limits)。如果你需要更多管理资源，请[与支持部门联系](/documentation/articles/documentdb-increase-limits)。
 
-Azure 门户提供了用于监视数据库帐户、数据库和集合的使用情况指标。有关详细信息，请参阅[监视 DocumentDB 帐户](/documentation/articles/documentdb-monitor-accounts)。
+Azure 门户预览提供了用于监视数据库帐户、数据库和集合的使用情况指标。有关详细信息，请参阅[监视 DocumentDB 帐户](/documentation/articles/documentdb-monitor-accounts)。
 
 ## 数据库
 一个 DocumentDB 数据库可以包含几乎无限量的文档存储空间，这些存储空间被分到各个集合中。集合提供性能隔离 - 每个集合都设置有吞吐量，此吞吐量不会与同一数据库或帐户中的其他集合共享。DocumentDB 数据库的大小是灵活的 – 从几个 GB 到几个 TB 的 SSD 支持的文档存储和设置的吞吐量。与传统的 RDBMS 数据库不同，DocumentDB 中的数据库不局限于一台计算机，而是可以跨越多个计算机或群集。
@@ -33,11 +33,11 @@ Azure 门户提供了用于监视数据库帐户、数据库和集合的使用�
 使用 DocumentDB，可根据你扩展应用程序的需求创建多个集合或数据库，或同时创建两者。
 
 ## 数据库集合
-每个 DocumentDB 数据库可以包含一个或多个集合。集合是用于文档存储和处理的高可用的数据分区。每个集合可以存储具有各种架构的文档。DocumentDB 的自动索引和查询功能允许你轻松筛选并检索文档。集合提供了文档存储和查询执行的范围。集合还是它所包含的所有文档的事务域。根据集合的指定的性能级别为其分配吞吐量。可通过 Azure 门户或一个 SDK 来动态调整此吞吐量。
+每个 DocumentDB 数据库可以包含一个或多个集合。集合是用于文档存储和处理的高可用的数据分区。每个集合可以存储具有各种架构的文档。DocumentDB 的自动索引和查询功能允许你轻松筛选并检索文档。集合提供了文档存储和查询执行的范围。集合还是它所包含的所有文档的事务域。根据集合的指定的性能级别为其分配吞吐量。可通过 Azure 门户预览或一个 SDK 来动态调整此吞吐量。
 
 DocumentDB 自动将集合分区到一个或多个物理服务器。创建集合时，你可以指定预配吞吐量（根据每秒的请求单位数）和分区键属性。DocumentDB 会使用此属性的值将文档分布于分区和路由请求（例如查询）之间。分区键值还可作为存储过程和触发器的事务边界。每个集合都有该集合特定的保留吞吐量，且不会与相同帐户中的其他集合共享。因此，你可以在存储和吞吐量方面扩大你的应用程序。
 
-可以通过 [Azure 门户](https://portal.azure.cn/)或任意一个 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet) 创建集合。
+可以通过 [Azure 门户预览](https://portal.azure.cn/)或任意一个 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet) 创建集合。
  
 ## 请求单位数和数据库操作
 
@@ -114,16 +114,16 @@ DocumentDB 自动将集合分区到一个或多个物理服务器。创建集合
 
 
 ## 一致性级别的选择和吞吐量
-默认一致性级别的选择会影响吞吐量和延迟。你可以编程方式和通过 Azure 门户设置默认的一致性级别。你还可以重写单个请求的一致性级别。默认情况下采用会话一致性级别，该级别提供单向读取/写入和读取最新写入内容的保证。会话一致性非常适用于以用户为中心的应用程序，可提供一致性和性能的完美平衡。
+默认一致性级别的选择会影响吞吐量和延迟。你可以编程方式和通过 Azure 门户预览设置默认的一致性级别。你还可以重写单个请求的一致性级别。默认情况下采用会话一致性级别，该级别提供单向读取/写入和读取最新写入内容的保证。会话一致性非常适用于以用户为中心的应用程序，可提供一致性和性能的完美平衡。
 
-有关在 Azure 门户上更改一致性级别的说明，请参阅[如何管理 DocumentDB 帐户](/documentation/articles/documentdb-manage-account#consistency)。或者，有关一致性级别的详细信息，请参阅[使用一致性级别](/documentation/articles/documentdb-consistency-levels)。
+有关在 Azure 门户预览上更改一致性级别的说明，请参阅[如何管理 DocumentDB 帐户](/documentation/articles/documentdb-manage-account#consistency)。或者，有关一致性级别的详细信息，请参阅[使用一致性级别](/documentation/articles/documentdb-consistency-levels)。
 
 ## 设置的文档存储和索引开销
 DocumentDB 支持创建单个分区和已分区的集合。DocumentDB 中的每个分区支持高达 10 GB 的 SSD 支持的存储空间。10 GB 文档存储空间包含文档和索引的存储。默认情况下，DocumentDB 集合配置为自动为所有文档创建索引，且没有明确要求任何二级索引或架构。根据使用 DocumentDB 的应用程序，索引开销通常介于 2-20%。DocumentDB 使用的索引技术可以确保无论属性值是多少，索引开销都不会超过具有默认设置的文档大小的 80% 以上。
 
 默认情况下，DocumentDB 为所有文档自动创建索引。但是，如果你想要精细调整索引开销，那么你可以在插入或替换文档时选择不对某些文档创建索引，如 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies)中所述。你可以将 DocumentDB 集合配置为不对集合中的所有文档创建索引。你还可以将 DocumentDB 集合配置为有选择的只对 JSON 文档的某些具有通配符的属性或路径创建索引，如[配置集合的索引策略](/documentation/articles/documentdb-indexing-policies#configuring-the-indexing-policy-of-a-collection)中所述。不对某些属性或文档创建索引还可以提高写入吞吐量 - 这意味着将消耗更少的请求单位。
 ## 后续步骤
-有关在 Azure 门户中监视性能级别的说明，请参阅[监视 DocumentDB 帐户](/documentation/articles/documentdb-monitor-accounts)。
+有关在 Azure 门户预览中监视性能级别的说明，请参阅[监视 DocumentDB 帐户](/documentation/articles/documentdb-monitor-accounts)。
 
 有关选择集合的性能级别的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels)。
  

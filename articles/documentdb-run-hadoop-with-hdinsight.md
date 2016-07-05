@@ -283,7 +283,7 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 
 9. **运行**新的脚本！ **单击**绿色执行按钮。
 
-10. 检查结果。登录到 [Azure 门户][azure-portal]。
+10. 检查结果。登录到 [Azure 门户预览][azure-portal]。
 	1. 单击左侧面板上的“浏览”<strong></strong>。</br>
 	2. 单击浏览面板右上角的“全部”<strong></strong>。</br>
 	3. 找到并单击“DocumentDB 帐户”<strong></strong>。</br>
@@ -370,7 +370,7 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 		
 9. **运行**新的脚本！ **单击**绿色执行按钮。
 
-10. 检查结果。登录到 [Azure 门户][azure-portal]。
+10. 检查结果。登录到 [Azure 门户预览][azure-portal]。
 	1. 单击左侧面板上的“浏览”<strong></strong>。</br>
 	2. 单击浏览面板右上角的“全部”<strong></strong>。</br>
 	3. 找到并单击“DocumentDB 帐户”<strong></strong>。</br>
@@ -413,7 +413,7 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 
 5. **运行**新的脚本！ **单击**绿色执行按钮。
 
-6. 检查结果。登录到 [Azure 门户][azure-portal]。
+6. 检查结果。登录到 [Azure 门户预览][azure-portal]。
 	1. 单击左侧面板上的“浏览”<strong></strong>。
 	2. 单击浏览面板右上角的“全部”<strong></strong>。
 	3. 找到并单击“DocumentDB 帐户”<strong></strong>。

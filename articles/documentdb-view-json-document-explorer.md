@@ -1,6 +1,6 @@
 <properties
 	pageTitle="DocumentDB 文档资源管理器（用于查看 JSON）| Azure"
-	description="DocumentDB 文档资源管理器是一个 Azure 门户工具，使用 NoSQL 文档数据库 DocumentDB 查看 JSON、编辑、创建和上传 JSON 文档。"
+	description="DocumentDB 文档资源管理器是一个 Azure 门户预览工具，使用 NoSQL 文档数据库 DocumentDB 查看 JSON、编辑、创建和上传 JSON 文档。"
     keywords="查看 JSON"
 	services="documentdb"
 	authors="AndrewHoh"
@@ -15,11 +15,11 @@
 
 # 使用 DocumentDB 文档资源管理器查看、编辑、创建和上传 JSON 文档
 
-本文概述了 [Microsoft Azure DocumentDB](/documentation/services/documentdb/) 文档资源管理器，这是一个 Azure 门户工具，它使用 DocumentDB 查看、编辑、创建、上传和筛选 JSON 文档。
+本文概述了 [Microsoft Azure DocumentDB](/documentation/services/documentdb/) 文档资源管理器，这是一个 Azure 门户预览工具，它使用 DocumentDB 查看、编辑、创建、上传和筛选 JSON 文档。
 
 ## 启动文档资源管理器
 
-1. 在 Azure 门户的跳转栏中，单击“DocumentDB 帐户”。如果“DocumentDB 帐户”不可见，请单击“浏览”，再单击“DocumentDB 帐户”。
+1. 在 Azure 门户预览的跳转栏中，单击“DocumentDB 帐户”。如果“DocumentDB 帐户”不可见，请单击“浏览”，再单击“DocumentDB 帐户”。
 
 2. 在“DocumentDB 帐户”边栏选项卡的顶部，单击“文档资源管理器”。
  
@@ -142,9 +142,9 @@
 
 4. 操作完成后，你可以选择另外最多 100 个文档进行上传。
 
-## 在门户外使用 JSON 文档
+## 在门户预览外使用 JSON 文档
 
-Azure 门户中的文档资源管理器只是在 DocumentDB 中使用文档的一种方法。你还可以通过 [REST API](https://msdn.microsoft.com/library/azure/mt489082.aspx) 或[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet) 使用文档。有关代码示例，请参阅 [.NET SDK 文档示例](/documentation/articles/documentdb-dotnet-samples#document-examples)和 [Node.js SDK 文档示例](/documentation/articles/documentdb-nodejs-samples#document-examples)。
+Azure 门户预览中的文档资源管理器只是在 DocumentDB 中使用文档的一种方法。你还可以通过 [REST API](https://msdn.microsoft.com/library/azure/mt489082.aspx) 或[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet) 使用文档。有关代码示例，请参阅 [.NET SDK 文档示例](/documentation/articles/documentdb-dotnet-samples#document-examples)和 [Node.js SDK 文档示例](/documentation/articles/documentdb-nodejs-samples#document-examples)。
 
 如果需要从其他源（JSON 文件、MongoDB、SQL Server、CSV 文件、Azure 表存储、Amazon DynamoDB 或 HBase）导入或迁移文件，你可以使用 DocumentDB 的[数据迁移工具](/documentation/articles/documentdb-import-data)将数据快速导入到 DocumentDB。
 

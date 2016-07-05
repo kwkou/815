@@ -36,7 +36,7 @@ DocumentDB 通过保留资源提供了快速且可预测的性能，以满足应
 ##指定请求单位容量
 创建 DocumentDB 集合时，可以指定希望为集合保留的每秒请求单位的数量 (RU)。创建集合之后，将保留指定的 RU 的完整分配供集合使用。保证每个集合具有专用的和隔离的吞吐量特征。
 
-值得注意的是，DocumentDB 在保留模型上操作，也就是说，按照你所保留的吞吐量向你计费，无论你主动使用了多少该吞吐量均是如此。但是请记住，随着应用程序的负载、数据和使用情况模式的更改，可以通过 DocumentDB SDK 或使用 [Azure 门户](https://portal.azure.cn)轻松增加或减少保留的 RU。有关扩大或缩小吞吐量的详细信息，请参阅 [DocumentDB performance levels（DocumentDB 性能级别）](/documentation/articles/documentdb-performance-levels)。
+值得注意的是，DocumentDB 在保留模型上操作，也就是说，按照你所保留的吞吐量向你计费，无论你主动使用了多少该吞吐量均是如此。但是请记住，随着应用程序的负载、数据和使用情况模式的更改，可以通过 DocumentDB SDK 或使用 [Azure 门户预览](https://portal.azure.cn)轻松增加或减少保留的 RU。有关扩大或缩小吞吐量的详细信息，请参阅 [DocumentDB performance levels（DocumentDB 性能级别）](/documentation/articles/documentdb-performance-levels)。
 
 ##请求单位注意事项
 在估计为 DocumentDB 集合保留的请求单位数量时，务必要考虑以下变量：
@@ -78,7 +78,7 @@ DocumentDB 通过保留资源提供了快速且可预测的性能，以满足应
 >[AZURE.NOTE]如果文档类型与已编制索引之属性的大小与数目截然不同，请将每个典型文档的类型示例上载到该工具，然后计算结果。
 
 ###使用 DocumentDB 请求费用响应标头
-每个来自 DocumentDB 服务的响应都包含一个包含用于请求的请求单位的自定义标头 (x-ms-request-charge)。此标头也可通过 DocumentDB SDK 访问。在 .NET SDK 中，RequestCharge 是 ResourceResponse 对象的属性。对于查询，在 Azure 门户中的 DocumentDB 查询资源管理器提供了用于执行的查询的请求费用信息。
+每个来自 DocumentDB 服务的响应都包含一个包含用于请求的请求单位的自定义标头 (x-ms-request-charge)。此标头也可通过 DocumentDB SDK 访问。在 .NET SDK 中，RequestCharge 是 ResourceResponse 对象的属性。对于查询，在 Azure 门户预览中的 DocumentDB 查询资源管理器提供了用于执行的查询的请求费用信息。
 
 ![检查查询资源管理器中的 RU 费用][1]
 

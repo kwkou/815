@@ -1,6 +1,6 @@
 <properties
 	pageTitle="DocumentDB 查询资源管理器：一个 SQL 查询编辑器 | Azure"
-	description="了解 DocumentDB 查询资源管理器，它是 Azure 门户中的一个编写 SQL 查询，并针对 NoSQL DocumentDB 集合运行这些查询的 SQL 查询编辑器。"
+	description="了解 DocumentDB 查询资源管理器，它是 Azure 门户预览中的一个编写 SQL 查询，并针对 NoSQL DocumentDB 集合运行这些查询的 SQL 查询编辑器。"
 	keywords="编写 SQL 查询, SQL 查询编辑器"
 	services="documentdb"
 	authors="AndrewHoh"
@@ -15,13 +15,13 @@
 
 # 使用查询资源管理器对 DocumentDB 编写、编辑和运行 SQL 查询 
 
-本文概述了 [Microsoft Azure DocumentDB](/services/documentdb/) 查询资源管理器，该资源管理器是一个 Azure 门户工具，允许你针对 [DocumentDB 集合](/documentation/articles/documentdb-create-collection)编写、编辑和运行 SQL 查询。
+本文概述了 [Microsoft Azure DocumentDB](/services/documentdb/) 查询资源管理器，该资源管理器是一个 Azure 门户预览工具，允许你针对 [DocumentDB 集合](/documentation/articles/documentdb-create-collection)编写、编辑和运行 SQL 查询。
 
-1. 在 Azure 门户的跳转栏中，单击“DocumentDB 帐户”。如果“DocumentDB 帐户”不可见，请单击“浏览”，再单击“DocumentDB 帐户”。
+1. 在 Azure 门户预览的跳转栏中，单击“DocumentDB 帐户”。如果“DocumentDB 帐户”不可见，请单击“浏览”，再单击“DocumentDB 帐户”。
 
 2. 在“DocumentDB 帐户”边栏选项卡的顶部，单击“查询资源管理器”。
 
-	![Azure 门户的屏幕截图，其中突出显示了查询资源管理器](./media/documentdb-query-collections-query-explorer/queryexplorercommand.png)
+	![Azure 门户预览的屏幕截图，其中突出显示了查询资源管理器](./media/documentdb-query-collections-query-explorer/queryexplorercommand.png)
 
     >[AZURE.NOTE] 查询资源管理器还会显示在数据库和集合边栏选项卡中。
 
@@ -67,9 +67,9 @@
 
 ![查询资源管理器查询错误的屏幕截图](./media/documentdb-query-collections-query-explorer/queryerror.png)
 
-## 运行门户外部的 DocumentDB SQL 查询
+## 运行门户预览外部的 DocumentDB SQL 查询
 
-Azure 门户中的查询资源管理器只是一种对 DocumentDB 运行 SQL 查询的方式。你还可以使用 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 或[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet) 运行 SQL 查询。有关使用这些其他方法的详细信息，请参阅 [执行 SQL 查询](/documentation/articles/documentdb-sql-query#executing-sql-queries)
+Azure 门户预览中的查询资源管理器只是一种对 DocumentDB 运行 SQL 查询的方式。你还可以使用 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 或[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet) 运行 SQL 查询。有关使用这些其他方法的详细信息，请参阅 [执行 SQL 查询](/documentation/articles/documentdb-sql-query#executing-sql-queries)
 
 ## 后续步骤
 

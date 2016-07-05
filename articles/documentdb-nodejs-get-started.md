@@ -72,9 +72,9 @@
 
 在喜爱的文本编辑器中打开 ```config.js```
 
-然后，创建名为 ```config``` 的空对象并将属性 ```config.endpoint``` 和 ```config.authKey``` 设置为 DocumentDB 终结点和授权密钥。两种配置都可以在 [Azure 门户](https://portal.azure.cn)中找到。
+然后，创建名为 ```config``` 的空对象并将属性 ```config.endpoint``` 和 ```config.authKey``` 设置为 DocumentDB 终结点和授权密钥。两种配置都可以在 [Azure 门户预览](https://portal.azure.cn)中找到。
 
-![Node.js 教程 - Azure 门户的屏幕截图，显示 DocumentDB 帐户，在“DocumentDB 帐户”边栏选项卡上突出显示“ACTIVE”中心、“密钥”按钮，在“密钥”边栏选项卡上突出显示 URI、主密钥、辅助密钥的值 - 节点数据库][keys]
+![Node.js 教程 - Azure 门户预览的屏幕截图，显示 DocumentDB 帐户，在“DocumentDB 帐户”边栏选项卡上突出显示“ACTIVE”中心、“密钥”按钮，在“密钥”边栏选项卡上突出显示 URI、主密钥、辅助密钥的值 - 节点数据库][keys]
 
     // ADD THIS PART TO YOUR CODE
     var config = {}

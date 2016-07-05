@@ -20,7 +20,7 @@ Azure DocumentDB 是一个完全托管的 NoSQL 数据库服务，其构建目�
 要快速了解此 JSON 数据库和在实际操作中使用该数据库，请遵循以下三个步骤：
 
 1. 观看两分钟的[什么是 DocumentDB？](https://azure.microsoft.com/documentation/videos/what-is-azure-documentdb/)视频，该视频介绍了使用 DocumentDB 具有哪些优势。
-2. 观看三分钟的[在 Azure 上创建 DocumentDB](https://azure.microsoft.com/documentation/videos/create-documentdb-on-azure/) 视频，该视频重点介绍了如何通过 Azure 门户开始使用 DocumentDB。
+2. 观看三分钟的[在 Azure 上创建 DocumentDB](https://azure.microsoft.com/documentation/videos/create-documentdb-on-azure/) 视频，该视频重点介绍了如何通过 Azure 门户预览开始使用 DocumentDB。
 3. 请访问[数据游乐园](http://www.documentdb.com/sql/demo)，你可以在其中学习不同的查询语法，以便了解 DocumentDB 中提供的丰富的查询功能。接着前往“沙盒”选项卡并运行你自己的自定义 SQL 查询，并对 DocumentDB 进行试用。
 
 然后返回到本文中，我们将更加深入的探讨该数据库，你将了解以下问题的答案：
@@ -94,7 +94,7 @@ DocumentDB 允许将应用程序逻辑编写为完全使用 JavaScript 编写的
 DocumentDB 中的 JavaScript 执行是在关系型数据库系统所支持的概念的基础之上建立的，只是现代性的将 Transact-SQL 换成了 JavaScript。所有 JavaScript 逻辑都在使用快照隔离的环境 ACID 事务内执行。在其执行过程中，如果 JavaScript 引发异常，则整个事务将被中止。
 
 ## <a name="next-steps"></a>后续步骤
-如果你已经有 Azure 帐户，则可以在 [Azure 门户](https://portal.azure.cn/#gallery/Microsoft.DocumentDB)中通过[创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account)开始使用 DocumentDB。
+如果你已经有 Azure 帐户，则可以在 [Azure 门户预览](https://portal.azure.cn/#gallery/Microsoft.DocumentDB)中通过[创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account)开始使用 DocumentDB。
 
 如果你没有 Azure 帐户，则可以：
 

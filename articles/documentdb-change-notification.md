@@ -828,7 +828,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 			}
 
 
-最后，你要能够在 Azure 门户上看到逻辑应用的结果。若要这么做，请向 outputs 节添加参数。
+最后，你要能够在 Azure 门户预览上看到逻辑应用的结果。若要这么做，请向 outputs 节添加参数。
 
 
 		JSON
@@ -846,7 +846,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 ![结果](./media/documentdb-change-notification/logic-app-run.png)
 
 ## 度量值
-你可以在门户中为主要逻辑应用配置监视。这样，你就可以查看“运行延迟”和其他事件，如下图所示。
+你可以在门户预览中为主要逻辑应用配置监视。这样，你就可以查看“运行延迟”和其他事件，如下图所示。
 
 ![](./media/documentdb-change-notification/metrics.png)
 
@@ -1091,7 +1091,7 @@ emailBody 会将查询所返回的文档数目（可能是“0”或更多）与
 
 你想要使用的操作为“登录”和“调用 ARM API”。
  
-登录：使用相同的凭据登录 Azure 门户。
+登录：使用相同的凭据登录 Azure 门户预览。
 
 “调用 ARM API”操作将生成你的 CallBackURL。
 

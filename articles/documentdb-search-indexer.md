@@ -117,7 +117,7 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 ##<a id="CreateIndex"></a>步骤 2：创建索引
 
-如果你还没有目标 Azure 搜索索引，请创建一个。你可以从 [Azure 门户 UI](/documentation/articles/search-get-started#test-service-operations) 创建或通过使用[创建索引 API](https://msdn.microsoft.com/library/azure/dn798941.aspx)。
+如果你还没有目标 Azure 搜索索引，请创建一个。你可以从 [Azure 门户预览 UI](/documentation/articles/search-get-started#test-service-operations) 创建或通过使用[创建索引 API](https://msdn.microsoft.com/library/azure/dn798941.aspx)。
 
 	POST https://[Search service name].search.windows.net/indexes?api-version=[api-version]
 	Content-Type: application/json
