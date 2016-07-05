@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
-	ms.date="03/09/2016"
-	wacn.date="03/10/2016"/>
+	ms.date="06/14/2016"
+	wacn.date="07/04/2016"/>
 
 # 为数据库启用SQL Server Stretch Database
 
@@ -61,12 +61,10 @@ GO
 
 3.  若要为SQL Server Stretch Database配置某个 SQL Server 数据库，该数据库必须具有数据库主密钥。数据库主密钥用于保护SQL Server Stretch Database在连接到远程数据库时所用的凭据。若要手动创建数据库主密钥，请参阅 [CREATE MASTER KEY (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms174382.aspx) 和[创建数据库主密钥](https://msdn.microsoft.com/zh-cn/library/aa337551.aspx)。
 
-    ```tsql
-    USE <database>
-    GO
-
-    CREATE MASTER KEY ENCRYPTION BY PASSWORD='<password>'
-    ```
+        USE <database>
+        GO
+    
+        CREATE MASTER KEY ENCRYPTION BY PASSWORD ='<password>'
 
 4.  在为SQL Server Stretch Database配置数据库时，必须提供用于在本地 SQL Server 与远程 Azure 服务器之间进行通信的SQL Server Stretch Database凭据。可以使用两个选项。
 
@@ -78,11 +76,9 @@ GO
 
         若要手动创建凭据，请参阅 [CREATE DATABASE SCOPED CREDENTIAL (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt270260.aspx)。创建凭据需要 ALTER ANY CREDENTIAL 权限。
 
-        ```tsql
-        CREATE DATABASE SCOPED CREDENTIAL <db_scoped_credential_name>
-            WITH IDENTITY = '<identity>' , SECRET = '<secret>'
-        GO
-        ```
+            CREATE DATABASE SCOPED CREDENTIAL <db_scoped_credential_name>
+                WITH IDENTITY = '<identity>' , SECRET = '<secret>'
+            GO
 
     -   如果符合以下所有条件，则可以使用 SQL Server 的联合服务帐户来与远程 Azure 服务器通信。
 
@@ -96,19 +92,17 @@ GO
 
 5.  若要为SQL Server Stretch Database配置数据库，请运行 ALTER DATABASE 命令。
 
-    1.  对于 SERVER 参数，请提供现有 Azure 服务器的名称，包括该名称的 `.database.windows.net` 部分 - 例如 `MyStretchDatabaseServer.database.windows.net`。
+    1.  对于 SERVER 参数，请提供现有 Azure 服务器的名称，包括该名称的 `.database.chinacloudapi.cn` 部分 - 例如 `MyStretchDatabaseServer.database.chinacloudapi.cn`。
 
-    2.  提供包含 CREDENTIAL 参数的现有管理员凭据，或指定 FEDERATED\_SERVICE\_ACCOUNT \\= ON。以下示例提供了一个现有的凭据。
+    2.  请提供具有 CREDENTIAL 参数的现有管理员凭据，或指定 FEDERATED\_SERVICE\_ACCOUNT = ON。以下示例提供了一个现有的凭据。
 
-    ```tsql
-    ALTER DATABASE <database name>
-        SET REMOTE_DATA_ARCHIVE = ON
-            (
-                SERVER = '<server_name>' ,
-                CREDENTIAL = <db_scoped_credential_name>
-            ) ;
-    GO;
-    ```
+            ALTER DATABASE <database name>
+                SET REMOTE_DATA_ARCHIVE = ON
+                    (
+                        SERVER = '<server_name>',
+                        CREDENTIAL = <db_scoped_credential_name>
+                    ) ;
+            GO;
 
 ## 后续步骤
 为SQL Server Stretch Database启用其他表。监视数据迁移与管理已启用延伸的数据库和表。
@@ -124,7 +118,8 @@ GO
 -   [备份和还原已启用延伸的数据库](/documentation/articles/sql-server-stretch-database-backup)
 
 ## 另请参阅
-[识别符合SQL Server Stretch Database条件的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases)
-[ALTER DATABASE SET 选项 (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/bb522682.aspx)
 
-<!---HONumber=Mooncake_0307_2016-->
+[标识 Stretch Database 的数据库和表](/documentation/articles/sql-server-stretch-database-identify-databases)
+
+[ALTER DATABASE SET 选项 (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/bb522682.aspx)
+<!---HONumber=Mooncake_0627_2016-->
