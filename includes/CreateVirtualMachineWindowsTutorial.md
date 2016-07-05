@@ -1,6 +1,6 @@
 # 创建运行 Windows Server 的虚拟机 #
 
-本教程将向您演示使用 Azure 在云中创建运行 Windows Server 的虚拟机的快速简单方法。我们将使用 Azure 经典门户中的映像库，它包含各种不同映像，例如基于 Windows 的操作系统、基于 Linux 的操作系统、应用程序映像等。您无需具备 Azure 使用经验即可使用本教程。 
+本教程将向您演示使用 Azure 在云中创建运行 Windows Server 的虚拟机的快速简单方法。我们将使用 Azure 经典管理门户中的映像库，它包含各种不同映像，例如基于 Windows 的操作系统、基于 Linux 的操作系统、应用程序映像等。您无需具备 Azure 使用经验即可使用本教程。 
 
 您将了解到以下内容：
 
@@ -13,10 +13,10 @@
 
 ##<a id="createvirtualmachine"></a>如何创建虚拟机##
 
-本部分演示如何使用 Azure 经典门户中的"从库中"方法创建自定义虚拟机。此方法提供比"快速创建"方法更多的选项，在您创建虚拟机时对其进行配置。
+本部分演示如何使用 Azure 经典管理门户中的"从库中"方法创建自定义虚拟机。此方法提供比"快速创建"方法更多的选项，在您创建虚拟机时对其进行配置。
 
 
-1. 登录到 Azure [经典门户](http://manage.windowsazure.cn). 如果你还没有订阅，请查看[试用版](/pricing/free-trial)。
+1. 登录到 Azure [经典管理门户](http://manage.windowsazure.cn). 如果你还没有订阅，请查看[试用版](/pricing/free-trial)。
 
 2. 在屏幕底部的命令栏上，单击"新建"。
 
@@ -53,7 +53,7 @@
 
 	>[WACOM.NOTE] VM 代理为您提供安装扩展的环境，可帮助您与虚拟机交互。有关详细信息，请参见[使用扩展](http://msdn.microsoft.com/zh-cn/library/dn606311.aspx)。有关配置终结点的详细信息，请参阅[如何设置虚拟机的终结点](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
     
-8. 创建虚拟机之后，经典门户将在"虚拟机"下列出新虚拟机。相应的云服务和存储帐户也在相应部分创建。创建完成之后，虚拟机和云服务都会自动启动，其状态将显示为"正在运行"。 
+8. 创建虚拟机之后，经典管理门户将在"虚拟机"下列出新虚拟机。相应的云服务和存储帐户也在相应部分创建。创建完成之后，虚拟机和云服务都会自动启动，其状态将显示为"正在运行"。 
 
 	![配置虚拟机的 VM 代理和终结点](./media/CreateVirtualMachineWindowsTutorial/vmcreated.png)
 
@@ -61,7 +61,7 @@
 
 本部分将演示如何登录到您创建的虚拟机以管理其设置和在其上运行的应用程序。
 
-1. 登录到 Azure [经典门户](http://manage.windowsazure.cn)。
+1. 登录到 Azure [经典管理门户](http://manage.windowsazure.cn)。
 
 2. 单击"虚拟机"，然后选择 **MyTestVM** 虚拟机。
 
@@ -91,7 +91,7 @@
 
 本部分将演示如何将空数据磁盘附加到虚拟机。请参阅[附加数据磁盘教程](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-windows-classic-attach-disk)。
 
-1. 登录到 Azure [经典门户](http://manage.windowsazure.cn)。
+1. 登录到 Azure [经典管理门户](http://manage.windowsazure.cn)。
 
 2. 单击"虚拟机"，然后选择 **MyTestVM** 虚拟机。
 

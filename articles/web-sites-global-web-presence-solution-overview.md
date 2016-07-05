@@ -64,7 +64,7 @@
 
 .COM 站点可通过使用 Autoscale 进行自动缩放，使用 Azure Redis 缓存进行缓存，使用 WebJobs 运行后台任务以及使用 Azure 流量管理器维护高可用性达到优化目的。
 
-Azure Web 应用具有[向上和向外缩放]功能，不论工作负荷的大小如何，都能满足 .COM 站点的需求。通过 [Azure 经典门户](https://manage.windowsazure.cn/)手动扩大，通过[服务管理 API] 或 [PowerShell 脚本]以编程方式扩大 Web 应用，或者通过自动缩放功能自动扩大。在“标准”托管计划中，自动缩放功能使你可以基于 CPU 使用率自动扩大 Web 应用。有关最佳实践，请参阅 [Troy Hunt] 的[我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]。
+Azure Web 应用具有[向上和向外缩放]功能，不论工作负荷的大小如何，都能满足 .COM 站点的需求。通过 [Azure 经典管理门户](https://manage.windowsazure.cn/)手动扩大，通过[服务管理 API] 或 [PowerShell 脚本]以编程方式扩大 Web 应用，或者通过自动缩放功能自动扩大。在“标准”托管计划中，自动缩放功能使你可以基于 CPU 使用率自动扩大 Web 应用。有关最佳实践，请参阅 [Troy Hunt] 的[我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]。
 
 使用 [Azure Redis 缓存]让你的 Web 应用响应更快。可以利用它从后端数据库和其他操作（如 [ASP.NET 会话状态]和[输出缓存]）缓存数据。
 
@@ -74,7 +74,7 @@ Azure Web 应用具有[向上和向外缩放]功能，不论工作负荷的大�
 
 使用 Azure 或第三方工具让 Web 应用的性能保持最新状态。接收关于关键 Web 应用事件的警报。使用 Application Insight 或 HDInsight 中的 Web 日志分析，让用户可以轻松地深入了解。
 
-可以[快速浏览] Web 应用的当前性能指标以及[Azure 经典门户](https://manage.windowsazure.cn/)中 Web 应用边栏选项卡中的资源配额。有关应用程序的可用性、性能和使用情况的全面概述，可使用 [Azure Application Insights] 提供的快速且功能强大的故障排除、诊断和使用情况见解进行了解。或者，使用第三方工具提供对 Web 应用的高级数据监视。
+可以[快速浏览] Web 应用的当前性能指标以及[Azure 经典管理门户](https://manage.windowsazure.cn/)中 Web 应用边栏选项卡中的资源配额。有关应用程序的可用性、性能和使用情况的全面概述，可使用 [Azure Application Insights] 提供的快速且功能强大的故障排除、诊断和使用情况见解进行了解。或者，使用第三方工具提供对 Web 应用的高级数据监视。
 
 在“标准”托管计划中，当站点无法响应时，监视器站点响应能力会收到电子邮件通知。有关详细信息，请参阅[如何：在 Azure 中接收警报通知和管理警报规则]。
 

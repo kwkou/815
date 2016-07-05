@@ -33,7 +33,7 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 A
 1. 保留 IP 是否收费？ 
   - 请参阅[保留 IP 地址定价详细信息](/pricing/details/reserved-ip-addresses)以获取定价信息。
 1. 如何保留某个 IP 地址？ 
-  - 你可以使用 PowerShell 或 [Azure 管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx) 来请求特定区域的保留 IP。Azure 会保留该区域的 IP 地址并将其关联到你的订阅。然后，你就可以使用该区域的保留 IP。你不能使用经典门户来保留 IP 地址。
+  - 你可以使用 PowerShell 或 [Azure 管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx) 来请求特定区域的保留 IP。Azure 会保留该区域的 IP 地址并将其关联到你的订阅。然后，你就可以使用该区域的保留 IP。你不能使用经典管理门户来保留 IP 地址。
 1. 我可以将保留 IP 用于基于地缘组的 VNet 吗？ 
   - 仅区域 VNet 支持保留 IP。与地缘组关联的 VNet 不支持保留 IP。有关如何将 VNet 与区域或地缘组关联的详细信息，请参阅[关于区域 VNet 和地缘组](/documentation/articles/virtual-networks-migrate-to-regional-vnet)。 
 

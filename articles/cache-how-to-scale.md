@@ -132,7 +132,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 ## 如何判断缩放何时完成
 
-在 Azure 中国区，目前无法在经典门户或者门户预览中管理 Redis 缓存，因此无法在经典门户或者门户预览中查看缩放状态。但是，可以使用以下 PowerShell 命令来获取缓存的状态：
+在 Azure 中国区，目前无法在经典管理门户或者门户预览中管理 Redis 缓存，因此无法在经典管理门户或者门户预览中查看缩放状态。但是，可以使用以下 PowerShell 命令来获取缓存的状态：
 
 	Get-AzureRmRedisCache -ResourceGroupName myGroup -Name myRedisCache
 

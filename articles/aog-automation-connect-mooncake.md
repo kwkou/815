@@ -6,7 +6,7 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="automation" ms.date="" wacn.date="02/01/2016"/>
+<tags ms.service="automation-aog" ms.date="" wacn.date="02/01/2016"/>
 
 #通过Azure Active Directory认证Azure 自动化服务
 
@@ -14,7 +14,7 @@
 
 Azure自动化是通过Windows PowserShell工作流（也成为Runbook）来处理Azure的资源和第三方应用的创建、部署、监视和维护工作的。在执行Runbook的时候自然需要认证是否拥有合理的身份来执行操作。本文介绍如何通过Azure Active Directory来授权。
 
-首先去确认Azure订阅的目录名字（本文使用的订阅账户是"Microsoft"），可以在Azure 经典门户网站设置里找到，如下图：
+首先去确认Azure订阅的目录名字（本文使用的订阅账户是"Microsoft"），可以在Azure 经典管理门户网站设置里找到，如下图：
 
 ![](./media/aog-automation-connect-mooncake/get-directory.PNG)
 
@@ -39,7 +39,7 @@ Azure自动化是通过Windows PowserShell工作流（也成为Runbook）来处�
 
 ![](./media/aog-automation-connect-mooncake/create-user3.PNG)
 
-复制记录的密码，然后在Azure 经典门户登录，第一次登陆需要修改密码。如果使用初始密码作为Runbook的凭证可能会导致操作失败。
+复制记录的密码，然后在Azure 经典管理门户登录，第一次登陆需要修改密码。如果使用初始密码作为Runbook的凭证可能会导致操作失败。
 
 然后进入自动化的资产，点击添加设置：
 

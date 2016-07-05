@@ -36,9 +36,9 @@
 
 ## 考虑的要点
 
-**无法使用 Azure 经典门户对此虚拟网络进行更改。** 对于本发行版，你需要对网络配置文件进行更改，而不能使用 Azure 经典门户。如果在 Azure 经典门户中进行更改，这些更改将会覆盖此虚拟网络的多站点引用设置。
+**无法使用 Azure 经典管理门户对此虚拟网络进行更改。** 对于本发行版，你需要对网络配置文件进行更改，而不能使用 Azure 经典管理门户。如果在 Azure 经典管理门户中进行更改，这些更改将会覆盖此虚拟网络的多站点引用设置。
 
-在完成多站点的相关过程后，你便可以轻松自如地使用网络配置文件。但是，如果有多个人在处理你的网络配置，你需要确保每个人都知道这个限制。这并不意味着你完全不能使用 Azure 经典门户。除了无法对此特定虚拟网络进行配置更改以外，你可以使用它来完成其他任何操作。
+在完成多站点的相关过程后，你便可以轻松自如地使用网络配置文件。但是，如果有多个人在处理你的网络配置，你需要确保每个人都知道这个限制。这并不意味着你完全不能使用 Azure 经典管理门户。除了无法对此特定虚拟网络进行配置更改以外，你可以使用它来完成其他任何操作。
 
 ## 开始之前
 
@@ -52,11 +52,11 @@
 
 - 你需要安装 Azure PowerShell cmdlet 的最新版本。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
-- 有人能够熟练地配置 VPN 硬件。无法在 Azure 经典门户中使用自动生成的 VPN 脚本来配置 VPN 设备。这意味着，你必须非常了解 VPN 设备的配置，或者与具有此能力的人员合作。
+- 有人能够熟练地配置 VPN 硬件。无法在 Azure 经典管理门户中使用自动生成的 VPN 脚本来配置 VPN 设备。这意味着，你必须非常了解 VPN 设备的配置，或者与具有此能力的人员合作。
 
 - 要用于虚拟网络（如果尚未创建）的 IP 地址范围。
 
-- 要连接到的每个本地网络站点的 IP 地址范围。需确保要连接到的每个本地网络站点的 IP 地址范围不重叠。否则，Azure 经典门户或 REST API 将拒绝上载的配置。
+- 要连接到的每个本地网络站点的 IP 地址范围。需确保要连接到的每个本地网络站点的 IP 地址范围不重叠。否则，Azure 经典管理门户或 REST API 将拒绝上载的配置。
 
 	例如，如果两个本地网络站点都包含 IP 地址范围 10.2.3.0/24，并且某个包包含目标地址 10.2.3.3，则 Azure 将不知道你要将该包发送到哪个站点，因为地址范围是重叠的。为了防止路由问题，Azure 不允许你上载具有重叠范围的配置文件。
 
@@ -70,17 +70,17 @@
 
 1. 将网关类型更改为动态路由。多站点 VPN 需要动态（也称为基于路由的）路由网关。若要更改网关类型，首先需要删除现有网关，然后创建新网关。有关说明，请参阅[更改 VPN 网关路由类型](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp/#how-to-change-your-vpn-gateway-type)。  
 
-2. 配置新网关并创建 VPN 隧道。有关说明，请参阅[在 Azure 经典门户中配置 VPN 网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp)。首先，将网关类型更改为动态路由。
+2. 配置新网关并创建 VPN 隧道。有关说明，请参阅[在 Azure 经典管理门户中配置 VPN 网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp)。首先，将网关类型更改为动态路由。
 
 ### 如果你没有站点到站点虚拟网络：
 
-1. 按照以下说明创建站点到站点虚拟网络：[在 Azure 经典门户中创建使用站点到站点 VPN 连接的虚拟网络](/documentation/articles/vpn-gateway-site-to-site-create)。  
+1. 按照以下说明创建站点到站点虚拟网络：[在 Azure 经典管理门户中创建使用站点到站点 VPN 连接的虚拟网络](/documentation/articles/vpn-gateway-site-to-site-create)。  
 
 2. 按照以下说明配置动态路由网关：[配置 VPN 网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp)。请务必为网关类型选择“动态路由”。
 
 ## <a name="export"></a>2.导出网络配置文件 
 
-导出网络配置文件。导出的文件将用于配置新的多站点设置。如果你需要有关如何导出文件的说明，请参阅以下文章中的相应部分：[如何在 Azure 经典门户中使用网络配置文件创建 VNet](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal)。
+导出网络配置文件。导出的文件将用于配置新的多站点设置。如果你需要有关如何导出文件的说明，请参阅以下文章中的相应部分：[如何在 Azure 经典管理门户中使用网络配置文件创建 VNet](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal)。
 
 ## 3\.打开网络配置文件
 
@@ -154,7 +154,7 @@
 
 ## 5\.导入网络配置文件
 
-导入网络配置文件。在导入这个包含更改的文件时，将会添加新的隧道。这些隧道将使用你前面创建的动态网关。如果你需要有关如何导入文件的说明，请参阅以下文章中的相应部分：[如何在 Azure 经典门户中使用网络配置文件创建 VNet](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal)。
+导入网络配置文件。在导入这个包含更改的文件时，将会添加新的隧道。这些隧道将使用你前面创建的动态网关。如果你需要有关如何导入文件的说明，请参阅以下文章中的相应部分：[如何在 Azure 经典管理门户中使用网络配置文件创建 VNet](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal)。
 
 ## 6\.下载密钥
 

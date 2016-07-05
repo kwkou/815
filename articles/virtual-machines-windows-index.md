@@ -46,7 +46,7 @@
 
 ### 入门
 
-[在 Azure 经典门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)
+[在 Azure 经典管理门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)
 
 [使用资源管理器创建 Windows 虚拟机的不同方式](/documentation/articles/virtual-machines-windows-creation-choices)
 
@@ -198,7 +198,7 @@
 
 ### 入门
 
-[在 Azure 经典门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)
+[在 Azure 经典管理门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)
 
 [如何登录到运行 Windows Server 的经典虚拟机](/documentation/articles/virtual-machines-windows-classic-connect-logon)
 

@@ -18,7 +18,7 @@
 
 ##在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 
 2. 单击“新建”>“计算”>“从库中”。
 
@@ -44,7 +44,7 @@
 
 ##在 Azure 中配置 Oracle WebLogic Server 12c 虚拟机
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 
 2.	单击**“虚拟机”**。
 
@@ -129,7 +129,7 @@
 
 10.	为虚拟机创建终结点
 
-	1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn/)。
+	1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 
 	2.	单击“浏览”
 
@@ -173,7 +173,7 @@
 
 	8.	指定规则的名称，并选择性地输入说明，然后单击“完成”。
 
-12.	若要查看在 Internet 上运行的购物车应用程序，请在浏览器中打开 `http://<<unique_domain_name>>/shoppingcart` 格式的 URL。（可以通过以下方式确定 <<*unique_domain_name*>> 的值：在 [Azure 经典门户](https://manage.windowsazure.cn/)中单击“虚拟机”，然后选择你要用于运行 Oracle WebLogic Server 的虚拟机）。
+12.	若要查看在 Internet 上运行的购物车应用程序，请在浏览器中打开 `http://<<unique_domain_name>>/shoppingcart` 格式的 URL。（可以通过以下方式确定 <<*unique_domain_name*>> 的值：在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中单击“虚拟机”，然后选择你要用于运行 Oracle WebLogic Server 的虚拟机）。
 
 
 ##其他资源

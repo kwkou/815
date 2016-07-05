@@ -18,7 +18,7 @@
 # 在使用经典部署模型创建的运行 Windows Server 2012 R2 的虚拟机上安装 MySQL
 
 
-[MySQL](http://www.mysql.com) 是一种受欢迎的 SQL 开源数据库。使用 [Azure 经典门户](http://manage.windowsazure.cn)，你可以从映像库创建运行 Windows Server 2012 R2 的虚拟机。然后，你就可以将其安装并配置为 MySQL Server。有关如何在 Linux 上安装 MySQL 的说明，请参阅：[如何在 Azure 上安装 MySQL](/documentation/articles/virtual-machines-linux-mysql-install)。
+[MySQL](http://www.mysql.com) 是一种受欢迎的 SQL 开源数据库。使用 [Azure 经典管理门户](http://manage.windowsazure.cn)，你可以从映像库创建运行 Windows Server 2012 R2 的虚拟机。然后，你就可以将其安装并配置为 MySQL Server。有关如何在 Linux 上安装 MySQL 的说明，请参阅：[如何在 Azure 上安装 MySQL](/documentation/articles/virtual-machines-linux-mysql-install)。
 
 > [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
@@ -87,7 +87,7 @@
 
 若要配置 MySQL Server 服务终结点，请执行以下操作：
 
-1.	在 Azure 经典门户中，依次单击“虚拟机”、你的 MySQL 虚拟机的名称和“终结点”。
+1.	在 Azure 经典管理门户中，依次单击“虚拟机”、你的 MySQL 虚拟机的名称和“终结点”。
 2.	在命令栏中，单击“添加”。
 3.	在“将终结点添加到虚拟机”页上，单击右箭头。
 4.	如果你使用的是默认 MySQL TCP 端口 3306，则请单击“名称”中的“MySQL”，然后单击复选标记。
@@ -106,7 +106,7 @@
 
 若要测试到 MySQL Server 服务（运行在 Azure 虚拟机上）的远程连接，你必须先确定与云服务相对应的 DNS 名称，该云服务包含运行 MySQL Server 的虚拟机。
 
-1.	在 Azure 经典门户中，依次单击“虚拟机”、你的 MySQL Server 虚拟机的名称和“仪表板”。
+1.	在 Azure 经典管理门户中，依次单击“虚拟机”、你的 MySQL Server 虚拟机的名称和“仪表板”。
 2.	在虚拟机仪表板中，记下“速览”部分下面的“DNS 名称”值。下面是一个示例：
 
 	![](./media/virtual-machines-windows-classic-mysql-2008r2/MySQL_DNSName.png)

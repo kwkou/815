@@ -25,7 +25,7 @@
 
 - “Azure 订阅”：验证你的 Azure 订阅中可用的核心数。如果你创建的建议 VM 大小为 **A3**，你需要 **4** 个可用核心。如果你使用的 VM 大小为 **A2**，你需要 **2** 个可用核心。
 	
-	- 若要验证你的订阅的核心限制，在 Azure 经典门户中，单击右侧窗格中的“设置”，然后单击顶部菜单中的“使用情况”。
+	- 若要验证你的订阅的核心限制，在 Azure 经典管理门户中，单击右侧窗格中的“设置”，然后单击顶部菜单中的“使用情况”。
 	
 	- 若要增加核心配额，请联系 [Azure 支持](/support/contact/)。有关 VM 大小信息，请参阅 [Azure 的虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)。
 
@@ -37,7 +37,7 @@
 
 ## 步骤 1：设置 Azure 虚拟机
 
-1. 浏览到 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 浏览到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
 1. 单击左侧窗格中的“虚拟机”。
 
@@ -137,7 +137,7 @@
 
 1. 若要信任本地 VM 上的证书的根 CA，请将该证书添加到**受信任的根证书颁发机构**。以下是所需步骤的摘要。有关如何信任 CA 的详细步骤，请参阅[安装服务器证书](https://technet.microsoft.com/zh-cn/library/cc740068)。
 
-	1. 从 Azure 经典门户中，选择 VM 并单击“连接”。根据你的浏览器配置，可能会向你提示保存一个用于连接到 VM 的 .rdp 文件。
+	1. 从 Azure 经典管理门户中，选择 VM 并单击“连接”。根据你的浏览器配置，可能会向你提示保存一个用于连接到 VM 的 .rdp 文件。
 	
 		![连接到 Azure 虚拟机](./media/virtual-machines-windows-classic-ps-sql-report/IC650112.gif) 使用你在创建 VM 时配置的用户 VM 名称、用户名和密码。
 	
@@ -187,7 +187,7 @@
 
 若要使用 Windows PowerShell 脚本配置报表服务器，请完成以下步骤。该配置包括 HTTP 而不是 HTTPS：
 
-1. 从 Azure 经典门户中，选择 VM 并单击“连接”。根据你的浏览器配置，可能会向你提示保存一个用于连接到 VM 的 .rdp 文件。
+1. 从 Azure 经典管理门户中，选择 VM 并单击“连接”。根据你的浏览器配置，可能会向你提示保存一个用于连接到 VM 的 .rdp 文件。
 
 	![连接到 Azure 虚拟机](./media/virtual-machines-windows-classic-ps-sql-report/IC650112.gif) 使用你在创建 VM 时配置的用户 VM 名称、用户名和密码。
 
@@ -328,7 +328,7 @@
 
 若要使用 Windows PowerShell 来配置报表服务器，请完成以下步骤。该配置包括 HTTPS 而不是 HTTP。
 
-1. 从 Azure 经典门户中，选择 VM 并单击“连接”。根据你的浏览器配置，可能会向你提示保存一个用于连接到 VM 的 .rdp 文件。
+1. 从 Azure 经典管理门户中，选择 VM 并单击“连接”。根据你的浏览器配置，可能会向你提示保存一个用于连接到 VM 的 .rdp 文件。
 
 	![连接到 Azure 虚拟机](./media/virtual-machines-windows-classic-ps-sql-report/IC650112.gif) 使用你在创建 VM 时配置的用户 VM 名称、用户名和密码。
 
@@ -551,11 +551,11 @@
 
 如果你不想要运行 PowerShell 脚本来配置报表服务器，请按照本部分中的步骤使用 Reporting Services 本机模式配置管理器来配置报表服务器。
 
-1. 从 Azure 经典门户中，选择 VM 并单击“连接”。使用在创建 VM 时配置的用户名和密码。
+1. 从 Azure 经典管理门户中，选择 VM 并单击“连接”。使用在创建 VM 时配置的用户名和密码。
 
 	![连接到 Azure 虚拟机](./media/virtual-machines-windows-classic-ps-sql-report/IC650112.gif)
 
-1. 运行 Windows 更新并将更新安装到 VM。如果需要重新启动 VM，请重新启动 VM 并从 Azure 经典门户重新连接到该 VM。
+1. 运行 Windows 更新并将更新安装到 VM。如果需要重新启动 VM，请重新启动 VM 并从 Azure 经典管理门户重新连接到该 VM。
 
 1. 从 VM 上的“开始”菜单，键入 **Reporting Services** 并打开“Reporting Services 配置管理器”。
 
@@ -677,7 +677,7 @@
 
 ## 如果使用的不是 VM，将成本降到最低
 
->[AZURE.NOTE]为了在不使用 Azure 虚拟机时尽可能减少费用，可从 Azure 经典门户关闭 VM。如果使用 VM 内的 Windows 电源选项来关闭 VM，仍将为 VM 支付相同的金额。若要减少费用，你需要在 Azure 经典门户中关闭 VM。如果你不再需要该 VM，请记住删除 VM 和关联的 .vhd 文件以避免产生存储费用。有关详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/#price)中的常见问题部分。
+>[AZURE.NOTE]为了在不使用 Azure 虚拟机时尽可能减少费用，可从 Azure 经典管理门户关闭 VM。如果使用 VM 内的 Windows 电源选项来关闭 VM，仍将为 VM 支付相同的金额。若要减少费用，你需要在 Azure 经典管理门户中关闭 VM。如果你不再需要该 VM，请记住删除 VM 和关联的 .vhd 文件以避免产生存储费用。有关详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/#price)中的常见问题部分。
 
 ## 更多信息
 

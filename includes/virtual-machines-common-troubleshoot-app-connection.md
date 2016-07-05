@@ -15,8 +15,8 @@
 
 - 重启虚拟机
 - 重新创建终结点/防火墙规则/网络安全组 (NSG) 规则
-	- [管理云服务终结点](/documentation/articles/cloud-services-enable-communication-role-instances)
-	- [管理网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-ps)
+	- [经典模型 - 管理云服务终结点](/documentation/articles/cloud-services-enable-communication-role-instances)
+	- [Resource Manager 模型 - 管理网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-pportal)
 - 从不同的位置（例如不同的 Azure 虚拟网络）进行连接
 - 重新部署虚拟机
 	- [重新部署 Windows VM](/documentation/articles/virtual-machines-windows-redeploy-to-new-node)
@@ -40,8 +40,7 @@
 4.	Internet 边缘设备。
 	- 是否有防火墙规则阻止流量正常流动？
 
-对于通过站点到站点 VPN 或 ExpressRoute 连接访问应用程序的客户端计算机，可能会导致问题的主要区域是应用程序和 Azure 虚拟机。
-若要确定问题并进行更正，请遵循下列步骤。
+对于通过站点到站点 VPN 或 ExpressRoute 连接访问应用程序的客户端计算机，可能会导致问题的主要区域是应用程序和 Azure 虚拟机。若要确定问题并进行更正，请遵循下列步骤。
 
 ## 步骤 1：是否可以访问目标 VM 中的应用程序？
 
@@ -75,8 +74,8 @@
 - 目标 VM 上的主机防火墙允许入站请求和出站响应流量。
 - 目标 VM 上运行的入侵检测或网络监视软件允许流量。
 - 云服务终结点或网络安全组允许流量
-	- [管理云服务终结点](/documentation/articles/cloud-services-enable-communication-role-instances)
-	- [管理网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-ps)
+	- [经典模型 - 管理云服务终结点](/documentation/articles/cloud-services-enable-communication-role-instances)
+	- [Resource Manager 模型 - 管理网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-pportal)
 - VM 中在测试 VM 和你的 VM 之间的路径运行的单独组件（例如负载平衡器或防火墙）允许流量。
 
 在基于 Windows 的虚拟机上，使用具有高级安全性的 Windows 防火墙确定防火墙规则是否排除应用程序的入站和出站流量。
@@ -91,12 +90,14 @@
 
 如果不能访问应用程序，请验证以下各项：
 
-- 对于使用经典部署模型创建的 VM，VM 的终结点配置允许传入流量，尤其是协议（TCP 或 UDP）和公用和专用端口号。
+- 对于使用经典部署模型创建的 VM：
+	- VM 的终结点配置允许传入流量，尤其是协议（TCP 或 UDP）及公用和专用端口号。
+	- 终结点上的访问控制列表 (ACL) 不会阻止来自 Internet 的传入流量。
 	- 有关详细信息，请参阅[如何对虚拟机设置终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
-- 对于使用经典部署模型创建的 VM，终结点上的访问控制列表 (ACL) 不会阻止来自 Internet 的传入流量。
-	- 有关详细信息，请参阅[如何对虚拟机设置终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
-- 对于使用 Resource Manager 部署模型创建的 VM，VM 的入站 NAT 规则配置允许传入流量，尤其是协议（TCP 或 UDP）和公用和专用端口号。
-- 网络安全组允许入站请求和出站响应流量。
+	
+- 对于使用 Resource Manager 部署模型创建的 VM：
+	- VM 的入站 NAT 规则配置允许传入流量，尤其是协议（TCP 或 UDP）及公用和专用端口号。
+	- 网络安全组允许入站请求和出站响应流量。
 	- 有关详细信息，请参阅[什么是网络安全组 (NSG)？](/documentation/articles/virtual-networks-nsg)。
 
 如果虚拟机或终结点是负载平衡集的成员，则：
@@ -113,8 +114,8 @@
 
 ## 其他资源
 
-[对基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)
+[对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)
 
 [对基于 Linux 的 Azure 虚拟机的安全外壳 (SSH) 连接进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection)
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0627_2016-->

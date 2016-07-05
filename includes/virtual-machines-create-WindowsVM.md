@@ -1,4 +1,4 @@
-1. 登录到[经典门户](http://manage.windowsazure.cn)。如果你尚未获取订阅，请查看[试用](/pricing/1rmb-trial/)优惠产品。
+1. 登录到[经典管理门户](http://manage.windowsazure.cn)。如果你尚未获取订阅，请查看[试用](/pricing/1rmb-trial/)优惠产品。
 
 2. 在窗口底部的命令栏上，单击“新建”。
 
@@ -27,7 +27,7 @@
 
 	>[AZURE.NOTE] VM 代理为你提供安装扩展的环境，可帮助你与虚拟机交互或管理虚拟机。有关详细信息，请参阅[关于 VM 代理和扩展](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions)。
 
-8. 创建虚拟机之后，经典门户将在“虚拟机”下列出新虚拟机。此外，还会创建相应的云服务和存储帐户，并将其列在这些部分中。虚拟机和云服务都会自动启动，其状态将显示为“正在运行”。
+8. 创建虚拟机之后，经典管理门户将在“虚拟机”下列出新虚拟机。此外，还会创建相应的云服务和存储帐户，并将其列在这些部分中。虚拟机和云服务都会自动启动，其状态将显示为“正在运行”。
 
 	![配置虚拟机的 VM 代理和终结点](./media/virtual-machines-create-WindowsVM/vmcreated.png)
 

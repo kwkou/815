@@ -45,11 +45,11 @@
 您应安装了 Python 和 Git ，但请确保您具有 Python 2.7 或 3.4。
 
 
-## 在 Azure 经典门户中创建 Web 应用
+## 在 Azure 经典管理门户中创建 Web 应用
 
-创建你的应用的第一步是通过 [Azure 经典门户](https://manage.windowsazure.cn)创建 Web 应用。
+创建你的应用的第一步是通过 [Azure 经典管理门户](https://manage.windowsazure.cn)创建 Web 应用。
 
-1. 登录到 [Azure 经典门户]。
+1. 登录到 [Azure 经典管理门户]。
 1. 在页面底部，依次单击“新建”、“计算”、“ Web 应用”和“快速创建”。提供 Web 应用的“URL”，并选择 Web 应用的“区域”。最后，单击“创建 Web 应用”。
 
     ![选择“快速创建” Web 应用](./media/web-sites-php-create-web-sites/select-quickcreate-Website.png)
@@ -126,7 +126,7 @@ Python 虚拟环境。如果在 Web 应用上尚不存在兼容的虚拟环境�
 
 ### 克隆存储库
 
-首先，使用 Azure 经典门户上提供的 URL 来克隆存储库。有关详细信息，请参阅[在 Azure Web 应用中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用 Azure 经典管理门户上提供的 URL 来克隆存储库。有关详细信息，请参阅[在 Azure Web 应用中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
 
 打开包含在存储库根中的解决方案文件 (.sln) 。
 
@@ -138,7 +138,7 @@ Python 虚拟环境。如果在 Web 应用上尚不存在兼容的虚拟环境�
 
 - 请确保环境的名称是 `env`。
 
-- 选择基解释器。请确保使用为你的 Web 应用选择的相同版本 Python（在 runtime.txt 或 Azure 经典门户的站点中）。
+- 选择基解释器。请确保使用为你的 Web 应用选择的相同版本 Python（在 runtime.txt 或 Azure 经典管理门户的站点中）。
 
 - 请确保选中此选项以下载并安装软件包。
 
@@ -193,7 +193,7 @@ Visual Studio 不会显示部署的进度。
 
 ### 克隆存储库
 
-首先，使用在 Azure 经典门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure Web 应用中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure Web 应用中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -203,7 +203,7 @@ Visual Studio 不会显示部署的进度。
 
 我们将为开发目的创建新的虚拟环境 （不要将其添加到存储库）。Python 中的虚拟环境是可重定位，因此使用该应用程序的每个开发人员将在本地创建自己的环境。
 
-请确保使用为你的 Web 应用选择的相同版本 Python（在 runtime.txt 或 Azure 经典门户的站点中）
+请确保使用为你的 Web 应用选择的相同版本 Python（在 runtime.txt 或 Azure 经典管理门户的站点中）
 
 对于 Python 2.7：
 
@@ -272,7 +272,7 @@ Visual Studio 不会显示部署的进度。
 
 ### 克隆存储库
 
-首先，使用在 Azure 经典门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure Web 应用中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用在 Azure 经典管理门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure Web 应用中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -282,7 +282,7 @@ Visual Studio 不会显示部署的进度。
 
 我们将为开发目的创建新的虚拟环境 （不要将其添加到存储库）。Python 中的虚拟环境是可重定位，因此使用该应用程序的每个开发人员将在本地创建自己的环境。
 
-请确保使用为你的 Web 应用选择的相同版本 Python（在 runtime.txt 或 Azure 经典门户的站点中）。
+请确保使用为你的 Web 应用选择的相同版本 Python（在 runtime.txt 或 Azure 经典管理门户的站点中）。
 
 对于 Python 2.7：
 

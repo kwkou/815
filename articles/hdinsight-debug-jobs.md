@@ -106,7 +106,7 @@ Power Query 可以从 [www.microsoft.com/download/details.aspx?id=39379](http://
 
 ###访问 Hadoop UI
 
-在 Azure 经典门户中，单击某个 HDInsight 群集名称。在底部单击“Storm 仪表板”。
+在 Azure 经典管理门户中，单击某个 HDInsight 群集名称。在底部单击“Storm 仪表板”。
 
 ![启动群集仪表板](./media/hdinsight-debug-jobs/hdi-debug-launch-dashboard.png)
 
@@ -117,7 +117,7 @@ Power Query 可以从 [www.microsoft.com/download/details.aspx?id=39379](http://
 
 ###访问 Yarn UI
 
-在 Azure 经典门户中，单击某个 HDInsight 群集名称以打开群集边栏选项卡。在群集边栏选项卡中，单击“仪表板”。出现提示时，输入群集管理员凭据。在打开的查询控制台中，单击“YARN UI”。
+在 Azure 经典管理门户中，单击某个 HDInsight 群集名称以打开群集边栏选项卡。在群集边栏选项卡中，单击“仪表板”。出现提示时，输入群集管理员凭据。在打开的查询控制台中，单击“YARN UI”。
 
 可使用 YARN UI 执行以下操作：
 
@@ -131,13 +131,13 @@ Power Query 可以从 [www.microsoft.com/download/details.aspx?id=39379](http://
 
 ###访问 HBase UI
 
-在 Azure 经典门户中，单击某个 HDInsight HBase 群集名称以打开群集边栏选项卡。在群集边栏选项卡中，单击“仪表板”。出现提示时，输入群集管理员凭据。在打开的查询控制台中，单击“HBase UI”。
+在 Azure 经典管理门户中，单击某个 HDInsight HBase 群集名称以打开群集边栏选项卡。在群集边栏选项卡中，单击“仪表板”。出现提示时，输入群集管理员凭据。在打开的查询控制台中，单击“HBase UI”。
 
 ## HDInsight 错误代码
 
 本部分中列举的错误消息旨在帮助 Azure HDInsight 中的 Hadoop 用户了解在使用 Azure PowerShell 管理服务时可能会遇到的错误情况，并向他们建议从错误中恢复时可以执行哪些步骤。
 
-其中某些错误消息也可以在使用 Azure 经典门户管理 HDInsight 群集时在该经典门户中看到。但是，由于在此上下文中针对可能的补救措施的约束，你可能会遇到的其他一些错误消息可能不是很精细。将在问题得到明显缓解的上下文中提供其他错误消息。
+其中某些错误消息也可以在使用 Azure 经典管理门户管理 HDInsight 群集时在该经典管理门户中看到。但是，由于在此上下文中针对可能的补救措施的约束，你可能会遇到的其他一些错误消息可能不是很精细。将在问题得到明显缓解的上下文中提供其他错误消息。
 
 ### <a id="AtleastOneSqlMetastoreMustBeProvided"></a>AtleastOneSqlMetastoreMustBeProvided
 - **说明**：请至少为一个组件提供 Azure SQL 数据库以便对配置单元和 Oozie 元存储使用自定义设置。
@@ -157,7 +157,7 @@ Power Query 可以从 [www.microsoft.com/download/details.aspx?id=39379](http://
 
 ### <a id="ClusterNameUnavailable"></a>ClusterNameUnavailable
 - **说明**：群集名称 *yourClusterName* 不可用。请选取另一个名称。  
-- **缓解**：用户应该指定唯一且不存在的群集名称，然后重试。如果用户正在使用经典门户，则 UI 将通知他们该群集名称是否已在创建步骤期间使用。
+- **缓解**：用户应该指定唯一且不存在的群集名称，然后重试。如果用户正在使用经典管理门户，则 UI 将通知他们该群集名称是否已在创建步骤期间使用。
 
 
 ### <a id="ClusterPasswordInvalid"></a>ClusterPasswordInvalid
@@ -286,7 +286,7 @@ Power Query 可以从 [www.microsoft.com/download/details.aspx?id=39379](http://
 
 ### <a id="StorageAccountNotColocated"></a>StorageAccountNotColocated
 - **说明**：存储帐户 *yourStorageAccountName* 位于区域 *currentRegionName* 中。它应该与群集区域 *yourClusterRegionName* 相同。  
-- **缓解**：在与你的群集所在区域相同的区域中指定存储帐户；或者如果你的数据已处于该存储帐户中，则在与现有存储帐户相同的区域中创建新群集。如果你在使用经典门户，则 UI 将会事先通知存在此问题。
+- **缓解**：在与你的群集所在区域相同的区域中指定存储帐户；或者如果你的数据已处于该存储帐户中，则在与现有存储帐户相同的区域中创建新群集。如果你在使用经典管理门户，则 UI 将会事先通知存在此问题。
 
 ### <a id="SubscriptionIdNotActive"></a>SubscriptionIdNotActive
 - **说明**：给定的订阅 ID *yourSubscriptionId* 不是活动的。  

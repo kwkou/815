@@ -50,7 +50,7 @@
 
 * **ServiceName** - 云服务的名称，新计算节点 VM 将添加到该服务。
 
-* **ImageName** - Azure VM 映像名称，可以通过 Azure 经典门户或 Azure PowerShell cmdlet **Get-AzureVMImage** 获得。映像必须满足以下要求：
+* **ImageName** - Azure VM 映像名称，可以通过 Azure 经典管理门户或 Azure PowerShell cmdlet **Get-AzureVMImage** 获得。映像必须满足以下要求：
 
     1. 必须安装了 Windows 操作系统。
 

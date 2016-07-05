@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="在 Azure 经典门户中配置 VPN 网关 | Azure"
+   pageTitle="在 Azure 经典管理门户中配置 VPN 网关 | Azure"
    description="本文引导你配置虚拟网络 VPN 网关，并将 VPN 网关路由类型从静态更改为动态，或者从动态更改为静态。"
    services="vpn-gateway"
    documentationCenter="na"
@@ -25,7 +25,7 @@
 
 **关于本文**
 
-本文是针对使用[经典门户](https://manage.windowsazure.cn)的经典部署模型编写的。编写有关 资源管理器 部署模型的文章后，我们将在此处提供其链接。
+本文是针对使用[经典管理门户](https://manage.windowsazure.cn)的经典部署模型编写的。编写有关 资源管理器 部署模型的文章后，我们将在此处提供其链接。
 
 **关于 Azure 部署模型**
 
@@ -33,7 +33,7 @@
 
 ## 配置概述
 
-以下过程将引导你在 Azure 经典门户中配置 VPN 网关。这些步骤适用于使用服务管理模式创建并显示在 Azure 经典门户中的 VNet 网关。这些步骤不适合使用经典门户来完成，也不适用于使用资源管理器 模式配置的 VNet。在 [Create a virtual network with a site-to-site connection using Azure Resource Manager and PowerShell（使用 Azure 资源管理器 和 PowerShell 创建具有站点到站点连接的虚拟网络）](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)中，可以找到使用资源管理器 模式为虚拟网络创建 VNet 网关的相关信息。
+以下过程将引导你在 Azure 经典管理门户中配置 VPN 网关。这些步骤适用于使用服务管理模式创建并显示在 Azure 经典管理门户中的 VNet 网关。这些步骤不适合使用经典管理门户来完成，也不适用于使用资源管理器 模式配置的 VNet。在 [Create a virtual network with a site-to-site connection using Azure Resource Manager and PowerShell（使用 Azure 资源管理器 和 PowerShell 创建具有站点到站点连接的虚拟网络）](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)中，可以找到使用资源管理器 模式为虚拟网络创建 VNet 网关的相关信息。
 
 
 1. [为 VNet 创建 VPN 网关](#create-a-vpn-gateway)
@@ -52,7 +52,7 @@
 
 ##<a name="create-a-vpn-gateway"></a> 创建 VPN 网关
 
-1. 在 [Azure 经典门户](https://manage.windowsazure.cn)的“网络”页上，验证虚拟网络的状态列是否为“已创建”。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn)的“网络”页上，验证虚拟网络的状态列是否为“已创建”。
 
 1. 在“名称”列中，单击你的虚拟网络的名称。
 
@@ -104,7 +104,7 @@
 
 为了使网关正常建立连接，必须针对你为跨界配置指定的局域网正确配置 VPN 设备的 IP 地址。通常，这在指定站点到站点配置的过程中配置的。但是，如果以前已将此局域网用于不同的设备，或此局域网的 IP 地址已更改，则你需要编辑设置，以指定正确的网关 IP 地址。
 
-1. 若要验证网关 IP 地址，请在左侧经典门户窗格中单击“网络”，然后在页面顶部选择“局域网”。你将看到针对每个局域网创建的 VPN 网关地址。若要编辑 IP 地址，请选择 VNet，然后在页面底部单击“编辑”。
+1. 若要验证网关 IP 地址，请在左侧经典管理门户窗格中单击“网络”，然后在页面顶部选择“局域网”。你将看到针对每个局域网创建的 VPN 网关地址。若要编辑 IP 地址，请选择 VNet，然后在页面底部单击“编辑”。
 
 1. 在“指定局域网详细信息”页上编辑 IP 地址，然后单击页面底部的“下一步”箭头。
 
@@ -116,7 +116,7 @@
 
 若要添加或编辑局域网的范围，请遵循以下过程。
 
-1. 若要编辑局域网的 IP 地址范围，请在左侧的经典门户窗格中单击“网络”，然后在页面顶部选择“局域网”。在经典门户中，最简单方法是查看“编辑”页上所列出的范围。若要查看范围，请选择 VNet，然后在页面底部单击“编辑”。
+1. 若要编辑局域网的 IP 地址范围，请在左侧的经典管理门户窗格中单击“网络”，然后在页面顶部选择“局域网”。在经典管理门户中，最简单方法是查看“编辑”页上所列出的范围。若要查看范围，请选择 VNet，然后在页面底部单击“编辑”。
 
 1. 在“指定局域网详细信息”页上，请勿进行任何更改。单击页面底部的“下一步”箭头。
 

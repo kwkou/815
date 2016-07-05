@@ -30,7 +30,7 @@
 遵照以下步骤在 Azure Web 应用中创建 Web 应用。
 
 1. 启动 WebMatrix
-2. 登录到 [Azure 经典门户]，然后单击“[发布配置文件](https://manage.windowsazure.cn/publishsettings/index?client=powershell&schemaversion=1.0)”以下载帐户的发布配置文件。
+2. 登录到 [Azure 经典管理门户]，然后单击“[发布配置文件](https://manage.windowsazure.cn/publishsettings/index?client=powershell&schemaversion=1.0)”以下载帐户的发布配置文件。
 2. 如果这是你首次使用 WebMatrix 3，系统将会提示你登录 Azure。您也可以单击“登录”按钮，并选择“添加帐户”。选择此项以使用 Microsoft 帐户**导入帐户**，并选择在上一步中下载的配置文件。
 
 	![添加帐户][addaccount]
@@ -95,7 +95,7 @@
 若要了解有关随 Azure 提供的 Node.js 版本的更多信息以及如何指定要与你的应用程序结合使用的版本，请参阅[在 Azure 应用程序中指定 Node.js 版本](/documentation/articles/nodejs-specify-node-version-azure-apps)。
 
 如果在将应用程序部署到 Azure 后遇到应用程序问题，请参阅[如何在 Azure Web 应用中调试 Node.js Web 应用](/documentation/articles/web-sites-nodejs-debug)以了解有关诊断问题的信息。
-[Azure 经典门户]: http://manage.windowsazure.cn
+[Azure 经典管理门户]: http://manage.windowsazure.cn
 [使用 Git 发布 Azure Web 应用]: /documentation/articles/web-sites-publish-source-control
 [免费]: /zh-cn/pricing/1rmb-trial
 [WebMatrix Web 应用]: http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200106398

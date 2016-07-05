@@ -100,9 +100,9 @@
 
 ## 步骤 2：在 Azure 中创建存储帐户 ##
 
-你需要在 Azure 中具有存储帐户才能上载 .vhd 文件，以便可以在 Azure 中使用它创建虚拟机。可使用 Azure 经典门户创建存储帐户。
+你需要在 Azure 中具有存储帐户才能上载 .vhd 文件，以便可以在 Azure 中使用它创建虚拟机。可使用 Azure 经典管理门户创建存储帐户。
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
 2. 在命令栏上，单击“新建”。
 
@@ -177,7 +177,7 @@
 
 ## 步骤 4：上载 .vhd 文件 ##
 
-在上载 .vhd 文件时，你可以将 .vhd 文件放置在 Blob 存储中的任何位置。在以下命令示例中，**BlobStorageURL** 是你在步骤 2 中创建的存储帐户的 URL，**YourImagesFolder** 是要在其中存储映像的 Blob 存储中的容器。**VHDName** 是显示在 Azure 经典门户中用于标识虚拟硬盘的标签。**PathToVHDFile** 是 .vhd 文件的完整路径和名称。
+在上载 .vhd 文件时，你可以将 .vhd 文件放置在 Blob 存储中的任何位置。在以下命令示例中，**BlobStorageURL** 是你在步骤 2 中创建的存储帐户的 URL，**YourImagesFolder** 是要在其中存储映像的 Blob 存储中的容器。**VHDName** 是显示在 Azure 经典管理门户中用于标识虚拟硬盘的标签。**PathToVHDFile** 是 .vhd 文件的完整路径和名称。
 
 
 1. 从你在上一步中使用的 Azure PowerShell 窗口中，键入：
@@ -193,7 +193,7 @@
 
     **重要说明**：现在请使用 Linux 作为 OS 类型，因为当前 Azure PowerShell 版本只接受“Linux”或“Windows”作为参数。
 
-2. 完成前面的步骤后，当你在 Azure 经典门户上选择“映像”选项卡时，将列出新映像。
+2. 完成前面的步骤后，当你在 Azure 经典管理门户上选择“映像”选项卡时，将列出新映像。
 
     ![添加映像](./media/virtual-machines-linux-classic-freebsd-create-upload-vhd/addfreebsdimage.png)
 

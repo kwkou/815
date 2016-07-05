@@ -17,7 +17,7 @@
 
 当前一个区域内的 Azure 网络已被设计为不再需要地缘组。虚拟网络也在区域范围内，因此使用虚拟网络时不再需要地缘组。由于这些改进，我们不再建议客户使用地缘组，因为在某些情况下它们可能存在一些限制。使用地缘组将不必要地将 VM 和特定的硬件相关联，这样限制了可供你选择的 VM 大小。当与地缘组相关联的特定硬件接近容量上限时，如果尝试添加新的 VM，还可能导致与容量相关的错误。
 
-Azure Resource Manager 部署模型和 Azure 门户预览已弃用地缘组功能。对于 Azure 经典门户，我们将禁止支持创建地缘组以及创建固定到地缘组的存储资源。你无需修改现有的使用地缘组的云服务。但是，你不能在新的云服务中使用地缘组，除非 Azure 支持专业人员建议使用它们。
+Azure Resource Manager 部署模型和 Azure 门户预览已弃用地缘组功能。对于 Azure 经典管理门户，我们将禁止支持创建地缘组以及创建固定到地缘组的存储资源。你无需修改现有的使用地缘组的云服务。但是，你不能在新的云服务中使用地缘组，除非 Azure 支持专业人员建议使用它们。
 
 ## 使用虚拟机时，我可以使用多少存储？
 
@@ -59,7 +59,7 @@ Azure 只支持固定的 VHD 格式的虚拟硬盘。如果你想在 Azure 中�
 
 Windows VM 的其他选项包括：
 
-- 在 Azure 经典门户中找到 VM，然后单击命令栏中的“重置远程访问”。
+- 在 Azure 经典管理门户中找到 VM，然后单击命令栏中的“重置远程访问”。
 - 查看 [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine（解决远程桌面连接到基于 Windows 的 Azure 虚拟机的问题）](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection)。
 - 使用 Windows PowerShell 远程处理连接到 VM，或创建其他终结点以方便其他资源连接到 VM。有关详细信息，请参阅 [How to Set Up Endpoints to a Virtual Machine（如何设置虚拟机的终结点）](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
 
@@ -93,7 +93,7 @@ Windows VM 的其他选项包括：
 其他详细信息：
 
 
-- 对于 Linux 映像，如果你使用 Azure 经典门户，系统会提供“azureuser”作为默认用户名，但你可以更改该用户名，方法是使用“从库中”而非“快速创建”作为创建虚拟机的方法。使用“从库中”，你可以决定在登录时是使用密码、SSH 密钥还是二者都使用。该用户帐户是一个没有特权的用户，但具有运行特权命令所需的“sudo”访问权限。“root”帐户已禁用。
+- 对于 Linux 映像，如果你使用 Azure 经典管理门户，系统会提供“azureuser”作为默认用户名，但你可以更改该用户名，方法是使用“从库中”而非“快速创建”作为创建虚拟机的方法。使用“从库中”，你可以决定在登录时是使用密码、SSH 密钥还是二者都使用。该用户帐户是一个没有特权的用户，但具有运行特权命令所需的“sudo”访问权限。“root”帐户已禁用。
 
 
 - 对于 Windows 映像，在创建 VM 时需提供用户名和密码。该帐户添加到管理员组。
@@ -117,7 +117,7 @@ Azure 根据 VM 的大小和操作系统按小时价格进行计费。对于不�
 
 当 VM 状态为“正在运行”或“已停止”时将计费，但是当 VM 状态为“已停止”（“已释放”）时不会计费。若要将 VM 置于“已停止”（“已释放”）状态，请执行以下操作之一：
 
-- 从 Azure 经典门户关闭或删除 VM。
+- 从 Azure 经典管理门户关闭或删除 VM。
 - 使用 Azure PowerShell 模块中提供的 Stop-AzureVM cmdlet。
 - 使用服务管理 REST API 中的关闭角色操作，并为 PostShutdownAction 元素指定 StoppedDeallocated。
 
@@ -131,7 +131,7 @@ Azure 根据 VM 的大小和操作系统按小时价格进行计费。对于不�
 
 对于任何独立的 VM（该 VM 不属于可用性集），Azure 将在进行计划内维护之前提前至少 1 周向订阅的服务管理员发送电子邮件通知，因为在更新期间各个 VM 可能会重新启动。在 VM 上运行的应用程序可能会遭遇停机。
 
-因计划内维护而重新启动时，你还可以使用 Azure 经典门户或 Azure PowerShell 查看重新启动日志。有关详细信息，请参阅 [Viewing VM Reboot Logs（查看 VM 重新启动日志）](https://azure.microsoft.com/blog/2015/04/01/viewing-vm-reboot-logs/)。
+因计划内维护而重新启动时，你还可以使用 Azure 经典管理门户或 Azure PowerShell 查看重新启动日志。有关详细信息，请参阅 [Viewing VM Reboot Logs（查看 VM 重新启动日志）](https://azure.microsoft.com/blog/2015/04/01/viewing-vm-reboot-logs/)。
 
 若要提供冗余，请将两个或更多个采用类似配置的 VM 放到同一个可用性集中。这可以确保在计划内或计划外维护期间至少有一个 VM 可用。对于此配置，Azure 可以保证一定级别的 VM 可用性。有关详细信息，请参阅管理 [Windows](/documentation/articles/virtual-machines-windows-manage-availability) 或 [Linux](/documentation/articles/virtual-machines-linux-manage-availability) 虚拟机的可用性。
 

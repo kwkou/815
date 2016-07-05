@@ -31,7 +31,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 2. [创建一个新 VNet 环境](#Create-a-new-VNet-environment)。
 3. [连接两个 VNet](#Connect-the-two-VNets)。
 
-你将按顺序执行上述步骤，首先使用经典 Azure 管理工具，包括经典门户、网络配置文件和 Azure 服务管理器 PowerShell cmdlet；然后转为使用新的管理工具，包括新 Azure 门户预览、ARM 模板和 ARM PowerShell cmdlet。
+你将按顺序执行上述步骤，首先使用经典 Azure 管理工具，包括经典管理门户、网络配置文件和 Azure 服务管理器 PowerShell cmdlet；然后转为使用新的管理工具，包括新 Azure 门户预览、ARM 模板和 ARM PowerShell cmdlet。
 
 >[AZURE.IMPORTANT] 互相连接的 VNet 之间不能有 CIDR 块冲突。确保每个 VNet 都有独特的 CIDR 块！
 
@@ -276,7 +276,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 	![VNet 仪表板](./media/virtual-networks-arm-asm-s2s/figure11.png)
 
-5. 尽管你可以管理经典 VNet 及其来自经典门户的连接，但还是建议使用新的 Azure 门户预览。要打开新门户预览，请导航到 https://portal.azure.cn。
+5. 尽管你可以管理经典 VNet 及其来自经典管理门户的连接，但还是建议使用新的 Azure 门户预览。要打开新门户预览，请导航到 https://portal.azure.cn。
 6. 在新门户预览中，单击“浏览全部”，然后单击“虚拟网络(经典)”，再单击 **vnet01**。请注意以下所示的“VPN 连接”窗格。
 
 	![VNet 仪表板](./media/virtual-networks-arm-asm-s2s/figure12.png)

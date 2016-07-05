@@ -44,7 +44,7 @@ Azure 流量管理器使用三种不同的负载平衡方法。以下列表描�
 
 * 你在 Azure 流量管理器配置文件中指定的 Web 应用终结点将出现在配置文件中 Web 应用“配置”页面的“域名”部分下，但不会在那里进行配置。
 
-* 在将 Web 应用添加到配置文件后，该 Web 应用经典门户页面仪表板上的“ Web 应用 URL”将显示该 Web 应用的自定义域 URL（如果你已经设置好了一个）。否则，它将显示流量管理器配置文件 URL（例如，`contoso.trafficmgr.com`）。在 Web 应用的“配置”页面的“域名”部分下将可以看到 Web 应用的直接域名和流量管理器 URL。
+* 在将 Web 应用添加到配置文件后，该 Web 应用经典管理门户页面仪表板上的“ Web 应用 URL”将显示该 Web 应用的自定义域 URL（如果你已经设置好了一个）。否则，它将显示流量管理器配置文件 URL（例如，`contoso.trafficmgr.com`）。在 Web 应用的“配置”页面的“域名”部分下将可以看到 Web 应用的直接域名和流量管理器 URL。
 
 * 你的自定义域名将正常工作，但除了将它们添加到你的 Web 应用之外，你还必须配置 DNS 映射，使之指向流量管理器 URL。有关如何为 Azure Web 应用设置自定义域的信息，请参阅[为 Azure Web 应用配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。
 

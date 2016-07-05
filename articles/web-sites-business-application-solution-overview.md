@@ -61,7 +61,7 @@
 
 业务线应用程序可通过使用“自动缩放”进行自动缩放，使用 Azure Redis 缓存进行缓存，使用 Web 作业运行后台任务以及使用 Azure 流量管理器维护高可用性达到优化目的。
 
-Azure Web 应用具有[向上和向外缩放]功能，不论工作负荷的大小如何，都能满足业务线应用程序的需求。通过 [Azure 经典门户]手动扩大，通过[服务管理 API] 或 [PowerShell 脚本]以编程方式扩大 Web 应用，或者通过自动缩放功能自动扩大。在“标准”层，自动缩放功能使你可以基于 CPU 使用率自动扩大 Web 应用。有关最佳实践，请参阅 [Troy Hunt] 的[我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]。
+Azure Web 应用具有[向上和向外缩放]功能，不论工作负荷的大小如何，都能满足业务线应用程序的需求。通过 [Azure 经典管理门户]手动扩大，通过[服务管理 API] 或 [PowerShell 脚本]以编程方式扩大 Web 应用，或者通过自动缩放功能自动扩大。在“标准”层，自动缩放功能使你可以基于 CPU 使用率自动扩大 Web 应用。有关最佳实践，请参阅 [Troy Hunt] 的[我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]。
 
 使用 [Azure Redis 缓存]让你的 Web 应用响应更快。可以利用它从后端数据库和其他操作。
 
@@ -93,7 +93,7 @@ Azure Web 应用具有[向上和向外缩放]功能，不论工作负荷的大�
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Azure SQL 数据库]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [向上和向外缩放]: /documentation/articles/web-sites-scale
-[Azure 经典门户]: http://manage.windowsazure.cn/
+[Azure 经典管理门户]: http://manage.windowsazure.cn/
 [服务管理 API]: http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
 [PowerShell 脚本]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
 [Troy Hunt]: https://twitter.com/troyhunt

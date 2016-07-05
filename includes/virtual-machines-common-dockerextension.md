@@ -40,7 +40,7 @@ Docker 及其他*容器*技术使用 Linux 内核的进程和文件系统隔离�
 
 ##<a name="How-to-use-the-Docker-VM-Extension-with-Azure"></a> 如何对 Azure 使用 Docker VM 扩展
 
-Docker VM 扩展是在你创建的 VM 实例中安装的组件，它会自行安装 Docker 引擎并管理与 VM 的远程通信。安装 VM 扩展的方式有两种：使用经典门户创建 VM，或通过 Azure 命令行界面 (Azure CLI) 创建 VM。
+Docker VM 扩展是在你创建的 VM 实例中安装的组件，它会自行安装 Docker 引擎并管理与 VM 的远程通信。安装 VM 扩展的方式有两种：使用经典管理门户创建 VM，或通过 Azure 命令行界面 (Azure CLI) 创建 VM。
 
 可以使用门户预览将 Docker VM 扩展添加到任何兼容的 Linux VM（目前，支持此扩展的唯一映像是七月份后推出的 Ubuntu 14.04 LTS 映像）。但是，如果使用 Azure CLI 命令行，则可以在创建 VM 实例时安装 Docker VM 扩展，以及创建并上载你的 Docker 通信证书。
 

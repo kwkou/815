@@ -15,11 +15,11 @@
 # 使用 REST 来备份和还原 Azure 网站应用
 [Azure 网站应用](/home/features/web-site/)可以备份为 Azure 存储空间中的 blob。备份还可以包含该应用的数据库。如果曾经意外地删除了该应用，或者该应用需要还原到以前的版本，则可以从任何以前的备份还原。可随时按需备份，也可以计划以合适的时间间隔备份。
 
-本文将介绍如何使用 RESTful API 请求备份和还原应用。如果要通过 Azure 经典门户以图形方式创建和管理应用备份，请参阅[在 Azure 网站中备份网站](/documentation/articles/web-sites-backup)
+本文将介绍如何使用 RESTful API 请求备份和还原应用。如果要通过 Azure 经典管理门户以图形方式创建和管理应用备份，请参阅[在 Azure 网站中备份网站](/documentation/articles/web-sites-backup)
 
 <a name="gettingstarted"></a>
 ## 入门
-若要发送 REST 请求，需要知道应用的**名称**、**资源组**（默认为“Default-Web-ChinaEast”或“Default-Web-ChinaNorth”，具体位置取决于网站的位置）和**订阅 ID**。可通过单击 [Azure 经典门户](https://manage.windowsazure.cn)中网站的**仪表板**找到此信息。对于本文中的示例，我们将配置网站 **backuprestoreapiexamples.chinacloudsites.cn**。它将存储在 Default-Web-ChinaEast 资源组中，并在 ID 为 00001111-2222-3333-4444-555566667777 的订阅上运行。
+若要发送 REST 请求，需要知道应用的**名称**、**资源组**（默认为“Default-Web-ChinaEast”或“Default-Web-ChinaNorth”，具体位置取决于网站的位置）和**订阅 ID**。可通过单击 [Azure 经典管理门户](https://manage.windowsazure.cn)中网站的**仪表板**找到此信息。对于本文中的示例，我们将配置网站 **backuprestoreapiexamples.chinacloudsites.cn**。它将存储在 Default-Web-ChinaEast 资源组中，并在 ID 为 00001111-2222-3333-4444-555566667777 的订阅上运行。
 
 <a name="backup-restore-rest-api"></a>
 ## 备份和还原 REST API

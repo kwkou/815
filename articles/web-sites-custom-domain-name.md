@@ -33,7 +33,7 @@
 
 1. 保留你的域名。本文不涉及该过程。有很多域注册机构可供选择。当你注册时，其站点将引导你完成该过程。
 1. 创建将域映射到你的 Azure Web 应用的 DNS 记录。
-1. 在 [Azure 经典门户](https://manage.windowsazure.cn/)中添加域名。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中添加域名。
 
 在此基本大纲中，有一些需要注意的特定情况：
 
@@ -60,7 +60,7 @@
 
 如果你要创建 CNAME 记录，可跳过此步骤。若要创建 A 记录，你需要 Web 应用的虚拟 IP 地址。获取该 IP 地址：
 
-1.	在你的浏览器中，打开 [Azure 经典门户](https://manage.windowsazure.cn)。
+1.	在你的浏览器中，打开 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 2.	在“ Web 应用”选项卡中，单击站点的名称并选择“仪表板”。
 3.	从页面底部选择“管理域”。（如果此选项已禁用，请确保你使用的模式为“共享”、“基本”或“标准”。有关详细信息，请参阅[如何缩放 Web 应用](/documentation/articles/web-sites-scale/)。） 
 

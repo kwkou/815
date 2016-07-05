@@ -15,7 +15,7 @@
 
 大多数 Azure 自动化 Runbook 向用户或旨在由其他工作流使用的复杂对象提供某种形式的输出，例如错误消息。Windows PowerShell 提供[多个流](http://blogs.technet.com/heyscriptingguy/archive/2014/03/30/understanding-streams-redirection-and-write-host-in-powershell.aspx)，以便从脚本或工作流发送输出。Azure 自动化将以不同方式处理其中的每个流，当你在创建 Runbook 时，应该遵循有关如何使用每个流的最佳实践。
 
-下表提供了每个流的简要描述，以及当你运行发布的 Runbook 和[测试 Runbook](/documentation/articles/automation-testing-runbook) 时它们在 Azure 经典门户中的行为。后续部分将提供有关每个流的更多详细信息。
+下表提供了每个流的简要描述，以及当你运行发布的 Runbook 和[测试 Runbook](/documentation/articles/automation-testing-runbook) 时它们在 Azure 经典管理门户中的行为。后续部分将提供有关每个流的更多详细信息。
 
 | Stream | 说明 | 已发布 | 测试|
 |:---|:---|:---|:---|
@@ -84,7 +84,7 @@ Runbook 作业的详细流将是：
 
 ###<a id="warning-and-error" name="WarningError"></a> 警告和错误流
 
-警告和错误流旨在记录 Runbook 中出现的问题。在执行 Runbook 时，这些流将写入作业历史记录；在测试 Runbook 时，它们将包含在 Azure 经典门户的测试输出窗格中。默认情况下，在出现警告或错误后，Runbook 将继续执行。在创建消息之前，可以通过在 Runbook 中设置 [preference 变量](#PreferenceVariables)，指定 Runbook 应在出现警告或错误时挂起。例如，若要使 Runbook 在出现错误时挂起（就像发生异常时那样），请将 **$ErrorActionPreference** 设置为 Stop。
+警告和错误流旨在记录 Runbook 中出现的问题。在执行 Runbook 时，这些流将写入作业历史记录；在测试 Runbook 时，它们将包含在 Azure 经典管理门户的测试输出窗格中。默认情况下，在出现警告或错误后，Runbook 将继续执行。在创建消息之前，可以通过在 Runbook 中设置 [preference 变量](#PreferenceVariables)，指定 Runbook 应在出现警告或错误时挂起。例如，若要使 Runbook 在出现错误时挂起（就像发生异常时那样），请将 **$ErrorActionPreference** 设置为 Stop。
 
 使用 [Write-Warning](https://technet.microsoft.com/zh-cn/library/hh849931.aspx) 或 [Write-Error](http://technet.microsoft.com/zh-cn/library/hh849962.aspx) cmdlet 创建警告或错误消息。活动可能也会向这些流写入数据。
 
@@ -96,9 +96,9 @@ Runbook 作业的详细流将是：
 
 ###<a id="verbose-streams" name="Verbose"></a> 详细流
 
-详细消息流用于传递有关 Runbook 操作的一般信息。由于[调试流](#Debug)在 Runbook 中不可用，因此，应该为调试信息使用详细消息。默认情况下，来自已发布 Runbook 的详细消息不会存储在作业历史记录中。若要存储详细消息，请在 Azure 经典门户中 Runbook 的“配置”选项卡上，将已发布 Runbook 配置为“记录详细记录”。在大多数情况下，出于性能方面的原因，你应该保留默认设置，即，不记录详细记录。启用此选项的目的只是为了排查 Runbook 的问题或对它进行调试。
+详细消息流用于传递有关 Runbook 操作的一般信息。由于[调试流](#Debug)在 Runbook 中不可用，因此，应该为调试信息使用详细消息。默认情况下，来自已发布 Runbook 的详细消息不会存储在作业历史记录中。若要存储详细消息，请在 Azure 经典管理门户中 Runbook 的“配置”选项卡上，将已发布 Runbook 配置为“记录详细记录”。在大多数情况下，出于性能方面的原因，你应该保留默认设置，即，不记录详细记录。启用此选项的目的只是为了排查 Runbook 的问题或对它进行调试。
 
-在[测试 Runbook](/documentation/articles/automation-testing-runbook) 时，将不会显示详细消息，即使已将该 Runbook 配置为记录详细记录，也是如此。若要在[测试 Runbook](/documentation/articles/automation-testing-runbook) 时显示详细消息，必须将 $VerbosePreference 变量设置为 Continue。设置该变量后，Azure 经典门户的测试输出窗格中会显示详细消息。
+在[测试 Runbook](/documentation/articles/automation-testing-runbook) 时，将不会显示详细消息，即使已将该 Runbook 配置为记录详细记录，也是如此。若要在[测试 Runbook](/documentation/articles/automation-testing-runbook) 时显示详细消息，必须将 $VerbosePreference 变量设置为 Continue。设置该变量后，Azure 经典管理门户的测试输出窗格中会显示详细消息。
 
 使用 [Write-Verbose](http://technet.microsoft.com/zh-cn/library/hh849951.aspx) cmdlet 创建详细消息。
 
@@ -112,7 +112,7 @@ Runbook 作业的详细流将是：
 
 ##<a id="progress-record" name="Progress"></a> 进度记录
 
-如果你将 Runbook 配置为记录进度记录（在 Azure 经典门户中 Runbook 的“配置”选项卡上），则在运行每个活动之前和之后，会向作业历史记录中写入一条记录。在大多数情况下，你应该保留默认设置，即，不记录 Runbook 的进度记录，以最大程度地提高性能。启用此选项的目的只是为了排查 Runbook 的问题或对它进行调试。在测试 Runbook 时，将不显示进度消息，即使已将该 Runbook 配置为记录进度记录。
+如果你将 Runbook 配置为记录进度记录（在 Azure 经典管理门户中 Runbook 的“配置”选项卡上），则在运行每个活动之前和之后，会向作业历史记录中写入一条记录。在大多数情况下，你应该保留默认设置，即，不记录 Runbook 的进度记录，以最大程度地提高性能。启用此选项的目的只是为了排查 Runbook 的问题或对它进行调试。在测试 Runbook 时，将不显示进度消息，即使已将该 Runbook 配置为记录进度记录。
 
 [Write-Progress](http://technet.microsoft.com/zh-cn/library/hh849902.aspx) cmdlet 在 Runbook 中无效，因为此 cmdlet 旨在供交互式用户使用。
 
@@ -138,9 +138,9 @@ Windows PowerShell 使用 [preference 变量](http://technet.microsoft.com/zh-cn
 
 ## 检索 Runbook 输出和消息
 
-### Azure 经典门户
+### Azure 经典管理门户
 
-可以从 Azure 经典门户中 Runbook 的“作业”选项卡查看 Runbook 作业的详细信息。作业的“摘要”将显示输入参数和[输出流](#Output)，此外，还显示有关作业的一般信息以及发生的任何异常。“历史记录”包含来自[输出流](#Output)以及[警告和错误流](#WarningError)的消息，此外，如果 Runbook 已配置为记录详细记录和进度记录，则该选项卡还包含[详细流](#Verbose)和[进度记录](#Progress)。
+可以从 Azure 经典管理门户中 Runbook 的“作业”选项卡查看 Runbook 作业的详细信息。作业的“摘要”将显示输入参数和[输出流](#Output)，此外，还显示有关作业的一般信息以及发生的任何异常。“历史记录”包含来自[输出流](#Output)以及[警告和错误流](#WarningError)的消息，此外，如果 Runbook 已配置为记录详细记录和进度记录，则该选项卡还包含[详细流](#Verbose)和[进度记录](#Progress)。
 
 ### Windows PowerShell
 

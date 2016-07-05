@@ -26,9 +26,9 @@
 
 ## 在新虚拟机上安装 Deep Security Agent
 
-使用“从库中”选项创建虚拟机时，[Azure 经典门户](http://manage.windowsazure.cn)允许安装 VM 代理和 Trend Micro 安全扩展插件。如果要创建的是单个虚拟机，那么可以使用这种方法轻松地添加来自 Trend Micro 的保护。
+使用“从库中”选项创建虚拟机时，[Azure 经典管理门户](http://manage.windowsazure.cn)允许安装 VM 代理和 Trend Micro 安全扩展插件。如果要创建的是单个虚拟机，那么可以使用这种方法轻松地添加来自 Trend Micro 的保护。
 
-此**“从库中”**选项会打开帮助你设置虚拟机的向导。该向导的最后一页用于安装 VM 代理和 Trend Micro 安全扩展插件。有关常规说明，请参阅[在 Azure 经典门户中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)。进入向导的最后一页时，请执行以下操作：
+此**“从库中”**选项会打开帮助你设置虚拟机的向导。该向导的最后一页用于安装 VM 代理和 Trend Micro 安全扩展插件。有关常规说明，请参阅[在 Azure 经典管理门户中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-tutorial)。进入向导的最后一页时，请执行以下操作：
 
 1.	在“VM 代理”下，选中“安装 VM 代理”。
 

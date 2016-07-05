@@ -98,8 +98,8 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 	如果系统提示，请输入 Web 应用的名称。
 
 	>[AZURE.NOTE]
-	“azure site set -w”命令仅适用于 Azure 命令行界面 0.7.4 或更高版本。你还可以使用 [Azure 经典门户](https://manage.windowsazure.cn)启用 WebSocket 支持。
-	><p>若要使用 [Azure 经典门户](https://manage.windowsazure.cn)启用 WebSocket，请选择你的 Web 应用的“配置”页，针对 Web 套接字条目选择“ON”，然后单击“保存”。
+	“azure site set -w”命令仅适用于 Azure 命令行界面 0.7.4 或更高版本。你还可以使用 [Azure 经典管理门户](https://manage.windowsazure.cn)启用 WebSocket 支持。
+	><p>若要使用 [Azure 经典管理门户](https://manage.windowsazure.cn)启用 WebSocket，请选择你的 Web 应用的“配置”页，针对 Web 套接字条目选择“ON”，然后单击“保存”。
 	><p>![websockets](./media/web-sites-nodejs-chat-app-socketio/websockets.png)
 	
 5. 要查看 Azure 上的 Web 应用，请使用以下命令启动 Web 浏览器并导航到托管的 Web 应用：
@@ -201,7 +201,7 @@ Azure Web 应用提供多个 SKU，这些 SKU 用于确定你的站点可用的�
 
 	这将禁用 IIS Websocket 模块，其中包括自身的 Websocket 实施以及与 Node.js 特定 WebSocket 模块（如 Socket.IO）的冲突。如果此行不存在，或者设置为 `true`，其原因主要是 WebSocket 传输不适用于你的应用程序。
 
-	Node.js 应用程序通常不包括 **web.config** 文件，因此 Azure Web 应用将在部署 Node.js 应用程序时自动生成一个。由于此文件是在服务器上自动生成的，因此必须使用 Web 应用的 FTP 或 FTPS URL 来查看此文件。你可以通过选择你的 Web 应用，然后选择“仪表板”链接，在 Azure 经典门户中查找 Web 应用的 FTP 和 FTPS URL。URL 将显示在“速览”部分。
+	Node.js 应用程序通常不包括 **web.config** 文件，因此 Azure Web 应用将在部署 Node.js 应用程序时自动生成一个。由于此文件是在服务器上自动生成的，因此必须使用 Web 应用的 FTP 或 FTPS URL 来查看此文件。你可以通过选择你的 Web 应用，然后选择“仪表板”链接，在 Azure 经典管理门户中查找 Web 应用的 FTP 和 FTPS URL。URL 将显示在“速览”部分。
 
 	> [AZURE.NOTE]如果应用程序未提供 **web.config** 文件，则该文件将仅由 Azure Web 应用生成。如果在应用程序项目的根目录下提供了 **web.config** 文件，则 Azure Web 应用将使用该文件。
 

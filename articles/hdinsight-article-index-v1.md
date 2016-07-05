@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Azure 经典门户的 HDInsight 文章索引 | Azure"
-   description="包含指向 Azure 经典门户上有关 HDInsight 的文章的链接的索引页。Azure 建议使用 Azure 经典门户在 HDInsight 上创建新的 Hadoop 群集。"
+   pageTitle="Azure 经典管理门户的 HDInsight 文章索引 | Azure"
+   description="包含指向 Azure 经典管理门户上有关 HDInsight 的文章的链接的索引页。Azure 建议使用 Azure 经典管理门户在 HDInsight 上创建新的 Hadoop 群集。"
    services="hdinsight"
    documentationCenter="na"
    authors="cjgronlund"
@@ -12,13 +12,13 @@
    ms.date="08/17/2015"
    wacn.date="01/15/2016"/>
 
-# Azure 经典门户的 HDInsight 文章索引
+# Azure 经典管理门户的 HDInsight 文章索引
 
-使用此索引页在 [Azure 经典门户](https://manage.windowsazure.cn/)中查找涉及 HDInsight 的文章。Azure HDInsight 是开源 Hadoop 和 Hortonworks 数据平台的云分发。
+使用此索引页在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中查找涉及 HDInsight 的文章。Azure HDInsight 是开源 Hadoop 和 Hortonworks 数据平台的云分发。
 
 ## 入门
 
-如果你不熟悉 HDInsight 上的 Hadoop，请转到 [HDInsight 文档页](/documentation/services/hdinsight/)以初步了解 Azure 经典门户。
+如果你不熟悉 HDInsight 上的 Hadoop，请转到 [HDInsight 文档页](/documentation/services/hdinsight/)以初步了解 Azure 经典管理门户。
 
 ## Hadoop：批量查询
 

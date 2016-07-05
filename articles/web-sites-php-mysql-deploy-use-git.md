@@ -20,7 +20,7 @@
 
 你将学习以下内容：
 
-* 如何使用 [Azure 经典门户](https://manage.windowsazure.cn)创建 Web 应用和 MySQL 数据库。由于在 [Azure Web 应用](/documentation/services/web-sites/)中默认启用 PHP，因此运行 PHP 代码没有任何特殊要求。
+* 如何使用 [Azure 经典管理门户](https://manage.windowsazure.cn)创建 Web 应用和 MySQL 数据库。由于在 [Azure Web 应用](/documentation/services/web-sites/)中默认启用 PHP，因此运行 PHP 代码没有任何特殊要求。
 * 如何使用 Git 将应用程序发布和重新发布到 Azure。
 
 通过按照本教程中的说明进行操作，你将使用 PHP 构建简单的注册 Web 应用。将在 Web 应用中托管应用程序。以下是已完成应用程序的屏幕快照：
@@ -36,8 +36,8 @@
 
 按照以下步骤创建 Web 应用和 MySQL 数据库：
 
-1. 登录到 [Azure 经典门户][management-portal]。
-2. 单击经典门户左下角的“新建”图标。
+1. 登录到 [Azure 经典管理门户][management-portal]。
+2. 单击经典管理门户左下角的“新建”图标。
 
 	![创建新的 Azure Web 应用][new-website]
 
@@ -78,7 +78,7 @@
 
 若要连接到在 Web 应用中运行的 MySQL 数据库，你将需要连接信息。若要获取 MySQL 连接信息，请按照以下步骤操作：
 
-1. 在 Azure 经典门户中，单击“MYSQL DATABASE ON AZURE”，并打开 MYSQL 数据库服务器。在“仪表板”页上的“速览”下，可以获取主机和端口。
+1. 在 Azure 经典管理门户中，单击“MYSQL DATABASE ON AZURE”，并打开 MYSQL 数据库服务器。在“仪表板”页上的“速览”下，可以获取主机和端口。
 
 	![连接][connection-string-info]
 
@@ -211,9 +211,9 @@
 在本地测试你的应用之后，可以使用 Git 将其发布到 Web 应用。你将初始化本地 Git 存储库并发布该应用程序。
 
 > [AZURE.NOTE]
-> 这些步骤与上面的“创建 Web 应用并设置 Git 发布”部分的末尾在 Azure 经典门户中显示的步骤相同。
+> 这些步骤与上面的“创建 Web 应用并设置 Git 发布”部分的末尾在 Azure 经典管理门户中显示的步骤相同。
 
-1. （可选）如果你忘记或误放了 Git 远程存储库 URL，请导航到 Azure 经典门户上的 Web 应用属性。
+1. （可选）如果你忘记或误放了 Git 远程存储库 URL，请导航到 Azure 经典管理门户上的 Web 应用属性。
 
 1. 打开 GitBash（或终端，如果 Git 在 `PATH` 中），将目录更改为应用程序的根目录，并运行以下命令：
 

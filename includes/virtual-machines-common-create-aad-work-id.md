@@ -3,11 +3,11 @@
 
 > [AZURE.NOTE]如果管理员为你提供了用户名和密码，则你很有可能已经获得了一个工作或学校 ID（有时也称为*组织 ID*）。如果是这样，你可以立即开始使用你的 Azure 帐户来访问需要此类 ID 的 Azure 资源。如果你发现自己无法使用这些资源，可能需要返回到本主题以寻求帮助。有关其他详细信息，请参阅[可用于登录的帐户](/documentation/articles/active-directory-how-subscriptions-associated-directory#BKMK_SignInAccounts)和 [Azure 订阅与 Azure AD 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory#BKMK_SubRelationToDir)。
 
-步骤非常简单。你需要在 Azure 经典门户中找到登录的标识，发现你的默认 Azure Active Directory 域，然后将一个新用户作为 Azure 协同管理员添加到该域。
+步骤非常简单。你需要在 Azure 经典管理门户中找到登录的标识，发现你的默认 Azure Active Directory 域，然后将一个新用户作为 Azure 协同管理员添加到该域。
 
-## 在 Azure 经典门户中找到默认目录
+## 在 Azure 经典管理门户中找到默认目录
 
-可首先通过用个人 Azure.cn 帐户标识登录到 [Azure 经典门户](https://manage.windowsazure.cn)。登录后，在左侧的蓝色面板中向下滚动，然后单击“ACTIVE DIRECTORY”。
+可首先通过用个人 Azure.cn 帐户标识登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。登录后，在左侧的蓝色面板中向下滚动，然后单击“ACTIVE DIRECTORY”。
 
 ![Azure Active Directory](./media/virtual-machines-common-create-aad-work-id/azureactivedirectorywidget.png)
 
@@ -59,7 +59,7 @@
 
 ## 为订阅添加 Azure 协同管理员权限
 
-现在，需要将新用户添加为订阅的协同管理员，以便新用户可以登录到经典门户。为此，在左下面板中单击“设置”。
+现在，需要将新用户添加为订阅的协同管理员，以便新用户可以登录到经典管理门户。为此，在左下面板中单击“设置”。
 
 ![](./media/virtual-machines-common-create-aad-work-id/thesettingswidget.png)
 
@@ -67,7 +67,7 @@
 
 ![](./media/virtual-machines-common-create-aad-work-id/addingnewuserascoadmin.png)
 
-完成后，应会出现两个用户，包括新的协同管理员标识。从经典门户注销。
+完成后，应会出现两个用户，包括新的协同管理员标识。从经典管理门户注销。
 
 ![](./media/virtual-machines-common-create-aad-work-id/newuseraddedascoadministrator.png)
 

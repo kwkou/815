@@ -28,7 +28,7 @@
 
 此过程将演示如何使用 OS X 上的 SSH 客户端访问虚拟机。
 
-1. 请从“[经典门户](http://manage.windowsazure.cn)”查找“主机名”和“端口信息”。您可以从虚拟机的仪表板中找到所需信息。单击虚拟机名称并查看仪表板“速览”部分的“SSH 详细信息”。
+1. 请从“[经典管理门户](http://manage.windowsazure.cn)”查找“主机名”和“端口信息”。您可以从虚拟机的仪表板中找到所需信息。单击虚拟机名称并查看仪表板“速览”部分的“SSH 详细信息”。
 
 	![获取 SSH 详细信息](./media/virtual-machines-linux-classic-log-on/portalsshdetails.png)
 

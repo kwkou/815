@@ -18,7 +18,7 @@
 
 适用于 Linux 的 Azure CustomScript 扩展提供了一种方式来通过运行以 VM 支持的任何脚本语言（例如，Python、Bash 等）编写的任意代码来自定义你的虚拟机 (VM)。这提供了一种非常灵活的方式来在多台计算机上自动执行应用程序部署。
 
-你可以使用 Azure 经典门户、PowerShell 或 Azure 命令行界面 (Azure CLI) 来部署 CustomScript 扩展。
+你可以使用 Azure 经典管理门户、PowerShell 或 Azure 命令行界面 (Azure CLI) 来部署 CustomScript 扩展。
 
 在本例中，我们将演练使用 Azure CLI 将一个简单的 LAMP 应用程序部署到 Ubuntu。
 
@@ -26,7 +26,7 @@
 
 对于此演练，请创建两个运行 Ubuntu 14.04 的 Azure VM。此处，我将它们称作 *script-vm* 和 *lamp-vm*。在尝试此操作时请使用唯一的名称。一个将用于运行 CLI 命令，另一个用来部署 LAMP 应用程序。
 
-你还可能需要 Azure 存储帐户和密钥（可以从经典门户来获取此信息）来访问它。
+你还可能需要 Azure 存储帐户和密钥（可以从经典管理门户来获取此信息）来访问它。
 
 虽然特定的安装命令将采用 Ubuntu，但你可以针对任何受支持的发行版改编一般步骤。
 

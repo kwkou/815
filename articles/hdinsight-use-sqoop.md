@@ -58,9 +58,9 @@ HDInsight 群集带有某些示例数据。你将会使用以下两个示例：
 
 ##<a name="create-cluster-and-sql-database"></a> 创建群集和 SQL 数据库
 
-在 [Azure 经典门户](https://manage.windowsazure.cn)上创建 SQL 数据库。
+在 [Azure 经典管理门户](https://manage.windowsazure.cn)上创建 SQL 数据库。
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 2. 单击“新建”>“数据服务”>“Sql 数据库”>“自定义创建”。
 3. 为数据库输入名称，并为数据库选择“服务层”、“性能级别”、“排序规则”和“服务器”。
 4. 如果选择为数据库创建新的 SQL 数据库服务器，请单击“下一步”。如果选择现有服务，请确保它满足[以下条件](#sql_server_condition)，然后单击“完成”。
@@ -68,9 +68,9 @@ HDInsight 群集带有某些示例数据。你将会使用以下两个示例：
 
 > [AZURE.NOTE] SQl Server 的资源组名称是“Default-Sql-chinaeast”或“Default-Sql-chinanorth”，具体取决于 SQL Server 的区域。
 
-在 [Azure 经典门户](https://manage.windowsazure.cn)上创建群集。
+在 [Azure 经典管理门户](https://manage.windowsazure.cn)上创建群集。
 
-1. 登录到 [Azure 经典门户](https://manage.windowsazure.cn)。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 2. 单击“新建”>“数据服务”>“HDInsight”>“Hadoop”。
 3. 为群集输入名称、HTTP 密码，然后选择“群集大小”和“存储帐户”。
 4. 单击“创建 HDINSIGHT 群集”。
@@ -79,7 +79,7 @@ HDInsight 群集带有某些示例数据。你将会使用以下两个示例：
 
 - **Azure SQL 数据库**：你必须为 Azure SQL 数据库服务器配置防火墙规则以允许从你的工作站进行访问。有关创建 Azure SQL 数据库和配置防火墙的说明，请参阅 [Azure SQL 数据库入门][sqldatabase-get-started]。 
 
-    > [AZURE.NOTE] 默认情况下，可以从 Azure HDInsight 这样的 Azure 服务连接 Azure SQL 数据库。如果禁用了此防火墙设置，则必须从 Azure 经典门户启用它。有关创建 Azure SQL 数据库和配置防火墙规则的说明，请参阅[创建和配置 SQL 数据库][sqldatabase-create-configue]。
+    > [AZURE.NOTE] 默认情况下，可以从 Azure HDInsight 这样的 Azure 服务连接 Azure SQL 数据库。如果禁用了此防火墙设置，则必须从 Azure 经典管理门户启用它。有关创建 Azure SQL 数据库和配置防火墙规则的说明，请参阅[创建和配置 SQL 数据库][sqldatabase-create-configue]。
 
     <a name="sql_server_condition"></a>
 
@@ -152,11 +152,11 @@ PowerShell 示例将执行以下步骤：
 		 [sessionid] [bigint],
 		 [sessionpagevieworder][bigint])
 
-	检查数据库和表的最简单方法是使用 Visual Studio。可以使用 Azure 经典门户检查数据库服务器和数据库。
+	检查数据库和表的最简单方法是使用 Visual Studio。可以使用 Azure 经典管理门户检查数据库服务器和数据库。
 
 4. 创建 HDInsight 群集。
 
-	若要检查群集，可以使用 Azure 经典门户或 Azure PowerShell。
+	若要检查群集，可以使用 Azure 经典管理门户或 Azure PowerShell。
 
 5. 预处理源数据文件。
 
@@ -167,7 +167,7 @@ PowerShell 示例将执行以下步骤：
 	
 	对于其他使用此数据的示例来说，这是没有问题的，但我们必须删除这些异常，然后才能将内容导入到 Azure SQL 数据库或 SQL Server 中。如果有空字符串，或者有其元素数量比 Azure SQL 数据库表中所定义字段数量要少的行，Sqoop 导出将会失败。log4jlogs 表有 7 个字符串类型的字段。
 
-	此过程将在群集上创建新文件：tutorials/usesqoop/data/sample.log。若要检查修改后的数据文件，可以使用 Azure 经典门户、Azure 存储资源管理器工具或 Azure PowerShell。[HDInsight 入门][hdinsight-get-started]中有一个关于使用 Azure PowerShell 下载文件并显示文件内容的代码示例。
+	此过程将在群集上创建新文件：tutorials/usesqoop/data/sample.log。若要检查修改后的数据文件，可以使用 Azure 经典管理门户、Azure 存储资源管理器工具或 Azure PowerShell。[HDInsight 入门][hdinsight-get-started]中有一个关于使用 Azure PowerShell 下载文件并显示文件内容的代码示例。
 
 6. 将数据文件导出到 Azure SQL 数据库。
 
@@ -182,7 +182,7 @@ PowerShell 示例将执行以下步骤：
 
 8. 将 mobiledata 表导入 HDInsight 群集。
 
-	若要检查修改后的数据文件，可以使用 Azure 经典门户、Azure 存储资源管理器工具或 Azure PowerShell。[HDInsight 入门][hdinsight-get-started]中有一个关于使用 Azure PowerShell 下载文件并显示文件内容的代码示例。
+	若要检查修改后的数据文件，可以使用 Azure 经典管理门户、Azure 存储资源管理器工具或 Azure PowerShell。[HDInsight 入门][hdinsight-get-started]中有一个关于使用 Azure PowerShell 下载文件并显示文件内容的代码示例。
 
 
 ### PowerShell 示例

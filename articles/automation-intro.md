@@ -37,11 +37,11 @@ Runbook 是 Azure 自动化中执行某些自动化过程的一组任务。它�
 
 ## 使用 Azure 自动化创建 Runbook 
 
-您可以从头开始[创建您自己的 Runbook](/documentation/articles/automation-creating-importing-runbook)，根据您自己的要求修改[Runbook 库](/documentation/articles/automation-runbook-gallery)中的 Runbook。Azure.cn 中只有一个 Runbook 类型。你可以使用一个 PowerShell 工作流 Runbook，该 Runbook 可以脱机进行编辑，也可以在 Azure 经典门户中通过[文本编辑器](/documentation/articles/automation-edit-textual-runbook)进行编辑。
+您可以从头开始[创建您自己的 Runbook](/documentation/articles/automation-creating-importing-runbook)，根据您自己的要求修改[Runbook 库](/documentation/articles/automation-runbook-gallery)中的 Runbook。Azure.cn 中只有一个 Runbook 类型。你可以使用一个 PowerShell 工作流 Runbook，该 Runbook 可以脱机进行编辑，也可以在 Azure 经典管理门户中通过[文本编辑器](/documentation/articles/automation-edit-textual-runbook)进行编辑。
 
 ## 获取模块和配置 
 
-你可以获取包含 cmdlet 的 PowerShell 模块，这些 cmdlet 可以用于 [PowerShell 库](http://www.powershellgallery.com/)中的 Runbook。你可以下载并手动导入它们。你不能直接从 Azure 经典门户安装这些模块，但可以在下载之后进行安装，就像使用其他模块一样。
+你可以获取包含 cmdlet 的 PowerShell 模块，这些 cmdlet 可以用于 [PowerShell 库](http://www.powershellgallery.com/)中的 Runbook。你可以下载并手动导入它们。你不能直接从 Azure 经典管理门户安装这些模块，但可以在下载之后进行安装，就像使用其他模块一样。
 
 
 ## Azure 自动化实际应用示例 

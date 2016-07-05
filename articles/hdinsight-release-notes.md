@@ -64,7 +64,7 @@
 
 | 标题 | 说明 | 受影响区域（例如服务、组件或 SDK） | 群集类型（例如 Hadoop、HBase 或 STORM） | JIRA（如果适用） |
 |-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
-| 默认 HDP 版本已更改为 HDP 2.2 | HDInsight Windows 群集的默认版本已更改为 HDP 2.2。2015 年 2 月已推出 HDInsight 版本 3.2 (HDP 2.2) 正式版。此项更改只会在使用 Azure 经典门户、PowerShell cmdlet 或 SDK 群集预配的同时未进行明确选择时，才切换默认群集版本。 | 服务 | 全部| 不适用 |
+| 默认 HDP 版本已更改为 HDP 2.2 | HDInsight Windows 群集的默认版本已更改为 HDP 2.2。2015 年 2 月已推出 HDInsight 版本 3.2 (HDP 2.2) 正式版。此项更改只会在使用 Azure 经典管理门户、PowerShell cmdlet 或 SDK 群集预配的同时未进行明确选择时，才切换默认群集版本。 | 服务 | 全部| 不适用 |
 | 配置更改 | 对于 HDInsight 3.1 群集，现在会启用以下配置：<ul><li>tez.yarn.ats.enabled 和 yarn.log.server.url。这使得 Application Timeline Server 和日志服务器能够提供日志。</li></ul>对于 HDInsight 3.2 群集，已修改以下配置：<ul><li>mapreduce.fileoutputcommitter.algorithm.version 已设置为 2。这样就可以使用 FileOutputCommitter 的 V2 版本。</li></ul> | 服务 | 全部 | 不适用 |
 
 
@@ -877,7 +877,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 
 <tr>
 <td><a href = "/documentation/articles/hdinsight-hadoop-customize-cluster-v1" target="_blank">群集自定义正式发布</a></td>
-<td><p>自定义可让你自定义 Azure HDInsight 群集，以搭配使用 Apache Hadoop 生态系统的项目。使用这项新功能，你现在可以试验并部署 Hadoop 项目到 Azure HDInsight。这是通过启用“脚本操作”功能启用，该功能可以使用自定义脚本，以任意方式修改 Hadoop 群集。此自定义适用于所有类型的 HDInsight 群集，包括 Hadoop、HBase 和 Storm。为了演示这项强大功能，我们记录了安装流行的 <a href = "/documentation/articles/hdinsight-hadoop-r-scripts" target="_blank">R</a>、<a href = "/documentation/articles/hdinsight-hadoop-solr-install-v1" target="_blank">Solr</a> 和 <a href = "/documentation/articles/hdinsight-hadoop-giraph-install-v1" target="_blank">Giraph</a> 模块的过程。这个版本也添加让客户通过 Azure 经典门户指定其自定义脚本操作的功能、提供如何使用帮助器方法生成自定义脚本操作的指导方针最佳作法和最佳作法，并提供有关如何测试脚本操作的指导方针。</p></td>
+<td><p>自定义可让你自定义 Azure HDInsight 群集，以搭配使用 Apache Hadoop 生态系统的项目。使用这项新功能，你现在可以试验并部署 Hadoop 项目到 Azure HDInsight。这是通过启用“脚本操作”功能启用，该功能可以使用自定义脚本，以任意方式修改 Hadoop 群集。此自定义适用于所有类型的 HDInsight 群集，包括 Hadoop、HBase 和 Storm。为了演示这项强大功能，我们记录了安装流行的 <a href = "/documentation/articles/hdinsight-hadoop-r-scripts" target="_blank">R</a>、<a href = "/documentation/articles/hdinsight-hadoop-solr-install-v1" target="_blank">Solr</a> 和 <a href = "/documentation/articles/hdinsight-hadoop-giraph-install-v1" target="_blank">Giraph</a> 模块的过程。这个版本也添加让客户通过 Azure 经典管理门户指定其自定义脚本操作的功能、提供如何使用帮助器方法生成自定义脚本操作的指导方针最佳作法和最佳作法，并提供有关如何测试脚本操作的指导方针。</p></td>
 <td>功能正式发布</td>
 <td>全部</td>
 <td>不适用</td>
@@ -1091,7 +1091,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 </table>
 <br>
 
-**注意：**这个版本已修复防止经典门户显示完整版本号或者防止 SDK 或 Windows PowerShell 返回完整版本号的错误。
+**注意：**这个版本已修复防止经典管理门户显示完整版本号或者防止 SDK 或 Windows PowerShell 返回完整版本号的错误。
 
 ## 10/15/2014 版发行说明
 
@@ -1154,7 +1154,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 * **HDInsight 已在新区域推出：**我们已将 HDInsight 的地理位置据点扩展到三个新的区域。HDInsight 客户可以在这些区域创建群集。
 	* 中国北部
 	* 中国东部
-* HDInsight 1.6 版（HDP 1.1、Hadoop 1.0.3）和 HDInsight 2.1 版（HDP 1.3、Hadoop 1.2）即将从 Azure 经典门户中删除。你可以继续使用 Azure PowerShell cmdlet [New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) 或 [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx) 来创建这些版本的 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning-v1)页。
+* HDInsight 1.6 版（HDP 1.1、Hadoop 1.0.3）和 HDInsight 2.1 版（HDP 1.3、Hadoop 1.2）即将从 Azure 经典管理门户中删除。你可以继续使用 Azure PowerShell cmdlet [New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) 或 [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx) 来创建这些版本的 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning-v1)页。
 * 此版本中发生的 Hortonworks 数据平台 (HDP) 更改：
 
 <table border="1"> <tr><th>HDP</th><th>更改</th></tr> <tr><td>HDP 1.3 / HDI 2.1</td><td>无更改</td></tr> <tr><td>HDP 2.0 / HDI 3.0</td><td>无更改</td></tr> <tr><td>HDP 2.1 / HDI 3.1</td><td>zookeeper：['3.4.5.2.1.3.0-1948'] -> ['3.4.5.2.1.3.2-0002']</td></tr>
@@ -1167,7 +1167,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 此版本包含 HDInsight 服务的几项新的增强功能：
 
 * **HDP 2.1 可用性**：HDInsight 3.1（包含 HDP 2.1）已正式发布，并成为新群集的默认版本。
-* **HBase - Azure 经典门户改进**：我们将在预览版中提供 HBase 群集。你只需单击几下鼠标，就能从经典门户创建 HBase 群集： 
+* **HBase - Azure 经典管理门户改进**：我们将在预览版中提供 HBase 群集。你只需单击几下鼠标，就能从经典管理门户创建 HBase 群集： 
 
 借助 HBase，你可以在 HDInsight 上生成各种实时工作负载 - 从用于处理大型数据集的交互式 Web 应用，到用于存储来自数百万个终结点的传感器数据与遥测数据的服务。你接下来要做的就是使用 Hadoop 作业分析这些工作负载中的数据，也可以通过 Azure PowerShell 和 Hive 群集仪表板完成这种分析。
 
@@ -1335,7 +1335,7 @@ SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部�
 
 以下位置提供了 HDInsight 版本群集使用的 Hortonworks 数据平台 (HDP) 的发行说明：
 
-* HDInsight 版本 3.1 使用基于 [Hortonworks 数据平台 2.1.7][hdp-2-1-7] 的 Hadoop 分发版。这是使用 11/7/2014 之后的 Azure 经典门户时创建的默认 Hadoop 群集。创建于 11/7/2014 之前的 HDInsight 3.1 群集基于 [Hortonworks 数据平台 2.1.1][hdp-2-1-1]
+* HDInsight 版本 3.1 使用基于 [Hortonworks 数据平台 2.1.7][hdp-2-1-7] 的 Hadoop 分发版。这是使用 11/7/2014 之后的 Azure 经典管理门户时创建的默认 Hadoop 群集。创建于 11/7/2014 之前的 HDInsight 3.1 群集基于 [Hortonworks 数据平台 2.1.1][hdp-2-1-1]
 
 * HDInsight 版本 3.0 使用基于 [Hortonworks 数据平台 2.0][hdp-2-0-8] 的 Hadoop 分发版。
 

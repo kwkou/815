@@ -49,7 +49,7 @@ Azure HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版�
 
 通过 HDInsight Windows PowerShell cmdlet 或 HDInsight .NET SDK 创建群集时，你可以使用“Version”参数选择 HDInsight Hadoop 群集的版本。
 
-如果你使用“快速创建”选项，则在默认情况下将获得 HDInsight 的 3.1 版本用于创建 Hadoop 群集。如果在 Azure 经典门户中使用“自定义创建”选项，可以从“群集详细信息”页上的“HDInsight 版本”下拉列表中选择要部署的群集版本。
+如果你使用“快速创建”选项，则在默认情况下将获得 HDInsight 的 3.1 版本用于创建 Hadoop 群集。如果在 Azure 经典管理门户中使用“自定义创建”选项，可以从“群集详细信息”页上的“HDInsight 版本”下拉列表中选择要部署的群集版本。
 
 ##功能特点
 HDInsight 平台的一些突出功能包括：
@@ -90,10 +90,10 @@ HDInsight 平台的一些突出功能包括：
 下表列出当前可用的 HDInsight 版本以及它们使用的相应 Hortonworks 数据平台版本和发布日期。如果知道，还提供其支持到期日期和弃用日期。请注意以下事项：
 
 * 默认情况下，会针对 HDInsight 2.1 和更高版本的群集部署具有两个头节点的高度可用群集。它们不适用于 HDInsight 1.6 群集。
-* 某版本的支持到期后，其就不能通过 Azure 经典门户提供了。下表列出 Azure 经典门户上提供的版本。可继续使用 Windows PowerShell [New-AzureHDInsightCluster](https://msdn.microsoft.com/zh-cn/library/dn947292.aspx) 命令中的 `Version` 参数和 .NET SDK 获取群集版本，直到其弃用日期为止。
+* 某版本的支持到期后，其就不能通过 Azure 经典管理门户提供了。下表列出 Azure 经典管理门户上提供的版本。可继续使用 Windows PowerShell [New-AzureHDInsightCluster](https://msdn.microsoft.com/zh-cn/library/dn947292.aspx) 命令中的 `Version` 参数和 .NET SDK 获取群集版本，直到其弃用日期为止。
 
 <table border="1"> 
-<tr><th>HDInsight 版本</th><th>HDP 版本</a><th>高可用性</th></th><th>发行日期</th><th>可在 Azure 经典门户中使用</th><th>支持过期日期</th><th>弃用日期</th></tr> 
+<tr><th>HDInsight 版本</th><th>HDP 版本</a><th>高可用性</th></th><th>发行日期</th><th>可在 Azure 经典管理门户中使用</th><th>支持过期日期</th><th>弃用日期</th></tr> 
 <tr><td>HDI 3.2</td><td>HDP 2.2</td><td>是</td><td>2/18/2015</td><td>是</td><td></td><td></td></tr> 
 <tr><td>HDI 3.1</td><td>HDP 2.1</td><td>是</td><td>6/24/2014</td><td>是</td><td></td><td></td></tr> 
 <tr><td>HDI 3.0</td><td>HDP 2.0</td><td>是</td><td>02/11/2014</td><td>是</td><td>09/17/2014</td><td>06/30/2015</td></tr> 
@@ -103,14 +103,14 @@ HDInsight 平台的一些突出功能包括：
 
 **非默认群集的部署**
 
-默认情况下在 Hadoop 2.4 上创建 HDInsight 3.1 群集，因此用户必须使用经典门户中的“自定义创建”选项以指定需要创建的其他 HDInsight 群集版本。
+默认情况下在 Hadoop 2.4 上创建 HDInsight 3.1 群集，因此用户必须使用经典管理门户中的“自定义创建”选项以指定需要创建的其他 HDInsight 群集版本。
 
 ### HDInsight 群集版本的服务级别协议
 
 SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集版本受 Microsoft 客户服务和支持部门支持的时间段。如果 HDInsight 群集版本具有早于当前日期的**支持过期日期**，则表示它处于支持窗口外。有关支持的 HDInsight 群集版本的列表，请参见上表。给定 HDInsight 版本 X（一旦提供更新的 X+1 版本）的支持到期日期为按以下公式计算所得时间的较晚者：
 
 - 公式 1：发布 HDInsight 群集版本 X 的日期加 180 天。
-- 公式 2：HDInsight 群集版本 X+1（X 之后的后续版本）在 Azure 经典门户中可用的日期加 90 天。
+- 公式 2：HDInsight 群集版本 X+1（X 之后的后续版本）在 Azure 经典管理门户中可用的日期加 90 天。
 
 **弃用日期**是在该日期后，不能在 HDInsight 上创建此群集版本的日期。
 
@@ -123,7 +123,7 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 	* 特定 Apache 组件的发行说明 - [Hive 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310843&version=12326450)、[Pig 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310730&version=12326954)、[HBase 0.98.4](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310753&version=12326810)、[Phoenix 4.2.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12315120&version=12327581)、[M/R 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310941&version=12327180)、[HDFS 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310942&version=12327181)、[YARN 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12313722&version=12327197)、[Common](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310240&version=12327179)、[Tez 0.5.2](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314426&version=12328742)、[Storm 0.9.3](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314820&version=12327112)、[Oozie 4.1.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12324960&projectId=12311620)。
 
 
-* HDInsight 群集版本 3.1 使用基于 [Hortonworks 数据平台 2.1.7][hdp-2-1-7] 的 Hadoop 分发版。这是使用 11/7/2014 之后的 Azure HDInsight 经典门户时创建的**默认** Hadoop 群集。创建于 11/7/2014 之前的 HDInsight 3.1 群集基于[ Hortonworks 数据平台 2.1.1][hdp-2-1-1]。
+* HDInsight 群集版本 3.1 使用基于 [Hortonworks 数据平台 2.1.7][hdp-2-1-7] 的 Hadoop 分发版。这是使用 11/7/2014 之后的 Azure HDInsight 经典管理门户时创建的**默认** Hadoop 群集。创建于 11/7/2014 之前的 HDInsight 3.1 群集基于[ Hortonworks 数据平台 2.1.1][hdp-2-1-1]。
 
 * HDInsight 群集版本 3.0 使用基于 [Hortonworks 数据平台 2.0][hdp-2-0-8] 的 Hadoop 分发版。
 

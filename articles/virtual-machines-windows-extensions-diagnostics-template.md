@@ -70,7 +70,7 @@ Azure 诊断扩展可在基于 Windows 的 Azure 虚拟机上提供监视和诊�
    
 值为 **Microsoft.Azure.Diagnostics** 的 *publisher* 属性和值为 **IaaSDiagnostics** 的 *type* 属性可唯一标识 Azure 诊断扩展。
 
-*name* 属性的值可用来参考资源组中的扩展。特别将其设为 **Microsoft.Insights.VMDiagnosticsSettings** 后，它可以轻易地被 Azure 经典门户识别，从而确保监视图表在 Azure 经典门户中正确显示。
+*name* 属性的值可用来参考资源组中的扩展。特别将其设为 **Microsoft.Insights.VMDiagnosticsSettings** 后，它可以轻易地被 Azure 经典管理门户识别，从而确保监视图表在 Azure 经典管理门户中正确显示。
 
 *typeHandlerVersion* 指定你要使用的扩展的版本。将 *autoUpgradeMinorVersion* 次要版本设置为“true”可确保获得可用的最新扩展次要版本。强烈建议你始终将 *autoUpgradeMinorVersion* 设置为“true”，这样就可以随时获得并使用具有所有新功能和缺陷修复的最新的可用诊断扩展。
 

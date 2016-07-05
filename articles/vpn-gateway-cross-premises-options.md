@@ -59,7 +59,7 @@
 - 使用的 VPN 设备必须与解决方案所需的网关类型兼容。请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways)。
 - 网关 SKU 也会影响聚合吞吐量。有关详细信息，请参阅[网关 SKU](/documentation/articles/vpn-gateway-about-vpngateways/#gateway-skus)。 
 
-有关如何使用 Azure 经典门户和经典部署模型配置站点到站点 VPN 网关连接的信息，请参阅 [Configure a virtual network with a Site-to-Site VPN connection for the classic deployment model（使用经典部署模型的站点到站点 VPN 连接配置虚拟网络）](/documentation/articles/vpn-gateway-site-to-site-create)。有关如何使用资源管理器部署模型配置站点到站点 VPN 的信息，请参阅 [Create a virtual network with a Site-to-Site VPN connection for the Resource Manager deployment model（使用 Resource Manager 部署模型的站点到站点 VPN 连接创建虚拟网络）](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)。
+有关如何使用 Azure 经典管理门户和经典部署模型配置站点到站点 VPN 网关连接的信息，请参阅 [Configure a virtual network with a Site-to-Site VPN connection for the classic deployment model（使用经典部署模型的站点到站点 VPN 连接配置虚拟网络）](/documentation/articles/vpn-gateway-site-to-site-create)。有关如何使用资源管理器部署模型配置站点到站点 VPN 的信息，请参阅 [Create a virtual network with a Site-to-Site VPN connection for the Resource Manager deployment model（使用 Resource Manager 部署模型的站点到站点 VPN 连接创建虚拟网络）](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)。
 
 
 ## 点到站点连接

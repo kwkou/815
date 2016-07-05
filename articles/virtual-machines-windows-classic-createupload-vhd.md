@@ -59,7 +59,7 @@
 
 ### 方法 1：创建存储帐户
 
-1. 登录到[Azure经典门户](http://manage.windowsazure.cn)。
+1. 登录到[Azure经典管理门户](http://manage.windowsazure.cn)。
 
 2. 在命令栏上，单击“新建”。
 
@@ -95,7 +95,7 @@
 
 ### 方法 2：获取存储帐户信息
 
-1.	登录到[Azure经典门户](http://manage.windowsazure.cn)。
+1.	登录到[Azure经典管理门户](http://manage.windowsazure.cn)。
 
 2.	在导航窗格中，单击“存储”。
 
@@ -148,7 +148,7 @@
 	其中：
 	- **BlobStorageURL** 是存储帐户的 URL
 	- **YourImagesFolder** 是要在其中存储映像的 blob 存储中的容器
-	- **VHDName** 是你希望在 Azure 经典门户中显示以识别虚拟硬盘的名称
+	- **VHDName** 是你希望在 Azure 经典管理门户中显示以识别虚拟硬盘的名称
 	- **PathToVHDFile** 是 .vhd 文件的完整路径和名称
 
 	![PowerShell Add-AzureVHD](./media/virtual-machines-windows-classic-createupload-vhd/powershell_upload_vhd.png)
@@ -157,11 +157,11 @@
 
 ## 步骤 5：将映像添加到自定义映像列表
 
-> [AZURE.TIP]若要使用 Azure PowerShell（而不是经典门户）来添加映像，请使用 **Add-AzureVMImage** cmdlet。例如：
+> [AZURE.TIP]若要使用 Azure PowerShell（而不是经典管理门户）来添加映像，请使用 **Add-AzureVMImage** cmdlet。例如：
 
 >	`Add-AzureVMImage -ImageName <ImageName> -MediaLocation <VHDLocation> -OS <OSType>`
 
-1. 在 Azure经典门户中的“所有项目”下单击“虚拟机”。
+1. 在 Azure经典管理门户中的“所有项目”下单击“虚拟机”。
 
 2. 在“虚拟机”下，单击**“映像”**。
 
@@ -191,7 +191,7 @@
 
 	![从自定义映像创建虚拟机](./media/virtual-machines-windows-classic-createupload-vhd/create_vm_custom_image.png)
 
-	> [AZURE.TIP]如果在你尝试创建 VM 时，收到带有此错误消息的错误：“VHD https://XXXXX.. 具有不支持的虚拟大小(YYYY 字节)。大小必须是整数(以 MB 为单位)”，这意味着你的 VHD 不是整数个 MB，需要为固定大小的 VHD。请尝试使用 **Add-AzureVMImage** PowerShell cmdlet（而不是Azure经典门户）来添加映像（请参阅上面的步骤 5）。Azure cmdlet 可确保 VHD 满足 Azure 要求。
+	> [AZURE.TIP]如果在你尝试创建 VM 时，收到带有此错误消息的错误：“VHD https://XXXXX.. 具有不支持的虚拟大小(YYYY 字节)。大小必须是整数(以 MB 为单位)”，这意味着你的 VHD 不是整数个 MB，需要为固定大小的 VHD。请尝试使用 **Add-AzureVMImage** PowerShell cmdlet（而不是Azure经典管理门户）来添加映像（请参阅上面的步骤 5）。Azure cmdlet 可确保 VHD 满足 Azure 要求。
 
 [Step 1: Prepare the image to be uploaded]: #prepimage
 [Step 2: Create a storage account in Azure]: #createstorage

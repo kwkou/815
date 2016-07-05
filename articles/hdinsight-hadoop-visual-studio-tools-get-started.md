@@ -61,16 +61,16 @@ Azure SDK for .NET 2.5.1 或更高版本中已随附 HDInsight Tools for Visual 
 
 	>[AZURE.NOTE]请注意，应打开“HDInsight 任务列表”窗口。如果你未看到它，则在“视图”菜单中，单击“其他窗口”，然后单击“HDInsight 任务列表”窗口。  
 4.	输入你的 Azure 订阅凭据，然后单击“登录”。仅当你尚未从此工作站上的 Visual Studio 连接到 Azure 订阅时，才需要此凭据。
-5.	在“服务器资源管理器”中，你将看到现有 HDInsight 群集的列表。如果你没有任何群集，则可以通过使用 Azure 经典门户、Azure PowerShell 或 HDInsight SDK 预配群集。有关详细信息，请参阅[设置 HDInsight 群集][hdinsight-provision]。
+5.	在“服务器资源管理器”中，你将看到现有 HDInsight 群集的列表。如果你没有任何群集，则可以通过使用 Azure 经典管理门户、Azure PowerShell 或 HDInsight SDK 预配群集。有关详细信息，请参阅[设置 HDInsight 群集][hdinsight-provision]。
 
 	![Hadoop 工具：HDInsight Tools for Visual Studio 服务器资源管理器群集列表][5]
 6.	展开 HDInsight 群集。你将看到“Hive 数据库”、默认存储帐户、链接的存储帐户，以及“Hadoop 服务日志”。你可以进一步展开条目。
 
 在连接到你的 Azure 订阅后，你将能够执行以下操作：
 
-**从 Visual Studio 连接到 Azure 经典门户**
+**从 Visual Studio 连接到 Azure 经典管理门户**
 
-- 在“服务器资源管理器”中，展开“Azure”>“HDInsight”，右键单击 HDInsight 群集，然后单击“在 Azure 经典门户中管理群集”。
+- 在“服务器资源管理器”中，展开“Azure”>“HDInsight”，右键单击 HDInsight 群集，然后单击“在 Azure 经典管理门户中管理群集”。
 
 **通过 Visual Studio 提出问题并提供反馈**
 

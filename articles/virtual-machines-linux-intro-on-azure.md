@@ -19,7 +19,7 @@
 
 ## 身份验证：用户名、密码和 SSH 密钥
 
-在使用 Azure 经典门户创建 Linux 虚拟机时，系统会要求你提供用户名、密码或 SSH 公钥。在 Azure 上部署 Linux 虚拟机时，用户名的选择受到以下限制：不允许使用虚拟机中已经存在的系统帐户 (UID <100) 的名称，例如，“根”。
+在使用 Azure 经典管理门户创建 Linux 虚拟机时，系统会要求你提供用户名、密码或 SSH 公钥。在 Azure 上部署 Linux 虚拟机时，用户名的选择受到以下限制：不允许使用虚拟机中已经存在的系统帐户 (UID <100) 的名称，例如，“根”。
 
 
  - 请参阅[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-quick-create-cli)
@@ -37,7 +37,7 @@
 
 ## 防火墙配置
 
-Azure 提供了一个入站数据包筛选器，用于限制与经典门户中指定的端口的连接。默认情况下，唯一允许的端口为 SSH。通过在经典门户中配置终结点，可以启用对 Linux 虚拟机上的其他端口的访问：
+Azure 提供了一个入站数据包筛选器，用于限制与经典管理门户中指定的端口的连接。默认情况下，唯一允许的端口为 SSH。通过在经典管理门户中配置终结点，可以启用对 Linux 虚拟机上的其他端口的访问：
 
  - 请参阅：[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)
 
@@ -73,7 +73,7 @@ Azure Linux 代理包含自动检测此名称更改的功能，并会相应地�
 
 2. 关闭虚拟机。
 
-3. 在经典门户中单击“捕获”或者使用 Powershell 或 CLI 工具将虚拟机作为映像捕获。
+3. 在经典管理门户中单击“捕获”或者使用 Powershell 或 CLI 工具将虚拟机作为映像捕获。
 
  - 请参阅：[如何捕获 Linux 虚拟机以用作模板](/documentation/articles/virtual-machines-linux-classic-capture-image)
 

@@ -154,7 +154,7 @@ DNS 转发还可用于在 VNet 之间进行 DNS 解析，可以通过本地计�
 
 > [AZURE.NOTE] 不应直接在 Windows VM 中编辑网络连接属性（例如 DNS 服务器 IP），因为如果更换虚拟网络适配器，则可能会在服务修复过程中擦除这些属性。
 
-使用经典部署模型时，可以在经典门户或[网络配置文件](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)中指定虚拟网络的 DNS 服务器。对于云服务器，则可通过[服务配置文件](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)或 PowerShell ([New-AzureVM](https://msdn.microsoft.com/zh-cn/library/azure/dn495254.aspx)) 指定 DNS 服务器。
+使用经典部署模型时，可以在经典管理门户或[网络配置文件](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)中指定虚拟网络的 DNS 服务器。对于云服务器，则可通过[服务配置文件](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)或 PowerShell ([New-AzureVM](https://msdn.microsoft.com/zh-cn/library/azure/dn495254.aspx)) 指定 DNS 服务器。
 
 > [AZURE.NOTE] 如果更改已部署的虚拟网络/虚拟机的 DNS 设置，则需重新启动每个受影响的 VM，所做的更改才会生效。
 

@@ -101,7 +101,7 @@ Xrdp 是一个开源 RDP 服务器，支持你从 Windows 计算机通过远程�
 
 
 ##从 Windows 计算机连接 Linux VM
-在 Windows 计算机中，启动远程桌面客户端，输入 Linux VM DNS 名称，或转到 Azure 经典门户的 VM 的 `Dashboard`，单击 `Connect` 以连接 Linux VM，你将看到下面的登录窗口：
+在 Windows 计算机中，启动远程桌面客户端，输入 Linux VM DNS 名称，或转到 Azure 经典管理门户的 VM 的 `Dashboard`，单击 `Connect` 以连接 Linux VM，你将看到下面的登录窗口：
 
 ![图像](./media/virtual-machines-linux-classic-remote-desktop/no2.png)
 

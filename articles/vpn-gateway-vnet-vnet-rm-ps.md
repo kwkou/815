@@ -16,7 +16,7 @@
 # 使用 Azure 资源管理器和 PowerShell 配置 VNet 到 VNet 连接
 
 > [AZURE.SELECTOR]
-- [Azure 经典门户](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)
+- [Azure 经典管理门户](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)
 - [PowerShell - Azure 资源管理器](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps)
 
 本文将引导你使用资源管理器部署模型和 PowerShell 来创建虚拟网络间的连接。虚拟网络可以位于来自相同或不同订阅的相同或不同区域中。

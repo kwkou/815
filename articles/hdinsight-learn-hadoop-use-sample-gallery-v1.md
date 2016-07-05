@@ -29,7 +29,7 @@
 
 **从入门库运行示例**
 
-1.	登录到 [Azure 经典门户][azure.portal]。
+1.	登录到 [Azure 经典管理门户][azure.portal]。
 2.	单击左侧菜单中的“HDInsight”。你会看到现有 HDInsight 群集的列表，包括 Hadoop、Storm 和 HBase 群集。
 3.	单击你要在其中运行示例的群集。
 4.	单击该页底部的“查询控制台”。

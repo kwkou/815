@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="01/13/2016"
-	wacn.date="02/26/2016"/>
+	wacn.date="07/04/2016"/>
 
 # 使用 PowerShell 创建 Azure SSL 证书绑定 #
 
@@ -18,6 +18,7 @@
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
+若要了解如何使用基于 Azure Resource Manager 的 Azure PowerShell cmdlet 来管理 Web Apps，请查看[适用于 Azure Web 应用的基于 Azure Resource Manager 的 PowerShell 命令](/documentation/articles/app-service-web-app-azure-resource-manager-powershell)
 
 ## 上载和绑定新的 SSL 证书 ##
 
@@ -26,6 +27,15 @@
 如果知道包含 Web 应用的资源组名称、Web 应用名称、用户计算机上的证书 .pfx 文件路径、证书的密码以及自定义主机名，我们就可以使用以下 PowerShell 命令来创建 SSL 绑定：
 
     New-AzureRmWebAppSSLBinding -ResourceGroupName myresourcegroup -WebAppName mytestapp -CertificateFilePath PathToPfxFile -CertificatePassword PlainTextPwd -Name www.contoso.com
+
+请注意，在将 SSL 绑定添加到 Web 应用之前，必须已经配置主机名（自定义域）。如果未配置主机名，则在运行 New-AzureRmWebAppSSLBinding 时会收到“主机名不存在”错误。你可以直接从经典管理门户或使用 Azure PowerShell 添加主机名。以下 PowerShell 代码段可以在运行 New-AzureRmWebAppSSLBinding 之前配置主机名。
+  
+    $webApp = Get-AzureRmWebApp -Name mytestapp -ResourceGroupName myresourcegroup  
+    $hostNames = $webApp.HostNames  
+    $HostNames.Add("www.contoso.com")  
+    Set-AzureRmWebApp -Name mytestapp -ResourceGroupName myresourcegroup -HostNames $HostNames   
+  
+请务必了解，Set-AzureRmWebApp cmdlet 会覆盖 Web 应用的主机名。因此，上述 PowerShell 代码段会追加到 Web 应用现有的主机名列表。
 
 ## 上载和绑定现有的 SSL 证书 ##
 
@@ -54,6 +64,7 @@
 	Remove-AzureRmWebAppSSLBinding -ResourceGroupName myresourcegroup -WebAppName mytestapp -Name www.contoso.com -DeleteCertificate $false
 
 ### 参考 ###
-- [将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)
+- [适用于 Azure Web 应用的基于 Azure Resource Manager 的 PowerShell 命令](/documentation/articles/app-service-web-app-azure-resource-manager-powershell)
+- [将 Azure PowerShell 与 Azure Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager)
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0627_2016-->

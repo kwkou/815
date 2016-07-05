@@ -55,7 +55,7 @@
 
 **解决方法：**
 
-若要解决这两个错误，请在经典门户中删除当前映像，[从当前 VHD 重新捕获映像](/documentation/articles/virtual-machines-linux-classic-capture-image)，该映像将带有与该 OS（通用/专用）相同的设置。
+若要解决这两个错误，请在经典管理门户中删除当前映像，[从当前 VHD 重新捕获映像](/documentation/articles/virtual-machines-linux-classic-capture-image)，该映像将带有与该 OS（通用/专用）相同的设置。
 
 ## 问题：自定义/库/应用商店映像；分配失败
 当新的 VM 请求被发送到没有可用空间可处理请求、或不支持所请求的 VM 大小的群集，便发生此错误。在相同的云服务中不可混合不同系列的 VM。因此，如果想要创建和云服务可支持大小不同的新 VM，计算请求将失败。
