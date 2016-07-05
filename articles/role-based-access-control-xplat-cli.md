@@ -45,8 +45,6 @@
 
     azure config mode arm
 
-
-
 若要连接到 Azure 订阅，请键入：
 
     azure login -e AzureChinaCloud -u <username> 
@@ -90,15 +88,15 @@
 
 - 要将角色分配给谁：可以使用以下 Azure Active Directory cmdlet 查看你在目录中拥有哪些用户、组和服务主体。
 
-    ```
-    azure ad user list  
-    azure ad user show  
-    azure ad group list  
-    azure ad group show  
-    azure ad group member list  
-    azure ad sp list  
-    azure ad sp show  
-    ```
+	    
+	    azure ad user list  
+	    azure ad user show  
+	    azure ad group list  
+	    azure ad group show  
+	    azure ad group member list  
+	    azure ad sp list  
+	    azure ad sp show  
+    
 
 - 你要分配哪些角色：可以使用以下 cmdlet 查看支持的角色定义。
 
@@ -127,9 +125,9 @@
 ## <a id="verify"></a>验证权限 ##
 
 检查你的帐户具有一些角色分配后，你可以通过运行以下命令实际查看这些角色分配授予你的权限：
-
-    PS C:\> azure group list
-    PS C:\> azure resource list
+	
+	    PS C:\> azure group list
+	    PS C:\> azure resource list
 
 这两个 cmdlet 将仅返回你具有读取权限的资源组或资源。并且它还会显示你具有的权限。
 

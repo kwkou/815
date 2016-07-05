@@ -1,7 +1,7 @@
 <properties 
-	pageTitle="Azure Active Directory 和 Visual Studio 连接服务（WebApi 项目）入门 | Azure" 
+	pageTitle="开始使用 Azure Active Directory 和 Visual Studio 连接服务（WebApi 项目）| Azure" 
 	description="通过 Visual Studio 连接服务连接到或创建 Azure AD 之后，如何在 WebApi 项目中开始使用 Azure Active Directory" 
-    services="active-directory"
+	services="active-directory"
 	documentationCenter="" 
 	authors="TomArcher" 
 	manager="douge" 
@@ -9,8 +9,8 @@
   
 <tags 
 	ms.service="active-directory" 
-	ms.date="12/18/2015" 
-	wacn.date="05/27/2016"/>
+	ms.date="03/28/2016"
+	wacn.date="07/05/2016"/>
 
 # 开始使用 Azure Active Directory 和 Visual Studio 连接服务（WebApi 项目）
 
@@ -24,4 +24,4 @@
 
 [详细了解 Azure Active Directory](/documentation/services/active-directory/)
  
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->
