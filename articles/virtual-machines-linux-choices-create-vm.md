@@ -37,7 +37,7 @@ Azure 提供不同的方法来创建 VM，以符合不同的用户和目的。�
 
 ### Azure 映像
 
-在所有上述文章中，你可以轻松使用现有 Azure 映像来创建虚拟机，并针对联网、负载平衡等目的自定义该虚拟机。门户预览提供 Azure 库，其中包含 Azure 提供的映像。你可以使用命令行获取类似的列表。例如，在 Azure CLI 中，运行 `azure vm image list` 可按位置和发布者获取所有可用映像的列表。请参阅 [Navigate and select Azure virtual machine images with the Azure CLI（使用 Azure CLI 导航并选择 Azure 虚拟机映像）](/documentation/articles/virtual-machines-linux-cli-ps-findimage)。
+在所有上述文章中，你可以轻松使用现有 Azure 映像来创建虚拟机，并针对联网、负载平衡等目的自定义该虚拟机。门户预览提供 Azure 应用市场，其中包含 Azure 提供的映像。你可以使用命令行获取类似的列表。例如，在 Azure CLI 中，运行 `azure vm image list` 可按位置和发布者获取所有可用映像的列表。请参阅 [Navigate and select Azure virtual machine images with the Azure CLI（使用 Azure CLI 导航并选择 Azure 虚拟机映像）](/documentation/articles/virtual-machines-linux-cli-ps-findimage)。
 
 ### 使用你自己的映像
 

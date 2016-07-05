@@ -25,7 +25,7 @@ Oracle Data Guard 支持对 Oracle Database 的数据保护和灾难恢复。它
 
 - 已使用 Windows Server 上 Oracle Enterprise Edition 映像所提供的相同平台在 Azure 中创建了两个虚拟机 (VM)。有关信息，请参阅[在 Azure 中创建 Oracle Database 12 c 虚拟机](/documentation/articles/virtual-machines-windows-create-oracle-weblogic-server-12c)和 [Azure 虚拟机](http://www.windowsazure.cn/documentation/services/virtual-machines/)。确保这两个虚拟机在[相同的云服务](/documentation/articles/virtual-machines-windows-load-balance)和相同的[虚拟网络](/documentation/services/networking/)中，以确保它们可以通过永久性专用 IP 地址相互进行访问。此外，建议将 VM 放在相同的[可用性集](/documentation/articles/virtual-machines-windows-manage-availability)中，以便允许 Azure 将它们放入不同的容错域和升级域中。请注意，Oracle Data Guard 仅在 Oracle Database Enterprise Edition 中可用。每个虚拟机必须具有至少 2 GB 的内存和 5 GB 的磁盘空间。有关平台提供的 VM 大小的最新信息，请参阅 [Azure 的虚拟机大小](/documentation/articles/virtual-machines-windows-sizes)。如果自己的 VM 需要附加磁盘卷，则可以附加更多磁盘。有关信息，请参阅[如何将数据磁盘附加到虚拟机](/documentation/articles/virtual-machines-windows-classic-attach-disk)。
 
-- 已将名称为“Machine1”的虚拟机设为主虚拟机，而名称为“Machine2”的虚拟机则设为 Azure 门户中的备用 VM。
+- 已将名称为“Machine1”的虚拟机设为主虚拟机，而名称为“Machine2”的虚拟机则设为 Azure 经典管理门户中的备用 VM。
 
 - 已设置“ORACLE\_HOME”环境变量以指向主虚拟机和备用虚拟机中的同一个 oracle 根安装路径，如 `C:\OracleDatabase\product\11.2.0\dbhome_1\database`。
 
@@ -307,7 +307,7 @@ Oracle Data Guard 支持对 Oracle Database 的数据保护和灾难恢复。它
 ##创建物理备用数据库
 本部分重点介绍必须在 Machine2 中执行以准备物理备用数据库的步骤。
 
-首先，需要通过 Azure 门户远程桌面连接到 Machine2。
+首先，需要通过 Azure 经典管理门户远程桌面连接到 Machine2。
 
 然后，在备用服务器 (Machine2) 上，创建备用数据库所有的必要文件夹，如 C:\\<YourLocalFolder>\\TEST。在学习本教程时，请确保文件夹结构匹配 Machine1 中的文件夹结构，以保留所有必要文件，例如 controlfile、datafiles、redologfiles、udump、bdump 和 cdump 文件。此外，在 Machine2 中定义 ORACLE\_HOME 和 ORACLE\_BASE 环境变量。如果尚未定义，请使用“环境变量”对话框将它们定义为环境变量。要访问此对话框，双击“控制面板”中的“系统图标”启动“系统”实用工具；然后单击“高级”选项卡并选择“环境变量”。单击“系统变量”下的“新建”按钮设置环境变量。设置环境变量后，则需要关闭现有的 Windows 命令提示符并打开新的提示符以查看更改。
 

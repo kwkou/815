@@ -175,7 +175,7 @@ Oracle GoldenGate 包含以下主要组件：Extract、Data Pump、Replicat、Tr
 ##2.准备站点 A 和站点 B 以进行数据库复制
 本部分说明如何准备站点 A 和站点 B 以进行数据库复制。必须在两个站点上执行本部分所述的所有步骤：站点 A 和站点 B。
 
-首先，通过 Azure 门户与站点 A 和站点 B 建立远程桌面连接。使用 SQL*Plus 命令窗口将数据库切换到 archivelog 模式：
+首先，通过 Azure 经典管理门户与站点 A 和站点 B 建立远程桌面连接。使用 SQL*Plus 命令窗口将数据库切换到 archivelog 模式：
 	
 	sql>shutdown immediate 
 	sql>startup mount 

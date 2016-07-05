@@ -1,6 +1,6 @@
 <properties
  pageTitle="在Azure VM 中创建 HPC Pack 头节点 | Azure"
- description="了解如何使用 Azure 门户和经典部署模型在 Azure VM 中创建 Microsoft HPC Pack 头节点。"
+ description="了解如何使用 Azure 经典管理门户和经典部署模型在 Azure VM 中创建 Microsoft HPC Pack 头节点。"
  services="virtual-machines"
  documentationCenter=""
  authors="dlepow"
