@@ -81,7 +81,7 @@ Azure Web 应用是用于托管公司网站的理想解决方案。通过 Web �
 
 对于 Web 开发人员和设计师，Azure 可以轻松地与各种框架和工具集成（包括 Git 和 FTP 的部署支持），并且可以与工具和服务紧密集成（如 Visual Studio 和 SQL 数据库）。使用 Azure Web 应用，你可以：
 
-- 将命令行工具用于[自动化任务][scripting]。
+- 将命令行工具用于自动化任务。
 - 使用流行的语言，如 [.Net][dotnet]、[PHP][]、[Node.js][nodejs] 和 [Python][]。
 - 选择三个不同的扩展级别，向上扩展到超高容量。
 - 与其他 Azure 服务（例如 [SQL 数据库][sqldatabase]、[服务总线][servicebus]和[存储空间][]）或者来自 Azure 应用商店的合作伙伴产品（例如 MySQL 和 MongoDB）集成。
