@@ -1,3 +1,13 @@
+<properties
+	pageTitle=""
+    description=""
+    services=""
+    documentationCenter=""
+    authors=""
+    manager=""
+    editor=""
+    tags=""/>
+
 <tags ms.service="legal" ms.date="03/2016" wacn.date="03/2016" wacn.lang="en"/>
 
 > [AZURE.LANGUAGE]

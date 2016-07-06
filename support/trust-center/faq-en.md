@@ -1,3 +1,13 @@
+<properties
+	pageTitle=""
+    description=""
+    services=""
+    documentationCenter=""
+    authors=""
+    manager=""
+    editor=""
+    tags=""/>
+
 > [AZURE.LANGUAGE]
 - [中文](/support/trust-center/faq/)
 - [English](/support/trust-center/faq-en/)
