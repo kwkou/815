@@ -1,3 +1,13 @@
+<properties
+	pageTitle=""
+    description=""
+    services=""
+    documentationCenter=""
+    authors=""
+    manager=""
+    editor=""
+    tags=""/>
+
 #beta 试用
 
 本优惠项目针对世纪互联运营的 Azure 服务的 beta 试用。受邀参加此次 beta 试用的客户将免费获得下列服务订阅。beta 试用针对测试和评估用途，不提供任何质保和服务等级协议（SLA）。您的 beta 试用服务订阅将每月自动延长，但世纪互联有权在提前三十天通知的前提下终止该优惠项目，届时您可以升级至付费项目。我们有权随时增加或调整本优惠项目内容，并将随之更新此文档。

@@ -1,3 +1,15 @@
+<properties
+	pageTitle=""
+    description=""
+    services=""
+    documentationCenter=""
+    authors=""
+    manager=""
+    editor=""
+    tags=""/>
+
+<tags ms.service="legal" ms.date="05/2016" wacn.date="05/2016" wacn.lang="en"/>
+
 #Service Level Agreements
 
 ##Automation
