@@ -27,7 +27,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 由于 IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备到云的消息，因此本教程使用了 [EventProcessorHost] 实例。此实例：
 
 * 在 Azure blob 存储中可靠地存储数据点消息。
-* 将交互式设备到云的消息转发到 [Azure 服务总线队列] 以立即进行处理。
+* 将交互式设备到云的消息转发到 Azure 服务总线队列以立即进行处理。
 
 服务总线可以帮助确保可靠处理交互式消息，因为它提供了各消息的检查点，以及基于时间范围的重复数据删除。
 
@@ -94,7 +94,6 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 [HDInsight (Hadoop)]: /documentation/services/hdinsight/
 [Service Bus Queue]: /documentation/articles/service-bus/service-bus-dotnet-get-started-with-queues
 [EventProcessorHost]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
-
 
 
 [Azure IoT 中心开发人员指南 - 设备到云]: /documentation/articles/iot-hub-devguide/#d2c
