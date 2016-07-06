@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL Service Questions – Azure Cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, FAQ, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="Provides quick answers for common technical questions encountered by users when using MySQL Database on Azure. Contact technical support if you have any further questions." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="07/04/2016" wacn.date="" wacn.lang="en" />
+<tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
 #Security consulting
 > [AZURE.SELECTOR]
 - [All FAQs](/documentation/articles/mysql-database-enus-tech-faq)

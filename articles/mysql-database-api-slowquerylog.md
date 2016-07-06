@@ -1,12 +1,12 @@
 <properties linkid="" urlDisplayName="" pageTitle="使用PowerShell管理MySQL Database on Azure - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, API, Azure MySQL Service, Azure RDS" description="本文介绍如何通过API实现更多MySQL Database on Azure的查询、创建、修改、删除等操作。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />  
 
-<tags ms.service="mysql" ms.date="" wacn.date="07/04/2016" wacn.lang="cn" />
-
-#更新服务器-开启慢查询日志
+<tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-api-slowquerylog)
 - [English](/documentation/articles/mysql-database-enus-api-slowquerylog)
+
+#更新服务器-开启慢查询日志
 
 ##请求
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

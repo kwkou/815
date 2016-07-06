@@ -1,11 +1,12 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL 数据库 on Azure数据库入门 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="快速入门指南帮助您迅速了解MySQL 数据库 on Azure，让您几分钟内轻松创建、连接、迁移、监控管理您的MySQL数据库。您根据入门指南中的步骤操作，将成功建立使用属于您的MySQL数据库。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />  
 
-<tags ms.service="mysql" ms.date="" wacn.date="07/04/2016" wacn.lang="cn" />
+<tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
-#MySQL 数据库 on Azure数据库入门
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-get-started)
 - [English](/documentation/articles/mysql-database-enus-get-started)
+
+#MySQL 数据库 on Azure数据库入门
 
 在本教程帮助您将了解如何使用Azure管理门户迅速创建，连接，配置MySQL 数据库 on Azure。完成本教程后，您将在Azure上拥有一个示例MySQL数据库服务器，并了解如何使用管理门户执行基本管理任务。
 
