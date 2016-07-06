@@ -1,7 +1,7 @@
 <properties linkid="" urlDisplayName="" pageTitle="如何在客户端配置验证机制确认长连接有效性- Azure 微软云" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，连接池，connection pool, Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="
 配置验证机制，保障数据库的访问速度" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date="07/04/2016" wacn.lang="cn" />
+<tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-validationquery)
