@@ -14,7 +14,7 @@
 
 # 在 Azure 门户中监视 DocumentDB 帐户使用情况
 
-你可以在 [Microsoft Azure 门户](https://portal.azure.cn/)中监视 DocumentDB 帐户。对于每个 DocumentDB 帐户，性能指标（如请求和服务器错误）和使用情况指标（如存储消耗）都可用。
+你可以在 [Azure 门户](https://portal.azure.cn/)中监视 DocumentDB 帐户。对于每个 DocumentDB 帐户，性能指标（如请求和服务器错误）和使用情况指标（如存储消耗）都可用。
 
 ## 查看 DocumentDB 帐户的性能指标
 1.	在 [Azure 门户](https://portal.azure.cn/)中，单击“浏览”、“DocumentDB 帐户”，然后单击要查看其性能指标的 DocumentDB 帐户的名称。

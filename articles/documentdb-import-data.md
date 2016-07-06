@@ -15,7 +15,7 @@
 
 # 使用数据库迁移工具将数据导入到 DocumentDB
 
-本文演示了如何使用开源的 DocumentDB 数据迁移工具将数据从各种源导入到 [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/)，包括 JSON 文件、CSV 文件、SQL、MongoDB、Azure 表存储、Amazon DynamoDB 和 DocumentDB 集合。
+本文演示了如何使用开源的 DocumentDB 数据迁移工具将数据从各种源导入到 [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/)，包括 JSON 文件、CSV 文件、SQL、MongoDB、Azure 表存储、Amazon DynamoDB 和 DocumentDB 集合。
 
 阅读本文之后，你将能够回答以下问题：
 

@@ -16,7 +16,7 @@
 # 如何使用 Azure 门户创建 DocumentDB 数据库
 
 
-若要使用 Microsoft Azure DocumentDB，你必须拥有 [DocumentDB 帐户](/documentation/articles/documentdb-create-account)、数据库、集合和文档。本教程说明如何在 Microsoft Azure 门户中创建 DocumentDB 数据库。有关如何使用某个 SDK 创建数据库的信息，请参阅[创建 DocumentDB 数据库的其他方法](#other-ways-to-create-a-documentdb-database)。
+若要使用 Azure DocumentDB，你必须拥有 [DocumentDB 帐户](/documentation/articles/documentdb-create-account)、数据库、集合和文档。本教程说明如何在 Azure 门户预览中创建 DocumentDB 数据库。有关如何使用某个 SDK 创建数据库的信息，请参阅[创建 DocumentDB 数据库的其他方法](#other-ways-to-create-a-documentdb-database)。
 
 ![屏幕截图：演示如何创建数据库，突出显示“浏览”边栏选项卡上的“DocumentDB 帐户”以及“DocumentDB 帐户”边栏选项卡上的 DocumentDB 帐户](./media/documentdb-create-database/docdb-database-creation-1-2.png)
 

@@ -59,7 +59,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
 在浏览器中打开 [https://aka.ms/devicelogin](https://aka.ms/devicelogin)，然后输入命令输出中提供的代码。
 
-![屏幕截图：显示 Microsoft Azure CLI 的设备登录屏幕](./media/documentdb-automation-resource-manager-cli/azure-cli-login-code.png)
+![屏幕截图：显示 Azure CLI 的设备登录屏幕](./media/documentdb-automation-resource-manager-cli/azure-cli-login-code.png)
 
 输入代码后，便可选择想要在浏览器中使用的标识，并根据需要提供用户名和密码。
 
@@ -67,7 +67,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
 成功登录之后，将会收到下列确认屏幕，接着就能关闭浏览器窗口。
 
-![屏幕截图：显示确认登录 Microsoft Azure 跨平台命令行界面](./media/documentdb-automation-resource-manager-cli/login-confirmation.png)
+![屏幕截图：显示确认登录 Azure 跨平台命令行界面](./media/documentdb-automation-resource-manager-cli/login-confirmation.png)
 
 命令行界面还会提供下列输出。
 

@@ -14,7 +14,7 @@
 
 # 请求提高 DocumentDB 帐户限制
 
-[Microsoft Azure DocumentDB](/services/documentdb/) 具有一组默认限制和配额强制要求。可联系 Azure 技术支持部门来调整配额。本文演示了如何请求提高帐户限制。
+[Azure DocumentDB](/services/documentdb/) 具有一组默认限制和配额强制要求。可联系 Azure 技术支持部门来调整配额。本文演示了如何请求提高帐户限制。
 
 阅读本文之后，你将能够回答以下问题：
 
