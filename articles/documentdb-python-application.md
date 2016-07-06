@@ -1,7 +1,7 @@
 <properties
     pageTitle="使用 DocumentDB 开发 Python Flask Web 应用程序 | Azure"
     description="查看使用 DocumentDB 来存储和访问托管于 Azure 的 Python Flask Web 应用程序的数据的数据库教程。查找应用程序开发解决方案。" 
-	keywords="应用程序开发, 数据库教程, Python Flask, Python web 应用程序, Python Web 开发, DocumentDB, Azure, Microsoft Azure"
+	keywords="应用程序开发, 数据库教程, Python Flask, Python web 应用程序, Python Web 开发, DocumentDB, Azure, Azure"
     services="documentdb"
     documentationCenter="python"
     authors="ryancrawcour"
@@ -42,7 +42,7 @@
 - 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/free-trial/)。
 - [Visual Studio 2013](http://www.visualstudio.com/) 或更高版本，或者免费版 [Visual Studio Express]()。本教程中的说明专为 Visual Studio 2015 所编写。 
 - 来自 [GitHub](http://microsoft.github.io/PTVS/) 的 Python Tools for Visual Studio。本教程使用的是 Python Tools for VS 2015。 
-- 2\.4 版或更高版本 Azure Python SDK for Visual Studio 在 [azure.com](/downloads/) 上提供。我们使用的是 Microsoft Azure SDK for Python 2.7。
+- 2\.4 版或更高版本 Azure Python SDK for Visual Studio 在 [azure.com](/downloads/) 上提供。我们使用的是 Azure SDK for Python 2.7。
 - 来自 [python.org][2] 的 Python 2.7。我们使用的是 Python 2.7.11。 
 
 > [AZURE.IMPORTANT] 如果首次安装 Python 2.7，请确保在自定义 Python 2.7.11 屏幕中，选择“向路径添加 python.exe”。
@@ -385,21 +385,21 @@
 
  	![解决方案资源管理器中选中的教程的屏幕截图，其中突出显示了“发布”选项](./media/documentdb-python-application/image20.png)
 
-2. 在“发布 Web”窗口中，选择“Microsoft Azure Web Apps”，然后单击“下一步”。
+2. 在“发布 Web”窗口中，选择“Azure Web Apps”，然后单击“下一步”。
 
-	![“发布 Web 窗口”的屏幕截图，其中突出显示了 Microsoft Azure Web Apps](./media/documentdb-python-application/image21.png)
+	![“发布 Web 窗口”的屏幕截图，其中突出显示了 Azure Web Apps](./media/documentdb-python-application/image21.png)
 
-3. 在“Microsoft Azure Web Apps 窗口”窗口中，单击“新建”。
+3. 在“Azure Web Apps 窗口”窗口中，单击“新建”。
 
-	![“Microsoft Azure Web Apps 窗口”窗口的屏幕截图](./media/documentdb-python-application/select-existing-website.png)
+	![“Azure Web Apps 窗口”窗口的屏幕截图](./media/documentdb-python-application/select-existing-website.png)
 
-4. 在“在 Microsoft Azure 上创建站点”窗口中，输入“Web 应用名”、“App Service 计划”、“资源组”和“区域”，然后单击“创建”。
+4. 在“在 Azure 上创建站点”窗口中，输入“Web 应用名”、“App Service 计划”、“资源组”和“区域”，然后单击“创建”。
 
-	![Microsoft Azure 窗口上“创建”站点的屏幕截图](./media/documentdb-python-application/create-site-on-microsoft-azure.png)
+	![Azure 窗口上“创建”站点的屏幕截图](./media/documentdb-python-application/create-site-on-microsoft-azure.png)
 
 5. 在“发布 Web”窗口中，单击“发布”。
 
-	![Microsoft Azure 窗口上“创建”站点的屏幕截图](./media/documentdb-python-application/publish-web.png)
+	!Azure 窗口上“创建”站点的屏幕截图](./media/documentdb-python-application/publish-web.png)
 
 3. 在几秒钟内，Visual Studio 将完成 Web 应用程序发布并启动浏览器，你可从中查看在 Azure 中运行的简单作品！
 

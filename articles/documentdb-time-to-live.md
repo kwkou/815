@@ -1,6 +1,6 @@
 <properties
    pageTitle="利用生存时间使 DocumentDB 中的数据过期 |Azure"
-   description="通过 TTL 功能，Microsoft Azure DocumentDB 能够在一段时间后将文档自动从系统清除。"
+   description="通过 TTL 功能，Azure DocumentDB 能够在一段时间后将文档自动从系统清除。"
    services="documentdb"
    documentationCenter=""
    keywords="生存时间"
@@ -16,7 +16,7 @@
 # 利用 Time To Live 功能自动删除 DocumentDB 集合中的过期数据
 
 应用程序可以生成和存储大量数据。其中的某些数据（如计算机生成的事件数据、日志和用户会话信息）仅在有限的一段时间内才有用。当应用程序不再需要这些数据时，可以安全地清除这些数据以减少应用程序的存储需求。
-通过 “Time To Live” 或 TTL 功能，Microsoft Azure DocumentDB 能够将过期的文档从系统自动清除。可以在集合上设置默认的TTL，也可以在每个文档上设置TTL以覆盖集合上默认的TTL。无论是集合上默认的TTL或文档的TTL，TTL设置后文档自上次修改起的某段时间（以秒为单位）后便会过期，而过期文档会被系统自动删除。
+通过 “Time To Live” 或 TTL 功能，Azure DocumentDB 能够将过期的文档从系统自动清除。可以在集合上设置默认的TTL，也可以在每个文档上设置TTL以覆盖集合上默认的TTL。无论是集合上默认的TTL或文档的TTL，TTL设置后文档自上次修改起的某段时间（以秒为单位）后便会过期，而过期文档会被系统自动删除。
 DocumentDB 中的TTL值是针对文档最近修改时间戳的偏移量。文档最近的修改时间存储于 _ts 字段。_ts 字段的值是unix下的时间戳表示方式。每次修改文档时都会更新 _ts 字段。
 
 

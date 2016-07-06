@@ -80,7 +80,7 @@
 
   	我在此处没有选择“数据库服务器”，因为我们并未使用 Azure SQL Database 服务器，稍后我们会在 Azure 门户预览中创建新的 Azure DocumentDB 帐户。
 
-	 	![屏幕截图：“配置 Microsoft Azure 网站”对话框](./media/documentdb-dotnet-application/image11_1.png)
+	 	![屏幕截图：“配置 Azure 网站”对话框](./media/documentdb-dotnet-application/image11_1.png)
 
 9. Visual Studio 创建好样板 MVC 应用程序之后，你便拥有可以在本地运行的空白 ASP.NET 应用程序。
 
@@ -98,9 +98,9 @@
 
 2. 在 NuGet“浏览”框中，键入 **Azure DocumentDB**。
 	
-	从结果中安装“Microsoft Azure DocumentDB 客户端库”程序包。这将下载并安装 DocumentDB 程序包，以及所有依赖项（例如 Newtonsoft.Json）。
+	从结果中安装“Azure DocumentDB 客户端库”程序包。这将下载并安装 DocumentDB 程序包，以及所有依赖项（例如 Newtonsoft.Json）。
 
-  	![屏幕截图：突出显示 Microsoft Azure DocumentDB 客户端库的“管理 NuGet 程序包”窗口](./media/documentdb-dotnet-application/nuget.png)
+  	![屏幕截图：突出显示 Azure DocumentDB 客户端库的“管理 NuGet 程序包”窗口](./media/documentdb-dotnet-application/nuget.png)
 
   	或者，你也可以使用程序包管理器控制台来安装程序包。为此，请在“工具”菜单中，单击“Nuget 程序包管理器”，然后单击“程序包管理器控制台”。在提示符处键入以下命令。
 

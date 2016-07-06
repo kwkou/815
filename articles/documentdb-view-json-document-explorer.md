@@ -15,7 +15,7 @@
 
 # 使用 DocumentDB 文档资源管理器查看、编辑、创建和上传 JSON 文档
 
-本文概述了 [Microsoft Azure DocumentDB](/documentation/services/documentdb/) 文档资源管理器，这是一个 Azure 门户预览工具，它使用 DocumentDB 查看、编辑、创建、上传和筛选 JSON 文档。
+本文概述了 [Azure DocumentDB](/documentation/services/documentdb/) 文档资源管理器，这是一个 Azure 门户预览工具，它使用 DocumentDB 查看、编辑、创建、上传和筛选 JSON 文档。
 
 ## 启动文档资源管理器
 

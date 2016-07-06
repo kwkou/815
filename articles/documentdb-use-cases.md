@@ -77,7 +77,7 @@ JSON 是一种用于呈现 UI 布局数据的有效格式，它不仅轻量而�
 ## IoT 和设备传感器数据
 IoT 用例在引入、处理和存储数据方法方面通常具有相同的模式。首先，这些系统允许数据引入，因此可以引入各处设备传感器中的激增数据。其次，这些系统可以处理和分析流式传输数据，以获得实时见解。最后但仍然重要的是，几乎所有数据最终都会停留在数据存储空间内以供即席查询和脱机分析。
 
-Microsoft Azure 提供了可为 IoT 用例所利用的丰富服务。Azure IoT 服务是一组包含以下内容的服务：Azure 事件中心、Azure DocumentDB、Azure 流分析、Azure 通知中心、Azure 机器学习、Azure HDInsight 和 PowerBI。
+Azure 提供了可为 IoT 用例所利用的丰富服务。Azure IoT 服务是一组包含以下内容的服务：Azure 事件中心、Azure DocumentDB、Azure 流分析、Azure 通知中心、Azure 机器学习、Azure HDInsight 和 PowerBI。
 
 由于 Azure 事件中心可以低延迟引入高吞吐量数据，因此它可以引入激增数据。可以将需要进行实时分析的引入数据传输至 Azure 流分析，以进行实时分析。可以将数据加载到 DocumentDB 中进行即席查询。将数据加载到 DocumentDB 后，即可对其进行查询。DocumentDB 中的数据可以用作实时分析中的参考数据。此外，通过将 DocumentDB 数据连接到 HDInsight 进行 Pig、Hive 或 Map/Reduce 作业，可以进一步优化和处理数据。经过优化的数据随后被加载回 DocumentDB 用于报告。
 

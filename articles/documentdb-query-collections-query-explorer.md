@@ -15,7 +15,7 @@
 
 # 使用查询资源管理器对 DocumentDB 编写、编辑和运行 SQL 查询 
 
-本文概述了 [Microsoft Azure DocumentDB](/services/documentdb/) 查询资源管理器，该资源管理器是一个 Azure 门户预览工具，允许你针对 [DocumentDB 集合](/documentation/articles/documentdb-create-collection)编写、编辑和运行 SQL 查询。
+本文概述了 [Azure DocumentDB](/services/documentdb/) 查询资源管理器，该资源管理器是一个 Azure 门户预览工具，允许你针对 [DocumentDB 集合](/documentation/articles/documentdb-create-collection)编写、编辑和运行 SQL 查询。
 
 1. 在 Azure 门户预览的跳转栏中，单击“DocumentDB 帐户”。如果“DocumentDB 帐户”不可见，请单击“浏览”，再单击“DocumentDB 帐户”。
 

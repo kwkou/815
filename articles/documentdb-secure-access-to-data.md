@@ -14,7 +14,7 @@
 
 # 保护对 DocumentDB 数据的访问
 
-本文概述了保护对存储在 [Microsoft Azure DocumentDB](/documentation/services/documentdb/) 中的数据的访问。
+本文概述了保护对存储在 [Azure DocumentDB](/documentation/services/documentdb/) 中的数据的访问。
 
 阅读本概述后，你将能够回答以下问题：
 

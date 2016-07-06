@@ -14,7 +14,7 @@
 	wacn.date="06/29/2016"/>
 
 # DocumentDB 中的 SQL 查询和 SQL 语法
-Microsoft Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语言来支持查询文档。DocumentDB 是真正无架构的。凭借其数据库引擎内建对 JSON 数据模型的支持，它可以提供 JSON 文档的自动索引，而无需显式架构或创建辅助索引。
+Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语言来支持查询文档。DocumentDB 是真正无架构的。凭借其数据库引擎内建对 JSON 数据模型的支持，它可以提供 JSON 文档的自动索引，而无需显式架构或创建辅助索引。
 
 在设计 DocumentDB 的查询语言时，我们有两个目标：
 

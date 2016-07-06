@@ -21,7 +21,7 @@
 - [Java](/documentation/articles/documentdb-java-application)
 - [Python](/documentation/articles/documentdb-python-application)
 
-此 Java Web 应用程序教程演示了如何使用 [Microsoft Azure DocumentDB](https://portal.azure.cn/#gallery/Microsoft.DocumentDB) 服务存储和访问托管在 Azure 网站上的 Java 应用程序中的数据。在本教程中，你将学习：
+此 Java Web 应用程序教程演示了如何使用 [Azure DocumentDB](https://portal.azure.cn/#gallery/Microsoft.DocumentDB) 服务存储和访问托管在 Azure 网站上的 Java 应用程序中的数据。在本教程中，你将学习：
 
 - 如何在 Eclipse 中构建基本 JSP 应用程序。
 - 如何借助 [DocumentDB Java SDK](https://github.com/Azure/azure-documentdb-java) 来使用 Azure DocumentDB 服务。

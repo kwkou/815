@@ -14,7 +14,7 @@
 
 # 使用 Azure Resource Manager 模板部署 DocumentDB 和 Azure App Service Web Apps #
 
-本教程说明如何使用 Azure Resource Manager 模板来部署和集成 [Microsoft Azure DocumentDB](/documentation/services/documentdb/)、Web 应用以及示例 Web 应用程序。
+本教程说明如何使用 Azure Resource Manager 模板来部署和集成 [Azure DocumentDB](/documentation/services/documentdb/)、Web 应用以及示例 Web 应用程序。
 
 使用 Azure Resource Manager 模板，你可以轻松自动化 Azure 资源的部署和配置。本教程演示如何部署 Web 应用程序，以及自动配置 DocumentDB 帐户的连接信息。
 

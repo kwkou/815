@@ -15,7 +15,7 @@
 
 # 使用 DocumentDB 脚本资源管理器创建并运行存储过程、触发器和用户定义的函数。
 
-本文概述了 [Microsoft Azure DocumentDB](/services/documentdb/) 脚本资源管理器，它是 Azure 门户预览中的 JavaScript 编辑器，用于查看和执行 DocumentDB 服务器端的编程项目，包括存储过程、触发器和用户定义的函数。阅读[存储过程、数据库触发器和 UDF](/documentation/articles/documentdb-programming) 一文中有关 DocumentDB 服务器端编程的详细信息。
+本文概述了 [Azure DocumentDB](/services/documentdb/) 脚本资源管理器，它是 Azure 门户预览中的 JavaScript 编辑器，用于查看和执行 DocumentDB 服务器端的编程项目，包括存储过程、触发器和用户定义的函数。阅读[存储过程、数据库触发器和 UDF](/documentation/articles/documentdb-programming) 一文中有关 DocumentDB 服务器端编程的详细信息。
 
 ## 启动脚本资源管理器
 

@@ -19,7 +19,7 @@
 - [Azure 门户预览](/documentation/articles/documentdb-create-account)
 - [Azure CLI 和 ARM](/documentation/articles/documentdb-automation-resource-manager-cli)
 
-若要使用 Microsoft Azure DocumentDB 构建数据库，必须：
+若要使用 Azure DocumentDB 构建数据库，必须：
 
 - 有一个 Azure 帐户。如果你没有 Azure 帐户，可以获取[试用 Azure 帐户](https://www.azure.cn/pricing/1rmb-trial/)。 
 - 创建一个 DocumentDB 帐户。  

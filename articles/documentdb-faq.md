@@ -16,10 +16,10 @@
 
 #有关 DocumentDB 的常见问题
 
-## 有关 Microsoft Azure DocumentDB 基本原理的数据库问题
+## 有关 Azure DocumentDB 基本原理的数据库问题
 
-### 什么是 Microsoft Azure DocumentDB？ 
-Microsoft Azure DocumentDB 是高度可缩放的 NoSQL 文档数据库即服务，可针对无架构数据提供丰富的查询，帮助提供可靠的可配置性能，并支持快速开发，这一切都通过一个托管平台来实现，而该平台有 Microsoft Azure 强大的功能与影响力作为后盾。如果 Web、移动、游戏和 IoT 应用程序的关键要求是可预测的吞吐量、低延迟和无架构数据模型，那么，DocumentDB 无疑是最合适的解决方案。DocumentDB 通过本机 JSON 数据模型提供架构灵活性和丰富索引，并且对集成的 JavaScript 提供多文档事务性支持。
+### 什么是 Azure DocumentDB？ 
+Azure DocumentDB 是高度可缩放的 NoSQL 文档数据库即服务，可针对无架构数据提供丰富的查询，帮助提供可靠的可配置性能，并支持快速开发，这一切都通过一个托管平台来实现，而该平台有 Azure 强大的功能与影响力作为后盾。如果 Web、移动、游戏和 IoT 应用程序的关键要求是可预测的吞吐量、低延迟和无架构数据模型，那么，DocumentDB 无疑是最合适的解决方案。DocumentDB 通过本机 JSON 数据模型提供架构灵活性和丰富索引，并且对集成的 JavaScript 提供多文档事务性支持。
   
 有关部署和使用此服务的更多数据库问题、解答及说明，请参阅 [DocumentDB 文档页面](/home/features/documentdb/)。
 
@@ -52,7 +52,7 @@ DocumentDB 是面向 NoSQL 文档的数据库，以 JSON 格式存储数据。Do
 ### DocumentDB 的吞吐量限制有哪些？ 
 如果你的工作负荷可以大致平均分配给足够大量的分区键，则在 DocumentDB 中集合可以支持的吞吐量总量理论上没有限制。如果你希望在单个集合或帐户中每秒超过 250,000 个请求单位，请[与支持部门联系](/documentation/articles/documentdb-increase-limits)。
 
-### Microsoft Azure DocumentDB 的费用是多少？
+### Azure DocumentDB 的费用是多少？
 请参考 [DocumentDB 定价详细信息](/pricing/details/documentdb/)页面了解详细信息。DocumentDB 使用量费用取决于正在使用的集合数目、集合的在线小时数，以及每个集合的已使用存储和已预配吞吐量。
 
 ### 有免费的帐户吗？
@@ -61,10 +61,10 @@ DocumentDB 是面向 NoSQL 文档的数据库，以 JSON 格式存储数据。Do
 ### 如何获取 DocumentDB 的其他帮助？
 如果你需要任何帮助，请在 [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-documentdb)或 [Azure DocumentDB MSDN 开发人员论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureDocumentDB)联系我们，或者安排[与 DocumentDB 工程团队进行 1 对 1 交谈](http://www.askdocdb.com/)。
 
-## 设置 Microsoft Azure DocumentDB
+## 设置 Azure DocumentDB
 
-### 我如何注册 Microsoft Azure DocumentDB？
-[Azure 门户预览][azure-portal]中已提供 Microsoft Azure DocumentDB。首先，你必须注册 Microsoft Azure 订阅。注册 Microsoft Azure 订阅之后，你可以将 DocumentDB 帐户添加到 Azure 订阅。有关添加 DocumentDB 帐户的说明，请参阅[创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account)。
+### 我如何注册 Azure DocumentDB？
+[Azure 门户预览][azure-portal]中已提供 Azure DocumentDB。首先，你必须注册 Azure 订阅。注册 Azure 订阅之后，你可以将 DocumentDB 帐户添加到 Azure 订阅。有关添加 DocumentDB 帐户的说明，请参阅[创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account)。
 
 ### 什么是主密钥？
 主密钥是用于访问帐户的所有资源的安全令牌。拥有此密钥的人对数据库帐户中的所有资源具有读取和写入访问权。分发主密钥时要格外谨慎。[Azure 门户预览][azure-portal]的**密钥**边栏选项卡中提供主要主密钥和辅助主密钥。有关密钥的详细信息，请参阅[查看、复制和重新生成访问密钥](/documentation/articles/documentdb-manage-account#keys)。
@@ -80,7 +80,7 @@ DocumentDB 是面向 NoSQL 文档的数据库，以 JSON 格式存储数据。Do
 ### 我如何设置用户和权限？
 你可以使用某个 [DocumentDB SDK](/documentation/articles/documentdb-dotnet-samples) 或通过 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 来创建用户和权限。
 
-## 针对 Microsoft Azure DocumentDB 进行开发的相关数据库问题
+## 针对 Azure DocumentDB 进行开发的相关数据库问题
 
 ### 如何开始针对 DocumentDB 进行开发？
 [SDK](/documentation/articles/documentdb-dotnet-samples) 适用于 .NET、Python、Node.js、JavaScript 和 Java。开发人员也可以利用 [RESTful HTTP API](https://msdn.microsoft.com/library/azure/dn781481.aspx)，从各种平台、使用各种语言与 DocumentDB 资源进行交互。
