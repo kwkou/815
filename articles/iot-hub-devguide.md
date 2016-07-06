@@ -221,7 +221,7 @@ HTTP 通过在**授权**请求标头中包含有效的令牌来实施身份验�
 用户名（DeviceId 区分大小写）：
 `iothubname.azure-devices.cn/DeviceId`
 
-密码（使用设备资源管理器生成 SAS）：`SharedAccessSignature sr=iothubname.azure-devices.net%2fdevices%2fDeviceId&sig=kPszxZZZZZZZZZZZZZZZZZAhLT%2bV7o%3d&se=1487709501`
+密码（使用设备资源管理器生成 SAS）：`SharedAccessSignature sr=iothubname.azure-devices.cn%2fdevices%2fDeviceId&sig=kPszxZZZZZZZZZZZZZZZZZAhLT%2bV7o%3d&se=1487709501`
 
 > [AZURE.NOTE] [Azure IoT 中心 SDK][lnk-apis-sdks] 在连接到服务时自动生成令牌。在某些情况下，SDK 不支持所有的协议或所有身份验证方法。
 
