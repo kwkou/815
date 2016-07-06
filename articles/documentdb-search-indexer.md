@@ -16,7 +16,6 @@
 
 如果你希望对 DocumentDB 数据实现强大的搜索体验，请对 DocumentDB 使用 Azure 搜索索引器！ 在本文中，我们将展示如何将 Azure DocumentDB 与 Azure 搜索进行集成且无需编写代码以保持索引编制基础结构。
 
-要对此进行设置，你需要[设置 Azure 搜索帐户](/documentation/articles/search-create-service-portal)（不需要升级到标准搜索），然后调用 [Azure 搜索 REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) 以创建 DocumentDB **数据源**和用于该数据源的**索引器**。
 
 ##<a id="Concepts"></a>Azure 搜素索引器概念
 
@@ -117,7 +116,7 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 ##<a id="CreateIndex"></a>步骤 2：创建索引
 
-如果你还没有目标 Azure 搜索索引，请创建一个。你可以从 [Azure 门户 UI](/documentation/articles/search-get-started#test-service-operations) 创建或通过使用[创建索引 API](https://msdn.microsoft.com/library/azure/dn798941.aspx)。
+如果你还没有目标 Azure 搜索索引，请创建一个。你可以通过使用[创建索引 API](https://msdn.microsoft.com/library/azure/dn798941.aspx)。
 
 	POST https://[Search service name].search.windows.net/indexes?api-version=[api-version]
 	Content-Type: application/json

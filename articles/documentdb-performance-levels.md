@@ -111,7 +111,7 @@ DocumentDB 集合允许你根据应用程序的查询模式和性能需求来对
 
 10. 回到“管理集合”边栏选项卡中，“定价层”被更改为了“标准”，且显示了“吞吐量 (RU/s)”框。
 
-    将“吞吐量”框中的值更改为 400 到 10,000 [请求单位](documentdb-request-units.md)/秒 (RU/s) 之间的值。页面底部的“定价摘要”将自动更新以提供月度成本估算。
+    将“吞吐量”框中的值更改为 400 到 10,000 [请求单位](/documentation/articles/documentdb-request-units)/秒 (RU/s) 之间的值。页面底部的“定价摘要”将自动更新以提供月度成本估算。
 
     ![显示在何处更改集合的吞吐量值的“管理集合”边栏选项卡的屏幕截图][2]
 
@@ -161,7 +161,6 @@ DocumentDB 集合允许你根据应用程序的查询模式和性能需求来对
 
 若要了解更多有关 Azure DocumentDB 的定价和管理数据的信息，请浏览以下资源：
  
-- [DocumentDB 定价](/pricing/details/documentdb/)
 - [管理 DocumentDB 容量](/documentation/articles/documentdb-manage) 
 - [对 DocumentDB 中的数据进行建模](/documentation/articles/documentdb-modeling-data)
 - [对 DocumentDB 中的数据进行分区](/documentation/articles/documentdb-partition-data)

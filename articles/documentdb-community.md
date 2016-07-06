@@ -136,7 +136,7 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 
 <hr/>
 
-## 活动和录像
+## <a name="events-and-recordings"></a>活动和录像
 
 <hr/>
 
@@ -262,7 +262,7 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 
 <hr/>
 
-## 与团队联系
+## <a name="contact-the-team"></a>与团队联系
 
 | | |
 | -------------------------------------------------------- | --- |

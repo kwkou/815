@@ -132,7 +132,7 @@ DocumentDB 已在大部分 [Azure 区域][azureregions]中推出。为数据库�
 
 了解如何[开始使用 DocumentDB 帐户](http://go.microsoft.com/fwlink/p/?LinkId=402364)。
 
-若要了解更多有关 DocumentDB 的信息，请参阅 [azure.com](http://go.microsoft.com/fwlink/?LinkID=402319&clcid=0x409) 上的 Azure DocumentDB 文档。
+若要了解更多有关 DocumentDB 的信息，请参阅 [azure.cn](http://go.microsoft.com/fwlink/?LinkID=402319&clcid=0x409) 上的 Azure DocumentDB 文档。
 
 
 <!--Image references-->
@@ -145,7 +145,7 @@ DocumentDB 已在大部分 [Azure 区域][azureregions]中推出。为数据库�
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 [bcdr]: https://azure.microsoft.com/documentation/articles/best-practices-availability-paired-regions/
-[consistency]: https://azure.microsoft.com/documentation/articles/documentdb-consistency-levels/
+[consistency]: /documentation/articles/documentdb-consistency-levels/
 [azureregions]: https://azure.microsoft.com/zh-cn/regions/#services
 [offers]: https://azure.microsoft.com/zh-cn/pricing/details/documentdb/
 

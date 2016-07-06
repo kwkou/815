@@ -56,11 +56,10 @@ NoSQL 是一种与 SQL 数据库截然不同的数据库。NoSQL 常用来指代
 
 然后你可以使用其他 Azure 服务生成此解决方案：
 
-- 可以通过 Web 应用使用 [Azure 搜索](/documentation/services/search/)以使用户能够搜索帖子。
-- [Azure App Services](/documentation/services/app-service/) 可用来托管应用程序和后台进程。
+- [Azure App Services](/documentation/services/web-sites/) 可用来托管应用程序和后台进程。
 - [Azure Blob 存储](/documentation/services/storage/)可用来存储包括图像的完整的用户配置文件。
-- [Azure SQL 数据库](/documentation/services/sql-database/)可用来存储大量数据，例如登录信息和使用情况分析数据。
-- [Azure 机器学习](/documentation/services/machine-learning/)可用来构建知识和智能，它们可以提供进程的反馈，并有助于向适当的用户提供适当的内容。
+- [Azure SQL 数据库](/documentation/services/sql-databases/)可用来存储大量数据，例如登录信息和使用情况分析数据。
+
 
 此社交网站只是 NoSQL 数据库是针对作业的适当数据模型的其中一种方案。如果你对阅读有关此方案以及如何在社交媒体应用程序中对 DocumentDB 的数据建模的详细信息感兴趣，请参阅 [Going social with DocumentDB（使用 DocumentDB 进行社交）](/documentation/articles/documentdb-social-media-apps)。
 
@@ -79,7 +78,7 @@ Azure 具有以下四种完全托管的 NoSQL 服务：
 - [Azure DocumentDB](/services/documentdb/)
 - [Azure 表存储](/services/storage/)
 - [作为 HDInsight 一部分的 Azure HBase](/services/hdinsight/)
-- [Azure Redis Cache](/services/cache/)
+- [Azure Redis Cache](/documentation/services/redis-cache/)
 
 下面的比较图表详细说明了每种服务的关键差异。哪个最能准确描述你应用程序的需求？
 
@@ -87,21 +86,19 @@ Azure 具有以下四种完全托管的 NoSQL 服务：
 
 如果这些服务中的一个或多个可能满足你应用程序的需要，可使用以下资源了解详细信息：
 
-- [DocumentDB 学习路径](/documentation/learning-paths/documentdb/)和 [DocumentDB 用例](/documentation/articles/documentdb-use-cases)
 - [Azure 表存储入门](/documentation/articles/storage-dotnet-how-to-use-tables)
 - [HDInsight 中的 HBase 是什么](/documentation/articles/hdinsight-hbase-overview)
-- [Redis 缓存学习路径](/documentation/learning-paths/redis-cache/)
+
 
 然后转到[后续步骤](#next-steps)，获取免费试用版信息。
 
-## Microsoft SQL 产品/服务有哪些？
+## <a name="what-are-the-microsoft-sql-offerings"></a> Microsoft SQL 产品/服务有哪些？
 
 Microsoft 提供了五种 SQL 产品/服务：
 
-- [Azure SQL 数据库](/services/sql-database/)
-- [Azure 虚拟机中的 SQL Server](/services/virtual-machines/sql-server/)
+- [Azure SQL 数据库](/services/sql-databases/)
 - [SQL Server](https://www.microsoft.com/server-cloud/products/sql-server-2016/)
-- [Azure SQL 数据仓库（预览版）](/services/sql-data-warehouse/)
+- [Azure SQL 数据仓库（预览版）](/documentation/services/sql-data-warehouse)
 - [分析平台系统（本地设备）](https://www.microsoft.com/zh-cn/server-cloud/products/analytics-platform-system/)
 
 如果你对虚拟机上的 SQL Server 或 SQL 数据库感兴趣，则阅读 [选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas)，了解两者区别的详细信息。
@@ -110,7 +107,7 @@ Microsoft 提供了五种 SQL 产品/服务：
 
 然后转到[后续步骤](#next-steps)，获取免费试用版和评估版的链接。
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 我们邀请你通过免费试用 SQL 和 NoSQL，了解有关二者的详细信息。
 

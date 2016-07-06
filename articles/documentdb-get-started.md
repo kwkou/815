@@ -592,7 +592,7 @@ DocumentDB 支持删除 JSON 文档。
 ##<a id="GetSolution"></a>获取完整的 NoSQL 教程解决方案
 若要生成包含本文所有示例的 GetStarted 解决方案，你将需要以下内容：
 
-- 有效的 Azure 帐户。如果你没有订阅，可以注册[免费帐户](/free/)。
+- 有效的 Azure 帐户。如果你没有订阅，可以注册[试用帐户](https://www.azure.cn/pricing/1rmb-trial/)。
 -   [DocumentDB 帐户][documentdb-create-account]。
 -   GitHub 上可用的 [GetStarted](https://github.com/Azure-Samples/documentdb-dotnet-getting-started) 解决方案。
 
@@ -601,7 +601,6 @@ DocumentDB 支持删除 JSON 文档。
 ## 后续步骤
 
 - 需要更复杂的 ASP.NET MVC NoSQL 教程？ 请参阅[使用 DocumentDB 构建具有 ASP.NET MVC 的 Web 应用程序](/documentation/articles/documentdb-dotnet-application)。
-- 想要使用 DocumentDB 执行规模和性能测试？ 请参阅 [Performance and Scale Testing with Azure DocumentDB（使用 Azure DocumentDB 进行性能和规模测试）](/documentation/articles/documentdb-performance-testing)
 - 了解如何[监视 DocumentDB 帐户](/documentation/articles/documentdb-monitor-accounts)。
 - 在 [Query Playground](https://www.documentdb.com/sql/demo) 中对示例数据集运行查询。
 - 在 [DocumentDB 文档页](/documentation/services/documentdb/)的“Develop”（开发）部分中了解有关编程模型的详细信息。

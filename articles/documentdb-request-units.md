@@ -13,7 +13,7 @@
 	wacn.date="06/29/2016"/>
 
 #DocumentDB 中的请求单位
-现已推出：DocumentDB [请求单位计算器](https://www.documentdb.com/capacityplanner)。详细了解如何[估计吞吐量需求](documentdb-request-units.md#estimating-throughput-needs)。
+现已推出：DocumentDB [请求单位计算器](https://www.documentdb.com/capacityplanner)。详细了解如何[估计吞吐量需求](/documentation/articles/documentdb-request-units#estimating-throughput-needs)。
 
 ![吞吐量计算器][5]
 
@@ -195,7 +195,6 @@ DocumentDB 通过保留资源提供了快速且可预测的性能，以满足应
 
 若要了解有关 Azure DocumentDB 的保留吞吐量的详细信息，请浏览以下资源：
  
-- [DocumentDB 定价](/pricing/details/documentdb/)
 - [管理 DocumentDB 容量](/documentation/articles/documentdb-manage) 
 - [对 DocumentDB 中的数据进行建模](/documentation/articles/documentdb-modeling-data)
 - [DocumentDB 性能级别](/documentation/articles/documentdb-partition-data)
