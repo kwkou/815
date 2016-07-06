@@ -1,5 +1,5 @@
 <properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
-<tags ms.service="" ms.date="" wacn.date="05/12/2016"/>
+<tags ms.service="" ms.date="" wacn.date="07/06/2016"/>
 
 #中国 Azure 应用程序开发人员说明
 
@@ -57,9 +57,11 @@ Microsoft 提供了一些工具来创建和部署 Azure 全球服务的云应用
 
 中国服务当前包含以下的 Azure 功能。
 
-* 计算 – 虚拟机
+* 计算 – Windows 虚拟机
+* 计算 – Linux 虚拟机
 * 计算 – 云服务
 * 计算 – 批处理（Batch）
+* 计算 – Service Fabric
 * Web 和移动 – Web 应用
 * Web 和移动 – 移动服务
 * Web 和移动 – 通知中心
@@ -69,8 +71,10 @@ Microsoft 提供了一些工具来创建和部署 Azure 全球服务的云应用
 * 数据和存储 – MySQL Database on Azure
 * 数据和存储 – SQL 数据仓库
 * 数据和存储 – SQL Server Stretch Database
+* 数据和存储 – DocumentDB
 * 分析 – HDInsight
 * 分析 – 流分析
+* 分析 – 事件中心
 * 物联网 – Azure IoT 中心
 * 物联网 – 事件中心
 * 物联网 – 流分析
@@ -78,6 +82,7 @@ Microsoft 提供了一些工具来创建和部署 Azure 全球服务的云应用
 * 网络服务 – 虚拟网络
 * 网络服务 – ExpressRoute
 * 网络服务 – 流量管理器
+* 网络服务 – VPN 网关
 * 网络服务 – 应用程序网关
 * 媒体和CDN – 媒体服务 
 * 媒体和CDN – CDN
@@ -140,7 +145,8 @@ Azure 中的托管服务由一个设计为在托管服务中运行的应用程�
 服务类型|全球服务URI|中国服务URI
 :--|:--|:--
 Azure - 常规 | *.windows.net | *.chinacloudapi.cn
-Azure - 计算 | *.cloudapp.net | *.chinacloudapp.cn
+Azure - 计算 | *.cloudapp.net | *.chinacloudapp.cn  
+Azure - Service Fabric Cluster | *.cloudapp.azure.com | *.chinaeast.chinacloudapp.cn
 Azure - 存储 | *.blob.core.windows.net <br /> *.queue.core.windows.net <br /> *.table.core.windows.net | *.blob.core.chinacloudapi.cn <br /> *.queue.core.chinacloudapi.cn <br /> *.table.core.chinacloudapi.cn
 Azure - 服务管理 | https://management.core.windows.net | https://management.core.chinacloudapi.cn
 Azure - 资源管理器(ARM) | https://management.azure.com | https://management.chinacloudapi.cn

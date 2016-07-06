@@ -1,7 +1,7 @@
 <properties linkid="documentation-overview" urlDisplayName="Doc-Overview" pageTitle="文档概览" metaKeywords="Doc-Overview" description="" metaCanonical="" services="" documentationCenter="" title="" authors="" solutions="" manager="Tiffena" editor="Eric Chen" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="05/11/2016"
+    wacn.date="07/06/2016"
     />
 
 #文档中心
@@ -26,10 +26,16 @@
 ##计算
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
-  <tr col>
-    <td><a href="/documentation/services/virtual-machines/">虚拟机</a></td>
+  <tr>
+    <td><a href="/documentation/services/virtual-machines/windows">Windows 虚拟机</a></td>
+    <td><a href="/documentation/services/virtual-machines/linux">Linux 虚拟机</a></td>
     <td><a href="/documentation/services/cloud-services/">云服务</a></td>
     <td><a href="/documentation/services/batch/">批处理（Batch）</a></td>
+  </tr>
+  <tr>
+    <td><a href="/documentation/services/service-fabric/">Service Fabric</a></td>
+	<td><a href=""></a></td>
+	<td><a href=""></a></td>
 	<td><a href=""></a></td>
   </tr>
 </table>
@@ -40,7 +46,7 @@
   <tr col>
     <td><a href="/documentation/services/web-sites/">Web 应用</a></td>
     <td><a href="/documentation/services/mobile-services/">移动服务</a></td>
-	<td><a href=""></a></td>
+	<td><a href="/documentation/services/notification-hubs/">通知中心</a></td>
 	<td><a href=""></a></td>
   </tr>
 </table>
@@ -57,7 +63,7 @@
   <tr>
     <td><a href="/documentation/services/sql-data-warehouse/">SQL 数据仓库</a></td>
     <td><a href="/documentation/services/sql-server-stretch-database/">SQL Server Stretch Database</a></td>
-    <td><a href=""></a></td>
+    <td><a href="/documentation/services/documentdb/">DocumentDB</a></td>
     <td><a href=""></a></td>
   </tr>
 </table>
@@ -91,7 +97,13 @@
 	<td><a href="/documentation/services/networking/">虚拟网络</a></td>
 	<td><a href="/documentation/services/expressroute/">ExpressRoute</a></td>
 	<td><a href="/documentation/services/traffic-manager/">流量管理器</a></td>
+    <td><a href="/documentation/services/vpn-gateway/">VPN 网关</a></td>
+  </tr>
+  <tr>
     <td><a href="/documentation/services/application-gateway/">应用程序网关</a></td>
+	<td><a href=""></a></td>
+	<td><a href=""></a></td>
+	<td><a href=""></a></td>
   </tr>
 </table>
 
