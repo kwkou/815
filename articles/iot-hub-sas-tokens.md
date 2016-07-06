@@ -42,7 +42,7 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 | 值 | 说明 |
 | ----- | ----------- |
 | {signature} | HMAC-SHA256 签名字符串的格式为：`{URL-encoded-resourceURI} + "\n" + expiry`。**重要说明**：密钥是从 base64 解码得出的，用作执行 HMAC-SHA256 计算的密钥。 |
-| {resourceURI} | 此令牌可以访问的终结点的 URI 前缀（根据分段）以 IoT 中心的主机名开始（无协议）。例如 `myHub.azure-devices.net/devices/device1` |
+| {resourceURI} | 此令牌可以访问的终结点的 URI 前缀（根据分段）以 IoT 中心的主机名开始（无协议）。例如 `myHub.azure-devices.cn/devices/device1` |
 | {expiry} | 从纪元 1970 年 1 月 1日 00:00:00 UTC 时间至今秒数的 UTF8 字符串。 |
 | {URL-encoded-resourceURI} | 小写资源 URI 的小写 URL 编码 |
 | {policyName} | 此令牌所引用的共享访问策略名称。在令牌引用设备注册表凭据的情况下不存在。 |
@@ -99,21 +99,21 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 
 例如，创建的用于访问所有设备功能的令牌应具有以下参数：
 
-* 资源 URI：`{IoT hub name}.azure-devices.net/devices/{device id}`；
+* 资源 URI：`{IoT hub name}.azure-devices.cn/devices/{device id}`；
 * 签名密钥：`{device id}` 标识的任何对称密钥；
 * 无策略名称；
 * 任何过期时间。
 
 使用上述 Node 函数的示例如下：
 
-    var endpoint ="myhub.azure-devices.net/devices/device1";
+    var endpoint ="myhub.azure-devices.cn/devices/device1";
     var deviceKey ="...";
 
     var token = generateSasToken(endpoint, deviceKey, null, 60);
 
 授权访问设备 1 的所有功能的安全令牌是：
 
-    SharedAccessSignature sr=myhub.azure-devices.net%2fdevices%2fdevice1&sig=13y8ejUk2z7PLmvtwR5RqlGBOVwiq7rQR3WZ5xZX3N4%3D&se=1456971697
+    SharedAccessSignature sr=myhub.azure-devices.cn%2fdevices%2fdevice1&sig=13y8ejUk2z7PLmvtwR5RqlGBOVwiq7rQR3WZ5xZX3N4%3D&se=1456971697
 
 > [AZURE.NOTE] 可以使用 .NET 工具[设备资源管理器][lnk-device-explorer]来生成安全令牌。
 
@@ -130,14 +130,14 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 
 例如，使用名为 **device** 的预创建共享访问策略的令牌服务所创建的令牌将包含以下参数：
 
-* 资源 URI：`{IoT hub name}.azure-devices.net/devices/{device id}`；
+* 资源 URI：`{IoT hub name}.azure-devices.cn/devices/{device id}`；
 * 签名密钥：`device` 策略的密钥之一；
 * 策略名称：`device`；
 * 任何过期时间。
 
 使用上述 Node 函数的示例如下：
 
-    var endpoint ="myhub.azure-devices.net/devices/device1";
+    var endpoint ="myhub.azure-devices.cn/devices/device1";
     var policyName = 'device';
     var policyKey = '...';
 
@@ -145,9 +145,9 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 
 授权访问设备 1 的所有功能的安全令牌是：
 
-    SharedAccessSignature sr=myhub.azure-devices.net%2fdevices%2fdevice1&sig=13y8ejUk2z7PLmvtwR5RqlGBOVwiq7rQR3WZ5xZX3N4%3D&se=1456971697&skn=device
+    SharedAccessSignature sr=myhub.azure-devices.cn%2fdevices%2fdevice1&sig=13y8ejUk2z7PLmvtwR5RqlGBOVwiq7rQR3WZ5xZX3N4%3D&se=1456971697&skn=device
 
-协议网关可以对所有设备使用相同的令牌，只需将资源 URI 设置为 `myhub.azure-devices.net/devices`。
+协议网关可以对所有设备使用相同的令牌，只需将资源 URI 设置为 `myhub.azure-devices.cn/devices`。
 
 ## 使用服务组件提供的安全令牌
 
@@ -164,13 +164,13 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 
 例如，使用名为 **registryRead** 的预创建共享访问策略生成的服务所创建的令牌将包含以下参数：
 
-* 资源 URI：`{IoT hub name}.azure-devices.net/devices`；
+* 资源 URI：`{IoT hub name}.azure-devices.cn/devices`；
 * 签名密钥：`registryRead` 策略的密钥之一；
 * 策略名称：`registryRead`；
 * 任何过期时间。
 
 ```
-    var endpoint ="myhub.azure-devices.net/devices";
+    var endpoint ="myhub.azure-devices.cn/devices";
     var policyName = 'device';
     var policyKey = '...';
 
@@ -179,7 +179,7 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 
 授权读取所有设备标识权限的安全令牌是：
 
-    SharedAccessSignature sr=myhub.azure-devices.net%2fdevices&sig=JdyscqTpXdEJs49elIUCcohw2DlFDR3zfH5KqGJo4r4%3D&se=1456973447&skn=registryRead
+    SharedAccessSignature sr=myhub.azure-devices.cn%2fdevices&sig=JdyscqTpXdEJs49elIUCcohw2DlFDR3zfH5KqGJo4r4%3D&se=1456973447&skn=registryRead
 
 ## 支持的 X.509 证书
 
