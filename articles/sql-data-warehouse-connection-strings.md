@@ -1,3 +1,4 @@
+<!-- Temporarily comment out connect overview -->
 <properties
    pageTitle="Azure SQL 数据仓库的驱动程序 | Azure"
    description="SQL 数据仓库的连接字符串和驱动程序"
@@ -16,10 +17,9 @@
 # Azure SQL 数据仓库的驱动程序
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-data-warehouse-connect-overview)
 - [身份验证](/documentation/articles/sql-data-warehouse-authentication)
 - [驱动程序](/documentation/articles/sql-data-warehouse-connection-strings)
-
+<!-- - [概述](/documentation/articles/sql-data-warehouse-connect-overview) -->
 
 可以使用以下任一应用程序协议连接到 SQL 数据仓库：
 
@@ -28,7 +28,7 @@
 - PHP
 - JDBC 
 
-下面是每个协议的连接字符串的一些示例。你可以使用 Azure 管理门户来帮助设置连接字符串。只需在 Azure 管理门户中导航到你的数据库。在“必备”下面，单击“显示数据库连接字符串”。
+下面是每个协议的连接字符串的一些示例。你可以使用 Azure 管理门户来帮助设置连接字符串。只需在 Azure 经典管理门户中导航到你的数据库。在“必备”下面，单击“显示数据库连接字符串”。
 
 ## 示例 ADO.NET 连接字符串
 

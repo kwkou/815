@@ -1,3 +1,4 @@
+<!-- Temporarily comment out connect overview, visual studio, nex time on -->
 <properties
    pageTitle="对 Azure SQL 数据仓库进行身份验证 | Azure"
    description="对 Azure SQL 数据仓库进行的 Azure Active Directory (AAD) 和 SQL Server 身份验证。"
@@ -16,9 +17,9 @@
 # 对 Azure SQL 数据仓库进行身份验证
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-data-warehouse-connect-overview)
 - [身份验证](/documentation/articles/sql-data-warehouse-authentication)
 - [驱动程序](/documentation/articles/sql-data-warehouse-connection-strings)
+<!-- - [概述](/documentation/articles/sql-data-warehouse-connect-overview) -->
 
 若要连接到 SQL 数据仓库，需要传入安全凭据进行身份验证。建立连接时，你还会看到特定的连接设置已配置为建立查询会话的一部分。
 
@@ -61,7 +62,8 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 - Azure Active Directory 身份验证使用包含的数据库用户以数据库级别对标识进行身份验证。
 - Azure Active Directory 支持对连接到 SQL 数据仓库的应用程序进行基于令牌的身份验证。
 
-> [AZURE.IMPORTANT] Azure Active Directory 身份验证是一个预览功能，并遵守许可协议（例如，企业协议、Azure 协议或 Microsoft 在线订阅协议）中的预览条款以及任何适用的[Azure 预览版补充使用条款](/support/legal/preview-supplemental-terms/)。
+<!-- 
+> [AZURE.IMPORTANT] Azure Active Directory 身份验证是一个预览功能，并遵守许可协议（例如，企业协议、Azure 协议或 Microsoft 在线订阅协议）中的预览条款以及任何适用的[Azure 预览版补充使用条款](/support/legal/preview-supplemental-terms/)。-->
 
 ### 配置步骤
 
@@ -80,9 +82,10 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 - 完成详细步骤。配置和使用 Azure Active Directory 身份验证的详细步骤与适用于 Azure SQL 数据库和 Azure SQL 数据仓库的步骤几乎完全相同。请遵循主题[使用 Azure Active Directory 身份验证连接到 SQL 数据库或 SQL 数据仓库](/documentation/articles/sql-database-aad-authentication)中的详细步骤。
 - 创建自定义数据库角色，并向角色添加用户。然后授予角色具体权限。有关详细信息，请参阅[数据库引擎权限入门](https://msdn.microsoft.com/zh-cn/library/mt667986.aspx)。
 
+<!-- 
 ## 后续步骤
 
-若要开始使用 Visual Studio 和其他应用程序查询数据仓库，请参阅[使用 Visual Studio 进行查询][]。
+若要开始使用 Visual Studio 和其他应用程序查询数据仓库，请参阅[使用 Visual Studio 进行查询][]。 -->
 
 <!-- Article references -->
 [保护 SQL 数据仓库中的数据库]: /documentation/articles/sql-data-warehouse-overview-manage-security

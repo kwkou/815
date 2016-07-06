@@ -15,8 +15,8 @@
 
 # 透明数据加密 (TDE) 入门
 > [AZURE.SELECTOR]
-<!-- - [Azure 门户](/documentation/articles/sql-data-warehouse-encryption-tde) -->
 - [TSQL](/documentation/articles/sql-data-warehouse-encryption-tde-tsql)
+<!-- - [Azure 门户](/documentation/articles/sql-data-warehouse-encryption-tde) -->
 
 Azure SQL 数据仓库透明数据加密 (TDE) 无需更改应用程序，即可对静止的数据库、关联的备份和事务日志执行实时加密和解密，帮助防止恶意活动的威胁。
 

@@ -1,3 +1,4 @@
+<!-- Remove Visual Studio temprorily, doc added next time -->
 <properties
    pageTitle="查询 Azure SQL 数据仓库 (sqlcmd)| Azure"
    description="使用 sqlcmd 命令行实用工具查询 Azure SQL 数据仓库。"
@@ -15,8 +16,8 @@
 # 查询 Azure SQL 数据仓库 (sqlcmd)
 
 > [AZURE.SELECTOR]
-- [Visual Studio](/documentation/articles/sql-data-warehouse-query-visual-studio)
 - [sqlcmd](/documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd)
+<!-- - [Visual Studio](/documentation/articles/sql-data-warehouse-query-visual-studio) -->
 
 本演练使用 sqlcmd 命令行实用工具来查询 Azure SQL 数据仓库。
 
@@ -38,9 +39,9 @@
 
 若要开始使用 sqlcmd，请打开命令提示符并输入 **sqlcmd**，后跟 SQL 数据仓库数据库的连接字符串。连接字符串需包含以下必需参数：
 
-+ **服务器 (-S)：**采用 `<`服务器名称`>`.database.chinacloudapi.cn 格式的服务器
++ **服务器 (-S)：**采用 < 服务器名称 >.database.chinacloudapi.cn 格式的服务器
 + **数据库 (-d)：**数据库名称。
-+ **用户 (-U)：**采用 `<`用户`>` 格式的服务器用户
++ **用户 (-U)：**采用  < 用户 > 格式的服务器用户
 + **密码 (-P)：**与用户关联的密码
 + **启用带引号的标识符 (-I)：**必须启用带引号的标识符才能连接到 SQL 数据仓库实例。
 

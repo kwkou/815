@@ -1,4 +1,4 @@
-<!-- Remove MSDN subscription benifits & azure portal sqlDW  -->
+<!-- Remove MSDN subscription benifits & azure portal sqlDW & load samples  -->
 <properties
    pageTitle="使用 TSQL 创建 SQL 数据仓库 | Azure"
    description="了解如何使用 TSQL 创建 Azure SQL 数据仓库"
@@ -53,7 +53,7 @@
 MAXSIZE 可介于 250 GB 和 240 TB 之间。服务目标可以介于 DW100 与 DW2000 之间。有关所有 MAXSIZE 和 SERVICE\_OBJECTIVE 有效值的完整列表，请参阅 MSDN 文档中的 [CREATE DATABASE][]。MAXSIZE 和 SERVICE\_OBJECTIVE 还可通过 [ALTER DATABASE][] T-SQL 命令进行更改。更改 SERVICE\_OBJECTIVE 时应谨慎，因为这会导致服务重新启动而取消所有正在进行的查询。更改 MAXSIZE 不会重启服务，因为这只是简单的元数据操作。
 
 ## 后续步骤
-完成预配 SQL 数据仓库之后，你可以[加载示例数据][]或了解如何[开发][]、[加载][]，或[迁移][]数据。
+完成预配 SQL 数据仓库之后，你可以了解如何[开发][]、[加载][]，或[迁移][]数据。
 
 <!--Article references-->
 
@@ -62,7 +62,6 @@ MAXSIZE 可介于 250 GB 和 240 TB 之间。服务目标可以介于 DW100 与 
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop
 [加载]: /documentation/articles/sql-data-warehouse-overview-load
-[加载示例数据]: /documentation/articles/sql-data-warehouse-get-started-load-sample-databases
 [使用 Azure 门户创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started#create-an-azure-sql-database-logical-server
 [使用 PowerShell 创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started-powershell#database-setup-create-a-resource-group-server-and-firewall-rule
 [资源组]: /documentation/articles/resource-group-portal
@@ -74,7 +73,7 @@ MAXSIZE 可介于 250 GB 和 240 TB 之间。服务目标可以介于 DW100 与 
 [ALTER DATABASE]: https://msdn.microsoft.com/zh-cn/library/mt204042.aspx
 
 <!--Other Web references-->
-[SQL 数据仓库定价]: /pricing/details/sql-data-warehouse/
+[SQL 数据仓库定价]: /home/features/sql-data-warehouse/#price
 [Azure 试用版]: /pricing/1rmb-trial/
 [MSDN Azure 信用额度]: /pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F
 
