@@ -1,3 +1,4 @@
+<!-- Remove azure-toolkit-intelij temproraily -->
 <properties
 	pageTitle="Azure Toolkit for Eclipse | Azure"
 	description="了解 Azure Toolkit for Eclipse。"
@@ -19,8 +20,8 @@
 使用 Azure Toolkit for Eclipse 提供的模板和功能，可轻松地利用 Eclipse 开发环境创建、开发、测试和部署 Azure 应用程序。它是一个开放源代码项目，其源代码可从项目站点的 MIT 许可证下获取，网址为：
 
 * <https://github.com/microsoft/azure-tools-for-java>
-
-> [AZURE.NOTE] 另外还有 Azure Toolkit for IntelliJ IDE。有关详细信息，请参阅 [Azure Toolkit for IntelliJ]。
+<!-- 
+> [AZURE.NOTE] 另外还有 Azure Toolkit for IntelliJ IDE。有关详细信息，请参阅 [Azure Toolkit for IntelliJ]。-->
 
 ## Azure Toolkit for Eclipse 入门
 
@@ -29,7 +30,7 @@
 * [Azure Toolkit for Eclipse 的新增功能]
 * [安装 Azure Toolkit for Eclipse]
 * [在 Eclipse 中创建 Azure 的 Hello World 云服务]
-* [在 Eclipse 中创建 Azure 的 Hello World Web 应用]
+<!-- * [在 Eclipse 中创建 Azure 的 Hello World Web 应用] -->
 
 ## 配置 Azure 项目设置
 
@@ -56,11 +57,13 @@
 
 - Azure Toolkit for Eclipse（本文）
   - [安装 Azure Toolkit for Eclipse]
-  - [在 Eclipse 中创建 Azure 的 Hello World Web 应用]
+  <!-- - [在 Eclipse 中创建 Azure 的 Hello World Web 应用] -->
   - [Azure Toolkit for Eclipse 的新增功能]
+  
+<!-- 
 - [Azure Toolkit for IntelliJ]
   - [安装 Azure Toolkit for IntelliJ]
-  - [在 IntelliJ 中创建 Azure 的 Hello World Web 应用]
+  - [在 IntelliJ 中创建 Azure 的 Hello World Web 应用] -->
 
 有关将 Azure 与 Java 配合使用的详细信息，请参阅 [Azure Java 开发人员中心]。
 

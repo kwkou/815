@@ -1,3 +1,4 @@
+<!-- Remove intelij, hello world for temp -->
 <properties
 	pageTitle="安装 Azure Toolkit for Eclipse | Azure"
 	description="了解如何安装 Azure Toolkit for Eclipse。"
@@ -74,11 +75,13 @@
 
 - [适用于 Eclipse 的 Azure 工具包]
   - 安装 Azure Toolkit for Eclipse（本文）
-  - [在 Eclipse 中创建 Azure 的 Hello World Web 应用]
+  <!-- - [在 Eclipse 中创建 Azure 的 Hello World Web 应用] -->
   - [Azure Toolkit for Eclipse 的新增功能]
+
+<!--
 - [Azure Toolkit for IntelliJ]
   - [安装 Azure Toolkit for IntelliJ]
-  - [在 IntelliJ 中创建 Azure 的 Hello World Web 应用]
+  - [在 IntelliJ 中创建 Azure 的 Hello World Web 应用] -->
 
 有关将 Azure 与 Java 配合使用的详细信息，请参阅 [Azure Java 开发人员中心]。
 

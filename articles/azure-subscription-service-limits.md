@@ -38,36 +38,55 @@
 - [App Service](#app-service-limits)
 
 - [自动化](#automation-limits)
+
 - [Azure Redis Cache](#azure-redis-cache-limits)
 
 - [备份](#backup-limits)
+
 - [批处理](#batch-limits)
 
 - [CDN](#cdn-limits)
+
 - [云服务](#cloud-services-limits)
 
 - [事件中心](#event-hubs-limits)
+
 - [IoT 中心](#iot-hub-limits)
+
 - [密钥保管库](#key-vault-limits)
+
 - [媒体服务](#media-services-limits)
 
 - [移动服务](#mobile-services-limits)
+
 - [多因素身份验证](#multi-factor-authentication)
+
 - [联网](#networking-limits)
+
 - [通知中心服务](#notification-hub-service-limits)
 
 - [资源组](#resource-group-limits)
+
 - [计划程序](#scheduler-limits)
 
 - [服务总线](#service-bus-limits)
+
 - [站点恢复](#site-recovery-limits)
+
 - [SQL 数据库](#sql-database-limits)
+
 - [存储](#storage-limits)
+
 - [StorSimple 系统](#storsimple-system-limits)
+
 - [流分析](#stream-analytics-limits)
+
 - [订阅](#subscription-limits)
+
 - [流量管理器](#traffic-manager-limits)
+
 - [虚拟机](#virtual-machines-limits)
+
 - [虚拟机规模集](#virtual-machine-scale-sets-limits)
 
 <a id="subscription-limits"></a>
@@ -200,7 +219,7 @@
 | 限制标识符 | 限制 | 注释 |
 |----------------- | ------------|--------- |
 | 每个区域每个订阅的最大流式处理单位数 | 50 | 增加订阅的流式处理单位数超过 50 的请求可通过联系 [Microsoft 支持](https://support.microsoft.com/zh-cn)发出。 |
-| 流式处理单位的最大吞吐量 | 1MB/秒* | 每个 SU 的最大吞吐量取决于方案。实际的吞吐量可能较低，具体取决于查询复杂性和分区。可在[扩展 Azure 流分析作业以增加吞吐量](../articles/stream-analytics/stream-analytics-scale-jobs.md)一文中找到更多详细信息。 |
+| 流式处理单位的最大吞吐量 | 1MB/秒* | 每个 SU 的最大吞吐量取决于方案。实际的吞吐量可能较低，具体取决于查询复杂性和分区。可在[扩展 Azure 流分析作业以增加吞吐量](/articles/stream-analytics/stream-analytics-scale-jobs)一文中找到更多详细信息。 |
 
 <a id="active-directory-limits"></a>
 ### Active Directory 限制
