@@ -438,7 +438,6 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 - [将 MapReduce 与 HDInsight 配合使用][hdinsight-use-mapreduce]
 - [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 - [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
-- [使用脚本操作自定义 HDInsight 群集][hdinsight-hadoop-customize-cluster]
 
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-hadoop-doc]: http://hadoop.apache.org/docs/current/

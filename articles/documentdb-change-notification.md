@@ -29,7 +29,7 @@ DocumentDB 是 Health Level Seven International (HL7) Fast Healthcare Interopera
 
 心脏病科会跟踪个人健康和锻炼数据。搜索新增或已修改的患者记录相当耗时。他们询问 IT 部门是否有办法让他们收到新增或已修改患者记录的通知。
 
-IT 部门表示他们可以轻松提供此通知。他们还表示可以将文档推送到 [Azure Blob 存储](/services/storage/)，以便心脏病科轻松访问。
+IT 部门表示他们可以轻松提供此通知。他们还表示可以将文档推送到 [Azure Blob 存储](/documentation/services/storage/)，以便心脏病科轻松访问。
 
 ## IT 部门如何解决此问题
 
@@ -72,7 +72,7 @@ IT 部门表示他们可以轻松提供此通知。他们还表示可以将文�
 
 ### 从主要逻辑应用开始
 
-如果你不熟悉逻辑应用，可以从 [Azure 应用商店](https://portal.azure.cn/)中获取，而且你可以在[什么是逻辑应用？](/documentation/articles/app-service-logic-what-are-logic-apps)中进一步了解
+如果你不熟悉逻辑应用，可以从 [Azure 应用商店](https://portal.azure.cn/)中获取
 
 创建新的逻辑应用时，系统会询问你**你要如何开始？**
 
@@ -619,8 +619,6 @@ QueryDocuments 操作会对 API 应用执行 HTTP POST 操作。
 
 
 此代码通过设计器中的操作生成。你不需要修改此代码。
-
-如果不熟悉如何使用 Azure Blob API，请参阅[开始使用 Azure Blob 存储 API](/documentation/articles/connectors-create-api-azureblobstorage)。
 
 #### 操作
 

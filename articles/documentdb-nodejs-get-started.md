@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="documentdb"
-        ms.date="04/26/2016"
+    ms.date="04/26/2016"
 	wacn.date="07/04/2016"/>
 
 # NoSQL Node.js 教程：DocumentDB Node.js 控制台应用程序  

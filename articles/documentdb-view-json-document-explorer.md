@@ -47,7 +47,7 @@
 
 	> [AZURE.NOTE] 如果你不提供“id”属性，文档资源管理器将自动添加 id 属性并生成一个 GUID 作为 id 值。
 
-    如果已有来自 JSON 文件、MongoDB、SQL Server、CSV 文件、Azure 表存储、Amazon DynamoDB、HBase 或其他 DocumentDB 集合的数据，你可以使用 DocumentDB 的[数据迁移工具](documentdb-import-data.md)快速导入数据。
+    如果已有来自 JSON 文件、MongoDB、SQL Server、CSV 文件、Azure 表存储、Amazon DynamoDB、HBase 或其他 DocumentDB 集合的数据，你可以使用 DocumentDB 的[数据迁移工具](/documentation/articles/documentdb-import-data)快速导入数据。
 
 ## 编辑文档
 
@@ -100,7 +100,7 @@
 
 	![文档资源管理器“设置”边栏选项卡的屏幕截图](./media/documentdb-view-JSON-document-explorer/documentexplorerfiltersettings2.png)
 
-	文档资源管理器将自动刷新与筛选查询匹配的文档结果。阅读关于 [SQL 查询和 SQL 语法](documentdb-sql-query.md)一文中的 DocumentDB SQL 语法信息或打印 [SQL 查询备忘单](/documentation/articles/documentdb-sql-query-cheat-sheet)的副本。
+	文档资源管理器将自动刷新与筛选查询匹配的文档结果。阅读关于 [SQL 查询和 SQL 语法](/documentation/articles/documentdb-sql-query)一文中的 DocumentDB SQL 语法信息或打印 [SQL 查询备忘单](/documentation/articles/documentdb-sql-query-cheat-sheet)的副本。
 
     可使用“数据库”和“集合”下拉列表框轻松更改当前查看其中文档的集合，而无需关闭并重新启动文档资源管理器。
 

@@ -16,7 +16,7 @@
 # 如何管理 DocumentDB 帐户
 
 了解如何设置全球一致性级别，以及管理多个区域以实现数据的全局可用性。此外，了解如何使用密钥，以及如何在 Azure 门户预览中删除帐户。
-
+microsoft.com/
 ## <a id="consistency"></a>管理 DocumentDB 一致性设置
 
 根据应用程序的语义选择正确的一致性级别。你应在 DocumentDB 中熟悉可用的一致性级别：[Using consistency levels to maximize availability and performance in DocumentDB（使用一致性级别最大化 DocumentDB 中的可用性和性能）][consistency]。DocumentDB 在每个一致性级别为你的数据库帐户提供一致性、可用性和性能保证。使用非常一致性级别配置数据库帐户需要将数据局限在单个 Azure 区域，而不能使其全局可用。另一方面，宽松的一致性级别 - 受限停滞、会话或最终一致性可让你将任意数量的 Azure 区域与你的数据库帐户相关联。以下简单步骤说明如何为数据库帐户选择默认的一致性级别。
@@ -52,7 +52,7 @@ DocumentDB 已在大部分 [Azure 区域][azureregions]中推出。为数据库�
 
 ### 选择区域
 
-在配置两个或更多个区域时，建议按照 [Business continuity and disaster recovery (BCDR): Azure Paired Regions（业务连续性和灾难恢复 (BCDR)：Azure 配对区域）][bcdr]一文中所述，根据区域对选择区域。
+
 
 具体而言，在配置多个区域时，请确保从每个配对区域列中选择相同数目的区域（使用 +/-1 可更改为奇数/偶数）。例如，如果你要部署到 4 个美国区域，请从左列中选择 2 个美国区域，再从右列中选择 2 个美国区域。因此，下面是适当的设置：美国西部、美国东部、美国中北部和美国中南部。
 
@@ -132,7 +132,7 @@ DocumentDB 已在大部分 [Azure 区域][azureregions]中推出。为数据库�
 
 了解如何[开始使用 DocumentDB 帐户](http://go.microsoft.com/fwlink/p/?LinkId=402364)。
 
-若要了解更多有关 DocumentDB 的信息，请参阅 [azure.com](http://go.microsoft.com/fwlink/?LinkID=402319&clcid=0x409) 上的 Azure DocumentDB 文档。
+若要了解更多有关 DocumentDB 的信息，请参阅 [azure.cn](http://go.microsoft.com/fwlink/?LinkID=402319&clcid=0x409) 上的 Azure DocumentDB 文档。
 
 
 <!--Image references-->
@@ -145,7 +145,7 @@ DocumentDB 已在大部分 [Azure 区域][azureregions]中推出。为数据库�
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 [bcdr]: https://azure.microsoft.com/documentation/articles/best-practices-availability-paired-regions/
-[consistency]: https://azure.microsoft.com/documentation/articles/documentdb-consistency-levels/
+[consistency]: /documentation/articles/documentdb-consistency-levels/
 [azureregions]: https://azure.microsoft.com/zh-cn/regions/#services
 [offers]: https://azure.microsoft.com/zh-cn/pricing/details/documentdb/
 
