@@ -18,7 +18,7 @@ VPN 网关（也称为 Azure 虚拟网络网关）用于在虚拟网络和本地
 
 用于创建 VPN 网关的说明取决于用于创建虚拟网络的部署模型。例如，如果你使用经典部署模型创建 VNet，将使用经典部署模型的指导原则和说明来创建及配置 VPN 网关。你无法为经典部署模型虚拟网络创建 资源管理器 VPN 网关。
 
-有关部署模型的详细信息，请参阅 [Understanding 资源管理器 and classic deployment models（了解 资源管理器 和经典部署模型）](/documentation/articles/resource-manager-deployment-model)。
+有关部署模型的详细信息，请参阅 [Understanding Resource Manager and classic deployment models（了解 资源管理器 和经典部署模型）](/documentation/articles/resource-manager-deployment-model)。
 
 
 ## <a name="gwsub"></a>网关子网

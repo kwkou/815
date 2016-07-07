@@ -68,7 +68,7 @@ Azure HDInsight 仅支持基于位置的虚拟网络，目前无法处理基于�
 
 强烈建议针对每个 HDInsight 群集创建一个子网。
 
-###经典或 V2 虚拟网络
+###经典虚拟网络
 
 基于 Windows 的群集需要 V1（经典）虚拟网络。如果没有正确的网络类型，创建群集时它将不能使用。
 
@@ -92,104 +92,86 @@ HDInsight 服务是一个托管的服务，需要在预配期间和运行时访�
 __使用 Azure PowerShell__
 
     $vnetName = "Replace with your virtual network name"
-    $resourceGroupName = "Replace with the resource group the virtual network is in"
     $subnetName = "Replace with the name of the subnet that HDInsight will be installed into"
     # Get the Virtual Network object
-    $vnet = Get-AzureRmVirtualNetwork `
-        -Name $vnetName `
-        -ResourceGroupName $resourceGroupName
+    $vnet = Get-AzureVNetSite `
+        -VNetName $vnetName 
     # Get the region the Virtual network is in.
     $location = $vnet.Location
-    # Get the subnet object
-    $subnet = $vnet.Subnets | Where-Object Name -eq $subnetName
     # Create a new Network Security Group.
     # And add exemptions for the HDInsight health and management services.
-    $nsg = New-AzureRmNetworkSecurityGroup `
+    $nsg = New-AzureNetworkSecurityGroup `
         -Name "hdisecure" `
-        -ResourceGroupName $resourceGroupName `
         -Location $location `
-        | Add-AzureRmNetworkSecurityRuleConfig `
+        | Set-AzureNetworkSecurityRule `
             -name "hdirule1" `
-            -Description "HDI health and management address 168.61.49.99" `
             -Protocol "*" `
             -SourcePortRange "*" `
             -DestinationPortRange "443" `
             -SourceAddressPrefix "168.61.49.99" `
-            -DestinationAddressPrefix "VirtualNetwork" `
-            -Access Allow `
+            -DestinationAddressPrefix "*" `
+            -Action Allow `
             -Priority 300 `
-            -Direction Inbound `
-        | Add-AzureRmNetworkSecurityRuleConfig `
+            -Type Inbound `
+        | Set-AzureNetworkSecurityRule `
             -Name "hdirule2" `
-            -Description "HDI health and management 23.99.5.239" `
             -Protocol "*" `
             -SourcePortRange "*" `
             -DestinationPortRange "443" `
             -SourceAddressPrefix "23.99.5.239" `
-            -DestinationAddressPrefix "VirtualNetwork" `
-            -Access Allow `
+            -DestinationAddressPrefix "*" `
+            -Action Allow `
             -Priority 301 `
-            -Direction Inbound `
-        | Add-AzureRmNetworkSecurityRuleConfig `
+            -Type Inbound `
+        | Set-AzureNetworkSecurityRule `
             -Name "hdirule3" `
-            -Description "HDI health and management 168.61.48.131" `
             -Protocol "*" `
             -SourcePortRange "*" `
             -DestinationPortRange "443" `
             -SourceAddressPrefix "168.61.48.131" `
-            -DestinationAddressPrefix "VirtualNetwork" `
-            -Access Allow `
+            -DestinationAddressPrefix "*" `
+            -Action Allow `
             -Priority 302 `
-            -Direction Inbound `
-        | Add-AzureRmNetworkSecurityRuleConfig `
+            -Type Inbound `
+        | Set-AzureNetworkSecurityRule `
             -Name "hdirule4" `
-            -Description "HDI health and management 138.91.141.162" `
             -Protocol "*" `
             -SourcePortRange "*" `
             -DestinationPortRange "443" `
             -SourceAddressPrefix "138.91.141.162" `
-            -DestinationAddressPrefix "VirtualNetwork" `
-            -Access Allow `
+            -DestinationAddressPrefix "*" `
+            -Action Allow `
             -Priority 303 `
-            -Direction Inbound
-    # Set the changes to the security group
-    Set-AzureRmNetworkSecurityGroup -NetworkSecurityGroup $nsg
+            -Type Inbound
     # Apply the NSG to the subnet
-    Set-AzureRmVirtualNetworkSubnetConfig `
-        -VirtualNetwork $vnet `
-        -Name $subnetName `
-        -AddressPrefix $subnet.AddressPrefix `
-        -NetworkSecurityGroupId $nsg
+    Set-AzureNetworkSecurityGroupAssociation `
+        -VirtualNetworkName $vnetName `
+        -SubnetName $subnetName `
+        -Name $nsg.Name
 
 __使用 Azure CLI__
 
-1. 使用以下命令创建名为 `hdisecure` 的新网络安全组。将 __RESOURCEGROUPNAME__ 和 __LOCATION__ 分别替换为包含 Azure 虚拟网络的资源组以及在其中创建组的位置（区域）。
+1. 使用以下命令创建名为 `hdisecure` 的新网络安全组。将 __LOCATION__ 替换为 Azure 虚拟网络的位置（区域）。
 
-        azure network nsg create RESOURCEGROUPNAME hdisecure LOCATION
-    
-    创建组后，你将收到有关新组的信息。找到类似于以下内容的行，然后保存`/subscriptions/GUID/resourceGroups/RESOURCEGROUPNAME/providers/Microsoft.Network/networkSecurityGroups/hdisecure` 信息。后面的步骤将会用到这些信息。
-    
-        data:    Id                              : /subscriptions/GUID/resourceGroups/RESOURCEGROUPNAME/providers/Microsoft.Network/networkSecurityGroups/hdisecure
+        azure network nsg create hdisecure LOCATION
 
-2. 使用以下命令将规则添加新的网络安全组，这些规则允许从 Azure HDInsight 运行状况和管理服务通过端口 443 发起的入站通信。将 __RESOURCEGROUPNAME__ 替换为包含 Azure 虚拟网络的资源组的名称。
+2. 使用以下命令将规则添加新的网络安全组，这些规则允许从 Azure HDInsight 运行状况和管理服务通过端口 443 发起的入站通信。
 
-        azure network nsg rule create RESOURCEGROUPNAME hdisecure hdirule1 -p "*" -o "*" -u "443" -f "168.61.49.99" -e "VirtualNetwork" -c "Allow" -y 300 -r "Inbound"
-        azure network nsg rule create RESOURCEGROUPNAME hdisecure hdirule2 -p "*" -o "*" -u "443" -f "23.99.5.239" -e "VirtualNetwork" -c "Allow" -y 301 -r "Inbound"
-        azure network nsg rule create RESOURCEGROUPNAME hdisecure hdirule3 -p "*" -o "*" -u "443" -f "168.61.48.131" -e "VirtualNetwork" -c "Allow" -y 302 -r "Inbound"
-        azure network nsg rule create RESOURCEGROUPNAME hdisecure hdirule4 -p "*" -o "*" -u "443" -f "138.91.141.162" -e "VirtualNetwork" -c "Allow" -y 303 -r "Inbound"
+        azure network nsg rule create hdisecure hdirule1 -p "*" -o "*" -u "443" -f "168.61.49.99" -e "*" -c "Allow" -y 300 -r "Inbound"
+        azure network nsg rule create hdisecure hdirule2 -p "*" -o "*" -u "443" -f "23.99.5.239" -e "*" -c "Allow" -y 301 -r "Inbound"
+        azure network nsg rule create hdisecure hdirule3 -p "*" -o "*" -u "443" -f "168.61.48.131" -e "*" -c "Allow" -y 302 -r "Inbound"
+        azure network nsg rule create hdisecure hdirule4 -p "*" -o "*" -u "443" -f "138.91.141.162" -e "*" -c "Allow" -y 303 -r "Inbound"
 
-3. 创建规则后，使用以下命令将新网络安全组应用到子网。将 __RESOURCEGROUPNAME__ 替换为包含 Azure 虚拟网络的资源组的名称。将 __VNETNAME__ 和 __SUBNETNAME__ 分别替换为 Azure 虚拟网络的名称以及在安装 HDInsight 时要使用的子网。
+3. 创建规则后，使用以下命令将新网络安全组应用到子网。将 __VNETNAME__ 和 __SUBNETNAME__ 分别替换为 Azure 虚拟网络的名称以及在安装 HDInsight 时要使用的子网。
 
-        azure network vnet subnet set RESOURCEGROUPNAME VNETNAME SUBNETNAME -w "/subscriptions/GUID/resourceGroups/RESOURCEGROUPNAME/providers/Microsoft.Network/networkSecurityGroups/hdisecure"
-    
+        azure network nsg subnet add hdisecure VNETNAME SUBNETNAME
+
     此命令完成之后，你可以将 HDInsight 成功安装到这些步骤中使用的子网上的受保护虚拟网络。
 
 > [AZURE.IMPORTANT] 使用上述步骤只会实现对 Azure 云中 HDInsight 运行状况和管理服务的访问。这一操作让你能够成功地将 HDInsight 群集安装到子网，但默认阻止从虚拟网络外部对 HDInsight 群集进行访问。如果想要启用从虚拟网络外部进行访问，将需要添加其他网络安全组规则。
->
-> 例如，若要允许来自 Internet 的 SSH 访问，需要添加类似于下面的规则：
->
-> * Azure PowerShell - ```Add-AzureRmNetworkSecurityRuleConfig -Name "SSSH" -Description "SSH" -Protocol "*" -SourcePortRange "*" -DestinationPortRange "22" -SourceAddressPrefix "*" -DestinationAddressPrefix "VirtualNetwork" -Access Allow -Priority 304 -Direction Inbound```
-> * Azure CLI - ```azure network nsg rule create RESOURCEGROUPNAME hdisecure hdirule4 -p "*" -o "*" -u "22" -f "*" -e "VirtualNetwork" -c "Allow" -y 304 -r "Inbound"```
+><p> 例如，若要允许来自 Internet 的 RDP 访问，需要添加类似于下面的规则：
+><p> * Azure PowerShell - ```Set-AzureNetworkSecurityRule -Name "RDP" -Protocol "*" -SourcePortRange "*" -DestinationPortRange "3389" -SourceAddressPrefix "*" -DestinationAddressPrefix "*" -Action Allow -Priority 304 -Type Inbound```
+><p> * Azure CLI - ```azure network nsg rule create hdisecure RDP -p "*" -o "*" -u "3389" -f "*" -e "*" -c "Allow" -y 304 -r "Inbound"```
 
 有关网络安全组的详细信息，请参阅 [Network Security Groups overview（网络安全组概述）](/documentation/articles/virtual-networks-nsg)。有关在 Azure 虚拟网络中控制路由的详细信息，请参阅 [User Defined Routes and IP forwarding（用户定义的路由和 IP 转发）。](/documentation/articles/virtual-networks-udr-overview)
 

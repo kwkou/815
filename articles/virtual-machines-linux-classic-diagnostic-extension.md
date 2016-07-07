@@ -97,7 +97,7 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Azure 上运行的 
 	}
 
 
-步骤 2。运行 **azure vm extension set vm\_name LinuxDiagnostic Microsoft.OSTCExtensions '2.*' --private-config-path PrivateConfig.json --public-config-path PublicConfig.json**。
+步骤 2。运行 **azure vm extension set vm\_name LinuxDiagnostic Microsoft.OSTCExtensions '2.\*' --private-config-path PrivateConfig.json --public-config-path PublicConfig.json**。
 
 
 ###   方案 4.禁用 Linux 监视器扩展
@@ -109,7 +109,7 @@ Linux 诊断扩展可利用以下功能帮助用户监视在 Azure 上运行的 
 	}
 
 
-步骤 2。运行 **azure vm extension set vm\_name LinuxDiagnostic Microsoft.OSTCExtensions 2.* --private-config-path PrivateConfig.json --public-config-path PublicConfig.json**。
+步骤 2。运行 **azure vm extension set vm\_name LinuxDiagnostic Microsoft.OSTCExtensions 2.\* --private-config-path PrivateConfig.json --public-config-path PublicConfig.json**。
 
 
 ## 查看数据

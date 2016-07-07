@@ -1,6 +1,6 @@
 <properties
    pageTitle="配置 Azure AD 用户帐户 | Azure"
-   description="本文介绍如何为 Azure 自动化中的 Runbook 配置 Azure AD 用户帐户凭据，以便向 ARM进行身份验证。"
+   description="本文介绍如何为 Azure 自动化中的 Runbook 配置 Azure AD 用户帐户凭据，以便向 ARM 进行身份验证。"
    services="automation"
    documentationCenter=""
    authors="MGoedtel"

@@ -154,7 +154,7 @@ Azure 经典管理门户不支持使用自定义配置选项设置 HDInsight 群
 
 **查找两个 HBase 群集的域后缀**
 
-1. 通过 RDP 访问 **Contoso-HBase-EU**。有关说明，请参阅[使用 Azure 门户预览在 HDInsight 中管理 Hadoop 群集][hdinsight-manage-portal]。它实际上是群集的 headnode0。
+1. 通过 RDP 访问 **Contoso-HBase-EU**。有关说明，请参阅[使用 Azure 经典管理门户在 HDInsight 中管理 Hadoop 群集][hdinsight-manage-portal]。它实际上是群集的 headnode0。
 2. 打开 Windows PowerShell 控制台或命令提示符。
 3. 运行 **ipconfig**，并记下**特定于连接的 DNS 后缀**。
 4. 请不要关闭 RDP 会话。稍后你要使用它来测试域名解析。
