@@ -1,14 +1,14 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Azure Content Delivery Network FAQs: Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN FAQs, CDN acceleration, CDN service, configuring CNAME, CNAME, CNAME record, cache refresh, cache rules, CDN edge node, CDN technical documentation, CDN help files" description="Find answers to service configuration questions related to Azure Content Delivery Network" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
-<tags ms.service="cdn"
-    ms.date=""
-    wacn.date="2/23/2016"
+<tags ms.service="cdn_en"
+    ms.date="7/7/2016"
+    wacn.date="7/7/2016"
+    wacn.lang="en"
     />
-
+> [AZURE.LANGUAGE]
+- [中文](/support/trust-center/)
+- [English](/support/trust-center-en/) 
 #FAQs: Service configuration
 
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/cdn-faq-service-config)
-- [English Version](/documentation/articles/cdn-enus-faq-service-config)
 
 + [Configure CNAME](#step1)
 + [How do I confirm that my CNAME record has taken effect?](#step2)

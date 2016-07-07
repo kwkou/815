@@ -1,13 +1,14 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN常见问题, 回源流量, ICP备案号, CDN默认缓存规则, 回源域名, 订阅, CNAME, 下载加速, Web加速, 网站加速, 流媒体直播加速, VOD加速, 视频点播加速, CDN价格, CDN收费, 技术文档, 帮助文档" description="Find answers to common service consulting or inquiries related to Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
-    ms.date=""
-    wacn.date="2/23/2016"
+    ms.date="7/7/2016"
+    wacn.date="7/7/2016"
+    wacn.lang="cn"
     />
+> [AZURE.LANGUAGE]
+- [中文](/support/trust-center/)
+- [English](/support/trust-center-en/) 
 #常见问题 - 咨询
 
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/cdn-faq-service-inquiry)
-- [English Version](/documentation/articles/cdn-enus-faq-service-inquiry)
 
 + [CDN的概念和作用](#step2)
 + [什么是CNAME](#step3)

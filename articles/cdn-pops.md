@@ -1,14 +1,15 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Azure CDN POP - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN, 节点分布, POP, Azure CDN节点分布, CDN技术文档, CDN帮助文档" description="Learn Azure CDN Point of Presence in China" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
-    ms.date=""
-    wacn.date="2/23/2016"
+    ms.date="7/7/2016"
+    wacn.date="7/7/2016"
+    wacn.lang="cn"
     />
-
+> [AZURE.LANGUAGE]
+- [中文](/support/trust-center/)
+- [English](/support/trust-center-en/) 
 # Azure CDN 节点分布
 
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/cdn-pops)
-- [English Version](/documentation/articles/cdn-enus-pops)
+
 
 下图给出了目前Azure CDN POP （point of presence）分布情况。
 

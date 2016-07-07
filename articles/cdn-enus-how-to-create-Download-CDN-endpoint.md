@@ -1,14 +1,13 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Create Download Acceleration-Type CDNs – Azure Feature Guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN acceleration, CDN service, cloud acceleration, download acceleration, download, cache rules, ICP, ICP record number, ICP number, technical documentation, help files, bandwidth, large file download, software upgrade installation package, game download acceleration, app download acceleration, mobile app update, firmware upgrade" description="Learn how to create Download Acceleration-type CDNs on Azure Management Portal, and learn about default caching rules for Download CDNs." metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
-<tags ms.service="cdn"
-    ms.date=""
-    wacn.date="2/23/2016"
+<tags ms.service="cdn_en"
+    ms.date="7/7/2016"
+    wacn.date="7/7/2016"
+    wacn.lang="en"
     />
-
+> [AZURE.LANGUAGE]
+- [中文](/support/trust-center/)
+- [English](/support/trust-center-en/) 
 #Create download acceleration CDN nodes
-
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/cdn-how-to-create-Download-CDN-endpoint)
-- [English Version](/documentation/articles/cdn-enus-how-to-create-Download-CDN-endpoint)
 
 Download Acceleration is primarily intended for use with downloads of large files of 20MB or more, for example with download delivery for software installation packages, game clients, apps, or videos. The Azure CDN caches the files to the CDN edge nodes, relieving bandwidth pressure on source station downloads and improving the user’s download experience.
 
