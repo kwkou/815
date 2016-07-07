@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date=""
-	wacn.date="07/05/2016"/>
+	wacn.date="07/07/2016"/>
 
 # Azure IaaS 用户手册 - 第二部分
 
@@ -855,7 +855,74 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 ![vm_powershell10](./media/azure-Iaas-user-manual-part2/vm_powershell10.png)
 
 ####<a name="section_5_5_4"></a> 3.5.4 使用 PowerShell 创建 Linux VM
-请参考[这篇博客](http://www.cnblogs.com/threestone/p/4360198.html)。
+如果是第一次运行 Azure PowerShell，需要在本地创建证书文件，以便本地计算机和 Azure 建立可靠的安全连接。
+
+1.以管理员身份，运行 Azure PowerShell，下载 publishsettings 文件  
+
+	Get-AzurePublishSettingsFile -Environment AzureChinaCloud
+	
+
+2.将 publishsettings 下载到本地磁盘，然后执行上传 publishsettings 命令  
+
+	Import-AzurePublishSettingsFile <PathToFile>
+	
+
+上面步骤 1、2 执行成功后，下次运行 Azure PowerShell 将不必再次运行上面的命令。
+
+
+3.创建新的存储账号，选择当前的订阅，并设置存储账号  
+
+	Set-AzureSubscription -SubscriptionName '[SubscriptionName]' -CurrentStorageAccount '[StorageName]'
+	
+
+4.在上海数据中心，获得固定的 Public IPV4 地址  
+
+	$NginxReservedIP = New-AzureReservedIP -ReservedIPName 'NginxPublicIP' -Label 'NginxPublicIP' -Location 'China East'
+	
+
+查看这个 IP 地址  
+
+	Get-AzureReservedIP -ReservedIPName 'NginxPublicIP'
+	
+
+5.创建虚拟网络 Virtual Network，命名为 MyVNet (位置选择 China East)。注意 Virtual Network 不能属于地缘组里。
+
+-　　MyVNet IP Rang为10.0.0.0-10.0.0.255，
+
+-　　同时创建2个Subnet：Nginx-subnet和Nodejs-subnet
+
+![create vnet](./media/azure-Iaas-user-manual-part2/create vnet.png)
+
+6.通过模糊查询，查询到 CentOS 7.0 镜像  
+
+	$imageList = Get-AzureVMImage `
+	| where {$_.ImageName -like "*CentOS-70*"}
+	$image=$imageList[0]
+	
+7.创建 3 台虚拟机：
+-　　DNS为MyNginx，并且绑定 Public IP (NginxPublicIP)
+-　　机器名分别为 Nginx01，Nginx02 和 Nginx03
+-　　三台机器加入虚拟机网络 MyVNet。子网为 Nginx-subnet (10.0.0.0-10.0.0.127)，
+-　　设置内网 IP 分别为 10.0.0.4，10.0.0.5 和 10.0.0.6
+-　　虚拟机大小为 Large
+-　　管理员用户名为：adminuser。 密码为：MyVM@6789
+-　　高可用性集名称为：NginxAvbSet
+-　　并设置该虚拟机的时区为 UTC+8 时区 (北京时间)
+
+创建第 1 台虚拟机 (Nginx01，内网 IP 是 10.0.0.4) 的命令如下：  
+
+	New-AzureVMConfig -Name 'Nginx01' -InstanceSize 'Large' -ImageName $image.ImageName  -AvailabilitySetName 'NginxAvbSet' ` | Add-AzureProvisioningConfig -Linux -LinuxUser 'adminuser' -Password 'MyVM@6789' -TimeZone 'China Standard Time' | Set-AzureSubnet -SubnetNames 'Nginx-subnet' | Set-AzureStaticVNetIP -IPAddress '10.0.0.4' | New-AzureVM -ServiceName 'MyNginx' -VNetName 'MyVNet' –ReservedIPName 'NginxPublicIP' -Location 'China East'
+	
+
+创建第 2 台虚拟机 (Nginx02，内网 IP 是 10.0.0.5) 的命令如下：
+
+	New-AzureVMConfig -Name 'Nginx02' -InstanceSize 'Large' -ImageName $image.ImageName  -AvailabilitySetName 'NginxAvbSet' ` | Add-AzureProvisioningConfig -Linux -LinuxUser 'adminuser' -Password 'MyVM@6789' -TimeZone 'China Standard Time' | Set-AzureSubnet -SubnetNames 'Nginx-subnet' | Set-AzureStaticVNetIP -IPAddress '10.0.0.5' | New-AzureVM -ServiceName 'MyNginx' -VNetName 'MyVNet' 
+	
+
+创建第 3 台 虚拟机 (Nginx03，内网 IP 是10.0.0.6) 的命令如下：  
+
+	New-AzureVMConfig -Name 'Nginx03' -InstanceSize 'Large' -ImageName $image.ImageName  -AvailabilitySetName 'NginxAvbSet' ` | Add-AzureProvisioningConfig -Linux -LinuxUser 'adminuser' -Password 'MyVM@6789' -TimeZone 'China Standard Time' | Set-AzureSubnet -SubnetNames 'Nginx-subnet' | Set-AzureStaticVNetIP -IPAddress '10.0.0.6' | New-AzureVM -ServiceName 'MyNginx' -VNetName 'MyVNet' 
+	
 
 ###<a name="section_5_6"></a> 3.6 管理 Azure 虚拟机
 ####<a name="section_5_6_1"></a> 3.6.1 远程桌面连接 Windows 虚拟机
@@ -995,7 +1062,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 当第一台 VM 安装完毕后，可以将附加磁盘分离。然后挂载到第二台 VM 上继续安装。这样可以加快安装部署的速度。
 
-<mark>注意：附加磁盘不允许通过挂载多台 Azure 虚拟机上</mark>。如果有共享磁盘的需求，请使用 SMB 共享文件夹，具体请参考[这篇博客](http://www.cnblogs.com/threestone/p/4441388.html)。
+<mark>注意：附加磁盘不允许通过挂载多台 Azure 虚拟机上</mark>。如果有共享磁盘的需求，请使用 SMB 共享文件夹。
 
 ####<a name="section_5_6_7"></a> 3.6.7 虚拟机关机
 <mark>注意：通过远程桌面连接或者是 SSH，关闭 Azure 虚拟机，是会继续收取 Azure 计算费用的。</mark>
