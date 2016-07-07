@@ -18,10 +18,10 @@
 
  
 ## <a id="prerequisite"></a>前提条件
-Controller机器上必须安装 Azure PowerShell，并且要在PowerShell里登录一次Azure, 请参见： [如何安装和配置 Azure PowserShell](/documentation/articles/powershell-install-configure)
+Controller 机器上必须安装 Azure PowerShell，并且要在 PowerShell 里登录一次 Azure, 请参见： [如何安装和配置 Azure PowserShell](/documentation/articles/powershell-install-configure)
 
 ## <a id="operation"></a>如何实现定时关闭虚拟机
-配好Azure PowerShell以后，就可以用下面这个脚本创建定时关机任务。把下面的代码另存为一个 PowerShell 脚本保存到本地磁盘，比如叫`Stop-AzureVMsOnSchedule.ps1`
+配好 Azure PowerShell 以后，就可以用下面这个脚本创建定时关机任务。把下面的代码另存为一个 PowerShell 脚本保存到本地磁盘，比如叫`Stop-AzureVMsOnSchedule.ps1`
 
 <pre><code>
 <#
@@ -78,9 +78,9 @@ Register-ScheduledTask -TaskName $TaskName -InputObject $stopScheduledTask
 
 </code></pre>
 
-还是刚才那个文件，右键用PowerShell运行，按PowerShell提示输入四个必要的参数：
+还是刚才那个文件，右键用 PowerShell 运行，按 PowerShell 提示输入四个必要的参数：
 
-* VMName, 要关闭的Virtual Machine名称
+* VMName, 要关闭的 Virtual Machine 名称
 * ServiceName, 关联的服务名称
 * TaskName, 任务名称
 * At，具体操作时间
@@ -92,11 +92,11 @@ Register-ScheduledTask -TaskName $TaskName -InputObject $stopScheduledTask
 
 ![](./media/aog-virtual-machine-how-to-turn-off-vm-automatically/powershell-add-task-to-system.png)
  
-到指定时间powershell开始执行关闭虚拟机的操作。
+到指定时间 powershell 开始执行关闭虚拟机的操作。
 
 ![](./media/aog-virtual-machine-how-to-turn-off-vm-automatically/powershell-turn-down-vm.png)
  
-到Portal里验证一下，已经成功关机了.
+到 Portal 里验证一下，已经成功关机了.
  
 
 ![](./media/aog-virtual-machine-how-to-turn-off-vm-automatically/powershell-turn-down-result.png)
