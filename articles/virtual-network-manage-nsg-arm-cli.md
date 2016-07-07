@@ -335,4 +335,8 @@
 		+ Deleting network security group "NSG-FrontEnd"
 		info:    network nsg delete command OK
 
+## 后续步骤
+
+- 为 NSG [启用日志记录](/documentation/articles/virtual-network-nsg-manage-log)。
+
 <!---HONumber=Mooncake_0516_2016-->

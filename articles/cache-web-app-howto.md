@@ -729,7 +729,16 @@
 
 完成示例性的教程应用程序以后，即可删除所用的 Azure 资源，以便节省成本和资源。如果你的所有资源都包含在同一资源组中，则可通过删除资源组这一个操作来删除所有资源。
 
-	Remove-AzureRmResourceGroup -ResourceGroupName <your resource group>
+1. 登录到 [Azure 门户](https://portal.azure.cn)，然后单击“资源组”。
+2. 将资源组的名称键入“筛选项目...”文本框中。
+3. 单击资源组右侧的“...”。
+4. 单击“删除”。
+
+    ![删除][cache-delete-resource-group]
+
+5. 键入资源组的名称，然后单击“删除”。
+
+    ![确认删除][cache-delete-confirm]
 
 几分钟后，资源组及其包含的所有资源就会被删除。
 

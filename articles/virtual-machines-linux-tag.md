@@ -40,7 +40,7 @@
         azure vm set - g MyResourceGroup -n MyTestVM -T
 
 
-既然我们已通过 Azure CLI 和门户预览将标记应用到资源中，那就让我们看一看使用情况详细信息，以在计费门户预览中的查看标记。
+既然我们已通过 Azure CLI 和门户预览将标记应用到资源中，那就让我们看一看使用情况详细信息，以在计费门户中的查看标记。
 
 [AZURE.INCLUDE [virtual-machines-common-tag-usage](../includes/virtual-machines-common-tag-usage.md)]
 

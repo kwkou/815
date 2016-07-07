@@ -230,6 +230,7 @@
       Name is required and value is optional.
       For example, -t tag1=value1;tag2
 	 -s, --subscription <subscription>          the subscription identifier
+
 <BR>
 
 	network vnet set [options] <resource-group> <name>

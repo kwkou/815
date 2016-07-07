@@ -44,7 +44,7 @@ Add-AzureRmVhd -ResourceGroupName MyResourceGroup -Destination "https://mystorag
 
 > [AZURE.TIP] 本文重点说明 Windows Server VM 的部署，不过你也可以使用相同的方式来部署 Windows 客户端 VM。在以下示例中，请将 `Server` 相应替换为 `Client`。
 
-##<a name="deploy-windows-server-vm-via-powershell-detailed-walkthrough"></a> 通过 PowerShell 快速入门部署 VM
+## 通过 PowerShell 快速入门部署 VM
 通过 PowerShell 部署 Windows Server VM 时，可以使用 `-LicenseType` 的附加参数。将 VHD 上载到 Azure 之后，可以使用 `New-AzureRmVM` 创建新 VM 并指定许可类型，如下所示：
 
 	New-AzureRmVM -ResourceGroupName MyResourceGroup -Location "China North" -VM $vm
@@ -78,7 +78,7 @@ Add-AzureRmVhd -ResourceGroupName MyResourceGroup -Destination "https://mystorag
 	Location                 : chinanorth
 	LicenseType              : 
 
-## PowerShell 详细演练
+##<a name="deploy-windows-server-vm-via-powershell-detailed-walkthrough"></a> PowerShell 详细演练
 
 以下面详细 PowerShell 步骤演示了 VM 的完整部署。可以在 [Create a Windows VM using Resource Manager and PowerShell（使用 Resource Manager 和 PowerShell 创建 Windows VM）](/documentation/articles/virtual-machines-windows-ps-create)中了解更多上下文，包括实际的 cmdlet 和所创建的不同组件。你将逐步执行创建资源组、存储帐户和虚拟网络，然后定义 VM 并完成创建 VM 的整个过程。
  

@@ -24,10 +24,8 @@ Azure Blob 存储是一种稳健、通用的存储解决方案，它与 HDInsigh
 通过将数据存储在 Blob 存储中，你可以安全删除用于计算的 HDInsight 群集而不会丢失用户数据。
 
 > [AZURE.NOTE]	HDInsight 版本 3.0 群集不支持 *asv://* 语法。这意味着提交到 HDInsight 版本 3.0 群集的任何显式使用 *asv://* 语法的作业都将会失败。应改用 *wasb://* 语法。而且，提交到任何 HDInsight 版本 3.0 群集的作业，如果是使用现有元存储创建的，而该元存储包含对使用 asv:// 语法的资源的显式引用，则这些作业也会失败。这些元存储将需要使用 wasb:// 语法重新创建以确定资源地址。
-
-> HDInsight 目前只支持块 Blob。
-
-> 大多数 HDFS 命令（例如 <b>ls</b>、<b>copyFromLocal</b> 和 <b>mkdir</b>）仍按预期工作。只有特定于本机 HDFS 实现（称作 DFS）的命令在 Azure Blob 存储上会显示不同的行为，例如 <b>fschk</b> 和 <b>dfsadmin</b>。
+><p> HDInsight 目前只支持块 Blob。
+><p> 大多数 HDFS 命令（例如 <b>ls</b>、<b>copyFromLocal</b> 和 <b>mkdir</b>）仍按预期工作。只有特定于本机 HDFS 实现（称作 DFS）的命令在 Azure Blob 存储上会显示不同的行为，例如 <b>fschk</b> 和 <b>dfsadmin</b>。
 
 有关创建 HDInsight 群集的信息，请参阅 [HDInsight 入门][hdinsight-get-started]或[创建 HDInsight 群集][hdinsight-creation]。
 
@@ -55,7 +53,7 @@ Hadoop 支持默认文件系统的概念。默认文件系统意指默认方案�
 - **没有连接到群集的存储帐户中的公共容器或公共 Blob：**你对这些容器中的 Blob 具有只读权限。
 
 	> [AZURE.NOTE]
-    > 利用公共容器，你可以获得该容器中可用的所有 Blob 的列表以及容器元数据。利用公共 Blob，你仅在知道正确 URL 时才可访问 Blob。有关详细信息，请参阅<a href="/documentation/articles/storage-manage-access-to-resources">限制对容器和 Blob 的访问</a>。
+	> 利用公共容器，你可以获得该容器中可用的所有 Blob 的列表以及容器元数据。利用公共 Blob，你仅在知道正确 URL 时才可访问 Blob。有关详细信息，请参阅<a href="/documentation/articles/storage-manage-access-to-resources">限制对容器和 Blob 的访问</a>。
 
 - **没有连接到群集的存储帐户中的私有容器：**你不能访问这些容器中的 Blob，除非在提交 WebHCat 作业时定义存储帐户。本文后面对此做了解释。
 
