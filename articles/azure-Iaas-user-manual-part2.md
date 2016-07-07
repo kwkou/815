@@ -891,7 +891,7 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 
 -　　同时创建2个Subnet：Nginx-subnet和Nodejs-subnet
 
-![create vnet](./media/azure-Iaas-user-manual-part2/create vnet.png)
+![create vnet](./media/azure-Iaas-user-manual-part2/create-vnet.png)
 
 6.通过模糊查询，查询到 CentOS 7.0 镜像  
 
