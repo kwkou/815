@@ -36,18 +36,18 @@ Microsoft 在幕后执行许多性能基准测试，以判断需要多少硬件�
 
 在 [Azure 管理门户][]中，可以单击 SQL 数据仓库页面顶部的“缩放”图标，然后使用滑块增加或减少应用到数据仓库的 DWU 数量，然后单击“保存”。如果你想要以编程方式更改缩放级别，以下 T-SQL 代码演示了如何针对 SQL 数据仓库调整 DWU 分配：
 
-```sql
-ALTER DATABASE MySQLDW
-MODIFY (SERVICE_OBJECTIVE = 'DW1000')
-;
-```
+
+    ALTER DATABASE MySQLDW
+    MODIFY (SERVICE_OBJECTIVE = 'DW1000')
+    ;
+
 请注意，应该针对逻辑服务器而不是 SQL 数据仓库实例本身运行此 T-SQL。
 
 也可以通过导入 AzureRM.Sql 模块并使用以下代码，在 Azure Powershell 中实现相同的结果：
 
-```
-Set-AzureRmSqlDatabase -DatabaseName "MySQLDW" -ServerName "MyServer.database.chinacloudapi.cn" -RequestedServiceObjectiveName "DW1000"
-```
+
+    Set-AzureRmSqlDatabase -DatabaseName "MySQLDW" -ServerName "MyServer.database.chinacloudapi.cn" -RequestedServiceObjectiveName "DW1000"
+
 
 ## 暂停计算资源
 SQL 数据仓库的独到之处就是能够根据需要暂停和恢复计算。如果团队将有一段时间不使用数据仓库实例（例如在晚上、周末、特定节假日，或出于任何其他原因），可以在该时段暂停数据仓库实例，并在恢复使用时从以前的中断处继续。
@@ -60,21 +60,21 @@ SQL 数据仓库的独到之处就是能够根据需要暂停和恢复计算。�
 
 若要使用 Azure Powershell 暂停和继续服务，首先需要按如下所示导入 AzureRM.Sql 模块：
 
-```
-Import-Module AzureRM.Sql
-```
+
+    Import-Module AzureRM.Sql
+
 
 以下代码演示如何使用 Azure PowerShell 执行暂停：
 
-```
-Suspend-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
-```
+
+    Suspend-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
+
 
 使用 Azure PowerShell 还可轻松恢复服务：
 
-```
-Resume-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
-```
+
+    Resume-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
+
 
 有关如何使用 Azure PowerShell 的详细信息，请参阅 [在 SQL 数据仓库中使用 PowerShell cmdlet 和 REST API][]。
 
