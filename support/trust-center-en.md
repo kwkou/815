@@ -21,7 +21,7 @@
 * Compliance: Our services are in line with global /domestic standards
 * Transparency: You know how your data is stored and accessed, and how we help secure it
  
- <tags ms.service="trust-center" ms.date="12/2015" wacn.date="12/2015" wacn.lang="en"/>
+ <tags ms.service="trust-center-en" ms.date="12/2015" wacn.date="12/2015" wacn.lang="en"/>
  
 Microsoft Azure Operated by 21Vianet is a separate instance of Microsoft's Azure platform located in mainland China and independently operated and sold by Shanghai Blue Cloud Technology Co., Ltd. ("21Vianet"), a wholly owned subsidiary of [Beijing 21Vianet Broadband Data Center Co.](http://www.en.21vianet.com/), Ltd. It is based on the same Azure technology that powers Microsoft's global cloud service with comparable service levels to customers.
 

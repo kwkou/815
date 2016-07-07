@@ -23,7 +23,7 @@
 * Monitoring, logging and reporting
 * Penetration testing
  
- <tags ms.service="trust-center" ms.date="12/2015" wacn.date="12/2015" wacn.lang="en"/>
+ <tags ms.service="trust-center-en" ms.date="12/2015" wacn.date="12/2015" wacn.lang="en"/>
  
 Microsoft Azure operated by 21Vianet runs in data centers located exclusively in mainland China. They are managed, monitored, and administered by 21Vianet operations staff that have years of experience in delivering secure online services with 24 x 7 continuity.
 
