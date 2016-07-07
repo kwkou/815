@@ -1,7 +1,6 @@
-
 > [AZURE.LANGUAGE]
-- [中文](/support/trust-center/)
-- [English](/support/trust-center-en/) 
+- [中文](/documentation/articles/cdn-overview/)
+- [English](/documentation/articles/cdn-overview/) 
 # Use Azure Content Delivery Network
 
 Azure Content Delivery Network caches static content in storage blobs, cloud services, and websites on the Azure platform by using large numbers of physical nodes that are distributed across mainland China to provide developers with a solution for delivering high-bandwidth content. This network also currently supports the use of origins that are not deployed on the Azure platform.

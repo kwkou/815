@@ -5,8 +5,8 @@
     wacn.lang="cn"
     />
 > [AZURE.LANGUAGE]
-- [中文](/support/trust-center/)
-- [English](/support/trust-center-en/) 
+- [中文](/documentation/articles/cdn-https-how-to/)
+- [English](/documentation/articles/cdn-enus-https-how-to/) 
 # Azure CDN HTTPS 加速服务
 
 

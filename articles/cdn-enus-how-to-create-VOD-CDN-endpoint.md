@@ -5,8 +5,8 @@
     wacn.lang="en"
     />
 > [AZURE.LANGUAGE]
-- [中文](/support/trust-center/)
-- [English](/support/trust-center-en/) 
+- [中文](/documentation/articles/cdn-how-to-create-VOD-CDN-endpoint/)
+- [English](/documentation/articles/cdn-enus-how-to-create-VOD-CDN-endpoint/) 
 #Create video on demand (VOD) acceleration CDN nodes
 
 The VOD (Video On Demand) Acceleration service is mainly intended to provide acceleration services for online video on demand. With the rise of online video and media services, more and more people are choosing to use Internet platforms to watch videos and listen to audio content. Given the limitations on the Internet environment in China, this places huge demands on the final delivery of audio and video content. The Azure CDN delivers and caches streaming media content such as audio and video on to CDN edge nodes and directs user requests to the optimal node, reducing the load on source station servers and saving on bandwidth resources, thereby providing users with a high-speed, smooth, high-quality online video experience.

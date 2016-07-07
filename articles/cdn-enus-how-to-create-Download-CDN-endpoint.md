@@ -5,8 +5,8 @@
     wacn.lang="en"
     />
 > [AZURE.LANGUAGE]
-- [中文](/support/trust-center/)
-- [English](/support/trust-center-en/) 
+- [中文](/documentation/articles/cdn-how-to-create-Download-CDN-endpoint/)
+- [English](/documentation/articles/cdn-enus-how-to-create-Download-CDN-endpoint/) 
 #Create download acceleration CDN nodes
 
 Download Acceleration is primarily intended for use with downloads of large files of 20MB or more, for example with download delivery for software installation packages, game clients, apps, or videos. The Azure CDN caches the files to the CDN edge nodes, relieving bandwidth pressure on source station downloads and improving the user’s download experience.

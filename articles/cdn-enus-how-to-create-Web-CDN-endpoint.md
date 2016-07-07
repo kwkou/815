@@ -5,8 +5,8 @@
     wacn.lang="en"
     />
 > [AZURE.LANGUAGE]
-- [中文](/support/trust-center/)
-- [English](/support/trust-center-en/) 
+- [中文](/documentation/articles/cdn-how-to-create-Web-CDN-endpoint/)
+- [English](/documentation/articles/cdn-enus-how-to-create-Web-CDN-endpoint/) 
 #Creating Web Acceleration CDN Nodes
 
 The Web Acceleration service is the most basic and most widely used CDN acceleration service, and is mainly intended to accelerate small files with low update frequencies, such as HTML files, CSS, images, JS, and Flash animation. Caching these small files on Azure CDN edge nodes reduces access pressure on source stations and meets users’ needs in terms of nearby website access, improving the website access experience and helping to boost user traffic on the website.
