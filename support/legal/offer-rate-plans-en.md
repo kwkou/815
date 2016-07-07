@@ -28,7 +28,7 @@ Offer Name									|Offer Number
 [Azure Monetary Credit]						|-
 [Azure 1RMB Trial]							|MS-MC-AZR-0044P
 [Windows Server Essentials Customers Offer]	|MS-MC-AZR-90P
-[MSDN Subscriptions Azure Benefit Offer]	|<p>Visual Studio Professional (subscriber benefit)： MS-MC-AZR-59P</p><p>Visual Studio Test Professional (subscriber benefit)： MS-MC-AZR-60P</p><p><MSDN Platforms (subscriber benefit)： MS-MC-AZR-62P</p><p>Visual Studio Enterprise (subscriber benefit)： MS-MC-AZR-63P</p>
+[MSDN Subscriptions Azure Benefit Offer]	|<p>Visual Studio Professional (subscriber benefit)： MS-MC-AZR-59P</p><p>Visual Studio Test Professional (subscriber benefit)： MS-MC-AZR-60P</p><p>MSDN Platforms (subscriber benefit)： MS-MC-AZR-62P</p><p>Visual Studio Enterprise (subscriber benefit)： MS-MC-AZR-63P</p>
 
 Retired Offers
 
