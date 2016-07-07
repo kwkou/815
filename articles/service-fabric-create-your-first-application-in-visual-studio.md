@@ -10,7 +10,7 @@
 <tags
    ms.service="service-fabric"
    ms.date="06/09/2016"
-   wacn.date="07/04/2016"/>
+   wacn.date="07/07/2016"/>
 
 # 在 Visual Studio 中创建你的第一个 Azure Service Fabric 应用程序
 
@@ -112,7 +112,7 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
 
 ## 后续步骤
 
-- 了解如何[在 Azure 中创建群集](/documentation/articles/service-fabric-cluster-creation-via-portal)或者[在 Windows 上创建独立群集](/documentation/articles/service-fabric-cluster-creation-for-windows-server)。
+- 了解如何[在 Windows 上创建独立群集](/documentation/articles/service-fabric-cluster-creation-for-windows-server)。
 - 尝试使用 [Reliable Services](/documentation/articles/service-fabric-reliable-services-quick-start) 或 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-get-started) 编程模型创建服务。
 - 了解如何使用 [Web 服务前端](/documentation/articles/service-fabric-add-a-web-frontend)向 Internet 服务公开服务。
 

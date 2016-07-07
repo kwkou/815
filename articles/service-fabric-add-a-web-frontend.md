@@ -10,7 +10,7 @@
 <tags
    ms.service="service-fabric"
    ms.date="06/10/2016"
-   wacn.date="07/04/2016"/>
+   wacn.date="07/07/2016"/>
 
 
 # 构建应用程序的 Web 服务前端
@@ -219,7 +219,7 @@ protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListe
 
 ## 后续步骤
 
-- [在 Azure 中创建群集以便将应用程序部署到云中](/documentation/articles/service-fabric-cluster-creation-via-portal)
+
 - [详细了解如何与服务通信](/documentation/articles/service-fabric-connect-and-communicate-with-services)
 - [详细了解如何为有状态服务分区](/documentation/articles/service-fabric-concepts-partitioning)
 

@@ -10,7 +10,7 @@
 <tags
    ms.service="service-fabric"
    ms.date="03/27/2016"
-   wacn.date="07/04/2016"/>
+   wacn.date="07/07/2016"/>
 
 # Service Fabric 应用程序和后续步骤
 已创建你的 Azure Service Fabric 应用程序。本文说明项目的构成以及有可能要执行的一些后续步骤。
@@ -47,7 +47,7 @@
 
 ## 后续步骤
 ### 创建 Azure 群集
-Service Fabric SDK 提供一个用于开发和测试的本地群集。若要在 Azure 中创建群集，请参阅 [Setting up a Service Fabric cluster from the Azure portal（从 Azure 门户预览设置 Service Fabric 群集）][create-cluster-in-portal]。
+Service Fabric SDK 提供一个用于开发和测试的本地群集。若要在 Azure 中创建群集，请参阅 [使用 Azure Resource Manager 模板设置 Service Fabric 群集][create-cluster-in-portal]。
 <!--
 ### 尝试使用合作群集免费部署到 Azure
 
@@ -69,7 +69,7 @@ Service Fabric 支持单独对应用程序中的独立服务进行版本控制�
 
 <!-- Links -->
 [add-web-frontend]: /documentation/articles/service-fabric-add-a-web-frontend
-[create-cluster-in-portal]: /documentation/articles/service-fabric-cluster-creation-via-portal
+[create-cluster-in-portal]: /documentation/articles/service-fabric-cluster-creation-via-arm
 [publish-app-to-azure]: /documentation/articles/service-fabric-publish-app-remote-cluster
 [visualize-with-sfx]: /documentation/articles/service-fabric-visualizing-your-cluster
 [ci-with-vso]: /documentation/articles/service-fabric-set-up-continuous-integration
