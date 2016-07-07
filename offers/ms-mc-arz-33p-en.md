@@ -82,6 +82,6 @@ For any subscriptions of this offer that are not incurring charges and are inact
 
 You can also avoid having your compute resources removed by doing either of the following every 90 days:
 
- 1.Log into the management [portal](https://manage.windowsazure.cn)
+ 1.Log into the management [portal](https://manage.windowsazure.cn/)
  
  2.Access your hosted service(s) via our Azure APIs

@@ -117,13 +117,13 @@ An object is an entry in the directory service, represented by its unique distin
 
 50 GB outbound data transfer per month
 
-If you exceed the data transfer quota in any given month, your account may be suspended without prior notice, and the credit amount will be reset to ‘0.’ You can visit [here](https://account.windowsazure.cn/Subscriptions) to verify real-time data transfer usage status.
+If you exceed the data transfer quota in any given month, your account may be suspended without prior notice, and the credit amount will be reset to ‘0.’ You can visit [here](https://account.windowsazure.cn/Subscriptions/) to verify real-time data transfer usage status.
 
-If you will require a higher Data Transfer quota, you will need to convert to a [Standard Pay-in-Advance](https://www.azure.cn/offers/ms-mc-arz-33p) Offer.
+If you will require a higher Data Transfer quota, you will need to convert to a [Standard Pay-in-Advance](https://www.azure.cn/offers/ms-mc-arz-33p/) Offer.
 
 ##Service Level Agreements
 
-We do not provide Service Level Agreements (SLAs) for this MSDN offer. If you convert to a [Standard Pay-In-Advance](https://www.azure.cn/offers/ms-mc-arz-33p) Offer,we provide a set of robust service level agreements. More details on our SLAs can be found on our [SLA page](https://www.azure.cn/support/legal/sla/).
+We do not provide Service Level Agreements (SLAs) for this MSDN offer. If you convert to a [Standard Pay-In-Advance](https://www.azure.cn/offers/ms-mc-arz-33p/) Offer,we provide a set of robust service level agreements. More details on our SLAs can be found on our [SLA page](https://www.azure.cn/support/legal/sla/).
 
 ##Resource Commitment
 
@@ -133,5 +133,5 @@ For any subscriptions of this offer that are not incurring charges and are inact
 
 You can also avoid having your Compute resources removed by doing either of the following every 90 days:
 
- - Log into the [Management Portal](https://manage.windowsazure.cn)
+ - Log into the [Management Portal](https://manage.windowsazure.cn/)
  - Access your hosted service(s) via our Azure APIs

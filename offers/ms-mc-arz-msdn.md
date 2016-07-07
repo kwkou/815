@@ -117,13 +117,13 @@ MSDN Azure 优惠仅适用于开发和测试目的。Azure MSDN 订阅中的使�
 
 每月50GB出站数据传输
 
-如果超过每月该数据传输使用限额，您的账户将会在未经事先通知的情况下暂停，并且免费信用额度将被归置为“0”。您可以点击[此处](https://account.windowsazure.cn/Subscriptions)实时查询您的数据流量使用状况。
+如果超过每月该数据传输使用限额，您的账户将会在未经事先通知的情况下暂停，并且免费信用额度将被归置为“0”。您可以点击[此处](https://account.windowsazure.cn/Subscriptions/)实时查询您的数据流量使用状况。
 
-如果您需要更高的数据传输使用限额，则必须转换为[标准预付费](https://www.azure.cn/offers/ms-mc-arz-33p)用户。
+如果您需要更高的数据传输使用限额，则必须转换为[标准预付费](https://www.azure.cn/offers/ms-mc-arz-33p/)用户。
 
 ##服务级别协议
 
-对于本 MSDN 优惠，我们不提供服务级别协议（SLA）。如果您转换为[标准预付费](https://www.azure.cn/offers/ms-mc-arz-33p)用户，我们会提供一组强大的服务级别协议。请参见我们的[服务级别协议](https://www.azure.cn/support/legal/sla/)页面了解更多详情。
+对于本 MSDN 优惠，我们不提供服务级别协议（SLA）。如果您转换为[标准预付费](https://www.azure.cn/offers/ms-mc-arz-33p/)用户，我们会提供一组强大的服务级别协议。请参见我们的[服务级别协议](https://www.azure.cn/support/legal/sla/)页面了解更多详情。
 
 ##资源承诺
 
@@ -133,5 +133,5 @@ MSDN Azure 优惠仅适用于开发和测试目的。Azure MSDN 订阅中的使�
 
 您也可以通过每隔 90 天采取下列任一操作，以避免您的计算资源被删除：
 
- - 登录到[管理门户](https://manage.windowsazure.cn)
+ - 登录到[管理门户](https://manage.windowsazure.cn/)
  - 通过我们的 Azure API 访问您的托管服务

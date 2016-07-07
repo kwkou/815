@@ -35,4 +35,4 @@ Azure monetary credits are valid for 12 months. Upon using all Azure Credits in 
 
 ##Activity Details
 
-[【Closed】 Details about real-name identifiable information collection event （Rewards are targeted at users who submitted their real-name identifiable information before 1/21/2016）](https://www.azure.cn/support/real-name-annoucement)
+[【Closed】 Details about real-name identifiable information collection event （Rewards are targeted at users who submitted their real-name identifiable information before 1/21/2016）](https://www.azure.cn/support/real-name-annoucement/)
