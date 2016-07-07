@@ -11,8 +11,8 @@
 <tags ms.service="legal" ms.date="02/2015" wacn.date="02/2015" wacn.lang="en"/>
 
 > [AZURE.LANGUAGE]
-- [中文](/support/legal/subcription-agreement/)
-- [English](/support/legal/subcription-agreement-en/)
+- [中文](/support/legal/subscription-agreement/)
+- [English](/support/legal/subscription-agreement-en/)
 
 # 21Vianet Online Services Standard Agreement for Azure
 
