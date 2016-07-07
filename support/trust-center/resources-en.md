@@ -14,7 +14,7 @@
 
 # Resources
 
- <tags ms.service="trust-center" ms.date="" wacn.date="" wacn.lang="en"/>
+ <tags ms.service="trust-center-en" ms.date="" wacn.date="" wacn.lang="en"/>
 
 ## Security
 ### [Azure Network Security](https://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/documents/AzureNetworkSecurity_v3_Feb2015_CN_20151214.pdf)

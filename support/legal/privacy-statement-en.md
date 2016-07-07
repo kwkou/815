@@ -8,7 +8,7 @@
     editor=""
     tags=""/>
 
-<tags ms.service="legal" ms.date="06/2013" wacn.date="06/2013" wacn.lang="en"/>
+<tags ms.service="legal-en" ms.date="06/2013" wacn.date="06/2013" wacn.lang="en"/>
 
 > [AZURE.LANGUAGE]
 - [中文](/support/legal/privacy-statement/)

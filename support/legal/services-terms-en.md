@@ -8,7 +8,7 @@
     editor=""
     tags=""/>
 
-<tags ms.service="legal" ms.date="" wacn.date="" wacn.lang="en"/>
+<tags ms.service="legal-en" ms.date="" wacn.date="" wacn.lang="en"/>
 
 > [AZURE.LANGUAGE]
 - [中文](/support/legal/services-terms/)

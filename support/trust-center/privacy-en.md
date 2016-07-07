@@ -19,7 +19,7 @@
 * How we respond to respond to law enforcement or another third party asks 21Vianet for Customer Data
 * We set and adhere to stringent privacy standards
  
- <tags ms.service="trust-center" ms.date="12/2015" wacn.date="12/2015" wacn.lang="en"/>
+ <tags ms.service="trust-center-en" ms.date="12/2015" wacn.date="12/2015" wacn.lang="en"/>
  
 Privacy is an integral part of our product and service lifecycle. We work to be transparent in our privacy practices, offer customers meaningful privacy choices, and manage responsibly the data we store.
 
