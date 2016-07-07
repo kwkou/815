@@ -23,7 +23,7 @@ The tables below list all of our active offers. The first table lists our offers
 Current Offers
 
 Offer Name									|Offer Number
---------------------------------------------|----------------------------------------------------------------------
+---|---
 [Azure Standard Pay-In-Advance]				|MS-MC-AZR-33P
 [Azure Monetary Credit]						|-
 [Azure 1RMB Trial]							|MS-MC-AZR-0044P
@@ -33,7 +33,7 @@ Offer Name									|Offer Number
 Retired Offers
 
 Offer Name									|Offer Number
---------------------------------------------|----------------------------------------------------------------------
+---|---
 [Azure Free Trial]							|MS-MC-AZR-01P
  
 [Azure Standard Pay-In-Advance]: /offers/ms-mc-arz-33p/
