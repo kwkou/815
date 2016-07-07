@@ -193,7 +193,7 @@ Service Fabric 在应用程序推出于群集时监视其运行状况，从而�
 
 ## 后续步骤
 - 现在，你已部署并升级某些预先生成的应用程序，接下来可以[尝试在 Visual Studio 中生成你自己的应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio)。
-- 也可以对 [Azure 群集](/documentation/articles/service-fabric-cluster-creation-via-portal)执行本文中所述的对本地群集执行的所有操作。
+- 也可以对 Azure 群集执行本文中所述的对本地群集执行的所有操作。
 - 本文中执行的升级非常简单。若要深入了解 Service Fabric 升级的功能和灵活性，请参阅[升级文档](/documentation/articles/service-fabric-application-upgrade)。
 
 <!-- Images -->

@@ -9,7 +9,7 @@
 <tags
    ms.service="multiple"
    ms.date="03/29/2016"
-   wacn.date="07/04/2016" />
+   wacn.date="07/07/2016" />
 
 # 使用 Visual Studio Team Services 为 Service Fabric 应用程序设置持续集成
 
@@ -403,7 +403,7 @@
 
 前面的说明为每个生成创建新的群集，并在生成的末尾删除它。如果你希望改为让每个生成执行应用程序升级（到现有群集），请使用以下步骤：
 
-1.	按照[这些说明](/documentation/articles/service-fabric-cluster-creation-via-portal)，通过 Azure 门户预览或 Azure PowerShell 手动创建测试群集。
+1.	按照[这些说明](/documentation/articles/service-fabric-cluster-creation-via-arm)，通过 Azure PowerShell 手动创建测试群集。
 
 2.	按照[这些说明](/documentation/articles/service-fabric-visualstudio-configure-upgrade)配置发布配置文件，以支持应用程序升级。
 

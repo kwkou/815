@@ -10,13 +10,13 @@
 <tags
    ms.service="service-fabric"
    ms.date="05/27/2016"
-   wacn.date="07/04/2016"/>
+   wacn.date="07/07/2016"/>
 
 # 使用证书保护 Azure 上的 Service Fabric 群集
 
 Azure Service Fabric 群集是你拥有的资源。为了防止未经授权访问资源，必须保护资源，尤其是其中有正在运行的生产工作负荷时。若要使用 X.509 证书设置安全的 Service Fabric 群集，至少需要一个服务器 X.509 证书，你要将它上载到 Azure 密钥保管库并在创建群集的过程中用于。
 
-本文对应于群集创建过程的[步骤 3：配置安全性](/documentation/articles/service-fabric-cluster-creation-via-portal#step-3--configure-security)。有关 Service Fabric 如何使用 X.509 证书的详细信息，请参阅 [Cluster security scenarios](/documentation/articles/service-fabric-cluster-security)（群集安全方案）。
+有关 Service Fabric 如何使用 X.509 证书的详细信息，请参阅 [Cluster security scenarios](/documentation/articles/service-fabric-cluster-security)（群集安全方案）。
 
 共有三个不同的步骤：
 
@@ -119,13 +119,15 @@ Azure Service Fabric 群集是你拥有的资源。为了防止未经授权访�
 
 
 ## 步骤 3：设置安全群集
-
+<!--
 将证书上载到 Azure 密钥保管库之后，可以创建使用这些证书保护的群集。此步骤对应于群集创建过程的[步骤 3：配置安全性](/documentation/articles/service-fabric-cluster-creation-via-portal#step-3--configure-security)，说明如何设置安全配置。
 
 >[AZURE.NOTE]
 所需的证书在“安全配置”下的“节点类型”级别指定。必须为群集中的每个节点类型指定此配置。尽管本文档演练如何使用门户执行此操作，但你可以使用 Azure Resource Manager 模板来实现相同的目的。
 
-![Azure 门户预览中“安全配置”的屏幕截图][SecurityConfigurations_01]
+![Azure 门户预览中“安全配置”的屏幕截图][SecurityConfigurations_01]-->
+
+你可以使用 [Azure Resource Manager 模板](/documentation/articles/service-fabric-cluster-creation-via-arm/)来为群集中的每个节点类型进行安全配置。
 
 ### 必需参数
 
@@ -163,12 +165,12 @@ Azure Service Fabric 群集是你拥有的资源。为了防止未经授权访�
 - **授权方**：向 Service Fabric 指出是要使用使用者名称还是指纹来查找此证书。使用使用者名称授权不是良好的安全实践，但是可以增加操作的弹性。
 - **使用者名称**：仅当已指定按使用者名称授权时才需要。
 - **颁发者指纹**：当客户端向服务器提供自己的凭据时，能够让服务器执行额外的检查。
-
+<!--
 ## 后续步骤
 在群集上配置证书安全性之后，请继续执行[步骤 4：完成群集创建](/documentation/articles/service-fabric-cluster-creation-via-portal#step-4--complete-the-cluster-creation)中的群集创建过程。
 
 为群集创建证书安全性之后，可以[更新证书](/documentation/articles/service-fabric-cluster-security-update-certs-azure)。
-
+-->
 
 <!--Image references-->
 [SecurityConfigurations_01]: ./media/service-fabric-cluster-azure-secure-with-certs/SecurityConfigurations_01.png
