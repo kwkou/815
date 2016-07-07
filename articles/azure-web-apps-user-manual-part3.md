@@ -275,12 +275,12 @@
 
 	![web_app_browse6](./media/azure-web-apps-user-manual-part3/web_app_browse6.png)
 
-	<pre><code>Heap Size：Heap Memory Usage:    init = 58712896(<mark>57336K</mark>) used = 150252200(<mark>146730K</mark>) committed = 360710144(352256K) max = 835190784(<mark>815616K</mark>)</code></pre>
+	<pre><code>Heap Size：Heap Memory Usage:    init = 58712896(57336K) used = 150252200(146730K) committed = 360710144(352256K) max = 835190784(815616K)</code></pre>
 
 	![web_app_browse7](./media/azure-web-apps-user-manual-part3/web_app_browse7.png)
 
 	<pre><code>Perm Gen：
-	Usage:    init = 22020096(<mark>21504K</mark>) used = 42138168(<mark>41150K</mark>) committed = 42467328(41472K) max = 85983232(<mark>83968K</mark>)</code></pre>
+	Usage:    init = 22020096(21504K) used = 42138168(41150K) committed = 42467328(41472K) max = 85983232(83968K)</code></pre>
 
 8.	使用你的 FTP 工具，将 web.config 文件上传到您的 Azure 站点根目录 /site/wwwroot：
 
@@ -290,11 +290,11 @@
 
 	![web_app_browse8](./media/azure-web-apps-user-manual-part3/web_app_browse8.png)
 
-	<pre><code>Heap Memory Usage:    init = 536870912(<mark>524288K</mark>) used = 118235616(<mark>115464K</mark>) committed = 660602880(645120K) max = 954728448(<mark>932352K</mark>)</code></pre>
+	<pre><code>Heap Memory Usage:    init = 536870912(524288K) used = 118235616(115464K) committed = 660602880(645120K) max = 954728448(932352K)</code></pre>
 
 	![web_app_browse9](./media/azure-web-apps-user-manual-part3/web_app_browse9.png)
 
-	<pre><code>Usage:    init = 134217728(<mark>131072K</mark>) used = 37151352(<mark>36280K</mark>) committed = 134217728(131072K) max = 268435456(<mark>262144K</mark>)</code></pre>
+	<pre><code>Usage:    init = 134217728(131072K) used = 37151352(36280K) committed = 134217728(131072K) max = 268435456(262144K)</code></pre>
 
 10.	通过 web.config 和 HttpPlatformHandler 机制，可以对 Azure 的站点进行定制。
 
@@ -504,19 +504,19 @@
 
 3.	如果客户的根域名 (contoso.com.cn) 在没有备案的情况下，做了 A 记录解析到 Azure 的公网 IP 上，(即 http://azure.contoso.com.cn 的 A 记录，指向到 Azure 的公网 IP 43.159.xxx.xxx)。
 
-	<mark>工信部在进行审查的时候，这个根域名没有进行备案</mark>
+	工信部在进行审查的时候，这个根域名没有进行备案
 
-	<mark>这时候工信部会要求世纪互联关停这个公网 IP 对应的 Azure 上的 Web 应用，会对客户的应用产生影响</mark>
+	这时候工信部会要求世纪互联关停这个公网 IP 对应的 Azure 上的 Web 应用，会对客户的应用产生影响
 
 在开始本节内容之前，请先确认：
 
-* <mark>(1)	根域名必须经过 ICP 备案</mark>
-* <mark>(2)	拥有根域名或者一个二级域名，假设是 www.contoso.com.cn </mark>
-* <mark>(3)	DNS 供应商也一起参与</mark>
+* (1)	根域名必须经过 ICP 备案
+* (2)	拥有根域名或者一个二级域名，假设是 www.contoso.com.cn 
+* (3)	DNS 供应商也一起参与
 
 本节实现的目标是：部署在 Azure Web 应用上的网站 (http://contosowebapp.chinacloudsites.cn)，使用自己备案过的DNS地址。
 
-1.	首先在缩放页面，把 Azure Web 应用设置为<mark>共享、基本或者标准。只有这三种才支持自定义域名，</mark>如下图：
+1.	首先在缩放页面，把 Azure Web 应用设置为共享、基本或者标准。只有这三种才支持自定义域名，如下图：
 
 	![backup](./media/azure-web-apps-user-manual-part3/backup.png)
 
@@ -534,7 +534,7 @@
 
 	![domain2](./media/azure-web-apps-user-manual-part3/domain2.png)
 
-6.	<mark>在上图中，会发现增加完自定义域名之后，会有红色感叹号。考虑到 DNS 同步会有延迟，一般情况下，需要不停尝试以等待验证通过。</mark>
+6.	在上图中，会发现增加完自定义域名之后，会有红色感叹号。考虑到 DNS 同步会有延迟，一般情况下，需要不停尝试以等待验证通过。
 
 7.	验证通过后，上面的红色感叹号就会变成绿色图标，这就表示设置成功了。然后就可以通过用户的自定义域名 http://www.contoso.com.cn，来访问 Azure Web 应用上的服务了。
 
@@ -545,13 +545,13 @@
 
 2.	如果客户不想使用 Azure 默认提供的 DNS 地址 http://[xxxxxx].chinacloudsites.cn，想使用自己的二级域名 (e.g. http://azure.contoso.com.cn) 做 A 记录解析到 Azure 的公网 IP 地址，则需要用户把自己的域名所在的根域名 (e.g. contoso.com.cn) 进行 ICP 备案。用户可以通过各种域名备案组织/代理，对自己的根域名 (contoso.com) 进行注册（国内的国外的）。
 
-	<mark>但如果指向国内 Azure 的 IP 地址，需要用户到[世纪互联备案网站](http://icp.cloud.21vianet.com)提交备案信息</mark>
+	但如果指向国内 Azure 的 IP 地址，需要用户到[世纪互联备案网站](http://icp.cloud.21vianet.com)提交备案信息
 
 3.	如果客户的根域名 (contoso.com.cn) 在没有备案的情况下，做了 A 记录解析到 Azure 的公网 IP 上，(即 http://azure.contoso.com.cn 的 A 记录，指向到 Azure 的公网 IP 43.192.xxx.xxx)
 
-	<mark>工信部在进行审查的时候，如果根域名没有进行备案，会要求世纪互联尽快关闭该网站。</mark>
+	工信部在进行审查的时候，如果根域名没有进行备案，会要求世纪互联尽快关闭该网站。
 
-	<mark>世纪互联目前的流程是，先通知用户在规定时间内按要求对网站进行关闭。如用户不能在规定时间内按要求完成，或世纪互联无法联系到用户时，会采取暂停用户部署或订阅服务。</mark>
+	世纪互联目前的流程是，先通知用户在规定时间内按要求对网站进行关闭。如用户不能在规定时间内按要求完成，或世纪互联无法联系到用户时，会采取暂停用户部署或订阅服务。
 
 4.	如果客户之前在 IDC 托管机房，或者其他网络接入商 (如万网等) 注册过顶级域名 (contoso.com.cn)，且该域名指向的公网 IP 地址不在 Azure 云平台。
 
