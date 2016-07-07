@@ -1,14 +1,14 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to use the Azure Content Delivery Network portal advanced features - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, cache refresh, content prefetch, log download, cache rules, CDN help files, CDN technical documentation, CDN" description="Learn how to use the advanced features of the Azure portal to manage Content Delivery Network endpoints" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date="2/23/2016"
+<tags ms.service="cdn_en"
+    ms.date="7/7/2016"
+    wacn.date="7/7/2016"
+    wacn.lang="en"
     />
-
+> [AZURE.LANGUAGE]
+- [中文](/support/trust-center/)
+- [English](/support/trust-center-en/) 
 # Azure Content Delivery Network portal user guide
 
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/cdn-management-portal-how-to-use)
-- [English Version](/documentation/articles/cdn-enus-management-portal-how-to-use)
 
 The Azure CDN caches static content in storage blobs, cloud services, and websites on the Azure platform by using large numbers of physical nodes distributed across Mainland China. These nodes provide developers with a solution for delivering high-bandwidth content. This service also currently supports the use of source stations that have not been deployed on the Azure platform.
 

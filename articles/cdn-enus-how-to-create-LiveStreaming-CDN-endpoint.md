@@ -1,14 +1,14 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Create Live Streaming Acceleration-Type CDNs – Azure Feature Guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-on, Live Streaming, streaming acceleration, CDN acceleration, CDN service, mainstream CDN, live streaming acceleration, media service, Azure Media Service, cache rules, HLS, CDN technical documentation, CDN help files, live video streaming acceleration, direct broadcast acceleration" description="Learn how to create Live Streaming Acceleration-type CDNs on Azure Management Portal, and learn about default caching rules for Download CDNs." metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
-<tags ms.service="cdn"
-    ms.date=""
-    wacn.date="2/23/2016"
+<tags ms.service="cdn_en"
+    ms.date="7/7/2016"
+    wacn.date="7/7/2016"
+    wacn.lang="7/7/2016"
     />
-
+> [AZURE.LANGUAGE]
+- [中文](/support/trust-center/)
+- [English](/support/trust-center-en/) 
 #Create live streaming acceleration CDN nodes
 
-> [AZURE.SELECTOR]
-- [中文版](/documentation/articles/cdn-how-to-create-LiveStreaming-CDN-endpoint)
-- [English Version](/documentation/articles/cdn-enus-how-to-create-LiveStreaming-CDN-endpoint)
 
 The Live Streaming Acceleration service is mainly intended to provide acceleration services for online audio and video live broadcasting. The high-speed, real-time properties of online live broadcasting are very popular with users and leads to huge numbers of users accessing services concurrently, putting enormous strain on source station and bandwidth. Such services are also subject to Chinese restrictions on cross-region or cross-carrier traffic, which impose significant requirements on high-quality, high-speed streaming media direct broadcasts. The Azure CDN Live Streaming Acceleration service acquires the source station video stream in real time and delivers it to the CDN edge node closest to the user. It uses intelligent caching and scheduling strategies to calculate and provide the optimal node for the user, reducing the lag and bandwidth pressures caused by link transmissions. It is charged on the basis of data usage, providing users with a high-speed, smooth, high-quality live-streaming real-time viewing experience.
 
