@@ -5,8 +5,8 @@
     wacn.lang="cn"
     />
 > [AZURE.LANGUAGE]
-- [中文](/support/trust-center/)
-- [English](/support/trust-center-en/) 
+- [中文](/documentation/articles/cdn-overview/)
+- [English](/documentation/articles/cdn-enus-overview/) 
 # Azure CDN （内容交付网络）概述
 
 

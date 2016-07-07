@@ -5,8 +5,8 @@
     wacn.lang="en"
     />
 > [AZURE.LANGUAGE]
-- [中文](/support/trust-center/)
-- [English](/support/trust-center-en/) 
+- [中文](/documentation/articles/cdn-management-portal-how-to-use/)
+- [English](/documentation/articles/cdn-enus-management-portal-how-to-use/) 
 # Azure Content Delivery Network portal user guide
 
 

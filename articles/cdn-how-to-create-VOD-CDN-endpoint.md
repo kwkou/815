@@ -5,8 +5,8 @@
     wacn.lang="cn"
     />
 > [AZURE.LANGUAGE]
-- [中文](/support/trust-center/)
-- [English](/support/trust-center-en/) 
+- [中文](/documentation/articles/cdn-how-to-create-VOD-CDN-endpoint/)
+- [English](/documentation/articles/cdn-enus-how-to-create-VOD-CDN-endpoint/) 
 #VOD视频点播加速CDN节点创建
 
 

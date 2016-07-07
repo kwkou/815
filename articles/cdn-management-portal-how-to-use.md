@@ -5,8 +5,8 @@
     wacn.lang="cn"
     />
 > [AZURE.LANGUAGE]
-- [中文](/support/trust-center/)
-- [English](/support/trust-center-en/) 
+- [中文](/documentation/articles/cdn-management-portal-how-to-use/)
+- [English](/documentation/articles/cdn-enus-management-portal-how-to-use/) 
 # Azure CDN 管理门户使用指南
 
 

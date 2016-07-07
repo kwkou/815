@@ -5,8 +5,8 @@
     wacn.lang="en"
     />
 > [AZURE.LANGUAGE]
-- [中文](/support/trust-center/)
-- [English](/support/trust-center-en/) 
+- [中文](/documentation/articles/cdn-faq-service-issues/)
+- [English](/documentation/articles/cdn-enus-faq-service-issues/) 
 
 # FAQs - Service Issues
 
