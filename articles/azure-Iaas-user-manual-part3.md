@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date=""
-	wacn.date="07/05/2016"/>
+	wacn.date="07/07/2016"/>
 
 # Azure IaaS 用户手册 - 第三部分
 
@@ -118,18 +118,15 @@ Azure Load Balancer (负载均衡器)的规则，是由五要素组成 source IP
 
 ![advance14](./media/azure-Iaas-user-manual-part3/advance14.png)
 
-具体可以参考[这篇博客](http://www.cnblogs.com/threestone/p/4378472.html)。
 
 ###<a name="section_6_4"></a> 4.4 设置 Web 服务器固定 IP
 注意：默认情况下，客户通过管理界面 Management Portal 创建的虚拟机的 Virtual IP，其实是从数据中心的 IP 池中随机获得的。当客户关闭虚拟机，虚拟机状态为 Stop (Deallocate) 的时候，Virtual IP 会被释放，DNS 会绑定到另外一个 IP 地址。
 
 国内由世纪互联运营的 Microsoft Azure 的 IP Range 信息，可以参考[这里](http://www.microsoft.com/en-us/download/details.aspx?id=42064)。
 
-如果客户 A 需要固定 IP 的情况下，需要通过 Azure PowerShell 向数据中心申请一个或者多个 IP 地址，这些 IP 地址就只会被客户 A 使用。
+如果您需要固定 IP 的情况下，需要通过 Azure PowerShell 向数据中心申请一个或者多个 IP 地址，这些 IP 地址就只会被您使用。
 
-除非客户 A 将申请的 IP 释放，否则其他用户是无法使用到客户 A 申请的公网 IP 地址。
-
-有关固定 IP 的详细内容，请参考 [这篇博客](http://www.cnblogs.com/threestone/p/4335382.html)。
+除非您将申请的 IP 释放，否则其他用户是无法使用到您申请的公网 IP 地址。
 
 ###<a name="section_6_5"></a> 4.5 超过 1TB 容量的磁盘
 Azure 挂载的磁盘，单块最大容量为 1023GB。如果需要磁盘分区超过 1TB 的情况，请使用 Azure Storage Space。
@@ -137,8 +134,6 @@ Azure 挂载的磁盘，单块最大容量为 1023GB。如果需要磁盘分区�
 
 ###<a name="section_6_6"></a> 4.6 高 IOPS 的 Azure VM
 当需要更高的 IOPS 的时候，比如某些场景需要更高性能的磁盘读写，这时候就需要用到高级存储 Premium Storage。
-
-具体可以参考[这篇博客](http://www.cnblogs.com/threestone/p/4860660.html)
 
 ##<a name="section_7"></a> 5.	后续运维
 假设 Contoso 公司购买了 Azure 资源，建议：
@@ -177,8 +172,6 @@ Azure 挂载的磁盘，单块最大容量为 1023GB。如果需要磁盘分区�
 
 	Azure 数据中心禁用了 ICMP 协议。用户无法通过 ping 命令从外部监测 Azure 上的虚拟机。也无法从 Azure 虚拟机监测外部延时。我们建议使用 psping 工具，来代替 ping 命令。
 
-	具体可以参考[这篇博客](http://www.cnblogs.com/threestone/p/4974673.html)
-
 6.	虚拟机关机
 
 	通过远程桌面连接或者是 SSH，关闭 Azure 虚拟机，是会继续收取 Azure 计算费用的。
@@ -193,8 +186,6 @@ Azure 挂载的磁盘，单块最大容量为 1023GB。如果需要磁盘分区�
 	* (1)	当使用完 Remote Desktop，请在 Azure 管理界面删除相应的 Public Port。阻止任何人通过 Public Port 访问远程桌面连接。
 	* (2)	如果需要长期开启 Remote Desktop，则需要设置 ACL，即允许一个或者多个客户端 IP 地址来访问 Azure 虚拟机的 Remote Desktop。在 ACL 访问列表以外的其他 IP 地址均不能访问。<mark>使用该功能需要客户有固定公网 IPv4 地址。</mark>
 
-	具体可以参考[这篇博客](http://www.cnblogs.com/threestone/p/4468924.html)
-
 8.	临时盘
 
 	Azure 虚拟机磁盘中包含一个临时盘， D:磁盘 (Windows) 或者 /dev/sdb1 (Linux)。他们仅提供临时存储，所以可能会有丢失数据的风险且数据无法恢复。
@@ -206,8 +197,6 @@ Azure 挂载的磁盘，单块最大容量为 1023GB。如果需要磁盘分区�
 	<mark>建议每 3 台虚拟机使用同一个存储账号</mark>，第 4 台虚拟机使用另外一个存储账号。
 
 10.	将文件、图片、照片等二进制文件保存到 Azure 存储中，降低虚拟机的互联网带宽压力。
-
-	具体可以参考[这篇博客](http://www.cnblogs.com/threestone/p/4497625.html)
 
 11.	备案
 
