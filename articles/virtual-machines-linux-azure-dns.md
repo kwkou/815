@@ -86,7 +86,7 @@ Azure 默认提供单个虚拟网络内包含的所有 VM 的 DNS 名称解析�
 	- 将“prepend domain-name-servers 127.0.0.1;”添加到“/etc/dhclient-eth0.conf”
 	- 重新启动网络服务（“service network restart”），以将缓存设置为本地 DNS 解析程序
 
-> [AZURE.NOTE]：该“dnsmasq”包只是适用于 Linux 的众多 DNS 缓存中的一个。在使用之前，请检查其是否适合你的特定需求，并且确认你没有安装其他缓存。
+> [AZURE.NOTE] 该“dnsmasq”包只是适用于 Linux 的众多 DNS 缓存中的一个。在使用之前，请检查其是否适合你的特定需求，并且确认你没有安装其他缓存。
 
 **客户端重试：**
 

@@ -19,11 +19,11 @@
 
 - 调整虚拟机尺寸计费怎么算的？
 
-	Azure是按分钟对虚拟机收费，例如你的虚拟机运行了1个小时，但前45分钟是A1尺寸，后面15分钟是A2尺寸，则前45分钟是按A1收费，后15分钟是按A2收费。
+	Azure 是按分钟对虚拟机收费，例如你的虚拟机运行了 1 个小时，但前 45 分钟是 A1 尺寸，后面 15 分钟是 A2 尺寸，则前 45 分钟是按 A1 收费，后 15 分钟是按 A2 收费。
 
-- 修改尺寸后我的虚拟机的IP是否会变？
+- 修改尺寸后我的虚拟机的 IP 是否会变？
 
-	在修改虚拟机尺寸后虚拟机的IP可能会改变，如果业务逻辑中不希望IP变化的话，请尝试“保留IP”，关于更多有关保留IP的内容，请阅读：https://www.azure.cn/documentation/articles/virtual-networks-reserved-public-ip
+	在修改虚拟机尺寸后虚拟机的 IP 可能会改变，如果业务逻辑中不希望 IP 变化的话，请尝试“保留 IP”，关于更多有关保留 IP 的内容，请阅读：https://www.azure.cn/documentation/articles/virtual-networks-reserved-public-ip
 
 ## <a id="detail"></a>详细步骤
 
