@@ -14,7 +14,7 @@
 - [中文](/support/legal/privacy-statement/)
 - [English](/support/legal/privacy-statement-en/)
 
-# Privacy Statement <br/> for Microsoft Azure Operated by 21Vianet
+# Privacy Statement <p></p> for Microsoft Azure Operated by 21Vianet
 
 ## Scope
 
