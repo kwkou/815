@@ -32,7 +32,7 @@ Azure 端口 (Endpoint) 分为 Public Port 和 Private Port 两种。
 2.	然后 Azure 的 Load Balance 会将这个请求转发到内部 1433 端口号，来实现访问。
 3.	这样的好处是：Private Port 可以实现内部消息的相互通信。Public Port 可以开放 Internet 到 Azure 的访问。两者互不冲突。
 
-<mark>另外对于 Remote Desktop 使用的 3389 和 SSH 使用的 22 端口来说，这些端口暴露到 Internet 上，可能会被不怀好意的黑客探测到，通过将这些常用的端口设置端口映射，从低端口号映射到高端口号，可以降低被黑的概率。</mark>
+另外对于 Remote Desktop 使用的 3389 和 SSH 使用的 22 端口来说，这些端口暴露到 Internet 上，可能会被不怀好意的黑客探测到，通过将这些常用的端口设置端口映射，从低端口号映射到高端口号，可以降低被黑的概率。
 
 选择某一台 Azure 虚拟机，然后页面跳转。点击终结点。如下图：
 
@@ -42,7 +42,7 @@ Azure 端口 (Endpoint) 分为 Public Port 和 Private Port 两种。
 
 对于远程桌面连接 (RemoteDesktop) 来说，用户通过 DNS:Public Port，也就是 contosoadcs.chinacloudapp.cn:50161，通过将 Public Port 50161 映射到 Private Port 3389，实现了对于 ContosoAD01 这台虚拟机的远程桌面连接访问。
 
-<mark>注意：同一个云服务下的不同虚拟机，RemoteDesktop 的公用端口是不同的，但是私有端口都相同，为 3389。</mark>
+注意：同一个云服务下的不同虚拟机，RemoteDesktop 的公用端口是不同的，但是私有端口都相同，为 3389。
 
 ###<a name="section_6_2"></a> 4.2 设置虚拟机端口负载均衡
 当需要对同一个云服务下的不同虚拟机实现负载均衡，可以将 Public Port 的消息通过负载均衡路由到每个虚拟机，实现请求的自动负载均衡。具体架构如下图：
@@ -110,7 +110,7 @@ Azure Load Balancer (负载均衡器)的规则，是由五要素组成 source IP
 
 ![advance13](./media/azure-Iaas-user-manual-part3/advance13.png)
 
-<mark>但是这样的负载均衡器会有缺陷，是无法保留 Session 的。</mark>
+但是这样的负载均衡器会有缺陷，是无法保留 Session 的。
 
 当企业用户的应用程序需要保留会话 (Session) 的时候，不得不要修改应用程序代码，将 Session 保存到 Redis 缓存 (Redis Cache) 或者 SQL Server 中去。
 
@@ -154,7 +154,7 @@ Azure 挂载的磁盘，单块最大容量为 1023GB。如果需要磁盘分区�
 
 	遇到这种情况，只能把 DNS 删除，保留虚拟机的 VHD 并重新创建 Azure VM。这会产生虚拟机的临时下线。
 
-	<mark>从可配置的角度来说，建议用户在刚开始创建 Azure 虚拟机的时候，直接设置虚拟机配置为 D 系列。这样可以在 D 系列 VM 和 A 系列 VM 中来回切换。</mark>
+	从可配置的角度来说，建议用户在刚开始创建 Azure 虚拟机的时候，直接设置虚拟机配置为 D 系列。这样可以在 D 系列 VM 和 A 系列 VM 中来回切换。
 
 2.	虚拟机维护
 
@@ -184,7 +184,7 @@ Azure 挂载的磁盘，单块最大容量为 1023GB。如果需要磁盘分区�
 
 	建议：
 	* (1)	当使用完 Remote Desktop，请在 Azure 管理界面删除相应的 Public Port。阻止任何人通过 Public Port 访问远程桌面连接。
-	* (2)	如果需要长期开启 Remote Desktop，则需要设置 ACL，即允许一个或者多个客户端 IP 地址来访问 Azure 虚拟机的 Remote Desktop。在 ACL 访问列表以外的其他 IP 地址均不能访问。<mark>使用该功能需要客户有固定公网 IPv4 地址。</mark>
+	* (2)	如果需要长期开启 Remote Desktop，则需要设置 ACL，即允许一个或者多个客户端 IP 地址来访问 Azure 虚拟机的 Remote Desktop。在 ACL 访问列表以外的其他 IP 地址均不能访问。使用该功能需要客户有固定公网 IPv4 地址。
 
 8.	临时盘
 
@@ -194,7 +194,7 @@ Azure 挂载的磁盘，单块最大容量为 1023GB。如果需要磁盘分区�
 
 	建议用户在创建 Azure 虚拟机的时候，不要把所有的虚拟机磁盘都保存在同一个存储账号里。因为 1 个存储账号是有 IOPS 上限 20000。
 
-	<mark>建议每 3 台虚拟机使用同一个存储账号</mark>，第 4 台虚拟机使用另外一个存储账号。
+	建议每 3 台虚拟机使用同一个存储账号，第 4 台虚拟机使用另外一个存储账号。
 
 10.	将文件、图片、照片等二进制文件保存到 Azure 存储中，降低虚拟机的互联网带宽压力。
 
@@ -206,13 +206,13 @@ Azure 挂载的磁盘，单块最大容量为 1023GB。如果需要磁盘分区�
 
 	* (2)	如果客户不想使用 Azure 默认提供的 DNS 地址 http://xxx.chinacloudapi.cn，想使用自己的二级域名 (e.g. http://azure.contoso.com.cn) 做 A 记录解析到 Azure 的公网 IP 地址，则需要用户把自己的域名所在的根域名 (e.g. contoso.com.cn) 进行 ICP 备案。用户可以通过各种域名备案组织/代理，对自己的根域名 (contoso.com) 进行注册（国内的国外的）。
 
-		<mark>但如果指向国内 Azure 的 IP 地址，需要用户到世纪互联备案网站 (http://icp.cloud.21vianet.com/) 提交备案信息</mark>
+		但如果指向国内 Azure 的 IP 地址，需要用户到世纪互联备案网站 (http://icp.cloud.21vianet.com/) 提交备案信息
 
 	* (3)	如果客户的根域名 (contoso.com.cn) 在没有备案的情况下，做了 A 记录解析到 Azure 的公网 IP 上，(即 http://azure.contoso.com.cn 的 A 记录，指向到 Azure 的公网 IP 43.192.xxx.xxx)
 
-		<mark>工信部在进行审查的时候，如果根域名没有进行备案，会要求世纪互联尽快关闭该网站。</mark>
+		工信部在进行审查的时候，如果根域名没有进行备案，会要求世纪互联尽快关闭该网站。
 
-		<mark>世纪互联目前的流程是，先通知用户在规定时间内按要求对网站进行关闭。如用户不能在规定时间内按要求完成，或世纪互联无法联系到用户时，会采取暂停用户部署或订阅服务。</mark>
+		世纪互联目前的流程是，先通知用户在规定时间内按要求对网站进行关闭。如用户不能在规定时间内按要求完成，或世纪互联无法联系到用户时，会采取暂停用户部署或订阅服务。
 
 	* (4)	如果客户之前在 IDC 托管机房，或者其他网络接入商 (如万网等) 注册过顶级域名 (contoso.com.cn)，且该域名指向的公网 IP 地址不在 Azure 云平台。
 

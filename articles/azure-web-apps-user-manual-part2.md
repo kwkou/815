@@ -160,8 +160,8 @@ Contoso 公司已经采购了 Azure 中国的服务，并且开发部门使用 V
 
 	![ftp_cred2](./media/azure-web-apps-user-manual-part2/ftp_cred2.png)
 
-	<font color="red">注意：FTP 的登录名是包含 [DNS]\[UserName]
-	<br/>虽然在步骤 5 中设置了用户名是 leizhang，但是在登录 FTP 服务器的时候必须使用 LeiWebSite\leizhang</font>
+	注意：FTP 的登录名是包含 [DNS]\[UserName]
+	<br/>虽然在步骤 5 中设置了用户名是 leizhang，但是在登录 FTP 服务器的时候必须使用 LeiWebSite\leizhang
 
 7.	打开 Windows 资源管理器，地址输入上图中的 FTP 主机名，用户名为 LeiWebSite\leizhang，密码为在步骤 5 中设置的密码，如下图：
 
@@ -192,7 +192,7 @@ Contoso 公司已经采购了 Azure 中国的服务，并且开发部门使用 V
 <td>横向扩展实例数</td>	<td>不支持</td>	<td>6个共享实例</td>	<td>3个专用实例</td>			<td>10 个专用实例</td>
 </tr>
 <tr>
-<td>服务级别</td>		<td>不支持</td>	<td>不支持</td>		<td><mark>99.9%</mark></td>	<td><mark>99.9%</mark></td>
+<td>服务级别</td>		<td>不支持</td>	<td>不支持</td>		<td>99.9%</td>	<td>99.9%</td>
 </tr>
 </tbody>
 </table>
@@ -201,15 +201,15 @@ Contoso 公司已经采购了 Azure 中国的服务，并且开发部门使用 V
 
 	![scale2](./media/azure-web-apps-user-manual-part2/scale2.png)
 
-2.	点击 App Service 计划定价层，如下图。如果想把 Web 应用设置为<mark>共享模式</mark>，并且有 6 个共享实例做横向扩展，请按照下图设置：
+2.	点击 App Service 计划定价层，如下图。如果想把 Web 应用设置为共享模式，并且有 6 个共享实例做横向扩展，请按照下图设置：
 
 	![scale3](./media/azure-web-apps-user-manual-part2/scale3.png)
 
-3.	如果想把 Web 应用设置为<mark>基本模式</mark>，并且有 3 个基本实例做横向扩展，每个实例配置为 1Core/1.75GB，请按照下图设置：
+3.	如果想把 Web 应用设置为基本模式，并且有 3 个基本实例做横向扩展，每个实例配置为 1Core/1.75GB，请按照下图设置：
 
 	![scale4](./media/azure-web-apps-user-manual-part2/scale4.png)
 
-4.	如果想把 Web 应用设置为<mark>标准模式</mark>，并且有 10 个标准实例做横向扩展，每个实例配置为 2Core/3.5GB，请按照下图设置：
+4.	如果想把 Web 应用设置为标准模式，并且有 10 个标准实例做横向扩展，每个实例配置为 2Core/3.5GB，请按照下图设置：
 
 	![scale5](./media/azure-web-apps-user-manual-part2/scale5.png)
 
@@ -226,7 +226,7 @@ Azure 还具有弹性扩展的优势，在访问量比较高的情况下，可�
 
 * (1)	在周 1-5 的工作日中，访问高峰期时间是 8:00:-23:00，横向扩展 10 台 2Core/3.5GB 的 Azure Web 应用做负载均衡
 * (2)	在周 1-5 的工作日中，访问低谷期时间 23:00-8:00，横向缩小为 2 台 2Core/3.5GB 的 Azure Web 应用做负载均衡
-* (3)	在<mark>周末全天</mark>是访问的高峰期，横向扩展 10 台 2Core/3.5GB 的 Azure Web 应用做负载均衡
+* (3)	在周末全天是访问的高峰期，横向扩展 10 台 2Core/3.5GB 的 Azure Web 应用做负载均衡
 
 <br/>
 

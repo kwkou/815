@@ -143,7 +143,7 @@ Azure Web 应用提供四种不同的服务类型，如下图：
 <td>自动扩展</td>		<td>不支持</td>			<td>不支持</td>		<td>不支持</td>				<td>支持</td>
 </tr>
 <tr>
-<td>服务级别</td>		<td>不支持</td>			<td>不支持</td>		<td><mark>99.9%</mark></td>	<td><mark>99.9%</mark></td>
+<td>服务级别</td>		<td>不支持</td>			<td>不支持</td>		<td>99.9%</td>	<td>99.9%</td>
 </tr>
 </tbody>
 </table>
@@ -154,39 +154,39 @@ Azure Web 应用提供四种不同的服务类型，如下图：
 
 1.	免费 (Free)
 
-	* (1)	如果在免费 (Free) 模式下，<mark>客户的计算资源是和其他用户共享的，不是独享的</mark>。也就是说，免费 Web 应用的资源是和别的用户共享 CPU
+	* (1)	如果在免费 (Free) 模式下，客户的计算资源是和其他用户共享的，不是独享的。也就是说，免费 Web 应用的资源是和别的用户共享 CPU
 	* (2)	一个 Azure 账户最多只能创建 10 个类型为免费的 Azure Web 应用
 	* (3)	在免费模式下，一个 Azure Web 应用每天仅有 60 分钟的 CPU 计算时间
 	* (4)	在免费模式下，一个 Azure Web 应用最多能使用的存储大小为 1GB
-	* <mark>(5)	在免费模式下，Azure Web 应用不支持横向扩展功能</mark>
-	* <mark>(6)	在免费模式下，Azure Web 应用是没有服务级别协议保障的</mark>
+	* (5)	在免费模式下，Azure Web 应用不支持横向扩展功能
+	* (6)	在免费模式下，Azure Web 应用是没有服务级别协议保障的
 
 2.	共享 (Shared)
 
-	* (1)	如果在共享 (Shared) 模式下，<mark>客户的计算资源是和其他用户共享的，不是独享的</mark>。也就是说，共享 Web 应用的资源是和别的用户共享 CPU。
+	* (1)	如果在共享 (Shared) 模式下，客户的计算资源是和其他用户共享的，不是独享的。也就是说，共享 Web 应用的资源是和别的用户共享 CPU。
 	* (2)	一个 Azure 账户最多只能创建 100 个类型为共享的 Azure Web 应用
 	* (3)	在共享模式下，一个 Azure Web 应用最多能使用的存储大小为 1GB
 	* (4)	在共享模式下，一个 Azure Web 应用每天仅有 240 分钟的 CPU 计算时间
-	* <mark>(5)	在共享模式下，Azure Web 应用支持横向扩展功能，且横向支持最多 6 个共享实例</mark>
-	* <mark>(6)	在共享模式下，Azure Web 应用是没有服务级别协议保障的</mark>
+	* (5)	在共享模式下，Azure Web 应用支持横向扩展功能，且横向支持最多 6 个共享实例
+	* (6)	在共享模式下，Azure Web 应用是没有服务级别协议保障的
 
 3.	基本 (Basic)
 
-	* (1)	如果在基本 (Basic) 模式下，客户的计算资源是<mark>独享的</mark>
+	* (1)	如果在基本 (Basic) 模式下，客户的计算资源是独享的
 	* (2)	基本模式下，独享的计算资源有三种类型：小型，中型，大型
 	* (3)	一个 Azure 账户可以创建无限多个类型为基本的 Azure Web 应用
 	* (4)	在基本模式下，一个 Azure Web 应用最多能使用的存储大小为 10GB
 	* (5)	在基本模式下，Azure Web 应用支持横向扩展功能，且横向支持最多 3 个独享的实例
-	* <mark>(6)	在基本模式下，Azure Web 应用支持 99.9% 的服务级别协议</mark>
+	* (6)	在基本模式下，Azure Web 应用支持 99.9% 的服务级别协议
 
 4.	标准 (Standard)
 
-	* (1)	如果在标准 (Standard) 模式下，客户的计算资源是<mark>独享的</mark>
+	* (1)	如果在标准 (Standard) 模式下，客户的计算资源是独享的
 	* (2)	标准模式下，独享的计算资源有三种类型：小型，中型，大型
 	* (3)	一个 Azure 账户可以创建无限多个类型为标准的 Azure Web 应用
 	* (4)	在标准模式下，一个 Azure Web 应用最多能使用的存储大小为 50GB
 	* (5)	在标准模式下，Azure Web 应用支持横向扩展功能，且横向支持最多 10 个独享的实例
-	* <mark>(6)	在标准模式下，Azure Web 应用支持99.9%的服务级别协议</mark>
+	* (6)	在标准模式下，Azure Web 应用支持99.9%的服务级别协议
 
 ![app_service_plan2](./media/azure-web-apps-user-manual-part1/app_service_plan2.png)
  
@@ -273,14 +273,14 @@ Azure Web 应用提供四种不同的服务类型：
 1.	免费 (Free)
 
 	* (1)	在免费模式下，客户的 Web 应用是不收取费用的。但是每一个 Azure Web 应用每天仅有 60 分钟的 CPU 计算时间。
-	* <mark>(2)	在免费模式下，Azure Web 应用没有服务级别协议保障</mark>
+	* (2)	在免费模式下，Azure Web 应用没有服务级别协议保障
 
 2.	共享 (Shared)
 
 	* (1)	共享模式下，Azure Web 应用支持横向扩展功能，且横向支持最多 6 个共享实例。
 	* (2)	在共享模式下，一个 Azure Web 应用每天仅有 240 分钟的 CPU 计算时间
 	* (3)	在共享模式下，每一个 Web 应用实例的标准价格是每小时 ￥0.11。
-	* <mark>(4)	在共享模式下，Azure Web 应用没有服务级别协议保障</mark>
+	* (4)	在共享模式下，Azure Web 应用没有服务级别协议保障
 
 3.	基本 (Basic) 和标准 (Standard) 收费如下：
 
@@ -298,22 +298,22 @@ Azure Web 应用提供四种不同的服务类型：
 
 	比如 2 个 Web 应用大型实例做负载均衡，每小时费用 = 2.38 元 × 2 个实例 = 4.76 元/小时
 
-* <mark>(5)	只有在基本和标准模式下，Azure Web 应用才享受 99.9% 的服务级别协议</mark>
+* (5)	只有在基本和标准模式下，Azure Web 应用才享受 99.9% 的服务级别协议
 
 ###<a name="section_3_13"></a> 1.13 Azure Web 应用停止计费
-<font color="red">当关闭Azure Web 应用的时候，还是会继续计费的。如下图：</font>
+当关闭Azure Web 应用的时候，还是会继续计费的。如下图：
 
 ![web_app](./media/azure-web-apps-user-manual-part1/web_app.png)
 
-<font color="red">上图中，虽然 Azure Web 应用状态变为 ”已停止”，但是因为定价层是”标准”，所以这个 Azure Web 应用还是会继续计费。</font>
-<font color="red">为了避免继续产生费用，请将不再使用的网站实例删除，或将其更改为 ”免费” 级别。如下图：</font>
+上图中，虽然 Azure Web 应用状态变为 ”已停止”，但是因为定价层是”标准”，所以这个 Azure Web 应用还是会继续计费。
+为了避免继续产生费用，请将不再使用的网站实例删除，或将其更改为 ”免费” 级别。如下图：
 
 ![scale](./media/azure-web-apps-user-manual-part1/scale.png)
  
 ###<a name="section_3_14"></a> 1.14 Azure Web 应用限制
 1.	单个 Web 应用实例大小
 
-	单个 Azure Web 应用实例最大为大型，配置是 4Core/7GB。如果您开发的 Web 应用，<mark>单个实例</mark>需要运行的<mark>最小计算单元</mark>大于 4Core/7GB，则这个 Web 应用不适合部署在 Azure Web 应用 PaaS 平台。
+	单个 Azure Web 应用实例最大为大型，配置是 4Core/7GB。如果您开发的 Web 应用，单个实例需要运行的最小计算单元大于 4Core/7GB，则这个 Web 应用不适合部署在 Azure Web 应用 PaaS 平台。
 
 2.	横向扩展能力
 
