@@ -11,7 +11,7 @@
 <tags
    ms.service="best-practice"
    ms.date="03/26/2016"
-   wacn.date="05/17/2016"/>
+   wacn.date="07/08/2016"/>
 
 # 数据分区指南
 
@@ -463,6 +463,12 @@ Redis 网站上的 [Partitioning: how to split data among multiple Redis instanc
 - Redis 网站上的 [Partitioning: how to split data among multiple Redis instances]（分区：如何在多个 Redis 实例之间拆分数据）页提供了有关如何使用 Redis 实施分区的信息。
 - Microsoft 网站上的 [Running Redis on a CentOS Linux VM in Azure]（在 Azure 中的 CentOS Linux VM 上运行 Redis）页逐步讲解了一个示例，演示如何构建和配置作为 Azure VM 运行的 Redis 节点。
 - Redis 网站上的 [Data types]（数据类型）页介绍了可在 Redis 和 Azure Redis 缓存中使用的数据类型。
+
+##其他最佳实践
+- [可用性核对清单](/documentation/articles/best-practices-availability-checklist/)
+- [可伸缩性清单](/documentation/articles/best-practices-scalability-checklist/)
+- [监视和诊断指南](/documentation/articles/best-practices-monitoring/)
+- [缓存指南](/documentation/articles/best-practices-caching/)
 
 [Azure Redis Cache]: /services/redis-cache/
 [Azure Storage Scalability and Performance Targets]: /documentation/articles/storage-scalability-targets

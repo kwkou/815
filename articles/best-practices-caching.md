@@ -11,7 +11,7 @@
 <tags
    ms.service="best-practice"
    ms.date="04/01/2016"
-   wacn.date="05/17/2016"/>
+   wacn.date="07/08/2016"/>
 
 # 缓存指南
 
@@ -928,5 +928,11 @@ subscriber.PublishAsync("messages:blogPosts", blogPost.Title);
 - StackExchange.Redis 网站上的 [Basic usage](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md)（基本用法）页
 - StackExchange.Redis 存储库上的 [Transactions in Redis](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Transactions.md)（Redis 中的事务）页
 - Microsoft 网站上的 [Data partitioning guide](http://msdn.microsoft.com/zh-cn/library/dn589795.aspx)（数据分区指南）
+
+##其他最佳实践
+- [可用性核对清单](/documentation/articles/best-practices-availability-checklist/)
+- [可伸缩性清单](/documentation/articles/best-practices-scalability-checklist/)
+- [监视和诊断指南](/documentation/articles/best-practices-monitoring/)
+- [数据分区指南](/documentation/articles/best-practices-data-partitioning/)
 
 <!---HONumber=Mooncake_0530_2016-->

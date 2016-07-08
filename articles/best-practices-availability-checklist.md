@@ -11,7 +11,7 @@
 <tags
    ms.service="best-practice"
    ms.date="04/01/2016"
-   wacn.date="05/17/2016"/>
+   wacn.date="07/08/2016"/>
 
 # 可用性核对清单
 
@@ -61,5 +61,11 @@
 - **测试监视系统。** 自动化故障转移和故障回复系统，以及使用仪表板手动进行系统运行状况和性能可视化，都依赖于监视和检测功能的正常运行。如果这些元素发生故障、遗漏重要信息或报告错误的数据，操作人员可能不知道系统不正常或即将发生故障。
 - **跟踪长时间运行的工作流的进度**并在故障时重试。长时间运行的工作流通常由多个步骤组成。确保每个步骤都是独立且可以重试的，以最大程度地减少整个工作流需要回滚，或需要执行多个补偿事务的可能性。通过实施[计划程序代理监督程序模式](https://msdn.microsoft.com/zh-cn/library/dn589780.aspx)等模式，来监视和管理长时间运行的工作流的进度。
 - **规划灾难恢复。** 对于可能导致主系统全部或部分不可用的任何类型的故障，请确保有记录、接受和经过全面测试的计划。定期测试这些恢复过程，并确保所有操作人员熟悉相关过程。
+
+## 其他最佳实践
+- [可伸缩性清单](/documentation/articles/best-practices-scalability-checklist/)
+- [监视和诊断指南](/documentation/articles/best-practices-monitoring/)
+- [数据分区指南](/documentation/articles/best-practices-data-partitioning/)
+- [缓存指南](/documentation/articles/best-practices-caching/)
 
 <!---HONumber=Mooncake_0503_2016-->

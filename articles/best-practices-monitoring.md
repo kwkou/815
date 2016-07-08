@@ -11,7 +11,7 @@
 <tags
    ms.service="best-practice"
    ms.date="04/06/2016"
-   wacn.date="06/06/2016"/>
+   wacn.date="07/08/2016"/>
 
 # 监视和诊断指南
 
@@ -657,5 +657,11 @@ SLA 中经常会规定以下条款：
 - [SQL Server business intelligence in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-classic-ps-sql-bi)（Azure 虚拟机中的 SQL Server Business Intelligence）
 - [Receive alert notifications](./azure-portal/insights-receive-alert-notifications)（接收警报通知）和 [Track service health](/documentation/articles/insights-service-health)（跟踪服务运行状况）
 - [Application Insights](/documentation/articles/app-insights-get-started)
+
+##其他最佳实践
+- [可用性核对清单](/documentation/articles/best-practices-availability-checklist/)
+- [可伸缩性清单](/documentation/articles/best-practices-scalability-checklist/)
+- [数据分区指南](/documentation/articles/best-practices-data-partitioning/)
+- [缓存指南](/documentation/articles/best-practices-caching/)
 
 <!---HONumber=Mooncake_0530_2016-->
