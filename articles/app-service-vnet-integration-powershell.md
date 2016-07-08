@@ -608,25 +608,25 @@ Resource Manager 虚拟网络具有 Azure Resource Manager API，与经典虚拟
 	PS C:\Users\ccompy\Documents\VNET> .\V2VnetAllInOne.ps1
 	Please Login
 
-	Environment           : AzureCloud
-	Account               : ccompy@microsoft.com
-	TenantId              : 722278f-fef1-499f-91ab-2323d011db47
-	SubscriptionId        : af5358e1-acac-2c90-a9eb-722190abf47a
+	Environment           : AzureChinaCloud
+	Account               : xxxxxxx@xxxxxxx.partner.onmschina.cn
+	TenantId              : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+	SubscriptionId        : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 	CurrentStorageAccount :
 
 	Choose a subscription
 
-	1) Demo Subscription (af5358e1-acac-2c90-a9eb-722190abf47a)
-	2) MS Test (a5350f55-dd5a-41ec-2ddb-ff7b911bb2ef)
-	3) Purple Demo Subscription (2d4c99a4-57f9-4d5e-a0a1-0034c52db59d)
+	1) Demo Subscription (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)
+	2) MS Test (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)
+	3) Purple Demo Subscription (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)
 
 	Choose an option:
 	3
 
-	Account      : ccompy@microsoft.com
-	Environment  : AzureCloud
-	Subscription : 2d4c99a4-57f9-4d5e-a0a1-0034c52db59d
-	Tenant       : 722278f-fef1-499f-91ab-2323d011db47
+	Account      : xxxxxxx@xxxxxxx.partner.onmschina.cn
+	Environment  : AzureChinaCloud
+	Subscription : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+	Tenant       : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 	Please enter the Resource Group of your App: hcdemo-rg
 	Please enter the Name of your App: v2vnetpowershell
