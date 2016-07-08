@@ -27,6 +27,7 @@
 ##计算
 - [虚拟机]
 - [云服务]
+- [Service Fabric]
 
 ##Web 和移动
 - [Web 应用]
@@ -103,3 +104,4 @@
 [计划程序]: /support/sla/scheduler/
 [自动化]: /support/sla/automation/
 [密钥保管库]: /support/sla/key-vault/
+[Service Fabric]: /support/sla/service-fabric/

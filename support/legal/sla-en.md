@@ -29,6 +29,7 @@ This agreement describes the commitment about uptime and connectivity of Microso
 ##Compute
 - [Virtual Machines]
 - [Cloud Services]
+- [Service Fabric]
 
 ##Web & Mobile
 - [Web Apps]
@@ -74,33 +75,34 @@ This agreement describes the commitment about uptime and connectivity of Microso
 - [Automation]
 - [Key Vault]
 
-[Summary of the SLA for all Azure Services](/support/sla/abstract/#a)
+[Summary of the SLA for all Azure Services](/support/sla/abstract-en/#a)
 
 Click [here](https://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/documents/Consolidated_SLA_English_0505.pdf) to download SLA for most Azure Services
 
-[Virtual Machines]: /support/sla/virtual-machines/
-[Cloud Services]: /support/sla/cloud-services/
-[Web Apps]: /support/sla/web-apps/
-[Notification Hubs]: /support/sla/notification-hubs/
-[SQL Database]: /support/sla/sql-data/
-[Radis Cache]: /support/sla/redis-cache/
-[Storage]: /support/sla/storage/
-[MySQL Database on Azure]: /support/sla/mysql/
-[HDInsight]: /support/sla/hdinsight/
-[Stream Analytics]: /support/sla/stream-analytics/
-[Azure IoT Hub]: /support/sla/iot-hub/
-[Event Hubs]: /support/sla/event-hubs/
-[Virtual Network]: /support/sla/virtual-networking/
-[ExpressRoute]: /support/sla/expressroute/
-[Traffic Manager]: /support/sla/traffic-manager/
-[VPN Gateway]: /support/sla/vpn-gateway/
-[Application Gateway]: /support/sla/application-gateway/
-[Media Services]: /support/sla/media-services/
-[CDN]: /support/sla/cdn/
-[Service Bus]: /support/sla/messaging/
-[Backup]: /support/sla/back-up/
-[Site Recovery]: /support/sla/site-recovery/
-[Multi-Factor Authentication]: /support/sla/multi-factor-authentication/
-[Scheduler]: /support/sla/scheduler/
-[Automation]: /support/sla/automation/
-[Key Vault]: /support/sla/key-vault/
+[Virtual Machines]: /support/sla/virtual-machines-en/
+[Cloud Services]: /support/sla/cloud-services-en/
+[Web Apps]: /support/sla/web-apps-en/
+[Notification Hubs]: /support/sla/notification-hubs-en/
+[SQL Database]: /support/sla/sql-data-en/
+[Radis Cache]: /support/sla/redis-cache-en/
+[Storage]: /support/sla/storage-en/
+[MySQL Database on Azure]: /support/sla/mysql-en/
+[HDInsight]: /support/sla/hdinsight-en/
+[Stream Analytics]: /support/sla/stream-analytics-en/
+[Azure IoT Hub]: /support/sla/iot-hub-en/
+[Event Hubs]: /support/sla/event-hubs-en/
+[Virtual Network]: /support/sla/virtual-networking-en/
+[ExpressRoute]: /support/sla/expressroute-en/
+[Traffic Manager]: /support/sla/traffic-manager-en/
+[VPN Gateway]: /support/sla/vpn-gateway-en/
+[Application Gateway]: /support/sla/application-gateway-en/
+[Media Services]: /support/sla/media-services-en/
+[CDN]: /support/sla/cdn-en/
+[Service Bus]: /support/sla/messaging-en/
+[Backup]: /support/sla/back-up-en/
+[Site Recovery]: /support/sla/site-recovery-en/
+[Multi-Factor Authentication]: /support/sla/multi-factor-authentication-en/
+[Scheduler]: /support/sla/scheduler-en/
+[Automation]: /support/sla/automation-en/
+[Key Vault]: /support/sla/key-vault-en/
+[Service Fabric]: /support/sla/service-fabric-en/
