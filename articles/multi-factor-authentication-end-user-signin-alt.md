@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="02/16/2016" 
-	wacn.date="05/18/2016"/>
+	ms.date="05/12/2016" 
+	wacn.date="06/06/2016"/>
 
 # 在多重身份验证中使用替代方法登录
 
@@ -29,5 +29,5 @@
 
 <li>选择一种替代方法并登录。</li>
 
-
-<!---HONumber=Mooncake_0509_2016-->
+ 
+<!---HONumber=Mooncake_0530_2016-->

@@ -50,7 +50,7 @@
 * 必应应用 – 数千万台设备，每天发送 300 万条以上的通知
 
 ###4\.如何升级或降级通知中心以更改我的服务层？
-转到 [Azure 经典门户]，然后依次单击“服务总线”、你的命名空间和你的通知中心。在“缩放”选项卡中，可以更改你的通知中心服务层。
+转到 [Azure 经典管理门户]，然后依次单击“服务总线”、你的命名空间和你的通知中心。在“缩放”选项卡中，可以更改你的通知中心服务层。
 
 ![](./media/notification-hubs-faq/notification-hubs-classic-portal-scale.png)
 
@@ -158,19 +158,19 @@ Azure 通知中心使用基于[共享访问签名 (SAS)](/documentation/articles
 缺点是设备上的应用未启动期间将不会接收通知。
 
 ###2.是否有任何审核日志功能？
-有关所有通知中心管理操作，请转到 [Azure 经典门户]中公开的操作日志。
+有关所有通知中心管理操作，请转到 [Azure 经典管理门户]中公开的操作日志。
 
 ##监视与故障排除
 ###1.故障排除功能有哪些？
 Azure 通知中心提供多种可执行常见故障排除的功能，特别是在有关已删除通知的最常见情况中。有关详细信息，请参阅 [NH — 故障排除]白皮书。
 
 ###2.遥测功能有哪些？
-Azure 通知中心支持在 [Azure 经典门户]中查看遥测数据。你可以在 [NH — 指标]页面找到有关可用指标的详细信息。
+Azure 通知中心支持在 [Azure 经典管理门户]中查看遥测数据。你可以在 [NH — 指标]页面找到有关可用指标的详细信息。
 
 >[AZURE.NOTE] 成功的通知仅表示推送通知已传递到外部推送通知服务（例如 Apple 的 APNS、Google 的 GCM 等等）。由 PNS 负责将通知传递到目标设备。PNS 通常不会向第三方公开传递指标。
 
 我们还提供了以编程方式导出遥测数据的功能（在**标准**层）。有关详细信息，请参阅 [NH — 指标示例]。
-[Azure 管理门户]: https://manage.windowsazure.cn
+[Azure 经典管理门户]: https://manage.windowsazure.cn
 [通知中心定价]: /home/features/notification-hubs/#price
 [通知中心 SLA]: /support/legal/sla
 [案例研究 - Sochi]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=7942

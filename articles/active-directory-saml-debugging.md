@@ -7,7 +7,7 @@
 <tags 
     ms.service="active-directory" 
     ms.date="02/09/2016" 
-    wacn.date="03/29/2016" />
+    wacn.date="06/27/2016" />
 
 #如何在 Azure Active Directory 中调试对应用程序进行基于 SAML 的单一登录
 
@@ -28,5 +28,4 @@
 -->
 <!--Image references-->
 [1]: ./media/active-directory-saml-debugging/fiddler.png
-
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0620_2016-->

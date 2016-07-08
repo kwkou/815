@@ -12,12 +12,12 @@
 	ms.date="06/10/2016"
 	wacn.date="07/04/2016"/>
 
-# 在 Azure 门户中监视 DocumentDB 帐户使用情况
+# 在 Azure 门户预览中监视 DocumentDB 帐户使用情况
 
-你可以在 [Azure 门户](https://portal.azure.cn/)中监视 DocumentDB 帐户。对于每个 DocumentDB 帐户，性能指标（如请求和服务器错误）和使用情况指标（如存储消耗）都可用。
+你可以在 [Azure 门户预览](https://portal.azure.cn/)中监视 DocumentDB 帐户。对于每个 DocumentDB 帐户，性能指标（如请求和服务器错误）和使用情况指标（如存储消耗）都可用。
 
 ## 查看 DocumentDB 帐户的性能指标
-1.	在 [Azure 门户](https://portal.azure.cn/)中，单击“浏览”、“DocumentDB 帐户”，然后单击要查看其性能指标的 DocumentDB 帐户的名称。
+1.	在 [Azure 门户预览](https://portal.azure.cn/)中，单击“浏览”、“DocumentDB 帐户”，然后单击要查看其性能指标的 DocumentDB 帐户的名称。
 2.	默认情况下，在“监视”可重用功能区中可以看到如下内容：
 	*	当天的请求总数。
 	*	该帐户的存储使用情况。
@@ -48,7 +48,7 @@
 
 
 ## 创建并排性能指标图表
-Azure 门户使你能够创建并排的指标图表。
+Azure 门户预览使你能够创建并排的指标图表。
 
 1.	首先，请右键单击你想要克隆和修改的图表，然后选择“自定义”。
 
@@ -63,7 +63,7 @@ Azure 门户使你能够创建并排的指标图表。
 	![请求总数图表和过去一小时新的请求总数的屏幕截图](./media/documentdb-monitor-accounts/madocdb8.png)
 
 ## 设置 DocumentDB 帐户性能指标警报
-1.	在 [Azure 门户](https://portal.azure.cn/)中，单击“浏览全部”、“DocumentDB 帐户”，然后单击要为其设置性能指标警报的 DocumentDB 帐户的名称。
+1.	在 [Azure 门户预览](https://portal.azure.cn/)中，单击“浏览全部”、“DocumentDB 帐户”，然后单击要为其设置性能指标警报的 DocumentDB 帐户的名称。
 
 2.	如果“所有设置”边栏选项卡未打开，请单击左侧顶部的“设置”命令以打开边栏选项卡。
 	![“数据库帐户”边栏选项卡上“设置”命令的屏幕截图](./media/documentdb-monitor-accounts/madocdb10.png)
@@ -84,7 +84,7 @@ Azure 门户使你能够创建并排的指标图表。
 	![“添加警报规则”边栏选项卡的屏幕截图](./media/documentdb-monitor-accounts/madocdb12.png)
 
 ## 监视 DocumentDB 的其他方法
-门户中可用的帐户级别指标（如帐户存储使用情况和请求总数）不可通过 DocumentDB API 使用。但是，你可以以集合级别检索使用情况数据。若要检索集合级别的数据，请执行以下操作：
+门户预览中可用的帐户级别指标（如帐户存储使用情况和请求总数）不可通过 DocumentDB API 使用。但是，你可以以集合级别检索使用情况数据。若要检索集合级别的数据，请执行以下操作：
 
 - 若要使用 REST API，请[在集合上执行 GET](https://msdn.microsoft.com/library/mt489073.aspx)。集合的配额和使用情况信息将返回到响应中的 x-ms-resource-quota 和 x-ms-resource-usage 标头中。
 - 若要使用 .NET SDK，请使用 [DocumentClient.ReadDocumentCollectionAsync](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.readdocumentcollectionasync.aspx) 方法，它将返回 [ResourceResponse](https://msdn.microsoft.com/library/dn799209.aspx)，其包含大量使用情况属性，例如 **CollectionSizeUsage**、**DatabaseUsage**、**DocumentUsage** 等。

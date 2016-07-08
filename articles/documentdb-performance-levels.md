@@ -61,16 +61,16 @@
 
 DocumentDB 允许一组丰富的数据库操作，包括查询、利用用户定义的功能 (UDF) 的查询、存储过程和触发器。与这些操作中的每一个关联的处理成本取决于完成操作所需的 CPU、IO 和内存。与考虑和管理硬件资源不同的是，你可以考虑将请求单位作为所需资源的单个措施，以执行各种数据库操作和服务应用程序请求。
 
-可以通过 [Microsoft Azure 门户](https://portal.azure.cn)、[REST API](https://msdn.microsoft.com/library/azure/mt489078.aspx) 或任意 [DocumentDB SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx) 创建集合。DocumentDB API 让你能够指定集合的性能级别。
+可以通过 [Microsoft Azure 门户预览](https://portal.azure.cn)、[REST API](https://msdn.microsoft.com/library/azure/mt489078.aspx) 或任意 [DocumentDB SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx) 创建集合。DocumentDB API 让你能够指定集合的性能级别。
 
-> [AZURE.NOTE] 集合的性能级别可以通过 API 或 [Microsoft Azure 门户](https://portal.azure.cn/)进行调整。性能级别更改应在 3 分钟内完成。
+> [AZURE.NOTE] 集合的性能级别可以通过 API 或 [Microsoft Azure 门户预览](https://portal.azure.cn/)进行调整。性能级别更改应在 3 分钟内完成。
 
 ## 设置集合的性能级别
 创建集合之后，基于指定的性能级别的 RU 的完整分配为集合所保留。
 
 注意，同时具有用户定义的性能级别和预定义的性能级别，DocumentDB 可基于保留的吞吐量进行运作。通过创建集合，应用程序已保留吞吐量且不论实际使用了多少该吞吐量，都会对已保留的吞吐量计费。对于用户定义的性能级别，存储基于消耗量按流量计费，但是对于预定义性能级别，将在创建集合时保留 10 GB 的存储。
 
-在创建集合后，可以通过 DocumentDB SDK 或通过 Azure 经典门户对性能级别进行修改。
+在创建集合后，可以通过 DocumentDB SDK 或通过 Azure 经典管理门户对性能级别进行修改。
 
 > [AZURE.IMPORTANT] DocumentDB 标准集合以小时计费，且你创建的每个集合都将以最低一小时的使用量计费。
 
@@ -91,11 +91,11 @@ DocumentDB 集合允许你根据应用程序的查询模式和性能需求来对
 
 建议你的应用程序利用小数量的集合，除非你有大的存储或吞吐量要求。确保你已清楚理解创建新集合的应用程序模式。你可以选择将集合创建保留为在应用程序外进行处理的管理操作。同样，调整集合的性能级别将更改集合计费的小时费率。如果你的应用程序对集合性能级别进行动态调整，那么你应监视它们。
 
-## 使用 Azure 门户更改性能级别
+## 使用 Azure 门户预览更改性能级别
 
-在管理集合的性能级别时，Azure 门户是你可用的一个选项。按照下列步骤在 Azure 门户中从使用预定义性能级别更改为使用用户定义的性能级别，或者观看此 75 秒的 [Channel 9 视频](https://channel9.msdn.com/Blogs/AzureDocumentDB/ChangeDocumentDBCollectionPerformance)。有关对定价选项的更改的详细信息，请参阅博客文章 [DocumentDB：关于使用新的定价选项所需要了解的一切](https://azure.microsoft.com/blog/documentdb-use-the-new-pricing-options-on-your-existing-collections/)。
+在管理集合的性能级别时，Azure 门户预览是你可用的一个选项。按照下列步骤在 Azure 门户预览中从使用预定义性能级别更改为使用用户定义的性能级别，或者观看此 75 秒的 [Channel 9 视频](https://channel9.msdn.com/Blogs/AzureDocumentDB/ChangeDocumentDBCollectionPerformance)。有关对定价选项的更改的详细信息，请参阅博客文章 [DocumentDB：关于使用新的定价选项所需要了解的一切](https://azure.microsoft.com/blog/documentdb-use-the-new-pricing-options-on-your-existing-collections/)。
 
-1. 从你的浏览器中导航至 [**Azure 门户**](https://portal.azure.cn)。
+1. 从你的浏览器中导航至 [**Azure 门户预览**](https://portal.azure.cn)。
 2. 从左侧的跳转栏单击“浏览”。
 3. 在“浏览”中心中，单击“筛选方式”标签下的“DocumentDB 帐户”。
 4. 在“DocumentDB 帐户”边栏选项卡中，单击包含所需集合的 DocumentDB 帐户。

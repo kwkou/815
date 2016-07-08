@@ -148,7 +148,7 @@
 
     此代码从 WNS 检索应用的通道 URI，然后将该通道 URI 注册到你的通知中心。
 
-    >[AZURE.NOTE]确保将“中心名称”占位符替换为在 [Azure 管理门户]的“通知中心”选项卡中显示的通知中心名称（例如，上例中的 **mynotificationhub2**）。此处，使用在上一部分中获取的 **DefaultListenSharedAccessSignature** 连接字符串替换连接字符串占位符。
+    >[AZURE.NOTE]确保将“中心名称”占位符替换为在 [Azure 经典管理门户]的“通知中心”选项卡中显示的通知中心名称（例如，上例中的 **mynotificationhub2**）。此处，使用在上一部分中获取的 **DefaultListenSharedAccessSignature** 连接字符串替换连接字符串占位符。
 
 5. 在 App.xaml.cs 中 **OnLaunched** 事件处理程序的上方，添加对新 **InitNotificationsAsync** 方法的以下调用：
 
@@ -175,7 +175,7 @@
 
 ##发送通知 
 
-在 [Azure 经典门户] 中通过通知中心上的调试选项卡（如以下屏幕中所示）来发送通知，可以在应用中测试通知的接收情况。
+在 [Azure 经典管理门户] 中通过通知中心上的调试选项卡（如以下屏幕中所示）来发送通知，可以在应用中测试通知的接收情况。
 
 ![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-debug.png)
 
@@ -232,7 +232,7 @@
             await hub.SendWindowsNativeNotificationAsync(toast);
         }
 
-   	确保将“中心名称”占位符替换为在 [Azure 经典门户] 的“通知中心”选项卡中显示的通知中心名称。此外，使用你在“配置通知中心”部分中获取的名称为 **DefaultFullSharedAccessSignature** 的连接字符串替换连接字符串占位符。
+   	确保将“中心名称”占位符替换为在 [Azure 经典管理门户] 的“通知中心”选项卡中显示的通知中心名称。此外，使用你在“配置通知中心”部分中获取的名称为 **DefaultFullSharedAccessSignature** 的连接字符串替换连接字符串占位符。
 
 	>[AZURE.NOTE]确保你使用的是具有**完全**访问权限的连接字符串，而不是具有**侦听**访问权限的连接字符串。侦听访问字符串无权发送通知。
 
@@ -286,7 +286,7 @@
 
 <!-- URLs. -->
 
-[Azure 经典门户]: https://manage.windowsazure.cn
+[Azure 经典管理门户]: https://manage.windowsazure.cn
 
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
 

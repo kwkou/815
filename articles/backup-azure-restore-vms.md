@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="从备份中还原虚拟机 | Microsoft Azure"
+	pageTitle="从备份中还原虚拟机 | Azure"
 	description="了解如何从恢复点还原 Azure 虚拟机"
 	services="backup"
 	documentationCenter=""
@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="backup"
-	ms.date="01/22/2016"
-	wacn.date="04/12/2016"/>
+	ms.date="05/06/2016"
+	wacn.date="06/06/2016"/>
 
 # 还原 Azure 中的虚拟机
 
@@ -51,7 +51,7 @@
 
 1. 在“选择还原实例”屏幕中，指定有关要将虚拟机还原到何处的详细信息。
 
-  - 指定虚拟机名称：在指定的云服务中，虚拟机名称应该是唯一的。如果你打算使用相同的名称替换现有的 VM，请先删除现有的 VM 和数据磁盘，然后从 Azure 备份还原数据。
+  - 指定虚拟机名称：在指定的云服务中，虚拟机名称应该是唯一的。不支持覆盖现有 VM。 
   - 选择 VM 的云服务：这是创建 VM 的必要步骤。你可以选择使用现有的云服务，或创建新的云服务。
 
         无论选取怎样的云服务名称，云服务名称都应是全局唯一的。通常，云服务名称与 [cloudservice].chinacloudapp.net 形式的面向公众的 URL 关联。如果该名称已被使用，Azure 不会允许你创建新的云服务。如果你选择创建新的云服务，它将被提供与虚拟机相同的名称，在这种情况下，选取的 VM 名称应具有充分的唯一性才能应用到关联的云服务。
@@ -70,7 +70,7 @@
 
     ![选择虚拟网络](./media/backup-azure-restore-vms/restore-cs-vnet.png)
 
-4. 选择子网：如果 VNET 有子网，默认选择的选项为第一个子网。从下拉选项中选择你想要的子网。有关子网详细信息，请转到[门户主页](https://manage.windowsazure.cn/)中的“网络”扩展，然后转到“虚拟网络”并在选择虚拟网络后，向下钻取到“配置”以查看子网详细信息。
+4. 选择子网：如果 VNET 有子网，默认选择的选项为第一个子网。从下拉选项中选择你想要的子网。有关子网详细信息，请转到[经典管理门户主页](https://manage.windowsazure.cn/)中的“网络”扩展，然后转到“虚拟网络”并在选择虚拟网络后，向下钻取到“配置”以查看子网详细信息。
 
     ![选择子网](./media/backup-azure-restore-vms/select-subnet.png)
 
@@ -89,20 +89,26 @@
 
 ![还原作业已完成](./media/backup-azure-restore-vms/restore-job-complete.png)
 
-还原虚拟机后，你可能需要重新安装原始 VM 上的扩展，并在 Azure 门户中为虚拟机[修改终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)。
+还原虚拟机后，你可能需要重新安装原始 VM 上的扩展，并在 Azure 经典管理门户中为虚拟机[修改终结点](/documentation/articles/virtual-machines-set-up-endpoints)。
 
-## <a name="restoring-domain-controller-vms"></a>还原域控制器 VM
+## 备份已还原的 VM
+如果将 VM 还原到的云服务与最初备份 VM 时所在的云服务同名，则还原之后，会继续备份该 VM。如果将 VM 还原到了不同的云服务或者为还原的 VM 指定了不同的名称，则系统会将此 VM 视为新 VM，因此你需要为还原的 VM 设置备份。
+
+## 在发生 Azure 数据中心灾难期间还原 VM
+如果运行已备份 VM 的主数据中心遇到灾难性故障，并且你已将备份保管库配置为异地冗余，则 Azure 备份允许将该 VM 还原到配对的数据中心。在这种情况下，需要选择一个在配对数据中心内存在的存储帐户，而余下的还原过程将保持不变。Azure 备份使用配对地区中的计算服务来创建还原的虚拟机。
+
+## 还原域控制器 VM
 Azure 备份支持对域控制器 (DC) 虚拟机进行备份的方案。但在还原过程中，你必须谨慎操作。在单 DC 配置中，域控制器 VM 的还原体验大大不同于多 DC 配置中的 VM。
 
 ### 单 DC
-可以通过 Azure 门户或 PowerShell 还原该 VM（与任何其他 VM 一样）。
+可以通过 Azure 经典管理门户或 PowerShell 还原该 VM（与任何其他 VM 一样）。
 
 ### 多 DC
 当你的环境为多 DC 环境时，域控制器有自己的数据同步方式。在不提供相应预防措施的情况下还原较旧的备份点时，USN 回退过程可能会在多 DC 环境中造成破坏。恢复此类 VM 的正确方法是在 DSRM 模式下启动它。
 
-需要解决的难题是，DSRM 模式不存在于 Azure 中。因此若要还原此类 VM，不能使用 Azure 门户。唯一支持的还原机制是使用 PowerShell 进行基于磁盘的还原。
+需要解决的难题是，DSRM 模式不存在于 Azure 中。因此若要还原此类 VM，不能使用 Azure 经典管理门户。唯一支持的还原机制是使用 PowerShell 进行基于磁盘的还原。
 
->[AZURE.WARNING]对于多 DC 环境中的域控制器 VM，请勿使用 Azure 门户来还原！ 仅支持基于 PowerShell 的还原
+>[AZURE.WARNING]对于多 DC 环境中的域控制器 VM，请勿使用 Azure 经典管理门户来还原！ 仅支持基于 PowerShell 的还原
 
 阅读更多内容，了解 [USN 回退问题](https://technet.microsoft.com/library/dd363553)以及建议的问题解决策略。
 
@@ -118,7 +124,7 @@ Azure 备份支持备份虚拟机的以下特殊网络配置。
 >[AZURE.TIP]还原后，请使用基于 PowerShell 的还原流程来重新创建 VM 的特殊网络配置。
 
 ### 从 UI 还原：
-从 UI 还原时，请**始终选择新的云服务**。请注意，由于门户在执行还原流程时只接受强制参数，因此使用 UI 还原的 VM 将会丢失它们拥有的特殊网络配置。也就是说，还原后的 VM 将会是普通的 VM，而没有负载平衡器配置、多个 NIC 或多个保留 IP。
+从 UI 还原时，请**始终选择新的云服务**。请注意，由于经典管理门户在执行还原流程时只接受强制参数，因此使用 UI 还原的 VM 将会丢失它们拥有的特殊网络配置。也就是说，还原后的 VM 将会是普通的 VM，而没有负载平衡器配置、多个 NIC 或多个保留 IP。
 
 ### 从 PowerShell 还原：
 PowerShell 能够只从备份还原 VM 磁盘，而不建立虚拟机。当还原需要上述特殊网络配置的虚拟机时，此方法很有用。
@@ -136,4 +142,4 @@ PowerShell 能够只从备份还原 VM 磁盘，而不建立虚拟机。当还�
 - [排查错误](/documentation/articles/backup-azure-vms-troubleshoot#restore)
 - [管理虚拟机](/documentation/articles/backup-azure-manage-vms)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0530_2016-->

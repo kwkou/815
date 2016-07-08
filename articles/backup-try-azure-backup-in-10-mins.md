@@ -38,7 +38,7 @@
 若要备份文件和文件夹，你需要在要存储数据的区域内创建一个备份保管库。你还要确定存储的复制方式，并下载凭据和备份代理。
 
 ### 创建备份保管库的步骤
-1. 如果你尚未登录 [Azure 管理门户](https://manage.windowsazure.cn/)，请使用你的 Azure 订阅登录。
+1. 如果你尚未登录 [Azure 经典管理门户](https://manage.windowsazure.cn/)，请使用你的 Azure 订阅登录。
 
 2. 单击“新建”>“恢复服务”>“备份”。
 
@@ -50,7 +50,7 @@
 
     ![创建保管库](./media/backup-try-azure-backup-in-10-mins/demo-vault-name.png)
 
-    若要查看状态，你可以监视门户底部的通知。
+    若要查看状态，你可以监视经典管理门户底部的通知。
 
     ![创建保管库](./media/backup-try-azure-backup-in-10-mins/creatingvault1.png)
 
@@ -92,7 +92,7 @@
 
     ![下载](./media/backup-try-azure-backup-in-10-mins/downloadvc.png)
 
-    门户将使用保管库名称和当前日期的组合生成保管库凭据。
+    经典管理门户将使用保管库名称和当前日期的组合生成保管库凭据。
 
     >[AZURE.NOTE] 保管库凭据文件仅在注册工作流中使用，48 小时后过期。
 

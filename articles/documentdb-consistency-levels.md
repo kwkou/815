@@ -78,7 +78,7 @@ DocumentDB 是从无到有开发出来的，其设计考虑到了全局分布。
 
 ## 配置默认的一致性级别
 
-1.  在 [Azure 门户](https://portal.azure.cn/)的跳转栏中，单击“DocumentDB 帐户”。
+1.  在 [Azure 门户预览](https://portal.azure.cn/)的跳转栏中，单击“DocumentDB 帐户”。
 
 2. 在“DocumentDB 帐户”边栏选项卡中，选择要修改的数据库帐户。
 

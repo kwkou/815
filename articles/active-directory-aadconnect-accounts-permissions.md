@@ -10,10 +10,10 @@
 <tags
    ms.service="active-directory"  
    ms.date="04/14/2016"
-   wacn.date="05/16/2016"/>
+   wacn.date="06/14/2016"/>
 
 
-# Azure AD Connect 所需的帐户和权限
+# Azure AD Connect：帐户和权限
 
 <a name="create-the-ad-ds-account"></a>Azure AD Connect 安装向导提供提供两种不同的路径：
 
@@ -121,7 +121,7 @@ Web 应用程序代理服务器 |对于列表中的每个服务器，如果运�
 
 使用该帐户的服务器名称可以根据用户名的第二个部分来识别。在上图中，服务器名称是 FABRIKAMCON。如果你部署了暂存服务器，每个服务器都有自身的帐户。Azure AD 将同步服务帐户数目限制为 10 个。
 
-服务帐户带有永不过期的长复杂密码。系统为其授予了特殊角色“目录同步帐户”，该角色只有权执行目录同步任务。无法在 Azure AD Connect 向导以外授予这个特殊的内置角色，并且 Azure 门户只会显示此帐户具有“用户”角色。
+服务帐户带有永不过期的长复杂密码。系统为其授予了特殊角色“目录同步帐户”，该角色只有权执行目录同步任务。无法在 Azure AD Connect 向导以外授予这个特殊的内置角色，并且 Azure 经典管理门户只会显示此帐户具有“用户”角色。
 
 ![AD 帐户角色](./media/active-directory-aadconnect-accounts-permissions/aadsyncserviceaccountrole.png)
 
@@ -129,4 +129,4 @@ Web 应用程序代理服务器 |对于列表中的每个服务器，如果运�
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

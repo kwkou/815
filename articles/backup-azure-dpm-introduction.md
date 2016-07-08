@@ -3,15 +3,15 @@
 	description="使用 Azure 备份服务备份 DPM 服务器的简介"
 	services="backup"
 	documentationCenter=""
-	authors="giridharreddy"
-	manager="jwhit"
+	authors="trinadhk"
+	manager="shreeshd"
 	editor=""
 	keywords="System Center Data Protection Manager, Data Protection Manager, dpm 备份"/>
 
 <tags
 	ms.service="backup" 
-	ms.date="02/12/2016"
-	wacn.date="04/12/2016"/>
+	ms.date="05/10/2016"
+	wacn.date="06/06/2016"/>
 
 # 使用 DPM 准备将工作负荷备份到 Azure
 
@@ -25,24 +25,23 @@
 - 遇到的典型错误以及如何处理它们
 - 支持的方案
 
+> [AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model)。本文提供有关还原使用 Resource Manager 模型部署的 VM 的信息和过程。
+
 System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可以存储在磁带、磁盘上，或者使用 Microsoft Azure Backup 备份到 Azure。DPM 可与 Azure 备份交互，如下所述：
 
-- **部署为物理服务器或本地虚拟机的 DPM** — 如果 DPM 部署为物理服务器或本地 Hyper-V 虚拟机，则你除了磁盘和磁带备份外，还可以将数据备份到 Azure 备份保管库。
-- **部署为 Azure 虚拟机的 DPM** — 通过 System Center 2012 R2 Update 3，可以将 DPM 部署为 Azure 虚拟机。如果 DPM 部署为 Azure 虚拟机部署，则你可以将数据备份到附加到 DPM Azure 虚拟机的 Azure 磁盘，也可以通过将数据备份到 Azure 备份保管库来卸载数据存储。
+- **部署为物理服务器或本地虚拟机的 DPM** — 如果 DPM 部署为物理服务器或本地 Hyper-V 虚拟机，则你除了磁盘和磁带备份外，还可以将数据备份到恢复服务保管库。
+- **部署为 Azure 虚拟机的 DPM** — 通过 System Center 2012 R2 Update 3，可以将 DPM 部署为 Azure 虚拟机。如果 DPM 部署为 Azure 虚拟机部署，则你可以将数据备份到附加到 DPM Azure 虚拟机的 Azure 磁盘，也可以通过将数据备份到恢复服务保管库来卸载数据存储。
 
 ## 为何要备份 DPM 服务器？
 
 使用 Azure 备份来备份 DPM 服务器所带来的业务好处包括：
 
-- 对于本地 DPM 部署，你可以使用 Azure 备份来取代长期的磁带部署。
-- 对于 Azure 中的 DPM 部署，Azure 备份可让你卸载 Azure 磁盘中的存储，从而通过将较旧的数据存储在 Azure 备份上，并将较新的数据存储在磁盘上来实现扩展。
+- 对于本地 DPM 部署，你可以使用 Azure 来取代长期的磁带部署。
+- 对于 Azure 中的 DPM 部署，Azure 备份可让你卸载 Azure 磁盘中的存储，从而通过将较旧的数据存储在恢复服务保管库中，并将较新的数据存储在磁盘上来实现扩展。
 
 ## DPM 服务器备份的工作原理
-若要备份虚拟机，首先需要获得数据的时间点快照。Azure 备份服务在计划的时间启动备份作业，并触发要拍摄快照的备份扩展。备份扩展会与来宾内部的 VSS 服务进行协调以确保一致性，并会在达成一致后调用 Azure 存储服务的 Blob 快照 API。这样做可以获得虚拟机磁盘的一致性快照，不必关闭虚拟机。
-
-拍摄快照后，数据将由 Azure 备份服务传输到备份保管库中。该服务负责确定并传输自上次备份以来进行了更改的块，使备份存储和网络更高效。数据传输完成后，将会删除快照并创建恢复点。在 Azure 管理门户中，可以查看此恢复点。
-
->[AZURE.NOTE] Linux 虚拟机只能使用文件一致性备份。
+为了提供基于磁盘的数据保护，DPM 服务器将创建并维护受保护服务器上的数据的副本。副本存储在存储池中，存储池由 DPM 服务器或自定义卷上的一系列磁盘组成。不管你要保护文件数据还是应用程序数据，都需要首先创建数据源的副本。副本将会根据配置的设置定期同步或更新。
+如果你使用基于磁盘的短期保护或者在云中长期保护，DPM 可以将数据从副本卷备份到恢复服务保管库，以免对受保护的计算机造成影响。
 
 ## 先决条件
 按如下所述让 Azure 备份做好备份 DPM 数据的准备：
@@ -88,4 +87,4 @@ System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可
 
 >[AZURE.NOTE] 从 System Center 2012 DPM SP1 开始，你可以使用 Microsoft Azure 备份将 DPM 保护的工作负载备份到 Azure。
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0530_2016-->

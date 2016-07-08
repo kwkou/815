@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="02/25/2016" 
-	wacn.date="05/18/2016"/>
+	ms.date="05/12/2016" 
+	wacn.date="06/06/2016"/>
 	
 	
 # 使用 Azure Multi-Factor Authentication 时遇到问题
@@ -172,4 +172,4 @@
 此外，你可以联系管理员或为你设置多重身份验证的人员，看看他们是否可以提供帮助。
 
 最后，请务必在此页面上留下一些详细的意见反馈，好让我们更新此页面，并通过提供更多的信息来持续改进此页面。
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0530_2016-->

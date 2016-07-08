@@ -9,7 +9,7 @@
 
 <tags
    ms.service="active-directory"
-    ms.date="04/14/2016"
+   ms.date="04/14/2016"
    wacn.date="05/18/2016"/>
 
 # Azure AD Connect 的拓扑
@@ -130,10 +130,6 @@ Azure AD Connect 支持以“暂存模式”安装第二个服务器。使用此
 ## 多个 Azure AD 目录
 Azure 建议组织在 Azure AD 中部署单个目录。
 在打算使用多个 Azure AD 目录之前，请参阅以下主题，其中介绍了可让你使用单个目录的常见方案。
-
-| 主题 | |
-| --------- | --------- |
-| 使用管理单位委派 | [Azure AD 中的管理单元管理](/documentation/articles/active-directory-administrative-units-management)
 
 ![MultiForestMultiDirectory](./media/active-directory-aadconnect-topologies/MultiForestMultiDirectory.png)
 

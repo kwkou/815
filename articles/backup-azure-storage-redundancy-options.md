@@ -1,5 +1,5 @@
 <properties
-	pageTitle="确定 Azure 备份存储冗余选项 | Microsoft Azure"
+	pageTitle="确定 Azure 备份存储冗余选项 | Azure"
 	description="了解异地冗余存储和本地冗余存储之间的差异，以确定要使用哪个 Azure 备份存储冗余选项。"
 	services="backup"
 	documentationCenter=""

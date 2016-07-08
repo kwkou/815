@@ -9,14 +9,14 @@
 	
 <tags
 	ms.service="batch"
-	ms.date="01/22/2016"
-	wacn.date="05/09/2016"/>
+	ms.date="04/21/2016"
+	wacn.date="06/06/2016"/>
 
 # 在 Azure 批处理( Batch ) 计算节点上运行作业准备和完成任务
 
-Azure 批处理( Batch ) 任务在执行之前通常需要进行某种形式的设置，同样，在作业的任务完成之后需要进行某种形式的作业后维护。批处理( Batch ) 以可选的*作业准备*和*作业解放*任务的形式提供这种准备和维护机制。
+Azure 批处理( Batch ) 任务在执行之前通常需要进行某种形式的设置，并且在作业的任务完成之后需要进行某种形式的作业后维护。批处理( Batch ) 以可选的准备和作业释放任务的形式提供这种准备和维护机制。
 
-在任何作业任务运行之前，作业准备任务在计划要运行任务的所有计算节点上运行。作业完成后，作业释放任务将在池中至少运行了一个任务的每个节点上运行。对于作业准备和释放任务，你可以指定运行任务时要调用的命令行。这些特殊任务可以提供许多熟悉的任务功能，例如文件下载、提升权限的执行、自定义环境变量、最大执行持续时间、重试计数和文件保留时间。
+在任何作业任务运行之前，作业准备任务在计划要运行任务的所有计算节点上运行。作业完成后，作业释放任务将在池中至少运行了一个任务的每个节点上运行。与普通的 Batch 任务一样，你可以指定在运行作业准备或释放任务要调用的命令行。这些特殊任务可以提供许多熟悉的任务功能，例如文件下载、提升权限的执行、自定义环境变量、最大执行持续时间、重试计数和文件保留时间。
 
 在以下部分中，你将了解如何在 [Batch .NET][api_net] API 中利用 [JobPreparationTask][net_job_prep] 类和 [JobReleaseTask][net_job_release] 类来使用这两种特殊类型的任务。
 
@@ -48,16 +48,15 @@ Batch 作业通常需要一组通用的数据作为作业任务的输入。例�
 
 ## 作业释放任务
 
-将作业标记为完成后，作业释放任务将在池中至少运行了一个任务的每个节点上执行。可以通过发出终止请求将作业标记为已完成。然后，Batch 服务会将作业状态设置为正在终止，终止与任务关联的任何活动任务或正在运行的任务，并运行作业释放任务。然后，该作业将进入已完成状态。
+将作业标记为完成后，作业释放任务将在池中至少运行了一个任务的每个节点上执行。可以通过发出终止请求将作业标记为已完成。然后，Batch 服务会将作业状态设置为“正在终止”，终止与任务关联的任何活动任务或正在运行的任务，并运行作业释放任务。然后，该作业将进入“已完成”状态。
 
 > [AZURE.NOTE] 作业删除操作也会执行作业释放任务。但是，如果已经终止了某个作业，则以后删除该作业时，释放任务不会再次运行。
 
 ## Batch .NET API 中的作业准备和释放任务
 
-若要指定作业准备任务，可以创建并配置 [JobPreparationTask][net_job_prep] 对象，然后将它分配到作业的 [CloudJob.JobPreparationTask][net_job_prep_cloudjob] 属性。同样，初始化 [JobReleaseTask][net_job_release] 并将它分配到作业的 [CloudJob.JobReleaseTask][net_job_prep_cloudjob] 属性可以设置作业的释放任务。
+若要使用作业准备任务，可以创建并配置 [JobPreparationTask][net_job_prep] 对象，然后将它分配到作业的 [CloudJob.JobPreparationTask][net_job_prep_cloudjob] 属性。同样，初始化 [JobReleaseTask][net_job_release] 并将它分配到作业的 [CloudJob.JobReleaseTask][net_job_prep_cloudjob] 属性可以设置作业的释放任务。
 
 在此代码段中，`myBatchClient` 是完全初始化的 [BatchClient][net_batch_client] 实例，`myPool` 是 Batch 帐户中的现有池。
-```
 		// Create the CloudJob for CloudPool "myPool"
 		CloudJob myJob = myBatchClient.JobOperations.CreateJob("JobPrepReleaseSampleJob",
 															   new PoolInformation() { PoolId = "myPool" });
@@ -69,14 +68,14 @@ Batch 作业通常需要一组通用的数据作为作业任务的输入。例�
 		// Assign the job release task to the job
 		myJob.JobReleaseTask = new JobPreparationTask { CommandLine = jobReleaseCmdLine };
 		await myJob.CommitAsync();
-```
-如上所述，终止或删除作业时会执行释放任务。可以通过调用 [PoolOperations.TerminateJobAsync][net_job_terminate] 使用 Batch .NET API 终止作业。可以使用 [PoolOperations.DeleteJobAsync][net_job_delete] 删除作业。这两项操作通常都是在作业的任务已完成或者达到了你定义的超时时完成。
-```
+
+如上所述，终止或删除作业时会执行释放任务。可以通过调用 [JobOperations.TerminateJobAsync][net_job_terminate] 使用 Batch .NET API 终止作业。可以使用 [JobOperations.DeleteJobAsync][net_job_delete] 删除作业。这两项操作通常都是在作业的任务已完成或者达到了你定义的超时时完成。
+
 		// Terminate the job to mark it as Completed; this will initiate the Job Release Task on any node
 		// that executed job tasks. Note that the Job Release Task is also executed when a job is deleted,
 		// thus you need not call Terminate if you typically delete your jobs upon task completion.
 		await myBatchClient.JobOperations.TerminateJobAsync("JobPrepReleaseSampleJob");
-```
+
 ## 后续步骤
 
 ### GitHub 上的示例项目
@@ -94,39 +93,41 @@ Batch 作业通常需要一组通用的数据作为作业任务的输入。例�
 
 示例应用程序的输出类似于：
 
-```
-Attempting to create pool: JobPrepReleaseSamplePool
-The pool already existed when we tried to create it
-Checking for existing job JobPrepReleaseSampleJob...
-Job JobPrepReleaseSampleJob not found, creating...
-Submitting tasks and awaiting completion...
-All tasks completed.
-Contents of shared\job_prep_and_release.txt on tvm-3105992504_1-20151015t150030z:
-tvm-3105992504_1-20151015t150030z tasks:
-  task001
-  task002
-  task006
-  task007
-Contents of shared\job_prep_and_release.txt on tvm-3105992504_2-20151015t150030z:
-tvm-3105992504_2-20151015t150030z tasks:
-  task003
-  task005
-  task004
-  task008
-Waiting for job JobPrepReleaseSampleJob to reach state Completed
-....
-tvm-3105992504_1-20151015t150030z:
-  Prep task exit code:    0
-  Release task exit code: 0
-tvm-3105992504_2-20151015t150030z:
-  Prep task exit code:    0
-  Release task exit code: 0
-Delete job? [yes] no
-yes
-Delete pool? [yes] no
-no
-Sample complete, hit ENTER to exit...
-```
+		
+		Attempting to create pool: JobPrepReleaseSamplePool
+		The pool already existed when we tried to create it
+		Checking for existing job JobPrepReleaseSampleJob...
+		Job JobPrepReleaseSampleJob not found, creating...
+		Submitting tasks and awaiting completion...
+		All tasks completed.
+		Contents of shared\job_prep_and_release.txt on tvm-3105992504_1-20151015t150030z:
+		-------------------------------------------
+		tvm-3105992504_1-20151015t150030z tasks:
+		  task001
+		  task002
+		  task006
+		  task007
+		Contents of shared\job_prep_and_release.txt on tvm-3105992504_2-20151015t150030z:
+		-------------------------------------------
+		tvm-3105992504_2-20151015t150030z tasks:
+		  task003
+		  task005
+		  task004
+		  task008
+		Waiting for job JobPrepReleaseSampleJob to reach state Completed
+		....
+		tvm-3105992504_1-20151015t150030z:
+		  Prep task exit code:    0
+		  Release task exit code: 0
+		tvm-3105992504_2-20151015t150030z:
+		  Prep task exit code:    0
+		  Release task exit code: 0
+		Delete job? [yes] no
+		yes
+		Delete pool? [yes] no
+		no
+		Sample complete, hit ENTER to exit...
+
 
 ### 使用 Batch 资源管理器检查作业准备和释放任务
 
@@ -170,4 +171,4 @@ Sample complete, hit ENTER to exit...
 [1]: ./media/batch-job-prep-release/batchexplorer-01.png
 [2]: ./media/batch-job-prep-release/batchexplorer-02.png
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0530_2016-->

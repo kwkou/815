@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure 中规划 VM 备份基础结构 | Microsoft Azure"
+	pageTitle="在 Azure 中规划 VM 备份基础结构 | Azure"
 	description="规划在 Azure 中备份虚拟机时的重要注意事项"
 	services="backup"
 	documentationCenter=""
@@ -11,7 +11,7 @@
 <tags
 	ms.service="backup"
 	ms.date="02/12/2016"
-	wacn.date="05/09/2016"/>
+	wacn.date="06/06/2016"/>
 
 # 在 Azure 中计划 VM 备份基础结构
 本文介绍在 Azure 中规划备份虚拟机时需要注意的重要事项。如果你已[准备好环境](/documentation/articles/backup-azure-vms-prepare)，则在开始[备份 VM](/documentation/articles/backup-azure-vms) 之前，下一步就是执行此操作。如果你需要有关 Azure 虚拟机的详细信息，请参阅[虚拟机文档](/documentation/services/virtual-machines/)。
@@ -32,10 +32,10 @@
 
 Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完全备份](http://blogs.technet.com/b/filecab/archive/2008/05/21/what-is-the-difference-between-vss-full-backup-and-vss-copy-backup-in-windows-server-2008.aspx)的详细信息）。若要启用 VSS 复制备份，需要在 VM 上设置以下注册表项。
 
-```
-[HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\BCDRAGENT]
-"USEVSSCOPYBACKUP"="TRUE"
-```
+
+		[HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\BCDRAGENT]
+		"USEVSSCOPYBACKUP"="TRUE"
+
 
 
 此表介绍了一致性类型，以及在 Azure VM 备份和还原过程中，这些一致性类型会在何种条件下出现。

@@ -20,7 +20,7 @@
   * [自行填充身份验证数据的方式](#ways-to-populate-authentication-data)
 * [**组织启用密码重置的最佳方式**](#what-is-the-best-way-to-roll-out-password-reset-for-users)
   * [基于电子邮件的启用方式与示例电子邮件通信](#email-based-rollout)
-  * [为用户创建自己的自定义密码管理门户](#creating-your-own-password-portal)
+  * [为用户创建自己的自定义密码经典管理门户](#creating-your-own-password-portal)
   * [如何使用强制注册来强制用户在登录时注册](#using-enforced-registration)
   * [如何上载用户帐户的身份验证数据](#uploading-data-yourself)
 * [**示例用户和支持培训材料（即将推出！）**](#sample-training-materials)
@@ -43,7 +43,7 @@
 ### <a name="ways-to-populate-authentication-data"></a>填充身份验证数据的方式
 关于如何为你所在组织中的用户指定用于密码重置的数据，你有几种选择。
 
-- 在 [Azure 管理门户](https://manage.windowsazure.cn)或 [Office 365 管理门户](https://portal.partner.microsoftonline.cn)中编辑用户
+- 在 [Azure 经典管理门户](https://manage.windowsazure.cn)或 [Office 365 经典管理门户](https://portal.partner.microsoftonline.cn)中编辑用户
 - 使用 Azure AD Sync 将用户属性从本地 Active Directory 域同步到 Azure AD
 - [遵循此处所述的步骤](/documentation/articles/active-directory-passwords-learn-more#how-to-access-password-reset-data-for-your-users)使用 Windows PowerShell 编辑用户属性。
 - 通过将用户引导至位于 [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup) 的注册门户，使用户能够注册其自己的数据
@@ -56,10 +56,10 @@
 ## <a name="what-is-the-best-way-to-roll-out-password-reset-for-users"></a>为用户启用密码重置的最佳方式是什么？
 密码重置的常规启用步骤如下：
 
-1.	转到 [Azure 管理门户](https://manage.windowsazure.cn)中的“配置”选项卡并针对“可进行密码重置的用户”选项选择“是”，在你的目录中启用密码重置。
-2.	转到 [Azure 管理门户](https://manage.windowsazure.cn)中的“许可证”选项卡，将相应许可证分配给你希望向其提供密码重置的每个用户。
+1.	转到 [Azure 经典管理门户](https://manage.windowsazure.cn)中的“配置”选项卡并针对“可进行密码重置的用户”选项选择“是”，在你的目录中启用密码重置。
+2.	转到 [Azure 经典管理门户](https://manage.windowsazure.cn)中的“许可证”选项卡，将相应许可证分配给你希望向其提供密码重置的每个用户。
 3.	也可以将密码重置限制在随时间推移缓慢启用该功能的一组用户内，方法是将“限制访问密码重置”开关设置为“是”并选择要为密码重置启用的安全组（请注意，这些用户必须全部分配有许可证）。
-4.	指导用户使用密码重置，方法是向他们发送一封电子邮件指导他们注册、在访问面板上启用强制注册，或者通过 DirSync、PowerShell 或 [Azure 管理门户](https://manage.windowsazure.cn)自行为这些用户上载适当的身份验证数据。下面提供此方面的更多详细信息。下面提供了与此相关的更多详细信息。
+4.	指导用户使用密码重置，方法是向他们发送一封电子邮件指导他们注册、在访问面板上启用强制注册，或者通过 DirSync、PowerShell 或 [Azure 经典管理门户](https://manage.windowsazure.cn)自行为这些用户上载适当的身份验证数据。下面提供此方面的更多详细信息。下面提供了与此相关的更多详细信息。
 5.	经过一段时间后，导航到“报告”选项卡并查看[**密码重置注册活动**](/documentation/articles/active-directory-passwords-get-insights#view-password-reset-registration-activity)报告，查看用户注册情况。
 6.	适当数量的用户完成注册后，导航到“报告”选项卡并查看[**密码重置活动**](/documentation/articles/active-directory-passwords-get-insights#view-password-reset-activity)报告，观看他们使用密码重置。
 
@@ -103,9 +103,9 @@
 
 要了解可以通过 DirSync 或 Windows PowerShell 设置哪些属性，请参阅[密码重置使用的数据](/documentation/articles/active-directory-passwords-learn-more#what-data-is-used-by-password-reset)。
 
-你可以执行以下步骤，通过 [Azure 管理门户](https://manage.windowsazure.cn)上载身份验证数据：
+你可以执行以下步骤，通过 [Azure 经典管理门户](https://manage.windowsazure.cn)上载身份验证数据：
 
-1.	在 [Azure 管理门户](https://manage.windowsazure.cn)的 **Active Directory 扩展**中导航到你的目录。
+1.	在 [Azure 经典管理门户](https://manage.windowsazure.cn)的 **Active Directory 扩展**中导航到你的目录。
 2.	单击“用户”选项卡。
 3.	从列表中选择所需的用户。
 4.	在第一个选项卡上，可找到“备用电子邮件”，它可作为启用密码重置的属性使用。 
@@ -147,5 +147,4 @@
 [005]: ./media/active-directory-passwords-best-practices/005.jpg "Image_005.jpg"
 [006]: ./media/active-directory-passwords-best-practices/006.jpg "Image_006.jpg"
 [007]: ./media/active-directory-passwords-best-practices/007.jpg "Image_007.jpg"
-
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->

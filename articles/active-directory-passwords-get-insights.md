@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="深入分析：Azure AD 密码管理报告 | Microsoft Azure" 
+	pageTitle="深入分析：Azure AD 密码管理报告 | Azure" 
 	description="本文介绍如何使用报告来深入分析组织中的密码管理操作。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory"  
 	ms.date="02/16/2016" 
-	wacn.date="04/28/2016"/>
+	wacn.date="06/27/2016"/>
 
 # 如何使用密码管理报告获取 Operational Insights
 本部分介绍如何使用 Azure Active Directory 的密码管理报告来查看组织中用户对密码重置和更改的使用情况。
@@ -21,7 +21,7 @@
 - [**在组织中查看密码重置活动**](#view-password-reset-activity)
 
 ## <a name="overview-of-password-management-reports"></a>密码管理报告概述
-一旦部署密码重置，最常见的后续步骤之一是查看其在组织中的使用情况。例如，你可能希望了解用户对密码重置的注册情况，或者在过去几天内进行了多少个密码重置。下面是一些常见问题，你将能够使用当今 [Azure 管理门户](https://manage.windowsazure.cn)中的密码管理报告来回答这些问题：
+一旦部署密码重置，最常见的后续步骤之一是查看其在组织中的使用情况。例如，你可能希望了解用户对密码重置的注册情况，或者在过去几天内进行了多少个密码重置。下面是一些常见问题，你将能够使用当今 [Azure 经典管理门户](https://manage.windowsazure.cn)中的密码管理报告来回答这些问题：
 
 - 有多少人已注册了密码重置？
 - 谁已经注册了密码重置？
@@ -38,7 +38,7 @@
 - [SsprActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprActivityEvent)：列出密码重置事件可用的列
 - [SsprRegistrationActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprRegistrationActivityEvent)：列出密码重置注册事件可用的列
 
-## <a name"view-password-reset-registration-activity"></a>查看密码重置注册活动
+## <a name="view-password-reset-registration-activity"></a> 查看密码重置注册活动
 
 密码重置注册活动报告显示你的组织中已发生的所有密码重置注册。对于已在密码重置注册门户 ([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)) 成功注册身份验证信息的所有用户，密码重置注册都显示在此报告中。
 
@@ -130,7 +130,7 @@
 我们无法访问你的本地密码重置服务。检查同步计算机的事件日志|已失败
 我们在重置用户的本地密码时遇到问题。检查同步计算机的事件日志 | 已失败
 此用户不是密码重置用户组的成员。将此用户添加到该组以解决此问题。|已失败
-已对此租户完全禁用密码重置。若要解决此问题，请参阅[此文](http://aka.ms/ssprtroubleshoot)。 | 已失败
+已对此租户完全禁用密码重置。若要解决此问题，请参阅[此文](/documentation/articles/active-directory-passwords-getting-started/#enable-users-to-reset-their-azure-ad-passwords)。 | 已失败
 用户已成功重置密码|已成功
 
 ## 密码重置文档的链接
@@ -151,5 +151,4 @@
 [002]: ./media/active-directory-passwords-get-insights/002.jpg "Image_002.jpg"
 [003]: ./media/active-directory-passwords-get-insights/003.jpg "Image_003.jpg"
  
-
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->

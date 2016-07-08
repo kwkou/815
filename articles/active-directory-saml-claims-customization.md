@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure Active Directory 中为预先集成的应用自定义 SAML 令牌中颁发的声明 | Microsoft Azure"
+	pageTitle="在 Azure Active Directory 中为预先集成的应用自定义 SAML 令牌中颁发的声明 | Azure"
 	description="了解如何在 Azure Active Directory 中为预先集成的应用自定义 SAML 令牌中颁发的声明"
 	services="active-directory"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="02/26/2016"
-	wacn.date="05/13/2016"/>
+	wacn.date="06/27/2016"/>
 
 #在 Azure Active Directory 中为预先集成的应用自定义 SAML 令牌中颁发的声明
 
@@ -20,7 +20,7 @@ Azure Active Directory 目前支持 Azure AD 应用库中数千个预先集成�
 
 默认情况下，Azure AD 向应用程序颁发 SAML 令牌，其中包含 NameIdentifier 声明，以及用户在 Azure AD 中的用户名值（此值唯一标识用户）。SAML 令牌还含有其他声明，其中包含用户的电子邮件地址、名字和姓氏。
 
-若要查看或编辑颁发给应用程序的 SAML 令牌中的声明，请在 Azure 管理门户中打开应用程序记录，并选择应用程序下面的“属性”选项卡。
+若要查看或编辑颁发给应用程序的 SAML 令牌中的声明，请在 Azure 经典管理门户中打开应用程序记录，并选择应用程序下面的“属性”选项卡。
 
 ![][1]
 
@@ -54,6 +54,10 @@ Azure Active Directory 目前支持 Azure AD 应用库中数千个预先集成�
 
 **注意：**仅当在使用 [Azure AD Connect 工具](/documentation/articles/active-directory-aadconnect)从本地 Active Directory 同步用户数据时，才支持 **user.onpremisesecurityidentifier** 和 **user.onpremisesamaccountname**。
 
+## 相关文章
+
+- [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index)
+- [排查基于 SAML 的单一登录问题](/documentation/articles/active-directory-saml-debugging)
 	
 <!--Image references-->
 [1]: ./media/active-directory-saml-claims-customization/claimscustomization1.png
@@ -61,4 +65,4 @@ Azure Active Directory 目前支持 Azure AD 应用库中数千个预先集成�
 [3]: ./media/active-directory-saml-claims-customization/claimscustomization3.png
 [4]: ./media/active-directory-saml-claims-customization/claimscustomization4.png
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0620_2016-->

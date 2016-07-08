@@ -66,9 +66,9 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 
 **创建 Azure 存储帐户**
 
-1. 登录[Azure 经典门户][azure-classic-portal]。
+1. 登录[Azure 经典管理门户][azure-classic-portal]。
 
-2. 单击左下角的“+ 新建”，指向“数据服务”，指向“存储”，然后单击“快速创建”。![在 Azure 经典门户中，可以使用“快速创建”来设置新的存储帐户。][image-storageaccount-quickcreate]
+2. 单击左下角的“+ 新建”，指向“数据服务”，指向“存储”，然后单击“快速创建”。![在 Azure 经典管理门户中，可以使用“快速创建”来设置新的存储帐户。][image-storageaccount-quickcreate]
 
 3. 输入 **URL**、选择“位置”和“复制”的值，然后单击“创建存储帐户”。不支持地缘组。
 	
@@ -79,9 +79,9 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 4. 等待直到新存储帐户的**状态**更改为**联机**。
 
 ## <a name="ProvisionHDInsight"></a>步骤 2：创建自定义的 HDInsight 群集
-本教程使用 Azure 经典门户中的脚本操作自定义 HDInsight 群集。在本教程中，我们将使用 Azure 经典门户来创建自定义群集。有关如何使用 PowerShell cmdlet 或 HDInsight .NET SDK 的说明，请参阅 [Customize HDInsight clusters using Script Action（使用脚本操作自定义 HDInsight 群集）][hdinsight-custom-provision]文章。
+本教程使用 Azure 经典管理门户中的脚本操作自定义 HDInsight 群集。在本教程中，我们将使用 Azure 经典管理门户来创建自定义群集。有关如何使用 PowerShell cmdlet 或 HDInsight .NET SDK 的说明，请参阅 [Customize HDInsight clusters using Script Action（使用脚本操作自定义 HDInsight 群集）][hdinsight-custom-provision]文章。
 
-1. 登录到 [Azure 经典门户][azure-classic-portal]。你可能已在前一步骤中登录。
+1. 登录到 [Azure 经典管理门户][azure-classic-portal]。你可能已在前一步骤中登录。
 
 2. 单击页面底部的“+ 新建'，然后依次单击“数据服务”、“HDINSIGHT”和“自定义创建”。
 
@@ -147,7 +147,7 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 			<td>指定存储帐户上用作 HDInsight 群集默认文件系统的默认容器。如果你为“存储帐户”<strong></strong>字段选择了“使用现有存储”<strong></strong>，而此帐户中没有现有容器，将按默认值创建容器，其名称与群集名称相同。如果已存在与群集同名的容器，则将在容器名称后追加一个序列号。
 	    </td></tr>
 		<tr><td>其他存储帐户</td>
-			<td>HDInsight 支持多个存储帐户。对于可由群集使用的其他存储帐户则没有限制。但是，如果你使用 Azure 经典门户创建群集，由于 UI 限制，上限则为 7。指定的每个其他存储帐户将在向导中添加一个额外的“存储帐户”页，以便你在此指定帐户信息。</td></tr>
+			<td>HDInsight 支持多个存储帐户。对于可由群集使用的其他存储帐户则没有限制。但是，如果你使用 Azure 经典管理门户创建群集，由于 UI 限制，上限则为 7。指定的每个其他存储帐户将在向导中添加一个额外的“存储帐户”页，以便你在此指定帐户信息。</td></tr>
 	</table>
 
 	单击右箭头。
@@ -177,7 +177,7 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 
 1. 安装 Azure PowerShell 中的说明进行操作。可在[此处][powershell-install-configure]找到说明。
 
-	> [AZURE.NOTE] 或者，只需了解 Hive 查询，可以使用 HDInsight 的联机 Hive 编辑器。若要这样做，请登录到 [Azure 经典门户][azure-classic-portal]，单击左侧窗格中的“HDInsight”以查看 HDInsight 群集的列表。单击要对其运行 Hive 查询的群集，然后单击“查询控制台”。
+	> [AZURE.NOTE] 或者，只需了解 Hive 查询，可以使用 HDInsight 的联机 Hive 编辑器。若要这样做，请登录到 [Azure 经典管理门户][azure-classic-portal]，单击左侧窗格中的“HDInsight”以查看 HDInsight 群集的列表。单击要对其运行 Hive 查询的群集，然后单击“查询控制台”。
 
 2. 打开 Azure PowerShell 集成脚本环境：
 	- 在运行 Windows 8 或 Windows Server 2012 或更高版本的计算机上，可以使用内置搜索。从“开始”屏幕上，键入 **powershell ise** 并单击“Enter”。 
@@ -283,7 +283,7 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 
 9. **运行**新的脚本！ **单击**绿色执行按钮。
 
-10. 检查结果。登录到 [Azure 门户][azure-portal]。
+10. 检查结果。登录到 [Azure 门户预览][azure-portal]。
 	1. 单击左侧面板上的“浏览”<strong></strong>。</br>
 	2. 单击浏览面板右上角的“全部”<strong></strong>。</br>
 	3. 找到并单击“DocumentDB 帐户”<strong></strong>。</br>
@@ -370,7 +370,7 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 		
 9. **运行**新的脚本！ **单击**绿色执行按钮。
 
-10. 检查结果。登录到 [Azure 门户][azure-portal]。
+10. 检查结果。登录到 [Azure 门户预览][azure-portal]。
 	1. 单击左侧面板上的“浏览”<strong></strong>。</br>
 	2. 单击浏览面板右上角的“全部”<strong></strong>。</br>
 	3. 找到并单击“DocumentDB 帐户”<strong></strong>。</br>
@@ -413,7 +413,7 @@ Azure HDInsight 使用 Azure Blob 存储来存储数据。我们称之为 WASB �
 
 5. **运行**新的脚本！ **单击**绿色执行按钮。
 
-6. 检查结果。登录到 [Azure 门户][azure-portal]。
+6. 检查结果。登录到 [Azure 门户预览][azure-portal]。
 	1. 单击左侧面板上的“浏览”<strong></strong>。
 	2. 单击浏览面板右上角的“全部”<strong></strong>。
 	3. 找到并单击“DocumentDB 帐户”<strong></strong>。

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Batch 服务配额和限制 | Microsoft Azure"
+	pageTitle="Batch 服务配额和限制 | Azure"
 	description="了解使用 Azure Batch 服务时的配额、限制和约束"
 	services="batch"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 <tags
 	ms.service="batch"
 	ms.date="03/11/2016"
-	wacn.date="05/09/2016"/>
+	wacn.date="06/06/2016"/>
 
 
 
@@ -42,7 +42,7 @@
 
 ## 增加配额
 
-在 Azure 门户中使用以下步骤请求增加配额（也可以在 [Azure 经典门户](https://manage.windowsazure.cn/)中请求增加）。
+在 Azure 门户中使用以下步骤请求增加配额（也可以在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中请求增加）。
 
 1. 在门户的仪表板中，单击“帮助 + 支持”。
 
@@ -58,7 +58,7 @@
 
 	d.在“支持计划”中，选择“Azure 支持计划 - 开发人员”。
 
-	单击**“下一步”**。
+	单击“下一步”。
 
 4. 在“问题”边栏选项卡中执行以下操作：
 
@@ -82,4 +82,4 @@ Azure 支持人员将与你联系。完成请求最长需要 2 个工作日。
 
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.PNG
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0530_2016-->

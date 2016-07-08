@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在备份保管库中恢复另一 DPM 服务器中的数据 | Azure"
+	pageTitle="从备份保管库中的另一台 DPM 服务器恢复数据 | Azure"
 	description="将所保护的数据从任意 DPM 服务器恢复到 Azure 备份保管库，前提是服务器已注册到该保管库。"
 	services="backup"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="backup"
-	ms.date="09/14/2015"
-	wacn.date="04/12/2016"/>
+	ms.date="05/05/2016"
+	wacn.date="06/06/2016"/>
 
 # 在备份保管库中恢复另一 DPM 服务器中的数据
 现在，你可以将所保护的数据从任意 DPM 服务器恢复到 Azure 备份保管库，前提是服务器已注册到该保管库。此方面的流程已完全集成到 DPM 管理控制台中，类似于其他恢复工作流。
@@ -24,7 +24,7 @@
 
     ![Ad 外部 DPM](./media/backup-azure-alternate-dpm-server/add-external-dpm.png)
 
-2. 提供与要恢复数据的 DPM 服务器关联的**保管库凭据**，从注册到备份保管库的 DPM 服务器列表中选择 **DPM 服务器**，然后提供与要恢复数据的 DPM 服务器关联的**加密通行短语**。
+2. 从与要恢复数据的 **DPM 服务器**关联的保管库下载新的**保管库凭据**，从注册到备份保管库的 DPM 服务器列表中选择 DPM 服务器，然后提供与要恢复数据的 DPM 服务器关联的**加密通行短语**。
 
     ![外部 DPM 凭据](./media/backup-azure-alternate-dpm-server/external-dpm-credentials.png)
 
@@ -88,7 +88,7 @@
 ## 常见问题：
 1. **在安装 UR7 以及最新 Azure 备份代理之后，为何我不能从其他 DPM 服务器添加外部 DPM 服务器？**
 
-    A) 对于现有的通过云对数据源进行保护的 DPM 服务器（使用 Update Rollup 7 之前的更新汇总），你必须在安装 UR7 及最新 Azure 备份代理之后等待至少一天，然后才能开始*添加外部 DPM 服务器*。若要将 DPM 保护组的元数据上载到 Azure，则这是必须的。第一次进行晚间作业时，会发生这种情况。
+    A) 对于现有的通过云对数据源进行保护的 DPM 服务器（使用 Update Rollup 7 之前的更新汇总），必须在安装 UR7 及最新 Azure 备份代理之后等待至少一天，然后才能开始添加外部 DPM 服务器。若要将 DPM 保护组的元数据上载到 Azure，则这是必须的。第一次进行晚间作业时，会发生这种情况。
 
 2. **所需的 Azure 备份代理最低版本是什么版本？**
 
@@ -99,4 +99,4 @@
 ## 后续步骤：
 • [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq)
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_0530_2016-->

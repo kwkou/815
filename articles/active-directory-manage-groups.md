@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用 Azure Active Directory 组管理对资源的访问 | Microsoft Azure" 
-	description="如何在 Azure Active Directory 中使用组来管理对本地和云应用程序与资源的访问。"
+	pageTitle="使用 Azure Active Directory 组管理对资源的访问 | Azure"
+	description="如何在 Azure Active Directory 中使用组来管理用户对本地和云应用程序与资源的访问。"
 	services="active-directory" 
 	documentationCenter="" 
 	authors="curtand"
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="02/09/2016"
-	wacn.date="05/13/2016" />
+	ms.date="03/17/2016"
+	wacn.date="06/21/2016" />
 
 
 # 使用 Azure Active Directory 组管理对资源的访问
@@ -21,7 +21,7 @@ Azure Active Directory (Azure AD) 是综合性的标识和访问管理解决方�
 > [AZURE.NOTE] 若要使用 Azure Active Directory，你需要一个 Azure 帐户。如果你没有帐户，可以[注册免费的 Azure 帐户](/pricing/free-trial/)。
 
 
-Azure Active Directory 的主要功能之一是管理对资源的访问。这些资源可以是目录的一部分（例如，用于通过目录中的角色管理对象的权限）、目录外部的资源（例如 SaaS 应用程序、Azure 服务以及 SharePoint 站点）或者本地资源。可通过 4 种方式向用户分配资源访问权限：
+Azure AD 的主要功能之一是管理对资源的访问。这些资源可以是目录的一部分（例如，用于通过目录中的角色管理对象的权限）、目录外部的资源（例如 SaaS 应用程序、Azure 服务以及 SharePoint 站点）或者本地资源。可通过四种方式向用户分配资源访问权限：
 
 
 1.直接分配
@@ -49,8 +49,8 @@ Azure Active Directory 的主要功能之一是管理对资源的访问。这些
 
 [Azure AD：组的动态成员资格简介](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/Azure-AD--Introduction-to-Dynamic-Memberships-for-Groups)
 
-##访问管理在 Azure Active Directory 中如何工作？
-Azure Active Directory 访问管理解决方案的核心是安全组。使用安全组管理资源访问权限是众所周知的模式，这样就能以弹性且易于理解的方式针对目标用户组提供资源访问权限。资源所有者（或目录管理员）可以分配组，以提供对其拥有的资源的特定访问权限。组的成员将获取访问权限，而资源所有者可将组成员列表管理权限委派给其他人 – 例如部门经理或技术服务管理员。
+## 访问管理在 Azure Active Directory 中如何工作？
+Azure AD 访问管理解决方案的核心是安全组。使用安全组管理资源访问权限是众所周知的模式，这样就能以弹性且易于理解的方式针对目标用户组提供资源访问权限。资源所有者（或目录管理员）可以分配组，以提供对其拥有的资源的特定访问权限。组成员将获取访问权限，而资源所有者可将组成员列表管理权限委派给其他人，例如部门经理或支持人员管理员。
 
 ![Azure Active Directory 访问管理示意图](./media/active-directory-access-management-groups/active-directory-access-management-works.png)
 组的所有者也可以让该组发出自助请求。这样，最终用户就可以搜索和查找组并发出加入请求，有效地寻求权限以访问通过组所管理的资源。组的所有者可以设置组，以便自动批准加入请求，或者要求组的所有者批准。当用户发出加入组的请求时，加入请求转发到组的所有者。如果某个所有者批准了该请求，则发出请求的用户将收到通知并加入该组。如果某个所有者拒绝了该请求，则发出请求的用户将收到通知，但不会加入该组。
@@ -77,4 +77,4 @@ Azure Active Directory 访问管理解决方案的核心是安全组。使用安
 
 * [适用于组的图形 API 参考](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/groups-operations#GroupFunctions)
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_0613_2016-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="03/14/2016"
-	wacn.date="02/25/2016"/>
+	ms.date="05/03/2016"
+	wacn.date="06/14/2016"/>
 
 
 # 续订 Office 365 和 Azure AD 的联合身份验证证书
@@ -97,4 +97,4 @@ https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
 
 >[AZURE.NOTE] 如果你需要支持多个顶级域（例如 contoso.com 和 fabrikam.com），则必须将 SupportMultipleDomain 开关用于任何 cmdlet。有关详细信息，请参阅“支持多个顶级域”。最后，请确保所有 Web 应用程序代理服务器都通过 [Windows Server May 2014](http://support.microsoft.com/kb/2955164) 汇总进行了更新，否则代理可能无法使用新证书自行进行更新，导致服务中断。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

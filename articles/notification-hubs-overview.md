@@ -142,14 +142,14 @@ Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
 
 + **[通知中心教程和指南]**
 
-+ **通知中心入门教程**（[iOS]、[Windows Universal]、[Windows Phone]、[Kindle]、[Xamarin.iOS]、[Xamarin.Android]）
++ **通知中心入门教程**（[iOS]、[Windows Universal]、[Windows Phone]、[Kindle]、[Xamarin.iOS]）
 
 通知中心的相关 .NET 托管 API 参考位于此处：
 
 + [Microsoft.WindowsAzure.Messaging.NotificationHub]
 + [Microsoft.ServiceBus.Notifications] 
 
-  [Azure 门户]: http://manage.azure.cn/
+  [Azure 门户]: https://manage.windowsazure.cn/
   [0]: ./media/notification-hubs-overview/registration-diagram.png
   [1]: ./media/notification-hubs-overview/notification-hub-diagram.png
   [客户如何使用通知中心]: /zh-cn/services/notification-hubs

@@ -62,14 +62,14 @@
 | 操作 | 错误详细信息 | 解决方法 |
 | -------- | -------- | -------|
 | 还原 | 发生云内部错误，还原失败 | <ol><li>使用 DNS 设置配置了你正在尝试还原的云服务。你可以检查 <br>$deployment = Get-AzureDeployment -ServiceName "ServiceName" -Slot "Production" Get-AzureDns -DnsSettings $deployment.DnsSettings<br>如果配置了地址，则表示配置了 DNS 设置。<br> <li>尝试还原的云服务配置了 ReservedIP，且云服务中现有的 VM 处于停止状态。<br>可以使用以下 PowerShell cmdlet 检查云服务是否有保留的 IP：<br>$deployment = Get-AzureDeployment -ServiceName "servicename" -Slot "Production" $dep.ReservedIPName <br><li>你正在尝试将具有以下特殊网络配置的虚拟机还原到同一个云服务中。<br>- 虚拟机采用负载平衡器配置（内部和外部）<br>- 虚拟机具有多个保留 IP<br>- 虚拟机具有多个 NIC<br>请在 UI 中选择新的云服务，或者参阅[还原注意事项](/documentation/articles/backup-azure-restore-vms#restoring-vms-with-special-network-configurations)了解具有特殊网络配置的 VM</ol> |
-| 还原 | 所选 DNS 名称已被使用 - 请指定其他 DNS 名称，然后重试。 | 此处的 DNS 名称是指云服务名称（通常以 .chinacloudapp.cn 结尾）。此名称必须是唯一名称。如果遇到此错误，则需在还原过程中选择其他 VM 名称。<br><br>请注意，此错误仅显示给 Azure 门户用户。通过 PowerShell 进行的还原操作会成功，因为它只还原磁盘，不创建 VM。如果在磁盘还原操作之后显式创建 VM，则会遇到该错误。 |
+| 还原 | 所选 DNS 名称已被使用 - 请指定其他 DNS 名称，然后重试。 | 此处的 DNS 名称是指云服务名称（通常以 .chinacloudapp.cn 结尾）。此名称必须是唯一名称。如果遇到此错误，则需在还原过程中选择其他 VM 名称。<br><br>请注意，此错误仅显示给 Azure 经典管理门户用户。通过 PowerShell 进行的还原操作会成功，因为它只还原磁盘，不创建 VM。如果在磁盘还原操作之后显式创建 VM，则会遇到该错误。 |
 | 还原 | 指定的虚拟网络配置不正确 - 请指定其他虚拟网络配置，然后重试。 | 无 |
 | 还原 | 指定的云服务使用的是保留 IP，这不符合要还原的虚拟机的配置 - 请指定其他不使用保留 IP 的云服务，或者选择其他用于还原的恢复点。 | 无 |
 | 还原 | 云服务已达到输入终结点的数目限制 - 请重新尝试该操作，指定其他云服务或使用现有终结点。 | 无 |
 | 还原 | 备份保管库和目标存储帐户位于两个不同的区域 - 请确保在还原操作中指定的存储帐户与备份保管库位于相同的 Azure 区域。 | 无 |
 | 还原 | 不支持为还原操作指定的存储帐户 - 仅支持具有本地冗余或地域冗余复制设置的“基本/标准”存储帐户。请选择支持的存储帐户 | 无 |
 | 还原 | 针对还原操作指定的存储帐户类型不处于在线状态 - 请确保在还原操作中指定的存储帐户处于在线状态 | 在 Azure 存储空间中出现暂时性错误或断电时，可能会发生这种情况。请选择另一个存储帐户。 |
-| 还原 | 已达到资源组配额限制 - 请从 Azure 门户中删除某些资源组，或者与 Azure 支持部门联系，请求他们提高限制。 | 无 |
+| 还原 | 已达到资源组配额限制 - 请从 Azure 经典管理门户中删除某些资源组，或者与 Azure 支持部门联系，请求他们提高限制。 | 无 |
 | 还原 | 所选子网不存在 - 请选择已存在的子网 | 无 |
 
 
@@ -119,12 +119,12 @@ VM 备份依赖于向底层存储发出快照命令。如果无法访问存储�
 2.  配置了 SQL Server 备份的 VM 造成快照任务延迟<br>
 	默认情况下，VM 备份将在 Windows VM 上发出 VSS 完整备份命令。在运行 SQL Server 且已配置 SQL Server 备份的 VM 上，这可能会造成快照执行延迟。如果由于快照问题而导致备份失败，请设置以下注册表项。
 
-	```
-	[HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\BCDRAGENT]
-	"USEVSSCOPYBACKUP"="TRUE"
-	```
+		
+		[HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\BCDRAGENT]
+		"USEVSSCOPYBACKUP"="TRUE"
+	
 3.  由于在 RDP 中关闭了 VM，VM 状态报告不正确。<br>
-	如果你在 RDP 中关闭了虚拟机，请返回门户检查是否正确反映了 VM 的状态。如果没有，请在门户中使用 VM 仪表板上的“关机”选项关闭 VM。
+	如果你在 RDP 中关闭了虚拟机，请返回经典管理门户检查是否正确反映了 VM 的状态。如果没有，请在经典管理门户中使用 VM 仪表板上的“关机”选项关闭 VM。
 4.  同一个云服务中的许多 VM 配置为同时备份。<br>
 	最佳做法是使同一云服务中的 VM 分开执行不同的备份计划。
 5.  VM 在运行时使用了很高的 CPU/内存。<br>

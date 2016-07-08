@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="04/07/2016" 
-	wacn.date="04/13/2016"/>
+	ms.date="05/12/2016" 
+	wacn.date="06/06/2016"/>
 
 # Azure 多重身份验证常见问题
 
@@ -21,7 +21,7 @@
 
 **问：如何获得 Azure 多重身份验证方面的帮助？**
 
-[搜索 Microsoft 知识库 (KB)](http://search.microsoft.com/zh-cn/supportresults.aspx?form=mssupport&q=phonefactor)
+[搜索 Microsoft 知识库 (KB)](http://search.microsoft.com/supportresults.aspx?form=mssupport&q=phonefactor)
 
 - 在 Microsoft 知识库 (KB) 中搜索有关 Azure 多重身份验证服务器 (Phone Factor) 支持的常见故障维修服务问题的技术解决方案。
 
@@ -37,7 +37,7 @@
 
 **问：如何对使用 Azure 多重身份验证的组织计费？**
 
-在 Azure 管理门户中创建 Multi-Factor Auth Provider 时，选择“按用户”或“按身份验证”计费/使用模式。这是基于消耗量并针对组织的 Azure 订阅计费的资源，就像虚拟机、网站等都是针对订阅计费。
+在 Azure 经典管理门户中创建 Multi-Factor Auth Provider 时，选择“按用户”或“按身份验证”计费/使用模式。这是基于消耗量并针对组织的 Azure 订阅计费的资源，就像虚拟机、网站等都是针对订阅计费。
 
 **问：“按用户”计费模式的收费是以启用多重身份验证的用户数目还是执行身份验证的用户数目为基础？**
 
@@ -46,7 +46,7 @@
 ## 可用性
 **为什么我用启用多重身份验证的账户不能访问 Azure 计费门户或者 Office 365 ？**
 
-Azure 多重身份验证可以使 Azure 管理员安全访问 Azure 管理门户。然而, Azure 管理门户的登录协议和终结点不同于 Azure 账户门户（在里面可以查看账单）和 Office 365的登录协议和终结点。因此, 这些产品和门户目前不支持启用多重身份验证的帐户来登录。整合其他产品和门户使其使用和 Azure 管理门户中相同的登录协议和终结点的工作正在进行中。应该会在 2016 年第一季度完成 Azure 账户门户的迁移。Office 365 则需要更久一点。在那之前,任何启用多重身份验证的帐户只能访问 Azure 管理门户，如果试图访问其他地方则会报错。
+Azure 多重身份验证可以使 Azure 管理员安全访问 Azure 经典管理门户。然而, Azure 经典管理门户的登录协议和终结点不同于 Azure 账户门户（在里面可以查看账单）和 Office 365的登录协议和终结点。因此, 这些产品和门户目前不支持启用多重身份验证的帐户来登录。整合其他产品和门户使其使用和 Azure 经典管理门户中相同的登录协议和终结点的工作正在进行中。应该会在 2016 年第一季度完成 Azure 账户门户的迁移。Office 365 则需要更久一点。在那之前,任何启用多重身份验证的帐户只能访问 Azure 经典管理门户，如果试图访问其他地方则会报错。
 
 **问：如果我没有接到回复来电，或忘了接电话，该怎么办？**
 
@@ -108,4 +108,4 @@ Azure 多重身份验证服务通过短信聚合器发送短信。许多因素�
 
 
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0530_2016-->

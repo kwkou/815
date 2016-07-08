@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="创建 DocumentDB 数据库集合 | Azure" 
-	description="了解如何使用在线服务门户为 Azure DocumentDB（基于云的 NoSQL 文档数据库）创建 JSON 文档集合。立即获取免费试用版。" 
+	description="了解如何使用在线服务门户预览为 Azure DocumentDB（基于云的 NoSQL 文档数据库）创建 JSON 文档集合。立即获取免费试用版。" 
 	services="documentdb" 
 	authors="mimig1" 
 	manager="jhubbard" 
@@ -12,13 +12,13 @@
 	ms.date="05/16/2016" 
 	wacn.date="06/28/2016"/>
 
-# 如何使用 Azure 门户创建 DocumentDB 集合
+# 如何使用 Azure 门户预览创建 DocumentDB 集合
 
 若要使用 Azure DocumentDB，你必须拥有 [DocumentDB 帐户](/documentation/articles/documentdb-create-account)、[数据库](/documentation/articles/documentdb-create-database)、集合和文档。本文章说明如何在 Azure 门户预览中创建 DocumentDB 集合。
 
 不确定集合是什么？ 请参阅[什么是 DocumentDB 集合？](#what-is-a-documentdb-collection)
 
-1.  在 [Azure 门户](https://portal.azure.cn/)的跳转栏中，单击“DocumentDB 帐户”。如果“DocumentDB 帐户”不可见，则单击“浏览”，再单击“DocumentDB 帐户”。
+1.  在 [Azure 门户预览](https://portal.azure.cn/)的跳转栏中，单击“DocumentDB 帐户”。如果“DocumentDB 帐户”不可见，则单击“浏览”，再单击“DocumentDB 帐户”。
 
     ![屏幕截图：突出显示跳转栏中的“DocumentDB 帐户”、“DocumentDB 帐户”边栏选项卡中的帐户以及“DocumentDB 帐户”边栏选项卡上的“数据库”可重用功能区中的数据库](./media/documentdb-create-collection/docdb-database-creation-1-2.png)
 
@@ -30,11 +30,11 @@
 
 4. 在“数据库”边栏选项卡中，单击“添加集合”。
 
-	![屏幕截图：突出显示“数据库”边栏选项卡上的“添加集合”按钮、“添加集合”边栏选项卡上的设置以及“确定”按钮 — 用于 DocumentDB 的 Azure 门户 — 用于 NoSQL JSON 数据库的云端数据库创建程序](./media/documentdb-create-collection/docdb-collection-creation-4.png)
+	![屏幕截图：突出显示“数据库”边栏选项卡上的“添加集合”按钮、“添加集合”边栏选项卡上的设置以及“确定”按钮 — 用于 DocumentDB 的 Azure 门户预览 — 用于 NoSQL JSON 数据库的云端数据库创建程序](./media/documentdb-create-collection/docdb-collection-creation-4.png)
 
 5. 在“添加集合”边栏选项卡的“ID”框中，输入新集合的 ID。集合名称的长度必须为 1 到 255 个字符，且不能包含 `/ \ # ?` 或尾随空格。对名称进行验证后，ID 框中会出现一个绿色的复选标记。
 
-	![屏幕截图：突出显示“数据库”边栏选项卡上的“添加集合”按钮、“添加集合”边栏选项卡上的设置以及“确定”按钮 — 用于 DocumentDB 的 Azure 门户 — 用于 NoSQL JSON 数据库的云端数据库创建程序](./media/documentdb-create-collection/docdb-collection-creation-5-8.png)
+	![屏幕截图：突出显示“数据库”边栏选项卡上的“添加集合”按钮、“添加集合”边栏选项卡上的设置以及“确定”按钮 — 用于 DocumentDB 的 Azure 门户预览 — 用于 NoSQL JSON 数据库的云端数据库创建程序](./media/documentdb-create-collection/docdb-collection-creation-5-8.png)
 
 6. 如果你要创建具有单个分区的集合，请单击箭头以选择定价层，接着单击“查看全部”，然后选择集合的性能级别。有关可用性能级别的详细信息，请参阅 [DocumentDB 的性能级别](/documentation/articles/documentdb-performance-levels)。你所创建的每个集合都是计费实体。
 
@@ -50,7 +50,7 @@
 
 11. 新的集合现在便会出现在“数据库”边栏选项卡上的“集合”可重用功能区中。
  
-	![屏幕截图：数据库边栏选项卡中的新集合 — 用于 DocumentDB 的 Azure 门户 — 用于 NoSQL JSON 数据库的云端数据库创建程序](./media/documentdb-create-collection/docdb-collection-creation-9.png)
+	![屏幕截图：数据库边栏选项卡中的新集合 — 用于 DocumentDB 的 Azure 门户预览 — 用于 NoSQL JSON 数据库的云端数据库创建程序](./media/documentdb-create-collection/docdb-collection-creation-9.png)
 
 ## 什么是 DocumentDB 集合？ 
 
@@ -62,7 +62,7 @@ DocumentDB 自动将集合分区到一个或多个物理服务器。创建集合
 
 ## 创建 DocumentDB 集合的其他方法
 
-集合不一定要使用门户来创建，你也可以使用 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet) 和 REST API 来创建集合。
+集合不一定要使用门户预览来创建，你也可以使用 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet) 和 REST API 来创建集合。
 
 - 有关 C# 代码示例，请参阅 [C# 集合示例](/documentation/articles/documentdb-dotnet-samples#collection-examples)。 
 - 有关 Node.js 代码示例，请参阅 [Node.js 集合示例](/documentation/articles/documentdb-nodejs-samples#collection-examples)。
@@ -71,16 +71,16 @@ DocumentDB 自动将集合分区到一个或多个物理服务器。创建集合
 
 ## 故障排除
 
-如果 Azure 门户中的“添加集合”被禁用，则表明你的帐户当前已被禁用，这种情况通常会在当月的所有权益信用额度都用完时发生。
+如果 Azure 门户预览中的“添加集合”被禁用，则表明你的帐户当前已被禁用，这种情况通常会在当月的所有权益信用额度都用完时发生。
 
 ## 后续步骤
 
 现在，你已有了集合，下一步是将文档添加或导入到集合中。向集合添加文档时，你有以下几种选择：
 
-- 可以使用门户中的文件资源管理器来[添加文档](/documentation/articles/documentdb-view-json-document-explorer)。
+- 可以使用门户预览中的文件资源管理器来[添加文档](/documentation/articles/documentdb-view-json-document-explorer)。
 - 可以使用 DocumentDB 数据迁移工具来[导入文档和数据](/documentation/articles/documentdb-import-data)，利用此工具可以导入 JSON 和 CSV 文件，以及来自 SQL Server、MongoDB、Azure 表存储及其他 DocumentDB 集合的数据。 
 - 或者，你可以使用某个 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet) 来添加文档。DocumentDB 有 .NET、Java、Python、Node.js 和 JavaScript API SDK。有关说明如何使用 DocumentDB .NET SDK 处理文档的 C# 代码示例，请参阅 [C# 文档示例](/documentation/articles/documentdb-dotnet-samples#document-examples)。有关说明如何使用 DocumentDB Node.js SDK 处理文档的 Node.js 代码示例，请参阅 [Node.js 文档示例](/documentation/articles/documentdb-nodejs-samples#document-examples)。
 
-当集合中有文档后，你就可以利用门户中的[查询资源管理器](/documentation/articles/documentdb-query-collections-query-explorer)、[REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 或某个 [SDK](/documentation/articles/documentdb-sdk-dotnet)，来针对文档使用 [DocumentDB SQL](/documentation/articles/documentdb-sql-query) [执行查询](/documentation/articles/documentdb-sql-query#executing-queries)。
+当集合中有文档后，你就可以利用门户预览中的[查询资源管理器](/documentation/articles/documentdb-query-collections-query-explorer)、[REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 或某个 [SDK](/documentation/articles/documentdb-sdk-dotnet)，来针对文档使用 [DocumentDB SQL](/documentation/articles/documentdb-sql-query) [执行查询](/documentation/articles/documentdb-sql-query#executing-queries)。
 
 <!---HONumber=Mooncake_0627_2016-->

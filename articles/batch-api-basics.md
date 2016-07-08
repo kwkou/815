@@ -1,16 +1,16 @@
 <properties
-	pageTitle="Azure Batch 功能概述 | Microsoft Azure"
+	pageTitle="Azure Batch 功能概述 | Azure"
 	description="从开发的角度了解 Batch 服务的功能及其 API。"
-	services="batch" 
-	documentationCenter=".net" 
-	authors="yidingzhou" 
-	manager="timlt" 
+	services="batch"
+	documentationCenter=".net"
+	authors="yidingzhou"
+	manager="timlt"
 	editor=""/>
 
 <tags 
 	ms.service="batch" 
-	ms.date="03/11/2016"
-	wacn.date="05/09/2016"/>
+	ms.date="05/12/2016"
+	wacn.date="06/06/2016"/>
 	
 # Azure Batch 功能概述
 
@@ -34,7 +34,6 @@
 
 6. 监视作业进度并检索结果。
 
-> [AZURE.NOTE]你需要通过一个 [批处理 ( Batch ) 帐户](/documentation/articles/batch-account-create-portal)来使用批处理( Batch ) 服务，几乎所有的解决方案都使用 [Azure 存储][azure_storage]帐户来进行文件存储和检索。
 
 在以下部分中，你将了解上述工作流中提到的每个资源，以及其他可实现分布式计算方案的许多批处理 ( Batch ) 功能。
 
@@ -62,11 +61,11 @@
 
 ### <a name="account"></a>帐户
 
-批处理 ( Batch ) 帐户是批处理 ( Batch ) 服务中唯一标识的实体。所有处理都与一个批处理 ( Batch ) 帐户相关联。当你使用批处理( Batch ) 服务执行操作时，需要同时用到帐户名和帐户密钥。若要创建批处理( Batch ) 帐户，请查看[在 Azure 门户中创建和管理 Azure 批处理 ( Batch )  帐户](/documentation/articles/batch-account-create-portal)。
+批处理 ( Batch ) 帐户是批处理 ( Batch ) 服务中唯一标识的实体。所有处理都与一个批处理 ( Batch ) 帐户相关联。当你使用批处理( Batch ) 服务执行操作时，需要同时用到帐户名和帐户密钥。若要创建批处理( Batch ) 帐户，请查看[在 Azure 经典管理门户中创建和管理 Azure 批处理 ( Batch )  帐户](/documentation/articles/batch-account-create-portal)。
 
 ### <a name="computenode"></a>计算节点
 
-计算节点是专门为应用程序处理特定工作负荷的 Azure 虚拟机。节点大小确定了 CPU 核心数目、内存容量，以及分配给节点的本地文件系统大小。节点可以是除 A0 以外的任何[云服务节点大小](/documentation/articles/cloud_service_sizes)。
+计算节点是专门为应用程序处理特定工作负荷的 Azure 虚拟机。节点大小确定了 CPU 核心数目、内存容量，以及分配给节点的本地文件系统大小。节点可以是除 A0 以外的任何云服务节点大小。
 
 节点可以运行可执行文件和脚本，包括可执行文件 (.exe)、命令文件 (.cmd)、批处理 ( Batch ) 文件 (.bat) 和 PowerShell 脚本。节点还具有以下属性：
 
@@ -112,7 +111,7 @@ Azure 批处理 ( Batch ) 池构建在核心 Azure 计算平台的顶层；批�
 	- 在大多数情况下，任务将独立运行而无需互相通信，但在某些应用程序中，任务必须相互通信。
 
 - 池中节点的**启动任务**
-	- 可以指定每当计算节点加入池和节点重新启动时要执行的*启动任务*。此任务通常用于安装在节点上运行的任务所使用的应用程序。
+	- 可以指定每当计算节点加入池和节点重新启动时要执行的“启动任务”。此任务通常用于安装在节点上运行的任务所使用的应用程序。
 
 ### <a name="job"></a>作业
 
@@ -152,6 +151,7 @@ Azure 批处理 ( Batch ) 池构建在核心 Azure 计算平台的顶层；批�
 
 与任何批处理 ( Batch ) 任务一样，除了指定要执行的**命令行**以外，还可以指定 [Azure 存储空间][azure_storage]中的**资源文件**列表。Azure 批处理 ( Batch ) 将先从 Azure 存储空间复制文件，然后再运行命令行。对于池启动任务，文件列表通常包含应用程序包或文件，但它还可能包含计算节点上运行的所有任务使用的引用数据。启动任务的命令行可能会执行 PowerShell 脚本或 `robocopy` 操作，例如，将应用程序文件复制到“共享”文件夹中，然后运行 MSI 或 `setup.exe`。
 
+> [AZURE.IMPORTANT] Batch 目前“仅”支持**常规用途**存储帐户类型，如 [About Azure storage accounts（关于 Azure 存储帐户）](/documentation/articles/storage-create-storage-account)的 [Create a storage account（创建存储帐户）](/documentation/articles/storage-create-storage-account#create-a-storage-account)中步骤 5 所述。Batch 任务（包括标准任务、启动任务、作业准备和作业释放任务）“只能”指定位于**常规用途**存储帐户中的资源文件。
 通常，批处理 ( Batch ) 服务需要等待启动任务完成，然后认为节点已准备好分配任务，但这种行为是可配置的。
 
 如果某个计算节点上的启动任务失败，则节点的状态将会更新以反映失败状态，同时，该节点不可用于要分配的任务。如果从存储中复制启动任务的资源文件时出现问题，或由其命令行执行的进程返回了非零退出代码，则启动任务可能会失败。
@@ -209,11 +209,11 @@ Azure 批处理 ( Batch ) 池构建在核心 Azure 计算平台的顶层；批�
 
 ### <a name="appkg"></a>应用程序包
 
-[应用程序包](/documentation/articles/batch-application-packages)功能可为池中的计算节点提供简单的应用程序管理和部署能力。通过应用程序包，可以轻松上载及管理多个版本的工作执行应用程序（包括二进制文件和支持文件），然后将一或多个这种类型的应用程序自动部署到池中的计算节点。
+应用程序包功能可为池中的计算节点提供简单的应用程序管理和部署能力。通过应用程序包，可以轻松上载及管理多个版本的工作执行应用程序（包括二进制文件和支持文件），然后将一或多个这种类型的应用程序自动部署到池中的计算节点。
 
 Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储及部署到计算节点的详细信息，因此可以简化代码和管理开销。
 
-若要了解应用程序包功能的详细信息，请参阅[使用 Azure Batch 应用程序包部署应用程序](/documentation/articles/batch-application-packages)。
+
 
 ## <a name="files"></a>文件和目录
 
@@ -250,7 +250,7 @@ Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储�
 
 为池指定**自动缩放公式**即可执行自动缩放。Batch 服务使用此公式来确定池中下一个缩放间隔（可以指定的间隔）的目标节点数目。
 
-可以通过指定一组缩放公式来实现应用程序自动缩放。这些公式用于确定在下一个缩放间隔内，池中的节点数目。例如，也许某个作业需要提交大量计划执行的任务。你可以将缩放公式分配到池，以根据当前的挂起任务数和这些任务的完成率来调整池的大小（节点数目）。批处理 ( Batch ) 服务将定期评估公式，并根据工作负荷来调整池的大小。
+例如，也许某个作业需要提交大量计划执行的任务。你可以将缩放公式分配到池，以根据当前的挂起任务数和这些任务的完成率来调整池中的节点数目。Batch 服务将定期评估公式，并根据工作负荷和公式设置来调整池的大小。
 
 缩放公式可以基于以下度量值：
 
@@ -413,4 +413,4 @@ Batch 能在后台处理使用 Azure 存储空间将应用程序包安全存储�
 [rest_offline]: https://msdn.microsoft.com/library/azure/mt637904.aspx
 [rest_online]: https://msdn.microsoft.com/library/azure/mt637907.aspx
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0530_2016-->

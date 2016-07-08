@@ -10,7 +10,7 @@
 <tags
 	ms.service="batch"
 	ms.date="02/16/2016"
-	wacn.date="05/09/2016"/>
+	wacn.date="06/06/2016"/>
 
 # Azure 批处理 ( Batch ) 基础知识
 
@@ -98,7 +98,7 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 7. 当监视检测到作业中的任务已完成时，客户端应用程序或服务可以下载输出数据来进一步处理或评估。
 
-请记住，这只是使用 Batch 的一种方式，此方案只描述它可用的几项功能。例如，可以在每个计算节点上[以并行方式执行多项任务](batch-parallel-node-tasks.md)，也可以使用[作业准备和完成任务](/documentation/articles/batch-job-prep-release)来准备作业的节点，然后再清除。
+请记住，这只是使用 Batch 的一种方式，此方案只描述它可用的几项功能。例如，可以在每个计算节点上[以并行方式执行多项任务](/documentation/articles/batch-parallel-node-tasks)，也可以使用[作业准备和完成任务](/documentation/articles/batch-job-prep-release)来准备作业的节点，然后再清除。
 
 ## 后续步骤
 

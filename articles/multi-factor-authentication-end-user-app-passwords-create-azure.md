@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="02/16/2016" 
+	ms.date="05/12/2016" 
 	wacn.date="04/13/2016"/>
 
 # 在 Azure 门户中为多重身份验证创建应用密码
@@ -18,7 +18,7 @@
 
 ## 在 Azure 门户中创建应用密码
 
-1. 登录到 Azure 管理门户
+1. 登录到 Azure 经典管理门户
 3. 在顶部，右键单击你的用户名并选择“其他安全性验证”。
 5. 在验证页的顶部选择应用密码
 6. 单击“创建”
@@ -28,4 +28,5 @@
 
 <center>![Cloud](./media/multi-factor-authentication-end-user-app-passwords-create-azure/app2.png)</center>
 
-<!---HONumber=69-->
+ 
+<!---HONumber=Mooncake_0530_2016-->

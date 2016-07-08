@@ -9,8 +9,8 @@
   
 <tags 
 	ms.service="active-directory"  
-	ms.date="12/10/2015" 
-	wacn.date="05/27/2016"/>
+	ms.date="03/28/2016" 
+	wacn.date="07/05/2016"/>
 
 # 身份验证检测期间的错误
 
@@ -92,5 +92,4 @@
 
 有关详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios)。
  
-
-<!---HONumber=Mooncake_0118_2016-->
+<!---HONumber=Mooncake_0620_2016-->

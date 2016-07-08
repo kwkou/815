@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect 中的预览版功能 | Microsoft Azure"
+   pageTitle="Azure AD Connect：预览版功能 | Azure"
    description="本主题详细介绍 Azure AD Connect 中以预览版形式提供的功能。"
    services="active-directory"
    documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"  
-   ms.date="04/14/2016"
-   wacn.date="05/16/2016"/>
+   ms.date="05/11/2016"
+   wacn.date="06/14/2016"/>
 
 # 有关预览版功能的详细信息
 本主题介绍如何使用预览版中当前提供的功能。
@@ -32,19 +32,11 @@
 >[AZURE.NOTE] 组写回需要 Azure AD Premium 订阅。
 
 ## 用户写回
-> [AZURE.IMPORTANT] Azure AD Connect 的 2015 年 8 月更新版中临时删除了用户写回预览版功能。如果你已启用此功能，现在应将它禁用。
-
-用户写回目前以先行预览版的形式提供。仅当 Azure AD 是所有用户对象的源，并且在启用该功能之前本地 Active Directory 为空时（全新部署），才可以使用该功能。
-
->[AZURE.WARNING] 只能在测试环境中评估此功能，而不能在用于生产用途的 Azure AD 目录中使用它。
-
-。
-
->[AZURE.NOTE] 用户写回需要 Azure AD Premium 订阅。
+> [AZURE.IMPORTANT] Azure AD Connect 的 2015 年 8 月更新版中删除了用户写回预览版功能。如果你已启用此功能，现在应将它禁用。
 
 ## 后续步骤
 配置 [Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom)。
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_0606_2016-->

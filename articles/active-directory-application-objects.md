@@ -20,7 +20,7 @@
 ![应用程序对象和 ServicePrincipal 对象之间的关系](./media/active-directory-application-objects/application-objects-relationship.png)
 
 
-当你在 Azure 管理门户中注册某个应用程序时，将在你的目录租户中创建两个对象：
+当你在 Azure 经典管理门户中注册某个应用程序时，将在你的目录租户中创建两个对象：
 
 - **应用程序对象**：此对象表示应用程序的定义。可以在下面的**应用程序对象**部分中找到其属性的详细描述。
 

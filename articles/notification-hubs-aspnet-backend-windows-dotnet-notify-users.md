@@ -46,9 +46,6 @@
 
 > [AZURE.NOTE]如果你使用移动服务作为后端服务，请参阅本教程的[移动服务版本](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push)。
 
-
-
-
 [AZURE.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../includes/notification-hubs-aspnet-backend-notifyusers.md)]
 
 ## 更新客户端项目的代码

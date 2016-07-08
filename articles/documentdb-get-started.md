@@ -90,15 +90,15 @@
 		private const string PrimaryKey = "<your key>";
 		private DocumentClient client;
 
-接下来，转到 [Azure 门户](https://portal.azure.cn)来检索 URI 和主键。DocumentDB URI 和主键是必需的，可让应用程序知道要连接的对象，让 DocumentDB 信任应用程序的连接。
+接下来，转到 [Azure 门户预览](https://portal.azure.cn)来检索 URI 和主键。DocumentDB URI 和主键是必需的，可让应用程序知道要连接的对象，让 DocumentDB 信任应用程序的连接。
 
-在 Azure 门户中，从第 1 步导航到 DocumentDB 帐户。
+在 Azure 门户预览中，从第 1 步导航到 DocumentDB 帐户。
 
 单击“Essentials”栏上的“键”图标。
 复制该 URI，并用在程序中复制的 URI 替换 \<your endpoint URI\>。
 复制该主键，并用在程序中复制的键替换 \<your key\>。
 
-![NoSQL 教程用于创建 C# 控制台应用程序的 Azure 门户的屏幕截图。显示 DocumentDB 帐户，在“DocumentDB 帐户”边栏选项卡上突出显示“ACTIVE”中心、“键”按钮，在“键”边栏选项卡上突出显示 URI、主键、辅键的值][keys]
+![NoSQL 教程用于创建 C# 控制台应用程序的 Azure 门户预览的屏幕截图。显示 DocumentDB 帐户，在“DocumentDB 帐户”边栏选项卡上突出显示“ACTIVE”中心、“键”按钮，在“键”边栏选项卡上突出显示 URI、主键、辅键的值][keys]
 
 我们首先通过创建一个新的 **DocumentClient** 实例来开始创建应用程序。
 

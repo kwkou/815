@@ -9,10 +9,10 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="02/16/2016" 
-	wacn.date="04/13/2016"/>
+	ms.date="05/12/2016" 
+	wacn.date="06/06/2016"/>
 
-# 在 myapps 365 门户中为多重身份验证创建应用密码
+# 在 myapps 365 门户中为 Azure  (MFA)多重身份验证创建应用密码
 
 
 
@@ -35,4 +35,6 @@
 <li>输入应用密码的名称，然后单击“下一步”</li>
 <li>将应用密码复制到剪贴板，然后将它粘贴到你的应用。</li>
 
-<!---HONumber=69-->
+
+ 
+<!---HONumber=Mooncake_0530_2016-->

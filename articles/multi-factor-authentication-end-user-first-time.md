@@ -10,7 +10,7 @@
 
 <tags 
 	ms.service="multi-factor-authentication" 
-	ms.date="02/16/2016" 
+	ms.date="05/12/2016" 
 	wacn.date="04/13/2016"/>
 
 # Azure 多重身份验证的设置体验
@@ -34,4 +34,4 @@
 
  
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0530_2016-->

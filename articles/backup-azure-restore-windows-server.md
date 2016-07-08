@@ -1,5 +1,5 @@
 <properties
-   pageTitle="将数据从 Azure 还原到 Windows Server 或 Windows 客户端 | Microsoft Azure"
+   pageTitle="使用 Resource Manager 部署模型将数据还原到 Windows Server 或 Windows 客户端 | Azure"
    description="了解如何从 Windows Server 或 Windows 客户端还原。"
    services="backup"
    documentationCenter=""
@@ -79,7 +79,7 @@
 
     ![另一台服务器](./media/backup-azure-restore-windows-server/anotherserver.png)
 
-5. 提供对应于“示例保管库”的保管库凭据文件。如果保管库凭据文件无效（或已过期），请在 Azure 门户中从“示例保管库”下载新的保管库凭据文件。提供保管库凭据文件后，系统将根据保管库凭据文件显示备份保管库。
+5. 提供对应于“示例保管库”的保管库凭据文件。如果保管库凭据文件无效（或已过期），请在 Azure 经典管理门户中从“示例保管库”下载新的保管库凭据文件。提供保管库凭据文件后，系统将根据保管库凭据文件显示备份保管库。
 
 6. 从显示的计算机列表中选择“源计算机”。
 

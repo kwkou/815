@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 DPM 为 SQL 工作负荷配置 Azure 备份| Microsoft Azure"
+	pageTitle="使用 DPM 为 SQL 工作负荷配置 Azure 备份| Azure"
 	description="使用 Azure 备份服务备份 SQL Server 数据库简介"
 	services="backup"
 	documentationCenter=""
@@ -10,14 +10,14 @@
 <tags
 	ms.service="backup"
 	ms.date="02/08/2016"
-	wacn.date="05/09/2016"/>
+	wacn.date="06/06/2016"/>
 
 
 # 使用 DPM 为 SQL 工作负荷配置 Azure 备份
 
 本文将引导你使用 Azure 备份来完成 SQL Server 数据库的备份配置步骤。
 
-若要将 SQL Server 数据库备份到 Azure，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/free-trial/)。
+若要将 SQL Server 数据库备份到 Azure，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/free-trial/)。
 
 向 Azure 备份以及从 Azure 恢复 SQL Server 数据库的管理工作涉及三个步骤：
 
@@ -170,4 +170,4 @@
 
 • [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0530_2016-->
