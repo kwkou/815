@@ -12,7 +12,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="04/28/2016"
-	wacn.date="06/06/2016"/>
+	wacn.date="07/11/2016"/>
 
 # 开始使用 HDInsight 的 Visual Studio Hadoop 工具来运行 Hive 查询
 
@@ -38,14 +38,12 @@
 
 ##<a name="installation" id="install-hdinsight-tools-for-visual-studio"></a>安装 HDInsight Tools for Visual Studio
 
-Azure SDK for .NET 2.5.1 或更高版本中已随附 HDInsight Tools for Visual Studio 和 Microsoft Hive ODBC 驱动程序。你可以使用 [Web 平台安装程序](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe)安装它。你必须选择与你的 Visual Studio 版本匹配的版本。如果你尚未安装 Visual Studio，则可使用 [Web 平台安装程序](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe)或以下链接安装最新 Visual Studio Community 和 Azure SDK：
+Azure SDK for .NET 2.5.1 或者 2.6 中已随附 HDInsight Tools for Visual Studio 和 Microsoft Hive ODBC 驱动程序。目前，全球 Azure 已经把 HDInsight 升级到 ARM 模型，而 Azure 中国依旧是经典部署模型。所以，想要用 HDInsight Tools 管理 Azure 中国的 HDInsight 集群，必须使用 Azure SDK for .NET 2.5.1 或者 2.6。以下是相关下载链接。
 
 - [Visual Studio Community 2015 with Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2015CommunityAzurePack.appids)
 - [Visual Studio Community 2013 with Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2013CommunityAzurePack.appids)
-- [Azure SDK for .NET (VS 2015)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2015AzurePack.appids)
-- [Azure SDK for .NET (VS 2013)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)
-
-![Hadoop 工具：HDInsight Tools for Visual Studio Web 平台安装程序。][1]
+- [Azure SDK for .NET 2.5.1](https://www.microsoft.com/zh-cn/download/details.aspx?id=44938)
+- [Azure SDK for .NET 2.6](https://www.microsoft.com/en-us/download/details.aspx?id=46892)
 
 ## 连接到 Azure 订阅
 适用于 Visual Studio 的 HDInsight 工具允许你连接到 HDInsight 群集，执行一些基本的管理操作，并运行 Hive 查询。
