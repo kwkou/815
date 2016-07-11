@@ -15,7 +15,7 @@
 
 # Azure AD Connect：帐户和权限
 
-<a name="create-the-ad-ds-account"></a>Azure AD Connect 安装向导提供提供两种不同的路径：
+<a name="create-the-ad-ds-account"></a>Azure AD Connect 安装向导设备写回提供提供两种不同的路径：
 
 - 在“快速设置”中，我们需要更多权限，以便轻松设置配置，而无需创建用户或单独配置权限。
 
@@ -81,7 +81,6 @@ Web 应用程序代理服务器 |对于列表中的每个服务器，如果运�
 | ------ | ------ |
 | 密码同步 | <li>复制目录更改</li><li>复制所有目录更改。 |
 | 密码写回 | [密码管理入门](/documentation/articles/active-directory-passwords-getting-started#step-4-set-up-the-appropriate-active-directory-permissions)中叙述了对用户的属性的写入权限。 |
-| 设备写回 | [设备写回](/documentation/articles/active-directory-aadconnect-get-started-custom-device-writeback)中叙述了如何使用 PowerShell 脚本授予权限。|
 | 组写回 | 在分发组应该放置到的 OU 中读取、创建、更新和删除组对象。|
 
 ## 升级
