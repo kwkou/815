@@ -22,7 +22,7 @@
 ##<a name="section_2"></a> 
 
 ##<a name="section_3"></a> 1.	Azure IaaS 相关技术
-1.	**Azure 底层是否由 System Center 和 Hyper-V 构成?**
+1.	**Azure 底层是否由 System Center 和Hyper-V 构成?**
 
 	Azure 虽然支持 Hyper-V 的 VHD 直接上传至 Azure 云端进行管理，但是 Azure 底层技术是微软自己研发的、独有的技术。如果客户想构建属于自己的私有云平台，可以使用 Azure Stack，采用微软的 System Center + Windows Server 产品，构建自己的私有云平台。
 
@@ -539,7 +539,7 @@ D 系列虚拟机的类型如下：
 
 可参考[这篇博客](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx?PageIndex=2#comments)。
 
-For capacity, we currently sample it at least once a day for a storage account. That capacity value is used to represent the capacity for each hour until the next sample is taken. These samples are then incorporated into the monthly average for calculating billable capacity.
+"关于容量。目前我们每天对每个储存账户至少进行一次取样，在下次取样前，本次取样所得的容量值将代表其每小时的容量。我们将这些样本进行汇总并得出每月平均值，以计算收费容量。"
 
 如果用户在 1 月 1 日使用了 10GB 存储，在 1 月 2 日完全删除了该存储。整个 1 月，Azure 实际需要支付的费用 = 10GB * 每月单价/31 天。
 
@@ -588,9 +588,8 @@ For capacity, we currently sample it at least once a day for a storage account. 
 
 关于存储事务的深层次研究，请参考[MSDN文章](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx?PageIndex=2#comments)。
 
-Is the IaaS VM disk be charged for storage transactions?  Every VM disk is a VHD file in the blob storage, every access to the drive will be billed storage transaction?
-
-you will need to pay for the OS disk and Data disk because they are actually page blobs. Both the capacity and transactions will be billed just like ordinary page blobs. For temporary disk, it is local and included in the VM price. No capacity/transactions cost will be charged. Hope this answers your question.
+"IaaS 虚拟机磁盘是按照存储事务收费吗？鉴于每个虚拟机磁盘在blob 存储中是一个VHD文件，每次访问驱动器都会收取存储事务费用吗？
+由于OS磁盘和数据磁盘实际上是页 blobs，因此需要收费。其容量和事务的收费标准与普通页blobs一样。临时盘是本地磁盘，它的价格包含在虚拟机价格内，其容量和事务都是免费的。"
 
 ####<a name="section_4_5_6"></a> 2.5.6 其他成本
 如果用户使用 Azure 其他服务，比如 CDN，SQL 数据库等，也会按照一定的费率进行计费。

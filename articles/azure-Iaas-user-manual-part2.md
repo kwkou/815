@@ -246,7 +246,6 @@ Azure 虚拟机承诺的 99.95% 的服务级别协议是需要 2 台或者 2 台
 ###<a name="section_5_4"></a> 3.4 使用 Azure 管理界面创建虚拟机
 登陆 Azure [经典管理门户](https://manage.windowsazure.cn/)，输入相应的 Azure 账户名称和密码。
 
-
 ####<a name="section_5_4_1"></a> 3.4.1 创建虚拟网络
 1.	在 Azure 管理界面的左下角，点击 ”新建” 按钮。如下图:
 
