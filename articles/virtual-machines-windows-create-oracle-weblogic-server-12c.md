@@ -161,6 +161,4 @@
 
 -	[Azure 上使用 Linux 的 Oracle WebLogic Server 12c](http://www.oracle.com/technetwork/middleware/weblogic/learnmore/oracle-weblogic-on-azure-wp-2020930.pdf)
 
--	[Azure 的 Oracle 虚拟机映像](/documentation/articles/virtual-machines-linux-classic-oracle-images)
-
 <!---HONumber=Mooncake_0704_2016-->
