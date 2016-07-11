@@ -100,7 +100,7 @@ Windows VM 的其他选项包括：
 
 ## Azure 能否在我的虚拟机上运行防病毒软件？
 
-Azure 针对防病毒解决方案提供了多种选项，但需要用户自行管理。例如，你可能需要另外订阅反恶意软件的软件，并需要自行决定运行扫描和安装更新的时间。你可以在创建 Windows 虚拟机时添加具有适用于 Microsoft 反恶意软件、Symantec Endpoint Protection 或 TrendMicro Deep Security Agent 的 VM 扩展的防病毒支持，也可以稍后进行。Symantec 和 TrendMicro 扩展允许你使用免费的限时试用订阅或使用现有的企业订阅。Microsoft 反恶意软件是免费的。有关详细信息，请参阅：
+Azure 针对防病毒解决方案提供了多种选项，但需要用户自行管理。例如，你可能需要另外订阅反恶意软件的软件，并需要自行决定运行扫描和安装更新的时间。你可以在创建 Windows 虚拟机时添加具有适用于 Microsoft 反恶意软件或 TrendMicro Deep Security Agent 的 VM 扩展的防病毒支持，也可以稍后进行。TrendMicro 扩展允许你使用免费的限时试用订阅或使用现有的企业订阅。Microsoft 反恶意软件是免费的。有关详细信息，请参阅：
 
 - [如何在 Azure VM 上安装和配置 Trend Micro Deep Security 即服务](/documentation/articles/virtual-machines-windows-classic-install-trend/)
 - [在 Azure 虚拟机上部署反恶意软件解决方案](https://azure.microsoft.com/zh-cn/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/)

@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-windows"
 	ms.date="03/29/2016"
-	wacn.date="06/07/2016"/>
+	wacn.date="07/11/2016"/>
 
 # Azure Windows VM 扩展配置示例
 
@@ -177,15 +177,6 @@
               },
               "DataBlobUri": "optional : https: //UrlToConfigurationData.psd1"
           }
-      }
-
-
-### Symantec 终结点保护。
-      {
-        "publisher": "SymantecEndpointProtection",
-        "type": "Symantec",
-        "typeHandlerVersion": "12.1",
-        "settings": {}
       }
 
 ### Trend Micro Deep Security 代理。
