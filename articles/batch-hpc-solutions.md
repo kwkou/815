@@ -12,7 +12,7 @@
    ms.date="04/21/2016"
    wacn.date="06/06/2016"/>
 
-#  批处理( Batch )和 HPC 解决方案
+# Azure 云中的批处理( Batch ) 和 HPC 解决方案
 
 Azure 提供高效且可伸缩的云解决方案来进行处理和高性能计算（HPC，又称为大型计算）。在此处了解大型计算工作负荷以及 Azure 提供的相应支持服务，或者直接跳至本文后面的[解决方案应用场景](#scenarios)。本文主要面向技术决策人、IT 经理和独立软件供应商，但其他 IT 专业人员和开发人员也可以使用它来熟悉这些解决方案。
 
@@ -27,7 +27,7 @@ Azure 提供高效且可伸缩的云解决方案来进行处理和高性能计�
 Azure 还为开发人员和合作伙伴提供一整套功能、体系结构选项和开发工具，用于构建大规模的自定义大型计算工作流，当然这超出了本文的范围。你还可以使用规模不断扩大的合作伙伴生态系统，以提高大型计算工作流在 Azure 云中的工作效率。
 
 
-## 背景：批处理 ( Batch )和 HPC 应用程序
+## 批处理( Batch ) 和 HPC 应用程序
 
 与 Web 应用程序和许多业务线应用程序不同，批处理 ( Batch ) 和 HPC 应用程序有确定的开始和结束时间，而且它们可以按照计划运行或按需运行。其中的大多数应用程序可分为两大类：“内在并行”（有时称为“高度并行”，因为它们解决的问题有助于使自身在多个计算机或处理器上并行运行）和“紧密耦合”。有关这些应用程序类型的详细信息，请参阅下表。某些 Azure 解决方案方法更适合一种类型或其他类型。
 
@@ -96,6 +96,8 @@ Azure 还为开发人员和合作伙伴提供一整套功能、体系结构选�
 
 Azure 计算服务是大型计算解决方案的核心，不同的计算服务适用于不同的方案。在基本级别中，这些服务为使用 Windows Server Hyper-V 技术，由 Azure 提供的基于虚拟机的计算实例上运行的应用程序提供不同模式。这些实例可以运行各种标准的和自定义的 Linux 和 Windows 操作系统与工具。Azure 允许你选择[实例大小](/documentation/articles/virtual-machines-windows-sizes)，对 CPU 核心、内存、磁盘容量和其他特征进行了不同的配置。你可以根据需要将实例扩展到数千个核心，并在需要较少的资源时相应减少。
 
+>[AZURE.NOTE] 利用 A8-A11 实例改善某些 HPC 工作负荷（包括需要低延迟、高吞吐量应用程序网络的并行 MPI 应用程序）的性能。请参阅[关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/services/virtual-machines-a8-a9-a10-a11-specs)。
+
 服务 | 说明
 ------------- | -----------
 **[云服务](/documentation/services/cloud-services)**<br/><br/> |• 可以在辅助角色实例中运行大型计算应用程序，辅助角色实例是运行某个 Windows Server 版本的虚拟机并且完全由 Azure 托管<br/><br/>• 可以较低的管理开销支持运行在平台即服务 (PaaS) 模型中的可缩放的可靠应用程序<br/><br/>• 可能需要额外的工具或开发来与现有的本地 HPC 群集解决方案进行集成
@@ -123,7 +125,7 @@ Azure 计算服务是大型计算解决方案的核心，不同的计算服务�
 
 大型计算解决方案可能需要包含其他 Azure 基础结构和平台服务，才能连接到本地或其他环境中的资源。示例包括：
 
-* [虚拟网络](/documentation/services/networking) - 在 Azure 中创建逻辑隔离的区段，以使用 IPSec 将 Azure 资源连接到本地数据中心或单个客户端计算机；可让大型计算应用程序访问本地数据、Active Directory 服务和许可证服务器
+* [虚拟网络](/documentation/services/virtual-network) - 在 Azure 中创建逻辑隔离的区段，以使用 IPSec 将 Azure 资源连接到本地数据中心或单个客户端计算机；可让大型计算应用程序访问本地数据、Active Directory 服务和许可证服务器
 
 * [服务总线](/documentation/services/service-bus) - 提供多种机制让应用程序进行通信或交换数据，无论这些应用程序位于 Azure、另一个云平台还是数据中心。
 
@@ -144,4 +146,4 @@ Azure 计算服务是大型计算解决方案的核心，不同的计算服务�
 [burst_cluster]: ./media/batch-hpc-solutions/burst_cluster.png
 [batch_proc]: ./media/batch-hpc-solutions/batch_proc.png
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0704_2016-->

@@ -9,8 +9,8 @@
 
 <tags
    ms.service="multiple"
-   ms.date="04/29/2016"
-   wacn.date="06/06/2016"/>
+   ms.date="06/08/2016"
+   wacn.date="07/11/2016"/>
 
 # Azure 中的大型计算：用于批处理和高性能计算 (HPC) 的技术资源
 这是一份技术资源指南，旨在帮助你在 Azure 中运行大规模并行、批处理和 HPC 工作负荷。在 Azure 中，可以使用各种 Azure 服务将现有的批处理或 HPC 工作负荷扩展到 Azure 云，或者生成新的大型计算解决方案。
@@ -54,7 +54,6 @@ HPC Pack 是在 Azure 和 Windows Server 技术基础之上构建的 Microsoft �
 * [使用 HPC Pack 迸发到 Azure 辅助角色实例](https://technet.microsoft.com/library/gg481749.aspx)
 
 * [使用 HPC Pack 迸发到 Azure Batch](https://technet.microsoft.com/library/mt612877.aspx)
-
 
 * [Windows HPC 论坛](https://social.microsoft.com/Forums/home?category=windowshpc)
 
@@ -141,4 +140,4 @@ Azure 提供一[系列大小](/documentation/articles/virtual-machines-windows-s
 * 有关最新通告，请参阅 [Microsoft HPC 和批处理团队博客](http://blogs.technet.com/b/windowshpc/)与 [Azure 博客](http://azure.microsoft.com/blog/tag/hpc/)。
 * 另请参阅 [Batch 中的新增功能](/updates/?service=batch)或订阅 [RSS 源](/updates/feed/?service=batch)。
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0704_2016-->

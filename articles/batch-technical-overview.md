@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="batch"
-	ms.date="02/16/2016"
-	wacn.date="06/06/2016"/>
+	ms.date="06/16/2016"
+	wacn.date="07/11/2016"/>
 
 # Azure 批处理 ( Batch ) 基础知识
 
 Azure Batch 可帮助你在云中有效运行大规模并行和高性能计算 (HPC) 应用程序。它是一个平台服务，可以计划要在托管的虚拟机集合上运行的计算密集型工作，并且可以缩放计算资源以符合作业的需求。
 
-使用 Batch 服务可让你以编程方式定义 Azure 计算资源来执行大规模批处理作业。你可以根据需要或按计划运行这些作业，而不需要手动配置和管理 HPC 群集、各个虚拟机、虚拟网络或作业计划程序。
+在使用 Batch 服务时，可以定义用于大规模并行执行应用程序的 Azure 计算资源。你可以根据需要或按计划运行作业，而不需要手动创建、配置和管理 HPC 群集、各个虚拟机、虚拟网络或复杂的作业和任务计划基础结构。
 
 ## Batch 的用例
 
@@ -42,9 +42,11 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 ## 使用 Batch 进行开发
 
-当你构建解决方案来使用 Azure Batch 处理并行工作负荷时，可以使用 Batch API 来编程。Batch API 可让你创建和管理计算节点（虚拟机）池，以及计划作业和任务在这些节点上运行。编写的客户端应用程序或服务使用 Batch API 来与 Batch 服务通信。可以为组织有效率地处理大量工作负荷，或提供前端服务给客户，让他们可以在一个、数百个或数千个节点上，按需要或按计划运行作业和任务。
+当你构建解决方案来使用 Azure Batch 处理并行工作负荷时，可以使用 [Batch API](#batch-development-apis) 来编程。Batch API 可让你创建和管理计算节点（虚拟机）池，以及计划作业和任务在这些节点上运行。编写的客户端应用程序或服务使用 Batch API 来与 Batch 服务通信。
 
-> [AZURE.TIP] 当你准备钻研 Batch API 以深入了解它所提供的功能时，请参阅 [Azure Batch 功能概述](/documentation/articles/batch-api-basics)。
+可以为组织有效率地处理大量工作负荷，或提供前端服务给客户，让他们可以在一个、数百个甚至数千个节点上，按需要或按计划运行作业和任务。还可以在 [Azure 数据工厂](/documentation/articles/data-factory-data-processing-using-batch)等工具管理的大型工作流中使用 Batch。
+
+> [AZURE.TIP] 当你准备钻研 Batch API 以深入了解它所提供的功能时，请参阅 [Batch feature overview for developers（面向开发人员的 Batch 功能概述）](/documentation/articlesbatch-api-basics)。
 
 ### 需要的 Azure 帐户
 
@@ -56,21 +58,27 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 - **存储帐户** - Batch 内置支持处理 [Azure 存储空间][azure_storage]中的文件。几乎每个 Batch 方案都使用 Azure 存储空间来暂存文件（用于任务执行的程序及它们处理的数据），以及存储任务生成的输出数据。若要创建存储帐户，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)。
 
-### Batch 开发库和工具
+### Batch 开发 API
 
-若要使用 Azure Batch 构建解决方案，可以使用 Batch .NET 客户端库、PowerShell，甚至直接发出 REST API 调用。请使用任何或所有这些工具来开发在 Batch 中运行作业的客户端应用程序和服务。
+应用程序和服务可以发出直接的 REST API 调用，使用以下一个或多个客户端库或将其结合使用，以使用 Batch 服务管理计算资源和大规模运行并行工作负荷。
 
-- [Batch .NET][api_net] 客户端库 - 大多数 Batch 解决方案都是使用 Batch .NET 客户端库构建的，可以通过 [NuGet 获取][api_net_nuget]它。
+| API | API 参考 | 下载 | 代码示例 |
+| ----------------- | ------------- | -------- | ------------ |
+| **Batch REST** | [MSDN][batch_rest] | 不适用 | [MSDN][batch_rest] |
+| **Batch .NET** | [MSDN][api_net] | [NuGet ][api_net_nuget] | [GitHub][api_sample_net] |
+| **Batch Python** | [readthedocs.io][api_python] | [PyPI][api_python_pypi] |[GitHub][api_sample_python] |
+| **Batch Node.js** | [github.io][api_nodejs] | [npm][api_nodejs_npm] | - |
+| **Batch Java**（预览版）| [github.io][api_java] | [Maven 快照存储库][api_java_jar] | - |
 
-- [Batch Management .NET][api_net_mgmt] 客户端库 - 也可以通过 [NuGet 获取][api_net_mgmt_nuget]，在客户端应用程序或服务中，使用 Batch Management .NET 客户端库以编程方式管理 Batch 帐户。
+### Batch 资源管理
 
-- [Batch REST][batch_rest] API - Batch REST API 提供与 Batch .NET 客户端库相同的所有功能。事实上，Batch .NET 库本身在幕后使用 Batch REST API 来与 Batch 服务交互。
+除了客户端 API 以外，还可以使用以下功能来管理 Batch 帐户中的资源。
 
 - [Batch PowerShell cmdlet][batch_ps] - [Azure PowerShell](/documentation/articles/powershell-install-configure) 模块中的 Batch PowerShell cmdlet 可让你使用 PowerShell 来管理 Batch 资源。
 
-- [Azure Batch 资源管理器][batch_explorer] - Batch 资源管理器是可[通过 GitHub 获取][github_samples]的其中一个 Batch .NET 示例应用程序。使用 Visual Studio 2013 或 2015 构建此 Windows Presentation Foundation (WPF) 应用程序，在开发及调试 Batch 解决方案时，使用它来浏览和管理 Batch 帐户中的资源。在 Batch 资源管理器接口中只需按几下鼠标，就可以查看作业、池和任务详细信息、从计算节点下载文件，甚至使用获取的远程桌面 (RDP) 文件从远程连接到节点。
+- [Azure CLI](/documentation/articles/xplat-cli-install)：Azure 命令行接口 (Azure CLI) 是一个跨平台工具集，提供用来与许多 Azure 服务（包括 Batch）交互的 shell 命令。
 
-- [Microsoft Azure 存储空间资源管理器][storage_explorer] - 严格地说，虽然存储空间资源管理器不算是 Azure Batch 工具，但却是开发和调试 Batch 解决方案时的另一个很有用的工具。
+- [Batch Management .NET](/documentation/articles/batch-management-dotnet) 客户端库：也可以通过 [NuGet][api_net_mgmt_nuget] 获取。你可以使用 Batch Management .NET 客户端库以编程方式管理 Batch 帐户、配额和应用程序包。[MSDN][api_net_mgmt] 上提供了管理库的参考信息。
 
 ## 方案：扩大并行工作负荷
 
@@ -102,31 +110,34 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 ## 后续步骤
 
-在学习示例 Batch 方案之后，接下来可以更深入探索该服务，以了解如何使用它处理计算密集型并行工作负荷。
+在大致了解 Batch 服务后，接下来可以更深入探索该服务，以了解如何使用它来处理计算密集型并行工作负荷。
 
-- 参阅[适用于 .NET 的 Azure Batch 库入门](/documentation/articles/batch-dotnet-get-started)，了解如何使用 C# 和 Batch .NET 库来运用上述技巧。这应该是学习如何使用 Batch 服务的第一站。
+- 阅读 [Batch feature overview for developers（面向开发人员的 Batch 功能概述）](/documentation/articles/batch-api-basics)，深入了解 Batch 提供用于处理工作负荷的 API 功能。想要使用 Batch 的任何人都必须阅读此文。
 
-- 查看 [Batch 功能概述](/documentation/articles/batch-api-basics)，深入了解 Batch 提供用于处理计算密集型工作负荷的 API 功能。
+- 阅读 [Get started with the Azure Batch library for .NET（适用于 .NET 的 Azure Batch 库入门）](/documentation/articles/batch-dotnet-get-started)，了解如何使用 C# 和 Batch .NET 库在常见的 Batch 工作流中执行简单的工作负荷。这应该是学习如何使用 Batch 服务的第一站。
+- 下载 [GitHub 上的代码示例][github_samples]，了解 C# 和 Python 如何与 Batch 相互作用，以计划和处理示例工作负荷。
 
-- 除了 Batch 资源管理器，其他 [GitHub 上的代码示例][github_samples]也演示了如何使用 Batch .NET 库中的许多 Batch 功能。
+- 查看 [Batch Learning Path（Batch 学习路径）][learning_path]，获取在学习使用 Batch 时可用的资源。
 
-
-
-[azure_storage]: /services/storage/
+[azure_storage]: https://azure.microsoft.com/services/storage/
+[api_java]: http://azure.github.io/azure-sdk-for-java/
+[api_java_jar]: http://adxsnapshots.azurewebsites.net/?dir=com%5cmicrosoft%5cazure%5cazure-batch
 [api_net]: https://msdn.microsoft.com/library/azure/mt348682.aspx
 [api_net_nuget]: https://www.nuget.org/packages/Azure.Batch/
 [api_net_mgmt]: https://msdn.microsoft.com/library/azure/mt463120.aspx
 [api_net_mgmt_nuget]: https://www.nuget.org/packages/Microsoft.Azure.Management.Batch/
-[batch_explorer]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
+[api_nodejs]: http://azure.github.io/azure-sdk-for-node/azure-batch/latest/
+[api_nodejs_npm]: https://www.npmjs.com/package/azure-batch
+[api_python]: http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.batch.html
+[api_python_pypi]: https://pypi.python.org/pypi/azure-batch
+[api_sample_net]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp
+[api_sample_python]: https://github.com/Azure/azure-batch-samples/tree/master/Python/Batch
 [batch_ps]: https://msdn.microsoft.com/library/azure/mt125957.aspx
 [batch_rest]: https://msdn.microsoft.com/library/azure/Dn820158.aspx
-
-[free_account]: /pricing/1rmb-trial/
+[free_account]: https://azure.microsoft.com/free/
 [github_samples]: https://github.com/Azure/azure-batch-samples
-
-[storage_explorer]: http://storageexplorer.com/
 
 [1]: ./media/batch-technical-overview/tech_overview_01.png
 [2]: ./media/batch-technical-overview/tech_overview_02.png
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0704_2016-->

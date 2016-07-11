@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Batch 中的有效列表查询 | Azure"
+	pageTitle="Azure Batch 中的高效列表查询 | Azure"
 	description="在查询 Azure Batch 实体（例如池、作业、任务和计算节点）时通过减少返回的数据量来提高性能。"
 	services="batch"
 	documentationCenter=".net"
@@ -10,10 +10,12 @@
 <tags
 	ms.service="batch"
 	ms.date="04/21/2016"
-	wacn.date="06/06/2016"/>
+	wacn.date="07/11/2016"/>
+	
+	
 # 有效地查询 Azure 批处理 ( batch ) 服务
 
-在本文中，你将了解如何通过减少查询 Batch 服务（使用 [Batch .NET][api_net] 库）时返回的数据量来提高 Azure Batch 应用程序的性能。
+在本文中了解如何通过减少查询 Batch 服务（使用 [Batch .NET][api_net] 库）时返回的数据量来提高 Azure Batch 应用程序的性能。
 
 Azure Batch 提供大型计算功能 -- 在生产环境中，作业、任务和计算节点等实体的数目成千上万。因此，获取这些项的信息时，可能会生成大量的数据，这些数据在每次查询时都必须从服务传输到应用程序。通过限制每次查询时返回的项数和信息类型，可以提高查询速度，因此也会提高应用程序的性能。
 
@@ -39,10 +41,10 @@ csharp
 		IPagedEnumerable<CloudTask> completedTasks = batchClient.JobOperations.ListTasks("job-001", detailLevel);
 		
 
-在上面的示例方案中，如果作业中存在数以千计的任务，则通常情况下，第二个查询的结果的返回速度将远远快于第一个查询。下面提供了有关使用 Batch .NET API 列出项时使用 ODATADetailLevel 的详细信息。
+在上面的示例方案中，如果作业中存在数以千计的任务，则通常情况下，第二个查询的结果的返回速度将远远快于第一个查询。[下面](#efficient-querying-in-batch-net)提供了有关使用 Batch .NET API 列出项时使用 ODATADetailLevel 的详细信息。
 
 > [AZURE.IMPORTANT]
-强烈建议你*始终* 将 ODATADetailLevel 对象提供给 .NET API 列表调用，以确保最大程度地提高应用程序的效率和性能。指定详细程度有助于缩短 Batch 服务响应时间、提高网络利用率，以及最大程度减少客户端应用程序的内存使用量。
+强烈建议你“始终” 将 ODATADetailLevel 对象提供给 .NET API 列表调用，以确保最大程度地提高应用程序的效率和性能。指定详细程度有助于缩短 Batch 服务响应时间、提高网络利用率，以及最大程度减少客户端应用程序的内存使用量。
 
 ## 高效查询工具
 
@@ -81,7 +83,7 @@ expand 字符串用于减少获取特定信息所需的 API 调用数。使用 e
 - 布尔值字符串为 `true` 或 `false`。
 - 如果指定了无效的属性或运算符，则会导致 `400 (Bad Request)` 错误。
 
-## 在 Batch .NET 中进行高效查询
+## <a name="efficient-querying-in-batch-net"></a> 在 Batch .NET 中进行高效查询
 
 在 [Batch .NET][api_net] API 中，将通过 [ODATADetailLevel][odata] 类来提供 filter、select 和 expand 字符串以列出相应操作。ODataDetailLevel 类有三个公共字符串属性，这些属性可以在构造函数中指定，也可以直接在对象上设置。然后，你可以将 ODataDetailLevel 对象作为参数传递给不同的列表操作，例如 [ListPools][net_list_pools]、[ListJobs][net_list_jobs] 和 [ListTasks][net_list_tasks]。
 
@@ -114,7 +116,7 @@ csharp
 
 ## Batch REST 到 .NET API 映射
 
-filter、select 和 expand 字符串中的属性名称“必须”反映其 REST API 对应项，不管是名称本身还是大小写。下表提供了 .NET 和 REST API 的对应项之间的映射。
+filter、select 和 expand 字符串中的属性名称*必须*反映其 REST API 对应项，不管是名称本身还是大小写。下表提供了 .NET 和 REST API 的对应项之间的映射。
 
 ### filter 字符串的映射
 
@@ -200,6 +202,7 @@ MSDN 上的 [Azure Batch 论坛][forum]是探讨 Batch 服务以及咨询其相�
 [api_net_listjobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
 [api_rest]: http://msdn.microsoft.com/library/azure/dn820158.aspx
 [efficient_query_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/EfficientListQueries
+[forum]: https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=azurebatch
 [github_samples]: https://github.com/Azure/azure-batch-samples
 [odata]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.odatadetaillevel.aspx
 [odata_ctor]: https://msdn.microsoft.com/library/azure/dn866178.aspx
@@ -243,4 +246,4 @@ MSDN 上的 [Azure Batch 论坛][forum]是探讨 Batch 服务以及咨询其相�
 [net_schedule]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjobschedule.aspx
 [net_task]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.aspx
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0704_2016-->
