@@ -40,12 +40,12 @@
 
 
 ##	<a name="introduction"></a>介绍
-MongoDB 是一个跨平台的面向文档的 NoSQL 数据库，本文档介绍如何在Azure虚拟机上配置管理 MongoDB 集群。
+MongoDB 是一个跨平台的面向文档的 NoSQL 数据库，本文档介绍如何在 Azure 虚拟机上配置管理 MongoDB 集群。
 ## <a name="install-MongoDB"></a>在虚拟机上手动安装 MongoDB
 如果您还没有 Azure Linux 虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/) 创建 Linux 虚拟机。
-如果这是您第一次使用Azure的Linux虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/) 如何使用虚拟机。
+如果这是您第一次使用 Azure 的Linux虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/) 如何使用虚拟机。
 
-不同的 Linux 发行版在安装 MongoDB 时有少许不同，请根据您的Linux版本选择对应的步骤。
+不同的 Linux 发行版在安装 MongoDB 时有少许不同，请根据您的 Linux 版本选择对应的步骤。
 
 <a name="Redhat-based-Linux"></a>**Redhat based Linux**    
 	(以 CentOS 7.0 64x, MongoDB 3.2为例)  
@@ -142,15 +142,15 @@ MongoDB 是一个跨平台的面向文档的 NoSQL 数据库，本文档介绍�
 	
 		$sudo zypper -n install mongodb-org  
 
-3.	(可选) 当新的版本可用的时候，zypper会更新这些包，为防止这些“无意”的更新, 执行下列命令  
+3.	(可选) 当新的版本可用的时候，zypper 会更新这些包，为防止这些“无意”的更新, 执行下列命令  
 
 		$sudo zypper addlock mongodb-org-3.2.0 mongodb-org-server-3.2.0 mongodb-org-shell-3.2.0 mongodb-org-mongos-3.2.0 mongodb-org-tools-3.2.0
   
-4.	启动 MongoDB(有许多种启动MongoDB的方式, 这里我们用下列命令启动)    
+4.	启动 MongoDB (有许多种启动 MongoDB 的方式, 这里我们用下列命令启动)    
 5.	
 		$ sudo mongod --dbpath /var/lib/mongo/ --logpath /var/log/mongodb/mongod.log --fork 
 
-5.	查看MongoDB日志，验证是否启动成功  
+5.	查看 MongoDB 日志，验证是否启动成功  
 6.	
 		$sudo cat /var/log/mongodb/mongod.log  
 
@@ -217,9 +217,9 @@ MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。�
   </tr>
 </table>
 
-2.	在Azure虚机管理界面中打开以上三个节点的27017端口，具体操作请参考[链接](/documentation/articles/virtual-machines-set-up-endpoints/)。  
+2.	在 Azure 虚机管理界面中打开以上三个节点的27017端口，具体操作请参考[链接](/documentation/articles/virtual-machines-set-up-endpoints/)。  
 3.	确保这三个节点能够互相连接。建议都位于同一个数据中心下，比如区域都是中国东部或者中国北部，以降低网络延迟。  
-4.	/etc/mongod.conf 配置文件里默认绑定了IP地址127.0.0.1。修改此项配置，所有三个节点都执行下面命令    
+4.	/etc/mongod.conf 配置文件里默认绑定了 IP 地址 127.0.0.1。修改此项配置，所有三个节点都执行下面命令    
 		
 		$sudo sed -i 's/\(bindIp\)/#\1/' /etc/mongod.conf
 
@@ -276,7 +276,7 @@ MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。�
  
 	如果我们能看到和主节点同样的结果，表明复制集配置成功。   
 ###<a name="auto-trouble-switch"></a>自动故障切换  
-1.	停止主节点mongod进程，到主节点执行以下命令：
+1.	停止主节点 mongod 进程，到主节点执行以下命令：
 
 		$sudo ps -ef |grep mongod  #获取mongod进程ID  
 		$sudo kill -9 <PID> #用上面获取的进程ID代替此命名中的<PID>
@@ -399,8 +399,7 @@ Config servers 保存分片集群元数据信息。
   </tr>
 </table> 
 注意：10.2.0.4 和10.2.0.5 是属于同一个复制集集群, 由于实验环境限制，我这里只演示了一个复制集集群分片的方法，生产情况会有多个复制集集群的分片，以及至少三个 config servers。  
-
-2. 在每个节点上安装mongodb包。  
+2. 在每个节点上安装 mongodb 包。  
 3. 在Azure虚机管理界面中打开以上三个节点的27017端口，并保证每个节点能互相访问。建议都位于同一个数据中心下，比如区域都是中国东部或者中国北部，以降低网络延迟。然后修改 /etc/mongod.conf  
 
 		$sudo sed -i 's/\(bindIp\)/#\1/' /etc/mongod.conf
