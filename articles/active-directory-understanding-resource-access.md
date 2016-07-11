@@ -9,9 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-
-        ms.date="05/03/2016"
-        wacn.date="06/27/2016"/>
+	ms.date="05/03/2016"
+	wacn.date="06/27/2016"/>
 
 
 # 了解 Azure 中的资源访问权限

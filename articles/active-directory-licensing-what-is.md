@@ -131,7 +131,6 @@ Azure AD 很容易入门；你始终可以在注册免费 Azure 试用版过程�
 现在，你可能已准备好配置和使用某些 Azure AD Premium 功能。
 
 - [自助密码重置](/documentation/articles/active-directory-manage-passwords)
-- [自助组管理](/documentation/articles/active-directory-accessmanagement-self-service-group-management)
 - [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health)
 - [将组分配到应用程序](/documentation/articles/active-directory-manage-groups)
 - [Azure Multi-Factor Authentication](/documentation/articles/multi-factor-authentication)

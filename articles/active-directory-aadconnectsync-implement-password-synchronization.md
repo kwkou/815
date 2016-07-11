@@ -64,7 +64,9 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 
 同步密码对当前登录的用户没有任何影响。当前的云服务会话不会立即受到已同步密码更改的影响，而是在你登录云服务时才受到影响。但是，当云服务要求你再次身份验证时，就需要提供新的密码。
 
+
 > [AZURE.NOTE] 只有 Active Directory 的对象类型用户才支持密码同步。不支持 iNetOrgPerson 对象类型。
+
 
 ### 密码同步在 Azure AD 域服务中的工作原理
 
@@ -163,6 +165,7 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 
     ![对象日志详细信息](./media/active-directory-aadconnectsync-implement-password-synchronization/csobjectlog.png)
 -->
+
 状态列可能包含以下值：
 
 | 状态 | 说明 |

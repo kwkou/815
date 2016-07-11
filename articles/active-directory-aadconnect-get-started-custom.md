@@ -137,7 +137,7 @@ Azure AD 应用程序和属性筛选 | 通过启用 Azure AD 应用和属性筛�
 密码同步 | 如果你选择了联合作为登录解决方案，则可以启用此选项。然后，可将密码同步用作备份选项。有关更多信息，请参阅 [Password synchronization（密码同步）](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization)。 |
 密码写回 | 通过启用密码写回，源自 Azure AD 的密码更改将写回到本地目录。有关详细信息，请参阅 [Getting started with password management（密码管理入门）](/documentation/articles/active-directory-passwords-getting-started)。 |
 组写回 | 如果你使用了“Office 365 组”功能，则可以在本地 Active Directory 中呈现这些组。仅当本地 Active Directory 中存在 Exchange 时，才可以使用此选项。有关详细信息，请参阅 [Group writeback（组写回）](/documentation/articles/active-directory-aadconnect-feature-preview#group-writeback)。 |
-设备写回 | 允许你将 Azure AD 中的设备对象写回本地 Active Directory 以实现条件性访问方案。有关详细信息，请参阅 [Enabling device writeback in Azure AD Connect（在 Azure AD Connect 中启用设备写回）](/documentation/articles/active-directory-aadconnect-feature-device-writeback)。 |
+
 目录扩展属性同步 | 通过启用目录扩展属性同步，可将指定的属性同步到 Azure AD。有关详细信息，请参阅 [Directory extensions（目录扩展）](/documentation/articles/active-directory-aadconnectsync-feature-directory-extensions)。 |
 
 ### Azure AD 应用程序和属性筛选

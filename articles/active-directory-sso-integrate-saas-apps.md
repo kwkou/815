@@ -9,9 +9,9 @@
     editor=""/>
 
 <tags
-      ms.service="active-directory"
+    ms.service="active-directory"
     ms.date="04/26/2016"
-      wacn.date="06/27/2016"/>
+    wacn.date="06/27/2016"/>
 
 # 将 Azure Active Directory 单一登录与 SaaS 应用相集成  
 
@@ -27,7 +27,7 @@
 
 ## 授权
 
-预配的帐户通过单一登录身份验证之后，可授权用户使用应用程序。用户预配可以手动完成，在某些情况下，你可以根据 Azure Active Directory 中所做的更改在 SaaS 应用程序中添加和删除用户信息。有关使用现有 Azure AD 连接器自动化预配的详细信息，请参阅 [SaaS 应用程序的自动化用户预配和取消预配](/documentation/articles/active-directory-saas-app-provisioning)。
+预配的帐户通过单一登录身份验证之后，可授权用户使用应用程序。用户预配可以手动完成，在某些情况下，你可以根据 Azure Active Directory 中所做的更改在 SaaS 应用程序中添加和删除用户信息。
 
 否则，你可以手动将用户信息添加到应用，或使用应用商店中提供的其他预配解决方案。
 
@@ -45,7 +45,7 @@ Azure AD 提供多种可自定义的方式来向组织中的用户部署应用�
 
 用户的标识通常有唯一身份标识符，可能是电子邮件地址或通用个人名称 (UPN)。需要将每个用户的应用程序标识链接（映射）到其各自的 Azure AD 标识。根据应用程序身份验证的要求，有几种方法可实现此目的。
 
-有关映射应用程序标识与 Azure AD 标识的详细信息，请参阅[自定义 SAML 令牌中颁发的声明](http://social.technet.microsoft.com/wiki/contents/articles/31257.azure-active-directory-customizing-claims-issued-in-the-saml-token-for-pre-integrated-apps.aspx)和[为预配自定义属性映射](/documentation/articles/active-directory-saas-customizing-attribute-mappings)。
+有关映射应用程序标识与 Azure AD 标识的详细信息，请参阅[自定义 SAML 令牌中颁发的声明](http://social.technet.microsoft.com/wiki/contents/articles/31257.azure-active-directory-customizing-claims-issued-in-the-saml-token-for-pre-integrated-apps.aspx)。
 
 ### 了解用户的登录体验
 
@@ -58,7 +58,6 @@ Azure AD 提供多种可自定义的方式来向组织中的用户部署应用�
 ## 后续步骤
 
 
-对于你可以在应用库中找到的 SaaS 应用，Azure AD 提供了许多[有关如何集成 SaaS 应用的教程](/documentation/articles/active-directory-saas-tutorial-list)。
 
 如果某个应用不在应用库中，你可以[将该应用作为自定义应用程序添加到 Azure AD 应用库](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx)。
 
