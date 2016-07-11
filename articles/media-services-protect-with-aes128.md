@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
- 	ms.date="05/03/2016" 
-	wacn.date="06/27/2016"/>
+ 	ms.date="06/16/2016" 
+	wacn.date="07/11/2016"/>
 
 #使用 AES-128 动态加密和密钥传送服务
 
@@ -141,7 +141,7 @@
 
 对于 HLS，根清单将划分成段文件。
 
-例如，根清单是：http://test001.origin.mediaservices.chinacloudapi.cn/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/manifest(format=m3u8-aapl)， 并且包含段文件名的列表。
+例如，根清单是：http://test001.origin.mediaservices.chinacloudapi.cn/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/manifest(format=m3u8-aapl) ，并且包含段文件名的列表。
 	
 	. . . 
 	#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=630133,RESOLUTION=424x240,CODECS="avc1.4d4015,mp4a.40.2",AUDIO="audio"
@@ -150,7 +150,7 @@
 	QualityLevels(842459)/Manifest(video,format=m3u8-aapl)
 	…
 
-如果在文本编辑器中打开某个段文件（例如 http://test001.origin.mediaservices.chinacloudapi.cn/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/QualityLevels(514369)/Manifest(video,format=m3u8-aapl)）， 它应包含 #EXT-X-KEY，指示文件已加密。
+如果在文本编辑器中打开某个段文件（例如 http://test001.origin.mediaservices.chinacloudapi.cn/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/QualityLevels(514369)/Manifest(video,format=m3u8-aapl)） ，它应包含 #EXT-X-KEY，指示文件已加密。
 	
 	#EXTM3U
 	#EXT-X-VERSION:4
@@ -535,10 +535,19 @@
 		            Uri keyAcquisitionUri = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.BaselineHttp);
 		
 		            string envelopeEncryptionIV = Convert.ToBase64String(GetRandomBuffer(16));
-		
+		    
+		            // When configuring delivery policy, you can choose to associate it
+		            // with a key acquisition URL that has a KID appended or
+		            // or a key acquisition URL that does not have a KID appended  
+		            // in which case a content key can be reused. 
+
+		            // EnvelopeKeyAcquisitionUrl:  contains a key ID in the key URL.
+		            // EnvelopeBaseKeyAcquisitionUrl:  the URL does not contains a key ID
+
 		            // The following policy configuration specifies: 
-		            //   key url that will have KID=<Guid> appended to the envelope and
-		            //   the Initialization Vector (IV) to use for the envelope encryption.
+		            // key url that will have KID=<Guid> appended to the envelope and
+		            // the Initialization Vector (IV) to use for the envelope encryption.
+		            
 		            Dictionary<AssetDeliveryPolicyConfigurationKey, string> assetDeliveryPolicyConfiguration =
 		                new Dictionary<AssetDeliveryPolicyConfigurationKey, string>
 		            {
@@ -622,4 +631,4 @@
 
 
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0704_2016-->
