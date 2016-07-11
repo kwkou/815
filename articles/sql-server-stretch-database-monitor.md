@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
-	ms.date="02/26/2016"
-	wacn.date="04/11/2016"/>
+	ms.date="06/14/2016"
+	wacn.date="07/11/2016"/>
 
 # 数据迁移的监视和故障排除（SQL Server Stretch Database）
 
@@ -29,11 +29,8 @@
 打开动态管理视图 **sys.dm\_db\_rda\_migration\_status** 查看已迁移的数据批数与行数。有关详细信息，请参阅 [sys.dm\_db\_rda\_migration\_status (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/dn935017.aspx)。
 
 ## <a name="Firewall"></a>数据迁移的故障排除
-**Azure 防火墙阻止正在阻止来自我的本地服务器的连接。**
 
-你可能必须在 Azure 服务器的 Azure 防火墙设置中添加一条规则，以使 SQL Server 可与远程 Azure 服务器进行通信。
-
-**我的已启用延伸的表中的行未迁移到 Azure。这是什么问题呢？**
+**我的已启用延伸的表中的行未迁移到 Azure。那么，这有什么问题呢？**
 
 有几个问题可能会影响迁移。请检查以下事项。
 
@@ -47,11 +44,15 @@
 
     -   有关 SQL Server 错误消息内容的详细信息，请参阅 [sys.messages (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms187382.aspx)。
 
+**Azure 防火墙阻止正在阻止来自我的本地服务器的连接。**
+
+你可能必须在 Azure 服务器的 Azure 防火墙设置中添加一条规则，以使 SQL Server 可与远程 Azure 服务器进行通信。
+
 ## 另请参阅
 
-[SQL Server Stretch Database的管理和故障排除](/documentation/articles/sql-server-stretch-database-manage/)
+[延伸数据库的管理和故障排除](/documentation/articles/sql-server-stretch-database-manage/)
 
 <!--Image references-->
 [StretchMonitorImage1]: ./media/sql-server-stretch-database-monitor/StretchDBMonitor.png
 
-<!---HONumber=Mooncake_0405_2016-->
+<!---HONumber=Mooncake_0704_2016-->
