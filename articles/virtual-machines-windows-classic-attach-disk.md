@@ -10,20 +10,20 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="02/03/2016"
-	wacn.date="06/07/2016"/>
+	ms.date="05/17/2016"
+	wacn.date="07/11/2016"/>
 
 # 将数据磁盘附加到使用经典部署模型创建的 Windows 虚拟机
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用[资源管理器模型](/documentation/articles/virtual-machines-windows-attach-disk-portal)。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 [Resource Manager 模型](/documentation/articles/virtual-machines-windows-attach-disk-portal)。
 
 如果需要其他数据磁盘，可将空磁盘或现有的数据磁盘附加到 VM。在这两种情况下，磁盘是驻留在 Azure 存储帐户中的 .vhd 文件。如果是新磁盘，在附加磁盘之后，你也需要将它初始化，使其可供 Windows VM 使用。
 
-最佳做法是使用一个或多个不同的磁盘来存储虚拟机的数据。当你创建 Azure 虚拟机时，它具有一个映射到 C 盘的操作系统磁盘和一个映射到 D 盘的临时磁盘。**不要使用临时磁盘来存储数据**。顾名思义，它仅提供临时存储。它不提供冗余或备份，因为它不驻留在 Azure 存储空间中。
+有关磁盘的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-windows-about-disks-vhds)。
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-windows-linux.md)]
 
-## <a id="initializeinWS"></a>如何：在 Windows Server 中初始化新的数据磁盘
+##<a id="initializeinWS"></a> 初始化磁盘
 
 1. 连接到虚拟机。有关说明，请参阅[如何登录到运行 Windows Server 的虚拟机][logon]。
 
@@ -51,4 +51,4 @@
 
 [logon]: /documentation/articles/virtual-machines-windows-classic-connect-logon
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_0704_2016-->
