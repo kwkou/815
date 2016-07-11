@@ -43,7 +43,7 @@
 MongoDB 是一个跨平台的面向文档的 NoSQL 数据库，本文档介绍如何在 Azure 虚拟机上配置管理 MongoDB 集群。
 ## <a name="install-MongoDB"></a>在虚拟机上手动安装 MongoDB
 如果您还没有 Azure Linux 虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/) 创建 Linux 虚拟机。
-如果这是您第一次使用 Azure 的Linux虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/) 如何使用虚拟机。
+如果这是您第一次使用 Azure 的 Linux 虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm/) 如何使用虚拟机。
 
 不同的 Linux 发行版在安装 MongoDB 时有少许不同，请根据您的 Linux 版本选择对应的步骤。
 
@@ -115,12 +115,12 @@ MongoDB 是一个跨平台的面向文档的 NoSQL 数据库，本文档介绍�
 		$echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
 		$echo "mongodb-org-tools hold" | sudo dpkg --set-selections
 
-6.	启动 MongoDB(有许多种启动MongoDB的方式, 这里我们用下列命令启动)  
+6.	启动 MongoDB (有许多种启动 MongoDB 的方式, 这里我们用下列命令启动)  
 
 		$sudo service mongod stop
 		$ sudo mongod --dbpath /var/lib/mongodb/ --logpath /var/log/mongodb/mongod.log --fork
   
-7.	查看MongoDB日志，验证是否启动成功   
+7.	查看 MongoDB 日志，验证是否启动成功   
 
 		$sudo cat /var/log/mongodb/mongod.log
   
@@ -217,7 +217,7 @@ MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。�
   </tr>
 </table>
 
-2.	在 Azure 虚机管理界面中打开以上三个节点的27017端口，具体操作请参考[链接](/documentation/articles/virtual-machines-set-up-endpoints/)。  
+2.	在 Azure 虚机管理界面中打开以上三个节点的 27017 端口，具体操作请参考[链接](/documentation/articles/virtual-machines-set-up-endpoints/)。  
 3.	确保这三个节点能够互相连接。建议都位于同一个数据中心下，比如区域都是中国东部或者中国北部，以降低网络延迟。  
 4.	/etc/mongod.conf 配置文件里默认绑定了 IP 地址 127.0.0.1。修改此项配置，所有三个节点都执行下面命令    
 		
@@ -340,7 +340,7 @@ MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。�
 
 ##<a name="manage-config-MongoDB-neafcluster"></a>配置管理 MongoDB 分片集群
 ###<a name="introduction-2"></a>介绍
-分片( Sharding )是使用多个机器存储数据的方法,MongoDB使用分片以支持巨大的数据存储量与对数据操作  
+分片( Sharding )是使用多个机器存储数据的方法, MongoDB 使用分片以支持巨大的数据存储量与对数据操作  
 
 ![5](./media/open-source-azure-virtual-machines-manage-mongodb-cluster/open-source-manage-MongoDB-5.png)  
 
@@ -400,7 +400,7 @@ Config servers 保存分片集群元数据信息。
 </table> 
 注意：10.2.0.4 和10.2.0.5 是属于同一个复制集集群, 由于实验环境限制，我这里只演示了一个复制集集群分片的方法，生产情况会有多个复制集集群的分片，以及至少三个 config servers。  
 2. 在每个节点上安装 mongodb 包。  
-3. 在Azure虚机管理界面中打开以上三个节点的27017端口，并保证每个节点能互相访问。建议都位于同一个数据中心下，比如区域都是中国东部或者中国北部，以降低网络延迟。然后修改 /etc/mongod.conf  
+3. 在 Azure 虚机管理界面中打开以上三个节点的 27017 端口，并保证每个节点能互相访问。建议都位于同一个数据中心下，比如区域都是中国东部或者中国北部，以降低网络延迟。然后修改 /etc/mongod.conf  
 
 		$sudo sed -i 's/\(bindIp\)/#\1/' /etc/mongod.conf
   
@@ -425,11 +425,11 @@ Config servers 保存分片集群元数据信息。
 		$mongo
 		>rs.status()
 
-5.	到 Config server(10.2.0.3) 执行如下   
+5.	到 Config server (10.2.0.3) 执行如下   
 
 		#mongod --configsvr --dbpath /var/lib/mongo/ --logpath /var/log/mongodb/mongod.log --fork
    
-6.	router节点设置  
+6.	router 节点设置  
 	登录到每个router节点执行    
 
 		#mongos --configdb 10.2.0.3 --logpath /var/log/mongodb/mongod.log --fork

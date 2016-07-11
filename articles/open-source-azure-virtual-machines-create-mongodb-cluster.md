@@ -37,7 +37,7 @@
  
 		azure login -e AzureChinaCloud -u <your account>
 
-然后你需要创建一个Azure资源组( Resource Group )，创建 Azure 虚拟机和搭建 MongoDB 都在该资源组中进行，运行以下命令创建 Azure 资源组：  
+然后你需要创建一个 Azure 资源组( Resource Group )，创建 Azure 虚拟机和搭建 MongoDB 都在该资源组中进行，运行以下命令创建 Azure 资源组：  
 
 		zure group create "YOUR-RESOURCE-GROUP-NAME" "China East"
 
@@ -204,9 +204,9 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
  ![1](./media/open-source-azure-virtual-machines-create-mongodb-cluster/open-source-azure-virtual-machines-create-mongodb-cluster-1.png)  
 
-**Azure PowerShell方式**  
-你需要下载PowerShell脚本 [mongodb-sharding-deploy.ps1](http://mirrors.blob.core.chinacloudapi.cn/mongodb/mongodb-sharding-deploy.ps1)，按照以下示例运行 mongodb- sharding-deploy.ps1 脚本，即可在资源组rg1中生成多台 CentOS 虚拟机，接着会在该虚机上搭建具备主从复制节点及分片集群的 MongoDB，创建过程大概需要1 小时15分钟。  
+**Azure PowerShell 方式**  
 
+你需要下载PowerShell脚本 [mongodb-sharding-deploy.ps1](http://mirrors.blob.core.chinacloudapi.cn/mongodb/mongodb-sharding-deploy.ps1)，按照以下示例运行 mongodb-sharding-deploy.ps1 脚本，即可在资源组rg1中生成多台 CentOS 虚拟机，接着会在该虚机上搭建具备主从复制节点及分片集群的 MongoDB，创建过程大概需要1小时15分钟。  
 
 		PS C:\mongodb>.\mongodb-sharding-deploy.ps1 -ResourceGroupName rg1 -CentosVersion 7.2 -AdminUsername azureuser -AdminPassword “YOUR-PASSWORD” -MongoUsername mongoadmin -MongoPassword “YOUR-PASSWORD” -DNSNamePrefix mongoshard
   
