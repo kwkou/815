@@ -160,11 +160,7 @@
 
 -	[Oracle 虚拟机映像 - 其他注意事项](/documentation/articles/virtual-machines-windows-classic-oracle-considerations)
 
--	[Oracle Database 12c 文档库](http://www.oracle.com/pls/db1211/homepage)
-
 -	[从 Java 应用程序连接到 Oracle 数据库](http://docs.oracle.com/cd/E11882_01/appdev.112/e12137/getconn.htm#TDPJD136)
-
--	[Azure 的 Oracle 虚拟机映像](/documentation/articles/virtual-machines-linux-classic-oracle-images)
 
 -	[Oracle Database 2 Day DBA 12c 发行版 1](http://docs.oracle.com/cd/E16655_01/server.121/e17643/toc.htm)
 

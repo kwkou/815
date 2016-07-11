@@ -80,7 +80,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 | ALLOW INTERNET OUTBOUND | 65001 | * | * | INTERNET | * | * | ALLOW |
 | DENY ALL OUTBOUND | 65500 | * | * | * | * | * | DENY |
 
-## 将 NSG 相关联
+##<a name="associating-nsgs"></a> 将 NSG 相关联
 
 可以将 NSG 关联到 VM 和子网，具体取决于你使用的部署模型。
 

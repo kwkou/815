@@ -20,7 +20,7 @@
 
 自动修补将为运行 SQL Server 的 Azure 虚拟机建立一个维护时段。只能在此维护时段内安装自动更新。对于 SQL Server，这可以确保在数据库的最佳可能时间发生系统更新和任何关联的重新启动。自动修补依赖 [SQL Server IaaS 代理扩展](/documentation/articles/virtual-machines-windows-sql-server-agent-extension)。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)] 经典部署模型。若要查看本文的经典版本，请参阅 [在 Azure 虚拟机（经典）中对 SQL Server 进行自动修补](/documentation/articles/virtual-machines-windows-classic-sql-automated-patching)。
+> [AZURE.NOTE]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model)。这篇文章介绍如何使用资源管理器部署模型，Azure 建议大多数新部署使用资源管理器模型替代经典部署模型。若要查看本文的经典版本，请参阅 [在 Azure 虚拟机（经典）中对 SQL Server 进行自动修补](/documentation/articles/virtual-machines-windows-classic-sql-automated-patching)。
 
 ## 先决条件
 
