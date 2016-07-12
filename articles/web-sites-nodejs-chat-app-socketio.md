@@ -270,7 +270,7 @@ Azure Web 应用提供多个 SKU，这些 SKU 用于确定你的站点可用的�
 
 [chat-example-view]: ./media/web-sites-nodejs-chat-app-socketio/socketio-2.png
 [npm-output]: ./media/web-sites-nodejs-chat-app-socketio/socketio-7.png
-[pricing]: /home/features/web-site/#price
+[pricing]: /home/features/web-site/pricing/
  
 
 <!---HONumber=Mooncake_1207_2015-->

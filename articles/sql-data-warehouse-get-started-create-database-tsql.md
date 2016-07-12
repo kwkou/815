@@ -68,7 +68,7 @@ MAXSIZE 可以介于 250 GB 与 60 TB 之间。服务目标可以介于 DW100 �
 [ALTER DATABASE]: https://msdn.microsoft.com/zh-cn/library/mt204042.aspx
 
 <!--Other Web references-->
-[SQL 数据仓库定价]: /home/features/sql-data-warehouse/#price
+[SQL 数据仓库定价]: /home/features/sql-data-warehouse/pricing/
 [Visual Studio 下载]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 
 <!---HONumber=Mooncake_0530_2016-->

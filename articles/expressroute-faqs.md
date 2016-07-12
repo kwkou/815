@@ -30,7 +30,7 @@ ExpressRoute 目前支持大多数 Azure 服务。
 你可以通过区域运营商来建立以太网连接到 Azure支持的连接提供商。然后，你可以在连接服务商的位置与 Azure 实现对接。查看 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations/)的最后一部分，以确定你的网络提供商是否处在任何 Exchange 位置中。然后，你可以从交换提供商订购一条 ExpressRoute 线路以连接到 Azure。
 
 ### ExpressRoute 的费用是多少？
-有关定价信息，请查看[定价详细信息](/home/features/expressroute/#price)。
+有关定价信息，请查看[定价详细信息](/home/features/expressroute/pricing/)。
 
 ### 如果我购买了具有给定带宽的 ExpressRoute 线路，我必须从网络服务提供商购买具有相同速度的 VPN 连接吗？
 不是。你可以从服务提供商购买任何速度的 VPN 连接。但是，与 Azure 的连接速度将限制为你购买的 ExpressRoute 线路带宽。
@@ -61,7 +61,7 @@ ExpressRoute 目前支持大多数 Azure 服务。
 ## 数据和连接
 
 ### 对于使用 ExpressRoute 可以传输的数据量是否有限制？
-我们不对数据传输量设置限制。有关带宽价格的信息，请参阅[定价详细信息](/home/features/expressroute/#price)。
+我们不对数据传输量设置限制。有关带宽价格的信息，请参阅[定价详细信息](/home/features/expressroute/pricing/)。
 
 ### ExpressRoute 支持的连接速度是多少？
 支持带宽提供：
@@ -209,7 +209,7 @@ ExpressRoute 高级版包括下面列出的功能集合。
 不可以。你无法选择所需的功能。如果你启用 ExpressRoute 高级版，我们会启用所有功能。
 
 ### ExpressRoute 高级版的费用是多少？
-有关费用，请参阅[定价详细信息](/home/features/expressroute/#price)。
+有关费用，请参阅[定价详细信息](/home/features/expressroute/pricing/)。
 
 ### 除了支付 ExpressRoute 高级版费用以外，是否还要支付标准版 ExpressRoute 的费用？
 是的。ExpressRoute 高级版的费用是在 ExpressRoute 线路费用以及连接提供商所收费用的基础之上收取的。

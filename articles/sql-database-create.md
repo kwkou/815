@@ -21,7 +21,7 @@ True author is: authors="sonalmm" , ms.author="sonalm".
 -->
 
 
-[注册](https://manage.windowsazure.cn) SQL 数据库 V12[（在某些区域以预览版提供）](/documentation/articles/sql-database-v12-whats-new/#V12AzureSqlDbPreviewGaTa)，以利用 Azure 上的下一代 SQL 数据库。若要开始，你需要订阅 Azure。你可以注册 [Azure 试用版](/pricing/1rmb-trial)并查看[价格](/home/features/sql-database/#price)信息。
+[注册](https://manage.windowsazure.cn) SQL 数据库 V12[（在某些区域以预览版提供）](/documentation/articles/sql-database-v12-whats-new/#V12AzureSqlDbPreviewGaTa)，以利用 Azure 上的下一代 SQL 数据库。若要开始，你需要订阅 Azure。你可以注册 [Azure 试用版](/pricing/1rmb-trial)并查看[价格](/home/features/sql-database/pricing/)信息。
 
 
 | 创建数据库 | 屏幕截图 |

@@ -23,7 +23,7 @@
 
 >当你的应用程序达到分区能够处理的工作负荷极限时，Azure 存储将开始返回错误代码 503（服务器忙）或错误代码 500（操作超时）响应。发生这种情况时，应用程序应使用指数退让策略进行重试。使用指数退让策略，可以减少分区上的负载，缓解该分区的流量高峰。
 
-如果您的应用程序的需求超过了单个存储帐户的可伸缩性目标值，您可以创建应用程序以使用多个存储帐户，并将数据对象分布到这些存储帐户中。有关批量定价的信息，请参阅 [Azure 存储空间定价](/home/features/storage#price)。
+如果您的应用程序的需求超过了单个存储帐户的可伸缩性目标值，您可以创建应用程序以使用多个存储帐户，并将数据对象分布到这些存储帐户中。有关批量定价的信息，请参阅 [Azure 存储空间定价](/home/features/storage/pricing/)。
 
 
 ##<a id="scalability-targets-for-standard-storage-accounts"></a> Blob、队列、表和文件的可伸缩性目标
@@ -72,7 +72,7 @@
 
 ## 另请参阅
 
-- [存储定价详细信息](/home/features/storage#price)
+- [存储定价详细信息](/home/features/storage/pricing/)
 - [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)
 - [高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)
 - [Azure 存储复制](/documentation/articles/storage-redundancy/)

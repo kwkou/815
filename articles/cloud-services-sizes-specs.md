@@ -41,7 +41,7 @@
 
 >[AZURE.NOTE] 所有计算机大小都提供一个**应用程序磁盘**用于存储云服务包中的所有文件；其大小约为 1.5 GB。
 
-请务必查看每个云服务大小的[定价](/home/features/cloud-services/#price)。
+请务必查看每个云服务大小的[定价](/home/features/cloud-services/pricing/)。
 
 ## 常规用途
 

@@ -147,8 +147,8 @@ Azure 提供两个选项用于在云中托管 SQL Server 工作负荷：
 
 有关定价的详细信息，请参阅以下资源：
 
-- [SQL 数据库定价](/home/features/sql-database/#price)
-- [SQL](/home/features/virtual-machines/#SQL) 和 [Windows](/home/features/virtual-machines/#windows) 的[虚拟机定价](/home/features/virtual-machines/#price)
+- [SQL 数据库定价](/home/features/sql-database/pricing/)
+- [SQL](/home/features/virtual-machines/#SQL) 和 [Windows](/home/features/virtual-machines/#windows) 的[虚拟机定价](/home/features/virtual-machines/pricing/)
 - [Azure 价格计算器](/pricing/calculator)
 
 > [AZURE.NOTE] SQL Server 上有一小部分的功能不适用于或不可用于 SQL 数据库。有关详细信息，请参阅 [SQL 数据库一般性限制和指导原则](/documentation/articles/sql-database-general-limitations/)以及 [SQL 数据库 Transact-SQL 信息](/documentation/articles/sql-database-transact-sql-information/)。如果要将现有的 SQL Server 解决方案迁移到云中，请参阅[将 SQL Server 数据库迁移到 Azure SQL 数据库](/documentation/articles/sql-database-cloud-migrate/)。当将现有的本地 SQL Server 应用程序迁移到 SQL 数据库时，建议你更新应用程序以利用云服务提供的功能。例如，可以考虑使用 [Azure Web App Service](/home/features/web-site) 或 [Azure 云服务](/home/features/cloud-services)来托管你的应用层，以提高成本效益。
@@ -197,7 +197,7 @@ Azure 提供两个选项用于在云中托管 SQL Server 工作负荷：
 
 ## 后续步骤
 - 若要开始使用 SQL 数据库，请参阅 [SQL Database tutorial: Create a SQL database in minutes using the Azure portal（SQL 数据库教程：使用 Azure 门户在几分钟内创建一个 SQL 数据库）](/documentation/articles/sql-database-get-started/)。
-- 请参阅 [SQL Database pricing（SQL 数据库定价）](/home/features/sql-database/#price)
+- 请参阅 [SQL Database pricing（SQL 数据库定价）](/home/features/sql-database/pricing/)
 - 若要开始在 Azure VM 上使用 SQL Server，请参阅 [使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)](/documentation/articles/virtual-machines-windows-ps-sql-create/)。
 
 <!---HONumber=Mooncake_0503_2016-->

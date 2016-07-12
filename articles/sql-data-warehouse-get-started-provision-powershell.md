@@ -82,6 +82,6 @@
 
 <!--Other Web references-->
 [Microsoft Web 平台安装程序]: https://aka.ms/webpi-azps
-[SQL 数据仓库定价]: /home/features/sql-data-warehouse/#price
+[SQL 数据仓库定价]: /home/features/sql-data-warehouse/pricing/
 
 <!---HONumber=Mooncake_0530_2016-->

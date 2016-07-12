@@ -46,7 +46,7 @@
 
 - **HDInsight 群集名称**
 
-- **位置**：支持 HDInsight 群集的 Azure 数据中心之一。有关支持的位置的列表，请参阅 [HDInsight 定价](/home/features/hdinsight/#price)。
+- **位置**：支持 HDInsight 群集的 Azure 数据中心之一。有关支持的位置的列表，请参阅 [HDInsight 定价](/home/features/hdinsight/pricing/)。
 
 - **默认存储帐户**：HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先拥有 Azure 存储帐户，然后才能创建 HDInsight 群集。
 

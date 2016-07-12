@@ -274,7 +274,7 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 
 - 在支持长轮询的情况下，在需要低延迟传递时，使用服务总线队列可达到经济高效的结果。
 
->[AZURE.NOTE]所有成本随时会变化。上表反映在本文截稿时的当前价格，不包括任何当前可用的促销特价。有关 Azure 的最新价格信息，请参阅 [Azure 定价](/pricing/overview/)页。有关服务总线价格的详细信息，请参阅[服务总线定价](/home/features/messaging/#price)。
+>[AZURE.NOTE]所有成本随时会变化。上表反映在本文截稿时的当前价格，不包括任何当前可用的促销特价。有关 Azure 的最新价格信息，请参阅 [Azure 定价](/pricing/overview/)页。有关服务总线价格的详细信息，请参阅[服务总线定价](/home/features/messaging/pricing/)。
 
 ## 结束语
 

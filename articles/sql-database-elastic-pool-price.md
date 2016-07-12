@@ -25,7 +25,7 @@
 - 弹性池的价格取决于池的 eDTU 数。弹性池的价格与池内弹性数据库的数目和使用率无关。
 - 价格的计算公式为：（池 eDTU 的数量）x（每 eDTU 的单位价格）。
 
-弹性池的 eDTU 单价高于同一服务层中独立数据库的 DTU 单价。有关详细信息，请参阅 [SQL 数据库定价](/home/features/sql-database/#price)。
+弹性池的 eDTU 单价高于同一服务层中独立数据库的 DTU 单价。有关详细信息，请参阅 [SQL 数据库定价](/home/features/sql-database/pricing/)。
 
 
 若要了解 eDTU 和服务层，请参阅 [SQL Database options and performance（SQL 数据库选项和性能）](/documentation/articles/sql-database-service-tiers/)。

@@ -171,7 +171,7 @@ Azure 通知中心支持在 [Azure 经典管理门户]中查看遥测数据。�
 
 我们还提供了以编程方式导出遥测数据的功能（在**标准**层）。有关详细信息，请参阅 [NH — 指标示例]。
 [Azure 经典管理门户]: https://manage.windowsazure.cn
-[通知中心定价]: /home/features/notification-hubs/#price
+[通知中心定价]: /home/features/notification-hubs/pricing/
 [通知中心 SLA]: /support/legal/sla
 [案例研究 - Sochi]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=7942
 [案例研究 - Skanska]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=5847
@@ -180,7 +180,7 @@ Azure 通知中心支持在 [Azure 经典管理门户]中查看遥测数据。�
 [案例研究 - 7Digital]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=3684
 [NH - REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dn530746.aspx
 [NH - 入门教程]: /documentation/articles/notification-hubs-ios-get-started/
-[移动服务定价]: /home/features/mobile-services/#price
+[移动服务定价]: /home/features/mobile-services/pricing/
 [后端注册指南]:https://msdn.microsoft.com/library/azure/dn743807.aspx
 [后端注册指南 - 2]:https://msdn.microsoft.com/library/azure/dn530747.aspx
 [NH 安全模型]: https://msdn.microsoft.com/zh-cn/library/azure/dn495373.aspx
