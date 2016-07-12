@@ -173,7 +173,7 @@
 
 [在 Azure 中创建、重新启动 VM 或调整其大小时排查分配失败](/documentation/articles/virtual-machines-windows-allocation-failure/)
 
-## 经典部署模型中的 Windows VM
+##<a name="windows-vms-in-the-classic-deployment-model"></a> 经典部署模型中的 Windows VM
 
 ### 概述
 

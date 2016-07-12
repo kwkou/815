@@ -241,7 +241,7 @@ Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结
 
 你可以使用 PowerShell、AzureCLI 或通过在 GitHub 中执行单击部署，从模板向 Azure 部署服务。若要在 GitHub 中从模板部署服务，请执行以下步骤：
 
-1. 从 GitHub 打开 template3 文件。例如，打开[“包含两个子网的虚拟网络”](https://github.com/Azure/azure-quickstart-templates/tree/master/101-virtual-network)。
+1. 从 GitHub 打开 template3 文件。
 2. 单击“部署到 Azure”，然后使用你的凭据登录到 Azure 门户。
 3. 验证模板，然后单击“保存”。
 4. 单击“编辑参数”并为 vnet 和子网选择一个位置，例如“中国北部”。
