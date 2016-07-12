@@ -9,8 +9,8 @@
  tags="azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="02/04/2016"
-	wacn.date="03/28/2016"/>
+	ms.date="05/19/2016"
+	wacn.date="07/11/2016"/>
 
 # 在 Azure VM 中使用应用商店映像创建 HPC Pack 群集的头节点
 

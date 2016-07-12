@@ -10,22 +10,22 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="04/12/2016"
-	wacn.date="05/24/2016"/>
+	ms.date="06/07/2016"
+	wacn.date="07/11/2016"/>
 
 # 创建 FreeBSD VHD 并将其上载到 Azure
 
 本文介绍如何创建和上载包含 FreeBSD 操作系统的虚拟硬盘 (VHD)，以便可以使用它作为自己的映像在 Azure 中创建虚拟机 (VM)。
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。
 
 
 ##先决条件##
 本文假定你拥有以下项目：
 
-- **Azure 订阅** - 如果你没有帐户，只需花费几分钟就能创建一个帐户。请参阅[创建试用帐户](/pricing/1rmb-trial/)。
+- **Azure 订阅** — 如果你没有帐户，只需花费几分钟就能创建一个帐户。请参阅[创建试用帐户](/pricing/1rmb-trial/)。
 
-- **Azure PowerShell 工具** - 已安装 Azure PowerShell 模块并将其配置为使用你的订阅。若要下载该模块，请参阅 [Azure 下载](/downloads/)。可在此处获取安装和配置该模块的教程。你将使用 [Azure 下载](/downloads/) cmdlet 上载 VHD。
+- **Azure PowerShell 工具** — 已安装 Azure PowerShell 模块并将其配置为使用你的订阅。若要下载该模块，请参阅 [Azure 下载](/downloads/)。可在此处获取安装和配置该模块的教程。你将使用 [Azure 下载](/downloads/) cmdlet 上载 VHD。
 
 - **安装在 .vhd 文件中的 FreeBSD 操作系统** - 你已将受支持的 FreeBSD 操作系统安装到虚拟硬盘。存在多种工具可创建 .vhd 文件，例如，可以使用虚拟化解决方案（例如 Hyper-V）创建 .vhd 文件并安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。
 
@@ -64,39 +64,57 @@
 
 		# pkg install sudo
 
-5. Azure 代理的先决条件
+5. **Azure 代理的先决条件**
 
-    5\.1 **安装 Python**
-
-		# pkg install python27
-		# ln -s /usr/local/bin/python2.7 /usr/bin/python
-
-    5\.2 **安装 wget**
-
-		# pkg install wget
+		# pkg install python27  
+		# pkg install Py27-setuptools27   
+		# ln -s /usr/local/bin/python2.7 /usr/bin/python   
+		# pkg install git 
 
 6. **安装 Azure 代理**
 
-    可以始终在 [github](https://github.com/Azure/WALinuxAgent/releases) 上找到 Azure 代理的最新版本。版本 2.0.10 及更高版本正式支持 FreeBSD 10 及更高版本。FreeBSD 的最新 Azure 代理版本是 2.1.4。
+    可以始终在 [github](https://github.com/Azure/WALinuxAgent/releases) 上找到 Azure 代理的最新版本。2.0.10 + 版正式支持 FreeBSD 10 和 10.1，2.1.4 版正式支持 FreeBSD 10.2 和更高版本。
 
-		# wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-2.0.10/waagent --no-check-certificate
-		# mv waagent /usr/sbin
-		# chmod 755 /usr/sbin/waagent
-		# /usr/sbin/waagent -install
+		# git clone https://github.com/Azure/WALinuxAgent.git  
+		# cd WALinuxAgent  
+		# git tag  
+		…
+		WALinuxAgent-2.0.16
+		…
+		v2.1.4
+		v2.1.4.rc0
+		v2.1.4.rc1
+   
+    对于 2.0，下面使用 2.0.16 作为示例。
+    
+		# git checkout WALinuxAgent-2.0.16
+		# python setup.py install  
+		# ln -sf /usr/local/sbin/waagent /usr/sbin/waagent  
 
-    **重要说明**：安装完成后，请仔细检查它是否正在运行。
+    对于 2.1，下面使用 2.1.4 作为示例。
+    
+		# git checkout v2.1.4
+		# python setup.py install  
+		# ln -sf /usr/local/sbin/waagent /usr/sbin/waagent  
+		# ln -sf /usr/local/sbin/waagent2.0 /usr/sbin/waagent2.0
+   
+    **重要说明**：安装之后，可以仔细检查版本以及它是否正在运行。
 
+		# waagent -version
+		WALinuxAgent-2.1.4 running on freebsd 10.3
+		Python: 2.7.11
 		# service -e | grep waagent
 		/etc/rc.d/waagent
 		# cat /var/log/waagent.log
 
-    现在，你可以**关闭**你的 VM 了。你还可以在关闭前执行步骤 7，但这一步是可选的。
+7. **取消预配**
 
-7. 取消设置是可选的。它用于清除系统并使其适用于重新设置。
+    它用于清除系统并使其适用于重新设置。以下命令还会删除上次设置的用户帐户和关联数据。
 
-    以下命令还会删除上次设置的用户帐户和关联数据。
-
-		# waagent -deprovision+user
+		# echo "y" |  /usr/local/sbin/waagent -deprovision+user  
+		# echo  'waagent_enable="YES"' >> /etc/rc.conf
+    
+    现在，你可以**关闭**你的 VM 了。
 
 ## 步骤 2：在 Azure 中创建存储帐户 ##
 
@@ -133,7 +151,7 @@
 
 	![存储帐户详细信息](./media/virtual-machines-linux-classic-freebsd-create-upload-vhd/storageaccount_container.png)
 
-8. 为容器键入“名称”，并选择“访问”策略。
+8. 为容器键入名称，并选择“访问”策略。
 
 	![容器名称](./media/virtual-machines-linux-classic-freebsd-create-upload-vhd/storageaccount_containervalues.png)
 
@@ -147,7 +165,8 @@
 
 1. 打开 Azure PowerShell 控制台。
 
-2. 输入以下命令：`Add-AzureAccount -Environment AzureChinaCloud`
+2. 输入以下命令：  
+	`Add-AzureAccount -Environment AzureChinaCloud`
 
 	此命令将打开一个登录窗口，以便你可以使用工作或学校帐户登录。
 
@@ -159,7 +178,8 @@
 
 1. 打开 Azure PowerShell 控制台。
 
-2. 键入：`Get-AzurePublishSettingsFile -Environment AzureChinaCloud`。
+2. 键入：
+	`Get-AzurePublishSettingsFile -Environment AzureChinaCloud`。
 
 3. 此时将打开一个浏览器窗口，并提示你下载 .publishsettings 文件。它包含 Azure 订阅的信息和证书。
 
@@ -167,7 +187,8 @@
 
 3. 保存 .publishsettings 文件。
 
-4. 键入：`Import-AzurePublishSettingsFile -Environment AzureChinaCloud <PathToFile>`
+4. 键入：
+	`Import-AzurePublishSettingsFile -Environment AzureChinaCloud <PathToFile>`
 
 	其中 `<PathToFile>` 是 .publishsettings 文件的完整路径。
 
@@ -205,4 +226,4 @@
 
 	![azure 中的 freebsd 映像](./media/virtual-machines-linux-classic-freebsd-create-upload-vhd/freebsdimageinazure.png)
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_0704_2016-->
