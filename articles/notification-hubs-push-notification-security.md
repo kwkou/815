@@ -16,7 +16,7 @@
 
 ##概述
 
-本主题将介绍 Azure 通知中心的安全模型。由于通知中心是服务总线实体，因此它们与服务总线实现同一安全模型。有关详细信息，请参阅[服务总线身份验证](https://msdn.microsoft.com/library/azure/dn155925.aspx)主题。
+本主题将介绍 Azure 通知中心的安全模型。由于通知中心是服务总线实体，因此它们与服务总线实现同一安全模型。有关详细信息，请参阅[服务总线身份验证](/documentation/articles/service-bus-authentication-and-authorization/)主题。
 
 ##共享访问签名 (SAS) 安全性 
 

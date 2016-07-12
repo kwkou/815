@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="03/28/2016" 
-	wacn.date=""/>
+	wacn.date="07/12/2016"/>
 
 # 使用通知中心发送本地化的突发新闻
 

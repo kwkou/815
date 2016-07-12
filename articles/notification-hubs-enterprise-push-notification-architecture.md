@@ -10,7 +10,7 @@
 <tags
 	ms.service="notification-hubs"
 	ms.date="02/29/2016" 
-	wacn.date=""/>
+	wacn.date="07/12/2016"/>
 
 # 企业推送架构指南
 
@@ -261,10 +261,10 @@
 <!-- Links -->
 [通知中心示例]: https://github.com/Azure/azure-notificationhubs-samples
 [Azure 移动服务]: /documentation/services/mobile-services/
-[Azure 服务总线]: /documentation/articles/fundamentals-service-bus-hybrid-solutions/
+[Azure 服务总线]: /documentation/articles/service-bus-fundamentals-hybrid-solutions/
 [服务总线 Pub/Sub 编程]: /documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/
 [Azure WebJob]: /documentation/articles/web-sites-create-web-jobs/
-[通知中心 - Windows 通用教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification-wns-push-notification/
+[通知中心 - Windows 通用教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/
 [Azure 经典门户]: https://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0704_2016-->

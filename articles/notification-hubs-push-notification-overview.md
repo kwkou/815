@@ -152,11 +152,11 @@ Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
 
   [0]: ./media/notification-hubs-overview/registration-diagram.png
   [1]: ./media/notification-hubs-overview/notification-hub-diagram.png
-  [客户如何使用通知中心]: /services/notification-hubs
-  [通知中心教程和指南]: m/documentation/services/notification-hubs
+  [客户如何使用通知中心]: /documentation/services/notification-hubs
+  [通知中心教程和指南]: /documentation/services/notification-hubs
   [iOS]: /documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started
  
-  [Windows Universal]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification-wns-push-notification
+  [Windows Universal]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification
   [Windows Phone]: /documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns
   [Kindle]: /documentation/articles/notification-hubs-kindle-amazon-adm-push-notification
   [Xamarin.iOS]: /documentation/articles/partner-xamarin-notification-hubs-ios-apple-push-notification-apns-get-started
@@ -166,6 +166,6 @@ Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
   [App Service Mobile Apps]: /documentation/articles/app-service-mobile-value-prop/
   [模板]: /documentation/articles/notification-hubs-templates-cross-platform-push-messages-cross-platform-push-messages
   [Azure 门户]: https://portal.azure.cn
-  [标记]: (http://msdn.microsoft.com/library/azure/dn530749.aspx)
+  [标记]: http://msdn.microsoft.com/library/azure/dn530749.aspx
 
 <!---HONumber=Mooncake_0704_2016-->

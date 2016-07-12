@@ -111,7 +111,7 @@
 
 	请注意，如果一个设备使用同一标签注册多个模板，针对该标签的传入消息将导致多个通知发送到设备（每个通知对应一个模板）。当同一逻辑消息必须导致多个可视通知时，此行为很有用，例如在 Windows 应用商店应用程序显示徽章和 toast。
 
-	有关模板的详细信息，请参阅[模板](/documentation/articles/notification-hubs-templates-cross-platform-push-messages-cross-platform-push-messages)。
+	有关模板的详细信息，请参阅[模板](/documentation/articles/notification-hubs-templates-cross-platform-push-messages)。
 
 
 

@@ -69,7 +69,7 @@ Azure 通知中心提供用于向移动设备发送推送通知的易于使用�
 
 1. 在左侧导航窗格中，单击“浏览”。
 
-2. 选择“通知中心”，然后找到要用于示例的中心。如果在创建新通知中心时需要获得帮助，可以参阅 [Windows 应用商店入门教程](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification-wns-push-notification-wns-push-notification)。
+2. 选择“通知中心”，然后找到要用于示例的中心。如果在创建新通知中心时需要获得帮助，可以参阅 [Windows 应用商店入门教程](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification)。
 
 3. 选择“设置”。
 
@@ -208,7 +208,7 @@ Azure 通知中心提供用于向移动设备发送推送通知的易于使用�
   [SqlFilter]: http://msdn.microsoft.com/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx
   [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
 [Previous Management Portal]: ./media/notification-hubs-nodejs-how-to-use-notification-hubs/previous-portal.png
-  [nodejswebsite]: /develop/nodejs/tutorials/create-a-website-(mac)/
+  [nodejswebsite]: /documentation/articles/app-service-web-nodejs-get-started/
   
   
   [Azure 门户]: https://portal.azure.cn
