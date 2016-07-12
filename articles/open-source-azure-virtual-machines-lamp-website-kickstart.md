@@ -30,7 +30,7 @@ LAMP 通常表示 Linux + Apache + MySQL/MariaDB + Perl/PHP/Python，LAMP 的各
 目前 Azure PowerShell 脚本和 Azure CLI 方式仅支持 CentOS(6.5, 6.6, 6.7, 7.0, 7.1, 7.2)。而 SHELL 脚本则有 CentOS, Ubuntu以及 SLES 三个版本。  
 
 参数使用注意事项：  
-DNSNamePrefix：必须小写，需保证唯一性，该参数将作为 DNS 前缀。
+DNSNamePrefix：必须小写，需保证唯一性，该参数将作为 DNS 前缀。  
 ZabbixServerIPAddress：可选项，指定 Zabbix 服务器地址。 
 
 ###<a id="powershell"></a>Azure PowerShell 方式
