@@ -4,13 +4,13 @@
 	services="sql-database, automation"
 	documentationCenter=""
 	authors="jodoglevy"
-	manager="jeffreyg"
+	manager="jhubbard"
 	editor="monicar"/>
 
 <tags
 	ms.service="sql-database"
-	ms.date="05/03/2016"
-	wacn.date="05/23/2016"/>
+	ms.date="05/26/2016"
+	wacn.date="07/11/2016"/>
 
 
 
@@ -30,7 +30,7 @@ Azure 自动化提供高度可靠且高度可用的工作流执行引擎，它�
 
 ## Azure 自动化如何帮助管理 Azure SQL 数据库？
 
-可以使用 [Azure PowerShell 工具](https://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx)中提供的 Azure SQL 数据库 PowerShell cmdlet 在 Azure 自动化中管理 Azure SQL 数据库。Azure 自动化现成地提供了这些 Azure SQL 数据库 PowerShell cmdlet，因此，你可以在该服务中执行所有 SQL DB 管理任务。你还可以将 Azure 自动化中的这些 cmdlet 与其他 Azure 服务的 cmdlet 搭配使用，以自动完成跨 Azure 服务和第三方系统的复杂任务。
+可以使用 [Azure PowerShell 工具](https://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx)中提供的 [Azure SQL 数据库 PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/dn546723.aspx) 在 Azure 自动化中管理 Azure SQL 数据库。Azure 自动化现成地提供了这些 Azure SQL 数据库 PowerShell cmdlet，因此，你可以在该服务中执行所有 SQL DB 管理任务。你还可以将 Azure 自动化中的这些 cmdlet 与其他 Azure 服务的 cmdlet 搭配使用，以自动完成跨 Azure 服务和第三方系统的复杂任务。
 
 Azure 自动化还可以通过使用 PowerShell 发出 SQL 命令，来与 SQL 服务器直接通信。
 
@@ -45,9 +45,12 @@ Azure 自动化还可以通过使用 PowerShell 发出 SQL 命令，来与 SQL �
 
 在了解 Azure 自动化 以及如何使用它来管理 Azure SQL 数据库的基础知识后，请使用以下链接了解有关 Azure 自动化的更多信息。
 
+
 - [Azure 自动化概述](/documentation/articles/automation-intro/)
-- [Azure 自动化学习路线图](https://azure.microsoft.com/documentation/learning-paths/automation)
-- [Azure 自动化：你在云中的 SQL 代理](https://azure.microsoft.com/blog/2014/06/26/azure-automation-your-sql-agent-in-the-cloud) 
+- [我的第一个 Runbook](/documentation/articles/automation-first-runbook-graphical/)
+
+- [Azure 自动化：你在云中的 SQL 代理](https://azure.microsoft.com/blog/2014/06/26/azure-automation-your-sql-agent-in-the-cloud/)
+
  
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_0704_2016-->

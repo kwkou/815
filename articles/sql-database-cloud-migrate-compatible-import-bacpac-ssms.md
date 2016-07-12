@@ -9,8 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="04/06/2016"
-   wacn.date="05/16/2016"/>
+   ms.date="06/07/2016"
+   wacn.date="07/11/2016"/>
 
 # 使用 SSMS 从 BACPAC 导入到 SQL 数据库
 
@@ -47,4 +47,15 @@
 
 6.	使用 Azure 门户查看数据库及其属性。
 
-<!---HONumber=Mooncake_0503_2016-->
+## 后续步骤
+
+- [最新版本的 SSDT](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx)
+- [最新版本的 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)
+
+## 其他资源
+
+- [SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new/)
+- [Transact-SQL 部分支持或不支持的函数](/documentation/articles/sql-database-transact-sql-information/)
+- [使用 SQL Server 迁移助手迁移非 SQL Server 数据库](http://blogs.msdn.com/b/ssma/)
+
+<!---HONumber=Mooncake_0704_2016-->

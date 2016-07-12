@@ -9,10 +9,21 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="03/22/2016"
-   wacn.date="05/16/2016"/> 
+   ms.date="06/07/2016"
+   wacn.date="07/11/2016"/> 
 
-# 使用 SQL Server Data Tools for Visual Studio 将 SQL Server 数据库迁移到 Azure SQL 数据库
+# 使用 SQL Server Data Tools for Visual Studio 将 SQL Server 数据库迁移到 Azure SQL 数据库 
+
+> [AZURE.SELECTOR]
+- [SSDT](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssdt/)
+- [SqlPackage](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-sqlpackage/)
+- [SSMS](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-ssms/)
+- [升级顾问](http://www.microsoft.com/download/details.aspx?id=48119)
+- [SAMW](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues/)
+
+在本文中，你将了解在迁移到 Azure SQL 数据库之前如何使用 SQL Server Data Tools for Visual Studio 检测并解决 SQL Server 数据库的兼容性问题。
+
+## 使用 SQL Server Data Tools for Visual Studio
 
 可以使用 SQL Server Data Tools for Visual Studio ("SSDT") 将数据库架构导入到 Visual Studio 数据库项目中以进行分析。若要分析，请将该项目的目标平台指定为 SQL 数据库 V12，然后生成该项目。如果生成成功，则数据库是兼容的。如果生成失败，则可以解决 SSDT（或本主题中讨论的其他工具之一）中的错误。成功生成项目后，你便可以将其发布为源数据库的副本，然后使用 SSDT 中的数据比较功能将数据从源数据库复制到这个与 Azure SQL V12 兼容的数据库。然后，可以迁移这个已更新的数据库。若要使用此选项，请下载[最新版本的 SSDT](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx)。
 
@@ -46,16 +57,14 @@
     
 	![替换文字](./media/sql-database-migrate-visualstudio-ssdt/07MigrateSSDT.png)
     
-## 使用 SQL Server Data Tools for Visual Studio 解决兼容性问题      
-
-1.	双击第一个脚本以在查询窗口中打开该脚本，注释掉该脚本，然后执行该脚本。        
-
-  	 ![替换文字](./media/sql-database-migrate-visualstudio-ssdt/08MigrateSSDT.png)    
+## 使用 SQL Server Data Tools for Visual Studio 解决兼容性问题        
+  
+1.	双击第一个脚本以在查询窗口中打开该脚本，注释掉该脚本，然后执行该脚本。     
+	![替换文字](./media/sql-database-migrate-visualstudio-ssdt/08MigrateSSDT.png)    
 
 2.	对包含不兼容项的每个脚本重复执行此过程，直到不再存在错误。    
-
-	![替换文字](./media/sql-database-migrate-visualstudio-ssdt/09MigrateSSDT.png)
-
+	![替换文字](./media/sql-database-migrate-visualstudio-ssdt/09MigrateSSDT.png)  
+ 
 3.	当数据库无错误后，右键单击项目并选择“发布”以生成数据库并将其发布到源数据库副本（强烈建议至少在开始时使用副本）。     
  - 在发布前，根据源 SQL Server 版本（早于 SQL Server 2014），可能需要重置项目的目标平台才能进行部署。     
  - 如果迁移的是较早的 SQL Server 数据库，切勿向项目中引入任何不受源 SQL Server 支持的功能，除非先将数据库迁移到较新版本的 SQL Server。     
@@ -76,4 +85,15 @@
     
 6.	选择部署方法。请参阅 [Migrate a compatible SQL Server database to SQL Database（将兼容的 SQL Server 数据库迁移到 SQL 数据库）](/documentation/articles/sql-database-cloud-migrate/)。  
 
-<!---HONumber=Mooncake_0503_2016-->
+## 后续步骤
+
+- [最新版本的 SSDT](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx)
+- [最新版本的 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)
+
+## 其他资源
+
+- [SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new/)
+- [Transact-SQL 部分支持或不支持的函数](/documentation/articles/sql-database-transact-sql-information/)
+- [使用 SQL Server 迁移助手迁移非 SQL Server 数据库](http://blogs.msdn.com/b/ssma/)
+
+<!---HONumber=Mooncake_0704_2016-->

@@ -10,8 +10,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="03/22/2016"
-   wacn.date="05/16/2016"/>
+   ms.date="06/07/2016"
+   wacn.date="07/11/2016"/>
 
 # 将 SQL Server 数据库迁移到云中的 SQL 数据库
 
@@ -33,11 +33,18 @@ SQL Server 提供多种方法来完成每个任务。本文将提供可供每个
 
 在开始数据库迁移过程之前，请使用以下方法之一测试 SQL 数据库的兼容性问题：
 
+> [AZURE.SELECTOR]
+- [SSDT](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssdt/)
+- [SqlPackage](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-sqlpackage/)
+- [SSMS](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-ssms/)
+- [升级顾问](http://www.microsoft.com/download/details.aspx?id=48119)
+- [SAMW](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues/)
+
 - [SQL Server Data Tools for Visual Studio (SSDT)](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssdt/)：SSDT 使用最新的兼容性规则来检测 SQL 数据库 V12 不兼容性。如果检测到不兼容，你可以直接在此工具中解决检测到的问题。这是目前用于测试和解决 SQL 数据库 V12 兼容性问题的建议方法。 
 - [SqlPackage](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-sqlpackage/)：SqlPackage 是一个命令提示实用工具，它将测试兼容性问题，如果发现相关问题，则将生成包含检测到的兼容性问题的报告。如果使用此工具，请确保使用最新版本，以便使用最新的兼容性规则。如果检测到错误，必须使用其他工具来解决任何检测到的兼容性问题 - 建议使用 SSDT。  
-- [SQL Server Management Studio 中的“导出数据层”应用程序向导](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-ssms/)：此向导可以检测错误并在屏幕上报告错误。如果未检测到错误，你可以继续迁移到 SQL 数据库。如果检测到错误，必须使用其他工具来解决任何检测到的兼容性问题 - 建议使用 SSDT。
-- [Microsoft SQL Server 2016 Upgrade Advisor Preview](http://www.microsoft.com/download/details.aspx?id=48119)：此独立工具目前以预览版提供，将检测并生成 SQL 数据库 V12 不兼容性报告。此工具还没有最新的兼容性规则。如果未检测到错误，你可以继续迁移到 SQL 数据库。如果检测到错误，必须使用其他工具来解决任何检测到的兼容性问题 - 建议使用 SSDT。 
-- [SQL Azure 迁移向导 (SAMW)](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues/)：SAMW 是一个 codeplex 工具，它使用 Azure SQL 数据库 V11 兼容性规则来检测 Azure SQL 数据库 V12 的不兼容性。如果检测到不兼容，某些问题可直接在此工具中解决。此工具可能会发现不需要解决的不兼容性，但它是第一个可使用的 Azure SQL 数据库迁移帮助工具，并且有很多来自 SQL Server 社区的支持。此外，此工具可在工具本身内部完成迁移。 
+- [The Export Data Tier application wizard in SQL Server Management Studio（SQL Server Management Studio 中的“导出数据层”应用程序向导）](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-ssms/)：此向导可以检测错误并在屏幕上报告错误。如果未检测到错误，你可以继续迁移到 SQL 数据库。如果检测到错误，必须使用其他工具来解决任何检测到的兼容性问题 - 建议使用 SSDT。
+- [Microsoft SQL Server 2016 Upgrade Advisor Preview（Microsoft SQL Server 2016 升级顾问预览版）](http://www.microsoft.com/download/details.aspx?id=48119)：此独立工具目前以预览版提供，将检测并生成 SQL 数据库 V12 不兼容性报告。此工具还没有最新的兼容性规则。如果未检测到错误，你可以继续迁移到 SQL 数据库。如果检测到错误，必须使用其他工具来解决任何检测到的兼容性问题 - 建议使用 SSDT。 
+- [SQL Azure Migration Wizard ("SAMW")（SQL Azure 迁移向导 (SAMW)）](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues/)：SAMW 是一个 codeplex 工具，它使用 Azure SQL 数据库 V11 兼容性规则来检测 Azure SQL 数据库 V12 的不兼容性。如果检测到不兼容，某些问题可直接在此工具中解决。此工具可能会发现不需要解决的不兼容性，但它是第一个可使用的 Azure SQL 数据库迁移帮助工具，并且有很多来自 SQL Server 社区的支持。此外，此工具可在工具本身内部完成迁移。 
 
 ## 修复数据库迁移的兼容性问题
 
@@ -54,8 +61,13 @@ SQL Server 提供多种方法来完成每个任务。本文将提供可供每个
 
 使用以下数据库迁移工具之一来解决检测到的问题：
 
-- [使用 SQL Server Data Tools for Visual Studio (SSDT)](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssdt/)：若要使用 SSDT，需将数据库架构导入 SQL Server Data Tools for Visual Studion (SSDT)，构建 SQL 数据库 V12 部署的项目，在 SSDT 中解决所有检测到的兼容性问题，然后将更改同步回到源数据库（或源数据库的副本）。这是目前用于测试和解决 SQL 数据库 V12 兼容性问题的建议方法。遵循[演练 SSDT](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssdt/) 的链接。
-- [使用 SQL Server Management Studio (SSMS)](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssms/)：若要使用 SSMS，可以使用其他工具来解决检测到的错误，以运行 Transact-SQL 命令来解决检测到的错误。此方法主要是供高级用户直接在源数据库中修改数据库架构。 
+> [AZURE.SELECTOR]
+- [SSDT](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssdt/)
+- [SSMS](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssms/)
+- [SAMW](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues/)
+
+- [使用 SQL Server Data Tools for Visual Studio (SSDT)](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssdt/)：若要使用 SSDT，需将数据库架构导入 SQL Server Data Tools for Visual Studion (SSDT)，构建 SQL 数据库 V12 部署的项目，在 SSDT 中解决所有检测到的兼容性问题，然后将更改同步回到源数据库（或源数据库的副本）。这是目前用于测试和解决 SQL 数据库 V12 兼容性问题的建议方法。请单击 [walk-through using SSDT（使用 SSDT 进行演练）](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssdt/) 的链接。
+- [使用 SQL Server Management Studio (SSMS)](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssms/)：若要使用 SSMS，可以执行 Transact-SQL 命令来修复使用其他工具检测到的错误。此方法主要是供高级用户直接在源数据库中修改数据库架构。 
 - [使用 SQL Azure 迁移向导 (SAMW)](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues/)：若要使用 SAMW，需要从源数据库生成 Transact-SQL 脚本，稍后由向导在适当时机将其转换，让架构和 SQL 数据库 V12 兼容。完成后，SAMW 可以连接到 SQL 数据库 V12 以执行脚本。此工具还将分析跟踪文件以确定兼容性问题。生成的脚本可以只包含架构，也可以包含 BCP 格式的数据。
 
 ## 将兼容的 SQL Server 数据库迁移到 SQL 数据库
@@ -81,4 +93,16 @@ SQL Server 提供多种方法来完成每个任务。本文将提供可供每个
 
 	 ![SQL Server 数据库迁移 - 将 SQL 数据库迁移到云。](./media/sql-database-cloud-migrate/01SSMSDiagram_new.png)
 
-<!---HONumber=Mooncake_0503_2016-->
+## 后续步骤
+
+- [Microsoft SQL Server 2016 升级顾问预览版](http://www.microsoft.com/download/details.aspx?id=48119)
+- [最新版本的 SSDT](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx)
+- [最新版本的 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)
+
+##其他资源
+
+- [SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new/)
+- [Transact-SQL 部分支持或不支持的函数](/documentation/articles/sql-database-transact-sql-information/)
+- [使用 SQL Server 迁移助手迁移非 SQL Server 数据库](http://blogs.msdn.com/b/ssma/)
+
+<!---HONumber=Mooncake_0704_2016-->

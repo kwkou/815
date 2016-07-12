@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="04/11/2016"
-	wacn.date="05/16/2016"/>
+	ms.date="05/17/2016"
+	wacn.date="07/11/2016"/>
  
 # SQL 数据库审核入门
 Azure SQL 数据库审核可以跟踪数据库事件，并将审核的事件写入 Azure 存储帐户中的审核日志。一般而言，可以在基本、标准和高级服务层中使用审核功能。
@@ -69,7 +69,7 @@ SQL 数据库审核可让你：
 
 ##<a id="subheading-4"></a>使用 Azure 经典管理门户为数据库设置审核
 
-1. 通过 https://manage.windowsazure.cn/ 启动 [Azure 经典管理门户](https://manage.windowsazure.cn)。
+1. 启动 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
 2. 单击要审核的 SQL 数据库/SQL Server，然后单击“审核和安全性”选项卡。
 
@@ -140,4 +140,4 @@ SQL 数据库审核可让你：
 
  
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_0704_2016-->

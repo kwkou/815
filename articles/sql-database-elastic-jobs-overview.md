@@ -1,7 +1,7 @@
 <properties
 	pageTitle="管理扩大的云数据库 | Azure" 
 	description="安装弹性数据库作业服务" 
-	metaKeywords="azure sql database elastic databases" 
+	metaKeywords="azure sql 数据库弹性数据库" 
 	services="sql-database" 
     documentationCenter=""  
 	manager="jhubbard" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="04/25/2016" 
-	wacn.date="06/14/2016" />
+	ms.date="05/27/2016" 
+	wacn.date="07/11/2016" />
 
 # 管理扩大的云数据库
 
@@ -57,6 +57,7 @@
 
 部署数据层应用程序 (DACPAC)。
 
+> [AZURE.NOTE] 在 Azure 经典管理门户中，只有一小组受限为 SQL Azure 弹性池的函数可供使用。使用 PowerShell API 可以访问当前功能的完整集。
 
 ## 应用程序 
 
@@ -146,4 +147,4 @@
 
  
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0704_2016-->

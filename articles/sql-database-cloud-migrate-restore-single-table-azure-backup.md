@@ -9,22 +9,22 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="03/11/2016"
-	wacn.date="04/06/2016"/>
+	ms.date="06/02/2016"
+	wacn.date="07/11/2016"/>
 
 
 # 如何从 Azure SQL 数据库备份中还原单个表
 
-你可能会遇到这种情况，不小心修改了 SQL 数据库中的某些数据，而现在你希望恢复单个受影响的表。本文介绍如何基于所选的性能层，从 Azure SQL 数据库自动执行的一个备份中还原数据库中的单个表。
+你可能会遇到这种情况，不小心修改了 SQL 数据库中的某些数据，而现在你希望恢复单个受影响的表。本文介绍如何基于所选的性能层，从 Azure SQL 数据库自动执行的一个[备份](/documentation/articles/sql-database-automated-backups)中还原数据库中的单个表。
 
 ## 准备步骤：重命名表，并还原数据库的一个副本
 1. 确定 Azure SQL 数据库中你要替换为还原的副本的表。使用 Microsoft SQL Management Studio 重命名此表。例如，将此表重命名为 &lt;table name&gt;\_old。
 
-	**注意** 为了避免受到阻止，请确保你要重命名的表没有任何正在运行的活动。如果你遇到问题，请确保在维护时段内执行此过程。
+	**注意**为了避免受到阻止，请确保你要重命名的表没有任何正在运行的活动。如果你遇到问题，请确保在维护时段内执行此过程。
 
 2. 将数据库的一个备份还原到你想要恢复到的一个时间点。要实现此操作，请参阅[从用户错误中恢复 Azure SQL 数据库](/documentation/articles/sql-database-user-error-recovery/)中的步骤。
 
-	**注意**：
+	**说明**：
 	- 还原的数据库的名称的格式为 DBName+TimeStamp；例如，**Adventureworks2012\_2016-01-01T22-12Z**。此步骤不会覆盖服务器上现有的数据库名称。这是一项安全措施，目的是要让用户在删除其当前数据库之前确认还原的数据库，然后重命名此还原的数据库供生产之用。
 	- 服务根据不同的性能层使用不同的备份保留期指标来自动备份从基本到高级的所有性能层：
 
@@ -41,7 +41,7 @@
  - **服务器名称**：你的 SQL Azure 实例
  - **身份验证**：**SQL Server 身份验证**。输入你的登录凭据。
  - **数据库**：**Master 数据库（列出所有数据库）**。
- - **注意** 默认情况下此向导将保存你的登录信息。如果你不想保存，请选择“忘记登录信息”。
+ - **注意**默认情况下此向导将保存你的登录信息。如果你不想保存，请选择“忘记登录信息”。  
 ![SQL 数据库迁移向导 - 选择源 - 步骤 1](./media/sql-database-cloud-migrate-restore-single-table-azure-backup/2.png)
 4. 在“选择源”对话框中，选择“准备步骤”部分中的还原的数据库名称作为你的源，然后单击“下一步”。
 
@@ -54,8 +54,7 @@
 ![SQL 数据库迁移向导 - 脚本向导摘要](./media/sql-database-cloud-migrate-restore-single-table-azure-backup/5.png)
 
 7. 在“结果摘要”页面上，单击“下一步”。
-
-	![SQL 数据库迁移向导 - 结果摘要](./media/sql-database-cloud-migrate-restore-single-table-azure-backup/6.png)
+![SQL 数据库迁移向导 - 结果摘要](./media/sql-database-cloud-migrate-restore-single-table-azure-backup/6.png)
 
 8. 在“设置目标服务器连接”页面上，单击“连接到服务器”，然后输入详细信息，如下所示：
 	- **服务器名称**：目标服务器实例
@@ -69,4 +68,7 @@
 ## 验证步骤
 1. 查询并测试最近复制的表，以确保数据完好无损。确认后，你可以删除“准备步骤”部分中的重命名表（例如 &lt;table name&gt;\_old）。
 
-<!---HONumber=Mooncake_0328_2016-->
+## 后续步骤
+
+[SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)
+<!---HONumber=Mooncake_0704_2016-->

@@ -7,8 +7,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="05/03/2016" 
-	wacn.date="06/14/2016" />
+	ms.date="05/27/2016" 
+	wacn.date="07/11/2016" />
 
 # 使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）
 
@@ -233,21 +233,7 @@
 
 若要针对分片集（使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)创建）中的所有数据库执行作业，请将分片映射用作数据库目标。本示例要求使用弹性数据库客户端库创建分片应用程序。请参阅[弹性数据库工具示例入门](/documentation/articles/sql-database-elastic-scale-get-started/)。
 
-###使用示例应用程序创建分片映射管理器
-
-本示例将创建分片映射管理器以及多个分片，然后将数据插入分片。
-
-1. 生成并运行**弹性数据库工具入门**示例应用程序。一直执行到[下载和运行示例应用](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools)部分中的步骤 7。在步骤 7 结束时，你将看到以下命令提示符：
-
-	![命令提示符][1]
-
-2.  在命令窗口中键入“1”，然后按 **Enter**。这会创建分片映射管理器，并将两个分片添加到服务器。然后键入“3”并按 **Enter**；重复该操作四次。这会在你的分片中插入示例数据行。
-  
-3.  [Azure 经典管理门户](https://manage.windowsazure.cn)应会在 v12 服务器中显示三个新的数据库：
-
-	![Visual Studio 确认][2]
-
-使用 [**New-AzureSqlJobCredential cmdlet**](https://msdn.microsoft.com/zh-cn/library/mt346063.aspx) 创建分片映射目标。必须将分片映射管理器数据库设置为数据库目标，然后将特定分片映射指定为目标。
+必须将分片映射管理器数据库设置为数据库目标，然后将特定分片映射指定为目标。
 
 	$shardMapCredentialName = "{Credential Name}"
 	$shardMapDatabaseName = "{ShardMapDatabaseName}" #example: ElasticScaleStarterKit_ShardMapManagerDb
@@ -528,7 +514,7 @@
 
 ### 将数据库添加到自定义数据库集合目标
 
-若要将数据库添加到特定的自定义集合，请使用 **Add-AzureSqlJobChildTarget** cmdlet。
+若要将数据库添加到特定的自定义集合，请使用 [**Add-AzureSqlJobChildTarget**](https://msdn.microsoft.com/zh-cn/library/mt346064.aspx) cmdlet。
 
 	$serverName = "{Database Server Name}"
 	$databaseName = "{Database Name}"
@@ -689,4 +675,4 @@
 [2]: ./media/sql-database-elastic-jobs-powershell/portal.png
 <!--anchors-->
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_0704_2016-->
